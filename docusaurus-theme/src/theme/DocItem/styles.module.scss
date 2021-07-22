@@ -19,6 +19,10 @@
   font-size: smaller;
 }
 
+.tableOfContents {
+  margin-block-start: var(--doc-item-main-spacing-y);
+}
+
 .docItemWrapper {
   display: flex;
 }
@@ -38,6 +42,9 @@
   > div {
     position: sticky;
     top: calc(var(--ifm-navbar-height) + 1rem);
+
+    max-height: calc(100vh - var(--ifm-navbar-height));
+    overflow-y: auto;
   }
 }
 

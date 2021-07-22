@@ -50,16 +50,21 @@ function Headings({
   );
 }
 
-function TOC({ toc, editUrl }: TOCProps): JSX.Element {
-  const stuff = useAllDocsData();
-
+function TOC({ toc, editUrl, ...props }: TOCProps): JSX.Element {
   useTOCHighlight(LINK_CLASS_NAME, ACTIVE_LINK_CLASS_NAME, TOP_OFFSET);
   return (
     <div
-      className={clsx(styles.toc, 'table-of-contents', 'thin-scrollbar', {
-        [styles.tocEmpty]: toc.length === 0,
-        'table-of-contents--empty': toc.length === 0,
-      })}
+      {...props}
+      className={clsx(
+        props.className,
+        styles.toc,
+        'table-of-contents',
+        'thin-scrollbar',
+        {
+          [styles.tocEmpty]: toc.length === 0,
+          'table-of-contents--empty': toc.length === 0,
+        },
+      )}
     >
       <div className={clsx('toc__title', styles.title)}>Contents</div>
       <Headings toc={toc} />

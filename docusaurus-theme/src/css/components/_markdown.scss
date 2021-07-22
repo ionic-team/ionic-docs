@@ -2,12 +2,14 @@ html[data-theme='light'] {
   --markdown-toc-title-c: var(--c-indigo-60);
   --markdown-toc-list-item-c: var(--c-indigo-70);
   --markdown-text-intro-c: var(--c-indigo-80);
+  --markdown-bold-c: var(--c-carbon-100);
 }
 
 html[data-theme='dark'] {
   --markdown-toc-title-c: #fff;
   --markdown-toc-list-item-c: #fff;
   --markdown-text-intro-c: var(--c-indigo-40);
+  --markdown-bold-c: #fff;
 }
 
 .markdown {
@@ -26,6 +28,7 @@ html[data-theme='dark'] {
   strong,
   b {
     font-weight: 600;
+    color: var(--markdown-bold-c);
   }
 
   //differentiate between inline code and code blocks
@@ -58,11 +61,6 @@ html[data-theme='dark'] {
   p,
   li {
     line-height: 200%;
-
-    > strong,
-    > b {
-      color: var(--c-carbon-100);
-    }
   }
 
   // have to override style coming from .h1Heading_node_modules-\@docusaurus-theme-classic-lib-next-theme-Heading-styles-module

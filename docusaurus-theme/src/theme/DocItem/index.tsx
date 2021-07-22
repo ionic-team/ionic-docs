@@ -125,7 +125,11 @@ function DocItem(props) {
         </div>
 
         {!hideTableOfContents && DocContent.toc ? (
-          <TOC toc={DocContent.toc} editUrl={editUrl} />
+          <TOC
+            toc={DocContent.toc}
+            editUrl={editUrl}
+            className={clsx(styles.tableOfContents)}
+          />
         ) : (
           demoUrl && (
             <div

@@ -23,12 +23,9 @@
 }
 
 .toc {
-  max-height: calc(
-    100vh - (var(--ifm-navbar-height) + 2rem) - var(--doc-item-main-spacing-y)
-  );
+  max-height: calc(100vh - (var(--ifm-navbar-height) + 2rem));
   position: sticky;
-  top: 0;
-  top: calc(var(--doc-item-main-spacing-y) + var(--ifm-navbar-height));
+  top: calc(var(--ifm-navbar-height) + 1rem);
   width: 12rem;
 
   overflow-y: auto;

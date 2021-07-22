@@ -91,6 +91,7 @@ module.exports = {
               rel: null,
             },
           ],
+          className: 'navbar__link--community',
         },
         {
           label: 'Support',
@@ -115,6 +116,7 @@ module.exports = {
               rel: null,
             },
           ],
+          className: 'navbar__link--support',
         },
         {
           type: 'localeDropdown',
@@ -134,6 +136,7 @@ module.exports = {
               rel: null,
             },
           ],
+          className: 'navbar__link--language',
         },
       ],
     },
@@ -174,8 +177,10 @@ module.exports = {
       {
         theme: {
           customCss: [
-            require.resolve('./node_modules/modern-normalize/modern-normalize.css'),
-            require.resolve('./src/css/custom.scss')
+            require.resolve(
+              './node_modules/modern-normalize/modern-normalize.css',
+            ),
+            require.resolve('./src/css/custom.scss'),
           ],
         },
         docs: {
@@ -208,7 +213,6 @@ module.exports = {
               banner: 'none',
             },
           },
-          
         },
         blog: false,
       },

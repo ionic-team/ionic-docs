@@ -39,6 +39,11 @@ th {
   text-align: start;
 }
 
+th,
+td {
+  line-height: 1.6;
+}
+
 thead th:empty {
   display: none;
 }
