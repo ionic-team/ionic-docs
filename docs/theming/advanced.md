@@ -23,8 +23,8 @@ The `theme-color` meta controls the interface theme when running in a web browse
 The example below demonstrates how to use `theme-color` to style the browser interface on iOS 15.
 
 ```html
-<meta name="theme-color" media="(prefers-color-scheme: light)" content="#3880ff">
-<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#eb445a">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#3880ff" />
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#eb445a" />
 ```
 
 | Light Mode | Dark Mode |
