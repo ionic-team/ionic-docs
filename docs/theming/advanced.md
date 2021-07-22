@@ -12,7 +12,7 @@ CSS-based theming enables apps to customize the colors quickly by loading a CSS 
 
 ## `theme-color` Meta
 
-The `theme-color` value for a meta tag can be used to suggest colors that browsers can use to customize the display of a page or of the surrounding interface. This kind of meta tag can also accept media queries which allow developers to set the theme color for both light and dark modes.
+The `theme-color` value for a meta tag indicates a color that browsers can use to customize the display of a page or of the surrounding interface. This kind of meta tag can also accept media queries which allow developers to set the theme color for both light and dark modes.
 
 The `content` value for the `theme-color` meta must contain a valid <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/color_value" target="_blank" rel="noopener noreferrer">CSS Color</a> and cannot contain CSS Variables.
 
