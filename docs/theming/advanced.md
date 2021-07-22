@@ -33,7 +33,9 @@ The example below demonstrates how to use `theme-color` to style the browser int
 
 The `theme-color` meta can also be used to customize the toolbar in Safari on macOS Monterey or newer.
 
-Safari on iOS 15 and macOS will automatically determine an appropriate theme color to use, but adding this meta tag is useful if you need more control over the theme.
+Safari on iOS 15 and macOS will automatically determine an appropriate theme color to use, but adding this meta tag is useful if you need more control over the theme. 
+
+There is a small subset of colors that browsers will not use as they interfere with the browser interface. For example, setting `content="red"` will not work in Safari on macOS because that color interferes with the red close button in the toolbar. If you run into this situation, try altering your color selection slightly.
 
 :::note
 Browsers will prefer the `theme-color` meta over `theme` in `manifest.json` if both are present.
