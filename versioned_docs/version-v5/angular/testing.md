@@ -539,7 +539,7 @@ The `angular.json` file needs to be modified to use this file. This is a layered
 
 Add a configuration at `/projects/app/architect/build/configurations` called `test` that does the file replacement:
 
-```JSON
+```json
             "test": {
               "fileReplacements": [
                 {
@@ -552,7 +552,7 @@ Add a configuration at `/projects/app/architect/build/configurations` called `te
 
 Add a configuration at `/projects/app/architect/serve/configurations` called `test` that points the browser target at the `test` build configuration that was defined above.
 
-```JSON
+```json
             "test": {
               "browserTarget": "app:build:test"
             }
@@ -560,7 +560,7 @@ Add a configuration at `/projects/app/architect/serve/configurations` called `te
 
 Add a configuration at `/projects/app-e2e/architect/e2e/configurations` called `test` that does points the dev server target at the `test` serve configuration defined above.
 
-```JSON
+```json
             "test": {
               "devServerTarget": "app:serve:test"
             }
@@ -570,7 +570,7 @@ Add a configuration at `/projects/app-e2e/architect/e2e/configurations` called `
 
 Modify the `package.json` file so that `npm run e2e` uses the `test` configuration.
 
-```JSON
+```json
   "scripts": {
     "e2e": "ng e2e --configuration=test",
     "lint": "ng lint",
