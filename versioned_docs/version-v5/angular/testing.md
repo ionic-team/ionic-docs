@@ -591,7 +591,7 @@ If the end-to-end tests modify data in any way it is helpful to reset the data t
 
 Here is an example:
 
-```JavaScript
+```javascript
   onCleanUp() {
     const axios = require('axios');
     return axios
