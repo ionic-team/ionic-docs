@@ -8,7 +8,7 @@ This guide covers how to run and debug Ionic apps on Android emulators and devic
 
 ## Android Studio
 
-<a href="https://developer.android.com/studio/" target="_blank">Android Studio</a> is the IDE for creating native Android apps. It includes the [Android SDK](../reference/glossary.md#android-sdk), which will need to be configured for use in the command line.
+[Android Studio](https://developer.android.com/studio/) is the IDE for creating native Android apps. It includes the [Android SDK](../reference/glossary.md#android-sdk), which will need to be configured for use in the command line.
 
 Android Studio is also used to [create Android virtual devices](android.md#creating-an-android-virtual-device), which are required for the Android emulator. Ionic apps can also be [launched to a device](android.md#set-up-an-android-device).
 
@@ -56,9 +56,9 @@ In `~/.bashrc`, `~/.bash_profile`, or similar shell startup scripts, make the fo
    $ export PATH=$PATH:$ANDROID_SDK_ROOT/emulator
    ```
 
-   <blockquote>
-     <p>For <code>apksigner</code> and <code>zipalign</code>, <code>$ANDROID_SDK_ROOT/build-tools&lt;version></code> must also be added to <code>PATH</code>.</p>
-   </blockquote>
+   :::note
+   For `apksigner` and `zipalign`, `$ANDROID_SDK_ROOT/build-tools&lt;version>` must also be added to `PATH`.
+   :::
 
 ### Creating an Android Virtual Device
 

@@ -29,9 +29,15 @@
   width: 12rem;
 
   overflow-y: auto;
+  overflow-x: clip;
 
   > .list {
     margin-inline-start: calc(var(--ifm-toc-padding-horizontal) * -2);
+  }
+
+  code {
+    word-break: break-word;
+    display: inline-block;
   }
 }
 

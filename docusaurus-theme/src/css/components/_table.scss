@@ -42,6 +42,10 @@ th {
 th,
 td {
   line-height: 1.6;
+
+  code {
+    display: inline-block;
+  }
 }
 
 thead th:empty {
