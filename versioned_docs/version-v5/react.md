@@ -7,8 +7,8 @@ image: /img/meta/open-graph.png
 description: Ionic is the app platform for web developers. Build amazing mobile, web, and desktop apps all with one shared code base and open web standards
 ---
 
-import DocsCard from '@site/src/components/DocsCard';
-import DocsCards from '@site/src/components/DocsCards';
+import DocsCard from '@theme/DocsCard';
+import DocsCards from '@theme/DocsCards';
 
 <div class='flex main-flex'>
   <div class="pull-left">

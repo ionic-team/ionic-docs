@@ -1,9 +1,9 @@
 import { Component, Element, State, h } from '@stencil/core';
-import CodeColor from '@site/src/components/CodeColor';
+import CodeColor from '@theme/CodeColor';
 
 @Component({
   tag: 'layered-colors-select',
-  styleUrl: 'layered-colors-select.css'
+  styleUrl: 'layered-colors-select.css',
 })
 export class ColorBlock {
   @Element() el!: HTMLElement;
@@ -16,9 +16,9 @@ export class ColorBlock {
 
   render() {
     const selectOptions = {
-      'header': 'Select a Color',
-      'subHeader': 'The variations of the color will reflect in the table',
-      'cssClass': 'layered-colors-select-interface'
+      header: 'Select a Color',
+      subHeader: 'The variations of the color will reflect in the table',
+      cssClass: 'layered-colors-select-interface',
     };
 
     const color = this.color;
@@ -28,59 +28,74 @@ export class ColorBlock {
         property: `--ion-color-${color}`,
         name: 'Base',
         description: 'The main color that all variations are derived from',
-        value: getComputedStyle(this.el).getPropertyValue(`--ion-color-${color}`)
+        value: getComputedStyle(this.el).getPropertyValue(
+          `--ion-color-${color}`,
+        ),
       },
       {
         property: `--ion-color-${color}-rgb`,
         name: 'Base (rgb)',
         rgb: true,
         description: 'The base color in red, green, blue format',
-        value: getComputedStyle(this.el).getPropertyValue(`--ion-color-${color}-rgb`)
+        value: getComputedStyle(this.el).getPropertyValue(
+          `--ion-color-${color}-rgb`,
+        ),
       },
       {
         property: `--ion-color-${color}-contrast`,
         name: 'Contrast',
-        description: 'The opposite of the base color, should be visible against the base color',
-        value: getComputedStyle(this.el).getPropertyValue(`--ion-color-${color}-contrast`)
+        description:
+          'The opposite of the base color, should be visible against the base color',
+        value: getComputedStyle(this.el).getPropertyValue(
+          `--ion-color-${color}-contrast`,
+        ),
       },
       {
         property: `--ion-color-${color}-contrast-rgb`,
         name: 'Contrast (rgb)',
         rgb: true,
         description: 'The contrast color in red, green, blue format',
-        value: getComputedStyle(this.el).getPropertyValue(`--ion-color-${color}-contrast-rgb`)
+        value: getComputedStyle(this.el).getPropertyValue(
+          `--ion-color-${color}-contrast-rgb`,
+        ),
       },
       {
         property: `--ion-color-${color}-shade`,
         name: 'Shade',
         description: 'A slightly darker version of the base color',
-        value: getComputedStyle(this.el).getPropertyValue(`--ion-color-${color}-shade`)
+        value: getComputedStyle(this.el).getPropertyValue(
+          `--ion-color-${color}-shade`,
+        ),
       },
       {
         property: `--ion-color-${color}-tint`,
         name: 'Tint',
         description: 'A slightly lighter version of the base color',
-        value: getComputedStyle(this.el).getPropertyValue(`--ion-color-${color}-tint`)
-      }
+        value: getComputedStyle(this.el).getPropertyValue(
+          `--ion-color-${color}-tint`,
+        ),
+      },
     ];
 
     const blockItems = variations.map(variation => {
-      const codeColor = variation.rgb ? `rgb(${variation.value})` : `${variation.value}`;
+      const codeColor = variation.rgb
+        ? `rgb(${variation.value})`
+        : `${variation.value}`;
 
       return (
         <tr>
-          <td class="color-name">
-            {variation.name}
-          </td>
+          <td class="color-name">{variation.name}</td>
           <td class="color-property">
             <code>{variation.property}</code>
           </td>
           <td class="color-value">
-            <CodeColor mode="md" display={variation.value} value={codeColor}></CodeColor>
+            <CodeColor
+              mode="md"
+              display={variation.value}
+              value={codeColor}
+            ></CodeColor>
           </td>
-          <td class="color-description">
-            {variation.description}
-          </td>
+          <td class="color-description">{variation.description}</td>
         </tr>
       );
     });
@@ -90,7 +105,7 @@ export class ColorBlock {
         <span
           class="color-dot"
           style={{
-            'background-color': `var(--ion-color-${this.color})`
+            'background-color': `var(--ion-color-${this.color})`,
           }}
         />
         <ion-select

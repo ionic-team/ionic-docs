@@ -2,8 +2,8 @@
 sidebar_label: Overview
 ---
 
-import DocsCard from '@site/src/components/DocsCard';
-import DocsCards from '@site/src/components/DocsCards';
+import DocsCard from '@theme/DocsCard';
+import DocsCards from '@theme/DocsCards';
 
 # Ionic Vue Overview
 
@@ -36,7 +36,6 @@ $ ionic start myApp tabs --type vue
 $ ionic serve █
 ```
 
-
 ## Resources
 
 <DocsCards>
@@ -51,6 +50,5 @@ $ ionic serve █
   <DocsCard header="Lifecycle" href="lifecycle" icon="/icons/feature-guide-components-icon.png">
     <p>Learn about using Ionic lifecycle events in class components and with hooks</p>
   </DocsCard>
-
 
 </DocsCards>

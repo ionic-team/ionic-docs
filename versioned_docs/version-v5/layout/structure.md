@@ -2,8 +2,8 @@
 initialTab: 'preview'
 ---
 
-import DocsCard from '@site/src/components/DocsCard';
-import DocsCards from '@site/src/components/DocsCards';
+import DocsCard from '@theme/DocsCard';
+import DocsCards from '@theme/DocsCards';
 
 # Structure
 
@@ -61,7 +61,7 @@ As you can see, a toolbar in a header appears above the content. Sometimes an ap
 
 ### Header and Footer
 
-These can also be combined on one page to have a toolbar above *and* below the content.
+These can also be combined on one page to have a toolbar above _and_ below the content.
 
 ```html
 <ion-app>
@@ -134,15 +134,11 @@ A standard layout among mobile apps includes the ability to toggle a side [menu]
 
     <ion-content>
       <ion-list>
-        <ion-list-header>
-          Navigate
-        </ion-list-header>
+        <ion-list-header> Navigate </ion-list-header>
         <ion-menu-toggle auto-hide="false">
           <ion-item button>
-            <ion-icon slot="start" name='home'></ion-icon>
-            <ion-label>
-              Home
-            </ion-label>
+            <ion-icon slot="start" name="home"></ion-icon>
+            <ion-label> Home </ion-label>
           </ion-item>
         </ion-menu-toggle>
       </ion-list>
@@ -176,13 +172,11 @@ A standard layout among mobile apps includes the ability to toggle a side [menu]
 
 You can view a live example of this setup in Angular [here](https://stackblitz.com/edit/ionic-ng-menu-layout) and for React [here](https://stackblitz.com/edit/ionic-react-menu).
 
-
 ## Split Pane Layout
 
 A [split pane](../api/split-pane.md) layout has a more complex structure because it can combine the previous layouts. It allows for multiple views to be displayed when the viewport is above a specified breakpoint. If the device's screen size is below a certain size, the split pane view will be hidden.
 
 By default, the split pane view will show when the screen is larger than `768px`, or the `md` breakpoint, but this can be customized to use different breakpoints by setting the `when` property. Below is an example where the split pane contains a menu that is visible for `sm` screens and up, or when the viewport is larger than `576px`. By resizing the browser horizontally so that the app is smaller than this, the split pane view will disappear.
-
 
 ```html
 <ion-app>
@@ -196,15 +190,11 @@ By default, the split pane view will show when the screen is larger than `768px`
 
       <ion-content>
         <ion-list>
-          <ion-list-header>
-            Navigate
-          </ion-list-header>
+          <ion-list-header> Navigate </ion-list-header>
           <ion-menu-toggle auto-hide="false">
             <ion-item button>
-              <ion-icon slot="start" name='home'></ion-icon>
-              <ion-label>
-                Home
-              </ion-label>
+              <ion-icon slot="start" name="home"></ion-icon>
+              <ion-label> Home </ion-label>
             </ion-item>
           </ion-menu-toggle>
         </ion-list>
@@ -228,7 +218,6 @@ By default, the split pane view will show when the screen is larger than `768px`
         <h1>Main Content</h1>
       </ion-content>
     </div>
-
   </ion-split-pane>
 </ion-app>
 ```

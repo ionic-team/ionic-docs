@@ -4,8 +4,8 @@ description: "This application plugin is based on W3C Geolocation API Specificat
 sidebar_label: 'Geolocation'
 ---
 
-import DocsCard from '@site/src/components/DocsCard';
-import DocsButton from '@site/src/components/DocsButton';
+import DocsCard from '@theme/DocsCard';
+import DocsButton from '@theme/DocsButton';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import CodeBlock from '@theme/CodeBlock';

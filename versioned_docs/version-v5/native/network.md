@@ -4,8 +4,8 @@ description: 'The Ionic native network plugin requires the Cordova plugin: cordo
 sidebar_label: 'Network'
 ---
 
-import DocsCard from '@site/src/components/DocsCard';
-import DocsButton from '@site/src/components/DocsButton';
+import DocsCard from '@theme/DocsCard';
+import DocsButton from '@theme/DocsButton';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import CodeBlock from '@theme/CodeBlock';

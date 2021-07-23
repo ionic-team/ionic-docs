@@ -4,12 +4,11 @@ initialTab: 'preview'
 inlineHtmlPreviews: true
 ---
 
-import CodeColor from '@site/src/components/CodeColor';
+import CodeColor from '@theme/CodeColor';
 
 # Advanced Theming
 
 CSS-based theming enables apps to customize the colors quickly by loading a CSS file or changing a few CSS property values.
-
 
 ## Globals
 
@@ -17,34 +16,32 @@ While the application and stepped variables in the themes section are useful for
 
 ### Application Variables
 
-| Name                                     | Description                                                                                     |
-| -----------------------------------------| ------------------------------------------------------------------------------------------------|
-| `--ion-font-family`                      | Font family of the app                                                                          |
-| `--ion-statusbar-padding`                | Statusbar padding top of the app                                                                |
-| `--ion-safe-area-top`                    | Adjust the safe area inset top of the app                                                       |
-| `--ion-safe-area-right`                  | Adjust the safe area inset right of the app                                                     |
-| `--ion-safe-area-bottom`                 | Adjust the safe area inset bottom of the app                                                    |
-| `--ion-safe-area-left`                   | Adjust the safe area inset left of the app                                                      |
-| `--ion-margin`                           | Adjust the margin of the [Margin attributes](../layout/css-utilities.md#element-margin)         |
-| `--ion-padding`                          | Adjust the padding of the [Padding attributes](../layout/css-utilities.md#element-padding)      |
+| Name                      | Description                                                                                |
+| ------------------------- | ------------------------------------------------------------------------------------------ |
+| `--ion-font-family`       | Font family of the app                                                                     |
+| `--ion-statusbar-padding` | Statusbar padding top of the app                                                           |
+| `--ion-safe-area-top`     | Adjust the safe area inset top of the app                                                  |
+| `--ion-safe-area-right`   | Adjust the safe area inset right of the app                                                |
+| `--ion-safe-area-bottom`  | Adjust the safe area inset bottom of the app                                               |
+| `--ion-safe-area-left`    | Adjust the safe area inset left of the app                                                 |
+| `--ion-margin`            | Adjust the margin of the [Margin attributes](../layout/css-utilities.md#element-margin)    |
+| `--ion-padding`           | Adjust the padding of the [Padding attributes](../layout/css-utilities.md#element-padding) |
 
 ### Grid Variables
 
-| Name                                     | Description                                        |
-| -----------------------------------------| ---------------------------------------------------|
-| `--ion-grid-columns`                     | Number of columns in the grid                      |
-| `--ion-grid-padding-xs`                  | Padding of the grid for xs breakpoints             |
-| `--ion-grid-padding-sm`                  | Padding of the grid for sm breakpoints             |
-| `--ion-grid-padding-md`                  | Padding of the grid for md breakpoints             |
-| `--ion-grid-padding-lg`                  | Padding of the grid for lg breakpoints             |
-| `--ion-grid-padding-xl`                  | Padding of the grid for xl breakpoints             |
-| `--ion-grid-column-padding-xs`           | Padding of the grid columns for xs breakpoints     |
-| `--ion-grid-column-padding-sm`           | Padding of the grid columns for sm breakpoints     |
-| `--ion-grid-column-padding-md`           | Padding of the grid columns for md breakpoints     |
-| `--ion-grid-column-padding-lg`           | Padding of the grid columns for lg breakpoints     |
-| `--ion-grid-column-padding-xl`           | Padding of the grid columns for xl breakpoints     |
-
-
+| Name                           | Description                                    |
+| ------------------------------ | ---------------------------------------------- |
+| `--ion-grid-columns`           | Number of columns in the grid                  |
+| `--ion-grid-padding-xs`        | Padding of the grid for xs breakpoints         |
+| `--ion-grid-padding-sm`        | Padding of the grid for sm breakpoints         |
+| `--ion-grid-padding-md`        | Padding of the grid for md breakpoints         |
+| `--ion-grid-padding-lg`        | Padding of the grid for lg breakpoints         |
+| `--ion-grid-padding-xl`        | Padding of the grid for xl breakpoints         |
+| `--ion-grid-column-padding-xs` | Padding of the grid columns for xs breakpoints |
+| `--ion-grid-column-padding-sm` | Padding of the grid columns for sm breakpoints |
+| `--ion-grid-column-padding-md` | Padding of the grid columns for md breakpoints |
+| `--ion-grid-column-padding-lg` | Padding of the grid columns for lg breakpoints |
+| `--ion-grid-column-padding-xl` | Padding of the grid columns for xl breakpoints |
 
 ## Known Limitations
 
@@ -58,14 +55,14 @@ There is not yet full <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/
   --violet: #8a2be2;
 
   /* rgba(#8a2be2, .5) */
-  color: rgba(var(--violet), .5) /* ERROR! Doesn't support hex. */
+  color: rgba(var(--violet), 0.5); /* ERROR! Doesn't support hex. */
 }
 
 .working {
   --violet-rgb: 138, 43, 226;
 
   /* rgba(138, 43, 226, .5) */
-  color: rgba(var(--violet-rgb), .5) /* WORKS! */
+  color: rgba(var(--violet-rgb), 0.5); /* WORKS! */
 }
 ```
 
@@ -78,12 +75,12 @@ Ionic uses colors with an opacity (alpha) in several components. In order for th
 ```css
 :root {
   /* These examples use the same color: sienna. */
-  --ion-text-color:             #a0522d;
-  --ion-text-color-rgb:         160, 82, 45;
+  --ion-text-color: #a0522d;
+  --ion-text-color-rgb: 160, 82, 45;
 
   /* These examples use the same color: lightsteelblue. */
-  --ion-background-color:       #b0c4de;
-  --ion-background-color-rgb:   176, 196, 222;
+  --ion-background-color: #b0c4de;
+  --ion-background-color-rgb: 176, 196, 222;
 }
 ```
 
@@ -94,7 +91,6 @@ body {
   color: rgba(var(--ion-text-color-rgb), 0.25);
 }
 ```
-
 
 ### Variables in Media Queries
 
@@ -109,7 +105,6 @@ CSS variables in [media queries](https://developer.mozilla.org/en-US/docs/Web/CS
   /* Doesn't work :( */
 }
 ```
-
 
 ### Modifying CSS Color Variables
 
@@ -131,14 +126,14 @@ $text-lighter: lighten($text, 15);
 
 After running through the Sass compiler, the colors will have the following values:
 
-| Variable            | Value                                                     |
-| --------------------| ----------------------------------------------------------|
-| `$background`       | <CodeColor mode="md" value="#3880ff"></CodeColor>         |
-| `$background-shade` | <CodeColor mode="md" value="#3171e0"></CodeColor>         |
-| `$background-tint`  | <CodeColor mode="md" value="#4c8dff"></CodeColor>         |
-| `$text`             | <CodeColor mode="md" value="#444444"></CodeColor>         |
-| `$text-darker`      | <CodeColor mode="md" value="#1e1e1e"></CodeColor>         |
-| `$text-lighter`     | <CodeColor mode="md" value="#6a6a6a"></CodeColor>         |
+| Variable            | Value                                             |
+| ------------------- | ------------------------------------------------- |
+| `$background`       | <CodeColor mode="md" value="#3880ff"></CodeColor> |
+| `$background-shade` | <CodeColor mode="md" value="#3171e0"></CodeColor> |
+| `$background-tint`  | <CodeColor mode="md" value="#4c8dff"></CodeColor> |
+| `$text`             | <CodeColor mode="md" value="#444444"></CodeColor> |
+| `$text-darker`      | <CodeColor mode="md" value="#1e1e1e"></CodeColor> |
+| `$text-lighter`     | <CodeColor mode="md" value="#6a6a6a"></CodeColor> |
 
 However, because CSS variables can be set at runtime and are more dynamic, it is not currently possible to manipulate them using a simple function.
 

@@ -2,14 +2,14 @@
 hide_table_of_contents: true
 ---
 
-import DocsCard from '@site/src/components/DocsCard';
-import DocsCards from '@site/src/components/DocsCards';
+import DocsCard from '@theme/DocsCard';
+import DocsCards from '@theme/DocsCards';
 
 # Welcome to Studio
 
 Ionic Studio is a fast and easy app builder that helps teams build and prototype apps with minimal coding.
 
-Studio is designed to integrate into an existing developer workflow, rather than replace it, enabling developers and architects to build visually *or* drop down to code using their favorite tools. 
+Studio is designed to integrate into an existing developer workflow, rather than replace it, enabling developers and architects to build visually _or_ drop down to code using their favorite tools.
 
 Studio
 fully supports bringing code back into the tool, something virtually unheard of in the app development tools market.

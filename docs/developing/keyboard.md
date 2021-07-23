@@ -1,4 +1,4 @@
-import Codepen from '@site/src/components/Codepen';
+import Codepen from '@theme/Codepen';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 

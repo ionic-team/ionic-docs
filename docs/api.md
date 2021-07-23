@@ -2,7 +2,7 @@
 template: api-index
 ---
 
-import APIList from '@site/src/components/APIList';
+import APIList from '@theme/APIList';
 
 # API Index
 

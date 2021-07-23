@@ -4,8 +4,8 @@ description: 'This Cordova plugin displays and hides a splash screen during appl
 sidebar_label: 'Splash Screen'
 ---
 
-import DocsCard from '@site/src/components/DocsCard';
-import DocsButton from '@site/src/components/DocsButton';
+import DocsCard from '@theme/DocsCard';
+import DocsButton from '@theme/DocsButton';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import CodeBlock from '@theme/CodeBlock';

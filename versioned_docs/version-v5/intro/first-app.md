@@ -2,8 +2,8 @@
 hide_table_of_contents: true
 ---
 
-import DocsCard from '@site/src/components/DocsCard';
-import DocsCards from '@site/src/components/DocsCards';
+import DocsCard from '@theme/DocsCard';
+import DocsCards from '@theme/DocsCards';
 
 # Build Your First App Tutorial
 

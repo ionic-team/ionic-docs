@@ -84,7 +84,7 @@ function renderReadme({ readme, encapsulation }) {
   return `
 ${title}
 
-import EncapsulationPill from '@site/src/components/EncapsulationPill';
+import EncapsulationPill from '@theme/EncapsulationPill';
 
 <EncapsulationPill type="${encapsulation}" />
 

@@ -1,16 +1,14 @@
 ---
-sidebar_label: "Tealium"
+sidebar_label: 'Tealium'
 ---
 
-
-import DocsCard from '@site/src/components/DocsCard';
-import DocsButton from '@site/src/components/DocsButton';
+import DocsCard from '@theme/DocsCard';
+import DocsButton from '@theme/DocsButton';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import CodeBlock from '@theme/CodeBlock';
 
 # Tealium
-
 
 This plugin provides a TypeScript wrapper around the [Tealium](https://www.tealium.com) Cordova plugin for Ionic Native.
 
@@ -28,7 +26,6 @@ For full documentation, see [https://community.tealiumiq.com/t5/Mobile-Libraries
     <DocsButton className="native-ee-detail">Contact Us Today!</DocsButton>
   </div>
 </DocsCard>
-
 
 <h2 id="installation">
   <a href="#installation">Installation</a>
@@ -58,7 +55,7 @@ For full documentation, see [https://community.tealiumiq.com/t5/Mobile-Libraries
 </Tabs>
 
 ## Supported Platforms
-  
+
 - Android
 - iOS
 
@@ -67,10 +64,8 @@ For full documentation, see [https://community.tealiumiq.com/t5/Mobile-Libraries
 ### React
 
 [Learn more about using Ionic Native components in React](../native-community.md#react)
-  
 
 ### Angular
-
 
 ```
 import { Tealium, TealConfig } from '@ionic-native/tealium/ngx';

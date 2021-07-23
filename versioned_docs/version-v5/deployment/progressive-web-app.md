@@ -4,8 +4,8 @@ description: 'Ionic Applications are built with web technologies that run just a
 sidebar_label: Progressive Web App (PWA)
 ---
 
-import DocsCard from '@site/src/components/DocsCard';
-import DocsCards from '@site/src/components/DocsCards';
+import DocsCard from '@theme/DocsCard';
+import DocsCards from '@theme/DocsCards';
 
 # Deploying a Progressive Web App
 

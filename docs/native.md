@@ -6,8 +6,8 @@ hide_table_of_contents: true
 container_width: 58rem
 ---
 
-import DocsCard from '@site/src/components/DocsCard';
-import DocsCards from '@site/src/components/DocsCards';
+import DocsCard from '@theme/DocsCard';
+import DocsCards from '@theme/DocsCards';
 import { Helmet } from "react-helmet";
 
 # Native APIs

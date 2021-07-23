@@ -2,6 +2,6 @@
 title: Release Notes
 ---
 
-import ReleaseNotes from '@site/src/components/ReleaseNotes';
+import ReleaseNotes from '@theme/ReleaseNotes';
 
 <ReleaseNotes />

@@ -1,4 +1,4 @@
-import DocsButton from '@site/src/components/DocsButton';
+import DocsButton from '@theme/DocsButton';
 
 # Creating a Photo Gallery with Device Storage
 
