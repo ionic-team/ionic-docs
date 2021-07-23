@@ -29,10 +29,8 @@ export default function VersionSelector({
   const versions = useVersions(docsPluginId);
   const latestVersion = useLatestVersion(docsPluginId);
 
-  const {
-    preferredVersion,
-    savePreferredVersionName,
-  } = useDocsPreferredVersion(docsPluginId);
+  const { preferredVersion, savePreferredVersionName } =
+    useDocsPreferredVersion(docsPluginId);
 
   function getItems() {
     const versionLinks = versions.map(version => {
@@ -111,17 +109,6 @@ export default function VersionSelector({
             </li>
           );
         })}
-        <hr />
-        <li
-          className={clsx(
-            'version-selector__dropdown-item',
-            styles.dropdownItem,
-            'version-selector__dropdown-item-bottom',
-            styles.dropdownItemBottom,
-          )}
-        >
-          All Releases
-        </li>
       </ul>
     </div>
   );
