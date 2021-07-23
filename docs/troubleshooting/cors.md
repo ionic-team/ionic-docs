@@ -12,9 +12,9 @@ When the origin where your app is served (e.g. `http://localhost:8100` with `ion
 
 CORS errors are common in web apps when a cross-origin request is made but the server doesn't return the required headers in the response (is not CORS-enabled):
 
-<blockquote>
-  XMLHttpRequest cannot load https://api.example.com. No 'Access-Control-Allow-Origin' header is present on the requested resource. Origin 'http://localhost:8100' is therefore not allowed access.
-</blockquote>
+:::note
+XMLHttpRequest cannot load https://api.example.com. No 'Access-Control-Allow-Origin' header is present on the requested resource. Origin 'http://localhost:8100' is therefore not allowed access.
+:::
 
 ## How does CORS work
 
