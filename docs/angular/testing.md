@@ -553,17 +553,17 @@ Add a configuration at `/projects/app/architect/build/configurations` called `te
 Add a configuration at `/projects/app/architect/serve/configurations` called `test` that points the browser target at the `test` build configuration that was defined above.
 
 ```json
-            "test": {
-              "browserTarget": "app:build:test"
-            }
+"test": {
+  "browserTarget": "app:build:test"
+}
 ```
 
 Add a configuration at `/projects/app-e2e/architect/e2e/configurations` called `test` that does points the dev server target at the `test` serve configuration defined above.
 
 ```json
-            "test": {
-              "devServerTarget": "app:serve:test"
-            }
+"test": {
+  "devServerTarget": "app:serve:test"
+}
 ```
 
 ##### Modify the `package.json` File
@@ -571,15 +571,15 @@ Add a configuration at `/projects/app-e2e/architect/e2e/configurations` called `
 Modify the `package.json` file so that `npm run e2e` uses the `test` configuration.
 
 ```json
-  "scripts": {
-    "e2e": "ng e2e --configuration=test",
-    "lint": "ng lint",
-    "ng": "ng",
-    "start": "ng serve",
-    "test": "ng test",
-    "test:dev": "ng test --browsers=ChromeHeadlessCI",
-    "test:ci": "ng test --no-watch --browsers=ChromeHeadlessCI"
-  },
+"scripts": {
+  "e2e": "ng e2e --configuration=test",
+  "lint": "ng lint",
+  "ng": "ng",
+  "start": "ng serve",
+  "test": "ng test",
+  "test:dev": "ng test --browsers=ChromeHeadlessCI",
+  "test:ci": "ng test --no-watch --browsers=ChromeHeadlessCI"
+},
 ```
 
 #### Test Cleanup
@@ -592,16 +592,16 @@ If the end-to-end tests modify data in any way it is helpful to reset the data t
 Here is an example:
 
 ```javascript
-  onCleanUp() {
-    const axios = require('axios');
-    return axios
-      .post(
-        'https://e2e-test-api.my-great-app.com/purgeDatabase',
-        {}
-      )
-      .then(res => {
-        console.log(res.data);
-      })
-      .catch(err => console.log(err));
-  }
+onCleanUp() {
+  const axios = require('axios');
+  return axios
+    .post(
+      'https://e2e-test-api.my-great-app.com/purgeDatabase',
+      {}
+    )
+    .then(res => {
+      console.log(res.data);
+    })
+    .catch(err => console.log(err));
+}
 ```
