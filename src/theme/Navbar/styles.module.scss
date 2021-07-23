@@ -37,7 +37,7 @@ html[data-theme='dark'] {
 
 :global {
   .navbar__inner {
-    // align-items: center;
+    justify-content: normal;
   }
 
   .navbar__item {
@@ -154,6 +154,15 @@ html[data-theme='dark'] {
   }
 }
 
+.navbarHideable {
+  transition: transform var(--ifm-transition-fast) ease;
+}
+
+.navbarHidden {
+  transform: translate3d(0, calc(-100% - 2px), 0);
+}
+
+//#region -------- MEDIUM STYLES ---------
 @media (min-width: 997px) and (max-width: 1215px) {
   :global {
     .navbar__link--support,
@@ -162,7 +171,9 @@ html[data-theme='dark'] {
     }
   }
 }
+//#endregion
 
+//#region -------- SMALL STYLES ----------
 @media (max-width: 996px) {
   :global {
     .navbar__toggle {
@@ -191,11 +202,4 @@ html[data-theme='dark'] {
     display: none !important;
   }
 }
-
-.navbarHideable {
-  transition: transform var(--ifm-transition-fast) ease;
-}
-
-.navbarHidden {
-  transform: translate3d(0, calc(-100% - 2px), 0);
-}
+//#endregion
