@@ -76,6 +76,11 @@ function renderReadme({ readme, encapsulation }) {
   const title = readme.substring(0, endIndex);
   const rest = readme.substring(endIndex);
 
+  const addAdmonitions = text =>
+    text
+      .replace(/\n\n>/gms, '\n\n:::note')
+      .replace(/:::note(.*?)\n\n/gms, ':::note\n$1\n:::\n\n');
+
   return `
 ${title}
 
@@ -93,7 +98,7 @@ import TOCInline from '@theme/TOCInline';
   })}
 />
 
-${rest}
+${addAdmonitions(rest)}
   `;
 }
 
