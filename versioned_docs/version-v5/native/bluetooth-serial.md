@@ -1,7 +1,6 @@
 ---
-sidebar_label: "Bluetooth Serial"
+sidebar_label: 'Bluetooth Serial'
 ---
-
 
 import DocsCard from '@site/src/components/DocsCard';
 import DocsButton from '@site/src/components/DocsButton';
@@ -25,7 +24,6 @@ This plugin enables serial communication over Bluetooth. It was written for comm
     <DocsButton className="native-ee-detail">Contact Us Today!</DocsButton>
   </div>
 </DocsCard>
-
 
 <h2 id="installation">
   <a href="#installation">Installation</a>
@@ -55,7 +53,7 @@ This plugin enables serial communication over Bluetooth. It was written for comm
 </Tabs>
 
 ## Supported Platforms
-  
+
 - Android
 - iOS
 - Windows Phone 8
@@ -65,12 +63,10 @@ This plugin enables serial communication over Bluetooth. It was written for comm
 ### React
 
 [Learn more about using Ionic Native components in React](../native-community.md#react)
-  
 
 ### Angular
 
-
-```typescript
+```tsx
 import { BluetoothSerial } from '@ionic-native/bluetooth-serial/ngx';
 
 constructor(private bluetoothSerial: BluetoothSerial) { }
@@ -93,4 +89,3 @@ this.bluetoothSerial.write(data).then(success, failure);
 // Array Buffer
 this.bluetoothSerial.write(data.buffer).then(success, failure);
 ```
-

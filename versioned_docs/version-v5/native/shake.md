@@ -1,7 +1,6 @@
 ---
-sidebar_label: "Shake"
+sidebar_label: 'Shake'
 ---
-
 
 import DocsCard from '@site/src/components/DocsCard';
 import DocsButton from '@site/src/components/DocsButton';
@@ -25,7 +24,6 @@ Handles shake gesture
     <DocsButton className="native-ee-detail">Contact Us Today!</DocsButton>
   </div>
 </DocsCard>
-
 
 <h2 id="installation">
   <a href="#installation">Installation</a>
@@ -55,7 +53,7 @@ Handles shake gesture
 </Tabs>
 
 ## Supported Platforms
-  
+
 - iOS
 
 ## Usage
@@ -63,12 +61,10 @@ Handles shake gesture
 ### React
 
 [Learn more about using Ionic Native components in React](../native-community.md#react)
-  
 
 ### Angular
 
-
-```typescript
+```tsx
 import { Shake } from '@ionic-native/shake/ngx';
 
 constructor(private shake: Shake) { }
@@ -81,4 +77,3 @@ const watch = this.shake.startWatch(60).subscribe(() => {
 
 watch.unsubscribe();
 ```
-

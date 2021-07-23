@@ -1,7 +1,6 @@
 ---
-sidebar_label: "Purchases"
+sidebar_label: 'Purchases'
 ---
-
 
 import DocsCard from '@site/src/components/DocsCard';
 import DocsButton from '@site/src/components/DocsButton';
@@ -11,10 +10,10 @@ import CodeBlock from '@theme/CodeBlock';
 
 # Purchases
 
-
 Purchases is a cross platform solution for managing in-app subscriptions. A backend is also provided via [RevenueCat](https://www.revenuecat.com)
 
 ## Features
+
 |     | RevenueCat                                                                                                                                                   |
 | --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | ✅  | Server-side receipt validation                                                                                                                               |
@@ -23,14 +22,13 @@ Purchases is a cross platform solution for managing in-app subscriptions. A back
 | 📊  | Analytics - automatic calculation of metrics like conversion, mrr, and churn                                                                                 |
 | 📝  | [Online documentation](https://docs.revenuecat.com/docs) up to date                                                                                          |
 | 🔀  | [Integrations](https://www.revenuecat.com/integrations) - over a dozen integrations to easily send purchase data where you need it                           |
-| 💯  | Well maintained - [frequent releases](https://github.com/RevenueCat/cordova-plugin-purchases/releases)                                                                  |
-| 📮  | Great support - [Help Center](https://revenuecat.zendesk.com)                                                                                           |
+| 💯  | Well maintained - [frequent releases](https://github.com/RevenueCat/cordova-plugin-purchases/releases)                                                       |
+| 📮  | Great support - [Help Center](https://revenuecat.zendesk.com)                                                                                                |
 | 🤩  | Awesome [new features](https://trello.com/b/RZRnWRbI/revenuecat-product-roadmap)                                                                             |
 
 ## Getting Started
 
 For more detailed information, you can view our complete documentation at [docs.revenuecat.com](https://docs.revenuecat.com/docs).
-
 
 <p><a href="https://github.com/RevenueCat/cordova-plugin-purchases" target="_blank" rel="noopener" className="git-link">
   <svg viewBox="0 0 512 512"><path d="M416 160c0-35.3-28.7-64-64-64s-64 28.7-64 64c0 23.7 12.9 44.3 32 55.4v8.6c0 19.9-7.8 33.7-25.3 44.9-15.4 9.8-38.1 17.1-67.5 21.5-14 2.1-25.7 6-35.2 10.7V151.4c19.1-11.1 32-31.7 32-55.4 0-35.3-28.7-64-64-64S96 60.7 96 96c0 23.7 12.9 44.3 32 55.4v209.2c-19.1 11.1-32 31.7-32 55.4 0 35.3 28.7 64 64 64s64-28.7 64-64c0-16.6-6.3-31.7-16.7-43.1 1.9-4.9 9.7-16.3 29.4-19.3 38.8-5.8 68.9-15.9 92.3-30.8 36-22.8 55-57 55-98.8v-8.6c19.1-11.1 32-31.7 32-55.4zM160 56c22.1 0 40 17.9 40 40s-17.9 40-40 40-40-17.9-40-40 17.9-40 40-40zm0 400c-22.1 0-40-17.9-40-40s17.9-40 40-40 40 17.9 40 40-17.9 40-40 40zm192-256c-22.1 0-40-17.9-40-40s17.9-40 40-40 40 17.9 40 40-17.9 40-40 40z"></path></svg> https://github.com/RevenueCat/cordova-plugin-purchases
@@ -44,7 +42,6 @@ For more detailed information, you can view our complete documentation at [docs.
     <DocsButton className="native-ee-detail">Contact Us Today!</DocsButton>
   </div>
 </DocsCard>
-
 
 <h2 id="installation">
   <a href="#installation">Installation</a>
@@ -74,7 +71,7 @@ For more detailed information, you can view our complete documentation at [docs.
 </Tabs>
 
 ## Supported Platforms
-  
+
 - Android
 - iOS
 
@@ -83,10 +80,8 @@ For more detailed information, you can view our complete documentation at [docs.
 ### React
 
 [Learn more about using Ionic Native components in React](../native-community.md#react)
-  
 
 ### Angular
-
 
 #### 1. Get a RevenueCat API key
 
@@ -96,7 +91,7 @@ Log in to the [RevenueCat dashboard](https://app.revenuecat.com) and obtain a fr
 
 You should only configure _Purchases_ once (usually on app launch) as soon as your app has a unique user id for your user. This can be when a user logs in if you have accounts or on launch if you can generate a random user identifier.
 
-```typescript
+```tsx
  import { Platform } from "@ionic/angular";
  import { Purchases } from "@ionic-native/purchases/ngx";
 
@@ -109,9 +104,10 @@ You should only configure _Purchases_ once (usually on app launch) as soon as yo
 ```
 
 #### 3. Quickstart
+
 Please follow the [Quickstart Guide](https://docs.revenuecat.com/docs/) for more information on how to use the SDK
 
 ### Requirements
+
 Requires XCode 11.0+ and minimum target iOS 9.0+
 This plugin has been tested with cordova-plugin-purchases@
-

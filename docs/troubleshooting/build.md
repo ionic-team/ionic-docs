@@ -4,21 +4,20 @@ disableHtmlPreviews: true
 
 # Build Errors
 
-
 ## Common mistakes
 
 ### Forgetting Parentheses on a Decorator
 
 Decorators should have parentheses `()` after an annotation. Some examples include: `@Injectable()`, `@Optional()`, `@Input()`, etc.
 
-```typescript
+```tsx
 @Directive({
-  selector: 'my-dir'
+  selector: 'my-dir',
 })
 class MyDirective {
   // Wrong, should be @Optional()
   // @Optional does nothing here, so MyDirective will error if parent is undefined
-  constructor( @Optional parent: ParentComponent) { }
+  constructor(@Optional parent: ParentComponent) {}
 }
 ```
 
@@ -35,17 +34,15 @@ This exception means that Angular is confused about one or more of the parameter
 - You are importing the parameter's class.
 - You have properly annotated the parameter or specified its type.
 
-```typescript
+```tsx
 import { MyService } from 'my-service'; // Don't forget to import me!
 
 @Component({
-  template: `Hello World`
+  template: `Hello World`,
 })
 export class MyClass {
   // service is of type MyService
-  constructor(service: MyService) {
-
-  }
+  constructor(service: MyService) {}
 }
 ```
 
@@ -57,23 +54,22 @@ import { forwardRef } from '@angular/core';
 @Component({
   selector: 'my-button',
   template: `<div>
-               <icon></icon>
-               <input type="button" />
-             </div>`,
-  directives: [forwardRef(() => MyIcon)] // MyIcon has not been defined yet
-})                                       // forwardRef resolves as MyIcon when MyIcon is needed
+    <icon></icon>
+    <input type="button" />
+  </div>`,
+  directives: [forwardRef(() => MyIcon)], // MyIcon has not been defined yet
+}) // forwardRef resolves as MyIcon when MyIcon is needed
 class MyButton {
-  constructor() { }
+  constructor() {}
 }
 
 @Directive({
-  selector: 'icon'
+  selector: 'icon',
 })
 class MyIcon {
-  constructor(containerButton: MyButton) { } // MyButton has been defined
+  constructor(containerButton: MyButton) {} // MyButton has been defined
 }
 ```
-
 
 ### No provider for ParamType
 
@@ -85,24 +81,23 @@ This means Angular knows the type of parameter it is supposed to inject, but it 
 
 If the parameter is a service, make sure you have added the specified class to the list of providers available to your app:
 
-
-```typescript
+```tsx
 import { MyService } from 'my-service';
 
 @Component({
   templateUrl: 'app/app.html',
-  providers: [MyService] // Don't forget me!
+  providers: [MyService], // Don't forget me!
 })
-class MyApp { }
+class MyApp {}
 ```
 
 If the parameter is another component or directive (for example, a parent component), adding it to your list of providers will make the error go away, but this will have the same effect as the [Multiple instances of a provider](#multiple_instances) above. You'll be creating a new instance of the component class, and you won't get a reference to the component instance you want. Instead, make sure that the directive or component you expect to be injected is available to your component (e.g. that it is actually a parent if you are expecting it to be a parent). This is probably easiest understood with an example:
 
-```typescript
+```tsx
 @Component({
   selector: 'my-comp',
   template: '<p my-dir></p>',
-  directives: [forwardRef(() => MyDir)]
+  directives: [forwardRef(() => MyDir)],
 })
 class MyComp {
   constructor() {
@@ -111,25 +106,26 @@ class MyComp {
 }
 
 @Directive({
-  selector: '[my-dir]'
+  selector: '[my-dir]',
 })
 class MyDir {
-  constructor(c: MyComp) { // <-- This is the line of interest
+  constructor(c: MyComp) {
+    // <-- This is the line of interest
 
     // Errors when directive is on regular div because there is no MyComp in the
     // component tree so there is no MyComp to inject
-    console.log('Host component\'s name: ' + c.name);
-
+    console.log("Host component's name: " + c.name);
   }
 }
 
 @Component({
-  template: "<my-comp></my-comp>" + // No error in MyDir constructor, MyComp is parent of MyDir
-  "<my-comp my-dir></my-comp>" + // No error in MyDir constructor, MyComp is host of MyDir
-  "<div my-dir></div>", // Errors in MyDir constructor
-  directives: [MyComp, MyDir]
+  template:
+    '<my-comp></my-comp>' + // No error in MyDir constructor, MyComp is parent of MyDir
+    '<my-comp my-dir></my-comp>' + // No error in MyDir constructor, MyComp is host of MyDir
+    '<div my-dir></div>', // Errors in MyDir constructor
+  directives: [MyComp, MyDir],
 })
-class MyApp { }
+class MyApp {}
 ```
 
 Here's a diagram illustrating what injectors are available:
@@ -152,9 +148,9 @@ No MyComp to inject        +------+------+
 
 To expand on the previous example, you can use the Angular `@Optional` annotation if you don't always expect a component/directive reference:
 
-```typescript
+```tsx
 @Directive({
-  selector: '[my-dir]'
+  selector: '[my-dir]',
 })
 class MyDir {
   constructor(@Optional() c: MyComp) {
@@ -185,9 +181,9 @@ This happens when you try and bind a property on an element that doesn't have th
 No provider for ControlContainer! (NgControlName -> ControlContainer)
 ```
 
-This error is a more specific version of the `No provider` error above.  It happens when you use a form control like NgControlName without specifying a parent [NgForm](https://angular.io/docs/ts/latest/api/forms/index/NgForm-directive.html) or NgFormModel.  In most cases, this can be resolved by making sure your form control is within an actual form element.  NgForm uses `form` as a selector so this will instantiate a new NgForm:
+This error is a more specific version of the `No provider` error above. It happens when you use a form control like NgControlName without specifying a parent [NgForm](https://angular.io/docs/ts/latest/api/forms/index/NgForm-directive.html) or NgFormModel. In most cases, this can be resolved by making sure your form control is within an actual form element. NgForm uses `form` as a selector so this will instantiate a new NgForm:
 
-```typescript
+```tsx
 @Component({
   template:
   '<form>' +

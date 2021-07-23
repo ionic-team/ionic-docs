@@ -16,15 +16,20 @@ $ ionic g service services/photo
 
 Open the new `services/photo.service.ts` file, and let’s add the logic that will power the camera functionality. First, import Capacitor dependencies and get references to the Camera, Filesystem, and Storage plugins:
 
-```typescript
-import { Camera, CameraResultType, CameraSource, Photo } from '@capacitor/camera';
+```tsx
+import {
+  Camera,
+  CameraResultType,
+  CameraSource,
+  Photo,
+} from '@capacitor/camera';
 import { Filesystem, Directory } from '@capacitor/filesystem';
 import { Storage } from '@capacitor/storage';
 ```
 
 Next, define a new class method, `addNewToGallery`, that will contain the core logic to take a device photo and save it to the filesystem. Let’s start by opening the device camera:
 
-```typescript
+```tsx
 public async addNewToGallery() {
   // Take a photo
   const capturedPhoto = await Camera.getPhoto({
@@ -39,7 +44,7 @@ Notice the magic here: there's no platform-specific code (web, iOS, or Android)!
 
 Next, open up `tab2.page.ts` and import the PhotoService class and add a method that calls the `addNewToGallery` method on the imported servce:
 
-```typescript
+```tsx
 import { PhotoService } from '../services/photo.service';
 
 constructor(public photoService: PhotoService) { }
@@ -73,7 +78,7 @@ After taking a photo, it disappears right away. We need to display it within our
 
 Outside of the `PhotoService` class definition (the very bottom of the file), create a new interface, `Photo`, to hold our photo metadata:
 
-```typescript
+```tsx
 export interface Photo {
   filepath: string;
   webviewPath: string;
@@ -82,7 +87,7 @@ export interface Photo {
 
 Back at the top of the file, define an array of Photos, which will contain a reference to each photo captured with the Camera.
 
-```typescript
+```tsx
 export class PhotoService {
   public photos: Photo[] = [];
 
@@ -92,7 +97,7 @@ export class PhotoService {
 
 Over in the `addNewToGallery` function, add the newly captured photo to the beginning of the Photos array.
 
-```typescript
+```tsx
   const capturedPhoto = await Camera.getPhoto({
     resultType: CameraResultType.Uri,
     source: CameraSource.Camera,

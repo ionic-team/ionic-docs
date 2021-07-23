@@ -18,7 +18,7 @@ In a native application, it's common to make API calls to communicate with the d
 
 In an app’s logic, whenever it is needed to make a native API call, it is recommended to always check the status of the native environment first. For example:
 
-```typescript
+```tsx
 this.platform.ready().then(() => {
   // 'hybrid' detects both Cordova and Capacitor
   if (this.platform.is('hybrid')) {
@@ -161,7 +161,7 @@ In this case, <a href="https://github.com/ionic-team/ionic-storage" target="_bla
 
 Currently this means it will run through SQLite for native, IndexedDB (if available), WebSql, or Local Storage. By handling all of this, it allows writing to storage using a stable API.
 
-```typescript
+```tsx
 class MyClass {
   constructor(public storage: Storage) {}
 

@@ -1,7 +1,6 @@
 ---
-sidebar_label: "In App Browser"
+sidebar_label: 'In App Browser'
 ---
-
 
 import DocsCard from '@site/src/components/DocsCard';
 import DocsButton from '@site/src/components/DocsButton';
@@ -25,7 +24,6 @@ Launches in app Browser
     <DocsButton className="native-ee-detail">Contact Us Today!</DocsButton>
   </div>
 </DocsCard>
-
 
 <h2 id="installation">
   <a href="#installation">Installation</a>
@@ -55,7 +53,7 @@ Launches in app Browser
 </Tabs>
 
 ## Supported Platforms
-  
+
 - AmazonFire OS
 - Android
 - Browser
@@ -68,12 +66,10 @@ Launches in app Browser
 ### React
 
 [Learn more about using Ionic Native components in React](../native-community.md#react)
-  
 
 ### Angular
 
-
-```typescript
+```tsx
 import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
 
 constructor(private iab: InAppBrowser) { }

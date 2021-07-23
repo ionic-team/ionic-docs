@@ -1,6 +1,7 @@
 ---
-sidebar_label: "ion-segment-button"
+sidebar_label: 'ion-segment-button'
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
@@ -8,11 +9,9 @@ import TabItem from '@theme/TabItem';
 
 Segment buttons are groups of related buttons inside of a [Segment](segment.md). They are displayed in a horizontal row. A segment button can be checked by default by setting the `value` of the segment to the `value` of the segment button. Only one segment button can be selected at a time.
 
-
 ## Usage
 
 <Tabs defaultValue="angular" values={[{ value: 'angular', label: 'ANGULAR' }, { value: 'javascript', label: 'JAVASCRIPT' }, { value: 'react', label: 'REACT' }, { value: 'stencil', label: 'STENCIL' }, { value: 'vue', label: 'VUE' }]}>
-
 
 <TabItem value="angular">
 
@@ -154,7 +153,7 @@ Segment buttons are groups of related buttons inside of a [Segment](segment.md).
 </ion-segment>
 ```
 
-```typescript
+```tsx
 import { Component } from '@angular/core';
 
 @Component({
@@ -170,7 +169,6 @@ export class SegmentButtonExample {
 ```
 
 </TabItem>
-
 
 <TabItem value="javascript">
 
@@ -315,19 +313,28 @@ export class SegmentButtonExample {
 ```javascript
 // Listen for ionChange on segment
 const segment = document.querySelector('ion-segment');
-segment.addEventListener('ionChange', (ev) => {
+segment.addEventListener('ionChange', ev => {
   console.log('Segment changed', ev);
-})
+});
 ```
 
 </TabItem>
-
 
 <TabItem value="react">
 
 ```tsx
 import React from 'react';
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonSegment, IonSegmentButton, IonLabel, IonIcon } from '@ionic/react';
+import {
+  IonContent,
+  IonHeader,
+  IonPage,
+  IonTitle,
+  IonToolbar,
+  IonSegment,
+  IonSegmentButton,
+  IonLabel,
+  IonIcon,
+} from '@ionic/react';
 import { call, camera, bookmark, heart, pin } from 'ionicons/icons';
 
 export const SegmentButtonExamples: React.FC = () => {
@@ -340,7 +347,9 @@ export const SegmentButtonExamples: React.FC = () => {
       </IonHeader>
       <IonContent>
         {/*-- Segment buttons with text and click listener --*/}
-        <IonSegment onIonChange={(e) => console.log(`${e.detail.value} segment selected`)}>
+        <IonSegment
+          onIonChange={e => console.log(`${e.detail.value} segment selected`)}
+        >
           <IonSegmentButton value="Friends">
             <IonLabel>Friends</IonLabel>
           </IonSegmentButton>
@@ -480,9 +489,7 @@ export const SegmentButtonExamples: React.FC = () => {
 };
 ```
 
-
 </TabItem>
-
 
 <TabItem value="stencil">
 
@@ -491,7 +498,7 @@ import { Component, h } from '@stencil/core';
 
 @Component({
   tag: 'segment-button-example',
-  styleUrl: 'segment-button-example.css'
+  styleUrl: 'segment-button-example.css',
 })
 export class SegmentButtonExample {
   segmentChanged(ev: any) {
@@ -501,7 +508,7 @@ export class SegmentButtonExample {
   render() {
     return [
       // Segment buttons with text and click listener
-      <ion-segment onIonChange={(ev) => this.segmentChanged(ev)}>
+      <ion-segment onIonChange={ev => this.segmentChanged(ev)}>
         <ion-segment-button>
           <ion-label>Friends</ion-label>
         </ion-segment-button>
@@ -634,14 +641,13 @@ export class SegmentButtonExample {
           <ion-icon name="pin"></ion-icon>
           <ion-label>Item Three</ion-label>
         </ion-segment-button>
-      </ion-segment>
+      </ion-segment>,
     ];
   }
 }
 ```
 
 </TabItem>
-
 
 <TabItem value="vue">
 
@@ -692,7 +698,7 @@ export class SegmentButtonExample {
       <ion-label>Shared Links</ion-label>
     </ion-segment-button>
   </ion-segment>
-  
+
   <!-- Label only -->
   <ion-segment value="1">
     <ion-segment-button value="1">
@@ -705,7 +711,7 @@ export class SegmentButtonExample {
       <ion-label>Item Three</ion-label>
     </ion-segment-button>
   </ion-segment>
-  
+
   <!-- Icon only -->
   <ion-segment value="heart">
     <ion-segment-button value="call">
@@ -718,7 +724,7 @@ export class SegmentButtonExample {
       <ion-icon :icon="pin"></ion-icon>
     </ion-segment-button>
   </ion-segment>
-  
+
   <!-- Icon top -->
   <ion-segment value="2">
     <ion-segment-button value="1">
@@ -734,7 +740,7 @@ export class SegmentButtonExample {
       <ion-icon :icon="pin"></ion-icon>
     </ion-segment-button>
   </ion-segment>
-  
+
   <!-- Icon bottom -->
   <ion-segment value="1">
     <ion-segment-button value="1" layout="icon-bottom">
@@ -750,7 +756,7 @@ export class SegmentButtonExample {
       <ion-label>Item Three</ion-label>
     </ion-segment-button>
   </ion-segment>
-  
+
   <!-- Icon start -->
   <ion-segment value="1">
     <ion-segment-button value="1" layout="icon-start">
@@ -766,7 +772,7 @@ export class SegmentButtonExample {
       <ion-icon :icon="pin"></ion-icon>
     </ion-segment-button>
   </ion-segment>
-  
+
   <!-- Icon end -->
   <ion-segment value="1">
     <ion-segment-button value="1" layout="icon-end">
@@ -785,30 +791,29 @@ export class SegmentButtonExample {
 </template>
 
 <script lang="ts">
-import { IonIcon, IonLabel, IonSegment, IonSegmentButton } from '@ionic/vue';
-import { bookmark, call, camera, heart, pin } from 'ionicons/icons';
-import { defineComponent } from 'vue';
+  import { IonIcon, IonLabel, IonSegment, IonSegmentButton } from '@ionic/vue';
+  import { bookmark, call, camera, heart, pin } from 'ionicons/icons';
+  import { defineComponent } from 'vue';
 
-export default defineComponent({
-  components: { IonIcon, IonLabel, IonSegment, IonSegmentButtonr },
-  methods: {
-    segmentChanged(ev: CustomEvent) {
-      console.log('Segment changed', ev);
+  export default defineComponent({
+    components: { IonIcon, IonLabel, IonSegment, IonSegmentButtonr },
+    methods: {
+      segmentChanged(ev: CustomEvent) {
+        console.log('Segment changed', ev);
+      }
     }
-  }
-  setup() {
-    return { 
-      bookmark, 
-      call, 
-      camera, 
-      heart, 
-      pin
+    setup() {
+      return {
+        bookmark,
+        call,
+        camera,
+        heart,
+        pin
+      }
     }
-  }
-});
+  });
 </script>
 ```
-
 
 </TabItem>
 
@@ -816,101 +821,88 @@ export default defineComponent({
 
 ## Properties
 
-
 ### disabled
 
-| | |
-| --- | --- |
+|                 |                                                              |
+| --------------- | ------------------------------------------------------------ |
 | **Description** | If `true`, the user cannot interact with the segment button. |
-| **Attribute** | `disabled` |
-| **Type** | `boolean` |
-| **Default** | `false` |
-
-
+| **Attribute**   | `disabled`                                                   |
+| **Type**        | `boolean`                                                    |
+| **Default**     | `false`                                                      |
 
 ### layout
 
-| | |
-| --- | --- |
-| **Description** | Set the layout of the text and icon in the segment. |
-| **Attribute** | `layout` |
-| **Type** | `"icon-bottom" \| "icon-end" \| "icon-hide" \| "icon-start" \| "icon-top" \| "label-hide" \| undefined` |
-| **Default** | `'icon-top'` |
-
-
+|                 |                                                                                                         |
+| --------------- | ------------------------------------------------------------------------------------------------------- |
+| **Description** | Set the layout of the text and icon in the segment.                                                     |
+| **Attribute**   | `layout`                                                                                                |
+| **Type**        | `"icon-bottom" \| "icon-end" \| "icon-hide" \| "icon-start" \| "icon-top" \| "label-hide" \| undefined` |
+| **Default**     | `'icon-top'`                                                                                            |
 
 ### mode
 
-| | |
-| --- | --- |
+|                 |                                                   |
+| --------------- | ------------------------------------------------- |
 | **Description** | The mode determines which platform styles to use. |
-| **Attribute** | `mode` |
-| **Type** | `"ios" \| "md"` |
-| **Default** | `undefined` |
-
-
+| **Attribute**   | `mode`                                            |
+| **Type**        | `"ios" \| "md"`                                   |
+| **Default**     | `undefined`                                       |
 
 ### type
 
-| | |
-| --- | --- |
-| **Description** | The type of the button. |
-| **Attribute** | `type` |
-| **Type** | `"button" \| "reset" \| "submit"` |
-| **Default** | `'button'` |
-
-
+|                 |                                   |
+| --------------- | --------------------------------- |
+| **Description** | The type of the button.           |
+| **Attribute**   | `type`                            |
+| **Type**        | `"button" \| "reset" \| "submit"` |
+| **Default**     | `'button'`                        |
 
 ### value
 
-| | |
-| --- | --- |
+|                 |                                  |
+| --------------- | -------------------------------- |
 | **Description** | The value of the segment button. |
-| **Attribute** | `value` |
-| **Type** | `string` |
-| **Default** | `'ion-sb-' + (ids++)` |
-
-
+| **Attribute**   | `value`                          |
+| **Type**        | `string`                         |
+| **Default**     | `'ion-sb-' + (ids++)`            |
 
 ## CSS Shadow Parts
 
-| Name | Description |
-| --- | --- |
-| `indicator` | The indicator displayed on the checked segment button. |
+| Name                   | Description                                                                       |
+| ---------------------- | --------------------------------------------------------------------------------- |
+| `indicator`            | The indicator displayed on the checked segment button.                            |
 | `indicator-background` | The background element for the indicator displayed on the checked segment button. |
-| `native` | The native HTML button element that wraps all child elements. |
-
+| `native`               | The native HTML button element that wraps all child elements.                     |
 
 ## CSS Custom Properties
 
-| Name | Description |
-| --- | --- |
-| `--background` | Background of the segment button |
-| `--background-checked` | Background of the checked segment button |
-| `--background-focused` | Background of the segment button when focused with the tab key |
-| `--background-focused-opacity` | Opacity of the segment button background when focused with the tab key |
-| `--background-hover` | Background of the segment button on hover |
-| `--background-hover-opacity` | Opacity of the segment button background on hover |
-| `--border-color` | Color of the segment button border |
-| `--border-radius` | Radius of the segment button border |
-| `--border-style` | Style of the segment button border |
-| `--border-width` | Width of the segment button border |
-| `--color` | Color of the segment button |
-| `--color-checked` | Color of the checked segment button |
-| `--color-focused` | Color of the segment button when focused with the tab key |
-| `--color-hover` | Color of the segment button on hover |
-| `--indicator-box-shadow` | Box shadow on the indicator for the checked segment button |
-| `--indicator-color` | Color of the indicator for the checked segment button |
-| `--indicator-height` | Height of the indicator for the checked segment button |
-| `--indicator-transform` | Transform of the indicator for the checked segment button |
-| `--indicator-transition` | Transition of the indicator for the checked segment button |
-| `--margin-bottom` | Bottom margin of the segment button |
-| `--margin-end` | Right margin if direction is left-to-right, and left margin if direction is right-to-left of the segment button |
-| `--margin-start` | Left margin if direction is left-to-right, and right margin if direction is right-to-left of the segment button |
-| `--margin-top` | Top margin of the segment button |
-| `--padding-bottom` | Bottom padding of the segment button |
-| `--padding-end` | Right padding if direction is left-to-right, and left padding if direction is right-to-left of the segment button |
-| `--padding-start` | Left padding if direction is left-to-right, and right padding if direction is right-to-left of the segment button |
-| `--padding-top` | Top padding of the segment button |
-| `--transition` | Transition of the segment button |
-
+| Name                           | Description                                                                                                       |
+| ------------------------------ | ----------------------------------------------------------------------------------------------------------------- |
+| `--background`                 | Background of the segment button                                                                                  |
+| `--background-checked`         | Background of the checked segment button                                                                          |
+| `--background-focused`         | Background of the segment button when focused with the tab key                                                    |
+| `--background-focused-opacity` | Opacity of the segment button background when focused with the tab key                                            |
+| `--background-hover`           | Background of the segment button on hover                                                                         |
+| `--background-hover-opacity`   | Opacity of the segment button background on hover                                                                 |
+| `--border-color`               | Color of the segment button border                                                                                |
+| `--border-radius`              | Radius of the segment button border                                                                               |
+| `--border-style`               | Style of the segment button border                                                                                |
+| `--border-width`               | Width of the segment button border                                                                                |
+| `--color`                      | Color of the segment button                                                                                       |
+| `--color-checked`              | Color of the checked segment button                                                                               |
+| `--color-focused`              | Color of the segment button when focused with the tab key                                                         |
+| `--color-hover`                | Color of the segment button on hover                                                                              |
+| `--indicator-box-shadow`       | Box shadow on the indicator for the checked segment button                                                        |
+| `--indicator-color`            | Color of the indicator for the checked segment button                                                             |
+| `--indicator-height`           | Height of the indicator for the checked segment button                                                            |
+| `--indicator-transform`        | Transform of the indicator for the checked segment button                                                         |
+| `--indicator-transition`       | Transition of the indicator for the checked segment button                                                        |
+| `--margin-bottom`              | Bottom margin of the segment button                                                                               |
+| `--margin-end`                 | Right margin if direction is left-to-right, and left margin if direction is right-to-left of the segment button   |
+| `--margin-start`               | Left margin if direction is left-to-right, and right margin if direction is right-to-left of the segment button   |
+| `--margin-top`                 | Top margin of the segment button                                                                                  |
+| `--padding-bottom`             | Bottom padding of the segment button                                                                              |
+| `--padding-end`                | Right padding if direction is left-to-right, and left padding if direction is right-to-left of the segment button |
+| `--padding-start`              | Left padding if direction is left-to-right, and right padding if direction is right-to-left of the segment button |
+| `--padding-top`                | Top padding of the segment button                                                                                 |
+| `--transition`                 | Transition of the segment button                                                                                  |

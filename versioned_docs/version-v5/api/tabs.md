@@ -1,10 +1,11 @@
 ---
-title: "Ion-Tabs: Tab-Based Component for App Top-Level Navigation"
-description: "Tabs are top-level components to implement tab-based navigation. Ion-tabs have no styling & work as router outlets for navigation that behaves like native apps."
-sidebar_label: "ion-tabs"
-demoUrl: "/docs/demos/api/tabs/index.html"
-demoSourceUrl: "https://github.com/ionic-team/ionic-docs/tree/main/static/demos/api/tabs/index.html"
+title: 'Ion-Tabs: Tab-Based Component for App Top-Level Navigation'
+description: 'Tabs are top-level components to implement tab-based navigation. Ion-tabs have no styling & work as router outlets for navigation that behaves like native apps.'
+sidebar_label: 'ion-tabs'
+demoUrl: '/docs/demos/api/tabs/index.html'
+demoSourceUrl: 'https://github.com/ionic-team/ionic-docs/tree/main/static/demos/api/tabs/index.html'
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
@@ -19,11 +20,9 @@ Both `ion-tabs` and `ion-tab-bar` can be used as standalone elements. They donâ€
 
 The `ion-tab-bar` needs a slot defined in order to be projected to the right place in an `ion-tabs` component.
 
-
 ## Usage
 
 <Tabs defaultValue="angular" values={[{ value: 'angular', label: 'ANGULAR' }, { value: 'javascript', label: 'JAVASCRIPT' }, { value: 'react', label: 'REACT' }, { value: 'stencil', label: 'STENCIL' }, { value: 'vue', label: 'VUE' }]}>
-
 
 <TabItem value="angular">
 
@@ -54,7 +53,6 @@ The `ion-tab-bar` needs a slot defined in order to be projected to the right pla
 </ion-tabs>
 ```
 
-
 ### Router integration
 
 When used with Angular's router the `tab` property of the `ion-tab-button` should be a reference to the route path.
@@ -70,7 +68,7 @@ When used with Angular's router the `tab` property of the `ion-tab-button` shoul
 </ion-tabs>
 ```
 
-```typescript
+```tsx
 import { Routes } from '@angular/router';
 import { TabsPage } from './tabs-page';
 
@@ -84,29 +82,26 @@ const routes: Routes = [
         children: [
           {
             path: '',
-            loadChildren: '../schedule/schedule.module#ScheduleModule'
-          }
-        ]
+            loadChildren: '../schedule/schedule.module#ScheduleModule',
+          },
+        ],
       },
       {
         path: '',
         redirectTo: '/app/tabs/schedule',
-        pathMatch: 'full'
-      }
-    ]
-  }
+        pathMatch: 'full',
+      },
+    ],
+  },
 ];
 ```
 
-
 </TabItem>
-
 
 <TabItem value="javascript">
 
 ```html
 <ion-tabs>
-
   <ion-tab tab="tab-schedule">
     <ion-nav></ion-nav>
   </ion-tab>
@@ -145,29 +140,22 @@ const routes: Routes = [
       <ion-label>About</ion-label>
     </ion-tab-button>
   </ion-tab-bar>
-
 </ion-tabs>
 ```
-
 
 ### Activating Tabs
 
 Each `ion-tab-button` will activate one of the tabs when pressed. In order to link the `ion-tab-button` to the `ion-tab` container, a matching `tab` property should be set on each component.
 
 ```html
-<ion-tab tab="settings">
-  ...
-</ion-tab>
+<ion-tab tab="settings"> ... </ion-tab>
 
-<ion-tab-button tab="settings">
-  ...
-</ion-tab-button>
+<ion-tab-button tab="settings"> ... </ion-tab-button>
 ```
 
 The `ion-tab-button` and `ion-tab` above are linked by the common `tab` property.
 
 The `tab` property identifies each tab, and it has to be unique within the `ion-tabs`. It's important to always set the `tab` property on the `ion-tab` and `ion-tab-button`, even if one component is not used.
-
 
 ### Router integration
 
@@ -187,14 +175,19 @@ will match the following tab:
 
 </TabItem>
 
-
 <TabItem value="react">
 
 ```tsx
 import React from 'react';
-import { IonTabs, IonTabBar, IonTabButton, IonIcon, IonLabel, IonBadge } from '@ionic/react';
+import {
+  IonTabs,
+  IonTabBar,
+  IonTabButton,
+  IonIcon,
+  IonLabel,
+  IonBadge,
+} from '@ionic/react';
 import { calendar, personCircle, map, informationCircle } from 'ionicons/icons';
-
 
 export const TabsExample: React.FC = () => (
   <IonTabs>
@@ -224,9 +217,7 @@ export const TabsExample: React.FC = () => (
 );
 ```
 
-
 </TabItem>
-
 
 <TabItem value="stencil">
 
@@ -235,57 +226,55 @@ import { Component, h } from '@stencil/core';
 
 @Component({
   tag: 'tabs-example',
-  styleUrl: 'tabs-example.css'
+  styleUrl: 'tabs-example.css',
 })
 export class TabsExample {
   render() {
     return [
-     <ion-tabs>
-      <ion-tab tab="tab-schedule">
-        <ion-nav></ion-nav>
-      </ion-tab>
+      <ion-tabs>
+        <ion-tab tab="tab-schedule">
+          <ion-nav></ion-nav>
+        </ion-tab>
 
-      <ion-tab tab="tab-speaker">
-        <ion-nav></ion-nav>
-      </ion-tab>
+        <ion-tab tab="tab-speaker">
+          <ion-nav></ion-nav>
+        </ion-tab>
 
-      <ion-tab tab="tab-map" component="page-map">
-        <ion-nav></ion-nav>
-      </ion-tab>
+        <ion-tab tab="tab-map" component="page-map">
+          <ion-nav></ion-nav>
+        </ion-tab>
 
-      <ion-tab tab="tab-about" component="page-about">
-        <ion-nav></ion-nav>
-      </ion-tab>
+        <ion-tab tab="tab-about" component="page-about">
+          <ion-nav></ion-nav>
+        </ion-tab>
 
-      <ion-tab-bar slot="bottom">
-        <ion-tab-button tab="tab-schedule">
-          <ion-icon name="calendar"></ion-icon>
-          <ion-label>Schedule</ion-label>
-          <ion-badge>6</ion-badge>
-        </ion-tab-button>
+        <ion-tab-bar slot="bottom">
+          <ion-tab-button tab="tab-schedule">
+            <ion-icon name="calendar"></ion-icon>
+            <ion-label>Schedule</ion-label>
+            <ion-badge>6</ion-badge>
+          </ion-tab-button>
 
-        <ion-tab-button tab="tab-speaker">
-          <ion-icon name="person-circle"></ion-icon>
-          <ion-label>Speakers</ion-label>
-        </ion-tab-button>
+          <ion-tab-button tab="tab-speaker">
+            <ion-icon name="person-circle"></ion-icon>
+            <ion-label>Speakers</ion-label>
+          </ion-tab-button>
 
-        <ion-tab-button tab="tab-map">
-          <ion-icon name="map"></ion-icon>
-          <ion-label>Map</ion-label>
-        </ion-tab-button>
+          <ion-tab-button tab="tab-map">
+            <ion-icon name="map"></ion-icon>
+            <ion-label>Map</ion-label>
+          </ion-tab-button>
 
-        <ion-tab-button tab="tab-about">
-          <ion-icon name="information-circle"></ion-icon>
-          <ion-label>About</ion-label>
-        </ion-tab-button>
-      </ion-tab-bar>
-
-    </ion-tabs>
+          <ion-tab-button tab="tab-about">
+            <ion-icon name="information-circle"></ion-icon>
+            <ion-label>About</ion-label>
+          </ion-tab-button>
+        </ion-tab-bar>
+      </ion-tabs>,
     ];
   }
 }
 ```
-
 
 ### Activating Tabs
 
@@ -305,7 +294,6 @@ The `ion-tab-button` and `ion-tab` above are linked by the common `tab` property
 
 The `tab` property identifies each tab, and it has to be unique within the `ion-tabs`. It's important to always set the `tab` property on the `ion-tab` and `ion-tab-button`, even if one component is not used.
 
-
 ### Router integration
 
 When used with Ionic's router (`ion-router`) the `tab` property of the `ion-tab` matches the `component` property of an `ion-route`.
@@ -324,21 +312,24 @@ will match the following tab:
 
 </TabItem>
 
-
 <TabItem value="vue">
 
 **Tabs.vue**
+
 ```html
 <template>
   <ion-page>
-    <ion-tabs @ionTabsWillChange="beforeTabChange" @ionTabsDidChange="afterTabChange">
+    <ion-tabs
+      @ionTabsWillChange="beforeTabChange"
+      @ionTabsDidChange="afterTabChange"
+    >
       <ion-tab-bar slot="bottom">
         <ion-tab-button tab="schedule" href="/tabs/schedule">
           <ion-icon :icon="calendar"></ion-icon>
           <ion-label>Schedule</ion-label>
           <ion-badge>6</ion-badge>
         </ion-tab-button>
-  
+
         <ion-tab-button tab="speakers" href="/tabs/speakers">
           <ion-icon :icon="personCircle"></ion-icon>
           <ion-label>Speakers</ion-label>
@@ -349,38 +340,46 @@ will match the following tab:
 </template>
 
 <script>
-import { defineComponent } from 'vue';
-import { 
-  IonIcon, 
-  IonLabel, 
-  IonPage,
-  IonTabBar, 
-  IonTabButton, 
-  IonTabs
-} from '@ionic/vue';
-import { calendar, personCircle } from 'ionicons/icons';
+  import { defineComponent } from 'vue';
+  import {
+    IonIcon,
+    IonLabel,
+    IonPage,
+    IonTabBar,
+    IonTabButton,
+    IonTabs,
+  } from '@ionic/vue';
+  import { calendar, personCircle } from 'ionicons/icons';
 
-export default defineComponent({
-  components: { IonIcon, IonLabel, IonPage, IonTabBar, IonTabButton, IonTabs },
-  setup() {
-    const beforeTabChange = () => {
-      // do something before tab change
-    }
-    const afterTabChange = () => {
-      // do something after tab change
-    }
-    return {
-      calendar,
-      personCircle,
-      beforeTabChange,
-      afterTabChange
-    }
-  }
-});
+  export default defineComponent({
+    components: {
+      IonIcon,
+      IonLabel,
+      IonPage,
+      IonTabBar,
+      IonTabButton,
+      IonTabs,
+    },
+    setup() {
+      const beforeTabChange = () => {
+        // do something before tab change
+      };
+      const afterTabChange = () => {
+        // do something after tab change
+      };
+      return {
+        calendar,
+        personCircle,
+        beforeTabChange,
+        afterTabChange,
+      };
+    },
+  });
 </script>
 ```
 
 **Schedule.vue**
+
 ```html
 <template>
   <ion-page>
@@ -389,28 +388,29 @@ export default defineComponent({
         <ion-title>Schedule</ion-title>
       </ion-toolbar>
     </ion-header>
-    
+
     <ion-content class="ion-padding">Schedule Tab</ion-content>
   </ion-page>
 </template>
 
 <script>
-import { defineComponent } from 'vue';
-import {
-  IonContent,
-  IonHeader,
-  IonPage,
-  IonTitle,
-  IonToolbar
-} from '@ionic/vue';
+  import { defineComponent } from 'vue';
+  import {
+    IonContent,
+    IonHeader,
+    IonPage,
+    IonTitle,
+    IonToolbar,
+  } from '@ionic/vue';
 
-export default defineComponent({
-  components: { IonContent, IonHeader, IonPage, IonTitle, IonToolbar }
-});
+  export default defineComponent({
+    components: { IonContent, IonHeader, IonPage, IonTitle, IonToolbar },
+  });
 </script>
 ```
 
 **Speakers.vue**
+
 ```html
 <template>
   <ion-page>
@@ -419,24 +419,24 @@ export default defineComponent({
         <ion-title>Speakers</ion-title>
       </ion-toolbar>
     </ion-header>
-    
+
     <ion-content class="ion-padding">Speakers Tab</ion-content>
   </ion-page>
 </template>
 
 <script>
-import { defineComponent } from 'vue';
-import {
-  IonContent,
-  IonHeader,
-  IonPage,
-  IonTitle,
-  IonToolbar
-} from '@ionic/vue';
+  import { defineComponent } from 'vue';
+  import {
+    IonContent,
+    IonHeader,
+    IonPage,
+    IonTitle,
+    IonToolbar,
+  } from '@ionic/vue';
 
-export default defineComponent({
-  components: { IonContent, IonHeader, IonPage, IonTitle, IonToolbar }
-});
+  export default defineComponent({
+    components: { IonContent, IonHeader, IonPage, IonTitle, IonToolbar },
+  });
 </script>
 ```
 
@@ -446,45 +446,38 @@ export default defineComponent({
 
 ## Events
 
-| Name | Description |
-| --- | --- |
-| `ionTabsDidChange` | Emitted when the navigation has finished transitioning to a new component. |
-| `ionTabsWillChange` | Emitted when the navigation is about to transition to a new component. |
-
+| Name                | Description                                                                |
+| ------------------- | -------------------------------------------------------------------------- |
+| `ionTabsDidChange`  | Emitted when the navigation has finished transitioning to a new component. |
+| `ionTabsWillChange` | Emitted when the navigation is about to transition to a new component.     |
 
 ## Methods
 
-
 ### getSelected
 
-| | |
-| --- | --- |
-| **Description** | Get the currently selected tab. |
-| **Signature** | `getSelected() => Promise<string \| undefined>` |
-
+|                 |                                                 |
+| --------------- | ----------------------------------------------- |
+| **Description** | Get the currently selected tab.                 |
+| **Signature**   | `getSelected() => Promise<string \| undefined>` |
 
 ### getTab
 
-| | |
-| --- | --- |
-| **Description** | Get a specific tab by the value of its `tab` property or an element reference. |
-| **Signature** | `getTab(tab: string \| HTMLIonTabElement) => Promise<HTMLIonTabElement \| undefined>` |
-
+|                 |                                                                                       |
+| --------------- | ------------------------------------------------------------------------------------- |
+| **Description** | Get a specific tab by the value of its `tab` property or an element reference.        |
+| **Signature**   | `getTab(tab: string \| HTMLIonTabElement) => Promise<HTMLIonTabElement \| undefined>` |
 
 ### select
 
-| | |
-| --- | --- |
+|                 |                                                                          |
+| --------------- | ------------------------------------------------------------------------ |
 | **Description** | Select a tab by the value of its `tab` property or an element reference. |
-| **Signature** | `select(tab: string \| HTMLIonTabElement) => Promise<boolean>` |
-
-
+| **Signature**   | `select(tab: string \| HTMLIonTabElement) => Promise<boolean>`           |
 
 ## Slots
 
-| Name | Description |
-| --- | --- |
-| `` | Content is placed between the named slots if provided without a slot. |
-| `bottom` | Content is placed at the bottom of the screen. |
-| `top` | Content is placed at the top of the screen. |
-
+| Name     | Description                                                           |
+| -------- | --------------------------------------------------------------------- |
+| ``       | Content is placed between the named slots if provided without a slot. |
+| `bottom` | Content is placed at the bottom of the screen.                        |
+| `top`    | Content is placed at the top of the screen.                           |

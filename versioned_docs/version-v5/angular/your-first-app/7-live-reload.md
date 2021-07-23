@@ -29,16 +29,17 @@ The Live Reload server will start up, and the native IDE of choice will open if 
 With Live Reload running and the app open on your device, let’s implement photo deletion functionality. Open `tab2.page.html` and add a new click handler to each `<ion-img>` element. When the app user taps on a photo in our gallery, we’ll display an [Action Sheet](https://ionicframework.com/docs/api/action-sheet) dialog with the option to either delete the selected photo or cancel (close) the dialog.
 
 ```html
-<ion-col size="6"
-    *ngFor="let photo of photoService.photos; index as position">
-  <ion-img [src]="photo.webviewPath"
-           (click)="showActionSheet(photo, position)"></ion-img>
+<ion-col size="6" *ngFor="let photo of photoService.photos; index as position">
+  <ion-img
+    [src]="photo.webviewPath"
+    (click)="showActionSheet(photo, position)"
+  ></ion-img>
 </ion-col>
 ```
 
 Over in `tab2.page.ts`, import Action Sheet and add it to the constructor:
 
-```typescript
+```tsx
 import { ActionSheetController } from '@ionic/angular';
 
 constructor(public photoService: PhotoService,
@@ -47,13 +48,13 @@ constructor(public photoService: PhotoService,
 
 Add `Photo` to the import statement.
 
-```typescript
+```tsx
 import { Photo, PhotoService } from '../services/photo.service';
 ```
 
 Next, implement the `showActionSheet()` function. We add two options: `Delete` that calls PhotoService’s `deletePicture()` function (to be added next) and `Cancel`, which when given the role of “cancel” will automatically close the action sheet:
 
-```typescript
+```tsx
 public async showActionSheet(photo: Photo, position: number) {
   const actionSheet = await this.actionSheetController.create({
     header: 'Photos',
@@ -81,7 +82,7 @@ Save both of the files we just edited. The Photo Gallery app will reload automat
 
 In `src/app/services/photo.service.ts`, add the `deletePicture()` function:
 
-```typescript
+```tsx
 public async deletePicture(photo: Photo, position: number) {
   // Remove this photo from the Photos reference data array
   this.photos.splice(position, 1);

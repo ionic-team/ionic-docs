@@ -1,7 +1,6 @@
 ---
-sidebar_label: "AdMob Pro"
+sidebar_label: 'AdMob Pro'
 ---
-
 
 import DocsCard from '@site/src/components/DocsCard';
 import DocsButton from '@site/src/components/DocsButton';
@@ -10,7 +9,6 @@ import TabItem from '@theme/TabItem';
 import CodeBlock from '@theme/CodeBlock';
 
 # AdMob Pro
-
 
 Plugin for Google Ads, including AdMob / DFP (DoubleClick for publisher) and mediations to other Ad networks.
 
@@ -28,7 +26,6 @@ IMPORTANT NOTICE: this plugin takes a percentage out of your earnings if you pro
     <DocsButton className="native-ee-detail">Contact Us Today!</DocsButton>
   </div>
 </DocsCard>
-
 
 <h2 id="installation">
   <a href="#installation">Installation</a>
@@ -58,13 +55,13 @@ IMPORTANT NOTICE: this plugin takes a percentage out of your earnings if you pro
 </Tabs>
 
 ## Supported Platforms
-  
+
 - Android
 - iOS
 - Windows Phone 8
 
 ## Capacitor
-  
+
 Not Compatible
 
 ## Usage
@@ -72,12 +69,10 @@ Not Compatible
 ### React
 
 [Learn more about using Ionic Native components in React](../native-community.md#react)
-  
 
 ### Angular
 
-
-```typescript
+```tsx
 import { AdMobPro } from '@ionic-native/admob-pro/ngx';
 import { Platform } from '@ionic/angular';
 
@@ -100,4 +95,3 @@ onClick() {
 }
 
 ```
-

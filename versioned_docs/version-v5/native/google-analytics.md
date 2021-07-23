@@ -1,7 +1,6 @@
 ---
-sidebar_label: "Google Analytics"
+sidebar_label: 'Google Analytics'
 ---
-
 
 import DocsCard from '@site/src/components/DocsCard';
 import DocsButton from '@site/src/components/DocsButton';
@@ -11,9 +10,9 @@ import CodeBlock from '@theme/CodeBlock';
 
 # Google Analytics
 
-
 This plugin connects to Google's native Universal Analytics SDK
 Prerequisites:
+
 - A Cordova 3.0+ project for iOS and/or Android
 - A Mobile App property through the Google Analytics Admin Console
 - (Android) Google Play Services SDK installed via [Android SDK Manager](https://developer.android.com/sdk/installing/adding-packages.html)
@@ -30,7 +29,6 @@ Prerequisites:
     <DocsButton className="native-ee-detail">Contact Us Today!</DocsButton>
   </div>
 </DocsCard>
-
 
 <h2 id="installation">
   <a href="#installation">Installation</a>
@@ -60,7 +58,7 @@ Prerequisites:
 </Tabs>
 
 ## Supported Platforms
-  
+
 - Android
 - Browser
 - iOS
@@ -71,12 +69,10 @@ Prerequisites:
 ### React
 
 [Learn more about using Ionic Native components in React](../native-community.md#react)
-  
 
 ### Angular
 
-
-```typescript
+```tsx
 import { GoogleAnalytics } from '@ionic-native/google-analytics/ngx';
 
 constructor(private ga: GoogleAnalytics) { }
@@ -94,4 +90,3 @@ this.ga.startTrackerWithId('YOUR_TRACKER_ID')
 
 
 ```
-

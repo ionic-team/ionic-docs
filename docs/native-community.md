@@ -83,7 +83,7 @@ Next, begin using the plugin, following the various framework usage options belo
 
 Angular apps can use either Cordova or Capacitor to build native mobile apps. Import the plugin in a `@NgModule` and add it to the list of Providers. For Angular, the import path should end with `/ngx`. Angular's change detection is automatically handled.
 
-```typescript
+```tsx
 // app.module.ts
 import { Camera } from '@ionic-native/camera/ngx';
 
@@ -104,7 +104,7 @@ export class AppModule { }
 
 After the plugin has been declared, it can be imported and injected like any other service:
 
-```typescript
+```tsx
 // camera.service.ts
 import { Injectable } from '@angular/core';
 import { Camera, CameraOptions } from '@ionic-native/camera/ngx';
@@ -156,7 +156,7 @@ $ ionic cap sync
 
 Import the plugin object then use its static methods:
 
-```typescript
+```tsx
 import { BarcodeScanner } from '@ionic-native/barcode-scanner';
 
 const Tab1: React.FC = () => {

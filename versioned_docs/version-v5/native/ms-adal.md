@@ -1,7 +1,6 @@
 ---
-sidebar_label: "MS ADAL"
+sidebar_label: 'MS ADAL'
 ---
-
 
 import DocsCard from '@site/src/components/DocsCard';
 import DocsButton from '@site/src/components/DocsButton';
@@ -10,7 +9,6 @@ import TabItem from '@theme/TabItem';
 import CodeBlock from '@theme/CodeBlock';
 
 # MS ADAL
-
 
 Active Directory Authentication Library (ADAL) plugin.
 Active Directory Authentication Library ([ADAL](https://docs.microsoft.com/en-us/dotnet/api/microsoft.identitymodel.clients.activedirectory?view=azure-dotnet))
@@ -29,7 +27,6 @@ Windows Server Active Directory and Windows Azure Active Directory. Here you can
     <DocsButton className="native-ee-detail">Contact Us Today!</DocsButton>
   </div>
 </DocsCard>
-
 
 <h2 id="installation">
   <a href="#installation">Installation</a>
@@ -59,7 +56,7 @@ Windows Server Active Directory and Windows Azure Active Directory. Here you can
 </Tabs>
 
 ## Supported Platforms
-  
+
 - Android
 - iOS
 - Windows
@@ -69,12 +66,10 @@ Windows Server Active Directory and Windows Azure Active Directory. Here you can
 ### React
 
 [Learn more about using Ionic Native components in React](../native-community.md#react)
-  
 
 ### Angular
 
-
-```typescript
+```tsx
 import { MSAdal, AuthenticationContext, AuthenticationResult } from '@ionic-native/ms-adal/ngx';
 
 
@@ -93,4 +88,3 @@ authContext.acquireTokenAsync('https://graph.windows.net', 'a5d92493-ae5a-4a9f-b
 
 
 ```
-

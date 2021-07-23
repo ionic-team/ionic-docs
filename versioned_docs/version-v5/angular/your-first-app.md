@@ -19,22 +19,25 @@ Looking for the previous version of this guide that covered Ionic 4 and Cordova?
 We'll create a Photo Gallery app that offers the ability to take photos with your device's camera, display them in a grid, and store them permanently on the device.
 
 Highlights include:
-* One Angular-based codebase that runs on the web, iOS, and Android using Ionic Framework [UI components](https://ionicframework.com/docs/components).
-* Deployed as a native iOS and Android mobile app using [Capacitor](https://capacitor.ionicframework.com), Ionic's official native app runtime.
-* Photo Gallery functionality powered by the Capacitor [Camera](https://capacitor.ionicframework.com/docs/apis/camera), [Filesystem](https://capacitor.ionicframework.com/docs/apis/filesystem), and [Storage](https://capacitor.ionicframework.com/docs/apis/storage) APIs.
+
+- One Angular-based codebase that runs on the web, iOS, and Android using Ionic Framework [UI components](https://ionicframework.com/docs/components).
+- Deployed as a native iOS and Android mobile app using [Capacitor](https://capacitor.ionicframework.com), Ionic's official native app runtime.
+- Photo Gallery functionality powered by the Capacitor [Camera](https://capacitor.ionicframework.com/docs/apis/camera), [Filesystem](https://capacitor.ionicframework.com/docs/apis/filesystem), and [Storage](https://capacitor.ionicframework.com/docs/apis/storage) APIs.
 
 Find the complete app code referenced in this guide [on GitHub](https://github.com/ionic-team/photo-gallery-capacitor-ng).
 
 ## Download Required Tools
 
 Download and install these right away to ensure an optimal Ionic development experience:
-* <strong>Node.js</strong> for interacting with the Ionic ecosystem. [Download the LTS version here](https://nodejs.org/en/).
-* <strong>A code editor</strong> for... writing code! We are fans of [Visual Studio Code](https://code.visualstudio.com/).
-* <strong>Command-line interface/terminal (CLI)</strong>:
- * <strong>Windows</strong> users: for the best Ionic experience, we recommend the built-in command line (cmd) or the Powershell CLI, running in Administrator mode.
- * <strong>Mac/Linux</strong> users, virtually any terminal will work.
+
+- <strong>Node.js</strong> for interacting with the Ionic ecosystem. [Download the LTS version here](https://nodejs.org/en/).
+- <strong>A code editor</strong> for... writing code! We are fans of [Visual Studio Code](https://code.visualstudio.com/).
+- <strong>Command-line interface/terminal (CLI)</strong>:
+- <strong>Windows</strong> users: for the best Ionic experience, we recommend the built-in command line (cmd) or the Powershell CLI, running in Administrator mode.
+- <strong>Mac/Linux</strong> users, virtually any terminal will work.
 
 ## Install Ionic Tooling
+
 Run the following in the command line terminal to install the Ionic CLI (`ionic`), `native-run`, used to run native binaries on devices and simulators/emulators, and `cordova-res`, used to generate native app icons and splash screens:
 
 :::note
@@ -52,6 +55,7 @@ Consider setting up npm to operate globally without elevated permissions. See [R
 :::
 
 ## Create an App
+
 Next, create an Ionic Angular app that uses the “Tabs” starter template and adds Capacitor for native functionality:
 
 ```shell
@@ -84,7 +88,7 @@ $ npm install @ionic/pwa-elements
 
 Next, import `@ionic/pwa-elements` by editing `src/main.ts`.
 
-```typescript
+```tsx
 import { defineCustomElements } from '@ionic/pwa-elements/loader';
 
 // Call the element loader after the platform has been bootstrapped
@@ -94,6 +98,7 @@ defineCustomElements(window);
 That’s it! Now for the fun part - let’s see the app in action.
 
 ## Run the App
+
 Run this command next:
 
 ```shell
@@ -136,8 +141,7 @@ We put the visual aspects of our app into `<ion-content>`. In this case, it’s 
 
 ```html
 <ion-content>
-<ion-fab vertical="bottom" horizontal="center" slot="fixed">
-
+  <ion-fab vertical="bottom" horizontal="center" slot="fixed">
     <ion-fab-button>
       <ion-icon name="camera"></ion-icon>
     </ion-fab-button>

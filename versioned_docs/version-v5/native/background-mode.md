@@ -1,9 +1,8 @@
 ---
-title: "Native Background Mode | Cordova-Plugin-Background-Mode"
-description: "Learn about Cordova-plugin-background-mode usage. This Cordova plugin, for Ionic Native Apps, prevents the app from going to sleep while in background."
-sidebar_label: "Background Mode"
+title: 'Native Background Mode | Cordova-Plugin-Background-Mode'
+description: 'Learn about Cordova-plugin-background-mode usage. This Cordova plugin, for Ionic Native Apps, prevents the app from going to sleep while in background.'
+sidebar_label: 'Background Mode'
 ---
-
 
 import DocsCard from '@site/src/components/DocsCard';
 import DocsButton from '@site/src/components/DocsButton';
@@ -12,7 +11,6 @@ import TabItem from '@theme/TabItem';
 import CodeBlock from '@theme/CodeBlock';
 
 # Background Mode
-
 
 Cordova plugin to prevent the app from going to sleep while in background.
 Requires Cordova plugin: cordova-plugin-background-mode. For more info about plugin, visit: https://github.com/katzer/cordova-plugin-background-mode
@@ -29,7 +27,6 @@ Requires Cordova plugin: cordova-plugin-background-mode. For more info about plu
     <DocsButton className="native-ee-detail">Contact Us Today!</DocsButton>
   </div>
 </DocsCard>
-
 
 <h2 id="installation">
   <a href="#installation">Installation</a>
@@ -59,7 +56,7 @@ Requires Cordova plugin: cordova-plugin-background-mode. For more info about plu
 </Tabs>
 
 ## Supported Platforms
-  
+
 - AmazonFire OS
 - Android
 - Browser
@@ -71,12 +68,10 @@ Requires Cordova plugin: cordova-plugin-background-mode. For more info about plu
 ### React
 
 [Learn more about using Ionic Native components in React](../native-community.md#react)
-  
 
 ### Angular
 
-
-```typescript
+```tsx
 import { BackgroundMode } from '@ionic-native/background-mode/ngx';
 
 constructor(private backgroundMode: BackgroundMode) { }
@@ -85,4 +80,3 @@ constructor(private backgroundMode: BackgroundMode) { }
 
 this.backgroundMode.enable();
 ```
-

@@ -86,7 +86,7 @@ After installation, open up the project in your code editor of choice.
 
 Next, import `@ionic/pwa-elements` by editing `src/index.tsx`.
 
-```typescript
+```tsx
 import { defineCustomElements } from '@ionic/pwa-elements/loader';
 
 // Call the element loader after the platform has been bootstrapped
@@ -112,7 +112,7 @@ There are three tabs. Click on the Tab2 tab. It’s a blank canvas, aka the perf
 
 Open `/src/pages/Tab2.tsx`. We see:
 
-```typescript
+```tsx
 <IonPage>
   <IonHeader>
     <IonToolbar>
@@ -127,13 +127,13 @@ Open `/src/pages/Tab2.tsx`. We see:
 
 `IonHeader` represents the top navigation and toolbar, with "Tab 2" as the title. Let’s rename it:
 
-```typescript
+```tsx
 <IonTitle>Photo Gallery</IonTitle>
 ```
 
 We put the visual aspects of our app into `<IonContent>`. In this case, it’s where we’ll add a button that opens the device’s camera as well as displays the image captured by the camera. Start by adding a [floating action button](https://ionicframework.com/docs/api/fab) (FAB). First, update the imports at the top of the page to include the Camera icon as well as some of the Ionic components we'll use shortly:
 
-```typescript
+```tsx
 import { camera, trash, close } from 'ionicons/icons';
 import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar,
          IonFab, IonFabButton, IonIcon, IonGrid, IonRow,
@@ -142,7 +142,7 @@ import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar,
 
 Then, add the FAB to the bottom of the page. Use the camera image as the icon, and call the `takePhoto()` function when this button is clicked (to be implemented soon):
 
-```typescript
+```tsx
 <IonContent>
   <IonFab vertical="bottom" horizontal="center" slot="fixed">
     <IonFabButton onClick={() => takePhoto()}>
@@ -156,13 +156,13 @@ We’ll be creating the `takePhoto` method and the logic to use the Camera and o
 
 Next, open `src/App.tsx` then import the `images` icon:
 
-```typescript
+```tsx
 import { images, square, triangle } from 'ionicons/icons';
 ```
 
 Within the tab bar (`<IonTabBar>`), change the label to “Photos” and the icon to `images` for the middle tab button:
 
-```typescript
+```tsx
 <IonTabButton tab="tab2" href="/tab2">
   <IonIcon icon={images} />
   <IonLabel>Photos</IonLabel>

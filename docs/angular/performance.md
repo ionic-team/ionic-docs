@@ -4,13 +4,14 @@ sidebar_label: Performance
 
 # Angular Performance
 
-## *ngFor with Ionic Components
+## \*ngFor with Ionic Components
 
 When using `*ngFor` with Ionic components, we recommend using Angular's `trackBy` option. This allows Angular to manage change propagation in a much more efficient way and only update the content inside of the component rather than re-create the component altogether.
 
 By using `trackBy` you can provide a stable identity for each loop element so Angular can track insertions and deletions within the iterator. Below is an example of how to use `trackBy`:
 
 **home.page.html**
+
 ```html
 <ion-item *ngFor="let item of items; trackBy:trackItems">
   <ion-label>{{ item.value }}</ion-label>
@@ -18,7 +19,8 @@ By using `trackBy` you can provide a stable identity for each loop element so An
 ```
 
 **home.component.ts**
-```typescript
+
+```tsx
 
 items = [
   { id: 0, value: 'Item 0' },
@@ -42,6 +44,7 @@ For more information on how Angular manages change propagation with `ngFor` see 
 [Improved Perceived Performance with Skeleton Screens](https://ionicframework.com/blog/improved-perceived-performance-with-skeleton-screens/)
 
 ## From the Angular Team
+
 [Build performant and progressive Angular apps](https://web.dev/angular) - web.dev
 
 ## From the Community
@@ -55,5 +58,5 @@ For more information on how Angular manages change propagation with `ngFor` see 
 [Ionic Framework is Fast (But Your Code Might Not Be)](https://www.joshmorony.com/ionic-framework-is-fast-but-your-code-might-not-be/) - Josh Morony
 
 :::note
-Do you have a guide you'd like to share? Click the *Edit this page* button below.
+Do you have a guide you'd like to share? Click the _Edit this page_ button below.
 :::

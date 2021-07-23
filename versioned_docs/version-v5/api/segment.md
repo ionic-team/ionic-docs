@@ -1,8 +1,9 @@
 ---
-sidebar_label: "ion-segment"
-demoUrl: "/docs/demos/api/segment/index.html"
-demoSourceUrl: "https://github.com/ionic-team/ionic-docs/tree/main/static/demos/api/segment/index.html"
+sidebar_label: 'ion-segment'
+demoUrl: '/docs/demos/api/segment/index.html'
+demoSourceUrl: 'https://github.com/ionic-team/ionic-docs/tree/main/static/demos/api/segment/index.html'
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
@@ -19,7 +20,6 @@ Segments are not scrollable by default. Each segment button has a fixed width, a
 ## Usage
 
 <Tabs defaultValue="angular" values={[{ value: 'angular', label: 'ANGULAR' }, { value: 'javascript', label: 'JAVASCRIPT' }, { value: 'react', label: 'REACT' }, { value: 'stencil', label: 'STENCIL' }, { value: 'vue', label: 'VUE' }]}>
-
 
 <TabItem value="angular">
 
@@ -115,7 +115,7 @@ Segments are not scrollable by default. Each segment button has a fixed width, a
 </ion-segment>
 ```
 
-```typescript
+```tsx
 import { Component } from '@angular/core';
 
 @Component({
@@ -130,9 +130,7 @@ export class SegmentExample {
 }
 ```
 
-
 </TabItem>
-
 
 <TabItem value="javascript">
 
@@ -230,23 +228,42 @@ export class SegmentExample {
 
 ```javascript
 // Listen for ionChange on all segments
-const segments = document.querySelectorAll('ion-segment')
+const segments = document.querySelectorAll('ion-segment');
 for (let i = 0; i < segments.length; i++) {
-  segments[i].addEventListener('ionChange', (ev) => {
+  segments[i].addEventListener('ionChange', ev => {
     console.log('Segment changed', ev);
-  })
+  });
 }
 ```
 
 </TabItem>
 
-
 <TabItem value="react">
 
 ```tsx
 import React from 'react';
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonSegment, IonSegmentButton, IonLabel, IonIcon } from '@ionic/react';
-import { call, home, heart, pin, star, globe, basket, camera, bookmark } from 'ionicons/icons';
+import {
+  IonContent,
+  IonHeader,
+  IonPage,
+  IonTitle,
+  IonToolbar,
+  IonSegment,
+  IonSegmentButton,
+  IonLabel,
+  IonIcon,
+} from '@ionic/react';
+import {
+  call,
+  home,
+  heart,
+  pin,
+  star,
+  globe,
+  basket,
+  camera,
+  bookmark,
+} from 'ionicons/icons';
 
 export const SegmentExamples: React.FC = () => {
   return (
@@ -258,7 +275,9 @@ export const SegmentExamples: React.FC = () => {
       </IonHeader>
       <IonContent>
         {/*-- Default Segment --*/}
-        <IonSegment onIonChange={e => console.log('Segment selected', e.detail.value)}>
+        <IonSegment
+          onIonChange={e => console.log('Segment selected', e.detail.value)}
+        >
           <IonSegmentButton value="friends">
             <IonLabel>Friends</IonLabel>
           </IonSegmentButton>
@@ -268,7 +287,11 @@ export const SegmentExamples: React.FC = () => {
         </IonSegment>
 
         {/*-- Disabled Segment --*/}
-        <IonSegment onIonChange={e => console.log('Segment selected', e.detail.value)} disabled value="sunny">
+        <IonSegment
+          onIonChange={e => console.log('Segment selected', e.detail.value)}
+          disabled
+          value="sunny"
+        >
           <IonSegmentButton value="sunny">
             <IonLabel>Sunny</IonLabel>
           </IonSegmentButton>
@@ -278,7 +301,9 @@ export const SegmentExamples: React.FC = () => {
         </IonSegment>
 
         {/*-- Segment with anchors --*/}
-        <IonSegment onIonChange={e => console.log('Segment selected', e.detail.value)}>
+        <IonSegment
+          onIonChange={e => console.log('Segment selected', e.detail.value)}
+        >
           <IonSegmentButton value="dogs">
             <IonLabel>Dogs</IonLabel>
           </IonSegmentButton>
@@ -313,7 +338,10 @@ export const SegmentExamples: React.FC = () => {
         </IonSegment>
 
         {/*-- Segment with secondary color --*/}
-        <IonSegment onIonChange={e => console.log('Segment selected', e.detail.value)} color="secondary">
+        <IonSegment
+          onIonChange={e => console.log('Segment selected', e.detail.value)}
+          color="secondary"
+        >
           <IonSegmentButton value="standard">
             <IonLabel>Standard</IonLabel>
           </IonSegmentButton>
@@ -327,7 +355,9 @@ export const SegmentExamples: React.FC = () => {
 
         {/*-- Segment in a toolbar --*/}
         <IonToolbar>
-          <IonSegment onIonChange={e => console.log('Segment selected', e.detail.value)}>
+          <IonSegment
+            onIonChange={e => console.log('Segment selected', e.detail.value)}
+          >
             <IonSegmentButton value="camera">
               <IonIcon icon={camera} />
             </IonSegmentButton>
@@ -338,7 +368,10 @@ export const SegmentExamples: React.FC = () => {
         </IonToolbar>
 
         {/*-- Segment with default selection --*/}
-        <IonSegment onIonChange={e => console.log('Segment selected', e.detail.value)} value="javascript">
+        <IonSegment
+          onIonChange={e => console.log('Segment selected', e.detail.value)}
+          value="javascript"
+        >
           <IonSegmentButton value="python">
             <IonLabel>Python</IonLabel>
           </IonSegmentButton>
@@ -350,11 +383,9 @@ export const SegmentExamples: React.FC = () => {
     </IonPage>
   );
 };
-
 ```
 
 </TabItem>
-
 
 <TabItem value="stencil">
 
@@ -363,7 +394,7 @@ import { Component, h } from '@stencil/core';
 
 @Component({
   tag: 'segment-example',
-  styleUrl: 'segment-example.css'
+  styleUrl: 'segment-example.css',
 })
 export class SegmentExample {
   segmentChanged(ev: any) {
@@ -371,9 +402,9 @@ export class SegmentExample {
   }
 
   render() {
-     return [
+    return [
       // Default Segment
-      <ion-segment onIonChange={(ev) => this.segmentChanged(ev)}>
+      <ion-segment onIonChange={ev => this.segmentChanged(ev)}>
         <ion-segment-button value="friends">
           <ion-label>Friends</ion-label>
         </ion-segment-button>
@@ -383,7 +414,11 @@ export class SegmentExample {
       </ion-segment>,
 
       // Disabled Segment
-      <ion-segment onIonChange={(ev) => this.segmentChanged(ev)} disabled={true} value="sunny">
+      <ion-segment
+        onIonChange={ev => this.segmentChanged(ev)}
+        disabled={true}
+        value="sunny"
+      >
         <ion-segment-button value="sunny">
           <ion-label>Sunny</ion-label>
         </ion-segment-button>
@@ -393,7 +428,7 @@ export class SegmentExample {
       </ion-segment>,
 
       // Segment with anchors
-      <ion-segment onIonChange={(ev) => this.segmentChanged(ev)}>
+      <ion-segment onIonChange={ev => this.segmentChanged(ev)}>
         <ion-segment-button value="dogs">
           <ion-label>Dogs</ion-label>
         </ion-segment-button>
@@ -428,7 +463,10 @@ export class SegmentExample {
       </ion-segment>,
 
       // Segment with secondary color
-      <ion-segment onIonChange={(ev) => this.segmentChanged(ev)} color="secondary">
+      <ion-segment
+        onIonChange={ev => this.segmentChanged(ev)}
+        color="secondary"
+      >
         <ion-segment-button value="standard">
           <ion-label>Standard</ion-label>
         </ion-segment-button>
@@ -442,7 +480,7 @@ export class SegmentExample {
 
       // Segment in a toolbar
       <ion-toolbar>
-        <ion-segment onIonChange={(ev) => this.segmentChanged(ev)}>
+        <ion-segment onIonChange={ev => this.segmentChanged(ev)}>
           <ion-segment-button value="camera">
             <ion-icon name="camera"></ion-icon>
           </ion-segment-button>
@@ -453,21 +491,23 @@ export class SegmentExample {
       </ion-toolbar>,
 
       // Segment with default selection
-      <ion-segment onIonChange={(ev) => this.segmentChanged(ev)} value="javascript">
+      <ion-segment
+        onIonChange={ev => this.segmentChanged(ev)}
+        value="javascript"
+      >
         <ion-segment-button value="python">
           <ion-label>Python</ion-label>
         </ion-segment-button>
         <ion-segment-button value="javascript">
           <ion-label>Javascript</ion-label>
         </ion-segment-button>
-      </ion-segment>
+      </ion-segment>,
     ];
   }
 }
 ```
 
 </TabItem>
-
 
 <TabItem value="vue">
 
@@ -565,20 +605,19 @@ export class SegmentExample {
 </template>
 
 <script lang="ts">
-import { IonSegment, IonSegmentButton, IonToolbar } from '@ionic/vue';
-import { defineComponent } from 'vue';
+  import { IonSegment, IonSegmentButton, IonToolbar } from '@ionic/vue';
+  import { defineComponent } from 'vue';
 
-export default defineComponent({
-  components: { IonSegment, IonSegmentButton, IonToolbar },
-  methods: {
-    segmentChanged(ev: CustomEvent) {
-      console.log('Segment changed', ev);
-    }
-  }
-});
+  export default defineComponent({
+    components: { IonSegment, IonSegmentButton, IonToolbar },
+    methods: {
+      segmentChanged(ev: CustomEvent) {
+        console.log('Segment changed', ev);
+      },
+    },
+  });
 </script>
 ```
-
 
 </TabItem>
 
@@ -586,84 +625,69 @@ export default defineComponent({
 
 ## Properties
 
-
 ### color
 
-| | |
-| --- | --- |
+|                 |                                                                                                                                                                                                                                                                                  |
+| --------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Description** | The color to use from your application's color palette.<br />Default options are: `"primary"`, `"secondary"`, `"tertiary"`, `"success"`, `"warning"`, `"danger"`, `"light"`, `"medium"`, and `"dark"`.<br />For more information on colors, see [theming](../theming/basics.md). |
-| **Attribute** | `color` |
-| **Type** | `string \| undefined` |
-| **Default** | `undefined` |
-
-
+| **Attribute**   | `color`                                                                                                                                                                                                                                                                          |
+| **Type**        | `string \| undefined`                                                                                                                                                                                                                                                            |
+| **Default**     | `undefined`                                                                                                                                                                                                                                                                      |
 
 ### disabled
 
-| | |
-| --- | --- |
+|                 |                                                       |
+| --------------- | ----------------------------------------------------- |
 | **Description** | If `true`, the user cannot interact with the segment. |
-| **Attribute** | `disabled` |
-| **Type** | `boolean` |
-| **Default** | `false` |
-
-
+| **Attribute**   | `disabled`                                            |
+| **Type**        | `boolean`                                             |
+| **Default**     | `false`                                               |
 
 ### mode
 
-| | |
-| --- | --- |
+|                 |                                                   |
+| --------------- | ------------------------------------------------- |
 | **Description** | The mode determines which platform styles to use. |
-| **Attribute** | `mode` |
-| **Type** | `"ios" \| "md"` |
-| **Default** | `undefined` |
-
-
+| **Attribute**   | `mode`                                            |
+| **Type**        | `"ios" \| "md"`                                   |
+| **Default**     | `undefined`                                       |
 
 ### scrollable
 
-| | |
-| --- | --- |
+|                 |                                                                                                                                                                                                                          |
+| --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | **Description** | If `true`, the segment buttons will overflow and the user can swipe to see them.<br />In addition, this will disable the gesture to drag the indicator between the buttons<br />in order to swipe to see hidden buttons. |
-| **Attribute** | `scrollable` |
-| **Type** | `boolean` |
-| **Default** | `false` |
-
-
+| **Attribute**   | `scrollable`                                                                                                                                                                                                             |
+| **Type**        | `boolean`                                                                                                                                                                                                                |
+| **Default**     | `false`                                                                                                                                                                                                                  |
 
 ### swipeGesture
 
-| | |
-| --- | --- |
+|                 |                                                                                  |
+| --------------- | -------------------------------------------------------------------------------- |
 | **Description** | If `true`, users will be able to swipe between segment buttons to activate them. |
-| **Attribute** | `swipe-gesture` |
-| **Type** | `boolean` |
-| **Default** | `true` |
-
-
+| **Attribute**   | `swipe-gesture`                                                                  |
+| **Type**        | `boolean`                                                                        |
+| **Default**     | `true`                                                                           |
 
 ### value
 
-| | |
-| --- | --- |
-| **Description** | the value of the segment. |
-| **Attribute** | `value` |
-| **Type** | `null \| string \| undefined` |
-| **Default** | `undefined` |
-
-
+|                 |                               |
+| --------------- | ----------------------------- |
+| **Description** | the value of the segment.     |
+| **Attribute**   | `value`                       |
+| **Type**        | `null \| string \| undefined` |
+| **Default**     | `undefined`                   |
 
 ## Events
 
-| Name | Description |
-| --- | --- |
-| `ionChange` | Emitted when the value property has changed and any
-dragging pointer has been released from `ion-segment`. |
-
+| Name                                                   | Description                                         |
+| ------------------------------------------------------ | --------------------------------------------------- |
+| `ionChange`                                            | Emitted when the value property has changed and any |
+| dragging pointer has been released from `ion-segment`. |
 
 ## CSS Custom Properties
 
-| Name | Description |
-| --- | --- |
+| Name           | Description                      |
+| -------------- | -------------------------------- |
 | `--background` | Background of the segment button |
-

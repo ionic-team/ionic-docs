@@ -46,7 +46,7 @@ const animation = createAnimation()
 
 Developers using Ionic Core and TypeScript should install the latest version of `@ionic/core`.
 
-```typescript
+```tsx
 import { createAnimation, Animation } from '@ionic/core';
 
 ...
@@ -60,9 +60,9 @@ const animation: Animation = createAnimation('')
 </TabItem>
 <TabItem value="angular">
 
-Developers using Angular should install the latest version of `@ionic/angular`. Animations can be created via the `AnimationController` dependency injection. 
+Developers using Angular should install the latest version of `@ionic/angular`. Animations can be created via the `AnimationController` dependency injection.
 
-```typescript
+```tsx
 
 import { Animation, AnimationController } from '@ionic/angular';
 
@@ -81,7 +81,7 @@ constructor(private animationCtrl: AnimationController) {
 
 Developers using React should install the latest version of `@ionic/react`. React wrappers are in beta. Please report any issues on GitHub!
 
-```typescript
+```tsx
 
 import { CreateAnimation, Animation } from '@ionic/react';
 
@@ -90,8 +90,8 @@ import { CreateAnimation, Animation } from '@ionic/react';
 <CreateAnimation
   duration={1000}
   fromTo={{
-    property: 'opacity', 
-    fromValue: '1', 
+    property: 'opacity',
+    fromValue: '1',
     toValue: '0.5'
   }}
 >
@@ -163,7 +163,7 @@ this.animationCtrl.create()
 </TabItem>
 <TabItem value="react">
 
-```typescript
+```tsx
 <CreateAnimation
   duration={1500}
   iterations={Infinity}
@@ -253,7 +253,7 @@ this.animationCtrl.create()
 </TabItem>
 <TabItem value="react">
 
-```typescript
+```tsx
 <CreateAnimation
   duration={3000}
   iterations={Infinity}
@@ -325,7 +325,7 @@ const squareA = createAnimation()
     { offset: 0.5, transform: 'scale(1.2) rotate(45deg)' },
     { offset: 1, transform: 'scale(1) rotate(45deg)' }
   ]);
-  
+
 const squareB = createAnimation()
   .addElement(document.querySelector('.square-b'))
   .keyframes([
@@ -333,7 +333,7 @@ const squareB = createAnimation()
     { offset: 0.5, transform: 'scale(1.2)', opacity: '0.3' },
     { offset: 1, transform: 'scale(1)', opacity: '1' }
   ]);
-  
+
 const squareC = createAnimation()
   .addElement(document.querySelector('.square-c'))
   .duration(5000)
@@ -360,7 +360,7 @@ const squareA = this.animationCtrl.create()
     { offset: 0.5, transform: 'scale(1.2) rotate(45deg)' },
     { offset: 1, transform: 'scale(1) rotate(45deg)' }
   ]);
-  
+
 const squareB = this.animationCtrl.create()
   .addElement(this.squareB.nativeElement)
   .keyframes([
@@ -368,7 +368,7 @@ const squareB = this.animationCtrl.create()
     { offset: 0.5, transform: 'scale(1.2)', opacity: '0.3' },
     { offset: 1, transform: 'scale(1)', opacity: '1' }
   ]);
-  
+
 const squareC = this.animationCtrl.create()
   .addElement(this.squareC.nativeElement)
   .duration(5000)
@@ -387,7 +387,7 @@ const parent = this.animationCtrl.create()
 </TabItem>
 <TabItem value="react">
 
-```typescript
+```tsx
 private parentRef: React.RefObject<CreateAnimation> = React.createRef();
 private squareARef: React.RefObject<CreateAnimation> = React.createRef();
 private squareBRef: React.RefObject<CreateAnimation> = React.createRef();
@@ -400,7 +400,7 @@ componentDidMount() {
   const squareA = this.squareARef.current!.animation;
   const squareB = this.squareBRef.current!.animation;
   const squareC = this.squareCRef.current!.animation;
-  
+
   parent.addAnimation([squareA, squareB, squareC]);
 }
 
@@ -412,7 +412,7 @@ render() {
         duration={2000}
         iterations={Infinity}
       ></CreateAnimation>
-      
+
       <CreateAnimation
         ref={this.squareARef}
         keyframes={[
@@ -423,7 +423,7 @@ render() {
       >
         <div className="square"></div>
       </CreateAnimation>
-      
+
       <CreateAnimation
         ref={this.squareBRef}
         keyframes={[
@@ -434,7 +434,7 @@ render() {
       >
         <div className="square"></div>
       </CreateAnimation>
-      
+
       <CreateAnimation
         ref={this.squareCRef}
         duration={5000}
@@ -473,7 +473,7 @@ const squareA = createAnimation()
     { offset: 0.5, transform: 'scale(1.2) rotate(45deg)' },
     { offset: 1, transform: 'scale(1) rotate(45deg)' }
   ]);
-  
+
 const squareB = createAnimation()
   .addElement(squareBRef.value)
   .keyframes([
@@ -481,7 +481,7 @@ const squareB = createAnimation()
     { offset: 0.5, transform: 'scale(1.2)', opacity: '0.3' },
     { offset: 1, transform: 'scale(1)', opacity: '1' }
   ]);
-  
+
 const squareC = createAnimation()
   .addElement(squareCRef.value)
   .duration(5000)
@@ -563,7 +563,7 @@ this.animationCtrl.create()
 </TabItem>
 <TabItem value="react">
 
-```typescript
+```tsx
 <CreateAnimation
   duration={2000}
   beforeStyles={{
@@ -649,7 +649,7 @@ const squareA = createAnimation()
     { offset: 0.5, transform: 'scale(1.2) rotate(45deg)' },
     { offset: 1, transform: 'scale(1) rotate(0)' }
   ]);
-  
+
 const squareB = createAnimation()
   .addElement(document.querySelector('.square-b'))
   .fill('none')
@@ -659,7 +659,7 @@ const squareB = createAnimation()
     { offset: 0.5, transform: 'scale(1.2)', opacity: '0.3' },
     { offset: 1, transform: 'scale(1)', opacity: '1' }
   ]);
-  
+
 const squareC = createAnimation()
   .addElement(document.querySelector('.square-c'))
   .fill('none')
@@ -687,7 +687,7 @@ const squareA = this.animationCtrl.create()
     { offset: 0.5, transform: 'scale(1.2) rotate(45deg)' },
     { offset: 1, transform: 'scale(1) rotate(0)' }
   ]);
-  
+
 const squareB = this.animationCtrl.create()
   .addElement(this.squareB.nativeElement)
   .fill('none')
@@ -697,7 +697,7 @@ const squareB = this.animationCtrl.create()
     { offset: 0.5, transform: 'scale(1.2)', opacity: '0.3' },
     { offset: 1, transform: 'scale(1)', opacity: '1' }
   ]);
-  
+
 const squareC = this.animationCtrl.create()
   .addElement(this.squareC.nativeElement)
   .fill('none')
@@ -715,7 +715,7 @@ await squareC.play();
 </TabItem>
 <TabItem value="react">
 
-```typescript
+```tsx
 private squareARef: React.RefObject<CreateAnimation> = React.createRef();
 private squareBRef: React.RefObject<CreateAnimation> = React.createRef();
 private squareCRef: React.RefObject<CreateAnimation> = React.createRef();
@@ -726,7 +726,7 @@ async componentDidMount() {
   const squareA = this.squareARef.current!.animation;
   const squareB = this.squareBRef.current!.animation;
   const squareC = this.squareCRef.current!.animation;
-  
+
   await squareA.play();
   await squareB.play();
   await squareC.play();
@@ -747,7 +747,7 @@ render() {
       >
         <div className="square"></div>
       </CreateAnimation>
-      
+
       <CreateAnimation
         ref={this.squareBRef}
         fill="none"
@@ -760,7 +760,7 @@ render() {
       >
         <div className="square"></div>
       </CreateAnimation>
-      
+
       <CreateAnimation
         ref={this.squareCRef}
         fill="none"
@@ -801,7 +801,7 @@ const squareA = createAnimation()
     { offset: 0.5, transform: 'scale(1.2) rotate(45deg)' },
     { offset: 1, transform: 'scale(1) rotate(0)' }
   ]);
-  
+
 const squareB = createAnimation()
   .addElement(squareBRef.value)
   .fill('none')
@@ -811,7 +811,7 @@ const squareB = createAnimation()
     { offset: 0.5, transform: 'scale(1.2)', opacity: '0.3' },
     { offset: 1, transform: 'scale(1)', opacity: '1' }
   ]);
-  
+
 const squareC = createAnimation()
   .addElement(squareCRef.value)
   .fill('none')
@@ -877,22 +877,22 @@ const onMove = (ev): {
     animation.progressStart();
     started = true;
   }
-  
+
   animation.progressStep(getStep(ev));
 }
 
 const onEnd = (ev): {
   if (!started) { return; }
-  
+
   gesture.enable(false);
-  
+
   const step = getStep(ev);
   const shouldComplete = step > 0.5;
 
   animation
     .progressEnd((shouldComplete) ? 1 : 0, step)
     .onFinish((): { gesture.enable(true); });
-  
+
   initialStep = (shouldComplete) ? MAX_TRANSLATE : 0;
   started = false;
 }
@@ -909,7 +909,7 @@ const getStep = (ev): {
 </TabItem>
 <TabItem value="angular">
 
-```typescript
+```tsx
 private animation?: Animation;
 private gesture?: Gesture;
 
@@ -917,12 +917,12 @@ private started: boolean = false;
 private initialStep: number = 0;
 private MAX_TRANSLATE: number = 400;
 
-ngOnInit() {    
+ngOnInit() {
   this.animation = this.animationCtrl.create()
     .addElement(this.square.nativeElement)
     .duration(1000)
     .fromTo('transform', 'translateX(0)', `translateX(${this.MAX_TRANSLATE}px)`);
-  
+
   this.gesture = this.gestureCtrl.create({
     el: this.square.nativeElement,
     threshold: 0,
@@ -930,7 +930,7 @@ ngOnInit() {
     onMove: ev => this.onMove(ev),
     onEnd: ev => this.onEnd(ev)
   })
-  
+
   this.gesture.enable(true);
 }
 
@@ -939,22 +939,22 @@ private onMove(ev) {
     this.animation.progressStart();
     this.started = true;
   }
-  
+
   this.animation.progressStep(this.getStep(ev));
 }
 
 private onEnd(ev) {
   if (!this.started) { return; }
-  
+
   this.gesture.enable(false);
-  
+
   const step = this.getStep(ev);
   const shouldComplete = step > 0.5;
 
   this.animation
     .progressEnd((shouldComplete) ? 1 : 0, step)
     .onFinish((): { this.gesture.enable(true); });
-  
+
   this.initialStep = (shouldComplete) ? this.MAX_TRANSLATE : 0;
   this.started = false;
 }
@@ -982,10 +982,10 @@ class MyComponent extends React.Component<{}, any> {
   private gesture?: Gesture;
   private started: boolean = false;
   private initialStep: number = 0;
-  
+
   constructor(props: any) {
     super(props);
-    
+
     this.state = {
       progressStart: undefined,
       progressStep: undefined,
@@ -993,10 +993,10 @@ class MyComponent extends React.Component<{}, any> {
       onFinish: undefined
     };
   }
-  
+
   componentDidMount() {
     const square = Array.from(this.animation.current!.nodes.values())[0];
-    
+
     this.gesture = createGesture({
       el: square,
       gestureName: 'square-drag',
@@ -1004,11 +1004,11 @@ class MyComponent extends React.Component<{}, any> {
       onMove: ev => this.onMove(ev),
       onEnd: ev => this.onEnd(ev)
     });
-    
+
     this.gesture.enable(true);
   }
-  
-  private onMove(ev: GestureDetail) {    
+
+  private onMove(ev: GestureDetail) {
     if (!this.started) {
       this.setState({
         ...this.state,
@@ -1016,21 +1016,21 @@ class MyComponent extends React.Component<{}, any> {
       });
       this.started = true;
     }
-      
+
     this.setState({
       ...this.state,
       progressStep: { step: this.getStep(ev) }
     });
   }
-  
+
   private onEnd(ev: GestureDetail) {
     if (!this.started) { return; }
-  
+
     this.gesture!.enable(false);
-  
+
     const step = this.getStep(ev);
     const shouldComplete = step > 0.5;
-  
+
     this.setState({
       ...this.state,
       progressEnd: { playTo: (shouldComplete) ? 1 : 0, step },
@@ -1043,20 +1043,20 @@ class MyComponent extends React.Component<{}, any> {
         })
       }, opts: { oneTimeCallback: true }}
     });
-  
+
     this.initialStep = (shouldComplete) ? MAX_TRANSLATE : 0;
     this.started = false;
   }
-  
+
   private getStep(ev: GestureDetail) {
     const delta = this.initialStep + ev.deltaX;
     return this.clamp(0, delta / MAX_TRANSLATE, 1);
   }
-  
+
   private clamp(min: number, n: number, max: number) {
     return Math.max(min, Math.min(n, max));
   }
-  
+
   render() {
     return (
       <>
@@ -1116,22 +1116,22 @@ const onMove = (ev): {
     animation.progressStart();
     started = true;
   }
-  
+
   animation.progressStep(getStep(ev));
 }
 
 const onEnd = (ev): {
   if (!started) { return; }
-  
+
   gesture.enable(false);
-  
+
   const step = getStep(ev);
   const shouldComplete = step > 0.5;
 
   animation
     .progressEnd((shouldComplete) ? 1 : 0, step)
     .onFinish((): { gesture.enable(true); });
-  
+
   initialStep = (shouldComplete) ? MAX_TRANSLATE : 0;
   started = false;
 }
@@ -1166,7 +1166,7 @@ Developers can also tailor their animations to user preferences such as `prefers
   opacity: 0.5;
   background: blue;
   margin: 10px;
-  
+
   --background: red;
 }
 
@@ -1211,7 +1211,7 @@ this.animationCtrl.create()
 </TabItem>
 <TabItem value="react">
 
-```typescript
+```tsx
 <CreateAnimation
   duration={1500}
   iterations={Infinity}
@@ -1294,25 +1294,25 @@ function presentModal() {
     const backdropAnimation = createAnimation()
       .addElement(baseEl.querySelector('ion-backdrop')!)
       .fromTo('opacity', '0.01', 'var(--backdrop-opacity)');
-    
+
     const wrapperAnimation = createAnimation()
       .addElement(baseEl.querySelector('.modal-wrapper')!)
       .keyframes([
         { offset: 0, opacity: '0', transform: 'scale(0)' },
         { offset: 1, opacity: '0.99', transform: 'scale(1)' }
       ]);
-      
+
     return createAnimation()
       .addElement(baseEl)
       .easing('ease-out')
       .duration(500)
       .addAnimation([backdropAnimation, wrapperAnimation]);
   }
-  
+
   const leaveAnimation = (baseEl: any) => {
     return enterAnimation(baseEl).direction('reverse');
   }
-    
+
   // create the modal with the `modal-page` component
   const modalElement = document.createElement('ion-modal');
   modalElement.component = 'modal-page';
@@ -1327,7 +1327,7 @@ function presentModal() {
 </TabItem>
 <TabItem value="angular">
 
-```typescript
+```tsx
 import { Component } from '@angular/core';
 import { ModalController, AnimationController } from '@ionic/angular';
 import { ModalPage } from '../modal/modal.page';
@@ -1346,25 +1346,25 @@ export class ModalExample {
       const backdropAnimation = this.animationCtrl.create()
         .addElement(baseEl.querySelector('ion-backdrop')!)
         .fromTo('opacity', '0.01', 'var(--backdrop-opacity)');
-      
+
       const wrapperAnimation = this.animationCtrl.create()
         .addElement(baseEl.querySelector('.modal-wrapper')!)
         .keyframes([
           { offset: 0, opacity: '0', transform: 'scale(0)' },
           { offset: 1, opacity: '0.99', transform: 'scale(1)' }
         ]);
-        
+
       return this.animationCtrl.create()
         .addElement(baseEl)
         .easing('ease-out')
         .duration(500)
         .addAnimation([backdropAnimation, wrapperAnimation]);
     }
-    
+
     const leaveAnimation = (baseEl: any) => {
       return enterAnimation(baseEl).direction('reverse');
     }
-    
+
     const modal = await this.modalController.create({
       component: ModalPage,
       enterAnimation,
@@ -1383,26 +1383,26 @@ import { CreateAnimation, IonModal, IonButton, IonContent } from '@ionic/react';
 
 export const ModalExample: React.FC = () => {
   const [showModal, setShowModal] = useState(false);
-  
+
   const enterAnimation = (baseEl: any) => {
     const backdropAnimation = createAnimation()
       .addElement(baseEl.querySelector('ion-backdrop')!)
       .fromTo('opacity', '0.01', 'var(--backdrop-opacity)');
-    
+
     const wrapperAnimation = createAnimation()
       .addElement(baseEl.querySelector('.modal-wrapper')!)
       .keyframes([
         { offset: 0, opacity: '0', transform: 'scale(0)' },
         { offset: 1, opacity: '0.99', transform: 'scale(1)' }
       ]);
-      
+
     return createAnimation()
       .addElement(baseEl)
       .easing('ease-out')
       .duration(500)
       .addAnimation([backdropAnimation, wrapperAnimation]);
   }
-  
+
   const leaveAnimation = (baseEl: any) => {
     return enterAnimation(baseEl).direction('reverse');
   }
@@ -1433,7 +1433,7 @@ export const ModalExample: React.FC = () => {
       >
         Modal content goes here.
       </ion-modal>
-      
+
       <ion-button @click="setModalOpen(true)">Show Modal</ion-button>
     </ion-content>
   </ion-page>
@@ -1448,26 +1448,26 @@ export default defineComponent({
   setup() {
     const isModalOpen = ref(false);
     const setModalOpen = (state) => isModalOpen.value = state;
-    
+
     const enterAnimation = (baseEl: any) => {
       const backdropAnimation = createAnimation()
         .addElement(baseEl.querySelector('ion-backdrop')!)
         .fromTo('opacity', '0.01', 'var(--backdrop-opacity)');
-      
+
       const wrapperAnimation = createAnimation()
         .addElement(baseEl.querySelector('.modal-wrapper')!)
         .keyframes([
           { offset: 0, opacity: '0', transform: 'scale(0)' },
           { offset: 1, opacity: '0.99', transform: 'scale(1)' }
         ]);
-        
+
       return createAnimation()
         .addElement(baseEl)
         .easing('ease-out')
         .duration(500)
         .addAnimation([backdropAnimation, wrapperAnimation]);
     }
-    
+
     const leaveAnimation = (baseEl: any) => {
       return enterAnimation(baseEl).direction('reverse');
     }
@@ -1482,7 +1482,6 @@ export default defineComponent({
 ````
 
 <Codepen user="ionic" slug="ExapZBZ" />
-
 
 ## Performance Considerations
 
@@ -1511,15 +1510,15 @@ const animation = createAnimation('my-animation-identifier')
 
 ## Browser Support
 
-| Browser/Platform     | Supported Versions |
-| -------------------- | ------------------ |
-| **Chrome**           | 43+                |
-| **Safari**           | 9+                 |   
-| **Firefox**          | 32+                |     
-| **IE/Edge**          | 11+                |    
-| **Opera**            | 30+                |
-| **iOS**              | 9+                 |
-| **Android**          | 5+                 |      
+| Browser/Platform | Supported Versions |
+| ---------------- | ------------------ |
+| **Chrome**       | 43+                |
+| **Safari**       | 9+                 |
+| **Firefox**      | 32+                |
+| **IE/Edge**      | 11+                |
+| **Opera**        | 30+                |
+| **iOS**          | 9+                 |
+| **Android**      | 5+                 |
 
 :::note
 Due to a bug in Safari versions 9-11, stepping through animations via `progressStep` is not supported. This is supported on Safari 12+.
@@ -1528,13 +1527,13 @@ Due to a bug in Safari versions 9-11, stepping through animations via `progressS
 ## Types
 
 | Name                 | Value                                                         |
-| ---------------------| ------------------------------------------------------------- |
+| -------------------- | ------------------------------------------------------------- |
 | `AnimationDirection` | `'normal' \| 'reverse' \| 'alternate' \| 'alternate-reverse'` |
-| `AnimationFill`      | `'auto' \| 'none' \| 'forwards' \| 'backwards' \| 'both'`     |  
+| `AnimationFill`      | `'auto' \| 'none' \| 'forwards' \| 'backwards' \| 'both'`     |
 
 ## Interfaces
 
-```typescript
+```tsx
 interface AnimationCallbackOptions {
   /**
    * If true, the associated callback will only be fired once.
@@ -1544,56 +1543,55 @@ interface AnimationCallbackOptions {
 
 interface AnimationPlayOptions {
   /**
-   * If true, the animation will play synchronously. 
+   * If true, the animation will play synchronously.
    * This is the equivalent of running the animation
    * with a duration of 0ms.
-   */ 
+   */
   sync: boolean;
 }
 ```
 
 ## Properties
 
-| Name                                      | Description                                       |
-| ------------------------------------------| ------------------------------------------------- |
-| `childAnimations: Animation[]`            | All child animations of a given parent animation. |
-| `elements: HTMLElement[]`                 | All elements attached to an animation.            |                                                       
-| `parentAnimation?: Animation` | The parent animation of a given animation object. |
+| Name                           | Description                                       |
+| ------------------------------ | ------------------------------------------------- |
+| `childAnimations: Animation[]` | All child animations of a given parent animation. |
+| `elements: HTMLElement[]`      | All elements attached to an animation.            |
+| `parentAnimation?: Animation`  | The parent animation of a given animation object. |
 
 ## Methods
 
-| Name                                      | Description                                       |
-| ------------------------------------------| ------------------------------------------------- |
-| `addAnimation(animationToAdd: Animation \| Animation[]): Animation`            | Group one or more animations together to be controlled by a parent animation. |
-| `addElement(el: Element \| Element[] \| Node \| Node[] \| NodeList): Animation`                 | Add one or more elements to the animation.            |                                                       
-| `afterAddClass(className: string \| string[]): Animation` | Add a class or array of classes to be added to all elements in an animation after the animation ends. |
-| `afterAddRead(readFn: (): void): Animation` | Add a function that performs a DOM read to be run after the animation ends. |
-| `afterAddWrite(writeFn: (): void): Animation` | Add a function that performs a DOM write to be run after the animation ends. |
-| `afterClearStyles(propertyNames: string[]): Animation` | Add an array of property names to be cleared from the inline styles on all elements in an animation after the animation ends. |
-| `afterRemoveClass(className: string \| string[]): Animation` | Add a class or an array of classes to be removed from all elements in an animation after the animation ends. |
-| `afterStyles(styles: { [property: string]: any }): Animation` | Add an object of styles to be applied to all elements in an animation after the animation ends. |
-| `beforeAddClass(className: string \| string[]): Animation` |Add a class or array of classes to be added to all elements in an animation before the animation starts. |
-| `beforeAddRead(readFn: (): void): Animation` | Add a function that performs a DOM read to be run before the animation starts. |
-| `beforeAddWrite(writeFn: (): void): Animation` | Add a function that performs a DOM write to be run before the animation starts. |
-| `beforeClearStyles(propertyNames: string[]): Animation` | Add an array of property names to be cleared from the inline styles on all elements in an animation before the animation starts. |
-| `beforeRemoveClass(className: string \| string[]): Animation` | Add a class or an array of classes to be removed from all elements in an animation before the animation starts. |
-| `beforeStyles(styles: { [property: string]: any }): Animation` | Add an object of styles to be applied to all elements in an animation before the animation starts. |
-| `direction(direction?: AnimationDirection): Animation` | Set the direction the animation should play in.
-| `delay(delay?: number): Animation` | Set the delay for the start of the animation in milliseconds. |
-| `destroy(clearStyleSheets?: boolean): Animation` | Destroy the animation and clear all elements, child animations, and keyframes. |
-| `duration(duration?: number): Animation` | Set the duration of the animation in milliseconds. |
-| `easing(easing?: string): Animation` | Set the easing of the animation in milliseconds. See [Easing Effects](https://developer.mozilla.org/en-US/docs/Web/API/EffectTiming/easing#Value) for a list of accepted easing values. |
-| `from(property: string, value: any): Animation` | Set the start styles of the animation. |
-| `fromTo(property: string, fromValue: any, toValue: any): Animation` | Set the start and end styles of the animation. |
-| `fill(fill?: AnimationFill): Animation` | Set how the animation applies styles to its elements before and after the animation's execution. |
-| `iterations(iterations: number): Animation` | Set the number of times the animation cycle should be played before stopping. |
-| `keyframes(keyframes: any[]): Animation` | Set the keyframes for an animation. |
-| `onFinish(callback: (didComplete: boolean, animation: Animation): void, opts?: AnimationCallbackOptions): Animation` | Add a callback to be run upon the animation ending. |
-| `pause(): Animation` | Pause the animation. |
-| `play(opts?: AnimationPlayOptions): Promise<void>` | Play the animation. |
-| `progressEnd(playTo?: 0 \| 1, step: number, dur?: number): Animation` | Stop seeking through an animation. |
-| `progressStart(forceLinearEasing?: boolean, step?: number): Animation` | Begin seeking through an animation. |
-| `progressStep(step: number): Animation` | Seek through an animation. |
-| `stop(): Animation` | Stop the animation and reset all elements to their initial state. |
-| `to(property: string, value: any): Animation` | Set the end styles of the animation. |
-
+| Name                                                                                                                 | Description                                                                                                                                                                             |
+| -------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `addAnimation(animationToAdd: Animation \| Animation[]): Animation`                                                  | Group one or more animations together to be controlled by a parent animation.                                                                                                           |
+| `addElement(el: Element \| Element[] \| Node \| Node[] \| NodeList): Animation`                                      | Add one or more elements to the animation.                                                                                                                                              |
+| `afterAddClass(className: string \| string[]): Animation`                                                            | Add a class or array of classes to be added to all elements in an animation after the animation ends.                                                                                   |
+| `afterAddRead(readFn: (): void): Animation`                                                                          | Add a function that performs a DOM read to be run after the animation ends.                                                                                                             |
+| `afterAddWrite(writeFn: (): void): Animation`                                                                        | Add a function that performs a DOM write to be run after the animation ends.                                                                                                            |
+| `afterClearStyles(propertyNames: string[]): Animation`                                                               | Add an array of property names to be cleared from the inline styles on all elements in an animation after the animation ends.                                                           |
+| `afterRemoveClass(className: string \| string[]): Animation`                                                         | Add a class or an array of classes to be removed from all elements in an animation after the animation ends.                                                                            |
+| `afterStyles(styles: { [property: string]: any }): Animation`                                                        | Add an object of styles to be applied to all elements in an animation after the animation ends.                                                                                         |
+| `beforeAddClass(className: string \| string[]): Animation`                                                           | Add a class or array of classes to be added to all elements in an animation before the animation starts.                                                                                |
+| `beforeAddRead(readFn: (): void): Animation`                                                                         | Add a function that performs a DOM read to be run before the animation starts.                                                                                                          |
+| `beforeAddWrite(writeFn: (): void): Animation`                                                                       | Add a function that performs a DOM write to be run before the animation starts.                                                                                                         |
+| `beforeClearStyles(propertyNames: string[]): Animation`                                                              | Add an array of property names to be cleared from the inline styles on all elements in an animation before the animation starts.                                                        |
+| `beforeRemoveClass(className: string \| string[]): Animation`                                                        | Add a class or an array of classes to be removed from all elements in an animation before the animation starts.                                                                         |
+| `beforeStyles(styles: { [property: string]: any }): Animation`                                                       | Add an object of styles to be applied to all elements in an animation before the animation starts.                                                                                      |
+| `direction(direction?: AnimationDirection): Animation`                                                               | Set the direction the animation should play in.                                                                                                                                         |
+| `delay(delay?: number): Animation`                                                                                   | Set the delay for the start of the animation in milliseconds.                                                                                                                           |
+| `destroy(clearStyleSheets?: boolean): Animation`                                                                     | Destroy the animation and clear all elements, child animations, and keyframes.                                                                                                          |
+| `duration(duration?: number): Animation`                                                                             | Set the duration of the animation in milliseconds.                                                                                                                                      |
+| `easing(easing?: string): Animation`                                                                                 | Set the easing of the animation in milliseconds. See [Easing Effects](https://developer.mozilla.org/en-US/docs/Web/API/EffectTiming/easing#Value) for a list of accepted easing values. |
+| `from(property: string, value: any): Animation`                                                                      | Set the start styles of the animation.                                                                                                                                                  |
+| `fromTo(property: string, fromValue: any, toValue: any): Animation`                                                  | Set the start and end styles of the animation.                                                                                                                                          |
+| `fill(fill?: AnimationFill): Animation`                                                                              | Set how the animation applies styles to its elements before and after the animation's execution.                                                                                        |
+| `iterations(iterations: number): Animation`                                                                          | Set the number of times the animation cycle should be played before stopping.                                                                                                           |
+| `keyframes(keyframes: any[]): Animation`                                                                             | Set the keyframes for an animation.                                                                                                                                                     |
+| `onFinish(callback: (didComplete: boolean, animation: Animation): void, opts?: AnimationCallbackOptions): Animation` | Add a callback to be run upon the animation ending.                                                                                                                                     |
+| `pause(): Animation`                                                                                                 | Pause the animation.                                                                                                                                                                    |
+| `play(opts?: AnimationPlayOptions): Promise<void>`                                                                   | Play the animation.                                                                                                                                                                     |
+| `progressEnd(playTo?: 0 \| 1, step: number, dur?: number): Animation`                                                | Stop seeking through an animation.                                                                                                                                                      |
+| `progressStart(forceLinearEasing?: boolean, step?: number): Animation`                                               | Begin seeking through an animation.                                                                                                                                                     |
+| `progressStep(step: number): Animation`                                                                              | Seek through an animation.                                                                                                                                                              |
+| `stop(): Animation`                                                                                                  | Stop the animation and reset all elements to their initial state.                                                                                                                       |
+| `to(property: string, value: any): Animation`                                                                        | Set the end styles of the animation.                                                                                                                                                    |

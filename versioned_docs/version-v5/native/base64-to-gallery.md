@@ -1,7 +1,6 @@
 ---
-sidebar_label: "Base64 To Gallery"
+sidebar_label: 'Base64 To Gallery'
 ---
-
 
 import DocsCard from '@site/src/components/DocsCard';
 import DocsButton from '@site/src/components/DocsButton';
@@ -25,7 +24,6 @@ This plugin allows you to save base64 data as a png image into the device
     <DocsButton className="native-ee-detail">Contact Us Today!</DocsButton>
   </div>
 </DocsCard>
-
 
 <h2 id="installation">
   <a href="#installation">Installation</a>
@@ -55,7 +53,7 @@ This plugin allows you to save base64 data as a png image into the device
 </Tabs>
 
 ## Supported Platforms
-  
+
 - Android
 - iOS
 - Windows Phone 8
@@ -65,12 +63,10 @@ This plugin allows you to save base64 data as a png image into the device
 ### React
 
 [Learn more about using Ionic Native components in React](../native-community.md#react)
-  
 
 ### Angular
 
-
-```typescript
+```tsx
 import { Base64ToGallery } from '@ionic-native/base64-to-gallery/ngx';
 
 constructor(private base64ToGallery: Base64ToGallery) { }

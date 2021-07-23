@@ -1,7 +1,6 @@
 ---
-sidebar_label: "Httpd"
+sidebar_label: 'Httpd'
 ---
-
 
 import DocsCard from '@site/src/components/DocsCard';
 import DocsButton from '@site/src/components/DocsButton';
@@ -10,7 +9,6 @@ import TabItem from '@theme/TabItem';
 import CodeBlock from '@theme/CodeBlock';
 
 # Httpd
-
 
 Embedded httpd for Cordova apps. Light weight HTTP server.
 
@@ -26,7 +24,6 @@ Embedded httpd for Cordova apps. Light weight HTTP server.
     <DocsButton className="native-ee-detail">Contact Us Today!</DocsButton>
   </div>
 </DocsCard>
-
 
 <h2 id="installation">
   <a href="#installation">Installation</a>
@@ -56,7 +53,7 @@ Embedded httpd for Cordova apps. Light weight HTTP server.
 </Tabs>
 
 ## Supported Platforms
-  
+
 - Android
 - iOS
 - macOS
@@ -66,12 +63,10 @@ Embedded httpd for Cordova apps. Light weight HTTP server.
 ### React
 
 [Learn more about using Ionic Native components in React](../native-community.md#react)
-  
 
 ### Angular
 
-
-```typescript
+```tsx
 import { Httpd, HttpdOptions } from '@ionic-native/httpd/ngx';
 
 constructor(private httpd: Httpd) { }

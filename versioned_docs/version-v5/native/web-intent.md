@@ -1,7 +1,6 @@
 ---
-sidebar_label: "Web Intent"
+sidebar_label: 'Web Intent'
 ---
-
 
 import DocsCard from '@site/src/components/DocsCard';
 import DocsButton from '@site/src/components/DocsButton';
@@ -10,7 +9,6 @@ import TabItem from '@theme/TabItem';
 import CodeBlock from '@theme/CodeBlock';
 
 # Web Intent
-
 
 This Plugin provides a general purpose shim layer for the Android intent mechanism, exposing various ways to handle sending and receiving intents.
 
@@ -26,7 +24,6 @@ This Plugin provides a general purpose shim layer for the Android intent mechani
     <DocsButton className="native-ee-detail">Contact Us Today!</DocsButton>
   </div>
 </DocsCard>
-
 
 <h2 id="installation">
   <a href="#installation">Installation</a>
@@ -56,7 +53,7 @@ This Plugin provides a general purpose shim layer for the Android intent mechani
 </Tabs>
 
 ## Supported Platforms
-  
+
 - Android
 
 ## Usage
@@ -64,14 +61,12 @@ This Plugin provides a general purpose shim layer for the Android intent mechani
 ### React
 
 [Learn more about using Ionic Native components in React](../native-community.md#react)
-  
 
 ### Angular
 
-
 For usage information please refer to the plugin's Github repo.
 
-```typescript
+```tsx
 import { WebIntent } from '@ionic-native/web-intent/ngx';
 
 constructor(private webIntent: WebIntent) { }

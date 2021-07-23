@@ -1,7 +1,6 @@
 ---
-sidebar_label: "Zeroconf"
+sidebar_label: 'Zeroconf'
 ---
-
 
 import DocsCard from '@site/src/components/DocsCard';
 import DocsButton from '@site/src/components/DocsButton';
@@ -10,7 +9,6 @@ import TabItem from '@theme/TabItem';
 import CodeBlock from '@theme/CodeBlock';
 
 # Zeroconf
-
 
 This plugin allows you to browse and publish Zeroconf/Bonjour/mDNS services.
 
@@ -26,7 +24,6 @@ This plugin allows you to browse and publish Zeroconf/Bonjour/mDNS services.
     <DocsButton className="native-ee-detail">Contact Us Today!</DocsButton>
   </div>
 </DocsCard>
-
 
 <h2 id="installation">
   <a href="#installation">Installation</a>
@@ -56,7 +53,7 @@ This plugin allows you to browse and publish Zeroconf/Bonjour/mDNS services.
 </Tabs>
 
 ## Supported Platforms
-  
+
 - Android
 - iOS
 
@@ -65,12 +62,10 @@ This plugin allows you to browse and publish Zeroconf/Bonjour/mDNS services.
 ### React
 
 [Learn more about using Ionic Native components in React](../native-community.md#react)
-  
 
 ### Angular
 
-
-```typescript
+```tsx
 import { Zeroconf } from '@ionic-native/zeroconf/ngx';
 
 constructor(private zeroconf: Zeroconf) { }
@@ -97,4 +92,3 @@ this.zeroconf.register('_http._tcp.', 'local.', 'Becvert\'s iPad', 80, {
 // unregister your service
 this.zeroconf.unregister('_http._tcp.', 'local.', 'Becvert\'s iPad');
 ```
-

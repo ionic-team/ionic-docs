@@ -18,7 +18,7 @@ Here is a sample `App` component that defines a single route to the "/dashboard"
 
 **App.tsx**
 
-```typescript
+```tsx
 const App: React.FC = () => (
   <IonApp>
     <IonReactRouter>
@@ -37,7 +37,7 @@ The redirect also has the `exact` prop set, which means the URL has to match the
 
 You can also programmatically redirect from a Route's render method based on a condition, like checking if a user is authed or not:
 
-```typescript
+```tsx
 <Route
   exact
   path="/dashboard"
@@ -57,7 +57,7 @@ Inside the Dashboard page, we define more routes related to this specific sectio
 
 **DashboardPage.tsx**
 
-```typescript
+```tsx
 const DashboardPage: React.FC = () => {
   return (
     <IonPage>
@@ -74,7 +74,7 @@ Here, there are a couple more routes defined to point to pages from within the d
 
 However, we can use the [`match`](https://reacttraining.com/react-router/web/api/match) objects `url` property to provide the URL that was matched to render a component, which helps when working with nested routes:
 
-```typescript
+```tsx
 const DashboardPage: React.FC<RouteComponentProps> = ({ match }) => {
   return (
     <IonPage>
@@ -107,7 +107,7 @@ We can define a fallback route by placing a `Route` component without a `path` p
 
 **DashboardPage.tsx**
 
-```typescript
+```tsx
 const DashboardPage: React.FC<RouteComponentProps> = ({ match }) => {
   return (
     <IonRouterOutlet>
@@ -123,7 +123,7 @@ Here, we see that in the event a location does not match the first two `Route`s 
 
 You can alternatively supply a component to render instead of providing a redirect.
 
-```typescript
+```tsx
 const DashboardPage: React.FC<RouteComponentProps> = ({ match }) => {
   return (
     <IonRouterOutlet>
@@ -139,7 +139,7 @@ const DashboardPage: React.FC<RouteComponentProps> = ({ match }) => {
 
 The `IonPage` component wraps each view in an Ionic React app and allows page transitions and stack navigation to work properly. Each view that is navigated to using the router must include an `IonPage` component.
 
-```typescript
+```tsx
 import {
   IonContent,
   IonHeader,
@@ -170,7 +170,7 @@ There are several options available when routing to different views in an Ionic 
 
 **UsersListPage.tsx**
 
-```typescript
+```tsx
 const UsersListPage: React.FC = () => {
   return (
     <IonPage>
@@ -208,7 +208,7 @@ We recommend using one of the above methods whenever possible for routing. The a
 
 A programmatic option for navigation is using the [`history`](https://reacttraining.com/react-router/web/api/history) prop that React Router provides to the components it renders via routes.
 
-```typescript
+```tsx
 <IonButton
   onClick={e => {
     e.preventDefault();
@@ -229,7 +229,7 @@ The second route defined in the Dashboard Page has a URL parameter defined (the 
 
 **UserDetailPage.tsx**
 
-```typescript
+```tsx
 interface UserDetailPageProps
   extends RouteComponentProps<{
     id: string;
@@ -265,7 +265,7 @@ While the syntax looks a bit strange, it is reasonably straightforward once you 
 
 For example, the routes for a view with two tabs (sessions and speakers) can be set up as such:
 
-```typescript
+```tsx
 <IonRouterOutlet>
   <Route path="/:tab(sessions)" component={SessionsPage} exact={true} />
   <Route path="/:tab(sessions)/:id" component={SessionDetail} />

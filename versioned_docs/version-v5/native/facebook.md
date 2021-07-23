@@ -1,9 +1,8 @@
 ---
-title: "Facebook Connect Plugin | Facebook Docs in Ionic Documentation"
+title: 'Facebook Connect Plugin | Facebook Docs in Ionic Documentation'
 description: "Ionic Documentation's Facebook Docs explain how to use the Facebook Connect Cordova Plugin to obtain access to the native FB application on iOS and Android."
-sidebar_label: "Facebook"
+sidebar_label: 'Facebook'
 ---
-
 
 import DocsCard from '@site/src/components/DocsCard';
 import DocsButton from '@site/src/components/DocsButton';
@@ -13,14 +12,13 @@ import CodeBlock from '@theme/CodeBlock';
 
 # Facebook
 
-
 Use the Facebook Connect plugin to obtain access to the native FB application on iOS and Android.
 
 Requires Cordova plugin: `cordova-plugin-facebook-connect`. For more info, please see the [Facebook Connect](https://github.com/cordova-plugin-facebook-connect/cordova-plugin-facebook-connect).
 
 #### Installation
 
- To use the FB plugin, you first have to create a new Facebook App inside of the Facebook developer portal at [https://developers.facebook.com/apps](https://developers.facebook.com/apps).
+To use the FB plugin, you first have to create a new Facebook App inside of the Facebook developer portal at [https://developers.facebook.com/apps](https://developers.facebook.com/apps).
 
 [![fb-getstarted-1](/img/docs/native/Facebook/1.png)](https://developers.facebook.com/apps/)
 
@@ -45,6 +43,7 @@ Click `'Add Platform'`.
 At this point you'll need to open your project's [`config.xml`](https://cordova.apache.org/docs/en/latest/config_ref/index.html) file, found in the root directory of your project.
 
 Take note of the `id` for the next step:
+
 ```
 <widget id="com.mycompany.testapp" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
 ```
@@ -52,16 +51,16 @@ Take note of the `id` for the next step:
 You can also edit the `id` to whatever you'd like it to be.
 
 #### iOS Install
+
 Under 'Bundle ID', add the `id` from your `config.xml` file:
 
 [![fb-getstarted-5](/img/docs/native/Facebook/5.png)](https://developers.facebook.com/apps/)
 
-
 #### Android Install
+
 Under 'Google Play Package Name', add the `id` from your `config.xml` file:
 
 [![fb-getstarted-6](/img/docs/native/Facebook/6.png)](https://developers.facebook.com/apps/)
-
 
 And that's it! You can now make calls to Facebook using the plugin.
 
@@ -79,7 +78,6 @@ Events are listed on the [insights page](https://www.facebook.com/insights/).
 
 For tracking events, see `logEvent` and `logPurchase`.
 
-
 <p><a href="https://github.com/cordova-plugin-facebook-connect/cordova-plugin-facebook-connect" target="_blank" rel="noopener" className="git-link">
   <svg viewBox="0 0 512 512"><path d="M416 160c0-35.3-28.7-64-64-64s-64 28.7-64 64c0 23.7 12.9 44.3 32 55.4v8.6c0 19.9-7.8 33.7-25.3 44.9-15.4 9.8-38.1 17.1-67.5 21.5-14 2.1-25.7 6-35.2 10.7V151.4c19.1-11.1 32-31.7 32-55.4 0-35.3-28.7-64-64-64S96 60.7 96 96c0 23.7 12.9 44.3 32 55.4v209.2c-19.1 11.1-32 31.7-32 55.4 0 35.3 28.7 64 64 64s64-28.7 64-64c0-16.6-6.3-31.7-16.7-43.1 1.9-4.9 9.7-16.3 29.4-19.3 38.8-5.8 68.9-15.9 92.3-30.8 36-22.8 55-57 55-98.8v-8.6c19.1-11.1 32-31.7 32-55.4zM160 56c22.1 0 40 17.9 40 40s-17.9 40-40 40-40-17.9-40-40 17.9-40 40-40zm0 400c-22.1 0-40-17.9-40-40s17.9-40 40-40 40 17.9 40 40-17.9 40-40 40zm192-256c-22.1 0-40-17.9-40-40s17.9-40 40-40 40 17.9 40 40-17.9 40-40 40z"></path></svg> https://github.com/cordova-plugin-facebook-connect/cordova-plugin-facebook-connect
 </a></p>
@@ -92,7 +90,6 @@ For tracking events, see `logEvent` and `logPurchase`.
     <DocsButton className="native-ee-detail">Contact Us Today!</DocsButton>
   </div>
 </DocsCard>
-
 
 <h2 id="installation">
   <a href="#installation">Installation</a>
@@ -122,7 +119,7 @@ For tracking events, see `logEvent` and `logPurchase`.
 </Tabs>
 
 ## Supported Platforms
-  
+
 - Android
 - iOS
 - Browser
@@ -132,12 +129,10 @@ For tracking events, see `logEvent` and `logPurchase`.
 ### React
 
 [Learn more about using Ionic Native components in React](../native-community.md#react)
-  
 
 ### Angular
 
-
-```typescript
+```tsx
 import { Facebook, FacebookLoginResponse } from '@ionic-native/facebook/ngx';
 
 constructor(private fb: Facebook) { }
@@ -152,5 +147,3 @@ this.fb.login(['public_profile', 'user_friends', 'email'])
 this.fb.logEvent(this.fb.EVENTS.EVENT_NAME_ADDED_TO_CART);
 
 ```
-
-

@@ -28,7 +28,7 @@ The Live Reload server will start up, and the native IDE of choice will open if 
 
 With Live Reload running and the app is open on your device, let’s implement photo deletion functionality. Open `Tab2.tsx` then import `useState` from React and `UserPhoto` from the `usePhotoGallery` hook:
 
-```typescript
+```tsx
 import React, { useState } from 'react';
 import { usePhotoGallery, UserPhoto } from '../hooks/usePhotoGallery';
 // other imports
@@ -36,45 +36,47 @@ import { usePhotoGallery, UserPhoto } from '../hooks/usePhotoGallery';
 
 Next, reference the `deletePhoto` function, which we'll create soon:
 
-```typescript
+```tsx
 const { photos, takePhoto, deletePhoto } = usePhotoGallery();
 ```
 
 Next, add a state value to store information about the photo to delete:
 
-```typescript
+```tsx
 const [photoToDelete, setPhotoToDelete] = useState<UserPhoto>();
 ```
 
 When a user clicks on an image, we will show the action sheet by changing the state value to the photo. Update the `<IonImg>` element to:
 
-```typescript
-<IonImg onClick={() => setPhotoToDelete(photo)}
-        src={photo.webviewPath} />
+```tsx
+<IonImg onClick={() => setPhotoToDelete(photo)} src={photo.webviewPath} />
 ```
 
 Next, add an [IonActionSheet](https://ionicframework.com/docs/api/action-sheet) dialog with the option to either delete the selected photo or cancel (close) the dialog. We will set the isOpen property based on if photoToDelete has a value or not.
 
 In the JSX, put the following component before the closing `</IonContent>` tag.
 
-```typescript
+```tsx
 <IonActionSheet
   isOpen={!!photoToDelete}
-  buttons={[{
-    text: 'Delete',
-    role: 'destructive',
-    icon: trash,
-    handler: () => {
-      if (photoToDelete) {
-        deletePhoto(photoToDelete);
-        setPhotoToDelete(undefined);
-      }
-    }
-  }, {
-    text: 'Cancel',
-    icon: close,
-    role: 'cancel'
-  }]}
+  buttons={[
+    {
+      text: 'Delete',
+      role: 'destructive',
+      icon: trash,
+      handler: () => {
+        if (photoToDelete) {
+          deletePhoto(photoToDelete);
+          setPhotoToDelete(undefined);
+        }
+      },
+    },
+    {
+      text: 'Cancel',
+      icon: close,
+      role: 'cancel',
+    },
+  ]}
   onDidDismiss={() => setPhotoToDelete(undefined)}
 />
 ```
@@ -83,19 +85,19 @@ Above, we added two options: `Delete` that calls `deletePhoto` function (to be a
 
 Next, we need to implement the deletePhoto method that will come from the `usePhotoGallery` hook. Open the file and paste in the following function in the hook:
 
-```typescript
+```tsx
 const deletePhoto = async (photo: UserPhoto) => {
   // Remove this photo from the Photos reference data array
   const newPhotos = photos.filter(p => p.filepath !== photo.filepath);
 
   // Update photos array cache by overwriting the existing photo array
-  Storage.set({key: PHOTO_STORAGE, value: JSON.stringify(newPhotos) });
+  Storage.set({ key: PHOTO_STORAGE, value: JSON.stringify(newPhotos) });
 
   // delete photo file from filesystem
   const filename = photo.filepath.substr(photo.filepath.lastIndexOf('/') + 1);
   await Filesystem.deleteFile({
     path: filename,
-    directory: Directory.Data
+    directory: Directory.Data,
   });
   setPhotos(newPhotos);
 };
@@ -105,11 +107,11 @@ The selected photo is removed from the Photos array first. Then, we use the Capa
 
 Make sure to return the `deletePhoto` function so it is as a part of the hook API that we expose:
 
-```typescript
+```tsx
 return {
   deletePhoto,
   photos,
-  takePhoto
+  takePhoto,
 };
 ```
 

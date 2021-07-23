@@ -49,7 +49,7 @@ The last import is the root component for our app, simply named `App`. This is o
 
 If we open `App.tsx`, we should see the following.
 
-```typescript
+```tsx
 import React from 'react';
 import { Route } from 'react-router-dom';
 import { IonApp, IonRouterOutlet } from '@ionic/react';
@@ -73,7 +73,7 @@ const App: React.FC = () => (
 
 At first glance, it may look like a lot is going on, so let's break it down, starting with the first group of imports.
 
-```typescript
+```tsx
 import React from 'react';
 import { Route } from 'react-router-dom';
 import { IonApp, IonRouterOutlet } from '@ionic/react';
@@ -95,7 +95,7 @@ The CSS import is pulling in the utility styles from Ionic for things like paddi
 
 After reviewing all of the imports, we now get to our first look at a React Component:
 
-```typescript
+```tsx
 const App: React.FC = () => (
   <IonApp>
     <IonReactRouter>
@@ -122,8 +122,14 @@ Currently, the `Home` component looks like so:
 
 ![React home component](/img/guides/react/first-app/home-route.png)
 
-```typescript
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
+```tsx
+import {
+  IonContent,
+  IonHeader,
+  IonPage,
+  IonTitle,
+  IonToolbar,
+} from '@ionic/react';
 import React from 'react';
 
 const Home: React.FC = () => {
@@ -153,7 +159,7 @@ const Home: React.FC = () => {
 };
 ```
 
-Much like the `App` component we started with, we have some imports for specific Ionic components, an import for React, and then our React component itself. 
+Much like the `App` component we started with, we have some imports for specific Ionic components, an import for React, and then our React component itself.
 
 `IonPage` is the base component for all pages (a component with a route/URL), and includes some common building blocks of a full-screen component, like header, title, and content components.
 
@@ -171,7 +177,7 @@ Our current content is relatively simple but does not contain anything that coul
 For brevity, we're excluding repeating part of our component, like the function declaration or import statements for other components.
 :::
 
-```typescript
+```tsx
 <IonPage>
   ...
   <IonContent>
@@ -193,7 +199,7 @@ For brevity, we're excluding repeating part of our component, like the function 
 
 Here in our `IonContent`, we're adding an `IonList` and a much more involved `IonItem` component. Let's look at `IonItem`, as it's the centerpiece here.
 
-```typescript
+```tsx
 <IonItem>
   <IonCheckbox slot="start" />
   <IonLabel>
@@ -212,7 +218,7 @@ From the Web Components side, we have a special attribute called `slot`. This is
 
 Let's look at another component from Ionic, FAB. Floating Action Buttons are a nice way to provide a main action that is elevated from the rest of an app. For this FAB, we'll need three components: a FAB, a FAB Button, and an Icon.
 
-```typescript
+```tsx
 import { add } from ‘ionicons/icons’;
 …
 
@@ -234,7 +240,7 @@ On our main `IonFab`, we're setting its positioning with the vertical and horizo
 
 Now let's wire up a click handler to this. What we want to do is when we click the button, we'll navigate to a new page (which we'll create in a moment). To do this, we'll need to get access to React Router's navigation API. Thankfully since this is rendered in a Router/Route context, we have access to React Routers APIs via Props passed to our Home component.
 
-```typescript
+```tsx
 import { add } from 'ionicons/icons';
 ...
 const Home: React.FC<RouteComponentProps> = (props) => {
@@ -257,7 +263,7 @@ export default Home;
 
 In our component declaration, we're passing in `props` which is of type `RouteComponentProps` (imported from `react-router`). This `props` object gives us access to the history API from React Router, allowing us to push a new route onto the navigation stack. On our `IonFabButton`, we can add a click handler, and just call `props.history.push` and pass in the new route. In this case, we'll navigate to `new`.
 
-```typescript
+```tsx
 <IonFabButton onClick={() => props.history.push('/new')} >
 ```
 
@@ -265,7 +271,7 @@ In our component declaration, we're passing in `props` which is of type `RouteCo
 
 Now that we have the pieces in place to navigate in our app, we need to create a new component and add the new route to our router declaration. Let's open our `App.tsx` file and add the new route.
 
-````typescript
+```tsx
 ...
 import Home from './pages/Home';
 
@@ -286,13 +292,13 @@ const App: React.FC = () => {
   );
 }
 export default App;
-````
+```
 
 With our router now having an entry for the route `/new`, we'll create the component needed, `NewItem`. This will exist in `src/pages/NewItem.tsx`
 
 Let's fill the `NewItem.tsx` with some placeholder content for the moment.
 
-```typescript
+```tsx
 import {
   IonBackButton,
   IonButtons,
@@ -300,7 +306,7 @@ import {
   IonHeader,
   IonPage,
   IonTitle,
-  IonToolbar
+  IonToolbar,
 } from '@ionic/react';
 import React from 'react';
 
@@ -330,7 +336,7 @@ The content here is pretty straight forward and should look similar to the `Home
 
 Well, in this case, the in-memory history is lost, so the back button disappears. To address this, we can set the `defaultHref` attribute value to the URL we want to navigate to if there is no history.
 
-```typescript
+```tsx
 return (
   <IonPage>
     <IonHeader>
@@ -373,13 +379,19 @@ ionic cap open ios
 ionic cap open android
 ```
 
-Additional details can be found [here](https://capacitor.ionicframework.com/docs/getting-started/with-ionic). 
+Additional details can be found [here](https://capacitor.ionicframework.com/docs/getting-started/with-ionic).
 
 Next, check out [all the APIs](https://capacitor.ionicframework.com/docs/apis) that are available. There’s some great stuff, including the [Camera API](https://capacitor.ionicframework.com/docs/apis/camera). We can implement photo capture functionality in just a few lines of code:
 
-```typescript
-import { IonContent, IonHeader, IonPage, IonTitle, 
-         IonToolbar, IonButton } from '@ionic/react';
+```tsx
+import {
+  IonContent,
+  IonHeader,
+  IonPage,
+  IonTitle,
+  IonToolbar,
+  IonButton,
+} from '@ionic/react';
 import React, { useState } from 'react';
 import { Plugins, CameraResultType } from '@capacitor/core';
 
@@ -390,7 +402,7 @@ const Home: React.FC = () => {
     const image = await Camera.getPhoto({
       quality: 90,
       allowEditing: true,
-      resultType: CameraResultType.Uri
+      resultType: CameraResultType.Uri,
     });
     setPhoto(image.webPath);
   };

@@ -52,7 +52,7 @@ document.addEventListener('ionBackButton', (ev) => {
 </TabItem>
 <TabItem value="angular">
 
-```typescript
+```tsx
 import { Platform } from '@ionic/angular';
 
 ...
@@ -67,7 +67,7 @@ constructor(private platform: Platform) {
 </TabItem>
 <TabItem value="react">
 
-```typescript
+```tsx
 document.addEventListener('ionBackButton', (ev) => {
   ev.detail.register(10, () => {
     console.log('Handler was called!');
@@ -77,7 +77,7 @@ document.addEventListener('ionBackButton', (ev) => {
 </TabItem>
 <TabItem value="vue">
 
-```typescript
+```tsx
 import { useBackButton } from '@ionic/vue';
 
 ...
@@ -119,7 +119,7 @@ document.addEventListener('ionBackButton', (ev) => {
   ev.detail.register(5, () => {
     console.log('Another handler was called!');
   });
-  
+
   ev.detail.register(10, (processNextHandler) => {
     console.log('Handler was called!');
 
@@ -131,7 +131,7 @@ document.addEventListener('ionBackButton', (ev) => {
 </TabItem>
 <TabItem value="angular">
 
-```typescript
+```tsx
 import { Platform } from '@ionic/angular';
 
 ...
@@ -140,7 +140,7 @@ constructor(private platform: Platform) {
   this.platform.backButton.subscribeWithPriority(5, () => {
     console.log('Another handler was called!');
   });
-  
+
   this.platform.backButton.subscribeWithPriority(10, (processNextHandler) => {
     console.log('Handler was called!');
 
@@ -152,7 +152,7 @@ constructor(private platform: Platform) {
 </TabItem>
 <TabItem value="react">
 
-```typescript
+```tsx
 document.addEventListener('ionBackButton', (ev) => {
   ev.detail.register(5, () => {
     console.log('Another handler was called!');
@@ -168,7 +168,7 @@ document.addEventListener('ionBackButton', (ev) => {
 </TabItem>
 <TabItem value="vue">
 
-```typescript
+```tsx
 import { useBackButton } from '@ionic/vue';
 
 ...
@@ -178,10 +178,10 @@ export default {
     useBackButton(5, () => {
       console.log('Another handler was called!');
     });
-    
+
     useBackButton(10, (processNextHandler) => {
       console.log('Handler was called!');
-      
+
       processNextHandler();
     });
   }
@@ -198,16 +198,16 @@ This example shows how to indicate to Ionic Framework that you want the next han
 Internally, Ionic Framework uses something similar to a priority queue to manage hardware back button handlers. The handler with the largest priority value will be called first. In the event that there are multiple handlers with the same priority value, the _last_ handler of the same priority added to this queue will be the first handler to be called.
 
 ```javascript
-document.addEventListener('ionBackButton', (ev) => {
+document.addEventListener('ionBackButton', ev => {
   // Handler A
-  ev.detail.register(10, (processNextHandler) => {
+  ev.detail.register(10, processNextHandler => {
     console.log('Handler A was called!');
 
     processNextHandler();
   });
 
   // Handler B
-  ev.detail.register(10, (processNextHandler) => {
+  ev.detail.register(10, processNextHandler => {
     console.log('Handler B was called!');
 
     processNextHandler();
@@ -216,7 +216,6 @@ document.addEventListener('ionBackButton', (ev) => {
 ```
 
 In the example above, both handlers A and B have a priority of 10. Since handler B was registered last, Ionic Framework will call handler B before it calls handler A.
-
 
 ## Exiting the App
 
@@ -234,7 +233,7 @@ In some scenarios, it may be desirable to quit the app when pressing the hardwar
 }>
 <TabItem value="javascript">
 
-```typescript
+```tsx
 import { BackButtonEvent } from '@ionic/core';
 import { Plugins } from '@capacitor/core';
 const { App } = Plugins;
@@ -254,7 +253,7 @@ document.addEventListener('ionBackButton', (ev: BackButtonEvent) => {
 </TabItem>
 <TabItem value="angular">
 
-```typescript
+```tsx
 import { IonRouterOutlet, Platform } from '@ionic/angular';
 import { Plugins } from '@capacitor/core';
 const { App } = Plugins;
@@ -276,7 +275,7 @@ constructor(
 </TabItem>
 <TabItem value="react">
 
-```typescript
+```tsx
 import { useIonRouter } from '@ionic/react';
 import { Plugins } from '@capacitor/core';
 const { App } = Plugins;
@@ -295,7 +294,7 @@ document.addEventListener('ionBackButton', (ev) => {
 </TabItem>
 <TabItem value="vue">
 
-```typescript
+```tsx
 import { useBackButton, useIonRouter } from '@ionic/vue';
 import { Plugins } from '@capacitor/core';
 const { App } = Plugins;
@@ -325,8 +324,8 @@ It is recommended to check whether or not the user is on the root page prior to 
 
 The table below lists all of the internal hardware back button event handlers that Ionic Framework uses. The `Propagates` column notes whether or not that particular handler tells Ionic Framework to call the next back button handler.
 
-| Handler    | Priority | Propagates         | Description                                                                                                                              |
-| -----------| ---------| -------------------| -----------------------------------------------------------------------------------------------------------------------------------------|
-| Overlays   | 100      | No                 | Applies to overlay components `ion-action-sheet`, `ion-alert`, `ion-loading`, `ion-modal`, `ion-popover`, `ion-picker`, and `ion-toast`. |
-| Menu       | 99       | No                 | Applies to `ion-menu`.                                                                                                                   |
-| Navigation | 0        | Yes                | Applies to routing navigation (i.e. Angular Routing).                                                                                    |
+| Handler    | Priority | Propagates | Description                                                                                                                              |
+| ---------- | -------- | ---------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
+| Overlays   | 100      | No         | Applies to overlay components `ion-action-sheet`, `ion-alert`, `ion-loading`, `ion-modal`, `ion-popover`, `ion-picker`, and `ion-toast`. |
+| Menu       | 99       | No         | Applies to `ion-menu`.                                                                                                                   |
+| Navigation | 0        | Yes        | Applies to routing navigation (i.e. Angular Routing).                                                                                    |

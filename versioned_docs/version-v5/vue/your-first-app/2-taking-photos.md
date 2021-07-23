@@ -16,29 +16,32 @@ Create a new file at `src/composables/usePhotoGallery.ts` and open it up.
 
 We will start by importing the various utilities we will use from Vue core and Capacitor:
 
-```typescript
+```tsx
 import { ref, onMounted, watch } from 'vue';
-import { Camera, CameraResultType, CameraSource, Photo } from '@capacitor/camera';
-import { Filesystem, Directory } from '@capacitor/filesystem'
-import { Storage } from '@capacitor/storage'
-
+import {
+  Camera,
+  CameraResultType,
+  CameraSource,
+  Photo,
+} from '@capacitor/camera';
+import { Filesystem, Directory } from '@capacitor/filesystem';
+import { Storage } from '@capacitor/storage';
 ```
 
 Next, create a function named usePhotoGallery:
 
-```typescript
+```tsx
 export function usePhotoGallery() {
-
   const takePhoto = async () => {
     const cameraPhoto = await Camera.getPhoto({
       resultType: CameraResultType.Uri,
       source: CameraSource.Camera,
-      quality: 100
+      quality: 100,
     });
   };
 
   return {
-    takePhoto
+    takePhoto,
   };
 }
 ```
@@ -49,13 +52,13 @@ Notice the magic here: there's no platform-specific code (web, iOS, or Android)!
 
 The last step we need to take is to use the new function from the Tab2 page. Go back to Tab2.vue and import it:
 
-```typescript
+```tsx
 import { usePhotoGallery } from '@/composables/usePhotoGallery';
 ```
 
 Next, within the default export, add a setup method, part of the [Composition API](https://v3.vuejs.org/guide/composition-api-setup.html#setup). Destructure the `takePhoto` function from `usePhotoGallery`, then return it:
 
-```typescript
+```tsx
 <script lang="ts">
 import { camera, trash, close } from 'ionicons/icons';
 import { IonPage, IonHeader, IonFab, IonFabButton, IonIcon,
@@ -92,7 +95,7 @@ After taking a photo, it disappears right away. We still need to display it with
 
 First we will create a new type to define our Photo, which will hold specific metadata. Add the following Photo interface to the `usePhotoGallery.ts` file, somewhere outside of the main function:
 
-```typescript
+```tsx
 export interface UserPhoto {
   filepath: string;
   webviewPath?: string;
@@ -101,17 +104,17 @@ export interface UserPhoto {
 
 Back at the top of the function (right after referencing the Capacitor Camera plugin), define an array so we can store each photo captured with the Camera. Make it a reactive variable using Vue's [ref function](https://v3.vuejs.org/guide/composition-api-introduction.html#reactive-variables-with-ref).
 
-```typescript
+```tsx
 const photos = ref<UserPhoto[]>([]);
 ```
 
 When the camera is done taking a picture, the resulting `CameraPhoto` returned from Capacitor will be added to the `photos` array. Update the `takePhoto` method, adding this code after the `Camera.getPhoto` line:
 
-```typescript
+```tsx
 const fileName = new Date().getTime() + '.jpeg';
 const savedFileImage = {
   filepath: fileName,
-  webviewPath: cameraPhoto.webPath
+  webviewPath: cameraPhoto.webPath,
 };
 
 photos.value = [savedFileImage, ...photos.value];
@@ -119,38 +122,40 @@ photos.value = [savedFileImage, ...photos.value];
 
 Next, update the return statement to include the photos array:
 
-```typescript
+```tsx
 return {
   photos,
-  takePhoto
+  takePhoto,
 };
 ```
 
 Back in the Tab2 component, update the import statement to include the `Photo` interface:
 
-```typescript
+```tsx
 import { usePhotoGallery, UserPhoto } from '@/composables/usePhotoGallery';
 ```
 
 Then, get access to the photos array:
 
-```typescript
+```tsx
 const { photos, takePhoto } = usePhotoGallery();
 ```
 
 Last, add `photos` to `setup()` return:
 
-```typescript
+```tsx
 return {
   photos,
   takePhoto,
-  camera, trash, close
-}
+  camera,
+  trash,
+  close,
+};
 ```
 
 With the photo(s) stored into the main array we can now display the images on the screen. Add a [Grid component](https://ionicframework.com/docs/api/grid) so that each photo will display nicely as they are added to the gallery, and loop through each photo in the Photos array, adding an Image component (`<ion-img>`) for each. Point the `src` (source) to the photo's path:
 
-```typescript
+```tsx
 <ion-content>
   <ion-grid>
     <ion-row>

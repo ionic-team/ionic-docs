@@ -44,7 +44,7 @@ const gesture = createGesture({
 
 Developers using Ionic Core and TypeScript should install the latest version of `@ionic/core`.
 
-```typescript
+```tsx
 import { createGesture, Gesture } from '@ionic/core';
 
 ...
@@ -59,12 +59,12 @@ const gesture: Gesture = createGesture({
 </TabItem>
 <TabItem value="angular">
 
-Developers using Angular should install the latest version of `@ionic/angular`. Animations can be created via the `AnimationController` dependency injection. 
+Developers using Angular should install the latest version of `@ionic/angular`. Animations can be created via the `AnimationController` dependency injection.
 
 By default, gesture callbacks do not run inside of NgZone. Developers can either set the `runInsideAngularZone` parameter to `true` when creating a gesture,
 or they can wrap their callbacks in an `NgZone.run()` call.
 
-```typescript
+```tsx
 import { Gesture, GestureController } from '@ionic/angular';
 
 ...
@@ -85,7 +85,7 @@ constructor(private gestureCtrl: GestureController) {
 
 Developers using React should install the latest version of `@ionic/react`. Full React wrappers are coming soon!
 
-```typescript
+```tsx
 import { createGesture, Gesture } from '@ionic/react';
 
 ...
@@ -124,7 +124,6 @@ const gesture = createGesture({
 </Tabs>
 ````
 
-
 ## Basic Gestures
 
 ### Usage
@@ -155,7 +154,7 @@ const onMove = (detail) => {
   const currentX = detail.currentX;
   const deltaX = detail.deltaX;
   const velocityX = detail.velocityX;
-    
+
   p.innerHTML = `
     <div>Type: ${type}</div>
     <div>Current X: ${currentX}</div>
@@ -175,7 +174,7 @@ ngOnInit() {
     el: this.rectangle.nativeElement,
     onMove: (detail) => { this.onMove(detail); }
   })
-  
+
   gesture.enable();
 }
 
@@ -184,7 +183,7 @@ private onMove(detail) {
   const currentX = detail.currentX;
   const deltaX = detail.deltaX;
   const velocityX = detail.velocityX;
-    
+
   this.p.innerHTML = `
     <div>Type: ${type}</div>
     <div>Current X: ${currentX}</div>
@@ -210,7 +209,7 @@ const onMove = (detail) => {
   const currentX = detail.currentX;
   const deltaX = detail.deltaX;
   const velocityX = detail.velocityX;
-    
+
   p.innerHTML = `
     <div>Type: ${type}</div>
     <div>Current X: ${currentX}</div>
@@ -242,7 +241,7 @@ const onMove = (detail) => {
   const currentX = detail.currentX;
   const deltaX = detail.deltaX;
   const velocityX = detail.velocityX;
-    
+
   pRef.value.innerHTML = `
     <div>Type: ${type}</div>
     <div>Current X: ${currentX}</div>
@@ -292,7 +291,7 @@ let currentColor = 'rgba(0, 0, 255, 0.5)';
 
 const onStart = () => {
   const now = Date.now();
-  
+
   if (Math.abs(now - lastOnStart) <= DOUBLE_CLICK_THRESHOLD) {
     rectangle.style.setProperty('background', getRandomBackground());
     lastOnStart = 0;
@@ -304,14 +303,14 @@ const onStart = () => {
 const getRandomBackground = () => {
   const options = backgrounds.filter(bg => bg !== currentColor);
   currentColor = options[Math.floor(Math.random() * options.length)];
-  
+
   return currentColor;
 }
 ```
 </TabItem>
 <TabItem value="angular">
 
-```typescript
+```tsx
 @ViewChild('rectangle') rectangle: ElementRef;
 
 private backgrounds: string[] = ['rgba(0, 0, 255, 0.5)', 'rgba(0, 255, 0.5)', 'rgba(255, 0, 0, 0.5)', 'rgba(255, 255, 0, 0.5)', 'rgba(255, 0, 255, 0.5)', 'rgba(0, 255, 255, 0.5)'];
@@ -325,13 +324,13 @@ ngOnInit() {
     threshold: 0,
     onStart: () => { this.onStart(); }
   });
-  
+
   gesture.enable();
 }
 
 private onStart() {
   const now = Date.now();
-  
+
   if (Math.abs(now - this.lastOnStart) <= this.DOUBLE_CLICK_THRESHOLD) {
     this.rectangle.nativeElement.style.setProperty('background', this.getRandomBackground());
     this.lastOnStart = 0;
@@ -343,7 +342,7 @@ private onStart() {
 private getRandomBackground() {
   const options = this.backgrounds.filter(bg => bg !== this.currentColor);
   this.currentColor = options[Math.floor(Math.random() * options.length)];
-  
+
   return this.currentColor;
 }
 ```
@@ -367,7 +366,7 @@ let currentColor = 'rgba(0, 0, 255, 0.5)';
 
 const onStart = () => {
   const now = Date.now();
-  
+
   if (Math.abs(now - lastOnStart) <= DOUBLE_CLICK_THRESHOLD) {
     rectangle.style.setProperty('background', getRandomBackground());
     lastOnStart = 0;
@@ -379,7 +378,7 @@ const onStart = () => {
 const getRandomBackground = () => {
   const options = backgrounds.filter(bg => bg !== currentColor);
   currentColor = options[Math.floor(Math.random() * options.length)];
-  
+
   return currentColor;
 }
 ```
@@ -408,7 +407,7 @@ let currentColor = 'rgba(0, 0, 255, 0.5)';
 
 const onStart = () => {
   const now = Date.now();
-  
+
   if (Math.abs(now - lastOnStart) <= DOUBLE_CLICK_THRESHOLD) {
     rectangleRef.value.style.setProperty('background', getRandomBackground());
     lastOnStart = 0;
@@ -420,7 +419,7 @@ const onStart = () => {
 const getRandomBackground = () => {
   const options = backgrounds.filter(bg => bg !== currentColor);
   currentColor = options[Math.floor(Math.random() * options.length)];
-  
+
   return currentColor;
 }
 ```
@@ -438,63 +437,63 @@ See our guide on implementing gesture animations: [Gesture Animations with Ionic
 
 ## Browser Support
 
-| Browser/Platform     | Supported Versions |
-| -------------------- | ------------------ |
-| **Chrome**           | 22+                |
-| **Safari**           | 9+                 |   
-| **Firefox**          | 32+                |     
-| **IE/Edge**          | 11+                |    
-| **Opera**            | 30+                |
-| **iOS**              | 9+                 |
-| **Android**          | 5+                 |      
+| Browser/Platform | Supported Versions |
+| ---------------- | ------------------ |
+| **Chrome**       | 22+                |
+| **Safari**       | 9+                 |
+| **Firefox**      | 32+                |
+| **IE/Edge**      | 11+                |
+| **Opera**        | 30+                |
+| **iOS**          | 9+                 |
+| **Android**      | 5+                 |
 
 ## Types
 
 | Name              | Value                                        |
-| ------------------| -------------------------------------------- |
+| ----------------- | -------------------------------------------- |
 | `GestureCallback` | `(detail: GestureDetail) => boolean \| void` |
 
 ## Interfaces
 
 ### GestureConfig
 
-| Property        | Type                                       | Default     | Description |
-| --------------- | ------------------------------------------ | ----------- | ----------- |
-| el              | `Node`                                     | `undefined` | The element to listen on for gestures. |
-| disableScroll   | `boolean \| undefined`                     | `false`     | If true, scrolling will be disabled on `el` while the gesture is enabled. |
-| direction       | `'x' \| 'y' \| undefined`                  | `'x'`       | Limit gesture detection to movements along a certain axis. |
-| gestureName     | `string`                                   | `undefined` | The name of the gesture to create. |
-| gesturePriority | `number \| undefined`                      | `0`         | Gestures with higher priorities will override gestures with lower priorities. Useful for ensuring the multiple gestures do not collide with one another. |
+| Property        | Type                                       | Default     | Description                                                                                                                                                                                                                                                                                                             |
+| --------------- | ------------------------------------------ | ----------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| el              | `Node`                                     | `undefined` | The element to listen on for gestures.                                                                                                                                                                                                                                                                                  |
+| disableScroll   | `boolean \| undefined`                     | `false`     | If true, scrolling will be disabled on `el` while the gesture is enabled.                                                                                                                                                                                                                                               |
+| direction       | `'x' \| 'y' \| undefined`                  | `'x'`       | Limit gesture detection to movements along a certain axis.                                                                                                                                                                                                                                                              |
+| gestureName     | `string`                                   | `undefined` | The name of the gesture to create.                                                                                                                                                                                                                                                                                      |
+| gesturePriority | `number \| undefined`                      | `0`         | Gestures with higher priorities will override gestures with lower priorities. Useful for ensuring the multiple gestures do not collide with one another.                                                                                                                                                                |
 | passive         | `boolean \| undefined`                     | `true`      | If true, this will indicate that the gesture will never call `preventDefault()`. This can be used to improve scrolling performance. See [Passive Listeners](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener#Improving_scrolling_performance_with_passive_listeners) for more information. |
-| maxAngle        | `number \| undefined`                      | `40`        | The maximum angle to allow when detecting a gesture. |
-| threshold       | `number \| undefined`                      | `10`        | Defines how much a pointer must move before the gesture starts. |
-| blurOnStart     | `boolean \| undefined`                     | `undefined` | If true, the gesture will blur any active selectable element such as an input or a textarea before firing the `onStart` callback. |
-| canStart        | `GestureCallback \| undefined`             | `undefined` | A callback that returns true if a gesture is allowed to start. |
-| onWillStart     | `(detail: GestureDetail) => Promise<void>` | `undefined` | A callback that fires when a gesture is about to start. This is fired after `canStart` but before `onStart`. |
-| onStart         | `GestureCallback \| undefined`             | `undefined` | A callback that fires when a gesture has started. |
-| onMove          | `GestureCallback \| undefined`             | `undefined` | A callback that fires when a gesture movement was detected. |
-| onEnd           | `GestureCallback \| undefined`             | `undefined` | A callback that fires when a gesture has ended. This is usually when a pointer has been released. |
-| notCaptured     | `GestureCallback \| undefined`             | `undefined` | A callback that fires when a gesture has not been captured. This usually happens when there is a conflicting gesture with a higher priority. |
+| maxAngle        | `number \| undefined`                      | `40`        | The maximum angle to allow when detecting a gesture.                                                                                                                                                                                                                                                                    |
+| threshold       | `number \| undefined`                      | `10`        | Defines how much a pointer must move before the gesture starts.                                                                                                                                                                                                                                                         |
+| blurOnStart     | `boolean \| undefined`                     | `undefined` | If true, the gesture will blur any active selectable element such as an input or a textarea before firing the `onStart` callback.                                                                                                                                                                                       |
+| canStart        | `GestureCallback \| undefined`             | `undefined` | A callback that returns true if a gesture is allowed to start.                                                                                                                                                                                                                                                          |
+| onWillStart     | `(detail: GestureDetail) => Promise<void>` | `undefined` | A callback that fires when a gesture is about to start. This is fired after `canStart` but before `onStart`.                                                                                                                                                                                                            |
+| onStart         | `GestureCallback \| undefined`             | `undefined` | A callback that fires when a gesture has started.                                                                                                                                                                                                                                                                       |
+| onMove          | `GestureCallback \| undefined`             | `undefined` | A callback that fires when a gesture movement was detected.                                                                                                                                                                                                                                                             |
+| onEnd           | `GestureCallback \| undefined`             | `undefined` | A callback that fires when a gesture has ended. This is usually when a pointer has been released.                                                                                                                                                                                                                       |
+| notCaptured     | `GestureCallback \| undefined`             | `undefined` | A callback that fires when a gesture has not been captured. This usually happens when there is a conflicting gesture with a higher priority.                                                                                                                                                                            |
 
 ### GestureDetail
 
-| Property       | Type               | Description |
-| -------------- | ------------------ | ----------- |
-| type           | `string`           | The type of gesture that was detected. |
-| startX         | `number`           | The starting x coordinate of the gesture. |
-| startY         | `number`           | The starting y coordinate of the gesture. |
-| startTimeStamp | `number`           | The timestamp at which the gesture was started. |
-| currentX       | `number`           | The current x coordinate of the gesture. |
-| currentY       | `number`           | The current y coordinate of the gesture. |
-| velocityX      | `number`           | How fast the gesture is currently moving on the x axis. |
-| velocityY      | `number`           | How fast the gesture is currently moving on the y axis. |
-| deltaX         | `number`           | How much the gesture has moved on the x axis since it started. |
-| deltaY         | `number`           | How much the gesture has moved on the y axis since it started. |
-| timeStamp      | `number`           | The current timestamp of the gesture. |
+| Property       | Type               | Description                                                                                                                               |
+| -------------- | ------------------ | ----------------------------------------------------------------------------------------------------------------------------------------- |
+| type           | `string`           | The type of gesture that was detected.                                                                                                    |
+| startX         | `number`           | The starting x coordinate of the gesture.                                                                                                 |
+| startY         | `number`           | The starting y coordinate of the gesture.                                                                                                 |
+| startTimeStamp | `number`           | The timestamp at which the gesture was started.                                                                                           |
+| currentX       | `number`           | The current x coordinate of the gesture.                                                                                                  |
+| currentY       | `number`           | The current y coordinate of the gesture.                                                                                                  |
+| velocityX      | `number`           | How fast the gesture is currently moving on the x axis.                                                                                   |
+| velocityY      | `number`           | How fast the gesture is currently moving on the y axis.                                                                                   |
+| deltaX         | `number`           | How much the gesture has moved on the x axis since it started.                                                                            |
+| deltaY         | `number`           | How much the gesture has moved on the y axis since it started.                                                                            |
+| timeStamp      | `number`           | The current timestamp of the gesture.                                                                                                     |
 | event          | `UIEvent`          | The native event dispatched by the browser. See [UIEvent](https://developer.mozilla.org/en-US/docs/Web/API/UIEvent) for more information. |
-| data           | `any \| undefined` | Any data specified by the user. This can be set and read in any of the callbacks. |
+| data           | `any \| undefined` | Any data specified by the user. This can be set and read in any of the callbacks.                                                         |
 
-## Methods 
+## Methods
 
 #### `enable(enable: boolean = true) => void`
 

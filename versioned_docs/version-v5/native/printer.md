@@ -1,7 +1,6 @@
 ---
-sidebar_label: "Printer"
+sidebar_label: 'Printer'
 ---
-
 
 import DocsCard from '@site/src/components/DocsCard';
 import DocsButton from '@site/src/components/DocsButton';
@@ -25,7 +24,6 @@ Prints documents or HTML rendered content
     <DocsButton className="native-ee-detail">Contact Us Today!</DocsButton>
   </div>
 </DocsCard>
-
 
 <h2 id="installation">
   <a href="#installation">Installation</a>
@@ -55,7 +53,7 @@ Prints documents or HTML rendered content
 </Tabs>
 
 ## Supported Platforms
-  
+
 - Android
 - iOS
 - Windows
@@ -65,12 +63,10 @@ Prints documents or HTML rendered content
 ### React
 
 [Learn more about using Ionic Native components in React](../native-community.md#react)
-  
 
 ### Angular
 
-
-```typescript
+```tsx
 import { Printer, PrintOptions } from '@ionic-native/printer/ngx';
 
 constructor(private printer: Printer) { }

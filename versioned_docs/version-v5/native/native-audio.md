@@ -1,7 +1,6 @@
 ---
-sidebar_label: "Native Audio"
+sidebar_label: 'Native Audio'
 ---
-
 
 import DocsCard from '@site/src/components/DocsCard';
 import DocsButton from '@site/src/components/DocsButton';
@@ -25,7 +24,6 @@ Native Audio Playback
     <DocsButton className="native-ee-detail">Contact Us Today!</DocsButton>
   </div>
 </DocsCard>
-
 
 <h2 id="installation">
   <a href="#installation">Installation</a>
@@ -55,7 +53,7 @@ Native Audio Playback
 </Tabs>
 
 ## Supported Platforms
-  
+
 - Android
 - Browser
 - iOS
@@ -65,12 +63,10 @@ Native Audio Playback
 ### React
 
 [Learn more about using Ionic Native components in React](../native-community.md#react)
-  
 
 ### Angular
 
-
-```typescript
+```tsx
 import { NativeAudio } from '@ionic-native/native-audio/ngx';
 
 constructor(private nativeAudio: NativeAudio) { }
@@ -94,4 +90,3 @@ this.nativeAudio.stop('uniqueId1').then(onSuccess,onError);
 this.nativeAudio.unload('uniqueId1').then(onSuccess,onError);
 
 ```
-

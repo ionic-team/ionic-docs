@@ -1,7 +1,6 @@
 ---
-sidebar_label: "Twitter Connect"
+sidebar_label: 'Twitter Connect'
 ---
-
 
 import DocsCard from '@site/src/components/DocsCard';
 import DocsButton from '@site/src/components/DocsButton';
@@ -11,10 +10,10 @@ import CodeBlock from '@theme/CodeBlock';
 
 # Twitter Connect
 
-
 Plugin to use Twitter Single Sign On
 Uses Twitter's Fabric SDK
-```typescript
+
+```tsx
 import { TwitterConnect } from '@ionic-native/twitter-connect/ngx';
 
 constructor(private twitter: TwitterConnect) { }
@@ -51,7 +50,6 @@ this.twitter.logout().then(onLogoutSuccess, onLogoutError);
   </div>
 </DocsCard>
 
-
 <h2 id="installation">
   <a href="#installation">Installation</a>
 </h2>
@@ -80,6 +78,6 @@ this.twitter.logout().then(onLogoutSuccess, onLogoutError);
 </Tabs>
 
 ## Supported Platforms
-  
+
 - Android
 - iOS

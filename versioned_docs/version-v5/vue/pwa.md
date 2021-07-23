@@ -20,58 +20,56 @@ If you have changes already in place, be sure to commit them in Git.
 
 Once this is completed, Vue's CLI will have created a new `registerServiceWorker.ts` file and imported it into our `main.ts`.
 
-
-```typescript
-import { createApp } from 'vue'
-import App from './App.vue'
-import router from './router'
+```tsx
+import { createApp } from 'vue';
+import App from './App.vue';
+import router from './router';
 // Added by the CLI
-import './registerServiceWorker'
+import './registerServiceWorker';
 
-createApp(App)
-  .use(router)
-  .mount('#app')
+createApp(App).use(router).mount('#app');
 ```
 
 The `registerServiceWorker.ts` file will point to a service worker that the CLI will create at build time. Inside of here we can customize the experience users will have when the service worker detects an update, change in network connectivity, or receives an error.
 
-```typescript
-import { register } from 'register-service-worker'
+```tsx
+import { register } from 'register-service-worker';
 
 if (process.env.NODE_ENV === 'production') {
   register(`${process.env.BASE_URL}service-worker.js`, {
-    ready () {
+    ready() {
       console.log(
         'App is being served from cache by a service worker.\n' +
-        'For more details, visit https://goo.gl/AFskqB'
-      )
+          'For more details, visit https://goo.gl/AFskqB',
+      );
     },
-    registered () {
-      console.log('Service worker has been registered.')
+    registered() {
+      console.log('Service worker has been registered.');
     },
-    cached () {
-      console.log('Content has been cached for offline use.')
+    cached() {
+      console.log('Content has been cached for offline use.');
     },
-    updatefound () {
-      console.log('New content is downloading.')
+    updatefound() {
+      console.log('New content is downloading.');
     },
-    updated () {
-      console.log('New content is available; please refresh.')
+    updated() {
+      console.log('New content is available; please refresh.');
     },
-    offline () {
-      console.log('No internet connection found. App is running in offline mode.')
+    offline() {
+      console.log(
+        'No internet connection found. App is running in offline mode.',
+      );
     },
-    error (error) {
-      console.error('Error during service worker registration:', error)
-    }
-  })
+    error(error) {
+      console.error('Error during service worker registration:', error);
+    },
+  });
 }
 ```
 
 The service worker that is generated is based on [Workbox's webpack plugin](https://developers.google.com/web/tools/workbox/modules/workbox-webpack-plugin), and by default is setup to use `GenerateSW()`. Meaning that at build time, Workbox will automatically generate a service worker cache for all the files it processes.
 
 If you want to configure this and change the default behavior, checkout the [PWA plugin docs](https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-pwa#configuration) on GitHub.
-
 
 ### Manifest
 
@@ -118,7 +116,6 @@ Be sure to update the icons in `public/img/icons` to match your own brand. If yo
 
 You can use various hosts like Firebase, Vercel, Netlify, or even Azure Static Web Apps. All will have similar setup processes that need to be completed. For this guide, Firebase will be used as the hosting example. In addition to this guide, the [Vue CLI docs](https://cli.vuejs.org/guide/deployment.html) also have a guide on how to deploy to various providers.
 
-
 ### Firebase
 
 Firebase hosting provides many benefits for Progressive Web Apps, including fast response times thanks to CDNs, HTTPS enabled by default, and support for [HTTP2 push](https://firebase.googleblog.com/2016/09/http2-comes-to-firebase-hosting.html).
@@ -133,7 +130,7 @@ $ npm install -g firebase-tools
 
 With the Firebase CLI installed, run `firebase init` within your Ionic project. The CLI prompts:
 
-**"Which Firebase CLI features do you want to set up for this folder?"**  Choose "Hosting: Configure and deploy Firebase Hosting sites."
+**"Which Firebase CLI features do you want to set up for this folder?"** Choose "Hosting: Configure and deploy Firebase Hosting sites."
 
 **"Select a default Firebase project for this directory:"** Choose the project you created on the Firebase website.
 
@@ -155,11 +152,7 @@ The last thing needed is to make sure caching headers are being set correctly. T
 {
   "hosting": {
     "public": "dist",
-    "ignore": [
-      "firebase.json",
-      "**/.*",
-      "**/node_modules/**"
-    ],
+    "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
     "rewrites": [
       {
         "source": "**",
@@ -194,7 +187,6 @@ The last thing needed is to make sure caching headers are being set correctly. T
           }
         ]
       }
-
     ]
   }
 }

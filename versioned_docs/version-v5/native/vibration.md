@@ -1,7 +1,6 @@
 ---
-sidebar_label: "Vibration"
+sidebar_label: 'Vibration'
 ---
-
 
 import DocsCard from '@site/src/components/DocsCard';
 import DocsButton from '@site/src/components/DocsButton';
@@ -25,7 +24,6 @@ Vibrates the device
     <DocsButton className="native-ee-detail">Contact Us Today!</DocsButton>
   </div>
 </DocsCard>
-
 
 <h2 id="installation">
   <a href="#installation">Installation</a>
@@ -55,7 +53,7 @@ Vibrates the device
 </Tabs>
 
 ## Supported Platforms
-  
+
 - Android
 - iOS
 - Windows
@@ -65,12 +63,10 @@ Vibrates the device
 ### React
 
 [Learn more about using Ionic Native components in React](../native-community.md#react)
-  
 
 ### Angular
 
-
-```typescript
+```tsx
 import { Vibration } from '@ionic-native/vibration/ngx';
 
 constructor(private vibration: Vibration) { }
@@ -91,4 +87,3 @@ this.vibration.vibrate([2000,1000,2000]);
 // Works on Android and Windows only
 this.vibration.vibrate(0);
 ```
-

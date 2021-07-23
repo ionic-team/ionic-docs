@@ -23,35 +23,42 @@ The way you access these methods varies based on if you are using class-based co
 
 to use the Ionic Lifecycle methods in a class-based component, you must wrap your component with the `withIonLifeCycle` higher order component (HOC) like so:
 
-```typescript
+```tsx
 export default withIonLifeCycle(HomePage);
 ```
+
 :::note
 `withIonLifeCycle` is imported from `@ionic/react`
 :::
 
 You can then create the appropriate lifecycle method on your class component, and the HOC calls that method when the event happens. Below is the entire component with each of the lifecycle methods implemented:
 
-```typescript
+```tsx
 import React from 'react';
-import { IonHeader, IonPage, IonToolbar, IonTitle, IonContent, withIonLifeCycle } from '@ionic/react';
+import {
+  IonHeader,
+  IonPage,
+  IonToolbar,
+  IonTitle,
+  IonContent,
+  withIonLifeCycle,
+} from '@ionic/react';
 
 class HomePage extends React.Component {
-
   ionViewWillEnter() {
-    console.log('ionViewWillEnter event fired')
+    console.log('ionViewWillEnter event fired');
   }
 
   ionViewWillLeave() {
-    console.log('ionViewWillLeave event fired')
+    console.log('ionViewWillLeave event fired');
   }
 
   ionViewDidEnter() {
-    console.log('ionViewDidEnter event fired')
+    console.log('ionViewDidEnter event fired');
   }
 
   ionViewDidLeave() {
-    console.log('ionViewDidLeave event fired')
+    console.log('ionViewDidLeave event fired');
   }
 
   render() {
@@ -73,9 +80,9 @@ export default withIonLifeCycle(HomePage);
 
 ## Lifecycle Methods in Functional Components
 
-Ionic React exports hooks for each of the lifecycle methods that you can use in your functional components. Each of the hooks takes the method you want called when the event fires. 
+Ionic React exports hooks for each of the lifecycle methods that you can use in your functional components. Each of the hooks takes the method you want called when the event fires.
 
-```typescript
+```tsx
 import {
   IonContent,
   IonHeader,
@@ -84,12 +91,11 @@ import {
   useIonViewDidEnter,
   useIonViewDidLeave,
   useIonViewWillEnter,
-  useIonViewWillLeave
+  useIonViewWillLeave,
 } from '@ionic/react';
 import React from 'react';
 
 const HomePage: React.FC = () => {
-
   useIonViewDidEnter(() => {
     console.log('ionViewDidEnter event fired');
   });

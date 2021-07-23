@@ -1,7 +1,6 @@
 ---
-sidebar_label: "Crop"
+sidebar_label: 'Crop'
 ---
-
 
 import DocsCard from '@site/src/components/DocsCard';
 import DocsButton from '@site/src/components/DocsButton';
@@ -25,7 +24,6 @@ Crops images
     <DocsButton className="native-ee-detail">Contact Us Today!</DocsButton>
   </div>
 </DocsCard>
-
 
 <h2 id="installation">
   <a href="#installation">Installation</a>
@@ -55,7 +53,7 @@ Crops images
 </Tabs>
 
 ## Supported Platforms
-  
+
 - Android
 - iOS
 
@@ -64,12 +62,10 @@ Crops images
 ### React
 
 [Learn more about using Ionic Native components in React](../native-community.md#react)
-  
 
 ### Angular
 
-
-```typescript
+```tsx
 import { Crop } from '@ionic-native/crop/ngx';
 
 constructor(private crop: Crop) { }

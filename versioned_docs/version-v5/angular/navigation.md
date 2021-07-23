@@ -6,14 +6,13 @@ sidebar_label: Navigation/Routing
 
 This guide covers how routing works in an app built with Ionic and Angular.
 
-
 The Angular Router is one of the most important libraries in an Angular application. Without it, apps would be single view/single context apps or would not be able to maintain their navigation state on browser reloads. With Angular Router, we can create rich apps that are linkable and have rich animations (when paired with Ionic of course). Let's look at the basics of the Angular Router and how we can configure it for Ionic apps.
 
 ## A simple Route
 
 For most apps, having some sort of route is often required. The most basic configuration looks a bit like this:
 
-```typescript
+```tsx
 
 import { RouterModule } from '@angular/router';
 
@@ -34,11 +33,11 @@ The simplest breakdown for what we have here is a path/component lookup. When ou
 
 For this we can use router redirects. Redirects work the same way that a typical route object does, but just includes a few different keys.
 
-```typescript
+```tsx
 [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
   { path: 'login', component: LoginComponent },
-  { path: 'detail', component: DetailComponent }
+  { path: 'detail', component: DetailComponent },
 ];
 ```
 
@@ -46,7 +45,7 @@ In our redirect, we look for the index path of our app. Then if we load that, we
 
 Since we use `full`, we're telling the router that we should compare the full path, even if ends up being something like `/route1/route2/route3`. Meaning that if we have:
 
-```typescript
+```tsx
 { path: '/route1/route2/route3', redirectTo: 'login', pathMatch: 'full' },
 { path: 'login', component: LoginComponent },
 ```
@@ -55,7 +54,7 @@ And load `/route1/route2/route3` we'll redirect. But if we loaded `/route1/route
 
 Alternatively, if we used:
 
-```typescript
+```tsx
 { path: '/route1/route2', redirectTo: 'login', pathMatch: 'prefix' },
 { path: 'login', component: LoginComponent },
 ```
@@ -69,7 +68,7 @@ Talking about routes is good and all, but how does one actually navigate to said
 ```ts
 RouterModule.forRoot([
   { path: '', component: LoginComponent },
-  { path: 'detail', component: DetailComponent }
+  { path: 'detail', component: DetailComponent },
 ]);
 ```
 
@@ -91,7 +90,7 @@ The important part here is the `ion-button` and `routerLink` directive. RouterLi
 
 We also can programmatically navigate in our app by using the router API.
 
-```typescript
+```tsx
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 
@@ -118,8 +117,7 @@ A note on navigation with relative URLs: Currently, to support multiple navigati
 
 Now the current way our routes are setup makes it so they are included in the same chunk as the root app.module, which is not ideal. Instead, the router has a setup that allows the components to be isolated to their own chunks.
 
-
-```typescript
+```tsx
 
 import { RouterModule } from '@angular/router';
 
@@ -137,8 +135,7 @@ import { RouterModule } from '@angular/router';
 
 While similar, the `loadChildren` property is a way to reference a module by using native import instead of a component directly. In order to do this though, we need to create a module for each of the components.
 
-
-```typescript
+```tsx
 ...
 import { RouterModule } from '@angular/router';
 import { LoginComponent } from './login.component';
@@ -157,7 +154,6 @@ import { LoginComponent } from './login.component';
 We're excluding some additional content and only including the necessary parts.
 :::
 
-
 Here, we have a typical Angular Module setup, along with a RouterModule import, but we're now using `forChild` and declaring the component in that setup. With this setup, when we run our build, we will produce separate chunks for both the app component, the login component, and the detail component.
 
 ## Live Example
@@ -167,7 +163,6 @@ If you would prefer to get hands on with the concepts and code described above, 
 ## Working with Tabs
 
 With Tabs, the Angular Router provides Ionic the mechanism to know what components should be loaded, but the heavy lifting is actually done by the tabs component. Let's look at a simple example.
-
 
 ```ts
 const routes: Routes = [
@@ -180,46 +175,37 @@ const routes: Routes = [
         children: [
           {
             path: '',
-            loadChildren: () => import('../tab1/tab1.module').then(m => m.Tab1PageModule)
-          }
-        ]
+            loadChildren: () =>
+              import('../tab1/tab1.module').then(m => m.Tab1PageModule),
+          },
+        ],
       },
       {
         path: '',
         redirectTo: '/tabs/tab1',
-        pathMatch: 'full'
-      }
-    ]
+        pathMatch: 'full',
+      },
+    ],
   },
   {
     path: '',
     redirectTo: '/tabs/tab1',
-    pathMatch: 'full'
-  }
+    pathMatch: 'full',
+  },
 ];
 ```
 
 Here we have a "tabs" path that we load. In this example we call the path "tabs", but the name of the paths can be changed. They can be called whatever fits your app. In that route object, we can define a child route as well. In this example, the top level child route "tab1" acts as our "outlet", and can load additional child routes. For this example, we have a single sub-child-route, which just loads a new component. The markup for the tab is as followed:
 
 ```html
-
 <ion-tabs>
-
   <ion-tab-bar slot="bottom">
-
     <ion-tab-button tab="tab1">
       <ion-icon name="flash"></ion-icon>
       <ion-label>Tab One</ion-label>
     </ion-tab-button>
-
   </ion-tab-bar>
-
 </ion-tabs>
 ```
 
 If you've built apps with Ionic before, this should feel familiar. We create a `ion-tabs` component, and provide a `ion-tab-bar`. The `ion-tab-bar` provides a `ion-tab-button` with a `tab` property that is associated with the tab "outlet" in the router config. Note that the latest version of `@ionic/angular` no longer requires `<ion-tab>`, but instead allows developers to fully customize the tab bar, and the single source of truth lives within the router configuration.
-
-
-
-
-

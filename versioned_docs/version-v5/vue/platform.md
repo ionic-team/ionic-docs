@@ -4,7 +4,7 @@
 
 The `isPlatform` method can be used to test if your app is running on a certain platform:
 
-```typescript
+```tsx
 import { isPlatform } from '@ionic/vue';
 
 isPlatform('ios'); // returns true when running on a iOS device
@@ -16,7 +16,7 @@ Depending on the platform the user is on, isPlatform(platformName) will return t
 
 The `getPlatforms` method can be used to determine which platforms your app is currently running on.
 
-```typescript
+```tsx
 import { getPlatforms } from '@ionic/vue';
 
 getPlatforms(); // returns ["iphone", "ios", "mobile", "mobileweb"] from an iPhone
@@ -29,7 +29,7 @@ Depending on what device you are on, `getPlatforms` can return multiple values. 
 Below is a table listing all the possible platform values along with corresponding descriptions.
 
 | Platform Name | Description                              |
-|---------------|------------------------------------------|
+| ------------- | ---------------------------------------- |
 | android       | a device running Android                 |
 | capacitor     | a device running Capacitor               |
 | cordova       | a device running Cordova                 |

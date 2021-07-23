@@ -10,7 +10,7 @@ The Platform service can be used to get information about your current device. Y
 
 ## Usage
 
-```typescript
+```tsx
 import { Platform } from '@ionic/angular';
 
 @Component({...})
@@ -106,7 +106,7 @@ The `pause` event emits when the native platform puts the application into the b
 
 #### Usage
 
-```typescript
+```tsx
 this.platform.pause.subscribe(async () => {
   alert('Pause event detected');
 });
@@ -118,7 +118,7 @@ The `resize` event emits when the browser window has changed dimensions. This co
 
 #### Usage
 
-```typescript
+```tsx
 this.platform.resize.subscribe(async () => {
   alert('Resize event detected');
 });
@@ -130,7 +130,7 @@ The `resume` event fires when the native platform pulls the application out from
 
 #### Usage
 
-```typescript
+```tsx
 this.platform.resume.subscribe(async () => {
   alert('Resume event detected');
 });

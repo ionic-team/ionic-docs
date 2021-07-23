@@ -1,9 +1,8 @@
 ---
-title: "Splash Screen | Cordova Splash Screen Plugin for Android & iOS"
-description: "This Cordova plugin displays and hides a splash screen during application launch. Show and hide the splash screen after the Android or iOS app has loaded."
-sidebar_label: "Splash Screen"
+title: 'Splash Screen | Cordova Splash Screen Plugin for Android & iOS'
+description: 'This Cordova plugin displays and hides a splash screen during application launch. Show and hide the splash screen after the Android or iOS app has loaded.'
+sidebar_label: 'Splash Screen'
 ---
-
 
 import DocsCard from '@site/src/components/DocsCard';
 import DocsButton from '@site/src/components/DocsButton';
@@ -27,7 +26,6 @@ This plugin displays and hides a splash screen during application launch. The me
     <DocsButton className="native-ee-detail">Contact Us Today!</DocsButton>
   </div>
 </DocsCard>
-
 
 <h2 id="installation">
   <a href="#installation">Installation</a>
@@ -57,14 +55,14 @@ This plugin displays and hides a splash screen during application launch. The me
 </Tabs>
 
 ## Supported Platforms
-  
+
 - Amazon Fire OS
 - Android
 - iOS
 - Windows
 
 ## Capacitor
-  
+
 Not Compatible
 
 ## Usage
@@ -72,12 +70,10 @@ Not Compatible
 ### React
 
 [Learn more about using Ionic Native components in React](../native-community.md#react)
-  
 
 ### Angular
 
-
-```typescript
+```tsx
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 
 constructor(private splashScreen: SplashScreen) { }
@@ -88,4 +84,3 @@ this.splashScreen.show();
 
 this.splashScreen.hide();
 ```
-

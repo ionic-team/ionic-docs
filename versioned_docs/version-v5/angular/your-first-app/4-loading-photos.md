@@ -12,10 +12,10 @@ Fortunately, this is easy: we’ll leverage the Capacitor [Storage API](https://
 
 Begin by defining a constant variable that will act as the key for the store:
 
-```typescript
+```tsx
 export class PhotoService {
   public photos: Photo[] = [];
-  private PHOTO_STORAGE: string = "photos";
+  private PHOTO_STORAGE: string = 'photos';
 
   // other code
 }
@@ -23,16 +23,16 @@ export class PhotoService {
 
 Next, at the end of the `addNewToGallery` function, add a call to `Storage.set()` to save the Photos array. By adding it here, the Photos array is stored each time a new photo is taken. This way, it doesn’t matter when the app user closes or switches to a different app - all photo data is saved.
 
-```typescript
+```tsx
 Storage.set({
   key: this.PHOTO_STORAGE,
-  value: JSON.stringify(this.photos)
+  value: JSON.stringify(this.photos),
 });
 ```
 
 With the photo array data saved, create a function called `loadSaved()` that can retrieve that data. We use the same key to retrieve the photos array in JSON format, then parse it into an array:
 
-```typescript
+```tsx
 public async loadSaved() {
   // Retrieve cached photo array data
   const photoList = await Storage.get({ key: this.PHOTO_STORAGE });
@@ -44,13 +44,13 @@ public async loadSaved() {
 
 On mobile (coming up next!), we can directly set the source of an image tag - `<img src="x" />` - to each photo file on the Filesystem, displaying them automatically. On the web, however, we must read each image from the Filesystem into base64 format, using a new `base64` property on the `Photo` object. This is because the Filesystem API uses [IndexedDB](https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API) under the hood. Below is the code you need to add in the `loadSaved()` function you just added:
 
-```typescript
+```tsx
 // Display the photo by reading into base64 format
 for (let photo of this.photos) {
   // Read each saved photo's data from the Filesystem
   const readFile = await Filesystem.readFile({
-      path: photo.filepath,
-      directory: Directory.Data
+    path: photo.filepath,
+    directory: Directory.Data,
   });
 
   // Web platform only: Load the photo as base64 data
@@ -60,7 +60,7 @@ for (let photo of this.photos) {
 
 After, call this new method in `tab2.page.ts` so that when the user first navigates to Tab 2 (the Photo Gallery), all photos are loaded and displayed on the screen.
 
-```typescript
+```tsx
 async ngOnInit() {
   await this.photoService.loadSaved();
 }

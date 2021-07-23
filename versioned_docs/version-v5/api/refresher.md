@@ -1,8 +1,9 @@
 ---
-sidebar_label: "ion-refresher"
-demoUrl: "/docs/demos/api/refresher/index.html"
-demoSourceUrl: "https://github.com/ionic-team/ionic-docs/tree/main/static/demos/api/refresher/index.html"
+sidebar_label: 'ion-refresher'
+demoUrl: '/docs/demos/api/refresher/index.html'
+demoSourceUrl: 'https://github.com/ionic-team/ionic-docs/tree/main/static/demos/api/refresher/index.html'
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
@@ -32,11 +33,9 @@ The iOS native `ion-refresher` relies on rubber band scrolling in order to work 
 
 Using the MD native `ion-refresher` requires setting the `pullingIcon` property on `ion-refresher-content` to the value of one of the available spinners. See the [ion-spinner Documentation](spinner.md#properties) for accepted values. `pullingIcon` defaults to the `circular` spinner on MD.
 
-
 ## Usage
 
 <Tabs defaultValue="angular" values={[{ value: 'angular', label: 'ANGULAR' }, { value: 'javascript', label: 'JAVASCRIPT' }, { value: 'react', label: 'REACT' }, { value: 'stencil', label: 'STENCIL' }, { value: 'vue', label: 'VUE' }]}>
-
 
 <TabItem value="angular">
 
@@ -62,13 +61,14 @@ Using the MD native `ion-refresher` requires setting the `pullingIcon` property 
       pullingIcon="chevron-down-circle-outline"
       pullingText="Pull to refresh"
       refreshingSpinner="circles"
-      refreshingText="Refreshing...">
+      refreshingText="Refreshing..."
+    >
     </ion-refresher-content>
   </ion-refresher>
 </ion-content>
 ```
 
-```typescript
+```tsx
 import { Component } from '@angular/core';
 
 @Component({
@@ -91,7 +91,6 @@ export class RefresherExample {
 ```
 
 </TabItem>
-
 
 <TabItem value="javascript">
 
@@ -117,14 +116,14 @@ export class RefresherExample {
       pulling-icon="chevron-down-circle-outline"
       pulling-text="Pull to refresh"
       refreshing-spinner="circles"
-      refreshing-text="Refreshing...">
+      refreshing-text="Refreshing..."
+    >
     </ion-refresher-content>
   </ion-refresher>
 </ion-content>
 ```
 
 </TabItem>
-
 
 <TabItem value="react">
 
@@ -154,7 +153,13 @@ export const RefresherExample: React.FC = () => (
 
     {/*-- Custom Refresher Properties --*/}
     <IonContent>
-      <IonRefresher slot="fixed" onIonRefresh={doRefresh} pullFactor={0.5} pullMin={100} pullMax={200}>
+      <IonRefresher
+        slot="fixed"
+        onIonRefresh={doRefresh}
+        pullFactor={0.5}
+        pullMin={100}
+        pullMax={200}
+      >
         <IonRefresherContent></IonRefresherContent>
       </IonRefresher>
     </IonContent>
@@ -166,8 +171,8 @@ export const RefresherExample: React.FC = () => (
           pullingIcon={chevronDownCircleOutline}
           pullingText="Pull to refresh"
           refreshingSpinner="circles"
-          refreshingText="Refreshing...">
-        </IonRefresherContent>
+          refreshingText="Refreshing..."
+        ></IonRefresherContent>
       </IonRefresher>
     </IonContent>
   </IonContent>
@@ -176,7 +181,6 @@ export const RefresherExample: React.FC = () => (
 
 </TabItem>
 
-
 <TabItem value="stencil">
 
 ```tsx
@@ -184,7 +188,7 @@ import { Component, h } from '@stencil/core';
 
 @Component({
   tag: 'refresher-example',
-  styleUrl: 'refresher-example.css'
+  styleUrl: 'refresher-example.css',
 })
 export class RefresherExample {
   doRefresh(ev: any) {
@@ -200,36 +204,40 @@ export class RefresherExample {
     return [
       // Default Refresher
       <ion-content>
-        <ion-refresher slot="fixed" onIonRefresh={(ev) => this.doRefresh(ev)}>
+        <ion-refresher slot="fixed" onIonRefresh={ev => this.doRefresh(ev)}>
           <ion-refresher-content></ion-refresher-content>
         </ion-refresher>
       </ion-content>,
 
       // Custom Refresher Properties
       <ion-content>
-        <ion-refresher slot="fixed" pullFactor={0.5} pullMin={100} pullMax={200}>
+        <ion-refresher
+          slot="fixed"
+          pullFactor={0.5}
+          pullMin={100}
+          pullMax={200}
+        >
           <ion-refresher-content></ion-refresher-content>
         </ion-refresher>
       </ion-content>,
 
       // Custom Refresher Content
       <ion-content>
-        <ion-refresher slot="fixed" onIonRefresh={(ev) => this.doRefresh(ev)}>
+        <ion-refresher slot="fixed" onIonRefresh={ev => this.doRefresh(ev)}>
           <ion-refresher-content
             pullingIcon="chevron-down-circle-outline"
             pullingText="Pull to refresh"
             refreshingSpinner="circles"
-            refreshingText="Refreshing...">
-          </ion-refresher-content>
+            refreshingText="Refreshing..."
+          ></ion-refresher-content>
         </ion-refresher>
-      </ion-content>
+      </ion-content>,
     ];
   }
 }
 ```
 
 </TabItem>
-
 
 <TabItem value="vue">
 
@@ -256,31 +264,32 @@ export class RefresherExample {
         :pulling-icon="chevronDownCircleOutline"
         pulling-text="Pull to refresh"
         refreshing-spinner="circles"
-        refreshing-text="Refreshing...">
+        refreshing-text="Refreshing..."
+      >
       </ion-refresher-content>
     </ion-refresher>
   </ion-content>
 </template>
 
 <script lang="ts">
-import { IonContent, IonRefresher, IonRefresherContent } from '@ionic/vue';
-import { chevronDownCircleOutline } from 'ionicons/icons'
-import { defineComponent } from 'vue';
+  import { IonContent, IonRefresher, IonRefresherContent } from '@ionic/vue';
+  import { chevronDownCircleOutline } from 'ionicons/icons';
+  import { defineComponent } from 'vue';
 
-export default defineComponent({
-  components: { IonContent, IonRefresher, IonRefresherContent },
-  setup() {
-    const doRefresh = (event: CustomEvent) => {
-      console.log('Begin async operation');
-      
-      setTimeout(() => {
-        console.log('Async operation has ended');
-        event.target.complete();
-      }, 2000);
-    }
-    return { chevronDownCircleOutline, doRefresh }
-  }
-});
+  export default defineComponent({
+    components: { IonContent, IonRefresher, IonRefresherContent },
+    setup() {
+      const doRefresh = (event: CustomEvent) => {
+        console.log('Begin async operation');
+
+        setTimeout(() => {
+          console.log('Async operation has ended');
+          event.target.complete();
+        }, 2000);
+      };
+      return { chevronDownCircleOutline, doRefresh };
+    },
+  });
 </script>
 ```
 
@@ -290,109 +299,91 @@ export default defineComponent({
 
 ## Properties
 
-
 ### closeDuration
 
-| | |
-| --- | --- |
+|                 |                                                                                                                                          |
+| --------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
 | **Description** | Time it takes to close the refresher.<br />Does not apply when the refresher content uses a spinner,<br />enabling the native refresher. |
-| **Attribute** | `close-duration` |
-| **Type** | `string` |
-| **Default** | `'280ms'` |
-
-
+| **Attribute**   | `close-duration`                                                                                                                         |
+| **Type**        | `string`                                                                                                                                 |
+| **Default**     | `'280ms'`                                                                                                                                |
 
 ### disabled
 
-| | |
-| --- | --- |
+|                 |                                          |
+| --------------- | ---------------------------------------- |
 | **Description** | If `true`, the refresher will be hidden. |
-| **Attribute** | `disabled` |
-| **Type** | `boolean` |
-| **Default** | `false` |
-
-
+| **Attribute**   | `disabled`                               |
+| **Type**        | `boolean`                                |
+| **Default**     | `false`                                  |
 
 ### pullFactor
 
-| | |
-| --- | --- |
+|                 |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
+| --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | **Description** | How much to multiply the pull speed by. To slow the pull animation down,<br />pass a number less than `1`. To speed up the pull, pass a number greater<br />than `1`. The default value is `1` which is equal to the speed of the cursor.<br />If a negative value is passed in, the factor will be `1` instead.<br /><br />For example: If the value passed is `1.2` and the content is dragged by<br />`10` pixels, instead of `10` pixels the content will be pulled by `12` pixels<br />(an increase of 20 percent). If the value passed is `0.8`, the dragged amount<br />will be `8` pixels, less than the amount the cursor has moved.<br /><br />Does not apply when the refresher content uses a spinner,<br />enabling the native refresher. |
-| **Attribute** | `pull-factor` |
-| **Type** | `number` |
-| **Default** | `1` |
-
-
+| **Attribute**   | `pull-factor`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
+| **Type**        | `number`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
+| **Default**     | `1`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
 
 ### pullMax
 
-| | |
-| --- | --- |
-| **Description** | The maximum distance of the pull until the refresher<br />will automatically go into the `refreshing` state.<br />Defaults to the result of `pullMin + 60`.<br />Does not apply when  the refresher content uses a spinner,<br />enabling the native refresher. |
-| **Attribute** | `pull-max` |
-| **Type** | `number` |
-| **Default** | `this.pullMin + 60` |
-
-
+|                 |                                                                                                                                                                                                                                                                |
+| --------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Description** | The maximum distance of the pull until the refresher<br />will automatically go into the `refreshing` state.<br />Defaults to the result of `pullMin + 60`.<br />Does not apply when the refresher content uses a spinner,<br />enabling the native refresher. |
+| **Attribute**   | `pull-max`                                                                                                                                                                                                                                                     |
+| **Type**        | `number`                                                                                                                                                                                                                                                       |
+| **Default**     | `this.pullMin + 60`                                                                                                                                                                                                                                            |
 
 ### pullMin
 
-| | |
-| --- | --- |
+|                 |                                                                                                                                                                                                               |
+| --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Description** | The minimum distance the user must pull down until the<br />refresher will go into the `refreshing` state.<br />Does not apply when the refresher content uses a spinner,<br />enabling the native refresher. |
-| **Attribute** | `pull-min` |
-| **Type** | `number` |
-| **Default** | `60` |
-
-
+| **Attribute**   | `pull-min`                                                                                                                                                                                                    |
+| **Type**        | `number`                                                                                                                                                                                                      |
+| **Default**     | `60`                                                                                                                                                                                                          |
 
 ### snapbackDuration
 
-| | |
-| --- | --- |
+|                 |                                                                                                                                                                           |
+| --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Description** | Time it takes the refresher to to snap back to the `refreshing` state.<br />Does not apply when the refresher content uses a spinner,<br />enabling the native refresher. |
-| **Attribute** | `snapback-duration` |
-| **Type** | `string` |
-| **Default** | `'280ms'` |
-
-
+| **Attribute**   | `snapback-duration`                                                                                                                                                       |
+| **Type**        | `string`                                                                                                                                                                  |
+| **Default**     | `'280ms'`                                                                                                                                                                 |
 
 ## Events
 
-| Name | Description |
-| --- | --- |
-| `ionPull` | Emitted while the user is pulling down the content and exposing the refresher. |
-| `ionRefresh` | Emitted when the user lets go of the content and has pulled down
+| Name         | Description                                                                    |
+| ------------ | ------------------------------------------------------------------------------ |
+| `ionPull`    | Emitted while the user is pulling down the content and exposing the refresher. |
+| `ionRefresh` | Emitted when the user lets go of the content and has pulled down               |
+
 further than the `pullMin` or pulls the content down and exceeds the pullMax.
 Updates the refresher state to `refreshing`. The `complete()` method should be
 called when the async operation has completed. |
 | `ionStart` | Emitted when the user begins to start pulling down. |
 
-
 ## Methods
-
 
 ### cancel
 
-| | |
-| --- | --- |
+|                 |                                                                  |
+| --------------- | ---------------------------------------------------------------- |
 | **Description** | Changes the refresher's state from `refreshing` to `cancelling`. |
-| **Signature** | `cancel() => Promise<void>` |
-
+| **Signature**   | `cancel() => Promise<void>`                                      |
 
 ### complete
 
-| | |
-| --- | --- |
+|                 |                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
+| --------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Description** | Call `complete()` when your async operation has completed.<br />For example, the `refreshing` state is while the app is performing<br />an asynchronous operation, such as receiving more data from an<br />AJAX request. Once the data has been received, you then call this<br />method to signify that the refreshing has completed and to close<br />the refresher. This method also changes the refresher's state from<br />`refreshing` to `completing`. |
-| **Signature** | `complete() => Promise<void>` |
-
+| **Signature**   | `complete() => Promise<void>`                                                                                                                                                                                                                                                                                                                                                                                                                                  |
 
 ### getProgress
 
-| | |
-| --- | --- |
+|                 |                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
+| --------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Description** | A number representing how far down the user has pulled.<br />The number `0` represents the user hasn't pulled down at all. The<br />number `1`, and anything greater than `1`, represents that the user<br />has pulled far enough down that when they let go then the refresh will<br />happen. If they let go and the number is less than `1`, then the<br />refresh will not happen, and the content will return to it's original<br />position. |
-| **Signature** | `getProgress() => Promise<number>` |
-
-
+| **Signature**   | `getProgress() => Promise<number>`                                                                                                                                                                                                                                                                                                                                                                                                                  |

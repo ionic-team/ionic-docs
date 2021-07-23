@@ -1,7 +1,6 @@
 ---
-sidebar_label: "Open Native Settings"
+sidebar_label: 'Open Native Settings'
 ---
-
 
 import DocsCard from '@site/src/components/DocsCard';
 import DocsButton from '@site/src/components/DocsButton';
@@ -10,7 +9,6 @@ import TabItem from '@theme/TabItem';
 import CodeBlock from '@theme/CodeBlock';
 
 # Open Native Settings
-
 
 Plugin to open native screens of iOS/android settings
 
@@ -26,7 +24,6 @@ Plugin to open native screens of iOS/android settings
     <DocsButton className="native-ee-detail">Contact Us Today!</DocsButton>
   </div>
 </DocsCard>
-
 
 <h2 id="installation">
   <a href="#installation">Installation</a>
@@ -56,7 +53,7 @@ Plugin to open native screens of iOS/android settings
 </Tabs>
 
 ## Supported Platforms
-  
+
 - Android
 - iOS
 
@@ -65,12 +62,11 @@ Plugin to open native screens of iOS/android settings
 ### React
 
 [Learn more about using Ionic Native components in React](../native-community.md#react)
-  
 
 ### Angular
 
-
 You can open any of these settings:
+
 ```
  "about", // ios
  "accessibility", // ios, android
@@ -142,8 +138,9 @@ You can open any of these settings:
 "wifi_ip", // android
 "wifi", // ios, android
 "wireless" // android
- ```
-```typescript
+```
+
+```tsx
 import { OpenNativeSettings } from '@ionic-native/open-native-settings/ngx';
 
 
@@ -153,4 +150,3 @@ constructor(private openNativeSettings: OpenNativeSettings) { }
 
 
 ```
-

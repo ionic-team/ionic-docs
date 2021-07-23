@@ -1,7 +1,6 @@
 ---
-sidebar_label: "Screenshot"
+sidebar_label: 'Screenshot'
 ---
-
 
 import DocsCard from '@site/src/components/DocsCard';
 import DocsButton from '@site/src/components/DocsButton';
@@ -25,7 +24,6 @@ Captures a screen shot
     <DocsButton className="native-ee-detail">Contact Us Today!</DocsButton>
   </div>
 </DocsCard>
-
 
 <h2 id="installation">
   <a href="#installation">Installation</a>
@@ -55,7 +53,7 @@ Captures a screen shot
 </Tabs>
 
 ## Supported Platforms
-  
+
 - Android
 - iOS
 - macOS
@@ -65,12 +63,10 @@ Captures a screen shot
 ### React
 
 [Learn more about using Ionic Native components in React](../native-community.md#react)
-  
 
 ### Angular
 
-
-```typescript
+```tsx
 import { Screenshot } from '@ionic-native/screenshot/ngx';
 
 constructor(private screenshot: Screenshot) { }
@@ -83,4 +79,3 @@ this.screenshot.save('jpg', 80, 'myscreenshot.jpg').then(onSuccess, onError);
 // Take a screenshot and get temporary file URI
 this.screenshot.URI(80).then(onSuccess, onError);
 ```
-

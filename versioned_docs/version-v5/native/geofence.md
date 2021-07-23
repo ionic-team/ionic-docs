@@ -1,7 +1,6 @@
 ---
-sidebar_label: "Geofence"
+sidebar_label: 'Geofence'
 ---
-
 
 import DocsCard from '@site/src/components/DocsCard';
 import DocsButton from '@site/src/components/DocsButton';
@@ -26,7 +25,6 @@ Geofences persist after device reboot. Geofences will be monitored even when the
     <DocsButton className="native-ee-detail">Contact Us Today!</DocsButton>
   </div>
 </DocsCard>
-
 
 <h2 id="installation">
   <a href="#installation">Installation</a>
@@ -56,7 +54,7 @@ Geofences persist after device reboot. Geofences will be monitored even when the
 </Tabs>
 
 ## Supported Platforms
-  
+
 - Android
 - iOS
 - Windows
@@ -67,12 +65,10 @@ Geofences persist after device reboot. Geofences will be monitored even when the
 ### React
 
 [Learn more about using Ionic Native components in React](../native-community.md#react)
-  
 
 ### Angular
 
-
-```typescript
+```tsx
 import { Geofence } from '@ionic-native/geofence/ngx';
 
 ...
@@ -111,16 +107,21 @@ private addGeofence() {
 }
 
 ```
-### Transition Types ###
+
+### Transition Types
+
 Transition type specifies whether the geofence should trigger when the user enters and/or leaves the geofence.
 
-#### Supported values ####
+#### Supported values
+
 - 1: Enter
 - 2: Leave
 - 3: Both
 
-### Defining a Geofence ###
+### Defining a Geofence
+
 Geofences are defined by an object that is passed to `addOrUpdate()`. Object properties are:
+
 - id: Any unique ID for the geofence. This ID is used to remove and update a geofence
 - latitude: Latitude coordinate of the center of the geofence radius
 - longitude: Latitude coordinate of the center of the geofence radius
@@ -132,9 +133,10 @@ Geofences are defined by an object that is passed to `addOrUpdate()`. Object pro
   - text: Notification body
   - openAppOnClick: Boolean. Whether to open the app when the notification is tapped by the user
 
-### Troubleshooting ###
-#### I get compile errors when I run `ionic build ios` or `ionic run ios`. ####
+### Troubleshooting
+
+#### I get compile errors when I run `ionic build ios` or `ionic run ios`.
+
 This could be caused by the Cordova project directory in `/platforms/ios` not being named correctly.
 Try running `ionic cordova platform rm &lt;platform>` then run `ionic cordova platform add &lt;platform>` to recreate the
 platform directories.
-

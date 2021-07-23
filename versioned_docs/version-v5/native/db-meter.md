@@ -1,7 +1,6 @@
 ---
-sidebar_label: "DB Meter"
+sidebar_label: 'DB Meter'
 ---
-
 
 import DocsCard from '@site/src/components/DocsCard';
 import DocsButton from '@site/src/components/DocsButton';
@@ -25,7 +24,6 @@ This plugin defines a global DBMeter object, which permits to get the decibel va
     <DocsButton className="native-ee-detail">Contact Us Today!</DocsButton>
   </div>
 </DocsCard>
-
 
 <h2 id="installation">
   <a href="#installation">Installation</a>
@@ -55,7 +53,7 @@ This plugin defines a global DBMeter object, which permits to get the decibel va
 </Tabs>
 
 ## Supported Platforms
-  
+
 - Android
 - iOS
 
@@ -64,12 +62,10 @@ This plugin defines a global DBMeter object, which permits to get the decibel va
 ### React
 
 [Learn more about using Ionic Native components in React](../native-community.md#react)
-  
 
 ### Angular
 
-
-```typescript
+```tsx
 import { DBMeter } from '@ionic-native/db-meter/ngx';
 
 constructor(private dbMeter: DBMeter) { }
@@ -96,4 +92,3 @@ this.dbMeter.delete().then(
   error => console.log('Error occurred while deleting DB Meter instance')
 );
 ```
-

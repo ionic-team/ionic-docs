@@ -14,15 +14,15 @@ npm install react-virtuoso
 
 There are a few components that Virtuoso includes, but this example will use the `Virtuoso` component. This component should be added inside of your `IonContent` component:
 
-```typescript
+```tsx
 import React from 'react';
 import { Virtuoso } from 'react-virtuoso';
 import {
   IonAvatar,
-  IonContent, 
+  IonContent,
   IonItem,
   IonLabel,
-  IonPage
+  IonPage,
 } from '@ionic/react';
 const Home: React.FC = () => (
   <IonPage>
@@ -30,22 +30,22 @@ const Home: React.FC = () => (
       <Virtuoso
         style={{ height: '100%' }}
         totalCount={100}
-        itemContent={(index) => {
+        itemContent={index => {
           return (
             <div style={{ height: '56px' }}>
               <IonItem>
                 <IonAvatar slot="start">
                   <img src="https://picsum.photos/seed/picsum/40/40" />
                 </IonAvatar>
-                <IonLabel>{ index }</IonLabel>
+                <IonLabel>{index}</IonLabel>
               </IonItem>
             </div>
-          )
+          );
         }}
       />
     </IonContent>
   </IonPage>
-)
+);
 export default Home;
 ```
 

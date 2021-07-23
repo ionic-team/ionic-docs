@@ -160,12 +160,11 @@ The `enterkeyhint` attribute is supported on devices running Chrome 77+ and iOS 
 
 ## Dark Mode
 
-By default the keyboard theme is determined by the OS. For example, if dark mode is enabled on iOS, the keyboard in your app will appear with a dark theme even if your application does not have a dark theme in its CSS. 
+By default the keyboard theme is determined by the OS. For example, if dark mode is enabled on iOS, the keyboard in your app will appear with a dark theme even if your application does not have a dark theme in its CSS.
 
 When running an app in a mobile web browser or as a PWA there is no way to force the keyboard to appear with a certain theme.
 
 When running an app in Capacitor or Cordova, it is possible to force the keyboard to appear with a certain theme. For more information regarding this configuration, see the <a href="https://capacitor.ionicframework.com/docs/apis/keyboard#keyboard-configuration-ios-only-" target="_blank">Capacitor Keyboard Documentation</a>.
-
 
 ## Hiding the Accessory Bar
 
@@ -174,7 +173,6 @@ When running any kind of web based application, iOS will show an accessory bar a
 When running an app in a mobile web browser or as a PWA there is no way to hide the accessory bar.
 
 When running an app in Capacitor or Cordova, it is possible to hide the accessory bar. For more information regarding this configuration, see the <a href="https://capacitor.ionicframework.com/docs/apis/keyboard#keyboard-configuration-ios-only-" target="_blank">Capacitor Keyboard Documentation</a>.
-
 
 ## Keyboard Lifecycle Events
 
@@ -207,7 +205,7 @@ window.addEventListener('ionKeyboardDidHide', () => {
 </TabItem>
 <TabItem value="angular">
 
-```typescript
+```tsx
 import { Platform } from '@ionic/angular';
 
 ...
@@ -217,7 +215,7 @@ constructor(private platform: Platform) {
     const { keyboardHeight } = ev;
     // Do something with the keyboard height such as translating an input above the keyboard.
   });
-  
+
   this.platform.keyboardDidHide.subscribe(() => {
     // Move input back to original location
   });
@@ -238,7 +236,7 @@ const { isOpen, keyboardHeight } = useKeyboardState();
 </TabItem>
 <TabItem value="vue">
 
-```typescript
+```tsx
 import { useKeyboard } from '@ionic/vue';
 import { watch } from 'vue';
 

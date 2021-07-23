@@ -1,8 +1,9 @@
 ---
-sidebar_label: "ion-checkbox"
-demoUrl: "/docs/demos/api/checkbox/index.html"
-demoSourceUrl: "https://github.com/ionic-team/ionic-docs/tree/main/static/demos/api/checkbox/index.html"
+sidebar_label: 'ion-checkbox'
+demoUrl: '/docs/demos/api/checkbox/index.html'
+demoSourceUrl: 'https://github.com/ionic-team/ionic-docs/tree/main/static/demos/api/checkbox/index.html'
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
@@ -10,13 +11,9 @@ import TabItem from '@theme/TabItem';
 
 Checkboxes allow the selection of multiple options from a set of options. They appear as checked (ticked) when activated. Clicking on a checkbox will toggle the `checked` property. They can also be checked programmatically by setting the `checked` property.
 
-
-
-
 ## Usage
 
 <Tabs defaultValue="angular" values={[{ value: 'angular', label: 'ANGULAR' }, { value: 'javascript', label: 'JAVASCRIPT' }, { value: 'react', label: 'REACT' }, { value: 'stencil', label: 'STENCIL' }, { value: 'vue', label: 'VUE' }]}>
-
 
 <TabItem value="angular">
 
@@ -46,26 +43,24 @@ Checkboxes allow the selection of multiple options from a set of options. They a
 </ion-list>
 ```
 
-```typescript
+```tsx
 import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-page-home',
   templateUrl: 'home.page.html',
-  styleUrls: ['home.page.scss']
+  styleUrls: ['home.page.scss'],
 })
 export class HomePage {
   public form = [
-      { val: 'Pepperoni', isChecked: true },
-      { val: 'Sausage', isChecked: false },
-      { val: 'Mushroom', isChecked: false }
-    ];
+    { val: 'Pepperoni', isChecked: true },
+    { val: 'Sausage', isChecked: false },
+    { val: 'Mushroom', isChecked: false },
+  ];
 }
 ```
 
-
 </TabItem>
-
 
 <TabItem value="javascript">
 
@@ -105,24 +100,32 @@ export class HomePage {
 </ion-list>
 ```
 
-
 </TabItem>
-
 
 <TabItem value="react">
 
 ```tsx
 import React, { useState } from 'react';
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonCheckbox, IonList, IonItem, IonLabel, IonItemDivider } from '@ionic/react';
+import {
+  IonContent,
+  IonHeader,
+  IonPage,
+  IonTitle,
+  IonToolbar,
+  IonCheckbox,
+  IonList,
+  IonItem,
+  IonLabel,
+  IonItemDivider,
+} from '@ionic/react';
 
 const checkboxList = [
   { val: 'Pepperoni', isChecked: true },
   { val: 'Sausage', isChecked: false },
-  { val: 'Mushroom', isChecked: false }
+  { val: 'Mushroom', isChecked: false },
 ];
 
 export const CheckboxExamples: React.FC = () => {
-
   const [checked, setChecked] = useState(false);
 
   return (
@@ -137,11 +140,16 @@ export const CheckboxExamples: React.FC = () => {
           <IonItemDivider>Default Checkbox</IonItemDivider>
           <IonItem>
             <IonLabel>Checked: {JSON.stringify(checked)}</IonLabel>
-            <IonCheckbox checked={checked} onIonChange={e => setChecked(e.detail.checked)} />
+            <IonCheckbox
+              checked={checked}
+              onIonChange={e => setChecked(e.detail.checked)}
+            />
           </IonItem>
 
           <IonItemDivider>Disabled Checkbox</IonItemDivider>
-          <IonItem><IonCheckbox slot="end" disabled={true} /></IonItem>
+          <IonItem>
+            <IonCheckbox slot="end" disabled={true} />
+          </IonItem>
 
           <IonItemDivider>Checkbox Colors</IonItemDivider>
           <IonItem>
@@ -168,7 +176,6 @@ export const CheckboxExamples: React.FC = () => {
 
 </TabItem>
 
-
 <TabItem value="stencil">
 
 ```tsx
@@ -176,13 +183,13 @@ import { Component, h } from '@stencil/core';
 
 @Component({
   tag: 'checkbox-example',
-  styleUrl: 'checkbox-example.css'
+  styleUrl: 'checkbox-example.css',
 })
 export class CheckboxExample {
   private form = [
     { val: 'Pepperoni', isChecked: true },
     { val: 'Sausage', isChecked: false },
-    { val: 'Mushroom', isChecked: false }
+    { val: 'Mushroom', isChecked: false },
   ];
 
   render() {
@@ -205,21 +212,19 @@ export class CheckboxExample {
 
       // Checkboxes in a List
       <ion-list>
-        {this.form.map(entry =>
+        {this.form.map(entry => (
           <ion-item>
             <ion-label>{entry.val}</ion-label>
             <ion-checkbox slot="end" checked={entry.isChecked}></ion-checkbox>
           </ion-item>
-        )}
-      </ion-list>
+        ))}
+      </ion-list>,
     ];
   }
 }
 ```
 
-
 </TabItem>
-
 
 <TabItem value="vue">
 
@@ -248,28 +253,29 @@ export class CheckboxExample {
       <ion-checkbox
         slot="end"
         @update:modelValue="entry.isChecked = $event"
-        :modelValue="entry.isChecked">
+        :modelValue="entry.isChecked"
+      >
       </ion-checkbox>
     </ion-item>
   </ion-list>
 </template>
 
 <script>
-import { IonCheckbox, IonItem, IonLabel, IonList } from '@ionic/vue';
-import { defineComponent } from 'vue';
+  import { IonCheckbox, IonItem, IonLabel, IonList } from '@ionic/vue';
+  import { defineComponent } from 'vue';
 
-export default defineComponent({
-  components: { IonCheckbox, IonItem, IonLabel, IonList },
-  setup() {
-    const form = [
-      { val: 'Pepperoni', isChecked: true },
-      { val: 'Sausage', isChecked: false },
-      { val: 'Mushroom', isChecked: false }
-    ];
-    
-    return { form };
-  }
-});
+  export default defineComponent({
+    components: { IonCheckbox, IonItem, IonLabel, IonList },
+    setup() {
+      const form = [
+        { val: 'Pepperoni', isChecked: true },
+        { val: 'Sausage', isChecked: false },
+        { val: 'Mushroom', isChecked: false },
+      ];
+
+      return { form };
+    },
+  });
 </script>
 ```
 
@@ -279,114 +285,96 @@ export default defineComponent({
 
 ## Properties
 
-
 ### checked
 
-| | |
-| --- | --- |
+|                 |                                      |
+| --------------- | ------------------------------------ |
 | **Description** | If `true`, the checkbox is selected. |
-| **Attribute** | `checked` |
-| **Type** | `boolean` |
-| **Default** | `false` |
-
-
+| **Attribute**   | `checked`                            |
+| **Type**        | `boolean`                            |
+| **Default**     | `false`                              |
 
 ### color
 
-| | |
-| --- | --- |
+|                 |                                                                                                                                                                                                                                                                                  |
+| --------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Description** | The color to use from your application's color palette.<br />Default options are: `"primary"`, `"secondary"`, `"tertiary"`, `"success"`, `"warning"`, `"danger"`, `"light"`, `"medium"`, and `"dark"`.<br />For more information on colors, see [theming](../theming/basics.md). |
-| **Attribute** | `color` |
-| **Type** | `string \| undefined` |
-| **Default** | `undefined` |
-
-
+| **Attribute**   | `color`                                                                                                                                                                                                                                                                          |
+| **Type**        | `string \| undefined`                                                                                                                                                                                                                                                            |
+| **Default**     | `undefined`                                                                                                                                                                                                                                                                      |
 
 ### disabled
 
-| | |
-| --- | --- |
+|                 |                                                        |
+| --------------- | ------------------------------------------------------ |
 | **Description** | If `true`, the user cannot interact with the checkbox. |
-| **Attribute** | `disabled` |
-| **Type** | `boolean` |
-| **Default** | `false` |
-
-
+| **Attribute**   | `disabled`                                             |
+| **Type**        | `boolean`                                              |
+| **Default**     | `false`                                                |
 
 ### indeterminate
 
-| | |
-| --- | --- |
+|                 |                                                                |
+| --------------- | -------------------------------------------------------------- |
 | **Description** | If `true`, the checkbox will visually appear as indeterminate. |
-| **Attribute** | `indeterminate` |
-| **Type** | `boolean` |
-| **Default** | `false` |
-
-
+| **Attribute**   | `indeterminate`                                                |
+| **Type**        | `boolean`                                                      |
+| **Default**     | `false`                                                        |
 
 ### mode
 
-| | |
-| --- | --- |
+|                 |                                                   |
+| --------------- | ------------------------------------------------- |
 | **Description** | The mode determines which platform styles to use. |
-| **Attribute** | `mode` |
-| **Type** | `"ios" \| "md"` |
-| **Default** | `undefined` |
-
-
+| **Attribute**   | `mode`                                            |
+| **Type**        | `"ios" \| "md"`                                   |
+| **Default**     | `undefined`                                       |
 
 ### name
 
-| | |
-| --- | --- |
+|                 |                                                                 |
+| --------------- | --------------------------------------------------------------- |
 | **Description** | The name of the control, which is submitted with the form data. |
-| **Attribute** | `name` |
-| **Type** | `string` |
-| **Default** | `this.inputId` |
-
-
+| **Attribute**   | `name`                                                          |
+| **Type**        | `string`                                                        |
+| **Default**     | `this.inputId`                                                  |
 
 ### value
 
-| | |
-| --- | --- |
+|                 |                                                                                                                                                                                                                                                                                  |
+| --------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Description** | The value of the checkbox does not mean if it's checked or not, use the `checked`<br />property for that.<br /><br />The value of a checkbox is analogous to the value of an `<input type="checkbox">`,<br />it's only used when the checkbox participates in a native `<form>`. |
-| **Attribute** | `value` |
-| **Type** | `string` |
-| **Default** | `'on'` |
-
-
+| **Attribute**   | `value`                                                                                                                                                                                                                                                                          |
+| **Type**        | `string`                                                                                                                                                                                                                                                                         |
+| **Default**     | `'on'`                                                                                                                                                                                                                                                                           |
 
 ## Events
 
-| Name | Description |
-| --- | --- |
-| `ionBlur` | Emitted when the checkbox loses focus. |
+| Name        | Description                                    |
+| ----------- | ---------------------------------------------- |
+| `ionBlur`   | Emitted when the checkbox loses focus.         |
 | `ionChange` | Emitted when the checked property has changed. |
-| `ionFocus` | Emitted when the checkbox has focus. |
-
+| `ionFocus`  | Emitted when the checkbox has focus.           |
 
 ## CSS Shadow Parts
 
-| Name | Description |
-| --- | --- |
-| `container` | The container for the checkbox mark. |
-| `mark` | The checkmark used to indicate the checked state. |
-
+| Name        | Description                                       |
+| ----------- | ------------------------------------------------- |
+| `container` | The container for the checkbox mark.              |
+| `mark`      | The checkmark used to indicate the checked state. |
 
 ## CSS Custom Properties
 
-| Name | Description |
-| --- | --- |
-| `--background` | Background of the checkbox icon |
-| `--background-checked` | Background of the checkbox icon when checked |
-| `--border-color` | Border color of the checkbox icon |
+| Name                     | Description                                    |
+| ------------------------ | ---------------------------------------------- |
+| `--background`           | Background of the checkbox icon                |
+| `--background-checked`   | Background of the checkbox icon when checked   |
+| `--border-color`         | Border color of the checkbox icon              |
 | `--border-color-checked` | Border color of the checkbox icon when checked |
-| `--border-radius` | Border radius of the checkbox icon |
-| `--border-style` | Border style of the checkbox icon |
-| `--border-width` | Border width of the checkbox icon |
-| `--checkmark-color` | Color of the checkbox checkmark when checked |
-| `--checkmark-width` | Stroke width of the checkbox checkmark |
-| `--size` | Size of the checkbox icon |
-| `--transition` | Transition of the checkbox icon |
-
+| `--border-radius`        | Border radius of the checkbox icon             |
+| `--border-style`         | Border style of the checkbox icon              |
+| `--border-width`         | Border width of the checkbox icon              |
+| `--checkmark-color`      | Color of the checkbox checkmark when checked   |
+| `--checkmark-width`      | Stroke width of the checkbox checkmark         |
+| `--size`                 | Size of the checkbox icon                      |
+| `--transition`           | Transition of the checkbox icon                |

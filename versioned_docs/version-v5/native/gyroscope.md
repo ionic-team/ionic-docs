@@ -1,7 +1,6 @@
 ---
-sidebar_label: "Gyroscope"
+sidebar_label: 'Gyroscope'
 ---
-
 
 import DocsCard from '@site/src/components/DocsCard';
 import DocsButton from '@site/src/components/DocsButton';
@@ -25,7 +24,6 @@ Read Gyroscope sensor data
     <DocsButton className="native-ee-detail">Contact Us Today!</DocsButton>
   </div>
 </DocsCard>
-
 
 <h2 id="installation">
   <a href="#installation">Installation</a>
@@ -55,7 +53,7 @@ Read Gyroscope sensor data
 </Tabs>
 
 ## Supported Platforms
-  
+
 - Android
 - iOS
 
@@ -64,12 +62,10 @@ Read Gyroscope sensor data
 ### React
 
 [Learn more about using Ionic Native components in React](../native-community.md#react)
-  
 
 ### Angular
 
-
-```typescript
+```tsx
 import { Gyroscope, GyroscopeOrientation, GyroscopeOptions } from '@ionic-native/gyroscope/ngx';
 
 

@@ -1,8 +1,9 @@
 ---
-sidebar_label: "ion-popover"
-demoUrl: "/docs/demos/api/popover/index.html"
-demoSourceUrl: "https://github.com/ionic-team/ionic-docs/tree/main/static/demos/api/popover/index.html"
+sidebar_label: 'ion-popover'
+demoUrl: '/docs/demos/api/popover/index.html'
+demoSourceUrl: 'https://github.com/ionic-team/ionic-docs/tree/main/static/demos/api/popover/index.html'
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
@@ -42,15 +43,13 @@ Any of the defined [CSS Custom Properties](#css-custom-properties) can be used t
 
 > If you are building an Ionic Angular app, the styles need to be added to a global stylesheet file. Read [Style Placement](#style-placement) in the Angular section below for more information.
 
-
 ## Usage
 
 <Tabs defaultValue="angular" values={[{ value: 'angular', label: 'ANGULAR' }, { value: 'javascript', label: 'JAVASCRIPT' }, { value: 'react', label: 'REACT' }, { value: 'stencil', label: 'STENCIL' }, { value: 'vue', label: 'VUE' }]}>
 
-
 <TabItem value="angular">
 
-```typescript
+```tsx
 import { Component } from '@angular/core';
 import { PopoverController } from '@ionic/angular';
 import { PopoverComponent } from '../../component/popover/popover.component';
@@ -58,7 +57,7 @@ import { PopoverComponent } from '../../component/popover/popover.component';
 @Component({
   selector: 'popover-example',
   templateUrl: 'popover-example.html',
-  styleUrls: ['./popover-example.css']
+  styleUrls: ['./popover-example.css'],
 })
 export class PopoverExample {
   constructor(public popoverController: PopoverController) {}
@@ -68,24 +67,21 @@ export class PopoverExample {
       component: PopoverComponent,
       cssClass: 'my-custom-class',
       event: ev,
-      translucent: true
+      translucent: true,
     });
     await popover.present();
-  
+
     const { role } = await popover.onDidDismiss();
     console.log('onDidDismiss resolved with role', role);
   }
 }
 ```
 
-
 ### Style Placement
 
 In Angular, the CSS of a specific page is scoped only to elements of that page. Even though the Popover can be presented from within a page, the `ion-popover` element is appended outside of the current page. This means that any custom styles need to go in a global stylesheet file. In an Ionic Angular starter this can be the `src/global.scss` file or you can register a new global style file by [adding to the `styles` build option in `angular.json`](https://angular.io/guide/workspace-config#style-script-config).
 
-
 </TabItem>
-
 
 <TabItem value="javascript">
 
@@ -122,15 +118,13 @@ function presentPopover(ev) {
   document.body.appendChild(popover);
 
   await popover.present();
-  
+
   const { role } = await popover.onDidDismiss();
   console.log('onDidDismiss resolved with role', role);
 }
 ```
 
-
 </TabItem>
-
 
 <TabItem value="react">
 
@@ -164,14 +158,16 @@ const PopoverList: React.FC<{
 );
 
 const PopoverExample: React.FC = () => {
-  const [present, dismiss] = useIonPopover(PopoverList, { onHide: () => dismiss() });
-  
+  const [present, dismiss] = useIonPopover(PopoverList, {
+    onHide: () => dismiss(),
+  });
+
   return (
     <IonPage>
       <IonContent>
         <IonButton
           expand="block"
-          onClick={(e) =>
+          onClick={e =>
             present({
               event: e.nativeEvent,
             })
@@ -192,22 +188,27 @@ import React, { useState } from 'react';
 import { IonPopover, IonButton } from '@ionic/react';
 
 export const PopoverExample: React.FC = () => {
-  const [popoverState, setShowPopover] = useState({ showPopover: false, event: undefined });
+  const [popoverState, setShowPopover] = useState({
+    showPopover: false,
+    event: undefined,
+  });
 
   return (
     <>
       <IonPopover
-        cssClass='my-custom-class'
+        cssClass="my-custom-class"
         event={popoverState.event}
         isOpen={popoverState.showPopover}
-        onDidDismiss={() => setShowPopover({ showPopover: false, event: undefined })}
+        onDidDismiss={() =>
+          setShowPopover({ showPopover: false, event: undefined })
+        }
       >
         <p>This is popover content</p>
       </IonPopover>
-      <IonButton onClick={
-        (e: any) => {
+      <IonButton
+        onClick={(e: any) => {
           e.persist();
-          setShowPopover({ showPopover: true, event: e })
+          setShowPopover({ showPopover: true, event: e });
         }}
       >
         Show Popover
@@ -217,9 +218,7 @@ export const PopoverExample: React.FC = () => {
 };
 ```
 
-
 </TabItem>
-
 
 <TabItem value="stencil">
 
@@ -230,7 +229,7 @@ import { popoverController } from '@ionic/core';
 
 @Component({
   tag: 'popover-example',
-  styleUrl: 'popover-example.css'
+  styleUrl: 'popover-example.css',
 })
 export class PopoverExample {
   async presentPopover(ev: any) {
@@ -238,10 +237,10 @@ export class PopoverExample {
       component: 'page-popover',
       cssClass: 'my-custom-class',
       event: ev,
-      translucent: true
+      translucent: true,
     });
     await popover.present();
-  
+
     const { role } = await popover.onDidDismiss();
     console.log('onDidDismiss resolved with role', role);
   }
@@ -249,8 +248,10 @@ export class PopoverExample {
   render() {
     return [
       <ion-content>
-        <ion-button onClick={(ev) => this.presentPopover(ev)}>Present Popover</ion-button>
-      </ion-content>
+        <ion-button onClick={ev => this.presentPopover(ev)}>
+          Present Popover
+        </ion-button>
+      </ion-content>,
     ];
   }
 }
@@ -276,7 +277,7 @@ export class PagePopover {
         <ion-item>
           <ion-label>Settings</ion-label>
         </ion-item>
-      </ion-list>
+      </ion-list>,
     ];
   }
 }
@@ -284,24 +285,21 @@ export class PagePopover {
 
 </TabItem>
 
-
 <TabItem value="vue">
 
 ```html
 <template>
-  <ion-content class="ion-padding">
-    Popover Content
-  </ion-content>
+  <ion-content class="ion-padding"> Popover Content </ion-content>
 </template>
 
 <script>
-import { IonContent } from '@ionic/vue';
-import { defineComponent } from 'vue';
+  import { IonContent } from '@ionic/vue';
+  import { defineComponent } from 'vue';
 
-export default defineComponent({
-  name: 'Popover',
-  components: { IonContent }
-});
+  export default defineComponent({
+    name: 'Popover',
+    components: { IonContent },
+  });
 </script>
 ```
 
@@ -315,27 +313,31 @@ export default defineComponent({
 </template>
 
 <script>
-import { IonButton, IonContent, IonPage, popoverController } from '@ionic/vue';
-import Popver from './popover.vue'
+  import {
+    IonButton,
+    IonContent,
+    IonPage,
+    popoverController,
+  } from '@ionic/vue';
+  import Popver from './popover.vue';
 
-export default {
-  components: { IonButton, IonContent, IonPage },
-  methods: {
-    async openPopover(ev: Event) {
-      const popover = await popoverController
-        .create({
+  export default {
+    components: { IonButton, IonContent, IonPage },
+    methods: {
+      async openPopover(ev: Event) {
+        const popover = await popoverController.create({
           component: Popover,
           cssClass: 'my-custom-class',
           event: ev,
-          translucent: true
-        })
-      await popover.present();
-  
-      const { role } = await popover.onDidDismiss();
-      console.log('onDidDismiss resolved with role', role);
+          translucent: true,
+        });
+        await popover.present();
+
+        const { role } = await popover.onDidDismiss();
+        console.log('onDidDismiss resolved with role', role);
+      },
     },
-  },
-}
+  };
 </script>
 ```
 
@@ -356,25 +358,24 @@ Developers can also use this component directly in their template:
 </template>
 
 <script>
-import { IonButton, IonPopover } from '@ionic/vue';
-import { defineComponent, ref } from 'vue';
-import Popver from './popover.vue'
+  import { IonButton, IonPopover } from '@ionic/vue';
+  import { defineComponent, ref } from 'vue';
+  import Popver from './popover.vue';
 
-export default defineComponent({
-  components: { IonButton, IonPopover, Popover },
-  setup() {
-    const isOpenRef = ref(false);
-    const event = ref();
-    const setOpen = (state: boolean, ev?: Event) => {
-      event.value = ev; 
-      isOpenRef.value = state;
-    }
-    return { isOpenRef, setOpen, event }
-  }
-});
+  export default defineComponent({
+    components: { IonButton, IonPopover, Popover },
+    setup() {
+      const isOpenRef = ref(false);
+      const event = ref();
+      const setOpen = (state: boolean, ev?: Event) => {
+        event.value = ev;
+        isOpenRef.value = state;
+      };
+      return { isOpenRef, setOpen, event };
+    },
+  });
 </script>
 ```
-
 
 </TabItem>
 
@@ -382,196 +383,163 @@ export default defineComponent({
 
 ## Properties
 
-
 ### animated
 
-| | |
-| --- | --- |
+|                 |                                      |
+| --------------- | ------------------------------------ |
 | **Description** | If `true`, the popover will animate. |
-| **Attribute** | `animated` |
-| **Type** | `boolean` |
-| **Default** | `true` |
-
-
+| **Attribute**   | `animated`                           |
+| **Type**        | `boolean`                            |
+| **Default**     | `true`                               |
 
 ### backdropDismiss
 
-| | |
-| --- | --- |
+|                 |                                                                        |
+| --------------- | ---------------------------------------------------------------------- |
 | **Description** | If `true`, the popover will be dismissed when the backdrop is clicked. |
-| **Attribute** | `backdrop-dismiss` |
-| **Type** | `boolean` |
-| **Default** | `true` |
-
-
+| **Attribute**   | `backdrop-dismiss`                                                     |
+| **Type**        | `boolean`                                                              |
+| **Default**     | `true`                                                                 |
 
 ### component
 
-| | |
-| --- | --- |
+|                 |                                                 |
+| --------------- | ----------------------------------------------- |
 | **Description** | The component to display inside of the popover. |
-| **Attribute** | `component` |
-| **Type** | `Function \| HTMLElement \| null \| string` |
-| **Default** | `undefined` |
-
-
+| **Attribute**   | `component`                                     |
+| **Type**        | `Function \| HTMLElement \| null \| string`     |
+| **Default**     | `undefined`                                     |
 
 ### componentProps
 
-| | |
-| --- | --- |
+|                 |                                            |
+| --------------- | ------------------------------------------ |
 | **Description** | The data to pass to the popover component. |
-| **Attribute** | `undefined` |
-| **Type** | `undefined \| { [key: string]: any; }` |
-| **Default** | `undefined` |
-
-
+| **Attribute**   | `undefined`                                |
+| **Type**        | `undefined \| { [key: string]: any; }`     |
+| **Default**     | `undefined`                                |
 
 ### cssClass
 
-| | |
-| --- | --- |
+|                 |                                                                                                                       |
+| --------------- | --------------------------------------------------------------------------------------------------------------------- |
 | **Description** | Additional classes to apply for custom CSS. If multiple classes are<br />provided they should be separated by spaces. |
-| **Attribute** | `css-class` |
-| **Type** | `string \| string[] \| undefined` |
-| **Default** | `undefined` |
-
-
+| **Attribute**   | `css-class`                                                                                                           |
+| **Type**        | `string \| string[] \| undefined`                                                                                     |
+| **Default**     | `undefined`                                                                                                           |
 
 ### enterAnimation
 
-| | |
-| --- | --- |
-| **Description** | Animation to use when the popover is presented. |
-| **Attribute** | `undefined` |
-| **Type** | `((baseEl: any, opts?: any) => Animation) \| undefined` |
-| **Default** | `undefined` |
-
-
+|                 |                                                         |
+| --------------- | ------------------------------------------------------- |
+| **Description** | Animation to use when the popover is presented.         |
+| **Attribute**   | `undefined`                                             |
+| **Type**        | `((baseEl: any, opts?: any) => Animation) \| undefined` |
+| **Default**     | `undefined`                                             |
 
 ### event
 
-| | |
-| --- | --- |
+|                 |                                             |
+| --------------- | ------------------------------------------- |
 | **Description** | The event to pass to the popover animation. |
-| **Attribute** | `event` |
-| **Type** | `any` |
-| **Default** | `undefined` |
-
-
+| **Attribute**   | `event`                                     |
+| **Type**        | `any`                                       |
+| **Default**     | `undefined`                                 |
 
 ### keyboardClose
 
-| | |
-| --- | --- |
+|                 |                                                                                        |
+| --------------- | -------------------------------------------------------------------------------------- |
 | **Description** | If `true`, the keyboard will be automatically dismissed when the overlay is presented. |
-| **Attribute** | `keyboard-close` |
-| **Type** | `boolean` |
-| **Default** | `true` |
-
-
+| **Attribute**   | `keyboard-close`                                                                       |
+| **Type**        | `boolean`                                                                              |
+| **Default**     | `true`                                                                                 |
 
 ### leaveAnimation
 
-| | |
-| --- | --- |
-| **Description** | Animation to use when the popover is dismissed. |
-| **Attribute** | `undefined` |
-| **Type** | `((baseEl: any, opts?: any) => Animation) \| undefined` |
-| **Default** | `undefined` |
-
-
+|                 |                                                         |
+| --------------- | ------------------------------------------------------- |
+| **Description** | Animation to use when the popover is dismissed.         |
+| **Attribute**   | `undefined`                                             |
+| **Type**        | `((baseEl: any, opts?: any) => Animation) \| undefined` |
+| **Default**     | `undefined`                                             |
 
 ### mode
 
-| | |
-| --- | --- |
+|                 |                                                   |
+| --------------- | ------------------------------------------------- |
 | **Description** | The mode determines which platform styles to use. |
-| **Attribute** | `mode` |
-| **Type** | `"ios" \| "md"` |
-| **Default** | `undefined` |
-
-
+| **Attribute**   | `mode`                                            |
+| **Type**        | `"ios" \| "md"`                                   |
+| **Default**     | `undefined`                                       |
 
 ### showBackdrop
 
-| | |
-| --- | --- |
+|                 |                                                             |
+| --------------- | ----------------------------------------------------------- |
 | **Description** | If `true`, a backdrop will be displayed behind the popover. |
-| **Attribute** | `show-backdrop` |
-| **Type** | `boolean` |
-| **Default** | `true` |
-
-
+| **Attribute**   | `show-backdrop`                                             |
+| **Type**        | `boolean`                                                   |
+| **Default**     | `true`                                                      |
 
 ### translucent
 
-| | |
-| --- | --- |
+|                 |                                                                                                                                                                                                                                  |
+| --------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Description** | If `true`, the popover will be translucent.<br />Only applies when the mode is `"ios"` and the device supports<br />[`backdrop-filter`](https://developer.mozilla.org/en-US/docs/Web/CSS/backdrop-filter#Browser_compatibility). |
-| **Attribute** | `translucent` |
-| **Type** | `boolean` |
-| **Default** | `false` |
-
-
+| **Attribute**   | `translucent`                                                                                                                                                                                                                    |
+| **Type**        | `boolean`                                                                                                                                                                                                                        |
+| **Default**     | `false`                                                                                                                                                                                                                          |
 
 ## Events
 
-| Name | Description |
-| --- | --- |
-| `ionPopoverDidDismiss` | Emitted after the popover has dismissed. |
-| `ionPopoverDidPresent` | Emitted after the popover has presented. |
+| Name                    | Description                               |
+| ----------------------- | ----------------------------------------- |
+| `ionPopoverDidDismiss`  | Emitted after the popover has dismissed.  |
+| `ionPopoverDidPresent`  | Emitted after the popover has presented.  |
 | `ionPopoverWillDismiss` | Emitted before the popover has dismissed. |
 | `ionPopoverWillPresent` | Emitted before the popover has presented. |
 
-
 ## Methods
-
 
 ### dismiss
 
-| | |
-| --- | --- |
-| **Description** | Dismiss the popover overlay after it has been presented. |
-| **Signature** | `dismiss(data?: any, role?: string \| undefined) => Promise<boolean>` |
-
+|                 |                                                                       |
+| --------------- | --------------------------------------------------------------------- |
+| **Description** | Dismiss the popover overlay after it has been presented.              |
+| **Signature**   | `dismiss(data?: any, role?: string \| undefined) => Promise<boolean>` |
 
 ### onDidDismiss
 
-| | |
-| --- | --- |
+|                 |                                                               |
+| --------------- | ------------------------------------------------------------- |
 | **Description** | Returns a promise that resolves when the popover did dismiss. |
-| **Signature** | `onDidDismiss<T = any>() => Promise<OverlayEventDetail<T>>` |
-
+| **Signature**   | `onDidDismiss<T = any>() => Promise<OverlayEventDetail<T>>`   |
 
 ### onWillDismiss
 
-| | |
-| --- | --- |
+|                 |                                                                |
+| --------------- | -------------------------------------------------------------- |
 | **Description** | Returns a promise that resolves when the popover will dismiss. |
-| **Signature** | `onWillDismiss<T = any>() => Promise<OverlayEventDetail<T>>` |
-
+| **Signature**   | `onWillDismiss<T = any>() => Promise<OverlayEventDetail<T>>`   |
 
 ### present
 
-| | |
-| --- | --- |
+|                 |                                                        |
+| --------------- | ------------------------------------------------------ |
 | **Description** | Present the popover overlay after it has been created. |
-| **Signature** | `present() => Promise<void>` |
-
-
+| **Signature**   | `present() => Promise<void>`                           |
 
 ## CSS Custom Properties
 
-| Name | Description |
-| --- | --- |
-| `--backdrop-opacity` | Opacity of the backdrop |
-| `--background` | Background of the popover |
-| `--box-shadow` | Box shadow of the popover |
-| `--height` | Height of the popover |
-| `--max-height` | Maximum height of the popover |
-| `--max-width` | Maximum width of the popover |
-| `--min-height` | Minimum height of the popover |
-| `--min-width` | Minimum width of the popover |
-| `--width` | Width of the popover |
-
+| Name                 | Description                   |
+| -------------------- | ----------------------------- |
+| `--backdrop-opacity` | Opacity of the backdrop       |
+| `--background`       | Background of the popover     |
+| `--box-shadow`       | Box shadow of the popover     |
+| `--height`           | Height of the popover         |
+| `--max-height`       | Maximum height of the popover |
+| `--max-width`        | Maximum width of the popover  |
+| `--min-height`       | Minimum height of the popover |
+| `--min-width`        | Minimum width of the popover  |
+| `--width`            | Width of the popover          |

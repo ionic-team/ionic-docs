@@ -16,7 +16,7 @@ npm install swiper
 
 TypeScript users will need to add the following to their `shims-vue.d.ts` file:
 
-```typescript
+```tsx
 declare module 'swiper/vue' {
   import _Vue from 'vue';
   export class Swiper extends _Vue {}
@@ -35,9 +35,9 @@ Next, we need to import the base Swiper styles. We recommend importing the style
 ```html
 <script>
   import { defineComponent } from 'vue';
-  
+
   import 'swiper/swiper-bundle.min.css';
-  
+
   export default defineComponent({
     ...
   });
@@ -49,10 +49,10 @@ Ionic Framework also provides some default styles, as well as the CSS Variables 
 ```html
 <script>
   import { defineComponent } from 'vue';
-  
+
   import 'swiper/swiper-bundle.min.css';
   import '@ionic/vue/css/ionic-swiper.css';
-  
+
   export default defineComponent({
     ...
   });
@@ -70,11 +70,11 @@ If you wanted to import the base Swiper styles and the pagination styles, you wo
 ```html
 <script>
   import { defineComponent } from 'vue';
-  
+
   import 'swiper.scss';
   import 'swiper/components/pagination/pagination.scss';
   import '@ionic/vue/css/ionic-swiper.css';
-  
+
   export default defineComponent({
     ...
   });
@@ -106,17 +106,17 @@ These components are imported from `swiper/vue` and provided to your Vue compone
   import { defineComponent } from 'vue';
   import { Swiper, SwiperSlide } from 'swiper/vue';
   import { IonContent, IonPage } from '@ionic/vue';
-  
+
   import 'swiper/swiper-bundle.min.css';
   import '@ionic/vue/css/ionic-swiper.css';
-  
+
   export default defineComponent({
     components: {
-      Swiper, 
-      SwiperSlide, 
-      IonContent, 
-      IonPage
-    }
+      Swiper,
+      SwiperSlide,
+      IonContent,
+      IonPage,
+    },
   });
 </script>
 ```
@@ -140,19 +140,19 @@ Then we can install the module:
   import SwiperCore from 'swiper';
   import { Swiper, SwiperSlide } from 'swiper/vue';
   import { IonContent, IonPage, IonicSwiper } from '@ionic/vue';
-    
+
   import 'swiper/swiper-bundle.min.css';
   import '@ionic/vue/css/ionic-swiper.css';
-  
+
   SwiperCore.use([IonicSwiper]);
-  
+
   export default defineComponent({
     components: {
-      Swiper, 
-      SwiperSlide, 
-      IonContent, 
-      IonPage
-    }
+      Swiper,
+      SwiperSlide,
+      IonContent,
+      IonPage,
+    },
   });
 </script>
 ```
@@ -169,10 +169,7 @@ The following example shows how to install the Navigation and Pagination plugins
 <template>
   <ion-page>
     <ion-content>
-      <swiper
-        :pagination="{ clickable: true }"
-        navigation
-      >
+      <swiper :pagination="{ clickable: true }" navigation>
         <swiper-slide>Slide 1</swiper-slide>
         <swiper-slide>Slide 3</swiper-slide>
         <swiper-slide>Slide 3</swiper-slide>
@@ -185,14 +182,14 @@ The following example shows how to install the Navigation and Pagination plugins
   import SwiperCore, { Navigation, Pagination } from 'swiper';
   import { Swiper, SwiperSlide } from 'swiper/vue';
   import { IonContent, IonPage, IonicSwiper } from '@ionic/vue';
-  
+
   import 'swiper/swiper-bundle.min.css';
   import '@ionic/vue/css/ionic-swiper.css';
-  
+
   SwiperCore.use([IonicSwiper, Navigation, Pagination]);
-  
+
   export default defineComponent({
-    components: { Swiper, SwiperSlide, IonContent, IonPage }
+    components: { Swiper, SwiperSlide, IonContent, IonPage },
   });
 </script>
 ```
@@ -209,9 +206,7 @@ Let's say in an app with `ion-slides` we had the `slidesPerView` and `loop` opti
 
 ```html
 <template>
-  <ion-slides
-    :options="{ slidesPerView: true, loop: true }"
-  >
+  <ion-slides :options="{ slidesPerView: true, loop: true }">
     <ion-slide>Slide 1</ion-slide>
     <ion-slide>Slide 3</ion-slide>
     <ion-slide>Slide 3</ion-slide>
@@ -223,10 +218,7 @@ To migrate, we would move these options out of the `options` object and onto the
 
 ```html
 <template>
-  <swiper
-    :slides-per-view="3"
-    :loop="true"
-  >
+  <swiper :slides-per-view="3" :loop="true">
     <swiper-slide>Slide 1</swiper-slide>
     <swiper-slide>Slide 3</swiper-slide>
     <swiper-slide>Slide 3</swiper-slide>
@@ -236,12 +228,12 @@ To migrate, we would move these options out of the `options` object and onto the
 
 Below is a full list of property changes when going from `ion-slides` to Swiper Vue:
 
-| Name      | Notes |
-| --------- | ----- |
-| options   | Set each option as a property directly on the `<swiper>` component. |
+| Name      | Notes                                                                                                                        |
+| --------- | ---------------------------------------------------------------------------------------------------------------------------- |
+| options   | Set each option as a property directly on the `<swiper>` component.                                                          |
 | mode      | For different styles based upon the mode, you can target the slides with `.ios .swiper-container` or `.md .swiper-container` |
-| pager     | Use the `pagination` property instead. Requires installation of the Pagination module. |
-| scrollbar | You can continue to use the `scrollbar` property, just be sure to install the Scrollbar module first. |
+| pager     | Use the `pagination` property instead. Requires installation of the Pagination module.                                       |
+| scrollbar | You can continue to use the `scrollbar` property, just be sure to install the Scrollbar module first.                        |
 
 All properties available in Swiper Vue can be found at <a href="https://swiperjs.com/vue#swiper-props" target="_blank" rel="noopener noreferrer">https://swiperjs.com/vue#swiper-props</a>.
 
@@ -253,9 +245,7 @@ Let's say in an app with `ion-slides` we used the `ionSlideDidChange` event:
 
 ```html
 <template>
-  <ion-slides 
-    @ionSlideDidChange="onSlideChange"
-  >
+  <ion-slides @ionSlideDidChange="onSlideChange">
     <ion-slide>Slide 1</ion-slide>
     <ion-slide>Slide 3</ion-slide>
     <ion-slide>Slide 3</ion-slide>
@@ -267,9 +257,7 @@ To migrate, we would change the name of the event to `slideChange`:
 
 ```html
 <template>
-  <swiper
-    @slideChange="onSlideChange"
-  >
+  <swiper @slideChange="onSlideChange">
     <swiper-slide>Slide 1</swiper-slide>
     <swiper-slide>Slide 3</swiper-slide>
     <swiper-slide>Slide 3</swiper-slide>
@@ -279,24 +267,24 @@ To migrate, we would change the name of the event to `slideChange`:
 
 Below is a full list of event name changes when going from `ion-slides` to Swiper Vue:
 
-| ion-slides Event        | Swiper Event |
-| ----------------------- | ------------ |
+| ion-slides Event        | Swiper Event               |
+| ----------------------- | -------------------------- |
 | ionSlideWillChange      | slideChangeTransitionStart |
-| ionSlideDidChange       | slideChangeTransitionEnd |
-| ionSlideDoubleTap       | doubleTap |
-| ionSlideDrag            | sliderMove |
-| ionSlideNextStart       | slideNextTransitionStart |
-| ionSlideNextEnd         | slideNextTransitionEnd |
-| ionSlidePrevStart       | slidePrevTransitionStart |
-| ionSlidePrevEnd         | slidePrevTransitionEnd |
-| ionSlideReachStart      | reachBeginning |
-| ionSlideReachEnd        | reachEnd |
-| ionSlideTap             | tap |
-| ionSlideTouchStart      | touchStart |
-| ionSlideTouchEnd        | touchEnd |
-| ionSlideTransitionStart | transitionStart |
-| ionSlideTransitionEnd   | transitionEnd |
-| ionSlidesDidLoad        | init |
+| ionSlideDidChange       | slideChangeTransitionEnd   |
+| ionSlideDoubleTap       | doubleTap                  |
+| ionSlideDrag            | sliderMove                 |
+| ionSlideNextStart       | slideNextTransitionStart   |
+| ionSlideNextEnd         | slideNextTransitionEnd     |
+| ionSlidePrevStart       | slidePrevTransitionStart   |
+| ionSlidePrevEnd         | slidePrevTransitionEnd     |
+| ionSlideReachStart      | reachBeginning             |
+| ionSlideReachEnd        | reachEnd                   |
+| ionSlideTap             | tap                        |
+| ionSlideTouchStart      | touchStart                 |
+| ionSlideTouchEnd        | touchEnd                   |
+| ionSlideTransitionStart | transitionStart            |
+| ionSlideTransitionEnd   | transitionEnd              |
+| ionSlidesDidLoad        | init                       |
 
 All events available in Swiper Vue can be found at <a href="https://swiperjs.com/vue#swiper-events" target="_blank" rel="noopener noreferrer">https://swiperjs.com/vue#swiper-events</a>.
 
@@ -308,25 +296,21 @@ Accessing these properties can be tricky as you want to access the properties on
 
 ```html
 <template>
-  <swiper
-    @swiper="setSwiperInstance"
-  >
-    ...
-  </swiper>
+  <swiper @swiper="setSwiperInstance"> ... </swiper>
 </template>
 
 <script>
-import { defineComponent, ref } from 'vue';
-export default defineComponent({
-  ...,
-  setup() {
-    const slides = ref();
-    const setSwiperInstance = (swiper: any) => {
-      slides.value = swiper;
+  import { defineComponent, ref } from 'vue';
+  export default defineComponent({
+    ...,
+    setup() {
+      const slides = ref();
+      const setSwiperInstance = (swiper: any) => {
+        slides.value = swiper;
+      }
+      return { setSwiperInstance };
     }
-    return { setSwiperInstance };
-  }
-});
+  });
 </script>
 ```
 
@@ -334,19 +318,19 @@ From here, if you wanted to access a property on the Swiper instance you would a
 
 Below is a full list of method changes when going from `ion-slides` to Swiper Vue:
 
-| Name               | Notes |
-| ------------------ | ----- |
-| getActiveIndex()   | Use the `activeIndex` property instead. |
-| getPreviousIndex() | Use the `previousIndex` property instead. |
-| getSwiper()        | Get a reference to the Swiper instance using `@swiper`. See example above. |
-| isBeginning()      | Use the `isBeginning` property instead. |
-| isEnd()            | Use the `isEnd` property instead. |
-| length()           | Use the `slides` property instead. (i.e swiperRef.slides.length) |
-| lockSwipeToNext()  | Use the `allowSlidesNext` property instead. |
-| lockSwipeToPrev()  | Use the `allowSlidePrev` property instead. |
+| Name               | Notes                                                                                |
+| ------------------ | ------------------------------------------------------------------------------------ |
+| getActiveIndex()   | Use the `activeIndex` property instead.                                              |
+| getPreviousIndex() | Use the `previousIndex` property instead.                                            |
+| getSwiper()        | Get a reference to the Swiper instance using `@swiper`. See example above.           |
+| isBeginning()      | Use the `isBeginning` property instead.                                              |
+| isEnd()            | Use the `isEnd` property instead.                                                    |
+| length()           | Use the `slides` property instead. (i.e swiperRef.slides.length)                     |
+| lockSwipeToNext()  | Use the `allowSlidesNext` property instead.                                          |
+| lockSwipeToPrev()  | Use the `allowSlidePrev` property instead.                                           |
 | lockSwipes()       | Use the `allowSlideNext`, `allowSlidePrev`, and `allowTouchMove` properties instead. |
-| startAutoplay()    | Use the `autoplay` property instead. |
-| stopAutoplay()     | Use the `autoplay` property instead. |
+| startAutoplay()    | Use the `autoplay` property instead.                                                 |
+| stopAutoplay()     | Use the `autoplay` property instead.                                                 |
 
 ## Effects
 
@@ -365,12 +349,12 @@ If you are using effects such as Cube or Fade, you can install them similar to h
   import { defineComponent } from 'vue';
   import SwiperCore, { EffectFade } from 'swiper';
   import { Swiper, SwiperSlide } from 'swiper/vue';
-  
+
   import 'swiper/swiper-bundle.min.css';
   import '@ionic/vue/css/ionic-swiper.css';
-  
+
   SwiperCore.use([EffectFade]);
-  
+
   export default defineComponent({
     ...
   });

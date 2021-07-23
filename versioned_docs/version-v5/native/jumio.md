@@ -1,7 +1,6 @@
 ---
-sidebar_label: "Jumio"
+sidebar_label: 'Jumio'
 ---
-
 
 import DocsCard from '@site/src/components/DocsCard';
 import DocsButton from '@site/src/components/DocsButton';
@@ -29,7 +28,6 @@ Original source: [Jumio mobile-cordova](https://github.com/Jumio/mobile-cordova)
     <DocsButton className="native-ee-detail">Contact Us Today!</DocsButton>
   </div>
 </DocsCard>
-
 
 <h2 id="installation">
   <a href="#installation">Installation</a>
@@ -59,7 +57,7 @@ Original source: [Jumio mobile-cordova](https://github.com/Jumio/mobile-cordova)
 </Tabs>
 
 ## Supported Platforms
-  
+
 - Android
 - iOS
 
@@ -68,12 +66,10 @@ Original source: [Jumio mobile-cordova](https://github.com/Jumio/mobile-cordova)
 ### React
 
 [Learn more about using Ionic Native components in React](../native-community.md#react)
-  
 
 ### Angular
 
-
-```typescript
+```tsx
 import {
   Jumio,
   JumioNetverifyConfig,
@@ -100,4 +96,3 @@ this.jumio.initNetverify("API_TOKEN", "API_SECRET", "US", {
 let documentData: NetverifyDocumentData = await this.jumio.startNetverify();
 
 ```
-

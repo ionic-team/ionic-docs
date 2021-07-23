@@ -1,7 +1,6 @@
 ---
-sidebar_label: "OCR"
+sidebar_label: 'OCR'
 ---
-
 
 import DocsCard from '@site/src/components/DocsCard';
 import DocsButton from '@site/src/components/DocsButton';
@@ -10,7 +9,6 @@ import TabItem from '@theme/TabItem';
 import CodeBlock from '@theme/CodeBlock';
 
 # OCR
-
 
 This plugin attempts to identify and extract text from an image.
 Please note: This plugin depends on the GoogleMobileVision pod which is referencing UIWebview, that has been deprecated by Apple.
@@ -29,7 +27,6 @@ For more info, please see the following Github issue [Google Mobile Vision relyi
     <DocsButton className="native-ee-detail">Contact Us Today!</DocsButton>
   </div>
 </DocsCard>
-
 
 <h2 id="installation">
   <a href="#installation">Installation</a>
@@ -59,7 +56,7 @@ For more info, please see the following Github issue [Google Mobile Vision relyi
 </Tabs>
 
 ## Supported Platforms
-  
+
 - Android
 - iOS
 
@@ -68,12 +65,10 @@ For more info, please see the following Github issue [Google Mobile Vision relyi
 ### React
 
 [Learn more about using Ionic Native components in React](../native-community.md#react)
-  
 
 ### Angular
 
-
-```typescript
+```tsx
 import { OCR, OCRSourceType } from '@ionic-native/ocr/ngx';
 
 
@@ -86,4 +81,3 @@ this.ocr.recText(OCRSourceType.NORMFILEURL, "file://path/to/image.png")
   .catch((error: any) => console.error(error));
 
 ```
-

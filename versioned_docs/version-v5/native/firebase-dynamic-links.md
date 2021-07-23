@@ -1,7 +1,6 @@
 ---
-sidebar_label: "Firebase Dynamic Links"
+sidebar_label: 'Firebase Dynamic Links'
 ---
-
 
 import DocsCard from '@site/src/components/DocsCard';
 import DocsButton from '@site/src/components/DocsButton';
@@ -10,7 +9,6 @@ import TabItem from '@theme/TabItem';
 import CodeBlock from '@theme/CodeBlock';
 
 # Firebase Dynamic Links
-
 
 Cordova plugin for Firebase Dynamic Links
 
@@ -23,6 +21,7 @@ Preferences GoogleIOSClientId and GoogleAndroidClientId are used to setup dynami
 You can find values at your GoogleService-Info.plist (key ANDROID_CLIENT_ID) and google-services.json (key client[0].oauth_client[0].client_id).
 
 config.xml:
+
 ```xml
 <platform name="ios">
     <preference name="GoogleIOSClientId" value="..." />
@@ -44,7 +43,6 @@ config.xml:
     <DocsButton className="native-ee-detail">Contact Us Today!</DocsButton>
   </div>
 </DocsCard>
-
 
 <h2 id="installation">
   <a href="#installation">Installation</a>
@@ -74,7 +72,7 @@ config.xml:
 </Tabs>
 
 ## Supported Platforms
-  
+
 - Android
 - iOS
 
@@ -83,12 +81,10 @@ config.xml:
 ### React
 
 [Learn more about using Ionic Native components in React](../native-community.md#react)
-  
 
 ### Angular
 
-
-```typescript
+```tsx
 import { FirebaseDynamicLinks } from '@ionic-native/firebase-dynamic-links/ngx';
 
 
@@ -99,4 +95,3 @@ constructor(private firebaseDynamicLinks: FirebaseDynamicLinks) { }
 this.firebaseDynamicLinks.onDynamicLink()
   .subscribe((res: any) => console.log(res), (error:any) => console.log(error));
 ```
-

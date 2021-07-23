@@ -48,7 +48,7 @@ The `describe` and `it` calls also contain a descriptive text label. In well-for
 
 For example:
 
-```typescript
+```tsx
 describe('Calculation', () => {
   describe('divide', () => {
     it('calculates 4 / 2 properly' () => {});
@@ -70,7 +70,7 @@ Pages are just Angular components. Thus, pages and components are both tested us
 
 Since pages and components contain both TypeScript code and HTML template markup it is possible to perform both component class testing and component DOM testing. When a page is created, the template test that is generated looks like this:
 
-```typescript
+```tsx
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
@@ -111,7 +111,7 @@ The suggested way to test most services is to instantiate the service and manual
 
 Let's say that there is a service with a method that takes an array of timecards and calculates net pay. Let's also assume that the tax calculations are handled via another service that the current service depends on. This payroll service could be tested as such:
 
-```typescript
+```tsx
 import { PayrollService } from './payroll.service';
 
 describe('PayrollService', () => {
@@ -138,7 +138,7 @@ This allows the test to control the values returned by the various tax calculati
 
 The scaffolding that is used when a service is generated via `ionic g service name` uses Angular's testing utilities and sets up a testing module. Doing so is not strictly necessary. That code may be left in, however, allowing the service to be built manually or injected as such:
 
-```typescript
+```tsx
 import { TestBed, inject } from '@angular/core/testing';
 
 import { PayrollService } from './payroll.service';
@@ -182,7 +182,7 @@ Most services that perform HTTP operations will use Angular's HttpClient service
 
 This basic setup for such a test looks like this:
 
-```typescript
+```tsx
 import { HttpBackend, HttpClient } from '@angular/common/http';
 import {
   HttpTestingController,
@@ -241,7 +241,7 @@ A pipe is like a service with a specifically defined interface. It is a class th
 
 As a simple example, let's look at a pipe that takes a `Person` object and formats the name. For the sake of simplicity, let's say a `Person` consists of an `id`, `firstName`, `lastName`, and `middleInitial`. The requirements for the pipe are to print the name as "Last, First M." handling situations where a first name, last name, or middle initial do not exist. Such a test might look like this:
 
-```typescript
+```tsx
 import { NamePipe } from './name.pipe';
 
 import { Person } from '../../models/person';
@@ -314,7 +314,7 @@ A lot of tests rely on actions such as waiting for a page to be visible, enterin
 
 Here is an example that implements a few basic methods that all page objects will need to support.
 
-```typescript
+```tsx
 import { browser, by, element, ExpectedConditions } from 'protractor';
 
 export class PageObjectBase {
@@ -383,7 +383,7 @@ Each page in the application will have its own page object class that abstracts 
 
 Here is an example page object for a simple but typical login page. Notice that many of the methods, such as `enterEMail()`, call methods in the base class that perform the bulk of the work.
 
-```typescript
+```tsx
 import { browser, by, element, ExpectedConditions } from 'protractor';
 import { PageObjectBase } from './base.po';
 
@@ -425,7 +425,7 @@ Also similar to unit tests, the labels used in the `describe()` and `it()` funct
 
 Here is a sample end-to-end test script that exercises some typical login scenarios.
 
-```typescript
+```tsx
 import { AppPage } from '../page-objects/pages/app.po';
 import { AboutPage } from '../page-objects/pages/about.po';
 import { CustomersPage } from '../page-objects/pages/customers.po';
@@ -525,7 +525,7 @@ Setting up a testing environment involves creating a new environment file that u
 
 The Angular `environment.ts` and `environment.prod.ts` files are often used to store information such as the base URL for the application's backend data services. Create an `environment.e2e.ts` that provides the same information, only connecting to backend services that are dedicated to testing rather than the development or production backend services. Here is an example:
 
-```typescript
+```tsx
 export const environment = {
   production: false,
   databaseURL: 'https://e2e-test-api.my-great-app.com',

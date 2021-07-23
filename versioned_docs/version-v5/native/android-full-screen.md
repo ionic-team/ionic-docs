@@ -1,7 +1,6 @@
 ---
-sidebar_label: "Android Full Screen"
+sidebar_label: 'Android Full Screen'
 ---
-
 
 import DocsCard from '@site/src/components/DocsCard';
 import DocsButton from '@site/src/components/DocsButton';
@@ -10,7 +9,6 @@ import TabItem from '@theme/TabItem';
 import CodeBlock from '@theme/CodeBlock';
 
 # Android Full Screen
-
 
 This plugin enables developers to offer users a true full screen experience in their Cordova and PhoneGap apps for Android.
 Using Android 4.0+, you can use true full screen in "lean mode", the way you see in apps like YouTube, expanding the app right to the edges of the screen, hiding the status and navigation bars until the user next interacts. This is ideally suited to video or cut-scene content.
@@ -28,7 +26,6 @@ In Android 4.4+, however, you can now enter true full screen, fully interactive 
     <DocsButton className="native-ee-detail">Contact Us Today!</DocsButton>
   </div>
 </DocsCard>
-
 
 <h2 id="installation">
   <a href="#installation">Installation</a>
@@ -58,7 +55,7 @@ In Android 4.4+, however, you can now enter true full screen, fully interactive 
 </Tabs>
 
 ## Supported Platforms
-  
+
 - Android
 
 ## Usage
@@ -66,12 +63,10 @@ In Android 4.4+, however, you can now enter true full screen, fully interactive 
 ### React
 
 [Learn more about using Ionic Native components in React](../native-community.md#react)
-  
 
 ### Angular
 
-
-```typescript
+```tsx
 import { AndroidFullScreen } from '@ionic-native/android-full-screen/ngx';
 
 constructor(private androidFullScreen: AndroidFullScreen) { }
@@ -83,4 +78,3 @@ this.androidFullScreen.isImmersiveModeSupported()
   .catch(err => console.log(err));
 
 ```
-

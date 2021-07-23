@@ -28,16 +28,28 @@ The Live Reload server will start up, and the native IDE of choice will open if 
 
 With Live Reload running and the app is open on your device, let’s implement photo deletion functionality. Open `Tab2.vue` then import the `actionSheetController`. We'll display an [IonActionSheet](https://ionicframework.com/docs/api/action-sheet) with the option to delete a photo:
 
-```typescript
-import { actionSheetController, IonPage, IonHeader, IonFab, IonFabButton,
-         IonIcon, IonToolbar, IonTitle, IonContent, IonImg, IonGrid,
-         IonRow, IonCol } from '@ionic/vue';
+```tsx
+import {
+  actionSheetController,
+  IonPage,
+  IonHeader,
+  IonFab,
+  IonFabButton,
+  IonIcon,
+  IonToolbar,
+  IonTitle,
+  IonContent,
+  IonImg,
+  IonGrid,
+  IonRow,
+  IonCol,
+} from '@ionic/vue';
 // other imports
 ```
 
 Next, reference the `deletePhoto` function, which we'll create soon:
 
-```typescript
+```tsx
 setup() {}
   const { photos, takePhoto, deletePhoto } = usePhotoGallery();
 }
@@ -51,43 +63,49 @@ When a user clicks/taps on an image, we will show the action sheet. Add a click 
 
 Next, within `setup()`, call the `create` function to open a dialog with the option to either delete the selected photo or cancel (close) the dialog:
 
-```typescript
+```tsx
 const showActionSheet = async (photo: Photo) => {
   const actionSheet = await actionSheetController.create({
     header: 'Photos',
-    buttons: [{
-      text: 'Delete',
-      role: 'destructive',
-      icon: trash,
-      handler: () => {
-        deletePhoto(photo);
-    }}, {
-      text: 'Cancel',
-      icon: close,
-      role: 'cancel',
-      handler: () => {
-        // Nothing to do, action sheet is automatically closed
-      }
-    }]
+    buttons: [
+      {
+        text: 'Delete',
+        role: 'destructive',
+        icon: trash,
+        handler: () => {
+          deletePhoto(photo);
+        },
+      },
+      {
+        text: 'Cancel',
+        icon: close,
+        role: 'cancel',
+        handler: () => {
+          // Nothing to do, action sheet is automatically closed
+        },
+      },
+    ],
   });
   await actionSheet.present();
-}
+};
 ```
 
 Next, return the `showActionSheet` function:
 
-```typescript
+```tsx
 return {
   photos,
   takePhoto,
   showActionSheet,
-  camera, trash, close
-}
+  camera,
+  trash,
+  close,
+};
 ```
 
 Next, we need to implement the `deletePhoto` method in the `usePhotoGallery` function. Open the file then add:
 
-```typescript
+```tsx
 const deletePhoto = async (photo: Photo) => {
   // Remove this photo from the Photos reference data array
   photos.value = photos.value.filter(p => p.filepath !== photo.filepath);
@@ -96,7 +114,7 @@ const deletePhoto = async (photo: Photo) => {
   const filename = photo.filepath.substr(photo.filepath.lastIndexOf('/') + 1);
   await Filesystem.deleteFile({
     path: filename,
-    directory: Directory.Data
+    directory: Directory.Data,
   });
 };
 ```
@@ -105,24 +123,24 @@ The selected photo is removed from the `photos` array first, then we delete the 
 
 Remember that removing the photo from the `photos` array triggers the `cachePhotos` function for us automatically:
 
-```typescript
+```tsx
 const cachePhotos = () => {
   Storage.set({
     key: PHOTO_STORAGE,
-    value: JSON.stringify(photos.value)
+    value: JSON.stringify(photos.value),
   });
-}
+};
 
 watch(photos, cachePhotos);
 ```
 
 Finally, return the `deletePhoto` function:
 
-```typescript
+```tsx
 return {
   photos,
   takePhoto,
-  deletePhoto
+  deletePhoto,
 };
 ```
 

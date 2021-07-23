@@ -1,7 +1,6 @@
 ---
-sidebar_label: "In App Purchase 2"
+sidebar_label: 'In App Purchase 2'
 ---
-
 
 import DocsCard from '@site/src/components/DocsCard';
 import DocsButton from '@site/src/components/DocsButton';
@@ -11,32 +10,30 @@ import CodeBlock from '@theme/CodeBlock';
 
 # In App Purchase 2
 
-
 In-App Purchase on iOS, Android, Windows, macOS and XBox.
 
 ## Features
 
-|  | ios | android | win-8 | win-10/uwp | mac |
-|--|--|--|--|--|--|
-| consumables | ✅ | ✅ | ✅ | ✅ | ✅ |
-| non consumables | ✅ | ✅ | ✅ | ✅ | ✅ |
-| subscriptions | ✅ | ✅ | ✅ | ✅ | ✅ |
-| restore purchases | ✅ | ✅ | ✅ | ✅ | ✅ |
-| receipt validations | ✅ | ✅ |  | ✅ | ✅ |
-| downloadable content | ✅ |   |   |   | ✅ |
-| introductory prices | ✅ | ✅ |   | ✅ | ✅ |
+|                      | ios | android | win-8 | win-10/uwp | mac |
+| -------------------- | --- | ------- | ----- | ---------- | --- |
+| consumables          | ✅  | ✅      | ✅    | ✅         | ✅  |
+| non consumables      | ✅  | ✅      | ✅    | ✅         | ✅  |
+| subscriptions        | ✅  | ✅      | ✅    | ✅         | ✅  |
+| restore purchases    | ✅  | ✅      | ✅    | ✅         | ✅  |
+| receipt validations  | ✅  | ✅      |       | ✅         | ✅  |
+| downloadable content | ✅  |         |       |            | ✅  |
+| introductory prices  | ✅  | ✅      |       | ✅         | ✅  |
 
 Supports:
 
- - **iOS** version 7.0 or higher.
- - **Android** version 2.2 (API level 8) or higher
-   - with Google Play client version 3.9.16 or higher
- - **Windows** Store/Phone 8.1 or higher
- - **Windows 10 Mobile**
- - **macOS** version 10
- - **Xbox One**
-   - (and any platform supporting Microsoft's UWP)
-
+- **iOS** version 7.0 or higher.
+- **Android** version 2.2 (API level 8) or higher
+  - with Google Play client version 3.9.16 or higher
+- **Windows** Store/Phone 8.1 or higher
+- **Windows 10 Mobile**
+- **macOS** version 10
+- **Xbox One**
+  - (and any platform supporting Microsoft's UWP)
 
 <p><a href="https://github.com/j3k0/cordova-plugin-purchase" target="_blank" rel="noopener" className="git-link">
   <svg viewBox="0 0 512 512"><path d="M416 160c0-35.3-28.7-64-64-64s-64 28.7-64 64c0 23.7 12.9 44.3 32 55.4v8.6c0 19.9-7.8 33.7-25.3 44.9-15.4 9.8-38.1 17.1-67.5 21.5-14 2.1-25.7 6-35.2 10.7V151.4c19.1-11.1 32-31.7 32-55.4 0-35.3-28.7-64-64-64S96 60.7 96 96c0 23.7 12.9 44.3 32 55.4v209.2c-19.1 11.1-32 31.7-32 55.4 0 35.3 28.7 64 64 64s64-28.7 64-64c0-16.6-6.3-31.7-16.7-43.1 1.9-4.9 9.7-16.3 29.4-19.3 38.8-5.8 68.9-15.9 92.3-30.8 36-22.8 55-57 55-98.8v-8.6c19.1-11.1 32-31.7 32-55.4zM160 56c22.1 0 40 17.9 40 40s-17.9 40-40 40-40-17.9-40-40 17.9-40 40-40zm0 400c-22.1 0-40-17.9-40-40s17.9-40 40-40 40 17.9 40 40-17.9 40-40 40zm192-256c-22.1 0-40-17.9-40-40s17.9-40 40-40 40 17.9 40 40-17.9 40-40 40z"></path></svg> https://github.com/j3k0/cordova-plugin-purchase
@@ -50,7 +47,6 @@ Supports:
     <DocsButton className="native-ee-detail">Contact Us Today!</DocsButton>
   </div>
 </DocsCard>
-
 
 <h2 id="installation">
   <a href="#installation">Installation</a>
@@ -80,7 +76,7 @@ Supports:
 </Tabs>
 
 ## Supported Platforms
-  
+
 - iOS
 - Android
 - Windows
@@ -90,12 +86,10 @@ Supports:
 ### React
 
 [Learn more about using Ionic Native components in React](../native-community.md#react)
-  
 
 ### Angular
 
-
-```typescript
+```tsx
 import { InAppPurchase2 } from '@ionic-native/in-app-purchase-2/ngx';
 
 constructor(public platform: Platform, private store: InAppPurchase2) {
@@ -119,7 +113,7 @@ this.store.order("my_product_id");
 
 ## Full example
 
-```typescript
+```tsx
  // After platform ready
  this.store.verbosity = this.store.DEBUG;
  this.store.register({
@@ -172,11 +166,12 @@ you register.
 
 The core of the listening mechanism is the `when()` method. It allows you to
 be notified of changes to one or a set of products using a query mechanism:
-```typescript
- this.store.when("product").updated(refreshScreen); // match any product
- this.store.when("full_version").owned(unlockApp); // match a specific product
- this.store.when("subscription").approved(serverCheck); // match all subscriptions
- this.store.when("downloadable content").downloaded(showContent);
+
+```tsx
+this.store.when('product').updated(refreshScreen); // match any product
+this.store.when('full_version').owned(unlockApp); // match a specific product
+this.store.when('subscription').approved(serverCheck); // match all subscriptions
+this.store.when('downloadable content').downloaded(showContent);
 ```
 
 The `updated` event is fired whenever one of the fields of a product is
@@ -194,7 +189,7 @@ Use `store.register()` to define them before your first call to `store.refresh()
 
 Once registered, you can use `store.get()` to retrieve an `IAPProduct` object.
 
-```typescript
+```tsx
  this.store.register({
    id: "my_consumable1",
    type: this.store.CONSUMABLE
@@ -235,9 +230,9 @@ Purchases are initiated using the `store.order("some_product_id")` method.
 
 The store will manage the internal purchase flow. It'll end:
 
- - with an `approved` event. The product enters the `APPROVED` state.
- - with a `cancelled` event. The product gets back to the `VALID` state.
- - with an `error` event. The product gets back to the `VALID` state.
+- with an `approved` event. The product enters the `APPROVED` state.
+- with a `cancelled` event. The product gets back to the `VALID` state.
+- with an `error` event. The product gets back to the `VALID` state.
 
 See the product life-cycle section for details about product states.
 
@@ -251,17 +246,18 @@ To confirm delivery, you'll use the `product.finish()` method.
 #### example usage
 
 During initialization:
-```typescript
-this.store.when("extra_chapter").approved((product: IAPProduct) => {
+
+```tsx
+this.store.when('extra_chapter').approved((product: IAPProduct) => {
   // download the feature
-  app.downloadExtraChapter()
-  .then(() => product.finish());
+  app.downloadExtraChapter().then(() => product.finish());
 });
 ```
 
 When the purchase button is clicked:
-```typescript
-this.store.order("extra_chapter");
+
+```tsx
+this.store.order('extra_chapter');
 ```
 
 #### un-finished purchases
@@ -276,12 +272,13 @@ the application starts. Pending transactions are persistant.
 
 In the most simple case, where:
 
- - delivery of purchases is only local ;
- - you don't want (or need) to implement receipt validation ;
+- delivery of purchases is only local ;
+- you don't want (or need) to implement receipt validation ;
 
 You may just want to finish all purchases automatically. You can do it this way:
+
 ```js
-this.store.when("product").approved((p: IAPProduct) => p.finish());
+this.store.when('product').approved((p: IAPProduct) => p.finish());
 ```
 
 NOTE: the "product" query will match any purchases (see "queries" to learn more details about queries).
@@ -299,9 +296,9 @@ transaction information (see `product.transaction` attribute).
 
 To verify a purchase you'll have to do three things:
 
- - configure the validator.
- - call `product.verify()` from the `approved` event, before finishing the transaction.
- - finish the transaction when transaction is `verified`.
+- configure the validator.
+- call `product.verify()` from the `approved` event, before finishing the transaction.
+- finish the transaction when transaction is `verified`.
 
 **Shameless Plug**: this is a feature many users struggle with, so as the author of this plugin, we can provide it to you as-a-service: https://billing.fovea.cc/
 (which is free until you start making serious money)
@@ -309,9 +306,10 @@ To verify a purchase you'll have to do three things:
 #### example using a validation URL
 
 ```js
-this.store.validator = "https://billing.fovea.cc/";
+this.store.validator = 'https://billing.fovea.cc/';
 
-this.store.when("my stuff")
+this.store
+  .when('my stuff')
   .approved((p: IAPProduct) => p.verify())
   .verified((p: IAPProduct) => p.finish());
 ```
@@ -324,12 +322,11 @@ When the receipt validator returns a `store.PURCHASE_EXPIRED` error code, the su
 automatically loose its `owned` status.
 
 Typically, you'll enable and disable access to your content this way.
-```typescript
-this.store.when("my_subcription").updated((product: IAPProduct) => {
-  if (product.owned)
-    app.subscriberMode();
-  else
-    app.guestMode();
+
+```tsx
+this.store.when('my_subcription').updated((product: IAPProduct) => {
+  if (product.owned) app.subscriberMode();
+  else app.guestMode();
 });
 ```
 
@@ -406,4 +403,3 @@ IAPProduct
 IAPProductOptions
 IAPProductEvents
 ```
-

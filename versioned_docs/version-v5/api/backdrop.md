@@ -1,8 +1,9 @@
 ---
-sidebar_label: "ion-backdrop"
-demoUrl: "/docs/demos/api/backdrop/index.html"
-demoSourceUrl: "https://github.com/ionic-team/ionic-docs/tree/main/static/demos/api/backdrop/index.html"
+sidebar_label: 'ion-backdrop'
+demoUrl: '/docs/demos/api/backdrop/index.html'
+demoSourceUrl: 'https://github.com/ionic-team/ionic-docs/tree/main/static/demos/api/backdrop/index.html'
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
@@ -10,11 +11,9 @@ import TabItem from '@theme/TabItem';
 
 Backdrops are full screen components that overlay other components. They are useful behind components that transition in on top of other content and can be used to dismiss that component.
 
-
 ## Usage
 
 <Tabs defaultValue="angular" values={[{ value: 'angular', label: 'ANGULAR' }, { value: 'javascript', label: 'JAVASCRIPT' }, { value: 'react', label: 'REACT' }, { value: 'stencil', label: 'STENCIL' }, { value: 'vue', label: 'VUE' }]}>
-
 
 <TabItem value="angular">
 
@@ -35,11 +34,12 @@ Backdrops are full screen components that overlay other components. They are use
 <ion-backdrop
   [tappable]="enableBackdropDismiss"
   [visible]="showBackdrop"
-  [stopPropagation]="shouldPropagate">
+  [stopPropagation]="shouldPropagate"
+>
 </ion-backdrop>
 ```
 
-```typescript
+```tsx
 import { Component } from '@angular/core';
 
 @Component({
@@ -54,9 +54,7 @@ export class BackdropExample {
 }
 ```
 
-
 </TabItem>
-
 
 <TabItem value="javascript">
 
@@ -86,7 +84,6 @@ backdrop.stopPropagation = false;
 
 </TabItem>
 
-
 <TabItem value="react">
 
 ```tsx
@@ -112,9 +109,7 @@ export const BackdropExample: React.FC = () => (
 );
 ```
 
-
 </TabItem>
-
 
 <TabItem value="stencil">
 
@@ -123,7 +118,7 @@ import { Component, h } from '@stencil/core';
 
 @Component({
   tag: 'backdrop-example',
-  styleUrl: 'backdrop-example.css'
+  styleUrl: 'backdrop-example.css',
 })
 export class BackdropExample {
   render() {
@@ -148,15 +143,14 @@ export class BackdropExample {
       <ion-backdrop
         tappable={enableBackdropDismiss}
         visible={showBackdrop}
-        stopPropagation={shouldPropagate}>
-      </ion-backdrop>
+        stopPropagation={shouldPropagate}
+      ></ion-backdrop>,
     ];
   }
 }
 ```
 
 </TabItem>
-
 
 <TabItem value="vue">
 
@@ -178,24 +172,25 @@ export class BackdropExample {
   <ion-backdrop
     :tappable="enableBackdropDismiss"
     :visible="showBackdrop"
-    :stop-propagation="shouldPropagate">
+    :stop-propagation="shouldPropagate"
+  >
   </ion-backdrop>
 </template>
 
 <script>
-import { IonBackdrop } from '@ionic/vue';
-import { defineComponent } from 'vue';
+  import { IonBackdrop } from '@ionic/vue';
+  import { defineComponent } from 'vue';
 
-export default defineComponent({
-  components: { IonBackdrop },
-  setup() {
-    return {
-      enableBackdropDismiss: true,
-      showBackdrop: true,
-      shouldPropagate: true
-    }
-  }
-});
+  export default defineComponent({
+    components: { IonBackdrop },
+    setup() {
+      return {
+        enableBackdropDismiss: true,
+        showBackdrop: true,
+        shouldPropagate: true,
+      };
+    },
+  });
 </script>
 ```
 
@@ -205,43 +200,35 @@ export default defineComponent({
 
 ## Properties
 
-
 ### stopPropagation
 
-| | |
-| --- | --- |
+|                 |                                                       |
+| --------------- | ----------------------------------------------------- |
 | **Description** | If `true`, the backdrop will stop propagation on tap. |
-| **Attribute** | `stop-propagation` |
-| **Type** | `boolean` |
-| **Default** | `true` |
-
-
+| **Attribute**   | `stop-propagation`                                    |
+| **Type**        | `boolean`                                             |
+| **Default**     | `true`                                                |
 
 ### tappable
 
-| | |
-| --- | --- |
+|                 |                                                                                       |
+| --------------- | ------------------------------------------------------------------------------------- |
 | **Description** | If `true`, the backdrop will can be clicked and will emit the `ionBackdropTap` event. |
-| **Attribute** | `tappable` |
-| **Type** | `boolean` |
-| **Default** | `true` |
-
-
+| **Attribute**   | `tappable`                                                                            |
+| **Type**        | `boolean`                                                                             |
+| **Default**     | `true`                                                                                |
 
 ### visible
 
-| | |
-| --- | --- |
+|                 |                                          |
+| --------------- | ---------------------------------------- |
 | **Description** | If `true`, the backdrop will be visible. |
-| **Attribute** | `visible` |
-| **Type** | `boolean` |
-| **Default** | `true` |
-
-
+| **Attribute**   | `visible`                                |
+| **Type**        | `boolean`                                |
+| **Default**     | `true`                                   |
 
 ## Events
 
-| Name | Description |
-| --- | --- |
+| Name             | Description                          |
+| ---------------- | ------------------------------------ |
 | `ionBackdropTap` | Emitted when the backdrop is tapped. |
-

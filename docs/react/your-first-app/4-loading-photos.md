@@ -12,8 +12,8 @@ Fortunately, this is easy: we’ll leverage the Capacitor [Storage API](https://
 
 Begin by defining a constant variable that will act as the key for the store before the `usePhotoGallery` function definition in `src/hooks/usePhotoGallery.ts`:
 
-```typescript
-const PHOTO_STORAGE = "photos";
+```tsx
+const PHOTO_STORAGE = 'photos';
 export function usePhotoGallery() {}
 ```
 
@@ -21,13 +21,13 @@ Then, use the `Storage` class to get access to the get and set methods for readi
 
 At the end of the `takePhoto` function, add a call to `Storage.set()` to save the Photos array. By adding it here, the Photos array is stored each time a new photo is taken. This way, it doesn’t matter when the app user closes or switches to a different app - all photo data is saved.
 
-```typescript
+```tsx
 Storage.set({ key: PHOTO_STORAGE, value: JSON.stringify(newPhotos) });
 ```
 
 With the photo array data saved, we will create a method that will retrieve the data when the hook loads. We will do so by using React's `useEffect` hook. Insert this above the `takePhoto` declaration. Here is the code, and we will break it down:
 
-```typescript
+```tsx
 useEffect(() => {
   const loadSaved = async () => {
     const { value } = await Storage.get({ key: PHOTO_STORAGE });

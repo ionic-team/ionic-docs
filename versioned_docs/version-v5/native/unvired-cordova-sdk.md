@@ -1,7 +1,6 @@
 ---
-sidebar_label: "Unvired Cordova SDK"
+sidebar_label: 'Unvired Cordova SDK'
 ---
-
 
 import DocsCard from '@site/src/components/DocsCard';
 import DocsButton from '@site/src/components/DocsButton';
@@ -11,13 +10,13 @@ import CodeBlock from '@theme/CodeBlock';
 
 # Unvired Cordova SDK
 
+## This plugin lets you build apps which connect to Unvired Mobile Platform (UMP).
 
-This plugin lets you build apps which connect to Unvired Mobile Platform (UMP).
--
-iOS Requirements
--
+## iOS Requirements
+
 This plugin uses Cocoapods to install dependent libraries. Please make sure you have a valid Cocoapods installation.
 Once you have it ready, do update the cocoapods repo by running the following command before you install this plugin.
+
 ```
 pod repo update
 ```
@@ -34,7 +33,6 @@ pod repo update
     <DocsButton className="native-ee-detail">Contact Us Today!</DocsButton>
   </div>
 </DocsCard>
-
 
 <h2 id="installation">
   <a href="#installation">Installation</a>
@@ -64,7 +62,7 @@ pod repo update
 </Tabs>
 
 ## Supported Platforms
-  
+
 - iOS
 - Android
 - Windows
@@ -75,12 +73,10 @@ pod repo update
 ### React
 
 [Learn more about using Ionic Native components in React](../native-community.md#react)
-  
 
 ### Angular
 
-
-```typescript
+```tsx
 import { UnviredCordovaSDK } from '@ionic-native/unvired-cordova-sdk/ngx';
 
 
@@ -197,3 +193,4 @@ this.unviredSDK.dbDelete('CUSTOMER_HEADER', "FORM_ID = '5caed815892215034dacad56
 // Execute a SQL Query
 this.unviredSDK.dbExecuteStatement('SELECT * FROM CUSTOMER_HEADER WHERE CUSTOMER_ID = "0039"')
 
+```

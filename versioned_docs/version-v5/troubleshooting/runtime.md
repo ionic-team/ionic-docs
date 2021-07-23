@@ -30,8 +30,6 @@ Alternatively, a project could be updated to use the latest release of the `@ang
 
 This will automatically include the polyfills for older browsers that need them.
 
-
-
 ## Directive Not Working
 
 :::note
@@ -49,7 +47,7 @@ There are a few things you can check. Make sure:
 
 Here's an example using an attribute selector:
 
-```typescript
+```tsx
 @Directive({
   selector: '[my-dir]' // <-- [my-dir] because it is an attribute
 })                     // Could be my-dir, [my-dir], .my-dir
@@ -90,7 +88,7 @@ time you click the element to the event firing. To remove this delay, you can
 add the `tappable` attribute to your element.
 
 ```html
- <div tappable (click)="doClick()">I am clickable!</div>
+<div tappable (click)="doClick()">I am clickable!</div>
 ```
 
 ## Angular Change Detection
@@ -110,14 +108,14 @@ To prevent this from happening, the zone.js flag that manages this portion of
 change detection can be disabled. In the `src` directory of your application,
 create a file called `zone-flags.ts`. Place the following code into the file:
 
-```typescript
+```tsx
 (window as any).__Zone_disable_customElements = true;
 ```
 
 The `zone-flags.ts` file then needs to be imported into your application's
 `polyfills.ts` file. Be sure to import it _before_ `zone.js` is imported:
 
-```typescript
+```tsx
 ...
 
 import './zone-flags.ts';
@@ -165,7 +163,7 @@ of them you will end up with multiple instances of the provider. You should
 inject the provider once in the parent component if you want it to be available
 to the child components.
 
-```typescript
+```tsx
 let id = 0;
 export class MyService {
   id: number;
@@ -178,8 +176,8 @@ export class MyService {
 @Component({
   selector: 'my-component',
   template: 'Hello World',
-  providers: [MyService] // <-- Creates a new instance of MyService :(
-})                       // Unnecessary because MyService is in App's providers
+  providers: [MyService], // <-- Creates a new instance of MyService :(
+}) // Unnecessary because MyService is in App's providers
 class MyComp {
   // id is 1, s is a different MyService instance than MyApp
   constructor(s: MyService) {
@@ -190,7 +188,7 @@ class MyComp {
 @Component({
   template: '<my-component></my-component>',
   providers: [MyService], // MyService only needs to be here
-  directives: [MyComp]
+  directives: [MyComp],
 })
 class MyApp {
   // id is 0

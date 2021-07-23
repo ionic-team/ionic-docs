@@ -1,7 +1,6 @@
 ---
-sidebar_label: "Photo Viewer"
+sidebar_label: 'Photo Viewer'
 ---
-
 
 import DocsCard from '@site/src/components/DocsCard';
 import DocsButton from '@site/src/components/DocsButton';
@@ -25,7 +24,6 @@ This plugin can display your image in full screen with the ability to pan, zoom,
     <DocsButton className="native-ee-detail">Contact Us Today!</DocsButton>
   </div>
 </DocsCard>
-
 
 <h2 id="installation">
   <a href="#installation">Installation</a>
@@ -55,7 +53,7 @@ This plugin can display your image in full screen with the ability to pan, zoom,
 </Tabs>
 
 ## Supported Platforms
-  
+
 - Android
 - iOS
 
@@ -64,12 +62,10 @@ This plugin can display your image in full screen with the ability to pan, zoom,
 ### React
 
 [Learn more about using Ionic Native components in React](../native-community.md#react)
-  
 
 ### Angular
 
-
-```typescript
+```tsx
 import { PhotoViewer } from '@ionic-native/photo-viewer/ngx';
 
 constructor(private photoViewer: PhotoViewer) { }
@@ -82,4 +78,3 @@ this.photoViewer.show('https://mysite.com/path/to/image.jpg', 'My image title', 
 
 this.photoViewer.show('https://mysecuresite.com/path/to/image.jpg', 'My image title', {share: false, headers: '{username:foo,password:bar}'});
 ```
-

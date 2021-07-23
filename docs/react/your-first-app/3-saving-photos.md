@@ -16,27 +16,27 @@ We will use the `writeFile` method initially, but we will use the others coming 
 
 Next, create a couple of new functions in `usePhotoGallery`:
 
-```typescript
+```tsx
 export function usePhotoGallery() {
+  const savePicture = async (
+    photo: CameraPhoto,
+    fileName: string,
+  ): Promise<Photo> => {
+    const base64Data = await base64FromPath(photo.webPath!);
+    const savedFile = await FileSystem.writeFile({
+      path: fileName,
+      data: base64Data,
+      directory: Directory.Data,
+    });
 
-
-const savePicture = async (photo: CameraPhoto, fileName: string): Promise<Photo> => {
-  const base64Data = await base64FromPath(photo.webPath!);
-  const savedFile = await FileSystem.writeFile({
-    path: fileName,
-    data: base64Data,
-    directory: Directory.Data
-  });
-
-  // Use webPath to display the new image instead of base64 since it's
-  // already loaded into memory
-  return {
-    filepath: fileName,
-    webviewPath: photo.webPath
+    // Use webPath to display the new image instead of base64 since it's
+    // already loaded into memory
+    return {
+      filepath: fileName,
+      webviewPath: photo.webPath,
+    };
   };
-};
 }
-
 
 export async function base64FromPath(path: string): Promise<string> {
   const response = await fetch(path);
@@ -48,13 +48,12 @@ export async function base64FromPath(path: string): Promise<string> {
       if (typeof reader.result === 'string') {
         resolve(reader.result);
       } else {
-        reject('method did not return a string')
+        reject('method did not return a string');
       }
     };
     reader.readAsDataURL(blob);
   });
 }
-
 ```
 
 :::note
@@ -67,12 +66,12 @@ Next we use the Capacitor [Filesystem API](https://capacitor.ionicframework.com/
 
 Last, call `savePicture` and pass in the cameraPhoto object and filename directly underneath the call to `setPhotos` in the `takePhoto` method. Here is the full method:
 
-```typescript
+```tsx
 const takePhoto = async () => {
   const cameraPhoto = await Camera.getPhoto({
     resultType: CameraResultType.Uri,
     source: CameraSource.Camera,
-    quality: 100
+    quality: 100,
   });
 
   const fileName = new Date().getTime() + '.jpeg';
