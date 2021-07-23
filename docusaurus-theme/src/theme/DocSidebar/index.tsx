@@ -29,6 +29,7 @@ import { translate } from '@docusaurus/Translate';
 import VersionSelector from '@theme/VersionSelector';
 import FrameworkSelector from '../FrameworkSelector';
 import { ChevronDown } from '@theme/icons';
+import { useActiveVersion } from '@theme/hooks/useDocs';
 
 import styles from './styles.module.scss';
 import Backdrop from '@theme/Backdrop';
@@ -286,6 +287,7 @@ function DocSidebar({
   isHidden,
   ...props
 }: Props): JSX.Element | null {
+  const { path: homePath } = useActiveVersion();
   const showAnnouncementBar = useShowAnnouncementBar();
   const { hideableSidebar } = useThemeConfig();
   const { isClosed: isAnnouncementBarClosed } = useAnnouncementBar();
@@ -326,7 +328,7 @@ function DocSidebar({
         })}
       >
         <div className={clsx(styles.sidebarStart, 'doc-sidebar__start')}>
-          <Link to={useBaseUrl('/')}>
+          <Link to={useBaseUrl(homePath)}>
             <Logo tabIndex={-1} className={styles.sidebarLogo} />
           </Link>
           <VersionSelector />
