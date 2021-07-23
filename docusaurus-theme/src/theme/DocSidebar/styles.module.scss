@@ -126,8 +126,8 @@
   }
   .menuList {
     .menuList {
-      transition: height 0.4s cubic-bezier(0.36, 0.66, 0.04, 1);
-      transition-delay: 0.05s;
+      transition: height 0.35s cubic-bezier(0.36, 0.66, 0.04, 1);
+      transition-delay: 0.025s;
 
       @media (prefers-reduced-motion) {
         transition-delay: 0s;
@@ -148,7 +148,39 @@
   margin-block-end: 1rem;
 }
 
-// #region ----------- DESKTOP STYLES ------------
+.collapseSidebarButton {
+  display: none;
+}
+
+.sidebarMenuIcon {
+  vertical-align: middle;
+}
+
+.sidebarMenuCloseIcon {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  height: 24px;
+  font-size: 1.5rem;
+  font-weight: var(--ifm-font-weight-bold);
+  line-height: 0.9;
+  width: 24px;
+}
+
+:global(.menu__list) :global(.menu__list) {
+  overflow-y: hidden;
+  transition: height var(--ifm-transition-fast) linear;
+}
+
+:global(.menu__list-item--collapsed) :global(.menu__list) {
+  height: 0 !important;
+}
+
+:global(.menu__list-item) {
+  margin-top: 0;
+}
+
+// #region ----------- LARGE STYLES ------------
 @media (min-width: 997px) {
   .sidebar {
     transition: opacity 50ms ease;
@@ -210,7 +242,7 @@
 }
 //#endregion
 
-//#region ----------- MOBILE STYLES -------------
+//#region ----------- SMALL STYLES -------------
 @media (max-width: 996px) {
   .sidebar {
     position: absolute;
@@ -243,35 +275,3 @@
   }
 }
 //#endregion
-
-.collapseSidebarButton {
-  display: none;
-}
-
-.sidebarMenuIcon {
-  vertical-align: middle;
-}
-
-.sidebarMenuCloseIcon {
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  height: 24px;
-  font-size: 1.5rem;
-  font-weight: var(--ifm-font-weight-bold);
-  line-height: 0.9;
-  width: 24px;
-}
-
-:global(.menu__list) :global(.menu__list) {
-  overflow-y: hidden;
-  transition: height var(--ifm-transition-fast) linear;
-}
-
-:global(.menu__list-item--collapsed) :global(.menu__list) {
-  height: 0 !important;
-}
-
-:global(.menu__list-item) {
-  margin-top: 0;
-}
