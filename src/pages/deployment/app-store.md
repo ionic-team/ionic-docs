@@ -1,4 +1,7 @@
 ---
+meta:
+  title: "Publish to iOS App Store: Apple App Store Deployment for Ionic"
+  description: "Review the requirements to publish an Ionic app to the Apple iOS App Store. Learn to generate a release build and other necessary steps for deployment."
 previousText: ''
 previousUrl: ''
 nextText: 'Android Play Store'

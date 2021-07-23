@@ -2,6 +2,9 @@
 nextText: 'Responsive Grid'
 nextUrl: '/docs/layout/grid'
 initialTab: 'preview'
+meta:
+  title: "Structure Layout | Structures for Content Layout on Ionic Apps"
+  description: "Ionic provides several different layouts that can be used to structure an app and its content—from single page layouts, to split pane views and modals."
 contributors:
   - brandyscarney
 ---
