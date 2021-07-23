@@ -180,7 +180,7 @@ module.exports = {
             require.resolve(
               './node_modules/modern-normalize/modern-normalize.css',
             ),
-            require.resolve('./src/css/custom.scss'),
+            require.resolve('./src/styles/custom.scss'),
           ],
         },
         docs: {
