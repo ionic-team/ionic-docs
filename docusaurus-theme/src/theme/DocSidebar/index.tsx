@@ -304,11 +304,6 @@ function DocSidebar({
         [styles.sidebarHidden]: isHidden,
       })}
     >
-      <Backdrop
-        visible={sidebarOpen}
-        onClick={() => setSidebarOpen(false)}
-        className={styles.backdrop}
-      />
       <nav
         className={clsx(
           'menu',

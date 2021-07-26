@@ -176,10 +176,13 @@ function Navbar(): JSX.Element {
         )}
       </div>
       <Backdrop
-        onClick={hideSidebar && hideNavbarSidebar}
+        onClick={() => {
+          hideSidebar();
+          hideNavbarSidebar();
+        }}
         visible={sidebarOpen || navbarSidebarOpen}
       />
-      <div className="navbar-sidebar">
+      <div className={clsx('navbar-sidebar', styles.navbarSidebar)}>
         <div className="navbar-sidebar__brand">
           <Logo
             className="navbar__brand"

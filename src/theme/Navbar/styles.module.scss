@@ -162,6 +162,12 @@ html[data-theme='dark'] {
   transform: translate3d(0, calc(-100% - 2px), 0);
 }
 
+.navbarSidebar {
+  right: 0;
+  left: revert;
+  transform: translate3d(100%, 0, 0);
+}
+
 .navbarSidebarToggle {
   padding: 0;
   margin-inline-start: 1rem;
