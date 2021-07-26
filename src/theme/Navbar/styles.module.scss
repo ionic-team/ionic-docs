@@ -167,6 +167,15 @@ html[data-theme='dark'] {
   transform: translate3d(0, calc(-100% - 2px), 0);
 }
 
+.sidebarToggle {
+  border: none;
+  background: transparent;
+
+  color: inherit;
+  font-size: 2.125rem;
+  font-weight: bold;
+}
+
 //#region -------- MEDIUM STYLES ---------
 @media (min-width: 997px) and (max-width: 1215px) {
   :global {

@@ -14,10 +14,12 @@ import useThemeContext from '@theme/hooks/useThemeContext';
 import { useThemeConfig } from '@docusaurus/theme-common';
 import useHideableNavbar from '@theme/hooks/useHideableNavbar';
 import useLockBodyScroll from '@theme/hooks/useLockBodyScroll';
+import useUserPreferencesContext from '@theme/hooks/useUserPreferencesContext';
 import useWindowSize, { windowSizes } from '@theme/hooks/useWindowSize';
 import NavbarItem from '@theme/NavbarItem';
 import Logo from '@theme/Logo';
 import IconMenu from '@theme/IconMenu';
+import { translate } from '@docusaurus/Translate';
 
 import styles from './styles.module.scss';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
@@ -54,18 +56,27 @@ function Navbar(): JSX.Element {
       },
     },
   } = useDocusaurusContext();
-  const [sidebarShown, setSidebarShown] = useState(false);
+  const [navbarSidebarOpen, setNavbarSidebarOpen] = useState(false);
+  const { sidebarOpen, setSidebarOpen } = useUserPreferencesContext();
   const { isDarkTheme, setLightTheme, setDarkTheme } = useThemeContext();
   const { navbarRef, isNavbarVisible } = useHideableNavbar(hideOnScroll);
 
-  useLockBodyScroll(sidebarShown);
+  useLockBodyScroll(sidebarOpen);
+  useLockBodyScroll(navbarSidebarOpen);
 
   const showSidebar = useCallback(() => {
-    setSidebarShown(true);
-  }, [setSidebarShown]);
+    setSidebarOpen(true);
+  }, []);
   const hideSidebar = useCallback(() => {
-    setSidebarShown(false);
-  }, [setSidebarShown]);
+    setSidebarOpen(false);
+  }, []);
+
+  const showNavbarSidebar = useCallback(() => {
+    setNavbarSidebarOpen(true);
+  }, []);
+  const hideNavbarSidebar = useCallback(() => {
+    setNavbarSidebarOpen(false);
+  }, []);
 
   const onToggleChange = useCallback(
     e => (e.target.checked ? setDarkTheme() : setLightTheme()),
@@ -76,7 +87,8 @@ function Navbar(): JSX.Element {
 
   useEffect(() => {
     if (windowSize === windowSizes.desktop) {
-      setSidebarShown(false);
+      hideSidebar();
+      hideNavbarSidebar();
     }
   }, [windowSize]);
 
@@ -89,7 +101,7 @@ function Navbar(): JSX.Element {
       className={clsx('navbar', 'navbar--fixed-top', {
         'navbar--dark': style === 'dark',
         'navbar--primary': style === 'primary',
-        'navbar-sidebar--show': sidebarShown,
+        'navbar-sidebar--show': navbarSidebarOpen,
         [styles.navbarHideable]: hideOnScroll,
         [styles.navbarHidden]: hideOnScroll && !isNavbarVisible,
       })}
@@ -135,9 +147,35 @@ function Navbar(): JSX.Element {
             <NavbarItem {...item} key={i} />
           ))}
         </div>
-        {windowSize === windowSizes.mobile && <SidebarToggle />}
+        {windowSize === windowSizes.mobile && (
+          <button
+            aria-label={
+              sidebarOpen
+                ? translate({
+                    id: 'theme.docs.sidebar.responsiveCloseButtonLabel',
+                    message: 'Close menu',
+                    description:
+                      'The ARIA label for close button of mobile doc sidebar',
+                  })
+                : translate({
+                    id: 'theme.docs.sidebar.responsiveOpenButtonLabel',
+                    message: 'Open menu',
+                    description:
+                      'The ARIA label for open button of mobile doc sidebar',
+                  })
+            }
+            aria-haspopup="true"
+            className={clsx('sidebar-toggle--mobile', styles.sidebarToggle)}
+            onClick={showNavbarSidebar}
+          >
+            ⋮
+          </button>
+        )}
       </div>
-      <Backdrop onClick={hideSidebar} visible={sidebarShown} />
+      <Backdrop
+        onClick={hideSidebar && hideNavbarSidebar}
+        visible={sidebarOpen || navbarSidebarOpen}
+      />
       <div className="navbar-sidebar">
         <div className="navbar-sidebar__brand">
           <Logo
@@ -146,7 +184,7 @@ function Navbar(): JSX.Element {
             titleClassName="navbar__title"
             onClick={hideSidebar}
           />
-          {!disableColorModeSwitch && sidebarShown && (
+          {!disableColorModeSwitch && sidebarOpen && (
             <Toggle checked={isDarkTheme} onChange={onToggleChange} />
           )}
         </div>

@@ -9,10 +9,10 @@ import React, { useState } from 'react';
 
 import useTabGroupChoice from '@theme/hooks/useTabGroupChoice';
 import UserPreferencesContext from '@theme/UserPreferencesContext';
-import type {Props} from '@theme/UserPreferencesProvider';
+import type { Props } from '@theme/UserPreferencesProvider';
 
 function UserPreferencesProvider(props: Props): JSX.Element {
-  const {tabGroupChoices, setTabGroupChoices} = useTabGroupChoice();
+  const { tabGroupChoices, setTabGroupChoices } = useTabGroupChoice();
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
   return (
@@ -21,8 +21,9 @@ function UserPreferencesProvider(props: Props): JSX.Element {
         tabGroupChoices,
         setTabGroupChoices,
         sidebarOpen,
-        setSidebarOpen
-      }}>
+        setSidebarOpen,
+      }}
+    >
       {props.children}
     </UserPreferencesContext.Provider>
   );
