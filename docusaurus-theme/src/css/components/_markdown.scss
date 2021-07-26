@@ -18,7 +18,6 @@ html[data-theme='dark'] {
   --ifm-h2-vertical-rhythm-top: 2.75;
   --ifm-h3-vertical-rhythm-top: 2.25;
 
-  --ifm-h1-font-size: 3.5rem;
   --ifm-h2-font-size: 2rem;
   --ifm-h3-font-size: 1.5rem;
   --ifm-h4-font-size: 1.25rem;
@@ -65,6 +64,7 @@ html[data-theme='dark'] {
 
   // have to override style coming from .h1Heading_node_modules-\@docusaurus-theme-classic-lib-next-theme-Heading-styles-module
   header > h1 {
+    --ifm-h1-font-size: clamp(2.5rem, 8vw, 3.5rem);
     font-size: var(--ifm-h1-font-size);
   }
 
