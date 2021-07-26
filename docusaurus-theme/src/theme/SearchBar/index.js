@@ -18,6 +18,7 @@ import DocSearchButton from './DocSearchButton/DocSearchButton';
 import useAlgoliaContextualFacetFilters from '@theme/hooks/useAlgoliaContextualFacetFilters';
 import { translate } from '@docusaurus/Translate';
 import styles from './styles.module.css';
+import clsx from 'clsx';
 
 let DocSearchModal = null;
 
@@ -166,7 +167,7 @@ function DocSearch({ contextualSearch, ...props }) {
         />
       </Head>
 
-      <div className={styles.searchBox}>
+      <div className={clsx(styles.searchBox, 'search-box')}>
         <DocSearchButton
           onTouchStart={importDocSearchModalIfNeeded}
           onFocus={importDocSearchModalIfNeeded}

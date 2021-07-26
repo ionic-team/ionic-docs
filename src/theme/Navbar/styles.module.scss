@@ -152,6 +152,11 @@ html[data-theme='dark'] {
       content: var(--navbar-language-icon);
     }
   }
+
+  .sidebar-toggle--mobile {
+    padding: 0;
+    margin-inline-start: 1rem;
+  }
 }
 
 .navbarHideable {
