@@ -150,7 +150,7 @@ function Navbar(): JSX.Element {
         {windowSize === windowSizes.mobile && (
           <button
             aria-label={
-              sidebarOpen
+              navbarSidebarOpen
                 ? translate({
                     id: 'theme.docs.sidebar.responsiveCloseButtonLabel',
                     message: 'Close menu',
@@ -165,7 +165,10 @@ function Navbar(): JSX.Element {
                   })
             }
             aria-haspopup="true"
-            className={clsx('sidebar-toggle--mobile', styles.sidebarToggle)}
+            className={clsx(
+              'navbar-sidebar-toggle',
+              styles.navbarSidebarToggle,
+            )}
             onClick={showNavbarSidebar}
           >
             ⋮

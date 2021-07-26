@@ -152,11 +152,6 @@ html[data-theme='dark'] {
       content: var(--navbar-language-icon);
     }
   }
-
-  .sidebar-toggle--mobile {
-    padding: 0;
-    margin-inline-start: 1rem;
-  }
 }
 
 .navbarHideable {
@@ -167,7 +162,10 @@ html[data-theme='dark'] {
   transform: translate3d(0, calc(-100% - 2px), 0);
 }
 
-.sidebarToggle {
+.navbarSidebarToggle {
+  padding: 0;
+  margin-inline-start: 1rem;
+
   border: none;
   background: transparent;
 
