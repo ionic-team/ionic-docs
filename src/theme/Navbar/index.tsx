@@ -190,7 +190,7 @@ function Navbar(): JSX.Element {
             titleClassName="navbar__title"
             onClick={hideSidebar}
           />
-          {!disableColorModeSwitch && sidebarOpen && (
+          {!disableColorModeSwitch && (
             <Toggle checked={isDarkTheme} onChange={onToggleChange} />
           )}
         </div>

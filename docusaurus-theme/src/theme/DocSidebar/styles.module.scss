@@ -9,7 +9,6 @@
   --ifm-menu-color-active: var(--c-blue-90);
   --ifm-menu-color-background-active: var(--c-cyan-10);
   --ifm-menu-color-background-hover: none;
-  --ifm-menu-link-sublist-icon: var(--icon-chevron);
 
   --ifm-menu-link-padding-vertical: 0.5rem;
   --ifm-menu-link-padding-horizontal: 1.25rem;
@@ -125,18 +124,8 @@
     }
   }
   .menuList {
-    .menuList {
-      transition: height 0.35s cubic-bezier(0.36, 0.66, 0.04, 1);
-      transition-delay: 0.025s;
-
-      @media (prefers-reduced-motion) {
-        transition-delay: 0s;
-        transition-duration: 0s;
-      }
-
-      .menuLinkSublist {
-        font-size: 0.875rem;
-      }
+    .menuLinkSublist {
+      font-size: 0.875rem;
     }
   }
 }
@@ -169,7 +158,13 @@
 
 :global(.menu__list) :global(.menu__list) {
   overflow-y: hidden;
-  transition: height var(--ifm-transition-fast) linear;
+  transition: height 0.35s cubic-bezier(0.36, 0.66, 0.04, 1);
+  transition-delay: 0.025s;
+
+  @media (prefers-reduced-motion) {
+    transition-delay: 0s;
+    transition-duration: 0s;
+  }
 }
 
 :global(.menu__list-item--collapsed) :global(.menu__list) {

@@ -55,6 +55,7 @@ html[data-theme='dark'] {
         transform: none;
         top: -0.125rem;
         margin-inline-start: 0.438rem;
+        filter: none;
       }
     }
   }
@@ -150,6 +151,33 @@ html[data-theme='dark'] {
       transform: none;
       border: none;
       content: var(--navbar-language-icon);
+    }
+  }
+
+  .navbar-sidebar {
+    .menu__link--sublist {
+      display: flex;
+      flex-direction: row-reverse;
+      justify-content: flex-end;
+
+      &::after {
+        content: var(--ifm-menu-link-sublist-icon);
+        background: none;
+        transform: rotate(0deg);
+        height: revert;
+        min-width: revert;
+        margin-inline-end: 0.5rem;
+        margin-block-start: -0.0625rem;
+        filter: none;
+      }
+    }
+
+    .menu__list-item--collapsed {
+      .menu__link--sublist {
+        &::after {
+          transform: rotate(-90deg);
+        }
+      }
     }
   }
 }
