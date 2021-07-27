@@ -99,7 +99,7 @@ function Navbar(): JSX.Element {
   const windowSize = useWindowSize();
 
   const shouldLoadNavbarSidebar =
-    mobileNavbarSidebarLoaded && windowSize === windowSizes.mobile;
+    windowSize === windowSizes.mobile ? mobileNavbarSidebarLoaded : true;
 
   useEffect(() => {
     if (windowSize === windowSizes.desktop) {

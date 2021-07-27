@@ -297,7 +297,7 @@ function DocSidebar({
   const windowSize = useWindowSize();
 
   const shouldLoadSidebar =
-    windowSize === windowSizes.mobile && mobileSidebarLoaded;
+    windowSize === windowSizes.mobile ? mobileSidebarLoaded : true;
 
   useLockBodyScroll(mobileSidebarOpen);
 
