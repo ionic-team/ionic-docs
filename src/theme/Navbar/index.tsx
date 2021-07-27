@@ -132,6 +132,8 @@ function Navbar(): JSX.Element {
               tabIndex={0}
               onClick={showSidebar}
               onMouseEnter={() => setMobileSidebarLoaded(true)}
+              onFocus={() => setMobileSidebarLoaded(true)}
+              onTouchStart={() => setMobileSidebarLoaded(true)}
             >
               <IconMenu />
             </button>
@@ -189,6 +191,8 @@ function Navbar(): JSX.Element {
             )}
             onClick={showNavbarSidebar}
             onMouseEnter={() => setMobileNavbarSidebarLoaded(true)}
+            onFocus={() => setMobileNavbarSidebarLoaded(true)}
+            onTouchStart={() => setMobileNavbarSidebarLoaded(true)}
           >
             ⋮
           </button>
