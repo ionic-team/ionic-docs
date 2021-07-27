@@ -323,7 +323,7 @@ function DocSidebar({
         })}
       >
         <div className={clsx(styles.sidebarStart, 'doc-sidebar__start')}>
-          <Link to={useBaseUrl(homePath)}>
+          <Link to={homePath}>
             <Logo tabIndex={-1} className={styles.sidebarLogo} />
           </Link>
           <VersionSelector />

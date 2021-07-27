@@ -15,6 +15,7 @@ import { useThemeConfig } from '@docusaurus/theme-common';
 import useHideableNavbar from '@theme/hooks/useHideableNavbar';
 import useLockBodyScroll from '@theme/hooks/useLockBodyScroll';
 import useUserPreferencesContext from '@theme/hooks/useUserPreferencesContext';
+import { useActiveVersion } from '@theme/hooks/useDocs';
 import useWindowSize, { windowSizes } from '@theme/hooks/useWindowSize';
 import NavbarItem from '@theme/NavbarItem';
 import Logo from '@theme/Logo';
@@ -25,6 +26,7 @@ import styles from './styles.module.scss';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import SidebarToggle from '@theme/SidebarToggle';
 import Backdrop from '@theme/Backdrop';
+import { Link } from 'react-router-dom';
 
 // retrocompatible with v1
 const DefaultNavItemPosition = 'right';
@@ -56,6 +58,7 @@ function Navbar(): JSX.Element {
       },
     },
   } = useDocusaurusContext();
+  const { path: homePath } = useActiveVersion();
   const [navbarSidebarOpen, setNavbarSidebarOpen] = useState(false);
   const { sidebarOpen, setSidebarOpen } = useUserPreferencesContext();
   const { isDarkTheme, setLightTheme, setDarkTheme } = useThemeContext();
@@ -120,11 +123,13 @@ function Navbar(): JSX.Element {
               <IconMenu />
             </button>
           )}
-          <Logo
-            className="navbar__brand"
-            imageClassName="navbar__logo"
-            titleClassName="navbar__title"
-          />
+          <Link to={homePath}>
+            <Logo
+              className="navbar__brand"
+              imageClassName="navbar__logo"
+              titleClassName="navbar__title"
+            />
+          </Link>
           {leftItems.map((item, i) => (
             <NavbarItem {...item} key={i} />
           ))}
@@ -184,12 +189,14 @@ function Navbar(): JSX.Element {
       />
       <div className={clsx('navbar-sidebar', styles.navbarSidebar)}>
         <div className="navbar-sidebar__brand">
-          <Logo
-            className="navbar__brand"
-            imageClassName="navbar__logo"
-            titleClassName="navbar__title"
-            onClick={hideSidebar}
-          />
+          <Link to={homePath}>
+            <Logo
+              className="navbar__brand"
+              imageClassName="navbar__logo"
+              titleClassName="navbar__title"
+              onClick={hideSidebar}
+            />
+          </Link>
           {!disableColorModeSwitch && (
             <Toggle checked={isDarkTheme} onChange={onToggleChange} />
           )}
