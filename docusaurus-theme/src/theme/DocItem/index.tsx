@@ -16,6 +16,7 @@ import { MainHeading } from '@theme/Heading';
 import clsx from 'clsx';
 import styles from './styles.module.scss';
 import { useActivePlugin, useVersions } from '@theme/hooks/useDocs';
+import useWindowSize, { windowSizes } from '@theme/hooks/useWindowSize';
 
 function DocItem(props) {
   const { content: DocContent, versionMetadata } = props;
@@ -38,6 +39,8 @@ function DocItem(props) {
     formattedLastUpdatedAt,
     lastUpdatedBy,
   } = metadata;
+
+  const windowSize = useWindowSize();
 
   const { pluginId } = useActivePlugin({
     failfast: true,
@@ -124,14 +127,8 @@ function DocItem(props) {
           </div>
         </div>
 
-        {!hideTableOfContents && DocContent.toc ? (
-          <TOC
-            toc={DocContent.toc}
-            editUrl={editUrl}
-            className={clsx(styles.tableOfContents)}
-          />
-        ) : (
-          demoUrl && (
+        {windowSize !== windowSizes.mobile &&
+          (demoUrl ? (
             <div
               className={clsx(
                 'docDemoWrapper',
@@ -141,8 +138,16 @@ function DocItem(props) {
             >
               <DocDemo url={demoUrl} source={demoSourceUrl} />
             </div>
-          )
-        )}
+          ) : (
+            !hideTableOfContents &&
+            DocContent.toc && (
+              <TOC
+                toc={DocContent.toc}
+                editUrl={editUrl}
+                className={clsx(styles.tableOfContents)}
+              />
+            )
+          ))}
       </div>
     </>
   );
