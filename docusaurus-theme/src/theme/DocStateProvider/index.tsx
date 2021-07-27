@@ -12,7 +12,10 @@ import type { Props } from '@theme/DocStateProvider';
 
 function DocStateProvider(props: Props): JSX.Element {
   const [mobileSidebarLoaded, setMobileSidebarLoaded] = useState(false);
+  const [mobileNavbarSidebarLoaded, setMobileNavbarSidebarLoaded] =
+    useState(false);
   const [mobileSidebarOpen, setMobileSidebarOpen] = useState(false);
+  const [mobileNavbarSidebarOpen, setMobileNavbarSidebarOpen] = useState(false);
 
   return (
     <DocStateContext.Provider
@@ -21,6 +24,10 @@ function DocStateProvider(props: Props): JSX.Element {
         setMobileSidebarLoaded,
         mobileSidebarOpen,
         setMobileSidebarOpen,
+        mobileNavbarSidebarLoaded,
+        setMobileNavbarSidebarLoaded,
+        mobileNavbarSidebarOpen,
+        setMobileNavbarSidebarOpen,
       }}
     >
       {props.children}

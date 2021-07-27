@@ -59,17 +59,21 @@ function Navbar(): JSX.Element {
     },
   } = useDocusaurusContext();
   const { path: homePath } = useActiveVersion();
-  const [navbarSidebarOpen, setNavbarSidebarOpen] = useState(false);
+  const [] = useState(false);
   const {
+    mobileNavbarSidebarOpen,
+    setMobileNavbarSidebarOpen,
     mobileSidebarOpen,
     setMobileSidebarOpen,
     setMobileSidebarLoaded,
+    setMobileNavbarSidebarLoaded,
+    mobileNavbarSidebarLoaded,
   } = useDocStateContext();
   const { isDarkTheme, setLightTheme, setDarkTheme } = useThemeContext();
   const { navbarRef, isNavbarVisible } = useHideableNavbar(hideOnScroll);
 
   useLockBodyScroll(mobileSidebarOpen);
-  useLockBodyScroll(navbarSidebarOpen);
+  useLockBodyScroll(mobileNavbarSidebarOpen);
 
   const showSidebar = useCallback(() => {
     setMobileSidebarLoaded(true);
@@ -80,10 +84,11 @@ function Navbar(): JSX.Element {
   }, []);
 
   const showNavbarSidebar = useCallback(() => {
-    setNavbarSidebarOpen(true);
+    setMobileNavbarSidebarLoaded(true);
+    setMobileNavbarSidebarOpen(true);
   }, []);
   const hideNavbarSidebar = useCallback(() => {
-    setNavbarSidebarOpen(false);
+    setMobileNavbarSidebarOpen(false);
   }, []);
 
   const onToggleChange = useCallback(
@@ -92,6 +97,9 @@ function Navbar(): JSX.Element {
   );
 
   const windowSize = useWindowSize();
+
+  const shouldLoadNavbarSidebar =
+    mobileNavbarSidebarLoaded && windowSize === windowSizes.mobile;
 
   useEffect(() => {
     if (windowSize === windowSizes.desktop) {
@@ -109,7 +117,7 @@ function Navbar(): JSX.Element {
       className={clsx('navbar', 'navbar--fixed-top', {
         'navbar--dark': style === 'dark',
         'navbar--primary': style === 'primary',
-        'navbar-sidebar--show': navbarSidebarOpen,
+        'navbar-sidebar--show': mobileNavbarSidebarOpen,
         [styles.navbarHideable]: hideOnScroll,
         [styles.navbarHidden]: hideOnScroll && !isNavbarVisible,
       })}
@@ -123,7 +131,6 @@ function Navbar(): JSX.Element {
               type="button"
               tabIndex={0}
               onClick={showSidebar}
-              onKeyDown={showSidebar}
               onMouseEnter={() => setMobileSidebarLoaded(true)}
             >
               <IconMenu />
@@ -161,7 +168,7 @@ function Navbar(): JSX.Element {
         {windowSize === windowSizes.mobile && (
           <button
             aria-label={
-              navbarSidebarOpen
+              mobileNavbarSidebarOpen
                 ? translate({
                     id: 'theme.docs.sidebar.responsiveCloseButtonLabel',
                     message: 'Close menu',
@@ -181,6 +188,7 @@ function Navbar(): JSX.Element {
               styles.navbarSidebarToggle,
             )}
             onClick={showNavbarSidebar}
+            onMouseEnter={() => setMobileNavbarSidebarLoaded(true)}
           >
             ⋮
           </button>
@@ -191,37 +199,39 @@ function Navbar(): JSX.Element {
           hideSidebar();
           hideNavbarSidebar();
         }}
-        visible={mobileSidebarOpen || navbarSidebarOpen}
+        visible={mobileSidebarOpen || mobileNavbarSidebarOpen}
       />
-      <div className={clsx('navbar-sidebar', styles.navbarSidebar)}>
-        <div className="navbar-sidebar__brand">
-          <Link to={homePath}>
-            <Logo
-              className="navbar__brand"
-              imageClassName="navbar__logo"
-              titleClassName="navbar__title"
-              onClick={hideSidebar}
-            />
-          </Link>
-          {!disableColorModeSwitch && (
-            <Toggle checked={isDarkTheme} onChange={onToggleChange} />
-          )}
-        </div>
-        <div className="navbar-sidebar__items">
-          <div className="menu">
-            <ul className="menu__list">
-              {items.map((item, i) => (
-                <NavbarItem
-                  mobile
-                  {...(item as any)} // TODO fix typing
-                  onClick={hideSidebar}
-                  key={i}
-                />
-              ))}
-            </ul>
+      {shouldLoadNavbarSidebar && (
+        <div className={clsx('navbar-sidebar', styles.navbarSidebar)}>
+          <div className="navbar-sidebar__brand">
+            <Link to={homePath}>
+              <Logo
+                className="navbar__brand"
+                imageClassName="navbar__logo"
+                titleClassName="navbar__title"
+                onClick={hideSidebar}
+              />
+            </Link>
+            {!disableColorModeSwitch && (
+              <Toggle checked={isDarkTheme} onChange={onToggleChange} />
+            )}
+          </div>
+          <div className="navbar-sidebar__items">
+            <div className="menu">
+              <ul className="menu__list">
+                {items.map((item, i) => (
+                  <NavbarItem
+                    mobile
+                    {...(item as any)} // TODO fix typing
+                    onClick={hideSidebar}
+                    key={i}
+                  />
+                ))}
+              </ul>
+            </div>
           </div>
         </div>
-      </div>
+      )}
     </nav>
   );
 }
