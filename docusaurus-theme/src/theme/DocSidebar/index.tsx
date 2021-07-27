@@ -32,7 +32,7 @@ import { ChevronDown } from '@theme/icons';
 import { useActiveVersion } from '@theme/hooks/useDocs';
 
 import styles from './styles.module.scss';
-import Backdrop from '@theme/Backdrop';
+import useDocStateContext from '@theme/hooks/useDocStateContext';
 
 const MOBILE_TOGGLE_SIZE = 24;
 
@@ -292,9 +292,14 @@ function DocSidebar({
   const { hideableSidebar } = useThemeConfig();
   const { isClosed: isAnnouncementBarClosed } = useAnnouncementBar();
 
-  const { setSidebarOpen, sidebarOpen } = useUserPreferencesContext();
+  const { setMobileSidebarOpen, mobileSidebarOpen, mobileSidebarLoaded } =
+    useDocStateContext();
+  const windowSize = useWindowSize();
 
-  useLockBodyScroll(sidebarOpen);
+  useLockBodyScroll(mobileSidebarOpen);
+
+  if (windowSize === windowSizes.mobile && !mobileSidebarLoaded)
+    return <div></div>;
 
   return (
     <aside
@@ -311,7 +316,7 @@ function DocSidebar({
           'thin-scrollbar',
           styles.menu,
           {
-            'menu--show': sidebarOpen,
+            'menu--show': mobileSidebarOpen,
             [styles.menuWithAnnouncementBar]:
               !isAnnouncementBarClosed && showAnnouncementBar,
           },
@@ -333,7 +338,7 @@ function DocSidebar({
           <ul className={clsx('menu__list', styles.menuList)}>
             <DocSidebarItems
               items={sidebar}
-              onItemClick={() => setSidebarOpen(false)}
+              onItemClick={() => setMobileSidebarOpen(false)}
               collapsible={sidebarCollapsible}
               activePath={path}
             />

@@ -14,7 +14,7 @@ import useThemeContext from '@theme/hooks/useThemeContext';
 import { useThemeConfig } from '@docusaurus/theme-common';
 import useHideableNavbar from '@theme/hooks/useHideableNavbar';
 import useLockBodyScroll from '@theme/hooks/useLockBodyScroll';
-import useUserPreferencesContext from '@theme/hooks/useUserPreferencesContext';
+import useDocStateContext from '@theme/hooks/useDocStateContext';
 import { useActiveVersion } from '@theme/hooks/useDocs';
 import useWindowSize, { windowSizes } from '@theme/hooks/useWindowSize';
 import NavbarItem from '@theme/NavbarItem';
@@ -60,18 +60,23 @@ function Navbar(): JSX.Element {
   } = useDocusaurusContext();
   const { path: homePath } = useActiveVersion();
   const [navbarSidebarOpen, setNavbarSidebarOpen] = useState(false);
-  const { sidebarOpen, setSidebarOpen } = useUserPreferencesContext();
+  const {
+    mobileSidebarOpen,
+    setMobileSidebarOpen,
+    setMobileSidebarLoaded,
+  } = useDocStateContext();
   const { isDarkTheme, setLightTheme, setDarkTheme } = useThemeContext();
   const { navbarRef, isNavbarVisible } = useHideableNavbar(hideOnScroll);
 
-  useLockBodyScroll(sidebarOpen);
+  useLockBodyScroll(mobileSidebarOpen);
   useLockBodyScroll(navbarSidebarOpen);
 
   const showSidebar = useCallback(() => {
-    setSidebarOpen(true);
+    setMobileSidebarLoaded(true);
+    setMobileSidebarOpen(true);
   }, []);
   const hideSidebar = useCallback(() => {
-    setSidebarOpen(false);
+    setMobileSidebarOpen(false);
   }, []);
 
   const showNavbarSidebar = useCallback(() => {
@@ -119,6 +124,7 @@ function Navbar(): JSX.Element {
               tabIndex={0}
               onClick={showSidebar}
               onKeyDown={showSidebar}
+              onMouseEnter={() => setMobileSidebarLoaded(true)}
             >
               <IconMenu />
             </button>
@@ -185,7 +191,7 @@ function Navbar(): JSX.Element {
           hideSidebar();
           hideNavbarSidebar();
         }}
-        visible={sidebarOpen || navbarSidebarOpen}
+        visible={mobileSidebarOpen || navbarSidebarOpen}
       />
       <div className={clsx('navbar-sidebar', styles.navbarSidebar)}>
         <div className="navbar-sidebar__brand">

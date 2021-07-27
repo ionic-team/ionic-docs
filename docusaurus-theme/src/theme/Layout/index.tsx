@@ -16,6 +16,7 @@ import LayoutHead from '@theme/LayoutHead';
 import type { Props } from '@theme/Layout';
 import useKeyboardNavigation from '@theme/hooks/useKeyboardNavigation';
 import { ThemeClassNames } from '@docusaurus/theme-common';
+import DocStateProvider from '@theme/DocStateProvider';
 import './styles.css';
 
 function Layout(props: Props): JSX.Element {
@@ -25,23 +26,25 @@ function Layout(props: Props): JSX.Element {
 
   return (
     <LayoutProviders>
-      <LayoutHead {...props} />
+      <DocStateProvider>
+        <LayoutHead {...props} />
 
-      <SkipToContent />
+        <SkipToContent />
 
-      <AnnouncementBar />
+        <AnnouncementBar />
 
-      <div
-        className={clsx(
-          ThemeClassNames.wrapper.main,
-          wrapperClassName,
-          pageClassName,
-        )}
-      >
-        {children}
-      </div>
+        <div
+          className={clsx(
+            ThemeClassNames.wrapper.main,
+            wrapperClassName,
+            pageClassName,
+          )}
+        >
+          {children}
+        </div>
 
-      {!noFooter && <Footer />}
+        {!noFooter && <Footer />}
+      </DocStateProvider>
     </LayoutProviders>
   );
 }
