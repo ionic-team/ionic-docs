@@ -296,57 +296,61 @@ function DocSidebar({
     useDocStateContext();
   const windowSize = useWindowSize();
 
+  const shouldLoadSidebar =
+    windowSize === windowSizes.mobile && mobileSidebarLoaded;
+
   useLockBodyScroll(mobileSidebarOpen);
 
-  if (windowSize === windowSizes.mobile && !mobileSidebarLoaded)
-    return <div></div>;
-
   return (
-    <aside
-      {...props}
-      className={clsx(styles.sidebar, {
-        [props.className]: Boolean(props.className),
-        [styles.sidebarHidden]: isHidden,
-      })}
-    >
-      <nav
-        className={clsx(
-          'menu',
-          'menu--responsive',
-          'thin-scrollbar',
-          styles.menu,
-          {
-            'menu--show': mobileSidebarOpen,
-            [styles.menuWithAnnouncementBar]:
-              !isAnnouncementBarClosed && showAnnouncementBar,
-          },
-        )}
-        aria-label={translate({
-          id: 'theme.docs.sidebar.navAriaLabel',
-          message: 'Sidebar navigation',
-          description: 'The ARIA label for documentation menu',
-        })}
-      >
-        <div className={clsx(styles.sidebarStart, 'doc-sidebar__start')}>
-          <Link to={homePath}>
-            <Logo tabIndex={-1} className={styles.sidebarLogo} />
-          </Link>
-          <VersionSelector />
-        </div>
-        <div className={clsx(styles.sidebarEnd, 'doc-sidebar__end')}>
-          <FrameworkSelector className={styles.frameworkSelector} />
-          <ul className={clsx('menu__list', styles.menuList)}>
-            <DocSidebarItems
-              items={sidebar}
-              onItemClick={() => setMobileSidebarOpen(false)}
-              collapsible={sidebarCollapsible}
-              activePath={path}
-            />
-          </ul>
-        </div>
-      </nav>
-      {hideableSidebar && <HideableSidebarButton onClick={onCollapse} />}
-    </aside>
+    <>
+      {shouldLoadSidebar && (
+        <aside
+          {...props}
+          className={clsx(styles.sidebar, {
+            [props.className]: Boolean(props.className),
+            [styles.sidebarHidden]: isHidden,
+          })}
+        >
+          <nav
+            className={clsx(
+              'menu',
+              'menu--responsive',
+              'thin-scrollbar',
+              styles.menu,
+              {
+                'menu--show': mobileSidebarOpen,
+                [styles.menuWithAnnouncementBar]:
+                  !isAnnouncementBarClosed && showAnnouncementBar,
+              },
+            )}
+            aria-label={translate({
+              id: 'theme.docs.sidebar.navAriaLabel',
+              message: 'Sidebar navigation',
+              description: 'The ARIA label for documentation menu',
+            })}
+          >
+            <div className={clsx(styles.sidebarStart, 'doc-sidebar__start')}>
+              <Link to={homePath}>
+                <Logo tabIndex={-1} className={styles.sidebarLogo} />
+              </Link>
+              <VersionSelector />
+            </div>
+            <div className={clsx(styles.sidebarEnd, 'doc-sidebar__end')}>
+              <FrameworkSelector className={styles.frameworkSelector} />
+              <ul className={clsx('menu__list', styles.menuList)}>
+                <DocSidebarItems
+                  items={sidebar}
+                  onItemClick={() => setMobileSidebarOpen(false)}
+                  collapsible={sidebarCollapsible}
+                  activePath={path}
+                />
+              </ul>
+            </div>
+          </nav>
+          {hideableSidebar && <HideableSidebarButton onClick={onCollapse} />}
+        </aside>
+      )}
+    </>
   );
 }
 
