@@ -59,6 +59,13 @@ function DocItem(props) {
   const pageCSSClass = `page-${permalink
     .replace(/\/$/, '')
     .replace(/\//g, '-')}`;
+
+  const canRenderTOC =
+    !hideTableOfContents && DocContent.toc && DocContent.toc.length > 0;
+
+  const renderTocDesktop =
+    canRenderTOC && (windowSize === 'desktop' || windowSize === 'ssr');
+
   return (
     <>
       <Seo
@@ -127,27 +134,27 @@ function DocItem(props) {
           </div>
         </div>
 
-        {windowSize !== windowSizes.mobile &&
-          (demoUrl ? (
-            <div
-              className={clsx(
-                'docDemoWrapper',
-                styles['docDemoWrapper--noToc'],
-                styles.docDemoWrapper,
-              )}
-            >
-              <DocDemo url={demoUrl} source={demoSourceUrl} />
-            </div>
-          ) : (
-            !hideTableOfContents &&
-            DocContent.toc && (
-              <TOC
-                toc={DocContent.toc}
-                editUrl={editUrl}
-                className={clsx(styles.tableOfContents)}
-              />
-            )
-          ))}
+        {demoUrl ||
+          (renderTocDesktop &&
+            (demoUrl ? (
+              <div
+                className={clsx(
+                  'docDemoWrapper',
+                  styles['docDemoWrapper--noToc'],
+                  styles.docDemoWrapper,
+                )}
+              >
+                <DocDemo url={demoUrl} source={demoSourceUrl} />
+              </div>
+            ) : (
+              renderTocDesktop && (
+                <TOC
+                  toc={DocContent.toc}
+                  editUrl={editUrl}
+                  className={clsx(styles.tableOfContents)}
+                />
+              )
+            )))}
       </div>
     </>
   );
