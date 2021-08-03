@@ -134,27 +134,26 @@ function DocItem(props) {
           </div>
         </div>
 
-        {demoUrl ||
-          (renderTocDesktop &&
-            (demoUrl ? (
-              <div
-                className={clsx(
-                  'docDemoWrapper',
-                  styles['docDemoWrapper--noToc'],
-                  styles.docDemoWrapper,
-                )}
-              >
-                <DocDemo url={demoUrl} source={demoSourceUrl} />
-              </div>
-            ) : (
-              renderTocDesktop && (
-                <TOC
-                  toc={DocContent.toc}
-                  editUrl={editUrl}
-                  className={clsx(styles.tableOfContents)}
-                />
-              )
-            )))}
+        {(demoUrl || renderTocDesktop) &&
+          (demoUrl ? (
+            <div
+              className={clsx(
+                'docDemoWrapper',
+                styles['docDemoWrapper--noToc'],
+                styles.docDemoWrapper,
+              )}
+            >
+              <DocDemo url={demoUrl} source={demoSourceUrl} />
+            </div>
+          ) : (
+            renderTocDesktop && (
+              <TOC
+                toc={DocContent.toc}
+                editUrl={editUrl}
+                className={clsx(styles.tableOfContents)}
+              />
+            )
+          ))}
       </div>
     </>
   );
