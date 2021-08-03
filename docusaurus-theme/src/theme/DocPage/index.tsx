@@ -63,10 +63,10 @@ function DocPageContent({
 }: DocPageContentProps): JSX.Element {
   const { siteConfig, isClient } = useDocusaurusContext();
   const { pluginId, version } = versionMetadata;
-  const { sidebarName, sidebar } = getSidebar({
-    versionMetadata,
-    currentDocRoute,
-  });
+  const sidebarName = currentDocRoute.sidebar;
+  const sidebar = sidebarName
+    ? versionMetadata.docsSidebars[sidebarName]
+    : undefined;
 
   const [hiddenSidebarContainer, setHiddenSidebarContainer] = useState(false);
   const [hiddenSidebar, setHiddenSidebar] = useState(false);

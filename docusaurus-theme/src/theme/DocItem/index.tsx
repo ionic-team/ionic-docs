@@ -127,7 +127,7 @@ function DocItem(props) {
           </div>
         </div>
 
-        {windowSize !== windowSizes.mobile &&
+        {(windowSize === 'desktop' || windowSize === 'ssr') &&
           (demoUrl ? (
             <div
               className={clsx(

@@ -16,7 +16,7 @@ import useHideableNavbar from '@theme/hooks/useHideableNavbar';
 import useLockBodyScroll from '@theme/hooks/useLockBodyScroll';
 import useDocStateContext from '@theme/hooks/useDocStateContext';
 import { useActiveVersion } from '@theme/hooks/useDocs';
-import useWindowSize, { windowSizes } from '@theme/hooks/useWindowSize';
+import useWindowSize from '@theme/hooks/useWindowSize';
 import NavbarItem from '@theme/NavbarItem';
 import Logo from '@theme/Logo';
 import IconMenu from '@theme/IconMenu';
@@ -99,10 +99,12 @@ function Navbar(): JSX.Element {
   const windowSize = useWindowSize();
 
   const shouldLoadNavbarSidebar =
-    windowSize === windowSizes.mobile ? mobileNavbarSidebarLoaded : true;
+    windowSize === 'desktop' || windowSize === 'ssr'
+      ? true
+      : mobileNavbarSidebarLoaded;
 
   useEffect(() => {
-    if (windowSize === windowSizes.desktop) {
+    if (windowSize === 'desktop') {
       hideSidebar();
       hideNavbarSidebar();
     }
@@ -167,7 +169,7 @@ function Navbar(): JSX.Element {
             <NavbarItem {...item} key={i} />
           ))}
         </div>
-        {windowSize === windowSizes.mobile && (
+        {windowSize === 'mobile' && (
           <button
             aria-label={
               mobileNavbarSidebarOpen

@@ -14,7 +14,7 @@ import {
   useAnnouncementBar,
 } from '@docusaurus/theme-common';
 import useLockBodyScroll from '@theme/hooks/useLockBodyScroll';
-import useWindowSize, { windowSizes } from '@theme/hooks/useWindowSize';
+import useWindowSize from '@theme/hooks/useWindowSize';
 import useScrollPosition from '@theme/hooks/useScrollPosition';
 import useUserPreferencesContext from '@theme/hooks/useUserPreferencesContext';
 import Link from '@docusaurus/Link';
@@ -230,7 +230,7 @@ function useResponsiveSidebar() {
 
   const windowSize = useWindowSize();
   useEffect(() => {
-    if (windowSize === windowSizes.desktop) {
+    if (windowSize === 'desktop') {
       setShowResponsiveSidebar(false);
     }
   }, [windowSize]);
@@ -297,7 +297,9 @@ function DocSidebar({
   const windowSize = useWindowSize();
 
   const shouldLoadSidebar =
-    windowSize === windowSizes.mobile ? mobileSidebarLoaded : true;
+    windowSize === 'desktop' || windowSize === 'ssr'
+      ? true
+      : mobileSidebarLoaded;
 
   useLockBodyScroll(mobileSidebarOpen);
 
