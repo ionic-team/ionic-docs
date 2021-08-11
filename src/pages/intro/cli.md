@@ -48,7 +48,7 @@ $ npm install -g @ionic/cli
 Create an Ionic app using one of the pre-made app templates, or a blank one to start fresh. The three most common starters are the `blank` starter, `tabs` starter, and `sidemenu` starter. Get started with the `ionic start` command:
 
 ```shell
-$ ionic start myApp tabs
+$ ionic start
 ```
 
 ![start app thumbnails](/docs/assets/img/installation/start-app-thumbnails.png)
@@ -74,7 +74,7 @@ There are a number of other ways to run an app, it's recommended to start with t
     justify-content: space-between;
     margin: 0;
     float: none;
-    
+
     border-radius: 16px;
     padding: 32px 64px 32px 64px;
 
