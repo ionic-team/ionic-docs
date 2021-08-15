@@ -8,7 +8,7 @@ We’re now able to take multiple photos and display them in a photo gallery on 
 
 ## Filesystem API
 
-()Fortunately, saving them to the filesystem only takes a few steps. Begin by opening the `usePhotoGallery` hook (`src/hooks/usePhotoGallery.ts`), and get access to the `writeFile` method from the `FileSystem` class:
+Fortunately, saving them to the filesystem only takes a few steps. Begin by opening the `usePhotoGallery` hook (`src/hooks/usePhotoGallery.ts`), and get access to the `writeFile` method from the `Filesystem` class:
 
 :::note
 We will use the `writeFile` method initially, but we will use the others coming up shortly, so we'll go ahead and import them now.
@@ -21,9 +21,9 @@ export function usePhotoGallery() {
   const savePicture = async (
     photo: CameraPhoto,
     fileName: string,
-  ): Promise<Photo> => {
+  ): Promise<UserPhoto> => {
     const base64Data = await base64FromPath(photo.webPath!);
-    const savedFile = await FileSystem.writeFile({
+    const savedFile = await Filesystem.writeFile({
       path: fileName,
       data: base64Data,
       directory: Directory.Data,
