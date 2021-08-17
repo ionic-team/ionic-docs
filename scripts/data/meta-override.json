@@ -64,6 +64,14 @@
       "title": "Loading | Application Loading Indicator Overlay | ion-loading",
       "description": "The ion-loading overlay indicates activity while blocking user interaction. The loading indicator appears on top of the app's content, and can be dismissed."
     },
+    "ion-menu-button": {
+      "title": "Menu Button | ion-menu-button to Open an App Menu on A Page",
+      "description": "Menu Button is component that automatically creates the icon and functionality to open a menu on an app page. Read to learn more about ion-menu-button."
+    },
+    "ion-menu-toggle": {
+      "title": "ion-menu-toggle | MenuToggle Component to Open/Close Active Menus",
+      "description": "The MenuToggle component can be used to toggle a menu open or closed—by default, it's only visible when the selected menu is active. Read more about usage."
+    },
     "ion-nav": {
       "title": "ion-nav | Nav View Component for Ionic Framework Apps",
       "description": "ion-nav is a standalone for loading arbitrary, and pushing new, components on to the stack. Loading Nav view, and pushing others, won't affect overall routers."
@@ -116,6 +124,10 @@
       "title": "Skeleton Text | Skeleton Loading Placeholder & Framework for Text",
       "description": "ion-skeleton-text is a component for rendering placeholder content. The element will render a gray block at the specified width as a loading text framework."
     },
+    "ion-slide": {
+      "title": "ion-slide | Slide API Component for Ionic Framework Apps",
+      "description": "Slide is a child API component of Slides—written as ion-slide. Any slide content should be written in this component and used in conjunction with Slides."
+    },
     "ion-slides": {
       "title": "Ion-Slides: Mobile Touch Slider with Built-In & Custom Animation",
       "description": "Ion-Slides is a multi-section container which offers custom and built-in mobile touch slider animation effects. See how Ion-Slides works with iOS and Android."
@@ -127,6 +139,10 @@
     "ion-split-pane": {
       "title": "ion-split-pane: Split Plane View for Menus and Multi-View Layouts",
       "description": "ion-split-pane is useful when creating multi-view app layouts. It allows UI elements, like menus, to be displayed as the viewport width increases."
+    },
+    "ion-tab-bar": {
+      "title": "ion-tab-bar with CSS Custom Properties for Tab Bar Components",
+      "description": "The tab bar component contains a set of tab buttons and a tab bar must be provided inside of tabs to communicate. Read more about use and CSS custom properties."
     },
     "ion-tabs": {
       "title": "Ion-Tabs: Tab-Based Component for App Top-Level Navigation",
@@ -169,6 +185,10 @@
     "cordova-platform": {
       "title": "ionic cordova platform: Remove, Add, & Manage Cordova Platforms",
       "description": "Manage, add, and remove Cordova platforms with ionic cordova platform. Like running cordova directly, with added resources and providing friendly checks."
+    },
+    "cordova-prepare": {
+      "title": "Cordova Prepare: Copy iOS/Android Assets for Native Builds",
+      "description": "Ionic Cordova Prepare copies iOS and Android assets to Cordova platforms, preparing them for native builds. Read for examples and to learn more about usage."
     },
     "cordova-run": {
       "title": "ionic cordova run: native-run Android and iOS Apps in Browsers",
@@ -220,6 +240,18 @@
       "title": "Install Camera | Cordova Plugin Cameras for Ionic Applications",
       "description": "Use the Cordova plugin to install a camera and take photos or capture videos in-app with Ionic Framework camera component for supported platforms."
     },
+    "contacts": {
+      "title": "Cordova Contacts Plugin to Access and Manage Device Contacts",
+      "description": "Use cordova-plugin-contacts to access and manage contacts on your device from any Ionic app. Read to learn more about the Contacts plugin use and installation."
+    },
+    "crop": {
+      "title": "Native Ionic App Image Crop Plugin | Cordova-Plugin-Crop",
+      "description": "Easily crop images in Native Ionic apps with cordova-plugin-crop. Learn more about the image crop plugin installation and usage on iOS and Android platforms."
+    },
+    "diagnostic": {
+      "title": "Cordova Diagnostic Plugin to Check Device Hardware Features",
+      "description": "The Cordova Diagnostic plugin checks whether iOS, Android, or Windows device hardware features are enabled or available to the app. Read to learn more."
+    },
     "document-viewer": {
       "title": "Document Viewer | Cordova Plugin Document Viewer for PDF Files",
       "description": "Cordova plugin document viewer offers a slim API to view PDF files either stored in the apps assets folder or in any other file system directory available."
@@ -240,9 +272,17 @@
       "title": "File API Plugin for Read and Write File Access on Devices",
       "description": "The File API plugin allows read/write access to files residing on the device and implements static convenience functions to access files and directories."
     },
+    "file-chooser": {
+      "title": "File Chooser | Opens File Picker on Android and Returns File URI",
+      "description": "File Chooser opens the file picker on Android for the user to select a file and returns a file URI. Read for more about File Chooser installation and usage."
+    },
     "file-transfer": {
       "title": "File Transfer | Cordova Docs File Transfer Download Plugin",
       "description": "The Cordova File Transfer plug in allows you to upload and download docs files. This plugin is supported on iOS, Android, Windows, and more platforms."
+    },
+    "firebase-analytics": {
+      "title": "Firebase Analytics | Cordova Firebase Analytics for iOS/Android",
+      "description": "Use the Cordova plugin for Firebase Analytics on iOS and Android applications. Read to learn more about Firebase Analytics usage and installation."
     },
     "firebase-authentication": {
       "title": "Firebase Authentication | Cordova-Plugin-Firebase-Authentication",
@@ -276,13 +316,29 @@
       "title": "Keyboard Plugin | Cordova Plugin for Ionic Native App Keyboards",
       "description": "The Ionic Native keyboard plugin requires the plugin cordova-plugin-ionic-keyboard for usage. Read to learn about keyboard plugin installation and platforms."
     },
+    "launch-navigator": {
+      "title": "Launch Navigator | Get Started with Ionic Launch Navigator Plugin",
+      "description": "Get started with the Cordova/PhoneGap Launch Navigator. Launch Navigator requires Cordova plugin for Launch Navigator to open in Ionic apps—read to learn more."
+    },
     "local-notifications": {
       "title": "Local Notifications: iOS & Android | Cordova Local Notifications",
       "description": "The Cordova Local Notifications Plugin allows you to display local notifications from your Ionic Framework application on iOS, Android, or Windows devices."
     },
+    "media": {
+      "title": "Cordova Media Plugin: Record and Play Back Native App Media Files",
+      "description": "The Cordova Media Plugin provides the ability to record and play back audio files on a native app device. Read our Media Documentation to learn more about use."
+    },
+    "media-capture": {
+      "title": "Media Capture | Native Ionic App Cordova Plugin for Media Capture",
+      "description": "The Cordova Media Capture Plugin provides access to the device's audio, image, and video capture capabilities in Native Ionic apps. Read for more usage info."
+    },
     "native-audio": {
       "title": "Native Audio | Cordova Native Audio Plugin for Audio Playback",
       "description": "Native Audio for Ionic Framework applications is run through the cordova-plugin-nativeaudio. Read for more information on Native Audio Playback and usage."
+    },
+    "native-geocoder": {
+      "title": "Native Geocoder: Forward and Reverse Geocoding in iOS/Android",
+      "description": "Native Geocoder is the Cordova plugin for native forward and reverse geocoding in Ionic apps on iOS and Android devices. Read to learn more about usage."
     },
     "native-storage": {
       "title": "Ionic Native Storage | Install Cordova Plugin Native Storage",
@@ -292,6 +348,10 @@
       "title": "Ionic Native Network Plugin: Cordova Plugin Network Information",
       "description": "The Ionic native network plugin requires the Cordova plugin: cordova-plugin-network-information. Read to learn more about this Ionic app feature and usage."
     },
+    "nfc": {
+      "title": "NFC Scanner | PhoneGap iOS/Android/Windows NFC Reader Plugin",
+      "description": "The PhoneGap NFC scanner/reader plugin lets you read and write NFC tags. You can beam to, and receive from, other NFC enabled iOS, Android, and Windows devices."
+    },
     "onesignal": {
       "title": "OneSignal | OneSignal Cordova SDK Push Notification Plugin",
       "description": "The OneSignal Cordova SDK plugin is a simple implementation for delivering push notifications on Ionic apps. Read our OneSignal Documentation to learn more."
@@ -299,6 +359,10 @@
     "pdf-generator": {
       "title": "PDFGenerator | iOS & Android HTML PDF Generator Plugin",
       "description": "PDFGenerator is a plugin to generate (offline) pdf on Android & iOS devices. It transforms HTML to PDF with the mechanism to share the pdf to other apps."
+    },
+    "photo-viewer": {
+      "title": "Photo Viewer | Photo Viewer Plugin for Full Screen Image Viewer",
+      "description": "This Cordova Photo Viewer Plugin can display your image in full screen with the ability to pan, zoom, and share the picture. Read to learn more about usage."
     },
     "printer": {
       "title": "Printer Plugin | Cordova-Plugin-Printer for Ionic Apps",
@@ -312,9 +376,17 @@
       "title": "Sign in With Apple: Login to Apps & Websites With Apple ID",
       "description": "Sign in with Apple makes it easy for users to sign in to your apps and websites using their Apple ID. Read to learn more about installation and usage."
     },
+    "sms": {
+      "title": "Cordova SMS Plugin to Send SMS on iOS, Android, & Windows",
+      "description": "This cross-platform SMS plugin for Cordova/PhoneGap let's you easily send SMS. Available for Android, iOS, Windows Phone 8, and Windows 10 Universal."
+    },
     "social-sharing": {
       "title": "Social Sharing | Cordova Social Sharing Plugin for Ionic Apps",
       "description": "Social sharing for Ionic apps allows you to share text, files, images, and links via social networks, SMS, and email—read to learn about this Cordova Plugin."
+    },
+    "speech-recognition": {
+      "title": "Cordova Speech Recognition Plugin for iOS/Android Devices",
+      "description": "The Cordova Speech Recognition plugin does speech recognition using cloud services on iOS and Android devices. Learn more about speech recognition installation."
     },
     "splash-screen": {
       "title": "Splash Screen | Cordova Splash Screen Plugin for Android & iOS",
@@ -328,13 +400,21 @@
       "title": "Status Bar | Cordova StatusBar Plugin for iOS and Android Apps",
       "description": "Manage the appearance of the native status bar with the Cordova StatusBar Plugin. Learn how to install status bar on supported iOS and Android platforms."
     },
+    "streaming-media": {
+      "title": "Streaming Media | Cordova Plugin for Streaming Media Player Apps",
+      "description": "The Cordova Streaming Media Plugin allows you to stream audio and video in a fullscreen, native player on iOS and Android app devices. Read for more usage info."
+    },
     "stripe": {
-      "title":"Stripe Plugin Documentation: Use Stripe's SDKs on iOS or Android",
+      "title": "Stripe Plugin Documentation: Use Stripe's SDKs on iOS or Android",
       "description": "The cordova-plugin-stripe let's you use Stripe's Native SDKs for Android and iOS. Read Ionic's Stripe Documentation to learn more about use and installation."
     },
     "video-player": {
       "title": "VideoPlayer | Ionic Native Cordova-Plugin-VideoPlayer",
       "description": "The VideoPlayer plugin allows you to immediately play a video in fullscreen mode. Read for more information on cordova-plugin-videoplayer for Ionic Native apps."
+    },
+    "youtube-video-player": {
+      "title": "YouTube Video Player | Cordova Plugin for Native YouTube App",
+      "description": "The Cordova YouTube Video Player Plugin on Ionic apps lets you play YouTube videos in the Native YouTube App. Read more about usage in Ionic Documentation."
     }
   }
 }

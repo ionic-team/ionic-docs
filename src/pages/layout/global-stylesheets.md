@@ -1,4 +1,7 @@
 ---
+meta:
+  title: 'Global Stylesheet: Styled CSS Component Options for Ionic Apps'
+  description: 'While Ionic component styles are self-contained, there are several global stylesheets and CSS options to include to utilize all features. Read to learn more.'
 initialTab: 'preview'
 inlineHtmlPreviews: true
 previousText: 'Responsive Grid'
