@@ -14,19 +14,7 @@ npm install swiper
 
 ### Typescript (optional)
 
-TypeScript users will need to add the following to their `shims-vue.d.ts` file:
-
-```tsx
-declare module 'swiper/vue' {
-  import _Vue from 'vue';
-  export class Swiper extends _Vue {}
-  export class SwiperSlide extends _Vue {}
-}
-```
-
-Swiper Vue does not have complete support for TypeScript, so this code bridges the gap. Follow https://github.com/nolimits4web/swiper/issues/3916 for updates on this issue.
-
-You may need to restart your development server after adding this.
+Swiper Vue is now support only TypeScript definitions to the Vue components, and planned [fully rewritten to TypeScript](https://github.com/nolimits4web/swiper/pull/4707#issuecomment-869565128)
 
 ## Swiping with Style
 
