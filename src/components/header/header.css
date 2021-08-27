@@ -129,6 +129,60 @@ docs-header docs-menu-toggle {
   width: 100%;
 }
 
+.jobs {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+
+  background: linear-gradient(90deg, #62BDFF 1.23%, #7489FF 99.18%);
+  border-radius: 100px;
+
+  padding: 5px 8px;
+}
+
+.jobs-wrapper {
+  flex-grow: 1;
+  display: flex;
+  justify-content: flex-end;
+}
+
+@media (max-width: 1260px) {
+  .jobs-wrapper {
+    display: none;
+  }
+}
+
+.jobs {
+  font-size: .75rem;
+}
+
+.jobs .start {
+  display: flex;
+  align-items: center;
+
+  color: #F3FAFF;
+  font-weight: 400;
+}
+.jobs .start svg {
+  margin-inline-end: 4px;
+}
+
+.jobs .end {
+  display: flex;
+  align-items: center;
+
+  color: #FFFFFF;
+  font-weight: 600;
+}
+
+.jobs .end svg {
+  transition: transform .1s ease-out;
+}
+.jobs:hover .end svg {
+  transform: translateX(1px);
+}
+
 .UtilNav {
   align-items: center;
   display: flex;

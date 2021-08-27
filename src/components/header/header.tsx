@@ -94,6 +94,19 @@ export class DocsHeader {
             </stencil-route-switch>
           </nav>
 
+          <div class="jobs-wrapper">
+            <a class="jobs" href="https://ionic.io/about/jobs#positions" target="_blank" rel="noopener">
+              <span class="start">
+                <svg width="12" height="12" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(#clip0)" fill="#D0FDFF"><path d="M4.4 2.9a.65.65 0 011.22 0l.8 2.25c.07.18.22.33.4.4l2.25.8a.65.65 0 010 1.22l-2.25.8a.65.65 0 00-.4.4l-.8 2.25a.65.65 0 01-1.22 0l-.8-2.25a.65.65 0 00-.4-.4l-2.25-.8a.65.65 0 010-1.22l2.25-.8c.18-.07.33-.22.4-.4l.8-2.25zM9.04 1.2c.15-.4.72-.4.87 0l.29.81c.04.13.14.23.27.28l.8.29c.41.14.41.72 0 .87l-.8.28a.46.46 0 00-.27.28l-.3.8c-.14.41-.71.41-.86 0l-.29-.8a.46.46 0 00-.28-.28l-.8-.28a.46.46 0 010-.87l.8-.3a.46.46 0 00.28-.27l.29-.8zM1.5.48c.1-.3.5-.3.6 0l.24.65c.03.1.1.16.2.2l.65.23c.29.1.29.5 0 .61l-.65.24c-.1.03-.17.1-.2.2l-.23.65c-.1.28-.51.28-.62 0l-.23-.66a.32.32 0 00-.2-.2l-.65-.23a.32.32 0 010-.6l.65-.24c.1-.04.17-.1.2-.2l.23-.65z"/></g><defs><clipPath id="clip0"><path fill="#fff" d="M0 0h12v12H0z"/></clipPath></defs></svg>
+                Ionic is hiring
+              </span>
+              <span class="end">
+                Work with us
+                <svg xmlns="http://www.w3.org/2000/svg" class="ionicon" width="14" height="12" viewBox="0 0 512 512"><title>Arrow Forward</title><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="48" d="M268 112l144 144-144 144M392 256H100"/></svg>  
+              </span>
+            </a>
+          </div>
+
           <nav class="UtilNav">
             <ionic-search></ionic-search>
             <docs-dropdown label={getString('header-community')} align="right">
