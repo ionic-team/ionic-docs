@@ -40,21 +40,27 @@ function DocItem(props) {
     lastUpdatedBy,
   } = metadata;
 
-  const windowSize = useWindowSize();
+  const { pluginId } = useActivePlugin({ failfast: true })!;
+  const versions = useVersions(pluginId);
 
-  const { pluginId } = useActivePlugin({
-    failfast: true,
-  });
-  const versions = useVersions(pluginId); // If site is not versioned or only one version is included
+  // If site is not versioned or only one version is included
   // we don't show the version badge
   // See https://github.com/facebook/docusaurus/issues/3362
+  const showVersionBadge = versions.length > 1;
 
-  const showVersionBadge = versions.length > 1; // We only add a title if:
+  // We only add a title if:
   // - user asks to hide it with frontmatter
   // - the markdown content does not already contain a top-level h1 heading
-
   const shouldAddTitle =
     !hideTitle && typeof DocContent.contentTitle === 'undefined';
+
+  const windowSize = useWindowSize();
+
+  const canRenderTOC =
+    !hideTableOfContents && DocContent.toc && DocContent.toc.length > 0;
+
+  const renderTocDesktop =
+    canRenderTOC && (windowSize === 'desktop' || windowSize === 'ssr');
 
   const pageCSSClass = `page-${permalink
     .replace(/\/$/, '')
@@ -127,7 +133,7 @@ function DocItem(props) {
           </div>
         </div>
 
-        {windowSize !== windowSizes.mobile &&
+        {windowSize !== 'mobile' &&
           (demoUrl ? (
             <div
               className={clsx(

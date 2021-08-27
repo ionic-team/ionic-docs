@@ -1,5 +1,25 @@
 [
   {
+    "body": "<h3>Bug Fixes</h3>\n<ul>\n<li><strong>back-button:</strong> MD ripple now accounts for --ripple-color (<a href=\"https://github.com/ionic-team/ionic/issues/23749\">#23749</a>) (<a href=\"https://github.com/ionic-team/ionic/commit/6b18a89ac2c446082ce7faebe329157eedb13a0e\">6b18a89</a>), closes <a href=\"https://github.com/ionic-team/ionic/issues/23748\">#23748</a></li>\n<li><strong>img:</strong> correctly determine when to load image when scrolling quickly on slower devices (<a href=\"https://github.com/ionic-team/ionic/issues/23704\">#23704</a>) (<a href=\"https://github.com/ionic-team/ionic/commit/067e621bbc3865184ae114b8c91122188c13c860\">067e621</a>), closes <a href=\"https://github.com/ionic-team/ionic/issues/23703\">#23703</a></li>\n<li><strong>item-sliding:</strong> prevent scrolling during slide gesture (<a href=\"https://github.com/ionic-team/ionic/issues/23774\">#23774</a>) (<a href=\"https://github.com/ionic-team/ionic/commit/e0c4ad30bec3f2bd325d65b210ffb0437149810f\">e0c4ad3</a>), closes <a href=\"https://github.com/ionic-team/ionic/issues/19564\">#19564</a></li>\n<li><strong>nav:</strong> custom animation is now used correctly (<a href=\"https://github.com/ionic-team/ionic/issues/23779\">#23779</a>) (<a href=\"https://github.com/ionic-team/ionic/commit/f9415ef8a689e26078bdd01623348c79f9f818ad\">f9415ef</a>), closes <a href=\"https://github.com/ionic-team/ionic/issues/23777\">#23777</a></li>\n<li><strong>vue:</strong> using router.go now shows correct view (<a href=\"https://github.com/ionic-team/ionic/issues/23773\">#23773</a>) (<a href=\"https://github.com/ionic-team/ionic/commit/621f4faa1ab03137158127a56c7fe0aa1f7ae489\">621f4fa</a>), closes <a href=\"https://github.com/ionic-team/ionic/issues/22563\">#22563</a></li>\n</ul>\n",
+    "element": "Argon",
+    "name": "5.6.14",
+    "published_at": "August 18 2021",
+    "symbol": "Ar",
+    "tag_name": "v5.6.14",
+    "type": "patch",
+    "version": "5.6.14"
+  },
+  {
+    "body": "<h3>Bug Fixes</h3>\n<ul>\n<li><strong>checkbox, radio:</strong> change event interfaces correctly use TypeScript generics for value (<a href=\"https://github.com/ionic-team/ionic/issues/23044\">#23044</a>) (<a href=\"https://github.com/ionic-team/ionic/commit/8a941fd24cd138817a2e91c42898878a919538e4\">8a941fd</a>)</li>\n<li><strong>gesture:</strong> onEnd now correctly fires even if the event target was removed from the DOM  (<a href=\"https://github.com/ionic-team/ionic/issues/23713\">#23713</a>) (<a href=\"https://github.com/ionic-team/ionic/commit/4edb5e2fed55c8ea21eae50821d16d351bf3aebf\">4edb5e2</a>), closes <a href=\"https://github.com/ionic-team/ionic/issues/22819\">#22819</a></li>\n<li><strong>item-sliding:</strong> opening item while other items are open no longer requires multiple swipes (<a href=\"https://github.com/ionic-team/ionic/issues/23683\">#23683</a>) (<a href=\"https://github.com/ionic-team/ionic/commit/792864f8ab21dc178c1836a8a0d4fe2d305cc142\">792864f</a>), closes <a href=\"https://github.com/ionic-team/ionic/issues/21579\">#21579</a></li>\n<li><strong>react:</strong> IonTabs no longer causes SSR to fail (<a href=\"https://github.com/ionic-team/ionic/issues/23696\">#23696</a>) (<a href=\"https://github.com/ionic-team/ionic/commit/f2a05bed1e2a1150e8f1823bfed2d12a219d6ad0\">f2a05be</a>), closes <a href=\"https://github.com/ionic-team/ionic/issues/23651\">#23651</a></li>\n<li><strong>vue:</strong> improve accuracy of ion-page dev warning (<a href=\"https://github.com/ionic-team/ionic/issues/23677\">#23677</a>) (<a href=\"https://github.com/ionic-team/ionic/commit/fb260a9e09e6f3912b30ef2ebf581d3216483fea\">fb260a9</a>), closes <a href=\"https://github.com/ionic-team/ionic/issues/23675\">#23675</a></li>\n<li><strong>vue:</strong> tabs warning about user-provided router outlet change is now correctly logged (<a href=\"https://github.com/ionic-team/ionic/issues/23724\">#23724</a>) (<a href=\"https://github.com/ionic-team/ionic/commit/4a64e97a3e390e365101bbb477acad0ddc4671ff\">4a64e97</a>), closes <a href=\"https://github.com/ionic-team/ionic/issues/23719\">#23719</a></li>\n</ul>\n",
+    "element": "Argon",
+    "name": "5.6.13",
+    "published_at": "August 4 2021",
+    "symbol": "Ar",
+    "tag_name": "v5.6.13",
+    "type": "patch",
+    "version": "5.6.13"
+  },
+  {
     "body": "<h3>Bug Fixes</h3>\n<ul>\n<li><strong>action-sheet:</strong> header, subheader, and icon alignment better matches native ios (<a href=\"https://github.com/ionic-team/ionic/issues/23322\">#23322</a>) (<a href=\"https://github.com/ionic-team/ionic/commit/39315bc857b850347dca386776665e21c9742cad\">39315bc</a>), closes <a href=\"https://github.com/ionic-team/ionic/issues/23317\">#23317</a></li>\n<li><strong>button:</strong> buttons are now disabled during page transitions (<a href=\"https://github.com/ionic-team/ionic/issues/23589\">#23589</a>) (<a href=\"https://github.com/ionic-team/ionic/commit/3b803ebe024be3dbcf814a30a18df51ce23c8880\">3b803eb</a>), closes <a href=\"https://github.com/ionic-team/ionic/issues/23588\">#23588</a></li>\n<li><strong>item:</strong> mirror disabled prop to aria attribute (<a href=\"https://github.com/ionic-team/ionic/issues/23544\">#23544</a>) (<a href=\"https://github.com/ionic-team/ionic/commit/9021e7cc4b48a69ccc94faa7d2ddcb10a2afa340\">9021e7c</a>), closes <a href=\"https://github.com/ionic-team/ionic/issues/23513\">#23513</a></li>\n<li><strong>menu-button:</strong> custom aria-label can now be set (<a href=\"https://github.com/ionic-team/ionic/issues/23608\">#23608</a>) (<a href=\"https://github.com/ionic-team/ionic/commit/c08345df2ee3175f3f0d11ff877c7b6f1a102321\">c08345d</a>), closes <a href=\"https://github.com/ionic-team/ionic/issues/23604\">#23604</a></li>\n<li><strong>overlays:</strong> overlay interfaces are now exported from framework packages and documented (<a href=\"https://github.com/ionic-team/ionic/issues/23619\">#23619</a>) (<a href=\"https://github.com/ionic-team/ionic/commit/773bbcb211d3cf0caf38c25b44e666d98ddfafe5\">773bbcb</a>), closes <a href=\"https://github.com/ionic-team/ionic/issues/22790\">#22790</a></li>\n<li><strong>router-outlet:</strong> improve reliability of swipe back gesture when quickly swiping back (<a href=\"https://github.com/ionic-team/ionic/issues/23527\">#23527</a>) (<a href=\"https://github.com/ionic-team/ionic/commit/fa069424b265891852a07869b6d086a1cb041e93\">fa06942</a>), closes <a href=\"https://github.com/ionic-team/ionic/issues/22895\">#22895</a></li>\n</ul>\n",
     "element": "Argon",
     "name": "5.6.12",
@@ -228,15 +248,5 @@
     "tag_name": "v5.4.1",
     "type": "patch",
     "version": "5.4.1"
-  },
-  {
-    "body": "<blockquote>\n<p>This is the first stable release of Ionic Vue.</p>\n</blockquote>\n<p>Enjoy the Vue! :tada:</p>\n<h3>New to Ionic Vue?</h3>\n<p>Check out our <a href=\"https://ionicframework.com/docs/vue/quickstart\">Quickstart Guide</a> to get up and running. Then be sure to check out our <a href=\"https://ionicframework.com/docs/vue/your-first-app\">Building Your First App Guide</a> to learn how build a cross platform Ionic Vue application from start to finish!</p>\n",
-    "element": "Sulfur",
-    "name": "5.4.0 Sulfur",
-    "published_at": "October 15 2020",
-    "symbol": "S",
-    "tag_name": "v5.4.0",
-    "type": "minor",
-    "version": "5.4.0"
   }
 ]

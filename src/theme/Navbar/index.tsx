@@ -99,10 +99,10 @@ function Navbar(): JSX.Element {
   const windowSize = useWindowSize();
 
   const shouldLoadNavbarSidebar =
-    windowSize === windowSizes.mobile ? mobileNavbarSidebarLoaded : true;
+    windowSize === 'mobile' ? mobileNavbarSidebarLoaded : true;
 
   useEffect(() => {
-    if (windowSize === windowSizes.desktop) {
+    if (windowSize === 'desktop') {
       hideSidebar();
       hideNavbarSidebar();
     }
@@ -167,7 +167,7 @@ function Navbar(): JSX.Element {
             <NavbarItem {...item} key={i} />
           ))}
         </div>
-        {windowSize === windowSizes.mobile && (
+        {windowSize === 'mobile' && (
           <button
             aria-label={
               mobileNavbarSidebarOpen
