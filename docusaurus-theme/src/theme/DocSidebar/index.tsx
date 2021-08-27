@@ -5,7 +5,7 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import clsx from 'clsx';
 import {
   useThemeConfig,
@@ -17,16 +17,16 @@ import useWindowSize from '@theme/hooks/useWindowSize';
 import useScrollPosition from '@theme/hooks/useScrollPosition';
 import Logo from '@theme/Logo';
 import IconArrow from '@theme/IconArrow';
-import {translate} from '@docusaurus/Translate';
-import {DocSidebarItems} from '@theme/DocSidebarItem';
-import type {Props} from '@theme/DocSidebar';
+import { translate } from '@docusaurus/Translate';
+import { DocSidebarItems } from '@theme/DocSidebarItem';
+import type { Props } from '@theme/DocSidebar';
 
 import styles from './styles.module.css';
 
 function useShowAnnouncementBar() {
-  const {isClosed} = useAnnouncementBar();
+  const { isClosed } = useAnnouncementBar();
   const [showAnnouncementBar, setShowAnnouncementBar] = useState(!isClosed);
-  useScrollPosition(({scrollY}) => {
+  useScrollPosition(({ scrollY }) => {
     if (!isClosed) {
       setShowAnnouncementBar(scrollY === 0);
     }
@@ -34,7 +34,7 @@ function useShowAnnouncementBar() {
   return showAnnouncementBar;
 }
 
-function HideableSidebarButton({onClick}) {
+function HideableSidebarButton({ onClick }) {
   return (
     <button
       type="button"
@@ -52,32 +52,35 @@ function HideableSidebarButton({onClick}) {
         'button button--secondary button--outline',
         styles.collapseSidebarButton,
       )}
-      onClick={onClick}>
+      onClick={onClick}
+    >
       <IconArrow className={styles.collapseSidebarButtonIcon} />
     </button>
   );
 }
 
-function DocSidebarDesktop({path, sidebar, onCollapse, isHidden}: Props) {
+function DocSidebarDesktop({ path, sidebar, onCollapse, isHidden }: Props) {
   const showAnnouncementBar = useShowAnnouncementBar();
   const {
-    navbar: {hideOnScroll},
+    navbar: { hideOnScroll },
     hideableSidebar,
   } = useThemeConfig();
-  const {isClosed: isAnnouncementBarClosed} = useAnnouncementBar();
+  const { isClosed: isAnnouncementBarClosed } = useAnnouncementBar();
 
   return (
     <div
       className={clsx(styles.sidebar, {
         [styles.sidebarWithHideableNavbar]: hideOnScroll,
         [styles.sidebarHidden]: isHidden,
-      })}>
+      })}
+    >
       {hideOnScroll && <Logo tabIndex={-1} className={styles.sidebarLogo} />}
       <nav
         className={clsx('menu thin-scrollbar', styles.menu, {
           [styles.menuWithAnnouncementBar]:
             !isAnnouncementBarClosed && showAnnouncementBar,
-        })}>
+        })}
+      >
         <ul className="menu__list">
           <DocSidebarItems items={sidebar} activePath={path} />
         </ul>
@@ -127,8 +130,8 @@ export default function DocSidebar(props: Props): JSX.Element {
 
   return (
     <>
-      {shouldRenderSidebarDesktop && <DocSidebarDesktopMemo {...props} />}
-      {shouldRenderSidebarMobile && <DocSidebarMobileMemo {...props} />}
+      {/* {shouldRenderSidebarDesktop && <DocSidebarDesktopMemo {...props} />}
+      {shouldRenderSidebarMobile && <DocSidebarMobileMemo {...props} />} */}
     </>
   );
 }
