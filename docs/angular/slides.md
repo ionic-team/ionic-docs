@@ -4,12 +4,14 @@ We recommend <a href="http://swiperjs.com/" target="_blank" rel="noopener norefe
 
 This guide will go over how to get Swiper for Angular set up in your Ionic Framework application. It will also go over any migration information you may need to move from `ion-slides` to the official Swiper Angular integration.
 
+> This guide is only for Swiper v6. A guide for Swiper v7 is coming soon!
+
 ## Getting Started
 
 To get started, install the Swiper dependency in your project:
 
 ```shell
-npm install swiper
+npm install swiper@6
 ```
 
 ## Swiping with Style
