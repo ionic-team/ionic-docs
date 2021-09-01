@@ -18,14 +18,14 @@ Next, we need to import the base Swiper styles. We recommend importing the style
 
 ```javascript
 // slides.component.scss
-@import '~swiper/swiper';
+@import '~swiper/scss';
 ```
 
 Ionic Framework also provides some default styles, as well as the CSS Variables that were used inside of the old `ion-slides`. If you would like to continue to use those styles and CSS Variables, be sure to import the `ionic-swiper.css` file:
 
 ```javascript
 // slides.component.scss
-@import '~swiper/swiper';
+ '~swiper/scss';
 @import '~@ionic/angular/css/ionic-swiper';
 ```
 
@@ -38,7 +38,7 @@ For developers not using a CSS pre-processor, Swiper also provides the styles bu
 
 ```javascript
 // slides.component.css
-@import '~swiper/swiper-bundle.min';
+@import '~swiper/css/bundle';
 @import '~@ionic/angular/css/ionic-swiper';
 ```
 
@@ -139,7 +139,7 @@ export class SlidesExample {
 ```
 
 :::note
-Importing `swiper-bundle.min.css` imports styles for all modules. When using the SCSS or Less styles, you will need to import the styles for each module. See <a href="https://swiperjs.com/angular#styles" target="_blank" rel="noopener noreferrer">https://swiperjs.com/angular#styles</a> for a full list of stylesheets.
+Importing `swiper/css/bundle` imports styles for all modules. When using the SCSS or Less styles, you will need to import the styles for each module. See <a href="https://swiperjs.com/angular#styles" target="_blank" rel="noopener noreferrer">https://swiperjs.com/angular#styles</a> for a full list of stylesheets.
 :::
 ## Properties
 
