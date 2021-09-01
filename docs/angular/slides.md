@@ -61,9 +61,9 @@ export class AppModule {}
 <!-- swiper.component.html -->
 
 <swiper>
-  <swiper-slide>Slide 1</swiper-slide>
-  <swiper-slide>Slide 3</swiper-slide>
-  <swiper-slide>Slide 3</swiper-slide>
+  <ng-template swiperSlide>Slide 1</ng-template>
+  <ng-template swiperSlide>Slide 3</ng-template>
+  <ng-template swiperSlide>Slide 3</ng-template>
 </swiper>
 ```
 
@@ -132,9 +132,9 @@ export class SlidesExample {
   [pagination]="{ clickable: true }"
   navigation
 >
-  <swiper-slide>Slide 1</swiper-slide>
-  <swiper-slide>Slide 3</swiper-slide>
-  <swiper-slide>Slide 3</swiper-slide>
+  <ng-template swiperSlide>Slide 1</ng-template>
+  <ng-template swiperSlide>Slide 3</ng-template>
+  <ng-template swiperSlide>Slide 3</ng-template>
 </swiper>
 ```
 
@@ -164,9 +164,9 @@ To migrate, we would move these options out of the `options` object and onto the
   [slidesPerView]="3"
   [loop]="true"
 >
-  <swiper-slide>Slide 1</swiper-slide>
-  <swiper-slide>Slide 3</swiper-slide>
-  <swiper-slide>Slide 3</swiper-slide>
+  <ng-template swiperSlide>Slide 1</ng-template>
+  <ng-template swiperSlide>Slide 3</ng-template>
+  <ng-template swiperSlide>Slide 3</ng-template>
 </swiper>
 ```
 
@@ -203,9 +203,9 @@ To migrate, we would change the name of the event to `slideChange`:
 <swiper
   (slideChange)="onSlideChange()"
 >
-  <swiper-slide>Slide 1</swiper-slide>
-  <swiper-slide>Slide 3</swiper-slide>
-  <swiper-slide>Slide 3</swiper-slide>
+  <ng-template swiperSlide>Slide 1</ng-template>
+  <ng-template swiperSlide>Slide 3</ng-template>
+  <ng-template swiperSlide>Slide 3</ng-template>
 </swiper>
 ```
 
@@ -246,9 +246,9 @@ Accessing these properties can be tricky as you want to access the properties on
 <swiper
   (swiper)="setSwiperInstance($event)"
 >
-  <swiper-slide>Slide 1</swiper-slide>
-  <swiper-slide>Slide 3</swiper-slide>
-  <swiper-slide>Slide 3</swiper-slide>
+  <ng-template swiperSlide>Slide 1</ng-template>
+  <ng-template swiperSlide>Slide 3</ng-template>
+  <ng-template swiperSlide>Slide 3</ng-template>
 </swiper>
 ```
 
@@ -302,9 +302,9 @@ If you are using effects such as Cube or Fade, you can install them similar to h
 <swiper
   effect="fade"
 >
-  <swiper-slide>Slide 1</swiper-slide>
-  <swiper-slide>Slide 3</swiper-slide>
-  <swiper-slide>Slide 3</swiper-slide>
+  <ng-template swiperSlide>Slide 1</ng-template>
+  <ng-template swiperSlide>Slide 3</ng-template>
+  <ng-template swiperSlide>Slide 3</ng-template>
 </swiper>
 ```
 
