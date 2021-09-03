@@ -3,10 +3,26 @@ const nativeJSON = require('./data/native.json');
 const utils = require('./utils.js');
 const nativeOverrides = require('./data/meta-override.json').native;
 
+// Filter out some plugins
+const filteredPlugins = [
+  '@ionic-native/android-fingerprint-auth',
+  '@ionic-native/fingerprint-aio',
+  '@ionic-native/app-center-shared',
+  '@ionic-native/app-update',
+  '@ionic-native/hot-code-push',
+  '@ionic-native/in-app-update',
+  '@ionic-native/checkout',
+  '@ionic-native/secure-storage-echo',
+  '@ionic-native/secure-storage'
+];
+
+let plugins = nativeJSON.filter((plugin) => !filteredPlugins.includes(plugin.packageName));
+const data = fs.writeFileSync('./scripts/data/native.json', JSON.stringify(plugins, null, 2));
+
 (async function () {
   // console.log(cliJSON);
-
-  nativeJSON.map(writePage);
+  
+  plugins.map(writePage);
 })();
 
 function writePage(page) {
