@@ -31,7 +31,10 @@ export function usePhotoGallery() {
 
     // Use webPath to display the new image instead of base64 since it's
     // already loaded into memory
+    
+    // format is required from the new API
     return {
+      format: "jpeg",
       filepath: fileName,
       webviewPath: photo.webPath,
     };
