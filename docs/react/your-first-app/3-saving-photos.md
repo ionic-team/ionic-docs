@@ -19,7 +19,7 @@ Next, create a couple of new functions in `usePhotoGallery`:
 ```tsx
 export function usePhotoGallery() {
   const savePicture = async (
-    photo: CameraPhoto,
+    photo: Photo,
     fileName: string,
   ): Promise<Photo> => {
     const base64Data = await base64FromPath(photo.webPath!);
