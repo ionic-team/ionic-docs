@@ -34,7 +34,7 @@
     "packageName": "@ionic-native/adjust",
     "displayName": "Adjust",
     "description": "\nThis is the Ionic Cordova SDK of Adjust™. You can read more about Adjust™ at adjust.com.\n\nRequires Cordova plugin: `com.adjust.sdk`. For more info, please see the [Adjust Cordova SDK](https://github.com/adjust/cordova_sdk)\n",
-    "usage": "\n```typescript\n import { Adjust, AdjustConfig, AdjustEnvironment } from '@ionic-native/adjust';\n\n constructor(private adjust: Adjust) { }\n\n ...\n\n const config = new AdjustConfig('APP-TOKEN-HERE', AdjustEnvironment.Sandbox);\n config.logLevel = AdjustLogLevel.Verbose;\n // Set other config properties.\n adjust.create(config);\n\n```",
+    "usage": "\n```typescript\n import { Adjust, AdjustConfig, AdjustEnvironment } from '@ionic-native/adjust/ngx';\n\n constructor(private adjust: Adjust) { }\n\n ...\n\n const config = new AdjustConfig('APP-TOKEN-HERE', AdjustEnvironment.Sandbox);\n config.logLevel = AdjustLogLevel.Verbose;\n // Set other config properties.\n adjust.create(config);\n\n```",
     "platforms": [
       "Android",
       "iOS"
@@ -271,6 +271,20 @@
     }
   },
   {
+    "packageName": "@ionic-native/app-center-low-memory",
+    "displayName": "App Center Low Memory",
+    "description": "\nGenerates a low memory warning.\nFor more info, please see: https://github.com/Microsoft/appcenter-sdk-cordova/tree/master/cordova-plugin-appcenter-generate-low-memory\n",
+    "usage": "\n```typescript\nimport { LowMemory } from '@ionic-native/app-center-low-memory/ngx';\n\n...\n\nconstructor(private lowMemory: LowMemory) { }\n\nasync warning() {\n  await this.lowMemory.generateLowMemory();\n}\n```\n",
+    "platforms": [
+      "Android",
+      "iOS"
+    ],
+    "repo": "https://github.com/Microsoft/appcenter-sdk-cordova/tree/master/cordova-plugin-appcenter-generate-low-memory",
+    "cordovaPlugin": {
+      "name": "https://github.com/Microsoft/appcenter-sdk-cordova/tree/master/cordova-plugin-appcenter-generate-low-memory"
+    }
+  },
+  {
     "packageName": "@ionic-native/app-center-push",
     "displayName": "App Center Push",
     "description": "\n\nFor more info, please see https://docs.microsoft.com/en-us/appcenter/sdk/push/cordova\n",
@@ -334,7 +348,7 @@
     "packageName": "@ionic-native/app-rate",
     "displayName": "App Rate",
     "description": "\nThe AppRate plugin makes it easy to prompt the user to rate your app, either now, later, or never.\n\nRequires Cordova plugin: cordova-plugin-apprate. For more info, please see the [AppRate plugin docs](https://github.com/pushandplay/cordova-plugin-apprate).\n",
-    "usage": "\n```typescript\nimport { AppRate } from '@ionic-native/app-rate/ngx';\n\nconstructor(private appRate: AppRate) { }\n\n...\n// set certain preferences\nthis.appRate.preferences.storeAppURL = {\n  ios: '<app_id>',\n  android: 'market://details?id=<package_name>',\n  windows: 'ms-windows-store://review/?ProductId=<store_id>'\n}\n\nthis.appRate.promptForRating(true);\n\n// or, override the whole preferences object\nthis.appRate.preferences = {\n  usesUntilPrompt: 3,\n  storeAppURL: {\n   ios: '<app_id>',\n   android: 'market://details?id=<package_name>',\n   windows: 'ms-windows-store://review/?ProductId=<store_id>'\n  }\n}\n\nthis.appRate.promptForRating(false);\n```\n",
+    "usage": "\n```typescript\nimport { AppRate } from '@ionic-native/app-rate/ngx';\n\nconstructor(private appRate: AppRate) { }\n\n...\n// set certain preferences\nthis.appRate.setPreferences({\n  storeAppURL: {\n    ios: '<app_id>',\n    android: 'market://details?id=<package_name>',\n    windows: 'ms-windows-store://review/?ProductId=<store_id>'\n  }\n});\n\nthis.appRate.promptForRating(true);\n\n// or, override the whole preferences object\nthis.appRate.setPreferences({\n  usesUntilPrompt: 3,\n  storeAppURL: {\n   ios: '<app_id>',\n   android: 'market://details?id=<package_name>',\n   windows: 'ms-windows-store://review/?ProductId=<store_id>'\n  }\n});\n\nthis.appRate.promptForRating(false);\n```\n",
     "platforms": [
       "Android",
       "BlackBerry 10",
@@ -401,6 +415,20 @@
     "repo": "https://github.com/appodeal/appodeal-cordova-plugin",
     "cordovaPlugin": {
       "name": "https://github.com/appodeal/appodeal-cordova-plugin.git"
+    }
+  },
+  {
+    "packageName": "@ionic-native/approov-advanced-http",
+    "displayName": "HTTP",
+    "description": "\nCordova / Phonegap plugin for communicating with HTTP servers. Supports iOS and Android.\n\nAdvantages over Javascript requests:\n- SSL / TLS Pinning\n- CORS restrictions do not apply\n- Handling of HTTP code 401 - read more at [Issue CB-2415](https://issues.apache.org/jira/browse/CB-2415)\n\nNote: This plugin extends the pre-existing [cordova-advanced-http-plugin](https://github.com/silkimen/cordova-plugin-advanced-http),\nwe have only added approov functionality on top of it. All credit goes to the actual plugin developer.\n",
+    "usage": "\n```typescript\nimport { ApproovHttp } from '@ionic-native/http/ngx';\n\nconstructor(private http: ApproovHttp) {}\n\n...\n\nthis.http.get('http://ionic.io', {}, {})\n  .then(data => {\n\n    console.log(data.status);\n    console.log(data.data); // data received by server\n    console.log(data.headers);\n\n  })\n  .catch(error => {\n\n    console.log(error.status);\n    console.log(error.error); // error message as string\n    console.log(error.headers);\n\n  });\n\n```",
+    "platforms": [
+      "Android",
+      "iOS"
+    ],
+    "repo": "https://github.com/approov/quickstart-ionic-advancedhttp",
+    "cordovaPlugin": {
+      "name": "cordova-approov-advanced-http"
     }
   },
   {
@@ -675,6 +703,21 @@
     "repo": "https://github.com/SensorShare/cordova-plugin-blinkup",
     "cordovaPlugin": {
       "name": "cordova-plugin-blinkup"
+    }
+  },
+  {
+    "packageName": "@ionic-native/bluetooth-classic-serial-port",
+    "displayName": "Bluetooth Classic Serial Port",
+    "description": "This plugin is written using the iOS Accessory Framework (MFi) to support Classic Bluetooth on iOS.",
+    "usage": "\n```typescript\nimport { BluetoothClassicSerialPort } from '@ionic-native/bluetooth-classic-serial-port/ngx';\n\nconstructor(private bluetoothClassicSerialPort: BluetoothClassicSerialPort) { }\n\n\n// Write a string\nthis.bluetoothClassicSerialPort.write(\"00001101-0000-1000-8000-00805F9B34FB\", \"hello, world\", success, failure);\n\n// Array of int or bytes\nthis.bluetoothClassicSerialPort.write(\"00001101-0000-1000-8000-00805F9B34FB\", [186, 220, 222], success, failure);\n\n// Typed Array\nvar data = new Uint8Array(4);\ndata[0] = 0x41;\ndata[1] = 0x42;\ndata[2] = 0x43;\ndata[3] = 0x44;\nthis.bluetoothClassicSerialPort.write(interfaceId, data, success, failure);\n\n// Array Buffer\nthis.bluetoothClassicSerialPort.write(interfaceId, data.buffer, success, failure);\n```\n\n// iOS select accessory\n\n```typescript\n async selectAccessory() {\n   const deviceDiscovery = this.bluetoothClassicSerialPort.setDeviceDiscoveredListener().subscribe(async (connectionConfig) => {\n     deviceDiscovery.unsubscribe();\n   })\n\n   await this.bluetoothClassicSerialPort.discoverUnpaired().catch(error => {\n     deviceDiscovery.unsubscribe();\n   })\n\n }\n```\n\n",
+    "platforms": [
+      "Android",
+      "iOS",
+      "Browser"
+    ],
+    "repo": "https://github.com/MaximBelov/cordova-plugin-bluetooth-classic-serial-port",
+    "cordovaPlugin": {
+      "name": "cordova-plugin-bluetooth-classic-serial-port"
     }
   },
   {
@@ -2457,6 +2500,20 @@
     }
   },
   {
+    "packageName": "@ionic-native/local-backup",
+    "displayName": "LocalBackup",
+    "description": "\nThis plugin to create local backup\n",
+    "usage": "\n```typescript\nimport { LocalBackup } from '@ionic-native/local-backup/ngx';\n\n\nconstructor(private localBackup: LocalBackup) { }\n\n...\n\n\nthis.localBackup.create({data: {key: 'value'}})\n  .then((res: any) => console.log(res))\n  .catch((error: any) => console.error(error));\n\n```\n",
+    "platforms": [
+      "Android",
+      "iOS"
+    ],
+    "repo": "https://github.com/MaximBelov/cordova-plugin-local-backup",
+    "cordovaPlugin": {
+      "name": "cordova-plugin-local-backup"
+    }
+  },
+  {
     "packageName": "@ionic-native/local-notifications",
     "displayName": "Local Notifications",
     "description": "\nThis plugin allows you to display local notifications on the device\n",
@@ -2920,6 +2977,20 @@
     }
   },
   {
+    "packageName": "@ionic-native/paytabs",
+    "displayName": "PayTabs",
+    "description": "\nA plugin that allows you to use PayTabs's Native SDKs for Android and iOS.\n",
+    "usage": "\n```typescript\nimport { PayTabs } from '@ionic-native/paytabs/ngx';\n\nconstructor(private paytabs: PayTabs) { }\n\n...\nlet billingDetails: PaymentSDKBillingDetails = {\n   name: \"John Smith\",\n   email: \"email@domain.com\",\n   phone: \"+201111111111\",\n   addressLine: \"Address line\",\n   city: \"Dubai\",\n   state: \"Dubai\",\n   countryCode: \"AE\",\n   zip: \"1234\"\n };\n\nvar configuration: PaymentSDKConfiguration = {\n   profileID: \"*profile id*\",\n   serverKey: \"*server key*\",\n   clientKey: \"*cleint key*\",\n   cartID: \"12345\",\n   currency: \"USD\",\n   cartDescription: \"Flowers\",\n   merchantCountryCode: \"ae\",\n   merchantName: \"Flowers Store\",\n   amount: 20,\n   screenTitle:\"Pay with Card\",\n   billingDetails: billingDetails\n }\n\nthis.paytabs.startCardPayment(configuration)\n               .then(result => console.log(result))\n               .catch(error => console.error(error));\n\nthis.paytabs.startApplePayPayment(configuration)\n               .then(result => console.log(result))\n               .catch(error => console.error(error));\n\nthis.paytabs.startAlternativePaymentMethod(configuration)\n               .then(result => console.log(result))\n               .catch(error => console.error(error));\n\n```\n",
+    "platforms": [
+      "Android",
+      "iOS"
+    ],
+    "repo": "https://github.com/paytabscom/paytabs-cordova",
+    "cordovaPlugin": {
+      "name": "com.paytabs.cordova.plugin"
+    }
+  },
+  {
     "packageName": "@ionic-native/pdf-generator",
     "displayName": "PDFGenerator",
     "description": "\nSimple plugin to generate (offline) pdf. The plugin transforms HTML to PDF and also provide the mechanism to share the pdf to other apps like Mail, etc.\n",
@@ -3041,6 +3112,20 @@
     }
   },
   {
+    "packageName": "@ionic-native/pollfish",
+    "displayName": "Pollfish",
+    "description": "\nPollfish Ionic Native plugin wrapper\n",
+    "usage": "\n```typescript\nimport { Pollfish } from '@ionic-native/pollfish/ngx';\n\n\nconstructor(private pollfish: Pollfish) { }\n\n...\n\nthis.pollfish.init(false, false, 'YOUR_API_KEY', 1, 8, 'REQUEST_UUID', false);\n\nthis.pollfish.initWithUserAttributes(false, false, 'YOUR_API_KEY', 1, 8, 'REQUEST_UUID', false, {\n 'gender': '1',\n ...\n});\n\nthis.pollfish.showPollfish();\n\nthis.pollfish.hidePollfish();\n\n// Event Listeners\n\nthis.pollfish.setEventCallback(pollfish.EventListener.OnPollfishSurveyReceived, (surveyInfo) => {\n console.log(\"Survey Received: \" + JSON.stringify(surveyInfo));\n});\n\nthis.pollfish.setEventCallback(pollfish.EventListener.OnPollfishSurveyCompleted, (result) => {\n console.log(\"Survey Completed: \" + JSON.stringify(surveyInfo));\n});\n\nthis.pollfish.setEventCallback(pollfish.EventListener.OnPollfishUserNotEligible, (_) => {\n console.log(\"Pollfish User Not Eligible\");\n});\n\nthis.pollfish.setEventCallback(pollfish.EventListener.OnPollfishSurveyNotAvailable, (_) => {\n console.log(\"Pollfish Survey not available\");\n});\n\nthis.pollfish.setEventCallback(pollfish.EventListener.OnPollfishOpened, (_) => {\n console.log(\"Pollfish Survey panel is open\");\n});\n\nthis.pollfish.setEventCallback(pollfish.EventListener.OnPollfishClosed, (_) => {\n console.log(\"Pollfish Survey panel is closed\");\n});\n\nthis.pollfish.setEventCallback(pollfish.EventListener.OnPollfishUserRejectedSurvey, (_) => {\n console.log(\"Pollfish User Rejected Survey\");\n});\n\n```\n",
+    "platforms": [
+      "Android",
+      "iOS"
+    ],
+    "repo": "https://github.com/pollfish/cordova-plugin-pollfish",
+    "cordovaPlugin": {
+      "name": "com.pollfish.cordova_plugin"
+    }
+  },
+  {
     "packageName": "@ionic-native/power-management",
     "displayName": "Power Management",
     "description": "\nThe PowerManagement plugin offers access to the devices power-management functionality.\nIt should be used for applications which keep running for a long time without any user interaction.\n",
@@ -3057,18 +3142,16 @@
     }
   },
   {
-    "packageName": "@ionic-native/preview-any-file",
-    "displayName": "PreviewAnyFile",
-    "description": "\nWhatever the file is PDF document, Word document, Excel, office document,zip archive file, image, text, html or anything else, you can perform a preview by this cordova Plugin to preview any file in native mode by providing the local or external URL.\n\n Requires Cordova plugin: `cordova-plugin-preview-any-file`. For more info, please see the [previewAnyFile plugin docs](https://github.com/mostafa-mansour1/previewAnyFile).\n",
-    "usage": "\n```typescript\nimport { PreviewAnyFile } from '@ionic-native/preview-any-file/ngx';\n\n\nconstructor(private previewAnyFile: PreviewAnyFile) { }\n\n...\n\n\nthis.previewAnyFile.preview('file://filepath.ext')\n  .then((res: any) => console.log(res))\n  .catch((error: any) => console.error(error));\n\n```\n",
+    "packageName": "@ionic-native/power-optimization",
+    "displayName": "Power Optimization",
+    "description": "\nAndroid Custom Roms made sometimes your apps unfunctional due to being killed in the background, notification messages do not appearing or your services being killed by agressive power saving mode.\nThe Power Optimization plugin give you android PowerManager methods with cordova.\n",
+    "usage": "\n```typescript\nimport { PowerOptimization } from '@ionic-native/power-optimization/ngx';\n\nconstructor(private powerOptimization: PowerOptimization) { }\n\n...\n\nthis.powerOptimization.IsIgnoringBatteryOptimizations()\n  .then(onSuccess)\n  .catch(onError);\n\n```\n",
     "platforms": [
-      "Android",
-      "iOS"
+      "Android"
     ],
-    "repo": "https://github.com/mostafa-mansour1/previewAnyFile",
-    "installVariables": [],
+    "repo": "https://github.com/snt1017/cordova-plugin-power-optimization",
     "cordovaPlugin": {
-      "name": "cordova-plugin-preview-any-file"
+      "name": "cordova-plugin-power-optimization"
     }
   },
   {
@@ -3111,7 +3194,7 @@
     ],
     "repo": "https://github.com/RevenueCat/cordova-plugin-purchases",
     "cordovaPlugin": {
-      "name": "cordova-plugin-purchases@2.0.0"
+      "name": "cordova-plugin-purchases@2.3.0"
     }
   },
   {
@@ -3204,6 +3287,19 @@
     "repo": "https://github.com/regulaforensics/cordova-plugin-documentreader.git",
     "cordovaPlugin": {
       "name": "cordova-plugin-documentreader"
+    }
+  },
+  {
+    "packageName": "@ionic-native/restart",
+    "displayName": "Restart",
+    "description": "\nThis plugin to restart android application\n",
+    "usage": "\n```typescript\nimport { Restart } from '@ionic-native/restart';\n\n\nconstructor(private restart: Restart) { }\n\n...\n\n\nthis.restart.restart(true)\n  .then((res: any) => console.log(res))\n  .catch((error: any) => console.error(error));\n\n```\n",
+    "platforms": [
+      "Android"
+    ],
+    "repo": "https://github.com/MaximBelov/cordova-plugin-restart",
+    "cordovaPlugin": {
+      "name": "cordova-plugin-restart"
     }
   },
   {
@@ -3334,6 +3430,19 @@
     "repo": "https://github.com/tradedepot/cordova-shop-checkout",
     "cordovaPlugin": {
       "name": "cordova-plugin-shop-checkout"
+    }
+  },
+  {
+    "packageName": "@ionic-native/shortcuts-android",
+    "displayName": "ShortcutsAndroid",
+    "description": "\nUse this plugin to create shortcuts in Android. Use this plugin to handle Intents on your application.\nFor more information on Android App Shortcuts: https://developer.android.com/guide/topics/ui/shortcuts.html\nFor more information on Android Intents: https://developer.android.com/guide/components/intents-filters.html\n\nThe work that went into creating this plug-in was inspired by the existing plugins: cordova-plugin-shortcut and cordova-plugin-webintent2.\n",
+    "usage": "\nPlease do refer to the original plugin's repo for detailed usage. The usage example here might not be sufficient.\n\n```typescript\nimport { ShortcutsAndroid } from '@ionic-native/shortcuts-android/ngx';\n\n\nconstructor(private shortcutsAndroid: ShortcutsAndroid) { }\n\n...\n\nthis.shortcutsAndroid.supportsDynamic()\n  .then((supported: boolean) => console.log(`Dynamic shortcuts are ${supported ? '' : 'not'} supported`))\n  .catch((error: any) => console.error(error));\n\n```\n",
+    "platforms": [
+      "Android"
+    ],
+    "repo": "https://github.com/avargaskun/cordova-plugin-shortcuts-android",
+    "cordovaPlugin": {
+      "name": "cordova-plugin-shortcuts-android"
     }
   },
   {
@@ -3676,6 +3785,19 @@
     }
   },
   {
+    "packageName": "@ionic-native/system-alert-window-permission",
+    "displayName": "System Alert Window Permission",
+    "description": "\nThis plugin does something\n",
+    "usage": "\n```typescript\nimport { SystemAlertWindowPermission } from '@ionic-native/system-alert-window-permission/ngx';\n\n\nconstructor(private systemAlertWindowPermission: SystemAlertWindowPermission) { }\n\n...\n\n\nthis.systemAlertWindowPermission.hasPermission()\n  .then((res: any) => console.log(res))\n  .catch((error: any) => console.error(error));\n\nthis.systemAlertWindowPermission.requestPermission()\n  .then((res: any) => console.log(res))\n  .catch((error: any) => console.error(error));\n\n```\n",
+    "platforms": [
+      "Android"
+    ],
+    "repo": "https://github.com/MaximBelov/cordova-plugin-system-alert-window-permission.git",
+    "cordovaPlugin": {
+      "name": "cordova-plugin-system-alert-window-permission"
+    }
+  },
+  {
     "packageName": "@ionic-native/taptic-engine",
     "displayName": "Taptic Engine",
     "description": "\nAn Ionic plugin to use Taptic Engine API on iPhone 7, 7 Plus or newer.\n",
@@ -3727,6 +3849,20 @@
     "repo": "https://github.com/Tealium/cordova-plugin",
     "cordovaPlugin": {
       "name": "tealium-cordova-plugin"
+    }
+  },
+  {
+    "packageName": "@ionic-native/text-to-speech-advanced",
+    "displayName": "Text To Speech Advanced",
+    "description": "\nText to Speech plugin\n",
+    "usage": "\n```typescript\nimport { TextToSpeechAdvanced } from '@ionic-native/text-to-speech-advanced/ngx';\n\nconstructor(private tts: TextToSpeechAdvanced) { }\n\n...\n\nthis.tts.speak('Hello World')\n  .then(() => console.log('Success'))\n  .catch((reason: any) => console.log(reason));\n\n```",
+    "platforms": [
+      "Android",
+      "iOS"
+    ],
+    "repo": "https://github.com/spasma/cordova-plugin-tts-advanced",
+    "cordovaPlugin": {
+      "name": "cordova-plugin-tts-advanced"
     }
   },
   {
@@ -3872,8 +4008,8 @@
   {
     "packageName": "@ionic-native/unvired-cordova-sdk",
     "displayName": "Unvired Cordova SDK",
-    "description": "\nThis plugin lets you build apps which connect to Unvired Mobile Platform (UMP).\n-\niOS Requirements\n-\nThis plugin uses Cocoapods to install dependent libraries. Please make sure you have a valid Cocoapods installation.\nOnce you have it ready, do update the cocoapods repo by running the following command before you install this plugin.\n```\npod repo update\n```",
-    "usage": "\n```typescript\nimport { UnviredCordovaSDK } from '@ionic-native/unvired-cordova-sdk/ngx';\n\n\nconstructor(private unviredSDK: UnviredCordovaSDK) { }\n\n...\n// This is usually done in app.component.ts of your app.\n// Before you can interact with UMP, you need to initialize the SDK and authenticate with UMP.\n// SDK Initialization\nlet loginParameters = new LoginParameters()\nloginParameters.appName = 'UNVIRED_DIGITAL_FORMS'\nloginParameters.metadataPath = '../assets/metadata.json'\nlet loginResult: LoginResult\ntry {\n  loginResult = await this.unviredSDK.login(loginParameters)\n}\ncatch (error) {\n  this.unviredSDK.logError(\"AppComponent\", \"Initialize\", \"Error during login: \" + error)\n}\n\n\nswitch (loginResult.type) {\ncase LoginListenerType.auth_activation_required:\n// App is not activated. i.e, User is using the app for the very first time.\n// App needs to be activated before it can interact with UMP.\n// At this point of time, you basically navigate to a login screen & accept username / password from the user.\n// Set the username & password to loginParameters object and call authenticateAndActivate\ntry {\n // Execute this block of code in a login screen.\nlet loginParameters = new LoginParameters();\nloginParameters.url = '<UMP_URL>';\nloginParameters.company = '<Company>';\nloginParameters.username = '<Username>';\nloginParameters.password = '<Password>';\nloginParameters.loginType = LoginType.unvired;\nlet authenticateActivateResult: AuthenticateActivateResult = await this.unviredSDK.authenticateAndActivate(loginParameters);\nif (authenticateActivateResult.type === AuthenticateAndActivateResultType.auth_activation_success) {\n// App is fully setup. Navigate to your app's home screen.\n} else if (authenticateActivateResult.type === AuthenticateAndActivateResultType.auth_activation_error) {\nconsole.log(\"Error during login: \" + authenticateActivateResult.error)\n} catch (error) {\nthis.unviredSDK.logError('LoginPage', 'auth_activation_required', 'ERROR: ' + error);\n}\nbreak;\n\n\n\ncase LoginListenerType.app_requires_login:\n// App is already activated. But, the user needs to enter credentials because the setting LOCAL_PASSWORD is set to YES in Unvired Admin Cockpit.\n// To set LOCAL_PASSWORD property for your app, contact your administrator.\ntry {\n // Execute this block of code in a login screen.\n let loginParameters = new LoginParameters()\n loginParameters.username = '<Username>';\n loginParameters.password = '<Password>';\n let authenticateLocalResult: AuthenticateLocalResult = await this.unviredSDK.authenticateLocal(loginParameters);\n if (authenticateLocalResult.type === AuthenticateLocalResultType.login_success) {\n // App is fully setup. Navigate to your app's home screen.\n } else if (authenticateLocalResult.type === AuthenticateLocalResultType.login_error) {\n  console.log(\"Error during local login: \" + authenticateActivateResult.error)\n } catch (error) {\n  this.unviredSDK.logError('LoginPage', 'app_requires_login', 'ERROR: ' + error);\n}\nbreak;\n\n\n\ncase login_success:\n// The setting LOCAL_PASSWORD is set to false.\n// App is fully initialized. Users can interact with the UMP\n// Navigate to Home screen\nbreak;\n}\n\n\n\n\n\n// Synchronization APIs\n// Make sync call.\nlet result = await this.unviredSDK.syncForeground(RequestType.QUERY, null, {\"CUSTOMER_HEADER\": {\"field1\" : \"value1\", \"field2\" : \"value2\"}}, 'UNVIRED_DIGITAL_FORMS_PA_MOBILE_GET_USERS', true)\n\n// Make async call.\nlet result = await this.unviredSDK.syncBackground(RequestType.QUERY, null, inputObj, 'UNVIRED_DIGITAL_FORMS_PA_MOBILE_GET_USERS', 'INPUT_GET_USERS', 'GUID', false)\n// Note: Subscribe to NotificationListener to get updates on data processing in background\n// However, only one screen can listen to background data updates at any point of time.\nthis.unviredSDK.registerNotifListener().subscribe( data => {\nswitch (data.type) {\ncase NotificationListenerType.dataSend:\nbreak;\ncase NotificationListenerType.dataChanged:\nbreak;\ncase NotificationListenerType.dataReceived:\nbreak;\n.\n.\n.\n}})\n\n\n\n\n\n// Database APIs\n// Insert a record onto database\nthis.unviredsdk.dbInsert(\"CUSTOMER_HEADER\", {\"NAME\":\"USER\",\"NO\":\"0039\"}, true);\n\n// Update a record in database\nthis.unviredSDK.dbUpdate('CUSTOMER_HEADER', {\"NAME\":\"UPDATED_USER\",\"NO\":\"UPDATED_NO\"}, \"FORM_ID = '5caed815892215034dacad56'\")\n\n// Delete a record in database\nthis.unviredSDK.dbDelete('CUSTOMER_HEADER', \"FORM_ID = '5caed815892215034dacad56'\")\n\n// Execute a SQL Query\nthis.unviredSDK.dbExecuteStatement('SELECT * FROM CUSTOMER_HEADER WHERE CUSTOMER_ID = \"0039\"')\n",
+    "description": "\nThis plugin lets you build apps which connect to Unvired Mobile Platform (UMP).\n-\niOS Requirements\n-\nUpdate your Cocoapods repo before you install the plugin.\n```\n$ pod repo update\n```\n-\nBrowser Requirements\n-\nAfter you install the plugin, for Ionic/Angular projects, please add a reference to the following JS files within <head></head> section of index.html.\n```\n<script src=\"assets/js/sql.js\"></script>\n<script src=\"assets/js/kernel.js\"></script>\n<script src=\"assets/js/winstore-jscompat.js\"></script>\n<script src=\"assets/js/jquery-3.2.1.js\"></script>\n```",
+    "usage": "\n```typescript\nimport { UnviredCordovaSDK } from '@ionic-native/unvired-cordova-sdk/ngx';\n\n\nconstructor(private unviredSDK: UnviredCordovaSDK) { }\n\n...\n// This is usually done in app.component.ts of your app.\n// Before you can interact with UMP, you need to initialize the SDK and authenticate with UMP.\n// SDK Initialization\nlet loginParameters = new LoginParameters()\nloginParameters.appName = 'UNVIRED_DIGITAL_FORMS'\nloginParameters.metadataPath = '../assets/metadata.json'\nlet loginResult: LoginResult\ntry {\n  loginResult = await this.unviredSDK.login(loginParameters)\n}\ncatch (error) {\n  this.unviredSDK.logError(\"AppComponent\", \"Initialize\", \"Error during login: \" + error)\n}\n\n\nswitch (loginResult.type) {\ncase LoginListenerType.auth_activation_required:\n// App is not activated. i.e, User is using the app for the very first time.\n// App needs to be activated before it can interact with UMP.\n// At this point of time, you basically navigate to a login screen & accept username / password from the user.\n// Set the username & password to loginParameters object and call authenticateAndActivate\ntry {\n // Execute this block of code in a login screen.\nlet loginParameters = new LoginParameters();\nloginParameters.url = '<UMP_URL>';\nloginParameters.company = '<Company>';\nloginParameters.username = '<Username>';\nloginParameters.password = '<Password>';\nloginParameters.loginType = LoginType.unvired;\nlet authenticateActivateResult: AuthenticateActivateResult = await this.unviredSDK.authenticateAndActivate(loginParameters);\nif (authenticateActivateResult.type === AuthenticateAndActivateResultType.auth_activation_success) {\n// App is fully setup. Navigate to your app's home screen.\n} else if (authenticateActivateResult.type === AuthenticateAndActivateResultType.auth_activation_error) {\nconsole.log(\"Error during login: \" + authenticateActivateResult.error)\n} catch (error) {\nthis.unviredSDK.logError('LoginPage', 'auth_activation_required', 'ERROR: ' + error);\n}\nbreak;\n\n\n\ncase LoginListenerType.app_requires_login:\n// App is already activated. But, the user needs to enter credentials because the setting LOCAL_PASSWORD is set to YES in Unvired Admin Cockpit.\n// To set LOCAL_PASSWORD property for your app, contact your administrator.\ntry {\n // Execute this block of code in a login screen.\n let loginParameters = new LoginParameters()\n loginParameters.username = '<Username>';\n loginParameters.password = '<Password>';\n let authenticateLocalResult: AuthenticateLocalResult = await this.unviredSDK.authenticateLocal(loginParameters);\n if (authenticateLocalResult.type === AuthenticateLocalResultType.login_success) {\n // App is fully setup. Navigate to your app's home screen.\n } else if (authenticateLocalResult.type === AuthenticateLocalResultType.login_error) {\n  console.log(\"Error during local login: \" + authenticateActivateResult.error)\n } catch (error) {\n  this.unviredSDK.logError('LoginPage', 'app_requires_login', 'ERROR: ' + error);\n}\nbreak;\n\n\n\ncase login_success:\n// The setting LOCAL_PASSWORD is set to false.\n// App is fully initialized. Users can interact with the UMP\n// Navigate to Home screen\nbreak;\n}\n\n\n\n\n\n// Synchronization APIs\n// Example 1: Make a Sync RQST call\n```\nawait this.unviredSDK.syncForeground(RequestType.RQST, {\"CUSTOMER_HEADER\": {\"CUST_NO\" : \"007\", \"CUST_NAME\" : \"James Bond\"}}, '', 'PA_GET_CUSTOMER_DETAILS', true)\n```\n\n// Example 2: Make a Sync QUERY / PULL call\n```\nawait this.unviredSDK.syncForeground(RequestType.QUERY, '', {\"CUSTOMER_SEARCH_CONTEXT\":[{\"CUSTOMER_SEARCH_HEADER\":{\"CUST_NO\":\"007\"}}]}, 'PA_SEARCH_CUSTOMER', true)\n```\n\nExample 3: Make a Async RQST call\n```\nawait this.unviredSDK.syncBackground(RequestType.RQST, {\"CUSTOMER_HEADER\": {\"CUST_NO\" : \"007\", \"CUST_NAME\" : \"James Bond\"}}, '', 'PA_GET_CUSTOMER_DETAILS', 'CUSTOMER', beLID, false)\n```\n\nExample 4: Make a Async QUERY / PULL call\n```\nawait this.unviredSDK.syncBackground(RequestType.QUERY, '', {\"CUSTOMER_SEARCH_CONTEXT\":[{\"CUSTOMER_SEARCH_HEADER\":{\"CUST_NO\":\"007\"}}]}, 'PA_SEARCH_CUSTOMER', '', '', true)\n```\n\n// Note: Subscribe to NotificationListener to get updates on data processing in background\n// However, only one screen can listen to background data updates at any point of time.\nthis.unviredSDK.registerNotifListener().subscribe( data => {\nswitch (data.type) {\ncase NotificationListenerType.dataSend:\nbreak;\ncase NotificationListenerType.dataChanged:\nbreak;\ncase NotificationListenerType.dataReceived:\nbreak;\n.\n.\n.\n}})\n\n\n\n\n\n// Database APIs\n// Insert a record onto database\nthis.unviredsdk.dbInsert(\"CUSTOMER_HEADER\", {\"NAME\":\"James Bond\",\"CUST_NO\":\"007\"}, true);\n\n// Update a record in database\nthis.unviredSDK.dbUpdate('CUSTOMER_HEADER', {\"NAME\":\"John Doe\",\"CUST_NO\":\"008\"}, \"CUST_NO = '007'\")\n\n// Delete a record in database\nthis.unviredSDK.dbDelete('CUSTOMER_HEADER', \"CUST_NO = '007'\")\n\n// Execute a SQL Query\nthis.unviredSDK.dbExecuteStatement('SELECT * FROM CUSTOMER_HEADER WHERE CUSTOMER_ID = \"007\"')\n",
     "platforms": [
       "iOS",
       "Android",
@@ -3883,7 +4019,7 @@
     "repo": "https://github.com/unvired/cordova-plugin-unvired-sdk/",
     "installVariables": [],
     "cordovaPlugin": {
-      "name": "https://github.com/unvired/cordova-plugin-unvired-sdk"
+      "name": "cordova-plugin-unvired-sdk"
     }
   },
   {
@@ -4041,9 +4177,9 @@
       "Android",
       "iOS"
     ],
-    "repo": "https://github.com/bykof/cordova-plugin-webserver.git",
+    "repo": "https://github.com/nguyenthanh1995/cordova-plugin-webserver2.git",
     "cordovaPlugin": {
-      "name": "cordova-plugin-webserver"
+      "name": "cordova-plugin-webserver2"
     }
   },
   {
