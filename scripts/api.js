@@ -148,6 +148,7 @@ function renderProperties({ props: properties }) {
     return '';
   }
 
+  // NOTE: replaces | with U+FF5C since MDX renders \| in tables incorrectly
   return `
 ## Properties
 
@@ -160,7 +161,7 @@ ${properties
 | --- | --- |
 | **Description** | ${prop.docs.split('\n').join('<br />')} |
 | **Attribute** | \`${prop.attr}\` |
-| **Type** | \`${prop.type.replace(/\|/g, '\\|')}\` |
+| **Type** | \`${prop.type.replace(/\|/g, '\uff5c')}\` |
 | **Default** | \`${prop.default}\` |
 
 `,
@@ -189,6 +190,7 @@ function renderMethods({ methods }) {
     return '';
   }
 
+  // NOTE: replaces | with U+FF5C since MDX renders \| in tables incorrectly
   return `
 ## Methods
 
@@ -200,7 +202,7 @@ ${methods
 | | |
 | --- | --- |
 | **Description** | ${method.docs.split('\n').join('<br />')} |
-| **Signature** | \`${method.signature.replace(/\|/g, '\\|')}\` |
+| **Signature** | \`${method.signature.replace(/\|/g, '\uff5c')}\` |
 `,
   )
   .join('\n')}
