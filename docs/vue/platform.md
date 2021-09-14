@@ -45,28 +45,40 @@ Below is a table listing all the possible platform values along with correspondi
 | pwa           | a PWA app                                |
 | tablet        | a tablet device                          |
 
-## Customizing Platform Detection Methods
+## Customizing Platform Detection Functions
 
-The method used to detect a specific platform can also be overridden by providing an alternative method in the global Ionic [config](/docs/vue/config). Each method takes `window` as a parameter and returns a boolean. 
+The function used to detect a specific platform can also be overridden by providing an alternative function in the global Ionic [config](/docs/vue/config). Each mfunction takes `window` as a parameter and returns a boolean. 
 
 ```tsx
 createApp(App).use(IonicVue, {
   platform: {
-    /** The default `desktop` method returns false for devices with a touchscreen. 
-     * This is not always wanted, so this method tests the User Agent instead.
+    /** The default `desktop` function returns false for devices with a touchscreen. 
+     * This is not always wanted, so this function tests the User Agent instead.
      **/
     'desktop': (win) => {
       const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(win.navigator.userAgent);
       return !isMobile;
-    } as PlatformConfig
+    }
   },
 });
 ```
 
 ```ts
 type PlatformConfig = {
-    mobile?: ((win: Window) => boolean) | undefined;
+    android?: ((win: Window) => boolean) | undefined;
+    capacitor?: ((win: Window) => boolean) | undefined;
+    cordova?: ((win: Window) => boolean) | undefined;
     desktop?: ((win: Window) => boolean) | undefined;
-    // ... 12 more
+    electron?: ((win: Window) => boolean) | undefined;
+    hybrid?: ((win: Window) => boolean) | undefined;
+    ios?: ((win: Window) => boolean) | undefined;
+    ipad?: ((win: Window) => boolean) | undefined;
+    iphone?: ((win: Window) => boolean) | undefined;
+    mobile?: ((win: Window) => boolean) | undefined;
+    mobileweb?: ((win: Window) => boolean) | undefined;
+    phablet?: ((win: Window) => boolean) | undefined;
+    pwa?: ((win: Window) => boolean) | undefined;
+    tablet?: ((win: Window) => boolean) | undefined;
 }
+```
 ```
