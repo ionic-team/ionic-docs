@@ -54,6 +54,42 @@ Below is a table listing all the possible platform values along with correspondi
 | pwa           | a PWA app                                |
 | tablet        | a tablet device                          |
 
+#### Customizing Platform Detection Methods
+
+The method used to detect a specific platform can also be overridden by providing an alternative method in the global Ionic [config](/docs/react/config). Each method takes `window` as a parameter and returns a boolean. 
+
+```tsx
+import { IonicModule } from '@ionic/angular';
+
+@NgModule({
+  ...
+  imports: [
+    BrowserModule,
+    IonicModule.forRoot({
+      platform: {
+        /** The default `desktop` method returns false for devices with a touchscreen. 
+        * This is not always wanted, so this method tests the User Agent instead.
+        **/
+        'desktop': (win) => {
+          const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(win.navigator.userAgent);
+          return !isMobile;
+        } as PlatformConfig
+      },
+    }),
+    AppRoutingModule
+  ],
+  ...
+})
+```
+
+```ts
+type PlatformConfig = {
+    mobile?: ((win: Window) => boolean) | undefined;
+    desktop?: ((win: Window) => boolean) | undefined;
+    // ... 12 more
+}
+```
+
 ### `platforms() => string[]`
 
 Depending on what device you are on, `platforms` can return multiple values. Each possible value is a hierarchy of platforms. For example, on an iPhone, it would return `mobile`, `ios`, and `iphone`.
