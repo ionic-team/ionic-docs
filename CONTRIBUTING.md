@@ -211,7 +211,7 @@ If you're looking for issues to help out with, we'd recommend either asking abou
 
 ## Deploying
 
-The Ionic documentation's `master` branch is deployed automatically and separately from the [Ionic site](https://github.com/ionic-team/ionic-site) itself. The Ionic site then uses a proxy for paths under `/docs` to request the deployed documentation.
+The Ionic documentation's `main` branch is deployed automatically and separately from the [Ionic site](https://github.com/ionic-team/ionic-site) itself. The Ionic site then uses a proxy for paths under `/docs` to request the deployed documentation.
 
 ---
 
