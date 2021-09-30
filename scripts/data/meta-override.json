@@ -52,6 +52,10 @@
       "title": "Item Divider | List Item Divider Block Element for Ionic Apps",
       "description": "Item Dividers are block elements that can be used to separate items in a list. They are similar to list headers, but instead, go in between groups of items."
     },
+    "ion-item-group": {
+      "title": "ion-item-group: Group Items to Divide into Multiple Sections",
+      "description": "Item groups are containers that organize similar items together. ion-item-groups can contain item dividers to divide the items into multiple sections. "
+    },
     "ion-item-sliding": {
       "title": "Slide Buttons | Slide Right to Left with ion-item-sliding",
       "description": "ion-item-sliding component contains items that are dragged to reveal buttons. Options are revealed when the sliding item is swiped from left to right."
@@ -252,9 +256,17 @@
       "title": "Cordova Diagnostic Plugin to Check Device Hardware Features",
       "description": "The Cordova Diagnostic plugin checks whether iOS, Android, or Windows device hardware features are enabled or available to the app. Read to learn more."
     },
+    "dialogs": {
+      "title": "Dialogs | Cordova Plugin to Customize Native App Device Dialogs",
+      "description": "The Dialogs plugin gives you ability to access and customize the device native dialogs. Read to learn more about the Cordova Dialogs plugin on Ionic apps."
+    },
     "document-viewer": {
       "title": "Document Viewer | Cordova Plugin Document Viewer for PDF Files",
       "description": "Cordova plugin document viewer offers a slim API to view PDF files either stored in the apps assets folder or in any other file system directory available."
+    },
+    "downloader": {
+      "title": "Downloader Plugin | Android File Downloader Plugin for Ionic Apps",
+      "description": "The Downloader plugin is designed to support downloading files using Android DownloadManager. Read to learn more about the Cordova Android File Downloader."
     },
     "email-composer": {
       "title": "Email Composer | Cordova-Plugin-Email-Composer for Ionic Apps",
@@ -288,6 +300,10 @@
       "title": "Firebase Authentication | Cordova-Plugin-Firebase-Authentication",
       "description": "Firebase Authentication is supported on Ionic apps using the cordova-plugin-firebase-authentication. Read to learn more about Ionic Firebase Authentication use."
     },
+    "firebase-crashlytics": {
+      "title": "Firebase Crashlytics: Google Crash Analytics Plugin iOS/Android",
+      "description": "Firebase Crashlytics is a Google crash analytics plugin to capture iOS/Android device crash reports. Read to learn about cordova-plugin-firebase-crashlytics."
+    },
     "firebase-x": {
       "title": "Firebase X | Cordova Firebase X Ionic Native App Plugin",
       "description": "The Firebase X plugin brings push notifications, analytics, event tracking, and more from Google Firebase to your Cordova project on Ionic Framework apps!"
@@ -295,6 +311,10 @@
     "geolocation": {
       "title": "Geolocation | W3C Geolocator Application API Plugin",
       "description": "This application plugin is based on W3C Geolocation API Specification and only executes on devices that don't already provide an implementation for location."
+    },
+    "globalization": {
+      "title": "Cordova-Plugin-Globalization for Locale, Language, and Time zone",
+      "description": "Cordova-Plugin-Globalization obtains information and performs operations specific to the user's locale, language, and time zone. Read to learn more."
     },
     "google-analytics": {
       "title": "Google Analytics: iOS & Android App Plugin - Ionic Documentation",
@@ -307,6 +327,10 @@
     "image-picker": {
       "title": "Image Picker | Cordova-Plugin-Image-Picker for Ionic Apps",
       "description": "Image picker is a Cordova Plugin for multiple image selection. Read to learn about usage, platforms, and other requirements for image picker installation."
+    },
+    "image-resizer": {
+      "title": "Image Resizer: Cordova Plugin for Image Resize on Ionic Apps",
+      "description": "Image Resizer is the Cordova plugin for image resize on Ionic apps. Read to learn about the Image Resizer plugin installation, usage, and supported platforms."
     },
     "ionic-webview": {
       "title": "WebView | Ionic Framework Cordova WebView App Plugin",
@@ -355,6 +379,14 @@
     "onesignal": {
       "title": "OneSignal | OneSignal Cordova SDK Push Notification Plugin",
       "description": "The OneSignal Cordova SDK plugin is a simple implementation for delivering push notifications on Ionic apps. Read our OneSignal Documentation to learn more."
+    },
+    "open-native-settings": {
+      "title": "Open Native App Settings: Open Android/iOS Device Settings",
+      "description": "The Open Native Settings plugin is compatible with Android and iOS devices. Read to learn more about plugin usage for opening settings in a Native Ionic app."
+    },
+    "paypal": {
+      "title": "Install PayPal Mobile SDK Plugin - Ionic API Documentation",
+      "description": "Install the Cordova Paypal Mobile SDK plugin for Native Ionic apps. Read our PayPal API Documentation to learn more about usage and supported platforms."
     },
     "pdf-generator": {
       "title": "PDFGenerator | iOS & Android HTML PDF Generator Plugin",
@@ -408,6 +440,10 @@
       "title": "Stripe Plugin Documentation: Use Stripe's SDKs on iOS or Android",
       "description": "The cordova-plugin-stripe let's you use Stripe's Native SDKs for Android and iOS. Read Ionic's Stripe Documentation to learn more about use and installation."
     },
+    "video-capture-plus": {
+      "title": "Video Capture Plus Plugin for Extra Video Capturing Capabilities",
+      "description": "The Video Capture Plus plugin offers useful extras on top of the default Media Capture Plugin capabilities. Read to learn about extra video capturing abilities."
+    },
     "video-player": {
       "title": "VideoPlayer | Ionic Native Cordova-Plugin-VideoPlayer",
       "description": "The VideoPlayer plugin allows you to immediately play a video in fullscreen mode. Read for more information on cordova-plugin-videoplayer for Ionic Native apps."
@@ -415,6 +451,10 @@
     "youtube-video-player": {
       "title": "YouTube Video Player | Cordova Plugin for Native YouTube App",
       "description": "The Cordova YouTube Video Player Plugin on Ionic apps lets you play YouTube videos in the Native YouTube App. Read more about usage in Ionic Documentation."
+    },
+    "zoom": {
+      "title": "Cordova Zoom Plugin: Zoom-SDK-Ionic for Native Ionic Apps",
+      "description": "Zoom-SDK-Ionic is a Cordova plugin to use Zoom Video Conferencing services on Cordova apps. Read our Zoom Docs to learn more about the Ionic Native Zoom plugin."
     }
   }
 }

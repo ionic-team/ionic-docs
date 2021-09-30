@@ -1,4 +1,7 @@
 ---
+meta:
+  title: "React Lifecycle: A Guide to Ionic React App Component Lifecycles"
+  description: "The React Lifecycle guide discusses how to use the Ionic Lifecycle events in an Ionic React application. Read to learn more about React component lifecycles."
 previousText: 'Your First App'
 previousUrl: '/docs/react/your-first-app'
 nextText: 'Navigation'

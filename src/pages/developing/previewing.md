@@ -1,4 +1,7 @@
 ---
+meta:
+  title: "Previewing: To Run Ionic Apps Locally in A Web Browser"
+  description: "Previewing provides many different options to test native functionality based on needs. Use this feature to easily run your Ionic app locally in a web browser."
 previousText: 'Starting'
 previousUrl: '/docs/developing/starting'
 nextText: 'Scaffolding'

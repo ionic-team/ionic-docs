@@ -1,5 +1,8 @@
 ---
 template: api-index
+meta:
+  title: "API Index | Ionic Docs API Index for all API Custom Elements"
+  description: "Each component in the Ionic Docs API Index consists of one or more custom elements—which each, in turn, may expose methods, events, and CSS custom properties."
 ---
 
 # API Index

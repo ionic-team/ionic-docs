@@ -1,4 +1,7 @@
 ---
+meta:
+  title: "Config | Ionic Config to Change Component Properties Globally"
+  description: "Ionic Config provides a way to change the properties of components globally across an app. Config can set the app mode, tab button layout, animations, and more."
 previousText: 'Navigation/Routing'
 previousUrl: '/docs/angular/navigation'
 nextText: 'Platform'
