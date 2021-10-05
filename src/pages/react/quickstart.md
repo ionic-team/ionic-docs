@@ -362,7 +362,7 @@ export const IconExample: React.FC = () => {
 };
 ```
 
-Note that for React, we're passing the imported SVG reference, NOT the icon name as a string.
+Note that for React, we are passing the imported SVG reference, **not** the icon name as a string.
 
 Developers also have the option of setting different icons based upon the mode:
 
