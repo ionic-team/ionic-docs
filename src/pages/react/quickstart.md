@@ -343,6 +343,43 @@ return (
 
 Here, when we reload, if there is no app history present, we'll be able to navigate back to our home route.
 
+## Adding Icons
+
+Ionic React comes with (https://ionic.io/ionicons/) pre-installed. All you need to do is import the icon of your choice from the `ionicons` package, and pass it to an `IonIcon` component through the `icon` prop:
+
+```tsx
+import React from 'react';
+import { IonButton, IonContent, IonIcon } from '@ionic/react';
+import { camera } from 'ionicons/icons';
+
+export const IconExample: React.FC = () => {
+  <IonContent>
+    <IonButton>
+      <IonIcon icon={camera} />
+      Take Picture
+    </IonButton>
+  </IonContent>
+};
+```
+
+Note that for React, we are passing the imported SVG reference, **not** the icon name as a string.
+
+Developers also have the option of setting different icons based upon the mode:
+
+```tsx
+import React from 'react';
+import { IonButton, IonContent, IonIcon } from '@ionic/react';
+import { logoAndroid, logoApple } from 'ionicons/icons';
+
+export const IconExample: React.FC = () => {
+  <IonContent>
+    <IonButton>
+      <IonIcon ios={logoApple} md={logoAndroid} />
+    </IonButton>
+  </IonContent>
+};
+```
+
 ## Build a Native App
 
 We now have the basics of an Ionic React app down, including some UI components and navigation. The great thing about Ionic’s components is that they work anywhere, including iOS, Android, and PWAs. To deploy to mobile, desktop, and beyond, we use Ionic’s cross-platform app runtime [Capacitor](https://capacitor.ionicframework.com). It provides a consistent, web-focused set of APIs that enable an app to stay as close to web-standards as possible while accessing rich native device features on platforms that support them.
