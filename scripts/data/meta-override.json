@@ -1,5 +1,9 @@
 {
   "api": {
+    "ion-alert": {
+      "title": "ion-alert: Ionic API Alert Buttons with Custom Message Prompts",
+      "description": "ion-alert dialog presents or collects information using inputs. Custom alert button messages appear above the app's content and must be manually dismissed."
+    },
     "ion-avatar": {
       "title": "ion-avatar: Circular Application Avatar Icon Component",
       "description": "Ion-avatars are circular application components that wrap an image or icon. They can represent a person or an object, by themselves or inside of any element."
@@ -12,13 +16,25 @@
       "title": "Badges | ion-badge: iOS & Android App Notification Badge Icons",
       "description": "Badges are inline block elements that appear near other elements on iOS & Android apps—use ion-badges as notifications that indicate how many items there are."
     },
+    "ion-button": {
+      "title": "ion-button: Design and Style Buttons with Custom CSS Properties",
+      "description": "ion-button provides a clickable element for use anywhere needing standard button functionality. Design and style button elements with custom CSS properties."
+    },
     "ion-buttons": {
       "title": "ion-buttons: Toolbar Element with Named Slots for Buttons",
       "description": "The Buttons component is a container element. Buttons placed in a toolbar should be inside the ion-buttons element and can be positioned using named slots."
     },
+    "ion-card": {
+      "title": "ion-card: Card UI Components for Ionic Framework API",
+      "description": "ion-card UI components are entry points to more detailed information. Cards can be single components or made up of some header, title, subtitle, and content."
+    },
     "ion-chip": {
       "title": "ion-chip:  Name, Text, Icon and Avatar for Ionic Framework Apps",
       "description": "ion-chips represent complex entities in small blocks, such as a contact. A chip can contain several different elements such as names, avatars, text, and icons."
+    },
+    "ion-datetime": {
+      "title": "ion-datetime: Ionic API Input for Datetime Format Picker",
+      "description": "Datetimes present a picker interface to select dates and times. Ionic's API Datetime input component easily displays a preferred format, and manages values."
     },
     "ion-fab": {
       "title": "ion-fab: Floating Action Button for Android and iOS Ionic Apps",
@@ -48,6 +64,14 @@
       "title": "Infinite Scroller | ion-infinite-scroll Action Component",
       "description": "The ion-infinite-scroll component calls an action to be performed when the user scrolls a specified distance from the bottom or top of the page."
     },
+    "ion-input": {
+      "title": "ion-input: Custom Input Value Type Styling and CSS Properties",
+      "description": "ion-input is a wrapper to the HTML input element, with custom value type styling and functionality. It works on desktops and integrates with mobile keyboards."
+    },
+    "ion-item": {
+      "title": "ion-item: Input, Edit, or Delete iOS and Android Item Elements",
+      "description": "ion-item elements for iOS/Android contain text, icons, images, and other custom elements. They're placed in a list and can be input, deleted, edited, and more."
+    },
     "ion-item-divider": {
       "title": "Item Divider | List Item Divider Block Element for Ionic Apps",
       "description": "Item Dividers are block elements that can be used to separate items in a list. They are similar to list headers, but instead, go in between groups of items."
@@ -75,6 +99,10 @@
     "ion-menu-toggle": {
       "title": "ion-menu-toggle | MenuToggle Component to Open/Close Active Menus",
       "description": "The MenuToggle component can be used to toggle a menu open or closed—by default, it's only visible when the selected menu is active. Read more about usage."
+    },
+    "ion-modal": {
+      "title": "ion-modal: Ionic Mobile App Custom Modal API Component",
+      "description": "ion-modal is a dialog that appears on top of mobile app content, and must be dismissed before interaction resumes. Learn more about custom modal components."
     },
     "ion-nav": {
       "title": "ion-nav | Nav View Component for Ionic Framework Apps",
@@ -119,6 +147,10 @@
     "ion-segment-button": {
       "title": "ion-segment-button | Segment Button Icon and Segment Value",
       "description": "ion-segment-buttons are groups of related buttons inside of a Segment. Learn to use segment button icons and check their values on Ionic Framework Apps."
+    },
+    "ion-select": {
+      "title": "ion-select: Select One or Multiple Value Boxes or Placeholders",
+      "description": "ion-select is represented by selected value(s), or a placeholder, and dropdown icon. When you tap select, a dialog box appears with an easy to select list."
     },
     "ion-select-option": {
       "title": "Select Option | What Is An Option Select on Ionic Framework Apps",

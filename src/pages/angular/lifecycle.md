@@ -5,6 +5,9 @@ nextText: 'Navigation'
 nextUrl: '/docs/angular/navigation'
 contributors:
   - elylucas
+meta:
+  title: "Angular Page Component Life Cycle - App Events Documentation"
+  description: "This guide covers how the page life cycle works in an Ionic app built with Angular. Learn how Ionic embraces life cycle events provided by Angular components."
 ---
 
 # Ionic Page Life Cycle

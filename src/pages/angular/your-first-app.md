@@ -3,6 +3,9 @@ previousText: 'Overview'
 previousUrl: '/docs/angular/overview'
 nextText: 'Taking Photos'
 nextUrl: '/docs/angular/your-first-app/2-taking-photos'
+meta:
+  title: 'Build Your First Ionic Mobile App: Angular Development Tutorial'
+  description: "Ionic's single codebase builds for any platform using just HTML, CSS, & JavaScript. Develop your first mobile app with our step-by-step Angular tutorial."
 ---
 
 # Your First Ionic App: Angular

@@ -7,6 +7,9 @@ nextText: 'Theming'
 nextUrl: '/docs/theming/basics'
 contributors:
   - brandyscarney
+meta:
+  title: 'CSS Utilities: Classes for Text/Element Alignment or Modification'
+  description: 'Ionic CSS utility classes can be used on any element for text modification/alignment, element placement, or to adjust padding and margin. Read to learn more.'
 ---
 
 # CSS Utilities
