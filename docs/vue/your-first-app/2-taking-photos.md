@@ -33,7 +33,7 @@ Next, create a function named usePhotoGallery:
 ```tsx
 export function usePhotoGallery() {
   const takePhoto = async () => {
-    const cameraPhoto = await Camera.getPhoto({
+    const photo = await Camera.getPhoto({
       resultType: CameraResultType.Uri,
       source: CameraSource.Camera,
       quality: 100,
@@ -108,13 +108,13 @@ Back at the top of the function (right after referencing the Capacitor Camera pl
 const photos = ref<UserPhoto[]>([]);
 ```
 
-When the camera is done taking a picture, the resulting `CameraPhoto` returned from Capacitor will be added to the `photos` array. Update the `takePhoto` method, adding this code after the `Camera.getPhoto` line:
+When the camera is done taking a picture, the resulting `Photo` returned from Capacitor will be added to the `photos` array. Update the `takePhoto` method, adding this code after the `Camera.getPhoto` line:
 
 ```tsx
 const fileName = new Date().getTime() + '.jpeg';
 const savedFileImage = {
   filepath: fileName,
-  webviewPath: cameraPhoto.webPath,
+  webviewPath: photo.webPath,
 };
 
 photos.value = [savedFileImage, ...photos.value];
