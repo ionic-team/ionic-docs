@@ -133,7 +133,6 @@ docs-header docs-menu-toggle {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-  gap: 8px;
 
   background: linear-gradient(90deg, #62BDFF 1.23%, #7489FF 99.18%);
   border-radius: 100px;
@@ -163,6 +162,8 @@ docs-header docs-menu-toggle {
 
   color: #F3FAFF;
   font-weight: 400;
+
+  margin-inline-end: 8px;
 }
 .jobs .start svg {
   margin-inline-end: 4px;
