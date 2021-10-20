@@ -36,7 +36,7 @@ Next, create a function named usePhotoGallery:
 ```tsx
 export function usePhotoGallery() {
   const takePhoto = async () => {
-    const cameraPhoto = await Camera.getPhoto({
+    const photo = await Camera.getPhoto({
       resultType: CameraResultType.Uri,
       source: CameraSource.Camera,
       quality: 100,
@@ -93,14 +93,14 @@ Back at the top of the function (right after the call to `usePhotoGallery`, we w
 const [photos, setPhotos] = useState<UserPhoto[]>([]);
 ```
 
-When the camera is done taking a picture, the resulting CameraPhoto returned from Capacitor will be stored in the `photo` variable. We want to create a new photo object and add it to the photos state array. We make sure we don't accidently mutate the current photos array by making a new array, and then call `setPhotos` to store the array into state. Update the `takePhoto` method and add this code after the getPhoto call:
+When the camera is done taking a picture, the resulting Photo returned from Capacitor will be stored in the `photo` variable. We want to create a new photo object and add it to the photos state array. We make sure we don't accidently mutate the current photos array by making a new array, and then call `setPhotos` to store the array into state. Update the `takePhoto` method and add this code after the getPhoto call:
 
 ```tsx
 const fileName = new Date().getTime() + '.jpeg';
 const newPhotos = [
   {
     filepath: fileName,
-    webviewPath: cameraPhoto.webPath,
+    webviewPath: photo.webPath,
   },
   ...photos,
 ];
