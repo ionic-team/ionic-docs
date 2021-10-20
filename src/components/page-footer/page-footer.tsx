@@ -33,8 +33,8 @@ export class DocsPageFooter {
       new Set([...page.github.contributors || [], ...page.contributors || []])
     );
 
-    const editHref = `https://github.com/ionic-team/ionic-docs/edit/master/${path}`;
-    const updatedHref = `https://github.com/ionic-team/ionic-docs/commits/master/${path}`;
+    const editHref = `https://github.com/ionic-team/ionic-docs/edit/legacy/${path}`;
+    const updatedHref = `https://github.com/ionic-team/ionic-docs/commits/legacy/${path}`;
     const updatedText = lastUpdated ? new Date(lastUpdated).toISOString().slice(0, 10) : null;
     const contributorHref = (contributor: any) => `${updatedHref}?author=${contributor}`;
 
