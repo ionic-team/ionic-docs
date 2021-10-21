@@ -4,14 +4,49 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>DateTime</title>
-  <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.esm.js"></script>
-  <script nomodule src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.js"></script>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core/css/ionic.bundle.css"/>
+  <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core@next/dist/ionic/ionic.esm.js"></script>
+  <script nomodule src="https://cdn.jsdelivr.net/npm/@ionic/core@next/dist/ionic/ionic.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core@next/css/ionic.bundle.css"/>
   <style>
     :root {
       --ion-safe-area-top: 20px;
       --ion-safe-area-bottom: 22px;
     }
+
+    ion-content {
+      --background: #f2f2f7;
+    }
+
+    ion-datetime {
+      height: auto;
+      width: auto;
+
+      max-width: 350px;
+      min-width: auto;
+    }
+
+    ion-datetime.datetime-presentation-date,
+    ion-datetime.datetime-presentation-date-time,
+    ion-datetime.datetime-presentation-time-date {
+      min-height: 350px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(288px, 1fr));
+      grid-gap: 0 10px;
+    }
+
+    ion-modal {
+      --width: 290px;
+      --height: 382px;
+      --border-radius: 8px;
+    }
+
+    ion-modal ion-datetime {
+      height: 382px;
+    }
+
   </style>
 </head>
 <body>
@@ -20,42 +55,86 @@
       <ion-toolbar>
         <ion-title>DateTime</ion-title>
       </ion-toolbar>
-    </ion-header>,
-    <ion-content fullscreen>
-      <ion-list>
-        <ion-item>
-          <ion-input placeholder="Title"></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-input placeholder="Location"></ion-input>
-        </ion-item>
-        <ion-item-divider></ion-item-divider>
-        <ion-item>
-          <ion-label>Start Date</ion-label>
-          <ion-datetime value="1990-02-19" placeholder="Select Date"></ion-datetime>
-        </ion-item>
-        <ion-item>
-          <ion-label>Start Time</ion-label>
-          <ion-datetime display-format="h:mm A" picker-format="h:mm A" value="1990-02-19T07:43Z"></ion-datetime>
-        </ion-item>
-        <ion-item>
-          <ion-label>Ends</ion-label>
-          <ion-datetime value="1990-02-20" placeholder="Select Date"></ion-datetime>
-        </ion-item>
-        <ion-item>
-          <ion-label>Repeat</ion-label>
-          <ion-datetime placeholder="Never" disabled></ion-datetime>
-        </ion-item>
-        <ion-item>
-          <ion-label>Travel Time</ion-label>
-          <ion-datetime placeholder="None" disabled></ion-datetime>
-        </ion-item>
-        <ion-item-divider></ion-item-divider>
-        <ion-item>
-          <ion-label>Alert</ion-label>
-          <ion-datetime placeholder="None" disabled></ion-datetime>
-        </ion-item>
-      </ion-list>
+    </ion-header>
+    <ion-content class="ion-padding-start ion-padding-end" fullscreen>
+      <div class="grid">
+        <div class="grid-item">
+          <h2>Initial Value</h2>
+          <ion-datetime value="2012-12-15T13:47:20.789"></ion-datetime>
+        </div>
+        <div class="grid-item">
+          <h2>Readonly</h2>
+          <ion-datetime readonly="true"></ion-datetime>
+        </div>
+        <div class="grid-item">
+          <h2>Disabled</h2>
+          <ion-datetime disabled="true"></ion-datetime>
+        </div>
+        <div class="grid-item">
+          <h2>Custom Locale</h2>
+          <ion-datetime locale="en-GB"></ion-datetime>
+        </div>
+        <div class="grid-item">
+          <h2>Max and min</h2>
+          <ion-datetime min="1994-03-14" max="2012-12-09" value="2008-09-02"></ion-datetime>
+        </div>
+        <div class="grid-item">
+          <h2>15 minute increments</h2>
+          <ion-datetime minute-values="0,15,30,45"></ion-datetime>
+        </div>
+        <div class="grid-item">
+          <h2>Specific days/months/years</h2>
+          <ion-datetime month-values="6,7,8" year-values="2014,2015" day-values="01,02,03,04,05,06,08,09,10,11,12,13,14"></ion-datetime>
+        </div>
+        <div class="grid-item">
+          <h2>Time Only</h2>
+          <ion-datetime presentation="time"></ion-datetime>
+        </div>
+        <div class="grid-item">
+          <h2>Time First, Date Second</h2>
+          <ion-datetime presentation="time-date"></ion-datetime>
+        </div>
+        <div class="grid-item">
+          <h2>Cover</h2>
+          <ion-datetime size="cover"></ion-datetime>
+        </div>
+        <div class="grid-item">
+          <h2>Custom Hour Cycle</h2>
+          <ion-datetime hour-cycle="h23"></ion-datetime>
+        </div>
+        <div class="grid-item">
+          <h2>Custom First Day Of Week</h2>
+          <ion-datetime first-day-of-week="1"></ion-datetime>
+        </div>
+        <div class="grid-item">
+          <h2>Custom Title</h2>
+          <ion-datetime>
+            <div slot="title">My Custom Title</div>
+          </ion-datetime>
+        </div>
+        <div class="grid-item">
+          <h2>Clear Button</h2>
+          <ion-datetime show-clear-button="true"></ion-datetime>
+        </div>
+        <div class="grid-item">
+          <h2>Custom Buttons</h2>
+          <ion-datetime ref="el => this.customDatetime = el">
+            <ion-buttons slot="buttons">
+              <ion-button color="primary" onClick="() => this.confirm()">Good to go!</ion-button>
+              <ion-button color="danger" onClick="() => this.reset()">Reset</ion-button>
+            </ion-buttons>
+          </ion-datetime>
+        </div>
+        <div class="grid-item">
+          <h2>Datetime in Overlay</h2>
+          <ion-button id="open-modal">Open Datetime Modal</ion-button>
+          <ion-modal trigger="open-modal">
+            <ion-content force-overscroll="false">
+              <ion-datetime></ion-datetime>
+            </ion-content>
+          </ion-modal>
+        </div>
+      </div>
     </ion-content>
   </ion-app>
 </body>
