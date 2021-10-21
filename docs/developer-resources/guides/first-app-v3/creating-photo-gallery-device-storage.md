@@ -43,7 +43,7 @@ Then, create a Photos array to represent our photo gallery:
 ```Javascript
 export class PhotoProvider {
 
-  public photos: UserPhoto[] = [];
+  public photos: Photo[] = [];
 
   constructor() { }
 }
