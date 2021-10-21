@@ -16,7 +16,7 @@ Import the Ionic [Platform API](https://ionicframework.com/docs/angular/platform
 import { Platform } from '@ionic/angular';
 
 export class PhotoService {
-  public photos: Photo[] = [];
+  public photos: UserPhoto[] = [];
   private PHOTO_STORAGE: string = 'photos';
   private platform: Platform;
 

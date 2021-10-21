@@ -76,10 +76,10 @@ After taking a photo, it disappears right away. We need to display it within our
 
 ## Displaying Photos
 
-Outside of the `PhotoService` class definition (the very bottom of the file), create a new interface, `Photo`, to hold our photo metadata:
+Outside of the `PhotoService` class definition (the very bottom of the file), create a new interface, `UserPhoto`, to hold our photo metadata:
 
 ```tsx
-export interface Photo {
+export interface UserPhoto {
   filepath: string;
   webviewPath: string;
 }
@@ -89,7 +89,7 @@ Back at the top of the file, define an array of Photos, which will contain a ref
 
 ```tsx
 export class PhotoService {
-  public photos: Photo[] = [];
+  public photos: UserPhoto[] = [];
 
   // other code
 }
