@@ -4,6 +4,9 @@ previousUrl: '/docs/developing/scaffolding'
 nextText: 'Developing for Android'
 nextUrl: '/docs/developing/android'
 skipIntros: true
+meta:
+    title: "iOS App Development Guide: Xcode Setup to Build and Run iOS Apps"
+    description: "Ionic's iOS development guide covers how to build and run Ionic apps on iOS simulators and devices. iOS apps can only be developed on macOS with Xcode setup."
 ---
 
 # iOS Development

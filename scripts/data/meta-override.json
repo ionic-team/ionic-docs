@@ -28,9 +28,17 @@
       "title": "ion-card: Card UI Components for Ionic Framework API",
       "description": "ion-card UI components are entry points to more detailed information. Cards can be single components or made up of some header, title, subtitle, and content."
     },
+    "ion-checkbox": {
+      "title": "ion-checkboxes: Ionic App Component to Select Multiple Options",
+      "description": "ion-checkboxes allow selection of multiple options from a set and appear as checked (ticked) when activated. Learn about the checkbox component for Ionic apps."
+    },
     "ion-chip": {
       "title": "ion-chip:  Name, Text, Icon and Avatar for Ionic Framework Apps",
       "description": "ion-chips represent complex entities in small blocks, such as a contact. A chip can contain several different elements such as names, avatars, text, and icons."
+    },
+    "ion-content": {
+      "title": "ion-content: Scrollable CSS Component for Ionic App Content Areas",
+      "description": "ion-content provides an easy to use content area with useful methods to control the scrollable area. Learn more about this CSS component for Ionic apps."
     },
     "ion-datetime": {
       "title": "ion-datetime: Ionic API Input for Datetime Format Picker",
@@ -88,9 +96,17 @@
       "title": "Item Label Color and Properties for Applications | ion-label",
       "description": "Label is a wrapper element that can be used in combination with other Ionic components. Easily design item label colors and other properties with ion-label."
     },
+    "ion-list": {
+      "title": "ion-list: Item List View Component for iOS and Android Apps",
+      "description": "ion-lists are made up of multiple rows of items containing text, icons, toggles, and more. Learn about the list view component for iOS and Android Ionic apps."
+    },
     "ion-loading": {
       "title": "Loading | Application Loading Indicator Overlay | ion-loading",
       "description": "The ion-loading overlay indicates activity while blocking user interaction. The loading indicator appears on top of the app's content, and can be dismissed."
+    },
+    "ion-menu": {
+      "title": "ion-menu: API Framework Docs for Types of Menu Components",
+      "description": "ion-menu components are navigation drawers that slide in from the side of the current view. Read our framework docs for the available menu types on Ionic API."
     },
     "ion-menu-button": {
       "title": "Menu Button | ion-menu-button to Open an App Menu on A Page",
@@ -191,6 +207,10 @@
     "ion-title": {
       "title": "ion-title: Ionic Framework App Title Component for Toolbars",
       "description": "ion-title is a component that sets the title of the toolbar. Read to learn more about title and collapsible title components and usage for Ionic Framework Apps."
+    },
+    "ion-toast": {
+      "title": "ion-toast Component: A Dismissible App Notification Alert",
+      "description": "ion-toast component is an app notification displaying system messages or feedback. Toast alerts appear above content and are dismissed to resume interaction."
     },
     "ion-toggle": {
       "title": "Toggle | ion-toggle: Custom Toggle Button for Ionic Applications",
@@ -363,6 +383,10 @@
     "image-resizer": {
       "title": "Image Resizer: Cordova Plugin for Image Resize on Ionic Apps",
       "description": "Image Resizer is the Cordova plugin for image resize on Ionic apps. Read to learn about the Image Resizer plugin installation, usage, and supported platforms."
+    },
+    "in-app-browser": {
+      "title": "In-App Browser | Cordova Plugin for In-App Browsers on Ionic Apps",
+      "description": "Cordova-plugin-inappbrowser launches an in-app browser on Ionic Framework applications. Read for more information about in-app browser installation and usage."
     },
     "ionic-webview": {
       "title": "WebView | Ionic Framework Cordova WebView App Plugin",

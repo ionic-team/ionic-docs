@@ -6,6 +6,9 @@ nextUrl: "/docs/intro/cdn"
 contributors:
   - rtpHarry
   - dwieeb
+meta:
+  title: "How to Install The Ionic Framework CLI to Build Mobile Apps"
+  description: "The Ionic CLI is the preferred method of installation—offering a wide range of dev tools and help options. Learn how to install Ionic and begin building apps."
 ---
 
 # Installing Ionic

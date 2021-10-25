@@ -5,6 +5,9 @@ previousText: 'CSS Shadow Parts'
 previousUrl: '/docs/theming/css-shadow-parts'
 nextText: 'Themes'
 nextUrl: '/docs/theming/themes'
+meta:
+  title: "Ionic CSS Color Component: Style or Change Default App Colors"
+  description: "Ionic has nine default colors that can be used to change the color of many components. Learn how to utilize Ionic CSS color properties to style your apps."
 ---
 
 # Colors

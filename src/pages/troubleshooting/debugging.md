@@ -3,6 +3,9 @@ previousText: ''
 previousUrl: ''
 nextText: 'Build Errors'
 nextUrl: '/docs/troubleshooting/build'
+meta:
+    title: "Debugging Guide for Apps in iOS Safari and Android Chrome"
+    description: "Ionic Framework's ultimate guide to debugging apps in iOS Safari and Android Chrome. Read our debugging guide to get started with your Ionic apps today."
 ---
 
 # Debugging

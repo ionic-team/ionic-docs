@@ -3,6 +3,9 @@ previousText: 'Running on iOS'
 previousUrl: '/docs/developing/ios'
 nextText: 'Development Tips'
 nextUrl: '/docs/developing/tips'
+meta: 
+  title: "Android App Development Guide: Build Ionic Apps in Android Studio"
+  description: "This development guide covers how to run and debug Ionic apps on Android emulators and devices. Learn how to install Android Studio to get started building."
 ---
 
 # Android Development

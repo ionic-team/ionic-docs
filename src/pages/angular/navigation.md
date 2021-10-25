@@ -5,6 +5,9 @@ nextText: 'Config'
 nextUrl: '/docs/angular/config'
 contributors:
   - mhartington
+meta:
+  title: "Angular Navigation: How Routing & Redirects Work in Angular Apps"
+  description: "Our Angular Navigation guide covers how routing works in an app built with Ionic and Angular. Read to learn more about basic routing and redirects in Angular."
 ---
 
 # Angular Navigation

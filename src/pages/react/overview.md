@@ -1,6 +1,9 @@
 ---
 nextText: 'Quickstart'
 nextUrl: '/docs/react/quickstart'
+meta:
+  title: "Create an Ionic React App: Framework and Documentation"
+  description: "One codebase, any platform, just React. View our documentation for creating apps with Ionic React—the native React version of Ionic Framework's open-source SDK."
 ---
 
 # Ionic React Overview
