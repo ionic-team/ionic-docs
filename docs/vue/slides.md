@@ -6,7 +6,7 @@ This guide will go over how to get Swiper for Vue set up in your Ionic Framework
 
 ## Before Your Begin
 
-We recommend upgrading to Vue CLI 5 for best compatibility with swiper:
+We recommend upgrading to Vue CLI 5 for best compatibility with Swiper:
 
 ```shell
 vue upgrade --next
