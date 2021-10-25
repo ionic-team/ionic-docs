@@ -4,17 +4,15 @@ We recommend <a href="http://swiperjs.com/" target="_blank" rel="noopener norefe
 
 This guide will go over how to get Swiper for Vue set up in your Ionic Framework application. It will also go over any migration information you may need to move from `ion-slides` to the official Swiper Vue integration.
 
-## Before Your Begin
+## Getting Started
 
-We recommend upgrading to Vue CLI 5 for best compatibility with Swiper:
+We recommend upgrading to Vue CLI 5 for better compatibility with Swiper:
 
 ```shell
 vue upgrade --next
 ```
 
-## Getting Started
-
-To get started, install the Swiper dependency in your project:
+Once that is done, install the Swiper dependency in your project:
 
 ```shell
 npm install swiper
@@ -22,7 +20,7 @@ npm install swiper
 
 ## Swiping with Style
 
-Next, we need to import the base Swiper styles. We are also going to import the styles that Ionic provides which will let us customize the Swiper instance using the same CSS Variables that we used with `ion-slides`.
+Next, we need to import the base Swiper styles. We are also going to import the styles that Ionic provides which will let us customize the Swiper styles using the same CSS Variables that we used with `ion-slides`.
 
 We recommend importing the styles in the component in which Swiper is being used. This ensures that the styles are only loaded when needed:
 
@@ -39,7 +37,14 @@ We recommend importing the styles in the component in which Swiper is being used
 </script>
 ```
 
-You should also update any selectors to target the correct Swiper classes. If you were targeting `ion-slides`, you should target `.swiper`. If you were targeting `ion-slide`, you should target `.swiper-slide`.
+### Updating Selectors
+
+Previously, we were able to target `ion-slides` and `ion-slide` to apply any custom styling. The contents of those style blocks remain the same, but we need to update the selectors. Below is a list of selector changes when going from `ion-slides` to Swiper Vue:
+
+| ion-slides Selector | Swiper Selector |
+| ------------------- | --------------- |
+| `ion-slides`        | `.swiper`       |
+| `ion-slide`         | `.swiper-slide` |
 
 ### Pre-processors (optional)
 
