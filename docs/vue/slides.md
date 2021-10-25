@@ -4,6 +4,14 @@ We recommend <a href="http://swiperjs.com/" target="_blank" rel="noopener norefe
 
 This guide will go over how to get Swiper for Vue set up in your Ionic Framework application. It will also go over any migration information you may need to move from `ion-slides` to the official Swiper Vue integration.
 
+## Before Your Begin
+
+We recommend upgrading to Vue CLI 5 for best compatibility with swiper:
+
+```shell
+vue upgrade --next
+```
+
 ## Getting Started
 
 To get started, install the Swiper dependency in your project:
