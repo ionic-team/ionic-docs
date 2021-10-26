@@ -453,7 +453,6 @@ If you are using effects such as Cube or Fade, you can install them just like we
   import { IonContent, IonPage, IonicSwiper } from '@ionic/vue';
 
   import 'swiper/css';
-  import 'swiper/css/effect-fade';
   import '@ionic/vue/css/ionic-swiper.css';
 
   export default defineComponent({
@@ -467,6 +466,42 @@ If you are using effects such as Cube or Fade, you can install them just like we
 </script>
 ```
 
+Next, we need to import the stylesheet associated with the effect:
+
+```html
+<template>
+  <ion-page>
+    <ion-content>
+      <swiper
+        :modules="modules"
+      >
+        <swiper-slide>Slide 1</swiper-slide>
+        <swiper-slide>Slide 3</swiper-slide>
+        <swiper-slide>Slide 3</swiper-slide>
+      </swiper>
+    </ion-content>
+  </ion-page>
+</template>
+<script>
+  import { defineComponent } from 'vue';
+  import { EffectFade } from 'swiper';
+  import { Swiper, SwiperSlide } from 'swiper/vue';
+  import { IonContent, IonPage, IonicSwiper } from '@ionic/vue';
+
+  import 'swiper/css';
+  import 'swiper/css/effect-fade';
+  import '@ionic/vue/css/ionic-swiper.css';
+
+  export default defineComponent({
+    components: { Swiper, SwiperSlide, IonContent, IonPage },
+    setup() {
+      return {
+        modules: [EffectFade, IonicSwiper]
+      }
+    }
+  });
+</script>
+```
 
 After that, we can activate it by setting the `effect` property on `swiper` to `"fade"`:
 

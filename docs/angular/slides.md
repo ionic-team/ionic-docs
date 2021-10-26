@@ -61,12 +61,12 @@ export class HomePage {
 
 ### Updating Selectors
 
-Previously, we were able to target `ion-slides` and `ion-slide` to apply any custom styling. The contents of those style blocks remain the same, but we need to update the selectors. Below is a list of selector changes when going from `ion-slides` to Swiper Vue:
+Previously, we were able to target `ion-slides` and `ion-slide` to apply any custom styling. The contents of those style blocks remain the same, but we need to update the selectors. Below is a list of selector changes when going from `ion-slides` to Swiper Angular:
 
 | ion-slides Selector | Swiper Selector |
 | ------------------- | --------------- |
 | `ion-slides`        | `.swiper`       |
-| `ion-slide`         | `.ng-template swiperSlide` |
+| `ion-slide`         | `.swiper-slide` |
 
 
 ### Vanilla CSS (Optional)
@@ -329,7 +329,7 @@ From here, if you wanted to access a property on the Swiper instance you would a
 
 Below is a full list of method changes when going from `ion-slides` to Swiper Angular:
 
-| Name               | Notes                                                        |
+| ion-slides Method  | Notes                                                        |
 | ------------------ | ------------------------------------------------------------ |
 | getActiveIndex()   | Use the `activeIndex` property instead.                      |
 | getPreviousIndex() | Use the `previousIndex` property instead.                    |
@@ -345,7 +345,44 @@ Below is a full list of method changes when going from `ion-slides` to Swiper An
 
 ## Effects
 
-If you are using effects such as Cube or Fade, you can install them similar to how you installed the other modules:
+If you are using effects such as Cube or Fade, you can install them just like we did with the other modules. In this example, we will use the fade effect. To start, we will import the `EffectFade` module and register it using `SwiperCore.use`:
+
+```html
+<!-- slides.component.html -->
+
+<swiper>
+  <ng-template swiperSlide>Slide 1</ng-template>
+  <ng-template swiperSlide>Slide 3</ng-template>
+  <ng-template swiperSlide>Slide 3</ng-template>
+</swiper>
+```
+
+```javascript
+// slides.component.ts
+import { Component } from '@angular/core';
+import SwiperCore, { EffectFade } from 'swiper';
+import { IonicSwiper } from '@ionic/angular';
+
+SwiperCore.use([EffectFade, EffectFade]);
+
+@Component({
+  selector: 'app-slides-example',
+  templateUrl: 'slides.component.html',
+  styleUrls: ['slides.component.scss']
+})
+export class SlidesExample {
+  constructor() {}
+}
+```
+
+Next, we need to import the stylesheet associated with the effect:
+
+```scss
+// global.scss
+@import "~swiper/scss/effect-fade";
+```
+
+After that, we can activate it by setting the `effect` property on `swiper` to `"fade"`:
 
 ```html
 <!-- slides.component.html -->
@@ -377,7 +414,9 @@ export class SlidesExample {
 }
 ```
 
+:::note
 For more information on effects in Swiper, please see <a href="https://swiperjs.com/angular#effects" target="_blank" rel="noopener noreferrer">https://swiperjs.com/angular#effects</a>.
+:::
 
 ## Wrap Up
 
