@@ -106,7 +106,7 @@ These components are imported from `swiper/vue` and provided to your Vue compone
 
 By default, Swiper for Vue does not import any additional modules. To use modules such as Navigation or Pagination, you need to import them first.
 
-`ion-slides` automatically included the Pagination, Scrollbar, Autoplay, Keyboard, and Zoom modules. This part of the migration guide will show you how to install these modules.
+`ion-slides` automatically included the Pagination, Scrollbar, Autoplay, Keyboard, and Zoom modules. This part of the guide will show you how to install these modules.
 
 To begin, we need to import the modules and their corresponding CSS files from the `swiper` package:
 
@@ -126,7 +126,7 @@ To begin, we need to import the modules and their corresponding CSS files from t
   import { defineComponent } from 'vue';
   import { Autoplay, Keyboard, Pagination, Scrollbar, Zoom } from 'swiper';
   import { Swiper, SwiperSlide } from 'swiper/vue';
-  import { IonContent, IonPage, IonicSwiper } from '@ionic/vue';
+  import { IonContent, IonPage } from '@ionic/vue';
 
   import 'swiper/css';
   import 'swiper/css/autoplay';
@@ -161,7 +161,7 @@ From here, we need to provide these modules to Swiper by using the `modules` pro
   import { defineComponent } from 'vue';
   import { Autoplay, Keyboard, Pagination, Scrollbar, Zoom } from 'swiper';
   import { Swiper, SwiperSlide } from 'swiper/vue';
-  import { IonContent, IonPage, IonicSwiper } from '@ionic/vue';
+  import { IonContent, IonPage } from '@ionic/vue';
 
   import 'swiper/css';
   import 'swiper/css/autoplay';
@@ -206,7 +206,7 @@ Finally, we can turn these features on by using the appropriate properties:
   import { defineComponent } from 'vue';
   import { Autoplay, Keyboard, Pagination, Scrollbar, Zoom } from 'swiper';
   import { Swiper, SwiperSlide } from 'swiper/vue';
-  import { IonContent, IonPage, IonicSwiper } from '@ionic/vue';
+  import { IonContent, IonPage } from '@ionic/vue';
 
   import 'swiper/css';
   import 'swiper/css/autoplay';
@@ -240,29 +240,47 @@ With `ion-slides`, Ionic automatically customized dozens of Swiper properties. T
 
 We can install the `IonicSwiper` module by importing it from `@ionic/vue` and passing it in as the last item in the `modules` array:
 
-```javascript
+```html
+<template>
+  <ion-page>
+    <ion-content>
+      <swiper
+        :modules="modules"
+        :autoplay="true"
+        :keyboard="true"
+        :pagination="true"
+        :scrollbar="true"
+        :zoom="true"
+      >
+        <swiper-slide>Slide 1</swiper-slide>
+        <swiper-slide>Slide 3</swiper-slide>
+        <swiper-slide>Slide 3</swiper-slide>
+      </swiper>
+    </ion-content>
+  </ion-page>
+</template>
 <script>
-  import { defineComponent } from 'vue';
-  import { Autoplay, Keyboard, Pagination, Scrollbar, Zoom } from 'swiper';
-  import { Swiper, SwiperSlide } from 'swiper/vue';
-  import { IonContent, IonPage, IonicSwiper } from '@ionic/vue';
+import { defineComponent } from 'vue';
+import { Autoplay, Keyboard, Pagination, Scrollbar, Zoom } from 'swiper';
+import { Swiper, SwiperSlide } from 'swiper/vue';
+import { IonContent, IonPage, IonicSwiper } from '@ionic/vue';
 
-  import 'swiper/css';
-  import 'swiper/css/autoplay';
-  import 'swiper/css/keyboard';
-  import 'swiper/css/pagination';
-  import 'swiper/css/scrollbar';
-  import 'swiper/css/zoom';
-  import '@ionic/vue/css/ionic-swiper.css';
+import 'swiper/css';
+import 'swiper/css/autoplay';
+import 'swiper/css/keyboard';
+import 'swiper/css/pagination';
+import 'swiper/css/scrollbar';
+import 'swiper/css/zoom';
+import '@ionic/vue/css/ionic-swiper.css';
 
-  export default defineComponent({
-    components: { Swiper, SwiperSlide, IonContent, IonPage },
-    setup() {
-      return {
-        modules: [Autoplay, Keyboard, Pagination, Scrollbar, Zoom, IonicSwiper]
-      }
+export default defineComponent({
+  components: { Swiper, SwiperSlide, IonContent, IonPage },
+  setup() {
+    return {
+      modules: [Autoplay, Keyboard, Pagination, Scrollbar, Zoom, IonicSwiper]
     }
-  });
+  }
+});
 </script>
 ```
 
@@ -305,11 +323,13 @@ Below is a full list of property changes when going from `ion-slides` to Swiper 
 | Name      | Notes                                                                                                                        |
 | --------- | ---------------------------------------------------------------------------------------------------------------------------- |
 | options   | Set each option as a property directly on the `<swiper>` component.                                                          |
-| mode      | For different styles based upon the mode, you can target the slides with `.ios .swiper-container` or `.md .swiper-container` |
+| mode      | For different styles based upon the mode, you can target the slides with `.ios .swiper` or `.md .swiper` in your CSS. |
 | pager     | Use the `pagination` property instead. Requires installation of the Pagination module.                                       |
 | scrollbar | You can continue to use the `scrollbar` property, just be sure to install the Scrollbar module first.                        |
 
+:::note
 All properties available in Swiper Vue can be found at <a href="https://swiperjs.com/vue#swiper-props" target="_blank" rel="noopener noreferrer">https://swiperjs.com/vue#swiper-props</a>.
+:::
 
 ## Events
 
@@ -360,13 +380,15 @@ Below is a full list of event name changes when going from `ion-slides` to Swipe
 | ionSlideTransitionEnd   | transitionEnd              |
 | ionSlidesDidLoad        | init                       |
 
+:::note
 All events available in Swiper Vue can be found at <a href="https://swiperjs.com/vue#swiper-events" target="_blank" rel="noopener noreferrer">https://swiperjs.com/vue#swiper-events</a>.
+:::
 
 ## Methods
 
 Most methods have been removed in favor of accessing the `<swiper>` props directly. When calling methods, you no longer need to access `$el` first.
 
-Accessing these properties can be tricky as you want to access the properties on the Swiper instance itself, not your Vue component. To do this, we recommend getting a reference to the `Swiper` instance via `@swiper`:
+Accessing these properties can be tricky as you want to access the properties on the Swiper instance itself, not your Vue component. To do this, we recommend getting a reference to the Swiper instance via the `@swiper` event handler:
 
 ```html
 <template>
@@ -392,7 +414,7 @@ From here, if you wanted to access a property on the Swiper instance you would a
 
 Below is a full list of method changes when going from `ion-slides` to Swiper Vue:
 
-| Name               | Notes                                                                                |
+| ion-slides Method  | Notes                                                                                |
 | ------------------ | ------------------------------------------------------------------------------------ |
 | getActiveIndex()   | Use the `activeIndex` property instead.                                              |
 | getPreviousIndex() | Use the `previousIndex` property instead.                                            |
@@ -408,7 +430,7 @@ Below is a full list of method changes when going from `ion-slides` to Swiper Vu
 
 ## Effects
 
-If you are using effects such as Cube or Fade, you can install just like we did with the other modules. In this example, we will use the fade effect. To start, we will import `EffectFade` from `swiper` and provide it in the `modules` array:
+If you are using effects such as Cube or Fade, you can install them just like we did with the other modules. In this example, we will use the fade effect. To start, we will import `EffectFade` from `swiper` and provide it in the `modules` array:
 
 ```html
 <template>
@@ -484,13 +506,25 @@ After that, we can activate it by setting the `effect` property on `swiper` to `
 </script>
 ```
 
+:::note
 For more information on effects in Swiper, please see <a href="https://swiperjs.com/vue#effects" target="_blank" rel="noopener noreferrer">https://swiperjs.com/vue#effects</a>.
+:::
 
 ## Wrap Up
 
 Now that you have Swiper installed, there is a whole set of new Swiper features for you to enjoy. We recommend starting with the <a href="https://swiperjs.com/vue" target="_blank" rel="noopener noreferrer">Swiper Vue Introduction</a> and then referencing <a href="https://swiperjs.com/swiper-api" target="_blank" rel="noopener noreferrer">the Swiper API docs</a>.
 
-### Where do I file issues?
+## FAQ
+
+### Where can I find an example of this migration?
+
+You can find a sample app with `ion-slides` and the equivalent Swiper usage at https://github.com/ionic-team/slides-migration-samples.
+
+### Where can I get help with this migration?
+
+If you are running into issues with the migration, please create a post on the [Ionic Forum](https://forum.ionicframework.com/).
+
+### Where do I file bug reports?
 
 Before opening an issue, please consider creating a post on the <a href="https://github.com/nolimits4web/swiper/discussions" target="_blank" rel="noopener noreferrer">Swiper Discussion Board</a> or the <a href="https://forum.ionicframework.com" target="_blank">Ionic Forum</a> to see if your issue can be resolved by the community.
 
