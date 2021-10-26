@@ -236,7 +236,7 @@ See <a href="https://swiperjs.com/vue#usage" target="_blank" rel="noopener noref
 
 ## The IonicSwiper Module
 
-With `ion-slides`, Ionic automatically customized dozens of Swiper properties. This resulted in an experience that felt smooth when swiping on mobile devices. We recommend using the `IonicSwiper` module will ensure that these properties are also set when using Swiper directly.
+With `ion-slides`, Ionic automatically customized dozens of Swiper properties. This resulted in an experience that felt smooth when swiping on mobile devices. We recommend using the `IonicSwiper` module to ensure that these properties are also set when using Swiper directly.
 
 We can install the `IonicSwiper` module by importing it from `@ionic/vue` and passing it in as the last item in the `modules` array:
 
