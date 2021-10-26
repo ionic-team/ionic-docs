@@ -386,7 +386,7 @@ All events available in Swiper Vue can be found at <a href="https://swiperjs.com
 
 ## Methods
 
-Most methods have been removed in favor of accessing the `<swiper>` props directly. When calling methods, you no longer need to access `$el` first.
+Most methods have been removed in favor of accessing the `<swiper>` props directly. Additionally, you no longer need to access `$el` first when calling methods.
 
 Accessing these properties can be tricky as you want to access the properties on the Swiper instance itself, not your Vue component. To do this, we recommend getting a reference to the Swiper instance via the `@swiper` event handler:
 
