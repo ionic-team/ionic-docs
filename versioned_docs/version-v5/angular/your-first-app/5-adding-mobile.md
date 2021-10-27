@@ -16,7 +16,7 @@ Import the Ionic [Platform API](https://ionicframework.com/docs/angular/platform
 import { Platform } from '@ionic/angular';
 
 export class PhotoService {
-  public photos: Photo[] = [];
+  public photos: UserPhoto[] = [];
   private PHOTO_STORAGE: string = 'photos';
   private platform: Platform;
 
@@ -33,19 +33,19 @@ export class PhotoService {
 First, we’ll update the photo saving functionality to support mobile. In the `readAsBase64()` function, check which platform the app is running on. If it’s “hybrid” (Capacitor or Cordova, two native runtimes), then read the photo file into base64 format using the Filesystem `readFile()` method. Otherwise, use the same logic as before when running the app on the web:
 
 ```tsx
-private async readAsBase64(cameraPhoto: CameraPhoto) {
+private async readAsBase64(photo: Photo) {
   // "hybrid" will detect Cordova or Capacitor
   if (this.platform.is('hybrid')) {
     // Read the file into base64 format
     const file = await Filesystem.readFile({
-      path: cameraPhoto.path
+      path: photo.path
     });
 
     return file.data;
   }
   else {
     // Fetch the photo, read as a blob, then convert to base64 format
-    const response = await fetch(cameraPhoto.webPath);
+    const response = await fetch(photo.webPath);
     const blob = await response.blob();
 
     return await this.convertBlobToBase64(blob) as string;
@@ -57,9 +57,9 @@ Next, update the `savePicture()` method. When running on mobile, set `filepath` 
 
 ```tsx
 // Save picture to file on device
-  private async savePicture(cameraPhoto: CameraPhoto) {
+  private async savePicture(photo: Photo) {
     // Convert photo to base64 format, required by Filesystem API to save
-    const base64Data = await this.readAsBase64(cameraPhoto);
+    const base64Data = await this.readAsBase64(photo);
 
     // Write the file to the data directory
     const fileName = new Date().getTime() + '.jpeg';
@@ -82,7 +82,7 @@ Next, update the `savePicture()` method. When running on mobile, set `filepath` 
       // already loaded into memory
       return {
         filepath: fileName,
-        webviewPath: cameraPhoto.webPath
+        webviewPath: photo.webPath
       };
     }
   }

@@ -16,7 +16,7 @@ In the `savePicture` function, check which platform the app is running on. If it
 
 ```tsx
 const savePicture = async (
-  photo: CameraPhoto,
+  photo: Photo,
   fileName: string,
 ): Promise<UserPhoto> => {
   let base64Data: string;
