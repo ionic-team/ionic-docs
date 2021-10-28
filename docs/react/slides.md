@@ -12,6 +12,10 @@ To get started, install the Swiper dependency in your project:
 npm install swiper
 ```
 
+:::note
+Create React App does not support pure ESM packages yet. Developers can still use Swiper, but they will need to use Swiper 7.2.0+ and use direct file imports. This guide assumes you are using Create React App and will show you how to use these direct imports.
+:::
+
 ## Swiping with Style
 
 Next, we need to import the base Swiper styles. We are also going to import the styles that Ionic provides which will let us customize the Swiper styles using the same CSS Variables that we used with `ion-slides`.
@@ -19,9 +23,22 @@ Next, we need to import the base Swiper styles. We are also going to import the 
 We recommend importing the styles in the component in which Swiper is being used. This ensures that the styles are only loaded when needed:
 
 ```javascript
-import 'swiper/css';
+import React from 'react';
+import { IonContent, IonPage } from '@ionic/react';
+import { Swiper, SwiperSlide } from 'swiper/react';
+
+import 'swiper/swiper.min.css';
 import '@ionic/react/css/ionic-swiper.css';
+
+const Home: React.FC = () => {
+  return (
+    ...
+  );
+};
+export default Home;
 ```
+
+> Not using Create React App? You can import the Swiper CSS from `swiper/css` instead.
 
 ### Updating Selectors
 
@@ -38,30 +55,52 @@ For developers using SCSS or Less styles, Swiper also provides imports for those
 
 For Less styles, replace `css` with `less` in the Swiper import path:
 
-```js
-import 'swiper/less';
+```javascript
+import React from 'react';
+import { IonContent, IonPage } from '@ionic/react';
+import { Swiper, SwiperSlide } from 'swiper/react';
+
+import 'swiper/swiper.less';
 import '@ionic/react/css/ionic-swiper.css';
+
+const Home: React.FC = () => {
+  return (
+    ...
+  );
+};
+export default Home;
 ```
 
 For SCSS styles replace `css` with `scss` in the Swiper import path:
-
-```js
-import 'swiper/scss';
-import '@ionic/react/css/ionic-swiper.css';
-```
-
-## Using Components
-
-Swiper exports two components: `Swiper` and `SwiperSlide`. The `Swiper` component is the equivalent of `IonSlides`, and `SwiperSlide` is the equivalent of `IonSlide`.
-
-These components are imported from `swiper/react`:
 
 ```javascript
 import React from 'react';
 import { IonContent, IonPage } from '@ionic/react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
-import 'swiper/css';
+import 'swiper/swiper.scss';
+import '@ionic/react/css/ionic-swiper.css';
+
+const Home: React.FC = () => {
+  return (
+    ...
+  );
+};
+export default Home;
+```
+
+## Using Components
+
+Swiper exports two components: `Swiper` and `SwiperSlide`. The `Swiper` component is the equivalent of `IonSlides`, and `SwiperSlide` is the equivalent of `IonSlide`.
+
+These components are imported from `swiper/react/swiper-react.js`:
+
+```tsx
+import React from 'react';
+import { IonContent, IonPage } from '@ionic/react';
+import { Swiper, SwiperSlide } from 'swiper/react/swiper-react.js';
+
+import 'swiper/swiper.min.css';
 import '@ionic/react/css/ionic-swiper.css';
 
 const Home: React.FC = () => {
@@ -79,6 +118,9 @@ const Home: React.FC = () => {
 };
 export default Home;
 ```
+
+> Not using Create React App? You can import the Swiper components from `swiper/react` instead.
+
 
 ## Using Modules
 
@@ -91,15 +133,15 @@ To begin, we need to import the modules and their corresponding CSS files from t
 ```tsx
 import React from 'react';
 import { IonContent, IonPage } from '@ionic/react';
-import { Swiper, SwiperSlide } from 'swiper/react';
+import { Swiper, SwiperSlide } from 'swiper/react/swiper-react.js';
 import { Autoplay, Keyboard, Pagination, Scrollbar, Zoom } from 'swiper';
 
-import 'swiper/css';
-import 'swiper/css/autoplay';
-import 'swiper/css/keyboard';
-import 'swiper/css/pagination';
-import 'swiper/css/scrollbar';
-import 'swiper/css/zoom';
+import 'swiper/swiper.min.css';
+import 'swiper/modules/autoplay/autoplay.min.css';
+import 'swiper/modules/keyboard/keyboard.min.css';
+import 'swiper/modules/pagination/pagination.min.css';
+import 'swiper/modules/scrollbar/scrollbar.min.css';
+import 'swiper/modules/zoom/zoom.min.css';
 import '@ionic/react/css/ionic-swiper.css';
 
 const Home: React.FC = () => {
@@ -118,20 +160,22 @@ const Home: React.FC = () => {
 export default Home;
 ```
 
+> Not using Create React App? You can import these modules from `swiper/css/[MODULE NAME]` instead (i.e. `swiper/css/autoplay`).
+
 From here, we need to provide these modules to Swiper by using the `modules` property on the `Swiper` component:
 
 ```tsx
 import React from 'react';
 import { IonContent, IonPage } from '@ionic/react';
-import { Swiper, SwiperSlide } from 'swiper/react';
+import { Swiper, SwiperSlide } from 'swiper/react/swiper-react.js';
 import { Autoplay, Keyboard, Pagination, Scrollbar, Zoom } from 'swiper';
 
-import 'swiper/css';
-import 'swiper/css/autoplay';
-import 'swiper/css/keyboard';
-import 'swiper/css/pagination';
-import 'swiper/css/scrollbar';
-import 'swiper/css/zoom';
+import 'swiper/swiper.min.css';
+import 'swiper/modules/autoplay/autoplay.min.css';
+import 'swiper/modules/keyboard/keyboard.min.css';
+import 'swiper/modules/pagination/pagination.min.css';
+import 'swiper/modules/scrollbar/scrollbar.min.css';
+import 'swiper/modules/zoom/zoom.min.css';
 import '@ionic/react/css/ionic-swiper.css';
 
 const Home: React.FC = () => {
@@ -157,15 +201,15 @@ Finally, we can turn these features on by using the appropriate properties:
 ```tsx
 import React from 'react';
 import { IonContent, IonPage } from '@ionic/react';
-import { Swiper, SwiperSlide } from 'swiper/react';
+import { Swiper, SwiperSlide } from 'swiper/react/swiper-react.js';
 import { Autoplay, Keyboard, Pagination, Scrollbar, Zoom } from 'swiper';
 
-import 'swiper/css';
-import 'swiper/css/autoplay';
-import 'swiper/css/keyboard';
-import 'swiper/css/pagination';
-import 'swiper/css/scrollbar';
-import 'swiper/css/zoom';
+import 'swiper/swiper.min.css';
+import 'swiper/modules/autoplay/autoplay.min.css';
+import 'swiper/modules/keyboard/keyboard.min.css';
+import 'swiper/modules/pagination/pagination.min.css';
+import 'swiper/modules/scrollbar/scrollbar.min.css';
+import 'swiper/modules/zoom/zoom.min.css';
 import '@ionic/react/css/ionic-swiper.css';
 
 const Home: React.FC = () => {
@@ -206,15 +250,15 @@ We can install the `IonicSwiper` module by importing it from `@ionic/react` and 
 ```tsx
 import React from 'react';
 import { IonContent, IonPage, IonicSwiper } from '@ionic/react';
-import { Swiper, SwiperSlide } from 'swiper/react';
+import { Swiper, SwiperSlide } from 'swiper/react/swiper-react.js';
 import { Autoplay, Keyboard, Pagination, Scrollbar, Zoom } from 'swiper';
 
-import 'swiper/css';
-import 'swiper/css/autoplay';
-import 'swiper/css/keyboard';
-import 'swiper/css/pagination';
-import 'swiper/css/scrollbar';
-import 'swiper/css/zoom';
+import 'swiper/swiper.min.css';
+import 'swiper/modules/autoplay/autoplay.min.css';
+import 'swiper/modules/keyboard/keyboard.min.css';
+import 'swiper/modules/pagination/pagination.min.css';
+import 'swiper/modules/scrollbar/scrollbar.min.css';
+import 'swiper/modules/zoom/zoom.min.css';
 import '@ionic/react/css/ionic-swiper.css';
 
 const Home: React.FC = () => {
@@ -247,30 +291,38 @@ Swiper options are provided as props directly on the `<Swiper>` component rather
 
 Let's say in an app with `IonSlides` we had the `slidesPerView` and `loop` options set:
 
-```javascript
-<IonSlides
-  options={{
-    slidesPerView: 3,
-    loop: true
-  }}
-  >
-  <IonSlide>Slide 1</IonSlide>
-  <IonSlide>Slide 2</IonSlide>
-  <IonSlide>Slide 3</IonSlide>
-</IonSlides>
+```tsx
+const MyComponent: React.FC = () => {
+  return (
+    <IonSlides
+      options={{
+        slidesPerView: 3,
+        loop: true
+      }}
+      >
+      <IonSlide>Slide 1</IonSlide>
+      <IonSlide>Slide 2</IonSlide>
+      <IonSlide>Slide 3</IonSlide>
+    </IonSlides>
+  );
+};
 ```
 
 To migrate, we would move these options out of the `options` object and onto the `<Swiper>` component directly as properties:
 
-```javascript
-<Swiper
-  slidesPerView={3}
-  loop={true}
-  >
-  <SwiperSlide>Slide 1</SwiperSlide>
-  <SwiperSlide>Slide 2</SwiperSlide>
-  <SwiperSlide>Slide 3</SwiperSlide>
-</Swiper>
+```tsx
+const MyComponent: React.FC = () => {
+  return (
+    <Swiper
+      slidesPerView={3}
+      loop={true}
+      >
+      <SwiperSlide>Slide 1</SwiperSlide>
+      <SwiperSlide>Slide 2</SwiperSlide>
+      <SwiperSlide>Slide 3</SwiperSlide>
+    </Swiper>
+  );
+};
 ```
 
 Below is a full list of property changes when going from `IonSlides` to Swiper Rreact:
@@ -292,26 +344,34 @@ Since the `Swiper` component is not provided by Ionic Framework, event names wil
 
 Let's say in an app with `IonSlides` we used the `onIonSlideDidChange` event:
 
-```javascript
-<IonSlides
-  onIonSlideDidChange={() => onSlideChange()}
->
-  <IonSlide>Slide 1</IonSlide>
-  <IonSlide>Slide 2</IonSlide>
-  <IonSlide>Slide 3</IonSlide>
-</IonSlides>
+```tsx
+const MyComponent: React.FC = () => {
+  return (
+    <IonSlides
+      onIonSlideDidChange={() => onSlideChange()}
+    >
+      <IonSlide>Slide 1</IonSlide>
+      <IonSlide>Slide 2</IonSlide>
+      <IonSlide>Slide 3</IonSlide>
+    </IonSlides>
+  );
+};
 ```
 
 To migrate, we would change the name of the event to `onSlideChange`:
 
-```javascript
-<Swiper
-  onSlideChange={() => onSlideChange()}
->
-  <SwiperSlide>Slide 1</SwiperSlide>
-  <SwiperSlide>Slide 2</SwiperSlide>
-  <SwiperSlide>Slide 3</SwiperSlide>
-</Swiper>
+```tsx
+const MyComponent: React.FC = () => {
+  return (
+    <Swiper
+      onSlideChange={() => onSlideChange()}
+    >
+      <SwiperSlide>Slide 1</SwiperSlide>
+      <SwiperSlide>Slide 2</SwiperSlide>
+      <SwiperSlide>Slide 3</SwiperSlide>
+    </Swiper>
+  );
+};
 ```
 
 Below is a full list of event name changes when going from `IonSlides` to Swiper React:
@@ -345,7 +405,7 @@ Most methods have been removed in favor of accessing the `Swiper` props directly
 
 Accessing these properties can be tricky as you want to access the properties on the Swiper instance itself, not your React component. To do this, we recommend getting a reference to the `Swiper` instance via `onSwiper`:
 
-```javascript
+```tsx
 import React, { useState } from 'react';
 ...
 const Home: React.FC = () => {
@@ -388,9 +448,9 @@ If you are using effects such as Cube or Fade, you can install them just like we
 import React from 'react';
 import { IonContent, IonPage, IonicSwiper } from '@ionic/react';
 import { EffectFade } from 'swiper';
-import { Swiper, SwiperSlide } from 'swiper/react';
+import { Swiper, SwiperSlide } from 'swiper/react/swiper-react.js';
 
-import 'swiper/css';
+import 'swiper/swiper.min.css';
 import '@ionic/react/css/ionic-swiper.css';
 
 const Home: React.FC = () => {
@@ -417,10 +477,10 @@ Next, we need to import the stylesheet associated with the effect:
 import React from 'react';
 import { IonContent, IonPage, IonicSwiper } from '@ionic/react';
 import { EffectFade } from 'swiper';
-import { Swiper, SwiperSlide } from 'swiper/react';
+import { Swiper, SwiperSlide } from 'swiper/react/swiper-react.js';
 
-import 'swiper/css';
-import 'swiper/css/effect-fade';
+import 'swiper/swiper.min.css';
+import 'swiper/modules/effect-fade/effect-fade.min.css';
 import '@ionic/react/css/ionic-swiper.css';
 
 const Home: React.FC = () => {
@@ -441,16 +501,18 @@ const Home: React.FC = () => {
 export default Home;
 ```
 
+> Not using Create React App? You can import these effects from `swiper/css/[EFFECT NAME]` instead (i.e. `swiper/css/effect-fade`).
+
 After that, we can activate it by setting the `effect` property on `swiper` to `"fade"`:
 
 ```tsx
 import React from 'react';
 import { IonContent, IonPage, IonicSwiper } from '@ionic/react';
 import { EffectFade } from 'swiper';
-import { Swiper, SwiperSlide } from 'swiper/react';
+import { Swiper, SwiperSlide } from 'swiper/react/swiper-react.js';;
 
-import 'swiper/css';
-import 'swiper/css/effect-fade';
+import 'swiper/swiper.min.css';
+import 'swiper/modules/effect-fade/effect-fade.min.css';
 import '@ionic/react/css/ionic-swiper.css';
 
 const Home: React.FC = () => {
