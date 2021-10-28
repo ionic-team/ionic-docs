@@ -407,9 +407,11 @@ Accessing these properties can be tricky as you want to access the properties on
 
 ```tsx
 import React, { useState } from 'react';
+import { Swiper, SwiperSlide } from 'swiper/react/swiper-react.js';
+import { Swiper as SwiperInterface } from 'swiper';
 ...
 const Home: React.FC = () => {
-  const [swiperInstance, setSwiperInstance] = useState();
+  const [swiperInstance, setSwiperInstance] = useState<SwiperInterface>();
   return (
     ...
     <Swiper
