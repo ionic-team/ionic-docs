@@ -1,0 +1,12 @@
+.guide-container {
+  padding: 20px;
+  border-radius: 8px;
+  background: #FBFBFD;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.08), 0px 4px 8px rgba(0, 0, 0, 0.06);
+
+  margin-bottom: 20px;
+}
+
+.guide-details {
+  margin-bottom: 20px;
+}
