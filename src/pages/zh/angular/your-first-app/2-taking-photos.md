@@ -75,11 +75,11 @@ _（你的自怕可能会比我好看很多）_
 
 ## 展示照片
 
-在`PhotoService`文件里的最底部并且类的外边，创建一个名为`Photo`的interface，用于存放我们的照片数据：
+在`PhotoService`文件里的最底部并且类的外边，创建一个名为`UserPhoto`的interface，用于存放我们的照片数据：
 
 ```typescript
 // 导出接口照片
-export interface Photo{
+export interface UserPhoto{
   filepath: string;
   webviewPath: string;
 }
@@ -89,7 +89,7 @@ export interface Photo{
 
 ```typescript
 export class PhotoService {
-  public photos: Photo[] = [];
+  public photos: UserPhoto[] = [];
 
   // 其他代码
 }

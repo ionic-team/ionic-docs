@@ -75,10 +75,10 @@ Après avoir pris une photo, elle disparaît immédiatement. Nous devons l'affic
 
 ## Affichage des photos
 
-En dehors de la définition de classe `PhotoService` (le tout en bas du fichier), créer une nouvelle interface, `Photo`, pour tenir nos métadonnées photo:
+En dehors de la définition de classe `PhotoService` (le tout en bas du fichier), créer une nouvelle interface, `UserPhoto`, pour tenir nos métadonnées photo:
 
 ```typescript
-export interface Photo {
+export interface UserPhoto {
   filepath: string;
   webviewPath: string;
 }
@@ -88,7 +88,7 @@ De retour en haut du fichier, définissez un tableau de Photos, qui contiendra u
 
 ```typescript
 export class PhotoService {
-  public photos: Photo[] = [];
+  public photos: UserPhoto[] = [];
 
   // other code
 }

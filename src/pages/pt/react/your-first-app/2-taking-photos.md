@@ -75,10 +75,10 @@ After taking a photo, it disappears. We still need to display it within our app 
 
 ## Displaying Photos
 
-First we will create a new type to define our Photo, which will hold specific metadata. Add the following Photo interface to the `usePhotoGallery.ts` file, somewhere outside of the main function:
+First we will create a new type to define our Photo, which will hold specific metadata. Add the following UserPhoto interface to the `usePhotoGallery.ts` file, somewhere outside of the main function:
 
 ```typescript
-export interface Photo {
+export interface UserPhoto {
   filepath: string;
   webviewPath?: string;
 }
@@ -87,7 +87,7 @@ export interface Photo {
 Back at the top of the function (right after the call to `useCamera`, we will define a state variable to store the array of each photo captured with the Camera.
 
 ```typescript
-const [photos, setPhotos] = useState<Photo[]>([]);
+const [photos, setPhotos] = useState<UserPhoto[]>([]);
 ```
 
 When the camera is done taking a picture, the resulting CameraPhoto returned from Capacitor will be stored in the `photo` variable. We want to create a new photo object and add it to the photos state array. We make sure we don't accidently mutate the current photos array by making a new array, and then call `setPhotos` to store the array into state. Update the `takePhoto` method and add this code after the getPhoto call:

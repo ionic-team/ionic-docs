@@ -75,7 +75,7 @@ Depois de tirar uma foto, ela desaparece imediatamente. Precisamos exibi-lo em n
 
 ## Mostrando Fotos
 
-Abaixo da classe `PhotoService` (porém fora dela), crie uma nova interface, chamada `Photo`, para guardar nossos metadados da foto:
+Abaixo da classe `PhotoService` (porém fora dela), crie uma nova interface, chamada `UserPhoto`, para guardar nossos metadados da foto:
 
 ```typescript
 exportar foto da interface {
@@ -88,7 +88,7 @@ Vá ao topo do arquivo e defina uma matriz de Fotos, que conterá uma referênci
 
 ```typescript
 export class PhotoService {
-  public photos: Photo[] = [];
+  public photos: UserPhoto[] = [];
 
   // outro código
 }

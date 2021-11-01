@@ -75,7 +75,7 @@ Después de tomar una foto, desaparece de inmediato. Necesitamos mostrarlo en nu
 
 ## Mostrando fotos
 
-Fuera de la definición de clase `Photo Service` (la parte inferior del archivo), crea una nueva interfaz, `Photo`para mantener nuestros metadatos fotográficos:
+Fuera de la definición de clase `Photo Service` (la parte inferior del archivo), crea una nueva interfaz, `UserPhoto` para mantener nuestros metadatos fotográficos:
 
 ```typescript
 export interface Photo {
@@ -88,7 +88,7 @@ Volver a la parte superior del archivo, definir una matriz de fotos, que contend
 
 ```typescript
 export class PhotoService {
-  public photos: Photo[] = [];
+  public photos: UserPhoto[] = [];
 
   // otro código
 }
