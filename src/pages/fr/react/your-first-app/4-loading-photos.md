@@ -38,7 +38,7 @@ With the photo array data saved, we will create a method that will retrieve the 
 useEffect(() => {
   const loadSaved = async () => {
     const photosString = await get(PHOTO_STORAGE);
-    const photos = (photosString ? JSON.parse(photosString) : []) as Photo[];
+    const photos = (photosString ? JSON.parse(photosString) : []) as UserPhoto[];
     for (let photo of photos) {
       const file = await readFile({
         path: photo.filepath,

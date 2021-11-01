@@ -17,7 +17,7 @@ Comience definiendo una variable constante que actuará como la clave para el al
 
 ```typescript
 export class PhotoService {
- public photos: Photo[] = [];
+ public photos: UserPhoto[] = [];
  private PHOTO_STORAGE: string = "photos";
 
   // otro código

@@ -17,7 +17,7 @@ Commencez par définir une variable constante qui servira de clé pour le tablea
 
 ```typescript
 export class PhotoService {
-  public photos : Photo[] = [];
+  public photos : UserPhoto[] = [];
   private PHOTO_STORAGE: string = "photos";
 
   // autre code

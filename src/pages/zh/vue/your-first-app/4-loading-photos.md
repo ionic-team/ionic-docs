@@ -24,7 +24,7 @@ Then, import the Storage API to get access to methods for reading and writing to
 ```typescript
 export function usePhotoGallery() {
   const { Camera, Filesystem, Storage } = Plugins;
-  const photos = ref<Photo[]>([]);
+  const photos = ref<UserPhoto[]>([]);
   const PHOTO_STORAGE = "photos";
 ```
 

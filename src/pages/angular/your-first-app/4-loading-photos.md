@@ -17,7 +17,7 @@ Begin by defining a constant variable that will act as the key for the store:
 
 ```typescript
 export class PhotoService {
-  public photos: Photo[] = [];
+  public photos: UserPhoto[] = [];
   private PHOTO_STORAGE: string = "photos";
 
   // other code

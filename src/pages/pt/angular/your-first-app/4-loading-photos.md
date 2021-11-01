@@ -17,7 +17,7 @@ Comece definindo uma variável constante que atuará como a chave para a loja:
 
 ```typescript
 export class PhotoService {
-  public fotos: Photo[] = [];
+  public fotos: UserPhoto[] = [];
   private PHOTO_STORAGE: string = "fotos";
 
   // outro código

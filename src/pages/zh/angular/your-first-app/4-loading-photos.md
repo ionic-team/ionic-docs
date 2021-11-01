@@ -17,7 +17,7 @@ nextUrl: '/docs/angular/your-first app/5-adding-mobile'
 
 ```typescript
 export class PhotoService {
-  public photos: Photo[] = [];
+  public photos: UserPhoto[] = [];
   private PHOTO_STORAGE: string = "photos";
 
   // 其他代码
