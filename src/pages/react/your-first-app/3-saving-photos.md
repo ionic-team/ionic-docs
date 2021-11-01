@@ -21,7 +21,7 @@ Next, create a couple of new functions in `usePhotoGallery`:
 export function usePhotoGallery() {
 
 
-const savePicture = async (photo: CameraPhoto, fileName: string): Promise<Photo> => {
+const savePicture = async (photo: Photo, fileName: string): Promise<Photo> => {
   const base64Data = await base64FromPath(photo.webPath!);
   const savedFile = await FileSystem.writeFile({
     path: fileName,
@@ -60,22 +60,22 @@ export async function base64FromPath(path: string): Promise<string> {
 
 > The base64FromPath method is a helper util that downloads a file from the supplied path and returns a base64 representation of that file.
 
-We pass in the `cameraPhoto` object, which represents the newly captured device photo, as well as the fileName, which will provide a path for the file to be stored to.
+We pass in the `photo` object, which represents the newly captured device photo, as well as the fileName, which will provide a path for the file to be stored to.
 
 Next we use the Capacitor [Filesystem API](https://capacitor.ionicframework.com/docs/apis/filesystem) to save the photo to the filesystem. We start by converting the photo to base64 format, then feed the data to the Filesystem’s `writeFile` function.
 
-Last, call `savePicture` and pass in the cameraPhoto object and filename directly underneath the call to `setPhotos` in the `takePhoto` method. Here is the full method:
+Last, call `savePicture` and pass in the photo object and filename directly underneath the call to `setPhotos` in the `takePhoto` method. Here is the full method:
 
 ```typescript
 const takePhoto = async () => {
-  const cameraPhoto = await Camera.getPhoto({
+  const photo = await Camera.getPhoto({
     resultType: CameraResultType.Uri,
     source: CameraSource.Camera,
     quality: 100
   });
 
   const fileName = new Date().getTime() + '.jpeg';
-  const savedFileImage = await savePicture(cameraPhoto, fileName);
+  const savedFileImage = await savePicture(photo, fileName);
   const newPhotos = [savedFileImage, ...photos];
   setPhotos(newPhotos);
 };

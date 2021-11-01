@@ -11,10 +11,10 @@ nextUrl: '/docs/angular/your-first-app/4-loading-photos'
 
 ## 文件系统 API
 
-幸运的是，将它们保存到文件系统只需要几个步骤。 首先在` PhotoService `类(` src/app/services/photo.service.ts`)中创建一个新的类方法`savePicture()` 。 我们传入 `cameraPhoto` 对象，该对象代表新捕获的设备照片：
+幸运的是，将它们保存到文件系统只需要几个步骤。 首先在` PhotoService `类(` src/app/services/photo.service.ts`)中创建一个新的类方法`savePicture()` 。 我们传入 `photo` 对象，该对象代表新捕获的设备照片：
 
 ```typescript
-private async savePicture(cameraPhoto: CameraPhoto) { }
+private async savePicture(photo: Photo) { }
 ```
 
 我们可以在 `addNewToGallery()` 中立即使用这个新函数：
@@ -37,9 +37,9 @@ public async addNewToGallery() {
 我们将使用 Capacitor [Filesystem API](https://capacitor.ionicframework.com/docs/apis/filesystem) 将照片保存到文件系统中。 首先，将照片转换为 base64 格式，然后将数据输入文件系统的 ` writeFile ` 函数。 你得记得，我们在`tab2.page.html`文件里，为每张显示的图片源路径（`src`属性）都设置了一个webviewPath的参数， 所以我们要返回一个照片的对象。
 
 ```typescript
-private async savePicture(cameraPhoto: CameraPhoto) {
+private async savePicture(photo: Photo) {
   // 要将照片转成base64格式，必须要通过文件系统保存
-  const base64Data = await this.readAsBase64(cameraPhoto);
+  const base64Data = await this.readAsBase64(photo);
 
   // 在数据文件夹中写入数据
   const fileName = new Date().getTime() + '.jpeg';
@@ -52,7 +52,7 @@ private async savePicture(cameraPhoto: CameraPhoto) {
   // 用webPath去显示图片，而不是用base64，因为base64需要在内存里加载
   return {
     filepath: fileName,
-    webviewPath: cameraPhoto.webPath
+    webviewPath: photo.webPath
   };
 }
 ```
@@ -60,9 +60,9 @@ private async savePicture(cameraPhoto: CameraPhoto) {
 接下来我们要定义一个很有用的函数`readAsBase64()`。 我们把他抽取成一个单独的方法，因为它的兼容性很不错（web、 移动）。 现在该实现在web上运行的业务：
 
 ```typescript
-private async readAsBase64(cameraPhoto: CameraPhoto) {
+private async readAsBase64(photo: Photo) {
   // 取得照片之后，将其读取成二进制大对象，然后转换成base64格式
-  const response = await fetch(cameraPhoto.webPath!);
+  const response = await fetch(photo.webPath!);
   const blob = await response.blob();
 
   return await this.convertBlobToBase64(blob) as string;  

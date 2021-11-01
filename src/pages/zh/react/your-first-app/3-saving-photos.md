@@ -22,7 +22,7 @@ const { deleteFile, getUri, readFile, writeFile } = useFilesystem();
 Next, create a couple of new functions in `usePhotoGallery`:
 
 ```typescript
-const savePicture = async (photo: CameraPhoto, fileName: string): Promise<Photo> => {
+const savePicture = async (photo: Photo, fileName: string): Promise<Photo> => {
   const base64Data = await base64FromPath(photo.webPath!);
   const savedFile = await writeFile({
     path: fileName,
@@ -41,22 +41,22 @@ const savePicture = async (photo: CameraPhoto, fileName: string): Promise<Photo>
 
 > The base64FromPath method is a helper util imported from "@ionic/react-hooks/filesystem". It downloads a file from the supplied path and returns a base64 representation of that file.
 
-We pass in the `cameraPhoto` object, which represents the newly captured device photo, as well as the fileName, which will provide a path for the file to be stored to.
+We pass in the `photo` object, which represents the newly captured device photo, as well as the fileName, which will provide a path for the file to be stored to.
 
 Next we use the Capacitor [Filesystem API](https://capacitor.ionicframework.com/docs/apis/filesystem) to save the photo to the filesystem. We start by converting the photo to base64 format, then feed the data to the Filesystem’s `writeFile` function.
 
-Last, call `savePicture` and pass in the cameraPhoto object and filename directly underneath the call to `setPhotos` in the `takePhoto` method. Here is the full method:
+Last, call `savePicture` and pass in the photo object and filename directly underneath the call to `setPhotos` in the `takePhoto` method. Here is the full method:
 
 ```typescript
 const takePhoto = async () => {
-  const cameraPhoto = await getPhoto({
+  const photo = await getPhoto({
     resultType: CameraResultType.Uri,
     source: CameraSource.Camera,
     quality: 100
   });
 
   const fileName = new Date().getTime() + '.jpeg';
-  const savedFileImage = await savePicture(cameraPhoto, fileName);
+  const savedFileImage = await savePicture(photo, fileName);
   const newPhotos = [savedFileImage, ...photos];
   setPhotos(newPhotos);
 };

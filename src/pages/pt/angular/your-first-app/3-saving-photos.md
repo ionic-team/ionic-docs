@@ -11,10 +11,10 @@ Agora podemos tirar várias fotos e exibí-las em uma galeria de fotos na segund
 
 ## Sistema de arquivos raiz
 
-Felizmente, salvá-los no sistema de arquivos só dá alguns passos. Comece criando uma nova função, `savePicture()`, na classe `PhotoService` (`src/app/services/photo.service.ts`). Passamos no objeto `cameraPhoto` , que representa a foto recém-capturada do dispositivo:
+Felizmente, salvá-los no sistema de arquivos só dá alguns passos. Comece criando uma nova função, `savePicture()`, na classe `PhotoService` (`src/app/services/photo.service.ts`). Passamos no objeto `photo` , que representa a foto recém-capturada do dispositivo:
 
 ```typescript
-salvamento assíncrono privado (imagem de câmera: CameraPhoto) { }
+salvamento assíncrono privado (imagem de câmera: Photo) { }
 ```
 
 Podemos usar esta nova função imediatamente em `addNewToGallery()`:
@@ -37,9 +37,9 @@ public async addNewToGallery() {
 Usaremos a Capacitor [API do sistema de arquivos](https://capacitor.ionicframework.com/docs/apis/filesystem) para salvar a foto no sistema de arquivos. Para começar, converta a foto para o formato base64 e, em seguida, utilize a função `writeFile` para alimentar os dados para a função </code>. Como deve se lembrar, nós exibimos cada foto na tela, definindo o caminho de origem de cada imagem (atributo`src` de imagem) em `tab2.page.html` para a propriedade webviewPath. Então, defina-o e retorne o novo objeto Foto.
 
 ```typescript
-private async savePicture(cameraPhoto: CameraPhoto) {
+private async savePicture(photo: Photo) {
   // Converter a foto para formato base64, Necessário pela API do sistema de arquivos para salvar
-  const base64Data = await this.readAsBase64(cameraPhoto);
+  const base64Data = await this.readAsBase64(photo);
 
   // Escreva o arquivo para o diretório de dados
   const fileName = new Date().getTime() + '.jpeg';
@@ -53,7 +53,7 @@ private async savePicture(cameraPhoto: CameraPhoto) {
    // já carregada na memória
   return {
     filepath: fileName,
-    webviewPath: cameraPhoto.webPath
+    webviewPath: photo.webPath
   };
 }
 ```
@@ -61,9 +61,9 @@ private async savePicture(cameraPhoto: CameraPhoto) {
 `readAsBase64()` é uma função que vamos definir em seguida. É útil organizar através de um método separado, já que ele requer uma pequena quantidade de plataforma específica (web vs. móvel) - mais sobre isso um pouco. Por enquanto, implemente-os para serem executados na web:
 
 ```typescript
-private async readAsBase64(cameraPhoto: CameraPhoto) {
+private async readAsBase64(photo: Photo) {
   // Buscar a foto, leia como um blob, então converta em formato base64
-  const response = await fetch(cameraPhoto. ebPath!);
+  const response = await fetch(photo. ebPath!);
   const blob = await response.blob();
 
   return aguarda isso. onvertBlobToBase64(blob) como string;  
