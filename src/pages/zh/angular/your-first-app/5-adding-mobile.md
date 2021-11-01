@@ -19,7 +19,7 @@ nextUrl: '/docs/angular/your-first-app/6-deploying-mobile'
 import { Platform } from '@ionic/angular';
 
 export class PhotoService {
-  public photos: Photo[] = [];
+  public photos: UserPhoto[] = [];
   private PHOTO_STORAGE: string = "photos";
   private platform: Platform;
 
@@ -36,19 +36,19 @@ export class PhotoService {
 首先，我们将更新照片保存功能以支持移动设备。 在 `readAsBase64()` 函数中，检查应用程序正在运行哪个平台。 如果是“混合型”(Capacitor或Cordova，两个本机运行时)，则使用Filesystem ` readFile()`方法将照片文件读取为base64格式。 否则，在网络上运行应用程序时使用与以前相同的逻辑：
 
 ```typescript
-private async readAsBase64(cameraPhoto: CameraPhoto) {
+private async readAsBase64(photo: Photo) {
   // “hybrid”将检测Cordova或Capacitor
   if (this.platform.is('hybrid')) {
     // 将文件读取为base64格式
     const file = await Filesystem.readFile({
-      path: cameraPhoto.path
+      path: photo.path
     });
 
     return file.data;
   }
   else {
     // 提取照片，读取为blob，然后转换为base64格式
-    const response = await fetch(cameraPhoto.webPath);
+    const response = await fetch(photo.webPath);
     const blob = await response.blob();
 
     return await this.convertBlobToBase64(blob) as string;
@@ -60,9 +60,9 @@ private async readAsBase64(cameraPhoto: CameraPhoto) {
 
 ```typescript
 // 将图片保存到设备上的文件
-  private async savePicture(cameraPhoto: CameraPhoto) {
+  private async savePicture(photo: Photo) {
     // 将照片转换为Filesystem API要求保存的base64格式
-    const base64Data = await this.readAsBase64(cameraPhoto);
+    const base64Data = await this.readAsBase64(photo);
 
     // 将文件写入数据目录
     const fileName = new Date().getTime() + '.jpeg';
@@ -84,7 +84,7 @@ private async readAsBase64(cameraPhoto: CameraPhoto) {
       // 使用webPath来显示新图像而不是base64，因为它已经加载到内存中
       return {
         filepath: fileName,
-        webviewPath: cameraPhoto.webPath
+        webviewPath: photo.webPath
       };
     }
   }

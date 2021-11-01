@@ -19,7 +19,7 @@ Importez l'API [Plateforme Ionic](https://ionicframework.com/docs/angular/platfo
 import { Platform } from '@ionic/angular';
 
 export class PhotoService {
-  public photos: Photo[] = [];
+  public photos: UserPhoto[] = [];
   private PHOTO_STORAGE: string = "photos";
   private platform: Platform;
 
@@ -36,19 +36,19 @@ export class PhotoService {
 Tout d’abord, nous mettrons à jour la fonctionnalité d’enregistrement de photos pour prendre en charge le mobile. Dans la fonction `readAsBase64()` , vérifiez la plate-forme sur laquelle l'application s'exécute. Si c'est « hybride » (Capacitor ou Cordova, deux exécutions natives), alors lisez le fichier photo au format base64 en utilisant la méthode du système de fichiers `readFile()`. Sinon, utilisez la même logique qu'avant lors de l'exécution de l'application sur le web:
 
 ```typescript
-private async readAsBase64(cameraPhoto: CameraPhoto) {
+private async readAsBase64(photo: Photo) {
   // "hybrid" will detect Cordova or Capacitor
   if (this.platform.is('hybrid')) {
     // Read the file into base64 format
     const file = await Filesystem.readFile({
-      path: cameraPhoto.path
+      path: photo.path
     });
 
     return file.data;
   }
   else {
     // Fetch the photo, read as a blob, then convert to base64 format
-    const response = await fetch(cameraPhoto.webPath);
+    const response = await fetch(photo.webPath);
     const blob = await response.blob();
 
     return await this.convertBlobToBase64(blob) as string;
@@ -60,9 +60,9 @@ Ensuite, mettez à jour la méthode `savePicture()`. Lors de l'exécution sur mo
 
 ```typescript
 // Save picture to file on device
-  private async savePicture(cameraPhoto: CameraPhoto) {
+  private async savePicture(photo: Photo) {
     // Convert photo to base64 format, required by Filesystem API to save
-    const base64Data = await this.readAsBase64(cameraPhoto);
+    const base64Data = await this.readAsBase64(photo);
 
     // Write the file to the data directory
     const fileName = new Date().getTime() + '.jpeg';
@@ -85,7 +85,7 @@ Ensuite, mettez à jour la méthode `savePicture()`. Lors de l'exécution sur mo
       // already loaded into memory
       return {
         filepath: fileName,
-        webviewPath: cameraPhoto.webPath
+        webviewPath: photo.webPath
       };
     }
   }

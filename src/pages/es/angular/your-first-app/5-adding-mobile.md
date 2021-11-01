@@ -19,7 +19,7 @@ Importa el [API de Plataforma](https://ionicframework.com/docs/angular/platform)
 import { Platform } from '@ionic/angular';
 
 export class PhotoService {
-  public photos: Photo[] = [];
+  public photos: UserPhoto[] = [];
   private PHOTO_STORAGE: string = "photos";
   private platform: Platform;
 
@@ -36,19 +36,19 @@ export class PhotoService {
 En primer lugar, actualizaremos la funcionalidad de guardar fotos para que sea compatible con dispositivos móviles. En la función `readAsBase64()`, compruebe en qué plataforma se está ejecutando la aplicación. Si es "híbrida" (Capacitor o Cordova, dos runtime nativos), entonces obtenga la foto en formato base64 utilizando el método de Filesystem `readFile()`. De lo contrario, utilice la misma lógica de antes cuando ejecute la aplicación en la web:
 
 ```typescript
-private async readAsBase64(cameraPhoto: CameraPhoto) {
+private async readAsBase64(photo: Photo) {
   // "hybrid" detectara si es Cordova o Capacitor
   if (this.platform.is('hybrid')) {
     // Lee el archivo en formato base64
     const file = await Filesystem.readFile({
-      path: cameraPhoto.path
+      path: photo.path
     });
 
     return file.data;
   }
   else {
     // Obtiene la foto, como blob, entonces la convierte en formato base64
-    const response = await fetch(cameraPhoto.webPath);
+    const response = await fetch(photo.webPath);
     const blob = await response.blob();
 
     return await this.convertBlobToBase64(blob) as string;
@@ -60,9 +60,9 @@ Next, update the `savePicture()` method. When running on mobile, set `filepath` 
 
 ```typescript
 // Save picture to file on device
-  private async savePicture(cameraPhoto: CameraPhoto) {
+  private async savePicture(photo: Photo) {
     // Convert photo to base64 format, required by Filesystem API to save
-    const base64Data = await this.readAsBase64(cameraPhoto);
+    const base64Data = await this.readAsBase64(photo);
 
     // Write the file to the data directory
     const fileName = new Date().getTime() + '.jpeg';
@@ -85,7 +85,7 @@ Next, update the `savePicture()` method. When running on mobile, set `filepath` 
       // already loaded into memory
       return {
         filepath: fileName,
-        webviewPath: cameraPhoto.webPath
+        webviewPath: photo.webPath
       };
     }
   }

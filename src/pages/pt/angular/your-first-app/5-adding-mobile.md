@@ -36,19 +36,19 @@ export class PhotoService {
 Primeiro, vamos atualizar a funcionalidade de salvar fotos para dar suporte a dispositivos móveis. Na função `readAsBase64()`, verifica em qual plataforma a aplicação está a ser executada. Se for "híbrido" (Capacitor ou Cordova, dois runtimes nativos), então lê o arquivo de fotos no formato base64 usando o método de arquivo `readFile()`. Caso contrário, usa a mesma lógica como antes ao executar o aplicativo na web:
 
 ```typescript
-private async readAsBase64(cameraPhoto: CameraPhoto) {
+private async readAsBase64(photo: Photo) {
   // "hybrid" vai detetar Cordova ou Capacitor
   if (this.platform.is('hybrid')) {
     // Ler o ficheiro em formato base64 
     const file = await Filesystem.readFile({
-      path: cameraPhoto.path
+      path: photo.path
     });
 
     return file.data;
   }
   else {
     // Buscar a foto, ler como um "blob" e depois converter para formato base64
-    const response = await fetch(cameraPhoto.webPath);
+    const response = await fetch(photo.webPath);
     const blob = await response.blob();
 
     return await this.convertBlobToBase64(blob) as string;
@@ -60,9 +60,9 @@ A seguir, atualiza o método `savePicture()`. Quando executres em dispositivos m
 
 ```typescript
 // Guarda o fcheiro da imagem no dispositivo
-  private async savePicture(cameraPhoto: CameraPhoto) {
+  private async savePicture(photo: Photo) {
     // Converte a foto para formato base64, requerido para guardar pela Filesystem API
-    const base64Data = await this.readAsBase64(cameraPhoto);
+    const base64Data = await this.readAsBase64(photo);
 
     // Guarda o ficheiro no diretório de dados
     const fileName = new Date().getTime() + '.jpeg';
@@ -85,7 +85,7 @@ A seguir, atualiza o método `savePicture()`. Quando executres em dispositivos m
       // que esta já está gravada na memória
       return {
         filepath: fileName,
-        webviewPath: cameraPhoto.webPath
+        webviewPath: photo.webPath
       };
     }
   }
