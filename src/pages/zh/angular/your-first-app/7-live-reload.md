@@ -49,10 +49,10 @@ constructor(public photoService: PhotoService,
 
 ```
 
-在导入语句中添加 `Photo`
+在导入语句中添加 `UserPhoto`
 
 ```typescript
-import { Photo, PhotoService } from '../services/photo.service';
+import { UserPhoto, PhotoService } from '../services/photo.service';
 ```
 
 接下来，实现`showActionSheet()`函数。 我们往ActionSheet里面添加两个选项：`Delete`和`Cancel`，`Delete`选项可以调用照片服务的`deletePicture()`函数（我们后面要添加的功能），当按钮的`role`属性被赋值为"cancel"时，它将具有能关闭ActionSheet的功能。

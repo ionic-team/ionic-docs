@@ -29,11 +29,11 @@ The Live Reload server will start up, and the native IDE of choice will open if 
 
 ## Deleting Photos
 
-With Live Reload running and the app is open on your device, let’s implement photo deletion functionality. Open `Tab2.tsx` then import `useState` from React and `Photo` from the `usePhotoGallery` hook:
+With Live Reload running and the app is open on your device, let’s implement photo deletion functionality. Open `Tab2.tsx` then import `useState` from React and `UserPhoto` from the `usePhotoGallery` hook:
 
 ```typescript
 import React, { useState } from 'react';
-import { usePhotoGallery, Photo } from '../hooks/usePhotoGallery';
+import { usePhotoGallery, UserPhoto } from '../hooks/usePhotoGallery';
 // other imports
 ```
 
@@ -46,7 +46,7 @@ const { photos, takePhoto, deletePhoto } = usePhotoGallery();
 Next, add a state value to store information about the photo to delete:
 
 ```typescript
-const [photoToDelete, setPhotoToDelete] = useState<Photo>();
+const [photoToDelete, setPhotoToDelete] = useState<UserPhoto>();
 ```
 
 When a user clicks on an image, we will show the action sheet by changing the state value to the photo. Update the `<IonImg>` element to:
