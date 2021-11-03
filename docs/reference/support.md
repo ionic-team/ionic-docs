@@ -32,7 +32,7 @@ The Ionic team generally recommends the latest releases of third party packages 
 
 | Framework | Required Angular Version | TypeScript |
 |:---------:|:------------------------:|:----------:|
-| v6        | v11+                     | 4.0+       |
+| v6        | v12+                     | 4.0+       |
 | v5        | v8.2+                    | 3.5+       |
 | v4        | v8.2+                    | 3.5+       |
 | v3        | v5.2.11                  | 2.6.2      |
