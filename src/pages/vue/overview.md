@@ -14,7 +14,7 @@ Ionic Vue is built on top of Vue 3.0.0. If you've built an app with early versio
 
 ## Vue Tooling
 
-Ionic Vue projects ship with the same tooling as regular Vue CLI projects. Meaning you'll be building with the Vue CLI and all of it's features. In addition, starter projects also ship with few features enabled by default, like Routing and TypeScript support.
+Ionic Vue projects ship with the same tooling as regular Vue CLI projects. Meaning you'll be building with the Vue CLI and all of its features. In addition, starter projects also ship with few features enabled by default, like Routing and TypeScript support.
 
 ## Native Tooling
 
