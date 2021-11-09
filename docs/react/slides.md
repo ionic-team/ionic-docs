@@ -290,6 +290,9 @@ const Home: React.FC = () => {
 export default Home;
 ```
 
+:::note
+The `IonicSlides` module must be the last module in the array. This will let it automatically customize the settings of modules such as Pagination, Scrollbar, Zoom, and more.
+:::
 
 ## Properties
 

@@ -186,6 +186,10 @@ export class HomePage {
 }
 ```
 
+:::note
+The `IonicSlides` module must be the last module in the array. This will let it automatically customize the settings of modules such as Pagination, Scrollbar, Zoom, and more.
+:::
+
 ## Properties
 
 Swiper options can be provided as individual properties directly on the `<swiper>` component or via the `config` property.
