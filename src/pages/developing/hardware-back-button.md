@@ -3,6 +3,9 @@ previousText: 'Development Tips'
 previousUrl: '/docs/developing/tips'
 nextText: 'Keyboard'
 nextUrl: '/docs/developing/keyboard'
+meta:
+  title: "Hardware Back Button for Capacitor & Cordova on Android Devices"
+  description: "The hardware back button is found on most Android devices. Read to learn more about hardware back button use in Capacitor and Cordova on Ionic applications."
 ---
 
 # Hardware Back Button

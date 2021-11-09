@@ -3,6 +3,9 @@ previousText: 'Testing'
 previousUrl: '/docs/angular/testing'
 nextText: 'Performance'
 nextUrl: '/docs/angular/performance'
+meta:
+  title: "Angular App Data Storage Options - Ionic Documentation"
+  description: "A variety of options are available for storing data within Ionic apps made using Angular. Read our documentation for Ionic Secure Storage and @ionic/storage."
 ---
 
 # Data Storage

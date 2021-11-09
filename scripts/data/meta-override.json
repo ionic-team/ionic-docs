@@ -1,5 +1,9 @@
 {
   "api": {
+    "ion-action-sheet": {
+      "title": "ion-action-sheet | Action Sheet Dialog for iOS and Android Apps",
+      "description": "Action Sheets are dialogs that display a set of options above app content and must be manually dismissed. Read to learn about use on iOS and Android devices."
+    },
     "ion-alert": {
       "title": "ion-alert: Ionic API Alert Buttons with Custom Message Prompts",
       "description": "ion-alert dialog presents or collects information using inputs. Custom alert button messages appear above the app's content and must be manually dismissed."
@@ -35,6 +39,10 @@
     "ion-chip": {
       "title": "ion-chip:  Name, Text, Icon and Avatar for Ionic Framework Apps",
       "description": "ion-chips represent complex entities in small blocks, such as a contact. A chip can contain several different elements such as names, avatars, text, and icons."
+    },
+    "ion-col": {
+      "title": "ion-col: Column Component Padding, Size and Other Properties",
+      "description": "ion-col is a column component that goes inside a row. Content within a grid goes inside of a column. Read more on column padding, size, and other properties."
     },
     "ion-content": {
       "title": "ion-content: Scrollable CSS Component for Ionic App Content Areas",
@@ -124,9 +132,17 @@
       "title": "ion-nav | Nav View Component for Ionic Framework Apps",
       "description": "ion-nav is a standalone for loading arbitrary, and pushing new, components on to the stack. Loading Nav view, and pushing others, won't affect overall routers."
     },
+    "ion-radio": {
+      "title": "ion-radio Component: Radio Property for iOS and Android",
+      "description": "Radio components should be used inside of ion-radio-groups on iOS and Android devices. Read to learn more about radio property usage and installation."
+    },
     "ion-range": {
       "title": "Range Slider | ion-range: Slider Knob Controls with Labels",
       "description": "ion-range lets you select from a range of values by moving the slider. It accepts dual knobs but one controls the value and labels can be placed on either side."
+    },
+    "ion-refresher": {
+      "title": "ion-refresher: Pull-to-Refresh Page Content on Ionic Apps",
+      "description": "ion-refresher provides pull-to-refresh functionality on content components. Learn how this lets users pull down on a page using touch to retrieve more data."
     },
     "ion-reorder": {
       "title": "Reorder | ion-reorder: Drag and Drop Icon to Reorder Items",
@@ -139,6 +155,10 @@
     "ion-picker": {
       "title": "Picker | Display Buttons and Columns for ion-picker on Ionic Apps",
       "description": "A Picker is a dialog that displays a row of buttons and columns underneath. Ion-picker appears on top of the app's content, and at the bottom of the viewport."
+    },
+    "ion-popover": {
+      "title": "ion-popover: iOS / Android Popover UI Component & CSS Properties",
+      "description": "ion-popover is a dialog that appears on top of the current page. Learn about the popover UI component and CSS custom properties for iOS and Android devices."
     },
     "ion-progress-bar": {
       "title": "Progress Bar | Horizontal App Progress Bar for Loading Indicator",
@@ -159,6 +179,10 @@
     "ion-searchbar": {
       "title": "Search Bar Icon for Keyboard Text Display | Ion-Search Bar",
       "description": "Search bars represent a text field that can be used to search through a collection. Learn to input Ion-Search Bar as an icon on Android & iOS keyboard displays."
+    },
+    "ion-segment": {
+      "title": "ion-segment: API Documentation for Segmented Controls",
+      "description": "ion-segments display a group of related buttons—sometimes known as segmented controls. View our Segment API Documentation to learn more about usage."
     },
     "ion-segment-button": {
       "title": "ion-segment-button | Segment Button Icon and Segment Value",
@@ -199,6 +223,14 @@
     "ion-tabs": {
       "title": "Ion-Tabs: Tab-Based Component for App Top-Level Navigation",
       "description": "Tabs are top-level components to implement tab-based navigation. Ion-tabs have no styling & work as router outlets for navigation that behaves like native apps."
+    },
+    "ion-text": {
+      "title": "ion-text: Ionic App Component to Style or Change Text Color",
+      "description": "ion-text is a simple app component that can be used to style the text color of any element. Learn how ion-text wraps elements in order to change the text color."
+    },
+    "ion-textarea": {
+      "title": "Ionic Textarea Component and CSS Properties for Multi-Line Input",
+      "description": "Textarea is for multi-line input. The component accepts native textarea attributes in addition to Ionic properties. Read to learn about use and CSS elements."
     },
     "ion-thumbnail": {
       "title": "ion-thumbnail | Thumbnail App Component to Wrap Images or Icons",
@@ -249,6 +281,10 @@
     "cordova-run": {
       "title": "ionic cordova run: native-run Android and iOS Apps in Browsers",
       "description": "Build your app and deploy it to devices and emulators using ionic cordova run. Use the native-run utility to run your app in an Android or iOS device browser."
+    },
+    "serve": {
+      "title": "ionic serve: Start a Local Development Server for App Dev/Testing",
+      "description": "Start a local development server for app dev/testing with ionic serve. Learn how to easily spin up a development server which launches in your browser."
     },
     "start": {
       "title": "How to Create A New Application with Ionic Start for New Projects",
@@ -304,6 +340,10 @@
       "title": "Native Ionic App Image Crop Plugin | Cordova-Plugin-Crop",
       "description": "Easily crop images in Native Ionic apps with cordova-plugin-crop. Learn more about the image crop plugin installation and usage on iOS and Android platforms."
     },
+    "deeplinks": {
+      "title": "Deeplinks | Ionic Deeplink Plugin on iOS and Android Apps",
+      "description": "This plugin handles deeplinks on iOS and Android for both custom URL scheme links and Universal App Links. Read Ionic's deeplinks docs for integration info."
+    },
     "diagnostic": {
       "title": "Cordova Diagnostic Plugin to Check Device Hardware Features",
       "description": "The Cordova Diagnostic plugin checks whether iOS, Android, or Windows device hardware features are enabled or available to the app. Read to learn more."
@@ -344,6 +384,10 @@
       "title": "File Transfer | Cordova Docs File Transfer Download Plugin",
       "description": "The Cordova File Transfer plug in allows you to upload and download docs files. This plugin is supported on iOS, Android, Windows, and more platforms."
     },
+    "firebase": {
+      "title": "Google Firebase Plugin: Tracking & Reporting on Cordova Projects",
+      "description": "This plugin brings push notifications, event tracking, crash reporting and more from Google Firebase to Cordova projects! Read more in our documentation."
+    },
     "firebase-analytics": {
       "title": "Firebase Analytics | Cordova Firebase Analytics for iOS/Android",
       "description": "Use the Cordova plugin for Firebase Analytics on iOS and Android applications. Read to learn more about Firebase Analytics usage and installation."
@@ -375,6 +419,10 @@
     "google-plus": {
       "title": "Google Plus | Cordova-Plugin-GooglePlus for Ionic Apps",
       "description": "Google Plus is supported on Ionic Framework apps through the cordova-plugin-googleplus. Read to learn more about Google Plus plugin usage and requirements."
+    },
+    "http": {
+      "title": "HTTP Server Plugin Documentation: Advantages for iOS and Android",
+      "description": "HTTP is the Cordova / Phonegap plugin for communicating with HTTP servers. View our documentation to learn the advantages on iOS and Android devices."
     },
     "image-picker": {
       "title": "Image Picker | Cordova-Plugin-Image-Picker for Ionic Apps",
@@ -459,6 +507,10 @@
     "push": {
       "title": "PhoneGap Plugin for Push Notifications With Cordova and Ionic",
       "description": "Register and receive push notifications on your Ionic apps using the Cordova plugin: phonegap-plugin-push. Read for how to install on supported platforms."
+    },
+    "qr-scanner": {
+      "title": "QR Scanner: A Configurable QR Code Reader Plugin for Ionic Apps",
+      "description": "This fast, energy-efficient, highly-configurable QR code scanner for Ionic apps requires cordova-plugin-qrscanner to run. Read our documentation for more info."
     },
     "sign-in-with-apple": {
       "title": "Sign in With Apple: Login to Apps & Websites With Apple ID",

@@ -5,6 +5,9 @@ contributors:
   - mhartington
   - kensodemann
   - elylucas
+meta:
+  title: "App Migration Guide: Documentation to Migrate Ionic 4.x to 5.x"
+  description: "The Ionic Migration Guide provides documentation for how to migrate an app from 4.x to 5.x. Read to learn more about what updates this process requires."
 ---
 
 # Migration Guide

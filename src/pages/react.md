@@ -4,7 +4,8 @@ renderTitle: false
 tableOfContents: false
 meta:
   image: /docs/assets/img/meta/open-graph.png
-  description: Ionic is the app platform for web developers. Build amazing mobile, web, and desktop apps all with one shared code base and open web standards
+  title: "Create an Ionic React App: Framework and Documentation"
+  description: "One codebase, any platform, just React. View our documentation for creating apps with Ionic React—the native React version of Ionic Framework's open-source SDK."
 ---
 
 <div class='flex main-flex'>

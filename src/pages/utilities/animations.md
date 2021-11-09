@@ -3,6 +3,9 @@ previousText: ''
 previousUrl: ''
 nextText: 'Config'
 nextUrl: '/docs/utilities/config'
+meta:
+  title: "Animations: Web Animations API to Build and Run on Ionic Apps"
+  description: "Ionic apps use Web Animations API to build and run animations. Learn how this utility lets developers build complex animations in a platform agnostic manner."
 ---
 
 # Animations

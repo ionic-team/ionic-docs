@@ -5,6 +5,9 @@ previousText: 'Themes'
 previousUrl: '/docs/theming/themes'
 nextText: 'Advanced Theming'
 nextUrl: '/docs/theming/advanced'
+meta:
+  title: "Dark Mode to Change Color Schemes and CSS Properties"
+  description: "Developers are adding dark mode CSS on native applications to support their user preferences. Read to learn more about dark color schemes for Ionic apps."
 ---
 
 # Dark Mode

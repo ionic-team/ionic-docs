@@ -3,6 +3,9 @@ previousText: 'iOS App Store'
 previousUrl: '/docs/deployment/app-store'
 nextText: 'Progressive Web App (PWA)'
 nextUrl: '/docs/deployment/progressive-web-app'
+meta:
+  title: "Android Play Store Deployment: Publish Your Ionic Apps"
+  description: "Ionic documentation for Android Play Store app deployment. Read about how to generate a release build and publish your Ionic apps to the Google Play Store."
 ---
 
 # Android Play Store Deployment
