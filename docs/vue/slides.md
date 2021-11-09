@@ -6,6 +6,12 @@ This guide will go over how to get Swiper for Vue set up in your Ionic Framework
 
 ## Getting Started
 
+First, update to the latest version of Ionic:
+
+```shell
+npm install @ionic/vue@latest @ionic/vue-router@latest
+```
+
 We recommend upgrading to Vue CLI 5 for better compatibility with Swiper:
 
 ```shell

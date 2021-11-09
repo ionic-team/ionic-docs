@@ -6,7 +6,13 @@ This guide will go over how to get Swiper for Angular set up in your Ionic Frame
 
 ## Getting Started
 
-To get started, install the Swiper dependency in your project:
+First, update to the latest version of Ionic:
+
+```shell
+npm install @ionic/angular@latest
+```
+
+Once that is done, install the Swiper dependency in your project:
 
 ```shell
 npm install swiper

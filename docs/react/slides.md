@@ -6,7 +6,13 @@ This guide will go over how to get Swiper for React set up in your Ionic Framewo
 
 ## Getting Started
 
-To get started, install the Swiper dependency in your project:
+First, update to the latest version of Ionic:
+
+```shell
+npm install @ionic/react@latest @ionic/react-router@latest
+```
+
+Once that is done, install the Swiper dependency in your project:
 
 ```shell
 npm install swiper
