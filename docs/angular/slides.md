@@ -156,19 +156,19 @@ See <a href="https://swiperjs.com/angular#usage" target="_blank" rel="noopener n
 :::
 
 
-## The IonicSwiper Module
+## The IonSlides Module
 
-With `ion-slides`, Ionic automatically customized dozens of Swiper properties. This resulted in an experience that felt smooth when swiping on mobile devices. We recommend using the `IonicSwiper` module to ensure that these properties are also set when using Swiper directly.
+With `ion-slides`, Ionic automatically customized dozens of Swiper properties. This resulted in an experience that felt smooth when swiping on mobile devices. We recommend using the `IonSlides` module to ensure that these properties are also set when using Swiper directly.
 
-We can install the `IonicSwiper` module by importing it from `@ionic/angular` and passing it in as the last item in the array provided in `SwiperCore.use`:
+We can install the `IonSlides` module by importing it from `@ionic/angular` and passing it in as the last item in the array provided in `SwiperCore.use`:
 
 ```javascript
 // home.page.ts
 import { Component } from '@angular/core';
 import SwiperCore, { Autoplay, Keyboard, Pagination, Scrollbar, Zoom } from 'swiper';
-import { IonicSwiper } from '@ionic/angular';
+import { IonSlides } from '@ionic/angular';
 
-SwiperCore.use([Autoplay, Keyboard, Pagination, Scrollbar, Zoom, IonicSwiper]);
+SwiperCore.use([Autoplay, Keyboard, Pagination, Scrollbar, Zoom, IonSlides]);
 
 @Component({
   selector: 'app-home',
@@ -361,7 +361,7 @@ If you are using effects such as Cube or Fade, you can install them just like we
 // slides.component.ts
 import { Component } from '@angular/core';
 import SwiperCore, { EffectFade } from 'swiper';
-import { IonicSwiper } from '@ionic/angular';
+import { IonSlides } from '@ionic/angular';
 
 SwiperCore.use([EffectFade, EffectFade]);
 
@@ -400,7 +400,7 @@ After that, we can activate it by setting the `effect` property on `swiper` to `
 // slides.component.ts
 import { Component } from '@angular/core';
 import SwiperCore, { EffectFade } from 'swiper';
-import { IonicSwiper } from '@ionic/angular';
+import { IonSlides } from '@ionic/angular';
 
 SwiperCore.use([EffectFade, EffectFade]);
 
@@ -438,4 +438,4 @@ Before opening an issue, please consider creating a post on the <a href="https:/
 
 If you are running into problems with the Swiper library, new bugs should be filed on the Swiper repo: <a href="https://github.com/nolimits4web/swiper/issues" target="_blank" rel="noopener noreferrer">https://github.com/nolimits4web/swiper/issues</a>
 
-If you are running into problems with the `IonicSwiper` module, new bugs should be filed on the Ionic Framework repo: <a href="https://github.com/ionic-team/ionic-framework/issues" target="_blank" rel="noopener noreferrer">https://github.com/ionic-team/ionic-framework/issues</a>
+If you are running into problems with the `IonSlides` module, new bugs should be filed on the Ionic Framework repo: <a href="https://github.com/ionic-team/ionic-framework/issues" target="_blank" rel="noopener noreferrer">https://github.com/ionic-team/ionic-framework/issues</a>
