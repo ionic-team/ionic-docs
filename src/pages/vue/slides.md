@@ -247,11 +247,11 @@ See <a href="https://swiperjs.com/vue#usage" target="_blank" rel="noopener noref
 :::
 
 
-## The IonSlides Module
+## The IonicSlides Module
 
-With `ion-slides`, Ionic automatically customized dozens of Swiper properties. This resulted in an experience that felt smooth when swiping on mobile devices. We recommend using the `IonSlides` module to ensure that these properties are also set when using Swiper directly.
+With `ion-slides`, Ionic automatically customized dozens of Swiper properties. This resulted in an experience that felt smooth when swiping on mobile devices. We recommend using the `IonicSlides` module to ensure that these properties are also set when using Swiper directly.
 
-We can install the `IonSlides` module by importing it from `@ionic/vue` and passing it in as the last item in the `modules` array:
+We can install the `IonicSlides` module by importing it from `@ionic/vue` and passing it in as the last item in the `modules` array:
 
 ```html
 <template>
@@ -276,7 +276,7 @@ We can install the `IonSlides` module by importing it from `@ionic/vue` and pass
 import { defineComponent } from 'vue';
 import { Autoplay, Keyboard, Pagination, Scrollbar, Zoom } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/vue';
-import { IonContent, IonPage, IonSlides } from '@ionic/vue';
+import { IonContent, IonPage, IonicSlides } from '@ionic/vue';
 
 import 'swiper/css';
 import 'swiper/css/autoplay';
@@ -290,7 +290,7 @@ export default defineComponent({
   components: { Swiper, SwiperSlide, IonContent, IonPage },
   setup() {
     return {
-      modules: [Autoplay, Keyboard, Pagination, Scrollbar, Zoom, IonSlides]
+      modules: [Autoplay, Keyboard, Pagination, Scrollbar, Zoom, IonicSlides]
     }
   }
 });
@@ -298,7 +298,7 @@ export default defineComponent({
 ```
 
 :::note
-The `IonSlides` module must be the last module in the array. This will let it automatically customize the settings of modules such as Pagination, Scrollbar, Zoom, and more.
+The `IonicSlides` module must be the last module in the array. This will let it automatically customize the settings of modules such as Pagination, Scrollbar, Zoom, and more.
 :::
 
 
@@ -463,7 +463,7 @@ If you are using effects such as Cube or Fade, you can install them just like we
   import { defineComponent } from 'vue';
   import { EffectFade } from 'swiper';
   import { Swiper, SwiperSlide } from 'swiper/vue';
-  import { IonContent, IonPage, IonSlides } from '@ionic/vue';
+  import { IonContent, IonPage, IonicSlides } from '@ionic/vue';
 
   import 'swiper/css';
   import '@ionic/vue/css/ionic-swiper.css';
@@ -472,7 +472,7 @@ If you are using effects such as Cube or Fade, you can install them just like we
     components: { Swiper, SwiperSlide, IonContent, IonPage },
     setup() {
       return {
-        modules: [EffectFade, IonSlides]
+        modules: [EffectFade, IonicSlides]
       }
     }
   });
@@ -499,7 +499,7 @@ Next, we need to import the stylesheet associated with the effect:
   import { defineComponent } from 'vue';
   import { EffectFade } from 'swiper';
   import { Swiper, SwiperSlide } from 'swiper/vue';
-  import { IonContent, IonPage, IonSlides } from '@ionic/vue';
+  import { IonContent, IonPage, IonicSlides } from '@ionic/vue';
 
   import 'swiper/css';
   import 'swiper/css/effect-fade';
@@ -509,7 +509,7 @@ Next, we need to import the stylesheet associated with the effect:
     components: { Swiper, SwiperSlide, IonContent, IonPage },
     setup() {
       return {
-        modules: [EffectFade, IonSlides]
+        modules: [EffectFade, IonicSlides]
       }
     }
   });
@@ -537,7 +537,7 @@ After that, we can activate it by setting the `effect` property on `swiper` to `
   import { defineComponent } from 'vue';
   import { EffectFade } from 'swiper';
   import { Swiper, SwiperSlide } from 'swiper/vue';
-  import { IonContent, IonPage, IonSlides } from '@ionic/vue';
+  import { IonContent, IonPage, IonicSlides } from '@ionic/vue';
 
   import 'swiper/css';
   import 'swiper/css/effect-fade';
@@ -547,7 +547,7 @@ After that, we can activate it by setting the `effect` property on `swiper` to `
     components: { Swiper, SwiperSlide, IonContent, IonPage },
     setup() {
       return {
-        modules: [EffectFade, IonSlides]
+        modules: [EffectFade, IonicSlides]
       }
     }
   });
@@ -578,4 +578,4 @@ Before opening an issue, please consider creating a post on the <a href="https:/
 
 If you are running into problems with the Swiper library, new bugs should be filed on the Swiper repo: <a href="https://github.com/nolimits4web/swiper/issues" target="_blank" rel="noopener noreferrer">https://github.com/nolimits4web/swiper/issues</a>
 
-If you are running into problems with the `IonSlides` module, new bugs should be filed on the Ionic Framework repo: <a href="https://github.com/ionic-team/ionic-framework/issues" target="_blank" rel="noopener noreferrer">https://github.com/ionic-team/ionic-framework/issues</a>
+If you are running into problems with the `IonicSlides` module, new bugs should be filed on the Ionic Framework repo: <a href="https://github.com/ionic-team/ionic-framework/issues" target="_blank" rel="noopener noreferrer">https://github.com/ionic-team/ionic-framework/issues</a>

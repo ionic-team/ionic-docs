@@ -254,15 +254,15 @@ See <a href="https://swiperjs.com/react#usage" target="_blank" rel="noopener nor
 
 
 
-## The IonSlides Module
+## The IonicSlides Module
 
-With `ion-slides`, Ionic automatically customized dozens of Swiper properties. This resulted in an experience that felt smooth when swiping on mobile devices. We recommend using the `IonSlides` module to ensure that these properties are also set when using Swiper directly.
+With `ion-slides`, Ionic automatically customized dozens of Swiper properties. This resulted in an experience that felt smooth when swiping on mobile devices. We recommend using the `IonicSlides` module to ensure that these properties are also set when using Swiper directly.
 
-We can install the `IonSlides` module by importing it from `@ionic/react` and passing it in as the last item in the `modules` array:
+We can install the `IonicSlides` module by importing it from `@ionic/react` and passing it in as the last item in the `modules` array:
 
 ```tsx
 import React from 'react';
-import { IonContent, IonPage, IonSlides } from '@ionic/react';
+import { IonContent, IonPage, IonicSlides } from '@ionic/react';
 import { Swiper, SwiperSlide } from 'swiper/react/swiper-react.js';
 import { Autoplay, Keyboard, Pagination, Scrollbar, Zoom } from 'swiper';
 
@@ -279,7 +279,7 @@ const Home: React.FC = () => {
     <IonPage>
       <IonContent>
         <Swiper
-          modules={[Autoplay, Keyboard, Pagination, Scrollbar, Zoom, IonSlides]}
+          modules={[Autoplay, Keyboard, Pagination, Scrollbar, Zoom, IonicSlides]}
           autoplay={true}
           keyboard={true}
           pagination={true}
@@ -338,7 +338,7 @@ const MyComponent: React.FC = () => {
 };
 ```
 
-Below is a full list of property changes when going from `IonSlides` to Swiper Rreact:
+Below is a full list of property changes when going from `IonSlides` to Swiper React:
 
 | Name      | Notes                                                        |
 | --------- | ------------------------------------------------------------ |
@@ -461,7 +461,7 @@ If you are using effects such as Cube or Fade, you can install them just like we
 
 ```tsx
 import React from 'react';
-import { IonContent, IonPage, IonSlides } from '@ionic/react';
+import { IonContent, IonPage, IonicSlides } from '@ionic/react';
 import { EffectFade } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react/swiper-react.js';
 
@@ -473,7 +473,7 @@ const Home: React.FC = () => {
     <IonPage>
       <IonContent>
         <Swiper
-          modules={[EffectFact, IonSlides]}
+          modules={[EffectFact, IonicSlides]}
         >
           <SwiperSlide>Slide 1</SwiperSlide>
           <SwiperSlide>Slide 2</SwiperSlide>
@@ -490,7 +490,7 @@ Next, we need to import the stylesheet associated with the effect:
 
 ```tsx
 import React from 'react';
-import { IonContent, IonPage, IonSlides } from '@ionic/react';
+import { IonContent, IonPage, IonicSlides } from '@ionic/react';
 import { EffectFade } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react/swiper-react.js';
 
@@ -503,7 +503,7 @@ const Home: React.FC = () => {
     <IonPage>
       <IonContent>
         <Swiper
-          modules={[EffectFact, IonSlides]}
+          modules={[EffectFact, IonicSlides]}
         >
           <SwiperSlide>Slide 1</SwiperSlide>
           <SwiperSlide>Slide 2</SwiperSlide>
@@ -522,7 +522,7 @@ After that, we can activate it by setting the `effect` property on `swiper` to `
 
 ```tsx
 import React from 'react';
-import { IonContent, IonPage, IonSlides } from '@ionic/react';
+import { IonContent, IonPage, IonicSlides } from '@ionic/react';
 import { EffectFade } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react/swiper-react.js';;
 
@@ -535,7 +535,7 @@ const Home: React.FC = () => {
     <IonPage>
       <IonContent>
         <Swiper
-          modules={[EffectFact, IonSlides]}
+          modules={[EffectFact, IonicSlides]}
           swiper="fade"
         >
           <SwiperSlide>Slide 1</SwiperSlide>
@@ -575,4 +575,4 @@ Before opening an issue, please consider creating a post on the <a href="https:/
 
 If you are running into problems with the Swiper library, new bugs should be filed on the Swiper repo: <a href="https://github.com/nolimits4web/swiper/issues" target="_blank" rel="noopener noreferrer">https://github.com/nolimits4web/swiper/issues</a>
 
-If you are running into problems with the `IonSlides` module, new bugs should be filed on the Ionic Framework repo: <a href="https://github.com/ionic-team/ionic-framework/issues" target="_blank" rel="noopener noreferrer">https://github.com/ionic-team/ionic-framework/issues</a>
+If you are running into problems with the `IonicSlides` module, new bugs should be filed on the Ionic Framework repo: <a href="https://github.com/ionic-team/ionic-framework/issues" target="_blank" rel="noopener noreferrer">https://github.com/ionic-team/ionic-framework/issues</a>
