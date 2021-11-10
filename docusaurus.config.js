@@ -191,7 +191,7 @@ module.exports = {
               return 'https://crowdin.com/project/ionic-docs';
             }
             if ((match = docPath.match(/api\/(.*)\.md/)) != null) {
-              return `https://github.com/ionic-team/ionic-framework/edit/master/core/src/components/${match[1]}/readme.md`;
+              return `https://github.com/ionic-team/ionic-framework/edit/main/core/src/components/${match[1]}/readme.md`;
             }
             if ((match = docPath.match(/cli\/commands\/(.*)\.md/)) != null) {
               return `https://github.com/ionic-team/ionic-cli/edit/develop/packages/@ionic/cli/src/commands/${match[1].replace(
@@ -200,7 +200,7 @@ module.exports = {
               )}.ts`;
             }
             if ((match = docPath.match(/native\/(.*)\.md/)) != null) {
-              return `https://github.com/ionic-team/ionic-native/edit/master/src/@ionic-native/plugins/${match[1]}/index.ts`;
+              return `https://github.com/ionic-team/ionic-native/edit/master/src/@awesome-cordova-plugins/plugins/${match[1]}/index.ts`;
             }
             return `https://github.com/ionic-team/ionic-docs/edit/main/${versionDocsDirPath}/${docPath}`;
           },
