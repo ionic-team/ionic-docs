@@ -18,6 +18,36 @@ body {
   margin: 0;
 }
 
+#__docusaurus {
+  > .navbar {
+    display: none;
+  }
+
+  //#region ------------ DocPage -------------
+  [class^=docMainContainer] {
+    max-width: initial;
+  }
+  //#endregion
+
+  //#region ------------ DocSidebar -------------
+  [class^=docSidebarContainer] {
+    margin-block-start: 0;
+  }
+
+  [class^=sidebarLogo] {
+    display: none !important;
+  }
+  //#endregion
+}
+
+.navbar__logo {
+  display: none;
+}
+
+.theme-doc-version-badge {
+  display: none;
+}
+
 ion-grid {
   margin: 1em 0;
 }

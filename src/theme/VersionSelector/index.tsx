@@ -91,7 +91,7 @@ export default function VersionSelector({
         />
       </button>
       <ul className={clsx('version-selector__dropdown', styles.dropdown)}>
-        {items.map(({ label, isActive, ...rest }) => {
+        {items.map(({ label, isActive, ...rest }, i) => {
           const active = isActive();
           return (
             <li
@@ -103,6 +103,7 @@ export default function VersionSelector({
                   [styles.dropdownItemActive]: active,
                 },
               )}
+              key={i}
             >
               <Link {...rest}>{label}</Link>
               {active && <Checkmark />}
