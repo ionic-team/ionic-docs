@@ -82,7 +82,7 @@ export default function FrameworkSelector(props) {
       <ul
         className={clsx('framework-selector__dropdown', styles.dropdown)}
         aria-labelledby="frameworkSelector">
-        {frameworks.map((framework) => {
+        {frameworks.map((framework, i) => {
           const isActive = framework.toLowerCase() === activeFramework;
 
           return (
@@ -94,7 +94,9 @@ export default function FrameworkSelector(props) {
                   'framework-selector__dropdown-item--active': isActive,
                   [styles.dropdownItemActive]: isActive,
                 },
-              )}>
+              )}
+              key={i}
+            >
               <button
                 onClick={() => {
                   setActiveFramework(framework.toLowerCase());

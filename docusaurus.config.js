@@ -27,6 +27,15 @@ module.exports = {
   themeConfig: {
     navbar: {
       hideOnScroll: true,
+      logo: {
+        alt: 'Site Logo',
+        src: '/img/framework-logo.svg',
+        srcDark: '/img/framework-logo-dark.svg',
+        href: '/',
+        target: '_self',
+        width: 32,
+        height: 32,
+      },
       items: [
         {
           type: 'doc',
@@ -208,6 +217,7 @@ module.exports = {
           versions: {
             current: {
               label: 'v6-beta',
+              banner: 'none'
             },
             v5: {
               banner: 'none',

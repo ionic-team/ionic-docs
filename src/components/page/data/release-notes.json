@@ -1,0 +1,4229 @@
+[
+  {
+    "body": [
+      "div",
+      null,
+      [
+        "h3",
+        {
+          "id": "bug-fixes"
+        },
+        "\n      Bug Fixes\n    "
+      ],
+      "\n  ",
+      [
+        "ul",
+        null,
+        "\n",
+        [
+          "li",
+          null,
+          [
+            "strong",
+            null,
+            "angular:"
+          ],
+          " setup config properly (",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/issues/24054"
+            },
+            "#24054"
+          ],
+          ") (",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/commit/e001f24f2ca99abbc98b923dd1a132cc83b3b23f"
+            },
+            "e001f24"
+          ],
+          "), closes ",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/issues/24051"
+            },
+            "#24051"
+          ],
+          " ",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/issues/24052"
+            },
+            "#24052"
+          ]
+        ],
+        "\n",
+        [
+          "li",
+          null,
+          [
+            "strong",
+            null,
+            "back-button:"
+          ],
+          " pass aria-label to native element (",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/issues/24027"
+            },
+            "#24027"
+          ],
+          ") (",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/commit/68a7e43345a0261fdeed6054198c5a22fbbcb584"
+            },
+            "68a7e43"
+          ],
+          ")"
+        ],
+        "\n"
+      ]
+    ],
+    "element": "Calcium",
+    "name": "5.8.4",
+    "published_at": "October 11 2021",
+    "symbol": "Ca",
+    "tag_name": "v5.8.4",
+    "type": "patch",
+    "version": "5.8.4"
+  },
+  {
+    "body": [
+      "div",
+      null,
+      [
+        "h3",
+        {
+          "id": "bug-fixes"
+        },
+        "\n      Bug Fixes\n    "
+      ],
+      "\n  ",
+      [
+        "ul",
+        null,
+        "\n",
+        [
+          "li",
+          null,
+          [
+            "strong",
+            null,
+            "react:"
+          ],
+          " overlay hooks dismiss method now works (",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/issues/24038"
+            },
+            "#24038"
+          ],
+          ") (",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/commit/655631ddf059ce58066d5384d0ae186d7abc09a9"
+            },
+            "655631d"
+          ],
+          "), closes ",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/issues/24030"
+            },
+            "#24030"
+          ]
+        ],
+        "\n"
+      ]
+    ],
+    "element": "Calcium",
+    "name": "5.8.3",
+    "published_at": "October 7 2021",
+    "symbol": "Ca",
+    "tag_name": "v5.8.3",
+    "type": "patch",
+    "version": "5.8.3"
+  },
+  {
+    "body": [
+      "div",
+      null,
+      [
+        "h3",
+        {
+          "id": "bug-fixes"
+        },
+        "\n      Bug Fixes\n    "
+      ],
+      "\n  ",
+      [
+        "ul",
+        null,
+        "\n",
+        [
+          "li",
+          null,
+          [
+            "strong",
+            null,
+            "alert:"
+          ],
+          " made it easier to tell if alert is scrollable in MD mode (",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/issues/23976"
+            },
+            "#23976"
+          ],
+          ") (",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/commit/a26275378f10835343ad8a6cdea50303e6c10a14"
+            },
+            "a262753"
+          ],
+          ")"
+        ],
+        "\n",
+        [
+          "li",
+          null,
+          [
+            "strong",
+            null,
+            "angular:"
+          ],
+          " use initialize function when setting up ionic angular to avoid config errors (",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/issues/24004"
+            },
+            "#24004"
+          ],
+          ") (",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/commit/f112ad4490dc4a179dc3feab495530e14e655e5a"
+            },
+            "f112ad4"
+          ],
+          "), closes ",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/issues/22853"
+            },
+            "#22853"
+          ]
+        ],
+        "\n",
+        [
+          "li",
+          null,
+          [
+            "strong",
+            null,
+            "item-sliding:"
+          ],
+          " closing an item can no longer be interrupted (",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/issues/23973"
+            },
+            "#23973"
+          ],
+          ") (",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/commit/3ca04197a4186c85d04cdf04fa9cb2689ca1bbfb"
+            },
+            "3ca0419"
+          ],
+          "), closes ",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/issues/23969"
+            },
+            "#23969"
+          ]
+        ],
+        "\n",
+        [
+          "li",
+          null,
+          [
+            "strong",
+            null,
+            "react:"
+          ],
+          " overlay hooks memorised properly to prevent re-renders (",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/issues/24010"
+            },
+            "#24010"
+          ],
+          ") (",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/commit/2c977126012ae0231d4e4fa63cc76a528bde699b"
+            },
+            "2c97712"
+          ],
+          "), closes ",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/issues/23741"
+            },
+            "#23741"
+          ]
+        ],
+        "\n",
+        [
+          "li",
+          null,
+          [
+            "strong",
+            null,
+            "select-popover:"
+          ],
+          " non-scrollable popovers no longer have forced overscroll (",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/issues/23972"
+            },
+            "#23972"
+          ],
+          ") (",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/commit/aa4ba890e9c18e8a911c5188b3e2e85433658be9"
+            },
+            "aa4ba89"
+          ],
+          "), closes ",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/issues/23971"
+            },
+            "#23971"
+          ]
+        ],
+        "\n",
+        [
+          "li",
+          null,
+          [
+            "strong",
+            null,
+            "status-bar:"
+          ],
+          " tapping status bar correctly scrolls content to top (",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/issues/24001"
+            },
+            "#24001"
+          ],
+          ") (",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/commit/25eb8cdf98fe455433ca6185e89d9e1223a6d3ae"
+            },
+            "25eb8cd"
+          ],
+          "), closes ",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/issues/20423"
+            },
+            "#20423"
+          ]
+        ],
+        "\n"
+      ]
+    ],
+    "element": "Calcium",
+    "name": "5.8.2",
+    "published_at": "October 6 2021",
+    "symbol": "Ca",
+    "tag_name": "v5.8.2",
+    "type": "patch",
+    "version": "5.8.2"
+  },
+  {
+    "body": [
+      "div",
+      null,
+      [
+        "h3",
+        {
+          "id": "bug-fixes"
+        },
+        "\n      Bug Fixes\n    "
+      ],
+      "\n  ",
+      [
+        "ul",
+        null,
+        "\n",
+        [
+          "li",
+          null,
+          [
+            "strong",
+            null,
+            "angular:"
+          ],
+          " select method now has correct types (",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/issues/23953"
+            },
+            "#23953"
+          ],
+          ") (",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/commit/3c1be89112d464e77d65c875223138aaedf350cd"
+            },
+            "3c1be89"
+          ],
+          "), closes ",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/issues/23952"
+            },
+            "#23952"
+          ]
+        ],
+        "\n",
+        [
+          "li",
+          null,
+          [
+            "strong",
+            null,
+            "item-sliding:"
+          ],
+          " item-sliding accounts for multiple ion-item elements (",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/issues/23943"
+            },
+            "#23943"
+          ],
+          ") (",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/commit/8108edd876b10834015016385dc3cd5b8f31fbfa"
+            },
+            "8108edd"
+          ],
+          "), closes ",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/issues/19312"
+            },
+            "#19312"
+          ]
+        ],
+        "\n",
+        [
+          "li",
+          null,
+          [
+            "strong",
+            null,
+            "label:"
+          ],
+          " only inherit color if color property is set on ion-item (",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/issues/23944"
+            },
+            "#23944"
+          ],
+          ") (",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/commit/ae1325cee698066a71aae4e7deb953c4185c0926"
+            },
+            "ae1325c"
+          ],
+          "), closes ",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/issues/20125"
+            },
+            "#20125"
+          ]
+        ],
+        "\n"
+      ]
+    ],
+    "element": "Calcium",
+    "name": "5.8.1",
+    "published_at": "September 22 2021",
+    "symbol": "Ca",
+    "tag_name": "v5.8.1",
+    "type": "patch",
+    "version": "5.8.1"
+  },
+  {
+    "body": [
+      "div",
+      null,
+      [
+        "h3",
+        {
+          "id": "bug-fixes"
+        },
+        "\n      Bug Fixes\n    "
+      ],
+      "\n  ",
+      [
+        "ul",
+        null,
+        "\n",
+        [
+          "li",
+          null,
+          [
+            "strong",
+            null,
+            "angular:"
+          ],
+          " nested tabs now go to correct page (",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/issues/23902"
+            },
+            "#23902"
+          ],
+          ") (",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/commit/1ed9f07060736d0c951910427fb12b250d7dd9af"
+            },
+            "1ed9f07"
+          ],
+          "), closes ",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/issues/23897"
+            },
+            "#23897"
+          ]
+        ],
+        "\n",
+        [
+          "li",
+          null,
+          [
+            "strong",
+            null,
+            "header:"
+          ],
+          " role attribute can now be customized (",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/issues/23888"
+            },
+            "#23888"
+          ],
+          ") (",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/commit/8888e2bafd76b59f32b932b5d4a6a961b52894d9"
+            },
+            "8888e2b"
+          ],
+          "), closes ",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/issues/21327"
+            },
+            "#21327"
+          ]
+        ],
+        "\n",
+        [
+          "li",
+          null,
+          [
+            "strong",
+            null,
+            "react:"
+          ],
+          " modal now mounts child component independently of other modals (",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/issues/23903"
+            },
+            "#23903"
+          ],
+          ") (",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/commit/1e13429731c1d4b5200af7f5ca20aff1f3078bfe"
+            },
+            "1e13429"
+          ],
+          "), closes ",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/issues/23904"
+            },
+            "#23904"
+          ]
+        ],
+        "\n",
+        [
+          "li",
+          null,
+          [
+            "strong",
+            null,
+            "tab-bar:"
+          ],
+          " safe area padding now added when slot=\"top\" (",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/issues/23895"
+            },
+            "#23895"
+          ],
+          ") (",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/commit/47829690b538903b70ad4fe77657404013270263"
+            },
+            "4782969"
+          ],
+          "), closes ",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/issues/23893"
+            },
+            "#23893"
+          ]
+        ],
+        "\n"
+      ],
+      "\n\n    ",
+      [
+        "h3",
+        {
+          "id": "features"
+        },
+        "\n      Features\n    "
+      ],
+      "\n  ",
+      [
+        "ul",
+        null,
+        "\n",
+        [
+          "li",
+          null,
+          [
+            "strong",
+            null,
+            "action-sheet, loading, modal, picker, popover:"
+          ],
+          " pass HTML attributes to host element (",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/issues/23929"
+            },
+            "#23929"
+          ],
+          ") (",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/commit/bd96a81ff80ffe32914804ba9b6234c0286a33db"
+            },
+            "bd96a81"
+          ],
+          ")"
+        ],
+        "\n",
+        [
+          "li",
+          null,
+          [
+            "strong",
+            null,
+            "alert, toast:"
+          ],
+          " pass arbitrary HTML attributes to host element (",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/issues/23891"
+            },
+            "#23891"
+          ],
+          ") (",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/commit/73a1daf0aaf6ffe8c7871619f2aec5f6fca1321a"
+            },
+            "73a1daf"
+          ],
+          "), closes ",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/issues/23825"
+            },
+            "#23825"
+          ]
+        ],
+        "\n"
+      ]
+    ],
+    "element": "Calcium",
+    "name": "5.8.0 Calcium",
+    "published_at": "September 15 2021",
+    "symbol": "Ca",
+    "tag_name": "v5.8.0",
+    "type": "minor",
+    "version": "5.8.0"
+  },
+  {
+    "body": [
+      "div",
+      null,
+      [
+        "h3",
+        {
+          "id": "bug-fixes"
+        },
+        "\n      Bug Fixes\n    "
+      ],
+      "\n  ",
+      [
+        "ul",
+        null,
+        "\n",
+        [
+          "li",
+          null,
+          [
+            "strong",
+            null,
+            "alert:"
+          ],
+          " AlertButton role now has correct types (",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/issues/23791"
+            },
+            "#23791"
+          ],
+          ") (",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/commit/864212b0f28d33daede5f4767aa03efa37c219ae"
+            },
+            "864212b"
+          ],
+          ")"
+        ],
+        "\n",
+        [
+          "li",
+          null,
+          [
+            "strong",
+            null,
+            "label:"
+          ],
+          " label now only takes up as much space as needed when slotted (",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/issues/23807"
+            },
+            "#23807"
+          ],
+          ") (",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/commit/9932e26a2ef28317bc85761e71a8fc4d881b8ae8"
+            },
+            "9932e26"
+          ],
+          "), closes ",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/issues/23806"
+            },
+            "#23806"
+          ]
+        ],
+        "\n",
+        [
+          "li",
+          null,
+          [
+            "strong",
+            null,
+            "reorder-group:"
+          ],
+          " dragging reorder item to bottom no longer gives out of bounds index (",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/issues/23797"
+            },
+            "#23797"
+          ],
+          ") (",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/commit/02409f2abfa8acbab05d0f1217b9d1c13721746e"
+            },
+            "02409f2"
+          ],
+          "), closes ",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/issues/23796"
+            },
+            "#23796"
+          ]
+        ],
+        "\n",
+        [
+          "li",
+          null,
+          [
+            "strong",
+            null,
+            "vue:"
+          ],
+          " router guards are now fire correctly when written in a component (",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/issues/23821"
+            },
+            "#23821"
+          ],
+          ") (",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/commit/3c442228ff746165fd823687a2661a24edd08820"
+            },
+            "3c44222"
+          ],
+          "), closes ",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/issues/23820"
+            },
+            "#23820"
+          ]
+        ],
+        "\n"
+      ],
+      "\n\n    ",
+      [
+        "h3",
+        {
+          "id": "features"
+        },
+        "\n      Features\n    "
+      ],
+      "\n  ",
+      [
+        "ul",
+        null,
+        "\n",
+        [
+          "li",
+          null,
+          [
+            "strong",
+            null,
+            "slides:"
+          ],
+          " add IonicSlides module for Swiper migration, deprecate ion-slides (",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/issues/23844"
+            },
+            "#23844"
+          ],
+          ") (",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/commit/11fda41420343886dabd97096690be38f1c40524"
+            },
+            "11fda41"
+          ],
+          "), closes ",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/issues/23447"
+            },
+            "#23447"
+          ]
+        ],
+        "\n"
+      ],
+      "\n\n    ",
+      [
+        "h3",
+        {
+          "id": "code-refactoring"
+        },
+        "\n      ",
+        [
+          "a",
+          {
+            "href": "#code-refactoring"
+          },
+          "Code Refactoring"
+        ],
+        "\n    "
+      ],
+      "\n  ",
+      [
+        "ul",
+        null,
+        "\n",
+        [
+          "li",
+          null,
+          [
+            "strong",
+            null,
+            "virtual-scroll:"
+          ],
+          " deprecated virtual scroll in favor of solutions provided by JS frameworks (",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic-framework/pull/23854"
+            },
+            "#23854"
+          ],
+          ") (",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic-framework/commit/a0229bc7b2edb061510de0f2042e7910d04accc0"
+            },
+            "a0229bc"
+          ],
+          ")"
+        ],
+        "\n"
+      ]
+    ],
+    "element": "Potassium",
+    "name": "5.7.0 Potassium",
+    "published_at": "September 1 2021",
+    "symbol": "K",
+    "tag_name": "v5.7.0",
+    "type": "minor",
+    "version": "5.7.0"
+  },
+  {
+    "body": [
+      "div",
+      null,
+      [
+        "h3",
+        {
+          "id": "bug-fixes"
+        },
+        "\n      Bug Fixes\n    "
+      ],
+      "\n  ",
+      [
+        "ul",
+        null,
+        "\n",
+        [
+          "li",
+          null,
+          [
+            "strong",
+            null,
+            "back-button:"
+          ],
+          " MD ripple now accounts for --ripple-color (",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/issues/23749"
+            },
+            "#23749"
+          ],
+          ") (",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/commit/6b18a89ac2c446082ce7faebe329157eedb13a0e"
+            },
+            "6b18a89"
+          ],
+          "), closes ",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/issues/23748"
+            },
+            "#23748"
+          ]
+        ],
+        "\n",
+        [
+          "li",
+          null,
+          [
+            "strong",
+            null,
+            "img:"
+          ],
+          " correctly determine when to load image when scrolling quickly on slower devices (",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/issues/23704"
+            },
+            "#23704"
+          ],
+          ") (",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/commit/067e621bbc3865184ae114b8c91122188c13c860"
+            },
+            "067e621"
+          ],
+          "), closes ",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/issues/23703"
+            },
+            "#23703"
+          ]
+        ],
+        "\n",
+        [
+          "li",
+          null,
+          [
+            "strong",
+            null,
+            "item-sliding:"
+          ],
+          " prevent scrolling during slide gesture (",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/issues/23774"
+            },
+            "#23774"
+          ],
+          ") (",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/commit/e0c4ad30bec3f2bd325d65b210ffb0437149810f"
+            },
+            "e0c4ad3"
+          ],
+          "), closes ",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/issues/19564"
+            },
+            "#19564"
+          ]
+        ],
+        "\n",
+        [
+          "li",
+          null,
+          [
+            "strong",
+            null,
+            "nav:"
+          ],
+          " custom animation is now used correctly (",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/issues/23779"
+            },
+            "#23779"
+          ],
+          ") (",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/commit/f9415ef8a689e26078bdd01623348c79f9f818ad"
+            },
+            "f9415ef"
+          ],
+          "), closes ",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/issues/23777"
+            },
+            "#23777"
+          ]
+        ],
+        "\n",
+        [
+          "li",
+          null,
+          [
+            "strong",
+            null,
+            "vue:"
+          ],
+          " using router.go now shows correct view (",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/issues/23773"
+            },
+            "#23773"
+          ],
+          ") (",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/commit/621f4faa1ab03137158127a56c7fe0aa1f7ae489"
+            },
+            "621f4fa"
+          ],
+          "), closes ",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/issues/22563"
+            },
+            "#22563"
+          ]
+        ],
+        "\n"
+      ]
+    ],
+    "element": "Argon",
+    "name": "5.6.14",
+    "published_at": "August 18 2021",
+    "symbol": "Ar",
+    "tag_name": "v5.6.14",
+    "type": "patch",
+    "version": "5.6.14"
+  },
+  {
+    "body": [
+      "div",
+      null,
+      [
+        "h3",
+        {
+          "id": "bug-fixes"
+        },
+        "\n      Bug Fixes\n    "
+      ],
+      "\n  ",
+      [
+        "ul",
+        null,
+        "\n",
+        [
+          "li",
+          null,
+          [
+            "strong",
+            null,
+            "checkbox, radio:"
+          ],
+          " change event interfaces correctly use TypeScript generics for value (",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/issues/23044"
+            },
+            "#23044"
+          ],
+          ") (",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/commit/8a941fd24cd138817a2e91c42898878a919538e4"
+            },
+            "8a941fd"
+          ],
+          ")"
+        ],
+        "\n",
+        [
+          "li",
+          null,
+          [
+            "strong",
+            null,
+            "gesture:"
+          ],
+          " onEnd now correctly fires even if the event target was removed from the DOM  (",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/issues/23713"
+            },
+            "#23713"
+          ],
+          ") (",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/commit/4edb5e2fed55c8ea21eae50821d16d351bf3aebf"
+            },
+            "4edb5e2"
+          ],
+          "), closes ",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/issues/22819"
+            },
+            "#22819"
+          ]
+        ],
+        "\n",
+        [
+          "li",
+          null,
+          [
+            "strong",
+            null,
+            "item-sliding:"
+          ],
+          " opening item while other items are open no longer requires multiple swipes (",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/issues/23683"
+            },
+            "#23683"
+          ],
+          ") (",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/commit/792864f8ab21dc178c1836a8a0d4fe2d305cc142"
+            },
+            "792864f"
+          ],
+          "), closes ",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/issues/21579"
+            },
+            "#21579"
+          ]
+        ],
+        "\n",
+        [
+          "li",
+          null,
+          [
+            "strong",
+            null,
+            "react:"
+          ],
+          " IonTabs no longer causes SSR to fail (",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/issues/23696"
+            },
+            "#23696"
+          ],
+          ") (",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/commit/f2a05bed1e2a1150e8f1823bfed2d12a219d6ad0"
+            },
+            "f2a05be"
+          ],
+          "), closes ",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/issues/23651"
+            },
+            "#23651"
+          ]
+        ],
+        "\n",
+        [
+          "li",
+          null,
+          [
+            "strong",
+            null,
+            "vue:"
+          ],
+          " improve accuracy of ion-page dev warning (",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/issues/23677"
+            },
+            "#23677"
+          ],
+          ") (",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/commit/fb260a9e09e6f3912b30ef2ebf581d3216483fea"
+            },
+            "fb260a9"
+          ],
+          "), closes ",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/issues/23675"
+            },
+            "#23675"
+          ]
+        ],
+        "\n",
+        [
+          "li",
+          null,
+          [
+            "strong",
+            null,
+            "vue:"
+          ],
+          " tabs warning about user-provided router outlet change is now correctly logged (",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/issues/23724"
+            },
+            "#23724"
+          ],
+          ") (",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/commit/4a64e97a3e390e365101bbb477acad0ddc4671ff"
+            },
+            "4a64e97"
+          ],
+          "), closes ",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/issues/23719"
+            },
+            "#23719"
+          ]
+        ],
+        "\n"
+      ]
+    ],
+    "element": "Argon",
+    "name": "5.6.13",
+    "published_at": "August 4 2021",
+    "symbol": "Ar",
+    "tag_name": "v5.6.13",
+    "type": "patch",
+    "version": "5.6.13"
+  },
+  {
+    "body": [
+      "div",
+      null,
+      [
+        "h3",
+        {
+          "id": "bug-fixes"
+        },
+        "\n      Bug Fixes\n    "
+      ],
+      "\n  ",
+      [
+        "ul",
+        null,
+        "\n",
+        [
+          "li",
+          null,
+          [
+            "strong",
+            null,
+            "action-sheet:"
+          ],
+          " header, subheader, and icon alignment better matches native ios (",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/issues/23322"
+            },
+            "#23322"
+          ],
+          ") (",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/commit/39315bc857b850347dca386776665e21c9742cad"
+            },
+            "39315bc"
+          ],
+          "), closes ",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/issues/23317"
+            },
+            "#23317"
+          ]
+        ],
+        "\n",
+        [
+          "li",
+          null,
+          [
+            "strong",
+            null,
+            "button:"
+          ],
+          " buttons are now disabled during page transitions (",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/issues/23589"
+            },
+            "#23589"
+          ],
+          ") (",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/commit/3b803ebe024be3dbcf814a30a18df51ce23c8880"
+            },
+            "3b803eb"
+          ],
+          "), closes ",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/issues/23588"
+            },
+            "#23588"
+          ]
+        ],
+        "\n",
+        [
+          "li",
+          null,
+          [
+            "strong",
+            null,
+            "item:"
+          ],
+          " mirror disabled prop to aria attribute (",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/issues/23544"
+            },
+            "#23544"
+          ],
+          ") (",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/commit/9021e7cc4b48a69ccc94faa7d2ddcb10a2afa340"
+            },
+            "9021e7c"
+          ],
+          "), closes ",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/issues/23513"
+            },
+            "#23513"
+          ]
+        ],
+        "\n",
+        [
+          "li",
+          null,
+          [
+            "strong",
+            null,
+            "menu-button:"
+          ],
+          " custom aria-label can now be set (",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/issues/23608"
+            },
+            "#23608"
+          ],
+          ") (",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/commit/c08345df2ee3175f3f0d11ff877c7b6f1a102321"
+            },
+            "c08345d"
+          ],
+          "), closes ",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/issues/23604"
+            },
+            "#23604"
+          ]
+        ],
+        "\n",
+        [
+          "li",
+          null,
+          [
+            "strong",
+            null,
+            "overlays:"
+          ],
+          " overlay interfaces are now exported from framework packages and documented (",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/issues/23619"
+            },
+            "#23619"
+          ],
+          ") (",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/commit/773bbcb211d3cf0caf38c25b44e666d98ddfafe5"
+            },
+            "773bbcb"
+          ],
+          "), closes ",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/issues/22790"
+            },
+            "#22790"
+          ]
+        ],
+        "\n",
+        [
+          "li",
+          null,
+          [
+            "strong",
+            null,
+            "router-outlet:"
+          ],
+          " improve reliability of swipe back gesture when quickly swiping back (",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/issues/23527"
+            },
+            "#23527"
+          ],
+          ") (",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/commit/fa069424b265891852a07869b6d086a1cb041e93"
+            },
+            "fa06942"
+          ],
+          "), closes ",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/issues/22895"
+            },
+            "#22895"
+          ]
+        ],
+        "\n"
+      ]
+    ],
+    "element": "Argon",
+    "name": "5.6.12",
+    "published_at": "July 21 2021",
+    "symbol": "Ar",
+    "tag_name": "v5.6.12",
+    "type": "patch",
+    "version": "5.6.12"
+  },
+  {
+    "body": [
+      "div",
+      null,
+      [
+        "h3",
+        {
+          "id": "bug-fixes"
+        },
+        "\n      Bug Fixes\n    "
+      ],
+      "\n  ",
+      [
+        "ul",
+        null,
+        "\n",
+        [
+          "li",
+          null,
+          [
+            "strong",
+            null,
+            "animation:"
+          ],
+          " typescript interface has correct return value for progress methods (",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/issues/23536"
+            },
+            "#23536"
+          ],
+          ") (",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/commit/f3d6abbc1beeafe3b5e7f473d70d0b8ef4c79bc8"
+            },
+            "f3d6abb"
+          ],
+          ")"
+        ],
+        "\n",
+        [
+          "li",
+          null,
+          [
+            "strong",
+            null,
+            "ios, md:"
+          ],
+          " double tapping back button no longer causes app to go back 2 pages (",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/issues/23526"
+            },
+            "#23526"
+          ],
+          ") (",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/commit/69be51dc54e670b2f75cbfac28a4a09517dbf355"
+            },
+            "69be51d"
+          ],
+          "), closes ",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/issues/18455"
+            },
+            "#18455"
+          ]
+        ],
+        "\n"
+      ]
+    ],
+    "element": "Argon",
+    "name": "5.6.11",
+    "published_at": "July 1 2021",
+    "symbol": "Ar",
+    "tag_name": "v5.6.11",
+    "type": "patch",
+    "version": "5.6.11"
+  },
+  {
+    "body": [
+      "div",
+      null,
+      [
+        "h3",
+        {
+          "id": "bug-fixes"
+        },
+        "\n      Bug Fixes\n    "
+      ],
+      "\n  ",
+      [
+        "ul",
+        null,
+        "\n",
+        [
+          "li",
+          null,
+          [
+            "strong",
+            null,
+            "button:"
+          ],
+          " buttons using fill and color properties now account for hover and focused opacity variables (",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/issues/23442"
+            },
+            "#23442"
+          ],
+          ") (",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/commit/68c0e7136d3f8aad8a195a0371104f7dd5fa7060"
+            },
+            "68c0e71"
+          ],
+          "), closes ",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/issues/23441"
+            },
+            "#23441"
+          ]
+        ],
+        "\n",
+        [
+          "li",
+          null,
+          [
+            "strong",
+            null,
+            "item:"
+          ],
+          " using multiple items with inputs no longer results in console warnings (",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/issues/23429"
+            },
+            "#23429"
+          ],
+          ") (",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/commit/e27b5b6ae360c44d8521ac7191817cbbe0367c05"
+            },
+            "e27b5b6"
+          ],
+          "), closes ",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/issues/23427"
+            },
+            "#23427"
+          ]
+        ],
+        "\n",
+        [
+          "li",
+          null,
+          [
+            "strong",
+            null,
+            "vue:"
+          ],
+          " IonTabs can now accept IonRouterOutlet, deprecated default router outlet in tabs (",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/issues/23477"
+            },
+            "#23477"
+          ],
+          ") (",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/commit/a2a4cff3d0d67868f384e1e9eec7cc738e260a27"
+            },
+            "a2a4cff"
+          ],
+          "), closes ",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/issues/23321"
+            },
+            "#23321"
+          ]
+        ],
+        "\n"
+      ]
+    ],
+    "element": "Argon",
+    "name": "5.6.10",
+    "published_at": "June 22 2021",
+    "symbol": "Ar",
+    "tag_name": "v5.6.10",
+    "type": "patch",
+    "version": "5.6.10"
+  },
+  {
+    "body": [
+      "div",
+      null,
+      [
+        "h3",
+        {
+          "id": "bug-fixes"
+        },
+        "\n      Bug Fixes\n    "
+      ],
+      "\n  ",
+      [
+        "ul",
+        null,
+        "\n",
+        [
+          "li",
+          null,
+          [
+            "strong",
+            null,
+            "modal:"
+          ],
+          " swipe to close modal is no longer swipeable on footer (",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/issues/23401"
+            },
+            "#23401"
+          ],
+          ") (",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/commit/ae96563fb3c4612cb8585292b389ee746f5759f7"
+            },
+            "ae96563"
+          ],
+          "), closes ",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/issues/23398"
+            },
+            "#23398"
+          ]
+        ],
+        "\n",
+        [
+          "li",
+          null,
+          [
+            "strong",
+            null,
+            "title:"
+          ],
+          " inherit padding for iOS title in a toolbar (",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/issues/23343"
+            },
+            "#23343"
+          ],
+          ") (",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/commit/82cfa5565347704b0e9f7dac792ed2aa6dd30505"
+            },
+            "82cfa55"
+          ],
+          "), closes ",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/issues/23072"
+            },
+            "#23072"
+          ]
+        ],
+        "\n",
+        [
+          "li",
+          null,
+          [
+            "strong",
+            null,
+            "vue:"
+          ],
+          " improve v-model integration for Vue 3.1.0+ (",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/issues/23420"
+            },
+            "#23420"
+          ],
+          ") (",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/commit/f0086288512bd7f7d1929d79bfd8bf702efc732e"
+            },
+            "f008628"
+          ],
+          ")"
+        ],
+        "\n",
+        [
+          "li",
+          null,
+          [
+            "strong",
+            null,
+            "vue:"
+          ],
+          " prevent error from being thrown when testing on certain jest runners (",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/issues/23421"
+            },
+            "#23421"
+          ],
+          ") (",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/commit/60bedb5599b286bffccfc54c4861a269d9b8df73"
+            },
+            "60bedb5"
+          ],
+          "), closes ",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/issues/23397"
+            },
+            "#23397"
+          ]
+        ],
+        "\n"
+      ]
+    ],
+    "element": "Argon",
+    "name": "5.6.9",
+    "published_at": "June 8 2021",
+    "symbol": "Ar",
+    "tag_name": "v5.6.9",
+    "type": "patch",
+    "version": "5.6.9"
+  },
+  {
+    "body": [
+      "div",
+      null,
+      [
+        "h3",
+        {
+          "id": "bug-fixes"
+        },
+        "\n      Bug Fixes\n    "
+      ],
+      "\n  ",
+      [
+        "ul",
+        null,
+        "\n",
+        [
+          "li",
+          null,
+          [
+            "strong",
+            null,
+            "action-sheet:"
+          ],
+          " subheader no longer overlaps action sheet buttons (",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/issues/23318"
+            },
+            "#23318"
+          ],
+          ") (",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/commit/d473a5385108ef5f39d7c9a2b2924e89fec631de"
+            },
+            "d473a53"
+          ],
+          "), closes ",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/issues/23316"
+            },
+            "#23316"
+          ]
+        ],
+        "\n",
+        [
+          "li",
+          null,
+          [
+            "strong",
+            null,
+            "all:"
+          ],
+          " reflect color property as an attribute for vue (",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/issues/23345"
+            },
+            "#23345"
+          ],
+          ") (",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/commit/dc430af906c608f948c8d404ad73ae0e0ac36076"
+            },
+            "dc430af"
+          ],
+          "), closes ",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/issues/23323"
+            },
+            "#23323"
+          ]
+        ],
+        "\n",
+        [
+          "li",
+          null,
+          [
+            "strong",
+            null,
+            "range:"
+          ],
+          " knob can now have an accessible name (",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/issues/23338"
+            },
+            "#23338"
+          ],
+          ") (",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/commit/881dcff40b8bdcb07b27d4ee812ce4ee64b6ea9a"
+            },
+            "881dcff"
+          ],
+          "), closes ",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/issues/23295"
+            },
+            "#23295"
+          ]
+        ],
+        "\n",
+        [
+          "li",
+          null,
+          [
+            "strong",
+            null,
+            "react:"
+          ],
+          " remove @ionic/core dependency in @ionic/react-router to resolve yarn install warning (",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/issues/23351"
+            },
+            "#23351"
+          ],
+          ") (",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/commit/36bfa3350354e09be6c62f4e4bee0c553c5981a3"
+            },
+            "36bfa33"
+          ],
+          "), closes ",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/issues/23346"
+            },
+            "#23346"
+          ]
+        ],
+        "\n",
+        [
+          "li",
+          null,
+          [
+            "strong",
+            null,
+            "react:"
+          ],
+          " support history@5 in preparation for react router 6 (",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/issues/23297"
+            },
+            "#23297"
+          ],
+          ") (",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/commit/4da5216b4f65f3d893cc81ebee77261835218f7f"
+            },
+            "4da5216"
+          ],
+          "), closes ",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/issues/23294"
+            },
+            "#23294"
+          ]
+        ],
+        "\n",
+        [
+          "li",
+          null,
+          [
+            "strong",
+            null,
+            "router:"
+          ],
+          " guards are now triggered on initial navigation (",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/issues/23123"
+            },
+            "#23123"
+          ],
+          ") (",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/commit/56f6f56c6665f40ea6bf41be463cd416883359f7"
+            },
+            "56f6f56"
+          ],
+          "), closes ",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/issues/22936"
+            },
+            "#22936"
+          ]
+        ],
+        "\n",
+        [
+          "li",
+          null,
+          [
+            "strong",
+            null,
+            "router:"
+          ],
+          " redirects now account for query string (",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/issues/23337"
+            },
+            "#23337"
+          ],
+          ") (",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/commit/08a9f3ac94685c5782dd2fa6b56bf3448729a768"
+            },
+            "08a9f3a"
+          ],
+          "), closes ",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/issues/23136"
+            },
+            "#23136"
+          ]
+        ],
+        "\n",
+        [
+          "li",
+          null,
+          [
+            "strong",
+            null,
+            "skeleton-text:"
+          ],
+          " animation no longer jumps on large skeleton text elements (",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/issues/22697"
+            },
+            "#22697"
+          ],
+          ") (",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/commit/1a36922f41f2890c778feedbad9c5b74a72a3907"
+            },
+            "1a36922"
+          ],
+          "), closes ",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/issues/22694"
+            },
+            "#22694"
+          ]
+        ],
+        "\n",
+        [
+          "li",
+          null,
+          [
+            "strong",
+            null,
+            "slides:"
+          ],
+          " resolve prototype pollution in swiper v5 (",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/issues/23344"
+            },
+            "#23344"
+          ],
+          ") (",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/commit/a708c412625cba475ec7863468dcc2146b8feb7a"
+            },
+            "a708c41"
+          ],
+          "), closes ",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/issues/23342"
+            },
+            "#23342"
+          ]
+        ],
+        "\n",
+        [
+          "li",
+          null,
+          [
+            "strong",
+            null,
+            "title:"
+          ],
+          " large title scale animation is now correct in rtl mode (",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/issues/23372"
+            },
+            "#23372"
+          ],
+          ") (",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/commit/3d474ec67ff4192fa3d08e370e20fecbee99a6aa"
+            },
+            "3d474ec"
+          ],
+          "), closes ",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/issues/23371"
+            },
+            "#23371"
+          ]
+        ],
+        "\n"
+      ]
+    ],
+    "element": "Argon",
+    "name": "5.6.8",
+    "published_at": "May 27 2021",
+    "symbol": "Ar",
+    "tag_name": "v5.6.8",
+    "type": "patch",
+    "version": "5.6.8"
+  },
+  {
+    "body": [
+      "div",
+      null,
+      [
+        "h3",
+        {
+          "id": "bug-fixes"
+        },
+        "\n      Bug Fixes\n    "
+      ],
+      "\n  ",
+      [
+        "ul",
+        null,
+        "\n",
+        [
+          "li",
+          null,
+          [
+            "strong",
+            null,
+            "angular:"
+          ],
+          " warnings are no longer generated when running tests with ng test (",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/issues/23292"
+            },
+            "#23292"
+          ],
+          ") (",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/commit/9cb6c80b3db4273e9c003a62a3065427995cb353"
+            },
+            "9cb6c80"
+          ],
+          "), closes ",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/issues/19926"
+            },
+            "#19926"
+          ]
+        ],
+        "\n",
+        [
+          "li",
+          null,
+          [
+            "strong",
+            null,
+            "overlays:"
+          ],
+          " screen readers no longer read content behind overlays (",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/issues/23284"
+            },
+            "#23284"
+          ],
+          ") (",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/commit/a9b12a5aa4c150a1f8a80a826dda0df350bc0092"
+            },
+            "a9b12a5"
+          ],
+          "), closes ",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/issues/22714"
+            },
+            "#22714"
+          ]
+        ],
+        "\n",
+        [
+          "li",
+          null,
+          [
+            "strong",
+            null,
+            "refresher:"
+          ],
+          " refresher now only activates when pulling down on MD (",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/issues/23283"
+            },
+            "#23283"
+          ],
+          ") (",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/commit/1e1596f471e440085bf2d90e473f0cb0c0dcf6e2"
+            },
+            "1e1596f"
+          ],
+          "), closes ",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/issues/23245"
+            },
+            "#23245"
+          ]
+        ],
+        "\n",
+        [
+          "li",
+          null,
+          [
+            "strong",
+            null,
+            "vue:"
+          ],
+          " use correct history mode when doing ssr to avoid errors (",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/issues/23255"
+            },
+            "#23255"
+          ],
+          ") (",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/commit/2e00dab95d3fefeab92c19cedb046ae2bb10879c"
+            },
+            "2e00dab"
+          ],
+          "), closes ",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/issues/23254"
+            },
+            "#23254"
+          ]
+        ],
+        "\n"
+      ]
+    ],
+    "element": "Argon",
+    "name": "5.6.7",
+    "published_at": "May 13 2021",
+    "symbol": "Ar",
+    "tag_name": "v5.6.7",
+    "type": "patch",
+    "version": "5.6.7"
+  },
+  {
+    "body": [
+      "div",
+      null,
+      [
+        "h3",
+        {
+          "id": "bug-fixes"
+        },
+        "\n      Bug Fixes\n    "
+      ],
+      "\n  ",
+      [
+        "ul",
+        null,
+        "\n",
+        [
+          "li",
+          null,
+          [
+            "strong",
+            null,
+            "angular:"
+          ],
+          " back button goes back to proper tab on angular 11.2.10 (",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/issues/23238"
+            },
+            "#23238"
+          ],
+          ") (",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/commit/e436439e10c895b203ca4dc889cf307ffb9524b4"
+            },
+            "e436439"
+          ],
+          "), closes ",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/issues/23230"
+            },
+            "#23230"
+          ]
+        ],
+        "\n",
+        [
+          "li",
+          null,
+          [
+            "strong",
+            null,
+            "react:"
+          ],
+          " remove hardware back button event listener when NavManager is unmounted (",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/issues/23224"
+            },
+            "#23224"
+          ],
+          ") (",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/commit/c501da73be879db0fea818c507bae4386a47d42e"
+            },
+            "c501da7"
+          ],
+          "), closes ",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/issues/23170"
+            },
+            "#23170"
+          ]
+        ],
+        "\n",
+        [
+          "li",
+          null,
+          [
+            "strong",
+            null,
+            "slides:"
+          ],
+          " undefined error is no longer thrown after destroying and quickly re-creating ion-slides (",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/issues/23239"
+            },
+            "#23239"
+          ],
+          ") (",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/commit/2ccaabb5b4d67ec4b1318e3ccb3edc1bd853ab3e"
+            },
+            "2ccaabb"
+          ],
+          "), closes ",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/issues/22289"
+            },
+            "#22289"
+          ]
+        ],
+        "\n",
+        [
+          "li",
+          null,
+          [
+            "strong",
+            null,
+            "vue:"
+          ],
+          " components inside of ion-nav are now unmounted properly (",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/issues/23240"
+            },
+            "#23240"
+          ],
+          ") (",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/commit/f2f41e2af45ba9a36064d33e0b5c1b59da6b74ab"
+            },
+            "f2f41e2"
+          ],
+          "), closes ",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/issues/23233"
+            },
+            "#23233"
+          ]
+        ],
+        "\n",
+        [
+          "li",
+          null,
+          [
+            "strong",
+            null,
+            "vue:"
+          ],
+          " overlay events can now be listened for without the \"on\" prefix, deprecated \"on\" prefix event listeners (",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/issues/23227"
+            },
+            "#23227"
+          ],
+          ") (",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/commit/dab927d2901658f4040c1d1aa6c777497d8714c8"
+            },
+            "dab927d"
+          ],
+          ")"
+        ],
+        "\n"
+      ]
+    ],
+    "element": "Argon",
+    "name": "5.6.6",
+    "published_at": "April 29 2021",
+    "symbol": "Ar",
+    "tag_name": "v5.6.6",
+    "type": "patch",
+    "version": "5.6.6"
+  },
+  {
+    "body": [
+      "div",
+      null,
+      [
+        "h3",
+        {
+          "id": "bug-fixes"
+        },
+        "\n      Bug Fixes\n    "
+      ],
+      "\n  ",
+      [
+        "ul",
+        null,
+        "\n",
+        [
+          "li",
+          null,
+          [
+            "strong",
+            null,
+            "content:"
+          ],
+          " only render a main element when content is being used in primary view (",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/issues/23160"
+            },
+            "#23160"
+          ],
+          ") (",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/commit/2d07d8216af908b181c5e7e438e79a049bb6d8c2"
+            },
+            "2d07d82"
+          ],
+          ")"
+        ],
+        "\n",
+        [
+          "li",
+          null,
+          [
+            "strong",
+            null,
+            "datetime, input, textarea:"
+          ],
+          " only add aria-labelledby if there is an adjacent label (",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/issues/23211"
+            },
+            "#23211"
+          ],
+          ") (",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/commit/a31fb55bac1ef03e014f3d7f6c22c24eff20feb5"
+            },
+            "a31fb55"
+          ],
+          ")"
+        ],
+        "\n",
+        [
+          "li",
+          null,
+          [
+            "strong",
+            null,
+            "radio-group:"
+          ],
+          " pressing spacebar correctly unselects radio with allow-empty-selection (",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/issues/23194"
+            },
+            "#23194"
+          ],
+          ") (",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/commit/7139b3f39e8eeef07ff7c595940fc5dafe062956"
+            },
+            "7139b3f"
+          ],
+          "), closes ",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/issues/22734"
+            },
+            "#22734"
+          ]
+        ],
+        "\n",
+        [
+          "li",
+          null,
+          [
+            "strong",
+            null,
+            "react:"
+          ],
+          " callback refs now work correctly with ionic components (",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/issues/23152"
+            },
+            "#23152"
+          ],
+          ") (",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/commit/0dd189e2c05012659894a4c15cd3a9d407fe0a63"
+            },
+            "0dd189e"
+          ],
+          "), closes ",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/issues/23153"
+            },
+            "#23153"
+          ]
+        ],
+        "\n",
+        [
+          "li",
+          null,
+          [
+            "strong",
+            null,
+            "segment, segment-button:"
+          ],
+          " use tablist and tab roles (",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/issues/23145"
+            },
+            "#23145"
+          ],
+          ") (",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/commit/91ac340ae7e8928f7b0972a093dd9dd7fa727671"
+            },
+            "91ac340"
+          ],
+          ")"
+        ],
+        "\n",
+        [
+          "li",
+          null,
+          [
+            "strong",
+            null,
+            "vue:"
+          ],
+          " dynamic tabs are now correctly recognized (",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/issues/23212"
+            },
+            "#23212"
+          ],
+          ") (",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/commit/004885bfd4446487e6386876c868532a2795347f"
+            },
+            "004885b"
+          ],
+          "), closes ",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/issues/22847"
+            },
+            "#22847"
+          ]
+        ],
+        "\n",
+        [
+          "li",
+          null,
+          [
+            "strong",
+            null,
+            "vue:"
+          ],
+          " update props when navigating to new parameterized route (",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/issues/23189"
+            },
+            "#23189"
+          ],
+          ") (",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/commit/35c8802c22c1f4bf213a01e1c28398ad62d1b7ac"
+            },
+            "35c8802"
+          ],
+          ")"
+        ],
+        "\n"
+      ]
+    ],
+    "element": "Argon",
+    "name": "5.6.5",
+    "published_at": "April 22 2021",
+    "symbol": "Ar",
+    "tag_name": "v5.6.5",
+    "type": "patch",
+    "version": "5.6.5"
+  },
+  {
+    "body": [
+      "div",
+      null,
+      [
+        "h3",
+        {
+          "id": "bug-fixes"
+        },
+        "\n      Bug Fixes\n    "
+      ],
+      "\n  ",
+      [
+        "ul",
+        null,
+        "\n",
+        [
+          "li",
+          null,
+          [
+            "strong",
+            null,
+            "angular:"
+          ],
+          " swiping back quickly no longer causes app to get stuck (",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/issues/23125"
+            },
+            "#23125"
+          ],
+          ") (",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/commit/28c52fd4e3df3d96b4ec83075a322e110e938a1a"
+            },
+            "28c52fd"
+          ],
+          "), closes ",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/issues/15154"
+            },
+            "#15154"
+          ]
+        ],
+        "\n",
+        [
+          "li",
+          null,
+          [
+            "strong",
+            null,
+            "input:"
+          ],
+          " inherit aria-label to input (",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/issues/23159"
+            },
+            "#23159"
+          ],
+          ") (",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/commit/61f094d30665c9afec428028883a5d9a085892d8"
+            },
+            "61f094d"
+          ],
+          ")"
+        ],
+        "\n",
+        [
+          "li",
+          null,
+          [
+            "strong",
+            null,
+            "react:"
+          ],
+          " overlays now correctly unmount any child components after dismissing (",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/issues/23149"
+            },
+            "#23149"
+          ],
+          ") (",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/commit/dee6eb30df370047bbc872b00ab6d801dd11fa81"
+            },
+            "dee6eb3"
+          ],
+          "), closes ",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/issues/23140"
+            },
+            "#23140"
+          ]
+        ],
+        "\n",
+        [
+          "li",
+          null,
+          [
+            "strong",
+            null,
+            "react, vue:"
+          ],
+          " correct view now chosen when going back inside tabs (",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/issues/23154"
+            },
+            "#23154"
+          ],
+          ") (",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/commit/72031902347dc279045e2e099f69852a23dd8436"
+            },
+            "7203190"
+          ],
+          "), closes ",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/issues/23087"
+            },
+            "#23087"
+          ],
+          " ",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/issues/23101"
+            },
+            "#23101"
+          ]
+        ],
+        "\n",
+        [
+          "li",
+          null,
+          [
+            "strong",
+            null,
+            "toggle:"
+          ],
+          " prevent click event from firing twice (",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/issues/23146"
+            },
+            "#23146"
+          ],
+          ") (",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/commit/42e6c90c4632423386b165dddc4b94a55c075e2e"
+            },
+            "42e6c90"
+          ],
+          "), closes ",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/issues/23041"
+            },
+            "#23041"
+          ]
+        ],
+        "\n",
+        [
+          "li",
+          null,
+          [
+            "strong",
+            null,
+            "vue:"
+          ],
+          " account for event name changes in vue 3.0.6+ for overlay components (",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/issues/23100"
+            },
+            "#23100"
+          ],
+          ") (",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/commit/27318cf58563c4b38d0b7045fb61451f45954a8f"
+            },
+            "27318cf"
+          ],
+          ")"
+        ],
+        "\n",
+        [
+          "li",
+          null,
+          [
+            "strong",
+            null,
+            "vue:"
+          ],
+          " components now integrate properly with vee-validate (",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/issues/23114"
+            },
+            "#23114"
+          ],
+          ") (",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/commit/ba51daf17c4438aea6826882f82a04ebf8d6a5d8"
+            },
+            "ba51daf"
+          ],
+          "), closes ",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/issues/22886"
+            },
+            "#22886"
+          ]
+        ],
+        "\n"
+      ]
+    ],
+    "element": "Argon",
+    "name": "5.6.4",
+    "published_at": "April 8 2021",
+    "symbol": "Ar",
+    "tag_name": "v5.6.4",
+    "type": "patch",
+    "version": "5.6.4"
+  },
+  {
+    "body": [
+      "div",
+      null,
+      [
+        "h3",
+        {
+          "id": "bug-fixes"
+        },
+        "\n      Bug Fixes\n    "
+      ],
+      "\n  ",
+      [
+        "ul",
+        null,
+        "\n",
+        [
+          "li",
+          null,
+          [
+            "strong",
+            null,
+            "all:"
+          ],
+          " update tslib to resolve export errors (",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic-framework/pull/23092"
+            },
+            "#23092"
+          ],
+          ") (",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic-framework/commit/0cdd326a4a02729a306bccfcadca7370475eae32"
+            },
+            "0cdd326"
+          ],
+          "), closes ",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic-framework/issues/23090"
+            },
+            "#23090"
+          ]
+        ],
+        "\n",
+        [
+          "li",
+          null,
+          [
+            "strong",
+            null,
+            "react:"
+          ],
+          " correctly show ion-back-button when going back (",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/issues/23069"
+            },
+            "#23069"
+          ],
+          ") (",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/commit/1c93b75e397961e374620eb43bee3d6bb4389836"
+            },
+            "1c93b75"
+          ],
+          "), closes ",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/issues/22692"
+            },
+            "#22692"
+          ]
+        ],
+        "\n"
+      ]
+    ],
+    "element": "Argon",
+    "name": "5.6.3",
+    "published_at": "March 23 2021",
+    "symbol": "Ar",
+    "tag_name": "v5.6.3",
+    "type": "patch",
+    "version": "5.6.3"
+  },
+  {
+    "body": [
+      "div",
+      null,
+      [
+        "h3",
+        {
+          "id": "bug-fixes"
+        },
+        "\n      Bug Fixes\n    "
+      ],
+      "\n  ",
+      [
+        "ul",
+        null,
+        "\n",
+        [
+          "li",
+          null,
+          [
+            "strong",
+            null,
+            "item:"
+          ],
+          " detail icon now respects rtl mode (",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/issues/23081"
+            },
+            "#23081"
+          ],
+          ") (",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/commit/b04fb6e849bc9d6283271aaadc2b8aaae1f3961d"
+            },
+            "b04fb6e"
+          ],
+          "), closes ",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/issues/23078"
+            },
+            "#23078"
+          ]
+        ],
+        "\n"
+      ]
+    ],
+    "element": "Argon",
+    "name": "5.6.2",
+    "published_at": "March 22 2021",
+    "symbol": "Ar",
+    "tag_name": "v5.6.2",
+    "type": "patch",
+    "version": "5.6.2"
+  },
+  {
+    "body": [
+      "div",
+      null,
+      [
+        "h3",
+        {
+          "id": "bug-fixes"
+        },
+        "\n      Bug Fixes\n    "
+      ],
+      "\n  ",
+      [
+        "ul",
+        null,
+        "\n",
+        [
+          "li",
+          null,
+          [
+            "strong",
+            null,
+            "custom-elements:"
+          ],
+          " overlays now present correctly when using custom elements build (",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/issues/23039"
+            },
+            "#23039"
+          ],
+          ") (",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/commit/e4bf052794af9aac07f887013b9250d2a045eba3"
+            },
+            "e4bf052"
+          ],
+          "), closes ",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/issues/23029"
+            },
+            "#23029"
+          ]
+        ],
+        "\n",
+        [
+          "li",
+          null,
+          [
+            "strong",
+            null,
+            "item:"
+          ],
+          " detail icon is no longer announced by screen readers (",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/issues/23055"
+            },
+            "#23055"
+          ],
+          ") (",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/commit/c877061a328c6ab6fa7248b9880d0205c6c4f6c1"
+            },
+            "c877061"
+          ],
+          "), closes ",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/issues/23054"
+            },
+            "#23054"
+          ]
+        ],
+        "\n",
+        [
+          "li",
+          null,
+          [
+            "strong",
+            null,
+            "label:"
+          ],
+          " properly float labels for non-input items (",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/issues/23060"
+            },
+            "#23060"
+          ],
+          ") (",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/commit/c8a3999da109b1719777f2acb791ab5388d371ea"
+            },
+            "c8a3999"
+          ],
+          ")"
+        ],
+        "\n",
+        [
+          "li",
+          null,
+          [
+            "strong",
+            null,
+            "react:"
+          ],
+          " only pass tab event props from IonTabs to IonTabBar if defined (",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/issues/23024"
+            },
+            "#23024"
+          ],
+          ") (",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/commit/f94e618a7b307b143eb39c061dc9e6b80e11f862"
+            },
+            "f94e618"
+          ],
+          "), closes ",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/issues/23023"
+            },
+            "#23023"
+          ]
+        ],
+        "\n",
+        [
+          "li",
+          null,
+          [
+            "strong",
+            null,
+            "refresher:"
+          ],
+          " progressEnd no longer errors when pulling quickly in MD native refresher (",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/issues/23056"
+            },
+            "#23056"
+          ],
+          ") (",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/commit/67617fbc0f7ec825f1fa4c6e7e2da70e3fcd2d66"
+            },
+            "67617fb"
+          ],
+          ")"
+        ],
+        "\n",
+        [
+          "li",
+          null,
+          [
+            "strong",
+            null,
+            "virtual-scroll:"
+          ],
+          " allow null in items property (",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/issues/23047"
+            },
+            "#23047"
+          ],
+          ") (",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/commit/2a253a1d334ca2c6a478a5bc426e3115268a29af"
+            },
+            "2a253a1"
+          ],
+          ")"
+        ],
+        "\n",
+        [
+          "li",
+          null,
+          [
+            "strong",
+            null,
+            "vue:"
+          ],
+          " passing params as props are correctly updated when switching pages (",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/issues/23049"
+            },
+            "#23049"
+          ],
+          ") (",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/commit/2f54bc14699656e6905452a4233d982f83d0001f"
+            },
+            "2f54bc1"
+          ],
+          "), closes ",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/issues/23043"
+            },
+            "#23043"
+          ]
+        ],
+        "\n"
+      ]
+    ],
+    "element": "Argon",
+    "name": "5.6.1",
+    "published_at": "March 17 2021",
+    "symbol": "Ar",
+    "tag_name": "v5.6.1",
+    "type": "patch",
+    "version": "5.6.1"
+  },
+  {
+    "body": [
+      "div",
+      null,
+      [
+        "h3",
+        {
+          "id": "bug-fixes"
+        },
+        "\n      Bug Fixes\n    "
+      ],
+      "\n  ",
+      [
+        "ul",
+        null,
+        "\n",
+        [
+          "li",
+          null,
+          [
+            "strong",
+            null,
+            "all:"
+          ],
+          " improve support for ids with special characters when getting label element (",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/issues/22680"
+            },
+            "#22680"
+          ],
+          ") (",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/commit/19d63f62431ef9d8279f1726dd63fac2f0d4b46b"
+            },
+            "19d63f6"
+          ],
+          "), closes ",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/issues/22678"
+            },
+            "#22678"
+          ]
+        ],
+        "\n",
+        [
+          "li",
+          null,
+          [
+            "strong",
+            null,
+            "header:"
+          ],
+          " collapsed toolbar is no longer incorrectly shown when using ion-refresher (",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/issues/22937"
+            },
+            "#22937"
+          ],
+          ") (",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/commit/5300dcc693caf51a726f8c346cfc9a44474fd3d1"
+            },
+            "5300dcc"
+          ],
+          "), closes ",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/issues/22829"
+            },
+            "#22829"
+          ]
+        ],
+        "\n",
+        [
+          "li",
+          null,
+          [
+            "strong",
+            null,
+            "label:"
+          ],
+          " only show placeholder with floating label when focused (",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/issues/22958"
+            },
+            "#22958"
+          ],
+          ") (",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/commit/9282aa68715c088e9c8fcd915e78fb7ae91f551f"
+            },
+            "9282aa6"
+          ],
+          "), closes ",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/issues/17571"
+            },
+            "#17571"
+          ]
+        ],
+        "\n",
+        [
+          "li",
+          null,
+          [
+            "strong",
+            null,
+            "progress-bar:"
+          ],
+          " use correct theme colors in dark mode (",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/issues/22965"
+            },
+            "#22965"
+          ],
+          ") (",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/commit/b6b2714d70f71255315510c5e49708944875db72"
+            },
+            "b6b2714"
+          ],
+          "), closes ",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/issues/20098"
+            },
+            "#20098"
+          ]
+        ],
+        "\n",
+        [
+          "li",
+          null,
+          [
+            "strong",
+            null,
+            "radio-group:"
+          ],
+          " pressing space no longer jumps screen to bottom of page (",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/issues/22892"
+            },
+            "#22892"
+          ],
+          ") (",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/commit/3a0465e7d6f9e3cb01336a8bdbd7001e4ec34559"
+            },
+            "3a0465e"
+          ],
+          "), closes ",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/issues/22716"
+            },
+            "#22716"
+          ]
+        ],
+        "\n",
+        [
+          "li",
+          null,
+          [
+            "strong",
+            null,
+            "react:"
+          ],
+          " IonRouterOutlet now respects animated={false} prop (",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/issues/22905"
+            },
+            "#22905"
+          ],
+          ") (",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/commit/da1b7a0e7a9a5e6a9120dc4d5459c97d8bca5390"
+            },
+            "da1b7a0"
+          ],
+          "), closes ",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/issues/22903"
+            },
+            "#22903"
+          ]
+        ],
+        "\n",
+        [
+          "li",
+          null,
+          [
+            "strong",
+            null,
+            "react:"
+          ],
+          " onIonTabsWillChange and onIonTabsDidChange event handlers are now properly bound to IonTabs (",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/issues/22233"
+            },
+            "#22233"
+          ],
+          ") (",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/commit/b064fdebef14018b77242b791914d5bb10863d39"
+            },
+            "b064fde"
+          ],
+          ")"
+        ],
+        "\n",
+        [
+          "li",
+          null,
+          [
+            "strong",
+            null,
+            "react, vue:"
+          ],
+          " navigating using ion-back-button now selects correct page (",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/issues/22974"
+            },
+            "#22974"
+          ],
+          ") (",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/commit/cd8ffd82a03ee69ef4cbd7922544bfc39680def9"
+            },
+            "cd8ffd8"
+          ],
+          "), closes ",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/issues/22830"
+            },
+            "#22830"
+          ]
+        ],
+        "\n",
+        [
+          "li",
+          null,
+          [
+            "strong",
+            null,
+            "react, vue:"
+          ],
+          " tab buttons no longer throw an error if href is undefined (",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/issues/22998"
+            },
+            "#22998"
+          ],
+          ") (",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/commit/943e3f6ae37ecc56f21168f057dde77a05e4e144"
+            },
+            "943e3f6"
+          ],
+          "), closes ",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/issues/22997"
+            },
+            "#22997"
+          ]
+        ],
+        "\n",
+        [
+          "li",
+          null,
+          [
+            "strong",
+            null,
+            "refresher:"
+          ],
+          " add correct dark mode styles (",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/issues/22639"
+            },
+            "#22639"
+          ],
+          ") (",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/commit/c05476b88e3e6884b4c490461c9c67dee3dca83d"
+            },
+            "c05476b"
+          ],
+          "), closes ",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/issues/22637"
+            },
+            "#22637"
+          ]
+        ],
+        "\n",
+        [
+          "li",
+          null,
+          [
+            "strong",
+            null,
+            "vue:"
+          ],
+          " correctly remove active state from tab button when navigating away from tab (",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/issues/23000"
+            },
+            "#23000"
+          ],
+          ") (",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/commit/a2763afe8e1fe1dc0decdbcb757a03bc5038045e"
+            },
+            "a2763af"
+          ],
+          "), closes ",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/issues/22597"
+            },
+            "#22597"
+          ]
+        ],
+        "\n",
+        [
+          "li",
+          null,
+          [
+            "strong",
+            null,
+            "vue:"
+          ],
+          " prevent race conditions when opening overlays (",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/issues/22883"
+            },
+            "#22883"
+          ],
+          ") (",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/commit/68a9b800532f9c0b308a3b74ed18a7068a942301"
+            },
+            "68a9b80"
+          ],
+          "), closes ",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/issues/22880"
+            },
+            "#22880"
+          ]
+        ],
+        "\n"
+      ],
+      "\n\n    ",
+      [
+        "h3",
+        {
+          "id": "features"
+        },
+        "\n      Features\n    "
+      ],
+      "\n  ",
+      [
+        "ul",
+        null,
+        "\n",
+        [
+          "li",
+          null,
+          [
+            "strong",
+            null,
+            "custom-elements:"
+          ],
+          " add experimental custom elements build  (",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/issues/22863"
+            },
+            "#22863"
+          ],
+          ") (",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/commit/0de75afbefc521c1d76adcd587f77ba19c285a95"
+            },
+            "0de75af"
+          ],
+          ")"
+        ],
+        "\n",
+        [
+          "li",
+          null,
+          [
+            "strong",
+            null,
+            "progress-bar:"
+          ],
+          " add parts for more design customization (",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/issues/22938"
+            },
+            "#22938"
+          ],
+          ") (",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/commit/e256d3f09fd6f231c4d9e1d0f0927612a591466b"
+            },
+            "e256d3f"
+          ],
+          "), closes ",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/issues/20062"
+            },
+            "#20062"
+          ],
+          " ",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/issues/21820"
+            },
+            "#21820"
+          ]
+        ],
+        "\n",
+        [
+          "li",
+          null,
+          [
+            "strong",
+            null,
+            "react:"
+          ],
+          " add react hooks to control overlay components (",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/issues/22484"
+            },
+            "#22484"
+          ],
+          ") (",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/commit/b83e00934e794a936c9d3d23d7f94bbe89cedcd5"
+            },
+            "b83e009"
+          ],
+          ")"
+        ],
+        "\n",
+        [
+          "li",
+          null,
+          [
+            "strong",
+            null,
+            "searchbar:"
+          ],
+          " add showClearIcon property (",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/issues/22759"
+            },
+            "#22759"
+          ],
+          ") (",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/commit/215eb5d4efbb9ade942dba1687469caf61da21e7"
+            },
+            "215eb5d"
+          ],
+          "), closes ",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/issues/22738"
+            },
+            "#22738"
+          ]
+        ],
+        "\n",
+        [
+          "li",
+          null,
+          [
+            "strong",
+            null,
+            "vue:"
+          ],
+          " add composition API ionic lifecycle hooks (",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/issues/22970"
+            },
+            "#22970"
+          ],
+          ") (",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/commit/dd1c8dbf3b20fbd423f70c96846d9c366d90e7c5"
+            },
+            "dd1c8db"
+          ],
+          "), closes ",
+          [
+            "a",
+            {
+              "href": "https://github.com/ionic-team/ionic/issues/22769"
+            },
+            "#22769"
+          ]
+        ],
+        "\n"
+      ]
+    ],
+    "element": "Argon",
+    "name": "5.6.0 Argon",
+    "published_at": "March 4 2021",
+    "symbol": "Ar",
+    "tag_name": "v5.6.0",
+    "type": "minor",
+    "version": "5.6.0"
+  }
+]
