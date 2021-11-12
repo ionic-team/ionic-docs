@@ -32,12 +32,12 @@ module.exports = {
       hideOnScroll: true,
       logo: {
         alt: 'Site Logo',
-        src: '/img/framework-logo.svg',
-        srcDark: '/img/framework-logo-dark.svg',
+        src: '/docs/logos/framework-docs-logo.svg',
+        srcDark: '/docs/logos/framework-docs-logo.svg',
         href: '/',
         target: '_self',
-        width: 32,
-        height: 32,
+        width: 139,
+        height: 28,
       },
       items: [
         {
@@ -146,32 +146,38 @@ module.exports = {
         },
         {
           type: "iconLink",
-        //   // position: 'right',
-        //   // icon: {
-        //   //   alt: "",
-        //   //   src: "",
-        //   //   srcDark: "",
-        //   //   href: '/',
-        //   //   target: '_self',
-        //   //   width: 32,
-        //   //   height: 32,
-        //   // }
+          icon: {
+            alt: "twitter logo",
+            src: "/docs/logos/twitter.svg",
+            href: 'https://twitter.com/Ionicframework',
+            target: '_blank',
+            width: 18,
+            height: 16,
+          }
+        },
+        {
+          type: "iconLink",
+          icon: {
+            alt: "github logo",
+            src: "/docs/logos/github.svg",
+            href: 'https://github.com/ionic-team/ionic-framework',
+            target: '_blank',
+            width: 16.5,
+            height: 16,
+          }
         }
       ],
-    },
-    algolia: {
-      apiKey: '43228ce75714201a27efcf69666d6b40',
-      indexName: 'ionicframework',
-      contextualSearch: true,
-    },
-    gtag: {
-      trackingID: 'UA-44023830-8',
     },
     prism: {
       theme: { plain: {}, styles: [] },
       // https://github.com/FormidableLabs/prism-react-renderer/blob/master/src/vendor/prism/includeLangs.js
       additionalLanguages: ['shell-session', 'http'],
     },
+    algolia: {
+      apiKey: '43228ce75714201a27efcf69666d6b40',
+      indexName: 'ionicframework',
+      contextualSearch: true,
+    }
   },
   plugins: [
     'docusaurus-plugin-sass',
@@ -221,8 +227,15 @@ module.exports = {
       }
     ],
     '@docusaurus/plugin-content-pages',
+    [
+      '@docusaurus/plugin-google-gtag',
+      {
+        trackingID: 'UA-44023830-8',
+      }
+    ]
   ],
   themes: [
+    '@docusaurus/theme-search-algolia',
     path.resolve(__dirname, 'docusaurus-theme'),
     [
       //overriding the standard docusaurus-theme-classic to provide custom schema

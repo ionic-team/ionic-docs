@@ -30,6 +30,8 @@ html[data-theme='light'] {
 
   --ifm-background-surface-color: var(--token-primary-bg-c);
 
+  --ifm-navbar-background-color: var(--token-primary-bg-c);
+
   --ifm-heading-color: var(--c-carbon-100);
   --ifm-code-background: var(--c-indigo-10);
   --ifm-font-color-base: var(--c-carbon-90);
@@ -40,6 +42,8 @@ html[data-theme='dark'] {
   --token-secondary-bg-c: #13171c;
 
   --ifm-background-surface-color: var(--token-primary-bg-c);
+
+  --ifm-navbar-background-color: var(--token-primary-bg-c);
 
   --ifm-heading-color: #fff;
   --ifm-font-color-base: var(--c-carbon-10);

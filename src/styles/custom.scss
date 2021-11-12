@@ -46,7 +46,7 @@ body {
     justify-content: flex-end;
 
     &::after {
-      background: var(--ifm-menu-link-sublist-icon) 50% / .625rem .625rem;
+      background: var(--ifm-menu-link-sublist-icon) 50% / 1.25rem 1.25rem;
       background-repeat: no-repeat;
 
       margin-inline-end: .5rem;
