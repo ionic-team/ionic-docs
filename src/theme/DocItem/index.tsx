@@ -32,10 +32,10 @@ export default function DocItem(props: Props): JSX.Element {
     hide_table_of_contents: hideTableOfContents,
     toc_min_heading_level: tocMinHeadingLevel,
     toc_max_heading_level: tocMaxHeadingLevel,
-    //CUSTOM CODE
+    //#region ------- CUSTOM CODE --------
     demoUrl,
-    //CUSTOM CODE
     demoSourceUrl,
+    //#endregion
   } = frontMatter;
   const {description, title} = metadata;
 
@@ -105,6 +105,7 @@ export default function DocItem(props: Props): JSX.Element {
             <DocPaginator metadata={metadata} />
           </div>
         </div>
+        {/* ------- CUSTOM CODE -------- */}
         {/* {renderTocDesktop && (
           <div className="col col--3">
             <TOC
@@ -115,30 +116,29 @@ export default function DocItem(props: Props): JSX.Element {
             />
           </div>
         )} */}
-
-        {/* CUSTOM CODE */}
-        {windowSize === 'desktop' &&
-          (demoUrl ? (
-            <div
-              className={clsx(
-                'docDemoWrapper',
-                styles['docDemoWrapper--noToc'],
-                styles.docDemoWrapper,
-              )}
-            >
-              <DocDemo url={demoUrl} source={demoSourceUrl} />
-            </div>
-          ) : (
-            !hideTableOfContents &&
-            DocContent.toc && (
-              <TOC
-                toc={DocContent.toc}
-                minHeadingLevel={tocMinHeadingLevel}
-                maxHeadingLevel={tocMaxHeadingLevel}
-                className={ThemeClassNames.docs.docTocDesktop}
-            />
-            )
-          ))}
+        <div className="end">
+          {windowSize === 'desktop' &&
+            (demoUrl ? (
+              <div
+                className={clsx(
+                  'doc-demo-wrapper'
+                )}
+              >
+                <DocDemo url={demoUrl} source={demoSourceUrl} />
+              </div>
+            ) : (
+              !hideTableOfContents &&
+              DocContent.toc && (
+                <TOC
+                  toc={DocContent.toc}
+                  minHeadingLevel={tocMinHeadingLevel}
+                  maxHeadingLevel={tocMaxHeadingLevel}
+                  className={ThemeClassNames.docs.docTocDesktop}
+              />
+              )
+            ))}
+          </div>
+          {/* -------------- */}
       </div>
     </>
   );
