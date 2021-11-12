@@ -24,8 +24,26 @@ body {
   }
 
   //#region ------------ DocPage -------------
-  [class^=docMainContainer] {
+  [class^=docMainContainer_] {
     max-width: initial;
+  }
+
+  [class^=docPage_] {
+    > div {
+      flex-grow: 1;
+    }
+  }
+  //#endregion
+
+  //#region ------------ DocItem -------------
+  [class^=docItemCol_] {
+    max-width: initial;
+  }
+
+  [class^=docItemContainer_] {
+    max-width: 42rem;
+    margin-inline-start: auto;
+    margin-inline-end: auto;
   }
   //#endregion
 
