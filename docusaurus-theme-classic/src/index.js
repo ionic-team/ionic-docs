@@ -9,8 +9,14 @@ let { ThemeConfigSchema } = require(path.resolve(__dirname, '../../node_modules/
 
 const NavbarIconLinkSchema = Joi.object({
   type: Joi.string().equal('iconLink').required(),
-  // to: Joi.string(),
-  // docsPluginId: Joi.string(),
+  icon: Joi.object({
+    alt: Joi.string().default('icon link'),
+    src: Joi.string(),
+    href: Joi.string(),
+    target: Joi.string().default('_self'),
+    width: Joi.number(),
+    height: Joi.number()
+  })
 });
 
 ThemeConfigSchema = ThemeConfigSchema.concat(
