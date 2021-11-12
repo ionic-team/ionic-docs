@@ -8,7 +8,7 @@ export default function DocSidebar(props) {
   return (
     <>
       <Logo /> 
-      <FrameworkSelector />
+      {/* <FrameworkSelector /> */}
       <OriginalSidebar {...props} />
     </>
   );

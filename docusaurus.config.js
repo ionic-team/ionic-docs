@@ -53,6 +53,18 @@ module.exports = {
           position: 'left',
         },
         {
+          type: 'doc',
+          docId: 'cli',
+          label: 'CLI',
+          position: 'left',
+        },
+        {
+          type: 'doc',
+          docId: 'native',
+          label: 'Native',
+          position: 'left',
+        },
+        {
           type: 'docsVersionDropdown',
           position: 'right',
           dropdownItemsAfter: [{to: '/versions', label: 'All versions'}],
@@ -125,6 +137,9 @@ module.exports = {
           className: 'navbar__link--support',
         },
         {
+          type: 'separator'
+        },
+        {
           type: 'localeDropdown',
           position: 'right',
           dropdownItemsBefore: [],
@@ -142,7 +157,7 @@ module.exports = {
               rel: null,
             },
           ],
-          className: 'navbar__link--language',
+          className: 'icon-link language',
         },
         {
           type: "iconLink",
