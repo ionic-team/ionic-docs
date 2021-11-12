@@ -25,6 +25,9 @@ module.exports = {
   organizationName: 'ionic-team',
   projectName: 'ionic-docs',
   themeConfig: {
+    colorMode: {
+      defaultMode: 'light',
+    },
     navbar: {
       hideOnScroll: true,
       logo: {
@@ -50,16 +53,10 @@ module.exports = {
           position: 'left',
         },
         {
-          type: 'doc',
-          docId: 'cli',
-          label: 'CLI',
-          position: 'left',
-        },
-        {
-          type: 'doc',
-          docId: 'native',
-          label: 'Native',
-          position: 'left',
+          type: 'docsVersionDropdown',
+          position: 'right',
+          dropdownItemsAfter: [{to: '/versions', label: 'All versions'}],
+          dropdownActiveClassDisabled: true,
         },
         {
           type: 'search',
@@ -147,6 +144,19 @@ module.exports = {
           ],
           className: 'navbar__link--language',
         },
+        {
+          type: "iconLink",
+        //   // position: 'right',
+        //   // icon: {
+        //   //   alt: "",
+        //   //   src: "",
+        //   //   srcDark: "",
+        //   //   href: '/',
+        //   //   target: '_self',
+        //   //   width: 32,
+        //   //   height: 32,
+        //   // }
+        }
       ],
     },
     algolia: {
@@ -178,83 +188,57 @@ module.exports = {
         },
       },
     ],
-  ],
-  themes: [path.resolve(__dirname, 'docusaurus-theme')],
-  presets: [
     [
-      '@docusaurus/preset-classic',
+      '@docusaurus/plugin-content-docs',
       {
-        theme: {
-          customCss: [
-            require.resolve(
-              './node_modules/modern-normalize/modern-normalize.css',
-            ),
-            require.resolve('./src/styles/custom.scss'),
-          ],
+        routeBasePath: '/',
+        sidebarPath: require.resolve('./sidebars.js'),
+        editUrl: ({ versionDocsDirPath, docPath, locale }) => {
+          if (locale != 'en') {
+            return 'https://crowdin.com/project/ionic-docs';
+          }
+          if ((match = docPath.match(/api\/(.*)\.md/)) != null) {
+            return `https://github.com/ionic-team/ionic-framework/edit/main/core/src/components/${match[1]}/readme.md`;
+          }
+          if ((match = docPath.match(/cli\/commands\/(.*)\.md/)) != null) {
+            return `https://github.com/ionic-team/ionic-cli/edit/develop/packages/@ionic/cli/src/commands/${match[1].replace(
+              '-',
+              '/',
+            )}.ts`;
+          }
+          if ((match = docPath.match(/native\/(.*)\.md/)) != null) {
+            return `https://github.com/ionic-team/ionic-native/edit/master/src/@awesome-cordova-plugins/plugins/${match[1]}/index.ts`;
+          }
+          return `https://github.com/ionic-team/ionic-docs/edit/main/${versionDocsDirPath}/${docPath}`;
         },
-        docs: {
-          routeBasePath: '/',
-          sidebarPath: require.resolve('./sidebars.js'),
-          editUrl: ({ versionDocsDirPath, docPath, locale }) => {
-            if (locale != 'en') {
-              return 'https://crowdin.com/project/ionic-docs';
-            }
-            if ((match = docPath.match(/api\/(.*)\.md/)) != null) {
-              return `https://github.com/ionic-team/ionic-framework/edit/main/core/src/components/${match[1]}/readme.md`;
-            }
-            if ((match = docPath.match(/cli\/commands\/(.*)\.md/)) != null) {
-              return `https://github.com/ionic-team/ionic-cli/edit/develop/packages/@ionic/cli/src/commands/${match[1].replace(
-                '-',
-                '/',
-              )}.ts`;
-            }
-            if ((match = docPath.match(/native\/(.*)\.md/)) != null) {
-              return `https://github.com/ionic-team/ionic-native/edit/master/src/@awesome-cordova-plugins/plugins/${match[1]}/index.ts`;
-            }
-            return `https://github.com/ionic-team/ionic-docs/edit/main/${versionDocsDirPath}/${docPath}`;
-          },
-          lastVersion: 'current',
-          versions: {
-            current: {
-              label: 'v6-beta',
-              banner: 'none'
-            },
-            v5: {
-              banner: 'none',
-            },
+        lastVersion: 'current',
+        versions: {
+          current: {
+            label: 'v6-beta',
+            banner: 'none'
           },
         },
-        blog: false,
-      },
+      }
     ],
+    '@docusaurus/plugin-content-pages',
+  ],
+  themes: [
+    path.resolve(__dirname, 'docusaurus-theme'),
+    [
+      //overriding the standard docusaurus-theme-classic to provide custom schema
+      path.resolve(__dirname, 'docusaurus-theme-classic'), 
+      {
+        customCss: [
+          require.resolve(
+            './node_modules/modern-normalize/modern-normalize.css',
+          ),
+          require.resolve('./src/styles/custom.scss'),
+        ]
+      }
+    ]
   ],
   customFields: {
     // Used to link code tabs with global framework switcher
     frameworks: ['react', 'angular', 'vue', 'javascript'],
-    // Used to add custom icons at end of navbar
-    navbar: {
-      items: [
-        {
-          'type': 'iconLink',
-          'width': '18',
-          'height': '16',
-          'icon': 'Twitter',
-          'href': 'https://twitter.com/IonicFramework',
-          'position': 'end',
-          'className': 'navbar-twitter',
-          'aria-label': 'Twitter',
-        },
-        {
-          'type': 'iconLink',
-          'width': '16.5',
-          'height': '16',
-          'icon': 'Github',
-          'href': 'https://github.com/ionic-team/ionic-framework',
-          'position': 'end',
-          'className': 'navbar-github',
-          'aria-label': 'GitHub',
-        },
-      ],
-    },
   },
 };

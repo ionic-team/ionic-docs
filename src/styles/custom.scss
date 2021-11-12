@@ -38,6 +38,22 @@ body {
     display: none !important;
   }
   //#endregion
+
+  //#region ------------ Menu -------------
+  .menu__link--sublist {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+
+    &::after {
+      background: var(--ifm-menu-link-sublist-icon) 50% / .625rem .625rem;
+      background-repeat: no-repeat;
+
+      margin-inline-end: .5rem;
+      margin-block-end: 0;
+    }
+  }
+  //#endregion
 }
 
 .navbar__logo {
