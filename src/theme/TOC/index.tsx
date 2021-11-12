@@ -5,7 +5,7 @@ import React from 'react';
 
 export default function TOC(props) {
   return (
-    <div className="tocWrapper">
+    <div className="toc-wrapper">
       <h2>Contents</h2>
       <OriginalTOC {...props} />
       <EditThisPage />
