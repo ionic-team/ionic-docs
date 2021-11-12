@@ -18,10 +18,13 @@ const NavbarIconLinkSchema = Joi.object({
     height: Joi.number()
   })
 });
+const NavbarSeparatorSchema = Joi.object({
+  type: Joi.string().equal('separator').required()
+})
 
 ThemeConfigSchema = ThemeConfigSchema.concat(
   Joi.object({
-    navbar: { items: Joi.array().items(NavbarIconLinkSchema) }
+    navbar: { items: Joi.array().items(NavbarIconLinkSchema).items(NavbarSeparatorSchema) }
   })
 )
 

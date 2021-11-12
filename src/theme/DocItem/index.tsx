@@ -117,28 +117,27 @@ export default function DocItem(props: Props): JSX.Element {
           </div>
         )} */}
         <div className="end">
-          {windowSize === 'desktop' &&
-            (demoUrl ? (
-              <div
-                className={clsx(
-                  'doc-demo-wrapper'
-                )}
-              >
-                <DocDemo url={demoUrl} source={demoSourceUrl} />
-              </div>
-            ) : (
-              !hideTableOfContents &&
-              DocContent.toc && (
-                <TOC
-                  toc={DocContent.toc}
-                  minHeadingLevel={tocMinHeadingLevel}
-                  maxHeadingLevel={tocMaxHeadingLevel}
-                  className={ThemeClassNames.docs.docTocDesktop}
-              />
-              )
-            ))}
-          </div>
-          {/* -------------- */}
+          {demoUrl ? (
+            <div
+              className={clsx(
+                'doc-demo-wrapper'
+              )}
+            >
+              <DocDemo url={demoUrl} source={demoSourceUrl} />
+            </div>
+          ) : (
+            !hideTableOfContents &&
+            DocContent.toc && (
+              <TOC
+                toc={DocContent.toc}
+                minHeadingLevel={tocMinHeadingLevel}
+                maxHeadingLevel={tocMaxHeadingLevel}
+                className={ThemeClassNames.docs.docTocDesktop}
+            />
+            )
+          )}
+        </div>
+        {/* -------------- */}
       </div>
     </>
   );

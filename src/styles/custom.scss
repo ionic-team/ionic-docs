@@ -19,9 +19,7 @@ body {
 }
 
 #__docusaurus {
-  > .navbar {
-    display: none;
-  }
+
 
   //#region ------------ DocPage -------------
   [class^=docMainContainer_] {
@@ -59,6 +57,12 @@ body {
 
       margin-block-start: 5rem;
     }
+
+    .end {
+      @media (max-width: 996px) {
+        display: none;
+      }
+    }
   }
   //#endregion
 
@@ -69,7 +73,12 @@ body {
     margin-block-start: 0;
     max-height: calc(100vh);
 
+    --sidebar-spacing-horizontal: 1.5rem;
+
     > a {
+      padding-inline-start: var(--sidebar-spacing-horizontal);
+      padding-inline-end: var(--sidebar-spacing-horizontal); 
+
       display: flex;
       align-items: center;
       height: var(--ifm-navbar-height);
@@ -108,14 +117,73 @@ body {
     top: initial;
   }
 
+  --ifm-toc-border-color: transparent;
+
   .toc-wrapper {
     position: sticky;
     top: calc(var(--ifm-navbar-height) + 16px);
     max-height: calc(100vh - var(--ifm-navbar-height) - 16px);
 
     margin-block-start: 5rem;
+
+    h2 {
+      font-size: .625rem;
+      line-height: 12px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--c-indigo-60);
+    }
+
+    .table-of-contents {
+      padding: 0;
+      margin-inline-start: calc(-1 * var(--ifm-toc-padding-horizontal));
+      margin-inline-end: calc(-1 * var(--ifm-toc-padding-horizontal));
+    }
   }
   //#endregion
+  
+  
+  > .navbar {
+    display: none;
+  }
+
+  .navbar {
+    .icon-link, [class^=toggle_] {
+      padding: .5rem;
+
+      &::hover {
+        opacity: .7 !important;
+      }
+    }
+
+    .separator {
+      width: 1px;
+      height: 1.75rem;
+      background: var(--c-indigo-40);
+
+      margin-inline-start: 1rem;
+      margin-inline-end: 1rem;
+    }
+
+    .language {
+      padding: 0;
+      margin-inline-start: -.25rem;
+      margin-inline-end: -.25rem;
+      
+
+      > span, &::after {
+        display: none;
+      }
+
+      &::before {
+        content: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMTgiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTEgM2gxMi4xMk03LjA2IDF2Mk0xMC40MiAxN2w0LjA0LTkuMzNMMTguNSAxN00xMS42NiAxNC4zM2g1LjZNMTAuODEgM1M5LjggNi45MiA3LjM1IDkuODhjLTIuNDQgMi45NS01IDQuNDUtNSA0LjQ1IiBzdHJva2U9IiM5MkEwQjMiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+PHBhdGggZD0iTTkuNzUgMTIuMzNzLTEuNDctMS4xMi0zLjAzLTMuMTJjLTEuNTYtMi0yLjM1LTMuNTQtMi4zNS0zLjU0IiBzdHJva2U9IiM5MkEwQjMiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+PC9zdmc+");
+      }
+    }
+  }
+}
+
+.theme-doc-version-banner {
+  display: none;
 }
 
 .navbar__logo {
