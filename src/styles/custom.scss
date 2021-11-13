@@ -14,11 +14,83 @@
 @use './pages/components';
 @use './pages/browser-support';
 
+@use './components/admonition';
+@use './components/code';
+@use './components/markdown';
+@use './components/table';
+@use './components/tabs';
+@use './components/theme-toggle';
+
 :root {
-  //#region ----------- Z Indices ------------
-  --z-sidebar: 2000;
-  --z-backdrop: 1100;
-  //#endregion
+  --ifm-background-color: var(--token-primary-bg-c);
+
+  --ifm-link-color: var(--c-blue-90);
+  //rgb value is c-blue-90
+  --ifm-link-hover-color: rgba(27, 109, 255, 0.7);
+
+  --ifm-font-family-base: -apple-system, BlinkMacSystemFont, Inter, Helvetica,
+    Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI emoji';
+  --ifm-font-family-monospace: 'SFMono-Regular', 'Roboto Mono', Consolas,
+    'Liberation Mono', Menlo, Courier, monospace;
+
+  --ifm-menu-link-sublist-icon: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAiIGhlaWdodD0iNiIgdmlld0JveD0iMCAwIDEwIDYiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxwYXRoIGQ9Ik04Ljk5OTg4IDVMNC45OTk4OCAxTDAuOTk5ODc4IDUiIHN0cm9rZT0iIzAzMDYwQiIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPgo8L3N2Zz4K");
+
+    //#region ----------- Z Indices ------------
+    --z-sidebar: 2000;
+    --z-backdrop: 1100;
+    //#endregion
+}
+
+html[data-theme='light'] {
+  --token-primary-bg-c: #fff;
+  --token-secondary-bg-c: #fff;
+
+  --ifm-background-surface-color: var(--token-primary-bg-c);
+
+  --ifm-navbar-background-color: var(--token-primary-bg-c);
+
+  --ifm-heading-color: var(--c-carbon-100);
+  --ifm-code-background: var(--c-indigo-10);
+  --ifm-font-color-base: var(--c-carbon-90);
+ }
+
+html[data-theme='dark'] {
+  --token-primary-bg-c: #03060b;
+  --token-secondary-bg-c: #13171c;
+
+  --ifm-background-surface-color: var(--token-primary-bg-c);
+
+  --ifm-navbar-background-color: var(--token-primary-bg-c);
+
+  --ifm-heading-color: #fff;
+  --ifm-font-color-base: var(--c-carbon-10);
+  --ifm-background-color: var(--token-primary-bg-c);
+  --ifm-dropdown-background-color: var(--token-secondary-bg-c);
+
+  --ifm-menu-link-sublist-icon-filter: invert(100%);
+}
+
+html {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  font-smoothing: antialiased;
+
+  scroll-padding-top: calc(var(--ifm-navbar-height) + 16px);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: none;
+  }
 }
 
 body {
@@ -134,7 +206,7 @@ body {
     justify-content: flex-end;
 
     &::after {
-      background: var(--ifm-menu-link-sublist-icon) 50% / 1.25rem 1.25rem;
+      background: var(--ifm-menu-link-sublist-icon) 50% / .75rem .75rem;
       background-repeat: no-repeat;
 
       margin-inline-end: .5rem;
@@ -251,6 +323,63 @@ body {
       [class^=searchBox_] {
       position: static;
       right: initial;
+    }
+  }
+  
+  //#endregion
+
+  //#region ------------ Pagination
+  .pagination-nav {
+    &__link {
+      border: none;
+  
+      transition: color 0.2s ease-out;
+    }
+  
+    &__label {
+      --icon-padding: 0.25rem;
+    }
+  
+    &__sublabel {
+      margin-block-end: 1rem;
+    }
+  
+    //Previous item
+    > div:first-of-type {
+      .pagination-nav__link {
+        padding-inline-start: 0;
+      }
+  
+      .pagination-nav__label {
+        padding-inline-start: var(--icon-padding);
+  
+        &::before {
+          padding-inline-end: var(--icon-padding);
+          position: absolute;
+          background-color: var(--ifm-background-color);
+          transform: translateX(calc(var(--icon-padding) * -1));
+          content: '←';
+        }
+      }
+    }
+  
+    //Next item
+    > div:last-of-type {
+      .pagination-nav__link {
+        padding-inline-end: 0;
+      }
+  
+      .pagination-nav__label {
+        padding-inline-end: var(--icon-padding);
+  
+        &::after {
+          padding-inline-start: var(--icon-padding);
+          position: absolute;
+          background-color: var(--ifm-background-color);
+          transform: translateX(calc(-100% + var(--icon-padding)));
+          content: '→';
+        }
+      }
     }
   }
   

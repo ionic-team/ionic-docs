@@ -2,7 +2,6 @@ import React from 'react';
 import clsx from 'clsx';
 import Link from '@docusaurus/Link';
 import useBaseUrl from '@docusaurus/useBaseUrl';
-import { Outbound } from '@theme/icons';
 
 import styles from './styles.module.scss';
 
@@ -24,7 +23,7 @@ function DocsCard(props: Props): JSX.Element {
   const header =
     props.header === 'undefined' ? null : (
       <header className="Card-header">
-        {props.header} {isOutbound ? <Outbound /> : null}
+        {props.header}
       </header>
     );
   const hoverIcon = props.hoverIcon || props.icon;
