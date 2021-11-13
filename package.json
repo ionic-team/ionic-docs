@@ -25,7 +25,6 @@
     "@docusaurus/plugin-content-pages": "0.0.0-4185",
     "@docusaurus/plugin-google-gtag": "^0.0.0-4185",
     "@docusaurus/preset-classic": "0.0.0-4185",
-    "@docusaurus/theme-classic": "0.0.0-4185",
     "@docusaurus/theme-common": "0.0.0-4185",
     "@docusaurus/theme-search-algolia": "0.0.0-4185",
     "@ionic-internal/docusaurus-plugin-tag-manager": "2.0.0",

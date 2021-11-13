@@ -250,7 +250,6 @@ module.exports = {
     ]
   ],
   themes: [
-    '@docusaurus/theme-search-algolia',
     path.resolve(__dirname, 'docusaurus-theme'),
     [
       //overriding the standard docusaurus-theme-classic to provide custom schema
@@ -263,7 +262,8 @@ module.exports = {
           require.resolve('./src/styles/custom.scss'),
         ]
       }
-    ]
+    ],
+    path.resolve(__dirname, './node_modules/@docusaurus/theme-search-algolia')
   ],
   customFields: {
     // Used to link code tabs with global framework switcher
