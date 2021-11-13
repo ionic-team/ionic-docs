@@ -1,0 +1,43 @@
+//overrides
+#__docusaurus {
+  [class^=docSidebarContainer] {
+    position: sticky;
+    top: 0;
+    margin-block-start: 0;
+    max-height: calc(100vh);
+
+    --sidebar-spacing-horizontal: 1.5rem;
+
+    > a {
+      padding-inline-start: var(--sidebar-spacing-horizontal);
+      padding-inline-end: var(--sidebar-spacing-horizontal); 
+
+      display: flex;
+      align-items: center;
+      height: var(--ifm-navbar-height);
+    }
+  }
+
+  [class^=sidebar_] {
+    max-height: initial;
+    position: static;
+  }
+
+  [class^=sidebarLogo] {
+    display: none !important;
+  }
+
+  .menu__link--sublist {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+
+    &::after {
+      background: var(--ifm-menu-link-sublist-icon) 50% / .75rem .75rem;
+      background-repeat: no-repeat;
+
+      margin-inline-end: .5rem;
+      margin-block-end: 0;
+    }
+  }
+}

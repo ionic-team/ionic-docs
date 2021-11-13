@@ -1,0 +1,45 @@
+//overrides
+#__docusaurus {
+  [class^=tableOfContents_] {
+    position: static;
+    top: initial;
+    overflow-x: hidden;
+
+    .table-of-contents {
+      width: 16rem;
+    }
+  }
+
+  --ifm-toc-border-color: transparent;
+
+  .toc-wrapper {
+    position: sticky;
+    top: calc(var(--ifm-navbar-height) + 16px);
+    max-height: calc(100vh - var(--ifm-navbar-height) - 16px);
+
+    margin-block-start: 5rem;
+
+    padding-inline-end: 2rem;
+    padding-inline-start: 2rem;
+
+    h2 {
+      font-size: .625rem;
+      line-height: 12px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--c-indigo-60);
+    }
+
+    .table-of-contents {
+      padding: 0;
+      margin-inline-start: calc(-1 * var(--ifm-toc-padding-horizontal));
+      margin-inline-end: calc(-1 * var(--ifm-toc-padding-horizontal));
+    }
+  }
+
+  [class^=tocCollapsible_] {
+    @media (max-width: 996px) {
+      display: none;
+    }
+  }
+}
