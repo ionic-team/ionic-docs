@@ -41,7 +41,7 @@ html[data-theme='dark'] {
   .encapsulation-pill {
     position: absolute;
     top: calc(
-      var(--ifm-navbar-height) + var(--doc-item-main-spacing-y) - 0.5rem
+      var(--ifm-navbar-height) + 4rem
     );
   }
 

@@ -14,31 +14,50 @@
 @use './pages/components';
 @use './pages/browser-support';
 
+:root {
+  //#region ----------- Z Indices ------------
+  --z-sidebar: 2000;
+  --z-backdrop: 1100;
+  //#endregion
+}
+
 body {
   margin: 0;
 }
 
 #__docusaurus {
-
-
   //#region ------------ DocPage -------------
-  [class^=docMainContainer_] {
+  [class*=docMainContainer_] {
     max-width: initial;
+
+    > .container {
+      max-width: initial;
+
+      > .row {
+        flex-wrap: nowrap;
+      }
+    }
   }
 
-  [class^=docPage_] {
+  [class*=docPage_] {
     > div {
       flex-grow: 1;
+      min-width: 0;
     }
   }
   //#endregion
 
   //#region ------------ DocItem -------------
-  [class^=docItemCol_] {
+  [class*=docItemCol_] {
     max-width: initial;
+    min-width: 0;
+
+    @media (min-width: 997px) {
+      max-width: initial !important;
+    }
   }
 
-  [class^=docItemContainer_] {
+  [class*=docItemContainer_] {
     max-width: 42rem;
     margin-inline-start: auto;
     margin-inline-end: auto;
@@ -46,7 +65,7 @@ body {
 
   }
 
-  [class^=docMainContainer_] {
+  [class*=docMainContainer_] {
     .doc-demo-wrapper {
       overflow: auto;
       max-height: calc(100vh - var(--ifm-navbar-height));
@@ -63,6 +82,19 @@ body {
         display: none;
       }
     }
+
+    > .container {
+      > .row {
+        > .col {
+          min-width: 0;
+        }
+      }
+    }
+  }
+
+  [class*=docItemCol_] {
+    margin-inline-start: auto;
+    margin-inline-end: auto;
   }
   //#endregion
 
@@ -115,6 +147,11 @@ body {
   [class^=tableOfContents_] {
     position: static;
     top: initial;
+    overflow-x: hidden;
+
+    .table-of-contents {
+      width: 16rem;
+    }
   }
 
   --ifm-toc-border-color: transparent;
@@ -125,6 +162,9 @@ body {
     max-height: calc(100vh - var(--ifm-navbar-height) - 16px);
 
     margin-block-start: 5rem;
+
+    padding-inline-end: 2rem;
+    padding-inline-start: 2rem;
 
     h2 {
       font-size: .625rem;
@@ -140,9 +180,15 @@ body {
       margin-inline-end: calc(-1 * var(--ifm-toc-padding-horizontal));
     }
   }
+
+  [class^=tocCollapsible_] {
+    @media (max-width: 996px) {
+      display: none;
+    }
+  }
   //#endregion
   
-  
+  //#region ------------ Navbar ------------
   > .navbar {
     display: none;
   }
@@ -153,6 +199,14 @@ body {
 
       &::hover {
         opacity: .7 !important;
+      }
+    }
+
+    .navbar__items--right {
+      div:nth-of-type(3), div:nth-of-type(4) {
+        @media (max-width: 1216px) {
+          display: none;
+        }
       }
     }
 
@@ -180,6 +234,27 @@ body {
       }
     }
   }
+  //#endregion
+
+  //#region ------------ Navbar Sidebar -----------
+  .navbar-sidebar {
+    z-index: var(--z-sidebar);
+  }
+
+  .navbar-sidebar__backdrop {
+    z-index: var(--z-sidebar);
+  }
+  //#endregion
+
+  //#region ------------ Search -------------
+  @media (max-width: 996px) {
+      [class^=searchBox_] {
+      position: static;
+      right: initial;
+    }
+  }
+  
+  //#endregion
 }
 
 .theme-doc-version-banner {

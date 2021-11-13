@@ -10,9 +10,9 @@ export default function NavbarIconLink({icon, ...props}) {
       className={clsx(props.className, 'icon-link')}
       href={href}
       target={target}
-      aria-label={alt}
+      
     >
-      <img src={src} width={width} height={height} />
+      <img src={src} width={width} height={height} alt={alt}/>
     </a>
   )
 }
