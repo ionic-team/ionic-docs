@@ -242,12 +242,15 @@ module.exports = {
       }
     ],
     '@docusaurus/plugin-content-pages',
+    '@docusaurus/plugin-debug',
+    // '@docusaurus/plugin-google-analytics'
     [
       '@docusaurus/plugin-google-gtag',
       {
         trackingID: 'UA-44023830-8',
       }
-    ]
+    ],
+    '@docusaurus/plugin-sitemap'
   ],
   themes: [
     [

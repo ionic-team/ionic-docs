@@ -1,0 +1,10 @@
+//overrides
+#__docusaurus {
+  .navbar-sidebar {
+    z-index: var(--z-sidebar);
+  }
+
+  .navbar-sidebar__backdrop {
+    z-index: var(--z-sidebar);
+  }
+}

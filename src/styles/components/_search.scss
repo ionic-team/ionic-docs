@@ -1,0 +1,9 @@
+//overrides
+#__docusaurus {
+  @media (max-width: 996px) {
+      [class^=searchBox_] {
+      position: static;
+      right: initial;
+    }
+  }
+}
