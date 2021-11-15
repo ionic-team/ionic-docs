@@ -1,10 +1,19 @@
+html[data-theme='light'] {
+  --sidebar-category-c: var(--c-gray-100);
+}
+
+html[data-theme='dark'] {
+  --sidebar-category-c: var(--c-gray-0);
+}
+
 //overrides
 #__docusaurus {
   [class^=docSidebarContainer] {
     position: sticky;
     top: 0;
     margin-block-start: 0;
-    max-height: calc(100vh);
+    max-height: 100vh;
+    will-change: initial;
 
     --sidebar-spacing-horizontal: 1.5rem;
 
@@ -21,23 +30,64 @@
   [class^=sidebar_] {
     max-height: initial;
     position: static;
+
+    padding-block-end: 6rem;
   }
 
   [class^=sidebarLogo] {
     display: none !important;
   }
 
+  .menu__list {
+    transition: height .35s cubic-bezier(.36,.66,.04,1) !important;
+    will-change: initial !important;
+    transition-delay: 25ms;
+
+    &-item {
+      .menu__list {
+        .menu__link {
+          padding-inline-start: 1.75rem;
+        }
+      }
+    }
+  }
+
+  .menu__link {
+    font-weight: 500;
+    font-size: 0.813rem;
+    line-height: 16px;
+    /* identical to box height */
+
+    display: flex;
+    align-items: center;
+    letter-spacing: -0.01em;
+
+    &:not(.menu__link--active:not(.menu__link--sublist)) {
+      background: initial;
+    }
+  }
   .menu__link--sublist {
     display: flex;
+    align-items: center;
     flex-direction: row-reverse;
     justify-content: flex-end;
 
     &::after {
-      background: var(--ifm-menu-link-sublist-icon) 50% / .75rem .75rem;
+      background: var(--ifm-menu-link-sublist-icon) 50% / .75rem .5rem;
       background-repeat: no-repeat;
 
       margin-inline-end: .5rem;
       margin-block-end: 0;
+    }
+  }
+
+  .theme-doc-sidebar-item-category-level-1 {
+    > .menu__link {
+      color: var(--sidebar-category-c);
+
+      font-weight: 600;
+      font-size: 0.938rem;
+      line-height: 100%;
     }
   }
 }
