@@ -1,9 +1,11 @@
 html[data-theme='light'] {
   --sidebar-category-c: var(--c-gray-100);
+  --sidebar-border-c: var(--c-gray-0);
 }
 
 html[data-theme='dark'] {
   --sidebar-category-c: var(--c-gray-0);
+  --sidebar-border-c: var(--c-gray-90);
 }
 
 //overrides
@@ -12,8 +14,10 @@ html[data-theme='dark'] {
     position: sticky;
     top: 0;
     margin-block-start: 0;
-    max-height: 100vh;
     will-change: initial;
+    height: 100vh;
+
+    border-inline-end: 1px solid var(--sidebar-border-c);
 
     --sidebar-spacing-horizontal: 1.5rem;
 
@@ -28,10 +32,15 @@ html[data-theme='dark'] {
   }
 
   [class^=sidebar_] {
-    max-height: initial;
+    max-height: calc(100vh - var(--ifm-navbar-height));
     position: static;
 
-    padding-block-end: 6rem;
+    overflow-y: auto;
+
+    > .menu {
+      overflow-x: initial;
+      padding-block-end: 2rem;
+    }
   }
 
   [class^=sidebarLogo] {
@@ -39,9 +48,9 @@ html[data-theme='dark'] {
   }
 
   .menu__list {
-    transition: height .35s cubic-bezier(.36,.66,.04,1) !important;
+    display: block !important;
+    transition: height .35s cubic-bezier(.36,.66,.04,1) 25ms !important;
     will-change: initial !important;
-    transition-delay: 25ms;
 
     &-item {
       .menu__list {
