@@ -36,6 +36,9 @@
   --ifm-link-color: var(--c-blue-90);
   //rgb value is c-blue-90
   --ifm-link-hover-color: rgba(27, 109, 255, 0.7);
+  --ifm-navbar-link-hover-color: initial;
+  --ifm-navbar-padding-vertical: 0;
+  --ifm-navbar-item-padding-vertical: 0;
 
   --ifm-font-family-base: -apple-system, BlinkMacSystemFont, Inter, Helvetica,
     Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI emoji';

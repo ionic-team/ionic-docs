@@ -157,7 +157,7 @@ module.exports = {
               rel: null,
             },
           ],
-          className: 'icon-link language',
+          className: 'icon-link language navbar__item',
         },
         {
           type: "iconLink",
