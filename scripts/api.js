@@ -124,7 +124,7 @@ ${usage[keys[0]]}
   return `
 ## Usage
 
-<Tabs defaultValue="${keys[0]}" values={[${keys
+<Tabs groupId="framework" defaultValue="${keys[0]}" values={[${keys
     .map(key => `{ value: '${key}', label: '${capitalizeFirstLetter(key)}' }`)
     .join(', ')}]}>
 
