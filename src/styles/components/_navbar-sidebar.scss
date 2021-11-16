@@ -2,9 +2,32 @@
 #__docusaurus {
   .navbar-sidebar {
     z-index: var(--z-sidebar);
-  }
 
-  .navbar-sidebar__backdrop {
-    z-index: var(--z-sidebar);
+    &__item {
+      padding: 1rem var(--ifm-navbar-padding-horizontal);
+    }
+
+    &__back {
+      padding-inline-start: 0;
+      padding-inline-end: 0;
+
+      margin: 0;
+
+      background-color: var(--token-primary-bg-c);
+    }
+
+    &__close {
+      padding: .5rem;
+      margin-inline-end: -.5rem;
+
+      svg {
+        width: 1rem;
+        height: 1rem;
+      }
+    }
+
+    &__backdrop {
+      z-index: var(--z-sidebar);
+    }
   }
 }
