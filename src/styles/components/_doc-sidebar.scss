@@ -1,7 +1,6 @@
 html[data-theme='light'] {
   --sidebar-category-c: var(--c-gray-100);
   --sidebar-border-c: var(--c-gray-0);
-  --sidebar-spacing-horizontal: 1.5rem;
 
   --ifm-menu-color-background-active: var(--c-blue-0);
 }
@@ -17,6 +16,10 @@ html[data-theme='dark'] {
   --dropdown-icon-width: .625rem;
   --dropdown-icon-height: .375rem;
   --dropdown-icon-gap: 0.688rem;
+
+  --ifm-menu-link-padding-vertical: .5rem;
+
+  --sidebar-spacing-horizontal: 1.5rem;
 }
 
 //overrides
