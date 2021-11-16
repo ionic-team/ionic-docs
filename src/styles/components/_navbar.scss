@@ -1,3 +1,15 @@
+html[data-theme='light'] {
+  --navbar-link-c: var(--c-indigo-80);
+}
+
+html[data-theme='dark'] {
+  --navbar-link-c: var(--c-gray-0);
+}
+
+:root {
+  --navbar-dropdown-icon: var(--ifm-menu-link-sublist-icon);
+}
+
 //overrides
 #__docusaurus {
   > .navbar {
@@ -5,12 +17,8 @@
   }
 
   .navbar {
-    .icon-link, [class^=toggle_] {
+    .icon-link, [class*=toggle_] {
       padding: .5rem;
-
-      &::hover {
-        opacity: .7 !important;
-      }
     }
 
     .navbar__inner {
@@ -21,6 +29,80 @@
 
     .navbar__items {
       min-width: auto;
+    }
+
+    .navbar__item:not(.dropdown) {
+      &.navbar__link {
+        align-self: stretch;
+        display: flex;
+        align-items: center;
+  
+        position: relative;   
+  
+        &::after {
+          content: '';
+          position: absolute;
+          height: 2px;
+          left: var(--ifm-navbar-item-padding-horizontal);
+          right: var(--ifm-navbar-item-padding-horizontal);
+          bottom: 0;
+  
+          background: rgba(0,0,0,0);
+  
+          transition: background-color .2s ease-out;
+        }
+  
+        &--active {
+          color: var(--c-blue-90);
+  
+          &::after {
+            background: var(--c-blue-90);
+          }
+        }
+      }
+    }
+
+    .dropdown {
+      .navbar__link {
+        display: flex;
+        align-items: center;
+
+        &::after {
+          position: static;
+
+          border: none;
+
+          background: var(--ifm-menu-link-sublist-icon) 50% / 0.5rem 0.25rem;
+          background-repeat: no-repeat;
+
+          min-width: .5rem;
+          min-height: .25rem;
+
+          transform: rotate(180deg) translateY(-.125rem);
+        }
+      }
+    }
+
+    .navbar__item {
+      transition: opacity .2s ease-out;
+
+      @media (max-width: 996px) {
+        display: none;
+      }
+
+      &:not(.navbar__link--active) {
+        &:hover {
+          opacity: .8;
+        }
+      }
+    }
+
+    .navbar__link {
+      font-weight: 500;
+      font-size: .875rem;
+      line-height: 17px;
+
+      color: var(--navbar-link-c);
     }
 
     .navbar__brand {

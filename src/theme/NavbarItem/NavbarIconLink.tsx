@@ -7,7 +7,7 @@ export default function NavbarIconLink({icon, ...props}) {
   return (
     <a
       {...props}
-      className={clsx(props.className, 'icon-link')}
+      className={clsx(props.className, 'icon-link', 'navbar__item')}
       href={href}
       target={target}
       
