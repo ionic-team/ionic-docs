@@ -21,17 +21,35 @@ html[data-theme='dark'] {
       padding: .5rem;
     }
 
-    .navbar__inner {
+    &__inner {
       width: initial;
       flex-grow: 1;
       flex-wrap: nowrap;
     }
 
-    .navbar__items {
+    &__items {
       min-width: auto;
+
+      &:not(.navbar__items--right) {
+        .navbar__link.navbar__item {
+          @media (max-width: 996px) {
+            display: none;
+          }
+        }
+      }
     }
 
-    .navbar__item:not(.dropdown) {
+    &__items--right {
+      flex-grow: 1;
+      
+      div:nth-of-type(3), div:nth-of-type(4) {
+        @media (max-width: 1216px) {
+          display: none;
+        }
+      }
+    }
+
+    &__item:not(.dropdown) {
       &.navbar__link {
         align-self: stretch;
         display: flex;
@@ -62,32 +80,36 @@ html[data-theme='dark'] {
       }
     }
 
-    .dropdown {
-      .navbar__link {
-        display: flex;
-        align-items: center;
 
-        &::after {
-          position: static;
-
-          border: none;
-
-          background: var(--ifm-menu-link-sublist-icon) 50% / 0.5rem 0.25rem;
-          background-repeat: no-repeat;
-
-          min-width: .5rem;
-          min-height: .25rem;
-
-          transform: rotate(180deg) translateY(-.125rem);
-        }
-      }
-    }
-
-    .navbar__item {
+    &__item {
       transition: opacity .2s ease-out;
 
-      @media (max-width: 996px) {
-        display: none;
+      &.dropdown {
+        align-self: stretch;
+        display: flex;
+
+        .navbar__link {
+          display: flex;
+          align-items: center;
+  
+          &::after {
+            position: static;
+  
+            border: none;
+  
+            background: var(--ifm-menu-link-sublist-icon) 50% / 0.5rem 0.25rem;
+            background-repeat: no-repeat;
+  
+            min-width: .5rem;
+            min-height: .25rem;
+  
+            transform: rotate(180deg) translateY(-.125rem);
+          }
+        }
+
+        .dropdown__menu {
+          top: 100%;
+        }
       }
 
       &:not(.navbar__link--active) {
@@ -97,7 +119,7 @@ html[data-theme='dark'] {
       }
     }
 
-    .navbar__link {
+    &__link {
       font-weight: 500;
       font-size: .875rem;
       line-height: 17px;
@@ -105,18 +127,8 @@ html[data-theme='dark'] {
       color: var(--navbar-link-c);
     }
 
-    .navbar__brand {
+    &__brand {
       display: none;
-    }
-
-    .navbar__items--right {
-      flex-grow: 1;
-      
-      div:nth-of-type(3), div:nth-of-type(4) {
-        @media (max-width: 1216px) {
-          display: none;
-        }
-      }
     }
 
     .separator {
