@@ -1,6 +1,9 @@
 html[data-theme='light'] {
   --sidebar-category-c: var(--c-gray-100);
   --sidebar-border-c: var(--c-gray-0);
+  --sidebar-spacing-horizontal: 1.5rem;
+
+  --ifm-menu-color-background-active: var(--c-blue-0);
 }
 
 html[data-theme='dark'] {
@@ -28,8 +31,6 @@ html[data-theme='dark'] {
 
     border-inline-end: 1px solid var(--sidebar-border-c);
 
-    --sidebar-spacing-horizontal: 1.5rem;
-
     > a {
       display: flex;
       align-items: center;
@@ -47,7 +48,8 @@ html[data-theme='dark'] {
     overflow-y: auto;
 
     padding-inline-start: var(--sidebar-spacing-horizontal);
-    padding-inline-end: var(--sidebar-spacing-horizontal); 
+    padding-inline-end: var(--sidebar-spacing-horizontal);
+    padding-block-start: 1rem;
 
     > .menu {
       overflow-x: initial;
