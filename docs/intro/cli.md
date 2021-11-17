@@ -2,11 +2,14 @@
 sidebar_label: CLI Installation
 ---
 
+import { AppWizard } from '@page-styles/intro/cli';
+
 # Installing Ionic
 
 Ionic apps are created and developed primarily through the Ionic [command-line](../reference/glossary.md#cli) utility. The Ionic CLI is the preferred method of installation, as it offers a wide range of dev tools and help options along the way. It is also the main tool through which to run the app and connect it to other services, such as Appflow.
 
-<aside id="ionic-wizard">
+
+<AppWizard>
   <div class="heading-group">
     <header>Try our App Wizard</header>
     <p>Use our App Wizard to generate an Ionic project visually. Choose a template, custom colors, app icon, and JavaScript Framework to get building quicker.</p>
@@ -14,7 +17,7 @@ Ionic apps are created and developed primarily through the Ionic [command-line](
   <div>
     <a href="https://ionicframework.com/start" class="wizard-button">Open Wizard <ion-icon name="arrow-forward-outline"/></a>
   </div>
-</aside>
+</AppWizard>
 
 ## Install the Ionic CLI
 
