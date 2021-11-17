@@ -1,11 +1,13 @@
 const path = require('path');
 
+const BASE_URL_TRAILING = '/docs/'
+
 module.exports = {
   title: 'Ionic Documentation',
   tagline:
     'Ionic is the app platform for web developers. Build amazing mobile, web, and desktop apps all with one shared code base and open web standards',
   url: 'https://ionicframework.com',
-  baseUrl: '/docs/',
+  baseUrl: BASE_URL_TRAILING,
   /*
   i18n: {
     defaultLocale: 'en',
@@ -32,8 +34,8 @@ module.exports = {
       hideOnScroll: true,
       logo: {
         alt: 'Site Logo',
-        src: '/docs/logos/framework-docs-logo.svg',
-        srcDark: '/docs/logos/framework-docs-logo.svg',
+        src: `${BASE_URL_TRAILING}logos/framework-docs-logo.svg`,
+        srcDark: `${BASE_URL_TRAILING}logos/framework-docs-logo.svg`,
         href: '/',
         target: '_self',
         width: 139,
@@ -163,7 +165,7 @@ module.exports = {
           type: "iconLink",
           icon: {
             alt: "twitter logo",
-            src: "/docs/logos/twitter.svg",
+            src: `${BASE_URL_TRAILING}logos/twitter.svg`,
             href: 'https://twitter.com/Ionicframework',
             target: '_blank',
             width: 18,
@@ -174,7 +176,7 @@ module.exports = {
           type: "iconLink",
           icon: {
             alt: "github logo",
-            src: "/docs/logos/github.svg",
+            src: `${BASE_URL_TRAILING}logos/github.svg`,
             href: 'https://github.com/ionic-team/ionic-framework',
             target: '_blank',
             width: 16.5,
