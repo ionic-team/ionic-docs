@@ -1,7 +1,8 @@
 const fetch = require('node-fetch');
 const fs = require('fs');
 const path = require('path');
-const apiOverrides = require('./data/meta-override.json').api;
+const { api: apiOverrides } = require('./data/meta-override.json');
+const utils = require('./utils');
 
 const DEMOS_PATH = path.resolve('static/demos');
 let COMPONENT_LINK_REGEXP;
@@ -44,8 +45,7 @@ function writePage(page) {
 
 function renderFrontmatter({ tag }) {
   const frontmatter = {
-    ...apiOverrides[tag],
-    sidebar_label: tag,
+    title: tag,
     hide_table_of_contents: true,
   };
 
@@ -67,6 +67,8 @@ ${Object.entries(frontmatter)
 ---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+
+${utils.getHeadTag(apiOverrides[tag])}
 `;
 }
 
@@ -82,8 +84,6 @@ function renderReadme({ readme, encapsulation }) {
       .replace(/:::note(.*?)\n(#|\n)/gms, ':::note\n$1\n:::\n\n$2');
 
   return `
-${title}
-
 import EncapsulationPill from '@theme/EncapsulationPill';
 
 <EncapsulationPill type="${encapsulation}" />

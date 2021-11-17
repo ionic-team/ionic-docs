@@ -1,7 +1,7 @@
 const fs = require('fs');
 const utils = require('./utils');
 const cliJSON = require('./data/cli.json');
-const cliOverrides = require('./data/meta-override.json').cli;
+const { cli: cliOverrides } = require('./data/meta-override.json')
 
 const commandToKebab = str =>
   str
@@ -35,7 +35,7 @@ function renderFrontmatter({ name }) {
   const slug = commandToKebab(shortName);
 
   const frontmatter = {
-    ...cliOverrides[slug],
+    title: name,
     sidebar_label: shortName,
   };
 
@@ -49,14 +49,12 @@ ${Object.entries(frontmatter)
   )
   .join('\n')}
 ---
-
+${utils.getHeadTag(cliOverrides[slug])}
 `;
 }
 
 function renderIntro({ description, summary, name }) {
   return `
-# ${name}
-
 ${summary}
 
 \`\`\`shell
