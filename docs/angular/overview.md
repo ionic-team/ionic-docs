@@ -1,13 +1,16 @@
 ---
-title: 'Ionic Angular Overview | Angular Version Support and Tooling'
-description: '@ionic/angular combines the Ionic experience with the tooling and APIs tailored to Angular Developers. Learn more about version support in our Angular Overview.'
+title: 'Ionic Angular Overview'
 sidebar_label: Overview
 ---
+
 import PageStyles from '@page-styles/react';
 
-<PageStyles>
+<head>
+  <title>Ionic Angular Overview | Angular Version Support and Tooling</title>
+  <meta name="description" content="@ionic/angular combines the Ionic experience with the tooling and APIs tailored to Angular Developers. Learn more about version support in our Angular Overview." />
+</head>
 
-# Ionic Angular Overview
+<PageStyles>
 
 `@ionic/angular` combines the core Ionic experience with the tooling and APIs that are tailored to Angular Developers.
 

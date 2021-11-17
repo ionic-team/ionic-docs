@@ -1,5 +1,15 @@
 [
   {
+    "body": "<h3>Bug Fixes</h3>\n<ul>\n<li><strong>action-sheet:</strong> safe area is now accounted for in MD mode (<a href=\"https://github.com/ionic-team/ionic/issues/24176\">#24176</a>) (<a href=\"https://github.com/ionic-team/ionic/commit/642255e514fd67238d9bd8ea90781111687c6d03\">642255e</a>), closes <a href=\"https://github.com/ionic-team/ionic/issues/24175\">#24175</a></li>\n<li><strong>input:</strong> date type in ion-input now aligns correctly on iOS 15 (<a href=\"https://github.com/ionic-team/ionic/issues/24217\">#24217</a>) (<a href=\"https://github.com/ionic-team/ionic/commit/0566ec0da3b8a66a1a1ebb1b235e7297ec483c79\">0566ec0</a>)</li>\n<li><strong>vue:</strong> canGoBack method now works correctly (<a href=\"https://github.com/ionic-team/ionic/issues/24188\">#24188</a>) (<a href=\"https://github.com/ionic-team/ionic/commit/7c43589b0a486f71ee2ae5a4cdcd73071fcd31b9\">7c43589</a>), closes <a href=\"https://github.com/ionic-team/ionic/issues/24109\">#24109</a></li>\n</ul>\n<h3>Features</h3>\n<ul>\n<li><strong>slides:</strong> add support for Swiper 7 (<a href=\"https://github.com/ionic-team/ionic/issues/24190\">#24190</a>) (<a href=\"https://github.com/ionic-team/ionic/commit/d0b61307c6b7ff1589646c43f989260b59db1473\">d0b6130</a>)</li>\n</ul>\n",
+    "element": "Scandium",
+    "name": "5.9.0",
+    "published_at": "November 17 2021",
+    "symbol": "Sc",
+    "tag_name": "v5.9.0",
+    "type": "minor",
+    "version": "5.9.0"
+  },
+  {
     "body": "<h3>Bug Fixes</h3>\n<ul>\n<li><strong>menu:</strong> added focus trapping, improved compatibility with screen readers (<a href=\"https://github.com/ionic-team/ionic/issues/24076\">#24076</a>) (<a href=\"https://github.com/ionic-team/ionic/commit/bdb268aa12c5bf411c96529672486d35e018cefa\">bdb268a</a>)</li>\n<li><strong>vue:</strong> back button now selects correct route when navigating from view multiple times (<a href=\"https://github.com/ionic-team/ionic/issues/24060\">#24060</a>) (<a href=\"https://github.com/ionic-team/ionic/commit/a09d7d4ab6dd0d90204015eaaf232ed190753c56\">a09d7d4</a>), closes <a href=\"https://github.com/ionic-team/ionic/issues/23987\">#23987</a></li>\n<li><strong>vue:</strong> mount correct views when navigating (<a href=\"https://github.com/ionic-team/ionic/issues/24056\">#24056</a>) (<a href=\"https://github.com/ionic-team/ionic/commit/24659a527abe0c70df7e8ae6da3dcb4017bf500c\">24659a5</a>), closes <a href=\"https://github.com/ionic-team/ionic/issues/23914\">#23914</a></li>\n</ul>\n",
     "element": "Calcium",
     "name": "5.8.5",
@@ -178,15 +188,5 @@
     "tag_name": "v5.6.4",
     "type": "patch",
     "version": "5.6.4"
-  },
-  {
-    "body": "<h3>Bug Fixes</h3>\n<ul>\n<li><strong>all:</strong> update tslib to resolve export errors (<a href=\"https://github.com/ionic-team/ionic-framework/pull/23092\">#23092</a>) (<a href=\"https://github.com/ionic-team/ionic-framework/commit/0cdd326a4a02729a306bccfcadca7370475eae32\">0cdd326</a>), closes <a href=\"https://github.com/ionic-team/ionic-framework/issues/23090\">#23090</a></li>\n<li><strong>react:</strong> correctly show ion-back-button when going back (<a href=\"https://github.com/ionic-team/ionic/issues/23069\">#23069</a>) (<a href=\"https://github.com/ionic-team/ionic/commit/1c93b75e397961e374620eb43bee3d6bb4389836\">1c93b75</a>), closes <a href=\"https://github.com/ionic-team/ionic/issues/22692\">#22692</a></li>\n</ul>\n",
-    "element": "Argon",
-    "name": "5.6.3",
-    "published_at": "March 23 2021",
-    "symbol": "Ar",
-    "tag_name": "v5.6.3",
-    "type": "patch",
-    "version": "5.6.3"
   }
 ]
