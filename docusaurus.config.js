@@ -139,7 +139,8 @@ module.exports = {
           className: 'navbar__link--support',
         },
         {
-          type: 'separator'
+          type: 'separator',
+          position: 'right'
         },
         {
           type: 'localeDropdown',
@@ -163,6 +164,7 @@ module.exports = {
         },
         {
           type: "iconLink",
+          position: 'right',
           icon: {
             alt: "twitter logo",
             src: `${BASE_URL_TRAILING}logos/twitter.svg`,
@@ -174,6 +176,7 @@ module.exports = {
         },
         {
           type: "iconLink",
+          position: 'right',
           icon: {
             alt: "github logo",
             src: `${BASE_URL_TRAILING}logos/github.svg`,
@@ -274,7 +277,6 @@ module.exports = {
     path.resolve(__dirname, './node_modules/@docusaurus/theme-search-algolia')
   ],
   customFields: {
-    // Used to link code tabs with global framework switcher
-    frameworks: ['react', 'angular', 'vue', 'javascript'],
+
   },
 };

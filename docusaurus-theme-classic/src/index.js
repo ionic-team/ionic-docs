@@ -9,6 +9,7 @@ let { ThemeConfigSchema } = require(path.resolve(__dirname, '../../node_modules/
 
 const NavbarIconLinkSchema = Joi.object({
   type: Joi.string().equal('iconLink').required(),
+  position: Joi.string().default('left'),
   icon: Joi.object({
     alt: Joi.string().default('icon link'),
     src: Joi.string(),
@@ -19,7 +20,8 @@ const NavbarIconLinkSchema = Joi.object({
   })
 });
 const NavbarSeparatorSchema = Joi.object({
-  type: Joi.string().equal('separator').required()
+  type: Joi.string().equal('separator').required(),
+  position: Joi.string().default('left'),
 })
 
 ThemeConfigSchema = ThemeConfigSchema.concat(
