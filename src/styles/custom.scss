@@ -7,13 +7,6 @@
 
 /* You can override the default Infima variables here. */
 
-@use './pages/cli';
-@use './pages/studio';
-@use './pages/guides';
-@use './pages/frameworks';
-@use './pages/components';
-@use './pages/browser-support';
-
 @use './components/admonition';
 @use './components/back-to-top-button';
 @use './components/code';
