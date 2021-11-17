@@ -34,8 +34,8 @@ module.exports = {
       hideOnScroll: true,
       logo: {
         alt: 'Site Logo',
-        src: `${BASE_URL_TRAILING}logos/framework-docs-logo.svg`,
-        srcDark: `${BASE_URL_TRAILING}logos/framework-docs-logo.svg`,
+        src: `${BASE_URL_TRAILING}logos/ionic-text-docs-dark.svg`,
+        srcDark: `${BASE_URL_TRAILING}logos/ionic-text-docs-light.svg`,
         href: '/',
         target: '_self',
         width: 139,
