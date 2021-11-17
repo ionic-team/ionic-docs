@@ -1,7 +1,7 @@
 const fs = require('fs');
 const nativeJSON = require('./data/native.json');
 const utils = require('./utils.js');
-const nativeOverrides = require('./data/meta-override.json').native;
+const { native: nativeOverrides } = require('./data/meta-override.json');
 
 // Filter out some plugins
 const filteredPlugins = [
@@ -48,8 +48,7 @@ function renderFrontmatter({ displayName, packageName }) {
   const slug = packageName.replace('@ionic-native/', '');
 
   const frontmatter = {
-    ...nativeOverrides[slug],
-    sidebar_label: displayName,
+    title: displayName,
   };
 
   return `---
@@ -62,7 +61,7 @@ ${Object.entries(frontmatter)
   )
   .join('\n')}
 ---
-
+${utils.getHeadTag(nativeOverrides[slug])}
 `;
 }
 
@@ -76,10 +75,8 @@ import CodeBlock from '@theme/CodeBlock';
 `;
 }
 
-function renderIntro({ description, displayName, repo }) {
+function renderIntro({ description, repo }) {
   return `
-# ${displayName}
-
 ${description}
 
 <p><a href="${repo}" target="_blank" rel="noopener" className="git-link">
