@@ -93,9 +93,8 @@ import EncapsulationPill from '@theme/EncapsulationPill';
 import TOCInline from '@theme/TOCInline';
 
 <TOCInline
-  toc={toc.map(({ value, id }) => {
-    return { value, id, children: [] };
-  })}
+  toc={toc}
+  maxHeadingLevel={2}
 />
 
 ${addAdmonitions(rest)}
