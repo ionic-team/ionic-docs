@@ -1,3 +1,7 @@
+:root {
+  --doc-item-container-width: 42rem;
+}
+
 //overrides
 #__docusaurus {
     //#region ------------ DocItem -------------
@@ -11,11 +15,9 @@
     }
   
     [class*=docItemContainer_] {
-      max-width: 42rem;
+      max-width: var(--doc-item-container-width);
       margin-inline-start: auto;
       margin-inline-end: auto;
-  
-  
     }
   
     [class*=docMainContainer_] {
