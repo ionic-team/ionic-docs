@@ -4,7 +4,6 @@ sidebar_label: Overview
 hide_title: true
 hide_table_of_contents: true
 image: /img/meta/open-graph.png
-description: Ionic is the app platform for web developers. Build amazing mobile, web, and desktop apps all with one shared code base and open web standards
 ---
 
 import PageStyles from '@page-styles/react';
@@ -12,11 +11,15 @@ import PageStyles from '@page-styles/react';
 import DocsCard from '@theme/DocsCard';
 import DocsCards from '@theme/DocsCards';
 
+<head>
+  <meta name="description" content="Ionic is the app platform for web developers. Build amazing mobile, web, and desktop apps all with one shared code base and open web standards" />
+</head>
+
 <PageStyles>
 
 <div class='flex main-flex'>
   <div class="pull-left">
-  <h3>One Codebase <br/> Any Platform <br/> <strong>Just React</strong></h3>
+  <h1>One Codebase <br/> Any Platform <br/> <strong>Just React</strong></h1>
 
 - ✓ 100+ mobile optimized React UI components
 - ✓ Standard React tooling with react-dom

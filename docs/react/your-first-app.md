@@ -1,10 +1,12 @@
 ---
-title: "React Apps | Build Your First Ionic Framework React Application"
-description: Build your first Ionic React App. With one codebase, you can build an Ionic Framework application for any platform using just HTML, CSS, and JavaScript.
+title: 'Your First Ionic App: React'
 sidebar_label: Build Your First App
 ---
 
-# Your First Ionic App: React
+<head>
+  <title>React Apps | Build Your First Ionic Framework React Application</title>
+  <meta name="description" content="Build your first Ionic React App. With one codebase, you can build an Ionic Framework application for any platform using just HTML, CSS, and JavaScript." />
+</head>
 
 The great thing about Ionic is that with one codebase, you can build for any platform using just HTML, CSS, and JavaScript. Follow along as we learn the fundamentals of Ionic app development by creating a realistic app step by step.
 

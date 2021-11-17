@@ -91,7 +91,7 @@ html[data-theme='dark'] {
   }
 
   //intro paragraphs
-  header + p {
+  > header + p {
     color: var(--markdown-text-intro-c);
     font-size: 1.25rem;
 
