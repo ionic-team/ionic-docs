@@ -1,5 +1,15 @@
 [
   {
+    "body": "<h3>Bug Fixes</h3>\n<ul>\n<li><strong>angular:</strong> build is now in correct directory (<a href=\"https://github.com/ionic-team/ionic/issues/24236\">#24236</a>) (<a href=\"https://github.com/ionic-team/ionic/commit/1d983fa4b3ef0457dc192f376e380c77b611d058\">1d983fa</a>)</li>\n</ul>\n",
+    "element": "Scandium",
+    "name": "5.9.1",
+    "published_at": "November 17 2021",
+    "symbol": "Sc",
+    "tag_name": "v5.9.1",
+    "type": "patch",
+    "version": "5.9.1"
+  },
+  {
     "body": "<h3>Bug Fixes</h3>\n<ul>\n<li><strong>action-sheet:</strong> safe area is now accounted for in MD mode (<a href=\"https://github.com/ionic-team/ionic/issues/24176\">#24176</a>) (<a href=\"https://github.com/ionic-team/ionic/commit/642255e514fd67238d9bd8ea90781111687c6d03\">642255e</a>), closes <a href=\"https://github.com/ionic-team/ionic/issues/24175\">#24175</a></li>\n<li><strong>input:</strong> date type in ion-input now aligns correctly on iOS 15 (<a href=\"https://github.com/ionic-team/ionic/issues/24217\">#24217</a>) (<a href=\"https://github.com/ionic-team/ionic/commit/0566ec0da3b8a66a1a1ebb1b235e7297ec483c79\">0566ec0</a>)</li>\n<li><strong>vue:</strong> canGoBack method now works correctly (<a href=\"https://github.com/ionic-team/ionic/issues/24188\">#24188</a>) (<a href=\"https://github.com/ionic-team/ionic/commit/7c43589b0a486f71ee2ae5a4cdcd73071fcd31b9\">7c43589</a>), closes <a href=\"https://github.com/ionic-team/ionic/issues/24109\">#24109</a></li>\n</ul>\n<h3>Features</h3>\n<ul>\n<li><strong>slides:</strong> add support for Swiper 7 (<a href=\"https://github.com/ionic-team/ionic/issues/24190\">#24190</a>) (<a href=\"https://github.com/ionic-team/ionic/commit/d0b61307c6b7ff1589646c43f989260b59db1473\">d0b6130</a>)</li>\n</ul>\n",
     "element": "Scandium",
     "name": "5.9.0",
@@ -178,15 +188,5 @@
     "tag_name": "v5.6.5",
     "type": "patch",
     "version": "5.6.5"
-  },
-  {
-    "body": "<h3>Bug Fixes</h3>\n<ul>\n<li><strong>angular:</strong> swiping back quickly no longer causes app to get stuck (<a href=\"https://github.com/ionic-team/ionic/issues/23125\">#23125</a>) (<a href=\"https://github.com/ionic-team/ionic/commit/28c52fd4e3df3d96b4ec83075a322e110e938a1a\">28c52fd</a>), closes <a href=\"https://github.com/ionic-team/ionic/issues/15154\">#15154</a></li>\n<li><strong>input:</strong> inherit aria-label to input (<a href=\"https://github.com/ionic-team/ionic/issues/23159\">#23159</a>) (<a href=\"https://github.com/ionic-team/ionic/commit/61f094d30665c9afec428028883a5d9a085892d8\">61f094d</a>)</li>\n<li><strong>react:</strong> overlays now correctly unmount any child components after dismissing (<a href=\"https://github.com/ionic-team/ionic/issues/23149\">#23149</a>) (<a href=\"https://github.com/ionic-team/ionic/commit/dee6eb30df370047bbc872b00ab6d801dd11fa81\">dee6eb3</a>), closes <a href=\"https://github.com/ionic-team/ionic/issues/23140\">#23140</a></li>\n<li><strong>react, vue:</strong> correct view now chosen when going back inside tabs (<a href=\"https://github.com/ionic-team/ionic/issues/23154\">#23154</a>) (<a href=\"https://github.com/ionic-team/ionic/commit/72031902347dc279045e2e099f69852a23dd8436\">7203190</a>), closes <a href=\"https://github.com/ionic-team/ionic/issues/23087\">#23087</a> <a href=\"https://github.com/ionic-team/ionic/issues/23101\">#23101</a></li>\n<li><strong>toggle:</strong> prevent click event from firing twice (<a href=\"https://github.com/ionic-team/ionic/issues/23146\">#23146</a>) (<a href=\"https://github.com/ionic-team/ionic/commit/42e6c90c4632423386b165dddc4b94a55c075e2e\">42e6c90</a>), closes <a href=\"https://github.com/ionic-team/ionic/issues/23041\">#23041</a></li>\n<li><strong>vue:</strong> account for event name changes in vue 3.0.6+ for overlay components (<a href=\"https://github.com/ionic-team/ionic/issues/23100\">#23100</a>) (<a href=\"https://github.com/ionic-team/ionic/commit/27318cf58563c4b38d0b7045fb61451f45954a8f\">27318cf</a>)</li>\n<li><strong>vue:</strong> components now integrate properly with vee-validate (<a href=\"https://github.com/ionic-team/ionic/issues/23114\">#23114</a>) (<a href=\"https://github.com/ionic-team/ionic/commit/ba51daf17c4438aea6826882f82a04ebf8d6a5d8\">ba51daf</a>), closes <a href=\"https://github.com/ionic-team/ionic/issues/22886\">#22886</a></li>\n</ul>\n",
-    "element": "Argon",
-    "name": "5.6.4",
-    "published_at": "April 8 2021",
-    "symbol": "Ar",
-    "tag_name": "v5.6.4",
-    "type": "patch",
-    "version": "5.6.4"
   }
 ]
