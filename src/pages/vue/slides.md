@@ -242,9 +242,7 @@ Finally, we can turn these features on by using the appropriate properties:
 
 
 
-:::note
-See <a href="https://swiperjs.com/vue#usage" target="_blank" rel="noopener noreferrer">https://swiperjs.com/vue#usage</a> for a full list of modules.
-:::
+> See <a href="https://swiperjs.com/vue#usage" target="_blank" rel="noopener noreferrer">https://swiperjs.com/vue#usage</a> for a full list of modules.
 
 
 ## The IonicSlides Module
@@ -297,9 +295,7 @@ export default defineComponent({
 </script>
 ```
 
-:::note
-The `IonicSlides` module must be the last module in the array. This will let it automatically customize the settings of modules such as Pagination, Scrollbar, Zoom, and more.
-:::
+> The `IonicSlides` module must be the last module in the array. This will let it automatically customize the settings of modules such as Pagination, Scrollbar, Zoom, and more.
 
 
 
@@ -340,9 +336,7 @@ Below is a full list of property changes when going from `ion-slides` to Swiper 
 | pager     | Use the `pagination` property instead. Requires installation of the Pagination module.                                       |
 | scrollbar | You can continue to use the `scrollbar` property, just be sure to install the Scrollbar module first.                        |
 
-:::note
-All properties available in Swiper Vue can be found at <a href="https://swiperjs.com/vue#swiper-props" target="_blank" rel="noopener noreferrer">https://swiperjs.com/vue#swiper-props</a>.
-:::
+> All properties available in Swiper Vue can be found at <a href="https://swiperjs.com/vue#swiper-props" target="_blank" rel="noopener noreferrer">https://swiperjs.com/vue#swiper-props</a>.
 
 ## Events
 
@@ -393,9 +387,7 @@ Below is a full list of event name changes when going from `ion-slides` to Swipe
 | ionSlideTransitionEnd   | transitionEnd              |
 | ionSlidesDidLoad        | init                       |
 
-:::note
-All events available in Swiper Vue can be found at <a href="https://swiperjs.com/vue#swiper-events" target="_blank" rel="noopener noreferrer">https://swiperjs.com/vue#swiper-events</a>.
-:::
+> All events available in Swiper Vue can be found at <a href="https://swiperjs.com/vue#swiper-events" target="_blank" rel="noopener noreferrer">https://swiperjs.com/vue#swiper-events</a>.
 
 ## Methods
 
@@ -554,9 +546,7 @@ After that, we can activate it by setting the `effect` property on `swiper` to `
 </script>
 ```
 
-:::note
-For more information on effects in Swiper, please see <a href="https://swiperjs.com/vue#effects" target="_blank" rel="noopener noreferrer">https://swiperjs.com/vue#effects</a>.
-:::
+> For more information on effects in Swiper, please see <a href="https://swiperjs.com/vue#effects" target="_blank" rel="noopener noreferrer">https://swiperjs.com/vue#effects</a>.
 
 ## Wrap Up
 

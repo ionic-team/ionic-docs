@@ -164,9 +164,7 @@ Finally, we can turn these features on by using the appropriate properties:
 
 
 
-:::note
-See <a href="https://swiperjs.com/angular#usage" target="_blank" rel="noopener noreferrer">https://swiperjs.com/angular#usage</a> for a full list of modules.
-:::
+> See <a href="https://swiperjs.com/angular#usage" target="_blank" rel="noopener noreferrer">https://swiperjs.com/angular#usage</a> for a full list of modules.
 
 
 ## The IonicSlides Module
@@ -193,9 +191,7 @@ export class HomePage {
 }
 ```
 
-:::note
-The `IonicSlides` module must be the last module in the array. This will let it automatically customize the settings of modules such as Pagination, Scrollbar, Zoom, and more.
-:::
+> The `IonicSlides` module must be the last module in the array. This will let it automatically customize the settings of modules such as Pagination, Scrollbar, Zoom, and more.
 
 ## Properties
 
@@ -247,9 +243,7 @@ Below is a full list of property changes when going from `ion-slides` to Swiper 
 | pager     | Use the `pagination` property instead. Requires installation of the Pagination module. |
 | scrollbar | You can continue to use the `scrollbar` property, just be sure to install the Scrollbar module first. |
 
-:::note
-All properties available in Swiper Angular can be found at <a href="https://swiperjs.com/angular#swiper-component-props" target="_blank" rel="noopener noreferrer">https://swiperjs.com/angular#swiper-component-props</a>.
-:::
+> All properties available in Swiper Angular can be found at <a href="https://swiperjs.com/angular#swiper-component-props" target="_blank" rel="noopener noreferrer">https://swiperjs.com/angular#swiper-component-props</a>.
 
 ## Events
 
@@ -301,9 +295,7 @@ Below is a full list of event name changes when going from `ion-slides` to Swipe
 | ionSlidesDidLoad        | init                       |
 
 
-:::note
-All events available in Swiper Angular can be found at <a href="https://swiperjs.com/angular#swiper-component-events" target="_blank" rel="noopener noreferrer">https://swiperjs.com/angular#swiper-component-events</a>.
-:::
+> All events available in Swiper Angular can be found at <a href="https://swiperjs.com/angular#swiper-component-events" target="_blank" rel="noopener noreferrer">https://swiperjs.com/angular#swiper-component-events</a>.
 
 ## Methods
 
@@ -431,9 +423,7 @@ export class SlidesExample {
 }
 ```
 
-:::note
-For more information on effects in Swiper, please see <a href="https://swiperjs.com/angular#effects" target="_blank" rel="noopener noreferrer">https://swiperjs.com/angular#effects</a>.
-:::
+> For more information on effects in Swiper, please see <a href="https://swiperjs.com/angular#effects" target="_blank" rel="noopener noreferrer">https://swiperjs.com/angular#effects</a>.
 
 ## Wrap Up
 
