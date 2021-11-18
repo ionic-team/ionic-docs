@@ -25,9 +25,7 @@ Once that is done, install the Swiper dependency in your project:
 npm install swiper
 ```
 
-:::note
-Create React App does not support pure ESM packages yet. Developers can still use Swiper, but they will need to use Swiper 7.2.0+ and use direct file imports. This guide assumes you are using Create React App and will show you how to use these direct imports.
-:::
+> Create React App does not support pure ESM packages yet. Developers can still use Swiper, but they will need to use Swiper 7.2.0+ and use direct file imports. This guide assumes you are using Create React App and will show you how to use these direct imports.
 
 ## Swiping with Style
 
@@ -248,9 +246,7 @@ const Home: React.FC = () => {
 export default Home;
 ```
 
-:::note
-See <a href="https://swiperjs.com/react#usage" target="_blank" rel="noopener noreferrer">https://swiperjs.com/react#usage</a> for a full list of modules.
-:::
+> See <a href="https://swiperjs.com/react#usage" target="_blank" rel="noopener noreferrer">https://swiperjs.com/react#usage</a> for a full list of modules.
 
 
 
@@ -297,9 +293,7 @@ const Home: React.FC = () => {
 export default Home;
 ```
 
-:::note
-The `IonicSlides` module must be the last module in the array. This will let it automatically customize the settings of modules such as Pagination, Scrollbar, Zoom, and more.
-:::
+> The `IonicSlides` module must be the last module in the array. This will let it automatically customize the settings of modules such as Pagination, Scrollbar, Zoom, and more.
 
 ## Properties
 
@@ -350,9 +344,7 @@ Below is a full list of property changes when going from `IonSlides` to Swiper R
 | pager     | Use the `pagination` property instead. Requires installation of the Pagination module. |
 | scrollbar | You can continue to use the `scrollbar` property, just be sure to install the Scrollbar module first. |
 
-:::note
-All properties available in Swiper React can be found at <a href="https://swiperjs.com/react#swiper-props" target="_blank" rel="noopener noreferrer">https://swiperjs.com/react#swiper-props</a>.
-:::
+> All properties available in Swiper React can be found at <a href="https://swiperjs.com/react#swiper-props" target="_blank" rel="noopener noreferrer">https://swiperjs.com/react#swiper-props</a>.
 
 ## Events
 
@@ -411,9 +403,7 @@ Below is a full list of event name changes when going from `IonSlides` to Swiper
 | onIonSlideTransitionEnd   | onTransitionEnd              |
 | onIonSlidesDidLoad        | onInit                       |
 
-:::note
-All events available in Swiper React can be found at <a href="https://swiperjs.com/react#swiper-events" target="_blank" rel="noopener noreferrer">https://swiperjs.com/react#swiper-events</a>.
-:::
+> All events available in Swiper React can be found at <a href="https://swiperjs.com/react#swiper-events" target="_blank" rel="noopener noreferrer">https://swiperjs.com/react#swiper-events</a>.
 
 ## Methods
 
@@ -552,9 +542,7 @@ const Home: React.FC = () => {
 export default Home;
 ```
 
-:::note
-For more information on effects in Swiper, please see <a href="https://swiperjs.com/react#effects" target="_blank" rel="noopener noreferrer">https://swiperjs.com/react#effects</a>.
-:::
+> For more information on effects in Swiper, please see <a href="https://swiperjs.com/react#effects" target="_blank" rel="noopener noreferrer">https://swiperjs.com/react#effects</a>.
 
 
 
