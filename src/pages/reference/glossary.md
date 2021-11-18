@@ -1,6 +1,9 @@
 ---
 nextText: 'Versioning'
 nextUrl: '/docs/reference/versioning'
+meta:
+  title: "API Glossary: Terminology and Definitions | Ionic Framework"
+  description: "Ionic is the platform for web developers. View our API Glossary for app-building terminology and keyword definitions to better understand Ionic's capabilities."
 ---
 
 # Glossary

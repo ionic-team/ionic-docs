@@ -5,6 +5,9 @@ nextText: ''
 nextUrl: ''
 contributors:
   - FdezRomero
+meta:
+  title: "CORS Errors: Cross-Origin Resource Sharing - Ionic Documentation"
+  description: "CORS errors happen in web apps if requests are made and servers don't return required headers. Read about Cross-Origin Resource Sharing in Ionic Documentation."
 ---
 
 # CORS Errors

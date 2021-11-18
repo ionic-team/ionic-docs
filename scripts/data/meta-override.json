@@ -332,6 +332,10 @@
       "title": "Install Camera | Cordova Plugin Cameras for Ionic Applications",
       "description": "Use the Cordova plugin to install a camera and take photos or capture videos in-app with Ionic Framework camera component for supported platforms."
     },
+    "camera-preview": {
+      "title": "Camera Preview: Ionic Cordova Plugin for Android and iOS",
+      "description": "This plugin shows camera preview in HTML and requires cordova-plugin-camera-preview. Read to learn more about usage and installation on iOS or Android devices."
+    },
     "contacts": {
       "title": "Cordova Contacts Plugin to Access and Manage Device Contacts",
       "description": "Use cordova-plugin-contacts to access and manage contacts on your device from any Ionic app. Read to learn more about the Contacts plugin use and installation."
@@ -511,6 +515,10 @@
     "qr-scanner": {
       "title": "QR Scanner: A Configurable QR Code Reader Plugin for Ionic Apps",
       "description": "This fast, energy-efficient, highly-configurable QR code scanner for Ionic apps requires cordova-plugin-qrscanner to run. Read our documentation for more info."
+    },
+    "screen-orientation": {
+      "title": "Screen Orientation Plugin to Set/Lock on Android, iOS, or Windows",
+      "description": "Cordova Screen Orientation plugin sets/locks the screen in a common way. Read more on how to change screen orientation on Android, iOS, or Windows apps."
     },
     "sign-in-with-apple": {
       "title": "Sign in With Apple: Login to Apps & Websites With Apple ID",

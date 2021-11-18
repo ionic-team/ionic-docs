@@ -3,6 +3,9 @@ previousText: 'Overview'
 previousUrl: '/docs/vue/overview'
 nextText: 'Build Your First App'
 nextUrl: '/docs/vue/your-first-app'
+meta:
+  title: "Vue QuickStart Global Component for Generating Ionic Vue Apps"
+  description: "Our QuickStart guide covers the basics of both Vue and Ionic Framework global components to get apps up and running. Read how to easily generate Ionic Vue apps."
 ---
 
 # Ionic Vue Quickstart

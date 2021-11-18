@@ -1,5 +1,7 @@
 ---
-
+meta:
+  title: "Ionic Live Reload on Capacitor and Cordova to Boost Productivity"
+  description: "Live Reload can boost productivity when building apps with Capacitor, Cordova, or Ionic Serve. Learn more about live reloading browsers when changes are made."
 ---
 
 # Live Reload

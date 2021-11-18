@@ -3,6 +3,9 @@ previousText: ''
 previousUrl: ''
 nextText: 'Platform'
 nextUrl: '/docs/utilities/platform'
+meta:
+  title: "Gestures | Ionic App Utility for Custom Gestures and Interactions"
+  description: "Ionic Gestures is a utility that allows developers to build custom gestures and interactions for their app in a platform agnostic manner. Read to learn more."
 ---
 
 # Gestures

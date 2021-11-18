@@ -3,6 +3,9 @@ previousText: 'Progressive Web Apps'
 previousUrl: '/docs/vue/pwa'
 nextText: 'Testing'
 nextUrl: '/docs/vue/testing'
+meta:
+  title: "Vue App Data Storage for iOS and Android - Ionic Documentation"
+  description: "There's a variety of options available for storing data within an Ionic app. Read our Vue data storage documentation for options on iOS, Android, and web apps."
 ---
 
 # Data Storage

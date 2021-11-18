@@ -6,6 +6,9 @@ nextUrl: '/docs/intro/next'
 contributors:
   - brandyscarney
   - rtpHarry
+meta:
+  title: "Ionic Framework Packages: CDN, Angular, Vue, and React"
+  description: "View our different packages that can be used to quickly start using Ionic Framework or Ionicons CDN in a test environment, Angular, Vue, React, or none at all."
 ---
 
 # Ionic Packages
