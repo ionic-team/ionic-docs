@@ -16,6 +16,26 @@
       }
     }
 
+    &__brand {
+      .navbar__brand {
+        display: flex;
+      }
+
+      .navbar__logo {
+        display: block;
+        height: auto;
+
+        img {
+          display: block;
+          height: auto;
+        }
+      }
+    }
+
+    [class*=toggle_] {
+      display: none;
+    }
+
     &__back {
       padding-inline-start: 0;
       padding-inline-end: 0;

@@ -178,15 +178,5 @@
     "tag_name": "v5.6.6",
     "type": "patch",
     "version": "5.6.6"
-  },
-  {
-    "body": "<h3>Bug Fixes</h3>\n<ul>\n<li><strong>content:</strong> only render a main element when content is being used in primary view (<a href=\"https://github.com/ionic-team/ionic/issues/23160\">#23160</a>) (<a href=\"https://github.com/ionic-team/ionic/commit/2d07d8216af908b181c5e7e438e79a049bb6d8c2\">2d07d82</a>)</li>\n<li><strong>datetime, input, textarea:</strong> only add aria-labelledby if there is an adjacent label (<a href=\"https://github.com/ionic-team/ionic/issues/23211\">#23211</a>) (<a href=\"https://github.com/ionic-team/ionic/commit/a31fb55bac1ef03e014f3d7f6c22c24eff20feb5\">a31fb55</a>)</li>\n<li><strong>radio-group:</strong> pressing spacebar correctly unselects radio with allow-empty-selection (<a href=\"https://github.com/ionic-team/ionic/issues/23194\">#23194</a>) (<a href=\"https://github.com/ionic-team/ionic/commit/7139b3f39e8eeef07ff7c595940fc5dafe062956\">7139b3f</a>), closes <a href=\"https://github.com/ionic-team/ionic/issues/22734\">#22734</a></li>\n<li><strong>react:</strong> callback refs now work correctly with ionic components (<a href=\"https://github.com/ionic-team/ionic/issues/23152\">#23152</a>) (<a href=\"https://github.com/ionic-team/ionic/commit/0dd189e2c05012659894a4c15cd3a9d407fe0a63\">0dd189e</a>), closes <a href=\"https://github.com/ionic-team/ionic/issues/23153\">#23153</a></li>\n<li><strong>segment, segment-button:</strong> use tablist and tab roles (<a href=\"https://github.com/ionic-team/ionic/issues/23145\">#23145</a>) (<a href=\"https://github.com/ionic-team/ionic/commit/91ac340ae7e8928f7b0972a093dd9dd7fa727671\">91ac340</a>)</li>\n<li><strong>vue:</strong> dynamic tabs are now correctly recognized (<a href=\"https://github.com/ionic-team/ionic/issues/23212\">#23212</a>) (<a href=\"https://github.com/ionic-team/ionic/commit/004885bfd4446487e6386876c868532a2795347f\">004885b</a>), closes <a href=\"https://github.com/ionic-team/ionic/issues/22847\">#22847</a></li>\n<li><strong>vue:</strong> update props when navigating to new parameterized route (<a href=\"https://github.com/ionic-team/ionic/issues/23189\">#23189</a>) (<a href=\"https://github.com/ionic-team/ionic/commit/35c8802c22c1f4bf213a01e1c28398ad62d1b7ac\">35c8802</a>)</li>\n</ul>\n",
-    "element": "Argon",
-    "name": "5.6.5",
-    "published_at": "April 22 2021",
-    "symbol": "Ar",
-    "tag_name": "v5.6.5",
-    "type": "patch",
-    "version": "5.6.5"
   }
 ]

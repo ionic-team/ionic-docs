@@ -21,6 +21,7 @@ import {ThemeClassNames} from '@docusaurus/theme-common';
 
 // CUSTOM CODE
 import DocDemo from '@theme/DocDemo'
+import { useDocsData } from '@theme/hooks/useDocs';
 
 export default function DocItem(props: Props): JSX.Element {
   const {content: DocContent, versionMetadata} = props;
@@ -37,6 +38,11 @@ export default function DocItem(props: Props): JSX.Element {
     demoSourceUrl,
     //#endregion
   } = frontMatter;
+
+  //#region --------- CUSTOM CODE ---------
+  const { metadata: { editUrl } } = DocContent;
+  //#endregion
+
   const {description, title} = metadata;
 
   // We only add a title if:
@@ -132,6 +138,7 @@ export default function DocItem(props: Props): JSX.Element {
                 toc={DocContent.toc}
                 minHeadingLevel={tocMinHeadingLevel}
                 maxHeadingLevel={tocMaxHeadingLevel}
+                editUrl={editUrl}
                 className={ThemeClassNames.docs.docTocDesktop}
             />
             )
