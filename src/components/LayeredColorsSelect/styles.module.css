@@ -73,25 +73,7 @@
 }
 
 .colorSelect {
-  display: block;
-  position: relative;
-
-  width: 100%;
-
-  padding: 1em;
-
-  background: inherit;
-  border: 0;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
-  border-radius: 4px;
-
-  transition: 0.2s all ease;
-}
-
-.colorSelect:hover {
-  transform: translateY(-1px);
-
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1), 0 3px 6px rgba(0, 0, 0, 0.08);
+  margin-block-end: 2rem;
 }
 
 .colorDot {
@@ -103,6 +85,7 @@
 
   border-radius: 50%;
   margin-top: -4px;
+  margin-inline-end: .5rem;
 }
 
 .colorSelect ion-select {

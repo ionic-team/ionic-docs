@@ -6,23 +6,8 @@ import styles from './styles.module.css';
 export default function LayeredColorsSelect({ ...props }) {
   const [color, setColor] = useState('primary');
   const el = useRef<HTMLDivElement>(null);
-  const [IonSelect, setIonSelect] = useState(null);
-  const [IonSelectOption, setIonSelectOption] = useState(null);
-
-  const selectOptions = {
-    header: 'Select a Color',
-    subHeader: 'The variations of the color will reflect in the table',
-    cssClass: 'layered-colors-select-interface',
-  };
 
   const [variations, setVariations] = useState([]);
-
-  useEffect(() => {
-    const { IonSelect: is, IonSelectOption: iso } = require('@ionic/react');
-
-    setIonSelect(is);
-    setIonSelectOption(iso);
-  }, []);
 
   useEffect(() => {
     setVariations([
@@ -82,7 +67,7 @@ export default function LayeredColorsSelect({ ...props }) {
 
   return (
     <div {...props} ref={el} className={styles.layeredColorsSelect}>
-      <button className={styles.colorSelect}>
+      <div className={styles.colorSelect}>
         <span
           className={styles.colorDot}
           style={
@@ -91,24 +76,21 @@ export default function LayeredColorsSelect({ ...props }) {
             } as any
           }
         />
-        {IonSelect && IonSelectOption && (
-          <IonSelect
-            value={color}
-            interfaceOptions={selectOptions}
-            onIonChange={ev => setColor((ev.target as HTMLSelectElement).value)}
-          >
-            <IonSelectOption value="primary">Primary</IonSelectOption>
-            <IonSelectOption value="secondary">Secondary</IonSelectOption>
-            <IonSelectOption value="tertiary">Tertiary</IonSelectOption>
-            <IonSelectOption value="success">Success</IonSelectOption>
-            <IonSelectOption value="warning">Warning</IonSelectOption>
-            <IonSelectOption value="danger">Danger</IonSelectOption>
-            <IonSelectOption value="dark">Dark</IonSelectOption>
-            <IonSelectOption value="medium">Medium</IonSelectOption>
-            <IonSelectOption value="light">Light</IonSelectOption>
-          </IonSelect>
-        )}
-      </button>
+        <select
+          value={color}
+          onChange={ev => setColor((ev.target as HTMLSelectElement).value)}
+        >
+          <option value="primary">Primary</option>
+          <option value="secondary">Secondary</option>
+          <option value="tertiary">Tertiary</option>
+          <option value="success">Success</option>
+          <option value="warning">Warning</option>
+          <option value="danger">Danger</option>
+          <option value="dark">Dark</option>
+          <option value="medium">Medium</option>
+          <option value="light">Light</option>
+        </select>
+      </div>
       <table>
         <tr>
           <th>Name</th>
