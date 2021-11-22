@@ -1,4 +1,4 @@
-import CodeColor from '@theme/CodeColor';
+import CodeColor from '@components/CodeColor';
 import React, { useEffect, useRef, useState } from 'react';
 
 import styles from './styles.module.css';
