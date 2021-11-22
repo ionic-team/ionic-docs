@@ -21,7 +21,7 @@ Next, create a couple of new functions in `usePhotoGallery`:
 export function usePhotoGallery() {
 
 
-const savePicture = async (photo: CameraPhoto, fileName: string): Promise<Photo> => {
+const savePicture = async (photo: Photo, fileName: string): Promise<UserPhoto> => {
   const base64Data = await base64FromPath(photo.webPath!);
   const savedFile = await FileSystem.writeFile({
     path: fileName,
