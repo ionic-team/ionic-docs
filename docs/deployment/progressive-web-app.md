@@ -16,6 +16,6 @@ Because Ionic Apps are built with web technologies, they can run just as well as
 For the frameworks Ionic supports, we've created dedicated guides that go into more detail. Below are links for Angular and React.
 
 <DocsCards>
-  <DocsCard header="Angular" href="../angular/pwa" img="/img/frameworks/angular.svg"></DocsCard>
-  <DocsCard header="React" href="../react/pwa" img="/img/frameworks/react.svg"></DocsCard>
+  <DocsCard header="Angular" href="../angular/pwa" img={require('./_assets/img/angular.svg').default}></DocsCard>
+  <DocsCard header="React" href="../react/pwa" img={require('./_assets/img/react.svg').default}></DocsCard>
 </DocsCards>

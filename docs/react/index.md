@@ -119,19 +119,19 @@ $ ionic serve █
 ## Resources
 
 <DocsCards>
-  <DocsCard header="Getting Started" href="react/your-first-app" icon="/icons/feature-component-actionsheet-icon.png">
+  <DocsCard header="Getting Started" href="react/your-first-app" icon={require('./_assets/img/feature-component-actionsheet-icon.png').default}>
     <p>Learn the fundamentals you need to know to start building amazing apps with Ionic Framework.</p>
   </DocsCard>
 
-  <DocsCard header="Add Ionic to Existing React App" href="https://dev.to/ionic/adding-ionic-react-to-an-existing-react-project-4kib" icon="/icons/logo-react-icon.png">
+  <DocsCard header="Add Ionic to Existing React App" href="https://dev.to/ionic/adding-ionic-react-to-an-existing-react-project-4kib" icon={require('./_assets/img/logo-react-icon.png').default}>
     <p>Use individual components or the complete app experience.</p>
   </DocsCard>
 
-  <DocsCard header="Navigation" href="react/navigation" icon="/icons/feature-component-navigation-icon.png">
+  <DocsCard header="Navigation" href="react/navigation" icon={require('./_assets/img/feature-component-navigation-icon.png').default}>
     <p>Learn the basics of navigation inside your app with Ionic and React Router</p>
   </DocsCard>
 
-  <DocsCard header="Lifecycle" href="react/lifecycle" icon="/icons/feature-guide-components-icon.png">
+  <DocsCard header="Lifecycle" href="react/lifecycle" icon={require('./_assets/img/feature-guide-components-icon.png').default}>
     <p>Learn about using Ionic lifecycle events in class components and with hooks</p>
   </DocsCard>
 

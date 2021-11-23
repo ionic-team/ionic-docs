@@ -17,15 +17,15 @@ fully supports bringing code back into the tool, something virtually unheard of 
 Studio is a desktop tool and requires a subscription, and is only for Ionic Angular 4.x+ projects. To get started, sign up below:
 
 <DocsCards class="static-width">
-  <DocsCard header="Get Studio" href="https://ionicframework.com/studio?utm_source=docs&utm_medium=website&utm_campaign=studio%20launch" icon="/icons/guide-installation-icon.png">
+  <DocsCard header="Get Studio" href="https://ionicframework.com/studio?utm_source=docs&utm_medium=website&utm_campaign=studio%20launch" icon={require('./studio/_assets/img/guide-installation-icon.png').default}>
     <p>Sign up for Studio and start building today.</p>
   </DocsCard>
 
-  <DocsCard header="News & Updates" icon="/icons/guide-news-icon.png">
+  <DocsCard header="News & Updates" icon={require('./studio/_assets/img/guide-news-icon.png').default}>
     <p>Delivered within Studio as well as over email.</p>
   </DocsCard>
 
-  <DocsCard header="Studio FAQ" href="studio/faq" icon="/icons/guide-faq-icon.png">
+  <DocsCard header="Studio FAQ" href="studio/faq" icon={require('./studio/_assets/img/guide-faq-icon.png').default}>
     <p>Find answers to common questions about Ionic Studio.</p>
   </DocsCard>
 </DocsCards>

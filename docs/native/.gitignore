@@ -2,5 +2,7 @@
 !.gitignore
 !_components
 !_components/*
+!_components/*/*
 !_assets
 !_assets/*
+!_assets/*/*

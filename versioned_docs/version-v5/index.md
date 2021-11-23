@@ -21,19 +21,19 @@ Get started building by [installing Ionic](intro/cli.md) or following our [First
 <intro-end />
 
 <DocsCards>
-  <DocsCard header="Installation Guide" href="intro/cli" icon="/icons/guide-installation-icon.svg" hover-icon="/icons/guide-installation-icon-hover.svg">
+  <DocsCard header="Installation Guide" href="intro/cli" icon={require('./_assets/img/guide-installation-icon.svg').default} hover-icon={require('./_assets/img/guide-installation-icon-hover.svg').default}>
     <p>Step-by-step guides to setting up your system and installing the framework.</p>
   </DocsCard>
 
-  <DocsCard header="UI Components" href="components" icon="/icons/guide-components-icon.svg" hover-icon="/icons/guide-components-icon-hover.svg">
+  <DocsCard header="UI Components" href="components" icon={require('./_assets/img/guide-components-icon.svg').default} hover-icon={require('./_assets/img/guide-components-icon-hover.svg').default}>
     <p>Dive into Ionic Framework's beautifully designed UI component library.</p>
   </DocsCard>
 
-  <DocsCard header="Native Functionality" href="native" icon="/icons/guide-native-icon.svg" hover-icon="/icons/guide-native-icon-hover.svg">
+  <DocsCard header="Native Functionality" href="native" icon={require('./_assets/img/guide-native-icon.svg').default} hover-icon={require('./_assets/img/guide-native-icon-hover.svg').default}>
     <p>Integrate native device plugins, like Bluetooth, Maps, HealthKit, and more.</p>
   </DocsCard>
 
-  <DocsCard header="Theming" href="theming/basics" icon="/icons/guide-theming-icon.svg" hover-icon="/icons/guide-theming-icon-hover.svg">
+  <DocsCard header="Theming" href="theming/basics" icon={require('./_assets/img/guide-theming-icon.svg').default} hover-icon={require('./_assets/img/guide-theming-icon-hover.svg').default}>
     <p>Learn to easily customize and modify your Ionic app's visual design to fit your brand.</p>
   </DocsCard>
 </DocsCards>
