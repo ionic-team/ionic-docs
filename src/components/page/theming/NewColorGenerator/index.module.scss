@@ -1,0 +1,124 @@
+.newColorGenerator {
+  --border-c: var(--c-indigo-30);
+  --border-c--active: var(--c-blue-60);
+
+  --text-c: var(--c-indigo-80);
+  --input-height: 2rem;
+
+  display: block;
+
+  :global {
+    input {
+      font-size: .875rem;
+      color: var(--text-c);
+
+      height: 2rem;
+    }
+  }
+}
+
+.top {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  
+  margin-inline-start: -2rem;
+  margin-block-start: -1rem;
+
+  margin-block-end: 2rem;
+
+  &__start {
+    margin-inline-start: 2rem;
+    margin-block-start: 1rem;
+
+    display: flex;
+    align-items: center;
+
+    .codeColor {
+      border-radius: 1000px;
+      margin-inline-end: .5rem;
+
+      border: 1px solid var(--border-c);
+
+      min-width: 1.5rem;
+      min-height: 1.5rem;
+    }
+
+    .nameInput {
+      padding-inline-start: 1rem;
+      padding-inline-end: 1rem;
+
+      border: 1px solid var(--border-c);
+      border-radius: 4px;
+      
+      overflow: hidden;
+
+      transition: border-color .2s ease-out;
+
+      &:focus {
+        outline: 1px solid rgba(0,0,0,0);
+        border: 1px solid var(--border-c--active);
+      }
+    }
+  }
+
+  &__end {
+    margin-inline-start: 2rem;
+    margin-block-start: 1rem;
+
+    display: flex;
+    align-items: center;
+
+    position: relative;
+
+    border: 1px solid var(--border-c);
+    border-radius: 4px;
+    
+    overflow: hidden;
+
+    transition: border-color .2s ease-out;
+
+    &:focus-within {
+      border: 1px solid var(--border-c--active);
+    }
+
+    .colorPickerWrapper {
+      display: flex;
+      border-radius: 2px;
+      overflow: hidden;
+
+      position: absolute;
+      left: .75rem;
+
+      width: .75rem;
+      height: .75rem;
+
+      background-color: var(--background-c);
+
+      border: 1px solid var(--border-c);
+
+      .colorPicker {
+        opacity: 0;
+
+        width: 100%;
+        height: 100%;
+        
+        cursor: pointer;
+      }
+    }
+
+    .colorInput {
+      border: none;
+
+      padding-inline-start: 2.25rem;
+      padding-inline-end: 1rem;
+
+      width: 7rem;
+
+      &:focus {
+        outline: 1px solid rgba(0,0,0,0);
+      }
+    }
+  }
+}
