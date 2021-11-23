@@ -9,7 +9,7 @@ To launch your Studio app project in your editor of choice, navigate to the Desi
 the Project -> Open in Editor menu bar item may be used.
 
 <figure>
-  <img alt="New Feature Button" src="/img/studio/2/ss-designer-index.png" />
+  <img alt="New Feature Button" src={require('./_assets/img/ss-designer-index.png').default} />
 </figure>
 
 ## Configuring your Editor

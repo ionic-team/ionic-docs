@@ -30,7 +30,7 @@ All iOS apps must be code signed, even for development. Luckily, Xcode makes thi
 
 Open Xcode and navigate to **Xcode** &raquo; **Preferences** &raquo; **Accounts**. Add an Apple ID if none are listed. Once logged in, a Personal Team will appear in the team list of the Apple ID.
 
-![Xcode Accounts](/img/installation/ios-xcode-accounts.png)
+![Xcode Accounts](./_assets/img/ios-xcode-accounts.png)
 
 ### Creating an iOS Simulator
 
@@ -38,7 +38,7 @@ The iOS simulator emulates iOS devices on Macs. The following documentation is a
 
 Open Xcode and navigate to **Window** &raquo; **Devices and Simulators**. Create an **iPhone 11** simulator if one does not already exist.
 
-![iOS Simulators](/img/installation/ios-xcode-simulators-setup.png)
+![iOS Simulators](./_assets/img/ios-xcode-simulators-setup.png)
 
 ## Cordova Setup
 
@@ -89,11 +89,11 @@ Before apps can be deployed to iOS simulators and devices, the native project mu
 
 1. **In <b>Project navigator</b>, select the project root to open the project editor. Under the **Identity** section, verify that the Package ID that was set matches the Bundle Identifier.**
 
-   ![Xcode Identity Setup](/img/running/ios-xcode-identity-setup.png)
+   ![Xcode Identity Setup](./_assets/img/ios-xcode-identity-setup.png)
 
 1. **In the same project editor, under the <b>Signing</b> section, ensure <b>Automatically manage signing</b> is enabled.** Then, select a Development Team. Given a Development Team, Xcode will attempt to automatically prepare provisioning and signing.
 
-   ![Xcode Signing Setup](/img/running/ios-xcode-signing-setup.png)
+   ![Xcode Signing Setup](./_assets/img/ios-xcode-signing-setup.png)
 
 ## Running with Xcode
 
@@ -117,7 +117,7 @@ In this workflow, Xcode can automatically fix common compilation and signing iss
 
 1. **In Xcode, select a target simulator or device and click the play button.**
 
-   ![Xcode Play Button Area](/img/running/ios-xcode-play-button-area.png)
+   ![Xcode Play Button Area](./_assets/img/ios-xcode-play-button-area.png)
 
 ## Running with the Ionic CLI
 
@@ -163,7 +163,7 @@ If the **Develop** menu is hidden, enable it in **Safari** &raquo; **Preferences
 If the app isn't listed, the Web Inspector may need to be enabled on the device in **Settings** &raquo; **Safari** &raquo; **Advanced** &raquo; **Web Inspector**.
 :::
 
-![Safari Web Inspector](/img/running/ios-safari-web-inspector-timelines.png)
+![Safari Web Inspector](./_assets/img/ios-safari-web-inspector-timelines.png)
 
 ### Viewing Native Logs
 
@@ -173,4 +173,4 @@ If running with Xcode, native logs can be found in in the Xcode **Console**.
 If the **Console** is hidden, enable it in **View** &raquo; **Debug Area** &raquo; **Activate Console**.
 :::
 
-![Xcode Console](/img/running/ios-xcode-console.png)
+![Xcode Console](./_assets/img/ios-xcode-console.png)

@@ -41,7 +41,7 @@ And in the same file, you'll have to add `xmlns:tools="http://schemas.android.co
 <h2>Stuck on a Cordova issue?</h2>
 <DocsCard className="cordova-ee-card" header="Don't waste precious time on plugin issues." href="https://ionicframework.com/sales?product_of_interest=Ionic%20Native">
   <div>
-    <img src="/docs/icons/native-cordova-bot.png" class="cordova-ee-img" />
+    <img src={require('./_assets/img/native-cordova-bot.png').default} class="cordova-ee-img" />
     <p>If you're building a serious project, you can't afford to spend hours troubleshooting. Ionic’s experts offer premium advisory services for both community plugins and premier plugins.</p>
     <DocsButton className="native-ee-detail">Contact Us Today!</DocsButton>
   </div>

@@ -85,7 +85,7 @@ export default  {
 
 Save the file, and if you’re not already, restart the development server in your browser by running `ionic serve`. On the Photo Gallery tab, click the Camera button. If your computer has a webcam of any sort, a modal window appears. Take a selfie!
 
-![Camera API on the web](/img/guides/first-app-cap-ng/camera-web.png)
+![Camera API on the web](./_assets/img/camera-web.png)
 
 _(Your selfie is probably much better than mine)_
 

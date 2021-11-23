@@ -59,7 +59,7 @@ Making a developer account with Google Play costs $25 USD.
 
 Once a developer account has been created, go ahead and click the `Create an Application`
 
-![Create an App button](/img/publishing/newAppGPlay.png)
+![Create an App button](./_assets/img/newAppGPlay.png)
 
 Be sure to fill out the description for the app along with providing screenshots and additional info.
 When ready, upload the signed release APK that was generated and publish the app.

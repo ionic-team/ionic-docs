@@ -12,7 +12,7 @@ With the Designer, developers can:
 * View and work with most supported Ionic element properties, saving a trip checking the Documentation
 
 <figure>
-  <img alt="Designer Mode" src="/img/studio/2/ss-designer.png" />
+  <img alt="Designer Mode" src={require('./_assets/img/ss-designer.png').default} />
 </figure>
 
 ## Pages and Components
@@ -29,13 +29,13 @@ Studio finds pages and components by scanning your project looking for Component
 </blockquote>
 
 <figure>
-  <img alt="Page Index" src="/img/studio/2/ss-designer-index.png" />
+  <img alt="Page Index" src={require('./_assets/img/ss-designer-index.png').default} />
 </figure>
 
 Switching to the component section on the Designer index reveals all the components found in the app.
 
 <figure>
-  <img alt="Component Index" src="/img/studio/2/ss-component-index.png" />
+  <img alt="Component Index" src={require('./_assets/img/ss-component-index.png').default} />
 </figure>
 
 See [Adding Pages and Components](#adding-pages-and-components) to create new pages and components.
@@ -45,13 +45,13 @@ See [Adding Pages and Components](#adding-pages-and-components) to create new pa
 To add pages or components to an app, click the **New** button in the top right of the page index.
 
 <figure>
-  <img alt="New Feature Button" src="/img/studio/2/ss-new-feature.png" />
+  <img alt="New Feature Button" src={require('./_assets/img/ss-new-feature.png').default} />
 </figure>
 
 When adding a component (rather than a page), Studio will prompt for the name and a page in which to register it.
 
 <figure>
-  <img alt="New Component Modal" src="/img/studio/2/ss-component-new.png" />
+  <img alt="New Component Modal" src={require('./_assets/img/ss-component-new.png').default} />
 </figure>
 
 This adds the component as a _import_ in the NgModule of the selected page, which allows it to be used in that page.
@@ -75,13 +75,13 @@ To exit the current selection, use the <kbd>Esc</kbd> key.
 To select any element under the cursor, right click and choose an element from the `Select Element` dropdown:
 
 <figure>
-  <img alt="Selecting elements" src="/img/studio/2/ss-select-element-menu.png" />
+  <img alt="Selecting elements" src={require('./_assets/img/ss-select-element-menu.png').default} />
 </figure>
 
 To select any element in the current document, access the element tree and click on the element to select:
 
 <figure>
-  <img alt="Editing Templates" src="/img/studio/2/ss-tree-select.png" />
+  <img alt="Editing Templates" src={require('./_assets/img/ss-tree-select.png').default} />
 </figure>
 
 ### Adding New Elements
@@ -90,7 +90,7 @@ To add new elements to a page or component, drag and drop a new element from the
 add context-specific elements easily.
 
 <figure>
-  <img alt="Add Element Menu" src="/img/studio/2/ss-new-elements.png" />
+  <img alt="Add Element Menu" src={require('./_assets/img/ss-new-elements.png').default} />
 </figure>
 
 Elements may also be dragged into the HTML for a page or component, and will result in a new code snippet being inserted at the cursor position.
@@ -100,7 +100,7 @@ Elements may also be dragged into the HTML for a page or component, and will res
 Certain elements support quickly adding child elements by right-clicking and selecting an element in the `Quick Add` menu. Some components that support quickly adding new elements include List, List Item, Grid, Segment Button, and more.
 
 <figure>
-  <img alt="Quick Add Element Menu" src="/img/studio/2/ss-quick-add-element-menu.png" />
+  <img alt="Quick Add Element Menu" src={require('./_assets/img/ss-quick-add-element-menu.png').default} />
 </figure>
 
 ### Rearranging Existing Elements
@@ -114,7 +114,7 @@ Remember, it is also possible to drag and drop code selections in the code edito
 When an element is selected in the Designer canvas, the properties panel will update to reflect the selected element.
 
 <figure>
-  <img alt="Properties Panel" src="/img/studio/2/ss-properties-panel.png" />
+  <img alt="Properties Panel" src={require('./_assets/img/ss-properties-panel.png').default} />
 </figure>
 
 In the properties panel, the properties that can be modified are listed.
@@ -130,7 +130,7 @@ Unfortunately, the properties panel does not show properties for custom componen
 The HTML, CSS, and JS (TypeScript) for a page or company can be edited by switching to the Editor View:
 
 <figure>
-  <img alt="Editor View" src="/img/studio/2/ss-editor-view.png" />
+  <img alt="Editor View" src={require('./_assets/img/ss-editor-view.png').default} />
 </figure>
 
 ## Template Editing
@@ -138,7 +138,7 @@ The HTML, CSS, and JS (TypeScript) for a page or company can be edited by switch
 Each page or component has an HTML template that makes up its structure. Template editing makes it easy to make quick edits to the template, such as changing text or dragging in new element code snippets from the Elements list.
 
 <figure>
-  <img alt="Editor View" src="/img/studio/2/ss-editor-template.png" />
+  <img alt="Editor View" src={require('./_assets/img/ss-editor-template.png').default} />
 </figure>
 
 ## Styles Editing
@@ -148,7 +148,7 @@ The Styles editor contains the CSS (Sass) for that page or component.
 Any changes to the styles are reflected in the canvas when saved. The styles in this mode are only applicable to the current page or component.
 
 <figure>
-  <img alt="Editor View" src="/img/studio/2/ss-editor-styles.png" />
+  <img alt="Editor View" src={require('./_assets/img/ss-editor-styles.png').default} />
 </figure>
 
 ## Scripts Editing
@@ -157,7 +157,7 @@ The **Scripts** editor is for making changes to the controller, or logic, behind
 quick changes to logic for the page or component. For more complicated changes we recommend opening the project in a full-fledged code editor.
 
 <figure>
-  <img alt="Editor View" src="/img/studio/2/ss-editor-code.png" />
+  <img alt="Editor View" src={require('./_assets/img/ss-editor-code.png').default} />
 </figure>
 
 ## Troubleshooting the Canvas
@@ -165,5 +165,5 @@ quick changes to logic for the page or component. For more complicated changes w
 If the canvas gets into an inconsistent or incorrect state, click the reload icon from the canvas utility bar to cause the canvas to reload its current contents:
 
 <figure>
-  <img alt="Editing Scripts" src="/img/studio/2/ss-compose-reload.png" />
+  <img alt="Editing Scripts" src={require('./_assets/img/ss-compose-reload.png').default} />
 </figure>

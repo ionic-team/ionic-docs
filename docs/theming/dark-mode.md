@@ -132,7 +132,7 @@ color-scheme: light dark;
 
 | Default scrollbar                                                                                         | Scrollbar with `color-scheme`                                                                         |
 | --------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- |
-| <figure><img alt="Application without color-scheme" src="/img/theming/color-scheme-light.png" /></figure> | <figure><img alt="Application with color-scheme" src="/img/theming/color-scheme-dark.png" /></figure> |
+| <figure><img alt="Application without color-scheme" src={require('./_assets/img/color-scheme-light.png').default} /></figure> | <figure><img alt="Application with color-scheme" src={require('./_assets/img/color-scheme-dark.png').default} /></figure> |
 
 For more information regarding `color-scheme` please see https://web.dev/color-scheme/.
 

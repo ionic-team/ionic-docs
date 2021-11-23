@@ -23,7 +23,7 @@ Examples of what you can do with the integrated terminal:
 To open the terminal, use <kbd>Ctrl</kbd>+<kbd>\`</kbd>, or click the plus sign in the terminal bar:
 
 <figure>
-  <img alt="New Terminal" src="/img/studio/2/ss-terminal.png" />
+  <img alt="New Terminal" src={require('./_assets/img/ss-terminal.png').default} />
 </figure>
 
 The integrated terminal uses your own configured shell. Configure this on macOS by setting the `SHELL` environment variable.
@@ -33,5 +33,5 @@ For Windows, `powershell.exe` is used, and this is not yet configurable.
 :::
 
 <figure>
-  <img alt="Using Git in Terminal" src="/img/studio/2/ss-terminal-git.png" />
+  <img alt="Using Git in Terminal" src={require('./_assets/img/ss-terminal-git.png').default} />
 </figure>

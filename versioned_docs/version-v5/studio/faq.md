@@ -19,5 +19,5 @@ Open up the page you'd like to use a component in, then navigate to the module t
 In this example, our component is called "MyCustomThing":
 
 <figure>
-  <img alt="My Custom Thing NgModule" src="/img/studio/ss-my-custom-thing-ngmodule.png" />
+  <img alt="My Custom Thing NgModule" src={require('./_assets/img/ss-my-custom-thing-ngmodule.png').default} />
 </figure>

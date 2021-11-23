@@ -50,7 +50,7 @@ Create an Ionic app using one of the pre-made app templates, or a blank one to s
 $ ionic start
 ```
 
-![start app thumbnails](/img/installation/start-app-thumbnails.png)
+![start app thumbnails](./_assets/img/start-app-thumbnails.png)
 
 To learn more about starting Ionic apps, see the [Starting Guide](../developing/starting.md).
 

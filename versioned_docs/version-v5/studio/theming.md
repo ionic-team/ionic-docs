@@ -9,7 +9,7 @@ The Ionic Framework docs have [great documentation](../theming/basics.md) on the
 The color generator within Ionic Studio automatically generates the CSS variables for the color, as well as the associated contrast, shade, and tint colors.
 
 <figure>
-  <img alt="Color Generator" src="/img/studio/2/ss-theme.png" />
+  <img alt="Color Generator" src={require('./_assets/img/ss-theme.png').default} />
 </figure>
 
 The changes are available for previewing in your own app in the [Designer](designer.md) canvas.

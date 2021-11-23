@@ -18,7 +18,7 @@ import { Helmet } from "react-helmet";
 <div id="native-enterprise-cards">
   <a href="https://capacitorjs.com/docs/plugins">
     <div class="image-wrapper">
-      <img src="/docs/img/native/capacitor@2x.png" width="440" height="222" alt="capacitor logo"/>
+      <img src={require('./native/_assets/img/capacitor@2x.png').default} width="440" height="222" alt="capacitor logo"/>
     </div>
     <div class="heading-group">
       <header>Capacitor plugins</header>
@@ -28,7 +28,7 @@ import { Helmet } from "react-helmet";
 
   <a href="native/community">
     <div class="image-wrapper">
-      <img src="/docs/img/native/cordova@2x.png" width="440" height="222" alt="cordova logo"/>
+      <img src={require('./native/_assets/img/cordova@2x.png').default} width="440" height="222" alt="cordova logo"/>
     </div>
     <div class="heading-group">
       <header>Cordova plugins</header>
@@ -39,7 +39,7 @@ import { Helmet } from "react-helmet";
 
 <a id="native-enterprise" href="https://ionicframework.com/native">
   <div class="image-wrapper">
-    <img src="/docs/img/native/native-enterprise@2x.png" width="476" height="228" />
+    <img src={require('./native/_assets/img/native-enterprise@2x.png').default} width="476" height="228" />
   </div>
   
   <div class="heading-group">    

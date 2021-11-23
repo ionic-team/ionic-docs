@@ -316,7 +316,7 @@ The default amount of `margin` to be applied is `16px` and is set by the `--ion-
 
 ## Flex Properties
 
-<img src="/docs/img/layout/diagram-flex-attributes.png"/>
+<img src={require('./_assets/img/diagram-flex-attributes.png').default}/>
 
 ### Flex Container Properties
 
