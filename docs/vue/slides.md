@@ -34,7 +34,7 @@ We recommend importing the styles in the component in which Swiper is being used
 <script>
   import { defineComponent } from 'vue';
 
-  import 'swiper/css';
+  import 'swiper/swiper.min.css';
   import '@ionic/vue/css/ionic-swiper.css';
 
   export default defineComponent({
@@ -94,7 +94,7 @@ These components are imported from `swiper/vue` and provided to your Vue compone
   import { Swiper, SwiperSlide } from 'swiper/vue';
   import { IonContent, IonPage } from '@ionic/vue';
 
-  import 'swiper/css';
+  import 'swiper/swiper.min.css';
   import '@ionic/vue/css/ionic-swiper.css';
 
   export default defineComponent({
@@ -134,12 +134,7 @@ To begin, we need to import the modules and their corresponding CSS files from t
   import { Swiper, SwiperSlide } from 'swiper/vue';
   import { IonContent, IonPage } from '@ionic/vue';
 
-  import 'swiper/css';
-  import 'swiper/css/autoplay';
-  import 'swiper/css/keyboard';
-  import 'swiper/css/pagination';
-  import 'swiper/css/scrollbar';
-  import 'swiper/css/zoom';
+  import 'swiper/swiper-bundle.min.css';
   import '@ionic/vue/css/ionic-swiper.css';
 
   export default defineComponent({
@@ -169,12 +164,7 @@ From here, we need to provide these modules to Swiper by using the `modules` pro
   import { Swiper, SwiperSlide } from 'swiper/vue';
   import { IonContent, IonPage } from '@ionic/vue';
 
-  import 'swiper/css';
-  import 'swiper/css/autoplay';
-  import 'swiper/css/keyboard';
-  import 'swiper/css/pagination';
-  import 'swiper/css/scrollbar';
-  import 'swiper/css/zoom';
+  import 'swiper/swiper-bundle.min.css';
   import '@ionic/vue/css/ionic-swiper.css';
 
   export default defineComponent({
@@ -214,12 +204,7 @@ Finally, we can turn these features on by using the appropriate properties:
   import { Swiper, SwiperSlide } from 'swiper/vue';
   import { IonContent, IonPage } from '@ionic/vue';
 
-  import 'swiper/css';
-  import 'swiper/css/autoplay';
-  import 'swiper/css/keyboard';
-  import 'swiper/css/pagination';
-  import 'swiper/css/scrollbar';
-  import 'swiper/css/zoom';
+  import 'swiper/swiper-bundle.min.css';
   import '@ionic/vue/css/ionic-swiper.css';
 
   export default defineComponent({
@@ -271,12 +256,7 @@ import { Autoplay, Keyboard, Pagination, Scrollbar, Zoom } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/vue';
 import { IonContent, IonPage, IonicSlides } from '@ionic/vue';
 
-import 'swiper/css';
-import 'swiper/css/autoplay';
-import 'swiper/css/keyboard';
-import 'swiper/css/pagination';
-import 'swiper/css/scrollbar';
-import 'swiper/css/zoom';
+import 'swiper/swiper-bundle.min.css';
 import '@ionic/vue/css/ionic-swiper.css';
 
 export default defineComponent({
@@ -458,7 +438,7 @@ If you are using effects such as Cube or Fade, you can install them just like we
   import { Swiper, SwiperSlide } from 'swiper/vue';
   import { IonContent, IonPage, IonicSlides } from '@ionic/vue';
 
-  import 'swiper/css';
+  import 'swiper/swiper-bundle.min.css';
   import '@ionic/vue/css/ionic-swiper.css';
 
   export default defineComponent({
@@ -494,8 +474,7 @@ Next, we need to import the stylesheet associated with the effect:
   import { Swiper, SwiperSlide } from 'swiper/vue';
   import { IonContent, IonPage, IonicSlides } from '@ionic/vue';
 
-  import 'swiper/css';
-  import 'swiper/css/effect-fade';
+  import 'swiper/swiper-bundle.min.css';
   import '@ionic/vue/css/ionic-swiper.css';
 
   export default defineComponent({
@@ -532,8 +511,7 @@ After that, we can activate it by setting the `effect` property on `swiper` to `
   import { Swiper, SwiperSlide } from 'swiper/vue';
   import { IonContent, IonPage, IonicSlides } from '@ionic/vue';
 
-  import 'swiper/css';
-  import 'swiper/css/effect-fade';
+  import 'swiper/swiper.min.css';
   import '@ionic/vue/css/ionic-swiper.css';
 
   export default defineComponent({
