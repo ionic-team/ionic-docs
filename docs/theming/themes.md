@@ -2,7 +2,7 @@
 title: Themes
 ---
 
-import CodeColor from '@page/theming/CodeColor';
+import CodeColor from '@docs/theming/components/CodeColor';
 
 <head>
   <title>Ionic App Themes | Change Default App Background Themes & Colors</title>

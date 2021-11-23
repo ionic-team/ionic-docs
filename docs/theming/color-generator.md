@@ -1,9 +1,9 @@
 ---
 hide_table_of_contents: true
-# demoUrl: /docs/demos/color-generator/index.html
+demoUrl: /docs/demos/color-generator/index.html
 ---
 
-import ColorGenerator from '@page/theming/ColorGenerator';
+import ColorGenerator from '@docs/theming/components/ColorGenerator';
 
 # Color Generator
 

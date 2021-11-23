@@ -211,7 +211,7 @@ module.exports = {
           ),
           'react': path.resolve(__dirname, './node_modules/react'),
           'react-dom': path.resolve(__dirname, './node_modules/react-dom'),
-          '@page': path.resolve(__dirname, './src/components/page'),
+          '@docs': path.resolve(__dirname, './docs'),
         },
       },
     ],

@@ -3,9 +3,9 @@ initialTab: 'preview'
 inlineHtmlPreviews: true
 ---
 
-import LayeredColorsSelect from '@page/theming/LayeredColorsSelect';
-import NewColorGenerator from '@page/theming/NewColorGenerator';
-import CodeColor from '@page/theming/CodeColor';
+import LayeredColorsSelect from '@docs/theming/components/LayeredColorsSelect';
+import NewColorGenerator from '@docs/theming/components/NewColorGenerator';
+import CodeColor from '@docs/theming/components/CodeColor';
 
 # Colors
 
@@ -50,7 +50,7 @@ To change the default values of a color, all of the listed variations for that c
 When `secondary` is applied to a button, not only is the base color <CodeColor mode="md" value="#006600"></CodeColor> used, but the contrast color <CodeColor mode="md" value="#ffffff"></CodeColor> is used for the text, along with shade <CodeColor mode="md" value="#005a00"></CodeColor> and tint <CodeColor mode="md" value="#1a751a"></CodeColor> colors for the different states of the button.
 
 :::note
-Not sure how to get the variation colors from the base color? Try out our [Color Generator](color-generator.mdx) that calculates all of the variations and provides code to copy/paste into an app!
+Not sure how to get the variation colors from the base color? Try out our [Color Generator](color-generator.md) that calculates all of the variations and provides code to copy/paste into an app!
 :::
 
 See the [CSS Variables documentation](css-variables.md) for more information on CSS variables.

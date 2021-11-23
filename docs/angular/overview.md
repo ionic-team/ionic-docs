@@ -3,7 +3,7 @@ title: 'Ionic Angular Overview'
 sidebar_label: Overview
 ---
 
-import PageStyles from '@page/react';
+import PageStyles from '@docs/react/components';
 
 <head>
   <title>Ionic Angular Overview | Angular Version Support and Tooling</title>
