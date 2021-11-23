@@ -2,7 +2,7 @@
 sidebar_label: CLI Installation
 ---
 
-import { AppWizard } from '@page-styles/intro/cli';
+import { AppWizard } from '@page/intro/cli';
 
 # Installing Ionic
 

@@ -3,8 +3,8 @@ initialTab: 'preview'
 inlineHtmlPreviews: true
 ---
 
-import LayeredColorsSelect from '@components/LayeredColorsSelect';
-import CodeColor from '@components/CodeColor';
+import LayeredColorsSelect from '@page/theming/LayeredColorsSelect';
+import CodeColor from '@page/theming/CodeColor';
 
 # Colors
 

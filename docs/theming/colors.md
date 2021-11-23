@@ -3,8 +3,9 @@ initialTab: 'preview'
 inlineHtmlPreviews: true
 ---
 
-import LayeredColorsSelect from '@components/LayeredColorsSelect';
-import CodeColor from '@components/CodeColor';
+import LayeredColorsSelect from '@page/theming/LayeredColorsSelect';
+import NewColorGenerator from '@page/theming/NewColorGenerator';
+import CodeColor from '@page/theming/CodeColor';
 
 # Colors
 
@@ -105,4 +106,4 @@ See the [CSS Variables documentation](css-variables.md) for more information on 
 
 Create a new color below by changing the name and value, then copy and paste the code below into your project.
 
-<new-color-generator mode="md" no-prerender></new-color-generator>
+<NewColorGenerator />
