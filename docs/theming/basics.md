@@ -3,7 +3,7 @@ title: Theming Basics
 sidebar_label: Basics
 ---
 
-import ColorAccordion from '@docs/theming/components/ColorAccordion';
+import ColorAccordion from '@docs/theming/_components/ColorAccordion';
 
 <head>
   <title>Theming | Ionic Apps: Color and Theming Basics Definition</title>

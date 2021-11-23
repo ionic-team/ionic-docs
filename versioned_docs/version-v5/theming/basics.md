@@ -4,7 +4,7 @@ description: 'The definition of theming apps just got simplified. Ionic Framewor
 sidebar_label: Basics
 ---
 
-import ColorAccordion from '@docs/theming/components/ColorAccordion';
+import ColorAccordion from '@docs/theming/_components/ColorAccordion';
 
 # Theming Basics
 

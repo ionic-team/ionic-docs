@@ -6,7 +6,7 @@ hide_table_of_contents: true
 import DocsCard from '@theme/DocsCard';
 import DocsCards from '@theme/DocsCards';
 
-import { NativeEnterpriseCards, NativeEnterprise } from '@docs/native/components';
+import { NativeEnterpriseCards, NativeEnterprise } from '@docs/native/_components';
 
 <head>
   <title>Native APIs - Build Open-Source Native Application Experiences</title>

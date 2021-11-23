@@ -6,7 +6,7 @@ initialTab: 'preview'
 inlineHtmlPreviews: true
 ---
 
-import CodeColor from '@docs/theming/components/CodeColor';
+import CodeColor from '@docs/theming/_components/CodeColor';
 
 # Themes
 
