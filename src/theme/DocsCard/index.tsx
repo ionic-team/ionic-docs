@@ -34,7 +34,7 @@ function DocsCard(props: Props): JSX.Element {
     <>
       {Image && (
         <>
-          {typeof Icon === 'string'
+          {typeof Image === 'string'
             ? <img src={Image} className="Card-image" />
             : <Image className="Card-image"/>
           }
