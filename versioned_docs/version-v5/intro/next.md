@@ -8,15 +8,15 @@ import DocsCards from '@theme/DocsCards';
 Pick the JavaScript framework you plan to use while building your Ionic app:
 
 <DocsCards>
-  <DocsCard header="Start with Angular" href="../angular/your-first-app" icon="/icons/logo-angular-icon.png">
+  <DocsCard header="Start with Angular" href="../angular/your-first-app" icon={require('./_assets/img/logo-angular-icon.png').default}>
     <p>A complete guide to get you up to speed with the basics of building Ionic apps with Angular.</p>
   </DocsCard>
 
-  <DocsCard header="Start with React" href="../react/your-first-app" icon="/icons/logo-react-icon.png">
+  <DocsCard header="Start with React" href="../react/your-first-app" icon={require('./_assets/img/logo-react-icon.png').default}>
     <p>A complete guide to get you up to speed with the basics of building Ionic apps with React.</p>
   </DocsCard>
 
-  <DocsCard header="Start with Vue" href="../vue/your-first-app" icon="/icons/logo-vue-icon.png">
+  <DocsCard header="Start with Vue" href="../vue/your-first-app" icon={require('./_assets/img/logo-vue-icon.png').default}>
     <p>A complete guide to get you up to speed with the basics of building Ionic apps with Vue.</p>
   </DocsCard>
 </DocsCards>
