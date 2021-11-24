@@ -1,10 +1,10 @@
 import React from 'react';
 import clsx from 'clsx';
 import Link from '@docusaurus/Link';
-import useBaseUrl from '@docusaurus/useBaseUrl';
 
 import styles from './styles.module.scss';
 
+//TODO: Fix types to account for webpackified SVGs
 interface Props extends React.HTMLAttributes<HTMLDivElement> {
   href?: string;
   header?: string;
@@ -26,26 +26,46 @@ function DocsCard(props: Props): JSX.Element {
         {props.header}
       </header>
     );
-  const hoverIcon = props.hoverIcon || props.icon;
+  const HoverIcon = props.hoverIcon;
+  const Icon = props.icon;
+  const Image = props.img;
 
   const content = (
     <>
-      {props.img && <img src={useBaseUrl(props.img)} className="Card-image" />}
+      {Image && (
+        <>
+          {typeof Icon === 'string'
+            ? <img src={Image} className="Card-image" />
+            : <Image className="Card-image"/>
+          }
+        </>
+      )}
       <div className="Card-container">
-        {(props.icon || hoverIcon) && (
+        {(Icon || HoverIcon) && (
           <div className="Card-icon-row">
-            {props.icon && (
-              <img
-                src={useBaseUrl(props.icon)}
-                className="Card-icon Card-icon-default"
-              />
-            )}
-            {hoverIcon && (
-              <img
-                src={useBaseUrl(hoverIcon)}
-                className="Card-icon Card-icon-hover"
-              />
-            )}
+            {Icon && 
+              <>
+                {typeof Icon === 'string'
+                  ? <img
+                      src={Icon}
+                      className="Card-icon Card-icon-default"
+                    />
+                  : <Icon className="Card-icon Card-icon-default" />
+                }
+              </>
+            }
+            {HoverIcon &&
+              <>
+                {typeof Icon === 'string'
+                  ? <img
+                      src={HoverIcon}
+                      className="Card-icon Card-icon-hover"
+                    />
+                  : <HoverIcon className="Card-icon Card-icon-hover" />
+                }
+              </>
+              
+            }
           </div>
         )}
         {props.ionicon && (
@@ -55,7 +75,7 @@ function DocsCard(props: Props): JSX.Element {
           <div className="Card-iconset__container">
             {props.iconset.split(',').map((icon, index) => (
               <img
-                src={useBaseUrl(icon)}
+                src={icon}
                 className={`Card-icon ${
                   index === props.activeIndex ? 'Card-icon-active' : ''
                 }`}
