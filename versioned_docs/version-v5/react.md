@@ -4,11 +4,14 @@ sidebar_label: Overview
 hide_title: true
 hide_table_of_contents: true
 image: /img/meta/open-graph.png
-description: Ionic is the app platform for web developers. Build amazing mobile, web, and desktop apps all with one shared code base and open web standards
 ---
 
 import DocsCard from '@theme/DocsCard';
 import DocsCards from '@theme/DocsCards';
+
+<head>
+  <meta name="description" content="Ionic is the app platform for web developers. Build amazing mobile, web, and desktop apps all with one shared code base and open web standards" />
+</head>
 
 <div class='flex main-flex'>
   <div class="pull-left">
@@ -79,7 +82,7 @@ Deploy your Ionic React projects to native iOS, Android, Electron, and the web a
 </div>
 
 <div class="pull-right">
-  <img src={require('./react/_assets/img/group-shot.png')} />
+  <img src={require('./react/_assets/img/group-shot.png').default} />
 </div>
 
 </div>
@@ -95,7 +98,7 @@ At the end of the day, it's just React. Ionic React uses open web standards and 
   </div>
 
   <div class="pull-right">
-    <img src={require('./react/_assets/img/group-shot.png').default} />
+    <img src={require('./react/_assets/img/react.svg').default} />
   </div>
 
 </div>
