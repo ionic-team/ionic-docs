@@ -1,0 +1,21 @@
+@mixin vars {
+  --input-height: 2rem;
+  --input-radius: 4px;
+  --input-padding-x: .5rem;
+  
+  --input-font-size: .875rem;
+}
+
+@mixin vars--light {
+  --input-border-c: var(--c-indigo-40);
+  --input-border-c--active: var(--c-blue-60);
+  --input-border-c--invalid: var(--c-red-60);
+  --input-text-c: var(--c-indigo-80);
+}
+
+@mixin vars--dark {
+  --input-border-c: var(--c-gray-60);
+  --input-border-c--active: var(--c-blue-60);
+  --input-border-c--invalid: var(--c-red-60);
+  --input-text-c: var(--c-gray-0);
+}

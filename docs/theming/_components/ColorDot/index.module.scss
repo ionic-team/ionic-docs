@@ -1,0 +1,17 @@
+@use '../../_assets/styles/index.scss';
+
+.colorDot {
+  @include index.vars;
+  border-radius: 1000px;
+
+  width: var(--input-height);
+  height: var(--input-height);
+
+  &Dark {
+    border: 1px solid var(--c-gray-60);
+  }
+
+  &Light {
+    border: 1px solid var(--c-gray-10);
+  }
+}
