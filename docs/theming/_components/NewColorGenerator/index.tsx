@@ -5,7 +5,9 @@ import { generateColor } from '../ColorGenerator/util/parse-css';
 import { useEffect } from 'react';
 
 import styles from './index.module.scss';
-import '../../_assets/styles/index.scss';
+import InputWrapper from '../InputWrapper';
+import ColorInput from '../ColorInput';
+import ColorDot from '../ColorDot';
 
 export default function ColorGenerator() {
   const [name, setName] = useState('New');
@@ -22,25 +24,22 @@ export default function ColorGenerator() {
     return <div className={styles.newColorGenerator}>
       <div className={styles.top}>
         <div className={styles.top__start}>
-          <div className={styles.codeColor} style={{ backgroundColor: value }}/>
-          <input onChange={({target}) => setName(target.value)} value={name} className={styles.nameInput}/>
+          <ColorDot color={value} />
+          <InputWrapper>
+            <input onChange={({target}) => setName(target.value)} value={name} />
+          </InputWrapper>
         </div>
-        <div className={styles.top__end}>
-          <div className={styles.colorPickerWrapper} style={{ '--background-c': value } as any}>
-            <input type="color" onChange={({target}) => setValue(target.value)} value={value} className={styles.colorPicker}/>
-          </div>
-          <input onChange={({target}) => setValue(target.value)} value={value}  className={styles.colorInput}/>
-        </div>
+        <ColorInput color={value} setColor={setValue} className={styles.top__end}/>
       </div>
-      <pre>
+      <pre className={styles.codePre}>
         <code>
           :root {'{'}{'\n'}
-          {'\t'}--ion-color-{nameLower}: <CodeColor value={colorValue}>{colorValue}</CodeColor>;{'\n'}
-          {'\t'}--ion-color-{nameLower}-rgb: <CodeColor value={colorValue}>{valueRgb}</CodeColor>;{'\n'}
-          {'\t'}--ion-color-{nameLower}-contrast: <CodeColor value={contrast}>{contrast}</CodeColor>;{'\n'}
-          {'\t'}--ion-color-{nameLower}-contrast-rgb: <CodeColor value={contrast}>{contrastRgb}</CodeColor>;{'\n'}
-          {'\t'}--ion-color-{nameLower}-shade: <CodeColor value={shade}>{shade}</CodeColor>;{'\n'}
-          {'\t'}--ion-color-{nameLower}-tint: <CodeColor value={tint}>{tint}</CodeColor>;{'\n'}
+          {'\t'}--ion-color-{nameLower}: <CodeColor color={colorValue}>{colorValue}</CodeColor>;{'\n'}
+          {'\t'}--ion-color-{nameLower}-rgb: <CodeColor color={colorValue}>{valueRgb}</CodeColor>;{'\n'}
+          {'\t'}--ion-color-{nameLower}-contrast: <CodeColor color={contrast}>{contrast}</CodeColor>;{'\n'}
+          {'\t'}--ion-color-{nameLower}-contrast-rgb: <CodeColor color={contrast}>{contrastRgb}</CodeColor>;{'\n'}
+          {'\t'}--ion-color-{nameLower}-shade: <CodeColor color={shade}>{shade}</CodeColor>;{'\n'}
+          {'\t'}--ion-color-{nameLower}-tint: <CodeColor color={tint}>{tint}</CodeColor>;{'\n'}
           {'}'}{'\n'}
           {'\n'}
           .ion-color-{nameLower} {'{'}{'\n'}

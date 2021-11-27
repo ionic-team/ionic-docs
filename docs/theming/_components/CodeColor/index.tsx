@@ -4,6 +4,7 @@ import React from 'react';
 import styles from './index.module.scss';
 
 function CodeColor({ color, ...props }): JSX.Element {
+  
   return (
     <div className={clsx(styles.codeColor, props.className, 'code-color')}>
       <span
