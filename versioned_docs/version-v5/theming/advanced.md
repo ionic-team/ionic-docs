@@ -128,12 +128,12 @@ After running through the Sass compiler, the colors will have the following valu
 
 | Variable            | Value                                             |
 | ------------------- | ------------------------------------------------- |
-| `$background`       | <CodeColor mode="md" value="#3880ff"></CodeColor> |
-| `$background-shade` | <CodeColor mode="md" value="#3171e0"></CodeColor> |
-| `$background-tint`  | <CodeColor mode="md" value="#4c8dff"></CodeColor> |
-| `$text`             | <CodeColor mode="md" value="#444444"></CodeColor> |
-| `$text-darker`      | <CodeColor mode="md" value="#1e1e1e"></CodeColor> |
-| `$text-lighter`     | <CodeColor mode="md" value="#6a6a6a"></CodeColor> |
+| `$background`       | <CodeColor color="#3880ff">#3880ff</CodeColor> |
+| `$background-shade` | <CodeColor color="#3171e0">#3171e0</CodeColor> |
+| `$background-tint`  | <CodeColor color="#4c8dff">#4c8dff</CodeColor> |
+| `$text`             | <CodeColor color="#444444">#444444</CodeColor> |
+| `$text-darker`      | <CodeColor color="#1e1e1e">#1e1e1e</CodeColor> |
+| `$text-lighter`     | <CodeColor color="#6a6a6a">#6a6a6a</CodeColor> |
 
 However, because CSS variables can be set at runtime and are more dynamic, it is not currently possible to manipulate them using a simple function.
 
