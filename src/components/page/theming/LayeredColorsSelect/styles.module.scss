@@ -1,16 +1,4 @@
-@use '../../_assets/styles/index.scss';
-
 .layeredColorsSelect {
-  @include index.vars;
-
-  &Light {
-    @include index.vars--light;
-  }
-
-  &Dark {
-    @include index.vars--dark;
-  }
-
   /** primary **/
   --ion-color-primary: #3880ff;
   --ion-color-primary-rgb: 56, 128, 255;
@@ -86,25 +74,11 @@
 
 .selectRow {
   display: flex;
+  align-items: center;
 
   margin-block-end: 2rem;
 
   :global {
-    select {
-      border: 1px solid var(--input-border-c);
-      border-radius: var(--input-radius);
-
-      padding-inline-start: var(--input-padding-x);
-      padding-inline-end: var(--input-padding-x);
-
-      cursor: pointer;
-
-      font-size: var(--input-font-size);
-      color: var(--input-text-c);
-
-      background: var(--token-primary-bg-c);
-    }
-
     .color-dot {
       margin-inline-end: 1rem;
     }

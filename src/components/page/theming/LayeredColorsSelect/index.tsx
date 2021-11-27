@@ -2,8 +2,9 @@ import CodeColor from '@page/theming/CodeColor';
 import React, { useEffect, useRef, useState } from 'react';
 
 import styles from './styles.module.scss';
-import '../../_assets/styles/index.scss';
 import ColorDot from '../ColorDot';
+
+import InputWrapper from '../InputWrapper';
 
 import useThemeContext from '@theme/hooks/useThemeContext';
 import clsx from 'clsx';
@@ -80,20 +81,22 @@ export default function LayeredColorsSelect({ ...props }) {
     >
       <div className={styles.selectRow}>
         <ColorDot color={`var(--ion-color-${color})`} />
-        <select
-          value={color}
-          onChange={ev => setColor((ev.target as HTMLSelectElement).value)}
-        >
-          <option value="primary">Primary</option>
-          <option value="secondary">Secondary</option>
-          <option value="tertiary">Tertiary</option>
-          <option value="success">Success</option>
-          <option value="warning">Warning</option>
-          <option value="danger">Danger</option>
-          <option value="dark">Dark</option>
-          <option value="medium">Medium</option>
-          <option value="light">Light</option>
-        </select>
+        <InputWrapper>
+          <select
+            value={color}
+            onChange={ev => setColor((ev.target as HTMLSelectElement).value)}
+          >
+            <option value="primary">Primary</option>
+            <option value="secondary">Secondary</option>
+            <option value="tertiary">Tertiary</option>
+            <option value="success">Success</option>
+            <option value="warning">Warning</option>
+            <option value="danger">Danger</option>
+            <option value="dark">Dark</option>
+            <option value="medium">Medium</option>
+            <option value="light">Light</option>
+          </select>
+        </InputWrapper>
       </div>
       <table>
         <tr>
