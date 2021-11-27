@@ -1,15 +1,16 @@
 import clsx from 'clsx';
 import React from 'react';
 
-import styles from './code-color.module.css';
+import styles from './index.module.scss';
 
-function CodeColor(props): JSX.Element {
+function CodeColor({ color, ...props }): JSX.Element {
   return (
-    <div className={clsx(styles.codeColor, props.className)}>
+    <div className={clsx(styles.codeColor, props.className, 'code-color')}>
       <span
         className={styles.codeColorBlock}
         style={{
-          backgroundColor: props.value,
+          backgroundColor: color,
+          ...props.style
         }}
       />
       {props.children && <code className={styles.codeColorValue}>{props.children}</code>}

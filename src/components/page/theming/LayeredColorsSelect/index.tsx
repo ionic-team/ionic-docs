@@ -1,9 +1,16 @@
 import CodeColor from '@page/theming/CodeColor';
 import React, { useEffect, useRef, useState } from 'react';
 
-import styles from './styles.module.css';
+import styles from './styles.module.scss';
+import '../../_assets/styles/index.scss';
+import ColorDot from '../ColorDot';
+
+import useThemeContext from '@theme/hooks/useThemeContext';
+import clsx from 'clsx';
 
 export default function LayeredColorsSelect({ ...props }) {
+  const { isDarkTheme } = useThemeContext();
+
   const [color, setColor] = useState('primary');
   const el = useRef<HTMLDivElement>(null);
 
@@ -66,16 +73,13 @@ export default function LayeredColorsSelect({ ...props }) {
   }, [color]);
 
   return (
-    <div {...props} ref={el} className={styles.layeredColorsSelect}>
-      <div className={styles.colorSelect}>
-        <span
-          className={styles.colorDot}
-          style={
-            {
-              'background-color': `var(--ion-color-${color})`,
-            } as any
-          }
-        />
+    <div
+      {...props}
+      ref={el}
+      className={clsx(styles.layeredColorsSelect, styles[`layeredColorsSelect${isDarkTheme ? 'Dark' : 'Light'}`])}
+    >
+      <div className={styles.selectRow}>
+        <ColorDot color={`var(--ion-color-${color})`} />
         <select
           value={color}
           onChange={ev => setColor((ev.target as HTMLSelectElement).value)}
@@ -111,10 +115,8 @@ export default function LayeredColorsSelect({ ...props }) {
               </td>
               <td className={styles.colorValue}>
                 <CodeColor
-                  mode="md"
-                  display={variation.value}
-                  value={codeColor}
-                ></CodeColor>
+                  color={codeColor}
+                >{variation.value}</CodeColor>
               </td>
               <td className={styles.colorDescription}>
                 {variation.description}

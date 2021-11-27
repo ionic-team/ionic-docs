@@ -5,6 +5,7 @@ import { generateColor } from '../ColorGenerator/util/parse-css';
 import { useEffect } from 'react';
 
 import styles from './index.module.scss';
+import '../../_assets/styles/index.scss';
 
 export default function ColorGenerator() {
   const [name, setName] = useState('New');
