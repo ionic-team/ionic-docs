@@ -53,9 +53,9 @@ After exploring different ways to customize the Ionic theme, we found that we co
 
 While updating the background (`--ion-background-color`) and text (`--ion-text-color`) variables will change the look of the app for most components, there are certain Ionic components where it may look off, or broken. This will be more apparent when applying a darker theme.
 
-In some components we use a shade darker than the background or lighter than the text. For example, an item heading text may need to be <CodeColor mode="md" value="#404040"></CodeColor>, which is a few shades lighter than our default text color. Meanwhile, the loading component background is a shade darker than white, using <CodeColor mode="md" value="#f2f2f2"></CodeColor>. We use stepped colors in order to define these slight variations. It is important to update the stepped colors when updating the background or text color of an application.
+In some components we use a shade darker than the background or lighter than the text. For example, an item heading text may need to be <CodeColor color="#404040">#404040</CodeColor>, which is a few shades lighter than our default text color. Meanwhile, the loading component background is a shade darker than white, using <CodeColor color="#f2f2f2">#f2f2f2</CodeColor>. We use stepped colors in order to define these slight variations. It is important to update the stepped colors when updating the background or text color of an application.
 
-By default, the Ionic stepped colors start at the default background color value <CodeColor mode="md" value="#ffffff"></CodeColor> and mix with the text color value <CodeColor mode="md" value="#000000"></CodeColor> using an increasing percentage. The full list of stepped colors is shown in the generator below.
+By default, the Ionic stepped colors start at the default background color value <CodeColor color="#ffffff">#ffffff</CodeColor> and mix with the text color value <CodeColor color="#000000">#000000</CodeColor> using an increasing percentage. The full list of stepped colors is shown in the generator below.
 
 ## Stepped Color Generator
 
