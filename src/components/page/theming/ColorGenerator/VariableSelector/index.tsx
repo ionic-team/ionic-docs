@@ -1,7 +1,7 @@
 import clsx from 'clsx';
 import React, { FormEvent, useContext, useEffect, useState } from 'react';
 import { ColorGeneratorContext } from '..';
-import { generateColor, generateProperty } from '../util/parse-css';
+import { generateColor, generateProperty } from '../../_utils/index';
 
 import styles from './styles.module.css';
 

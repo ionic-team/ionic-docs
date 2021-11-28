@@ -17,7 +17,7 @@ import {
   convertCssToColors,
   generateColor,
   updateCssText,
-} from './util/parse-css';
+} from '../_utils/index';
 import LiveCodeBlock from './LiveCodeBlock';
 
 interface ColorGeneratorProps {

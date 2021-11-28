@@ -1,7 +1,7 @@
 import React from 'react';
 import CodeColor from '@page/theming/CodeColor';
 import { useState } from 'react';
-import { generateColor } from '../ColorGenerator/util/parse-css';
+import { generateColor } from '../_utils/index';
 import { useEffect } from 'react';
 
 import styles from './index.module.scss';
