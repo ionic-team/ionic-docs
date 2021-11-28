@@ -3,6 +3,8 @@
   --ifm-code-padding-horizontal: 0.25rem;
   --ifm-code-font-size: 0.813rem;
 
+  --code-block-line-height: 1.5;
+
   //inline code
   --ifm-code-background: var(--c-indigo-10);
 }
@@ -61,7 +63,7 @@ pre[class*='language-'] {
   word-spacing: normal;
   word-break: normal;
   word-wrap: normal;
-  line-height: 1.5;
+  line-height: var(--code-block-line-height);
 
   -moz-tab-size: 4;
   -o-tab-size: 4;
