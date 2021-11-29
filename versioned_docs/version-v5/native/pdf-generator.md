@@ -28,7 +28,7 @@ Simple plugin to generate (offline) pdf. The plugin transforms HTML to PDF and a
 <h2 id="installation">
   <a href="#installation">Installation</a>
 </h2>
-<Tabs defaultValue="Capacitor" values={[
+<Tabs groupId="runtime" defaultValue="Capacitor" values={[
   {value: 'Capacitor', label: 'Capacitor'},
   {value: 'Cordova', label: 'Cordova'},
   {value: 'Enterprise', label: 'Enterprise'},

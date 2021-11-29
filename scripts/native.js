@@ -104,7 +104,7 @@ function renderInstallation({ cordovaPlugin, packageName }) {
 <h2 id="installation">
   <a href="#installation">Installation</a>
 </h2>
-<Tabs defaultValue="Capacitor" values={[
+<Tabs defaultValue="Capacitor" groupId="runtime" values={[
   {value: 'Capacitor', label: 'Capacitor'},
   {value: 'Cordova', label: 'Cordova'},
   {value: 'Enterprise', label: 'Enterprise'},
