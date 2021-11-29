@@ -8,17 +8,12 @@ const DEMOS_PATH = path.resolve('static/demos');
 let COMPONENT_LINK_REGEXP;
 
 (async function () {
-  const response = await fetch(
-    'https://unpkg.com/@ionic/docs@next/core.json',
-  );
+  const response = await fetch('https://unpkg.com/@ionic/docs@next/core.json');
   const { components } = await response.json();
 
-  const names = components.map(component => component.tag.slice(4));
+  const names = components.map((component) => component.tag.slice(4));
   // matches all relative markdown links to a component, e.g. (../button)
-  COMPONENT_LINK_REGEXP = new RegExp(
-    `\\(../(${names.join('|')})/?(#[^)]+)?\\)`,
-    'g',
-  );
+  COMPONENT_LINK_REGEXP = new RegExp(`\\(../(${names.join('|')})/?(#[^)]+)?\\)`, 'g');
 
   components.map(writePage);
 })();
@@ -37,9 +32,9 @@ function writePage(page) {
   ].join('');
 
   // fix relative links, e.g. (../button) -> (button.md)
-  data = data.replace(COMPONENT_LINK_REGEXP, '($1.md$2)');
+  data = data.replace(COMPONENT_LINK_REGEXP, '($1.mdx$2)');
 
-  const path = `docs/api/${page.tag.slice(4)}.md`;
+  const path = `docs/api/${page.tag.slice(4)}.mdx`;
   fs.writeFileSync(path, data);
 }
 
@@ -57,12 +52,7 @@ function renderFrontmatter({ tag }) {
 
   return `---
 ${Object.entries(frontmatter)
-  .map(
-    ([key, value]) =>
-      `${key}: ${
-        typeof value === 'string' ? `"${value.replace('"', '\\"')}"` : value
-      }`,
-  )
+  .map(([key, value]) => `${key}: ${typeof value === 'string' ? `"${value.replace('"', '\\"')}"` : value}`)
   .join('\n')}
 ---
 import Tabs from '@theme/Tabs';
@@ -78,10 +68,8 @@ function renderReadme({ readme, encapsulation }) {
   const title = readme.substring(0, endIndex);
   const rest = readme.substring(endIndex);
 
-  const addAdmonitions = text =>
-    text
-      .replace(/\n\n>/gms, '\n\n:::note')
-      .replace(/:::note(.*?)\n(#|\n)/gms, ':::note\n$1\n:::\n\n$2');
+  const addAdmonitions = (text) =>
+    text.replace(/\n\n>/gms, '\n\n:::note').replace(/:::note(.*?)\n(#|\n)/gms, ':::note\n$1\n:::\n\n$2');
 
   return `
 import EncapsulationPill from '@theme/EncapsulationPill';
@@ -124,7 +112,7 @@ ${usage[keys[0]]}
 ## Usage
 
 <Tabs groupId="framework" defaultValue="${keys[0]}" values={[${keys
-    .map(key => `{ value: '${key}', label: '${capitalizeFirstLetter(key)}' }`)
+    .map((key) => `{ value: '${key}', label: '${capitalizeFirstLetter(key)}' }`)
     .join(', ')}]}>
 
 ${Object.entries(usage)
@@ -135,7 +123,7 @@ ${Object.entries(usage)
 ${value}
 
 </TabItem>
-`,
+`
   )
   .join('\n')}
 </Tabs>
@@ -153,7 +141,7 @@ function renderProperties({ props: properties }) {
 
 ${properties
   .map(
-    prop => `
+    (prop) => `
 ### ${prop.name}
 
 | | |
@@ -163,7 +151,7 @@ ${properties
 | **Type** | \`${prop.type.replace(/\|/g, '\uff5c')}\` |
 | **Default** | \`${prop.default}\` |
 
-`,
+`
   )
   .join('\n')}
 `;
@@ -179,7 +167,7 @@ function renderEvents({ events }) {
 
 | Name | Description |
 | --- | --- |
-${events.map(event => `| \`${event.event}\` | ${event.docs} |`).join('\n')}
+${events.map((event) => `| \`${event.event}\` | ${event.docs} |`).join('\n')}
 
 `;
 }
@@ -195,14 +183,14 @@ function renderMethods({ methods }) {
 
 ${methods
   .map(
-    method => `
+    (method) => `
 ### ${method.name}
 
 | | |
 | --- | --- |
 | **Description** | ${method.docs.split('\n').join('<br />')} |
 | **Signature** | \`${method.signature.replace(/\|/g, '\uff5c')}\` |
-`,
+`
   )
   .join('\n')}
 
@@ -219,7 +207,7 @@ function renderParts({ parts }) {
 
 | Name | Description |
 | --- | --- |
-${parts.map(prop => `| \`${prop.name}\` | ${prop.docs} |`).join('\n')}
+${parts.map((prop) => `| \`${prop.name}\` | ${prop.docs} |`).join('\n')}
 
 `;
 }
@@ -234,7 +222,7 @@ function renderCustomProps({ styles: customProps }) {
 
 | Name | Description |
 | --- | --- |
-${customProps.map(prop => `| \`${prop.name}\` | ${prop.docs} |`).join('\n')}
+${customProps.map((prop) => `| \`${prop.name}\` | ${prop.docs} |`).join('\n')}
 
 `;
 }
@@ -249,7 +237,7 @@ function renderSlots({ slots }) {
 
 | Name | Description |
 | --- | --- |
-${slots.map(slot => `| \`${slot.name}\` | ${slot.docs} |`).join('\n')}
+${slots.map((slot) => `| \`${slot.name}\` | ${slot.docs} |`).join('\n')}
 
 `;
 }

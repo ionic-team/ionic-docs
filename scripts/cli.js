@@ -1,9 +1,9 @@
 const fs = require('fs');
 const utils = require('./utils');
 const cliJSON = require('./data/cli.json');
-const { cli: cliOverrides } = require('./data/meta-override.json')
+const { cli: cliOverrides } = require('./data/meta-override.json');
 
-const commandToKebab = str =>
+const commandToKebab = (str) =>
   str
     .replace('ionic ', '')
     .replace(/([a-z])([A-Z])/g, '$1-$2')
@@ -26,7 +26,7 @@ function writePage(page) {
     renderAdvancedOptions(page),
   ].join('');
 
-  const path = `docs/cli/commands/${commandToKebab(page.name)}.md`;
+  const path = `docs/cli/commands/${commandToKebab(page.name)}.mdx`;
   fs.writeFileSync(path, data);
 }
 
@@ -41,12 +41,7 @@ function renderFrontmatter({ name }) {
 
   return `---
 ${Object.entries(frontmatter)
-  .map(
-    ([key, value]) =>
-      `${key}: ${
-        typeof value === 'string' ? `"${value.replace('"', '\\"')}"` : value
-      }`,
-  )
+  .map(([key, value]) => `${key}: ${typeof value === 'string' ? `"${value.replace('"', '\\"')}"` : value}`)
   .join('\n')}
 ---
 ${utils.getHeadTag(cliOverrides[slug])}
@@ -73,7 +68,7 @@ function renderExamples({ exampleCommands }) {
 ## Examples
 
 \`\`\`shell
-${exampleCommands.map(command => `$ ${command}`).join('\n')}
+${exampleCommands.map((command) => `$ ${command}`).join('\n')}
 \`\`\`
 `;
 }
@@ -87,15 +82,15 @@ function renderInputs({ inputs }) {
 ## Inputs
 
 ${utils.renderReference(inputs, {
-  Head: input => input.name,
-  Description: input => utils.renderMarkdown(input.summary),
+  Head: (input) => input.name,
+  Description: (input) => utils.renderMarkdown(input.summary),
 })}
 
 `;
 }
 
 function renderOptions({ options }) {
-  options = options.filter(option => !option.groups.includes('advanced'));
+  options = options.filter((option) => !option.groups.includes('advanced'));
 
   if (options.length === 0) {
     return '';
@@ -105,21 +100,18 @@ function renderOptions({ options }) {
 ## Options
 
 ${utils.renderReference(options, {
-  Head: option => utils.renderOptionSpec(option),
-  Description: option => utils.renderMarkdown(option.summary),
-  Aliases: option =>
-    option.aliases.length > 0
-      ? option.aliases.map(alias => `<code>-${alias}</code>`).join(' ')
-      : null,
-  Default: option =>
-    option.default && option.type === 'string' ? option.default : null,
+  Head: (option) => utils.renderOptionSpec(option),
+  Description: (option) => utils.renderMarkdown(option.summary),
+  Aliases: (option) =>
+    option.aliases.length > 0 ? option.aliases.map((alias) => `<code>-${alias}</code>`).join(' ') : null,
+  Default: (option) => (option.default && option.type === 'string' ? option.default : null),
 })}
 
 `;
 }
 
 function renderAdvancedOptions({ options }) {
-  options = options.filter(option => option.groups.includes('advanced'));
+  options = options.filter((option) => option.groups.includes('advanced'));
 
   if (options.length === 0) {
     return '';
@@ -129,14 +121,11 @@ function renderAdvancedOptions({ options }) {
 ## Advanced Options
 
 ${utils.renderReference(options, {
-  Head: option => utils.renderOptionSpec(option),
-  Description: option => `<div>${utils.renderMarkdown(option.summary)}</div>`,
-  Aliases: option =>
-    option.aliases.length > 0
-      ? option.aliases.map(alias => `<code>-${alias}</code>`).join(' ')
-      : null,
-  Default: option =>
-    option.default && option.type === 'string' ? option.default : null,
+  Head: (option) => utils.renderOptionSpec(option),
+  Description: (option) => `<div>${utils.renderMarkdown(option.summary)}</div>`,
+  Aliases: (option) =>
+    option.aliases.length > 0 ? option.aliases.map((alias) => `<code>-${alias}</code>`).join(' ') : null,
+  Default: (option) => (option.default && option.type === 'string' ? option.default : null),
 })}
 
 `;
