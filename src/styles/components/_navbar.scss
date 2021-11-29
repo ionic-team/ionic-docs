@@ -17,9 +17,6 @@ html[data-theme='dark'] {
   }
 
   .navbar {
-    .icon-link, [class*=toggle_] {
-      padding: .5rem;
-    }
 
     &__inner {
       width: initial;
@@ -41,6 +38,10 @@ html[data-theme='dark'] {
 
     &__items--right {
       flex-grow: 1;
+
+      .icon-link, [class*=toggle_] {
+        padding: .5rem;
+      }
       
       div {
         //version dropdown
@@ -55,6 +56,23 @@ html[data-theme='dark'] {
           @media (max-width: 1216px) {
             display: none;
           }
+        }
+
+        //theme toggle
+        &:nth-last-of-type(1) {
+          order: 5
+        }
+      }
+
+      a {
+        //twitter icon
+        &:nth-of-type(1) {
+          order: 6;
+        }
+
+        //github icon
+        &:nth-of-type(2) {
+          order: 7;
         }
       }
     }
