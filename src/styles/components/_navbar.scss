@@ -1,9 +1,25 @@
 html[data-theme='light'] {
   --navbar-link-c: var(--c-indigo-80);
+
+  --navbar-separator-bg-c: var(--c-indigo-40);
 }
 
 html[data-theme='dark'] {
   --navbar-link-c: var(--c-gray-0);
+
+  --navbar-separator-bg-c: var(--c-carbon-80);
+
+    .navbar {
+      .dropdown {
+        .navbar__link {
+          filter: brightness(0) invert(1);
+        }
+      }
+      
+      .icon-link {
+        filter: brightness(0) invert(1);
+    }
+  }
 }
 
 :root {
@@ -41,6 +57,14 @@ html[data-theme='dark'] {
 
       .icon-link, [class*=toggle_] {
         padding: .5rem;
+      }
+
+      [class*=toggle_] {
+        transition: opacity .2s ease-out;
+
+        &:hover, &:focus, &:active {
+          opacity: .7;
+        }
       }
       
       div {
@@ -168,7 +192,7 @@ html[data-theme='dark'] {
     .separator {
       width: 1px;
       height: 1.75rem;
-      background: var(--c-indigo-40);
+      background: var(--navbar-separator-bg-c);
 
       margin-inline-start: 1rem;
       margin-inline-end: 1rem;
