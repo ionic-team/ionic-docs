@@ -63,6 +63,9 @@ html[data-theme='dark'] {
 
     .theme-edit-this-page {
       --edit-this-page-c: var(--ifm-heading-color);
+
+      font-weight: 600;
+      font-size: .875rem;
     }
   }
 
