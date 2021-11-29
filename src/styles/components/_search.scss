@@ -20,13 +20,13 @@ html[data-theme='light'] {
  }
 
 html[data-theme='dark'] {
-  --docsearch-searchbox-shadow: inset 0 0 0 1px var(--c-indigo-70);
+  --docsearch-searchbox-shadow: inset 0 0 0 1px var(--c-carbon-80);
 
-  --search-keys-border-c: var(--c-indigo-80);
+  --search-keys-border-c: var(--c-carbon-80);
 
   .DocSearch-Button {
     &:hover {
-      --docsearch-searchbox-shadow: inset 0 0 0 1px var(--c-indigo-50);
+      --docsearch-searchbox-shadow: inset 0 0 0 1px var(--c-carbon-50);
     }
   }
 }
@@ -69,6 +69,7 @@ html[data-theme='dark'] {
         height: auto;
 
         color: var(--c-indigo-50);
+        border-radius: 0;
       }
     }
 
