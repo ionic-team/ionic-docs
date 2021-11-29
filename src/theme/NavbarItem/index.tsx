@@ -8,11 +8,11 @@ const CustomNavbarItemComponents = {
   separator: () => NavbarSeparator,
 } as const;
 
-export default function NavbarItem({type, ...props}) {
+export default function NavbarItem({ type, ...props }) {
   if (Object.keys(CustomNavbarItemComponents).includes(type)) {
     const Component = CustomNavbarItemComponents[type]();
-    return <Component {...props} />
+    return <Component {...props} />;
   } else {
-    return <OriginalNavbarItem type={type} {...props} />
+    return <OriginalNavbarItem type={type} {...props} />;
   }
 }

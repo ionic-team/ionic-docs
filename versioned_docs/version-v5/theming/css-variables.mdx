@@ -23,8 +23,7 @@ When using the Ionic CLI to start an Angular project, the `src/theme/variables.s
   --ion-background-color: #ff3700;
 
   /* Set the font family of the entire app */
-  --ion-font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue',
-    'Roboto', sans-serif;
+  --ion-font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', 'Roboto', sans-serif;
 }
 
 /* Set text color of the entire app for iOS only */

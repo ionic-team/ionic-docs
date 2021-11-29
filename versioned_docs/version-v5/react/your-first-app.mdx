@@ -10,7 +10,14 @@ The great thing about Ionic is that with one codebase, you can build for any pla
 
 Here’s the finished app running on all 3 platforms:
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/0ASQ13Y1Rk4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe
+  width="560"
+  height="315"
+  src="https://www.youtube.com/embed/0ASQ13Y1Rk4"
+  frameborder="0"
+  allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+  allowfullscreen
+></iframe>
 
 ## What We'll Build
 
@@ -31,7 +38,8 @@ Download and install these right away to ensure an optimal Ionic development exp
 - <strong>Node.js</strong> for interacting with the Ionic ecosystem. [Download the LTS version here](https://nodejs.org/en/).
 - <strong>A code editor</strong> for... writing code! We are fans of [Visual Studio Code](https://code.visualstudio.com/).
 - <strong>Command-line interface/terminal (CLI)</strong>:
-- <strong>Windows</strong> users: for the best Ionic experience, we recommend the built-in command line (cmd) or the Powershell CLI, running in Administrator mode.
+- <strong>Windows</strong> users: for the best Ionic experience, we recommend the built-in command line (cmd) or the Powershell
+  CLI, running in Administrator mode.
 - <strong>Mac/Linux</strong> users, virtually any terminal will work.
 
 ## Install Ionic Tooling

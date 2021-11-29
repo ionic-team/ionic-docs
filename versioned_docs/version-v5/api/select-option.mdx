@@ -1,8 +1,9 @@
 ---
-title: "Select Option | What Is An Option Select on Ionic Framework Apps"
-description: "What is an option select? Select Options are child element components of a Select—each option defined is passed and displayed in the Select dialog."
-sidebar_label: "ion-select-option"
+title: 'Select Option | What Is An Option Select on Ionic Framework Apps'
+description: 'What is an option select? Select Options are child element components of a Select—each option defined is passed and displayed in the Select dialog.'
+sidebar_label: 'ion-select-option'
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
@@ -42,11 +43,9 @@ Instead, each interface option has the class `.select-interface-option` which ca
 
 The options can be styled individually by adding your own class on the `ion-select-option` which gets passed to the interface option. See the [Usage](#usage) section below for examples of styling and setting individual classes on options.
 
-
 ## Usage
 
 <Tabs groupId="framework" defaultValue="javascript" values={[{ value: 'javascript', label: 'JAVASCRIPT' }, { value: 'react', label: 'REACT' }, { value: 'stencil', label: 'STENCIL' }, { value: 'vue', label: 'VUE' }]}>
-
 
 <TabItem value="javascript">
 
@@ -130,12 +129,12 @@ The options can be styled individually by adding your own class on the `ion-sele
 }
 
 /* Alert Interface: set color for checked alert options (single selection) */
-.my-custom-interface .select-interface-option[aria-checked=true] .alert-radio-label {
+.my-custom-interface .select-interface-option[aria-checked='true'] .alert-radio-label {
   color: #79193b;
 }
 
 /* Alert Interface: set color for checked alert options (multiple selection) */
-.my-custom-interface .select-interface-option[aria-checked=true] .alert-checkbox-label {
+.my-custom-interface .select-interface-option[aria-checked='true'] .alert-checkbox-label {
   color: #79193b;
 }
 ```
@@ -146,9 +145,9 @@ const selects = document.querySelectorAll('.custom-options');
 
 for (var i = 0; i < selects.length; i++) {
   selects[i].interfaceOptions = {
-    cssClass: 'my-custom-interface'
+    cssClass: 'my-custom-interface',
   };
-};
+}
 ```
 
 > Note: In the CSS examples, some of the selectors could be combined together, but are separated out in order to better explain what each selector is for.
@@ -181,12 +180,11 @@ To customize an individual option, set a class on the `ion-select-option`:
 // Pass a custom class to each select interface for styling
 const select = document.querySelector('.custom-options');
 select.interfaceOptions = {
-  cssClass: 'my-custom-interface'
+  cssClass: 'my-custom-interface',
 };
 ```
 
 </TabItem>
-
 
 <TabItem value="react">
 
@@ -220,7 +218,7 @@ import React from 'react';
 import { IonContent, IonItem, IonLabel, IonSelect, IonSelectOption, IonPage } from '@ionic/react';
 
 const options = {
-  cssClass: 'my-custom-interface'
+  cssClass: 'my-custom-interface',
 };
 
 export const SelectOptionExample: React.FC = () => {
@@ -296,18 +294,17 @@ export const SelectOptionExample: React.FC = () => {
 }
 
 /* Alert Interface: set color for checked alert options (single selection) */
-.my-custom-interface .select-interface-option[aria-checked=true] .alert-radio-label {
+.my-custom-interface .select-interface-option[aria-checked='true'] .alert-radio-label {
   color: #79193b;
 }
 
 /* Alert Interface: set color for checked alert options (multiple selection) */
-.my-custom-interface .select-interface-option[aria-checked=true] .alert-checkbox-label {
+.my-custom-interface .select-interface-option[aria-checked='true'] .alert-checkbox-label {
   color: #79193b;
 }
 ```
 
 > Note: In the CSS examples, some of the selectors could be combined together, but are separated out in order to better explain what each selector is for.
-
 
 ### Customizing Individual Options
 
@@ -318,7 +315,7 @@ import React from 'react';
 import { IonContent, IonItem, IonLabel, IonSelect, IonSelectOption, IonPage } from '@ionic/react';
 
 const options = {
-  cssClass: 'my-custom-interface'
+  cssClass: 'my-custom-interface',
 };
 
 export const SelectOptionExample: React.FC = () => {
@@ -328,7 +325,9 @@ export const SelectOptionExample: React.FC = () => {
         <IonItem>
           <IonLabel>Select</IonLabel>
           <IonSelect interface="popover" interfaceOptions={options}>
-            <IonSelectOption value="brown" class="brown-option">Brown</IonSelectOption>
+            <IonSelectOption value="brown" class="brown-option">
+              Brown
+            </IonSelectOption>
             <IonSelectOption value="blonde">Blonde</IonSelectOption>
             <IonSelectOption value="black">Black</IonSelectOption>
             <IonSelectOption value="red">Red</IonSelectOption>
@@ -350,7 +349,6 @@ export const SelectOptionExample: React.FC = () => {
 
 </TabItem>
 
-
 <TabItem value="stencil">
 
 ```tsx
@@ -358,7 +356,7 @@ import { Component, h } from '@stencil/core';
 
 @Component({
   tag: 'select-option-example',
-  styleUrl: 'select-option-example.css'
+  styleUrl: 'select-option-example.css',
 })
 export class SelectOptionExample {
   render() {
@@ -371,7 +369,7 @@ export class SelectOptionExample {
           <ion-select-option value="black">Black</ion-select-option>
           <ion-select-option value="red">Red</ion-select-option>
         </ion-select>
-      </ion-item>
+      </ion-item>,
     ];
   }
 }
@@ -384,11 +382,11 @@ import { Component, h } from '@stencil/core';
 
 @Component({
   tag: 'select-option-example',
-  styleUrl: 'select-option-example.css'
+  styleUrl: 'select-option-example.css',
 })
 export class SelectOptionExample {
   options = {
-    cssClass: 'my-custom-interface'
+    cssClass: 'my-custom-interface',
   };
 
   render() {
@@ -431,7 +429,7 @@ export class SelectOptionExample {
           <ion-select-option value="black">Black</ion-select-option>
           <ion-select-option value="red">Red</ion-select-option>
         </ion-select>
-      </ion-item>
+      </ion-item>,
     ];
   }
 }
@@ -461,12 +459,12 @@ export class SelectOptionExample {
 }
 
 /* Alert Interface: set color for checked alert options (single selection) */
-.my-custom-interface .select-interface-option[aria-checked=true] .alert-radio-label {
+.my-custom-interface .select-interface-option[aria-checked='true'] .alert-radio-label {
   color: #79193b;
 }
 
 /* Alert Interface: set color for checked alert options (multiple selection) */
-.my-custom-interface .select-interface-option[aria-checked=true] .alert-checkbox-label {
+.my-custom-interface .select-interface-option[aria-checked='true'] .alert-checkbox-label {
   color: #79193b;
 }
 ```
@@ -482,11 +480,11 @@ import { Component, h } from '@stencil/core';
 
 @Component({
   tag: 'select-option-example',
-  styleUrl: 'select-option-example.css'
+  styleUrl: 'select-option-example.css',
 })
 export class SelectOptionExample {
   options = {
-    cssClass: 'my-custom-interface'
+    cssClass: 'my-custom-interface',
   };
 
   render() {
@@ -494,12 +492,14 @@ export class SelectOptionExample {
       <ion-item>
         <ion-label>Select</ion-label>
         <ion-select interface="popover" interfaceOptions={options}>
-          <ion-select-option value="brown" class="brown-option">Brown</ion-select-option>
+          <ion-select-option value="brown" class="brown-option">
+            Brown
+          </ion-select-option>
           <ion-select-option value="blonde">Blonde</ion-select-option>
           <ion-select-option value="black">Black</ion-select-option>
           <ion-select-option value="red">Red</ion-select-option>
         </ion-select>
-      </ion-item>
+      </ion-item>,
     ];
   }
 }
@@ -514,7 +514,6 @@ export class SelectOptionExample {
 ```
 
 </TabItem>
-
 
 <TabItem value="vue">
 
@@ -532,12 +531,12 @@ export class SelectOptionExample {
 </template>
 
 <script>
-import { IonItem, IonLabel, IonSelect, IonSelectOption } from '@ionic/vue';
-import { defineComponent } from 'vue';
+  import { IonItem, IonLabel, IonSelect, IonSelectOption } from '@ionic/vue';
+  import { defineComponent } from 'vue';
 
-export default defineComponent({
-  components: { IonItem, IonLabel, IonSelect, IonSelectOption }
-});
+  export default defineComponent({
+    components: { IonItem, IonLabel, IonSelect, IonSelectOption },
+  });
 </script>
 ```
 
@@ -587,19 +586,19 @@ export default defineComponent({
 </template>
 
 <script>
-import { IonItem, IonLabel, IonSelect, IonSelectOption } from '@ionic/vue';
-import { defineComponent } from 'vue';
+  import { IonItem, IonLabel, IonSelect, IonSelectOption } from '@ionic/vue';
+  import { defineComponent } from 'vue';
 
-export default defineComponent({
-  components: { IonItem, IonLabel, IonSelect, IonSelectOption },
-  setup() {
-    const options: any = {
-      cssClass: 'my-custom-interface'
-    };
-    
-    return { options }
-  }
-});
+  export default defineComponent({
+    components: { IonItem, IonLabel, IonSelect, IonSelectOption },
+    setup() {
+      const options: any = {
+        cssClass: 'my-custom-interface',
+      };
+
+      return { options };
+    },
+  });
 </script>
 ```
 
@@ -627,18 +626,17 @@ export default defineComponent({
 }
 
 /* Alert Interface: set color for checked alert options (single selection) */
-.my-custom-interface .select-interface-option[aria-checked=true] .alert-radio-label {
+.my-custom-interface .select-interface-option[aria-checked='true'] .alert-radio-label {
   color: #79193b;
 }
 
 /* Alert Interface: set color for checked alert options (multiple selection) */
-.my-custom-interface .select-interface-option[aria-checked=true] .alert-checkbox-label {
+.my-custom-interface .select-interface-option[aria-checked='true'] .alert-checkbox-label {
   color: #79193b;
 }
 ```
 
 > Note: In the CSS examples, some of the selectors could be combined together, but are separated out in order to better explain what each selector is for.
-
 
 ### Customizing Individual Options
 
@@ -658,19 +656,19 @@ To customize an individual option, set a class on the `ion-select-option`:
 </template>
 
 <script>
-import { IonItem, IonLabel, IonSelect, IonSelectOption } from '@ionic/vue';
-import { defineComponent } from 'vue';
+  import { IonItem, IonLabel, IonSelect, IonSelectOption } from '@ionic/vue';
+  import { defineComponent } from 'vue';
 
-export default defineComponent({
-  components: { IonItem, IonLabel, IonSelect, IonSelectOption },
-  setup() {
-    const options: any = {
-      cssClass: 'my-custom-interface'
-    };
-    
-    return { options }
-  }
-});
+  export default defineComponent({
+    components: { IonItem, IonLabel, IonSelect, IonSelectOption },
+    setup() {
+      const options: any = {
+        cssClass: 'my-custom-interface',
+      };
+
+      return { options };
+    },
+  });
 </script>
 ```
 
@@ -682,32 +680,26 @@ export default defineComponent({
 }
 ```
 
-
 </TabItem>
 
 </Tabs>
 
 ## Properties
 
-
 ### disabled
 
-| | |
-| --- | --- |
+|                 |                                                                                                                                                                                     |
+| --------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Description** | If `true`, the user cannot interact with the select option. This property does not apply when `interface="action-sheet"` as `ion-action-sheet` does not allow for disabled buttons. |
-| **Attribute** | `disabled` |
-| **Type** | `boolean` |
-| **Default** | `false` |
-
-
+| **Attribute**   | `disabled`                                                                                                                                                                          |
+| **Type**        | `boolean`                                                                                                                                                                           |
+| **Default**     | `false`                                                                                                                                                                             |
 
 ### value
 
-| | |
-| --- | --- |
+|                 |                               |
+| --------------- | ----------------------------- |
 | **Description** | The text value of the option. |
-| **Attribute** | `value` |
-| **Type** | `any` |
-| **Default** | `undefined` |
-
-
+| **Attribute**   | `value`                       |
+| **Type**        | `any`                         |
+| **Default**     | `undefined`                   |

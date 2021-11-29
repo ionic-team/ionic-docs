@@ -4,9 +4,9 @@ The latest downloads for Ionic Studio are available in the [Ionic Dashboard](htt
 
 ## Prerequisites
 
-* macOS or Windows 10
-* Make sure you have the latest LTS release of [Node &amp; npm](../../intro/environment.md#node-npm) set up on your computer
-* Optionally install [Git](../../intro/environment.md#git) for version control
+- macOS or Windows 10
+- Make sure you have the latest LTS release of [Node &amp; npm](../../intro/environment.md#node-npm) set up on your computer
+- Optionally install [Git](../../intro/environment.md#git) for version control
 
 ## Installation
 

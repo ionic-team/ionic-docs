@@ -207,9 +207,7 @@ However, the Select Option does set a class for easier styling and allows for th
   <ion-item>
     <ion-label>Users</ion-label>
     <ion-select [compareWith]="compareWith">
-      <ion-select-option *ngFor="let user of users" [value]="user"
-        >{{user.first + ' ' + user.last}}</ion-select-option
-      >
+      <ion-select-option *ngFor="let user of users" [value]="user">{{user.first + ' ' + user.last}}</ion-select-option>
     </ion-select>
   </ion-item>
 </ion-list>
@@ -265,9 +263,7 @@ export class SelectExample {
   <ion-item>
     <ion-label>Users</ion-label>
     <ion-select [compareWith]="compareWith" multiple="true">
-      <ion-select-option *ngFor="let user of users" [value]="user"
-        >{{user.first + ' ' + user.last}}</ion-select-option
-      >
+      <ion-select-option *ngFor="let user of users" [value]="user">{{user.first + ' ' + user.last}}</ion-select-option>
     </ion-select>
   </ion-item>
 </ion-list>
@@ -330,12 +326,7 @@ export class SelectExample {
 
   <ion-item>
     <ion-label>Alert</ion-label>
-    <ion-select
-      [interfaceOptions]="customAlertOptions"
-      interface="alert"
-      multiple="true"
-      placeholder="Select One"
-    >
+    <ion-select [interfaceOptions]="customAlertOptions" interface="alert" multiple="true" placeholder="Select One">
       <ion-select-option value="bacon">Bacon</ion-select-option>
       <ion-select-option value="olives">Black Olives</ion-select-option>
       <ion-select-option value="xcheese">Extra Cheese</ion-select-option>
@@ -351,11 +342,7 @@ export class SelectExample {
 
   <ion-item>
     <ion-label>Popover</ion-label>
-    <ion-select
-      [interfaceOptions]="customPopoverOptions"
-      interface="popover"
-      placeholder="Select One"
-    >
+    <ion-select [interfaceOptions]="customPopoverOptions" interface="popover" placeholder="Select One">
       <ion-select-option value="brown">Brown</ion-select-option>
       <ion-select-option value="blonde">Blonde</ion-select-option>
       <ion-select-option value="black">Black</ion-select-option>
@@ -365,11 +352,7 @@ export class SelectExample {
 
   <ion-item>
     <ion-label>Action Sheet</ion-label>
-    <ion-select
-      [interfaceOptions]="customActionSheetOptions"
-      interface="action-sheet"
-      placeholder="Select One"
-    >
+    <ion-select [interfaceOptions]="customActionSheetOptions" interface="action-sheet" placeholder="Select One">
       <ion-select-option value="red">Red</ion-select-option>
       <ion-select-option value="purple">Purple</ion-select-option>
       <ion-select-option value="yellow">Yellow</ion-select-option>
@@ -545,12 +528,7 @@ select.value = ['bird', 'dog'];
 
   <ion-item>
     <ion-label>Alert</ion-label>
-    <ion-select
-      id="customAlertSelect"
-      interface="alert"
-      multiple="true"
-      placeholder="Select One"
-    >
+    <ion-select id="customAlertSelect" interface="alert" multiple="true" placeholder="Select One">
       <ion-select-option value="bacon">Bacon</ion-select-option>
       <ion-select-option value="olives">Black Olives</ion-select-option>
       <ion-select-option value="xcheese">Extra Cheese</ion-select-option>
@@ -566,11 +544,7 @@ select.value = ['bird', 'dog'];
 
   <ion-item>
     <ion-label>Popover</ion-label>
-    <ion-select
-      id="customPopoverSelect"
-      interface="popover"
-      placeholder="Select One"
-    >
+    <ion-select id="customPopoverSelect" interface="popover" placeholder="Select One">
       <ion-select-option value="brown">Brown</ion-select-option>
       <ion-select-option value="blonde">Blonde</ion-select-option>
       <ion-select-option value="black">Black</ion-select-option>
@@ -580,11 +554,7 @@ select.value = ['bird', 'dog'];
 
   <ion-item>
     <ion-label>Action Sheet</ion-label>
-    <ion-select
-      id="customActionSheetSelect"
-      interface="action-sheet"
-      placeholder="Select One"
-    >
+    <ion-select id="customActionSheetSelect" interface="action-sheet" placeholder="Select One">
       <ion-select-option value="red">Red</ion-select-option>
       <ion-select-option value="purple">Purple</ion-select-option>
       <ion-select-option value="yellow">Yellow</ion-select-option>
@@ -613,9 +583,7 @@ var customPopoverOptions = {
 };
 customPopoverSelect.interfaceOptions = customPopoverOptions;
 
-var customActionSheetSelect = document.getElementById(
-  'customActionSheetSelect',
-);
+var customActionSheetSelect = document.getElementById('customActionSheetSelect');
 var customActionSheetOptions = {
   header: 'Colors',
   subHeader: 'Select your favorite color',
@@ -657,11 +625,7 @@ export const SingleSelection: React.FC = () => {
 
           <IonItem>
             <IonLabel>Gender</IonLabel>
-            <IonSelect
-              value={gender}
-              placeholder="Select One"
-              onIonChange={e => setGender(e.detail.value)}
-            >
+            <IonSelect value={gender} placeholder="Select One" onIonChange={(e) => setGender(e.detail.value)}>
               <IonSelectOption value="female">Female</IonSelectOption>
               <IonSelectOption value="male">Male</IonSelectOption>
             </IonSelect>
@@ -673,7 +637,7 @@ export const SingleSelection: React.FC = () => {
               value={hairColor}
               okText="Okay"
               cancelText="Dismiss"
-              onIonChange={e => setHairColor(e.detail.value)}
+              onIonChange={(e) => setHairColor(e.detail.value)}
             >
               <IonSelectOption value="brown">Brown</IonSelectOption>
               <IonSelectOption value="blonde">Blonde</IonSelectOption>
@@ -726,7 +690,7 @@ export const MultipleSelection: React.FC = () => {
               multiple={true}
               cancelText="Nah"
               okText="Okay!"
-              onIonChange={e => setToppings(e.detail.value)}
+              onIonChange={(e) => setToppings(e.detail.value)}
             >
               <IonSelectOption value="bacon">Bacon</IonSelectOption>
               <IonSelectOption value="olives">Black Olives</IonSelectOption>
@@ -743,31 +707,19 @@ export const MultipleSelection: React.FC = () => {
 
           <IonItem>
             <IonLabel>Pets</IonLabel>
-            <IonSelect
-              multiple={true}
-              value={pets}
-              onIonChange={e => setPets(e.detail.value)}
-            >
+            <IonSelect multiple={true} value={pets} onIonChange={(e) => setPets(e.detail.value)}>
               <IonSelectOption value="bird">Bird</IonSelectOption>
               <IonSelectOption value="cat">Cat</IonSelectOption>
               <IonSelectOption value="dog">Dog</IonSelectOption>
-              <IonSelectOption value="honeybadger">
-                Honey Badger
-              </IonSelectOption>
+              <IonSelectOption value="honeybadger">Honey Badger</IonSelectOption>
             </IonSelect>
           </IonItem>
           <IonItemDivider>Your Selections</IonItemDivider>
           <IonItem>
-            Toppings:{' '}
-            {toppings.length
-              ? toppings.reduce((curr, prev) => prev + ', ' + curr, '')
-              : '(none selected)'}
+            Toppings: {toppings.length ? toppings.reduce((curr, prev) => prev + ', ' + curr, '') : '(none selected)'}
           </IonItem>
           <IonItem>
-            Pets:{' '}
-            {pets.length
-              ? pets.reduce((curr, prev) => prev + ', ' + curr, '')
-              : '(none selected)'}
+            Pets: {pets.length ? pets.reduce((curr, prev) => prev + ', ' + curr, '') : '(none selected)'}
           </IonItem>
         </IonList>
       </IonContent>
@@ -832,9 +784,9 @@ export const ObjectSelection: React.FC = () => {
               compareWith={compareWith}
               value={selectedUsers}
               multiple
-              onIonChange={e => setSelectedUsers(e.detail.value)}
+              onIonChange={(e) => setSelectedUsers(e.detail.value)}
             >
-              {users.map(user => (
+              {users.map((user) => (
                 <IonSelectOption key={user.id} value={user}>
                   {user.first} {user.last}
                 </IonSelectOption>
@@ -843,7 +795,7 @@ export const ObjectSelection: React.FC = () => {
           </IonItem>
           <IonItemDivider>Selected Users</IonItemDivider>
           {selectedUsers.length ? (
-            selectedUsers.map(user => (
+            selectedUsers.map((user) => (
               <IonItem key={user.id}>
                 {user.first} {user.last}
               </IonItem>
@@ -912,7 +864,7 @@ export const InterfaceOptionsSelection: React.FC = () => {
               interface="alert"
               multiple={true}
               placeholder="Select One"
-              onIonChange={e => setToppings(e.detail.value)}
+              onIonChange={(e) => setToppings(e.detail.value)}
               value={toppings}
             >
               <IonSelectOption value="bacon">Bacon</IonSelectOption>
@@ -934,7 +886,7 @@ export const InterfaceOptionsSelection: React.FC = () => {
               interfaceOptions={customPopoverOptions}
               interface="popover"
               placeholder="Select One"
-              onIonChange={e => setHairColor(e.detail.value)}
+              onIonChange={(e) => setHairColor(e.detail.value)}
               value={hairColor}
             >
               <IonSelectOption value="brown">Brown</IonSelectOption>
@@ -950,7 +902,7 @@ export const InterfaceOptionsSelection: React.FC = () => {
               interfaceOptions={customActionSheetOptions}
               interface="action-sheet"
               placeholder="Select One"
-              onIonChange={e => setColor(e.detail.value)}
+              onIonChange={(e) => setColor(e.detail.value)}
               value={color}
             >
               <IonSelectOption value="red">Red</IonSelectOption>
@@ -963,10 +915,7 @@ export const InterfaceOptionsSelection: React.FC = () => {
 
           <IonItemDivider>Your Selections</IonItemDivider>
           <IonItem>
-            Toppings:{' '}
-            {toppings.length
-              ? toppings.reduce((curr, prev) => prev + ', ' + curr, '')
-              : '(none selected)'}
+            Toppings: {toppings.length ? toppings.reduce((curr, prev) => prev + ', ' + curr, '') : '(none selected)'}
           </IonItem>
           <IonItem>Hair Color: {hairColor}</IonItem>
           <IonItem>Color: {color ?? '(none selected)'}</IonItem>
@@ -1060,9 +1009,7 @@ export class SelectExample {
             <ion-select-option value="bird">Bird</ion-select-option>
             <ion-select-option value="cat">Cat</ion-select-option>
             <ion-select-option value="dog">Dog</ion-select-option>
-            <ion-select-option value="honeybadger">
-              Honey Badger
-            </ion-select-option>
+            <ion-select-option value="honeybadger">Honey Badger</ion-select-option>
           </ion-select>
         </ion-item>
       </ion-list>,
@@ -1113,10 +1060,8 @@ export class SelectExample {
         <ion-item>
           <ion-label>Users</ion-label>
           <ion-select compareWith={this.compareWith}>
-            {this.users.map(user => (
-              <ion-select-option value={user}>
-                {user.first + ' ' + user.last}
-              </ion-select-option>
+            {this.users.map((user) => (
+              <ion-select-option value={user}>{user.first + ' ' + user.last}</ion-select-option>
             ))}
           </ion-select>
         </ion-item>
@@ -1184,11 +1129,7 @@ export class SelectExample {
 
         <ion-item>
           <ion-label>Popover</ion-label>
-          <ion-select
-            interfaceOptions={this.customPopoverOptions}
-            interface="popover"
-            placeholder="Select One"
-          >
+          <ion-select interfaceOptions={this.customPopoverOptions} interface="popover" placeholder="Select One">
             <ion-select-option value="brown">Brown</ion-select-option>
             <ion-select-option value="blonde">Blonde</ion-select-option>
             <ion-select-option value="black">Black</ion-select-option>
@@ -1250,14 +1191,7 @@ export class SelectExample {
 </template>
 
 <script>
-  import {
-    IonItem,
-    IonLabel,
-    IonList,
-    IonListHeader,
-    IonSelect,
-    IonSelectOption,
-  } from '@ionic/vue';
+  import { IonItem, IonLabel, IonList, IonListHeader, IonSelect, IonSelectOption } from '@ionic/vue';
   import { defineComponent } from 'vue';
 
   export default defineComponent({
@@ -1347,12 +1281,7 @@ export default defineComponent({
 
     <ion-item>
       <ion-label>Alert</ion-label>
-      <ion-select
-        :interface-options="customAlertOptions"
-        interface="alert"
-        multiple="true"
-        placeholder="Select One"
-      >
+      <ion-select :interface-options="customAlertOptions" interface="alert" multiple="true" placeholder="Select One">
         <ion-select-option value="bacon">Bacon</ion-select-option>
         <ion-select-option value="olives">Black Olives</ion-select-option>
         <ion-select-option value="xcheese">Extra Cheese</ion-select-option>
@@ -1368,11 +1297,7 @@ export default defineComponent({
 
     <ion-item>
       <ion-label>Popover</ion-label>
-      <ion-select
-        :interface-options="customPopoverOptions"
-        interface="popover"
-        placeholder="Select One"
-      >
+      <ion-select :interface-options="customPopoverOptions" interface="popover" placeholder="Select One">
         <ion-select-option value="brown">Brown</ion-select-option>
         <ion-select-option value="blonde">Blonde</ion-select-option>
         <ion-select-option value="black">Black</ion-select-option>
@@ -1382,11 +1307,7 @@ export default defineComponent({
 
     <ion-item>
       <ion-label>Action Sheet</ion-label>
-      <ion-select
-        :interface-options="customActionSheetOptions"
-        interface="action-sheet"
-        placeholder="Select One"
-      >
+      <ion-select :interface-options="customActionSheetOptions" interface="action-sheet" placeholder="Select One">
         <ion-select-option value="red">Red</ion-select-option>
         <ion-select-option value="purple">Purple</ion-select-option>
         <ion-select-option value="yellow">Yellow</ion-select-option>
@@ -1398,14 +1319,7 @@ export default defineComponent({
 </template>
 
 <script>
-  import {
-    IonItem,
-    IonLabel,
-    IonList,
-    IonListHeader,
-    IonSelect,
-    IonSelectOption,
-  } from '@ionic/vue';
+  import { IonItem, IonLabel, IonList, IonListHeader, IonSelect, IonSelectOption } from '@ionic/vue';
   import { defineComponent } from 'vue';
 
   export default defineComponent({

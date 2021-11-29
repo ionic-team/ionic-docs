@@ -1,6 +1,6 @@
 //overrides
 #__docusaurus {
-  [class*=docMainContainer_] {
+  [class*='docMainContainer_'] {
     max-width: initial;
 
     > .container {
@@ -12,7 +12,7 @@
     }
   }
 
-  [class*=docPage_] {
+  [class*='docPage_'] {
     > div {
       flex-grow: 1;
       min-width: 0;

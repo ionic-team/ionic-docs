@@ -42,6 +42,7 @@ After doing this, all virtual scroll components will be available for use in our
 :::note
 Installing all components may result in unused virtual scroll components being added to your application bundle. See the [Installing Specific Components](#installing-specific-components) section below for an approach that works better with treeshaking.
 :::
+
 ### Installing Specific Components
 
 To install specific virtual scroll components for use in your app, import the component you want to use in `main.ts`. In this example, we will be using the `RecycleScroller` component:
@@ -69,11 +70,7 @@ The `RecycleScroller` component should be added inside of your `ion-content` com
   <ion-page>
     <ion-content>
       <ion-list>
-        <RecycleScroller
-          class="scroller"
-          :items="list"
-          :item-size="56"
-        >
+        <RecycleScroller class="scroller" :items="list" :item-size="56">
           <template #default="{ item }">
             <ion-item>
               <ion-avatar slot="start">
@@ -90,27 +87,21 @@ The `RecycleScroller` component should be added inside of your `ion-content` com
 
 <script>
   import { defineComponent, ref } from 'vue';
-  import {
-    IonAvatar,
-    IonContent,
-    IonItem,
-    IonLabel,
-    IonPage
-  } from '@ionic/vue';
-  
+  import { IonAvatar, IonContent, IonItem, IonLabel, IonPage } from '@ionic/vue';
+
   export default defineComponent({
     components: {
       IonAvatar,
       IonContent,
       IonItem,
       IonLabel,
-      IonPage
+      IonPage,
     },
     setup() {
       const list = ref([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
-      
-      return { list }
-    }
+
+      return { list };
+    },
   });
 </script>
 ```

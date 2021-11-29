@@ -98,9 +98,7 @@ We can also programmatically navigate in our app by using the router API:
 <template>
   <ion-page>
     <ion-content>
-      <ion-button @click="() => router.push('/detail')"
-        >Go to detail</ion-button
-      >
+      <ion-button @click="() => router.push('/detail')">Go to detail</ion-button>
     </ion-content>
   </ion-page>
 </template>
@@ -136,12 +134,7 @@ The `router-direction` attribute accepts values of `forward`, `back`, or `none` 
 The `router-animation` attribute accepts an `AnimationBuilder` function and is used to provide a custom page transition that is only used when clicking the component it is provided on. The `AnimationBuilder` type is a function that returns an Ionic Animation instance. See the [Animations documentation](../utilities/animations) for more information on using animations in Ionic Vue.
 
 ```html
-<ion-button
-  router-link="/page2"
-  router-direction="back"
-  :router-animation="myAnimation"
-  >Click Me</ion-button
->
+<ion-button router-link="/page2" router-direction="back" :router-animation="myAnimation">Click Me</ion-button>
 ```
 
 ### Navigating using `useIonRouter`
@@ -439,13 +432,7 @@ The `IonPage` component wraps each view in an Ionic Vue app and allows page tran
 </template>
 
 <script lang="ts">
-  import {
-    IonContent,
-    IonHeader,
-    IonPage,
-    IonTitle,
-    IonToolbar,
-  } from '@ionic/vue';
+  import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/vue';
   import { defineComponent } from 'vue';
 
   export default defineComponent({
@@ -522,13 +509,7 @@ Let's look at how to use it in our component:
 </template>
 
 <script lang="ts">
-  import {
-    IonContent,
-    IonHeader,
-    IonPage,
-    IonTitle,
-    IonToolbar,
-  } from '@ionic/vue';
+  import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/vue';
   import { defineComponent } from 'vue';
   import { useRoute } from 'vue-router';
 

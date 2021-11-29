@@ -88,7 +88,7 @@ Next, we need to implement the deletePhoto method that will come from the `usePh
 ```tsx
 const deletePhoto = async (photo: UserPhoto) => {
   // Remove this photo from the Photos reference data array
-  const newPhotos = photos.filter(p => p.filepath !== photo.filepath);
+  const newPhotos = photos.filter((p) => p.filepath !== photo.filepath);
 
   // Update photos array cache by overwriting the existing photo array
   Storage.set({ key: PHOTO_STORAGE, value: JSON.stringify(newPhotos) });

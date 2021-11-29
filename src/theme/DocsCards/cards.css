@@ -18,7 +18,7 @@ docs-cards > docs-card.wide {
   grid-column: span 2;
 }
 
-docs-cards.prioritized > docs-card:nth-child(-n+5) {
+docs-cards.prioritized > docs-card:nth-child(-n + 5) {
   font-size: 1.25em;
 }
 

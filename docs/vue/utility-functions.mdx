@@ -7,10 +7,7 @@ Ionic Vue ships with several utility functions that you can use in your applicat
 The `useIonRouter` function can be used to provide greater control over page navigation beyond what the Vue Router API provides. In particular, it can be used to programmatically navigate within your app while controlling the animations. It can also be used to determine whether or not users can navigate back which is useful when closing the app after the user presses the hardware back button when on the root page.
 
 ```js
-import {
-  IonPage,
-  useIonRouter
-} from '@ionic/vue';
+import { IonPage, useIonRouter } from '@ionic/vue';
 import { defineComponent } from 'vue';
 import { customAnimation } from '@/animations/customAnimation';
 
@@ -20,13 +17,13 @@ export default defineComponent({
     const router = useIonRouter();
     const push = () => {
       router.push('/page2', customAnimation);
-    }
+    };
     const back = () => {
       router.back(customAnimation);
-    }
-    
+    };
+
     return { push, back };
-  }
+  },
 });
 ```
 
@@ -51,13 +48,11 @@ interface UseIonRouterResult {
 }
 
 useIonRouter(): UseIonRouterResult;
-``` 
+```
 
+- The `push` method is the equivalent of calling `ionRouter.navigate(location, 'forward', 'push', animation)`.
 
-* The `push` method is the equivalent of calling `ionRouter.navigate(location, 'forward', 'push', animation)`.
-
-* The `replace` method is the equivalent of calling `ionRouter.navigate(location, 'root', 'replace', animation)`.
-
+- The `replace` method is the equivalent of calling `ionRouter.navigate(location, 'root', 'replace', animation)`.
 
 See the [Vue Navigation Documentation](./navigation#navigating-using-useionrouter) for more usage examples.
 
@@ -121,19 +116,12 @@ useKeyboard(): UseKeyboardResult;
 
 See the [Keyboard Documentation](../developing/keyboard) for more information and usage examples.
 
-
 ## Ionic Lifecycles
 
-Ionic Vue provides several lifecycle hooks for the `setup()` function to tap into the Ionic Framework page lifecycle. 
+Ionic Vue provides several lifecycle hooks for the `setup()` function to tap into the Ionic Framework page lifecycle.
 
 ```js
-import {
-  IonPage,
-  onIonViewWillEnter,
-  onIonViewDidEnter,
-  onIonViewWillLeave,
-  onIonViewDidLeave
-} from '@ionic/vue';
+import { IonPage, onIonViewWillEnter, onIonViewDidEnter, onIonViewWillLeave, onIonViewDidLeave } from '@ionic/vue';
 import { defineComponent } from 'vue';
 
 export default defineComponent({
@@ -142,19 +130,19 @@ export default defineComponent({
     onIonViewDidEnter(() => {
       console.log('Page did enter');
     });
-    
+
     onIonViewDidLeave(() => {
       console.log('Page did leave');
     });
-    
+
     onIonViewWillEnter(() => {
       console.log('Page will enter');
     });
-    
+
     onIonViewWillLeave(() => {
       console.log('Page will leave');
     });
-  }
+  },
 });
 ```
 
@@ -163,4 +151,3 @@ Pages in your app need to be using the `IonPage` component in order for lifecycl
 :::
 
 See the [Vue Lifecycle Documentation](./lifecycle) for more information and usage examples.
-

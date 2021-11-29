@@ -23,21 +23,13 @@ The `theme-color` meta controls the interface theme when running in a web browse
 The example below demonstrates how to use `theme-color` to style the browser interface on iOS 15.
 
 ```html
-<meta
-  name="theme-color"
-  media="(prefers-color-scheme: light)"
-  content="#3880ff"
-/>
-<meta
-  name="theme-color"
-  media="(prefers-color-scheme: dark)"
-  content="#eb445a"
-/>
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#3880ff" />
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#eb445a" />
 ```
 
-| Light Mode                                                                                                              | Dark Mode                                                                                                             |
-| ----------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- |
-| <figure><img alt="Application with theme-color meta in light mode" src={require('./_assets/img/theme-color-light.png').default} /></figure> | <figure><img alt="Application with theme-color meta in dark mode" src={require('./_assets/img/theme-color-dark.png').default} /></figure> |
+| Light Mode                                                                                                                                   | Dark Mode                                                                                                                                  |
+| -------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
+| <figure><img alt="Application with theme-color meta in light mode" src={require('./\_assets/img/theme-color-light.png').default} /></figure> | <figure><img alt="Application with theme-color meta in dark mode" src={require('./\_assets/img/theme-color-dark.png').default} /></figure> |
 
 The `theme-color` meta can also be used to customize the toolbar in Safari on macOS Monterey or newer.
 
@@ -167,8 +159,8 @@ $text-lighter: lighten($text, 15);
 
 After running through the Sass compiler, the colors will have the following values:
 
-| Variable            | Value                                             |
-| ------------------- | ------------------------------------------------- |
+| Variable            | Value                                          |
+| ------------------- | ---------------------------------------------- |
 | `$background`       | <CodeColor color="#3880ff">#3880ff</CodeColor> |
 | `$background-shade` | <CodeColor color="#3171e0">#3171e0</CodeColor> |
 | `$background-tint`  | <CodeColor color="#4c8dff">#4c8dff</CodeColor> |

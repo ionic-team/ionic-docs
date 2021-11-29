@@ -7,7 +7,7 @@
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  
+
   margin-inline-start: -2rem;
   margin-block-start: -1rem;
 
@@ -38,9 +38,9 @@
 
   > code {
     display: block;
-    
+
     padding: var(--ifm-pre-padding);
-    
+
     line-height: var(--code-block-line-height);
   }
 }

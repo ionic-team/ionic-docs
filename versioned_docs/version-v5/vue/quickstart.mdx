@@ -220,10 +220,7 @@ Currently, the `Home` component looks like so:
         <strong>Ready to create an app?</strong>
         <p>
           Start with Ionic
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            href="https://ionicframework.com/docs/components"
+          <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components"
             >UI Components</a
           >
         </p>
@@ -233,13 +230,7 @@ Currently, the `Home` component looks like so:
 </template>
 
 <script lang="ts">
-  import {
-    IonContent,
-    IonHeader,
-    IonPage,
-    IonTitle,
-    IonToolbar,
-  } from '@ionic/vue';
+  import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/vue';
   import { defineComponent } from 'vue';
 
   export default defineComponent({
@@ -482,15 +473,7 @@ Let's fill the `NewItem.vue` file with some placeholder content for the moment.
 </template>
 
 <script>
-  import {
-    IonBackButton,
-    IonButtons,
-    IonContent,
-    IonHeader,
-    IonPage,
-    IonTitle,
-    IonToolbar,
-  } from '@ionic/vue';
+  import { IonBackButton, IonButtons, IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/vue';
   import { defineComponent } from 'vue';
 
   export default defineComponent({
@@ -765,7 +748,7 @@ Prefetching consumes bandwidth, so if you have a large app, you may want to disa
 
 ```js
 module.exports = {
-  chainWebpack: config => {
+  chainWebpack: (config) => {
     config.plugins.delete('prefetch');
   },
 };
@@ -818,13 +801,7 @@ Next, check out [all the APIs](https://capacitor.ionicframework.com/docs/apis) t
 </template>
 
 <script lang="ts">
-  import {
-    IonButton,
-    IonContent,
-    IonHeader,
-    IonPage,
-    IonTitle,
-  } from '@ionic/vue';
+  import { IonButton, IonContent, IonHeader, IonPage, IonTitle } from '@ionic/vue';
   import { defineComponent, ref } from 'vue';
   import { Plugins, CameraResultType } from '@capacitor/core';
   const { Camera } = Plugins;

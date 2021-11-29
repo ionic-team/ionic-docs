@@ -4,7 +4,10 @@ title: Platform Styles
 
 <head>
   <title>Ionic Platform Styles | Platform-Specific Styles for Ionic Apps</title>
-  <meta name="description" content="Ionic provides platform-specific styles based on the app's device. Styling the components to match the device guidelines allows the app to feel native to users." />
+  <meta
+    name="description"
+    content="Ionic provides platform-specific styles based on the app's device. Styling the components to match the device guidelines allows the app to feel native to users."
+  />
 </head>
 
 Ionic provides platform specific styles based on the device the application is running on. Styling the components to match the device guidelines allows the application to be written once but look and feel native to the user depending on where it is accessed.

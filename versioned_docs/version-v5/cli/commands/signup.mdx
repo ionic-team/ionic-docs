@@ -1,7 +1,6 @@
 ---
-sidebar_label: "signup"
+sidebar_label: 'signup'
 ---
-
 
 # ionic signup
 

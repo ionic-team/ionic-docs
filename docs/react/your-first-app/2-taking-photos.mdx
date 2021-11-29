@@ -20,12 +20,7 @@ A custom hook is just a function that uses other React hooks. And that's what we
 import { useState, useEffect } from 'react';
 import { isPlatform } from '@ionic/react';
 
-import {
-  Camera,
-  CameraResultType,
-  CameraSource,
-  Photo,
-} from '@capacitor/camera';
+import { Camera, CameraResultType, CameraSource, Photo } from '@capacitor/camera';
 import { Filesystem, Directory } from '@capacitor/filesystem';
 import { Storage } from '@capacitor/storage';
 import { Capacitor } from '@capacitor/core';

@@ -29,10 +29,7 @@ Next, add a function to save the photo to the filesystem. We pass in the `photo`
 Next we use the Capacitor [Filesystem API](https://capacitor.ionicframework.com/docs/apis/filesystem) to save the photo to the filesystem. We start by converting the photo to base64 format, then feed the data to the Filesystem’s `writeFile` function:
 
 ```tsx
-const savePicture = async (
-  photo: Photo,
-  fileName: string,
-): Promise<Photo> => {
+const savePicture = async (photo: Photo, fileName: string): Promise<Photo> => {
   let base64Data: string;
 
   // Fetch the photo, read as a blob, then convert to base64 format

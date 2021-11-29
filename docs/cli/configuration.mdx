@@ -41,31 +41,31 @@ Each Ionic project has a project configuration file, usually at the project's ro
 
 The CLI will look for the following environment variables:
 
-* `IONIC_CONFIG_DIRECTORY`: The directory of the global CLI config. Defaults to `~/.ionic`.
-* `IONIC_HTTP_PROXY`: Set a URL for proxying all CLI requests through. See [Using a Proxy](using-a-proxy.md).
-* `IONIC_TOKEN`: Automatically authenticates with [Appflow](https://ionic.io/appflow).
+- `IONIC_CONFIG_DIRECTORY`: The directory of the global CLI config. Defaults to `~/.ionic`.
+- `IONIC_HTTP_PROXY`: Set a URL for proxying all CLI requests through. See [Using a Proxy](using-a-proxy.md).
+- `IONIC_TOKEN`: Automatically authenticates with [Appflow](https://ionic.io/appflow).
 
 ## Flags
 
 CLI flags are global options that alter the behavior of a CLI command.
 
-* `--help`: Instead of running the command, view its help page.
-* `--verbose`: Show all log messages for debugging purposes.
-* `--quiet`: Only show `WARN` and `ERROR` log messages.
-* `--no-interactive`: Turn off interactive prompts and fancy outputs. If CI or a non-TTY terminal is detected, the CLI is automatically non-interactive.
-* `--confirm`: Turn on auto-confirmation of confirmation prompts. Careful: the CLI prompts before doing something potentially harmful. Auto-confirming may have unintended results.
+- `--help`: Instead of running the command, view its help page.
+- `--verbose`: Show all log messages for debugging purposes.
+- `--quiet`: Only show `WARN` and `ERROR` log messages.
+- `--no-interactive`: Turn off interactive prompts and fancy outputs. If CI or a non-TTY terminal is detected, the CLI is automatically non-interactive.
+- `--confirm`: Turn on auto-confirmation of confirmation prompts. Careful: the CLI prompts before doing something potentially harmful. Auto-confirming may have unintended results.
 
 ## Hooks
 
 The CLI can run scripts during certain events, such as before and after builds. To hook into the CLI, the following [npm scripts](https://docs.npmjs.com/misc/scripts) can be used in `package.json`:
 
-* `ionic:serve:before`: executed before the dev server starts
-* `ionic:serve:after`: executed after the dev server is terminated
-* `ionic:build:before`: executed before a web asset build begins
-* `ionic:build:after`: executed after a web asset build finishes
-* `ionic:capacitor:run:before`: executed during `ionic capacitor run` before capacitor open is executed
-* `ionic:capacitor:build:before`: executed during `ionic capacitor build` before capacitor open is executed
-* `ionic:capacitor:sync:after`: executed during `ionic capacitor sync` after a sync
+- `ionic:serve:before`: executed before the dev server starts
+- `ionic:serve:after`: executed after the dev server is terminated
+- `ionic:build:before`: executed before a web asset build begins
+- `ionic:build:after`: executed after a web asset build finishes
+- `ionic:capacitor:run:before`: executed during `ionic capacitor run` before capacitor open is executed
+- `ionic:capacitor:build:before`: executed during `ionic capacitor build` before capacitor open is executed
+- `ionic:capacitor:sync:after`: executed during `ionic capacitor sync` after a sync
 
 When using a shell script for any of the hooks, hook context is defined in environment variables prefixed with `IONIC_CLI_HOOK_CTX_`.
 
@@ -100,14 +100,16 @@ The argument is the context given to the hook file, which differs from hook to h
 `./scripts/build-before.js`:
 
 ```javascript
-module.exports = function(ctx) {
+module.exports = function (ctx) {
   console.log(ctx);
 };
 ```
 
 ## Multi-app Projects
 
-<small><em>Available in CLI 6.2.0+</em></small>
+<small>
+  <em>Available in CLI 6.2.0+</em>
+</small>
 
 The Ionic CLI supports a multi-app configuration setup, which involves multiple Ionic apps and shared code within a single repository, or [monorepo](../reference/glossary.md#monorepo).
 
@@ -122,9 +124,9 @@ If you're using Angular, please see [this article](https://github.com/ionic-team
 1. Create a directory and initialize a monorepo (see [Project Structure](#project-structure) for full details).
 1. Initialize the monorepo as an Ionic multi-app project. This will create a multi-app `ionic.config.json` file. See [Config File](#config-file) for full details.
 
-    ```shell
-    $ ionic init --multi-app
-    ```
+   ```shell
+   $ ionic init --multi-app
+   ```
 
 1. Use `ionic start` to create Ionic apps or `ionic init` to initialize existing apps (see [Adding an App](#adding-an-app) for full details).
 

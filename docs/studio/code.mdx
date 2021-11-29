@@ -20,20 +20,20 @@ If Studio is not able to detect your editor, ensure that one is installed and co
 
 Studio will automatically detect one of
 
-* Sublime Text
-* Atom
-* Visual Studio Code
-* WebStorm
-* TextMate
-* Vim
-* NeoVim
-* IntelliJ
-* GNU nano
-* GNU Emacs
+- Sublime Text
+- Atom
+- Visual Studio Code
+- WebStorm
+- TextMate
+- Vim
+- NeoVim
+- IntelliJ
+- GNU nano
+- GNU Emacs
 
 ## Opening in another editor
 
-If Studio does not automatically detect your editor or your editor is not on the list of supported editors, 
+If Studio does not automatically detect your editor or your editor is not on the list of supported editors,
 the app project can always be opened directly.
 
 To find the project path, use the Project -> Open in Finder (or Explorer) option to navigate to the project

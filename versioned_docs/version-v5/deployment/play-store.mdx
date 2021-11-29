@@ -4,7 +4,6 @@ sidebar_label: Android Play Store
 
 # Android Play Store Deployment
 
-
 ## Generating a release build of an app
 
 To generate a release build for Android, run the following cli command:
@@ -63,7 +62,6 @@ Once a developer account has been created, go ahead and click the `Create an App
 
 Be sure to fill out the description for the app along with providing screenshots and additional info.
 When ready, upload the signed release APK that was generated and publish the app.
-
 
 ## Updating an app
 

@@ -47,37 +47,37 @@ Below is a table listing all the possible platform values along with correspondi
 
 ## Customizing Platform Detection Functions
 
-The function used to detect a specific platform can be overridden by providing an alternative function in the global [Ionic config](./config). Each function takes `window` as a parameter and returns a boolean. 
+The function used to detect a specific platform can be overridden by providing an alternative function in the global [Ionic config](./config). Each function takes `window` as a parameter and returns a boolean.
 
 ```tsx
 setupConfig({
   platform: {
-    /** The default `desktop` function returns false for devices with a touchscreen. 
+    /** The default `desktop` function returns false for devices with a touchscreen.
      * This is not always wanted, so this function tests the User Agent instead.
      **/
-    'desktop': (win) => {
+    desktop: (win) => {
       const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(win.navigator.userAgent);
       return !isMobile;
-    }
+    },
   },
 });
 ```
 
 ```ts
 type PlatformConfig = {
-    android?: ((win: Window) => boolean) | undefined;
-    capacitor?: ((win: Window) => boolean) | undefined;
-    cordova?: ((win: Window) => boolean) | undefined;
-    desktop?: ((win: Window) => boolean) | undefined;
-    electron?: ((win: Window) => boolean) | undefined;
-    hybrid?: ((win: Window) => boolean) | undefined;
-    ios?: ((win: Window) => boolean) | undefined;
-    ipad?: ((win: Window) => boolean) | undefined;
-    iphone?: ((win: Window) => boolean) | undefined;
-    mobile?: ((win: Window) => boolean) | undefined;
-    mobileweb?: ((win: Window) => boolean) | undefined;
-    phablet?: ((win: Window) => boolean) | undefined;
-    pwa?: ((win: Window) => boolean) | undefined;
-    tablet?: ((win: Window) => boolean) | undefined;
-}
+  android?: ((win: Window) => boolean) | undefined;
+  capacitor?: ((win: Window) => boolean) | undefined;
+  cordova?: ((win: Window) => boolean) | undefined;
+  desktop?: ((win: Window) => boolean) | undefined;
+  electron?: ((win: Window) => boolean) | undefined;
+  hybrid?: ((win: Window) => boolean) | undefined;
+  ios?: ((win: Window) => boolean) | undefined;
+  ipad?: ((win: Window) => boolean) | undefined;
+  iphone?: ((win: Window) => boolean) | undefined;
+  mobile?: ((win: Window) => boolean) | undefined;
+  mobileweb?: ((win: Window) => boolean) | undefined;
+  phablet?: ((win: Window) => boolean) | undefined;
+  pwa?: ((win: Window) => boolean) | undefined;
+  tablet?: ((win: Window) => boolean) | undefined;
+};
 ```

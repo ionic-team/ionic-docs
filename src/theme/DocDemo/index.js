@@ -3,7 +3,7 @@ import clsx from 'clsx';
 
 import './demo.css';
 
-const DocDemo = props => {
+const DocDemo = (props) => {
   const [ionicMode, setIonicMode] = useState('ios');
 
   const iframe = useRef(null);
@@ -33,7 +33,7 @@ const DocDemo = props => {
   };
 
   const onIframeLoad = () => {
-    messageQueue.current.forEach(msg => postMessage(msg));
+    messageQueue.current.forEach((msg) => postMessage(msg));
     postMessage(newestMessage.current);
     messageQueue.current = [];
     iframeLoaded.current = true;
@@ -41,7 +41,7 @@ const DocDemo = props => {
 
   const modeToggle = (
     <div className="docs-demo-mode-toggle">
-      {['ios', 'md'].map(mode => (
+      {['ios', 'md'].map((mode) => (
         <button
           className={clsx({
             'is-selected': mode === ionicMode,
@@ -56,12 +56,7 @@ const DocDemo = props => {
   );
 
   const sourceLink = (
-    <a
-      href={props.source}
-      className="docs-demo-source"
-      target="_blank"
-      title="Demo Source"
-    >
+    <a href={props.source} className="docs-demo-source" target="_blank" title="Demo Source">
       {/* <ion-icon name="open" /> */} View Source
     </a>
   );

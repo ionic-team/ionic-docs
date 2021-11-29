@@ -3,6 +3,7 @@
 Last time, we successfully added the Camera plugin to the About page of our Tabs app. Currently, the photo is replaced each time a new one is taken. What if we wanted to display multiple photos together? Let’s create a photo gallery. You can follow along with the complete code for this in [the part 2 folder](https://github.com/ionic-team/photo-gallery-tutorial-ionic3/tree/master/part2) on GitHub.
 
 ## Creating a Dedicated Photo Service
+
 From a terminal window, navigate to your Ionic project and run:
 
 ```shell
@@ -88,11 +89,11 @@ Next, in `about.page.html`, remove the currentImage img tag. In its place, use a
 
 ```html
 <ion-grid>
-    <ion-row>
+  <ion-row>
     <ion-col col-6 *ngFor="let photo of photoService.photos">
-        <img [src]="photo.data" />
-        </ion-col>
-    </ion-row>
+      <img [src]="photo.data" />
+    </ion-col>
+  </ion-row>
 </ion-grid>
 ```
 
@@ -181,7 +182,7 @@ ngOnInit() {
 }
 ```
 
-Sweet! Photos are now saved to your device. To demonstrate that they are indeed being saved, force close DevApp, reopen it, and open the About page.  Or, shake your device to have the Control Menu pop up, then tap “Exit preview.” Afterwards, reload this app to view the photos.
+Sweet! Photos are now saved to your device. To demonstrate that they are indeed being saved, force close DevApp, reopen it, and open the About page. Or, shake your device to have the Control Menu pop up, then tap “Exit preview.” Afterwards, reload this app to view the photos.
 
 Finally, back up your changes to Appflow:
 

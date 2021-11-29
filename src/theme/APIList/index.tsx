@@ -6,14 +6,14 @@ function APIList(props): JSX.Element {
   // console.log('test', sidebars.api)
   return (
     <div>
-      {sidebars.api.map(section => {
+      {sidebars.api.map((section) => {
         if (typeof section !== 'object') return;
 
         return (
           <>
             <h4>{section.label}</h4>
             <ul>
-              {section.items.map(item => {
+              {section.items.map((item) => {
                 return (
                   item &&
                   item.replace && (

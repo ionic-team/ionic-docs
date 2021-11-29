@@ -1,4 +1,3 @@
-
 # Terminal
 
 Ionic Studio has an integrated terminal for running commands within an Ionic app.

@@ -13,8 +13,7 @@
   --accent-color-800: #e3edff;
   --accent-color-900: #f0f6ff;
   --background: var(--token-primary-bg-c);
-  --code-font-family: 'SFMono-Regular', 'Roboto Mono', Consolas,
-    'Liberation Mono', Menlo, Courier, monospace;
+  --code-font-family: 'SFMono-Regular', 'Roboto Mono', Consolas, 'Liberation Mono', Menlo, Courier, monospace;
 }
 
 .intro {

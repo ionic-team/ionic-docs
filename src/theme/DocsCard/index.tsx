@@ -18,14 +18,8 @@ interface Props extends React.HTMLAttributes<HTMLDivElement> {
 
 function DocsCard(props: Props): JSX.Element {
   const isStatic = typeof props.href === 'undefined';
-  const isOutbound =
-    typeof props.href !== 'undefined' ? /^http/.test(props.href) : false;
-  const header =
-    props.header === 'undefined' ? null : (
-      <header className="Card-header">
-        {props.header}
-      </header>
-    );
+  const isOutbound = typeof props.href !== 'undefined' ? /^http/.test(props.href) : false;
+  const header = props.header === 'undefined' ? null : <header className="Card-header">{props.header}</header>;
   const HoverIcon = props.hoverIcon;
   const Icon = props.icon;
   const Image = props.img;
@@ -33,52 +27,38 @@ function DocsCard(props: Props): JSX.Element {
   const content = (
     <>
       {Image && (
-        <>
-          {typeof Image === 'string'
-            ? <img src={Image} className="Card-image" />
-            : <Image className="Card-image"/>
-          }
-        </>
+        <>{typeof Image === 'string' ? <img src={Image} className="Card-image" /> : <Image className="Card-image" />}</>
       )}
       <div className="Card-container">
         {(Icon || HoverIcon) && (
           <div className="Card-icon-row">
-            {Icon && 
+            {Icon && (
               <>
-                {typeof Icon === 'string'
-                  ? <img
-                      src={Icon}
-                      className="Card-icon Card-icon-default"
-                    />
-                  : <Icon className="Card-icon Card-icon-default" />
-                }
+                {typeof Icon === 'string' ? (
+                  <img src={Icon} className="Card-icon Card-icon-default" />
+                ) : (
+                  <Icon className="Card-icon Card-icon-default" />
+                )}
               </>
-            }
-            {HoverIcon &&
+            )}
+            {HoverIcon && (
               <>
-                {typeof Icon === 'string'
-                  ? <img
-                      src={HoverIcon}
-                      className="Card-icon Card-icon-hover"
-                    />
-                  : <HoverIcon className="Card-icon Card-icon-hover" />
-                }
+                {typeof Icon === 'string' ? (
+                  <img src={HoverIcon} className="Card-icon Card-icon-hover" />
+                ) : (
+                  <HoverIcon className="Card-icon Card-icon-hover" />
+                )}
               </>
-              
-            }
+            )}
           </div>
         )}
-        {props.ionicon && (
-          <ion-icon name={props.ionicon} className="Card-ionicon"></ion-icon>
-        )}
+        {props.ionicon && <ion-icon name={props.ionicon} className="Card-ionicon"></ion-icon>}
         {props.iconset && (
           <div className="Card-iconset__container">
             {props.iconset.split(',').map((icon, index) => (
               <img
                 src={icon}
-                className={`Card-icon ${
-                  index === props.activeIndex ? 'Card-icon-active' : ''
-                }`}
+                className={`Card-icon ${index === props.activeIndex ? 'Card-icon-active' : ''}`}
                 data-index={index}
                 key={index}
               />
@@ -109,11 +89,7 @@ function DocsCard(props: Props): JSX.Element {
   if (isOutbound) {
     return (
       <docs-card class={className}>
-        <a
-          className={clsx(styles.card, 'docs-card')}
-          href={props.href}
-          target="_blank"
-        >
+        <a className={clsx(styles.card, 'docs-card')} href={props.href} target="_blank">
           {content}
         </a>
       </docs-card>

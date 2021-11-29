@@ -16,11 +16,11 @@ export default function ColorGenerator(props) {
   const [backgroundColor, setBackgroundColor] = useState('#ffffff');
   const [textColor, setTextColor] = useState('#000000');
 
-  const [steppedColors, setSteppedColors] = useState(generateSteppedColors(backgroundColor, textColor))
+  const [steppedColors, setSteppedColors] = useState(generateSteppedColors(backgroundColor, textColor));
 
   useEffect(() => {
     setSteppedColors(generateSteppedColors(backgroundColor, textColor));
-  }, [backgroundColor, textColor])
+  }, [backgroundColor, textColor]);
 
   return (
     <div className={clsx(props.className, 'stepped-color-generator')}>
@@ -34,9 +34,11 @@ export default function ColorGenerator(props) {
       </div>
       <pre className={clsx(styles.codePre)}>
         <code>
-        :root {'{'}{'\n'}
+          :root {'{'}
+          {'\n'}
           {'\t'}--ion-background-color: <CodeColor color={backgroundColor}>{backgroundColor}</CodeColor>;{'\n'}
-          {'\t'}--ion-background-color-rgb: <CodeColor color={backgroundColor}>{new Color(backgroundColor).toList()}</CodeColor>;{'\n'}
+          {'\t'}--ion-background-color-rgb:{' '}
+          <CodeColor color={backgroundColor}>{new Color(backgroundColor).toList()}</CodeColor>;{'\n'}
           {'\n'}
           {'\t'}--ion-text-color: <CodeColor color={textColor}>{textColor}</CodeColor>;{'\n'}
           {'\t'}--ion-text-color-rgb: <CodeColor color={textColor}>{new Color(textColor).toList()}</CodeColor>;{'\n'}
@@ -46,9 +48,10 @@ export default function ColorGenerator(props) {
               {'\t'}--ion-color-step-{(i + 1) * 50}: <CodeColor color={color}>{color}</CodeColor>;{'\n'}
             </>
           ))}
-        {'}'}{'\n'}
+          {'}'}
+          {'\n'}
         </code>
       </pre>
     </div>
-  )
+  );
 }

@@ -1,5 +1,5 @@
-import React, {useState} from 'react';
-import {useEffect} from 'react';
+import React, { useState } from 'react';
+import { useEffect } from 'react';
 import useUserPreferencesContext from '@theme/hooks/useUserPreferencesContext';
 import clsx from 'clsx';
 
@@ -12,8 +12,8 @@ import AngularIcon from './assets/icon-angular.svg';
 import JavascriptIcon from './assets/icon-javascript.svg';
 import ReactIcon from './assets/icon-react.svg';
 import VueIcon from './assets/icon-vue.svg';
-import {FRAMEWORK_ID} from '@theme/Tabs';
-import {ChevronDown} from '@theme/icons';
+import { FRAMEWORK_ID } from '@theme/Tabs';
+import { ChevronDown } from '@theme/icons';
 
 const ICON_LIST = {
   angular: <AngularIcon />,
@@ -23,15 +23,12 @@ const ICON_LIST = {
 };
 
 export default function FrameworkSelector(props) {
-  const [activeFramework, setActiveFramework] = useLocalStorage(
-    'ionic-docs--framework',
-    'react',
-  );
+  const [activeFramework, setActiveFramework] = useLocalStorage('ionic-docs--framework', 'react');
   const [isOpen, setIsOpen] = useState(false);
-  const {setTabGroupChoices} = useUserPreferencesContext();
+  const { setTabGroupChoices } = useUserPreferencesContext();
   const {
     siteConfig: {
-      customFields: {frameworks},
+      customFields: { frameworks },
     },
   } = useDocusaurusContext();
 
@@ -52,55 +49,41 @@ export default function FrameworkSelector(props) {
         'framework-selector--open': isOpen,
         [styles.frameworkSelectorOpen]: isOpen,
       })}
-      onBlur={({currentTarget, relatedTarget}) => {
+      onBlur={({ currentTarget, relatedTarget }) => {
         !currentTarget.contains(relatedTarget as Node) && setIsOpen(false);
 
         props.onBlur && props.onBlur();
-      }}>
+      }}
+    >
       <button
         className={clsx('framework-selector__button', styles.button)}
         aria-label="framework selector dropdown"
         id="frameworkSelector"
-        onClick={() => setIsOpen(!isOpen)}>
-        <span
-          className={clsx(
-            'framework-selector__button-start',
-            styles.buttonStart,
-          )}>
+        onClick={() => setIsOpen(!isOpen)}
+      >
+        <span className={clsx('framework-selector__button-start', styles.buttonStart)}>
           {ICON_LIST[activeFramework]}
           {capitalizeFirstLetter(activeFramework)}
         </span>
-        <ChevronDown
-          width="8"
-          height="8"
-          className={clsx(
-            'framework-selector__button-arrow',
-            styles.buttonArrow,
-          )}
-        />
+        <ChevronDown width="8" height="8" className={clsx('framework-selector__button-arrow', styles.buttonArrow)} />
       </button>
-      <ul
-        className={clsx('framework-selector__dropdown', styles.dropdown)}
-        aria-labelledby="frameworkSelector">
+      <ul className={clsx('framework-selector__dropdown', styles.dropdown)} aria-labelledby="frameworkSelector">
         {frameworks.map((framework, i) => {
           const isActive = framework.toLowerCase() === activeFramework;
 
           return (
             <li
-              className={clsx(
-                'framework-selector__dropdown-item',
-                styles.dropdownItem,
-                {
-                  'framework-selector__dropdown-item--active': isActive,
-                  [styles.dropdownItemActive]: isActive,
-                },
-              )}
+              className={clsx('framework-selector__dropdown-item', styles.dropdownItem, {
+                'framework-selector__dropdown-item--active': isActive,
+                [styles.dropdownItemActive]: isActive,
+              })}
               key={i}
             >
               <button
                 onClick={() => {
                   setActiveFramework(framework.toLowerCase());
-                }}>
+                }}
+              >
                 <div className="start">
                   {ICON_LIST[framework]}
                   {capitalizeFirstLetter(framework)}
@@ -116,16 +99,11 @@ export default function FrameworkSelector(props) {
 }
 
 const Checkmark = () => {
-  const {isDarkTheme} = useThemeContext();
+  const { isDarkTheme } = useThemeContext();
 
   return (
     <svg width="12" height="10" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path
-        d="M11 1L4 9 1 6"
-        stroke={isDarkTheme ? '#fff' : '#03060B'}
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
+      <path d="M11 1L4 9 1 6" stroke={isDarkTheme ? '#fff' : '#03060B'} strokeLinecap="round" strokeLinejoin="round" />
     </svg>
   );
 };

@@ -1,6 +1,7 @@
 ---
-sidebar_label: "ion-list-header"
+sidebar_label: 'ion-list-header'
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
@@ -9,11 +10,9 @@ import TabItem from '@theme/TabItem';
 ListHeader a header component for a list.
 Unlike ItemDivider, ListHeaders are styled to be stand-out from the rest of the list items.
 
-
 ## Usage
 
 <Tabs groupId="framework" defaultValue="angular" values={[{ value: 'angular', label: 'Angular' }, { value: 'javascript', label: 'Javascript' }, { value: 'react', label: 'React' }, { value: 'stencil', label: 'Stencil' }, { value: 'vue', label: 'Vue' }]}>
-
 
 <TabItem value="angular">
 
@@ -82,9 +81,7 @@ Unlike ItemDivider, ListHeaders are styled to be stand-out from the rest of the 
 </ion-list>
 ```
 
-
 </TabItem>
-
 
 <TabItem value="javascript">
 
@@ -153,9 +150,7 @@ Unlike ItemDivider, ListHeaders are styled to be stand-out from the rest of the 
 </ion-list>
 ```
 
-
 </TabItem>
-
 
 <TabItem value="react">
 
@@ -231,9 +226,7 @@ export const ListHeaderExample: React.FC = () => (
 );
 ```
 
-
 </TabItem>
-
 
 <TabItem value="stencil">
 
@@ -242,7 +235,7 @@ import { Component, h } from '@stencil/core';
 
 @Component({
   tag: 'list-header-example',
-  styleUrl: 'list-header-example.css'
+  styleUrl: 'list-header-example.css',
 })
 export class ListHeaderExample {
   render() {
@@ -308,15 +301,13 @@ export class ListHeaderExample {
             <h1>falling</h1>
           </ion-label>
         </ion-item>
-      </ion-list>
+      </ion-list>,
     ];
   }
 }
 ```
 
-
 </TabItem>
-
 
 <TabItem value="vue">
 
@@ -387,15 +378,14 @@ export class ListHeaderExample {
 </template>
 
 <script>
-import { IonItem, IonLabel, IonList, IonListHeader } from '@ionic/vue';
-import { defineComponent } from 'vue';
+  import { IonItem, IonLabel, IonList, IonListHeader } from '@ionic/vue';
+  import { defineComponent } from 'vue';
 
-export default defineComponent({
-  components: { IonItem, IonLabel, IonList, IonListHeader }
-});
+  export default defineComponent({
+    components: { IonItem, IonLabel, IonList, IonListHeader },
+  });
 </script>
 ```
-
 
 </TabItem>
 
@@ -403,48 +393,40 @@ export default defineComponent({
 
 ## Properties
 
-
 ### color
 
-| | |
-| --- | --- |
+|                 |                                                                                                                                                                                                                                                                                  |
+| --------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Description** | The color to use from your application's color palette.<br />Default options are: `"primary"`, `"secondary"`, `"tertiary"`, `"success"`, `"warning"`, `"danger"`, `"light"`, `"medium"`, and `"dark"`.<br />For more information on colors, see [theming](../theming/basics.md). |
-| **Attribute** | `color` |
-| **Type** | `string \| undefined` |
-| **Default** | `undefined` |
-
-
+| **Attribute**   | `color`                                                                                                                                                                                                                                                                          |
+| **Type**        | `string \| undefined`                                                                                                                                                                                                                                                            |
+| **Default**     | `undefined`                                                                                                                                                                                                                                                                      |
 
 ### lines
 
-| | |
-| --- | --- |
+|                 |                                                               |
+| --------------- | ------------------------------------------------------------- |
 | **Description** | How the bottom border should be displayed on the list header. |
-| **Attribute** | `lines` |
-| **Type** | `"full" \| "inset" \| "none" \| undefined` |
-| **Default** | `undefined` |
-
-
+| **Attribute**   | `lines`                                                       |
+| **Type**        | `"full" \| "inset" \| "none" \| undefined`                    |
+| **Default**     | `undefined`                                                   |
 
 ### mode
 
-| | |
-| --- | --- |
+|                 |                                                   |
+| --------------- | ------------------------------------------------- |
 | **Description** | The mode determines which platform styles to use. |
-| **Attribute** | `mode` |
-| **Type** | `"ios" \| "md"` |
-| **Default** | `undefined` |
-
-
+| **Attribute**   | `mode`                                            |
+| **Type**        | `"ios" \| "md"`                                   |
+| **Default**     | `undefined`                                       |
 
 ## CSS Custom Properties
 
-| Name | Description |
-| --- | --- |
-| `--background` | Background of the list header |
-| `--border-color` | Color of the list header border |
-| `--border-style` | Style of the list header border |
-| `--border-width` | Width of the list header border |
-| `--color` | Color of the list header text |
+| Name                   | Description                           |
+| ---------------------- | ------------------------------------- |
+| `--background`         | Background of the list header         |
+| `--border-color`       | Color of the list header border       |
+| `--border-style`       | Style of the list header border       |
+| `--border-width`       | Width of the list header border       |
+| `--color`              | Color of the list header text         |
 | `--inner-border-width` | Width of the inner list header border |
-

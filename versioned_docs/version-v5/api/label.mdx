@@ -1,8 +1,9 @@
 ---
-title: "Item Label Color and Properties for Applications | ion-label"
-description: "Label is a wrapper element that can be used in combination with other Ionic components. Easily design item label colors and other properties with ion-label."
-sidebar_label: "ion-label"
+title: 'Item Label Color and Properties for Applications | ion-label'
+description: 'Label is a wrapper element that can be used in combination with other Ionic components. Easily design item label colors and other properties with ion-label.'
+sidebar_label: 'ion-label'
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
@@ -10,11 +11,9 @@ import TabItem from '@theme/TabItem';
 
 Label is a wrapper element that can be used in combination with `ion-item`, `ion-input`, `ion-toggle`, and more. The position of the label inside of an item can be inline, fixed, stacked, or floating.
 
-
 ## Usage
 
 <Tabs groupId="framework" defaultValue="angular" values={[{ value: 'angular', label: 'Angular' }, { value: 'javascript', label: 'Javascript' }, { value: 'react', label: 'React' }, { value: 'stencil', label: 'Stencil' }, { value: 'vue', label: 'Vue' }]}>
-
 
 <TabItem value="angular">
 
@@ -36,8 +35,7 @@ Label is a wrapper element that can be used in combination with `ion-item`, `ion
 
 <ion-item>
   <ion-label class="ion-text-wrap">
-    Multi-line text that should wrap when it is too long
-    to fit on one line in the item.
+    Multi-line text that should wrap when it is too long to fit on one line in the item.
   </ion-label>
 </ion-item>
 
@@ -73,9 +71,7 @@ Label is a wrapper element that can be used in combination with `ion-item`, `ion
 </ion-item>
 ```
 
-
 </TabItem>
-
 
 <TabItem value="javascript">
 
@@ -97,8 +93,7 @@ Label is a wrapper element that can be used in combination with `ion-item`, `ion
 
 <ion-item>
   <ion-label class="ion-text-wrap">
-    Multi-line text that should wrap when it is too long
-    to fit on one line in the item.
+    Multi-line text that should wrap when it is too long to fit on one line in the item.
   </ion-label>
 </ion-item>
 
@@ -134,9 +129,7 @@ Label is a wrapper element that can be used in combination with `ion-item`, `ion
 </ion-item>
 ```
 
-
 </TabItem>
-
 
 <TabItem value="react">
 
@@ -147,14 +140,20 @@ import { IonLabel, IonItem, IonInput, IonToggle, IonCheckbox, IonContent } from 
 export const LabelExample: React.FC = () => (
   <IonContent>
     {/*-- Default Label --*/}
-    <IonLabel>Label</IonLabel><br />
+    <IonLabel>Label</IonLabel>
+    <br />
 
     {/*-- Label Colors --*/}
-    <IonLabel color="primary">Primary Label</IonLabel><br />
-    <IonLabel color="secondary">Secondary Label</IonLabel><br />
-    <IonLabel color="danger">Danger Label</IonLabel><br />
-    <IonLabel color="light">Light Label</IonLabel><br />
-    <IonLabel color="dark">Dark Label</IonLabel><br />
+    <IonLabel color="primary">Primary Label</IonLabel>
+    <br />
+    <IonLabel color="secondary">Secondary Label</IonLabel>
+    <br />
+    <IonLabel color="danger">Danger Label</IonLabel>
+    <br />
+    <IonLabel color="light">Light Label</IonLabel>
+    <br />
+    <IonLabel color="dark">Dark Label</IonLabel>
+    <br />
 
     {/*-- Item Labels --*/}
     <IonItem>
@@ -163,8 +162,7 @@ export const LabelExample: React.FC = () => (
 
     <IonItem>
       <IonLabel className="ion-text-wrap">
-        Multi-line text that should wrap when it is too long
-        to fit on one line in the item.
+        Multi-line text that should wrap when it is too long to fit on one line in the item.
       </IonLabel>
     </IonItem>
 
@@ -202,9 +200,7 @@ export const LabelExample: React.FC = () => (
 );
 ```
 
-
 </TabItem>
-
 
 <TabItem value="stencil">
 
@@ -213,7 +209,7 @@ import { Component, h } from '@stencil/core';
 
 @Component({
   tag: 'label-example',
-  styleUrl: 'label-example.css'
+  styleUrl: 'label-example.css',
 })
 export class LabelExample {
   render() {
@@ -235,8 +231,7 @@ export class LabelExample {
 
       <ion-item>
         <ion-label class="ion-text-wrap">
-          Multi-line text that should wrap when it is too long
-          to fit on one line in the item.
+          Multi-line text that should wrap when it is too long to fit on one line in the item.
         </ion-label>
       </ion-item>,
 
@@ -269,15 +264,13 @@ export class LabelExample {
       <ion-item>
         <ion-checkbox slot="start" checked={true}></ion-checkbox>
         <ion-label>Checkbox</ion-label>
-      </ion-item>
+      </ion-item>,
     ];
   }
 }
 ```
 
-
 </TabItem>
-
 
 <TabItem value="vue">
 
@@ -300,8 +293,7 @@ export class LabelExample {
 
   <ion-item>
     <ion-label class="ion-text-wrap">
-      Multi-line text that should wrap when it is too long
-      to fit on one line in the item.
+      Multi-line text that should wrap when it is too long to fit on one line in the item.
     </ion-label>
   </ion-item>
 
@@ -338,27 +330,20 @@ export class LabelExample {
 </template>
 
 <script>
-import { 
-  IonCheckbox, 
-  IonInput, 
-  IonItem, 
-  IonLabel,
-  IonToggle
-} from '@ionic/vue';
-import { defineComponent } from 'vue';
+  import { IonCheckbox, IonInput, IonItem, IonLabel, IonToggle } from '@ionic/vue';
+  import { defineComponent } from 'vue';
 
-export default defineComponent({
-  components: { 
-    IonCheckbox, 
-    IonInput, 
-    IonItem, 
-    IonLabel,
-    IonToggle
-  }
-});
+  export default defineComponent({
+    components: {
+      IonCheckbox,
+      IonInput,
+      IonItem,
+      IonLabel,
+      IonToggle,
+    },
+  });
 </script>
 ```
-
 
 </TabItem>
 
@@ -366,43 +351,35 @@ export default defineComponent({
 
 ## Properties
 
-
 ### color
 
-| | |
-| --- | --- |
+|                 |                                                                                                                                                                                                                                                                                  |
+| --------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Description** | The color to use from your application's color palette.<br />Default options are: `"primary"`, `"secondary"`, `"tertiary"`, `"success"`, `"warning"`, `"danger"`, `"light"`, `"medium"`, and `"dark"`.<br />For more information on colors, see [theming](../theming/basics.md). |
-| **Attribute** | `color` |
-| **Type** | `string \| undefined` |
-| **Default** | `undefined` |
-
-
+| **Attribute**   | `color`                                                                                                                                                                                                                                                                          |
+| **Type**        | `string \| undefined`                                                                                                                                                                                                                                                            |
+| **Default**     | `undefined`                                                                                                                                                                                                                                                                      |
 
 ### mode
 
-| | |
-| --- | --- |
+|                 |                                                   |
+| --------------- | ------------------------------------------------- |
 | **Description** | The mode determines which platform styles to use. |
-| **Attribute** | `mode` |
-| **Type** | `"ios" \| "md"` |
-| **Default** | `undefined` |
-
-
+| **Attribute**   | `mode`                                            |
+| **Type**        | `"ios" \| "md"`                                   |
+| **Default**     | `undefined`                                       |
 
 ### position
 
-| | |
-| --- | --- |
+|                 |                                                                         |
+| --------------- | ----------------------------------------------------------------------- |
 | **Description** | The position determines where and how the label behaves inside an item. |
-| **Attribute** | `position` |
-| **Type** | `"fixed" \| "floating" \| "stacked" \| undefined` |
-| **Default** | `undefined` |
-
-
+| **Attribute**   | `position`                                                              |
+| **Type**        | `"fixed" \| "floating" \| "stacked" \| undefined`                       |
+| **Default**     | `undefined`                                                             |
 
 ## CSS Custom Properties
 
-| Name | Description |
-| --- | --- |
+| Name      | Description        |
+| --------- | ------------------ |
 | `--color` | Color of the label |
-

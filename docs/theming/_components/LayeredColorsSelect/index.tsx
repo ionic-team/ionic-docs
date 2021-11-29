@@ -23,52 +23,39 @@ export default function LayeredColorsSelect({ ...props }) {
         property: `--ion-color-${color}`,
         name: 'Base',
         description: 'The main color that all variations are derived from',
-        value: getComputedStyle(el.current).getPropertyValue(
-          `--ion-color-${color}`,
-        ),
+        value: getComputedStyle(el.current).getPropertyValue(`--ion-color-${color}`),
       },
       {
         property: `--ion-color-${color}-rgb`,
         name: 'Base (rgb)',
         rgb: true,
         description: 'The base color in red, green, blue format',
-        value: getComputedStyle(el.current).getPropertyValue(
-          `--ion-color-${color}-rgb`,
-        ),
+        value: getComputedStyle(el.current).getPropertyValue(`--ion-color-${color}-rgb`),
       },
       {
         property: `--ion-color-${color}-contrast`,
         name: 'Contrast',
-        description:
-          'The opposite of the base color, should be visible against the base color',
-        value: getComputedStyle(el.current).getPropertyValue(
-          `--ion-color-${color}-contrast`,
-        ),
+        description: 'The opposite of the base color, should be visible against the base color',
+        value: getComputedStyle(el.current).getPropertyValue(`--ion-color-${color}-contrast`),
       },
       {
         property: `--ion-color-${color}-contrast-rgb`,
         name: 'Contrast (rgb)',
         rgb: true,
         description: 'The contrast color in red, green, blue format',
-        value: getComputedStyle(el.current).getPropertyValue(
-          `--ion-color-${color}-contrast-rgb`,
-        ),
+        value: getComputedStyle(el.current).getPropertyValue(`--ion-color-${color}-contrast-rgb`),
       },
       {
         property: `--ion-color-${color}-shade`,
         name: 'Shade',
         description: 'A slightly darker version of the base color',
-        value: getComputedStyle(el.current).getPropertyValue(
-          `--ion-color-${color}-shade`,
-        ),
+        value: getComputedStyle(el.current).getPropertyValue(`--ion-color-${color}-shade`),
       },
       {
         property: `--ion-color-${color}-tint`,
         name: 'Tint',
         description: 'A slightly lighter version of the base color',
-        value: getComputedStyle(el.current).getPropertyValue(
-          `--ion-color-${color}-tint`,
-        ),
+        value: getComputedStyle(el.current).getPropertyValue(`--ion-color-${color}-tint`),
       },
     ]);
   }, [color]);
@@ -82,10 +69,7 @@ export default function LayeredColorsSelect({ ...props }) {
       <div className={styles.selectRow}>
         <ColorDot color={`var(--ion-color-${color})`} />
         <InputWrapper>
-          <select
-            value={color}
-            onChange={ev => setColor((ev.target as HTMLSelectElement).value)}
-          >
+          <select value={color} onChange={(ev) => setColor((ev.target as HTMLSelectElement).value)}>
             <option value="primary">Primary</option>
             <option value="secondary">Secondary</option>
             <option value="tertiary">Tertiary</option>
@@ -105,10 +89,8 @@ export default function LayeredColorsSelect({ ...props }) {
           <th>Default Value</th>
           <th>Description</th>
         </tr>
-        {variations.map(variation => {
-          const codeColor = variation.rgb
-            ? `rgb(${variation.value})`
-            : `${variation.value}`;
+        {variations.map((variation) => {
+          const codeColor = variation.rgb ? `rgb(${variation.value})` : `${variation.value}`;
 
           return (
             <tr>
@@ -117,13 +99,9 @@ export default function LayeredColorsSelect({ ...props }) {
                 <code>{variation.property}</code>
               </td>
               <td className={styles.colorValue}>
-                <CodeColor
-                  color={codeColor}
-                >{variation.value}</CodeColor>
+                <CodeColor color={codeColor}>{variation.value}</CodeColor>
               </td>
-              <td className={styles.colorDescription}>
-                {variation.description}
-              </td>
+              <td className={styles.colorDescription}>{variation.description}</td>
             </tr>
           );
         })}

@@ -1,4 +1,4 @@
-import clsx from "clsx";
+import clsx from 'clsx';
 import React from 'react';
 
 import styles from './index.module.scss';
@@ -14,8 +14,9 @@ export default function InputWrapper({ ...props }) {
       className={clsx(
         props.className,
         'input-wrapper',
-        styles.inputWrapper, styles[`inputWrapper${isDarkTheme ? 'Dark' : 'Light'}`]
+        styles.inputWrapper,
+        styles[`inputWrapper${isDarkTheme ? 'Dark' : 'Light'}`]
       )}
     />
-  )
-} 
+  );
+}

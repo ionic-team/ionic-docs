@@ -9,10 +9,7 @@ const { renderMarkdown } = require('./utils.js');
 
 dotenv.config();
 
-const OUTPUT_PATH = resolve(
-  __dirname,
-  '../src/theme/ReleaseNotes/release-notes.json',
-);
+const OUTPUT_PATH = resolve(__dirname, '../src/theme/ReleaseNotes/release-notes.json');
 
 // export default {
 //   title: 'Build Release Notes data',
@@ -32,12 +29,9 @@ const getReleases = async () => {
       }),
       {
         headers: {
-          Authorization:
-            process.env.GITHUB_TOKEN !== undefined
-              ? `token ${process.env.GITHUB_TOKEN}`
-              : '',
+          Authorization: process.env.GITHUB_TOKEN !== undefined ? `token ${process.env.GITHUB_TOKEN}` : '',
         },
-      },
+      }
     );
 
     const releases = await request.json();
@@ -46,13 +40,13 @@ const getReleases = async () => {
     // successful but returned an object
     if (Array.isArray(releases)) {
       return releases
-        .filter(release => {
+        .filter((release) => {
           const releasePattern = /^v(\d+)\.(\d+)\.(\d+)$/;
 
           // All non-prerelease, non-alpha, non-beta, non-rc release
           return releasePattern.test(release.tag_name);
         })
-        .map(release => {
+        .map((release) => {
           const body = renderMarkdown(release.body).contents;
           const published_at = parseDate(release.published_at);
           const version = release.tag_name.replace('v', '');
@@ -87,13 +81,7 @@ const getReleases = async () => {
 // and returns it as April 26 2019
 function parseDate(datetime) {
   const date = new Date(datetime);
-  return (
-    date.toLocaleString('en-us', { month: 'long' }) +
-    ' ' +
-    date.getDate() +
-    ' ' +
-    date.getFullYear()
-  );
+  return date.toLocaleString('en-us', { month: 'long' }) + ' ' + date.getDate() + ' ' + date.getFullYear();
 }
 
 // Given a version, return if it is a
@@ -116,9 +104,7 @@ function getVersionType(version) {
 
 // Given a version, return its element symbol
 function getVersionSymbol(version) {
-  const filteredVersions = versions.filter(v =>
-    version.startsWith(`${v.minor}.`),
-  );
+  const filteredVersions = versions.filter((v) => version.startsWith(`${v.minor}.`));
   filteredVersions.unshift(fallbackVersion);
 
   return filteredVersions[filteredVersions.length - 1].symbol;
@@ -126,9 +112,7 @@ function getVersionSymbol(version) {
 
 // Given a version, return its element name
 function getVersionElement(version) {
-  const filteredVersions = versions.filter(v =>
-    version.startsWith(`${v.minor}.`),
-  );
+  const filteredVersions = versions.filter((v) => version.startsWith(`${v.minor}.`));
   filteredVersions.unshift(fallbackVersion);
 
   return filteredVersions[filteredVersions.length - 1].element;

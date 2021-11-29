@@ -18,40 +18,42 @@ This guide will document [nvm](https://github.com/nvm-sh/nvm) installation and u
 
 1. Install nvm.
 
-    ```shell
-    $ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh | bash
-    ```
+   ```shell
+   $ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh | bash
+   ```
 
 1. New terminals will now use nvm. To verify, open a new terminal and run the following. If something prints, the installation was successful.
 
-    ```shell
-    $ command -v nvm
-    ```
+   ```shell
+   $ command -v nvm
+   ```
 
 1. To download and install the latest LTS release of NodeJS, run:
 
-    ```shell
-    $ nvm install --lts
-    ```
+   ```shell
+   $ nvm install --lts
+   ```
 
 1. Set the newly installed NodeJS as the default environment:
 
-    ```shell
-    $ nvm alias default lts/*
-    ```
+   ```shell
+   $ nvm alias default lts/*
+   ```
 
 1. New terminals will now use the nvm-controlled NodeJS. To verify:
 
-    ```shell
-    $ node -v  # will print the version installed above
-    $ which npm  # will print a path somewhere within the ~/.nvm folder
-    ```
+   ```shell
+   $ node -v  # will print the version installed above
+   $ which npm  # will print a path somewhere within the ~/.nvm folder
+   ```
 
 Global packages will now be installed in the `~/.nvm` directory, so permission errors should no longer occur as long as `npm` is used _without_ `sudo`.
 
 ### Option 2
 
-<small><em>Does not apply to Windows</em></small>
+<small>
+  <em>Does not apply to Windows</em>
+</small>
 
 Change the owner of npm's directories to the current user:
 

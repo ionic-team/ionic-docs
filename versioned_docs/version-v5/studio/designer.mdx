@@ -6,10 +6,10 @@ The Designer is the powerhouse of Studio, offering a drag-and-drop page builder 
 
 With the Designer, developers can:
 
-* Drag and drop to build pages and components
-* Select from the entire library of Ionic elements for drag-and-drop *and* code editing.
-* Switch between visual and code editing for pages and components
-* View and work with most supported Ionic element properties, saving a trip checking the Documentation
+- Drag and drop to build pages and components
+- Select from the entire library of Ionic elements for drag-and-drop _and_ code editing.
+- Switch between visual and code editing for pages and components
+- View and work with most supported Ionic element properties, saving a trip checking the Documentation
 
 <figure>
   <img alt="Designer Mode" src={require('./_assets/img/ss-designer.png').default} />
@@ -24,8 +24,16 @@ When first loaded, the Designer index is shown. This index lsits the pages and c
 Studio finds pages and components by scanning your project looking for Component source files, so works on a variety of project file layouts.
 
 <blockquote>
-<p>Since the difference between pages and components is conceptual, Ionic Studio relies on convention to differentiate them. If there are pages missing, make sure each page follows the convention Ionic Studio is expecting:</p>
-<p>The files that represent each page must have the proper suffixes (e.g. <code>.page.ts</code>, <code>.page.html</code>, <code>.page.scss</code>). See the <a href="https://angular.io/guide/styleguide#naming">Angular style guide</a> for additional information about naming conventions.</p>
+  <p>
+    Since the difference between pages and components is conceptual, Ionic Studio relies on convention to differentiate
+    them. If there are pages missing, make sure each page follows the convention Ionic Studio is expecting:
+  </p>
+  <p>
+    The files that represent each page must have the proper suffixes (e.g. <code>.page.ts</code>,{' '}
+    <code>.page.html</code>, <code>.page.scss</code>). See the{' '}
+    <a href="https://angular.io/guide/styleguide#naming">Angular style guide</a> for additional information about naming
+    conventions.
+  </p>
 </blockquote>
 
 <figure>
@@ -57,7 +65,8 @@ When adding a component (rather than a page), Studio will prompt for the name an
 This adds the component as a _import_ in the NgModule of the selected page, which allows it to be used in that page.
 
 <blockquote>
-The same code changes are necessary to use the component in other pages. See [this FAQ](faq.md#using-a-custom-component-in-additional-pages) for details.
+  The same code changes are necessary to use the component in other pages. See [this
+  FAQ](faq.md#using-a-custom-component-in-additional-pages) for details.
 </blockquote>
 
 ## Drag & Drop
@@ -86,7 +95,7 @@ To select any element in the current document, access the element tree and click
 
 ### Adding New Elements
 
-To add new elements to a page or component, drag and drop a new element from the Elements list, or use right click and "Quick Add" to 
+To add new elements to a page or component, drag and drop a new element from the Elements list, or use right click and "Quick Add" to
 add context-specific elements easily.
 
 <figure>
@@ -122,7 +131,8 @@ In the properties panel, the properties that can be modified are listed.
 For Ionic components, the properties panel contains a link to the component's documentation at the bottom.
 
 <blockquote>
-Unfortunately, the properties panel does not show properties for custom components in your app, but this is a feature we'll be adding!
+  Unfortunately, the properties panel does not show properties for custom components in your app, but this is a feature
+  we'll be adding!
 </blockquote>
 
 ## Editor View

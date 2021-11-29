@@ -80,10 +80,7 @@ of the [IANA time zone database](https://www.iana.org/time-zones), such as "Asia
 "Asia/Kolkata", "America/New_York". In the following example:
 
 ```html
-<ion-datetime
-  value="2019-10-01T15:43:40.394Z"
-  display-timezone="utc"
-></ion-datetime>
+<ion-datetime value="2019-10-01T15:43:40.394Z" display-timezone="utc"></ion-datetime>
 ```
 
 The displayed value will not be converted and will be displayed as provided (UTC).
@@ -199,28 +196,17 @@ dates in JavaScript.
 ```html
 <ion-item>
   <ion-label>MMMM</ion-label>
-  <ion-datetime
-    displayFormat="MMMM"
-    value="2012-12-15T13:47:20.789"
-  ></ion-datetime>
+  <ion-datetime displayFormat="MMMM" value="2012-12-15T13:47:20.789"></ion-datetime>
 </ion-item>
 
 <ion-item>
   <ion-label>MM DD YY</ion-label>
-  <ion-datetime
-    displayFormat="MM DD YY"
-    placeholder="Select Date"
-  ></ion-datetime>
+  <ion-datetime displayFormat="MM DD YY" placeholder="Select Date"></ion-datetime>
 </ion-item>
 
 <ion-item>
   <ion-label>Disabled</ion-label>
-  <ion-datetime
-    id="dynamicDisabled"
-    displayFormat="MM DD YY"
-    disabled
-    value="1994-12-15"
-  ></ion-datetime>
+  <ion-datetime id="dynamicDisabled" displayFormat="MM DD YY" disabled value="1994-12-15"></ion-datetime>
 </ion-item>
 
 <ion-item>
@@ -256,11 +242,7 @@ dates in JavaScript.
 
 <ion-item>
   <ion-label position="floating">MM/DD/YYYY</ion-label>
-  <ion-datetime
-    displayFormat="MM/DD/YYYY"
-    min="1994-03-14"
-    max="2012-12-09"
-  ></ion-datetime>
+  <ion-datetime displayFormat="MM/DD/YYYY" min="1994-03-14" max="2012-12-09"></ion-datetime>
 </ion-item>
 
 <ion-item>
@@ -277,22 +259,12 @@ dates in JavaScript.
 
 <ion-item>
   <ion-label>D MMM YYYY H:mm</ion-label>
-  <ion-datetime
-    displayFormat="D MMM YYYY H:mm"
-    min="1997"
-    max="2010"
-    value="2005-06-17T11:06Z"
-  ></ion-datetime>
+  <ion-datetime displayFormat="D MMM YYYY H:mm" min="1997" max="2010" value="2005-06-17T11:06Z"></ion-datetime>
 </ion-item>
 
 <ion-item>
   <ion-label>DDDD MMM D, YYYY</ion-label>
-  <ion-datetime
-    displayFormat="DDDD MMM D, YYYY"
-    min="2005"
-    max="2016"
-    value="2008-09-02"
-  ></ion-datetime>
+  <ion-datetime displayFormat="DDDD MMM D, YYYY" min="2005" max="2016" value="2008-09-02"></ion-datetime>
 </ion-item>
 
 <ion-item>
@@ -363,28 +335,17 @@ export class MyComponent {
 ```html
 <ion-item>
   <ion-label>MMMM</ion-label>
-  <ion-datetime
-    display-format="MMMM"
-    value="2012-12-15T13:47:20.789"
-  ></ion-datetime>
+  <ion-datetime display-format="MMMM" value="2012-12-15T13:47:20.789"></ion-datetime>
 </ion-item>
 
 <ion-item>
   <ion-label>MM DD YY</ion-label>
-  <ion-datetime
-    display-format="MM DD YY"
-    placeholder="Select Date"
-  ></ion-datetime>
+  <ion-datetime display-format="MM DD YY" placeholder="Select Date"></ion-datetime>
 </ion-item>
 
 <ion-item>
   <ion-label>Disabled</ion-label>
-  <ion-datetime
-    id="dynamicDisabled"
-    display-format="MM DD YY"
-    disabled
-    value="1994-12-15"
-  ></ion-datetime>
+  <ion-datetime id="dynamicDisabled" display-format="MM DD YY" disabled value="1994-12-15"></ion-datetime>
 </ion-item>
 
 <ion-item>
@@ -420,11 +381,7 @@ export class MyComponent {
 
 <ion-item>
   <ion-label position="floating">MM/DD/YYYY</ion-label>
-  <ion-datetime
-    display-format="MM/DD/YYYY"
-    min="1994-03-14"
-    max="2012-12-09"
-  ></ion-datetime>
+  <ion-datetime display-format="MM/DD/YYYY" min="1994-03-14" max="2012-12-09"></ion-datetime>
 </ion-item>
 
 <ion-item>
@@ -441,22 +398,12 @@ export class MyComponent {
 
 <ion-item>
   <ion-label>D MMM YYYY H:mm</ion-label>
-  <ion-datetime
-    display-format="D MMM YYYY H:mm"
-    min="1997"
-    max="2010"
-    value="2005-06-17T11:06Z"
-  ></ion-datetime>
+  <ion-datetime display-format="D MMM YYYY H:mm" min="1997" max="2010" value="2005-06-17T11:06Z"></ion-datetime>
 </ion-item>
 
 <ion-item>
   <ion-label>DDDD MMM D, YYYY</ion-label>
-  <ion-datetime
-    display-format="DDDD MMM D, YYYY"
-    min="2005"
-    max="2016"
-    value="2008-09-02"
-  ></ion-datetime>
+  <ion-datetime display-format="DDDD MMM D, YYYY" min="2005" max="2016" value="2008-09-02"></ion-datetime>
 </ion-item>
 
 <ion-item>
@@ -471,10 +418,7 @@ export class MyComponent {
 
 <ion-item>
   <ion-label>hh:mm A (15 min steps)</ion-label>
-  <ion-datetime
-    display-format="h:mm A"
-    minute-values="0,15,30,45"
-  ></ion-datetime>
+  <ion-datetime display-format="h:mm A" minute-values="0,15,30,45"></ion-datetime>
 </ion-item>
 
 <ion-item>
@@ -503,15 +447,7 @@ var yearValuesArray = [2020, 2016, 2008, 2004, 2000, 1996];
 var customYearValues = document.getElementById('customYearValues');
 customYearValues.yearValues = yearValuesArray;
 
-var dayShortNamesArray = [
-  's\u00f8n',
-  'man',
-  'tir',
-  'ons',
-  'tor',
-  'fre',
-  'l\u00f8r',
-];
+var dayShortNamesArray = ['s\u00f8n', 'man', 'tir', 'ons', 'tor', 'fre', 'l\u00f8r'];
 var customDayShortNames = document.getElementById('customDayShortNames');
 customDayShortNames.dayShortNames = dayShortNamesArray;
 
@@ -554,20 +490,10 @@ import {
 
 const customYearValues = [2020, 2016, 2008, 2004, 2000, 1996];
 
-const customDayShortNames = [
-  's\u00f8n',
-  'man',
-  'tir',
-  'ons',
-  'tor',
-  'fre',
-  'l\u00f8r',
-];
+const customDayShortNames = ['s\u00f8n', 'man', 'tir', 'ons', 'tor', 'fre', 'l\u00f8r'];
 
 export const DateTimeExamples: React.FC = () => {
-  const [selectedDate, setSelectedDate] = useState<string>(
-    '2012-12-15T13:47:20.789',
-  );
+  const [selectedDate, setSelectedDate] = useState<string>('2012-12-15T13:47:20.789');
   return (
     <IonPage>
       <IonHeader>
@@ -581,7 +507,7 @@ export const DateTimeExamples: React.FC = () => {
           <IonDatetime
             displayFormat="MMMM"
             value={selectedDate}
-            onIonChange={e => setSelectedDate(e.detail.value!)}
+            onIonChange={(e) => setSelectedDate(e.detail.value!)}
           ></IonDatetime>
         </IonItem>
 
@@ -591,7 +517,7 @@ export const DateTimeExamples: React.FC = () => {
             displayFormat="MM DD YY"
             placeholder="Select Date"
             value={selectedDate}
-            onIonChange={e => setSelectedDate(e.detail.value!)}
+            onIonChange={(e) => setSelectedDate(e.detail.value!)}
           ></IonDatetime>
         </IonItem>
 
@@ -602,7 +528,7 @@ export const DateTimeExamples: React.FC = () => {
             displayFormat="MM DD YY"
             disabled
             value={selectedDate}
-            onIonChange={e => setSelectedDate(e.detail.value!)}
+            onIonChange={(e) => setSelectedDate(e.detail.value!)}
           ></IonDatetime>
         </IonItem>
 
@@ -629,7 +555,7 @@ export const DateTimeExamples: React.FC = () => {
             min="1981"
             max="2002"
             value={selectedDate}
-            onIonChange={e => setSelectedDate(e.detail.value!)}
+            onIonChange={(e) => setSelectedDate(e.detail.value!)}
           ></IonDatetime>
         </IonItem>
 
@@ -640,7 +566,7 @@ export const DateTimeExamples: React.FC = () => {
             min="1989-06-04"
             max="2004-08-23"
             value={selectedDate}
-            onIonChange={e => setSelectedDate(e.detail.value!)}
+            onIonChange={(e) => setSelectedDate(e.detail.value!)}
           ></IonDatetime>
         </IonItem>
 
@@ -651,7 +577,7 @@ export const DateTimeExamples: React.FC = () => {
             min="1994-03-14"
             max="2012-12-09"
             value={selectedDate}
-            onIonChange={e => setSelectedDate(e.detail.value!)}
+            onIonChange={(e) => setSelectedDate(e.detail.value!)}
           ></IonDatetime>
         </IonItem>
 
@@ -662,7 +588,7 @@ export const DateTimeExamples: React.FC = () => {
             min="1994-03-14"
             max="2012-12-09"
             value={selectedDate}
-            onIonChange={e => setSelectedDate(e.detail.value!)}
+            onIonChange={(e) => setSelectedDate(e.detail.value!)}
           ></IonDatetime>
         </IonItem>
 
@@ -675,7 +601,7 @@ export const DateTimeExamples: React.FC = () => {
             displayFormat="DDD. MMM DD, YY"
             monthShortNames="jan, feb, mar, apr, mai, jun, jul, aug, sep, okt, nov, des"
             value={selectedDate}
-            onIonChange={e => setSelectedDate(e.detail.value!)}
+            onIonChange={(e) => setSelectedDate(e.detail.value!)}
           ></IonDatetime>
         </IonItem>
 
@@ -686,7 +612,7 @@ export const DateTimeExamples: React.FC = () => {
             min="1997"
             max="2010"
             value={selectedDate}
-            onIonChange={e => setSelectedDate(e.detail.value!)}
+            onIonChange={(e) => setSelectedDate(e.detail.value!)}
           ></IonDatetime>
         </IonItem>
 
@@ -697,7 +623,7 @@ export const DateTimeExamples: React.FC = () => {
             min="2005"
             max="2016"
             value={selectedDate}
-            onIonChange={e => setSelectedDate(e.detail.value!)}
+            onIonChange={(e) => setSelectedDate(e.detail.value!)}
           ></IonDatetime>
         </IonItem>
 
@@ -706,7 +632,7 @@ export const DateTimeExamples: React.FC = () => {
           <IonDatetime
             displayFormat="HH:mm"
             value={selectedDate}
-            onIonChange={e => setSelectedDate(e.detail.value!)}
+            onIonChange={(e) => setSelectedDate(e.detail.value!)}
           ></IonDatetime>
         </IonItem>
 
@@ -715,7 +641,7 @@ export const DateTimeExamples: React.FC = () => {
           <IonDatetime
             displayFormat="h:mm a"
             value={selectedDate}
-            onIonChange={e => setSelectedDate(e.detail.value!)}
+            onIonChange={(e) => setSelectedDate(e.detail.value!)}
           ></IonDatetime>
         </IonItem>
 
@@ -725,7 +651,7 @@ export const DateTimeExamples: React.FC = () => {
             displayFormat="h:mm A"
             minuteValues="0,15,30,45"
             value={selectedDate}
-            onIonChange={e => setSelectedDate(e.detail.value!)}
+            onIonChange={(e) => setSelectedDate(e.detail.value!)}
           ></IonDatetime>
         </IonItem>
 
@@ -737,7 +663,7 @@ export const DateTimeExamples: React.FC = () => {
             monthValues="6,7,8"
             yearValues={customYearValues}
             value={selectedDate}
-            onIonChange={e => setSelectedDate(e.detail.value!)}
+            onIonChange={(e) => setSelectedDate(e.detail.value!)}
           ></IonDatetime>
         </IonItem>
 
@@ -749,7 +675,7 @@ export const DateTimeExamples: React.FC = () => {
             dayValues="01,02,03,04,05,06,08,09,10, 11, 12, 13, 14"
             displayFormat="DD/MMM/YYYY"
             value={selectedDate}
-            onIonChange={e => setSelectedDate(e.detail.value!)}
+            onIonChange={(e) => setSelectedDate(e.detail.value!)}
           ></IonDatetime>
         </IonItem>
       </IonContent>
@@ -774,15 +700,7 @@ import { Component, h } from '@stencil/core';
 })
 export class DatetimeExample {
   private customYearValues = [2020, 2016, 2008, 2004, 2000, 1996];
-  private customDayShortNames = [
-    's\u00f8n',
-    'man',
-    'tir',
-    'ons',
-    'tor',
-    'fre',
-    'l\u00f8r',
-  ];
+  private customDayShortNames = ['s\u00f8n', 'man', 'tir', 'ons', 'tor', 'fre', 'l\u00f8r'];
   private customPickerOptions = {
     buttons: [
       {
@@ -803,28 +721,17 @@ export class DatetimeExample {
     return [
       <ion-item>
         <ion-label>MMMM</ion-label>
-        <ion-datetime
-          displayFormat="MMMM"
-          value="2012-12-15T13:47:20.789"
-        ></ion-datetime>
+        <ion-datetime displayFormat="MMMM" value="2012-12-15T13:47:20.789"></ion-datetime>
       </ion-item>,
 
       <ion-item>
         <ion-label>MM DD YY</ion-label>
-        <ion-datetime
-          displayFormat="MM DD YY"
-          placeholder="Select Date"
-        ></ion-datetime>
+        <ion-datetime displayFormat="MM DD YY" placeholder="Select Date"></ion-datetime>
       </ion-item>,
 
       <ion-item>
         <ion-label>Disabled</ion-label>
-        <ion-datetime
-          id="dynamicDisabled"
-          displayFormat="MM DD YY"
-          disabled
-          value="1994-12-15"
-        ></ion-datetime>
+        <ion-datetime id="dynamicDisabled" displayFormat="MM DD YY" disabled value="1994-12-15"></ion-datetime>
       </ion-item>,
 
       <ion-item>
@@ -860,11 +767,7 @@ export class DatetimeExample {
 
       <ion-item>
         <ion-label position="floating">MM/DD/YYYY</ion-label>
-        <ion-datetime
-          displayFormat="MM/DD/YYYY"
-          min="1994-03-14"
-          max="2012-12-09"
-        ></ion-datetime>
+        <ion-datetime displayFormat="MM/DD/YYYY" min="1994-03-14" max="2012-12-09"></ion-datetime>
       </ion-item>,
 
       <ion-item>
@@ -881,22 +784,12 @@ export class DatetimeExample {
 
       <ion-item>
         <ion-label>D MMM YYYY H:mm</ion-label>
-        <ion-datetime
-          displayFormat="D MMM YYYY H:mm"
-          min="1997"
-          max="2010"
-          value="2005-06-17T11:06Z"
-        ></ion-datetime>
+        <ion-datetime displayFormat="D MMM YYYY H:mm" min="1997" max="2010" value="2005-06-17T11:06Z"></ion-datetime>
       </ion-item>,
 
       <ion-item>
         <ion-label>DDDD MMM D, YYYY</ion-label>
-        <ion-datetime
-          displayFormat="DDDD MMM D, YYYY"
-          min="2005"
-          max="2016"
-          value="2008-09-02"
-        ></ion-datetime>
+        <ion-datetime displayFormat="DDDD MMM D, YYYY" min="2005" max="2016" value="2008-09-02"></ion-datetime>
       </ion-item>,
 
       <ion-item>
@@ -911,10 +804,7 @@ export class DatetimeExample {
 
       <ion-item>
         <ion-label>hh:mm A (15 min steps)</ion-label>
-        <ion-datetime
-          displayFormat="h:mm A"
-          minuteValues="0,15,30,45"
-        ></ion-datetime>
+        <ion-datetime displayFormat="h:mm A" minuteValues="0,15,30,45"></ion-datetime>
       </ion-item>,
 
       <ion-item>
@@ -949,28 +839,17 @@ export class DatetimeExample {
 <template>
   <ion-item>
     <ion-label>MMMM</ion-label>
-    <ion-datetime
-      display-format="MMMM"
-      value="2012-12-15T13:47:20.789"
-    ></ion-datetime>
+    <ion-datetime display-format="MMMM" value="2012-12-15T13:47:20.789"></ion-datetime>
   </ion-item>
 
   <ion-item>
     <ion-label>MM DD YY</ion-label>
-    <ion-datetime
-      display-format="MM DD YY"
-      placeholder="Select Date"
-    ></ion-datetime>
+    <ion-datetime display-format="MM DD YY" placeholder="Select Date"></ion-datetime>
   </ion-item>
 
   <ion-item>
     <ion-label>Disabled</ion-label>
-    <ion-datetime
-      id="dynamicDisabled"
-      display-format="MM DD YY"
-      disabled
-      value="1994-12-15"
-    ></ion-datetime>
+    <ion-datetime id="dynamicDisabled" display-format="MM DD YY" disabled value="1994-12-15"></ion-datetime>
   </ion-item>
 
   <ion-item>
@@ -1006,11 +885,7 @@ export class DatetimeExample {
 
   <ion-item>
     <ion-label position="floating">MM/DD/YYYY</ion-label>
-    <ion-datetime
-      display-format="MM/DD/YYYY"
-      min="1994-03-14"
-      max="2012-12-09"
-    ></ion-datetime>
+    <ion-datetime display-format="MM/DD/YYYY" min="1994-03-14" max="2012-12-09"></ion-datetime>
   </ion-item>
 
   <ion-item>
@@ -1027,22 +902,12 @@ export class DatetimeExample {
 
   <ion-item>
     <ion-label>D MMM YYYY H:mm</ion-label>
-    <ion-datetime
-      display-format="D MMM YYYY H:mm"
-      min="1997"
-      max="2010"
-      value="2005-06-17T11:06Z"
-    ></ion-datetime>
+    <ion-datetime display-format="D MMM YYYY H:mm" min="1997" max="2010" value="2005-06-17T11:06Z"></ion-datetime>
   </ion-item>
 
   <ion-item>
     <ion-label>DDDD MMM D, YYYY</ion-label>
-    <ion-datetime
-      display-format="DDDD MMM D, YYYY"
-      min="2005"
-      max="2016"
-      value="2008-09-02"
-    ></ion-datetime>
+    <ion-datetime display-format="DDDD MMM D, YYYY" min="2005" max="2016" value="2008-09-02"></ion-datetime>
   </ion-item>
 
   <ion-item>
@@ -1057,10 +922,7 @@ export class DatetimeExample {
 
   <ion-item>
     <ion-label>hh:mm A (15 min steps)</ion-label>
-    <ion-datetime
-      display-format="h:mm A"
-      minute-values="0,15,30,45"
-    ></ion-datetime>
+    <ion-datetime display-format="h:mm A" minute-values="0,15,30,45"></ion-datetime>
   </ion-item>
 
   <ion-item>
@@ -1092,15 +954,7 @@ export class DatetimeExample {
     components: { IonDatetime, IonItem, IonLabel },
     setup() {
       const customYearValues = [2020, 2016, 2008, 2004, 2000, 1996];
-      const customDayShortNames = [
-        's\u00f8n',
-        'man',
-        'tir',
-        'ons',
-        'tor',
-        'fre',
-        'l\u00f8r',
-      ];
+      const customDayShortNames = ['s\u00f8n', 'man', 'tir', 'ons', 'tor', 'fre', 'l\u00f8r'];
       const customPickerOptions = {
         buttons: [
           {

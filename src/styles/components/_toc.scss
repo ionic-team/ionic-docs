@@ -13,7 +13,7 @@ html[data-theme='dark'] {
 
 //overrides
 #__docusaurus {
-  [class^=tableOfContents_] {
+  [class^='tableOfContents_'] {
     position: static;
     top: initial;
     overflow-x: hidden;
@@ -38,7 +38,7 @@ html[data-theme='dark'] {
     padding-inline-start: 2rem;
 
     h2 {
-      font-size: .625rem;
+      font-size: 0.625rem;
       line-height: 12px;
       letter-spacing: 0.08em;
       text-transform: uppercase;
@@ -65,11 +65,11 @@ html[data-theme='dark'] {
       --edit-this-page-c: var(--ifm-heading-color);
 
       font-weight: 600;
-      font-size: .875rem;
+      font-size: 0.875rem;
     }
   }
 
-  [class^=tocCollapsible_] {
+  [class^='tocCollapsible_'] {
     @media (max-width: 996px) {
       display: none;
     }

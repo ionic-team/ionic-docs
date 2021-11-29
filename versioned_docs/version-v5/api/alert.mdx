@@ -104,7 +104,7 @@ export class AlertExample {
           text: 'Cancel',
           role: 'cancel',
           cssClass: 'secondary',
-          handler: blah => {
+          handler: (blah) => {
             console.log('Confirm Cancel: blah');
           },
         },
@@ -258,8 +258,7 @@ export class AlertExample {
         {
           name: 'radio6',
           type: 'radio',
-          label:
-            'Radio 6 Radio 6 Radio 6 Radio 6 Radio 6 Radio 6 Radio 6 Radio 6 Radio 6 Radio 6 ',
+          label: 'Radio 6 Radio 6 Radio 6 Radio 6 Radio 6 Radio 6 Radio 6 Radio 6 Radio 6 Radio 6 ',
           value: 'value6',
           handler: () => {
             console.log('Radio 6 selected');
@@ -425,13 +424,14 @@ function presentAlertConfirm() {
       cssClass: 'secondary',
       handler: (blah) => {
         console.log('Confirm Cancel: blah');
-      }
-    }, {
+      },
+    },
+    {
       text: 'Okay',
       handler: () => {
-        console.log('Confirm Okay')
-      }
-    }
+        console.log('Confirm Okay');
+      },
+    },
   ];
 
   document.body.appendChild(alert);
@@ -444,48 +444,48 @@ function presentAlertPrompt() {
   alert.header = 'Prompt!';
   alert.inputs = [
     {
-      placeholder: 'Placeholder 1'
+      placeholder: 'Placeholder 1',
     },
     {
       name: 'name2',
       id: 'name2-id',
       value: 'hello',
-      placeholder: 'Placeholder 2'
+      placeholder: 'Placeholder 2',
     },
     // multiline input.
     {
       name: 'paragraph',
       id: 'paragraph',
       type: 'textarea',
-      placeholder: 'Placeholder 3'
+      placeholder: 'Placeholder 3',
     },
     {
       name: 'name3',
       value: 'http://ionicframework.com',
       type: 'url',
-      placeholder: 'Favorite site ever'
+      placeholder: 'Favorite site ever',
     },
     // input date with min & max
     {
       name: 'name4',
       type: 'date',
       min: '2017-03-01',
-      max: '2018-01-12'
+      max: '2018-01-12',
     },
     // input date without min nor max
     {
       name: 'name5',
-      type: 'date'
+      type: 'date',
     },
     {
       name: 'name6',
       type: 'number',
       min: -5,
-      max: 10
+      max: 10,
     },
     {
       name: 'name7',
-      type: 'number'
+      type: 'number',
     },
     {
       name: 'name8',
@@ -494,9 +494,9 @@ function presentAlertPrompt() {
       cssClass: 'specialClass',
       attributes: {
         maxlength: 4,
-        inputmode: 'decimal'
-      }
-    }
+        inputmode: 'decimal',
+      },
+    },
   ];
   alert.buttons = [
     {
@@ -504,14 +504,15 @@ function presentAlertPrompt() {
       role: 'cancel',
       cssClass: 'secondary',
       handler: () => {
-        console.log('Confirm Cancel')
-      }
-    }, {
+        console.log('Confirm Cancel');
+      },
+    },
+    {
       text: 'Ok',
       handler: () => {
-        console.log('Confirm Ok')
-      }
-    }
+        console.log('Confirm Ok');
+      },
+    },
   ];
 
   document.body.appendChild(alert);
@@ -530,7 +531,7 @@ function presentAlertRadio() {
       handler: () => {
         console.log('Radio 1 selected');
       },
-      checked: true
+      checked: true,
     },
     {
       type: 'radio',
@@ -538,7 +539,7 @@ function presentAlertRadio() {
       value: 'value2',
       handler: () => {
         console.log('Radio 2 selected');
-      }
+      },
     },
     {
       type: 'radio',
@@ -546,7 +547,7 @@ function presentAlertRadio() {
       value: 'value3',
       handler: () => {
         console.log('Radio 3 selected');
-      }
+      },
     },
     {
       type: 'radio',
@@ -554,7 +555,7 @@ function presentAlertRadio() {
       value: 'value4',
       handler: () => {
         console.log('Radio 4 selected');
-      }
+      },
     },
     {
       type: 'radio',
@@ -562,7 +563,7 @@ function presentAlertRadio() {
       value: 'value5',
       handler: () => {
         console.log('Radio 5 selected');
-      }
+      },
     },
     {
       type: 'radio',
@@ -570,8 +571,8 @@ function presentAlertRadio() {
       value: 'value6',
       handler: () => {
         console.log('Radio 6 selected');
-      }
-    }
+      },
+    },
   ];
   alert.buttons = [
     {
@@ -579,14 +580,15 @@ function presentAlertRadio() {
       role: 'cancel',
       cssClass: 'secondary',
       handler: () => {
-        console.log('Confirm Cancel')
-      }
-    }, {
+        console.log('Confirm Cancel');
+      },
+    },
+    {
       text: 'Ok',
       handler: () => {
-        console.log('Confirm Ok')
-      }
-    }
+        console.log('Confirm Ok');
+      },
+    },
   ];
   document.body.appendChild(alert);
   return alert.present();
@@ -604,7 +606,7 @@ function presentAlertCheckbox() {
       handler: () => {
         console.log('Checkbox 1 selected');
       },
-      checked: true
+      checked: true,
     },
 
     {
@@ -613,7 +615,7 @@ function presentAlertCheckbox() {
       value: 'value2',
       handler: () => {
         console.log('Checkbox 2 selected');
-      }
+      },
     },
 
     {
@@ -622,7 +624,7 @@ function presentAlertCheckbox() {
       value: 'value3',
       handler: () => {
         console.log('Checkbox 3 selected');
-      }
+      },
     },
 
     {
@@ -631,7 +633,7 @@ function presentAlertCheckbox() {
       value: 'value4',
       handler: () => {
         console.log('Checkbox 4 selected');
-      }
+      },
     },
 
     {
@@ -640,17 +642,18 @@ function presentAlertCheckbox() {
       value: 'value5',
       handler: () => {
         console.log('Checkbox 5 selected');
-      }
+      },
     },
 
     {
       type: 'checkbox',
-      label: 'Checkbox 6 Checkbox 6 Checkbox 6 Checkbox 6 Checkbox 6 Checkbox 6 Checkbox 6 Checkbox 6 Checkbox 6 Checkbox 6',
+      label:
+        'Checkbox 6 Checkbox 6 Checkbox 6 Checkbox 6 Checkbox 6 Checkbox 6 Checkbox 6 Checkbox 6 Checkbox 6 Checkbox 6',
       value: 'value6',
       handler: () => {
         console.log('Checkbox 6 selected');
-      }
-    }
+      },
+    },
   ];
   alert.buttons = [
     {
@@ -658,14 +661,15 @@ function presentAlertCheckbox() {
       role: 'cancel',
       cssClass: 'secondary',
       handler: () => {
-        console.log('Confirm Cancel')
-      }
-    }, {
+        console.log('Confirm Cancel');
+      },
+    },
+    {
       text: 'Ok',
       handler: () => {
-        console.log('Confirm Ok')
-      }
-    }
+        console.log('Confirm Ok');
+      },
+    },
   ];
 
   document.body.appendChild(alert);
@@ -695,20 +699,14 @@ const AlertExample: React.FC = () => {
               cssClass: 'my-css',
               header: 'Alert',
               message: 'alert from hook',
-              buttons: [
-                'Cancel',
-                { text: 'Ok', handler: d => console.log('ok pressed') },
-              ],
-              onDidDismiss: e => console.log('did dismiss'),
+              buttons: ['Cancel', { text: 'Ok', handler: (d) => console.log('ok pressed') }],
+              onDidDismiss: (e) => console.log('did dismiss'),
             })
           }
         >
           Show Alert
         </IonButton>
-        <IonButton
-          expand="block"
-          onClick={() => present('hello with params', [{ text: 'Ok' }])}
-        >
+        <IonButton expand="block" onClick={() => present('hello with params', [{ text: 'Ok' }])}>
           Show Alert using params
         </IonButton>
       </IonContent>
@@ -782,7 +780,7 @@ export const AlertExample: React.FC = () => {
             text: 'Cancel',
             role: 'cancel',
             cssClass: 'secondary',
-            handler: blah => {
+            handler: (blah) => {
               console.log('Confirm Cancel: blah');
             },
           },
@@ -1087,7 +1085,7 @@ export class AlertExample {
           text: 'Cancel',
           role: 'cancel',
           cssClass: 'secondary',
-          handler: blah => {
+          handler: (blah) => {
             console.log('Confirm Cancel: blah');
           },
         },
@@ -1241,8 +1239,7 @@ export class AlertExample {
         {
           name: 'radio6',
           type: 'radio',
-          label:
-            'Radio 6 Radio 6 Radio 6 Radio 6 Radio 6 Radio 6 Radio 6 Radio 6 Radio 6 Radio 6 ',
+          label: 'Radio 6 Radio 6 Radio 6 Radio 6 Radio 6 Radio 6 Radio 6 Radio 6 Radio 6 Radio 6 ',
           value: 'value6',
           handler: () => {
             console.log('Radio 6 selected');
@@ -1360,24 +1357,12 @@ export class AlertExample {
   render() {
     return [
       <ion-content>
-        <ion-button onClick={() => this.presentAlert()}>
-          Present Alert
-        </ion-button>
-        <ion-button onClick={() => this.presentAlertMultipleButtons()}>
-          Present Alert: Multiple Buttons
-        </ion-button>
-        <ion-button onClick={() => this.presentAlertConfirm()}>
-          Present Alert: Confirm
-        </ion-button>
-        <ion-button onClick={() => this.presentAlertPrompt()}>
-          Present Alert: Prompt
-        </ion-button>
-        <ion-button onClick={() => this.presentAlertRadio()}>
-          Present Alert: Radio
-        </ion-button>
-        <ion-button onClick={() => this.presentAlertCheckbox()}>
-          Present Alert: Checkbox
-        </ion-button>
+        <ion-button onClick={() => this.presentAlert()}>Present Alert</ion-button>
+        <ion-button onClick={() => this.presentAlertMultipleButtons()}>Present Alert: Multiple Buttons</ion-button>
+        <ion-button onClick={() => this.presentAlertConfirm()}>Present Alert: Confirm</ion-button>
+        <ion-button onClick={() => this.presentAlertPrompt()}>Present Alert: Prompt</ion-button>
+        <ion-button onClick={() => this.presentAlertRadio()}>Present Alert: Radio</ion-button>
+        <ion-button onClick={() => this.presentAlertCheckbox()}>Present Alert: Checkbox</ion-button>
       </ion-content>,
     ];
   }
@@ -1391,9 +1376,7 @@ export class AlertExample {
 ```html
 <template>
   <ion-button @click="presentAlert">Show Alert</ion-button>
-  <ion-button @click="presentAlertMultipleButtons"
-    >Show Alert (multiple buttons)</ion-button
-  >
+  <ion-button @click="presentAlertMultipleButtons">Show Alert (multiple buttons)</ion-button>
   <ion-button @click="presentAlertConfirm">Show Alert (confirm)</ion-button>
   <ion-button @click="presentAlertPrompt">Show Alert (prompt)</ion-button>
   <ion-button @click="presentAlertRadio">Show Alert (radio)</ion-button>
@@ -1442,7 +1425,7 @@ export class AlertExample {
               text: 'Cancel',
               role: 'cancel',
               cssClass: 'secondary',
-              handler: blah => {
+              handler: (blah) => {
                 console.log('Confirm Cancel:', blah);
               },
             },

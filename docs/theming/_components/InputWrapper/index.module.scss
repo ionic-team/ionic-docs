@@ -1,9 +1,9 @@
 .inputWrapper {
   --height: 2rem;
   --radius: 4px;
-  --padding-x: .5rem;
-  
-  --font-size: .875rem;
+  --padding-x: 0.5rem;
+
+  --font-size: 0.875rem;
 
   display: flex;
   min-width: 0;
@@ -11,7 +11,7 @@
   border: 1px solid var(--border-c);
   border-radius: var(--radius);
 
-  transition: border-color .2s ease-out;
+  transition: border-color 0.2s ease-out;
 
   &Light {
     --border-c: var(--c-indigo-40);
@@ -31,12 +31,13 @@
   }
 
   :global {
-    input, select {
+    input,
+    select {
       min-width: 0;
 
       border: none;
       border-radius: var(--radius);
-    
+
       padding-inline-start: var(--padding-x);
       padding-inline-end: var(--padding-x);
 
@@ -47,8 +48,9 @@
 
       background: var(--token-primary-bg-c);
 
-      &:focus, &:active {
-        outline: 1px solid rgba(0,0,0,0);
+      &:focus,
+      &:active {
+        outline: 1px solid rgba(0, 0, 0, 0);
       }
     }
   }

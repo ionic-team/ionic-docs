@@ -1,6 +1,7 @@
 ---
-sidebar_label: "ion-item-group"
+sidebar_label: 'ion-item-group'
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
@@ -8,13 +9,9 @@ import TabItem from '@theme/TabItem';
 
 Item groups are containers that organize similar items together. They can contain item dividers to divide the items into multiple sections. They can also be used to group sliding items.
 
-
-
-
 ## Usage
 
 <Tabs groupId="framework" defaultValue="angular" values={[{ value: 'angular', label: 'Angular' }, { value: 'javascript', label: 'Javascript' }, { value: 'react', label: 'React' }, { value: 'stencil', label: 'Stencil' }, { value: 'vue', label: 'Vue' }]}>
-
 
 <TabItem value="angular">
 
@@ -51,13 +48,10 @@ Item groups are containers that organize similar items together. They can contai
   </ion-item>
 </ion-item-group>
 
-
 <!-- They can also be used to group sliding items -->
 <ion-item-group>
   <ion-item-divider>
-    <ion-label>
-      Fruits
-    </ion-label>
+    <ion-label> Fruits </ion-label>
   </ion-item-divider>
 
   <ion-item-sliding>
@@ -67,9 +61,7 @@ Item groups are containers that organize similar items together. They can contai
       </ion-label>
     </ion-item>
     <ion-item-options>
-      <ion-item-option>
-        Favorite
-      </ion-item-option>
+      <ion-item-option> Favorite </ion-item-option>
     </ion-item-options>
   </ion-item-sliding>
 
@@ -80,18 +72,14 @@ Item groups are containers that organize similar items together. They can contai
       </ion-label>
     </ion-item>
     <ion-item-options>
-      <ion-item-option>
-        Favorite
-      </ion-item-option>
+      <ion-item-option> Favorite </ion-item-option>
     </ion-item-options>
   </ion-item-sliding>
 </ion-item-group>
 
 <ion-item-group>
   <ion-item-divider>
-    <ion-label>
-      Vegetables
-    </ion-label>
+    <ion-label> Vegetables </ion-label>
   </ion-item-divider>
 
   <ion-item-sliding>
@@ -101,9 +89,7 @@ Item groups are containers that organize similar items together. They can contai
       </ion-label>
     </ion-item>
     <ion-item-options>
-      <ion-item-option>
-        Favorite
-      </ion-item-option>
+      <ion-item-option> Favorite </ion-item-option>
     </ion-item-options>
   </ion-item-sliding>
 
@@ -114,17 +100,13 @@ Item groups are containers that organize similar items together. They can contai
       </ion-label>
     </ion-item>
     <ion-item-options>
-      <ion-item-option>
-        Favorite
-      </ion-item-option>
+      <ion-item-option> Favorite </ion-item-option>
     </ion-item-options>
   </ion-item-sliding>
 </ion-item-group>
 ```
 
-
 </TabItem>
-
 
 <TabItem value="javascript">
 
@@ -161,13 +143,10 @@ Item groups are containers that organize similar items together. They can contai
   </ion-item>
 </ion-item-group>
 
-
 <!-- They can also be used to group sliding items -->
 <ion-item-group>
   <ion-item-divider>
-    <ion-label>
-      Fruits
-    </ion-label>
+    <ion-label> Fruits </ion-label>
   </ion-item-divider>
 
   <ion-item-sliding>
@@ -177,9 +156,7 @@ Item groups are containers that organize similar items together. They can contai
       </ion-label>
     </ion-item>
     <ion-item-options>
-      <ion-item-option>
-        Favorite
-      </ion-item-option>
+      <ion-item-option> Favorite </ion-item-option>
     </ion-item-options>
   </ion-item-sliding>
 
@@ -190,18 +167,14 @@ Item groups are containers that organize similar items together. They can contai
       </ion-label>
     </ion-item>
     <ion-item-options>
-      <ion-item-option>
-        Favorite
-      </ion-item-option>
+      <ion-item-option> Favorite </ion-item-option>
     </ion-item-options>
   </ion-item-sliding>
 </ion-item-group>
 
 <ion-item-group>
   <ion-item-divider>
-    <ion-label>
-      Vegetables
-    </ion-label>
+    <ion-label> Vegetables </ion-label>
   </ion-item-divider>
 
   <ion-item-sliding>
@@ -211,9 +184,7 @@ Item groups are containers that organize similar items together. They can contai
       </ion-label>
     </ion-item>
     <ion-item-options>
-      <ion-item-option>
-        Favorite
-      </ion-item-option>
+      <ion-item-option> Favorite </ion-item-option>
     </ion-item-options>
   </ion-item-sliding>
 
@@ -224,24 +195,28 @@ Item groups are containers that organize similar items together. They can contai
       </ion-label>
     </ion-item>
     <ion-item-options>
-      <ion-item-option>
-        Favorite
-      </ion-item-option>
+      <ion-item-option> Favorite </ion-item-option>
     </ion-item-options>
   </ion-item-sliding>
 </ion-item-group>
 ```
 
-
 </TabItem>
-
 
 <TabItem value="react">
 
 ```tsx
 import React from 'react';
 
-import { IonItemGroup, IonItemDivider, IonLabel, IonItem, IonItemSliding, IonItemOptions, IonItemOption } from '@ionic/react';
+import {
+  IonItemGroup,
+  IonItemDivider,
+  IonLabel,
+  IonItem,
+  IonItemSliding,
+  IonItemOptions,
+  IonItemOption,
+} from '@ionic/react';
 
 const Example: React.FC<{}> = () => (
   <>
@@ -277,13 +252,10 @@ const Example: React.FC<{}> = () => (
       </IonItem>
     </IonItemGroup>
 
-
     {/*-- They can also be used to group sliding items --*/}
     <IonItemGroup>
       <IonItemDivider>
-        <IonLabel>
-          Fruits
-        </IonLabel>
+        <IonLabel>Fruits</IonLabel>
       </IonItemDivider>
 
       <IonItemSliding>
@@ -293,9 +265,7 @@ const Example: React.FC<{}> = () => (
           </IonLabel>
         </IonItem>
         <IonItemOptions>
-          <IonItemOption>
-            Favorite
-          </IonItemOption>
+          <IonItemOption>Favorite</IonItemOption>
         </IonItemOptions>
       </IonItemSliding>
 
@@ -306,18 +276,14 @@ const Example: React.FC<{}> = () => (
           </IonLabel>
         </IonItem>
         <IonItemOptions>
-          <IonItemOption>
-            Favorite
-          </IonItemOption>
+          <IonItemOption>Favorite</IonItemOption>
         </IonItemOptions>
       </IonItemSliding>
     </IonItemGroup>
 
     <IonItemGroup>
       <IonItemDivider>
-        <IonLabel>
-          Vegetables
-        </IonLabel>
+        <IonLabel>Vegetables</IonLabel>
       </IonItemDivider>
 
       <IonItemSliding>
@@ -327,9 +293,7 @@ const Example: React.FC<{}> = () => (
           </IonLabel>
         </IonItem>
         <IonItemOptions>
-          <IonItemOption>
-            Favorite
-          </IonItemOption>
+          <IonItemOption>Favorite</IonItemOption>
         </IonItemOptions>
       </IonItemSliding>
 
@@ -340,9 +304,7 @@ const Example: React.FC<{}> = () => (
           </IonLabel>
         </IonItem>
         <IonItemOptions>
-          <IonItemOption>
-            Favorite
-          </IonItemOption>
+          <IonItemOption>Favorite</IonItemOption>
         </IonItemOptions>
       </IonItemSliding>
     </IonItemGroup>
@@ -352,9 +314,7 @@ const Example: React.FC<{}> = () => (
 export default Example;
 ```
 
-
 </TabItem>
-
 
 <TabItem value="stencil">
 
@@ -476,7 +436,6 @@ export class ItemGroupExample {
 
 </TabItem>
 
-
 <TabItem value="vue">
 
 ```html
@@ -513,13 +472,10 @@ export class ItemGroupExample {
     </ion-item>
   </ion-item-group>
 
-
   <!-- They can also be used to group sliding items -->
   <ion-item-group>
     <ion-item-divider>
-      <ion-label>
-        Fruits
-      </ion-label>
+      <ion-label> Fruits </ion-label>
     </ion-item-divider>
 
     <ion-item-sliding>
@@ -529,9 +485,7 @@ export class ItemGroupExample {
         </ion-label>
       </ion-item>
       <ion-item-options>
-        <ion-item-option>
-          Favorite
-        </ion-item-option>
+        <ion-item-option> Favorite </ion-item-option>
       </ion-item-options>
     </ion-item-sliding>
 
@@ -542,18 +496,14 @@ export class ItemGroupExample {
         </ion-label>
       </ion-item>
       <ion-item-options>
-        <ion-item-option>
-          Favorite
-        </ion-item-option>
+        <ion-item-option> Favorite </ion-item-option>
       </ion-item-options>
     </ion-item-sliding>
   </ion-item-group>
 
   <ion-item-group>
     <ion-item-divider>
-      <ion-label>
-        Vegetables
-      </ion-label>
+      <ion-label> Vegetables </ion-label>
     </ion-item-divider>
 
     <ion-item-sliding>
@@ -563,9 +513,7 @@ export class ItemGroupExample {
         </ion-label>
       </ion-item>
       <ion-item-options>
-        <ion-item-option>
-          Favorite
-        </ion-item-option>
+        <ion-item-option> Favorite </ion-item-option>
       </ion-item-options>
     </ion-item-sliding>
 
@@ -576,39 +524,36 @@ export class ItemGroupExample {
         </ion-label>
       </ion-item>
       <ion-item-options>
-        <ion-item-option>
-          Favorite
-        </ion-item-option>
+        <ion-item-option> Favorite </ion-item-option>
       </ion-item-options>
     </ion-item-sliding>
   </ion-item-group>
 </template>
 <script>
-import { 
-  IonItem, 
-  IonItemDivider,
-  IonItemGroup, 
-  IonItemOption, 
-  IonItemOptions, 
-  IonItemSliding, 
-  IonLabel
-} from '@ionic/vue';
-import { defineComponent } from 'vue';
-
-export default defineComponent({
-  components: { 
+  import {
     IonItem,
-    IonItemDivider, 
-    IonItemGroup, 
-    IonItemOption, 
-    IonItemOptions, 
-    IonItemSliding, 
-    IonLabel
-  }
-});
+    IonItemDivider,
+    IonItemGroup,
+    IonItemOption,
+    IonItemOptions,
+    IonItemSliding,
+    IonLabel,
+  } from '@ionic/vue';
+  import { defineComponent } from 'vue';
+
+  export default defineComponent({
+    components: {
+      IonItem,
+      IonItemDivider,
+      IonItemGroup,
+      IonItemOption,
+      IonItemOptions,
+      IonItemSliding,
+      IonLabel,
+    },
+  });
 </script>
 ```
-
 
 </TabItem>
 

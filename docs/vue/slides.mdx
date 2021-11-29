@@ -54,7 +54,7 @@ Previously, we were able to target `ion-slides` and `ion-slide` to apply any cus
 
 ### Pre-processors (optional)
 
-For developers using SCSS or Less styles, Swiper also provides imports for those files. 
+For developers using SCSS or Less styles, Swiper also provides imports for those files.
 
 For Less styles, replace `css` with `less` in the Swiper import path:
 
@@ -149,13 +149,12 @@ To begin, we need to import the modules and their corresponding CSS files from t
 ```
 
 From here, we need to provide these modules to Swiper by using the `modules` property on the `swiper` component:
+
 ```html
 <template>
   <ion-page>
     <ion-content>
-      <swiper
-        :modules="modules"
-      >
+      <swiper :modules="modules">
         <swiper-slide>Slide 1</swiper-slide>
         <swiper-slide>Slide 3</swiper-slide>
         <swiper-slide>Slide 3</swiper-slide>
@@ -181,26 +180,20 @@ From here, we need to provide these modules to Swiper by using the `modules` pro
     components: { Swiper, SwiperSlide, IonContent, IonPage },
     setup() {
       return {
-        modules: [Autoplay, Keyboard, Pagination, Scrollbar, Zoom]
-      }
-    }
+        modules: [Autoplay, Keyboard, Pagination, Scrollbar, Zoom],
+      };
+    },
   });
 </script>
 ```
 
 Finally, we can turn these features on by using the appropriate properties:
+
 ```html
 <template>
   <ion-page>
     <ion-content>
-      <swiper
-        :modules="modules"
-        :autoplay="true"
-        :keyboard="true"
-        :pagination="true"
-        :scrollbar="true"
-        :zoom="true"
-      >
+      <swiper :modules="modules" :autoplay="true" :keyboard="true" :pagination="true" :scrollbar="true" :zoom="true">
         <swiper-slide>Slide 1</swiper-slide>
         <swiper-slide>Slide 3</swiper-slide>
         <swiper-slide>Slide 3</swiper-slide>
@@ -226,19 +219,16 @@ Finally, we can turn these features on by using the appropriate properties:
     components: { Swiper, SwiperSlide, IonContent, IonPage },
     setup() {
       return {
-        modules: [Autoplay, Keyboard, Pagination, Scrollbar, Zoom]
-      }
-    }
+        modules: [Autoplay, Keyboard, Pagination, Scrollbar, Zoom],
+      };
+    },
   });
 </script>
 ```
 
-
-
 :::note
 See <a href="https://swiperjs.com/vue#usage" target="_blank" rel="noopener noreferrer">https://swiperjs.com/vue#usage</a> for a full list of modules.
 :::
-
 
 ## The IonicSlides Module
 
@@ -250,14 +240,7 @@ We can install the `IonicSlides` module by importing it from `@ionic/vue` and pa
 <template>
   <ion-page>
     <ion-content>
-      <swiper
-        :modules="modules"
-        :autoplay="true"
-        :keyboard="true"
-        :pagination="true"
-        :scrollbar="true"
-        :zoom="true"
-      >
+      <swiper :modules="modules" :autoplay="true" :keyboard="true" :pagination="true" :scrollbar="true" :zoom="true">
         <swiper-slide>Slide 1</swiper-slide>
         <swiper-slide>Slide 3</swiper-slide>
         <swiper-slide>Slide 3</swiper-slide>
@@ -266,35 +249,33 @@ We can install the `IonicSlides` module by importing it from `@ionic/vue` and pa
   </ion-page>
 </template>
 <script>
-import { defineComponent } from 'vue';
-import { Autoplay, Keyboard, Pagination, Scrollbar, Zoom } from 'swiper';
-import { Swiper, SwiperSlide } from 'swiper/vue';
-import { IonContent, IonPage, IonicSlides } from '@ionic/vue';
+  import { defineComponent } from 'vue';
+  import { Autoplay, Keyboard, Pagination, Scrollbar, Zoom } from 'swiper';
+  import { Swiper, SwiperSlide } from 'swiper/vue';
+  import { IonContent, IonPage, IonicSlides } from '@ionic/vue';
 
-import 'swiper/css';
-import 'swiper/css/autoplay';
-import 'swiper/css/keyboard';
-import 'swiper/css/pagination';
-import 'swiper/css/scrollbar';
-import 'swiper/css/zoom';
-import '@ionic/vue/css/ionic-swiper.css';
+  import 'swiper/css';
+  import 'swiper/css/autoplay';
+  import 'swiper/css/keyboard';
+  import 'swiper/css/pagination';
+  import 'swiper/css/scrollbar';
+  import 'swiper/css/zoom';
+  import '@ionic/vue/css/ionic-swiper.css';
 
-export default defineComponent({
-  components: { Swiper, SwiperSlide, IonContent, IonPage },
-  setup() {
-    return {
-      modules: [Autoplay, Keyboard, Pagination, Scrollbar, Zoom, IonicSlides]
-    }
-  }
-});
+  export default defineComponent({
+    components: { Swiper, SwiperSlide, IonContent, IonPage },
+    setup() {
+      return {
+        modules: [Autoplay, Keyboard, Pagination, Scrollbar, Zoom, IonicSlides],
+      };
+    },
+  });
 </script>
 ```
 
 :::note
 The `IonicSlides` module must be the last module in the array. This will let it automatically customize the settings of modules such as Pagination, Scrollbar, Zoom, and more.
 :::
-
-
 
 ## Properties
 
@@ -326,12 +307,12 @@ To migrate, we would move these options out of the `options` object and onto the
 
 Below is a full list of property changes when going from `ion-slides` to Swiper Vue:
 
-| Name      | Notes                                                                                                                        |
-| --------- | ---------------------------------------------------------------------------------------------------------------------------- |
-| options   | Set each option as a property directly on the `<swiper>` component.                                                          |
+| Name      | Notes                                                                                                                 |
+| --------- | --------------------------------------------------------------------------------------------------------------------- |
+| options   | Set each option as a property directly on the `<swiper>` component.                                                   |
 | mode      | For different styles based upon the mode, you can target the slides with `.ios .swiper` or `.md .swiper` in your CSS. |
-| pager     | Use the `pagination` property instead. Requires installation of the Pagination module.                                       |
-| scrollbar | You can continue to use the `scrollbar` property, just be sure to install the Scrollbar module first.                        |
+| pager     | Use the `pagination` property instead. Requires installation of the Pagination module.                                |
+| scrollbar | You can continue to use the `scrollbar` property, just be sure to install the Scrollbar module first.                 |
 
 :::note
 All properties available in Swiper Vue can be found at <a href="https://swiperjs.com/vue#swiper-props" target="_blank" rel="noopener noreferrer">https://swiperjs.com/vue#swiper-props</a>.
@@ -442,9 +423,7 @@ If you are using effects such as Cube or Fade, you can install them just like we
 <template>
   <ion-page>
     <ion-content>
-      <swiper
-        :modules="modules"
-      >
+      <swiper :modules="modules">
         <swiper-slide>Slide 1</swiper-slide>
         <swiper-slide>Slide 3</swiper-slide>
         <swiper-slide>Slide 3</swiper-slide>
@@ -465,9 +444,9 @@ If you are using effects such as Cube or Fade, you can install them just like we
     components: { Swiper, SwiperSlide, IonContent, IonPage },
     setup() {
       return {
-        modules: [EffectFade, IonicSlides]
-      }
-    }
+        modules: [EffectFade, IonicSlides],
+      };
+    },
   });
 </script>
 ```
@@ -478,9 +457,7 @@ Next, we need to import the stylesheet associated with the effect:
 <template>
   <ion-page>
     <ion-content>
-      <swiper
-        :modules="modules"
-      >
+      <swiper :modules="modules">
         <swiper-slide>Slide 1</swiper-slide>
         <swiper-slide>Slide 3</swiper-slide>
         <swiper-slide>Slide 3</swiper-slide>
@@ -502,9 +479,9 @@ Next, we need to import the stylesheet associated with the effect:
     components: { Swiper, SwiperSlide, IonContent, IonPage },
     setup() {
       return {
-        modules: [EffectFade, IonicSlides]
-      }
-    }
+        modules: [EffectFade, IonicSlides],
+      };
+    },
   });
 </script>
 ```
@@ -515,10 +492,7 @@ After that, we can activate it by setting the `effect` property on `swiper` to `
 <template>
   <ion-page>
     <ion-content>
-      <swiper
-        :modules="modules"
-        effect="fade"
-      >
+      <swiper :modules="modules" effect="fade">
         <swiper-slide>Slide 1</swiper-slide>
         <swiper-slide>Slide 3</swiper-slide>
         <swiper-slide>Slide 3</swiper-slide>
@@ -540,9 +514,9 @@ After that, we can activate it by setting the `effect` property on `swiper` to `
     components: { Swiper, SwiperSlide, IonContent, IonPage },
     setup() {
       return {
-        modules: [EffectFade, IonicSlides]
-      }
-    }
+        modules: [EffectFade, IonicSlides],
+      };
+    },
   });
 </script>
 ```

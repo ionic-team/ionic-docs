@@ -1,6 +1,7 @@
 ---
-sidebar_label: "ion-ripple-effect"
+sidebar_label: 'ion-ripple-effect'
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
@@ -15,7 +16,6 @@ The default type, `"bounded"`, will expand the ripple effect from the click posi
 ## Usage
 
 <Tabs groupId="framework" defaultValue="angular" values={[{ value: 'angular', label: 'Angular' }, { value: 'javascript', label: 'Javascript' }, { value: 'react', label: 'React' }, { value: 'stencil', label: 'Stencil' }, { value: 'vue', label: 'Vue' }]}>
-
 
 <TabItem value="angular">
 
@@ -54,7 +54,6 @@ The default type, `"bounded"`, will expand the ripple effect from the click posi
 
 </TabItem>
 
-
 <TabItem value="javascript">
 
 ```html
@@ -92,7 +91,6 @@ The default type, `"bounded"`, will expand the ripple effect from the click posi
 
 </TabItem>
 
-
 <TabItem value="react">
 
 ```tsx
@@ -102,7 +100,7 @@ import './RippleEffectExample.css';
 
 export const RippleExample: React.FC = () => (
   <IonApp>
-   <IonContent>
+    <IonContent>
       <div className="ion-activatable ripple-parent">
         A plain div with a bounded ripple effect
         <IonRippleEffect></IonRippleEffect>
@@ -136,7 +134,6 @@ export const RippleExample: React.FC = () => (
 
 </TabItem>
 
-
 <TabItem value="stencil">
 
 ```tsx
@@ -144,7 +141,7 @@ import { Component, h } from '@stencil/core';
 
 @Component({
   tag: 'ripple-effect-example',
-  styleUrl: 'ripple-effect-example.css'
+  styleUrl: 'ripple-effect-example.css',
 })
 export class RippleEffectExample {
   render() {
@@ -171,7 +168,7 @@ export class RippleEffectExample {
             <ion-ripple-effect type="unbounded"></ion-ripple-effect>
           </button>
         </ion-content>
-      </ion-app>
+      </ion-app>,
     ];
   }
 }
@@ -185,7 +182,6 @@ export class RippleEffectExample {
 ```
 
 </TabItem>
-
 
 <TabItem value="vue">
 
@@ -224,12 +220,12 @@ export class RippleEffectExample {
 </style>
 
 <script>
-import { IonApp, IonContent, IonRippleEffect } from '@ionic/vue';
-import { defineComponent } from 'vue';
+  import { IonApp, IonContent, IonRippleEffect } from '@ionic/vue';
+  import { defineComponent } from 'vue';
 
-export default defineComponent({
-  components: { IonApp, IonContent, IonRippleEffect }
-});
+  export default defineComponent({
+    components: { IonApp, IonContent, IonRippleEffect },
+  });
 </script>
 ```
 
@@ -239,26 +235,20 @@ export default defineComponent({
 
 ## Properties
 
-
 ### type
 
-| | |
-| --- | --- |
+|                 |                                                                                                                                                                                                                                                                                                                                                                                                   |
+| --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Description** | Sets the type of ripple-effect:<br /><br />- `bounded`: the ripple effect expands from the user's click position<br />- `unbounded`: the ripple effect expands from the center of the button and overflows the container.<br /><br />NOTE: Surfaces for bounded ripples should have the overflow property set to hidden,<br />while surfaces for unbounded ripples should have it set to visible. |
-| **Attribute** | `type` |
-| **Type** | `"bounded" \| "unbounded"` |
-| **Default** | `'bounded'` |
-
-
+| **Attribute**   | `type`                                                                                                                                                                                                                                                                                                                                                                                            |
+| **Type**        | `"bounded" \| "unbounded"`                                                                                                                                                                                                                                                                                                                                                                        |
+| **Default**     | `'bounded'`                                                                                                                                                                                                                                                                                                                                                                                       |
 
 ## Methods
 
-
 ### addRipple
 
-| | |
-| --- | --- |
-| **Description** | Adds the ripple effect to the parent element. |
-| **Signature** | `addRipple(x: number, y: number) => Promise<() => void>` |
-
-
+|                 |                                                          |
+| --------------- | -------------------------------------------------------- |
+| **Description** | Adds the ripple effect to the parent element.            |
+| **Signature**   | `addRipple(x: number, y: number) => Promise<() => void>` |

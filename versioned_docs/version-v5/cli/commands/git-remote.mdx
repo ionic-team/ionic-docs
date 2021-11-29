@@ -1,7 +1,6 @@
 ---
-sidebar_label: "git remote"
+sidebar_label: 'git remote'
 ---
-
 
 # ionic git remote
 

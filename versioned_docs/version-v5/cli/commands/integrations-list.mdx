@@ -1,7 +1,6 @@
 ---
-sidebar_label: "integrations list"
+sidebar_label: 'integrations list'
 ---
-
 
 # ionic integrations list
 

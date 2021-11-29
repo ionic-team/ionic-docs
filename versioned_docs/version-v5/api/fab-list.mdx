@@ -1,6 +1,7 @@
 ---
-sidebar_label: "ion-fab-list"
+sidebar_label: 'ion-fab-list'
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
@@ -11,7 +12,6 @@ The `ion-fab-list` element is a container for multiple fab buttons. This collect
 ## Usage
 
 <Tabs groupId="framework" defaultValue="angular" values={[{ value: 'angular', label: 'Angular' }, { value: 'javascript', label: 'Javascript' }, { value: 'react', label: 'React' }, { value: 'stencil', label: 'Stencil' }, { value: 'vue', label: 'Vue' }]}>
-
 
 <TabItem value="angular">
 
@@ -68,9 +68,7 @@ The `ion-fab-list` element is a container for multiple fab buttons. This collect
 </ion-fab>
 ```
 
-
 </TabItem>
-
 
 <TabItem value="javascript">
 
@@ -127,16 +125,27 @@ The `ion-fab-list` element is a container for multiple fab buttons. This collect
 </ion-fab>
 ```
 
-
 </TabItem>
-
 
 <TabItem value="react">
 
 ```tsx
 import React from 'react';
 import { IonFab, IonFabButton, IonFabList, IonContent, IonIcon } from '@ionic/react';
-import { logoFacebook, logoTwitter, logoYoutube, logoPwa, logoNpm, logoIonic, logoGithub, logoJavascript, logoAngular, logoVimeo, logoChrome, logoReact } from 'ionicons/icons';
+import {
+  logoFacebook,
+  logoTwitter,
+  logoYoutube,
+  logoPwa,
+  logoNpm,
+  logoIonic,
+  logoGithub,
+  logoJavascript,
+  logoAngular,
+  logoVimeo,
+  logoChrome,
+  logoReact,
+} from 'ionicons/icons';
 
 export const FabListExample: React.FC = () => (
   <IonContent>
@@ -192,11 +201,9 @@ export const FabListExample: React.FC = () => (
     </IonFab>
   </IonContent>
 );
-
 ```
 
 </TabItem>
-
 
 <TabItem value="stencil">
 
@@ -205,7 +212,7 @@ import { Component, h } from '@stencil/core';
 
 @Component({
   tag: 'fab-list-example',
-  styleUrl: 'fab-list-example.css'
+  styleUrl: 'fab-list-example.css',
 })
 export class FabListExample {
   render() {
@@ -259,14 +266,13 @@ export class FabListExample {
             <ion-icon name="logo-react"></ion-icon>
           </ion-fab-button>
         </ion-fab-list>
-      </ion-fab>
+      </ion-fab>,
     ];
   }
 }
 ```
 
 </TabItem>
-
 
 <TabItem value="vue">
 
@@ -284,20 +290,18 @@ export class FabListExample {
     <ion-fab-list side="start">
       <ion-fab-button>Vimeo</ion-fab-button>
     </ion-fab-list>
-
   </ion-fab>
 </template>
 
 <script>
-import { IonFab, IonFabButton, IonFabList } from '@ionic/vue';
-import { defineComponent } from 'vue';
+  import { IonFab, IonFabButton, IonFabList } from '@ionic/vue';
+  import { defineComponent } from 'vue';
 
-export default defineComponent({
-  components: { IonFab, IonFabButton, IonFabList }
-});
+  export default defineComponent({
+    components: { IonFab, IonFabButton, IonFabList },
+  });
 </script>
 ```
-
 
 </TabItem>
 
@@ -305,25 +309,20 @@ export default defineComponent({
 
 ## Properties
 
-
 ### activated
 
-| | |
-| --- | --- |
+|                 |                                                                |
+| --------------- | -------------------------------------------------------------- |
 | **Description** | If `true`, the fab list will show all fab buttons in the list. |
-| **Attribute** | `activated` |
-| **Type** | `boolean` |
-| **Default** | `false` |
-
-
+| **Attribute**   | `activated`                                                    |
+| **Type**        | `boolean`                                                      |
+| **Default**     | `false`                                                        |
 
 ### side
 
-| | |
-| --- | --- |
+|                 |                                                                     |
+| --------------- | ------------------------------------------------------------------- |
 | **Description** | The side the fab list will show on relative to the main fab button. |
-| **Attribute** | `side` |
-| **Type** | `"bottom" \| "end" \| "start" \| "top"` |
-| **Default** | `'bottom'` |
-
-
+| **Attribute**   | `side`                                                              |
+| **Type**        | `"bottom" \| "end" \| "start" \| "top"`                             |
+| **Default**     | `'bottom'`                                                          |

@@ -247,10 +247,7 @@ However, in v4, lazy loading is done via the `loadChildren` method of the Angula
 ```tsx
 // home.module.ts
 @NgModule({
-  imports: [
-    IonicModule,
-    RouterModule.forChild([{ path: '', component: HomePage }]),
-  ],
+  imports: [IonicModule, RouterModule.forChild([{ path: '', component: HomePage }])],
   declarations: [HomePage],
 })
 export class HomePageModule {}
