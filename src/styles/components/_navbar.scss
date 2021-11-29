@@ -2,6 +2,8 @@ html[data-theme='light'] {
   --navbar-link-c: var(--c-indigo-80);
 
   --navbar-separator-bg-c: var(--c-indigo-40);
+
+  --ifm-dropdown-background-color: var(--token-secondary-bg-c);
 }
 
 html[data-theme='dark'] {
@@ -167,8 +169,10 @@ html[data-theme='dark'] {
       }
 
       &:not(.navbar__link--active) {
-        &:hover {
-          opacity: .8;
+        &.navbar__link {
+          &:hover {
+            opacity: .8;
+          }
         }
       }
     }

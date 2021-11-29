@@ -25,6 +25,8 @@ html[data-theme='dark'] {
 //overrides
 #__docusaurus {
   [class^=docSidebarContainer] {
+    background: var(--token-primary-bg-c);
+    
     position: sticky;
     top: 0;
     margin-block-start: 0;
@@ -101,8 +103,16 @@ html[data-theme='dark'] {
     align-items: center;
     letter-spacing: -0.01em;
 
+    transition: opacity .2s ease-out;
+
     &:not(.menu__link--active:not(.menu__link--sublist)) {
       background: initial;
+    }
+
+    &:not(.menu__link--active):not(.menu__link--sublist) {
+      &:hover, &:active, &:focus {
+        opacity: .7;
+      }
     }
   }
 
