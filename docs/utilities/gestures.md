@@ -14,6 +14,7 @@ Building complex gestures can be time consuming. Other libraries that provide cu
 
 ````mdx-code-block
 <Tabs
+  groupId="framework"
   defaultValue="javascript"
   values={[
     { value: 'javascript', label: 'JavaScript' },
@@ -130,6 +131,7 @@ const gesture = createGesture({
 
 ````mdx-code-block
 <Tabs
+  groupId="framework"
   defaultValue="javascript"
   values={[
     { value: 'javascript', label: 'JavaScript' },
@@ -264,6 +266,7 @@ In this example, our app listens for gestures on the `.rectangle` element. When 
 
 ````mdx-code-block
 <Tabs
+  groupId="framework"
   defaultValue="javascript"
   values={[
     { value: 'javascript', label: 'JavaScript' },

@@ -29,7 +29,7 @@ You can enable or disable the autostart function in your app.
 <h2 id="installation">
   <a href="#installation">Installation</a>
 </h2>
-<Tabs defaultValue="Capacitor" values={[
+<Tabs groupId="runtime" defaultValue="Capacitor" values={[
   {value: 'Capacitor', label: 'Capacitor'},
   {value: 'Cordova', label: 'Cordova'},
   {value: 'Enterprise', label: 'Enterprise'},

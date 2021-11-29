@@ -31,6 +31,7 @@ The `ionBackButton` event will not be emitted when running an app in a browser o
 
 ````mdx-code-block
 <Tabs
+  groupId="framework"
   defaultValue="javascript"
   values={[
     { value: 'javascript', label: 'JavaScript' },
@@ -104,6 +105,7 @@ Each hardware back button callback has a `processNextHandler` parameter. Calling
 
 ````mdx-code-block
 <Tabs
+  groupId="framework"
   defaultValue="javascript"
   values={[
     { value: 'javascript', label: 'JavaScript' },
@@ -223,6 +225,7 @@ In some scenarios, it may be desirable to quit the app when pressing the hardwar
 
 ````mdx-code-block
 <Tabs
+  groupId="framework"
   defaultValue="javascript"
   values={[
     { value: 'javascript', label: 'JavaScript' },

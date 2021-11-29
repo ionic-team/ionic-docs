@@ -28,7 +28,7 @@ Opens the file picker on iOS for the user to select a file, returns a file URI.
 <h2 id="installation">
   <a href="#installation">Installation</a>
 </h2>
-<Tabs defaultValue="Capacitor" values={[
+<Tabs groupId="runtime" defaultValue="Capacitor" values={[
   {value: 'Capacitor', label: 'Capacitor'},
   {value: 'Cordova', label: 'Cordova'},
   {value: 'Enterprise', label: 'Enterprise'},

@@ -32,7 +32,7 @@ You must add `universal-links` to your `config.xml` and set up Apple App Site As
 <h2 id="installation">
   <a href="#installation">Installation</a>
 </h2>
-<Tabs defaultValue="Capacitor" values={[
+<Tabs groupId="runtime" defaultValue="Capacitor" values={[
   {value: 'Capacitor', label: 'Capacitor'},
   {value: 'Cordova', label: 'Cordova'},
   {value: 'Enterprise', label: 'Enterprise'},

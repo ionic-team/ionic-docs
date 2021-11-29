@@ -45,7 +45,7 @@ The options can be styled individually by adding your own class on the `ion-sele
 
 ## Usage
 
-<Tabs defaultValue="javascript" values={[{ value: 'javascript', label: 'JAVASCRIPT' }, { value: 'react', label: 'REACT' }, { value: 'stencil', label: 'STENCIL' }, { value: 'vue', label: 'VUE' }]}>
+<Tabs groupId="framework" defaultValue="javascript" values={[{ value: 'javascript', label: 'JAVASCRIPT' }, { value: 'react', label: 'REACT' }, { value: 'stencil', label: 'STENCIL' }, { value: 'vue', label: 'VUE' }]}>
 
 
 <TabItem value="javascript">

@@ -31,7 +31,7 @@ For more information about Paytm All-in-One SDK, please visit https://developer.
 <h2 id="installation">
   <a href="#installation">Installation</a>
 </h2>
-<Tabs defaultValue="Capacitor" values={[
+<Tabs groupId="runtime" defaultValue="Capacitor" values={[
   {value: 'Capacitor', label: 'Capacitor'},
   {value: 'Cordova', label: 'Cordova'},
   {value: 'Enterprise', label: 'Enterprise'},
