@@ -29,7 +29,7 @@ This feature is not enabled by default on clickable items for the `md` mode, but
 --item-detail-push-show: true;
 ```
 
-See the [theming documentation](../theming/css-variables.md) for more information.
+See the [theming documentation](../theming/css-variables.mdx) for more information.
 
 -->
 
@@ -47,13 +47,13 @@ The below chart details the item slots and where it will place the element insid
 
 ### Text Alignment
 
-Items left align text and add an ellipsis when the text is wider than the item. See the [CSS Utilities Documentation](../layout/css-utilities.md) for classes that can be added to `<ion-item>` to transform the text.
+Items left align text and add an ellipsis when the text is wider than the item. See the [CSS Utilities Documentation](../layout/css-utilities.mdx) for classes that can be added to `<ion-item>` to transform the text.
 
 ## Input Highlight
 
 ### Highlight Height
 
-Items containing an input will highlight the bottom border of the input with a different color when focused, valid, or invalid. By default, `md` items have a highlight with a height set to `2px` and `ios` has no highlight (technically the height is set to `0`). The height can be changed using the `--highlight-height` CSS property. To turn off the highlight, set this variable to `0`. For more information on setting CSS properties, see the [theming documentation](../theming/css-variables.md).
+Items containing an input will highlight the bottom border of the input with a different color when focused, valid, or invalid. By default, `md` items have a highlight with a height set to `2px` and `ios` has no highlight (technically the height is set to `0`). The height can be changed using the `--highlight-height` CSS property. To turn off the highlight, set this variable to `0`. For more information on setting CSS properties, see the [theming documentation](../theming/css-variables.mdx).
 
 ### Highlight Color
 
@@ -1026,18 +1026,15 @@ export class ItemExample {
         <ion-item>
           <ion-label>Item</ion-label>
         </ion-item>
-        ,
-        <ion-item lines="none">
+        ,<ion-item lines="none">
           <ion-label>No Lines Item</ion-label>
-        </ion-item>
-        ,
+        </ion-item>,
         <ion-item>
           <ion-label class="ion-text-wrap">
             Multiline text that should wrap when it is too long to fit on one line in the item.
           </ion-label>
         </ion-item>
-        ,
-        <ion-item>
+        ,<ion-item>
           <ion-label class="ion-text-wrap">
             <ion-text color="primary">
               <h3>H3 Primary Title</h3>
@@ -1047,8 +1044,7 @@ export class ItemExample {
               <p>Paragraph line 2 secondary</p>
             </ion-text>
           </ion-label>
-        </ion-item>
-        ,
+        </ion-item>,
         <ion-item lines="full">
           <ion-label>Item with Full Lines</ion-label>
         </ion-item>
@@ -1697,12 +1693,12 @@ export class ItemExample {
 
 ### color
 
-|                 |                                                                                                                                                                                                                                                                                  |
-| --------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Description** | The color to use from your application's color palette.<br />Default options are: `"primary"`, `"secondary"`, `"tertiary"`, `"success"`, `"warning"`, `"danger"`, `"light"`, `"medium"`, and `"dark"`.<br />For more information on colors, see [theming](../theming/basics.md). |
-| **Attribute**   | `color`                                                                                                                                                                                                                                                                          |
-| **Type**        | `string \| undefined`                                                                                                                                                                                                                                                            |
-| **Default**     | `undefined`                                                                                                                                                                                                                                                                      |
+|                 |                                                                                                                                                                                                                                                                                   |
+| --------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Description** | The color to use from your application's color palette.<br />Default options are: `"primary"`, `"secondary"`, `"tertiary"`, `"success"`, `"warning"`, `"danger"`, `"light"`, `"medium"`, and `"dark"`.<br />For more information on colors, see [theming](../theming/basics.mdx). |
+| **Attribute**   | `color`                                                                                                                                                                                                                                                                           |
+| **Type**        | `string \| undefined`                                                                                                                                                                                                                                                             |
+| **Default**     | `undefined`                                                                                                                                                                                                                                                                       |
 
 ### detail
 

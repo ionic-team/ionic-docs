@@ -17,7 +17,7 @@ If `value` is set on the `<ion-select>`, the selected option will be chosen base
 
 ## Interfaces
 
-By default, select uses [ion-alert](alert.md) to open up the overlay of options in an alert. The interface can be changed to use [ion-action-sheet](action-sheet.md) or [ion-popover](popover.md) by passing `action-sheet` or `popover`, respectively, to the `interface` property. Read on to the other sections for the limitations of the different interfaces.
+By default, select uses [ion-alert](alert.mdx) to open up the overlay of options in an alert. The interface can be changed to use [ion-action-sheet](action-sheet.mdx) or [ion-popover](popover.mdx) by passing `action-sheet` or `popover`, respectively, to the `interface` property. Read on to the other sections for the limitations of the different interfaces.
 
 ## Single Selection
 
@@ -45,7 +45,7 @@ The `action-sheet` and `popover` interfaces do not have an `OK` button, clicking
 
 Since select uses the alert, action sheet and popover interfaces, options can be passed to these components through the `interfaceOptions` property. This can be used to pass a custom header, subheader, css class, and more.
 
-See the [ion-alert docs](alert.md), [ion-action-sheet docs](action-sheet.md), and [ion-popover docs](popover.md) for the properties that each interface accepts.
+See the [ion-alert docs](alert.mdx), [ion-action-sheet docs](action-sheet.mdx), and [ion-popover docs](popover.mdx) for the properties that each interface accepts.
 
 Note: `interfaceOptions` will not override `inputs` or `buttons` with the `alert` interface.
 
@@ -120,11 +120,11 @@ Notice that by using `::part`, any CSS property on the element can be targeted.
 
 Customizing the interface dialog should be done by following the Customization section in that interface's documentation:
 
-- [Alert Customization](alert.md#customization)
-- [Action Sheet Customization](action-sheet.md#customization)
-- [Popover Customization](popover.md#customization)
+- [Alert Customization](alert.mdx#customization)
+- [Action Sheet Customization](action-sheet.mdx#customization)
+- [Popover Customization](popover.mdx#customization)
 
-However, the Select Option does set a class for easier styling and allows for the ability to pass a class to the overlay option, see the [Select Options documentation](select-option.md) for usage examples of customizing options.
+However, the Select Option does set a class for easier styling and allows for the ability to pass a class to the overlay option, see the [Select Options documentation](select-option.mdx) for usage examples of customizing options.
 
 ## Usage
 
@@ -1404,12 +1404,12 @@ export default defineComponent({
 
 ### interfaceOptions
 
-|                 |                                                                                                                                                                                                                                                                                                                                                                                         |
-| --------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Description** | Any additional options that the `alert`, `action-sheet` or `popover` interface<br />can take. See the [ion-alert docs](alert.md), the<br />[ion-action-sheet docs](action-sheet.md) and the<br />[ion-popover docs](popover.md) for the<br />create options for each interface.<br /><br />Note: `interfaceOptions` will not override `inputs` or `buttons` with the `alert` interface. |
-| **Attribute**   | `interface-options`                                                                                                                                                                                                                                                                                                                                                                     |
-| **Type**        | `any`                                                                                                                                                                                                                                                                                                                                                                                   |
-| **Default**     | `{}`                                                                                                                                                                                                                                                                                                                                                                                    |
+|                 |                                                                                                                                                                                                                                                                                                                                                                                            |
+| --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **Description** | Any additional options that the `alert`, `action-sheet` or `popover` interface<br />can take. See the [ion-alert docs](alert.mdx), the<br />[ion-action-sheet docs](action-sheet.mdx) and the<br />[ion-popover docs](popover.mdx) for the<br />create options for each interface.<br /><br />Note: `interfaceOptions` will not override `inputs` or `buttons` with the `alert` interface. |
+| **Attribute**   | `interface-options`                                                                                                                                                                                                                                                                                                                                                                        |
+| **Type**        | `any`                                                                                                                                                                                                                                                                                                                                                                                      |
+| **Default**     | `{}`                                                                                                                                                                                                                                                                                                                                                                                       |
 
 ### mode
 
