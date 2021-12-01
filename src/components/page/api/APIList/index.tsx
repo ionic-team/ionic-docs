@@ -1,11 +1,11 @@
 import React from 'react';
 
 import sidebars from '@site/sidebars';
+import clsx from 'clsx';
 
-function APIList(props): JSX.Element {
-  // console.log('test', sidebars.api)
+function APIList({ sidebar, ...props }): JSX.Element {
   return (
-    <div>
+    <div {...props} className={clsx(props.className, 'api-list')}>
       {sidebars.api.map(section => {
         if (typeof section !== 'object') return;
 
