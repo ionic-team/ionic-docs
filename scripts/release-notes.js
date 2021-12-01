@@ -11,7 +11,7 @@ dotenv.config();
 
 const OUTPUT_PATH = resolve(
   __dirname,
-  '../src/theme/ReleaseNotes/release-notes.json',
+  '../src/components/page/reference/ReleaseNotes/release-notes.json',
 );
 
 // export default {

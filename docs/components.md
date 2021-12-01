@@ -3,8 +3,8 @@ title: UI Components
 hide_table_of_contents: true
 ---
 
-import DocsCard from '@theme/DocsCard';
-import DocsCards from '@theme/DocsCards';
+import DocsCard from '@components/global/DocsCard';
+import DocsCards from '@components/global/DocsCards';
 
 <head>
   <title>UI Components | User Interface Application Building Components</title>

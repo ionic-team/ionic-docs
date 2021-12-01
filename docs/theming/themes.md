@@ -2,8 +2,8 @@
 title: Themes
 ---
 
-import CodeColor from '@page/theming/CodeColor';
-import SteppedColorGenerator from '@page/theming/SteppedColorGenerator';
+import CodeColor from '@components/page/theming/CodeColor';
+import SteppedColorGenerator from '@components/page/theming/SteppedColorGenerator';
 
 <head>
   <title>Ionic App Themes | Change Default App Background Themes & Colors</title>

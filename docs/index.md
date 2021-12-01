@@ -8,8 +8,8 @@ demoUrl: https://docs-demo.ionic.io/
 demoSourceUrl: https://github.com/ionic-team/docs-demo
 ---
 
-import DocsCard from '@theme/DocsCard';
-import DocsCards from '@theme/DocsCards';
+import DocsCard from '@components/global/DocsCard';
+import DocsCards from '@components/global/DocsCards';
 
 <head>
   <title>Open-Source UI Toolkit to Create Your Own Mobile or Desktop Apps</title>

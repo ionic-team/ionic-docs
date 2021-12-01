@@ -4,8 +4,8 @@ description: "Ionic's Barcode Scanner Plugin opens a camera view and automatical
 sidebar_label: 'Barcode Scanner'
 ---
 
-import DocsCard from '@theme/DocsCard';
-import DocsButton from '@theme/DocsButton';
+import DocsCard from '@components/global/DocsCard';
+import DocsButton from '@components/page/native/DocsButton';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import CodeBlock from '@theme/CodeBlock';

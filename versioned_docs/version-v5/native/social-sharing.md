@@ -4,8 +4,8 @@ description: 'Social sharing for Ionic apps allows you to share text, files, ima
 sidebar_label: 'Social Sharing'
 ---
 
-import DocsCard from '@theme/DocsCard';
-import DocsButton from '@theme/DocsButton';
+import DocsCard from '@components/global/DocsCard';
+import DocsButton from '@components/page/native/DocsButton';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import CodeBlock from '@theme/CodeBlock';

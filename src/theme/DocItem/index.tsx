@@ -20,7 +20,7 @@ import styles from './styles.module.css';
 import {ThemeClassNames} from '@docusaurus/theme-common';
 
 // CUSTOM CODE
-import DocDemo from '@theme/DocDemo'
+import DocDemo from '@components/global/DocDemo'
 import { useDocsData } from '@theme/hooks/useDocs';
 
 export default function DocItem(props: Props): JSX.Element {

@@ -3,8 +3,8 @@ title: Deploying a Progressive Web App
 sidebar_label: Progressive Web App (PWA)
 ---
 
-import DocsCard from '@theme/DocsCard';
-import DocsCards from '@theme/DocsCards';
+import DocsCard from '@components/global/DocsCard';
+import DocsCards from '@components/global/DocsCards';
 
 <head>
   <title>Deploying A Progressive Web Application (PWA) | PWA Deployment</title>

@@ -1,6 +1,8 @@
 import React from 'react';
+import MDXComponentsOriginal from '@theme-original/MDXComponents';
 
 export default {
+  ...MDXComponentsOriginal,
   table: ({ children, ...props }) => {
     const tableHeadings = children[0].props.children.props.children;
 
@@ -17,4 +19,4 @@ export default {
       </div>
     );
   },
-};
+}

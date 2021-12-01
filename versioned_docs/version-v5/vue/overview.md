@@ -2,8 +2,8 @@
 sidebar_label: Overview
 ---
 
-import DocsCard from '@theme/DocsCard';
-import DocsCards from '@theme/DocsCards';
+import DocsCard from '@components/global/DocsCard';
+import DocsCards from '@components/global/DocsCards';
 
 # Ionic Vue Overview
 

@@ -1,4 +1,4 @@
-import CodeColor from '@page/theming/CodeColor';
+import CodeColor from '@components/page/theming/CodeColor';
 import React, { useEffect, useRef, useState } from 'react';
 
 import styles from './styles.module.scss';

@@ -6,10 +6,10 @@ hide_table_of_contents: true
 image: /img/meta/open-graph.png
 ---
 
-import PageStyles from '@page/react';
+import PageStyles from '@components/page/react';
 
-import DocsCard from '@theme/DocsCard';
-import DocsCards from '@theme/DocsCards';
+import DocsCard from '@components/global/DocsCard';
+import DocsCards from '@components/global/DocsCards';
 
 <head>
   <meta name="description" content="Ionic is the app platform for web developers. Build amazing mobile, web, and desktop apps all with one shared code base and open web standards" />

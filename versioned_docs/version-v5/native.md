@@ -5,8 +5,8 @@ sidebar_label: Native APIs
 hide_table_of_contents: true
 ---
 
-import DocsCard from '@theme/DocsCard';
-import DocsCards from '@theme/DocsCards';
+import DocsCard from '@components/global/DocsCard';
+import DocsCards from '@components/global/DocsCards';
 import { Helmet } from "react-helmet";
 
 # Native APIs

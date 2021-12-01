@@ -1,5 +1,5 @@
 import React from 'react';
-import CodeColor from '@page/theming/CodeColor';
+import CodeColor from '@components/page/theming/CodeColor';
 import { useState } from 'react';
 import { generateColor } from '../_utils/index';
 import { useEffect } from 'react';

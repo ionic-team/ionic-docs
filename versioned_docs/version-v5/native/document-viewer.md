@@ -4,8 +4,8 @@ description: 'Cordova plugin document viewer offers a slim API to view PDF files
 sidebar_label: 'Document Viewer'
 ---
 
-import DocsCard from '@theme/DocsCard';
-import DocsButton from '@theme/DocsButton';
+import DocsCard from '@components/global/DocsCard';
+import DocsButton from '@components/page/native/DocsButton';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import CodeBlock from '@theme/CodeBlock';

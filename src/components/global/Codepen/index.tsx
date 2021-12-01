@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { useScript } from '@site/src/hooks';
+import { useScript } from '@site/src/utils/hooks';
 
 function CodePen(props): JSX.Element {
   const status = useScript('https://static.codepen.io/assets/embed/ei.js');

@@ -84,7 +84,7 @@ function renderReadme({ readme, encapsulation }) {
       .replace(/:::note(.*?)\n(#|\n)/gms, ':::note\n$1\n:::\n\n$2');
 
   return `
-import EncapsulationPill from '@theme/EncapsulationPill';
+import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="${encapsulation}" />
 

@@ -4,8 +4,8 @@ description: "Ionic Documentation's Facebook Docs explain how to use the Faceboo
 sidebar_label: 'Facebook'
 ---
 
-import DocsCard from '@theme/DocsCard';
-import DocsButton from '@theme/DocsButton';
+import DocsCard from '@components/global/DocsCard';
+import DocsButton from '@components/page/native/DocsButton';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import CodeBlock from '@theme/CodeBlock';

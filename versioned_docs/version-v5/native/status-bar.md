@@ -4,8 +4,8 @@ description: 'Manage the appearance of the native status bar with the Cordova St
 sidebar_label: 'Status Bar'
 ---
 
-import DocsCard from '@theme/DocsCard';
-import DocsButton from '@theme/DocsButton';
+import DocsCard from '@components/global/DocsCard';
+import DocsButton from '@components/page/native/DocsButton';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import CodeBlock from '@theme/CodeBlock';

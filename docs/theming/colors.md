@@ -3,9 +3,9 @@ initialTab: 'preview'
 inlineHtmlPreviews: true
 ---
 
-import LayeredColorsSelect from '@page/theming/LayeredColorsSelect';
-import NewColorGenerator from '@page/theming/NewColorGenerator';
-import CodeColor from '@page/theming/CodeColor';
+import LayeredColorsSelect from '@components/page/theming/LayeredColorsSelect';
+import NewColorGenerator from '@components/page/theming/NewColorGenerator';
+import CodeColor from '@components/page/theming/CodeColor';
 
 # Colors
 

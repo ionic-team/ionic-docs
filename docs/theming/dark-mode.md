@@ -3,7 +3,7 @@ initialTab: 'preview'
 inlineHtmlPreviews: true
 ---
 
-import Codepen from '@theme/Codepen';
+import Codepen from '@components/global/Codepen';
 
 # Dark Mode
 

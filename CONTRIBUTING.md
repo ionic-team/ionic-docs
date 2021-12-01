@@ -44,7 +44,7 @@ The Ionic docs were originally built in a Mac-based environment, so Mac-focused 
 
 ## Project Structure
 
-Ionic's documentation is built using [Stencil](https://stenciljs.com). The content is written as Markdown or pulled in as JSON data from other Ionic repositories.
+Ionic's documentation is built using [Docusaurus](https://docusaurus.io/). The content is either written or generated as Markdown.
 
 At a high level, the production documentation works like this:
 
