@@ -6,7 +6,7 @@ hide_table_of_contents: true
 image: /img/meta/open-graph.png
 ---
 
-import PageStyles from '@components/page/react';
+import PageStyles from '@components/page/react/PageStyles';
 
 import DocsCard from '@components/global/DocsCard';
 import DocsCards from '@components/global/DocsCards';

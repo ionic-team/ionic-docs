@@ -3,14 +3,10 @@ title: 'Ionic Angular Overview'
 sidebar_label: Overview
 ---
 
-import PageStyles from '@components/page/react';
-
 <head>
   <title>Ionic Angular Overview | Angular Version Support and Tooling</title>
   <meta name="description" content="@ionic/angular combines the Ionic experience with the tooling and APIs tailored to Angular Developers. Learn more about version support in our Angular Overview." />
 </head>
-
-<PageStyles>
 
 `@ionic/angular` combines the core Ionic experience with the tooling and APIs that are tailored to Angular Developers.
 
@@ -21,5 +17,3 @@ Ionic supports `Angular 6.0.0 and up`. As part of their upgrade strategy, Angula
 ## Angular Tooling
 
 With Ionic 4+, the official Angular stack for building an app and routing are used, so your app can fall in-line with the rest of the great Angular ecosystem. In cases where more opinionated features are needed, Ionic provides `@ionic/angular-toolkit`, which builds and integrates with the [official Angular CLI](https://angular.io/cli) and provides features that are specific to `@ionic/angular` apps.
-
-</PageStyles>

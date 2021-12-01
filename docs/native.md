@@ -6,7 +6,7 @@ hide_table_of_contents: true
 import DocsCard from '@components/global/DocsCard';
 import DocsCards from '@components/global/DocsCards';
 
-import { NativeEnterpriseCards, NativeEnterprise } from '@components/page/native';
+import { NativeEnterpriseCards, NativeEnterprise } from '@components/page/native/NativeEnterpriseCards';
 
 <head>
   <title>Native APIs - Build Open-Source Native Application Experiences</title>

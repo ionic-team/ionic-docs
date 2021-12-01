@@ -7,8 +7,12 @@ image: /img/meta/open-graph.png
 description: Ionic is the app platform for web developers. Build amazing mobile, web, and desktop apps all with one shared code base and open web standards
 ---
 
+import PageStyles from '@components/page/react/PageStyles';
+
 import DocsCard from '@components/global/DocsCard';
 import DocsCards from '@components/global/DocsCards';
+
+<PageStyles>
 
 <div class='flex main-flex'>
   <div class="pull-left">
@@ -129,3 +133,5 @@ $ ionic serve █
   </DocsCard>
 
 </DocsCards>
+
+</PageStyles>
