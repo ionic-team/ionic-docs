@@ -1,4 +1,6 @@
 ---
+title: 'Angular Unit and End-to-End Testing for Ionic App Components'
+description: 'Angular apps created using Ionic are automatically set up for unit and end-to-end testing. Read to learn more about testing tools for Ionic components.'
 previousText: 'Platform'
 previousUrl: '/docs/angular/platform'
 nextText: 'Storage'
