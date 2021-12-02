@@ -1,4 +1,3 @@
-const dotenv = require('dotenv');
 const { outputJson } = require('fs-extra');
 const fetch = require('node-fetch');
 const { resolve } = require('path');
@@ -6,8 +5,6 @@ const semver = require('semver');
 const url = require('url');
 
 const { renderMarkdown } = require('./utils.js');
-
-dotenv.config();
 
 const OUTPUT_PATH = resolve(
   __dirname,
