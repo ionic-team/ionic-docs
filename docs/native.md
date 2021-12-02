@@ -16,6 +16,12 @@ import { Helmet } from "react-helmet";
 
 <intro-end />
 
+:::note
+
+[Read about the changes](https://ionicframework.com/blog/a-new-chapter-for-ionic-native/) coming to the Ionic Native project.
+
+:::
+
 <div id="native-enterprise-cards">
   <a href="https://capacitorjs.com/docs/plugins">
     <div class="image-wrapper">
