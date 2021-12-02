@@ -84,6 +84,10 @@
       "title": "Router Link | Navigating The ion-router-link Component",
       "description": "Use the ion-router-link component to navigate to a specified link. The router link can accept an href for location and a direction for the transition animation."
     },
+    "ion-row": {
+      "title": "ion-row: Horizontal Row Components and Alignment | Ionic API Docs",
+      "description": "Rows are horizontal components of the grid system and contain varying numbers of columns. Read our ion-row API Docs for more information on alignment and usage."
+    },
     "ion-searchbar": {
       "title": "Search Bar Icon for Keyboard Text Display | Ion-Search Bar",
       "description": "Search bars represent a text field that can be used to search through a collection. Learn to input Ion-Search Bar as an icon on Android & iOS keyboard displays."
@@ -134,6 +138,10 @@
       "title": "Angular NG Build Configuration to Build Ionic Apps | ionic build",
       "description": "Build web assets and prepare your Ionic app for any platform targets. Ionic build uses the Angular CLI—see the ng build docs for how to use the configuration."
     },
+    "capacitor-sync": {
+      "title": "Ionic Capacitor Sync Command: Copy + Update Android/iOS Projects",
+      "description": "Sync (copy + update) an Android or iOS device project with Ionic Capacitor Sync. Read our documentation to learn more about this command on Ionic apps."
+    },
     "cordova-emulate": {
       "title": "Emulate Android and iOS Apps with Ionic Cordova Emulator",
       "description": "Emulate an Ionic project on a simulator/emulator for Android and iOS apps. Build your app and deploy it to devices and emulators using Ionic Cordova Emulator."
@@ -180,9 +188,21 @@
       "title": "Calendar Plugin | Ionic Applications & Cordova Plugin Calendar",
       "description": "Use the Cordova Plugin Calendar to add events to the calendar of the mobile device you are on from your Ionic Framework Application. Read to learn about usage."
     },
+    "call-number": {
+      "title": "Call Number Plugin - Call a Number From Cordova/Ionic Apps",
+      "description": "Call a number directly from Cordova/Ionic apps with the Call Number plugin. Read to learn more about usage and installation on Android, iOS, or Windows devices."
+    },
     "camera": {
       "title": "Install Camera | Cordova Plugin Cameras for Ionic Applications",
       "description": "Use the Cordova plugin to install a camera and take photos or capture videos in-app with Ionic Framework camera component for supported platforms."
+    },
+    "date-picker": {
+      "title": "Date Picker | cordova-plugin-datepicker for Ionic Apps",
+      "description": "Date Picker allows users to fetch the date or time using native dialogs on Ionic Framework apps. Read to learn more about cordova-plugin-datepicker usage."
+    },
+    "device": {
+      "title": "cordova-plugin-device for Underlying Platform Information",
+      "description": "Access information about underlying devices and platforms with cordova-plugin-device for Ionic Framework apps. Read our Device Documentation to learn more."
     },
     "document-viewer": {
       "title": "Document Viewer | Cordova Plugin Document Viewer for PDF Files",
@@ -247,6 +267,10 @@
     "status-bar": {
       "title": "Status Bar | Cordova StatusBar Plugin for iOS and Android Apps",
       "description": "Manage the appearance of the native status bar with the Cordova StatusBar Plugin. Learn how to install status bar on supported iOS and Android platforms."
+    },
+    "unique-device-id": {
+      "title": "Unique Device ID for Android, iOS, and Windows Phone 8",
+      "description": "Produce a unique, cross-install, app-specific device ID with the Unique Device ID plugin. Read to learn about use on Android, iOS, and Windows Phone 8 devices."
     }
   }
 }
