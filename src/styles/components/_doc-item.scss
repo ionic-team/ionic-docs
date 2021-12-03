@@ -16,6 +16,8 @@
   
     [class*=docItemContainer_] {
       max-width: var(--doc-item-container-width);
+
+      min-width: 0;
     }
   
     [class*=docMainContainer_] {
