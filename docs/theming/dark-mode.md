@@ -132,9 +132,9 @@ This allows the page to indicate which color scheme it is comfortable being rend
 color-scheme: light dark;
 ```
 
-| Default scrollbar                                                                                         | Scrollbar with `color-scheme`                                                                         |
-| --------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- |
-| <figure><img alt="Application without color-scheme" src="/img/theming/color-scheme-light.png" /></figure> | <figure><img alt="Application with color-scheme" src="/img/theming/color-scheme-dark.png" /></figure> |
+| Default scrollbar                                                        | Scrollbar with `color-scheme`                                        |
+| ------------------------------------------------------------------------ | -------------------------------------------------------------------- |
+| ![Application without color-scheme](/img/theming/color-scheme-light.png) | ![Application with color-scheme](/img/theming/color-scheme-dark.png) |
 
 For more information regarding `color-scheme` please see https://web.dev/color-scheme/.
 
