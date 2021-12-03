@@ -80,8 +80,8 @@ function renderReadme({ readme, encapsulation }) {
 
   const addAdmonitions = text =>
     text
-      .replace(/\n\n>/gms, '\n\n:::note')
-      .replace(/:::note(.*?)\n(#|\n)/gms, ':::note\n$1\n:::\n\n$2');
+      .replace(/\n\n>/gm, '\n\n:::note')
+      .replace(/:::note(.*?)\n(#|\n|^)/gm, ':::note\n$1\n:::\n\n$2');
 
   return `
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
