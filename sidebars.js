@@ -4,7 +4,7 @@ module.exports = {
       type: 'category',
       label: 'Getting Started',
       collapsed: false,
-      items: ['index', 'intro/environment', 'intro/cli', 'intro/cdn', 'intro/next'],
+      items: ['index', 'intro/upgrading-to-ionic-6', 'intro/environment', 'intro/cli', 'intro/cdn', 'intro/next'],
     },
     {
       type: 'category',

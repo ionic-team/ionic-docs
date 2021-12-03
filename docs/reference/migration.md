@@ -14,6 +14,10 @@ import TabItem from '@theme/TabItem';
   />
 </head>
 
+## Migrating from Ionic 5.x to Ionic 6.x
+
+Please see the [Ionic 6 Migration Guide](../intro/upgrading-to-ionic-6).
+
 ## Migrating from Ionic 4.x to Ionic 5.x
 
 Migrating an app from 4.x to 5.x requires a few updates to the API properties, CSS utilities, and the installed package dependencies.
