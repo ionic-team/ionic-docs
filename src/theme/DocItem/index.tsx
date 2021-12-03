@@ -21,7 +21,6 @@ import {ThemeClassNames} from '@docusaurus/theme-common';
 
 // CUSTOM CODE
 import DocDemo from '@components/global/DocDemo'
-import { useDocsData } from '@theme/hooks/useDocs';
 
 export default function DocItem(props: Props): JSX.Element {
   const {content: DocContent, versionMetadata} = props;
@@ -110,7 +109,20 @@ export default function DocItem(props: Props): JSX.Element {
 
             <DocPaginator metadata={metadata} />
           </div>
+
+          {/* ------- CUSTOM CODE -------- */}
+          {demoUrl && (
+            <div
+              className={clsx(
+                'doc-demo-wrapper'
+              )}
+            >
+              <DocDemo url={demoUrl} source={demoSourceUrl} />
+            </div>
+          )}
+          {/* ---------------------------- */}
         </div>
+
         {/* ------- CUSTOM CODE -------- */}
         {/* {renderTocDesktop && (
           <div className="col col--3">
@@ -123,28 +135,18 @@ export default function DocItem(props: Props): JSX.Element {
           </div>
         )} */}
         <div className="end">
-          {demoUrl ? (
-            <div
-              className={clsx(
-                'doc-demo-wrapper'
-              )}
-            >
-              <DocDemo url={demoUrl} source={demoSourceUrl} />
-            </div>
-          ) : (
-            !hideTableOfContents &&
-            DocContent.toc && (
-              <TOC
-                toc={DocContent.toc}
-                minHeadingLevel={tocMinHeadingLevel}
-                maxHeadingLevel={tocMaxHeadingLevel}
-                editUrl={editUrl}
-                className={ThemeClassNames.docs.docTocDesktop}
+          {!demoUrl && !hideTableOfContents && DocContent.toc && (
+            <TOC
+              toc={DocContent.toc}
+              minHeadingLevel={tocMinHeadingLevel}
+              maxHeadingLevel={tocMaxHeadingLevel}
+              editUrl={editUrl}
+              className={ThemeClassNames.docs.docTocDesktop}
             />
-            )
           )}
         </div>
         {/* -------------- */}
+
       </div>
     </>
   );

@@ -16,8 +16,6 @@
   
     [class*=docItemContainer_] {
       max-width: var(--doc-item-container-width);
-      margin-inline-start: auto;
-      margin-inline-end: auto;
     }
   
     [class*=docMainContainer_] {
@@ -41,6 +39,9 @@
       > .container {
         > .row {
           > .col {
+            display: flex;
+            justify-content: center;
+
             min-width: 0;
           }
         }
