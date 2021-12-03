@@ -85,12 +85,11 @@ function renderReadme({ readme, encapsulation }) {
 
   return `
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
+import TOCInline from '@theme/TOCInline';
 
-<EncapsulationPill type="${encapsulation}" />
+${encapsulation !== 'none' ? `<EncapsulationPill type="${encapsulation}" />` : ''}
 
 <h2 className="table-of-contents__title">Contents</h2>
-
-import TOCInline from '@theme/TOCInline';
 
 <TOCInline
   toc={toc}
