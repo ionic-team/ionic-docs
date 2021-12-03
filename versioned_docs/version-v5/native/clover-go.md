@@ -36,14 +36,14 @@ This plugin connect to Clover Go payment device and process payments.
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
       $ npm install cordova-plugin-clovergo {"\n"}
-      $ npm install @ionic-native/clover-go {"\n"}
+      $ npm install @awesome-cordova-plugins/clover-go {"\n"}
       $ ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
       $ ionic cordova plugin add cordova-plugin-clovergo {"\n"}
-      $ npm install @ionic-native/clover-go {"\n"}
+      $ npm install @awesome-cordova-plugins/clover-go {"\n"}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">
@@ -65,7 +65,7 @@ This plugin connect to Clover Go payment device and process payments.
 ### Angular
 
 ```tsx
-import { CloverGo } from '@ionic-native/clover-go/ngx';
+import { CloverGo } from '@awesome-cordova-plugins/clover-go/ngx';
 
 
 constructor(private cloverGo: CloverGo) { }

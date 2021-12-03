@@ -37,14 +37,14 @@ such as step counts and other information about the distance travelled.
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
       $ npm install cordova-plugin-pedometer {"\n"}
-      $ npm install @ionic-native/pedometer {"\n"}
+      $ npm install @awesome-cordova-plugins/pedometer {"\n"}
       $ ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
       $ ionic cordova plugin add cordova-plugin-pedometer {"\n"}
-      $ npm install @ionic-native/pedometer {"\n"}
+      $ npm install @awesome-cordova-plugins/pedometer {"\n"}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">
@@ -67,7 +67,7 @@ such as step counts and other information about the distance travelled.
 ### Angular
 
 ```tsx
-import { Pedometer } from '@ionic-native/pedometer/ngx';
+import { Pedometer } from '@awesome-cordova-plugins/pedometer/ngx';
 
 Pedometer.isDistanceAvailable()
   .then((available: boolean) => console.log(available))

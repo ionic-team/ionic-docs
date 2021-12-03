@@ -36,14 +36,14 @@ Cordova plugin to make connections and execute commands through SSH
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
       $ npm install cordova-plugin-ssh-connect {"\n"}
-      $ npm install @ionic-native/ssh-connect {"\n"}
+      $ npm install @awesome-cordova-plugins/ssh-connect {"\n"}
       $ ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
       $ ionic cordova plugin add cordova-plugin-ssh-connect {"\n"}
-      $ npm install @ionic-native/ssh-connect {"\n"}
+      $ npm install @awesome-cordova-plugins/ssh-connect {"\n"}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">
@@ -65,7 +65,7 @@ Cordova plugin to make connections and execute commands through SSH
 ### Angular
 
 ```tsx
-import { SSHConnect } from '@ionic-native/ssh-connect/ngx';
+import { SSHConnect } from '@awesome-cordova-plugins/ssh-connect/ngx';
 
 
 constructor(private sshConnect: SSHConnect) { }

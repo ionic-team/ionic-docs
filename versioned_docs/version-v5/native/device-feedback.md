@@ -36,14 +36,14 @@ Plugin that lets you provide haptic or acoustic feedback on Android devices.
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
       $ npm install cordova-plugin-velda-devicefeedback {"\n"}
-      $ npm install @ionic-native/device-feedback {"\n"}
+      $ npm install @awesome-cordova-plugins/device-feedback {"\n"}
       $ ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
       $ ionic cordova plugin add cordova-plugin-velda-devicefeedback {"\n"}
-      $ npm install @ionic-native/device-feedback {"\n"}
+      $ npm install @awesome-cordova-plugins/device-feedback {"\n"}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">
@@ -65,7 +65,7 @@ Plugin that lets you provide haptic or acoustic feedback on Android devices.
 ### Angular
 
 ```tsx
-import { DeviceFeedback } from '@ionic-native/device-feedback/ngx';
+import { DeviceFeedback } from '@awesome-cordova-plugins/device-feedback/ngx';
 
 constructor(private deviceFeedback: DeviceFeedback) { }
 

@@ -40,14 +40,14 @@ For more info see [Cordova plugin docs](https://github.com/infobip/mobile-messag
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
       $ npm install com-infobip-plugins-mobilemessaging {"\n"}
-      $ npm install @ionic-native/mobile-messaging {"\n"}
+      $ npm install @awesome-cordova-plugins/mobile-messaging {"\n"}
       $ ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
       $ ionic cordova plugin add com-infobip-plugins-mobilemessaging {"\n"}
-      $ npm install @ionic-native/mobile-messaging {"\n"}
+      $ npm install @awesome-cordova-plugins/mobile-messaging {"\n"}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">
@@ -70,7 +70,7 @@ For more info see [Cordova plugin docs](https://github.com/infobip/mobile-messag
 ### Angular
 
 ```tsx
-import { MobileMessaging } from '@ionic-native/mobile-messaging/ngx';
+import { MobileMessaging } from '@awesome-cordova-plugins/mobile-messaging/ngx';
 
 
 constructor(private mobileMessaging: MobileMessaging) { }

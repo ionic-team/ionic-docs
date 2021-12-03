@@ -44,14 +44,14 @@ Monetize your apps and games with AdMob ads, using latest Google AdMob SDK. With
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
       $ npm install cordova-admob {"\n"}
-      $ npm install @ionic-native/admob {"\n"}
+      $ npm install @awesome-cordova-plugins/admob {"\n"}
       $ ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
       $ ionic cordova plugin add cordova-admob {"\n"}
-      $ npm install @ionic-native/admob {"\n"}
+      $ npm install @awesome-cordova-plugins/admob {"\n"}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">
@@ -77,7 +77,7 @@ Monetize your apps and games with AdMob ads, using latest Google AdMob SDK. With
 **Note:** No ads will be served on apps with package name `io.ionic.starter`. This is the default package name for new `ionic` apps. Make sure to rename the package name so ads can be displayed.
 
 ```tsx
-import { Admob, AdmobOptions } from '@ionic-native/admob';
+import { Admob, AdmobOptions } from '@awesome-cordova-plugins/admob';
 
 
 constructor(private admob: Admob) {

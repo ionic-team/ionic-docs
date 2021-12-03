@@ -41,14 +41,14 @@ if it has not been launched by Siri, and if it did, it will return an object wit
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
       $ npm install cordova-plugin-siri-shortcuts {"\n"}
-      $ npm install @ionic-native/siri-shortcuts {"\n"}
+      $ npm install @awesome-cordova-plugins/siri-shortcuts {"\n"}
       $ ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
       $ ionic cordova plugin add cordova-plugin-siri-shortcuts {"\n"}
-      $ npm install @ionic-native/siri-shortcuts {"\n"}
+      $ npm install @awesome-cordova-plugins/siri-shortcuts {"\n"}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">
@@ -70,7 +70,7 @@ if it has not been launched by Siri, and if it did, it will return an object wit
 ### Angular
 
 ```tsx
-import { SiriShortcuts } from '@ionic-native/siri-shortcuts/ngx';
+import { SiriShortcuts } from '@awesome-cordova-plugins/siri-shortcuts/ngx';
 
 
 constructor(private siriShortcuts: SiriShortcuts) { }

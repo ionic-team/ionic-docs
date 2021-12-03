@@ -37,14 +37,14 @@ Any data saved shows up in the iOS Health app and is available for other iOS app
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
       $ npm install com.telerik.plugins.healthkit {"\n"}
-      $ npm install @ionic-native/health-kit {"\n"}
+      $ npm install @awesome-cordova-plugins/health-kit {"\n"}
       $ ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
       $ ionic cordova plugin add com.telerik.plugins.healthkit {"\n"}
-      $ npm install @ionic-native/health-kit {"\n"}
+      $ npm install @awesome-cordova-plugins/health-kit {"\n"}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">
@@ -66,7 +66,7 @@ Any data saved shows up in the iOS Health app and is available for other iOS app
 ### Angular
 
 ```tsx
-import { HealthKit } from '@ionic-native/health-kit/ngx';
+import { HealthKit } from '@awesome-cordova-plugins/health-kit/ngx';
 
 
 constructor(private healthKit: HealthKit) { }

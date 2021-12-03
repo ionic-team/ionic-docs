@@ -38,14 +38,14 @@ Requires Cordova plugin: `cordova-plugin-safariviewcontroller`. For more info, p
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
       $ npm install cordova-plugin-safariviewcontroller {"\n"}
-      $ npm install @ionic-native/safari-view-controller {"\n"}
+      $ npm install @awesome-cordova-plugins/safari-view-controller {"\n"}
       $ ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
       $ ionic cordova plugin add cordova-plugin-safariviewcontroller {"\n"}
-      $ npm install @ionic-native/safari-view-controller {"\n"}
+      $ npm install @awesome-cordova-plugins/safari-view-controller {"\n"}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">
@@ -68,7 +68,7 @@ Requires Cordova plugin: `cordova-plugin-safariviewcontroller`. For more info, p
 ### Angular
 
 ```tsx
-import { SafariViewController } from '@ionic-native/safari-view-controller/ngx';
+import { SafariViewController } from '@awesome-cordova-plugins/safari-view-controller/ngx';
 
 constructor(private safariViewController: SafariViewController) { }
 

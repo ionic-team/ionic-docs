@@ -36,14 +36,14 @@ BioCatch SDK Cordova support
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
       $ npm install cordova-plugin-biocatch {"\n"}
-      $ npm install @ionic-native/biocatch {"\n"}
+      $ npm install @awesome-cordova-plugins/biocatch {"\n"}
       $ ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
       $ ionic cordova plugin add cordova-plugin-biocatch {"\n"}
-      $ npm install @ionic-native/biocatch {"\n"}
+      $ npm install @awesome-cordova-plugins/biocatch {"\n"}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">
@@ -66,7 +66,7 @@ BioCatch SDK Cordova support
 ### Angular
 
 ```tsx
-import { BioCatch } from '@ionic-native/biocatch';
+import { BioCatch } from '@awesome-cordova-plugins/biocatch';
 
 
 constructor(private biocatch: BioCatch) { }

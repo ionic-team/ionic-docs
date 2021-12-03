@@ -40,14 +40,14 @@ This plugin offers some useful extras on top of the default Media Capture Plugin
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
       $ npm install cordova-plugin-video-capture-plus {"\n"}
-      $ npm install @ionic-native/video-capture-plus {"\n"}
+      $ npm install @awesome-cordova-plugins/video-capture-plus {"\n"}
       $ ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
       $ ionic cordova plugin add cordova-plugin-video-capture-plus {"\n"}
-      $ npm install @ionic-native/video-capture-plus {"\n"}
+      $ npm install @awesome-cordova-plugins/video-capture-plus {"\n"}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">
@@ -70,7 +70,7 @@ This plugin offers some useful extras on top of the default Media Capture Plugin
 ### Angular
 
 ```tsx
-import { VideoCapturePlus, VideoCapturePlusOptions, MediaFile } from '@ionic-native/video-capture-plus/ngx';
+import { VideoCapturePlus, VideoCapturePlusOptions, MediaFile } from '@awesome-cordova-plugins/video-capture-plus/ngx';
 
 
 constructor(private videoCapturePlus: VideoCapturePlus) { }

@@ -41,14 +41,14 @@ For more info, please see https://docs.microsoft.com/en-us/appcenter/sdk/crashes
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
       $ npm install cordova-plugin-appcenter-crashes {"\n"}
-      $ npm install @ionic-native/app-center-crashes {"\n"}
+      $ npm install @awesome-cordova-plugins/app-center-crashes {"\n"}
       $ ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
       $ ionic cordova plugin add cordova-plugin-appcenter-crashes {"\n"}
-      $ npm install @ionic-native/app-center-crashes {"\n"}
+      $ npm install @awesome-cordova-plugins/app-center-crashes {"\n"}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">
@@ -71,7 +71,7 @@ For more info, please see https://docs.microsoft.com/en-us/appcenter/sdk/crashes
 ### Angular
 
 ```tsx
-import { AppCenterCrashes } from '@ionic-native/app-center-crashes/ngx';
+import { AppCenterCrashes } from '@awesome-cordova-plugins/app-center-crashes/ngx';
 
 
 constructor(private AppCenterCrashes: AppCenterCrashes) { }

@@ -36,14 +36,14 @@ HCE Cordova Wrapper
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
       $ npm install cordova-plugin-hce {"\n"}
-      $ npm install @ionic-native/hce {"\n"}
+      $ npm install @awesome-cordova-plugins/hce {"\n"}
       $ ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
       $ ionic cordova plugin add cordova-plugin-hce {"\n"}
-      $ npm install @ionic-native/hce {"\n"}
+      $ npm install @awesome-cordova-plugins/hce {"\n"}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">
@@ -65,7 +65,7 @@ HCE Cordova Wrapper
 ### Angular
 
 ```tsx
-import { hce } from '@ionic-native/hce/ngx';
+import { hce } from '@awesome-cordova-plugins/hce/ngx';
 
 
 constructor(private hce: hce) { }

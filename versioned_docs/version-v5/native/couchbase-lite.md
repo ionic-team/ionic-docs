@@ -36,14 +36,14 @@ Plugin to install Couchbase Lite in your PhoneGap app on iOS or Android <docs-ca
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
       $ npm install couchbase-lite-phonegap-plugin {"\n"}
-      $ npm install @ionic-native/couchbase-lite {"\n"}
+      $ npm install @awesome-cordova-plugins/couchbase-lite {"\n"}
       $ ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
       $ ionic cordova plugin add couchbase-lite-phonegap-plugin {"\n"}
-      $ npm install @ionic-native/couchbase-lite {"\n"}
+      $ npm install @awesome-cordova-plugins/couchbase-lite {"\n"}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">
@@ -66,7 +66,7 @@ Plugin to install Couchbase Lite in your PhoneGap app on iOS or Android <docs-ca
 ### Angular
 
 ```tsx
-import { CouchbaseLite } from '@ionic-native/couchbase-lite/ngx';
+import { CouchbaseLite } from '@awesome-cordova-plugins/couchbase-lite/ngx';
 import { Http } from '@angular/http';
 import { Observable } from 'rxjs'
 constructor(private couchbase: CouchbaseLite, private platform:Platform,private _http:Http) {

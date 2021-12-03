@@ -36,14 +36,14 @@ This plugin retrives the SMS which arrive without requiring READ permissions.
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
       $ npm install cordova-plugin-sms-retriever-manager {"\n"}
-      $ npm install @ionic-native/sms-retriever {"\n"}
+      $ npm install @awesome-cordova-plugins/sms-retriever {"\n"}
       $ ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
       $ ionic cordova plugin add cordova-plugin-sms-retriever-manager {"\n"}
-      $ npm install @ionic-native/sms-retriever {"\n"}
+      $ npm install @awesome-cordova-plugins/sms-retriever {"\n"}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">
@@ -65,7 +65,7 @@ This plugin retrives the SMS which arrive without requiring READ permissions.
 ### Angular
 
 ```tsx
-import { SmsRetriever } from '@ionic-native/sms-retriever';
+import { SmsRetriever } from '@awesome-cordova-plugins/sms-retriever';
 
 
 constructor(private smsRetriever: SmsRetriever) { }

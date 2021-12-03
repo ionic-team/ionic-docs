@@ -38,14 +38,14 @@ Requires Cordova plugin: `cordova-plugin-actionsheet`. For more info, please see
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
       $ npm install cordova-plugin-actionsheet {"\n"}
-      $ npm install @ionic-native/action-sheet {"\n"}
+      $ npm install @awesome-cordova-plugins/action-sheet {"\n"}
       $ ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
       $ ionic cordova plugin add cordova-plugin-actionsheet {"\n"}
-      $ npm install @ionic-native/action-sheet {"\n"}
+      $ npm install @awesome-cordova-plugins/action-sheet {"\n"}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">
@@ -71,7 +71,7 @@ Requires Cordova plugin: `cordova-plugin-actionsheet`. For more info, please see
 ### Angular
 
 ```tsx
-import { ActionSheet, ActionSheetOptions } from '@ionic-native/action-sheet/ngx';
+import { ActionSheet, ActionSheetOptions } from '@awesome-cordova-plugins/action-sheet/ngx';
 
 constructor(private actionSheet: ActionSheet) { }
 

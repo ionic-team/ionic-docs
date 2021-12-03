@@ -106,14 +106,14 @@ module.exports = function(context) {
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
       $ npm install onesignal-cordova-plugin {"\n"}
-      $ npm install @ionic-native/onesignal {"\n"}
+      $ npm install @awesome-cordova-plugins/onesignal {"\n"}
       $ ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
       $ ionic cordova plugin add onesignal-cordova-plugin {"\n"}
-      $ npm install @ionic-native/onesignal {"\n"}
+      $ npm install @awesome-cordova-plugins/onesignal {"\n"}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">
@@ -138,7 +138,7 @@ module.exports = function(context) {
 ### Angular
 
 ```tsx
-import { OneSignal } from '@ionic-native/onesignal/ngx';
+import { OneSignal } from '@awesome-cordova-plugins/onesignal/ngx';
 
 constructor(private oneSignal: OneSignal) { }
 

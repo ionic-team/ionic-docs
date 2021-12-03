@@ -37,14 +37,14 @@ It is a maintained fork from unmaintained ionic-navite plugin called Firebase.
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
       $ npm install cordova-plugin-firebasex {"\n"}
-      $ npm install @ionic-native/firebase-x {"\n"}
+      $ npm install @awesome-cordova-plugins/firebase-x {"\n"}
       $ ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
       $ ionic cordova plugin add cordova-plugin-firebasex {"\n"}
-      $ npm install @ionic-native/firebase-x {"\n"}
+      $ npm install @awesome-cordova-plugins/firebase-x {"\n"}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">
@@ -67,7 +67,7 @@ It is a maintained fork from unmaintained ionic-navite plugin called Firebase.
 ### Angular
 
 ```tsx
-import { FirebaseX } from '@ionic-native/firebase-x/ngx';
+import { FirebaseX } from '@awesome-cordova-plugins/firebase-x/ngx';
 
 
 constructor(private firebaseX: FirebaseX) { }

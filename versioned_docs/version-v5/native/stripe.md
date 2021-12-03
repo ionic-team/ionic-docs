@@ -36,14 +36,14 @@ A plugin that allows you to use Stripe's Native SDKs for Android and iOS.
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
       $ npm install cordova-plugin-stripe {"\n"}
-      $ npm install @ionic-native/stripe {"\n"}
+      $ npm install @awesome-cordova-plugins/stripe {"\n"}
       $ ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
       $ ionic cordova plugin add cordova-plugin-stripe {"\n"}
-      $ npm install @ionic-native/stripe {"\n"}
+      $ npm install @awesome-cordova-plugins/stripe {"\n"}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">
@@ -67,7 +67,7 @@ A plugin that allows you to use Stripe's Native SDKs for Android and iOS.
 ### Angular
 
 ```tsx
-import { Stripe } from '@ionic-native/stripe/ngx';
+import { Stripe } from '@awesome-cordova-plugins/stripe/ngx';
 
 constructor(private stripe: Stripe) { }
 

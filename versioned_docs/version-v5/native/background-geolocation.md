@@ -39,14 +39,14 @@ more detail, please see https://github.com/mauron85/cordova-plugin-background-ge
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
       $ npm install @mauron85/cordova-plugin-background-geolocation {"\n"}
-      $ npm install @ionic-native/background-geolocation {"\n"}
+      $ npm install @awesome-cordova-plugins/background-geolocation {"\n"}
       $ ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
       $ ionic cordova plugin add @mauron85/cordova-plugin-background-geolocation {"\n"}
-      $ npm install @ionic-native/background-geolocation {"\n"}
+      $ npm install @awesome-cordova-plugins/background-geolocation {"\n"}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">
@@ -71,7 +71,7 @@ more detail, please see https://github.com/mauron85/cordova-plugin-background-ge
 BackgroundGeolocation must be called within app.ts and or before Geolocation. Otherwise the platform will not ask you for background tracking permission.
 
 ```tsx
-import { BackgroundGeolocation, BackgroundGeolocationConfig, BackgroundGeolocationEvents, BackgroundGeolocationResponse } from '@ionic-native/background-geolocation/ngx';
+import { BackgroundGeolocation, BackgroundGeolocationConfig, BackgroundGeolocationEvents, BackgroundGeolocationResponse } from '@awesome-cordova-plugins/background-geolocation/ngx';
 
 constructor(private backgroundGeolocation: BackgroundGeolocation) { }
 

@@ -38,14 +38,14 @@ Requires Cordova plugin: `cordova-plugin-gubnoi-alipay`. For more info, please s
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
       $ npm install cordova-plugin-gubnoi-alipay {"\n"}
-      $ npm install @ionic-native/alipay {"\n"}
+      $ npm install @awesome-cordova-plugins/alipay {"\n"}
       $ ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
       $ ionic cordova plugin add cordova-plugin-gubnoi-alipay {"\n"}
-      $ npm install @ionic-native/alipay {"\n"}
+      $ npm install @awesome-cordova-plugins/alipay {"\n"}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">
@@ -68,7 +68,7 @@ Requires Cordova plugin: `cordova-plugin-gubnoi-alipay`. For more info, please s
 ### Angular
 
 ```tsx
-import { Alipay } from '@ionic-native/alipay/ngx';
+import { Alipay } from '@awesome-cordova-plugins/alipay/ngx';
 
 constructor(private alipay: Alipay) {
 

@@ -36,14 +36,14 @@ A lightweight Cordova plugin for in app purchases on iOS/Android.
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
       $ npm install cordova-plugin-inapppurchase {"\n"}
-      $ npm install @ionic-native/in-app-purchase {"\n"}
+      $ npm install @awesome-cordova-plugins/in-app-purchase {"\n"}
       $ ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
       $ ionic cordova plugin add cordova-plugin-inapppurchase {"\n"}
-      $ npm install @ionic-native/in-app-purchase {"\n"}
+      $ npm install @awesome-cordova-plugins/in-app-purchase {"\n"}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">
@@ -66,7 +66,7 @@ A lightweight Cordova plugin for in app purchases on iOS/Android.
 ### Angular
 
 ```tsx
-import { InAppPurchase } from '@ionic-native/in-app-purchase/ngx';
+import { InAppPurchase } from '@awesome-cordova-plugins/in-app-purchase/ngx';
 
 constructor(private iap: InAppPurchase) { }
 

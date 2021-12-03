@@ -5,23 +5,28 @@ const nativeOverrides = require('./data/meta-override.json').native;
 
 // Filter out some plugins
 const filteredPlugins = [
-  '@ionic-native/android-fingerprint-auth',
-  '@ionic-native/fingerprint-aio',
-  '@ionic-native/app-center-shared',
-  '@ionic-native/app-update',
-  '@ionic-native/hot-code-push',
-  '@ionic-native/in-app-update',
-  '@ionic-native/checkout',
-  '@ionic-native/secure-storage-echo',
-  '@ionic-native/secure-storage'
+  '@awesome-cordova-plugins/android-fingerprint-auth',
+  '@awesome-cordova-plugins/fingerprint-aio',
+  '@awesome-cordova-plugins/app-center-shared',
+  '@awesome-cordova-plugins/app-update',
+  '@awesome-cordova-plugins/hot-code-push',
+  '@awesome-cordova-plugins/in-app-update',
+  '@awesome-cordova-plugins/checkout',
+  '@awesome-cordova-plugins/secure-storage-echo',
+  '@awesome-cordova-plugins/secure-storage',
 ];
 
-let plugins = nativeJSON.filter((plugin) => !filteredPlugins.includes(plugin.packageName));
-const data = fs.writeFileSync('./scripts/data/native.json', JSON.stringify(plugins, null, 2));
+let plugins = nativeJSON.filter(
+  plugin => !filteredPlugins.includes(plugin.packageName),
+);
+const data = fs.writeFileSync(
+  './scripts/data/native.json',
+  JSON.stringify(plugins, null, 2),
+);
 
 (async function () {
   // console.log(cliJSON);
-  
+
   plugins.map(writePage);
 })();
 
@@ -38,14 +43,14 @@ function writePage(page) {
   ].join('');
 
   const path = `docs/native/${page.packageName.replace(
-    '@ionic-native/',
+    '@awesome-cordova-plugins/',
     '',
   )}.md`;
   fs.writeFileSync(path, data);
 }
 
 function renderFrontmatter({ displayName, packageName }) {
-  const slug = packageName.replace('@ionic-native/', '');
+  const slug = packageName.replace('@awesome-cordova-plugins/', '');
 
   const frontmatter = {
     ...nativeOverrides[slug],
@@ -136,7 +141,7 @@ function renderInstallation({ cordovaPlugin, packageName }) {
 function renderSupportedPlatforms({ platforms }) {
   return `
 ## Supported Platforms
-  
+
 ${platforms.map(platform => `- ${platform}`).join('\n')}
 `;
 }
@@ -148,7 +153,7 @@ function renderCapIncompat({ capacitorIncompatible }) {
 
   return `
 ## Capacitor
-  
+
 Not Compatible
 `;
 }
@@ -164,7 +169,7 @@ function renderUsage({ usage }) {
 ### React
 
 [Learn more about using Ionic Native components in React](../native-community.md#react)
-  
+
 
 ### Angular
 

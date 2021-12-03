@@ -40,14 +40,14 @@ You must add `universal-links` to your `config.xml` and set up Apple App Site As
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
       $ npm install ionic-plugin-deeplinks {"\n"}
-      $ npm install @ionic-native/deeplinks {"\n"}
+      $ npm install @awesome-cordova-plugins/deeplinks {"\n"}
       $ ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
       $ ionic cordova plugin add ionic-plugin-deeplinks {"\n"}
-      $ npm install @ionic-native/deeplinks {"\n"}
+      $ npm install @awesome-cordova-plugins/deeplinks {"\n"}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">
@@ -71,7 +71,7 @@ You must add `universal-links` to your `config.xml` and set up Apple App Site As
 ### Angular
 
 ```tsx
-import { Deeplinks } from '@ionic-native/deeplinks/ngx';
+import { Deeplinks } from '@awesome-cordova-plugins/deeplinks/ngx';
 
 constructor(private deeplinks: Deeplinks) { }
 

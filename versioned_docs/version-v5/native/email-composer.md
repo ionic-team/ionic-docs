@@ -36,14 +36,14 @@ Requires Cordova plugin: cordova-plugin-email-composer. For more info, please se
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
       $ npm install cordova-plugin-email-composer {"\n"}
-      $ npm install @ionic-native/email-composer {"\n"}
+      $ npm install @awesome-cordova-plugins/email-composer {"\n"}
       $ ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
       $ ionic cordova plugin add cordova-plugin-email-composer {"\n"}
-      $ npm install @ionic-native/email-composer {"\n"}
+      $ npm install @awesome-cordova-plugins/email-composer {"\n"}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">
@@ -70,7 +70,7 @@ Requires Cordova plugin: cordova-plugin-email-composer. For more info, please se
 ### Angular
 
 ```tsx
-import { EmailComposer } from '@ionic-native/email-composer/ngx';
+import { EmailComposer } from '@awesome-cordova-plugins/email-composer/ngx';
 
 constructor(private emailComposer: EmailComposer) { }
 

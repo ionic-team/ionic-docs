@@ -36,14 +36,14 @@ AppMinimize is a plugin to minimize the application on android devices
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
       $ npm install cordova-plugin-appminimize {"\n"}
-      $ npm install @ionic-native/app-minimize {"\n"}
+      $ npm install @awesome-cordova-plugins/app-minimize {"\n"}
       $ ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
       $ ionic cordova plugin add cordova-plugin-appminimize {"\n"}
-      $ npm install @ionic-native/app-minimize {"\n"}
+      $ npm install @awesome-cordova-plugins/app-minimize {"\n"}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">
@@ -66,7 +66,7 @@ AppMinimize is a plugin to minimize the application on android devices
 
 ```tsx
 import { Platfrom } from '@ionic/angular';
-import { AppMinimize } from '@ionic-native/app-minimize/ngx';
+import { AppMinimize } from '@awesome-cordova-plugins/app-minimize/ngx';
 
 
 constructor(private platform: Platform, private appMinimize: AppMinimize) { }

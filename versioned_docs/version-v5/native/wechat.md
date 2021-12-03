@@ -36,14 +36,14 @@ A cordova plugin, a JS version of Wechat SDK
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
       $ npm install cordova-plugin-wechat {"\n"}
-      $ npm install @ionic-native/wechat {"\n"}
+      $ npm install @awesome-cordova-plugins/wechat {"\n"}
       $ ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
       $ ionic cordova plugin add cordova-plugin-wechat {"\n"}
-      $ npm install @ionic-native/wechat {"\n"}
+      $ npm install @awesome-cordova-plugins/wechat {"\n"}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">
@@ -66,7 +66,7 @@ A cordova plugin, a JS version of Wechat SDK
 ### Angular
 
 ```tsx
-import { Wechat } from '@ionic-native/wechat/ngx';
+import { Wechat } from '@awesome-cordova-plugins/wechat/ngx';
 
 
 constructor(private wechat: Wechat) { }

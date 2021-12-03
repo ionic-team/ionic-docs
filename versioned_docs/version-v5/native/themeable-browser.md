@@ -36,14 +36,14 @@ In-app browser that allows styling.
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
       $ npm install cordova-plugin-themeablebrowser {"\n"}
-      $ npm install @ionic-native/themeable-browser {"\n"}
+      $ npm install @awesome-cordova-plugins/themeable-browser {"\n"}
       $ ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
       $ ionic cordova plugin add cordova-plugin-themeablebrowser {"\n"}
-      $ npm install @ionic-native/themeable-browser {"\n"}
+      $ npm install @awesome-cordova-plugins/themeable-browser {"\n"}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">
@@ -73,7 +73,7 @@ In-app browser that allows styling.
 ### Angular
 
 ```tsx
-import { ThemeableBrowser, ThemeableBrowserOptions, ThemeableBrowserObject } from '@ionic-native/themeable-browser/ngx';
+import { ThemeableBrowser, ThemeableBrowserOptions, ThemeableBrowserObject } from '@awesome-cordova-plugins/themeable-browser/ngx';
 
 constructor(private themeableBrowser: ThemeableBrowser) { }
 

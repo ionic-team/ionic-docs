@@ -36,14 +36,14 @@ Read Gyroscope sensor data
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
       $ npm install cordova-plugin-gyroscope {"\n"}
-      $ npm install @ionic-native/gyroscope {"\n"}
+      $ npm install @awesome-cordova-plugins/gyroscope {"\n"}
       $ ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
       $ ionic cordova plugin add cordova-plugin-gyroscope {"\n"}
-      $ npm install @ionic-native/gyroscope {"\n"}
+      $ npm install @awesome-cordova-plugins/gyroscope {"\n"}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">
@@ -66,7 +66,7 @@ Read Gyroscope sensor data
 ### Angular
 
 ```tsx
-import { Gyroscope, GyroscopeOrientation, GyroscopeOptions } from '@ionic-native/gyroscope/ngx';
+import { Gyroscope, GyroscopeOrientation, GyroscopeOptions } from '@awesome-cordova-plugins/gyroscope/ngx';
 
 
 constructor(private gyroscope: Gyroscope) { }

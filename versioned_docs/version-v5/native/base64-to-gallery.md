@@ -36,14 +36,14 @@ This plugin allows you to save base64 data as a png image into the device
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
       $ npm install cordova-base64-to-gallery {"\n"}
-      $ npm install @ionic-native/base64-to-gallery {"\n"}
+      $ npm install @awesome-cordova-plugins/base64-to-gallery {"\n"}
       $ ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
       $ ionic cordova plugin add cordova-base64-to-gallery {"\n"}
-      $ npm install @ionic-native/base64-to-gallery {"\n"}
+      $ npm install @awesome-cordova-plugins/base64-to-gallery {"\n"}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">
@@ -67,7 +67,7 @@ This plugin allows you to save base64 data as a png image into the device
 ### Angular
 
 ```tsx
-import { Base64ToGallery } from '@ionic-native/base64-to-gallery/ngx';
+import { Base64ToGallery } from '@awesome-cordova-plugins/base64-to-gallery/ngx';
 
 constructor(private base64ToGallery: Base64ToGallery) { }
 

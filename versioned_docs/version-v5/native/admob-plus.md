@@ -36,14 +36,14 @@ AdMob Plus is the successor of cordova-plugin-admob-free, which provides a clean
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
       $ npm install cordova-admob-plus {"\n"}
-      $ npm install @ionic-native/admob-plus {"\n"}
+      $ npm install @awesome-cordova-plugins/admob-plus {"\n"}
       $ ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
       $ ionic cordova plugin add cordova-admob-plus {"\n"}
-      $ npm install @ionic-native/admob-plus {"\n"}
+      $ npm install @awesome-cordova-plugins/admob-plus {"\n"}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">

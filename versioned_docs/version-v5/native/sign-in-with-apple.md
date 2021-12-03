@@ -41,14 +41,14 @@ _Source:_ https://developer.apple.com/sign-in-with-apple/
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
       $ npm install cordova-plugin-sign-in-with-apple {"\n"}
-      $ npm install @ionic-native/sign-in-with-apple {"\n"}
+      $ npm install @awesome-cordova-plugins/sign-in-with-apple {"\n"}
       $ ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
       $ ionic cordova plugin add cordova-plugin-sign-in-with-apple {"\n"}
-      $ npm install @ionic-native/sign-in-with-apple {"\n"}
+      $ npm install @awesome-cordova-plugins/sign-in-with-apple {"\n"}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">
@@ -70,7 +70,7 @@ _Source:_ https://developer.apple.com/sign-in-with-apple/
 ### Angular
 
 ```tsx
-import { SignInWithApple, AppleSignInResponse, AppleSignInErrorResponse, ASAuthorizationAppleIDRequest } from '@ionic-native/sign-in-with-apple/ngx';
+import { SignInWithApple, AppleSignInResponse, AppleSignInErrorResponse, ASAuthorizationAppleIDRequest } from '@awesome-cordova-plugins/sign-in-with-apple/ngx';
 
 
 constructor(private signInWithApple: SignInWithApple) { }

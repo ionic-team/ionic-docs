@@ -38,14 +38,14 @@ https://github.com/google/ExoPlayer
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
       $ npm install cordova-plugin-exoplayer {"\n"}
-      $ npm install @ionic-native/android-exoplayer {"\n"}
+      $ npm install @awesome-cordova-plugins/android-exoplayer {"\n"}
       $ ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
       $ ionic cordova plugin add cordova-plugin-exoplayer {"\n"}
-      $ npm install @ionic-native/android-exoplayer {"\n"}
+      $ npm install @awesome-cordova-plugins/android-exoplayer {"\n"}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">
@@ -67,7 +67,7 @@ https://github.com/google/ExoPlayer
 ### Angular
 
 ```tsx
-import { AndroidExoPlayer } from '@ionic-native/android-exoplayer/ngx';
+import { AndroidExoPlayer } from '@awesome-cordova-plugins/android-exoplayer/ngx';
 
 constructor(private androidExoPlayer: AndroidExoPlayer) { }
 

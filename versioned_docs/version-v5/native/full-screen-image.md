@@ -36,14 +36,14 @@ This plugin does something
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
       $ npm install es.keensoft.fullscreenimage {"\n"}
-      $ npm install @ionic-native/full-screen-image {"\n"}
+      $ npm install @awesome-cordova-plugins/full-screen-image {"\n"}
       $ ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
       $ ionic cordova plugin add es.keensoft.fullscreenimage {"\n"}
-      $ npm install @ionic-native/full-screen-image {"\n"}
+      $ npm install @awesome-cordova-plugins/full-screen-image {"\n"}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">
@@ -66,7 +66,7 @@ This plugin does something
 ### Angular
 
 ```tsx
-import { FullScreenImage } from '@ionic-native/full-screen-image';
+import { FullScreenImage } from '@awesome-cordova-plugins/full-screen-image';
 
 
 constructor(private fullScreenImage: FullScreenImage) { }

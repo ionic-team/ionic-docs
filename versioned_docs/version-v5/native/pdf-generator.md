@@ -36,14 +36,14 @@ Simple plugin to generate (offline) pdf. The plugin transforms HTML to PDF and a
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
       $ npm install cordova-pdf-generator {"\n"}
-      $ npm install @ionic-native/pdf-generator {"\n"}
+      $ npm install @awesome-cordova-plugins/pdf-generator {"\n"}
       $ ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
       $ ionic cordova plugin add cordova-pdf-generator {"\n"}
-      $ npm install @ionic-native/pdf-generator {"\n"}
+      $ npm install @awesome-cordova-plugins/pdf-generator {"\n"}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">
@@ -66,7 +66,7 @@ Simple plugin to generate (offline) pdf. The plugin transforms HTML to PDF and a
 ### Angular
 
 ```tsx
-import { PDFGenerator } from '@ionic-native/pdf-generator';
+import { PDFGenerator } from '@awesome-cordova-plugins/pdf-generator';
 
 constructor(private pdfGenerator: PDFGenerator) { }
 

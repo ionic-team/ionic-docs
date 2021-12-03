@@ -37,14 +37,14 @@ Makes the IDFA and Google Ad Identifier available in the Tealium data layer.
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
       $ npm install tealium-cordova-adidentifier {"\n"}
-      $ npm install @ionic-native/tealium-adidentifier {"\n"}
+      $ npm install @awesome-cordova-plugins/tealium-adidentifier {"\n"}
       $ ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
       $ ionic cordova plugin add tealium-cordova-adidentifier {"\n"}
-      $ npm install @ionic-native/tealium-adidentifier {"\n"}
+      $ npm install @awesome-cordova-plugins/tealium-adidentifier {"\n"}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">
@@ -67,7 +67,7 @@ Makes the IDFA and Google Ad Identifier available in the Tealium data layer.
 ### Angular
 
 ```
-import { TealiumAdIdentifier } from '@ionic-native/tealium-adidentifier/ngx';
+import { TealiumAdIdentifier } from '@awesome-cordova-plugins/tealium-adidentifier/ngx';
 
 
 constructor(private adIdentifier: TealiumAdIdentifier) { }

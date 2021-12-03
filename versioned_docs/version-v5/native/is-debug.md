@@ -37,14 +37,14 @@ Debug mode is when the app is built and installed locally via xcode / eclipse / 
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
       $ npm install cordova-plugin-is-debug {"\n"}
-      $ npm install @ionic-native/is-debug {"\n"}
+      $ npm install @awesome-cordova-plugins/is-debug {"\n"}
       $ ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
       $ ionic cordova plugin add cordova-plugin-is-debug {"\n"}
-      $ npm install @ionic-native/is-debug {"\n"}
+      $ npm install @awesome-cordova-plugins/is-debug {"\n"}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">
@@ -67,7 +67,7 @@ Debug mode is when the app is built and installed locally via xcode / eclipse / 
 ### Angular
 
 ```tsx
-import { IsDebug } from '@ionic-native/is-debug/ngx';
+import { IsDebug } from '@awesome-cordova-plugins/is-debug/ngx';
 
 constructor(private isDebug: IsDebug) { }
 

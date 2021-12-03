@@ -31,16 +31,16 @@ $ ionic cordova plugin add cordova-plugin-camera@4.3.2
 Useful when adding new developers to a project. `ionic cordova prepare` restores platforms and plugins from `package.json` and `config.xml`. The version to be installed is taken from `package.json` or `config.xml`, if found in those files. In case of conflicts, `package.json` is given precedence over `config.xml`.
 
 **5) Troubleshoot Cordova issues with Ionic CLI commands**
-* `ionic doctor list`: Detects [common issues](cli/commands/doctor-list.md) and suggests steps to fix them
-* `ionic repair`: Remove, then [regenerate](cli/commands/repair.md) all dependencies
 
+- `ionic doctor list`: Detects [common issues](cli/commands/doctor-list.md) and suggests steps to fix them
+- `ionic repair`: Remove, then [regenerate](cli/commands/repair.md) all dependencies
 
 ## Understanding Version Numbers
 
 For any given Ionic Native plugin, the Ionic Native (TypeScript code) and Cordova (native code) version numbers will not match. The Ionic Native version number is found in `package.json`:
 
 ```json
-"@ionic-native/camera": "^5.3.0",
+"@awesome-cordova-plugins/camera": "^5.3.0",
 ```
 
 The Cordova plugin version number is found in both `package.json` and `config.xml`:
@@ -61,9 +61,9 @@ To check for new Ionic Native releases (may include exposing methods recently ad
 
 Research the build error(s) by checking out these resources:
 
-* Google & [StackOverflow](https://stackoverflow.com): Many issues are documented online
-* Ask the [Ionic Community Ionic Forum](https://forum.ionicframework.com) (see the Ionic Native category)
-* See the Ionic Customer Success [Knowledge Base](https://ionic.zendesk.com)
+- Google & [StackOverflow](https://stackoverflow.com): Many issues are documented online
+- Ask the [Ionic Community Ionic Forum](https://forum.ionicframework.com) (see the Ionic Native category)
+- See the Ionic Customer Success [Knowledge Base](https://ionic.zendesk.com)
 
 ### Cordova Plugin Conflicts
 
@@ -79,7 +79,7 @@ Update your project's plugins one at a time, ideally in separate code branches. 
 
 ### When should I update?
 
-* When a new feature/bug is released: Run `npm outdated` to see a list of available updates.
-* When new major versions are released: Official blogs, such as the [Cordova blog](https://cordova.apache.org/blog/) and [Ionic blog](https://ionicframework.com/blog/), will publish announcements and news.
-* Evaluate the nature of the update: is it a shiny new feature or critical security fix?
-* Timing: Where does it fit in against your team's project goals?
+- When a new feature/bug is released: Run `npm outdated` to see a list of available updates.
+- When new major versions are released: Official blogs, such as the [Cordova blog](https://cordova.apache.org/blog/) and [Ionic blog](https://ionicframework.com/blog/), will publish announcements and news.
+- Evaluate the nature of the update: is it a shiny new feature or critical security fix?
+- Timing: Where does it fit in against your team's project goals?

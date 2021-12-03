@@ -39,14 +39,14 @@ For more information about Paytm All-in-One SDK, please visit https://developer.
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
       $ npm install cordova-paytm-allinonesdk {"\n"}
-      $ npm install @ionic-native/all-in-one-sdk {"\n"}
+      $ npm install @awesome-cordova-plugins/all-in-one-sdk {"\n"}
       $ ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
       $ ionic cordova plugin add cordova-paytm-allinonesdk {"\n"}
-      $ npm install @ionic-native/all-in-one-sdk {"\n"}
+      $ npm install @awesome-cordova-plugins/all-in-one-sdk {"\n"}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">
@@ -69,7 +69,7 @@ For more information about Paytm All-in-One SDK, please visit https://developer.
 ### Angular
 
 ```tsx
-import { AllInOneSDK } from '@ionic-native/all-in-one-sdk/ngx';
+import { AllInOneSDK } from '@awesome-cordova-plugins/all-in-one-sdk/ngx';
 
 
 constructor(private allInOneSDK: AllInOneSDK) { }

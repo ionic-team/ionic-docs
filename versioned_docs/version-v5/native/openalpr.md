@@ -36,14 +36,14 @@ This Cordova plugin adds support for the OpenALPR (Automatic License Plate Recog
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
       $ npm install cordova-plugin-openalpr {"\n"}
-      $ npm install @ionic-native/openalpr {"\n"}
+      $ npm install @awesome-cordova-plugins/openalpr {"\n"}
       $ ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
       $ ionic cordova plugin add cordova-plugin-openalpr {"\n"}
-      $ npm install @ionic-native/openalpr {"\n"}
+      $ npm install @awesome-cordova-plugins/openalpr {"\n"}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">
@@ -66,7 +66,7 @@ This Cordova plugin adds support for the OpenALPR (Automatic License Plate Recog
 ### Angular
 
 ```tsx
-import { OpenALPR, OpenALPROptions, OpenALPRResult } from '@ionic-native/openalpr/ngx';
+import { OpenALPR, OpenALPROptions, OpenALPRResult } from '@awesome-cordova-plugins/openalpr/ngx';
 
 
 constructor(private openALPR: OpenALPR) { }
@@ -76,7 +76,7 @@ const scanOptions: OpenALPROptions = {
    amount: 3
 }
 
-// To get imageData, you can use the @ionic-native/camera module for example. It works with DestinationType.FILE_URI and DATA_URL
+// To get imageData, you can use the @awesome-cordova-plugins/camera module for example. It works with DestinationType.FILE_URI and DATA_URL
 
 this.openALPR.scan(imageData, scanOptions)
   .then((res: [OpenALPRResult]) => console.log(res))

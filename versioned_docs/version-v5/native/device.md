@@ -36,14 +36,14 @@ Access information about the underlying device and platform.
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
       $ npm install cordova-plugin-device {"\n"}
-      $ npm install @ionic-native/device {"\n"}
+      $ npm install @awesome-cordova-plugins/device {"\n"}
       $ ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
       $ ionic cordova plugin add cordova-plugin-device {"\n"}
-      $ npm install @ionic-native/device {"\n"}
+      $ npm install @awesome-cordova-plugins/device {"\n"}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">
@@ -69,7 +69,7 @@ Access information about the underlying device and platform.
 ### Angular
 
 ```tsx
-import { Device } from '@ionic-native/device/ngx';
+import { Device } from '@awesome-cordova-plugins/device/ngx';
 
 constructor(private device: Device) { }
 

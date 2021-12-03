@@ -38,14 +38,14 @@ Requires Cordova plugin: `cordova-plugin-pin-dialog`. For more info, please see 
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
       $ npm install cordova-plugin-pin-dialog {"\n"}
-      $ npm install @ionic-native/pin-dialog {"\n"}
+      $ npm install @awesome-cordova-plugins/pin-dialog {"\n"}
       $ ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
       $ ionic cordova plugin add cordova-plugin-pin-dialog {"\n"}
-      $ npm install @ionic-native/pin-dialog {"\n"}
+      $ npm install @awesome-cordova-plugins/pin-dialog {"\n"}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">
@@ -68,7 +68,7 @@ Requires Cordova plugin: `cordova-plugin-pin-dialog`. For more info, please see 
 ### Angular
 
 ```tsx
-import { PinDialog } from '@ionic-native/pin-dialog/ngx';
+import { PinDialog } from '@awesome-cordova-plugins/pin-dialog/ngx';
 
 
 constructor(private pinDialog: PinDialog) { }

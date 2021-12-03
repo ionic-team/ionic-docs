@@ -36,14 +36,14 @@ Stores app settings in cloud storage so if the user re-installs the app or insta
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
       $ npm install cordova-plugin-cloud-settings {"\n"}
-      $ npm install @ionic-native/cloud-settings {"\n"}
+      $ npm install @awesome-cordova-plugins/cloud-settings {"\n"}
       $ ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
       $ ionic cordova plugin add cordova-plugin-cloud-settings {"\n"}
-      $ npm install @ionic-native/cloud-settings {"\n"}
+      $ npm install @awesome-cordova-plugins/cloud-settings {"\n"}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">
@@ -66,7 +66,7 @@ Stores app settings in cloud storage so if the user re-installs the app or insta
 ### Angular
 
 ```tsx
-import { CloudSettings } from '@ionic-native/cloud-settings/ngx';
+import { CloudSettings } from '@awesome-cordova-plugins/cloud-settings/ngx';
 
 
 constructor(private cloudSettings: CloudSettings) { }

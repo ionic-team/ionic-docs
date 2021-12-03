@@ -19,7 +19,7 @@ The File class implements static convenience functions to access files and direc
 Example:
 
 ```
-import { File } from '@ionic-native/file/ngx';
+import { File } from '@awesome-cordova-plugins/file/ngx';
 
 constructor(private file: File) { }
 
@@ -60,14 +60,14 @@ Although most of the plugin code was written when an earlier spec was current: h
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
       $ npm install cordova-plugin-file {"\n"}
-      $ npm install @ionic-native/file {"\n"}
+      $ npm install @awesome-cordova-plugins/file {"\n"}
       $ ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
       $ ionic cordova plugin add cordova-plugin-file {"\n"}
-      $ npm install @ionic-native/file {"\n"}
+      $ npm install @awesome-cordova-plugins/file {"\n"}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">

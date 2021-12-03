@@ -36,14 +36,14 @@ The function login, logs out, acquires, verifies, and refreshes the access token
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
       $ npm install cordova-line-login-plugin {"\n"}
-      $ npm install @ionic-native/line-login {"\n"}
+      $ npm install @awesome-cordova-plugins/line-login {"\n"}
       $ ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
       $ ionic cordova plugin add cordova-line-login-plugin {"\n"}
-      $ npm install @ionic-native/line-login {"\n"}
+      $ npm install @awesome-cordova-plugins/line-login {"\n"}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">
@@ -66,7 +66,7 @@ The function login, logs out, acquires, verifies, and refreshes the access token
 ### Angular
 
 ```tsx
-import { LineLogin } from '@ionic-native/line-login/ngx';
+import { LineLogin } from '@awesome-cordova-plugins/line-login/ngx';
 
 
 constructor(private lineLogin: LineLogin) { }

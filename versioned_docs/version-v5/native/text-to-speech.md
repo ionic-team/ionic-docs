@@ -36,14 +36,14 @@ Text to Speech plugin
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
       $ npm install cordova-plugin-tts {"\n"}
-      $ npm install @ionic-native/text-to-speech {"\n"}
+      $ npm install @awesome-cordova-plugins/text-to-speech {"\n"}
       $ ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
       $ ionic cordova plugin add cordova-plugin-tts {"\n"}
-      $ npm install @ionic-native/text-to-speech {"\n"}
+      $ npm install @awesome-cordova-plugins/text-to-speech {"\n"}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">
@@ -67,7 +67,7 @@ Text to Speech plugin
 ### Angular
 
 ```tsx
-import { TextToSpeech } from '@ionic-native/text-to-speech/ngx';
+import { TextToSpeech } from '@awesome-cordova-plugins/text-to-speech/ngx';
 
 constructor(private tts: TextToSpeech) { }
 

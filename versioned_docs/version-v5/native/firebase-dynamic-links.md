@@ -55,14 +55,14 @@ config.xml:
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
       $ npm install  cordova-plugin-firebase-dynamiclinks {"\n"}
-      $ npm install @ionic-native/firebase-dynamic-links {"\n"}
+      $ npm install @awesome-cordova-plugins/firebase-dynamic-links {"\n"}
       $ ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
       $ ionic cordova plugin add  cordova-plugin-firebase-dynamiclinks {"\n"}
-      $ npm install @ionic-native/firebase-dynamic-links {"\n"}
+      $ npm install @awesome-cordova-plugins/firebase-dynamic-links {"\n"}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">
@@ -85,7 +85,7 @@ config.xml:
 ### Angular
 
 ```tsx
-import { FirebaseDynamicLinks } from '@ionic-native/firebase-dynamic-links/ngx';
+import { FirebaseDynamicLinks } from '@awesome-cordova-plugins/firebase-dynamic-links/ngx';
 
 
 constructor(private firebaseDynamicLinks: FirebaseDynamicLinks) { }

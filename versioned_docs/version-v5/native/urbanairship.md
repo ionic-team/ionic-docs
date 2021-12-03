@@ -36,14 +36,14 @@ This plugin does something
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
       $ npm install urbanairship-cordova {"\n"}
-      $ npm install @ionic-native/urbanairship {"\n"}
+      $ npm install @awesome-cordova-plugins/urbanairship {"\n"}
       $ ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
       $ ionic cordova plugin add urbanairship-cordova {"\n"}
-      $ npm install @ionic-native/urbanairship {"\n"}
+      $ npm install @awesome-cordova-plugins/urbanairship {"\n"}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">
@@ -66,7 +66,7 @@ This plugin does something
 ### Angular
 
 ```tsx
-import { UrbanAirShip } from '@ionic-native/urbanairship/ngx';
+import { UrbanAirShip } from '@awesome-cordova-plugins/urbanairship/ngx';
 
 
 constructor(private urbanAirShip: UrbanAirShip) { }

@@ -36,14 +36,14 @@ Opens the file picker on Android for the user to select a file, returns a file U
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
       $ npm install cordova-plugin-filechooser {"\n"}
-      $ npm install @ionic-native/file-chooser {"\n"}
+      $ npm install @awesome-cordova-plugins/file-chooser {"\n"}
       $ ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
       $ ionic cordova plugin add cordova-plugin-filechooser {"\n"}
-      $ npm install @ionic-native/file-chooser {"\n"}
+      $ npm install @awesome-cordova-plugins/file-chooser {"\n"}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">
@@ -65,7 +65,7 @@ Opens the file picker on Android for the user to select a file, returns a file U
 ### Angular
 
 ```tsx
-import { FileChooser } from '@ionic-native/file-chooser/ngx';
+import { FileChooser } from '@awesome-cordova-plugins/file-chooser/ngx';
 
 constructor(private fileChooser: FileChooser) { }
 

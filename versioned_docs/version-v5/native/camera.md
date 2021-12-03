@@ -50,14 +50,14 @@ inside of the <platform name='ios> section
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
       $ npm install cordova-plugin-camera {"\n"}
-      $ npm install @ionic-native/camera {"\n"}
+      $ npm install @awesome-cordova-plugins/camera {"\n"}
       $ ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
       $ ionic cordova plugin add cordova-plugin-camera {"\n"}
-      $ npm install @ionic-native/camera {"\n"}
+      $ npm install @awesome-cordova-plugins/camera {"\n"}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">
@@ -82,7 +82,7 @@ inside of the <platform name='ios> section
 ### Angular
 
 ```tsx
-import { Camera, CameraOptions } from '@ionic-native/camera/ngx';
+import { Camera, CameraOptions } from '@awesome-cordova-plugins/camera/ngx';
 
 constructor(private camera: Camera) { }
 

@@ -36,14 +36,14 @@ Native Audio Playback
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
       $ npm install cordova-plugin-nativeaudio {"\n"}
-      $ npm install @ionic-native/native-audio {"\n"}
+      $ npm install @awesome-cordova-plugins/native-audio {"\n"}
       $ ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
       $ ionic cordova plugin add cordova-plugin-nativeaudio {"\n"}
-      $ npm install @ionic-native/native-audio {"\n"}
+      $ npm install @awesome-cordova-plugins/native-audio {"\n"}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">
@@ -67,7 +67,7 @@ Native Audio Playback
 ### Angular
 
 ```tsx
-import { NativeAudio } from '@ionic-native/native-audio/ngx';
+import { NativeAudio } from '@awesome-cordova-plugins/native-audio/ngx';
 
 constructor(private nativeAudio: NativeAudio) { }
 

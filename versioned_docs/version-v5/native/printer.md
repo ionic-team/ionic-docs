@@ -36,14 +36,14 @@ Prints documents or HTML rendered content
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
       $ npm install cordova-plugin-printer {"\n"}
-      $ npm install @ionic-native/printer {"\n"}
+      $ npm install @awesome-cordova-plugins/printer {"\n"}
       $ ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
       $ ionic cordova plugin add cordova-plugin-printer {"\n"}
-      $ npm install @ionic-native/printer {"\n"}
+      $ npm install @awesome-cordova-plugins/printer {"\n"}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">
@@ -67,7 +67,7 @@ Prints documents or HTML rendered content
 ### Angular
 
 ```tsx
-import { Printer, PrintOptions } from '@ionic-native/printer/ngx';
+import { Printer, PrintOptions } from '@awesome-cordova-plugins/printer/ngx';
 
 constructor(private printer: Printer) { }
 

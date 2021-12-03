@@ -36,14 +36,14 @@ The NavigationBar plugin allows you to hide and auto hide the android navigation
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
       $ npm install cordova-plugin-navigationbar {"\n"}
-      $ npm install @ionic-native/navigation-bar {"\n"}
+      $ npm install @awesome-cordova-plugins/navigation-bar {"\n"}
       $ ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
       $ ionic cordova plugin add cordova-plugin-navigationbar {"\n"}
-      $ npm install @ionic-native/navigation-bar {"\n"}
+      $ npm install @awesome-cordova-plugins/navigation-bar {"\n"}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">
@@ -65,7 +65,7 @@ The NavigationBar plugin allows you to hide and auto hide the android navigation
 ### Angular
 
 ```tsx
-import { NavigationBar } from '@ionic-native/navigation-bar/ngx';
+import { NavigationBar } from '@awesome-cordova-plugins/navigation-bar/ngx';
 
 constructor(private navigationBar: NavigationBar) { }
 

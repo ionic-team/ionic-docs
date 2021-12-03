@@ -38,14 +38,14 @@ Requires Cordova plugin: `cordova-plugin-dialogs`. For more info, please see the
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
       $ npm install cordova-plugin-dialogs {"\n"}
-      $ npm install @ionic-native/dialogs {"\n"}
+      $ npm install @awesome-cordova-plugins/dialogs {"\n"}
       $ ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
       $ ionic cordova plugin add cordova-plugin-dialogs {"\n"}
-      $ npm install @ionic-native/dialogs {"\n"}
+      $ npm install @awesome-cordova-plugins/dialogs {"\n"}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">
@@ -71,7 +71,7 @@ Requires Cordova plugin: `cordova-plugin-dialogs`. For more info, please see the
 ### Angular
 
 ```tsx
-import { Dialogs } from '@ionic-native/dialogs/ngx';
+import { Dialogs } from '@awesome-cordova-plugins/dialogs/ngx';
 
 constructor(private dialogs: Dialogs) { }
 

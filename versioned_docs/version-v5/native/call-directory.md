@@ -37,14 +37,14 @@ to process the changes in the call directory extension.
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
       $ npm install cordova-plugin-call-directory {"\n"}
-      $ npm install @ionic-native/call-directory {"\n"}
+      $ npm install @awesome-cordova-plugins/call-directory {"\n"}
       $ ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
       $ ionic cordova plugin add cordova-plugin-call-directory {"\n"}
-      $ npm install @ionic-native/call-directory {"\n"}
+      $ npm install @awesome-cordova-plugins/call-directory {"\n"}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">
@@ -66,7 +66,7 @@ to process the changes in the call directory extension.
 ### Angular
 
 ```tsx
-import { CallDirectory } from '@ionic-native/call-directory/ngx';
+import { CallDirectory } from '@awesome-cordova-plugins/call-directory/ngx';
 
 
 constructor(private callDirectory: CallDirectory) { }

@@ -37,14 +37,14 @@ Gaode location can directly return address informationGaode location can directl
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
       $ npm install cordova-plugin-gaodelocation-chenyu {"\n"}
-      $ npm install @ionic-native/gao-de-location {"\n"}
+      $ npm install @awesome-cordova-plugins/gao-de-location {"\n"}
       $ ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
       $ ionic cordova plugin add cordova-plugin-gaodelocation-chenyu {"\n"}
-      $ npm install @ionic-native/gao-de-location {"\n"}
+      $ npm install @awesome-cordova-plugins/gao-de-location {"\n"}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">
@@ -67,7 +67,7 @@ Gaode location can directly return address informationGaode location can directl
 ### Angular
 
 ```tsx
-import { GaoDeLocation } from '@ionic-native/gao-de-location/ngx';
+import { GaoDeLocation } from '@awesome-cordova-plugins/gao-de-location/ngx';
 
 
 constructor(private gaoDeLocation: GaoDeLocation) { }

@@ -45,14 +45,14 @@ to retain your users and grow your audience while remaining fully GDPR compliant
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
       $ npm install wonderpush-cordova-sdk {"\n"}
-      $ npm install @ionic-native/wonderpush {"\n"}
+      $ npm install @awesome-cordova-plugins/wonderpush {"\n"}
       $ ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
       $ ionic cordova plugin add wonderpush-cordova-sdk {"\n"}
-      $ npm install @ionic-native/wonderpush {"\n"}
+      $ npm install @awesome-cordova-plugins/wonderpush {"\n"}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">
@@ -75,7 +75,7 @@ to retain your users and grow your audience while remaining fully GDPR compliant
 ### Angular
 
 ```tsx
-import { WonderPush } from '@ionic-native/wonderpush';
+import { WonderPush } from '@awesome-cordova-plugins/wonderpush';
 
 
 constructor(private wonderPush: WonderPush) { }

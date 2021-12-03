@@ -38,14 +38,14 @@ Requires Cordova plugin: `cordova-plugin-preview-any-file`. For more info, pleas
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
       $ npm install cordova-plugin-preview-any-file {"\n"}
-      $ npm install @ionic-native/preview-any-file {"\n"}
+      $ npm install @awesome-cordova-plugins/preview-any-file {"\n"}
       $ ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
       $ ionic cordova plugin add cordova-plugin-preview-any-file {"\n"}
-      $ npm install @ionic-native/preview-any-file {"\n"}
+      $ npm install @awesome-cordova-plugins/preview-any-file {"\n"}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">
@@ -68,7 +68,7 @@ Requires Cordova plugin: `cordova-plugin-preview-any-file`. For more info, pleas
 ### Angular
 
 ```tsx
-import { PreviewAnyFile } from '@ionic-native/preview-any-file/ngx';
+import { PreviewAnyFile } from '@awesome-cordova-plugins/preview-any-file/ngx';
 
 
 constructor(private previewAnyFile: PreviewAnyFile) { }

@@ -37,14 +37,14 @@ You can enable or disable the autostart function in your app.
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
       $ npm install cordova-plugin-autostart {"\n"}
-      $ npm install @ionic-native/autostart {"\n"}
+      $ npm install @awesome-cordova-plugins/autostart {"\n"}
       $ ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
       $ ionic cordova plugin add cordova-plugin-autostart {"\n"}
-      $ npm install @ionic-native/autostart {"\n"}
+      $ npm install @awesome-cordova-plugins/autostart {"\n"}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">
@@ -66,7 +66,7 @@ You can enable or disable the autostart function in your app.
 ### Angular
 
 ```tsx
-import { Autostart } from '@ionic-native/autostart/ngx';
+import { Autostart } from '@awesome-cordova-plugins/autostart/ngx';
 
 
 constructor(private autostart: Autostart) { }

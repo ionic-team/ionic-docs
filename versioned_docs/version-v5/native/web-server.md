@@ -36,14 +36,14 @@ This plugin allows you to start a local dynamic content web server for android a
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
       $ npm install cordova-plugin-webserver {"\n"}
-      $ npm install @ionic-native/web-server {"\n"}
+      $ npm install @awesome-cordova-plugins/web-server {"\n"}
       $ ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
       $ ionic cordova plugin add cordova-plugin-webserver {"\n"}
-      $ npm install @ionic-native/web-server {"\n"}
+      $ npm install @awesome-cordova-plugins/web-server {"\n"}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">
@@ -66,7 +66,7 @@ This plugin allows you to start a local dynamic content web server for android a
 ### Angular
 
 ```tsx
-import { WebServer } from '@ionic-native/web-server/ngx';
+import { WebServer } from '@awesome-cordova-plugins/web-server/ngx';
 
 
 constructor(private webServer: WebServer) { }

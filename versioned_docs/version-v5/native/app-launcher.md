@@ -36,14 +36,14 @@ Simple Cordova plugin to see if other apps are installed and launch them.
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
       $ npm install cordova-plugin-app-launcher {"\n"}
-      $ npm install @ionic-native/app-launcher {"\n"}
+      $ npm install @awesome-cordova-plugins/app-launcher {"\n"}
       $ ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
       $ ionic cordova plugin add cordova-plugin-app-launcher {"\n"}
-      $ npm install @ionic-native/app-launcher {"\n"}
+      $ npm install @awesome-cordova-plugins/app-launcher {"\n"}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">
@@ -66,7 +66,7 @@ Simple Cordova plugin to see if other apps are installed and launch them.
 ### Angular
 
 ```tsx
-import { AppLauncher, AppLauncherOptions } from '@ionic-native/app-launcher/ngx';
+import { AppLauncher, AppLauncherOptions } from '@awesome-cordova-plugins/app-launcher/ngx';
 import { Platform } from '@ionic/angular';
 
 constructor(private appLauncher: AppLauncher, private platform: Platform) { }

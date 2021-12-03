@@ -59,14 +59,14 @@ Supports:
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
       $ npm install cordova-plugin-purchase {"\n"}
-      $ npm install @ionic-native/in-app-purchase-2 {"\n"}
+      $ npm install @awesome-cordova-plugins/in-app-purchase-2 {"\n"}
       $ ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
       $ ionic cordova plugin add cordova-plugin-purchase {"\n"}
-      $ npm install @ionic-native/in-app-purchase-2 {"\n"}
+      $ npm install @awesome-cordova-plugins/in-app-purchase-2 {"\n"}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">
@@ -90,7 +90,7 @@ Supports:
 ### Angular
 
 ```tsx
-import { InAppPurchase2 } from '@ionic-native/in-app-purchase-2/ngx';
+import { InAppPurchase2 } from '@awesome-cordova-plugins/in-app-purchase-2/ngx';
 
 constructor(public platform: Platform, private store: InAppPurchase2) {
   platform.ready().then(() => {

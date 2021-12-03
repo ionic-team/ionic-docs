@@ -36,14 +36,14 @@ An Ionic plugin to use Taptic Engine API on iPhone 7, 7 Plus or newer.
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
       $ npm install cordova-plugin-taptic-engine {"\n"}
-      $ npm install @ionic-native/taptic-engine {"\n"}
+      $ npm install @awesome-cordova-plugins/taptic-engine {"\n"}
       $ ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
       $ ionic cordova plugin add cordova-plugin-taptic-engine {"\n"}
-      $ npm install @ionic-native/taptic-engine {"\n"}
+      $ npm install @awesome-cordova-plugins/taptic-engine {"\n"}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">
@@ -65,7 +65,7 @@ An Ionic plugin to use Taptic Engine API on iPhone 7, 7 Plus or newer.
 ### Angular
 
 ```tsx
-import { TapticEngine } from '@ionic-native/taptic-engine/ngx';
+import { TapticEngine } from '@awesome-cordova-plugins/taptic-engine/ngx';
 
 ...
 

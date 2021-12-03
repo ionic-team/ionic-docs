@@ -38,14 +38,14 @@ This functionality only works on iOS devices
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
       $ npm install com.omarben.inappreview {"\n"}
-      $ npm install @ionic-native/in-app-review {"\n"}
+      $ npm install @awesome-cordova-plugins/in-app-review {"\n"}
       $ ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
       $ ionic cordova plugin add com.omarben.inappreview {"\n"}
-      $ npm install @ionic-native/in-app-review {"\n"}
+      $ npm install @awesome-cordova-plugins/in-app-review {"\n"}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">
@@ -67,7 +67,7 @@ This functionality only works on iOS devices
 ### Angular
 
 ```tsx
-import { InAppReview } from '@ionic-native/in-app-review/ngx';
+import { InAppReview } from '@awesome-cordova-plugins/in-app-review/ngx';
 
 
 constructor(private inAppReview: InAppReview) { }

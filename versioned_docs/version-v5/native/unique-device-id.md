@@ -36,14 +36,14 @@ This plugin produces a unique, cross-install, app-specific device id.
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
       $ npm install cordova-plugin-uniquedeviceid {"\n"}
-      $ npm install @ionic-native/unique-device-id {"\n"}
+      $ npm install @awesome-cordova-plugins/unique-device-id {"\n"}
       $ ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
       $ ionic cordova plugin add cordova-plugin-uniquedeviceid {"\n"}
-      $ npm install @ionic-native/unique-device-id {"\n"}
+      $ npm install @awesome-cordova-plugins/unique-device-id {"\n"}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">
@@ -67,7 +67,7 @@ This plugin produces a unique, cross-install, app-specific device id.
 ### Angular
 
 ```tsx
-import { UniqueDeviceID } from '@ionic-native/unique-device-id/ngx';
+import { UniqueDeviceID } from '@awesome-cordova-plugins/unique-device-id/ngx';
 
 constructor(private uniqueDeviceID: UniqueDeviceID) { }
 

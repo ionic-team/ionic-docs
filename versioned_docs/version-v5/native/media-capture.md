@@ -38,14 +38,14 @@ Requires Cordova plugin: `cordova-plugin-media-capture`. For more info, please s
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
       $ npm install cordova-plugin-media-capture {"\n"}
-      $ npm install @ionic-native/media-capture {"\n"}
+      $ npm install @awesome-cordova-plugins/media-capture {"\n"}
       $ ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
       $ ionic cordova plugin add cordova-plugin-media-capture {"\n"}
-      $ npm install @ionic-native/media-capture {"\n"}
+      $ npm install @awesome-cordova-plugins/media-capture {"\n"}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">
@@ -70,7 +70,7 @@ Requires Cordova plugin: `cordova-plugin-media-capture`. For more info, please s
 ### Angular
 
 ```tsx
-import { MediaCapture, MediaFile, CaptureError, CaptureImageOptions } from '@ionic-native/media-capture/ngx';
+import { MediaCapture, MediaFile, CaptureError, CaptureImageOptions } from '@awesome-cordova-plugins/media-capture/ngx';
 
 
 constructor(private mediaCapture: MediaCapture) { }

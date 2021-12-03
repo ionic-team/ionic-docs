@@ -39,14 +39,14 @@ For more info, please see the following Github issue [Google Mobile Vision relyi
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
       $ npm install cordova-plugin-mobile-ocr {"\n"}
-      $ npm install @ionic-native/ocr {"\n"}
+      $ npm install @awesome-cordova-plugins/ocr {"\n"}
       $ ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
       $ ionic cordova plugin add cordova-plugin-mobile-ocr {"\n"}
-      $ npm install @ionic-native/ocr {"\n"}
+      $ npm install @awesome-cordova-plugins/ocr {"\n"}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">
@@ -69,7 +69,7 @@ For more info, please see the following Github issue [Google Mobile Vision relyi
 ### Angular
 
 ```tsx
-import { OCR, OCRSourceType } from '@ionic-native/ocr/ngx';
+import { OCR, OCRSourceType } from '@awesome-cordova-plugins/ocr/ngx';
 
 
 constructor(private ocr: OCR) { }

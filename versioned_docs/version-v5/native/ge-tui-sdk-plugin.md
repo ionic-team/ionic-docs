@@ -36,14 +36,14 @@ This plugin does something
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
       $ npm install cordova-plugin-getuisdk {"\n"}
-      $ npm install @ionic-native/ge-tui-sdk-plugin {"\n"}
+      $ npm install @awesome-cordova-plugins/ge-tui-sdk-plugin {"\n"}
       $ ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
       $ ionic cordova plugin add cordova-plugin-getuisdk {"\n"}
-      $ npm install @ionic-native/ge-tui-sdk-plugin {"\n"}
+      $ npm install @awesome-cordova-plugins/ge-tui-sdk-plugin {"\n"}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">
@@ -66,7 +66,7 @@ This plugin does something
 ### Angular
 
 ```tsx
-import { GeTuiSdkPlugin } from '@ionic-native/ge-tui-sdk-plugin';
+import { GeTuiSdkPlugin } from '@awesome-cordova-plugins/ge-tui-sdk-plugin';
 
 
 constructor(private geTuiSdkPlugin: GeTuiSdkPlugin) { }

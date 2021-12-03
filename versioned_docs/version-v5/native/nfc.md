@@ -45,14 +45,14 @@ This plugin uses NDEF (NFC Data Exchange Format) for maximum compatibilty betwee
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
       $ npm install phonegap-nfc {"\n"}
-      $ npm install @ionic-native/nfc {"\n"}
+      $ npm install @awesome-cordova-plugins/nfc {"\n"}
       $ ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
       $ ionic cordova plugin add phonegap-nfc {"\n"}
-      $ npm install @ionic-native/nfc {"\n"}
+      $ npm install @awesome-cordova-plugins/nfc {"\n"}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">
@@ -76,7 +76,7 @@ This plugin uses NDEF (NFC Data Exchange Format) for maximum compatibilty betwee
 ### Angular
 
 ```tsx
-import { NFC, Ndef } from '@ionic-native/nfc/ngx';
+import { NFC, Ndef } from '@awesome-cordova-plugins/nfc/ngx';
 
 constructor(private nfc: NFC, private ndef: Ndef) { }
 

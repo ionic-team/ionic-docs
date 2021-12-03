@@ -36,14 +36,14 @@ This plugin will open a file on your device file system with its default applica
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
       $ npm install cordova-plugin-file-opener2 {"\n"}
-      $ npm install @ionic-native/file-opener {"\n"}
+      $ npm install @awesome-cordova-plugins/file-opener {"\n"}
       $ ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
       $ ionic cordova plugin add cordova-plugin-file-opener2 {"\n"}
-      $ npm install @ionic-native/file-opener {"\n"}
+      $ npm install @awesome-cordova-plugins/file-opener {"\n"}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">
@@ -68,7 +68,7 @@ This plugin will open a file on your device file system with its default applica
 ### Angular
 
 ```tsx
-import { FileOpener } from '@ionic-native/file-opener/ngx';
+import { FileOpener } from '@awesome-cordova-plugins/file-opener/ngx';
 
 constructor(private fileOpener: FileOpener) { }
 

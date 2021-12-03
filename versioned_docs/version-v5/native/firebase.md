@@ -36,14 +36,14 @@ This plugin brings push notifications, analytics, event tracking, crash reportin
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
       $ npm install cordova-plugin-firebase {"\n"}
-      $ npm install @ionic-native/firebase {"\n"}
+      $ npm install @awesome-cordova-plugins/firebase {"\n"}
       $ ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
       $ ionic cordova plugin add cordova-plugin-firebase {"\n"}
-      $ npm install @ionic-native/firebase {"\n"}
+      $ npm install @awesome-cordova-plugins/firebase {"\n"}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">
@@ -70,7 +70,7 @@ Not Compatible
 ### Angular
 
 ```tsx
-import { Firebase } from '@ionic-native/firebase/ngx';
+import { Firebase } from '@awesome-cordova-plugins/firebase/ngx';
 
 constructor(private firebase: Firebase) { }
 

@@ -37,14 +37,14 @@ app and allowing you to store a password securely in the device keychain.
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
       $ npm install cordova-plugin-keychain-touch-id {"\n"}
-      $ npm install @ionic-native/keychain-touch-id {"\n"}
+      $ npm install @awesome-cordova-plugins/keychain-touch-id {"\n"}
       $ ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
       $ ionic cordova plugin add cordova-plugin-keychain-touch-id {"\n"}
-      $ npm install @ionic-native/keychain-touch-id {"\n"}
+      $ npm install @awesome-cordova-plugins/keychain-touch-id {"\n"}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">
@@ -67,7 +67,7 @@ app and allowing you to store a password securely in the device keychain.
 ### Angular
 
 ```tsx
-import { KeychainTouchId } from '@ionic-native/keychain-touch-id/ngx';
+import { KeychainTouchId } from '@awesome-cordova-plugins/keychain-touch-id/ngx';
 
 
 constructor(private keychainTouchId: KeychainTouchId) { }

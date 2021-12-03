@@ -36,14 +36,14 @@ Vibrates the device
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
       $ npm install cordova-plugin-vibration {"\n"}
-      $ npm install @ionic-native/vibration {"\n"}
+      $ npm install @awesome-cordova-plugins/vibration {"\n"}
       $ ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
       $ ionic cordova plugin add cordova-plugin-vibration {"\n"}
-      $ npm install @ionic-native/vibration {"\n"}
+      $ npm install @awesome-cordova-plugins/vibration {"\n"}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">
@@ -67,7 +67,7 @@ Vibrates the device
 ### Angular
 
 ```tsx
-import { Vibration } from '@ionic-native/vibration/ngx';
+import { Vibration } from '@awesome-cordova-plugins/vibration/ngx';
 
 constructor(private vibration: Vibration) { }
 

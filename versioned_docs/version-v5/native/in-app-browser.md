@@ -36,14 +36,14 @@ Launches in app Browser
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
       $ npm install cordova-plugin-inappbrowser {"\n"}
-      $ npm install @ionic-native/in-app-browser {"\n"}
+      $ npm install @awesome-cordova-plugins/in-app-browser {"\n"}
       $ ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
       $ ionic cordova plugin add cordova-plugin-inappbrowser {"\n"}
-      $ npm install @ionic-native/in-app-browser {"\n"}
+      $ npm install @awesome-cordova-plugins/in-app-browser {"\n"}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">
@@ -70,7 +70,7 @@ Launches in app Browser
 ### Angular
 
 ```tsx
-import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
+import { InAppBrowser } from '@awesome-cordova-plugins/in-app-browser/ngx';
 
 constructor(private iab: InAppBrowser) { }
 

@@ -37,14 +37,14 @@ Full documentation can be found here: https://smartlook.github.io/docs/sdk/ionic
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
       $ npm install https://github.com/smartlook/cordova-smartlook.git {"\n"}
-      $ npm install @ionic-native/smartlook {"\n"}
+      $ npm install @awesome-cordova-plugins/smartlook {"\n"}
       $ ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
       $ ionic cordova plugin add https://github.com/smartlook/cordova-smartlook.git {"\n"}
-      $ npm install @ionic-native/smartlook {"\n"}
+      $ npm install @awesome-cordova-plugins/smartlook {"\n"}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">
@@ -67,7 +67,7 @@ Full documentation can be found here: https://smartlook.github.io/docs/sdk/ionic
 ### Angular
 
 ```tsx
-import { Smartlook, SmartlookSetupConfig } from '@ionic-native/smartlook/ngx';
+import { Smartlook, SmartlookSetupConfig } from '@awesome-cordova-plugins/smartlook/ngx';
 
 ...
 

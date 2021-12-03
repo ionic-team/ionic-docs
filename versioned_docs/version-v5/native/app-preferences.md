@@ -36,14 +36,14 @@ This plugin allows you to read and write app preferences
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
       $ npm install cordova-plugin-app-preferences {"\n"}
-      $ npm install @ionic-native/app-preferences {"\n"}
+      $ npm install @awesome-cordova-plugins/app-preferences {"\n"}
       $ ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
       $ ionic cordova plugin add cordova-plugin-app-preferences {"\n"}
-      $ npm install @ionic-native/app-preferences {"\n"}
+      $ npm install @awesome-cordova-plugins/app-preferences {"\n"}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">
@@ -71,7 +71,7 @@ This plugin allows you to read and write app preferences
 ### Angular
 
 ```tsx
-import { AppPreferences } from '@ionic-native/app-preferences/ngx';
+import { AppPreferences } from '@awesome-cordova-plugins/app-preferences/ngx';
 
 constructor(private appPreferences: AppPreferences) { }
 

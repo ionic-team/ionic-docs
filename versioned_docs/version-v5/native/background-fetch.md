@@ -38,14 +38,14 @@ For more detail, please see https://github.com/transistorsoft/cordova-plugin-bac
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
       $ npm install cordova-plugin-background-fetch {"\n"}
-      $ npm install @ionic-native/background-fetch {"\n"}
+      $ npm install @awesome-cordova-plugins/background-fetch {"\n"}
       $ ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
       $ ionic cordova plugin add cordova-plugin-background-fetch {"\n"}
-      $ npm install @ionic-native/background-fetch {"\n"}
+      $ npm install @awesome-cordova-plugins/background-fetch {"\n"}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">
@@ -67,7 +67,7 @@ For more detail, please see https://github.com/transistorsoft/cordova-plugin-bac
 ### Angular
 
 ```tsx
-import { BackgroundFetch, BackgroundFetchConfig } from '@ionic-native/background-fetch/ngx';
+import { BackgroundFetch, BackgroundFetchConfig } from '@awesome-cordova-plugins/background-fetch/ngx';
 
 
 constructor(private backgroundFetch: BackgroundFetch) {

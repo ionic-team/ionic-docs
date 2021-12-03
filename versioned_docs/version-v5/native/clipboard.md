@@ -36,14 +36,14 @@ Clipboard management plugin for Cordova that supports iOS, Android, and Windows 
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
       $ npm install cordova-clipboard {"\n"}
-      $ npm install @ionic-native/clipboard {"\n"}
+      $ npm install @awesome-cordova-plugins/clipboard {"\n"}
       $ ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
       $ ionic cordova plugin add cordova-clipboard {"\n"}
-      $ npm install @ionic-native/clipboard {"\n"}
+      $ npm install @awesome-cordova-plugins/clipboard {"\n"}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">
@@ -67,7 +67,7 @@ Clipboard management plugin for Cordova that supports iOS, Android, and Windows 
 ### Angular
 
 ```tsx
-import { Clipboard } from '@ionic-native/clipboard/ngx';
+import { Clipboard } from '@awesome-cordova-plugins/clipboard/ngx';
 
 constructor(private clipboard: Clipboard) { }
 

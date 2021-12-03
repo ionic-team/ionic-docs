@@ -36,14 +36,14 @@ Cordova plugin to detect whether dark mode is enabled or not
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
       $ npm install cordova-plugin-theme-detection {"\n"}
-      $ npm install @ionic-native/theme-detection {"\n"}
+      $ npm install @awesome-cordova-plugins/theme-detection {"\n"}
       $ ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
       $ ionic cordova plugin add cordova-plugin-theme-detection {"\n"}
-      $ npm install @ionic-native/theme-detection {"\n"}
+      $ npm install @awesome-cordova-plugins/theme-detection {"\n"}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">
@@ -66,7 +66,7 @@ Cordova plugin to detect whether dark mode is enabled or not
 ### Angular
 
 ```tsx
-import { ThemeDetection } from '@ionic-native/theme-detection';
+import { ThemeDetection } from '@awesome-cordova-plugins/theme-detection';
 
 
 constructor(private themeDetection: ThemeDetection) { }

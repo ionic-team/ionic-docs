@@ -38,14 +38,14 @@ This plugin displays and hides a splash screen during application launch. The me
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
       $ npm install cordova-plugin-splashscreen {"\n"}
-      $ npm install @ionic-native/splash-screen {"\n"}
+      $ npm install @awesome-cordova-plugins/splash-screen {"\n"}
       $ ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
       $ ionic cordova plugin add cordova-plugin-splashscreen {"\n"}
-      $ npm install @ionic-native/splash-screen {"\n"}
+      $ npm install @awesome-cordova-plugins/splash-screen {"\n"}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">
@@ -74,7 +74,7 @@ Not Compatible
 ### Angular
 
 ```tsx
-import { SplashScreen } from '@ionic-native/splash-screen/ngx';
+import { SplashScreen } from '@awesome-cordova-plugins/splash-screen/ngx';
 
 constructor(private splashScreen: SplashScreen) { }
 

@@ -36,14 +36,14 @@ This plugin allows you to resolve the native filesystem path for Android content
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
       $ npm install cordova-plugin-filepath {"\n"}
-      $ npm install @ionic-native/file-path {"\n"}
+      $ npm install @awesome-cordova-plugins/file-path {"\n"}
       $ ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
       $ ionic cordova plugin add cordova-plugin-filepath {"\n"}
-      $ npm install @ionic-native/file-path {"\n"}
+      $ npm install @awesome-cordova-plugins/file-path {"\n"}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">
@@ -65,7 +65,7 @@ This plugin allows you to resolve the native filesystem path for Android content
 ### Angular
 
 ```tsx
-import { FilePath } from '@ionic-native/file-path/ngx';
+import { FilePath } from '@awesome-cordova-plugins/file-path/ngx';
 
 constructor(private filePath: FilePath) { }
 

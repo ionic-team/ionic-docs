@@ -38,14 +38,14 @@ Requires Cordova plugin: `cordova-plugin-admob-free`. For more info, please see 
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
       $ npm install cordova-plugin-admob-free {"\n"}
-      $ npm install @ionic-native/admob-free {"\n"}
+      $ npm install @awesome-cordova-plugins/admob-free {"\n"}
       $ ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
       $ ionic cordova plugin add cordova-plugin-admob-free {"\n"}
-      $ npm install @ionic-native/admob-free {"\n"}
+      $ npm install @awesome-cordova-plugins/admob-free {"\n"}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">
@@ -68,7 +68,7 @@ Requires Cordova plugin: `cordova-plugin-admob-free`. For more info, please see 
 ### Angular
 
 ```tsx
-import { AdMobFree, AdMobFreeBannerConfig } from '@ionic-native/admob-free/ngx';
+import { AdMobFree, AdMobFreeBannerConfig } from '@awesome-cordova-plugins/admob-free/ngx';
 
 
 constructor(private admobFree: AdMobFree) { }

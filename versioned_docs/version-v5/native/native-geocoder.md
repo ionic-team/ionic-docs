@@ -36,14 +36,14 @@ Cordova plugin for native forward and reverse geocoding
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
       $ npm install cordova-plugin-nativegeocoder {"\n"}
-      $ npm install @ionic-native/native-geocoder {"\n"}
+      $ npm install @awesome-cordova-plugins/native-geocoder {"\n"}
       $ ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
       $ ionic cordova plugin add cordova-plugin-nativegeocoder {"\n"}
-      $ npm install @ionic-native/native-geocoder {"\n"}
+      $ npm install @awesome-cordova-plugins/native-geocoder {"\n"}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">
@@ -66,7 +66,7 @@ Cordova plugin for native forward and reverse geocoding
 ### Angular
 
 ```tsx
-import { NativeGeocoder, NativeGeocoderResult, NativeGeocoderOptions } from '@ionic-native/native-geocoder/ngx';
+import { NativeGeocoder, NativeGeocoderResult, NativeGeocoderOptions } from '@awesome-cordova-plugins/native-geocoder/ngx';
 
 constructor(private nativeGeocoder: NativeGeocoder) { }
 

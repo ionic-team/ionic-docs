@@ -36,14 +36,14 @@ This plugin does something
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
       $ npm install iamport-cordova {"\n"}
-      $ npm install @ionic-native/iamport-cordova {"\n"}
+      $ npm install @awesome-cordova-plugins/iamport-cordova {"\n"}
       $ ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
       $ ionic cordova plugin add iamport-cordova {"\n"}
-      $ npm install @ionic-native/iamport-cordova {"\n"}
+      $ npm install @awesome-cordova-plugins/iamport-cordova {"\n"}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">
@@ -66,7 +66,7 @@ This plugin does something
 ### Angular
 
 ```tsx
-import { IamportCordova } from '@ionic-native/iamport-cordova/ngx';
+import { IamportCordova } from '@awesome-cordova-plugins/iamport-cordova/ngx';
 
 
 constructor(private iamportCordova: IamportCordova) { }

@@ -38,14 +38,14 @@ Spotlight Search will include these items in the result list. You can deep-link 
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
       $ npm install cordova-plugin-indexappcontent {"\n"}
-      $ npm install @ionic-native/index-app-content {"\n"}
+      $ npm install @awesome-cordova-plugins/index-app-content {"\n"}
       $ ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
       $ ionic cordova plugin add cordova-plugin-indexappcontent {"\n"}
-      $ npm install @ionic-native/index-app-content {"\n"}
+      $ npm install @awesome-cordova-plugins/index-app-content {"\n"}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">
@@ -67,7 +67,7 @@ Spotlight Search will include these items in the result list. You can deep-link 
 ### Angular
 
 ```tsx
-import { IndexAppContent } from '@ionic-native/index-app-content/ngx';
+import { IndexAppContent } from '@awesome-cordova-plugins/index-app-content/ngx';
 
 
 constructor(private indexAppContent: IndexAppContent) { }

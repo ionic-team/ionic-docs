@@ -36,14 +36,14 @@ Cordova Plugin that wraps Mixpanel SDK for Android and iOS
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
       $ npm install cordova-plugin-mixpanel {"\n"}
-      $ npm install @ionic-native/mixpanel {"\n"}
+      $ npm install @awesome-cordova-plugins/mixpanel {"\n"}
       $ ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
       $ ionic cordova plugin add cordova-plugin-mixpanel {"\n"}
-      $ npm install @ionic-native/mixpanel {"\n"}
+      $ npm install @awesome-cordova-plugins/mixpanel {"\n"}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">
@@ -67,7 +67,7 @@ Cordova Plugin that wraps Mixpanel SDK for Android and iOS
 ### Angular
 
 ```tsx
-import { Mixpanel } from '@ionic-native/mixpanel/ngx';
+import { Mixpanel } from '@awesome-cordova-plugins/mixpanel/ngx';
 
 constructor(private mixpanel: Mixpanel, private mixpanelPeople: MixpanelPeople) { }
 

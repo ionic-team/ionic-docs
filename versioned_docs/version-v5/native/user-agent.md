@@ -38,14 +38,14 @@ Requires Cordova plugin: `cordova-useragent`. For more info, please see the [Use
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
       $ npm install cordova-plugin-useragent {"\n"}
-      $ npm install @ionic-native/user-agent {"\n"}
+      $ npm install @awesome-cordova-plugins/user-agent {"\n"}
       $ ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
       $ ionic cordova plugin add cordova-plugin-useragent {"\n"}
-      $ npm install @ionic-native/user-agent {"\n"}
+      $ npm install @awesome-cordova-plugins/user-agent {"\n"}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">
@@ -68,7 +68,7 @@ Requires Cordova plugin: `cordova-useragent`. For more info, please see the [Use
 ### Angular
 
 ```tsx
-import { UserAgent } from '@ionic-native/user-agent/ngx';
+import { UserAgent } from '@awesome-cordova-plugins/user-agent/ngx';
 
 
 constructor(private userAgent: UserAgent) { }

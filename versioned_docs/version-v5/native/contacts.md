@@ -36,14 +36,14 @@ Access and manage Contacts on the device.
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
       $ npm install cordova-plugin-contacts {"\n"}
-      $ npm install @ionic-native/contacts {"\n"}
+      $ npm install @awesome-cordova-plugins/contacts {"\n"}
       $ ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
       $ ionic cordova plugin add cordova-plugin-contacts {"\n"}
-      $ npm install @ionic-native/contacts {"\n"}
+      $ npm install @awesome-cordova-plugins/contacts {"\n"}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">
@@ -73,7 +73,7 @@ Access and manage Contacts on the device.
 ### Angular
 
 ```tsx
-import { Contacts, Contact, ContactField, ContactName } from '@ionic-native/contacts/ngx';
+import { Contacts, Contact, ContactField, ContactName } from '@awesome-cordova-plugins/contacts/ngx';
 
 constructor(private contacts: Contacts) { }
 

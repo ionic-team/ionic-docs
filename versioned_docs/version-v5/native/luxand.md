@@ -36,14 +36,14 @@ This plugin let you integrate Luxand Face SDK into your ionic projects, so you c
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
       $ npm install codova-plugin-luxand {"\n"}
-      $ npm install @ionic-native/luxand {"\n"}
+      $ npm install @awesome-cordova-plugins/luxand {"\n"}
       $ ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
       $ ionic cordova plugin add codova-plugin-luxand {"\n"}
-      $ npm install @ionic-native/luxand {"\n"}
+      $ npm install @awesome-cordova-plugins/luxand {"\n"}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">
@@ -66,7 +66,7 @@ This plugin let you integrate Luxand Face SDK into your ionic projects, so you c
 ### Angular
 
 ```tsx
-import { Luxand } from '@ionic-native/luxand';
+import { Luxand } from '@awesome-cordova-plugins/luxand';
 
 
 constructor(private luxand: Luxand) { }

@@ -36,14 +36,14 @@ Plugin to serve ads through native Appodeal SDKs
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
       $ npm install https://github.com/appodeal/appodeal-cordova-plugin.git {"\n"}
-      $ npm install @ionic-native/appodeal {"\n"}
+      $ npm install @awesome-cordova-plugins/appodeal {"\n"}
       $ ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
       $ ionic cordova plugin add https://github.com/appodeal/appodeal-cordova-plugin.git {"\n"}
-      $ npm install @ionic-native/appodeal {"\n"}
+      $ npm install @awesome-cordova-plugins/appodeal {"\n"}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">
@@ -66,7 +66,7 @@ Plugin to serve ads through native Appodeal SDKs
 ### Angular
 
 ```tsx
-import { Appodeal } from '@ionic-native/appodeal/ngx';
+import { Appodeal } from '@awesome-cordova-plugins/appodeal/ngx';
 
 constructor(private appodeal: Appodeal) {
 

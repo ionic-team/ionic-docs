@@ -14,7 +14,7 @@ Plugin to use Twitter Single Sign On
 Uses Twitter's Fabric SDK
 
 ```tsx
-import { TwitterConnect } from '@ionic-native/twitter-connect/ngx';
+import { TwitterConnect } from '@awesome-cordova-plugins/twitter-connect/ngx';
 
 constructor(private twitter: TwitterConnect) { }
 
@@ -61,14 +61,14 @@ this.twitter.logout().then(onLogoutSuccess, onLogoutError);
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
       $ npm install twitter-connect-plugin {"\n"}
-      $ npm install @ionic-native/twitter-connect {"\n"}
+      $ npm install @awesome-cordova-plugins/twitter-connect {"\n"}
       $ ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
       $ ionic cordova plugin add twitter-connect-plugin {"\n"}
-      $ npm install @ionic-native/twitter-connect {"\n"}
+      $ npm install @awesome-cordova-plugins/twitter-connect {"\n"}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">

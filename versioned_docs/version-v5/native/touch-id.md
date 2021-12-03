@@ -38,14 +38,14 @@ Requires Cordova plugin: `cordova-plugin-touch-id`. For more info, please see th
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
       $ npm install cordova-plugin-touch-id {"\n"}
-      $ npm install @ionic-native/touch-id {"\n"}
+      $ npm install @awesome-cordova-plugins/touch-id {"\n"}
       $ ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
       $ ionic cordova plugin add cordova-plugin-touch-id {"\n"}
-      $ npm install @ionic-native/touch-id {"\n"}
+      $ npm install @awesome-cordova-plugins/touch-id {"\n"}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">
@@ -67,7 +67,7 @@ Requires Cordova plugin: `cordova-plugin-touch-id`. For more info, please see th
 ### Angular
 
 ```tsx
-import { TouchID } from '@ionic-native/touch-id/ngx';
+import { TouchID } from '@awesome-cordova-plugins/touch-id/ngx';
 
 constructor(private touchId: TouchID) { }
 

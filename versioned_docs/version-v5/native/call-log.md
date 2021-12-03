@@ -36,14 +36,14 @@ This plugin access the call history on a device and that can be filtered
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
       $ npm install cordova-plugin-calllog {"\n"}
-      $ npm install @ionic-native/call-log {"\n"}
+      $ npm install @awesome-cordova-plugins/call-log {"\n"}
       $ ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
       $ ionic cordova plugin add cordova-plugin-calllog {"\n"}
-      $ npm install @ionic-native/call-log {"\n"}
+      $ npm install @awesome-cordova-plugins/call-log {"\n"}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">
@@ -65,7 +65,7 @@ This plugin access the call history on a device and that can be filtered
 ### Angular
 
 ```tsx
-import { CallLog } from '@ionic-native/call-log/ngx';
+import { CallLog } from '@awesome-cordova-plugins/call-log/ngx';
 
 
 constructor(private callLog: CallLog) { }

@@ -54,14 +54,14 @@ For more detailed information, you can view our complete documentation at [docs.
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
       $ npm install cordova-plugin-purchases@2.0.0 {"\n"}
-      $ npm install @ionic-native/purchases {"\n"}
+      $ npm install @awesome-cordova-plugins/purchases {"\n"}
       $ ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
       $ ionic cordova plugin add cordova-plugin-purchases@2.0.0 {"\n"}
-      $ npm install @ionic-native/purchases {"\n"}
+      $ npm install @awesome-cordova-plugins/purchases {"\n"}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">
@@ -93,7 +93,7 @@ You should only configure _Purchases_ once (usually on app launch) as soon as yo
 
 ```tsx
  import { Platform } from "@ionic/angular";
- import { Purchases } from "@ionic-native/purchases/ngx";
+ import { Purchases } from "@awesome-cordova-plugins/purchases/ngx";
 
  constructor(public platform: Platform, private purchases: Purchases) {
      platform.ready().then(() => {

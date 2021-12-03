@@ -38,14 +38,14 @@ Requires Cordova plugin: `cordova-plugin-sim`. For more info, please see the [Co
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
       $ npm install cordova-plugin-sim {"\n"}
-      $ npm install @ionic-native/sim {"\n"}
+      $ npm install @awesome-cordova-plugins/sim {"\n"}
       $ ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
       $ ionic cordova plugin add cordova-plugin-sim {"\n"}
-      $ npm install @ionic-native/sim {"\n"}
+      $ npm install @awesome-cordova-plugins/sim {"\n"}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">
@@ -70,7 +70,7 @@ Requires Cordova plugin: `cordova-plugin-sim`. For more info, please see the [Co
 ### Angular
 
 ```tsx
-import { Sim } from '@ionic-native/sim/ngx';
+import { Sim } from '@awesome-cordova-plugins/sim/ngx';
 
 
 constructor(private sim: Sim) { }

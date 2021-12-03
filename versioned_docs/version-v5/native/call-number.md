@@ -37,14 +37,14 @@ Call a number directly from your Cordova/Ionic application.
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
       $ npm install call-number {"\n"}
-      $ npm install @ionic-native/call-number {"\n"}
+      $ npm install @awesome-cordova-plugins/call-number {"\n"}
       $ ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
       $ ionic cordova plugin add call-number {"\n"}
-      $ npm install @ionic-native/call-number {"\n"}
+      $ npm install @awesome-cordova-plugins/call-number {"\n"}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">
@@ -67,7 +67,7 @@ Call a number directly from your Cordova/Ionic application.
 ### Angular
 
 ```tsx
-import { CallNumber } from '@ionic-native/call-number/ngx';
+import { CallNumber } from '@awesome-cordova-plugins/call-number/ngx';
 
 constructor(private callNumber: CallNumber) { }
 

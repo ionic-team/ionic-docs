@@ -39,14 +39,14 @@ Requires Cordova plugin: cordova-plugin-background-mode. For more info about plu
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
       $ npm install cordova-plugin-background-mode {"\n"}
-      $ npm install @ionic-native/background-mode {"\n"}
+      $ npm install @awesome-cordova-plugins/background-mode {"\n"}
       $ ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
       $ ionic cordova plugin add cordova-plugin-background-mode {"\n"}
-      $ npm install @ionic-native/background-mode {"\n"}
+      $ npm install @awesome-cordova-plugins/background-mode {"\n"}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">
@@ -72,7 +72,7 @@ Requires Cordova plugin: cordova-plugin-background-mode. For more info about plu
 ### Angular
 
 ```tsx
-import { BackgroundMode } from '@ionic-native/background-mode/ngx';
+import { BackgroundMode } from '@awesome-cordova-plugins/background-mode/ngx';
 
 constructor(private backgroundMode: BackgroundMode) { }
 

@@ -36,14 +36,14 @@ This plugin does something
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
       $ npm install cordova-plugin-dbcopy {"\n"}
-      $ npm install @ionic-native/sqlite-db-copy {"\n"}
+      $ npm install @awesome-cordova-plugins/sqlite-db-copy {"\n"}
       $ ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
       $ ionic cordova plugin add cordova-plugin-dbcopy {"\n"}
-      $ npm install @ionic-native/sqlite-db-copy {"\n"}
+      $ npm install @awesome-cordova-plugins/sqlite-db-copy {"\n"}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">
@@ -66,7 +66,7 @@ This plugin does something
 ### Angular
 
 ```tsx
-import { SqliteDbCopy } from '@ionic-native/sqlite-db-copy/ngx';
+import { SqliteDbCopy } from '@awesome-cordova-plugins/sqlite-db-copy/ngx';
 
 
 constructor(private sqliteDbCopy: SqliteDbCopy) { }

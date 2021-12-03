@@ -36,14 +36,14 @@ This plugin processes images of documents, compensating for perspective.
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
       $ npm install cordova-plugin-document-scanner {"\n"}
-      $ npm install @ionic-native/document-scanner {"\n"}
+      $ npm install @awesome-cordova-plugins/document-scanner {"\n"}
       $ ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
       $ ionic cordova plugin add cordova-plugin-document-scanner {"\n"}
-      $ npm install @ionic-native/document-scanner {"\n"}
+      $ npm install @awesome-cordova-plugins/document-scanner {"\n"}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">
@@ -66,7 +66,7 @@ This plugin processes images of documents, compensating for perspective.
 ### Angular
 
 ```tsx
-import { DocumentScanner, DocumentScannerOptions } from '@ionic-native/document-scanner';
+import { DocumentScanner, DocumentScannerOptions } from '@awesome-cordova-plugins/document-scanner';
 
 
 constructor(private documentScanner: DocumentScanner) { }

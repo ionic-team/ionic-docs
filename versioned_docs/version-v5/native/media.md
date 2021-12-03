@@ -36,14 +36,14 @@ This plugin provides the ability to record and play back audio files on a device
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
       $ npm install cordova-plugin-media {"\n"}
-      $ npm install @ionic-native/media {"\n"}
+      $ npm install @awesome-cordova-plugins/media {"\n"}
       $ ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
       $ ionic cordova plugin add cordova-plugin-media {"\n"}
-      $ npm install @ionic-native/media {"\n"}
+      $ npm install @awesome-cordova-plugins/media {"\n"}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">
@@ -68,7 +68,7 @@ This plugin provides the ability to record and play back audio files on a device
 ### Angular
 
 ```tsx
-import { Media, MediaObject } from '@ionic-native/media/ngx';
+import { Media, MediaObject } from '@awesome-cordova-plugins/media/ngx';
 
 
 constructor(private media: Media) { }
@@ -137,8 +137,8 @@ Example: `this.media.create(this.file.tempDirectory.replace(/^file:\/\//, '') + 
 Example:
 
 ```tsx
-import { Media, MediaObject } from '@ionic-native/media/ngx';
-import { File } from '@ionic-native/file/ngx';
+import { Media, MediaObject } from '@awesome-cordova-plugins/media/ngx';
+import { File } from '@awesome-cordova-plugins/file/ngx';
 
 ...
 

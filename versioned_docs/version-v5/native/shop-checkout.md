@@ -37,14 +37,14 @@ Follow the offical documentation to setup this plugin correctly: https://develop
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
       $ npm install cordova-plugin-shop-checkout {"\n"}
-      $ npm install @ionic-native/shop-checkout {"\n"}
+      $ npm install @awesome-cordova-plugins/shop-checkout {"\n"}
       $ ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
       $ ionic cordova plugin add cordova-plugin-shop-checkout {"\n"}
-      $ npm install @ionic-native/shop-checkout {"\n"}
+      $ npm install @awesome-cordova-plugins/shop-checkout {"\n"}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">
@@ -66,7 +66,7 @@ Follow the offical documentation to setup this plugin correctly: https://develop
 ### Angular
 
 ```tsx
-import { ShopCheckout } from '@ionic-native/shop-checkout/ngx';
+import { ShopCheckout } from '@awesome-cordova-plugins/shop-checkout/ngx';
 
 
 constructor(private shopCheckout: ShopCheckout) { }

@@ -102,14 +102,14 @@ For tracking events, see `logEvent` and `logPurchase`.
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
       $ npm install cordova-plugin-facebook-connect {"\n"}
-      $ npm install @ionic-native/facebook {"\n"}
+      $ npm install @awesome-cordova-plugins/facebook {"\n"}
       $ ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
       $ ionic cordova plugin add cordova-plugin-facebook-connect {"\n"}
-      $ npm install @ionic-native/facebook {"\n"}
+      $ npm install @awesome-cordova-plugins/facebook {"\n"}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">
@@ -133,7 +133,7 @@ For tracking events, see `logEvent` and `logPurchase`.
 ### Angular
 
 ```tsx
-import { Facebook, FacebookLoginResponse } from '@ionic-native/facebook/ngx';
+import { Facebook, FacebookLoginResponse } from '@awesome-cordova-plugins/facebook/ngx';
 
 constructor(private fb: Facebook) { }
 

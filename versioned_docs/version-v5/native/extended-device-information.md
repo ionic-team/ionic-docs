@@ -41,14 +41,14 @@ Retrieves additional device information from the Device Hardware
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
       $ npm install cordova-plugin-extended-device-information {"\n"}
-      $ npm install @ionic-native/extended-device-information {"\n"}
+      $ npm install @awesome-cordova-plugins/extended-device-information {"\n"}
       $ ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
       $ ionic cordova plugin add cordova-plugin-extended-device-information {"\n"}
-      $ npm install @ionic-native/extended-device-information {"\n"}
+      $ npm install @awesome-cordova-plugins/extended-device-information {"\n"}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">
@@ -70,7 +70,7 @@ Retrieves additional device information from the Device Hardware
 ### Angular
 
 ```tsx
-import { ExtendedDeviceInformation } from '@ionic-native/extended-device-information/ngx';
+import { ExtendedDeviceInformation } from '@awesome-cordova-plugins/extended-device-information/ngx';
 
 
 constructor(private extendedDeviceInformation: ExtendedDeviceInformation) { }

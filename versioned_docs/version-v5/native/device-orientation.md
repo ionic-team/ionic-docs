@@ -36,14 +36,14 @@ Requires Cordova plugin: `cordova-plugin-device-orientation`. For more info, ple
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
       $ npm install cordova-plugin-device-orientation {"\n"}
-      $ npm install @ionic-native/device-orientation {"\n"}
+      $ npm install @awesome-cordova-plugins/device-orientation {"\n"}
       $ ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
       $ ionic cordova plugin add cordova-plugin-device-orientation {"\n"}
-      $ npm install @ionic-native/device-orientation {"\n"}
+      $ npm install @awesome-cordova-plugins/device-orientation {"\n"}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">
@@ -75,7 +75,7 @@ Requires Cordova plugin: `cordova-plugin-device-orientation`. For more info, ple
 
 ```tsx
 // DeviceOrientationCompassHeading is an interface for compass
-import { DeviceOrientation, DeviceOrientationCompassHeading } from '@ionic-native/device-orientation/ngx';
+import { DeviceOrientation, DeviceOrientationCompassHeading } from '@awesome-cordova-plugins/device-orientation/ngx';
 
 constructor(private deviceOrientation: DeviceOrientation) { }
 

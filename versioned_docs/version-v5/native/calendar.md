@@ -40,14 +40,14 @@ Requires Cordova plugin: `cordova-plugin-calendar`. For more info, please see th
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
       $ npm install cordova-plugin-calendar {"\n"}
-      $ npm install @ionic-native/calendar {"\n"}
+      $ npm install @awesome-cordova-plugins/calendar {"\n"}
       $ ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
       $ ionic cordova plugin add cordova-plugin-calendar {"\n"}
-      $ npm install @ionic-native/calendar {"\n"}
+      $ npm install @awesome-cordova-plugins/calendar {"\n"}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">
@@ -70,7 +70,7 @@ Requires Cordova plugin: `cordova-plugin-calendar`. For more info, please see th
 ### Angular
 
 ```tsx
-import { Calendar } from '@ionic-native/calendar/ngx';
+import { Calendar } from '@awesome-cordova-plugins/calendar/ngx';
 
 constructor(private calendar: Calendar) { }
 

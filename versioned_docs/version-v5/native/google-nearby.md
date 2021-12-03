@@ -36,14 +36,14 @@ This plugin adds support for the Google Nearby Messages API.
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
       $ npm install cordova-plugin-google-nearby {"\n"}
-      $ npm install @ionic-native/google-nearby {"\n"}
+      $ npm install @awesome-cordova-plugins/google-nearby {"\n"}
       $ ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
       $ ionic cordova plugin add cordova-plugin-google-nearby {"\n"}
-      $ npm install @ionic-native/google-nearby {"\n"}
+      $ npm install @awesome-cordova-plugins/google-nearby {"\n"}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">
@@ -65,7 +65,7 @@ This plugin adds support for the Google Nearby Messages API.
 ### Angular
 
 ```tsx
-import { GoogleNearby } from '@ionic-native/google-nearby/ngx';
+import { GoogleNearby } from '@awesome-cordova-plugins/google-nearby/ngx';
 
 
 constructor(private googleNearby: GoogleNearby) { }

@@ -37,14 +37,14 @@ custom html preview of your choice.
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
       $ npm install cordova-plugin-last-cam {"\n"}
-      $ npm install @ionic-native/last-cam {"\n"}
+      $ npm install @awesome-cordova-plugins/last-cam {"\n"}
       $ ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
       $ ionic cordova plugin add cordova-plugin-last-cam {"\n"}
-      $ npm install @ionic-native/last-cam {"\n"}
+      $ npm install @awesome-cordova-plugins/last-cam {"\n"}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">

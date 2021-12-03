@@ -36,14 +36,14 @@ Ionic-Native wrapper that wraps Webengage Cordova plugin for Android and iOS
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
       $ npm install cordova-plugin-webengage {"\n"}
-      $ npm install @ionic-native/webengage {"\n"}
+      $ npm install @awesome-cordova-plugins/webengage {"\n"}
       $ ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
       $ ionic cordova plugin add cordova-plugin-webengage {"\n"}
-      $ npm install @ionic-native/webengage {"\n"}
+      $ npm install @awesome-cordova-plugins/webengage {"\n"}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">
@@ -66,7 +66,7 @@ Ionic-Native wrapper that wraps Webengage Cordova plugin for Android and iOS
 ### Angular
 
 ```tsx
-import { Webengage, WebengageUser, WebengagePush, WebengageNotification } from '@ionic-native/webengage/ngx';
+import { Webengage, WebengageUser, WebengagePush, WebengageNotification } from '@awesome-cordova-plugins/webengage/ngx';
 
 
 constructor(private webengage: Webengage, private webengageUser: WebengageUser, private webengagePush: WebengagePush, private webengageNotification: WebengageNotification ) { }

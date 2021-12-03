@@ -36,14 +36,14 @@ Branch.io is an attribution service for deeplinking and invitation links
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
       $ npm install branch-cordova-sdk {"\n"}
-      $ npm install @ionic-native/branch-io {"\n"}
+      $ npm install @awesome-cordova-plugins/branch-io {"\n"}
       $ ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
       $ ionic cordova plugin add branch-cordova-sdk {"\n"}
-      $ npm install @ionic-native/branch-io {"\n"}
+      $ npm install @awesome-cordova-plugins/branch-io {"\n"}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">
@@ -66,7 +66,7 @@ Branch.io is an attribution service for deeplinking and invitation links
 ### Angular
 
 ```
-import { BranchIo } from '@ionic-native/branch-io/ngx';
+import { BranchIo } from '@awesome-cordova-plugins/branch-io/ngx';
 
 
 constructor(private branch: BranchIo) { }

@@ -38,14 +38,14 @@ Requires Cordova plugin: `com.moust.cordova.videoplayer`. For more info, please 
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
       $ npm install https://github.com/moust/cordova-plugin-videoplayer.git {"\n"}
-      $ npm install @ionic-native/video-player {"\n"}
+      $ npm install @awesome-cordova-plugins/video-player {"\n"}
       $ ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
       $ ionic cordova plugin add https://github.com/moust/cordova-plugin-videoplayer.git {"\n"}
-      $ npm install @ionic-native/video-player {"\n"}
+      $ npm install @awesome-cordova-plugins/video-player {"\n"}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">
@@ -67,7 +67,7 @@ Requires Cordova plugin: `com.moust.cordova.videoplayer`. For more info, please 
 ### Angular
 
 ```tsx
-import { VideoPlayer } from '@ionic-native/video-player/ngx';
+import { VideoPlayer } from '@awesome-cordova-plugins/video-player/ngx';
 
 constructor(private videoPlayer: VideoPlayer) { }
 

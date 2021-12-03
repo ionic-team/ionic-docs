@@ -36,14 +36,14 @@ Cordova plugin for Firebase Messaging
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
       $ npm install cordova-plugin-firebase-messaging {"\n"}
-      $ npm install @ionic-native/firebase-messaging {"\n"}
+      $ npm install @awesome-cordova-plugins/firebase-messaging {"\n"}
       $ ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
       $ ionic cordova plugin add cordova-plugin-firebase-messaging {"\n"}
-      $ npm install @ionic-native/firebase-messaging {"\n"}
+      $ npm install @awesome-cordova-plugins/firebase-messaging {"\n"}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">
@@ -66,7 +66,7 @@ Cordova plugin for Firebase Messaging
 ### Angular
 
 ```tsx
-import { FirebaseMessaging } from '@ionic-native/firebase-messaging/ngx';
+import { FirebaseMessaging } from '@awesome-cordova-plugins/firebase-messaging/ngx';
 
 
 constructor(private firebaseMessaging: FirebaseMessaging) { }

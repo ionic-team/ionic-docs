@@ -36,14 +36,14 @@ Share a photo with the instagram app
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
       $ npm install cordova-instagram-plugin {"\n"}
-      $ npm install @ionic-native/instagram {"\n"}
+      $ npm install @awesome-cordova-plugins/instagram {"\n"}
       $ ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
       $ ionic cordova plugin add cordova-instagram-plugin {"\n"}
-      $ npm install @ionic-native/instagram {"\n"}
+      $ npm install @awesome-cordova-plugins/instagram {"\n"}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">
@@ -66,7 +66,7 @@ Share a photo with the instagram app
 ### Angular
 
 ```tsx
-import { Instagram } from '@ionic-native/instagram/ngx';
+import { Instagram } from '@awesome-cordova-plugins/instagram/ngx';
 
 constructor(private instagram: Instagram) { }
 

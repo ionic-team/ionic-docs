@@ -36,14 +36,14 @@ This plugin allows you to browse and publish Zeroconf/Bonjour/mDNS services.
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
       $ npm install cordova-plugin-zeroconf {"\n"}
-      $ npm install @ionic-native/zeroconf {"\n"}
+      $ npm install @awesome-cordova-plugins/zeroconf {"\n"}
       $ ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
       $ ionic cordova plugin add cordova-plugin-zeroconf {"\n"}
-      $ npm install @ionic-native/zeroconf {"\n"}
+      $ npm install @awesome-cordova-plugins/zeroconf {"\n"}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">
@@ -66,7 +66,7 @@ This plugin allows you to browse and publish Zeroconf/Bonjour/mDNS services.
 ### Angular
 
 ```tsx
-import { Zeroconf } from '@ionic-native/zeroconf/ngx';
+import { Zeroconf } from '@awesome-cordova-plugins/zeroconf/ngx';
 
 constructor(private zeroconf: Zeroconf) { }
 

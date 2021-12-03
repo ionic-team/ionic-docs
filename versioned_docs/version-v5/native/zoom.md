@@ -36,14 +36,14 @@ A Cordova plugin to use Zoom Video Conferencing services on Cordova applications
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
       $ npm install cordova.plugin.zoom {"\n"}
-      $ npm install @ionic-native/zoom {"\n"}
+      $ npm install @awesome-cordova-plugins/zoom {"\n"}
       $ ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
       $ ionic cordova plugin add cordova.plugin.zoom {"\n"}
-      $ npm install @ionic-native/zoom {"\n"}
+      $ npm install @awesome-cordova-plugins/zoom {"\n"}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">
@@ -66,7 +66,7 @@ A Cordova plugin to use Zoom Video Conferencing services on Cordova applications
 ### Angular
 
 ```tsx
-import { Zoom } from '@ionic-native/zoom';
+import { Zoom } from '@awesome-cordova-plugins/zoom';
 
 
 constructor(private zoomService: Zoom) { }

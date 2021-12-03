@@ -36,14 +36,14 @@ Simple file encryption for Cordova.
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
       $ npm install cordova-safe {"\n"}
-      $ npm install @ionic-native/file-encryption {"\n"}
+      $ npm install @awesome-cordova-plugins/file-encryption {"\n"}
       $ ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
       $ ionic cordova plugin add cordova-safe {"\n"}
-      $ npm install @ionic-native/file-encryption {"\n"}
+      $ npm install @awesome-cordova-plugins/file-encryption {"\n"}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">
@@ -66,7 +66,7 @@ Simple file encryption for Cordova.
 ### Angular
 
 ```tsx
-import { FileEncryption } from '@ionic-native/file-encryption/ngx';
+import { FileEncryption } from '@awesome-cordova-plugins/file-encryption/ngx';
 
 
 constructor(private fileEncryption: FileEncryption) { }

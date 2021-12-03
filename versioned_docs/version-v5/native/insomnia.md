@@ -36,14 +36,14 @@ Prevent the screen of the mobile device from falling asleep.
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
       $ npm install cordova-plugin-insomnia {"\n"}
-      $ npm install @ionic-native/insomnia {"\n"}
+      $ npm install @awesome-cordova-plugins/insomnia {"\n"}
       $ ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
       $ ionic cordova plugin add cordova-plugin-insomnia {"\n"}
-      $ npm install @ionic-native/insomnia {"\n"}
+      $ npm install @awesome-cordova-plugins/insomnia {"\n"}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">
@@ -70,7 +70,7 @@ Prevent the screen of the mobile device from falling asleep.
 ### Angular
 
 ```tsx
-import { Insomnia } from '@ionic-native/insomnia/ngx';
+import { Insomnia } from '@awesome-cordova-plugins/insomnia/ngx';
 
 constructor(private insomnia: Insomnia) { }
 

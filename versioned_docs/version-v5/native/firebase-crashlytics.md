@@ -36,14 +36,14 @@ A Google Firebase Crashlytics plugin to enable capture of crash reports.
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
       $ npm install cordova-plugin-firebase-crashlytics {"\n"}
-      $ npm install @ionic-native/firebase-crashlytics {"\n"}
+      $ npm install @awesome-cordova-plugins/firebase-crashlytics {"\n"}
       $ ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
       $ ionic cordova plugin add cordova-plugin-firebase-crashlytics {"\n"}
-      $ npm install @ionic-native/firebase-crashlytics {"\n"}
+      $ npm install @awesome-cordova-plugins/firebase-crashlytics {"\n"}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">
@@ -66,7 +66,7 @@ A Google Firebase Crashlytics plugin to enable capture of crash reports.
 ### Angular
 
 ```tsx
-import { FirebaseCrashlytics } from '@ionic-native/firebase-crashlytics/ngx';
+import { FirebaseCrashlytics } from '@awesome-cordova-plugins/firebase-crashlytics/ngx';
 
 
 constructor(private firebaseCrashlytics: FirebaseCrashlytics) { }

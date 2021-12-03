@@ -37,14 +37,14 @@ Implements a Broadcast Receiver for the INSTALL_REFERRER intent.
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
       $ npm install tealium-cordova-installreferrer {"\n"}
-      $ npm install @ionic-native/tealium-installreferrer {"\n"}
+      $ npm install @awesome-cordova-plugins/tealium-installreferrer {"\n"}
       $ ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
       $ ionic cordova plugin add tealium-cordova-installreferrer {"\n"}
-      $ npm install @ionic-native/tealium-installreferrer {"\n"}
+      $ npm install @awesome-cordova-plugins/tealium-installreferrer {"\n"}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">
@@ -66,7 +66,7 @@ Implements a Broadcast Receiver for the INSTALL_REFERRER intent.
 ### Angular
 
 ```
-import { TealiumInstallReferrer } from '@ionic-native/tealium-installreferrer/ngx';
+import { TealiumInstallReferrer } from '@awesome-cordova-plugins/tealium-installreferrer/ngx';
 
 
 constructor(private installReferrer: TealiumInstallReferrer) { }

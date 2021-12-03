@@ -36,14 +36,14 @@ This plugin is designed to support downloading files using Android DownloadManag
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
       $ npm install integrator-cordova-plugin-downloader {"\n"}
-      $ npm install @ionic-native/downloader {"\n"}
+      $ npm install @awesome-cordova-plugins/downloader {"\n"}
       $ ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
       $ ionic cordova plugin add integrator-cordova-plugin-downloader {"\n"}
-      $ npm install @ionic-native/downloader {"\n"}
+      $ npm install @awesome-cordova-plugins/downloader {"\n"}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">
@@ -65,7 +65,7 @@ This plugin is designed to support downloading files using Android DownloadManag
 ### Angular
 
 ```tsx
-import { Downloader } from '@ionic-native/downloader/ngx';
+import { Downloader } from '@awesome-cordova-plugins/downloader/ngx';
 
 
 constructor(private downloader: Downloader) { }
