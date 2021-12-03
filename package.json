@@ -29,7 +29,6 @@
       "last 1 safari version"
     ]
   },
-  "prettier": "@ionic/prettier-config",
   "dependencies": {
     "@docusaurus/core": "^0.0.0-4192",
     "@docusaurus/mdx-loader": "^0.0.0-4192",
@@ -63,7 +62,7 @@
     "@ionic/prettier-config": "^2.0.0",
     "@tsconfig/docusaurus": "^1.0.4",
     "@types/react": "^17.0.37",
-    "prettier": "^2.2.1",
+    "prettier": "^2.5.0",
     "typescript": "^4.5.2"
   }
 }
