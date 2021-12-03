@@ -52,10 +52,10 @@
     }
 
     p {
-      font-size: .875rem;
+      font-size: 0.875rem;
       line-height: 160%;
       letter-spacing: -0.01em;
-      color: #5B708B;
+      color: #5b708b;
     }
   }
 }
@@ -69,7 +69,7 @@
 
   display: flex;
   align-items: center;
-  background: #1F2A40;    
+  background: #1f2a40;
 
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.08), 0px 4px 8px rgba(0, 0, 0, 0.1);
 
@@ -79,7 +79,7 @@
     flex-direction: column;
 
     :global {
-      .image-wrapper img{
+      .image-wrapper img {
         max-height: 10rem;
       }
     }
@@ -110,7 +110,7 @@
     img {
       height: 100%;
       max-height: 100%;
-      object-fit: cover;    
+      object-fit: cover;
     }
 
     header {
@@ -127,7 +127,7 @@
       line-height: 160%;
       letter-spacing: -0.01em;
 
-      color: #E9EDF3;
+      color: #e9edf3;
     }
   }
 }

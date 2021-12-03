@@ -4,13 +4,7 @@ module.exports = {
       type: 'category',
       label: 'Getting Started',
       collapsed: false,
-      items: [
-        'index',
-        'intro/environment',
-        'intro/cli',
-        'intro/cdn',
-        'intro/next',
-      ],
+      items: ['index', 'intro/environment', 'intro/cli', 'intro/cdn', 'intro/next'],
     },
     {
       type: 'category',
@@ -31,12 +25,7 @@ module.exports = {
       type: 'category',
       label: 'Layout',
       collapsed: false,
-      items: [
-        'layout/structure',
-        'layout/grid',
-        'layout/global-stylesheets',
-        'layout/css-utilities',
-      ],
+      items: ['layout/structure', 'layout/grid', 'layout/global-stylesheets', 'layout/css-utilities'],
     },
     {
       type: 'category',
@@ -284,13 +273,7 @@ module.exports = {
       type: 'category',
       label: 'Card',
       collapsed: false,
-      items: [
-        'api/card',
-        'api/card-content',
-        'api/card-header',
-        'api/card-subtitle',
-        'api/card-title',
-      ],
+      items: ['api/card', 'api/card-content', 'api/card-header', 'api/card-subtitle', 'api/card-title'],
     },
     {
       type: 'category',
@@ -392,12 +375,7 @@ module.exports = {
       type: 'category',
       label: 'Menu',
       collapsed: false,
-      items: [
-        'api/menu',
-        'api/menu-button',
-        'api/menu-toggle',
-        'api/split-pane',
-      ],
+      items: ['api/menu', 'api/menu-button', 'api/menu-toggle', 'api/split-pane'],
     },
     {
       type: 'category',
@@ -421,12 +399,7 @@ module.exports = {
       type: 'category',
       label: 'Progress Indicators',
       collapsed: false,
-      items: [
-        'api/loading',
-        'api/progress-bar',
-        'api/skeleton-text',
-        'api/spinner',
-      ],
+      items: ['api/loading', 'api/progress-bar', 'api/skeleton-text', 'api/spinner'],
     },
     {
       type: 'category',
@@ -456,13 +429,7 @@ module.exports = {
       type: 'category',
       label: 'Routing',
       collapsed: false,
-      items: [
-        'api/router',
-        'api/router-link',
-        'api/router-outlet',
-        'api/route',
-        'api/route-redirect',
-      ],
+      items: ['api/router', 'api/router-link', 'api/router-outlet', 'api/route', 'api/route-redirect'],
     },
     {
       type: 'category',
@@ -510,14 +477,7 @@ module.exports = {
       type: 'category',
       label: 'Toolbar',
       collapsed: false,
-      items: [
-        'api/toolbar',
-        'api/header',
-        'api/footer',
-        'api/title',
-        'api/buttons',
-        'api/back-button',
-      ],
+      items: ['api/toolbar', 'api/header', 'api/footer', 'api/title', 'api/buttons', 'api/back-button'],
     },
     {
       type: 'category',
@@ -546,8 +506,7 @@ module.exports = {
         {
           type: 'link',
           label: 'Changelog',
-          href:
-            'https://github.com/ionic-team/ionic-cli/blob/develop/packages/@ionic/cli/CHANGELOG.md',
+          href: 'https://github.com/ionic-team/ionic-cli/blob/develop/packages/@ionic/cli/CHANGELOG.md',
         },
       ],
     },

@@ -3,11 +3,10 @@ import React from 'react';
 import FrameworkSelector from '@theme/FrameworkSelector';
 import Logo from '@theme/Logo';
 
-
 export default function DocSidebar(props) {
   return (
     <>
-      <Logo /> 
+      <Logo />
       {/* <FrameworkSelector /> */}
       <OriginalSidebar {...props} />
     </>

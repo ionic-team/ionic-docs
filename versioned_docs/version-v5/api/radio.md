@@ -1,8 +1,9 @@
 ---
-sidebar_label: "ion-radio"
-demoUrl: "/docs/demos/api/radio/index.html"
-demoSourceUrl: "https://github.com/ionic-team/ionic-docs/tree/main/static/demos/api/radio/index.html"
+sidebar_label: 'ion-radio'
+demoUrl: '/docs/demos/api/radio/index.html'
+demoSourceUrl: 'https://github.com/ionic-team/ionic-docs/tree/main/static/demos/api/radio/index.html'
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
@@ -12,13 +13,9 @@ Radios should be used inside of an [`ion-radio-group`](radio-group.md). Pressing
 
 When radios are inside of a radio group, only one radio in the group will be checked at any time. Pressing a radio will check it and uncheck the previously selected radio, if there is one. If a radio is not in a group with another radio, then both radios will have the ability to be checked at the same time.
 
-
-
-
 ## Usage
 
 <Tabs groupId="framework" defaultValue="angular" values={[{ value: 'angular', label: 'Angular' }, { value: 'javascript', label: 'Javascript' }, { value: 'react', label: 'React' }, { value: 'stencil', label: 'Stencil' }, { value: 'vue', label: 'Vue' }]}>
-
 
 <TabItem value="angular">
 
@@ -47,9 +44,7 @@ When radios are inside of a radio group, only one radio in the group will be che
 </ion-list>
 ```
 
-
 </TabItem>
-
 
 <TabItem value="javascript">
 
@@ -78,15 +73,26 @@ When radios are inside of a radio group, only one radio in the group will be che
 </ion-list>
 ```
 
-
 </TabItem>
-
 
 <TabItem value="react">
 
 ```tsx
 import React, { useState } from 'react';
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonList, IonRadioGroup, IonListHeader, IonLabel, IonItem, IonRadio, IonItemDivider } from '@ionic/react';
+import {
+  IonContent,
+  IonHeader,
+  IonPage,
+  IonTitle,
+  IonToolbar,
+  IonList,
+  IonRadioGroup,
+  IonListHeader,
+  IonLabel,
+  IonItem,
+  IonRadio,
+  IonItemDivider,
+} from '@ionic/react';
 
 export const RadioExamples: React.FC = () => {
   const [selected, setSelected] = useState<string>('biff');
@@ -99,7 +105,7 @@ export const RadioExamples: React.FC = () => {
       </IonHeader>
       <IonContent>
         <IonList>
-          <IonRadioGroup value={selected} onIonChange={e => setSelected(e.detail.value)}>
+          <IonRadioGroup value={selected} onIonChange={(e) => setSelected(e.detail.value)}>
             <IonListHeader>
               <IonLabel>Name</IonLabel>
             </IonListHeader>
@@ -130,7 +136,6 @@ export const RadioExamples: React.FC = () => {
 
 </TabItem>
 
-
 <TabItem value="stencil">
 
 ```tsx
@@ -138,7 +143,7 @@ import { Component, h } from '@stencil/core';
 
 @Component({
   tag: 'radio-example',
-  styleUrl: 'radio-example.css'
+  styleUrl: 'radio-example.css',
 })
 export class RadioExample {
   render() {
@@ -164,15 +169,13 @@ export class RadioExample {
             <ion-radio slot="start" value="buford"></ion-radio>
           </ion-item>
         </ion-radio-group>
-      </ion-list>
+      </ion-list>,
     ];
   }
 }
 ```
 
-
 </TabItem>
-
 
 <TabItem value="vue">
 
@@ -203,29 +206,21 @@ export class RadioExample {
 </template>
 
 <script>
-import { 
-  IonItem, 
-  IonLabel, 
-  IonList, 
-  IonListHeader,
-  IonRadio, 
-  IonRadioGroup
-} from '@ionic/vue';
-import { defineComponent } from 'vue';
+  import { IonItem, IonLabel, IonList, IonListHeader, IonRadio, IonRadioGroup } from '@ionic/vue';
+  import { defineComponent } from 'vue';
 
-export default defineComponent({
-  components: { 
-    IonItem, 
-    IonLabel, 
-    IonList, 
-    IonListHeader,
-    IonRadio, 
-    IonRadioGroup
-  }
-});
+  export default defineComponent({
+    components: {
+      IonItem,
+      IonLabel,
+      IonList,
+      IonListHeader,
+      IonRadio,
+      IonRadioGroup,
+    },
+  });
 </script>
 ```
-
 
 </TabItem>
 
@@ -233,84 +228,70 @@ export default defineComponent({
 
 ## Properties
 
-
 ### color
 
-| | |
-| --- | --- |
+|                 |                                                                                                                                                                                                                                                                                  |
+| --------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Description** | The color to use from your application's color palette.<br />Default options are: `"primary"`, `"secondary"`, `"tertiary"`, `"success"`, `"warning"`, `"danger"`, `"light"`, `"medium"`, and `"dark"`.<br />For more information on colors, see [theming](../theming/basics.md). |
-| **Attribute** | `color` |
-| **Type** | `string \| undefined` |
-| **Default** | `undefined` |
-
-
+| **Attribute**   | `color`                                                                                                                                                                                                                                                                          |
+| **Type**        | `string \| undefined`                                                                                                                                                                                                                                                            |
+| **Default**     | `undefined`                                                                                                                                                                                                                                                                      |
 
 ### disabled
 
-| | |
-| --- | --- |
+|                 |                                                     |
+| --------------- | --------------------------------------------------- |
 | **Description** | If `true`, the user cannot interact with the radio. |
-| **Attribute** | `disabled` |
-| **Type** | `boolean` |
-| **Default** | `false` |
-
-
+| **Attribute**   | `disabled`                                          |
+| **Type**        | `boolean`                                           |
+| **Default**     | `false`                                             |
 
 ### mode
 
-| | |
-| --- | --- |
+|                 |                                                   |
+| --------------- | ------------------------------------------------- |
 | **Description** | The mode determines which platform styles to use. |
-| **Attribute** | `mode` |
-| **Type** | `"ios" \| "md"` |
-| **Default** | `undefined` |
-
-
+| **Attribute**   | `mode`                                            |
+| **Type**        | `"ios" \| "md"`                                   |
+| **Default**     | `undefined`                                       |
 
 ### name
 
-| | |
-| --- | --- |
+|                 |                                                                 |
+| --------------- | --------------------------------------------------------------- |
 | **Description** | The name of the control, which is submitted with the form data. |
-| **Attribute** | `name` |
-| **Type** | `string` |
-| **Default** | `this.inputId` |
-
-
+| **Attribute**   | `name`                                                          |
+| **Type**        | `string`                                                        |
+| **Default**     | `this.inputId`                                                  |
 
 ### value
 
-| | |
-| --- | --- |
+|                 |                         |
+| --------------- | ----------------------- |
 | **Description** | the value of the radio. |
-| **Attribute** | `value` |
-| **Type** | `any` |
-| **Default** | `undefined` |
-
-
+| **Attribute**   | `value`                 |
+| **Type**        | `any`                   |
+| **Default**     | `undefined`             |
 
 ## Events
 
-| Name | Description |
-| --- | --- |
-| `ionBlur` | Emitted when the radio button loses focus. |
-| `ionFocus` | Emitted when the radio button has focus. |
-
+| Name       | Description                                |
+| ---------- | ------------------------------------------ |
+| `ionBlur`  | Emitted when the radio button loses focus. |
+| `ionFocus` | Emitted when the radio button has focus.   |
 
 ## CSS Shadow Parts
 
-| Name | Description |
-| --- | --- |
-| `container` | The container for the radio mark. |
-| `mark` | The checkmark or dot used to indicate the checked state. |
-
+| Name        | Description                                              |
+| ----------- | -------------------------------------------------------- |
+| `container` | The container for the radio mark.                        |
+| `mark`      | The checkmark or dot used to indicate the checked state. |
 
 ## CSS Custom Properties
 
-| Name | Description |
-| --- | --- |
-| `--border-radius` | Border radius of the radio |
-| `--color` | Color of the radio |
-| `--color-checked` | Color of the checked radio |
+| Name                    | Description                              |
+| ----------------------- | ---------------------------------------- |
+| `--border-radius`       | Border radius of the radio               |
+| `--color`               | Color of the radio                       |
+| `--color-checked`       | Color of the checked radio               |
 | `--inner-border-radius` | Border radius of the inner checked radio |
-

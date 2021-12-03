@@ -1,8 +1,9 @@
 ---
-sidebar_label: "ion-item"
-demoUrl: "/docs/demos/api/item/index.html"
-demoSourceUrl: "https://github.com/ionic-team/ionic-docs/tree/main/static/demos/api/item/index.html"
+sidebar_label: 'ion-item'
+demoUrl: '/docs/demos/api/item/index.html'
+demoSourceUrl: 'https://github.com/ionic-team/ionic-docs/tree/main/static/demos/api/item/index.html'
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
@@ -32,24 +33,21 @@ See the [theming documentation](../theming/css-variables.md) for more informatio
 
 -->
 
-
 ## Item Placement
 
 Item uses named [slots](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/slot) in order to position content. This logic makes it possible to write a complex item with simple, understandable markup without having to worry about styling and positioning the elements.
 
 The below chart details the item slots and where it will place the element inside of the item:
 
-| Slot    | Description                                                                 |
-|---------|-----------------------------------------------------------------------------|
-| `start` | Placed to the left of all other content in LTR, and to the `right` in RTL.  |
-| `end`   | Placed to the right of all other content in LTR, and to the `left` in RTL.  |
-| none    | Placed inside of the input wrapper.                                         |
-
+| Slot    | Description                                                                |
+| ------- | -------------------------------------------------------------------------- |
+| `start` | Placed to the left of all other content in LTR, and to the `right` in RTL. |
+| `end`   | Placed to the right of all other content in LTR, and to the `left` in RTL. |
+| none    | Placed inside of the input wrapper.                                        |
 
 ### Text Alignment
 
 Items left align text and add an ellipsis when the text is wider than the item. See the [CSS Utilities Documentation](../layout/css-utilities.md) for classes that can be added to `<ion-item>` to transform the text.
-
 
 ## Input Highlight
 
@@ -61,40 +59,30 @@ Items containing an input will highlight the bottom border of the input with a d
 
 The highlight color changes based on the item state, but all of the states use Ionic colors by default. When focused, the input highlight will use the `primary` color. If the input is valid it will use the `success` color, and invalid inputs will use the `danger` color. See the [CSS Custom Properties](#css-custom-properties) section below for the highlight color variables.
 
-
 ## Usage
 
 <Tabs groupId="framework" defaultValue="angular" values={[{ value: 'angular', label: 'Angular' }, { value: 'javascript', label: 'Javascript' }, { value: 'react', label: 'React' }, { value: 'stencil', label: 'Stencil' }, { value: 'vue', label: 'Vue' }]}>
-
 
 <TabItem value="angular">
 
 ```html
 <!-- Default Item -->
 <ion-item>
-  <ion-label>
-    Item
-  </ion-label>
+  <ion-label> Item </ion-label>
 </ion-item>
 
 <!-- Item as a Button -->
 <ion-item button (click)="buttonClick()">
-  <ion-label>
-    Button Item
-  </ion-label>
+  <ion-label> Button Item </ion-label>
 </ion-item>
 
 <!-- Item as an Anchor -->
 <ion-item href="https://www.ionicframework.com">
-  <ion-label>
-    Anchor Item
-  </ion-label>
+  <ion-label> Anchor Item </ion-label>
 </ion-item>
 
 <ion-item color="secondary">
-  <ion-label>
-    Secondary Color Item
-  </ion-label>
+  <ion-label> Secondary Color Item </ion-label>
 </ion-item>
 ```
 
@@ -102,21 +90,15 @@ The highlight color changes based on the item state, but all of the states use I
 
 ```html
 <ion-item detail>
-  <ion-label>
-    Standard Item with Detail Arrow
-  </ion-label>
+  <ion-label> Standard Item with Detail Arrow </ion-label>
 </ion-item>
 
 <ion-item button (click)="buttonClick()" detail>
-  <ion-label>
-    Button Item with Detail Arrow
-  </ion-label>
+  <ion-label> Button Item with Detail Arrow </ion-label>
 </ion-item>
 
 <ion-item detail="false" href="https://www.ionicframework.com">
-  <ion-label>
-    Anchor Item with no Detail Arrow
-  </ion-label>
+  <ion-label> Anchor Item with no Detail Arrow </ion-label>
 </ion-item>
 ```
 
@@ -125,21 +107,16 @@ The highlight color changes based on the item state, but all of the states use I
 ```html
 <ion-list>
   <ion-item>
-    <ion-label>
-      Item
-    </ion-label>
+    <ion-label> Item </ion-label>
   </ion-item>
 
   <ion-item lines="none">
-    <ion-label>
-      No Lines Item
-    </ion-label>
+    <ion-label> No Lines Item </ion-label>
   </ion-item>
 
   <ion-item>
     <ion-label class="ion-text-wrap">
-    Multiline text that should wrap when it is too long
-    to fit on one line in the item.
+      Multiline text that should wrap when it is too long to fit on one line in the item.
     </ion-label>
   </ion-item>
 
@@ -156,11 +133,8 @@ The highlight color changes based on the item state, but all of the states use I
   </ion-item>
 
   <ion-item lines="full">
-    <ion-label>
-      Item with Full Lines
-    </ion-label>
+    <ion-label> Item with Full Lines </ion-label>
   </ion-item>
-
 </ion-list>
 ```
 
@@ -220,31 +194,26 @@ The highlight color changes based on the item state, but all of the states use I
 </ion-list>
 ```
 
-
 ### Media Items
 
 ```html
 <ion-item button (click)="testClick()">
   <ion-avatar slot="start">
-    <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAAAAACH5BAAAAAAALAAAAAABAAEAAAICTAEAOw==">
+    <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAAAAACH5BAAAAAAALAAAAAABAAEAAAICTAEAOw==" />
   </ion-avatar>
-  <ion-label>
-    Avatar Start, Button Item
-  </ion-label>
+  <ion-label> Avatar Start, Button Item </ion-label>
 </ion-item>
 
 <ion-item href="#">
-  <ion-label>
-    Thumbnail End, Anchor Item
-  </ion-label>
+  <ion-label> Thumbnail End, Anchor Item </ion-label>
   <ion-thumbnail slot="end">
-    <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAAAAACH5BAAAAAAALAAAAAABAAEAAAICTAEAOw==">
+    <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAAAAACH5BAAAAAAALAAAAAABAAEAAAICTAEAOw==" />
   </ion-thumbnail>
 </ion-item>
 
 <ion-item>
   <ion-thumbnail slot="start">
-    <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAAAAACH5BAAAAAAALAAAAAABAAEAAAICTAEAOw==">
+    <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAAAAACH5BAAAAAAALAAAAAABAAEAAAICTAEAOw==" />
   </ion-thumbnail>
   <ion-label>
     <h2>H2 Title Text</h2>
@@ -255,7 +224,7 @@ The highlight color changes based on the item state, but all of the states use I
 
 <ion-item button (click)="testClick()">
   <ion-thumbnail slot="start">
-    <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAAAAACH5BAAAAAAALAAAAAABAAEAAAICTAEAOw==">
+    <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAAAAACH5BAAAAAAALAAAAAABAAEAAAICTAEAOw==" />
   </ion-thumbnail>
   <ion-label>
     <h3>H3 Title Text</h3>
@@ -269,13 +238,9 @@ The highlight color changes based on the item state, but all of the states use I
 
 ```html
 <ion-item>
-  <ion-button slot="start">
-    Start
-  </ion-button>
+  <ion-button slot="start"> Start </ion-button>
   <ion-label>Button Start/End</ion-label>
-  <ion-button slot="end">
-    End
-  </ion-button>
+  <ion-button slot="end"> End </ion-button>
 </ion-item>
 
 <ion-item>
@@ -305,37 +270,27 @@ The highlight color changes based on the item state, but all of the states use I
 
 ```html
 <ion-item>
-  <ion-label>
-    Icon End
-  </ion-label>
+  <ion-label> Icon End </ion-label>
   <ion-icon name="information-circle" slot="end"></ion-icon>
 </ion-item>
 
 <ion-item>
-  <ion-label>
-    Large Icon End
-  </ion-label>
+  <ion-label> Large Icon End </ion-label>
   <ion-icon name="information-circle" size="large" slot="end"></ion-icon>
 </ion-item>
 
 <ion-item>
-  <ion-label>
-    Small Icon End
-  </ion-label>
+  <ion-label> Small Icon End </ion-label>
   <ion-icon name="information-circle" size="small" slot="end"></ion-icon>
 </ion-item>
 
 <ion-item>
   <ion-icon name="star" slot="start"></ion-icon>
-  <ion-label>
-    Icon Start
-  </ion-label>
+  <ion-label> Icon Start </ion-label>
 </ion-item>
 
 <ion-item>
-  <ion-label>
-    Two Icons End
-  </ion-label>
+  <ion-label> Two Icons End </ion-label>
   <ion-icon name="checkmark-circle" slot="end"></ion-icon>
   <ion-icon name="shuffle" slot="end"></ion-icon>
 </ion-item>
@@ -388,38 +343,28 @@ The highlight color changes based on the item state, but all of the states use I
 </ion-item>
 ```
 
-
 </TabItem>
-
 
 <TabItem value="javascript">
 
 ```html
 <!-- Default Item -->
 <ion-item>
-  <ion-label>
-    Item
-  </ion-label>
+  <ion-label> Item </ion-label>
 </ion-item>
 
 <!-- Item as a Button -->
 <ion-item button onclick="buttonClick()">
-  <ion-label>
-    Button Item
-  </ion-label>
+  <ion-label> Button Item </ion-label>
 </ion-item>
 
 <!-- Item as an Anchor -->
 <ion-item href="https://www.ionicframework.com">
-  <ion-label>
-    Anchor Item
-  </ion-label>
+  <ion-label> Anchor Item </ion-label>
 </ion-item>
 
 <ion-item color="secondary">
-  <ion-label>
-    Secondary Color Item
-  </ion-label>
+  <ion-label> Secondary Color Item </ion-label>
 </ion-item>
 ```
 
@@ -427,21 +372,15 @@ The highlight color changes based on the item state, but all of the states use I
 
 ```html
 <ion-item detail>
-  <ion-label>
-    Standard Item with Detail Arrow
-  </ion-label>
+  <ion-label> Standard Item with Detail Arrow </ion-label>
 </ion-item>
 
 <ion-item button onclick="buttonClick()" detail>
-  <ion-label>
-    Button Item with Detail Arrow
-  </ion-label>
+  <ion-label> Button Item with Detail Arrow </ion-label>
 </ion-item>
 
 <ion-item detail="false" href="https://www.ionicframework.com">
-  <ion-label>
-    Anchor Item with no Detail Arrow
-  </ion-label>
+  <ion-label> Anchor Item with no Detail Arrow </ion-label>
 </ion-item>
 ```
 
@@ -450,21 +389,16 @@ The highlight color changes based on the item state, but all of the states use I
 ```html
 <ion-list>
   <ion-item>
-    <ion-label>
-      Item
-    </ion-label>
+    <ion-label> Item </ion-label>
   </ion-item>
 
   <ion-item lines="none">
-    <ion-label>
-      No Lines Item
-    </ion-label>
+    <ion-label> No Lines Item </ion-label>
   </ion-item>
 
   <ion-item>
     <ion-label class="ion-text-wrap">
-    Multiline text that should wrap when it is too long
-    to fit on one line in the item.
+      Multiline text that should wrap when it is too long to fit on one line in the item.
     </ion-label>
   </ion-item>
 
@@ -481,11 +415,8 @@ The highlight color changes based on the item state, but all of the states use I
   </ion-item>
 
   <ion-item lines="full">
-    <ion-label>
-      Item with Full Lines
-    </ion-label>
+    <ion-label> Item with Full Lines </ion-label>
   </ion-item>
-
 </ion-list>
 ```
 
@@ -545,31 +476,26 @@ The highlight color changes based on the item state, but all of the states use I
 </ion-list>
 ```
 
-
 ### Media Items
 
 ```html
 <ion-item button onclick="testClick()">
   <ion-avatar slot="start">
-    <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAAAAACH5BAAAAAAALAAAAAABAAEAAAICTAEAOw==">
+    <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAAAAACH5BAAAAAAALAAAAAABAAEAAAICTAEAOw==" />
   </ion-avatar>
-  <ion-label>
-    Avatar Start, Button Item
-  </ion-label>
+  <ion-label> Avatar Start, Button Item </ion-label>
 </ion-item>
 
 <ion-item href="#">
-  <ion-label>
-    Thumbnail End, Anchor Item
-  </ion-label>
+  <ion-label> Thumbnail End, Anchor Item </ion-label>
   <ion-thumbnail slot="end">
-    <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAAAAACH5BAAAAAAALAAAAAABAAEAAAICTAEAOw==">
+    <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAAAAACH5BAAAAAAALAAAAAABAAEAAAICTAEAOw==" />
   </ion-thumbnail>
 </ion-item>
 
 <ion-item>
   <ion-thumbnail slot="start">
-    <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAAAAACH5BAAAAAAALAAAAAABAAEAAAICTAEAOw==">
+    <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAAAAACH5BAAAAAAALAAAAAABAAEAAAICTAEAOw==" />
   </ion-thumbnail>
   <ion-label>
     <h2>H2 Title Text</h2>
@@ -580,7 +506,7 @@ The highlight color changes based on the item state, but all of the states use I
 
 <ion-item button onclick="testClick()">
   <ion-thumbnail slot="start">
-    <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAAAAACH5BAAAAAAALAAAAAABAAEAAAICTAEAOw==">
+    <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAAAAACH5BAAAAAAALAAAAAABAAEAAAICTAEAOw==" />
   </ion-thumbnail>
   <ion-label>
     <h3>H3 Title Text</h3>
@@ -594,13 +520,9 @@ The highlight color changes based on the item state, but all of the states use I
 
 ```html
 <ion-item>
-  <ion-button slot="start">
-    Start
-  </ion-button>
+  <ion-button slot="start"> Start </ion-button>
   <ion-label>Button Start/End</ion-label>
-  <ion-button slot="end">
-    End
-  </ion-button>
+  <ion-button slot="end"> End </ion-button>
 </ion-item>
 
 <ion-item>
@@ -630,37 +552,27 @@ The highlight color changes based on the item state, but all of the states use I
 
 ```html
 <ion-item>
-  <ion-label>
-    Icon End
-  </ion-label>
+  <ion-label> Icon End </ion-label>
   <ion-icon name="information-circle" slot="end"></ion-icon>
 </ion-item>
 
 <ion-item>
-  <ion-label>
-    Large Icon End
-  </ion-label>
+  <ion-label> Large Icon End </ion-label>
   <ion-icon name="information-circle" size="large" slot="end"></ion-icon>
 </ion-item>
 
 <ion-item>
-  <ion-label>
-    Small Icon End
-  </ion-label>
+  <ion-label> Small Icon End </ion-label>
   <ion-icon name="information-circle" size="small" slot="end"></ion-icon>
 </ion-item>
 
 <ion-item>
   <ion-icon name="star" slot="start"></ion-icon>
-  <ion-label>
-    Icon Start
-  </ion-label>
+  <ion-label> Icon Start </ion-label>
 </ion-item>
 
 <ion-item>
-  <ion-label>
-    Two Icons End
-  </ion-label>
+  <ion-label> Two Icons End </ion-label>
   <ion-icon name="checkmark-circle" slot="end"></ion-icon>
   <ion-icon name="shuffle" slot="end"></ion-icon>
 </ion-item>
@@ -713,9 +625,7 @@ The highlight color changes based on the item state, but all of the states use I
 </ion-item>
 ```
 
-
 </TabItem>
-
 
 <TabItem value="react">
 
@@ -1027,9 +937,7 @@ export const ItemExamples: React.FC = () => {
 };
 ```
 
-
 </TabItem>
-
 
 <TabItem value="stencil">
 
@@ -1038,7 +946,7 @@ import { Component, h } from '@stencil/core';
 
 @Component({
   tag: 'item-example',
-  styleUrl: 'item-example.css'
+  styleUrl: 'item-example.css',
 })
 export class ItemExample {
   buttonClick() {
@@ -1049,30 +957,22 @@ export class ItemExample {
     return [
       // Default Item
       <ion-item>
-        <ion-label>
-          Item
-        </ion-label>
+        <ion-label>Item</ion-label>
       </ion-item>,
 
       // Item as a Button
       <ion-item button onClick={() => this.buttonClick()}>
-        <ion-label>
-          Button Item
-        </ion-label>
+        <ion-label>Button Item</ion-label>
       </ion-item>,
 
       // Item as an Anchor
       <ion-item href="https://www.ionicframework.com">
-        <ion-label>
-          Anchor Item
-        </ion-label>
+        <ion-label>Anchor Item</ion-label>
       </ion-item>,
 
       <ion-item color="secondary">
-        <ion-label>
-          Secondary Color Item
-        </ion-label>
-      </ion-item>
+        <ion-label>Secondary Color Item</ion-label>
+      </ion-item>,
     ];
   }
 }
@@ -1085,7 +985,7 @@ import { Component, h } from '@stencil/core';
 
 @Component({
   tag: 'item-example',
-  styleUrl: 'item-example.css'
+  styleUrl: 'item-example.css',
 })
 export class ItemExample {
   buttonClick() {
@@ -1095,22 +995,16 @@ export class ItemExample {
   render() {
     return [
       <ion-item detail>
-        <ion-label>
-          Standard Item with Detail Arrow
-        </ion-label>
+        <ion-label>Standard Item with Detail Arrow</ion-label>
       </ion-item>,
 
       <ion-item button onClick={() => this.buttonClick()} detail>
-        <ion-label>
-          Button Item with Detail Arrow
-        </ion-label>
+        <ion-label>Button Item with Detail Arrow</ion-label>
       </ion-item>,
 
       <ion-item detail={false} href="https://www.ionicframework.com">
-        <ion-label>
-          Anchor Item with no Detail Arrow
-        </ion-label>
-      </ion-item>
+        <ion-label>Anchor Item with no Detail Arrow</ion-label>
+      </ion-item>,
     ];
   }
 }
@@ -1123,31 +1017,26 @@ import { Component, h } from '@stencil/core';
 
 @Component({
   tag: 'item-example',
-  styleUrl: 'item-example.css'
+  styleUrl: 'item-example.css',
 })
 export class ItemExample {
   render() {
     return [
       <ion-list>
         <ion-item>
-          <ion-label>
-            Item
-          </ion-label>
-        </ion-item>,
-
+          <ion-label>Item</ion-label>
+        </ion-item>
+        ,
         <ion-item lines="none">
-          <ion-label>
-            No Lines Item
-          </ion-label>
-        </ion-item>,
-
+          <ion-label>No Lines Item</ion-label>
+        </ion-item>
+        ,
         <ion-item>
           <ion-label class="ion-text-wrap">
-          Multiline text that should wrap when it is too long
-          to fit on one line in the item.
+            Multiline text that should wrap when it is too long to fit on one line in the item.
           </ion-label>
-        </ion-item>,
-
+        </ion-item>
+        ,
         <ion-item>
           <ion-label class="ion-text-wrap">
             <ion-text color="primary">
@@ -1158,14 +1047,12 @@ export class ItemExample {
               <p>Paragraph line 2 secondary</p>
             </ion-text>
           </ion-label>
-        </ion-item>,
-
-        <ion-item lines="full">
-          <ion-label>
-            Item with Full Lines
-          </ion-label>
         </ion-item>
-      </ion-list>
+        ,
+        <ion-item lines="full">
+          <ion-label>Item with Full Lines</ion-label>
+        </ion-item>
+      </ion-list>,
     ];
   }
 }
@@ -1178,7 +1065,7 @@ import { Component, h } from '@stencil/core';
 
 @Component({
   tag: 'item-example',
-  styleUrl: 'item-example.css'
+  styleUrl: 'item-example.css',
 })
 export class ItemExample {
   render() {
@@ -1233,7 +1120,7 @@ export class ItemExample {
         <ion-item>
           <ion-label>No lines Item 3</ion-label>
         </ion-item>
-      </ion-list>
+      </ion-list>,
     ];
   }
 }
@@ -1246,7 +1133,7 @@ import { Component, h } from '@stencil/core';
 
 @Component({
   tag: 'item-example',
-  styleUrl: 'item-example.css'
+  styleUrl: 'item-example.css',
 })
 export class ItemExample {
   testClick() {
@@ -1257,43 +1144,41 @@ export class ItemExample {
     return [
       <ion-item button onClick={() => this.testClick()}>
         <ion-avatar slot="start">
-          <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAAAAACH5BAAAAAAALAAAAAABAAEAAAICTAEAOw=="/>
+          <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAAAAACH5BAAAAAAALAAAAAABAAEAAAICTAEAOw==" />
         </ion-avatar>
-        <ion-label>
-          Avatar Start, Button Item
-        </ion-label>
+        <ion-label>Avatar Start, Button Item</ion-label>
       </ion-item>,
 
       <ion-item href="#">
-        <ion-label>
-          Thumbnail End, Anchor Item
-        </ion-label>
+        <ion-label>Thumbnail End, Anchor Item</ion-label>
         <ion-thumbnail slot="end">
-          <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAAAAACH5BAAAAAAALAAAAAABAAEAAAICTAEAOw=="/>
+          <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAAAAACH5BAAAAAAALAAAAAABAAEAAAICTAEAOw==" />
         </ion-thumbnail>
       </ion-item>,
 
       <ion-item>
         <ion-thumbnail slot="start">
-          <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAAAAACH5BAAAAAAALAAAAAABAAEAAAICTAEAOw=="/>
+          <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAAAAACH5BAAAAAAALAAAAAABAAEAAAICTAEAOw==" />
         </ion-thumbnail>
         <ion-label>
           <h2>H2 Title Text</h2>
           <p>Button on right</p>
         </ion-label>
-        <ion-button fill="outline" slot="end">View</ion-button>
+        <ion-button fill="outline" slot="end">
+          View
+        </ion-button>
       </ion-item>,
 
       <ion-item button onClick={() => this.testClick()}>
         <ion-thumbnail slot="start">
-          <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAAAAACH5BAAAAAAALAAAAAABAAEAAAICTAEAOw=="/>
+          <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAAAAACH5BAAAAAAALAAAAAABAAEAAAICTAEAOw==" />
         </ion-thumbnail>
         <ion-label>
           <h3>H3 Title Text</h3>
           <p>Icon on right</p>
         </ion-label>
         <ion-icon name="close-circle" slot="end"></ion-icon>
-      </ion-item>
+      </ion-item>,
     ];
   }
 }
@@ -1306,19 +1191,15 @@ import { Component, h } from '@stencil/core';
 
 @Component({
   tag: 'item-example',
-  styleUrl: 'item-example.css'
+  styleUrl: 'item-example.css',
 })
 export class ItemExample {
   render() {
     return [
       <ion-item>
-        <ion-button slot="start">
-          Start
-        </ion-button>
+        <ion-button slot="start">Start</ion-button>
         <ion-label>Button Start/End</ion-label>
-        <ion-button slot="end">
-          End
-        </ion-button>
+        <ion-button slot="end">End</ion-button>
       </ion-item>,
 
       <ion-item>
@@ -1341,7 +1222,7 @@ export class ItemExample {
         <ion-button slot="end">
           <ion-icon slot="icon-only" name="star"></ion-icon>
         </ion-button>
-      </ion-item>
+      </ion-item>,
     ];
   }
 }
@@ -1354,46 +1235,36 @@ import { Component, h } from '@stencil/core';
 
 @Component({
   tag: 'item-example',
-  styleUrl: 'item-example.css'
+  styleUrl: 'item-example.css',
 })
 export class ItemExample {
   render() {
     return [
       <ion-item>
-        <ion-label>
-          Icon End
-        </ion-label>
+        <ion-label>Icon End</ion-label>
         <ion-icon name="information-circle" slot="end"></ion-icon>
       </ion-item>,
 
       <ion-item>
-        <ion-label>
-          Large Icon End
-        </ion-label>
+        <ion-label>Large Icon End</ion-label>
         <ion-icon name="information-circle" size="large" slot="end"></ion-icon>
       </ion-item>,
 
       <ion-item>
-        <ion-label>
-          Small Icon End
-        </ion-label>
+        <ion-label>Small Icon End</ion-label>
         <ion-icon name="information-circle" size="small" slot="end"></ion-icon>
       </ion-item>,
 
       <ion-item>
         <ion-icon name="star" slot="start"></ion-icon>
-        <ion-label>
-          Icon Start
-        </ion-label>
+        <ion-label>Icon Start</ion-label>
       </ion-item>,
 
       <ion-item>
-        <ion-label>
-          Two Icons End
-        </ion-label>
+        <ion-label>Two Icons End</ion-label>
         <ion-icon name="checkmark-circle" slot="end"></ion-icon>
         <ion-icon name="shuffle" slot="end"></ion-icon>
-      </ion-item>
+      </ion-item>,
     ];
   }
 }
@@ -1406,7 +1277,7 @@ import { Component, h } from '@stencil/core';
 
 @Component({
   tag: 'item-example',
-  styleUrl: 'item-example.css'
+  styleUrl: 'item-example.css',
 })
 export class ItemExample {
   render() {
@@ -1421,7 +1292,9 @@ export class ItemExample {
         <ion-select>
           <ion-select-option value="">No Game Console</ion-select-option>
           <ion-select-option value="nes">NES</ion-select-option>
-          <ion-select-option value="n64" selected>Nintendo64</ion-select-option>
+          <ion-select-option value="n64" selected>
+            Nintendo64
+          </ion-select-option>
           <ion-select-option value="ps">PlayStation</ion-select-option>
           <ion-select-option value="genesis">Sega Genesis</ion-select-option>
           <ion-select-option value="saturn">Sega Saturn</ion-select-option>
@@ -1452,7 +1325,7 @@ export class ItemExample {
       <ion-item>
         <ion-label>Range</ion-label>
         <ion-range></ion-range>
-      </ion-item>
+      </ion-item>,
     ];
   }
 }
@@ -1460,36 +1333,27 @@ export class ItemExample {
 
 </TabItem>
 
-
 <TabItem value="vue">
 
 ```html
 <template>
   <!-- Default Item -->
   <ion-item>
-    <ion-label>
-      Item
-    </ion-label>
+    <ion-label> Item </ion-label>
   </ion-item>
 
   <!-- Item as a Button -->
   <ion-item button @click="buttonClick()">
-    <ion-label>
-      Button Item
-    </ion-label>
+    <ion-label> Button Item </ion-label>
   </ion-item>
 
   <!-- Item as an Anchor -->
   <ion-item href="https://www.ionicframework.com">
-    <ion-label>
-      Anchor Item
-    </ion-label>
+    <ion-label> Anchor Item </ion-label>
   </ion-item>
 
   <ion-item color="secondary">
-    <ion-label>
-      Secondary Color Item
-    </ion-label>
+    <ion-label> Secondary Color Item </ion-label>
   </ion-item>
 </template>
 ```
@@ -1499,21 +1363,15 @@ export class ItemExample {
 ```html
 <template>
   <ion-item detail>
-    <ion-label>
-      Standard Item with Detail Arrow
-    </ion-label>
+    <ion-label> Standard Item with Detail Arrow </ion-label>
   </ion-item>
 
   <ion-item button @click="buttonClick()" detail>
-    <ion-label>
-      Button Item with Detail Arrow
-    </ion-label>
+    <ion-label> Button Item with Detail Arrow </ion-label>
   </ion-item>
 
   <ion-item detail="false" href="https://www.ionicframework.com">
-    <ion-label>
-      Anchor Item with no Detail Arrow
-    </ion-label>
+    <ion-label> Anchor Item with no Detail Arrow </ion-label>
   </ion-item>
 </template>
 ```
@@ -1524,21 +1382,16 @@ export class ItemExample {
 <template>
   <ion-list>
     <ion-item>
-      <ion-label>
-        Item
-      </ion-label>
+      <ion-label> Item </ion-label>
     </ion-item>
 
     <ion-item lines="none">
-      <ion-label>
-        No Lines Item
-      </ion-label>
+      <ion-label> No Lines Item </ion-label>
     </ion-item>
 
     <ion-item>
       <ion-label class="ion-text-wrap">
-      Multiline text that should wrap when it is too long
-      to fit on one line in the item.
+        Multiline text that should wrap when it is too long to fit on one line in the item.
       </ion-label>
     </ion-item>
 
@@ -1555,11 +1408,8 @@ export class ItemExample {
     </ion-item>
 
     <ion-item lines="full">
-      <ion-label>
-        Item with Full Lines
-      </ion-label>
+      <ion-label> Item with Full Lines </ion-label>
     </ion-item>
-
   </ion-list>
 </template>
 ```
@@ -1622,32 +1472,27 @@ export class ItemExample {
 </template>
 ```
 
-
 ### Media Items
 
 ```html
 <template>
   <ion-item button @click="testClick()">
     <ion-avatar slot="start">
-      <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAAAAACH5BAAAAAAALAAAAAABAAEAAAICTAEAOw==">
+      <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAAAAACH5BAAAAAAALAAAAAABAAEAAAICTAEAOw==" />
     </ion-avatar>
-    <ion-label>
-      Avatar Start, Button Item
-    </ion-label>
+    <ion-label> Avatar Start, Button Item </ion-label>
   </ion-item>
 
   <ion-item href="#">
-    <ion-label>
-      Thumbnail End, Anchor Item
-    </ion-label>
+    <ion-label> Thumbnail End, Anchor Item </ion-label>
     <ion-thumbnail slot="end">
-      <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAAAAACH5BAAAAAAALAAAAAABAAEAAAICTAEAOw==">
+      <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAAAAACH5BAAAAAAALAAAAAABAAEAAAICTAEAOw==" />
     </ion-thumbnail>
   </ion-item>
 
   <ion-item>
     <ion-thumbnail slot="start">
-      <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAAAAACH5BAAAAAAALAAAAAABAAEAAAICTAEAOw==">
+      <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAAAAACH5BAAAAAAALAAAAAABAAEAAAICTAEAOw==" />
     </ion-thumbnail>
     <ion-label>
       <h2>H2 Title Text</h2>
@@ -1658,7 +1503,7 @@ export class ItemExample {
 
   <ion-item button @click="testClick()">
     <ion-thumbnail slot="start">
-      <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAAAAACH5BAAAAAAALAAAAAABAAEAAAICTAEAOw==">
+      <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAAAAACH5BAAAAAAALAAAAAABAAEAAAICTAEAOw==" />
     </ion-thumbnail>
     <ion-label>
       <h3>H3 Title Text</h3>
@@ -1674,13 +1519,9 @@ export class ItemExample {
 ```html
 <template>
   <ion-item>
-    <ion-button slot="start">
-      Start
-    </ion-button>
+    <ion-button slot="start"> Start </ion-button>
     <ion-label>Button Start/End</ion-label>
-    <ion-button slot="end">
-      End
-    </ion-button>
+    <ion-button slot="end"> End </ion-button>
   </ion-item>
 
   <ion-item>
@@ -1712,37 +1553,27 @@ export class ItemExample {
 ```html
 <template>
   <ion-item>
-    <ion-label>
-      Icon End
-    </ion-label>
+    <ion-label> Icon End </ion-label>
     <ion-icon :icon="informationCircle" slot="end"></ion-icon>
   </ion-item>
 
   <ion-item>
-    <ion-label>
-      Large Icon End
-    </ion-label>
+    <ion-label> Large Icon End </ion-label>
     <ion-icon :icon="informationCircle" size="large" slot="end"></ion-icon>
   </ion-item>
 
   <ion-item>
-    <ion-label>
-      Small Icon End
-    </ion-label>
+    <ion-label> Small Icon End </ion-label>
     <ion-icon :icon="informationCircle" size="small" slot="end"></ion-icon>
   </ion-item>
 
   <ion-item>
     <ion-icon :icon="star" slot="start"></ion-icon>
-    <ion-label>
-      Icon Start
-    </ion-label>
+    <ion-label> Icon Start </ion-label>
   </ion-item>
 
   <ion-item>
-    <ion-label>
-      Two Icons End
-    </ion-label>
+    <ion-label> Two Icons End </ion-label>
     <ion-icon :icon="checkmarkCircle" slot="end"></ion-icon>
     <ion-icon :icon="shuffle" slot="end"></ion-icon>
   </ion-item>
@@ -1798,65 +1629,56 @@ export class ItemExample {
 </template>
 
 <script>
-import { 
-  IonAvatar,
-  IonButton,
-  IonCheckbox, 
-  IonDatetime,
-  IonIcon,
-  IonInput, 
-  IonItem, 
-  IonLabel, 
-  IonRange,
-  IonSelect, 
-  IonSelectOption, 
-  IonText,
-  IonThumbnail,
-  IonToggle
-} from '@ionic/vue';
-import { 
-  checkmarkCircle, 
-  closeCircle, 
-  home, 
-  informationCircle, 
-  navigate, 
-  shuffle, 
-  star
-} from 'ionicons/icons';
-import { defineComponent } from 'vue';
-
-export default defineComponent({
-  components: { 
+  import {
     IonAvatar,
     IonButton,
-    IonCheckbox, 
+    IonCheckbox,
     IonDatetime,
     IonIcon,
-    IonInput, 
-    IonItem, 
-    IonLabel, 
+    IonInput,
+    IonItem,
+    IonLabel,
     IonRange,
-    IonSelect, 
-    IonSelectOption, 
+    IonSelect,
+    IonSelectOption,
     IonText,
     IonThumbnail,
-    IonToggle
-  },
-  setup() {
-    return {
-      checkmarkCircle, 
-      closeCircle, 
-      home, 
-      informationCircle, 
-      navigate, 
-      shuffle, 
-      star
-    }
-  }
-});
+    IonToggle,
+  } from '@ionic/vue';
+  import { checkmarkCircle, closeCircle, home, informationCircle, navigate, shuffle, star } from 'ionicons/icons';
+  import { defineComponent } from 'vue';
+
+  export default defineComponent({
+    components: {
+      IonAvatar,
+      IonButton,
+      IonCheckbox,
+      IonDatetime,
+      IonIcon,
+      IonInput,
+      IonItem,
+      IonLabel,
+      IonRange,
+      IonSelect,
+      IonSelectOption,
+      IonText,
+      IonThumbnail,
+      IonToggle,
+    },
+    setup() {
+      return {
+        checkmarkCircle,
+        closeCircle,
+        home,
+        informationCircle,
+        navigate,
+        shuffle,
+        star,
+      };
+    },
+  });
 </script>
 ```
-
 
 </TabItem>
 
@@ -1864,215 +1686,183 @@ export default defineComponent({
 
 ## Properties
 
-
 ### button
 
-| | |
-| --- | --- |
+|                 |                                                                         |
+| --------------- | ----------------------------------------------------------------------- |
 | **Description** | If `true`, a button tag will be rendered and the item will be tappable. |
-| **Attribute** | `button` |
-| **Type** | `boolean` |
-| **Default** | `false` |
-
-
+| **Attribute**   | `button`                                                                |
+| **Type**        | `boolean`                                                               |
+| **Default**     | `false`                                                                 |
 
 ### color
 
-| | |
-| --- | --- |
+|                 |                                                                                                                                                                                                                                                                                  |
+| --------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Description** | The color to use from your application's color palette.<br />Default options are: `"primary"`, `"secondary"`, `"tertiary"`, `"success"`, `"warning"`, `"danger"`, `"light"`, `"medium"`, and `"dark"`.<br />For more information on colors, see [theming](../theming/basics.md). |
-| **Attribute** | `color` |
-| **Type** | `string \| undefined` |
-| **Default** | `undefined` |
-
-
+| **Attribute**   | `color`                                                                                                                                                                                                                                                                          |
+| **Type**        | `string \| undefined`                                                                                                                                                                                                                                                            |
+| **Default**     | `undefined`                                                                                                                                                                                                                                                                      |
 
 ### detail
 
-| | |
-| --- | --- |
+|                 |                                                                                                                                                       |
+| --------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Description** | If `true`, a detail arrow will appear on the item. Defaults to `false` unless the `mode`<br />is `ios` and an `href` or `button` property is present. |
-| **Attribute** | `detail` |
-| **Type** | `boolean \| undefined` |
-| **Default** | `undefined` |
-
-
+| **Attribute**   | `detail`                                                                                                                                              |
+| **Type**        | `boolean \| undefined`                                                                                                                                |
+| **Default**     | `undefined`                                                                                                                                           |
 
 ### detailIcon
 
-| | |
-| --- | --- |
+|                 |                                                 |
+| --------------- | ----------------------------------------------- |
 | **Description** | The icon to use when `detail` is set to `true`. |
-| **Attribute** | `detail-icon` |
-| **Type** | `string` |
-| **Default** | `'chevron-forward'` |
-
-
+| **Attribute**   | `detail-icon`                                   |
+| **Type**        | `string`                                        |
+| **Default**     | `'chevron-forward'`                             |
 
 ### disabled
 
-| | |
-| --- | --- |
+|                 |                                                    |
+| --------------- | -------------------------------------------------- |
 | **Description** | If `true`, the user cannot interact with the item. |
-| **Attribute** | `disabled` |
-| **Type** | `boolean` |
-| **Default** | `false` |
-
-
+| **Attribute**   | `disabled`                                         |
+| **Type**        | `boolean`                                          |
+| **Default**     | `false`                                            |
 
 ### download
 
-| | |
-| --- | --- |
+|                 |                                                                                                                                                                                                                                                                                                          |
+| --------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Description** | This attribute instructs browsers to download a URL instead of navigating to<br />it, so the user will be prompted to save it as a local file. If the attribute<br />has a value, it is used as the pre-filled file name in the Save prompt<br />(the user can still change the file name if they want). |
-| **Attribute** | `download` |
-| **Type** | `string \| undefined` |
-| **Default** | `undefined` |
-
-
+| **Attribute**   | `download`                                                                                                                                                                                                                                                                                               |
+| **Type**        | `string \| undefined`                                                                                                                                                                                                                                                                                    |
+| **Default**     | `undefined`                                                                                                                                                                                                                                                                                              |
 
 ### href
 
-| | |
-| --- | --- |
+|                 |                                                                                                                              |
+| --------------- | ---------------------------------------------------------------------------------------------------------------------------- |
 | **Description** | Contains a URL or a URL fragment that the hyperlink points to.<br />If this property is set, an anchor tag will be rendered. |
-| **Attribute** | `href` |
-| **Type** | `string \| undefined` |
-| **Default** | `undefined` |
-
-
+| **Attribute**   | `href`                                                                                                                       |
+| **Type**        | `string \| undefined`                                                                                                        |
+| **Default**     | `undefined`                                                                                                                  |
 
 ### lines
 
-| | |
-| --- | --- |
+|                 |                                                        |
+| --------------- | ------------------------------------------------------ |
 | **Description** | How the bottom border should be displayed on the item. |
-| **Attribute** | `lines` |
-| **Type** | `"full" \| "inset" \| "none" \| undefined` |
-| **Default** | `undefined` |
-
-
+| **Attribute**   | `lines`                                                |
+| **Type**        | `"full" \| "inset" \| "none" \| undefined`             |
+| **Default**     | `undefined`                                            |
 
 ### mode
 
-| | |
-| --- | --- |
+|                 |                                                   |
+| --------------- | ------------------------------------------------- |
 | **Description** | The mode determines which platform styles to use. |
-| **Attribute** | `mode` |
-| **Type** | `"ios" \| "md"` |
-| **Default** | `undefined` |
-
-
+| **Attribute**   | `mode`                                            |
+| **Type**        | `"ios" \| "md"`                                   |
+| **Default**     | `undefined`                                       |
 
 ### rel
 
-| | |
-| --- | --- |
+|                 |                                                                                                                                                                                             |
+| --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Description** | Specifies the relationship of the target object to the link object.<br />The value is a space-separated list of [link types](https://developer.mozilla.org/en-US/docs/Web/HTML/Link_types). |
-| **Attribute** | `rel` |
-| **Type** | `string \| undefined` |
-| **Default** | `undefined` |
-
-
+| **Attribute**   | `rel`                                                                                                                                                                                       |
+| **Type**        | `string \| undefined`                                                                                                                                                                       |
+| **Default**     | `undefined`                                                                                                                                                                                 |
 
 ### routerAnimation
 
-| | |
-| --- | --- |
+|                 |                                                                                                               |
+| --------------- | ------------------------------------------------------------------------------------------------------------- |
 | **Description** | When using a router, it specifies the transition animation when navigating to<br />another page using `href`. |
-| **Attribute** | `undefined` |
-| **Type** | `((baseEl: any, opts?: any) => Animation) \| undefined` |
-| **Default** | `undefined` |
-
-
+| **Attribute**   | `undefined`                                                                                                   |
+| **Type**        | `((baseEl: any, opts?: any) => Animation) \| undefined`                                                       |
+| **Default**     | `undefined`                                                                                                   |
 
 ### routerDirection
 
-| | |
-| --- | --- |
+|                 |                                                                                                               |
+| --------------- | ------------------------------------------------------------------------------------------------------------- |
 | **Description** | When using a router, it specifies the transition direction when navigating to<br />another page using `href`. |
-| **Attribute** | `router-direction` |
-| **Type** | `"back" \| "forward" \| "root"` |
-| **Default** | `'forward'` |
-
-
+| **Attribute**   | `router-direction`                                                                                            |
+| **Type**        | `"back" \| "forward" \| "root"`                                                                               |
+| **Default**     | `'forward'`                                                                                                   |
 
 ### target
 
-| | |
-| --- | --- |
+|                 |                                                                                                                                                               |
+| --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Description** | Specifies where to display the linked URL.<br />Only applies when an `href` is provided.<br />Special keywords: `"_blank"`, `"_self"`, `"_parent"`, `"_top"`. |
-| **Attribute** | `target` |
-| **Type** | `string \| undefined` |
-| **Default** | `undefined` |
-
-
+| **Attribute**   | `target`                                                                                                                                                      |
+| **Type**        | `string \| undefined`                                                                                                                                         |
+| **Default**     | `undefined`                                                                                                                                                   |
 
 ### type
 
-| | |
-| --- | --- |
+|                 |                                                                                      |
+| --------------- | ------------------------------------------------------------------------------------ |
 | **Description** | The type of the button. Only used when an `onclick` or `button` property is present. |
-| **Attribute** | `type` |
-| **Type** | `"button" \| "reset" \| "submit"` |
-| **Default** | `'button'` |
-
-
+| **Attribute**   | `type`                                                                               |
+| **Type**        | `"button" \| "reset" \| "submit"`                                                    |
+| **Default**     | `'button'`                                                                           |
 
 ## CSS Shadow Parts
 
-| Name | Description |
-| --- | --- |
-| `detail-icon` | The chevron icon for the item. Only applies when `detail="true"`. |
-| `native` | The native HTML button, anchor or div element that wraps all child elements. |
-
+| Name          | Description                                                                  |
+| ------------- | ---------------------------------------------------------------------------- |
+| `detail-icon` | The chevron icon for the item. Only applies when `detail="true"`.            |
+| `native`      | The native HTML button, anchor or div element that wraps all child elements. |
 
 ## CSS Custom Properties
 
-| Name | Description |
-| --- | --- |
-| `--background` | Background of the item |
-| `--background-activated` | Background of the item when pressed. Note: setting this will interfere with the Material Design ripple. |
-| `--background-activated-opacity` | Opacity of the item background when pressed |
-| `--background-focused` | Background of the item when focused with the tab key |
-| `--background-focused-opacity` | Opacity of the item background when focused with the tab key |
-| `--background-hover` | Background of the item on hover |
-| `--background-hover-opacity` | Opacity of the background of the item on hover |
-| `--border-color` | Color of the item border |
-| `--border-radius` | Radius of the item border |
-| `--border-style` | Style of the item border |
-| `--border-width` | Width of the item border |
-| `--color` | Color of the item |
-| `--color-activated` | Color of the item when pressed |
-| `--color-focused` | Color of the item when focused with the tab key |
-| `--color-hover` | Color of the item on hover |
-| `--detail-icon-color` | Color of the item detail icon |
-| `--detail-icon-font-size` | Font size of the item detail icon |
-| `--detail-icon-opacity` | Opacity of the item detail icon |
-| `--highlight-color-focused` | The color of the highlight on the item when focused |
-| `--highlight-color-invalid` | The color of the highlight on the item when invalid |
-| `--highlight-color-valid` | The color of the highlight on the item when valid |
-| `--highlight-height` | The height of the highlight on the item |
-| `--inner-border-width` | Width of the item inner border |
-| `--inner-box-shadow` | Box shadow of the item inner |
-| `--inner-padding-bottom` | Bottom padding of the item inner |
-| `--inner-padding-end` | Right padding if direction is left-to-right, and left padding if direction is right-to-left of the item inner |
-| `--inner-padding-start` | Left padding if direction is left-to-right, and right padding if direction is right-to-left of the item inner |
-| `--inner-padding-top` | Top padding of the item inner |
-| `--min-height` | Minimum height of the item |
-| `--padding-bottom` | Bottom padding of the item |
-| `--padding-end` | Right padding if direction is left-to-right, and left padding if direction is right-to-left of the item |
-| `--padding-start` | Left padding if direction is left-to-right, and right padding if direction is right-to-left of the item |
-| `--padding-top` | Top padding of the item |
-| `--ripple-color` | Color of the item ripple effect |
-| `--transition` | Transition of the item |
-
+| Name                             | Description                                                                                                   |
+| -------------------------------- | ------------------------------------------------------------------------------------------------------------- |
+| `--background`                   | Background of the item                                                                                        |
+| `--background-activated`         | Background of the item when pressed. Note: setting this will interfere with the Material Design ripple.       |
+| `--background-activated-opacity` | Opacity of the item background when pressed                                                                   |
+| `--background-focused`           | Background of the item when focused with the tab key                                                          |
+| `--background-focused-opacity`   | Opacity of the item background when focused with the tab key                                                  |
+| `--background-hover`             | Background of the item on hover                                                                               |
+| `--background-hover-opacity`     | Opacity of the background of the item on hover                                                                |
+| `--border-color`                 | Color of the item border                                                                                      |
+| `--border-radius`                | Radius of the item border                                                                                     |
+| `--border-style`                 | Style of the item border                                                                                      |
+| `--border-width`                 | Width of the item border                                                                                      |
+| `--color`                        | Color of the item                                                                                             |
+| `--color-activated`              | Color of the item when pressed                                                                                |
+| `--color-focused`                | Color of the item when focused with the tab key                                                               |
+| `--color-hover`                  | Color of the item on hover                                                                                    |
+| `--detail-icon-color`            | Color of the item detail icon                                                                                 |
+| `--detail-icon-font-size`        | Font size of the item detail icon                                                                             |
+| `--detail-icon-opacity`          | Opacity of the item detail icon                                                                               |
+| `--highlight-color-focused`      | The color of the highlight on the item when focused                                                           |
+| `--highlight-color-invalid`      | The color of the highlight on the item when invalid                                                           |
+| `--highlight-color-valid`        | The color of the highlight on the item when valid                                                             |
+| `--highlight-height`             | The height of the highlight on the item                                                                       |
+| `--inner-border-width`           | Width of the item inner border                                                                                |
+| `--inner-box-shadow`             | Box shadow of the item inner                                                                                  |
+| `--inner-padding-bottom`         | Bottom padding of the item inner                                                                              |
+| `--inner-padding-end`            | Right padding if direction is left-to-right, and left padding if direction is right-to-left of the item inner |
+| `--inner-padding-start`          | Left padding if direction is left-to-right, and right padding if direction is right-to-left of the item inner |
+| `--inner-padding-top`            | Top padding of the item inner                                                                                 |
+| `--min-height`                   | Minimum height of the item                                                                                    |
+| `--padding-bottom`               | Bottom padding of the item                                                                                    |
+| `--padding-end`                  | Right padding if direction is left-to-right, and left padding if direction is right-to-left of the item       |
+| `--padding-start`                | Left padding if direction is left-to-right, and right padding if direction is right-to-left of the item       |
+| `--padding-top`                  | Top padding of the item                                                                                       |
+| `--ripple-color`                 | Color of the item ripple effect                                                                               |
+| `--transition`                   | Transition of the item                                                                                        |
 
 ## Slots
 
-| Name | Description |
-| --- | --- |
-| `` | Content is placed between the named slots if provided without a slot. |
-| `end` | Content is placed to the right of the item text in LTR, and to the left in RTL. |
+| Name    | Description                                                                     |
+| ------- | ------------------------------------------------------------------------------- |
+| ``      | Content is placed between the named slots if provided without a slot.           |
+| `end`   | Content is placed to the right of the item text in LTR, and to the left in RTL. |
 | `start` | Content is placed to the left of the item text in LTR, and to the right in RTL. |
-

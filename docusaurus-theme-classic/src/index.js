@@ -5,7 +5,10 @@ const theme = require(path.resolve(__dirname, '../../node_modules/@docusaurus/th
 const themePath = path.resolve(__dirname, '../../node_modules/@docusaurus/theme-classic/lib-next/theme');
 const tsThemePath = path.resolve(__dirname, '../../node_modules/@docusaurus/theme-classic/src/theme');
 
-let { ThemeConfigSchema } = require(path.resolve(__dirname, '../../node_modules/@docusaurus/theme-classic/lib/validateThemeConfig.js'));
+let { ThemeConfigSchema } = require(path.resolve(
+  __dirname,
+  '../../node_modules/@docusaurus/theme-classic/lib/validateThemeConfig.js'
+));
 
 const NavbarIconLinkSchema = Joi.object({
   type: Joi.string().equal('iconLink').required(),
@@ -16,19 +19,19 @@ const NavbarIconLinkSchema = Joi.object({
     href: Joi.string(),
     target: Joi.string().default('_self'),
     width: Joi.number(),
-    height: Joi.number()
-  })
+    height: Joi.number(),
+  }),
 });
 const NavbarSeparatorSchema = Joi.object({
   type: Joi.string().equal('separator').required(),
   position: Joi.string().default('left'),
-})
+});
 
 ThemeConfigSchema = ThemeConfigSchema.concat(
   Joi.object({
-    navbar: { items: Joi.array().items(NavbarIconLinkSchema).items(NavbarSeparatorSchema) }
+    navbar: { items: Joi.array().items(NavbarIconLinkSchema).items(NavbarSeparatorSchema) },
   })
-)
+);
 
 module.exports = {
   ...theme,
@@ -39,7 +42,7 @@ module.exports = {
     },
     getTypescriptThemePath() {
       return tsThemePath;
-    }
+    },
   }),
-  validateThemeConfig: ({validate, themeConfig}) => validate(ThemeConfigSchema, themeConfig)
-}
+  validateThemeConfig: ({ validate, themeConfig }) => validate(ThemeConfigSchema, themeConfig),
+};

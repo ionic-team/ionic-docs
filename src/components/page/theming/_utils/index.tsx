@@ -1,4 +1,4 @@
-import { Color, RGB} from './color';
+import { Color, RGB } from './color';
 import { COLOR_NAMES, ColorVariable } from './color-variables';
 
 export const generateSteppedColors = (background = '#ffffff', text = '#000000') => {
@@ -24,13 +24,12 @@ export const generateColor = (value: string): ColorVariable => {
   };
 };
 
-export const generateProperty = (name: string) =>
-  `--ion-color-${name.toLowerCase()}`;
+export const generateProperty = (name: string) => `--ion-color-${name.toLowerCase()}`;
 
 export const convertCssToColors = (cssText: string) => {
   const colors = new Map<string, ColorVariable>();
 
-  COLOR_NAMES.forEach(name => {
+  COLOR_NAMES.forEach((name) => {
     const attrMap = {
       value: '',
       valueRgb: '-rgb',
@@ -43,7 +42,7 @@ export const convertCssToColors = (cssText: string) => {
     const color: ColorVariable = {};
     const property = `--ion-color-${name.toLowerCase()}`;
 
-    const keys = (Object.keys(attrMap) as any) as (keyof typeof attrMap)[];
+    const keys = Object.keys(attrMap) as any as (keyof typeof attrMap)[];
     for (const key of keys) {
       color[key] = parseColorVar(property + attrMap[key], cssText);
     }
@@ -57,11 +56,7 @@ export const convertCssToColors = (cssText: string) => {
   return colors;
 };
 
-export const updateCssText = (
-  colorAttr: string,
-  cssText: string,
-  newColorValue?: string,
-) => {
+export const updateCssText = (colorAttr: string, cssText: string, newColorValue?: string) => {
   if (typeof newColorValue === 'undefined') {
     return cssText;
   }
@@ -84,8 +79,7 @@ const getCssKeyVal = (colorAttr: any, cssText: string) => {
   const valueSplt = cssText.substring(startIndex + colorAttr.length);
   const bracketIndex = valueSplt.indexOf('}');
   const semiColonIndex = valueSplt.indexOf(';');
-  const endIndex =
-    startIndex + colorAttr.length + Math.min(bracketIndex, semiColonIndex);
+  const endIndex = startIndex + colorAttr.length + Math.min(bracketIndex, semiColonIndex);
 
   return cssText.substring(startIndex, endIndex);
 };

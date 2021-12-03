@@ -1,6 +1,6 @@
 const path = require('path');
 
-const BASE_URL_TRAILING = '/docs/'
+const BASE_URL_TRAILING = '/docs/';
 
 module.exports = {
   title: 'Ionic Documentation',
@@ -70,8 +70,8 @@ module.exports = {
           type: 'docsVersionDropdown',
           position: 'right',
           dropdownItemsAfter: [
-            {to: 'https://ionicframework.com/docs/v4/components', label: 'v4', target: '_blank'},
-            {to: 'https://ionicframework.com/docs/v3/', label: 'v3', target: '_blank'}
+            { to: 'https://ionicframework.com/docs/v4/components', label: 'v4', target: '_blank' },
+            { to: 'https://ionicframework.com/docs/v3/', label: 'v3', target: '_blank' },
           ],
           // dropdownItemsAfter: [{to: '/versions', label: 'All versions'}],
           dropdownActiveClassDisabled: true,
@@ -144,7 +144,7 @@ module.exports = {
         },
         {
           type: 'separator',
-          position: 'right'
+          position: 'right',
         },
         {
           type: 'localeDropdown',
@@ -167,29 +167,29 @@ module.exports = {
           className: 'icon-link language navbar__item',
         },
         {
-          type: "iconLink",
+          type: 'iconLink',
           position: 'right',
           icon: {
-            alt: "twitter logo",
+            alt: 'twitter logo',
             src: `${BASE_URL_TRAILING}logos/twitter.svg`,
             href: 'https://twitter.com/Ionicframework',
             target: '_blank',
             width: 18,
             height: 16,
-          }
+          },
         },
         {
-          type: "iconLink",
+          type: 'iconLink',
           position: 'right',
           icon: {
-            alt: "github logo",
+            alt: 'github logo',
             src: `${BASE_URL_TRAILING}logos/github.svg`,
             href: 'https://github.com/ionic-team/ionic-framework',
             target: '_blank',
             width: 16.5,
             height: 16,
-          }
-        }
+          },
+        },
       ],
     },
     prism: {
@@ -201,7 +201,7 @@ module.exports = {
       apiKey: '43228ce75714201a27efcf69666d6b40',
       indexName: 'ionicframework',
       contextualSearch: true,
-    }
+    },
   },
   plugins: [
     'docusaurus-plugin-sass',
@@ -209,11 +209,8 @@ module.exports = {
       'docusaurus-plugin-module-alias',
       {
         alias: {
-          'styled-components': path.resolve(
-            __dirname,
-            './node_modules/styled-components',
-          ),
-          'react': path.resolve(__dirname, './node_modules/react'),
+          'styled-components': path.resolve(__dirname, './node_modules/styled-components'),
+          react: path.resolve(__dirname, './node_modules/react'),
           'react-dom': path.resolve(__dirname, './node_modules/react-dom'),
           '@components': path.resolve(__dirname, './src/components'),
         },
@@ -234,7 +231,7 @@ module.exports = {
           if ((match = docPath.match(/cli\/commands\/(.*)\.md/)) != null) {
             return `https://github.com/ionic-team/ionic-cli/edit/develop/packages/@ionic/cli/src/commands/${match[1].replace(
               '-',
-              '/',
+              '/'
             )}.ts`;
           }
           if ((match = docPath.match(/native\/(.*)\.md/)) != null) {
@@ -247,10 +244,10 @@ module.exports = {
         versions: {
           current: {
             label: 'v6',
-            banner: 'none'
+            banner: 'none',
           },
         },
-      }
+      },
     ],
     '@docusaurus/plugin-content-pages',
     '@docusaurus/plugin-debug',
@@ -259,29 +256,23 @@ module.exports = {
       '@docusaurus/plugin-google-gtag',
       {
         trackingID: 'UA-44023830-8',
-      }
+      },
     ],
-    '@docusaurus/plugin-sitemap'
+    '@docusaurus/plugin-sitemap',
   ],
   themes: [
     [
       //overriding the standard docusaurus-theme-classic to provide custom schema
-      path.resolve(__dirname, 'docusaurus-theme-classic'), 
+      path.resolve(__dirname, 'docusaurus-theme-classic'),
       {
         customCss: [
-          require.resolve(
-            './node_modules/modern-normalize/modern-normalize.css',
-          ),
-          require.resolve(
-            './node_modules/@ionic-internal/ionic-ds/dist/tokens/tokens.css'
-          ),
+          require.resolve('./node_modules/modern-normalize/modern-normalize.css'),
+          require.resolve('./node_modules/@ionic-internal/ionic-ds/dist/tokens/tokens.css'),
           require.resolve('./src/styles/custom.scss'),
-        ]
-      }
+        ],
+      },
     ],
-    path.resolve(__dirname, './node_modules/@docusaurus/theme-search-algolia')
+    path.resolve(__dirname, './node_modules/@docusaurus/theme-search-algolia'),
   ],
-  customFields: {
-
-  },
+  customFields: {},
 };

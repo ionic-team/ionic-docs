@@ -150,10 +150,7 @@ const ToastExample: React.FC = () => {
         >
           Show Toast
         </IonButton>
-        <IonButton
-          expand="block"
-          onClick={() => present('hello from hook', 3000)}
-        >
+        <IonButton expand="block" onClick={() => present('hello from hook', 3000)}>
           Show Toast using params, closes in 3 secs
         </IonButton>
         <IonButton expand="block" onClick={dismiss}>
@@ -272,12 +269,8 @@ export class ToastExample {
   render() {
     return [
       <ion-content>
-        <ion-button onClick={() => this.presentToast()}>
-          Present Toast
-        </ion-button>
-        <ion-button onClick={() => this.presentToastWithOptions()}>
-          Present Toast: Options
-        </ion-button>
+        <ion-button onClick={() => this.presentToast()}>Present Toast</ion-button>
+        <ion-button onClick={() => this.presentToastWithOptions()}>Present Toast: Options</ion-button>
       </ion-content>,
     ];
   }

@@ -2,9 +2,9 @@
 
 There are many different options to test native functionality depending on your target platforms and needs.
 
-* Run locally in a web browser (using [Platform Detection](../core-concepts/cross-platform.md) for native functionality)
-* [Deploy to iOS](ios.md)
-* [Deploy to Android](android.md)
+- Run locally in a web browser (using [Platform Detection](../core-concepts/cross-platform.md) for native functionality)
+- [Deploy to iOS](ios.md)
+- [Deploy to Android](android.md)
 
 ## Run Locally in a Web Browser
 

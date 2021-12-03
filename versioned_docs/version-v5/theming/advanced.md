@@ -126,8 +126,8 @@ $text-lighter: lighten($text, 15);
 
 After running through the Sass compiler, the colors will have the following values:
 
-| Variable            | Value                                             |
-| ------------------- | ------------------------------------------------- |
+| Variable            | Value                                          |
+| ------------------- | ---------------------------------------------- |
 | `$background`       | <CodeColor color="#3880ff">#3880ff</CodeColor> |
 | `$background-shade` | <CodeColor color="#3171e0">#3171e0</CodeColor> |
 | `$background-tint`  | <CodeColor color="#4c8dff">#4c8dff</CodeColor> |

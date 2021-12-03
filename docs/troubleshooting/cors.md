@@ -282,5 +282,9 @@ If you are developing a PWA or testing in the browser, using the `--disable-web-
 
 ##### Sources
 
-- <a href="https://fdezromero.com/cors-errors-in-ionic-apps" target="_blank" rel="noopener">CORS Errors in Ionic Apps</a>
-- <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS" target="_blank" rel="noopener">MDN</a>
+- <a href="https://fdezromero.com/cors-errors-in-ionic-apps" target="_blank" rel="noopener">
+    CORS Errors in Ionic Apps
+  </a>
+- <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS" target="_blank" rel="noopener">
+    MDN
+  </a>

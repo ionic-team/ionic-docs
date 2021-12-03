@@ -1,6 +1,7 @@
 ---
-sidebar_label: "ion-infinite-scroll-content"
+sidebar_label: 'ion-infinite-scroll-content'
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
@@ -16,40 +17,31 @@ The `ion-infinite-scroll-content` component is not supported in React.
 
 <Tabs groupId="framework" defaultValue="angular" values={[{ value: 'angular', label: 'ANGULAR' }, { value: 'javascript', label: 'JAVASCRIPT' }, { value: 'stencil', label: 'STENCIL' }, { value: 'vue', label: 'VUE' }]}>
 
-
 <TabItem value="angular">
 
 ```html
 <ion-content>
   <ion-infinite-scroll>
-    <ion-infinite-scroll-content
-      loadingSpinner="bubbles"
-      loadingText="Loading more data…">
+    <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="Loading more data…">
     </ion-infinite-scroll-content>
   </ion-infinite-scroll>
 </ion-content>
 ```
 
-
 </TabItem>
-
 
 <TabItem value="javascript">
 
 ```html
 <ion-content>
   <ion-infinite-scroll>
-    <ion-infinite-scroll-content
-      loading-spinner="bubbles"
-      loading-text="Loading more data…">
+    <ion-infinite-scroll-content loading-spinner="bubbles" loading-text="Loading more data…">
     </ion-infinite-scroll-content>
   </ion-infinite-scroll>
 </ion-content>
 ```
 
-
 </TabItem>
-
 
 <TabItem value="stencil">
 
@@ -58,7 +50,7 @@ import { Component, h } from '@stencil/core';
 
 @Component({
   tag: 'infinite-scroll-content-example',
-  styleUrl: 'infinite-scroll-content-example.css'
+  styleUrl: 'infinite-scroll-content-example.css',
 })
 export class InfiniteScrollContentExample {
   render() {
@@ -67,17 +59,16 @@ export class InfiniteScrollContentExample {
         <ion-infinite-scroll>
           <ion-infinite-scroll-content
             loadingSpinner="bubbles"
-            loadingText="Loading more data...">
-          </ion-infinite-scroll-content>
+            loadingText="Loading more data..."
+          ></ion-infinite-scroll-content>
         </ion-infinite-scroll>
-      </ion-content>
+      </ion-content>,
     ];
   }
 }
 ```
 
 </TabItem>
-
 
 <TabItem value="vue">
 
@@ -114,32 +105,26 @@ export default defineComponent({
 });
 ```
 
-
 </TabItem>
 
 </Tabs>
 
 ## Properties
 
-
 ### loadingSpinner
 
-| | |
-| --- | --- |
-| **Description** | An animated SVG spinner that shows while loading. |
-| **Attribute** | `loading-spinner` |
-| **Type** | `"bubbles" \| "circles" \| "circular" \| "crescent" \| "dots" \| "lines" \| "lines-small" \| null \| undefined` |
-| **Default** | `undefined` |
-
-
+|                 |                                                                                                                 |
+| --------------- | --------------------------------------------------------------------------------------------------------------- |
+| **Description** | An animated SVG spinner that shows while loading.                                                               |
+| **Attribute**   | `loading-spinner`                                                                                               |
+| **Type**        | `"bubbles" \| "circles" \| "circular" \| "crescent" \| "dots" \| "lines" \| "lines-small" \| null \| undefined` |
+| **Default**     | `undefined`                                                                                                     |
 
 ### loadingText
 
-| | |
-| --- | --- |
+|                 |                                                                                                                                                                                                                                                                                                                                                               |
+| --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Description** | Optional text to display while loading.<br />`loadingText` can accept either plaintext or HTML as a string.<br />To display characters normally reserved for HTML, they<br />must be escaped. For example `<Ionic>` would become<br />`&lt;Ionic&gt;`<br /><br />For more information: [Security Documentation](https://ionicframework.com/docs/faq/security) |
-| **Attribute** | `loading-text` |
-| **Type** | `IonicSafeString \| string \| undefined` |
-| **Default** | `undefined` |
-
-
+| **Attribute**   | `loading-text`                                                                                                                                                                                                                                                                                                                                                |
+| **Type**        | `IonicSafeString \| string \| undefined`                                                                                                                                                                                                                                                                                                                      |
+| **Default**     | `undefined`                                                                                                                                                                                                                                                                                                                                                   |

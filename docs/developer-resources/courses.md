@@ -21,7 +21,7 @@ In this course, you will master tips and best practices for Ionic 4 & Ionic 5 th
 ### [Building Deskop Apps with Ionic and Electron](https://pluralsight.pxf.io/VeMXO)
 
 by Michael Callaghan at Pluralsight
- 
+
 Desktop development has historically required dramatically different skills than those required for web
 development. The two disciplines don't mesh well. In this course, Building Desktop Apps with Ionic and Electron,
 you will gain the ability to apply your hard-earned web development skills to build amazing desktop
@@ -56,7 +56,7 @@ Ionic CLI, will start at the top and explore the Ionic CLI. First, you'll see ho
 components. Next, you will learn how to build and serve apps. Finally, you'll discover how to share projects
 with others, and even integrate with other build tools. Whether you’re just starting to explore Ionic, or have
 been using it since its pre-beta days, there is something here for you. By the end of the course, you’ll have
-the confidence to use the Ionic CLI as part of your everyday Ionic development. 
+the confidence to use the Ionic CLI as part of your everyday Ionic development.
 
 ### [Wordpress Rest API and Ionic 4 (Angular) App With Auth](https://www.udemy.com/course/wordpress-rest-api-and-ionic-3-crud/)
 
@@ -81,4 +81,3 @@ by Udemy
 ### [Ionic 2 Solutions](https://www.packtpub.com/web-development/ionic-2-solutions-video)
 
 by Hoc Phan
-

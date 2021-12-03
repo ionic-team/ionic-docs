@@ -23,9 +23,8 @@ Skeleton Text is a component for rendering placeholder content. The element will
 <!-- Data to display after skeleton screen -->
 <div *ngIf="data">
   <div class="ion-padding">
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ac eros est.
-    Cras iaculis pulvinar arcu non vehicula. Fusce at quam a eros malesuada
-    condimentum. Aliquam tincidunt tincidunt vehicula.
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ac eros est. Cras iaculis pulvinar arcu non vehicula.
+    Fusce at quam a eros malesuada condimentum. Aliquam tincidunt tincidunt vehicula.
   </div>
 
   <ion-list>
@@ -112,11 +111,7 @@ Skeleton Text is a component for rendering placeholder content. The element will
       </ion-label>
     </ion-item>
     <ion-item>
-      <ion-skeleton-text
-        animated
-        style="width: 27px; height: 27px"
-        slot="start"
-      ></ion-skeleton-text>
+      <ion-skeleton-text animated style="width: 27px; height: 27px" slot="start"></ion-skeleton-text>
       <ion-label>
         <h3>
           <ion-skeleton-text animated style="width: 50%"></ion-skeleton-text>
@@ -177,9 +172,8 @@ export class SkeletonTextExample {
 <!-- Data to display after skeleton screen -->
 <div id="data">
   <div class="ion-padding">
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ac eros est.
-    Cras iaculis pulvinar arcu non vehicula. Fusce at quam a eros malesuada
-    condimentum. Aliquam tincidunt tincidunt vehicula.
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ac eros est. Cras iaculis pulvinar arcu non vehicula.
+    Fusce at quam a eros malesuada condimentum. Aliquam tincidunt tincidunt vehicula.
   </div>
 
   <ion-list>
@@ -266,11 +260,7 @@ export class SkeletonTextExample {
       </ion-label>
     </ion-item>
     <ion-item>
-      <ion-skeleton-text
-        animated
-        style="width: 27px; height: 27px"
-        slot="start"
-      ></ion-skeleton-text>
+      <ion-skeleton-text animated style="width: 27px; height: 27px" slot="start"></ion-skeleton-text>
       <ion-label>
         <h3>
           <ion-skeleton-text animated style="width: 50%"></ion-skeleton-text>
@@ -351,9 +341,8 @@ export const SkeletonTextExample: React.FC = () => {
       {data ? (
         <>
           <div className="ion-padding">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ac
-            eros est. Cras iaculis pulvinar arcu non vehicula. Fusce at quam a
-            eros malesuada condimentum. Aliquam tincidunt tincidunt vehicula.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ac eros est. Cras iaculis pulvinar arcu non
+            vehicula. Fusce at quam a eros malesuada condimentum. Aliquam tincidunt tincidunt vehicula.
           </div>
 
           <IonList>
@@ -439,11 +428,7 @@ export const SkeletonTextExample: React.FC = () => {
               </IonLabel>
             </IonItem>
             <IonItem>
-              <IonSkeletonText
-                animated
-                style={{ width: '27px', height: '27px' }}
-                slot="start"
-              />
+              <IonSkeletonText animated style={{ width: '27px', height: '27px' }} slot="start" />
               <IonLabel>
                 <h3>
                   <IonSkeletonText animated style={{ width: '50%' }} />
@@ -505,32 +490,17 @@ export class SkeletonTextExample {
     return [
       <ion-content>
         <div class="ion-padding custom-skeleton">
-          <ion-skeleton-text
-            animated
-            style={{ width: '60%' }}
-          ></ion-skeleton-text>
+          <ion-skeleton-text animated style={{ width: '60%' }}></ion-skeleton-text>
           <ion-skeleton-text animated></ion-skeleton-text>
-          <ion-skeleton-text
-            animated
-            style={{ width: '88%' }}
-          ></ion-skeleton-text>
-          <ion-skeleton-text
-            animated
-            style={{ width: '70%' }}
-          ></ion-skeleton-text>
-          <ion-skeleton-text
-            animated
-            style={{ width: '60%' }}
-          ></ion-skeleton-text>
+          <ion-skeleton-text animated style={{ width: '88%' }}></ion-skeleton-text>
+          <ion-skeleton-text animated style={{ width: '70%' }}></ion-skeleton-text>
+          <ion-skeleton-text animated style={{ width: '60%' }}></ion-skeleton-text>
         </div>
 
         <ion-list>
           <ion-list-header>
             <ion-label>
-              <ion-skeleton-text
-                animated
-                style={{ width: '20%' }}
-              ></ion-skeleton-text>
+              <ion-skeleton-text animated style={{ width: '20%' }}></ion-skeleton-text>
             </ion-label>
           </ion-list-header>
           <ion-item>
@@ -539,22 +509,13 @@ export class SkeletonTextExample {
             </ion-avatar>
             <ion-label>
               <h3>
-                <ion-skeleton-text
-                  animated
-                  style={{ width: '50%' }}
-                ></ion-skeleton-text>
+                <ion-skeleton-text animated style={{ width: '50%' }}></ion-skeleton-text>
               </h3>
               <p>
-                <ion-skeleton-text
-                  animated
-                  style={{ width: '80%' }}
-                ></ion-skeleton-text>
+                <ion-skeleton-text animated style={{ width: '80%' }}></ion-skeleton-text>
               </p>
               <p>
-                <ion-skeleton-text
-                  animated
-                  style={{ width: '60%' }}
-                ></ion-skeleton-text>
+                <ion-skeleton-text animated style={{ width: '60%' }}></ion-skeleton-text>
               </p>
             </ion-label>
           </ion-item>
@@ -564,49 +525,27 @@ export class SkeletonTextExample {
             </ion-thumbnail>
             <ion-label>
               <h3>
-                <ion-skeleton-text
-                  animated
-                  style={{ width: '50%' }}
-                ></ion-skeleton-text>
+                <ion-skeleton-text animated style={{ width: '50%' }}></ion-skeleton-text>
               </h3>
               <p>
-                <ion-skeleton-text
-                  animated
-                  style={{ width: '80%' }}
-                ></ion-skeleton-text>
+                <ion-skeleton-text animated style={{ width: '80%' }}></ion-skeleton-text>
               </p>
               <p>
-                <ion-skeleton-text
-                  animated
-                  style={{ width: '60%' }}
-                ></ion-skeleton-text>
+                <ion-skeleton-text animated style={{ width: '60%' }}></ion-skeleton-text>
               </p>
             </ion-label>
           </ion-item>
           <ion-item>
-            <ion-skeleton-text
-              animated
-              style={{ width: '27p', height: '27px' }}
-              slot="start"
-            ></ion-skeleton-text>
+            <ion-skeleton-text animated style={{ width: '27p', height: '27px' }} slot="start"></ion-skeleton-text>
             <ion-label>
               <h3>
-                <ion-skeleton-text
-                  animated
-                  style={{ width: '50%' }}
-                ></ion-skeleton-text>
+                <ion-skeleton-text animated style={{ width: '50%' }}></ion-skeleton-text>
               </h3>
               <p>
-                <ion-skeleton-text
-                  animated
-                  style={{ width: '80%' }}
-                ></ion-skeleton-text>
+                <ion-skeleton-text animated style={{ width: '80%' }}></ion-skeleton-text>
               </p>
               <p>
-                <ion-skeleton-text
-                  animated
-                  style={{ width: '60%' }}
-                ></ion-skeleton-text>
+                <ion-skeleton-text animated style={{ width: '60%' }}></ion-skeleton-text>
               </p>
             </ion-label>
           </ion-item>
@@ -620,9 +559,8 @@ export class SkeletonTextExample {
     return [
       <ion-content>
         <div class="ion-padding">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ac eros
-          est. Cras iaculis pulvinar arcu non vehicula. Fusce at quam a eros
-          malesuada condimentum. Aliquam tincidunt tincidunt vehicula.
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ac eros est. Cras iaculis pulvinar arcu non
+          vehicula. Fusce at quam a eros malesuada condimentum. Aliquam tincidunt tincidunt vehicula.
         </div>
 
         <ion-list>
@@ -692,9 +630,8 @@ export class SkeletonTextExample {
   <!-- Data to display after skeleton screen -->
   <div v-if="data">
     <div class="ion-padding">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ac eros
-      est. Cras iaculis pulvinar arcu non vehicula. Fusce at quam a eros
-      malesuada condimentum. Aliquam tincidunt tincidunt vehicula.
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ac eros est. Cras iaculis pulvinar arcu non
+      vehicula. Fusce at quam a eros malesuada condimentum. Aliquam tincidunt tincidunt vehicula.
     </div>
 
     <ion-list>
@@ -781,11 +718,7 @@ export class SkeletonTextExample {
         </ion-label>
       </ion-item>
       <ion-item>
-        <ion-skeleton-text
-          animated
-          style="width: 27px; height: 27px"
-          slot="start"
-        ></ion-skeleton-text>
+        <ion-skeleton-text animated style="width: 27px; height: 27px" slot="start"></ion-skeleton-text>
         <ion-label>
           <h3>
             <ion-skeleton-text animated style="width: 50%"></ion-skeleton-text>

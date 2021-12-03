@@ -18,14 +18,8 @@ interface Props extends React.HTMLAttributes<HTMLDivElement> {
 
 function DocsCard(props: Props): JSX.Element {
   const isStatic = typeof props.href === 'undefined';
-  const isOutbound =
-    typeof props.href !== 'undefined' ? /^http/.test(props.href) : false;
-  const header =
-    props.header === 'undefined' ? null : (
-      <header className="Card-header">
-        {props.header}
-      </header>
-    );
+  const isOutbound = typeof props.href !== 'undefined' ? /^http/.test(props.href) : false;
+  const header = props.header === 'undefined' ? null : <header className="Card-header">{props.header}</header>;
   const hoverIcon = props.hoverIcon || props.icon;
 
   const content = (
@@ -34,31 +28,17 @@ function DocsCard(props: Props): JSX.Element {
       <div className="Card-container">
         {(props.icon || hoverIcon) && (
           <div className="Card-icon-row">
-            {props.icon && (
-              <img
-                src={useBaseUrl(props.icon)}
-                className="Card-icon Card-icon-default"
-              />
-            )}
-            {hoverIcon && (
-              <img
-                src={useBaseUrl(hoverIcon)}
-                className="Card-icon Card-icon-hover"
-              />
-            )}
+            {props.icon && <img src={useBaseUrl(props.icon)} className="Card-icon Card-icon-default" />}
+            {hoverIcon && <img src={useBaseUrl(hoverIcon)} className="Card-icon Card-icon-hover" />}
           </div>
         )}
-        {props.ionicon && (
-          <ion-icon name={props.ionicon} className="Card-ionicon"></ion-icon>
-        )}
+        {props.ionicon && <ion-icon name={props.ionicon} className="Card-ionicon"></ion-icon>}
         {props.iconset && (
           <div className="Card-iconset__container">
             {props.iconset.split(',').map((icon, index) => (
               <img
                 src={useBaseUrl(icon)}
-                className={`Card-icon ${
-                  index === props.activeIndex ? 'Card-icon-active' : ''
-                }`}
+                className={`Card-icon ${index === props.activeIndex ? 'Card-icon-active' : ''}`}
                 data-index={index}
                 key={index}
               />
@@ -89,11 +69,7 @@ function DocsCard(props: Props): JSX.Element {
   if (isOutbound) {
     return (
       <docs-card class={className}>
-        <a
-          className={clsx(styles.card, 'docs-card')}
-          href={props.href}
-          target="_blank"
-        >
+        <a className={clsx(styles.card, 'docs-card')} href={props.href} target="_blank">
           {content}
         </a>
       </docs-card>

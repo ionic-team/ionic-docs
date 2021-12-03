@@ -153,13 +153,7 @@ export const RefresherExample: React.FC = () => (
 
     {/*-- Custom Refresher Properties --*/}
     <IonContent>
-      <IonRefresher
-        slot="fixed"
-        onIonRefresh={doRefresh}
-        pullFactor={0.5}
-        pullMin={100}
-        pullMax={200}
-      >
+      <IonRefresher slot="fixed" onIonRefresh={doRefresh} pullFactor={0.5} pullMin={100} pullMax={200}>
         <IonRefresherContent></IonRefresherContent>
       </IonRefresher>
     </IonContent>
@@ -204,26 +198,21 @@ export class RefresherExample {
     return [
       // Default Refresher
       <ion-content>
-        <ion-refresher slot="fixed" onIonRefresh={ev => this.doRefresh(ev)}>
+        <ion-refresher slot="fixed" onIonRefresh={(ev) => this.doRefresh(ev)}>
           <ion-refresher-content></ion-refresher-content>
         </ion-refresher>
       </ion-content>,
 
       // Custom Refresher Properties
       <ion-content>
-        <ion-refresher
-          slot="fixed"
-          pullFactor={0.5}
-          pullMin={100}
-          pullMax={200}
-        >
+        <ion-refresher slot="fixed" pullFactor={0.5} pullMin={100} pullMax={200}>
           <ion-refresher-content></ion-refresher-content>
         </ion-refresher>
       </ion-content>,
 
       // Custom Refresher Content
       <ion-content>
-        <ion-refresher slot="fixed" onIonRefresh={ev => this.doRefresh(ev)}>
+        <ion-refresher slot="fixed" onIonRefresh={(ev) => this.doRefresh(ev)}>
           <ion-refresher-content
             pullingIcon="chevron-down-circle-outline"
             pullingText="Pull to refresh"

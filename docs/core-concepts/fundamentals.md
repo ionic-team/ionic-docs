@@ -6,18 +6,15 @@ sidebar_label: Fundamentals
 
 For those completely new to Ionic app development, it can be helpful to get a high-level understanding of the core philosophy, concepts, and tools behind the project. Before diving into complex topics, we'll cover the basics of what Ionic Framework is, and how it works.
 
-
 ## UI Components
 
 Ionic Framework is a library of UI Components, which are reusable elements that serve as the building blocks for an application. Ionic Components are built with [web standards](../reference/glossary.md#web-standards) using HTML, CSS, and JavaScript. Though the components are pre-built, they're designed from the ground up to be highly customizable so apps can make each component their own, allowing each app to have its own look and feel. More specifically, Ionic components can be easily themed to globally change appearance across an entire app. For more information about customizing the look, please see [Theming](../theming/basics.md).
-
 
 ## Adaptive Styling
 
 Adaptive Styling is a built-in feature of Ionic Framework which allows app developers to use the same code base for multiple platforms. Every Ionic component adapts its look to the platform on which the app is running on. For example, Apple devices, such as the iPhone and iPad, use Apple's own <a href="https://www.apple.com/ios" target="_blank">iOS design language</a>. Similarly, Android devices use Google's design language called <a href="https://material.io/guidelines/" target="_blank">Material Design</a>.
 
 By making subtle design changes between the platforms, users are provided with a familiar app experience. An Ionic app downloaded from Apple's App Store will get the iOS theme, while an Ionic app downloaded from Android's Play Store will get the Material Design theme. For the apps that are viewed as a Progressive Web App (PWA) from a browser, Ionic will default to using the Material Design theme. Additionally, deciding which platform to use in certain scenarios is entirely configurable. More information about adaptive styling can be found in [Theming](../theming/basics.md).
-
 
 ## Navigation
 
@@ -29,7 +26,6 @@ In contrast, mobile apps often utilize parallel, "non-linear" navigation. For ex
 Ionic apps embrace this mobile navigation approach, supporting parallel navigation histories that can also be nested, all while maintaining the familiar browser-style navigation concepts web developers are familiar with.
 
 For apps that are built with Angular and `@ionic/angular`, we recommend using the <a href="https://angular.io/guide/router" target="_blank">Angular Router</a> which comes out of the box for every new Ionic 4 Angular app.
-
 
 ## Native Access
 

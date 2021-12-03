@@ -1,6 +1,6 @@
 import React from 'react';
-import clsx from "clsx";
-import InputWrapper from "../InputWrapper";
+import clsx from 'clsx';
+import InputWrapper from '../InputWrapper';
 
 import useThemeContext from '@theme/hooks/useThemeContext';
 
@@ -20,11 +20,16 @@ export default function ColorInput({ color, setColor, ...props }) {
       )}
     >
       <div className={styles.colorPickerWrapper} style={{ '--background-c': color } as any}>
-        <input type="color" onChange={({target}) => setColor(target.value)} value={color} className={styles.colorPicker}/>
+        <input
+          type="color"
+          onChange={({ target }) => setColor(target.value)}
+          value={color}
+          className={styles.colorPicker}
+        />
       </div>
       <InputWrapper>
-        <input onChange={({target}) => setColor(target.value)} value={color} />
+        <input onChange={({ target }) => setColor(target.value)} value={color} />
       </InputWrapper>
     </div>
-  )
+  );
 }

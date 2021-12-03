@@ -32,7 +32,7 @@ const hexToRGB = (hex: string): RGB => {
   return {
     r: (intValue >> 16) & 255,
     g: (intValue >> 8) & 255,
-    b: intValue & 255
+    b: intValue & 255,
   };
 };
 
@@ -45,33 +45,43 @@ const hslToRGB = ({ h, s, l }: HSL): RGB => {
     return {
       r: l,
       g: l,
-      b: l
+      b: l,
     };
   }
 
   // tslint:disable-next-line:no-shadowed-variable
   const hue2rgb = (p: number, q: number, t: number) => {
-    if (t < 0) { t += 1; }
-    if (t > 1) { t -= 1; }
-    if (t < 1 / 6) { return p + (q - p) * 6 * t; }
-    if (t < 1 / 2) { return q; }
-    if (t < 2 / 3) { return p + (q - p) * (2 / 3 - t) * 6; }
+    if (t < 0) {
+      t += 1;
+    }
+    if (t > 1) {
+      t -= 1;
+    }
+    if (t < 1 / 6) {
+      return p + (q - p) * 6 * t;
+    }
+    if (t < 1 / 2) {
+      return q;
+    }
+    if (t < 2 / 3) {
+      return p + (q - p) * (2 / 3 - t) * 6;
+    }
     return p;
   };
   const q = l < 0.5 ? l * (1 + s) : l + s - l * s;
   const p = 2 * l - q;
-  const r = hue2rgb(p, q, h + (1 / 3));
+  const r = hue2rgb(p, q, h + 1 / 3);
   const g = hue2rgb(p, q, h);
-  const b = hue2rgb(p, q, h - (1 / 3));
+  const b = hue2rgb(p, q, h - 1 / 3);
 
   return {
     r: Math.round(r * 255),
     g: Math.round(g * 255),
-    b: Math.round(b * 255)
+    b: Math.round(b * 255),
   };
 };
 
-const mixColors = (color: Color, mixColor: Color, weight = .5): RGB => {
+const mixColors = (color: Color, mixColor: Color, weight = 0.5): RGB => {
   const colorRGB: RGB = color.rgb;
   const mixColorRGB: RGB = mixColor.rgb;
   const mixColorWeight = 1 - weight;
@@ -79,7 +89,7 @@ const mixColors = (color: Color, mixColor: Color, weight = .5): RGB => {
   return {
     r: Math.round(weight * mixColorRGB.r + mixColorWeight * colorRGB.r),
     g: Math.round(weight * mixColorRGB.g + mixColorWeight * colorRGB.g),
-    b: Math.round(weight * mixColorRGB.b + mixColorWeight * colorRGB.b)
+    b: Math.round(weight * mixColorRGB.b + mixColorWeight * colorRGB.b),
   };
 };
 
@@ -115,12 +125,12 @@ const rgbToHSL = ({ r, g, b }: RGB): HSL => {
   return {
     h: Math.round(h * 360),
     s: Math.round(s * 100),
-    l: Math.round(l * 100)
+    l: Math.round(l * 100),
   };
 };
 
 const rgbToYIQ = ({ r, g, b }: RGB): number => {
-  return ((r * 299) + (g * 587) + (b * 114)) / 1000;
+  return (r * 299 + g * 587 + b * 114) / 1000;
 };
 
 export class Color {
@@ -130,15 +140,15 @@ export class Color {
   readonly yiq: number;
 
   constructor(value: string | RGB | HSL) {
-    if (typeof(value) === 'string' && /rgb\(/.test(value)) {
+    if (typeof value === 'string' && /rgb\(/.test(value)) {
       const matches = /rgb\((\d{1,3}), ?(\d{1,3}), ?(\d{1,3})\)/.exec(value) ?? [];
       value = { r: parseInt(matches[0], 10), g: parseInt(matches[1], 10), b: parseInt(matches[2], 10) };
-    } else if (typeof(value) === 'string' && /hsl\(/.test(value)) {
+    } else if (typeof value === 'string' && /hsl\(/.test(value)) {
       const matches = /hsl\((\d{1,3}), ?(\d{1,3}%), ?(\d{1,3}%)\)/.exec(value) ?? [];
       value = { h: parseInt(matches[0], 10), s: parseInt(matches[1], 10), l: parseInt(matches[2], 10) };
     }
 
-    if (typeof(value) === 'string') {
+    if (typeof value === 'string') {
       value = value.replace(/\s/g, '');
       this.hex = expandHex(value);
       this.rgb = hexToRGB(this.hex);
@@ -159,25 +169,27 @@ export class Color {
   }
 
   static isColor(value: string): boolean {
-    if (/rgb\((\d{1,3}), ?(\d{1,3}), ?(\d{1,3})\)/.test(value)) { return true; }
+    if (/rgb\((\d{1,3}), ?(\d{1,3}), ?(\d{1,3})\)/.test(value)) {
+      return true;
+    }
 
     return /(^#[0-9a-fA-F]+)/.test(value.trim());
   }
 
   contrast(threshold = 128): Color {
-    return new Color((this.yiq >= threshold ? '#000' : '#fff'));
+    return new Color(this.yiq >= threshold ? '#000' : '#fff');
   }
 
-  mix(from: string | RGB | HSL | Color, amount = .5): Color {
+  mix(from: string | RGB | HSL | Color, amount = 0.5): Color {
     const base: Color = from instanceof Color ? from : new Color(from);
     return new Color(mixColors(this, base, amount));
   }
 
-  shade(weight = .12): Color {
+  shade(weight = 0.12): Color {
     return this.mix({ r: 0, g: 0, b: 0 }, weight);
   }
 
-  tint(weight = .1): Color {
+  tint(weight = 0.1): Color {
     return this.mix({ r: 255, g: 255, b: 255 }, weight);
   }
 

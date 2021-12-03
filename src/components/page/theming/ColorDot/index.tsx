@@ -1,4 +1,4 @@
-import clsx from "clsx";
+import clsx from 'clsx';
 import React from 'react';
 
 import useThemeContext from '@theme/hooks/useThemeContext';
@@ -11,8 +11,13 @@ export default function ColorDot({ color, ...props }) {
   return (
     <div
       style={{ backgroundColor: color }}
-      className={clsx(props.className, 'color-dot', styles.colorDot, styles[`colorDot${isDarkTheme ? 'Dark' : 'Light'}`])}
+      className={clsx(
+        props.className,
+        'color-dot',
+        styles.colorDot,
+        styles[`colorDot${isDarkTheme ? 'Dark' : 'Light'}`]
+      )}
       {...props}
     />
-  )
+  );
 }

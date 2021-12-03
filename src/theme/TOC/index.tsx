@@ -2,7 +2,7 @@ import OriginalTOC from '@theme-original/TOC';
 import EditThisPage from '@theme/EditThisPage';
 import React from 'react';
 
-export default function TOC({toc, editUrl, ...props}) {
+export default function TOC({ toc, editUrl, ...props }) {
   const isEmpty = toc.length <= 0;
 
   if (isEmpty) return null;

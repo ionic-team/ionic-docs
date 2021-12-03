@@ -13,7 +13,10 @@ import DocsCards from '@components/global/DocsCards';
 
 <head>
   <title>Open-Source UI Toolkit to Create Your Own Mobile or Desktop Apps</title>
-  <meta name="description" content="Ionic Framework is an open-source UI toolkit to create your own mobile and desktop apps using web technologies with integrations for popular frameworks." />
+  <meta
+    name="description"
+    content="Ionic Framework is an open-source UI toolkit to create your own mobile and desktop apps using web technologies with integrations for popular frameworks."
+  />
 </head>
 
 Ionic Framework is an open source UI toolkit for building performant, high-quality mobile and desktop apps using web technologies — HTML, CSS, and JavaScript — with integrations for popular frameworks like [Angular](angular/overview.md), [React](react.md), and [Vue](vue/overview.md).
@@ -27,13 +30,23 @@ Get started building by [installing Ionic](intro/cli.md) or following our [First
     <p>Step-by-step guides to setting up your system and installing the framework.</p>
   </DocsCard>
 
-  <DocsCard header="UI Components" href="/components" icon="/icons/guide-components-icon.svg" hoverIcon="/icons/guide-components-icon-hover.svg">
-    <p>Dive into Ionic Framework's beautifully designed UI component library.</p>
-  </DocsCard>
+<DocsCard
+  header="UI Components"
+  href="/components"
+  icon="/icons/guide-components-icon.svg"
+  hoverIcon="/icons/guide-components-icon-hover.svg"
+>
+  <p>Dive into Ionic Framework's beautifully designed UI component library.</p>
+</DocsCard>
 
-  <DocsCard header="Native Functionality" href="/native" icon="/icons/guide-native-icon.svg" hoverIcon="/icons/guide-native-icon-hover.svg">
-    <p>Integrate native device plugins, like Bluetooth, Maps, HealthKit, and more.</p>
-  </DocsCard>
+<DocsCard
+  header="Native Functionality"
+  href="/native"
+  icon="/icons/guide-native-icon.svg"
+  hoverIcon="/icons/guide-native-icon-hover.svg"
+>
+  <p>Integrate native device plugins, like Bluetooth, Maps, HealthKit, and more.</p>
+</DocsCard>
 
   <DocsCard header="Theming" href="/theming/basics" icon="/icons/guide-theming-icon.svg" hoverIcon="/icons/guide-theming-icon-hover.svg">
     <p>Learn to easily customize and modify your Ionic app's visual design to fit your brand.</p>
@@ -123,10 +136,18 @@ Ionic Framework is actively developed and maintained full-time by a core team, a
 
 There are millions of Ionic developers in over 200 countries worldwide. Here are some ways to join:
 
-- <a href="https://forum.ionicframework.com/" target="_blank">Forum:</a> A great place for asking questions and sharing ideas.
-- <a href="https://twitter.com/ionicframework" target="_blank">Twitter:</a> Where we post updates and share content from the Ionic community.
-- <a href="https://github.com/ionic-team/ionic" target="_blank">GitHub:</a> For reporting bugs or requesting new features, create an issue here. PRs welcome!
-- <a href="https://ionicframework.com/contributors" target="_blank">Content authoring:</a> Write a technical blog or share your story with the Ionic community.
+- <a href="https://forum.ionicframework.com/" target="_blank">
+    Forum:
+  </a> A great place for asking questions and sharing ideas.
+- <a href="https://twitter.com/ionicframework" target="_blank">
+    Twitter:
+  </a> Where we post updates and share content from the Ionic community.
+- <a href="https://github.com/ionic-team/ionic" target="_blank">
+    GitHub:
+  </a> For reporting bugs or requesting new features, create an issue here. PRs welcome!
+- <a href="https://ionicframework.com/contributors" target="_blank">
+    Content authoring:
+  </a> Write a technical blog or share your story with the Ionic community.
 
 ## License
 

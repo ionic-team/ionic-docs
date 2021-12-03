@@ -7,7 +7,10 @@ import SteppedColorGenerator from '@components/page/theming/SteppedColorGenerato
 
 <head>
   <title>Ionic App Themes | Change Default App Background Themes & Colors</title>
-  <meta name="description" content="Several global variables change the default theme of an entire application. Create a custom background and text color theme for your app with Ionic themes." />
+  <meta
+    name="description"
+    content="Several global variables change the default theme of an entire application. Create a custom background and text color theme for your app with Ionic themes."
+  />
 </head>
 
 Ionic provides several global variables that are used throughout components to change the default theme of an entire application. [Application Colors](#application-colors) are useful to change the look of most of the Ionic components, and [Stepped Colors](#stepped-colors) are used as variations in some of the Ionic components.

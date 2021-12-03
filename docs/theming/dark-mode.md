@@ -67,7 +67,7 @@ const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
 toggleDarkTheme(prefersDark.matches);
 
 // Listen for changes to the prefers-color-scheme media query
-prefersDark.addListener(mediaQuery => toggleDarkTheme(mediaQuery.matches));
+prefersDark.addListener((mediaQuery) => toggleDarkTheme(mediaQuery.matches));
 
 // Add or remove the "dark" class based on if the media query matches
 function toggleDarkTheme(shouldAdd) {
@@ -80,6 +80,7 @@ Tip: make sure to view the Codepen below in a [supported browser](https://canius
 :::
 
 <!-- Codepen https://codepen.io/ionic/pen/jONzJpG -->
+
 <Codepen preview="false" user="ionic" slug="jONzJpG" height="550px" default-tab="js,result" />
 
 ### Manually Toggle Dark Mode
@@ -91,14 +92,14 @@ In addition to calling `toggleDarkTheme()` when the app loads and when the media
 const toggle = document.querySelector('#themeToggle');
 
 // Listen for the toggle check/uncheck to toggle the dark class on the <body>
-toggle.addEventListener('ionChange', ev => {
+toggle.addEventListener('ionChange', (ev) => {
   document.body.classList.toggle('dark', ev.detail.checked);
 });
 
 const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
 
 // Listen for changes to the prefers-color-scheme media query
-prefersDark.addListener(e => checkToggle(e.matches));
+prefersDark.addListener((e) => checkToggle(e.matches));
 
 // Called when the app loads
 function loadApp() {
@@ -112,6 +113,7 @@ function checkToggle(shouldCheck) {
 ```
 
 <!-- Codepen https://codepen.io/ionic/pen/zYOpQLj -->
+
 <Codepen preview="false" user="ionic" slug="zYOpQLj" height="600px" default-tab="js,result" />
 
 ## Adjusting System UI Components

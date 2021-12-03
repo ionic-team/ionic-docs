@@ -11,32 +11,16 @@ export default function ColorAccordion({ ...props }) {
   const el = useRef<HTMLUListElement>(null);
 
   useEffect(() => {
-    setColors([
-      'primary',
-      'secondary',
-      'tertiary',
-      'success',
-      'warning',
-      'danger',
-      'dark',
-      'medium',
-      'light',
-    ]);
+    setColors(['primary', 'secondary', 'tertiary', 'success', 'warning', 'danger', 'dark', 'medium', 'light']);
   }, []);
 
   const getColors = useCallback(
-    color => ({
-      baseColor: getComputedStyle(el.current).getPropertyValue(
-        `--ion-color-${color}`,
-      ),
-      shadeColor: getComputedStyle(el.current).getPropertyValue(
-        `--ion-color-${color}-shade`,
-      ),
-      tintColor: getComputedStyle(el.current).getPropertyValue(
-        `--ion-color-${color}-tint`,
-      ),
+    (color) => ({
+      baseColor: getComputedStyle(el.current).getPropertyValue(`--ion-color-${color}`),
+      shadeColor: getComputedStyle(el.current).getPropertyValue(`--ion-color-${color}-shade`),
+      tintColor: getComputedStyle(el.current).getPropertyValue(`--ion-color-${color}-tint`),
     }),
-    [],
+    []
   );
 
   return (
@@ -49,7 +33,7 @@ export default function ColorAccordion({ ...props }) {
         'color-accordion': true,
       })}
     >
-      {colors.map(color => {
+      {colors.map((color) => {
         const { baseColor, shadeColor, tintColor } = getColors(color);
 
         return (
@@ -61,25 +45,16 @@ export default function ColorAccordion({ ...props }) {
             style={
               {
                 'background-color': `var(--ion-color-${color})`,
-                'color': `var(--ion-color-${color}-contrast)`,
+                color: `var(--ion-color-${color}-contrast)`,
               } as any
             }
           >
-            <div
-              className={styles.colorMenuText}
-              onClick={() => setActiveColor(activeColor === color ? '' : color)}
-            >
+            <div className={styles.colorMenuText} onClick={() => setActiveColor(activeColor === color ? '' : color)}>
               {color[0].toUpperCase() + color.substr(1)}
               <div className={styles.colorMenuValue}>{baseColor}</div>
             </div>
 
-            <svg
-              width="10px"
-              height="6px"
-              viewBox="0 0 10 6"
-              version="1.1"
-              xmlns="http://www.w3.org/2000/svg"
-            >
+            <svg width="10px" height="6px" viewBox="0 0 10 6" version="1.1" xmlns="http://www.w3.org/2000/svg">
               <g
                 id="Welcome"
                 stroke="none"
@@ -110,7 +85,7 @@ export default function ColorAccordion({ ...props }) {
                 style={
                   {
                     'background-color': `var(--ion-color-${color}-shade)`,
-                    'color': `var(--ion-color-${color}-contrast)`,
+                    color: `var(--ion-color-${color}-contrast)`,
                   } as any
                 }
               >
@@ -124,7 +99,7 @@ export default function ColorAccordion({ ...props }) {
                 style={
                   {
                     'background-color': `var(--ion-color-${color}-tint)`,
-                    'color': `var(--ion-color-${color}-contrast)`,
+                    color: `var(--ion-color-${color}-contrast)`,
                   } as any
                 }
               >

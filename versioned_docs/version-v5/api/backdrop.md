@@ -31,11 +31,7 @@ Backdrops are full screen components that overlay other components. They are use
 <ion-backdrop stopPropagation="false"></ion-backdrop>
 
 <!-- Backdrop that sets dynamic properties -->
-<ion-backdrop
-  [tappable]="enableBackdropDismiss"
-  [visible]="showBackdrop"
-  [stopPropagation]="shouldPropagate"
->
+<ion-backdrop [tappable]="enableBackdropDismiss" [visible]="showBackdrop" [stopPropagation]="shouldPropagate">
 </ion-backdrop>
 ```
 
@@ -169,11 +165,7 @@ export class BackdropExample {
   <ion-backdrop stop-propagation="false"></ion-backdrop>
 
   <!-- Backdrop that sets dynamic properties -->
-  <ion-backdrop
-    :tappable="enableBackdropDismiss"
-    :visible="showBackdrop"
-    :stop-propagation="shouldPropagate"
-  >
+  <ion-backdrop :tappable="enableBackdropDismiss" :visible="showBackdrop" :stop-propagation="shouldPropagate">
   </ion-backdrop>
 </template>
 

@@ -40,9 +40,7 @@ html[data-theme='dark'] {
 
   .encapsulation-pill {
     position: absolute;
-    top: calc(
-      var(--ifm-navbar-height) + 4rem
-    );
+    top: calc(var(--ifm-navbar-height) + 4rem);
   }
 
   > * {

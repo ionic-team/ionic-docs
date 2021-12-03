@@ -13,7 +13,7 @@ const filteredPlugins = [
   '@ionic-native/in-app-update',
   '@ionic-native/checkout',
   '@ionic-native/secure-storage-echo',
-  '@ionic-native/secure-storage'
+  '@ionic-native/secure-storage',
 ];
 
 let plugins = nativeJSON.filter((plugin) => !filteredPlugins.includes(plugin.packageName));
@@ -21,7 +21,7 @@ const data = fs.writeFileSync('./scripts/data/native.json', JSON.stringify(plugi
 
 (async function () {
   // console.log(cliJSON);
-  
+
   plugins.map(writePage);
 })();
 
@@ -37,10 +37,7 @@ function writePage(page) {
     renderUsage(page),
   ].join('');
 
-  const path = `docs/native/${page.packageName.replace(
-    '@ionic-native/',
-    '',
-  )}.md`;
+  const path = `docs/native/${page.packageName.replace('@ionic-native/', '')}.md`;
   fs.writeFileSync(path, data);
 }
 
@@ -53,12 +50,7 @@ function renderFrontmatter({ displayName, packageName }) {
 
   return `---
 ${Object.entries(frontmatter)
-  .map(
-    ([key, value]) =>
-      `${key}: ${
-        typeof value === 'string' ? `"${value.replace('"', '\\"')}"` : value
-      }`,
-  )
+  .map(([key, value]) => `${key}: ${typeof value === 'string' ? `"${value.replace('"', '\\"')}"` : value}`)
   .join('\n')}
 ---
 ${utils.getHeadTag(nativeOverrides[slug])}
@@ -134,7 +126,7 @@ function renderSupportedPlatforms({ platforms }) {
   return `
 ## Supported Platforms
   
-${platforms.map(platform => `- ${platform}`).join('\n')}
+${platforms.map((platform) => `- ${platform}`).join('\n')}
 `;
 }
 

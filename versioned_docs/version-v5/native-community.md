@@ -125,13 +125,13 @@ export class PhotoService {
     };
 
     this.camera.getPicture(options).then(
-      imageData => {
+      (imageData) => {
         // Do something with the new photo
       },
-      err => {
+      (err) => {
         // Handle error
         console.log('Camera issue: ' + err);
-      },
+      }
     );
   }
 }
@@ -189,7 +189,7 @@ import { Camera } from '@ionic-native/camera';
 
 document.addEventListener('deviceready', () => {
   Camera.getPicture()
-    .then(data => console.log('Took a picture!', data))
-    .catch(e => console.log('Error occurred while taking a picture', e));
+    .then((data) => console.log('Took a picture!', data))
+    .catch((e) => console.log('Error occurred while taking a picture', e));
 });
 ```

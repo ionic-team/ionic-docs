@@ -179,14 +179,7 @@ will match the following tab:
 
 ```tsx
 import React from 'react';
-import {
-  IonTabs,
-  IonTabBar,
-  IonTabButton,
-  IonIcon,
-  IonLabel,
-  IonBadge,
-} from '@ionic/react';
+import { IonTabs, IonTabBar, IonTabButton, IonIcon, IonLabel, IonBadge } from '@ionic/react';
 import { calendar, personCircle, map, informationCircle } from 'ionicons/icons';
 
 export const TabsExample: React.FC = () => (
@@ -319,10 +312,7 @@ will match the following tab:
 ```html
 <template>
   <ion-page>
-    <ion-tabs
-      @ionTabsWillChange="beforeTabChange"
-      @ionTabsDidChange="afterTabChange"
-    >
+    <ion-tabs @ionTabsWillChange="beforeTabChange" @ionTabsDidChange="afterTabChange">
       <ion-tab-bar slot="bottom">
         <ion-tab-button tab="schedule" href="/tabs/schedule">
           <ion-icon :icon="calendar"></ion-icon>
@@ -341,14 +331,7 @@ will match the following tab:
 
 <script>
   import { defineComponent } from 'vue';
-  import {
-    IonIcon,
-    IonLabel,
-    IonPage,
-    IonTabBar,
-    IonTabButton,
-    IonTabs,
-  } from '@ionic/vue';
+  import { IonIcon, IonLabel, IonPage, IonTabBar, IonTabButton, IonTabs } from '@ionic/vue';
   import { calendar, personCircle } from 'ionicons/icons';
 
   export default defineComponent({
@@ -395,13 +378,7 @@ will match the following tab:
 
 <script>
   import { defineComponent } from 'vue';
-  import {
-    IonContent,
-    IonHeader,
-    IonPage,
-    IonTitle,
-    IonToolbar,
-  } from '@ionic/vue';
+  import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/vue';
 
   export default defineComponent({
     components: { IonContent, IonHeader, IonPage, IonTitle, IonToolbar },
@@ -426,13 +403,7 @@ will match the following tab:
 
 <script>
   import { defineComponent } from 'vue';
-  import {
-    IonContent,
-    IonHeader,
-    IonPage,
-    IonTitle,
-    IonToolbar,
-  } from '@ionic/vue';
+  import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/vue';
 
   export default defineComponent({
     components: { IonContent, IonHeader, IonPage, IonTitle, IonToolbar },

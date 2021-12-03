@@ -41,7 +41,7 @@ You can also programmatically redirect from a Route's render method based on a c
 <Route
   exact
   path="/dashboard"
-  render={props => {
+  render={(props) => {
     return isAuthed ? <DashboardPage {...props} /> : <LoginPage />;
   }}
 />
@@ -140,13 +140,7 @@ const DashboardPage: React.FC<RouteComponentProps> = ({ match }) => {
 The `IonPage` component wraps each view in an Ionic React app and allows page transitions and stack navigation to work properly. Each view that is navigated to using the router must include an `IonPage` component.
 
 ```tsx
-import {
-  IonContent,
-  IonHeader,
-  IonPage,
-  IonTitle,
-  IonToolbar,
-} from '@ionic/react';
+import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
 import React from 'react';
 
 const Home: React.FC = () => {
@@ -210,7 +204,7 @@ A programmatic option for navigation is using the [`history`](https://reacttrain
 
 ```tsx
 <IonButton
-  onClick={e => {
+  onClick={(e) => {
     e.preventDefault();
     history.push('/dashboard/users/1');
   }}

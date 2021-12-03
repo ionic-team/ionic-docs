@@ -32,7 +32,7 @@
       }
     }
 
-    [class*=toggle_] {
+    [class*='toggle_'] {
       display: none;
     }
 
@@ -46,8 +46,8 @@
     }
 
     &__close {
-      padding: .5rem;
-      margin-inline-end: -.5rem;
+      padding: 0.5rem;
+      margin-inline-end: -0.5rem;
 
       svg {
         width: 1rem;

@@ -10,7 +10,10 @@ import TabItem from '@theme/TabItem';
 
 <head>
   <title>Cordova Plugins | Cordova Community Core Plugins for Ionic Apps</title>
-  <meta name="description" content="For the Cordova user community, our collection of TypeScript wrappers for open source Cordova core plugins easily add native functionality to any Ionic app." />
+  <meta
+    name="description"
+    content="For the Cordova user community, our collection of TypeScript wrappers for open source Cordova core plugins easily add native functionality to any Ionic app."
+  />
 </head>
 
 [Apache Cordova](https://cordova.apache.org/) is an open source native runtime that allows developers to build native mobile apps with HTML, CSS, and JavaScript. Similar to [Capacitor](https://capacitorjs.com/), Ionic’s own native runtime, Cordova allows developers to access native device features, such as camera, keyboard, and geolocation, using a system of plugins. A plugin is a small amount of add-on code that provides JavaScript interface to native components. They allow your app to use native device capabilities beyond what is available to pure web apps.
@@ -127,13 +130,13 @@ export class PhotoService {
     };
 
     this.camera.getPicture(options).then(
-      imageData => {
+      (imageData) => {
         // Do something with the new photo
       },
-      err => {
+      (err) => {
         // Handle error
         console.log('Camera issue: ' + err);
-      },
+      }
     );
   }
 }
@@ -191,7 +194,7 @@ import { Camera } from '@ionic-native/camera';
 
 document.addEventListener('deviceready', () => {
   Camera.getPicture()
-    .then(data => console.log('Took a picture!', data))
-    .catch(e => console.log('Error occurred while taking a picture', e));
+    .then((data) => console.log('Took a picture!', data))
+    .catch((e) => console.log('Error occurred while taking a picture', e));
 });
 ```

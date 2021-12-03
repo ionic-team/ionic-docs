@@ -10,15 +10,7 @@ export default function EncapsulationPill({ type, ...props }) {
   const toUrl = useBaseUrl(`reference/glossary#${type}`);
 
   return (
-    <Link
-      to={toUrl}
-      {...props}
-      className={clsx(
-        props.className,
-        'encapsulation-pill',
-        styles.encapsulationPill,
-      )}
-    >
+    <Link to={toUrl} {...props} className={clsx(props.className, 'encapsulation-pill', styles.encapsulationPill)}>
       {type}
     </Link>
   );

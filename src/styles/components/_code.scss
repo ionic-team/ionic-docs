@@ -45,7 +45,7 @@ code {
 
 // Overrides
 #__docusaurus {
-  [class*=codeBlockContainer_] {
+  [class*='codeBlockContainer_'] {
     box-shadow: none;
   }
 }

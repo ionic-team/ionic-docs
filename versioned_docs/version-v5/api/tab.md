@@ -1,6 +1,7 @@
 ---
-sidebar_label: "ion-tab"
+sidebar_label: 'ion-tab'
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
@@ -14,37 +15,29 @@ See the [tabs documentation](tabs.md) for more details on configuring tabs.
 
 ## Properties
 
-
 ### component
 
-| | |
-| --- | --- |
-| **Description** | The component to display inside of the tab. |
-| **Attribute** | `component` |
-| **Type** | `Function \| HTMLElement \| null \| string \| undefined` |
-| **Default** | `undefined` |
-
-
+|                 |                                                          |
+| --------------- | -------------------------------------------------------- |
+| **Description** | The component to display inside of the tab.              |
+| **Attribute**   | `component`                                              |
+| **Type**        | `Function \| HTMLElement \| null \| string \| undefined` |
+| **Default**     | `undefined`                                              |
 
 ### tab
 
-| | |
-| --- | --- |
+|                 |                                                                                                                                                |
+| --------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Description** | A tab id must be provided for each `ion-tab`. It's used internally to reference<br />the selected tab or by the router to switch between them. |
-| **Attribute** | `tab` |
-| **Type** | `string` |
-| **Default** | `undefined` |
-
-
+| **Attribute**   | `tab`                                                                                                                                          |
+| **Type**        | `string`                                                                                                                                       |
+| **Default**     | `undefined`                                                                                                                                    |
 
 ## Methods
 
-
 ### setActive
 
-| | |
-| --- | --- |
+|                 |                                      |
+| --------------- | ------------------------------------ |
 | **Description** | Set the active component for the tab |
-| **Signature** | `setActive() => Promise<void>` |
-
-
+| **Signature**   | `setActive() => Promise<void>`       |

@@ -10,7 +10,10 @@ import { NativeEnterpriseCards, NativeEnterprise } from '@components/page/native
 
 <head>
   <title>Native APIs - Build Open-Source Native Application Experiences</title>
-  <meta name="description" content="Build native application experiences with open-source Native APIs. Easily add native device functionality to any Ionic app with Capacitor or Cordova." />
+  <meta
+    name="description"
+    content="Build native application experiences with open-source Native APIs. Easily add native device functionality to any Ionic app with Capacitor or Cordova."
+  />
   <style>{`
     :root {
       --doc-item-container-width: 60rem;

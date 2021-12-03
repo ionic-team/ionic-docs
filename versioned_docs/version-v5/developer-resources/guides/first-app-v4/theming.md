@@ -19,9 +19,9 @@ By changing these variables here and there, you can easily update the entire the
 :root {
   /** primary **/
   --ion-color-primary: #b36bff;
-  --ion-color-primary-rgb: 179,107,255;
+  --ion-color-primary-rgb: 179, 107, 255;
   --ion-color-primary-contrast: #000000;
-  --ion-color-primary-contrast-rgb: 0,0,0;
+  --ion-color-primary-contrast-rgb: 0, 0, 0;
   --ion-color-primary-shade: #9e5ee0;
   --ion-color-primary-tint: #bb7aff;
 }
@@ -51,6 +51,6 @@ Now, the iOS version of our app has a Material Design skin!
 
 ![ios and android comparison](/img/guides/first-app-v3/ion-lab-md-styling.png)
 
-Creating gorgeous-looking Ionic apps is easy with CSS variables and platform-specific styling. You now have everything you need to get started with Ionic. 
+Creating gorgeous-looking Ionic apps is easy with CSS variables and platform-specific styling. You now have everything you need to get started with Ionic.
 
 Go forth and build great apps!

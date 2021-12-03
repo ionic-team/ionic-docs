@@ -33,12 +33,19 @@ To install a Cordova plugin, click the **Add** button. The install modal will op
 The plugins available for install comprise all [Ionic Native](../native.md) plugins. When a plugin is installed, both the Cordova plugin and the Ionic Native wrapper are installed automatically.
 
 <blockquote>
-<p>It is not yet possible in Ionic Studio to install Cordova plugins other than those in Ionic Native. This feature is coming soon!</p>
-<p>You can always install the Cordova plugin in the command line by using <strong>Project</strong> &raquo; <strong>Open in Terminal</strong> and following the installation docs for the Cordova plugin.</p>
+  <p>
+    It is not yet possible in Ionic Studio to install Cordova plugins other than those in Ionic Native. This feature is
+    coming soon!
+  </p>
+  <p>
+    You can always install the Cordova plugin in the command line by using <strong>Project</strong> &raquo;{' '}
+    <strong>Open in Terminal</strong> and following the installation docs for the Cordova plugin.
+  </p>
 </blockquote>
 
 <blockquote>
-Some plugins may require variables that Ionic Studio isn't aware of. In this case, the install will fail. Try installing the plugin again with the necessary variables and let us know by [reporting the bug](support.md).
+  Some plugins may require variables that Ionic Studio isn't aware of. In this case, the install will fail. Try
+  installing the plugin again with the necessary variables and let us know by [reporting the bug](support.md).
 </blockquote>
 
 ## Icon & Splash Screen

@@ -123,13 +123,7 @@ Currently, the `Home` component looks like so:
 ![React home component](/img/guides/react/first-app/home-route.png)
 
 ```tsx
-import {
-  IonContent,
-  IonHeader,
-  IonPage,
-  IonTitle,
-  IonToolbar,
-} from '@ionic/react';
+import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
 import React from 'react';
 
 const Home: React.FC = () => {
@@ -144,11 +138,7 @@ const Home: React.FC = () => {
         The world is your oyster.
         <p>
           If you get lost, the{' '}
-          <a
-            target="_blank"
-            rel="noopener"
-            href="https://ionicframework.com/docs/"
-          >
+          <a target="_blank" rel="noopener" href="https://ionicframework.com/docs/">
             docs
           </a>{' '}
           will be your guide.
@@ -299,15 +289,7 @@ With our router now having an entry for the route `/new`, we'll create the compo
 Let's fill the `NewItem.tsx` with some placeholder content for the moment.
 
 ```tsx
-import {
-  IonBackButton,
-  IonButtons,
-  IonContent,
-  IonHeader,
-  IonPage,
-  IonTitle,
-  IonToolbar,
-} from '@ionic/react';
+import { IonBackButton, IonButtons, IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
 import React from 'react';
 
 const NewItem: React.FC = () => {
@@ -369,7 +351,7 @@ export const IconExample: React.FC = () => {
       <IonIcon icon={camera} />
       Take Picture
     </IonButton>
-  </IonContent>
+  </IonContent>;
 };
 ```
 
@@ -387,7 +369,7 @@ export const IconExample: React.FC = () => {
     <IonButton>
       <IonIcon ios={logoApple} md={logoAndroid} />
     </IonButton>
-  </IonContent>
+  </IonContent>;
 };
 ```
 
@@ -421,14 +403,7 @@ Additional details can be found [here](https://capacitor.ionicframework.com/docs
 Next, check out [all the APIs](https://capacitor.ionicframework.com/docs/apis) that are available. There’s some great stuff, including the [Camera API](https://capacitor.ionicframework.com/docs/apis/camera). We can implement photo capture functionality in just a few lines of code:
 
 ```tsx
-import {
-  IonContent,
-  IonHeader,
-  IonPage,
-  IonTitle,
-  IonToolbar,
-  IonButton,
-} from '@ionic/react';
+import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonButton } from '@ionic/react';
 import React, { useState } from 'react';
 import { Plugins, CameraResultType } from '@capacitor/core';
 

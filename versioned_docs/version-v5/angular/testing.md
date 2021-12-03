@@ -155,19 +155,13 @@ describe('PayrolService', () => {
       medicare: 0,
     });
     TestBed.configureTestingModule({
-      providers: [
-        PayrollService,
-        { provide: TaxService, useValue: taxServiceSpy },
-      ],
+      providers: [PayrollService, { provide: TaxService, useValue: taxServiceSpy }],
     });
   });
 
-  it('does some test where it is injected', inject(
-    [PayrollService],
-    (service: PayrollService) => {
-      expect(service).toBeTruthy();
-    },
-  ));
+  it('does some test where it is injected', inject([PayrollService], (service: PayrollService) => {
+    expect(service).toBeTruthy();
+  }));
 
   it('does some test where it is manually built', () => {
     const service = new PayrollService(taxServiceSpy);
@@ -184,10 +178,7 @@ This basic setup for such a test looks like this:
 
 ```tsx
 import { HttpBackend, HttpClient } from '@angular/common/http';
-import {
-  HttpTestingController,
-  HttpClientTestingModule,
-} from '@angular/common/http/testing';
+import { HttpTestingController, HttpClientTestingModule } from '@angular/common/http/testing';
 import { TestBed, inject } from '@angular/core/testing';
 
 import { IssTrackingDataService } from './iss-tracking-data.service';
@@ -208,21 +199,16 @@ describe('IssTrackingDataService', () => {
     issTrackingDataService = new IssTrackingDataService(httpClient);
   });
 
-  it('exists', inject(
-    [IssTrackingDataService],
-    (service: IssTrackingDataService) => {
-      expect(service).toBeTruthy();
-    },
-  ));
+  it('exists', inject([IssTrackingDataService], (service: IssTrackingDataService) => {
+    expect(service).toBeTruthy();
+  }));
 
   describe('location', () => {
     it('gets the location of the ISS now', () => {
-      issTrackingDataService.location().subscribe(x => {
+      issTrackingDataService.location().subscribe((x) => {
         expect(x).toEqual({ longitude: -138.1719, latitude: 44.4423 });
       });
-      const req = httpTestingController.expectOne(
-        'http://api.open-notify.org/iss-now.json',
-      );
+      const req = httpTestingController.expectOne('http://api.open-notify.org/iss-now.json');
       expect(req.request.method).toEqual('GET');
       req.flush({
         iss_position: { longitude: '-138.1719', latitude: '44.4423' },
@@ -343,10 +329,7 @@ export class PageObjectBase {
   }
 
   waitUntilNotPresent() {
-    browser.wait(
-      ExpectedConditions.not(ExpectedConditions.presenceOf(this.rootElement())),
-      3000,
-    );
+    browser.wait(ExpectedConditions.not(ExpectedConditions.presenceOf(this.rootElement())), 3000);
   }
 
   waitUntilVisible() {
@@ -393,10 +376,7 @@ export class LoginPage extends PageObjectBase {
   }
 
   waitForError() {
-    browser.wait(
-      ExpectedConditions.presenceOf(element(by.css('.error'))),
-      3000,
-    );
+    browser.wait(ExpectedConditions.presenceOf(element(by.css('.error'))), 3000);
   }
 
   getErrorMessage() {
@@ -473,9 +453,7 @@ describe('Login', () => {
       login.enterPassword('bogus');
       login.clickSignIn();
       login.waitForError();
-      expect(login.getErrorMessage()).toEqual(
-        'The password is invalid or the user does not have a password.',
-      );
+      expect(login.getErrorMessage()).toEqual('The password is invalid or the user does not have a password.');
     });
 
     it('navigates to the tasks page if the login succeeds', () => {

@@ -1,7 +1,6 @@
 ---
-sidebar_label: "logout"
+sidebar_label: 'logout'
 ---
-
 
 # ionic logout
 

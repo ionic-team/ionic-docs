@@ -1,6 +1,6 @@
 # Ionic React Overview
 
-`@ionic/react` combines the core Ionic experience with the tooling and APIs that are tailored to React Developers. 
+`@ionic/react` combines the core Ionic experience with the tooling and APIs that are tailored to React Developers.
 
 :::note
 The first official version of Ionic React is v4.11.
@@ -26,7 +26,7 @@ After the app has been created, launch the app:
 ionic serve
 ```
 
-Now, start building out the app using some of the [Ionic UI components](../components.md). 
+Now, start building out the app using some of the [Ionic UI components](../components.md).
 
 ## React Version Support
 
@@ -40,6 +40,6 @@ One difference is the usage of [TypeScript](http://www.typescriptlang.org/), whi
 
 ## Native Tooling
 
-[Capacitor](https://capacitor.ionicframework.com) is the official cross-platform app runtime used to make your `Ionic React` web app run natively on iOS, Android, Electron, and the web. 
+[Capacitor](https://capacitor.ionicframework.com) is the official cross-platform app runtime used to make your `Ionic React` web app run natively on iOS, Android, Electron, and the web.
 
 While there are no known technical limitations to using `Ionic React` with [Cordova](https://cordova.apache.org/) plugins, Capacitor is officially recommended. There are no plans to support a Cordova integration for `Ionic React` in the [Ionic CLI tooling](../cli.md) at this time. For more details, please [see here](https://capacitor.ionicframework.com/docs/cordova).

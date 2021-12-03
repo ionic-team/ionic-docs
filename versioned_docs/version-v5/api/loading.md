@@ -163,10 +163,7 @@ const LoadingExample: React.FC<LoadingProps> = () => {
         >
           Show Loading
         </IonButton>
-        <IonButton
-          expand="block"
-          onClick={() => present('Loading', 2000, 'dots')}
-        >
+        <IonButton expand="block" onClick={() => present('Loading', 2000, 'dots')}>
           Show Loading using params
         </IonButton>
       </IonContent>
@@ -247,12 +244,8 @@ export class LoadingExample {
   render() {
     return [
       <ion-content>
-        <ion-button onClick={() => this.presentLoading()}>
-          Present Loading
-        </ion-button>
-        <ion-button onClick={() => this.presentLoadingWithOptions()}>
-          Present Loading: Options
-        </ion-button>
+        <ion-button onClick={() => this.presentLoading()}>Present Loading</ion-button>
+        <ion-button onClick={() => this.presentLoadingWithOptions()}>Present Loading: Options</ion-button>
       </ion-content>,
     ];
   }

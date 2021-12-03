@@ -242,7 +242,7 @@ customElements.define(
   Modal Content
 </ion-content>`;
     }
-  },
+  }
 );
 
 function presentModal() {
@@ -715,11 +715,7 @@ Developers can also use this component directly in their template:
 ```html
 <template>
   <ion-button @click="setOpen(true)">Show Modal</ion-button>
-  <ion-modal
-    :is-open="isOpenRef"
-    css-class="my-custom-class"
-    @didDismiss="setOpen(false)"
-  >
+  <ion-modal :is-open="isOpenRef" css-class="my-custom-class" @didDismiss="setOpen(false)">
     <Modal :data="data"></Modal>
   </ion-modal>
 </template>

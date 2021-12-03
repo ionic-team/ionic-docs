@@ -48,13 +48,7 @@ export default defineComponent({
 These lifecycles can also be expressed using Vue 3's Composition API:
 
 ```tsx
-import {
-  IonPage,
-  onIonViewWillEnter,
-  onIonViewDidEnter,
-  onIonViewWillLeave,
-  onIonViewDidLeave,
-} from '@ionic/vue';
+import { IonPage, onIonViewWillEnter, onIonViewDidEnter, onIonViewWillLeave, onIonViewDidLeave } from '@ionic/vue';
 import { defineComponent } from 'vue';
 
 export default defineComponent({

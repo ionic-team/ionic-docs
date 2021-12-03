@@ -7,7 +7,10 @@ import ColorAccordion from '@components/page/theming/ColorAccordion';
 
 <head>
   <title>Theming | Ionic Apps: Color and Theming Basics Definition</title>
-  <meta name="description" content="The definition of theming apps just got simplified. Ionic Framework is built with pre-baked styles and colors which are extremely easy to change and modify." />
+  <meta
+    name="description"
+    content="The definition of theming apps just got simplified. Ionic Framework is built with pre-baked styles and colors which are extremely easy to change and modify."
+  />
 </head>
 
 Ionic Framework is built to be a blank slate that can easily be customized and modified to fit a brand, while still following the standards of the different platforms. Theming Ionic apps is now easier than ever. Because the framework is built with CSS, it comes with pre-baked default styles which are extremely easy to change and modify.

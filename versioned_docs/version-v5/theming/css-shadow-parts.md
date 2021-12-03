@@ -17,8 +17,8 @@ However, due to this encapsulation, styles aren’t able to bleed into inner ele
 ```html
 <ion-select>
   #shadow-root
-    <div class=”select-text select-placeholder”></div>
-    <div class=”select-icon”></div>
+  <div class="”select-text" select-placeholder”></div>
+  <div class="”select-icon”"></div>
 </ion-select>
 ```
 
@@ -33,7 +33,6 @@ ion-select .select-placeholder {
 
 So how do we solve this? [CSS Shadow Parts](#shadow-parts-explained)!
 
-
 ## Shadow Parts Explained
 
 Shadow parts allow developers to style inside a shadow tree, from outside of that shadow tree. In order to do so, the [part must be exposed](#exposing-a-part) and then it can be styled by using [::part](#how-part-works).
@@ -47,8 +46,8 @@ Continuing to use the `ion-select` component as an example, the markup is update
 ```html
 <ion-select>
   #shadow-root
-    <div part=”placeholder” class=”select-text select-placeholder”></div>
-    <div part=”icon” class=”select-icon”></div>
+  <div part="”placeholder”" class="”select-text" select-placeholder”></div>
+  <div part="”icon”" class="”select-icon”"></div>
 </ion-select>
 ```
 
@@ -92,7 +91,6 @@ ion-item::part(native):hover {
 There are some known limitations with [vendor prefixed pseudo-elements](#vendor-prefixed-pseudo-elements) and [structural pseudo-classes](#structural-pseudo-classes).
 :::
 
-
 ## Ionic Framework Parts
 
 All exposed parts for an Ionic Framework component can be found under the CSS Shadow Parts heading on its API page. To view all components and their API pages, see the [Component documentation](../components.md).
@@ -115,7 +113,9 @@ CSS Shadow Parts are supported in the recent versions of all of the major browse
 
 ### Vendor Prefixed Pseudo-Elements
 
-<a href="https://developer.mozilla.org/en-US/docs/Glossary/Vendor_Prefix" target="_blank" rel="noopener noreferrer">Vendor prefixed</a> pseudo-elements are not supported at this time. An example of this would be any of the `::-webkit-scrollbar` pseudo-elements:
+<a href="https://developer.mozilla.org/en-US/docs/Glossary/Vendor_Prefix" target="_blank" rel="noopener noreferrer">
+  Vendor prefixed
+</a> pseudo-elements are not supported at this time. An example of this would be any of the `::-webkit-scrollbar` pseudo-elements:
 
 ```css
 /* Does NOT work */
@@ -125,7 +125,6 @@ my-component::part(scroll)::-webkit-scrollbar {
 ```
 
 See <a href="https://github.com/w3c/csswg-drafts/issues/4530" target="_blank" rel="noopener noreferrer">this issue on GitHub</a> for more information.
-
 
 ### Structural Pseudo-Classes
 

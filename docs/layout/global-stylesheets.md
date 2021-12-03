@@ -17,7 +17,6 @@ The following CSS file must be included in order for Ionic Framework to work pro
 
 This file is the only stylesheet that is required in order for Ionic components to work properly. It includes app specific styles, and allows the `color` property to work across components. If this file is not included the colors will not show up and some elements may not appear properly.
 
-
 ### Recommended
 
 The following CSS files are recommended to be included in an Ionic Framework app. If they are not included, some elements may have undesired styles. If Ionic Framework components are being used outside of an app, these files may not be necessary.
@@ -33,7 +32,6 @@ Typography changes the font-family of the entire document and modifies the font 
 #### normalize.css
 
 Makes browsers render all elements more consistently and in line with modern standards. It is based on [Normalize.css](https://necolas.github.io/normalize.css/).
-
 
 ### Optional
 
@@ -62,7 +60,6 @@ Adds utility classes to align flex containers and items, see [CSS Utilities](css
 #### display.css
 
 Adds utility classes to hide any element based on the breakpoint, see [CSS Utilities](css-utilities.md#element-display) for usage information.
-
 
 ## Usage
 

@@ -105,7 +105,14 @@ Unfortunately, Cordova is not compatible with the latest version of Java.
 
 ### Gradle
 
-<a href="https://gradle.org/" target="_blank">Gradle</a> is the build tool used in Android apps and must be installed separately. See the <a href="https://gradle.org/install/" target="_blank">install page</a> for details.
+<a href="https://gradle.org/" target="_blank">
+  Gradle
+</a> is the build tool used in Android apps and must be installed separately. See the <a
+  href="https://gradle.org/install/"
+  target="_blank"
+>
+  install page
+</a> for details.
 
 ## Project Setup
 

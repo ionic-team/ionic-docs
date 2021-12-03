@@ -43,12 +43,12 @@ $ ionic serve █
     <p>Learn the fundamentals you need to know to start building amazing apps with Ionic Framework.</p>
   </DocsCard>
 
-  <DocsCard header="Navigation" href="navigation" icon="/icons/feature-component-navigation-icon.png">
-    <p>Learn the basics of navigation inside your app with Ionic and Vue Router</p>
-  </DocsCard>
+<DocsCard header="Navigation" href="navigation" icon="/icons/feature-component-navigation-icon.png">
+  <p>Learn the basics of navigation inside your app with Ionic and Vue Router</p>
+</DocsCard>
 
-  <DocsCard header="Lifecycle" href="lifecycle" icon="/icons/feature-guide-components-icon.png">
-    <p>Learn about using Ionic lifecycle events in class components and with hooks</p>
-  </DocsCard>
+<DocsCard header="Lifecycle" href="lifecycle" icon="/icons/feature-guide-components-icon.png">
+  <p>Learn about using Ionic lifecycle events in class components and with hooks</p>
+</DocsCard>
 
 </DocsCards>

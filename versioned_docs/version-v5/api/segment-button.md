@@ -313,7 +313,7 @@ export class SegmentButtonExample {
 ```javascript
 // Listen for ionChange on segment
 const segment = document.querySelector('ion-segment');
-segment.addEventListener('ionChange', ev => {
+segment.addEventListener('ionChange', (ev) => {
   console.log('Segment changed', ev);
 });
 ```
@@ -347,9 +347,7 @@ export const SegmentButtonExamples: React.FC = () => {
       </IonHeader>
       <IonContent>
         {/*-- Segment buttons with text and click listener --*/}
-        <IonSegment
-          onIonChange={e => console.log(`${e.detail.value} segment selected`)}
-        >
+        <IonSegment onIonChange={(e) => console.log(`${e.detail.value} segment selected`)}>
           <IonSegmentButton value="Friends">
             <IonLabel>Friends</IonLabel>
           </IonSegmentButton>
@@ -508,7 +506,7 @@ export class SegmentButtonExample {
   render() {
     return [
       // Segment buttons with text and click listener
-      <ion-segment onIonChange={ev => this.segmentChanged(ev)}>
+      <ion-segment onIonChange={(ev) => this.segmentChanged(ev)}>
         <ion-segment-button>
           <ion-label>Friends</ion-label>
         </ion-segment-button>

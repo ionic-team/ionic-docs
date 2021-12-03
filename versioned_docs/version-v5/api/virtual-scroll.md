@@ -120,11 +120,7 @@ The Virtual Scroll component is not supported in React.
   <ion-virtual-scroll [items]="items" approxItemHeight="320px">
     <ion-card *virtualItem="let item; let itemBounds = bounds;">
       <div>
-        <ion-img
-          [src]="item.imgSrc"
-          [height]="item.imgHeight"
-          [alt]="item.name"
-        ></ion-img>
+        <ion-img [src]="item.imgSrc" [height]="item.imgHeight" [alt]="item.name"></ion-img>
       </div>
       <ion-card-header>
         <ion-card-title>{{ item.name }}</ion-card-title>
@@ -174,8 +170,7 @@ const images = [
 ];
 
 function getImgSrc() {
-  const src =
-    'https://dummyimage.com/600x400/${Math.round( Math.random() * 99999)}/fff.png';
+  const src = 'https://dummyimage.com/600x400/${Math.round( Math.random() * 99999)}/fff.png';
   rotateImg++;
   if (rotateImg === images.length) {
     rotateImg = 0;
@@ -209,9 +204,7 @@ return `null` if a template shouldn't be created.
 
 ```html
 <ion-virtual-scroll [items]="items" [headerFn]="myHeaderFn">
-  <ion-item-divider *virtualHeader="let header">
-    {{ header }}
-  </ion-item-divider>
+  <ion-item-divider *virtualHeader="let header"> {{ header }} </ion-item-divider>
   <ion-item *virtualItem="let item"> Item: {{ item }} </ion-item>
 </ion-virtual-scroll>
 ```

@@ -8,10 +8,10 @@ sidebar_label: iOS App Store
 
 Submitting an App to the iOS App store requires a few things:
 
-* Xcode
-* A Paid Apple Developers account
-* A valid provisioning profile
-* App Development and Distribution certificates
+- Xcode
+- A Paid Apple Developers account
+- A valid provisioning profile
+- App Development and Distribution certificates
 
 To enroll in the Apple Developer Program, follow the instructions [listed here](https://developer.apple.com/programs/).
 

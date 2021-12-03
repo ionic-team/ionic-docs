@@ -17,12 +17,7 @@ $ ionic g service services/photo
 Open the new `services/photo.service.ts` file, and let’s add the logic that will power the camera functionality. First, import Capacitor dependencies and get references to the Camera, Filesystem, and Storage plugins:
 
 ```tsx
-import {
-  Camera,
-  CameraResultType,
-  CameraSource,
-  Photo,
-} from '@capacitor/camera';
+import { Camera, CameraResultType, CameraSource, Photo } from '@capacitor/camera';
 import { Filesystem, Directory } from '@capacitor/filesystem';
 import { Storage } from '@capacitor/storage';
 ```
@@ -117,10 +112,7 @@ Next, move over to `tab2.page.html` so we can display the image on the screen. A
 <ion-content>
   <ion-grid>
     <ion-row>
-      <ion-col
-        size="6"
-        *ngFor="let photo of photoService.photos; index as position"
-      >
+      <ion-col size="6" *ngFor="let photo of photoService.photos; index as position">
         <ion-img [src]="photo.webviewPath"></ion-img>
       </ion-col>
     </ion-row>
