@@ -111,6 +111,11 @@ export default function DocItem(props: Props): JSX.Element {
           </div>
 
           {/* ------- CUSTOM CODE -------- */}
+          <div className="spacer"></div>
+          {/* ---------------------------- */}
+
+
+          {/* ------- CUSTOM CODE -------- */}
           {demoUrl && (
             <div
               className={clsx(

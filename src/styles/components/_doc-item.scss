@@ -22,17 +22,19 @@
   
     [class*=docMainContainer_] {
       .doc-demo-wrapper {
-        overflow: auto;
-        max-height: calc(100vh - var(--ifm-navbar-height));
-        position: sticky;
-        top: calc(var(--ifm-navbar-height));
-  
-        padding-block-end: 32px;
-  
-        margin-block-start: 5rem;
-
         @media (max-width: 1364px) {
           display: none;
+        }
+
+        .doc-demo {
+          position: sticky;
+          top: calc(var(--ifm-navbar-height));
+    
+          padding-block-end: 32px;
+    
+          margin-block-start: 5rem;
+          overflow-y: auto;
+          max-height: calc(100vh - var(--ifm-navbar-height));
         }
       }
   
@@ -51,6 +53,10 @@
             min-width: 0;
           }
         }
+      }
+
+      .spacer {
+        flex-basis: 5rem;
       }
     }
   

@@ -98,7 +98,7 @@ const DocDemo = props => {
   );
 
   return (
-    <div>
+    <div className="doc-demo">
       {modeToggle}
       {device}
       {props.source && sourceLink}
