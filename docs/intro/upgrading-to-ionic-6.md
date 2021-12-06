@@ -296,6 +296,10 @@ npm install @ionic/core@6
 
 5. Remove any usage of the `displayFormat` or `displayTimezone` properties. To parse the UTC string provided in the payload of the `ionChange` event, we recommend using [date-fns](https://date-fns.org/). See the [ion-datetime Parsing Dates Documentation](../api/datetime#parsing-dates) for examples.
 
+:::note
+See the [Datetime Migration Sample Application](https://github.com/ionic-team/datetime-migration-samples) for more migration examples.
+:::
+
 ### Icon
 
 Ionic 6 now ships with Ionicons 6. Review the [Ionicons 6 Breaking Changes Guide](https://github.com/ionic-team/ionicons/releases/tag/v6.0.0) and make any necessary changes.
