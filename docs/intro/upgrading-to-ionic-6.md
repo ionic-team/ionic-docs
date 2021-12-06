@@ -48,9 +48,7 @@ npm install @ionic/react@6 @ionic/react-router@6
 4. Import and call `setupIonicReact` in your `App` component file. If you are also using `setupConfig`, pass your config to `setupIonicReact` instead:
 
 **Before**
-```tsx
-// App.tsx
-
+```tsx title="App.tsx"
 import { setupConfig } from '@ionic/react';
 
 ...
@@ -61,9 +59,7 @@ setupConfig({
 ```
 
 **After**
-```tsx
-// App.tsx
-
+```tsx title="App.tsx"
 import { setupIonicReact } from '@ionic/react';
 
 ...
@@ -107,16 +103,14 @@ npm install @ionic/vue@6 @ionic/vue-router@6
 
 4. Add the following `transformIgnorePatterns` to either `jest.config.js` or the `jest` field in `package.json`:
 
-**jest.config.js**
-```js
+```js title="jest.config.js"
 module.exports = {
   ...,
   transformIgnorePatterns: ['/node_modules/(?!@ionic/vue|@ionic/vue-router|@ionic/core|@stencil/core|ionicons)']
 }
 ```
 
-**package.json**
-```json
+```json title="package.json"
   {
     ...,
     "jest": {
@@ -398,16 +392,14 @@ If you are starting fresh with a new Ionic app, this configuration is done for y
 
 1. Add a `transformIgnorePatterns` field to your Jest config that includes the relevant Ionic packages. This is typically found in `jest.config.js` or the `jest` field in `package.json`:
 
-**jest.config.js**
-```js
+```js title="jest.config.js"
 module.exports = {
   ...,
   transformIgnorePatterns: ['/node_modules/(?!@ionic/core|@stencil/core|ionicons)']
 }
 ```
 
-**package.json**
-```json
+```json title="package.json"
   {
     ...,
     "jest": {
@@ -422,7 +414,7 @@ If you are using Ionic React or Ionic Vue, be sure to add the appropriate packag
 
 For developers using Create React App (CRA), there is currently no way to update the `transformIgnorePatterns` in a Jest config file. This is a CRA restriction and not something Ionic has control over. We can, however, pass the `transformIgnorePatterns` directly into the `react-scripts test` command:
 
-```json
+```json title="package.json"
 "scripts": {
   "test": "react-scripts test --transformIgnorePatterns 'node_modules/(?!(@ionic/react|@ionic/react-router|@ionic/core|@stencil/core|ionicons)/)'",
   ...
