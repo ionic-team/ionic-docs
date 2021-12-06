@@ -105,14 +105,14 @@ npm install @ionic/vue@6 @ionic/vue-router@6
 
 ```js title="jest.config.js"
 module.exports = {
-  ...,
+  ...
   transformIgnorePatterns: ['/node_modules/(?!@ionic/vue|@ionic/vue-router|@ionic/core|@stencil/core|ionicons)']
 }
 ```
 
 ```json title="package.json"
   {
-    ...,
+    ...
     "jest": {
       "transformIgnorePatterns": ["/node_modules/(?!@ionic/vue|@ionic/vue-router|@ionic/core|@stencil/core|ionicons)"]
     }
@@ -394,14 +394,14 @@ If you are starting fresh with a new Ionic app, this configuration is done for y
 
 ```js title="jest.config.js"
 module.exports = {
-  ...,
+  ...
   transformIgnorePatterns: ['/node_modules/(?!@ionic/core|@stencil/core|ionicons)']
 }
 ```
 
 ```json title="package.json"
   {
-    ...,
+    ...
     "jest": {
       "transformIgnorePatterns": ["/node_modules/(?!@ionic/core|@stencil/core|ionicons)"]
     }
