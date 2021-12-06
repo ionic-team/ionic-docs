@@ -19,7 +19,7 @@ If you are using Ionic Angular Server, be sure to update that as well:
 npm install @ionic/angular@6 @ionic/angular-server@6
 ```
 
-3. Remove any usage of `Config.set()`. instead, set your config in `IonicModule.forRoot()`. See the [Angular Config Documentation](https://ionicframework.com/docs/angular/config) for more examples.
+3. Remove any usage of `Config.set()`. Instead, set your config in `IonicModule.forRoot()`. See the [Angular Config Documentation](../angular/config) for more examples.
 4. Remove any usage of the `setupConfig` function previously exported from `@ionic/angular`. Set your config in `IonicModule.forRoot()` instead.
 
 ### React
@@ -77,6 +77,8 @@ setupIonicReact({
 Developers must import and call `setupIonicReact` even if they are not setting custom config.
 :::
 
+See the [React Config Documentation](../react/config) for more examples.
+
 ### Vue
 
 1. Ionic 6 supports Vue 3.0.6+. Update to the latest version of Vue:
@@ -103,15 +105,29 @@ vue upgrade --next
 npm install @ionic/vue@6 @ionic/vue-router@6
 ```
 
-4. Add the following `transformIgnorePatterns` to either your `jest.config.js` file or your `jest` field in your `package.json`:
+4. Add the following `transformIgnorePatterns` to either `jest.config.js` or the `jest` field in `package.json`:
 
+**jest.config.js**
 ```js
-transformIgnorePatterns: ['/node_modules/(?!@ionic/vue|@ionic/vue-router|@ionic/core|@stencil/core|ionicons)']
+module.exports = {
+  ...,
+  transformIgnorePatterns: ['/node_modules/(?!@ionic/vue|@ionic/vue-router|@ionic/core|@stencil/core|ionicons)']
+}
+```
+
+**package.json**
+```json
+  {
+    ...,
+    "jest": {
+      "transformIgnorePatterns": ["/node_modules/(?!@ionic/vue|@ionic/vue-router|@ionic/core|@stencil/core|ionicons)"]
+    }
+  }
 ```
 
 See the [Testing section below](#testing) for more information.
 
-5. Remove any usage of the `setupConfig` function previously exported from `@ionic/vue`. Set your config when installing the `IonicVue` plugin instead.
+5. Remove any usage of the `setupConfig` function previously exported from `@ionic/vue`. Set your config when installing the `IonicVue` plugin instead. See the [Vue Config Documentation](../vue/config) for more examples.
 
 6. Rename the `IonRouter` type for `useIonRouter` to `UseIonRouterResult`.
 
@@ -276,15 +292,15 @@ npm install @ionic/core@6
 
 ### Datetime
 
-1. Remove any usages of the `placeholder  `, `pickerOptions`, `pickerFormat`, `monthNames`, `monthShortNames`, `dayNames`, and `dayShortNames` properties. `ion-datetime` now automatically formats the month and day names displayed inside of the component according to the region set on the device. See the [ion-datetime Localization Documentation](../components/datetime#localization) for more information.
+1. Remove any usages of the `placeholder`, `pickerOptions`, `pickerFormat`, `monthNames`, `monthShortNames`, `dayNames`, and `dayShortNames` properties. `ion-datetime` now automatically formats the month names, day names, and time displayed inside of the component according to the language and region set on the device. See the [ion-datetime Localization Documentation](../api/datetime#localization) for more information.
 
 2. Remove any usages of the `text` and `placeholder` CSS Shadow Parts.
 
-3. Remove any usages of the `--padding-bottom`, `--padding-end`, `--padding-start`, `--padding-top`, and `--placeholder-color` CSS Variables.
+3. Remove any usages of the `--padding-bottom`, `--padding-end`, `--padding-start`, `--padding-top`, and `--placeholder-color` CSS Variables. To customize the padding on `ion-datetime`, you can use any of the `padding` CSS properties.
 
-4. Remove any usage of the `open` method. To present the datetime in an overlay, place it inside of an `ion-modal` or an `ion-popover` component. See the [ion-datetime Documentation](../components/datetime) for examples.
+4. Remove any usage of the `open` method. To present the datetime in an overlay, place it inside of an `ion-modal` or an `ion-popover` component. See the [ion-datetime Usage Examples](../api/datetime#usage) for more information.
 
-5. Remove any usage of the `displayFormat` or `displayTimezone` properties. To parse the UTC string provided in the payload of the `ionChange` event, we recommend using [date-fns](https://date-fns.org/). See the [ion-datetime Documentation](../components/datetime) for examples.
+5. Remove any usage of the `displayFormat` or `displayTimezone` properties. To parse the UTC string provided in the payload of the `ionChange` event, we recommend using [date-fns](https://date-fns.org/). See the [ion-datetime Parsing Dates Documentation](../api/datetime#parsing-dates) for examples.
 
 ### Icon
 
@@ -380,11 +396,29 @@ This update involves using Babel to compile Ionic's ES Modules down to the Commo
 
 If you are starting fresh with a new Ionic app, this configuration is done for you in our starter applications. For those with existing Ionic apps, follow the steps below to get Jest working with Ionic 6:
 
-1. Add a `transformIgnorePatterns` field to your Jest config that includes the relevant Ionic packages. This is typically found in `jest.config.js` or the `jest` field in your `package.json`:
+1. Add a `transformIgnorePatterns` field to your Jest config that includes the relevant Ionic packages. This is typically found in `jest.config.js` or the `jest` field in `package.json`:
 
+**jest.config.js**
 ```js
-transformIgnorePatterns: ['/node_modules/(?!@ionic/vue|@ionic/vue-router|@ionic/core|@stencil/core|ionicons)']
+module.exports = {
+  ...,
+  transformIgnorePatterns: ['/node_modules/(?!@ionic/core|@stencil/core|ionicons)']
+}
 ```
+
+**package.json**
+```json
+  {
+    ...,
+    "jest": {
+      "transformIgnorePatterns": ["/node_modules/(?!@ionic/core|@stencil/core|ionicons)"]
+    }
+  }
+```
+
+:::note
+If you are using Ionic React or Ionic Vue, be sure to add the appropriate packages to the `transformIgnorePatterns` array. For Ionic React this includes `@ionic/react` and `@ionic/react-router`. For Ionic Vue this includes `@ionic/vue` and `@ionic/vue-router`.
+:::
 
 For developers using Create React App (CRA), there is currently no way to update the `transformIgnorePatterns` in a Jest config file. This is a CRA restriction and not something Ionic has control over. We can, however, pass the `transformIgnorePatterns` directly into the `react-scripts test` command:
 
@@ -397,11 +431,13 @@ For developers using Create React App (CRA), there is currently no way to update
 
 If you are still running into issues, here are a couple things to try:
 
-1. Verify that `@babel/preset-env` is included in your [project-wide configuration](https://babeljs.io/docs/en/config-files#project-wide-configuration) instead of your [file-relative configuration](https://babeljs.io/docs/en/config-files#file-relative-configuration). This typically means defining your Babel configuration in `<project-root>/babel.config.json`.
+1. Verify that `@babel/preset-env` is included in your [project-wide configuration](https://babeljs.io/docs/en/config-files#project-wide-configuration) instead of your [file-relative configuration](https://babeljs.io/docs/en/config-files#file-relative-configuration). This typically means defining the Babel configuration in `<project-root>/babel.config.json`.
 
-2. If you have a `browserslist/test` field in your `package.json` file, make sure it is set to `current node`.
+2. If you have a `browserslist/test` field in `package.json` file, make sure it is set to `current node`.
 
 ## Need Help Upgrading?
+
+Be sure to look at the [Ionic 6 Breaking Changes Guide](https://github.com/ionic-team/ionic-framework/blob/main/BREAKING.md). There were several changes to default property and CSS Variable values that developers may need to be aware of. Only the breaking changes that required user action are listed on this page.
 
 If you need help upgrading, please post a thread on the [Ionic Forum](https://forum.ionicframework.com/).
 
