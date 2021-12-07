@@ -1,8 +1,15 @@
 ---
+title: Progressive Web Apps in Angular
 sidebar_label: Progressive Web Apps
 ---
 
-# Progressive Web Apps in Angular
+<head>
+  <title>Make Progressive Web Apps (PWA) in Angular - Ionic Tutorial</title>
+  <meta
+    name="description"
+    content="When Making an Angular app a Progressive Web App, the two main requirements are a Service Worker and a Web Manifest. Read to learn more in Ionic's PWA tutorial."
+  />
+</head>
 
 ## Making your Angular app a PWA
 

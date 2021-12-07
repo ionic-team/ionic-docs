@@ -1,8 +1,15 @@
 ---
+title: Ionic Page Life Cycle
 sidebar_label: Lifecycle
 ---
 
-# Ionic Page Life Cycle
+<head>
+  <title>Angular Page Component Life Cycle - App Events Documentation</title>
+  <meta
+    name="description"
+    content="This guide covers how the page life cycle works in an Ionic app built with Angular. Learn how Ionic embraces life cycle events provided by Angular components."
+  />
+</head>
 
 This guide covers how the page life cycle works in an app built with Ionic and Angular.
 

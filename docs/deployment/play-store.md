@@ -1,8 +1,15 @@
 ---
+title: Android Play Store Deployment
 sidebar_label: Android Play Store
 ---
 
-# Android Play Store Deployment
+<head>
+  <title>Android Play Store Deployment: Publish Your Ionic Apps</title>
+  <meta
+    name="description"
+    content="Ionic documentation for Android Play Store app deployment. Read about how to generate a release build and publish your Ionic apps to the Google Play Store."
+  />
+</head>
 
 ## Generating a release build of an app
 

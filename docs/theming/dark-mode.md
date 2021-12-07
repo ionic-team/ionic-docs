@@ -1,11 +1,18 @@
 ---
+title: Dark Mode
 initialTab: 'preview'
 inlineHtmlPreviews: true
 ---
 
 import Codepen from '@components/global/Codepen';
 
-# Dark Mode
+<head>
+  <title>Dark Mode to Change Color Schemes and CSS Properties</title>
+  <meta
+    name="description"
+    content="Developers are adding dark mode CSS on native applications to support their user preferences. Read to learn more about dark color schemes for Ionic apps."
+  />
+</head>
 
 Ionic makes it easy to change the themes of your app, including supporting dark color schemes. With growing support for dark mode in native apps, developers are now looking to add it to their apps to support user preferences.
 

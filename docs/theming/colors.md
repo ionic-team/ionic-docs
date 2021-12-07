@@ -1,4 +1,5 @@
 ---
+title: Colors
 initialTab: 'preview'
 inlineHtmlPreviews: true
 ---
@@ -7,7 +8,13 @@ import LayeredColorsSelect from '@components/page/theming/LayeredColorsSelect';
 import NewColorGenerator from '@components/page/theming/NewColorGenerator';
 import CodeColor from '@components/page/theming/CodeColor';
 
-# Colors
+<head>
+  <title>Ionic CSS Color Component: Style or Change Default App Colors</title>
+  <meta
+    name="description"
+    content="Ionic has nine default colors that can be used to change the color of many components. Learn how to utilize Ionic CSS color properties to style your apps."
+  />
+</head>
 
 Ionic has nine default colors that can be used to change the color of many components. Each color is actually a collection of multiple properties, including a `shade` and `tint`, used throughout Ionic.
 

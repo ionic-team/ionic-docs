@@ -1,8 +1,15 @@
 ---
+title: Ionic Vue Quickstart
 sidebar_label: Quickstart
 ---
 
-# Ionic Vue Quickstart
+<head>
+  <title>Vue QuickStart Global Component for Generating Ionic Vue Apps</title>
+  <meta
+    name="description"
+    content="Our QuickStart guide covers the basics of both Vue and Ionic Framework global components to get apps up and running. Read how to easily generate Ionic Vue apps."
+  />
+</head>
 
 ## What is Ionic Framework?
 

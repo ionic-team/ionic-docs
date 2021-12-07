@@ -1,4 +1,14 @@
-# Debugging
+---
+title: Debugging
+---
+
+<head>
+  <title>Debugging Guide for Apps in iOS Safari and Android Chrome</title>
+  <meta
+    name="description"
+    content="Ionic Framework's ultimate guide to debugging apps in iOS Safari and Android Chrome. Read our debugging guide to get started with your Ionic apps today."
+  />
+</head>
 
 <iframe
   width="560"

@@ -1,9 +1,16 @@
 ---
+title: Global Stylesheets
 initialTab: 'preview'
 inlineHtmlPreviews: true
 ---
 
-# Global Stylesheets
+<head>
+  <title>Global Stylesheet: Styled CSS Component Options for Ionic Apps</title>
+  <meta
+    name="description"
+    content="While Ionic component styles are self-contained, there are several global stylesheets and CSS options to include to utilize all features. Read to learn more."
+  />
+</head>
 
 While Ionic Framework component styles are self-contained, there are several global stylesheets that should be included in order to use all of Ionic's features. Some of the stylesheets are required in order for an Ionic Framework app to look and behave properly, and others include optional utilities to quickly style your app.
 

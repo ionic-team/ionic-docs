@@ -1,8 +1,18 @@
+---
+title: Gestures
+---
+
 import Codepen from '@components/global/Codepen';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Gestures
+<head>
+  <title>Gestures | Ionic App Utility for Custom Gestures and Interactions</title>
+  <meta
+    name="description"
+    content="Ionic Gestures is a utility that allows developers to build custom gestures and interactions for their app in a platform agnostic manner. Read to learn more."
+  />
+</head>
 
 ## Overview
 

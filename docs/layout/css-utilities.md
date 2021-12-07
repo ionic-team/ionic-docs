@@ -1,9 +1,16 @@
 ---
+title: CSS Utilities
 initialTab: 'preview'
 inlineHtmlPreviews: true
 ---
 
-# CSS Utilities
+<head>
+  <title>CSS Utilities: Classes for Text/Element Alignment or Modification</title>
+  <meta
+    name="description"
+    content="Ionic CSS utility classes can be used on any element for text modification/alignment, element placement, or to adjust padding and margin. Read to learn more."
+  />
+</head>
 
 Ionic Framework provides a set of CSS utility classes that can be used on any element in order to modify the text, element placement or adjust the padding and margin.
 

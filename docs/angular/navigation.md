@@ -1,8 +1,15 @@
 ---
+title: Angular Navigation
 sidebar_label: Navigation/Routing
 ---
 
-# Angular Navigation
+<head>
+  <title>Angular Navigation: How Routing & Redirects Work in Angular Apps</title>
+  <meta
+    name="description"
+    content="Our Angular Navigation guide covers how routing works in an app built with Ionic and Angular. Read to learn more about basic routing and redirects in Angular."
+  />
+</head>
 
 This guide covers how routing works in an app built with Ionic and Angular.
 

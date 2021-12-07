@@ -1,4 +1,14 @@
-# CORS Errors
+---
+title: CORS Errors
+---
+
+<head>
+  <title>CORS Errors: Cross-Origin Resource Sharing - Ionic Documentation</title>
+  <meta
+    name="description"
+    content="CORS errors happen in web apps if requests are made and servers don't return required headers. Read about Cross-Origin Resource Sharing in Ionic Documentation."
+  />
+</head>
 
 ## What is CORS?
 

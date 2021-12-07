@@ -1,4 +1,14 @@
-# Environment Setup
+---
+title: Environment Setup
+---
+
+<head>
+  <title>Environment Setup | Node & NPM Environment for Ionic App Setup</title>
+  <meta
+    name="description"
+    content="To get started with Ionic Framework, the only requirement is a Node & npm environment. Learn what environment setup is required for your Ionic apps."
+  />
+</head>
 
 To get started with Ionic Framework, the only requirement is a [Node & npm](#node--npm) environment.
 

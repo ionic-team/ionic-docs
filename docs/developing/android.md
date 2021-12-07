@@ -1,8 +1,15 @@
 ---
+title: Android Development
 sidebar_label: Developing for Android
 ---
 
-# Android Development
+<head>
+  <title>Android App Development Guide: Build Ionic Apps in Android Studio</title>
+  <meta
+    name="description"
+    content="This development guide covers how to run and debug Ionic apps on Android emulators and devices. Learn how to install Android Studio to get started building."
+  />
+</head>
 
 This guide covers how to run and debug Ionic apps on Android emulators and devices using [Capacitor](../reference/glossary.md#capacitor) or [Cordova](../reference/glossary.md#cordova). Android apps can be developed on Windows, macOS, and Linux.
 

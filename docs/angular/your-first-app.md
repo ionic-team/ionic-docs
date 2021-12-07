@@ -1,8 +1,15 @@
 ---
+title: 'Your First Ionic App: Angular'
 sidebar_label: Build Your First App
 ---
 
-# Your First Ionic App: Angular
+<head>
+  <title>Build Your First Ionic Mobile App: Angular Development Tutorial</title>
+  <meta
+    name="description"
+    content="Ionic's single codebase builds for any platform using just HTML, CSS, & JavaScript. Develop your first mobile app with our step-by-step Angular tutorial."
+  />
+</head>
 
 The great thing about Ionic is that with one codebase, you can build for any platform using just HTML, CSS, and JavaScript. Follow along as we learn the fundamentals of Ionic app development by creating a realistic app step by step.
 

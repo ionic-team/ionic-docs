@@ -1,4 +1,14 @@
-# CSS Shadow Parts
+---
+title: CSS Shadow Parts
+---
+
+<head>
+  <title>CSS Shadow Parts - Style CSS Properties Inside of A Shadow Tree</title>
+  <meta
+    name="description"
+    content="CSS Shadow Parts allow developers to style CSS properties on elements inside of a shadow tree. Read to learn more about customizing Ionic Shadow DOM components."
+  />
+</head>
 
 CSS Shadow Parts allow developers to style CSS properties on an element inside of a shadow tree. This is extremely useful in customizing Ionic Framework <a href="https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_shadow_DOM" target="_blank" rel="noopener noreferrer">Shadow DOM</a> components.
 

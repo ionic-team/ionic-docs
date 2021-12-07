@@ -1,4 +1,14 @@
-# Glossary
+---
+title: Glossary
+---
+
+<head>
+  <title>API Glossary: Terminology and Definitions | Ionic Framework</title>
+  <meta
+    name="description"
+    content="Ionic is the platform for web developers. View our API Glossary for app-building terminology and keyword definitions to better understand Ionic's capabilities."
+  />
+</head>
 
 <div id="what-is">
 
@@ -396,11 +406,9 @@
     <a href="http://sass-lang.com/documentation/file.SASS_REFERENCE.html#variables_" target="_blank">
       variables
     </a>
-    ,{' '}
-    <a href="http://sass-lang.com/documentation/file.SASS_REFERENCE.html#mixins" target="_blank">
+    , <a href="http://sass-lang.com/documentation/file.SASS_REFERENCE.html#mixins" target="_blank">
       mixins
-    </a>
-    , and{' '}
+    </a>, and{' '}
     <a href="http://sass-lang.com/documentation/file.SASS_REFERENCE.html#_10" target="_blank">
       loops
     </a>

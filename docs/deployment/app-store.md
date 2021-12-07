@@ -1,8 +1,15 @@
 ---
+title: iOS App Store Deployment
 sidebar_label: iOS App Store
 ---
 
-# iOS App Store Deployment
+<head>
+  <title>Publish to iOS App Store: Apple App Store Deployment for Ionic</title>
+  <meta
+    name="description"
+    content="Review the requirements to publish an Ionic app to the Apple iOS App Store. Learn to generate a release build and other necessary steps for deployment."
+  />
+</head>
 
 ## Requirements
 

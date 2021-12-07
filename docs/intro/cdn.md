@@ -1,8 +1,15 @@
 ---
+title: Ionic Packages
 sidebar_label: Packages & CDN
 ---
 
-# Ionic Packages
+<head>
+  <title>Ionic Framework Packages: CDN, Angular, Vue, and React</title>
+  <meta
+    name="description"
+    content="View our different packages that can be used to quickly start using Ionic Framework or Ionicons CDN in a test environment, Angular, Vue, React, or none at all."
+  />
+</head>
 
 Ionic provides different packages that can be used to quickly get started using Ionic Framework or Ionicons in a test environment, Angular, any other framework, or none at all.
 

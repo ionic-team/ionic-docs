@@ -1,7 +1,17 @@
+---
+title: Hardware Back Button
+---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Hardware Back Button
+<head>
+  <title>Hardware Back Button for Capacitor & Cordova on Android Devices</title>
+  <meta
+    name="description"
+    content="The hardware back button is found on most Android devices. Read to learn more about hardware back button use in Capacitor and Cordova on Ionic applications."
+  />
+</head>
 
 The hardware back button is found on most Android devices. In native applications it can be used to close modals, navigate to the previous view, exit an app, and more. By default in Ionic, when the back button is pressed, the current view will be popped off the navigation stack, and the previous view will be displayed. If no previous view exists in the navigation stack, nothing will happen. This guide will show how to customize the behavior of the hardware back button.
 

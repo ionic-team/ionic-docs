@@ -12,9 +12,10 @@ import DocsCard from '@components/global/DocsCard';
 import DocsCards from '@components/global/DocsCards';
 
 <head>
+  <title>Create an Ionic React App: Framework and Documentation</title>
   <meta
     name="description"
-    content="Ionic is the app platform for web developers. Build amazing mobile, web, and desktop apps all with one shared code base and open web standards"
+    content="One codebase, any platform, just React. View our documentation for creating apps with Ionic React—the native React version of Ionic Framework's open-source SDK."
   />
 </head>
 

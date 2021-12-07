@@ -1,11 +1,18 @@
 ---
+title: Structure
 initialTab: 'preview'
 ---
 
 import DocsCard from '@components/global/DocsCard';
 import DocsCards from '@components/global/DocsCards';
 
-# Structure
+<head>
+  <title>Structure Layout | Structures for Content Layout on Ionic Apps</title>
+  <meta
+    name="description"
+    content="Ionic provides several different layouts that can be used to structure an app and its content—from single page layouts, to split pane views and modals."
+  />
+</head>
 
 Ionic Framework provides several different layouts that can be used to structure an app. From single page layouts, to split pane views and modals.
 

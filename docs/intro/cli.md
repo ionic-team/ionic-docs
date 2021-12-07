@@ -1,10 +1,17 @@
 ---
+title: Installing Ionic
 sidebar_label: CLI Installation
 ---
 
 import AppWizard from '@components/page/intro/AppWizard';
 
-# Installing Ionic
+<head>
+  <title>How to Install The Ionic Framework CLI to Build Mobile Apps</title>
+  <meta
+    name="description"
+    content="The Ionic CLI is the preferred method of installation—offering a wide range of dev tools and help options. Learn how to install Ionic and begin building apps."
+  />
+</head>
 
 Ionic apps are created and developed primarily through the Ionic [command-line](../reference/glossary.md#cli) utility. The Ionic CLI is the preferred method of installation, as it offers a wide range of dev tools and help options along the way. It is also the main tool through which to run the app and connect it to other services, such as Appflow.
 

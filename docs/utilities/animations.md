@@ -1,8 +1,18 @@
+---
+title: Animations
+---
+
 import Codepen from '@components/global/Codepen';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Animations
+<head>
+  <title>Animations: Web Animations API to Build and Run on Ionic Apps</title>
+  <meta
+    name="description"
+    content="Ionic apps use Web Animations API to build and run animations. Learn how this utility lets developers build complex animations in a platform agnostic manner."
+  />
+</head>
 
 ## Overview
 
