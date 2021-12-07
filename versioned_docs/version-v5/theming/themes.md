@@ -7,6 +7,7 @@ inlineHtmlPreviews: true
 ---
 
 import CodeColor from '@components/page/theming/CodeColor';
+import SteppedColorGenerator from '@components/page/theming/SteppedColorGenerator';
 
 # Themes
 
@@ -61,4 +62,4 @@ By default, the Ionic stepped colors start at the default background color value
 
 Create a custom background and text color theme for your app. Update the background or text color’s hex values below, then copy and paste the generated code directly into your Ionic project.
 
-<stepped-color-generator mode="md" no-prerender></stepped-color-generator>
+<SteppedColorGenerator />
