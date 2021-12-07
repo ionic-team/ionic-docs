@@ -1,9 +1,16 @@
 ---
+title: CSS Utilities
 initialTab: 'preview'
 inlineHtmlPreviews: true
 ---
 
-# CSS Utilities
+<head>
+  <title>CSS Utilities: Classes for Text/Element Alignment or Modification</title>
+  <meta
+    name="description"
+    content="Ionic CSS utility classes can be used on any element for text modification/alignment, element placement, or to adjust padding and margin. Read to learn more."
+  />
+</head>
 
 Ionic Framework provides a set of CSS utility classes that can be used on any element in order to modify the text, element placement or adjust the padding and margin.
 
@@ -21,22 +28,19 @@ If your app was not started using an available Ionic Framework starter, the styl
     <ion-col>
       <div class="ion-text-start">
         <h3>text-start</h3>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac vehicula
-        lorem.
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac vehicula lorem.
       </div>
     </ion-col>
     <ion-col>
       <div class="ion-text-end">
         <h3>text-end</h3>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac vehicula
-        lorem.
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac vehicula lorem.
       </div>
     </ion-col>
     <ion-col>
       <div class="ion-text-center">
         <h3>text-center</h3>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac vehicula
-        lorem.
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac vehicula lorem.
       </div>
     </ion-col>
   </ion-row>
@@ -44,15 +48,13 @@ If your app was not started using an available Ionic Framework starter, the styl
     <ion-col>
       <div class="ion-text-justify">
         <h3>text-justify</h3>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac vehicula
-        lorem.
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac vehicula lorem.
       </div>
     </ion-col>
     <ion-col>
       <div class="ion-text-wrap">
         <h3>text-wrap</h3>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac vehicula
-        lorem.
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac vehicula lorem.
       </div>
     </ion-col>
     <ion-col>
@@ -84,22 +86,19 @@ If your app was not started using an available Ionic Framework starter, the styl
     <ion-col>
       <div class="ion-text-uppercase">
         <h3>text-uppercase</h3>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac vehicula
-        lorem.
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac vehicula lorem.
       </div>
     </ion-col>
     <ion-col>
       <div class="ion-text-lowercase">
         <h3>text-lowercase</h3>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac vehicula
-        lorem.
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac vehicula lorem.
       </div>
     </ion-col>
     <ion-col>
       <div class="ion-text-capitalize">
         <h3>text-capitalize</h3>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac vehicula
-        lorem.
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac vehicula lorem.
       </div>
     </ion-col>
   </ion-row>
@@ -138,15 +137,13 @@ The float CSS property specifies that an element should be placed along the left
     <ion-col class="ion-float-left">
       <div>
         <h3>float-left</h3>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac vehicula
-        lorem.
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac vehicula lorem.
       </div>
     </ion-col>
     <ion-col class="ion-float-right">
       <div>
         <h3>float-right</h3>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac vehicula
-        lorem.
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac vehicula lorem.
       </div>
     </ion-col>
   </ion-row>
@@ -316,7 +313,7 @@ The default amount of `margin` to be applied is `16px` and is set by the `--ion-
 
 ## Flex Properties
 
-<img src="/docs/img/layout/diagram-flex-attributes.png"/>
+<img src="/docs/img/layout/diagram-flex-attributes.png" />
 
 ### Flex Container Properties
 

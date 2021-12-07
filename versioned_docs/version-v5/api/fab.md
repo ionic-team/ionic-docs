@@ -1,10 +1,11 @@
 ---
-title: "ion-fab: Floating Action Button for Android and iOS Ionic Apps"
-description: "Fabs, floating action buttons, are container elements that contain one or more fab buttons. Use ion-fab when creating Android and iOS apps with Ionic Framework."
-sidebar_label: "ion-fab"
-demoUrl: "/docs/demos/api/fab/index.html"
-demoSourceUrl: "https://github.com/ionic-team/ionic-docs/tree/main/static/demos/api/fab/index.html"
+title: 'ion-fab: Floating Action Button for Android and iOS Ionic Apps'
+description: 'Fabs, floating action buttons, are container elements that contain one or more fab buttons. Use ion-fab when creating Android and iOS apps with Ionic Framework.'
+sidebar_label: 'ion-fab'
+demoUrl: '/docs/demos/api/fab/index.html'
+demoSourceUrl: 'https://github.com/ionic-team/ionic-docs/tree/main/static/demos/api/fab/index.html'
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
@@ -14,8 +15,7 @@ Fabs are container elements that contain one or more fab buttons. They should be
 
 ## Usage
 
-<Tabs defaultValue="angular" values={[{ value: 'angular', label: 'ANGULAR' }, { value: 'javascript', label: 'JAVASCRIPT' }, { value: 'react', label: 'REACT' }, { value: 'stencil', label: 'STENCIL' }, { value: 'vue', label: 'VUE' }]}>
-
+<Tabs groupId="framework" defaultValue="angular" values={[{ value: 'angular', label: 'Angular' }, { value: 'javascript', label: 'Javascript' }, { value: 'react', label: 'React' }, { value: 'stencil', label: 'Stencil' }, { value: 'vue', label: 'Vue' }]}>
 
 <TabItem value="angular">
 
@@ -113,9 +113,7 @@ Fabs are container elements that contain one or more fab buttons. They should be
 </ion-footer>
 ```
 
-
 </TabItem>
-
 
 <TabItem value="javascript">
 
@@ -213,16 +211,37 @@ Fabs are container elements that contain one or more fab buttons. They should be
 </ion-footer>
 ```
 
-
 </TabItem>
-
 
 <TabItem value="react">
 
 ```tsx
 import React from 'react';
-import { IonContent, IonHeader, IonFooter, IonPage, IonTitle, IonToolbar, IonFab, IonFabButton, IonIcon, IonFabList } from '@ionic/react';
-import { add, settings, share, person, arrowForwardCircle, arrowBackCircle, arrowUpCircle, logoVimeo, logoFacebook, logoInstagram, logoTwitter } from 'ionicons/icons';
+import {
+  IonContent,
+  IonHeader,
+  IonFooter,
+  IonPage,
+  IonTitle,
+  IonToolbar,
+  IonFab,
+  IonFabButton,
+  IonIcon,
+  IonFabList,
+} from '@ionic/react';
+import {
+  add,
+  settings,
+  share,
+  person,
+  arrowForwardCircle,
+  arrowBackCircle,
+  arrowUpCircle,
+  logoVimeo,
+  logoFacebook,
+  logoInstagram,
+  logoTwitter,
+} from 'ionicons/icons';
 
 export const FabExamples: React.FC = () => {
   return (
@@ -288,7 +307,9 @@ export const FabExamples: React.FC = () => {
             <IonIcon icon={settings} />
           </IonFabButton>
           <IonFabList side="end">
-            <IonFabButton><IonIcon icon={logoVimeo} /></IonFabButton>
+            <IonFabButton>
+              <IonIcon icon={logoVimeo} />
+            </IonFabButton>
           </IonFabList>
         </IonFab>
 
@@ -298,16 +319,24 @@ export const FabExamples: React.FC = () => {
             <IonIcon icon={share} />
           </IonFabButton>
           <IonFabList side="top">
-            <IonFabButton><IonIcon icon={logoVimeo} /></IonFabButton>
+            <IonFabButton>
+              <IonIcon icon={logoVimeo} />
+            </IonFabButton>
           </IonFabList>
           <IonFabList side="bottom">
-            <IonFabButton><IonIcon icon={logoFacebook} /></IonFabButton>
+            <IonFabButton>
+              <IonIcon icon={logoFacebook} />
+            </IonFabButton>
           </IonFabList>
           <IonFabList side="start">
-            <IonFabButton><IonIcon icon={logoInstagram} /></IonFabButton>
+            <IonFabButton>
+              <IonIcon icon={logoInstagram} />
+            </IonFabButton>
           </IonFabList>
           <IonFabList side="end">
-            <IonFabButton><IonIcon icon={logoTwitter} /></IonFabButton>
+            <IonFabButton>
+              <IonIcon icon={logoTwitter} />
+            </IonFabButton>
           </IonFabList>
         </IonFab>
       </IonContent>
@@ -321,9 +350,7 @@ export const FabExamples: React.FC = () => {
 };
 ```
 
-
 </TabItem>
-
 
 <TabItem value="stencil">
 
@@ -332,7 +359,7 @@ import { Component, h } from '@stencil/core';
 
 @Component({
   tag: 'fab-example',
-  styleUrl: 'fab-example.css'
+  styleUrl: 'fab-example.css',
 })
 export class FabExample {
   render() {
@@ -399,7 +426,9 @@ export class FabExample {
             <ion-icon name="settings"></ion-icon>
           </ion-fab-button>
           <ion-fab-list side="end">
-            <ion-fab-button><ion-icon name="logo-vimeo"></ion-icon></ion-fab-button>
+            <ion-fab-button>
+              <ion-icon name="logo-vimeo"></ion-icon>
+            </ion-fab-button>
           </ion-fab-list>
         </ion-fab>
 
@@ -409,34 +438,39 @@ export class FabExample {
             <ion-icon name="share"></ion-icon>
           </ion-fab-button>
           <ion-fab-list side="top">
-            <ion-fab-button><ion-icon name="logo-vimeo"></ion-icon></ion-fab-button>
+            <ion-fab-button>
+              <ion-icon name="logo-vimeo"></ion-icon>
+            </ion-fab-button>
           </ion-fab-list>
           <ion-fab-list side="bottom">
-            <ion-fab-button><ion-icon name="logo-facebook"></ion-icon></ion-fab-button>
+            <ion-fab-button>
+              <ion-icon name="logo-facebook"></ion-icon>
+            </ion-fab-button>
           </ion-fab-list>
           <ion-fab-list side="start">
-            <ion-fab-button><ion-icon name="logo-instagram"></ion-icon></ion-fab-button>
+            <ion-fab-button>
+              <ion-icon name="logo-instagram"></ion-icon>
+            </ion-fab-button>
           </ion-fab-list>
           <ion-fab-list side="end">
-            <ion-fab-button><ion-icon name="logo-twitter"></ion-icon></ion-fab-button>
+            <ion-fab-button>
+              <ion-icon name="logo-twitter"></ion-icon>
+            </ion-fab-button>
           </ion-fab-list>
         </ion-fab>
       </ion-content>,
 
       <ion-footer>
         <ion-toolbar>
-          <ion-title>
-            Footer
-          </ion-title>
+          <ion-title>Footer</ion-title>
         </ion-toolbar>
-      </ion-footer>
+      </ion-footer>,
     ];
   }
 }
 ```
 
 </TabItem>
-
 
 <TabItem value="vue">
 
@@ -536,63 +570,62 @@ export class FabExample {
 </template>
 
 <script>
-import { 
-  IonContent, 
-  IonFab, 
-  IonFabButton, 
-  IonFabList, 
-  IonFooter, 
-  IonHeader, 
-  IonIcon, 
-  IonTitle, 
-  IonToolbar 
-} from '@ionic/vue';
-import { 
-  add, 
-  arrowBackCircle,
-  arrowForwardCircle, 
-  arrowUpCircle,
-  logoFacebook, 
-  logoInstagram, 
-  logoTwitter, 
-  logoVimeo, 
-  person, 
-  settings, 
-  share
-} from 'ionicons/icons';
-import { defineComponent } from 'vue';
+  import {
+    IonContent,
+    IonFab,
+    IonFabButton,
+    IonFabList,
+    IonFooter,
+    IonHeader,
+    IonIcon,
+    IonTitle,
+    IonToolbar,
+  } from '@ionic/vue';
+  import {
+    add,
+    arrowBackCircle,
+    arrowForwardCircle,
+    arrowUpCircle,
+    logoFacebook,
+    logoInstagram,
+    logoTwitter,
+    logoVimeo,
+    person,
+    settings,
+    share,
+  } from 'ionicons/icons';
+  import { defineComponent } from 'vue';
 
-export default defineComponent({
-  components: { 
-    IonContent, 
-    IonFab, 
-    IonFabButton, 
-    IonFabList, 
-    IonFooter, 
-    IonHeader, 
-    IonIcon, 
-    IonTitle, 
-    IonToolbar
-  },
-  setup() {
-    return {
-      add, 
-      arrowBackCircle,
-      arrowForwardCircle, 
-      arrowUpCircle,
-      logoFacebook, 
-      logoInstagram, 
-      logoTwitter, 
-      logoVimeo, 
-      person, 
-      settings, 
-      share
-    }
-  }
-});
+  export default defineComponent({
+    components: {
+      IonContent,
+      IonFab,
+      IonFabButton,
+      IonFabList,
+      IonFooter,
+      IonHeader,
+      IonIcon,
+      IonTitle,
+      IonToolbar,
+    },
+    setup() {
+      return {
+        add,
+        arrowBackCircle,
+        arrowForwardCircle,
+        arrowUpCircle,
+        logoFacebook,
+        logoInstagram,
+        logoTwitter,
+        logoVimeo,
+        person,
+        settings,
+        share,
+      };
+    },
+  });
 </script>
 ```
-
 
 </TabItem>
 
@@ -600,59 +633,47 @@ export default defineComponent({
 
 ## Properties
 
-
 ### activated
 
-| | |
-| --- | --- |
+|                 |                                                                                                                                                                                                      |
+| --------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Description** | If `true`, both the `ion-fab-button` and all `ion-fab-list` inside `ion-fab` will become active.<br />That means `ion-fab-button` will become a `close` icon and `ion-fab-list` will become visible. |
-| **Attribute** | `activated` |
-| **Type** | `boolean` |
-| **Default** | `false` |
-
-
+| **Attribute**   | `activated`                                                                                                                                                                                          |
+| **Type**        | `boolean`                                                                                                                                                                                            |
+| **Default**     | `false`                                                                                                                                                                                              |
 
 ### edge
 
-| | |
-| --- | --- |
+|                 |                                                                                                                                                                                      |
+| --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | **Description** | If `true`, the fab will display on the edge of the header if<br />`vertical` is `"top"`, and on the edge of the footer if<br />it is `"bottom"`. Should be used with a `fixed` slot. |
-| **Attribute** | `edge` |
-| **Type** | `boolean` |
-| **Default** | `false` |
-
-
+| **Attribute**   | `edge`                                                                                                                                                                               |
+| **Type**        | `boolean`                                                                                                                                                                            |
+| **Default**     | `false`                                                                                                                                                                              |
 
 ### horizontal
 
-| | |
-| --- | --- |
+|                 |                                                      |
+| --------------- | ---------------------------------------------------- |
 | **Description** | Where to align the fab horizontally in the viewport. |
-| **Attribute** | `horizontal` |
-| **Type** | `"center" \| "end" \| "start" \| undefined` |
-| **Default** | `undefined` |
-
-
+| **Attribute**   | `horizontal`                                         |
+| **Type**        | `"center" \| "end" \| "start" \| undefined`          |
+| **Default**     | `undefined`                                          |
 
 ### vertical
 
-| | |
-| --- | --- |
+|                 |                                                    |
+| --------------- | -------------------------------------------------- |
 | **Description** | Where to align the fab vertically in the viewport. |
-| **Attribute** | `vertical` |
-| **Type** | `"bottom" \| "center" \| "top" \| undefined` |
-| **Default** | `undefined` |
-
-
+| **Attribute**   | `vertical`                                         |
+| **Type**        | `"bottom" \| "center" \| "top" \| undefined`       |
+| **Default**     | `undefined`                                        |
 
 ## Methods
 
-
 ### close
 
-| | |
-| --- | --- |
+|                 |                                     |
+| --------------- | ----------------------------------- |
 | **Description** | Close an active FAB list container. |
-| **Signature** | `close() => Promise<void>` |
-
-
+| **Signature**   | `close() => Promise<void>`          |

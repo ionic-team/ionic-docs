@@ -1,6 +1,13 @@
 # Debugging
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/akh6V6Yw1lw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe
+  width="560"
+  height="315"
+  src="https://www.youtube.com/embed/akh6V6Yw1lw"
+  frameborder="0"
+  allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+  allowfullscreen
+></iframe>
 
 ## Live Reload
 
@@ -38,9 +45,11 @@ The app preview may not automatically appear when you open Chrome Developer Tool
 
 ## Debugging with Visual Studio locally in Chrome (both Android & iOS)
 
-<a href="https://code.visualstudio.com/" target="_blank">Visual Studio Code</a> can also be used to debug an Ionic app running in the Chrome web browser. 
+<a href="https://code.visualstudio.com/" target="_blank">
+  Visual Studio Code
+</a> can also be used to debug an Ionic app running in the Chrome web browser.{' '}
 
-To do this, run your app in the browser using `ionic serve`. Take note of the port that your app is running on. Next, open your Ionic project using Visual Studio Code. 
+To do this, run your app in the browser using `ionic serve`. Take note of the port that your app is running on. Next, open your Ionic project using Visual Studio Code.
 
 In the far-left vertical menu within VS Code, click on the `run` icon. If you are configuring this for the first time in your project, click on the option to create a `launch.json` file. Select **Chrome** from the environment options dropdown. This will automatically generate a `launch.json` file with configurations for launching Chrome against localhost.
 
@@ -50,9 +59,14 @@ In the debug target dropdown menu, select **Launch against Chrome**, then click 
 
 ## Debugging with Visual Studio Code in Android
 
-<a href="https://code.visualstudio.com/" target="_blank">Visual Studio Code</a> has a dedicated plugin for debugging apps that run in an Android WebView.
+<a href="https://code.visualstudio.com/" target="_blank">
+  Visual Studio Code
+</a> has a dedicated plugin for debugging apps that run in an Android WebView.
 
-<a href="https://marketplace.visualstudio.com/items?itemName=mpotthoff.vscode-android-webview-debug" target="_blank">The plugin</a> creates a bridge between the device and the Visual Studio Code developer tools and permits debugging right from the editor.
+<a href="https://marketplace.visualstudio.com/items?itemName=mpotthoff.vscode-android-webview-debug" target="_blank">
+  The plugin
+</a> creates a bridge between the device and the Visual Studio Code developer tools and permits debugging right from the
+editor.
 
 In order to use this plugin to debug your Ionic apps, first install it then start your app in the Android emulator or connect your Android device and run the app. You may need to enable USB debugging on your Android device.
 
@@ -79,5 +93,5 @@ In the root of your Ionic project, create a folder called `.vscode` and inside t
 Next, launch the debugging process, selecting your device and Ionic app. VS Code will attach to both the Android device and Ionic app and you can now debug your app, which includes setting breakpoints.
 
 :::note
-If you are unable to set breakpoints and get an error saying, **"Breakpoint ignored because generated code not found (source map problem?)"** it means that the paths to the transpiled javascript files are incorrect. Use the `.scripts` command in the Debug console to see the loaded scripts. Make sure the paths of the scripts are correct  by experimenting with different values in the `sourceMapPathOverrides` key in your `launch.json` configuration file.
+If you are unable to set breakpoints and get an error saying, **"Breakpoint ignored because generated code not found (source map problem?)"** it means that the paths to the transpiled javascript files are incorrect. Use the `.scripts` command in the Debug console to see the loaded scripts. Make sure the paths of the scripts are correct by experimenting with different values in the `sourceMapPathOverrides` key in your `launch.json` configuration file.
 :::

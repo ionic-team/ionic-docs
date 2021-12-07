@@ -1,46 +1,18 @@
-/**
- * Copyright (c) Facebook, Inc. and its affiliates.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- */
-
+import OriginalNavbarItem from '@theme-original/NavbarItem';
 import React from 'react';
-import DefaultNavbarItem from '@theme/NavbarItem/DefaultNavbarItem';
-import LocaleDropdownNavbarItem from '@theme/NavbarItem/LocaleDropdownNavbarItem';
-import SearchNavbarItem from '@theme/NavbarItem/SearchNavbarItem';
-import type { Props } from '@theme/NavbarItem';
+import NavbarIconLink from '@theme/NavbarItem/NavbarIconLink';
+import NavbarSeparator from '@theme/NavbarItem/NavbarSeparator';
 
-const NavbarItemComponents = {
-  default: () => DefaultNavbarItem,
-  localeDropdown: () => LocaleDropdownNavbarItem,
-  search: () => SearchNavbarItem,
-
-  // Need to lazy load these items as we don't know for sure the docs plugin is loaded
-  // See https://github.com/facebook/docusaurus/issues/3360
-  docsVersion: () =>
-    // eslint-disable-next-line @typescript-eslint/no-var-requires, global-require
-    require('@theme/NavbarItem/DocsVersionNavbarItem').default,
-  docsVersionDropdown: () =>
-    // eslint-disable-next-line @typescript-eslint/no-var-requires, global-require
-    require('@theme/NavbarItem/DocsVersionDropdownNavbarItem').default,
-  doc: () =>
-    // eslint-disable-next-line @typescript-eslint/no-var-requires, global-require
-    require('@theme/NavbarItem/DocNavbarItem').default,
-  iconLink: () => require('./IconLinkNavbarItem').default,
+const CustomNavbarItemComponents = {
+  iconLink: () => NavbarIconLink,
+  separator: () => NavbarSeparator,
 } as const;
 
-const getNavbarItemComponent = (
-  type: keyof typeof NavbarItemComponents = 'default',
-) => {
-  const navbarItemComponent = NavbarItemComponents[type];
-  if (!navbarItemComponent) {
-    throw new Error(`No NavbarItem component found for type "${type}".`);
+export default function NavbarItem({ type, ...props }) {
+  if (Object.keys(CustomNavbarItemComponents).includes(type)) {
+    const Component = CustomNavbarItemComponents[type]();
+    return <Component {...props} />;
+  } else {
+    return <OriginalNavbarItem type={type} {...props} />;
   }
-  return navbarItemComponent();
-};
-
-export default function NavbarItem({ type, ...props }: Props): JSX.Element {
-  const NavbarItemComponent = getNavbarItemComponent(type);
-  return <NavbarItemComponent {...props} />;
 }

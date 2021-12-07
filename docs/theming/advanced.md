@@ -4,7 +4,7 @@ initialTab: 'preview'
 inlineHtmlPreviews: true
 ---
 
-import CodeColor from '@theme/CodeColor';
+import CodeColor from '@components/page/theming/CodeColor';
 
 # Advanced Theming
 
@@ -23,21 +23,13 @@ The `theme-color` meta controls the interface theme when running in a web browse
 The example below demonstrates how to use `theme-color` to style the browser interface on iOS 15.
 
 ```html
-<meta
-  name="theme-color"
-  media="(prefers-color-scheme: light)"
-  content="#3880ff"
-/>
-<meta
-  name="theme-color"
-  media="(prefers-color-scheme: dark)"
-  content="#eb445a"
-/>
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#3880ff" />
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#eb445a" />
 ```
 
-| Light Mode                                                                                                              | Dark Mode                                                                                                             |
-| ----------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- |
-| <figure><img alt="Application with theme-color meta in light mode" src="/img/theming/theme-color-light.png" /></figure> | <figure><img alt="Application with theme-color meta in dark mode" src="/img/theming/theme-color-dark.png" /></figure> |
+| Light Mode                                                                             | Dark Mode                                                                            |
+| -------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------ |
+| ![Application with theme-color meta in light mode](/img/theming/theme-color-light.png) | ![Application with theme-color meta in dark mode](/img/theming/theme-color-dark.png) |
 
 The `theme-color` meta can also be used to customize the toolbar in Safari on macOS Monterey or newer.
 
@@ -167,14 +159,14 @@ $text-lighter: lighten($text, 15);
 
 After running through the Sass compiler, the colors will have the following values:
 
-| Variable            | Value                                             |
-| ------------------- | ------------------------------------------------- |
-| `$background`       | <CodeColor mode="md" value="#3880ff"></CodeColor> |
-| `$background-shade` | <CodeColor mode="md" value="#3171e0"></CodeColor> |
-| `$background-tint`  | <CodeColor mode="md" value="#4c8dff"></CodeColor> |
-| `$text`             | <CodeColor mode="md" value="#444444"></CodeColor> |
-| `$text-darker`      | <CodeColor mode="md" value="#1e1e1e"></CodeColor> |
-| `$text-lighter`     | <CodeColor mode="md" value="#6a6a6a"></CodeColor> |
+| Variable            | Value                                          |
+| ------------------- | ---------------------------------------------- |
+| `$background`       | <CodeColor color="#3880ff">#3880ff</CodeColor> |
+| `$background-shade` | <CodeColor color="#3171e0">#3171e0</CodeColor> |
+| `$background-tint`  | <CodeColor color="#4c8dff">#4c8dff</CodeColor> |
+| `$text`             | <CodeColor color="#444444">#444444</CodeColor> |
+| `$text-darker`      | <CodeColor color="#1e1e1e">#1e1e1e</CodeColor> |
+| `$text-lighter`     | <CodeColor color="#6a6a6a">#6a6a6a</CodeColor> |
 
 However, because CSS variables can be set at runtime and are more dynamic, it is not currently possible to manipulate them using a simple function.
 

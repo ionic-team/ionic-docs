@@ -1,7 +1,7 @@
 const fs = require('fs');
 const nativeJSON = require('./data/native.json');
 const utils = require('./utils.js');
-const nativeOverrides = require('./data/meta-override.json').native;
+const { native: nativeOverrides } = require('./data/meta-override.json');
 
 // Filter out some plugins
 const filteredPlugins = [
@@ -13,7 +13,7 @@ const filteredPlugins = [
   '@ionic-native/in-app-update',
   '@ionic-native/checkout',
   '@ionic-native/secure-storage-echo',
-  '@ionic-native/secure-storage'
+  '@ionic-native/secure-storage',
 ];
 
 let plugins = nativeJSON.filter((plugin) => !filteredPlugins.includes(plugin.packageName));
@@ -21,7 +21,7 @@ const data = fs.writeFileSync('./scripts/data/native.json', JSON.stringify(plugi
 
 (async function () {
   // console.log(cliJSON);
-  
+
   plugins.map(writePage);
 })();
 
@@ -37,10 +37,7 @@ function writePage(page) {
     renderUsage(page),
   ].join('');
 
-  const path = `docs/native/${page.packageName.replace(
-    '@ionic-native/',
-    '',
-  )}.md`;
+  const path = `docs/native/${page.packageName.replace('@ionic-native/', '')}.md`;
   fs.writeFileSync(path, data);
 }
 
@@ -48,38 +45,30 @@ function renderFrontmatter({ displayName, packageName }) {
   const slug = packageName.replace('@ionic-native/', '');
 
   const frontmatter = {
-    ...nativeOverrides[slug],
-    sidebar_label: displayName,
+    title: displayName,
   };
 
   return `---
 ${Object.entries(frontmatter)
-  .map(
-    ([key, value]) =>
-      `${key}: ${
-        typeof value === 'string' ? `"${value.replace('"', '\\"')}"` : value
-      }`,
-  )
+  .map(([key, value]) => `${key}: ${typeof value === 'string' ? `"${value.replace('"', '\\"')}"` : value}`)
   .join('\n')}
 ---
-
+${utils.getHeadTag(nativeOverrides[slug])}
 `;
 }
 
 function renderImports({}) {
   return `
-import DocsCard from '@theme/DocsCard';
-import DocsButton from '@theme/DocsButton';
+import DocsCard from '@components/global/DocsCard';
+import DocsButton from '@components/page/native/DocsButton';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import CodeBlock from '@theme/CodeBlock';
 `;
 }
 
-function renderIntro({ description, displayName, repo }) {
+function renderIntro({ description, repo }) {
   return `
-# ${displayName}
-
 ${description}
 
 <p><a href="${repo}" target="_blank" rel="noopener" className="git-link">
@@ -107,7 +96,7 @@ function renderInstallation({ cordovaPlugin, packageName }) {
 <h2 id="installation">
   <a href="#installation">Installation</a>
 </h2>
-<Tabs defaultValue="Capacitor" values={[
+<Tabs defaultValue="Capacitor" groupId="runtime" values={[
   {value: 'Capacitor', label: 'Capacitor'},
   {value: 'Cordova', label: 'Cordova'},
   {value: 'Enterprise', label: 'Enterprise'},
@@ -137,7 +126,7 @@ function renderSupportedPlatforms({ platforms }) {
   return `
 ## Supported Platforms
   
-${platforms.map(platform => `- ${platform}`).join('\n')}
+${platforms.map((platform) => `- ${platform}`).join('\n')}
 `;
 }
 

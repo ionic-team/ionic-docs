@@ -1,12 +1,17 @@
 ---
-title: 'Theming | Ionic Apps: Color and Theming Basics Definition'
-description: 'The definition of theming apps just got simplified. Ionic Framework is built with pre-baked styles and colors which are extremely easy to change and modify.'
+title: Theming Basics
 sidebar_label: Basics
 ---
 
-import ColorAccordion from '@theme/ColorAccordion';
+import ColorAccordion from '@components/page/theming/ColorAccordion';
 
-# Theming Basics
+<head>
+  <title>Theming | Ionic Apps: Color and Theming Basics Definition</title>
+  <meta
+    name="description"
+    content="The definition of theming apps just got simplified. Ionic Framework is built with pre-baked styles and colors which are extremely easy to change and modify."
+  />
+</head>
 
 Ionic Framework is built to be a blank slate that can easily be customized and modified to fit a brand, while still following the standards of the different platforms. Theming Ionic apps is now easier than ever. Because the framework is built with CSS, it comes with pre-baked default styles which are extremely easy to change and modify.
 
@@ -14,7 +19,7 @@ Ionic Framework is built to be a blank slate that can easily be customized and m
 
 Ionic has nine default colors that can be used to change the color of many components. Each color is actually a collection of multiple properties, including a `shade` and `tint`, used throughout Ionic.
 
-When changing a color, it is important to set all of the related properties. This can be done easily with the [Color Generator](color-generator.mdx) tool, but these can also be manually written if desired. For more information on Ionic colors, see [Colors](colors.md).
+When changing a color, it is important to set all of the related properties. This can be done easily with the [Color Generator](color-generator.md) tool, but these can also be manually written if desired. For more information on Ionic colors, see [Colors](colors.md).
 
 <ColorAccordion />
 

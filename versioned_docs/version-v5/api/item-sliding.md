@@ -1,8 +1,9 @@
 ---
-title: "Slide Buttons | Slide Right to Left with ion-item-sliding"
-description: "ion-item-sliding component contains items that are dragged to reveal buttons. Options are revealed when the sliding item is swiped from left to right."
-sidebar_label: "ion-item-sliding"
+title: 'Slide Buttons | Slide Right to Left with ion-item-sliding'
+description: 'ion-item-sliding component contains items that are dragged to reveal buttons. Options are revealed when the sliding item is swiped from left to right.'
+sidebar_label: 'ion-item-sliding'
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
@@ -10,11 +11,9 @@ import TabItem from '@theme/TabItem';
 
 A sliding item contains an item that can be dragged to reveal buttons. It requires an [item](item.md) component as a child. All options to reveal should be placed in the [item options](item-options.md) element.
 
-
 ## Swipe Direction
 
 By default, the buttons are placed on the `"end"` side. This means that options are revealed when the sliding item is swiped from end to start, i.e. from right to left in LTR, but from left to right in RTL. To place them on the opposite side, so that they are revealed when swiping in the opposite direction, set the `side` attribute to `"start"` on the [`ion-item-options`](item-options.md) element. Up to two `ion-item-options` can be used at the same time in order to reveal two different sets of options depending on the swiping direction.
-
 
 ## Options Layout
 
@@ -28,16 +27,13 @@ By default if an icon is placed with text in the [item option](item-option.md), 
 | `bottom`    | The icon is below the text                                               |
 | `end`       | In LTR, end is the right side of the button, and in RTL it is the left   |
 
-
 ## Expandable Options
 
 Options can be expanded to take up the full width of the item if you swipe past a certain point. This can be combined with the `ionSwipe` event to call methods on the class.
 
-
 ## Usage
 
-<Tabs defaultValue="angular" values={[{ value: 'angular', label: 'ANGULAR' }, { value: 'javascript', label: 'JAVASCRIPT' }, { value: 'react', label: 'REACT' }, { value: 'stencil', label: 'STENCIL' }, { value: 'vue', label: 'VUE' }]}>
-
+<Tabs groupId="framework" defaultValue="angular" values={[{ value: 'angular', label: 'Angular' }, { value: 'javascript', label: 'Javascript' }, { value: 'react', label: 'React' }, { value: 'stencil', label: 'Stencil' }, { value: 'vue', label: 'Vue' }]}>
 
 <TabItem value="angular">
 
@@ -62,9 +58,7 @@ Options can be expanded to take up the full width of the item if you swipe past 
   <!-- Sliding item with expandable options on both sides -->
   <ion-item-sliding>
     <ion-item-options side="start">
-      <ion-item-option color="danger" expandable>
-        Delete
-      </ion-item-option>
+      <ion-item-option color="danger" expandable> Delete </ion-item-option>
     </ion-item-options>
 
     <ion-item>
@@ -72,9 +66,7 @@ Options can be expanded to take up the full width of the item if you swipe past 
     </ion-item>
 
     <ion-item-options side="end">
-      <ion-item-option color="tertiary" expandable>
-        Archive
-      </ion-item-option>
+      <ion-item-option color="tertiary" expandable> Archive </ion-item-option>
     </ion-item-options>
   </ion-item-sliding>
 
@@ -86,9 +78,7 @@ Options can be expanded to take up the full width of the item if you swipe past 
         <p>A new message in your network</p>
         <p>Oceanic Next has joined your network</p>
       </ion-label>
-      <ion-note slot="end">
-        10:45 AM
-      </ion-note>
+      <ion-note slot="end"> 10:45 AM </ion-note>
     </ion-item>
 
     <ion-item-options side="start">
@@ -110,9 +100,7 @@ Options can be expanded to take up the full width of the item if you swipe past 
   <!-- Sliding item with icon start options on end side -->
   <ion-item-sliding>
     <ion-item>
-      <ion-label>
-        Sliding Item, Icons Start
-      </ion-label>
+      <ion-label> Sliding Item, Icons Start </ion-label>
     </ion-item>
     <ion-item-options>
       <ion-item-option color="primary">
@@ -129,9 +117,7 @@ Options can be expanded to take up the full width of the item if you swipe past 
   <!-- Sliding item with icon end options on end side -->
   <ion-item-sliding>
     <ion-item>
-      <ion-label>
-        Sliding Item, Icons End
-      </ion-label>
+      <ion-label> Sliding Item, Icons End </ion-label>
     </ion-item>
     <ion-item-options>
       <ion-item-option color="primary">
@@ -148,9 +134,7 @@ Options can be expanded to take up the full width of the item if you swipe past 
   <!-- Sliding item with icon top options on end side -->
   <ion-item-sliding>
     <ion-item>
-      <ion-label>
-        Sliding Item, Icons Top
-      </ion-label>
+      <ion-label> Sliding Item, Icons Top </ion-label>
     </ion-item>
     <ion-item-options>
       <ion-item-option color="primary">
@@ -167,9 +151,7 @@ Options can be expanded to take up the full width of the item if you swipe past 
   <!-- Sliding item with icon bottom options on end side -->
   <ion-item-sliding>
     <ion-item>
-      <ion-label>
-        Sliding Item, Icons Bottom
-      </ion-label>
+      <ion-label> Sliding Item, Icons Bottom </ion-label>
     </ion-item>
     <ion-item-options>
       <ion-item-option color="primary">
@@ -185,9 +167,7 @@ Options can be expanded to take up the full width of the item if you swipe past 
 </ion-list>
 ```
 
-
 </TabItem>
-
 
 <TabItem value="javascript">
 
@@ -212,9 +192,7 @@ Options can be expanded to take up the full width of the item if you swipe past 
   <!-- Sliding item with expandable options on both sides -->
   <ion-item-sliding>
     <ion-item-options side="start">
-      <ion-item-option color="danger" expandable>
-        Delete
-      </ion-item-option>
+      <ion-item-option color="danger" expandable> Delete </ion-item-option>
     </ion-item-options>
 
     <ion-item>
@@ -222,9 +200,7 @@ Options can be expanded to take up the full width of the item if you swipe past 
     </ion-item>
 
     <ion-item-options side="end">
-      <ion-item-option color="tertiary" expandable>
-        Archive
-      </ion-item-option>
+      <ion-item-option color="tertiary" expandable> Archive </ion-item-option>
     </ion-item-options>
   </ion-item-sliding>
 
@@ -236,9 +212,7 @@ Options can be expanded to take up the full width of the item if you swipe past 
         <p>A new message in your network</p>
         <p>Oceanic Next has joined your network</p>
       </ion-label>
-      <ion-note slot="end">
-        10:45 AM
-      </ion-note>
+      <ion-note slot="end"> 10:45 AM </ion-note>
     </ion-item>
 
     <ion-item-options side="start">
@@ -260,9 +234,7 @@ Options can be expanded to take up the full width of the item if you swipe past 
   <!-- Sliding item with icon start options on end side -->
   <ion-item-sliding>
     <ion-item>
-      <ion-label>
-        Sliding Item, Icons Start
-      </ion-label>
+      <ion-label> Sliding Item, Icons Start </ion-label>
     </ion-item>
     <ion-item-options>
       <ion-item-option color="primary">
@@ -279,9 +251,7 @@ Options can be expanded to take up the full width of the item if you swipe past 
   <!-- Sliding item with icon end options on end side -->
   <ion-item-sliding>
     <ion-item>
-      <ion-label>
-        Sliding Item, Icons End
-      </ion-label>
+      <ion-label> Sliding Item, Icons End </ion-label>
     </ion-item>
     <ion-item-options>
       <ion-item-option color="primary">
@@ -298,9 +268,7 @@ Options can be expanded to take up the full width of the item if you swipe past 
   <!-- Sliding item with icon top options on end side -->
   <ion-item-sliding>
     <ion-item>
-      <ion-label>
-        Sliding Item, Icons Top
-      </ion-label>
+      <ion-label> Sliding Item, Icons Top </ion-label>
     </ion-item>
     <ion-item-options>
       <ion-item-option color="primary">
@@ -317,9 +285,7 @@ Options can be expanded to take up the full width of the item if you swipe past 
   <!-- Sliding item with icon bottom options on end side -->
   <ion-item-sliding>
     <ion-item>
-      <ion-label>
-        Sliding Item, Icons Bottom
-      </ion-label>
+      <ion-label> Sliding Item, Icons Bottom </ion-label>
     </ion-item>
     <ion-item-options>
       <ion-item-option color="primary">
@@ -335,166 +301,163 @@ Options can be expanded to take up the full width of the item if you swipe past 
 </ion-list>
 ```
 
-
 </TabItem>
-
 
 <TabItem value="react">
 
 ```tsx
 import React from 'react';
-import { IonList, IonItemSliding, IonItem, IonLabel, IonItemOptions, IonItemOption, IonIcon, IonNote } from '@ionic/react';
+import {
+  IonList,
+  IonItemSliding,
+  IonItem,
+  IonLabel,
+  IonItemOptions,
+  IonItemOption,
+  IonIcon,
+  IonNote,
+} from '@ionic/react';
 
 import { heart, trash, star, archive, ellipsisHorizontal, ellipsisVertical } from 'ionicons/icons';
 
 export const ItemSlidingExample: React.FC = () => (
-<IonList>
-  {/* Sliding item with text options on both sides */}
-  <IonItemSliding>
-    <IonItemOptions side="start">
-      <IonItemOption onClick={() => console.log('favorite clicked')}>Favorite</IonItemOption>
-      <IonItemOption color="danger" onClick={() => console.log('share clicked')}>Share</IonItemOption>
-    </IonItemOptions>
+  <IonList>
+    {/* Sliding item with text options on both sides */}
+    <IonItemSliding>
+      <IonItemOptions side="start">
+        <IonItemOption onClick={() => console.log('favorite clicked')}>Favorite</IonItemOption>
+        <IonItemOption color="danger" onClick={() => console.log('share clicked')}>
+          Share
+        </IonItemOption>
+      </IonItemOptions>
 
-    <IonItem>
-      <IonLabel>Item Options</IonLabel>
-    </IonItem>
+      <IonItem>
+        <IonLabel>Item Options</IonLabel>
+      </IonItem>
 
-    <IonItemOptions side="end">
-      <IonItemOption onClick={() => console.log('unread clicked')}>Unread</IonItemOption>
-    </IonItemOptions>
-  </IonItemSliding>
+      <IonItemOptions side="end">
+        <IonItemOption onClick={() => console.log('unread clicked')}>Unread</IonItemOption>
+      </IonItemOptions>
+    </IonItemSliding>
 
-  {/* Sliding item with expandable options on both sides */}
-  <IonItemSliding>
-    <IonItemOptions side="start">
-      <IonItemOption color="danger" expandable>
-        Delete
-      </IonItemOption>
-    </IonItemOptions>
+    {/* Sliding item with expandable options on both sides */}
+    <IonItemSliding>
+      <IonItemOptions side="start">
+        <IonItemOption color="danger" expandable>
+          Delete
+        </IonItemOption>
+      </IonItemOptions>
 
-    <IonItem>
-      <IonLabel>Expandable Options</IonLabel>
-    </IonItem>
+      <IonItem>
+        <IonLabel>Expandable Options</IonLabel>
+      </IonItem>
 
-    <IonItemOptions side="end">
-      <IonItemOption color="tertiary" expandable>
-        Archive
-      </IonItemOption>
-    </IonItemOptions>
-  </IonItemSliding>
+      <IonItemOptions side="end">
+        <IonItemOption color="tertiary" expandable>
+          Archive
+        </IonItemOption>
+      </IonItemOptions>
+    </IonItemSliding>
 
-  {/* Multi-line sliding item with icon options on both sides */}
-  <IonItemSliding id="item100">
-    <IonItem href="#">
-      <IonLabel>
-        <h2>HubStruck Notifications</h2>
-        <p>A new message in your network</p>
-        <p>Oceanic Next has joined your network</p>
-      </IonLabel>
-      <IonNote slot="end">
-        10:45 AM
-      </IonNote>
-    </IonItem>
+    {/* Multi-line sliding item with icon options on both sides */}
+    <IonItemSliding id="item100">
+      <IonItem href="#">
+        <IonLabel>
+          <h2>HubStruck Notifications</h2>
+          <p>A new message in your network</p>
+          <p>Oceanic Next has joined your network</p>
+        </IonLabel>
+        <IonNote slot="end">10:45 AM</IonNote>
+      </IonItem>
 
-    <IonItemOptions side="start">
-      <IonItemOption>
-        <IonIcon slot="icon-only" icon={heart} />
-      </IonItemOption>
-    </IonItemOptions>
+      <IonItemOptions side="start">
+        <IonItemOption>
+          <IonIcon slot="icon-only" icon={heart} />
+        </IonItemOption>
+      </IonItemOptions>
 
-    <IonItemOptions side="end">
-      <IonItemOption color="danger">
-        <IonIcon slot="icon-only" icon={trash} />
-      </IonItemOption>
-      <IonItemOption>
-        <IonIcon slot="icon-only" icon={star} />
-      </IonItemOption>
-    </IonItemOptions>
-  </IonItemSliding>
+      <IonItemOptions side="end">
+        <IonItemOption color="danger">
+          <IonIcon slot="icon-only" icon={trash} />
+        </IonItemOption>
+        <IonItemOption>
+          <IonIcon slot="icon-only" icon={star} />
+        </IonItemOption>
+      </IonItemOptions>
+    </IonItemSliding>
 
-  {/* Sliding item with icon start options on end side */}
-  <IonItemSliding>
-    <IonItem>
-      <IonLabel>
-        Sliding Item, Icons Start
-      </IonLabel>
-    </IonItem>
-    <IonItemOptions>
-      <IonItemOption color="primary">
-        <IonIcon slot="start" ios={ellipsisHorizontal} md={ellipsisVertical}></IonIcon>
-        More
-      </IonItemOption>
-      <IonItemOption color="secondary">
-        <IonIcon slot="start" icon={archive} />
-        Archive
-      </IonItemOption>
-    </IonItemOptions>
-  </IonItemSliding>
+    {/* Sliding item with icon start options on end side */}
+    <IonItemSliding>
+      <IonItem>
+        <IonLabel>Sliding Item, Icons Start</IonLabel>
+      </IonItem>
+      <IonItemOptions>
+        <IonItemOption color="primary">
+          <IonIcon slot="start" ios={ellipsisHorizontal} md={ellipsisVertical}></IonIcon>
+          More
+        </IonItemOption>
+        <IonItemOption color="secondary">
+          <IonIcon slot="start" icon={archive} />
+          Archive
+        </IonItemOption>
+      </IonItemOptions>
+    </IonItemSliding>
 
-  {/* Sliding item with icon end options on end side */}
-  <IonItemSliding>
-    <IonItem>
-      <IonLabel>
-        Sliding Item, Icons End
-      </IonLabel>
-    </IonItem>
-    <IonItemOptions>
-      <IonItemOption color="primary">
-        <IonIcon slot="end" ios={ellipsisHorizontal} md={ellipsisVertical}></IonIcon>
-        More
-      </IonItemOption>
-      <IonItemOption color="secondary">
-        <IonIcon slot="end" icon={archive} />
-        Archive
-      </IonItemOption>
-    </IonItemOptions>
-  </IonItemSliding>
+    {/* Sliding item with icon end options on end side */}
+    <IonItemSliding>
+      <IonItem>
+        <IonLabel>Sliding Item, Icons End</IonLabel>
+      </IonItem>
+      <IonItemOptions>
+        <IonItemOption color="primary">
+          <IonIcon slot="end" ios={ellipsisHorizontal} md={ellipsisVertical}></IonIcon>
+          More
+        </IonItemOption>
+        <IonItemOption color="secondary">
+          <IonIcon slot="end" icon={archive} />
+          Archive
+        </IonItemOption>
+      </IonItemOptions>
+    </IonItemSliding>
 
-  {/* Sliding item with icon top options on end side */}
-  <IonItemSliding>
-    <IonItem>
-      <IonLabel>
-        Sliding Item, Icons Top
-      </IonLabel>
-    </IonItem>
-    <IonItemOptions>
-      <IonItemOption color="primary">
-        <IonIcon slot="top" ios={ellipsisHorizontal} md={ellipsisVertical}></IonIcon>
-        More
-      </IonItemOption>
-      <IonItemOption color="secondary">
-        <IonIcon slot="top" icon={archive} />
-        Archive
-      </IonItemOption>
-    </IonItemOptions>
-  </IonItemSliding>
+    {/* Sliding item with icon top options on end side */}
+    <IonItemSliding>
+      <IonItem>
+        <IonLabel>Sliding Item, Icons Top</IonLabel>
+      </IonItem>
+      <IonItemOptions>
+        <IonItemOption color="primary">
+          <IonIcon slot="top" ios={ellipsisHorizontal} md={ellipsisVertical}></IonIcon>
+          More
+        </IonItemOption>
+        <IonItemOption color="secondary">
+          <IonIcon slot="top" icon={archive} />
+          Archive
+        </IonItemOption>
+      </IonItemOptions>
+    </IonItemSliding>
 
-  {/* Sliding item with icon bottom options on end side */}
-  <IonItemSliding>
-    <IonItem>
-      <IonLabel>
-        Sliding Item, Icons Bottom
-      </IonLabel>
-    </IonItem>
-    <IonItemOptions>
-      <IonItemOption color="primary">
-        <IonIcon slot="bottom" ios={ellipsisHorizontal} md={ellipsisVertical}></IonIcon>
-        More
-      </IonItemOption>
-      <IonItemOption color="secondary">
-        <IonIcon slot="bottom" icon={archive} />
-        Archive
-      </IonItemOption>
-    </IonItemOptions>
-  </IonItemSliding>
-</IonList>
+    {/* Sliding item with icon bottom options on end side */}
+    <IonItemSliding>
+      <IonItem>
+        <IonLabel>Sliding Item, Icons Bottom</IonLabel>
+      </IonItem>
+      <IonItemOptions>
+        <IonItemOption color="primary">
+          <IonIcon slot="bottom" ios={ellipsisHorizontal} md={ellipsisVertical}></IonIcon>
+          More
+        </IonItemOption>
+        <IonItemOption color="secondary">
+          <IonIcon slot="bottom" icon={archive} />
+          Archive
+        </IonItemOption>
+      </IonItemOptions>
+    </IonItemSliding>
+  </IonList>
 );
 ```
 
-
 </TabItem>
-
 
 <TabItem value="stencil">
 
@@ -503,7 +466,7 @@ import { Component, h } from '@stencil/core';
 
 @Component({
   tag: 'item-sliding-example',
-  styleUrl: 'item-sliding-example.css'
+  styleUrl: 'item-sliding-example.css',
 })
 export class ItemSlidingExample {
   favorite(ev: any) {
@@ -525,7 +488,9 @@ export class ItemSlidingExample {
         <ion-item-sliding>
           <ion-item-options side="start">
             <ion-item-option onClick={(ev) => this.favorite(ev)}>Favorite</ion-item-option>
-            <ion-item-option color="danger" onClick={(ev) => this.share(ev)}>Share</ion-item-option>
+            <ion-item-option color="danger" onClick={(ev) => this.share(ev)}>
+              Share
+            </ion-item-option>
           </ion-item-options>
 
           <ion-item>
@@ -564,9 +529,7 @@ export class ItemSlidingExample {
               <p>A new message in your network</p>
               <p>Oceanic Next has joined your network</p>
             </ion-label>
-            <ion-note slot="end">
-              10:45 AM
-            </ion-note>
+            <ion-note slot="end">10:45 AM</ion-note>
           </ion-item>
 
           <ion-item-options side="start">
@@ -588,9 +551,7 @@ export class ItemSlidingExample {
         {/* Sliding item with icon start options on end side */}
         <ion-item-sliding>
           <ion-item>
-            <ion-label>
-              Sliding Item, Icons Start
-            </ion-label>
+            <ion-label>Sliding Item, Icons Start</ion-label>
           </ion-item>
           <ion-item-options>
             <ion-item-option color="primary">
@@ -607,9 +568,7 @@ export class ItemSlidingExample {
         {/* Sliding item with icon end options on end side */}
         <ion-item-sliding>
           <ion-item>
-            <ion-label>
-              Sliding Item, Icons End
-            </ion-label>
+            <ion-label>Sliding Item, Icons End</ion-label>
           </ion-item>
           <ion-item-options>
             <ion-item-option color="primary">
@@ -626,9 +585,7 @@ export class ItemSlidingExample {
         {/* Sliding item with icon top options on end side */}
         <ion-item-sliding>
           <ion-item>
-            <ion-label>
-              Sliding Item, Icons Top
-            </ion-label>
+            <ion-label>Sliding Item, Icons Top</ion-label>
           </ion-item>
           <ion-item-options>
             <ion-item-option color="primary">
@@ -645,9 +602,7 @@ export class ItemSlidingExample {
         {/* Sliding item with icon bottom options on end side */}
         <ion-item-sliding>
           <ion-item>
-            <ion-label>
-              Sliding Item, Icons Bottom
-            </ion-label>
+            <ion-label>Sliding Item, Icons Bottom</ion-label>
           </ion-item>
           <ion-item-options>
             <ion-item-option color="primary">
@@ -660,14 +615,13 @@ export class ItemSlidingExample {
             </ion-item-option>
           </ion-item-options>
         </ion-item-sliding>
-      </ion-list>
+      </ion-list>,
     ];
   }
 }
 ```
 
 </TabItem>
-
 
 <TabItem value="vue">
 
@@ -693,9 +647,7 @@ export class ItemSlidingExample {
     <!-- Sliding item with expandable options on both sides -->
     <ion-item-sliding>
       <ion-item-options side="start">
-        <ion-item-option color="danger" expandable>
-          Delete
-        </ion-item-option>
+        <ion-item-option color="danger" expandable> Delete </ion-item-option>
       </ion-item-options>
 
       <ion-item>
@@ -703,9 +655,7 @@ export class ItemSlidingExample {
       </ion-item>
 
       <ion-item-options side="end">
-        <ion-item-option color="tertiary" expandable>
-          Archive
-        </ion-item-option>
+        <ion-item-option color="tertiary" expandable> Archive </ion-item-option>
       </ion-item-options>
     </ion-item-sliding>
 
@@ -717,9 +667,7 @@ export class ItemSlidingExample {
           <p>A new message in your network</p>
           <p>Oceanic Next has joined your network</p>
         </ion-label>
-        <ion-note slot="end">
-          10:45 AM
-        </ion-note>
+        <ion-note slot="end"> 10:45 AM </ion-note>
       </ion-item>
 
       <ion-item-options side="start">
@@ -741,9 +689,7 @@ export class ItemSlidingExample {
     <!-- Sliding item with icon start options on end side -->
     <ion-item-sliding>
       <ion-item>
-        <ion-label>
-          Sliding Item, Icons Start
-        </ion-label>
+        <ion-label> Sliding Item, Icons Start </ion-label>
       </ion-item>
       <ion-item-options>
         <ion-item-option color="primary">
@@ -760,9 +706,7 @@ export class ItemSlidingExample {
     <!-- Sliding item with icon end options on end side -->
     <ion-item-sliding>
       <ion-item>
-        <ion-label>
-          Sliding Item, Icons End
-        </ion-label>
+        <ion-label> Sliding Item, Icons End </ion-label>
       </ion-item>
       <ion-item-options>
         <ion-item-option color="primary">
@@ -779,9 +723,7 @@ export class ItemSlidingExample {
     <!-- Sliding item with icon top options on end side -->
     <ion-item-sliding>
       <ion-item>
-        <ion-label>
-          Sliding Item, Icons Top
-        </ion-label>
+        <ion-label> Sliding Item, Icons Top </ion-label>
       </ion-item>
       <ion-item-options>
         <ion-item-option color="primary">
@@ -798,9 +740,7 @@ export class ItemSlidingExample {
     <!-- Sliding item with icon bottom options on end side -->
     <ion-item-sliding>
       <ion-item>
-        <ion-label>
-          Sliding Item, Icons Bottom
-        </ion-label>
+        <ion-label> Sliding Item, Icons Bottom </ion-label>
       </ion-item>
       <ion-item-options>
         <ion-item-option color="primary">
@@ -817,49 +757,33 @@ export class ItemSlidingExample {
 </template>
 
 <script>
-import { 
-  IonIcon, 
-  IonItem, 
-  IonItemOption, 
-  IonItemOptions, 
-  IonItemSliding, 
-  IonLabel, 
-  IonList
-} from '@ionic/vue';
-import { 
-  archive, 
-  ellipsisHorizontal, 
-  ellipsisVertical,
-  heart, 
-  star, 
-  trash
-} from 'ionicons/icons';
-import { defineComponent } from 'vue';
+  import { IonIcon, IonItem, IonItemOption, IonItemOptions, IonItemSliding, IonLabel, IonList } from '@ionic/vue';
+  import { archive, ellipsisHorizontal, ellipsisVertical, heart, star, trash } from 'ionicons/icons';
+  import { defineComponent } from 'vue';
 
-export default defineComponent({
-  components: { 
-    IonIcon, 
-    IonItem, 
-    IonItemOption, 
-    IonItemOptions, 
-    IonItemSliding, 
-    IonLabel, 
-    IonList
-  },
-  setup() {
-    return {
-      archive, 
-      ellipsisHorizontal, 
-      ellipsisVertical,
-      heart, 
-      star, 
-      trash
-    }
-  }
-});
+  export default defineComponent({
+    components: {
+      IonIcon,
+      IonItem,
+      IonItemOption,
+      IonItemOptions,
+      IonItemSliding,
+      IonLabel,
+      IonList,
+    },
+    setup() {
+      return {
+        archive,
+        ellipsisHorizontal,
+        ellipsisVertical,
+        heart,
+        star,
+        trash,
+      };
+    },
+  });
 </script>
 ```
-
 
 </TabItem>
 
@@ -867,65 +791,54 @@ export default defineComponent({
 
 ## Properties
 
-
 ### disabled
 
-| | |
-| --- | --- |
+|                 |                                                            |
+| --------------- | ---------------------------------------------------------- |
 | **Description** | If `true`, the user cannot interact with the sliding item. |
-| **Attribute** | `disabled` |
-| **Type** | `boolean` |
-| **Default** | `false` |
-
-
+| **Attribute**   | `disabled`                                                 |
+| **Type**        | `boolean`                                                  |
+| **Default**     | `false`                                                    |
 
 ## Events
 
-| Name | Description |
-| --- | --- |
+| Name      | Description                                |
+| --------- | ------------------------------------------ |
 | `ionDrag` | Emitted when the sliding position changes. |
-
 
 ## Methods
 
-
 ### close
 
-| | |
-| --- | --- |
+|                 |                                                                            |
+| --------------- | -------------------------------------------------------------------------- |
 | **Description** | Close the sliding item. Items can also be closed from the [List](list.md). |
-| **Signature** | `close() => Promise<void>` |
-
+| **Signature**   | `close() => Promise<void>`                                                 |
 
 ### closeOpened
 
-| | |
-| --- | --- |
+|                 |                                                                                                |
+| --------------- | ---------------------------------------------------------------------------------------------- |
 | **Description** | Close all of the sliding items in the list. Items can also be closed from the [List](list.md). |
-| **Signature** | `closeOpened() => Promise<boolean>` |
-
+| **Signature**   | `closeOpened() => Promise<boolean>`                                                            |
 
 ### getOpenAmount
 
-| | |
-| --- | --- |
+|                 |                                            |
+| --------------- | ------------------------------------------ |
 | **Description** | Get the amount the item is open in pixels. |
-| **Signature** | `getOpenAmount() => Promise<number>` |
-
+| **Signature**   | `getOpenAmount() => Promise<number>`       |
 
 ### getSlidingRatio
 
-| | |
-| --- | --- |
+|                 |                                                                                                                                                                                                                                                                                                                                                                                     |
+| --------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Description** | Get the ratio of the open amount of the item compared to the width of the options.<br />If the number returned is positive, then the options on the right side are open.<br />If the number returned is negative, then the options on the left side are open.<br />If the absolute value of the number is greater than 1, the item is open more than<br />the width of the options. |
-| **Signature** | `getSlidingRatio() => Promise<number>` |
-
+| **Signature**   | `getSlidingRatio() => Promise<number>`                                                                                                                                                                                                                                                                                                                                              |
 
 ### open
 
-| | |
-| --- | --- |
-| **Description** | Open the sliding item. |
-| **Signature** | `open(side: Side \| undefined) => Promise<void>` |
-
-
+|                 |                                                  |
+| --------------- | ------------------------------------------------ |
+| **Description** | Open the sliding item.                           |
+| **Signature**   | `open(side: Side \| undefined) => Promise<void>` |

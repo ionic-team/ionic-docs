@@ -7,8 +7,12 @@ image: /img/meta/open-graph.png
 description: Ionic is the app platform for web developers. Build amazing mobile, web, and desktop apps all with one shared code base and open web standards
 ---
 
-import DocsCard from '@theme/DocsCard';
-import DocsCards from '@theme/DocsCards';
+import PageStyles from '@components/page/react/PageStyles';
+
+import DocsCard from '@components/global/DocsCard';
+import DocsCards from '@components/global/DocsCards';
+
+<PageStyles>
 
 <div class='flex main-flex'>
   <div class="pull-left">
@@ -94,9 +98,9 @@ At the end of the day, it's just React. Ionic React uses open web standards and 
 
   </div>
 
-  <div class="pull-right">
-    <img src="/docs/img/frameworks/react.svg" />
-  </div>
+<div class="pull-right">
+  <img src="/docs/img/frameworks/react.svg" />
+</div>
 
 </div>
 
@@ -116,16 +120,22 @@ $ ionic serve █
     <p>Learn the fundamentals you need to know to start building amazing apps with Ionic Framework.</p>
   </DocsCard>
 
-  <DocsCard header="Add Ionic to Existing React App" href="https://dev.to/ionic/adding-ionic-react-to-an-existing-react-project-4kib" icon="/icons/logo-react-icon.png">
-    <p>Use individual components or the complete app experience.</p>
-  </DocsCard>
+<DocsCard
+  header="Add Ionic to Existing React App"
+  href="https://dev.to/ionic/adding-ionic-react-to-an-existing-react-project-4kib"
+  icon="/icons/logo-react-icon.png"
+>
+  <p>Use individual components or the complete app experience.</p>
+</DocsCard>
 
-  <DocsCard header="Navigation" href="react/navigation" icon="/icons/feature-component-navigation-icon.png">
-    <p>Learn the basics of navigation inside your app with Ionic and React Router</p>
-  </DocsCard>
+<DocsCard header="Navigation" href="react/navigation" icon="/icons/feature-component-navigation-icon.png">
+  <p>Learn the basics of navigation inside your app with Ionic and React Router</p>
+</DocsCard>
 
-  <DocsCard header="Lifecycle" href="react/lifecycle" icon="/icons/feature-guide-components-icon.png">
-    <p>Learn about using Ionic lifecycle events in class components and with hooks</p>
-  </DocsCard>
+<DocsCard header="Lifecycle" href="react/lifecycle" icon="/icons/feature-guide-components-icon.png">
+  <p>Learn about using Ionic lifecycle events in class components and with hooks</p>
+</DocsCard>
 
 </DocsCards>
+
+</PageStyles>

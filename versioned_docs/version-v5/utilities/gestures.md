@@ -1,4 +1,4 @@
-import Codepen from '@theme/Codepen';
+import Codepen from '@components/global/Codepen';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
@@ -14,6 +14,7 @@ Building complex gestures can be time consuming. Other libraries that provide cu
 
 ````mdx-code-block
 <Tabs
+  groupId="framework"
   defaultValue="javascript"
   values={[
     { value: 'javascript', label: 'JavaScript' },
@@ -130,6 +131,7 @@ const gesture = createGesture({
 
 ````mdx-code-block
 <Tabs
+  groupId="framework"
   defaultValue="javascript"
   values={[
     { value: 'javascript', label: 'JavaScript' },
@@ -264,6 +266,7 @@ In this example, our app listens for gestures on the `.rectangle` element. When 
 
 ````mdx-code-block
 <Tabs
+  groupId="framework"
   defaultValue="javascript"
   values={[
     { value: 'javascript', label: 'JavaScript' },

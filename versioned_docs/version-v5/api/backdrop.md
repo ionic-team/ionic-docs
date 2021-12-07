@@ -13,7 +13,7 @@ Backdrops are full screen components that overlay other components. They are use
 
 ## Usage
 
-<Tabs defaultValue="angular" values={[{ value: 'angular', label: 'ANGULAR' }, { value: 'javascript', label: 'JAVASCRIPT' }, { value: 'react', label: 'REACT' }, { value: 'stencil', label: 'STENCIL' }, { value: 'vue', label: 'VUE' }]}>
+<Tabs groupId="framework" defaultValue="angular" values={[{ value: 'angular', label: 'Angular' }, { value: 'javascript', label: 'Javascript' }, { value: 'react', label: 'React' }, { value: 'stencil', label: 'Stencil' }, { value: 'vue', label: 'Vue' }]}>
 
 <TabItem value="angular">
 
@@ -31,11 +31,7 @@ Backdrops are full screen components that overlay other components. They are use
 <ion-backdrop stopPropagation="false"></ion-backdrop>
 
 <!-- Backdrop that sets dynamic properties -->
-<ion-backdrop
-  [tappable]="enableBackdropDismiss"
-  [visible]="showBackdrop"
-  [stopPropagation]="shouldPropagate"
->
+<ion-backdrop [tappable]="enableBackdropDismiss" [visible]="showBackdrop" [stopPropagation]="shouldPropagate">
 </ion-backdrop>
 ```
 
@@ -169,11 +165,7 @@ export class BackdropExample {
   <ion-backdrop stop-propagation="false"></ion-backdrop>
 
   <!-- Backdrop that sets dynamic properties -->
-  <ion-backdrop
-    :tappable="enableBackdropDismiss"
-    :visible="showBackdrop"
-    :stop-propagation="shouldPropagate"
-  >
+  <ion-backdrop :tappable="enableBackdropDismiss" :visible="showBackdrop" :stop-propagation="shouldPropagate">
   </ion-backdrop>
 </template>
 

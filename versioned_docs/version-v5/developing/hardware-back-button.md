@@ -31,6 +31,7 @@ The `ionBackButton` event will not be emitted when running an app in a browser o
 
 ````mdx-code-block
 <Tabs
+  groupId="framework"
   defaultValue="javascript"
   values={[
     { value: 'javascript', label: 'JavaScript' },
@@ -104,6 +105,7 @@ Each hardware back button callback has a `processNextHandler` parameter. Calling
 
 ````mdx-code-block
 <Tabs
+  groupId="framework"
   defaultValue="javascript"
   values={[
     { value: 'javascript', label: 'JavaScript' },
@@ -198,16 +200,16 @@ This example shows how to indicate to Ionic Framework that you want the next han
 Internally, Ionic Framework uses something similar to a priority queue to manage hardware back button handlers. The handler with the largest priority value will be called first. In the event that there are multiple handlers with the same priority value, the _last_ handler of the same priority added to this queue will be the first handler to be called.
 
 ```javascript
-document.addEventListener('ionBackButton', ev => {
+document.addEventListener('ionBackButton', (ev) => {
   // Handler A
-  ev.detail.register(10, processNextHandler => {
+  ev.detail.register(10, (processNextHandler) => {
     console.log('Handler A was called!');
 
     processNextHandler();
   });
 
   // Handler B
-  ev.detail.register(10, processNextHandler => {
+  ev.detail.register(10, (processNextHandler) => {
     console.log('Handler B was called!');
 
     processNextHandler();
@@ -223,6 +225,7 @@ In some scenarios, it may be desirable to quit the app when pressing the hardwar
 
 ````mdx-code-block
 <Tabs
+  groupId="framework"
   defaultValue="javascript"
   values={[
     { value: 'javascript', label: 'JavaScript' },

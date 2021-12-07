@@ -1,11 +1,18 @@
 ---
+title: Migration Guide
 sidebar_label: Migration
 ---
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Migration Guide
+<head>
+  <title>App Migration Guide: Documentation to Migrate Ionic 4.x to 5.x</title>
+  <meta
+    name="description"
+    content="The Ionic Migration Guide provides documentation for how to migrate an app from 4.x to 5.x. Read to learn more about what updates this process requires."
+  />
+</head>
 
 ## Migrating from Ionic 4.x to Ionic 5.x
 
@@ -247,10 +254,7 @@ However, in v4, lazy loading is done via the `loadChildren` method of the Angula
 ```tsx
 // home.module.ts
 @NgModule({
-  imports: [
-    IonicModule,
-    RouterModule.forChild([{ path: '', component: HomePage }]),
-  ],
+  imports: [IonicModule, RouterModule.forChild([{ path: '', component: HomePage }])],
   declarations: [HomePage],
 })
 export class HomePageModule {}

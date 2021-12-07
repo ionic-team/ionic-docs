@@ -1,12 +1,14 @@
 ---
-initialTab: 'preview'
-inlineHtmlPreviews: true
-title: Responsive Grid System and Column Layout Based on Screen Size
-description: Ionic's responsive grid is a powerful mobile-first flexbox system for building custom layouts based on a 12 column layout with breakpoints based on screen size.
-sidebar_label: Responsive Grid
+title: Responsive Grid
 ---
 
-# Responsive Grid
+<head>
+  <title>Responsive Grid System and Column Layout Based on Screen Size</title>
+  <meta
+    name="description"
+    content="Ionic's responsive grid is a powerful mobile-first flexbox system for building custom layouts based on a 12 column layout with breakpoints based on screen size."
+  />
+</head>
 
 The grid is a powerful mobile-first flexbox system for building custom layouts. It is composed of three units — a [grid](../api/grid.md), [row(s)](../api/row.md) and [column(s)](../api/col.md). Columns will expand to fill their row, and will resize to fit additional columns. It is based on a 12 column layout with different breakpoints based on the screen size. The number of columns can be customized using CSS.
 

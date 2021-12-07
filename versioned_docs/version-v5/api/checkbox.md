@@ -13,7 +13,7 @@ Checkboxes allow the selection of multiple options from a set of options. They a
 
 ## Usage
 
-<Tabs defaultValue="angular" values={[{ value: 'angular', label: 'ANGULAR' }, { value: 'javascript', label: 'JAVASCRIPT' }, { value: 'react', label: 'REACT' }, { value: 'stencil', label: 'STENCIL' }, { value: 'vue', label: 'VUE' }]}>
+<Tabs groupId="framework" defaultValue="angular" values={[{ value: 'angular', label: 'Angular' }, { value: 'javascript', label: 'Javascript' }, { value: 'react', label: 'React' }, { value: 'stencil', label: 'Stencil' }, { value: 'vue', label: 'Vue' }]}>
 
 <TabItem value="angular">
 
@@ -140,10 +140,7 @@ export const CheckboxExamples: React.FC = () => {
           <IonItemDivider>Default Checkbox</IonItemDivider>
           <IonItem>
             <IonLabel>Checked: {JSON.stringify(checked)}</IonLabel>
-            <IonCheckbox
-              checked={checked}
-              onIonChange={e => setChecked(e.detail.checked)}
-            />
+            <IonCheckbox checked={checked} onIonChange={(e) => setChecked(e.detail.checked)} />
           </IonItem>
 
           <IonItemDivider>Disabled Checkbox</IonItemDivider>
@@ -212,7 +209,7 @@ export class CheckboxExample {
 
       // Checkboxes in a List
       <ion-list>
-        {this.form.map(entry => (
+        {this.form.map((entry) => (
           <ion-item>
             <ion-label>{entry.val}</ion-label>
             <ion-checkbox slot="end" checked={entry.isChecked}></ion-checkbox>
@@ -250,11 +247,7 @@ export class CheckboxExample {
   <ion-list>
     <ion-item v-for="entry in form">
       <ion-label>{{entry.val}}</ion-label>
-      <ion-checkbox
-        slot="end"
-        @update:modelValue="entry.isChecked = $event"
-        :modelValue="entry.isChecked"
-      >
+      <ion-checkbox slot="end" @update:modelValue="entry.isChecked = $event" :modelValue="entry.isChecked">
       </ion-checkbox>
     </ion-item>
   </ion-list>

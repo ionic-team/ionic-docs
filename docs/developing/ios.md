@@ -1,9 +1,16 @@
 ---
+title: iOS Development
 sidebar_label: Developing for iOS
 skipIntros: true
 ---
 
-# iOS Development
+<head>
+  <title>iOS App Development Guide: Xcode Setup to Build and Run iOS Apps</title>
+  <meta
+    name="description"
+    content="Ionic's iOS development guide covers how to build and run Ionic apps on iOS simulators and devices. iOS apps can only be developed on macOS with Xcode setup."
+  />
+</head>
 
 This guide covers how to run and debug Ionic apps on iOS simulators and devices using [Capacitor](../reference/glossary.md#capacitor) or [Cordova](../reference/glossary.md#cordova). iOS apps can only be developed on macOS with Xcode installed.
 

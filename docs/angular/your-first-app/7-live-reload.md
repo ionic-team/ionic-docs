@@ -30,10 +30,7 @@ With Live Reload running and the app open on your device, let’s implement phot
 
 ```html
 <ion-col size="6" *ngFor="let photo of photoService.photos; index as position">
-  <ion-img
-    [src]="photo.webviewPath"
-    (click)="showActionSheet(photo, position)"
-  ></ion-img>
+  <ion-img [src]="photo.webviewPath" (click)="showActionSheet(photo, position)"></ion-img>
 </ion-col>
 ```
 

@@ -1,4 +1,4 @@
-import Codepen from '@theme/Codepen';
+import Codepen from '@components/global/Codepen';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
@@ -21,6 +21,7 @@ For a list of accepted values, see the <a href="https://developer.mozilla.org/en
 ````mdx-code-block
 <Tabs
   defaultValue="javascript"
+  groupId="framework"
   values={[
     { value: 'javascript', label: 'JavaScript' },
     { value: 'angular', label: 'Angular' },
@@ -105,6 +106,7 @@ For a list of accepted values, see the <a href="https://html.spec.whatwg.org/dev
 
 ````mdx-code-block
 <Tabs
+  groupId="framework"
   defaultValue="javascript"
   values={[
     { value: 'javascript', label: 'JavaScript' },
@@ -182,6 +184,7 @@ Detecting the presence of an on-screen keyboard is useful for adjusting the posi
 
 ````mdx-code-block
 <Tabs
+  groupId="framework"
   defaultValue="javascript"
   values={[
     { value: 'javascript', label: 'JavaScript' },

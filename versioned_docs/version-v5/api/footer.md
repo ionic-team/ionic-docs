@@ -1,8 +1,9 @@
 ---
-title: "Page Footer | Ionic App Footer: Wrapper Root Page Component"
-description: "A footer is a root component that sits at the bottom of a page. Ionic footers can be a wrapper for ion-toolbar to make sure the content area is sized correctly."
-sidebar_label: "ion-footer"
+title: 'Page Footer | Ionic App Footer: Wrapper Root Page Component'
+description: 'A footer is a root component that sits at the bottom of a page. Ionic footers can be a wrapper for ion-toolbar to make sure the content area is sized correctly.'
+sidebar_label: 'ion-footer'
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
@@ -13,8 +14,7 @@ Footer can be a wrapper for ion-toolbar to make sure the content area is sized c
 
 ## Usage
 
-<Tabs defaultValue="angular" values={[{ value: 'angular', label: 'ANGULAR' }, { value: 'javascript', label: 'JAVASCRIPT' }, { value: 'react', label: 'REACT' }, { value: 'stencil', label: 'STENCIL' }, { value: 'vue', label: 'VUE' }]}>
-
+<Tabs groupId="framework" defaultValue="angular" values={[{ value: 'angular', label: 'Angular' }, { value: 'javascript', label: 'Javascript' }, { value: 'react', label: 'React' }, { value: 'stencil', label: 'Stencil' }, { value: 'vue', label: 'Vue' }]}>
 
 <TabItem value="angular">
 
@@ -35,9 +35,7 @@ Footer can be a wrapper for ion-toolbar to make sure the content area is sized c
 </ion-footer>
 ```
 
-
 </TabItem>
-
 
 <TabItem value="javascript">
 
@@ -58,9 +56,7 @@ Footer can be a wrapper for ion-toolbar to make sure the content area is sized c
 </ion-footer>
 ```
 
-
 </TabItem>
-
 
 <TabItem value="react">
 
@@ -71,7 +67,7 @@ import { IonContent, IonFooter, IonToolbar, IonTitle } from '@ionic/react';
 export const FooterExample: React.FC = () => (
   <>
     <IonContent />
-    
+
     {/*-- Footer without a border --*/}
     <IonFooter className="ion-no-border">
       <IonToolbar>
@@ -88,9 +84,7 @@ export const FooterExample: React.FC = () => (
 );
 ```
 
-
 </TabItem>
-
 
 <TabItem value="stencil">
 
@@ -99,7 +93,7 @@ import { Component, h } from '@stencil/core';
 
 @Component({
   tag: 'footer-example',
-  styleUrl: 'footer-example.css'
+  styleUrl: 'footer-example.css',
 })
 export class FooterExample {
   render() {
@@ -117,29 +111,27 @@ export class FooterExample {
         <ion-toolbar>
           <ion-title>Footer</ion-title>
         </ion-toolbar>
-      </ion-footer>
+      </ion-footer>,
     ];
   }
 }
 ```
 
-
 </TabItem>
-
 
 <TabItem value="vue">
 
 ```html
 <template>
   <ion-content></ion-content>
-  
+
   <!-- Footer without a border -->
   <ion-footer class="ion-no-border">
     <ion-toolbar>
       <ion-title>Footer - No Border</ion-title>
     </ion-toolbar>
   </ion-footer>
-  
+
   <ion-footer>
     <ion-toolbar>
       <ion-title>Footer</ion-title>
@@ -148,15 +140,14 @@ export class FooterExample {
 </template>
 
 <script>
-import { IonContent, IonFooter, IonTitle, IonToolbar } from '@ionic/vue';
-import { defineComponent } from 'vue';
+  import { IonContent, IonFooter, IonTitle, IonToolbar } from '@ionic/vue';
+  import { defineComponent } from 'vue';
 
-export default defineComponent({
-  components: { IonContent, IonFooter, IonTitle, IonToolbar }
-});
+  export default defineComponent({
+    components: { IonContent, IonFooter, IonTitle, IonToolbar },
+  });
 </script>
 ```
-
 
 </TabItem>
 
@@ -164,25 +155,20 @@ export default defineComponent({
 
 ## Properties
 
-
 ### mode
 
-| | |
-| --- | --- |
+|                 |                                                   |
+| --------------- | ------------------------------------------------- |
 | **Description** | The mode determines which platform styles to use. |
-| **Attribute** | `mode` |
-| **Type** | `"ios" \| "md"` |
-| **Default** | `undefined` |
-
-
+| **Attribute**   | `mode`                                            |
+| **Type**        | `"ios" \| "md"`                                   |
+| **Default**     | `undefined`                                       |
 
 ### translucent
 
-| | |
-| --- | --- |
+|                 |                                                                                                                                                                                                                                                                                                                                                                |
+| --------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Description** | If `true`, the footer will be translucent.<br />Only applies when the mode is `"ios"` and the device supports<br />[`backdrop-filter`](https://developer.mozilla.org/en-US/docs/Web/CSS/backdrop-filter#Browser_compatibility).<br /><br />Note: In order to scroll content behind the footer, the `fullscreen`<br />attribute needs to be set on the content. |
-| **Attribute** | `translucent` |
-| **Type** | `boolean` |
-| **Default** | `false` |
-
-
+| **Attribute**   | `translucent`                                                                                                                                                                                                                                                                                                                                                  |
+| **Type**        | `boolean`                                                                                                                                                                                                                                                                                                                                                      |
+| **Default**     | `false`                                                                                                                                                                                                                                                                                                                                                        |

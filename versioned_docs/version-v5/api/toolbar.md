@@ -1,10 +1,11 @@
 ---
-title: "Toolbar | Customize App Menu Toolbar Buttons and Icons"
-description: "Ion-toolbar component lets you customize toolbar buttons on your app menu. Add fixed toolbars above or below content or use full screen to scroll with content."
-sidebar_label: "ion-toolbar"
-demoUrl: "/docs/demos/api/toolbar/index.html"
-demoSourceUrl: "https://github.com/ionic-team/ionic-docs/tree/main/static/demos/api/toolbar/index.html"
+title: 'Toolbar | Customize App Menu Toolbar Buttons and Icons'
+description: 'Ion-toolbar component lets you customize toolbar buttons on your app menu. Add fixed toolbars above or below content or use full screen to scroll with content.'
+sidebar_label: 'ion-toolbar'
+demoUrl: '/docs/demos/api/toolbar/index.html'
+demoSourceUrl: 'https://github.com/ionic-team/ionic-docs/tree/main/static/demos/api/toolbar/index.html'
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
@@ -12,29 +13,24 @@ import TabItem from '@theme/TabItem';
 
 Toolbars are positioned above or below content. When a toolbar is placed in an `<ion-header>` it will appear fixed at the top of the content, and when it is in an `<ion-footer>` it will appear fixed at the bottom. Fullscreen content will scroll behind a toolbar in a header or footer. When placed within an `<ion-content>`, toolbars will scroll with the content.
 
-
 ## Buttons
 
 Buttons placed in a toolbar should be placed inside of the `<ion-buttons>` element. The `<ion-buttons>` element can be positioned inside of the toolbar using a named slot. The below chart has a description of each slot.
 
-| Slot         | Description                                                                                              |
-|--------------|----------------------------------------------------------------------------------------------------------|
-| `secondary`  | Positions element to the `left` of the content in `ios` mode, and directly to the `right` in `md` mode.  |
-| `primary`    | Positions element to the `right` of the content in `ios` mode, and to the far `right` in `md` mode.      |
-| `start`      | Positions to the `left` of the content in LTR, and to the `right` in RTL.                                |
-| `end`        | Positions to the `right` of the content in LTR, and to the `left` in RTL.                                |
-
+| Slot        | Description                                                                                             |
+| ----------- | ------------------------------------------------------------------------------------------------------- |
+| `secondary` | Positions element to the `left` of the content in `ios` mode, and directly to the `right` in `md` mode. |
+| `primary`   | Positions element to the `right` of the content in `ios` mode, and to the far `right` in `md` mode.     |
+| `start`     | Positions to the `left` of the content in LTR, and to the `right` in RTL.                               |
+| `end`       | Positions to the `right` of the content in LTR, and to the `left` in RTL.                               |
 
 ## Borders
 
-In `md` mode, the `<ion-header>` will receive a box-shadow on the bottom, and the `<ion-footer>` will receive a box-shadow on the top.  In `ios` mode, the `<ion-header>` will receive a border on the bottom, and the `<ion-footer>` will receive a border on the top.
-
-
+In `md` mode, the `<ion-header>` will receive a box-shadow on the bottom, and the `<ion-footer>` will receive a box-shadow on the top. In `ios` mode, the `<ion-header>` will receive a border on the bottom, and the `<ion-footer>` will receive a border on the top.
 
 ## Usage
 
-<Tabs defaultValue="angular" values={[{ value: 'angular', label: 'ANGULAR' }, { value: 'javascript', label: 'JAVASCRIPT' }, { value: 'react', label: 'REACT' }, { value: 'stencil', label: 'STENCIL' }, { value: 'vue', label: 'VUE' }]}>
-
+<Tabs groupId="framework" defaultValue="angular" values={[{ value: 'angular', label: 'Angular' }, { value: 'javascript', label: 'Javascript' }, { value: 'react', label: 'React' }, { value: 'stencil', label: 'Stencil' }, { value: 'vue', label: 'Vue' }]}>
 
 <TabItem value="angular">
 
@@ -108,14 +104,10 @@ In `md` mode, the `<ion-header>` will receive a box-shadow on the bottom, and th
 
 <ion-toolbar>
   <ion-buttons slot="secondary">
-    <ion-button>
-      Account
-    </ion-button>
+    <ion-button> Account </ion-button>
   </ion-buttons>
   <ion-buttons slot="primary">
-    <ion-button color="danger">
-      Edit
-    </ion-button>
+    <ion-button color="danger"> Edit </ion-button>
   </ion-buttons>
   <ion-title>Text Only Buttons</ion-title>
 </ion-toolbar>
@@ -123,7 +115,6 @@ In `md` mode, the `<ion-header>` will receive a box-shadow on the bottom, and th
 <ion-toolbar>
   <ion-buttons slot="start">
     <ion-menu-button autoHide="false"></ion-menu-button>
-
   </ion-buttons>
   <ion-buttons slot="secondary">
     <ion-button>
@@ -142,7 +133,6 @@ In `md` mode, the `<ion-header>` will receive a box-shadow on the bottom, and th
   <ion-title>Right side menu toggle</ion-title>
   <ion-buttons slot="end">
     <ion-menu-button autoHide="false"></ion-menu-button>
-
   </ion-buttons>
 </ion-toolbar>
 
@@ -157,12 +147,8 @@ In `md` mode, the `<ion-header>` will receive a box-shadow on the bottom, and th
 
 <ion-toolbar>
   <ion-segment value="all">
-    <ion-segment-button value="all">
-      All
-    </ion-segment-button>
-    <ion-segment-button value="favorites">
-      Favorites
-    </ion-segment-button>
+    <ion-segment-button value="all"> All </ion-segment-button>
+    <ion-segment-button value="favorites"> Favorites </ion-segment-button>
   </ion-segment>
 </ion-toolbar>
 
@@ -202,7 +188,6 @@ In `md` mode, the `<ion-header>` will receive a box-shadow on the bottom, and th
 ```
 
 </TabItem>
-
 
 <TabItem value="javascript">
 
@@ -276,14 +261,10 @@ In `md` mode, the `<ion-header>` will receive a box-shadow on the bottom, and th
 
 <ion-toolbar>
   <ion-buttons slot="secondary">
-    <ion-button>
-      Account
-    </ion-button>
+    <ion-button> Account </ion-button>
   </ion-buttons>
   <ion-buttons slot="primary">
-    <ion-button color="danger">
-      Edit
-    </ion-button>
+    <ion-button color="danger"> Edit </ion-button>
   </ion-buttons>
   <ion-title>Text Only Buttons</ion-title>
 </ion-toolbar>
@@ -323,12 +304,8 @@ In `md` mode, the `<ion-header>` will receive a box-shadow on the bottom, and th
 
 <ion-toolbar>
   <ion-segment value="all">
-    <ion-segment-button value="all">
-      All
-    </ion-segment-button>
-    <ion-segment-button value="favorites">
-      Favorites
-    </ion-segment-button>
+    <ion-segment-button value="all"> All </ion-segment-button>
+    <ion-segment-button value="favorites"> Favorites </ion-segment-button>
   </ion-segment>
 </ion-toolbar>
 
@@ -368,7 +345,6 @@ In `md` mode, the `<ion-header>` will receive a box-shadow on the bottom, and th
 ```
 
 </TabItem>
-
 
 <TabItem value="react">
 
@@ -533,9 +509,7 @@ export const ToolbarExample: React.FC = () => (
 );
 ```
 
-
 </TabItem>
-
 
 <TabItem value="stencil">
 
@@ -544,16 +518,15 @@ import { Component, h } from '@stencil/core';
 
 @Component({
   tag: 'toolbar-example',
-  styleUrl: 'toolbar-example.css'
+  styleUrl: 'toolbar-example.css',
 })
 export class ToolbarExample {
-
   clickedStar() {
-    console.log("Clicked star button");
+    console.log('Clicked star button');
   }
 
   clickedSearch() {
-    console.log("Clicked search button");
+    console.log('Clicked search button');
   }
 
   render() {
@@ -627,14 +600,10 @@ export class ToolbarExample {
 
       <ion-toolbar>
         <ion-buttons slot="secondary">
-          <ion-button>
-            Account
-          </ion-button>
+          <ion-button>Account</ion-button>
         </ion-buttons>
         <ion-buttons slot="primary">
-          <ion-button color="danger">
-            Edit
-          </ion-button>
+          <ion-button color="danger">Edit</ion-button>
         </ion-buttons>
         <ion-title>Text Only Buttons</ion-title>
       </ion-toolbar>,
@@ -642,7 +611,6 @@ export class ToolbarExample {
       <ion-toolbar>
         <ion-buttons slot="start">
           <ion-menu-button autoHide={false}></ion-menu-button>
-
         </ion-buttons>
         <ion-buttons slot="secondary">
           <ion-button>
@@ -661,7 +629,6 @@ export class ToolbarExample {
         <ion-title>Right side menu toggle</ion-title>
         <ion-buttons slot="end">
           <ion-menu-button autoHide={false}></ion-menu-button>
-
         </ion-buttons>
       </ion-toolbar>,
 
@@ -676,12 +643,8 @@ export class ToolbarExample {
 
       <ion-toolbar>
         <ion-segment value="all">
-          <ion-segment-button value="all">
-            All
-          </ion-segment-button>
-          <ion-segment-button value="favorites">
-            Favorites
-          </ion-segment-button>
+          <ion-segment-button value="all">All</ion-segment-button>
+          <ion-segment-button value="favorites">Favorites</ion-segment-button>
         </ion-segment>
       </ion-toolbar>,
 
@@ -717,14 +680,13 @@ export class ToolbarExample {
           </ion-button>
         </ion-buttons>
         <ion-title>Dark Toolbar</ion-title>
-      </ion-toolbar>
+      </ion-toolbar>,
     ];
   }
 }
 ```
 
 </TabItem>
-
 
 <TabItem value="vue">
 
@@ -799,14 +761,10 @@ export class ToolbarExample {
 
   <ion-toolbar>
     <ion-buttons slot="secondary">
-      <ion-button>
-        Account
-      </ion-button>
+      <ion-button> Account </ion-button>
     </ion-buttons>
     <ion-buttons slot="primary">
-      <ion-button color="danger">
-        Edit
-      </ion-button>
+      <ion-button color="danger"> Edit </ion-button>
     </ion-buttons>
     <ion-title>Text Only Buttons</ion-title>
   </ion-toolbar>
@@ -814,7 +772,6 @@ export class ToolbarExample {
   <ion-toolbar>
     <ion-buttons slot="start">
       <ion-menu-button auto-hide="false"></ion-menu-button>
-
     </ion-buttons>
     <ion-buttons slot="secondary">
       <ion-button>
@@ -833,7 +790,6 @@ export class ToolbarExample {
     <ion-title>Right side menu toggle</ion-title>
     <ion-buttons slot="end">
       <ion-menu-button auto-hide="false"></ion-menu-button>
-
     </ion-buttons>
   </ion-toolbar>
 
@@ -848,12 +804,8 @@ export class ToolbarExample {
 
   <ion-toolbar>
     <ion-segment value="all">
-      <ion-segment-button value="all">
-        All
-      </ion-segment-button>
-      <ion-segment-button value="favorites">
-        Favorites
-      </ion-segment-button>
+      <ion-segment-button value="all"> All </ion-segment-button>
+      <ion-segment-button value="favorites"> Favorites </ion-segment-button>
     </ion-segment>
   </ion-toolbar>
 
@@ -893,42 +845,29 @@ export class ToolbarExample {
 </template>
 
 <script>
-import { 
-  IonButton, 
-  IonButtons, 
-  IonIcon,
-  IonTitle, 
-  IonToolbar
-} from '@ionic/vue';
-import { 
-  ellipsisHorizontal,
-  ellipsisVertical, 
-  helpCircle, 
-  personCircle, 
-  search, 
-  star
-} from 'ionicons/icons';
-import { defineComponent } from 'vue';
+  import { IonButton, IonButtons, IonIcon, IonTitle, IonToolbar } from '@ionic/vue';
+  import { ellipsisHorizontal, ellipsisVertical, helpCircle, personCircle, search, star } from 'ionicons/icons';
+  import { defineComponent } from 'vue';
 
-export default defineComponent({
-  components: {
-    IonButton, 
-    IonButtons, 
-    IonIcon,
-    IonTitle, 
-    IonToolbar
-  },
-  setup() {
-    return {
-      ellipsisHorizontal,
-      ellipsisVertical, 
-      helpCircle, 
-      personCircle, 
-      search, 
-      star
-    }
-  }
-});
+  export default defineComponent({
+    components: {
+      IonButton,
+      IonButtons,
+      IonIcon,
+      IonTitle,
+      IonToolbar,
+    },
+    setup() {
+      return {
+        ellipsisHorizontal,
+        ellipsisVertical,
+        helpCircle,
+        personCircle,
+        search,
+        star,
+      };
+    },
+  });
 </script>
 ```
 
@@ -938,53 +877,46 @@ export default defineComponent({
 
 ## Properties
 
-
 ### color
 
-| | |
-| --- | --- |
+|                 |                                                                                                                                                                                                                                                                                  |
+| --------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Description** | The color to use from your application's color palette.<br />Default options are: `"primary"`, `"secondary"`, `"tertiary"`, `"success"`, `"warning"`, `"danger"`, `"light"`, `"medium"`, and `"dark"`.<br />For more information on colors, see [theming](../theming/basics.md). |
-| **Attribute** | `color` |
-| **Type** | `string \| undefined` |
-| **Default** | `undefined` |
-
-
+| **Attribute**   | `color`                                                                                                                                                                                                                                                                          |
+| **Type**        | `string \| undefined`                                                                                                                                                                                                                                                            |
+| **Default**     | `undefined`                                                                                                                                                                                                                                                                      |
 
 ### mode
 
-| | |
-| --- | --- |
+|                 |                                                   |
+| --------------- | ------------------------------------------------- |
 | **Description** | The mode determines which platform styles to use. |
-| **Attribute** | `mode` |
-| **Type** | `"ios" \| "md"` |
-| **Default** | `undefined` |
-
-
+| **Attribute**   | `mode`                                            |
+| **Type**        | `"ios" \| "md"`                                   |
+| **Default**     | `undefined`                                       |
 
 ## CSS Custom Properties
 
-| Name | Description |
-| --- | --- |
-| `--background` | Background of the toolbar |
-| `--border-color` | Color of the toolbar border |
-| `--border-style` | Style of the toolbar border |
-| `--border-width` | Width of the toolbar border |
-| `--color` | Color of the toolbar text |
-| `--min-height` | Minimum height of the toolbar |
-| `--opacity` | Opacity of the toolbar background |
-| `--padding-bottom` | Bottom padding of the toolbar |
-| `--padding-end` | Right padding if direction is left-to-right, and left padding if direction is right-to-left of the toolbar |
-| `--padding-start` | Left padding if direction is left-to-right, and right padding if direction is right-to-left of the toolbar |
-| `--padding-top` | Top padding of the toolbar |
-
+| Name               | Description                                                                                                |
+| ------------------ | ---------------------------------------------------------------------------------------------------------- |
+| `--background`     | Background of the toolbar                                                                                  |
+| `--border-color`   | Color of the toolbar border                                                                                |
+| `--border-style`   | Style of the toolbar border                                                                                |
+| `--border-width`   | Width of the toolbar border                                                                                |
+| `--color`          | Color of the toolbar text                                                                                  |
+| `--min-height`     | Minimum height of the toolbar                                                                              |
+| `--opacity`        | Opacity of the toolbar background                                                                          |
+| `--padding-bottom` | Bottom padding of the toolbar                                                                              |
+| `--padding-end`    | Right padding if direction is left-to-right, and left padding if direction is right-to-left of the toolbar |
+| `--padding-start`  | Left padding if direction is left-to-right, and right padding if direction is right-to-left of the toolbar |
+| `--padding-top`    | Top padding of the toolbar                                                                                 |
 
 ## Slots
 
-| Name | Description |
-| --- | --- |
-| `` | Content is placed between the named slots if provided without a slot. |
-| `end` | Content is placed to the right of the toolbar text in LTR, and to the left in RTL. |
-| `primary` | Content is placed to the right of the toolbar text in `ios` mode, and to the far right in `md` mode. |
+| Name        | Description                                                                                              |
+| ----------- | -------------------------------------------------------------------------------------------------------- |
+| ``          | Content is placed between the named slots if provided without a slot.                                    |
+| `end`       | Content is placed to the right of the toolbar text in LTR, and to the left in RTL.                       |
+| `primary`   | Content is placed to the right of the toolbar text in `ios` mode, and to the far right in `md` mode.     |
 | `secondary` | Content is placed to the left of the toolbar text in `ios` mode, and directly to the right in `md` mode. |
-| `start` | Content is placed to the left of the toolbar text in LTR, and to the right in RTL. |
-
+| `start`     | Content is placed to the left of the toolbar text in LTR, and to the right in RTL.                       |

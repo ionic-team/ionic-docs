@@ -1,10 +1,15 @@
 ---
-title: Platform | Ionic Platform to Customize Apps to Fit Any Device
-description: Ionic Platform service can be used to get information about your current device. With this information you can completely customize your app to fit any device.
-sidebar_label: Platform
+title: Platform
+toc_max_heading_level: 2
 ---
 
-# Platform
+<head>
+  <title>Platform | Ionic Platform to Customize Apps to Fit Any Device</title>
+  <meta
+    name="description"
+    content="Ionic Platform service can be used to get information about your current device. With this information you can completely customize your app to fit any device."
+  />
+</head>
 
 The Platform service can be used to get information about your current device. You can get all of the platforms associated with the device using the `platforms` method, including whether the app is being viewed from a tablet, if it's on a mobile device or browser, and the exact platform (iOS, Android, etc). You can also get the orientation of the device, if it uses right-to-left language direction, and much much more. With this information you can completely customize your app to fit any device.
 
@@ -56,7 +61,7 @@ Below is a table listing all the possible platform values along with correspondi
 
 #### Customizing Platform Detection Functions
 
-The function used to detect a specific platform can be overridden by providing an alternative function in the global [Ionic config](./config). Each function takes `window` as a parameter and returns a boolean. 
+The function used to detect a specific platform can be overridden by providing an alternative function in the global [Ionic config](./config). Each function takes `window` as a parameter and returns a boolean.
 
 ```tsx
 import { IonicModule } from '@ionic/angular';
@@ -67,7 +72,7 @@ import { IonicModule } from '@ionic/angular';
     BrowserModule,
     IonicModule.forRoot({
       platform: {
-        /** The default `desktop` function returns false for devices with a touchscreen. 
+        /** The default `desktop` function returns false for devices with a touchscreen.
         * This is not always wanted, so this function tests the User Agent instead.
         **/
         'desktop': (win) => {
@@ -84,21 +89,21 @@ import { IonicModule } from '@ionic/angular';
 
 ```ts
 type PlatformConfig = {
-    android?: ((win: Window) => boolean) | undefined;
-    capacitor?: ((win: Window) => boolean) | undefined;
-    cordova?: ((win: Window) => boolean) | undefined;
-    desktop?: ((win: Window) => boolean) | undefined;
-    electron?: ((win: Window) => boolean) | undefined;
-    hybrid?: ((win: Window) => boolean) | undefined;
-    ios?: ((win: Window) => boolean) | undefined;
-    ipad?: ((win: Window) => boolean) | undefined;
-    iphone?: ((win: Window) => boolean) | undefined;
-    mobile?: ((win: Window) => boolean) | undefined;
-    mobileweb?: ((win: Window) => boolean) | undefined;
-    phablet?: ((win: Window) => boolean) | undefined;
-    pwa?: ((win: Window) => boolean) | undefined;
-    tablet?: ((win: Window) => boolean) | undefined;
-}
+  android?: ((win: Window) => boolean) | undefined;
+  capacitor?: ((win: Window) => boolean) | undefined;
+  cordova?: ((win: Window) => boolean) | undefined;
+  desktop?: ((win: Window) => boolean) | undefined;
+  electron?: ((win: Window) => boolean) | undefined;
+  hybrid?: ((win: Window) => boolean) | undefined;
+  ios?: ((win: Window) => boolean) | undefined;
+  ipad?: ((win: Window) => boolean) | undefined;
+  iphone?: ((win: Window) => boolean) | undefined;
+  mobile?: ((win: Window) => boolean) | undefined;
+  mobileweb?: ((win: Window) => boolean) | undefined;
+  phablet?: ((win: Window) => boolean) | undefined;
+  pwa?: ((win: Window) => boolean) | undefined;
+  tablet?: ((win: Window) => boolean) | undefined;
+};
 ```
 
 ### `platforms() => string[]`

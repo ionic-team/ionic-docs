@@ -1,6 +1,7 @@
 ---
-sidebar_label: "ion-route-redirect"
+sidebar_label: 'ion-route-redirect'
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
@@ -11,11 +12,11 @@ A route redirect can only be used with an `ion-router` as a direct child of it.
 > Note: this component should only be used with vanilla and Stencil JavaScript projects. For Angular projects, use [`ion-router-outlet`](router-outlet.md) and the Angular router.
 
 The route redirect has two configurable properties:
- - `from`
- - `to`
+
+- `from`
+- `to`
 
 It redirects "from" a URL "to" another URL. When the defined `ion-route-redirect` rule matches, the router will redirect from the path specified in the `from` property to the path in the `to` property. In order for a redirect to occur the `from` path needs to be an exact match to the navigated URL.
-
 
 ## Multiple Route Redirects
 
@@ -33,7 +34,6 @@ Take the following two redirects:
 ```
 
 If the user navigates to `/admin` the router will redirect to `/login` and stop there. It will never evaluate more than one redirect.
-
 
 ## Usage
 
@@ -81,35 +81,30 @@ routeRedirect.setAttribute('to', isLoggedIn ? undefined : '/login');
 
 ## Properties
 
-
 ### from
 
-| | |
-| --- | --- |
+|                 |                                                                                                                                                                                                                                                                                                      |
+| --------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Description** | A redirect route, redirects "from" a URL "to" another URL. This property is that "from" URL.<br />It needs to be an exact match of the navigated URL in order to apply.<br /><br />The path specified in this value is always an absolute path, even if the initial `/` slash<br />is not specified. |
-| **Attribute** | `from` |
-| **Type** | `string` |
-| **Default** | `undefined` |
-
-
+| **Attribute**   | `from`                                                                                                                                                                                                                                                                                               |
+| **Type**        | `string`                                                                                                                                                                                                                                                                                             |
+| **Default**     | `undefined`                                                                                                                                                                                                                                                                                          |
 
 ### to
 
-| | |
-| --- | --- |
+|                 |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
+| --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Description** | A redirect route, redirects "from" a URL "to" another URL. This property is that "to" URL.<br />When the defined `ion-route-redirect` rule matches, the router will redirect to the path<br />specified in this property.<br /><br />The value of this property is always an absolute path inside the scope of routes defined in<br />`ion-router` it can't be used with another router or to perform a redirection to a different domain.<br /><br />Note that this is a virtual redirect, it will not cause a real browser refresh, again, it's<br />a redirect inside the context of ion-router.<br /><br />When this property is not specified or his value is `undefined` the whole redirect route is noop,<br />even if the "from" value matches. |
-| **Attribute** | `to` |
-| **Type** | `null \| string \| undefined` |
-| **Default** | `undefined` |
-
-
+| **Attribute**   | `to`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
+| **Type**        | `null \| string \| undefined`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
+| **Default**     | `undefined`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
 
 ## Events
 
-| Name | Description |
-| --- | --- |
-| `ionRouteRedirectChanged` | Internal event that fires when any value of this rule is added/removed from the DOM,
+| Name                      | Description                                                                          |
+| ------------------------- | ------------------------------------------------------------------------------------ |
+| `ionRouteRedirectChanged` | Internal event that fires when any value of this rule is added/removed from the DOM, |
+
 or any of his public properties changes.
 
 `ion-router` captures this event in order to update his internal registry of router rules. |
-

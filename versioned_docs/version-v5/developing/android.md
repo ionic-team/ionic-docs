@@ -8,7 +8,8 @@ This guide covers how to run and debug Ionic apps on Android emulators and devic
 
 ## Android Studio
 
-<a href="https://developer.android.com/studio/" target="_blank">Android Studio</a> is the IDE for creating native Android apps. It includes the [Android SDK](../reference/glossary.md#android-sdk), which will need to be configured for use in the command line.
+[Android Studio](https://developer.android.com/studio/) is the IDE for creating native Android apps. It includes the [Android SDK](../reference/glossary.md#android-sdk), which
+will need to be configured for use in the command line.
 
 Android Studio is also used to [create Android virtual devices](android.md#creating-an-android-virtual-device), which are required for the Android emulator. Ionic apps can also be [launched to a device](android.md#set-up-an-android-device).
 
@@ -29,7 +30,8 @@ Once installed, open Android Studio. The IDE should detect that the Android SDK 
 By default, the latest stable SDK Platform is installed, which includes a collection of packages required to target that version of Android.
 
 To install system images and other minor SDK platform packages, you may need to ensure **Show Package Details** is checked at the bottom of the SDK Manager.
-<img alt="Android Studio SDK Manager" src="/img/installation/android-studio-sdk.png" />
+
+![Android Studio SDK Manager](/img/installation/android-studio-sdk.png)
 
 For future reference, the Android SDK can be managed with Android Studio in the **Configure** &raquo; **SDK Manager** menu of the Android Studio welcome screen or **Tools** &raquo; **SDK Manager** inside Android projects.
 
@@ -56,9 +58,12 @@ In `~/.bashrc`, `~/.bash_profile`, or similar shell startup scripts, make the fo
    $ export PATH=$PATH:$ANDROID_SDK_ROOT/emulator
    ```
 
-   <blockquote>
-     <p>For <code>apksigner</code> and <code>zipalign</code>, <code>$ANDROID_SDK_ROOT/build-tools&lt;version></code> must also be added to <code>PATH</code>.</p>
-   </blockquote>
+:::note
+
+For `apksigner` and `zipalign`, `$ANDROID_SDK_ROOT/build-tools&lt;version>` must
+also be added to `PATH`.
+
+:::
 
 ### Creating an Android Virtual Device
 
@@ -72,9 +77,11 @@ Click **Create Virtual Device** and select a suitable device definition. If unsu
 
 Once the AVD is created, launch the AVD into the Android emulator. Keeping the emulator running is the best way to ensure detection while developing Ionic apps for Android.
 
-<figure class="device">
-  <img alt="Android Emulator Booting" src="/img/installation/android-emulator-booting.png" />
-</figure>
+<img
+  style={{ maxWidth: '25rem', margin: '1rem auto' }}
+  src="/docs/img/installation/android-emulator-booting.png"
+  alt="Android Emulator Booting"
+/>
 
 ### Set up an Android Device
 
@@ -105,8 +112,14 @@ Unfortunately, Cordova is not compatible with the latest version of Java.
 
 ### Gradle
 
-<a href="https://gradle.org/" target="_blank">Gradle</a> is the build tool used in Android apps and must be installed separately. See the <a href="https://gradle.org/install/" target="_blank">install page</a> for details.
-
+<a href="https://gradle.org/" target="_blank">
+  Gradle
+</a> is the build tool used in Android apps and must be installed separately. See the <a
+  href="https://gradle.org/install/"
+  target="_blank"
+>
+  install page
+</a> for details.
 
 ## Project Setup
 
@@ -114,24 +127,23 @@ Before apps can be deployed to Android simulators and devices, the native projec
 
 1. **Generate the native project, if it does not already exist.**
 
-    For Capacitor, run the following:
+   For Capacitor, run the following:
 
-    ```shell
-    $ ionic capacitor add android
-    ```
+   ```shell
+   $ ionic capacitor add android
+   ```
 
-    For Cordova, run the following:
+   For Cordova, run the following:
 
-    ```shell
-    $ ionic cordova prepare android
-    ```
+   ```shell
+   $ ionic cordova prepare android
+   ```
 
 2. **Set the [Package ID](../reference/glossary.md#package-id).**
 
-    For Capacitor, open the `capacitor.config.json` file and modify the `appId` property.
+   For Capacitor, open the `capacitor.config.json` file and modify the `appId` property.
 
-    For Cordova, open the `config.xml` file and modify the `id` attribute of the root element, `<widget>`. See [the Cordova documentation](https://cordova.apache.org/docs/en/latest/config_ref/#widget) for more information.
-
+   For Cordova, open the `config.xml` file and modify the `id` attribute of the root element, `<widget>`. See [the Cordova documentation](https://cordova.apache.org/docs/en/latest/config_ref/#widget) for more information.
 
 ## Running with Capacitor
 
@@ -139,22 +151,24 @@ Capacitor uses Android Studio to build and run apps to simulators and devices.
 
 1. **Develop the Ionic app and sync it to the native project.**
 
-    With each meaningful change, Ionic apps must be built into web assets before the change can appear on Android simulators and devices. The web assets then must be copied into the native project. Luckily, this process is made easy with a single Ionic CLI command.
+   With each meaningful change, Ionic apps must be built into web assets before the change can appear on Android simulators and devices. The web assets then must be copied into the native project. Luckily, this process is made easy with a single Ionic CLI command.
 
-    ```shell
-    $ ionic capacitor copy android
-    ```
+   ```shell
+   $ ionic capacitor copy android
+   ```
 
 2. **In Android Studio, click the Run button and then select the target simulator or device.**
 
 ![Android Studio Run Button Area](/img/running/android-studio-run-button-area.png)
 
 ### Live reload
+
 To start a live-reload server run the following command.
 
 ```shell
 $ ionic capacitor run android -l --host=YOUR_IP_ADDRESS
 ```
+
 When running on a device make sure the device and your development machine are connected to the same network.
 
 ## Running with Cordova

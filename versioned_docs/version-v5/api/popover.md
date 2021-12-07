@@ -45,7 +45,7 @@ Any of the defined [CSS Custom Properties](#css-custom-properties) can be used t
 
 ## Usage
 
-<Tabs defaultValue="angular" values={[{ value: 'angular', label: 'ANGULAR' }, { value: 'javascript', label: 'JAVASCRIPT' }, { value: 'react', label: 'REACT' }, { value: 'stencil', label: 'STENCIL' }, { value: 'vue', label: 'VUE' }]}>
+<Tabs groupId="framework" defaultValue="angular" values={[{ value: 'angular', label: 'Angular' }, { value: 'javascript', label: 'Javascript' }, { value: 'react', label: 'React' }, { value: 'stencil', label: 'Stencil' }, { value: 'vue', label: 'Vue' }]}>
 
 <TabItem value="angular">
 
@@ -113,7 +113,7 @@ function presentPopover(ev) {
     component: 'popover-example-page',
     cssClass: 'my-custom-class',
     event: ev,
-    translucent: true
+    translucent: true,
   });
   document.body.appendChild(popover);
 
@@ -132,15 +132,7 @@ function presentPopover(ev) {
 /* Using with useIonPopover Hook */
 
 import React from 'react';
-import {
-  IonButton,
-  IonContent,
-  IonItem,
-  IonList,
-  IonListHeader,
-  IonPage,
-  useIonPopover,
-} from '@ionic/react';
+import { IonButton, IonContent, IonItem, IonList, IonListHeader, IonPage, useIonPopover } from '@ionic/react';
 
 const PopoverList: React.FC<{
   onHide: () => void;
@@ -167,7 +159,7 @@ const PopoverExample: React.FC = () => {
       <IonContent>
         <IonButton
           expand="block"
-          onClick={e =>
+          onClick={(e) =>
             present({
               event: e.nativeEvent,
             })
@@ -199,9 +191,7 @@ export const PopoverExample: React.FC = () => {
         cssClass="my-custom-class"
         event={popoverState.event}
         isOpen={popoverState.showPopover}
-        onDidDismiss={() =>
-          setShowPopover({ showPopover: false, event: undefined })
-        }
+        onDidDismiss={() => setShowPopover({ showPopover: false, event: undefined })}
       >
         <p>This is popover content</p>
       </IonPopover>
@@ -248,9 +238,7 @@ export class PopoverExample {
   render() {
     return [
       <ion-content>
-        <ion-button onClick={ev => this.presentPopover(ev)}>
-          Present Popover
-        </ion-button>
+        <ion-button onClick={(ev) => this.presentPopover(ev)}>Present Popover</ion-button>
       </ion-content>,
     ];
   }
@@ -313,12 +301,7 @@ export class PagePopover {
 </template>
 
 <script>
-  import {
-    IonButton,
-    IonContent,
-    IonPage,
-    popoverController,
-  } from '@ionic/vue';
+  import { IonButton, IonContent, IonPage, popoverController } from '@ionic/vue';
   import Popver from './popover.vue';
 
   export default {

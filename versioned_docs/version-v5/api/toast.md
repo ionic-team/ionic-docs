@@ -21,7 +21,7 @@ The toast can be dismissed automatically after a specific amount of time by pass
 
 ## Usage
 
-<Tabs defaultValue="angular" values={[{ value: 'angular', label: 'ANGULAR' }, { value: 'javascript', label: 'JAVASCRIPT' }, { value: 'react', label: 'REACT' }, { value: 'stencil', label: 'STENCIL' }, { value: 'vue', label: 'VUE' }]}>
+<Tabs groupId="framework" defaultValue="angular" values={[{ value: 'angular', label: 'Angular' }, { value: 'javascript', label: 'Javascript' }, { value: 'react', label: 'React' }, { value: 'stencil', label: 'Stencil' }, { value: 'vue', label: 'Vue' }]}>
 
 <TabItem value="angular">
 
@@ -150,10 +150,7 @@ const ToastExample: React.FC = () => {
         >
           Show Toast
         </IonButton>
-        <IonButton
-          expand="block"
-          onClick={() => present('hello from hook', 3000)}
-        >
+        <IonButton expand="block" onClick={() => present('hello from hook', 3000)}>
           Show Toast using params, closes in 3 secs
         </IonButton>
         <IonButton expand="block" onClick={dismiss}>
@@ -272,12 +269,8 @@ export class ToastExample {
   render() {
     return [
       <ion-content>
-        <ion-button onClick={() => this.presentToast()}>
-          Present Toast
-        </ion-button>
-        <ion-button onClick={() => this.presentToastWithOptions()}>
-          Present Toast: Options
-        </ion-button>
+        <ion-button onClick={() => this.presentToast()}>Present Toast</ion-button>
+        <ion-button onClick={() => this.presentToastWithOptions()}>Present Toast: Options</ion-button>
       </ion-content>,
     ];
   }

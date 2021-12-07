@@ -7,15 +7,12 @@ Thanks for your interest in contributing to Ionic's documentation! :tada: Check 
   - [Using VS Code on Windows](#using-vs-code-on-windows)
   - [Project Structure](#project-structure)
     - [Directories](#directories)
-    - [Page Templates](#page-templates)
-    - [Menu Templates](#menu-templates)
   - [Authoring Content](#authoring-content)
     - [Authoring Locally](#authoring-locally)
-    - [Reference Content](#reference-content)
   - [Translation](#translation)
   - [Reporting Issues](#reporting-issues)
   - [Pull Request Guidelines](#pull-request-guidelines)
-  - [Project Management](#project-management)
+  <!-- - [Project Management](#project-management) -->
   - [Deploying](#deploying)
   - [License](#license)
 
@@ -44,50 +41,25 @@ The Ionic docs were originally built in a Mac-based environment, so Mac-focused 
 
 ## Project Structure
 
-Ionic's documentation is built using [Stencil](https://stenciljs.com). The content is written as Markdown or pulled in as JSON data from other Ionic repositories.
-
-At a high level, the production documentation works like this:
-
-1. At build time, the `build-pages` script reads the Markdown in `src/pages/` and creates a JSON representation of each page at the same path
-   ```
-   pages/
-   ├── index.json
-   └── index.md
-   ```
-2. At runtime, the `docs-page` component receives the current path (e.g. `/docs`)
-3. The `docs-page` component fetches and parses the [JSON representation](https://ionicframework.com/docs/pages/index.json) of that page
-4. The `docs-page` component renders that data using a [template](https://github.com/ionic-team/ionic-docs/tree/master/src/components/page/templates)
-
-> **Note**: most reference content (e.g. APIs, native plugins, CLI commands) is not stored as Markdown. Those pages are created using data provided by other repositories to the `build-pages` script.
+Ionic's documentation is built using [Docusaurus](https://docusaurus.io/). The content is either written or generated as Markdown.
 
 ### Directories
 
-- `scripts/` - build scripts used to generate JSON representations of each page and other data used in the docs
+- `scripts/` - build scripts used to generate markdown or json files
 - `src/` - source code and content of the docs
-  - `assets/` - static assets used on the site, like images and fonts
-  - `components/` - Stencil components used in the documentation UI
-  - `demos/` - Self-contained demos, optionally presented by pages via `demoUrl` YAML frontmatter
-  - `pages/` - Markdown content organized by route and uncommitted JSON representation of each page
-  - `styles/` - Global and page-specific styles (non-component styles)
-
-### Page Templates
-
-The [`docs-page`](https://github.com/ionic-team/ionic-docs/blob/master/src/components/page/page.tsx) component is responsible for loading and rendering page content. Page content is rendered using one of the templates exported [here](https://github.com/ionic-team/ionic-docs/blob/master/src/components/page/templates/index.ts). Pages can specify a template via the `template` key in their frontmatter, or the default template will be used.
-
-```tsx
-const Template = templates[page.template] || template.default;
-return <Template page={page} />;
-```
-
-### Menu Templates
-
-The [`docs-menu`](https://github.com/ionic-team/ionic-docs/blob/master/src/components/menu/menu.tsx) component is responsible for rendering the side menu. The menu content differs by path and is specified in [per-section templates](https://github.com/ionic-team/ionic-docs/tree/master/src/components/menu/templates).
-
----
+  - `components/` - components used across the site
+    - `global/` - components used globally
+    - `page/` - components used on a single page or in a limited scope
+  - `styles/` - global styles and variables
+    - `components/` - styles split out into the components they target
+- `static/`
+  - `demos/` - self-contained demos, optionally presented by pages via `demoUrl` YAML frontmatter
+- `versioned_docs/` - versions of the docs created by the docusaurus versioning command
+- `versioned_sitebars/` - versions of the docs sidebars created by the docusaurus versioning command
 
 ## Authoring Content
 
-The content of the Ionic docs is written as [Markdown](https://commonmark.org/) in `src/pages`. Each Markdown file corresponds to a route.
+The content of the Ionic docs is written as [Markdown](https://commonmark.org/) in `docs/`. Each Markdown file corresponds to a route unless explicitly changed in the frontmatter.
 
 ```
 /docs/                  =>  src/pages/index.md
@@ -98,49 +70,13 @@ The content of the Ionic docs is written as [Markdown](https://commonmark.org/) 
 
 You can make copy edits to the site by [editing the Markdown files directly on GitHub](https://help.github.com/articles/editing-files-in-another-user-s-repository/). In your pull request, please explain what was missing from or inaccurate about the content.
 
-### Authoring Locally
-
-To edit or create content locally, you'll need to [run the development server](#development-workflow). By default, the pages are only built once while starting the server. You can rebuild the pages continuously as you edit them by concurrently running the `watch-pages` script:
-
-```sh
-$ npm run watch-pages
-```
-
-> **Note**: the `watch-pages` script won't reload the page. You will need to reload the page manually after your page is rebuilt.
-
 ### Reference Content
 
-The Markdown in `src/pages` does not contain all of the Ionic documentation's content:
+The Markdown in `docs/` does not only contain manually written markdown files:
 
 - Paths matching `/docs/api/*` are built from the [Ionic Framework](https://github.com/ionic-team/ionic) source code
 - Paths matching `/docs/native/*` are built from the [Ionic Native](https://github.com/ionic-team/ionic-native) source code
 - Paths matching `/docs/cli/commands/*` are built from the [Ionic CLI](https://github.com/ionic-team/ionic-cli) source code
-
-#### Updating Ionic Native Community Plugins
-
-To add or update an Ionic Native [community plugin](/docs/native/community):
-1) Open a pull request on the [Ionic Native](https://github.com/ionic-team/ionic-native) repository (both code or documentation).
-2) Once the change has been approved and merged into master by the Ionic team, do the following steps:
-
-```shell
-# Clone Ionic Native repo
-git clone git@github.com:ionic-team/ionic-native.git
-cd ionic-native
-
-# Build the Ionic Native project
-npm run build
-
-# Run scripts to generate the plugin JSON file
-npm ci
-npm run docs-json
-
-# Overwrite the ionic-docs native.json file with the new changes
-mv scripts/docs-json/plugins.json /path/to/docs/scripts/data/native.json
-```
-
-3) Open a PR in the `ionic-docs` repo, submitting the new `native.json` file.
-
----
 
 ## Translation
 
@@ -151,26 +87,6 @@ We use Crowdin for our translation service. You can participate in the translati
 _Please submit translation issues to the Crowdin page and not the Ionic Docs GitHub repo_
 
 The Japanese translation of the docs were built by an independent team, lead by [rdlabo](https://github.com/rdlabo) and can be found and contributed to on the [ionic-jp group's `ionic-docs` project page](https://github.com/ionic-jp/ionic-docs).
-
-### Add new pages / Updating sidebar menus
-
-When adding new pages to the docs, add a new token representing the page name to the appropriate Menu template (`src/components/menu/templates`).
-
-For example, in `src/components/menu/templates/main.tsx`:
-
-```javascript
-// 'token': 'path'
-'menu-intro-cli': '/docs/intro/cli',
-```
-
-Then, add the token and its translation to each file within the `src/assets/locales` folder:
-
-For example, in `src/assets/locales/en/messages.json`:
-
-```javascript
-// 'token': 'translated text'
-"menu-intro-cli": "CLI Installation",
-```
 
 ## Reporting Issues
 
@@ -191,11 +107,9 @@ If the issue you're reporting is a bug, please be sure it is an issue with the I
 
 When submitting pull requests, please keep the scope of your change contained to a single feature or bug. When in doubt, err on the side of smaller pull requests. If your pull request is a new feature, we would recommend opening an issue first to come to an agreement about the feature before putting in significant time.
 
-> **Note**: `tslint` will run automatically when you attempt to commit. Our lint rules extend [tslint-ionic-rules](https://github.com/ionic-team/tslint-ionic-rules).
-
 ---
 
-## Project Management
+<!-- ## Project Management
 
 Internally, the Ionic documentation team uses a [project board](https://github.com/ionic-team/ionic-docs/projects/3) to plan work on the docs. The lanes on the board are:
 
@@ -207,11 +121,11 @@ Internally, the Ionic documentation team uses a [project board](https://github.c
 
 If you're looking for issues to help out with, we'd recommend either asking about an issue in the backlog or checking for issues labeled [`help-wanted`](https://github.com/ionic-team/ionic-docs/labels/help%20wanted).
 
----
+--- -->
 
 ## Deploying
 
-The Ionic documentation's `master` branch is deployed automatically and separately from the [Ionic site](https://github.com/ionic-team/ionic-site) itself. The Ionic site then uses a proxy for paths under `/docs` to request the deployed documentation.
+The Ionic documentation's `main` branch is deployed automatically and separately from the [Ionic site](https://github.com/ionic-team/ionic-site) itself. The Ionic site then uses a proxy for paths under `/docs` to request the deployed documentation.
 
 ---
 

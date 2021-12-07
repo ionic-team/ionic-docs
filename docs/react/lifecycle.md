@@ -1,8 +1,15 @@
 ---
+title: React Lifecycle
 sidebar_label: Lifecycle
 ---
 
-# React Lifecycle
+<head>
+  <title>React Lifecycle: A Guide to Ionic React App Component Lifecycles</title>
+  <meta
+    name="description"
+    content="The React Lifecycle guide discusses how to use the Ionic Lifecycle events in an Ionic React application. Read to learn more about React component lifecycles."
+  />
+</head>
 
 This guide discusses how to use the Ionic Lifecycle events in an Ionic React application.
 
@@ -35,14 +42,7 @@ You can then create the appropriate lifecycle method on your class component, an
 
 ```tsx
 import React from 'react';
-import {
-  IonHeader,
-  IonPage,
-  IonToolbar,
-  IonTitle,
-  IonContent,
-  withIonLifeCycle,
-} from '@ionic/react';
+import { IonHeader, IonPage, IonToolbar, IonTitle, IonContent, withIonLifeCycle } from '@ionic/react';
 
 class HomePage extends React.Component {
   ionViewWillEnter() {

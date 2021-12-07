@@ -1,0 +1,39 @@
+.docsButton {
+  background-color: var(--ifm-link-color);
+  color: white;
+  font-weight: 600;
+  border-radius: 6px;
+  display: inline-block;
+  font-weight: 600;
+  white-space: nowrap;
+  display: inline-block;
+  font-size: inherit;
+  padding: 0.75em 1.5em;
+}
+
+button.docsButton {
+  appearance: none;
+  border: none;
+  line-height: inherit;
+}
+
+.docsButton svg {
+  fill: currentColor;
+  height: 1em;
+  margin-bottom: -0.125em;
+  width: 1em;
+}
+
+.docsButtonRound {
+  border-radius: 2em;
+}
+
+@media (hover: hover) {
+  .docsButton:hover {
+    background-color: var(--ifm-link-hover-color);
+  }
+
+  .docsButton:active {
+    opacity: 0.9;
+  }
+}

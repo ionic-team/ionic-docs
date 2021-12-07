@@ -45,7 +45,7 @@ Any of the defined [CSS Custom Properties](#css-custom-properties) can be used t
 
 ## Usage
 
-<Tabs defaultValue="angular" values={[{ value: 'angular', label: 'ANGULAR' }, { value: 'javascript', label: 'JAVASCRIPT' }, { value: 'react', label: 'REACT' }, { value: 'stencil', label: 'STENCIL' }, { value: 'vue', label: 'VUE' }]}>
+<Tabs groupId="framework" defaultValue="angular" values={[{ value: 'angular', label: 'Angular' }, { value: 'javascript', label: 'Javascript' }, { value: 'react', label: 'React' }, { value: 'stencil', label: 'Stencil' }, { value: 'vue', label: 'Vue' }]}>
 
 <TabItem value="angular">
 
@@ -182,12 +182,7 @@ async function presentActionSheet() {
 /* Using with useIonActionSheet Hook */
 
 import React from 'react';
-import {
-  IonButton,
-  IonContent,
-  IonPage,
-  useIonActionSheet,
-} from '@ionic/react';
+import { IonButton, IonContent, IonPage, useIonActionSheet } from '@ionic/react';
 
 const ActionSheetExample: React.FC = () => {
   const [present, dismiss] = useIonActionSheet();
@@ -206,12 +201,7 @@ const ActionSheetExample: React.FC = () => {
         >
           Show ActionSheet
         </IonButton>
-        <IonButton
-          expand="block"
-          onClick={() =>
-            present([{ text: 'Ok' }, { text: 'Cancel' }], 'Action Sheet')
-          }
-        >
+        <IonButton expand="block" onClick={() => present([{ text: 'Ok' }, { text: 'Cancel' }], 'Action Sheet')}>
           Show ActionSheet using params
         </IonButton>
         <IonButton
@@ -360,9 +350,7 @@ export class ActionSheetExample {
   render() {
     return [
       <ion-content>
-        <ion-button onClick={() => this.presentActionSheet()}>
-          Present Action Sheet
-        </ion-button>
+        <ion-button onClick={() => this.presentActionSheet()}>Present Action Sheet</ion-button>
       </ion-content>,
     ];
   }
@@ -381,13 +369,7 @@ export class ActionSheetExample {
 <script>
   import { IonButton, actionSheetController } from '@ionic/vue';
   import { defineComponent } from 'vue';
-  import {
-    caretForwardCircle,
-    close,
-    heart,
-    trash,
-    share,
-  } from 'ionicons/icons';
+  import { caretForwardCircle, close, heart, trash, share } from 'ionicons/icons';
 
   export default defineComponent({
     components: { IonButton },
@@ -464,13 +446,7 @@ Developers can also use this component directly in their template:
 <script>
   import { IonActionSheet, IonButton } from '@ionic/vue';
   import { defineComponent, ref } from 'vue';
-  import {
-    caretForwardCircle,
-    close,
-    heart,
-    trash,
-    share,
-  } from 'ionicons/icons';
+  import { caretForwardCircle, close, heart, trash, share } from 'ionicons/icons';
 
   export default defineComponent({
     components: { IonActionSheet, IonButton },

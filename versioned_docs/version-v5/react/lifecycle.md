@@ -35,14 +35,7 @@ You can then create the appropriate lifecycle method on your class component, an
 
 ```tsx
 import React from 'react';
-import {
-  IonHeader,
-  IonPage,
-  IonToolbar,
-  IonTitle,
-  IonContent,
-  withIonLifeCycle,
-} from '@ionic/react';
+import { IonHeader, IonPage, IonToolbar, IonTitle, IonContent, withIonLifeCycle } from '@ionic/react';
 
 class HomePage extends React.Component {
   ionViewWillEnter() {

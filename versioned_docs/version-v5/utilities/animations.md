@@ -1,4 +1,4 @@
-import Codepen from '@theme/Codepen';
+import Codepen from '@components/global/Codepen';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
@@ -16,6 +16,7 @@ Ionic Animations uses the [Web Animations API](https://developer.mozilla.org/en-
 
 ````mdx-code-block
 <Tabs
+  groupId="framework"
   defaultValue="javascript"
   values={[
     { value: 'javascript', label: 'JavaScript' },
@@ -131,6 +132,7 @@ const animation = createAnimation()
 
 ````mdx-code-block
 <Tabs
+  groupId="framework"
   defaultValue="javascript"
   values={[
     { value: 'javascript', label: 'JavaScript' },
@@ -215,6 +217,7 @@ Hyphenated CSS properties should be written using camel case when writing keyfra
 
 ````mdx-code-block
 <Tabs
+  groupId="framework"
   defaultValue="javascript"
   values={[
     { value: 'javascript', label: 'JavaScript' },
@@ -307,6 +310,7 @@ Multiple elements can be animated at the same time and controlled via a single p
 
 ````mdx-code-block
 <Tabs
+  groupId="framework"
   defaultValue="javascript"
   values={[
     { value: 'javascript', label: 'JavaScript' },
@@ -513,6 +517,7 @@ Ionic Animations provides hooks that let you alter an element before an animatio
 
 ````mdx-code-block
 <Tabs
+  groupId="framework"
   defaultValue="javascript"
   values={[
     { value: 'javascript', label: 'JavaScript' },
@@ -629,6 +634,7 @@ Animations can be chained to run one after the other. The `play` method returns 
 
 ````mdx-code-block
 <Tabs
+  groupId="framework"
   defaultValue="javascript"
   values={[
     { value: 'javascript', label: 'JavaScript' },
@@ -840,6 +846,7 @@ Ionic Animations gives developers the ability to create powerful gesture-based a
 
 ````mdx-code-block
 <Tabs
+  groupId="framework"
   defaultValue="javascript"
   values={[
     { value: 'javascript', label: 'JavaScript' },
@@ -1179,6 +1186,7 @@ Developers can also tailor their animations to user preferences such as `prefers
 
 ````mdx-code-block
 <Tabs
+  groupId="framework"
   defaultValue="javascript"
   values={[
     { value: 'javascript', label: 'JavaScript' },
@@ -1263,6 +1271,7 @@ Certain Ionic components allow developers to provide custom animations. All anim
 
 ````mdx-code-block
 <Tabs
+  groupId="framework"
   defaultValue="javascript"
   values={[
     { value: 'javascript', label: 'JavaScript' },

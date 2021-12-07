@@ -1,6 +1,7 @@
 ---
-sidebar_label: "ion-radio-group"
+sidebar_label: 'ion-radio-group'
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
@@ -11,13 +12,9 @@ a user to select at most one radio button from a set. Checking one radio
 button that belongs to a radio group unchecks any previous checked
 radio button within the same group.
 
-
-
-
 ## Usage
 
-<Tabs defaultValue="angular" values={[{ value: 'angular', label: 'ANGULAR' }, { value: 'javascript', label: 'JAVASCRIPT' }, { value: 'react', label: 'REACT' }, { value: 'stencil', label: 'STENCIL' }, { value: 'vue', label: 'VUE' }]}>
-
+<Tabs groupId="framework" defaultValue="angular" values={[{ value: 'angular', label: 'Angular' }, { value: 'javascript', label: 'Javascript' }, { value: 'react', label: 'React' }, { value: 'stencil', label: 'Stencil' }, { value: 'vue', label: 'Vue' }]}>
 
 <TabItem value="angular">
 
@@ -25,9 +22,7 @@ radio button within the same group.
 <ion-list>
   <ion-radio-group>
     <ion-list-header>
-      <ion-label>
-        Auto Manufacturers
-      </ion-label>
+      <ion-label> Auto Manufacturers </ion-label>
     </ion-list-header>
 
     <ion-item>
@@ -58,9 +53,7 @@ radio button within the same group.
 </ion-list>
 ```
 
-
 </TabItem>
-
 
 <TabItem value="javascript">
 
@@ -68,9 +61,7 @@ radio button within the same group.
 <ion-list>
   <ion-radio-group>
     <ion-list-header>
-      <ion-label>
-        Auto Manufacturers
-      </ion-label>
+      <ion-label> Auto Manufacturers </ion-label>
     </ion-list-header>
 
     <ion-item>
@@ -101,9 +92,7 @@ radio button within the same group.
 </ion-list>
 ```
 
-
 </TabItem>
-
 
 <TabItem value="react">
 
@@ -116,9 +105,7 @@ export const RadioGroupExample: React.FC = () => (
     <IonList>
       <IonRadioGroup>
         <IonListHeader>
-          <IonLabel>
-            Auto Manufacturers
-          </IonLabel>
+          <IonLabel>Auto Manufacturers</IonLabel>
         </IonListHeader>
 
         <IonItem>
@@ -153,7 +140,6 @@ export const RadioGroupExample: React.FC = () => (
 
 </TabItem>
 
-
 <TabItem value="stencil">
 
 ```tsx
@@ -161,7 +147,7 @@ import { Component, h } from '@stencil/core';
 
 @Component({
   tag: 'radio-group-example',
-  styleUrl: 'radio-group-example.css'
+  styleUrl: 'radio-group-example.css',
 })
 export class RadioGroupExample {
   render() {
@@ -169,9 +155,7 @@ export class RadioGroupExample {
       <ion-list>
         <ion-radio-group>
           <ion-list-header>
-            <ion-label>
-              Auto Manufacturers
-            </ion-label>
+            <ion-label>Auto Manufacturers</ion-label>
           </ion-list-header>
 
           <ion-item>
@@ -199,15 +183,13 @@ export class RadioGroupExample {
             <ion-radio value="studebaker"></ion-radio>
           </ion-item>
         </ion-radio-group>
-      </ion-list>
+      </ion-list>,
     ];
   }
 }
 ```
 
-
 </TabItem>
-
 
 <TabItem value="vue">
 
@@ -216,9 +198,7 @@ export class RadioGroupExample {
   <ion-list>
     <ion-radio-group>
       <ion-list-header>
-        <ion-label>
-          Auto Manufacturers
-        </ion-label>
+        <ion-label> Auto Manufacturers </ion-label>
       </ion-list-header>
 
       <ion-item>
@@ -250,29 +230,21 @@ export class RadioGroupExample {
 </template>
 
 <script>
-import { 
-  IonItem, 
-  IonLabel, 
-  IonList, 
-  IonListHeader, 
-  IonRadio, 
-  IonRadioGroup
-} from '@ionic/vue';
-import { defineComponent } from 'vue';
+  import { IonItem, IonLabel, IonList, IonListHeader, IonRadio, IonRadioGroup } from '@ionic/vue';
+  import { defineComponent } from 'vue';
 
-export default defineComponent({
-  components: {
-    IonItem, 
-    IonLabel, 
-    IonList, 
-    IonListHeader, 
-    IonRadio, 
-    IonRadioGroup
-  }
-});
+  export default defineComponent({
+    components: {
+      IonItem,
+      IonLabel,
+      IonList,
+      IonListHeader,
+      IonRadio,
+      IonRadioGroup,
+    },
+  });
 </script>
 ```
-
 
 </TabItem>
 
@@ -280,43 +252,35 @@ export default defineComponent({
 
 ## Properties
 
-
 ### allowEmptySelection
 
-| | |
-| --- | --- |
+|                 |                                          |
+| --------------- | ---------------------------------------- |
 | **Description** | If `true`, the radios can be deselected. |
-| **Attribute** | `allow-empty-selection` |
-| **Type** | `boolean` |
-| **Default** | `false` |
-
-
+| **Attribute**   | `allow-empty-selection`                  |
+| **Type**        | `boolean`                                |
+| **Default**     | `false`                                  |
 
 ### name
 
-| | |
-| --- | --- |
+|                 |                                                                 |
+| --------------- | --------------------------------------------------------------- |
 | **Description** | The name of the control, which is submitted with the form data. |
-| **Attribute** | `name` |
-| **Type** | `string` |
-| **Default** | `this.inputId` |
-
-
+| **Attribute**   | `name`                                                          |
+| **Type**        | `string`                                                        |
+| **Default**     | `this.inputId`                                                  |
 
 ### value
 
-| | |
-| --- | --- |
+|                 |                               |
+| --------------- | ----------------------------- |
 | **Description** | the value of the radio group. |
-| **Attribute** | `value` |
-| **Type** | `any` |
-| **Default** | `undefined` |
-
-
+| **Attribute**   | `value`                       |
+| **Type**        | `any`                         |
+| **Default**     | `undefined`                   |
 
 ## Events
 
-| Name | Description |
-| --- | --- |
+| Name        | Description                         |
+| ----------- | ----------------------------------- |
 | `ionChange` | Emitted when the value has changed. |
-

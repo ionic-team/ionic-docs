@@ -2,8 +2,8 @@
 hide_table_of_contents: true
 ---
 
-import DocsCard from '@theme/DocsCard';
-import DocsCards from '@theme/DocsCards';
+import DocsCard from '@components/global/DocsCard';
+import DocsCards from '@components/global/DocsCards';
 
 # Welcome to Studio
 
@@ -21,9 +21,9 @@ Studio is a desktop tool and requires a subscription, and is only for Ionic Angu
     <p>Sign up for Studio and start building today.</p>
   </DocsCard>
 
-  <DocsCard header="News & Updates" icon="/icons/guide-news-icon.png">
-    <p>Delivered within Studio as well as over email.</p>
-  </DocsCard>
+<DocsCard header="News & Updates" icon="/icons/guide-news-icon.png">
+  <p>Delivered within Studio as well as over email.</p>
+</DocsCard>
 
   <DocsCard header="Studio FAQ" href="studio/faq" icon="/icons/guide-faq-icon.png">
     <p>Find answers to common questions about Ionic Studio.</p>

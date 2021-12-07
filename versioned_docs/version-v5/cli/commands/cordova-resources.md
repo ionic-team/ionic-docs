@@ -1,9 +1,8 @@
 ---
-title: "Splash Screen Image Icon Generator | Generate Cordova Resources"
-description: "Generate perfectly-sized icons and splash screens from PNG source images for your Cordova platforms. Automatically create icons with Ionic Cordova Resources."
-sidebar_label: "cordova resources"
+title: 'Splash Screen Image Icon Generator | Generate Cordova Resources'
+description: 'Generate perfectly-sized icons and splash screens from PNG source images for your Cordova platforms. Automatically create icons with Ionic Cordova Resources.'
+sidebar_label: 'cordova resources'
 ---
-
 
 # ionic cordova resources
 
@@ -26,94 +25,91 @@ For best results, the splash screen's artwork should roughly fit within a square
 This command uses the `cordova-res` [utility](https://github.com/ionic-team/cordova-res) to generate resources locally.
 
 Cordova reference documentation:
+
 - Icons: **[https://cordova.apache.org/docs/en/latest/config_ref/images.html](https://cordova.apache.org/docs/en/latest/config_ref/images.html)**
 - Splash Screens: **[https://cordova.apache.org/docs/en/latest/reference/cordova-plugin-splashscreen/](https://cordova.apache.org/docs/en/latest/reference/cordova-plugin-splashscreen/)**
+
 ## Examples
 
 ```shell
-$ ionic cordova resources 
+$ ionic cordova resources
 $ ionic cordova resources ios
 $ ionic cordova resources android
 ```
 
 ## Inputs
 
-
 <table className="reference-table">
-  
-      <thead>
-        <tr>
-          <th colSpan="2">
-            <h3>platform</h3>
-          </th>
-        </tr>
-      </thead>
-      <tbody>
-        
-              <tr>
-                <th>Description</th>
-                <td><p>The platform for which you would like to generate resources (<code>ios</code>, <code>android</code>)</p>
-</td>
-              </tr>
-            
-      </tbody>
+  <thead>
+    <tr>
+      <th colSpan="2">
+        <h3>platform</h3>
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Description</th>
+      <td>
+        <p>
+          The platform for which you would like to generate resources (<code>ios</code>, <code>android</code>)
+        </p>
+      </td>
+    </tr>
+  </tbody>
 </table>
-
-
 
 ## Options
 
-
 <table className="reference-table">
-  
-      <thead>
-        <tr>
-          <th colSpan="2">
-            <h3><a href="#option-icon" id="option-icon">
-  --icon
-  
-</a></h3>
-          </th>
-        </tr>
-      </thead>
-      <tbody>
-        
-              <tr>
-                <th>Description</th>
-                <td><p>Generate icon resources</p>
-</td>
-              </tr>
-             
-              <tr>
-                <th>Aliases</th>
-                <td><code>-i</code></td>
-              </tr>
-             
-      </tbody>
-      <thead>
-        <tr>
-          <th colSpan="2">
-            <h3><a href="#option-splash" id="option-splash">
-  --splash
-  
-</a></h3>
-          </th>
-        </tr>
-      </thead>
-      <tbody>
-        
-              <tr>
-                <th>Description</th>
-                <td><p>Generate splash screen resources</p>
-</td>
-              </tr>
-             
-              <tr>
-                <th>Aliases</th>
-                <td><code>-s</code></td>
-              </tr>
-             
-      </tbody>
+  <thead>
+    <tr>
+      <th colSpan="2">
+        <h3>
+          <a href="#option-icon" id="option-icon">
+            --icon
+          </a>
+        </h3>
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Description</th>
+      <td>
+        <p>Generate icon resources</p>
+      </td>
+    </tr>
+    <tr>
+      <th>Aliases</th>
+      <td>
+        <code>-i</code>
+      </td>
+    </tr>
+  </tbody>
+  <thead>
+    <tr>
+      <th colSpan="2">
+        <h3>
+          <a href="#option-splash" id="option-splash">
+            --splash
+          </a>
+        </h3>
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Description</th>
+      <td>
+        <p>Generate splash screen resources</p>
+      </td>
+    </tr>
+    <tr>
+      <th>Aliases</th>
+      <td>
+        <code>-s</code>
+      </td>
+    </tr>
+  </tbody>
 </table>
-
-

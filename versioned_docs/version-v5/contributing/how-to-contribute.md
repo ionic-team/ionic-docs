@@ -10,21 +10,19 @@ Thanks for the interest in contributing to Ionic Framework!
 
 Please see the [Contributor Code of Conduct](coc.md) for information on the rules of conduct.
 
-
 ## Creating an Issue
 
-* If you have a question about using the framework, please ask on the [Ionic Forum](http://forum.ionicframework.com/) or in the [Ionic Worldwide Slack](https://ionicworldwide.herokuapp.com/) group.
+- If you have a question about using the framework, please ask on the [Ionic Forum](http://forum.ionicframework.com/) or in the [Ionic Worldwide Slack](https://ionicworldwide.herokuapp.com/) group.
 
-* It is required that you clearly describe the steps necessary to reproduce the issue you are running into. Although we would love to help our users as much as possible, diagnosing issues without clear reproduction steps is extremely time-consuming and simply not sustainable.
+- It is required that you clearly describe the steps necessary to reproduce the issue you are running into. Although we would love to help our users as much as possible, diagnosing issues without clear reproduction steps is extremely time-consuming and simply not sustainable.
 
-* The issue list of the [Ionic](https://github.com/ionic-team/ionic) repository is exclusively for bug reports and feature requests. Non-conforming issues will be closed immediately.
+- The issue list of the [Ionic](https://github.com/ionic-team/ionic) repository is exclusively for bug reports and feature requests. Non-conforming issues will be closed immediately.
 
-* Issues with no clear steps to reproduce will not be triaged. If an issue is labeled with "needs: reply" and receives no further replies from the author of the issue for more than 14 days, it will be closed.
+- Issues with no clear steps to reproduce will not be triaged. If an issue is labeled with "needs: reply" and receives no further replies from the author of the issue for more than 14 days, it will be closed.
 
-* If you think you have found a bug, or have a new feature idea, please start by making sure it hasn't already been [reported](https://github.com/ionic-team/ionic/issues?utf8=%E2%9C%93&q=is%3Aissue). You can search through existing issues to see if there is a similar one reported. Include closed issues as it may have been closed with a solution.
+- If you think you have found a bug, or have a new feature idea, please start by making sure it hasn't already been [reported](https://github.com/ionic-team/ionic/issues?utf8=%E2%9C%93&q=is%3Aissue). You can search through existing issues to see if there is a similar one reported. Include closed issues as it may have been closed with a solution.
 
-* Next, [create a new issue](https://github.com/ionic-team/ionic/issues/new/choose) that thoroughly explains the problem. Please fill out the populated issue form before submitting the issue.
-
+- Next, [create a new issue](https://github.com/ionic-team/ionic/issues/new/choose) that thoroughly explains the problem. Please fill out the populated issue form before submitting the issue.
 
 ## Creating a Good Code Reproduction
 
@@ -34,31 +32,29 @@ A code reproduction is a small application that is built to demonstrate a partic
 
 ### Why Should You Create a Reproduction?
 
-A code reproduction of the issue you are experiencing helps us better isolate the cause of the problem. This is an important first step to getting any bug fixed! 
+A code reproduction of the issue you are experiencing helps us better isolate the cause of the problem. This is an important first step to getting any bug fixed!
 
 Without a reliable code reproduction, it is unlikely we will be able to resolve the issue, leading to it being closed. In other words, creating a code reproduction of the issue helps us help you.
 
 ### How to Create a Reproduction
 
-* Create a new Ionic application using one of our starter templates. The `blank` starter application is a great choice for this. You can create one using the following Ionic CLI command: `ionic start myApp blank`
-* Add the minimum amount of code needed to recreate the issue you are experiencing. Do not include anything that is not required to reproduce the issue. This includes any 3rd party plugins you have installed.
-* Publish the application on GitHub and include a link to it when [creating an issue](#creating-an-issue).
-* Be sure to include steps to reproduce the issue. These steps should be clear and easy to follow.
+- Create a new Ionic application using one of our starter templates. The `blank` starter application is a great choice for this. You can create one using the following Ionic CLI command: `ionic start myApp blank`
+- Add the minimum amount of code needed to recreate the issue you are experiencing. Do not include anything that is not required to reproduce the issue. This includes any 3rd party plugins you have installed.
+- Publish the application on GitHub and include a link to it when [creating an issue](#creating-an-issue).
+- Be sure to include steps to reproduce the issue. These steps should be clear and easy to follow.
 
 ### Benefits of Creating a Reproduction
 
-* **Uses the latest version of Ionic:** By creating a new Ionic application, you are ensuring that you are testing against the latest version of the framework. Sometimes the issues you are experiencing have already been resolved in a newer version of the framework!
-* **Minimal surface area:** By removing code that is not needed in order to reproduce the issue, it makes it easier to identify the cause of the issue.
-* **No secret code needed:** Creating a minimal reproduction of the issue prevents you from having to publish any proprietary code used in your project.
-* **Get help fixing the issue:** If we can reliably reproduce an issue, there is a good chance we will be able to address it.
-
+- **Uses the latest version of Ionic:** By creating a new Ionic application, you are ensuring that you are testing against the latest version of the framework. Sometimes the issues you are experiencing have already been resolved in a newer version of the framework!
+- **Minimal surface area:** By removing code that is not needed in order to reproduce the issue, it makes it easier to identify the cause of the issue.
+- **No secret code needed:** Creating a minimal reproduction of the issue prevents you from having to publish any proprietary code used in your project.
+- **Get help fixing the issue:** If we can reliably reproduce an issue, there is a good chance we will be able to address it.
 
 ## Creating a Pull Request
 
-* We appreciate you taking the time to contribute! Before submitting a pull request, we ask that you please [create an issue](#creating-an-issue) that explains the bug or feature request and let us know that you plan on creating a pull request for it. If an issue already exists, please comment on that issue letting us know you would like to submit a pull request for it. This helps us to keep track of the pull request and make sure there isn't duplicated effort.
+- We appreciate you taking the time to contribute! Before submitting a pull request, we ask that you please [create an issue](#creating-an-issue) that explains the bug or feature request and let us know that you plan on creating a pull request for it. If an issue already exists, please comment on that issue letting us know you would like to submit a pull request for it. This helps us to keep track of the pull request and make sure there isn't duplicated effort.
 
-* Looking for an issue to fix? Make sure to look through our issues with the [help wanted](https://github.com/ionic-team/ionic/issues?q=is%3Aopen+is%3Aissue+label%3A%22help+wanted%22) label!
-
+- Looking for an issue to fix? Make sure to look through our issues with the [help wanted](https://github.com/ionic-team/ionic/issues?q=is%3Aopen+is%3Aissue+label%3A%22help+wanted%22) label!
 
 ### Setup
 
@@ -69,7 +65,6 @@ Without a reliable code reproduction, it is unlikely we will be able to resolve 
 5. Navigate into the directory of the package you wish to modify (core, angular, etc.).
 6. Run `npm install` to install dependencies for this package.
 7. Follow the steps for the specific package below.
-
 
 ### Core
 
@@ -85,7 +80,6 @@ Without a reliable code reproduction, it is unlikely we will be able to resolve 
 8. After the build is finished, commit the changes. Please follow the [commit message format](#commit-message-format) for every commit.
 9. [Submit a Pull Request](#submit-pull-request) of your changes.
 
-
 #### Preview Changes
 
 1. Run `npm start` from within the `core` directory.
@@ -94,7 +88,6 @@ Without a reliable code reproduction, it is unlikely we will be able to resolve 
 4. If a test showing your change doesn't exist, [add a new test or update an existing one](#modifying-tests).
 5. To test in RTL mode, once you are in the desired component's test, add `?rtl=true` at the end of the url; for example: `http://localhost:3333/src/components/alert/test/basic?rtl=true`.
 
-
 #### Lint Changes
 
 1. Run `npm run lint` to lint the TypeScript and Sass.
@@ -102,16 +95,15 @@ Without a reliable code reproduction, it is unlikely we will be able to resolve 
 3. To lint and fix only TypeScript errors, run `npm run lint.ts` and `npm run lint.ts.fix`, respectively.
 4. To lint and fix only Sass errors, run `npm run lint.sass` and `npm run lint.sass.fix`, respectively.
 
-
 #### Modifying Documentation
 
 1. Locate the `readme.md` file in the component's directory.
 2. Modify the documentation **above** the line that says `<!-- Auto Generated Below -->` in this file.
 3. To update any of the auto generated documentation below that line, make the relevant changes in the following places:
-  - `Usage`: update the component's usage examples in the component's `usage/` directory
-  - `Properties`, `Events`, or `Methods`: update the component's TypeScript file (`*.tsx`)
-  - `CSS Custom Properties`: update the component's main Sass file (`*.scss`)
 
+- `Usage`: update the component's usage examples in the component's `usage/` directory
+- `Properties`, `Events`, or `Methods`: update the component's TypeScript file (`*.tsx`)
+- `CSS Custom Properties`: update the component's main Sass file (`*.scss`)
 
 #### Modifying Tests
 
@@ -126,10 +118,9 @@ Without a reliable code reproduction, it is unlikely we will be able to resolve 
 2. A screenshot test can be added by including this file and adding one or more `test()` calls that include a call to `page.compareScreenshot()`. See [Stencil end-to-end testing](https://stenciljs.com/docs/end-to-end-testing) and existing tests in `core/` for examples.
 3. **Important:** each `test()` should have only one screenshot (`page.compareScreenshot()`) call **or** it should check the expect at the end of each test. If there is a mismatch it will fail the test which will prevent the rest of the test from running, i.e. if the first screenshot fails the remaining screenshot calls would not be called _unless_ they are in a separate test or all of the expects are called at the end.
 4. To run screenshot locally, use the following command: `npm run test.screenshot`.
-    - To run screenshot for a specific test, pass the path to the test or a string to search for.
-    - For example, running all `alert` tests: `npm run test.screenshot alert`.
-    - Or, running the basic `alert` tests: `npm run test.screenshot src/components/alert/test/basic/e2e.ts`.
-
+   - To run screenshot for a specific test, pass the path to the test or a string to search for.
+   - For example, running all `alert` tests: `npm run test.screenshot alert`.
+   - Or, running the basic `alert` tests: `npm run test.screenshot src/components/alert/test/basic/e2e.ts`.
 
 #### Building Changes
 
@@ -138,13 +129,11 @@ Without a reliable code reproduction, it is unlikely we will be able to resolve 
 3. Make sure the build has finished before committing. If you made changes to the documentation, properties, methods, or anything else that requires an update to a generate file, this needs to be committed.
 4. After the changes have been pushed, publish the branch and [create a pull request](#creating-a-pull-request).
 
-
 ### Submit Pull Request
 
 1. [Create a new pull request](https://github.com/ionic-team/ionic/compare) with the `master` branch as the `base`. You may need to click on `compare across forks` to find your changes.
 2. See the [Creating a pull request from a fork](https://help.github.com/articles/creating-a-pull-request-from-a-fork/) GitHub help article for more information.
 3. Please fill out the provided Pull Request template to the best of your ability and include any issues that are related.
-
 
 ## Commit Message Guidelines
 
@@ -152,7 +141,7 @@ We have very precise rules over how our git commit messages should be formatted.
 
 ### Commit Message Format
 
-We follow the [Conventional Commits specification](https://www.conventionalcommits.org/). A commit message consists of a **header**, **body** and **footer**.  The header has a **type**, **scope** and **subject**:
+We follow the [Conventional Commits specification](https://www.conventionalcommits.org/). A commit message consists of a **header**, **body** and **footer**. The header has a **type**, **scope** and **subject**:
 
 ```
 <type>(<scope>): <subject>
@@ -174,14 +163,14 @@ If the prefix is `feat`, `fix` or `perf`, it will appear in the changelog. Howev
 
 Must be one of the following:
 
-* **feat**: A new feature
-* **fix**: A bug fix
-* **docs**: Documentation only changes
-* **style**: Changes that do not affect the meaning of the code (white-space, formatting, missing semi-colons, etc)
-* **refactor**: A code change that neither fixes a bug nor adds a feature
-* **perf**: A code change that improves performance
-* **test**: Adding missing tests
-* **chore**: Changes to the build process or auxiliary tools and libraries such as documentation generation
+- **feat**: A new feature
+- **fix**: A bug fix
+- **docs**: Documentation only changes
+- **style**: Changes that do not affect the meaning of the code (white-space, formatting, missing semi-colons, etc)
+- **refactor**: A code change that neither fixes a bug nor adds a feature
+- **perf**: A code change that improves performance
+- **test**: Adding missing tests
+- **chore**: Changes to the build process or auxiliary tools and libraries such as documentation generation
 
 ### Scope
 
@@ -191,12 +180,12 @@ The scope can be anything specifying place of the commit change. Usually it will
 
 The subject contains succinct description of the change:
 
-* use the imperative, present tense: "change" not "changed" nor "changes"
-* do not capitalize first letter
-* do not place a period `.` at the end
-* entire length of the commit message must not go over 50 characters
-* describe what the commit does, not what issue it relates to or fixes
-* **be brief, yet descriptive** - we should have a good understanding of what the commit does by reading the subject
+- use the imperative, present tense: "change" not "changed" nor "changes"
+- do not capitalize first letter
+- do not place a period `.` at the end
+- entire length of the commit message must not go over 50 characters
+- describe what the commit does, not what issue it relates to or fixes
+- **be brief, yet descriptive** - we should have a good understanding of what the commit does by reading the subject
 
 ### Body
 
@@ -257,7 +246,6 @@ revert: feat(skeleton-text): add animated property
 
 This reverts commit 667ecc1654a317a13331b17617d973392f415f02.
 ```
-
 
 ## License
 

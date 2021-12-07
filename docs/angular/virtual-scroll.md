@@ -61,9 +61,7 @@ The DOM nodes at this point can be any content needed for an app. The difference
         <ion-avatar slot="start">
           <img src="https://loremflickr.com/40/40" />
         </ion-avatar>
-        <ion-label>
-          {{item }}
-        </ion-label>
+        <ion-label> {{item }} </ion-label>
       </ion-item>
     </ion-list>
   </cdk-virtual-scroll-viewport>
@@ -79,40 +77,27 @@ At the moment, CDK Virtual Scroller only supports fixed sized elements, but dyna
 The min/max buffer size tells the scroller "render as many nodes as it takes to meet this minimum height, but not over this".
 
 ```html
-<cdk-virtual-scroll-viewport
-  itemSize="56"
-  minBufferPx="900"
-  maxBufferPx="1350"
-></cdk-virtual-scroll-viewport>
+<cdk-virtual-scroll-viewport itemSize="56" minBufferPx="900" maxBufferPx="1350"></cdk-virtual-scroll-viewport>
 ```
 
 For this case, the `cdk-virtual-scroll-viewport` will render cells at a height 56px until it reaches a height of 900px, but no more at 1350px. These numbers are arbitrary, so be sure to test out what values will work in a real use case.
-
-
 
 Putting everything together, the final HTML should look like:
 
 ```html
 <ion-content>
-  <cdk-virtual-scroll-viewport
-    itemSize="56"
-    minBufferPx="900"
-    maxBufferPx="1350"
-  >
+  <cdk-virtual-scroll-viewport itemSize="56" minBufferPx="900" maxBufferPx="1350">
     <ion-list>
       <ion-item *cdkVirtualFor="let item of items">
         <ion-avatar slot="start">
           <img src="https://loremflickr.com/40/40" />
         </ion-avatar>
-        <ion-label>
-          {{item }}
-        </ion-label>
+        <ion-label> {{item }} </ion-label>
       </ion-item>
     </ion-list>
   </cdk-virtual-scroll-viewport>
 </ion-content>
 ```
-
 
 The last piece needed is a some CSS to size the viewport correctly. In the `tab1.page.scss` file, add the following
 

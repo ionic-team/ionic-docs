@@ -1,8 +1,9 @@
 ---
-sidebar_label: "ion-list"
-demoUrl: "/docs/demos/api/list/index.html"
-demoSourceUrl: "https://github.com/ionic-team/ionic-docs/tree/main/static/demos/api/list/index.html"
+sidebar_label: 'ion-list'
+demoUrl: '/docs/demos/api/list/index.html'
+demoSourceUrl: 'https://github.com/ionic-team/ionic-docs/tree/main/static/demos/api/list/index.html'
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
@@ -13,11 +14,9 @@ icons, thumbnails, and much more. Lists generally contain items with similar dat
 
 Lists support several interactions including swiping items to reveal options, dragging to reorder items within the list, and deleting items.
 
-
 ## Usage
 
-<Tabs defaultValue="angular" values={[{ value: 'angular', label: 'ANGULAR' }, { value: 'javascript', label: 'JAVASCRIPT' }, { value: 'react', label: 'REACT' }, { value: 'stencil', label: 'STENCIL' }, { value: 'vue', label: 'VUE' }]}>
-
+<Tabs groupId="framework" defaultValue="angular" values={[{ value: 'angular', label: 'Angular' }, { value: 'javascript', label: 'Javascript' }, { value: 'react', label: 'React' }, { value: 'stencil', label: 'Stencil' }, { value: 'vue', label: 'Vue' }]}>
 
 <TabItem value="angular">
 
@@ -85,7 +84,6 @@ Lists support several interactions including swiping items to reveal options, dr
 
 </TabItem>
 
-
 <TabItem value="javascript">
 
 ```html
@@ -152,12 +150,23 @@ Lists support several interactions including swiping items to reveal options, dr
 
 </TabItem>
 
-
 <TabItem value="react">
 
 ```tsx
 import React from 'react';
-import { IonList, IonItem, IonLabel, IonInput, IonToggle, IonRadio, IonCheckbox, IonItemSliding, IonItemOption, IonItemOptions, IonContent } from '@ionic/react';
+import {
+  IonList,
+  IonItem,
+  IonLabel,
+  IonInput,
+  IonToggle,
+  IonRadio,
+  IonCheckbox,
+  IonItemSliding,
+  IonItemOption,
+  IonItemOptions,
+  IonContent,
+} from '@ionic/react';
 
 export const ListExample: React.FC = () => (
   <IonContent>
@@ -224,9 +233,7 @@ export const ListExample: React.FC = () => (
 );
 ```
 
-
 </TabItem>
-
 
 <TabItem value="stencil">
 
@@ -235,7 +242,7 @@ import { Component, h } from '@stencil/core';
 
 @Component({
   tag: 'list-example',
-  styleUrl: 'list-example.css'
+  styleUrl: 'list-example.css',
 })
 export class ListExample {
   unread(ev: Event) {
@@ -302,15 +309,13 @@ export class ListExample {
             <ion-item-option onClick={(ev) => this.unread(ev)}>Unread</ion-item-option>
           </ion-item-options>
         </ion-item-sliding>
-      </ion-list>
+      </ion-list>,
     ];
   }
 }
 ```
 
-
 </TabItem>
-
 
 <TabItem value="vue">
 
@@ -378,34 +383,34 @@ export class ListExample {
 </template>
 
 <script>
-import { 
-  IonCheckbox, 
-  IonInput, 
-  IonItem, 
-  IonItemOption, 
-  IonItemOptions, 
-  IonItemSliding, 
-  IonList, 
-  IonLabel, 
-  IonRadio, 
-  IonToggle 
-} from '@ionic/vue';
-import { defineComponent } from 'vue';
+  import {
+    IonCheckbox,
+    IonInput,
+    IonItem,
+    IonItemOption,
+    IonItemOptions,
+    IonItemSliding,
+    IonList,
+    IonLabel,
+    IonRadio,
+    IonToggle,
+  } from '@ionic/vue';
+  import { defineComponent } from 'vue';
 
-export default defineComponent({
-  components: { 
-    IonCheckbox, 
-    IonInput, 
-    IonItem, 
-    IonItemOption, 
-    IonItemOptions, 
-    IonItemSliding, 
-    IonList, 
-    IonLabel, 
-    IonRadio, 
-    IonToggle 
-  }
-});
+  export default defineComponent({
+    components: {
+      IonCheckbox,
+      IonInput,
+      IonItem,
+      IonItemOption,
+      IonItemOptions,
+      IonItemSliding,
+      IonList,
+      IonLabel,
+      IonRadio,
+      IonToggle,
+    },
+  });
 </script>
 ```
 
@@ -415,48 +420,38 @@ export default defineComponent({
 
 ## Properties
 
-
 ### inset
 
-| | |
-| --- | --- |
+|                 |                                                                     |
+| --------------- | ------------------------------------------------------------------- |
 | **Description** | If `true`, the list will have margin around it and rounded corners. |
-| **Attribute** | `inset` |
-| **Type** | `boolean` |
-| **Default** | `false` |
-
-
+| **Attribute**   | `inset`                                                             |
+| **Type**        | `boolean`                                                           |
+| **Default**     | `false`                                                             |
 
 ### lines
 
-| | |
-| --- | --- |
+|                 |                                                         |
+| --------------- | ------------------------------------------------------- |
 | **Description** | How the bottom border should be displayed on all items. |
-| **Attribute** | `lines` |
-| **Type** | `"full" \| "inset" \| "none" \| undefined` |
-| **Default** | `undefined` |
-
-
+| **Attribute**   | `lines`                                                 |
+| **Type**        | `"full" \| "inset" \| "none" \| undefined`              |
+| **Default**     | `undefined`                                             |
 
 ### mode
 
-| | |
-| --- | --- |
+|                 |                                                   |
+| --------------- | ------------------------------------------------- |
 | **Description** | The mode determines which platform styles to use. |
-| **Attribute** | `mode` |
-| **Type** | `"ios" \| "md"` |
-| **Default** | `undefined` |
-
-
+| **Attribute**   | `mode`                                            |
+| **Type**        | `"ios" \| "md"`                                   |
+| **Default**     | `undefined`                                       |
 
 ## Methods
 
-
 ### closeSlidingItems
 
-| | |
-| --- | --- |
+|                 |                                                                                                                                                                     |
+| --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Description** | If `ion-item-sliding` are used inside the list, this method closes<br />any open sliding item.<br /><br />Returns `true` if an actual `ion-item-sliding` is closed. |
-| **Signature** | `closeSlidingItems() => Promise<boolean>` |
-
-
+| **Signature**   | `closeSlidingItems() => Promise<boolean>`                                                                                                                           |

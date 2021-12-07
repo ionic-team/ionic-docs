@@ -7,14 +7,20 @@ The great thing about Ionic is that with one codebase, you can build for any pla
 It’s easy to get started. Note that all code referenced in this guide can be [found on GitHub](https://github.com/ionic-team/photo-gallery-tutorial-ionic4/).
 
 ## Required Tools
+
 Download/install these right away to ensure an optimal Ionic development experience:
-* [Git](https://git-scm.com/downloads) for version control.
-* <strong>SSH client</strong>, such as [PuTTy](https://www.putty.org/), for secure login to Appflow.
-* <strong>Node.js</strong> for interacting with the Ionic ecosystem. [Download the LTS version here](https://nodejs.org/en/).
-* <strong>A code editor</strong> for... writing code! We are fans of [Visual Studio Code](https://code.visualstudio.com/).
-* <strong>Command-line terminal (CLI)</strong>: FYI <strong>Windows</strong> users, for the best Ionic experience, we recommend the built-in command line (cmd) or the Powershell CLI, running in Administrator mode. For <strong>Mac/Linux</strong> users, virtually any terminal will work.
+
+- [Git](https://git-scm.com/downloads) for version control.
+- <strong>SSH client</strong>, such as [PuTTy](https://www.putty.org/), for secure login to Appflow.
+- <strong>Node.js</strong> for interacting with the Ionic ecosystem. [Download the LTS version here](https://nodejs.org/en/).
+- <strong>A code editor</strong> for... writing code! We are fans of [Visual Studio Code](https://code.visualstudio.com/).
+- <strong>Command-line terminal (CLI)</strong>: FYI <strong>Windows</strong> users, for the best Ionic experience, we
+  recommend the built-in command line (cmd) or the Powershell CLI, running in Administrator mode. For <strong>
+    Mac/Linux
+  </strong> users, virtually any terminal will work.
 
 ## Install Ionic and Cordova
+
 Run the following in the command line:
 
 ```shell
@@ -28,6 +34,7 @@ Consider setting up npm to operate globally without elevated permissions. See [R
 :::
 
 ## Create an App
+
 Next, create an Ionic Angular app using our “Tabs” app template:
 
 ```shell
@@ -45,6 +52,7 @@ $ cd photo-gallery
 That’s it! Now for the fun part - let’s see the app in action.
 
 ## Run the App
+
 Run this command next:
 
 ```shell
@@ -54,6 +62,7 @@ ionic serve
 And voilà! Your Ionic app is now running in a web browser. Most of your app can be built right in the browser, greatly increasing development speed.
 
 ## Photo Gallery!!!
+
 There are three tabs. Click on the Tab2 tab. It’s a blank canvas, aka the perfect spot to add camera functionality. Let’s begin to transform this page into a Photo Gallery. Ionic features LiveReload, so when you make changes and save them, the app is updated immediately!
 
 ![Before and after going through this tutorial](/img/guides/first-app-v3/email-photogallery.gif)

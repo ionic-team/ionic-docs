@@ -1,10 +1,11 @@
 ---
-title: "Toggle | ion-toggle: Custom Toggle Button for Ionic Applications"
-description: "Toggle changes the state of a single option. Use ion-toggle to create customizable toggle buttons that can be switched on or off for your applications."
-sidebar_label: "ion-toggle"
-demoUrl: "/docs/demos/api/toggle/index.html"
-demoSourceUrl: "https://github.com/ionic-team/ionic-docs/tree/main/static/demos/api/toggle/index.html"
+title: 'Toggle | ion-toggle: Custom Toggle Button for Ionic Applications'
+description: 'Toggle changes the state of a single option. Use ion-toggle to create customizable toggle buttons that can be switched on or off for your applications.'
+sidebar_label: 'ion-toggle'
+demoUrl: '/docs/demos/api/toggle/index.html'
+demoSourceUrl: 'https://github.com/ionic-team/ionic-docs/tree/main/static/demos/api/toggle/index.html'
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
@@ -47,7 +48,7 @@ ion-toggle::before {
   top: 16px;
   left: 10px;
 
-  content: "ON";
+  content: 'ON';
 
   color: white;
   font-size: 8px;
@@ -55,7 +56,6 @@ ion-toggle::before {
   z-index: 1;
 }
 ```
-
 
 ### Customizing Width
 
@@ -118,7 +118,6 @@ ion-toggle {
 }
 ```
 
-
 ### Customizing Border Radius
 
 The `--handle-border-radius` can be used to change the `border-radius` on the handle.
@@ -136,7 +135,6 @@ ion-toggle.toggle-checked {
   --handle-border-radius: 4px 14px 14px 4px;
 }
 ```
-
 
 ### Customizing Box Shadow
 
@@ -158,7 +156,6 @@ ion-toggle.toggle-checked {
 
 See the section on [customizing overflow](#customizing-overflow) to allow the `box-shadow` to overflow the toggle container.
 
-
 ### Customizing Overflow
 
 Setting `overflow` on the toggle will be inherited by the toggle handle. By default, overflow is set to `hidden` in `ios` only. The `box-shadow` will still appear cut off due to the `contain` css property. Set `contain` to `none` in order to overflow the toggle container.
@@ -173,11 +170,9 @@ ion-toggle {
 }
 ```
 
-
 ## Usage
 
-<Tabs defaultValue="angular" values={[{ value: 'angular', label: 'ANGULAR' }, { value: 'javascript', label: 'JAVASCRIPT' }, { value: 'react', label: 'REACT' }, { value: 'stencil', label: 'STENCIL' }, { value: 'vue', label: 'VUE' }]}>
-
+<Tabs groupId="framework" defaultValue="angular" values={[{ value: 'angular', label: 'Angular' }, { value: 'javascript', label: 'Javascript' }, { value: 'react', label: 'React' }, { value: 'stencil', label: 'Stencil' }, { value: 'vue', label: 'Vue' }]}>
 
 <TabItem value="angular">
 
@@ -217,9 +212,7 @@ ion-toggle {
 </ion-list>
 ```
 
-
 </TabItem>
-
 
 <TabItem value="javascript">
 
@@ -259,15 +252,24 @@ ion-toggle {
 </ion-list>
 ```
 
-
 </TabItem>
-
 
 <TabItem value="react">
 
 ```tsx
 import React, { useState } from 'react';
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonToggle, IonList, IonItem, IonLabel, IonItemDivider } from '@ionic/react';
+import {
+  IonContent,
+  IonHeader,
+  IonPage,
+  IonTitle,
+  IonToolbar,
+  IonToggle,
+  IonList,
+  IonItem,
+  IonLabel,
+  IonItemDivider,
+} from '@ionic/react';
 
 export const ToggleExamples: React.FC = () => {
   const [checked, setChecked] = useState(false);
@@ -280,25 +282,38 @@ export const ToggleExamples: React.FC = () => {
       </IonHeader>
       <IonContent>
         <IonList>
-
           <IonItemDivider>Default Toggle</IonItemDivider>
           <IonItem>
             <IonLabel>Checked: {JSON.stringify(checked)}</IonLabel>
-            <IonToggle checked={checked} onIonChange={e => setChecked(e.detail.checked)} />
+            <IonToggle checked={checked} onIonChange={(e) => setChecked(e.detail.checked)} />
           </IonItem>
 
           <IonItemDivider>Disabled Toggle</IonItemDivider>
-          <IonItem><IonToggle disabled /></IonItem>
+          <IonItem>
+            <IonToggle disabled />
+          </IonItem>
 
           <IonItemDivider>Checked Toggle</IonItemDivider>
-          <IonItem><IonToggle checked /></IonItem>
+          <IonItem>
+            <IonToggle checked />
+          </IonItem>
 
           <IonItemDivider>Toggle Colors</IonItemDivider>
-          <IonItem><IonToggle color="primary" /></IonItem>
-          <IonItem><IonToggle color="secondary" /></IonItem>
-          <IonItem><IonToggle color="danger" /></IonItem>
-          <IonItem><IonToggle color="light" /></IonItem>
-          <IonItem><IonToggle color="dark" /></IonItem>
+          <IonItem>
+            <IonToggle color="primary" />
+          </IonItem>
+          <IonItem>
+            <IonToggle color="secondary" />
+          </IonItem>
+          <IonItem>
+            <IonToggle color="danger" />
+          </IonItem>
+          <IonItem>
+            <IonToggle color="light" />
+          </IonItem>
+          <IonItem>
+            <IonToggle color="dark" />
+          </IonItem>
 
           <IonItemDivider>Toggles in a List</IonItemDivider>
           <IonItem>
@@ -324,7 +339,6 @@ export const ToggleExamples: React.FC = () => {
 
 </TabItem>
 
-
 <TabItem value="stencil">
 
 ```tsx
@@ -332,7 +346,7 @@ import { Component, State, h } from '@stencil/core';
 
 @Component({
   tag: 'toggle-example',
-  styleUrl: 'toggle-example.css'
+  styleUrl: 'toggle-example.css',
 })
 export class ToggleExample {
   @State() pepperoni: boolean = false;
@@ -361,33 +375,37 @@ export class ToggleExample {
       <ion-list>
         <ion-item>
           <ion-label>Pepperoni</ion-label>
-          <ion-toggle checked={this.pepperoni} onIonChange={(ev) => this.pepperoni = ev.detail.checked}></ion-toggle>
+          <ion-toggle checked={this.pepperoni} onIonChange={(ev) => (this.pepperoni = ev.detail.checked)}></ion-toggle>
         </ion-item>
 
         <ion-item>
           <ion-label>Sausage</ion-label>
-          <ion-toggle checked={this.sausage} onIonChange={(ev) => this.sausage = ev.detail.checked} disabled={true}></ion-toggle>
+          <ion-toggle
+            checked={this.sausage}
+            onIonChange={(ev) => (this.sausage = ev.detail.checked)}
+            disabled={true}
+          ></ion-toggle>
         </ion-item>
 
         <ion-item>
           <ion-label>Mushrooms</ion-label>
-          <ion-toggle checked={this.mushrooms} onIonChange={(ev) => this.mushrooms = ev.detail.checked}></ion-toggle>
+          <ion-toggle checked={this.mushrooms} onIonChange={(ev) => (this.mushrooms = ev.detail.checked)}></ion-toggle>
         </ion-item>
       </ion-list>,
 
       <div>
-        Pepperoni: {this.pepperoni ? "true" : "false"}<br/>
-        Sausage: {this.sausage ? "true" : "false"}<br/>
-        Mushrooms: {this.mushrooms ? "true" : "false"}
-      </div>
+        Pepperoni: {this.pepperoni ? 'true' : 'false'}
+        <br />
+        Sausage: {this.sausage ? 'true' : 'false'}
+        <br />
+        Mushrooms: {this.mushrooms ? 'true' : 'false'}
+      </div>,
     ];
   }
 }
 ```
 
-
 </TabItem>
-
 
 <TabItem value="vue">
 
@@ -416,7 +434,8 @@ export class ToggleExample {
       <ion-toggle
         @ionChange="toppings.value.push($event.target.value)"
         value="pepperoni"
-        :checked="toppings.value.indexOf('pepperoni') !== -1">
+        :checked="toppings.value.indexOf('pepperoni') !== -1"
+      >
       </ion-toggle>
     </ion-item>
 
@@ -426,7 +445,8 @@ export class ToggleExample {
         @ionChange="toppings.value.push($event.target.value)"
         value="sausage"
         :checked="toppings.value.indexOf('sausage') !== -1"
-        disabled="true">
+        disabled="true"
+      >
       </ion-toggle>
     </ion-item>
 
@@ -435,27 +455,27 @@ export class ToggleExample {
       <ion-toggle
         @ionChange="toppings.value.push($event.target.value)"
         value="mushrooms"
-        :checked="toppings.value.indexOf('mushrooms') !== -1">
+        :checked="toppings.value.indexOf('mushrooms') !== -1"
+      >
       </ion-toggle>
     </ion-item>
   </ion-list>
 </template>
 
 <script>
-import { IonLabel, IonList, IonItem, IonToggle } from '@ionic/vue';
-import { defineComponent, vue } from 'vue';
+  import { IonLabel, IonList, IonItem, IonToggle } from '@ionic/vue';
+  import { defineComponent, vue } from 'vue';
 
-export default defineComponent({
-  components: { IonLabel, IonList, IonItem, IonToggle },
-  setup() {
-    const toppings = ref([]);
-    
-    return { toppings };
-  }
-});
+  export default defineComponent({
+    components: { IonLabel, IonList, IonItem, IonToggle },
+    setup() {
+      const toppings = ref([]);
+
+      return { toppings };
+    },
+  });
 </script>
 ```
-
 
 </TabItem>
 
@@ -463,104 +483,88 @@ export default defineComponent({
 
 ## Properties
 
-
 ### checked
 
-| | |
-| --- | --- |
+|                 |                                    |
+| --------------- | ---------------------------------- |
 | **Description** | If `true`, the toggle is selected. |
-| **Attribute** | `checked` |
-| **Type** | `boolean` |
-| **Default** | `false` |
-
-
+| **Attribute**   | `checked`                          |
+| **Type**        | `boolean`                          |
+| **Default**     | `false`                            |
 
 ### color
 
-| | |
-| --- | --- |
+|                 |                                                                                                                                                                                                                                                                                  |
+| --------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Description** | The color to use from your application's color palette.<br />Default options are: `"primary"`, `"secondary"`, `"tertiary"`, `"success"`, `"warning"`, `"danger"`, `"light"`, `"medium"`, and `"dark"`.<br />For more information on colors, see [theming](../theming/basics.md). |
-| **Attribute** | `color` |
-| **Type** | `string \| undefined` |
-| **Default** | `undefined` |
-
-
+| **Attribute**   | `color`                                                                                                                                                                                                                                                                          |
+| **Type**        | `string \| undefined`                                                                                                                                                                                                                                                            |
+| **Default**     | `undefined`                                                                                                                                                                                                                                                                      |
 
 ### disabled
 
-| | |
-| --- | --- |
+|                 |                                                      |
+| --------------- | ---------------------------------------------------- |
 | **Description** | If `true`, the user cannot interact with the toggle. |
-| **Attribute** | `disabled` |
-| **Type** | `boolean` |
-| **Default** | `false` |
-
-
+| **Attribute**   | `disabled`                                           |
+| **Type**        | `boolean`                                            |
+| **Default**     | `false`                                              |
 
 ### mode
 
-| | |
-| --- | --- |
+|                 |                                                   |
+| --------------- | ------------------------------------------------- |
 | **Description** | The mode determines which platform styles to use. |
-| **Attribute** | `mode` |
-| **Type** | `"ios" \| "md"` |
-| **Default** | `undefined` |
-
-
+| **Attribute**   | `mode`                                            |
+| **Type**        | `"ios" \| "md"`                                   |
+| **Default**     | `undefined`                                       |
 
 ### name
 
-| | |
-| --- | --- |
+|                 |                                                                 |
+| --------------- | --------------------------------------------------------------- |
 | **Description** | The name of the control, which is submitted with the form data. |
-| **Attribute** | `name` |
-| **Type** | `string` |
-| **Default** | `this.inputId` |
-
-
+| **Attribute**   | `name`                                                          |
+| **Type**        | `string`                                                        |
+| **Default**     | `this.inputId`                                                  |
 
 ### value
 
-| | |
-| --- | --- |
+|                 |                                                                                                                                                                                                                                                                           |
+| --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Description** | The value of the toggle does not mean if it's checked or not, use the `checked`<br />property for that.<br /><br />The value of a toggle is analogous to the value of a `<input type="checkbox">`,<br />it's only used when the toggle participates in a native `<form>`. |
-| **Attribute** | `value` |
-| **Type** | `null \| string \| undefined` |
-| **Default** | `'on'` |
-
-
+| **Attribute**   | `value`                                                                                                                                                                                                                                                                   |
+| **Type**        | `null \| string \| undefined`                                                                                                                                                                                                                                             |
+| **Default**     | `'on'`                                                                                                                                                                                                                                                                    |
 
 ## Events
 
-| Name | Description |
-| --- | --- |
-| `ionBlur` | Emitted when the toggle loses focus. |
+| Name        | Description                                  |
+| ----------- | -------------------------------------------- |
+| `ionBlur`   | Emitted when the toggle loses focus.         |
 | `ionChange` | Emitted when the value property has changed. |
-| `ionFocus` | Emitted when the toggle has focus. |
-
+| `ionFocus`  | Emitted when the toggle has focus.           |
 
 ## CSS Shadow Parts
 
-| Name | Description |
-| --- | --- |
+| Name     | Description                                                   |
+| -------- | ------------------------------------------------------------- |
 | `handle` | The toggle handle, or knob, used to change the checked state. |
-| `track` | The background track of the toggle. |
-
+| `track`  | The background track of the toggle.                           |
 
 ## CSS Custom Properties
 
-| Name | Description |
-| --- | --- |
-| `--background` | Background of the toggle |
-| `--background-checked` | Background of the toggle when checked |
-| `--border-radius` | Border radius of the toggle track |
-| `--handle-background` | Background of the toggle handle |
+| Name                          | Description                                  |
+| ----------------------------- | -------------------------------------------- |
+| `--background`                | Background of the toggle                     |
+| `--background-checked`        | Background of the toggle when checked        |
+| `--border-radius`             | Border radius of the toggle track            |
+| `--handle-background`         | Background of the toggle handle              |
 | `--handle-background-checked` | Background of the toggle handle when checked |
-| `--handle-border-radius` | Border radius of the toggle handle |
-| `--handle-box-shadow` | Box shadow of the toggle handle |
-| `--handle-height` | Height of the toggle handle |
-| `--handle-max-height` | Maximum height of the toggle handle |
-| `--handle-spacing` | Horizontal spacing around the toggle handle |
-| `--handle-transition` | Transition of the toggle handle |
-| `--handle-width` | Width of the toggle handle |
-
+| `--handle-border-radius`      | Border radius of the toggle handle           |
+| `--handle-box-shadow`         | Box shadow of the toggle handle              |
+| `--handle-height`             | Height of the toggle handle                  |
+| `--handle-max-height`         | Maximum height of the toggle handle          |
+| `--handle-spacing`            | Horizontal spacing around the toggle handle  |
+| `--handle-transition`         | Transition of the toggle handle              |
+| `--handle-width`              | Width of the toggle handle                   |

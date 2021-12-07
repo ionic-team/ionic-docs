@@ -15,21 +15,19 @@ These commands will create a `config.xml` file, which is used to define Cordova 
 
 There are more steps to configure [iOS](../../../developing/ios.md) and [Android](../../../developing/android.md) native tooling.
 
-
-
 Much better! Now we can add the camera functionality. By the way, you can find reference code for this [on GitHub](https://github.com/ionic-team/photo-gallery-tutorial-ionic4).
 
 Back in `tab2.page.html`, add the following:
 
 ```html
 <ion-content>
-<img>
+  <img />
 
-<ion-fab vertical="bottom" horizontal="center" slot="fixed">
+  <ion-fab vertical="bottom" horizontal="center" slot="fixed">
     <ion-fab-button>
       <ion-icon name="camera"></ion-icon>
     </ion-fab-button>
-</ion-fab>
+  </ion-fab>
 </ion-content>
 ```
 
@@ -104,7 +102,7 @@ Our camera button doesn’t do anything yet. Over in `tab2.page.html`, add a cli
 Then, update the image placeholder. The following binds the “currentImage” variable (which we’ll work on next) to the image to display to the user.
 
 ```html
-<img [src]="currentImage" *ngIf="currentImage">
+<img [src]="currentImage" *ngIf="currentImage" />
 ```
 
 Open `tab2.page.ts` next and import the Camera library:

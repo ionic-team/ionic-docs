@@ -1,0 +1,233 @@
+.release-notes {
+  margin-block-start: 4rem;
+
+  --accent-color: #3880ff;
+  --accent-color-rgb: 56, 128, 255;
+  --accent-color-100: #4d8dff;
+  --accent-color-200: #639cff;
+  --accent-color-300: #4d8dff;
+  --accent-color-400: #7cabff;
+  --accent-color-500: #97bdff;
+  --accent-color-600: #b2ceff;
+  --accent-color-700: #cddfff;
+  --accent-color-800: #e3edff;
+  --accent-color-900: #f0f6ff;
+  --background: var(--token-primary-bg-c);
+  --code-font-family: 'SFMono-Regular', 'Roboto Mono', Consolas, 'Liberation Mono', Menlo, Courier, monospace;
+}
+
+.intro {
+  margin-bottom: 2.2em;
+}
+
+.release-note {
+  position: relative;
+
+  display: flex;
+  align-items: top;
+
+  padding-bottom: 80px;
+}
+
+/* Turn off the # on anchor hover */
+.release-notes h2 a[href^='#']:hover:before,
+.release-notes h3 a[href^='#']:hover:before,
+.release-notes h4 a[href^='#']:hover:before,
+.release-notes h5 a[href^='#']:hover:before,
+.release-notes h6 a[href^='#']:hover:before {
+  opacity: 0;
+}
+
+.release-notes h2 {
+  margin: 0;
+
+  font-size: 32px;
+}
+
+.release-notes h3 {
+  margin-top: 32px;
+  margin-bottom: 0;
+
+  font-size: 20px;
+}
+
+.release-notes h2,
+.release-notes h3 {
+  padding-top: 0;
+}
+
+.release-notes ul {
+  margin-top: 0.8em;
+}
+
+.release-notes ul li {
+  line-height: 1.5;
+  margin-bottom: 8px;
+}
+
+/*
+   * Release Note Header
+   * --------------------------------------------------------
+   */
+
+.release-header {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.release-header h2 {
+  font-family: var(--font-family);
+
+  margin-right: 8px;
+}
+
+.release-header .release-version {
+  font-weight: 500;
+}
+
+.release-published h3 {
+  font-family: var(--font-family);
+
+  font-weight: 300;
+
+  margin-top: 4px;
+  color: #4e5b6a;
+}
+
+.release-badge {
+  margin-right: 8px;
+  margin-top: 5px;
+  margin-bottom: 4px;
+
+  text-transform: uppercase;
+
+  background: transparent;
+  color: #b2becd;
+  border: 1px solid #b2becd;
+  border-radius: 14px;
+  height: 24px;
+  padding: 2px 8px;
+
+  font-weight: 600;
+  font-size: 10px;
+  line-height: 14px;
+  display: flex;
+  align-items: center;
+  letter-spacing: 0.08em;
+}
+
+.release-note-major .release-badge {
+  background: var(--text-color--dark);
+  border-color: var(--text-color--dark);
+  color: white;
+}
+
+.release-note-minor .release-badge {
+  background: #b2becd;
+  border-color: #b2becd;
+  color: white;
+}
+
+.release-badge.release-badge-latest {
+  background: transparent;
+  color: #43c465;
+  border-color: #43c465;
+}
+
+/*
+   * Release Note Element Tag
+   * --------------------------------------------------------
+   */
+
+.release-tag-wrapper h2 {
+  font-size: 15px;
+
+  margin-right: 30px;
+}
+
+.release-note-patch .release-tag-wrapper:after {
+  content: '';
+  background-image: linear-gradient(to bottom, #ebf0f6, #ebf0f6);
+  width: 2px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: calc((65px / 2) - 1px);
+  z-index: -1;
+}
+
+.release-tag {
+  line-height: 200%;
+  color: var(--accent-color-200);
+
+  padding: 6px 12px;
+  display: inline-block;
+  text-align: center;
+  font-weight: 600;
+  border-radius: 16px;
+  width: 64px;
+  height: 64px;
+
+  background: var(--background);
+  color: var(--accent-color-200);
+
+  border: 2px solid var(--accent-color-200);
+
+  line-height: normal;
+
+  transition: background 0.2s ease-out;
+}
+
+html[data-theme='light'] .release-tag:hover {
+  background: var(--accent-color-800);
+}
+
+html[data-theme='dark'] .release-tag:hover {
+  background: var(--accent-color-100);
+}
+
+.release-note-major .release-tag,
+.release-note-minor .release-tag {
+  background: var(--accent-color-200);
+  color: #fff;
+}
+
+.release-note-major:hover .release-tag,
+.release-note-minor:hover .release-tag {
+  background: var(--accent-color-100);
+}
+
+.release-tag .release-symbol {
+  font-family: var(--font-family);
+  font-weight: 300;
+
+  display: block;
+
+  font-size: 24px;
+
+  margin-top: 3px;
+  margin-bottom: -7px;
+}
+
+.release-tag .release-version {
+  font-family: var(--code-font-family);
+  font-size: 10px;
+  letter-spacing: -0.08em;
+}
+
+/*
+   * Release Note Blockquote
+   * --------------------------------------------------------
+   */
+
+.release-notes blockquote {
+  margin-left: 0;
+
+  background: rgba(var(--accent-color-rgb), 0.05);
+  border-color: var(--accent-color);
+}
+
+.release-notes a {
+  color: var(--accent-color);
+}

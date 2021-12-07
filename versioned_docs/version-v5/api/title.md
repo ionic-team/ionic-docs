@@ -1,8 +1,9 @@
 ---
-title: "ion-title: Ionic Framework App Title Component for Toolbars"
-description: "ion-title is a component that sets the title of the toolbar. Read to learn more about title and collapsible title components and usage for Ionic Framework Apps."
-sidebar_label: "ion-title"
+title: 'ion-title: Ionic Framework App Title Component for Toolbars'
+description: 'ion-title is a component that sets the title of the toolbar. Read to learn more about title and collapsible title components and usage for Ionic Framework Apps.'
+sidebar_label: 'ion-title'
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
@@ -12,8 +13,7 @@ import TabItem from '@theme/TabItem';
 
 ## Usage
 
-<Tabs defaultValue="angular" values={[{ value: 'angular', label: 'ANGULAR' }, { value: 'javascript', label: 'JAVASCRIPT' }, { value: 'react', label: 'REACT' }, { value: 'stencil', label: 'STENCIL' }, { value: 'vue', label: 'VUE' }]}>
-
+<Tabs groupId="framework" defaultValue="angular" values={[{ value: 'angular', label: 'Angular' }, { value: 'javascript', label: 'Javascript' }, { value: 'react', label: 'React' }, { value: 'stencil', label: 'Stencil' }, { value: 'vue', label: 'Vue' }]}>
 
 <TabItem value="angular">
 
@@ -59,7 +59,6 @@ Ionic provides a way to create the collapsible titles that exist on stock iOS ap
   </ion-header>
 
   ...
-
 </ion-content>
 ```
 
@@ -89,7 +88,6 @@ In the example above, notice there are two `ion-header` elements. The first `ion
   </ion-header>
 
   ...
-
 </ion-content>
 ```
 
@@ -101,7 +99,7 @@ In this example, notice that we have added two sets of `ion-buttons` both with `
 
 ### Styling Collapsible Large Titles
 
-The collapsible large title should appear seamless in relation to the rest of your content. This means that the background color of the `ion-toolbar` that contains the collapsible large title should always match the background color of `ion-content`. 
+The collapsible large title should appear seamless in relation to the rest of your content. This means that the background color of the `ion-toolbar` that contains the collapsible large title should always match the background color of `ion-content`.
 
 By default, the `ion-toolbar` that contains the standard title is hidden using `opacity: 0` and is progressively shown as you collapse the large title by scrolling. As a result, the background color that you see behind the standard title is actually the background color of `ion-content`.
 
@@ -116,9 +114,7 @@ ion-title.large-title {
 }
 ```
 
-
 </TabItem>
-
 
 <TabItem value="javascript">
 
@@ -164,7 +160,6 @@ Ionic provides a way to create the collapsible titles that exist on stock iOS ap
   </ion-header>
 
   ...
-
 </ion-content>
 ```
 
@@ -194,7 +189,6 @@ In the example above, notice there are two `ion-header` elements. The first `ion
   </ion-header>
 
   ...
-
 </ion-content>
 ```
 
@@ -206,7 +200,7 @@ In this example, notice that we have added two sets of `ion-buttons` both with `
 
 ### Styling Collapsible Large Titles
 
-The collapsible large title should appear seamless in relation to the rest of your content. This means that the background color of the `ion-toolbar` that contains the collapsible large title should always match the background color of `ion-content`. 
+The collapsible large title should appear seamless in relation to the rest of your content. This means that the background color of the `ion-toolbar` that contains the collapsible large title should always match the background color of `ion-content`.
 
 By default, the `ion-toolbar` that contains the standard title is hidden using `opacity: 0` and is progressively shown as you collapse the large title by scrolling. As a result, the background color that you see behind the standard title is actually the background color of `ion-content`.
 
@@ -222,7 +216,6 @@ ion-title.large-title {
 ```
 
 </TabItem>
-
 
 <TabItem value="react">
 
@@ -260,13 +253,7 @@ Ionic provides a way to create the collapsible titles that exist on stock iOS ap
 
 ```tsx
 import React from 'react';
-import {
-  IonContent,
-  IonHeader,
-  IonSearchbar,
-  IonTitle,
-  IonToolbar
-} from '@ionic/react';
+import { IonContent, IonHeader, IonSearchbar, IonTitle, IonToolbar } from '@ionic/react';
 
 export const LargeTitleExample: React.FC = () => (
   <>
@@ -285,9 +272,7 @@ export const LargeTitleExample: React.FC = () => (
           <IonSearchbar></IonSearchbar>
         </IonToolbar>
       </IonHeader>
-
       ...
-
     </IonContent>
   </>
 );
@@ -297,15 +282,7 @@ In the example above, notice there are two `IonHeader` elements. The first `IonH
 
 ```tsx
 import React from 'react';
-import {
-  IonButton,
-  IonButtons,
-  IonContent,
-  IonHeader,
-  IonSearchbar,
-  IonTitle,
-  IonToolbar
-} from '@ionic/react';
+import { IonButton, IonButtons, IonContent, IonHeader, IonSearchbar, IonTitle, IonToolbar } from '@ionic/react';
 
 export const LargeTitleExample: React.FC = () => (
   <>
@@ -330,9 +307,7 @@ export const LargeTitleExample: React.FC = () => (
           <IonSearchbar></IonSearchbar>
         </IonToolbar>
       </IonHeader>
-
       ...
-
     </IonContent>
   </>
 );
@@ -346,7 +321,7 @@ In this example, notice that we have added two sets of `IonButtons` both with `c
 
 ### Styling Collapsible Large Titles
 
-The collapsible large title should appear seamless in relation to the rest of your content. This means that the background color of the `IonToolbar` that contains the collapsible large title should always match the background color of `IonContent`. 
+The collapsible large title should appear seamless in relation to the rest of your content. This means that the background color of the `IonToolbar` that contains the collapsible large title should always match the background color of `IonContent`.
 
 By default, the `IonToolbar` that contains the standard title is hidden using `opacity: 0` and is progressively shown as you collapse the large title by scrolling. As a result, the background color that you see behind the standard title is actually the background color of `IonContent`.
 
@@ -363,7 +338,6 @@ ion-title.large-title {
 
 </TabItem>
 
-
 <TabItem value="stencil">
 
 ```tsx
@@ -371,7 +345,7 @@ import { Component, h } from '@stencil/core';
 
 @Component({
   tag: 'title-example',
-  styleUrl: 'title-example.css'
+  styleUrl: 'title-example.css',
 })
 export class TitleExample {
   render() {
@@ -392,12 +366,11 @@ export class TitleExample {
       // Large title
       <ion-toolbar>
         <ion-title size="large">Large Title</ion-title>
-      </ion-toolbar>
+      </ion-toolbar>,
     ];
   }
 }
 ```
-
 
 ### Collapsible Large Titles
 
@@ -408,7 +381,7 @@ import { Component, h } from '@stencil/core';
 
 @Component({
   tag: 'title-example',
-  styleUrl: 'title-example.css'
+  styleUrl: 'title-example.css',
 })
 export class TitleExample {
   render() {
@@ -428,10 +401,8 @@ export class TitleExample {
             <ion-searchbar></ion-searchbar>
           </ion-toolbar>
         </ion-header>
-
         ...
-
-      </ion-content>
+      </ion-content>,
     ];
   }
 }
@@ -444,7 +415,7 @@ import { Component, h } from '@stencil/core';
 
 @Component({
   tag: 'title-example',
-  styleUrl: 'title-example.css'
+  styleUrl: 'title-example.css',
 })
 export class TitleExample {
   render() {
@@ -470,10 +441,8 @@ export class TitleExample {
             <ion-searchbar></ion-searchbar>
           </ion-toolbar>
         </ion-header>
-
         ...
-
-      </ion-content>
+      </ion-content>,
     ];
   }
 }
@@ -489,7 +458,7 @@ When styling the large title, you should target the large title globally as oppo
 
 ### Styling Collapsible Large Titles
 
-The collapsible large title should appear seamless in relation to the rest of your content. This means that the background color of the `ion-toolbar` that contains the collapsible large title should always match the background color of `ion-content`. 
+The collapsible large title should appear seamless in relation to the rest of your content. This means that the background color of the `ion-toolbar` that contains the collapsible large title should always match the background color of `ion-content`.
 
 By default, the `ion-toolbar` that contains the standard title is hidden using `opacity: 0` and is progressively shown as you collapse the large title by scrolling. As a result, the background color that you see behind the standard title is actually the background color of `ion-content`.
 
@@ -505,7 +474,6 @@ ion-title.large-title {
 ```
 
 </TabItem>
-
 
 <TabItem value="vue">
 
@@ -531,12 +499,12 @@ ion-title.large-title {
 </template>
 
 <script>
-import { IonTitle, IonToolbar } from '@ionic/vue';
-import { defineComponent } from 'vue';
+  import { IonTitle, IonToolbar } from '@ionic/vue';
+  import { defineComponent } from 'vue';
 
-export default defineComponent({
-  components: { IonTitle, IonToolbar }
-});
+  export default defineComponent({
+    components: { IonTitle, IonToolbar },
+  });
 </script>
 ```
 
@@ -563,29 +531,22 @@ Ionic provides a way to create the collapsible titles that exist on stock iOS ap
     </ion-header>
 
     ...
-
   </ion-content>
 </template>
 
 <script>
-import { 
-  IonContent, 
-  IonHeader, 
-  IonSearchbar, 
-  IonTitle, 
-  IonToolbar
-} from '@ionic/vue';
-import { defineComponent } from 'vue';
+  import { IonContent, IonHeader, IonSearchbar, IonTitle, IonToolbar } from '@ionic/vue';
+  import { defineComponent } from 'vue';
 
-export default defineComponent({
-  components: {
-    IonContent, 
-    IonHeader, 
-    IonSearchbar, 
-    IonTitle, 
-    IonToolbar
-  }
-});
+  export default defineComponent({
+    components: {
+      IonContent,
+      IonHeader,
+      IonSearchbar,
+      IonTitle,
+      IonToolbar,
+    },
+  });
 </script>
 ```
 
@@ -616,33 +577,24 @@ In the example above, notice there are two `ion-header` elements. The first `ion
     </ion-header>
 
     ...
-
   </ion-content>
 </template>
 
 <script>
-import { 
-  IonButton,
-  IonButtons,
-  IonContent, 
-  IonHeader, 
-  IonSearchbar, 
-  IonTitle, 
-  IonToolbar
-} from '@ionic/vue';
-import { defineComponent } from 'vue';
+  import { IonButton, IonButtons, IonContent, IonHeader, IonSearchbar, IonTitle, IonToolbar } from '@ionic/vue';
+  import { defineComponent } from 'vue';
 
-export default defineComponent({
-  components: {
-    IonButton,
-    IonButtons,
-    IonContent, 
-    IonHeader, 
-    IonSearchbar, 
-    IonTitle, 
-    IonToolbar
-  }
-});
+  export default defineComponent({
+    components: {
+      IonButton,
+      IonButtons,
+      IonContent,
+      IonHeader,
+      IonSearchbar,
+      IonTitle,
+      IonToolbar,
+    },
+  });
 </script>
 ```
 
@@ -654,7 +606,7 @@ In this example, notice that we have added two sets of `ion-buttons` both with `
 
 ### Styling Collapsible Large Titles
 
-The collapsible large title should appear seamless in relation to the rest of your content. This means that the background color of the `ion-toolbar` that contains the collapsible large title should always match the background color of `ion-content`. 
+The collapsible large title should appear seamless in relation to the rest of your content. This means that the background color of the `ion-toolbar` that contains the collapsible large title should always match the background color of `ion-content`.
 
 By default, the `ion-toolbar` that contains the standard title is hidden using `opacity: 0` and is progressively shown as you collapse the large title by scrolling. As a result, the background color that you see behind the standard title is actually the background color of `ion-content`.
 
@@ -675,32 +627,26 @@ ion-title.large-title {
 
 ## Properties
 
-
 ### color
 
-| | |
-| --- | --- |
+|                 |                                                                                                                                                                                                                                                                                  |
+| --------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Description** | The color to use from your application's color palette.<br />Default options are: `"primary"`, `"secondary"`, `"tertiary"`, `"success"`, `"warning"`, `"danger"`, `"light"`, `"medium"`, and `"dark"`.<br />For more information on colors, see [theming](../theming/basics.md). |
-| **Attribute** | `color` |
-| **Type** | `string \| undefined` |
-| **Default** | `undefined` |
-
-
+| **Attribute**   | `color`                                                                                                                                                                                                                                                                          |
+| **Type**        | `string \| undefined`                                                                                                                                                                                                                                                            |
+| **Default**     | `undefined`                                                                                                                                                                                                                                                                      |
 
 ### size
 
-| | |
-| --- | --- |
-| **Description** | The size of the toolbar title. |
-| **Attribute** | `size` |
-| **Type** | `"large" \| "small" \| undefined` |
-| **Default** | `undefined` |
-
-
+|                 |                                   |
+| --------------- | --------------------------------- |
+| **Description** | The size of the toolbar title.    |
+| **Attribute**   | `size`                            |
+| **Type**        | `"large" \| "small" \| undefined` |
+| **Default**     | `undefined`                       |
 
 ## CSS Custom Properties
 
-| Name | Description |
-| --- | --- |
+| Name      | Description             |
+| --------- | ----------------------- |
 | `--color` | Text color of the title |
-

@@ -1,9 +1,15 @@
 ---
+title: Android Play Store Deployment
 sidebar_label: Android Play Store
 ---
 
-# Android Play Store Deployment
-
+<head>
+  <title>Android Play Store Deployment: Publish Your Ionic Apps</title>
+  <meta
+    name="description"
+    content="Ionic documentation for Android Play Store app deployment. Read about how to generate a release build and publish your Ionic apps to the Google Play Store."
+  />
+</head>
 
 ## Generating a release build of an app
 
@@ -63,7 +69,6 @@ Once a developer account has been created, go ahead and click the `Create an App
 
 Be sure to fill out the description for the app along with providing screenshots and additional info.
 When ready, upload the signed release APK that was generated and publish the app.
-
 
 ## Updating an app
 

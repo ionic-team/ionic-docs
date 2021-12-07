@@ -3,8 +3,8 @@ initialTab: 'preview'
 inlineHtmlPreviews: true
 ---
 
-import LayeredColorsSelect from '@theme/LayeredColorsSelect';
-import CodeColor from '@theme/CodeColor';
+import LayeredColorsSelect from '@components/page/theming/LayeredColorsSelect';
+import CodeColor from '@components/page/theming/CodeColor';
 
 # Colors
 
@@ -33,7 +33,7 @@ Each color consists of the following properties: a `base`, `contrast`, `shade`, 
 
 ## Modifying Colors
 
-To change the default values of a color, all of the listed variations for that color should be set. For example, to change the secondary color to <CodeColor mode="md" value="#006600"></CodeColor>, set the following CSS properties:
+To change the default values of a color, all of the listed variations for that color should be set. For example, to change the secondary color to <CodeColor color="#006600">#006600</CodeColor>, set the following CSS properties:
 
 ```css
 :root {
@@ -46,10 +46,10 @@ To change the default values of a color, all of the listed variations for that c
 }
 ```
 
-When `secondary` is applied to a button, not only is the base color <CodeColor mode="md" value="#006600"></CodeColor> used, but the contrast color <CodeColor mode="md" value="#ffffff"></CodeColor> is used for the text, along with shade <CodeColor mode="md" value="#005a00"></CodeColor> and tint <CodeColor mode="md" value="#1a751a"></CodeColor> colors for the different states of the button.
+When `secondary` is applied to a button, not only is the base color <CodeColor color="#006600">#006600</CodeColor> used, but the contrast color <CodeColor color="#ffffff">#ffffff</CodeColor> is used for the text, along with shade <CodeColor color="#005a00">#005a00</CodeColor> and tint <CodeColor color="#1a751a">#1a751a</CodeColor> colors for the different states of the button.
 
 :::note
-Not sure how to get the variation colors from the base color? Try out our [Color Generator](color-generator.mdx) that calculates all of the variations and provides code to copy/paste into an app!
+Not sure how to get the variation colors from the base color? Try out our [Color Generator](color-generator.md) that calculates all of the variations and provides code to copy/paste into an app!
 :::
 
 See the [CSS Variables documentation](css-variables.md) for more information on CSS variables.

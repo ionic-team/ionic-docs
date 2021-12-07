@@ -13,7 +13,8 @@ When the origin where your app is served (e.g. `http://localhost:8100` with `ion
 CORS errors are common in web apps when a cross-origin request is made but the server doesn't return the required headers in the response (is not CORS-enabled):
 
 <blockquote>
-  XMLHttpRequest cannot load https://api.example.com. No 'Access-Control-Allow-Origin' header is present on the requested resource. Origin 'http://localhost:8100' is therefore not allowed access.
+  XMLHttpRequest cannot load https://api.example.com. No 'Access-Control-Allow-Origin' header is present on the
+  requested resource. Origin 'http://localhost:8100' is therefore not allowed access.
 </blockquote>
 
 ## How does CORS work
@@ -282,5 +283,9 @@ If you are developing a PWA or testing in the browser, using the `--disable-web-
 
 ##### Sources
 
-- <a href="https://fdezromero.com/cors-errors-in-ionic-apps" target="_blank" rel="noopener">CORS Errors in Ionic Apps</a>
-- <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS" target="_blank" rel="noopener">MDN</a>
+- <a href="https://fdezromero.com/cors-errors-in-ionic-apps" target="_blank" rel="noopener">
+    CORS Errors in Ionic Apps
+  </a>
+- <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS" target="_blank" rel="noopener">
+    MDN
+  </a>

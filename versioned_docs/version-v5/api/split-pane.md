@@ -1,8 +1,9 @@
 ---
-title: "ion-split-pane: Split Plane View for Menus and Multi-View Layouts"
-description: "ion-split-pane is useful when creating multi-view app layouts. It allows UI elements, like menus, to be displayed as the viewport width increases."
-sidebar_label: "ion-split-pane"
+title: 'ion-split-pane: Split Plane View for Menus and Multi-View Layouts'
+description: 'ion-split-pane is useful when creating multi-view app layouts. It allows UI elements, like menus, to be displayed as the viewport width increases.'
+sidebar_label: 'ion-split-pane'
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
@@ -13,11 +14,9 @@ displayed as the viewport width increases.
 
 If the device's screen width is below a certain size, the split pane will collapse and the menu will be hidden. This is ideal for creating an app that will be served in a browser and deployed through the app store to phones and tablets.
 
-
 ## Setting Breakpoints
 
 By default, the split pane will expand when the screen is larger than 992px. To customize this, pass a breakpoint in the `when` property. The `when` property can accept a boolean value, any valid media query, or one of Ionic's predefined sizes.
-
 
 ```html
 <!-- can be "xs", "sm", "md", "lg", or "xl" -->
@@ -27,20 +26,17 @@ By default, the split pane will expand when the screen is larger than 992px. To 
 <ion-split-pane when="(min-width: 40px)"></ion-split-pane>
 ```
 
-
- | Size | Value                 | Description                                                           |
- |------|-----------------------|-----------------------------------------------------------------------|
- | `xs` | `(min-width: 0px)`    | Show the split-pane when the min-width is 0px (meaning, always)       |
- | `sm` | `(min-width: 576px)`  | Show the split-pane when the min-width is 576px                       |
- | `md` | `(min-width: 768px)`  | Show the split-pane when the min-width is 768px                       |
- | `lg` | `(min-width: 992px)`  | Show the split-pane when the min-width is 992px (default break point) |
- | `xl` | `(min-width: 1200px)` | Show the split-pane when the min-width is 1200px                      |
-
+| Size | Value                 | Description                                                           |
+| ---- | --------------------- | --------------------------------------------------------------------- |
+| `xs` | `(min-width: 0px)`    | Show the split-pane when the min-width is 0px (meaning, always)       |
+| `sm` | `(min-width: 576px)`  | Show the split-pane when the min-width is 576px                       |
+| `md` | `(min-width: 768px)`  | Show the split-pane when the min-width is 768px                       |
+| `lg` | `(min-width: 992px)`  | Show the split-pane when the min-width is 992px (default break point) |
+| `xl` | `(min-width: 1200px)` | Show the split-pane when the min-width is 1200px                      |
 
 ## Usage
 
-<Tabs defaultValue="angular" values={[{ value: 'angular', label: 'ANGULAR' }, { value: 'javascript', label: 'JAVASCRIPT' }, { value: 'react', label: 'REACT' }, { value: 'stencil', label: 'STENCIL' }, { value: 'vue', label: 'VUE' }]}>
-
+<Tabs groupId="framework" defaultValue="angular" values={[{ value: 'angular', label: 'Angular' }, { value: 'javascript', label: 'Javascript' }, { value: 'react', label: 'React' }, { value: 'stencil', label: 'Stencil' }, { value: 'vue', label: 'Vue' }]}>
 
 <TabItem value="angular">
 
@@ -60,9 +56,7 @@ By default, the split pane will expand when the screen is larger than 992px. To 
 </ion-split-pane>
 ```
 
-
 </TabItem>
-
 
 <TabItem value="javascript">
 
@@ -84,9 +78,7 @@ By default, the split pane will expand when the screen is larger than 992px. To 
 </ion-split-pane>
 ```
 
-
 </TabItem>
-
 
 <TabItem value="react">
 
@@ -100,7 +92,7 @@ import {
   IonTitle,
   IonRouterOutlet,
   IonContent,
-  IonPage
+  IonPage,
 } from '@ionic/react';
 
 export const SplitPlaneExample: React.SFC<{}> = () => (
@@ -116,15 +108,13 @@ export const SplitPlaneExample: React.SFC<{}> = () => (
       </IonMenu>
 
       {/*-- the main content --*/}
-      <IonPage id="main"/>
+      <IonPage id="main" />
     </IonSplitPane>
   </IonContent>
 );
 ```
 
-
 </TabItem>
-
 
 <TabItem value="stencil">
 
@@ -133,7 +123,7 @@ import { Component, h } from '@stencil/core';
 
 @Component({
   tag: 'split-pane-example',
-  styleUrl: 'split-pane-example.css'
+  styleUrl: 'split-pane-example.css',
 })
 export class SplitPaneExample {
   render() {
@@ -150,15 +140,13 @@ export class SplitPaneExample {
 
         {/* the main content */}
         <ion-router-outlet id="main"></ion-router-outlet>
-      </ion-split-pane>
+      </ion-split-pane>,
     ];
   }
 }
 ```
 
-
 </TabItem>
-
 
 <TabItem value="vue">
 
@@ -180,29 +168,21 @@ export class SplitPaneExample {
 </template>
 
 <script>
-import { 
-  IonHeader, 
-  IonMenu, 
-  IonRouterOutlet, 
-  IonSplitPane, 
-  IonTitle, 
-  IonToolbar
-} from '@ionic/vue';
-import { defineComponent } from 'vue';
+  import { IonHeader, IonMenu, IonRouterOutlet, IonSplitPane, IonTitle, IonToolbar } from '@ionic/vue';
+  import { defineComponent } from 'vue';
 
-export default defineComponent({
-  components: {
-    IonHeader, 
-    IonMenu, 
-    IonRouterOutlet, 
-    IonSplitPane, 
-    IonTitle, 
-    IonToolbar
-  }
-});
+  export default defineComponent({
+    components: {
+      IonHeader,
+      IonMenu,
+      IonRouterOutlet,
+      IonSplitPane,
+      IonTitle,
+      IonToolbar,
+    },
+  });
 </script>
 ```
-
 
 </TabItem>
 
@@ -210,53 +190,44 @@ export default defineComponent({
 
 ## Properties
 
-
 ### contentId
 
-| | |
-| --- | --- |
+|                 |                                                                                                                                                                                                                                                            |
+| --------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Description** | The `id` of the main content. When using<br />a router this is typically `ion-router-outlet`.<br />When not using a router, this is typically<br />your main view's `ion-content`. This is not the<br />id of the `ion-content` inside of your `ion-menu`. |
-| **Attribute** | `content-id` |
-| **Type** | `string \| undefined` |
-| **Default** | `undefined` |
-
-
+| **Attribute**   | `content-id`                                                                                                                                                                                                                                               |
+| **Type**        | `string \| undefined`                                                                                                                                                                                                                                      |
+| **Default**     | `undefined`                                                                                                                                                                                                                                                |
 
 ### disabled
 
-| | |
-| --- | --- |
+|                 |                                           |
+| --------------- | ----------------------------------------- |
 | **Description** | If `true`, the split pane will be hidden. |
-| **Attribute** | `disabled` |
-| **Type** | `boolean` |
-| **Default** | `false` |
-
-
+| **Attribute**   | `disabled`                                |
+| **Type**        | `boolean`                                 |
+| **Default**     | `false`                                   |
 
 ### when
 
-| | |
-| --- | --- |
+|                 |                                                                                                                                                 |
+| --------------- | ----------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Description** | When the split-pane should be shown.<br />Can be a CSS media query expression, or a shortcut expression.<br />Can also be a boolean expression. |
-| **Attribute** | `when` |
-| **Type** | `boolean \| string` |
-| **Default** | `QUERY['lg']` |
-
-
+| **Attribute**   | `when`                                                                                                                                          |
+| **Type**        | `boolean \| string`                                                                                                                             |
+| **Default**     | `QUERY['lg']`                                                                                                                                   |
 
 ## Events
 
-| Name | Description |
-| --- | --- |
+| Name                  | Description                                                        |
+| --------------------- | ------------------------------------------------------------------ |
 | `ionSplitPaneVisible` | Expression to be called when the split-pane visibility has changed |
-
 
 ## CSS Custom Properties
 
-| Name | Description |
-| --- | --- |
-| `--border` | Border between panes |
+| Name               | Description                                                                  |
+| ------------------ | ---------------------------------------------------------------------------- |
+| `--border`         | Border between panes                                                         |
 | `--side-max-width` | Maximum width of the side pane. Does not apply when split pane is collapsed. |
 | `--side-min-width` | Minimum width of the side pane. Does not apply when split pane is collapsed. |
-| `--side-width` | Width of the side pane. Does not apply when split pane is collapsed. |
-
+| `--side-width`     | Width of the side pane. Does not apply when split pane is collapsed.         |

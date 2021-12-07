@@ -18,7 +18,7 @@ These can be controlled from the templates, or programmatically using the MenuCo
 
 ## Usage
 
-<Tabs defaultValue="angular" values={[{ value: 'angular', label: 'ANGULAR' }, { value: 'javascript', label: 'JAVASCRIPT' }, { value: 'react', label: 'REACT' }, { value: 'stencil', label: 'STENCIL' }, { value: 'vue', label: 'VUE' }]}>
+<Tabs groupId="framework" defaultValue="angular" values={[{ value: 'angular', label: 'Angular' }, { value: 'javascript', label: 'Javascript' }, { value: 'react', label: 'React' }, { value: 'stencil', label: 'Stencil' }, { value: 'vue', label: 'Vue' }]}>
 
 <TabItem value="angular">
 
@@ -134,12 +134,7 @@ export class MenuExample {
     </ion-content>
   </ion-menu>
 
-  <ion-menu
-    side="start"
-    menu-id="custom"
-    class="my-custom-menu"
-    content-id="main"
-  >
+  <ion-menu side="start" menu-id="custom" class="my-custom-menu" content-id="main">
     <ion-header>
       <ion-toolbar color="tertiary">
         <ion-title>Custom Menu</ion-title>
@@ -180,13 +175,9 @@ export class MenuExample {
       </ion-toolbar>
     </ion-header>
     <ion-content class="ion-padding">
-      <ion-button expand="block" onclick="openFirst()"
-        >Open Start Menu</ion-button
-      >
+      <ion-button expand="block" onclick="openFirst()">Open Start Menu</ion-button>
       <ion-button expand="block" onclick="openEnd()">Open End Menu</ion-button>
-      <ion-button expand="block" onclick="openCustom()"
-        >Open Custom Menu</ion-button
-      >
+      <ion-button expand="block" onclick="openCustom()">Open Custom Menu</ion-button>
     </ion-content>
   </div>
 </ion-app>
@@ -227,16 +218,7 @@ export class MenuExample {
 
 ```tsx
 import React from 'react';
-import {
-  IonMenu,
-  IonHeader,
-  IonToolbar,
-  IonTitle,
-  IonContent,
-  IonList,
-  IonItem,
-  IonRouterOutlet,
-} from '@ionic/react';
+import { IonMenu, IonHeader, IonToolbar, IonTitle, IonContent, IonList, IonItem, IonRouterOutlet } from '@ionic/react';
 
 export const MenuExample: React.FC = () => (
   <>
@@ -342,12 +324,7 @@ export class MenuExample {
         </ion-content>
       </ion-menu>,
 
-      <ion-menu
-        side="start"
-        menuId="custom"
-        contentId="main"
-        class="my-custom-menu"
-      >
+      <ion-menu side="start" menuId="custom" contentId="main" class="my-custom-menu">
         <ion-header>
           <ion-toolbar color="tertiary">
             <ion-title>Custom Menu</ion-title>
@@ -427,12 +404,7 @@ export class MenuExample {
     </ion-content>
   </ion-menu>
 
-  <ion-menu
-    side="start"
-    menu-id="custom"
-    class="my-custom-menu"
-    content-id="main"
-  >
+  <ion-menu side="start" menu-id="custom" class="my-custom-menu" content-id="main">
     <ion-header>
       <ion-toolbar color="tertiary">
         <ion-title>Custom Menu</ion-title>

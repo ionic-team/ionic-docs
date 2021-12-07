@@ -1,10 +1,20 @@
-# Previewing
+---
+title: Previewing
+---
+
+<head>
+  <title>Previewing: To Run Ionic Apps Locally in A Web Browser</title>
+  <meta
+    name="description"
+    content="Previewing provides many different options to test native functionality based on needs. Use this feature to easily run your Ionic app locally in a web browser."
+  />
+</head>
 
 There are many different options to test native functionality depending on your target platforms and needs.
 
-* Run locally in a web browser (using [Platform Detection](../core-concepts/cross-platform.md) for native functionality)
-* [Deploy to iOS](ios.md)
-* [Deploy to Android](android.md)
+- Run locally in a web browser (using [Platform Detection](../core-concepts/cross-platform.md) for native functionality)
+- [Deploy to iOS](ios.md)
+- [Deploy to Android](android.md)
 
 ## Run Locally in a Web Browser
 

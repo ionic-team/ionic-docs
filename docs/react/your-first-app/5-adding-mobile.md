@@ -13,10 +13,7 @@ Let’s start with making some small code changes - then our app will “just wo
 First, we’ll update the photo saving functionality to support mobile. In the `savePicture` function, check which platform the app is running on. If it’s “hybrid” (Capacitor or Cordova, the two native runtimes), then read the photo file into base64 format using the `readFile` method. Also, return the complete file path to the photo using the Filesystem API. When setting the `webviewPath`, use the special `Capacitor.convertFileSrc` method ([details here](https://ionicframework.com/docs/core-concepts/webview#file-protocol)). Otherwise, use the same logic as before when running the app on the web.
 
 ```tsx
-const savePicture = async (
-  photo: Photo,
-  fileName: string,
-): Promise<UserPhoto> => {
+const savePicture = async (photo: Photo, fileName: string): Promise<UserPhoto> => {
   let base64Data: string;
   // "hybrid" will detect Cordova or Capacitor;
   if (isPlatform('hybrid')) {

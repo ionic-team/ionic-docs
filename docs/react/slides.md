@@ -44,7 +44,11 @@ const Home: React.FC = () => {
 export default Home;
 ```
 
-> Not using Create React App? You can import the Swiper CSS from `swiper/css` instead.
+:::note
+
+Not using Create React App? You can import the Swiper CSS from `swiper/css` instead.
+
+:::
 
 ### Updating Selectors
 
@@ -57,7 +61,7 @@ Previously, we were able to target `ion-slides` and `ion-slide` to apply any cus
 
 ### Pre-processors (optional)
 
-For developers using SCSS or Less styles, Swiper also provides imports for those files. 
+For developers using SCSS or Less styles, Swiper also provides imports for those files.
 
 For Less styles, replace `css` with `less` in the Swiper import path:
 
@@ -125,8 +129,11 @@ const Home: React.FC = () => {
 export default Home;
 ```
 
-> Not using Create React App? You can import the Swiper components from `swiper/react` instead.
+:::note
 
+Not using Create React App? You can import the Swiper components from `swiper/react` instead.
+
+:::
 
 ## Using Modules
 
@@ -166,7 +173,11 @@ const Home: React.FC = () => {
 export default Home;
 ```
 
-> Not using Create React App? You can import these modules from `swiper/css/[MODULE NAME]` instead (i.e. `swiper/css/autoplay`).
+:::note
+
+Not using Create React App? You can import these modules from `swiper/css/[MODULE NAME]` instead (i.e. `swiper/css/autoplay`).
+
+:::
 
 From here, we need to provide these modules to Swiper by using the `modules` property on the `Swiper` component:
 
@@ -188,9 +199,7 @@ const Home: React.FC = () => {
   return (
     <IonPage>
       <IonContent>
-        <Swiper
-          modules={[Autoplay, Keyboard, Pagination, Scrollbar, Zoom]}
-        >
+        <Swiper modules={[Autoplay, Keyboard, Pagination, Scrollbar, Zoom]}>
           <SwiperSlide>Slide 1</SwiperSlide>
           <SwiperSlide>Slide 2</SwiperSlide>
           <SwiperSlide>Slide 3</SwiperSlide>
@@ -244,8 +253,6 @@ export default Home;
 :::note
 See <a href="https://swiperjs.com/react#usage" target="_blank" rel="noopener noreferrer">https://swiperjs.com/react#usage</a> for a full list of modules.
 :::
-
-
 
 ## The IonicSlides Module
 
@@ -306,9 +313,9 @@ const MyComponent: React.FC = () => {
     <IonSlides
       options={{
         slidesPerView: 3,
-        loop: true
+        loop: true,
       }}
-      >
+    >
       <IonSlide>Slide 1</IonSlide>
       <IonSlide>Slide 2</IonSlide>
       <IonSlide>Slide 3</IonSlide>
@@ -322,10 +329,7 @@ To migrate, we would move these options out of the `options` object and onto the
 ```tsx
 const MyComponent: React.FC = () => {
   return (
-    <Swiper
-      slidesPerView={3}
-      loop={true}
-      >
+    <Swiper slidesPerView={3} loop={true}>
       <SwiperSlide>Slide 1</SwiperSlide>
       <SwiperSlide>Slide 2</SwiperSlide>
       <SwiperSlide>Slide 3</SwiperSlide>
@@ -336,12 +340,12 @@ const MyComponent: React.FC = () => {
 
 Below is a full list of property changes when going from `IonSlides` to Swiper React:
 
-| Name      | Notes                                                        |
-| --------- | ------------------------------------------------------------ |
-| options   | Set each option as a property directly on the `<Swiper>` component. |
+| Name      | Notes                                                                                                                 |
+| --------- | --------------------------------------------------------------------------------------------------------------------- |
+| options   | Set each option as a property directly on the `<Swiper>` component.                                                   |
 | mode      | For different styles based upon the mode, you can target the slides with `.ios .swiper` or `.md .swiper` in your CSS. |
-| pager     | Use the `pagination` property instead. Requires installation of the Pagination module. |
-| scrollbar | You can continue to use the `scrollbar` property, just be sure to install the Scrollbar module first. |
+| pager     | Use the `pagination` property instead. Requires installation of the Pagination module.                                |
+| scrollbar | You can continue to use the `scrollbar` property, just be sure to install the Scrollbar module first.                 |
 
 :::note
 All properties available in Swiper React can be found at <a href="https://swiperjs.com/react#swiper-props" target="_blank" rel="noopener noreferrer">https://swiperjs.com/react#swiper-props</a>.
@@ -356,9 +360,7 @@ Let's say in an app with `IonSlides` we used the `onIonSlideDidChange` event:
 ```tsx
 const MyComponent: React.FC = () => {
   return (
-    <IonSlides
-      onIonSlideDidChange={() => onSlideChange()}
-    >
+    <IonSlides onIonSlideDidChange={() => onSlideChange()}>
       <IonSlide>Slide 1</IonSlide>
       <IonSlide>Slide 2</IonSlide>
       <IonSlide>Slide 3</IonSlide>
@@ -372,9 +374,7 @@ To migrate, we would change the name of the event to `onSlideChange`:
 ```tsx
 const MyComponent: React.FC = () => {
   return (
-    <Swiper
-      onSlideChange={() => onSlideChange()}
-    >
+    <Swiper onSlideChange={() => onSlideChange()}>
       <SwiperSlide>Slide 1</SwiperSlide>
       <SwiperSlide>Slide 2</SwiperSlide>
       <SwiperSlide>Slide 3</SwiperSlide>
@@ -385,8 +385,8 @@ const MyComponent: React.FC = () => {
 
 Below is a full list of event name changes when going from `IonSlides` to Swiper React:
 
-| IonSlides Event         | Swiper Event               |
-| ----------------------- | -------------------------- |
+| IonSlides Event           | Swiper Event                 |
+| ------------------------- | ---------------------------- |
 | onIonSlideWillChange      | onSlideChangeTransitionStart |
 | onIonSlideDidChange       | onSlideChangeTransitionEnd   |
 | onIonSlideDoubleTap       | onDoubleTap                  |
@@ -437,19 +437,19 @@ From here, if you wanted to access a property on the Swiper instance you would a
 
 Below is a full list of method changes when going from `IonSlides` to Swiper React:
 
-| ion-slides Method  | Notes                                                        |
-| ------------------ | ------------------------------------------------------------ |
-| getActiveIndex()   | Use the `activeIndex` property instead.                      |
-| getPreviousIndex() | Use the `previousIndex` property instead.                    |
-| getSwiper()        | Get a reference to the Swiper instance using `onSwiper`. See example above. |
-| isBeginning()      | Use the `isBeginning` property instead.                      |
-| isEnd()            | Use the `isEnd` property instead.                            |
-| length()           | Use the `slides` property instead. (i.e swiperRef.slides.length) |
-| lockSwipeToNext()  | Use the `allowSlidesNext` property instead.                  |
-| lockSwipeToPrev()  | Use the `allowSlidePrev` property instead.                   |
+| ion-slides Method  | Notes                                                                                |
+| ------------------ | ------------------------------------------------------------------------------------ |
+| getActiveIndex()   | Use the `activeIndex` property instead.                                              |
+| getPreviousIndex() | Use the `previousIndex` property instead.                                            |
+| getSwiper()        | Get a reference to the Swiper instance using `onSwiper`. See example above.          |
+| isBeginning()      | Use the `isBeginning` property instead.                                              |
+| isEnd()            | Use the `isEnd` property instead.                                                    |
+| length()           | Use the `slides` property instead. (i.e swiperRef.slides.length)                     |
+| lockSwipeToNext()  | Use the `allowSlidesNext` property instead.                                          |
+| lockSwipeToPrev()  | Use the `allowSlidePrev` property instead.                                           |
 | lockSwipes()       | Use the `allowSlideNext`, `allowSlidePrev`, and `allowTouchMove` properties instead. |
-| startAutoplay()    | Use the `autoplay` property instead.                         |
-| stopAutoplay()     | Use the `autoplay` property instead.                         |
+| startAutoplay()    | Use the `autoplay` property instead.                                                 |
+| stopAutoplay()     | Use the `autoplay` property instead.                                                 |
 
 ## Effects
 
@@ -468,9 +468,7 @@ const Home: React.FC = () => {
   return (
     <IonPage>
       <IonContent>
-        <Swiper
-          modules={[EffectFact, IonicSlides]}
-        >
+        <Swiper modules={[EffectFact, IonicSlides]}>
           <SwiperSlide>Slide 1</SwiperSlide>
           <SwiperSlide>Slide 2</SwiperSlide>
           <SwiperSlide>Slide 3</SwiperSlide>
@@ -498,9 +496,7 @@ const Home: React.FC = () => {
   return (
     <IonPage>
       <IonContent>
-        <Swiper
-          modules={[EffectFact, IonicSlides]}
-        >
+        <Swiper modules={[EffectFact, IonicSlides]}>
           <SwiperSlide>Slide 1</SwiperSlide>
           <SwiperSlide>Slide 2</SwiperSlide>
           <SwiperSlide>Slide 3</SwiperSlide>
@@ -512,7 +508,11 @@ const Home: React.FC = () => {
 export default Home;
 ```
 
-> Not using Create React App? You can import these effects from `swiper/css/[EFFECT NAME]` instead (i.e. `swiper/css/effect-fade`).
+:::note
+
+Not using Create React App? You can import these effects from `swiper/css/[EFFECT NAME]` instead (i.e. `swiper/css/effect-fade`).
+
+:::
 
 After that, we can activate it by setting the `effect` property on `swiper` to `"fade"`:
 
@@ -520,7 +520,7 @@ After that, we can activate it by setting the `effect` property on `swiper` to `
 import React from 'react';
 import { IonContent, IonPage, IonicSlides } from '@ionic/react';
 import { EffectFade } from 'swiper';
-import { Swiper, SwiperSlide } from 'swiper/react/swiper-react.js';;
+import { Swiper, SwiperSlide } from 'swiper/react/swiper-react.js';
 
 import 'swiper/swiper.min.css';
 import 'swiper/modules/effect-fade/effect-fade.min.css';
@@ -530,10 +530,7 @@ const Home: React.FC = () => {
   return (
     <IonPage>
       <IonContent>
-        <Swiper
-          modules={[EffectFact, IonicSlides]}
-          swiper="fade"
-        >
+        <Swiper modules={[EffectFact, IonicSlides]} swiper="fade">
           <SwiperSlide>Slide 1</SwiperSlide>
           <SwiperSlide>Slide 2</SwiperSlide>
           <SwiperSlide>Slide 3</SwiperSlide>
@@ -548,8 +545,6 @@ export default Home;
 :::note
 For more information on effects in Swiper, please see <a href="https://swiperjs.com/react#effects" target="_blank" rel="noopener noreferrer">https://swiperjs.com/react#effects</a>.
 :::
-
-
 
 ## Wrap Up
 

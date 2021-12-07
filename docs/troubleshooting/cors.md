@@ -1,4 +1,14 @@
-# CORS Errors
+---
+title: CORS Errors
+---
+
+<head>
+  <title>CORS Errors: Cross-Origin Resource Sharing - Ionic Documentation</title>
+  <meta
+    name="description"
+    content="CORS errors happen in web apps if requests are made and servers don't return required headers. Read about Cross-Origin Resource Sharing in Ionic Documentation."
+  />
+</head>
 
 ## What is CORS?
 
@@ -282,5 +292,9 @@ If you are developing a PWA or testing in the browser, using the `--disable-web-
 
 ##### Sources
 
-- <a href="https://fdezromero.com/cors-errors-in-ionic-apps" target="_blank" rel="noopener">CORS Errors in Ionic Apps</a>
-- <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS" target="_blank" rel="noopener">MDN</a>
+- <a href="https://fdezromero.com/cors-errors-in-ionic-apps" target="_blank" rel="noopener">
+    CORS Errors in Ionic Apps
+  </a>
+- <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS" target="_blank" rel="noopener">
+    MDN
+  </a>

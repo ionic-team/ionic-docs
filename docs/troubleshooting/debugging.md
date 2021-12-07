@@ -1,6 +1,23 @@
-# Debugging
+---
+title: Debugging
+---
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/akh6V6Yw1lw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<head>
+  <title>Debugging Guide for Apps in iOS Safari and Android Chrome</title>
+  <meta
+    name="description"
+    content="Ionic Framework's ultimate guide to debugging apps in iOS Safari and Android Chrome. Read our debugging guide to get started with your Ionic apps today."
+  />
+</head>
+
+<iframe
+  width="560"
+  height="315"
+  src="https://www.youtube.com/embed/akh6V6Yw1lw"
+  frameborder="0"
+  allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+  allowfullscreen
+></iframe>
 
 ## Live Reload
 

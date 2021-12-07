@@ -35,7 +35,7 @@ Using the MD native `ion-refresher` requires setting the `pullingIcon` property 
 
 ## Usage
 
-<Tabs defaultValue="angular" values={[{ value: 'angular', label: 'ANGULAR' }, { value: 'javascript', label: 'JAVASCRIPT' }, { value: 'react', label: 'REACT' }, { value: 'stencil', label: 'STENCIL' }, { value: 'vue', label: 'VUE' }]}>
+<Tabs groupId="framework" defaultValue="angular" values={[{ value: 'angular', label: 'Angular' }, { value: 'javascript', label: 'Javascript' }, { value: 'react', label: 'React' }, { value: 'stencil', label: 'Stencil' }, { value: 'vue', label: 'Vue' }]}>
 
 <TabItem value="angular">
 
@@ -153,13 +153,7 @@ export const RefresherExample: React.FC = () => (
 
     {/*-- Custom Refresher Properties --*/}
     <IonContent>
-      <IonRefresher
-        slot="fixed"
-        onIonRefresh={doRefresh}
-        pullFactor={0.5}
-        pullMin={100}
-        pullMax={200}
-      >
+      <IonRefresher slot="fixed" onIonRefresh={doRefresh} pullFactor={0.5} pullMin={100} pullMax={200}>
         <IonRefresherContent></IonRefresherContent>
       </IonRefresher>
     </IonContent>
@@ -204,26 +198,21 @@ export class RefresherExample {
     return [
       // Default Refresher
       <ion-content>
-        <ion-refresher slot="fixed" onIonRefresh={ev => this.doRefresh(ev)}>
+        <ion-refresher slot="fixed" onIonRefresh={(ev) => this.doRefresh(ev)}>
           <ion-refresher-content></ion-refresher-content>
         </ion-refresher>
       </ion-content>,
 
       // Custom Refresher Properties
       <ion-content>
-        <ion-refresher
-          slot="fixed"
-          pullFactor={0.5}
-          pullMin={100}
-          pullMax={200}
-        >
+        <ion-refresher slot="fixed" pullFactor={0.5} pullMin={100} pullMax={200}>
           <ion-refresher-content></ion-refresher-content>
         </ion-refresher>
       </ion-content>,
 
       // Custom Refresher Content
       <ion-content>
-        <ion-refresher slot="fixed" onIonRefresh={ev => this.doRefresh(ev)}>
+        <ion-refresher slot="fixed" onIonRefresh={(ev) => this.doRefresh(ev)}>
           <ion-refresher-content
             pullingIcon="chevron-down-circle-outline"
             pullingText="Pull to refresh"

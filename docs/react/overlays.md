@@ -23,13 +23,13 @@ const [showAlert, hideAlert] = useIonAlert();
 ```
 
 :::note
-Overlays often dismiss themselves when the user is done interacting with them, so you might not need to use dismiss/hide method. 
+Overlays often dismiss themselves when the user is done interacting with them, so you might not need to use dismiss/hide method.
 :::
 
 To display the overlay, you use the present method, which we destructured to the name `showAlert`. The method takes in a set of parameters that vary depending on each overlay, but generally, they can either take in a simple set of common parameters or an object to specify additional options.
 
 ```tsx
-showAlert('Hello!', [{ text: 'Ok' }])
+showAlert('Hello!', [{ text: 'Ok' }]);
 ```
 
 For `useIonAlert`, the first parameter is the message to display, and the second is an array of `AlertButtons` to customize the buttons the alert will show.
@@ -41,38 +41,30 @@ showAlert({
   cssClass: 'my-css',
   header: 'Alert',
   message: 'Hello!',
-  buttons: [
-    'Cancel',
-    { text: 'Ok', handler: (d) => console.log('ok pressed') },
-  ],
+  buttons: ['Cancel', { text: 'Ok', handler: (d) => console.log('ok pressed') }],
   onDidDismiss: (e) => console.log('alert dismiss'),
-})
+});
 ```
 
 Overlay hooks that display additional custom components as part of their markup, such as [modals](https://ionicframework.com/docs/api/modal) and [popovers](https://ionicframework.com/docs/api/popover), take in a couple of additional parameters when initializing their hooks. The first parameter is the component you want your overlay to display, and the second is an object of additional props you want to pass into the component when it gets constructed:
 
 ```tsx
-const [present, dismiss] = useIonModal(({name}) => <div>Hello {name}.</div>, {
-name: 'Dave'
+const [present, dismiss] = useIonModal(({ name }) => <div>Hello {name}.</div>, {
+  name: 'Dave',
 });
 ```
 
 ## Overlay Components
 
-Overlays can also be displayed by using components from `@ionic/react`. The components take a `isOpen` prop that you provide to control if the overlay is currently being displayed or not. When  `isOpen` switches from true to false (and vise versa), Ionic will open/close the overlay with the appropriate animation. You can also supply any other additional config options as props to the overlay:
+Overlays can also be displayed by using components from `@ionic/react`. The components take a `isOpen` prop that you provide to control if the overlay is currently being displayed or not. When `isOpen` switches from true to false (and vise versa), Ionic will open/close the overlay with the appropriate animation. You can also supply any other additional config options as props to the overlay:
 
 ```tsx
-<IonAlert
-  isOpen={showAlert}
-  message="Hello!"
-  buttons={[{ text: 'Ok' }]}
-  onDidDismiss={() => setShowAlert(false)}
-/>
+<IonAlert isOpen={showAlert} message="Hello!" buttons={[{ text: 'Ok' }]} onDidDismiss={() => setShowAlert(false)} />
 ```
 
-Above, the `showAlert` boolean is a piece of state provided from your application. 
+Above, the `showAlert` boolean is a piece of state provided from your application.
 
-When the overlay is dismissed, it is important to tie into the  `onDidDismiss` callback and set your state variable to indicate that the overlay is no longer presenting. Ionic React looks for changes to the `isOpen` prop to determine if the overlay should be displayed or not.
+When the overlay is dismissed, it is important to tie into the `onDidDismiss` callback and set your state variable to indicate that the overlay is no longer presenting. Ionic React looks for changes to the `isOpen` prop to determine if the overlay should be displayed or not.
 
 For overlays that display custom components, such as [modals](https://ionicframework.com/docs/api/modal) and [popovers](https://ionicframework.com/docs/api/popover), you provide the component as a child to the overlay component:
 

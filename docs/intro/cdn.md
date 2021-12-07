@@ -1,8 +1,15 @@
 ---
+title: Ionic Packages
 sidebar_label: Packages & CDN
 ---
 
-# Ionic Packages
+<head>
+  <title>Ionic Framework Packages: CDN, Angular, Vue, and React</title>
+  <meta
+    name="description"
+    content="View our different packages that can be used to quickly start using Ionic Framework or Ionicons CDN in a test environment, Angular, Vue, React, or none at all."
+  />
+</head>
 
 Ionic provides different packages that can be used to quickly get started using Ionic Framework or Ionicons in a test environment, Angular, any other framework, or none at all.
 
@@ -15,7 +22,7 @@ It's recommended to use [jsdelivr](https://www.jsdelivr.com/) to access the Fram
 ```html
 <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.esm.js"></script>
 <script nomodule src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.js"></script>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core/css/ionic.bundle.css"/>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core/css/ionic.bundle.css" />
 ```
 
 With this it's possible to use all of the Ionic Framework core components without having to install a framework. The CSS bundle will include all of the Ionic [Global Stylesheets](../layout/global-stylesheets).
@@ -23,7 +30,6 @@ With this it's possible to use all of the Ionic Framework core components withou
 :::note
 This does not install Angular or any other frameworks. This allows use of the Ionic Framework core components without a framework.
 :::
-
 
 ## Ionic + Angular
 
@@ -42,7 +48,6 @@ $ ng add @ionic/angular
 ```
 
 This will add the necessary imports to the `@ionic/angular` package as well as add the styles needed.
-
 
 ## Ionic + React
 
@@ -75,7 +80,6 @@ import '@ionic/react/css/flex-utils.css';
 import '@ionic/react/css/display.css';
 ```
 
-
 ## Ionic + Vue
 
 To add Ionic Framework to an existing Vue project, install the `@ionic/vue` and `@ionic/vue-router` packages.
@@ -87,16 +91,15 @@ $ npm install @ionic/vue @ionic/vue-router
 After that, you will need to install the `IonicVue` plugin in your Vue app.
 
 **main.js**
+
 ```javascript
 import { IonicVue } from '@ionic/vue';
 
-import App from './App.vue'
+import App from './App.vue';
 import router from './router';
 
-const app = createApp(App)
-  .use(IonicVue)
-  .use(router);
-  
+const app = createApp(App).use(IonicVue).use(router);
+
 router.isReady().then(() => {
   app.mount('#app');
 });
@@ -115,12 +118,12 @@ import { createRouter, createWebHistory } from '@ionic/vue-router';
 
 const routes = [
   // routes go here
-]
+];
 
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
-  routes
-})
+  routes,
+});
 
 export default router;
 ```

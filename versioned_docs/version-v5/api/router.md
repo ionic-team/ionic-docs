@@ -1,8 +1,9 @@
 ---
-title: "ion-router: Router Component to Coordinate URL Navigation"
-description: "ion-router is a URL coordinator for navigation outlets of ionic: ion-nav and ion-tabs. Router components handle routing inside vanilla and Stencil JavaScript."
-sidebar_label: "ion-router"
+title: 'ion-router: Router Component to Coordinate URL Navigation'
+description: 'ion-router is a URL coordinator for navigation outlets of ionic: ion-nav and ion-tabs. Router components handle routing inside vanilla and Stencil JavaScript.'
+sidebar_label: 'ion-router'
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
@@ -20,7 +21,6 @@ This component controls all interactions with the browser history and it aggrega
 That means the `ion-router` never touches the DOM, it does NOT show the components or emit any kind of lifecycle events, it just tells `ion-nav` and `ion-tabs` what and when to "show" based on the browser's URL.
 
 In order to configure this relationship between components (to load/select) and URLs, `ion-router` uses a declarative syntax using JSX/HTML to define a tree of routes.
-
 
 ## Usage
 
@@ -48,59 +48,47 @@ In order to configure this relationship between components (to load/select) and 
   <ion-route url="/signup" component="page-signup"></ion-route>
   <ion-route url="/support" component="page-support"></ion-route>
 </ion-router>
-
 ```
-
 
 ## Properties
 
-
 ### root
 
-| | |
-| --- | --- |
+|                 |                                                                                                     |
+| --------------- | --------------------------------------------------------------------------------------------------- |
 | **Description** | By default `ion-router` will match the routes at the root path ("/").<br />That can be changed when |
-| **Attribute** | `root` |
-| **Type** | `string` |
-| **Default** | `'/'` |
-
-
+| **Attribute**   | `root`                                                                                              |
+| **Type**        | `string`                                                                                            |
+| **Default**     | `'/'`                                                                                               |
 
 ### useHash
 
-| | |
-| --- | --- |
+|                 |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
+| --------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Description** | The router can work in two "modes":<br />- With hash: `/index.html#/path/to/page`<br />- Without hash: `/path/to/page`<br /><br />Using one or another might depend in the requirements of your app and/or where it's deployed.<br /><br />Usually "hash-less" navigation works better for SEO and it's more user friendly too, but it might<br />requires additional server-side configuration in order to properly work.<br /><br />On the other side hash-navigation is much easier to deploy, it even works over the file protocol.<br /><br />By default, this property is `true`, change to `false` to allow hash-less URLs. |
-| **Attribute** | `use-hash` |
-| **Type** | `boolean` |
-| **Default** | `true` |
-
-
+| **Attribute**   | `use-hash`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
+| **Type**        | `boolean`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
+| **Default**     | `true`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
 
 ## Events
 
-| Name | Description |
-| --- | --- |
-| `ionRouteDidChange` | Emitted when the route had changed |
+| Name                 | Description                                     |
+| -------------------- | ----------------------------------------------- |
+| `ionRouteDidChange`  | Emitted when the route had changed              |
 | `ionRouteWillChange` | Event emitted when the route is about to change |
-
 
 ## Methods
 
-
 ### back
 
-| | |
-| --- | --- |
+|                 |                                                 |
+| --------------- | ----------------------------------------------- |
 | **Description** | Go back to previous page in the window.history. |
-| **Signature** | `back() => Promise<void>` |
-
+| **Signature**   | `back() => Promise<void>`                       |
 
 ### push
 
-| | |
-| --- | --- |
-| **Description** | Navigate to the specified URL. |
-| **Signature** | `push(url: string, direction?: RouterDirection, animation?: AnimationBuilder \| undefined) => Promise<boolean>` |
-
-
+|                 |                                                                                                                 |
+| --------------- | --------------------------------------------------------------------------------------------------------------- |
+| **Description** | Navigate to the specified URL.                                                                                  |
+| **Signature**   | `push(url: string, direction?: RouterDirection, animation?: AnimationBuilder \| undefined) => Promise<boolean>` |

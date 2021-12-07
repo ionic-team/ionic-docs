@@ -4,8 +4,12 @@ Previously, we got an Ionic app up and running locally in a web browser. Now, le
 
 The Ionic DevApp is a free app that makes it easy to run your Ionic app directly on your iOS or Android device. Download it here, then open on your device:
 
-<a href="https://itunes.apple.com/us/app/ionic-devapp/id1233447133?ls=1&mt=8" ><img src="/docs/img/guides/first-app-v3/appstore.png" /></a>
-<a href="https://play.google.com/store/apps/details?id=io.ionic.devapp&hl=en" ><img src="/docs/img/guides/first-app-v3/playstore.png" /></a>
+<a href="https://itunes.apple.com/us/app/ionic-devapp/id1233447133?ls=1&mt=8">
+  <img src="/docs/img/guides/first-app-v3/appstore.png" />
+</a>
+<a href="https://play.google.com/store/apps/details?id=io.ionic.devapp&hl=en">
+  <img src="/docs/img/guides/first-app-v3/playstore.png" />
+</a>
 
 Afterwards, open a terminal and navigate to your Ionic project. Execute the following:
 

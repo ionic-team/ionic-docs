@@ -1,7 +1,6 @@
 ---
-sidebar_label: "config get"
+sidebar_label: 'config get'
 ---
-
 
 # ionic config get
 
@@ -22,10 +21,11 @@ For multi-app projects, this command is scoped to the current project by default
 If you are using this command programmatically, you can use the `--json` option.
 
 This command will sanitize config output for known sensitive fields (disabled when using `--json`).
+
 ## Examples
 
 ```shell
-$ ionic config get 
+$ ionic config get
 $ ionic config get id
 $ ionic config get --global user.email
 $ ionic config get -g npmClient
@@ -33,105 +33,99 @@ $ ionic config get -g npmClient
 
 ## Inputs
 
-
 <table className="reference-table">
-  
-      <thead>
-        <tr>
-          <th colSpan="2">
-            <h3>property</h3>
-          </th>
-        </tr>
-      </thead>
-      <tbody>
-        
-              <tr>
-                <th>Description</th>
-                <td><p>The property name you wish to get</p>
-</td>
-              </tr>
-            
-      </tbody>
+  <thead>
+    <tr>
+      <th colSpan="2">
+        <h3>property</h3>
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Description</th>
+      <td>
+        <p>The property name you wish to get</p>
+      </td>
+    </tr>
+  </tbody>
 </table>
-
-
 
 ## Options
 
-
 <table className="reference-table">
-  
-      <thead>
-        <tr>
-          <th colSpan="2">
-            <h3><a href="#option-global" id="option-global">
-  --global
-  
-</a></h3>
-          </th>
-        </tr>
-      </thead>
-      <tbody>
-        
-              <tr>
-                <th>Description</th>
-                <td><p>Use global CLI config</p>
-</td>
-              </tr>
-             
-              <tr>
-                <th>Aliases</th>
-                <td><code>-g</code></td>
-              </tr>
-             
-      </tbody>
+  <thead>
+    <tr>
+      <th colSpan="2">
+        <h3>
+          <a href="#option-global" id="option-global">
+            --global
+          </a>
+        </h3>
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Description</th>
+      <td>
+        <p>Use global CLI config</p>
+      </td>
+    </tr>
+    <tr>
+      <th>Aliases</th>
+      <td>
+        <code>-g</code>
+      </td>
+    </tr>
+  </tbody>
 </table>
-
-
 
 ## Advanced Options
 
-
 <table className="reference-table">
-  
-      <thead>
-        <tr>
-          <th colSpan="2">
-            <h3><a href="#option-json" id="option-json">
-  --json
-  
-</a></h3>
-          </th>
-        </tr>
-      </thead>
-      <tbody>
-        
-              <tr>
-                <th>Description</th>
-                <td><div><p>Output config values in JSON</p>
-</div></td>
-              </tr>
-              
-      </tbody>
-      <thead>
-        <tr>
-          <th colSpan="2">
-            <h3><a href="#option-root" id="option-root">
-  --root
-  
-</a></h3>
-          </th>
-        </tr>
-      </thead>
-      <tbody>
-        
-              <tr>
-                <th>Description</th>
-                <td><div><p>Operate on root of <strong>./ionic.config.json</strong></p>
-</div></td>
-              </tr>
-              
-      </tbody>
+  <thead>
+    <tr>
+      <th colSpan="2">
+        <h3>
+          <a href="#option-json" id="option-json">
+            --json
+          </a>
+        </h3>
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Description</th>
+      <td>
+        <div>
+          <p>Output config values in JSON</p>
+        </div>
+      </td>
+    </tr>
+  </tbody>
+  <thead>
+    <tr>
+      <th colSpan="2">
+        <h3>
+          <a href="#option-root" id="option-root">
+            --root
+          </a>
+        </h3>
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Description</th>
+      <td>
+        <div>
+          <p>
+            Operate on root of <strong>./ionic.config.json</strong>
+          </p>
+        </div>
+      </td>
+    </tr>
+  </tbody>
 </table>
-
-

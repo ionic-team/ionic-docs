@@ -1,6 +1,7 @@
 ---
-sidebar_label: "ion-app"
+sidebar_label: 'ion-app'
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 

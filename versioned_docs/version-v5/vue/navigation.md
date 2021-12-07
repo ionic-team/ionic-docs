@@ -98,9 +98,7 @@ We can also programmatically navigate in our app by using the router API:
 <template>
   <ion-page>
     <ion-content>
-      <ion-button @click="() => router.push('/detail')"
-        >Go to detail</ion-button
-      >
+      <ion-button @click="() => router.push('/detail')">Go to detail</ion-button>
     </ion-content>
   </ion-page>
 </template>
@@ -374,13 +372,7 @@ The `IonPage` component wraps each view in an Ionic Vue app and allows page tran
 </template>
 
 <script lang="ts">
-  import {
-    IonContent,
-    IonHeader,
-    IonPage,
-    IonTitle,
-    IonToolbar,
-  } from '@ionic/vue';
+  import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/vue';
   import { defineComponent } from 'vue';
 
   export default defineComponent({
@@ -457,13 +449,7 @@ Let's look at how to use it in our component:
 </template>
 
 <script lang="ts">
-  import {
-    IonContent,
-    IonHeader,
-    IonPage,
-    IonTitle,
-    IonToolbar,
-  } from '@ionic/vue';
+  import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/vue';
   import { defineComponent } from 'vue';
   import { useRoute } from 'vue-router';
 

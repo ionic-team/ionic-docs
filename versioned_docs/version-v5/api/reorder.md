@@ -1,8 +1,9 @@
 ---
-sidebar_label: "ion-reorder"
-demoUrl: "/docs/demos/api/reorder/index.html"
-demoSourceUrl: "https://github.com/ionic-team/ionic-docs/tree/main/static/demos/api/reorder/index.html"
+sidebar_label: 'ion-reorder'
+demoUrl: '/docs/demos/api/reorder/index.html'
+demoSourceUrl: 'https://github.com/ionic-team/ionic-docs/tree/main/static/demos/api/reorder/index.html'
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
@@ -12,62 +13,47 @@ Reorder is a component that allows an item in a group of items to be dragged to 
 
 `ion-reorder` is the anchor used to drag and drop the items inside of the `ion-reorder-group`. See the [Reorder Group](reorder-group.md) for more information on how to complete the reorder operation.
 
-
 ## Usage
 
-<Tabs defaultValue="angular" values={[{ value: 'angular', label: 'ANGULAR' }, { value: 'javascript', label: 'JAVASCRIPT' }, { value: 'react', label: 'REACT' }, { value: 'stencil', label: 'STENCIL' }, { value: 'vue', label: 'VUE' }]}>
-
+<Tabs groupId="framework" defaultValue="angular" values={[{ value: 'angular', label: 'Angular' }, { value: 'javascript', label: 'Javascript' }, { value: 'react', label: 'React' }, { value: 'stencil', label: 'Stencil' }, { value: 'vue', label: 'Vue' }]}>
 
 <TabItem value="angular">
 
-
 ```html
 <!-- The reorder gesture is disabled by default, enable it to drag and drop items -->
 <ion-reorder-group disabled="false">
   <!-- Default reorder icon, end aligned items -->
   <ion-item>
-    <ion-label>
-      Item 1
-    </ion-label>
+    <ion-label> Item 1 </ion-label>
     <ion-reorder slot="end"></ion-reorder>
   </ion-item>
 
   <ion-item>
-    <ion-label>
-      Item 2
-    </ion-label>
+    <ion-label> Item 2 </ion-label>
     <ion-reorder slot="end"></ion-reorder>
   </ion-item>
 
   <!-- Default reorder icon, start aligned items -->
   <ion-item>
     <ion-reorder slot="start"></ion-reorder>
-    <ion-label>
-      Item 3
-    </ion-label>
+    <ion-label> Item 3 </ion-label>
   </ion-item>
 
   <ion-item>
     <ion-reorder slot="start"></ion-reorder>
-    <ion-label>
-      Item 4
-    </ion-label>
+    <ion-label> Item 4 </ion-label>
   </ion-item>
 
   <!-- Custom reorder icon end items -->
   <ion-item>
-    <ion-label>
-      Item 5
-    </ion-label>
+    <ion-label> Item 5 </ion-label>
     <ion-reorder slot="end">
       <ion-icon name="pizza"></ion-icon>
     </ion-reorder>
   </ion-item>
 
   <ion-item>
-    <ion-label>
-      Item 6
-    </ion-label>
+    <ion-label> Item 6 </ion-label>
     <ion-reorder slot="end">
       <ion-icon name="pizza"></ion-icon>
     </ion-reorder>
@@ -76,75 +62,57 @@ Reorder is a component that allows an item in a group of items to be dragged to 
   <!-- Items wrapped in a reorder, entire item can be dragged -->
   <ion-reorder>
     <ion-item>
-      <ion-label>
-        Item 7
-      </ion-label>
+      <ion-label> Item 7 </ion-label>
     </ion-item>
   </ion-reorder>
 
   <ion-reorder>
     <ion-item>
-      <ion-label>
-        Item 8
-      </ion-label>
+      <ion-label> Item 8 </ion-label>
     </ion-item>
   </ion-reorder>
 </ion-reorder-group>
 ```
 
 </TabItem>
-
 
 <TabItem value="javascript">
 
-
 ```html
 <!-- The reorder gesture is disabled by default, enable it to drag and drop items -->
 <ion-reorder-group disabled="false">
   <!-- Default reorder icon, end aligned items -->
   <ion-item>
-    <ion-label>
-      Item 1
-    </ion-label>
+    <ion-label> Item 1 </ion-label>
     <ion-reorder slot="end"></ion-reorder>
   </ion-item>
 
   <ion-item>
-    <ion-label>
-      Item 2
-    </ion-label>
+    <ion-label> Item 2 </ion-label>
     <ion-reorder slot="end"></ion-reorder>
   </ion-item>
 
   <!-- Default reorder icon, start aligned items -->
   <ion-item>
     <ion-reorder slot="start"></ion-reorder>
-    <ion-label>
-      Item 3
-    </ion-label>
+    <ion-label> Item 3 </ion-label>
   </ion-item>
 
   <ion-item>
     <ion-reorder slot="start"></ion-reorder>
-    <ion-label>
-      Item 4
-    </ion-label>
+    <ion-label> Item 4 </ion-label>
   </ion-item>
 
   <!-- Custom reorder icon end items -->
   <ion-item>
-    <ion-label>
-      Item 5
-    </ion-label>
+    <ion-label> Item 5 </ion-label>
     <ion-reorder slot="end">
       <ion-icon name="pizza"></ion-icon>
     </ion-reorder>
   </ion-item>
 
   <ion-item>
-    <ion-label>
-      Item 6
-    </ion-label>
+    <ion-label> Item 6 </ion-label>
     <ion-reorder slot="end">
       <ion-icon name="pizza"></ion-icon>
     </ion-reorder>
@@ -153,24 +121,19 @@ Reorder is a component that allows an item in a group of items to be dragged to 
   <!-- Items wrapped in a reorder, entire item can be dragged -->
   <ion-reorder>
     <ion-item>
-      <ion-label>
-        Item 7
-      </ion-label>
+      <ion-label> Item 7 </ion-label>
     </ion-item>
   </ion-reorder>
 
   <ion-reorder>
     <ion-item>
-      <ion-label>
-        Item 8
-      </ion-label>
+      <ion-label> Item 8 </ion-label>
     </ion-item>
   </ion-reorder>
 </ion-reorder-group>
 ```
 
 </TabItem>
-
 
 <TabItem value="react">
 
@@ -237,9 +200,7 @@ export const ReorderExample: React.FC = () => (
 );
 ```
 
-
 </TabItem>
-
 
 <TabItem value="stencil">
 
@@ -248,7 +209,7 @@ import { Component, h } from '@stencil/core';
 
 @Component({
   tag: 'reorder-example',
-  styleUrl: 'reorder-example.css'
+  styleUrl: 'reorder-example.css',
 })
 export class ReorderExample {
   render() {
@@ -257,48 +218,36 @@ export class ReorderExample {
       <ion-reorder-group disabled={false}>
         {/* Default reorder icon, end aligned items */}
         <ion-item>
-          <ion-label>
-            Item 1
-          </ion-label>
+          <ion-label>Item 1</ion-label>
           <ion-reorder slot="end"></ion-reorder>
         </ion-item>
 
         <ion-item>
-          <ion-label>
-            Item 2
-          </ion-label>
+          <ion-label>Item 2</ion-label>
           <ion-reorder slot="end"></ion-reorder>
         </ion-item>
 
         {/* Default reorder icon, start aligned items */}
         <ion-item>
           <ion-reorder slot="start"></ion-reorder>
-          <ion-label>
-            Item 3
-          </ion-label>
+          <ion-label>Item 3</ion-label>
         </ion-item>
 
         <ion-item>
           <ion-reorder slot="start"></ion-reorder>
-          <ion-label>
-            Item 4
-          </ion-label>
+          <ion-label>Item 4</ion-label>
         </ion-item>
 
         {/* Custom reorder icon end items */}
         <ion-item>
-          <ion-label>
-            Item 5
-          </ion-label>
+          <ion-label>Item 5</ion-label>
           <ion-reorder slot="end">
             <ion-icon name="pizza"></ion-icon>
           </ion-reorder>
         </ion-item>
 
         <ion-item>
-          <ion-label>
-            Item 6
-          </ion-label>
+          <ion-label>Item 6</ion-label>
           <ion-reorder slot="end">
             <ion-icon name="pizza"></ion-icon>
           </ion-reorder>
@@ -307,28 +256,22 @@ export class ReorderExample {
         {/* Items wrapped in a reorder, entire item can be dragged */}
         <ion-reorder>
           <ion-item>
-            <ion-label>
-              Item 7
-            </ion-label>
+            <ion-label>Item 7</ion-label>
           </ion-item>
         </ion-reorder>
 
         <ion-reorder>
           <ion-item>
-            <ion-label>
-              Item 8
-            </ion-label>
+            <ion-label>Item 8</ion-label>
           </ion-item>
         </ion-reorder>
-      </ion-reorder-group>
+      </ion-reorder-group>,
     ];
   }
 }
 ```
 
-
 </TabItem>
-
 
 <TabItem value="vue">
 
@@ -338,48 +281,36 @@ export class ReorderExample {
   <ion-reorder-group :disabled="false">
     <!-- Default reorder icon, end aligned items -->
     <ion-item>
-      <ion-label>
-        Item 1
-      </ion-label>
+      <ion-label> Item 1 </ion-label>
       <ion-reorder slot="end"></ion-reorder>
     </ion-item>
 
     <ion-item>
-      <ion-label>
-        Item 2
-      </ion-label>
+      <ion-label> Item 2 </ion-label>
       <ion-reorder slot="end"></ion-reorder>
     </ion-item>
 
     <!-- Default reorder icon, start aligned items -->
     <ion-item>
       <ion-reorder slot="start"></ion-reorder>
-      <ion-label>
-        Item 3
-      </ion-label>
+      <ion-label> Item 3 </ion-label>
     </ion-item>
 
     <ion-item>
       <ion-reorder slot="start"></ion-reorder>
-      <ion-label>
-        Item 4
-      </ion-label>
+      <ion-label> Item 4 </ion-label>
     </ion-item>
 
     <!-- Custom reorder icon end items -->
     <ion-item>
-      <ion-label>
-        Item 5
-      </ion-label>
+      <ion-label> Item 5 </ion-label>
       <ion-reorder slot="end">
         <ion-icon name="pizza"></ion-icon>
       </ion-reorder>
     </ion-item>
 
     <ion-item>
-      <ion-label>
-        Item 6
-      </ion-label>
+      <ion-label> Item 6 </ion-label>
       <ion-reorder slot="end">
         <ion-icon name="pizza"></ion-icon>
       </ion-reorder>
@@ -388,45 +319,35 @@ export class ReorderExample {
     <!-- Items wrapped in a reorder, entire item can be dragged -->
     <ion-reorder>
       <ion-item>
-        <ion-label>
-          Item 7
-        </ion-label>
+        <ion-label> Item 7 </ion-label>
       </ion-item>
     </ion-reorder>
 
     <ion-reorder>
       <ion-item>
-        <ion-label>
-          Item 8
-        </ion-label>
+        <ion-label> Item 8 </ion-label>
       </ion-item>
     </ion-reorder>
   </ion-reorder-group>
 </template>
 
 <script>
-import { 
-  IonIcon, 
-  IonItem,
-  IonLabel, 
-  IonReorder, 
-  IonReorderGroup
-} from '@ionic/vue';
-import { pizza } from 'ionicons/icons';
-import { defineComponent } from 'vue';
+  import { IonIcon, IonItem, IonLabel, IonReorder, IonReorderGroup } from '@ionic/vue';
+  import { pizza } from 'ionicons/icons';
+  import { defineComponent } from 'vue';
 
-export default defineComponent({
-  components: {
-    IonIcon,
-    IonItem, 
-    IonLabel, 
-    IonReorder, 
-    IonReorderGroup
-  },
-  setup() {
-    return { pizza }
-  }
-});
+  export default defineComponent({
+    components: {
+      IonIcon,
+      IonItem,
+      IonLabel,
+      IonReorder,
+      IonReorderGroup,
+    },
+    setup() {
+      return { pizza };
+    },
+  });
 </script>
 ```
 
@@ -436,7 +357,6 @@ export default defineComponent({
 
 ## CSS Shadow Parts
 
-| Name | Description |
-| --- | --- |
+| Name   | Description                                     |
+| ------ | ----------------------------------------------- |
 | `icon` | The icon of the reorder handle (uses ion-icon). |
-

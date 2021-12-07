@@ -1,9 +1,16 @@
 ---
+title: Global Stylesheets
 initialTab: 'preview'
 inlineHtmlPreviews: true
 ---
 
-# Global Stylesheets
+<head>
+  <title>Global Stylesheet: Styled CSS Component Options for Ionic Apps</title>
+  <meta
+    name="description"
+    content="While Ionic component styles are self-contained, there are several global stylesheets and CSS options to include to utilize all features. Read to learn more."
+  />
+</head>
 
 While Ionic Framework component styles are self-contained, there are several global stylesheets that should be included in order to use all of Ionic's features. Some of the stylesheets are required in order for an Ionic Framework app to look and behave properly, and others include optional utilities to quickly style your app.
 
@@ -16,7 +23,6 @@ The following CSS file must be included in order for Ionic Framework to work pro
 #### core.css
 
 This file is the only stylesheet that is required in order for Ionic components to work properly. It includes app specific styles, and allows the `color` property to work across components. If this file is not included the colors will not show up and some elements may not appear properly.
-
 
 ### Recommended
 
@@ -33,7 +39,6 @@ Typography changes the font-family of the entire document and modifies the font 
 #### normalize.css
 
 Makes browsers render all elements more consistently and in line with modern standards. It is based on [Normalize.css](https://necolas.github.io/normalize.css/).
-
 
 ### Optional
 
@@ -62,7 +67,6 @@ Adds utility classes to align flex containers and items, see [CSS Utilities](css
 #### display.css
 
 Adds utility classes to hide any element based on the breakpoint, see [CSS Utilities](css-utilities.md#element-display) for usage information.
-
 
 ## Usage
 

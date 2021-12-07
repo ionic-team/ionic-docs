@@ -1,7 +1,6 @@
 ---
-sidebar_label: "ssh setup"
+sidebar_label: 'ssh setup'
 ---
-
 
 # ionic ssh setup
 

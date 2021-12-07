@@ -19,15 +19,15 @@ By changing these variables here and there, you can easily update the entire the
 :root {
   /** primary **/
   --ion-color-primary: #b36bff;
-  --ion-color-primary-rgb: 179,107,255;
+  --ion-color-primary-rgb: 179, 107, 255;
   --ion-color-primary-contrast: #000000;
-  --ion-color-primary-contrast-rgb: 0,0,0;
+  --ion-color-primary-contrast-rgb: 0, 0, 0;
   --ion-color-primary-shade: #9e5ee0;
   --ion-color-primary-tint: #bb7aff;
 }
 ```
 
-The easiest and most powerful way to create custom color palettes for your app’s UI is Ionic's [Color Generator tool](../../../theming/color-generator.mdx). As you change a color’s hex values, the embedded demo app automatically reflects the new colors. When you've finished making changes, simply copy and paste the generated code directly into your Ionic project.
+The easiest and most powerful way to create custom color palettes for your app’s UI is Ionic's [Color Generator tool](../../../theming/color-generator.md). As you change a color’s hex values, the embedded demo app automatically reflects the new colors. When you've finished making changes, simply copy and paste the generated code directly into your Ionic project.
 
 But wait, there’s more! Ionic automatically provides platform specific styles based on the device the application is running on, giving that native look and feel your users are used to:
 
@@ -51,6 +51,6 @@ Now, the iOS version of our app has a Material Design skin!
 
 ![ios and android comparison](/img/guides/first-app-v3/ion-lab-md-styling.png)
 
-Creating gorgeous-looking Ionic apps is easy with CSS variables and platform-specific styling. You now have everything you need to get started with Ionic. 
+Creating gorgeous-looking Ionic apps is easy with CSS variables and platform-specific styling. You now have everything you need to get started with Ionic.
 
 Go forth and build great apps!

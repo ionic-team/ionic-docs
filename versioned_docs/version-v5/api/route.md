@@ -28,7 +28,7 @@ interface NavigationHookOptions {
 
 ## Usage
 
-<Tabs defaultValue="javascript" values={[{ value: 'javascript', label: 'JAVASCRIPT' }, { value: 'stencil', label: 'STENCIL' }, { value: 'vue', label: 'VUE' }]}>
+<Tabs groupId="framework" defaultValue="javascript" values={[{ value: 'javascript', label: 'JAVASCRIPT' }, { value: 'stencil', label: 'STENCIL' }, { value: 'vue', label: 'VUE' }]}>
 
 <TabItem value="javascript">
 
@@ -71,8 +71,7 @@ const hasUnsavedDataGuard = async () => {
 const confirmDiscardChanges = async () => {
   const alert = document.createElement('ion-alert');
   alert.header = 'Discard Unsaved Changes?';
-  alert.message =
-    'Are you sure you want to leave? Any unsaved changed will be lost.';
+  alert.message = 'Are you sure you want to leave? Any unsaved changed will be lost.';
   alert.buttons = [
     {
       text: 'Cancel',
@@ -111,16 +110,8 @@ export class RouterExample {
     return (
       <ion-router>
         <ion-route url="/home" component="page-home"></ion-route>
-        <ion-route
-          url="/dashboard"
-          component="page-dashboard"
-          beforeEnter={isLoggedInGuard}
-        ></ion-route>
-        <ion-route
-          url="/new-message"
-          component="page-new-message"
-          beforeLeave={hasUnsavedDataGuard}
-        ></ion-route>
+        <ion-route url="/dashboard" component="page-dashboard" beforeEnter={isLoggedInGuard}></ion-route>
+        <ion-route url="/new-message" component="page-new-message" beforeLeave={hasUnsavedDataGuard}></ion-route>
         <ion-route url="/login" component="page-login"></ion-route>
       </ion-router>
     );
@@ -150,8 +141,7 @@ const hasUnsavedDataGuard = async () => {
 const confirmDiscardChanges = async () => {
   const alert = await alertController.create({
     header: 'Discard Unsaved Changes?',
-    message:
-      'Are you sure you want to leave? Any unsaved changed will be lost.',
+    message: 'Are you sure you want to leave? Any unsaved changed will be lost.',
     buttons: [
       {
         text: 'Cancel',
@@ -180,16 +170,8 @@ const confirmDiscardChanges = async () => {
 <template>
   <ion-router>
     <ion-route url="/home" component="page-home"></ion-route>
-    <ion-route
-      url="/dashboard"
-      component="page-dashboard"
-      :beforeEnter="isLoggedInGuard"
-    ></ion-route>
-    <ion-route
-      url="/new-message"
-      component="page-new-message"
-      :beforeLeave="hasUnsavedDataGuard"
-    ></ion-route>
+    <ion-route url="/dashboard" component="page-dashboard" :beforeEnter="isLoggedInGuard"></ion-route>
+    <ion-route url="/new-message" component="page-new-message" :beforeLeave="hasUnsavedDataGuard"></ion-route>
     <ion-route url="/login" component="page-login"></ion-route>
   </ion-router>
 </template>
@@ -220,8 +202,7 @@ const confirmDiscardChanges = async () => {
   const confirmDiscardChanges = async () => {
     const alert = await alertController.create({
       header: 'Discard Unsaved Changes?',
-      message:
-        'Are you sure you want to leave? Any unsaved changed will be lost.',
+      message: 'Are you sure you want to leave? Any unsaved changed will be lost.',
       buttons: [
         {
           text: 'Cancel',

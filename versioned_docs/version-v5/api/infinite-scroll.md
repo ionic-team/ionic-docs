@@ -25,23 +25,18 @@ Separating the `ion-infinite-scroll` and `ion-infinite-scroll-content` component
 
 ## Usage
 
-<Tabs defaultValue="angular" values={[{ value: 'angular', label: 'ANGULAR' }, { value: 'javascript', label: 'JAVASCRIPT' }, { value: 'stencil', label: 'STENCIL' }, { value: 'vue', label: 'VUE' }]}>
+<Tabs groupId="framework" defaultValue="angular" values={[{ value: 'angular', label: 'ANGULAR' }, { value: 'javascript', label: 'JAVASCRIPT' }, { value: 'stencil', label: 'STENCIL' }, { value: 'vue', label: 'VUE' }]}>
 
 <TabItem value="angular">
 
 ```html
 <ion-content>
-  <ion-button (click)="toggleInfiniteScroll()" expand="block">
-    Toggle Infinite Scroll
-  </ion-button>
+  <ion-button (click)="toggleInfiniteScroll()" expand="block"> Toggle Infinite Scroll </ion-button>
 
   <ion-list></ion-list>
 
   <ion-infinite-scroll threshold="100px" (ionInfinite)="loadData($event)">
-    <ion-infinite-scroll-content
-      loadingSpinner="bubbles"
-      loadingText="Loading more data..."
-    >
+    <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="Loading more data...">
     </ion-infinite-scroll-content>
   </ion-infinite-scroll>
 </ion-content>
@@ -86,17 +81,12 @@ export class InfiniteScrollExample {
 
 ```html
 <ion-content>
-  <ion-button onClick="toggleInfiniteScroll()" expand="block">
-    Toggle Infinite Scroll
-  </ion-button>
+  <ion-button onClick="toggleInfiniteScroll()" expand="block"> Toggle Infinite Scroll </ion-button>
 
   <ion-list></ion-list>
 
   <ion-infinite-scroll threshold="100px" id="infinite-scroll">
-    <ion-infinite-scroll-content
-      loading-spinner="bubbles"
-      loading-text="Loading more data..."
-    >
+    <ion-infinite-scroll-content loading-spinner="bubbles" loading-text="Loading more data...">
     </ion-infinite-scroll-content>
   </ion-infinite-scroll>
 </ion-content>
@@ -183,17 +173,14 @@ export class InfiniteScrollExample {
         </ion-button>
 
         <ion-list>
-          {this.data.map(item => (
+          {this.data.map((item) => (
             <ion-item>
               <ion-label>{item}</ion-label>
             </ion-item>
           ))}
         </ion-list>
 
-        <ion-infinite-scroll
-          ref={el => (this.infiniteScroll = el)}
-          onIonInfinite={ev => this.loadData(ev)}
-        >
+        <ion-infinite-scroll ref={(el) => (this.infiniteScroll = el)} onIonInfinite={(ev) => this.loadData(ev)}>
           <ion-infinite-scroll-content
             loadingSpinner="bubbles"
             loadingText="Loading more data..."
@@ -213,9 +200,7 @@ export class InfiniteScrollExample {
 <template>
   <ion-page>
     <ion-content class="ion-padding">
-      <ion-button @click="toggleInfiniteScroll" expand="block">
-        Toggle Infinite Scroll
-      </ion-button>
+      <ion-button @click="toggleInfiniteScroll" expand="block"> Toggle Infinite Scroll </ion-button>
 
       <ion-list>
         <ion-item v-for="item in items" :key="item">
@@ -229,10 +214,7 @@ export class InfiniteScrollExample {
         id="infinite-scroll"
         :disabled="isDisabled"
       >
-        <ion-infinite-scroll-content
-          loading-spinner="bubbles"
-          loading-text="Loading more data..."
-        >
+        <ion-infinite-scroll-content loading-spinner="bubbles" loading-text="Loading more data...">
         </ion-infinite-scroll-content>
       </ion-infinite-scroll>
     </ion-content>

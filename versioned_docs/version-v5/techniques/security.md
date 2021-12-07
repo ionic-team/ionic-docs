@@ -75,6 +75,7 @@ Developers can also choose to eject from the sanitizer in certain scenarios. Ion
 
 ````mdx-code-block
 <Tabs
+  groupId="framework"
   defaultValue="angular"
   values={[
     { value: 'angular', label: 'Angular' },

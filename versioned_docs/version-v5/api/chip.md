@@ -1,10 +1,11 @@
 ---
-title: "ion-chip:  Name, Text, Icon and Avatar for Ionic Framework Apps"
-description: "ion-chips represent complex entities in small blocks, such as a contact. A chip can contain several different elements such as names, avatars, text, and icons."
-sidebar_label: "ion-chip"
-demoUrl: "/docs/demos/api/chip/index.html"
-demoSourceUrl: "https://github.com/ionic-team/ionic-docs/tree/main/static/demos/api/chip/index.html"
+title: 'ion-chip:  Name, Text, Icon and Avatar for Ionic Framework Apps'
+description: 'ion-chips represent complex entities in small blocks, such as a contact. A chip can contain several different elements such as names, avatars, text, and icons.'
+sidebar_label: 'ion-chip'
+demoUrl: '/docs/demos/api/chip/index.html'
+demoSourceUrl: 'https://github.com/ionic-team/ionic-docs/tree/main/static/demos/api/chip/index.html'
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
@@ -14,8 +15,7 @@ Chips represent complex entities in small blocks, such as a contact. A chip can 
 
 ## Usage
 
-<Tabs defaultValue="angular" values={[{ value: 'angular', label: 'ANGULAR' }, { value: 'javascript', label: 'JAVASCRIPT' }, { value: 'react', label: 'REACT' }, { value: 'stencil', label: 'STENCIL' }, { value: 'vue', label: 'VUE' }]}>
-
+<Tabs groupId="framework" defaultValue="angular" values={[{ value: 'angular', label: 'Angular' }, { value: 'javascript', label: 'Javascript' }, { value: 'react', label: 'React' }, { value: 'stencil', label: 'Stencil' }, { value: 'vue', label: 'Vue' }]}>
 
 <TabItem value="angular">
 
@@ -59,16 +59,14 @@ Chips represent complex entities in small blocks, such as a contact. A chip can 
 
 <ion-chip>
   <ion-avatar>
-    <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
+    <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y" />
   </ion-avatar>
   <ion-label>Avatar Chip</ion-label>
   <ion-icon name="close-circle"></ion-icon>
 </ion-chip>
 ```
 
-
 </TabItem>
-
 
 <TabItem value="javascript">
 
@@ -112,22 +110,30 @@ Chips represent complex entities in small blocks, such as a contact. A chip can 
 
 <ion-chip>
   <ion-avatar>
-    <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
+    <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y" />
   </ion-avatar>
   <ion-label>Avatar Chip</ion-label>
   <ion-icon name="close-circle"></ion-icon>
 </ion-chip>
 ```
 
-
 </TabItem>
-
 
 <TabItem value="react">
 
 ```tsx
 import React from 'react';
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonChip, IonLabel, IonIcon, IonAvatar } from '@ionic/react';
+import {
+  IonContent,
+  IonHeader,
+  IonPage,
+  IonTitle,
+  IonToolbar,
+  IonChip,
+  IonLabel,
+  IonIcon,
+  IonAvatar,
+} from '@ionic/react';
 import { pin, heart, closeCircle, close } from 'ionicons/icons';
 
 export const ChipExamples: React.FC = () => {
@@ -187,12 +193,9 @@ export const ChipExamples: React.FC = () => {
     </IonPage>
   );
 };
-
 ```
 
-
 </TabItem>
-
 
 <TabItem value="stencil">
 
@@ -201,7 +204,7 @@ import { Component, h } from '@stencil/core';
 
 @Component({
   tag: 'chip-example',
-  styleUrl: 'chip-example.css'
+  styleUrl: 'chip-example.css',
 })
 export class ChipExample {
   render() {
@@ -241,18 +244,17 @@ export class ChipExample {
 
       <ion-chip>
         <ion-avatar>
-          <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y"/>
+          <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y" />
         </ion-avatar>
         <ion-label>Avatar Chip</ion-label>
         <ion-icon name="close-circle"></ion-icon>
-      </ion-chip>
+      </ion-chip>,
     ];
   }
 }
 ```
 
 </TabItem>
-
 
 <TabItem value="vue">
 
@@ -297,7 +299,7 @@ export class ChipExample {
 
   <ion-chip>
     <ion-avatar>
-      <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
+      <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y" />
     </ion-avatar>
     <ion-label>Avatar Chip</ion-label>
     <ion-icon :icon="closeCircle"></ion-icon>
@@ -305,20 +307,19 @@ export class ChipExample {
 </template>
 
 <script>
-import { IonAvatar, IonChip, IonIcon, IonLabel } from '@ionic/vue';
-import { close, closeCircle, heart, pin } from 'ionicons/icons';
+  import { IonAvatar, IonChip, IonIcon, IonLabel } from '@ionic/vue';
+  import { close, closeCircle, heart, pin } from 'ionicons/icons';
 
-import { defineComponent } from 'vue';
+  import { defineComponent } from 'vue';
 
-export default defineComponent({
-  components: { IonAvatar, IonChip, IonIcon, IonLabel },
-  setup() {
-    return { close, closeCircle, heart, pin }
-  }
-});
+  export default defineComponent({
+    components: { IonAvatar, IonChip, IonIcon, IonLabel },
+    setup() {
+      return { close, closeCircle, heart, pin };
+    },
+  });
 </script>
 ```
-
 
 </TabItem>
 
@@ -326,55 +327,45 @@ export default defineComponent({
 
 ## Properties
 
-
 ### color
 
-| | |
-| --- | --- |
+|                 |                                                                                                                                                                                                                                                                                  |
+| --------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Description** | The color to use from your application's color palette.<br />Default options are: `"primary"`, `"secondary"`, `"tertiary"`, `"success"`, `"warning"`, `"danger"`, `"light"`, `"medium"`, and `"dark"`.<br />For more information on colors, see [theming](../theming/basics.md). |
-| **Attribute** | `color` |
-| **Type** | `string \| undefined` |
-| **Default** | `undefined` |
-
-
+| **Attribute**   | `color`                                                                                                                                                                                                                                                                          |
+| **Type**        | `string \| undefined`                                                                                                                                                                                                                                                            |
+| **Default**     | `undefined`                                                                                                                                                                                                                                                                      |
 
 ### disabled
 
-| | |
-| --- | --- |
+|                 |                                                    |
+| --------------- | -------------------------------------------------- |
 | **Description** | If `true`, the user cannot interact with the chip. |
-| **Attribute** | `disabled` |
-| **Type** | `boolean` |
-| **Default** | `false` |
-
-
+| **Attribute**   | `disabled`                                         |
+| **Type**        | `boolean`                                          |
+| **Default**     | `false`                                            |
 
 ### mode
 
-| | |
-| --- | --- |
+|                 |                                                   |
+| --------------- | ------------------------------------------------- |
 | **Description** | The mode determines which platform styles to use. |
-| **Attribute** | `mode` |
-| **Type** | `"ios" \| "md"` |
-| **Default** | `undefined` |
-
-
+| **Attribute**   | `mode`                                            |
+| **Type**        | `"ios" \| "md"`                                   |
+| **Default**     | `undefined`                                       |
 
 ### outline
 
-| | |
-| --- | --- |
+|                 |                                  |
+| --------------- | -------------------------------- |
 | **Description** | Display an outline style button. |
-| **Attribute** | `outline` |
-| **Type** | `boolean` |
-| **Default** | `false` |
-
-
+| **Attribute**   | `outline`                        |
+| **Type**        | `boolean`                        |
+| **Default**     | `false`                          |
 
 ## CSS Custom Properties
 
-| Name | Description |
-| --- | --- |
+| Name           | Description            |
+| -------------- | ---------------------- |
 | `--background` | Background of the chip |
-| `--color` | Color of the chip |
-
+| `--color`      | Color of the chip      |

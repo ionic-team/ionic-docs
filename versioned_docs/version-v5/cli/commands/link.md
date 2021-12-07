@@ -1,7 +1,6 @@
 ---
-sidebar_label: "link"
+sidebar_label: 'link'
 ---
-
 
 # ionic link
 
@@ -20,34 +19,32 @@ Appflow uses a git-based workflow to manage app updates. During the linking proc
 Ultimately, this command sets the **id** property in **./ionic.config.json**, which marks this app as linked.
 
 If you are having issues linking, please get in touch with our [Support](https://ion.link/support-request).
+
 ## Examples
 
 ```shell
-$ ionic link 
+$ ionic link
 $ ionic link a1b2c3d4
 ```
 
 ## Inputs
 
-
 <table className="reference-table">
-  
-      <thead>
-        <tr>
-          <th colSpan="2">
-            <h3>id</h3>
-          </th>
-        </tr>
-      </thead>
-      <tbody>
-        
-              <tr>
-                <th>Description</th>
-                <td><p>The Appflow ID of the app to link (e.g. <code>a1b2c3d4</code>)</p>
-</td>
-              </tr>
-            
-      </tbody>
+  <thead>
+    <tr>
+      <th colSpan="2">
+        <h3>id</h3>
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Description</th>
+      <td>
+        <p>
+          The Appflow ID of the app to link (e.g. <code>a1b2c3d4</code>)
+        </p>
+      </td>
+    </tr>
+  </tbody>
 </table>
-
-

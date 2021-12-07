@@ -1,10 +1,11 @@
 ---
-title: "Badges | ion-badge: iOS & Android App Notification Badge Icons"
-description: "Badges are inline block elements that appear near other elements on iOS & Android apps—use ion-badges as notifications that indicate how many items there are."
-sidebar_label: "ion-badge"
-demoUrl: "/docs/demos/api/badge/index.html"
-demoSourceUrl: "https://github.com/ionic-team/ionic-docs/tree/main/static/demos/api/badge/index.html"
+title: 'Badges | ion-badge: iOS & Android App Notification Badge Icons'
+description: 'Badges are inline block elements that appear near other elements on iOS & Android apps—use ion-badges as notifications that indicate how many items there are.'
+sidebar_label: 'ion-badge'
+demoUrl: '/docs/demos/api/badge/index.html'
+demoSourceUrl: 'https://github.com/ionic-team/ionic-docs/tree/main/static/demos/api/badge/index.html'
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
@@ -12,11 +13,9 @@ import TabItem from '@theme/TabItem';
 
 Badges are inline block elements that usually appear near another element. Typically they contain a number or other characters. They can be used as a notification that there are additional items associated with an element and indicate how many items there are.
 
-
 ## Usage
 
-<Tabs defaultValue="angular" values={[{ value: 'angular', label: 'ANGULAR' }, { value: 'javascript', label: 'JAVASCRIPT' }, { value: 'react', label: 'REACT' }, { value: 'stencil', label: 'STENCIL' }, { value: 'vue', label: 'VUE' }]}>
-
+<Tabs groupId="framework" defaultValue="angular" values={[{ value: 'angular', label: 'Angular' }, { value: 'javascript', label: 'Javascript' }, { value: 'react', label: 'React' }, { value: 'stencil', label: 'Stencil' }, { value: 'vue', label: 'Vue' }]}>
 
 <TabItem value="angular">
 
@@ -45,7 +44,6 @@ Badges are inline block elements that usually appear near another element. Typic
 
 </TabItem>
 
-
 <TabItem value="javascript">
 
 ```html
@@ -72,7 +70,6 @@ Badges are inline block elements that usually appear near another element. Typic
 ```
 
 </TabItem>
-
 
 <TabItem value="react">
 
@@ -106,9 +103,7 @@ export const BadgeExample: React.FC = () => (
 );
 ```
 
-
 </TabItem>
-
 
 <TabItem value="stencil">
 
@@ -117,7 +112,7 @@ import { Component, h } from '@stencil/core';
 
 @Component({
   tag: 'badge-example',
-  styleUrl: 'badge-example.css'
+  styleUrl: 'badge-example.css',
 })
 export class BadgeExample {
   render() {
@@ -141,14 +136,13 @@ export class BadgeExample {
         <ion-badge slot="start">11</ion-badge>
         <ion-label>My Item</ion-label>
         <ion-badge slot="end">22</ion-badge>
-      </ion-item>
+      </ion-item>,
     ];
   }
 }
 ```
 
 </TabItem>
-
 
 <TabItem value="vue">
 
@@ -177,12 +171,12 @@ export class BadgeExample {
 </template>
 
 <script>
-import { IonBadge, IonItem, IonLabel } from '@ionic/vue';
-import { defineComponent } from 'vue';
+  import { IonBadge, IonItem, IonLabel } from '@ionic/vue';
+  import { defineComponent } from 'vue';
 
-export default defineComponent({
-  components: { IonBadge, IonItem, IonLabel }
-});
+  export default defineComponent({
+    components: { IonBadge, IonItem, IonLabel },
+  });
 </script>
 ```
 
@@ -192,37 +186,31 @@ export default defineComponent({
 
 ## Properties
 
-
 ### color
 
-| | |
-| --- | --- |
+|                 |                                                                                                                                                                                                                                                                                  |
+| --------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Description** | The color to use from your application's color palette.<br />Default options are: `"primary"`, `"secondary"`, `"tertiary"`, `"success"`, `"warning"`, `"danger"`, `"light"`, `"medium"`, and `"dark"`.<br />For more information on colors, see [theming](../theming/basics.md). |
-| **Attribute** | `color` |
-| **Type** | `string \| undefined` |
-| **Default** | `undefined` |
-
-
+| **Attribute**   | `color`                                                                                                                                                                                                                                                                          |
+| **Type**        | `string \| undefined`                                                                                                                                                                                                                                                            |
+| **Default**     | `undefined`                                                                                                                                                                                                                                                                      |
 
 ### mode
 
-| | |
-| --- | --- |
+|                 |                                                   |
+| --------------- | ------------------------------------------------- |
 | **Description** | The mode determines which platform styles to use. |
-| **Attribute** | `mode` |
-| **Type** | `"ios" \| "md"` |
-| **Default** | `undefined` |
-
-
+| **Attribute**   | `mode`                                            |
+| **Type**        | `"ios" \| "md"`                                   |
+| **Default**     | `undefined`                                       |
 
 ## CSS Custom Properties
 
-| Name | Description |
-| --- | --- |
-| `--background` | Background of the badge |
-| `--color` | Text color of the badge |
-| `--padding-bottom` | Bottom padding of the badge |
-| `--padding-end` | Right padding if direction is left-to-right, and left padding if direction is right-to-left of the badge |
-| `--padding-start` | Left padding if direction is left-to-right, and right padding if direction is right-to-left of the badge |
-| `--padding-top` | Top padding of the badge |
-
+| Name               | Description                                                                                              |
+| ------------------ | -------------------------------------------------------------------------------------------------------- |
+| `--background`     | Background of the badge                                                                                  |
+| `--color`          | Text color of the badge                                                                                  |
+| `--padding-bottom` | Bottom padding of the badge                                                                              |
+| `--padding-end`    | Right padding if direction is left-to-right, and left padding if direction is right-to-left of the badge |
+| `--padding-start`  | Left padding if direction is left-to-right, and right padding if direction is right-to-left of the badge |
+| `--padding-top`    | Top padding of the badge                                                                                 |

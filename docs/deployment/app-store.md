@@ -1,17 +1,24 @@
 ---
+title: iOS App Store Deployment
 sidebar_label: iOS App Store
 ---
 
-# iOS App Store Deployment
+<head>
+  <title>Publish to iOS App Store: Apple App Store Deployment for Ionic</title>
+  <meta
+    name="description"
+    content="Review the requirements to publish an Ionic app to the Apple iOS App Store. Learn to generate a release build and other necessary steps for deployment."
+  />
+</head>
 
 ## Requirements
 
 Submitting an App to the iOS App store requires a few things:
 
-* Xcode
-* A Paid Apple Developers account
-* A valid provisioning profile
-* App Development and Distribution certificates
+- Xcode
+- A Paid Apple Developers account
+- A valid provisioning profile
+- App Development and Distribution certificates
 
 To enroll in the Apple Developer Program, follow the instructions [listed here](https://developer.apple.com/programs/).
 

@@ -1,11 +1,18 @@
 ---
+title: Dark Mode
 initialTab: 'preview'
 inlineHtmlPreviews: true
 ---
 
-import Codepen from '@theme/Codepen';
+import Codepen from '@components/global/Codepen';
 
-# Dark Mode
+<head>
+  <title>Dark Mode to Change Color Schemes and CSS Properties</title>
+  <meta
+    name="description"
+    content="Developers are adding dark mode CSS on native applications to support their user preferences. Read to learn more about dark color schemes for Ionic apps."
+  />
+</head>
 
 Ionic makes it easy to change the themes of your app, including supporting dark color schemes. With growing support for dark mode in native apps, developers are now looking to add it to their apps to support user preferences.
 
@@ -67,7 +74,7 @@ const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
 toggleDarkTheme(prefersDark.matches);
 
 // Listen for changes to the prefers-color-scheme media query
-prefersDark.addListener(mediaQuery => toggleDarkTheme(mediaQuery.matches));
+prefersDark.addListener((mediaQuery) => toggleDarkTheme(mediaQuery.matches));
 
 // Add or remove the "dark" class based on if the media query matches
 function toggleDarkTheme(shouldAdd) {
@@ -80,6 +87,7 @@ Tip: make sure to view the Codepen below in a [supported browser](https://canius
 :::
 
 <!-- Codepen https://codepen.io/ionic/pen/jONzJpG -->
+
 <Codepen preview="false" user="ionic" slug="jONzJpG" height="550px" default-tab="js,result" />
 
 ### Manually Toggle Dark Mode
@@ -91,14 +99,14 @@ In addition to calling `toggleDarkTheme()` when the app loads and when the media
 const toggle = document.querySelector('#themeToggle');
 
 // Listen for the toggle check/uncheck to toggle the dark class on the <body>
-toggle.addEventListener('ionChange', ev => {
+toggle.addEventListener('ionChange', (ev) => {
   document.body.classList.toggle('dark', ev.detail.checked);
 });
 
 const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
 
 // Listen for changes to the prefers-color-scheme media query
-prefersDark.addListener(e => checkToggle(e.matches));
+prefersDark.addListener((e) => checkToggle(e.matches));
 
 // Called when the app loads
 function loadApp() {
@@ -112,6 +120,7 @@ function checkToggle(shouldCheck) {
 ```
 
 <!-- Codepen https://codepen.io/ionic/pen/zYOpQLj -->
+
 <Codepen preview="false" user="ionic" slug="zYOpQLj" height="600px" default-tab="js,result" />
 
 ## Adjusting System UI Components
@@ -130,9 +139,9 @@ This allows the page to indicate which color scheme it is comfortable being rend
 color-scheme: light dark;
 ```
 
-| Default scrollbar                                                                                         | Scrollbar with `color-scheme`                                                                         |
-| --------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- |
-| <figure><img alt="Application without color-scheme" src="/img/theming/color-scheme-light.png" /></figure> | <figure><img alt="Application with color-scheme" src="/img/theming/color-scheme-dark.png" /></figure> |
+| Default scrollbar                                                        | Scrollbar with `color-scheme`                                        |
+| ------------------------------------------------------------------------ | -------------------------------------------------------------------- |
+| ![Application without color-scheme](/img/theming/color-scheme-light.png) | ![Application with color-scheme](/img/theming/color-scheme-dark.png) |
 
 For more information regarding `color-scheme` please see https://web.dev/color-scheme/.
 

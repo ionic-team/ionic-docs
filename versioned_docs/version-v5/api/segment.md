@@ -19,7 +19,7 @@ Segments are not scrollable by default. Each segment button has a fixed width, a
 
 ## Usage
 
-<Tabs defaultValue="angular" values={[{ value: 'angular', label: 'ANGULAR' }, { value: 'javascript', label: 'JAVASCRIPT' }, { value: 'react', label: 'REACT' }, { value: 'stencil', label: 'STENCIL' }, { value: 'vue', label: 'VUE' }]}>
+<Tabs groupId="framework" defaultValue="angular" values={[{ value: 'angular', label: 'Angular' }, { value: 'javascript', label: 'Javascript' }, { value: 'react', label: 'React' }, { value: 'stencil', label: 'Stencil' }, { value: 'vue', label: 'Vue' }]}>
 
 <TabItem value="angular">
 
@@ -230,7 +230,7 @@ export class SegmentExample {
 // Listen for ionChange on all segments
 const segments = document.querySelectorAll('ion-segment');
 for (let i = 0; i < segments.length; i++) {
-  segments[i].addEventListener('ionChange', ev => {
+  segments[i].addEventListener('ionChange', (ev) => {
     console.log('Segment changed', ev);
   });
 }
@@ -253,17 +253,7 @@ import {
   IonLabel,
   IonIcon,
 } from '@ionic/react';
-import {
-  call,
-  home,
-  heart,
-  pin,
-  star,
-  globe,
-  basket,
-  camera,
-  bookmark,
-} from 'ionicons/icons';
+import { call, home, heart, pin, star, globe, basket, camera, bookmark } from 'ionicons/icons';
 
 export const SegmentExamples: React.FC = () => {
   return (
@@ -275,9 +265,7 @@ export const SegmentExamples: React.FC = () => {
       </IonHeader>
       <IonContent>
         {/*-- Default Segment --*/}
-        <IonSegment
-          onIonChange={e => console.log('Segment selected', e.detail.value)}
-        >
+        <IonSegment onIonChange={(e) => console.log('Segment selected', e.detail.value)}>
           <IonSegmentButton value="friends">
             <IonLabel>Friends</IonLabel>
           </IonSegmentButton>
@@ -287,11 +275,7 @@ export const SegmentExamples: React.FC = () => {
         </IonSegment>
 
         {/*-- Disabled Segment --*/}
-        <IonSegment
-          onIonChange={e => console.log('Segment selected', e.detail.value)}
-          disabled
-          value="sunny"
-        >
+        <IonSegment onIonChange={(e) => console.log('Segment selected', e.detail.value)} disabled value="sunny">
           <IonSegmentButton value="sunny">
             <IonLabel>Sunny</IonLabel>
           </IonSegmentButton>
@@ -301,9 +285,7 @@ export const SegmentExamples: React.FC = () => {
         </IonSegment>
 
         {/*-- Segment with anchors --*/}
-        <IonSegment
-          onIonChange={e => console.log('Segment selected', e.detail.value)}
-        >
+        <IonSegment onIonChange={(e) => console.log('Segment selected', e.detail.value)}>
           <IonSegmentButton value="dogs">
             <IonLabel>Dogs</IonLabel>
           </IonSegmentButton>
@@ -338,10 +320,7 @@ export const SegmentExamples: React.FC = () => {
         </IonSegment>
 
         {/*-- Segment with secondary color --*/}
-        <IonSegment
-          onIonChange={e => console.log('Segment selected', e.detail.value)}
-          color="secondary"
-        >
+        <IonSegment onIonChange={(e) => console.log('Segment selected', e.detail.value)} color="secondary">
           <IonSegmentButton value="standard">
             <IonLabel>Standard</IonLabel>
           </IonSegmentButton>
@@ -355,9 +334,7 @@ export const SegmentExamples: React.FC = () => {
 
         {/*-- Segment in a toolbar --*/}
         <IonToolbar>
-          <IonSegment
-            onIonChange={e => console.log('Segment selected', e.detail.value)}
-          >
+          <IonSegment onIonChange={(e) => console.log('Segment selected', e.detail.value)}>
             <IonSegmentButton value="camera">
               <IonIcon icon={camera} />
             </IonSegmentButton>
@@ -368,10 +345,7 @@ export const SegmentExamples: React.FC = () => {
         </IonToolbar>
 
         {/*-- Segment with default selection --*/}
-        <IonSegment
-          onIonChange={e => console.log('Segment selected', e.detail.value)}
-          value="javascript"
-        >
+        <IonSegment onIonChange={(e) => console.log('Segment selected', e.detail.value)} value="javascript">
           <IonSegmentButton value="python">
             <IonLabel>Python</IonLabel>
           </IonSegmentButton>
@@ -404,7 +378,7 @@ export class SegmentExample {
   render() {
     return [
       // Default Segment
-      <ion-segment onIonChange={ev => this.segmentChanged(ev)}>
+      <ion-segment onIonChange={(ev) => this.segmentChanged(ev)}>
         <ion-segment-button value="friends">
           <ion-label>Friends</ion-label>
         </ion-segment-button>
@@ -414,11 +388,7 @@ export class SegmentExample {
       </ion-segment>,
 
       // Disabled Segment
-      <ion-segment
-        onIonChange={ev => this.segmentChanged(ev)}
-        disabled={true}
-        value="sunny"
-      >
+      <ion-segment onIonChange={(ev) => this.segmentChanged(ev)} disabled={true} value="sunny">
         <ion-segment-button value="sunny">
           <ion-label>Sunny</ion-label>
         </ion-segment-button>
@@ -428,7 +398,7 @@ export class SegmentExample {
       </ion-segment>,
 
       // Segment with anchors
-      <ion-segment onIonChange={ev => this.segmentChanged(ev)}>
+      <ion-segment onIonChange={(ev) => this.segmentChanged(ev)}>
         <ion-segment-button value="dogs">
           <ion-label>Dogs</ion-label>
         </ion-segment-button>
@@ -463,10 +433,7 @@ export class SegmentExample {
       </ion-segment>,
 
       // Segment with secondary color
-      <ion-segment
-        onIonChange={ev => this.segmentChanged(ev)}
-        color="secondary"
-      >
+      <ion-segment onIonChange={(ev) => this.segmentChanged(ev)} color="secondary">
         <ion-segment-button value="standard">
           <ion-label>Standard</ion-label>
         </ion-segment-button>
@@ -480,7 +447,7 @@ export class SegmentExample {
 
       // Segment in a toolbar
       <ion-toolbar>
-        <ion-segment onIonChange={ev => this.segmentChanged(ev)}>
+        <ion-segment onIonChange={(ev) => this.segmentChanged(ev)}>
           <ion-segment-button value="camera">
             <ion-icon name="camera"></ion-icon>
           </ion-segment-button>
@@ -491,10 +458,7 @@ export class SegmentExample {
       </ion-toolbar>,
 
       // Segment with default selection
-      <ion-segment
-        onIonChange={ev => this.segmentChanged(ev)}
-        value="javascript"
-      >
+      <ion-segment onIonChange={(ev) => this.segmentChanged(ev)} value="javascript">
         <ion-segment-button value="python">
           <ion-label>Python</ion-label>
         </ion-segment-button>

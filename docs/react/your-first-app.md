@@ -1,39 +1,54 @@
 ---
-title: "React Apps | Build Your First Ionic Framework React Application"
-description: Build your first Ionic React App. With one codebase, you can build an Ionic Framework application for any platform using just HTML, CSS, and JavaScript.
+title: 'Your First Ionic App: React'
 sidebar_label: Build Your First App
 ---
 
-# Your First Ionic App: React
+<head>
+  <title>React Apps | Build Your First Ionic Framework React Application</title>
+  <meta
+    name="description"
+    content="Build your first Ionic React App. With one codebase, you can build an Ionic Framework application for any platform using just HTML, CSS, and JavaScript."
+  />
+</head>
 
 The great thing about Ionic is that with one codebase, you can build for any platform using just HTML, CSS, and JavaScript. Follow along as we learn the fundamentals of Ionic app development by creating a realistic app step by step.
 
 Here’s the finished app running on all 3 platforms:
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/0ASQ13Y1Rk4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe
+  width="560"
+  height="315"
+  src="https://www.youtube.com/embed/0ASQ13Y1Rk4"
+  frameborder="0"
+  allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+  allowfullscreen
+></iframe>
 
 ## What We'll Build
 
 We'll create a Photo Gallery app that offers the ability to take photos with your device's camera, display them in a grid, and store them permanently on the device.
 
 Highlights include:
-* One React-based codebase that runs on the web, iOS, and Android using Ionic Framework [UI components](https://ionicframework.com/docs/components).
-* Deployed as a native iOS and Android mobile app using [Capacitor](https://capacitor.ionicframework.com), Ionic's official native app runtime.
-* Photo Gallery functionality powered by the Capacitor [Camera](https://capacitor.ionicframework.com/docs/apis/camera), [Filesystem](https://capacitor.ionicframework.com/docs/apis/filesystem), and [Storage](https://capacitor.ionicframework.com/docs/apis/storage) APIs.
+
+- One React-based codebase that runs on the web, iOS, and Android using Ionic Framework [UI components](https://ionicframework.com/docs/components).
+- Deployed as a native iOS and Android mobile app using [Capacitor](https://capacitor.ionicframework.com), Ionic's official native app runtime.
+- Photo Gallery functionality powered by the Capacitor [Camera](https://capacitor.ionicframework.com/docs/apis/camera), [Filesystem](https://capacitor.ionicframework.com/docs/apis/filesystem), and [Storage](https://capacitor.ionicframework.com/docs/apis/storage) APIs.
 
 Find the complete app code referenced in this guide [on GitHub](https://github.com/ionic-team/photo-gallery-capacitor-react).
 
 ## Download Required Tools
 
 Download and install these right away to ensure an optimal Ionic development experience:
-* <strong>Node.js</strong> for interacting with the Ionic ecosystem. [Download the LTS version here](https://nodejs.org/en/).
-* <strong>A code editor</strong> for... writing code! We are fans of [Visual Studio Code](https://code.visualstudio.com/).
-* <strong>Command-line interface/terminal (CLI)</strong>:
- * <strong>Windows</strong> users: for the best Ionic experience, we recommend the built-in command line (cmd) or the Powershell CLI, running in Administrator mode.
- * <strong>Mac/Linux</strong> users, virtually any terminal will work.
 
+- **Node.js** for interacting with the Ionic ecosystem. [Download the LTS version here](https://nodejs.org/en/).
+- **A code editor** for... writing code! We are fans of [Visual Studio Code](https://code.visualstudio.com/).
+- **Command-line interface/terminal (CLI)**:
+  - **Windows** users: for the best Ionic experience, we recommend the built-in command line (cmd) or the Powershell
+    CLI, running in Administrator mode.
+  - **Mac/Linux** users, virtually any terminal will work.
 
 ## Install Ionic Tooling
+
 Run the following in the command line terminal to install the Ionic CLI (`ionic`), `native-run`, used to run native binaries on devices and simulators/emulators, and `cordova-res`, used to generate native app icons and splash screens:
 
 :::note
@@ -50,8 +65,8 @@ The `-g` option means _install globally_. When packages are installed globally, 
 Consider setting up npm to operate globally without elevated permissions. See [Resolving Permission Errors](../developing/tips.md#resolving-permission-errors) for more information.
 :::
 
-
 ## Create an App
+
 Next, create an Ionic React app that uses the “Tabs” starter template and adds Capacitor for native functionality:
 
 ```shell
@@ -96,6 +111,7 @@ defineCustomElements(window);
 That’s it! Now for the fun part - let’s see the app in action.
 
 ## Run the App
+
 Run this command in your shell:
 
 ```shell
@@ -135,9 +151,21 @@ We put the visual aspects of our app into `<IonContent>`. In this case, it’s w
 
 ```tsx
 import { camera, trash, close } from 'ionicons/icons';
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar,
-         IonFab, IonFabButton, IonIcon, IonGrid, IonRow,
-         IonCol, IonImg, IonActionSheet } from '@ionic/react';
+import {
+  IonContent,
+  IonHeader,
+  IonPage,
+  IonTitle,
+  IonToolbar,
+  IonFab,
+  IonFabButton,
+  IonIcon,
+  IonGrid,
+  IonRow,
+  IonCol,
+  IonImg,
+  IonActionSheet,
+} from '@ionic/react';
 ```
 
 Then, add the FAB to the bottom of the page. Use the camera image as the icon, and call the `takePhoto()` function when this button is clicked (to be implemented soon):

@@ -50,7 +50,7 @@ Any of the defined [CSS Custom Properties](#css-custom-properties) can be used t
 
 ## Usage
 
-<Tabs defaultValue="angular" values={[{ value: 'angular', label: 'ANGULAR' }, { value: 'javascript', label: 'JAVASCRIPT' }, { value: 'react', label: 'REACT' }, { value: 'stencil', label: 'STENCIL' }, { value: 'vue', label: 'VUE' }]}>
+<Tabs groupId="framework" defaultValue="angular" values={[{ value: 'angular', label: 'Angular' }, { value: 'javascript', label: 'Javascript' }, { value: 'react', label: 'React' }, { value: 'stencil', label: 'Stencil' }, { value: 'vue', label: 'Vue' }]}>
 
 <TabItem value="angular">
 
@@ -163,10 +163,7 @@ const LoadingExample: React.FC<LoadingProps> = () => {
         >
           Show Loading
         </IonButton>
-        <IonButton
-          expand="block"
-          onClick={() => present('Loading', 2000, 'dots')}
-        >
+        <IonButton expand="block" onClick={() => present('Loading', 2000, 'dots')}>
           Show Loading using params
         </IonButton>
       </IonContent>
@@ -247,12 +244,8 @@ export class LoadingExample {
   render() {
     return [
       <ion-content>
-        <ion-button onClick={() => this.presentLoading()}>
-          Present Loading
-        </ion-button>
-        <ion-button onClick={() => this.presentLoadingWithOptions()}>
-          Present Loading: Options
-        </ion-button>
+        <ion-button onClick={() => this.presentLoading()}>Present Loading</ion-button>
+        <ion-button onClick={() => this.presentLoadingWithOptions()}>Present Loading: Options</ion-button>
       </ion-content>,
     ];
   }

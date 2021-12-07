@@ -1,8 +1,9 @@
 ---
-sidebar_label: "ion-note"
-demoUrl: "/docs/demos/api/note/index.html"
-demoSourceUrl: "https://github.com/ionic-team/ionic-docs/tree/main/static/demos/api/note/index.html"
+sidebar_label: 'ion-note'
+demoUrl: '/docs/demos/api/note/index.html'
+demoSourceUrl: 'https://github.com/ionic-team/ionic-docs/tree/main/static/demos/api/note/index.html'
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
@@ -10,11 +11,9 @@ import TabItem from '@theme/TabItem';
 
 Notes are text elements generally used as subtitles that provide more information. Notes are styled to appear grey by default. Notes can be used in an item as metadata text.
 
-
 ## Usage
 
-<Tabs defaultValue="angular" values={[{ value: 'angular', label: 'ANGULAR' }, { value: 'javascript', label: 'JAVASCRIPT' }, { value: 'react', label: 'REACT' }, { value: 'stencil', label: 'STENCIL' }, { value: 'vue', label: 'VUE' }]}>
-
+<Tabs groupId="framework" defaultValue="angular" values={[{ value: 'angular', label: 'Angular' }, { value: 'javascript', label: 'Javascript' }, { value: 'react', label: 'React' }, { value: 'stencil', label: 'Stencil' }, { value: 'vue', label: 'Vue' }]}>
 
 <TabItem value="angular">
 
@@ -43,9 +42,7 @@ Notes are text elements generally used as subtitles that provide more informatio
 </ion-list>
 ```
 
-
 </TabItem>
-
 
 <TabItem value="javascript">
 
@@ -74,9 +71,7 @@ Notes are text elements generally used as subtitles that provide more informatio
 </ion-list>
 ```
 
-
 </TabItem>
-
 
 <TabItem value="react">
 
@@ -87,14 +82,20 @@ import { IonNote, IonList, IonItem, IonLabel, IonContent } from '@ionic/react';
 export const NoteExample: React.FC = () => (
   <IonContent>
     {/*-- Default Note --*/}
-    <IonNote>Default Note</IonNote><br />
+    <IonNote>Default Note</IonNote>
+    <br />
 
     {/*-- Note Colors --*/}
-    <IonNote color="primary">Primary Note</IonNote><br />
-    <IonNote color="secondary">Secondary Note</IonNote><br />
-    <IonNote color="danger">Danger Note</IonNote><br />
-    <IonNote color="light">Light Note</IonNote><br />
-    <IonNote color="dark">Dark Note</IonNote><br />
+    <IonNote color="primary">Primary Note</IonNote>
+    <br />
+    <IonNote color="secondary">Secondary Note</IonNote>
+    <br />
+    <IonNote color="danger">Danger Note</IonNote>
+    <br />
+    <IonNote color="light">Light Note</IonNote>
+    <br />
+    <IonNote color="dark">Dark Note</IonNote>
+    <br />
 
     {/*-- Notes in a List --*/}
     <IonList>
@@ -114,7 +115,6 @@ export const NoteExample: React.FC = () => (
 
 </TabItem>
 
-
 <TabItem value="stencil">
 
 ```tsx
@@ -122,7 +122,7 @@ import { Component, h } from '@stencil/core';
 
 @Component({
   tag: 'note-example',
-  styleUrl: 'note-example.css'
+  styleUrl: 'note-example.css',
 })
 export class NoteExample {
   render() {
@@ -148,15 +148,13 @@ export class NoteExample {
           <ion-note slot="start">Off</ion-note>
           <ion-label>Note (Start)</ion-label>
         </ion-item>
-      </ion-list>
+      </ion-list>,
     ];
   }
 }
 ```
 
-
 </TabItem>
-
 
 <TabItem value="vue">
 
@@ -187,15 +185,14 @@ export class NoteExample {
 </template>
 
 <script>
-import { IonItem, IonLabel, IonList, IonNote } from '@ionic/vue';
-import { defineComponent } from 'vue';
+  import { IonItem, IonLabel, IonList, IonNote } from '@ionic/vue';
+  import { defineComponent } from 'vue';
 
-export default defineComponent({
-  components: { IonItem, IonLabel, IonList, IonNote }
-});
+  export default defineComponent({
+    components: { IonItem, IonLabel, IonList, IonNote },
+  });
 </script>
 ```
-
 
 </TabItem>
 
@@ -203,32 +200,26 @@ export default defineComponent({
 
 ## Properties
 
-
 ### color
 
-| | |
-| --- | --- |
+|                 |                                                                                                                                                                                                                                                                                  |
+| --------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Description** | The color to use from your application's color palette.<br />Default options are: `"primary"`, `"secondary"`, `"tertiary"`, `"success"`, `"warning"`, `"danger"`, `"light"`, `"medium"`, and `"dark"`.<br />For more information on colors, see [theming](../theming/basics.md). |
-| **Attribute** | `color` |
-| **Type** | `string \| undefined` |
-| **Default** | `undefined` |
-
-
+| **Attribute**   | `color`                                                                                                                                                                                                                                                                          |
+| **Type**        | `string \| undefined`                                                                                                                                                                                                                                                            |
+| **Default**     | `undefined`                                                                                                                                                                                                                                                                      |
 
 ### mode
 
-| | |
-| --- | --- |
+|                 |                                                   |
+| --------------- | ------------------------------------------------- |
 | **Description** | The mode determines which platform styles to use. |
-| **Attribute** | `mode` |
-| **Type** | `"ios" \| "md"` |
-| **Default** | `undefined` |
-
-
+| **Attribute**   | `mode`                                            |
+| **Type**        | `"ios" \| "md"`                                   |
+| **Default**     | `undefined`                                       |
 
 ## CSS Custom Properties
 
-| Name | Description |
-| --- | --- |
+| Name      | Description       |
+| --------- | ----------------- |
 | `--color` | Color of the note |
-
