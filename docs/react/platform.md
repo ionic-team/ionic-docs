@@ -50,7 +50,7 @@ Below is a table listing all the possible platform values along with correspondi
 The function used to detect a specific platform can be overridden by providing an alternative function in the global [Ionic config](./config). Each function takes `window` as a parameter and returns a boolean.
 
 ```tsx
-setupConfig({
+setupIonicReact({
   platform: {
     /** The default `desktop` function returns false for devices with a touchscreen.
      * This is not always wanted, so this function tests the User Agent instead.

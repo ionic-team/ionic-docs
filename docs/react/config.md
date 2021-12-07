@@ -4,10 +4,10 @@ Ionic Config provides a way to change the properties of components globally acro
 
 ## Global Config
 
-To override the initial Ionic config for the app, import the `setupConfig` method from `@ionic/react`, and call it before you render any Ionic components (including `IonApp`).
+To override the initial Ionic config for the app, import the `setupIonicReact` function from `@ionic/react`, and call it before you render any Ionic components (including `IonApp`).
 
 ```tsx
-setupConfig({
+setupIonicReact({
   rippleEffect: false,
   mode: 'md',
 });
@@ -23,9 +23,9 @@ In the following example, we are disabling all animations in our Ionic app only 
 The `isPlatform()` call returns `true` or `false` based upon the platform that is passed in. See the [Platform Documentation](platform.md#platforms) for a list of possible values.
 
 ```tsx
-import { isPlatform, setupConfig } from '@ionic/react';
+import { isPlatform, setupIonicReact } from '@ionic/react';
 
-setupConfig({
+setupIonicReact({
   animated: !isPlatform('mobileweb'),
 });
 ```
@@ -33,7 +33,7 @@ setupConfig({
 The next example allows you to set an entirely different configuration based upon the platform, falling back to a default config if no platforms match:
 
 ```tsx
-import { isPlatform, setupConfig } from '@ionic/react';
+import { isPlatform, setupIonicReact } from '@ionic/react';
 
 const getConfig = () => {
   if (isPlatform('hybrid')) {
@@ -48,13 +48,13 @@ const getConfig = () => {
   };
 };
 
-setupConfig(getConfig());
+setupIonicReact(getConfig());
 ```
 
 Finally, this example allows you to accumulate a config object based upon different platform requirements:
 
 ```tsx
-import { isPlatform, setupConfig } from '@ionic/react';
+import { isPlatform, setupIonicReact } from '@ionic/react';
 
 const getConfig = () => {
   let config = {
@@ -70,7 +70,7 @@ const getConfig = () => {
 
   return config;
 };
-setupConfig(getConfig());
+setupIonicReact(getConfig());
 ```
 
 ## Config Options
