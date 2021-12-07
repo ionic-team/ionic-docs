@@ -53,12 +53,12 @@ https://docs.fabric.io/crashlytics/index.html
 >
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
-      $ npm install cordova-fabric-plugin {'\n'}$ npm install @ionic-native/fabric {'\n'}$ ionic cap sync
+      $ npm install cordova-fabric-plugin {'\n'}$ npm install @awesome-cordova-plugins/fabric {'\n'}$ ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
-      $ ionic cordova plugin add cordova-fabric-plugin {'\n'}$ npm install @ionic-native/fabric {'\n'}
+      $ ionic cordova plugin add cordova-fabric-plugin {'\n'}$ npm install @awesome-cordova-plugins/fabric {'\n'}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">
@@ -90,7 +90,7 @@ https://docs.fabric.io/crashlytics/index.html
 ### Angular
 
 ```tsx
-import { Answers } from '@ionic-native/fabric/ngx';
+import { Answers } from '@awesome-cordova-plugins/fabric/ngx';
 
 
 constructor(private answers: Answers) { }

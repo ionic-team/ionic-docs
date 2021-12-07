@@ -56,13 +56,13 @@ This plugin brings crash reporting from Google Firebase to your Cordova project!
 >
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
-      $ npm install cordova-plugin-firebase-crash {'\n'}$ npm install @ionic-native/firebase-crash {'\n'}$ ionic cap
+      $ npm install cordova-plugin-firebase-crash {'\n'}$ npm install @awesome-cordova-plugins/firebase-crash {'\n'}$ ionic cap
       sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
-      $ ionic cordova plugin add cordova-plugin-firebase-crash {'\n'}$ npm install @ionic-native/firebase-crash {'\n'}
+      $ ionic cordova plugin add cordova-plugin-firebase-crash {'\n'}$ npm install @awesome-cordova-plugins/firebase-crash {'\n'}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">
@@ -94,7 +94,7 @@ This plugin brings crash reporting from Google Firebase to your Cordova project!
 ### Angular
 
 ```tsx
-import { FirebaseCrash } from '@ionic-native/firebase-crash';
+import { FirebaseCrash } from '@awesome-cordova-plugins/firebase-crash';
 
 constructor(private firebaseCrash: FirebaseCrash) { }
 

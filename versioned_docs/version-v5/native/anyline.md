@@ -51,12 +51,12 @@ Anyline provides an easy-to-use SDK for applications to enable Optical Character
 >
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
-      $ npm install io-anyline-cordova {'\n'}$ npm install @ionic-native/anyline {'\n'}$ ionic cap sync
+      $ npm install io-anyline-cordova {'\n'}$ npm install @awesome-cordova-plugins/anyline {'\n'}$ ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
-      $ ionic cordova plugin add io-anyline-cordova {'\n'}$ npm install @ionic-native/anyline {'\n'}
+      $ ionic cordova plugin add io-anyline-cordova {'\n'}$ npm install @awesome-cordova-plugins/anyline {'\n'}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">
@@ -88,7 +88,7 @@ Anyline provides an easy-to-use SDK for applications to enable Optical Character
 ### Angular
 
 ```tsx
-import { Anyline } from '@ionic-native/anyline/ngx';
+import { Anyline } from '@awesome-cordova-plugins/anyline/ngx';
 
 
 constructor(private anyline: Anyline) { }

@@ -56,12 +56,12 @@ The DatePicker plugin allows the user to fetch date or time using native dialogs
 >
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
-      $ npm install cordova-plugin-datepicker {'\n'}$ npm install @ionic-native/date-picker {'\n'}$ ionic cap sync
+      $ npm install cordova-plugin-datepicker {'\n'}$ npm install @awesome-cordova-plugins/date-picker {'\n'}$ ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
-      $ ionic cordova plugin add cordova-plugin-datepicker {'\n'}$ npm install @ionic-native/date-picker {'\n'}
+      $ ionic cordova plugin add cordova-plugin-datepicker {'\n'}$ npm install @awesome-cordova-plugins/date-picker {'\n'}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">
@@ -94,7 +94,7 @@ The DatePicker plugin allows the user to fetch date or time using native dialogs
 ### Angular
 
 ```tsx
-import { DatePicker } from '@ionic-native/date-picker/ngx';
+import { DatePicker } from '@awesome-cordova-plugins/date-picker/ngx';
 
 constructor(private datePicker: DatePicker) { }
 

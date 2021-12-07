@@ -56,14 +56,14 @@ This plugin allows users to pick multiple documents/images at once
 >
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
-      $ npm install cordova-plugin-multiple-documents-picker {'\n'}$ npm install @ionic-native/multiple-document-picker {
+      $ npm install cordova-plugin-multiple-documents-picker {'\n'}$ npm install @awesome-cordova-plugins/multiple-document-picker {
         '\n'
       }$ ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
-      $ ionic cordova plugin add cordova-plugin-multiple-documents-picker {'\n'}$ npm install @ionic-native/multiple-document-picker{' '}
+      $ ionic cordova plugin add cordova-plugin-multiple-documents-picker {'\n'}$ npm install @awesome-cordova-plugins/multiple-document-picker{' '}
       {'\n'}
     </CodeBlock>
   </TabItem>
@@ -96,7 +96,7 @@ This plugin allows users to pick multiple documents/images at once
 ### Angular
 
 ```tsx
-import { MultipleDocumentsPicker } from '@ionic-native/multiple-document-picker/ngx';
+import { MultipleDocumentsPicker } from '@awesome-cordova-plugins/multiple-document-picker/ngx';
 
 
 constructor(private multipleDocumentsPicker: MultipleDocumentsPicker) { }

@@ -60,13 +60,13 @@ For Browser usage check out the Web Share API docs: https://github.com/EddyVerbr
 >
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
-      $ npm install cordova-plugin-x-socialsharing {'\n'}$ npm install @ionic-native/social-sharing {'\n'}$ ionic cap
+      $ npm install cordova-plugin-x-socialsharing {'\n'}$ npm install @awesome-cordova-plugins/social-sharing {'\n'}$ ionic cap
       sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
-      $ ionic cordova plugin add cordova-plugin-x-socialsharing {'\n'}$ npm install @ionic-native/social-sharing {'\n'}
+      $ ionic cordova plugin add cordova-plugin-x-socialsharing {'\n'}$ npm install @awesome-cordova-plugins/social-sharing {'\n'}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">
@@ -101,7 +101,7 @@ For Browser usage check out the Web Share API docs: https://github.com/EddyVerbr
 ### Angular
 
 ```tsx
-import { SocialSharing } from '@ionic-native/social-sharing/ngx';
+import { SocialSharing } from '@awesome-cordova-plugins/social-sharing/ngx';
 
 constructor(private socialSharing: SocialSharing) { }
 

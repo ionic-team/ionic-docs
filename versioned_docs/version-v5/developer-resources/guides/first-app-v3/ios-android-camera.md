@@ -42,12 +42,12 @@ Save the file and watch - a camera button appears! Tap on it and notice that it 
 In order to use the Camera, we need to bring in its JavaScript and native library dependencies. Back over in your Terminal window, run the following command, which adds the JavaScript library to the project, thus exposing the Camera API in TypeScript code:
 
 ```shell
-$ npm install --save @ionic-native/camera
+$ npm install --save @awesome-cordova-plugins/camera
 ```
 
 In `package.json`, you’ll notice a new JavaScript dependency has been added:
 
-`"@ionic-native/camera": "^4.12.0"`
+`"@awesome-cordova-plugins/camera": "^4.12.0"`
 
 Next, run this command to add the native iOS and Android code, effectively allowing the Camera to work on a mobile device:
 
@@ -75,7 +75,7 @@ The next step is only required for iOS users. As of iOS 10, developers must prov
 There’s one more step we need to do since this is an Angular project: register the Camera in the App Module (`src/app/app.module.ts`). First, import the Camera module:
 
 ```Javascript
-import { Camera } from '@ionic-native/camera';
+import { Camera } from '@awesome-cordova-plugins/camera';
 ```
 
 Then, add it as a Provider:
@@ -108,7 +108,7 @@ Then, update the image placeholder. The following binds the “currentImage” v
 Open `about.ts` next and import the Camera library:
 
 ```Javascript
-import { Camera, CameraOptions } from '@ionic-native/camera';
+import { Camera, CameraOptions } from '@awesome-cordova-plugins/camera';
 ```
 
 Next, define the “currentImage” variable and inject the Camera into this class via the constructor:

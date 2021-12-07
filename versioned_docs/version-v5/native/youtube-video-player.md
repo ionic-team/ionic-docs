@@ -51,13 +51,13 @@ Plays YouTube videos in Native YouTube App
 >
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
-      $ npm install cordova-plugin-youtube-video-player {'\n'}$ npm install @ionic-native/youtube-video-player {'\n'}$
+      $ npm install cordova-plugin-youtube-video-player {'\n'}$ npm install @awesome-cordova-plugins/youtube-video-player {'\n'}$
       ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
-      $ ionic cordova plugin add cordova-plugin-youtube-video-player {'\n'}$ npm install @ionic-native/youtube-video-player{' '}
+      $ ionic cordova plugin add cordova-plugin-youtube-video-player {'\n'}$ npm install @awesome-cordova-plugins/youtube-video-player{' '}
       {'\n'}
     </CodeBlock>
   </TabItem>
@@ -98,7 +98,7 @@ For Android 5.0+ you will need to add the following to config.xml
 For more information: https://developers.google.com/youtube/v3/getting-started
 
 ```tsx
-import { YoutubeVideoPlayer } from '@ionic-native/youtube-video-player/ngx';
+import { YoutubeVideoPlayer } from '@awesome-cordova-plugins/youtube-video-player/ngx';
 
 constructor(private youtube: YoutubeVideoPlayer) { }
 

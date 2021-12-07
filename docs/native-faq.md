@@ -40,7 +40,7 @@ Useful when adding new developers to a project. `ionic cordova prepare` restores
 For any given Ionic Native plugin, the Ionic Native (TypeScript code) and Cordova (native code) version numbers will not match. The Ionic Native version number is found in `package.json`:
 
 ```json
-"@ionic-native/camera": "^5.3.0",
+"@awesome-cordova-plugins/camera": "^5.3.0",
 ```
 
 The Cordova plugin version number is found in both `package.json` and `config.xml`:

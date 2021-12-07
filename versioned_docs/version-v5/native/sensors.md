@@ -56,13 +56,13 @@ This plugin enables sensors on Android devices
 >
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
-      $ npm install https://github.com/fabiorogeriosj/cordova-plugin-sensors.git {'\n'}$ npm install @ionic-native/sensors{' '}
+      $ npm install https://github.com/fabiorogeriosj/cordova-plugin-sensors.git {'\n'}$ npm install @awesome-cordova-plugins/sensors{' '}
       {'\n'}$ ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
-      $ ionic cordova plugin add https://github.com/fabiorogeriosj/cordova-plugin-sensors.git {'\n'}$ npm install @ionic-native/sensors{' '}
+      $ ionic cordova plugin add https://github.com/fabiorogeriosj/cordova-plugin-sensors.git {'\n'}$ npm install @awesome-cordova-plugins/sensors{' '}
       {'\n'}
     </CodeBlock>
   </TabItem>
@@ -94,7 +94,7 @@ This plugin enables sensors on Android devices
 ### Angular
 
 ```tsx
-import { Sensors, TYPE_SENSOR } from '@ionic-native/sensors/ngx';
+import { Sensors, TYPE_SENSOR } from '@awesome-cordova-plugins/sensors/ngx';
 
 
 constructor(private sensors: Sensors) { }

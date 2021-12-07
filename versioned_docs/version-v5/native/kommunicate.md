@@ -59,12 +59,12 @@ For documentation: TODO: insert link
 >
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
-      $ npm install kommunicate-cordova-plugin {'\n'}$ npm install @ionic-native/kommunicate {'\n'}$ ionic cap sync
+      $ npm install kommunicate-cordova-plugin {'\n'}$ npm install @awesome-cordova-plugins/kommunicate {'\n'}$ ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
-      $ ionic cordova plugin add kommunicate-cordova-plugin {'\n'}$ npm install @ionic-native/kommunicate {'\n'}
+      $ ionic cordova plugin add kommunicate-cordova-plugin {'\n'}$ npm install @awesome-cordova-plugins/kommunicate {'\n'}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">
@@ -97,7 +97,7 @@ For documentation: TODO: insert link
 ### Angular
 
 ```tsx
-import { Kommunicate } from '@ionic-native/Kommunicate';
+import { Kommunicate } from '@awesome-cordova-plugins/Kommunicate';
 
 constructor(private kommunicate: Kommunicate) { }
 //also add [..., Kommunicate, ... ] inside the providers array, if required

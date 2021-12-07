@@ -61,13 +61,13 @@ For more info, please see https://docs.microsoft.com/en-us/appcenter/sdk/analyti
 >
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
-      $ npm install cordova-plugin-appcenter-analytics {'\n'}$ npm install @ionic-native/app-center-analytics {'\n'}$
+      $ npm install cordova-plugin-appcenter-analytics {'\n'}$ npm install @awesome-cordova-plugins/app-center-analytics {'\n'}$
       ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
-      $ ionic cordova plugin add cordova-plugin-appcenter-analytics {'\n'}$ npm install @ionic-native/app-center-analytics{' '}
+      $ ionic cordova plugin add cordova-plugin-appcenter-analytics {'\n'}$ npm install @awesome-cordova-plugins/app-center-analytics{' '}
       {'\n'}
     </CodeBlock>
   </TabItem>
@@ -100,7 +100,7 @@ For more info, please see https://docs.microsoft.com/en-us/appcenter/sdk/analyti
 ### Angular
 
 ```tsx
-import { AppCenterAnalytics } from '@ionic-native/app-center-analytics/ngx';
+import { AppCenterAnalytics } from '@awesome-cordova-plugins/app-center-analytics/ngx';
 
 
 constructor(private appCenterAnalytics: AppCenterAnalytics) { }

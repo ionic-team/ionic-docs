@@ -56,13 +56,13 @@ Plugin for reading and validation of identification documents.
 >
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
-      $ npm install cordova-plugin-documentreader {'\n'}$ npm install @ionic-native/regula-document-reader {'\n'}$ ionic
+      $ npm install cordova-plugin-documentreader {'\n'}$ npm install @awesome-cordova-plugins/regula-document-reader {'\n'}$ ionic
       cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
-      $ ionic cordova plugin add cordova-plugin-documentreader {'\n'}$ npm install @ionic-native/regula-document-reader {'\n'}
+      $ ionic cordova plugin add cordova-plugin-documentreader {'\n'}$ npm install @awesome-cordova-plugins/regula-document-reader {'\n'}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">
@@ -94,7 +94,7 @@ Plugin for reading and validation of identification documents.
 ### Angular
 
 ```tsx
-import { RegulaDocumentReader } from '@ionic-native/regula-document-reader/ngx';
+import { RegulaDocumentReader } from '@awesome-cordova-plugins/regula-document-reader/ngx';
 
 let license; // read regula.license file
 RegulaDocumentReader.initReader(license); // initialize reader

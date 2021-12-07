@@ -52,10 +52,10 @@ Using the [Camera plugin](native/camera.md) as an example, first install it:
 $ ionic cordova plugin add cordova-plugin-camera
 
 // Install Ionic Native TypeScript wrapper
-$ npm install @ionic-native/camera
+$ npm install @awesome-cordova-plugins/camera
 
 // Install Ionic Native core library (once per project)
-$ npm install @ionic-native/core
+$ npm install @awesome-cordova-plugins/core
 ```
 
 </TabItem>
@@ -65,7 +65,7 @@ For complete details, [see the Capacitor documentation](https://capacitor.ionicf
 
 ```shell
 // Install Ionic Native TypeScript wrapper
-$ npm install @ionic-native/camera
+$ npm install @awesome-cordova-plugins/camera
 
 // Install Cordova plugin
 $ npm install cordova-plugin-camera
@@ -86,7 +86,7 @@ Angular apps can use either Cordova or Capacitor to build native mobile apps. Im
 
 ```tsx
 // app.module.ts
-import { Camera } from '@ionic-native/camera/ngx';
+import { Camera } from '@awesome-cordova-plugins/camera/ngx';
 
 ...
 
@@ -108,7 +108,7 @@ After the plugin has been declared, it can be imported and injected like any oth
 ```tsx
 // camera.service.ts
 import { Injectable } from '@angular/core';
-import { Camera, CameraOptions } from '@ionic-native/camera/ngx';
+import { Camera, CameraOptions } from '@awesome-cordova-plugins/camera/ngx';
 
 @Injectable({
   providedIn: 'root',
@@ -143,10 +143,10 @@ React apps must use Capacitor to build native mobile apps. However, Ionic Native
 
 ```shell-session
 // Install Core library (once per project)
-$ npm install @ionic-native/core
+$ npm install @awesome-cordova-plugins/core
 
 // Install Ionic Native TypeScript wrapper
-$ npm install @ionic-native/barcode-scanner
+$ npm install @awesome-cordova-plugins/barcode-scanner
 
 // Install Cordova plugin
 $ npm install phonegap-plugin-barcodescanner
@@ -158,7 +158,7 @@ $ ionic cap sync
 Import the plugin object then use its static methods:
 
 ```tsx
-import { BarcodeScanner } from '@ionic-native/barcode-scanner';
+import { BarcodeScanner } from '@awesome-cordova-plugins/barcode-scanner';
 
 const Tab1: React.FC = () => {
   const openScanner = async () => {
@@ -185,7 +185,7 @@ const Tab1: React.FC = () => {
 Vanilla JavaScript apps, targeting ES2015+ and/or TypeScript, can use either Cordova or Capacitor to build native mobile apps. To use any plugin, import the class from the appropriate package and use its static methods:
 
 ```js
-import { Camera } from '@ionic-native/camera';
+import { Camera } from '@awesome-cordova-plugins/camera';
 
 document.addEventListener('deviceready', () => {
   Camera.getPicture()

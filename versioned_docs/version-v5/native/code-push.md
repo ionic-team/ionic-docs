@@ -53,12 +53,12 @@ For more info, please see https://github.com/Dellos7/example-cordova-code-push-p
 >
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
-      $ npm install cordova-plugin-code-push {'\n'}$ npm install @ionic-native/code-push {'\n'}$ ionic cap sync
+      $ npm install cordova-plugin-code-push {'\n'}$ npm install @awesome-cordova-plugins/code-push {'\n'}$ ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
-      $ ionic cordova plugin add cordova-plugin-code-push {'\n'}$ npm install @ionic-native/code-push {'\n'}
+      $ ionic cordova plugin add cordova-plugin-code-push {'\n'}$ npm install @awesome-cordova-plugins/code-push {'\n'}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">
@@ -90,7 +90,7 @@ For more info, please see https://github.com/Dellos7/example-cordova-code-push-p
 ### Angular
 
 ```tsx
-import { CodePush } from '@ionic-native/code-push/ngx';
+import { CodePush } from '@awesome-cordova-plugins/code-push/ngx';
 
 constructor(private codePush: CodePush) { }
 

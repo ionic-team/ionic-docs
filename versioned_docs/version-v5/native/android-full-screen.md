@@ -58,13 +58,13 @@ In Android 4.4+, however, you can now enter true full screen, fully interactive 
 >
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
-      $ npm install cordova-plugin-fullscreen {'\n'}$ npm install @ionic-native/android-full-screen {'\n'}$ ionic cap
+      $ npm install cordova-plugin-fullscreen {'\n'}$ npm install @awesome-cordova-plugins/android-full-screen {'\n'}$ ionic cap
       sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
-      $ ionic cordova plugin add cordova-plugin-fullscreen {'\n'}$ npm install @ionic-native/android-full-screen {'\n'}
+      $ ionic cordova plugin add cordova-plugin-fullscreen {'\n'}$ npm install @awesome-cordova-plugins/android-full-screen {'\n'}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">
@@ -95,7 +95,7 @@ In Android 4.4+, however, you can now enter true full screen, fully interactive 
 ### Angular
 
 ```tsx
-import { AndroidFullScreen } from '@ionic-native/android-full-screen/ngx';
+import { AndroidFullScreen } from '@awesome-cordova-plugins/android-full-screen/ngx';
 
 constructor(private androidFullScreen: AndroidFullScreen) { }
 

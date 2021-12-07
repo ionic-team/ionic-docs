@@ -51,12 +51,12 @@ Handles shake gesture
 >
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
-      $ npm install cordova-plugin-shake {'\n'}$ npm install @ionic-native/shake {'\n'}$ ionic cap sync
+      $ npm install cordova-plugin-shake {'\n'}$ npm install @awesome-cordova-plugins/shake {'\n'}$ ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
-      $ ionic cordova plugin add cordova-plugin-shake {'\n'}$ npm install @ionic-native/shake {'\n'}
+      $ ionic cordova plugin add cordova-plugin-shake {'\n'}$ npm install @awesome-cordova-plugins/shake {'\n'}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">
@@ -87,7 +87,7 @@ Handles shake gesture
 ### Angular
 
 ```tsx
-import { Shake } from '@ionic-native/shake/ngx';
+import { Shake } from '@awesome-cordova-plugins/shake/ngx';
 
 constructor(private shake: Shake) { }
 

@@ -51,12 +51,12 @@ Embedded httpd for Cordova apps. Light weight HTTP server.
 >
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
-      $ npm install cordova-plugin-httpd {'\n'}$ npm install @ionic-native/httpd {'\n'}$ ionic cap sync
+      $ npm install cordova-plugin-httpd {'\n'}$ npm install @awesome-cordova-plugins/httpd {'\n'}$ ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
-      $ ionic cordova plugin add cordova-plugin-httpd {'\n'}$ npm install @ionic-native/httpd {'\n'}
+      $ ionic cordova plugin add cordova-plugin-httpd {'\n'}$ npm install @awesome-cordova-plugins/httpd {'\n'}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">
@@ -89,7 +89,7 @@ Embedded httpd for Cordova apps. Light weight HTTP server.
 ### Angular
 
 ```tsx
-import { Httpd, HttpdOptions } from '@ionic-native/httpd/ngx';
+import { Httpd, HttpdOptions } from '@awesome-cordova-plugins/httpd/ngx';
 
 constructor(private httpd: Httpd) { }
 

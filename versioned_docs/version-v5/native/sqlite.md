@@ -54,12 +54,12 @@ Access SQLite databases on the device.
 >
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
-      $ npm install cordova-sqlite-storage {'\n'}$ npm install @ionic-native/sqlite {'\n'}$ ionic cap sync
+      $ npm install cordova-sqlite-storage {'\n'}$ npm install @awesome-cordova-plugins/sqlite {'\n'}$ ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
-      $ ionic cordova plugin add cordova-sqlite-storage {'\n'}$ npm install @ionic-native/sqlite {'\n'}
+      $ ionic cordova plugin add cordova-sqlite-storage {'\n'}$ npm install @awesome-cordova-plugins/sqlite {'\n'}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">
@@ -93,7 +93,7 @@ Access SQLite databases on the device.
 ### Angular
 
 ```tsx
-import { SQLite, SQLiteObject } from '@ionic-native/sqlite/ngx';
+import { SQLite, SQLiteObject } from '@awesome-cordova-plugins/sqlite/ngx';
 
 constructor(private sqlite: SQLite) { }
 

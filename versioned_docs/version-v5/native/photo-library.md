@@ -53,12 +53,12 @@ cdvphotolibrary urls should be trusted by Angular. See plugin homepage to learn 
 >
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
-      $ npm install cordova-plugin-photo-library {'\n'}$ npm install @ionic-native/photo-library {'\n'}$ ionic cap sync
+      $ npm install cordova-plugin-photo-library {'\n'}$ npm install @awesome-cordova-plugins/photo-library {'\n'}$ ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
-      $ ionic cordova plugin add cordova-plugin-photo-library {'\n'}$ npm install @ionic-native/photo-library {'\n'}
+      $ ionic cordova plugin add cordova-plugin-photo-library {'\n'}$ npm install @awesome-cordova-plugins/photo-library {'\n'}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">
@@ -91,7 +91,7 @@ cdvphotolibrary urls should be trusted by Angular. See plugin homepage to learn 
 ### Angular
 
 ```tsx
-import { PhotoLibrary } from '@ionic-native/photo-library/ngx';
+import { PhotoLibrary } from '@awesome-cordova-plugins/photo-library/ngx';
 
 constructor(private photoLibrary: PhotoLibrary) { }
 

@@ -51,12 +51,12 @@ Implementation of the JINS MEME SDK
 >
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
-      $ npm install cordova-plugin-jins-meme {'\n'}$ npm install @ionic-native/jins-meme {'\n'}$ ionic cap sync
+      $ npm install cordova-plugin-jins-meme {'\n'}$ npm install @awesome-cordova-plugins/jins-meme {'\n'}$ ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
-      $ ionic cordova plugin add cordova-plugin-jins-meme {'\n'}$ npm install @ionic-native/jins-meme {'\n'}
+      $ ionic cordova plugin add cordova-plugin-jins-meme {'\n'}$ npm install @awesome-cordova-plugins/jins-meme {'\n'}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">
@@ -88,7 +88,7 @@ Implementation of the JINS MEME SDK
 ### Angular
 
 ```tsx
-import { JinsMeme } from '@ionic-native/jins-meme/ngx';
+import { JinsMeme } from '@awesome-cordova-plugins/jins-meme/ngx';
 
 constructor(private jinsMeme: JinsMeme) { }
 

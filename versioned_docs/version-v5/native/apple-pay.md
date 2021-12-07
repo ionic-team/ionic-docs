@@ -51,12 +51,12 @@ A dependency free Cordova plugin to provide Apple Pay functionality.
 >
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
-      $ npm install cordova-plugin-applepay {'\n'}$ npm install @ionic-native/apple-pay {'\n'}$ ionic cap sync
+      $ npm install cordova-plugin-applepay {'\n'}$ npm install @awesome-cordova-plugins/apple-pay {'\n'}$ ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
-      $ ionic cordova plugin add cordova-plugin-applepay {'\n'}$ npm install @ionic-native/apple-pay {'\n'}
+      $ ionic cordova plugin add cordova-plugin-applepay {'\n'}$ npm install @awesome-cordova-plugins/apple-pay {'\n'}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">
@@ -87,7 +87,7 @@ A dependency free Cordova plugin to provide Apple Pay functionality.
 ### Angular
 
 ```tsx
-import { ApplePay } from '@ionic-native/apple-pay/ngx';
+import { ApplePay } from '@awesome-cordova-plugins/apple-pay/ngx';
 
 
 constructor(private applePay: ApplePay) { }

@@ -51,13 +51,13 @@ This Cordova/Phonegap plugin can be used to import/export to/from a SQLite datab
 >
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
-      $ npm install uk.co.workingedge.cordova.plugin.sqliteporter {'\n'}$ npm install @ionic-native/sqlite-porter {'\n'}
+      $ npm install uk.co.workingedge.cordova.plugin.sqliteporter {'\n'}$ npm install @awesome-cordova-plugins/sqlite-porter {'\n'}
       $ ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
-      $ ionic cordova plugin add uk.co.workingedge.cordova.plugin.sqliteporter {'\n'}$ npm install @ionic-native/sqlite-porter{' '}
+      $ ionic cordova plugin add uk.co.workingedge.cordova.plugin.sqliteporter {'\n'}$ npm install @awesome-cordova-plugins/sqlite-porter{' '}
       {'\n'}
     </CodeBlock>
   </TabItem>
@@ -96,7 +96,7 @@ This Cordova/Phonegap plugin can be used to import/export to/from a SQLite datab
 ### Angular
 
 ```tsx
-import { SQLitePorter } from '@ionic-native/sqlite-porter/ngx';
+import { SQLitePorter } from '@awesome-cordova-plugins/sqlite-porter/ngx';
 
 
 constructor(private sqlitePorter: SQLitePorter) { }

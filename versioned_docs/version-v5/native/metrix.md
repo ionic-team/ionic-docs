@@ -53,12 +53,12 @@ Requires Cordova plugin: `ir.metrix.sdk`. For more info, please see the [Metrix 
 >
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
-      $ npm install ir.metrix.sdk {'\n'}$ npm install @ionic-native/metrix {'\n'}$ ionic cap sync
+      $ npm install ir.metrix.sdk {'\n'}$ npm install @awesome-cordova-plugins/metrix {'\n'}$ ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
-      $ ionic cordova plugin add ir.metrix.sdk {'\n'}$ npm install @ionic-native/metrix {'\n'}
+      $ ionic cordova plugin add ir.metrix.sdk {'\n'}$ npm install @awesome-cordova-plugins/metrix {'\n'}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">
@@ -89,7 +89,7 @@ Requires Cordova plugin: `ir.metrix.sdk`. For more info, please see the [Metrix 
 ### Angular
 
 ```tsx
- import { Metrix, MetrixConfig } from '@ionic-native/metrix';
+ import { Metrix, MetrixConfig } from '@awesome-cordova-plugins/metrix';
 
  constructor(private metrix: Metrix) { }
 

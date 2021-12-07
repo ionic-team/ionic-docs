@@ -56,12 +56,12 @@ This plugin faciliates the use of Baidu Push notifications.
 >
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
-      $ npm install cordova-plugin-push-baidu {'\n'}$ npm install @ionic-native/baidu-push {'\n'}$ ionic cap sync
+      $ npm install cordova-plugin-push-baidu {'\n'}$ npm install @awesome-cordova-plugins/baidu-push {'\n'}$ ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
-      $ ionic cordova plugin add cordova-plugin-push-baidu {'\n'}$ npm install @ionic-native/baidu-push {'\n'}
+      $ ionic cordova plugin add cordova-plugin-push-baidu {'\n'}$ npm install @awesome-cordova-plugins/baidu-push {'\n'}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">
@@ -93,7 +93,7 @@ This plugin faciliates the use of Baidu Push notifications.
 ### Angular
 
 ```tsx
-import { BaiduPush } from '@ionic-native/baidu-push/ngx';
+import { BaiduPush } from '@awesome-cordova-plugins/baidu-push/ngx';
 
 
 constructor(private baiduPush: BaiduPush) { }

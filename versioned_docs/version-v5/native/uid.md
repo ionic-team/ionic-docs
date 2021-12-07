@@ -51,12 +51,12 @@ Get unique identifiers: UUID, IMEI, IMSI, ICCID and MAC.
 >
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
-      $ npm install cordova-plugin-uid {'\n'}$ npm install @ionic-native/uid {'\n'}$ ionic cap sync
+      $ npm install cordova-plugin-uid {'\n'}$ npm install @awesome-cordova-plugins/uid {'\n'}$ ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
-      $ ionic cordova plugin add cordova-plugin-uid {'\n'}$ npm install @ionic-native/uid {'\n'}
+      $ ionic cordova plugin add cordova-plugin-uid {'\n'}$ npm install @awesome-cordova-plugins/uid {'\n'}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">
@@ -87,8 +87,8 @@ Get unique identifiers: UUID, IMEI, IMSI, ICCID and MAC.
 ### Angular
 
 ```tsx
-import { Uid } from '@ionic-native/uid/ngx';
-import { AndroidPermissions } from '@ionic-native/android-permissions/ngx';
+import { Uid } from '@awesome-cordova-plugins/uid/ngx';
+import { AndroidPermissions } from '@awesome-cordova-plugins/android-permissions/ngx';
 
 constructor(private uid: Uid, private androidPermissions: AndroidPermissions) { }
 

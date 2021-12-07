@@ -56,12 +56,12 @@ Simple plugin to get any SSDP / UPnP / DLNA service on a local network
 >
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
-      $ npm install cordova-plugin-discovery {'\n'}$ npm install @ionic-native/service-discovery {'\n'}$ ionic cap sync
+      $ npm install cordova-plugin-discovery {'\n'}$ npm install @awesome-cordova-plugins/service-discovery {'\n'}$ ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
-      $ ionic cordova plugin add cordova-plugin-discovery {'\n'}$ npm install @ionic-native/service-discovery {'\n'}
+      $ ionic cordova plugin add cordova-plugin-discovery {'\n'}$ npm install @awesome-cordova-plugins/service-discovery {'\n'}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">
@@ -93,7 +93,7 @@ Simple plugin to get any SSDP / UPnP / DLNA service on a local network
 ### Angular
 
 ```tsx
-import { ServiceDiscovery } from '@ionic-native/service-discovery';
+import { ServiceDiscovery } from '@awesome-cordova-plugins/service-discovery';
 
 
 constructor(private serviceDiscovery: ServiceDiscovery) { }

@@ -60,12 +60,12 @@ See also [Secure Storage](https://ionicframework.com/docs/native/secure-storage/
 >
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
-      $ npm install cordova-plugin-ios-keychain {'\n'}$ npm install @ionic-native/keychain {'\n'}$ ionic cap sync
+      $ npm install cordova-plugin-ios-keychain {'\n'}$ npm install @awesome-cordova-plugins/keychain {'\n'}$ ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
-      $ ionic cordova plugin add cordova-plugin-ios-keychain {'\n'}$ npm install @ionic-native/keychain {'\n'}
+      $ ionic cordova plugin add cordova-plugin-ios-keychain {'\n'}$ npm install @awesome-cordova-plugins/keychain {'\n'}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">
@@ -96,7 +96,7 @@ See also [Secure Storage](https://ionicframework.com/docs/native/secure-storage/
 ### Angular
 
 ```tsx
-import { Keychain } from '@ionic-native/keychain/ngx';
+import { Keychain } from '@awesome-cordova-plugins/keychain/ngx';
 
 constructor(private keychain: Keychain) { }
 

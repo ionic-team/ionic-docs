@@ -52,12 +52,12 @@ This plugin enables communication between a phone and Estimote Beacons periphera
 >
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
-      $ npm install cordova-plugin-estimote {'\n'}$ npm install @ionic-native/estimote-beacons {'\n'}$ ionic cap sync
+      $ npm install cordova-plugin-estimote {'\n'}$ npm install @awesome-cordova-plugins/estimote-beacons {'\n'}$ ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
-      $ ionic cordova plugin add cordova-plugin-estimote {'\n'}$ npm install @ionic-native/estimote-beacons {'\n'}
+      $ ionic cordova plugin add cordova-plugin-estimote {'\n'}$ npm install @awesome-cordova-plugins/estimote-beacons {'\n'}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">
@@ -89,7 +89,7 @@ This plugin enables communication between a phone and Estimote Beacons periphera
 ### Angular
 
 ```tsx
-import { EstimoteBeacons } from '@ionic-native/estimote-beacons/ngx';
+import { EstimoteBeacons } from '@awesome-cordova-plugins/estimote-beacons/ngx';
 
 constructor(private eb: EstimoteBeacons) { }
 

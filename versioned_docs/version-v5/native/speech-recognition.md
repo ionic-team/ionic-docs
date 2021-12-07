@@ -56,13 +56,13 @@ This plugin does speech recognition using cloud services
 >
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
-      $ npm install cordova-plugin-speechrecognition {'\n'}$ npm install @ionic-native/speech-recognition {'\n'}$ ionic
+      $ npm install cordova-plugin-speechrecognition {'\n'}$ npm install @awesome-cordova-plugins/speech-recognition {'\n'}$ ionic
       cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
-      $ ionic cordova plugin add cordova-plugin-speechrecognition {'\n'}$ npm install @ionic-native/speech-recognition {'\n'}
+      $ ionic cordova plugin add cordova-plugin-speechrecognition {'\n'}$ npm install @awesome-cordova-plugins/speech-recognition {'\n'}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">
@@ -94,7 +94,7 @@ This plugin does speech recognition using cloud services
 ### Angular
 
 ```tsx
-import { SpeechRecognition } from '@ionic-native/speech-recognition/ngx';
+import { SpeechRecognition } from '@awesome-cordova-plugins/speech-recognition/ngx';
 
 constructor(private speechRecognition: SpeechRecognition) { }
 

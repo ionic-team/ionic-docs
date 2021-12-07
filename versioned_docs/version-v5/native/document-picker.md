@@ -52,14 +52,14 @@ Allows the user to upload files from iCloud
 >
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
-      $ npm install cordova-plugin-documentpicker.DocumentPicker {'\n'}$ npm install @ionic-native/document-picker {
+      $ npm install cordova-plugin-documentpicker.DocumentPicker {'\n'}$ npm install @awesome-cordova-plugins/document-picker {
         '\n'
       }$ ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
-      $ ionic cordova plugin add cordova-plugin-documentpicker.DocumentPicker {'\n'}$ npm install @ionic-native/document-picker{' '}
+      $ ionic cordova plugin add cordova-plugin-documentpicker.DocumentPicker {'\n'}$ npm install @awesome-cordova-plugins/document-picker{' '}
       {'\n'}
     </CodeBlock>
   </TabItem>
@@ -91,7 +91,7 @@ Allows the user to upload files from iCloud
 ### Angular
 
 ```tsx
-import { DocumentPicker } from '@ionic-native/document-picker/ngx';
+import { DocumentPicker } from '@awesome-cordova-plugins/document-picker/ngx';
 
 constructor(private docPicker: DocumentPicker) { }
 

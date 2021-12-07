@@ -57,13 +57,13 @@ It should be used for applications which keep running for a long time without an
 >
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
-      $ npm install cordova-plugin-powermanagement-orig {'\n'}$ npm install @ionic-native/power-management {'\n'}$ ionic
+      $ npm install cordova-plugin-powermanagement-orig {'\n'}$ npm install @awesome-cordova-plugins/power-management {'\n'}$ ionic
       cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
-      $ ionic cordova plugin add cordova-plugin-powermanagement-orig {'\n'}$ npm install @ionic-native/power-management {'\n'}
+      $ ionic cordova plugin add cordova-plugin-powermanagement-orig {'\n'}$ npm install @awesome-cordova-plugins/power-management {'\n'}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">
@@ -97,7 +97,7 @@ It should be used for applications which keep running for a long time without an
 ### Angular
 
 ```tsx
-import { PowerManagement } from '@ionic-native/power-management/ngx';
+import { PowerManagement } from '@awesome-cordova-plugins/power-management/ngx';
 
 constructor(private powerManagement: PowerManagement) { }
 

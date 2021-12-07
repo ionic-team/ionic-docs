@@ -54,12 +54,12 @@ Assists in leaving user reviews/ratings in the App Stores.
 >
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
-      $ npm install cordova-launch-review {'\n'}$ npm install @ionic-native/launch-review {'\n'}$ ionic cap sync
+      $ npm install cordova-launch-review {'\n'}$ npm install @awesome-cordova-plugins/launch-review {'\n'}$ ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
-      $ ionic cordova plugin add cordova-launch-review {'\n'}$ npm install @ionic-native/launch-review {'\n'}
+      $ ionic cordova plugin add cordova-launch-review {'\n'}$ npm install @awesome-cordova-plugins/launch-review {'\n'}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">
@@ -91,7 +91,7 @@ Assists in leaving user reviews/ratings in the App Stores.
 ### Angular
 
 ```tsx
-import { LaunchReview } from '@ionic-native/launch-review/ngx';
+import { LaunchReview } from '@awesome-cordova-plugins/launch-review/ngx';
 
 constructor(private launchReview: LaunchReview) { }
 

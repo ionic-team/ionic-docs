@@ -69,13 +69,13 @@ For android API 28+, the following xml snippet should be inserted into `config.x
 >
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
-      $ npm install cordova-plugin-foreground-service {'\n'}$ npm install @ionic-native/foreground-service {'\n'}$ ionic
+      $ npm install cordova-plugin-foreground-service {'\n'}$ npm install @awesome-cordova-plugins/foreground-service {'\n'}$ ionic
       cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
-      $ ionic cordova plugin add cordova-plugin-foreground-service {'\n'}$ npm install @ionic-native/foreground-service {'\n'}
+      $ ionic cordova plugin add cordova-plugin-foreground-service {'\n'}$ npm install @awesome-cordova-plugins/foreground-service {'\n'}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">
@@ -106,7 +106,7 @@ For android API 28+, the following xml snippet should be inserted into `config.x
 ### Angular
 
 ```tsx
-import { ForegroundService } from '@ionic-native/foreground-service/ngx';
+import { ForegroundService } from '@awesome-cordova-plugins/foreground-service/ngx';
 
 
 constructor(public foregroundService: ForegroundService) { }

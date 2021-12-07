@@ -58,13 +58,13 @@ This plugin offers a slim API to view PDF files which are either stored in the a
 >
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
-      $ npm install cordova-plugin-document-viewer {'\n'}$ npm install @ionic-native/document-viewer {'\n'}$ ionic cap
+      $ npm install cordova-plugin-document-viewer {'\n'}$ npm install @awesome-cordova-plugins/document-viewer {'\n'}$ ionic cap
       sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
-      $ ionic cordova plugin add cordova-plugin-document-viewer {'\n'}$ npm install @ionic-native/document-viewer {'\n'}
+      $ ionic cordova plugin add cordova-plugin-document-viewer {'\n'}$ npm install @awesome-cordova-plugins/document-viewer {'\n'}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">
@@ -97,7 +97,7 @@ This plugin offers a slim API to view PDF files which are either stored in the a
 ### Angular
 
 ```tsx
-import { DocumentViewer } from '@ionic-native/document-viewer/ngx';
+import { DocumentViewer } from '@awesome-cordova-plugins/document-viewer/ngx';
 
 
 constructor(private document: DocumentViewer) { }

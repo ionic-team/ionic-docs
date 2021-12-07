@@ -56,14 +56,14 @@ Cordova plugin for Firebase Authentication
 >
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
-      $ npm install cordova-plugin-firebase-authentication {'\n'}$ npm install @ionic-native/firebase-authentication {
+      $ npm install cordova-plugin-firebase-authentication {'\n'}$ npm install @awesome-cordova-plugins/firebase-authentication {
         '\n'
       }$ ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
-      $ ionic cordova plugin add cordova-plugin-firebase-authentication {'\n'}$ npm install @ionic-native/firebase-authentication{' '}
+      $ ionic cordova plugin add cordova-plugin-firebase-authentication {'\n'}$ npm install @awesome-cordova-plugins/firebase-authentication{' '}
       {'\n'}
     </CodeBlock>
   </TabItem>
@@ -96,7 +96,7 @@ Cordova plugin for Firebase Authentication
 ### Angular
 
 ```tsx
-import { FirebaseAuthentication } from '@ionic-native/firebase-authentication/ngx';
+import { FirebaseAuthentication } from '@awesome-cordova-plugins/firebase-authentication/ngx';
 
 
 constructor(private firebaseAuthentication: FirebaseAuthentication) { }

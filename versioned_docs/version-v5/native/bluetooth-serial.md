@@ -51,13 +51,13 @@ This plugin enables serial communication over Bluetooth. It was written for comm
 >
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
-      $ npm install cordova-plugin-bluetooth-serial {'\n'}$ npm install @ionic-native/bluetooth-serial {'\n'}$ ionic cap
+      $ npm install cordova-plugin-bluetooth-serial {'\n'}$ npm install @awesome-cordova-plugins/bluetooth-serial {'\n'}$ ionic cap
       sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
-      $ ionic cordova plugin add cordova-plugin-bluetooth-serial {'\n'}$ npm install @ionic-native/bluetooth-serial {'\n'}
+      $ ionic cordova plugin add cordova-plugin-bluetooth-serial {'\n'}$ npm install @awesome-cordova-plugins/bluetooth-serial {'\n'}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">
@@ -90,7 +90,7 @@ This plugin enables serial communication over Bluetooth. It was written for comm
 ### Angular
 
 ```tsx
-import { BluetoothSerial } from '@ionic-native/bluetooth-serial/ngx';
+import { BluetoothSerial } from '@awesome-cordova-plugins/bluetooth-serial/ngx';
 
 constructor(private bluetoothSerial: BluetoothSerial) { }
 

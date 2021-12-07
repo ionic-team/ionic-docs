@@ -51,12 +51,12 @@ Cordova plugin for Pinterest
 >
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
-      $ npm install cordova-plugin-pinterest {'\n'}$ npm install @ionic-native/pinterest {'\n'}$ ionic cap sync
+      $ npm install cordova-plugin-pinterest {'\n'}$ npm install @awesome-cordova-plugins/pinterest {'\n'}$ ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
-      $ ionic cordova plugin add cordova-plugin-pinterest {'\n'}$ npm install @ionic-native/pinterest {'\n'}
+      $ ionic cordova plugin add cordova-plugin-pinterest {'\n'}$ npm install @awesome-cordova-plugins/pinterest {'\n'}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">
@@ -88,7 +88,7 @@ Cordova plugin for Pinterest
 ### Angular
 
 ```tsx
-import { Pinterest, PinterestUser, PinterestPin, PinterestBoard } from '@ionic-native/pinterest/ngx';
+import { Pinterest, PinterestUser, PinterestPin, PinterestBoard } from '@awesome-cordova-plugins/pinterest/ngx';
 
 constructor(private pinterest: Pinterest) { }
 

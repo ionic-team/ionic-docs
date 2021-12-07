@@ -60,12 +60,12 @@ Also note that you can’t test ClassKit behavior in Simulator because Schoolwor
 >
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
-      $ npm install cordova-plugin-classkit {'\n'}$ npm install @ionic-native/class-kit {'\n'}$ ionic cap sync
+      $ npm install cordova-plugin-classkit {'\n'}$ npm install @awesome-cordova-plugins/class-kit {'\n'}$ ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
-      $ ionic cordova plugin add cordova-plugin-classkit {'\n'}$ npm install @ionic-native/class-kit {'\n'}
+      $ ionic cordova plugin add cordova-plugin-classkit {'\n'}$ npm install @awesome-cordova-plugins/class-kit {'\n'}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">
@@ -96,7 +96,7 @@ Also note that you can’t test ClassKit behavior in Simulator because Schoolwor
 ### Angular
 
 ```tsx
-import { ClassKit, CCKContext, CCKBinaryItem, CCKQuantityItem, CCKScoreItem, CCKContextTopic, CCKContextType, CCKBinaryType } from '@ionic-native/class-kit/ngx';
+import { ClassKit, CCKContext, CCKBinaryItem, CCKQuantityItem, CCKScoreItem, CCKContextTopic, CCKContextType, CCKBinaryType } from '@awesome-cordova-plugins/class-kit/ngx';
 
 // Init contexts defined in XML file 'CCK-contexts.xml'
 constructor( ..., private classKit: ClassKit) {

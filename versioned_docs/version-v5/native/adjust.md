@@ -53,12 +53,12 @@ Requires Cordova plugin: `com.adjust.sdk`. For more info, please see the [Adjust
 >
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
-      $ npm install com.adjust.sdk {'\n'}$ npm install @ionic-native/adjust {'\n'}$ ionic cap sync
+      $ npm install com.adjust.sdk {'\n'}$ npm install @awesome-cordova-plugins/adjust {'\n'}$ ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
-      $ ionic cordova plugin add com.adjust.sdk {'\n'}$ npm install @ionic-native/adjust {'\n'}
+      $ ionic cordova plugin add com.adjust.sdk {'\n'}$ npm install @awesome-cordova-plugins/adjust {'\n'}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">
@@ -90,7 +90,7 @@ Requires Cordova plugin: `com.adjust.sdk`. For more info, please see the [Adjust
 ### Angular
 
 ```tsx
- import { Adjust, AdjustConfig, AdjustEnvironment } from '@ionic-native/adjust';
+ import { Adjust, AdjustConfig, AdjustEnvironment } from '@awesome-cordova-plugins/adjust';
 
  constructor(private adjust: Adjust) { }
 

@@ -51,12 +51,12 @@ Requires Cordova plugin: cordova-sms-plugin. For more info, please see the [SMS 
 >
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
-      $ npm install cordova-sms-plugin {'\n'}$ npm install @ionic-native/sms {'\n'}$ ionic cap sync
+      $ npm install cordova-sms-plugin {'\n'}$ npm install @awesome-cordova-plugins/sms {'\n'}$ ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
-      $ ionic cordova plugin add cordova-sms-plugin {'\n'}$ npm install @ionic-native/sms {'\n'}
+      $ ionic cordova plugin add cordova-sms-plugin {'\n'}$ npm install @awesome-cordova-plugins/sms {'\n'}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">
@@ -90,7 +90,7 @@ Requires Cordova plugin: cordova-sms-plugin. For more info, please see the [SMS 
 ### Angular
 
 ```tsx
-import { SMS } from '@ionic-native/sms/ngx';
+import { SMS } from '@awesome-cordova-plugins/sms/ngx';
 
 constructor(private sms: SMS) { }
 

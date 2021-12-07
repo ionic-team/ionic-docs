@@ -54,12 +54,12 @@ import CodeBlock from '@theme/CodeBlock';
 >
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
-      $ npm install cordova-plugin-googleplus {'\n'}$ npm install @ionic-native/google-plus {'\n'}$ ionic cap sync
+      $ npm install cordova-plugin-googleplus {'\n'}$ npm install @awesome-cordova-plugins/google-plus {'\n'}$ ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
-      $ ionic cordova plugin add cordova-plugin-googleplus {'\n'}$ npm install @ionic-native/google-plus {'\n'}
+      $ ionic cordova plugin add cordova-plugin-googleplus {'\n'}$ npm install @awesome-cordova-plugins/google-plus {'\n'}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">
@@ -91,7 +91,7 @@ import CodeBlock from '@theme/CodeBlock';
 ### Angular
 
 ```tsx
-import { GooglePlus } from '@ionic-native/google-plus/ngx';
+import { GooglePlus } from '@awesome-cordova-plugins/google-plus/ngx';
 
 constructor(private googlePlus: GooglePlus) { }
 

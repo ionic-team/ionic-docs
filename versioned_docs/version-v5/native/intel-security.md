@@ -63,13 +63,13 @@ For more information please visit the [API documentation](https://software.intel
 >
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
-      $ npm install com-intel-security-cordova-plugin {'\n'}$ npm install @ionic-native/intel-security {'\n'}$ ionic cap
+      $ npm install com-intel-security-cordova-plugin {'\n'}$ npm install @awesome-cordova-plugins/intel-security {'\n'}$ ionic cap
       sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
-      $ ionic cordova plugin add com-intel-security-cordova-plugin {'\n'}$ npm install @ionic-native/intel-security {'\n'}
+      $ ionic cordova plugin add com-intel-security-cordova-plugin {'\n'}$ npm install @awesome-cordova-plugins/intel-security {'\n'}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">
@@ -103,7 +103,7 @@ For more information please visit the [API documentation](https://software.intel
 ### Angular
 
 ```tsx
-import { IntelSecurity } from '@ionic-native/intel-security/ngx';
+import { IntelSecurity } from '@awesome-cordova-plugins/intel-security/ngx';
 ...
 constructor(private intelSecurity: IntelSecurity) { }
 ...

@@ -58,12 +58,12 @@ For TypeScript users, see the [Pushape plugin docs about using TypeScript for cu
 >
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
-      $ npm install pushape-cordova-push {'\n'}$ npm install @ionic-native/pushape-push {'\n'}$ ionic cap sync
+      $ npm install pushape-cordova-push {'\n'}$ npm install @awesome-cordova-plugins/pushape-push {'\n'}$ ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
-      $ ionic cordova plugin add pushape-cordova-push {'\n'}$ npm install @ionic-native/pushape-push {'\n'}
+      $ ionic cordova plugin add pushape-cordova-push {'\n'}$ npm install @awesome-cordova-plugins/pushape-push {'\n'}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">
@@ -96,7 +96,7 @@ For TypeScript users, see the [Pushape plugin docs about using TypeScript for cu
 ### Angular
 
 ```tsx
-import { PushapePush } from '@ionic-native/pushape-push/ngx';
+import { PushapePush } from '@awesome-cordova-plugins/pushape-push/ngx';
 
 
 constructor(private readonly pushapePush: PushapePush) { }

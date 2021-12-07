@@ -51,12 +51,12 @@ Gets the Google accounts associated with the Android device
 >
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
-      $ npm install cordova-device-accounts-v2 {'\n'}$ npm install @ionic-native/device-accounts {'\n'}$ ionic cap sync
+      $ npm install cordova-device-accounts-v2 {'\n'}$ npm install @awesome-cordova-plugins/device-accounts {'\n'}$ ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
-      $ ionic cordova plugin add cordova-device-accounts-v2 {'\n'}$ npm install @ionic-native/device-accounts {'\n'}
+      $ ionic cordova plugin add cordova-device-accounts-v2 {'\n'}$ npm install @awesome-cordova-plugins/device-accounts {'\n'}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">
@@ -87,7 +87,7 @@ Gets the Google accounts associated with the Android device
 ### Angular
 
 ```tsx
-import { DeviceAccounts } from '@ionic-native/device-accounts/ngx';
+import { DeviceAccounts } from '@awesome-cordova-plugins/device-accounts/ngx';
 
 constructor(private deviceAccounts: DeviceAccounts) { }
 

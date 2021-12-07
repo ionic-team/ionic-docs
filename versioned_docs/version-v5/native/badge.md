@@ -55,12 +55,12 @@ Android Note: Badges have historically only been a feature implemented by third 
 >
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
-      $ npm install cordova-plugin-badge {'\n'}$ npm install @ionic-native/badge {'\n'}$ ionic cap sync
+      $ npm install cordova-plugin-badge {'\n'}$ npm install @awesome-cordova-plugins/badge {'\n'}$ ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
-      $ ionic cordova plugin add cordova-plugin-badge {'\n'}$ npm install @ionic-native/badge {'\n'}
+      $ ionic cordova plugin add cordova-plugin-badge {'\n'}$ npm install @awesome-cordova-plugins/badge {'\n'}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">
@@ -94,7 +94,7 @@ Android Note: Badges have historically only been a feature implemented by third 
 ### Angular
 
 ```tsx
-import { Badge } from '@ionic-native/badge/ngx';
+import { Badge } from '@awesome-cordova-plugins/badge/ngx';
 
 constructor(private badge: Badge) { }
 

@@ -51,12 +51,12 @@ This plugin defines a global DBMeter object, which permits to get the decibel va
 >
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
-      $ npm install cordova-plugin-dbmeter {'\n'}$ npm install @ionic-native/db-meter {'\n'}$ ionic cap sync
+      $ npm install cordova-plugin-dbmeter {'\n'}$ npm install @awesome-cordova-plugins/db-meter {'\n'}$ ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
-      $ ionic cordova plugin add cordova-plugin-dbmeter {'\n'}$ npm install @ionic-native/db-meter {'\n'}
+      $ ionic cordova plugin add cordova-plugin-dbmeter {'\n'}$ npm install @awesome-cordova-plugins/db-meter {'\n'}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">
@@ -88,7 +88,7 @@ This plugin defines a global DBMeter object, which permits to get the decibel va
 ### Angular
 
 ```tsx
-import { DBMeter } from '@ionic-native/db-meter/ngx';
+import { DBMeter } from '@awesome-cordova-plugins/db-meter/ngx';
 
 constructor(private dbMeter: DBMeter) { }
 

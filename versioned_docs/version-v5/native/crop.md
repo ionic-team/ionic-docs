@@ -51,12 +51,12 @@ Crops images
 >
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
-      $ npm install cordova-plugin-crop {'\n'}$ npm install @ionic-native/crop {'\n'}$ ionic cap sync
+      $ npm install cordova-plugin-crop {'\n'}$ npm install @awesome-cordova-plugins/crop {'\n'}$ ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
-      $ ionic cordova plugin add cordova-plugin-crop {'\n'}$ npm install @ionic-native/crop {'\n'}
+      $ ionic cordova plugin add cordova-plugin-crop {'\n'}$ npm install @awesome-cordova-plugins/crop {'\n'}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">
@@ -88,7 +88,7 @@ Crops images
 ### Angular
 
 ```tsx
-import { Crop } from '@ionic-native/crop/ngx';
+import { Crop } from '@awesome-cordova-plugins/crop/ngx';
 
 constructor(private crop: Crop) { }
 

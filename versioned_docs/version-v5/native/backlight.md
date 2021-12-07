@@ -51,12 +51,12 @@ This plugin adds turning on/off the device backlight.
 >
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
-      $ npm install cordova-plugin-backlight {'\n'}$ npm install @ionic-native/backlight {'\n'}$ ionic cap sync
+      $ npm install cordova-plugin-backlight {'\n'}$ npm install @awesome-cordova-plugins/backlight {'\n'}$ ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
-      $ ionic cordova plugin add cordova-plugin-backlight {'\n'}$ npm install @ionic-native/backlight {'\n'}
+      $ ionic cordova plugin add cordova-plugin-backlight {'\n'}$ npm install @awesome-cordova-plugins/backlight {'\n'}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">
@@ -87,7 +87,7 @@ This plugin adds turning on/off the device backlight.
 ### Angular
 
 ```tsx
-import { Backlight } from '@ionic-native/backlight/ngx';
+import { Backlight } from '@awesome-cordova-plugins/backlight/ngx';
 
 constructor(private backlight: Backlight) { }
 

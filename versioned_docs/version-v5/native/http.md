@@ -62,12 +62,12 @@ Advantages over Javascript requests:
 >
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
-      $ npm install cordova-plugin-advanced-http {'\n'}$ npm install @ionic-native/http {'\n'}$ ionic cap sync
+      $ npm install cordova-plugin-advanced-http {'\n'}$ npm install @awesome-cordova-plugins/http {'\n'}$ ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
-      $ ionic cordova plugin add cordova-plugin-advanced-http {'\n'}$ npm install @ionic-native/http {'\n'}
+      $ ionic cordova plugin add cordova-plugin-advanced-http {'\n'}$ npm install @awesome-cordova-plugins/http {'\n'}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">
@@ -99,7 +99,7 @@ Advantages over Javascript requests:
 ### Angular
 
 ```tsx
-import { HTTP } from '@ionic-native/http/ngx';
+import { HTTP } from '@awesome-cordova-plugins/http/ngx';
 
 constructor(private http: HTTP) {}
 

@@ -51,13 +51,13 @@ Requires Cordova plugin: uk.co.workingedge.phonegap.plugin.launchnavigator. For 
 >
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
-      $ npm install uk.co.workingedge.phonegap.plugin.launchnavigator {'\n'}$ npm install @ionic-native/launch-navigator{' '}
+      $ npm install uk.co.workingedge.phonegap.plugin.launchnavigator {'\n'}$ npm install @awesome-cordova-plugins/launch-navigator{' '}
       {'\n'}$ ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
-      $ ionic cordova plugin add uk.co.workingedge.phonegap.plugin.launchnavigator {'\n'}$ npm install @ionic-native/launch-navigator{' '}
+      $ ionic cordova plugin add uk.co.workingedge.phonegap.plugin.launchnavigator {'\n'}$ npm install @awesome-cordova-plugins/launch-navigator{' '}
       {'\n'}
     </CodeBlock>
   </TabItem>
@@ -94,7 +94,7 @@ Requires Cordova plugin: uk.co.workingedge.phonegap.plugin.launchnavigator. For 
 Please refer to the plugin's repo for detailed usage. This docs page only explains the Native wrapper.
 
 ```tsx
-import { LaunchNavigator, LaunchNavigatorOptions } from '@ionic-native/launch-navigator/ngx';
+import { LaunchNavigator, LaunchNavigatorOptions } from '@awesome-cordova-plugins/launch-navigator/ngx';
 
 constructor(private launchNavigator: LaunchNavigator) { }
 

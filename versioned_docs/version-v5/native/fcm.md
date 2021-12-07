@@ -58,13 +58,13 @@ Provides basic functionality for Firebase Cloud Messaging
 >
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
-      $ npm install cordova-plugin-fcm-with-dependecy-updated {'\n'}$ npm install @ionic-native/fcm {'\n'}$ ionic cap
+      $ npm install cordova-plugin-fcm-with-dependecy-updated {'\n'}$ npm install @awesome-cordova-plugins/fcm {'\n'}$ ionic cap
       sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
-      $ ionic cordova plugin add cordova-plugin-fcm-with-dependecy-updated {'\n'}$ npm install @ionic-native/fcm {'\n'}
+      $ ionic cordova plugin add cordova-plugin-fcm-with-dependecy-updated {'\n'}$ npm install @awesome-cordova-plugins/fcm {'\n'}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">
@@ -100,7 +100,7 @@ Not Compatible
 ### Angular
 
 ```tsx
-import { FCM } from '@ionic-native/fcm/ngx';
+import { FCM } from '@awesome-cordova-plugins/fcm/ngx';
 
 constructor(private fcm: FCM) {}
 

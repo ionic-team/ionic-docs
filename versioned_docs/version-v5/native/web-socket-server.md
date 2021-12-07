@@ -56,13 +56,13 @@ This plugin allows you to run a single, lightweight, barebone WebSocket Server.
 >
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
-      $ npm install cordova-plugin-websocket-server {'\n'}$ npm install @ionic-native/web-socket-server {'\n'}$ ionic
+      $ npm install cordova-plugin-websocket-server {'\n'}$ npm install @awesome-cordova-plugins/web-socket-server {'\n'}$ ionic
       cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
-      $ ionic cordova plugin add cordova-plugin-websocket-server {'\n'}$ npm install @ionic-native/web-socket-server {'\n'}
+      $ ionic cordova plugin add cordova-plugin-websocket-server {'\n'}$ npm install @awesome-cordova-plugins/web-socket-server {'\n'}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">
@@ -94,7 +94,7 @@ This plugin allows you to run a single, lightweight, barebone WebSocket Server.
 ### Angular
 
 ```tsx
-import { WebSocketServer } from '@ionic-native/web-socket-server';
+import { WebSocketServer } from '@awesome-cordova-plugins/web-socket-server';
 
 constructor(private wsserver: WebSocketServer) { }
 

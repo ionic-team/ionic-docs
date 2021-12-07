@@ -57,14 +57,14 @@ The API for the local notification plugin follows the W3C Web Notifications spec
 >
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
-      $ npm install phonegap-plugin-local-notification {'\n'}$ npm install @ionic-native/phonegap-local-notification {
+      $ npm install phonegap-plugin-local-notification {'\n'}$ npm install @awesome-cordova-plugins/phonegap-local-notification {
         '\n'
       }$ ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
-      $ ionic cordova plugin add phonegap-plugin-local-notification {'\n'}$ npm install @ionic-native/phonegap-local-notification{' '}
+      $ ionic cordova plugin add phonegap-plugin-local-notification {'\n'}$ npm install @awesome-cordova-plugins/phonegap-local-notification{' '}
       {'\n'}
     </CodeBlock>
   </TabItem>
@@ -99,7 +99,7 @@ The API for the local notification plugin follows the W3C Web Notifications spec
 ### Angular
 
 ```
-import { PhonegapLocalNotification } from '@ionic-native/phonegap-local-notification/ngx';
+import { PhonegapLocalNotification } from '@awesome-cordova-plugins/phonegap-local-notification/ngx';
 
 
 constructor(private localNotification: PhonegapLocalNotification) { }

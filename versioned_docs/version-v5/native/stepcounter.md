@@ -56,12 +56,12 @@ Use to
 >
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
-      $ npm install cordova-plugin-stepcounter {'\n'}$ npm install @ionic-native/stepcounter {'\n'}$ ionic cap sync
+      $ npm install cordova-plugin-stepcounter {'\n'}$ npm install @awesome-cordova-plugins/stepcounter {'\n'}$ ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
-      $ ionic cordova plugin add cordova-plugin-stepcounter {'\n'}$ npm install @ionic-native/stepcounter {'\n'}
+      $ ionic cordova plugin add cordova-plugin-stepcounter {'\n'}$ npm install @awesome-cordova-plugins/stepcounter {'\n'}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">
@@ -92,7 +92,7 @@ Use to
 ### Angular
 
 ```tsx
-import { Stepcounter } from '@ionic-native/stepcounter/ngx';
+import { Stepcounter } from '@awesome-cordova-plugins/stepcounter/ngx';
 
 constructor(private stepcounter: Stepcounter) { }
 
