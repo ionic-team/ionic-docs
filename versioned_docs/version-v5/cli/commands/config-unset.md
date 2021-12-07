@@ -66,7 +66,6 @@ $ ionic config unset -g interactive
         <p>Use global CLI config</p>
       </td>
     </tr>
-
     <tr>
       <th>Aliases</th>
       <td>

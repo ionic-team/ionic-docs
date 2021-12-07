@@ -119,7 +119,6 @@ $ ionic cordova prepare android
         </div>
       </td>
     </tr>
-
     <tr>
       <th>Aliases</th>
       <td>

@@ -72,7 +72,6 @@ $ ionic config get -g npmClient
         <p>Use global CLI config</p>
       </td>
     </tr>
-
     <tr>
       <th>Aliases</th>
       <td>

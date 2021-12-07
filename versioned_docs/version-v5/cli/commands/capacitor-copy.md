@@ -106,7 +106,6 @@ $ ionic capacitor copy [options]
         </div>
       </td>
     </tr>
-
     <tr>
       <th>Aliases</th>
       <td>

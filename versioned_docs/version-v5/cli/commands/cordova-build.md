@@ -222,7 +222,6 @@ $ ionic cordova build ios --prod --release --buildConfig=build.json
         </div>
       </td>
     </tr>
-
     <tr>
       <th>Aliases</th>
       <td>

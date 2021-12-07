@@ -16,7 +16,7 @@
 
   [class*='docItemContainer_'] {
     max-width: var(--doc-item-container-width);
-
+    flex-grow: 1;
     min-width: 0;
   }
 
@@ -57,6 +57,10 @@
 
     .spacer {
       flex-basis: 5rem;
+
+      @media (max-width: 996px) {
+        display: none;
+      }
     }
   }
 

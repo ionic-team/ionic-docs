@@ -138,13 +138,13 @@ $ ionic capacitor build ios
         </div>
       </td>
     </tr>
-
     <tr>
       <th>Aliases</th>
       <td>
         <code>-c</code>
       </td>
     </tr>
+
   </tbody>
   <thead>
     <tr>

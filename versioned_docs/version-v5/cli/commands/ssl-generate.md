@@ -38,7 +38,6 @@ The default directory for `--key-path` and `--cert-path` is `.ionic/ssl/`.
         <p>Destination of private key file</p>
       </td>
     </tr>
-
     <tr>
       <th>Default</th>
       <td>./.ionic/ssl/key.pem</td>
@@ -63,7 +62,6 @@ The default directory for `--key-path` and `--cert-path` is `.ionic/ssl/`.
         <p>Destination of certificate file</p>
       </td>
     </tr>
-
     <tr>
       <th>Default</th>
       <td>./.ionic/ssl/cert.pem</td>
@@ -95,7 +93,6 @@ The default directory for `--key-path` and `--cert-path` is `.ionic/ssl/`.
         </div>
       </td>
     </tr>
-
     <tr>
       <th>Default</th>
       <td>US</td>
@@ -122,7 +119,6 @@ The default directory for `--key-path` and `--cert-path` is `.ionic/ssl/`.
         </div>
       </td>
     </tr>
-
     <tr>
       <th>Default</th>
       <td>Wisconsin</td>
@@ -149,7 +145,6 @@ The default directory for `--key-path` and `--cert-path` is `.ionic/ssl/`.
         </div>
       </td>
     </tr>
-
     <tr>
       <th>Default</th>
       <td>Madison</td>
@@ -176,7 +171,6 @@ The default directory for `--key-path` and `--cert-path` is `.ionic/ssl/`.
         </div>
       </td>
     </tr>
-
     <tr>
       <th>Default</th>
       <td>Ionic</td>
@@ -203,7 +197,6 @@ The default directory for `--key-path` and `--cert-path` is `.ionic/ssl/`.
         </div>
       </td>
     </tr>
-
     <tr>
       <th>Default</th>
       <td>localhost</td>
@@ -230,14 +223,12 @@ The default directory for `--key-path` and `--cert-path` is `.ionic/ssl/`.
         </div>
       </td>
     </tr>
-
     <tr>
       <th>Aliases</th>
       <td>
         <code>-b</code>
       </td>
     </tr>
-
     <tr>
       <th>Default</th>
       <td>2048</td>

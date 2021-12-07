@@ -84,7 +84,6 @@ $ ionic config set -g interactive false
         <p>Use global CLI config</p>
       </td>
     </tr>
-
     <tr>
       <th>Aliases</th>
       <td>

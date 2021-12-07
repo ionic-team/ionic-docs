@@ -48,14 +48,16 @@
       font-size: 1.25rem;
       line-height: 24px;
       letter-spacing: -0.02em;
-      color: #010610;
+      color: var(--ifm-heading-color);
+
+      margin-block-end: 0.5rem;
     }
 
     p {
       font-size: 0.875rem;
       line-height: 160%;
       letter-spacing: -0.01em;
-      color: #5b708b;
+      color: var(--ifm-font-color-base);
     }
   }
 }

@@ -1386,7 +1386,7 @@ export class ModalExample {
 </TabItem>
 <TabItem value="react">
 
-```javascript
+```jsx
 import React, { useState } from 'react';
 import { CreateAnimation, IonModal, IonButton, IonContent } from '@ionic/react';
 
@@ -1430,7 +1430,7 @@ export const ModalExample: React.FC = () => {
 </TabItem>
 <TabItem value="vue">
 
-```javascript
+```jsx
 <template>
   <ion-page>
     <ion-content>

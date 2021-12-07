@@ -8,9 +8,7 @@ This guide covers how to run and debug Ionic apps on Android emulators and devic
 
 ## Android Studio
 
-<a href="https://developer.android.com/studio/" target="_blank">
-  Android Studio
-</a> is the IDE for creating native Android apps. It includes the [Android SDK](../reference/glossary.md#android-sdk), which
+[Android Studio](https://developer.android.com/studio/) is the IDE for creating native Android apps. It includes the [Android SDK](../reference/glossary.md#android-sdk), which
 will need to be configured for use in the command line.
 
 Android Studio is also used to [create Android virtual devices](android.md#creating-an-android-virtual-device), which are required for the Android emulator. Ionic apps can also be [launched to a device](android.md#set-up-an-android-device).
@@ -33,7 +31,7 @@ By default, the latest stable SDK Platform is installed, which includes a collec
 
 To install system images and other minor SDK platform packages, you may need to ensure **Show Package Details** is checked at the bottom of the SDK Manager.
 
-<img alt="Android Studio SDK Manager" src="/img/installation/android-studio-sdk.png" />
+![Android Studio SDK Manager](/img/installation/android-studio-sdk.png)
 
 For future reference, the Android SDK can be managed with Android Studio in the **Configure** &raquo; **SDK Manager** menu of the Android Studio welcome screen or **Tools** &raquo; **SDK Manager** inside Android projects.
 
@@ -60,12 +58,12 @@ In `~/.bashrc`, `~/.bash_profile`, or similar shell startup scripts, make the fo
    $ export PATH=$PATH:$ANDROID_SDK_ROOT/emulator
    ```
 
-   <blockquote>
-     <p>
-       For <code>apksigner</code> and <code>zipalign</code>, <code>$ANDROID_SDK_ROOT/build-tools&lt;version></code> must
-       also be added to <code>PATH</code>.
-     </p>
-   </blockquote>
+:::note
+
+For `apksigner` and `zipalign`, `$ANDROID_SDK_ROOT/build-tools&lt;version>` must
+also be added to `PATH`.
+
+:::
 
 ### Creating an Android Virtual Device
 
@@ -79,9 +77,11 @@ Click **Create Virtual Device** and select a suitable device definition. If unsu
 
 Once the AVD is created, launch the AVD into the Android emulator. Keeping the emulator running is the best way to ensure detection while developing Ionic apps for Android.
 
-<figure class="device">
-  <img alt="Android Emulator Booting" src="/img/installation/android-emulator-booting.png" />
-</figure>
+<img
+  style={{ maxWidth: '25rem', margin: '1rem auto' }}
+  src="/docs/img/installation/android-emulator-booting.png"
+  alt="Android Emulator Booting"
+/>
 
 ### Set up an Android Device
 

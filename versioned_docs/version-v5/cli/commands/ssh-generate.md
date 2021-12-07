@@ -56,14 +56,12 @@ $ ionic ssh generate [options]
         </div>
       </td>
     </tr>
-
     <tr>
       <th>Aliases</th>
       <td>
         <code>-t</code>
       </td>
     </tr>
-
     <tr>
       <th>Default</th>
       <td>rsa</td>
@@ -90,14 +88,12 @@ $ ionic ssh generate [options]
         </div>
       </td>
     </tr>
-
     <tr>
       <th>Aliases</th>
       <td>
         <code>-b</code>
       </td>
     </tr>
-
     <tr>
       <th>Default</th>
       <td>2048</td>
@@ -124,7 +120,6 @@ $ ionic ssh generate [options]
         </div>
       </td>
     </tr>
-
     <tr>
       <th>Aliases</th>
       <td>

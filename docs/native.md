@@ -6,7 +6,7 @@ hide_table_of_contents: true
 import DocsCard from '@components/global/DocsCard';
 import DocsCards from '@components/global/DocsCards';
 
-import { NativeEnterpriseCards, NativeEnterprise } from '@components/page/native/NativeEnterpriseCards';
+import NativeEnterpriseCard from '@components/page/native/NativeEnterpriseCard';
 
 <head>
   <title>Native APIs - Build Open-Source Native Application Experiences</title>
@@ -31,9 +31,26 @@ Build native-powered app experiences with a collection of open source and premiu
 
 :::
 
-<NativeEnterpriseCards />
+<DocsCards>
+  <DocsCard
+    header="Capacitor plugins"
+    img="/docs/img/native/capacitor@2x.png"
+    href="https://capacitorjs.com/docs/plugins"
+  >
+    <p>
+      A modern, open source native runtime built and maintained by the Ionic team and the Capacitor community. Our
+      recommended native solution.
+    </p>
+  </DocsCard>
+  <DocsCard header="Cordova plugins" img="/docs/img/native/cordova@2x.png" href="/native/community">
+    <p>
+      A collection of free Cordova plugins, built and maintained by the community, with TypeScript wrappers and a
+      consistent API and naming convention.
+    </p>
+  </DocsCard>
+</DocsCards>
 
-<NativeEnterprise />
+<NativeEnterpriseCard />
 
 :::note
 These docs are for apps built with Ionic Framework 4.0.0 and greater. For older Ionic v3 projects, please [see here](https://ionicframework.com/docs/v3/native/).

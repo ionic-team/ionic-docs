@@ -90,7 +90,6 @@ $ ionic init --multi-app
         <p>Initialize even if a project already exists</p>
       </td>
     </tr>
-
     <tr>
       <th>Aliases</th>
       <td>

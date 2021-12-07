@@ -128,10 +128,10 @@ html[data-theme='dark'] {
         }
 
         &--active {
-          color: var(--c-blue-90);
+          color: var(--ifm-link-color);
 
           &::after {
-            background: var(--c-blue-90);
+            background: var(--ifm-link-color);
           }
         }
       }

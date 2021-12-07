@@ -74,7 +74,6 @@ $ ionic build --watch
         </div>
       </td>
     </tr>
-
     <tr>
       <th>Aliases</th>
       <td>

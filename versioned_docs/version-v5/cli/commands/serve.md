@@ -149,7 +149,6 @@ $ ionic serve -- --proxy-config proxy.conf.json
         <p>Test your apps on multiple platform types in the browser</p>
       </td>
     </tr>
-
     <tr>
       <th>Aliases</th>
       <td>
@@ -226,7 +225,6 @@ $ ionic serve -- --proxy-config proxy.conf.json
         </div>
       </td>
     </tr>
-
     <tr>
       <th>Aliases</th>
       <td>
@@ -276,7 +274,6 @@ $ ionic serve -- --proxy-config proxy.conf.json
         </div>
       </td>
     </tr>
-
     <tr>
       <th>Default</th>
       <td>localhost</td>
@@ -303,14 +300,12 @@ $ ionic serve -- --proxy-config proxy.conf.json
         </div>
       </td>
     </tr>
-
     <tr>
       <th>Aliases</th>
       <td>
         <code>-p</code>
       </td>
     </tr>
-
     <tr>
       <th>Default</th>
       <td>8100</td>
@@ -359,7 +354,6 @@ $ ionic serve -- --proxy-config proxy.conf.json
         </div>
       </td>
     </tr>
-
     <tr>
       <th>Default</th>
       <td>localhost</td>
@@ -386,7 +380,6 @@ $ ionic serve -- --proxy-config proxy.conf.json
         </div>
       </td>
     </tr>
-
     <tr>
       <th>Default</th>
       <td>8200</td>
@@ -415,7 +408,6 @@ $ ionic serve -- --proxy-config proxy.conf.json
         </div>
       </td>
     </tr>
-
     <tr>
       <th>Aliases</th>
       <td>
@@ -446,7 +438,6 @@ $ ionic serve -- --proxy-config proxy.conf.json
         </div>
       </td>
     </tr>
-
     <tr>
       <th>Aliases</th>
       <td>

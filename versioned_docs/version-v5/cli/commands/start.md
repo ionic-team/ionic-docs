@@ -98,7 +98,6 @@ $ ionic start "Conference App" https://github.com/ionic-team/ionic-conference-ap
         <p>List available starter templates</p>
       </td>
     </tr>
-
     <tr>
       <th>Aliases</th>
       <td>

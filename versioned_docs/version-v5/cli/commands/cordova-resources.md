@@ -80,7 +80,6 @@ $ ionic cordova resources android
         <p>Generate icon resources</p>
       </td>
     </tr>
-
     <tr>
       <th>Aliases</th>
       <td>
@@ -106,7 +105,6 @@ $ ionic cordova resources android
         <p>Generate splash screen resources</p>
       </td>
     </tr>
-
     <tr>
       <th>Aliases</th>
       <td>

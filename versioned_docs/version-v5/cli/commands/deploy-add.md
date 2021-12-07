@@ -114,7 +114,6 @@ $ ionic deploy add --app-id=abcd1234 --channel-name="Master" --update-method=bac
         </div>
       </td>
     </tr>
-
     <tr>
       <th>Default</th>
       <td>2</td>
@@ -141,7 +140,6 @@ $ ionic deploy add --app-id=abcd1234 --channel-name="Master" --update-method=bac
         </div>
       </td>
     </tr>
-
     <tr>
       <th>Default</th>
       <td>30</td>

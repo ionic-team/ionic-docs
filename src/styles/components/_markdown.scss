@@ -95,7 +95,7 @@ html[data-theme='dark'] {
 
     > strong,
     > b {
-      color: var(--c-indigo-100);
+      color: var(--markdown-bold-c);
     }
 
     + p {
@@ -104,7 +104,7 @@ html[data-theme='dark'] {
 
       > strong,
       > b {
-        color: var(--c-indigo-100);
+        color: var(--markdown-bold-c);
       }
     }
   }

@@ -165,7 +165,6 @@ $ ionic cordova emulate ios --prod --release --buildConfig=build.json
         <p>Spin up dev server to live-reload www files</p>
       </td>
     </tr>
-
     <tr>
       <th>Aliases</th>
       <td>
@@ -399,7 +398,6 @@ $ ionic cordova emulate ios --prod --release --buildConfig=build.json
         </div>
       </td>
     </tr>
-
     <tr>
       <th>Default</th>
       <td>localhost</td>
@@ -426,14 +424,12 @@ $ ionic cordova emulate ios --prod --release --buildConfig=build.json
         </div>
       </td>
     </tr>
-
     <tr>
       <th>Aliases</th>
       <td>
         <code>-p</code>
       </td>
     </tr>
-
     <tr>
       <th>Default</th>
       <td>8100</td>
@@ -482,7 +478,6 @@ $ ionic cordova emulate ios --prod --release --buildConfig=build.json
         </div>
       </td>
     </tr>
-
     <tr>
       <th>Aliases</th>
       <td>

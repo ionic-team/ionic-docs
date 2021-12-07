@@ -16,7 +16,9 @@ html[data-theme='dark'] {
   [class^='tableOfContents_'] {
     position: static;
     top: initial;
-    overflow-x: hidden;
+    overflow: hidden;
+
+    max-height: initial;
 
     padding-block-end: 1.25rem;
 
@@ -28,6 +30,7 @@ html[data-theme='dark'] {
   --ifm-toc-border-color: transparent;
 
   .toc-wrapper {
+    overflow: auto;
     position: sticky;
     top: calc(var(--ifm-navbar-height) + 16px);
     max-height: calc(100vh - var(--ifm-navbar-height) - 16px);
@@ -36,6 +39,7 @@ html[data-theme='dark'] {
 
     padding-inline-end: 2rem;
     padding-inline-start: 2rem;
+    padding-block-end: 2rem;
 
     h2 {
       font-size: 0.625rem;

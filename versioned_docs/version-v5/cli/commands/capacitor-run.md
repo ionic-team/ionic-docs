@@ -153,7 +153,6 @@ $ ionic capacitor run ios --livereload-url=http://localhost:8100
         <p>Spin up dev server to live-reload www files</p>
       </td>
     </tr>
-
     <tr>
       <th>Aliases</th>
       <td>
@@ -271,7 +270,6 @@ $ ionic capacitor run ios --livereload-url=http://localhost:8100
         </div>
       </td>
     </tr>
-
     <tr>
       <th>Default</th>
       <td>localhost</td>
@@ -298,14 +296,12 @@ $ ionic capacitor run ios --livereload-url=http://localhost:8100
         </div>
       </td>
     </tr>
-
     <tr>
       <th>Aliases</th>
       <td>
         <code>-p</code>
       </td>
     </tr>
-
     <tr>
       <th>Default</th>
       <td>8100</td>
@@ -354,7 +350,6 @@ $ ionic capacitor run ios --livereload-url=http://localhost:8100
         </div>
       </td>
     </tr>
-
     <tr>
       <th>Aliases</th>
       <td>

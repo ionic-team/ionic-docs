@@ -3,7 +3,7 @@ html[data-theme='light'] {
 }
 
 html[data-theme='dark'] {
-  --ifm-table-border-color: var(--c-carbon-80);
+  --ifm-table-border-color: var(--c-gray-90);
 }
 
 :root {
@@ -42,10 +42,6 @@ th {
 th,
 td {
   line-height: 1.6;
-
-  code {
-    display: inline-block;
-  }
 }
 
 thead th:empty {

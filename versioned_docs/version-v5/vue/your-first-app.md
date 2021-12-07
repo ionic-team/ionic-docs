@@ -33,12 +33,12 @@ Find the complete app code referenced in this guide [on GitHub](https://github.c
 
 Download and install these right away to ensure an optimal Ionic development experience:
 
-- <strong>Node.js</strong> for interacting with the Ionic ecosystem. [Download the LTS version here](https://nodejs.org/en/).
-- <strong>A code editor</strong> for... writing code! We are fans of [Visual Studio Code](https://code.visualstudio.com/).
-- <strong>Command-line interface/terminal (CLI)</strong>:
-- <strong>Windows</strong> users: for the best Ionic experience, we recommend the built-in command line (cmd) or the Powershell
-  CLI, running in Administrator mode.
-- <strong>Mac/Linux</strong> users, virtually any terminal will work.
+- **Node.js** for interacting with the Ionic ecosystem. [Download the LTS version here](https://nodejs.org/en/).
+- **A code editor** for... writing code! We are fans of [Visual Studio Code](https://code.visualstudio.com/).
+- **Command-line interface/terminal (CLI)**:
+  - **Windows** users: for the best Ionic experience, we recommend the built-in command line (cmd) or the Powershell
+    CLI, running in Administrator mode.
+  - **Mac/Linux** users, virtually any terminal will work.
 
 ## Install Ionic Tooling
 

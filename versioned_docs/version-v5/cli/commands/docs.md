@@ -36,7 +36,6 @@ $ ionic docs [options]
         </div>
       </td>
     </tr>
-
     <tr>
       <th>Aliases</th>
       <td>

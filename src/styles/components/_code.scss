@@ -23,19 +23,24 @@ html[data-theme='dark'] {
   background-color: inherit;
   vertical-align: baseline;
 
-  &::before {
-    content: '';
-    position: absolute;
+  background-color: var(--code-block-bg-c);
+  padding-block-start: 0.25rem;
+  padding-block-end: 0.25rem;
 
-    z-index: -1;
-    left: 0;
-    right: 0;
-    top: -0.25rem;
-    bottom: -0.25rem;
+  // alternative solution for highlighting background with it's own drawbacks
+  // &::before {
+  //   content: '';
+  //   position: absolute;
 
-    background-color: var(--ifm-code-background);
-    border-radius: var(--ifm-code-border-radius);
-  }
+  //   z-index: -1;
+  //   left: 0;
+  //   right: 0;
+  //   top: -0.25rem;
+  //   bottom: -0.25rem;
+
+  //   background-color: var(--ifm-code-background);
+  //   border-radius: var(--ifm-code-border-radius);
+  // }
 }
 code {
   border: none;

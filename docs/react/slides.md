@@ -44,7 +44,11 @@ const Home: React.FC = () => {
 export default Home;
 ```
 
-> Not using Create React App? You can import the Swiper CSS from `swiper/css` instead.
+:::note
+
+Not using Create React App? You can import the Swiper CSS from `swiper/css` instead.
+
+:::
 
 ### Updating Selectors
 
@@ -125,7 +129,11 @@ const Home: React.FC = () => {
 export default Home;
 ```
 
-> Not using Create React App? You can import the Swiper components from `swiper/react` instead.
+:::note
+
+Not using Create React App? You can import the Swiper components from `swiper/react` instead.
+
+:::
 
 ## Using Modules
 
@@ -165,7 +173,11 @@ const Home: React.FC = () => {
 export default Home;
 ```
 
-> Not using Create React App? You can import these modules from `swiper/css/[MODULE NAME]` instead (i.e. `swiper/css/autoplay`).
+:::note
+
+Not using Create React App? You can import these modules from `swiper/css/[MODULE NAME]` instead (i.e. `swiper/css/autoplay`).
+
+:::
 
 From here, we need to provide these modules to Swiper by using the `modules` property on the `Swiper` component:
 
@@ -496,7 +508,11 @@ const Home: React.FC = () => {
 export default Home;
 ```
 
-> Not using Create React App? You can import these effects from `swiper/css/[EFFECT NAME]` instead (i.e. `swiper/css/effect-fade`).
+:::note
+
+Not using Create React App? You can import these effects from `swiper/css/[EFFECT NAME]` instead (i.e. `swiper/css/effect-fade`).
+
+:::
 
 After that, we can activate it by setting the `effect` property on `swiper` to `"fade"`:
 
