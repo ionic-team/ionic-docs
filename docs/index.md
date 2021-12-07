@@ -17,6 +17,10 @@ import DocsCards from '@components/global/DocsCards';
     name="description"
     content="Ionic is an open-source UI toolkit to create your own mobile and desktop apps using web technologies with integrations for popular frameworks."
   />
+  <link rel="canonical" href="https://ionicframework.com/docs" />
+  <link rel="alternate" href="https://ionicframework.com/docs" hreflang="x-default" />
+  <link rel="alternate" href="https://ionicframework.com/docs" hreflang="en" />
+  <meta property="og:url" content="https://ionicframework.com/docs" />
 </head>
 
 Ionic is an open source UI toolkit for building performant, high-quality mobile and desktop apps using web technologies — HTML, CSS, and JavaScript — with integrations for popular frameworks like [Angular](angular/overview.md), [React](react.md), and [Vue](vue/overview.md).
