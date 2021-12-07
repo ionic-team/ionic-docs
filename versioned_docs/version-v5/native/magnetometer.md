@@ -51,12 +51,12 @@ Requires Cordova plugin: `cordova-plugin-magnetometer`. For more info, please se
 >
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
-      $ npm install cordova-plugin-magnetometer {'\n'}$ npm install @ionic-native/magnetometer {'\n'}$ ionic cap sync
+      $ npm install cordova-plugin-magnetometer {'\n'}$ npm install @awesome-cordova-plugins/magnetometer {'\n'}$ ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
-      $ ionic cordova plugin add cordova-plugin-magnetometer {'\n'}$ npm install @ionic-native/magnetometer {'\n'}
+      $ ionic cordova plugin add cordova-plugin-magnetometer {'\n'}$ npm install @awesome-cordova-plugins/magnetometer {'\n'}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">
@@ -89,7 +89,7 @@ Requires Cordova plugin: `cordova-plugin-magnetometer`. For more info, please se
 
 ```tsx
 // DeviceOrientationCompassHeading is an interface for compass
-import { Magnetometer, MagnetometerReading } from '@ionic-native/device-orientation/ngx';
+import { Magnetometer, MagnetometerReading } from '@awesome-cordova-plugins/device-orientation/ngx';
 
 constructor(private magnetometer: Magnetometer) { }
 

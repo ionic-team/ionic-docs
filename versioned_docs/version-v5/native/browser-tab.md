@@ -51,12 +51,12 @@ This plugin provides an interface to in-app browser tabs that exist on some mobi
 >
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
-      $ npm install cordova-plugin-browsertab {'\n'}$ npm install @ionic-native/browser-tab {'\n'}$ ionic cap sync
+      $ npm install cordova-plugin-browsertab {'\n'}$ npm install @awesome-cordova-plugins/browser-tab {'\n'}$ ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
-      $ ionic cordova plugin add cordova-plugin-browsertab {'\n'}$ npm install @ionic-native/browser-tab {'\n'}
+      $ ionic cordova plugin add cordova-plugin-browsertab {'\n'}$ npm install @awesome-cordova-plugins/browser-tab {'\n'}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">
@@ -88,7 +88,7 @@ This plugin provides an interface to in-app browser tabs that exist on some mobi
 ### Angular
 
 ```tsx
-import { BrowserTab } from '@ionic-native/browser-tab/ngx';
+import { BrowserTab } from '@awesome-cordova-plugins/browser-tab/ngx';
 
 constructor(private browserTab: BrowserTab) {
 

@@ -51,12 +51,12 @@ A plugin that abstracts fitness and health repositories like Apple HealthKit or 
 >
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
-      $ npm install cordova-plugin-health {'\n'}$ npm install @ionic-native/health {'\n'}$ ionic cap sync
+      $ npm install cordova-plugin-health {'\n'}$ npm install @awesome-cordova-plugins/health {'\n'}$ ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
-      $ ionic cordova plugin add cordova-plugin-health {'\n'}$ npm install @ionic-native/health {'\n'}
+      $ ionic cordova plugin add cordova-plugin-health {'\n'}$ npm install @awesome-cordova-plugins/health {'\n'}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">
@@ -88,7 +88,7 @@ A plugin that abstracts fitness and health repositories like Apple HealthKit or 
 ### Angular
 
 ```tsx
-import { Health } from '@ionic-native/health/ngx';
+import { Health } from '@awesome-cordova-plugins/health/ngx';
 
 
 constructor(private health: Health) { }

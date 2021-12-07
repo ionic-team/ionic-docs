@@ -53,12 +53,12 @@ The plugin's API closely mimics the one exposed through the [CLLocationManager](
 >
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
-      $ npm install cordova-plugin-ibeacon {'\n'}$ npm install @ionic-native/ibeacon {'\n'}$ ionic cap sync
+      $ npm install cordova-plugin-ibeacon {'\n'}$ npm install @awesome-cordova-plugins/ibeacon {'\n'}$ ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
-      $ ionic cordova plugin add cordova-plugin-ibeacon {'\n'}$ npm install @ionic-native/ibeacon {'\n'}
+      $ ionic cordova plugin add cordova-plugin-ibeacon {'\n'}$ npm install @awesome-cordova-plugins/ibeacon {'\n'}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">
@@ -90,7 +90,7 @@ The plugin's API closely mimics the one exposed through the [CLLocationManager](
 ### Angular
 
 ```tsx
-import { IBeacon } from '@ionic-native/ibeacon/ngx';
+import { IBeacon } from '@awesome-cordova-plugins/ibeacon/ngx';
 
 constructor(private ibeacon: IBeacon) { }
 

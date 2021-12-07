@@ -51,12 +51,12 @@ PayPal plugin for Cordova/Ionic Applications
 >
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
-      $ npm install com.paypal.cordova.mobilesdk {'\n'}$ npm install @ionic-native/paypal {'\n'}$ ionic cap sync
+      $ npm install com.paypal.cordova.mobilesdk {'\n'}$ npm install @awesome-cordova-plugins/paypal {'\n'}$ ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
-      $ ionic cordova plugin add com.paypal.cordova.mobilesdk {'\n'}$ npm install @ionic-native/paypal {'\n'}
+      $ ionic cordova plugin add com.paypal.cordova.mobilesdk {'\n'}$ npm install @awesome-cordova-plugins/paypal {'\n'}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">
@@ -88,7 +88,7 @@ PayPal plugin for Cordova/Ionic Applications
 ### Angular
 
 ```tsx
-import { PayPal, PayPalPayment, PayPalConfiguration } from '@ionic-native/paypal/ngx';
+import { PayPal, PayPalPayment, PayPalConfiguration } from '@awesome-cordova-plugins/paypal/ngx';
 
 constructor(private payPal: PayPal) { }
 

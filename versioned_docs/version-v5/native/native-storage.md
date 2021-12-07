@@ -58,12 +58,12 @@ Native storage of variables in Android and iOS
 >
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
-      $ npm install cordova-plugin-nativestorage {'\n'}$ npm install @ionic-native/native-storage {'\n'}$ ionic cap sync
+      $ npm install cordova-plugin-nativestorage {'\n'}$ npm install @awesome-cordova-plugins/native-storage {'\n'}$ ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
-      $ ionic cordova plugin add cordova-plugin-nativestorage {'\n'}$ npm install @ionic-native/native-storage {'\n'}
+      $ ionic cordova plugin add cordova-plugin-nativestorage {'\n'}$ npm install @awesome-cordova-plugins/native-storage {'\n'}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">
@@ -98,7 +98,7 @@ Native storage of variables in Android and iOS
 ### Angular
 
 ```tsx
-import { NativeStorage } from '@ionic-native/native-storage/ngx';
+import { NativeStorage } from '@awesome-cordova-plugins/native-storage/ngx';
 
 constructor(private nativeStorage: NativeStorage) { }
 

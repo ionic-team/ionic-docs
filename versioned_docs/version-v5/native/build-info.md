@@ -51,12 +51,12 @@ This plugin provides build information.
 >
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
-      $ npm install cordova-plugin-buildinfo {'\n'}$ npm install @ionic-native/build-info {'\n'}$ ionic cap sync
+      $ npm install cordova-plugin-buildinfo {'\n'}$ npm install @awesome-cordova-plugins/build-info {'\n'}$ ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
-      $ ionic cordova plugin add cordova-plugin-buildinfo {'\n'}$ npm install @ionic-native/build-info {'\n'}
+      $ ionic cordova plugin add cordova-plugin-buildinfo {'\n'}$ npm install @awesome-cordova-plugins/build-info {'\n'}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">
@@ -92,7 +92,7 @@ This plugin provides build information.
 ### Angular
 
 ```
-import { BuildInfo } from '@ionic-native/build-info/ngx';
+import { BuildInfo } from '@awesome-cordova-plugins/build-info/ngx';
 
 this.platform.ready().then(() => {
     console.log('BuildInfo.baseUrl        =' + BuildInfo.baseUrl)

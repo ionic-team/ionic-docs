@@ -51,12 +51,12 @@ This plugin provides functions for working with Serial connections
 >
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
-      $ npm install cordovarduino {'\n'}$ npm install @ionic-native/serial {'\n'}$ ionic cap sync
+      $ npm install cordovarduino {'\n'}$ npm install @awesome-cordova-plugins/serial {'\n'}$ ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
-      $ ionic cordova plugin add cordovarduino {'\n'}$ npm install @ionic-native/serial {'\n'}
+      $ ionic cordova plugin add cordovarduino {'\n'}$ npm install @awesome-cordova-plugins/serial {'\n'}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">
@@ -88,7 +88,7 @@ This plugin provides functions for working with Serial connections
 ### Angular
 
 ```tsx
-import { Serial } from '@ionic-native/serial/ngx';
+import { Serial } from '@awesome-cordova-plugins/serial/ngx';
 
 constructor(private serial: Serial) { }
 

@@ -58,12 +58,12 @@ See the [Braintree Node server documentation](https://developers.braintreepaymen
 >
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
-      $ npm install cordova-plugin-braintree {'\n'}$ npm install @ionic-native/braintree {'\n'}$ ionic cap sync
+      $ npm install cordova-plugin-braintree {'\n'}$ npm install @awesome-cordova-plugins/braintree {'\n'}$ ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
-      $ ionic cordova plugin add cordova-plugin-braintree {'\n'}$ npm install @ionic-native/braintree {'\n'}
+      $ ionic cordova plugin add cordova-plugin-braintree {'\n'}$ npm install @awesome-cordova-plugins/braintree {'\n'}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">
@@ -99,7 +99,7 @@ Not Compatible
 ### Angular
 
 ```tsx
-import { Braintree, ApplePayOptions, PaymentUIOptions } from '@ionic-native/braintree/ngx';
+import { Braintree, ApplePayOptions, PaymentUIOptions } from '@awesome-cordova-plugins/braintree/ngx';
 
 constructor(private braintree: Braintree) { }
 

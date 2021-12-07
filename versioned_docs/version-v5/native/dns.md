@@ -51,12 +51,12 @@ A plugin for Apache Cordova that enables applications to manually resolve hostna
 >
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
-      $ npm install cordova-plugin-dns {'\n'}$ npm install @ionic-native/dns {'\n'}$ ionic cap sync
+      $ npm install cordova-plugin-dns {'\n'}$ npm install @awesome-cordova-plugins/dns {'\n'}$ ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
-      $ ionic cordova plugin add cordova-plugin-dns {'\n'}$ npm install @ionic-native/dns {'\n'}
+      $ ionic cordova plugin add cordova-plugin-dns {'\n'}$ npm install @awesome-cordova-plugins/dns {'\n'}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">
@@ -87,7 +87,7 @@ A plugin for Apache Cordova that enables applications to manually resolve hostna
 ### Angular
 
 ```tsx
-import { DNS } from '@ionic-native/dns/ngx';
+import { DNS } from '@awesome-cordova-plugins/dns/ngx';
 
 
 constructor(private dns: DNS) { }

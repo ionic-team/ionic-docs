@@ -59,12 +59,12 @@ Windows Server Active Directory and Windows Azure Active Directory. Here you can
 >
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
-      $ npm install cordova-plugin-ms-adal {'\n'}$ npm install @ionic-native/ms-adal {'\n'}$ ionic cap sync
+      $ npm install cordova-plugin-ms-adal {'\n'}$ npm install @awesome-cordova-plugins/ms-adal {'\n'}$ ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
-      $ ionic cordova plugin add cordova-plugin-ms-adal {'\n'}$ npm install @ionic-native/ms-adal {'\n'}
+      $ ionic cordova plugin add cordova-plugin-ms-adal {'\n'}$ npm install @awesome-cordova-plugins/ms-adal {'\n'}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">
@@ -97,7 +97,7 @@ Windows Server Active Directory and Windows Azure Active Directory. Here you can
 ### Angular
 
 ```tsx
-import { MSAdal, AuthenticationContext, AuthenticationResult } from '@ionic-native/ms-adal/ngx';
+import { MSAdal, AuthenticationContext, AuthenticationResult } from '@awesome-cordova-plugins/ms-adal/ngx';
 
 
 constructor(private msAdal: MSAdal) {}

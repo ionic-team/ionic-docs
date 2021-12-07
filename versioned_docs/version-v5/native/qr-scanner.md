@@ -53,12 +53,12 @@ Requires Cordova plugin: `cordova-plugin-qrscanner`. For more info, please see t
 >
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
-      $ npm install cordova-plugin-qrscanner {'\n'}$ npm install @ionic-native/qr-scanner {'\n'}$ ionic cap sync
+      $ npm install cordova-plugin-qrscanner {'\n'}$ npm install @awesome-cordova-plugins/qr-scanner {'\n'}$ ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
-      $ ionic cordova plugin add cordova-plugin-qrscanner {'\n'}$ npm install @ionic-native/qr-scanner {'\n'}
+      $ ionic cordova plugin add cordova-plugin-qrscanner {'\n'}$ npm install @awesome-cordova-plugins/qr-scanner {'\n'}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">
@@ -96,7 +96,7 @@ Not Compatible
 ### Angular
 
 ```tsx
-import { QRScanner, QRScannerStatus } from '@ionic-native/qr-scanner/ngx';
+import { QRScanner, QRScannerStatus } from '@awesome-cordova-plugins/qr-scanner/ngx';
 
 
 constructor(private qrScanner: QRScanner) { }

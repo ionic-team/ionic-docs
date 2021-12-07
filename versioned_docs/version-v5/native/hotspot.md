@@ -53,12 +53,12 @@ Requires Cordova plugin: `cordova-plugin-hotspot`. For more info, please see the
 >
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
-      $ npm install cordova-plugin-hotspot {'\n'}$ npm install @ionic-native/hotspot {'\n'}$ ionic cap sync
+      $ npm install cordova-plugin-hotspot {'\n'}$ npm install @awesome-cordova-plugins/hotspot {'\n'}$ ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
-      $ ionic cordova plugin add cordova-plugin-hotspot {'\n'}$ npm install @ionic-native/hotspot {'\n'}
+      $ ionic cordova plugin add cordova-plugin-hotspot {'\n'}$ npm install @awesome-cordova-plugins/hotspot {'\n'}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">
@@ -89,7 +89,7 @@ Requires Cordova plugin: `cordova-plugin-hotspot`. For more info, please see the
 ### Angular
 
 ```tsx
-import { Hotspot, HotspotNetwork } from '@ionic-native/hotspot/ngx';
+import { Hotspot, HotspotNetwork } from '@awesome-cordova-plugins/hotspot/ngx';
 
 constructor(private hotspot: Hotspot) { }
 

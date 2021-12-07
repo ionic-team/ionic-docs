@@ -51,12 +51,12 @@ A Cordova plugin to unzip files in Android and iOS.
 >
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
-      $ npm install cordova-plugin-zip {'\n'}$ npm install @ionic-native/zip {'\n'}$ ionic cap sync
+      $ npm install cordova-plugin-zip {'\n'}$ npm install @awesome-cordova-plugins/zip {'\n'}$ ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
-      $ ionic cordova plugin add cordova-plugin-zip {'\n'}$ npm install @ionic-native/zip {'\n'}
+      $ ionic cordova plugin add cordova-plugin-zip {'\n'}$ npm install @awesome-cordova-plugins/zip {'\n'}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">
@@ -88,7 +88,7 @@ A Cordova plugin to unzip files in Android and iOS.
 ### Angular
 
 ```tsx
-import { Zip } from '@ionic-native/zip/ngx';
+import { Zip } from '@awesome-cordova-plugins/zip/ngx';
 
 constructor(private zip: Zip) { }
 

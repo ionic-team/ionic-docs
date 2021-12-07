@@ -56,12 +56,12 @@ Opens the file picker on iOS for the user to select a file, returns a file URI.
 >
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
-      $ npm install cordova-plugin-filepicker {'\n'}$ npm install @ionic-native/file-picker {'\n'}$ ionic cap sync
+      $ npm install cordova-plugin-filepicker {'\n'}$ npm install @awesome-cordova-plugins/file-picker {'\n'}$ ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
-      $ ionic cordova plugin add cordova-plugin-filepicker {'\n'}$ npm install @ionic-native/file-picker {'\n'}
+      $ ionic cordova plugin add cordova-plugin-filepicker {'\n'}$ npm install @awesome-cordova-plugins/file-picker {'\n'}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">
@@ -92,7 +92,7 @@ Opens the file picker on iOS for the user to select a file, returns a file URI.
 ### Angular
 
 ```tsx
-import { IOSFilePicker } from '@ionic-native/file-picker/ngx';
+import { IOSFilePicker } from '@awesome-cordova-plugins/file-picker/ngx';
 
 constructor(private filePicker: IOSFilePicker) { }
 

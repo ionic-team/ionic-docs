@@ -56,13 +56,13 @@ This Plugin provides a general purpose shim layer for the Android intent mechani
 >
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
-      $ npm install com-darryncampbell-cordova-plugin-intent {'\n'}$ npm install @ionic-native/web-intent {'\n'}$ ionic
+      $ npm install com-darryncampbell-cordova-plugin-intent {'\n'}$ npm install @awesome-cordova-plugins/web-intent {'\n'}$ ionic
       cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
-      $ ionic cordova plugin add com-darryncampbell-cordova-plugin-intent {'\n'}$ npm install @ionic-native/web-intent {'\n'}
+      $ ionic cordova plugin add com-darryncampbell-cordova-plugin-intent {'\n'}$ npm install @awesome-cordova-plugins/web-intent {'\n'}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">
@@ -95,7 +95,7 @@ This Plugin provides a general purpose shim layer for the Android intent mechani
 For usage information please refer to the plugin's Github repo.
 
 ```tsx
-import { WebIntent } from '@ionic-native/web-intent/ngx';
+import { WebIntent } from '@awesome-cordova-plugins/web-intent/ngx';
 
 constructor(private webIntent: WebIntent) { }
 

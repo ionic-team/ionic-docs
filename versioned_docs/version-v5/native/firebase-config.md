@@ -56,13 +56,13 @@ Cordova plugin for Firebase Config
 >
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
-      $ npm install cordova-plugin-firebase-config {'\n'}$ npm install @ionic-native/firebase-config {'\n'}$ ionic cap
+      $ npm install cordova-plugin-firebase-config {'\n'}$ npm install @awesome-cordova-plugins/firebase-config {'\n'}$ ionic cap
       sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
-      $ ionic cordova plugin add cordova-plugin-firebase-config {'\n'}$ npm install @ionic-native/firebase-config {'\n'}
+      $ ionic cordova plugin add cordova-plugin-firebase-config {'\n'}$ npm install @awesome-cordova-plugins/firebase-config {'\n'}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">
@@ -94,7 +94,7 @@ Cordova plugin for Firebase Config
 ### Angular
 
 ```tsx
-import { FirebaseConfig } from '@ionic-native/firebase-config/ngx';
+import { FirebaseConfig } from '@awesome-cordova-plugins/firebase-config/ngx';
 
 
 constructor(private firebaseConfig: FirebaseConfig) { }

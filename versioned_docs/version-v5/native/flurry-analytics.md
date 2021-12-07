@@ -56,13 +56,13 @@ This plugin connects to Flurry Analytics SDK
 >
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
-      $ npm install cordova-plugin-flurryanalytics {'\n'}$ npm install @ionic-native/flurry-analytics {'\n'}$ ionic cap
+      $ npm install cordova-plugin-flurryanalytics {'\n'}$ npm install @awesome-cordova-plugins/flurry-analytics {'\n'}$ ionic cap
       sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
-      $ ionic cordova plugin add cordova-plugin-flurryanalytics {'\n'}$ npm install @ionic-native/flurry-analytics {'\n'}
+      $ ionic cordova plugin add cordova-plugin-flurryanalytics {'\n'}$ npm install @awesome-cordova-plugins/flurry-analytics {'\n'}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">
@@ -94,7 +94,7 @@ This plugin connects to Flurry Analytics SDK
 ### Angular
 
 ```tsx
-import { FlurryAnalytics, FlurryAnalyticsObject, FlurryAnalyticsOptions } from '@ionic-native/flurry-analytics/ngx';
+import { FlurryAnalytics, FlurryAnalyticsObject, FlurryAnalyticsOptions } from '@awesome-cordova-plugins/flurry-analytics/ngx';
 
 constructor(private flurryAnalytics: FlurryAnalytics) { }
 

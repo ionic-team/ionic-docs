@@ -51,12 +51,12 @@ This plugin adds [Rollbar](https://rollbar.com/) App monitoring to your applicat
 >
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
-      $ npm install resgrid-cordova-plugins-rollbar {'\n'}$ npm install @ionic-native/rollbar {'\n'}$ ionic cap sync
+      $ npm install resgrid-cordova-plugins-rollbar {'\n'}$ npm install @awesome-cordova-plugins/rollbar {'\n'}$ ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
-      $ ionic cordova plugin add resgrid-cordova-plugins-rollbar {'\n'}$ npm install @ionic-native/rollbar {'\n'}
+      $ ionic cordova plugin add resgrid-cordova-plugins-rollbar {'\n'}$ npm install @awesome-cordova-plugins/rollbar {'\n'}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">
@@ -88,7 +88,7 @@ This plugin adds [Rollbar](https://rollbar.com/) App monitoring to your applicat
 ### Angular
 
 ```tsx
-import { Rollbar } from '@ionic-native/rollbar/ngx';
+import { Rollbar } from '@awesome-cordova-plugins/rollbar/ngx';
 
 constructor(private rollbar: Rollbar) { }
 

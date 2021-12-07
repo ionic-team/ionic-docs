@@ -53,12 +53,12 @@ For full documentation, see [https://community.tealiumiq.com/t5/Mobile-Libraries
 >
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
-      $ npm install tealium-cordova-plugin {'\n'}$ npm install @ionic-native/tealium {'\n'}$ ionic cap sync
+      $ npm install tealium-cordova-plugin {'\n'}$ npm install @awesome-cordova-plugins/tealium {'\n'}$ ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
-      $ ionic cordova plugin add tealium-cordova-plugin {'\n'}$ npm install @ionic-native/tealium {'\n'}
+      $ ionic cordova plugin add tealium-cordova-plugin {'\n'}$ npm install @awesome-cordova-plugins/tealium {'\n'}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">
@@ -90,7 +90,7 @@ For full documentation, see [https://community.tealiumiq.com/t5/Mobile-Libraries
 ### Angular
 
 ```
-import { Tealium, TealConfig } from '@ionic-native/tealium/ngx';
+import { Tealium, TealConfig } from '@awesome-cordova-plugins/tealium/ngx';
 
 
 constructor(private tealium: Tealium) { }

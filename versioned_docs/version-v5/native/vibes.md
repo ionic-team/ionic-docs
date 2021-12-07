@@ -51,12 +51,12 @@ This plugin enables integration with the Vibes Push SDK to your Cordova project 
 >
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
-      $ npm install vibes-cordova {'\n'}$ npm install @ionic-native/vibes {'\n'}$ ionic cap sync
+      $ npm install vibes-cordova {'\n'}$ npm install @awesome-cordova-plugins/vibes {'\n'}$ ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
-      $ ionic cordova plugin add vibes-cordova {'\n'}$ npm install @ionic-native/vibes {'\n'}
+      $ ionic cordova plugin add vibes-cordova {'\n'}$ npm install @awesome-cordova-plugins/vibes {'\n'}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">
@@ -88,7 +88,7 @@ This plugin enables integration with the Vibes Push SDK to your Cordova project 
 ### Angular
 
 ```tsx
-import { Vibes } from '@ionic-native/vibes/ngx';
+import { Vibes } from '@awesome-cordova-plugins/vibes/ngx';
 
 
 constructor(private vibes: Vibes) { }

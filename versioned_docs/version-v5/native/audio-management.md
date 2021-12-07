@@ -57,13 +57,13 @@ ringer values for those streams are: silent, vibrate and normal.
 >
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
-      $ npm install clovelced-plugin-audiomanagement {'\n'}$ npm install @ionic-native/audio-management {'\n'}$ ionic
+      $ npm install clovelced-plugin-audiomanagement {'\n'}$ npm install @awesome-cordova-plugins/audio-management {'\n'}$ ionic
       cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
-      $ ionic cordova plugin add clovelced-plugin-audiomanagement {'\n'}$ npm install @ionic-native/audio-management {'\n'}
+      $ ionic cordova plugin add clovelced-plugin-audiomanagement {'\n'}$ npm install @awesome-cordova-plugins/audio-management {'\n'}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">
@@ -94,7 +94,7 @@ ringer values for those streams are: silent, vibrate and normal.
 ### Angular
 
 ```tsx
-import { AudioManagement } from '@ionic-native/audio-management/ngx';
+import { AudioManagement } from '@awesome-cordova-plugins/audio-management/ngx';
 
 
 constructor(public audioman: AudioManagement) { }

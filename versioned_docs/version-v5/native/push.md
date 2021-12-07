@@ -57,12 +57,12 @@ For TypeScript users, see the [Push plugin docs about using TypeScript for custo
 >
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
-      $ npm install phonegap-plugin-push {'\n'}$ npm install @ionic-native/push {'\n'}$ ionic cap sync
+      $ npm install phonegap-plugin-push {'\n'}$ npm install @awesome-cordova-plugins/push {'\n'}$ ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
-      $ ionic cordova plugin add phonegap-plugin-push {'\n'}$ npm install @ionic-native/push {'\n'}
+      $ ionic cordova plugin add phonegap-plugin-push {'\n'}$ npm install @awesome-cordova-plugins/push {'\n'}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">
@@ -96,7 +96,7 @@ For TypeScript users, see the [Push plugin docs about using TypeScript for custo
 ### Angular
 
 ```tsx
-import { Push, PushObject, PushOptions } from '@ionic-native/push/ngx';
+import { Push, PushObject, PushOptions } from '@awesome-cordova-plugins/push/ngx';
 
 constructor(private push: Push) { }
 

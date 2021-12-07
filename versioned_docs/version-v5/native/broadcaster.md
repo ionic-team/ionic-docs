@@ -51,12 +51,12 @@ This plugin adds exchanging events between native code and your app.
 >
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
-      $ npm install cordova-plugin-broadcaster {'\n'}$ npm install @ionic-native/broadcaster {'\n'}$ ionic cap sync
+      $ npm install cordova-plugin-broadcaster {'\n'}$ npm install @awesome-cordova-plugins/broadcaster {'\n'}$ ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
-      $ ionic cordova plugin add cordova-plugin-broadcaster {'\n'}$ npm install @ionic-native/broadcaster {'\n'}
+      $ ionic cordova plugin add cordova-plugin-broadcaster {'\n'}$ npm install @awesome-cordova-plugins/broadcaster {'\n'}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">
@@ -89,7 +89,7 @@ This plugin adds exchanging events between native code and your app.
 ### Angular
 
 ```tsx
-import { Broadcaster } from '@ionic-native/broadcaster/ngx';
+import { Broadcaster } from '@awesome-cordova-plugins/broadcaster/ngx';
 
 constructor(private broadcaster: Broadcaster) { }
 

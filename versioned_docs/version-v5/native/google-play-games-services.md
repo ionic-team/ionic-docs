@@ -56,14 +56,14 @@ A Cordova plugin that let's you interact with Google Play Games Services.
 >
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
-      $ npm install cordova-plugin-play-games-services {'\n'}$ npm install @ionic-native/google-play-games-services {
+      $ npm install cordova-plugin-play-games-services {'\n'}$ npm install @awesome-cordova-plugins/google-play-games-services {
         '\n'
       }$ ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
-      $ ionic cordova plugin add cordova-plugin-play-games-services {'\n'}$ npm install @ionic-native/google-play-games-services{' '}
+      $ ionic cordova plugin add cordova-plugin-play-games-services {'\n'}$ npm install @awesome-cordova-plugins/google-play-games-services{' '}
       {'\n'}
     </CodeBlock>
   </TabItem>
@@ -95,7 +95,7 @@ A Cordova plugin that let's you interact with Google Play Games Services.
 ### Angular
 
 ```tsx
-import { GooglePlayGamesServices } from '@ionic-native/google-play-games-services/ngx';
+import { GooglePlayGamesServices } from '@awesome-cordova-plugins/google-play-games-services/ngx';
 
 
 constructor(private googlePlayGamesServices: GooglePlayGamesServices) { }

@@ -51,12 +51,12 @@ Cordova plugin to change color of header in Android Multitask View
 >
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
-      $ npm install cordova-plugin-headercolor {'\n'}$ npm install @ionic-native/header-color {'\n'}$ ionic cap sync
+      $ npm install cordova-plugin-headercolor {'\n'}$ npm install @awesome-cordova-plugins/header-color {'\n'}$ ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
-      $ ionic cordova plugin add cordova-plugin-headercolor {'\n'}$ npm install @ionic-native/header-color {'\n'}
+      $ ionic cordova plugin add cordova-plugin-headercolor {'\n'}$ npm install @awesome-cordova-plugins/header-color {'\n'}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">
@@ -87,7 +87,7 @@ Cordova plugin to change color of header in Android Multitask View
 ### Angular
 
 ```tsx
-import { HeaderColor } from '@ionic-native/header-color/ngx';
+import { HeaderColor } from '@awesome-cordova-plugins/header-color/ngx';
 
 constructor(private headerColor: HeaderColor) { }
 

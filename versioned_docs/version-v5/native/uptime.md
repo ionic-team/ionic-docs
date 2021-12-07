@@ -51,12 +51,12 @@ This plugin provides the time spent in milliseconds since boot (uptime).
 >
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
-      $ npm install cordova-plugin-uptime {'\n'}$ npm install @ionic-native/uptime {'\n'}$ ionic cap sync
+      $ npm install cordova-plugin-uptime {'\n'}$ npm install @awesome-cordova-plugins/uptime {'\n'}$ ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
-      $ ionic cordova plugin add cordova-plugin-uptime {'\n'}$ npm install @ionic-native/uptime {'\n'}
+      $ ionic cordova plugin add cordova-plugin-uptime {'\n'}$ npm install @awesome-cordova-plugins/uptime {'\n'}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">
@@ -88,7 +88,7 @@ This plugin provides the time spent in milliseconds since boot (uptime).
 ### Angular
 
 ```tsx
-import { Uptime } from '@ionic-native/uptime/ngx';
+import { Uptime } from '@awesome-cordova-plugins/uptime/ngx';
 
 constructor(private uptime: Uptime) { }
 

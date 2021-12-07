@@ -53,12 +53,12 @@ Requires Cordova plugin: `cordova-plugin-brightness`. For more info, please see 
 >
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
-      $ npm install cordova-plugin-brightness {'\n'}$ npm install @ionic-native/brightness {'\n'}$ ionic cap sync
+      $ npm install cordova-plugin-brightness {'\n'}$ npm install @awesome-cordova-plugins/brightness {'\n'}$ ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
-      $ ionic cordova plugin add cordova-plugin-brightness {'\n'}$ npm install @ionic-native/brightness {'\n'}
+      $ ionic cordova plugin add cordova-plugin-brightness {'\n'}$ npm install @awesome-cordova-plugins/brightness {'\n'}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">
@@ -90,7 +90,7 @@ Requires Cordova plugin: `cordova-plugin-brightness`. For more info, please see 
 ### Angular
 
 ```tsx
-import { Brightness } from '@ionic-native/brightness/ngx';
+import { Brightness } from '@awesome-cordova-plugins/brightness/ngx';
 
 constructor(private brightness: Brightness) { }
 

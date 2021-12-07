@@ -58,12 +58,12 @@ Requires Cordova plugin: cordova-plugin-network-information. For more info, plea
 >
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
-      $ npm install cordova-plugin-network-information {'\n'}$ npm install @ionic-native/network {'\n'}$ ionic cap sync
+      $ npm install cordova-plugin-network-information {'\n'}$ npm install @awesome-cordova-plugins/network {'\n'}$ ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
-      $ ionic cordova plugin add cordova-plugin-network-information {'\n'}$ npm install @ionic-native/network {'\n'}
+      $ ionic cordova plugin add cordova-plugin-network-information {'\n'}$ npm install @awesome-cordova-plugins/network {'\n'}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">
@@ -98,7 +98,7 @@ Requires Cordova plugin: cordova-plugin-network-information. For more info, plea
 ### Angular
 
 ```tsx
-import { Network } from '@ionic-native/network/ngx';
+import { Network } from '@awesome-cordova-plugins/network/ngx';
 
 constructor(private network: Network) { }
 

@@ -51,12 +51,12 @@ This cordova plugin is created to use ftp (client) in web/js.
 >
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
-      $ npm install cordova-plugin-ftp {'\n'}$ npm install @ionic-native/ftp {'\n'}$ ionic cap sync
+      $ npm install cordova-plugin-ftp {'\n'}$ npm install @awesome-cordova-plugins/ftp {'\n'}$ ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
-      $ ionic cordova plugin add cordova-plugin-ftp {'\n'}$ npm install @ionic-native/ftp {'\n'}
+      $ ionic cordova plugin add cordova-plugin-ftp {'\n'}$ npm install @awesome-cordova-plugins/ftp {'\n'}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">
@@ -88,7 +88,7 @@ This cordova plugin is created to use ftp (client) in web/js.
 ### Angular
 
 ```tsx
-import { FTP } from '@ionic-native/ftp/ngx';
+import { FTP } from '@awesome-cordova-plugins/ftp/ngx';
 
 
 constructor(private fTP: FTP) { }

@@ -56,12 +56,12 @@ Cordova Plugin For Image Resize
 >
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
-      $ npm install info.protonet.imageresizer {'\n'}$ npm install @ionic-native/image-resizer {'\n'}$ ionic cap sync
+      $ npm install info.protonet.imageresizer {'\n'}$ npm install @awesome-cordova-plugins/image-resizer {'\n'}$ ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
-      $ ionic cordova plugin add info.protonet.imageresizer {'\n'}$ npm install @ionic-native/image-resizer {'\n'}
+      $ ionic cordova plugin add info.protonet.imageresizer {'\n'}$ npm install @awesome-cordova-plugins/image-resizer {'\n'}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">
@@ -94,7 +94,7 @@ Cordova Plugin For Image Resize
 ### Angular
 
 ```tsx
-import { ImageResizer, ImageResizerOptions } from '@ionic-native/image-resizer/ngx';
+import { ImageResizer, ImageResizerOptions } from '@awesome-cordova-plugins/image-resizer/ngx';
 
 constructor(private imageResizer: ImageResizer) { }
 

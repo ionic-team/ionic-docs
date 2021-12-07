@@ -53,12 +53,12 @@ IMPORTANT NOTICE: this plugin takes a percentage out of your earnings if you pro
 >
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
-      $ npm install cordova-plugin-admobpro {'\n'}$ npm install @ionic-native/admob-pro {'\n'}$ ionic cap sync
+      $ npm install cordova-plugin-admobpro {'\n'}$ npm install @awesome-cordova-plugins/admob-pro {'\n'}$ ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
-      $ ionic cordova plugin add cordova-plugin-admobpro {'\n'}$ npm install @ionic-native/admob-pro {'\n'}
+      $ ionic cordova plugin add cordova-plugin-admobpro {'\n'}$ npm install @awesome-cordova-plugins/admob-pro {'\n'}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">
@@ -95,7 +95,7 @@ Not Compatible
 ### Angular
 
 ```tsx
-import { AdMobPro } from '@ionic-native/admob-pro/ngx';
+import { AdMobPro } from '@awesome-cordova-plugins/admob-pro/ngx';
 import { Platform } from '@ionic/angular';
 
 constructor(private admob: AdMobPro, private platform: Platform ) { }

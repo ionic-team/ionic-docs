@@ -55,12 +55,12 @@ Original source: [Jumio mobile-cordova](https://github.com/Jumio/mobile-cordova)
 >
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
-      $ npm install jumio-cordova {'\n'}$ npm install @ionic-native/jumio {'\n'}$ ionic cap sync
+      $ npm install jumio-cordova {'\n'}$ npm install @awesome-cordova-plugins/jumio {'\n'}$ ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
-      $ ionic cordova plugin add jumio-cordova {'\n'}$ npm install @ionic-native/jumio {'\n'}
+      $ ionic cordova plugin add jumio-cordova {'\n'}$ npm install @awesome-cordova-plugins/jumio {'\n'}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">
@@ -98,7 +98,7 @@ import {
   JumioDocVerificationConfig,
   NetverifyDocumentData
   DocVerificationDocumentData
-} from '@ionic-native/jumio/ngx';
+} from '@awesome-cordova-plugins/jumio/ngx';
 
 
 constructor(private jumio: Jumio) { }

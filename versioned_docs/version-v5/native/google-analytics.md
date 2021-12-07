@@ -56,13 +56,13 @@ Prerequisites:
 >
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
-      $ npm install cordova-plugin-google-analytics {'\n'}$ npm install @ionic-native/google-analytics {'\n'}$ ionic cap
+      $ npm install cordova-plugin-google-analytics {'\n'}$ npm install @awesome-cordova-plugins/google-analytics {'\n'}$ ionic cap
       sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
-      $ ionic cordova plugin add cordova-plugin-google-analytics {'\n'}$ npm install @ionic-native/google-analytics {'\n'}
+      $ ionic cordova plugin add cordova-plugin-google-analytics {'\n'}$ npm install @awesome-cordova-plugins/google-analytics {'\n'}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">
@@ -96,7 +96,7 @@ Prerequisites:
 ### Angular
 
 ```tsx
-import { GoogleAnalytics } from '@ionic-native/google-analytics/ngx';
+import { GoogleAnalytics } from '@awesome-cordova-plugins/google-analytics/ngx';
 
 constructor(private ga: GoogleAnalytics) { }
 

@@ -52,12 +52,12 @@ Follow the offical documentation to setup this plugin correctly: https://develop
 >
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
-      $ npm install cordova-plugin-intercom {'\n'}$ npm install @ionic-native/intercom {'\n'}$ ionic cap sync
+      $ npm install cordova-plugin-intercom {'\n'}$ npm install @awesome-cordova-plugins/intercom {'\n'}$ ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
-      $ ionic cordova plugin add cordova-plugin-intercom {'\n'}$ npm install @ionic-native/intercom {'\n'}
+      $ ionic cordova plugin add cordova-plugin-intercom {'\n'}$ npm install @awesome-cordova-plugins/intercom {'\n'}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">
@@ -89,7 +89,7 @@ Follow the offical documentation to setup this plugin correctly: https://develop
 ### Angular
 
 ```tsx
-import { Intercom } from '@ionic-native/intercom/ngx';
+import { Intercom } from '@awesome-cordova-plugins/intercom/ngx';
 
 
 constructor(private intercom: Intercom) { }

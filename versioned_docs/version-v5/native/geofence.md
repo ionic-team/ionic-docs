@@ -52,12 +52,12 @@ Geofences persist after device reboot. Geofences will be monitored even when the
 >
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
-      $ npm install cordova-plugin-geofence {'\n'}$ npm install @ionic-native/geofence {'\n'}$ ionic cap sync
+      $ npm install cordova-plugin-geofence {'\n'}$ npm install @awesome-cordova-plugins/geofence {'\n'}$ ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
-      $ ionic cordova plugin add cordova-plugin-geofence {'\n'}$ npm install @ionic-native/geofence {'\n'}
+      $ ionic cordova plugin add cordova-plugin-geofence {'\n'}$ npm install @awesome-cordova-plugins/geofence {'\n'}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">
@@ -91,7 +91,7 @@ Geofences persist after device reboot. Geofences will be monitored even when the
 ### Angular
 
 ```tsx
-import { Geofence } from '@ionic-native/geofence/ngx';
+import { Geofence } from '@awesome-cordova-plugins/geofence/ngx';
 
 ...
 

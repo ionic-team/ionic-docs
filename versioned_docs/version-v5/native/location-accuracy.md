@@ -56,13 +56,13 @@ This Cordova/Phonegap plugin for Android and iOS to request enabling/changing of
 >
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
-      $ npm install cordova-plugin-request-location-accuracy {'\n'}$ npm install @ionic-native/location-accuracy {'\n'}$
+      $ npm install cordova-plugin-request-location-accuracy {'\n'}$ npm install @awesome-cordova-plugins/location-accuracy {'\n'}$
       ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
-      $ ionic cordova plugin add cordova-plugin-request-location-accuracy {'\n'}$ npm install @ionic-native/location-accuracy{' '}
+      $ ionic cordova plugin add cordova-plugin-request-location-accuracy {'\n'}$ npm install @awesome-cordova-plugins/location-accuracy{' '}
       {'\n'}
     </CodeBlock>
   </TabItem>
@@ -95,7 +95,7 @@ This Cordova/Phonegap plugin for Android and iOS to request enabling/changing of
 ### Angular
 
 ```tsx
-import { LocationAccuracy } from '@ionic-native/location-accuracy/ngx';
+import { LocationAccuracy } from '@awesome-cordova-plugins/location-accuracy/ngx';
 
 constructor(private locationAccuracy: LocationAccuracy) { }
 

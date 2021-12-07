@@ -56,13 +56,13 @@ Native wheel selector for Cordova (Android/iOS).
 >
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
-      $ npm install cordova-wheel-selector-plugin {'\n'}$ npm install @ionic-native/wheel-selector {'\n'}$ ionic cap
+      $ npm install cordova-wheel-selector-plugin {'\n'}$ npm install @awesome-cordova-plugins/wheel-selector {'\n'}$ ionic cap
       sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
-      $ ionic cordova plugin add cordova-wheel-selector-plugin {'\n'}$ npm install @ionic-native/wheel-selector {'\n'}
+      $ ionic cordova plugin add cordova-wheel-selector-plugin {'\n'}$ npm install @awesome-cordova-plugins/wheel-selector {'\n'}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">
@@ -94,7 +94,7 @@ Native wheel selector for Cordova (Android/iOS).
 ### Angular
 
 ```
-import { WheelSelector } from '@ionic-native/wheel-selector/ngx';
+import { WheelSelector } from '@awesome-cordova-plugins/wheel-selector/ngx';
 
 
 constructor(private selector: WheelSelector) { }

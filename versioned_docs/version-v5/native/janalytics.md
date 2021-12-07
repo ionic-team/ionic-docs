@@ -51,12 +51,12 @@ This plugin does something
 >
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
-      $ npm install cordova-plugin-janalytics {'\n'}$ npm install @ionic-native/janalytics {'\n'}$ ionic cap sync
+      $ npm install cordova-plugin-janalytics {'\n'}$ npm install @awesome-cordova-plugins/janalytics {'\n'}$ ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
-      $ ionic cordova plugin add cordova-plugin-janalytics {'\n'}$ npm install @ionic-native/janalytics {'\n'}
+      $ ionic cordova plugin add cordova-plugin-janalytics {'\n'}$ npm install @awesome-cordova-plugins/janalytics {'\n'}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">
@@ -88,7 +88,7 @@ This plugin does something
 ### Angular
 
 ```tsx
-import { JAnalytics } from '@ionic-native/JAnalytics/ngx';
+import { JAnalytics } from '@awesome-cordova-plugins/JAnalytics/ngx';
 
 
 constructor(private jAnalytics: JAnalytics) { }

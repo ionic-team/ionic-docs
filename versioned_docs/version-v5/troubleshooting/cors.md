@@ -235,7 +235,7 @@ Use the [HTTP plugin from Ionic Native](../native/http.md) to make the requests 
 
 ```tsx
 import { Component } from '@angular/core';
-import { HTTP } from '@ionic-native/http/ngx';
+import { HTTP } from '@awesome-cordova-plugins/http/ngx';
 
 @Component({
   selector: 'app-home',

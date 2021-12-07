@@ -53,12 +53,12 @@ Requires Cordova plugin: cordova-plugin-apprate. For more info, please see the [
 >
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
-      $ npm install cordova-plugin-apprate {'\n'}$ npm install @ionic-native/app-rate {'\n'}$ ionic cap sync
+      $ npm install cordova-plugin-apprate {'\n'}$ npm install @awesome-cordova-plugins/app-rate {'\n'}$ ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
-      $ ionic cordova plugin add cordova-plugin-apprate {'\n'}$ npm install @ionic-native/app-rate {'\n'}
+      $ ionic cordova plugin add cordova-plugin-apprate {'\n'}$ npm install @awesome-cordova-plugins/app-rate {'\n'}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">
@@ -92,7 +92,7 @@ Requires Cordova plugin: cordova-plugin-apprate. For more info, please see the [
 ### Angular
 
 ```tsx
-import { AppRate } from '@ionic-native/app-rate/ngx';
+import { AppRate } from '@awesome-cordova-plugins/app-rate/ngx';
 
 constructor(private appRate: AppRate) { }
 

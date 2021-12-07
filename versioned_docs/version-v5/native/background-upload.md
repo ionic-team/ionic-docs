@@ -56,13 +56,13 @@ This plugin does something
 >
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
-      $ npm install cordova-plugin-background-upload {'\n'}$ npm install @ionic-native/background-upload {'\n'}$ ionic
+      $ npm install cordova-plugin-background-upload {'\n'}$ npm install @awesome-cordova-plugins/background-upload {'\n'}$ ionic
       cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
-      $ ionic cordova plugin add cordova-plugin-background-upload {'\n'}$ npm install @ionic-native/background-upload {'\n'}
+      $ ionic cordova plugin add cordova-plugin-background-upload {'\n'}$ npm install @awesome-cordova-plugins/background-upload {'\n'}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">
@@ -94,7 +94,7 @@ This plugin does something
 ### Angular
 
 ```tsx
-import { BackgroundUpload } from '@ionic-native/background-upload/ngx';
+import { BackgroundUpload } from '@awesome-cordova-plugins/background-upload/ngx';
 
 
 constructor(private backgroundUpload: BackgroundUpload) { }

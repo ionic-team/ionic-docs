@@ -58,12 +58,12 @@ Requires Cordova plugin: `cordova-plugin-ionic-keyboard`. For more info, please 
 >
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
-      $ npm install cordova-plugin-ionic-keyboard {'\n'}$ npm install @ionic-native/keyboard {'\n'}$ ionic cap sync
+      $ npm install cordova-plugin-ionic-keyboard {'\n'}$ npm install @awesome-cordova-plugins/keyboard {'\n'}$ ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
-      $ ionic cordova plugin add cordova-plugin-ionic-keyboard {'\n'}$ npm install @ionic-native/keyboard {'\n'}
+      $ ionic cordova plugin add cordova-plugin-ionic-keyboard {'\n'}$ npm install @awesome-cordova-plugins/keyboard {'\n'}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">
@@ -99,7 +99,7 @@ Not Compatible
 ### Angular
 
 ```tsx
-import { Keyboard } from '@ionic-native/keyboard/ngx';
+import { Keyboard } from '@awesome-cordova-plugins/keyboard/ngx';
 
 constructor(private keyboard: Keyboard) { }
 

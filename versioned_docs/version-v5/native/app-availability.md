@@ -53,13 +53,13 @@ Requires Cordova plugin: cordova-plugin-appavailability. For more info, please s
 >
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
-      $ npm install cordova-plugin-appavailability {'\n'}$ npm install @ionic-native/app-availability {'\n'}$ ionic cap
+      $ npm install cordova-plugin-appavailability {'\n'}$ npm install @awesome-cordova-plugins/app-availability {'\n'}$ ionic cap
       sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
-      $ ionic cordova plugin add cordova-plugin-appavailability {'\n'}$ npm install @ionic-native/app-availability {'\n'}
+      $ ionic cordova plugin add cordova-plugin-appavailability {'\n'}$ npm install @awesome-cordova-plugins/app-availability {'\n'}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">
@@ -91,7 +91,7 @@ Requires Cordova plugin: cordova-plugin-appavailability. For more info, please s
 ### Angular
 
 ```tsx
-import { AppAvailability } from '@ionic-native/app-availability/ngx';
+import { AppAvailability } from '@awesome-cordova-plugins/app-availability/ngx';
 import { Platform } from 'ionic-angular';
 
 constructor(private appAvailability: AppAvailability, private platform: Platform) { }

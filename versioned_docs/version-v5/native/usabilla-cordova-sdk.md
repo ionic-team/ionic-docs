@@ -54,12 +54,12 @@ For more info see [Cordova plugin docs](https://github.com/usabilla/usabilla-u4a
 >
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
-      $ npm install usabilla-cordova {'\n'}$ npm install @ionic-native/usabilla-cordova-sdk {'\n'}$ ionic cap sync
+      $ npm install usabilla-cordova {'\n'}$ npm install @awesome-cordova-plugins/usabilla-cordova-sdk {'\n'}$ ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
-      $ ionic cordova plugin add usabilla-cordova {'\n'}$ npm install @ionic-native/usabilla-cordova-sdk {'\n'}
+      $ ionic cordova plugin add usabilla-cordova {'\n'}$ npm install @awesome-cordova-plugins/usabilla-cordova-sdk {'\n'}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">
@@ -91,7 +91,7 @@ For more info see [Cordova plugin docs](https://github.com/usabilla/usabilla-u4a
 ### Angular
 
 ```tsx
-import { Usabilla } from '@ionic-native/usabilla-cordova-sdk/ngx';
+import { Usabilla } from '@awesome-cordova-plugins/usabilla-cordova-sdk/ngx';
 
 
 constructor(private usabilla: Usabilla) { }

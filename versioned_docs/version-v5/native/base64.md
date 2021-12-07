@@ -51,12 +51,12 @@ This Plugin is used to encode base64 of any file, it uses js code for iOS, but i
 >
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
-      $ npm install com-badrit-base64 {'\n'}$ npm install @ionic-native/base64 {'\n'}$ ionic cap sync
+      $ npm install com-badrit-base64 {'\n'}$ npm install @awesome-cordova-plugins/base64 {'\n'}$ ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
-      $ ionic cordova plugin add com-badrit-base64 {'\n'}$ npm install @ionic-native/base64 {'\n'}
+      $ ionic cordova plugin add com-badrit-base64 {'\n'}$ npm install @awesome-cordova-plugins/base64 {'\n'}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">
@@ -88,7 +88,7 @@ This Plugin is used to encode base64 of any file, it uses js code for iOS, but i
 ### Angular
 
 ```tsx
-import { Base64 } from '@ionic-native/base64/ngx';
+import { Base64 } from '@awesome-cordova-plugins/base64/ngx';
 
 constructor(private base64: Base64) { }
 

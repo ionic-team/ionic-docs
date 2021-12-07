@@ -54,12 +54,12 @@ This plugin allows you to upload and download files.
 >
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
-      $ npm install cordova-plugin-file-transfer {'\n'}$ npm install @ionic-native/file-transfer {'\n'}$ ionic cap sync
+      $ npm install cordova-plugin-file-transfer {'\n'}$ npm install @awesome-cordova-plugins/file-transfer {'\n'}$ ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
-      $ ionic cordova plugin add cordova-plugin-file-transfer {'\n'}$ npm install @ionic-native/file-transfer {'\n'}
+      $ ionic cordova plugin add cordova-plugin-file-transfer {'\n'}$ npm install @awesome-cordova-plugins/file-transfer {'\n'}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">
@@ -96,8 +96,8 @@ This plugin allows you to upload and download files.
 ### Angular
 
 ```tsx
-import { FileTransfer, FileUploadOptions, FileTransferObject } from '@ionic-native/file-transfer/ngx';
-import { File } from '@ionic-native/file';
+import { FileTransfer, FileUploadOptions, FileTransferObject } from '@awesome-cordova-plugins/file-transfer/ngx';
+import { File } from '@awesome-cordova-plugins/file';
 
 constructor(private transfer: FileTransfer, private file: File) { }
 

@@ -55,12 +55,12 @@ Requires Cordova plugin: `cordova-plugin-statusbar`. For more info, please see t
 >
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
-      $ npm install cordova-plugin-statusbar {'\n'}$ npm install @ionic-native/status-bar {'\n'}$ ionic cap sync
+      $ npm install cordova-plugin-statusbar {'\n'}$ npm install @awesome-cordova-plugins/status-bar {'\n'}$ ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
-      $ ionic cordova plugin add cordova-plugin-statusbar {'\n'}$ npm install @ionic-native/status-bar {'\n'}
+      $ ionic cordova plugin add cordova-plugin-statusbar {'\n'}$ npm install @awesome-cordova-plugins/status-bar {'\n'}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">
@@ -97,7 +97,7 @@ Not Compatible
 ### Angular
 
 ```tsx
-import { StatusBar } from '@ionic-native/status-bar/ngx';
+import { StatusBar } from '@awesome-cordova-plugins/status-bar/ngx';
 
 constructor(private statusBar: StatusBar) { }
 

@@ -53,12 +53,12 @@ Requires Cordova plugin: `cordova-plugin-qqsdk`. For more info, please see the [
 >
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
-      $ npm install cordova-plugin-qqsdk {'\n'}$ npm install @ionic-native/qqsdk {'\n'}$ ionic cap sync
+      $ npm install cordova-plugin-qqsdk {'\n'}$ npm install @awesome-cordova-plugins/qqsdk {'\n'}$ ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
-      $ ionic cordova plugin add cordova-plugin-qqsdk {'\n'}$ npm install @ionic-native/qqsdk {'\n'}
+      $ ionic cordova plugin add cordova-plugin-qqsdk {'\n'}$ npm install @awesome-cordova-plugins/qqsdk {'\n'}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">
@@ -90,7 +90,7 @@ Requires Cordova plugin: `cordova-plugin-qqsdk`. For more info, please see the [
 ### Angular
 
 ```tsx
-import { QQSDK, QQShareOptions } from '@ionic-native/qqsdk/ngx';
+import { QQSDK, QQShareOptions } from '@awesome-cordova-plugins/qqsdk/ngx';
 
 constructor(private qq: QQSDK) { }
 

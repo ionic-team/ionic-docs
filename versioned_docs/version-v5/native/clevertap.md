@@ -51,12 +51,12 @@ Cordova Plugin that wraps CleverTap SDK for Android and iOS
 >
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
-      $ npm install clevertap-cordova {'\n'}$ npm install @ionic-native/clevertap {'\n'}$ ionic cap sync
+      $ npm install clevertap-cordova {'\n'}$ npm install @awesome-cordova-plugins/clevertap {'\n'}$ ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
-      $ ionic cordova plugin add clevertap-cordova {'\n'}$ npm install @ionic-native/clevertap {'\n'}
+      $ ionic cordova plugin add clevertap-cordova {'\n'}$ npm install @awesome-cordova-plugins/clevertap {'\n'}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">
@@ -88,7 +88,7 @@ Cordova Plugin that wraps CleverTap SDK for Android and iOS
 ### Angular
 
 ```tsx
-import { CleverTap } from '@ionic-native/clevertap/ngx';
+import { CleverTap } from '@awesome-cordova-plugins/clevertap/ngx';
 
 constructor(private clevertap: CleverTap) { }
 

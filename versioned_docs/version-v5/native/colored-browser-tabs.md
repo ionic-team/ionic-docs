@@ -56,13 +56,13 @@ This plugin opens Chrome Custom Tabs on Android or SafariViewController on iOS
 >
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
-      $ npm install cordova-plugin-colored-browser-tabs {'\n'}$ npm install @ionic-native/colored-browser-tabs {'\n'}$
+      $ npm install cordova-plugin-colored-browser-tabs {'\n'}$ npm install @awesome-cordova-plugins/colored-browser-tabs {'\n'}$
       ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
-      $ ionic cordova plugin add cordova-plugin-colored-browser-tabs {'\n'}$ npm install @ionic-native/colored-browser-tabs{' '}
+      $ ionic cordova plugin add cordova-plugin-colored-browser-tabs {'\n'}$ npm install @awesome-cordova-plugins/colored-browser-tabs{' '}
       {'\n'}
     </CodeBlock>
   </TabItem>
@@ -95,7 +95,7 @@ This plugin opens Chrome Custom Tabs on Android or SafariViewController on iOS
 ### Angular
 
 ```tsx
-import { ColoredBrowserTabs } from '@ionic-native/colored-browser-tabs/ngx';
+import { ColoredBrowserTabs } from '@awesome-cordova-plugins/colored-browser-tabs/ngx';
 
 
 constructor(private browserTabs: ColoredBrowserTabs) { }

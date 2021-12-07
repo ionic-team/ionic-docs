@@ -60,12 +60,12 @@ Requires the Cordova plugin: `cordova-plugin-ionic-webview` > 2.0. For more info
 >
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
-      $ npm install cordova-plugin-ionic-webview {'\n'}$ npm install @ionic-native/ionic-webview {'\n'}$ ionic cap sync
+      $ npm install cordova-plugin-ionic-webview {'\n'}$ npm install @awesome-cordova-plugins/ionic-webview {'\n'}$ ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
-      $ ionic cordova plugin add cordova-plugin-ionic-webview {'\n'}$ npm install @ionic-native/ionic-webview {'\n'}
+      $ ionic cordova plugin add cordova-plugin-ionic-webview {'\n'}$ npm install @awesome-cordova-plugins/ionic-webview {'\n'}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">
@@ -101,7 +101,7 @@ Not Compatible
 ### Angular
 
 ```tsx
-import { WebView } from '@ionic-native/ionic-webview/ngx';
+import { WebView } from '@awesome-cordova-plugins/ionic-webview/ngx';
 
 
 constructor(private webview: WebView) { }

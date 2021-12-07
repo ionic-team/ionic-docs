@@ -56,13 +56,13 @@ Plugin for iOS 12 ASWebAuthenticationSession API
 >
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
-      $ npm install cordova-plugin-ios-aswebauthenticationsession-api {'\n'}$ npm install @ionic-native/ios-aswebauthenticationsession-api{' '}
+      $ npm install cordova-plugin-ios-aswebauthenticationsession-api {'\n'}$ npm install @awesome-cordova-plugins/ios-aswebauthenticationsession-api{' '}
       {'\n'}$ ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
-      $ ionic cordova plugin add cordova-plugin-ios-aswebauthenticationsession-api {'\n'}$ npm install @ionic-native/ios-aswebauthenticationsession-api{' '}
+      $ ionic cordova plugin add cordova-plugin-ios-aswebauthenticationsession-api {'\n'}$ npm install @awesome-cordova-plugins/ios-aswebauthenticationsession-api{' '}
       {'\n'}
     </CodeBlock>
   </TabItem>
@@ -94,7 +94,7 @@ Plugin for iOS 12 ASWebAuthenticationSession API
 ### Angular
 
 ```tsx
-import { IosASWebauthenticationSession } from '@ionic-native/ios-aswebauthenticationsession-api/ngx';
+import { IosASWebauthenticationSession } from '@awesome-cordova-plugins/ios-aswebauthenticationsession-api/ngx';
 
 
 constructor(private IosASWebauthenticationSession: ios-aswebauthenticationsession-api) { }

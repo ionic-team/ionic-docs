@@ -56,12 +56,12 @@ Implementation of Nuance SpeechKit SDK on Ionic
 >
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
-      $ npm install cordova-plugin-nuance-speechkit {'\n'}$ npm install @ionic-native/speechkit {'\n'}$ ionic cap sync
+      $ npm install cordova-plugin-nuance-speechkit {'\n'}$ npm install @awesome-cordova-plugins/speechkit {'\n'}$ ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
-      $ ionic cordova plugin add cordova-plugin-nuance-speechkit {'\n'}$ npm install @ionic-native/speechkit {'\n'}
+      $ ionic cordova plugin add cordova-plugin-nuance-speechkit {'\n'}$ npm install @awesome-cordova-plugins/speechkit {'\n'}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">
@@ -93,7 +93,7 @@ Implementation of Nuance SpeechKit SDK on Ionic
 ### Angular
 
 ```tsx
-import { SpeechKit } from '@ionic-native/speechkit/ngx';
+import { SpeechKit } from '@awesome-cordova-plugins/speechkit/ngx';
 
 constructor(private speechkit: SpeechKit) { }
 

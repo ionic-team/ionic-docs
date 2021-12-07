@@ -51,12 +51,12 @@ import CodeBlock from '@theme/CodeBlock';
 >
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
-      $ npm install cordova-plugin-starprnt {'\n'}$ npm install @ionic-native/star-prnt {'\n'}$ ionic cap sync
+      $ npm install cordova-plugin-starprnt {'\n'}$ npm install @awesome-cordova-plugins/star-prnt {'\n'}$ ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
-      $ ionic cordova plugin add cordova-plugin-starprnt {'\n'}$ npm install @ionic-native/star-prnt {'\n'}
+      $ ionic cordova plugin add cordova-plugin-starprnt {'\n'}$ npm install @awesome-cordova-plugins/star-prnt {'\n'}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">
@@ -88,7 +88,7 @@ import CodeBlock from '@theme/CodeBlock';
 ### Angular
 
 ```tsx
-import { StarPRNT } from '@ionic-native/star-prnt/ngx';
+import { StarPRNT } from '@awesome-cordova-plugins/star-prnt/ngx';
 
 
 constructor(private starprnt: StarPRNT) { }

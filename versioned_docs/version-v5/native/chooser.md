@@ -64,12 +64,12 @@ The following must be added to config.xml to prevent crashing when selecting lar
 >
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
-      $ npm install cordova-plugin-chooser {'\n'}$ npm install @ionic-native/chooser {'\n'}$ ionic cap sync
+      $ npm install cordova-plugin-chooser {'\n'}$ npm install @awesome-cordova-plugins/chooser {'\n'}$ ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
-      $ ionic cordova plugin add cordova-plugin-chooser {'\n'}$ npm install @ionic-native/chooser {'\n'}
+      $ ionic cordova plugin add cordova-plugin-chooser {'\n'}$ npm install @awesome-cordova-plugins/chooser {'\n'}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">
@@ -101,7 +101,7 @@ The following must be added to config.xml to prevent crashing when selecting lar
 ### Angular
 
 ```tsx
-import { Chooser } from '@ionic-native/chooser/ngx';
+import { Chooser } from '@awesome-cordova-plugins/chooser/ngx';
 
 
 constructor(private chooser: Chooser) { }

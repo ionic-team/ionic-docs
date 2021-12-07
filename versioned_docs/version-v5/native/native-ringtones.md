@@ -57,13 +57,13 @@ And you can also use this plugin to play or stop the native ringtones and custom
 >
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
-      $ npm install cordova-plugin-native-ringtones {'\n'}$ npm install @ionic-native/native-ringtones {'\n'}$ ionic cap
+      $ npm install cordova-plugin-native-ringtones {'\n'}$ npm install @awesome-cordova-plugins/native-ringtones {'\n'}$ ionic cap
       sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
-      $ ionic cordova plugin add cordova-plugin-native-ringtones {'\n'}$ npm install @ionic-native/native-ringtones {'\n'}
+      $ ionic cordova plugin add cordova-plugin-native-ringtones {'\n'}$ npm install @awesome-cordova-plugins/native-ringtones {'\n'}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">
@@ -95,7 +95,7 @@ And you can also use this plugin to play or stop the native ringtones and custom
 ### Angular
 
 ```
-import { NativeRingtones } from '@ionic-native/native-ringtones/ngx';
+import { NativeRingtones } from '@awesome-cordova-plugins/native-ringtones/ngx';
 
 
 constructor(private ringtones: NativeRingtones) { }

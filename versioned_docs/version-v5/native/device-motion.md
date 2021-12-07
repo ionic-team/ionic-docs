@@ -51,12 +51,12 @@ Requires Cordova plugin: `cordova-plugin-device-motion`. For more info, please s
 >
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
-      $ npm install cordova-plugin-device-motion {'\n'}$ npm install @ionic-native/device-motion {'\n'}$ ionic cap sync
+      $ npm install cordova-plugin-device-motion {'\n'}$ npm install @awesome-cordova-plugins/device-motion {'\n'}$ ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
-      $ ionic cordova plugin add cordova-plugin-device-motion {'\n'}$ npm install @ionic-native/device-motion {'\n'}
+      $ ionic cordova plugin add cordova-plugin-device-motion {'\n'}$ npm install @awesome-cordova-plugins/device-motion {'\n'}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">
@@ -95,7 +95,7 @@ Requires Cordova plugin: `cordova-plugin-device-motion`. For more info, please s
 ### Angular
 
 ```tsx
-import { DeviceMotion, DeviceMotionAccelerationData } from '@ionic-native/device-motion/ngx';
+import { DeviceMotion, DeviceMotionAccelerationData } from '@awesome-cordova-plugins/device-motion/ngx';
 
 constructor(private deviceMotion: DeviceMotion) { }
 

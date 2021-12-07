@@ -49,12 +49,12 @@ import CodeBlock from '@theme/CodeBlock';
 >
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
-      $ npm install card.io.cordova.mobilesdk {'\n'}$ npm install @ionic-native/card-io {'\n'}$ ionic cap sync
+      $ npm install card.io.cordova.mobilesdk {'\n'}$ npm install @awesome-cordova-plugins/card-io {'\n'}$ ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
-      $ ionic cordova plugin add card.io.cordova.mobilesdk {'\n'}$ npm install @ionic-native/card-io {'\n'}
+      $ ionic cordova plugin add card.io.cordova.mobilesdk {'\n'}$ npm install @awesome-cordova-plugins/card-io {'\n'}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">
@@ -99,7 +99,7 @@ Note: For use with iOS 10 + When building your app with the iOS 10 SDK +, you ha
 ```
 
 ```tsx
-import { CardIO } from '@ionic-native/card-io/ngx';
+import { CardIO } from '@awesome-cordova-plugins/card-io/ngx';
 
 constructor(private cardIO: CardIO) { }
 

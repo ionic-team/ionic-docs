@@ -60,12 +60,12 @@ Requires Cordova plugin: `cordova-plugin-app-version`. For more info, please see
 >
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
-      $ npm install cordova-plugin-app-version {'\n'}$ npm install @ionic-native/app-version {'\n'}$ ionic cap sync
+      $ npm install cordova-plugin-app-version {'\n'}$ npm install @awesome-cordova-plugins/app-version {'\n'}$ ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
-      $ ionic cordova plugin add cordova-plugin-app-version {'\n'}$ npm install @ionic-native/app-version {'\n'}
+      $ ionic cordova plugin add cordova-plugin-app-version {'\n'}$ npm install @awesome-cordova-plugins/app-version {'\n'}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">
@@ -98,7 +98,7 @@ Requires Cordova plugin: `cordova-plugin-app-version`. For more info, please see
 ### Angular
 
 ```tsx
-import { AppVersion } from '@ionic-native/app-version/ngx';
+import { AppVersion } from '@awesome-cordova-plugins/app-version/ngx';
 
 constructor(private appVersion: AppVersion) { }
 

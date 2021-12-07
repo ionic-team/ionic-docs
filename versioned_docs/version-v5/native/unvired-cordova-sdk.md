@@ -60,13 +60,13 @@ pod repo update
 >
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
-      $ npm install https://github.com/unvired/cordova-plugin-unvired-sdk {'\n'}$ npm install @ionic-native/unvired-cordova-sdk{' '}
+      $ npm install https://github.com/unvired/cordova-plugin-unvired-sdk {'\n'}$ npm install @awesome-cordova-plugins/unvired-cordova-sdk{' '}
       {'\n'}$ ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
-      $ ionic cordova plugin add https://github.com/unvired/cordova-plugin-unvired-sdk {'\n'}$ npm install @ionic-native/unvired-cordova-sdk{' '}
+      $ ionic cordova plugin add https://github.com/unvired/cordova-plugin-unvired-sdk {'\n'}$ npm install @awesome-cordova-plugins/unvired-cordova-sdk{' '}
       {'\n'}
     </CodeBlock>
   </TabItem>
@@ -101,7 +101,7 @@ pod repo update
 ### Angular
 
 ```tsx
-import { UnviredCordovaSDK } from '@ionic-native/unvired-cordova-sdk/ngx';
+import { UnviredCordovaSDK } from '@awesome-cordova-plugins/unvired-cordova-sdk/ngx';
 
 
 constructor(private unviredSDK: UnviredCordovaSDK) { }

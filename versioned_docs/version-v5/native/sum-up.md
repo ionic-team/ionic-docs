@@ -51,12 +51,12 @@ Plugin to communicate with a SumUp payment terminal
 >
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
-      $ npm install cordova-sumup-plugin {'\n'}$ npm install @ionic-native/sum-up {'\n'}$ ionic cap sync
+      $ npm install cordova-sumup-plugin {'\n'}$ npm install @awesome-cordova-plugins/sum-up {'\n'}$ ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
-      $ ionic cordova plugin add cordova-sumup-plugin {'\n'}$ npm install @ionic-native/sum-up {'\n'}
+      $ ionic cordova plugin add cordova-sumup-plugin {'\n'}$ npm install @awesome-cordova-plugins/sum-up {'\n'}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">
@@ -88,7 +88,7 @@ Plugin to communicate with a SumUp payment terminal
 ### Angular
 
 ```tsx
-import { SumUp } from '@ionic-native/sum-up';
+import { SumUp } from '@awesome-cordova-plugins/sum-up';
 
 
 constructor(private sumUp: SumUp) { }

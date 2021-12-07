@@ -51,12 +51,12 @@ Edit videos using native device APIs
 >
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
-      $ npm install cordova-plugin-video-editor {'\n'}$ npm install @ionic-native/video-editor {'\n'}$ ionic cap sync
+      $ npm install cordova-plugin-video-editor {'\n'}$ npm install @awesome-cordova-plugins/video-editor {'\n'}$ ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
-      $ ionic cordova plugin add cordova-plugin-video-editor {'\n'}$ npm install @ionic-native/video-editor {'\n'}
+      $ ionic cordova plugin add cordova-plugin-video-editor {'\n'}$ npm install @awesome-cordova-plugins/video-editor {'\n'}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">
@@ -90,7 +90,7 @@ Edit videos using native device APIs
 ### Angular
 
 ```tsx
-import { VideoEditor } from '@ionic-native/video-editor/ngx';
+import { VideoEditor } from '@awesome-cordova-plugins/video-editor/ngx';
 
 constructor(private videoEditor: VideoEditor) { }
 

@@ -52,12 +52,12 @@ Use the quikkly scanner in your ionic app
 >
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
-      $ npm install cordova-plugin-quikkly {'\n'}$ npm install @ionic-native/quikkly {'\n'}$ ionic cap sync
+      $ npm install cordova-plugin-quikkly {'\n'}$ npm install @awesome-cordova-plugins/quikkly {'\n'}$ ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
-      $ ionic cordova plugin add cordova-plugin-quikkly {'\n'}$ npm install @ionic-native/quikkly {'\n'}
+      $ ionic cordova plugin add cordova-plugin-quikkly {'\n'}$ npm install @awesome-cordova-plugins/quikkly {'\n'}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">

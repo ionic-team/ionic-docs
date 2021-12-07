@@ -78,13 +78,13 @@ And in the same file, you'll have to add `xmlns:tools="http://schemas.android.co
 >
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
-      $ npm install cordova-plugin-firebase-analytics {'\n'}$ npm install @ionic-native/firebase-analytics {'\n'}$ ionic
+      $ npm install cordova-plugin-firebase-analytics {'\n'}$ npm install @awesome-cordova-plugins/firebase-analytics {'\n'}$ ionic
       cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
-      $ ionic cordova plugin add cordova-plugin-firebase-analytics {'\n'}$ npm install @ionic-native/firebase-analytics {'\n'}
+      $ ionic cordova plugin add cordova-plugin-firebase-analytics {'\n'}$ npm install @awesome-cordova-plugins/firebase-analytics {'\n'}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">
@@ -116,7 +116,7 @@ And in the same file, you'll have to add `xmlns:tools="http://schemas.android.co
 ### Angular
 
 ```tsx
-import { FirebaseAnalytics } from '@ionic-native/firebase-analytics/ngx';
+import { FirebaseAnalytics } from '@awesome-cordova-plugins/firebase-analytics/ngx';
 
 
 constructor(private firebaseAnalytics: FirebaseAnalytics) { }

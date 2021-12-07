@@ -51,13 +51,13 @@ Captures a screen shot
 >
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
-      $ npm install com.darktalker.cordova.screenshot {'\n'}$ npm install @ionic-native/screenshot {'\n'}$ ionic cap
+      $ npm install com.darktalker.cordova.screenshot {'\n'}$ npm install @awesome-cordova-plugins/screenshot {'\n'}$ ionic cap
       sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
-      $ ionic cordova plugin add com.darktalker.cordova.screenshot {'\n'}$ npm install @ionic-native/screenshot {'\n'}
+      $ ionic cordova plugin add com.darktalker.cordova.screenshot {'\n'}$ npm install @awesome-cordova-plugins/screenshot {'\n'}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">
@@ -90,7 +90,7 @@ Captures a screen shot
 ### Angular
 
 ```tsx
-import { Screenshot } from '@ionic-native/screenshot/ngx';
+import { Screenshot } from '@awesome-cordova-plugins/screenshot/ngx';
 
 constructor(private screenshot: Screenshot) { }
 

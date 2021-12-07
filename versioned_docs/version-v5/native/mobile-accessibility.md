@@ -57,13 +57,13 @@ It also allows an application to send a string to be spoken by the screen reader
 >
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
-      $ npm install phonegap-plugin-mobile-accessibility {'\n'}$ npm install @ionic-native/mobile-accessibility {'\n'}$
+      $ npm install phonegap-plugin-mobile-accessibility {'\n'}$ npm install @awesome-cordova-plugins/mobile-accessibility {'\n'}$
       ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
-      $ ionic cordova plugin add phonegap-plugin-mobile-accessibility {'\n'}$ npm install @ionic-native/mobile-accessibility{' '}
+      $ ionic cordova plugin add phonegap-plugin-mobile-accessibility {'\n'}$ npm install @awesome-cordova-plugins/mobile-accessibility{' '}
       {'\n'}
     </CodeBlock>
   </TabItem>
@@ -98,7 +98,7 @@ It also allows an application to send a string to be spoken by the screen reader
 ### Angular
 
 ```tsx
-import { MobileAccessibility } from '@ionic-native/mobile-accessibility/ngx';
+import { MobileAccessibility } from '@awesome-cordova-plugins/mobile-accessibility/ngx';
 
 
 constructor(private mobileAccessibility: MobileAccessibility) { }

@@ -51,12 +51,12 @@ Electric Imp BlinkUp ionic plugin.
 >
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
-      $ npm install cordova-plugin-blinkup {'\n'}$ npm install @ionic-native/blinkup {'\n'}$ ionic cap sync
+      $ npm install cordova-plugin-blinkup {'\n'}$ npm install @awesome-cordova-plugins/blinkup {'\n'}$ ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
-      $ ionic cordova plugin add cordova-plugin-blinkup {'\n'}$ npm install @ionic-native/blinkup {'\n'}
+      $ ionic cordova plugin add cordova-plugin-blinkup {'\n'}$ npm install @awesome-cordova-plugins/blinkup {'\n'}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">
@@ -88,7 +88,7 @@ Electric Imp BlinkUp ionic plugin.
 ### Angular
 
 ```tsx
-import { BlinkUp } from '@ionic-native/blinkup/ngx';
+import { BlinkUp } from '@awesome-cordova-plugins/blinkup/ngx';
 
 const options = &lt;BlinkUpWifiOptions>{
    apiKey: 'API_KEY',

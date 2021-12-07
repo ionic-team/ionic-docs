@@ -52,12 +52,12 @@ blinkid-phonegap repository for available recognizers and other settings
 >
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
-      $ npm install blinkid-cordova {'\n'}$ npm install @ionic-native/blinkid {'\n'}$ ionic cap sync
+      $ npm install blinkid-cordova {'\n'}$ npm install @awesome-cordova-plugins/blinkid {'\n'}$ ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
-      $ ionic cordova plugin add blinkid-cordova {'\n'}$ npm install @ionic-native/blinkid {'\n'}
+      $ ionic cordova plugin add blinkid-cordova {'\n'}$ npm install @awesome-cordova-plugins/blinkid {'\n'}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">
@@ -89,7 +89,7 @@ blinkid-phonegap repository for available recognizers and other settings
 ### Angular
 
 ```tsx
-import { BlinkId, RecognizerResultState } from '@ionic-native/blinkid/ngx';
+import { BlinkId, RecognizerResultState } from '@awesome-cordova-plugins/blinkid/ngx';
 
 constructor(private blinkId: BlinkId) { }
 

@@ -51,12 +51,12 @@ Opens an app's page in the market place (Google Play, App Store)
 >
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
-      $ npm install cordova-plugin-market {'\n'}$ npm install @ionic-native/market {'\n'}$ ionic cap sync
+      $ npm install cordova-plugin-market {'\n'}$ npm install @awesome-cordova-plugins/market {'\n'}$ ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
-      $ ionic cordova plugin add cordova-plugin-market {'\n'}$ npm install @ionic-native/market {'\n'}
+      $ ionic cordova plugin add cordova-plugin-market {'\n'}$ npm install @awesome-cordova-plugins/market {'\n'}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">
@@ -88,7 +88,7 @@ Opens an app's page in the market place (Google Play, App Store)
 ### Angular
 
 ```tsx
-import { Market } from '@ionic-native/market/ngx';
+import { Market } from '@awesome-cordova-plugins/market/ngx';
 
 constructor(private market: Market) { }
 

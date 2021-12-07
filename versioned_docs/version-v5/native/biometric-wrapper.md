@@ -51,12 +51,12 @@ May be used in Banking domain
 >
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
-      $ npm install cordova-plugin-biometric {'\n'}$ npm install @ionic-native/biometric-wrapper {'\n'}$ ionic cap sync
+      $ npm install cordova-plugin-biometric {'\n'}$ npm install @awesome-cordova-plugins/biometric-wrapper {'\n'}$ ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
-      $ ionic cordova plugin add cordova-plugin-biometric {'\n'}$ npm install @ionic-native/biometric-wrapper {'\n'}
+      $ ionic cordova plugin add cordova-plugin-biometric {'\n'}$ npm install @awesome-cordova-plugins/biometric-wrapper {'\n'}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">
@@ -87,7 +87,7 @@ May be used in Banking domain
 ### Angular
 
 ```tsx
-import { BiometricWrapper } from '@ionic-native/biometric-wrapper/ngx';
+import { BiometricWrapper } from '@awesome-cordova-plugins/biometric-wrapper/ngx';
 
 
 constructor(private biometricWrapper: BiometricWrapper) { }

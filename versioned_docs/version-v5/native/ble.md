@@ -63,12 +63,12 @@ Simultaneous connections to multiple peripherals are supported.
 >
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
-      $ npm install cordova-plugin-ble-central {'\n'}$ npm install @ionic-native/ble {'\n'}$ ionic cap sync
+      $ npm install cordova-plugin-ble-central {'\n'}$ npm install @awesome-cordova-plugins/ble {'\n'}$ ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
-      $ ionic cordova plugin add cordova-plugin-ble-central {'\n'}$ npm install @ionic-native/ble {'\n'}
+      $ ionic cordova plugin add cordova-plugin-ble-central {'\n'}$ npm install @awesome-cordova-plugins/ble {'\n'}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">
@@ -101,7 +101,7 @@ Simultaneous connections to multiple peripherals are supported.
 
 ```tsx
 
-import { BLE } from '@ionic-native/ble/ngx';
+import { BLE } from '@awesome-cordova-plugins/ble/ngx';
 
 constructor(private ble: BLE) { }
 

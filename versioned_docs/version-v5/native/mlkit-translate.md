@@ -56,13 +56,13 @@ Plugin that implements MLKit Translation and Language Identification features.
 >
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
-      $ npm install cordova-plugin-mlkit-translate {'\n'}$ npm install @ionic-native/mlkit-translate {'\n'}$ ionic cap
+      $ npm install cordova-plugin-mlkit-translate {'\n'}$ npm install @awesome-cordova-plugins/mlkit-translate {'\n'}$ ionic cap
       sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
-      $ ionic cordova plugin add cordova-plugin-mlkit-translate {'\n'}$ npm install @ionic-native/mlkit-translate {'\n'}
+      $ ionic cordova plugin add cordova-plugin-mlkit-translate {'\n'}$ npm install @awesome-cordova-plugins/mlkit-translate {'\n'}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">
@@ -94,7 +94,7 @@ Plugin that implements MLKit Translation and Language Identification features.
 ### Angular
 
 ```tsx
-import { MLKitTranslate } from '@ionic-native/ml-kit-translate';
+import { MLKitTranslate } from '@awesome-cordova-plugins/ml-kit-translate';
 
 
 constructor(private mlkitTranslate: MLKitTranslate) { }

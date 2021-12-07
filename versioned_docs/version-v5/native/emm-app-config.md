@@ -53,13 +53,13 @@ Requires the Cordova plugin: `cordova-plugin-emm-app-config`. For more info, ple
 >
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
-      $ npm install cordova-plugin-emm-app-config {'\n'}$ npm install @ionic-native/emm-app-config {'\n'}$ ionic cap
+      $ npm install cordova-plugin-emm-app-config {'\n'}$ npm install @awesome-cordova-plugins/emm-app-config {'\n'}$ ionic cap
       sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
-      $ ionic cordova plugin add cordova-plugin-emm-app-config {'\n'}$ npm install @ionic-native/emm-app-config {'\n'}
+      $ ionic cordova plugin add cordova-plugin-emm-app-config {'\n'}$ npm install @awesome-cordova-plugins/emm-app-config {'\n'}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">
@@ -91,7 +91,7 @@ Requires the Cordova plugin: `cordova-plugin-emm-app-config`. For more info, ple
 ### Angular
 
 ```tsx
-import { EmmAppConfig } from '@ionic-native/emm-app-config/ngx';
+import { EmmAppConfig } from '@awesome-cordova-plugins/emm-app-config/ngx';
 
 
 constructor(private readonly emmAppConfig: EmmAppConfig) { }

@@ -56,13 +56,13 @@ Cordova plugin for Firebase MLKit Vision
 >
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
-      $ npm install cordova-plugin-firebase-mlvision {'\n'}$ npm install @ionic-native/firebase-vision {'\n'}$ ionic cap
+      $ npm install cordova-plugin-firebase-mlvision {'\n'}$ npm install @awesome-cordova-plugins/firebase-vision {'\n'}$ ionic cap
       sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
-      $ ionic cordova plugin add cordova-plugin-firebase-mlvision {'\n'}$ npm install @ionic-native/firebase-vision {'\n'}
+      $ ionic cordova plugin add cordova-plugin-firebase-mlvision {'\n'}$ npm install @awesome-cordova-plugins/firebase-vision {'\n'}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">
@@ -94,7 +94,7 @@ Cordova plugin for Firebase MLKit Vision
 ### Angular
 
 ```tsx
-import { FirebaseVision } from '@ionic-native/firebase-vision/ngx';
+import { FirebaseVision } from '@awesome-cordova-plugins/firebase-vision/ngx';
 
 
 constructor(private firebaseVision: FirebaseVision) { }

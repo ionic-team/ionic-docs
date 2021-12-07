@@ -53,12 +53,12 @@ Requires Cordova plugin: cordova-plugin-pincheck. For more info, please see the 
 >
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
-      $ npm install cordova-plugin-pincheck {'\n'}$ npm install @ionic-native/pin-check {'\n'}$ ionic cap sync
+      $ npm install cordova-plugin-pincheck {'\n'}$ npm install @awesome-cordova-plugins/pin-check {'\n'}$ ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
-      $ ionic cordova plugin add cordova-plugin-pincheck {'\n'}$ npm install @ionic-native/pin-check {'\n'}
+      $ ionic cordova plugin add cordova-plugin-pincheck {'\n'}$ npm install @awesome-cordova-plugins/pin-check {'\n'}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">
@@ -90,7 +90,7 @@ Requires Cordova plugin: cordova-plugin-pincheck. For more info, please see the 
 ### Angular
 
 ```tsx
-import { PinCheck } from '@ionic-native/pin-check/ngx';
+import { PinCheck } from '@awesome-cordova-plugins/pin-check/ngx';
 import { Platform } from 'ionic-angular';
 
 constructor(private pinCheck: PinCheck, private platform: Platform) { }
