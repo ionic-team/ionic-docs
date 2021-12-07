@@ -64,6 +64,7 @@ Change the owner of npm's directories to the current user:
 
 ```shell
 $ sudo chown -R $(whoami) /usr/local/{lib/node_modules,bin,share}
+$ sudo chown -R $(whoami) /usr/{lib/node_modules,bin,share} # Additionally, run this for Arch Linux based distros
 $ sudo chown -R $(whoami) ~/.npm ~/.npmrc
 ```
 
