@@ -192,6 +192,9 @@ module.exports = {
         },
       ],
     },
+    tagManager: {
+      trackingID: 'GTM-TKMGCBC',
+    },
     prism: {
       theme: { plain: {}, styles: [] },
       // https://github.com/FormidableLabs/prism-react-renderer/blob/master/src/vendor/prism/includeLangs.js
@@ -251,14 +254,8 @@ module.exports = {
     ],
     '@docusaurus/plugin-content-pages',
     '@docusaurus/plugin-debug',
-    // '@docusaurus/plugin-google-analytics'
-    [
-      '@docusaurus/plugin-google-gtag',
-      {
-        trackingID: 'UA-44023830-8',
-      },
-    ],
     '@docusaurus/plugin-sitemap',
+    '@ionic-internal/docusaurus-plugin-tag-manager',
   ],
   themes: [
     [

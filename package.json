@@ -41,6 +41,7 @@
     "@docusaurus/preset-classic": "^0.0.0-4192",
     "@docusaurus/theme-classic": "^0.0.0-4192",
     "@docusaurus/theme-search-algolia": "^0.0.0-4192",
+    "@ionic-internal/docusaurus-plugin-tag-manager": "^2.0.0",
     "@ionic-internal/ionic-ds": "^7.0.0",
     "@mdx-js/react": "^1.6.22",
     "clsx": "^1.1.1",
