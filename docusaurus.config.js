@@ -23,7 +23,7 @@ module.exports = {
   */
   onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
-  favicon: 'img/favicon.png',
+  favicon: 'img/meta/favicon.ico',
   organizationName: 'ionic-team',
   projectName: 'ionic-docs',
   themeConfig: {
