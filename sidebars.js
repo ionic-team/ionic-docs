@@ -211,19 +211,6 @@ module.exports = {
         'reference/migration',
       ],
     },
-    {
-      type: 'category',
-      label: 'Resources',
-      collapsed: false,
-      items: [
-        'developer-resources/books',
-        'developer-resources/courses',
-        'developer-resources/guides',
-        'developer-resources/posts',
-        'developer-resources/tools',
-        'developer-resources/videos',
-      ],
-    },
   ],
 
   api: [

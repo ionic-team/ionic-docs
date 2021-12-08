@@ -531,37 +531,6 @@
           "id": "version-v5/reference/migration"
         }
       ]
-    },
-    {
-      "collapsed": false,
-      "type": "category",
-      "label": "Resources",
-      "items": [
-        {
-          "type": "doc",
-          "id": "version-v5/developer-resources/books"
-        },
-        {
-          "type": "doc",
-          "id": "version-v5/developer-resources/courses"
-        },
-        {
-          "type": "doc",
-          "id": "version-v5/developer-resources/guides"
-        },
-        {
-          "type": "doc",
-          "id": "version-v5/developer-resources/posts"
-        },
-        {
-          "type": "doc",
-          "id": "version-v5/developer-resources/tools"
-        },
-        {
-          "type": "doc",
-          "id": "version-v5/developer-resources/videos"
-        }
-      ]
     }
   ],
   "version-v5/api": [
