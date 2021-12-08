@@ -1,26 +1,26 @@
 ---
 ---
 
-# Browser Support
+# ブラウザサポート
 
-Ionic's earliest goal was to make it easy to develop mobile apps using web technologies like HTML, CSS, and JavaScript. Because of this foundation in web technologies, Ionic can run anywhere the web runs — iOS, Android, browsers, PWAs, and more.
+Ionicの本来の目標は、HTML、CSS、JavaScriptといったWeb技術を使用してモバイルアプリを開発することを簡単にすることでした。Ionicはこのウェブテクノロジーの基盤により、ウェブ、iOS、Android、ブラウザ、PWAなど、どこでも実行できます。
 
 
-## Mobile Browsers
+## モバイルブラウザ
 
-In pursuit of [adaptive styling](/docs/core-concepts/fundamentals#adaptive-styling), Ionic fully supports and is well tested on the mobile platforms listed below:
+[スタイルの適用](/docs/core-concepts/fundamentals#adaptive-styling)を追求するために, Ionicは以下のモバイルプラットフォームを完全にサポート、テストしています。:
 
 | Framework | Android | iOS   |
 |:---------:|:-------:|:-----:|
 | Ionic V5  | 5.0+    | 11.0+ |
 | Ionic V4  | 4.4+  | 10.0+ |
 
-> Check the [latest Android stats](https://developer.android.com/about/dashboards/) and the [latest iOS stats](https://developer.apple.com/support/app-store/) for up-to-date platform information.
+> 最新のプラットフォームの情報については [latest Android stats](https://developer.android.com/about/dashboards/) と [latest iOS stats](https://developer.apple.com/support/app-store/) をご確認ください。
 
 
-## Desktop Browsers
+## デスクトップブラウザ
 
-Because Ionic is based on web technologies, it works just as well on desktop browsers as it does on mobile devices. For more information on desktop layouts, see [Cross Platform](/docs/core-concepts/cross-platform#desktop).
+Ionicはモバイルデバイスで正常に動作するだけでなく、ウェブ技術に基づいているので、デスクトップブラウザでも正常に機能します。デスクトップレイアウトの詳細については、[Cross Platform](/docs/core-concepts/cross-platform#desktop)をご覧ください。
 
 
 | Browser     | Ionic v5 | Ionic V4 |

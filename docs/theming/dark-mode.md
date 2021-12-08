@@ -3,13 +3,13 @@ initialTab: 'preview'
 inlineHtmlPreviews: true
 ---
 
-# Dark Mode
+# ダークモード
 
-Ionic makes it easy to change the themes of your app, including supporting dark color schemes. With growing support for dark mode in native apps, developers are now looking to add it to their apps to support user preferences.
+Ionicを使えば、ダークカラーのスキームのサポートなど、アプリのテーマを簡単に変更できます。ネイティブアプリでのダークモードのサポートが拡大していることから、開発者はユーザーの好みをサポートするためにアプリにダークモードを追加する流れがあります。
 
-## Using Media Queries
+## Media Query の利用
 
-The first way to enable dark mode is by using the [CSS media query for the user's preferred color scheme](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-color-scheme). This media query will hook into the system setting of the user's device and apply the theme if a dark mode is enabled.
+ダークモードを有効にするためにはまず、 [ユーザの設定してるカラースキーマを利用するmedia query](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-color-scheme) を使用します。このメディアクエリは、ユーザーのデバイスのシステム設定に接続され、ダークモードが有効になっている場合はテーマを適用します。
 
 ```css
 @media (prefers-color-scheme: dark) {
@@ -19,12 +19,12 @@ The first way to enable dark mode is by using the [CSS media query for the user'
 }
 ```
 
-Currently, the `prefers-color-scheme` media query has [limited browser support](https://caniuse.com/#feat=prefers-color-scheme), so users will not be able to benefit from having the dark mode applied using this media query in certain browsers. However, the dark mode can still be applied by using a [CSS class fallback](#css-class-fallback).
+現在、media query `prefers-color-scheme` は[限られたブラウザサポート](https://caniuse.com/#feat=prefers-color-scheme) であるため、一部のブラウザでは、このメディアクエリを使用してダークモードを適用することはできません。ただし、ダークモードは、 [CSS class fallback](#css-class-fallback) を使用して適用することもできます。
 
 
 ## CSS Class Fallback
 
-As a fallback method for devices that don't support the media query, the dark mode can be applied by styling a CSS selector and applying the class to the document body.
+メディアクエリをサポートしていないデバイスの代替メソッドとして、CSSセレクタをスタイル設定し、クラスをドキュメントのbodyに適用することで、ダークモードを適用できます。
 
 ```css
 @media (prefers-color-scheme: dark) {
@@ -39,14 +39,14 @@ body.dark {
 }
 ```
 
-With the variables targeting the `body.dark` selector, all that is needed now is to add the class to the `<body>` in the app. This can be done in a variety of ways depending on the framework your app is built with.
+`body.dark` セレクタをターゲットとする変数を使用する場合は、アプリケーション内の `<body>` にクラスを追加するだけです。これはアプリケーションが構築されているフレームワークによってさまざまな方法で行うことができます。
 
-Notice that the variables should be in both places in this example. We can [use JavaScript](#combining-with-javascript) in order to avoid setting the variables in two places.
+この例では、変数は両方の場所にある必要があります。2つの場所に変数を設定しないようにするために、[JavaScriptを使用](#combining-with-javascript) することができます。
 
 
-## Combining with JavaScript
+## JavaScriptとの統合
 
-In order to keep the CSS variables written once and avoid having to update them in multiple places, the fallback and class can be combined by using JavaScript to check the value of the `prefers-color-scheme` media query and adding the `dark` class if the preference is `dark`. Here's what the CSS would look like:
+CSS変数を一度だけ記述して、複数の場所で更新する必要がないようにするために、フォールバックとクラスをJavaScriptを使用して `prefers-color-scheme`  メディアクエリーの値をチェックし、プリファレンスが `dark` の場合は `dark` クラスを追加することで統合できます。CSSは次のようなものになるでしょう:
 
 ```css
 body.dark {
@@ -54,11 +54,11 @@ body.dark {
 }
 ```
 
-Notice that the variables above are only in the `body.dark` selector now, and the `prefers-color-scheme` media query has been removed.
+上記の変数は `body.dark` セレクタにのみあり、 `prefers-color-scheme` メディアクエリは削除されています。
 
-### Automatically Enable Dark Mode
+### 自動的にダークモードを有効にする
 
-In the JavaScript, the `dark` class can be added to the `<body>` by checking if the document matches the media query using [matchMedia()](https://developer.mozilla.org/en-US/docs/Web/API/Window/matchMedia). This will enable dark mode to still work based on the user preference.
+JavaScriptでは、ドキュメントが [matchMedia()](https://developer.mozilla.org/en-US/docs/Web/API/Window/matchMedia) を使用してメディアクエリと一致するかどうかをチェックすることによって、 `dark` クラスを `<body>` に追加できます。これにより、ユーザの設定に基づいてダークモードが動作するようになります。
 
 ```javascript
 // Use matchMedia to check the user preference
@@ -82,9 +82,9 @@ import Codepen from '@site/src/components/Codepen';
 <!-- Codepen https://codepen.io/ionic/pen/jONzJpG -->
 <Codepen preview="false" user="ionic" slug="jONzJpG" height="550px" default-tab="js,result"></Codepen>
 
-### Manually Toggle Dark Mode
+### 手動でダークモードをトグルする
 
-In addition to calling `toggleDarkTheme()` when the app loads and when the media query changes, the `toggleDarkTheme()` function could be called by the app, such as when a user changes a toggle, to switch between the light and dark themes:
+アプリケーションがロードされたとき、およびメディアのクエリが変更されたときに、 `toggleDarkTheme()` を呼び出すことに加えて、 `toggleDarkTheme()` 関数は、ユーザーがトグルを変更し、ライトテーマとダークテーマを切り替えるときなどに、アプリケーションによって呼び出すことができます:
 
 ```javascript
 // Query for the toggle that is used to change between themes
@@ -114,17 +114,17 @@ function checkToggle(shouldCheck) {
 <!-- Codepen https://codepen.io/ionic/pen/zYOpQLj -->
 <Codepen preview="false" user="ionic" slug="zYOpQLj" height="600px" default-tab="js,result"></Codepen>
 
-## Adjusting System UI Components
+## システムUIコンポーネントを調整する
 
-When developing a dark theme, you may notice that certain system UI components are not adjusting to dark mode properly. To fix this you will need to specify the `color-scheme`. See the <a href="https://caniuse.com/#feat=mdn-html_elements_meta_name_color-scheme" target="_blank">browser compatibility for color-scheme</a> for details on cross browser support.
+ダークテーマを開発するときに、特定のシステムUIコンポーネントがダークモードに正しく調整されていないことがあります。これを修正するには、 `color-scheme` を指定する必要があります。クロスブラウザのサポートの詳細については、 <a href="https://caniuse.com/#feat=mdn-html_elements_meta_name_color-scheme" target="_blank">ブラウザのカラースキーマの設定</a> を参照してください。
 
-While you may be mainly using Ionic components instead of only native components, `color-scheme` can also affect aspects of your application such as the scrollbar. In order to use `color-scheme` you will need to add the following HTML to the `head` of your application:
+ネイティブコンポーネントだけではなく、主にIonicコンポーネントを使用している場合に、 `color-scheme` はスクロールバーなどのアプリケーションの側面にも影響します。 `color-scheme` を使用するには、次のHTMLをアプリケーションの`head`に追加する必要があります:
 
 ```html
 <meta name="color-scheme" content="light dark" />
 ```
 
-This allows the page to indicate which color scheme it is comfortable being rendered with. Alternatively, you can add the following CSS to do this on a per-element basis:
+これにより、ページは、どのカラースキームでレンダリングするのが快適かを示すことができます。また、次のCSSを追加して、要素ごとに設定することもできます。
 
 ```css
 color-scheme: light dark;
@@ -134,21 +134,21 @@ color-scheme: light dark;
 | ----------------- | ----------------------------- |
 | <figure><img alt="Application without color-scheme" src="/img/theming/color-scheme-light.png" /></figure> | <figure><img alt="Application with color-scheme" src="/img/theming/color-scheme-dark.png" /></figure> |
 
-For more information regarding `color-scheme` please see https://web.dev/color-scheme/.
+より詳しい `color-scheme` の情報については https://web.dev/color-scheme/ をご覧ください。
 
-> `color-scheme` does not apply to the keyboard. For details on how dark mode works with the keyboard, see [Keyboard Documentation](/docs/developing/keyboard#dark-mode).
+> `color-scheme` はキーボードに反映されません。キーボードのダークモードについての詳しい情報は [Keyboard Documentation](/docs/developing/keyboard#dark-mode) をご覧ください。
 
-## Ionic Dark Theme
+## Ionicダークモード
 
-Ionic has a recommended theme for variables to use in order to get a dark mode based on the device running the app. It can be broken down into the following parts:
+Ionicには、アプリを実行しているデバイスに基づいてダークモードを取得するために使用する変数の推奨テーマがあります。次の部分に分けることができます:
 
-1. Changing the default [Ionic colors](/docs/theming/colors) for all [modes](/docs/theming/platform-styles#ionic-modes) to complement the dark background in the `body.dark` selector.
-1. Setting variables for the dark theme on `ios` devices.
-1. Setting variables for the dark theme on `md` devices.
+1. すべてのデフォルトの [modes](/docs/theming/platform-styles#ionic-modes) のデフォルトの [Ionic colors](/docs/theming/colors) を変更して `body.dark` セレクタのダークモードの背景色に対応します。
+1. `ios` デバイスでダークテーマの変数を設定します。
+1. `md` デバイスでダークテーマの変数を設定します。
 
-The following code can be copied and pasted into an app to get Ionic's dark theme. We add the `dark` class to the document body using JavaScript as mentioned in the [combining with JavaScript](#combining-with-javascript) section. The dark mode will not be enabled until the `dark` class is added to the document body.
+次のコードをコピーしてアプリに貼り付けると、Ionicのダークテーマを取得できます。 [JavaScriptとの統合](#combining-with-javascript) セクションで説明したように、JavaScriptを使用して `dark` クラスをドキュメント bodyに追加します。 `dark` クラスがドキュメント本文に追加されるまで、ダークモードは有効になりません。
 
-> For more information on the variables that are being changed, including other variables that can be added to further customize, see [Themes](/docs/theming/themes).
+> さらにカスタマイズするために追加できるその他の変数など、変更する変数の詳細については [Themes](/docs/theming/themes) をご覧ください。
 
 ```css
 /*

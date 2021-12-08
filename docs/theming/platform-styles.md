@@ -4,32 +4,32 @@ contributors:
   - brandyscarney
 ---
 
-# Platform Styles
+# プラットフォームの外観
 
-Ionic provides platform specific styles based on the device the application is running on. Styling the components to match the device guidelines allows the application to be written once but look and feel native to the user depending on where it is accessed.
+Ionicは、アプリケーションが実行されているデバイスに基づいてプラットフォーム固有の外観を提供します。デバイスのガイドラインに合わせてコンポーネントをスタイリングすることで、アクセスしたデバイスに応じてユーザーにはネイティブに見えます。
 
 
 ## Ionic Modes
 
-Ionic uses **modes** to customize the look of components. Each **platform** has a default **mode**, but this can be overridden through the global [config](../utilities/config). The following chart displays the default **mode** that is added to each **platform**:
+Ionicは **modes** を使ってコンポーネントの外観をカスタマイズします。それぞれの **プラットフォーム** はデフォルトの **mode** を持っていますが、これはグローバルの [config](../utilities/config) で上書き設定をすることができます。次の表は、それぞれの **プラットフォーム** に追加されているデフォルトの **mode** を示しています。
 
-| Platform  | Mode  | Description                                                                                                                       |
+| プラットフォーム  | Mode  | 概要                                                                                                                       |
 |-----------|-------|-----------------------------------------------------------------------------------------------------------------------------------|
-| `ios`     | `ios` | Viewing on an iPhone, iPad, or iPod will use the [iOS styles](https://www.apple.com/ios).                                   |
-| `android` | `md`  | Viewing on any Android device will use the [Material Design styles](https://material.io/guidelines/).                             |
-| `core`    | `md`  | Any platform that doesn't fit any of the above platforms will use the [Material Design styles](https://material.io/guidelines/).  |
+| `ios`     | `ios` | iPhone, iPad, もしくは iPod で表示する時は [iOS styles](https://www.apple.com/ios) が適用されます。                                   |
+| `android` | `md`  | Androidのデバイスから表示する時は [Material Design styles](https://material.io/guidelines/) が適用されます。.                             |
+| `core`    | `md`  | 上記のどのプラットフォームにも当てはまらないプラットフォームでは、 [Material Design styles](https://material.io/guidelines/) が適用されます。  |
 
-For example, an app being viewed on an Android platform will use the `md` (Material Design) mode by default. The `<html>` element will have `class="md"` added to it and all of the components will use Material Design styles:
+例えば、Androidプラットフォームが利用されている時は `md` (Material Design) が標準で利用されます。 `<html>` エレメントに `class="md"` が追加され、すべてのコンポーネントには Material Design styles が適用されます。:
 
 ```html
 <html class="md">
 ```
 
-_Note: The **platform** and the **mode** are not the same. The platform can be set to use any mode in the [config](../utilities/config) of an app._
+_Note: **platform** と **mode** は別物です。platformはアプリの [config](../utilities/config) で任意の mode を設定することができます。_
 
-## Overriding Mode Styles
+## Mode Stylesの上書き
 
-Each Ionic component can be styled based on the mode. The `html` element has both a `class` and `mode` attribute with a value equal to the current mode. These can be used to override styles for any component. For example, to style an `ion-badge` to have `uppercase` text only in `ios` mode:
+それぞれのIonicのコンポーネントは、mode に基づいた外観を設定します。 `html` エレメントは、 現在のmodeに基づいて、 `class` と `mode` の両方の属性を持ちます。 これらは任意のコンポーネントの外観を上書きすることに利用することができます。例えば、`ios` modeの時のみ `ion-badge` のテキストに `uppercase` を適用する場合、こうなります:
 
 ```css
 .ios ion-badge {
@@ -37,7 +37,7 @@ Each Ionic component can be styled based on the mode. The `html` element has bot
 }
 ```
 
-There are also many global CSS variables that can be used to override the styles. To style the background color for an `ios` app, the following can be written:
+スタイルを上書きするために使用できる多くのグローバルCSS変数もあります。`ios` アプリの背景色をスタイルするには、次のように設定します:
 
 ```css
 .ios {
@@ -45,4 +45,4 @@ There are also many global CSS variables that can be used to override the styles
 }
 ```
 
-There are many global variables that can be overridden by mode, including [Ionic's color variables](/docs/theming/colors), [theme variables](/docs/theming/themes) and [global component variables](/docs/theming/advanced).
+上書きするすべてのグローバルCSS変数のリストについては、[Ionic's color variables](/docs/theming/colors), [theme variables](/docs/theming/themes) and [global component variables](/docs/theming/advanced) をご覧ください。

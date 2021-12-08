@@ -5,31 +5,32 @@
 
 ## isPlatform
 
-The `isPlatform` method can be used to test if your app is running on a certain platform:
+`isPlatform` メソッドを使用して、アプリが特定のプラットフォームで実行されているかどうかを確認できます:
 
 ```typescript
 import { isPlatform } from '@ionic/react';
 
-isPlatform('ios'); // returns true when running on a iOS device
+isPlatform('ios'); // iOSデバイスで実行されてる時は true を返します
 ```
 
-Depending on the platform the user is on, isPlatform(platformName) will return true or false. Note that the same app can return true for more than one platform name. For example, an app running from an iPad would return true for the platform names: mobile, ios, ipad, and tablet. Additionally, if the app was running from Cordova then cordova would be true.
+ユーザー実行しているプラットフォームに応じて、isPlatform（platformName）は true または false を返します。 同じアプリが複数のプラットフォーム名に対して true を返す場合があることに注意してください。 たとえば、iPadから実行するアプリは、mobile、ios、ipad、およびtabletのプラットフォーム名に対して true を返します。 さらに、アプリが Cordova から実行されている場合、cordovaもtrueになります。
 
 ## getPlatforms
 
-The `getPlatforms` method can be used to determine which platforms your app is currently running on.
+`getPlatforms` メソッドを使用して、アプリが現在実行されているプラットフォームを判別できます。
 
 ```typescript
 import { getPlatforms } from '@ionic/react';
 
-getPlatforms(); // returns ["iphone", "ios", "mobile", "mobileweb"] from an iPhone
+getPlatforms(); // iPhoneの場合 ["iphone", "ios", "mobile", "mobileweb"] を返します
 ```
 
-Depending on what device you are on, `getPlatforms` can return multiple values. Each possible value is a hierarchy of platforms. For example, on an iPhone, it would return mobile, ios, and iphone.
+
+使用しているデバイスに応じて、 `getPlatforms` は複数の値を返すことができます。 それぞれの値はプラットフォームに応じて配列で返却されます。たとえば、iPhoneでは、mobile、ios、およびiphoneが返されます。
 
 ## Platforms
 
-Below is a table listing all the possible platform values along with corresponding descriptions.
+次の表に、使用可能なすべてのプラットフォーム値とその説明を示します。
 
 | Platform Name | Description                              |
 |---------------|------------------------------------------|

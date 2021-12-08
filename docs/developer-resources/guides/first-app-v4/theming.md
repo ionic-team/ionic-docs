@@ -1,24 +1,24 @@
 ---
 ---
 
-# Make It Your Own! Ionic Theming
+# 自分らしさを！Ionic テーマ
 
-Previously, we converted our single use Camera app into an epic photo gallery. Now, let’s explore how to make the photo gallery our own with Ionic theming. The visual design of the app is incredibly important - fortunately, Ionic provides a lot for us out-of-the-box.
+今までは、単なるカメラアプリを壮大なフォトギャラリーに発展してきました。では、Ionic のテーマ設定でフォトギャラリーを独自のものにする方法を見てみましょう。このアプリのビジュアルデザインは非常に重要で、幸運なことに、Ionic はすぐに使える多くの柔軟なテーマを提供してくれます。
 
-Ionic has nine default colors, defined as CSS variables, that can be used to change the color of its UI components:
+Ionic には CSS 変数として定義された9つのデフォルトカラーがあり、UI コンポーネントのカラーを変更するために使用できます:
 
 ![v4-theming-defaults](/img/guides/first-app-v4/theming-defaults.png)
 
-You can customize each color further by supplying a base, contrast, shade, and tint properties. These provide flexible control over your styles:
+base、contrast、shade、tint プロパティを指定することによって、各カラーをさらにカスタマイズできます。これらにより、スタイルを柔軟にコントロールできます:
 
 ![v4-theming-properties](/img/guides/first-app-v4/theming-properties.png)
 
-You can find these colors defined in `src/theme/variables.scss`.
+これらのカラーは `src/theme/variables.scss` 内に定義されていることがわかります。
 
-By changing these variables here and there, you can easily update the entire theme of the application! Try changing a few of them and watch the app update in DevApp. For example, change the default blue color for Primary to purple:
+これらの変数をあちこちで変更することで、アプリケーション全体のテーマを簡単に更新することができます！いくつかの色を変更して、DevApp でアプリの更新を見てみましょう。例えば、Primary のデフォルトの青色を紫色に変更します:
 
 ```css
-/** Ionic CSS Variables **/
+/** Ionic における CSS 変数 **/
 :root {
   /** primary **/
   --ion-color-primary: #b36bff;
@@ -30,15 +30,15 @@ By changing these variables here and there, you can easily update the entire the
 }
 ```
 
-The easiest and most powerful way to create custom color palettes for your app’s UI is Ionic's [Color Generator tool](/docs/theming/color-generator). As you change a color’s hex values, the embedded demo app automatically reflects the new colors. When you've finished making changes, simply copy and paste the generated code directly into your Ionic project.
+アプリの UI 用にカスタムカラーパレットを作る最も簡単で強力な方法は、Ionic の[カラージェネレーター](/docs/theming/color-generator)です。色の16進数の値を変更すると、埋め込まれたデモアプリに新しい色が自動的に反映されます。変更が終わったら、生成されたコードを直接 Ionic プロジェクトにコピー&ペーストします。
 
-But wait, there’s more! Ionic automatically provides platform specific styles based on the device the application is running on, giving that native look and feel your users are used to:
+しかし待ってください、まだあります！Ionic は、アプリケーションが実行されているデバイスに基づいて、プラットフォーム固有のスタイルを自動的に提供し、ユーザーが慣れているネイティブなルック・アンド・フィールを与えます:
 
 ![ios and android comparison](/img/guides/first-app-v3/ion-lab-comparison.png)
 
-In our app, this is clearly visible in how the header and the icons are styled.
+私たちのアプリでは、これはヘッダーとアイコンがどのようにスタイルされているかで、はっきりと見えます。
 
-If you want consistency, you can tell Ionic to use the same mode regardless of platform. For example, to apply Material Design (Android’s platform style), set it globally in the App Module class. Open `src/app/app.module.ts`, then set the `mode` property:
+もし一貫性が必要な場合は、プラットフォームに関係なく同じモードを使用するように Ionic に指示できます。例えば、マテリアルデザイン(Android プラットフォームのスタイル)を適用するには、App Module クラスでグローバルに設定します。`src/app/app.module.ts` を開き、そして `mode` プロパティを設定します:
 
 ```Javascript
 imports: [
@@ -50,10 +50,10 @@ imports: [
   ],
 ```
 
-Now, the iOS version of our app has a Material Design skin!
+これで、iOS 版のアプリにマテリアルデザインのスキンが追加されました！
 
 ![ios and android comparison](/img/guides/first-app-v3/ion-lab-md-styling.png)
 
-Creating gorgeous-looking Ionic apps is easy with CSS variables and platform-specific styling. You now have everything you need to get started with Ionic. 
+CSS 変数とプラットフォーム固有のスタイルを使用すれば、とても魅力的なIonic アプリケーションを簡単に作成できます。これで、Ionic を使い始めるために必要なものがすべて揃いました。
 
-Go forth and build great apps!
+素晴らしいアプリ作りに旅立ちましょう！

@@ -2,20 +2,20 @@
 
 ---
 
-# Installing Studio
+# Studioのインストール
 
-The latest downloads for Ionic Studio are available in the [Ionic Dashboard](https://dashboard.ionicframework.com/personal/downloads).
+Ionic Studioの最新版のダウンロードはこちらです。 [Ionic Dashboard](https://dashboard.ionicframework.com/personal/downloads).
 
-## Prerequisites
+## 必要な環境
 
-* macOS or Windows 10
-* Make sure you have the latest LTS release of [Node &amp; npm](/docs/intro/environment#node-npm) set up on your computer
-* Optionally install [Git](/docs/intro/environment#git) for version control
+* macOS あるいは Windows 10
+* [Node &amp; npm](/docs/intro/environment#node-npm) がセットアップされている必要があります。
+* オプションとして、バージョン管理のために [Git](/docs/intro/environment#git) をインストール
 
-## Installation
+## インストール
 
-The Ionic Studio download link can be obtained in the [downloads section](https://dashboard.ionicframework.com/personal/downloads) of the Ionic Dashboard.
+Ionic Studio のダウンロードリンクはIonicダッシュボードの [downloads section](https://dashboard.ionicframework.com/personal/downloads) にあります。
 
-Once Ionic Studio has been downloaded, run through the installer and open Ionic Studio to continue the installation process. Ionic Studio has a few tools it depends on, which are installed and updated automatically when it boots up.
+まずIonic Studioをダウンロードしインストーラーを実行、ウィザードに従います。 Ionic Studioには依存するツールがあり、それらは起動時にインストールやアップデートが自動的に行われます。
 
-Ionic Studio will automatically update itself when new versions are released, but can be reinstalled by using the download link found above.
+Ionic Studioは新しいバージョンがリリースされると自動的にアップデートされますが、上記ダウンロードリンクよりインストールしなおすことも可能です。

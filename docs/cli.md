@@ -7,11 +7,11 @@ meta:
 
 # Ionic CLI
 
-The Ionic command-line interface ([CLI](/docs/reference/glossary#cli)) is the go-to tool for developing Ionic apps.
+The Ionic command-line interface ([CLI](/docs/reference/glossary#cli)) は、Ionicアプリを開発する時に頼りになるツールです。
 
-## Installation
+## インストール
 
-The Ionic CLI can be installed globally with npm:
+Ionic CLI はnpmでグローバルにインストールできます:
 
 ```shell
 $ npm install -g @ionic/cli
@@ -19,7 +19,7 @@ $ npm install -g @ionic/cli
 
 ## Help
 
-The Ionic CLI ships with command documentation that is accessible with the `--help` flag.
+Ionic CLIでは `--help` フラグをつけることでコマンドのドキュメントを利用できます。
 
 ```shell
 $ ionic --help
@@ -33,13 +33,13 @@ $ ionic <command> <subcommand> --help
 
 <!-- TODO: image? -->
 
-## Architecture
+## 構成
 
-The Ionic CLI is built with [TypeScript](/docs/reference/glossary#typescript) and [Node.js](/docs/reference/glossary#node). It supports Node 10.3+, but the latest Node LTS is always recommended. Follow development on the open source <a href="https://github.com/ionic-team/ionic-cli" target="_blank">GitHub repository</a>.
+Ionic CLI は、[TypeScript](/docs/reference/glossary#typescript)と [Node.js](/docs/reference/glossary#node)で構築されています。Node 10.3+をサポートしていますが、最新のNode LTSが推奨です。Follow development on the open source <a href="https://github.com/ionic-team/ionic-cli" target="_blank">Github repository</a>.
 
-## Troubleshooting
+## トラブルシューティング
 
-To troubleshoot issues with the Ionic CLI, the following may be useful:
+Ionic CLIの問題をトラブルシューティングするには、以下の方法が役立ちます:
 
 - Make sure the latest version of the Ionic CLI is installed. Get the installed version by running `ionic --version`.
 - Make sure the latest Node LTS is installed. See [Node & npm](/docs/intro/environment#node-npm) environment setup.

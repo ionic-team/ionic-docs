@@ -5,11 +5,11 @@ contributors:
   - bryplano
 ---
 
-# Support Policy
+# サポートポリシー
 
-## Community Maintenance
+## コミュニティメンテナンス
 
-The Ionic Framework has been 100% open source (MIT) since the very beginning, and always will be. Developers can ensure Ionic is the right choice for their cross-platform apps through Ionic’s community maintenance strategy. The Ionic team regularly ships new releases, bug fixes, and is very welcoming to community pull requests.
+Ionic Frameworkは当初から100%オープンソース(MIT)で、今後もオープンソースとして公開されます。開発者は、Ionicのコミュニティメンテナンス戦略を通して、Ionicが彼らのクロスプラットフォームアプリにとって正しい選択であることを保証することができます。Ionicチームは定期的に新しいリリースとバグ修正を提供しており、コミュニティからのプルリクエストを歓迎しています。
 
 ## Framework Maintenance and Support Status
 Given the reality of time and resource restraints as well as the desire to keep innovating in the frontend development space, over time it becomes necessary for the Ionic team to shift focus to newer versions of the Framework. However, Ionic will do everything it can to make the transition to newer versions as smooth as possible. The Ionic team recommends updating to the newest version of the Ionic Framework for the latest features, improvements and stability updates. For more details, consult [the Migration page](/docs/reference/migration).

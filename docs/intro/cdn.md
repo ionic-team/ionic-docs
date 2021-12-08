@@ -7,13 +7,13 @@ contributors:
 
 # Ionic Packages
 
-Ionic provides different packages that can be used to quickly get started using Ionic Framework or Ionicons in a test environment, Angular, any other framework, or none at all.
+Ionicは、テスト環境、Angular、その他のフレームワーク、またはVanilla JSといったすべての状況で、Ionic Frameworkを使い始めるために使用できるさまざまなパッケージを提供しています。
 
 ## Ionic Framework CDN
 
-Ionic Framework can be included from a CDN for quick testing in a [Plunker](https://plnkr.co/), [Codepen](https://codepen.io), or any other online code editor!
+Ionicフレームワークは、[Plunker](https://plnkr.co/)、[Codepen](https://codepen.io)、またはその他のオンラインコードエディタですばやくテストするために、CDNから組み込むことができます。。
 
-It's recommended to use [jsdelivr](https://www.jsdelivr.com/) to access the Framework from a CDN. To get the latest version, add the following inside the `<head>` element in an HTML file, or where external assets are included in the online code editor:
+CDNからフレームワークにアクセスするには、 [jsdelivr](https://www.jsdelivr.com/) を使用することをお勧めします。最新バージョンを入手するためには HTMLファイルの `<head>`  要素、もしくはオンラインコードエディタの呼び出しコードに、次のコードを追加します。
 
 ```html
 <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.esm.js"></script>
@@ -21,33 +21,33 @@ It's recommended to use [jsdelivr](https://www.jsdelivr.com/) to access the Fram
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core/css/ionic.bundle.css"/>
 ```
 
-With this it's possible to use all of the Ionic Framework core components without having to install a framework. The CSS bundle will include all of the Ionic [Global Stylesheets](../layout/global-stylesheets).
+これにより、フレームワークをインストールしなくても、すべてのIonic Frameworkのコアコンポーネントを使用することができます。CSSバンドルには、すべてのIonic [Global Stylesheets](../layout/global-stylesheets) が含まれます。
 
-> This does not install Angular or any other frameworks. This allows use of the Ionic Framework core components without a framework.
+> これはAngularや他のフレームワークをインストールしません。これにより、フレームワークなしでIonic Frameworkのコアコンポーネントを使用できます。
 
 
 ## Ionic + Angular
 
-When using Ionic Framework in an Angular project, install the latest `@ionic/angular` package from [npm](/docs/reference/glossary#npm). This comes with all of the Ionic Framework components and Angular specific services and features.
+AngularプロジェクトでIonic Frameworkを使用する場合は、 [npm](/docs/reference/glossary#npm) から最新の `@ionic/angular` をインストールしてください。これによって、すべてのIonic Frameworkコンポーネントと、Angularのサービスおよび機能を使うことができます。
 
 ```shell
 $ npm install @ionic/angular@latest --save
 ```
 
-Each time there is a new Ionic Framework release, this [version](/docs/reference/versioning) will need to be updated to get the latest features and fixes. The version can be [updated using npm](/docs/developing/tips#updating-dependencies), as well.
+新しいIonic Frameworkのリリースがあるたびに、最新バージョンの機能と修正を入手するために [バージョン](/docs/reference/versioning) を更新する必要があります。最新のバージョンは [npmを使ったアップデート](/docs/developing/tips#updating-dependencies) から取得することができます。
 
-For adding Ionic to an already existing Angular project, use the Angular CLI's `ng add` feature.
+Ionicを既存のAngularプロジェクトに追加するには、Angular CLIの `ng add` 機能を使用します。
 
 ```shell
 $ ng add @ionic/angular
 ```
 
-This will add the necessary imports to the `@ionic/angular` package as well as add the styles needed.
+これにより、`@ionic/angular` に必要なパッケージと、必要なスタイルが追加されます。
 
 
 ## Ionic + React
 
-To add Ionic Framework to an already existing React project, install the `@ionic/react` and `@ionic/react-router` package.
+Ionicを既存のReactプロジェクトに追加するには、 `@ionic/react` および `@ionic/react-router` パッケージをインストールします。
 
 ```shell
 $ npm install @ionic/react
@@ -56,7 +56,7 @@ $ npm install @ionic/react-router
 
 ### CSS
 
-To include the necessary CSS in a React project, add the following to the root App component.
+必要なCSSをReactプロジェクトに含めるには、ルートアプリコンポーネントに以下を追加します。
 
 ```javascript
 /* Core CSS required for Ionic components to work properly */
@@ -97,7 +97,7 @@ import router from './router';
 const app = createApp(App)
   .use(IonicVue)
   .use(router);
-  
+
 router.isReady().then(() => {
   app.mount('#app');
 });
@@ -152,11 +152,11 @@ From here, you can learn about how to develop with Ionic Framework in our [Ionic
 
 ## Ionicons CDN
 
-Ionicons is packaged by default with the Ionic Framework, so no installation is necessary if you're using Ionic. To use Ionicons without Ionic Framework, place the following `<script>` near the end of your page, right before the closing `</body>` tag.
+IoniconsはデフォルトでIonic Frameworkに同梱されているので、Ionicを使用している場合はインストールは不要です。Ionic Frameworkを使用せずにIoniconsを使用するためには、ページの終わりの近くにある `</body>` の閉じタグの直前に以下の `<script>` タグを配置します。
 
 ```html
 <script type="module" src="https://cdn.jsdelivr.net/npm/ionicons/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://cdn.jsdelivr.net/npm/ionicons/dist/ionicons/ionicons.js"></script>
 ```
 
-> See [Ionicons usage](https://ionic.io/ionicons/usage) for more information on using Ionicons.
+> アイコンの使い方については [Ionicons usage](https://ionic.io/ionicons/usage) をご覧ください。

@@ -2,21 +2,21 @@
 sidebar_label: Navigation/Routing
 ---
 
-# Vue Navigation
+# Vueナビゲーション
 
-This guide covers how routing works in an app built with Ionic and Vue.
+このガイドでは、IonicとVueで構築されたアプリでルーティングがどのように機能するかについて説明します。
 
-The `IonRouterOutlet` component uses the popular [Vue Router](https://router.vuejs.org/) library under the hood. With Ionic and Vue Router, you can create multi-page apps with rich page transitions.
+`IonRouterOutlet` コンポーネントは、内部で一般的な [Vue Router](https://router.vuejs.org/) ライブラリを使用します。IonicとVue Routerを使えば、リッチなページ遷移を持つマルチページアプリを作ることができます。
 
-Everything you know about routing using Vue Router carries over into Ionic Vue. Let's take a look at the basics of an Ionic Vue app and how routing works with it.
+Vue Routerを使ったルーティングについて知っていることはすべてIonic Vueに引き継がれます。Ionic Vueアプリの基本とルーティングの仕組みを見てみましょう。
 
-## A Brief Note
+## 簡単なメモ
 
-While reading this guide, you may notice that most of these concepts are very similar to the concepts found in Vue Router without Ionic Framework. You observation would be correct! Ionic Vue leverages the best parts of Vue Router to make the transition to building apps with Ionic Framework as seamless as possible. As a result, we recommend relying on Vue Router features as much as possible rather than trying to build your own routing solutions.
+このガイドを読むと、これらの概念のほとんどが、Ionic Frameworkを使用しないVueルータに見られる概念と非常によく似ていることがわかります。あなたの意見は正しいでしょう!Ionic VueはVue Routerの長所を活用して、Ionic Frameworkを使ったアプリ構築への移行を可能な限りシームレスにしています。そのため、独自のルーティングソリューションを構築するよりも、可能な限りVueルータの機能に依存することをお勧めします。
 
-## A Simple Route
+## 簡単なRoute
 
-Here is a sample routing configuration that defines a single route to the "/home" URL. When you visit "/home", the route renders the `HomePage` component.
+次に示すのは、 "/home" URLへの単一のルートを定義するルーティング設定の例です。 "/home" にアクセスすると、ルートによって `HomePage`  コンポーネントがレンダリングされます。
 
 **router/index.ts**
 
@@ -41,11 +41,11 @@ const router = createRouter({
 export default router;
 ```
 
-On the app's initial load, the app will render the `HomePage` component as that is what is configured here.
+アプリケーションが最初にロードされると、 `HomePage` コンポーネントがここで設定したとおりに表示されます。
 
-## Handling Redirects
+## リダイレクトの設定
 
-What if we wanted to land a different path on our initial load? For this, we can use router redirects. Redirects work the same way that a typical route object does, but just includes some different keys:
+最初ロードされたパスに別のパスを設定したい場合はどうすればよいでしょうか。これには、ルータリダイレクトを使用できます。リダイレクトは通常のルートオブジェクトと同じように機能しますが、いくつかの異なるキーが含まれています。
 
 ```typescript
 const routes: Array<RouteRecordRaw> = [
@@ -61,11 +61,11 @@ const routes: Array<RouteRecordRaw> = [
 ]
 ```
 
-In our redirect, we look for the index path of our app. Then if we load that, we redirect to the `home` route.
+このリダイレクトでは、最初にインデックスのパスが参照されます。そして、 `home` routeにリダイレクトしてロードを行います。
 
-## Navigating to Different Routes
+## 異なるRoutesへのナビゲーション
 
-This is all great, but how does one actually navigate to a route? For this, we can use the `router-link` property. Let's create a new routing setup:
+これは素晴らしいことですが、実際にルートにナビゲートするにはどうすればよいのでしょうか。これには、 `router-link` プロパティを使用できます。新しいルーティング設定を作成します:
 
 ```typescript
 const routes: Array<RouteRecordRaw> = [
@@ -86,12 +86,12 @@ const routes: Array<RouteRecordRaw> = [
 ]
 ```
 
-Say we start on the `home` route, and we want to add a button that takes us to the `detail` route. We can do this using the following HTML to navigate to the `detail` route:
+`home` routeで開始し、`detail` routeに移動するボタンを追加するとします。`detail` routeに移動するには、次のHTMLを使用します:
 ```html
 <ion-button router-link="/detail">Go to detail</ion-button>
 ```
 
-We can also programmatically navigate in our app by using the router API:
+また、ルーターAPIを使用して、プログラムでアプリケーション内を移動することもできます:
 
 ```html
 <template>
@@ -122,11 +122,11 @@ We can also programmatically navigate in our app by using the router API:
 </script>
 ```
 
-Both options provide the same navigation mechanism, just fitting different use cases.
+どちらのオプションも同じナビゲーション機構を提供し、異なるユースケースに対応します。
 
-## Lazy Loading Routes
+## 遅延読み込みRoute
 
-The current way our routes are setup makes it so they are included in the same initial chunk when loading the app, which is not always ideal. Instead, we can set up our routes so that components are loaded as they are needed:
+現在のrouteの設定方法では、アプリをロードするときに同じ初期チャンクに含まれるようになっているが、これは必ずしも理想的ではありません。代わりに、必要に応じてコンポーネントがロードされるようにrouteを設定できます。
 
 ```typescript
 const routes: Array<RouteRecordRaw> = [
@@ -153,14 +153,14 @@ Here, we have the same setup as before only this time `DetailPage` has been repl
 
 A common point of confusion when setting up routing is deciding between shared URLs or nested routes. This part of the guide will explain both and help you decide which one to use.
 
-### Shared URLs
+### 共有URL
 
-Shared URLs is a route configuration where routes have pieces of the URL in common. The following is an example of a shared URL configuration:
+共有URLは、ルートが共通のURLの一部を持つルート設定です。共有URL設定の例を次に示します:
 
 ```typescript
 const routes: Array<RouteRecordRaw> = [
   {
-    path: '/dashboard', 
+    path: '/dashboard',
     component: DashboardMainPage,
   },
   {
@@ -170,11 +170,11 @@ const routes: Array<RouteRecordRaw> = [
 ];
 ```
 
-The above routes are considered "shared" because they reuse the `dashboard` piece of the URL.
+上記のルートは、URLの `dashboard` 部分を再利用するため、 "shared" と見なされます。
 
-### Nested Routes
+### ネストされたRoute
 
-Nested Routes is a route configuration where routes are listed as children of other routes. The following is an example of a nested route configuration:
+Nested Routesは、ルートが他のルートの子としてリストされるルート設定です。ネストされたルート設定の例を次に示します:
 
 ```typescript
 const routes: Array<RouteRecordRaw> = [
@@ -195,20 +195,20 @@ const routes: Array<RouteRecordRaw> = [
 ];
 ```
 
-The above routes are nested because they are in the `children` array of the parent route. Notice that the parent route renders the `DashboardRouterOutlet` component. When you nest routes, you need to render another instance of `ion-router-outlet`.
+上記のルートは、親ルートの `children` 配列にあるため、ネストされています。親ルートが `DashboardRouterOutlet` コンポーネントをレンダリングしていることに注目してください。ルートをネストする場合は、 `ion-router-outlet` の別のインスタンスをレンダリングする必要があります。
 
-### Which one should I choose?
+### どちらを選ぶべきか
 
-Shared URLs are great when you want to transition from page A to page B while preserving the relationship between the two pages in the URL. In our previous example, a button on the `/dashboard` page could transition to the `/dashboard/stats` page. The relationship between the two pages is preserved because of a) the page transition and b) the url.
+共有URLは、URLの2つのページ間の関係を維持しながら、ページAからページBに遷移する場合に便利です。前述の例では、 `/dashboard` ページのボタンで `/dashboard/stats` ページに移行できます。2つのページ間の関係は、a) ページの遷移とb) URLによって維持されます。
 
-Nested routes are mostly useful when you need to render content in outlet A while also rendering sub-content inside of a nested outlet B. The most common use case you will run into is tabs. When you load up a tabs Ionic starter application, you will see `ion-tab-bar` and `ion-tabs` components rendered in the first `ion-router-outlet`. The `ion-tabs` component renders another `ion-router-outlet` which is responsible for rendering the contents of each tab.
+ネストされたルートは、コンセントAのコンテンツをレンダリングする必要がある場合、およびネストされたコンセントBの内部のサブコンテンツをレンダリングする必要がある場合に便利です。最も一般的な使用例は、タブです。Ionicスターターアプリのタブをロードすると、最初の `ion-router-outlet` で `ion-tab-bar`  および `ion-tabs` コンポーネントがレンダリングされます。`ion-tabs` コンポーネントは、各タブの内容をレンダリングする別の 「イオンルータ出力」 をレンダリングします。
 
-There are very few use cases in which nested routes make sense in mobile applications. When in doubt, use the shared URL route configuration. We strongly caution against using nested routing in contexts other than tabs as it can quickly make navigating your app confusing.
+モバイルアプリケーションでネストされたルートが意味をなすユースケースはほとんどありません。疑わしい場合は、共有URLルート設定を使用します。ネストされたルーティングをタブ以外のコンテキストで使用すると、アプリのナビゲーションが混乱する可能性があるため、使用しないように強く注意しています。
 
 
-## Working with Tabs
+## タブの操作
 
-When working with tabs, Ionic Vue needs a way to know which view belongs to which tab. The `IonTabs` component comes in handy here, but let's look at what the routing setup for this looks like:
+タブを操作する場合、Ionic Vueはどのビューがどのタブに属しているかを知る方法を必要とします。ここでは `IonTabs` コンポーネントが便利ですが、この場合のルーティング設定を見てみましょう:
 
 ```typescript
 const routes: Array<RouteRecordRaw> = [
@@ -241,9 +241,9 @@ const routes: Array<RouteRecordRaw> = [
 ]
 ```
 
-Here, our `tabs` path loads a `Tabs` component. We provide each tab as a route object inside of the `children` array. In this example, we call the path `tabs`, but this can be customized. 
+ここで、 `tabs` パスは `Tabs` コンポーネントをロードします。各タブは、 `children` 配列内のルートオブジェクトとして提供されます。この例では、パスを `tabs` としていますがこれはカスタマイズできます。
 
-Let's start by taking a look at our `Tabs` component:
+まず、 `Tabs` コンポーネントをみていきましょう:
 
 ```html
 <template>
@@ -289,9 +289,9 @@ export default {
 </script>
 ```
 
-If you have worked with Ionic Framework before, this should feel familiar. We create an `ion-tabs` component, and provide an `ion-tab-bar`. The `ion-tab-bar` provides and `ion-tab-button` components, each with a `tab` property that is associated with its corresponding tab in the router config.
+以前にIonic Frameworkを使ったことがある人なら、このことをよく知っているはずです。`ion-tabs` コンポーネントを作成し、 `ion-tab-bar` を提供します。`ion-tab-bar` は `ion-tab-button` コンポーネントを提供し、それぞれにルータの設定の対応するタブに関連付けられた `tab` プロパティがあります。
 
-### Child Routes within Tabs
+### タブ内の子ルート
 
 When adding additional routes to tabs you should write them as sibling routes with the parent tab as the path prefix. The example below defines the `/tabs/tab1/view` route as a sibling of the `/tabs/tab1` route. Since this new route has the `tab1` prefix, it will be rendered inside of the `Tabs` component, and Tab 1 will still be selected in the `ion-tab-bar`.
 
@@ -334,9 +334,9 @@ const routes: Array<RouteRecordRaw> = [
 
 ## IonRouterOutlet
 
-The `IonRouterOutlet` component provides a container to render your views in. It is similar to the `RouterView` component found in other Vue applications except that `IonRouterOutlet` can render multiple pages in the DOM in the same outlet. When a component is rendered in `IonRouterOutlet` we consider this to be an Ionic Framework "page". The router outlet container controls the transition animation between the pages as well as controls when a page is created and destroyed. This helps maintain the state between the views when switching back and forth between them.
+`IonRouterOutlet` コンポーネントは、ビューをレンダリングするためのコンテナを提供します。これは他のVueアプリケーションに見られる `RouterView` コンポーネントに似ていますが、 `IonRouterOutlet` は同じアウトレット内のDOMで複数のページをレンダリングできるという点が異なります。コンポーネントが `IonRouterOutlet` でレンダリングされる場合、これはIonic Framework "Page"と見なされます。ルーター・アウトレット・コンテナーは、ページ間の遷移アニメーションを制御するだけでなく、ページがいつ作成および破棄されるかを制御します。これにより、ビューを切り替えるときにビュー間の状態を維持することができます。
 
-Nothing should be provided inside of `IonRouterOutlet` when setting it up in your template. While `IonRouterOutlet` can be nested in child components, we caution against it as it typically makes navigation in apps confusing. See [Shared URLs versus Nested Routes](#shared-urls-versus-nested-routes) for more information.
+テンプレートで設定する際に、 `IonRouterOutlet` の内部には何も指定しないでください。`IonRouterOutlet` は子コンポーネントにネストすることができますが、通常はアプリケーション内のナビゲーションが混乱するため注意が必要です。詳細については、[Shared URLs versus Nested Routes](#shared-urls-versus-nested-routes) を参照してください。
 
 ## IonPage
 
@@ -355,8 +355,8 @@ The `IonPage` component wraps each view in an Ionic Vue app and allows page tran
 </template>
 
 <script lang="ts">
-import { 
-  IonContent, 
+import {
+  IonContent,
   IonHeader,
   IonPage,
   IonTitle,
@@ -366,7 +366,7 @@ import { defineComponent } from 'vue';
 
 export default defineComponent({
   components: {
-    IonContent, 
+    IonContent,
     IonHeader,
     IonPage,
     IonTitle,
@@ -380,7 +380,7 @@ Components presented via `IonModal` or `IonPopover` do not typically need an `Io
 
 ## Accessing the IonRouter Instance
 
-There may be a few use cases where you need to get access to the `IonRouter` instance from within your Vue application. For example, you might want to know if you are at the root page of the application when a user presses the hardware back button on Android. For use cases like these, you can inject the `IonRouter` dependency into your component:
+Vueアプリケーション内から  `IonRouter` インスタンスにアクセスする必要があるユースケースがいくつかあるかもしれません。例えば、Androidでユーザーがハードウェアの 「戻る」 ボタンを押したときに、アプリケーションのルート・ページにいるかどうかを知ることができます。このようなユースケースでは、コンポーネントに `IonRouter` 依存関係を注入できます。
 
 ```typescript
 import { useIonRouter } from '@ionic/vue';
@@ -397,9 +397,9 @@ export default {
 }
 ```
 
-## URL Parameters
+## URLパラメーター
 
-Let's expand upon our original routing example to show how we can use URL parameters:
+元のルーティング例を拡張して、URLパラメータの使用方法を示します:
 
 ```typescript
 const routes: Array<RouteRecordRaw> = [
@@ -420,9 +420,9 @@ const routes: Array<RouteRecordRaw> = [
 ]
 ```
 
-Notice that we have now added `:id` to the end of our `detail` path string. URL parameters are dynamic portions of our route paths. When the user navigates to a URL such as `/details/1` the "1" is saved to a parameter named "id" which can be accessed in the component when the route renders.
+ここで、 `detail` パス文字列の最後に `:id` を追加したことに注意してください。URLパラメータは、ルートパスの動的な部分です。ユーザーが `/details/1` などのURLに移動すると、 "1" が "id" という名前のパラメータに保存され、ルートのレンダリング時にコンポーネントでアクセスできるようになります。
 
-Let's look at how to use it in our component:
+コンポーネントでの使用方法を見てみましょう。
 
 ```html
 <template>
@@ -432,7 +432,7 @@ Let's look at how to use it in our component:
         <ion-title>Details</ion-title>
       </ion-toolbar>
     </ion-header>
-    
+
     <ion-content>
       Detail ID: {{ id }}
     </ion-content>
@@ -447,10 +447,10 @@ import { useRoute } from 'vue-router';
 export default defineComponent({
   name: 'Detail',
   components: {
-    IonContent, 
-    IonHeader, 
-    IonPage, 
-    IonTitle, 
+    IonContent,
+    IonHeader,
+    IonPage,
+    IonTitle,
     IonToolbar
   },
   setup() {

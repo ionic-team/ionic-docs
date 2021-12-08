@@ -2,48 +2,48 @@
 sidebar_label: Developing for Android
 ---
 
-# Android Development
+# Android開発
 
-This guide covers how to run and debug Ionic apps on Android emulators and devices using <a href="/docs/reference/glossary#capacitor">Capacitor</a> or <a href="/docs/reference/glossary#cordova">Cordova</a>. Android apps can be developed on Windows, macOS, and Linux.
+このガイドでは、<a href="/docs/reference/glossary#capacitor">Capacitor</a> または <a href="/docs/reference/glossary#cordova">Cordova</a>を使用して、Androidエミュレータおよびデバイス上でIonicアプリケーションを実行およびデバッグする方法について説明します。AndroidアプリはWindows、macOS、Linux上で開発できます。
 
 ## Android Studio
 
-<a href="https://developer.android.com/studio/" target="_blank">Android Studio</a> is the IDE for creating native Android apps. It includes the [Android SDK](/docs/reference/glossary#android-sdk), which will need to be configured for use in the command line.
+<a href="https://developer.android.com/studio/" target="_blank">Android Studio</a>はネイティブなAndroidアプリを作るためのIDEです。[Android SDK](/docs/reference/glossary#android-sdk)が含まれており、コマンドラインで使用できるように設定する必要があります。
 
-Android Studio is also used to [create Android virtual devices](/docs/developing/android#creating-an-android-virtual-device), which are required for the Android emulator. Ionic apps can also be [launched to a device](/docs/developing/android#set-up-an-android-device).
+Androidエミュレータに必要な [Android仮想デバイス](/docs/developing/android#creating-an-android-virtual-device) の作成にもAndroid Studioが使用されます。Ionicアプリは [デバイスに起動](/docs/developing/android#set-up-an-android-device)することもできます。
 
-> We don't recommend using Android Studio for _developing_ Ionic apps. Instead, it should only really be used to build and run your apps for the native Android platform and to manage the Android SDK and virtual devices.
+> Android Studioを使ってIonicアプリを開発することはお勧めしません。実際には、ネイティブのAndroidプラットフォーム向けにアプリをビルドして実行したり、Android SDKや仮想デバイスを管理するためだけに使うべきです。
 
-### Installing Android Studio
+### Android Studioのインストール
 
-Download Android Studio from the <a href="https://developer.android.com/studio/" target="_blank">Android website</a>. More detailed installation instructions can be found in the <a href="https://developer.android.com/studio/install" target="_blank">User Guide</a>.
+<a href="https://developer.android.com/studio/" target="_blank">Android website<a>からAndroid Studioをダウンロードします。より詳しいインストール手順は<a href="https://developer.android.com/studio/install" target="_blank">User Guide</a>をご覧ください。
 
-### Installing the Android SDK
+### Android SDKのインストール
 
-Once installed, open Android Studio. The IDE should detect that the Android SDK needs to be installed. In the **SDK Components Setup** screen, finish installing the SDK. Keep note of the **Android SDK Location**.
+Android Studioをインストールしたら起動します。IDEは、Android SDKのインストールが必要であることを検出するはずです。**SDK Components Setup**の画面で、SDKのインストールを完了して、**Android SDKのパス**のをメモしておいてください。
 
 ![Android Studio SDK Setup](/img/installation/android-studio-sdk-setup.png)
 
-By default, the latest stable SDK Platform is installed, which includes a collection of packages required to target that version of Android.
+デフォルトでは、最新の安定版SDKプラットフォームがインストールされ、そのバージョンのAndroidをターゲットにするために必要なパッケージもコレクションされています。
 
-To install system images and other minor SDK platform packages, you may need to ensure **Show Package Details** is checked at the bottom of the SDK Manager.
+システムイメージやその他のマイナーSDKプラットフォームパッケージをインストールするには、SDK Managerの下部にある [Show Package Details] がオンになっていることを確認する必要があります。
 <img alt="Android Studio SDK Manager" src="/img/installation/android-studio-sdk.png" />
 
-For future reference, the Android SDK can be managed with Android Studio in the **Configure** &raquo; **SDK Manager** menu of the Android Studio welcome screen or **Tools** &raquo; **SDK Manager** inside Android projects.
+今後の参考情報ですが、Android SDKはAndroid Studioの起動画面の **Configure** &raquo; **SDK Manager** メニュー、またはAndroidプロジェクト内の **Tools** &raquo; **SDK Manager** で管理することができます。
 
-### Configuring Command Line Tools
+### コマンドラインツールの設定
 
-The Android SDK ships with <a href="https://developer.android.com/studio/command-line/" target="_blank">useful command-line tools</a>. Before they can be used, some environment variables must be set. The following instructions are for macOS and Linux. For Windows, check the documentation on setting and persisting environment variables in terminal sessions.
+Android SDKには<a href="https://developer.android.com/studio/command-line/" target="_blank">便利なコマンドラインツール</a>が付属しています。これは利用する前に、いくつかの環境変数を設定する必要があります。以下のドキュメントは、macOSとLinuxのものです。WIndowsの場合は、ターミナルセッションでの環境変数の設定と保存に関するドキュメントを確認ください。
 
-In `~/.bashrc`, `~/.bash_profile`, or similar shell startup scripts, make the following modifications:
+`~/.bashrc`もしくは`~/.bash_profile`、または同様のシェル起動スクリプトを、次のように変更します。s:
 
-1. Set the `ANDROID_SDK_ROOT` environment variable. This path should be the **Android SDK Location** used in the previous section.
+1. `ANDROID_SDK_ROOT`環境変数を設定します。このパスは、前のセクションでメモした**Android SDKのパス**です。
 
    ```shell
    $ export ANDROID_SDK_ROOT=$HOME/Library/Android/sdk
    ```
 
-1. Add the Android SDK command-line directories to `PATH`. Each directory corresponds to the category of <a href="https://developer.android.com/studio/command-line/" target="_blank">command-line tool</a>.
+1. `PATH`にAndroid SDK コマンドラインのディレクトリを追加します。それぞれのディレクトリは、<a href="https://developer.android.com/studio/command-line/" target="_blank">コマンドラインツール</a>のカテゴリに対応しています。.
 
    ```shell-session
    $ # avdmanager, sdkmanager
@@ -58,100 +58,100 @@ In `~/.bashrc`, `~/.bash_profile`, or similar shell startup scripts, make the fo
      <p>For <code>apksigner</code> and <code>zipalign</code>, <code>$ANDROID_SDK_ROOT/build-tools&lt;version></code> must also be added to <code>PATH</code>.</p>
    </blockquote>
 
-### Creating an Android Virtual Device
+### Android仮想デバイスの作成
 
-Android Virtual Devices (AVDs) are blueprints that the Android emulator uses to run the Android OS. The following documentation is a quick way to get the Android emulator set up. For more detailed instructions and information, see <a href="https://developer.android.com/studio/run/managing-avds" target="_blank">the Android documentation</a>.
+Android仮想デバイス（AVD）は、AndroidエミュレータがAndroid OSを実行するために利用する設計図です。以下のドキュメントはAndroidエミュレータをセットアップするための簡単な方法です。詳細な手順と情報は、<a href="https://developer.android.com/studio/run/managing-avds" target="_blank">Android のドキュメント</a>を参照ください。
 
-AVDs are managed with the AVD Manager. In the Android Studio welcome screen, click **Configure** &raquo; **AVD Manager**. The AVD Manager can also be opened inside Android projects in the **Tools** &raquo; **AVD Manager** menu.
+AVDはAVD Managerで管理します。Android Studioの初期画面で、 **Configure** &raquo; **AVD Manager** をクリックします。AVD Managerは、Androidプロジェクト内で、-**Tools** &raquo; **AVD Manager** メニューから開くこともできます。
 
 ![AVD Setup](/img/installation/android-studio-avd-setup.png)
 
-Click **Create Virtual Device** and select a suitable device definition. If unsure, choose **Pixel 2**. Then, select a suitable system image. If unsure, choose **Pie** (API 28) with Google Play services. See <a href="https://en.wikipedia.org/wiki/Android_version_history" target="_blank">Android version history</a> for information on Android versions.
+**Create Virtual Device** をクリックし、適切なデバイス定義を選択します。不明な場合は、 **Pixel 2** を選択し、適切なシステムイメージを選択します。よく分からない場合は、**Pie** (API 28) with Google Play servicesを選択してください。Androidのバージョンについては、Androidのバージョン履歴を参照してください。
 
-Once the AVD is created, launch the AVD into the Android emulator. Keeping the emulator running is the best way to ensure detection while developing Ionic apps for Android.
+AVDが作成されたら、AndroidエミュレータでAVDを起動します。エミュレータを実行し続けることは、Android用のIonicアプリケーションを開発しながら検出を確実にするための最良の方法です。
 
 <figure class="device">
   <img alt="Android Emulator Booting" src="/img/installation/android-emulator-booting.png" />
 </figure>
 
-### Set up an Android Device
+### Androidデバイスを設定する
 
-Actual Android hardware can also be used for Ionic app development. But first, the device must be set up for development. The following documentation is a quick way to set up Android devices for development. For more detailed instructions and information, see <a href="https://developer.android.com/studio/run/device" target="_blank">the Android documentation</a>.
+Androidハードウェアの実物は、Ionicアプリ開発でも使用できます。しかし、最初に、デバイスを開発用にセットアップする必要があります。以下のドキュメントは開発用にAndroidデバイスを設定する簡単な方法です。詳細な手順と情報については、<a href="https://developer.android.com/studio/run/device" target="_blank">the Android documentation</a>を参照してください。
 
-1. Enable USB debugging on the device. Open **Settings**, navigate to **Developer options**, and enable **USB debugging**. The **Developer options** menu may need to be enabled first. See <a href="https://developer.android.com/studio/debug/dev-options" target="_blank">the Android documentation</a> for instructions.
-1. Ensure the device has permission to connect to the computer. For macOS, no additional setup is required. For Windows, <a href="https://developer.android.com/studio/run/oem-usb" target="_blank">install the OEM USB drivers</a>.
+1. デバイスのUSBデバッグを有効にします。**Settings**を開き、**Developer options**に移動し、**USB debugging**を有効にします。**Developer options**のメニューを最初に有効にする必要があるかもしれません。手順については<a href="https://developer.android.com/studio/debug/dev-options" target="_blank">the Android documentation</a>をご確認ください。
+1. デバイスにコンピュータへの接続許可があることを確認してください。macOSの場合、追加の設定は不要です。Windowsの場合は<a href="https://developer.android.com/studio/run/oem-usb" target="_blank">OEM USB drivers</a>をインストールしてください。
 
-Verify the connection works by connecting the device to the computer with a USB cable and using the following command:
+USBケーブルでデバイスをコンピュータに接続し、次のコマンドを使用して接続が機能することを確認します。
 
 ```shell
 $ adb devices
 ```
 
-The device should be listed. See the full <a href="https://developer.android.com/studio/command-line/adb" target="_blank">`adb` documentation</a> for troubleshooting and detailed information.
+デバイスがリストされます。トラブルシューティングと詳細情報については、 <a href="https://developer.android.com/studio/command-line/adb" target="_blank">`adb` documentation</a> を参照してください。
 
 ## Cordova Setup
 
-Additional setup is required for Cordova to support programmatic builds. This section is not necessary for Capacitor.
+Cordovaがプログラムビルドをサポートするには、追加のセットアップが必要です。 Capacitorには不要です。
 
 ### Java
 
-Native Android apps are compiled with the <a href="https://java.com/en/" target="_blank">Java</a> programming language. Download JDK8 from the <a href="https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html" target="_blank">download page</a>.
+ネイティブのAndroidアプリは <a href="https://java.com/en/" target="_blank">Java</a> プログラミング言語でコンパイルされている。ダウンロードページからJDK 8を<a href="https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html" target="_blank">download page</a>します。
 
-> Unfortunately, Cordova is not compatible with the latest version of Java.
+> 残念ながら、Cordovaは最新バージョンのJavaと互換性がありません。
 
 ### Gradle
 
-<a href="https://gradle.org/" target="_blank">Gradle</a> is the build tool used in Android apps and must be installed separately. See the <a href="https://gradle.org/install/" target="_blank">install page</a> for details.
+<a href="https://gradle.org/" target="_blank">Gradle</a> はAndroidアプリで使用されるビルドツールで、別途インストールする必要があります。詳細については、<a href="https://gradle.org/install/" target="_blank">インストールページ</a>を参照してください。
 
 
-## Project Setup
+## プロジェクトのセットアップ
 
-Before apps can be deployed to Android simulators and devices, the native project must be configured.
+アプリをAndroidシミュレータやデバイスにデプロイする前に、ネイティブプロジェクトを設定する必要があります。
 
-1. **Generate the native project, if it does not already exist.**
+1. **ネイティブプロジェクトが存在しない場合は、生成します。**
 
-    For Capacitor, run the following:
+    Capacitorでは以下の実行をサポートしています:
 
     ```shell
     $ ionic capacitor add android
     ```
 
-    For Cordova, run the following:
+    Cordovaでは以下の実行をサポートしています:
 
     ```shell
     $ ionic cordova prepare android
     ```
 
-2. **Set the [Package ID](/docs/reference/glossary#package-id).**
+2. **[Package ID](/docs/reference/glossary#package-id)をご覧ください**
 
-    For Capacitor, open the `capacitor.config.json` file and modify the `appId` property.
+    Capacitorの場合は `capacitor.config.json` ファイルを開いて、 `appId` を変更してください。
 
-    For Cordova, open the `config.xml` file and modify the `id` attribute of the root element, `<widget>`. See [the Cordova documentation](https://cordova.apache.org/docs/en/latest/config_ref/#widget) for more information.
+    Cordovaの場合は、 `config.xml` を開きます。ルート要素の `<widget>` の `id` 属性を変更します。詳細については、[Cordovaのマニュアル](https://cordova.apache.org/docs/en/latest/config_ref/#widget)を参照してください。
 
 
-## Running with Capacitor
+## Capacitorでの実行
 
-Capacitor uses Android Studio to build and run apps to simulators and devices.
+CapacitorはAndroid Studioを使って、シミュレータやデバイスへのアプリの構築と実行を行います。
 
-1. **Develop the Ionic app and sync it to the native project.**
+1. **Ionicアプリを開発してネイティブプロジェクトに同期します**
 
-    With each meaningful change, Ionic apps must be built into web assets before the change can appear on Android simulators and devices. The web assets then must be copied into the native project. Luckily, this process is made easy with a single Ionic CLI command.
+    重要な変更が行われるたびに、変更がAndroidシミュレータやデバイスに表示されるようにするには、WebアセットにIonicアプリを組み込む必要があります。次に、Webアセットをネイティブプロジェクトにコピーする必要があります。幸い、このプロセスはIonic CLIコマンド1つで簡単になります。
 
     ```shell
     $ ionic capacitor copy android
     ```
 
-2. **In Android Studio, click the Run button and then select the target simulator or device.**
+2. **Android StudioでRunボタンをクリックして、シュミレーターかデバイスを選択ください。**
 
 ![Android Studio Run Button Area](/img/running/android-studio-run-button-area.png)
 
-### Live reload
-To start a live-reload server run the following command.
+### ライブリロード
+リロードサーバを起動するには、次のコマンドを実行します。
 
 ```shell
 $ ionic capacitor run android -l --host=YOUR_IP_ADDRESS
 ```
-When running on a device make sure the device and your development machine are connected to the same network.
+デバイス上で実行する場合は、デバイスと開発マシンが同じネットワークに接続されていることを確認してください。
 
 ## Running with Cordova
 
@@ -165,27 +165,28 @@ $ ionic cordova run android -l
 
 Now, when changes are made to the app's source files, web assets are rebuilt and the changes are reflected on the simulator or device without having to deploy again.
 
-## Debugging Android Apps
+## Androidアプリのデバッグ
 
-Once an app is running on an Android device or emulator, it can be debugged with Chrome DevTools.
+アプリがAndroidデバイスやエミュレータ上で動作するようになったら、 Chrome DevToolsを使ってデバッグすることができます。
 
-### Using Chrome DevTools
+### Chrome DevToolsの利用
 
-Chrome has web developer tool support for Android simulators and devices. Go to `chrome://inspect` in Chrome while the simulator is running or a device is connected to the computer and **Inspect** the app that needs to be debugged.
+Chromeは、AndroidシミュレータとデバイスのためのWeb開発者ツールをサポートしている。シミュレータが動作している間、またはデバイスがコンピュータに接続されている間にChromeで `chrome://inspect` に移動し、デバッグが必要なアプリケーションを **Inspect** します。
 
-> Make sure your application is running on the device or simulator, or it will not show up in the list.
+> アプリケーションがデバイスまたはシミュレータで実行されていることを確認してください。実行されていない場合は、リストに表示されません。
 
 ![Android Chrome DevTools](/img/running/android-chrome-devtools.png)
 
-### Viewing Native Logs
+### Native Logsの表示
 
+Android Studioで実行している場合、ネイティブログは **Logcat** に表示されます。
 If running with Android Studio, native logs can be found in **Logcat**.
 
-> If the **Logcat** window is hidden, you can enable it in **View** &raquo; **Tool Windows** &raquo; **Logcat**.
+> **Logcat** ウインドウが非表示の場合は、 **View** &raquo; **Tool Windows** &raquo; **Logcat** から有効にします。
 
 ![Android Studio Logcat](/img/running/android-studio-logcat.png)
 
-You can also access **Logcat** with [ADB](https://developer.android.com/studio/command-line/adb).
+**Logcat** には [ADB](https://developer.android.com/studio/command-line/adb) を利用してアクセスすることもできます。
 
 ```shell
 $ adb logcat

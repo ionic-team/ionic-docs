@@ -3,11 +3,11 @@
 
 # Config
 
-Ionic Config provides a way to change the properties of components globally across an app. It can set the app mode, tab button layout, animations, and more.
+Ionic Configは、アプリケーション全体にわたってコンポーネントのプロパティをグローバルに変更する方法を提供します。Ionic Configは、アプリのモード、タブボタンのレイアウト、アニメーションなどを設定できます。
 
-## Global Config
+## グローバル設定
 
-To override the initial Ionic config for the app, provide your config object as an additional parameter when installing the `IonicVue` plugin:
+アプリケーションの初期のIonic Configを上書きするには、IonicVueプラグインのインストール時に追加パラメータとしてConfigオブジェクトを指定します。
 
 ```typescript
 createApp(App)
@@ -17,14 +17,14 @@ createApp(App)
   })
 ```
 
-In the above example, we are disabling the Material Design ripple effect across the app, as well as forcing the mode to be Material Design.
+上の例では、Material Designのリップル効果を無効にし、モードをMaterial Designにしています。
 
-## Per-Platform Config
+## プラットフォームごとの構成
 
-Ionic Config can also be set on a per-platform basis. For example, this allows you to disable animations if the app is being run in a browser on a potentially slower device. Developers can take advantage of the Platform utilities to accomplish this.
+Ionic Configは、プラットフォームごとに設定することもできます。例えば、遅い可能性のあるデバイス上のブラウザでアプリを実行している場合、アニメーションを無効にすることができます。開発者は、プラットフォーム・ユーティリティーを利用してこれを実現することができます。
 
-In the following example, we are disabling all animations in our Ionic app only if the app is running in a mobile web browser. 
-The `isPlatform()` call returns `true` or `false` based upon the platform that is passed in. See the [Platform Documentation](./platform#platforms) for a list of possible values.
+次の例では、アプリケーションがモバイルWebブラウザで実行されている場合にのみ、Ionicアプリケーションのすべてのアニメーションを無効にしています。
+`isPlatform ()` 呼び出しは、渡されたプラットフォームに基づいて `true` または `false` を返します。 [Platform Documentation](./platform#platforms) を指定します。
 
 
 ```typescript
@@ -36,7 +36,7 @@ createApp(App)
   })
 ```
 
-The next example allows you to set an entirely different configuration based upon the platform, falling back to a default config if no platforms match:
+次の例では、プラットフォームに基づいてまったく異なる構成を設定し、一致するプラットフォームがない場合はデフォルトの構成に戻すことができます:
 
 ```typescript
 import { IonicVue, isPlatform } from '@ionic/vue';
@@ -58,7 +58,7 @@ createApp(App)
   .use(IonicVue, getConfig());
 ```
 
-Finally, this example allows you to accumulate a config object based upon different platform requirements:
+最後に、この例では、異なるプラットフォーム要件に基づいて構成オブジェクトを蓄積できます:
 
 
 ```typescript
@@ -83,9 +83,9 @@ createApp(App)
   .use(IonicVue, getConfig());
 ```
 
-## Config Options
+## Configオプション
 
-Below is a list of config options that Ionic uses.
+以下はIonicで使用できる設定オプションのリストです。
 
 | Config                   | Type               | Description                                                                                              |
 |--------------------------|--------------------|----------------------------------------------------------------------------------------------------------|

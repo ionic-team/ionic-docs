@@ -2,9 +2,9 @@
 sidebar_label: Storage
 ---
 
-# Data Storage
+# データストレージ
 
-There are variety of options available for storing data within an Ionic app.
+Ionicアプリ内にデータを保存するためのさまざまなオプションを用意しています。
 
 Here are two official Ionic options:
 

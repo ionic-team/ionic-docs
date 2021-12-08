@@ -3,19 +3,20 @@
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Keyboard
+# キーボード
 
-Customizing and accounting for the presence of an on-screen keyboard are two common roadblocks developers face when building mobile apps and PWAs. This guide will provide an introduction to the various tools available for managing the on-screen keyboard in your application.
+開発者がモバイルアプリやPWAを開発する際に直面する一般的な障害は、画面上のキーボードの存在を考慮してカスタマイズすることです。このガイドでは、アプリケーションでオンスクリーンキーボードを管理するためのさまざまなツールの概要を説明します。
 
 ## inputmode
 
-The `inputmode` attribute allows developers to specify what type of data might be entered into an input. This will prompt the browser to show a keyboard that includes buttons relevant to what the user may enter. For example, `inputmode="email"` will display a keyboard with the `@` key as well as other optimizations for entering emails.
+開発者は、 `inputmode` 属性を使用して、入力に入力できるデータのタイプを指定できます。これにより、ユーザーの入力内容に関連するボタンを含むキーボードがブラウザに表示されます。例えば、 `inputmode="email"` を指定すると、 `@` キーを含むキーボードが表示され、その他のemail入力の最適化も行われます。
 
-Since `inputmode` is a global attribute, it can be used on Ionic components such as `ion-input` and `ion-textarea` in addition to regular input elements.
+`inputmode` はグローバル属性であるため、通常の入力エレメントに加えて、`ion-input` や `ion-textarea` などのIonicコンポーネントでも使用できます。
 
-Inputs that _require_ a certain data type should use the `type` attribute instead. For example, inputs that require an email should use `type="email"` rather than specifying an `inputmode.` This is because the data that will be entered is always going to be in the form of an email. On the other hand, if the input accepts an email or a username, using `inputmode=”email”` is appropriate because the data being entered is not always going to be an email address.
+特定のデータ型を必要とする入力では、代わりに `type` 属性を使用する必要があります。たとえば、emailの入力では、 `inputmode.` を指定するのではなく、`type="email"`
+を使用する必要があります。これは、入力されるデータが常にemailの形式になるためです。一方、inputがemailまたはユーザー名を受け入れる場合は、入力されるデータが常に `type="email"` になるとは限らないため、 `inputmode=”email”` を使用するのが適切です。
 
-For a list of accepted values, see the <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/inputmode" target="_blank" rel="noreferrer">inputmode Documentation</a>.
+使用可能な値のリストについては、<a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/inputmode" target="_blank" rel="noreferrer">inputmode Documentation</a>を参照してください。
 
 ### Usage
 <Tabs
@@ -89,15 +90,15 @@ import Codepen from '@site/src/components/Codepen';
 
 <Codepen user="ionic" slug="abvJVVv" height="400"></Codepen>
 
-> The `inputmode` attribute is supported on devices running Chrome 66+ and iOS Safari 12.2+: https://caniuse.com/#search=inputmode
+> `inputmode` 属性はChrome 66+ と iOS Safari 12.2+のデバイスでサポートされています: https://caniuse.com/#search=inputmode
 
 ## enterkeyhint
 
-The `enterkeyhint` attribute allows developers to specify what type of action label or icon should be shown for the "Enter" key. Using `enterkeyhint` lets the user know what will happen when they tap the “Enter” key. The value that should be specified here depends on the context of what the user is doing. For example, if the user is typing into a searchbox, developers should ensure that the input has `enterkeyhint="search"`.
+`enterkeyhint` 属性を使用すると、開発者は "Enter" キーに表示するアクション・ラベルまたはアイコンのタイプを指定できます。 `enterkeyhint` を使用すると、ユーザが "Enter" キーをタップしたときに何が起こるかを知ることができます。ここで指定する値は、ユーザーが何をしているかによって異なります。たとえば、ユーザーが検索ボックスに入力している場合、開発者はinputが `enterkeyhint="search"` であることを確認する必要があります。
 
-Since `enterkeyhint` is a global attribute, it can be used on Ionic components such as `ion-input` and `ion-textarea` in addition to regular input elements.
+`enterkeyhint` はグローバル属性であるため、通常の入力エレメントに加えて、`ion-input` や `ion-textarea` などのIonicコンポーネントでも使用できます。
 
-For a list of accepted values, see the <a href="https://html.spec.whatwg.org/dev/interaction.html#input-modalities:-the-enterkeyhint-attribute" target="_blank" rel="noreferrer">enterkeyhint Standard</a>.
+使用可能な値のリストについては、 <a href="https://html.spec.whatwg.org/dev/interaction.html#input-modalities:-the-enterkeyhint-attribute" target="_blank" rel="noreferrer">enterkeyhint Standard</a> を参照してください。
 
 ### Usage
 <Tabs
@@ -149,29 +150,29 @@ For a list of accepted values, see the <a href="https://html.spec.whatwg.org/dev
 
 <Codepen user="ionic" slug="GRpWyRB" height="350"></Codepen>
 
-> The `enterkeyhint` attribute is supported on devices running Chrome 77+ and iOS Safari 13.4+.
+> `enterkeyhint` 属性は Chrome 77+ and iOS Safari 13.4+ のデバイスでサポートされています
 
-## Dark Mode
+## ダークモード
 
-By default the keyboard theme is determined by the OS. For example, if dark mode is enabled on iOS, the keyboard in your app will appear with a dark theme even if your application does not have a dark theme in its CSS. 
+デフォルトでは、キーボードテーマはOSによって決定されます。たとえば、iOSでダークモードが有効になっている場合、アプリケーションのCSSにダークテーマがない場合でも、アプリケーションのキーボードはダークテーマで表示されます。
 
-When running an app in a mobile web browser or as a PWA there is no way to force the keyboard to appear with a certain theme.
+モバイルWebブラウザやPWAでアプリを実行しているとき、キーボードを特定のテーマで表示させる方法はありません。
 
-When running an app in Capacitor or Cordova, it is possible to force the keyboard to appear with a certain theme. For more information regarding this configuration, see the <a href="https://capacitor.ionicframework.com/docs/apis/keyboard#keyboard-configuration-ios-only-" target="_blank">Capacitor Keyboard Documentation</a>.
-
-
-## Hiding the Accessory Bar
-
-When running any kind of web based application, iOS will show an accessory bar above the keyboard. This allows users to move to the next or previous inputs as well as close the keyboard.
-
-When running an app in a mobile web browser or as a PWA there is no way to hide the accessory bar.
-
-When running an app in Capacitor or Cordova, it is possible to hide the accessory bar. For more information regarding this configuration, see the <a href="https://capacitor.ionicframework.com/docs/apis/keyboard#keyboard-configuration-ios-only-" target="_blank">Capacitor Keyboard Documentation</a>.
+CapacitorまたはCordovaでアプリを実行しているとき、キーボードを特定のテーマで表示させることができます。この設定の詳細については、 <a href="https://capacitor.ionicframework.com/docs/apis/keyboard#keyboard-configuration-ios-only-" target="_blank">Capacitor Keyboard Documentation</a> を参照してください。
 
 
-## Keyboard Lifecycle Events
+## アクセサリバーを非表示にする
 
-Detecting the presence of an on-screen keyboard is useful for adjusting the positioning of an input that would otherwise be hidden by the keyboard. For Capacitor and Cordova apps, developers typically rely on native keyboard plugins to listen for the keyboard lifecycle events. For apps running in a mobile browser or as a PWA, developers can use the <a href="https://developer.mozilla.org/en-US/docs/Web/API/Visual_Viewport_API" rel="noreferrer" target="_blank">Visual Viewport API</a> where supported. Ionic Framework wraps both of these approaches and emits `ionKeyboardDidShow` and `ionKeyboardDidHide` events on the `window`. The event payload for `ionKeyboardDidShow` contains an approximation of the keyboard height in pixels.
+ウェブベースのアプリケーションを実行すると、iOSはキーボードの上にアクセサリバーを表示する。これにより、ユーザーは次または前の入力に移動したり、キーボードを閉じることができます。
+
+モバイルWebブラウザやPWAでアプリを実行する場合、アクセサリバーを非表示にする方法はありません。
+
+CapacitorやCordovaでアプリを実行しているときは、アクセサリバーを隠すことができます。この設定の詳細については、 <a href="https://capacitor.ionicframework.com/docs/apis/keyboard#keyboard-configuration-ios-only-" target="_blank">Capacitor Keyboard Documentation</a> を参照してください。
+
+
+## キーボードのライフサイクルイベント
+
+スクリーンキーボードの存在を検出することは、そうでなければキーボードによって隠される入力の位置を調整するのに有用です。CapacitorとCordovaアプリでは、開発者は一般的にネイティブのキーボードプラグインを使ってキーボードライフサイクルイベントをListenします。モバイルブラウザやPWAで動作するアプリでは、サポートされていればVisual Viewport APIを使用することができる。Ionic Frameworkはこれらの両方のアプローチをラップし、`window` に `ionKeyboardDidShow` と `ionKeyboardDidHide` イベントを発行します。 `ionKeyboardDidShow` のイベントペイロードには、キーボードの高さの近似値がピクセル単位で含まれています。
 
 ### Usage
 <Tabs
@@ -246,4 +247,4 @@ watch(keyboardHeight, () => {
 </TabItem>
 </Tabs>
 
-> For apps running in a mobile web browser or as a PWA, Keyboard Lifecycle Events are only supported on Chrome 62+ and iOS Safari 13.0+.
+> モバイルWebブラウザやPWAで動作するアプリでは、 Keyboard Lifecycle EventsはChrome 62以降とiOS Safari 13.0以降でのみサポートされています。

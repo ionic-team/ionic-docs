@@ -4,16 +4,16 @@ contributors:
   - mhartington
 ---
 
-# Angular Navigation
+# Angularナビゲーション
 
-This guide covers how routing works in an app built with Ionic and Angular.
+このガイドでは、IonicとAngularを使用して構築されたアプリでのルーティングのしくみについて説明します。
 
 
-The Angular Router is one of the most important libraries in an Angular application. Without it, apps would be single view/single context apps or would not be able to maintain their navigation state on browser reloads. With Angular Router, we can create rich apps that are linkable and have rich animations (when paired with Ionic of course). Let's look at the basics of the Angular Router and how we can configure it for Ionic apps.
+Angular Routerは、Angularアプリケーションで最も重要なライブラリの1つです。これがなければ、アプリはシングルビュー/シングルコンテキストアプリになるか、ブラウザのリロード時にナビゲーションのステートを維持できなくなります。Angular Routerを使用すると、リンク可能でリッチなアニメーションを持つリッチなアプリを作成できます（もちろん、Ionicと組み合わせると！）。Angular Routerの基本と、それをIonicアプリケーション用に設定する方法を見てみましょう。
 
-## A simple Route
+## シンプルなRoute
 
-For most apps, having some sort of route is often required. The most basic configuration looks a bit like this:
+ほとんどのアプリでは、some sort of route を持つことがしばしば必要になります。最も基本的な設定はこのようになります：
 
 ```typescript
 
@@ -30,11 +30,11 @@ import { RouterModule } from '@angular/router';
 })
 ```
 
-The simplest breakdown for what we have here is a path/component lookup. When our app loads, the router kicks things off by reading the URL the user is trying to load. In our sample, our route looks for `''`, which is essentially our index route. So for this, we load the `LoginComponent`. Fairly straight forward. This pattern of matching paths with a component continues for every entry we have in the router config. But what if we wanted to load a different path on our initial load?
+URL path と Component の組み合わせを確認する最も簡単な方法は、ここをみるすることです。アプリがロードされると、ルーターはユーザーがロードしようとしているURLを読むことで動作を開始します。私たちのサンプルでは、Routeは `''` を参照します。これは本質的に私たちのインデックスルートとなります。そうすると、一致するエントリを探し出して、 `LoginComponent` がロードされます。かなり簡単です。この処理は `path` が一致するまで、設定されているすべてのRouteのエントリを参照します。しかし、初期ロードと異なるパスをロードしたい場合はどうなりますか？
 
-## Handling Redirects
+## リダイレクトの処理
 
-For this we can use router redirects. Redirects work the same way that a typical route object does, but just includes a few different keys.
+そういう場合には、ルーターリダイレクトを使用できます。リダイレクトは通常のルートオブジェクトと同じように書くことができますが、いくつかの異なるキーが含まれます。
 
 ```typescript
 [
@@ -44,29 +44,29 @@ For this we can use router redirects. Redirects work the same way that a typical
 ];
 ```
 
-In our redirect, we look for the index path of our app. Then if we load that, we redirect to the `login` route. The last key of `pathMatch` is required to tell the router how it should look up the path.
+このリダイレクトでは、アプリのインデックス（`''`）を探しはじめると、`login` にリダイレクトします。最後の `pathMatch` キーは、ルータにパスの検索方法を指示するために必要です。
 
-Since we use `full`, we're telling the router that we should compare the full path, even if ends up being something like `/route1/route2/route3`. Meaning that if we have:
+`full` を使用すると、たとえ最後まで `/route1/route2/route3` と一致するpathがなかったとしても、フルパスを比較する必要があることをルータに伝えることができます。つまり、次のようになります。
 
 ```typescript
 { path: '/route1/route2/route3', redirectTo: 'login', pathMatch: 'full' },
 { path: 'login', component: LoginComponent },
 ```
 
-And load `/route1/route2/route3` we'll redirect. But if we loaded `/route1/route2/route4`, we won't redirect, as the paths don't match fully.
+このように書くと `/route1/route2/route3` をロードすると、リダイレクトを行います。けれど仮に `/route1/route2/route4` であれば、すべてのpathが一致しないのでリダイレクトを行いません。
 
-Alternatively, if we used:
+あるいは、こういう書き方もできます:
 
 ```typescript
 { path: '/route1/route2', redirectTo: 'login', pathMatch: 'prefix' },
 { path: 'login', component: LoginComponent },
 ```
 
-Then load both `/route1/route2/route3` and `/route1/route2/route4`, we'll be redirected for both routes. This is because `pathMatch: 'prefix'` will match only part of the path.
+`/route1/route2/route3` と `/route1/route2/route4` の両方を読み込んだとおき, どちらの場合もリダイレクトします。 `pathMatch: 'prefix'` によって、一部でも一致したら該当するからです。
 
-## Navigating to different routes
+## routesへのナビゲーション
 
-Talking about routes is good and all, but how does one actually navigate to said routes? For this, we can use the `routerLink` directive. Let's go back and take our simple router setup from earlier:
+routesについて説明してきましたが、それではどのようにしてそのルートにナビゲーションしたらいいのでしょうか。これには、 `routerLink` directiveを利用します。先ほどの簡単なrouter設定でこれを確認してみましょう:
 
 ```ts
 RouterModule.forRoot([
@@ -75,7 +75,7 @@ RouterModule.forRoot([
 ]);
 ```
 
-Now from the `LoginComponent`, we can use the following HTML to navigate to the detail route.
+わたしたちは、次のHTMLを利用することで、`LoginComponent` から `detail` routeに遷移することができます。
 
 ```html
 <ion-header>
@@ -89,9 +89,9 @@ Now from the `LoginComponent`, we can use the following HTML to navigate to the 
 </ion-content>
 ```
 
-The important part here is the `ion-button` and `routerLink` directive. RouterLink works on a similar idea as typical `href`s, but instead of building out the URL as a string, it can be built as an array, which can provide more complicated paths.
+ここで重要なのは`ion-button` と `routerLink` directiveです。RouterLinkは典型的な `href` と同様の考えで動作しますが、URLを文字列として構築する代わりに配列として構築することができ、それによってより複雑なパスを書くこともできます。
 
-We also can programmatically navigate in our app by using the router API.
+Router APIを使用して、プログラムで遷移することもできます。
 
 ```typescript
 import { Component } from '@angular/core';
@@ -110,13 +110,13 @@ export class LoginComponent {
 }
 ```
 
-Both options provide the same navigation mechanism, just fitting different use cases.
+どちらのオプションも同様のナビゲーションメカニズムを提供し、異なるユースケースで利用することができます。
 
-> A note on navigation with relative URLs: Currently, to support multiple navigation stacks, relative URLs are something not supported
+> 相対URLを使用したナビゲーションに関するメモ：現在、複数のナビゲーションスタックをサポートするために、相対URLはサポートされていません。
 
 ## Lazy loading routes
 
-Now the current way our routes are setup makes it so they are included in the same chunk as the root app.module, which is not ideal. Instead, the router has a setup that allows the components to be isolated to their own chunks.
+現在のルート設定では、すべてのComponentが、ルートとなる `app.module` と同じ `chunk` に含まれているので理想的ではありません。代わりに、ルータにはコンポーネントを独自の `chunk` に分離できるように設定されています。
 
 
 ```typescript
@@ -135,7 +135,7 @@ import { RouterModule } from '@angular/router';
 })
 ```
 
-While similar, the `loadChildren` property is a way to reference a module by using native import instead of a component directly. In order to do this though, we need to create a module for each of the components.
+`loadChildren` プロパティはコンポーネントの代わりにネイティブインポートを直接仕様してモジュールを参照する方法です。ただしこれを行うには、コンポーネントごとにモジュールを作成する必要があります。
 
 
 ```typescript
@@ -153,18 +153,18 @@ import { LoginComponent } from './login.component';
 })
 ```
 
-> We're excluding some additional content and only including the necessary parts.
+> 一部のコードを省略して紹介しています
 
 
-Here, we have a typical Angular Module setup, along with a RouterModule import, but we're now using `forChild` and declaring the component in that setup. With this setup, when we run our build, we will produce separate chunks for both the app component, the login component, and the detail component.
+ここでは、`RouterModule` のインポートとともに、典型的な `Angular Module` の設定がありますが、`RouterModule` では `forChild` によってコンポーネントを使用することを宣言しています。この設定では、ビルドを実行するときに、`App Component`（Root）、 `login Component` 、および `detail Component` において別々のチャンクを作成します。
 
 ## Live Example
 
 If you would prefer to get hands on with the concepts and code described above, please checkout our [live example](https://stackblitz.com/edit/ionic-angular-routing?file=src/app/app-routing.module.ts) of the topics above on StackBlitz.
 
-## Working with Tabs
+## タブの利用方法
 
-With Tabs, the Angular Router provides Ionic the mechanism to know what components should be loaded, but the heavy lifting is actually done by the tabs component. Let's look at a simple example.
+タブを使用すると、Angular Routerにどのコンポーネントをロードする必要があるかを知るためのメカニズムをIonicが提供しますが、タブコンポーネントでは複雑な作業が行われます。簡単な例を見てみましょう。
 
 
 ```ts
@@ -197,7 +197,7 @@ const routes: Routes = [
 ];
 ```
 
-Here we have a "tabs" path that we load. In this example we call the path "tabs", but the name of the paths can be changed. They can be called whatever fits your app. In that route object, we can define a child route as well. In this example, the top level child route "tab1" acts as our "outlet", and can load additional child routes. For this example, we have a single sub-child-route, which just loads a new component. The markup for the tab is as followed:
+ロードする `tabs` パスがあります。この例では、`tabs` と設定していますが、`path` の名前は変更可能です。あなたのアプリに合うように何でも設定することができます。この `routes` のオブジェクトでは、`child route`も定義できます。この例では、最上位の`child route`である `tab1` が `outlet` として機能し、追加の `child route` を読み込むことができます。この例では、新しいコンポーネントをロードする単一の `child route` があります。タブのマークアップは次のとおりです。
 
 ```html
 
@@ -215,9 +215,4 @@ Here we have a "tabs" path that we load. In this example we call the path "tabs"
 </ion-tabs>
 ```
 
-If you've built apps with Ionic before, this should feel familiar. We create a `ion-tabs` component, and provide a `ion-tab-bar`. The `ion-tab-bar` provides a `ion-tab-button` with a `tab` property that is associated with the tab "outlet" in the router config. Note that the latest version of `@ionic/angular` no longer requires `<ion-tab>`, but instead allows developers to fully customize the tab bar, and the single source of truth lives within the router configuration.
-
-
-
-
-
+Ionicを使ってアプリを作成したことがあれば、このマークアップはおなじみのはずです。`ion-tabs` コンポーネントを作成し、`ion-tab-bar` を提供します。`ion-tab-bar` は、 `tab`と一緒に`ion-tab-button`を提供します。最新の `@ionic/angular` はもはや `<ion-tab>` を必要とせず、開発者がタブバーを完全にカスタマイズできるようになり、すべての設定はRouterの設定によって行えるようになりました。

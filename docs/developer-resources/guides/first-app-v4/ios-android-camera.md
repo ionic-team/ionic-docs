@@ -1,28 +1,28 @@
 ---
 ---
 
-# Android, iOS, and the Camera - Oh My!
+# Android、iOS、Camera - Oh My!
 
-Previously, we got an Ionic app up and running locally in a web browser. Now, let’s get it onto your iOS or Android device, then start building the photo gallery feature.
+以前は、Ionic アプリを立ち上げて、ウェブブラウザでローカルに実行していました。さて、自分の iOS または Android デバイスにインストールして、フォトギャラリー機能の構築を始めましょう。
 
-## Add Cordova iOS and Android Platforms
+## Cordova の iOS および Android プラットフォームを追加
 
-Ionic leverages the open source [Cordova project](https://cordova.apache.org/docs/en/latest/guide/overview/) to provide native hardware support. We begin by adding the iOS and Android _platforms_ then will add specific _plugins_ like the Camera afterwards:
+Ionic はオープンソースの [Cordova プロジェクト](https://cordova.apache.org/docs/ja/latest/guide/overview/)を活用して、ネイティブなハードウェアサポートを提供しています。まず iOS と Android の _プラットフォーム_ を追加し、その後 Camera のような特定の _プラグイン_ を追加します。
 
 ```shell
 $ ionic cordova platform add ios
 $ ionic cordova platform add android
 ```
 
-These commands will create a `config.xml` file, which is used to define Cordova iOS and Android settings. Cordova reads this file and applies each setting as it builds each native app binary.
+これらのコマンドは `config.xml` ファイルを作成します。これは Cordova iOS と Android の設定を定義するために使われます。Cordova はこのファイルを読み込み、各ネイティブアプリのバイナリをビルドする際に各設定を適用します。
 
 There are more steps to configure [iOS](/docs/developing/ios) and [Android](/docs/developing/android) native tooling.
 
 
 
-Much better! Now we can add the camera functionality. By the way, you can find reference code for this [on GitHub](https://github.com/ionic-team/photo-gallery-tutorial-ionic4).
+とてもいいよ！これで、カメラ機能を追加できます。ちなみに、このリファレンスコードは [GitHub](https://github.com/ionic-team/photo-gallery-tutorial-ionic4) にあります。
 
-Back in `tab2.page.html`, add the following:
+`tab2.page.html` に戻り、以下を追加します:
 
 ```html
 <ion-content>
@@ -36,50 +36,50 @@ Back in `tab2.page.html`, add the following:
 </ion-content>
 ```
 
-Save the file and watch - a camera button appears! Tap on it and notice that it doesn’t do anything. Let’s fix that next.
+ファイルを保存して監視 - カメラボタンが表示されます！これをタップすると、何も実行されないことに気付きます。次に、これを修正します。
 
-## Add the Camera Dependencies via the CLI
+## CLI を介してカメラの依存関係を追加
 
-In order to use the Camera, we need to bring in its JavaScript and native library dependencies. Back over in your Terminal window, run the following command, which adds the JavaScript library to the project, thus exposing the Camera API in TypeScript code:
+Camera を使用するためには、その JavaScript とネイティブライブラリの依存関係を取り込む必要があります。ターミナルウィンドウに戻り、次のコマンドを実行して JavaScript ライブラリをプロジェクトに追加し、TypeScript コードに Camera API を公開します:
 
 ```shell
 $ npm install @ionic-native/camera
 ```
 
-In `package.json`, you’ll notice a new JavaScript dependency has been added, with a version number similar to the following:
+`package.json` 内に、次のようなバージョン番号の新しい JavaScript 依存関係が追加されていることがわかります。
 
 `"@ionic-native/camera": "^5.4.0"`
 
-Next, run this command to add the native iOS and Android code, effectively allowing the Camera to work on a mobile device. For more info on how this works, read up on [Cordova](https://cordova.apache.org/docs/en/latest/guide/overview/) and [Ionic Native](https://ionicframework.com/docs/native).
+次に、このコマンドを実行して iOS と Android のネイティブコードを追加し、実際にカメラをモバイルデバイスで動作させます。こちらのより詳細な情報は、[Cordova](https://cordova.apache.org/docs/en/latest/guide/overview/) と [Ionic Native](https://cordova.apache.org/docs/en/latest/guide/overview/) を御覧ください。
 
 ```shell
 $ ionic cordova plugin add cordova-plugin-camera
 ```
 
-The `config.xml` file is now updated with an entry similar to the following for the native camera code:
+`config.xml` ファイルが更新され、ネイティブカメラコードに次のようなエントリが追加されます。
 
 ```xml
 <plugin name="cordova-plugin-camera" spec="^4.0.3" />
 ```
 
-The next step is only required for iOS users. As of iOS 10, developers must provide a reason for why the app wishes to access the device camera. Add this inside the ios platform section (<platform name="ios"></platform>) of `config.xml`:
+次のステップは iOS ユーザーのみ必要です。iOS10では、開発者はなぜアプリがデバイスカメラにアクセスしたいのか理由を示さなければなりません。これを section (<platform name="ios"></platform>) の `config.xml` の最後に追加します:
 
 ```xml
-<!-- Required for iOS 10: Camera permission prompt -->
+<!-- iOS 10 で必須: Camera 許可プロンプト -->
 <edit-config file="*-Info.plist" mode="merge" target="NSCameraUsageDescription">
     <string>Used to take pictures</string>
 </edit-config>
 ```
 
-## Add Camera plugin to Angular App Module
+## Angular アプリの Module に Camera プラグインを追加
 
-There’s one more step we need to do since this is an Angular project: register the Camera in the App Module (`src/app/app.module.ts`). First, import the Camera module:
+これは Angular プロジェクトなので、もうひとつやるべきことがあります: App Module(`src/app/app.module.ts`) に Camera を登録します。まず、カメラモジュールをインポートします:
 
 ```Javascript
 import { Camera } from '@ionic-native/camera/ngx';
 ```
 
-Then, add it as a Provider:
+では、これを Provider として追加します:
 
 ```Javascript
 providers: [
@@ -90,11 +90,11 @@ providers: [
   ],
 ```
 
-It can now be used on any of our App pages.
+これでアプリ内のどのページでも利用できます。
 
-## Add the Camera to the Gallery page
+## ギャラリーページへの Camera の追加
 
-Our camera button doesn’t do anything yet. Over in `tab2.page.html`, add a click handler to the button:
+カメラボタンはまだ何もしていません。`tab2.page.html` では、ボタンにクリックハンドラを追加します:
 
 ```html
 <ion-fab vertical="bottom" horizontal="center" slot="fixed">
@@ -104,19 +104,19 @@ Our camera button doesn’t do anything yet. Over in `tab2.page.html`, add a cli
 </ion-fab>
 ```
 
-Then, update the image placeholder. The following binds the “currentImage” variable (which we’ll work on next) to the image to display to the user.
+次に、イメージプレースホルダーを更新します。次の例では、"currentImage" 変数(次に取り組んでいきます)がイメージにバインドされ、ユーザに表示されます。
 
 ```html
 <img [src]="currentImage" *ngIf="currentImage">
 ```
 
-Open `tab2.page.ts` next and import the Camera library:
+次に、`tab2.page.ts` を開き、Camera ライブラリをインポートします:
 
 ```Javascript
 import { Camera, CameraOptions } from '@ionic-native/camera/ngx';
 ```
 
-Next, define the “currentImage” variable and inject the Camera into this class via the constructor:
+次に、"currentImage” 変数を定義し、コンストラクタを使用して Camera をこのクラスに挿入します:
 
 ```Javascript
 export class Tab2Page {
@@ -126,7 +126,7 @@ export class Tab2Page {
 }
 ```
 
-Finally, add the “takePicture” method in `tab2.page.ts`. It is already wired up to execute once the camera button has been tapped:
+最後に、 `tab2.page.ts` の "takePicture" メソッドを追加します。カメラボタンをタップした後に実行するように既に設定されています。
 
 ```Javascript
 export class Tab2Page {
@@ -152,8 +152,8 @@ export class Tab2Page {
 }
 ```
 
-Take notice: there’s no mention of iOS or Android! This is the awesome power of plugins: you use one API (`camera.getPicture()` in this case) and the plugin takes care of the platform differences for you. Write once, run everywhere. 😀
+注意: iOS や Android には言及されていません！これはプラグインの素晴らしい能力です: ある API(この場合は `camera.getPicture()`)を使い、プラグインがプラットフォームの違いを処理してくれます。一度書けば、どこでも実行できます。😀
 
-Save this file then tap the Camera button in DevApp. Voila! The camera should open on your device. Once a photo has been taken, it displays on the Photo Gallery page.
+このファイルを保存し、DevApp の Camera ボタンをタップします。ほら見て！デバイスでカメラが起動します。撮影した写真は、フォトギャラリーページに表示されます。
 
 Next, we’ll look at how to transform the app into a photo gallery, as well as how to save the photos to your device!

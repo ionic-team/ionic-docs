@@ -3,11 +3,11 @@ initialTab: 'preview'
 inlineHtmlPreviews: true
 ---
 
-# Colors
+# 配色
 
-Ionic has nine default colors that can be used to change the color of many components. Each color is actually a collection of multiple properties, including a `shade` and `tint`, used throughout Ionic.
+Ionicには、多くのコンポーネントの配色を変更するために使用できる9つのデフォルトカラーがあります。 それぞれの配色は、 `shade` と `tint` を含む複数のプロパティを持つコレクションであり、Ionic全体で利用されます。
 
-A color can be applied to an Ionic component in order to change the default colors using the `color` attribute. Notice in the buttons below that the text and background changes based on the `color` set. When there is no `color` set on the button it uses the `primary` color by default.
+デフォルトの配色を変更するために、 `color` 属性を使って任意の色をIonicのコンポーネントに適用できます。以下の buttons はテキストと背景が `color` 属性に基づいて変更されていることに注目してください。button に `color` 属性がない時は、デフォルト値として `primary` の配色が適用されます。
 
 ```html
 <ion-button>Default</ion-button>
@@ -22,9 +22,9 @@ A color can be applied to an Ionic component in order to change the default colo
 <ion-button color="dark">Dark</ion-button>
 ```
 
-## Layered Colors
+### 配色のレイヤードスタイル
 
-Each color consists of the following properties: a `base`, `contrast`, `shade`, and `tint`. The `base` and `contrast` colors also require a `rgb` property which is the same color, just in <a href="https://developer.mozilla.org/en-US/docs/Glossary/RGB" target="_blank">rgb format</a>. See [The Alpha Problem](./advanced#the-alpha-problem) for an explanation of why the `rgb` property is also needed. Select from the dropdown below to see all of the default colors Ionic provides and their variations.
+それぞれの配色は、これらのプロパティで構成されています: `base`, `contrast`, `shade`, と `tint` です。`base` と `contrast` の配色は `rgb` プロパティと同一の配色が求められます。 <a href="https://developer.mozilla.org/en-US/docs/Glossary/RGB" target="_blank">rgb format</a> をご覧ください。この `rgb` の変数が必要な理由は [The Alpha Problem](#the-alpha-problem) をご覧ください。下のドロップダウンから選択することで、Ionicが提供するデフォルトの配色とそのバリエーションを確認することができます。
 
 import LayeredColorsSelect from '@site/src/components/LayeredColorsSelect';
 
@@ -34,7 +34,7 @@ import LayeredColorsSelect from '@site/src/components/LayeredColorsSelect';
 
 import CodeColor from '@site/src/components/CodeColor';
 
-To change the default values of a color, all of the listed variations for that color should be set. For example, to change the secondary color to <CodeColor mode="md" value="#006600"></CodeColor>, set the following CSS properties:
+配色を変更するときは、その色についてリストされているすべてのバリエーションを変更する必要があります。例えば、`secondary color` を <code-color mode="md" value="#006600"></code-color> に変更する時、以下のCSSプロパティが必要です。
 
 ```css
 :root {
@@ -47,17 +47,17 @@ To change the default values of a color, all of the listed variations for that c
 }
 ```
 
-When `secondary` is applied to a button, not only is the base color <CodeColor mode="md" value="#006600"></CodeColor> used, but the contrast color <CodeColor mode="md" value="#ffffff"></CodeColor> is used for the text, along with shade <CodeColor mode="md" value="#005a00"></CodeColor> and tint <CodeColor mode="md" value="#1a751a"></CodeColor> colors for the different states of the button.
+`secondary` をボタンに適用した時、利用されるのはベースカラー <code-color mode="md" value="#006600"></code-color> だけではありません。`contrast color` <code-color mode="md" value="#ffffff"></code-color> はテキストに適用され、それに加えて `shade` <code-color mode="md" value="#005a00"></code-color> と `tint` <code-color mode="md" value="#1a751a"></code-color> はボタンのステータスが変更された時に利用されます。
 
-> Not sure how to get the variation colors from the base color? Try out our [Color Generator](/docs/theming/color-generator) that calculates all of the variations and provides code to copy/paste into an app!
+> ベースカラーからバリエーションカラーを取得する方法がわからない？その場合、 [Color Generator](/docs/theming/color-generator) をお試しください。これはすべてのバリエーションを計算し、アプリにコピー&ペーストできるコードを提供します！
 
-See the [CSS Variables documentation](/docs/theming/css-variables) for more information on CSS variables.
+CSS変数についてもっと詳しく知りたい時は [CSS Variables documentation](/docs/theming/css-variables) をご覧ください。
 
-## Adding Colors
+### 配色の追加
 
-Colors can be added for use throughout an application by setting the `color` property on an Ionic component, or by styling with CSS. Read on to see how to manually add a new color, or use the [New Color Creator](#new-color-creator) below for a quick way to generate the code of a new color to be copy and pasted into an application.
+カラーは、Ionicコンポーネントの 「color」 プロパティを設定するか、CSSを使用してスタイル設定することで、アプリケーション全体で使用できるように追加できます。新しいカラーを手動で追加する方法については、この後の 「New Color Creator」 を参照してください。コピーしてアプリケーションに貼り付ける新しいカラーのコードを簡単に生成する方法については、次の 「New Color Creator」 を参照してください。
 
-To add a new color, first define the CSS variables for all of the variations of the color at the root. For example, to add a new color called `favorite`, we can define the following variables:
+新しいカラーを追加するには、最初にルートのカラーのすべてのバリエーションのCSS変数を定義します。たとえば、`favorite`という新しいカラーを追加するには、次の変数を定義します:
 
 ```css
 :root {
@@ -70,7 +70,7 @@ To add a new color, first define the CSS variables for all of the variations of 
 }
 ```
 
-Then, create a new class that uses these CSS variables. The class **must** be written in the format `.ion-color-{COLOR}` where `{COLOR}` is the name of the color to add:
+次に、これらのCSS変数を使用する新しいクラスを作成します。クラスは、`.ion-color-{COLOR}` の形式で記述する**必要があります**。 `{COLOR}` は追加するカラーの名前です:
 
 ```css
 .ion-color-favorite {
@@ -83,13 +83,13 @@ Then, create a new class that uses these CSS variables. The class **must** be wr
 }
 ```
 
-After the class is added, the color can be used on any Ionic component that supports the `color` property. An example of using the `favorite` color on an Ionic button is below.
+クラスを追加すると、colorプロパティーをサポートする任意のIonicコンポーネントでカラーを使用できるようになります。Ionicボタンに`favorite`の色を使用する例を以下に示します。
 
 ```html
 <ion-button color="favorite">Favorite</ion-button>
 ```
 
-The CSS variables defined at the root can also be used to style any element using CSS:
+ルートで定義されたCSS変数は、CSSを使用して任意のエレメントのスタイル設定にも使用できます:
 
 ```css
 div {
@@ -98,10 +98,10 @@ div {
 }
 ```
 
-See the [CSS Variables documentation](/docs/theming/css-variables) for more information on setting and using CSS variables.
+CSS変数の設定方法と使い方についての詳しい情報は [CSS Variables documentation](/docs/theming/css-variables) をご覧ください。
 
 ## New Color Creator
 
-Create a new color below by changing the name and value, then copy and paste the code below into your project.
+名前と値を変更して以下で新しい色を作成し、以下のコードをコピーしてプロジェクトに貼り付けることで、その配色をIonicプロジェクトで利用できます。
 
 <new-color-generator mode="md" no-prerender></new-color-generator>

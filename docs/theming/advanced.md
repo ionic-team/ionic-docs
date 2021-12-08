@@ -7,14 +7,14 @@ contributors:
   - marcjulian
 ---
 
-# Advanced Theming
+# 高度なカスタマイズ
 
-CSS-based theming enables apps to customize the colors quickly by loading a CSS file or changing a few CSS property values.
+CSSベースのテーマ設定では、CSSファイルをロードするか、いくつかのCSSプロパティ値を変更することで、アプリの配色をすばやくカスタマイズできます。
 
 
-## Globals
+## グローバル
 
-While the application and stepped variables in the themes section are useful for changing the colors of an application, often times there is a need for variables that are used in multiple components. The following variables are shared across components to change global padding settings and more.
+前述の変数はアプリケーションの色を変更するのに役立ちますが、多くの場合、複数のコンポーネントで使用される変数が必要になります。以下の変数は、グローバルパディング設定などを変更するためにコンポーネント間で共有されます。
 
 ### Application Variables
 
@@ -51,7 +51,7 @@ While the application and stepped variables in the themes section are useful for
 
 ### The Alpha Problem
 
-There is not yet full <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/color_value#Browser_compatibility" target="_blank">browser support</a> for alpha use of a hex color. The <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/color_value#rgb()_and_rgba()" target="_blank">rgba()</a> function only accepts a value in `R, G, B, A` (Red, Green, Blue, Alpha) format. The following code shows examples of correct and incorrect values passed to `rgba()`.
+16進数カラーのアルファ使用については、まだ完全な<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/color_value#Browser_compatibility" target="_blank">ブラウザサポート</a>はありません。<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/color_value#rgb()_and_rgba()" target="_blank">rgba()</a> 関数は、`R, G, B, A` (Red, Green, Blue, Alpha) のフォーマットのみ利用可能です。次のコードは、`rgba()`　に受け渡される正しい値と間違った値の例を示しています。
 
 ```css
 /* These examples use the same color: blueviolet. */
@@ -70,9 +70,9 @@ There is not yet full <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/
 }
 ```
 
-> See the [CSS Variables](/docs/theming/css-variables) section for more information on how to get and set CSS variables.
+> CSS変数を取得および設定する方法については、 [CSS Variables](/docs/theming/css-variables) セクションをご参照ください。
 
-Ionic uses colors with an opacity (alpha) in several components. In order for this to work, those properties must be provided in RGB format. When changing any of the properties that have a variation ending in `-rgb`, it is important they are also provided in a comma separated format **without parentheses**. Below are some examples for changing text and background color.
+Ionicはいくつかのコンポーネントで不透明度（アルファ）を​​持つ色を使用します。これが機能するためには、それらのプロパティはRGBフォーマットで提供されなければなりません。末尾にバリエーションがあるプロパティのいずれかを変更する場合、 `-rgb` で終わる括弧なしのカンマ区切り形式でも提供されることが重要です。以下は、テキストと背景色を変更するための例です。
 
 ```css
 :root {
@@ -86,7 +86,7 @@ Ionic uses colors with an opacity (alpha) in several components. In order for th
 }
 ```
 
-Note that the RGB formatted colors are the exact same color as the hex properties, but can now be used with `rgba()`. For example, `--ion-text-color-rgb` can now be used in the following way
+RGB形式の色はhexプロパティとまったく同じ色ですが、現在は `rgba()` で使用できることに注意してください。例えば、`--ion-text-color-rgb` は以下のように利用できます。
 
 ```css
 body {
@@ -97,7 +97,7 @@ body {
 
 ### Variables in Media Queries
 
-CSS variables in [media queries](https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries) are not currently supported, but there are open drafts to add [custom media queries](https://drafts.csswg.org/mediaqueries-5/#custom-mq) and [custom environment variables](https://drafts.csswg.org/css-env-1/) that would solve this problem! However, with the current state of support, the following will **not** work:
+[メディアクエリ](https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries) のCSS変数は現在サポートされていませんが、この問題を解決する[custom media queries](https://drafts.csswg.org/mediaqueries-5/#custom-mq) と [custom environment variables](https://drafts.csswg.org/css-env-1/)を追加するためのオープンドラフトがあります。ただし、現在のサポート状態では、次の機能は動作しません。
 
 ```css
 :root {
@@ -110,11 +110,11 @@ CSS variables in [media queries](https://developer.mozilla.org/en-US/docs/Web/CS
 ```
 
 
-### Modifying CSS Color Variables
+### CSSカラー変数の変更
 
-While it is possible to easily alter a color in Sass using its built-in functions, it is currently not as easy to modify colors set in CSS Variables. This can be accomplished in CSS by splitting the [RGB](https://developer.mozilla.org/en-US/docs/Glossary/RGB) or [HSL](https://en.wikipedia.org/wiki/HSL_and_HSV) channels and modifying each value, but it is complex and has missing functionality.
+Sassの組み込み関数を使用して簡単に色を変更することは可能ですが、現在のところCSS変数で設定された色を変更するのはそれほど簡単ではありません。これは、CSSで [RGB](https://developer.mozilla.org/en-US/docs/Glossary/RGB) or [HSL](https://en.wikipedia.org/wiki/HSL_and_HSV) チャネルまたはHSLチャネルを分割してそれぞれの値を変更することで実現できますが、複雑で機能が不足しています。
 
-What exactly does this mean? Basically, using a CSS preprocessor, such as Sass, allows us to use functions to manipulate a single color. For example, we can create the following colors in Sass:
+正確に説明します。基本的に、SassなどのCSSプリプロセッサを使用すると、関数を使用して単一の色を操作できます。たとえば、Sassには次のカラーを作成できます:
 
 ```scss
 // Background color, shade, and tint
@@ -130,19 +130,19 @@ $text-lighter: lighten($text, 15);
 
 import CodeColor from '@site/src/components/CodeColor';
 
-After running through the Sass compiler, the colors will have the following values:
+Sassコンパイラで実行すると、色の値は次のようになります:
 
 | Variable            | Value                                                     |
 | --------------------| ----------------------------------------------------------|
-| `$background`       | <CodeColor mode="md" value="#3880ff"></CodeColor>         |
-| `$background-shade` | <CodeColor mode="md" value="#3171e0"></CodeColor>         |
-| `$background-tint`  | <CodeColor mode="md" value="#4c8dff"></CodeColor>         |
-| `$text`             | <CodeColor mode="md" value="#444444"></CodeColor>         |
-| `$text-darker`      | <CodeColor mode="md" value="#1e1e1e"></CodeColor>         |
-| `$text-lighter`     | <CodeColor mode="md" value="#6a6a6a"></CodeColor>         |
+| `$background`       | <code-color mode="md" value="#3880ff"></code-color>       |
+| `$background-shade` | <code-color mode="md" value="#3171e0"></code-color>       |
+| `$background-tint`  | <code-color mode="md" value="#4c8dff"></code-color>       |
+| `$text`             | <code-color mode="md" value="#444444"></code-color>       |
+| `$text-darker`      | <code-color mode="md" value="#1e1e1e"></code-color>       |
+| `$text-lighter`     | <code-color mode="md" value="#6a6a6a"></code-color>       |
 
-However, because CSS variables can be set at runtime and are more dynamic, it is not currently possible to manipulate them using a simple function.
+ただし、CSS変数は実行時に設定でき、より動的であるため、現時点では単純な関数を使用して操作することはできません。
 
-This is normally not a problem, but when an application needs to have dynamic theming it presents issues. In Ionic, this is the reason that there are [variations to each color](./colors#layered-colors), and it is also why [stepped colors](./themes/#stepped-colors) are necessary for theming.
+これは通常は問題にはなりませんが、アプリケーションに動的なテーマカラーの設定が必要な場合は問題になります。Ionicでは、これが[各色にバリエーションがある](./colors#layered-colors)理由であり、テーマ設定に[stepped colors](./themes/#stepped-colors)が必要な理由でもあります。
 
-There are drafts and issues discussing [color modification proposals](https://github.com/w3c/csswg-drafts/issues/3187) that would make this possible.
+これを可能にする[color modification proposals](https://github.com/w3c/csswg-drafts/issues/3187)を議論している草案とIssuesはこちらからご覧いただけます。

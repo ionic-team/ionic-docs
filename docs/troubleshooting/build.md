@@ -4,55 +4,54 @@ contributors:
   - brandyscarney
 ---
 
-# Build Errors
+# ビルドエラー
 
 
-## Common mistakes
+## 一般的な間違い
 
-### Forgetting Parentheses on a Decorator
+### デコレーターにて丸括弧を忘れる
 
-Decorators should have parentheses `()` after an annotation. Some examples include: `@Injectable()`, `@Optional()`, `@Input()`, etc.
+デコレーターはアノテーションの後に丸括弧 `()` を持つべきです。いくつか例を示します: `@Injectable()`, `@Optional()`, `@Input()`, など。
 
 ```typescript
 @Directive({
   selector: 'my-dir'
 })
 class MyDirective {
-  // Wrong, should be @Optional()
-  // @Optional does nothing here, so MyDirective will error if parent is undefined
+  // 誤り、@Optional() とすべき
+  // @Optional はここでは何もしないため、MyDirective は parent が undefined の場合にエラーになる
   constructor( @Optional parent: ParentComponent) { }
 }
 ```
 
-## Common Errors
+## 一般的なエラー
 
-### Cannot Resolve all Parameters
+### すべてのパラメータを解決できない
 
 ```shell
 Cannot resolve all parameters for 'YourClass'(?). Make sure that all the parameters are decorated with Inject or have valid type annotations and that 'YourClass' is decorated with Injectable.
 ```
 
-This exception means that Angular is confused about one or more of the parameters for `YourClass`'s constructor. In order to do [dependency injection](https://angular.io/docs/ts/latest/guide/dependency-injection.html) Angular needs to know the type of the parameter to inject. You let Angular know this by specifying the class of the parameter. Make sure:
+この例外は Angular が `YourClass` のコンストラクタの 1つ以上のパラメータについて困惑していることを意味します。[依存性を注入](https://angular.jp/docs/ts/latest/guide/dependency-injection.html) するため、Angular は 注入するパラメータの型を知る必要があります。パラメータのクラスを指定することで Angular にこのこと（タイプ）を知らせます。次の点を確認してください:
 
-- You are importing the parameter's class.
-- You have properly annotated the parameter or specified its type.
+- パラメータのクラスをインポートします。
+- パラメータに適切な注釈をつけるか、パラメータの型を指定します。
 
 ```typescript
-import { MyService } from 'my-service'; // Don't forget to import me!
+import { MyService } from 'my-service'; // 私をインポートすることを忘れないで！
 
 @Component({
   template: `Hello World`
 })
 export class MyClass {
-  // service is of type MyService
+  // service は MyService のタイプです
   constructor(service: MyService) {
 
   }
 }
 ```
 
-Sometimes circular references within your code can cause this error. Circular references mean that two objects depend on each other, and so there is no way to declare both of them before each other. To get around this, we can use the [`forwardRef`](https://angular.io/docs/ts/latest/api/core/index/forwardRef-function.html) function built in to Angular.
-
+コード内の循環参照がこのエラーの原因になることがあります。循環参照は、2つのオブジェクトが相互に依存していることを意味するため、両方を相互の前に宣言する方法はありません。この問題を回避するには、Angular に組み込まれている[`forwardRef`](https://angular.jp/docs/ts/latest/api/core/index/forwardRef-function.html) 関数を使用します。
 ```ts
 import { forwardRef } from '@angular/core';
 
@@ -62,8 +61,8 @@ import { forwardRef } from '@angular/core';
                <icon></icon>
                <input type="button" />
              </div>`,
-  directives: [forwardRef(() => MyIcon)] // MyIcon has not been defined yet
-})                                       // forwardRef resolves as MyIcon when MyIcon is needed
+  directives: [forwardRef(() => MyIcon)] // MyIcon はまだ定義されていません
+})                                       // forwardRef は MyIcon が必要なときに MyIcon として解決します
 class MyButton {
   constructor() { }
 }
@@ -72,20 +71,20 @@ class MyButton {
   selector: 'icon'
 })
 class MyIcon {
-  constructor(containerButton: MyButton) { } // MyButton has been defined
+  constructor(containerButton: MyButton) { } // MyButton が定義されました
 }
 ```
 
 
-### No provider for ParamType
+### ParamType の Provider がない
 
 ```shell
 No provider for ParamType! (MyClass -> ParamType)
 ```
 
-This means Angular knows the type of parameter it is supposed to inject, but it doesn't know how to inject it.
+これは、Angular は注入されるべきパラメータの型を知っているが、注入方法を知らないことを意味する。
 
-If the parameter is a service, make sure you have added the specified class to the list of providers available to your app:
+パラメータが Service の場合は、指定したクラスがアプリケーションで使用可能な providers のリストに追加されていることを確認します:
 
 
 ```typescript
@@ -93,12 +92,12 @@ import { MyService } from 'my-service';
 
 @Component({
   templateUrl: 'app/app.html',
-  providers: [MyService] // Don't forget me!
+  providers: [MyService] // 私を忘れないで！
 })
 class MyApp { }
 ```
 
-If the parameter is another component or directive (for example, a parent component), adding it to your list of providers will make the error go away, but this will have the same effect as the [Multiple instances of a provider](#multiple_instances) above. You'll be creating a new instance of the component class, and you won't get a reference to the component instance you want. Instead, make sure that the directive or component you expect to be injected is available to your component (e.g. that it is actually a parent if you are expecting it to be a parent). This is probably easiest understood with an example:
+パラメータが別のコンポーネントまたはDirective（たとえば、親コンポーネント）である場合、パラメータを providers のリストに追加するとエラーはなくなりますが、これは前述の [provider の複数のインスタンス](/docs/faq/runtime#provider-) と同じ効果を持ちます。ここでは、コンポーネントクラスの新しいインスタンスを作成しますが、必要なコンポーネントインスタンスへの参照は取得しません。かわりに、注入されるであろうDirectiveまたはコンポーネントがコンポーネントで使用可能であることを確認します（たとえば、親であることを期待している場合は、実際に親であること）。これはおそらく、例を使用すると最も簡単に理解できます:
 
 ```typescript
 @Component({
@@ -116,25 +115,25 @@ class MyComp {
   selector: '[my-dir]'
 })
 class MyDir {
-  constructor(c: MyComp) { // <-- This is the line of interest
+  constructor(c: MyComp) { // <-- これは興味深い1行です
 
-    // Errors when directive is on regular div because there is no MyComp in the
-    // component tree so there is no MyComp to inject
+    // コンポーネントツリーにMyCompがなく、注入するMyCompがないため、
+    // Directiveが通常のdivにある場合のエラーのdivにある場合のエラー
     console.log('Host component\'s name: ' + c.name);
 
   }
 }
 
 @Component({
-  template: "<my-comp></my-comp>" + // No error in MyDir constructor, MyComp is parent of MyDir
-  "<my-comp my-dir></my-comp>" + // No error in MyDir constructor, MyComp is host of MyDir
-  "<div my-dir></div>", // Errors in MyDir constructor
+  template: "<my-comp></my-comp>" + // MyDir コンストラクタ内ではエラーなし、MyComp は MyDir の親
+  "<my-comp my-dir></my-comp>" + // MyDir コンストラクタ内ではエラーなし、MyComp は MyDir のホスト
+  "<div my-dir></div>", // MyDir コンストラクタ内でエラー
   directives: [MyComp, MyDir]
 })
 class MyApp { }
 ```
 
-Here's a diagram illustrating what injectors are available:
+以下に、使用可能な注入するものの図を示します:
 
 ```
                  +-------+
@@ -144,15 +143,15 @@ Here's a diagram illustrating what injectors are available:
        +-------------+------------+
        |                          |
 +------+------+          +--------+--------+
-| Div (MyDir) |          | MyComp (MyDir)  |  <- MyComp can be injected
+| Div (MyDir) |          | MyComp (MyDir)  |  <- MyComp は注入可能
 +-------------+          +--------+--------+
        ^                          |
-No MyComp to inject        +------+------+
-                           | P (MyDir)   | <- MyComp can be injected from parent
+MyComp の注入なし            +------+------+
+                           | P (MyDir)   | <- MyComp は親から注入可能
                            +-------------+
 ```
 
-To expand on the previous example, you can use the Angular `@Optional` annotation if you don't always expect a component/directive reference:
+前の例を拡張するために、コンポーネント/Directiveの参照を常に期待しているわけではない場合には、Angular の `@Option` アノテーションを使うことができます:
 
 ```typescript
 @Directive({
@@ -168,26 +167,26 @@ class MyDir {
 }
 ```
 
-### Can't bind to 'propertyName' since it isn't a known property
+### 既知のプロパティではないため、`propertyName` にバインドできない
 
 ```shell
 Can't bind to 'propertyName' since it isn't a known property of the 'elementName' element and there are no matching directives with a corresponding property
 ```
 
-This happens when you try and bind a property on an element that doesn't have that property. If the element is a component or has one or more directives on it, neither the component nor the directives have that property either.
+これは、そのプロパティを持たない要素にプロパティをバインドしようとしたときに発生します。要素がコンポーネントの場合、または要素に1つ以上のDirectiveがある場合、コンポーネントもDirectiveもそのプロパティを持ちません。
 
 ```html
-<!-- div doesn't have a 'foo' property -->
+<!-- div には 'foo' というプロパティがない -->
 <div [foo]="bar"></div>
 ```
 
-### No provider for ControlContainer
+### ControlContainer の Provider がない
 
 ```shell
 No provider for ControlContainer! (NgControlName -> ControlContainer)
 ```
 
-This error is a more specific version of the `No provider` error above.  It happens when you use a form control like NgControlName without specifying a parent [NgForm](https://angular.io/docs/ts/latest/api/forms/index/NgForm-directive.html) or NgFormModel.  In most cases, this can be resolved by making sure your form control is within an actual form element.  NgForm uses `form` as a selector so this will instantiate a new NgForm:
+このエラーは、上記の `No provider` エラーのより具体的なバージョンです。これは、親の [NgForm](https://angular.jp/docs/ts/latest/api/forms/index/NgForm-directive.html) または NgFormModel を指定せずに NgControlName などのフォームコントロールを使用した場合に発生します。ほとんどの場合、これはフォームコントロールが実際のフォーム要素内にあることを確認することで解決できます。NgForm はセレクタとして `form` を使用するので、これは新しいNgFormをインスタンス化します:
 
 ```typescript
 @Component({
@@ -198,10 +197,10 @@ This error is a more specific version of the `No provider` error above.  It happ
 })
 ```
 
-### No Component Factory Found
+### コンポーネントファクトリがない
 
 ```shell
 No component factory found for <component name>
 ```
 
-This error happens when you are trying to use a component, provider pipe or directive that has not been imported and added to your ngModule. Whenever you add a new component, provider, pipe or directive to your app, you must add it to the `ngModule` in the `src/app/app.module.ts` file for Angular to be able to use it. To fix this error you can import the offending component, provider, pipe or directive into the app.module file and then if it is a provider add it to the `providers` array and for a component, pipe or directive add it to both the declarations array and `entryComponents` array.
+このエラーは、ngModule にインポートおよび追加されていない Component、Provider Pipe、Directiveを使用しようとしたときに発生します。新しい Component、Provider、Pipe、Directiveをアプリケーションに追加する場合は必ず、Angularがそれを使えるようにするために、`src/app/app.module.ts` ファイル内の `ngModule` に追加する必要があります。このエラーを修正するには、問題の Component、Provider、Pipe、Directiveを app.module ファイルにインポートし、Provider の場合は `providers` 配列に追加、Component、Pipe、Directiveの場合は宣言配列と `entryComponents` 配列の両方に追加します。

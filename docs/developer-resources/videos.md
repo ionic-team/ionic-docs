@@ -5,20 +5,20 @@
 
 ### [Ionic 2 Crash Course](https://www.youtube.com/watch?v=O2WiI9QrS5s&feature=youtu.be)
 
-A quick introduction to Ionic 2 and how to build your first app.
+Ionic2の簡単な紹介と最初のアプリの作り方です。
 
 ### [Ionic &amp; Async](https://blog.ionicframework.com/screencast-ionic-async/)
 
-Learn how to coordinate multiple events in a timely manner.
+複数のイベントをしかるべきタイミングで調整する方法を説明します。
 
 ### [Building a TODO app in Ionic 2](http://www.joshmorony.com/build-a-todo-app-from-scratch-with-ionic-2-video-tutorial/)
 
-Learn how to build out an entire Ionic 2 app.
+Ionic2アプリを構築する方法を学びましょう。
 
 ### [Angular Connect: Ionic 2](https://www.youtube.com/watch?v=bAlydPwFONY)
 
-Dive into some of the ideas and goals behind Ionic 2.
+Ionic2の裏にあるアイデアと目標を掘り下げてみましょう。
 
 ### [Ionic &amp; Typings](https://blog.ionicframework.com/ionic-and-typings/)
 
-Learn how to add typings for libraries you are using in your Ionic 2 app.
+Ionic2アプリで使用しているライブラリに、タイピングを追加する方法を学びましょう。

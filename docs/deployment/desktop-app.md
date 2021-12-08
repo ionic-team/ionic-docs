@@ -4,40 +4,40 @@ contributors:
   - mhartington
 ---
 
-# Deploying a Desktop App
+# デスクトップアプリの開発
 
-Building a desktop app with Ionic allows developers to reuse 100% of their code and ship a traditional desktop app while still having access to all the native device features, like push notifications. This guide assumes familiarity with Electron, and does not go into "how" to build an electron app. For that, check out the official <a href="https://electronjs.org/docs/tutorial/first-app" target="_blank">Electron guide</a>.
+Ionicを使ってデスクトップアプリを構築することで、開発者は自分のコードの100%を再利用し、プッシュ通知のようなネイティブデバイスの全機能にアクセスしながら、今までのようにデスクトップアプリをリリースすることができます。このガイドは、Electronに精通していることを前提としており、Electronアプリを構築するための「方法」には触れていません。それらについては <a href="https://electronjs.org/docs/tutorial/first-app" target="_blank">Electron guide</a> を参照ください。
 
-## macOS App
+## macOSアプリ
 
-### Requirements
+### 要件
 
-There are two hard requirements for publishing an app on the macOS app store
+macOSアプリをストアでアプリを公開するには、難しい要件が2つあります。
 
-* Latest version of [Xcode](https://itunes.apple.com/us/app/xcode/id497799835?mt=12)
-* An active developer account ($100 through Apple's developer portal)
+* [Xcode](https://itunes.apple.com/us/app/xcode/id497799835?mt=12) が最新版であること
+* 開発者アカウント ($100 through Apple's developer portal) が有効であること
 
-### Publishing
+### リリース
 
-The Electron team has a detailed guide on how to publish an app for macOS. Please review [the docs here.](https://electronjs.org/docs/tutorial/mac-app-store-submission-guide)
+Electronチームは、macOS用のアプリを公開する方法についての詳細なガイドを持っています。[the docs](https://electronjs.org/docs/tutorial/mac-app-store-submission-guide) をご覧ください。
 
-## Windows App
+## Windowsアプリ
 
-### Requirements
+### 要件
 
-There are two hard requirements for publishing an app on the Windows app store
+Windowsアプリをストアでアプリを公開するには、2つの厳しい要件があります。
 
 * Windows 10 with Anniversary Update (released August 2nd, 2016)
 * The Windows 10 SDK, [download here](https://developer.microsoft.com/en-us/windows/downloads/windows-10-sdk)
 * Node
 * electron-windows-store CLI
 
-`electron-windows-store` can be installed via npm:
+`electron-windows-store` は npm を使ってインストールすることができます:
 
 ```shell
 $ npm install -g electron-windows-store
 ```
 
-### Publishing
+### リリース作業
 
-Like macOS, Electron has a detailed guide on how to publish an app for Windows. Please review [the docs here](https://electronjs.org/docs/tutorial/windows-store-guide)
+macOSと同様、ElectronはWindows用のアプリを公開する方法についても詳細なガイドを提供している。 [the docs](https://electronjs.org/docs/tutorial/windows-store-guide) を確認してください

@@ -3,6 +3,12 @@
 
 # Books
 
+### [Ionicで作る モバイルアプリ制作入門〈Web/iPhone/Android対応〉](https://amzn.to/2Ygk5bA)
+
+WEBサイトがつくれれば、モバイルアプリをつくることができる時代がやってきました。本書では、HTMLでモバイルアプリをつくるフレームワーク「Ionic」の紹介と、チュートリアルで作り方を解説しています。
+
+by [rdlabo](https://twitter.com/rdlabo)
+
 ### [Learn Ionic 4 From Scratch](https://leanpub.com/learnionic4fromscratch)
 
 Angular. Vue. React. Vanilla JavaScript. All of these tools can be used to create awesome applications with Ionic, thanks to the new Stencil compiler. This book is aimed at beginners that are looking to create amazing web, mobile and desktop applications using Ionic with examples across all of the popular frameworks.

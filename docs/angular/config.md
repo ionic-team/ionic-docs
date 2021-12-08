@@ -6,11 +6,11 @@ contributors:
 
 # Config
 
-Ionic Config provides a way to change the properties of components globally across an app. It can set the app mode, tab button layout, animations, and more.
+Ionic Config provides は、アプリケーション全体でコンポーネントのプロパティをグローバルに変更する方法を提供します。アプリのmode、タブボタンのレイアウト、アニメーションなどを設定できます。
 
 ## Global Config
 
-To override the initial Ionic config for the app, provide a config in `IonicModule.forRoot` in the `app.module.ts` file.
+アプリケーションの初期のIonic Configを上書きするには、`IonicModule` に設定を指定します。 `app.module.ts` にある `IonicModule.forRoot` を指定ください。
 
 ```typescript
 import { IonicModule } from '@ionic/angular';
@@ -29,12 +29,12 @@ import { IonicModule } from '@ionic/angular';
 })
 ```
 
-In the above example, we are disabling the Material Design ripple effect across the app, as well as forcing the mode to be Material Design.
+上記の例では、アプリ全体でマテリアルデザインのripple effectを無効にし、同時にmodeをマテリアルデザインに統一しています。
 
 
-## Per-Component Config
+## コンポーネントの設定
 
-Ionic Config is not reactive, so it is recommended to use a component's properties when you want to override its default behavior rather than set its config globally.
+Ionic Configはリアクティブではないため、構成をグローバルに設定するのではなく、デフォルトの動作を上書きする場合は、コンポーネントのプロパティを使用することをお勧めします。
 
 ```typescript
 import { IonicModule } from '@ionic/angular';
@@ -52,22 +52,22 @@ import { IonicModule } from '@ionic/angular';
 })
 ```
 
-This will set the default text for `ion-back-button` to `Go Back`. However, if you were to change the value of the `backButtonText` config to `Do Not Go Back`, the `ion-back-button` default text would still default to `Go Back` as the component has already been initialized and rendered. Instead, it is recommended to use the `text` property on `ion-back-button`.
+この設定は `ion-back-button` のデフォルトのテキストを `Go Back` に変更します。しかし、この設定を行っていると `backButtonText` を `Do Not Go Back` と変更しても、 `ion-back-button` のテキストは `Go Back` のままでレンダリングされます。ですので、 `ion-back-button` の `text` プロパティを使うことをおすすめします。
 
 ```html
 <ion-back-button [text]="getBackButtonText()"></ion-back-button>
 ```
 
-In this example we have used our `ion-back-button` in such a way that the text can be dynamically updated if there were to be a change that warranted it, such as a language or locale change. The `getBackButtonText` method would be responsible for returning the correct text.
+この例では、 `ion-back-button` を使用して、言語やロケールの変更など、それを保証する変更がある場合にテキストを動的に更新できるようにしています。 `getBackButtonText` メソッドは、正しいテキストを返す処理を行います。
 
-## Per-Platform Config
+## プラットフォームごとの設定Per-Platform Config
 
-Ionic Config can also be set on a per-platform basis. For example, this allows you to disable animations if the app is being run in a browser on a potentially slower device. Developers can take advantage of the Platform utilities to accomplish this.
+Ionic Configは、プラットフォームごとに設定することもできます。例えば、遅い可能性のあるデバイス上のブラウザでアプリを実行している場合、アニメーションを無効にすることができる。開発者は、プラットフォーム・ユーティリティーを利用してこれを実現することができます。
 
-Since the config is set at runtime, you will not have access to the Platform Dependency Injection. Instead, you can use the underlying functions that the provider uses directly.
+configは実行時に設定されるため、Platform Dependency Injectionにはアクセスできません。代わりに、プロバイダが直接使用する基本関数を使用できます。
 
-In the following example, we are disabling all animations in our Ionic app only if the app is running in a mobile web browser. 
-The `isPlatform()` call returns `true` or `false` based upon the platform that is passed in. See the [Platform Documentation](./platform#platforms) for a list of possible values.
+次の例では、アプリケーションがモバイルWebブラウザで実行されている場合にのみ、Ionicアプリケーションのすべてのアニメーションを無効にしています。
+`isPlatform ()` 呼び出しは、渡されたプラットフォームに基づいて `true` または `false` を返します。[Platform Documentation](./platform#platforms) で利用可能な値をご覧ください。
 
 
 ```typescript
@@ -86,7 +86,7 @@ import { isPlatform, IonicModule } from '@ionic/angular';
 })
 ```
 
-The next example allows you to set an entirely different configuration based upon the platform, falling back to a default config if no platforms match:
+次の例では、プラットフォームに基づいてまったく異なる構成を設定し、一致するプラットフォームがない場合はデフォルトの構成に戻すことができます:
 
 ```typescript
 import { isPlatform, IonicModule } from '@ionic/angular';
@@ -114,7 +114,7 @@ const getConfig = () => {
 })
 ```
 
-Finally, this example allows you to accumulate a config object based upon different platform requirements:
+最後に、この例では、異なるプラットフォーム要件に基づいて構成オブジェクトを設定できます:
 
 ```typescript
 import { isPlatform, IonicModule } from '@ionic/angular';
@@ -144,9 +144,9 @@ const getConfig = () => {
 })
 ```
 
-## Config Options
+## Configオプション
 
-Below is a list of config options that Ionic uses.
+以下はIonicが使用する設定オプションのリストです。
 
 | Config                   | Type               | Description                                                                                              |
 |--------------------------|--------------------|----------------------------------------------------------------------------------------------------------|

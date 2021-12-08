@@ -4,9 +4,9 @@ contributors:
   - zaarheed
 ---
 
-# iOS App Store Deployment
+# iOS App Storeでの開発
 
-## Requirements
+## 要件
 
 Submitting an App to the iOS App store requires a few things:
 
@@ -17,7 +17,7 @@ Submitting an App to the iOS App store requires a few things:
 
 To enroll in the Apple Developer Program, follow the instructions [listed here](https://developer.apple.com/programs/).
 
-## Generating a release build
+## リリースビルドの作成
 
 If the iOS platform is not already added, be sure to add it:
 
@@ -35,7 +35,7 @@ This will generate the minified code for the web portion of an app and copy it o
 
 From here, open the `.xcworkspace` file in `./platforms/ios/` to start Xcode.
 
-## Generating Signing Certs
+## 署名証明書の生成
 
 Generating certificates for iOS is a bit of an involved process, so be sure to check [Apple's official documentation](https://help.apple.com/xcode/mac/current/#/dev3a05256b8) on what certificates are and how to generate them.
 
@@ -45,7 +45,7 @@ There are two types of certificates that matter here, Development, and Distribut
 
 Distribution certs are meant for distributing an app to the store. When an app is signed with a Distribution cert, it can be installed on any device.
 
-## Signing the App in Xcode.
+## XCodeでのアプリへの署名
 
 After generating the correct certificates, there are options to either have Xcode automatically manage certificates or manually manage them. It's suggested to let Xcode automatically manage certificates. This will make sure that the correct Development and Distribution certs are used, based on the build type selected.
 
@@ -57,7 +57,7 @@ There should be a place to select the team followed by some more information on 
 If the upload successfully, the app should be listed on [iTunes Connect](https://itunesconnect.apple.com) and listed in 'Activities'.
 From there, TestFlight can be enabled for beta testing, or the App can be sent for approval from Apple.
 
-## Updating an app
+## アプリのアップデート
 
 As an app grows, it will need to be updated with new features and fixes.
 An app can be updated by either submitting a new version to Apple, or by using a live update service like Appflow's <a href="https://ionic.io/docs/appflow/deploy/intro" target="_blank">live update feature</a>.

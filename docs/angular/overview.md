@@ -2,14 +2,14 @@
 sidebar_label: Overview
 ---
 
-# Ionic Angular Overview
+# Ionic Angular 概要
 
-`@ionic/angular` combines the core Ionic experience with the tooling and APIs that are tailored to Angular Developers.
+`@ionic/angular` はcore Ionic experienceに、Angular開発者向けにカスタマイズされたツールとAPIを組み合わせたものです。
 
-## Angular Version Support
+## Angularバージョンサポート
 
-Ionic supports `Angular 6.0.0 and up`. As part of their upgrade strategy, Angular has built-in tooling to help automate upgrades and provide feedback to developers whenever changes to an API occurred. This reduces update friction and keeps the ecosystem in a evergreen state.
+Ionicは 「Angular 6.0.0以降」 をサポートしています。アップグレード戦略の一環として、Angularにはアップグレードの自動化を支援するツールが組み込まれており、APIに変更があった場合にはいつでもフィードバックを提供します。これにより、更新時の摩擦が軽減され、エコシステムが永続的な状態に保たれます。
 
 ## Angular Tooling
 
-With Ionic 4+, the official Angular stack for building an app and routing are used, so your app can fall in-line with the rest of the great Angular ecosystem. In cases where more opinionated features are needed, Ionic provides `@ionic/angular-toolkit`, which builds and integrates with the [official Angular CLI](https://angular.io/cli) and provides features that are specific to `@ionic/angular` apps.
+Ionic4以降では、アプリケーション構築とルーティングのために公式のAngularスタックが使用されているため、あなたのアプリケーションはAngularエコシステムと同じように利用できます。更に独自の機能が必要な場合には、Ionicは`@ionic/angular-toolkit`を提供します。、これは [official Angular CLI](https://angular.jp/cli) を構築して統合し、`@ionic/angular` アプリ固有の機能を提供します。

@@ -3,11 +3,11 @@
 
 # Config
 
-Ionic Config provides a way to change the properties of components globally across an app. It can set the app mode, tab button layout, animations, and more.
+Ionic Configは、アプリ全体でコンポーネントのプロパティをグローバルに変更する方法を提供します。 アプリのモード、Tabボタンのレイアウト、アニメーションなどを設定できます。
 
-## Global Config
+## 使い方
 
-To override the initial Ionic config for the app, import the `setupConfig` method from `@ionic/react`, and call it before you render any Ionic components (including `IonApp`).
+アプリのIonicの初期設定をオーバーライドするには、Ionicコンポーネント (`IonApp`を含めます)をレンダリングする前に、`@ionic/react` から `setupConfig` メソッドをインポートして呼び出します:
 
 ```typescript
 setupConfig({
@@ -16,13 +16,13 @@ setupConfig({
 });
 ```
 
-In the above example, we are disabling the Material Design ripple effect across the app, as well as forcing the mode to be Material Design.
+上記の例では、アプリ全体でマテリアルデザインのリップル効果を無効にし、modeをマテリアルデザインに強制しています。
 
 ## Per-Platform Config
 
 Ionic Config can also be set on a per-platform basis. For example, this allows you to disable animations if the app is being run in a browser on a potentially slower device. Developers can take advantage of the Platform utilities to accomplish this.
 
-In the following example, we are disabling all animations in our Ionic app only if the app is running in a mobile web browser. 
+In the following example, we are disabling all animations in our Ionic app only if the app is running in a mobile web browser.
 The `isPlatform()` call returns `true` or `false` based upon the platform that is passed in. See the [Platform Documentation](./platform#platforms) for a list of possible values.
 
 
@@ -46,7 +46,7 @@ const getConfig = () => {
       tabButtonLayout: 'label-hide'
     }
   }
-  
+
   return {
     menuIcon: 'ellipsis-vertical'
   }
@@ -65,14 +65,14 @@ const getConfig = () => {
   let config = {
     animated: false
   };
-  
+
   if (isPlatform('iphone')) {
     config = {
       ...config,
       backButtonText: 'Previous'
     }
   }
-  
+
   return config;
 }
 setupConfig(getConfig());
@@ -80,7 +80,7 @@ setupConfig(getConfig());
 
 ## Config Options
 
-Below is a list of config options that Ionic uses.
+以下は、Ionicで使用できる設定オプションのリストです。
 
 | Config                   | Type               | Description                                                                                              |
 |--------------------------|--------------------|----------------------------------------------------------------------------------------------------------|

@@ -3,21 +3,21 @@ contributors:
   - brandyscarney
 ---
 
-# Runtime Issues
+# ランタイムの問題
 
-## Blank App
+## 真っ白なアプリケーション
 
-> I have no errors in my app. Why does it show a blank screen?
+> 私のアプリケーションにはエラーはありません。なぜ真っ白な画面が表示されるのでしょうか？
 
-There are several different reasons this can happen. If you are unable to find a solution on the [Ionic forums](https://forum.ionicframework.com), make sure:
+この事象が発生しうる理由がいくつかあります。もしあなたがフォーラム上で解決策を見つけられなかった場合、これらを確認して下さい:
 
-- Polyfills are not included for older browser/versions of android
+- ポリフィルには古い android のブラウザ/バージョンは含まれない
 
-For projects with `@angular/cli@7.3` or above, polyfills will automatically be included. For project created before that, polyfills need to be manually enabled.
+`@angular/cli@7.3` 以上のプロジェクトの場合、ポリフィルは自動的に含まれます。その前に作成されたプロジェクトでは、ポリフィルを手動で有効にする必要があります。
 
-In `src/polyfills.ts`, you must enabled all ES6 polyfills for Android 4.4 support.
+`src/polyfills.ts` にて、Android 4.4をサポートするために ES6ポリフィルをすべて有効にする必要があります。
 
-Alternatively, a project could be updated to use the latest release of the `@angular/cli` package & `@angular-devkit` packages and include the `es5BrowserSupport` option in the `angular.json`'s build options object:
+あるいは、プロジェクトを更新して、`@angular/cli` パッケージと `@angular-devkit` パッケージの最新リリースを使用し、`angular.json` のビルドオプションオブジェクトに `es5BrowserSupport` オプションを含めることもできます:
 
 ```diff
         "input": "src/global.scss"
@@ -31,24 +31,24 @@ Alternatively, a project could be updated to use the latest release of the `@ang
     "production": {
 ```
 
-This will automatically include the polyfills for older browsers that need them.
+これにより、古いブラウザに必要なポリフィルが自動的に追加されます。
 
 
 
-## Directive Not Working
+## ディレクティブが動作しない
 
-> Why is my custom component/directive not working?
+> なぜ私のカスタムコンポーネント/ディレクティブは動作しないのでしょうか？
 
-There are a few things you can check. Make sure:
+あなたが確認できるものがいくつか存在します。
 
-- Your selector doesn't have any misspellings.
-- You're using the selector correctly as an attribute, element or class.
-- Your selector has the proper syntax:
-  - `[attr]` if it's an attribute selector
-  - `element` if it's an element selector
-  - `.class` if it's a class selector
+- セレクタにスペルミスがない
+- 属性、要素、クラスとして、セレクタを正確に使用している
+- セレクタの構文が適切:
+  - 属性セレクタの場合は `[attr]`
+  - 要素セレクタの場合は `element`
+  - クラスセレクタの場合は `.class`
 
-Here's an example using an attribute selector:
+以下に、属性セレクタの例を挙げます:
 
 ```typescript
 @Directive({
@@ -74,19 +74,19 @@ class MyDir {
 class MyPage { }
 ```
 
-## Click Delays
+## クリックの遅延
 
-> Why is there a delay on my click event?
+> なぜ私のクリックイベントは遅延するのでしょうか？
 
-In general, we recommend only adding `(click)` events to elements that are
-normally clickable. This includes `<button>` and `<a>` elements. This improves
-accessibility as a screen reader will be able to tell that the element is
-clickable.
+一般的に、我々は標準的なクリックイベントを要素に追加する場合は `(click)` のみを勧めています。
+これには `<button>` や `<a>` 要素も含まります。これにより、
+画面を読むときに各要素がクリック可能であることを伝えることができるため、アクセシビリティを
+向上します。
 
-However, you may need to add a `(click)` event to an element that is not
-normally clickable. When you do this you may experience a `300ms` delay from the
-time you click the element to the event firing. To remove this delay, you can
-add the `tappable` attribute to your element.
+しかしながら、おそらくあなたは通常はなクリックできない要素に `(click)` イベントを要素に追加することを
+求められるかもしれません。もしあなたがこれを実行すると、要素をクリックしてイベントが発火するまで
+`300ms` の遅延が発生するかもしれません。この遅延を改善するには、あなたは
+要素に `tappable` 属性を追加することができます。
 
 ```html
  <div tappable (click)="doClick()">I am clickable!</div>
@@ -129,10 +129,10 @@ newer. Older versions will not be affected by this change.
 > Note: This flag is automatically included when creating an Ionic app via
 the Ionic CLI.
 
-## Cordova plugins not working in the browser
+## Cordova プラグインがブラウザ上で動作しない
 
-At some point in your development you may, try to call Cordova plugin, but get a
-warning:
+あなたの開発中のある時点で、Cordova プラグインを呼び出そうとしますが、
+警告:
 
 ```shell
 [Warning] Native: tried calling StatusBar.styleDefault, but Cordova is not
@@ -140,25 +140,25 @@ available. Make sure to include cordova.js or run in a device/simulator
 (app.bundle.js, line 83388)
 ```
 
-This happens when you try to call a native plugin, but Cordova isn't available.
-Thankfully, Ionic Native will print out a nice warning, instead of an error.
+これは、あなたがネイティブプラグインを呼び出そうとしますが、Cordova プラグインが利用できないときに発生します。
+ありがたいことに、Ionic Native はエラーの代わりに良い警告を表示してくれます。
 
-In other cases where the plugin is not being used through Ionic Native, plugins
-can print a much more obscure warning.
+他のケースでは、プラグインが Ionic Native を介して利用されない場合、プラグインは
+より曖昧な警告を表示することができます。
 
 ```shell
 EXCEPTION: Error: Uncaught (in promise): TypeError: undefined is not an object
 (evaluating 'navigator.camera.getPicture')
 ```
 
-If this happens, test the plugin on a real device or simulator.
+もしこれが発生した場合は、そのプラグインを実機かシミュレーターでテストしてみてください。
 
-## Multiple instances of a provider
+## provider の複数のインスタンス
 
-If you inject a provider in every component because you want it available to all
-of them you will end up with multiple instances of the provider. You should
-inject the provider once in the parent component if you want it to be available
-to the child components.
+あなたは provider をすべてのコンポーネントで利用可能にしたいので、すべてのコンポーネントに provider を注入した場合、
+provider の複数のインスタンスが生成されます。
+子コンポーネントで使用できるようにする場合は、親コンポーネントに一度だけ Provider を
+注入する必要があります。
 
 ```typescript
 let id = 0;
@@ -173,10 +173,10 @@ export class MyService {
 @Component({
   selector: 'my-component',
   template: 'Hello World',
-  providers: [MyService] // <-- Creates a new instance of MyService :(
-})                       // Unnecessary because MyService is in App's providers
+  providers: [MyService] // <-- MyService の新しいインスタンスの生成 :(
+})                       // 不要。なぜなら MyService は App の providers の中だらか
 class MyComp {
-  // id is 1, s is a different MyService instance than MyApp
+  // id は 1, s は MyApp とは異なる MyService インスタンス
   constructor(s: MyService) {
     console.log('MyService id is: ' + s.id);
   }
@@ -184,11 +184,11 @@ class MyComp {
 
 @Component({
   template: '<my-component></my-component>',
-  providers: [MyService], // MyService only needs to be here
+  providers: [MyService], // MyService はここのみ必要
   directives: [MyComp]
 })
 class MyApp {
-  // id is 0
+  // id は 0
   constructor(s: MyService) {
     console.log('MyService id is: ' + s.id);
   }

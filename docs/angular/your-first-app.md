@@ -2,9 +2,9 @@
 sidebar_label: Build Your First App
 ---
 
-# Your First Ionic App: Angular
+# 初めての Ionic アプリ: Angular
 
-The great thing about Ionic is that with one codebase, you can build for any platform using just HTML, CSS, and JavaScript. Follow along as we learn the fundamentals of Ionic app development by creating a realistic app step by step.
+Ionic の素晴らしいところは、1つのコードベースで、使い慣れた Web ツールと言語を使用して任意のプラットフォーム用にビルドできることです。 Follow along as we learn the fundamentals of Ionic app development by creating a realistic app step by step.
 
 Here’s the finished app running on all 3 platforms:
 
@@ -45,16 +45,16 @@ $ npm install -g @ionic/cli native-run cordova-res
 >
 > Consider setting up npm to operate globally without elevated permissions. See [Resolving Permission Errors](/docs/developing/tips#resolving-permission-errors) for more information.
 
-## Create an App
-Next, create an Ionic Angular app that uses the “Tabs” starter template and adds Capacitor for native functionality:
+## アプリの作成
+次に、"Tabs" というアプリテンプレートを使用して Ionic Angular アプリを生成し、Native機能を使うためにCapacitorを追加します。
 
 ```shell
 $ ionic start photo-gallery tabs --type=angular --capacitor
 ```
 
-This starter project comes complete with three pre-built pages and best practices for Ionic development. With common building blocks already in place, we can add more features easily!
+このスタータープロジェクトには、Ionic 開発のために事前に構成された3つのページとベストプラクティスが用意されています。共通の構成要素がすでに配置されているため、機能を簡単に追加できます！
 
-Next, change into the app folder:
+次に、アプリのフォルダに移動します:
 
 ```shell
 $ cd photo-gallery
@@ -87,8 +87,8 @@ defineCustomElements(window);
 
 That’s it! Now for the fun part - let’s see the app in action.
 
-## Run the App
-Run this command next:
+## アプリを起動
+次のコマンドを実行してください:
 
 ```shell
 $ ionic serve
