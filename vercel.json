@@ -26,6 +26,10 @@
       "destination": "/docs/angular/your-first-app/live-reload"
     },
     {
+      "source": "/docs/(v5/)?developer-resources/:path*",
+      "destination": "https://ionic.io/resources"
+    },
+    {
       "source": "/docs/react/your-first-app/2-taking-photos",
       "destination": "/docs/react/your-first-app/taking-photos"
     },
