@@ -62,6 +62,8 @@ html[data-theme='dark'] {
       }
 
       [class*='toggle_'] {
+        display: flex;
+
         transition: opacity 0.2s ease-out;
 
         &:hover,
