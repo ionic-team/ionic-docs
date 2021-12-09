@@ -2,13 +2,13 @@ module.exports = {
   docs: [
     {
       type: 'category',
-      label: 'Getting Started',
+      label: 'はじめ方',
       collapsed: false,
       items: ['index', 'intro/upgrading-to-ionic-6', 'intro/environment', 'intro/cli', 'intro/cdn', 'intro/next'],
     },
     {
       type: 'category',
-      label: 'Developing',
+      label: '開発',
       collapsed: false,
       items: [
         'developing/starting',
@@ -23,13 +23,13 @@ module.exports = {
     },
     {
       type: 'category',
-      label: 'Layout',
+      label: 'レイアウト',
       collapsed: false,
       items: ['layout/structure', 'layout/grid', 'layout/global-stylesheets', 'layout/css-utilities'],
     },
     {
       type: 'category',
-      label: 'Theming',
+      label: 'テーマ',
       collapsed: false,
       items: [
         'theming/basics',
@@ -143,13 +143,13 @@ module.exports = {
     },
     {
       type: 'category',
-      label: 'Utilities',
+      label: 'ユーティリティ',
       collapsed: false,
       items: ['utilities/animations', 'utilities/gestures'],
     },
     {
       type: 'category',
-      label: 'Deployment',
+      label: '開発',
       collapsed: false,
       items: [
         'deployment/app-store',
@@ -160,13 +160,13 @@ module.exports = {
     },
     {
       type: 'category',
-      label: 'Techniques',
+      label: 'テクニック',
       collapsed: false,
       items: ['techniques/security'],
     },
     {
       type: 'category',
-      label: 'Troubleshooting',
+      label: 'トラブルシューティング',
       collapsed: false,
       items: [
         'troubleshooting/debugging',
@@ -178,7 +178,7 @@ module.exports = {
     },
     {
       type: 'category',
-      label: 'Core Concepts',
+      label: 'コアコンセプト',
       collapsed: false,
       items: [
         'core-concepts/fundamentals',
@@ -195,7 +195,7 @@ module.exports = {
     },
     {
       type: 'category',
-      label: 'Reference',
+      label: 'リファレンス',
       collapsed: false,
       items: [
         'reference/glossary',
@@ -216,97 +216,97 @@ module.exports = {
   api: [
     {
       type: 'category',
-      label: 'Getting Started',
+      label: 'はじめ方',
       collapsed: false,
       items: ['components'],
     },
     {
       type: 'category',
-      label: 'Action Sheet',
+      label: 'アクションシート',
       collapsed: false,
       items: ['api/action-sheet'],
     },
     {
       type: 'category',
-      label: 'Accordion',
+      label: 'アコーディオン',
       collapsed: false,
       items: ['api/accordion', 'api/accordion-group'],
     },
     {
       type: 'category',
-      label: 'Alert',
+      label: 'アラート',
       collapsed: false,
       items: ['api/alert'],
     },
     {
       type: 'category',
-      label: 'Badge',
+      label: 'バッジ',
       collapsed: false,
       items: ['api/badge'],
     },
     {
       type: 'category',
-      label: 'Breadcrumb',
+      label: 'パンくずリスト',
       collapsed: false,
       items: ['api/breadcrumb', 'api/breadcrumbs'],
     },
     {
       type: 'category',
-      label: 'Button',
+      label: 'ボタン',
       collapsed: false,
       items: ['api/button', 'api/ripple-effect'],
     },
     {
       type: 'category',
-      label: 'Card',
+      label: 'カード',
       collapsed: false,
       items: ['api/card', 'api/card-content', 'api/card-header', 'api/card-subtitle', 'api/card-title'],
     },
     {
       type: 'category',
-      label: 'Checkbox',
+      label: 'チェックボックス',
       collapsed: false,
       items: ['api/checkbox'],
     },
     {
       type: 'category',
-      label: 'Chip',
+      label: 'チップ',
       collapsed: false,
       items: ['api/chip'],
     },
     {
       type: 'category',
-      label: 'Content',
+      label: 'コンテント',
       collapsed: false,
       items: ['api/app', 'api/content'],
     },
     {
       type: 'category',
-      label: 'Date & Time Pickers',
+      label: '日付 & タイムピッカー',
       collapsed: false,
       items: ['api/datetime', 'api/picker'],
     },
     {
       type: 'category',
-      label: 'Floating Action Button',
+      label: 'フローティングアクションボタン',
       collapsed: false,
       items: ['api/fab', 'api/fab-button', 'api/fab-list'],
     },
     {
       type: 'category',
-      label: 'Grid',
+      label: 'グリッド',
       collapsed: false,
       items: ['api/grid', 'api/col', 'api/row'],
     },
     {
       type: 'category',
-      label: 'Infinite Scroll',
+      label: '無限スクロール',
       collapsed: false,
       items: ['api/infinite-scroll', 'api/infinite-scroll-content'],
     },
     {
       type: 'category',
-      label: 'Icons',
+      label: 'アイコン',
       collapsed: false,
       items: [
         {
@@ -318,13 +318,13 @@ module.exports = {
     },
     {
       type: 'category',
-      label: 'Input',
+      label: 'インプット',
       collapsed: false,
       items: ['api/input', 'api/textarea'],
     },
     {
       type: 'category',
-      label: 'Item',
+      label: 'アイテム',
       collapsed: false,
       items: [
         'api/item',
@@ -339,13 +339,13 @@ module.exports = {
     },
     {
       type: 'category',
-      label: 'List',
+      label: 'リスト',
       collapsed: false,
       items: ['api/list', 'api/list-header', 'api/virtual-scroll'],
     },
     {
       type: 'category',
-      label: 'Media',
+      label: 'メディア',
       collapsed: false,
       items: [
         'api/avatar',
@@ -360,121 +360,121 @@ module.exports = {
     },
     {
       type: 'category',
-      label: 'Menu',
+      label: 'メニュー',
       collapsed: false,
       items: ['api/menu', 'api/menu-button', 'api/menu-toggle', 'api/split-pane'],
     },
     {
       type: 'category',
-      label: 'Modal',
+      label: 'モーダル',
       collapsed: false,
       items: ['api/modal', 'api/backdrop'],
     },
     {
       type: 'category',
-      label: 'Navigation',
+      label: 'ナビゲーション',
       collapsed: false,
       items: ['api/nav', 'api/nav-link'],
     },
     {
       type: 'category',
-      label: 'Popover',
+      label: 'ポップオーバー',
       collapsed: false,
       items: ['api/popover'],
     },
     {
       type: 'category',
-      label: 'Progress Indicators',
+      label: '進捗インジケーター',
       collapsed: false,
       items: ['api/loading', 'api/progress-bar', 'api/skeleton-text', 'api/spinner'],
     },
     {
       type: 'category',
-      label: 'Radio',
+      label: 'ラジオ',
       collapsed: false,
       items: ['api/radio', 'api/radio-group'],
     },
     {
       type: 'category',
-      label: 'Range',
+      label: 'レンジ',
       collapsed: false,
       items: ['api/range'],
     },
     {
       type: 'category',
-      label: 'Refresher',
+      label: 'リフレッシャー',
       collapsed: false,
       items: ['api/refresher', 'api/refresher-content'],
     },
     {
       type: 'category',
-      label: 'Reorder',
+      label: '並び替え',
       collapsed: false,
       items: ['api/reorder', 'api/reorder-group'],
     },
     {
       type: 'category',
-      label: 'Routing',
+      label: 'ルーティング',
       collapsed: false,
       items: ['api/router', 'api/router-link', 'api/router-outlet', 'api/route', 'api/route-redirect'],
     },
     {
       type: 'category',
-      label: 'Searchbar',
+      label: '検索バー',
       collapsed: false,
       items: ['api/searchbar'],
     },
     {
       type: 'category',
-      label: 'Segment',
+      label: 'セグメント',
       collapsed: false,
       items: ['api/segment', 'api/segment-button'],
     },
     {
       type: 'category',
-      label: 'Select',
+      label: 'セレクト',
       collapsed: false,
       items: ['api/select', 'api/select-option'],
     },
     {
       type: 'category',
-      label: 'Slides',
+      label: 'スライド',
       collapsed: false,
       items: ['api/slides', 'api/slide'],
     },
     {
       type: 'category',
-      label: 'Tabs',
+      label: 'タブ',
       collapsed: false,
       items: ['api/tabs', 'api/tab', 'api/tab-bar', 'api/tab-button'],
     },
     {
       type: 'category',
-      label: 'Toast',
+      label: 'トースト',
       collapsed: false,
       items: ['api/toast'],
     },
     {
       type: 'category',
-      label: 'Toggle',
+      label: 'トグル',
       collapsed: false,
       items: ['api/toggle'],
     },
     {
       type: 'category',
-      label: 'Toolbar',
+      label: 'ツールバー',
       collapsed: false,
       items: ['api/toolbar', 'api/header', 'api/footer', 'api/title', 'api/buttons', 'api/back-button'],
     },
     {
       type: 'category',
-      label: 'Typography',
+      label: 'タイポグラフィ',
       collapsed: false,
       items: ['api/text'],
     },
     {
       type: 'category',
-      label: 'Resources',
+      label: 'リソース',
       collapsed: false,
       items: ['api'],
     },
@@ -483,7 +483,7 @@ module.exports = {
   cli: [
     {
       type: 'category',
-      label: 'CLI Documentation',
+      label: 'CLIドキュメンテーション',
       collapsed: false,
       items: [
         'cli',
@@ -499,7 +499,7 @@ module.exports = {
     },
     {
       type: 'category',
-      label: 'Command Reference',
+      label: 'コマンドリファレンス',
       collapsed: false,
       items: [
         {
@@ -513,7 +513,7 @@ module.exports = {
   native: [
     {
       type: 'category',
-      label: 'Getting Started',
+      label: 'はじめ方',
       collapsed: false,
       items: [
         'native',
@@ -528,7 +528,7 @@ module.exports = {
     },
     {
       type: 'category',
-      label: 'Plugins',
+      label: 'プラグイン',
       collapsed: false,
       items: [
         {
