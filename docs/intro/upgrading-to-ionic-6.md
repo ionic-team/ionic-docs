@@ -1,42 +1,42 @@
-# Upgrading to Ionic 6
+# Ionic 6へのアップデート
 
-Follow this guide to upgrade your Ionic 5 apps to Ionic 6.
+あなたのIonic5でつくったアプリをIonic6にアップデートする方法を案内します。
 
-## Getting Started
+## はじめ方
 
 ### Angular
 
-1. Ionic 6 supports Angular 12+. Update to the latest version of Angular by following the [Angular Update Guide](https://update.angular.io/).
-2. Update to the latest version of Ionic 6:
+1. Ionic 6 は Angular 12+ をサポートしています。 [Angular Update Guide](https://update.angular.io/) に沿って、最新バージョンのAngularに更新します。.
+2. Ionic6の最新バージョンに更新します。
 
 ```shell
 npm install @ionic/angular@6
 ```
 
-If you are using Ionic Angular Server, be sure to update that as well:
+Ionic Angular Serverを使用している場合は、それも必ず更新してください:
 
 ```shell
 npm install @ionic/angular@6 @ionic/angular-server@6
 ```
 
-3. Remove any usage of `Config.set()`. Instead, set your config in `IonicModule.forRoot()`. See the [Angular Config Documentation](../angular/config) for more examples.
+3. `Config.set()` を削除します。そして代わりに `IonicModule.forRoot()` を使いましょう。くわしくは [Angular Config Documentation](../angular/config) をご覧ください。
 4. Remove any usage of the `setupConfig` function previously exported from `@ionic/angular`. Set your config in `IonicModule.forRoot()` instead.
 
 ### React
 
-1. Ionic 6 supports React 17+. Update to the latest version of React:
+1. Ionic 6 は React 17+ をサポートしています。Reactの最新バージョンに更新します:
 
 ```shell
 npm install react@latest react-dom@latest
 ```
 
-2. Update to the latest version of Ionic 6:
+2. Ionic 6 の最新バージョンに更新します:
 
 ```shell
 npm install @ionic/react@6 @ionic/react-router@6
 ```
 
-3. Update the `test` field in the `scripts` object of your `package.json` to include `transformIgnorePatterns`:
+3. `package.json` の `scripts` オブジェクトにある `test` フィールドを更新して、 `transformIgnorePatterns` を含めます:
 
 ```json
 "scripts": {
@@ -45,7 +45,7 @@ npm install @ionic/react@6 @ionic/react-router@6
 }
 ```
 
-4. Import and call `setupIonicReact` in your `App` component file. If you are also using `setupConfig`, pass your config to `setupIonicReact` instead:
+4. あなたの `App` コンポーネントで `setupIonicReact` を呼び出して下さい。もう `setupConfig` を利用している場合は、 `setupIonicReact` に置き換えてください:
 
 **Before**
 ```tsx title="App.tsx"
@@ -70,38 +70,38 @@ setupIonicReact({
 ```
 
 :::note
-Developers must import and call `setupIonicReact` even if they are not setting custom config.
+開発者は、 `setupIonicReact` カスタム構成を設定していない場合でも、インポートして呼び出す必要があります。
 :::
 
-See the [React Config Documentation](../react/config) for more examples.
+詳しくは [React Config Documentation](../react/config) をご覧ください。
 
 ### Vue
 
-1. Ionic 6 supports Vue 3.0.6+. Update to the latest version of Vue:
+1. Ionic 6 は Vue 3.0.6+ をサポートしています。Vueの最新バージョンに更新ください。
 
 ```shell
 npm install vue@3 vue-router@4
 ```
 
-2. For apps that use the Vue CLI, install Vue CLI 5:
+2. Vue CLIを使用するアプリの場合は、Vue CLI 5をインストールします。
 
 ```shell
 npm install -g @vue/cli@next
 ```
 
-Then, upgrade all Vue CLI plugins:
+次に、すべてのVue CLIプラグインをアップグレードします。
 
 ```shell
 vue upgrade --next
 ```
 
-3. Update to the latest version of Ionic 6:
+3. Ionic 6の最新バージョンに更新します。
 
 ```shell
 npm install @ionic/vue@6 @ionic/vue-router@6
 ```
 
-4. Add the following `transformIgnorePatterns` to either `jest.config.js` or the `jest` field in `package.json`:
+4. `package.json` の`jest.config.js` か `jest` のどちらかに `transformIgnorePatterns` を含めます。
 
 ```js title="jest.config.js"
 module.exports = {
@@ -119,15 +119,15 @@ module.exports = {
   }
 ```
 
-See the [Testing section below](#testing) for more information.
+詳しくは [Testing section below](#testing) をご覧ください。
 
-5. Remove any usage of the `setupConfig` function previously exported from `@ionic/vue`. Set your config when installing the `IonicVue` plugin instead. See the [Vue Config Documentation](../vue/config) for more examples.
+5. `@ionic/vue` からエクスポートしていた `setupConfig` 関数を削除してください。そして、設定するときは `IonicVue` を代わりに利用してください。詳しくは [Vue Config Documentation](../vue/config) をご覧ください。
 
-6. Rename the `IonRouter` type for `useIonRouter` to `UseIonRouterResult`.
+6. `useIonRouter` で利用してる型 `IonRouter` を `UseIonRouterResult` に変更してください。
 
-7. Rename the `IonKeyboardRef` type for `useKeyboard` to `UseKeyboardResult`.
+7. `useKeyboard` で利用してる型 `IonKeyboardRef` を `UseKeyboardResult` に変更してください。
 
-8. Rename any overlay event listeners to use the new format:
+8. すべてのオーバーレイイベントリスナーの名前を変更し、新しいフォーマットを使用するようにします。
 
 **Before**
 ```html
@@ -156,10 +156,10 @@ See the [Testing section below](#testing) for more information.
 ```
 
 :::note
-This applies to `ion-action-sheet`, `ion-alert`, `ion-loading`, `ion-modal`, `ion-picker`, `ion-popover`, and `ion-toast`.
+これらは `ion-action-sheet`, `ion-alert`, `ion-loading`, `ion-modal`, `ion-picker`, `ion-popover`, `ion-toast` に適用されます。
 :::
 
-9. Pass in an `ion-router-outlet` into any `ion-tabs` that are being used:
+9.  `ion-router-outlet` を `ion-tabs` の中にいれて利用します。
 
 **Before**
 ```html
@@ -198,7 +198,7 @@ This applies to `ion-action-sheet`, `ion-alert`, `ion-loading`, `ion-modal`, `io
 </script>
 ```
 
-10. Additional routes inside of tabs should be re-written as sibling routes instead of child routes:
+10. タブ内の追加ルートは、子ルートではなく兄弟ルートとして書き直す必要があります。
 
 **Before**
 ```ts
@@ -276,7 +276,7 @@ const routes: Array<RouteRecordRaw> = [
 
 ### Core
 
-1. Update to the latest version of Ionic 6:
+1. Ionic 6 の最新バージョンにアップデートください。
 
 ```shell
 npm install @ionic/core@6
