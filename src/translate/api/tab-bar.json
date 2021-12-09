@@ -6,8 +6,8 @@
   "docs": "The tab bar is a UI component that contains a set of [tab buttons](../tab-button). A tab bar must be provided inside of [tabs](../tabs) to communicate with each [tab](../tab).",
   "docsTags": [
     {
-      "text": "{\"ios\" | \"md\"} mode - The mode determines which platform styles to use.",
-      "name": "virtualProp"
+      "name": "virtualProp",
+      "text": "{\"ios\" | \"md\"} mode - The mode determines which platform styles to use."
     }
   ],
   "usage": {
@@ -23,7 +23,7 @@
       "type": "string | undefined",
       "mutable": false,
       "attr": "color",
-      "reflectToAttr": false,
+      "reflectToAttr": true,
       "docs": "The color to use from your application's color palette.\nDefault options are: `\"primary\"`, `\"secondary\"`, `\"tertiary\"`, `\"success\"`, `\"warning\"`, `\"danger\"`, `\"light\"`, `\"medium\"`, and `\"dark\"`.\nFor more information on colors, see [theming](/docs/theming/basics).",
       "docsTags": [],
       "values": [
@@ -97,20 +97,7 @@
   ],
   "methods": [],
   "events": [],
-  "listeners": [
-    {
-      "event": "keyboardWillHide",
-      "target": "window",
-      "capture": false,
-      "passive": false
-    },
-    {
-      "event": "keyboardWillShow",
-      "target": "window",
-      "capture": false,
-      "passive": false
-    }
-  ],
+  "listeners": [],
   "styles": [
     {
       "name": "--background",

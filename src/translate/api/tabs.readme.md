@@ -10,3 +10,16 @@ Tabsは、Tabをベースとしたナビゲーションを実装する最上位�
 
 `ion-tab-bar` は、`ion-tabs` コンポーネント内の正しい位置に表示されるようにslotの定義が必要です。
 
+## Interfaces
+
+### TabsCustomEvent
+
+While not required, this interface can be used in place of the `CustomEvent` interface for stronger typing with Ionic events emitted from this component.
+
+```typescript
+interface TabsCustomEvent extends CustomEvent {
+  detail: { tab: string };
+  target: HTMLIonTabsElement;
+}
+```
+

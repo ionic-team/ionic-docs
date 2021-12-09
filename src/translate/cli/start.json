@@ -49,7 +49,7 @@
     {
       "name": "type",
       "type": "string",
-      "summary": "Type of project to start (e.g. `angular`, `react`, `ionic-angular`, `ionic1`)",
+      "summary": "Type of project to start (e.g. `vue`, `angular`, `react`, `ionic-angular`, `ionic1`)",
       "groups": [],
       "aliases": [],
       "spec": {

@@ -1,0 +1,17 @@
+{
+  "packageName": "@awesome-cordova-plugins/dfu-update",
+  "displayName": "Dfu Update",
+  "description": "\nThis plugin is a Wrapper to use Nordic Semiconductor's Device Firmware Update (DFU) service to update a Bluetooth LE device.\n",
+  "usage": "\n```typescript\nimport { DfuUpdate } from '@awesome-cordova-plugins/dfu-update/ngx';\n\n\nconstructor(private dfuUpdate: DfuUpdate) { }\n\n...\n\n\nthis.dfuUpdate.updateFirmware('fileURL', 'deviceIdentifier')\n  .then((res: any) => console.log(res))\n  .catch((error: any) => console.error(error));\n\n```\n",
+  "platforms": [
+    "Android",
+    "iOS"
+  ],
+  "repo": "https://github.com/EinfachHans/cordova-plugin-dfu-update",
+  "installVariables": [
+    "ANDROID_NORDIC_VERSION"
+  ],
+  "cordovaPlugin": {
+    "name": "cordova-plugin-dfu-update"
+  }
+}

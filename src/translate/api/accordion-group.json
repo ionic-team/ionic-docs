@@ -1,0 +1,179 @@
+{
+  "filePath": "./src/components/accordion-group/accordion-group.tsx",
+  "encapsulation": "shadow",
+  "tag": "ion-accordion-group",
+  "readme": "# ion-accordion-group\n\nAccordion group is a container for accordion instances. It manages the state of the accordions and provides keyboard navigation.\n\nFor more information as well as usage, see the [Accordion Documentation](./accordion)\n\n## Interfaces\n\n### AccordionGroupChangeEventDetail\n\n```typescript\ninterface AccordionGroupChangeEventDetail<T = any> {\n  value: T;\n}\n```\n\n### AccordionGroupCustomEvent\n\nWhile not required, this interface can be used in place of the `CustomEvent` interface for stronger typing with Ionic events emitted from this component.\n\n```typescript\ninterface AccordionGroupCustomEvent<T = any> extends CustomEvent {\n  detail: AccordionGroupChangeEventDetail<T>;\n  target: HTMLIonAccordionGroupElement;\n}\n```\n",
+  "docs": "Accordion group is a container for accordion instances. It manages the state of the accordions and provides keyboard navigation.\n\nFor more information as well as usage, see the [Accordion Documentation](./accordion)",
+  "docsTags": [
+    {
+      "name": "virtualProp",
+      "text": "{\"ios\" | \"md\"} mode - The mode determines which platform styles to use."
+    }
+  ],
+  "usage": {},
+  "props": [
+    {
+      "name": "animated",
+      "type": "boolean",
+      "mutable": false,
+      "attr": "animated",
+      "reflectToAttr": false,
+      "docs": "If `true`, all accordions inside of the\naccordion group will animate when expanding\nor collapsing.",
+      "docsTags": [],
+      "default": "true",
+      "values": [
+        {
+          "type": "boolean"
+        }
+      ],
+      "optional": false,
+      "required": false
+    },
+    {
+      "name": "disabled",
+      "type": "boolean",
+      "mutable": false,
+      "attr": "disabled",
+      "reflectToAttr": false,
+      "docs": "If `true`, the accordion group cannot be interacted with.",
+      "docsTags": [],
+      "default": "false",
+      "values": [
+        {
+          "type": "boolean"
+        }
+      ],
+      "optional": false,
+      "required": false
+    },
+    {
+      "name": "expand",
+      "type": "\"compact\" | \"inset\"",
+      "mutable": false,
+      "attr": "expand",
+      "reflectToAttr": false,
+      "docs": "Describes the expansion behavior for each accordion.\nPossible values are `\"compact\"` and `\"inset\"`.\nDefaults to `\"compact\"`.",
+      "docsTags": [],
+      "default": "'compact'",
+      "values": [
+        {
+          "value": "compact",
+          "type": "string"
+        },
+        {
+          "value": "inset",
+          "type": "string"
+        }
+      ],
+      "optional": false,
+      "required": false
+    },
+    {
+      "name": "mode",
+      "type": "\"ios\" | \"md\"",
+      "mutable": false,
+      "attr": "mode",
+      "reflectToAttr": false,
+      "docs": "The mode determines which platform styles to use.",
+      "docsTags": [],
+      "values": [
+        {
+          "value": "ios",
+          "type": "string"
+        },
+        {
+          "value": "md",
+          "type": "string"
+        }
+      ],
+      "optional": true,
+      "required": false
+    },
+    {
+      "name": "multiple",
+      "type": "boolean | undefined",
+      "mutable": false,
+      "attr": "multiple",
+      "reflectToAttr": false,
+      "docs": "If `true`, the accordion group can have multiple\naccordion components expanded at the same time.",
+      "docsTags": [],
+      "values": [
+        {
+          "type": "boolean"
+        },
+        {
+          "type": "undefined"
+        }
+      ],
+      "optional": true,
+      "required": false
+    },
+    {
+      "name": "readonly",
+      "type": "boolean",
+      "mutable": false,
+      "attr": "readonly",
+      "reflectToAttr": false,
+      "docs": "If `true`, the accordion group cannot be interacted with,\nbut does not alter the opacity.",
+      "docsTags": [],
+      "default": "false",
+      "values": [
+        {
+          "type": "boolean"
+        }
+      ],
+      "optional": false,
+      "required": false
+    },
+    {
+      "name": "value",
+      "type": "null | string | string[] | undefined",
+      "mutable": true,
+      "attr": "value",
+      "reflectToAttr": false,
+      "docs": "The value of the accordion group.",
+      "docsTags": [],
+      "values": [
+        {
+          "type": "null"
+        },
+        {
+          "type": "string"
+        },
+        {
+          "type": "string[]"
+        },
+        {
+          "type": "undefined"
+        }
+      ],
+      "optional": true,
+      "required": false
+    }
+  ],
+  "methods": [],
+  "events": [
+    {
+      "event": "ionChange",
+      "detail": "AccordionGroupChangeEventDetail<any>",
+      "bubbles": true,
+      "cancelable": true,
+      "composed": true,
+      "docs": "Emitted when the value property has changed.",
+      "docsTags": []
+    }
+  ],
+  "listeners": [
+    {
+      "event": "keydown",
+      "capture": false,
+      "passive": false
+    }
+  ],
+  "styles": [],
+  "slots": [],
+  "parts": [],
+  "dependents": [],
+  "dependencies": [],
+  "dependencyGraph": {}
+}

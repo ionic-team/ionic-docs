@@ -1,0 +1,14 @@
+{
+  "packageName": "@awesome-cordova-plugins/ocr",
+  "displayName": "OCR",
+  "description": "\nThis plugin attempts to identify and extract text from an image.\nPlease note: This plugin depends on the GoogleMobileVision pod which is referencing UIWebview, that has been deprecated by Apple.\nDon't use this plugin in an app intended for App Store as you will get a review rejection from Apple: `Deprecated API Usage — Apple will stop accepting submissions of apps that use UIWebView APIs`\nFor more info, please see the following Github issue [Google Mobile Vision relying on deprecated UIWebview](https://github.com/NeutrinosPlatform/cordova-plugin-mobile-ocr/issues/27).",
+  "usage": "\n```typescript\nimport { OCR, OCRSourceType } from '@awesome-cordova-plugins/ocr/ngx';\n\n\nconstructor(private ocr: OCR) { }\n\n...\n\nthis.ocr.recText(OCRSourceType.NORMFILEURL, \"file://path/to/image.png\")\n  .then((res: OCRResult) => console.log(JSON.stringify(res)))\n  .catch((error: any) => console.error(error));\n\n```\n",
+  "platforms": [
+    "Android",
+    "iOS"
+  ],
+  "repo": "https://github.com/NeutrinosPlatform/cordova-plugin-mobile-ocr",
+  "cordovaPlugin": {
+    "name": "cordova-plugin-mobile-ocr"
+  }
+}

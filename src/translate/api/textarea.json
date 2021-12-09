@@ -2,12 +2,12 @@
   "filePath": "./src/components/textarea/textarea.tsx",
   "encapsulation": "scoped",
   "tag": "ion-textarea",
-  "readme": "# ion-textarea\n\nThe textarea component is used for multi-line text input. A native textarea element is rendered inside of the component. The user experience and interactivity of the textarea component is improved by having control over the native textarea.\n\nUnlike the native textarea element, the Ionic textarea does not support loading its value from the inner content. The textarea value should be set in the `value` attribute.\n\nThe textarea component accepts the [native textarea attributes](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/textarea) in addition to the Ionic properties.\n\n\n",
+  "readme": "# ion-textarea\n\nThe textarea component is used for multi-line text input. A native textarea element is rendered inside of the component. The user experience and interactivity of the textarea component is improved by having control over the native textarea.\n\nUnlike the native textarea element, the Ionic textarea does not support loading its value from the inner content. The textarea value should be set in the `value` attribute.\n\nThe textarea component accepts the [native textarea attributes](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/textarea) in addition to the Ionic properties.\n\n## Interfaces\n\n### TextareaChangeEventDetail\n\n```typescript\ninterface TextareaChangeEventDetail {\n  value?: string | null;\n}\n```\n\n### TextareaCustomEvent\n\nWhile not required, this interface can be used in place of the `CustomEvent` interface for stronger typing with Ionic events emitted from this component.\n\n```typescript\ninterface TextareaCustomEvent extends CustomEvent {\n  detail: TextareaChangeEventDetail;\n  target: HTMLIonTextareaElement;\n}\n```\n",
   "docs": "The textarea component is used for multi-line text input. A native textarea element is rendered inside of the component. The user experience and interactivity of the textarea component is improved by having control over the native textarea.\n\nUnlike the native textarea element, the Ionic textarea does not support loading its value from the inner content. The textarea value should be set in the `value` attribute.\n\nThe textarea component accepts the [native textarea attributes](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/textarea) in addition to the Ionic properties.",
   "docsTags": [
     {
-      "text": "{\"ios\" | \"md\"} mode - The mode determines which platform styles to use.",
-      "name": "virtualProp"
+      "name": "virtualProp",
+      "text": "{\"ios\" | \"md\"} mode - The mode determines which platform styles to use."
     }
   ],
   "usage": {
@@ -91,7 +91,7 @@
       "type": "string | undefined",
       "mutable": false,
       "attr": "color",
-      "reflectToAttr": false,
+      "reflectToAttr": true,
       "docs": "The color to use from your application's color palette.\nDefault options are: `\"primary\"`, `\"secondary\"`, `\"tertiary\"`, `\"success\"`, `\"warning\"`, `\"danger\"`, `\"light\"`, `\"medium\"`, and `\"dark\"`.\nFor more information on colors, see [theming](/docs/theming/basics).",
       "docsTags": [],
       "values": [
@@ -328,16 +328,13 @@
     },
     {
       "name": "placeholder",
-      "type": "null | string | undefined",
+      "type": "string | undefined",
       "mutable": false,
       "attr": "placeholder",
       "reflectToAttr": false,
       "docs": "Instructional text that shows before the input has a value.",
       "docsTags": [],
       "values": [
-        {
-          "type": "null"
-        },
         {
           "type": "string"
         },
@@ -524,7 +521,7 @@
     },
     {
       "event": "ionInput",
-      "detail": "KeyboardEvent",
+      "detail": "InputEvent",
       "bubbles": true,
       "cancelable": true,
       "composed": true,

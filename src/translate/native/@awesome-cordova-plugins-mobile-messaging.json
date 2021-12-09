@@ -1,0 +1,14 @@
+{
+  "packageName": "@awesome-cordova-plugins/mobile-messaging",
+  "displayName": "Mobile Messaging",
+  "description": "\nMobile Messaging SDK is designed and developed to easily enable push notification channel in your mobile application.\nIn almost no time of implementation you get push notification in your application and access to the features of [Infobip IP Messaging Platform](https://portal.infobip.com/push/).\nThis document describes library integration steps for your Cordova project.\n\nFor more info see [Cordova plugin docs](https://github.com/infobip/mobile-messaging-cordova-plugin)\n",
+  "usage": "\n```typescript\nimport { MobileMessaging } from '@awesome-cordova-plugins/mobile-messaging/ngx';\n\n\nconstructor(private mobileMessaging: MobileMessaging) { }\n\n...\n\n\n this.mobileMessaging.init({\n   applicationCode: '<your_application_code>',\n   geofencingEnabled: '<true/false>',\n   defaultMessageStorage: '<true/false>',\n   ios: {\n     notificationTypes: ['alert', 'badge', 'sound']\n   },\n   android: {\n     notificationIcon: <String; a resource name for a status bar icon (without extension), located in '/platforms/android/app/src/main/res/mipmap'>,\n     multipleNotifications: <Boolean; set to 'true' to enable multiple notifications>,\n     notificationAccentColor: <String; set to hex color value in format '#RRGGBB' or '#AARRGGBB'>\n    }}, (err) => {\n     ...\n   });\n\n this.mobileMessaging.register('messageReceived').subscribe((message: Message) => {\n   ...\n });\n\n```\n",
+  "platforms": [
+    "Android",
+    "iOS"
+  ],
+  "repo": "https://github.com/infobip/mobile-messaging-cordova-plugin",
+  "cordovaPlugin": {
+    "name": "com-infobip-plugins-mobilemessaging"
+  }
+}

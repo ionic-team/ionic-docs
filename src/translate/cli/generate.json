@@ -3,8 +3,8 @@
   "namespace": [
     "ionic"
   ],
-  "summary": "Automatically create framework features",
-  "description": "This command uses the Angular CLI to generate features such as `pages`, `components`, `directives`, `services`, etc.\n\n - For a full list of available types, use `npx ng g --help`\n - For a list of options for a types, use `npx ng g <type> --help`\n\nYou can specify a path to nest your feature within any number of subdirectories. For example, specify a name of `\"pages/New Page\"` to generate page files at **src/app/pages/new-page/**.\n\nTo test a generator before file modifications are made, use the `--dry-run` option.",
+  "summary": "Create Pages, Components, & Angular Features",
+  "description": "Automatically create framework features with Ionic Generate. This command uses the Angular CLI to generate features such as `pages`, `components`, `directives`, `services`, and more.\n\n - For a full list of available types, use `npx ng g --help`\n - For a list of options for a types, use `npx ng g <type> --help`\n\nYou can specify a path to nest your feature within any number of subdirectories. For example, specify a name of `\"pages/New Page\"` to generate page files at **src/app/pages/new-page/**.\n\nTo test a generator before file modifications are made, use the `--dry-run` option.",
   "footnotes": [],
   "groups": [],
   "exampleCommands": [

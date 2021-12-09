@@ -2,20 +2,20 @@
   "filePath": "./src/components/checkbox/checkbox.tsx",
   "encapsulation": "shadow",
   "tag": "ion-checkbox",
-  "readme": "# ion-checkbox\n\nCheckboxes allow the selection of multiple options from a set of options. They appear as checked (ticked) when activated. Clicking on a checkbox will toggle the `checked` property. They can also be checked programmatically by setting the `checked` property.\n\n\n\n",
+  "readme": "# ion-checkbox\n\nCheckboxes allow the selection of multiple options from a set of options. They appear as checked (ticked) when activated. Clicking on a checkbox will toggle the `checked` property. They can also be checked programmatically by setting the `checked` property.\n\n## Interfaces\n\n### CheckboxChangeEventDetail\n\n```typescript\ninterface CheckboxChangeEventDetail<T = any> {\n  value: T;\n  checked: boolean;\n}\n```\n\n### CheckboxCustomEvent\n\nWhile not required, this interface can be used in place of the `CustomEvent` interface for stronger typing with Ionic events emitted from this component.\n\n```typescript\ninterface CheckboxCustomEvent<T = any> extends CustomEvent {\n  detail: CheckboxChangeEventDetail<T>;\n  target: HTMLIonCheckboxElement;\n}\n```\n\n",
   "docs": "Checkboxes allow the selection of multiple options from a set of options. They appear as checked (ticked) when activated. Clicking on a checkbox will toggle the `checked` property. They can also be checked programmatically by setting the `checked` property.",
   "docsTags": [
     {
-      "text": "{\"ios\" | \"md\"} mode - The mode determines which platform styles to use.",
-      "name": "virtualProp"
+      "name": "virtualProp",
+      "text": "{\"ios\" | \"md\"} mode - The mode determines which platform styles to use."
     },
     {
-      "text": "container - The container for the checkbox mark.",
-      "name": "part"
+      "name": "part",
+      "text": "container - The container for the checkbox mark."
     },
     {
-      "text": "mark - The checkmark used to indicate the checked state.",
-      "name": "part"
+      "name": "part",
+      "text": "mark - The checkmark used to indicate the checked state."
     }
   ],
   "usage": {
@@ -48,7 +48,7 @@
       "type": "string | undefined",
       "mutable": false,
       "attr": "color",
-      "reflectToAttr": false,
+      "reflectToAttr": true,
       "docs": "The color to use from your application's color palette.\nDefault options are: `\"primary\"`, `\"secondary\"`, `\"tertiary\"`, `\"success\"`, `\"warning\"`, `\"danger\"`, `\"light\"`, `\"medium\"`, and `\"dark\"`.\nFor more information on colors, see [theming](/docs/theming/basics).",
       "docsTags": [],
       "values": [
@@ -136,7 +136,7 @@
     },
     {
       "name": "value",
-      "type": "string",
+      "type": "any",
       "mutable": false,
       "attr": "value",
       "reflectToAttr": false,
@@ -145,7 +145,7 @@
       "default": "'on'",
       "values": [
         {
-          "type": "string"
+          "type": "any"
         }
       ],
       "optional": false,
@@ -165,7 +165,7 @@
     },
     {
       "event": "ionChange",
-      "detail": "CheckboxChangeEventDetail",
+      "detail": "CheckboxChangeEventDetail<any>",
       "bubbles": true,
       "cancelable": true,
       "composed": true,
@@ -251,7 +251,13 @@
       "docs": "The checkmark used to indicate the checked state."
     }
   ],
-  "dependents": [],
+  "dependents": [
+    "ion-select-popover"
+  ],
   "dependencies": [],
-  "dependencyGraph": {}
+  "dependencyGraph": {
+    "ion-select-popover": [
+      "ion-checkbox"
+    ]
+  }
 }

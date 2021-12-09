@@ -2,12 +2,12 @@
   "filePath": "./src/components/segment/segment.tsx",
   "encapsulation": "shadow",
   "tag": "ion-segment",
-  "readme": "# ion-segment\n\nSegments display a group of related buttons, sometimes known as segmented controls, in a horizontal row. They can be displayed inside of a toolbar or the main content.\n\nTheir functionality is similar to tabs, where selecting one will deselect all others. Segments are useful for toggling between different views inside of the content. Tabs should be used instead of a segment when clicking on a control should navigate between pages.\n\n## Scrollable Segments\n\nSegments are not scrollable by default. Each segment button has a fixed width, and the width is determined by dividing the number of segment buttons by the screen width. This ensures that each segment button can be displayed on the screen without having to scroll. As a result, some segment buttons with longer labels may get cut off. To avoid this we recommend either using a shorter label or switching to a scrollable segment by setting the `scrollable` property to `true`. This will cause the segment to scroll horizontally, but will allow each segment button to have a variable width.\n",
+  "readme": "# ion-segment\n\nSegments display a group of related buttons, sometimes known as segmented controls, in a horizontal row. They can be displayed inside of a toolbar or the main content.\n\nTheir functionality is similar to tabs, where selecting one will deselect all others. Segments are useful for toggling between different views inside of the content. Tabs should be used instead of a segment when clicking on a control should navigate between pages.\n\n## Scrollable Segments\n\nSegments are not scrollable by default. Each segment button has a fixed width, and the width is determined by dividing the number of segment buttons by the screen width. This ensures that each segment button can be displayed on the screen without having to scroll. As a result, some segment buttons with longer labels may get cut off. To avoid this we recommend either using a shorter label or switching to a scrollable segment by setting the `scrollable` property to `true`. This will cause the segment to scroll horizontally, but will allow each segment button to have a variable width.\n\n## Accessibility\n\n### Keyboard Navigation\n\nThe component has full keyboard support for navigating between and selecting `ion-segment-button` elements. By default, keyboard navigation will only focus `ion-segment-button` elements, but you can use the `selectOnFocus` property to ensure that they get selected on focus as well. The following table details what each key does:\n\n| Key                | Function                                                       |\n| ------------------ | -------------------------------------------------------------- |\n| `ArrowRight`       | Focuses the next focusable element.                            |\n| `ArrowLeft`        | Focuses the previous focusable element.                        |\n| `Home`             | Focuses the first focusable element.                           |\n| `End`              | Focuses the last focusable element.                            |\n| `Space` or `Enter` | Selects the element that is currently focused.                 |\n\n## Interfaces\n\n### SegmentChangeEventDetail\n\n```typescript\ninterface SegmentChangeEventDetail {\n  value?: string;\n}\n```\n\n### SegmentCustomEvent\n\nWhile not required, this interface can be used in place of the `CustomEvent` interface for stronger typing with Ionic events emitted from this component.\n\n```typescript\ninterface SegmentCustomEvent extends CustomEvent {\n  target: HTMLIonSegmentElement;\n  detail: SegmentChangeEventDetail;\n}\n```\n",
   "docs": "Segments display a group of related buttons, sometimes known as segmented controls, in a horizontal row. They can be displayed inside of a toolbar or the main content.\n\nTheir functionality is similar to tabs, where selecting one will deselect all others. Segments are useful for toggling between different views inside of the content. Tabs should be used instead of a segment when clicking on a control should navigate between pages.",
   "docsTags": [
     {
-      "text": "{\"ios\" | \"md\"} mode - The mode determines which platform styles to use.",
-      "name": "virtualProp"
+      "name": "virtualProp",
+      "text": "{\"ios\" | \"md\"} mode - The mode determines which platform styles to use."
     }
   ],
   "usage": {
@@ -23,7 +23,7 @@
       "type": "string | undefined",
       "mutable": false,
       "attr": "color",
-      "reflectToAttr": false,
+      "reflectToAttr": true,
       "docs": "The color to use from your application's color palette.\nDefault options are: `\"primary\"`, `\"secondary\"`, `\"tertiary\"`, `\"success\"`, `\"warning\"`, `\"danger\"`, `\"light\"`, `\"medium\"`, and `\"dark\"`.\nFor more information on colors, see [theming](/docs/theming/basics).",
       "docsTags": [],
       "values": [
@@ -93,6 +93,23 @@
       "required": false
     },
     {
+      "name": "selectOnFocus",
+      "type": "boolean",
+      "mutable": false,
+      "attr": "select-on-focus",
+      "reflectToAttr": false,
+      "docs": "If `true`, navigating to an `ion-segment-button` with the keyboard will focus and select the element.\nIf `false`, keyboard navigation will only focus the `ion-segment-button` element.",
+      "docsTags": [],
+      "default": "false",
+      "values": [
+        {
+          "type": "boolean"
+        }
+      ],
+      "optional": false,
+      "required": false
+    },
+    {
       "name": "swipeGesture",
       "type": "boolean",
       "mutable": false,
@@ -144,7 +161,13 @@
       "docsTags": []
     }
   ],
-  "listeners": [],
+  "listeners": [
+    {
+      "event": "keydown",
+      "capture": false,
+      "passive": false
+    }
+  ],
   "styles": [
     {
       "name": "--background",

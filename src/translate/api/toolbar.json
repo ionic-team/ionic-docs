@@ -6,28 +6,28 @@
   "docs": "Toolbars are positioned above or below content. When a toolbar is placed in an `<ion-header>` it will appear fixed at the top of the content, and when it is in an `<ion-footer>` it will appear fixed at the bottom. Fullscreen content will scroll behind a toolbar in a header or footer. When placed within an `<ion-content>`, toolbars will scroll with the content.",
   "docsTags": [
     {
-      "text": "{\"ios\" | \"md\"} mode - The mode determines which platform styles to use.",
-      "name": "virtualProp"
+      "name": "virtualProp",
+      "text": "{\"ios\" | \"md\"} mode - The mode determines which platform styles to use."
     },
     {
-      "text": "- Content is placed between the named slots if provided without a slot.",
-      "name": "slot"
+      "name": "slot",
+      "text": "- Content is placed between the named slots if provided without a slot."
     },
     {
-      "text": "start - Content is placed to the left of the toolbar text in LTR, and to the right in RTL.",
-      "name": "slot"
+      "name": "slot",
+      "text": "start - Content is placed to the left of the toolbar text in LTR, and to the right in RTL."
     },
     {
-      "text": "secondary - Content is placed to the left of the toolbar text in `ios` mode, and directly to the right in `md` mode.",
-      "name": "slot"
+      "name": "slot",
+      "text": "secondary - Content is placed to the left of the toolbar text in `ios` mode, and directly to the right in `md` mode."
     },
     {
-      "text": "primary - Content is placed to the right of the toolbar text in `ios` mode, and to the far right in `md` mode.",
-      "name": "slot"
+      "name": "slot",
+      "text": "primary - Content is placed to the right of the toolbar text in `ios` mode, and to the far right in `md` mode."
     },
     {
-      "text": "end - Content is placed to the right of the toolbar text in LTR, and to the left in RTL.",
-      "name": "slot"
+      "name": "slot",
+      "text": "end - Content is placed to the right of the toolbar text in LTR, and to the left in RTL."
     }
   ],
   "usage": {
@@ -43,7 +43,7 @@
       "type": "string | undefined",
       "mutable": false,
       "attr": "color",
-      "reflectToAttr": false,
+      "reflectToAttr": true,
       "docs": "The color to use from your application's color palette.\nDefault options are: `\"primary\"`, `\"secondary\"`, `\"tertiary\"`, `\"success\"`, `\"warning\"`, `\"danger\"`, `\"light\"`, `\"medium\"`, and `\"dark\"`.\nFor more information on colors, see [theming](/docs/theming/basics).",
       "docsTags": [],
       "values": [

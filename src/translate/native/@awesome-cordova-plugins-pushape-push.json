@@ -1,0 +1,15 @@
+{
+  "packageName": "@awesome-cordova-plugins/pushape-push",
+  "displayName": "PushapePush",
+  "description": "\nRegister and receive push notifications.\nThis plugin extends functionalities of Push native plugin in order to use it with Pushape service.\n\nPushape service: @link https://glue-labs.com/pushape-invio-notifiche-push-ios-android-api-sdk\n\nRequires Cordova plugin: `pushape-cordova-push`. For more info, please see the [Pushape plugin docs](https://github.com/gluelabs/pushape-cordova-push).\n\nFor TypeScript users, see the [Pushape plugin docs about using TypeScript for custom notifications](https://github.com/gluelabs/pushape-cordova-push/blob/master/docs/PUSHAPE_TYPESCRIPT.md).\n",
+  "usage": "\n```typescript\nimport { PushapePush } from '@awesome-cordova-plugins/pushape-push/ngx';\n\n\nconstructor(private readonly pushapePush: PushapePush) { }\n\n...\n\n\n\n```\n",
+  "platforms": [
+    "Android",
+    "Browser",
+    "iOS"
+  ],
+  "repo": "https://github.com/gluelabs/pushape-cordova-push",
+  "cordovaPlugin": {
+    "name": "pushape-cordova-push"
+  }
+}

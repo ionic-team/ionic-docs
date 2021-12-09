@@ -2,7 +2,7 @@
   "filePath": "./src/components/router/router.tsx",
   "encapsulation": "none",
   "tag": "ion-router",
-  "readme": "# ion-router\n\nThe router is a component for handling routing inside vanilla and Stencil JavaScript projects.\n\n> Note: this component should only be used with vanilla and Stencil JavaScript projects. For Angular projects, use [`ion-router-outlet`](../router-outlet) and the Angular router.\n\nApps should have a single `ion-router` component in the codebase.\nThis component controls all interactions with the browser history and it aggregates updates through an event system.\n\n`ion-router` is just a URL coordinator for the navigation outlets of ionic: `ion-nav` and `ion-tabs`.\n\nThat means the `ion-router` never touches the DOM, it does NOT show the components or emit any kind of lifecycle events, it just tells `ion-nav` and `ion-tabs` what and when to \"show\" based on the browser's URL.\n\nIn order to configure this relationship between components (to load/select) and URLs, `ion-router` uses a declarative syntax using JSX/HTML to define a tree of routes.\n\n",
+  "readme": "# ion-router\n\nThe router is a component for handling routing inside vanilla and Stencil JavaScript projects.\n\n> Note: this component should only be used with vanilla and Stencil JavaScript projects. For Angular projects, use [`ion-router-outlet`](../router-outlet) and the Angular router.\n\nApps should have a single `ion-router` component in the codebase.\nThis component controls all interactions with the browser history and it aggregates updates through an event system.\n\n`ion-router` is just a URL coordinator for the navigation outlets of ionic: `ion-nav` and `ion-tabs`.\n\nThat means the `ion-router` never touches the DOM, it does NOT show the components or emit any kind of lifecycle events, it just tells `ion-nav` and `ion-tabs` what and when to \"show\" based on the browser's URL.\n\nIn order to configure this relationship between components (to load/select) and URLs, `ion-router` uses a declarative syntax using JSX/HTML to define a tree of routes.\n\n## Interfaces\n\n### RouterEventDetail\n\n```typescript\ninterface RouterEventDetail {\n  from: string | null;\n  redirectedFrom: string | null;\n  to: string;\n}\n```\n\n### RouterCustomEvent\n\nWhile not required, this interface can be used in place of the `CustomEvent` interface for stronger typing with Ionic events emitted from this component.\n\n```typescript\ninterface RouterCustomEvent extends CustomEvent {\n  detail: RouterEventDetail;\n  target: HTMLIonRouterElement;\n}\n```\n",
   "docs": "The router is a component for handling routing inside vanilla and Stencil JavaScript projects.\n\n> Note: this component should only be used with vanilla and Stencil JavaScript projects. For Angular projects, use [`ion-router-outlet`](../router-outlet) and the Angular router.\n\nApps should have a single `ion-router` component in the codebase.\nThis component controls all interactions with the browser history and it aggregates updates through an event system.\n\n`ion-router` is just a URL coordinator for the navigation outlets of ionic: `ion-nav` and `ion-tabs`.\n\nThat means the `ion-router` never touches the DOM, it does NOT show the components or emit any kind of lifecycle events, it just tells `ion-nav` and `ion-tabs` what and when to \"show\" based on the browser's URL.\n\nIn order to configure this relationship between components (to load/select) and URLs, `ion-router` uses a declarative syntax using JSX/HTML to define a tree of routes.",
   "docsTags": [],
   "usage": {
@@ -15,7 +15,7 @@
       "mutable": false,
       "attr": "root",
       "reflectToAttr": false,
-      "docs": "By default `ion-router` will match the routes at the root path (\"/\").\nThat can be changed when",
+      "docs": "The root path to use when matching URLs. By default, this is set to \"/\", but you can specify\nan alternate prefix for all URL paths.",
       "docsTags": [],
       "default": "'/'",
       "values": [
@@ -32,7 +32,7 @@
       "mutable": false,
       "attr": "use-hash",
       "reflectToAttr": false,
-      "docs": "The router can work in two \"modes\":\n- With hash: `/index.html#/path/to/page`\n- Without hash: `/path/to/page`\n\nUsing one or another might depend in the requirements of your app and/or where it's deployed.\n\nUsually \"hash-less\" navigation works better for SEO and it's more user friendly too, but it might\nrequires additional server-side configuration in order to properly work.\n\nOn the otherside hash-navigation is much easier to deploy, it even works over the file protocol.\n\nBy default, this property is `true`, change to `false` to allow hash-less URLs.",
+      "docs": "The router can work in two \"modes\":\n- With hash: `/index.html#/path/to/page`\n- Without hash: `/path/to/page`\n\nUsing one or another might depend in the requirements of your app and/or where it's deployed.\n\nUsually \"hash-less\" navigation works better for SEO and it's more user friendly too, but it might\nrequires additional server-side configuration in order to properly work.\n\nOn the other side hash-navigation is much easier to deploy, it even works over the file protocol.\n\nBy default, this property is `true`, change to `false` to allow hash-less URLs.",
       "docsTags": [],
       "default": "true",
       "values": [

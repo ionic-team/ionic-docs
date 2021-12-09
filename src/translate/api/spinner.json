@@ -18,7 +18,7 @@
       "type": "string | undefined",
       "mutable": false,
       "attr": "color",
-      "reflectToAttr": false,
+      "reflectToAttr": true,
       "docs": "The color to use from your application's color palette.\nDefault options are: `\"primary\"`, `\"secondary\"`, `\"tertiary\"`, `\"success\"`, `\"warning\"`, `\"danger\"`, `\"light\"`, `\"medium\"`, and `\"dark\"`.\nFor more information on colors, see [theming](/docs/theming/basics).",
       "docsTags": [],
       "values": [
@@ -53,7 +53,7 @@
     },
     {
       "name": "name",
-      "type": "\"bubbles\" | \"circles\" | \"circular\" | \"crescent\" | \"dots\" | \"lines\" | \"lines-small\" | undefined",
+      "type": "\"bubbles\" | \"circles\" | \"circular\" | \"crescent\" | \"dots\" | \"lines\" | \"lines-sharp\" | \"lines-sharp-small\" | \"lines-small\" | undefined",
       "mutable": false,
       "attr": "name",
       "reflectToAttr": false,
@@ -82,6 +82,14 @@
         },
         {
           "value": "lines",
+          "type": "string"
+        },
+        {
+          "value": "lines-sharp",
+          "type": "string"
+        },
+        {
+          "value": "lines-sharp-small",
           "type": "string"
         },
         {

@@ -1,0 +1,14 @@
+{
+  "packageName": "@awesome-cordova-plugins/firebase-analytics",
+  "displayName": "Firebase Analytics",
+  "description": "\nCordova plugin for Firebase Analytics\n\nGo to firebase console and export google-services.json and GoogleService-Info.plist. Put those files into the root of your cordova app folder.\n\nNOTE: on iOS in order to collect demographic, age, gender data etc. you should additionally include AdSupport.framework into your project.\n\n## Using capacitor?\nFor Android you'll have to add in __android/app/src/main/AndroidManfiest.xml__ under `<application>`\n```\n<meta-data\n     tools:replace=\"android:value\"\n     android:name=\"firebase_analytics_collection_enabled\"\n     android:value=\"true\"/>\n\n<meta-data\n     tools:replace=\"android:value\"\n     android:name=\"google_analytics_automatic_screen_reporting_enabled\"\n     android:value=\"false\"/>\n```\n\nAnd in the same file, you'll have to add `xmlns:tools=\"http://schemas.android.com/tools\"` to your _manifest_ tag.\n",
+  "usage": "\n```typescript\nimport { FirebaseAnalytics } from '@awesome-cordova-plugins/firebase-analytics/ngx';\n\n\nconstructor(private firebaseAnalytics: FirebaseAnalytics) { }\n\n...\n\nthis.firebaseAnalytics.logEvent('page_view', {page: \"dashboard\"})\n  .then((res: any) => console.log(res))\n  .catch((error: any) => console.error(error));\n\n```\n",
+  "platforms": [
+    "Android",
+    "iOS"
+  ],
+  "repo": "https://github.com/chemerisuk/cordova-plugin-firebase-analytics",
+  "cordovaPlugin": {
+    "name": "cordova-plugin-firebase-analytics"
+  }
+}

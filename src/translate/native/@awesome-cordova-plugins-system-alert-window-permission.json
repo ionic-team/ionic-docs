@@ -1,0 +1,13 @@
+{
+  "packageName": "@awesome-cordova-plugins/system-alert-window-permission",
+  "displayName": "System Alert Window Permission",
+  "description": "\nThis plugin does something\n",
+  "usage": "\n```typescript\nimport { SystemAlertWindowPermission } from '@awesome-cordova-plugins/system-alert-window-permission/ngx';\n\n\nconstructor(private systemAlertWindowPermission: SystemAlertWindowPermission) { }\n\n...\n\n\nthis.systemAlertWindowPermission.hasPermission()\n  .then((res: any) => console.log(res))\n  .catch((error: any) => console.error(error));\n\nthis.systemAlertWindowPermission.requestPermission()\n  .then((res: any) => console.log(res))\n  .catch((error: any) => console.error(error));\n\n```\n",
+  "platforms": [
+    "Android"
+  ],
+  "repo": "https://github.com/MaximBelov/cordova-plugin-system-alert-window-permission.git",
+  "cordovaPlugin": {
+    "name": "cordova-plugin-system-alert-window-permission"
+  }
+}

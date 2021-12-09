@@ -1,0 +1,14 @@
+{
+  "packageName": "@awesome-cordova-plugins/full-screen-image",
+  "displayName": "Full Screen Image",
+  "description": "\nThis plugin does something\n",
+  "usage": "\n```typescript\nimport { FullScreenImage } from '@awesome-cordova-plugins/full-screen-image';\n\n\nconstructor(private fullScreenImage: FullScreenImage) { }\n\n...\n\nthis.fullScreenImage.showImageURL('/assets/...')\n  .then((data: any) => console.log(res))\n  .catch((error: any) => console.error(error));\n\n...\n\nthis.fullScreenImage.showImageBase64('iVBORw0KGgoAAAANSUhEUgAAA...')\n  .then((data: any) => console.log(res))\n  .catch((error: any) => console.error(error));\n\n```\n",
+  "platforms": [
+    "Android",
+    "iOS"
+  ],
+  "repo": "https://github.com/keensoft/FullScreenImage-Cordova-Plugin",
+  "cordovaPlugin": {
+    "name": "es.keensoft.fullscreenimage"
+  }
+}

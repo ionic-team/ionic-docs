@@ -1,0 +1,13 @@
+{
+  "packageName": "@awesome-cordova-plugins/clover-go",
+  "displayName": "Clover Go",
+  "description": "\nThis plugin connect to Clover Go payment device and process payments.\n",
+  "usage": "\n```typescript\nimport { CloverGo } from '@awesome-cordova-plugins/clover-go/ngx';\n\n\nconstructor(private cloverGo: CloverGo) { }\n\n...\n\n\nthis.cloverGo.init(configuration)\n  .then((res: any) => console.log(res))\n  .catch((error: any) => console.error(error));\n\nthis.cloverGo.connect()\n  .then((res: any) => console.log(res))\n  .catch((error: any) => console.error(error));\n\nthis.cloverGo.disconnect()\n  .then((res: any) => console.log(res))\n  .catch((error: any) => console.error(error));\n\nthis.cloverGo.sale(saleInfo)\n  .then((res: any) => console.log(res))\n  .catch((error: any) => console.error(error));\n\nthis.cloverGo.sign(signInfo)\n  .then((res: any) => console.log(res))\n  .catch((error: any) => console.error(error));\n\nthis.cloverGo.voidPayment(paymentInfo)\n  .then((res: any) => console.log(res))\n  .catch((error: any) => console.error(error));\n\n```\n",
+  "platforms": [
+    "Android"
+  ],
+  "repo": "https://github.com/hotwax/cordova-plugin-clovergo",
+  "cordovaPlugin": {
+    "name": "cordova-plugin-clovergo"
+  }
+}

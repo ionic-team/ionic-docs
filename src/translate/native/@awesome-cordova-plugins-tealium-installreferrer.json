@@ -1,0 +1,13 @@
+{
+  "packageName": "@awesome-cordova-plugins/tealium-installreferrer",
+  "displayName": "TealiumInstallReferrer",
+  "description": "\nThis module depends on the [Tealium Cordova Plugin](https://github.com/tealium/cordova-plugin). Without it, this module will not do anything.\nImplements a Broadcast Receiver for the INSTALL_REFERRER intent.\n",
+  "usage": "\n```\nimport { TealiumInstallReferrer } from '@awesome-cordova-plugins/tealium-installreferrer/ngx';\n\n\nconstructor(private installReferrer: TealiumInstallReferrer) { }\n\n\nthis.installReferrer.setPersistent(\"main\");\nthis.installReferrer.setVolatile(\"main\");\n\n\n\n```\n",
+  "platforms": [
+    "Android"
+  ],
+  "repo": "https://github.com/Tealium/cordova-plugin",
+  "cordovaPlugin": {
+    "name": "tealium-cordova-installreferrer"
+  }
+}

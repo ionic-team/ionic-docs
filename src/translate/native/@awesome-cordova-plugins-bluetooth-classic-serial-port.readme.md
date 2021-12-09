@@ -1,0 +1,1 @@
+This plugin is written using the iOS Accessory Framework (MFi) to support Classic Bluetooth on iOS.

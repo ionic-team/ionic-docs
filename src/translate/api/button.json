@@ -6,28 +6,28 @@
   "docs": "Buttons provide a clickable element, which can be used in forms, or anywhere that needs simple, standard button functionality. They may display text, icons, or both. Buttons can be styled with several attributes to look a specific way.",
   "docsTags": [
     {
-      "text": "{\"ios\" | \"md\"} mode - The mode determines which platform styles to use.",
-      "name": "virtualProp"
+      "name": "virtualProp",
+      "text": "{\"ios\" | \"md\"} mode - The mode determines which platform styles to use."
     },
     {
-      "text": "- Content is placed between the named slots if provided without a slot.",
-      "name": "slot"
+      "name": "slot",
+      "text": "- Content is placed between the named slots if provided without a slot."
     },
     {
-      "text": "icon-only - Should be used on an icon in a button that has no text.",
-      "name": "slot"
+      "name": "slot",
+      "text": "icon-only - Should be used on an icon in a button that has no text."
     },
     {
-      "text": "start - Content is placed to the left of the button text in LTR, and to the right in RTL.",
-      "name": "slot"
+      "name": "slot",
+      "text": "start - Content is placed to the left of the button text in LTR, and to the right in RTL."
     },
     {
-      "text": "end - Content is placed to the right of the button text in LTR, and to the left in RTL.",
-      "name": "slot"
+      "name": "slot",
+      "text": "end - Content is placed to the right of the button text in LTR, and to the left in RTL."
     },
     {
-      "text": "native - The native HTML button or anchor element that wraps all child elements.",
-      "name": "part"
+      "name": "part",
+      "text": "native - The native HTML button or anchor element that wraps all child elements."
     }
   ],
   "usage": {
@@ -60,7 +60,7 @@
       "type": "string | undefined",
       "mutable": false,
       "attr": "color",
-      "reflectToAttr": false,
+      "reflectToAttr": true,
       "docs": "The color to use from your application's color palette.\nDefault options are: `\"primary\"`, `\"secondary\"`, `\"tertiary\"`, `\"success\"`, `\"warning\"`, `\"danger\"`, `\"light\"`, `\"medium\"`, and `\"dark\"`.\nFor more information on colors, see [theming](/docs/theming/basics).",
       "docsTags": [],
       "values": [
@@ -543,13 +543,18 @@
       "docs": "The native HTML button or anchor element that wraps all child elements."
     }
   ],
-  "dependents": [],
+  "dependents": [
+    "ion-datetime"
+  ],
   "dependencies": [
     "ion-ripple-effect"
   ],
   "dependencyGraph": {
     "ion-button": [
       "ion-ripple-effect"
+    ],
+    "ion-datetime": [
+      "ion-button"
     ]
   }
 }

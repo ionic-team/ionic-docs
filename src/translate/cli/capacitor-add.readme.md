@@ -1,2 +1,3 @@
 `ionic capacitor add` will do the following:
-- Add a new platform specific folder to your project (ios, android, or electron)
+- Install the Capacitor platform package
+- Copy the native platform template into your project

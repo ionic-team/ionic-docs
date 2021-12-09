@@ -1,0 +1,14 @@
+{
+  "packageName": "@awesome-cordova-plugins/service-discovery",
+  "displayName": "ServiceDiscovery",
+  "description": "\nSimple plugin to get any SSDP / UPnP / DLNA service on a local network\n",
+  "usage": "\n```typescript\nimport { ServiceDiscovery } from '@awesome-cordova-plugins/service-discovery';\n\n\nconstructor(private serviceDiscovery: ServiceDiscovery) { }\n\n...\n\n\nthis.serviceDiscovery.getNetworkServices('ssdp:all')\n  .then(devices => console.log(devices))\n  .catch(error => console.error(error));\n\n```\n",
+  "platforms": [
+    "Android",
+    "iOS"
+  ],
+  "repo": "https://github.com/scottdermott/cordova-plugin-discovery",
+  "cordovaPlugin": {
+    "name": "cordova-plugin-discovery"
+  }
+}

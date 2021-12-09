@@ -5,7 +5,7 @@
     "package"
   ],
   "summary": "Create a package build on Appflow",
-  "description": "This command creates a package build on Appflow. While the build is running, it prints the remote build log to the terminal. If the build is successful, it downloads the created app package file in the current directory.\n\nApart from `--commit`, every option can be specified using the full name setup within the [Dashboard](https://dashboard.ionicframework.com).\n\nThe `--signing-certificate` option is mandatory for any iOS build but not for Android debug builds.\n\nCustomizing the build:\n- The `--environment` and `--native-config` options can be used to customize the groups of values exposed to the build.\n- Override the preferred platform with `--build-stack`. This is useful for building older iOS apps.\n\nDeploying the build to an App Store:\n- The `--destination` option can be used to deliver the app created by the build to the configured App Store. This can be used only together with build type `release` for Android and build types `app-store` or `enterprise` for iOS.",
+  "description": "This command creates a package build on Appflow. While the build is running, it prints the remote build log to the terminal. If the build is successful, it downloads the created app package file in the current directory. Downloading build artifacts can be skipped by supplying the flag `skip-download`.\n\nApart from `--commit`, every option can be specified using the full name setup within the [Dashboard](https://dashboard.ionicframework.com).\n\nThe `--signing-certificate` option is mandatory for any iOS build but not for Android debug builds.\n\nCustomizing the build:\n- The `--environment` and `--native-config` options can be used to customize the groups of values exposed to the build.\n- Override the preferred platform with `--build-stack`. This is useful for building older iOS apps.\n\nDeploying the build to an App Store:\n- The `--destination` option can be used to deliver the app created by the build to the configured App Store. This can be used only together with build type `release` for Android and build types `app-store` or `enterprise` for iOS.\n\nDownloading build artifacts:\n- By default once the build is complete, all artifacts are downloaded for the selected platform. `aab` and `apk` for Android `ipa` and `dsym` for iOS.\n- The `--artifact-type` option can be used to limit artifact downloads to only of that type. For instance, with Android, you can specify `aab` if you do not wish to download `apk`.",
   "footnotes": [],
   "groups": [
     "paid"
@@ -16,8 +16,11 @@
     "ionic package build android debug --environment=\"My Custom Environment Name\"",
     "ionic package build android debug --native-config=\"My Custom Native Config Name\"",
     "ionic package build android debug --commit=2345cd3305a1cf94de34e93b73a932f25baac77c",
+    "ionic package build android debug --artifact-type=aab",
+    "ionic package build android debug --skip-download",
+    "ionic package build android debug --aab-name=\"my-app-prod.aab\" --apk-name=\"my-app-prod.apk\"",
     "ionic package build ios development --signing-certificate=\"iOS Signing Certificate Name\" --build-stack=\"iOS - Xcode 9\"",
-    "ionic package build ios development --signing-certificate=\"iOS Signing Certificate Name\" --build-file-name=my_custom_file_name.ipa",
+    "ionic package build ios development --signing-certificate=\"iOS Signing Certificate Name\" --ipa-name=my_custom_file_name.ipa",
     "ionic package build ios app-store --signing-certificate=\"iOS Signing Certificate Name\" --destination=\"Apple App Store Destination\""
   ],
   "aliases": [],
@@ -89,7 +92,7 @@
     {
       "name": "build-stack",
       "type": "string",
-      "summary": "Build stack (`\"Android\"`, `\"iOS - Xcode 11 (Preferred)\"`, `\"iOS - Xcode 10\"`)",
+      "summary": "Target platform (`\"Android\"`, `\"iOS - Xcode 11 (Preferred)\"`, `\"iOS - Xcode 10\"`)",
       "groups": [
         "advanced"
       ],
@@ -103,8 +106,77 @@
       "type": "string",
       "summary": "The name for the downloaded build file",
       "groups": [
+        "deprecated"
+      ],
+      "aliases": [],
+      "spec": {
+        "value": "name"
+      }
+    },
+    {
+      "name": "ipa-name",
+      "type": "string",
+      "summary": "The name for the downloaded ipa file",
+      "groups": [
         "advanced"
       ],
+      "aliases": [],
+      "spec": {
+        "value": "name"
+      }
+    },
+    {
+      "name": "dsym-name",
+      "type": "string",
+      "summary": "The name for the downloaded dsym file",
+      "groups": [
+        "advanced"
+      ],
+      "aliases": [],
+      "spec": {
+        "value": "name"
+      }
+    },
+    {
+      "name": "apk-name",
+      "type": "string",
+      "summary": "The name for the downloaded apk file",
+      "groups": [
+        "advanced"
+      ],
+      "aliases": [],
+      "spec": {
+        "value": "name"
+      }
+    },
+    {
+      "name": "aab-name",
+      "type": "string",
+      "summary": "The name for the downloaded aab file",
+      "groups": [
+        "advanced"
+      ],
+      "aliases": [],
+      "spec": {
+        "value": "name"
+      }
+    },
+    {
+      "name": "artifact-type",
+      "type": "string",
+      "summary": "The artifact type (`aab`, `apk`, `ipa`, `dsym`)",
+      "groups": [],
+      "aliases": [],
+      "spec": {
+        "value": "name"
+      }
+    },
+    {
+      "name": "skip-download",
+      "type": "boolean",
+      "summary": "Skip downloading build artifacts after command succeeds.",
+      "default": false,
+      "groups": [],
       "aliases": [],
       "spec": {
         "value": "name"

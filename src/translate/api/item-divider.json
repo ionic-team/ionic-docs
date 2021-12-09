@@ -6,20 +6,20 @@
   "docs": "Item Dividers are block elements that can be used to separate items in a list. They are similar to list headers, but instead of being placed at the top of a list, they should go in between groups of items.",
   "docsTags": [
     {
-      "text": "{\"ios\" | \"md\"} mode - The mode determines which platform styles to use.",
-      "name": "virtualProp"
+      "name": "virtualProp",
+      "text": "{\"ios\" | \"md\"} mode - The mode determines which platform styles to use."
     },
     {
-      "text": "- Content is placed between the named slots if provided without a slot.",
-      "name": "slot"
+      "name": "slot",
+      "text": "- Content is placed between the named slots if provided without a slot."
     },
     {
-      "text": "start - Content is placed to the left of the divider text in LTR, and to the right in RTL.",
-      "name": "slot"
+      "name": "slot",
+      "text": "start - Content is placed to the left of the divider text in LTR, and to the right in RTL."
     },
     {
-      "text": "end - Content is placed to the right of the divider text in LTR, and to the left in RTL.",
-      "name": "slot"
+      "name": "slot",
+      "text": "end - Content is placed to the right of the divider text in LTR, and to the left in RTL."
     }
   ],
   "usage": {
@@ -35,7 +35,7 @@
       "type": "string | undefined",
       "mutable": false,
       "attr": "color",
-      "reflectToAttr": false,
+      "reflectToAttr": true,
       "docs": "The color to use from your application's color palette.\nDefault options are: `\"primary\"`, `\"secondary\"`, `\"tertiary\"`, `\"success\"`, `\"warning\"`, `\"danger\"`, `\"light\"`, `\"medium\"`, and `\"dark\"`.\nFor more information on colors, see [theming](/docs/theming/basics).",
       "docsTags": [],
       "values": [

@@ -1,0 +1,14 @@
+{
+  "packageName": "@awesome-cordova-plugins/paytabs",
+  "displayName": "PayTabs",
+  "description": "\nA plugin that allows you to use PayTabs's Native SDKs for Android and iOS.\n",
+  "usage": "\n```typescript\nimport { PayTabs } from '@awesome-cordova-plugins/paytabs/ngx';\n\nconstructor(private paytabs: PayTabs) { }\n\n...\nlet billingDetails: PaymentSDKBillingDetails = {\n   name: \"John Smith\",\n   email: \"email@domain.com\",\n   phone: \"+201111111111\",\n   addressLine: \"Address line\",\n   city: \"Dubai\",\n   state: \"Dubai\",\n   countryCode: \"AE\",\n   zip: \"1234\"\n };\n\nvar configuration: PaymentSDKConfiguration = {\n   profileID: \"*profile id*\",\n   serverKey: \"*server key*\",\n   clientKey: \"*cleint key*\",\n   cartID: \"12345\",\n   currency: \"USD\",\n   cartDescription: \"Flowers\",\n   merchantCountryCode: \"ae\",\n   merchantName: \"Flowers Store\",\n   amount: 20,\n   screenTitle:\"Pay with Card\",\n   billingDetails: billingDetails\n }\n\nthis.paytabs.startCardPayment(configuration)\n               .then(result => console.log(result))\n               .catch(error => console.error(error));\n\nthis.paytabs.startApplePayPayment(configuration)\n               .then(result => console.log(result))\n               .catch(error => console.error(error));\n\nthis.paytabs.startAlternativePaymentMethod(configuration)\n               .then(result => console.log(result))\n               .catch(error => console.error(error));\n\n```\n",
+  "platforms": [
+    "Android",
+    "iOS"
+  ],
+  "repo": "https://github.com/paytabscom/paytabs-cordova",
+  "cordovaPlugin": {
+    "name": "com.paytabs.cordova.plugin"
+  }
+}

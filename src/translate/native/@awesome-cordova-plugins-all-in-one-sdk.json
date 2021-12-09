@@ -1,0 +1,14 @@
+{
+  "packageName": "@awesome-cordova-plugins/all-in-one-sdk",
+  "displayName": "AllInOneSDK",
+  "description": "\nPaytm All-in-One SDK plugin for Cordova/Ionic Applications\nPaytm All-in-One SDK provides a swift, secure and seamless payment experience to your users by invoking the Paytm app (if installed on your user’s smartphone) to complete payment for your order.\nPaytm All-in-One SDK enables payment acceptance via Paytm wallet, Paytm Payments Bank, saved Debit/Credit cards, Net Banking, BHIM UPI and EMI as available in your customer’s Paytm account. If Paytm app is not installed on a customer's device, the transaction will be processed via web view within the All-in-One SDK.\nFor more information about Paytm All-in-One SDK, please visit https://developer.paytm.com/docs/all-in-one-sdk/hybrid-apps/cordova/\n",
+  "usage": "\n```typescript\nimport { AllInOneSDK } from '@awesome-cordova-plugins/all-in-one-sdk/ngx';\n\n\nconstructor(private allInOneSDK: AllInOneSDK) { }\n\n...\n\nFor below parameters see [documentation](https://developer.paytm.com/docs/all-in-one-sdk/hybrid-apps/cordova/)\nlet paymentIntent = { mid : merchantID, orderId: orderId, txnToken: transactionToken, amount: amount, isStaging: isStaging, callbackUrl:callBackURL,  restrictAppInvoke:restrictAppInvoke  }\n\nthis.allInOneSDK.startTransaction(paymentIntent)\n  .then((res: any) => console.log(res))\n  .catch((error: any) => console.error(error));\n\n```\n\nFor iOS:\nAfter adding the plugin, open the iOS project, you can find the same at <projectName>/platforms/ios.\nIn case merchant don’t have callback URL, Add an entry into Info.plist LSApplicationQueriesSchemes(Array) Item 0 (String)-> paytm\nAdd a URL Scheme “paytm”+”MID”\n\n",
+  "platforms": [
+    "Android",
+    "iOS"
+  ],
+  "repo": "https://github.com/paytm/paytm-allinonesdk-ionic-cordova.git",
+  "cordovaPlugin": {
+    "name": "cordova-paytm-allinonesdk"
+  }
+}
