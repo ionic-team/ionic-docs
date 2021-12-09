@@ -1,6 +1,6 @@
 const fs = require('fs');
 const utils = require('./utils');
-const cliJSON = require('./data/cli.json');
+const cliJSON = require('./data/translated-cli.json');
 const { cli: cliOverrides } = require('./data/meta-override.json');
 
 const commandToKebab = (str) =>

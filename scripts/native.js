@@ -1,5 +1,5 @@
 const fs = require('fs');
-const nativeJSON = require('./data/native.json');
+const nativeJSON = require('./data/translated-native.json');
 const utils = require('./utils.js');
 const { native: nativeOverrides } = require('./data/meta-override.json');
 
