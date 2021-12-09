@@ -7,101 +7,109 @@ Virtual Scrollは、Virtualの "infinite" リストを表示します。
 パフォーマンス上の理由から、リスト内のすべてのレコードが一度にレンダリングされるわけではありません。
 その代わりに、レコードの小さなサブセット(ビューポートをいっぱいにするのに十分な数)がレンダリングされ、ユーザーのスクロールに再利用されます。
 
+This guide will go over the recommended virtual scrolling packages for each framework integration as well as documentation for the deprecated `ion-virtual-scroll` component for Ionic Angular. We recommend using the framework-specific solutions listed below, but the `ion-virtual-scroll` documentation is available below for developers who are still using that component.
+
+## Angular
+
+For virtual scrolling options in Ionic Angular, please see [Angular Virtual Scroll Guide](../../angular/virtual-scroll).
+
+## React
+
+For virtual scrolling options in Ionic React, please see [React Virtual Scroll Guide](../../react/virtual-scroll).
+
+## Vue
+
+For virtual scrolling options in Ionic Vue, please see [Vue Virtual Scroll Guide](../../vue/virtual-scroll).
+
+------
+
+The following documentation applies to the `ion-virtual-scroll` component.
 
 ## Approximate Widths and Heights
 
-仮想スクロールのアイテムの高さがデフォルトサイズの `40px` に近くない場合は、
-`approxItemHeight` プロパティの値を指定することが非常に重要です。
-ピクセル単位の正確なサイズは必要ありませんが、見積もりなしでは仮想スクロールは正しくレンダリングされません。
+If the height of items in the virtual scroll are not close to the
+default size of `40px`, it is extremely important to provide a value for
+the `approxItemHeight` property. An exact pixel-perfect size is not necessary,
+but without an estimate the virtual scroll will not render correctly.
 
-各テンプレートのおおよその幅と高さを使用して、
-作成するセルの数を決定したり、
-スクロール可能領域の高さを計算したりします。
-各セルの実際の描画サイズはアプリケーションのCSSから得られるのに対し、
-この近似値は初期次元の計算にのみ使用されることに注意してください。
+The approximate width and height of each template is used to help
+determine how many cells should be created, and to help calculate
+the height of the scrollable area. Note that the actual rendered size
+of each cell comes from the app's CSS, whereas this approximation
+is only used to help calculate initial dimensions.
 
-また、Ionicのデフォルトのアイテムのサイズは、
-プラットフォームによって高さが若干異なりますが、これは問題ありません。
+It's also important to know that Ionic's default item sizes have
+slightly different heights between platforms, which is perfectly fine.
 
 ## Images Within Virtual Scroll
 
-HTTPリクエスト、イメージのデコード、およびイメージのレンダリングによって、
-スクロール中にjankが発生することがあります。
-Ionicはイメージをより良く制御するために、
-HTTPリクエストとイメージレンダリングを管理する `<ion-img>` を提供している。
-アイテムをすばやくスクロールすると、`<ion-img>` はいつ要求を行わないか、
-いつ画像をレンダリングしないかを認識し、スクロール後に表示可能な画像のみをロードします。
-詳細については、 [Read more about `ion-img`.](../img) を参照してください。
+HTTP requests, image decoding, and image rendering can cause jank while
+scrolling. In order to better control images, Ionic provides `<ion-img>`
+to manage HTTP requests and image rendering. While scrolling through items
+quickly, `<ion-img>` knows when and when not to make requests, when and
+when not to render images, and only loads the images that are viewable
+after scrolling. [Read more about `ion-img`.](../img)
 
-また、アプリ開発者にとって重要なのは、画像サイズがロックされていることを確認することであり、
-画像が完全にロードされた後、サイズが変更されたり、
-他の要素サイズに影響を与えたりすることはないことに注意ください。
-簡単に言えば、レンダリングバグが発生しないようにするには、
-仮想アイテム内の要素が動的に変化しないことが重要です。
+It's also important for app developers to ensure image sizes are locked in,
+and after images have fully loaded they do not change size and affect any
+other element sizes. Simply put, to ensure rendering bugs are not introduced,
+it's vital that elements within a virtual item does not dynamically change.
 
-Virtual Scrollでは、`<img>` のNatural Effectsは望ましくありません。
-DOMに要素を追加すると、`<img>` 要素は直ち画像ファイルに対するHTTP要求を作成するため、
-ネイティブの `<img>` 要素よりも `<ion-img>` コンポーネントを使用することをお薦めします。
-さらに、`<img>`は、ユーザーがスクロールしている間であれば常にレンダリングされてしまいます。
-`<ion-img>` は、含有する `ion-content` によって制御され、
-高速にスクロールしてもイメージをレンダリングしません。
+For virtual scrolling, the natural effects of the `<img>` are not desirable
+features. We recommend using the `<ion-img>` component over the native
+`<img>` element because when an `<img>` element is added to the DOM, it
+immediately makes a HTTP request for the image file. Additionally, `<img>`
+renders whenever it wants which could be while the user is scrolling. However,
+`<ion-img>` is governed by the containing `ion-content` and does not render
+images while scrolling quickly.
 
 
 ## Virtual Scroll Performance Tips
 
 ### iOS Cordova WKWebView
 
-Cordovaを使ってiOSにデプロイする場合は、
+When deploying to iOS with Cordova, it's highly recommended to use the
 [WKWebView plugin](https://blog.ionicframework.com/cordova-ios-performance-improvements-drop-in-speed-with-wkwebview/)
-プラグインを使ってiOSの高性能なウェブビューを利用することを強くお勧めします。
-さらに、WKWebViewは、以前のUIWebViewよりも
-スクロールの効率が優れています。
+in order to take advantage of iOS's higher performing webview. Additionally,
+WKWebView is superior at scrolling efficiently in comparison to the older
+UIWebView.
 
-### 要素のサイズと位置を固定する
+### Lock in element dimensions and locations
 
-仮想スクロールですべてのアイテムのサイズと位置を効率的に変更するには、
-各仮想アイテム内のすべての要素がそのサイズや位置を
-動的に変更しないことが非常に重要です。
-サイズと位置が変わらないようにする最善の方法は、
-各仮想アイテムがCSSを使ってそのサイズにロックされていることです。
+In order for virtual scroll to efficiently size and locate every item, it's
+very important every element within each virtual item does not dynamically
+change its dimensions or location. The best way to ensure size and location
+does not change, it's recommended each virtual item has locked in its size
+via CSS.
 
-### 画像に `ion-img` を使う
+### Use `ion-img` for images
 
-仮想スクロールにイメージを含める場合は、標準の<img>HTML要素ではなく、
-必ず[`ion-img`](../img/Img/)要素を使用してください。
-`ion-img`では、画像は遅延ロードされるため、表示可能な画像のみがレンダリングされ、
-HTTPリクエストはスクロール中に効率的に制御されます。
+When including images within Virtual Scroll, be sure to use
+[`ion-img`](../img) rather than the standard `<img>` HTML element.
+With `ion-img`, images are lazy loaded so only the viewable ones are
+rendered, and HTTP requests are efficiently controlled while scrolling.
 
-### 概算の幅と高さを設定する
+### Set Approximate Widths and Heights
 
-前述のように、すべての要素の寸法がロックされます。
-ただし、virtual scrollは、レンダリングされるまで寸法を認識しません。
-最初のレンダリングでは、
-virtual scrollで構築する項目数を設定する必要があります。
-`approxItemHeight` などの"approx"プロパティを使用すると、
-virtual scrollにおおよそのサイズを指定できるため、
-virtual scrollで作成する項目数を決定できます。
+As mentioned above, all elements should lock in their dimensions. However,
+virtual scroll isn't aware of the dimensions until after they have been
+rendered. For the initial render, virtual scroll still needs to set
+how many items should be built. With "approx" property inputs, such as
+`approxItemHeight`, we're able to give virtual scroll an approximate size,
+therefore allowing virtual scroll to decide how many items should be
+created.
 
-### データセットの変更にはtrackByを使用する
+### Changing dataset should use `trackBy`
 
-データは変更されていなくても、イテレータ内の要素のIDは変更されます。
-たとえば、RPCからサーバーに対してイテレーターが生成され、
-そのRPCが再実行された場合などです。
-「データ」が変更されていなくても、2回目の応答では異なるIDを持つオブジェクトが生成され、
-IonicはDOM全体を分解して再構築します。
-これはハイコストな操作であり、可能であれば回避する必要があります。
+It is possible for the identities of elements in the iterator to change
+while the data does not. This can happen, for example, if the iterator
+produced from an RPC to the server, and that RPC is re-run. Even if the
+"data" hasn't changed, the second response will produce objects with
+different identities, and Ionic will tear down the entire DOM and rebuild
+it. This is an expensive operation and should be avoided if possible.
 
-### 効率的なヘッダーおよびフッター機能
-各仮想アイテムは非常に効率的でなければなりませんが、実際にそのパフォーマンスを低下させる1つの方法は、
-セクション・ヘッダーおよびフッター関数内でDOM操作を実行することです。
-これらの関数はデータセット内のすべてのレコードに対して呼び出されるため、
-パフォーマンスコストが高いことを確認してください。
-
-## React
-
-The Virtual Scroll component is not supported in React.
-
-## Vue
-
-`ion-virtual-scroll` is not supported in Vue. We plan on integrating with existing community-driven solutions for virtual scroll in the near future. Follow our [GitHub issue thread](https://github.com/ionic-team/ionic-framework/issues/17887) for the latest updates.
-
+### Efficient headers and footer functions
+Each virtual item must stay extremely efficient, but one way to really
+kill its performance is to perform any DOM operations within section header
+and footer functions. These functions are called for every record in the
+dataset, so please make sure they're performant.

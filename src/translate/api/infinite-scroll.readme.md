@@ -12,6 +12,14 @@ Infinite Scrollコンポーネントは、ユーザーがページの下部ま�
 
 `ion-infinite-scroll` と `ion-infinite-scroll-content` コンポーネントを分離することで、開発者は必要に応じて独自のコンテンツコンポーネントを作成できます。このコンテンツには、SVG要素から固有のCSSアニメーションを持つ要素まで、あらゆるものを含めることができます。
 
-## React
+## Interfaces
 
-Infinite ScrollはReactではサポートされていません。
+### InfiniteScrollCustomEvent
+
+While not required, this interface can be used in place of the `CustomEvent` interface for stronger typing with Ionic events emitted from this component.
+
+```typescript
+interface InfiniteScrollCustomEvent extends CustomEvent {
+  target: HTMLIonInfiniteScrollElement;
+}
+```

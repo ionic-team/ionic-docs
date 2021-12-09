@@ -1,14 +1,14 @@
 # ion-progress-bar
 
-ion-progress-bar は操作や処理の進捗を可視化するための、水平方向のプログレスバーです。`determinate` または `indeterminate`の2タイプから選択できます。
+Progress bars inform users about the status of ongoing processes, such as loading an app, submitting a form, or saving updates. There are two types of progress bars: `determinate` and `indeterminate`.
 
 ## Progress Type
 
 ### Determinate
 
-操作の進捗率が分かる場合はdeterminateタイプを選択するべきです。このタイプはデフォルトであり、進捗率は`value`属性値にて指定します。
+Determinate is the default type. It should be used when the percentage of an operation is known. The progress is represented by setting the `value` property. This can be used to show the progress increasing from 0 to 100% of the track.
 
-バッファは何らかの処理中であることを表す、円のアニメーションを表示します。 `buffer`属性値が1より小さければ、追加のバッファ処理の進捗率を示すことが可能です。
+If the `buffer` property is set, a buffer stream will show with animated circles to indicate activity. The value of the `buffer` property will also be represented by how much visible track there is. If the value of `buffer` is less than the `value` property, there will be no visible track. If `buffer` is equal to `1` then the buffer stream will be hidden.
 
 ### Indeterminate
 

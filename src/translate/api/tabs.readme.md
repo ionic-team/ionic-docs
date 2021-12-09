@@ -1,14 +1,13 @@
 # ion-tabs
 
+Tabs are a top level navigation component to implement a tab-based navigation.
+The component is a container of individual [Tab](../tab/) components.
 
-Tabsは、Tabをベースとしたナビゲーションを実装する最上位レベルのナビゲーション・コンポーネントです。
-コンポーネントは、個々の [Tab](../tab/) コンポーネントのコンテナです。
+The `ion-tabs` component does not have any styling and works as a router outlet in order to handle navigation. It does not provide any UI feedback or mechanism to switch between tabs. In order to do so, an `ion-tab-bar` should be provided as a direct child of `ion-tabs`.
 
-`ion-tabs` コンポーネントにはスタイル設定がなく、ナビゲーションを処理するためのルーターアウトレットとして機能します。タブを切り替えるためのUIフィードバックやメカニズムは提供されません。そのためには、`ion-tabs` の直下に `ion-tab-bar` を設けるべきです。
+Both `ion-tabs` and `ion-tab-bar` can be used as standalone elements. They don’t depend on each other to work, but they are usually used together in order to implement a tab-based navigation that behaves like a native app.
 
-`ion-tabs` と `ion-tab-bar`は、どちらも単独の要素として使用できます。これらは互いに依存せずに動作しますが、通常はネイティブアプリのように動作するタブベースのナビゲーションを実装するために一緒に使います。
-
-`ion-tab-bar` は、`ion-tabs` コンポーネント内の正しい位置に表示されるようにslotの定義が必要です。
+The `ion-tab-bar` needs a slot defined in order to be projected to the right place in an `ion-tabs` component.
 
 ## Interfaces
 
