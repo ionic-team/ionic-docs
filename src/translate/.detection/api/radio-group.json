@@ -2,7 +2,7 @@
   "filePath": "./src/components/radio-group/radio-group.tsx",
   "encapsulation": "none",
   "tag": "ion-radio-group",
-  "readme": "# ion-radio-group\n\nA radio group is a group of [radio buttons](../radio). It allows\na user to select at most one radio button from a set. Checking one radio\nbutton that belongs to a radio group unchecks any previous checked\nradio button within the same group.\n\n\n\n",
+  "readme": "# ion-radio-group\n\nA radio group is a group of [radio buttons](../radio). It allows\na user to select at most one radio button from a set. Checking one radio\nbutton that belongs to a radio group unchecks any previous checked\nradio button within the same group.\n\n## Interfaces\n\n### RadioGroupChangeEventDetail\n\n```typescript\ninterface RadioGroupChangeEventDetail<T = any> {\n  value: T;\n}\n```\n\n### RadioGroupCustomEvent\n\nWhile not required, this interface can be used in place of the `CustomEvent` interface for stronger typing with Ionic events emitted from this component.\n\n```typescript\ninterface RadioGroupCustomEvent<T = any> extends CustomEvent {\n  detail: RadioGroupChangeEventDetail<T>;\n  target: HTMLIonRadioGroupElement;\n}\n```\n",
   "docs": "A radio group is a group of [radio buttons](../radio). It allows\na user to select at most one radio button from a set. Checking one radio\nbutton that belongs to a radio group unchecks any previous checked\nradio button within the same group.",
   "docsTags": [],
   "usage": {
@@ -68,7 +68,7 @@
   "events": [
     {
       "event": "ionChange",
-      "detail": "RadioGroupChangeEventDetail",
+      "detail": "RadioGroupChangeEventDetail<any>",
       "bubbles": true,
       "cancelable": true,
       "composed": true,

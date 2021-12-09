@@ -1,0 +1,13 @@
+{
+  "packageName": "@awesome-cordova-plugins/restart",
+  "displayName": "Restart",
+  "description": "\nThis plugin to restart android application\n",
+  "usage": "\n```typescript\nimport { Restart } from '@awesome-cordova-plugins/restart';\n\n\nconstructor(private restart: Restart) { }\n\n...\n\n\nthis.restart.restart(true)\n  .then((res: any) => console.log(res))\n  .catch((error: any) => console.error(error));\n\n```\n",
+  "platforms": [
+    "Android"
+  ],
+  "repo": "https://github.com/MaximBelov/cordova-plugin-restart",
+  "cordovaPlugin": {
+    "name": "cordova-plugin-restart"
+  }
+}

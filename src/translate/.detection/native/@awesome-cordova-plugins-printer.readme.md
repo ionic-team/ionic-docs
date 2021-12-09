@@ -1,0 +1,1 @@
+Prints documents or HTML rendered content

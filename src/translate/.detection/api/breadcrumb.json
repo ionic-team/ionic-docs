@@ -1,0 +1,314 @@
+{
+  "filePath": "./src/components/breadcrumb/breadcrumb.tsx",
+  "encapsulation": "shadow",
+  "tag": "ion-breadcrumb",
+  "readme": "# ion-breadcrumb\n\nA Breadcrumb is a single navigation item that is a child of the Breadcrumbs component. A breadcrumb can link elsewhere in an app or it can be plain text. Each breadcrumb has a separator between it and the next breadcrumb and can optionally contain an icon.\n\n## Interfaces\n\n### BreadcrumbCollapsedClickEventDetail\n\n```typescript\ninterface BreadcrumbCollapsedClickEventDetail {\n  collapsedBreadcrumbs?: HTMLIonBreadcrumbElement[];\n}\n```\n\n### BreadcrumbCustomEvent\n\nWhile not required, this interface can be used in place of the `CustomEvent` interface for stronger typing .\n\n```typescript\ninterface BreadcrumbCustomEvent extends CustomEvent {\n  detail: BreadcrumbCollapsedClickEventDetail;\n  target: HTMLIonBreadcrumbElement;\n}\n```\n\n",
+  "docs": "A Breadcrumb is a single navigation item that is a child of the Breadcrumbs component. A breadcrumb can link elsewhere in an app or it can be plain text. Each breadcrumb has a separator between it and the next breadcrumb and can optionally contain an icon.",
+  "docsTags": [
+    {
+      "name": "virtualProp",
+      "text": "{\"ios\" | \"md\"} mode - The mode determines which platform styles to use."
+    },
+    {
+      "name": "part",
+      "text": "native - The native HTML anchor or div element that wraps all child elements."
+    },
+    {
+      "name": "part",
+      "text": "separator - The separator element between each breadcrumb."
+    },
+    {
+      "name": "part",
+      "text": "collapsed-indicator - The indicator element that shows the breadcrumbs are collapsed."
+    }
+  ],
+  "usage": {},
+  "props": [
+    {
+      "name": "active",
+      "type": "boolean",
+      "mutable": false,
+      "attr": "active",
+      "reflectToAttr": false,
+      "docs": "If `true`, the breadcrumb will take on a different look to show that\nit is the currently active breadcrumb. Defaults to `true` for the\nlast breadcrumb if it is not set on any.",
+      "docsTags": [],
+      "default": "false",
+      "values": [
+        {
+          "type": "boolean"
+        }
+      ],
+      "optional": false,
+      "required": false
+    },
+    {
+      "name": "color",
+      "type": "string | undefined",
+      "mutable": false,
+      "attr": "color",
+      "reflectToAttr": false,
+      "docs": "The color to use from your application's color palette.\nDefault options are: `\"primary\"`, `\"secondary\"`, `\"tertiary\"`, `\"success\"`, `\"warning\"`, `\"danger\"`, `\"light\"`, `\"medium\"`, and `\"dark\"`.\nFor more information on colors, see [theming](/docs/theming/basics).",
+      "docsTags": [],
+      "values": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "undefined"
+        }
+      ],
+      "optional": true,
+      "required": false
+    },
+    {
+      "name": "disabled",
+      "type": "boolean",
+      "mutable": false,
+      "attr": "disabled",
+      "reflectToAttr": false,
+      "docs": "If `true`, the user cannot interact with the breadcrumb.",
+      "docsTags": [],
+      "default": "false",
+      "values": [
+        {
+          "type": "boolean"
+        }
+      ],
+      "optional": false,
+      "required": false
+    },
+    {
+      "name": "download",
+      "type": "string | undefined",
+      "mutable": false,
+      "attr": "download",
+      "reflectToAttr": false,
+      "docs": "This attribute instructs browsers to download a URL instead of navigating to\nit, so the user will be prompted to save it as a local file. If the attribute\nhas a value, it is used as the pre-filled file name in the Save prompt\n(the user can still change the file name if they want).",
+      "docsTags": [],
+      "values": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "undefined"
+        }
+      ],
+      "optional": false,
+      "required": false
+    },
+    {
+      "name": "href",
+      "type": "string | undefined",
+      "mutable": false,
+      "attr": "href",
+      "reflectToAttr": false,
+      "docs": "Contains a URL or a URL fragment that the hyperlink points to.\nIf this property is set, an anchor tag will be rendered.",
+      "docsTags": [],
+      "values": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "undefined"
+        }
+      ],
+      "optional": false,
+      "required": false
+    },
+    {
+      "name": "mode",
+      "type": "\"ios\" | \"md\"",
+      "mutable": false,
+      "attr": "mode",
+      "reflectToAttr": false,
+      "docs": "The mode determines which platform styles to use.",
+      "docsTags": [],
+      "values": [
+        {
+          "value": "ios",
+          "type": "string"
+        },
+        {
+          "value": "md",
+          "type": "string"
+        }
+      ],
+      "optional": true,
+      "required": false
+    },
+    {
+      "name": "rel",
+      "type": "string | undefined",
+      "mutable": false,
+      "attr": "rel",
+      "reflectToAttr": false,
+      "docs": "Specifies the relationship of the target object to the link object.\nThe value is a space-separated list of [link types](https://developer.mozilla.org/en-US/docs/Web/HTML/Link_types).",
+      "docsTags": [],
+      "values": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "undefined"
+        }
+      ],
+      "optional": false,
+      "required": false
+    },
+    {
+      "name": "routerAnimation",
+      "type": "((baseEl: any, opts?: any) => Animation) | undefined",
+      "mutable": false,
+      "reflectToAttr": false,
+      "docs": "When using a router, it specifies the transition animation when navigating to\nanother page using `href`.",
+      "docsTags": [],
+      "values": [
+        {
+          "type": "((baseEl: any, opts?: any) => Animation)"
+        },
+        {
+          "type": "undefined"
+        }
+      ],
+      "optional": false,
+      "required": false
+    },
+    {
+      "name": "routerDirection",
+      "type": "\"back\" | \"forward\" | \"root\"",
+      "mutable": false,
+      "attr": "router-direction",
+      "reflectToAttr": false,
+      "docs": "When using a router, it specifies the transition direction when navigating to\nanother page using `href`.",
+      "docsTags": [],
+      "default": "'forward'",
+      "values": [
+        {
+          "value": "back",
+          "type": "string"
+        },
+        {
+          "value": "forward",
+          "type": "string"
+        },
+        {
+          "value": "root",
+          "type": "string"
+        }
+      ],
+      "optional": false,
+      "required": false
+    },
+    {
+      "name": "separator",
+      "type": "boolean | undefined",
+      "mutable": false,
+      "attr": "separator",
+      "reflectToAttr": false,
+      "docs": "If true, show a separator between this breadcrumb and the next.\nDefaults to `true` for all breadcrumbs except the last.",
+      "docsTags": [],
+      "values": [
+        {
+          "type": "boolean"
+        },
+        {
+          "type": "undefined"
+        }
+      ],
+      "optional": true,
+      "required": false
+    },
+    {
+      "name": "target",
+      "type": "string | undefined",
+      "mutable": false,
+      "attr": "target",
+      "reflectToAttr": false,
+      "docs": "Specifies where to display the linked URL.\nOnly applies when an `href` is provided.\nSpecial keywords: `\"_blank\"`, `\"_self\"`, `\"_parent\"`, `\"_top\"`.",
+      "docsTags": [],
+      "values": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "undefined"
+        }
+      ],
+      "optional": false,
+      "required": false
+    }
+  ],
+  "methods": [],
+  "events": [
+    {
+      "event": "ionBlur",
+      "detail": "void",
+      "bubbles": true,
+      "cancelable": true,
+      "composed": true,
+      "docs": "Emitted when the breadcrumb loses focus.",
+      "docsTags": []
+    },
+    {
+      "event": "ionFocus",
+      "detail": "void",
+      "bubbles": true,
+      "cancelable": true,
+      "composed": true,
+      "docs": "Emitted when the breadcrumb has focus.",
+      "docsTags": []
+    }
+  ],
+  "listeners": [],
+  "styles": [
+    {
+      "name": "--background-focused",
+      "annotation": "prop",
+      "docs": "Background color of the breadcrumb when focused"
+    },
+    {
+      "name": "--color",
+      "annotation": "prop",
+      "docs": "Text color of the breadcrumb"
+    },
+    {
+      "name": "--color-active",
+      "annotation": "prop",
+      "docs": "Text color of the active breadcrumb"
+    },
+    {
+      "name": "--color-focused",
+      "annotation": "prop",
+      "docs": "Text color of the breadcrumb when focused"
+    },
+    {
+      "name": "--color-hover",
+      "annotation": "prop",
+      "docs": "Text color of the breadcrumb on hover"
+    }
+  ],
+  "slots": [],
+  "parts": [
+    {
+      "name": "collapsed-indicator",
+      "docs": "The indicator element that shows the breadcrumbs are collapsed."
+    },
+    {
+      "name": "native",
+      "docs": "The native HTML anchor or div element that wraps all child elements."
+    },
+    {
+      "name": "separator",
+      "docs": "The separator element between each breadcrumb."
+    }
+  ],
+  "dependents": [],
+  "dependencies": [
+    "ion-icon"
+  ],
+  "dependencyGraph": {
+    "ion-breadcrumb": [
+      "ion-icon"
+    ]
+  }
+}

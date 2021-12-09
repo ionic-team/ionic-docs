@@ -1,0 +1,14 @@
+{
+  "packageName": "@awesome-cordova-plugins/biocatch",
+  "displayName": "BioCatch",
+  "description": "\nBioCatch SDK Cordova support\n",
+  "usage": "\n```typescript\nimport { BioCatch } from '@awesome-cordova-plugins/biocatch';\n\n\nconstructor(private biocatch: BioCatch) { }\n\n...\n\n\nthis.biocatch.start('customer-session-1', 'http://example.com', 'some-public-key')\n  .then((res: any) => console.log(res))\n  .catch((error: any) => console.error(error));\n\n```\n",
+  "platforms": [
+    "iOS",
+    "Android"
+  ],
+  "repo": "https://bitbucket.org/carlos_orellana/ionic-plugin",
+  "cordovaPlugin": {
+    "name": "cordova-plugin-biocatch"
+  }
+}

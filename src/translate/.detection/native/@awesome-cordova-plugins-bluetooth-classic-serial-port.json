@@ -1,0 +1,15 @@
+{
+  "packageName": "@awesome-cordova-plugins/bluetooth-classic-serial-port",
+  "displayName": "Bluetooth Classic Serial Port",
+  "description": "This plugin is written using the iOS Accessory Framework (MFi) to support Classic Bluetooth on iOS.",
+  "usage": "\n```typescript\nimport { BluetoothClassicSerialPort } from '@awesome-cordova-plugins/bluetooth-classic-serial-port/ngx';\n\nconstructor(private bluetoothClassicSerialPort: BluetoothClassicSerialPort) { }\n\n\n// Write a string\nthis.bluetoothClassicSerialPort.write(\"00001101-0000-1000-8000-00805F9B34FB\", \"hello, world\", success, failure);\n\n// Array of int or bytes\nthis.bluetoothClassicSerialPort.write(\"00001101-0000-1000-8000-00805F9B34FB\", [186, 220, 222], success, failure);\n\n// Typed Array\nvar data = new Uint8Array(4);\ndata[0] = 0x41;\ndata[1] = 0x42;\ndata[2] = 0x43;\ndata[3] = 0x44;\nthis.bluetoothClassicSerialPort.write(interfaceId, data, success, failure);\n\n// Array Buffer\nthis.bluetoothClassicSerialPort.write(interfaceId, data.buffer, success, failure);\n```\n\n// iOS select accessory\n\n```typescript\n async selectAccessory() {\n   const deviceDiscovery = this.bluetoothClassicSerialPort.setDeviceDiscoveredListener().subscribe(async (connectionConfig) => {\n     deviceDiscovery.unsubscribe();\n   })\n\n   await this.bluetoothClassicSerialPort.discoverUnpaired().catch(error => {\n     deviceDiscovery.unsubscribe();\n   })\n\n }\n```\n\n",
+  "platforms": [
+    "Android",
+    "iOS",
+    "Browser"
+  ],
+  "repo": "https://github.com/MaximBelov/cordova-plugin-bluetooth-classic-serial-port",
+  "cordovaPlugin": {
+    "name": "cordova-plugin-bluetooth-classic-serial-port"
+  }
+}

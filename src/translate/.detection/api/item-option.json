@@ -6,36 +6,36 @@
   "docs": "The option button for an `ion-item-sliding`. Must be placed inside of an `<ion-item-options>`.\nYou can combine the `ionSwipe` event and the `expandable` directive to create a full swipe\naction for the item.",
   "docsTags": [
     {
-      "text": "{\"ios\" | \"md\"} mode - The mode determines which platform styles to use.",
-      "name": "virtualProp"
+      "name": "virtualProp",
+      "text": "{\"ios\" | \"md\"} mode - The mode determines which platform styles to use."
     },
     {
-      "text": "- Content is placed between the named slots if provided without a slot.",
-      "name": "slot"
+      "name": "slot",
+      "text": "- Content is placed between the named slots if provided without a slot."
     },
     {
-      "text": "start - Content is placed to the left of the option text in LTR, and to the right in RTL.",
-      "name": "slot"
+      "name": "slot",
+      "text": "start - Content is placed to the left of the option text in LTR, and to the right in RTL."
     },
     {
-      "text": "top - Content is placed above the option text.",
-      "name": "slot"
+      "name": "slot",
+      "text": "top - Content is placed above the option text."
     },
     {
-      "text": "icon-only - Should be used on an icon in an option that has no text.",
-      "name": "slot"
+      "name": "slot",
+      "text": "icon-only - Should be used on an icon in an option that has no text."
     },
     {
-      "text": "bottom - Content is placed below the option text.",
-      "name": "slot"
+      "name": "slot",
+      "text": "bottom - Content is placed below the option text."
     },
     {
-      "text": "end - Content is placed to the right of the option text in LTR, and to the left in RTL.",
-      "name": "slot"
+      "name": "slot",
+      "text": "end - Content is placed to the right of the option text in LTR, and to the left in RTL."
     },
     {
-      "text": "native - The native HTML button or anchor element that wraps all child elements.",
-      "name": "part"
+      "name": "part",
+      "text": "native - The native HTML button or anchor element that wraps all child elements."
     }
   ],
   "usage": {},
@@ -45,7 +45,7 @@
       "type": "string | undefined",
       "mutable": false,
       "attr": "color",
-      "reflectToAttr": false,
+      "reflectToAttr": true,
       "docs": "The color to use from your application's color palette.\nDefault options are: `\"primary\"`, `\"secondary\"`, `\"tertiary\"`, `\"success\"`, `\"warning\"`, `\"danger\"`, `\"light\"`, `\"medium\"`, and `\"dark\"`.\nFor more information on colors, see [theming](/docs/theming/basics).",
       "docsTags": [],
       "values": [

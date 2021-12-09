@@ -2,12 +2,12 @@
   "filePath": "./src/components/searchbar/searchbar.tsx",
   "encapsulation": "scoped",
   "tag": "ion-searchbar",
-  "readme": "# ion-searchbar\n\nSearchbars represent a text field that can be used to search through a collection. They can be displayed inside of a toolbar or the main content.\n\nA Searchbar should be used instead of an input to search lists. A clear button is displayed upon entering input in the searchbar's text field. Clicking on the clear button will erase the text field and the input will remain focused. A cancel button can be enabled which will clear the input and lose the focus upon click.\n\n## Keyboard Display\n\n### Android\n\nBy default, tapping the input will cause the keyboard to appear with a magnifying glass icon on the submit button. You can optionally set the `inputmode` property to `\"search\"`, which will change the icon from a magnifying glass to a carriage return.\n\n### iOS\n\nBy default, tapping the input will cause the keyboard to appear with the text \"return\" on a gray submit button. You can optionally set the `inputmode` property to `\"search\"`, which will change the text from \"return\" to \"go\", and change the button color from gray to blue. Alternatively, you can wrap the `ion-searchbar` in a `form` element with an `action` property. This will cause the keyboard to appear with a blue submit button that says \"search\".\n\n",
+  "readme": "# ion-searchbar\n\nSearchbars represent a text field that can be used to search through a collection. They can be displayed inside of a toolbar or the main content.\n\nA Searchbar should be used instead of an input to search lists. A clear button is displayed upon entering input in the searchbar's text field. Clicking on the clear button will erase the text field and the input will remain focused. A cancel button can be enabled which will clear the input and lose the focus upon click.\n\n## Keyboard Display\n\n### Android\n\nBy default, tapping the input will cause the keyboard to appear with a magnifying glass icon on the submit button. You can optionally set the `inputmode` property to `\"search\"`, which will change the icon from a magnifying glass to a carriage return.\n\n### iOS\n\nBy default, tapping the input will cause the keyboard to appear with the text \"return\" on a gray submit button. You can optionally set the `inputmode` property to `\"search\"`, which will change the text from \"return\" to \"go\", and change the button color from gray to blue. Alternatively, you can wrap the `ion-searchbar` in a `form` element with an `action` property. This will cause the keyboard to appear with a blue submit button that says \"search\".\n\n## Interfaces\n\n### SearchbarChangeEventDetail\n\n```typescript\ninterface SearchbarChangeEventDetail {\n  value?: string;\n}\n```\n\n### SearchbarCustomEvent\n\nWhile not required, this interface can be used in place of the `CustomEvent` interface for stronger typing with Ionic events emitted from this component.\n\n```typescript\ninterface SearchbarCustomEvent extends CustomEvent {\n  detail: SearchbarChangeEventDetail;\n  target: HTMLIonSearchbarElement;\n}\n```\n",
   "docs": "Searchbars represent a text field that can be used to search through a collection. They can be displayed inside of a toolbar or the main content.\n\nA Searchbar should be used instead of an input to search lists. A clear button is displayed upon entering input in the searchbar's text field. Clicking on the clear button will erase the text field and the input will remain focused. A cancel button can be enabled which will clear the input and lose the focus upon click.",
   "docsTags": [
     {
-      "text": "{\"ios\" | \"md\"} mode - The mode determines which platform styles to use.",
-      "name": "virtualProp"
+      "name": "virtualProp",
+      "text": "{\"ios\" | \"md\"} mode - The mode determines which platform styles to use."
     }
   ],
   "usage": {
@@ -37,7 +37,7 @@
     },
     {
       "name": "autocomplete",
-      "type": "\"on\" | \"off\" | \"name\" | \"honorific-prefix\" | \"given-name\" | \"additional-name\" | \"family-name\" | \"honorific-suffix\" | \"nickname\" | \"email\" | \"username\" | \"new-password\" | \"current-password\" | \"one-time-code\" | \"organization-title\" | \"organization\" | \"street-address\" | \"address-line1\" | \"address-line2\" | \"address-line3\" | \"address-level4\" | \"address-level3\" | \"address-level2\" | \"address-level1\" | \"country\" | \"country-name\" | \"postal-code\" | \"cc-name\" | \"cc-given-name\" | \"cc-additional-name\" | \"cc-family-name\" | \"cc-number\" | \"cc-exp\" | \"cc-exp-month\" | \"cc-exp-year\" | \"cc-csc\" | \"cc-type\" | \"transaction-currency\" | \"transaction-amount\" | \"language\" | \"bday\" | \"bday-day\" | \"bday-month\" | \"bday-year\" | \"sex\" | \"tel\" | \"tel-country-code\" | \"tel-national\" | \"tel-area-code\" | \"tel-local\" | \"tel-extension\" | \"impp\" | \"url\" | \"photo\"",
+      "type": "\"off\" | \"on\" | \"name\" | \"honorific-prefix\" | \"given-name\" | \"additional-name\" | \"family-name\" | \"honorific-suffix\" | \"nickname\" | \"email\" | \"username\" | \"new-password\" | \"current-password\" | \"one-time-code\" | \"organization-title\" | \"organization\" | \"street-address\" | \"address-line1\" | \"address-line2\" | \"address-line3\" | \"address-level4\" | \"address-level3\" | \"address-level2\" | \"address-level1\" | \"country\" | \"country-name\" | \"postal-code\" | \"cc-name\" | \"cc-given-name\" | \"cc-additional-name\" | \"cc-family-name\" | \"cc-number\" | \"cc-exp\" | \"cc-exp-month\" | \"cc-exp-year\" | \"cc-csc\" | \"cc-type\" | \"transaction-currency\" | \"transaction-amount\" | \"language\" | \"bday\" | \"bday-day\" | \"bday-month\" | \"bday-year\" | \"sex\" | \"tel\" | \"tel-country-code\" | \"tel-national\" | \"tel-area-code\" | \"tel-local\" | \"tel-extension\" | \"impp\" | \"url\" | \"photo\"",
       "mutable": false,
       "attr": "autocomplete",
       "reflectToAttr": false,
@@ -46,11 +46,11 @@
       "default": "'off'",
       "values": [
         {
-          "value": "on",
+          "value": "off",
           "type": "string"
         },
         {
-          "value": "off",
+          "value": "on",
           "type": "string"
         },
         {
@@ -345,7 +345,7 @@
       "type": "string | undefined",
       "mutable": false,
       "attr": "color",
-      "reflectToAttr": false,
+      "reflectToAttr": true,
       "docs": "The color to use from your application's color palette.\nDefault options are: `\"primary\"`, `\"secondary\"`, `\"tertiary\"`, `\"success\"`, `\"warning\"`, `\"danger\"`, `\"light\"`, `\"medium\"`, and `\"dark\"`.\nFor more information on colors, see [theming](/docs/theming/basics).",
       "docsTags": [],
       "values": [
@@ -551,6 +551,32 @@
       "docs": "Sets the behavior for the cancel button. Defaults to `\"never\"`.\nSetting to `\"focus\"` shows the cancel button on focus.\nSetting to `\"never\"` hides the cancel button.\nSetting to `\"always\"` shows the cancel button regardless\nof focus state.",
       "docsTags": [],
       "default": "'never'",
+      "values": [
+        {
+          "value": "always",
+          "type": "string"
+        },
+        {
+          "value": "focus",
+          "type": "string"
+        },
+        {
+          "value": "never",
+          "type": "string"
+        }
+      ],
+      "optional": false,
+      "required": false
+    },
+    {
+      "name": "showClearButton",
+      "type": "\"always\" | \"focus\" | \"never\"",
+      "mutable": false,
+      "attr": "show-clear-button",
+      "reflectToAttr": false,
+      "docs": "Sets the behavior for the clear button. Defaults to `\"focus\"`.\nSetting to `\"focus\"` shows the clear button on focus if the\ninput is not empty.\nSetting to `\"never\"` hides the clear button.\nSetting to `\"always\"` shows the clear button regardless\nof focus state, but only if the input is not empty.",
+      "docsTags": [],
+      "default": "'always'",
       "values": [
         {
           "value": "always",

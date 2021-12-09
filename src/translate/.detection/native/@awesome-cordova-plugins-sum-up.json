@@ -1,0 +1,17 @@
+{
+  "packageName": "@awesome-cordova-plugins/sum-up",
+  "displayName": "SumUp",
+  "description": "\nPlugin to communicate with a SumUp payment terminal\n",
+  "usage": "\n```typescript\nimport { SumUp } from '@awesome-cordova-plugins/sum-up';\n\n\nconstructor(private sumUp: SumUp) { }\n\nconst sumUpKeys: SumUpKeys = new SumUpKeys();\nsumUpKeys.affiliateKey = 'YOUR_API_KEY'; // if not provided in installation\nsumUpKeys.accessToken = 'YOUR_ACCESS_TOKEN';\n\nthis.sumUp.login(sumUpKeys)\n  .then((res: SumUpResponse) => console.log(res))\n  .catch((error: SumUpResponse) => console.error(error));\n\n this.sumUp.auth('YOUR_ACCESS_TOKEN')\n  .then((res: SumUpResponse) => console.log(res))\n  .catch((error: SumUpResponse) => console.error(error));\n\n this.sumUp.getSettings()\n  .then((res: SumUpResponse) => console.log(res))\n  .catch((error: SumUpResponse) => console.error(error));\n\n this.sumUp.logout()\n  .then((res: SumUpResponse) => console.log(res))\n  .catch((error: SumUpResponse) => console.error(error));\n\n this.sumUp.isLoggedIn()\n  .then((res: SumUpLoginStatus) => console.log(res))\n  .catch((error: SumUpLoginStatus) => console.error(error));\n\n this.sumUp.prepare()\n  .then((res: SumUpResponse) => console.log(res))\n  .catch((error: SumUpResponse) => console.error(error));\n\nthis.sumUp.closeConnection()\n  .then((res: SumUpResponse) => console.log(res))\n  .catch((error: SumUpResponse) => console.error(error));\n\nthis.sumUp.pay(10.0, 'EUR')\n  .then((res: SumUpPayment) => console.log(res))\n  .catch((error: SumUpPayment) => console.error(error));\n\n```\n",
+  "platforms": [
+    "Android",
+    "iOS"
+  ],
+  "repo": "https://github.com/mariusbackes/cordova-plugin-sumup",
+  "installVariables": [
+    "SUMUP_API_KEY"
+  ],
+  "cordovaPlugin": {
+    "name": "cordova-sumup-plugin"
+  }
+}

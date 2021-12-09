@@ -1,4 +1,4 @@
-Like running `cordova build` directly, but also builds web assets with configuration from `ionic build` and provides friendly checks.
+Like running `cordova build` directly, `ionic cordova build` also builds web assets from `ionic build` and provides friendly checks for Android and iOS platforms.
 
 To pass additional options to the Cordova CLI, use the `--` separator after the Ionic CLI arguments.
 

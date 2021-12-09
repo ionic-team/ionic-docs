@@ -6,8 +6,8 @@
   "docs": "Label is a wrapper element that can be used in combination with `ion-item`, `ion-input`, `ion-toggle`, and more. The position of the label inside of an item can be inline, fixed, stacked, or floating.",
   "docsTags": [
     {
-      "text": "{\"ios\" | \"md\"} mode - The mode determines which platform styles to use.",
-      "name": "virtualProp"
+      "name": "virtualProp",
+      "text": "{\"ios\" | \"md\"} mode - The mode determines which platform styles to use."
     }
   ],
   "usage": {
@@ -23,7 +23,7 @@
       "type": "string | undefined",
       "mutable": false,
       "attr": "color",
-      "reflectToAttr": false,
+      "reflectToAttr": true,
       "docs": "The color to use from your application's color palette.\nDefault options are: `\"primary\"`, `\"secondary\"`, `\"tertiary\"`, `\"success\"`, `\"warning\"`, `\"danger\"`, `\"light\"`, `\"medium\"`, and `\"dark\"`.\nFor more information on colors, see [theming](/docs/theming/basics).",
       "docsTags": [],
       "values": [
@@ -100,10 +100,14 @@
   "slots": [],
   "parts": [],
   "dependents": [
+    "ion-datetime",
     "ion-select-popover"
   ],
   "dependencies": [],
   "dependencyGraph": {
+    "ion-datetime": [
+      "ion-label"
+    ],
     "ion-select-popover": [
       "ion-label"
     ]

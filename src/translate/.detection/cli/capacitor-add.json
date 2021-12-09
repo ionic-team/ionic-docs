@@ -5,7 +5,7 @@
     "capacitor"
   ],
   "summary": "Add a native platform to your Ionic project",
-  "description": "`ionic capacitor add` will do the following:\n- Add a new platform specific folder to your project (ios, android, or electron)",
+  "description": "`ionic capacitor add` will do the following:\n- Install the Capacitor platform package\n- Copy the native platform template into your project",
   "footnotes": [],
   "groups": [],
   "exampleCommands": [],
@@ -13,7 +13,7 @@
   "inputs": [
     {
       "name": "platform",
-      "summary": "The platform to add (e.g. `android`, `ios`, `electron`)",
+      "summary": "The platform to add (e.g. `android`, `ios`)",
       "required": true
     }
   ],

@@ -1,0 +1,13 @@
+{
+  "packageName": "@awesome-cordova-plugins/shortcuts-android",
+  "displayName": "ShortcutsAndroid",
+  "description": "\nUse this plugin to create shortcuts in Android. Use this plugin to handle Intents on your application.\nFor more information on Android App Shortcuts: https://developer.android.com/guide/topics/ui/shortcuts.html\nFor more information on Android Intents: https://developer.android.com/guide/components/intents-filters.html\n\nThe work that went into creating this plug-in was inspired by the existing plugins: cordova-plugin-shortcut and cordova-plugin-webintent2.\n",
+  "usage": "\nPlease do refer to the original plugin's repo for detailed usage. The usage example here might not be sufficient.\n\n```typescript\nimport { ShortcutsAndroid } from '@awesome-cordova-plugins/shortcuts-android/ngx';\n\n\nconstructor(private shortcutsAndroid: ShortcutsAndroid) { }\n\n...\n\nthis.shortcutsAndroid.supportsDynamic()\n  .then((supported: boolean) => console.log(`Dynamic shortcuts are ${supported ? '' : 'not'} supported`))\n  .catch((error: any) => console.error(error));\n\n```\n",
+  "platforms": [
+    "Android"
+  ],
+  "repo": "https://github.com/avargaskun/cordova-plugin-shortcuts-android",
+  "cordovaPlugin": {
+    "name": "cordova-plugin-shortcuts-android"
+  }
+}

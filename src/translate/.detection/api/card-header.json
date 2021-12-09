@@ -6,8 +6,8 @@
   "docs": "`ion-card-header` is a header component for `ion-card`.",
   "docsTags": [
     {
-      "text": "{\"ios\" | \"md\"} mode - The mode determines which platform styles to use.",
-      "name": "virtualProp"
+      "name": "virtualProp",
+      "text": "{\"ios\" | \"md\"} mode - The mode determines which platform styles to use."
     }
   ],
   "usage": {},
@@ -17,7 +17,7 @@
       "type": "string | undefined",
       "mutable": false,
       "attr": "color",
-      "reflectToAttr": false,
+      "reflectToAttr": true,
       "docs": "The color to use from your application's color palette.\nDefault options are: `\"primary\"`, `\"secondary\"`, `\"tertiary\"`, `\"success\"`, `\"warning\"`, `\"danger\"`, `\"light\"`, `\"medium\"`, and `\"dark\"`.\nFor more information on colors, see [theming](/docs/theming/basics).",
       "docsTags": [],
       "values": [

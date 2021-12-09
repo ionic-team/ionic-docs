@@ -1,0 +1,14 @@
+{
+  "packageName": "@awesome-cordova-plugins/multiple-document-picker",
+  "displayName": "Multiple Documents Picker",
+  "description": "\nThis plugin allows users to pick multiple documents/images at once\n",
+  "usage": "\n```typescript\nimport { MultipleDocumentsPicker } from '@awesome-cordova-plugins/multiple-document-picker/ngx';\n\n\nconstructor(private multipleDocumentsPicker: MultipleDocumentsPicker) { }\n\n...\n\n\nthis.multipleDocumentsPicker.pick(1)\n  .then((res: any) => console.log(res))\n  .catch((error: any) => console.error(error));\n\n```\n",
+  "platforms": [
+    "Android",
+    "iOS"
+  ],
+  "repo": "https://github.com/akeotech/cordova-plugin-multiple-documents-picker",
+  "cordovaPlugin": {
+    "name": "cordova-plugin-multiple-documents-picker"
+  }
+}

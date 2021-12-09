@@ -1,0 +1,1 @@
+Vibrates the device

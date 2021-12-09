@@ -17,7 +17,7 @@
     "start": "docusaurus start",
     "swizzle": "docusaurus swizzle --danger",
     "translate": "ts-node -P scripts/build-translate/tsconfig.json scripts/build-translate apply",
-    "translate:create": "ts-node -P scripts/build-translate/tsconfig.json scripts/build-translate create && ts-node -P scripts/tsconfig.json scripts/build-translate diff"
+    "translate:create": "ts-node -P scripts/build-translate/tsconfig.json scripts/build-translate create && ts-node -P scripts/build-translate/tsconfig.json scripts/build-translate diff"
   },
   "browserslist": {
     "production": [

@@ -1,0 +1,14 @@
+{
+  "packageName": "@awesome-cordova-plugins/app-center-low-memory",
+  "displayName": "App Center Low Memory",
+  "description": "\nGenerates a low memory warning.\nFor more info, please see: https://github.com/Microsoft/appcenter-sdk-cordova/tree/master/cordova-plugin-appcenter-generate-low-memory\n",
+  "usage": "\n```typescript\nimport { LowMemory } from '@awesome-cordova-plugins/app-center-low-memory/ngx';\n\n...\n\nconstructor(private lowMemory: LowMemory) { }\n\nasync warning() {\n  await this.lowMemory.generateLowMemory();\n}\n```\n",
+  "platforms": [
+    "Android",
+    "iOS"
+  ],
+  "repo": "https://github.com/Microsoft/appcenter-sdk-cordova/tree/master/cordova-plugin-appcenter-generate-low-memory",
+  "cordovaPlugin": {
+    "name": "https://github.com/Microsoft/appcenter-sdk-cordova/tree/master/cordova-plugin-appcenter-generate-low-memory"
+  }
+}

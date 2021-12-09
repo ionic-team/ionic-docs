@@ -1,0 +1,14 @@
+{
+  "packageName": "@awesome-cordova-plugins/jumio",
+  "displayName": "Jumio",
+  "description": "Check out [example with Angular 9.1 & Capacitor 2.1](https://github.com/zendigital/jumio-ionic-demo)\n\n[Platform Customization](https://github.com/Jumio/mobile-cordova#customization) is possible\n\nOriginal source: [Jumio mobile-cordova](https://github.com/Jumio/mobile-cordova) Plugin for Apache Cordova",
+  "usage": "\n```typescript\nimport {\n  Jumio,\n  JumioNetverifyConfig,\n  JumioDocVerificationConfig,\n  NetverifyDocumentData\n  DocVerificationDocumentData\n} from '@awesome-cordova-plugins/jumio/ngx';\n\n\nconstructor(private jumio: Jumio) { }\n\n...\n\nthis.jumio.initNetverify(\"API_TOKEN\", \"API_SECRET\", \"US\", {\n  requireVerification: false,\n  userReference: \"USER_REFERENCE\",\n  preselectedCountry: \"USA\",\n  cameraPosition: \"BACK\",\n  documentTypes: [\"DRIVER_LICENSE\", \"PASSPORT\", \"IDENTITY_CARD\", \"VISA\"],\n  enableWatchlistScreening: \"ENABLED\",\n  watchlistSearchProfile: \"YOUR_PROFILE_NAME\"\n});\n\nlet documentData: NetverifyDocumentData = await this.jumio.startNetverify();\n\n```\n",
+  "platforms": [
+    "Android",
+    "iOS"
+  ],
+  "repo": "https://github.com/danielzen/jumio-cordova",
+  "cordovaPlugin": {
+    "name": "jumio-cordova"
+  }
+}

@@ -6,20 +6,20 @@
   "docs": "Segment buttons are groups of related buttons inside of a [Segment](../segment). They are displayed in a horizontal row. A segment button can be checked by default by setting the `value` of the segment to the `value` of the segment button. Only one segment button can be selected at a time.",
   "docsTags": [
     {
-      "text": "{\"ios\" | \"md\"} mode - The mode determines which platform styles to use.",
-      "name": "virtualProp"
+      "name": "virtualProp",
+      "text": "{\"ios\" | \"md\"} mode - The mode determines which platform styles to use."
     },
     {
-      "text": "native - The native HTML button element that wraps all child elements.",
-      "name": "part"
+      "name": "part",
+      "text": "native - The native HTML button element that wraps all child elements."
     },
     {
-      "text": "indicator - The indicator displayed on the checked segment button.",
-      "name": "part"
+      "name": "part",
+      "text": "indicator - The indicator displayed on the checked segment button."
     },
     {
-      "text": "indicator-background - The background element for the indicator displayed on the checked segment button.",
-      "name": "part"
+      "name": "part",
+      "text": "indicator-background - The background element for the indicator displayed on the checked segment button."
     }
   ],
   "usage": {

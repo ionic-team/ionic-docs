@@ -1,0 +1,14 @@
+{
+  "packageName": "@awesome-cordova-plugins/pollfish",
+  "displayName": "Pollfish",
+  "description": "\nPollfish Ionic Native plugin wrapper\n",
+  "usage": "\n```typescript\nimport { Pollfish } from '@awesome-cordova-plugins/pollfish/ngx';\n\n\nconstructor(private pollfish: Pollfish) { }\n\n...\n\nthis.pollfish.init(false, false, 'YOUR_API_KEY', 1, 8, 'REQUEST_UUID', false);\n\nthis.pollfish.initWithUserAttributes(false, false, 'YOUR_API_KEY', 1, 8, 'REQUEST_UUID', false, {\n 'gender': '1',\n ...\n});\n\nthis.pollfish.showPollfish();\n\nthis.pollfish.hidePollfish();\n\n// Event Listeners\n\nthis.pollfish.setEventCallback(pollfish.EventListener.OnPollfishSurveyReceived, (surveyInfo) => {\n console.log(\"Survey Received: \" + JSON.stringify(surveyInfo));\n});\n\nthis.pollfish.setEventCallback(pollfish.EventListener.OnPollfishSurveyCompleted, (result) => {\n console.log(\"Survey Completed: \" + JSON.stringify(surveyInfo));\n});\n\nthis.pollfish.setEventCallback(pollfish.EventListener.OnPollfishUserNotEligible, (_) => {\n console.log(\"Pollfish User Not Eligible\");\n});\n\nthis.pollfish.setEventCallback(pollfish.EventListener.OnPollfishSurveyNotAvailable, (_) => {\n console.log(\"Pollfish Survey not available\");\n});\n\nthis.pollfish.setEventCallback(pollfish.EventListener.OnPollfishOpened, (_) => {\n console.log(\"Pollfish Survey panel is open\");\n});\n\nthis.pollfish.setEventCallback(pollfish.EventListener.OnPollfishClosed, (_) => {\n console.log(\"Pollfish Survey panel is closed\");\n});\n\nthis.pollfish.setEventCallback(pollfish.EventListener.OnPollfishUserRejectedSurvey, (_) => {\n console.log(\"Pollfish User Rejected Survey\");\n});\n\n```\n",
+  "platforms": [
+    "Android",
+    "iOS"
+  ],
+  "repo": "https://github.com/pollfish/cordova-plugin-pollfish",
+  "cordovaPlugin": {
+    "name": "com.pollfish.cordova_plugin"
+  }
+}

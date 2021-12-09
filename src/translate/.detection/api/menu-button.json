@@ -6,16 +6,16 @@
   "docs": "Menu Button is component that automatically creates the icon and functionality to open a menu on a page.",
   "docsTags": [
     {
-      "text": "{\"ios\" | \"md\"} mode - The mode determines which platform styles to use.",
-      "name": "virtualProp"
+      "name": "virtualProp",
+      "text": "{\"ios\" | \"md\"} mode - The mode determines which platform styles to use."
     },
     {
-      "text": "native - The native HTML button element that wraps all child elements.",
-      "name": "part"
+      "name": "part",
+      "text": "native - The native HTML button element that wraps all child elements."
     },
     {
-      "text": "icon - The menu button icon (uses ion-icon).",
-      "name": "part"
+      "name": "part",
+      "text": "icon - The menu button icon (uses ion-icon)."
     }
   ],
   "usage": {},
@@ -42,7 +42,7 @@
       "type": "string | undefined",
       "mutable": false,
       "attr": "color",
-      "reflectToAttr": false,
+      "reflectToAttr": true,
       "docs": "The color to use from your application's color palette.\nDefault options are: `\"primary\"`, `\"secondary\"`, `\"tertiary\"`, `\"success\"`, `\"warning\"`, `\"danger\"`, `\"light\"`, `\"medium\"`, and `\"dark\"`.\nFor more information on colors, see [theming](/docs/theming/basics).",
       "docsTags": [],
       "values": [

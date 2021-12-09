@@ -13,7 +13,7 @@
   "inputs": [
     {
       "name": "platform",
-      "summary": "The platform to update (e.g. `android`, `ios`, `electron`)",
+      "summary": "The platform to update (e.g. `android`, `ios`)",
       "required": false
     }
   ],

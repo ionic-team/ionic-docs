@@ -2,16 +2,16 @@
   "filePath": "./src/components/menu/menu.tsx",
   "encapsulation": "shadow",
   "tag": "ion-menu",
-  "readme": "# ion-menu\n\nThe Menu component is a navigation drawer that slides in from the side of the current view.\nBy default, it slides in from the left, but the side can be overridden.\nThe menu will be displayed differently based on the mode, however the display type can be changed to any of the available menu types.\nThe menu element should be a sibling to the root content element.\nThere can be any number of menus attached to the content.\nThese can be controlled from the templates, or programmatically using the MenuController.\n\n",
+  "readme": "# ion-menu\n\nThe Menu component is a navigation drawer that slides in from the side of the current view.\nBy default, it slides in from the left, but the side can be overridden.\nThe menu will be displayed differently based on the mode, however the display type can be changed to any of the available menu types.\nThe menu element should be a sibling to the root content element.\nThere can be any number of menus attached to the content.\nThese can be controlled from the templates, or programmatically using the MenuController.\n\n## Interfaces\n\n### MenuCustomEvent\n\nWhile not required, this interface can be used in place of the `CustomEvent` interface for stronger typing with Ionic events emitted from this component.\n\n```typescript\ninterface MenuCustomEvent<T = any> extends CustomEvent {\n  detail: T;\n  target: HTMLIonMenuElement;\n}\n```\n",
   "docs": "The Menu component is a navigation drawer that slides in from the side of the current view.\nBy default, it slides in from the left, but the side can be overridden.\nThe menu will be displayed differently based on the mode, however the display type can be changed to any of the available menu types.\nThe menu element should be a sibling to the root content element.\nThere can be any number of menus attached to the content.\nThese can be controlled from the templates, or programmatically using the MenuController.",
   "docsTags": [
     {
-      "text": "container - The container for the menu content.",
-      "name": "part"
+      "name": "part",
+      "text": "container - The container for the menu content."
     },
     {
-      "text": "backdrop - The backdrop that appears over the main content when the menu is open.",
-      "name": "part"
+      "name": "part",
+      "text": "backdrop - The backdrop that appears over the main content when the menu is open."
     }
   ],
   "usage": {
@@ -28,7 +28,7 @@
       "mutable": false,
       "attr": "content-id",
       "reflectToAttr": true,
-      "docs": "The content's id the menu should use.",
+      "docs": "The `id` of the main content. When using\na router this is typically `ion-router-outlet`.\nWhen not using a router, this is typically\nyour main view's `ion-content`. This is not the\nid of the `ion-content` inside of your `ion-menu`.",
       "docsTags": [],
       "values": [
         {
@@ -269,6 +269,11 @@
     {
       "event": "click",
       "capture": true,
+      "passive": false
+    },
+    {
+      "event": "keydown",
+      "capture": false,
       "passive": false
     }
   ],

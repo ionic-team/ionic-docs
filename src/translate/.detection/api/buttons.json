@@ -37,7 +37,13 @@
   "styles": [],
   "slots": [],
   "parts": [],
-  "dependents": [],
+  "dependents": [
+    "ion-datetime"
+  ],
   "dependencies": [],
-  "dependencyGraph": {}
+  "dependencyGraph": {
+    "ion-datetime": [
+      "ion-buttons"
+    ]
+  }
 }

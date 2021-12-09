@@ -1,0 +1,13 @@
+{
+  "packageName": "@awesome-cordova-plugins/android-notch",
+  "displayName": "Android Notch",
+  "description": "\nThis plugin enables developers to get the cutout and android devices inset sizes\nIt is based on the cordova plugin developed by @tobspr: https://github.com/tobspr/cordova-plugin-android-notch\nThis plugin works on all android versions, but we can only detect notches starting from Android 9.\n",
+  "usage": "\n```typescript\nimport { AndroidNotch } from '@awesome-cordova-plugins/android-notch/ngx';\n\n\nconstructor(private androidNotch: AndroidNotch) { }\n\n...\n\n\nthis.androidNotch.hasCutout()\n   .then((px: number) => console.log('Inset size: '), px)\n   .catch((error: any) => console.log('Error: ', error))\n\nthis.androidNotch.getInsetTop()\n   .then((px: number) => console.log('Inset size: '), px)\n   .catch((error: any) => console.log('Error: ', error))\n\nthis.androidNotch.getInsetRight()\n   .then((px: number) => console.log('Inset size: '), px)\n   .catch((error: any) => console.log('Error: ', error))\n\nthis.androidNotch.getInsetBottom()\n   .then((px: number) => console.log('Inset size: '), px)\n   .catch((error: any) => console.log('Error: ', error))\n\nthis.androidNotch.getInsetLeft()\n   .then((px: number) => console.log('Inset size: '), px)\n   .catch((error: any) => console.log('Error: ', error))\n\n```\n",
+  "platforms": [
+    "Android"
+  ],
+  "repo": "https://github.com/tobspr/cordova-plugin-android-notch.git",
+  "cordovaPlugin": {
+    "name": "cordova-plugin-android-notch"
+  }
+}

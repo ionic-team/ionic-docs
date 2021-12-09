@@ -1,0 +1,13 @@
+{
+  "packageName": "@awesome-cordova-plugins/power-optimization",
+  "displayName": "Power Optimization",
+  "description": "\nAndroid Custom Roms made sometimes your apps unfunctional due to being killed in the background, notification messages do not appearing or your services being killed by agressive power saving mode.\nThe Power Optimization plugin give you android PowerManager methods with cordova.\n",
+  "usage": "\n```typescript\nimport { PowerOptimization } from '@awesome-cordova-plugins/power-optimization/ngx';\n\nconstructor(private powerOptimization: PowerOptimization) { }\n\n...\n\nthis.powerOptimization.IsIgnoringBatteryOptimizations()\n  .then(onSuccess)\n  .catch(onError);\n\n```\n",
+  "platforms": [
+    "Android"
+  ],
+  "repo": "https://github.com/snt1017/cordova-plugin-power-optimization",
+  "cordovaPlugin": {
+    "name": "cordova-plugin-power-optimization"
+  }
+}

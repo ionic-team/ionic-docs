@@ -2,12 +2,24 @@
   "filePath": "./src/components/progress-bar/progress-bar.tsx",
   "encapsulation": "shadow",
   "tag": "ion-progress-bar",
-  "readme": "# ion-progress-bar\n\nion-progress-bar is a horizontal progress bar to visualize the progression of an operation and activity. You can choose between two types: `determinate` and `indeterminate`.\n\n## Progress Type\n\n### Determinate\n\nIf the percentage of an operation is known, you should use the determinate type. This is the default type and the progress is represented by the `value` property.\n\nA buffer shows circles as animation to indicate some activity. If the `buffer` property is smaller than 1 you can show the additional buffering progress.\n\n### Indeterminate\n\nIf an operation is in progress and it's not necessary to indicate how long it will take.\n\nIf you add `reversed=\"true\"`, you receive a query which is used to indicate pre-loading.\n",
-  "docs": "ion-progress-bar is a horizontal progress bar to visualize the progression of an operation and activity. You can choose between two types: `determinate` and `indeterminate`.",
+  "readme": "# ion-progress-bar\n\nProgress bars inform users about the status of ongoing processes, such as loading an app, submitting a form, or saving updates. There are two types of progress bars: `determinate` and `indeterminate`.\n\n## Progress Type\n\n### Determinate\n\nDeterminate is the default type. It should be used when the percentage of an operation is known. The progress is represented by setting the `value` property. This can be used to show the progress increasing from 0 to 100% of the track.\n\nIf the `buffer` property is set, a buffer stream will show with animated circles to indicate activity. The value of the `buffer` property will also be represented by how much visible track there is. If the value of `buffer` is less than the `value` property, there will be no visible track. If `buffer` is equal to `1` then the buffer stream will be hidden.\n\n### Indeterminate\n\nThe indeterminate type should be used when it is unknown how long the process will take. The progress bar is not tied to the `value`, instead it continually slides along the track until the process is complete.\n",
+  "docs": "Progress bars inform users about the status of ongoing processes, such as loading an app, submitting a form, or saving updates. There are two types of progress bars: `determinate` and `indeterminate`.",
   "docsTags": [
     {
-      "text": "{\"ios\" | \"md\"} mode - The mode determines which platform styles to use.",
-      "name": "virtualProp"
+      "name": "virtualProp",
+      "text": "{\"ios\" | \"md\"} mode - The mode determines which platform styles to use."
+    },
+    {
+      "name": "part",
+      "text": "progress - The progress bar that shows the current value when `type` is `\"determinate\"` and slides back and forth when `type` is `\"indeterminate\"`."
+    },
+    {
+      "name": "part",
+      "text": "stream - The animated circles that appear while buffering. This only shows when `buffer` is set and `type` is `\"determinate\"`."
+    },
+    {
+      "name": "part",
+      "text": "track - The track bar behind the progress bar. If the `buffer` property is set and `type` is `\"determinate\"` the track will be the\nwidth of the `buffer` value."
     }
   ],
   "usage": {
@@ -40,7 +52,7 @@
       "type": "string | undefined",
       "mutable": false,
       "attr": "color",
-      "reflectToAttr": false,
+      "reflectToAttr": true,
       "docs": "The color to use from your application's color palette.\nDefault options are: `\"primary\"`, `\"secondary\"`, `\"tertiary\"`, `\"success\"`, `\"warning\"`, `\"danger\"`, `\"light\"`, `\"medium\"`, and `\"dark\"`.\nFor more information on colors, see [theming](/docs/theming/basics).",
       "docsTags": [],
       "values": [
@@ -139,21 +151,34 @@
     {
       "name": "--background",
       "annotation": "prop",
-      "docs": "Same as --buffer-background when using a determinate progress bar, otherwise it styles the background of the ion-progress-bar itself."
+      "docs": "Background of the progress track, or the buffer bar if `buffer` is set"
     },
     {
       "name": "--buffer-background",
       "annotation": "prop",
-      "docs": "Color of the buffer bar"
+      "docs": "DEPRECATED, use `--background` instead"
     },
     {
       "name": "--progress-background",
       "annotation": "prop",
-      "docs": "Color of the progress bar"
+      "docs": "Background of the progress bar representing the current value"
     }
   ],
   "slots": [],
-  "parts": [],
+  "parts": [
+    {
+      "name": "progress",
+      "docs": "The progress bar that shows the current value when `type` is `\"determinate\"` and slides back and forth when `type` is `\"indeterminate\"`."
+    },
+    {
+      "name": "stream",
+      "docs": "The animated circles that appear while buffering. This only shows when `buffer` is set and `type` is `\"determinate\"`."
+    },
+    {
+      "name": "track",
+      "docs": "The track bar behind the progress bar. If the `buffer` property is set and `type` is `\"determinate\"` the track will be the\nwidth of the `buffer` value."
+    }
+  ],
   "dependents": [],
   "dependencies": [],
   "dependencyGraph": {}

@@ -6,20 +6,20 @@
   "docs": "The back button navigates back in the app's history upon click. It is smart enough to know what to render based on the mode and when to show based on the navigation stack.\n\nTo change what is displayed in the back button, use the `text` and `icon` properties.",
   "docsTags": [
     {
-      "text": "{\"ios\" | \"md\"} mode - The mode determines which platform styles to use.",
-      "name": "virtualProp"
+      "name": "virtualProp",
+      "text": "{\"ios\" | \"md\"} mode - The mode determines which platform styles to use."
     },
     {
-      "text": "native - The native HTML button element that wraps all child elements.",
-      "name": "part"
+      "name": "part",
+      "text": "native - The native HTML button element that wraps all child elements."
     },
     {
-      "text": "icon - The back button icon (uses ion-icon).",
-      "name": "part"
+      "name": "part",
+      "text": "icon - The back button icon (uses ion-icon)."
     },
     {
-      "text": "text - The back button text.",
-      "name": "part"
+      "name": "part",
+      "text": "text - The back button text."
     }
   ],
   "usage": {
@@ -35,7 +35,7 @@
       "type": "string | undefined",
       "mutable": false,
       "attr": "color",
-      "reflectToAttr": false,
+      "reflectToAttr": true,
       "docs": "The color to use from your application's color palette.\nDefault options are: `\"primary\"`, `\"secondary\"`, `\"tertiary\"`, `\"success\"`, `\"warning\"`, `\"danger\"`, `\"light\"`, `\"medium\"`, and `\"dark\"`.\nFor more information on colors, see [theming](/docs/theming/basics).",
       "docsTags": [],
       "values": [
@@ -91,7 +91,7 @@
       "mutable": false,
       "attr": "icon",
       "reflectToAttr": false,
-      "docs": "The icon name to use for the back button.",
+      "docs": "The built-in named SVG icon name or the exact `src` of an SVG file\nto use for the back button.",
       "docsTags": [],
       "values": [
         {

@@ -13,17 +13,14 @@
   "props": [
     {
       "name": "beforeEnter",
-      "type": "(() => boolean | NavigationHookOptions | Promise<NavigationHookResult>) | undefined",
+      "type": "(() => NavigationHookResult | Promise<NavigationHookResult>) | undefined",
       "mutable": false,
       "reflectToAttr": false,
       "docs": "A navigation hook that is fired when the route tries to enter.\nReturning `true` allows the navigation to proceed, while returning\n`false` causes it to be cancelled. Returning a `NavigationHookOptions`\nobject causes the router to redirect to the path specified.",
       "docsTags": [],
       "values": [
         {
-          "type": "(() => boolean"
-        },
-        {
-          "type": "NavigationHookOptions"
+          "type": "(() => NavigationHookResult"
         },
         {
           "type": "Promise<NavigationHookResult>)"
@@ -37,17 +34,14 @@
     },
     {
       "name": "beforeLeave",
-      "type": "(() => boolean | NavigationHookOptions | Promise<NavigationHookResult>) | undefined",
+      "type": "(() => NavigationHookResult | Promise<NavigationHookResult>) | undefined",
       "mutable": false,
       "reflectToAttr": false,
       "docs": "A navigation hook that is fired when the route tries to leave.\nReturning `true` allows the navigation to proceed, while returning\n`false` causes it to be cancelled. Returning a `NavigationHookOptions`\nobject causes the router to redirect to the path specified.",
       "docsTags": [],
       "values": [
         {
-          "type": "(() => boolean"
-        },
-        {
-          "type": "NavigationHookOptions"
+          "type": "(() => NavigationHookResult"
         },
         {
           "type": "Promise<NavigationHookResult>)"

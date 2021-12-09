@@ -1,0 +1,15 @@
+{
+  "packageName": "@awesome-cordova-plugins/nfc",
+  "displayName": "NFC",
+  "description": "\nThe NFC plugin allows you to read and write NFC tags. You can also beam to, and receive from, other NFC enabled devices.\n\nUse to\n- read data from NFC tags\n- write data to NFC tags\n- send data to other NFC enabled devices\n- receive data from NFC devices\n\nThis plugin uses NDEF (NFC Data Exchange Format) for maximum compatibilty between NFC devices, tag types, and operating systems.\n",
+  "usage": "\n```typescript\nimport { NFC, Ndef } from '@awesome-cordova-plugins/nfc/ngx';\n\nconstructor(private nfc: NFC, private ndef: Ndef) { }\n\n...\n\n// Read NFC Tag - Android\n// Once the reader mode is enabled, any tags that are scanned are sent to the subscriber\n let flags = this.nfc.FLAG_READER_NFC_A | this.nfc.FLAG_READER_NFC_V;\n this.readerMode$ = this.nfc.readerMode(flags).subscribe(\n     tag => console.log(JSON.stringify(tag)),\n     err => console.log('Error reading tag', err)\n );\n\n// Read NFC Tag - iOS\n// On iOS, a NFC reader session takes control from your app while scanning tags then returns a tag\ntry {\n    let tag = await this.nfc.scanNdef();\n    console.log(JSON.stringify(tag));\n } catch (err) {\n     console.log('Error reading tag', err);\n }\n\n```\n\nFor more details on NFC tag operations see https://github.com/chariotsolutions/phonegap-nfc\n",
+  "platforms": [
+    "Android",
+    "iOS",
+    "Windows"
+  ],
+  "repo": "https://github.com/chariotsolutions/phonegap-nfc",
+  "cordovaPlugin": {
+    "name": "phonegap-nfc"
+  }
+}

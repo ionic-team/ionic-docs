@@ -2,19 +2,20 @@
   "filePath": "./src/components/infinite-scroll-content/infinite-scroll-content.tsx",
   "encapsulation": "none",
   "tag": "ion-infinite-scroll-content",
-  "readme": "# ion-infinite-scroll-content\n\nThe `ion-infinite-scroll-content` component is the default child used by the `ion-infinite-scroll`. It displays an infinite scroll spinner that looks best based on the platform and changes the look depending on the infinite scroll's state. The default spinner can be changed and text can be added by setting the `loadingSpinner` and `loadingText` properties.\n\n## React\n\nThe `ion-infinite-scroll-content` component is not supported in React.\n",
+  "readme": "# ion-infinite-scroll-content\n\nThe `ion-infinite-scroll-content` component is the default child used by the `ion-infinite-scroll`. It displays an infinite scroll spinner that looks best based on the platform and changes the look depending on the infinite scroll's state. The default spinner can be changed and text can be added by setting the `loadingSpinner` and `loadingText` properties.\n",
   "docs": "The `ion-infinite-scroll-content` component is the default child used by the `ion-infinite-scroll`. It displays an infinite scroll spinner that looks best based on the platform and changes the look depending on the infinite scroll's state. The default spinner can be changed and text can be added by setting the `loadingSpinner` and `loadingText` properties.",
   "docsTags": [],
   "usage": {
     "angular": "```html\n<ion-content>\n  <ion-infinite-scroll>\n    <ion-infinite-scroll-content\n      loadingSpinner=\"bubbles\"\n      loadingText=\"Loading more data…\">\n    </ion-infinite-scroll-content>\n  </ion-infinite-scroll>\n</ion-content>\n```\n",
     "javascript": "```html\n<ion-content>\n  <ion-infinite-scroll>\n    <ion-infinite-scroll-content\n      loading-spinner=\"bubbles\"\n      loading-text=\"Loading more data…\">\n    </ion-infinite-scroll-content>\n  </ion-infinite-scroll>\n</ion-content>\n```\n",
+    "react": "```tsx\nimport React from 'react';\nimport { IonContent, IonInfiniteScroll, IonInfiniteScrollContent } from '@ionic/react';\n\nexport const InfiniteScrollExample: React.FC = () => (\n  <IonContent>\n    <IonInfiniteScroll>\n      <IonInfiniteScrollContent\n        loadingSpinner=\"bubbles\"\n        loadingText=\"Loading more data...\">\n      </IonInfiniteScrollContent>\n    </IonInfiniteScroll>\n  </IonContent>\n);\n```",
     "stencil": "```tsx\nimport { Component, h } from '@stencil/core';\n\n@Component({\n  tag: 'infinite-scroll-content-example',\n  styleUrl: 'infinite-scroll-content-example.css'\n})\nexport class InfiniteScrollContentExample {\n  render() {\n    return [\n      <ion-content>\n        <ion-infinite-scroll>\n          <ion-infinite-scroll-content\n            loadingSpinner=\"bubbles\"\n            loadingText=\"Loading more data...\">\n          </ion-infinite-scroll-content>\n        </ion-infinite-scroll>\n      </ion-content>\n    ];\n  }\n}\n```",
     "vue": "```html\n<template>\n  <ion-page>\n    <ion-content>\n      <ion-infinite-scroll>\n        <ion-infinite-scroll-content\n          loading-spinner=\"bubbles\"\n          loading-text=\"Loading more data…\">\n        </ion-infinite-scroll-content>\n      </ion-infinite-scroll>\n    </ion-content>\n  </ion-page>\n</template>\n\n<script lang=\"ts\">\nimport {\n  IonContent,\n  IonInfiniteScroll,\n  IonInfiniteScrollContent,\n  IonPage\n } from '@ionic/vue';\nimport { defineComponent } from 'vue';\n\nexport default defineComponent({\n  components: {\n    IonContent,\n    IonInfiniteScroll,\n    IonInfiniteScrollContent,\n    IonPage\n  }\n});\n```\n"
   },
   "props": [
     {
       "name": "loadingSpinner",
-      "type": "\"bubbles\" | \"circles\" | \"circular\" | \"crescent\" | \"dots\" | \"lines\" | \"lines-small\" | null | undefined",
+      "type": "\"bubbles\" | \"circles\" | \"circular\" | \"crescent\" | \"dots\" | \"lines\" | \"lines-sharp\" | \"lines-sharp-small\" | \"lines-small\" | null | undefined",
       "mutable": true,
       "attr": "loading-spinner",
       "reflectToAttr": false,
@@ -43,6 +44,14 @@
         },
         {
           "value": "lines",
+          "type": "string"
+        },
+        {
+          "value": "lines-sharp",
+          "type": "string"
+        },
+        {
+          "value": "lines-sharp-small",
           "type": "string"
         },
         {

@@ -1,0 +1,14 @@
+{
+  "packageName": "@awesome-cordova-plugins/background-geolocation",
+  "displayName": "Background Geolocation",
+  "description": "\nThis plugin provides foreground and background geolocation with battery-saving \"circular region monitoring\" and \"stop detection\". For\nmore detail, please see https://github.com/mauron85/cordova-plugin-background-geolocation\n",
+  "usage": "\n\nBackgroundGeolocation must be called within app.ts and or before Geolocation. Otherwise the platform will not ask you for background tracking permission.\n\n```typescript\nimport { BackgroundGeolocation, BackgroundGeolocationConfig, BackgroundGeolocationEvents, BackgroundGeolocationResponse } from '@awesome-cordova-plugins/background-geolocation/ngx';\n\nconstructor(private backgroundGeolocation: BackgroundGeolocation) { }\n\n...\n\nconst config: BackgroundGeolocationConfig = {\n            desiredAccuracy: 10,\n            stationaryRadius: 20,\n            distanceFilter: 30,\n            debug: true, //  enable this hear sounds for background-geolocation life-cycle.\n            stopOnTerminate: false, // enable this to clear background location settings when the app terminates\n    };\n\nthis.backgroundGeolocation.configure(config)\n  .then(() => {\n\n    this.backgroundGeolocation.on(BackgroundGeolocationEvents.location).subscribe((location: BackgroundGeolocationResponse) => {\n      console.log(location);\n\n      // IMPORTANT:  You must execute the finish method here to inform the native plugin that you're finished,\n      // and the background-task may be completed.  You must do this regardless if your operations are successful or not.\n      // IF YOU DON'T, ios will CRASH YOUR APP for spending too much time in the background.\n      this.backgroundGeolocation.finish(); // FOR IOS ONLY\n    });\n\n  });\n\n// start recording location\nthis.backgroundGeolocation.start();\n\n// If you wish to turn OFF background-tracking, call the #stop method.\nthis.backgroundGeolocation.stop();\n\n```",
+  "platforms": [
+    "Android",
+    "iOS"
+  ],
+  "repo": "https://github.com/mauron85/cordova-plugin-background-geolocation",
+  "cordovaPlugin": {
+    "name": "@mauron85/cordova-plugin-background-geolocation"
+  }
+}
