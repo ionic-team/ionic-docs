@@ -1,0 +1,33 @@
+{
+  "name": "ionic ssh add",
+  "namespace": [
+    "ionic",
+    "ssh"
+  ],
+  "summary": "Add an SSH public key to Ionic",
+  "description": "",
+  "footnotes": [],
+  "groups": [],
+  "exampleCommands": [],
+  "aliases": [],
+  "inputs": [
+    {
+      "name": "pubkey-path",
+      "summary": "Location of public key file to add to Ionic",
+      "required": true
+    }
+  ],
+  "options": [
+    {
+      "name": "use",
+      "type": "boolean",
+      "summary": "Use the newly added key as your default SSH key for Ionic",
+      "groups": [],
+      "aliases": [],
+      "spec": {
+        "value": "true/false"
+      }
+    }
+  ],
+  "type": "global"
+}

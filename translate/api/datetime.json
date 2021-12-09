@@ -1,0 +1,637 @@
+{
+  "filePath": "./src/components/datetime/datetime.tsx",
+  "encapsulation": "shadow",
+  "tag": "ion-datetime",
+  "readme": "# ion-datetime\n\nDatetimes present a picker interface from the bottom of a page, making it easy for\nusers to select dates and times. The picker displays scrollable columns that can be\nused to individually select years, months, days, hours and minute values. Datetimes\nare similar to the native `input` elements of type `datetime-local`, however, Ionic's\nDatetime component makes it easy to display the date and time in a preferred format,\nand manage the datetime values.\n\n\n## Display and Picker Formats\n\nThe datetime component displays the values in two places: in the `<ion-datetime>` component,\nand in the picker interface that is presented from the bottom of the screen. The following\nchart lists all of the formats that can be used.\n\n| Format | Description                    | Example                 |\n| ------ | ------------------------------ | ----------------------- |\n| `YYYY` | Year, 4 digits                 | `2018`                  |\n| `YY`   | Year, 2 digits                 | `18`                    |\n| `M`    | Month                          | `1` ... `12`            |\n| `MM`   | Month, leading zero            | `01` ... `12`           |\n| `MMM`  | Month, short name              | `Jan`                   |\n| `MMMM` | Month, full name               | `January`               |\n| `D`    | Day                            | `1` ... `31`            |\n| `DD`   | Day, leading zero              | `01` ... `31`           |\n| `DDD`  | Day, short name                | `Fri`                   |\n| `DDDD` | Day, full name                 | `Friday`                |\n| `H`    | Hour, 24-hour                  | `0` ... `23`            |\n| `HH`   | Hour, 24-hour, leading zero    | `00` ... `23`           |\n| `h`    | Hour, 12-hour                  | `1` ... `12`            |\n| `hh`   | Hour, 12-hour, leading zero    | `01` ... `12`           |\n| `a`    | 12-hour time period, lowercase | `am` `pm`               |\n| `A`    | 12-hour time period, uppercase | `AM` `PM`               |\n| `m`    | Minute                         | `1` ... `59`            |\n| `mm`   | Minute, leading zero           | `01` ... `59`           |\n| `s`    | Second                         | `1` ... `59`            |\n| `ss`   | Second, leading zero           | `01` ... `59`           |\n| `Z`    | UTC Timezone Offset            | `Z or +HH:mm or -HH:mm` |\n\n**Important**: See the [Month Names and Day of the Week\nNames](#month-names-and-day-of-the-week-names) section below on how to use\ndifferent names for the month and day.\n\n### Display Format\n\nThe `displayFormat` property specifies how a datetime's value should be\nprinted, as formatted text, within the datetime component.\n\nA few examples are provided in the chart below. The formats mentioned\nabove can be passed in to the display format in any combination.\n\n| Display Format        | Example                 |\n| ----------------------| ----------------------- |\n| `M-YYYY`              | `6-2005`                |\n| `MM/YY`               | `06/05`                 |\n| `MMM YYYY`            | `Jun 2005`              |\n| `YYYY, MMMM`          | `2005, June`            |\n| `MMM DD, YYYY HH:mm`  | `Jun 17, 2005 11:06`    |\n\n**Important**: `ion-datetime` will by default display values relative to the user's timezone.\nGiven a value of `09:00:00+01:00`, the datetime component will\ndisplay it as `04:00:00-04:00` for users in a `-04:00` timezone offset.\nTo change the display to use a different timezone, use the displayTimezone property described below.\n\n### Display Timezone\n\nThe `displayTimezone` property allows you to change the default behavior\nof displaying values relative to the user's local timezone. In addition to \"UTC\" valid\ntime zone values are determined by the browser, and in most cases follow the time zone names\nof the [IANA time zone database](https://www.iana.org/time-zones), such as \"Asia/Shanghai\",\n\"Asia/Kolkata\", \"America/New_York\". In the following example:\n\n```html\n<ion-datetime value=\"2019-10-01T15:43:40.394Z\" display-timezone=\"utc\"></ion-datetime>\n```\n\nThe displayed value will not be converted and will be displayed as provided (UTC).\n\n\n### Picker Format\n\nThe `pickerFormat` property determines which columns should be shown in the picker\ninterface, the order of the columns, and which format to use within each\ncolumn. If `pickerFormat` is not provided then it will use the value of\n`displayFormat`. Refer to the chart in the [Display Format](#display-format) section\nfor some formatting examples.\n\n\n### Datetime Data\n\nHistorically, handling datetime values within JavaScript, or even within HTML\ninputs, has always been a challenge. Specifically, JavaScript's `Date` object is\nnotoriously difficult to correctly parse apart datetime strings or to format\ndatetime values. Even worse is how different browsers and JavaScript versions\nparse various datetime strings differently, especially per locale.\n\nFortunately, Ionic's datetime input has been designed so developers can avoid\nthe common pitfalls, allowing developers to easily format datetime values within\nthe input, and give the user a simple datetime picker for a great user\nexperience.\n\n##### ISO 8601 Datetime Format: YYYY-MM-DDTHH:mmZ\n\nIonic uses the [ISO 8601 datetime format](https://www.w3.org/TR/NOTE-datetime)\nfor its value. The value is simply a string, rather than using JavaScript's\n`Date` object. Using the ISO datetime format makes it easy to serialize\nand parse within JSON objects and databases.\n\nAn ISO format can be used as a simple year, or just the hour and minute, or get\nmore detailed down to the millisecond and timezone. Any of the ISO formats below\ncan be used, and after a user selects a new value, Ionic will continue to use\nthe same ISO format which datetime value was originally given as.\n\n| Description          | Format                 | Datetime Value Example        |\n| -------------------- | ---------------------- | ----------------------------  |\n| Year                 | YYYY                   | 1994                          |\n| Year and Month       | YYYY-MM                | 1994-12                       |\n| Complete Date        | YYYY-MM-DD             | 1994-12-15                    |\n| Date and Time        | YYYY-MM-DDTHH:mm       | 1994-12-15T13:47              |\n| UTC Timezone         | YYYY-MM-DDTHH:mm:ssTZD | 1994-12-15T13:47:20.789Z      |\n| Timezone Offset      | YYYY-MM-DDTHH:mm:ssTZD | 1994-12-15T13:47:20.789+05:00 |\n| Hour and Minute      | HH:mm                  | 13:47                         |\n| Hour, Minute, Second | HH:mm:ss               | 13:47:20                      |\n\nNote that the year is always four-digits, milliseconds (if it's added) is always\nthree-digits, and all others are always two-digits. So the number representing\nJanuary always has a leading zero, such as `01`. Additionally, the hour is\nalways in the 24-hour format, so `00` is `12am` on a 12-hour clock, `13` means\n`1pm`, and `23` means `11pm`.\n\nAlso note that neither the `displayFormat` nor the `pickerFormat`\ncan set the datetime value's output, which is the value that is set by the\ncomponent's `ngModel`. The formats are merely for displaying the value as text\nand the picker's interface, but the datetime's value is always persisted as a\nvalid ISO 8601 datetime string.\n\n## Min and Max Datetimes\n\nDates are infinite in either direction, so for a user's selection there should\nbe at least some form of restricting the dates that can be selected. By default,\nthe maximum date is to the end of the current year, and the minimum date is from\nthe beginning of the year that was 100 years ago.\n\nTo customize the minimum and maximum datetime values, the `min` and `max`\ncomponent properties can be provided which may make more sense for the app's\nuse-case, rather than the default of the last 100 years. Following the same IS0\n8601 format listed in the table above, each component can restrict which dates\ncan be selected by the user. By passing `2016` to the `min` property and `2020-10-31`\nto the `max` property, the datetime will restrict the date selection between the\nbeginning of 2016, and October 31st of 2020.\n\n\n## Month Names and Day of the Week Names\n\nAt this time, there is no one-size-fits-all standard to automatically choose the\ncorrect language/spelling for a month name, or day of the week name, depending\non the language or locale.\n\nThe good news is that there is an [Intl.DatetimeFormat](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DatetimeFormat)\nstandard which [most browsers](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DatetimeFormat#Browser_compatibility) have adopted.\n\nHowever, at this time the standard has not been fully implemented by all popular browsers\nso Ionic is unavailable to take advantage of it yet.\n\nAdditionally, Angular also provides an internationalization service, but it is still\nunder heavy development so Ionic does not depend on it at this time.\n\nThe current best practice is to provide an array of names if the app needs to use names other\nthan the default English version of month and day names. The month names and day names can be\neither configured at the app level, or individual `ion-datetime` level.\n\n\n### Advanced Datetime Validation and Manipulation\n\nThe datetime picker provides the simplicity of selecting an exact format, and\npersists the datetime values as a string using the standardized [ISO 8601\ndatetime format](https://www.w3.org/TR/NOTE-datetime). However, it's important\nto note that `ion-datetime` does not attempt to solve all situations when\nvalidating and manipulating datetime values. If datetime values need to be\nparsed from a certain format, or manipulated (such as adding 5 days to a date,\nsubtracting 30 minutes, etc.), or even formatting data to a specific locale,\nthen we highly recommend using [date-fns](https://date-fns.org) to work with\ndates in JavaScript.\n\n",
+  "docs": "Datetimes present a picker interface from the bottom of a page, making it easy for\nusers to select dates and times. The picker displays scrollable columns that can be\nused to individually select years, months, days, hours and minute values. Datetimes\nare similar to the native `input` elements of type `datetime-local`, however, Ionic's\nDatetime component makes it easy to display the date and time in a preferred format,\nand manage the datetime values.",
+  "docsTags": [
+    {
+      "text": "{\"ios\" | \"md\"} mode - The mode determines which platform styles to use.",
+      "name": "virtualProp"
+    },
+    {
+      "text": "text - The value of the datetime.",
+      "name": "part"
+    },
+    {
+      "text": "placeholder - The placeholder of the datetime.",
+      "name": "part"
+    }
+  ],
+  "usage": {
+    "angular": "```html\n<ion-item>\n  <ion-label>MMMM</ion-label>\n  <ion-datetime displayFormat=\"MMMM\" value=\"2012-12-15T13:47:20.789\"></ion-datetime>\n</ion-item>\n\n<ion-item>\n  <ion-label>MM DD YY</ion-label>\n  <ion-datetime displayFormat=\"MM DD YY\" placeholder=\"Select Date\"></ion-datetime>\n</ion-item>\n\n<ion-item>\n  <ion-label>Disabled</ion-label>\n  <ion-datetime id=\"dynamicDisabled\" displayFormat=\"MM DD YY\" disabled value=\"1994-12-15\"></ion-datetime>\n</ion-item>\n\n<ion-item>\n  <ion-label>YYYY</ion-label>\n  <ion-datetime [pickerOptions]=\"customPickerOptions\" placeholder=\"Custom Options\" displayFormat=\"YYYY\" min=\"1981\" max=\"2002\"></ion-datetime>\n</ion-item>\n\n<ion-item>\n  <ion-label position=\"stacked\">MMMM YY</ion-label>\n  <ion-datetime displayFormat=\"MMMM YY\" min=\"1989-06-04\" max=\"2004-08-23\" value=\"1994-12-15T13:47:20.789\"></ion-datetime>\n</ion-item>\n\n<ion-item>\n  <ion-label position=\"floating\">MM/DD/YYYY</ion-label>\n  <ion-datetime displayFormat=\"MM/DD/YYYY\" min=\"1994-03-14\" max=\"2012-12-09\" value=\"2002-09-23T15:03:46.789\"></ion-datetime>\n</ion-item>\n\n<ion-item>\n  <ion-label position=\"floating\">MM/DD/YYYY</ion-label>\n  <ion-datetime displayFormat=\"MM/DD/YYYY\" min=\"1994-03-14\" max=\"2012-12-09\"></ion-datetime>\n</ion-item>\n\n<ion-item>\n  <ion-label>DDD. MMM DD, YY (custom locale)</ion-label>\n  <ion-datetime value=\"1995-04-15\" min=\"1990-02\" max=\"2000\"\n    [dayShortNames]=\"customDayShortNames\"\n    displayFormat=\"DDD. MMM DD, YY\"\n    monthShortNames=\"jan, feb, mar, apr, mai, jun, jul, aug, sep, okt, nov, des\"></ion-datetime>\n</ion-item>\n\n<ion-item>\n  <ion-label>D MMM YYYY H:mm</ion-label>\n  <ion-datetime displayFormat=\"D MMM YYYY H:mm\" min=\"1997\" max=\"2010\" value=\"2005-06-17T11:06Z\"></ion-datetime>\n</ion-item>\n\n<ion-item>\n  <ion-label>DDDD MMM D, YYYY</ion-label>\n  <ion-datetime displayFormat=\"DDDD MMM D, YYYY\" min=\"2005\" max=\"2016\" value=\"2008-09-02\"></ion-datetime>\n</ion-item>\n\n<ion-item>\n  <ion-label>HH:mm</ion-label>\n  <ion-datetime displayFormat=\"HH:mm\"></ion-datetime>\n</ion-item>\n\n<ion-item>\n  <ion-label>h:mm a</ion-label>\n  <ion-datetime displayFormat=\"h:mm a\"></ion-datetime>\n</ion-item>\n\n<ion-item>\n  <ion-label>hh:mm A (15 min steps)</ion-label>\n  <ion-datetime displayFormat=\"h:mm A\" minuteValues=\"0,15,30,45\"></ion-datetime>\n</ion-item>\n\n<ion-item>\n  <ion-label>Leap years, summer months</ion-label>\n  <ion-datetime displayFormat=\"MM/YYYY\" pickerFormat=\"MMMM YYYY\" monthValues=\"6,7,8\" [yearValues]=\"customYearValues\"></ion-datetime>\n</ion-item>\n\n<ion-item>\n  <ion-label>Specific days/months/years</ion-label>\n  <ion-datetime monthValues=\"6,7,8\" yearValues=\"2014,2015\" dayValues=\"01,02,03,04,05,06,08,09,10, 11, 12, 13, 14\" displayFormat=\"DD/MMM/YYYY\"></ion-datetime>\n</ion-item>\n```\n\n```typescript\n@Component({…})\nexport class MyComponent {\n  customYearValues = [2020, 2016, 2008, 2004, 2000, 1996];\n  customDayShortNames = ['s\\u00f8n', 'man', 'tir', 'ons', 'tor', 'fre', 'l\\u00f8r'];\n  customPickerOptions: any;\n\n  constructor() {\n    this.customPickerOptions = {\n      buttons: [{\n        text: 'Save',\n        handler: () => console.log('Clicked Save!')\n      }, {\n        text: 'Log',\n        handler: () => {\n          console.log('Clicked Log. Do not Dismiss.');\n          return false;\n        }\n      }]\n    }\n  }\n\n}\n```\n",
+    "javascript": "```html\n<ion-item>\n  <ion-label>MMMM</ion-label>\n  <ion-datetime display-format=\"MMMM\" value=\"2012-12-15T13:47:20.789\"></ion-datetime>\n</ion-item>\n\n<ion-item>\n  <ion-label>MM DD YY</ion-label>\n  <ion-datetime display-format=\"MM DD YY\" placeholder=\"Select Date\"></ion-datetime>\n</ion-item>\n\n<ion-item>\n  <ion-label>Disabled</ion-label>\n  <ion-datetime id=\"dynamicDisabled\" display-format=\"MM DD YY\" disabled value=\"1994-12-15\"></ion-datetime>\n</ion-item>\n\n<ion-item>\n  <ion-label>YYYY</ion-label>\n  <ion-datetime id=\"customPickerOptions\" placeholder=\"Custom Options\" display-format=\"YYYY\" min=\"1981\" max=\"2002\"></ion-datetime>\n</ion-item>\n\n<ion-item>\n  <ion-label position=\"stacked\">MMMM YY</ion-label>\n  <ion-datetime display-format=\"MMMM YY\" min=\"1989-06-04\" max=\"2004-08-23\" value=\"1994-12-15T13:47:20.789\"></ion-datetime>\n</ion-item>\n\n<ion-item>\n  <ion-label position=\"floating\">MM/DD/YYYY</ion-label>\n  <ion-datetime display-format=\"MM/DD/YYYY\" min=\"1994-03-14\" max=\"2012-12-09\" value=\"2002-09-23T15:03:46.789\"></ion-datetime>\n</ion-item>\n\n<ion-item>\n  <ion-label position=\"floating\">MM/DD/YYYY</ion-label>\n  <ion-datetime display-format=\"MM/DD/YYYY\" min=\"1994-03-14\" max=\"2012-12-09\"></ion-datetime>\n</ion-item>\n\n<ion-item>\n  <ion-label>DDD. MMM DD, YY (custom locale)</ion-label>\n  <ion-datetime id=\"customDayShortNames\" value=\"1995-04-15\" min=\"1990-02\" max=\"2000\"\n    display-format=\"DDD. MMM DD, YY\"\n    month-short-names=\"jan, feb, mar, apr, mai, jun, jul, aug, sep, okt, nov, des\"></ion-datetime>\n</ion-item>\n\n<ion-item>\n  <ion-label>D MMM YYYY H:mm</ion-label>\n  <ion-datetime display-format=\"D MMM YYYY H:mm\" min=\"1997\" max=\"2010\" value=\"2005-06-17T11:06Z\"></ion-datetime>\n</ion-item>\n\n<ion-item>\n  <ion-label>DDDD MMM D, YYYY</ion-label>\n  <ion-datetime display-format=\"DDDD MMM D, YYYY\" min=\"2005\" max=\"2016\" value=\"2008-09-02\"></ion-datetime>\n</ion-item>\n\n<ion-item>\n  <ion-label>HH:mm</ion-label>\n  <ion-datetime display-format=\"HH:mm\"></ion-datetime>\n</ion-item>\n\n<ion-item>\n  <ion-label>h:mm a</ion-label>\n  <ion-datetime display-format=\"h:mm a\"></ion-datetime>\n</ion-item>\n\n<ion-item>\n  <ion-label>hh:mm A (15 min steps)</ion-label>\n  <ion-datetime display-format=\"h:mm A\" minute-values=\"0,15,30,45\"></ion-datetime>\n</ion-item>\n\n<ion-item>\n  <ion-label>Leap years, summer months</ion-label>\n  <ion-datetime id=\"customYearValues\" display-format=\"MM/YYYY\" picker-format=\"MMMM YYYY\" month-values=\"6,7,8\"></ion-datetime>\n</ion-item>\n\n<ion-item>\n  <ion-label>Specific days/months/years</ion-label>\n  <ion-datetime month-values=\"6,7,8\" year-values=\"2014,2015\" day-values=\"01,02,03,04,05,06,08,09,10, 11, 12, 13, 14\" display-format=\"DD/MMM/YYYY\"></ion-datetime>\n</ion-item>\n```\n\n```javascript\nvar yearValuesArray = [2020, 2016, 2008, 2004, 2000, 1996];\nvar customYearValues = document.getElementById('customYearValues');\ncustomYearValues.yearValues = yearValuesArray;\n\nvar dayShortNamesArray = [\n  's\\u00f8n',\n  'man',\n  'tir',\n  'ons',\n  'tor',\n  'fre',\n  'l\\u00f8r'\n];\nvar customDayShortNames = document.getElementById('customDayShortNames');\ncustomDayShortNames.dayShortNames = dayShortNamesArray;\n\nvar customPickerButtons = {\n  buttons: [{\n    text: 'Save',\n    handler: () => console.log('Clicked Save!')\n  }, {\n    text: 'Log',\n    handler: () => {\n      console.log('Clicked Log. Do not Dismiss.');\n      return false;\n    }\n  }]\n}\nvar customPickerOptions = document.getElementById('customPickerOptions');\ncustomPickerOptions.pickerOptions = customPickerButtons;\n```",
+    "react": "```tsx\nimport React, { useState } from 'react';\nimport { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonItem, IonLabel, IonDatetime, IonFooter } from '@ionic/react';\n\nconst customYearValues = [2020, 2016, 2008, 2004, 2000, 1996];\n\nconst customDayShortNames = [\n  's\\u00f8n',\n  'man',\n  'tir',\n  'ons',\n  'tor',\n  'fre',\n  'l\\u00f8r'\n];\n\nexport const DateTimeExamples: React.FC = () => {\n  const [selectedDate, setSelectedDate] = useState<string>('2012-12-15T13:47:20.789');\n  return (\n    <IonPage>\n      <IonHeader>\n        <IonToolbar>\n          <IonTitle>IonDatetime Examples</IonTitle>\n        </IonToolbar>\n      </IonHeader>\n      <IonContent>\n        <IonItem>\n          <IonLabel>MMMM</IonLabel>\n          <IonDatetime displayFormat=\"MMMM\" value={selectedDate} onIonChange={e => setSelectedDate(e.detail.value!)}></IonDatetime>\n        </IonItem>\n\n        <IonItem>\n          <IonLabel>MM DD YY</IonLabel>\n          <IonDatetime displayFormat=\"MM DD YY\" placeholder=\"Select Date\" value={selectedDate} onIonChange={e => setSelectedDate(e.detail.value!)}></IonDatetime>\n        </IonItem>\n\n        <IonItem>\n          <IonLabel>Disabled</IonLabel>\n          <IonDatetime id=\"dynamicDisabled\" displayFormat=\"MM DD YY\" disabled value={selectedDate} onIonChange={e => setSelectedDate(e.detail.value!)}></IonDatetime>\n        </IonItem>\n\n        <IonItem>\n          <IonLabel>YYYY</IonLabel>\n          <IonDatetime pickerOptions={{\n            buttons: [\n              {\n                text: 'Save',\n                handler: () => console.log('Clicked Save!')\n              }, {\n                text: 'Log',\n                handler: () => {\n                  console.log('Clicked Log. Do not Dismiss.');\n                  return false;\n                }\n              }\n            ]\n          }}\n            placeholder=\"Custom Options\" displayFormat=\"YYYY\" min=\"1981\" max=\"2002\"\n            value={selectedDate} onIonChange={e => setSelectedDate(e.detail.value!)}>\n          </IonDatetime>\n        </IonItem>\n\n        <IonItem>\n          <IonLabel position=\"stacked\">MMMM YY</IonLabel>\n          <IonDatetime displayFormat=\"MMMM YY\" min=\"1989-06-04\" max=\"2004-08-23\" value={selectedDate} onIonChange={e => setSelectedDate(e.detail.value!)}></IonDatetime>\n        </IonItem>\n\n        <IonItem>\n          <IonLabel position=\"floating\">MM/DD/YYYY</IonLabel>\n          <IonDatetime displayFormat=\"MM/DD/YYYY\" min=\"1994-03-14\" max=\"2012-12-09\" value={selectedDate} onIonChange={e => setSelectedDate(e.detail.value!)}></IonDatetime>\n        </IonItem>\n\n        <IonItem>\n          <IonLabel position=\"floating\">MM/DD/YYYY</IonLabel>\n          <IonDatetime displayFormat=\"MM/DD/YYYY\" min=\"1994-03-14\" max=\"2012-12-09\" value={selectedDate} onIonChange={e => setSelectedDate(e.detail.value!)}></IonDatetime>\n        </IonItem>\n\n        <IonItem>\n          <IonLabel>DDD. MMM DD, YY (custom locale)</IonLabel>\n          <IonDatetime\n            min=\"1990-02\"\n            max=\"2000\"\n            dayShortNames={customDayShortNames}\n            displayFormat=\"DDD. MMM DD, YY\"\n            monthShortNames=\"jan, feb, mar, apr, mai, jun, jul, aug, sep, okt, nov, des\"\n            value={selectedDate} onIonChange={e => setSelectedDate(e.detail.value!)}\n          ></IonDatetime>\n        </IonItem>\n\n        <IonItem>\n          <IonLabel>D MMM YYYY H:mm</IonLabel>\n          <IonDatetime displayFormat=\"D MMM YYYY H:mm\" min=\"1997\" max=\"2010\" value={selectedDate} onIonChange={e => setSelectedDate(e.detail.value!)}></IonDatetime>\n        </IonItem>\n\n        <IonItem>\n          <IonLabel>DDDD MMM D, YYYY</IonLabel>\n          <IonDatetime displayFormat=\"DDDD MMM D, YYYY\" min=\"2005\" max=\"2016\" value={selectedDate} onIonChange={e => setSelectedDate(e.detail.value!)}></IonDatetime>\n        </IonItem>\n\n        <IonItem>\n          <IonLabel>HH:mm</IonLabel>\n          <IonDatetime displayFormat=\"HH:mm\" value={selectedDate} onIonChange={e => setSelectedDate(e.detail.value!)}></IonDatetime>\n        </IonItem>\n\n        <IonItem>\n          <IonLabel>h:mm a</IonLabel>\n          <IonDatetime displayFormat=\"h:mm a\" value={selectedDate} onIonChange={e => setSelectedDate(e.detail.value!)}></IonDatetime>\n        </IonItem>\n\n        <IonItem>\n          <IonLabel>hh:mm A (15 min steps)</IonLabel>\n          <IonDatetime displayFormat=\"h:mm A\" minuteValues=\"0,15,30,45\" value={selectedDate} onIonChange={e => setSelectedDate(e.detail.value!)}></IonDatetime>\n        </IonItem>\n\n        <IonItem>\n          <IonLabel>Leap years, summer months</IonLabel>\n          <IonDatetime displayFormat=\"MM/YYYY\" pickerFormat=\"MMMM YYYY\" monthValues=\"6,7,8\" yearValues={customYearValues} value={selectedDate} onIonChange={e => setSelectedDate(e.detail.value!)}></IonDatetime>\n        </IonItem>\n\n        <IonItem>\n          <IonLabel>Specific days/months/years</IonLabel>\n          <IonDatetime\n            monthValues='6,7,8'\n            yearValues='2014,2015'\n            dayValues=\"01,02,03,04,05,06,08,09,10, 11, 12, 13, 14\"\n            displayFormat=\"DD/MMM/YYYY\"\n            value={selectedDate} onIonChange={e => setSelectedDate(e.detail.value!)}\n          ></IonDatetime>\n        </IonItem>\n      </IonContent>\n      <IonFooter>\n        <IonToolbar>\n          Selected Date: {selectedDate ?? '(none)'}\n        </IonToolbar>\n      </IonFooter>\n    </IonPage>\n  );\n};\n```",
+    "stencil": "```tsx\nimport { Component, h } from '@stencil/core';\n\n@Component({\n  tag: 'datetime-example',\n  styleUrl: 'datetime-example.css'\n})\nexport class DatetimeExample {\n  private customYearValues = [2020, 2016, 2008, 2004, 2000, 1996];\n  private customDayShortNames = ['s\\u00f8n', 'man', 'tir', 'ons', 'tor', 'fre', 'l\\u00f8r'];\n  private customPickerOptions = {\n    buttons: [{\n      text: 'Save',\n      handler: () => console.log('Clicked Save!')\n    }, {\n      text: 'Log',\n      handler: () => {\n        console.log('Clicked Log. Do not Dismiss.');\n        return false;\n      }\n    }]\n  }\n\n  render() {\n    return [\n      <ion-item>\n        <ion-label>MMMM</ion-label>\n        <ion-datetime displayFormat=\"MMMM\" value=\"2012-12-15T13:47:20.789\"></ion-datetime>\n      </ion-item>,\n\n      <ion-item>\n        <ion-label>MM DD YY</ion-label>\n        <ion-datetime displayFormat=\"MM DD YY\" placeholder=\"Select Date\"></ion-datetime>\n      </ion-item>,\n\n      <ion-item>\n        <ion-label>Disabled</ion-label>\n        <ion-datetime id=\"dynamicDisabled\" displayFormat=\"MM DD YY\" disabled value=\"1994-12-15\"></ion-datetime>\n      </ion-item>,\n\n      <ion-item>\n        <ion-label>YYYY</ion-label>\n        <ion-datetime pickerOptions={this.customPickerOptions} placeholder=\"Custom Options\" displayFormat=\"YYYY\" min=\"1981\" max=\"2002\"></ion-datetime>\n      </ion-item>,\n\n      <ion-item>\n        <ion-label position=\"stacked\">MMMM YY</ion-label>\n        <ion-datetime displayFormat=\"MMMM YY\" min=\"1989-06-04\" max=\"2004-08-23\" value=\"1994-12-15T13:47:20.789\"></ion-datetime>\n      </ion-item>,\n\n      <ion-item>\n        <ion-label position=\"floating\">MM/DD/YYYY</ion-label>\n        <ion-datetime displayFormat=\"MM/DD/YYYY\" min=\"1994-03-14\" max=\"2012-12-09\" value=\"2002-09-23T15:03:46.789\"></ion-datetime>\n      </ion-item>,\n\n      <ion-item>\n        <ion-label position=\"floating\">MM/DD/YYYY</ion-label>\n        <ion-datetime displayFormat=\"MM/DD/YYYY\" min=\"1994-03-14\" max=\"2012-12-09\"></ion-datetime>\n      </ion-item>,\n\n      <ion-item>\n        <ion-label>DDD. MMM DD, YY (custom locale)</ion-label>\n        <ion-datetime value=\"1995-04-15\" min=\"1990-02\" max=\"2000\"\n          dayShortNames={this.customDayShortNames}\n          displayFormat=\"DDD. MMM DD, YY\"\n          monthShortNames=\"jan, feb, mar, apr, mai, jun, jul, aug, sep, okt, nov, des\"></ion-datetime>\n      </ion-item>,\n\n      <ion-item>\n        <ion-label>D MMM YYYY H:mm</ion-label>\n        <ion-datetime displayFormat=\"D MMM YYYY H:mm\" min=\"1997\" max=\"2010\" value=\"2005-06-17T11:06Z\"></ion-datetime>\n      </ion-item>,\n\n      <ion-item>\n        <ion-label>DDDD MMM D, YYYY</ion-label>\n        <ion-datetime displayFormat=\"DDDD MMM D, YYYY\" min=\"2005\" max=\"2016\" value=\"2008-09-02\"></ion-datetime>\n      </ion-item>,\n\n      <ion-item>\n        <ion-label>HH:mm</ion-label>\n        <ion-datetime displayFormat=\"HH:mm\"></ion-datetime>\n      </ion-item>,\n\n      <ion-item>\n        <ion-label>h:mm a</ion-label>\n        <ion-datetime displayFormat=\"h:mm a\"></ion-datetime>\n      </ion-item>,\n\n      <ion-item>\n        <ion-label>hh:mm A (15 min steps)</ion-label>\n        <ion-datetime displayFormat=\"h:mm A\" minuteValues=\"0,15,30,45\"></ion-datetime>\n      </ion-item>,\n\n      <ion-item>\n        <ion-label>Leap years, summer months</ion-label>\n        <ion-datetime displayFormat=\"MM/YYYY\" pickerFormat=\"MMMM YYYY\" monthValues=\"6,7,8\" yearValues={this.customYearValues}></ion-datetime>\n      </ion-item>,\n\n      <ion-item>\n        <ion-label>Specific days/months/years</ion-label>\n        <ion-datetime monthValues=\"6,7,8\" yearValues=\"2014,2015\" dayValues=\"01,02,03,04,05,06,08,09,10, 11, 12, 13, 14\" displayFormat=\"DD/MMM/YYYY\"></ion-datetime>\n      </ion-item>\n    ];\n  }\n}\n```\n",
+    "vue": "```html\n<template>\n  <ion-item>\n    <ion-label>MMMM</ion-label>\n    <ion-datetime display-format=\"MMMM\" value=\"2012-12-15T13:47:20.789\"></ion-datetime>\n  </ion-item>\n\n  <ion-item>\n    <ion-label>MM DD YY</ion-label>\n    <ion-datetime display-format=\"MM DD YY\" placeholder=\"Select Date\"></ion-datetime>\n  </ion-item>\n\n  <ion-item>\n    <ion-label>Disabled</ion-label>\n    <ion-datetime id=\"dynamicDisabled\" display-format=\"MM DD YY\" disabled value=\"1994-12-15\"></ion-datetime>\n  </ion-item>\n\n  <ion-item>\n    <ion-label>YYYY</ion-label>\n    <ion-datetime :picker-options=\"customPickerOptions\" placeholder=\"Custom Options\" display-format=\"YYYY\" min=\"1981\" max=\"2002\"></ion-datetime>\n  </ion-item>\n\n  <ion-item>\n    <ion-label position=\"stacked\">MMMM YY</ion-label>\n    <ion-datetime display-format=\"MMMM YY\" min=\"1989-06-04\" max=\"2004-08-23\" value=\"1994-12-15T13:47:20.789\"></ion-datetime>\n  </ion-item>\n\n  <ion-item>\n    <ion-label position=\"floating\">MM/DD/YYYY</ion-label>\n    <ion-datetime display-format=\"MM/DD/YYYY\" min=\"1994-03-14\" max=\"2012-12-09\" value=\"2002-09-23T15:03:46.789\"></ion-datetime>\n  </ion-item>\n\n  <ion-item>\n    <ion-label position=\"floating\">MM/DD/YYYY</ion-label>\n    <ion-datetime display-format=\"MM/DD/YYYY\" min=\"1994-03-14\" max=\"2012-12-09\"></ion-datetime>\n  </ion-item>\n\n  <ion-item>\n    <ion-label>DDD. MMM DD, YY (custom locale)</ion-label>\n    <ion-datetime value=\"1995-04-15\" min=\"1990-02\" max=\"2000\"\n      :day-short-names=\"customDayShortNames\"\n      display-format=\"DDD. MMM DD, YY\"\n      month-short-names=\"jan, feb, mar, apr, mai, jun, jul, aug, sep, okt, nov, des\"></ion-datetime>\n  </ion-item>\n\n  <ion-item>\n    <ion-label>D MMM YYYY H:mm</ion-label>\n    <ion-datetime display-format=\"D MMM YYYY H:mm\" min=\"1997\" max=\"2010\" value=\"2005-06-17T11:06Z\"></ion-datetime>\n  </ion-item>\n\n  <ion-item>\n    <ion-label>DDDD MMM D, YYYY</ion-label>\n    <ion-datetime display-format=\"DDDD MMM D, YYYY\" min=\"2005\" max=\"2016\" value=\"2008-09-02\"></ion-datetime>\n  </ion-item>\n\n  <ion-item>\n    <ion-label>HH:mm</ion-label>\n    <ion-datetime display-format=\"HH:mm\"></ion-datetime>\n  </ion-item>\n\n  <ion-item>\n    <ion-label>h:mm a</ion-label>\n    <ion-datetime display-format=\"h:mm a\"></ion-datetime>\n  </ion-item>\n\n  <ion-item>\n    <ion-label>hh:mm A (15 min steps)</ion-label>\n    <ion-datetime display-format=\"h:mm A\" minute-values=\"0,15,30,45\"></ion-datetime>\n  </ion-item>\n\n  <ion-item>\n    <ion-label>Leap years, summer months</ion-label>\n    <ion-datetime display-format=\"MM/YYYY\" picker-format=\"MMMM YYYY\" month-values=\"6,7,8\" :year-values=\"customYearValues\"></ion-datetime>\n  </ion-item>\n\n  <ion-item>\n    <ion-label>Specific days/months/years</ion-label>\n    <ion-datetime month-values=\"6,7,8\" year-values=\"2014,2015\" day-values=\"01,02,03,04,05,06,08,09,10, 11, 12, 13, 14\" display-format=\"DD/MMM/YYYY\"></ion-datetime>\n  </ion-item>\n</template>\n\n<script>\nimport { IonDatetime, IonItem, IonLabel } from '@ionic/vue';\nimport { defineComponent } from 'vue';\n\nexport default defineComponent({\n  components: { IonDatetime, IonItem, IonLabel },\n  setup() {\n    const customYearValues = [2020, 2016, 2008, 2004, 2000, 1996];\n    const customDayShortNames = [\n      's\\u00f8n',\n      'man',\n      'tir',\n      'ons',\n      'tor',\n      'fre',\n      'l\\u00f8r'\n    ];\n    const customPickerOptions = {\n      buttons: [{\n        text: 'Save',\n        handler: () => console.log('Clicked Save!')\n      }, {\n        text: 'Log',\n        handler: () => {\n          console.log('Clicked Log. Do not Dismiss.');\n          return false;\n        }\n      }]\n    }\n    \n    return {\n      customYearValues,\n      customDayShortNames,\n      customPickerOptions\n    }\n  }\n});\n</script>\n```"
+  },
+  "props": [
+    {
+      "name": "cancelText",
+      "type": "string",
+      "mutable": false,
+      "attr": "cancel-text",
+      "reflectToAttr": false,
+      "docs": "The text to display on the picker's cancel button.",
+      "docsTags": [],
+      "default": "'Cancel'",
+      "values": [
+        {
+          "type": "string"
+        }
+      ],
+      "optional": false,
+      "required": false
+    },
+    {
+      "name": "dayNames",
+      "type": "string | string[] | undefined",
+      "mutable": false,
+      "attr": "day-names",
+      "reflectToAttr": false,
+      "docs": "Full day of the week names. This can be used to provide\nlocale names for each day in the week. Defaults to English.",
+      "docsTags": [],
+      "values": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "string[]"
+        },
+        {
+          "type": "undefined"
+        }
+      ],
+      "optional": true,
+      "required": false
+    },
+    {
+      "name": "dayShortNames",
+      "type": "string | string[] | undefined",
+      "mutable": false,
+      "attr": "day-short-names",
+      "reflectToAttr": false,
+      "docs": "Short abbreviated day of the week names. This can be used to provide\nlocale names for each day in the week. Defaults to English.\nDefaults to: `['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']`",
+      "docsTags": [],
+      "values": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "string[]"
+        },
+        {
+          "type": "undefined"
+        }
+      ],
+      "optional": true,
+      "required": false
+    },
+    {
+      "name": "dayValues",
+      "type": "number | number[] | string | undefined",
+      "mutable": false,
+      "attr": "day-values",
+      "reflectToAttr": false,
+      "docs": "Values used to create the list of selectable days. By default\nevery day is shown for the given month. However, to control exactly which days of\nthe month to display, the `dayValues` input can take a number, an array of numbers, or\na string of comma separated numbers. Note that even if the array days have an invalid\nnumber for the selected month, like `31` in February, it will correctly not show\ndays which are not valid for the selected month.",
+      "docsTags": [],
+      "values": [
+        {
+          "type": "number"
+        },
+        {
+          "type": "number[]"
+        },
+        {
+          "type": "string"
+        },
+        {
+          "type": "undefined"
+        }
+      ],
+      "optional": true,
+      "required": false
+    },
+    {
+      "name": "disabled",
+      "type": "boolean",
+      "mutable": false,
+      "attr": "disabled",
+      "reflectToAttr": false,
+      "docs": "If `true`, the user cannot interact with the datetime.",
+      "docsTags": [],
+      "default": "false",
+      "values": [
+        {
+          "type": "boolean"
+        }
+      ],
+      "optional": false,
+      "required": false
+    },
+    {
+      "name": "displayFormat",
+      "type": "string",
+      "mutable": false,
+      "attr": "display-format",
+      "reflectToAttr": false,
+      "docs": "The display format of the date and time as text that shows\nwithin the item. When the `pickerFormat` input is not used, then the\n`displayFormat` is used for both display the formatted text, and determining\nthe datetime picker's columns. See the `pickerFormat` input description for\nmore info. Defaults to `MMM D, YYYY`.",
+      "docsTags": [],
+      "default": "'MMM D, YYYY'",
+      "values": [
+        {
+          "type": "string"
+        }
+      ],
+      "optional": false,
+      "required": false
+    },
+    {
+      "name": "displayTimezone",
+      "type": "string | undefined",
+      "mutable": false,
+      "attr": "display-timezone",
+      "reflectToAttr": false,
+      "docs": "The timezone to use for display purposes only. See\n[Date.prototype.toLocaleString()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toLocaleString)\nfor a list of supported timezones. If no value is provided, the\ncomponent will default to displaying times in the user's local timezone.",
+      "docsTags": [],
+      "values": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "undefined"
+        }
+      ],
+      "optional": true,
+      "required": false
+    },
+    {
+      "name": "doneText",
+      "type": "string",
+      "mutable": false,
+      "attr": "done-text",
+      "reflectToAttr": false,
+      "docs": "The text to display on the picker's \"Done\" button.",
+      "docsTags": [],
+      "default": "'Done'",
+      "values": [
+        {
+          "type": "string"
+        }
+      ],
+      "optional": false,
+      "required": false
+    },
+    {
+      "name": "hourValues",
+      "type": "number | number[] | string | undefined",
+      "mutable": false,
+      "attr": "hour-values",
+      "reflectToAttr": false,
+      "docs": "Values used to create the list of selectable hours. By default\nthe hour values range from `0` to `23` for 24-hour, or `1` to `12` for 12-hour. However,\nto control exactly which hours to display, the `hourValues` input can take a number, an\narray of numbers, or a string of comma separated numbers.",
+      "docsTags": [],
+      "values": [
+        {
+          "type": "number"
+        },
+        {
+          "type": "number[]"
+        },
+        {
+          "type": "string"
+        },
+        {
+          "type": "undefined"
+        }
+      ],
+      "optional": true,
+      "required": false
+    },
+    {
+      "name": "max",
+      "type": "string | undefined",
+      "mutable": true,
+      "attr": "max",
+      "reflectToAttr": false,
+      "docs": "The maximum datetime allowed. Value must be a date string\nfollowing the\n[ISO 8601 datetime format standard](https://www.w3.org/TR/NOTE-datetime),\n`1996-12-19`. The format does not have to be specific to an exact\ndatetime. For example, the maximum could just be the year, such as `1994`.\nDefaults to the end of this year.",
+      "docsTags": [],
+      "values": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "undefined"
+        }
+      ],
+      "optional": true,
+      "required": false
+    },
+    {
+      "name": "min",
+      "type": "string | undefined",
+      "mutable": true,
+      "attr": "min",
+      "reflectToAttr": false,
+      "docs": "The minimum datetime allowed. Value must be a date string\nfollowing the\n[ISO 8601 datetime format standard](https://www.w3.org/TR/NOTE-datetime),\nsuch as `1996-12-19`. The format does not have to be specific to an exact\ndatetime. For example, the minimum could just be the year, such as `1994`.\nDefaults to the beginning of the year, 100 years ago from today.",
+      "docsTags": [],
+      "values": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "undefined"
+        }
+      ],
+      "optional": true,
+      "required": false
+    },
+    {
+      "name": "minuteValues",
+      "type": "number | number[] | string | undefined",
+      "mutable": false,
+      "attr": "minute-values",
+      "reflectToAttr": false,
+      "docs": "Values used to create the list of selectable minutes. By default\nthe minutes range from `0` to `59`. However, to control exactly which minutes to display,\nthe `minuteValues` input can take a number, an array of numbers, or a string of comma\nseparated numbers. For example, if the minute selections should only be every 15 minutes,\nthen this input value would be `minuteValues=\"0,15,30,45\"`.",
+      "docsTags": [],
+      "values": [
+        {
+          "type": "number"
+        },
+        {
+          "type": "number[]"
+        },
+        {
+          "type": "string"
+        },
+        {
+          "type": "undefined"
+        }
+      ],
+      "optional": true,
+      "required": false
+    },
+    {
+      "name": "mode",
+      "type": "\"ios\" | \"md\"",
+      "mutable": false,
+      "attr": "mode",
+      "reflectToAttr": false,
+      "docs": "The mode determines which platform styles to use.",
+      "docsTags": [],
+      "values": [
+        {
+          "value": "ios",
+          "type": "string"
+        },
+        {
+          "value": "md",
+          "type": "string"
+        }
+      ],
+      "optional": true,
+      "required": false
+    },
+    {
+      "name": "monthNames",
+      "type": "string | string[] | undefined",
+      "mutable": false,
+      "attr": "month-names",
+      "reflectToAttr": false,
+      "docs": "Full names for each month name. This can be used to provide\nlocale month names. Defaults to English.",
+      "docsTags": [],
+      "values": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "string[]"
+        },
+        {
+          "type": "undefined"
+        }
+      ],
+      "optional": true,
+      "required": false
+    },
+    {
+      "name": "monthShortNames",
+      "type": "string | string[] | undefined",
+      "mutable": false,
+      "attr": "month-short-names",
+      "reflectToAttr": false,
+      "docs": "Short abbreviated names for each month name. This can be used to provide\nlocale month names. Defaults to English.",
+      "docsTags": [],
+      "values": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "string[]"
+        },
+        {
+          "type": "undefined"
+        }
+      ],
+      "optional": true,
+      "required": false
+    },
+    {
+      "name": "monthValues",
+      "type": "number | number[] | string | undefined",
+      "mutable": false,
+      "attr": "month-values",
+      "reflectToAttr": false,
+      "docs": "Values used to create the list of selectable months. By default\nthe month values range from `1` to `12`. However, to control exactly which months to\ndisplay, the `monthValues` input can take a number, an array of numbers, or a string of\ncomma separated numbers. For example, if only summer months should be shown, then this\ninput value would be `monthValues=\"6,7,8\"`. Note that month numbers do *not* have a\nzero-based index, meaning January's value is `1`, and December's is `12`.",
+      "docsTags": [],
+      "values": [
+        {
+          "type": "number"
+        },
+        {
+          "type": "number[]"
+        },
+        {
+          "type": "string"
+        },
+        {
+          "type": "undefined"
+        }
+      ],
+      "optional": true,
+      "required": false
+    },
+    {
+      "name": "name",
+      "type": "string",
+      "mutable": false,
+      "attr": "name",
+      "reflectToAttr": false,
+      "docs": "The name of the control, which is submitted with the form data.",
+      "docsTags": [],
+      "default": "this.inputId",
+      "values": [
+        {
+          "type": "string"
+        }
+      ],
+      "optional": false,
+      "required": false
+    },
+    {
+      "name": "pickerFormat",
+      "type": "string | undefined",
+      "mutable": false,
+      "attr": "picker-format",
+      "reflectToAttr": false,
+      "docs": "The format of the date and time picker columns the user selects.\nA datetime input can have one or many datetime parts, each getting their\nown column which allow individual selection of that particular datetime part. For\nexample, year and month columns are two individually selectable columns which help\nchoose an exact date from the datetime picker. Each column follows the string\nparse format. Defaults to use `displayFormat`.",
+      "docsTags": [],
+      "values": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "undefined"
+        }
+      ],
+      "optional": true,
+      "required": false
+    },
+    {
+      "name": "pickerOptions",
+      "type": "undefined | { columns?: PickerColumn[] | undefined; buttons?: PickerButton[] | undefined; cssClass?: string | string[] | undefined; showBackdrop?: boolean | undefined; backdropDismiss?: boolean | undefined; animated?: boolean | undefined; mode?: \"ios\" | \"md\" | undefined; keyboardClose?: boolean | undefined; id?: string | undefined; enterAnimation?: AnimationBuilder | undefined; leaveAnimation?: AnimationBuilder | undefined; }",
+      "mutable": false,
+      "reflectToAttr": false,
+      "docs": "Any additional options that the picker interface can accept.\nSee the [Picker API docs](../picker) for the picker options.",
+      "docsTags": [],
+      "values": [
+        {
+          "type": "undefined"
+        },
+        {
+          "type": "{ columns?: PickerColumn[]"
+        },
+        {
+          "type": "undefined; buttons?: PickerButton[]"
+        },
+        {
+          "type": "undefined; cssClass?: string"
+        },
+        {
+          "type": "string[]"
+        },
+        {
+          "type": "undefined; showBackdrop?: boolean"
+        },
+        {
+          "type": "undefined; backdropDismiss?: boolean"
+        },
+        {
+          "type": "undefined; animated?: boolean"
+        },
+        {
+          "type": "undefined; mode?: \"ios\""
+        },
+        {
+          "value": "md",
+          "type": "string"
+        },
+        {
+          "type": "undefined; keyboardClose?: boolean"
+        },
+        {
+          "type": "undefined; id?: string"
+        },
+        {
+          "type": "undefined; enterAnimation?: AnimationBuilder"
+        },
+        {
+          "type": "undefined; leaveAnimation?: AnimationBuilder"
+        },
+        {
+          "type": "undefined; }"
+        }
+      ],
+      "optional": true,
+      "required": false
+    },
+    {
+      "name": "placeholder",
+      "type": "null | string | undefined",
+      "mutable": false,
+      "attr": "placeholder",
+      "reflectToAttr": false,
+      "docs": "The text to display when there's no date selected yet.\nUsing lowercase to match the input attribute",
+      "docsTags": [],
+      "values": [
+        {
+          "type": "null"
+        },
+        {
+          "type": "string"
+        },
+        {
+          "type": "undefined"
+        }
+      ],
+      "optional": true,
+      "required": false
+    },
+    {
+      "name": "readonly",
+      "type": "boolean",
+      "mutable": false,
+      "attr": "readonly",
+      "reflectToAttr": false,
+      "docs": "If `true`, the datetime appears normal but is not interactive.",
+      "docsTags": [],
+      "default": "false",
+      "values": [
+        {
+          "type": "boolean"
+        }
+      ],
+      "optional": false,
+      "required": false
+    },
+    {
+      "name": "value",
+      "type": "null | string | undefined",
+      "mutable": true,
+      "attr": "value",
+      "reflectToAttr": false,
+      "docs": "The value of the datetime as a valid ISO 8601 datetime string.",
+      "docsTags": [],
+      "values": [
+        {
+          "type": "null"
+        },
+        {
+          "type": "string"
+        },
+        {
+          "type": "undefined"
+        }
+      ],
+      "optional": true,
+      "required": false
+    },
+    {
+      "name": "yearValues",
+      "type": "number | number[] | string | undefined",
+      "mutable": false,
+      "attr": "year-values",
+      "reflectToAttr": false,
+      "docs": "Values used to create the list of selectable years. By default\nthe year values range between the `min` and `max` datetime inputs. However, to\ncontrol exactly which years to display, the `yearValues` input can take a number, an array\nof numbers, or string of comma separated numbers. For example, to show upcoming and\nrecent leap years, then this input's value would be `yearValues=\"2024,2020,2016,2012,2008\"`.",
+      "docsTags": [],
+      "values": [
+        {
+          "type": "number"
+        },
+        {
+          "type": "number[]"
+        },
+        {
+          "type": "string"
+        },
+        {
+          "type": "undefined"
+        }
+      ],
+      "optional": true,
+      "required": false
+    }
+  ],
+  "methods": [
+    {
+      "name": "open",
+      "returns": {
+        "type": "Promise<void>",
+        "docs": ""
+      },
+      "signature": "open() => Promise<void>",
+      "parameters": [],
+      "docs": "Opens the datetime overlay.",
+      "docsTags": []
+    }
+  ],
+  "events": [
+    {
+      "event": "ionBlur",
+      "detail": "void",
+      "bubbles": true,
+      "cancelable": true,
+      "composed": true,
+      "docs": "Emitted when the datetime loses focus.",
+      "docsTags": []
+    },
+    {
+      "event": "ionCancel",
+      "detail": "void",
+      "bubbles": true,
+      "cancelable": true,
+      "composed": true,
+      "docs": "Emitted when the datetime selection was cancelled.",
+      "docsTags": []
+    },
+    {
+      "event": "ionChange",
+      "detail": "DatetimeChangeEventDetail",
+      "bubbles": true,
+      "cancelable": true,
+      "composed": true,
+      "docs": "Emitted when the value (selected date) has changed.",
+      "docsTags": []
+    },
+    {
+      "event": "ionFocus",
+      "detail": "void",
+      "bubbles": true,
+      "cancelable": true,
+      "composed": true,
+      "docs": "Emitted when the datetime has focus.",
+      "docsTags": []
+    }
+  ],
+  "listeners": [],
+  "styles": [
+    {
+      "name": "--padding-bottom",
+      "annotation": "prop",
+      "docs": "Bottom padding of the datetime"
+    },
+    {
+      "name": "--padding-end",
+      "annotation": "prop",
+      "docs": "Right padding if direction is left-to-right, and left padding if direction is right-to-left of the datetime"
+    },
+    {
+      "name": "--padding-start",
+      "annotation": "prop",
+      "docs": "Left padding if direction is left-to-right, and right padding if direction is right-to-left of the datetime"
+    },
+    {
+      "name": "--padding-top",
+      "annotation": "prop",
+      "docs": "Top padding of the datetime"
+    },
+    {
+      "name": "--placeholder-color",
+      "annotation": "prop",
+      "docs": "Color of the datetime placeholder"
+    }
+  ],
+  "slots": [],
+  "parts": [
+    {
+      "name": "placeholder",
+      "docs": "The placeholder of the datetime."
+    },
+    {
+      "name": "text",
+      "docs": "The value of the datetime."
+    }
+  ],
+  "dependents": [],
+  "dependencies": [],
+  "dependencyGraph": {}
+}

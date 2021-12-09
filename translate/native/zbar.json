@@ -1,0 +1,14 @@
+{
+  "packageName": "@ionic-native/zbar",
+  "displayName": "ZBar",
+  "description": "\nThe ZBar Scanner Plugin allows you to scan 2d barcodes.\n\nRequires Cordova plugin: `cordova-plugin-cszbar`. For more info, please see the [zBar plugin docs](https://github.com/tjwoon/csZBar).\n",
+  "usage": "\n```typescript\nimport { ZBar, ZBarOptions } from '@ionic-native/zbar/ngx';\n\nconstructor(private zbar: ZBar) { }\n\n...\n\nlet options: ZBarOptions = {\n      flash: 'off',\n      drawSight: false\n    }\n\nthis.zbar.scan(options)\n   .then(result => {\n      console.log(result); // Scanned code\n   })\n   .catch(error => {\n      console.log(error); // Error message\n   });\n\n```\n",
+  "platforms": [
+    "Android",
+    "iOS"
+  ],
+  "repo": "https://github.com/tjwoon/csZBar",
+  "cordovaPlugin": {
+    "name": "cordova-plugin-cszbar"
+  }
+}

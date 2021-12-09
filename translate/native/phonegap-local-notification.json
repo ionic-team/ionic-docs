@@ -1,0 +1,16 @@
+{
+  "packageName": "@ionic-native/phonegap-local-notification",
+  "displayName": "Phonegap Local Notification",
+  "description": "\nThe Local Notification plugin gives developers the ability to post notifications from their app that show up in the device’s notification area.\nThe API for the local notification plugin follows the W3C Web Notifications specification: https://www.w3.org/TR/notifications/\n",
+  "usage": "\n```\nimport { PhonegapLocalNotification } from '@ionic-native/phonegap-local-notification/ngx';\n\n\nconstructor(private localNotification: PhonegapLocalNotification) { }\n\n...\n\nthis.localNotification.requestPermission().then(\n  (permission) => {\n    if (permission === 'granted') {\n\n      // Create the notification\n      this.localNotification.create('My Title', {\n        tag: 'message1',\n        body: 'My body',\n        icon: 'assets/icon/favicon.ico'\n      });\n\n    }\n  }\n);\n\n```\n",
+  "platforms": [
+    "Android",
+    "Browser",
+    "iOS",
+    "Windows"
+  ],
+  "repo": "https://github.com/phonegap/phonegap-plugin-local-notification",
+  "cordovaPlugin": {
+    "name": "phonegap-plugin-local-notification"
+  }
+}

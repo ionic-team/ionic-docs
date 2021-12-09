@@ -1,0 +1,14 @@
+{
+  "packageName": "@ionic-native/analytics-firebase",
+  "displayName": "Analytics Firebase",
+  "description": "\nGoogle Analytics Firebase plugin for Ionic Native apps.\n",
+  "usage": "\n```typescript\nimport { AnalyticsFirebase } from '@ionic-native/analytics-firebase';\n\n\nconstructor(private analyticsFirebase: AnalyticsFirebase) { }\n\n// Track an event with default events and params\nconst eventParams = {};\neventParams[this.analyticsFirebase.DEFAULT_PARAMS.LEVEL] = 29;\nthis.analyticsFirebase.logEvent(this.analyticsFirebase.DEFAULT_EVENTS.LEVEL_UP, eventParams)\n  .then(() => console.log('Event successfully tracked'))\n  .catch(err => console.log('Error tracking event:', err));\n\n// Track an event with custom events and params\nconst eventParams = {};\neventParams['my-prop'] = 29;\nthis.analyticsFirebase.logEvent('my-event', eventParams)\n  .then(() => console.log('Event successfully tracked'))\n  .catch(err => console.log('Error tracking event:', err));\n\n\n// Reset analytics data\nthis.analyticsFirebase.resetAnalyticsData()\n  .then(() => console.log('Analytics data have been reset'))\n  .catch(err => console.log('Error resetting analytics data:', err));\n\n\n// Track a screen view\nthis.analyticsFirebase.setCurrentScreen('Home')\n  .then(() => console.log('View successfully tracked'))\n  .catch(err => console.log('Error tracking view:', err));\n\n\n// Set user id\nthis.analyticsFirebase.setUserId('USER-ID')\n  .then(() => console.log('User id successfully set'))\n  .catch(err => console.log('Error setting user id:', err));\n\n\n// Set user property from default properties\nthis.analyticsFirebase.setUserProperty('KEY', 'VALUE')\n  .then(() => console.log('User property successfully set'))\n  .catch(err => console.log('Error setting user property:', err));\n\n```\n",
+  "platforms": [
+    "Android",
+    "iOS"
+  ],
+  "repo": "https://github.com/appfeel/analytics-google",
+  "cordovaPlugin": {
+    "name": "cordova-plugin-analytics"
+  }
+}

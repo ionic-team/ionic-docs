@@ -1,0 +1,14 @@
+{
+  "packageName": "@ionic-native/firebase-crash",
+  "displayName": "FirebaseCrash",
+  "description": "\nThis plugin brings crash reporting from Google Firebase to your Cordova project! Android and iOS supported.\n",
+  "usage": "\n```typescript\nimport { FirebaseCrash } from '@ionic-native/firebase-crash';\n\nconstructor(private firebaseCrash: FirebaseCrash) { }\n\n...\n\nthis.firebaseCrash.setUserId('123456789');\nthis.firebaseCrash.log('message');\nthis.firebaseCrash.logError('non fatal exception');\n\n```\n",
+  "platforms": [
+    "Android",
+    "iOS"
+  ],
+  "repo": "https://github.com/chemerisuk/cordova-plugin-firebase-crash",
+  "cordovaPlugin": {
+    "name": "cordova-plugin-firebase-crash"
+  }
+}

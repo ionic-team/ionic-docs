@@ -1,0 +1,69 @@
+{
+  "filePath": "./src/components/footer/footer.tsx",
+  "encapsulation": "none",
+  "tag": "ion-footer",
+  "readme": "# ion-footer\n\nFooter is a root component of a page that sits at the bottom of the page.\nFooter can be a wrapper for ion-toolbar to make sure the content area is sized correctly.\n",
+  "docs": "Footer is a root component of a page that sits at the bottom of the page.\nFooter can be a wrapper for ion-toolbar to make sure the content area is sized correctly.",
+  "docsTags": [
+    {
+      "text": "{\"ios\" | \"md\"} mode - The mode determines which platform styles to use.",
+      "name": "virtualProp"
+    }
+  ],
+  "usage": {
+    "angular": "```html\n<ion-content></ion-content>\n\n<!-- Footer without a border -->\n<ion-footer class=\"ion-no-border\">\n  <ion-toolbar>\n    <ion-title>Footer - No Border</ion-title>\n  </ion-toolbar>\n</ion-footer>\n\n<ion-footer>\n  <ion-toolbar>\n    <ion-title>Footer</ion-title>\n  </ion-toolbar>\n</ion-footer>\n```\n",
+    "javascript": "```html\n<ion-content></ion-content>\n\n<!-- Footer without a border -->\n<ion-footer class=\"ion-no-border\">\n  <ion-toolbar>\n    <ion-title>Footer - No Border</ion-title>\n  </ion-toolbar>\n</ion-footer>\n\n<ion-footer>\n  <ion-toolbar>\n    <ion-title>Footer</ion-title>\n  </ion-toolbar>\n</ion-footer>\n```\n",
+    "react": "```tsx\nimport React from 'react';\nimport { IonContent, IonFooter, IonToolbar, IonTitle } from '@ionic/react';\n\nexport const FooterExample: React.FC = () => (\n  <>\n    <IonContent />\n    \n    {/*-- Footer without a border --*/}\n    <IonFooter className=\"ion-no-border\">\n      <IonToolbar>\n        <IonTitle>Footer - No Border</IonTitle>\n      </IonToolbar>\n    </IonFooter>\n\n    <IonFooter>\n      <IonToolbar>\n        <IonTitle>Footer</IonTitle>\n      </IonToolbar>\n    </IonFooter>\n  </>\n);\n```\n",
+    "stencil": "```tsx\nimport { Component, h } from '@stencil/core';\n\n@Component({\n  tag: 'footer-example',\n  styleUrl: 'footer-example.css'\n})\nexport class FooterExample {\n  render() {\n    return [\n      <ion-content></ion-content>,\n\n      // Footer without a border\n      <ion-footer class=\"ion-no-border\">\n        <ion-toolbar>\n          <ion-title>Footer - No Border</ion-title>\n        </ion-toolbar>\n      </ion-footer>,\n\n      <ion-footer>\n        <ion-toolbar>\n          <ion-title>Footer</ion-title>\n        </ion-toolbar>\n      </ion-footer>\n    ];\n  }\n}\n```\n",
+    "vue": "```html\n<template>\n  <ion-content></ion-content>\n  \n  <!-- Footer without a border -->\n  <ion-footer class=\"ion-no-border\">\n    <ion-toolbar>\n      <ion-title>Footer - No Border</ion-title>\n    </ion-toolbar>\n  </ion-footer>\n  \n  <ion-footer>\n    <ion-toolbar>\n      <ion-title>Footer</ion-title>\n    </ion-toolbar>\n  </ion-footer>\n</template>\n\n<script>\nimport { IonContent, IonFooter, IonTitle, IonToolbar } from '@ionic/vue';\nimport { defineComponent } from 'vue';\n\nexport default defineComponent({\n  components: { IonContent, IonFooter, IonTitle, IonToolbar }\n});\n</script>\n```\n"
+  },
+  "props": [
+    {
+      "name": "mode",
+      "type": "\"ios\" | \"md\"",
+      "mutable": false,
+      "attr": "mode",
+      "reflectToAttr": false,
+      "docs": "The mode determines which platform styles to use.",
+      "docsTags": [],
+      "values": [
+        {
+          "value": "ios",
+          "type": "string"
+        },
+        {
+          "value": "md",
+          "type": "string"
+        }
+      ],
+      "optional": true,
+      "required": false
+    },
+    {
+      "name": "translucent",
+      "type": "boolean",
+      "mutable": false,
+      "attr": "translucent",
+      "reflectToAttr": false,
+      "docs": "If `true`, the footer will be translucent.\nOnly applies when the mode is `\"ios\"` and the device supports\n[`backdrop-filter`](https://developer.mozilla.org/en-US/docs/Web/CSS/backdrop-filter#Browser_compatibility).\n\nNote: In order to scroll content behind the footer, the `fullscreen`\nattribute needs to be set on the content.",
+      "docsTags": [],
+      "default": "false",
+      "values": [
+        {
+          "type": "boolean"
+        }
+      ],
+      "optional": false,
+      "required": false
+    }
+  ],
+  "methods": [],
+  "events": [],
+  "listeners": [],
+  "styles": [],
+  "slots": [],
+  "parts": [],
+  "dependents": [],
+  "dependencies": [],
+  "dependencyGraph": {}
+}

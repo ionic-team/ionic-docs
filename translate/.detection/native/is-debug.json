@@ -1,0 +1,14 @@
+{
+  "packageName": "@ionic-native/is-debug",
+  "displayName": "Is Debug",
+  "description": "\nDetect if the app is running in debug mode or not.\nDebug mode is when the app is built and installed locally via xcode / eclipse / the cordova cli etc, compared to release mode when the app was downloaded from the app / play store via an end user.\n",
+  "usage": "\n```typescript\nimport { IsDebug } from '@ionic-native/is-debug/ngx';\n\nconstructor(private isDebug: IsDebug) { }\n\n...\n\nthis.isDebug.getIsDebug()\n  .then(isDebug => console.log('Is debug:', isDebug))\n  .catch(err => console.error(err));\n\n```\n",
+  "platforms": [
+    "Android",
+    "iOS"
+  ],
+  "repo": "https://github.com/mattlewis92/cordova-plugin-is-debug",
+  "cordovaPlugin": {
+    "name": "cordova-plugin-is-debug"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "name": "ionic logout",
+  "namespace": [
+    "ionic"
+  ],
+  "summary": "Log out of Ionic",
+  "description": "Remove the Ionic user token from the CLI config.\n\nLog in again with `ionic login`.\n\nIf you need to create an Ionic account, use `ionic signup`.",
+  "footnotes": [],
+  "groups": [],
+  "exampleCommands": [],
+  "aliases": [],
+  "inputs": [],
+  "options": [],
+  "type": "global"
+}

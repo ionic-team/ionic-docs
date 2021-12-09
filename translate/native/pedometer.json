@@ -1,0 +1,14 @@
+{
+  "packageName": "@ionic-native/pedometer",
+  "displayName": "Pedometer",
+  "description": "\nFetch pedestrian-related pedometer data,\nsuch as step counts and other information about the distance travelled.\n",
+  "usage": "\n```typescript\nimport { Pedometer } from '@ionic-native/pedometer/ngx';\n\nPedometer.isDistanceAvailable()\n  .then((available: boolean) => console.log(available))\n  .catch((error: any) => console.log(error));\n\nPedometer.startPedometerUpdates()\n   .subscribe((data: IPedometerData) => {\n     console.log(data);\n   });\n```\n",
+  "platforms": [
+    "Android",
+    "iOS"
+  ],
+  "repo": "https://github.com/leecrossley/cordova-plugin-pedometer",
+  "cordovaPlugin": {
+    "name": "cordova-plugin-pedometer"
+  }
+}

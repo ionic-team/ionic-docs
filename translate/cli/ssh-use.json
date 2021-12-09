@@ -1,0 +1,22 @@
+{
+  "name": "ionic ssh use",
+  "namespace": [
+    "ionic",
+    "ssh"
+  ],
+  "summary": "Set your active Ionic SSH key",
+  "description": "This command modifies the SSH configuration file (**~/.ssh/config**) to set an active private key for the **git.ionicjs.com** host. Read more about SSH configuration by running the `man ssh_config` command or by visiting online man [pages](https://linux.die.net/man/5/ssh_config).\n\nBefore making changes, `ionic ssh use` will print a diff and ask for permission to write the file.",
+  "footnotes": [],
+  "groups": [],
+  "exampleCommands": [],
+  "aliases": [],
+  "inputs": [
+    {
+      "name": "key-path",
+      "summary": "Location of private key file to use",
+      "required": true
+    }
+  ],
+  "options": [],
+  "type": "global"
+}

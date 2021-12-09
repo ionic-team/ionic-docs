@@ -1,0 +1,14 @@
+{
+  "packageName": "@ionic-native/web-server",
+  "displayName": "Web Server",
+  "description": "\nThis plugin allows you to start a local dynamic content web server for android and iOS devices.\n",
+  "usage": "\n```typescript\nimport { WebServer } from '@ionic-native/web-server/ngx';\n\n\nconstructor(private webServer: WebServer) { }\n\n...\n\nthis.webServer.onRequest().subscribe(data => {\n  console.log(data);\n  const res: Response = {\n    status: 200,\n    body: '',\n    headers: {\n      'Content-Type': 'text/html'\n    }\n  };\n\n  this.webServer.sendResponse(data.requestId, res)\n    .catch((error: any) => console.error(error));\n});\n\nthis.webServer.start(80)\n  .catch((error: any) => console.error(error));\n\n```\n",
+  "platforms": [
+    "Android",
+    "iOS"
+  ],
+  "repo": "https://github.com/bykof/cordova-plugin-webserver.git",
+  "cordovaPlugin": {
+    "name": "cordova-plugin-webserver"
+  }
+}

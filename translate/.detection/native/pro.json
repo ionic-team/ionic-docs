@@ -1,0 +1,14 @@
+{
+  "packageName": "@ionic-native/pro",
+  "displayName": "Pro",
+  "description": "\nThis plugin enables Ionic Pro services like live updates and error monitoring\n",
+  "usage": "\n```typescript\nimport { Pro, AppInfo, DeployInfo } from '@ionic-native/pro/ngx';\n\n\nconstructor(private pro: Pro) { }\n\n// Get app info\nthis.pro.getAppInfo().then((res: AppInfo) => {\n  console.log(res)\n})\n\n// Get live update info\nthis.pro.deploy.info().then((res: DeployInfo) => {\n  console.log(res)\n})\n```\n",
+  "platforms": [
+    "Android",
+    "iOS"
+  ],
+  "repo": "https://github.com/ionic-team/cordova-plugin-ionic",
+  "cordovaPlugin": {
+    "name": "cordova-plugin-ionic"
+  }
+}

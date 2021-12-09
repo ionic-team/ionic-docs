@@ -1,0 +1,598 @@
+{
+  "filePath": "./src/components/textarea/textarea.tsx",
+  "encapsulation": "scoped",
+  "tag": "ion-textarea",
+  "readme": "# ion-textarea\n\nThe textarea component is used for multi-line text input. A native textarea element is rendered inside of the component. The user experience and interactivity of the textarea component is improved by having control over the native textarea.\n\nUnlike the native textarea element, the Ionic textarea does not support loading its value from the inner content. The textarea value should be set in the `value` attribute.\n\nThe textarea component accepts the [native textarea attributes](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/textarea) in addition to the Ionic properties.\n\n\n",
+  "docs": "The textarea component is used for multi-line text input. A native textarea element is rendered inside of the component. The user experience and interactivity of the textarea component is improved by having control over the native textarea.\n\nUnlike the native textarea element, the Ionic textarea does not support loading its value from the inner content. The textarea value should be set in the `value` attribute.\n\nThe textarea component accepts the [native textarea attributes](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/textarea) in addition to the Ionic properties.",
+  "docsTags": [
+    {
+      "text": "{\"ios\" | \"md\"} mode - The mode determines which platform styles to use.",
+      "name": "virtualProp"
+    }
+  ],
+  "usage": {
+    "angular": "```html\n<!-- Default textarea -->\n<ion-textarea></ion-textarea>\n\n<!-- Textarea in an item with a placeholder -->\n<ion-item>\n  <ion-textarea placeholder=\"Enter more information here...\"></ion-textarea>\n</ion-item>\n\n<!-- Textarea in an item with a floating label -->\n<ion-item>\n  <ion-label position=\"floating\">Description</ion-label>\n  <ion-textarea></ion-textarea>\n</ion-item>\n\n<!-- Disabled and readonly textarea in an item with a stacked label -->\n<ion-item>\n  <ion-label position=\"stacked\">Summary</ion-label>\n  <ion-textarea\n    disabled\n    readonly\n    value=\"Ionic enables developers to build performant, high-quality mobile apps.\">\n  </ion-textarea>\n</ion-item>\n\n<!-- Textarea that clears the value on edit -->\n<ion-item>\n  <ion-label>Comment</ion-label>\n  <ion-textarea clearOnEdit=\"true\"></ion-textarea>\n</ion-item>\n\n<!-- Textarea with custom number of rows and cols -->\n<ion-item>\n  <ion-label>Notes</ion-label>\n  <ion-textarea rows=\"6\" cols=\"20\" placeholder=\"Enter any notes here...\"></ion-textarea>\n</ion-item>\n```\n",
+    "javascript": "```html\n<!-- Default textarea -->\n<ion-textarea></ion-textarea>\n\n<!-- Textarea in an item with a placeholder -->\n<ion-item>\n  <ion-textarea placeholder=\"Enter more information here...\"></ion-textarea>\n</ion-item>\n\n<!-- Textarea in an item with a floating label -->\n<ion-item>\n  <ion-label position=\"floating\">Description</ion-label>\n  <ion-textarea></ion-textarea>\n</ion-item>\n\n<!-- Disabled and readonly textarea in an item with a stacked label -->\n<ion-item>\n  <ion-label position=\"stacked\">Summary</ion-label>\n  <ion-textarea\n    disabled\n    readonly\n    value=\"Ionic enables developers to build performant, high-quality mobile apps.\">\n  </ion-textarea>\n</ion-item>\n\n<!-- Textarea that clears the value on edit -->\n<ion-item>\n  <ion-label>Comment</ion-label>\n  <ion-textarea clear-on-edit=\"true\"></ion-textarea>\n</ion-item>\n\n<!-- Textarea with custom number of rows and cols -->\n<ion-item>\n  <ion-label>Notes</ion-label>\n  <ion-textarea rows=\"6\" cols=\"20\" placeholder=\"Enter any notes here...\"></ion-textarea>\n</ion-item>\n```\n",
+    "react": "```tsx\nimport React, { useState } from 'react';\nimport { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonTextarea, IonItem, IonLabel, IonItemDivider, IonList } from '@ionic/react';\n\nexport const TextAreaExamples: React.FC = () => {\n  const [text, setText] = useState<string>();\n\n  return (\n    <IonPage>\n      <IonHeader>\n        <IonToolbar>\n          <IonTitle>TextArea Examples</IonTitle>\n        </IonToolbar>\n      </IonHeader>\n      <IonContent>\n        <IonList>\n          <IonItemDivider>Default textarea</IonItemDivider>          \n          <IonItem>\n            <IonTextarea value={text} onIonChange={e => setText(e.detail.value!)}></IonTextarea>\n          </IonItem>\n\n          <IonItemDivider>Textarea in an item with a placeholder</IonItemDivider>\n          <IonItem>\n            <IonTextarea placeholder=\"Enter more information here...\" value={text} onIonChange={e => setText(e.detail.value!)}></IonTextarea>\n          </IonItem>\n\n          <IonItemDivider>Textarea in an item with a floating label</IonItemDivider>\n          <IonItem>\n            <IonLabel position=\"floating\">Description</IonLabel>\n            <IonTextarea value={text} onIonChange={e => setText(e.detail.value!)}></IonTextarea>\n          </IonItem>\n\n          <IonItemDivider>Disabled and readonly textarea in an item with a stacked label</IonItemDivider>\n          <IonItem>\n            <IonLabel position=\"stacked\">Summary</IonLabel>\n            <IonTextarea\n              disabled\n              readonly\n              value={text} onIonChange={e => setText(e.detail.value!)}>\n            </IonTextarea>\n          </IonItem>\n\n          <IonItemDivider>Textarea that clears the value on edit</IonItemDivider>\n          <IonItem>\n            <IonLabel>Comment</IonLabel>\n            <IonTextarea clearOnEdit={true} value={text} onIonChange={e => setText(e.detail.value!)}></IonTextarea>\n          </IonItem>\n\n          <IonItemDivider>Textarea with custom number of rows and cols</IonItemDivider>\n          <IonItem>\n            <IonLabel>Notes</IonLabel>\n            <IonTextarea rows={6} cols={20} placeholder=\"Enter any notes here...\" value={text} onIonChange={e => setText(e.detail.value!)}></IonTextarea>\n          </IonItem>\n        </IonList>\n      </IonContent>\n    </IonPage>\n  );\n};\n```\n",
+    "stencil": "```tsx\nimport { Component, h } from '@stencil/core';\n\n@Component({\n  tag: 'textarea-example',\n  styleUrl: 'textarea-example.css'\n})\nexport class TextareaExample {\n  render() {\n    return [\n      // Default textarea\n      <ion-textarea></ion-textarea>,\n\n      // Textarea in an item with a placeholder\n      <ion-item>\n        <ion-textarea placeholder=\"Enter more information here...\"></ion-textarea>\n      </ion-item>,\n\n      // Textarea in an item with a floating label\n      <ion-item>\n        <ion-label position=\"floating\">Description</ion-label>\n        <ion-textarea></ion-textarea>\n      </ion-item>,\n\n      // Disabled and readonly textarea in an item with a stacked label\n      <ion-item>\n        <ion-label position=\"stacked\">Summary</ion-label>\n        <ion-textarea\n          disabled\n          readonly\n          value=\"Ionic enables developers to build performant, high-quality mobile apps.\">\n        </ion-textarea>\n      </ion-item>,\n\n      // Textarea that clears the value on edit\n      <ion-item>\n        <ion-label>Comment</ion-label>\n        <ion-textarea clearOnEdit={true}></ion-textarea>\n      </ion-item>,\n\n      // Textarea with custom number of rows and cols\n      <ion-item>\n        <ion-label>Notes</ion-label>\n        <ion-textarea rows={6} cols={20} placeholder=\"Enter any notes here...\"></ion-textarea>\n      </ion-item>\n    ];\n  }\n}\n```\n",
+    "vue": "```html\n<template>\n  <!-- Default textarea -->\n  <ion-textarea></ion-textarea>\n\n  <!-- Textarea in an item with a placeholder -->\n  <ion-item>\n    <ion-textarea placeholder=\"Enter more information here...\"></ion-textarea>\n  </ion-item>\n\n  <!-- Textarea in an item with a floating label -->\n  <ion-item>\n    <ion-label position=\"floating\">Description</ion-label>\n    <ion-textarea></ion-textarea>\n  </ion-item>\n\n  <!-- Disabled and readonly textarea in an item with a stacked label -->\n  <ion-item>\n    <ion-label position=\"stacked\">Summary</ion-label>\n    <ion-textarea\n      disabled\n      readonly\n      value=\"Ionic enables developers to build performant, high-quality mobile apps.\">\n    </ion-textarea>\n  </ion-item>\n\n  <!-- Textarea that clears the value on edit -->\n  <ion-item>\n    <ion-label>Comment</ion-label>\n    <ion-textarea clear-on-edit=\"true\"></ion-textarea>\n  </ion-item>\n\n  <!-- Textarea with custom number of rows and cols -->\n  <ion-item>\n    <ion-label>Notes</ion-label>\n    <ion-textarea rows=\"6\" cols=\"20\" placeholder=\"Enter any notes here...\"></ion-textarea>\n  </ion-item>\n</template>\n\n<script>\nimport { IonItem, IonLabel, IonTextarea } from '@ionic/vue';\nimport { defineComponent } from 'vue';\n\nexport default defineComponent({\n  components: { IonItem, IonLabel, IonTextarea }\n});\n</script>\n```\n"
+  },
+  "props": [
+    {
+      "name": "autoGrow",
+      "type": "boolean",
+      "mutable": false,
+      "attr": "auto-grow",
+      "reflectToAttr": false,
+      "docs": "If `true`, the element height will increase based on the value.",
+      "docsTags": [],
+      "default": "false",
+      "values": [
+        {
+          "type": "boolean"
+        }
+      ],
+      "optional": false,
+      "required": false
+    },
+    {
+      "name": "autocapitalize",
+      "type": "string",
+      "mutable": false,
+      "attr": "autocapitalize",
+      "reflectToAttr": false,
+      "docs": "Indicates whether and how the text value should be automatically capitalized as it is entered/edited by the user.",
+      "docsTags": [],
+      "default": "'none'",
+      "values": [
+        {
+          "type": "string"
+        }
+      ],
+      "optional": false,
+      "required": false
+    },
+    {
+      "name": "autofocus",
+      "type": "boolean",
+      "mutable": false,
+      "attr": "autofocus",
+      "reflectToAttr": false,
+      "docs": "This Boolean attribute lets you specify that a form control should have input focus when the page loads.",
+      "docsTags": [],
+      "default": "false",
+      "values": [
+        {
+          "type": "boolean"
+        }
+      ],
+      "optional": false,
+      "required": false
+    },
+    {
+      "name": "clearOnEdit",
+      "type": "boolean",
+      "mutable": true,
+      "attr": "clear-on-edit",
+      "reflectToAttr": false,
+      "docs": "If `true`, the value will be cleared after focus upon edit. Defaults to `true` when `type` is `\"password\"`, `false` for all other types.",
+      "docsTags": [],
+      "default": "false",
+      "values": [
+        {
+          "type": "boolean"
+        }
+      ],
+      "optional": false,
+      "required": false
+    },
+    {
+      "name": "color",
+      "type": "string | undefined",
+      "mutable": false,
+      "attr": "color",
+      "reflectToAttr": false,
+      "docs": "The color to use from your application's color palette.\nDefault options are: `\"primary\"`, `\"secondary\"`, `\"tertiary\"`, `\"success\"`, `\"warning\"`, `\"danger\"`, `\"light\"`, `\"medium\"`, and `\"dark\"`.\nFor more information on colors, see [theming](/docs/theming/basics).",
+      "docsTags": [],
+      "values": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "undefined"
+        }
+      ],
+      "optional": true,
+      "required": false
+    },
+    {
+      "name": "cols",
+      "type": "number | undefined",
+      "mutable": false,
+      "attr": "cols",
+      "reflectToAttr": false,
+      "docs": "The visible width of the text control, in average character widths. If it is specified, it must be a positive integer.",
+      "docsTags": [],
+      "values": [
+        {
+          "type": "number"
+        },
+        {
+          "type": "undefined"
+        }
+      ],
+      "optional": true,
+      "required": false
+    },
+    {
+      "name": "debounce",
+      "type": "number",
+      "mutable": false,
+      "attr": "debounce",
+      "reflectToAttr": false,
+      "docs": "Set the amount of time, in milliseconds, to wait to trigger the `ionChange` event after each keystroke. This also impacts form bindings such as `ngModel` or `v-model`.",
+      "docsTags": [],
+      "default": "0",
+      "values": [
+        {
+          "type": "number"
+        }
+      ],
+      "optional": false,
+      "required": false
+    },
+    {
+      "name": "disabled",
+      "type": "boolean",
+      "mutable": false,
+      "attr": "disabled",
+      "reflectToAttr": false,
+      "docs": "If `true`, the user cannot interact with the textarea.",
+      "docsTags": [],
+      "default": "false",
+      "values": [
+        {
+          "type": "boolean"
+        }
+      ],
+      "optional": false,
+      "required": false
+    },
+    {
+      "name": "enterkeyhint",
+      "type": "\"done\" | \"enter\" | \"go\" | \"next\" | \"previous\" | \"search\" | \"send\" | undefined",
+      "mutable": false,
+      "attr": "enterkeyhint",
+      "reflectToAttr": false,
+      "docs": "A hint to the browser for which enter key to display.\nPossible values: `\"enter\"`, `\"done\"`, `\"go\"`, `\"next\"`,\n`\"previous\"`, `\"search\"`, and `\"send\"`.",
+      "docsTags": [],
+      "values": [
+        {
+          "value": "done",
+          "type": "string"
+        },
+        {
+          "value": "enter",
+          "type": "string"
+        },
+        {
+          "value": "go",
+          "type": "string"
+        },
+        {
+          "value": "next",
+          "type": "string"
+        },
+        {
+          "value": "previous",
+          "type": "string"
+        },
+        {
+          "value": "search",
+          "type": "string"
+        },
+        {
+          "value": "send",
+          "type": "string"
+        },
+        {
+          "type": "undefined"
+        }
+      ],
+      "optional": true,
+      "required": false
+    },
+    {
+      "name": "inputmode",
+      "type": "\"decimal\" | \"email\" | \"none\" | \"numeric\" | \"search\" | \"tel\" | \"text\" | \"url\" | undefined",
+      "mutable": false,
+      "attr": "inputmode",
+      "reflectToAttr": false,
+      "docs": "A hint to the browser for which keyboard to display.\nPossible values: `\"none\"`, `\"text\"`, `\"tel\"`, `\"url\"`,\n`\"email\"`, `\"numeric\"`, `\"decimal\"`, and `\"search\"`.",
+      "docsTags": [],
+      "values": [
+        {
+          "value": "decimal",
+          "type": "string"
+        },
+        {
+          "value": "email",
+          "type": "string"
+        },
+        {
+          "value": "none",
+          "type": "string"
+        },
+        {
+          "value": "numeric",
+          "type": "string"
+        },
+        {
+          "value": "search",
+          "type": "string"
+        },
+        {
+          "value": "tel",
+          "type": "string"
+        },
+        {
+          "value": "text",
+          "type": "string"
+        },
+        {
+          "value": "url",
+          "type": "string"
+        },
+        {
+          "type": "undefined"
+        }
+      ],
+      "optional": true,
+      "required": false
+    },
+    {
+      "name": "maxlength",
+      "type": "number | undefined",
+      "mutable": false,
+      "attr": "maxlength",
+      "reflectToAttr": false,
+      "docs": "If the value of the type attribute is `text`, `email`, `search`, `password`, `tel`, or `url`, this attribute specifies the maximum number of characters that the user can enter.",
+      "docsTags": [],
+      "values": [
+        {
+          "type": "number"
+        },
+        {
+          "type": "undefined"
+        }
+      ],
+      "optional": true,
+      "required": false
+    },
+    {
+      "name": "minlength",
+      "type": "number | undefined",
+      "mutable": false,
+      "attr": "minlength",
+      "reflectToAttr": false,
+      "docs": "If the value of the type attribute is `text`, `email`, `search`, `password`, `tel`, or `url`, this attribute specifies the minimum number of characters that the user can enter.",
+      "docsTags": [],
+      "values": [
+        {
+          "type": "number"
+        },
+        {
+          "type": "undefined"
+        }
+      ],
+      "optional": true,
+      "required": false
+    },
+    {
+      "name": "mode",
+      "type": "\"ios\" | \"md\"",
+      "mutable": false,
+      "attr": "mode",
+      "reflectToAttr": false,
+      "docs": "The mode determines which platform styles to use.",
+      "docsTags": [],
+      "values": [
+        {
+          "value": "ios",
+          "type": "string"
+        },
+        {
+          "value": "md",
+          "type": "string"
+        }
+      ],
+      "optional": true,
+      "required": false
+    },
+    {
+      "name": "name",
+      "type": "string",
+      "mutable": false,
+      "attr": "name",
+      "reflectToAttr": false,
+      "docs": "The name of the control, which is submitted with the form data.",
+      "docsTags": [],
+      "default": "this.inputId",
+      "values": [
+        {
+          "type": "string"
+        }
+      ],
+      "optional": false,
+      "required": false
+    },
+    {
+      "name": "placeholder",
+      "type": "null | string | undefined",
+      "mutable": false,
+      "attr": "placeholder",
+      "reflectToAttr": false,
+      "docs": "Instructional text that shows before the input has a value.",
+      "docsTags": [],
+      "values": [
+        {
+          "type": "null"
+        },
+        {
+          "type": "string"
+        },
+        {
+          "type": "undefined"
+        }
+      ],
+      "optional": true,
+      "required": false
+    },
+    {
+      "name": "readonly",
+      "type": "boolean",
+      "mutable": false,
+      "attr": "readonly",
+      "reflectToAttr": false,
+      "docs": "If `true`, the user cannot modify the value.",
+      "docsTags": [],
+      "default": "false",
+      "values": [
+        {
+          "type": "boolean"
+        }
+      ],
+      "optional": false,
+      "required": false
+    },
+    {
+      "name": "required",
+      "type": "boolean",
+      "mutable": false,
+      "attr": "required",
+      "reflectToAttr": false,
+      "docs": "If `true`, the user must fill in a value before submitting a form.",
+      "docsTags": [],
+      "default": "false",
+      "values": [
+        {
+          "type": "boolean"
+        }
+      ],
+      "optional": false,
+      "required": false
+    },
+    {
+      "name": "rows",
+      "type": "number | undefined",
+      "mutable": false,
+      "attr": "rows",
+      "reflectToAttr": false,
+      "docs": "The number of visible text lines for the control.",
+      "docsTags": [],
+      "values": [
+        {
+          "type": "number"
+        },
+        {
+          "type": "undefined"
+        }
+      ],
+      "optional": true,
+      "required": false
+    },
+    {
+      "name": "spellcheck",
+      "type": "boolean",
+      "mutable": false,
+      "attr": "spellcheck",
+      "reflectToAttr": false,
+      "docs": "If `true`, the element will have its spelling and grammar checked.",
+      "docsTags": [],
+      "default": "false",
+      "values": [
+        {
+          "type": "boolean"
+        }
+      ],
+      "optional": false,
+      "required": false
+    },
+    {
+      "name": "value",
+      "type": "null | string | undefined",
+      "mutable": true,
+      "attr": "value",
+      "reflectToAttr": false,
+      "docs": "The value of the textarea.",
+      "docsTags": [],
+      "default": "''",
+      "values": [
+        {
+          "type": "null"
+        },
+        {
+          "type": "string"
+        },
+        {
+          "type": "undefined"
+        }
+      ],
+      "optional": true,
+      "required": false
+    },
+    {
+      "name": "wrap",
+      "type": "\"hard\" | \"off\" | \"soft\" | undefined",
+      "mutable": false,
+      "attr": "wrap",
+      "reflectToAttr": false,
+      "docs": "Indicates how the control wraps text.",
+      "docsTags": [],
+      "values": [
+        {
+          "value": "hard",
+          "type": "string"
+        },
+        {
+          "value": "off",
+          "type": "string"
+        },
+        {
+          "value": "soft",
+          "type": "string"
+        },
+        {
+          "type": "undefined"
+        }
+      ],
+      "optional": true,
+      "required": false
+    }
+  ],
+  "methods": [
+    {
+      "name": "getInputElement",
+      "returns": {
+        "type": "Promise<HTMLTextAreaElement>",
+        "docs": ""
+      },
+      "signature": "getInputElement() => Promise<HTMLTextAreaElement>",
+      "parameters": [],
+      "docs": "Returns the native `<textarea>` element used under the hood.",
+      "docsTags": []
+    },
+    {
+      "name": "setFocus",
+      "returns": {
+        "type": "Promise<void>",
+        "docs": ""
+      },
+      "signature": "setFocus() => Promise<void>",
+      "parameters": [],
+      "docs": "Sets focus on the native `textarea` in `ion-textarea`. Use this method instead of the global\n`textarea.focus()`.",
+      "docsTags": []
+    }
+  ],
+  "events": [
+    {
+      "event": "ionBlur",
+      "detail": "FocusEvent",
+      "bubbles": true,
+      "cancelable": true,
+      "composed": true,
+      "docs": "Emitted when the input loses focus.",
+      "docsTags": []
+    },
+    {
+      "event": "ionChange",
+      "detail": "TextareaChangeEventDetail",
+      "bubbles": true,
+      "cancelable": true,
+      "composed": true,
+      "docs": "Emitted when the input value has changed.",
+      "docsTags": []
+    },
+    {
+      "event": "ionFocus",
+      "detail": "FocusEvent",
+      "bubbles": true,
+      "cancelable": true,
+      "composed": true,
+      "docs": "Emitted when the input has focus.",
+      "docsTags": []
+    },
+    {
+      "event": "ionInput",
+      "detail": "KeyboardEvent",
+      "bubbles": true,
+      "cancelable": true,
+      "composed": true,
+      "docs": "Emitted when a keyboard input occurred.",
+      "docsTags": []
+    }
+  ],
+  "listeners": [],
+  "styles": [
+    {
+      "name": "--background",
+      "annotation": "prop",
+      "docs": "Background of the textarea"
+    },
+    {
+      "name": "--border-radius",
+      "annotation": "prop",
+      "docs": "Border radius of the textarea"
+    },
+    {
+      "name": "--color",
+      "annotation": "prop",
+      "docs": "Color of the text"
+    },
+    {
+      "name": "--padding-bottom",
+      "annotation": "prop",
+      "docs": "Bottom padding of the textarea"
+    },
+    {
+      "name": "--padding-end",
+      "annotation": "prop",
+      "docs": "Right padding if direction is left-to-right, and left padding if direction is right-to-left of the textarea"
+    },
+    {
+      "name": "--padding-start",
+      "annotation": "prop",
+      "docs": "Left padding if direction is left-to-right, and right padding if direction is right-to-left of the textarea"
+    },
+    {
+      "name": "--padding-top",
+      "annotation": "prop",
+      "docs": "Top padding of the textarea"
+    },
+    {
+      "name": "--placeholder-color",
+      "annotation": "prop",
+      "docs": "Color of the placeholder text"
+    },
+    {
+      "name": "--placeholder-font-style",
+      "annotation": "prop",
+      "docs": "Style of the placeholder text"
+    },
+    {
+      "name": "--placeholder-font-weight",
+      "annotation": "prop",
+      "docs": "Weight of the placeholder text"
+    },
+    {
+      "name": "--placeholder-opacity",
+      "annotation": "prop",
+      "docs": "Opacity of the placeholder text"
+    }
+  ],
+  "slots": [],
+  "parts": [],
+  "dependents": [],
+  "dependencies": [],
+  "dependencyGraph": {}
+}

@@ -1,0 +1,15 @@
+{
+  "packageName": "@ionic-native/mixpanel",
+  "displayName": "Mixpanel",
+  "description": "\nCordova Plugin that wraps Mixpanel SDK for Android and iOS\n",
+  "usage": "\n```typescript\nimport { Mixpanel } from '@ionic-native/mixpanel/ngx';\n\nconstructor(private mixpanel: Mixpanel, private mixpanelPeople: MixpanelPeople) { }\n\n...\n\nthis.mixpanel.init(token)\n  .then(onSuccess)\n  .catch(onError);\n\n```",
+  "platforms": [
+    "Android",
+    "Browser",
+    "iOS"
+  ],
+  "repo": "https://github.com/samzilverberg/cordova-mixpanel-plugin",
+  "cordovaPlugin": {
+    "name": "cordova-plugin-mixpanel"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "packageName": "@ionic-native/pdf-generator",
+  "displayName": "PDFGenerator",
+  "description": "\nSimple plugin to generate (offline) pdf. The plugin transforms HTML to PDF and also provide the mechanism to share the pdf to other apps like Mail, etc.\n",
+  "usage": "\n```typescript\nimport { PDFGenerator } from '@ionic-native/pdf-generator';\n\nconstructor(private pdfGenerator: PDFGenerator) { }\n\n...\n\nthis.pdfGenerator.fromURL(url, options).then(base64String => console.log(base64String));\n\n```\n",
+  "platforms": [
+    "Android",
+    "iOS"
+  ],
+  "repo": "https://github.com/cesarvr/pdf-generator",
+  "cordovaPlugin": {
+    "name": "cordova-pdf-generator"
+  }
+}

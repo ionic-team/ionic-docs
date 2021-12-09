@@ -1,0 +1,25 @@
+{
+  "name": "ionic ssh delete",
+  "namespace": [
+    "ionic",
+    "ssh"
+  ],
+  "summary": "Delete an SSH public key from Ionic",
+  "description": "",
+  "footnotes": [],
+  "groups": [],
+  "exampleCommands": [],
+  "aliases": [
+    "ionic ssh remove",
+    "ionic ssh rm"
+  ],
+  "inputs": [
+    {
+      "name": "key-id",
+      "summary": "The ID of the public key to delete",
+      "required": true
+    }
+  ],
+  "options": [],
+  "type": "global"
+}

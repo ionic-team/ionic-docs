@@ -1,0 +1,120 @@
+{
+  "filePath": "./src/components/router/router.tsx",
+  "encapsulation": "none",
+  "tag": "ion-router",
+  "readme": "# ion-router\n\nThe router is a component for handling routing inside vanilla and Stencil JavaScript projects.\n\n> Note: this component should only be used with vanilla and Stencil JavaScript projects. For Angular projects, use [`ion-router-outlet`](../router-outlet) and the Angular router.\n\nApps should have a single `ion-router` component in the codebase.\nThis component controls all interactions with the browser history and it aggregates updates through an event system.\n\n`ion-router` is just a URL coordinator for the navigation outlets of ionic: `ion-nav` and `ion-tabs`.\n\nThat means the `ion-router` never touches the DOM, it does NOT show the components or emit any kind of lifecycle events, it just tells `ion-nav` and `ion-tabs` what and when to \"show\" based on the browser's URL.\n\nIn order to configure this relationship between components (to load/select) and URLs, `ion-router` uses a declarative syntax using JSX/HTML to define a tree of routes.\n\n",
+  "docs": "The router is a component for handling routing inside vanilla and Stencil JavaScript projects.\n\n> Note: this component should only be used with vanilla and Stencil JavaScript projects. For Angular projects, use [`ion-router-outlet`](../router-outlet) and the Angular router.\n\nApps should have a single `ion-router` component in the codebase.\nThis component controls all interactions with the browser history and it aggregates updates through an event system.\n\n`ion-router` is just a URL coordinator for the navigation outlets of ionic: `ion-nav` and `ion-tabs`.\n\nThat means the `ion-router` never touches the DOM, it does NOT show the components or emit any kind of lifecycle events, it just tells `ion-nav` and `ion-tabs` what and when to \"show\" based on the browser's URL.\n\nIn order to configure this relationship between components (to load/select) and URLs, `ion-router` uses a declarative syntax using JSX/HTML to define a tree of routes.",
+  "docsTags": [],
+  "usage": {
+    "javascript": "```html\n<ion-router>\n  <ion-route component=\"page-tabs\">\n    <ion-route url=\"/schedule\" component=\"tab-schedule\">\n      <ion-route component=\"page-schedule\"></ion-route>\n      <ion-route url=\"/session/:sessionId\" component=\"page-session\"></ion-route>\n    </ion-route>\n\n    <ion-route url=\"/speakers\" component=\"tab-speaker\">\n      <ion-route component=\"page-speaker-list\"></ion-route>\n      <ion-route url=\"/session/:sessionId\" component=\"page-session\"></ion-route>\n      <ion-route url=\"/:speakerId\" component=\"page-speaker-detail\"></ion-route>\n    </ion-route>\n\n    <ion-route url=\"/map\" component=\"page-map\"></ion-route>\n    <ion-route url=\"/about\" component=\"page-about\"></ion-route>\n  </ion-route>\n\n  <ion-route url=\"/tutorial\" component=\"page-tutorial\"></ion-route>\n  <ion-route url=\"/login\" component=\"page-login\"></ion-route>\n  <ion-route url=\"/account\" component=\"page-account\"></ion-route>\n  <ion-route url=\"/signup\" component=\"page-signup\"></ion-route>\n  <ion-route url=\"/support\" component=\"page-support\"></ion-route>\n</ion-router>\n\n```\n"
+  },
+  "props": [
+    {
+      "name": "root",
+      "type": "string",
+      "mutable": false,
+      "attr": "root",
+      "reflectToAttr": false,
+      "docs": "By default `ion-router` will match the routes at the root path (\"/\").\nThat can be changed when",
+      "docsTags": [],
+      "default": "'/'",
+      "values": [
+        {
+          "type": "string"
+        }
+      ],
+      "optional": false,
+      "required": false
+    },
+    {
+      "name": "useHash",
+      "type": "boolean",
+      "mutable": false,
+      "attr": "use-hash",
+      "reflectToAttr": false,
+      "docs": "The router can work in two \"modes\":\n- With hash: `/index.html#/path/to/page`\n- Without hash: `/path/to/page`\n\nUsing one or another might depend in the requirements of your app and/or where it's deployed.\n\nUsually \"hash-less\" navigation works better for SEO and it's more user friendly too, but it might\nrequires additional server-side configuration in order to properly work.\n\nOn the otherside hash-navigation is much easier to deploy, it even works over the file protocol.\n\nBy default, this property is `true`, change to `false` to allow hash-less URLs.",
+      "docsTags": [],
+      "default": "true",
+      "values": [
+        {
+          "type": "boolean"
+        }
+      ],
+      "optional": false,
+      "required": false
+    }
+  ],
+  "methods": [
+    {
+      "name": "back",
+      "returns": {
+        "type": "Promise<void>",
+        "docs": ""
+      },
+      "signature": "back() => Promise<void>",
+      "parameters": [],
+      "docs": "Go back to previous page in the window.history.",
+      "docsTags": []
+    },
+    {
+      "name": "push",
+      "returns": {
+        "type": "Promise<boolean>",
+        "docs": ""
+      },
+      "signature": "push(url: string, direction?: RouterDirection, animation?: AnimationBuilder | undefined) => Promise<boolean>",
+      "parameters": [],
+      "docs": "Navigate to the specified URL.",
+      "docsTags": [
+        {
+          "name": "param",
+          "text": "url The url to navigate to."
+        },
+        {
+          "name": "param",
+          "text": "direction The direction of the animation. Defaults to `\"forward\"`."
+        }
+      ]
+    }
+  ],
+  "events": [
+    {
+      "event": "ionRouteDidChange",
+      "detail": "RouterEventDetail",
+      "bubbles": true,
+      "cancelable": true,
+      "composed": true,
+      "docs": "Emitted when the route had changed",
+      "docsTags": []
+    },
+    {
+      "event": "ionRouteWillChange",
+      "detail": "RouterEventDetail",
+      "bubbles": true,
+      "cancelable": true,
+      "composed": true,
+      "docs": "Event emitted when the route is about to change",
+      "docsTags": []
+    }
+  ],
+  "listeners": [
+    {
+      "event": "popstate",
+      "target": "window",
+      "capture": false,
+      "passive": false
+    },
+    {
+      "event": "ionBackButton",
+      "target": "document",
+      "capture": false,
+      "passive": false
+    }
+  ],
+  "styles": [],
+  "slots": [],
+  "parts": [],
+  "dependents": [],
+  "dependencies": [],
+  "dependencyGraph": {}
+}

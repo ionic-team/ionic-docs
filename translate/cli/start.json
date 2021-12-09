@@ -1,0 +1,155 @@
+{
+  "name": "ionic start",
+  "namespace": [
+    "ionic"
+  ],
+  "summary": "Create a new project",
+  "description": "This command creates a working Ionic app. It installs dependencies for you and sets up your project.\n\nRunning `ionic start` without any arguments will prompt you for information about your new project.\n\nThe first argument is your app's `name`. Don't worry--you can always change this later. The `--project-id` is generated from `name` unless explicitly specified.\n\nThe second argument is the `template` from which to generate your app. You can list all templates with the `--list` option. You can also specify a git repository URL for `template`, in which case the existing project will be cloned.\n\nUse the `--type` option to start projects using older versions of Ionic. For example, you can start an Ionic 3 project with `--type=ionic-angular`. Use `--list` to see all project types and templates.",
+  "footnotes": [],
+  "groups": [],
+  "exampleCommands": [
+    "ionic start ",
+    "ionic start --list",
+    "ionic start myApp",
+    "ionic start myApp blank",
+    "ionic start myApp tabs --cordova",
+    "ionic start myApp tabs --capacitor",
+    "ionic start myApp super --type=ionic-angular",
+    "ionic start myApp blank --type=ionic1",
+    "ionic start cordovaApp tabs --cordova",
+    "ionic start \"My App\" blank",
+    "ionic start \"Conference App\" https://github.com/ionic-team/ionic-conference-app"
+  ],
+  "aliases": [],
+  "inputs": [
+    {
+      "name": "name",
+      "summary": "The name of your new project (e.g. `myApp`, `\"My App\"`)",
+      "required": true
+    },
+    {
+      "name": "template",
+      "summary": "The starter template to use (e.g. `blank`, `tabs`; use `--list` to see all)",
+      "required": true
+    }
+  ],
+  "options": [
+    {
+      "name": "list",
+      "type": "boolean",
+      "summary": "List available starter templates",
+      "groups": [],
+      "aliases": [
+        "l"
+      ],
+      "spec": {
+        "value": "true/false"
+      }
+    },
+    {
+      "name": "type",
+      "type": "string",
+      "summary": "Type of project to start (e.g. `angular`, `react`, `ionic-angular`, `ionic1`)",
+      "groups": [],
+      "aliases": [],
+      "spec": {
+        "value": "type"
+      }
+    },
+    {
+      "name": "cordova",
+      "type": "boolean",
+      "summary": "Include Cordova integration",
+      "groups": [],
+      "aliases": [],
+      "spec": {
+        "value": "true/false"
+      }
+    },
+    {
+      "name": "capacitor",
+      "type": "boolean",
+      "summary": "Include Capacitor integration",
+      "groups": [
+        "experimental"
+      ],
+      "aliases": [],
+      "spec": {
+        "value": "true/false"
+      }
+    },
+    {
+      "name": "deps",
+      "type": "boolean",
+      "summary": "Do not install npm/yarn dependencies",
+      "default": true,
+      "groups": [
+        "advanced"
+      ],
+      "aliases": [],
+      "spec": {
+        "value": "true/false"
+      }
+    },
+    {
+      "name": "git",
+      "type": "boolean",
+      "summary": "Do not initialize a git repo",
+      "default": true,
+      "groups": [
+        "advanced"
+      ],
+      "aliases": [],
+      "spec": {
+        "value": "true/false"
+      }
+    },
+    {
+      "name": "link",
+      "type": "boolean",
+      "summary": "Connect your new app to Ionic",
+      "groups": [
+        "advanced"
+      ],
+      "aliases": [],
+      "spec": {
+        "value": "true/false"
+      }
+    },
+    {
+      "name": "id",
+      "type": "string",
+      "summary": "Specify an Ionic App ID to link",
+      "groups": [],
+      "aliases": [],
+      "spec": {
+        "value": "id"
+      }
+    },
+    {
+      "name": "project-id",
+      "type": "string",
+      "summary": "Specify a slug for your app (used for the directory name and package name)",
+      "groups": [
+        "advanced"
+      ],
+      "aliases": [],
+      "spec": {
+        "value": "slug"
+      }
+    },
+    {
+      "name": "package-id",
+      "type": "string",
+      "summary": "Specify the bundle ID/application ID for your app (reverse-DNS notation)",
+      "groups": [
+        "advanced"
+      ],
+      "aliases": [],
+      "spec": {
+        "value": "id"
+      }
+    }
+  ],
+  "type": "global"
+}

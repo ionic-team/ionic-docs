@@ -1,0 +1,397 @@
+{
+  "filePath": "./src/components/popover/popover.tsx",
+  "encapsulation": "scoped",
+  "tag": "ion-popover",
+  "readme": "# ion-popover\n\nA Popover is a dialog that appears on top of the current page. It can be used for anything, but generally it is used for overflow actions that don't fit in the navigation bar.\n\n## Presenting\n\nTo present a popover, call the `present` method on a popover instance. In order to position the popover relative to the element clicked, a click event needs to be passed into the options of the the `present` method. If the event is not passed, the popover will be positioned in the center of the viewport.\n\n## Customization\n\nPopover uses scoped encapsulation, which means it will automatically scope its CSS by appending each of the styles with an additional class at runtime. Overriding scoped selectors in CSS requires a [higher specificity](https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity) selector.\n\nWe recommend passing a custom class to `cssClass` in the `create` method and using that to add custom styles to the host and inner elements. This property can also accept multiple classes separated by spaces. View the [Usage](#usage) section for an example of how to pass a class using `cssClass`.\n\n```css\n/* DOES NOT WORK - not specific enough */\n.popover-content {\n  background: #222;\n}\n\n/* Works - pass \"my-custom-class\" in cssClass to increase specificity */\n.my-custom-class .popover-content {\n  background: #222;\n}\n```\n\nAny of the defined [CSS Custom Properties](#css-custom-properties) can be used to style the Popover without needing to target individual elements:\n\n```css\n.my-custom-class {\n  --background: #222;\n}\n```\n\n> If you are building an Ionic Angular app, the styles need to be added to a global stylesheet file. Read [Style Placement](#style-placement) in the Angular section below for more information.\n\n",
+  "docs": "A Popover is a dialog that appears on top of the current page. It can be used for anything, but generally it is used for overflow actions that don't fit in the navigation bar.",
+  "docsTags": [
+    {
+      "text": "{\"ios\" | \"md\"} mode - The mode determines which platform styles to use.",
+      "name": "virtualProp"
+    }
+  ],
+  "usage": {
+    "angular": "```typescript\nimport { Component } from '@angular/core';\nimport { PopoverController } from '@ionic/angular';\nimport { PopoverComponent } from '../../component/popover/popover.component';\n\n@Component({\n  selector: 'popover-example',\n  templateUrl: 'popover-example.html',\n  styleUrls: ['./popover-example.css']\n})\nexport class PopoverExample {\n  constructor(public popoverController: PopoverController) {}\n\n  async presentPopover(ev: any) {\n    const popover = await this.popoverController.create({\n      component: PopoverComponent,\n      cssClass: 'my-custom-class',\n      event: ev,\n      translucent: true\n    });\n    return await popover.present();\n  }\n}\n```\n\n\n### Style Placement\n\nIn Angular, the CSS of a specific page is scoped only to elements of that page. Even though the Popover can be presented from within a page, the `ion-popover` element is appended outside of the current page. This means that any custom styles need to go in a global stylesheet file. In an Ionic Angular starter this can be the `src/global.scss` file or you can register a new global style file by [adding to the `styles` build option in `angular.json`](https://angular.io/guide/workspace-config#style-script-config).\n",
+    "javascript": "```javascript\nclass PopoverExamplePage extends HTMLElement {\n  constructor() {\n    super();\n  }\n\n  connectedCallback() {\n    this.innerHTML = `\n      <ion-content>\n        <ion-list>\n          <ion-list-header><ion-label>Ionic</ion-label></ion-list-header>\n          <ion-item button><ion-label>Item 0</ion-label></ion-item>\n          <ion-item button><ion-label>Item 1</ion-label></ion-item>\n          <ion-item button><ion-label>Item 2</ion-label></ion-item>\n          <ion-item button><ion-label>Item 3</ion-label></ion-item>\n        </ion-list>\n      </ion-content>\n    `;\n  }\n}\n\ncustomElements.define('popover-example-page', PopoverExamplePage);\n\nfunction presentPopover(ev) {\n  const popover = Object.assign(document.createElement('ion-popover'), {\n    component: 'popover-example-page',\n    cssClass: 'my-custom-class',\n    event: ev,\n    translucent: true\n  });\n  document.body.appendChild(popover);\n  return popover.present();\n}\n```\n",
+    "react": "```tsx\nimport React, { useState } from 'react';\nimport { IonPopover, IonButton } from '@ionic/react';\n\nexport const PopoverExample: React.FC = () => {\n  const [popoverState, setShowPopover] = useState({ showPopover: false, event: undefined });\n\n  return (\n    <>\n      <IonPopover\n        cssClass='my-custom-class'\n        event={popoverState.event}\n        isOpen={popoverState.showPopover}\n        onDidDismiss={() => setShowPopover({ showPopover: false, event: undefined })}\n      >\n        <p>This is popover content</p>\n      </IonPopover>\n      <IonButton onClick={\n        (e: any) => {\n          e.persist();\n          setShowPopover({ showPopover: true, event: e })\n        }}\n      >\n        Show Popover\n      </IonButton>\n    </>\n  );\n};\n```\n",
+    "stencil": "```tsx\nimport { Component, h } from '@stencil/core';\n\nimport { popoverController } from '@ionic/core';\n\n@Component({\n  tag: 'popover-example',\n  styleUrl: 'popover-example.css'\n})\nexport class PopoverExample {\n  async presentPopover(ev: any) {\n    const popover = await popoverController.create({\n      component: 'page-popover',\n      cssClass: 'my-custom-class',\n      event: ev,\n      translucent: true\n    });\n    return await popover.present();\n  }\n\n  render() {\n    return [\n      <ion-content>\n        <ion-button onClick={(ev) => this.presentPopover(ev)}>Present Popover</ion-button>\n      </ion-content>\n    ];\n  }\n}\n```\n\n```tsx\nimport { Component, h } from '@stencil/core';\n\n@Component({\n  tag: 'page-popover',\n  styleUrl: 'page-popover.css',\n})\nexport class PagePopover {\n  render() {\n    return [\n      <ion-list>\n        <ion-item>\n          <ion-label>Documentation</ion-label>\n        </ion-item>\n        <ion-item>\n          <ion-label>Feedback</ion-label>\n        </ion-item>\n        <ion-item>\n          <ion-label>Settings</ion-label>\n        </ion-item>\n      </ion-list>\n    ];\n  }\n}\n```",
+    "vue": "```html\n<template>\n  <ion-content class=\"ion-padding\">\n    Popover Content\n  </ion-content>\n</template>\n\n<script>\nimport { IonContent } from '@ionic/vue';\nimport { defineComponent } from 'vue';\n\nexport default defineComponent({\n  name: 'Popover',\n  components: { IonContent }\n});\n</script>\n```\n\n```html\n<template>\n  <ion-page>\n    <ion-content class=\"ion-padding\">\n      <ion-button @click=\"openPopover\">Open Popover</ion-button>\n    </ion-content>\n  </ion-page>\n</template>\n\n<script>\nimport { IonButton, IonContent, IonPage, popoverController } from '@ionic/vue';\nimport Popver from './popover.vue'\n\nexport default {\n  components: { IonButton, IonContent, IonPage },\n  methods: {\n    async openPopover(ev: Event) {\n      const popover = await popoverController\n        .create({\n          component: Popover,\n          cssClass: 'my-custom-class',\n          event: ev,\n          translucent: true\n        })\n      return popover.present();\n    },\n  },\n}\n</script>\n```\n\nDevelopers can also use this component directly in their template:\n\n```html\n<template>\n  <ion-button @click=\"setOpen(true, $event)\">Show Popover</ion-button>\n  <ion-popover\n    :is-open=\"isOpenRef\"\n    css-class=\"my-custom-class\"\n    :event=\"event\"\n    :translucent=\"true\"\n    @onDidDismiss=\"setOpen(false)\"\n  >\n    <Popover></Popover>\n  </ion-popover>\n</template>\n\n<script>\nimport { IonButton, IonPopover } from '@ionic/vue';\nimport { defineComponent, ref } from 'vue';\nimport Popver from './popover.vue'\n\nexport default defineComponent({\n  components: { IonButton, IonPopover, Popover },\n  setup() {\n    const isOpenRef = ref(false);\n    const event = ref();\n    const setOpen = (state: boolean, event?: Event) => {\n      event.value = event; \n      isOpenRef.value = state;\n    }\n    return { isOpenRef, setOpen, event }\n  }\n});\n</script>\n```\n"
+  },
+  "props": [
+    {
+      "name": "animated",
+      "type": "boolean",
+      "mutable": false,
+      "attr": "animated",
+      "reflectToAttr": false,
+      "docs": "If `true`, the popover will animate.",
+      "docsTags": [],
+      "default": "true",
+      "values": [
+        {
+          "type": "boolean"
+        }
+      ],
+      "optional": false,
+      "required": false
+    },
+    {
+      "name": "backdropDismiss",
+      "type": "boolean",
+      "mutable": false,
+      "attr": "backdrop-dismiss",
+      "reflectToAttr": false,
+      "docs": "If `true`, the popover will be dismissed when the backdrop is clicked.",
+      "docsTags": [],
+      "default": "true",
+      "values": [
+        {
+          "type": "boolean"
+        }
+      ],
+      "optional": false,
+      "required": false
+    },
+    {
+      "name": "component",
+      "type": "Function | HTMLElement | null | string",
+      "mutable": false,
+      "attr": "component",
+      "reflectToAttr": false,
+      "docs": "The component to display inside of the popover.",
+      "docsTags": [],
+      "values": [
+        {
+          "type": "Function"
+        },
+        {
+          "type": "HTMLElement"
+        },
+        {
+          "type": "null"
+        },
+        {
+          "type": "string"
+        }
+      ],
+      "optional": false,
+      "required": true
+    },
+    {
+      "name": "componentProps",
+      "type": "undefined | { [key: string]: any; }",
+      "mutable": false,
+      "reflectToAttr": false,
+      "docs": "The data to pass to the popover component.",
+      "docsTags": [],
+      "values": [
+        {
+          "type": "undefined"
+        },
+        {
+          "type": "{ [key: string]: any; }"
+        }
+      ],
+      "optional": true,
+      "required": false
+    },
+    {
+      "name": "cssClass",
+      "type": "string | string[] | undefined",
+      "mutable": false,
+      "attr": "css-class",
+      "reflectToAttr": false,
+      "docs": "Additional classes to apply for custom CSS. If multiple classes are\nprovided they should be separated by spaces.",
+      "docsTags": [],
+      "values": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "string[]"
+        },
+        {
+          "type": "undefined"
+        }
+      ],
+      "optional": true,
+      "required": false
+    },
+    {
+      "name": "enterAnimation",
+      "type": "((baseEl: any, opts?: any) => Animation) | undefined",
+      "mutable": false,
+      "reflectToAttr": false,
+      "docs": "Animation to use when the popover is presented.",
+      "docsTags": [],
+      "values": [
+        {
+          "type": "((baseEl: any, opts?: any) => Animation)"
+        },
+        {
+          "type": "undefined"
+        }
+      ],
+      "optional": true,
+      "required": false
+    },
+    {
+      "name": "event",
+      "type": "any",
+      "mutable": false,
+      "attr": "event",
+      "reflectToAttr": false,
+      "docs": "The event to pass to the popover animation.",
+      "docsTags": [],
+      "values": [
+        {
+          "type": "any"
+        }
+      ],
+      "optional": false,
+      "required": false
+    },
+    {
+      "name": "keyboardClose",
+      "type": "boolean",
+      "mutable": false,
+      "attr": "keyboard-close",
+      "reflectToAttr": false,
+      "docs": "If `true`, the keyboard will be automatically dismissed when the overlay is presented.",
+      "docsTags": [],
+      "default": "true",
+      "values": [
+        {
+          "type": "boolean"
+        }
+      ],
+      "optional": false,
+      "required": false
+    },
+    {
+      "name": "leaveAnimation",
+      "type": "((baseEl: any, opts?: any) => Animation) | undefined",
+      "mutable": false,
+      "reflectToAttr": false,
+      "docs": "Animation to use when the popover is dismissed.",
+      "docsTags": [],
+      "values": [
+        {
+          "type": "((baseEl: any, opts?: any) => Animation)"
+        },
+        {
+          "type": "undefined"
+        }
+      ],
+      "optional": true,
+      "required": false
+    },
+    {
+      "name": "mode",
+      "type": "\"ios\" | \"md\"",
+      "mutable": false,
+      "attr": "mode",
+      "reflectToAttr": false,
+      "docs": "The mode determines which platform styles to use.",
+      "docsTags": [],
+      "values": [
+        {
+          "value": "ios",
+          "type": "string"
+        },
+        {
+          "value": "md",
+          "type": "string"
+        }
+      ],
+      "optional": true,
+      "required": false
+    },
+    {
+      "name": "showBackdrop",
+      "type": "boolean",
+      "mutable": false,
+      "attr": "show-backdrop",
+      "reflectToAttr": false,
+      "docs": "If `true`, a backdrop will be displayed behind the popover.",
+      "docsTags": [],
+      "default": "true",
+      "values": [
+        {
+          "type": "boolean"
+        }
+      ],
+      "optional": false,
+      "required": false
+    },
+    {
+      "name": "translucent",
+      "type": "boolean",
+      "mutable": false,
+      "attr": "translucent",
+      "reflectToAttr": false,
+      "docs": "If `true`, the popover will be translucent.\nOnly applies when the mode is `\"ios\"` and the device supports\n[`backdrop-filter`](https://developer.mozilla.org/en-US/docs/Web/CSS/backdrop-filter#Browser_compatibility).",
+      "docsTags": [],
+      "default": "false",
+      "values": [
+        {
+          "type": "boolean"
+        }
+      ],
+      "optional": false,
+      "required": false
+    }
+  ],
+  "methods": [
+    {
+      "name": "dismiss",
+      "returns": {
+        "type": "Promise<boolean>",
+        "docs": ""
+      },
+      "signature": "dismiss(data?: any, role?: string | undefined) => Promise<boolean>",
+      "parameters": [],
+      "docs": "Dismiss the popover overlay after it has been presented.",
+      "docsTags": [
+        {
+          "name": "param",
+          "text": "data Any data to emit in the dismiss events."
+        },
+        {
+          "name": "param",
+          "text": "role The role of the element that is dismissing the popover. For example, 'cancel' or 'backdrop'."
+        }
+      ]
+    },
+    {
+      "name": "onDidDismiss",
+      "returns": {
+        "type": "Promise<OverlayEventDetail<T>>",
+        "docs": ""
+      },
+      "signature": "onDidDismiss<T = any>() => Promise<OverlayEventDetail<T>>",
+      "parameters": [],
+      "docs": "Returns a promise that resolves when the popover did dismiss.",
+      "docsTags": []
+    },
+    {
+      "name": "onWillDismiss",
+      "returns": {
+        "type": "Promise<OverlayEventDetail<T>>",
+        "docs": ""
+      },
+      "signature": "onWillDismiss<T = any>() => Promise<OverlayEventDetail<T>>",
+      "parameters": [],
+      "docs": "Returns a promise that resolves when the popover will dismiss.",
+      "docsTags": []
+    },
+    {
+      "name": "present",
+      "returns": {
+        "type": "Promise<void>",
+        "docs": ""
+      },
+      "signature": "present() => Promise<void>",
+      "parameters": [],
+      "docs": "Present the popover overlay after it has been created.",
+      "docsTags": []
+    }
+  ],
+  "events": [
+    {
+      "event": "ionPopoverDidDismiss",
+      "detail": "OverlayEventDetail<any>",
+      "bubbles": true,
+      "cancelable": true,
+      "composed": true,
+      "docs": "Emitted after the popover has dismissed.",
+      "docsTags": []
+    },
+    {
+      "event": "ionPopoverDidPresent",
+      "detail": "void",
+      "bubbles": true,
+      "cancelable": true,
+      "composed": true,
+      "docs": "Emitted after the popover has presented.",
+      "docsTags": []
+    },
+    {
+      "event": "ionPopoverWillDismiss",
+      "detail": "OverlayEventDetail<any>",
+      "bubbles": true,
+      "cancelable": true,
+      "composed": true,
+      "docs": "Emitted before the popover has dismissed.",
+      "docsTags": []
+    },
+    {
+      "event": "ionPopoverWillPresent",
+      "detail": "void",
+      "bubbles": true,
+      "cancelable": true,
+      "composed": true,
+      "docs": "Emitted before the popover has presented.",
+      "docsTags": []
+    }
+  ],
+  "listeners": [],
+  "styles": [
+    {
+      "name": "--backdrop-opacity",
+      "annotation": "prop",
+      "docs": "Opacity of the backdrop"
+    },
+    {
+      "name": "--background",
+      "annotation": "prop",
+      "docs": "Background of the popover"
+    },
+    {
+      "name": "--box-shadow",
+      "annotation": "prop",
+      "docs": "Box shadow of the popover"
+    },
+    {
+      "name": "--height",
+      "annotation": "prop",
+      "docs": "Height of the popover"
+    },
+    {
+      "name": "--max-height",
+      "annotation": "prop",
+      "docs": "Maximum height of the popover"
+    },
+    {
+      "name": "--max-width",
+      "annotation": "prop",
+      "docs": "Maximum width of the popover"
+    },
+    {
+      "name": "--min-height",
+      "annotation": "prop",
+      "docs": "Minimum height of the popover"
+    },
+    {
+      "name": "--min-width",
+      "annotation": "prop",
+      "docs": "Minimum width of the popover"
+    },
+    {
+      "name": "--width",
+      "annotation": "prop",
+      "docs": "Width of the popover"
+    }
+  ],
+  "slots": [],
+  "parts": [],
+  "dependents": [],
+  "dependencies": [
+    "ion-backdrop"
+  ],
+  "dependencyGraph": {
+    "ion-popover": [
+      "ion-backdrop"
+    ]
+  }
+}

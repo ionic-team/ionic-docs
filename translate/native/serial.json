@@ -1,0 +1,14 @@
+{
+  "packageName": "@ionic-native/serial",
+  "displayName": "Serial",
+  "description": "\nThis plugin provides functions for working with Serial connections\n",
+  "usage": "\n```typescript\nimport { Serial } from '@ionic-native/serial/ngx';\n\nconstructor(private serial: Serial) { }\n\n...\n\nthis.serial.requestPermission().then(() => {\n  this.serial.open({\n    baudRate: 9800,\n    dataBits: 4,\n    stopBits: 1,\n    parity: 0,\n    dtr: true,\n    rts: true,\n    sleepOnPause: false\n  }).then(() => {\n    console.log('Serial connection opened');\n  });\n}).catch((error: any) => console.log(error));\n\n```\n",
+  "platforms": [
+    "Android",
+    "Ubuntu"
+  ],
+  "repo": "https://github.com/xseignard/cordovarduino",
+  "cordovaPlugin": {
+    "name": "cordovarduino"
+  }
+}

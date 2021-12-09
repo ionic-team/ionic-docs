@@ -1,0 +1,23 @@
+{
+  "filePath": "src/components/nav-pop/nav-pop.tsx",
+  "encapsulation": "none",
+  "tag": "ion-nav-pop",
+  "readme": "# ion-nav-pop\n\n`NavPop` is a component used to automatically go back in navigation. It is the component form of `NavController.pop()`\n\n",
+  "docs": "`NavPop` is a component used to automatically go back in navigation. It is the component form of `NavController.pop()`",
+  "docsTags": [
+    {
+      "text": "Use `<ion-nav-link routerDirection=\"back\">` instead.",
+      "name": "deprecated"
+    }
+  ],
+  "usage": {},
+  "props": [],
+  "methods": [],
+  "events": [],
+  "styles": [],
+  "slots": [],
+  "dependents": [],
+  "dependencies": [],
+  "dependencyGraph": {},
+  "deprecation": "Use `<ion-nav-link routerDirection=\"back\">` instead."
+}

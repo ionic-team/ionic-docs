@@ -1,0 +1,14 @@
+{
+  "packageName": "@ionic-native/firebase-vision",
+  "displayName": "Firebase Vision",
+  "description": "\nCordova plugin for Firebase MLKit Vision\n",
+  "usage": "\n```typescript\nimport { FirebaseVision } from '@ionic-native/firebase-vision/ngx';\n\n\nconstructor(private firebaseVision: FirebaseVision) { }\n\n...\n\n\nthis.firebaseVision.onDeviceTextRecognizer(FILE_URI)\n  .then((res: string) => console.log(res))\n  .catch((error: string) => console.error(error));\n\nthis.firebaseVision.barcodeDetector(FILE_URI)\n  .then((res: Barcode[]) => console.log(res))\n  .catch((error: string) => console.error(error));\n\n```\n",
+  "platforms": [
+    "Android",
+    "iOS"
+  ],
+  "repo": "https://github.com/alon22/cordova-plugin-firebase-mlvision",
+  "cordovaPlugin": {
+    "name": "cordova-plugin-firebase-mlvision"
+  }
+}

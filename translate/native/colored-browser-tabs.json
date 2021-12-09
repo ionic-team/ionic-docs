@@ -1,0 +1,14 @@
+{
+  "packageName": "@ionic-native/colored-browser-tabs",
+  "displayName": "Colored Browser Tabs",
+  "description": "\nThis plugin opens Chrome Custom Tabs on Android or SafariViewController on iOS\n",
+  "usage": "\n```typescript\nimport { ColoredBrowserTabs } from '@ionic-native/colored-browser-tabs/ngx';\n\n\nconstructor(private browserTabs: ColoredBrowserTabs) { }\n\n...\n\n\nthis.browserTabs.openTab('www.example.url', '#ffffff')\n  .subscribe()\n\nthis.browserTabs.openTabWithAnimation('www.example.url', 'slide_x', '#ffffff')\n  .subscribe()\n\n```\n",
+  "platforms": [
+    "Android",
+    "iOS"
+  ],
+  "repo": "https://github.com/TobyEb/cordova-plugin-colored-browser-tabs",
+  "cordovaPlugin": {
+    "name": "cordova-plugin-colored-browser-tabs"
+  }
+}

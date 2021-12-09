@@ -1,0 +1,216 @@
+{
+  "name": "ionic capacitor run",
+  "namespace": [
+    "ionic",
+    "capacitor"
+  ],
+  "summary": "Run an Ionic project on a connected device",
+  "description": "`ionic capacitor run` will do the following:\n- Perform `ionic build` (or run the dev server from `ionic serve` with the `--livereload` option)\n- Copy web assets into the specified native platform\n- Open the IDE for your native project (Xcode for iOS, Android Studio for Android)\n\nWhen using the `--livereload` option and need to serve to your LAN, a device, or an emulator, use the `--external` option also. Otherwise, the web view tries to access `localhost`.\n\nOnce the web assets and configuration are copied into your native project, the app can run on devices and emulators/simulators using the native IDE. Unfortunately, programmatically building and launching the native project is not yet supported.\n\nFor Android and iOS, you can setup Remote Debugging on your device with browser development tools using these [docs](https://ionicframework.com/docs/developer-resources/developer-tips).",
+  "footnotes": [],
+  "groups": [
+    "beta"
+  ],
+  "exampleCommands": [
+    "ionic capacitor run ",
+    "ionic capacitor run android",
+    "ionic capacitor run android -l --external",
+    "ionic capacitor run ios --livereload --external",
+    "ionic capacitor run ios --livereload-url=http://localhost:8100"
+  ],
+  "aliases": [],
+  "inputs": [
+    {
+      "name": "platform",
+      "summary": "The platform to run (e.g. `android`, `ios`)",
+      "required": true
+    }
+  ],
+  "options": [
+    {
+      "name": "consolelogs",
+      "type": "boolean",
+      "summary": "Print app console logs to the terminal",
+      "groups": [
+        "advanced",
+        "cordova"
+      ],
+      "aliases": [],
+      "spec": {
+        "value": "true/false"
+      }
+    },
+    {
+      "name": "consolelogs-port",
+      "type": "string",
+      "summary": "Use specific port for console logs server",
+      "groups": [
+        "advanced",
+        "cordova"
+      ],
+      "aliases": [],
+      "spec": {
+        "value": "port"
+      }
+    },
+    {
+      "name": "ssl",
+      "type": "boolean",
+      "summary": "Use HTTPS for the dev server",
+      "groups": [
+        "experimental",
+        "cordova"
+      ],
+      "aliases": [],
+      "spec": {
+        "value": "true/false"
+      }
+    },
+    {
+      "name": "build",
+      "type": "boolean",
+      "summary": "Do not invoke Ionic build",
+      "default": true,
+      "groups": [],
+      "aliases": [],
+      "spec": {
+        "value": "true/false"
+      }
+    },
+    {
+      "name": "open",
+      "type": "boolean",
+      "summary": "Do not invoke Capacitor open",
+      "default": true,
+      "groups": [],
+      "aliases": [],
+      "spec": {
+        "value": "true/false"
+      }
+    },
+    {
+      "name": "external",
+      "type": "boolean",
+      "summary": "Host dev server on all network interfaces (i.e. `--host=0.0.0.0`)",
+      "groups": [],
+      "aliases": [],
+      "spec": {
+        "value": "true/false"
+      }
+    },
+    {
+      "name": "host",
+      "type": "string",
+      "summary": "Use specific host for the dev server",
+      "default": "localhost",
+      "groups": [
+        "advanced"
+      ],
+      "aliases": [],
+      "spec": {
+        "value": "host"
+      }
+    },
+    {
+      "name": "port",
+      "type": "string",
+      "summary": "Use specific port for the dev server",
+      "default": "8100",
+      "groups": [
+        "advanced"
+      ],
+      "aliases": [
+        "p"
+      ],
+      "spec": {
+        "value": "port"
+      }
+    },
+    {
+      "name": "public-host",
+      "type": "string",
+      "summary": "The host used for the browser or web view",
+      "groups": [
+        "advanced"
+      ],
+      "aliases": [],
+      "spec": {
+        "value": "host"
+      }
+    },
+    {
+      "name": "livereload",
+      "type": "boolean",
+      "summary": "Spin up dev server to live-reload www files",
+      "groups": [],
+      "aliases": [
+        "l"
+      ],
+      "spec": {
+        "value": "true/false"
+      }
+    },
+    {
+      "name": "livereload-url",
+      "type": "string",
+      "summary": "Provide a custom URL to the dev server",
+      "groups": [],
+      "aliases": [],
+      "spec": {
+        "value": "url"
+      }
+    },
+    {
+      "name": "prod",
+      "type": "boolean",
+      "summary": "Flag to use the `production` configuration",
+      "groups": [
+        "cordova"
+      ],
+      "aliases": [],
+      "spec": {
+        "value": "true/false"
+      }
+    },
+    {
+      "name": "configuration",
+      "type": "string",
+      "summary": "Specify the configuration to use.",
+      "groups": [
+        "advanced",
+        "cordova"
+      ],
+      "aliases": [
+        "c"
+      ],
+      "spec": {
+        "value": "conf"
+      }
+    },
+    {
+      "name": "source-map",
+      "type": "boolean",
+      "summary": "Output source maps",
+      "groups": [
+        "advanced",
+        "cordova"
+      ],
+      "aliases": [],
+      "spec": {
+        "value": "true/false"
+      }
+    },
+    {
+      "name": "watch",
+      "type": "boolean",
+      "summary": "Rebuild when files change",
+      "groups": [
+        "advanced"
+      ],
+      "aliases": [],
+      "spec": {
+        "value": "true/false"
+      }
+    }
+  ],
+  "type": "project"
+}

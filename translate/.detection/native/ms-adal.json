@@ -1,0 +1,15 @@
+{
+  "packageName": "@ionic-native/ms-adal",
+  "displayName": "MS ADAL",
+  "description": "\nActive Directory Authentication Library (ADAL) plugin.\nActive Directory Authentication Library ([ADAL](https://docs.microsoft.com/en-us/dotnet/api/microsoft.identitymodel.clients.activedirectory?view=azure-dotnet))\nplugin provides easy to use authentication functionality for your Apache Cordova apps by taking advantage of\nWindows Server Active Directory and Windows Azure Active Directory. Here you can find the source code for the library.",
+  "usage": "\n```typescript\nimport { MSAdal, AuthenticationContext, AuthenticationResult } from '@ionic-native/ms-adal/ngx';\n\n\nconstructor(private msAdal: MSAdal) {}\n\n...\n\nlet authContext: AuthenticationContext = this.msAdal.createAuthenticationContext('https://login.windows.net/common');\n\nauthContext.acquireTokenAsync('https://graph.windows.net', 'a5d92493-ae5a-4a9f-bcbf-9f1d354067d3', 'http://MyDirectorySearcherApp')\n  .then((authResponse: AuthenticationResult) => {\n    console.log('Token is' , authResponse.accessToken);\n    console.log('Token will expire on', authResponse.expiresOn);\n  })\n  .catch((e: any) => console.log('Authentication failed', e));\n\n\n```\n",
+  "platforms": [
+    "Android",
+    "iOS",
+    "Windows"
+  ],
+  "repo": "https://github.com/AzureAD/azure-activedirectory-library-for-cordova",
+  "cordovaPlugin": {
+    "name": "cordova-plugin-ms-adal"
+  }
+}

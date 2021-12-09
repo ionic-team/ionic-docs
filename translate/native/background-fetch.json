@@ -1,0 +1,13 @@
+{
+  "packageName": "@ionic-native/background-fetch",
+  "displayName": "Background Fetch",
+  "description": "\niOS Background Fetch Implementation. See: https://developer.apple.com/reference/uikit/uiapplication#1657399\niOS Background Fetch is basically an API which wakes up your app about every 15 minutes (during the user's prime-time hours) and provides your app exactly 30s of background running-time. This plugin will execute your provided callbackFn whenever a background-fetch event occurs. There is no way to increase the rate which a fetch-event occurs and this plugin sets the rate to the most frequent possible value of UIApplicationBackgroundFetchIntervalMinimum -- iOS determines the rate automatically based upon device usage and time-of-day (ie: fetch-rate is about ~15min during prime-time hours; less frequently when the user is presumed to be sleeping, at 3am for example).\nFor more detail, please see https://github.com/transistorsoft/cordova-plugin-background-fetch\n",
+  "usage": "\n\n```typescript\nimport { BackgroundFetch, BackgroundFetchConfig } from '@ionic-native/background-fetch/ngx';\n\n\nconstructor(private backgroundFetch: BackgroundFetch) {\n\n  const config: BackgroundFetchConfig = {\n    stopOnTerminate: false, // Set true to cease background-fetch from operating after user \"closes\" the app. Defaults to true.\n  }\n\n  backgroundFetch.configure(config)\n     .then(() => {\n         console.log('Background Fetch initialized');\n\n         this.backgroundFetch.finish();\n\n     })\n     .catch(e => console.log('Error initializing background fetch', e));\n\n  // Start the background-fetch API. Your callbackFn provided to #configure will be executed each time a background-fetch event occurs. NOTE the #configure method automatically calls #start. You do not have to call this method after you #configure the plugin\n  backgroundFetch.start();\n\n  // Stop the background-fetch API from firing fetch events. Your callbackFn provided to #configure will no longer be executed.\n  backgroundFetch.stop();\n\n\n}\n\n```",
+  "platforms": [
+    "iOS"
+  ],
+  "repo": "https://github.com/transistorsoft/cordova-plugin-background-fetch",
+  "cordovaPlugin": {
+    "name": "cordova-plugin-background-fetch"
+  }
+}

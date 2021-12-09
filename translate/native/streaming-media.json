@@ -1,0 +1,15 @@
+{
+  "packageName": "@ionic-native/streaming-media",
+  "displayName": "Streaming Media",
+  "description": "\nThis plugin allows you to stream audio and video in a fullscreen, native player on iOS and Android.\n",
+  "usage": "\n```typescript\nimport { StreamingMedia, StreamingVideoOptions } from '@ionic-native/streaming-media/ngx';\n\nconstructor(private streamingMedia: StreamingMedia) { }\n\nlet options: StreamingVideoOptions = {\n  successCallback: () => { console.log('Video played') },\n  errorCallback: (e) => { console.log('Error streaming') },\n  orientation: 'landscape',\n  shouldAutoClose: true,\n  controls: false\n};\n\nthis.streamingMedia.playVideo('https://path/to/video/stream', options);\n\n```",
+  "platforms": [
+    "Amazon Fire OS",
+    "Android",
+    "iOS"
+  ],
+  "repo": "https://github.com/nchutchind/cordova-plugin-streaming-media",
+  "cordovaPlugin": {
+    "name": "cordova-plugin-streaming-media"
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "name": "ionic package deploy",
+  "namespace": [
+    "ionic",
+    "package"
+  ],
+  "summary": "Deploys a binary to a destination, such as an app store using Appflow",
+  "description": "This command deploys a binary to a destination using Appflow. While running, the remote log is printed to the terminal.\n\nThe command takes two parameters: the numeric ID of the package build that previously created the binary and the name of the destination where the binary is going to be deployed.\nBoth can be retrieved from the [Dashboard](https://dashboard.ionicframework.com).",
+  "footnotes": [],
+  "groups": [
+    "paid"
+  ],
+  "exampleCommands": [
+    "ionic package deploy 123456789 \"My app store destination\""
+  ],
+  "aliases": [],
+  "inputs": [
+    {
+      "name": "build-id",
+      "summary": "The build id of the desired successful package build",
+      "required": true
+    },
+    {
+      "name": "destination",
+      "summary": "The destination to deploy the build artifact to the app store",
+      "required": true
+    }
+  ],
+  "options": [],
+  "type": "project"
+}

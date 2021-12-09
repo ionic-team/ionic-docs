@@ -1,0 +1,13 @@
+{
+  "packageName": "@ionic-native/sign-in-with-apple",
+  "displayName": "Sign In With Apple",
+  "description": "\nSign in with Apple makes it easy for users to sign in to your apps and websites using their Apple ID.\nInstead of filling out forms, verifying email addresses, and choosing new passwords,\nthey can use Sign in with Apple to set up an account and start using your app right away.\nAll accounts are protected with two-factor authentication for superior security,\nand Apple will not track users’ activity in your app or website.\n*Source:* https://developer.apple.com/sign-in-with-apple/\n",
+  "usage": "\n```typescript\nimport { SignInWithApple, AppleSignInResponse, AppleSignInErrorResponse, ASAuthorizationAppleIDRequest } from '@ionic-native/sign-in-with-apple/ngx';\n\n\nconstructor(private signInWithApple: SignInWithApple) { }\n\n...\n\n\n  this.signInWithApple.signin({\n    requestedScopes: [\n      ASAuthorizationAppleIDRequest.ASAuthorizationScopeFullName,\n      ASAuthorizationAppleIDRequest.ASAuthorizationScopeEmail\n    ]\n  })\n  .then((res: AppleSignInResponse) => {\n    // https://developer.apple.com/documentation/signinwithapplerestapi/verifying_a_user\n    alert('Send token to apple for verification: ' + res.identityToken);\n    console.log(res);\n  })\n  .catch((error: AppleSignInErrorResponse) => {\n    alert(error.code + ' ' + error.localizedDescription);\n    console.error(error);\n  });\n\n```\n",
+  "platforms": [
+    "iOS"
+  ],
+  "repo": "https://github.com/twogate/cordova-plugin-sign-in-with-apple",
+  "cordovaPlugin": {
+    "name": "cordova-plugin-sign-in-with-apple"
+  }
+}

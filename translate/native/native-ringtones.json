@@ -1,0 +1,14 @@
+{
+  "packageName": "@ionic-native/native-ringtones",
+  "displayName": "Native Ringtones",
+  "description": "\nThe plugin helps get the native ringtones list on Android or IOS devices.\nAnd you can also use this plugin to play or stop the native ringtones and custom ringtones(added in the www folder).\n",
+  "usage": "\n```\nimport { NativeRingtones } from '@ionic-native/native-ringtones/ngx';\n\n\nconstructor(private ringtones: NativeRingtones) { }\n\n...\nthis.ringtones.getRingtone().then((ringtones) => { console.log(ringtones); });\n\nthis.ringtones.playRingtone('assets/ringtones/sound_1.caf');\n\nthis.ringtones.stopRingtone('assets/ringtones/sound_1.caf');\n\n```\n",
+  "platforms": [
+    "Android",
+    "iOS"
+  ],
+  "repo": "https://github.com/TongZhangzt/cordova-plugin-native-ringtones",
+  "cordovaPlugin": {
+    "name": "cordova-plugin-native-ringtones"
+  }
+}

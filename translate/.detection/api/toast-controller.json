@@ -1,0 +1,75 @@
+{
+  "filePath": "src/components/toast-controller/toast-controller.tsx",
+  "encapsulation": "none",
+  "tag": "ion-toast-controller",
+  "readme": "# ion-toast-controller\n\nToastController is a component used to create Toast components. Please see the docs for [Toast](../toast).\n\n",
+  "docs": "ToastController is a component used to create Toast components. Please see the docs for [Toast](../toast).",
+  "docsTags": [
+    {
+      "text": "Use the `toastController` exported from core.",
+      "name": "deprecated"
+    }
+  ],
+  "usage": {},
+  "props": [],
+  "methods": [
+    {
+      "name": "create",
+      "returns": {
+        "type": "Promise<HTMLIonToastElement>",
+        "docs": ""
+      },
+      "signature": "create(options?: ToastOptions | undefined) => Promise<HTMLIonToastElement>",
+      "parameters": [],
+      "docs": "Create a toast overlay with toast options.",
+      "docsTags": [
+        {
+          "name": "param",
+          "text": "options The options to use to create the toast."
+        }
+      ]
+    },
+    {
+      "name": "dismiss",
+      "returns": {
+        "type": "Promise<boolean>",
+        "docs": ""
+      },
+      "signature": "dismiss(data?: any, role?: string | undefined, id?: string | undefined) => Promise<boolean>",
+      "parameters": [],
+      "docs": "Dismiss the open toast overlay.",
+      "docsTags": [
+        {
+          "name": "param",
+          "text": "data Any data to emit in the dismiss events."
+        },
+        {
+          "name": "param",
+          "text": "role The role of the element that is dismissing the toast. For example, 'cancel' or 'backdrop'."
+        },
+        {
+          "name": "param",
+          "text": "id The id of the toast to dismiss. If an id is not provided, it will dismiss the most recently opened toast."
+        }
+      ]
+    },
+    {
+      "name": "getTop",
+      "returns": {
+        "type": "Promise<HTMLIonToastElement | undefined>",
+        "docs": ""
+      },
+      "signature": "getTop() => Promise<HTMLIonToastElement | undefined>",
+      "parameters": [],
+      "docs": "Get the most recently opened toast overlay.",
+      "docsTags": []
+    }
+  ],
+  "events": [],
+  "styles": [],
+  "slots": [],
+  "dependents": [],
+  "dependencies": [],
+  "dependencyGraph": {},
+  "deprecation": "Use the `toastController` exported from core."
+}

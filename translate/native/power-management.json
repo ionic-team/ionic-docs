@@ -1,0 +1,16 @@
+{
+  "packageName": "@ionic-native/power-management",
+  "displayName": "Power Management",
+  "description": "\nThe PowerManagement plugin offers access to the devices power-management functionality.\nIt should be used for applications which keep running for a long time without any user interaction.\n",
+  "usage": "\n```typescript\nimport { PowerManagement } from '@ionic-native/power-management/ngx';\n\nconstructor(private powerManagement: PowerManagement) { }\n\n...\n\nthis.powerManagement.acquire()\n  .then(onSuccess)\n  .catch(onError);\n\n```\n",
+  "platforms": [
+    "Android",
+    "iOS",
+    "Windows",
+    "Windows Phone"
+  ],
+  "repo": "https://github.com/Viras-/cordova-plugin-powermanagement",
+  "cordovaPlugin": {
+    "name": "cordova-plugin-powermanagement-orig"
+  }
+}

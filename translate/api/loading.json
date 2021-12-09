@@ -1,0 +1,426 @@
+{
+  "filePath": "./src/components/loading/loading.tsx",
+  "encapsulation": "scoped",
+  "tag": "ion-loading",
+  "readme": "# ion-loading\n\nAn overlay that can be used to indicate activity while blocking user interaction. The loading indicator appears on top of the app's content, and can be dismissed by the app to resume user interaction with the app. It includes an optional backdrop, which can be disabled by setting `showBackdrop: false` upon creation.\n\n## Dismissing\n\nThe loading indicator can be dismissed automatically after a specific amount of time by passing the number of milliseconds to display it in the `duration` of the loading options. To dismiss the loading indicator after creation, call the `dismiss()` method on the loading instance. The `onDidDismiss` function can be called to perform an action after the loading indicator is dismissed.\n\n## Customization\n\nLoading uses scoped encapsulation, which means it will automatically scope its CSS by appending each of the styles with an additional class at runtime. Overriding scoped selectors in CSS requires a [higher specificity](https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity) selector.\n\nWe recommend passing a custom class to `cssClass` in the `create` method and using that to add custom styles to the host and inner elements. This property can also accept multiple classes separated by spaces. View the [Usage](#usage) section for an example of how to pass a class using `cssClass`.\n\n```css\n/* DOES NOT WORK - not specific enough */\nion-loading {\n  color: green;\n}\n\n/* Works - pass \"my-custom-class\" in cssClass to increase specificity */\n.my-custom-class {\n  color: green;\n}\n```\n\nAny of the defined [CSS Custom Properties](#css-custom-properties) can be used to style the Loading without needing to target individual elements:\n\n```css\n.my-custom-class {\n  --background: #222;\n  --spinner-color: #fff;\n\n  color: #fff;\n}\n```\n\n> If you are building an Ionic Angular app, the styles need to be added to a global stylesheet file. Read [Style Placement](#style-placement) in the Angular section below for more information.\n\n",
+  "docs": "An overlay that can be used to indicate activity while blocking user interaction. The loading indicator appears on top of the app's content, and can be dismissed by the app to resume user interaction with the app. It includes an optional backdrop, which can be disabled by setting `showBackdrop: false` upon creation.",
+  "docsTags": [
+    {
+      "text": "{\"ios\" | \"md\"} mode - The mode determines which platform styles to use.",
+      "name": "virtualProp"
+    }
+  ],
+  "usage": {
+    "angular": "```typescript\nimport { Component } from '@angular/core';\nimport { LoadingController } from '@ionic/angular';\n\n@Component({\n  selector: 'loading-example',\n  templateUrl: 'loading-example.html',\n  styleUrls: ['./loading-example.css']\n})\nexport class LoadingExample {\n  constructor(public loadingController: LoadingController) {}\n\n  async presentLoading() {\n    const loading = await this.loadingController.create({\n      cssClass: 'my-custom-class',\n      message: 'Please wait...',\n      duration: 2000\n    });\n    await loading.present();\n\n    const { role, data } = await loading.onDidDismiss();\n    console.log('Loading dismissed!');\n  }\n\n  async presentLoadingWithOptions() {\n    const loading = await this.loadingController.create({\n      spinner: null,\n      duration: 5000,\n      message: 'Click the backdrop to dismiss early...',\n      translucent: true,\n      cssClass: 'custom-class custom-loading',\n      backdropDismiss: true\n    });\n    await loading.present();\n\n    const { role, data } = await loading.onDidDismiss();\n    console.log('Loading dismissed with role:', role);\n  }\n}\n```\n\n\n### Style Placement\n\nIn Angular, the CSS of a specific page is scoped only to elements of that page. Even though the Loading can be presented from within a page, the `ion-loading` element is appended outside of the current page. This means that any custom styles need to go in a global stylesheet file. In an Ionic Angular starter this can be the `src/global.scss` file or you can register a new global style file by [adding to the `styles` build option in `angular.json`](https://angular.io/guide/workspace-config#style-script-config).\n",
+    "javascript": "```javascript\nasync function presentLoading() {\n  const loading = document.createElement('ion-loading');\n\n  loading.cssClass = 'my-custom-class';\n  loading.message = 'Please wait...';\n  loading.duration = 2000;\n\n  document.body.appendChild(loading);\n  await loading.present();\n\n  const { role, data } = await loading.onDidDismiss();\n  console.log('Loading dismissed!');\n}\n\nasync function presentLoadingWithOptions() {\n  const loading = document.createElement('ion-loading');\n\n  loading.spinner = null;\n  loading.duration = 5000;\n  loading.message = 'Click the backdrop to dismiss early...';\n  loading.translucent = true;\n  loading.cssClass = 'custom-class custom-loading';\n  loading.backdropDismiss = true;\n\n  document.body.appendChild(loading);\n  await loading.present();\n\n  const { role, data } = await loading.onDidDismiss();\n  console.log('Loading dismissed with role:', role);\n}\n```\n",
+    "react": "```tsx\nimport React, { useState } from 'react';\nimport { IonLoading, IonButton, IonContent } from '@ionic/react';\n\nexport const LoadingExample: React.FC = () => {\n  const [showLoading, setShowLoading] = useState(true);\n\n  setTimeout(() => {\n    setShowLoading(false);\n  }, 2000);\n\n  return (\n    <IonContent>\n      <IonButton onClick={() => setShowLoading(true)}>Show Loading</IonButton>\n      <IonLoading\n        cssClass='my-custom-class'\n        isOpen={showLoading}\n        onDidDismiss={() => setShowLoading(false)}\n        message={'Please wait...'}\n        duration={5000}\n      />\n    </IonContent>\n  );\n};\n```\n",
+    "stencil": "```tsx\nimport { Component, h } from '@stencil/core';\n\nimport { loadingController } from '@ionic/core';\n\n@Component({\n  tag: 'loading-example',\n  styleUrl: 'loading-example.css'\n})\nexport class LoadingExample {\n  async presentLoading() {\n    const loading = await loadingController.create({\n      cssClass: 'my-custom-class',\n      message: 'Please wait...',\n      duration: 2000\n    });\n    await loading.present();\n\n    const { role, data } = await loading.onDidDismiss();\n    console.log('Loading dismissed!', role, data);\n  }\n\n  async presentLoadingWithOptions() {\n    const loading = await loadingController.create({\n      spinner: null,\n      duration: 5000,\n      message: 'Click the backdrop to dismiss early...',\n      translucent: true,\n      cssClass: 'custom-class custom-loading',\n      backdropDismiss: true\n    });\n    await loading.present();\n\n    const { role, data } = await loading.onDidDismiss();\n    console.log('Loading dismissed with role:', role, data);\n  }\n\n  render() {\n    return [\n      <ion-content>\n        <ion-button onClick={() => this.presentLoading()}>Present Loading</ion-button>\n        <ion-button onClick={() => this.presentLoadingWithOptions()}>Present Loading: Options</ion-button>\n      </ion-content>\n    ];\n  }\n}\n```",
+    "vue": "```html\n<template>\n  <ion-button @click=\"presentLoading\">Show Loading</ion-button>\n  <br />\n  <ion-button @click=\"presentLoadingWithOptions\">Show Loading</ion-button>\n</template>\n\n<script>\n\n<script>\nimport { IonButton, loadingController } from '@ionic/vue';\nimport { defineComponent } from 'vue';\n\nexport default defineComponent({\n  props: {\n    timeout: { type: Number, default: 1000 },\n  },\n  methods: {\n    async presentLoading() {\n      const loading = await loadingController\n        .create({\n          cssClass: 'my-custom-class',\n          message: 'Please wait...',\n          duration: this.timeout,\n        });\n        \n      await loading.present();\n      \n      setTimeout(function() {\n        loading.dismiss()\n      }, this.timeout);\n    },\n    async presentLoadingWithOptions() {\n      const loading = await loadingController\n        .create({\n          spinner: null,\n          duration: this.timeout,\n          message: 'Click the backdrop to dismiss early...',\n          translucent: true,\n          cssClass: 'custom-class custom-loading',\n          backdropDismiss: true\n        });\n        \n      await loading.present();\n        \n      setTimeout(function() {\n        loading.dismiss()\n      }, this.timeout);\n    },\n  },\n  components: { IonButton }\n});\n</script>\n```\n\nDevelopers can also use this component directly in their template:\n\n```html\n<template>\n  <ion-button @click=\"setOpen(true)\">Show Loading</ion-button>\n  <ion-loading\n    :is-open=\"isOpenRef\"\n    cssClass=\"my-custom-class\"\n    message=\"Please wait...\"\n    :duration=\"timeout\"\n    @onDidDismiss=\"setOpen(false)\"\n  >\n  </ion-loading>\n</template>\n\n<script>\nimport { IonLoading, IonButton } from '@ionic/vue';\nimport { defineComponent, ref } from 'vue';\n\nexport default defineComponent({\n  props: {\n    timeout: { type: Number, default: 1000 },\n  },\n  components: { IonLoading, IonButton },\n  setup() {\n    const isOpenRef = ref(false);\n    const setOpen = (state: boolean) => isOpenRef.value = state;\n    \n    return { isOpenRef, setOpen }\n  }\n});\n</script>\n```\n"
+  },
+  "props": [
+    {
+      "name": "animated",
+      "type": "boolean",
+      "mutable": false,
+      "attr": "animated",
+      "reflectToAttr": false,
+      "docs": "If `true`, the loading indicator will animate.",
+      "docsTags": [],
+      "default": "true",
+      "values": [
+        {
+          "type": "boolean"
+        }
+      ],
+      "optional": false,
+      "required": false
+    },
+    {
+      "name": "backdropDismiss",
+      "type": "boolean",
+      "mutable": false,
+      "attr": "backdrop-dismiss",
+      "reflectToAttr": false,
+      "docs": "If `true`, the loading indicator will be dismissed when the backdrop is clicked.",
+      "docsTags": [],
+      "default": "false",
+      "values": [
+        {
+          "type": "boolean"
+        }
+      ],
+      "optional": false,
+      "required": false
+    },
+    {
+      "name": "cssClass",
+      "type": "string | string[] | undefined",
+      "mutable": false,
+      "attr": "css-class",
+      "reflectToAttr": false,
+      "docs": "Additional classes to apply for custom CSS. If multiple classes are\nprovided they should be separated by spaces.",
+      "docsTags": [],
+      "values": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "string[]"
+        },
+        {
+          "type": "undefined"
+        }
+      ],
+      "optional": true,
+      "required": false
+    },
+    {
+      "name": "duration",
+      "type": "number",
+      "mutable": false,
+      "attr": "duration",
+      "reflectToAttr": false,
+      "docs": "Number of milliseconds to wait before dismissing the loading indicator.",
+      "docsTags": [],
+      "default": "0",
+      "values": [
+        {
+          "type": "number"
+        }
+      ],
+      "optional": false,
+      "required": false
+    },
+    {
+      "name": "enterAnimation",
+      "type": "((baseEl: any, opts?: any) => Animation) | undefined",
+      "mutable": false,
+      "reflectToAttr": false,
+      "docs": "Animation to use when the loading indicator is presented.",
+      "docsTags": [],
+      "values": [
+        {
+          "type": "((baseEl: any, opts?: any) => Animation)"
+        },
+        {
+          "type": "undefined"
+        }
+      ],
+      "optional": true,
+      "required": false
+    },
+    {
+      "name": "keyboardClose",
+      "type": "boolean",
+      "mutable": false,
+      "attr": "keyboard-close",
+      "reflectToAttr": false,
+      "docs": "If `true`, the keyboard will be automatically dismissed when the overlay is presented.",
+      "docsTags": [],
+      "default": "true",
+      "values": [
+        {
+          "type": "boolean"
+        }
+      ],
+      "optional": false,
+      "required": false
+    },
+    {
+      "name": "leaveAnimation",
+      "type": "((baseEl: any, opts?: any) => Animation) | undefined",
+      "mutable": false,
+      "reflectToAttr": false,
+      "docs": "Animation to use when the loading indicator is dismissed.",
+      "docsTags": [],
+      "values": [
+        {
+          "type": "((baseEl: any, opts?: any) => Animation)"
+        },
+        {
+          "type": "undefined"
+        }
+      ],
+      "optional": true,
+      "required": false
+    },
+    {
+      "name": "message",
+      "type": "IonicSafeString | string | undefined",
+      "mutable": false,
+      "attr": "message",
+      "reflectToAttr": false,
+      "docs": "Optional text content to display in the loading indicator.",
+      "docsTags": [],
+      "values": [
+        {
+          "type": "IonicSafeString"
+        },
+        {
+          "type": "string"
+        },
+        {
+          "type": "undefined"
+        }
+      ],
+      "optional": true,
+      "required": false
+    },
+    {
+      "name": "mode",
+      "type": "\"ios\" | \"md\"",
+      "mutable": false,
+      "attr": "mode",
+      "reflectToAttr": false,
+      "docs": "The mode determines which platform styles to use.",
+      "docsTags": [],
+      "values": [
+        {
+          "value": "ios",
+          "type": "string"
+        },
+        {
+          "value": "md",
+          "type": "string"
+        }
+      ],
+      "optional": true,
+      "required": false
+    },
+    {
+      "name": "showBackdrop",
+      "type": "boolean",
+      "mutable": false,
+      "attr": "show-backdrop",
+      "reflectToAttr": false,
+      "docs": "If `true`, a backdrop will be displayed behind the loading indicator.",
+      "docsTags": [],
+      "default": "true",
+      "values": [
+        {
+          "type": "boolean"
+        }
+      ],
+      "optional": false,
+      "required": false
+    },
+    {
+      "name": "spinner",
+      "type": "\"bubbles\" | \"circles\" | \"circular\" | \"crescent\" | \"dots\" | \"lines\" | \"lines-small\" | null | undefined",
+      "mutable": true,
+      "attr": "spinner",
+      "reflectToAttr": false,
+      "docs": "The name of the spinner to display.",
+      "docsTags": [],
+      "values": [
+        {
+          "value": "bubbles",
+          "type": "string"
+        },
+        {
+          "value": "circles",
+          "type": "string"
+        },
+        {
+          "value": "circular",
+          "type": "string"
+        },
+        {
+          "value": "crescent",
+          "type": "string"
+        },
+        {
+          "value": "dots",
+          "type": "string"
+        },
+        {
+          "value": "lines",
+          "type": "string"
+        },
+        {
+          "value": "lines-small",
+          "type": "string"
+        },
+        {
+          "type": "null"
+        },
+        {
+          "type": "undefined"
+        }
+      ],
+      "optional": true,
+      "required": false
+    },
+    {
+      "name": "translucent",
+      "type": "boolean",
+      "mutable": false,
+      "attr": "translucent",
+      "reflectToAttr": false,
+      "docs": "If `true`, the loading indicator will be translucent.\nOnly applies when the mode is `\"ios\"` and the device supports\n[`backdrop-filter`](https://developer.mozilla.org/en-US/docs/Web/CSS/backdrop-filter#Browser_compatibility).",
+      "docsTags": [],
+      "default": "false",
+      "values": [
+        {
+          "type": "boolean"
+        }
+      ],
+      "optional": false,
+      "required": false
+    }
+  ],
+  "methods": [
+    {
+      "name": "dismiss",
+      "returns": {
+        "type": "Promise<boolean>",
+        "docs": ""
+      },
+      "signature": "dismiss(data?: any, role?: string | undefined) => Promise<boolean>",
+      "parameters": [],
+      "docs": "Dismiss the loading overlay after it has been presented.",
+      "docsTags": [
+        {
+          "name": "param",
+          "text": "data Any data to emit in the dismiss events."
+        },
+        {
+          "name": "param",
+          "text": "role The role of the element that is dismissing the loading.\nThis can be useful in a button handler for determining which button was\nclicked to dismiss the loading.\nSome examples include: ``\"cancel\"`, `\"destructive\"`, \"selected\"`, and `\"backdrop\"`."
+        }
+      ]
+    },
+    {
+      "name": "onDidDismiss",
+      "returns": {
+        "type": "Promise<OverlayEventDetail<T>>",
+        "docs": ""
+      },
+      "signature": "onDidDismiss<T = any>() => Promise<OverlayEventDetail<T>>",
+      "parameters": [],
+      "docs": "Returns a promise that resolves when the loading did dismiss.",
+      "docsTags": []
+    },
+    {
+      "name": "onWillDismiss",
+      "returns": {
+        "type": "Promise<OverlayEventDetail<T>>",
+        "docs": ""
+      },
+      "signature": "onWillDismiss<T = any>() => Promise<OverlayEventDetail<T>>",
+      "parameters": [],
+      "docs": "Returns a promise that resolves when the loading will dismiss.",
+      "docsTags": []
+    },
+    {
+      "name": "present",
+      "returns": {
+        "type": "Promise<void>",
+        "docs": ""
+      },
+      "signature": "present() => Promise<void>",
+      "parameters": [],
+      "docs": "Present the loading overlay after it has been created.",
+      "docsTags": []
+    }
+  ],
+  "events": [
+    {
+      "event": "ionLoadingDidDismiss",
+      "detail": "OverlayEventDetail<any>",
+      "bubbles": true,
+      "cancelable": true,
+      "composed": true,
+      "docs": "Emitted after the loading has dismissed.",
+      "docsTags": []
+    },
+    {
+      "event": "ionLoadingDidPresent",
+      "detail": "void",
+      "bubbles": true,
+      "cancelable": true,
+      "composed": true,
+      "docs": "Emitted after the loading has presented.",
+      "docsTags": []
+    },
+    {
+      "event": "ionLoadingWillDismiss",
+      "detail": "OverlayEventDetail<any>",
+      "bubbles": true,
+      "cancelable": true,
+      "composed": true,
+      "docs": "Emitted before the loading has dismissed.",
+      "docsTags": []
+    },
+    {
+      "event": "ionLoadingWillPresent",
+      "detail": "void",
+      "bubbles": true,
+      "cancelable": true,
+      "composed": true,
+      "docs": "Emitted before the loading has presented.",
+      "docsTags": []
+    }
+  ],
+  "listeners": [],
+  "styles": [
+    {
+      "name": "--backdrop-opacity",
+      "annotation": "prop",
+      "docs": "Opacity of the backdrop"
+    },
+    {
+      "name": "--background",
+      "annotation": "prop",
+      "docs": "Background of the loading dialog"
+    },
+    {
+      "name": "--height",
+      "annotation": "prop",
+      "docs": "Height of the loading dialog"
+    },
+    {
+      "name": "--max-height",
+      "annotation": "prop",
+      "docs": "Maximum height of the loading dialog"
+    },
+    {
+      "name": "--max-width",
+      "annotation": "prop",
+      "docs": "Maximum width of the loading dialog"
+    },
+    {
+      "name": "--min-height",
+      "annotation": "prop",
+      "docs": "Minimum height of the loading dialog"
+    },
+    {
+      "name": "--min-width",
+      "annotation": "prop",
+      "docs": "Minimum width of the loading dialog"
+    },
+    {
+      "name": "--spinner-color",
+      "annotation": "prop",
+      "docs": "Color of the loading spinner"
+    },
+    {
+      "name": "--width",
+      "annotation": "prop",
+      "docs": "Width of the loading dialog"
+    }
+  ],
+  "slots": [],
+  "parts": [],
+  "dependents": [],
+  "dependencies": [
+    "ion-backdrop",
+    "ion-spinner"
+  ],
+  "dependencyGraph": {
+    "ion-loading": [
+      "ion-backdrop",
+      "ion-spinner"
+    ]
+  }
+}

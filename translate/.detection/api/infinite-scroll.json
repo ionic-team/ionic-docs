@@ -1,0 +1,103 @@
+{
+  "filePath": "./src/components/infinite-scroll/infinite-scroll.tsx",
+  "encapsulation": "none",
+  "tag": "ion-infinite-scroll",
+  "readme": "# ion-infinite-scroll\n\nThe Infinite Scroll component calls an action to be performed when the user scrolls a specified distance from the bottom or top of the page.\n\nThe expression assigned to the `ionInfinite` event is called when the user reaches that defined distance. When this expression has finished any and all tasks, it should call the `complete()` method on the infinite scroll instance.\n\n## Infinite Scroll Content\n\nThe `ion-infinite-scroll` component has the infinite scroll logic. It requires a child component in order to display content. Ionic uses its `ion-infinite-scroll-content` component by default. This component displays the infinite scroll and changes the look depending on the infinite scroll's state. It displays a spinner that looks best based on the platform the user is on. However, the default spinner can be changed and text can be added by setting properties on the `ion-infinite-scroll-content` component.\n\n## Custom Content\n\nSeparating the `ion-infinite-scroll` and `ion-infinite-scroll-content` components allows developers to create their own content components, if desired. This content can contain anything, from an SVG element to elements with unique CSS animations.\n",
+  "docs": "The Infinite Scroll component calls an action to be performed when the user scrolls a specified distance from the bottom or top of the page.\n\nThe expression assigned to the `ionInfinite` event is called when the user reaches that defined distance. When this expression has finished any and all tasks, it should call the `complete()` method on the infinite scroll instance.",
+  "docsTags": [],
+  "usage": {
+    "angular": "```html\n<ion-content>\n  <ion-button (click)=\"toggleInfiniteScroll()\" expand=\"block\">\n    Toggle Infinite Scroll\n  </ion-button>\n\n  <ion-list></ion-list>\n\n  <ion-infinite-scroll threshold=\"100px\" (ionInfinite)=\"loadData($event)\">\n    <ion-infinite-scroll-content\n      loadingSpinner=\"bubbles\"\n      loadingText=\"Loading more data...\">\n    </ion-infinite-scroll-content>\n  </ion-infinite-scroll>\n</ion-content>\n```\n\n```typescript\nimport { Component, ViewChild } from '@angular/core';\nimport { IonInfiniteScroll } from '@ionic/angular';\n\n@Component({\n  selector: 'infinite-scroll-example',\n  templateUrl: 'infinite-scroll-example.html',\n  styleUrls: ['./infinite-scroll-example.css']\n})\nexport class InfiniteScrollExample {\n  @ViewChild(IonInfiniteScroll) infiniteScroll: IonInfiniteScroll;\n\n  constructor() {}\n\n  loadData(event) {\n    setTimeout(() => {\n      console.log('Done');\n      event.target.complete();\n\n      // App logic to determine if all data is loaded\n      // and disable the infinite scroll\n      if (data.length == 1000) {\n        event.target.disabled = true;\n      }\n    }, 500);\n  }\n\n  toggleInfiniteScroll() {\n    this.infiniteScroll.disabled = !this.infiniteScroll.disabled;\n  }\n}\n```\n",
+    "javascript": "```html\n<ion-content>\n  <ion-button onClick=\"toggleInfiniteScroll()\" expand=\"block\">\n    Toggle Infinite Scroll\n  </ion-button>\n\n  <ion-list></ion-list>\n\n  <ion-infinite-scroll threshold=\"100px\" id=\"infinite-scroll\">\n    <ion-infinite-scroll-content\n      loading-spinner=\"bubbles\"\n      loading-text=\"Loading more data...\">\n    </ion-infinite-scroll-content>\n  </ion-infinite-scroll>\n</ion-content>\n```\n\n```javascript\nconst infiniteScroll = document.getElementById('infinite-scroll');\n\ninfiniteScroll.addEventListener('ionInfinite', function(event) {\n  setTimeout(function() {\n    console.log('Done');\n    event.target.complete();\n\n    // App logic to determine if all data is loaded\n    // and disable the infinite scroll\n    if (data.length == 1000) {\n      event.target.disabled = true;\n    }\n  }, 500);\n});\n\nfunction toggleInfiniteScroll() {\n  infiniteScroll.disabled = !infiniteScroll.disabled;\n}\n```\n",
+    "stencil": "```tsx\nimport { Component, State, h } from '@stencil/core';\n\n@Component({\n  tag: 'infinite-scroll-example',\n  styleUrl: 'infinite-scroll-example.css'\n})\nexport class InfiniteScrollExample {\n  private infiniteScroll: HTMLIonInfiniteScrollElement;\n\n  @State() data = [];\n\n  componentWillLoad() {\n    this.pushData();\n  }\n\n  pushData() {\n    const max = this.data.length + 20;\n    const min = max - 20;\n\n    for (var i = min; i < max; i++) {\n      this.data.push('Item ' + i);\n    }\n\n    // Stencil does not re-render when pushing to an array\n    // so create a new copy of the array\n    // https://stenciljs.com/docs/reactive-data#handling-arrays-and-objects\n    this.data = [\n      ...this.data\n    ];\n  }\n\n  loadData(ev) {\n    setTimeout(() => {\n      this.pushData();\n      console.log('Loaded data');\n      ev.target.complete();\n\n      // App logic to determine if all data is loaded\n      // and disable the infinite scroll\n      if (this.data.length == 1000) {\n        ev.target.disabled = true;\n      }\n    }, 500);\n  }\n\n  toggleInfiniteScroll() {\n    this.infiniteScroll.disabled = !this.infiniteScroll.disabled;\n  }\n\n  render() {\n    return [\n      <ion-content>\n        <ion-button onClick={() => this.toggleInfiniteScroll()} expand=\"block\">\n          Toggle Infinite Scroll\n        </ion-button>\n\n        <ion-list>\n          {this.data.map(item =>\n            <ion-item>\n              <ion-label>{item}</ion-label>\n            </ion-item>\n          )}\n        </ion-list>\n\n        <ion-infinite-scroll\n          ref={el => this.infiniteScroll = el}\n          onIonInfinite={(ev) => this.loadData(ev)}>\n          <ion-infinite-scroll-content\n            loadingSpinner=\"bubbles\"\n            loadingText=\"Loading more data...\">\n          </ion-infinite-scroll-content>\n        </ion-infinite-scroll>\n      </ion-content>\n    ];\n  }\n}\n```",
+    "vue": "```html\n<template>\n  <ion-page>\n    <ion-content class=\"ion-padding\">\n      <ion-button @click=\"toggleInfiniteScroll\" expand=\"block\">\n        Toggle Infinite Scroll\n      </ion-button>\n    \n      <ion-list>\n        <ion-item v-for=\"item in items\" :key=\"item\">\n          <ion-label>{{ item }}</ion-label>\n        </ion-item>\n      </ion-list>\n    \n      <ion-infinite-scroll\n        @ionInfinite=\"loadData($event)\" \n        threshold=\"100px\" \n        id=\"infinite-scroll\"\n        :disabled=\"isDisabled\"\n      >\n        <ion-infinite-scroll-content\n          loading-spinner=\"bubbles\"\n          loading-text=\"Loading more data...\">\n        </ion-infinite-scroll-content>\n      </ion-infinite-scroll>\n    </ion-content>\n  </ion-page>\n</template>\n\n<script lang=\"ts\">\nimport { \n  IonButton,\n  IonContent, \n  IonInfiniteScroll, \n  IonInfiniteScrollContent,\n  IonItem,\n  IonLabel,\n  IonList,\n  IonPage\n } from '@ionic/vue';\nimport { defineComponent, ref } from 'vue';\n \nexport default defineComponent({\n  components: {\n    IonButton,\n    IonContent, \n    IonInfiniteScroll, \n    IonInfiniteScrollContent,\n    IonItem,\n    IonLabel,\n    IonList,\n    IonPage\n  },\n  setup() {\n    const isDisabled = ref(false);\n    const toggleInfiniteScroll = () => {\n      isDisabled.value = !isDisabled.value;\n    }\n    const items = ref([]);\n    const pushData = () => {\n      const max = items.value.length + 20;\n      const min = max - 20;\n      for (let i = min; i < max; i++) {\n        items.value.push(i);\n      }\n    }\n    \n    const loadData = (ev: CustomEvent) => {\n      setTimeout(() => {\n        pushData();\n        console.log('Loaded data');\n        ev.target.complete();\n  \n        // App logic to determine if all data is loaded\n        // and disable the infinite scroll\n        if (items.value.length == 1000) {\n          ev.target.disabled = true;\n        }\n      }, 500);\n    }\n    \n    pushData();\n    \n    return {\n      isDisabled,\n      toggleInfiniteScroll,\n      loadData,\n      items\n    }\n  }\n});\n\n</script>\n```"
+  },
+  "props": [
+    {
+      "name": "disabled",
+      "type": "boolean",
+      "mutable": false,
+      "attr": "disabled",
+      "reflectToAttr": false,
+      "docs": "If `true`, the infinite scroll will be hidden and scroll event listeners\nwill be removed.\n\nSet this to true to disable the infinite scroll from actively\ntrying to receive new data while scrolling. This is useful\nwhen it is known that there is no more data that can be added, and\nthe infinite scroll is no longer needed.",
+      "docsTags": [],
+      "default": "false",
+      "values": [
+        {
+          "type": "boolean"
+        }
+      ],
+      "optional": false,
+      "required": false
+    },
+    {
+      "name": "position",
+      "type": "\"bottom\" | \"top\"",
+      "mutable": false,
+      "attr": "position",
+      "reflectToAttr": false,
+      "docs": "The position of the infinite scroll element.\nThe value can be either `top` or `bottom`.",
+      "docsTags": [],
+      "default": "'bottom'",
+      "values": [
+        {
+          "value": "bottom",
+          "type": "string"
+        },
+        {
+          "value": "top",
+          "type": "string"
+        }
+      ],
+      "optional": false,
+      "required": false
+    },
+    {
+      "name": "threshold",
+      "type": "string",
+      "mutable": false,
+      "attr": "threshold",
+      "reflectToAttr": false,
+      "docs": "The threshold distance from the bottom\nof the content to call the `infinite` output event when scrolled.\nThe threshold value can be either a percent, or\nin pixels. For example, use the value of `10%` for the `infinite`\noutput event to get called when the user has scrolled 10%\nfrom the bottom of the page. Use the value `100px` when the\nscroll is within 100 pixels from the bottom of the page.",
+      "docsTags": [],
+      "default": "'15%'",
+      "values": [
+        {
+          "type": "string"
+        }
+      ],
+      "optional": false,
+      "required": false
+    }
+  ],
+  "methods": [
+    {
+      "name": "complete",
+      "returns": {
+        "type": "Promise<void>",
+        "docs": ""
+      },
+      "signature": "complete() => Promise<void>",
+      "parameters": [],
+      "docs": "Call `complete()` within the `ionInfinite` output event handler when\nyour async operation has completed. For example, the `loading`\nstate is while the app is performing an asynchronous operation,\nsuch as receiving more data from an AJAX request to add more items\nto a data list. Once the data has been received and UI updated, you\nthen call this method to signify that the loading has completed.\nThis method will change the infinite scroll's state from `loading`\nto `enabled`.",
+      "docsTags": []
+    }
+  ],
+  "events": [
+    {
+      "event": "ionInfinite",
+      "detail": "void",
+      "bubbles": true,
+      "cancelable": true,
+      "composed": true,
+      "docs": "Emitted when the scroll reaches\nthe threshold distance. From within your infinite handler,\nyou must call the infinite scroll's `complete()` method when\nyour async operation has completed.",
+      "docsTags": []
+    }
+  ],
+  "listeners": [],
+  "styles": [],
+  "slots": [],
+  "parts": [],
+  "dependents": [],
+  "dependencies": [],
+  "dependencyGraph": {}
+}

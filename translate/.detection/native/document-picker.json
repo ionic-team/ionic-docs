@@ -1,0 +1,13 @@
+{
+  "packageName": "@ionic-native/document-picker",
+  "displayName": "iOS DocumentPicker",
+  "description": "\n\nOpens the file picker on iOS for the user to select a file, returns a file URI.\nAllows the user to upload files from iCloud\n",
+  "usage": "\n```typescript\nimport { DocumentPicker } from '@ionic-native/document-picker/ngx';\n\nconstructor(private docPicker: DocumentPicker) { }\n\n...\n\nthis.docPicker.getFile('all')\n  .then(uri => console.log(uri))\n  .catch(e => console.log(e));\n\n```\n",
+  "platforms": [
+    "iOS"
+  ],
+  "repo": "https://github.com/iampossible/Cordova-DocPicker",
+  "cordovaPlugin": {
+    "name": "cordova-plugin-documentpicker.DocumentPicker"
+  }
+}

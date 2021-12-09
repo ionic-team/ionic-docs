@@ -1,0 +1,14 @@
+{
+  "packageName": "@ionic-native/ibeacon",
+  "displayName": "IBeacon",
+  "description": "\nThis plugin provides functions for working with iBeacons.\n\n The plugin's API closely mimics the one exposed through the [CLLocationManager](https://developer.apple.com/library/ios/documentation/CoreLocation/Reference/CLLocationManager_Class/index.html) introduced in iOS 7.\n",
+  "usage": "\n\n```typescript\nimport { IBeacon } from '@ionic-native/ibeacon/ngx';\n\nconstructor(private ibeacon: IBeacon) { }\n\n...\n\n\n// Request permission to use location on iOS\nthis.ibeacon.requestAlwaysAuthorization();\n// create a new delegate and register it with the native layer\nlet delegate = this.ibeacon.Delegate();\n\n// Subscribe to some of the delegate's event handlers\ndelegate.didRangeBeaconsInRegion()\n  .subscribe(\n    data => console.log('didRangeBeaconsInRegion: ', data),\n    error => console.error()\n  );\ndelegate.didStartMonitoringForRegion()\n  .subscribe(\n    data => console.log('didStartMonitoringForRegion: ', data),\n    error => console.error()\n  );\ndelegate.didEnterRegion()\n  .subscribe(\n    data => {\n      console.log('didEnterRegion: ', data);\n    }\n  );\n\nlet beaconRegion = this.ibeacon.BeaconRegion('deskBeacon','F7826DA6-ASDF-ASDF-8024-BC5B71E0893E');\n\nthis.ibeacon.startMonitoringForRegion(beaconRegion)\n  .then(\n    () => console.log('Native layer received the request to monitoring'),\n    error => console.error('Native layer failed to begin monitoring: ', error)\n  );\n```",
+  "platforms": [
+    "Android",
+    "iOS"
+  ],
+  "repo": "https://github.com/petermetz/cordova-plugin-ibeacon",
+  "cordovaPlugin": {
+    "name": "cordova-plugin-ibeacon"
+  }
+}

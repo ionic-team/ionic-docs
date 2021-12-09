@@ -1,0 +1,123 @@
+{
+  "filePath": "./src/components/backdrop/backdrop.tsx",
+  "encapsulation": "shadow",
+  "tag": "ion-backdrop",
+  "readme": "# ion-backdrop\n\nBackdrops are full screen components that overlay other components. They are useful behind components that transition in on top of other content and can be used to dismiss that component.\n\n",
+  "docs": "Backdrops are full screen components that overlay other components. They are useful behind components that transition in on top of other content and can be used to dismiss that component.",
+  "docsTags": [],
+  "usage": {
+    "angular": "```html\n<!-- Default backdrop -->\n<ion-backdrop></ion-backdrop>\n\n<!-- Backdrop that is not tappable -->\n<ion-backdrop tappable=\"false\"></ion-backdrop>\n\n<!-- Backdrop that is not visible -->\n<ion-backdrop visible=\"false\"></ion-backdrop>\n\n<!-- Backdrop with propagation -->\n<ion-backdrop stopPropagation=\"false\"></ion-backdrop>\n\n<!-- Backdrop that sets dynamic properties -->\n<ion-backdrop\n  [tappable]=\"enableBackdropDismiss\"\n  [visible]=\"showBackdrop\"\n  [stopPropagation]=\"shouldPropagate\">\n</ion-backdrop>\n```\n\n```typescript\nimport { Component } from '@angular/core';\n\n@Component({\n  selector: 'backdrop-example',\n  templateUrl: 'backdrop-example.html',\n  styleUrls: ['./backdrop-example.css'],\n})\nexport class BackdropExample {\n  enableBackdropDismiss = false;\n  showBackdrop = false;\n  shouldPropagate = false;\n}\n```\n",
+    "javascript": "```html\n<!-- Default backdrop -->\n<ion-backdrop></ion-backdrop>\n\n<!-- Backdrop that is not tappable -->\n<ion-backdrop tappable=\"false\"></ion-backdrop>\n\n<!-- Backdrop that is not visible -->\n<ion-backdrop visible=\"false\"></ion-backdrop>\n\n<!-- Backdrop with propagation -->\n<ion-backdrop stop-propagation=\"false\"></ion-backdrop>\n\n<!-- Backdrop that sets dynamic properties -->\n<ion-backdrop id=\"customBackdrop\"></ion-backdrop>\n```\n\n```javascript\nvar backdrop = document.getElementById('customBackdrop');\nbackdrop.visible = false;\nbackdrop.tappable = false;\nbackdrop.stopPropagation = false;\n```",
+    "react": "```tsx\nimport React from 'react';\nimport { IonBackdrop, IonContent } from '@ionic/react';\n\nexport const BackdropExample: React.FC = () => (\n  <IonContent>\n    {/*-- Default backdrop --*/}\n    <IonBackdrop />\n\n    {/*-- Backdrop that is not tappable --*/}\n    <IonBackdrop tappable={false} />\n\n    {/*-- Backdrop that is not visible --*/}\n    <IonBackdrop visible={false} />\n\n    {/*-- Backdrop with propagation --*/}\n    <IonBackdrop stopPropagation={false} />\n\n    <IonBackdrop tappable={true} visible={true} stopPropagation={true} />\n  </IonContent>\n);\n```\n",
+    "stencil": "```tsx\nimport { Component, h } from '@stencil/core';\n\n@Component({\n  tag: 'backdrop-example',\n  styleUrl: 'backdrop-example.css'\n})\nexport class BackdropExample {\n  render() {\n    const enableBackdropDismiss = false;\n    const showBackdrop = false;\n    const shouldPropagate = false;\n\n    return [\n      // Default backdrop\n      <ion-backdrop></ion-backdrop>,\n\n      // Backdrop that is not tappable\n      <ion-backdrop tappable={false}></ion-backdrop>,\n\n      // Backdrop that is not visible\n      <ion-backdrop visible={false}></ion-backdrop>,\n\n      // Backdrop with propagation\n      <ion-backdrop stopPropagation={false}></ion-backdrop>,\n\n      // Backdrop that sets dynamic properties\n      <ion-backdrop\n        tappable={enableBackdropDismiss}\n        visible={showBackdrop}\n        stopPropagation={shouldPropagate}>\n      </ion-backdrop>\n    ];\n  }\n}\n```",
+    "vue": "```html\n<template>\n  <!-- Default backdrop -->\n  <ion-backdrop></ion-backdrop>\n\n  <!-- Backdrop that is not tappable -->\n  <ion-backdrop tappable=\"false\"></ion-backdrop>\n\n  <!-- Backdrop that is not visible -->\n  <ion-backdrop visible=\"false\"></ion-backdrop>\n\n  <!-- Backdrop with propagation -->\n  <ion-backdrop stop-propagation=\"false\"></ion-backdrop>\n\n  <!-- Backdrop that sets dynamic properties -->\n  <ion-backdrop\n    :tappable=\"enableBackdropDismiss\"\n    :visible=\"showBackdrop\"\n    :stop-propagation=\"shouldPropagate\">\n  </ion-backdrop>\n</template>\n\n<script>\nimport { IonBackdrop } from '@ionic/vue';\nimport { defineComponent } from 'vue';\n\nexport default defineComponent({\n  components: { IonBackdrop },\n  setup() {\n    return {\n      enableBackdropDismiss: true,\n      showBackdrop: true,\n      shouldPropagate: true\n    }\n  }\n});\n</script>\n```"
+  },
+  "props": [
+    {
+      "name": "stopPropagation",
+      "type": "boolean",
+      "mutable": false,
+      "attr": "stop-propagation",
+      "reflectToAttr": false,
+      "docs": "If `true`, the backdrop will stop propagation on tap.",
+      "docsTags": [],
+      "default": "true",
+      "values": [
+        {
+          "type": "boolean"
+        }
+      ],
+      "optional": false,
+      "required": false
+    },
+    {
+      "name": "tappable",
+      "type": "boolean",
+      "mutable": false,
+      "attr": "tappable",
+      "reflectToAttr": false,
+      "docs": "If `true`, the backdrop will can be clicked and will emit the `ionBackdropTap` event.",
+      "docsTags": [],
+      "default": "true",
+      "values": [
+        {
+          "type": "boolean"
+        }
+      ],
+      "optional": false,
+      "required": false
+    },
+    {
+      "name": "visible",
+      "type": "boolean",
+      "mutable": false,
+      "attr": "visible",
+      "reflectToAttr": false,
+      "docs": "If `true`, the backdrop will be visible.",
+      "docsTags": [],
+      "default": "true",
+      "values": [
+        {
+          "type": "boolean"
+        }
+      ],
+      "optional": false,
+      "required": false
+    }
+  ],
+  "methods": [],
+  "events": [
+    {
+      "event": "ionBackdropTap",
+      "detail": "void",
+      "bubbles": true,
+      "cancelable": true,
+      "composed": true,
+      "docs": "Emitted when the backdrop is tapped.",
+      "docsTags": []
+    }
+  ],
+  "listeners": [
+    {
+      "event": "click",
+      "capture": true,
+      "passive": false
+    }
+  ],
+  "styles": [],
+  "slots": [],
+  "parts": [],
+  "dependents": [
+    "ion-action-sheet",
+    "ion-alert",
+    "ion-loading",
+    "ion-menu",
+    "ion-modal",
+    "ion-picker",
+    "ion-popover"
+  ],
+  "dependencies": [],
+  "dependencyGraph": {
+    "ion-action-sheet": [
+      "ion-backdrop"
+    ],
+    "ion-alert": [
+      "ion-backdrop"
+    ],
+    "ion-loading": [
+      "ion-backdrop"
+    ],
+    "ion-menu": [
+      "ion-backdrop"
+    ],
+    "ion-modal": [
+      "ion-backdrop"
+    ],
+    "ion-picker": [
+      "ion-backdrop"
+    ],
+    "ion-popover": [
+      "ion-backdrop"
+    ]
+  }
+}

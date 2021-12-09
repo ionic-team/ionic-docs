@@ -1,0 +1,96 @@
+{
+  "name": "ionic build",
+  "namespace": [
+    "ionic"
+  ],
+  "summary": "Build web assets and prepare your app for any platform targets",
+  "description": "`ionic build` will perform an Ionic build, which compiles web assets and prepares them for deployment.\n\n`ionic build` uses the Angular CLI. Use `ng build --help` to list all Angular CLI options for building your app. See the `ng build` [docs](https://angular.io/cli/build) for explanations. Options not listed below are considered advanced and can be passed to the `ng` CLI using the `--` separator after the Ionic CLI arguments. See the examples.",
+  "footnotes": [],
+  "groups": [],
+  "exampleCommands": [
+    "ionic build ",
+    "ionic build --prod",
+    "ionic build --watch"
+  ],
+  "aliases": [],
+  "inputs": [],
+  "options": [
+    {
+      "name": "prod",
+      "type": "boolean",
+      "summary": "Flag to use the `production` configuration",
+      "groups": [
+        "cordova"
+      ],
+      "aliases": [],
+      "spec": {
+        "value": "true/false"
+      }
+    },
+    {
+      "name": "configuration",
+      "type": "string",
+      "summary": "Specify the configuration to use.",
+      "groups": [
+        "advanced",
+        "cordova"
+      ],
+      "aliases": [
+        "c"
+      ],
+      "spec": {
+        "value": "conf"
+      }
+    },
+    {
+      "name": "source-map",
+      "type": "boolean",
+      "summary": "Output source maps",
+      "groups": [
+        "advanced",
+        "cordova"
+      ],
+      "aliases": [],
+      "spec": {
+        "value": "true/false"
+      }
+    },
+    {
+      "name": "watch",
+      "type": "boolean",
+      "summary": "Rebuild when files change",
+      "groups": [
+        "advanced"
+      ],
+      "aliases": [],
+      "spec": {
+        "value": "true/false"
+      }
+    },
+    {
+      "name": "engine",
+      "type": "string",
+      "summary": "Target engine (e.g. `browser`, `cordova`)",
+      "groups": [
+        "advanced"
+      ],
+      "aliases": [],
+      "spec": {
+        "value": "engine"
+      }
+    },
+    {
+      "name": "platform",
+      "type": "string",
+      "summary": "Target platform on chosen engine (e.g. `ios`, `android`)",
+      "groups": [
+        "advanced"
+      ],
+      "aliases": [],
+      "spec": {
+        "value": "platform"
+      }
+    }
+  ],
+  "type": "project"
+}

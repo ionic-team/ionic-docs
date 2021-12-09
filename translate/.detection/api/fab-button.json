@@ -1,0 +1,482 @@
+{
+  "filePath": "./src/components/fab-button/fab-button.tsx",
+  "encapsulation": "shadow",
+  "tag": "ion-fab-button",
+  "readme": "# ion-fab-button\n\nFloating Action Buttons (FABs) represent the primary action in an application. By default, they have a circular shape. When pressed, the button may open more related actions. As the name suggests, FABs generally float over the content in a fixed position. This is not achieved exclusively by using an `<ion-fab-button>FAB</ion-fab-button>`. They need to be wrapped with an `<ion-fab>` component in order to be fixed over the content.\n\nIf the FAB button is not wrapped with `<ion-fab>`, it will scroll with the content. FAB buttons have a default size, a mini size and can accept different colors:\n",
+  "docs": "Floating Action Buttons (FABs) represent the primary action in an application. By default, they have a circular shape. When pressed, the button may open more related actions. As the name suggests, FABs generally float over the content in a fixed position. This is not achieved exclusively by using an `<ion-fab-button>FAB</ion-fab-button>`. They need to be wrapped with an `<ion-fab>` component in order to be fixed over the content.\n\nIf the FAB button is not wrapped with `<ion-fab>`, it will scroll with the content. FAB buttons have a default size, a mini size and can accept different colors:",
+  "docsTags": [
+    {
+      "text": "{\"ios\" | \"md\"} mode - The mode determines which platform styles to use.",
+      "name": "virtualProp"
+    },
+    {
+      "text": "native - The native HTML button or anchor element that wraps all child elements.",
+      "name": "part"
+    },
+    {
+      "text": "close-icon - The close icon that is displayed when a fab list opens (uses ion-icon).",
+      "name": "part"
+    }
+  ],
+  "usage": {
+    "angular": "```html\n<ion-content>\n\n  <!-- Fixed Floating Action Button that does not scroll with the content -->\n  <ion-fab slot=\"fixed\">\n    <ion-fab-button>Button</ion-fab-button>\n  </ion-fab>\n\n  <!-- Default Floating Action Button that scrolls with the content.-->\n  <ion-fab-button>Default</ion-fab-button>\n\n  <!-- Mini -->\n  <ion-fab-button size=\"small\">Mini</ion-fab-button>\n\n  <!-- Colors -->\n  <ion-fab-button color=\"primary\">Primary</ion-fab-button>\n  <ion-fab-button color=\"secondary\">Secondary</ion-fab-button>\n  <ion-fab-button color=\"danger\">Danger</ion-fab-button>\n  <ion-fab-button color=\"light\">Light</ion-fab-button>\n  <ion-fab-button color=\"dark\">Dark</ion-fab-button>\n\n</ion-content>\n```\n",
+    "javascript": "```html\n<ion-content>\n\n  <!-- Fixed Floating Action Button that does not scroll with the content -->\n  <ion-fab slot=\"fixed\">\n    <ion-fab-button>Button</ion-fab-button>\n  </ion-fab>\n\n  <!-- Default Floating Action Button that scrolls with the content.-->\n  <ion-fab-button>Default</ion-fab-button>\n\n  <!-- Mini -->\n  <ion-fab-button size=\"small\">Mini</ion-fab-button>\n\n  <!-- Colors -->\n  <ion-fab-button color=\"primary\">Primary</ion-fab-button>\n  <ion-fab-button color=\"secondary\">Secondary</ion-fab-button>\n  <ion-fab-button color=\"danger\">Danger</ion-fab-button>\n  <ion-fab-button color=\"light\">Light</ion-fab-button>\n  <ion-fab-button color=\"dark\">Dark</ion-fab-button>\n\n</ion-content>\n```\n",
+    "react": "```tsx\nimport React from 'react';\nimport { IonContent, IonFab, IonFabButton } from '@ionic/react';\n\nexport const FabButtonExample: React.FC = () => (\n  <IonContent>\n    {/*-- Fixed Floating Action Button that does not scroll with the content --*/}\n    <IonFab slot=\"fixed\">\n      <IonFabButton>Button</IonFabButton>\n    </IonFab>\n\n    {/*-- Default Floating Action Button that scrolls with the content.--*/}\n    <IonFabButton>Default</IonFabButton>\n\n    {/*-- Mini --*/}\n    <IonFabButton size=\"small\">Mini</IonFabButton>\n\n    {/*-- Colors --*/}\n    <IonFabButton color=\"primary\">Primary</IonFabButton>\n    <IonFabButton color=\"secondary\">Secondary</IonFabButton>\n    <IonFabButton color=\"danger\">Danger</IonFabButton>\n    <IonFabButton color=\"light\">Light</IonFabButton>\n    <IonFabButton color=\"dark\">Dark</IonFabButton>\n  </IonContent>\n);\n```",
+    "stencil": "```tsx\nimport { Component, h } from '@stencil/core';\n\n@Component({\n  tag: 'fab-button-example',\n  styleUrl: 'fab-button-example.css'\n})\nexport class FabButtonExample {\n  render() {\n    return [\n      <ion-content>\n\n        {/* Fixed Floating Action Button that does not scroll with the content */}\n        <ion-fab slot=\"fixed\">\n          <ion-fab-button>Button</ion-fab-button>\n        </ion-fab>\n\n        {/* Default Floating Action Button that scrolls with the content */}\n        <ion-fab-button>Default</ion-fab-button>\n\n        {/* Mini */}\n        <ion-fab-button size=\"small\">Mini</ion-fab-button>\n\n        {/* Colors */}\n        <ion-fab-button color=\"primary\">Primary</ion-fab-button>\n        <ion-fab-button color=\"secondary\">Secondary</ion-fab-button>\n        <ion-fab-button color=\"danger\">Danger</ion-fab-button>\n        <ion-fab-button color=\"light\">Light</ion-fab-button>\n        <ion-fab-button color=\"dark\">Dark</ion-fab-button>\n\n      </ion-content>\n    ];\n  }\n}\n```",
+    "vue": "```html\n<template>\n  <ion-content>\n\n    <!-- Fixed Floating Action Button that does not scroll with the content -->\n    <ion-fab slot=\"fixed\">\n      <ion-fab-button>Button</ion-fab-button>\n    </ion-fab>\n\n    <!-- Default Floating Action Button that scrolls with the content.-->\n    <ion-fab-button>Default</ion-fab-button>\n\n    <!-- Mini -->\n    <ion-fab-button size=\"small\">Mini</ion-fab-button>\n\n    <!-- Colors -->\n    <ion-fab-button color=\"primary\">Primary</ion-fab-button>\n    <ion-fab-button color=\"secondary\">Secondary</ion-fab-button>\n    <ion-fab-button color=\"danger\">Danger</ion-fab-button>\n    <ion-fab-button color=\"light\">Light</ion-fab-button>\n    <ion-fab-button color=\"dark\">Dark</ion-fab-button>\n\n  </ion-content>\n</template>\n\n<script>\nimport { IonContent, IonFab, IonFabButton } from '@ionic/vue';\nimport { defineComponent } from 'vue';\n\nexport default defineComponent({\n  components: { IonContent, IonFab, IonFabButton }\n});\n</script>\n```\n"
+  },
+  "props": [
+    {
+      "name": "activated",
+      "type": "boolean",
+      "mutable": false,
+      "attr": "activated",
+      "reflectToAttr": false,
+      "docs": "If `true`, the fab button will be show a close icon.",
+      "docsTags": [],
+      "default": "false",
+      "values": [
+        {
+          "type": "boolean"
+        }
+      ],
+      "optional": false,
+      "required": false
+    },
+    {
+      "name": "closeIcon",
+      "type": "string",
+      "mutable": false,
+      "attr": "close-icon",
+      "reflectToAttr": false,
+      "docs": "The icon name to use for the close icon. This will appear when the fab button\nis pressed. Only applies if it is the main button inside of a fab containing a\nfab list.",
+      "docsTags": [],
+      "default": "'close'",
+      "values": [
+        {
+          "type": "string"
+        }
+      ],
+      "optional": false,
+      "required": false
+    },
+    {
+      "name": "color",
+      "type": "string | undefined",
+      "mutable": false,
+      "attr": "color",
+      "reflectToAttr": false,
+      "docs": "The color to use from your application's color palette.\nDefault options are: `\"primary\"`, `\"secondary\"`, `\"tertiary\"`, `\"success\"`, `\"warning\"`, `\"danger\"`, `\"light\"`, `\"medium\"`, and `\"dark\"`.\nFor more information on colors, see [theming](/docs/theming/basics).",
+      "docsTags": [],
+      "values": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "undefined"
+        }
+      ],
+      "optional": true,
+      "required": false
+    },
+    {
+      "name": "disabled",
+      "type": "boolean",
+      "mutable": false,
+      "attr": "disabled",
+      "reflectToAttr": false,
+      "docs": "If `true`, the user cannot interact with the fab button.",
+      "docsTags": [],
+      "default": "false",
+      "values": [
+        {
+          "type": "boolean"
+        }
+      ],
+      "optional": false,
+      "required": false
+    },
+    {
+      "name": "download",
+      "type": "string | undefined",
+      "mutable": false,
+      "attr": "download",
+      "reflectToAttr": false,
+      "docs": "This attribute instructs browsers to download a URL instead of navigating to\nit, so the user will be prompted to save it as a local file. If the attribute\nhas a value, it is used as the pre-filled file name in the Save prompt\n(the user can still change the file name if they want).",
+      "docsTags": [],
+      "values": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "undefined"
+        }
+      ],
+      "optional": false,
+      "required": false
+    },
+    {
+      "name": "href",
+      "type": "string | undefined",
+      "mutable": false,
+      "attr": "href",
+      "reflectToAttr": false,
+      "docs": "Contains a URL or a URL fragment that the hyperlink points to.\nIf this property is set, an anchor tag will be rendered.",
+      "docsTags": [],
+      "values": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "undefined"
+        }
+      ],
+      "optional": false,
+      "required": false
+    },
+    {
+      "name": "mode",
+      "type": "\"ios\" | \"md\"",
+      "mutable": false,
+      "attr": "mode",
+      "reflectToAttr": false,
+      "docs": "The mode determines which platform styles to use.",
+      "docsTags": [],
+      "values": [
+        {
+          "value": "ios",
+          "type": "string"
+        },
+        {
+          "value": "md",
+          "type": "string"
+        }
+      ],
+      "optional": true,
+      "required": false
+    },
+    {
+      "name": "rel",
+      "type": "string | undefined",
+      "mutable": false,
+      "attr": "rel",
+      "reflectToAttr": false,
+      "docs": "Specifies the relationship of the target object to the link object.\nThe value is a space-separated list of [link types](https://developer.mozilla.org/en-US/docs/Web/HTML/Link_types).",
+      "docsTags": [],
+      "values": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "undefined"
+        }
+      ],
+      "optional": false,
+      "required": false
+    },
+    {
+      "name": "routerAnimation",
+      "type": "((baseEl: any, opts?: any) => Animation) | undefined",
+      "mutable": false,
+      "reflectToAttr": false,
+      "docs": "When using a router, it specifies the transition animation when navigating to\nanother page using `href`.",
+      "docsTags": [],
+      "values": [
+        {
+          "type": "((baseEl: any, opts?: any) => Animation)"
+        },
+        {
+          "type": "undefined"
+        }
+      ],
+      "optional": false,
+      "required": false
+    },
+    {
+      "name": "routerDirection",
+      "type": "\"back\" | \"forward\" | \"root\"",
+      "mutable": false,
+      "attr": "router-direction",
+      "reflectToAttr": false,
+      "docs": "When using a router, it specifies the transition direction when navigating to\nanother page using `href`.",
+      "docsTags": [],
+      "default": "'forward'",
+      "values": [
+        {
+          "value": "back",
+          "type": "string"
+        },
+        {
+          "value": "forward",
+          "type": "string"
+        },
+        {
+          "value": "root",
+          "type": "string"
+        }
+      ],
+      "optional": false,
+      "required": false
+    },
+    {
+      "name": "show",
+      "type": "boolean",
+      "mutable": false,
+      "attr": "show",
+      "reflectToAttr": false,
+      "docs": "If `true`, the fab button will show when in a fab-list.",
+      "docsTags": [],
+      "default": "false",
+      "values": [
+        {
+          "type": "boolean"
+        }
+      ],
+      "optional": false,
+      "required": false
+    },
+    {
+      "name": "size",
+      "type": "\"small\" | undefined",
+      "mutable": false,
+      "attr": "size",
+      "reflectToAttr": false,
+      "docs": "The size of the button. Set this to `small` in order to have a mini fab button.",
+      "docsTags": [],
+      "values": [
+        {
+          "value": "small",
+          "type": "string"
+        },
+        {
+          "type": "undefined"
+        }
+      ],
+      "optional": true,
+      "required": false
+    },
+    {
+      "name": "target",
+      "type": "string | undefined",
+      "mutable": false,
+      "attr": "target",
+      "reflectToAttr": false,
+      "docs": "Specifies where to display the linked URL.\nOnly applies when an `href` is provided.\nSpecial keywords: `\"_blank\"`, `\"_self\"`, `\"_parent\"`, `\"_top\"`.",
+      "docsTags": [],
+      "values": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "undefined"
+        }
+      ],
+      "optional": false,
+      "required": false
+    },
+    {
+      "name": "translucent",
+      "type": "boolean",
+      "mutable": false,
+      "attr": "translucent",
+      "reflectToAttr": false,
+      "docs": "If `true`, the fab button will be translucent.\nOnly applies when the mode is `\"ios\"` and the device supports\n[`backdrop-filter`](https://developer.mozilla.org/en-US/docs/Web/CSS/backdrop-filter#Browser_compatibility).",
+      "docsTags": [],
+      "default": "false",
+      "values": [
+        {
+          "type": "boolean"
+        }
+      ],
+      "optional": false,
+      "required": false
+    },
+    {
+      "name": "type",
+      "type": "\"button\" | \"reset\" | \"submit\"",
+      "mutable": false,
+      "attr": "type",
+      "reflectToAttr": false,
+      "docs": "The type of the button.",
+      "docsTags": [],
+      "default": "'button'",
+      "values": [
+        {
+          "value": "button",
+          "type": "string"
+        },
+        {
+          "value": "reset",
+          "type": "string"
+        },
+        {
+          "value": "submit",
+          "type": "string"
+        }
+      ],
+      "optional": false,
+      "required": false
+    }
+  ],
+  "methods": [],
+  "events": [
+    {
+      "event": "ionBlur",
+      "detail": "void",
+      "bubbles": true,
+      "cancelable": true,
+      "composed": true,
+      "docs": "Emitted when the button loses focus.",
+      "docsTags": []
+    },
+    {
+      "event": "ionFocus",
+      "detail": "void",
+      "bubbles": true,
+      "cancelable": true,
+      "composed": true,
+      "docs": "Emitted when the button has focus.",
+      "docsTags": []
+    }
+  ],
+  "listeners": [],
+  "styles": [
+    {
+      "name": "--background",
+      "annotation": "prop",
+      "docs": "Background of the button"
+    },
+    {
+      "name": "--background-activated",
+      "annotation": "prop",
+      "docs": "Background of the button when pressed. Note: setting this will interfere with the Material Design ripple."
+    },
+    {
+      "name": "--background-activated-opacity",
+      "annotation": "prop",
+      "docs": "Opacity of the button background when pressed"
+    },
+    {
+      "name": "--background-focused",
+      "annotation": "prop",
+      "docs": "Background of the button when focused with the tab key"
+    },
+    {
+      "name": "--background-focused-opacity",
+      "annotation": "prop",
+      "docs": "Opacity of the button background when focused with the tab key"
+    },
+    {
+      "name": "--background-hover",
+      "annotation": "prop",
+      "docs": "Background of the button on hover"
+    },
+    {
+      "name": "--background-hover-opacity",
+      "annotation": "prop",
+      "docs": "Opacity of the button background on hover"
+    },
+    {
+      "name": "--border-color",
+      "annotation": "prop",
+      "docs": "Border color of the button"
+    },
+    {
+      "name": "--border-radius",
+      "annotation": "prop",
+      "docs": "Border radius of the button"
+    },
+    {
+      "name": "--border-style",
+      "annotation": "prop",
+      "docs": "Border style of the button"
+    },
+    {
+      "name": "--border-width",
+      "annotation": "prop",
+      "docs": "Border width of the button"
+    },
+    {
+      "name": "--box-shadow",
+      "annotation": "prop",
+      "docs": "Box shadow of the button"
+    },
+    {
+      "name": "--close-icon-font-size",
+      "annotation": "prop",
+      "docs": "Font size of the close icon"
+    },
+    {
+      "name": "--color",
+      "annotation": "prop",
+      "docs": "Text color of the button"
+    },
+    {
+      "name": "--color-activated",
+      "annotation": "prop",
+      "docs": "Text color of the button when pressed"
+    },
+    {
+      "name": "--color-focused",
+      "annotation": "prop",
+      "docs": "Text color of the button when focused with the tab key"
+    },
+    {
+      "name": "--color-hover",
+      "annotation": "prop",
+      "docs": "Text color of the button on hover"
+    },
+    {
+      "name": "--padding-bottom",
+      "annotation": "prop",
+      "docs": "Bottom padding of the button"
+    },
+    {
+      "name": "--padding-end",
+      "annotation": "prop",
+      "docs": "Right padding if direction is left-to-right, and left padding if direction is right-to-left of the button"
+    },
+    {
+      "name": "--padding-start",
+      "annotation": "prop",
+      "docs": "Left padding if direction is left-to-right, and right padding if direction is right-to-left of the button"
+    },
+    {
+      "name": "--padding-top",
+      "annotation": "prop",
+      "docs": "Top padding of the button"
+    },
+    {
+      "name": "--ripple-color",
+      "annotation": "prop",
+      "docs": "Color of the button ripple effect"
+    },
+    {
+      "name": "--transition",
+      "annotation": "prop",
+      "docs": "Transition of the button"
+    }
+  ],
+  "slots": [],
+  "parts": [
+    {
+      "name": "close-icon",
+      "docs": "The close icon that is displayed when a fab list opens (uses ion-icon)."
+    },
+    {
+      "name": "native",
+      "docs": "The native HTML button or anchor element that wraps all child elements."
+    }
+  ],
+  "dependents": [],
+  "dependencies": [
+    "ion-icon",
+    "ion-ripple-effect"
+  ],
+  "dependencyGraph": {
+    "ion-fab-button": [
+      "ion-icon",
+      "ion-ripple-effect"
+    ]
+  }
+}

@@ -1,0 +1,115 @@
+{
+  "name": "ionic package build",
+  "namespace": [
+    "ionic",
+    "package"
+  ],
+  "summary": "Create a package build on Appflow",
+  "description": "This command creates a package build on Appflow. While the build is running, it prints the remote build log to the terminal. If the build is successful, it downloads the created app package file in the current directory.\n\nApart from `--commit`, every option can be specified using the full name setup within the [Dashboard](https://dashboard.ionicframework.com).\n\nThe `--signing-certificate` option is mandatory for any iOS build but not for Android debug builds.\n\nCustomizing the build:\n- The `--environment` and `--native-config` options can be used to customize the groups of values exposed to the build.\n- Override the preferred platform with `--build-stack`. This is useful for building older iOS apps.\n\nDeploying the build to an App Store:\n- The `--destination` option can be used to deliver the app created by the build to the configured App Store. This can be used only together with build type `release` for Android and build types `app-store` or `enterprise` for iOS.",
+  "footnotes": [],
+  "groups": [
+    "paid"
+  ],
+  "exampleCommands": [
+    "ionic package build android debug",
+    "ionic package build ios development --signing-certificate=\"iOS Signing Certificate Name\"",
+    "ionic package build android debug --environment=\"My Custom Environment Name\"",
+    "ionic package build android debug --native-config=\"My Custom Native Config Name\"",
+    "ionic package build android debug --commit=2345cd3305a1cf94de34e93b73a932f25baac77c",
+    "ionic package build ios development --signing-certificate=\"iOS Signing Certificate Name\" --build-stack=\"iOS - Xcode 9\"",
+    "ionic package build ios development --signing-certificate=\"iOS Signing Certificate Name\" --build-file-name=my_custom_file_name.ipa",
+    "ionic package build ios app-store --signing-certificate=\"iOS Signing Certificate Name\" --destination=\"Apple App Store Destination\""
+  ],
+  "aliases": [],
+  "inputs": [
+    {
+      "name": "platform",
+      "summary": "The platform to package (`android`, `ios`)",
+      "required": true
+    },
+    {
+      "name": "type",
+      "summary": "The build type (`debug`, `release`, `development`, `ad-hoc`, `app-store`, `enterprise`)",
+      "required": true
+    }
+  ],
+  "options": [
+    {
+      "name": "signing-certificate",
+      "type": "string",
+      "summary": "Signing certificate",
+      "groups": [],
+      "aliases": [],
+      "spec": {
+        "value": "name"
+      }
+    },
+    {
+      "name": "environment",
+      "type": "string",
+      "summary": "The group of environment variables exposed to your build",
+      "groups": [],
+      "aliases": [],
+      "spec": {
+        "value": "name"
+      }
+    },
+    {
+      "name": "native-config",
+      "type": "string",
+      "summary": "The group of native config variables exposed to your build",
+      "groups": [],
+      "aliases": [],
+      "spec": {
+        "value": "name"
+      }
+    },
+    {
+      "name": "destination",
+      "type": "string",
+      "summary": "The configuration to deploy the build artifact to the app store",
+      "groups": [],
+      "aliases": [],
+      "spec": {
+        "value": "name"
+      }
+    },
+    {
+      "name": "commit",
+      "type": "string",
+      "summary": "Commit (defaults to HEAD)",
+      "groups": [
+        "advanced"
+      ],
+      "aliases": [],
+      "spec": {
+        "value": "sha1"
+      }
+    },
+    {
+      "name": "build-stack",
+      "type": "string",
+      "summary": "Build stack (`\"Android\"`, `\"iOS - Xcode 11 (Preferred)\"`, `\"iOS - Xcode 10\"`)",
+      "groups": [
+        "advanced"
+      ],
+      "aliases": [],
+      "spec": {
+        "value": "name"
+      }
+    },
+    {
+      "name": "build-file-name",
+      "type": "string",
+      "summary": "The name for the downloaded build file",
+      "groups": [
+        "advanced"
+      ],
+      "aliases": [],
+      "spec": {
+        "value": "name"
+      }
+    }
+  ],
+  "type": "project"
+}

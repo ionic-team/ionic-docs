@@ -1,0 +1,15 @@
+{
+  "packageName": "@ionic-native/unique-device-id",
+  "displayName": "Unique Device ID",
+  "description": "\nThis plugin produces a unique, cross-install, app-specific device id.\n",
+  "usage": "\n```typescript\nimport { UniqueDeviceID } from '@ionic-native/unique-device-id/ngx';\n\nconstructor(private uniqueDeviceID: UniqueDeviceID) { }\n\n...\n\nthis.uniqueDeviceID.get()\n  .then((uuid: any) => console.log(uuid))\n  .catch((error: any) => console.log(error));\n\n```\n",
+  "platforms": [
+    "Android",
+    "iOS",
+    "Windows Phone 8"
+  ],
+  "repo": "https://github.com/Paldom/UniqueDeviceID",
+  "cordovaPlugin": {
+    "name": "cordova-plugin-uniquedeviceid"
+  }
+}

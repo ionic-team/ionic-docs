@@ -1,0 +1,16 @@
+{
+  "packageName": "@ionic-native/file-opener",
+  "displayName": "File Opener",
+  "description": "\nThis plugin will open a file on your device file system with its default application.\n",
+  "usage": "\n```typescript\nimport { FileOpener } from '@ionic-native/file-opener/ngx';\n\nconstructor(private fileOpener: FileOpener) { }\n\n...\n\nthis.fileOpener.open('path/to/file.pdf', 'application/pdf')\n  .then(() => console.log('File is opened'))\n  .catch(e => console.log('Error opening file', e));\n\nthis.fileOpener.showOpenWithDialog('path/to/file.pdf', 'application/pdf')\n  .then(() => console.log('File is opened'))\n  .catch(e => console.log('Error opening file', e));\n\n```\n",
+  "platforms": [
+    "Android",
+    "iOS",
+    "Windows",
+    "Windows Phone 8"
+  ],
+  "repo": "https://github.com/pwlin/cordova-plugin-file-opener2",
+  "cordovaPlugin": {
+    "name": "cordova-plugin-file-opener2"
+  }
+}

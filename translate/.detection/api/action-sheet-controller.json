@@ -1,0 +1,75 @@
+{
+  "filePath": "src/components/action-sheet-controller/action-sheet-controller.tsx",
+  "encapsulation": "none",
+  "tag": "ion-action-sheet-controller",
+  "readme": "# ion-action-sheet-controller\n\nAction Sheet controllers programmatically control the action sheet component. Action Sheets can be created and dismissed from the action sheet controller. View the [Action Sheet](../action-sheet) documentation for a full list of options to pass upon creation.\n",
+  "docs": "Action Sheet controllers programmatically control the action sheet component. Action Sheets can be created and dismissed from the action sheet controller. View the [Action Sheet](../action-sheet) documentation for a full list of options to pass upon creation.",
+  "docsTags": [
+    {
+      "text": "Use the `actionSheetController` exported from core.",
+      "name": "deprecated"
+    }
+  ],
+  "usage": {},
+  "props": [],
+  "methods": [
+    {
+      "name": "create",
+      "returns": {
+        "type": "Promise<HTMLIonActionSheetElement>",
+        "docs": ""
+      },
+      "signature": "create(options: ActionSheetOptions) => Promise<HTMLIonActionSheetElement>",
+      "parameters": [],
+      "docs": "Create an action sheet overlay with action sheet options.",
+      "docsTags": [
+        {
+          "name": "param",
+          "text": "options The options to use to create the action sheet."
+        }
+      ]
+    },
+    {
+      "name": "dismiss",
+      "returns": {
+        "type": "Promise<boolean>",
+        "docs": ""
+      },
+      "signature": "dismiss(data?: any, role?: string | undefined, id?: string | undefined) => Promise<boolean>",
+      "parameters": [],
+      "docs": "Dismiss the open action sheet overlay.",
+      "docsTags": [
+        {
+          "name": "param",
+          "text": "data Any data to emit in the dismiss events."
+        },
+        {
+          "name": "param",
+          "text": "role The role of the element that is dismissing the action sheet.\nThis can be useful in a button handler for determining which button was\nclicked to dismiss the action sheet.\nSome examples include: ``\"cancel\"`, `\"destructive\"`, \"selected\"`, and `\"backdrop\"`."
+        },
+        {
+          "name": "param",
+          "text": "id The id of the action sheet to dismiss. If an id is not provided, it will dismiss the most recently opened action sheet."
+        }
+      ]
+    },
+    {
+      "name": "getTop",
+      "returns": {
+        "type": "Promise<HTMLIonActionSheetElement | undefined>",
+        "docs": ""
+      },
+      "signature": "getTop() => Promise<HTMLIonActionSheetElement | undefined>",
+      "parameters": [],
+      "docs": "Get the most recently opened action sheet overlay.",
+      "docsTags": []
+    }
+  ],
+  "events": [],
+  "styles": [],
+  "slots": [],
+  "dependents": [],
+  "dependencies": [],
+  "dependencyGraph": {},
+  "deprecation": "Use the `actionSheetController` exported from core."
+}

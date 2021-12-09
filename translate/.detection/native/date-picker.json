@@ -1,0 +1,15 @@
+{
+  "packageName": "@ionic-native/date-picker",
+  "displayName": "Date Picker",
+  "description": "\nThe DatePicker plugin allows the user to fetch date or time using native dialogs.\n",
+  "usage": "\n```typescript\nimport { DatePicker } from '@ionic-native/date-picker/ngx';\n\nconstructor(private datePicker: DatePicker) { }\n\n\n...\n\n\nthis.datePicker.show({\n  date: new Date(),\n  mode: 'date',\n  androidTheme: this.datePicker.ANDROID_THEMES.THEME_HOLO_DARK\n}).then(\n  date => console.log('Got date: ', date),\n  err => console.log('Error occurred while getting date: ', err)\n);\n```",
+  "platforms": [
+    "Android",
+    "iOS",
+    "Windows"
+  ],
+  "repo": "https://github.com/VitaliiBlagodir/cordova-plugin-datepicker",
+  "cordovaPlugin": {
+    "name": "cordova-plugin-datepicker"
+  }
+}

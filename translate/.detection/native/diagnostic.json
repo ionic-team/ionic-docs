@@ -1,0 +1,15 @@
+{
+  "packageName": "@ionic-native/diagnostic",
+  "displayName": "Diagnostic",
+  "description": "\nChecks whether device hardware features are enabled or available to the app, e.g. camera, GPS, wifi\n",
+  "usage": "\n```typescript\nimport { Diagnostic } from '@ionic-native/diagnostic/ngx';\n\nconstructor(private diagnostic: Diagnostic) { }\n\n...\n\nlet successCallback = (isAvailable) => { console.log('Is available? ' + isAvailable); }\nlet errorCallback = (e) => console.error(e);\n\nthis.diagnostic.isCameraAvailable().then(successCallback).catch(errorCallback);\n\nthis.diagnostic.isBluetoothAvailable().then(successCallback, errorCallback);\n\n\nthis.diagnostic.getBluetoothState()\n  .then((state) => {\n    if (state == this.diagnostic.bluetoothState.POWERED_ON){\n      // do something\n    } else {\n      // do something else\n    }\n  }).catch(e => console.error(e));\n\n```\n\n",
+  "platforms": [
+    "Android",
+    "iOS",
+    "Windows"
+  ],
+  "repo": "https://github.com/dpa99c/cordova-diagnostic-plugin",
+  "cordovaPlugin": {
+    "name": "cordova.plugins.diagnostic"
+  }
+}

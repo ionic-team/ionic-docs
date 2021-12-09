@@ -1,0 +1,14 @@
+{
+  "packageName": "@ionic-native/zoom",
+  "displayName": "Zoom",
+  "description": "\nA Cordova plugin to use Zoom Video Conferencing services on Cordova applications.\n",
+  "usage": "\n```typescript\nimport { Zoom } from '@ionic-native/zoom';\n\n\nconstructor(private zoomService: Zoom) { }\n\n...\n\n// Initialize Zoom SDK, need to be called when app fired up.\nthis.zoomService.initialize(API_KEY, API_SECRET)\n  .then((success: any) => console.log(success))\n  .catch((error: any) => console.log(error));\n\n// Log user in with Zoom username and password.\nthis.zoomService.login(userName, password)\n  .then((success: any) => console.log(success))\n  .catch((error: any) => console.log(error));\n\n// Log user out.\nthis.zoomService.logout()\n  .then((success: boolean) => console.log(success))\n  .catch((error: any) => console.log(error));\n\n// Check whether user is logged in.\nthis.zoomService.isLoggedIn()\n  .then((success: boolean) => console.log(success))\n  .catch((error: any) => console.log(error));\n\n// meeting options (Only available for Android)\nlet options = {\n\"no_driving_mode\":true,\n\"no_invite\":true,\n\"no_meeting_end_message\":true,\n\"no_titlebar\":false,\n\"no_bottom_toolbar\":false,\n\"no_dial_in_via_phone\":true,\n\"no_dial_out_to_phone\":true,\n\"no_disconnect_audio\":true,\n\"no_share\":true,\n\"no_audio\":true,\n\"no_video\":true,\n\"no_meeting_error_message\":true\n};\n\n// Join meeting.\nthis.zoomService.joinMeeting(meetingNumber, meetingPassword, displayName, options)\n  .then((success: any) => console.log(success))\n  .catch((error: any) => console.log(error));\n\n// Start an existing meeting for non-login user.\nthis.zoomService.startMeetingWithZAK(meetingNumber, displayName, zoomToken, zoomAccessToken, userId, options)\n  .then((success: any) => console.log(success))\n  .catch((error: any) => console.log(error));\n\n// Start an existing meeting for logged in user.\nthis.zoomService.startMeeting(meetingNumber, vanityId, options)\n  .then((success: any) => console.log(success))\n  .catch((error: any) => console.log(error));\n\n// Start an instant meeting for logged in user.\nthis.zoomService.startInstantMeeting()\n  .then((success: anu) => console.log(success))\n  .catch((error: any) => console.log(error));\n\n// Set language.\nthis.zoomService.setLanguage(\"en-US\")\n  .then((success: any) => console.log(success))\n  .catch((error: any) => console.log(error));\n```\n",
+  "platforms": [
+    "Android",
+    "iOS"
+  ],
+  "repo": "https://github.com/zoom/zoom-sdk-ionic",
+  "cordovaPlugin": {
+    "name": "cordova.plugin.zoom"
+  }
+}

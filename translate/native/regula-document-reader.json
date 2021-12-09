@@ -1,0 +1,14 @@
+{
+  "packageName": "@ionic-native/regula-document-reader",
+  "displayName": "Regula Document Reader",
+  "description": "\nPlugin for reading and validation of identification documents.\n",
+  "usage": "\n```typescript\nimport { RegulaDocumentReader } from '@ionic-native/regula-document-reader/ngx';\n\nlet license; // read regula.license file\nRegulaDocumentReader.initReader(license); // initialize reader\nRegulaDocumentReader.scanDocument().then((result) => {\n\t\t// read result\n})\n```\n",
+  "platforms": [
+    "iOS",
+    "Android"
+  ],
+  "repo": "https://github.com/regulaforensics/cordova-plugin-documentreader.git",
+  "cordovaPlugin": {
+    "name": "cordova-plugin-documentreader"
+  }
+}

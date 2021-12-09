@@ -1,0 +1,14 @@
+{
+  "packageName": "@ionic-native/speechkit",
+  "displayName": "SpeechKit",
+  "description": "\nImplementation of Nuance SpeechKit SDK on Ionic\n",
+  "usage": "\n```typescript\nimport { SpeechKit } from '@ionic-native/speechkit/ngx';\n\nconstructor(private speechkit: SpeechKit) { }\n\n\n// find voice names that match language from: https://developer.nuance.com/public/index.php?task=supportedLanguages\nthis.speechkit.tts('Text to be read out loud', 'ENG-GBR', 'Serena').then(\n  (msg) => { console.log(msg); },\n  (err) => { console.log(err); }\n);\n```\n",
+  "platforms": [
+    "Android",
+    "iOS"
+  ],
+  "repo": "https://github.com/Shmarkus/cordova-plugin-nuance-speechkit",
+  "cordovaPlugin": {
+    "name": "cordova-plugin-nuance-speechkit"
+  }
+}

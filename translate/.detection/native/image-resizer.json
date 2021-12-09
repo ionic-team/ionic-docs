@@ -1,0 +1,15 @@
+{
+  "packageName": "@ionic-native/image-resizer",
+  "displayName": "Image Resizer",
+  "description": "\nCordova Plugin For Image Resize\n",
+  "usage": "\n```typescript\nimport { ImageResizer, ImageResizerOptions } from '@ionic-native/image-resizer/ngx';\n\nconstructor(private imageResizer: ImageResizer) { }\n\n...\n\nlet options = {\n uri: uri,\n folderName: 'Protonet',\n quality: 90,\n width: 1280,\n height: 1280\n} as ImageResizerOptions;\n\nthis.imageResizer\n  .resize(options)\n  .then((filePath: string) => console.log('FilePath', filePath))\n  .catch(e => console.log(e));\n\n```",
+  "platforms": [
+    "Android",
+    "iOS",
+    "Windows"
+  ],
+  "repo": "https://github.com/JoschkaSchulz/cordova-plugin-image-resizer",
+  "cordovaPlugin": {
+    "name": "info.protonet.imageresizer"
+  }
+}

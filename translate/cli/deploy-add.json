@@ -1,0 +1,80 @@
+{
+  "name": "ionic deploy add",
+  "namespace": [
+    "ionic",
+    "deploy"
+  ],
+  "summary": "Adds Appflow Deploy to the project",
+  "description": "This command adds the Appflow Deploy plugin (`cordova-plugin-ionic`) for both Capacitor and Cordova projects.\n\nFor Capacitor projects it runs all the steps necessary to install the plugin, sync with the native projects and add the configuration to the proper iOS and Android configuration files.\n\nFor Cordova projects it just takes care of running the proper Cordova CLI command with the submitted parameters.",
+  "footnotes": [],
+  "groups": [
+    "paid"
+  ],
+  "exampleCommands": [
+    "ionic deploy add ",
+    "ionic deploy add --app-id=abcd1234 --channel-name=\"Master\" --update-method=background",
+    "ionic deploy add --max-store=2 --min-background-duration=30",
+    "ionic deploy add --app-id=abcd1234 --channel-name=\"Master\" --update-method=background --max-store=2 --min-background-duration=30"
+  ],
+  "aliases": [],
+  "inputs": [],
+  "options": [
+    {
+      "name": "app-id",
+      "type": "string",
+      "summary": "Your Appflow app ID",
+      "groups": [],
+      "aliases": [],
+      "spec": {
+        "value": "id"
+      }
+    },
+    {
+      "name": "channel-name",
+      "type": "string",
+      "summary": "The channel to check for updates from",
+      "groups": [],
+      "aliases": [],
+      "spec": {
+        "value": "name"
+      }
+    },
+    {
+      "name": "update-method",
+      "type": "string",
+      "summary": "The update method that dictates the behavior of the plugin",
+      "groups": [],
+      "aliases": [],
+      "spec": {
+        "value": "name"
+      }
+    },
+    {
+      "name": "max-store",
+      "type": "string",
+      "summary": "The maximum number of downloaded versions to store on the device",
+      "default": "2",
+      "groups": [
+        "advanced"
+      ],
+      "aliases": [],
+      "spec": {
+        "value": "quantity"
+      }
+    },
+    {
+      "name": "min-background-duration",
+      "type": "string",
+      "summary": "The minimum duration after which the app checks for an update in the background",
+      "default": "30",
+      "groups": [
+        "advanced"
+      ],
+      "aliases": [],
+      "spec": {
+        "value": "seconds"
+      }
+    }
+  ],
+  "type": "project"
+}

@@ -1,0 +1,18 @@
+{
+  "name": "ionic integrations list",
+  "namespace": [
+    "ionic",
+    "integrations"
+  ],
+  "summary": "List available and active integrations in your app",
+  "description": "This command will print the status of integrations in Ionic projects. Integrations can be **enabled** (added and enabled), **disabled** (added but disabled), and **not added** (never added to the project).\n\n- To enable or add integrations, see `ionic integrations enable --help`\n- To disable integrations, see `ionic integrations disable --help`",
+  "footnotes": [],
+  "groups": [],
+  "exampleCommands": [],
+  "aliases": [
+    "ionic integrations ls"
+  ],
+  "inputs": [],
+  "options": [],
+  "type": "project"
+}

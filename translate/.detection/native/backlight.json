@@ -1,0 +1,13 @@
+{
+  "packageName": "@ionic-native/backlight",
+  "displayName": "Backlight",
+  "description": "\nThis plugin adds turning on/off the device backlight.\n",
+  "usage": "\n```typescript\nimport { Backlight } from '@ionic-native/backlight/ngx';\n\nconstructor(private backlight: Backlight) { }\n\n...\n\n// Turn backlight on\nthis.backlight.on().then(() => console.log('backlight on'));\n\n// Turn backlight off\nthis.backlight.off().then(() => console.log('backlight off'));\n\n```\n",
+  "platforms": [
+    "Android"
+  ],
+  "repo": "https://github.com/mebibou/cordova-plugin-backlight",
+  "cordovaPlugin": {
+    "name": "cordova-plugin-backlight"
+  }
+}

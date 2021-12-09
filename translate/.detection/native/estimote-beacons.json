@@ -1,0 +1,14 @@
+{
+  "packageName": "@ionic-native/estimote-beacons",
+  "displayName": "Estimote Beacons\n",
+  "description": "\nThis plugin enables communication between a phone and Estimote Beacons peripherals.\n",
+  "usage": "\n```typescript\nimport { EstimoteBeacons } from '@ionic-native/estimote-beacons/ngx';\n\nconstructor(private eb: EstimoteBeacons) { }\n\n...\n\nthis.eb.requestAlwaysAuthorization();\n\nthis.eb.enableAnalytics(true);\n\n```\n",
+  "platforms": [
+    "Android",
+    "iOS"
+  ],
+  "repo": "https://github.com/evothings/phonegap-estimotebeacons",
+  "cordovaPlugin": {
+    "name": "cordova-plugin-estimote"
+  }
+}

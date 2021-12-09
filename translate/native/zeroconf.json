@@ -1,0 +1,14 @@
+{
+  "packageName": "@ionic-native/zeroconf",
+  "displayName": "Zeroconf",
+  "description": "\nThis plugin allows you to browse and publish Zeroconf/Bonjour/mDNS services.",
+  "usage": "\n```typescript\nimport { Zeroconf } from '@ionic-native/zeroconf/ngx';\n\nconstructor(private zeroconf: Zeroconf) { }\n\n...\n\n// watch for services of a specified type\nthis.zeroconf.watch('_http._tcp.', 'local.').subscribe(result => {\n  if (result.action == 'added') {\n    console.log('service added', result.service);\n  } else {\n    console.log('service removed', result.service);\n  }\n});\n\n// publish a zeroconf service of your own\nthis.zeroconf.register('_http._tcp.', 'local.', 'Becvert\\'s iPad', 80, {\n  'foo': 'bar'\n}).then(result => {\n  console.log('Service registered', result.service);\n});\n\n\n// unregister your service\nthis.zeroconf.unregister('_http._tcp.', 'local.', 'Becvert\\'s iPad');\n```\n",
+  "platforms": [
+    "Android",
+    "iOS"
+  ],
+  "repo": "https://github.com/becvert/cordova-plugin-zeroconf",
+  "cordovaPlugin": {
+    "name": "cordova-plugin-zeroconf"
+  }
+}

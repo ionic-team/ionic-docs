@@ -1,0 +1,13 @@
+{
+  "packageName": "@ionic-native/ios-aswebauthenticationsession-api",
+  "displayName": "ios-aswebauthenticationsession-api",
+  "description": "\nPlugin for iOS 12 ASWebAuthenticationSession API\n",
+  "usage": "\n```typescript\nimport { IosASWebauthenticationSession } from '@ionic-native/ios-aswebauthenticationsession-api/ngx';\n\n\nconstructor(private IosASWebauthenticationSession: ios-aswebauthenticationsession-api) { }\n\n...\n\n\nthis.IosASWebauthenticationSession.start(callbackUrl, authorizeURL)\n  .then((redirectUrl: string) => console.log(redirectUrl))\n  .catch((error: any) => console.error(error));\n\n```\n",
+  "platforms": [
+    "iOS"
+  ],
+  "repo": "https://github.com/jwelker110/cordova-plugin-ios-aswebauthenticationsession-api",
+  "cordovaPlugin": {
+    "name": "cordova-plugin-ios-aswebauthenticationsession-api"
+  }
+}

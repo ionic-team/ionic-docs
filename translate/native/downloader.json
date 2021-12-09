@@ -1,0 +1,13 @@
+{
+  "packageName": "@ionic-native/downloader",
+  "displayName": "Downloader",
+  "description": "\nThis plugin is designed to support downloading files using Android DownloadManager.\n\n",
+  "usage": "\n```typescript\nimport { Downloader } from '@ionic-native/downloader/ngx';\n\n\nconstructor(private downloader: Downloader) { }\n\n...\n\n   var request: DownloadRequest = {\n          uri: YOUR_URI,\n          title: 'MyDownload',\n          description: '',\n          mimeType: '',\n          visibleInDownloadsUi: true,\n          notificationVisibility: NotificationVisibility.VisibleNotifyCompleted,\n          destinationInExternalFilesDir: {\n              dirType: 'Downloads',\n              subPath: 'MyFile.apk'\n          }\n      };\n\n\n  this.downloader.download(request)\n  \t\t\t.then((location: string) => console.log('File downloaded at:'+location))\n  \t\t\t.catch((error: any) => console.error(error));\n\n```",
+  "platforms": [
+    "Android"
+  ],
+  "repo": "https://github.com/Luka313/integrator-cordova-plugin-downloader.git",
+  "cordovaPlugin": {
+    "name": "integrator-cordova-plugin-downloader"
+  }
+}

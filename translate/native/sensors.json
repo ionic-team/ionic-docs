@@ -1,0 +1,13 @@
+{
+  "packageName": "@ionic-native/sensors",
+  "displayName": "Sensors",
+  "description": "\nThis plugin enables sensors on Android devices\n",
+  "usage": "\n```typescript\nimport { Sensors, TYPE_SENSOR } from '@ionic-native/sensors/ngx';\n\n\nconstructor(private sensors: Sensors) { }\n\n...\n\n\nthis.sensors.enableSensor(TYPE_SENSOR.LIGHT);\n\n```\n",
+  "platforms": [
+    "Android"
+  ],
+  "repo": "https://github.com/fabiorogeriosj/cordova-plugin-sensors.git",
+  "cordovaPlugin": {
+    "name": "https://github.com/fabiorogeriosj/cordova-plugin-sensors.git"
+  }
+}

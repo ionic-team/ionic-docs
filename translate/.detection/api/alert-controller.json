@@ -1,0 +1,75 @@
+{
+  "filePath": "src/components/alert-controller/alert-controller.tsx",
+  "encapsulation": "none",
+  "tag": "ion-alert-controller",
+  "readme": "# ion-alert-controller\n\nAlert controllers programmatically control the alert component. Alerts can be created and dismissed by the alert controller. View the [Alert](../alert) documentation for the list of options to pass upon creation and usage information.\n\n",
+  "docs": "Alert controllers programmatically control the alert component. Alerts can be created and dismissed by the alert controller. View the [Alert](../alert) documentation for the list of options to pass upon creation and usage information.",
+  "docsTags": [
+    {
+      "text": "Use the `alertController` exported from core.",
+      "name": "deprecated"
+    }
+  ],
+  "usage": {},
+  "props": [],
+  "methods": [
+    {
+      "name": "create",
+      "returns": {
+        "type": "Promise<HTMLIonAlertElement>",
+        "docs": ""
+      },
+      "signature": "create(options: AlertOptions) => Promise<HTMLIonAlertElement>",
+      "parameters": [],
+      "docs": "Create an alert overlay with alert options.",
+      "docsTags": [
+        {
+          "name": "param",
+          "text": "options The options to use to create the alert."
+        }
+      ]
+    },
+    {
+      "name": "dismiss",
+      "returns": {
+        "type": "Promise<boolean>",
+        "docs": ""
+      },
+      "signature": "dismiss(data?: any, role?: string | undefined, id?: string | undefined) => Promise<boolean>",
+      "parameters": [],
+      "docs": "Dismiss the open alert overlay.",
+      "docsTags": [
+        {
+          "name": "param",
+          "text": "data Any data to emit in the dismiss events."
+        },
+        {
+          "name": "param",
+          "text": "role The role of the element that is dismissing the alert.\nThis can be useful in a button handler for determining which button was\nclicked to dismiss the alert.\nSome examples include: ``\"cancel\"`, `\"destructive\"`, \"selected\"`, and `\"backdrop\"`."
+        },
+        {
+          "name": "param",
+          "text": "id The id of the alert to dismiss. If an id is not provided, it will dismiss the most recently opened alert."
+        }
+      ]
+    },
+    {
+      "name": "getTop",
+      "returns": {
+        "type": "Promise<HTMLIonAlertElement | undefined>",
+        "docs": ""
+      },
+      "signature": "getTop() => Promise<HTMLIonAlertElement | undefined>",
+      "parameters": [],
+      "docs": "Get the most recently opened alert overlay.",
+      "docsTags": []
+    }
+  ],
+  "events": [],
+  "styles": [],
+  "slots": [],
+  "dependents": [],
+  "dependencies": [],
+  "dependencyGraph": {},
+  "deprecation": "Use the `alertController` exported from core."
+}

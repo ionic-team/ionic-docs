@@ -1,0 +1,73 @@
+{
+  "filePath": "./src/components/fab-list/fab-list.tsx",
+  "encapsulation": "shadow",
+  "tag": "ion-fab-list",
+  "readme": "# ion-fab-list\n\nThe `ion-fab-list` element is a container for multiple fab buttons. This collection of fab buttons contains actions related to the main fab button and is flung out on click. To specify what side the buttons should appear on, set the `side` property to 'start', 'end', 'top', 'bottom'\n",
+  "docs": "The `ion-fab-list` element is a container for multiple fab buttons. This collection of fab buttons contains actions related to the main fab button and is flung out on click. To specify what side the buttons should appear on, set the `side` property to 'start', 'end', 'top', 'bottom'",
+  "docsTags": [],
+  "usage": {
+    "angular": "```html\n<ion-fab vertical=\"center\" horizontal=\"center\">\n  <ion-fab-button>Share</ion-fab-button>\n  <ion-fab-list side=\"top\">\n    <ion-fab-button>\n      <ion-icon name=\"logo-facebook\"></ion-icon>\n    </ion-fab-button>\n    <ion-fab-button>\n      <ion-icon name=\"logo-twitter\"></ion-icon>\n    </ion-fab-button>\n    <ion-fab-button>\n      <ion-icon name=\"logo-youtube\"></ion-icon>\n    </ion-fab-button>\n  </ion-fab-list>\n\n  <ion-fab-list side=\"end\">\n    <ion-fab-button>\n      <ion-icon name=\"logo-pwa\"></ion-icon>\n    </ion-fab-button>\n    <ion-fab-button>\n      <ion-icon name=\"logo-npm\"></ion-icon>\n    </ion-fab-button>\n    <ion-fab-button>\n      <ion-icon name=\"logo-ionic\"></ion-icon>\n    </ion-fab-button>\n  </ion-fab-list>\n\n  <ion-fab-list side=\"bottom\">\n    <ion-fab-button>\n      <ion-icon name=\"logo-github\"></ion-icon>\n    </ion-fab-button>\n    <ion-fab-button>\n      <ion-icon name=\"logo-javascript\"></ion-icon>\n    </ion-fab-button>\n    <ion-fab-button>\n      <ion-icon name=\"logo-angular\"></ion-icon>\n    </ion-fab-button>\n  </ion-fab-list>\n\n  <ion-fab-list side=\"start\">\n    <ion-fab-button>\n      <ion-icon name=\"logo-vimeo\"></ion-icon>\n    </ion-fab-button>\n    <ion-fab-button>\n      <ion-icon name=\"logo-chrome\"></ion-icon>\n    </ion-fab-button>\n    <ion-fab-button>\n      <ion-icon name=\"logo-react\"></ion-icon>\n    </ion-fab-button>\n  </ion-fab-list>\n</ion-fab>\n```\n",
+    "javascript": "```html\n<ion-fab vertical=\"center\" horizontal=\"center\">\n  <ion-fab-button>Share</ion-fab-button>\n  <ion-fab-list side=\"top\">\n    <ion-fab-button>\n      <ion-icon name=\"logo-facebook\"></ion-icon>\n    </ion-fab-button>\n    <ion-fab-button>\n      <ion-icon name=\"logo-twitter\"></ion-icon>\n    </ion-fab-button>\n    <ion-fab-button>\n      <ion-icon name=\"logo-youtube\"></ion-icon>\n    </ion-fab-button>\n  </ion-fab-list>\n\n  <ion-fab-list side=\"end\">\n    <ion-fab-button>\n      <ion-icon name=\"logo-pwa\"></ion-icon>\n    </ion-fab-button>\n    <ion-fab-button>\n      <ion-icon name=\"logo-npm\"></ion-icon>\n    </ion-fab-button>\n    <ion-fab-button>\n      <ion-icon name=\"logo-ionic\"></ion-icon>\n    </ion-fab-button>\n  </ion-fab-list>\n\n  <ion-fab-list side=\"bottom\">\n    <ion-fab-button>\n      <ion-icon name=\"logo-github\"></ion-icon>\n    </ion-fab-button>\n    <ion-fab-button>\n      <ion-icon name=\"logo-javascript\"></ion-icon>\n    </ion-fab-button>\n    <ion-fab-button>\n      <ion-icon name=\"logo-angular\"></ion-icon>\n    </ion-fab-button>\n  </ion-fab-list>\n\n  <ion-fab-list side=\"start\">\n    <ion-fab-button>\n      <ion-icon name=\"logo-vimeo\"></ion-icon>\n    </ion-fab-button>\n    <ion-fab-button>\n      <ion-icon name=\"logo-chrome\"></ion-icon>\n    </ion-fab-button>\n    <ion-fab-button>\n      <ion-icon name=\"logo-react\"></ion-icon>\n    </ion-fab-button>\n  </ion-fab-list>\n</ion-fab>\n```\n",
+    "react": "```tsx\nimport React from 'react';\nimport { IonFab, IonFabButton, IonFabList, IonContent, IonIcon } from '@ionic/react';\nimport { logoFacebook, logoTwitter, logoYoutube, logoPwa, logoNpm, logoIonic, logoGithub, logoJavascript, logoAngular, logoVimeo, logoChrome, logoReact } from 'ionicons/icons';\n\nexport const FabListExample: React.FC = () => (\n  <IonContent>\n    <IonFab vertical=\"center\" horizontal=\"center\">\n      <IonFabButton>Share</IonFabButton>\n      <IonFabList side=\"top\">\n        <IonFabButton>\n          <IonIcon icon={logoFacebook} />\n        </IonFabButton>\n        <IonFabButton>\n          <IonIcon icon={logoTwitter} />\n        </IonFabButton>\n        <IonFabButton>\n          <IonIcon icon={logoYoutube} />\n        </IonFabButton>\n      </IonFabList>\n\n      <IonFabList side=\"end\">\n        <IonFabButton>\n          <IonIcon icon={logoPwa} />\n        </IonFabButton>\n        <IonFabButton>\n          <IonIcon icon={logoNpm} />\n        </IonFabButton>\n        <IonFabButton>\n          <IonIcon icon={logoIonic} />\n        </IonFabButton>\n      </IonFabList>\n\n      <IonFabList side=\"bottom\">\n        <IonFabButton>\n          <IonIcon icon={logoGithub} />\n        </IonFabButton>\n        <IonFabButton>\n          <IonIcon icon={logoJavascript} />\n        </IonFabButton>\n        <IonFabButton>\n          <IonIcon icon={logoAngular} />\n        </IonFabButton>\n      </IonFabList>\n\n      <IonFabList side=\"start\">\n        <IonFabButton>\n          <IonIcon icon={logoVimeo} />\n        </IonFabButton>\n        <IonFabButton>\n          <IonIcon icon={logoChrome} />\n        </IonFabButton>\n        <IonFabButton>\n          <IonIcon icon={logoReact} />\n        </IonFabButton>\n      </IonFabList>\n    </IonFab>\n  </IonContent>\n);\n\n```",
+    "stencil": "```tsx\nimport { Component, h } from '@stencil/core';\n\n@Component({\n  tag: 'fab-list-example',\n  styleUrl: 'fab-list-example.css'\n})\nexport class FabListExample {\n  render() {\n    return [\n      <ion-fab vertical=\"center\" horizontal=\"center\">\n        <ion-fab-button>Share</ion-fab-button>\n        <ion-fab-list side=\"top\">\n          <ion-fab-button>\n            <ion-icon name=\"logo-facebook\"></ion-icon>\n          </ion-fab-button>\n          <ion-fab-button>\n            <ion-icon name=\"logo-twitter\"></ion-icon>\n          </ion-fab-button>\n          <ion-fab-button>\n            <ion-icon name=\"logo-youtube\"></ion-icon>\n          </ion-fab-button>\n        </ion-fab-list>\n\n        <ion-fab-list side=\"end\">\n          <ion-fab-button>\n            <ion-icon name=\"logo-pwa\"></ion-icon>\n          </ion-fab-button>\n          <ion-fab-button>\n            <ion-icon name=\"logo-npm\"></ion-icon>\n          </ion-fab-button>\n          <ion-fab-button>\n            <ion-icon name=\"logo-ionic\"></ion-icon>\n          </ion-fab-button>\n        </ion-fab-list>\n\n        <ion-fab-list side=\"bottom\">\n          <ion-fab-button>\n            <ion-icon name=\"logo-github\"></ion-icon>\n          </ion-fab-button>\n          <ion-fab-button>\n            <ion-icon name=\"logo-javascript\"></ion-icon>\n          </ion-fab-button>\n          <ion-fab-button>\n            <ion-icon name=\"logo-angular\"></ion-icon>\n          </ion-fab-button>\n        </ion-fab-list>\n\n        <ion-fab-list side=\"start\">\n          <ion-fab-button>\n            <ion-icon name=\"logo-vimeo\"></ion-icon>\n          </ion-fab-button>\n          <ion-fab-button>\n            <ion-icon name=\"logo-chrome\"></ion-icon>\n          </ion-fab-button>\n          <ion-fab-button>\n            <ion-icon name=\"logo-react\"></ion-icon>\n          </ion-fab-button>\n        </ion-fab-list>\n      </ion-fab>\n    ];\n  }\n}\n```",
+    "vue": "```html\n<template>\n  <ion-fab vertical=\"bottom\" horizontal=\"end\">\n    <ion-fab-button>Share</ion-fab-button>\n\n    <ion-fab-list side=\"top\">\n      <ion-fab-button>Facebook</ion-fab-button>\n      <ion-fab-button>Twitter</ion-fab-button>\n      <ion-fab-button>Youtube</ion-fab-button>\n    </ion-fab-list>\n\n    <ion-fab-list side=\"start\">\n      <ion-fab-button>Vimeo</ion-fab-button>\n    </ion-fab-list>\n\n  </ion-fab>\n</template>\n\n<script>\nimport { IonFab, IonFabButton, IonFabList } from '@ionic/vue';\nimport { defineComponent } from 'vue';\n\nexport default defineComponent({\n  components: { IonFab, IonFabButton, IonFabList }\n});\n</script>\n```\n"
+  },
+  "props": [
+    {
+      "name": "activated",
+      "type": "boolean",
+      "mutable": false,
+      "attr": "activated",
+      "reflectToAttr": false,
+      "docs": "If `true`, the fab list will show all fab buttons in the list.",
+      "docsTags": [],
+      "default": "false",
+      "values": [
+        {
+          "type": "boolean"
+        }
+      ],
+      "optional": false,
+      "required": false
+    },
+    {
+      "name": "side",
+      "type": "\"bottom\" | \"end\" | \"start\" | \"top\"",
+      "mutable": false,
+      "attr": "side",
+      "reflectToAttr": false,
+      "docs": "The side the fab list will show on relative to the main fab button.",
+      "docsTags": [],
+      "default": "'bottom'",
+      "values": [
+        {
+          "value": "bottom",
+          "type": "string"
+        },
+        {
+          "value": "end",
+          "type": "string"
+        },
+        {
+          "value": "start",
+          "type": "string"
+        },
+        {
+          "value": "top",
+          "type": "string"
+        }
+      ],
+      "optional": false,
+      "required": false
+    }
+  ],
+  "methods": [],
+  "events": [],
+  "listeners": [],
+  "styles": [],
+  "slots": [],
+  "parts": [],
+  "dependents": [],
+  "dependencies": [],
+  "dependencyGraph": {}
+}

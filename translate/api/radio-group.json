@@ -1,0 +1,99 @@
+{
+  "filePath": "./src/components/radio-group/radio-group.tsx",
+  "encapsulation": "none",
+  "tag": "ion-radio-group",
+  "readme": "# ion-radio-group\n\nA radio group is a group of [radio buttons](../radio). It allows\na user to select at most one radio button from a set. Checking one radio\nbutton that belongs to a radio group unchecks any previous checked\nradio button within the same group.\n\n\n\n",
+  "docs": "A radio group is a group of [radio buttons](../radio). It allows\na user to select at most one radio button from a set. Checking one radio\nbutton that belongs to a radio group unchecks any previous checked\nradio button within the same group.",
+  "docsTags": [],
+  "usage": {
+    "angular": "```html\n<ion-list>\n  <ion-radio-group>\n    <ion-list-header>\n      <ion-label>\n        Auto Manufacturers\n      </ion-label>\n    </ion-list-header>\n\n    <ion-item>\n      <ion-label>Cord</ion-label>\n      <ion-radio value=\"cord\"></ion-radio>\n    </ion-item>\n\n    <ion-item>\n      <ion-label>Duesenberg</ion-label>\n      <ion-radio value=\"duesenberg\"></ion-radio>\n    </ion-item>\n\n    <ion-item>\n      <ion-label>Hudson</ion-label>\n      <ion-radio value=\"hudson\"></ion-radio>\n    </ion-item>\n\n    <ion-item>\n      <ion-label>Packard</ion-label>\n      <ion-radio value=\"packard\"></ion-radio>\n    </ion-item>\n\n    <ion-item>\n      <ion-label>Studebaker</ion-label>\n      <ion-radio value=\"studebaker\"></ion-radio>\n    </ion-item>\n  </ion-radio-group>\n</ion-list>\n```\n",
+    "javascript": "```html\n<ion-list>\n  <ion-radio-group>\n    <ion-list-header>\n      <ion-label>\n        Auto Manufacturers\n      </ion-label>\n    </ion-list-header>\n\n    <ion-item>\n      <ion-label>Cord</ion-label>\n      <ion-radio value=\"cord\"></ion-radio>\n    </ion-item>\n\n    <ion-item>\n      <ion-label>Duesenberg</ion-label>\n      <ion-radio value=\"duesenberg\"></ion-radio>\n    </ion-item>\n\n    <ion-item>\n      <ion-label>Hudson</ion-label>\n      <ion-radio value=\"hudson\"></ion-radio>\n    </ion-item>\n\n    <ion-item>\n      <ion-label>Packard</ion-label>\n      <ion-radio value=\"packard\"></ion-radio>\n    </ion-item>\n\n    <ion-item>\n      <ion-label>Studebaker</ion-label>\n      <ion-radio value=\"studebaker\"></ion-radio>\n    </ion-item>\n  </ion-radio-group>\n</ion-list>\n```\n",
+    "react": "```tsx\nimport React from 'react';\nimport { IonList, IonRadioGroup, IonListHeader, IonLabel, IonRadio, IonItem, IonContent } from '@ionic/react';\n\nexport const RadioGroupExample: React.FC = () => (\n  <IonContent>\n    <IonList>\n      <IonRadioGroup>\n        <IonListHeader>\n          <IonLabel>\n            Auto Manufacturers\n          </IonLabel>\n        </IonListHeader>\n\n        <IonItem>\n          <IonLabel>Cord</IonLabel>\n          <IonRadio value=\"cord\" />\n        </IonItem>\n\n        <IonItem>\n          <IonLabel>Duesenberg</IonLabel>\n          <IonRadio value=\"duesenberg\" />\n        </IonItem>\n\n        <IonItem>\n          <IonLabel>Hudson</IonLabel>\n          <IonRadio value=\"hudson\" />\n        </IonItem>\n\n        <IonItem>\n          <IonLabel>Packard</IonLabel>\n          <IonRadio value=\"packard\" />\n        </IonItem>\n\n        <IonItem>\n          <IonLabel>Studebaker</IonLabel>\n          <IonRadio value=\"studebaker\" />\n        </IonItem>\n      </IonRadioGroup>\n    </IonList>\n  </IonContent>\n);\n```",
+    "stencil": "```tsx\nimport { Component, h } from '@stencil/core';\n\n@Component({\n  tag: 'radio-group-example',\n  styleUrl: 'radio-group-example.css'\n})\nexport class RadioGroupExample {\n  render() {\n    return [\n      <ion-list>\n        <ion-radio-group>\n          <ion-list-header>\n            <ion-label>\n              Auto Manufacturers\n            </ion-label>\n          </ion-list-header>\n\n          <ion-item>\n            <ion-label>Cord</ion-label>\n            <ion-radio value=\"cord\"></ion-radio>\n          </ion-item>\n\n          <ion-item>\n            <ion-label>Duesenberg</ion-label>\n            <ion-radio value=\"duesenberg\"></ion-radio>\n          </ion-item>\n\n          <ion-item>\n            <ion-label>Hudson</ion-label>\n            <ion-radio value=\"hudson\"></ion-radio>\n          </ion-item>\n\n          <ion-item>\n            <ion-label>Packard</ion-label>\n            <ion-radio value=\"packard\"></ion-radio>\n          </ion-item>\n\n          <ion-item>\n            <ion-label>Studebaker</ion-label>\n            <ion-radio value=\"studebaker\"></ion-radio>\n          </ion-item>\n        </ion-radio-group>\n      </ion-list>\n    ];\n  }\n}\n```\n",
+    "vue": "```html\n<template>\n  <ion-list>\n    <ion-radio-group>\n      <ion-list-header>\n        <ion-label>\n          Auto Manufacturers\n        </ion-label>\n      </ion-list-header>\n\n      <ion-item>\n        <ion-label>Cord</ion-label>\n        <ion-radio value=\"cord\"></ion-radio>\n      </ion-item>\n\n      <ion-item>\n        <ion-label>Duesenberg</ion-label>\n        <ion-radio value=\"duesenberg\"></ion-radio>\n      </ion-item>\n\n      <ion-item>\n        <ion-label>Hudson</ion-label>\n        <ion-radio value=\"hudson\"></ion-radio>\n      </ion-item>\n\n      <ion-item>\n        <ion-label>Packard</ion-label>\n        <ion-radio value=\"packard\"></ion-radio>\n      </ion-item>\n\n      <ion-item>\n        <ion-label>Studebaker</ion-label>\n        <ion-radio value=\"studebaker\"></ion-radio>\n      </ion-item>\n    </ion-radio-group>\n  </ion-list>\n</template>\n\n<script>\nimport { \n  IonItem, \n  IonLabel, \n  IonList, \n  IonListHeader, \n  IonRadio, \n  IonRadioGroup\n} from '@ionic/vue';\nimport { defineComponent } from 'vue';\n\nexport default defineComponent({\n  components: {\n    IonItem, \n    IonLabel, \n    IonList, \n    IonListHeader, \n    IonRadio, \n    IonRadioGroup\n  }\n});\n</script>\n```\n"
+  },
+  "props": [
+    {
+      "name": "allowEmptySelection",
+      "type": "boolean",
+      "mutable": false,
+      "attr": "allow-empty-selection",
+      "reflectToAttr": false,
+      "docs": "If `true`, the radios can be deselected.",
+      "docsTags": [],
+      "default": "false",
+      "values": [
+        {
+          "type": "boolean"
+        }
+      ],
+      "optional": false,
+      "required": false
+    },
+    {
+      "name": "name",
+      "type": "string",
+      "mutable": false,
+      "attr": "name",
+      "reflectToAttr": false,
+      "docs": "The name of the control, which is submitted with the form data.",
+      "docsTags": [],
+      "default": "this.inputId",
+      "values": [
+        {
+          "type": "string"
+        }
+      ],
+      "optional": false,
+      "required": false
+    },
+    {
+      "name": "value",
+      "type": "any",
+      "mutable": true,
+      "attr": "value",
+      "reflectToAttr": false,
+      "docs": "the value of the radio group.",
+      "docsTags": [],
+      "values": [
+        {
+          "type": "any"
+        }
+      ],
+      "optional": true,
+      "required": false
+    }
+  ],
+  "methods": [],
+  "events": [
+    {
+      "event": "ionChange",
+      "detail": "RadioGroupChangeEventDetail",
+      "bubbles": true,
+      "cancelable": true,
+      "composed": true,
+      "docs": "Emitted when the value has changed.",
+      "docsTags": []
+    }
+  ],
+  "listeners": [
+    {
+      "event": "keydown",
+      "target": "document",
+      "capture": false,
+      "passive": false
+    }
+  ],
+  "styles": [],
+  "slots": [],
+  "parts": [],
+  "dependents": [
+    "ion-select-popover"
+  ],
+  "dependencies": [],
+  "dependencyGraph": {
+    "ion-select-popover": [
+      "ion-radio-group"
+    ]
+  }
+}

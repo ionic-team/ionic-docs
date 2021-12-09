@@ -1,0 +1,28 @@
+{
+  "name": "ionic doctor check",
+  "namespace": [
+    "ionic",
+    "doctor"
+  ],
+  "summary": "Check the health of your Ionic project",
+  "description": "This command detects and prints common issues and suggested steps to fix them.\n\nSome issues can be fixed automatically. See `ionic doctor treat --help`.\n\nOptionally supply the `id` argument to check a single issue. Use `ionic doctor list` to list all known issues.",
+  "footnotes": [],
+  "groups": [],
+  "exampleCommands": [
+    "ionic doctor check ",
+    "ionic doctor check git-not-used"
+  ],
+  "aliases": [
+    "ionic doctor checkup",
+    "ionic doctor validate"
+  ],
+  "inputs": [
+    {
+      "name": "id",
+      "summary": "The issue identifier",
+      "required": false
+    }
+  ],
+  "options": [],
+  "type": "project"
+}

@@ -1,0 +1,15 @@
+{
+  "packageName": "@ionic-native/screenshot",
+  "displayName": "Screenshot",
+  "description": "Captures a screen shot",
+  "usage": "\n```typescript\nimport { Screenshot } from '@ionic-native/screenshot/ngx';\n\nconstructor(private screenshot: Screenshot) { }\n\n...\n\n// Take a screenshot and save to file\nthis.screenshot.save('jpg', 80, 'myscreenshot.jpg').then(onSuccess, onError);\n\n// Take a screenshot and get temporary file URI\nthis.screenshot.URI(80).then(onSuccess, onError);\n```\n",
+  "platforms": [
+    "Android",
+    "iOS",
+    "macOS"
+  ],
+  "repo": "https://github.com/gitawego/cordova-screenshot",
+  "cordovaPlugin": {
+    "name": "com.darktalker.cordova.screenshot"
+  }
+}

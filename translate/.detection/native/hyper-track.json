@@ -1,0 +1,13 @@
+{
+  "packageName": "@ionic-native/hyper-track",
+  "displayName": "HyperTrack",
+  "description": "\nHyperTrack cordova plugin wrapper for Ionic Native. Location-based services provider.\nMake sure to include your publishable key at config.xml (see [HyperTrack Cordova Setup](https://docs.hypertrack.com/sdks/cordova/setup.html#step-2-configure-the-sdk)).\n",
+  "usage": "\n```typescript\nimport { HyperTrack } from '@ionic-native/hyper-track/ngx';\n\nconstructor(private hyperTrack: HyperTrack) { }\n\n// Check if app has location permissions enabled\nthis.hyperTrack.checkLocationPermission().then(response => {\n  // response (String) can be \"true\" or \"false\"\n  if (response != \"true\") {\n    // Ask for permissions\n    this.hyperTrack.requestPermissions().then(response => {}, error => {});\n  }\n}, error => {});\n\n// Check if app has location services enabled\nthis.hyperTrack.checkLocationServices().then(response => {\n  // response (String) can be \"true\" or \"false\"\n  if (response != \"true\") {\n    // Request services to be enabled\n    this.hyperTrack.requestLocationServices().then(response => {}, error => {});\n  }\n}, error => {});\n\n// First set the current user. This can be done via getOrCreateUser() or setUserId()\nthis.hyperTrack.setUserId(\"xxx\").then(user => {\n  // user (String) is a String representation of a User's JSON\n\n  this.hyperTrack.startTracking().then(userId => {}, trackingError => {});\n\n  this.hyperTrack.createAndAssignAction('visit', 'lookupId','address', 20.12, -100.3).then(action => {\n    // Handle action. It's a String representation of the Action's JSON. For example:\n    // '{\"eta\":\"Jul 17, 2017 12:50:03 PM\",\"assigned_at\":\"Jul 17, 2017 12:34:38 PM\",,\"distance\":\"0.0\",...}'\n  }, error => {});\n\n  // You can complete an action with completeAction() or completeActionWithLookupId()\n  this.hyperTrack.completeAction('action-id').then(response => {\n    // Handle response (String). Should be \"OK\".\n  }, error => {});\n\n  this.hyperTrack.getCurrentLocation().then(location => {\n    // Handle location. It's a String representation of a Location's JSON.For example:\n    // '{\"mAccuracy\":22.601,,\"mLatitude\":23.123456, \"mLongitude\":-100.1234567, ...}'\n  }, error => {});\n\n  this.hyperTrack.stopTracking().then(success => {\n    // Handle success (String). Should be \"OK\".\n  }, error => {});\n\n}, error => {});*\n```\n",
+  "platforms": [
+    "Android"
+  ],
+  "repo": "https://github.com/hypertrack/hypertrack-cordova",
+  "cordovaPlugin": {
+    "name": "cordova-plugin-hypertrack"
+  }
+}

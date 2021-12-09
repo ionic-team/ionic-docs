@@ -1,0 +1,12 @@
+{
+  "packageName": "@ionic-native/last-cam",
+  "displayName": "LastCam",
+  "description": "\nLast Cam is a Camera Preview plugin that allows you to take capture both Videos and images in a\ncustom html preview of your choice.\n",
+  "platforms": [
+    "iOS"
+  ],
+  "repo": "https://github.com/bengejd/cordova-plugin-last-cam",
+  "cordovaPlugin": {
+    "name": "cordova-plugin-last-cam"
+  }
+}

@@ -1,0 +1,77 @@
+{
+  "filePath": "src/components/popover-controller/popover-controller.tsx",
+  "encapsulation": "none",
+  "tag": "ion-popover-controller",
+  "readme": "# ion-popover-controller\n\nPopover controllers programmatically control the popover component. Popovers can be created and dismissed from the popover controller. View the [Popover](../popover) documentation for a full list of options to pass upon creation.\n\n",
+  "docs": "Popover controllers programmatically control the popover component. Popovers can be created and dismissed from the popover controller. View the [Popover](../popover) documentation for a full list of options to pass upon creation.",
+  "docsTags": [
+    {
+      "text": "Use the `popoverController` exported from core.",
+      "name": "deprecated"
+    }
+  ],
+  "usage": {
+    "javascript": "```javascript\nasync function presentPopover() {\n  const popoverElement = Object.assign(document.createElement('ion-popover'), {\n    component: 'profile-page',\n    event: event\n  });\n  document.body.appendChild(popoverElement);\n  return await popoverElement.present();\n}\n```\n"
+  },
+  "props": [],
+  "methods": [
+    {
+      "name": "create",
+      "returns": {
+        "type": "Promise<HTMLIonPopoverElement>",
+        "docs": ""
+      },
+      "signature": "create<T extends ComponentRef>(options: PopoverOptions<T>) => Promise<HTMLIonPopoverElement>",
+      "parameters": [],
+      "docs": "Create a popover overlay with popover options.",
+      "docsTags": [
+        {
+          "name": "param",
+          "text": "options The options to use to create the popover."
+        }
+      ]
+    },
+    {
+      "name": "dismiss",
+      "returns": {
+        "type": "Promise<boolean>",
+        "docs": ""
+      },
+      "signature": "dismiss(data?: any, role?: string | undefined, id?: string | undefined) => Promise<boolean>",
+      "parameters": [],
+      "docs": "Dismiss the open popover overlay.",
+      "docsTags": [
+        {
+          "name": "param",
+          "text": "data Any data to emit in the dismiss events."
+        },
+        {
+          "name": "param",
+          "text": "role The role of the element that is dismissing the popover.\nThis can be useful in a button handler for determining which button was\nclicked to dismiss the popover.\nSome examples include: ``\"cancel\"`, `\"destructive\"`, \"selected\"`, and `\"backdrop\"`."
+        },
+        {
+          "name": "param",
+          "text": "id The id of the popover to dismiss. If an id is not provided, it will dismiss the most recently opened popover."
+        }
+      ]
+    },
+    {
+      "name": "getTop",
+      "returns": {
+        "type": "Promise<HTMLIonPopoverElement | undefined>",
+        "docs": ""
+      },
+      "signature": "getTop() => Promise<HTMLIonPopoverElement | undefined>",
+      "parameters": [],
+      "docs": "Get the most recently opened popover overlay.",
+      "docsTags": []
+    }
+  ],
+  "events": [],
+  "styles": [],
+  "slots": [],
+  "dependents": [],
+  "dependencies": [],
+  "dependencyGraph": {},
+  "deprecation": "Use the `popoverController` exported from core."
+}

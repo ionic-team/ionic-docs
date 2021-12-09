@@ -1,0 +1,14 @@
+{
+  "packageName": "@ionic-native/native-keyboard",
+  "displayName": "Native Keyboard",
+  "description": "\nA cross platform WhatsApp / Messenger / Slack -style keyboard even. For your Cordova app.\n\n",
+  "usage": "\n```\nimport { NativeKeyboard } from '@ionic-native/native-keyboard/ngx';\n\n\nconstructor(private nativeKeyboard: NativeKeyboard) { }\n\n...\n\n\n```",
+  "platforms": [
+    "Android",
+    "iOS"
+  ],
+  "repo": "https://github.com/EddyVerbruggen/cordova-plugin-native-keyboard",
+  "cordovaPlugin": {
+    "name": "cordova-plugin-native-keyboard"
+  }
+}

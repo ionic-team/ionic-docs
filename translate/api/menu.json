@@ -1,0 +1,332 @@
+{
+  "filePath": "./src/components/menu/menu.tsx",
+  "encapsulation": "shadow",
+  "tag": "ion-menu",
+  "readme": "# ion-menu\n\nThe Menu component is a navigation drawer that slides in from the side of the current view.\nBy default, it slides in from the left, but the side can be overridden.\nThe menu will be displayed differently based on the mode, however the display type can be changed to any of the available menu types.\nThe menu element should be a sibling to the root content element.\nThere can be any number of menus attached to the content.\nThese can be controlled from the templates, or programmatically using the MenuController.\n\n",
+  "docs": "The Menu component is a navigation drawer that slides in from the side of the current view.\nBy default, it slides in from the left, but the side can be overridden.\nThe menu will be displayed differently based on the mode, however the display type can be changed to any of the available menu types.\nThe menu element should be a sibling to the root content element.\nThere can be any number of menus attached to the content.\nThese can be controlled from the templates, or programmatically using the MenuController.",
+  "docsTags": [
+    {
+      "text": "container - The container for the menu content.",
+      "name": "part"
+    },
+    {
+      "text": "backdrop - The backdrop that appears over the main content when the menu is open.",
+      "name": "part"
+    }
+  ],
+  "usage": {
+    "angular": "```html\n<ion-menu side=\"start\" menuId=\"first\" contentId=\"main\">\n  <ion-header>\n    <ion-toolbar color=\"primary\">\n      <ion-title>Start Menu</ion-title>\n    </ion-toolbar>\n  </ion-header>\n  <ion-content>\n    <ion-list>\n      <ion-item>Menu Item</ion-item>\n      <ion-item>Menu Item</ion-item>\n      <ion-item>Menu Item</ion-item>\n      <ion-item>Menu Item</ion-item>\n      <ion-item>Menu Item</ion-item>\n    </ion-list>\n  </ion-content>\n</ion-menu>\n\n<ion-menu side=\"start\" menuId=\"custom\" contentId=\"main\" class=\"my-custom-menu\">\n  <ion-header>\n    <ion-toolbar color=\"tertiary\">\n      <ion-title>Custom Menu</ion-title>\n    </ion-toolbar>\n  </ion-header>\n  <ion-content>\n    <ion-list>\n      <ion-item>Menu Item</ion-item>\n      <ion-item>Menu Item</ion-item>\n      <ion-item>Menu Item</ion-item>\n      <ion-item>Menu Item</ion-item>\n      <ion-item>Menu Item</ion-item>\n    </ion-list>\n  </ion-content>\n</ion-menu>\n\n<ion-menu side=\"end\" type=\"push\" contentId=\"main\">\n  <ion-header>\n    <ion-toolbar color=\"danger\">\n      <ion-title>End Menu</ion-title>\n    </ion-toolbar>\n  </ion-header>\n  <ion-content>\n    <ion-list>\n      <ion-item>Menu Item</ion-item>\n      <ion-item>Menu Item</ion-item>\n      <ion-item>Menu Item</ion-item>\n      <ion-item>Menu Item</ion-item>\n      <ion-item>Menu Item</ion-item>\n    </ion-list>\n  </ion-content>\n</ion-menu>\n\n<ion-router-outlet id=\"main\"></ion-router-outlet>\n```\n\n```typescript\nimport { Component } from '@angular/core';\nimport { MenuController } from '@ionic/angular';\n\n@Component({\n  selector: 'menu-example',\n  templateUrl: 'menu-example.html',\n  styleUrls: ['./menu-example.css'],\n})\nexport class MenuExample {\n\nconstructor(private menu: MenuController) { }\n\n  openFirst() {\n    this.menu.enable(true, 'first');\n    this.menu.open('first');\n  }\n\n  openEnd() {\n    this.menu.open('end');\n  }\n\n  openCustom() {\n    this.menu.enable(true, 'custom');\n    this.menu.open('custom');\n  }\n}\n```\n\n```css\n.my-custom-menu {\n  --width: 500px;\n}\n```",
+    "javascript": "```html\n<ion-app>\n  <ion-menu side=\"start\" menu-id=\"first\" content-id=\"main\">\n    <ion-header>\n      <ion-toolbar color=\"primary\">\n        <ion-title>Start Menu</ion-title>\n      </ion-toolbar>\n    </ion-header>\n    <ion-content>\n      <ion-list>\n        <ion-item>Menu Item</ion-item>\n        <ion-item>Menu Item</ion-item>\n        <ion-item>Menu Item</ion-item>\n        <ion-item>Menu Item</ion-item>\n        <ion-item>Menu Item</ion-item>\n      </ion-list>\n    </ion-content>\n  </ion-menu>\n\n  <ion-menu side=\"start\" menu-id=\"custom\" class=\"my-custom-menu\" content-id=\"main\">\n    <ion-header>\n      <ion-toolbar color=\"tertiary\">\n        <ion-title>Custom Menu</ion-title>\n      </ion-toolbar>\n    </ion-header>\n    <ion-content>\n      <ion-list>\n        <ion-item>Menu Item</ion-item>\n        <ion-item>Menu Item</ion-item>\n        <ion-item>Menu Item</ion-item>\n        <ion-item>Menu Item</ion-item>\n        <ion-item>Menu Item</ion-item>\n      </ion-list>\n    </ion-content>\n  </ion-menu>\n\n  <ion-menu side=\"end\" type=\"push\" content-id=\"main\">\n    <ion-header>\n      <ion-toolbar color=\"danger\">\n        <ion-title>End Menu</ion-title>\n      </ion-toolbar>\n    </ion-header>\n    <ion-content>\n      <ion-list>\n        <ion-item>Menu Item</ion-item>\n        <ion-item>Menu Item</ion-item>\n        <ion-item>Menu Item</ion-item>\n        <ion-item>Menu Item</ion-item>\n        <ion-item>Menu Item</ion-item>\n      </ion-list>\n    </ion-content>\n  </ion-menu>\n\n  <div class=\"ion-page\" id=\"main\">\n    <ion-header>\n      <ion-toolbar>\n        <ion-title>Menu - Basic</ion-title>\n      </ion-toolbar>\n    </ion-header>\n    <ion-content class=\"ion-padding\">\n      <ion-button expand=\"block\" onclick=\"openFirst()\">Open Start Menu</ion-button>\n      <ion-button expand=\"block\" onclick=\"openEnd()\">Open End Menu</ion-button>\n      <ion-button expand=\"block\" onclick=\"openCustom()\">Open Custom Menu</ion-button>\n    </ion-content>\n  </div>\n\n</ion-app>\n```\n\n```javascript\n<script type=\"module\">\n    import { menuController } from '@ionic/core';\n    window.menuController = menuController;\n</script>\n  \n<script>\n  function openFirst() {\n    menuController.enable(true, 'first');\n    menuController.open('first');\n  }\n  \n  function openEnd() {\n    menuController.open('end');\n  }\n  \n  function openCustom() {\n    menuController.enable(true, 'custom');\n    menuController.open('custom');\n  }\n</script>\n```\n\n```css\n.my-custom-menu {\n  --width: 500px;\n}\n```",
+    "react": "```tsx\nimport React from 'react';\nimport { IonMenu, IonHeader, IonToolbar, IonTitle, IonContent, IonList, IonItem, IonRouterOutlet } from '@ionic/react';\n\nexport const MenuExample: React.FC = () => (\n  <>\n    <IonMenu side=\"start\" menuId=\"first\">\n      <IonHeader>\n        <IonToolbar color=\"primary\">\n          <IonTitle>Start Menu</IonTitle>\n        </IonToolbar>\n      </IonHeader>\n      <IonContent>\n        <IonList>\n          <IonItem>Menu Item</IonItem>\n          <IonItem>Menu Item</IonItem>\n          <IonItem>Menu Item</IonItem>\n          <IonItem>Menu Item</IonItem>\n          <IonItem>Menu Item</IonItem>\n        </IonList>\n      </IonContent>\n    </IonMenu>\n\n    <IonMenu side=\"start\" menuId=\"custom\" className=\"my-custom-menu\">\n      <IonHeader>\n        <IonToolbar color=\"tertiary\">\n          <IonTitle>Custom Menu</IonTitle>\n        </IonToolbar>\n      </IonHeader>\n      <IonContent>\n        <IonList>\n          <IonItem>Menu Item</IonItem>\n          <IonItem>Menu Item</IonItem>\n          <IonItem>Menu Item</IonItem>\n          <IonItem>Menu Item</IonItem>\n          <IonItem>Menu Item</IonItem>\n        </IonList>\n      </IonContent>\n    </IonMenu>\n\n    <IonMenu side=\"end\" type=\"push\">\n      <IonHeader>\n        <IonToolbar color=\"danger\">\n          <IonTitle>End Menu</IonTitle>\n        </IonToolbar>\n      </IonHeader>\n      <IonContent>\n        <IonList>\n          <IonItem>Menu Item</IonItem>\n          <IonItem>Menu Item</IonItem>\n          <IonItem>Menu Item</IonItem>\n          <IonItem>Menu Item</IonItem>\n          <IonItem>Menu Item</IonItem>\n        </IonList>\n      </IonContent>\n    </IonMenu>\n    <IonRouterOutlet></IonRouterOutlet>\n  </>\n);\n```\n",
+    "stencil": "```tsx\nimport { Component, h } from '@stencil/core';\n\nimport { menuController } from '@ionic/core';\n\n@Component({\n  tag: 'menu-example',\n  styleUrl: 'menu-example.css'\n})\nexport class MenuExample {\n  openFirst() {\n    menuController.enable(true, 'first');\n    menuController.open('first');\n  }\n\n  openEnd() {\n    menuController.open('end');\n  }\n\n  openCustom() {\n    menuController.enable(true, 'custom');\n    menuController.open('custom');\n  }\n\n  render() {\n    return [\n      <ion-menu side=\"start\" menuId=\"first\" contentId=\"main\">\n        <ion-header>\n          <ion-toolbar color=\"primary\">\n            <ion-title>Start Menu</ion-title>\n          </ion-toolbar>\n        </ion-header>\n        <ion-content>\n          <ion-list>\n            <ion-item>Menu Item</ion-item>\n            <ion-item>Menu Item</ion-item>\n            <ion-item>Menu Item</ion-item>\n            <ion-item>Menu Item</ion-item>\n            <ion-item>Menu Item</ion-item>\n          </ion-list>\n        </ion-content>\n      </ion-menu>,\n\n      <ion-menu side=\"start\" menuId=\"custom\" contentId=\"main\" class=\"my-custom-menu\">\n        <ion-header>\n          <ion-toolbar color=\"tertiary\">\n            <ion-title>Custom Menu</ion-title>\n          </ion-toolbar>\n        </ion-header>\n        <ion-content>\n          <ion-list>\n            <ion-item>Menu Item</ion-item>\n            <ion-item>Menu Item</ion-item>\n            <ion-item>Menu Item</ion-item>\n            <ion-item>Menu Item</ion-item>\n            <ion-item>Menu Item</ion-item>\n          </ion-list>\n        </ion-content>\n      </ion-menu>,\n\n      <ion-menu side=\"end\" type=\"push\" contentId=\"main\">\n        <ion-header>\n          <ion-toolbar color=\"danger\">\n            <ion-title>End Menu</ion-title>\n          </ion-toolbar>\n        </ion-header>\n        <ion-content>\n          <ion-list>\n            <ion-item>Menu Item</ion-item>\n            <ion-item>Menu Item</ion-item>\n            <ion-item>Menu Item</ion-item>\n            <ion-item>Menu Item</ion-item>\n            <ion-item>Menu Item</ion-item>\n          </ion-list>\n        </ion-content>\n      </ion-menu>,\n\n      // A router outlet can be placed here instead\n      <ion-content id=\"main\">\n        <ion-button expand=\"block\" onClick={() => this.openFirst()}>Open Start Menu</ion-button>\n        <ion-button expand=\"block\" onClick={() => this.openEnd()}>Open End Menu</ion-button>\n        <ion-button expand=\"block\" onClick={() => this.openCustom()}>Open Custom Menu</ion-button>\n      </ion-content>\n    ];\n  }\n}\n```\n\n```css\n.my-custom-menu {\n  --width: 500px;\n}\n```",
+    "vue": "```html\n<template>\n  <ion-menu side=\"start\" menu-id=\"first\" content-id=\"main\">\n    <ion-header>\n      <ion-toolbar color=\"primary\">\n        <ion-title>Start Menu</ion-title>\n      </ion-toolbar>\n    </ion-header>\n    <ion-content>\n      <ion-list>\n        <ion-item>Menu Item</ion-item>\n        <ion-item>Menu Item</ion-item>\n        <ion-item>Menu Item</ion-item>\n        <ion-item>Menu Item</ion-item>\n        <ion-item>Menu Item</ion-item>\n      </ion-list>\n    </ion-content>\n  </ion-menu>\n\n  <ion-menu side=\"start\" menu-id=\"custom\" class=\"my-custom-menu\" content-id=\"main\">\n    <ion-header>\n      <ion-toolbar color=\"tertiary\">\n        <ion-title>Custom Menu</ion-title>\n      </ion-toolbar>\n    </ion-header>\n    <ion-content>\n      <ion-list>\n        <ion-item>Menu Item</ion-item>\n        <ion-item>Menu Item</ion-item>\n        <ion-item>Menu Item</ion-item>\n        <ion-item>Menu Item</ion-item>\n        <ion-item>Menu Item</ion-item>\n      </ion-list>\n    </ion-content>\n  </ion-menu>\n\n  <ion-menu side=\"end\" type=\"push\" content-id=\"main\">\n    <ion-header>\n      <ion-toolbar color=\"danger\">\n        <ion-title>End Menu</ion-title>\n      </ion-toolbar>\n    </ion-header>\n    <ion-content>\n      <ion-list>\n        <ion-item>Menu Item</ion-item>\n        <ion-item>Menu Item</ion-item>\n        <ion-item>Menu Item</ion-item>\n        <ion-item>Menu Item</ion-item>\n        <ion-item>Menu Item</ion-item>\n      </ion-list>\n    </ion-content>\n  </ion-menu>\n\n  <ion-router-outlet id=\"main\"></ion-router-outlet>\n</template>\n<style>\n.my-custom-menu {\n  --width: 500px;\n}\n</style>\n\n<script>\nimport { \n  IonContent, \n  IonHeader, \n  IonItem, \n  IonList, \n  IonMenu, \n  IonRouterOutlet,\n  IonTitle, \n  IonToolbar,\n  menuController\n} from '@ionic/vue';\nimport { defineComponent } from 'vue';\n\nexport default defineComponent({\n  components: {\n    IonContent, \n    IonHeader, \n    IonItem, \n    IonList, \n    IonMenu, \n    IonRouterOutlet,\n    IonTitle, \n    IonToolbar\n  },\n  methods: {\n    openFirst() {\n      menuController.enable(true, 'first');\n      menuController.open('first');\n    },\n    openEnd() {\n      menuController.open('end');\n    },\n    openCustom() {\n      menuController.enable(true, 'custom');\n      menuController.open('custom');\n    }\n  }\n});\n</script>\n```"
+  },
+  "props": [
+    {
+      "name": "contentId",
+      "type": "string | undefined",
+      "mutable": false,
+      "attr": "content-id",
+      "reflectToAttr": true,
+      "docs": "The content's id the menu should use.",
+      "docsTags": [],
+      "values": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "undefined"
+        }
+      ],
+      "optional": true,
+      "required": false
+    },
+    {
+      "name": "disabled",
+      "type": "boolean",
+      "mutable": true,
+      "attr": "disabled",
+      "reflectToAttr": false,
+      "docs": "If `true`, the menu is disabled.",
+      "docsTags": [],
+      "default": "false",
+      "values": [
+        {
+          "type": "boolean"
+        }
+      ],
+      "optional": false,
+      "required": false
+    },
+    {
+      "name": "maxEdgeStart",
+      "type": "number",
+      "mutable": false,
+      "attr": "max-edge-start",
+      "reflectToAttr": false,
+      "docs": "The edge threshold for dragging the menu open.\nIf a drag/swipe happens over this value, the menu is not triggered.",
+      "docsTags": [],
+      "default": "50",
+      "values": [
+        {
+          "type": "number"
+        }
+      ],
+      "optional": false,
+      "required": false
+    },
+    {
+      "name": "menuId",
+      "type": "string | undefined",
+      "mutable": false,
+      "attr": "menu-id",
+      "reflectToAttr": true,
+      "docs": "An id for the menu.",
+      "docsTags": [],
+      "values": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "undefined"
+        }
+      ],
+      "optional": true,
+      "required": false
+    },
+    {
+      "name": "side",
+      "type": "\"end\" | \"start\"",
+      "mutable": false,
+      "attr": "side",
+      "reflectToAttr": true,
+      "docs": "Which side of the view the menu should be placed.",
+      "docsTags": [],
+      "default": "'start'",
+      "values": [
+        {
+          "value": "end",
+          "type": "string"
+        },
+        {
+          "value": "start",
+          "type": "string"
+        }
+      ],
+      "optional": false,
+      "required": false
+    },
+    {
+      "name": "swipeGesture",
+      "type": "boolean",
+      "mutable": false,
+      "attr": "swipe-gesture",
+      "reflectToAttr": false,
+      "docs": "If `true`, swiping the menu is enabled.",
+      "docsTags": [],
+      "default": "true",
+      "values": [
+        {
+          "type": "boolean"
+        }
+      ],
+      "optional": false,
+      "required": false
+    },
+    {
+      "name": "type",
+      "type": "string | undefined",
+      "mutable": true,
+      "attr": "type",
+      "reflectToAttr": false,
+      "docs": "The display type of the menu.\nAvailable options: `\"overlay\"`, `\"reveal\"`, `\"push\"`.",
+      "docsTags": [],
+      "values": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "undefined"
+        }
+      ],
+      "optional": true,
+      "required": false
+    }
+  ],
+  "methods": [
+    {
+      "name": "close",
+      "returns": {
+        "type": "Promise<boolean>",
+        "docs": ""
+      },
+      "signature": "close(animated?: boolean) => Promise<boolean>",
+      "parameters": [],
+      "docs": "Closes the menu. If the menu is already closed or it can't be closed,\nit returns `false`.",
+      "docsTags": []
+    },
+    {
+      "name": "isActive",
+      "returns": {
+        "type": "Promise<boolean>",
+        "docs": ""
+      },
+      "signature": "isActive() => Promise<boolean>",
+      "parameters": [],
+      "docs": "Returns `true` is the menu is active.\n\nA menu is active when it can be opened or closed, meaning it's enabled\nand it's not part of a `ion-split-pane`.",
+      "docsTags": []
+    },
+    {
+      "name": "isOpen",
+      "returns": {
+        "type": "Promise<boolean>",
+        "docs": ""
+      },
+      "signature": "isOpen() => Promise<boolean>",
+      "parameters": [],
+      "docs": "Returns `true` is the menu is open.",
+      "docsTags": []
+    },
+    {
+      "name": "open",
+      "returns": {
+        "type": "Promise<boolean>",
+        "docs": ""
+      },
+      "signature": "open(animated?: boolean) => Promise<boolean>",
+      "parameters": [],
+      "docs": "Opens the menu. If the menu is already open or it can't be opened,\nit returns `false`.",
+      "docsTags": []
+    },
+    {
+      "name": "setOpen",
+      "returns": {
+        "type": "Promise<boolean>",
+        "docs": ""
+      },
+      "signature": "setOpen(shouldOpen: boolean, animated?: boolean) => Promise<boolean>",
+      "parameters": [],
+      "docs": "Opens or closes the button.\nIf the operation can't be completed successfully, it returns `false`.",
+      "docsTags": []
+    },
+    {
+      "name": "toggle",
+      "returns": {
+        "type": "Promise<boolean>",
+        "docs": ""
+      },
+      "signature": "toggle(animated?: boolean) => Promise<boolean>",
+      "parameters": [],
+      "docs": "Toggles the menu. If the menu is already open, it will try to close, otherwise it will try to open it.\nIf the operation can't be completed successfully, it returns `false`.",
+      "docsTags": []
+    }
+  ],
+  "events": [
+    {
+      "event": "ionDidClose",
+      "detail": "void",
+      "bubbles": true,
+      "cancelable": true,
+      "composed": true,
+      "docs": "Emitted when the menu is closed.",
+      "docsTags": []
+    },
+    {
+      "event": "ionDidOpen",
+      "detail": "void",
+      "bubbles": true,
+      "cancelable": true,
+      "composed": true,
+      "docs": "Emitted when the menu is open.",
+      "docsTags": []
+    },
+    {
+      "event": "ionWillClose",
+      "detail": "void",
+      "bubbles": true,
+      "cancelable": true,
+      "composed": true,
+      "docs": "Emitted when the menu is about to be closed.",
+      "docsTags": []
+    },
+    {
+      "event": "ionWillOpen",
+      "detail": "void",
+      "bubbles": true,
+      "cancelable": true,
+      "composed": true,
+      "docs": "Emitted when the menu is about to be opened.",
+      "docsTags": []
+    }
+  ],
+  "listeners": [
+    {
+      "event": "ionSplitPaneVisible",
+      "target": "body",
+      "capture": false,
+      "passive": false
+    },
+    {
+      "event": "click",
+      "capture": true,
+      "passive": false
+    }
+  ],
+  "styles": [
+    {
+      "name": "--background",
+      "annotation": "prop",
+      "docs": "Background of the menu"
+    },
+    {
+      "name": "--height",
+      "annotation": "prop",
+      "docs": "Height of the menu"
+    },
+    {
+      "name": "--max-height",
+      "annotation": "prop",
+      "docs": "Maximum height of the menu"
+    },
+    {
+      "name": "--max-width",
+      "annotation": "prop",
+      "docs": "Maximum width of the menu"
+    },
+    {
+      "name": "--min-height",
+      "annotation": "prop",
+      "docs": "Minimum height of the menu"
+    },
+    {
+      "name": "--min-width",
+      "annotation": "prop",
+      "docs": "Minimum width of the menu"
+    },
+    {
+      "name": "--width",
+      "annotation": "prop",
+      "docs": "Width of the menu"
+    }
+  ],
+  "slots": [],
+  "parts": [
+    {
+      "name": "backdrop",
+      "docs": "The backdrop that appears over the main content when the menu is open."
+    },
+    {
+      "name": "container",
+      "docs": "The container for the menu content."
+    }
+  ],
+  "dependents": [],
+  "dependencies": [
+    "ion-backdrop"
+  ],
+  "dependencyGraph": {
+    "ion-menu": [
+      "ion-backdrop"
+    ]
+  }
+}

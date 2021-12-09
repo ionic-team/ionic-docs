@@ -1,0 +1,14 @@
+{
+  "packageName": "@ionic-native/smartlook",
+  "displayName": "Smartlook",
+  "description": "\nOfficial Smartlook SDK plugin.\nFull documentation can be found here: https://smartlook.github.io/docs/sdk/ionic/\n",
+  "usage": "\n```typescript\nimport { Smartlook, SmartlookSetupConfig } from '@ionic-native/smartlook/ngx';\n\n...\n\n@Component( ... )\nexport class AppComponent {\n    constructor(private smartlook: Smartlook) {\n       this.platform.ready().then(() => {\n           this.smartlook.setupAndStartRecording(new SmartlookSetupConfig(\"YOUR API KEY\"));\n       }\n    }\n}\n```",
+  "platforms": [
+    "Android",
+    "iOS"
+  ],
+  "repo": "https://github.com/smartlook/cordova-smartlook.git",
+  "cordovaPlugin": {
+    "name": "https://github.com/smartlook/cordova-smartlook.git"
+  }
+}

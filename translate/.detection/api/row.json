@@ -1,0 +1,19 @@
+{
+  "filePath": "./src/components/row/row.tsx",
+  "encapsulation": "shadow",
+  "tag": "ion-row",
+  "readme": "# ion-row\n\nRows are horizontal components of the [grid](../grid) system and contain varying numbers of\n[columns](../col). They ensure the columns are positioned properly.\n\nSee [Grid Layout](/docs/layout/grid) for more information.\n\n\n## Row Alignment\n\nBy default, columns will stretch to fill the entire height of the row and wrap when necessary. Rows are [flex containers](https://developer.mozilla.org/en-US/docs/Glossary/Flex_Container), so there are several [CSS classes](/docs/layout/css-utilities#flex-container-properties) that can be applied to a row to customize this behavior.\n\n",
+  "docs": "Rows are horizontal components of the [grid](../grid) system and contain varying numbers of\n[columns](../col). They ensure the columns are positioned properly.\n\nSee [Grid Layout](/docs/layout/grid) for more information.",
+  "docsTags": [],
+  "usage": {},
+  "props": [],
+  "methods": [],
+  "events": [],
+  "listeners": [],
+  "styles": [],
+  "slots": [],
+  "parts": [],
+  "dependents": [],
+  "dependencies": [],
+  "dependencyGraph": {}
+}

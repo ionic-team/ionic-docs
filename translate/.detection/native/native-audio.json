@@ -1,0 +1,15 @@
+{
+  "packageName": "@ionic-native/native-audio",
+  "displayName": "Native Audio",
+  "description": "Native Audio Playback",
+  "usage": "\n```typescript\nimport { NativeAudio } from '@ionic-native/native-audio/ngx';\n\nconstructor(private nativeAudio: NativeAudio) { }\n\n...\n\nthis.nativeAudio.preloadSimple('uniqueId1', 'path/to/file.mp3').then(onSuccess, onError);\nthis.nativeAudio.preloadComplex('uniqueId2', 'path/to/file2.mp3', 1, 1, 0).then(onSuccess, onError);\n\nthis.nativeAudio.play('uniqueId1').then(onSuccess, onError);\n\n// can optionally pass a callback to be called when the file is done playing\nthis.nativeAudio.play('uniqueId1', () => console.log('uniqueId1 is done playing'));\n\nthis.nativeAudio.loop('uniqueId2').then(onSuccess, onError);\n\nthis.nativeAudio.setVolumeForComplexAsset('uniqueId2', 0.6).then(onSuccess,onError);\n\nthis.nativeAudio.stop('uniqueId1').then(onSuccess,onError);\n\nthis.nativeAudio.unload('uniqueId1').then(onSuccess,onError);\n\n```\n",
+  "platforms": [
+    "Android",
+    "Browser",
+    "iOS"
+  ],
+  "repo": "https://github.com/floatinghotpot/cordova-plugin-nativeaudio",
+  "cordovaPlugin": {
+    "name": "cordova-plugin-nativeaudio"
+  }
+}

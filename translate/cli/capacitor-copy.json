@@ -1,0 +1,86 @@
+{
+  "name": "ionic capacitor copy",
+  "namespace": [
+    "ionic",
+    "capacitor"
+  ],
+  "summary": "Copy web assets to native platforms",
+  "description": "`ionic capacitor copy` will do the following:\n- Perform an Ionic build, which compiles web assets\n- Copy web assets to Capacitor native platform(s)",
+  "footnotes": [],
+  "groups": [],
+  "exampleCommands": [],
+  "aliases": [],
+  "inputs": [
+    {
+      "name": "platform",
+      "summary": "The platform to copy (e.g. `android`, `ios`, `electron`)",
+      "required": false
+    }
+  ],
+  "options": [
+    {
+      "name": "build",
+      "type": "boolean",
+      "summary": "Do not invoke an Ionic build",
+      "default": true,
+      "groups": [],
+      "aliases": [],
+      "spec": {
+        "value": "true/false"
+      }
+    },
+    {
+      "name": "prod",
+      "type": "boolean",
+      "summary": "Flag to use the `production` configuration",
+      "groups": [
+        "cordova"
+      ],
+      "aliases": [],
+      "spec": {
+        "value": "true/false"
+      }
+    },
+    {
+      "name": "configuration",
+      "type": "string",
+      "summary": "Specify the configuration to use.",
+      "groups": [
+        "advanced",
+        "cordova"
+      ],
+      "aliases": [
+        "c"
+      ],
+      "spec": {
+        "value": "conf"
+      }
+    },
+    {
+      "name": "source-map",
+      "type": "boolean",
+      "summary": "Output source maps",
+      "groups": [
+        "advanced",
+        "cordova"
+      ],
+      "aliases": [],
+      "spec": {
+        "value": "true/false"
+      }
+    },
+    {
+      "name": "watch",
+      "type": "boolean",
+      "summary": "Rebuild when files change",
+      "groups": [
+        "advanced"
+      ],
+      "aliases": [],
+      "spec": {
+        "value": "true/false"
+      }
+    }
+  ],
+  "type": "project"
+}

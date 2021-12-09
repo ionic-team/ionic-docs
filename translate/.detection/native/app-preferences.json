@@ -1,0 +1,19 @@
+{
+  "packageName": "@ionic-native/app-preferences",
+  "displayName": "App Preferences",
+  "description": "\nThis plugin allows you to read and write app preferences\n",
+  "usage": "\n```typescript\nimport { AppPreferences } from '@ionic-native/app-preferences/ngx';\n\nconstructor(private appPreferences: AppPreferences) { }\n\n...\n\nthis.appPreferences.fetch('key').then((res) => { console.log(res); });\n\n```\n\n",
+  "platforms": [
+    "Android",
+    "BlackBerry 10",
+    "Browser",
+    "iOS",
+    "macOS",
+    "Windows 8",
+    "Windows Phone"
+  ],
+  "repo": "https://github.com/apla/me.apla.cordova.app-preferences",
+  "cordovaPlugin": {
+    "name": "cordova-plugin-app-preferences"
+  }
+}

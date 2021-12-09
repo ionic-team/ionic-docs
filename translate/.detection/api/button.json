@@ -1,0 +1,555 @@
+{
+  "filePath": "./src/components/button/button.tsx",
+  "encapsulation": "shadow",
+  "tag": "ion-button",
+  "readme": "# ion-button\n\nButtons provide a clickable element, which can be used in forms, or anywhere that needs simple, standard button functionality. They may display text, icons, or both. Buttons can be styled with several attributes to look a specific way.\n\n## Expand\n\nThis attribute lets you specify how wide the button should be. By default, buttons are inline blocks, but setting this attribute will change the button to a full-width block element.\n\n| Value          | Details                                                                      |\n|----------------|------------------------------------------------------------------------------|\n| `block`        | Full-width button with rounded corners.                                      |\n| `full`         | Full-width button with square corners and no border on the left or right.    |\n\n## Fill\n\nThis attributes determines the background and border color of the button. By default, buttons have a solid background unless the button is inside of a toolbar, in which case it has a transparent background.\n\n| Value          | Details                                                                      |\n|----------------|------------------------------------------------------------------------------|\n| `clear`        | Button with a transparent background that resembles a flat button.           |\n| `outline`      | Button with a transparent background and a visible border.                   |\n| `solid`        | Button with a filled background. Useful for buttons in a toolbar.            |\n\n## Size\n\nThis attribute specifies the size of the button. Setting this attribute will change the height and padding of a button.\n\n| Value          | Details                                                                      |\n|----------------|------------------------------------------------------------------------------|\n| `small`        | Button with less height and padding. Default for buttons in an item.         |\n| `default`      | Button with the default height and padding. Useful for buttons in an item.   |\n| `large`        | Button with more height and padding.                                         |\n\n",
+  "docs": "Buttons provide a clickable element, which can be used in forms, or anywhere that needs simple, standard button functionality. They may display text, icons, or both. Buttons can be styled with several attributes to look a specific way.",
+  "docsTags": [
+    {
+      "text": "{\"ios\" | \"md\"} mode - The mode determines which platform styles to use.",
+      "name": "virtualProp"
+    },
+    {
+      "text": "- Content is placed between the named slots if provided without a slot.",
+      "name": "slot"
+    },
+    {
+      "text": "icon-only - Should be used on an icon in a button that has no text.",
+      "name": "slot"
+    },
+    {
+      "text": "start - Content is placed to the left of the button text in LTR, and to the right in RTL.",
+      "name": "slot"
+    },
+    {
+      "text": "end - Content is placed to the right of the button text in LTR, and to the left in RTL.",
+      "name": "slot"
+    },
+    {
+      "text": "native - The native HTML button or anchor element that wraps all child elements.",
+      "name": "part"
+    }
+  ],
+  "usage": {
+    "angular": "\n```html\n<!-- Default -->\n<ion-button>Default</ion-button>\n\n<!-- Anchor -->\n<ion-button href=\"#\">Anchor</ion-button>\n\n<!-- Colors -->\n<ion-button color=\"primary\">Primary</ion-button>\n<ion-button color=\"secondary\">Secondary</ion-button>\n<ion-button color=\"tertiary\">Tertiary</ion-button>\n<ion-button color=\"success\">Success</ion-button>\n<ion-button color=\"warning\">Warning</ion-button>\n<ion-button color=\"danger\">Danger</ion-button>\n<ion-button color=\"light\">Light</ion-button>\n<ion-button color=\"medium\">Medium</ion-button>\n<ion-button color=\"dark\">Dark</ion-button>\n\n<!-- Expand -->\n<ion-button expand=\"full\">Full Button</ion-button>\n<ion-button expand=\"block\">Block Button</ion-button>\n\n<!-- Round -->\n<ion-button shape=\"round\">Round Button</ion-button>\n\n<!-- Fill -->\n<ion-button expand=\"full\" fill=\"outline\">Outline + Full</ion-button>\n<ion-button expand=\"block\" fill=\"outline\">Outline + Block</ion-button>\n<ion-button shape=\"round\" fill=\"outline\">Outline + Round</ion-button>\n\n<!-- Icons -->\n<ion-button>\n  <ion-icon slot=\"start\" name=\"star\"></ion-icon>\n  Left Icon\n</ion-button>\n\n<ion-button>\n  Right Icon\n  <ion-icon slot=\"end\" name=\"star\"></ion-icon>\n</ion-button>\n\n<ion-button>\n  <ion-icon slot=\"icon-only\" name=\"star\"></ion-icon>\n</ion-button>\n\n<!-- Sizes -->\n<ion-button size=\"large\">Large</ion-button>\n<ion-button>Default</ion-button>\n<ion-button size=\"small\">Small</ion-button>\n```\n",
+    "javascript": "\n```html\n<!-- Default -->\n<ion-button>Default</ion-button>\n\n<!-- Anchor -->\n<ion-button href=\"#\">Anchor</ion-button>\n\n<!-- Colors -->\n<ion-button color=\"primary\">Primary</ion-button>\n<ion-button color=\"secondary\">Secondary</ion-button>\n<ion-button color=\"tertiary\">Tertiary</ion-button>\n<ion-button color=\"success\">Success</ion-button>\n<ion-button color=\"warning\">Warning</ion-button>\n<ion-button color=\"danger\">Danger</ion-button>\n<ion-button color=\"light\">Light</ion-button>\n<ion-button color=\"medium\">Medium</ion-button>\n<ion-button color=\"dark\">Dark</ion-button>\n\n<!-- Expand -->\n<ion-button expand=\"full\">Full Button</ion-button>\n<ion-button expand=\"block\">Block Button</ion-button>\n\n<!-- Round -->\n<ion-button shape=\"round\">Round Button</ion-button>\n\n<!-- Fill -->\n<ion-button expand=\"full\" fill=\"outline\">Outline + Full</ion-button>\n<ion-button expand=\"block\" fill=\"outline\">Outline + Block</ion-button>\n<ion-button shape=\"round\" fill=\"outline\">Outline + Round</ion-button>\n\n<!-- Icons -->\n<ion-button>\n  <ion-icon slot=\"start\" name=\"star\"></ion-icon>\n  Left Icon\n</ion-button>\n\n<ion-button>\n  Right Icon\n  <ion-icon slot=\"end\" name=\"star\"></ion-icon>\n</ion-button>\n\n<ion-button>\n  <ion-icon slot=\"icon-only\" name=\"star\"></ion-icon>\n</ion-button>\n\n<!-- Sizes -->\n<ion-button size=\"large\">Large</ion-button>\n<ion-button>Default</ion-button>\n<ion-button size=\"small\">Small</ion-button>\n```\n",
+    "react": "```tsx\nimport React from 'react';\n\nimport { IonButton, IonIcon, IonContent } from '@ionic/react';\nimport { star } from 'ionicons/icons';\n\nexport const ButtonExample: React.FC = () => (\n  <IonContent>\n    {/*-- Default --*/}\n    <IonButton>Default</IonButton>\n\n    {/*-- Anchor --*/}\n    <IonButton href=\"#\">Anchor</IonButton>\n\n    {/*-- Colors --*/}\n    <IonButton color=\"primary\">Primary</IonButton>\n    <IonButton color=\"secondary\">Secondary</IonButton>\n    <IonButton color=\"tertiary\">Tertiary</IonButton>\n    <IonButton color=\"success\">Success</IonButton>\n    <IonButton color=\"warning\">Warning</IonButton>\n    <IonButton color=\"danger\">Danger</IonButton>\n    <IonButton color=\"light\">Light</IonButton>\n    <IonButton color=\"medium\">Medium</IonButton>\n    <IonButton color=\"dark\">Dark</IonButton>\n\n    {/*-- Expand --*/}\n    <IonButton expand=\"full\">Full Button</IonButton>\n    <IonButton expand=\"block\">Block Button</IonButton>\n\n    {/*-- Round --*/}\n    <IonButton shape=\"round\">Round Button</IonButton>\n\n    {/*-- Fill --*/}\n    <IonButton expand=\"full\" fill=\"outline\">Outline + Full</IonButton>\n    <IonButton expand=\"block\" fill=\"outline\">Outline + Block</IonButton>\n    <IonButton shape=\"round\" fill=\"outline\">Outline + Round</IonButton>\n\n    {/*-- Icons --*/}\n    <IonButton>\n      <IonIcon slot=\"start\" icon={star} />\n      Left Icon\n    </IonButton>\n\n    <IonButton>\n      Right Icon\n      <IonIcon slot=\"end\" icon={star} />\n    </IonButton>\n\n    <IonButton>\n      <IonIcon slot=\"icon-only\" icon={star} />\n    </IonButton>\n\n    {/*-- Sizes --*/}\n    <IonButton size=\"large\">Large</IonButton>\n    <IonButton>Default</IonButton>\n    <IonButton size=\"small\">Small</IonButton>\n  </IonContent>\n);\n\n```\n",
+    "stencil": "```tsx\nimport { Component, h } from '@stencil/core';\n\n@Component({\n  tag: 'button-example',\n  styleUrl: 'button-example.css'\n})\nexport class ButtonExample {\n  render() {\n    return [\n      // Default\n      <ion-button>Default</ion-button>,\n\n      // Anchor\n      <ion-button href=\"#\">Anchor</ion-button>,\n\n      // Colors\n      <ion-button color=\"primary\">Primary</ion-button>,\n      <ion-button color=\"secondary\">Secondary</ion-button>,\n      <ion-button color=\"tertiary\">Tertiary</ion-button>,\n      <ion-button color=\"success\">Success</ion-button>,\n      <ion-button color=\"warning\">Warning</ion-button>,\n      <ion-button color=\"danger\">Danger</ion-button>,\n      <ion-button color=\"light\">Light</ion-button>,\n      <ion-button color=\"medium\">Medium</ion-button>,\n      <ion-button color=\"dark\">Dark</ion-button>,\n\n      // Expand\n      <ion-button expand=\"full\">Full Button</ion-button>,\n      <ion-button expand=\"block\">Block Button</ion-button>,\n\n      // Round\n      <ion-button shape=\"round\">Round Button</ion-button>,\n\n      // Fill\n      <ion-button expand=\"full\" fill=\"outline\">Outline + Full</ion-button>,\n      <ion-button expand=\"block\" fill=\"outline\">Outline + Block</ion-button>,\n      <ion-button shape=\"round\" fill=\"outline\">Outline + Round</ion-button>,\n\n      // Icons\n      <ion-button>\n        <ion-icon slot=\"start\" name=\"star\"></ion-icon>\n        Left Icon\n      </ion-button>,\n\n      <ion-button>\n        Right Icon\n        <ion-icon slot=\"end\" name=\"star\"></ion-icon>\n      </ion-button>,\n\n      <ion-button>\n        <ion-icon slot=\"icon-only\" name=\"star\"></ion-icon>\n      </ion-button>,\n\n      // Sizes\n      <ion-button size=\"large\">Large</ion-button>,\n      <ion-button>Default</ion-button>,\n      <ion-button size=\"small\">Small</ion-button>\n    ];\n  }\n}\n```",
+    "vue": "```html\n<template>\n  <!-- Default -->\n  <ion-button>Default</ion-button>\n\n  <!-- Anchor -->\n  <ion-button href=\"#\">Anchor</ion-button>\n\n  <!-- Colors -->\n  <ion-button color=\"primary\">Primary</ion-button>\n  <ion-button color=\"secondary\">Secondary</ion-button>\n  <ion-button color=\"tertiary\">Tertiary</ion-button>\n  <ion-button color=\"success\">Success</ion-button>\n  <ion-button color=\"warning\">Warning</ion-button>\n  <ion-button color=\"danger\">Danger</ion-button>\n  <ion-button color=\"light\">Light</ion-button>\n  <ion-button color=\"medium\">Medium</ion-button>\n  <ion-button color=\"dark\">Dark</ion-button>\n\n  <!-- Expand -->\n  <ion-button expand=\"full\">Full Button</ion-button>\n  <ion-button expand=\"block\">Block Button</ion-button>\n\n  <!-- Round -->\n  <ion-button shape=\"round\">Round Button</ion-button>\n\n  <!-- Fill -->\n  <ion-button expand=\"full\" fill=\"outline\">Outline + Full</ion-button>\n  <ion-button expand=\"block\" fill=\"outline\">Outline + Block</ion-button>\n  <ion-button shape=\"round\" fill=\"outline\">Outline + Round</ion-button>\n\n  <!-- Icons -->\n  <ion-button>\n    <ion-icon slot=\"start\" name=\"star\"></ion-icon>\n    Left Icon\n  </ion-button>\n\n  <ion-button>\n    Right Icon\n    <ion-icon slot=\"end\" name=\"star\"></ion-icon>\n  </ion-button>\n\n  <ion-button>\n    <ion-icon slot=\"icon-only\" name=\"star\"></ion-icon>\n  </ion-button>\n\n  <!-- Sizes -->\n  <ion-button size=\"large\">Large</ion-button>\n  <ion-button>Default</ion-button>\n  <ion-button size=\"small\">Small</ion-button>\n</template>\n\n<script>\nimport { IonButton } from '@ionic/vue';\nimport { defineComponent } from 'vue';\n\nexport default defineComponent({\n  components: { IonButton }\n});\n</script>\n```\n"
+  },
+  "props": [
+    {
+      "name": "buttonType",
+      "type": "string",
+      "mutable": true,
+      "attr": "button-type",
+      "reflectToAttr": false,
+      "docs": "The type of button.",
+      "docsTags": [],
+      "default": "'button'",
+      "values": [
+        {
+          "type": "string"
+        }
+      ],
+      "optional": false,
+      "required": false
+    },
+    {
+      "name": "color",
+      "type": "string | undefined",
+      "mutable": false,
+      "attr": "color",
+      "reflectToAttr": false,
+      "docs": "The color to use from your application's color palette.\nDefault options are: `\"primary\"`, `\"secondary\"`, `\"tertiary\"`, `\"success\"`, `\"warning\"`, `\"danger\"`, `\"light\"`, `\"medium\"`, and `\"dark\"`.\nFor more information on colors, see [theming](/docs/theming/basics).",
+      "docsTags": [],
+      "values": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "undefined"
+        }
+      ],
+      "optional": true,
+      "required": false
+    },
+    {
+      "name": "disabled",
+      "type": "boolean",
+      "mutable": false,
+      "attr": "disabled",
+      "reflectToAttr": true,
+      "docs": "If `true`, the user cannot interact with the button.",
+      "docsTags": [],
+      "default": "false",
+      "values": [
+        {
+          "type": "boolean"
+        }
+      ],
+      "optional": false,
+      "required": false
+    },
+    {
+      "name": "download",
+      "type": "string | undefined",
+      "mutable": false,
+      "attr": "download",
+      "reflectToAttr": false,
+      "docs": "This attribute instructs browsers to download a URL instead of navigating to\nit, so the user will be prompted to save it as a local file. If the attribute\nhas a value, it is used as the pre-filled file name in the Save prompt\n(the user can still change the file name if they want).",
+      "docsTags": [],
+      "values": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "undefined"
+        }
+      ],
+      "optional": false,
+      "required": false
+    },
+    {
+      "name": "expand",
+      "type": "\"block\" | \"full\" | undefined",
+      "mutable": false,
+      "attr": "expand",
+      "reflectToAttr": true,
+      "docs": "Set to `\"block\"` for a full-width button or to `\"full\"` for a full-width button\nwithout left and right borders.",
+      "docsTags": [],
+      "values": [
+        {
+          "value": "block",
+          "type": "string"
+        },
+        {
+          "value": "full",
+          "type": "string"
+        },
+        {
+          "type": "undefined"
+        }
+      ],
+      "optional": true,
+      "required": false
+    },
+    {
+      "name": "fill",
+      "type": "\"clear\" | \"default\" | \"outline\" | \"solid\" | undefined",
+      "mutable": true,
+      "attr": "fill",
+      "reflectToAttr": true,
+      "docs": "Set to `\"clear\"` for a transparent button, to `\"outline\"` for a transparent\nbutton with a border, or to `\"solid\"`. The default style is `\"solid\"` except inside of\na toolbar, where the default is `\"clear\"`.",
+      "docsTags": [],
+      "values": [
+        {
+          "value": "clear",
+          "type": "string"
+        },
+        {
+          "value": "default",
+          "type": "string"
+        },
+        {
+          "value": "outline",
+          "type": "string"
+        },
+        {
+          "value": "solid",
+          "type": "string"
+        },
+        {
+          "type": "undefined"
+        }
+      ],
+      "optional": true,
+      "required": false
+    },
+    {
+      "name": "href",
+      "type": "string | undefined",
+      "mutable": false,
+      "attr": "href",
+      "reflectToAttr": false,
+      "docs": "Contains a URL or a URL fragment that the hyperlink points to.\nIf this property is set, an anchor tag will be rendered.",
+      "docsTags": [],
+      "values": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "undefined"
+        }
+      ],
+      "optional": false,
+      "required": false
+    },
+    {
+      "name": "mode",
+      "type": "\"ios\" | \"md\"",
+      "mutable": false,
+      "attr": "mode",
+      "reflectToAttr": false,
+      "docs": "The mode determines which platform styles to use.",
+      "docsTags": [],
+      "values": [
+        {
+          "value": "ios",
+          "type": "string"
+        },
+        {
+          "value": "md",
+          "type": "string"
+        }
+      ],
+      "optional": true,
+      "required": false
+    },
+    {
+      "name": "rel",
+      "type": "string | undefined",
+      "mutable": false,
+      "attr": "rel",
+      "reflectToAttr": false,
+      "docs": "Specifies the relationship of the target object to the link object.\nThe value is a space-separated list of [link types](https://developer.mozilla.org/en-US/docs/Web/HTML/Link_types).",
+      "docsTags": [],
+      "values": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "undefined"
+        }
+      ],
+      "optional": false,
+      "required": false
+    },
+    {
+      "name": "routerAnimation",
+      "type": "((baseEl: any, opts?: any) => Animation) | undefined",
+      "mutable": false,
+      "reflectToAttr": false,
+      "docs": "When using a router, it specifies the transition animation when navigating to\nanother page using `href`.",
+      "docsTags": [],
+      "values": [
+        {
+          "type": "((baseEl: any, opts?: any) => Animation)"
+        },
+        {
+          "type": "undefined"
+        }
+      ],
+      "optional": false,
+      "required": false
+    },
+    {
+      "name": "routerDirection",
+      "type": "\"back\" | \"forward\" | \"root\"",
+      "mutable": false,
+      "attr": "router-direction",
+      "reflectToAttr": false,
+      "docs": "When using a router, it specifies the transition direction when navigating to\nanother page using `href`.",
+      "docsTags": [],
+      "default": "'forward'",
+      "values": [
+        {
+          "value": "back",
+          "type": "string"
+        },
+        {
+          "value": "forward",
+          "type": "string"
+        },
+        {
+          "value": "root",
+          "type": "string"
+        }
+      ],
+      "optional": false,
+      "required": false
+    },
+    {
+      "name": "shape",
+      "type": "\"round\" | undefined",
+      "mutable": false,
+      "attr": "shape",
+      "reflectToAttr": true,
+      "docs": "The button shape.",
+      "docsTags": [],
+      "values": [
+        {
+          "value": "round",
+          "type": "string"
+        },
+        {
+          "type": "undefined"
+        }
+      ],
+      "optional": true,
+      "required": false
+    },
+    {
+      "name": "size",
+      "type": "\"default\" | \"large\" | \"small\" | undefined",
+      "mutable": false,
+      "attr": "size",
+      "reflectToAttr": true,
+      "docs": "The button size.",
+      "docsTags": [],
+      "values": [
+        {
+          "value": "default",
+          "type": "string"
+        },
+        {
+          "value": "large",
+          "type": "string"
+        },
+        {
+          "value": "small",
+          "type": "string"
+        },
+        {
+          "type": "undefined"
+        }
+      ],
+      "optional": true,
+      "required": false
+    },
+    {
+      "name": "strong",
+      "type": "boolean",
+      "mutable": false,
+      "attr": "strong",
+      "reflectToAttr": false,
+      "docs": "If `true`, activates a button with a heavier font weight.",
+      "docsTags": [],
+      "default": "false",
+      "values": [
+        {
+          "type": "boolean"
+        }
+      ],
+      "optional": false,
+      "required": false
+    },
+    {
+      "name": "target",
+      "type": "string | undefined",
+      "mutable": false,
+      "attr": "target",
+      "reflectToAttr": false,
+      "docs": "Specifies where to display the linked URL.\nOnly applies when an `href` is provided.\nSpecial keywords: `\"_blank\"`, `\"_self\"`, `\"_parent\"`, `\"_top\"`.",
+      "docsTags": [],
+      "values": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "undefined"
+        }
+      ],
+      "optional": false,
+      "required": false
+    },
+    {
+      "name": "type",
+      "type": "\"button\" | \"reset\" | \"submit\"",
+      "mutable": false,
+      "attr": "type",
+      "reflectToAttr": false,
+      "docs": "The type of the button.",
+      "docsTags": [],
+      "default": "'button'",
+      "values": [
+        {
+          "value": "button",
+          "type": "string"
+        },
+        {
+          "value": "reset",
+          "type": "string"
+        },
+        {
+          "value": "submit",
+          "type": "string"
+        }
+      ],
+      "optional": false,
+      "required": false
+    }
+  ],
+  "methods": [],
+  "events": [
+    {
+      "event": "ionBlur",
+      "detail": "void",
+      "bubbles": true,
+      "cancelable": true,
+      "composed": true,
+      "docs": "Emitted when the button loses focus.",
+      "docsTags": []
+    },
+    {
+      "event": "ionFocus",
+      "detail": "void",
+      "bubbles": true,
+      "cancelable": true,
+      "composed": true,
+      "docs": "Emitted when the button has focus.",
+      "docsTags": []
+    }
+  ],
+  "listeners": [],
+  "styles": [
+    {
+      "name": "--background",
+      "annotation": "prop",
+      "docs": "Background of the button"
+    },
+    {
+      "name": "--background-activated",
+      "annotation": "prop",
+      "docs": "Background of the button when pressed. Note: setting this will interfere with the Material Design ripple."
+    },
+    {
+      "name": "--background-activated-opacity",
+      "annotation": "prop",
+      "docs": "Opacity of the button when pressed"
+    },
+    {
+      "name": "--background-focused",
+      "annotation": "prop",
+      "docs": "Background of the button when focused with the tab key"
+    },
+    {
+      "name": "--background-focused-opacity",
+      "annotation": "prop",
+      "docs": "Opacity of the button when focused with the tab key"
+    },
+    {
+      "name": "--background-hover",
+      "annotation": "prop",
+      "docs": "Background of the button on hover"
+    },
+    {
+      "name": "--background-hover-opacity",
+      "annotation": "prop",
+      "docs": "Opacity of the background on hover"
+    },
+    {
+      "name": "--border-color",
+      "annotation": "prop",
+      "docs": "Border color of the button"
+    },
+    {
+      "name": "--border-radius",
+      "annotation": "prop",
+      "docs": "Border radius of the button"
+    },
+    {
+      "name": "--border-style",
+      "annotation": "prop",
+      "docs": "Border style of the button"
+    },
+    {
+      "name": "--border-width",
+      "annotation": "prop",
+      "docs": "Border width of the button"
+    },
+    {
+      "name": "--box-shadow",
+      "annotation": "prop",
+      "docs": "Box shadow of the button"
+    },
+    {
+      "name": "--color",
+      "annotation": "prop",
+      "docs": "Text color of the button"
+    },
+    {
+      "name": "--color-activated",
+      "annotation": "prop",
+      "docs": "Text color of the button when pressed"
+    },
+    {
+      "name": "--color-focused",
+      "annotation": "prop",
+      "docs": "Text color of the button when focused with the tab key"
+    },
+    {
+      "name": "--color-hover",
+      "annotation": "prop",
+      "docs": "Text color of the button when hover"
+    },
+    {
+      "name": "--opacity",
+      "annotation": "prop",
+      "docs": "Opacity of the button"
+    },
+    {
+      "name": "--padding-bottom",
+      "annotation": "prop",
+      "docs": "Bottom padding of the button"
+    },
+    {
+      "name": "--padding-end",
+      "annotation": "prop",
+      "docs": "Right padding if direction is left-to-right, and left padding if direction is right-to-left of the button"
+    },
+    {
+      "name": "--padding-start",
+      "annotation": "prop",
+      "docs": "Left padding if direction is left-to-right, and right padding if direction is right-to-left of the button"
+    },
+    {
+      "name": "--padding-top",
+      "annotation": "prop",
+      "docs": "Top padding of the button"
+    },
+    {
+      "name": "--ripple-color",
+      "annotation": "prop",
+      "docs": "Color of the button ripple effect"
+    },
+    {
+      "name": "--transition",
+      "annotation": "prop",
+      "docs": "Transition of the button"
+    }
+  ],
+  "slots": [
+    {
+      "name": "",
+      "docs": "Content is placed between the named slots if provided without a slot."
+    },
+    {
+      "name": "end",
+      "docs": "Content is placed to the right of the button text in LTR, and to the left in RTL."
+    },
+    {
+      "name": "icon-only",
+      "docs": "Should be used on an icon in a button that has no text."
+    },
+    {
+      "name": "start",
+      "docs": "Content is placed to the left of the button text in LTR, and to the right in RTL."
+    }
+  ],
+  "parts": [
+    {
+      "name": "native",
+      "docs": "The native HTML button or anchor element that wraps all child elements."
+    }
+  ],
+  "dependents": [],
+  "dependencies": [
+    "ion-ripple-effect"
+  ],
+  "dependencyGraph": {
+    "ion-button": [
+      "ion-ripple-effect"
+    ]
+  }
+}

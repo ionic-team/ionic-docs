@@ -1,0 +1,133 @@
+{
+  "filePath": "./src/components/route/route.tsx",
+  "encapsulation": "none",
+  "tag": "ion-route",
+  "readme": "# ion-route\n\nThe route component takes a component and renders it when the Browser URL matches the url property.\n\n> Note: this component should only be used with vanilla and Stencil JavaScript projects. For Angular projects, use [`ion-router-outlet`](../router-outlet) and the Angular router.\n\n## Navigation Hooks\n\nNavigation hooks can be used to perform tasks or act as navigation guards. Hooks are used by providing functions to the `beforeEnter` and `beforeLeave` properties on each `ion-route`. Returning `true` allows navigation to proceed, while returning `false` causes it to be cancelled. Returning an object of type `NavigationHookOptions` allows you to redirect navigation to another page.\n\n## Interfaces\n\n```typescript\ninterface NavigationHookOptions {\n  /**\n   * A valid path to redirect navigation to.\n   */\n  redirect: string;\n}\n```\n\n",
+  "docs": "The route component takes a component and renders it when the Browser URL matches the url property.\n\n> Note: this component should only be used with vanilla and Stencil JavaScript projects. For Angular projects, use [`ion-router-outlet`](../router-outlet) and the Angular router.",
+  "docsTags": [],
+  "usage": {
+    "javascript": "```html\n<ion-router>\n  <ion-route url=\"/home\" component=\"page-home\"></ion-route>\n  <ion-route url=\"/dashboard\" component=\"page-dashboard\"></ion-route>\n  <ion-route url=\"/new-message\" component=\"page-new-message\"></ion-route>\n  <ion-route url=\"/login\" component=\"page-login\"></ion-route>\n</ion-router>\n```\n\n```javascript\nconst dashboardPage = document.querySelector('ion-route[url=\"/dashboard\"]');\ndashboardPage.beforeEnter = isLoggedInGuard;\n\nconst newMessagePage = document.querySelector('ion-route[url=\"/dashboard\"]');\nnewMessagePage.beforeLeave = hasUnsavedDataGuard;\n\nconst isLoggedInGuard = async () => {\n  const isLoggedIn = await UserData.isLoggedIn(); // Replace this with actual login validation\n  \n  if (isLoggedIn) {\n    return true;\n  } else {\n    return { redirect: '/login' }; // If a user is not logged in, they will be redirected to the /login page\n  }\n}\n\nconst hasUnsavedDataGuard = async () => {\n  const hasUnsavedData = await checkData(); // Replace this with actual validation\n  \n  if (hasUnsavedData) {\n    return await confirmDiscardChanges();\n  } else {\n    return true;\n  }\n}\n\nconst confirmDiscardChanges = async () => {\n  const alert = document.createElement('ion-alert');\n  alert.header = 'Discard Unsaved Changes?';\n  alert.message = 'Are you sure you want to leave? Any unsaved changed will be lost.';\n  alert.buttons = [\n    {\n      text: 'Cancel',\n      role: 'Cancel',\n    },\n    {\n      text: 'Discard',\n      role: 'destructive',\n    }\n  ];\n  \n  document.body.appendChild(alert);\n  \n  await alert.present();\n  \n  const { role } = await alert.onDidDismiss();\n  \n  return (role === 'Cancel') ? false : true;\n}\n```\n",
+    "stencil": "```typescript\nimport { Component, h } from '@stencil/core';\nimport { alertController } from '@ionic/core';\n\n@Component({\n  tag: 'router-example',\n  styleUrl: 'router-example.css'\n})\nexport class RouterExample {\n  render() {\n    return (\n      <ion-router>\n        <ion-route url=\"/home\" component=\"page-home\"></ion-route>\n        <ion-route url=\"/dashboard\" component=\"page-dashboard\" beforeEnter={isLoggedInGuard}></ion-route>\n        <ion-route url=\"/new-message\" component=\"page-new-message\" beforeLeave={hasUnsavedDataGuard}></ion-route>\n        <ion-route url=\"/login\" component=\"page-login\"></ion-route>\n      </ion-router>\n    )\n  }\n}\n\nconst isLoggedInGuard = async () => {\n  const isLoggedIn = await UserData.isLoggedIn(); // Replace this with actual login validation\n  \n  if (isLoggedIn) {\n    return true;\n  } else {\n    return { redirect: '/login' }; // If a user is not logged in, they will be redirected to the /login page\n  }\n}\n\nconst hasUnsavedDataGuard = async () => {\n  const hasUnsavedData = await checkData(); // Replace this with actual validation\n  \n  if (hasUnsavedData) {\n    return await confirmDiscardChanges();\n  } else {\n    return true;\n  }\n}\n\nconst confirmDiscardChanges = async () => {\n  const alert = await alertController.create({\n    header: 'Discard Unsaved Changes?',\n    message: 'Are you sure you want to leave? Any unsaved changed will be lost.',\n    buttons: [\n      {\n        text: 'Cancel',\n        role: 'Cancel',\n      },\n      {\n        text: 'Discard',\n        role: 'destructive',\n      }\n    ]\n  });\n  \n  await alert.present();\n  \n  const { role } = await alert.onDidDismiss();\n  \n  return (role === 'Cancel') ? false : true;\n}\n```\n",
+    "vue": "```html\n<template>\n  <ion-router>\n    <ion-route url=\"/home\" component=\"page-home\"></ion-route>\n    <ion-route url=\"/dashboard\" component=\"page-dashboard\" :beforeEnter=\"isLoggedInGuard\"></ion-route>\n    <ion-route url=\"/new-message\" component=\"page-new-message\" :beforeLeave=\"hasUnsavedDataGuard\"></ion-route>\n    <ion-route url=\"/login\" component=\"page-login\"></ion-route>\n  </ion-router>\n</template>\n\n<script>\n  import { alertController } from '@ionic/vue';\n\n  const isLoggedInGuard = async () => {\n    const isLoggedIn = await UserData.isLoggedIn(); // Replace this with actual login validation\n    \n    if (isLoggedIn) {\n      return true;\n    } else {\n      return { redirect: '/login' }; // If a user is not logged in, they will be redirected to the /login page\n    }\n  }\n  \n  const hasUnsavedDataGuard = async () => {\n    const hasUnsavedData = await checkData(); // Replace this with actual validation\n    \n    if (hasUnsavedData) {\n      return await confirmDiscardChanges();\n    } else {\n      return true;\n    }\n  }\n  \n  const confirmDiscardChanges = async () => {\n    const alert = await alertController.create({\n      header: 'Discard Unsaved Changes?',\n      message: 'Are you sure you want to leave? Any unsaved changed will be lost.',\n      buttons: [\n        {\n          text: 'Cancel',\n          role: 'Cancel',\n        },\n        {\n          text: 'Discard',\n          role: 'destructive',\n        }\n      ]\n    });\n    \n    await alert.present();\n    \n    const { role } = await alert.onDidDismiss();\n    \n    return (role === 'Cancel') ? false : true;\n  }\n</script>\n```"
+  },
+  "props": [
+    {
+      "name": "beforeEnter",
+      "type": "(() => boolean | NavigationHookOptions | Promise<NavigationHookResult>) | undefined",
+      "mutable": false,
+      "reflectToAttr": false,
+      "docs": "A navigation hook that is fired when the route tries to enter.\nReturning `true` allows the navigation to proceed, while returning\n`false` causes it to be cancelled. Returning a `NavigationHookOptions`\nobject causes the router to redirect to the path specified.",
+      "docsTags": [],
+      "values": [
+        {
+          "type": "(() => boolean"
+        },
+        {
+          "type": "NavigationHookOptions"
+        },
+        {
+          "type": "Promise<NavigationHookResult>)"
+        },
+        {
+          "type": "undefined"
+        }
+      ],
+      "optional": true,
+      "required": false
+    },
+    {
+      "name": "beforeLeave",
+      "type": "(() => boolean | NavigationHookOptions | Promise<NavigationHookResult>) | undefined",
+      "mutable": false,
+      "reflectToAttr": false,
+      "docs": "A navigation hook that is fired when the route tries to leave.\nReturning `true` allows the navigation to proceed, while returning\n`false` causes it to be cancelled. Returning a `NavigationHookOptions`\nobject causes the router to redirect to the path specified.",
+      "docsTags": [],
+      "values": [
+        {
+          "type": "(() => boolean"
+        },
+        {
+          "type": "NavigationHookOptions"
+        },
+        {
+          "type": "Promise<NavigationHookResult>)"
+        },
+        {
+          "type": "undefined"
+        }
+      ],
+      "optional": true,
+      "required": false
+    },
+    {
+      "name": "component",
+      "type": "string",
+      "mutable": false,
+      "attr": "component",
+      "reflectToAttr": false,
+      "docs": "Name of the component to load/select in the navigation outlet (`ion-tabs`, `ion-nav`)\nwhen the route matches.\n\nThe value of this property is not always the tagname of the component to load,\nin `ion-tabs` it actually refers to the name of the `ion-tab` to select.",
+      "docsTags": [],
+      "values": [
+        {
+          "type": "string"
+        }
+      ],
+      "optional": false,
+      "required": true
+    },
+    {
+      "name": "componentProps",
+      "type": "undefined | { [key: string]: any; }",
+      "mutable": false,
+      "reflectToAttr": false,
+      "docs": "A key value `{ 'red': true, 'blue': 'white'}` containing props that should be passed\nto the defined component when rendered.",
+      "docsTags": [],
+      "values": [
+        {
+          "type": "undefined"
+        },
+        {
+          "type": "{ [key: string]: any; }"
+        }
+      ],
+      "optional": true,
+      "required": false
+    },
+    {
+      "name": "url",
+      "type": "string",
+      "mutable": false,
+      "attr": "url",
+      "reflectToAttr": false,
+      "docs": "Relative path that needs to match in order for this route to apply.\n\nAccepts paths similar to expressjs so that you can define parameters\nin the url /foo/:bar where bar would be available in incoming props.",
+      "docsTags": [],
+      "default": "''",
+      "values": [
+        {
+          "type": "string"
+        }
+      ],
+      "optional": false,
+      "required": false
+    }
+  ],
+  "methods": [],
+  "events": [
+    {
+      "event": "ionRouteDataChanged",
+      "detail": "any",
+      "bubbles": true,
+      "cancelable": true,
+      "composed": true,
+      "docs": "Used internally by `ion-router` to know when this route did change.",
+      "docsTags": []
+    }
+  ],
+  "listeners": [],
+  "styles": [],
+  "slots": [],
+  "parts": [],
+  "dependents": [],
+  "dependencies": [],
+  "dependencyGraph": {}
+}

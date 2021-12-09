@@ -1,0 +1,14 @@
+{
+  "packageName": "@ionic-native/tealium",
+  "displayName": "Tealium",
+  "description": "\nThis plugin provides a TypeScript wrapper around the [Tealium](https://www.tealium.com) Cordova plugin for Ionic Native.\n\nFor full documentation, see [https://community.tealiumiq.com/t5/Mobile-Libraries/Tealium-for-Cordova/ta-p/17618](https://community.tealiumiq.com/t5/Mobile-Libraries/Tealium-for-Cordova/ta-p/17618)",
+  "usage": "\n```\nimport { Tealium, TealConfig } from '@ionic-native/tealium/ngx';\n\n\nconstructor(private tealium: Tealium) { }\n\n...\n\nlet tealConfig: TealConfig = {\n account: \"<your-account>\",\n profile: \"<your-profile>\",\n environment: \"<your-environment>\", // usually \"dev\", \"qa\" or \"prod\"\n isLifecycleEnabled: \"true\", // pass \"false\" to disable lifecycle tracking\n isCrashReporterEnabled: \"false\", // pass \"true\" to enable crash reporter (Android only)\n instance: \"<your-instance-name\" // an arbitrary instance name. use the same instance name for all subsequent API calls\n}\n\nthis.tealium.init(tealConfig).then(()=>{\n  this.tealium.trackView({\"screen_name\": \"homescreen\"});\n});\n\n```",
+  "platforms": [
+    "Android",
+    "iOS"
+  ],
+  "repo": "https://github.com/Tealium/cordova-plugin",
+  "cordovaPlugin": {
+    "name": "tealium-cordova-plugin"
+  }
+}

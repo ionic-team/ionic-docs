@@ -1,0 +1,1 @@
+Integrations, such as Cordova, can be disabled with this command.

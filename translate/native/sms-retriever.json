@@ -1,0 +1,16 @@
+{
+  "packageName": "@ionic-native/sms-retriever",
+  "displayName": "Sms Retriever",
+  "description": "\nThis plugin retrives the SMS which arrive without requiring READ permissions.\n",
+  "usage": "\n```typescript\nimport { SmsRetriever } from '@ionic-native/sms-retriever';\n\n\nconstructor(private smsRetriever: SmsRetriever) { }\n\n...\n\n\nthis.smsRetriever.getAppHash()\n  .then((res: any) => console.log(res))\n  .catch((error: any) => console.error(error));\nthis.smsRetriever.startWatching()\n  .then((res: any) => console.log(res))\n  .catch((error: any) => console.error(error));\n\n```\n",
+  "platforms": [
+    "Android"
+  ],
+  "repo": "https://github.com/hanatharesh2712/ionic-native-sms-retriever-plugin-master",
+  "installVariables": [
+    "PLAY_SERVICES_VERSION"
+  ],
+  "cordovaPlugin": {
+    "name": "cordova-plugin-sms-retriever-manager"
+  }
+}

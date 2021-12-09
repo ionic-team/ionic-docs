@@ -1,0 +1,14 @@
+{
+  "packageName": "@ionic-native/speech-recognition",
+  "displayName": "Speech Recognition",
+  "description": "\nThis plugin does speech recognition using cloud services\n",
+  "usage": "\n```typescript\nimport { SpeechRecognition } from '@ionic-native/speech-recognition/ngx';\n\nconstructor(private speechRecognition: SpeechRecognition) { }\n\n...\n\n\n\n// Check feature available\nthis.speechRecognition.isRecognitionAvailable()\n  .then((available: boolean) => console.log(available))\n\n// Start the recognition process\nthis.speechRecognition.startListening(options)\n  .subscribe(\n    (matches: string[]) => console.log(matches),\n    (onerror) => console.log('error:', onerror)\n  )\n\n// Stop the recognition process (iOS only)\nthis.speechRecognition.stopListening()\n\n// Get the list of supported languages\nthis.speechRecognition.getSupportedLanguages()\n  .then(\n    (languages: string[]) => console.log(languages),\n    (error) => console.log(error)\n  )\n\n// Check permission\nthis.speechRecognition.hasPermission()\n  .then((hasPermission: boolean) => console.log(hasPermission))\n\n// Request permissions\nthis.speechRecognition.requestPermission()\n  .then(\n    () => console.log('Granted'),\n    () => console.log('Denied')\n  )\n\n```\n",
+  "platforms": [
+    "Android",
+    "iOS"
+  ],
+  "repo": "https://github.com/pbakondy/cordova-plugin-speechrecognition",
+  "cordovaPlugin": {
+    "name": "cordova-plugin-speechrecognition"
+  }
+}

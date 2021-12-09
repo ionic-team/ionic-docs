@@ -1,0 +1,276 @@
+{
+  "filePath": "./src/components/item-option/item-option.tsx",
+  "encapsulation": "shadow",
+  "tag": "ion-item-option",
+  "readme": "# ion-item-option\n\nThe option button for an `ion-item-sliding`. Must be placed inside of an `<ion-item-options>`.\nYou can combine the `ionSwipe` event and the `expandable` directive to create a full swipe\naction for the item.\n",
+  "docs": "The option button for an `ion-item-sliding`. Must be placed inside of an `<ion-item-options>`.\nYou can combine the `ionSwipe` event and the `expandable` directive to create a full swipe\naction for the item.",
+  "docsTags": [
+    {
+      "text": "{\"ios\" | \"md\"} mode - The mode determines which platform styles to use.",
+      "name": "virtualProp"
+    },
+    {
+      "text": "- Content is placed between the named slots if provided without a slot.",
+      "name": "slot"
+    },
+    {
+      "text": "start - Content is placed to the left of the option text in LTR, and to the right in RTL.",
+      "name": "slot"
+    },
+    {
+      "text": "top - Content is placed above the option text.",
+      "name": "slot"
+    },
+    {
+      "text": "icon-only - Should be used on an icon in an option that has no text.",
+      "name": "slot"
+    },
+    {
+      "text": "bottom - Content is placed below the option text.",
+      "name": "slot"
+    },
+    {
+      "text": "end - Content is placed to the right of the option text in LTR, and to the left in RTL.",
+      "name": "slot"
+    },
+    {
+      "text": "native - The native HTML button or anchor element that wraps all child elements.",
+      "name": "part"
+    }
+  ],
+  "usage": {},
+  "props": [
+    {
+      "name": "color",
+      "type": "string | undefined",
+      "mutable": false,
+      "attr": "color",
+      "reflectToAttr": false,
+      "docs": "The color to use from your application's color palette.\nDefault options are: `\"primary\"`, `\"secondary\"`, `\"tertiary\"`, `\"success\"`, `\"warning\"`, `\"danger\"`, `\"light\"`, `\"medium\"`, and `\"dark\"`.\nFor more information on colors, see [theming](/docs/theming/basics).",
+      "docsTags": [],
+      "values": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "undefined"
+        }
+      ],
+      "optional": true,
+      "required": false
+    },
+    {
+      "name": "disabled",
+      "type": "boolean",
+      "mutable": false,
+      "attr": "disabled",
+      "reflectToAttr": false,
+      "docs": "If `true`, the user cannot interact with the item option.",
+      "docsTags": [],
+      "default": "false",
+      "values": [
+        {
+          "type": "boolean"
+        }
+      ],
+      "optional": false,
+      "required": false
+    },
+    {
+      "name": "download",
+      "type": "string | undefined",
+      "mutable": false,
+      "attr": "download",
+      "reflectToAttr": false,
+      "docs": "This attribute instructs browsers to download a URL instead of navigating to\nit, so the user will be prompted to save it as a local file. If the attribute\nhas a value, it is used as the pre-filled file name in the Save prompt\n(the user can still change the file name if they want).",
+      "docsTags": [],
+      "values": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "undefined"
+        }
+      ],
+      "optional": false,
+      "required": false
+    },
+    {
+      "name": "expandable",
+      "type": "boolean",
+      "mutable": false,
+      "attr": "expandable",
+      "reflectToAttr": false,
+      "docs": "If `true`, the option will expand to take up the available width and cover any other options.",
+      "docsTags": [],
+      "default": "false",
+      "values": [
+        {
+          "type": "boolean"
+        }
+      ],
+      "optional": false,
+      "required": false
+    },
+    {
+      "name": "href",
+      "type": "string | undefined",
+      "mutable": false,
+      "attr": "href",
+      "reflectToAttr": false,
+      "docs": "Contains a URL or a URL fragment that the hyperlink points to.\nIf this property is set, an anchor tag will be rendered.",
+      "docsTags": [],
+      "values": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "undefined"
+        }
+      ],
+      "optional": false,
+      "required": false
+    },
+    {
+      "name": "mode",
+      "type": "\"ios\" | \"md\"",
+      "mutable": false,
+      "attr": "mode",
+      "reflectToAttr": false,
+      "docs": "The mode determines which platform styles to use.",
+      "docsTags": [],
+      "values": [
+        {
+          "value": "ios",
+          "type": "string"
+        },
+        {
+          "value": "md",
+          "type": "string"
+        }
+      ],
+      "optional": true,
+      "required": false
+    },
+    {
+      "name": "rel",
+      "type": "string | undefined",
+      "mutable": false,
+      "attr": "rel",
+      "reflectToAttr": false,
+      "docs": "Specifies the relationship of the target object to the link object.\nThe value is a space-separated list of [link types](https://developer.mozilla.org/en-US/docs/Web/HTML/Link_types).",
+      "docsTags": [],
+      "values": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "undefined"
+        }
+      ],
+      "optional": false,
+      "required": false
+    },
+    {
+      "name": "target",
+      "type": "string | undefined",
+      "mutable": false,
+      "attr": "target",
+      "reflectToAttr": false,
+      "docs": "Specifies where to display the linked URL.\nOnly applies when an `href` is provided.\nSpecial keywords: `\"_blank\"`, `\"_self\"`, `\"_parent\"`, `\"_top\"`.",
+      "docsTags": [],
+      "values": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "undefined"
+        }
+      ],
+      "optional": false,
+      "required": false
+    },
+    {
+      "name": "type",
+      "type": "\"button\" | \"reset\" | \"submit\"",
+      "mutable": false,
+      "attr": "type",
+      "reflectToAttr": false,
+      "docs": "The type of the button.",
+      "docsTags": [],
+      "default": "'button'",
+      "values": [
+        {
+          "value": "button",
+          "type": "string"
+        },
+        {
+          "value": "reset",
+          "type": "string"
+        },
+        {
+          "value": "submit",
+          "type": "string"
+        }
+      ],
+      "optional": false,
+      "required": false
+    }
+  ],
+  "methods": [],
+  "events": [],
+  "listeners": [],
+  "styles": [
+    {
+      "name": "--background",
+      "annotation": "prop",
+      "docs": "Background of the item option"
+    },
+    {
+      "name": "--color",
+      "annotation": "prop",
+      "docs": "Color of the item option"
+    }
+  ],
+  "slots": [
+    {
+      "name": "",
+      "docs": "Content is placed between the named slots if provided without a slot."
+    },
+    {
+      "name": "bottom",
+      "docs": "Content is placed below the option text."
+    },
+    {
+      "name": "end",
+      "docs": "Content is placed to the right of the option text in LTR, and to the left in RTL."
+    },
+    {
+      "name": "icon-only",
+      "docs": "Should be used on an icon in an option that has no text."
+    },
+    {
+      "name": "start",
+      "docs": "Content is placed to the left of the option text in LTR, and to the right in RTL."
+    },
+    {
+      "name": "top",
+      "docs": "Content is placed above the option text."
+    }
+  ],
+  "parts": [
+    {
+      "name": "native",
+      "docs": "The native HTML button or anchor element that wraps all child elements."
+    }
+  ],
+  "dependents": [],
+  "dependencies": [
+    "ion-ripple-effect"
+  ],
+  "dependencyGraph": {
+    "ion-item-option": [
+      "ion-ripple-effect"
+    ]
+  }
+}

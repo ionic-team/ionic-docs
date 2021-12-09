@@ -1,0 +1,21 @@
+{
+  "packageName": "@ionic-native/device-motion",
+  "displayName": "Device Motion",
+  "description": "\nRequires Cordova plugin: `cordova-plugin-device-motion`. For more info, please see the [Device Motion docs](https://github.com/apache/cordova-plugin-device-motion).\n",
+  "usage": "\n```typescript\nimport { DeviceMotion, DeviceMotionAccelerationData } from '@ionic-native/device-motion/ngx';\n\nconstructor(private deviceMotion: DeviceMotion) { }\n\n...\n\n// Get the device current acceleration\nthis.deviceMotion.getCurrentAcceleration().then(\n  (acceleration: DeviceMotionAccelerationData) => console.log(acceleration),\n  (error: any) => console.log(error)\n);\n\n// Watch device acceleration\nvar subscription = this.deviceMotion.watchAcceleration().subscribe((acceleration: DeviceMotionAccelerationData) => {\n  console.log(acceleration);\n});\n\n// Stop watch\nsubscription.unsubscribe();\n\n```",
+  "platforms": [
+    "Android",
+    "BlackBerry 10",
+    "Browser",
+    "Firefox OS",
+    "iOS",
+    "Tizen",
+    "Ubuntu",
+    "Windows",
+    "Windows Phone 8"
+  ],
+  "repo": "https://github.com/apache/cordova-plugin-device-motion",
+  "cordovaPlugin": {
+    "name": "cordova-plugin-device-motion"
+  }
+}

@@ -1,0 +1,95 @@
+{
+  "name": "ionic cordova compile",
+  "namespace": [
+    "ionic",
+    "cordova"
+  ],
+  "summary": "Compile native platform code",
+  "description": "Like running `cordova compile` directly, but provides friendly checks.",
+  "footnotes": [],
+  "groups": [],
+  "exampleCommands": [
+    "ionic cordova compile ios",
+    "ionic cordova compile ios --device",
+    "ionic cordova compile android"
+  ],
+  "aliases": [],
+  "inputs": [
+    {
+      "name": "platform",
+      "summary": "The platform to compile (`android`, `ios`)",
+      "required": true
+    }
+  ],
+  "options": [
+    {
+      "name": "debug",
+      "type": "boolean",
+      "summary": "Mark as a debug build",
+      "groups": [
+        "cordova",
+        "cordova-cli"
+      ],
+      "aliases": [],
+      "spec": {
+        "value": "true/false"
+      }
+    },
+    {
+      "name": "release",
+      "type": "boolean",
+      "summary": "Mark as a release build",
+      "groups": [
+        "cordova",
+        "cordova-cli"
+      ],
+      "aliases": [],
+      "spec": {
+        "value": "true/false"
+      }
+    },
+    {
+      "name": "device",
+      "type": "boolean",
+      "summary": "Deploy build to a device",
+      "groups": [
+        "cordova",
+        "cordova-cli",
+        "native-run"
+      ],
+      "aliases": [],
+      "spec": {
+        "value": "true/false"
+      }
+    },
+    {
+      "name": "emulator",
+      "type": "boolean",
+      "summary": "Deploy build to an emulator",
+      "groups": [
+        "cordova",
+        "cordova-cli",
+        "native-run"
+      ],
+      "aliases": [],
+      "spec": {
+        "value": "true/false"
+      }
+    },
+    {
+      "name": "buildConfig",
+      "type": "string",
+      "summary": "Use the specified build configuration",
+      "groups": [
+        "advanced",
+        "cordova",
+        "cordova-cli"
+      ],
+      "aliases": [],
+      "spec": {
+        "value": "file"
+      }
+    }
+  ],
+  "type": "project"
+}

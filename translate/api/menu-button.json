@@ -1,0 +1,248 @@
+{
+  "filePath": "./src/components/menu-button/menu-button.tsx",
+  "encapsulation": "shadow",
+  "tag": "ion-menu-button",
+  "readme": "# ion-menu-button\n\nMenu Button is component that automatically creates the icon and functionality to open a menu on a page.\n\n",
+  "docs": "Menu Button is component that automatically creates the icon and functionality to open a menu on a page.",
+  "docsTags": [
+    {
+      "text": "{\"ios\" | \"md\"} mode - The mode determines which platform styles to use.",
+      "name": "virtualProp"
+    },
+    {
+      "text": "native - The native HTML button element that wraps all child elements.",
+      "name": "part"
+    },
+    {
+      "text": "icon - The menu button icon (uses ion-icon).",
+      "name": "part"
+    }
+  ],
+  "usage": {},
+  "props": [
+    {
+      "name": "autoHide",
+      "type": "boolean",
+      "mutable": false,
+      "attr": "auto-hide",
+      "reflectToAttr": false,
+      "docs": "Automatically hides the menu button when the corresponding menu is not active",
+      "docsTags": [],
+      "default": "true",
+      "values": [
+        {
+          "type": "boolean"
+        }
+      ],
+      "optional": false,
+      "required": false
+    },
+    {
+      "name": "color",
+      "type": "string | undefined",
+      "mutable": false,
+      "attr": "color",
+      "reflectToAttr": false,
+      "docs": "The color to use from your application's color palette.\nDefault options are: `\"primary\"`, `\"secondary\"`, `\"tertiary\"`, `\"success\"`, `\"warning\"`, `\"danger\"`, `\"light\"`, `\"medium\"`, and `\"dark\"`.\nFor more information on colors, see [theming](/docs/theming/basics).",
+      "docsTags": [],
+      "values": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "undefined"
+        }
+      ],
+      "optional": true,
+      "required": false
+    },
+    {
+      "name": "disabled",
+      "type": "boolean",
+      "mutable": false,
+      "attr": "disabled",
+      "reflectToAttr": false,
+      "docs": "If `true`, the user cannot interact with the menu button.",
+      "docsTags": [],
+      "default": "false",
+      "values": [
+        {
+          "type": "boolean"
+        }
+      ],
+      "optional": false,
+      "required": false
+    },
+    {
+      "name": "menu",
+      "type": "string | undefined",
+      "mutable": false,
+      "attr": "menu",
+      "reflectToAttr": false,
+      "docs": "Optional property that maps to a Menu's `menuId` prop. Can also be `start` or `end` for the menu side. This is used to find the correct menu to toggle",
+      "docsTags": [],
+      "values": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "undefined"
+        }
+      ],
+      "optional": true,
+      "required": false
+    },
+    {
+      "name": "mode",
+      "type": "\"ios\" | \"md\"",
+      "mutable": false,
+      "attr": "mode",
+      "reflectToAttr": false,
+      "docs": "The mode determines which platform styles to use.",
+      "docsTags": [],
+      "values": [
+        {
+          "value": "ios",
+          "type": "string"
+        },
+        {
+          "value": "md",
+          "type": "string"
+        }
+      ],
+      "optional": true,
+      "required": false
+    },
+    {
+      "name": "type",
+      "type": "\"button\" | \"reset\" | \"submit\"",
+      "mutable": false,
+      "attr": "type",
+      "reflectToAttr": false,
+      "docs": "The type of the button.",
+      "docsTags": [],
+      "default": "'button'",
+      "values": [
+        {
+          "value": "button",
+          "type": "string"
+        },
+        {
+          "value": "reset",
+          "type": "string"
+        },
+        {
+          "value": "submit",
+          "type": "string"
+        }
+      ],
+      "optional": false,
+      "required": false
+    }
+  ],
+  "methods": [],
+  "events": [],
+  "listeners": [
+    {
+      "event": "ionMenuChange",
+      "target": "body",
+      "capture": false,
+      "passive": false
+    },
+    {
+      "event": "ionSplitPaneVisible",
+      "target": "body",
+      "capture": false,
+      "passive": false
+    }
+  ],
+  "styles": [
+    {
+      "name": "--background",
+      "annotation": "prop",
+      "docs": "Background of the menu button"
+    },
+    {
+      "name": "--background-focused",
+      "annotation": "prop",
+      "docs": "Background of the menu button when focused with the tab key"
+    },
+    {
+      "name": "--background-focused-opacity",
+      "annotation": "prop",
+      "docs": "Opacity of the menu button background when focused with the tab key"
+    },
+    {
+      "name": "--background-hover",
+      "annotation": "prop",
+      "docs": "Background of the menu button on hover"
+    },
+    {
+      "name": "--background-hover-opacity",
+      "annotation": "prop",
+      "docs": "Opacity of the background on hover"
+    },
+    {
+      "name": "--border-radius",
+      "annotation": "prop",
+      "docs": "Border radius of the menu button"
+    },
+    {
+      "name": "--color",
+      "annotation": "prop",
+      "docs": "Color of the menu button"
+    },
+    {
+      "name": "--color-focused",
+      "annotation": "prop",
+      "docs": "Color of the menu button when focused with the tab key"
+    },
+    {
+      "name": "--color-hover",
+      "annotation": "prop",
+      "docs": "Color of the menu button on hover"
+    },
+    {
+      "name": "--padding-bottom",
+      "annotation": "prop",
+      "docs": "Bottom padding of the button"
+    },
+    {
+      "name": "--padding-end",
+      "annotation": "prop",
+      "docs": "Right padding if direction is left-to-right, and left padding if direction is right-to-left of the button"
+    },
+    {
+      "name": "--padding-start",
+      "annotation": "prop",
+      "docs": "Left padding if direction is left-to-right, and right padding if direction is right-to-left of the button"
+    },
+    {
+      "name": "--padding-top",
+      "annotation": "prop",
+      "docs": "Top padding of the button"
+    }
+  ],
+  "slots": [],
+  "parts": [
+    {
+      "name": "icon",
+      "docs": "The menu button icon (uses ion-icon)."
+    },
+    {
+      "name": "native",
+      "docs": "The native HTML button element that wraps all child elements."
+    }
+  ],
+  "dependents": [],
+  "dependencies": [
+    "ion-icon",
+    "ion-ripple-effect"
+  ],
+  "dependencyGraph": {
+    "ion-menu-button": [
+      "ion-icon",
+      "ion-ripple-effect"
+    ]
+  }
+}

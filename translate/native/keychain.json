@@ -1,0 +1,13 @@
+{
+  "packageName": "@ionic-native/keychain",
+  "displayName": "Keychain",
+  "description": "\nGet and set data in the iOS Keychain\n\nRequires Cordova plugin: `cordova-plugin-ios-keychain`. For more info, please see the [Keychain plugin docs](https://github.com/ionic-team/cordova-plugin-ios-keychain).\n\nSee also [Secure Storage](https://ionicframework.com/docs/native/secure-storage/) for more supported platforms.\n",
+  "usage": "\n```typescript\nimport { Keychain } from '@ionic-native/keychain/ngx';\n\nconstructor(private keychain: Keychain) { }\n\n...\n\nthis.keychain.set(key, value).then(() => {\n  this.keychain.get(key)\n    .then(value => console.log('Got value', value))\n    .catch(err => console.error('Error getting', err));\n})\n.catch(err => console.error('Error setting', err));\n```\n",
+  "platforms": [
+    "iOS"
+  ],
+  "repo": "https://github.com/ionic-team/cordova-plugin-ios-keychain",
+  "cordovaPlugin": {
+    "name": "cordova-plugin-ios-keychain"
+  }
+}

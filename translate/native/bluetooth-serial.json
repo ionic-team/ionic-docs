@@ -1,0 +1,15 @@
+{
+  "packageName": "@ionic-native/bluetooth-serial",
+  "displayName": "Bluetooth Serial",
+  "description": "This plugin enables serial communication over Bluetooth. It was written for communicating between Android or iOS and an Arduino (not Android to Android or iOS to iOS).",
+  "usage": "\n```typescript\nimport { BluetoothSerial } from '@ionic-native/bluetooth-serial/ngx';\n\nconstructor(private bluetoothSerial: BluetoothSerial) { }\n\n\n// Write a string\nthis.bluetoothSerial.write('hello world').then(success, failure);\n\n// Array of int or bytes\nthis.bluetoothSerial.write([186, 220, 222]).then(success, failure);\n\n// Typed Array\nvar data = new Uint8Array(4);\ndata[0] = 0x41;\ndata[1] = 0x42;\ndata[2] = 0x43;\ndata[3] = 0x44;\nthis.bluetoothSerial.write(data).then(success, failure);\n\n// Array Buffer\nthis.bluetoothSerial.write(data.buffer).then(success, failure);\n```\n",
+  "platforms": [
+    "Android",
+    "iOS",
+    "Windows Phone 8"
+  ],
+  "repo": "https://github.com/don/BluetoothSerial",
+  "cordovaPlugin": {
+    "name": "cordova-plugin-bluetooth-serial"
+  }
+}

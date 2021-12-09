@@ -1,0 +1,17 @@
+{
+  "packageName": "@ionic-native/action-sheet",
+  "displayName": "Action Sheet",
+  "description": "\nThe ActionSheet plugin shows a native list of options the user can choose from.\n\nRequires Cordova plugin: `cordova-plugin-actionsheet`. For more info, please see the [ActionSheet plugin docs](https://github.com/EddyVerbruggen/cordova-plugin-actionsheet).\n",
+  "usage": "\n```typescript\nimport { ActionSheet, ActionSheetOptions } from '@ionic-native/action-sheet/ngx';\n\nconstructor(private actionSheet: ActionSheet) { }\n\n...\n\n\nlet buttonLabels = ['Share via Facebook', 'Share via Twitter'];\n\nconst options: ActionSheetOptions = {\n  title: 'What do you want with this image?',\n  subtitle: 'Choose an action',\n  buttonLabels: buttonLabels,\n  addCancelButtonWithLabel: 'Cancel',\n  addDestructiveButtonWithLabel: 'Delete',\n  androidTheme: this.actionSheet.ANDROID_THEMES.THEME_HOLO_DARK,\n  destructiveButtonLast: true\n}\n\nthis.actionSheet.show(options).then((buttonIndex: number) => {\n  console.log('Button pressed: ' + buttonIndex);\n});\n```",
+  "platforms": [
+    "Android",
+    "Browser",
+    "iOS",
+    "Windows",
+    "Windows Phone 8"
+  ],
+  "repo": "https://github.com/EddyVerbruggen/cordova-plugin-actionsheet",
+  "cordovaPlugin": {
+    "name": "cordova-plugin-actionsheet"
+  }
+}

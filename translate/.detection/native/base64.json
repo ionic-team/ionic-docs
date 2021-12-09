@@ -1,0 +1,14 @@
+{
+  "packageName": "@ionic-native/base64",
+  "displayName": "Base64",
+  "description": "\nThis Plugin is used to encode base64 of any file, it uses js code for iOS, but in case of android it uses native code to handle android versions lower than v.3\n",
+  "usage": "\n```typescript\nimport { Base64 } from '@ionic-native/base64/ngx';\n\nconstructor(private base64: Base64) { }\n\n...\n\nlet filePath: string = 'file:///...';\nthis.base64.encodeFile(filePath).then((base64File: string) => {\n  console.log(base64File);\n}, (err) => {\n  console.log(err);\n});\n\n```\n",
+  "platforms": [
+    "Android",
+    "iOS"
+  ],
+  "repo": "https://github.com/hazemhagrass/phonegap-base64",
+  "cordovaPlugin": {
+    "name": "com-badrit-base64"
+  }
+}

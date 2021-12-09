@@ -1,0 +1,1 @@
+Like running `cordova requirements` directly, but provides friendly checks.

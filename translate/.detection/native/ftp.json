@@ -1,0 +1,14 @@
+{
+  "packageName": "@ionic-native/ftp",
+  "displayName": "FTP",
+  "description": "\nThis cordova plugin is created to use ftp (client) in web/js.\n",
+  "usage": "\n```typescript\nimport { FTP } from '@ionic-native/ftp/ngx';\n\n\nconstructor(private fTP: FTP) { }\n\n...\n\n\nthis.fTP.connect('ftp_host', 'ftp_user', 'ftp_password')\n  .then((res: any) => console.log('Login successful', res))\n  .catch((error: any) => console.error(error));\n\n```\n",
+  "platforms": [
+    "Android",
+    "iOS"
+  ],
+  "repo": "https://github.com/xfally/cordova-plugin-ftp",
+  "cordovaPlugin": {
+    "name": "cordova-plugin-ftp"
+  }
+}

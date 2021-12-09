@@ -1,0 +1,299 @@
+{
+  "filePath": "./src/components/tab-button/tab-button.tsx",
+  "encapsulation": "shadow",
+  "tag": "ion-tab-button",
+  "readme": "# ion-tab-button\n\nA tab button is a UI component that is placed inside of a [tab bar](../tab-bar). The tab button can specify the layout of the icon and label and connect to a [tab view](../tab).\n\nSee the [tabs documentation](../tabs) for more details on configuring tabs.\n\n",
+  "docs": "A tab button is a UI component that is placed inside of a [tab bar](../tab-bar). The tab button can specify the layout of the icon and label and connect to a [tab view](../tab).\n\nSee the [tabs documentation](../tabs) for more details on configuring tabs.",
+  "docsTags": [
+    {
+      "text": "{\"ios\" | \"md\"} mode - The mode determines which platform styles to use.",
+      "name": "virtualProp"
+    },
+    {
+      "text": "native - The native HTML anchor element that wraps all child elements.",
+      "name": "part"
+    }
+  ],
+  "usage": {
+    "angular": "```html\n<ion-tabs>\n  <!-- Tab bar -->\n  <ion-tab-bar slot=\"bottom\">\n    <ion-tab-button tab=\"schedule\">\n      <ion-icon name=\"calendar\"></ion-icon>\n      <ion-label>Schedule</ion-label>\n    </ion-tab-button>\n\n    <ion-tab-button tab=\"speakers\">\n      <ion-icon name=\"person-circle\"></ion-icon>\n      <ion-label>Speakers</ion-label>\n    </ion-tab-button>\n\n    <ion-tab-button tab=\"map\">\n      <ion-icon name=\"map\"></ion-icon>\n      <ion-label>Map</ion-label>\n    </ion-tab-button>\n\n    <ion-tab-button tab=\"about\">\n      <ion-icon name=\"information-circle\"></ion-icon>\n      <ion-label>About</ion-label>\n    </ion-tab-button>\n  </ion-tab-bar>\n</ion-tabs>\n```\n",
+    "javascript": "```html\n<ion-tabs>\n  <!-- Tab views -->\n  <ion-tab tab=\"schedule\">\n    <ion-router-outlet name=\"schedule\"></ion-router-outlet>\n  </ion-tab>\n\n  <ion-tab tab=\"speakers\">\n    <ion-router-outlet name=\"speakers\"></ion-router-outlet>\n  </ion-tab>\n\n  <ion-tab tab=\"map\">\n    <ion-router-outlet name=\"map\"></ion-router-outlet>\n  </ion-tab>\n\n  <ion-tab tab=\"about\">\n    <ion-router-outlet name=\"about\"></ion-router-outlet>\n  </ion-tab>\n\n  <!-- Tab bar -->\n  <ion-tab-bar slot=\"bottom\">\n    <ion-tab-button tab=\"schedule\" href=\"/app/tabs/(schedule:schedule)\">\n      <ion-icon name=\"calendar\"></ion-icon>\n      <ion-label>Schedule</ion-label>\n    </ion-tab-button>\n\n    <ion-tab-button tab=\"speakers\" href=\"/app/tabs/(speakers:speakers)\">\n      <ion-icon name=\"person-circle\"></ion-icon>\n      <ion-label>Speakers</ion-label>\n    </ion-tab-button>\n\n    <ion-tab-button tab=\"map\" href=\"/app/tabs/(map:map)\">\n      <ion-icon name=\"map\"></ion-icon>\n      <ion-label>Map</ion-label>\n    </ion-tab-button>\n\n    <ion-tab-button tab=\"about\" href=\"/app/tabs/(about:about)\">\n      <ion-icon name=\"information-circle\"></ion-icon>\n      <ion-label>About</ion-label>\n    </ion-tab-button>\n  </ion-tab-bar>\n</ion-tabs>\n```\n",
+    "react": "```tsx\nimport React from 'react';\nimport { IonTabs, IonTabBar, IonTabButton, IonIcon, IonLabel, IonContent } from '@ionic/react';\nimport { calendar, personCircle, map, informationCircle } from 'ionicons/icons';\n\nexport const TabButtonExample: React.FC = () => (\n  <IonContent>\n    <IonTabs>\n      {/*-- Tab bar --*/}\n      <IonTabBar slot=\"bottom\">\n        <IonTabButton tab=\"schedule\">\n          <IonIcon icon={calendar} />\n          <IonLabel>Schedule</IonLabel>\n        </IonTabButton>\n\n        <IonTabButton tab=\"speakers\">\n          <IonIcon icon={personCircle} />\n          <IonLabel>Speakers</IonLabel>\n        </IonTabButton>\n\n        <IonTabButton tab=\"map\">\n          <IonIcon icon={map} />\n          <IonLabel>Map</IonLabel>\n        </IonTabButton>\n\n        <IonTabButton tab=\"about\">\n          <IonIcon icon={informationCircle} />\n          <IonLabel>About</IonLabel>\n        </IonTabButton>\n      </IonTabBar>\n    </IonTabs>\n  </IonContent>\n);\n```\n",
+    "stencil": "```tsx\nimport { Component, h } from '@stencil/core';\n\n@Component({\n  tag: 'tab-button-example',\n  styleUrl: 'tab-button-example.css'\n})\nexport class TabButtonExample {\n  render() {\n    return [\n      <ion-tabs>\n        {/* Tab views */}\n        <ion-tab tab=\"schedule\">\n          <ion-router-outlet name=\"schedule\"></ion-router-outlet>\n        </ion-tab>\n\n        <ion-tab tab=\"speakers\">\n          <ion-router-outlet name=\"speakers\"></ion-router-outlet>\n        </ion-tab>\n\n        <ion-tab tab=\"map\">\n          <ion-router-outlet name=\"map\"></ion-router-outlet>\n        </ion-tab>\n\n        <ion-tab tab=\"about\">\n          <ion-router-outlet name=\"about\"></ion-router-outlet>\n        </ion-tab>\n\n        {/* Tab bar */}\n        <ion-tab-bar slot=\"bottom\">\n          <ion-tab-button tab=\"schedule\" href=\"/app/tabs/(schedule:schedule)\">\n            <ion-icon name=\"calendar\"></ion-icon>\n            <ion-label>Schedule</ion-label>\n          </ion-tab-button>\n\n          <ion-tab-button tab=\"speakers\" href=\"/app/tabs/(speakers:speakers)\">\n            <ion-icon name=\"person-circle\"></ion-icon>\n            <ion-label>Speakers</ion-label>\n          </ion-tab-button>\n\n          <ion-tab-button tab=\"map\" href=\"/app/tabs/(map:map)\">\n            <ion-icon name=\"map\"></ion-icon>\n            <ion-label>Map</ion-label>\n          </ion-tab-button>\n\n          <ion-tab-button tab=\"about\" href=\"/app/tabs/(about:about)\">\n            <ion-icon name=\"information-circle\"></ion-icon>\n            <ion-label>About</ion-label>\n          </ion-tab-button>\n        </ion-tab-bar>\n      </ion-tabs>\n    ];\n  }\n}\n```\n",
+    "vue": "```html\n<template>\n  <ion-tabs>\n    <!-- Tab bar -->\n    <ion-tab-bar slot=\"bottom\">\n      <ion-tab-button tab=\"schedule\">\n        <ion-icon :icon=\"calendar\"></ion-icon>\n        <ion-label>Schedule</ion-label>\n      </ion-tab-button>\n\n      <ion-tab-button tab=\"speakers\">\n        <ion-icon :icon=\"person-circle\"></ion-icon>\n        <ion-label>Speakers</ion-label>\n      </ion-tab-button>\n\n      <ion-tab-button tab=\"map\">\n        <ion-icon :icon=\"map\"></ion-icon>\n        <ion-label>Map</ion-label>\n      </ion-tab-button>\n\n      <ion-tab-button tab=\"about\">\n        <ion-icon :icon=\"informationCircle\"></ion-icon>\n        <ion-label>About</ion-label>\n      </ion-tab-button>\n    </ion-tab-bar>\n  </ion-tabs>\n</template>\n\n<script>\nimport { \n  IonIcon, \n  IonLabel, \n  IonTabBar, \n  IonTabButton, \n  IonTabs\n} from '@ionic/vue';\nimport { calendar, informationCircle, map, personCircle } from 'ionicons/icons';\nimport { defineComponent } from 'vue';\n\nexport default defineComponent({\n  components: {\n    IonIcon, \n    IonLabel, \n    IonTabBar, \n    IonTabButton, \n    IonTabs\n  },\n  setup() {\n    return { calendar, informationCircle, map, personCircle }\n  }\n});\n</script>\n```\n"
+  },
+  "props": [
+    {
+      "name": "disabled",
+      "type": "boolean",
+      "mutable": false,
+      "attr": "disabled",
+      "reflectToAttr": false,
+      "docs": "If `true`, the user cannot interact with the tab button.",
+      "docsTags": [],
+      "default": "false",
+      "values": [
+        {
+          "type": "boolean"
+        }
+      ],
+      "optional": false,
+      "required": false
+    },
+    {
+      "name": "download",
+      "type": "string | undefined",
+      "mutable": false,
+      "attr": "download",
+      "reflectToAttr": false,
+      "docs": "This attribute instructs browsers to download a URL instead of navigating to\nit, so the user will be prompted to save it as a local file. If the attribute\nhas a value, it is used as the pre-filled file name in the Save prompt\n(the user can still change the file name if they want).",
+      "docsTags": [],
+      "values": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "undefined"
+        }
+      ],
+      "optional": false,
+      "required": false
+    },
+    {
+      "name": "href",
+      "type": "string | undefined",
+      "mutable": false,
+      "attr": "href",
+      "reflectToAttr": false,
+      "docs": "Contains a URL or a URL fragment that the hyperlink points to.\nIf this property is set, an anchor tag will be rendered.",
+      "docsTags": [],
+      "values": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "undefined"
+        }
+      ],
+      "optional": false,
+      "required": false
+    },
+    {
+      "name": "layout",
+      "type": "\"icon-bottom\" | \"icon-end\" | \"icon-hide\" | \"icon-start\" | \"icon-top\" | \"label-hide\" | undefined",
+      "mutable": true,
+      "attr": "layout",
+      "reflectToAttr": false,
+      "docs": "Set the layout of the text and icon in the tab bar.\nIt defaults to `'icon-top'`.",
+      "docsTags": [],
+      "values": [
+        {
+          "value": "icon-bottom",
+          "type": "string"
+        },
+        {
+          "value": "icon-end",
+          "type": "string"
+        },
+        {
+          "value": "icon-hide",
+          "type": "string"
+        },
+        {
+          "value": "icon-start",
+          "type": "string"
+        },
+        {
+          "value": "icon-top",
+          "type": "string"
+        },
+        {
+          "value": "label-hide",
+          "type": "string"
+        },
+        {
+          "type": "undefined"
+        }
+      ],
+      "optional": true,
+      "required": false
+    },
+    {
+      "name": "mode",
+      "type": "\"ios\" | \"md\"",
+      "mutable": false,
+      "attr": "mode",
+      "reflectToAttr": false,
+      "docs": "The mode determines which platform styles to use.",
+      "docsTags": [],
+      "values": [
+        {
+          "value": "ios",
+          "type": "string"
+        },
+        {
+          "value": "md",
+          "type": "string"
+        }
+      ],
+      "optional": true,
+      "required": false
+    },
+    {
+      "name": "rel",
+      "type": "string | undefined",
+      "mutable": false,
+      "attr": "rel",
+      "reflectToAttr": false,
+      "docs": "Specifies the relationship of the target object to the link object.\nThe value is a space-separated list of [link types](https://developer.mozilla.org/en-US/docs/Web/HTML/Link_types).",
+      "docsTags": [],
+      "values": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "undefined"
+        }
+      ],
+      "optional": false,
+      "required": false
+    },
+    {
+      "name": "selected",
+      "type": "boolean",
+      "mutable": true,
+      "attr": "selected",
+      "reflectToAttr": false,
+      "docs": "The selected tab component",
+      "docsTags": [],
+      "default": "false",
+      "values": [
+        {
+          "type": "boolean"
+        }
+      ],
+      "optional": false,
+      "required": false
+    },
+    {
+      "name": "tab",
+      "type": "string | undefined",
+      "mutable": false,
+      "attr": "tab",
+      "reflectToAttr": false,
+      "docs": "A tab id must be provided for each `ion-tab`. It's used internally to reference\nthe selected tab or by the router to switch between them.",
+      "docsTags": [],
+      "values": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "undefined"
+        }
+      ],
+      "optional": true,
+      "required": false
+    },
+    {
+      "name": "target",
+      "type": "string | undefined",
+      "mutable": false,
+      "attr": "target",
+      "reflectToAttr": false,
+      "docs": "Specifies where to display the linked URL.\nOnly applies when an `href` is provided.\nSpecial keywords: `\"_blank\"`, `\"_self\"`, `\"_parent\"`, `\"_top\"`.",
+      "docsTags": [],
+      "values": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "undefined"
+        }
+      ],
+      "optional": false,
+      "required": false
+    }
+  ],
+  "methods": [],
+  "events": [],
+  "listeners": [
+    {
+      "event": "ionTabBarChanged",
+      "target": "window",
+      "capture": false,
+      "passive": false
+    }
+  ],
+  "styles": [
+    {
+      "name": "--background",
+      "annotation": "prop",
+      "docs": "Background of the tab button"
+    },
+    {
+      "name": "--background-focused",
+      "annotation": "prop",
+      "docs": "Background of the tab button when focused with the tab key"
+    },
+    {
+      "name": "--background-focused-opacity",
+      "annotation": "prop",
+      "docs": "Opacity of the tab button background when focused with the tab key"
+    },
+    {
+      "name": "--color",
+      "annotation": "prop",
+      "docs": "Color of the tab button"
+    },
+    {
+      "name": "--color-focused",
+      "annotation": "prop",
+      "docs": "Color of the tab button when focused with the tab key"
+    },
+    {
+      "name": "--color-selected",
+      "annotation": "prop",
+      "docs": "Color of the selected tab button"
+    },
+    {
+      "name": "--padding-bottom",
+      "annotation": "prop",
+      "docs": "Bottom padding of the tab button"
+    },
+    {
+      "name": "--padding-end",
+      "annotation": "prop",
+      "docs": "Right padding if direction is left-to-right, and left padding if direction is right-to-left of the tab button"
+    },
+    {
+      "name": "--padding-start",
+      "annotation": "prop",
+      "docs": "Left padding if direction is left-to-right, and right padding if direction is right-to-left of the tab button"
+    },
+    {
+      "name": "--padding-top",
+      "annotation": "prop",
+      "docs": "Top padding of the tab button"
+    },
+    {
+      "name": "--ripple-color",
+      "annotation": "prop",
+      "docs": "Color of the button ripple effect"
+    }
+  ],
+  "slots": [],
+  "parts": [
+    {
+      "name": "native",
+      "docs": "The native HTML anchor element that wraps all child elements."
+    }
+  ],
+  "dependents": [],
+  "dependencies": [
+    "ion-ripple-effect"
+  ],
+  "dependencyGraph": {
+    "ion-tab-button": [
+      "ion-ripple-effect"
+    ]
+  }
+}

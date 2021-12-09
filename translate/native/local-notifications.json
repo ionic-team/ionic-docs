@@ -1,0 +1,15 @@
+{
+  "packageName": "@ionic-native/local-notifications",
+  "displayName": "Local Notifications",
+  "description": "\nThis plugin allows you to display local notifications on the device\n",
+  "usage": "\n```typescript\nimport { LocalNotifications } from '@ionic-native/local-notifications/ngx';\n\n\nconstructor(private localNotifications: LocalNotifications) { }\n\n...\n\n\n// Schedule a single notification\nthis.localNotifications.schedule({\n  id: 1,\n  text: 'Single ILocalNotification',\n  sound: isAndroid? 'file://sound.mp3': 'file://beep.caf',\n  data: { secret: key }\n});\n\n\n// Schedule multiple notifications\nthis.localNotifications.schedule([{\n   id: 1,\n   text: 'Multi ILocalNotification 1',\n   sound: isAndroid ? 'file://sound.mp3': 'file://beep.caf',\n   data: { secret:key }\n  },{\n   id: 2,\n   title: 'Local ILocalNotification Example',\n   text: 'Multi ILocalNotification 2',\n   icon: 'http://example.com/icon.png'\n}]);\n\n\n// Schedule delayed notification\nthis.localNotifications.schedule({\n   text: 'Delayed ILocalNotification',\n   trigger: {at: new Date(new Date().getTime() + 3600)},\n   led: 'FF0000',\n   sound: null\n});\n```",
+  "platforms": [
+    "Android",
+    "iOS",
+    "Windows"
+  ],
+  "repo": "https://github.com/katzer/cordova-plugin-local-notifications",
+  "cordovaPlugin": {
+    "name": "cordova-plugin-local-notification"
+  }
+}

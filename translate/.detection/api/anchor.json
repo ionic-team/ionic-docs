@@ -1,0 +1,118 @@
+{
+  "filePath": "src/components/anchor/anchor.tsx",
+  "encapsulation": "shadow",
+  "tag": "ion-anchor",
+  "readme": "# ion-anchor\n",
+  "docs": "",
+  "docsTags": [
+    {
+      "text": "Use `ion-router-link` instead.",
+      "name": "deprecated"
+    }
+  ],
+  "usage": {},
+  "props": [
+    {
+      "name": "color",
+      "type": "string | undefined",
+      "mutable": false,
+      "attr": "color",
+      "reflectToAttr": false,
+      "docs": "The color to use from your application's color palette.\nDefault options are: `\"primary\"`, `\"secondary\"`, `\"tertiary\"`, `\"success\"`, `\"warning\"`, `\"danger\"`, `\"light\"`, `\"medium\"`, and `\"dark\"`.\nFor more information on colors, see [theming](/docs/theming/basics).",
+      "docsTags": [],
+      "values": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "undefined"
+        }
+      ],
+      "optional": true,
+      "required": false
+    },
+    {
+      "name": "href",
+      "type": "string | undefined",
+      "mutable": false,
+      "attr": "href",
+      "reflectToAttr": false,
+      "docs": "Contains a URL or a URL fragment that the hyperlink points to.\nIf this property is set, an anchor tag will be rendered.",
+      "docsTags": [],
+      "values": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "undefined"
+        }
+      ],
+      "optional": false,
+      "required": false
+    },
+    {
+      "name": "rel",
+      "type": "string | undefined",
+      "mutable": false,
+      "attr": "rel",
+      "reflectToAttr": false,
+      "docs": "Specifies the relationship of the target object to the link object.\nThe value is a space-separated list of [link types](https://developer.mozilla.org/en-US/docs/Web/HTML/Link_types).",
+      "docsTags": [],
+      "values": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "undefined"
+        }
+      ],
+      "optional": false,
+      "required": false
+    },
+    {
+      "name": "routerDirection",
+      "type": "\"back\" | \"forward\" | \"root\"",
+      "mutable": false,
+      "attr": "router-direction",
+      "reflectToAttr": false,
+      "docs": "When using a router, it specifies the transition direction when navigating to\nanother page using `href`.",
+      "docsTags": [],
+      "default": "'forward'",
+      "values": [
+        {
+          "value": "back",
+          "type": "string"
+        },
+        {
+          "value": "forward",
+          "type": "string"
+        },
+        {
+          "value": "root",
+          "type": "string"
+        }
+      ],
+      "optional": false,
+      "required": false
+    }
+  ],
+  "methods": [],
+  "events": [],
+  "styles": [
+    {
+      "name": "--background",
+      "annotation": "prop",
+      "docs": "Background of the anchor"
+    },
+    {
+      "name": "--color",
+      "annotation": "prop",
+      "docs": "Text color of the anchor"
+    }
+  ],
+  "slots": [],
+  "dependents": [],
+  "dependencies": [],
+  "dependencyGraph": {},
+  "deprecation": "Use `ion-router-link` instead."
+}

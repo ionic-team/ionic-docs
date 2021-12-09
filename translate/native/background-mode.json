@@ -1,0 +1,17 @@
+{
+  "packageName": "@ionic-native/background-mode",
+  "displayName": "Background Mode",
+  "description": "\nCordova plugin to prevent the app from going to sleep while in background.\nRequires Cordova plugin: cordova-plugin-background-mode. For more info about plugin, visit: https://github.com/katzer/cordova-plugin-background-mode",
+  "usage": "\n```typescript\nimport { BackgroundMode } from '@ionic-native/background-mode/ngx';\n\nconstructor(private backgroundMode: BackgroundMode) { }\n\n...\n\nthis.backgroundMode.enable();\n```\n",
+  "platforms": [
+    "AmazonFire OS",
+    "Android",
+    "Browser",
+    "iOS",
+    "Windows"
+  ],
+  "repo": "https://github.com/katzer/cordova-plugin-background-mode",
+  "cordovaPlugin": {
+    "name": "cordova-plugin-background-mode"
+  }
+}

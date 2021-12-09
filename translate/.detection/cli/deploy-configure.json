@@ -1,0 +1,86 @@
+{
+  "name": "ionic deploy configure",
+  "namespace": [
+    "ionic",
+    "deploy"
+  ],
+  "summary": "Overrides Appflow Deploy configuration",
+  "description": "This command overrides configuration for the Appflow Deploy plugin (`cordova-plugin-ionic`) in Capacitor projects.\n\nFor Capacitor projects, if the plugin is already installed, it overrides the configuration variables in the native projects.\n\nFor Cordova projects this is not implemented because it is better to reinstall the plugin with the different parameters and let Cordova deal with the changes.",
+  "footnotes": [],
+  "groups": [
+    "paid"
+  ],
+  "exampleCommands": [
+    "ionic deploy configure ",
+    "ionic deploy configure --app-id=abcd1234 --channel-name=\"Master\" --update-method=background",
+    "ionic deploy configure --max-store=2 --min-background-duration=30",
+    "ionic deploy configure --app-id=abcd1234 --channel-name=\"Master\" --update-method=background --max-store=2 --min-background-duration=30",
+    "ionic deploy configure android",
+    "ionic deploy configure ios"
+  ],
+  "aliases": [],
+  "inputs": [
+    {
+      "name": "platform",
+      "summary": "The native platform (e.g. `ios`, `android`)",
+      "required": false
+    }
+  ],
+  "options": [
+    {
+      "name": "app-id",
+      "type": "string",
+      "summary": "Your Appflow app ID",
+      "groups": [],
+      "aliases": [],
+      "spec": {
+        "value": "id"
+      }
+    },
+    {
+      "name": "channel-name",
+      "type": "string",
+      "summary": "The channel to check for updates from",
+      "groups": [],
+      "aliases": [],
+      "spec": {
+        "value": "name"
+      }
+    },
+    {
+      "name": "update-method",
+      "type": "string",
+      "summary": "The update method that dictates the behavior of the plugin",
+      "groups": [],
+      "aliases": [],
+      "spec": {
+        "value": "name"
+      }
+    },
+    {
+      "name": "max-store",
+      "type": "string",
+      "summary": "The maximum number of downloaded versions to store on the device",
+      "groups": [
+        "advanced"
+      ],
+      "aliases": [],
+      "spec": {
+        "value": "quantity"
+      }
+    },
+    {
+      "name": "min-background-duration",
+      "type": "string",
+      "summary": "The minimum duration after which the app checks for an update in the background",
+      "groups": [
+        "advanced"
+      ],
+      "aliases": [],
+      "spec": {
+        "value": "seconds"
+      }
+    }
+  ],
+  "type": "project"
+}

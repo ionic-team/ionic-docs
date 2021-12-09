@@ -1,0 +1,14 @@
+{
+  "packageName": "@ionic-native/native-geocoder",
+  "displayName": "Native Geocoder",
+  "description": "\nCordova plugin for native forward and reverse geocoding\n",
+  "usage": "\n```typescript\nimport { NativeGeocoder, NativeGeocoderResult, NativeGeocoderOptions } from '@ionic-native/native-geocoder/ngx';\n\nconstructor(private nativeGeocoder: NativeGeocoder) { }\n\n...\n\nlet options: NativeGeocoderOptions = {\n    useLocale: true,\n    maxResults: 5\n};\n\nthis.nativeGeocoder.reverseGeocode(52.5072095, 13.1452818, options)\n  .then((result: NativeGeocoderResult[]) => console.log(JSON.stringify(result[0])))\n  .catch((error: any) => console.log(error));\n\nthis.nativeGeocoder.forwardGeocode('Berlin', options)\n  .then((result: NativeGeocoderResult[]) => console.log('The coordinates are latitude=' + result[0].latitude + ' and longitude=' + result[0].longitude))\n  .catch((error: any) => console.log(error));\n```",
+  "platforms": [
+    "iOS",
+    "Android"
+  ],
+  "repo": "https://github.com/sebastianbaar/cordova-plugin-nativegeocoder",
+  "cordovaPlugin": {
+    "name": "cordova-plugin-nativegeocoder"
+  }
+}

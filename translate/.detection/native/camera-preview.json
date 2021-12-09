@@ -1,0 +1,14 @@
+{
+  "packageName": "@ionic-native/camera-preview",
+  "displayName": "Camera Preview",
+  "description": "\nShowing camera preview in HTML\n\nRequires Cordova plugin: `https://github.com/cordova-plugin-camera-preview/cordova-plugin-camera-preview.git`. For more info, please see the [Cordova Camera Preview docs](https://github.com/cordova-plugin-camera-preview/cordova-plugin-camera-preview).\n",
+  "usage": "\n```typescript\nimport { CameraPreview, CameraPreviewPictureOptions, CameraPreviewOptions, CameraPreviewDimensions } from '@ionic-native/camera-preview/ngx';\n\nconstructor(private cameraPreview: CameraPreview) { }\n\n...\n\n// camera options (Size and location). In the following example, the preview uses the rear camera and display the preview in the back of the webview\nconst cameraPreviewOpts: CameraPreviewOptions = {\n  x: 0,\n  y: 0,\n  width: window.screen.width,\n  height: window.screen.height,\n  camera: 'rear',\n  tapPhoto: true,\n  previewDrag: true,\n  toBack: true,\n  alpha: 1\n}\n\n// start camera\nthis.cameraPreview.startCamera(cameraPreviewOpts).then(\n  (res) => {\n    console.log(res)\n  },\n  (err) => {\n    console.log(err)\n  });\n\n// Set the handler to run every time we take a picture\nthis.cameraPreview.setOnPictureTakenHandler().subscribe((result) => {\n  console.log(result);\n  // do something with the result\n});\n\n\n// picture options\nconst pictureOpts: CameraPreviewPictureOptions = {\n  width: 1280,\n  height: 1280,\n  quality: 85\n}\n\n// take a picture\nthis.cameraPreview.takePicture(this.pictureOpts).then((imageData) => {\n  this.picture = 'data:image/jpeg;base64,' + imageData;\n}, (err) => {\n  console.log(err);\n  this.picture = 'assets/img/test.jpg';\n});\n\n// take a snap shot\nthis.cameraPreview.takeSnapshot(this.pictureOpts).then((imageData) => {\n  this.picture = 'data:image/jpeg;base64,' + imageData;\n}, (err) => {\n  console.log(err);\n  this.picture = 'assets/img/test.jpg';\n});\n\n\n// Switch camera\nthis.cameraPreview.switchCamera();\n\n// set color effect to negative\nthis.cameraPreview.setColorEffect('negative');\n\n// Stop the camera preview\nthis.cameraPreview.stopCamera();\n\n```\n",
+  "platforms": [
+    "Android",
+    "iOS"
+  ],
+  "repo": "https://github.com/cordova-plugin-camera-preview/cordova-plugin-camera-preview",
+  "cordovaPlugin": {
+    "name": "cordova-plugin-camera-preview"
+  }
+}

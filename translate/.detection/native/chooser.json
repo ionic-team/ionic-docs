@@ -1,0 +1,14 @@
+{
+  "packageName": "@ionic-native/chooser",
+  "displayName": "Chooser",
+  "description": "\nFile chooser plugin for Cordova.\n\nThe following must be added to config.xml to prevent crashing when selecting large files on Android:\n```xml\n<platform name=\"android\">\n <edit-config\n   file=\"app/src/main/AndroidManifest.xml\"\n   mode=\"merge\"\n   target=\"/manifest/application\">\n   <application android:largeHeap=\"true\" />\n </edit-config>\n</platform>\n```\n",
+  "usage": "\n```typescript\nimport { Chooser } from '@ionic-native/chooser/ngx';\n\n\nconstructor(private chooser: Chooser) { }\n\n...\n\n\nthis.chooser.getFile()\n  .then(file => console.log(file ? file.name : 'canceled'))\n  .catch((error: any) => console.error(error));\n\n```\n",
+  "platforms": [
+    "Android",
+    "iOS"
+  ],
+  "repo": "https://github.com/cyph/cordova-plugin-chooser",
+  "cordovaPlugin": {
+    "name": "cordova-plugin-chooser"
+  }
+}

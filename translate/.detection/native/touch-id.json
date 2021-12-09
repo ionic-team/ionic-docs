@@ -1,0 +1,13 @@
+{
+  "packageName": "@ionic-native/touch-id",
+  "displayName": "Touch ID",
+  "description": "\nScan the fingerprint of a user with the TouchID sensor.\n\nRequires Cordova plugin: `cordova-plugin-touch-id`. For more info, please see the [TouchID plugin docs](https://github.com/EddyVerbruggen/cordova-plugin-touch-id).\n",
+  "usage": "\n```typescript\nimport { TouchID } from '@ionic-native/touch-id/ngx';\n\nconstructor(private touchId: TouchID) { }\n\n...\n\nthis.touchId.isAvailable()\n  .then(\n    res => console.log('TouchID is available!'),\n    err => console.error('TouchID is not available', err)\n  );\n\nthis.touchId.verifyFingerprint('Scan your fingerprint please')\n  .then(\n    res => console.log('Ok', res),\n    err => console.error('Error', err)\n  );\n```\n\n### Error Codes\n\nThe plugin will reject for various reasons. Your app will most likely need to respond to the cases differently.\n\nHere is a list of some of the error codes:\n\n -  `-1` - Fingerprint scan failed more than 3 times\n -  `-2` or `-128` - User tapped the 'Cancel' button\n -  `-3` - User tapped the 'Enter Passcode' or 'Enter Password' button\n -  `-4` - The scan was cancelled by the system (Home button for example)\n -  `-6` - TouchID is not Available\n -  `-8` - TouchID is locked out from too many tries\n",
+  "platforms": [
+    "iOS"
+  ],
+  "repo": "https://github.com/EddyVerbruggen/cordova-plugin-touch-id",
+  "cordovaPlugin": {
+    "name": "cordova-plugin-touch-id"
+  }
+}

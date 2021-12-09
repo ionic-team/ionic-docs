@@ -1,0 +1,402 @@
+{
+  "filePath": "./src/components/picker/picker.tsx",
+  "encapsulation": "scoped",
+  "tag": "ion-picker",
+  "readme": "# ion-picker\n\nA Picker is a dialog that displays a row of buttons and columns underneath. It appears on top of the app's content, and at the bottom of the viewport.\n\n\n",
+  "docs": "A Picker is a dialog that displays a row of buttons and columns underneath. It appears on top of the app's content, and at the bottom of the viewport.",
+  "docsTags": [
+    {
+      "text": "{\"ios\" | \"md\"} mode - The mode determines which platform styles to use.",
+      "name": "virtualProp"
+    }
+  ],
+  "usage": {},
+  "props": [
+    {
+      "name": "animated",
+      "type": "boolean",
+      "mutable": false,
+      "attr": "animated",
+      "reflectToAttr": false,
+      "docs": "If `true`, the picker will animate.",
+      "docsTags": [],
+      "default": "true",
+      "values": [
+        {
+          "type": "boolean"
+        }
+      ],
+      "optional": false,
+      "required": false
+    },
+    {
+      "name": "backdropDismiss",
+      "type": "boolean",
+      "mutable": false,
+      "attr": "backdrop-dismiss",
+      "reflectToAttr": false,
+      "docs": "If `true`, the picker will be dismissed when the backdrop is clicked.",
+      "docsTags": [],
+      "default": "true",
+      "values": [
+        {
+          "type": "boolean"
+        }
+      ],
+      "optional": false,
+      "required": false
+    },
+    {
+      "name": "buttons",
+      "type": "PickerButton[]",
+      "mutable": false,
+      "reflectToAttr": false,
+      "docs": "Array of buttons to be displayed at the top of the picker.",
+      "docsTags": [],
+      "default": "[]",
+      "values": [
+        {
+          "type": "PickerButton[]"
+        }
+      ],
+      "optional": false,
+      "required": false
+    },
+    {
+      "name": "columns",
+      "type": "PickerColumn[]",
+      "mutable": false,
+      "reflectToAttr": false,
+      "docs": "Array of columns to be displayed in the picker.",
+      "docsTags": [],
+      "default": "[]",
+      "values": [
+        {
+          "type": "PickerColumn[]"
+        }
+      ],
+      "optional": false,
+      "required": false
+    },
+    {
+      "name": "cssClass",
+      "type": "string | string[] | undefined",
+      "mutable": false,
+      "attr": "css-class",
+      "reflectToAttr": false,
+      "docs": "Additional classes to apply for custom CSS. If multiple classes are\nprovided they should be separated by spaces.",
+      "docsTags": [],
+      "values": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "string[]"
+        },
+        {
+          "type": "undefined"
+        }
+      ],
+      "optional": true,
+      "required": false
+    },
+    {
+      "name": "duration",
+      "type": "number",
+      "mutable": false,
+      "attr": "duration",
+      "reflectToAttr": false,
+      "docs": "Number of milliseconds to wait before dismissing the picker.",
+      "docsTags": [],
+      "default": "0",
+      "values": [
+        {
+          "type": "number"
+        }
+      ],
+      "optional": false,
+      "required": false
+    },
+    {
+      "name": "enterAnimation",
+      "type": "((baseEl: any, opts?: any) => Animation) | undefined",
+      "mutable": false,
+      "reflectToAttr": false,
+      "docs": "Animation to use when the picker is presented.",
+      "docsTags": [],
+      "values": [
+        {
+          "type": "((baseEl: any, opts?: any) => Animation)"
+        },
+        {
+          "type": "undefined"
+        }
+      ],
+      "optional": true,
+      "required": false
+    },
+    {
+      "name": "keyboardClose",
+      "type": "boolean",
+      "mutable": false,
+      "attr": "keyboard-close",
+      "reflectToAttr": false,
+      "docs": "If `true`, the keyboard will be automatically dismissed when the overlay is presented.",
+      "docsTags": [],
+      "default": "true",
+      "values": [
+        {
+          "type": "boolean"
+        }
+      ],
+      "optional": false,
+      "required": false
+    },
+    {
+      "name": "leaveAnimation",
+      "type": "((baseEl: any, opts?: any) => Animation) | undefined",
+      "mutable": false,
+      "reflectToAttr": false,
+      "docs": "Animation to use when the picker is dismissed.",
+      "docsTags": [],
+      "values": [
+        {
+          "type": "((baseEl: any, opts?: any) => Animation)"
+        },
+        {
+          "type": "undefined"
+        }
+      ],
+      "optional": true,
+      "required": false
+    },
+    {
+      "name": "mode",
+      "type": "\"ios\" | \"md\"",
+      "mutable": false,
+      "attr": "mode",
+      "reflectToAttr": false,
+      "docs": "The mode determines which platform styles to use.",
+      "docsTags": [],
+      "values": [
+        {
+          "value": "ios",
+          "type": "string"
+        },
+        {
+          "value": "md",
+          "type": "string"
+        }
+      ],
+      "optional": true,
+      "required": false
+    },
+    {
+      "name": "showBackdrop",
+      "type": "boolean",
+      "mutable": false,
+      "attr": "show-backdrop",
+      "reflectToAttr": false,
+      "docs": "If `true`, a backdrop will be displayed behind the picker.",
+      "docsTags": [],
+      "default": "true",
+      "values": [
+        {
+          "type": "boolean"
+        }
+      ],
+      "optional": false,
+      "required": false
+    }
+  ],
+  "methods": [
+    {
+      "name": "dismiss",
+      "returns": {
+        "type": "Promise<boolean>",
+        "docs": ""
+      },
+      "signature": "dismiss(data?: any, role?: string | undefined) => Promise<boolean>",
+      "parameters": [],
+      "docs": "Dismiss the picker overlay after it has been presented.",
+      "docsTags": [
+        {
+          "name": "param",
+          "text": "data Any data to emit in the dismiss events."
+        },
+        {
+          "name": "param",
+          "text": "role The role of the element that is dismissing the picker.\nThis can be useful in a button handler for determining which button was\nclicked to dismiss the picker.\nSome examples include: ``\"cancel\"`, `\"destructive\"`, \"selected\"`, and `\"backdrop\"`."
+        }
+      ]
+    },
+    {
+      "name": "getColumn",
+      "returns": {
+        "type": "Promise<PickerColumn | undefined>",
+        "docs": ""
+      },
+      "signature": "getColumn(name: string) => Promise<PickerColumn | undefined>",
+      "parameters": [],
+      "docs": "Get the column that matches the specified name.",
+      "docsTags": [
+        {
+          "name": "param",
+          "text": "name The name of the column."
+        }
+      ]
+    },
+    {
+      "name": "onDidDismiss",
+      "returns": {
+        "type": "Promise<OverlayEventDetail<T>>",
+        "docs": ""
+      },
+      "signature": "onDidDismiss<T = any>() => Promise<OverlayEventDetail<T>>",
+      "parameters": [],
+      "docs": "Returns a promise that resolves when the picker did dismiss.",
+      "docsTags": []
+    },
+    {
+      "name": "onWillDismiss",
+      "returns": {
+        "type": "Promise<OverlayEventDetail<T>>",
+        "docs": ""
+      },
+      "signature": "onWillDismiss<T = any>() => Promise<OverlayEventDetail<T>>",
+      "parameters": [],
+      "docs": "Returns a promise that resolves when the picker will dismiss.",
+      "docsTags": []
+    },
+    {
+      "name": "present",
+      "returns": {
+        "type": "Promise<void>",
+        "docs": ""
+      },
+      "signature": "present() => Promise<void>",
+      "parameters": [],
+      "docs": "Present the picker overlay after it has been created.",
+      "docsTags": []
+    }
+  ],
+  "events": [
+    {
+      "event": "ionPickerDidDismiss",
+      "detail": "OverlayEventDetail<any>",
+      "bubbles": true,
+      "cancelable": true,
+      "composed": true,
+      "docs": "Emitted after the picker has dismissed.",
+      "docsTags": []
+    },
+    {
+      "event": "ionPickerDidPresent",
+      "detail": "void",
+      "bubbles": true,
+      "cancelable": true,
+      "composed": true,
+      "docs": "Emitted after the picker has presented.",
+      "docsTags": []
+    },
+    {
+      "event": "ionPickerWillDismiss",
+      "detail": "OverlayEventDetail<any>",
+      "bubbles": true,
+      "cancelable": true,
+      "composed": true,
+      "docs": "Emitted before the picker has dismissed.",
+      "docsTags": []
+    },
+    {
+      "event": "ionPickerWillPresent",
+      "detail": "void",
+      "bubbles": true,
+      "cancelable": true,
+      "composed": true,
+      "docs": "Emitted before the picker has presented.",
+      "docsTags": []
+    }
+  ],
+  "listeners": [],
+  "styles": [
+    {
+      "name": "--backdrop-opacity",
+      "annotation": "prop",
+      "docs": "Opacity of the backdrop"
+    },
+    {
+      "name": "--background",
+      "annotation": "prop",
+      "docs": "Background of the picker"
+    },
+    {
+      "name": "--background-rgb",
+      "annotation": "prop",
+      "docs": "Background of the picker in rgb format"
+    },
+    {
+      "name": "--border-color",
+      "annotation": "prop",
+      "docs": "Border color of the picker"
+    },
+    {
+      "name": "--border-radius",
+      "annotation": "prop",
+      "docs": "Border radius of the picker"
+    },
+    {
+      "name": "--border-style",
+      "annotation": "prop",
+      "docs": "Border style of the picker"
+    },
+    {
+      "name": "--border-width",
+      "annotation": "prop",
+      "docs": "Border width of the picker"
+    },
+    {
+      "name": "--height",
+      "annotation": "prop",
+      "docs": "Height of the picker"
+    },
+    {
+      "name": "--max-height",
+      "annotation": "prop",
+      "docs": "Maximum height of the picker"
+    },
+    {
+      "name": "--max-width",
+      "annotation": "prop",
+      "docs": "Maximum width of the picker"
+    },
+    {
+      "name": "--min-height",
+      "annotation": "prop",
+      "docs": "Minimum height of the picker"
+    },
+    {
+      "name": "--min-width",
+      "annotation": "prop",
+      "docs": "Minimum width of the picker"
+    },
+    {
+      "name": "--width",
+      "annotation": "prop",
+      "docs": "Width of the picker"
+    }
+  ],
+  "slots": [],
+  "parts": [],
+  "dependents": [],
+  "dependencies": [
+    "ion-backdrop",
+    "ion-picker-column"
+  ],
+  "dependencyGraph": {
+    "ion-picker": [
+      "ion-backdrop",
+      "ion-picker-column"
+    ]
+  }
+}

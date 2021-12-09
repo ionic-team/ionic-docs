@@ -1,0 +1,13 @@
+{
+  "packageName": "@ionic-native/uid",
+  "displayName": "Uid",
+  "description": "\nGet unique identifiers: UUID, IMEI, IMSI, ICCID and MAC.\n",
+  "usage": "\n```typescript\nimport { Uid } from '@ionic-native/uid/ngx';\nimport { AndroidPermissions } from '@ionic-native/android-permissions/ngx';\n\nconstructor(private uid: Uid, private androidPermissions: AndroidPermissions) { }\n\n\nasync getImei() {\n const { hasPermission } = await this.androidPermissions.checkPermission(\n   this.androidPermissions.PERMISSION.READ_PHONE_STATE\n );\n\n if (!hasPermission) {\n   const result = await this.androidPermissions.requestPermission(\n     this.androidPermissions.PERMISSION.READ_PHONE_STATE\n   );\n\n   if (!result.hasPermission) {\n     throw new Error('Permissions required');\n   }\n\n   // ok, a user gave us permission, we can get him identifiers after restart app\n   return;\n }\n\n  return this.uid.IMEI\n}\n```\n",
+  "platforms": [
+    "Android"
+  ],
+  "repo": "https://github.com/lionelhe/cordova-plugin-uid",
+  "cordovaPlugin": {
+    "name": "cordova-plugin-uid"
+  }
+}

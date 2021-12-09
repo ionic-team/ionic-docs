@@ -1,0 +1,15 @@
+{
+  "packageName": "@ionic-native/base64-to-gallery",
+  "displayName": "Base64 To Gallery",
+  "description": "This plugin allows you to save base64 data as a png image into the device",
+  "usage": "\n```typescript\nimport { Base64ToGallery } from '@ionic-native/base64-to-gallery/ngx';\n\nconstructor(private base64ToGallery: Base64ToGallery) { }\n\n\n...\n\n\nthis.base64ToGallery.base64ToGallery(base64Data, { prefix: '_img' }).then(\n  res => console.log('Saved image to gallery ', res),\n  err => console.log('Error saving image to gallery ', err)\n);\n```",
+  "platforms": [
+    "Android",
+    "iOS",
+    "Windows Phone 8"
+  ],
+  "repo": "https://github.com/Nexxa/cordova-base64-to-gallery",
+  "cordovaPlugin": {
+    "name": "cordova-base64-to-gallery"
+  }
+}

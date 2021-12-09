@@ -1,0 +1,13 @@
+{
+  "packageName": "@ionic-native/siri-shortcuts",
+  "displayName": "Siri Shortcuts",
+  "description": "\nThis plugin only works when your app is built with XCode 10. Shortcuts will only appear on iOS-versions >= 12.0\n\nThis plugin enables the use of Siri shortcuts in Cordova. Siri Shortcuts enable the user to perform certain actions by adding them to Siri.\nAfter you have donated a shortcut to Siri, it will appear in the settings menu, after which the user is able to add the action. You can check\nwhether the user launched your app through a shortcut by calling `getActivatedShortcut()` when the app is resumed. It will return `null`\nif it has not been launched by Siri, and if it did, it will return an object with `SiriShortcut` properties.\n",
+  "usage": "\n```typescript\nimport { SiriShortcuts } from '@ionic-native/siri-shortcuts/ngx';\n\n\nconstructor(private siriShortcuts: SiriShortcuts) { }\n\n...\n\n\nthis.siriShortcuts.donate({\n      persistentIdentifier: 'open-my-app',\n      title: 'Open my app',\n      suggestedInvocationPhrase: 'Open my app',\n      userInfo: { username: 'username' },\n      isEligibleForSearch: true,\n      isEligibleForPrediction: true,\n  })\n  .then(() => console.log('Shortcut donated.'))\n  .catch((error: any) => console.error(error));\n\nthis.siriShortcuts.present({\n      persistentIdentifier: 'open-my-app',\n      title: 'Open my app',\n      suggestedInvocationPhrase: 'Open my app',\n      userInfo: { username: 'username' },\n  })\n  .then(() => console.log('Shortcut added.'))\n  .catch((error: any) => console.error(error));\n\nthis.siriShortcuts.remove('open-my-app')\n  .then(() => console.log('Shortcut removed.'))\n  .catch((error: any) => console.error(error));\n\nthis.siriShortcuts.removeAll()\n  .then(() => console.log('All shortcuts removed removed.'))\n  .catch((error: any) => console.error(error));\n\nthis.siriShortcuts.getActivatedShortcut()\n  .then((data: SiriShortcut|null) => console.log(data))\n  .catch((error: any) => console.error(error));\n\n```\n",
+  "platforms": [
+    "iOS"
+  ],
+  "repo": "https://github.com/bartwesselink/cordova-plugin-siri-shortcuts",
+  "cordovaPlugin": {
+    "name": "cordova-plugin-siri-shortcuts"
+  }
+}

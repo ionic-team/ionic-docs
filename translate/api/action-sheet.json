@@ -1,0 +1,452 @@
+{
+  "filePath": "./src/components/action-sheet/action-sheet.tsx",
+  "encapsulation": "scoped",
+  "tag": "ion-action-sheet",
+  "readme": "# ion-action-sheet\n\nAn Action Sheet is a dialog that displays a set of options. It appears on top of the app's content, and must be manually dismissed by the user before they can resume interaction with the app. Destructive options are made obvious in `ios` mode. There are multiple ways to dismiss the action sheet, including tapping the backdrop or hitting the escape key on desktop.\n\n## Buttons\n\nA button's `role` property can either be `destructive` or `cancel`. Buttons without a role property will have the default look for the platform. Buttons with the `cancel` role will always load as the bottom button, no matter where they are in the array. All other buttons will be displayed in the order they have been added to the `buttons` array. Note: We recommend that `destructive` buttons are always the first button in the array, making them the top button. Additionally, if the action sheet is dismissed by tapping the backdrop, then it will fire the handler from the button with the cancel role.\n\n## Customization\n\nAction Sheet uses scoped encapsulation, which means it will automatically scope its CSS by appending each of the styles with an additional class at runtime. Overriding scoped selectors in CSS requires a [higher specificity](https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity) selector.\n\nWe recommend passing a custom class to `cssClass` in the `create` method and using that to add custom styles to the host and inner elements. This property can also accept multiple classes separated by spaces. View the [Usage](#usage) section for an example of how to pass a class using `cssClass`.\n\n```css\n/* DOES NOT WORK - not specific enough */\n.action-sheet-group {\n  background: #e5e5e5;\n}\n\n/* Works - pass \"my-custom-class\" in cssClass to increase specificity */\n.my-custom-class .action-sheet-group {\n  background: #e5e5e5;\n}\n```\n\nAny of the defined [CSS Custom Properties](#css-custom-properties) can be used to style the Action Sheet without needing to target individual elements:\n\n```css\n.my-custom-class {\n  --background: #e5e5e5;\n}\n```\n\n> If you are building an Ionic Angular app, the styles need to be added to a global stylesheet file. Read [Style Placement](#style-placement) in the Angular section below for more information.\n\n",
+  "docs": "An Action Sheet is a dialog that displays a set of options. It appears on top of the app's content, and must be manually dismissed by the user before they can resume interaction with the app. Destructive options are made obvious in `ios` mode. There are multiple ways to dismiss the action sheet, including tapping the backdrop or hitting the escape key on desktop.",
+  "docsTags": [
+    {
+      "text": "{\"ios\" | \"md\"} mode - The mode determines which platform styles to use.",
+      "name": "virtualProp"
+    }
+  ],
+  "usage": {
+    "angular": "```typescript\nimport { Component } from '@angular/core';\nimport { ActionSheetController } from '@ionic/angular';\n\n@Component({\n  selector: 'action-sheet-example',\n  templateUrl: 'action-sheet-example.html',\n  styleUrls: ['./action-sheet-example.css'],\n})\nexport class ActionSheetExample {\n\n  constructor(public actionSheetController: ActionSheetController) {}\n\n  async presentActionSheet() {\n    const actionSheet = await this.actionSheetController.create({\n      header: 'Albums',\n      cssClass: 'my-custom-class',\n      buttons: [{\n        text: 'Delete',\n        role: 'destructive',\n        icon: 'trash',\n        handler: () => {\n          console.log('Delete clicked');\n        }\n      }, {\n        text: 'Share',\n        icon: 'share',\n        handler: () => {\n          console.log('Share clicked');\n        }\n      }, {\n        text: 'Play (open modal)',\n        icon: 'caret-forward-circle',\n        handler: () => {\n          console.log('Play clicked');\n        }\n      }, {\n        text: 'Favorite',\n        icon: 'heart',\n        handler: () => {\n          console.log('Favorite clicked');\n        }\n      }, {\n        text: 'Cancel',\n        icon: 'close',\n        role: 'cancel',\n        handler: () => {\n          console.log('Cancel clicked');\n        }\n      }]\n    });\n    await actionSheet.present();\n  }\n\n}\n```\n\n\n### Style Placement\n\nIn Angular, the CSS of a specific page is scoped only to elements of that page. Even though the Action Sheet can be presented from within a page, the `ion-action-sheet` element is appended outside of the current page. This means that any custom styles need to go in a global stylesheet file. In an Ionic Angular starter this can be the `src/global.scss` file or you can register a new global style file by [adding to the `styles` build option in `angular.json`](https://angular.io/guide/workspace-config#style-script-config).\n",
+    "javascript": "```javascript\nasync function presentActionSheet() {\n  const actionSheet = document.createElement('ion-action-sheet');\n\n  actionSheet.header = 'Albums';\n  actionSheet.cssClass = 'my-custom-class';\n  actionSheet.buttons = [{\n    text: 'Delete',\n    role: 'destructive',\n    icon: 'trash',\n    handler: () => {\n      console.log('Delete clicked');\n    }\n  }, {\n    text: 'Share',\n    icon: 'share',\n    handler: () => {\n      console.log('Share clicked');\n    }\n  }, {\n    text: 'Play (open modal)',\n    icon: 'caret-forward-circle',\n    handler: () => {\n      console.log('Play clicked');\n    }\n  }, {\n    text: 'Favorite',\n    icon: 'heart',\n    handler: () => {\n      console.log('Favorite clicked');\n    }\n  }, {\n    text: 'Cancel',\n    icon: 'close',\n    role: 'cancel',\n    handler: () => {\n      console.log('Cancel clicked');\n    }\n  }];\n  document.body.appendChild(actionSheet);\n  return actionSheet.present();\n}\n```\n",
+    "react": "```tsx\nimport React, { useState } from 'react';\nimport { IonActionSheet, IonContent, IonButton } from '@ionic/react';\nimport { trash, share, caretForwardCircle, heart, close } from 'ionicons/icons';\n\nexport const ActionSheetExample: React.FC = () => {\n  const [showActionSheet, setShowActionSheet] = useState(false);\n\n  return (\n    <IonContent>\n      <IonButton onClick={() => setShowActionSheet(true)} expand=\"block\">\n        Show Action Sheet\n      </IonButton>\n      <IonActionSheet\n        isOpen={showActionSheet}\n        onDidDismiss={() => setShowActionSheet(false)}\n        cssClass='my-custom-class'\n        buttons={[{\n          text: 'Delete',\n          role: 'destructive',\n          icon: trash,\n          handler: () => {\n            console.log('Delete clicked');\n          }\n        }, {\n          text: 'Share',\n          icon: share,\n          handler: () => {\n            console.log('Share clicked');\n          }\n        }, {\n          text: 'Play (open modal)',\n          icon: caretForwardCircle,\n          handler: () => {\n            console.log('Play clicked');\n          }\n        }, {\n          text: 'Favorite',\n          icon: heart,\n          handler: () => {\n            console.log('Favorite clicked');\n          }\n        }, {\n          text: 'Cancel',\n          icon: close,\n          role: 'cancel',\n          handler: () => {\n            console.log('Cancel clicked');\n          }\n        }]}\n      >\n      </IonActionSheet>\n    </IonContent>\n  );\n}\n```\n",
+    "stencil": "```tsx\nimport { Component, h } from '@stencil/core';\n\nimport { actionSheetController } from '@ionic/core';\n\n@Component({\n  tag: 'action-sheet-example',\n  styleUrl: 'action-sheet-example.css'\n})\nexport class ActionSheetExample {\n  async presentActionSheet() {\n    const actionSheet = await actionSheetController.create({\n      header: 'Albums',\n      cssClass: 'my-custom-class',\n      buttons: [{\n        text: 'Delete',\n        role: 'destructive',\n        icon: 'trash',\n        handler: () => {\n          console.log('Delete clicked');\n        }\n      }, {\n        text: 'Share',\n        icon: 'share',\n        handler: () => {\n          console.log('Share clicked');\n        }\n      }, {\n        text: 'Play (open modal)',\n        icon: 'caret-forward-circle',\n        handler: () => {\n          console.log('Play clicked');\n        }\n      }, {\n        text: 'Favorite',\n        icon: 'heart',\n        handler: () => {\n          console.log('Favorite clicked');\n        }\n      }, {\n        text: 'Cancel',\n        icon: 'close',\n        role: 'cancel',\n        handler: () => {\n          console.log('Cancel clicked');\n        }\n      }]\n    });\n    await actionSheet.present();\n  }\n\n  render() {\n    return [\n      <ion-content>\n        <ion-button onClick={() => this.presentActionSheet()}>Present Action Sheet</ion-button>\n      </ion-content>\n    ];\n  }\n}\n```",
+    "vue": "```html\n<template>\n  <ion-button @click=\"presentActionSheet\">Show Action Sheet</ion-button>\n</template>\n\n<script>\nimport { IonButton, actionSheetController } from '@ionic/vue';\nimport { defineComponent } from 'vue';\nimport { caretForwardCircle, close, heart, trash, share } from 'ionicons/icons';\n\nexport default defineComponent({\n  components: { IonButton },\n  methods: {\n    async presentActionSheet() {\n      const actionSheet = await actionSheetController\n        .create({\n          header: 'Albums',\n          cssClass: 'my-custom-class',\n          buttons: [\n            {\n              text: 'Delete',\n              role: 'destructive',\n              icon: trash,\n              handler: () => {\n                console.log('Delete clicked')\n              },\n            },\n            {\n              text: 'Share',\n              icon: share,\n              handler: () => {\n                console.log('Share clicked')\n              },\n            },\n            {\n              text: 'Play (open modal)',\n              icon: caretForwardCircle,\n              handler: () => {\n                console.log('Play clicked')\n              },\n            },\n            {\n              text: 'Favorite',\n              icon: heart,\n              handler: () => {\n                console.log('Favorite clicked')\n              },\n            },\n            {\n              text: 'Cancel',\n              icon: close,\n              role: 'cancel',\n              handler: () => {\n                console.log('Cancel clicked')\n              },\n            },\n          ],\n        });\n      return actionSheet.present();\n    },\n  },\n});\n</script>\n```\n\nDevelopers can also use this component directly in their template:\n\n```html\n<template>\n  <ion-button @click=\"setOpen(true)\">Show Action Sheet</ion-button>\n  <ion-action-sheet\n    :is-open=\"isOpenRef\"\n    header=\"Albums\"\n    css-class=\"my-custom-class\"\n    :buttons=\"buttons\"\n    @onDidDismiss=\"setOpen(false)\"\n  >\n  </ion-action-sheet>\n</template>\n\n<script>\nimport { IonActionSheet, IonButton } from '@ionic/vue';\nimport { defineComponent, ref } from 'vue';\nimport { caretForwardCircle, close, heart, trash, share } from 'ionicons/icons';\n\nexport default defineComponent({\n  components: { IonActionSheet, IonButton },\n  setup() {\n    const isOpenRef = ref(false);\n    const setOpen = (state: boolean) => isOpenRef.value = state;\n    const buttons = [\n      {\n        text: 'Delete',\n        role: 'destructive',\n        icon: trash,\n        handler: () => {\n          console.log('Delete clicked')\n        },\n      },\n      {\n        text: 'Share',\n        icon: share,\n        handler: () => {\n          console.log('Share clicked')\n        },\n      },\n      {\n        text: 'Play (open modal)',\n        icon: caretForwardCircle,\n        handler: () => {\n          console.log('Play clicked')\n        },\n      },\n      {\n        text: 'Favorite',\n        icon: heart,\n        handler: () => {\n          console.log('Favorite clicked')\n        },\n      },\n      {\n        text: 'Cancel',\n        icon: close,\n        role: 'cancel',\n        handler: () => {\n          console.log('Cancel clicked')\n        },\n      },\n    ];\n    \n    return { buttons, isOpenRef, setOpen }\n  }\n});\n</script>\n```\n"
+  },
+  "props": [
+    {
+      "name": "animated",
+      "type": "boolean",
+      "mutable": false,
+      "attr": "animated",
+      "reflectToAttr": false,
+      "docs": "If `true`, the action sheet will animate.",
+      "docsTags": [],
+      "default": "true",
+      "values": [
+        {
+          "type": "boolean"
+        }
+      ],
+      "optional": false,
+      "required": false
+    },
+    {
+      "name": "backdropDismiss",
+      "type": "boolean",
+      "mutable": false,
+      "attr": "backdrop-dismiss",
+      "reflectToAttr": false,
+      "docs": "If `true`, the action sheet will be dismissed when the backdrop is clicked.",
+      "docsTags": [],
+      "default": "true",
+      "values": [
+        {
+          "type": "boolean"
+        }
+      ],
+      "optional": false,
+      "required": false
+    },
+    {
+      "name": "buttons",
+      "type": "(string | ActionSheetButton)[]",
+      "mutable": false,
+      "reflectToAttr": false,
+      "docs": "An array of buttons for the action sheet.",
+      "docsTags": [],
+      "default": "[]",
+      "values": [
+        {
+          "type": "(string"
+        },
+        {
+          "type": "ActionSheetButton)[]"
+        }
+      ],
+      "optional": false,
+      "required": false
+    },
+    {
+      "name": "cssClass",
+      "type": "string | string[] | undefined",
+      "mutable": false,
+      "attr": "css-class",
+      "reflectToAttr": false,
+      "docs": "Additional classes to apply for custom CSS. If multiple classes are\nprovided they should be separated by spaces.",
+      "docsTags": [],
+      "values": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "string[]"
+        },
+        {
+          "type": "undefined"
+        }
+      ],
+      "optional": true,
+      "required": false
+    },
+    {
+      "name": "enterAnimation",
+      "type": "((baseEl: any, opts?: any) => Animation) | undefined",
+      "mutable": false,
+      "reflectToAttr": false,
+      "docs": "Animation to use when the action sheet is presented.",
+      "docsTags": [],
+      "values": [
+        {
+          "type": "((baseEl: any, opts?: any) => Animation)"
+        },
+        {
+          "type": "undefined"
+        }
+      ],
+      "optional": true,
+      "required": false
+    },
+    {
+      "name": "header",
+      "type": "string | undefined",
+      "mutable": false,
+      "attr": "header",
+      "reflectToAttr": false,
+      "docs": "Title for the action sheet.",
+      "docsTags": [],
+      "values": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "undefined"
+        }
+      ],
+      "optional": true,
+      "required": false
+    },
+    {
+      "name": "keyboardClose",
+      "type": "boolean",
+      "mutable": false,
+      "attr": "keyboard-close",
+      "reflectToAttr": false,
+      "docs": "If `true`, the keyboard will be automatically dismissed when the overlay is presented.",
+      "docsTags": [],
+      "default": "true",
+      "values": [
+        {
+          "type": "boolean"
+        }
+      ],
+      "optional": false,
+      "required": false
+    },
+    {
+      "name": "leaveAnimation",
+      "type": "((baseEl: any, opts?: any) => Animation) | undefined",
+      "mutable": false,
+      "reflectToAttr": false,
+      "docs": "Animation to use when the action sheet is dismissed.",
+      "docsTags": [],
+      "values": [
+        {
+          "type": "((baseEl: any, opts?: any) => Animation)"
+        },
+        {
+          "type": "undefined"
+        }
+      ],
+      "optional": true,
+      "required": false
+    },
+    {
+      "name": "mode",
+      "type": "\"ios\" | \"md\"",
+      "mutable": false,
+      "attr": "mode",
+      "reflectToAttr": false,
+      "docs": "The mode determines which platform styles to use.",
+      "docsTags": [],
+      "values": [
+        {
+          "value": "ios",
+          "type": "string"
+        },
+        {
+          "value": "md",
+          "type": "string"
+        }
+      ],
+      "optional": true,
+      "required": false
+    },
+    {
+      "name": "subHeader",
+      "type": "string | undefined",
+      "mutable": false,
+      "attr": "sub-header",
+      "reflectToAttr": false,
+      "docs": "Subtitle for the action sheet.",
+      "docsTags": [],
+      "values": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "undefined"
+        }
+      ],
+      "optional": true,
+      "required": false
+    },
+    {
+      "name": "translucent",
+      "type": "boolean",
+      "mutable": false,
+      "attr": "translucent",
+      "reflectToAttr": false,
+      "docs": "If `true`, the action sheet will be translucent.\nOnly applies when the mode is `\"ios\"` and the device supports\n[`backdrop-filter`](https://developer.mozilla.org/en-US/docs/Web/CSS/backdrop-filter#Browser_compatibility).",
+      "docsTags": [],
+      "default": "false",
+      "values": [
+        {
+          "type": "boolean"
+        }
+      ],
+      "optional": false,
+      "required": false
+    }
+  ],
+  "methods": [
+    {
+      "name": "dismiss",
+      "returns": {
+        "type": "Promise<boolean>",
+        "docs": ""
+      },
+      "signature": "dismiss(data?: any, role?: string | undefined) => Promise<boolean>",
+      "parameters": [],
+      "docs": "Dismiss the action sheet overlay after it has been presented.",
+      "docsTags": [
+        {
+          "name": "param",
+          "text": "data Any data to emit in the dismiss events."
+        },
+        {
+          "name": "param",
+          "text": "role The role of the element that is dismissing the action sheet.\nThis can be useful in a button handler for determining which button was\nclicked to dismiss the action sheet.\nSome examples include: ``\"cancel\"`, `\"destructive\"`, \"selected\"`, and `\"backdrop\"`."
+        }
+      ]
+    },
+    {
+      "name": "onDidDismiss",
+      "returns": {
+        "type": "Promise<OverlayEventDetail<T>>",
+        "docs": ""
+      },
+      "signature": "onDidDismiss<T = any>() => Promise<OverlayEventDetail<T>>",
+      "parameters": [],
+      "docs": "Returns a promise that resolves when the action sheet did dismiss.",
+      "docsTags": []
+    },
+    {
+      "name": "onWillDismiss",
+      "returns": {
+        "type": "Promise<OverlayEventDetail<T>>",
+        "docs": ""
+      },
+      "signature": "onWillDismiss<T = any>() => Promise<OverlayEventDetail<T>>",
+      "parameters": [],
+      "docs": "Returns a promise that resolves when the action sheet will dismiss.",
+      "docsTags": []
+    },
+    {
+      "name": "present",
+      "returns": {
+        "type": "Promise<void>",
+        "docs": ""
+      },
+      "signature": "present() => Promise<void>",
+      "parameters": [],
+      "docs": "Present the action sheet overlay after it has been created.",
+      "docsTags": []
+    }
+  ],
+  "events": [
+    {
+      "event": "ionActionSheetDidDismiss",
+      "detail": "OverlayEventDetail<any>",
+      "bubbles": true,
+      "cancelable": true,
+      "composed": true,
+      "docs": "Emitted after the alert has dismissed.",
+      "docsTags": []
+    },
+    {
+      "event": "ionActionSheetDidPresent",
+      "detail": "void",
+      "bubbles": true,
+      "cancelable": true,
+      "composed": true,
+      "docs": "Emitted after the alert has presented.",
+      "docsTags": []
+    },
+    {
+      "event": "ionActionSheetWillDismiss",
+      "detail": "OverlayEventDetail<any>",
+      "bubbles": true,
+      "cancelable": true,
+      "composed": true,
+      "docs": "Emitted before the alert has dismissed.",
+      "docsTags": []
+    },
+    {
+      "event": "ionActionSheetWillPresent",
+      "detail": "void",
+      "bubbles": true,
+      "cancelable": true,
+      "composed": true,
+      "docs": "Emitted before the alert has presented.",
+      "docsTags": []
+    }
+  ],
+  "listeners": [],
+  "styles": [
+    {
+      "name": "--backdrop-opacity",
+      "annotation": "prop",
+      "docs": "Opacity of the backdrop"
+    },
+    {
+      "name": "--background",
+      "annotation": "prop",
+      "docs": "Background of the action sheet group"
+    },
+    {
+      "name": "--button-background",
+      "annotation": "prop",
+      "docs": "Background of the action sheet button"
+    },
+    {
+      "name": "--button-background-activated",
+      "annotation": "prop",
+      "docs": "Background of the action sheet button when pressed. Note: setting this will interfere with the Material Design ripple."
+    },
+    {
+      "name": "--button-background-activated-opacity",
+      "annotation": "prop",
+      "docs": "Opacity of the action sheet button background when pressed"
+    },
+    {
+      "name": "--button-background-focused",
+      "annotation": "prop",
+      "docs": "Background of the action sheet button when tabbed to"
+    },
+    {
+      "name": "--button-background-focused-opacity",
+      "annotation": "prop",
+      "docs": "Opacity of the action sheet button background when tabbed to"
+    },
+    {
+      "name": "--button-background-hover",
+      "annotation": "prop",
+      "docs": "Background of the action sheet button on hover"
+    },
+    {
+      "name": "--button-background-hover-opacity",
+      "annotation": "prop",
+      "docs": "Opacity of the action sheet button background on hover"
+    },
+    {
+      "name": "--button-background-selected",
+      "annotation": "prop",
+      "docs": "Background of the selected action sheet button"
+    },
+    {
+      "name": "--button-background-selected-opacity",
+      "annotation": "prop",
+      "docs": "Opacity of the selected action sheet button background"
+    },
+    {
+      "name": "--button-color",
+      "annotation": "prop",
+      "docs": "Color of the action sheet button"
+    },
+    {
+      "name": "--button-color-activated",
+      "annotation": "prop",
+      "docs": "Color of the action sheet button when pressed"
+    },
+    {
+      "name": "--button-color-focused",
+      "annotation": "prop",
+      "docs": "Color of the action sheet button when tabbed to"
+    },
+    {
+      "name": "--button-color-hover",
+      "annotation": "prop",
+      "docs": "Color of the action sheet button on hover"
+    },
+    {
+      "name": "--button-color-selected",
+      "annotation": "prop",
+      "docs": "Color of the selected action sheet button"
+    },
+    {
+      "name": "--color",
+      "annotation": "prop",
+      "docs": "Color of the action sheet text"
+    },
+    {
+      "name": "--height",
+      "annotation": "prop",
+      "docs": "height of the action sheet"
+    },
+    {
+      "name": "--max-height",
+      "annotation": "prop",
+      "docs": "Maximum height of the action sheet"
+    },
+    {
+      "name": "--max-width",
+      "annotation": "prop",
+      "docs": "Maximum width of the action sheet"
+    },
+    {
+      "name": "--min-height",
+      "annotation": "prop",
+      "docs": "Minimum height of the action sheet"
+    },
+    {
+      "name": "--min-width",
+      "annotation": "prop",
+      "docs": "Minimum width of the action sheet"
+    },
+    {
+      "name": "--width",
+      "annotation": "prop",
+      "docs": "Width of the action sheet"
+    }
+  ],
+  "slots": [],
+  "parts": [],
+  "dependents": [],
+  "dependencies": [
+    "ion-backdrop",
+    "ion-icon",
+    "ion-ripple-effect"
+  ],
+  "dependencyGraph": {
+    "ion-action-sheet": [
+      "ion-backdrop",
+      "ion-icon",
+      "ion-ripple-effect"
+    ]
+  }
+}

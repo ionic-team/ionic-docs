@@ -1,0 +1,1 @@
+Like running `cordova compile` directly, but provides friendly checks.

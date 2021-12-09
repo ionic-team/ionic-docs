@@ -1,0 +1,69 @@
+{
+  "name": "ionic ssh generate",
+  "namespace": [
+    "ionic",
+    "ssh"
+  ],
+  "summary": "Generates a private and public SSH key pair",
+  "description": "",
+  "footnotes": [],
+  "groups": [],
+  "exampleCommands": [],
+  "aliases": [
+    "ionic ssh g"
+  ],
+  "inputs": [
+    {
+      "name": "key-path",
+      "summary": "Destination of private key file",
+      "required": false
+    }
+  ],
+  "options": [
+    {
+      "name": "type",
+      "type": "string",
+      "summary": "The type of key to generate: `ecdsa`, `ed25519`, `rsa`",
+      "default": "rsa",
+      "groups": [
+        "advanced"
+      ],
+      "aliases": [
+        "t"
+      ],
+      "spec": {
+        "value": "type"
+      }
+    },
+    {
+      "name": "bits",
+      "type": "string",
+      "summary": "Number of bits in the key",
+      "default": "2048",
+      "groups": [
+        "advanced"
+      ],
+      "aliases": [
+        "b"
+      ],
+      "spec": {
+        "value": "bits"
+      }
+    },
+    {
+      "name": "annotation",
+      "type": "string",
+      "summary": "Annotation (comment) in public key. Your Ionic email address will be used",
+      "groups": [
+        "advanced"
+      ],
+      "aliases": [
+        "C"
+      ],
+      "spec": {
+        "value": "annotation"
+      }
+    }
+  ],
+  "type": "global"
+}

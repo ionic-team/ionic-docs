@@ -1,0 +1,13 @@
+{
+  "packageName": "@ionic-native/admob-plus",
+  "displayName": "AdMob Plus",
+  "description": "\nAdMob Plus is the successor of cordova-plugin-admob-free, which provides a cleaner API and build with modern tools.\n",
+  "platforms": [
+    "Android",
+    "iOS"
+  ],
+  "repo": "https://github.com/admob-plus/admob-plus",
+  "cordovaPlugin": {
+    "name": "cordova-admob-plus"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "packageName": "@ionic-native/mlkit-translate",
+  "displayName": "MLKitTranslate",
+  "description": "\nPlugin that implements MLKit Translation and Language Identification features.\n",
+  "usage": "\n```typescript\nimport { MLKitTranslate } from '@ionic-native/ml-kit-translate';\n\n\nconstructor(private mlkitTranslate: MLKitTranslate) { }\n\n...\n\nthis.mlkitTranslate.translate('Hello', 'en', 'es')\n  .then((resultText: string) => console.log(res))\n  .catch((error: string) => console.error(error));\n\n@interfaces\nLanguageModel\n```\n",
+  "platforms": [
+    "Android",
+    "iOS"
+  ],
+  "repo": "https://github.com/rigelglen/cordova-plugin-mlkit-translate",
+  "cordovaPlugin": {
+    "name": "cordova-plugin-mlkit-translate"
+  }
+}

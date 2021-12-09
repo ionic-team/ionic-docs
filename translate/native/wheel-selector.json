@@ -1,0 +1,14 @@
+{
+  "packageName": "@ionic-native/wheel-selector",
+  "displayName": "WheelSelector Plugin",
+  "description": "Native wheel selector for Cordova (Android/iOS).\n",
+  "usage": "\n```\nimport { WheelSelector } from '@ionic-native/wheel-selector/ngx';\n\n\nconstructor(private selector: WheelSelector) { }\n\n...\n\nconst jsonData = {\n  numbers: [\n   { description: \"1\" },\n    { description: \"2\" },\n    { description: \"3\" }\n  ],\n  fruits: [\n    { description: \"Apple\" },\n    { description: \"Banana\" },\n    { description: \"Tangerine\" }\n  ],\n  firstNames: [\n    { name: \"Fred\", id: '1' },\n    { name: \"Jane\", id: '2' },\n    { name: \"Bob\", id: '3' },\n    { name: \"Earl\", id: '4' },\n    { name: \"Eunice\", id: '5' }\n  ],\n  lastNames: [\n    { name: \"Johnson\", id: '100' },\n    { name: \"Doe\", id: '101' },\n    { name: \"Kinishiwa\", id: '102' },\n    { name: \"Gordon\", id: '103' },\n    { name: \"Smith\", id: '104' }\n  ]\n}\n\n...\n\n// basic number selection, index is always returned in the result\n selectANumber() {\n   this.selector.show({\n     title: \"How Many?\",\n     items: [\n       this.jsonData.numbers\n     ],\n   }).then(\n     result => {\n       console.log(result[0].description + ' at index: ' + result[0].index);\n     },\n     err => console.log('Error: ', err)\n     );\n }\n\n ...\n\n // basic selection, setting initial displayed default values: '3' 'Banana'\n selectFruit() {\n   this.selector.show({\n     title: \"How Much?\",\n     items: [\n       this.jsonData.numbers, this.jsonData.fruits\n     ],\n     positiveButtonText: \"Ok\",\n     negativeButtonText: \"Nope\",\n     defaultItems: [\n \t  {index:0, value: this.jsonData.numbers[2].description},\n \t  {index: 1, value: this.jsonData.fruits[3].description}\n \t]\n   }).then(\n     result => {\n       console.log(result[0].description + ' ' + result[1].description);\n     },\n     err => console.log('Error: ' + JSON.stringify(err))\n     );\n }\n\n ...\n\n // more complex as overrides which key to display\n // then retrieve properties from original data\n selectNamesUsingDisplayKey() {\n   this.selector.show({\n     title: \"Who?\",\n     items: [\n       this.jsonData.firstNames, this.jsonData.lastNames\n     ],\n     displayKey: 'name',\n     defaultItems: [\n \t  {index:0, value: this.jsonData.firstNames[2].name},\n       {index: 0, value: this.jsonData.lastNames[3].name}\n     ]\n   }).then(\n     result => {\n       console.log(result[0].name + ' (id= ' + this.jsonData.firstNames[result[0].index].id + '), ' +\n         result[1].name + ' (id=' + this.jsonData.lastNames[result[1].index].id + ')');\n     },\n     err => console.log('Error: ' + JSON.stringify(err))\n     );\n }\n\n```\n",
+  "platforms": [
+    "Android",
+    "iOS"
+  ],
+  "repo": "https://github.com/jasonmamy/cordova-wheel-selector-plugin",
+  "cordovaPlugin": {
+    "name": "cordova-wheel-selector-plugin"
+  }
+}

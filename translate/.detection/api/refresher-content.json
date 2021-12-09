@@ -1,0 +1,141 @@
+{
+  "filePath": "./src/components/refresher-content/refresher-content.tsx",
+  "encapsulation": "none",
+  "tag": "ion-refresher-content",
+  "readme": "# ion-refresher-content\n\nThe refresher content contains the text, icon and spinner to display during a pull-to-refresh. Ionic provides the pulling icon and refreshing spinner based on the platform. However, the default icon, spinner, and text can be customized based on the state of the refresher.\n\n\n",
+  "docs": "The refresher content contains the text, icon and spinner to display during a pull-to-refresh. Ionic provides the pulling icon and refreshing spinner based on the platform. However, the default icon, spinner, and text can be customized based on the state of the refresher.",
+  "docsTags": [],
+  "usage": {},
+  "props": [
+    {
+      "name": "pullingIcon",
+      "type": "null | string | undefined",
+      "mutable": true,
+      "attr": "pulling-icon",
+      "reflectToAttr": false,
+      "docs": "A static icon or a spinner to display when you begin to pull down.\nA spinner name can be provided to gradually show tick marks\nwhen pulling down on iOS devices.",
+      "docsTags": [],
+      "values": [
+        {
+          "type": "null"
+        },
+        {
+          "type": "string"
+        },
+        {
+          "type": "undefined"
+        }
+      ],
+      "optional": true,
+      "required": false
+    },
+    {
+      "name": "pullingText",
+      "type": "IonicSafeString | string | undefined",
+      "mutable": false,
+      "attr": "pulling-text",
+      "reflectToAttr": false,
+      "docs": "The text you want to display when you begin to pull down.\n`pullingText` can accept either plaintext or HTML as a string.\nTo display characters normally reserved for HTML, they\nmust be escaped. For example `<Ionic>` would become\n`&lt;Ionic&gt;`\n\nFor more information: [Security Documentation](https://ionicframework.com/docs/faq/security)",
+      "docsTags": [],
+      "values": [
+        {
+          "type": "IonicSafeString"
+        },
+        {
+          "type": "string"
+        },
+        {
+          "type": "undefined"
+        }
+      ],
+      "optional": true,
+      "required": false
+    },
+    {
+      "name": "refreshingSpinner",
+      "type": "\"bubbles\" | \"circles\" | \"circular\" | \"crescent\" | \"dots\" | \"lines\" | \"lines-small\" | null | undefined",
+      "mutable": true,
+      "attr": "refreshing-spinner",
+      "reflectToAttr": false,
+      "docs": "An animated SVG spinner that shows when refreshing begins",
+      "docsTags": [],
+      "values": [
+        {
+          "value": "bubbles",
+          "type": "string"
+        },
+        {
+          "value": "circles",
+          "type": "string"
+        },
+        {
+          "value": "circular",
+          "type": "string"
+        },
+        {
+          "value": "crescent",
+          "type": "string"
+        },
+        {
+          "value": "dots",
+          "type": "string"
+        },
+        {
+          "value": "lines",
+          "type": "string"
+        },
+        {
+          "value": "lines-small",
+          "type": "string"
+        },
+        {
+          "type": "null"
+        },
+        {
+          "type": "undefined"
+        }
+      ],
+      "optional": true,
+      "required": false
+    },
+    {
+      "name": "refreshingText",
+      "type": "IonicSafeString | string | undefined",
+      "mutable": false,
+      "attr": "refreshing-text",
+      "reflectToAttr": false,
+      "docs": "The text you want to display when performing a refresh.\n`refreshingText` can accept either plaintext or HTML as a string.\nTo display characters normally reserved for HTML, they\nmust be escaped. For example `<Ionic>` would become\n`&lt;Ionic&gt;`\n\nFor more information: [Security Documentation](https://ionicframework.com/docs/faq/security)",
+      "docsTags": [],
+      "values": [
+        {
+          "type": "IonicSafeString"
+        },
+        {
+          "type": "string"
+        },
+        {
+          "type": "undefined"
+        }
+      ],
+      "optional": true,
+      "required": false
+    }
+  ],
+  "methods": [],
+  "events": [],
+  "listeners": [],
+  "styles": [],
+  "slots": [],
+  "parts": [],
+  "dependents": [],
+  "dependencies": [
+    "ion-spinner",
+    "ion-icon"
+  ],
+  "dependencyGraph": {
+    "ion-refresher-content": [
+      "ion-spinner",
+      "ion-icon"
+    ]
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "packageName": "@ionic-native/in-app-purchase",
+  "displayName": "In App Purchase",
+  "description": "\nA lightweight Cordova plugin for in app purchases on iOS/Android.\n",
+  "usage": "\n```typescript\nimport { InAppPurchase } from '@ionic-native/in-app-purchase/ngx';\n\nconstructor(private iap: InAppPurchase) { }\n\n...\n\nthis.iap\n .getProducts(['prod1', 'prod2', ...])\n .then((products) => {\n   console.log(products);\n    //  [{ productId: 'com.yourapp.prod1', 'title': '...', description: '...', price: '...' }, ...]\n })\n .catch((err) => {\n   console.log(err);\n });\n\n\nthis.iap\n  .buy('prod1')\n  .then((data)=> {\n    console.log(data);\n    // {\n    //   transactionId: ...\n    //   receipt: ...\n    //   signature: ...\n    // }\n  })\n  .catch((err)=> {\n    console.log(err);\n  });\n\n```\n",
+  "platforms": [
+    "Android",
+    "iOS"
+  ],
+  "repo": "https://github.com/AlexDisler/cordova-plugin-inapppurchase",
+  "cordovaPlugin": {
+    "name": "cordova-plugin-inapppurchase"
+  }
+}

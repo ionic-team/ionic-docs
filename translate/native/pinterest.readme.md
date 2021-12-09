@@ -1,0 +1,2 @@
+
+Cordova plugin for Pinterest

@@ -1,0 +1,14 @@
+{
+  "packageName": "@ionic-native/appsflyer",
+  "displayName": "Appsflyer",
+  "description": "\nAppsflyer Cordova SDK support for Attribution\n",
+  "usage": "\n```typescript\nimport { Appsflyer } from '@ionic-native/appsflyer/ngx';\n\n\nconstructor(private appsflyer: Appsflyer) { }\n\n...\n\n\nthis.appsflyer.initSdk(options);\n\n```\n",
+  "platforms": [
+    "iOS",
+    "Android"
+  ],
+  "repo": "https://github.com/AppsFlyerSDK/cordova-plugin-appsflyer-sdk",
+  "cordovaPlugin": {
+    "name": "cordova-plugin-appsflyer-sdk"
+  }
+}

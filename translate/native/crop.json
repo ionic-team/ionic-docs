@@ -1,0 +1,14 @@
+{
+  "packageName": "@ionic-native/crop",
+  "displayName": "Crop",
+  "description": "Crops images",
+  "usage": "\n```typescript\nimport { Crop } from '@ionic-native/crop/ngx';\n\nconstructor(private crop: Crop) { }\n\n...\n\nthis.crop.crop('path/to/image.jpg', {quality: 75})\n  .then(\n    newImage => console.log('new image path is: ' + newImage),\n    error => console.error('Error cropping image', error)\n  );\n```",
+  "platforms": [
+    "Android",
+    "iOS"
+  ],
+  "repo": "https://github.com/jeduan/cordova-plugin-crop",
+  "cordovaPlugin": {
+    "name": "cordova-plugin-crop"
+  }
+}

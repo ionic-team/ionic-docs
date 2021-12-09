@@ -1,0 +1,22 @@
+{
+  "name": "ionic cordova requirements",
+  "namespace": [
+    "ionic",
+    "cordova"
+  ],
+  "summary": "Checks and print out all the requirements for platforms",
+  "description": "Like running `cordova requirements` directly, but provides friendly checks.",
+  "footnotes": [],
+  "groups": [],
+  "exampleCommands": [],
+  "aliases": [],
+  "inputs": [
+    {
+      "name": "platform",
+      "summary": "The platform for which you would like to gather requirements (`android`, `ios`)",
+      "required": false
+    }
+  ],
+  "options": [],
+  "type": "project"
+}

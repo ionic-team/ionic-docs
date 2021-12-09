@@ -1,0 +1,503 @@
+{
+  "filePath": "./src/components/toast/toast.tsx",
+  "encapsulation": "shadow",
+  "tag": "ion-toast",
+  "readme": "# ion-toast\n\nA Toast is a subtle notification commonly used in modern applications. It can be used to provide feedback about an operation or to display a system message. The toast appears on top of the app's content, and can be dismissed by the app to resume user interaction with the app.\n\n## Positioning\n\nToasts can be positioned at the top, bottom or middle of the viewport. The position can be passed upon creation. The possible values are `top`, `bottom` and `middle`. If the position is not specified, the toast will be displayed at the bottom of the viewport.\n\n## Dismissing\n\nThe toast can be dismissed automatically after a specific amount of time by passing the number of milliseconds to display it in the `duration` of the toast options. If a button with a role of `\"cancel\"` is added, then that button will dismiss the toast. To dismiss the toast after creation, call the `dismiss()` method on the instance.\n\n",
+  "docs": "A Toast is a subtle notification commonly used in modern applications. It can be used to provide feedback about an operation or to display a system message. The toast appears on top of the app's content, and can be dismissed by the app to resume user interaction with the app.",
+  "docsTags": [
+    {
+      "text": "{\"ios\" | \"md\"} mode - The mode determines which platform styles to use.",
+      "name": "virtualProp"
+    },
+    {
+      "text": "button - Any button element that is displayed inside of the toast.",
+      "name": "part"
+    },
+    {
+      "text": "container - The element that wraps all child elements.",
+      "name": "part"
+    },
+    {
+      "text": "header - The header text of the toast.",
+      "name": "part"
+    },
+    {
+      "text": "message - The body text of the toast.",
+      "name": "part"
+    }
+  ],
+  "usage": {
+    "angular": "```typescript\nimport { Component } from '@angular/core';\nimport { ToastController } from '@ionic/angular';\n\n@Component({\n  selector: 'toast-example',\n  templateUrl: 'toast-example.html',\n  styleUrls: ['./toast-example.css'],\n})\nexport class ToastExample {\n\n  constructor(public toastController: ToastController) {}\n\n  async presentToast() {\n    const toast = await this.toastController.create({\n      message: 'Your settings have been saved.',\n      duration: 2000\n    });\n    toast.present();\n  }\n\n  async presentToastWithOptions() {\n    const toast = await this.toastController.create({\n      header: 'Toast header',\n      message: 'Click to Close',\n      position: 'top',\n      buttons: [\n        {\n          side: 'start',\n          icon: 'star',\n          text: 'Favorite',\n          handler: () => {\n            console.log('Favorite clicked');\n          }\n        }, {\n          text: 'Done',\n          role: 'cancel',\n          handler: () => {\n            console.log('Cancel clicked');\n          }\n        }\n      ]\n    });\n    toast.present();\n  }\n\n}\n```\n",
+    "javascript": "```javascript\nasync function presentToast() {\n  const toast = document.createElement('ion-toast');\n  toast.message = 'Your settings have been saved.';\n  toast.duration = 2000;\n\n  document.body.appendChild(toast);\n  return toast.present();\n}\n\nasync function presentToastWithOptions() {\n  const toast = document.createElement('ion-toast');\n  toast.header = 'Toast header';\n  toast.message = 'Click to Close';\n  toast.position = 'top';\n  toast.buttons = [\n    {\n      side: 'start',\n      icon: 'star',\n      text: 'Favorite',\n      handler: () => {\n        console.log('Favorite clicked');\n      }\n    }, {\n      text: 'Done',\n      role: 'cancel',\n      handler: () => {\n        console.log('Cancel clicked');\n      }\n    }\n  ];\n\n  document.body.appendChild(toast);\n  return toast.present();\n}\n```\n",
+    "react": "```tsx\nimport React, { useState } from 'react';\nimport { IonToast, IonContent, IonButton } from '@ionic/react';\n\nexport const ToastExample: React.FC = () => {\n  const [showToast1, setShowToast1] = useState(false);\n  const [showToast2, setShowToast2] = useState(false);\n\n  return (\n    <IonContent>\n      <IonButton onClick={() => setShowToast1(true)} expand=\"block\">Show Toast 1</IonButton>\n      <IonButton onClick={() => setShowToast2(true)} expand=\"block\">Show Toast 2</IonButton>\n      <IonToast\n        isOpen={showToast1}\n        onDidDismiss={() => setShowToast1(false)}\n        message=\"Your settings have been saved.\"\n        duration={200}\n      />\n\n      <IonToast\n        isOpen={showToast2}\n        onDidDismiss={() => setShowToast2(false)}\n        message=\"Click to Close\"\n        position=\"top\"\n        buttons={[\n          {\n            side: 'start',\n            icon: 'star',\n            text: 'Favorite',\n            handler: () => {\n              console.log('Favorite clicked');\n            }\n          },\n          {\n            text: 'Done',\n            role: 'cancel',\n            handler: () => {\n              console.log('Cancel clicked');\n            }\n          }\n        ]}\n      />\n    </IonContent>\n  );\n};\n```\n",
+    "stencil": "```tsx\nimport { Component, h } from '@stencil/core';\n\nimport { toastController } from '@ionic/core';\n\n@Component({\n  tag: 'toast-example',\n  styleUrl: 'toast-example.css'\n})\nexport class ToastExample {\n  async presentToast() {\n    const toast = await toastController.create({\n      message: 'Your settings have been saved.',\n      duration: 2000\n    });\n    toast.present();\n  }\n\n  async presentToastWithOptions() {\n    const toast = await toastController.create({\n      header: 'Toast header',\n      message: 'Click to Close',\n      position: 'top',\n      buttons: [\n        {\n          side: 'start',\n          icon: 'star',\n          text: 'Favorite',\n          handler: () => {\n            console.log('Favorite clicked');\n          }\n        }, {\n          text: 'Done',\n          role: 'cancel',\n          handler: () => {\n            console.log('Cancel clicked');\n          }\n        }\n      ]\n    });\n    toast.present();\n  }\n\n  render() {\n    return [\n      <ion-content>\n        <ion-button onClick={() => this.presentToast()}>Present Toast</ion-button>\n        <ion-button onClick={() => this.presentToastWithOptions()}>Present Toast: Options</ion-button>\n      </ion-content>\n    ];\n  }\n}\n```",
+    "vue": "```html\n<template>\n  <ion-page>\n    <ion-content class=\"ion-padding\">\n      <ion-button @click=\"openToast\">Open Toast</ion-button>\n      <ion-button @click=\"openToastOptions\">Open Toast: Options</ion-button>\n    </ion-content>\n  </ion-page>\n</template>\n\n<script>\nimport { IonButton, IonContent, IonPage, toastController } from '@ionic/vue';\n\nexport default {\n  components: { IonButton, IonContent, IonPage },\n  methods: {\n    async openToast() {\n      const toast = await toastController\n        .create({\n          message: 'Your settings have been saved.',\n          duration: 2000\n        })\n      return toast.present();\n    },\n    async openToastOptions() {\n      const toast = await toastController\n        .create({\n          header: 'Toast header',\n          message: 'Click to Close',\n          position: 'top',\n          buttons: [\n            {\n              side: 'start',\n              icon: 'star',\n              text: 'Favorite',\n              handler: () => {\n                console.log('Favorite clicked');\n              }\n            }, {\n              text: 'Done',\n              role: 'cancel',\n              handler: () => {\n                console.log('Cancel clicked');\n              }\n            }\n          ]\n        })\n      return toast.present();\n    },\n  },\n}\n</script>\n```\n\nDevelopers can also use this component directly in their template:\n\n```html\n<template>\n  <ion-button @click=\"setOpen(true)\">Show Toast</ion-button>\n  <ion-toast\n    :is-open=\"isOpenRef\"\n    message=\"Your settings have been saved.\"\n    :duration=\"2000\"\n    @onDidDismiss=\"setOpen(false)\"\n  >\n  </ion-toast>\n</template>\n\n<script>\nimport { IonToast, IonButton } from '@ionic/vue';\nimport { defineComponent, ref } from 'vue';\n\nexport default defineComponent({\n  components: { IonToast, IonButton },\n  setup() {\n    const isOpenRef = ref(false);\n    const setOpen = (state: boolean) => isOpenRef.value = state;\n    \n    return { isOpenRef, setOpen }\n  }\n});\n</script>\n```\n"
+  },
+  "props": [
+    {
+      "name": "animated",
+      "type": "boolean",
+      "mutable": false,
+      "attr": "animated",
+      "reflectToAttr": false,
+      "docs": "If `true`, the toast will animate.",
+      "docsTags": [],
+      "default": "true",
+      "values": [
+        {
+          "type": "boolean"
+        }
+      ],
+      "optional": false,
+      "required": false
+    },
+    {
+      "name": "buttons",
+      "type": "(string | ToastButton)[] | undefined",
+      "mutable": false,
+      "reflectToAttr": false,
+      "docs": "An array of buttons for the toast.",
+      "docsTags": [],
+      "values": [
+        {
+          "type": "(string"
+        },
+        {
+          "type": "ToastButton)[]"
+        },
+        {
+          "type": "undefined"
+        }
+      ],
+      "optional": true,
+      "required": false
+    },
+    {
+      "name": "color",
+      "type": "string | undefined",
+      "mutable": false,
+      "attr": "color",
+      "reflectToAttr": false,
+      "docs": "The color to use from your application's color palette.\nDefault options are: `\"primary\"`, `\"secondary\"`, `\"tertiary\"`, `\"success\"`, `\"warning\"`, `\"danger\"`, `\"light\"`, `\"medium\"`, and `\"dark\"`.\nFor more information on colors, see [theming](/docs/theming/basics).",
+      "docsTags": [],
+      "values": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "undefined"
+        }
+      ],
+      "optional": true,
+      "required": false
+    },
+    {
+      "name": "cssClass",
+      "type": "string | string[] | undefined",
+      "mutable": false,
+      "attr": "css-class",
+      "reflectToAttr": false,
+      "docs": "Additional classes to apply for custom CSS. If multiple classes are\nprovided they should be separated by spaces.",
+      "docsTags": [],
+      "values": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "string[]"
+        },
+        {
+          "type": "undefined"
+        }
+      ],
+      "optional": true,
+      "required": false
+    },
+    {
+      "name": "duration",
+      "type": "number",
+      "mutable": false,
+      "attr": "duration",
+      "reflectToAttr": false,
+      "docs": "How many milliseconds to wait before hiding the toast. By default, it will show\nuntil `dismiss()` is called.",
+      "docsTags": [],
+      "default": "0",
+      "values": [
+        {
+          "type": "number"
+        }
+      ],
+      "optional": false,
+      "required": false
+    },
+    {
+      "name": "enterAnimation",
+      "type": "((baseEl: any, opts?: any) => Animation) | undefined",
+      "mutable": false,
+      "reflectToAttr": false,
+      "docs": "Animation to use when the toast is presented.",
+      "docsTags": [],
+      "values": [
+        {
+          "type": "((baseEl: any, opts?: any) => Animation)"
+        },
+        {
+          "type": "undefined"
+        }
+      ],
+      "optional": true,
+      "required": false
+    },
+    {
+      "name": "header",
+      "type": "string | undefined",
+      "mutable": false,
+      "attr": "header",
+      "reflectToAttr": false,
+      "docs": "Header to be shown in the toast.",
+      "docsTags": [],
+      "values": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "undefined"
+        }
+      ],
+      "optional": true,
+      "required": false
+    },
+    {
+      "name": "keyboardClose",
+      "type": "boolean",
+      "mutable": false,
+      "attr": "keyboard-close",
+      "reflectToAttr": false,
+      "docs": "If `true`, the keyboard will be automatically dismissed when the overlay is presented.",
+      "docsTags": [],
+      "default": "false",
+      "values": [
+        {
+          "type": "boolean"
+        }
+      ],
+      "optional": false,
+      "required": false
+    },
+    {
+      "name": "leaveAnimation",
+      "type": "((baseEl: any, opts?: any) => Animation) | undefined",
+      "mutable": false,
+      "reflectToAttr": false,
+      "docs": "Animation to use when the toast is dismissed.",
+      "docsTags": [],
+      "values": [
+        {
+          "type": "((baseEl: any, opts?: any) => Animation)"
+        },
+        {
+          "type": "undefined"
+        }
+      ],
+      "optional": true,
+      "required": false
+    },
+    {
+      "name": "message",
+      "type": "IonicSafeString | string | undefined",
+      "mutable": false,
+      "attr": "message",
+      "reflectToAttr": false,
+      "docs": "Message to be shown in the toast.",
+      "docsTags": [],
+      "values": [
+        {
+          "type": "IonicSafeString"
+        },
+        {
+          "type": "string"
+        },
+        {
+          "type": "undefined"
+        }
+      ],
+      "optional": true,
+      "required": false
+    },
+    {
+      "name": "mode",
+      "type": "\"ios\" | \"md\"",
+      "mutable": false,
+      "attr": "mode",
+      "reflectToAttr": false,
+      "docs": "The mode determines which platform styles to use.",
+      "docsTags": [],
+      "values": [
+        {
+          "value": "ios",
+          "type": "string"
+        },
+        {
+          "value": "md",
+          "type": "string"
+        }
+      ],
+      "optional": true,
+      "required": false
+    },
+    {
+      "name": "position",
+      "type": "\"bottom\" | \"middle\" | \"top\"",
+      "mutable": false,
+      "attr": "position",
+      "reflectToAttr": false,
+      "docs": "The position of the toast on the screen.",
+      "docsTags": [],
+      "default": "'bottom'",
+      "values": [
+        {
+          "value": "bottom",
+          "type": "string"
+        },
+        {
+          "value": "middle",
+          "type": "string"
+        },
+        {
+          "value": "top",
+          "type": "string"
+        }
+      ],
+      "optional": false,
+      "required": false
+    },
+    {
+      "name": "translucent",
+      "type": "boolean",
+      "mutable": false,
+      "attr": "translucent",
+      "reflectToAttr": false,
+      "docs": "If `true`, the toast will be translucent.\nOnly applies when the mode is `\"ios\"` and the device supports\n[`backdrop-filter`](https://developer.mozilla.org/en-US/docs/Web/CSS/backdrop-filter#Browser_compatibility).",
+      "docsTags": [],
+      "default": "false",
+      "values": [
+        {
+          "type": "boolean"
+        }
+      ],
+      "optional": false,
+      "required": false
+    }
+  ],
+  "methods": [
+    {
+      "name": "dismiss",
+      "returns": {
+        "type": "Promise<boolean>",
+        "docs": ""
+      },
+      "signature": "dismiss(data?: any, role?: string | undefined) => Promise<boolean>",
+      "parameters": [],
+      "docs": "Dismiss the toast overlay after it has been presented.",
+      "docsTags": [
+        {
+          "name": "param",
+          "text": "data Any data to emit in the dismiss events."
+        },
+        {
+          "name": "param",
+          "text": "role The role of the element that is dismissing the toast.\nThis can be useful in a button handler for determining which button was\nclicked to dismiss the toast.\nSome examples include: ``\"cancel\"`, `\"destructive\"`, \"selected\"`, and `\"backdrop\"`."
+        }
+      ]
+    },
+    {
+      "name": "onDidDismiss",
+      "returns": {
+        "type": "Promise<OverlayEventDetail<T>>",
+        "docs": ""
+      },
+      "signature": "onDidDismiss<T = any>() => Promise<OverlayEventDetail<T>>",
+      "parameters": [],
+      "docs": "Returns a promise that resolves when the toast did dismiss.",
+      "docsTags": []
+    },
+    {
+      "name": "onWillDismiss",
+      "returns": {
+        "type": "Promise<OverlayEventDetail<T>>",
+        "docs": ""
+      },
+      "signature": "onWillDismiss<T = any>() => Promise<OverlayEventDetail<T>>",
+      "parameters": [],
+      "docs": "Returns a promise that resolves when the toast will dismiss.",
+      "docsTags": []
+    },
+    {
+      "name": "present",
+      "returns": {
+        "type": "Promise<void>",
+        "docs": ""
+      },
+      "signature": "present() => Promise<void>",
+      "parameters": [],
+      "docs": "Present the toast overlay after it has been created.",
+      "docsTags": []
+    }
+  ],
+  "events": [
+    {
+      "event": "ionToastDidDismiss",
+      "detail": "OverlayEventDetail<any>",
+      "bubbles": true,
+      "cancelable": true,
+      "composed": true,
+      "docs": "Emitted after the toast has dismissed.",
+      "docsTags": []
+    },
+    {
+      "event": "ionToastDidPresent",
+      "detail": "void",
+      "bubbles": true,
+      "cancelable": true,
+      "composed": true,
+      "docs": "Emitted after the toast has presented.",
+      "docsTags": []
+    },
+    {
+      "event": "ionToastWillDismiss",
+      "detail": "OverlayEventDetail<any>",
+      "bubbles": true,
+      "cancelable": true,
+      "composed": true,
+      "docs": "Emitted before the toast has dismissed.",
+      "docsTags": []
+    },
+    {
+      "event": "ionToastWillPresent",
+      "detail": "void",
+      "bubbles": true,
+      "cancelable": true,
+      "composed": true,
+      "docs": "Emitted before the toast has presented.",
+      "docsTags": []
+    }
+  ],
+  "listeners": [],
+  "styles": [
+    {
+      "name": "--background",
+      "annotation": "prop",
+      "docs": "Background of the toast"
+    },
+    {
+      "name": "--border-color",
+      "annotation": "prop",
+      "docs": "Border color of the toast"
+    },
+    {
+      "name": "--border-radius",
+      "annotation": "prop",
+      "docs": "Border radius of the toast"
+    },
+    {
+      "name": "--border-style",
+      "annotation": "prop",
+      "docs": "Border style of the toast"
+    },
+    {
+      "name": "--border-width",
+      "annotation": "prop",
+      "docs": "Border width of the toast"
+    },
+    {
+      "name": "--box-shadow",
+      "annotation": "prop",
+      "docs": "Box shadow of the toast"
+    },
+    {
+      "name": "--button-color",
+      "annotation": "prop",
+      "docs": "Color of the button text"
+    },
+    {
+      "name": "--color",
+      "annotation": "prop",
+      "docs": "Color of the toast text"
+    },
+    {
+      "name": "--end",
+      "annotation": "prop",
+      "docs": "Position from the right if direction is left-to-right, and from the left if direction is right-to-left"
+    },
+    {
+      "name": "--height",
+      "annotation": "prop",
+      "docs": "Height of the toast"
+    },
+    {
+      "name": "--max-height",
+      "annotation": "prop",
+      "docs": "Maximum height of the toast"
+    },
+    {
+      "name": "--max-width",
+      "annotation": "prop",
+      "docs": "Maximum width of the toast"
+    },
+    {
+      "name": "--min-height",
+      "annotation": "prop",
+      "docs": "Minimum height of the toast"
+    },
+    {
+      "name": "--min-width",
+      "annotation": "prop",
+      "docs": "Minimum width of the toast"
+    },
+    {
+      "name": "--start",
+      "annotation": "prop",
+      "docs": "Position from the left if direction is left-to-right, and from the right if direction is right-to-left"
+    },
+    {
+      "name": "--white-space",
+      "annotation": "prop",
+      "docs": "White space of the toast message"
+    },
+    {
+      "name": "--width",
+      "annotation": "prop",
+      "docs": "Width of the toast"
+    }
+  ],
+  "slots": [],
+  "parts": [
+    {
+      "name": "button",
+      "docs": "Any button element that is displayed inside of the toast."
+    },
+    {
+      "name": "container",
+      "docs": "The element that wraps all child elements."
+    },
+    {
+      "name": "header",
+      "docs": "The header text of the toast."
+    },
+    {
+      "name": "message",
+      "docs": "The body text of the toast."
+    }
+  ],
+  "dependents": [],
+  "dependencies": [
+    "ion-icon",
+    "ion-ripple-effect"
+  ],
+  "dependencyGraph": {
+    "ion-toast": [
+      "ion-icon",
+      "ion-ripple-effect"
+    ]
+  }
+}

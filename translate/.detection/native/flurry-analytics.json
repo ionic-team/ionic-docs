@@ -1,0 +1,14 @@
+{
+  "packageName": "@ionic-native/flurry-analytics",
+  "displayName": "Flurry Analytics",
+  "description": "\nThis plugin connects to Flurry Analytics SDK\n",
+  "usage": "\n```typescript\nimport { FlurryAnalytics, FlurryAnalyticsObject, FlurryAnalyticsOptions } from '@ionic-native/flurry-analytics/ngx';\n\nconstructor(private flurryAnalytics: FlurryAnalytics) { }\n\n...\n\nconst options: FlurryAnalyticsOptions = {\n appKey: '<your app key>', // REQUIRED\n reportSessionsOnClose: true,\n enableLogging: true\n}\n\nlet fa: FlurryAnalyticsObject = this.flurryAnalytics.create(options);\n\nfa.logEvent('event name')\n  .then(() => console.log('Logged an event!'))\n  .catch(e => console.log('Error logging the event', e));\n\n```",
+  "platforms": [
+    "Android",
+    "iOS"
+  ],
+  "repo": "https://github.com/blakgeek/cordova-plugin-flurryanalytics",
+  "cordovaPlugin": {
+    "name": "cordova-plugin-flurryanalytics"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "packageName": "@ionic-native/stripe",
+  "displayName": "Stripe",
+  "description": "\nA plugin that allows you to use Stripe's Native SDKs for Android and iOS.\n",
+  "usage": "\n```typescript\nimport { Stripe } from '@ionic-native/stripe/ngx';\n\nconstructor(private stripe: Stripe) { }\n\n...\n\nthis.stripe.setPublishableKey('my_publishable_key');\n\nlet card = {\n number: '4242424242424242',\n expMonth: 12,\n expYear: 2020,\n cvc: '220'\n}\n\nthis.stripe.createCardToken(card)\n   .then(token => console.log(token.id))\n   .catch(error => console.error(error));\n\n```\n",
+  "platforms": [
+    "Android",
+    "Browser",
+    "iOS"
+  ],
+  "repo": "https://github.com/zyramedia/cordova-plugin-stripe",
+  "cordovaPlugin": {
+    "name": "cordova-plugin-stripe"
+  }
+}

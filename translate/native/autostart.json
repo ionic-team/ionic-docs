@@ -1,0 +1,13 @@
+{
+  "packageName": "@ionic-native/autostart",
+  "displayName": "Autostart",
+  "description": "\nThis plugin automatically starts your Android app after every boot or auto-update.\nYou can enable or disable the autostart function in your app.\n",
+  "usage": "\n```typescript\nimport { Autostart } from '@ionic-native/autostart/ngx';\n\n\nconstructor(private autostart: Autostart) { }\n\n...\n\nthis.autostart.enable();\n\nthis.autostart.disable();\n\n```\n",
+  "platforms": [
+    "Android"
+  ],
+  "repo": "https://github.com/ToniKorin/cordova-plugin-autostart",
+  "cordovaPlugin": {
+    "name": "cordova-plugin-autostart"
+  }
+}

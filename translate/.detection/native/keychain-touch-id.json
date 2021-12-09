@@ -1,0 +1,14 @@
+{
+  "packageName": "@ionic-native/keychain-touch-id",
+  "displayName": "Keychain Touch Id",
+  "description": "\nA cordova plugin adding the iOS TouchID / Android fingerprint to your\napp and allowing you to store a password securely in the device keychain.\n",
+  "usage": "\n```typescript\nimport { KeychainTouchId } from '@ionic-native/keychain-touch-id/ngx';\n\n\nconstructor(private keychainTouchId: KeychainTouchId) { }\n\n...\n\n\nthis.keychainTouchId.isAvailable()\n  .then((res: any) => console.log(res))\n  .catch((error: any) => console.error(error));\n\n```\n",
+  "platforms": [
+    "Android",
+    "iOS"
+  ],
+  "repo": "https://github.com/sjhoeksma/cordova-plugin-keychain-touch-id",
+  "cordovaPlugin": {
+    "name": "cordova-plugin-keychain-touch-id"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "packageName": "@ionic-native/battery-status",
+  "displayName": "Battery Status",
+  "description": "\nRequires Cordova plugin: cordova-plugin-batterystatus. For more info, please see the [BatteryStatus plugin docs](https://github.com/apache/cordova-plugin-battery-status).\n",
+  "usage": "\n```typescript\nimport { BatteryStatus } from '@ionic-native/battery-status/ngx';\n\nconstructor(private batteryStatus: BatteryStatus) { }\n\n...\n\n\n// watch change in battery status\nconst subscription = this.batteryStatus.onChange().subscribe(status => {\n   console.log(status.level, status.isPlugged);\n});\n\n// stop watch\nsubscription.unsubscribe();\n\n```",
+  "platforms": [
+    "iOS",
+    "Android",
+    "Windows",
+    "Browser"
+  ],
+  "repo": "https://github.com/apache/cordova-plugin-battery-status",
+  "cordovaPlugin": {
+    "name": "cordova-plugin-battery-status"
+  }
+}

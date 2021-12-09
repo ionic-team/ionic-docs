@@ -1,0 +1,113 @@
+{
+  "filePath": "./src/components/split-pane/split-pane.tsx",
+  "encapsulation": "shadow",
+  "tag": "ion-split-pane",
+  "readme": "# ion-split-pane\n\nA split pane is useful when creating multi-view layouts. It allows UI elements, like menus, to be\ndisplayed as the viewport width increases.\n\nIf the device's screen width is below a certain size, the split pane will collapse and the menu will be hidden. This is ideal for creating an app that will be served in a browser and deployed through the app store to phones and tablets.\n\n\n## Setting Breakpoints\n\nBy default, the split pane will expand when the screen is larger than 992px. To customize this, pass a breakpoint in the `when` property. The `when` property can accept a boolean value, any valid media query, or one of Ionic's predefined sizes.\n\n\n```html\n<!-- can be \"xs\", \"sm\", \"md\", \"lg\", or \"xl\" -->\n<ion-split-pane when=\"md\"></ion-split-pane>\n\n<!-- can be any valid media query https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Using_media_queries -->\n<ion-split-pane when=\"(min-width: 40px)\"></ion-split-pane>\n```\n\n\n | Size | Value                 | Description                                                           |\n |------|-----------------------|-----------------------------------------------------------------------|\n | `xs` | `(min-width: 0px)`    | Show the split-pane when the min-width is 0px (meaning, always)       |\n | `sm` | `(min-width: 576px)`  | Show the split-pane when the min-width is 576px                       |\n | `md` | `(min-width: 768px)`  | Show the split-pane when the min-width is 768px                       |\n | `lg` | `(min-width: 992px)`  | Show the split-pane when the min-width is 992px (default break point) |\n | `xl` | `(min-width: 1200px)` | Show the split-pane when the min-width is 1200px                      |\n\n",
+  "docs": "A split pane is useful when creating multi-view layouts. It allows UI elements, like menus, to be\ndisplayed as the viewport width increases.\n\nIf the device's screen width is below a certain size, the split pane will collapse and the menu will be hidden. This is ideal for creating an app that will be served in a browser and deployed through the app store to phones and tablets.",
+  "docsTags": [],
+  "usage": {
+    "angular": "```html\n<ion-split-pane contentId=\"main\">\n  <!--  the side menu  -->\n  <ion-menu contentId=\"main\">\n    <ion-header>\n      <ion-toolbar>\n        <ion-title>Menu</ion-title>\n      </ion-toolbar>\n    </ion-header>\n  </ion-menu>\n\n  <!-- the main content -->\n  <ion-router-outlet id=\"main\"></ion-router-outlet>\n</ion-split-pane>\n```\n",
+    "javascript": "```html\n<ion-split-pane content-id=\"main\">\n  <!--  the side menu  -->\n  <ion-menu content-id=\"main\">\n    <ion-header>\n      <ion-toolbar>\n        <ion-title>Menu</ion-title>\n      </ion-toolbar>\n    </ion-header>\n  </ion-menu>\n\n  <!-- the main content -->\n  <ion-content id=\"main\">\n    <h1>Hello</h1>\n  </ion-content>\n</ion-split-pane>\n```\n",
+    "react": "```tsx\nimport React from 'react';\nimport {\n  IonSplitPane,\n  IonMenu,\n  IonHeader,\n  IonToolbar,\n  IonTitle,\n  IonRouterOutlet,\n  IonContent,\n  IonPage\n} from '@ionic/react';\n\nexport const SplitPlaneExample: React.SFC<{}> = () => (\n  <IonContent>\n    <IonSplitPane contentId=\"main\">\n      {/*--  the side menu  --*/}\n      <IonMenu contentId=\"main\">\n        <IonHeader>\n          <IonToolbar>\n            <IonTitle>Menu</IonTitle>\n          </IonToolbar>\n        </IonHeader>\n      </IonMenu>\n\n      {/*-- the main content --*/}\n      <IonPage id=\"main\"/>\n    </IonSplitPane>\n  </IonContent>\n);\n```\n",
+    "stencil": "```tsx\nimport { Component, h } from '@stencil/core';\n\n@Component({\n  tag: 'split-pane-example',\n  styleUrl: 'split-pane-example.css'\n})\nexport class SplitPaneExample {\n  render() {\n    return [\n      <ion-split-pane content-id=\"main\">\n        {/*  the side menu */}\n        <ion-menu content-id=\"main\">\n          <ion-header>\n            <ion-toolbar>\n              <ion-title>Menu</ion-title>\n            </ion-toolbar>\n          </ion-header>\n        </ion-menu>\n\n        {/* the main content */}\n        <ion-router-outlet id=\"main\"></ion-router-outlet>\n      </ion-split-pane>\n    ];\n  }\n}\n```\n",
+    "vue": "```html\n<template>\n  <ion-split-pane content-id=\"main\">\n    <!--  the side menu  -->\n    <ion-menu content-id=\"main\">\n      <ion-header>\n        <ion-toolbar>\n          <ion-title>Menu</ion-title>\n        </ion-toolbar>\n      </ion-header>\n    </ion-menu>\n\n    <!-- the main content -->\n    <ion-router-outlet id=\"main\"></ion-router-outlet>\n  </ion-split-pane>\n</template>\n\n<script>\nimport { \n  IonHeader, \n  IonMenu, \n  IonRouterOutlet, \n  IonSplitPane, \n  IonTitle, \n  IonToolbar\n} from '@ionic/vue';\nimport { defineComponent } from 'vue';\n\nexport default defineComponent({\n  components: {\n    IonHeader, \n    IonMenu, \n    IonRouterOutlet, \n    IonSplitPane, \n    IonTitle, \n    IonToolbar\n  }\n});\n</script>\n```\n"
+  },
+  "props": [
+    {
+      "name": "contentId",
+      "type": "string | undefined",
+      "mutable": false,
+      "attr": "content-id",
+      "reflectToAttr": true,
+      "docs": "The content `id` of the split-pane's main content.",
+      "docsTags": [],
+      "values": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "undefined"
+        }
+      ],
+      "optional": true,
+      "required": false
+    },
+    {
+      "name": "disabled",
+      "type": "boolean",
+      "mutable": false,
+      "attr": "disabled",
+      "reflectToAttr": false,
+      "docs": "If `true`, the split pane will be hidden.",
+      "docsTags": [],
+      "default": "false",
+      "values": [
+        {
+          "type": "boolean"
+        }
+      ],
+      "optional": false,
+      "required": false
+    },
+    {
+      "name": "when",
+      "type": "boolean | string",
+      "mutable": false,
+      "attr": "when",
+      "reflectToAttr": false,
+      "docs": "When the split-pane should be shown.\nCan be a CSS media query expression, or a shortcut expression.\nCan also be a boolean expression.",
+      "docsTags": [],
+      "default": "QUERY['lg']",
+      "values": [
+        {
+          "type": "boolean"
+        },
+        {
+          "type": "string"
+        }
+      ],
+      "optional": false,
+      "required": false
+    }
+  ],
+  "methods": [],
+  "events": [
+    {
+      "event": "ionSplitPaneVisible",
+      "detail": "{ visible: boolean; }",
+      "bubbles": true,
+      "cancelable": true,
+      "composed": true,
+      "docs": "Expression to be called when the split-pane visibility has changed",
+      "docsTags": []
+    }
+  ],
+  "listeners": [],
+  "styles": [
+    {
+      "name": "--border",
+      "annotation": "prop",
+      "docs": "Border between panes"
+    },
+    {
+      "name": "--side-max-width",
+      "annotation": "prop",
+      "docs": "Maximum width of the side pane. Does not apply when split pane is collapsed."
+    },
+    {
+      "name": "--side-min-width",
+      "annotation": "prop",
+      "docs": "Minimum width of the side pane. Does not apply when split pane is collapsed."
+    },
+    {
+      "name": "--side-width",
+      "annotation": "prop",
+      "docs": "Width of the side pane. Does not apply when split pane is collapsed."
+    }
+  ],
+  "slots": [],
+  "parts": [],
+  "dependents": [],
+  "dependencies": [],
+  "dependencyGraph": {}
+}

@@ -1,0 +1,375 @@
+{
+  "filePath": "./src/components/select/select.tsx",
+  "encapsulation": "shadow",
+  "tag": "ion-select",
+  "readme": "# ion-select\n\nSelects are form controls to select an option, or options, from a set of options, similar to a native `<select>` element. When a user taps the select, a dialog appears with all of the options in a large, easy to select list.\n\nA select should be used with child `<ion-select-option>` elements. If the child option is not given a `value` attribute then its text will be used as the value.\n\nIf `value` is set on the `<ion-select>`, the selected option will be chosen based on that value.\n\n## Interfaces\n\nBy default, select uses [ion-alert](../alert) to open up the overlay of options in an alert. The interface can be changed to use [ion-action-sheet](../action-sheet) or [ion-popover](../popover) by passing `action-sheet` or `popover`, respectively, to the `interface` property. Read on to the other sections for the limitations of the different interfaces.\n\n\n## Single Selection\n\nBy default, the select allows the user to select only one option. The alert interface presents users with a radio button styled list of options. The action sheet interface can only be used with a single value select. The select component's value receives the value of the selected option's value.\n\n\n## Multiple Selection\n\nBy adding the `multiple` attribute to select, users are able to select multiple options. When multiple options can be selected, the alert overlay presents users with a checkbox styled list of options. The select component's value receives an array of all of the selected option values.\n\nNote: the `action-sheet` and `popover` interfaces will not work with multiple selection.\n\n## Object Value References\n\nWhen using objects for select values, it is possible for the identities of these objects to change if they are coming from a server or database, while the selected value's identity remains the same. For example, this can occur when an existing record with the desired object value is loaded into the select, but the newly retrieved select options now have different identities. This will result in the select appearing to have no value at all, even though the original selection in still intact.\n\nBy default, the select uses object equality (`===`) to determine if an option is selected. This can be overridden by providing a property name or a function to the `compareWith` property.\n\n## Select Buttons\n\nThe alert supports two buttons: `Cancel` and `OK`. Each button's text can be customized using the `cancelText` and `okText` properties.\n\nThe `action-sheet` and `popover` interfaces do not have an `OK` button, clicking on any of the options will automatically close the overlay and select that value. The `popover` interface does not have a `Cancel` button, clicking on the backdrop will close the overlay.\n\n\n## Interface Options\n\nSince select uses the alert, action sheet and popover interfaces, options can be passed to these components through the `interfaceOptions` property. This can be used to pass a custom header, subheader, css class, and more.\n\nSee the [ion-alert docs](../alert), [ion-action-sheet docs](../action-sheet), and [ion-popover docs](../popover) for the properties that each interface accepts.\n\nNote: `interfaceOptions` will not override `inputs` or `buttons` with the `alert` interface.\n\n## Customization\n\nThere are two units that make up the Select component and each need to be styled separately. The `ion-select` element is represented on the view by the selected value(s), or placeholder if there is none, and dropdown icon. The interface, which is defined in the [Interfaces](#interfaces) section above, is the dialog that opens when clicking on the `ion-select`. The interface contains all of the options defined by adding `ion-select-option` elements. The following sections will go over the differences between styling these.\n\n### Styling Select Element\n\nAs mentioned, the `ion-select` element consists only of the value(s), or placeholder, and icon that is displayed on the view. To customize this, style using a combination of CSS and any of the [CSS custom properties](#css-custom-properties):\n\n```css\nion-select {\n  /* Applies to the value and placeholder color */\n  color: #545ca7;\n\n  /* Set a different placeholder color */\n  --placeholder-color: #971e49;\n\n  /* Set full opacity on the placeholder */\n  --placeholder-opacity: 1;\n}\n```\n\nAlternatively, depending on the [browser support](https://caniuse.com/#feat=mdn-css_selectors_part) needed, CSS shadow parts can be used to style the select:\n\n```css\n/* Set the width to the full container and center the content */\nion-select {\n  width: 100%;\n\n  justify-content: center;\n}\n\n/* Set the flex in order to size the text width to its content */\nion-select::part(placeholder),\nion-select::part(text) {\n  flex: 0 0 auto;\n}\n\n/* Set the placeholder color and opacity */\nion-select::part(placeholder) {\n  color: #20a08a;\n  opacity: 1;\n}\n\n/*\n * Set the font of the first letter of the placeholder\n * Shadow parts work with pseudo-elements, too!\n * https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-elements\n */\nion-select::part(placeholder)::first-letter {\n  font-size: 24px;\n  font-weight: 500;\n}\n\n/* Set the text color */\nion-select::part(text) {\n  color: #545ca7;\n}\n\n/* Set the icon color and opacity */\nion-select::part(icon) {\n  color: #971e49;\n  opacity: 1;\n}\n```\n\nNotice that by using `::part`, any CSS property on the element can be targeted.\n\n### Styling Select Interface\n\nCustomizing the interface dialog should be done by following the Customization section in that interface's documentation:\n\n- [Alert Customization](../alert#customization)\n- [Action Sheet Customization](../action-sheet#customization)\n- [Popover Customization](../popover#customization)\n\nHowever, the Select Option does set a class for easier styling and allows for the ability to pass a class to the overlay option, see the [Select Options documentation](../select-option) for usage examples of customizing options.\n",
+  "docs": "Selects are form controls to select an option, or options, from a set of options, similar to a native `<select>` element. When a user taps the select, a dialog appears with all of the options in a large, easy to select list.\n\nA select should be used with child `<ion-select-option>` elements. If the child option is not given a `value` attribute then its text will be used as the value.\n\nIf `value` is set on the `<ion-select>`, the selected option will be chosen based on that value.",
+  "docsTags": [
+    {
+      "text": "{\"ios\" | \"md\"} mode - The mode determines which platform styles to use.",
+      "name": "virtualProp"
+    },
+    {
+      "text": "placeholder - The text displayed in the select when there is no value.",
+      "name": "part"
+    },
+    {
+      "text": "text - The displayed value of the select.",
+      "name": "part"
+    },
+    {
+      "text": "icon - The select icon container.",
+      "name": "part"
+    }
+  ],
+  "usage": {
+    "angular": "### Single Selection\n\n```html\n<ion-list>\n  <ion-list-header>\n    <ion-label>\n      Single Selection\n    </ion-label>\n  </ion-list-header>\n\n  <ion-item>\n    <ion-label>Gender</ion-label>\n    <ion-select placeholder=\"Select One\">\n      <ion-select-option value=\"f\">Female</ion-select-option>\n      <ion-select-option value=\"m\">Male</ion-select-option>\n    </ion-select>\n  </ion-item>\n\n  <ion-item>\n    <ion-label>Hair Color</ion-label>\n    <ion-select value=\"brown\" okText=\"Okay\" cancelText=\"Dismiss\">\n      <ion-select-option value=\"brown\">Brown</ion-select-option>\n      <ion-select-option value=\"blonde\">Blonde</ion-select-option>\n      <ion-select-option value=\"black\">Black</ion-select-option>\n      <ion-select-option value=\"red\">Red</ion-select-option>\n    </ion-select>\n  </ion-item>\n\n</ion-list>\n```\n\n### Multiple Selection\n\n```html\n<ion-list>\n  <ion-list-header>\n    <ion-label>\n      Multiple Selection\n    </ion-label>\n  </ion-list-header>\n\n  <ion-item>\n    <ion-label>Toppings</ion-label>\n    <ion-select multiple=\"true\" cancelText=\"Nah\" okText=\"Okay!\">\n      <ion-select-option value=\"bacon\">Bacon</ion-select-option>\n      <ion-select-option value=\"olives\">Black Olives</ion-select-option>\n      <ion-select-option value=\"xcheese\">Extra Cheese</ion-select-option>\n      <ion-select-option value=\"peppers\">Green Peppers</ion-select-option>\n      <ion-select-option value=\"mushrooms\">Mushrooms</ion-select-option>\n      <ion-select-option value=\"onions\">Onions</ion-select-option>\n      <ion-select-option value=\"pepperoni\">Pepperoni</ion-select-option>\n      <ion-select-option value=\"pineapple\">Pineapple</ion-select-option>\n      <ion-select-option value=\"sausage\">Sausage</ion-select-option>\n      <ion-select-option value=\"Spinach\">Spinach</ion-select-option>\n    </ion-select>\n  </ion-item>\n\n  <ion-item>\n    <ion-label>Pets</ion-label>\n    <ion-select multiple=\"true\" [value]=\"['bird', 'dog']\">\n      <ion-select-option value=\"bird\">Bird</ion-select-option>\n      <ion-select-option value=\"cat\">Cat</ion-select-option>\n      <ion-select-option value=\"dog\">Dog</ion-select-option>\n      <ion-select-option value=\"honeybadger\">Honey Badger</ion-select-option>\n    </ion-select>\n  </ion-item>\n</ion-list>\n```\n\n### Objects as Values\n\n```html\n<ion-list>\n  <ion-list-header>\n    <ion-label>\n      Objects as Values (compareWith)\n    </ion-label>\n  </ion-list-header>\n\n  <ion-item>\n    <ion-label>Users</ion-label>\n    <ion-select [compareWith]=\"compareWith\">\n      <ion-select-option *ngFor=\"let user of users\" [value]=\"user\">{{user.first + ' ' + user.last}}</ion-select-option>\n    </ion-select>\n  </ion-item>\n</ion-list>\n```\n\n```typescript\nimport { Component } from '@angular/core';\n\ninterface User {\n  id: number;\n  first: string;\n  last: string;\n}\n\n@Component({\n  selector: 'select-example',\n  templateUrl: 'select-example.html',\n  styleUrls: ['./select-example.css'],\n})\nexport class SelectExample {\n  users: User[] = [\n    {\n      id: 1,\n      first: 'Alice',\n      last: 'Smith',\n    },\n    {\n      id: 2,\n      first: 'Bob',\n      last: 'Davis',\n    },\n    {\n      id: 3,\n      first: 'Charlie',\n      last: 'Rosenburg',\n    }\n  ];\n\n  compareWith(o1: User, o2: User) {\n    return o1 && o2 ? o1.id === o2.id : o1 === o2;\n  }\n}\n```\n\n### Objects as Values with Multiple Selection\n\n```html\n<ion-list>\n  <ion-list-header>\n    <ion-label>\n      Objects as Values (compareWith)\n    </ion-label>\n  </ion-list-header>\n\n  <ion-item>\n    <ion-label>Users</ion-label>\n    <ion-select [compareWith]=\"compareWith\" multiple=\"true\">\n      <ion-select-option *ngFor=\"let user of users\" [value]=\"user\">{{user.first + ' ' + user.last}}</ion-select-option>\n    </ion-select>\n  </ion-item>\n</ion-list>\n```\n\n```typescript\nimport { Component } from '@angular/core';\n\ninterface User {\n  id: number;\n  first: string;\n  last: string;\n}\n\n@Component({\n  selector: 'select-example',\n  templateUrl: 'select-example.html',\n  styleUrls: ['./select-example.css'],\n})\nexport class SelectExample {\n  users: User[] = [\n    {\n      id: 1,\n      first: 'Alice',\n      last: 'Smith',\n    },\n    {\n      id: 2,\n      first: 'Bob',\n      last: 'Davis',\n    },\n    {\n      id: 3,\n      first: 'Charlie',\n      last: 'Rosenburg',\n    }\n  ];\n\n  compareWith(o1: User, o2: User | User[]) {\n    if (!o1 || !o2) {\n      return o1 === o2;\n    }\n\n    if (Array.isArray(o2)) {\n      return o2.some((u: User) => u.id === o1.id);\n    }\n\n    return o1.id === o2.id;\n  }\n}\n```\n\n### Interface Options\n\n```html\n<ion-list>\n  <ion-list-header>\n    <ion-label>\n      Interface Options\n    </ion-label>\n  </ion-list-header>\n\n  <ion-item>\n    <ion-label>Alert</ion-label>\n    <ion-select [interfaceOptions]=\"customAlertOptions\" interface=\"alert\" multiple=\"true\" placeholder=\"Select One\">\n      <ion-select-option value=\"bacon\">Bacon</ion-select-option>\n      <ion-select-option value=\"olives\">Black Olives</ion-select-option>\n      <ion-select-option value=\"xcheese\">Extra Cheese</ion-select-option>\n      <ion-select-option value=\"peppers\">Green Peppers</ion-select-option>\n      <ion-select-option value=\"mushrooms\">Mushrooms</ion-select-option>\n      <ion-select-option value=\"onions\">Onions</ion-select-option>\n      <ion-select-option value=\"pepperoni\">Pepperoni</ion-select-option>\n      <ion-select-option value=\"pineapple\">Pineapple</ion-select-option>\n      <ion-select-option value=\"sausage\">Sausage</ion-select-option>\n      <ion-select-option value=\"Spinach\">Spinach</ion-select-option>\n    </ion-select>\n  </ion-item>\n\n  <ion-item>\n    <ion-label>Popover</ion-label>\n    <ion-select [interfaceOptions]=\"customPopoverOptions\" interface=\"popover\" placeholder=\"Select One\">\n      <ion-select-option value=\"brown\">Brown</ion-select-option>\n      <ion-select-option value=\"blonde\">Blonde</ion-select-option>\n      <ion-select-option value=\"black\">Black</ion-select-option>\n      <ion-select-option value=\"red\">Red</ion-select-option>\n    </ion-select>\n  </ion-item>\n\n  <ion-item>\n    <ion-label>Action Sheet</ion-label>\n    <ion-select [interfaceOptions]=\"customActionSheetOptions\" interface=\"action-sheet\" placeholder=\"Select One\">\n      <ion-select-option value=\"red\">Red</ion-select-option>\n      <ion-select-option value=\"purple\">Purple</ion-select-option>\n      <ion-select-option value=\"yellow\">Yellow</ion-select-option>\n      <ion-select-option value=\"orange\">Orange</ion-select-option>\n      <ion-select-option value=\"green\">Green</ion-select-option>\n    </ion-select>\n  </ion-item>\n\n</ion-list>\n```\n\n```typescript\nimport { Component } from '@angular/core';\n\n@Component({\n  selector: 'select-example',\n  templateUrl: 'select-example.html',\n  styleUrls: ['./select-example.css'],\n})\nexport class SelectExample {\n  customAlertOptions: any = {\n    header: 'Pizza Toppings',\n    subHeader: 'Select your toppings',\n    message: '$1.00 per topping',\n    translucent: true\n  };\n\n  customPopoverOptions: any = {\n    header: 'Hair Color',\n    subHeader: 'Select your hair color',\n    message: 'Only select your dominant hair color'\n  };\n\n  customActionSheetOptions: any = {\n    header: 'Colors',\n    subHeader: 'Select your favorite color'\n  };\n}\n```\n",
+    "javascript": "### Single Selection\n\n```html\n<ion-list>\n  <ion-list-header>\n    <ion-label>\n      Single Selection\n    </ion-label>\n  </ion-list-header>\n\n  <ion-item>\n    <ion-label>Gender</ion-label>\n    <ion-select placeholder=\"Select One\">\n      <ion-select-option value=\"f\">Female</ion-select-option>\n      <ion-select-option value=\"m\">Male</ion-select-option>\n    </ion-select>\n  </ion-item>\n\n  <ion-item>\n    <ion-label>Hair Color</ion-label>\n    <ion-select value=\"brown\" ok-text=\"Okay\" cancel-text=\"Dismiss\">\n      <ion-select-option value=\"brown\">Brown</ion-select-option>\n      <ion-select-option value=\"blonde\">Blonde</ion-select-option>\n      <ion-select-option value=\"black\">Black</ion-select-option>\n      <ion-select-option value=\"red\">Red</ion-select-option>\n    </ion-select>\n  </ion-item>\n\n</ion-list>\n```\n\n### Multiple Selection\n\n```html\n<ion-list>\n  <ion-list-header>\n    <ion-label>\n      Multiple Selection\n    </ion-label>\n  </ion-list-header>\n\n  <ion-item>\n    <ion-label>Toppings</ion-label>\n    <ion-select multiple=\"true\" cancel-text=\"Nah\" ok-text=\"Okay!\">\n      <ion-select-option value=\"bacon\">Bacon</ion-select-option>\n      <ion-select-option value=\"olives\">Black Olives</ion-select-option>\n      <ion-select-option value=\"xcheese\">Extra Cheese</ion-select-option>\n      <ion-select-option value=\"peppers\">Green Peppers</ion-select-option>\n      <ion-select-option value=\"mushrooms\">Mushrooms</ion-select-option>\n      <ion-select-option value=\"onions\">Onions</ion-select-option>\n      <ion-select-option value=\"pepperoni\">Pepperoni</ion-select-option>\n      <ion-select-option value=\"pineapple\">Pineapple</ion-select-option>\n      <ion-select-option value=\"sausage\">Sausage</ion-select-option>\n      <ion-select-option value=\"Spinach\">Spinach</ion-select-option>\n    </ion-select>\n  </ion-item>\n\n  <ion-item>\n    <ion-label>Pets</ion-label>\n    <ion-select id=\"multiple\" multiple=\"true\">\n      <ion-select-option value=\"bird\">Bird</ion-select-option>\n      <ion-select-option value=\"cat\">Cat</ion-select-option>\n      <ion-select-option value=\"dog\">Dog</ion-select-option>\n      <ion-select-option value=\"honeybadger\">Honey Badger</ion-select-option>\n    </ion-select>\n  </ion-item>\n</ion-list>\n```\n\n```javascript\nconst select = document.querySelector('multiple');\nselect.value = ['bird', 'dog'];\n```\n\n### Objects as Values\n\n```html\n<ion-list>\n  <ion-list-header>\n    <ion-label>\n      Objects as Values (compareWith)\n    </ion-label>\n  </ion-list-header>\n\n  <ion-item>\n    <ion-label>Users</ion-label>\n    <ion-select id=\"objectSelectCompareWith\"></ion-select>\n  </ion-item>\n</ion-list>\n```\n\n```javascript\n  let objectOptions = [\n    {\n      id: 1,\n      first: 'Alice',\n      last: 'Smith',\n    },\n    {\n      id: 2,\n      first: 'Bob',\n      last: 'Davis',\n    },\n    {\n      id: 3,\n      first: 'Charlie',\n      last: 'Rosenburg',\n    }\n  ];\n\n  let compareWithFn = (o1, o2) => {\n    return o1 && o2 ? o1.id === o2.id : o1 === o2;\n  };\n\n  let objectSelectElement = document.getElementById('objectSelectCompareWith');\n  objectSelectElement.compareWith = compareWithFn;\n\n  objectOptions.forEach((option, i) => {\n    let selectOption = document.createElement('ion-select-option');\n    selectOption.value = option;\n    selectOption.textContent = option.first + ' ' + option.last;\n\n    objectSelectElement.appendChild(selectOption)\n  });\n\n  objectSelectElement.value = objectOptions[0];\n}\n```\n\n### Interface Options\n\n```html\n<ion-list>\n  <ion-list-header>\n    <ion-label>\n      Interface Options\n    </ion-label>\n  </ion-list-header>\n\n  <ion-item>\n    <ion-label>Alert</ion-label>\n    <ion-select id=\"customAlertSelect\" interface=\"alert\" multiple=\"true\" placeholder=\"Select One\">\n      <ion-select-option value=\"bacon\">Bacon</ion-select-option>\n      <ion-select-option value=\"olives\">Black Olives</ion-select-option>\n      <ion-select-option value=\"xcheese\">Extra Cheese</ion-select-option>\n      <ion-select-option value=\"peppers\">Green Peppers</ion-select-option>\n      <ion-select-option value=\"mushrooms\">Mushrooms</ion-select-option>\n      <ion-select-option value=\"onions\">Onions</ion-select-option>\n      <ion-select-option value=\"pepperoni\">Pepperoni</ion-select-option>\n      <ion-select-option value=\"pineapple\">Pineapple</ion-select-option>\n      <ion-select-option value=\"sausage\">Sausage</ion-select-option>\n      <ion-select-option value=\"Spinach\">Spinach</ion-select-option>\n    </ion-select>\n  </ion-item>\n\n  <ion-item>\n    <ion-label>Popover</ion-label>\n    <ion-select id=\"customPopoverSelect\" interface=\"popover\" placeholder=\"Select One\">\n      <ion-select-option value=\"brown\">Brown</ion-select-option>\n      <ion-select-option value=\"blonde\">Blonde</ion-select-option>\n      <ion-select-option value=\"black\">Black</ion-select-option>\n      <ion-select-option value=\"red\">Red</ion-select-option>\n    </ion-select>\n  </ion-item>\n\n  <ion-item>\n    <ion-label>Action Sheet</ion-label>\n    <ion-select id=\"customActionSheetSelect\" interface=\"action-sheet\" placeholder=\"Select One\">\n      <ion-select-option value=\"red\">Red</ion-select-option>\n      <ion-select-option value=\"purple\">Purple</ion-select-option>\n      <ion-select-option value=\"yellow\">Yellow</ion-select-option>\n      <ion-select-option value=\"orange\">Orange</ion-select-option>\n      <ion-select-option value=\"green\">Green</ion-select-option>\n    </ion-select>\n  </ion-item>\n\n</ion-list>\n```\n\n```javascript\nvar customAlertSelect = document.getElementById('customAlertSelect');\nvar customAlertOptions = {\n  header: 'Pizza Toppings',\n  subHeader: 'Select your toppings',\n  message: '$1.00 per topping',\n  translucent: true\n};\ncustomAlertSelect.interfaceOptions = customAlertOptions;\n\nvar customPopoverSelect = document.getElementById('customPopoverSelect');\nvar customPopoverOptions = {\n  header: 'Hair Color',\n  subHeader: 'Select your hair color',\n  message: 'Only select your dominant hair color'\n};\ncustomPopoverSelect.interfaceOptions = customPopoverOptions;\n\nvar customActionSheetSelect = document.getElementById('customActionSheetSelect');\nvar customActionSheetOptions = {\n  header: 'Colors',\n  subHeader: 'Select your favorite color'\n};\ncustomActionSheetSelect.interfaceOptions = customActionSheetOptions;\n```",
+    "react": "### Single Selection\n\n```tsx\nimport React, { useState } from 'react';\nimport { IonContent, IonItem, IonLabel, IonList, IonListHeader, IonSelect, IonSelectOption, IonPage, IonItemDivider } from '@ionic/react';\n\nexport const SingleSelection: React.FC = () => {\n\n  const [gender, setGender] = useState<string>();\n  const [hairColor, setHairColor] = useState<string>('brown');\n\n  return (\n    <IonPage>\n      <IonContent>\n        <IonList>\n          <IonListHeader>\n            <IonLabel>\n              Single Selection\n            </IonLabel>\n          </IonListHeader>\n\n          <IonItem>\n            <IonLabel>Gender</IonLabel>\n            <IonSelect value={gender} placeholder=\"Select One\" onIonChange={e => setGender(e.detail.value)}>\n              <IonSelectOption value=\"female\">Female</IonSelectOption>\n              <IonSelectOption value=\"male\">Male</IonSelectOption>\n            </IonSelect>\n          </IonItem>\n\n          <IonItem>\n            <IonLabel>Hair Color</IonLabel>\n            <IonSelect value={hairColor} okText=\"Okay\" cancelText=\"Dismiss\" onIonChange={e => setHairColor(e.detail.value)}>\n              <IonSelectOption value=\"brown\">Brown</IonSelectOption>\n              <IonSelectOption value=\"blonde\">Blonde</IonSelectOption>\n              <IonSelectOption value=\"black\">Black</IonSelectOption>\n              <IonSelectOption value=\"red\">Red</IonSelectOption>\n            </IonSelect>\n          </IonItem>\n          <IonItemDivider>Your Selections</IonItemDivider>\n          <IonItem>Gender: {gender ?? '(none selected)'}</IonItem>\n          <IonItem>Hair Color: {hairColor}</IonItem>\n        </IonList>\n      </IonContent>\n    </IonPage>\n  );\n};\n```\n\n\n### Multiple Selection\n\n```tsx\nimport React, { useState } from 'react';\nimport { IonContent, IonItem, IonLabel, IonList, IonListHeader, IonSelect, IonSelectOption, IonPage, IonItemDivider } from '@ionic/react';\n\nexport const MultipleSelection: React.FC = () => {\n\n  const [toppings, setToppings] = useState<string[]>([]);\n  const [pets, setPets] = useState<string[]>(['bird', 'dog']);\n\n  return (\n    <IonPage>\n      <IonContent>\n        <IonList>\n          <IonListHeader>\n            <IonLabel>\n              Multiple Selection\n        </IonLabel>\n          </IonListHeader>\n\n          <IonItem>\n            <IonLabel>Toppings</IonLabel>\n            <IonSelect value={toppings} multiple={true} cancelText=\"Nah\" okText=\"Okay!\" onIonChange={e => setToppings(e.detail.value)}>\n              <IonSelectOption value=\"bacon\">Bacon</IonSelectOption>\n              <IonSelectOption value=\"olives\">Black Olives</IonSelectOption>\n              <IonSelectOption value=\"xcheese\">Extra Cheese</IonSelectOption>\n              <IonSelectOption value=\"peppers\">Green Peppers</IonSelectOption>\n              <IonSelectOption value=\"mushrooms\">Mushrooms</IonSelectOption>\n              <IonSelectOption value=\"onions\">Onions</IonSelectOption>\n              <IonSelectOption value=\"pepperoni\">Pepperoni</IonSelectOption>\n              <IonSelectOption value=\"pineapple\">Pineapple</IonSelectOption>\n              <IonSelectOption value=\"sausage\">Sausage</IonSelectOption>\n              <IonSelectOption value=\"Spinach\">Spinach</IonSelectOption>\n            </IonSelect>\n          </IonItem>\n\n          <IonItem>\n            <IonLabel>Pets</IonLabel>\n            <IonSelect multiple={true} value={pets} onIonChange={e => setPets(e.detail.value)}>\n              <IonSelectOption value=\"bird\">Bird</IonSelectOption>\n              <IonSelectOption value=\"cat\">Cat</IonSelectOption>\n              <IonSelectOption value=\"dog\">Dog</IonSelectOption>\n              <IonSelectOption value=\"honeybadger\">Honey Badger</IonSelectOption>\n            </IonSelect>\n          </IonItem>\n          <IonItemDivider>Your Selections</IonItemDivider>\n          <IonItem>Toppings: {toppings.length ? toppings.reduce((curr, prev) => prev + ', ' + curr, '') : '(none selected)'}</IonItem>\n          <IonItem>Pets: {pets.length ? pets.reduce((curr, prev) => prev + ', ' + curr, '') : '(none selected)'}</IonItem>\n        </IonList>\n      </IonContent>\n    </IonPage>\n  );\n};\n```\n\n\n### Objects as Values\n\n```tsx\nimport React, { useState } from 'react';\nimport { IonContent, IonItem, IonLabel, IonList, IonListHeader, IonSelect, IonSelectOption, IonPage, IonItemDivider } from '@ionic/react';\n\nconst users = [\n  {\n    id: 1,\n    first: 'Alice',\n    last: 'Smith'\n  },\n  {\n    id: 2,\n    first: 'Bob',\n    last: 'Davis'\n  },\n  {\n    id: 3,\n    first: 'Charlie',\n    last: 'Rosenburg',\n  }\n];\n\ntype User = typeof users[number];\n\nconst compareWith = (o1: User, o2: User) => {\n  return o1 && o2 ? o1.id === o2.id : o1 === o2;\n};\n\nexport const ObjectSelection: React.FC = () => {\n\n  const [selectedUsers, setSelectedUsers] = useState<User[]>([]);\n\n  return (\n    <IonPage>\n      <IonContent>\n        <IonList>\n          <IonListHeader>\n            <IonLabel>\n              Objects as Values (compareWith)\n            </IonLabel>\n          </IonListHeader>\n          <IonItem>\n            <IonLabel>Users</IonLabel>\n            <IonSelect compareWith={compareWith} value={selectedUsers} multiple onIonChange={e => setSelectedUsers(e.detail.value)}>\n              {users.map(user => (\n                <IonSelectOption key={user.id} value={user}>\n                  {user.first} {user.last}\n                </IonSelectOption>\n              ))}\n            </IonSelect>\n          </IonItem>\n          <IonItemDivider>Selected Users</IonItemDivider>\n          {selectedUsers.length ?\n            selectedUsers.map(user => <IonItem key={user.id}>{user.first} {user.last}</IonItem>) :\n            <IonItem>(none selected)</IonItem>\n          }\n        </IonList>\n      </IonContent>\n    </IonPage>\n  );\n};\n```\n\n\n### Interface Options\n\n```tsx\nimport React, { useState } from 'react';\nimport { IonContent, IonItem, IonLabel, IonList, IonListHeader, IonSelect, IonSelectOption, IonPage, IonItemDivider } from '@ionic/react';\n\nconst customAlertOptions = {\n  header: 'Pizza Toppings',\n  subHeader: 'Select your toppings',\n  message: '$1.00 per topping',\n  translucent: true\n};\n\nconst customPopoverOptions = {\n  header: 'Hair Color',\n  subHeader: 'Select your hair color',\n  message: 'Only select your dominant hair color'\n};\n\nconst customActionSheetOptions = {\n  header: 'Colors',\n  subHeader: 'Select your favorite color'\n};\n\nexport const InterfaceOptionsSelection: React.FC = () => {\n\n  const [toppings, setToppings] = useState<string[]>([]);\n  const [hairColor, setHairColor] = useState<string>('brown');\n  const [color, setColor] = useState<string>();\n\n  return (\n    <IonPage>\n      <IonContent>\n        <IonList>\n          <IonListHeader>\n            <IonLabel>\n              Interface Options\n            </IonLabel>\n          </IonListHeader>\n\n          <IonItem>\n            <IonLabel>Alert</IonLabel>\n            <IonSelect\n              interfaceOptions={customAlertOptions}\n              interface=\"alert\"\n              multiple={true}\n              placeholder=\"Select One\"\n              onIonChange={e => setToppings(e.detail.value)}\n              value={toppings}\n            >\n              <IonSelectOption value=\"bacon\">Bacon</IonSelectOption>\n              <IonSelectOption value=\"olives\">Black Olives</IonSelectOption>\n              <IonSelectOption value=\"xcheese\">Extra Cheese</IonSelectOption>\n              <IonSelectOption value=\"peppers\">Green Peppers</IonSelectOption>\n              <IonSelectOption value=\"mushrooms\">Mushrooms</IonSelectOption>\n              <IonSelectOption value=\"onions\">Onions</IonSelectOption>\n              <IonSelectOption value=\"pepperoni\">Pepperoni</IonSelectOption>\n              <IonSelectOption value=\"pineapple\">Pineapple</IonSelectOption>\n              <IonSelectOption value=\"sausage\">Sausage</IonSelectOption>\n              <IonSelectOption value=\"Spinach\">Spinach</IonSelectOption>\n            </IonSelect>\n          </IonItem>\n\n          <IonItem>\n            <IonLabel>Popover</IonLabel>\n            <IonSelect\n              interfaceOptions={customPopoverOptions}\n              interface=\"popover\"\n              placeholder=\"Select One\"\n              onIonChange={e => setHairColor(e.detail.value)}\n              value={hairColor}>\n              <IonSelectOption value=\"brown\">Brown</IonSelectOption>\n              <IonSelectOption value=\"blonde\">Blonde</IonSelectOption>\n              <IonSelectOption value=\"black\">Black</IonSelectOption>\n              <IonSelectOption value=\"red\">Red</IonSelectOption>\n            </IonSelect>\n          </IonItem>\n\n          <IonItem>\n            <IonLabel>Action Sheet</IonLabel>\n            <IonSelect\n              interfaceOptions={customActionSheetOptions}\n              interface=\"action-sheet\"\n              placeholder=\"Select One\"\n              onIonChange={e => setColor(e.detail.value)}\n              value={color}\n            >\n              <IonSelectOption value=\"red\">Red</IonSelectOption>\n              <IonSelectOption value=\"purple\">Purple</IonSelectOption>\n              <IonSelectOption value=\"yellow\">Yellow</IonSelectOption>\n              <IonSelectOption value=\"orange\">Orange</IonSelectOption>\n              <IonSelectOption value=\"green\">Green</IonSelectOption>\n            </IonSelect>\n          </IonItem>\n\n          <IonItemDivider>Your Selections</IonItemDivider>\n          <IonItem>Toppings: {toppings.length ? toppings.reduce((curr, prev) => prev + ', ' + curr, '') : '(none selected)'}</IonItem>\n          <IonItem>Hair Color: {hairColor}</IonItem>\n          <IonItem>Color: {color ?? '(none selected)'}</IonItem>\n        </IonList>\n      </IonContent>\n    </IonPage>\n  );\n};\n```",
+    "stencil": "### Single Selection\n\n```tsx\nimport { Component, h } from '@stencil/core';\n\n@Component({\n  tag: 'select-example',\n  styleUrl: 'select-example.css'\n})\nexport class SelectExample {\n  render() {\n    return [\n      <ion-list>\n        <ion-list-header>\n          <ion-label>\n            Single Selection\n          </ion-label>\n        </ion-list-header>\n\n        <ion-item>\n          <ion-label>Gender</ion-label>\n          <ion-select placeholder=\"Select One\">\n            <ion-select-option value=\"f\">Female</ion-select-option>\n            <ion-select-option value=\"m\">Male</ion-select-option>\n          </ion-select>\n        </ion-item>\n\n        <ion-item>\n          <ion-label>Hair Color</ion-label>\n          <ion-select value=\"brown\" okText=\"Okay\" cancelText=\"Dismiss\">\n            <ion-select-option value=\"brown\">Brown</ion-select-option>\n            <ion-select-option value=\"blonde\">Blonde</ion-select-option>\n            <ion-select-option value=\"black\">Black</ion-select-option>\n            <ion-select-option value=\"red\">Red</ion-select-option>\n          </ion-select>\n        </ion-item>\n\n      </ion-list>\n    ];\n  }\n}\n```\n\n### Multiple Selection\n\n```tsx\nimport { Component, h } from '@stencil/core';\n\n@Component({\n  tag: 'select-example',\n  styleUrl: 'select-example.css'\n})\nexport class SelectExample {\n  render() {\n    return [\n      <ion-list>\n        <ion-list-header>\n          <ion-label>\n            Multiple Selection\n          </ion-label>\n        </ion-list-header>\n\n        <ion-item>\n          <ion-label>Toppings</ion-label>\n          <ion-select multiple={true} cancelText=\"Nah\" okText=\"Okay!\">\n            <ion-select-option value=\"bacon\">Bacon</ion-select-option>\n            <ion-select-option value=\"olives\">Black Olives</ion-select-option>\n            <ion-select-option value=\"xcheese\">Extra Cheese</ion-select-option>\n            <ion-select-option value=\"peppers\">Green Peppers</ion-select-option>\n            <ion-select-option value=\"mushrooms\">Mushrooms</ion-select-option>\n            <ion-select-option value=\"onions\">Onions</ion-select-option>\n            <ion-select-option value=\"pepperoni\">Pepperoni</ion-select-option>\n            <ion-select-option value=\"pineapple\">Pineapple</ion-select-option>\n            <ion-select-option value=\"sausage\">Sausage</ion-select-option>\n            <ion-select-option value=\"Spinach\">Spinach</ion-select-option>\n          </ion-select>\n        </ion-item>\n\n        <ion-item>\n          <ion-label>Pets</ion-label>\n          <ion-select multiple={true} value={['bird', 'dog']}>\n            <ion-select-option value=\"bird\">Bird</ion-select-option>\n            <ion-select-option value=\"cat\">Cat</ion-select-option>\n            <ion-select-option value=\"dog\">Dog</ion-select-option>\n            <ion-select-option value=\"honeybadger\">Honey Badger</ion-select-option>\n          </ion-select>\n        </ion-item>\n      </ion-list>\n    ];\n  }\n}\n```\n\n### Objects as Values\n\n```tsx\nimport { Component, h } from '@stencil/core';\n\n@Component({\n  tag: 'select-example',\n  styleUrl: 'select-example.css'\n})\nexport class SelectExample {\n  private users: any[] = [\n    {\n      id: 1,\n      first: 'Alice',\n      last: 'Smith',\n    },\n    {\n      id: 2,\n      first: 'Bob',\n      last: 'Davis',\n    },\n    {\n      id: 3,\n      first: 'Charlie',\n      last: 'Rosenburg',\n    }\n  ];\n\n  compareWith = (o1, o2) => {\n    return o1 && o2 ? o1.id === o2.id : o1 === o2;\n  };\n\n  render() {\n    return [\n      <ion-list>\n        <ion-list-header>\n          <ion-label>\n            Objects as Values (compareWith)\n          </ion-label>\n        </ion-list-header>\n\n        <ion-item>\n          <ion-label>Users</ion-label>\n          <ion-select compareWith={this.compareWith}>\n            {this.users.map(user =>\n            <ion-select-option value={user}>\n              {user.first + ' ' + user.last}\n            </ion-select-option>\n            )}\n          </ion-select>\n        </ion-item>\n      </ion-list>\n    ];\n  }\n}\n```\n\n### Interface Options\n\n```tsx\nimport { Component, h } from '@stencil/core';\n\n@Component({\n  tag: 'select-example',\n  styleUrl: 'select-example.css'\n})\nexport class SelectExample {\n  private customAlertOptions: any = {\n    header: 'Pizza Toppings',\n    subHeader: 'Select your toppings',\n    message: '$1.00 per topping',\n    translucent: true\n  };\n\n  private customPopoverOptions: any = {\n    header: 'Hair Color',\n    subHeader: 'Select your hair color',\n    message: 'Only select your dominant hair color'\n  };\n\n  private customActionSheetOptions: any = {\n    header: 'Colors',\n    subHeader: 'Select your favorite color'\n  };\n\n  render() {\n    return [\n      <ion-list>\n        <ion-list-header>\n          <ion-label>\n            Interface Options\n          </ion-label>\n        </ion-list-header>\n\n        <ion-item>\n          <ion-label>Alert</ion-label>\n          <ion-select interfaceOptions={this.customAlertOptions} interface=\"alert\" multiple={true} placeholder=\"Select One\">\n            <ion-select-option value=\"bacon\">Bacon</ion-select-option>\n            <ion-select-option value=\"olives\">Black Olives</ion-select-option>\n            <ion-select-option value=\"xcheese\">Extra Cheese</ion-select-option>\n            <ion-select-option value=\"peppers\">Green Peppers</ion-select-option>\n            <ion-select-option value=\"mushrooms\">Mushrooms</ion-select-option>\n            <ion-select-option value=\"onions\">Onions</ion-select-option>\n            <ion-select-option value=\"pepperoni\">Pepperoni</ion-select-option>\n            <ion-select-option value=\"pineapple\">Pineapple</ion-select-option>\n            <ion-select-option value=\"sausage\">Sausage</ion-select-option>\n            <ion-select-option value=\"Spinach\">Spinach</ion-select-option>\n          </ion-select>\n        </ion-item>\n\n        <ion-item>\n          <ion-label>Popover</ion-label>\n          <ion-select interfaceOptions={this.customPopoverOptions} interface=\"popover\" placeholder=\"Select One\">\n            <ion-select-option value=\"brown\">Brown</ion-select-option>\n            <ion-select-option value=\"blonde\">Blonde</ion-select-option>\n            <ion-select-option value=\"black\">Black</ion-select-option>\n            <ion-select-option value=\"red\">Red</ion-select-option>\n          </ion-select>\n        </ion-item>\n\n        <ion-item>\n          <ion-label>Action Sheet</ion-label>\n          <ion-select interfaceOptions={this.customActionSheetOptions} interface=\"action-sheet\" placeholder=\"Select One\">\n            <ion-select-option value=\"red\">Red</ion-select-option>\n            <ion-select-option value=\"purple\">Purple</ion-select-option>\n            <ion-select-option value=\"yellow\">Yellow</ion-select-option>\n            <ion-select-option value=\"orange\">Orange</ion-select-option>\n            <ion-select-option value=\"green\">Green</ion-select-option>\n          </ion-select>\n        </ion-item>\n      </ion-list>\n    ];\n  }\n}\n```",
+    "vue": "### Single Selection\n\n```html\n<template>\n  <ion-list>\n    <ion-list-header>\n      <ion-label>\n        Single Selection\n      </ion-label>\n    </ion-list-header>\n\n    <ion-item>\n      <ion-label>Gender</ion-label>\n      <ion-select placeholder=\"Select One\">\n        <ion-select-option value=\"f\">Female</ion-select-option>\n        <ion-select-option value=\"m\">Male</ion-select-option>\n      </ion-select>\n    </ion-item>\n\n    <ion-item>\n      <ion-label>Hair Color</ion-label>\n      <ion-select value=\"brown\" ok-text=\"Okay\" cancel-text=\"Dismiss\">\n        <ion-select-option value=\"brown\">Brown</ion-select-option>\n        <ion-select-option value=\"blonde\">Blonde</ion-select-option>\n        <ion-select-option value=\"black\">Black</ion-select-option>\n        <ion-select-option value=\"red\">Red</ion-select-option>\n      </ion-select>\n    </ion-item>\n\n  </ion-list>\n</template>\n\n<script>\nimport { \n  IonItem, \n  IonLabel, \n  IonList,\n  IonListHeader,\n  IonSelect,\n  IonSelectOption\n} from '@ionic/vue';\nimport { defineComponent } from 'vue';\n\nexport default defineComponent({\n  components: {\n    IonItem, \n    IonLabel, \n    IonList,\n    IonListHeader,\n    IonSelect,\n    IonSelectOption\n  }\n});\n</script>\n```\n\n### Multiple Selection\n\n```html\n<template>\n  <ion-list>\n    <ion-list-header>\n      <ion-label>\n        Multiple Selection\n      </ion-label>\n    </ion-list-header>\n\n    <ion-item>\n      <ion-label>Toppings</ion-label>\n      <ion-select multiple=\"true\" cancel-text=\"Nah\" ok-text=\"Okay!\">\n        <ion-select-option value=\"bacon\">Bacon</ion-select-option>\n        <ion-select-option value=\"olives\">Black Olives</ion-select-option>\n        <ion-select-option value=\"xcheese\">Extra Cheese</ion-select-option>\n        <ion-select-option value=\"peppers\">Green Peppers</ion-select-option>\n        <ion-select-option value=\"mushrooms\">Mushrooms</ion-select-option>\n        <ion-select-option value=\"onions\">Onions</ion-select-option>\n        <ion-select-option value=\"pepperoni\">Pepperoni</ion-select-option>\n        <ion-select-option value=\"pineapple\">Pineapple</ion-select-option>\n        <ion-select-option value=\"sausage\">Sausage</ion-select-option>\n        <ion-select-option value=\"Spinach\">Spinach</ion-select-option>\n      </ion-select>\n    </ion-item>\n\n    <ion-item>\n      <ion-label>Pets</ion-label>\n      <ion-select multiple=\"true\" :value=['bird', 'dog']>\n        <ion-select-option value=\"bird\">Bird</ion-select-option>\n        <ion-select-option value=\"cat\">Cat</ion-select-option>\n        <ion-select-option value=\"dog\">Dog</ion-select-option>\n        <ion-select-option value=\"honeybadger\">Honey Badger</ion-select-option>\n      </ion-select>\n    </ion-item>\n  </ion-list>\n</template>\n\n<script>\nimport { \n  IonItem, \n  IonLabel, \n  IonList,\n  IonListHeader,\n  IonSelect,\n  IonSelectOption\n} from '@ionic/vue';\nimport { defineComponent } from 'vue';\n\nexport default defineComponent({\n  components: {\n    IonItem, \n    IonLabel, \n    IonList,\n    IonListHeader,\n    IonSelect,\n    IonSelectOption\n  }\n});\n</script>\n```\n\n### Interface Options\n\n```html\n<template>\n  <ion-list>\n    <ion-list-header>\n      <ion-label>\n        Interface Options\n      </ion-label>\n    </ion-list-header>\n\n    <ion-item>\n      <ion-label>Alert</ion-label>\n      <ion-select :interface-options=\"customAlertOptions\" interface=\"alert\" multiple=\"true\" placeholder=\"Select One\">\n        <ion-select-option value=\"bacon\">Bacon</ion-select-option>\n        <ion-select-option value=\"olives\">Black Olives</ion-select-option>\n        <ion-select-option value=\"xcheese\">Extra Cheese</ion-select-option>\n        <ion-select-option value=\"peppers\">Green Peppers</ion-select-option>\n        <ion-select-option value=\"mushrooms\">Mushrooms</ion-select-option>\n        <ion-select-option value=\"onions\">Onions</ion-select-option>\n        <ion-select-option value=\"pepperoni\">Pepperoni</ion-select-option>\n        <ion-select-option value=\"pineapple\">Pineapple</ion-select-option>\n        <ion-select-option value=\"sausage\">Sausage</ion-select-option>\n        <ion-select-option value=\"Spinach\">Spinach</ion-select-option>\n      </ion-select>\n    </ion-item>\n\n    <ion-item>\n      <ion-label>Popover</ion-label>\n      <ion-select :interface-options=\"customPopoverOptions\" interface=\"popover\" placeholder=\"Select One\">\n        <ion-select-option value=\"brown\">Brown</ion-select-option>\n        <ion-select-option value=\"blonde\">Blonde</ion-select-option>\n        <ion-select-option value=\"black\">Black</ion-select-option>\n        <ion-select-option value=\"red\">Red</ion-select-option>\n      </ion-select>\n    </ion-item>\n\n    <ion-item>\n      <ion-label>Action Sheet</ion-label>\n      <ion-select :interface-options=\"customActionSheetOptions\" interface=\"action-sheet\" placeholder=\"Select One\">\n        <ion-select-option value=\"red\">Red</ion-select-option>\n        <ion-select-option value=\"purple\">Purple</ion-select-option>\n        <ion-select-option value=\"yellow\">Yellow</ion-select-option>\n        <ion-select-option value=\"orange\">Orange</ion-select-option>\n        <ion-select-option value=\"green\">Green</ion-select-option>\n      </ion-select>\n    </ion-item>\n\n  </ion-list>\n</template>\n\n<script>\nimport { \n  IonItem, \n  IonLabel, \n  IonList,\n  IonListHeader,\n  IonSelect,\n  IonSelectOption\n} from '@ionic/vue';\nimport { defineComponent } from 'vue';\n\nexport default defineComponent({\n  components: {\n    IonItem, \n    IonLabel, \n    IonList,\n    IonListHeader,\n    IonSelect,\n    IonSelectOption\n  },\n  setup() {\n    const customAlertOptions: any = {\n      header: 'Pizza Toppings',\n      subHeader: 'Select your toppings',\n      message: '$1.00 per topping',\n      translucent: true\n    };\n\n    const customPopoverOptions: any = {\n      header: 'Hair Color',\n      subHeader: 'Select your hair color',\n      message: 'Only select your dominant hair color'\n    };\n\n    const customActionSheetOptions: any = {\n      header: 'Colors',\n      subHeader: 'Select your favorite color'\n    };\n    \n    return {\n      customAlertOptions,\n      customPopoverOptions,\n      customActionSheetOptions\n    }\n  }\n});\n</script>\n```\n"
+  },
+  "props": [
+    {
+      "name": "cancelText",
+      "type": "string",
+      "mutable": false,
+      "attr": "cancel-text",
+      "reflectToAttr": false,
+      "docs": "The text to display on the cancel button.",
+      "docsTags": [],
+      "default": "'Cancel'",
+      "values": [
+        {
+          "type": "string"
+        }
+      ],
+      "optional": false,
+      "required": false
+    },
+    {
+      "name": "compareWith",
+      "type": "((currentValue: any, compareValue: any) => boolean) | null | string | undefined",
+      "mutable": false,
+      "attr": "compare-with",
+      "reflectToAttr": false,
+      "docs": "A property name or function used to compare object values",
+      "docsTags": [],
+      "values": [
+        {
+          "type": "((currentValue: any, compareValue: any) => boolean)"
+        },
+        {
+          "type": "null"
+        },
+        {
+          "type": "string"
+        },
+        {
+          "type": "undefined"
+        }
+      ],
+      "optional": true,
+      "required": false
+    },
+    {
+      "name": "disabled",
+      "type": "boolean",
+      "mutable": false,
+      "attr": "disabled",
+      "reflectToAttr": false,
+      "docs": "If `true`, the user cannot interact with the select.",
+      "docsTags": [],
+      "default": "false",
+      "values": [
+        {
+          "type": "boolean"
+        }
+      ],
+      "optional": false,
+      "required": false
+    },
+    {
+      "name": "interface",
+      "type": "\"action-sheet\" | \"alert\" | \"popover\"",
+      "mutable": false,
+      "attr": "interface",
+      "reflectToAttr": false,
+      "docs": "The interface the select should use: `action-sheet`, `popover` or `alert`.",
+      "docsTags": [],
+      "default": "'alert'",
+      "values": [
+        {
+          "value": "action-sheet",
+          "type": "string"
+        },
+        {
+          "value": "alert",
+          "type": "string"
+        },
+        {
+          "value": "popover",
+          "type": "string"
+        }
+      ],
+      "optional": false,
+      "required": false
+    },
+    {
+      "name": "interfaceOptions",
+      "type": "any",
+      "mutable": false,
+      "attr": "interface-options",
+      "reflectToAttr": false,
+      "docs": "Any additional options that the `alert`, `action-sheet` or `popover` interface\ncan take. See the [ion-alert docs](../alert), the\n[ion-action-sheet docs](../action-sheet) and the\n[ion-popover docs](../popover) for the\ncreate options for each interface.\n\nNote: `interfaceOptions` will not override `inputs` or `buttons` with the `alert` interface.",
+      "docsTags": [],
+      "default": "{}",
+      "values": [
+        {
+          "type": "any"
+        }
+      ],
+      "optional": false,
+      "required": false
+    },
+    {
+      "name": "mode",
+      "type": "\"ios\" | \"md\"",
+      "mutable": false,
+      "attr": "mode",
+      "reflectToAttr": false,
+      "docs": "The mode determines which platform styles to use.",
+      "docsTags": [],
+      "values": [
+        {
+          "value": "ios",
+          "type": "string"
+        },
+        {
+          "value": "md",
+          "type": "string"
+        }
+      ],
+      "optional": true,
+      "required": false
+    },
+    {
+      "name": "multiple",
+      "type": "boolean",
+      "mutable": false,
+      "attr": "multiple",
+      "reflectToAttr": false,
+      "docs": "If `true`, the select can accept multiple values.",
+      "docsTags": [],
+      "default": "false",
+      "values": [
+        {
+          "type": "boolean"
+        }
+      ],
+      "optional": false,
+      "required": false
+    },
+    {
+      "name": "name",
+      "type": "string",
+      "mutable": false,
+      "attr": "name",
+      "reflectToAttr": false,
+      "docs": "The name of the control, which is submitted with the form data.",
+      "docsTags": [],
+      "default": "this.inputId",
+      "values": [
+        {
+          "type": "string"
+        }
+      ],
+      "optional": false,
+      "required": false
+    },
+    {
+      "name": "okText",
+      "type": "string",
+      "mutable": false,
+      "attr": "ok-text",
+      "reflectToAttr": false,
+      "docs": "The text to display on the ok button.",
+      "docsTags": [],
+      "default": "'OK'",
+      "values": [
+        {
+          "type": "string"
+        }
+      ],
+      "optional": false,
+      "required": false
+    },
+    {
+      "name": "placeholder",
+      "type": "null | string | undefined",
+      "mutable": false,
+      "attr": "placeholder",
+      "reflectToAttr": false,
+      "docs": "The text to display when the select is empty.",
+      "docsTags": [],
+      "values": [
+        {
+          "type": "null"
+        },
+        {
+          "type": "string"
+        },
+        {
+          "type": "undefined"
+        }
+      ],
+      "optional": true,
+      "required": false
+    },
+    {
+      "name": "selectedText",
+      "type": "null | string | undefined",
+      "mutable": false,
+      "attr": "selected-text",
+      "reflectToAttr": false,
+      "docs": "The text to display instead of the selected option's value.",
+      "docsTags": [],
+      "values": [
+        {
+          "type": "null"
+        },
+        {
+          "type": "string"
+        },
+        {
+          "type": "undefined"
+        }
+      ],
+      "optional": true,
+      "required": false
+    },
+    {
+      "name": "value",
+      "type": "any",
+      "mutable": true,
+      "attr": "value",
+      "reflectToAttr": false,
+      "docs": "the value of the select.",
+      "docsTags": [],
+      "values": [
+        {
+          "type": "any"
+        }
+      ],
+      "optional": true,
+      "required": false
+    }
+  ],
+  "methods": [
+    {
+      "name": "open",
+      "returns": {
+        "type": "Promise<any>",
+        "docs": ""
+      },
+      "signature": "open(event?: UIEvent | undefined) => Promise<any>",
+      "parameters": [],
+      "docs": "Open the select overlay. The overlay is either an alert, action sheet, or popover,\ndepending on the `interface` property on the `ion-select`.",
+      "docsTags": [
+        {
+          "name": "param",
+          "text": "event The user interface event that called the open."
+        }
+      ]
+    }
+  ],
+  "events": [
+    {
+      "event": "ionBlur",
+      "detail": "void",
+      "bubbles": true,
+      "cancelable": true,
+      "composed": true,
+      "docs": "Emitted when the select loses focus.",
+      "docsTags": []
+    },
+    {
+      "event": "ionCancel",
+      "detail": "void",
+      "bubbles": true,
+      "cancelable": true,
+      "composed": true,
+      "docs": "Emitted when the selection is cancelled.",
+      "docsTags": []
+    },
+    {
+      "event": "ionChange",
+      "detail": "SelectChangeEventDetail<any>",
+      "bubbles": true,
+      "cancelable": true,
+      "composed": true,
+      "docs": "Emitted when the value has changed.",
+      "docsTags": []
+    },
+    {
+      "event": "ionFocus",
+      "detail": "void",
+      "bubbles": true,
+      "cancelable": true,
+      "composed": true,
+      "docs": "Emitted when the select has focus.",
+      "docsTags": []
+    }
+  ],
+  "listeners": [],
+  "styles": [
+    {
+      "name": "--padding-bottom",
+      "annotation": "prop",
+      "docs": "Bottom padding of the select"
+    },
+    {
+      "name": "--padding-end",
+      "annotation": "prop",
+      "docs": "Right padding if direction is left-to-right, and left padding if direction is right-to-left of the select"
+    },
+    {
+      "name": "--padding-start",
+      "annotation": "prop",
+      "docs": "Left padding if direction is left-to-right, and right padding if direction is right-to-left of the select"
+    },
+    {
+      "name": "--padding-top",
+      "annotation": "prop",
+      "docs": "Top padding of the select"
+    },
+    {
+      "name": "--placeholder-color",
+      "annotation": "prop",
+      "docs": "Color of the select placeholder text"
+    },
+    {
+      "name": "--placeholder-opacity",
+      "annotation": "prop",
+      "docs": "Opacity of the select placeholder text"
+    }
+  ],
+  "slots": [],
+  "parts": [
+    {
+      "name": "icon",
+      "docs": "The select icon container."
+    },
+    {
+      "name": "placeholder",
+      "docs": "The text displayed in the select when there is no value."
+    },
+    {
+      "name": "text",
+      "docs": "The displayed value of the select."
+    }
+  ],
+  "dependents": [],
+  "dependencies": [],
+  "dependencyGraph": {}
+}

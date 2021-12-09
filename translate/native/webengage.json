@@ -1,0 +1,14 @@
+{
+  "packageName": "@ionic-native/webengage",
+  "displayName": "Webengage",
+  "description": "\nIonic-Native wrapper that wraps Webengage Cordova plugin for Android and iOS\n",
+  "usage": "\n```typescript\nimport { Webengage, WebengageUser, WebengagePush, WebengageNotification } from '@ionic-native/webengage/ngx';\n\n\nconstructor(private webengage: Webengage, private webengageUser: WebengageUser, private webengagePush: WebengagePush, private webengageNotification: WebengageNotification ) { }\n\n...\n\nthis.webengage.engage();\n```\n",
+  "platforms": [
+    "Android",
+    "iOS"
+  ],
+  "repo": "https://github.com/WebEngage/cordova-plugin",
+  "cordovaPlugin": {
+    "name": "cordova-plugin-webengage"
+  }
+}

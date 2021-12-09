@@ -1,0 +1,14 @@
+{
+  "packageName": "@ionic-native/adjust",
+  "displayName": "Adjust",
+  "description": "\nThis is the Ionic Cordova SDK of Adjust™. You can read more about Adjust™ at adjust.com.\n\nRequires Cordova plugin: `com.adjust.sdk`. For more info, please see the [Adjust Cordova SDK](https://github.com/adjust/cordova_sdk)\n",
+  "usage": "\n```typescript\n import { Adjust, AdjustConfig, AdjustEnvironment } from '@ionic-native/adjust/ngx';\n\n constructor(private adjust: Adjust) { }\n\n ...\n\n const config = new AdjustConfig('APP-TOKEN-HERE', AdjustEnvironment.Sandbox);\n config.logLevel = AdjustLogLevel.Verbose;\n // Set other config properties.\n adjust.create(config);\n\n```",
+  "platforms": [
+    "Android",
+    "iOS"
+  ],
+  "repo": "https://github.com/adjust/cordova_sdk",
+  "cordovaPlugin": {
+    "name": "com.adjust.sdk"
+  }
+}

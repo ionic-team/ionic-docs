@@ -1,0 +1,102 @@
+{
+  "filePath": "./src/components/badge/badge.tsx",
+  "encapsulation": "shadow",
+  "tag": "ion-badge",
+  "readme": "# ion-badge\n\nBadges are inline block elements that usually appear near another element. Typically they contain a number or other characters. They can be used as a notification that there are additional items associated with an element and indicate how many items there are.\n\n",
+  "docs": "Badges are inline block elements that usually appear near another element. Typically they contain a number or other characters. They can be used as a notification that there are additional items associated with an element and indicate how many items there are.",
+  "docsTags": [
+    {
+      "text": "{\"ios\" | \"md\"} mode - The mode determines which platform styles to use.",
+      "name": "virtualProp"
+    }
+  ],
+  "usage": {
+    "angular": "```html\n<!-- Default -->\n<ion-badge>99</ion-badge>\n\n<!-- Colors -->\n<ion-badge color=\"primary\">11</ion-badge>\n<ion-badge color=\"secondary\">22</ion-badge>\n<ion-badge color=\"tertiary\">33</ion-badge>\n<ion-badge color=\"success\">44</ion-badge>\n<ion-badge color=\"warning\">55</ion-badge>\n<ion-badge color=\"danger\">66</ion-badge>\n<ion-badge color=\"light\">77</ion-badge>\n<ion-badge color=\"medium\">88</ion-badge>\n<ion-badge color=\"dark\">99</ion-badge>\n\n<!-- Item with badge on left and right -->\n<ion-item>\n  <ion-badge slot=\"start\">11</ion-badge>\n  <ion-label>My Item</ion-label>\n  <ion-badge slot=\"end\">22</ion-badge>\n</ion-item>\n```",
+    "javascript": "```html\n<!-- Default -->\n<ion-badge>99</ion-badge>\n\n<!-- Colors -->\n<ion-badge color=\"primary\">11</ion-badge>\n<ion-badge color=\"secondary\">22</ion-badge>\n<ion-badge color=\"tertiary\">33</ion-badge>\n<ion-badge color=\"success\">44</ion-badge>\n<ion-badge color=\"warning\">55</ion-badge>\n<ion-badge color=\"danger\">66</ion-badge>\n<ion-badge color=\"light\">77</ion-badge>\n<ion-badge color=\"medium\">88</ion-badge>\n<ion-badge color=\"dark\">99</ion-badge>\n\n<!-- Item with badge on left and right -->\n<ion-item>\n  <ion-badge slot=\"start\">11</ion-badge>\n  <ion-label>My Item</ion-label>\n  <ion-badge slot=\"end\">22</ion-badge>\n</ion-item>\n```",
+    "react": "```tsx\nimport React from 'react';\nimport { IonBadge, IonItem, IonLabel, IonContent } from '@ionic/react';\n\nexport const BadgeExample: React.FC = () => (\n  <IonContent>\n    {/*-- Default --*/}\n    <IonBadge>99</IonBadge>\n\n    {/*-- Colors --*/}\n    <IonBadge color=\"primary\">11</IonBadge>\n    <IonBadge color=\"secondary\">22</IonBadge>\n    <IonBadge color=\"tertiary\">33</IonBadge>\n    <IonBadge color=\"success\">44</IonBadge>\n    <IonBadge color=\"warning\">55</IonBadge>\n    <IonBadge color=\"danger\">66</IonBadge>\n    <IonBadge color=\"light\">77</IonBadge>\n    <IonBadge color=\"medium\">88</IonBadge>\n    <IonBadge color=\"dark\">99</IonBadge>\n\n    {/*-- Item with badge on left and right --*/}\n    <IonItem>\n      <IonBadge slot=\"start\">11</IonBadge>\n      <IonLabel>My Item</IonLabel>\n      <IonBadge slot=\"end\">22</IonBadge>\n    </IonItem>\n  </IonContent>\n);\n```\n",
+    "stencil": "```tsx\nimport { Component, h } from '@stencil/core';\n\n@Component({\n  tag: 'badge-example',\n  styleUrl: 'badge-example.css'\n})\nexport class BadgeExample {\n  render() {\n    return [\n      // Default\n      <ion-badge>99</ion-badge>,\n\n      // Colors\n      <ion-badge color=\"primary\">11</ion-badge>,\n      <ion-badge color=\"secondary\">22</ion-badge>,\n      <ion-badge color=\"tertiary\">33</ion-badge>,\n      <ion-badge color=\"success\">44</ion-badge>,\n      <ion-badge color=\"warning\">55</ion-badge>,\n      <ion-badge color=\"danger\">66</ion-badge>,\n      <ion-badge color=\"light\">77</ion-badge>,\n      <ion-badge color=\"medium\">88</ion-badge>,\n      <ion-badge color=\"dark\">99</ion-badge>,\n\n      // Item with badge on left and right\n      <ion-item>\n        <ion-badge slot=\"start\">11</ion-badge>\n        <ion-label>My Item</ion-label>\n        <ion-badge slot=\"end\">22</ion-badge>\n      </ion-item>\n    ];\n  }\n}\n```",
+    "vue": "```html\n<template>\n  <!-- Default -->\n  <ion-badge>99</ion-badge>\n\n  <!-- Colors -->\n  <ion-badge color=\"primary\">11</ion-badge>\n  <ion-badge color=\"secondary\">22</ion-badge>\n  <ion-badge color=\"tertiary\">33</ion-badge>\n  <ion-badge color=\"success\">44</ion-badge>\n  <ion-badge color=\"warning\">55</ion-badge>\n  <ion-badge color=\"danger\">66</ion-badge>\n  <ion-badge color=\"light\">77</ion-badge>\n  <ion-badge color=\"medium\">88</ion-badge>\n  <ion-badge color=\"dark\">99</ion-badge>\n\n  <!-- Item with badge on left and right -->\n  <ion-item>\n    <ion-badge slot=\"start\">11</ion-badge>\n    <ion-label>My Item</ion-label>\n    <ion-badge slot=\"end\">22</ion-badge>\n  </ion-item>\n</template>\n\n<script>\nimport { IonBadge, IonItem, IonLabel } from '@ionic/vue';\nimport { defineComponent } from 'vue';\n\nexport default defineComponent({\n  components: { IonBadge, IonItem, IonLabel }\n});\n</script>\n```"
+  },
+  "props": [
+    {
+      "name": "color",
+      "type": "string | undefined",
+      "mutable": false,
+      "attr": "color",
+      "reflectToAttr": false,
+      "docs": "The color to use from your application's color palette.\nDefault options are: `\"primary\"`, `\"secondary\"`, `\"tertiary\"`, `\"success\"`, `\"warning\"`, `\"danger\"`, `\"light\"`, `\"medium\"`, and `\"dark\"`.\nFor more information on colors, see [theming](/docs/theming/basics).",
+      "docsTags": [],
+      "values": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "undefined"
+        }
+      ],
+      "optional": true,
+      "required": false
+    },
+    {
+      "name": "mode",
+      "type": "\"ios\" | \"md\"",
+      "mutable": false,
+      "attr": "mode",
+      "reflectToAttr": false,
+      "docs": "The mode determines which platform styles to use.",
+      "docsTags": [],
+      "values": [
+        {
+          "value": "ios",
+          "type": "string"
+        },
+        {
+          "value": "md",
+          "type": "string"
+        }
+      ],
+      "optional": true,
+      "required": false
+    }
+  ],
+  "methods": [],
+  "events": [],
+  "listeners": [],
+  "styles": [
+    {
+      "name": "--background",
+      "annotation": "prop",
+      "docs": "Background of the badge"
+    },
+    {
+      "name": "--color",
+      "annotation": "prop",
+      "docs": "Text color of the badge"
+    },
+    {
+      "name": "--padding-bottom",
+      "annotation": "prop",
+      "docs": "Bottom padding of the badge"
+    },
+    {
+      "name": "--padding-end",
+      "annotation": "prop",
+      "docs": "Right padding if direction is left-to-right, and left padding if direction is right-to-left of the badge"
+    },
+    {
+      "name": "--padding-start",
+      "annotation": "prop",
+      "docs": "Left padding if direction is left-to-right, and right padding if direction is right-to-left of the badge"
+    },
+    {
+      "name": "--padding-top",
+      "annotation": "prop",
+      "docs": "Top padding of the badge"
+    }
+  ],
+  "slots": [],
+  "parts": [],
+  "dependents": [],
+  "dependencies": [],
+  "dependencyGraph": {}
+}

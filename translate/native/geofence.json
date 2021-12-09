@@ -1,0 +1,16 @@
+{
+  "packageName": "@ionic-native/geofence",
+  "displayName": "Geofence",
+  "description": "Monitors circular geofences around latitude/longitude coordinates, and sends a notification to the user when the boundary of a geofence is crossed. Notifications can be sent when the user enters and/or exits a geofence.\nGeofences persist after device reboot. Geofences will be monitored even when the app is not running.",
+  "usage": "\n```typescript\nimport { Geofence } from '@ionic-native/geofence/ngx';\n\n...\n\nconstructor(private geofence: Geofence) {\n  // initialize the plugin\n  geofence.initialize().then(\n    // resolved promise does not return a value\n    () => console.log('Geofence Plugin Ready'),\n    (err) => console.log(err)\n  )\n}\n\n...\n\nprivate addGeofence() {\n  //options describing geofence\n  let fence = {\n    id: '69ca1b88-6fbe-4e80-a4d4-ff4d3748acdb', //any unique ID\n    latitude:       37.285951, //center of geofence radius\n    longitude:      -121.936650,\n    radius:         100, //radius to edge of geofence in meters\n    transitionType: 3, //see 'Transition Types' below\n    notification: { //notification settings\n        id:             1, //any unique ID\n        title:          'You crossed a fence', //notification title\n        text:           'You just arrived to Gliwice city center.', //notification body\n        openAppOnClick: true //open app when notification is tapped\n    }\n  }\n\n  this.geofence.addOrUpdate(fence).then(\n     () => console.log('Geofence added'),\n     (err) => console.log('Geofence failed to add')\n   );\n}\n\n```\n### Transition Types ###\nTransition type specifies whether the geofence should trigger when the user enters and/or leaves the geofence.\n\n#### Supported values ####\n- 1: Enter\n- 2: Leave\n- 3: Both\n\n### Defining a Geofence ###\nGeofences are defined by an object that is passed to `addOrUpdate()`. Object properties are:\n- id: Any unique ID for the geofence. This ID is used to remove and update a geofence\n- latitude: Latitude coordinate of the center of the geofence radius\n- longitude: Latitude coordinate of the center of the geofence radius\n- radius: Radius from the center to the edge of the geofence\n- transitionType: Type of geofence transition to monitor for. See 'Transition Types' above\n- notification: Object. Options for defining the notification sent when a geofence is crossed\n  - id: Any unique ID\n  - title: Notification title\n  - text: Notification body\n  - openAppOnClick: Boolean. Whether to open the app when the notification is tapped by the user\n\n### Troubleshooting ###\n#### I get compile errors when I run `ionic build ios` or `ionic run ios`. ####\nThis could be caused by the Cordova project directory in `/platforms/ios` not being named correctly.\nTry running `ionic cordova platform rm <platform>` then run `ionic cordova platform add <platform>` to recreate the\nplatform directories.\n",
+  "platforms": [
+    "Android",
+    "iOS",
+    "Windows",
+    "Windows Phone 8"
+  ],
+  "repo": "https://github.com/cowbell/cordova-plugin-geofence",
+  "cordovaPlugin": {
+    "name": "cordova-plugin-geofence"
+  }
+}

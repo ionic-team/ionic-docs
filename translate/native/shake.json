@@ -1,0 +1,13 @@
+{
+  "packageName": "@ionic-native/shake",
+  "displayName": "Shake",
+  "description": "Handles shake gesture",
+  "usage": "\n```typescript\nimport { Shake } from '@ionic-native/shake/ngx';\n\nconstructor(private shake: Shake) { }\n\n...\n\nconst watch = this.shake.startWatch(60).subscribe(() => {\n  // do something\n  });\n\nwatch.unsubscribe();\n```\n",
+  "platforms": [
+    "iOS"
+  ],
+  "repo": "https://github.com/leecrossley/cordova-plugin-shake",
+  "cordovaPlugin": {
+    "name": "cordova-plugin-shake"
+  }
+}

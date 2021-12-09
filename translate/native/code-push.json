@@ -1,0 +1,14 @@
+{
+  "packageName": "@ionic-native/code-push",
+  "displayName": "Code Push",
+  "description": "\nCodePush plugin for Cordova by Microsoft that supports iOS and Android.\n\nFor more info, please see https://github.com/Dellos7/example-cordova-code-push-plugin\n",
+  "usage": "\n```typescript\nimport { CodePush } from '@ionic-native/code-push/ngx';\n\nconstructor(private codePush: CodePush) { }\n\n...\n\n// note - mostly error & completed methods of observable will not fire\n// as syncStatus will contain the current state of the update\nthis.codePush.sync().subscribe((syncStatus) => console.log(syncStatus));\n\nconst downloadProgress = (progress) => { console.log(`Downloaded ${progress.receivedBytes} of ${progress.totalBytes}`); }\nthis.codePush.sync({}, downloadProgress).subscribe((syncStatus) => console.log(syncStatus));\n\n```\n",
+  "platforms": [
+    "Android",
+    "iOS"
+  ],
+  "repo": "https://github.com/Microsoft/cordova-plugin-code-push",
+  "cordovaPlugin": {
+    "name": "cordova-plugin-code-push"
+  }
+}

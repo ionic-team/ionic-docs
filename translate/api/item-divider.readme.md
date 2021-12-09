@@ -1,0 +1,3 @@
+# ion-item-divider
+
+Item Dividersは、List内のItemsを分割するために使用できるブロック要素です。これらはlist headersに似ていますが、listの先頭に配置するのではなく、類似したItemsのグループの間に配置する必要があります。

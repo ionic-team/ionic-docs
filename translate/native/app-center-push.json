@@ -1,0 +1,14 @@
+{
+  "packageName": "@ionic-native/app-center-push",
+  "displayName": "App Center Push",
+  "description": "\n\nFor more info, please see https://docs.microsoft.com/en-us/appcenter/sdk/push/cordova\n",
+  "usage": "\n```typescript\nimport { AppCenterPush } from '@ionic-native/app-center-push/ngx';\n\n\nconstructor(private appCenterPush: AppCenterPush) { }\n\n...\n\nthis.appCenterPush.setEnabled(true).then(() => {\n   this.appCenterPush.addEventListener('My Event').subscribe(pushNotification => {\n       console.log('Recived push notification', pushNotification);\n   });\n});\n\n```\n",
+  "platforms": [
+    "Android",
+    "iOS"
+  ],
+  "repo": "https://github.com/Microsoft/appcenter-sdk-cordova/tree/master/cordova-plugin-appcenter-push",
+  "cordovaPlugin": {
+    "name": "cordova-plugin-appcenter-push"
+  }
+}

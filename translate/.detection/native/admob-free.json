@@ -1,0 +1,14 @@
+{
+  "packageName": "@ionic-native/admob-free",
+  "displayName": "AdMob Free",
+  "description": "\nA free, no ad-sharing version of Google AdMob plugin for Cordova.\n\nRequires Cordova plugin: `cordova-plugin-admob-free`. For more info, please see the [AdMob Free plugin docs](https://github.com/ratson/cordova-plugin-admob-free).\n",
+  "usage": "\n```typescript\nimport { AdMobFree, AdMobFreeBannerConfig } from '@ionic-native/admob-free/ngx';\n\n\nconstructor(private admobFree: AdMobFree) { }\n\n\n...\n\n\nconst bannerConfig: AdMobFreeBannerConfig = {\n // add your config here\n // for the sake of this example we will just use the test config\n isTesting: true,\n autoShow: true\n};\nthis.admobFree.banner.config(bannerConfig);\n\nthis.admobFree.banner.prepare()\n  .then(() => {\n    // banner Ad is ready\n    // if we set autoShow to false, then we will need to call the show method here\n  })\n  .catch(e => console.log(e));\n\n\n```",
+  "platforms": [
+    "Android",
+    "iOS"
+  ],
+  "repo": "https://github.com/ratson/cordova-plugin-admob-free",
+  "cordovaPlugin": {
+    "name": "cordova-plugin-admob-free"
+  }
+}

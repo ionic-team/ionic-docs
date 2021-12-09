@@ -1,0 +1,309 @@
+{
+  "filePath": "./src/components/virtual-scroll/virtual-scroll.tsx",
+  "encapsulation": "none",
+  "tag": "ion-virtual-scroll",
+  "readme": "# ion-virtual-scroll\n\nVirtual Scroll displays a virtual, \"infinite\" list. An array of records\nis passed to the virtual scroll containing the data to create templates\nfor. The template created for each record, referred to as a cell, can\nconsist of items, headers, and footers. For performance reasons, not every record\nin the list is rendered at once; instead a small subset of records (enough to fill the viewport)\nare rendered and reused as the user scrolls.\n\n\n## Approximate Widths and Heights\n\nIf the height of items in the virtual scroll are not close to the\ndefault size of `40px`, it is extremely important to provide a value for\nthe `approxItemHeight` property. An exact pixel-perfect size is not necessary,\nbut without an estimate the virtual scroll will not render correctly.\n\nThe approximate width and height of each template is used to help\ndetermine how many cells should be created, and to help calculate\nthe height of the scrollable area. Note that the actual rendered size\nof each cell comes from the app's CSS, whereas this approximation\nis only used to help calculate initial dimensions.\n\nIt's also important to know that Ionic's default item sizes have\nslightly different heights between platforms, which is perfectly fine.\n\n## Images Within Virtual Scroll\n\nHTTP requests, image decoding, and image rendering can cause jank while\nscrolling. In order to better control images, Ionic provides `<ion-img>`\nto manage HTTP requests and image rendering. While scrolling through items\nquickly, `<ion-img>` knows when and when not to make requests, when and\nwhen not to render images, and only loads the images that are viewable\nafter scrolling. [Read more about `ion-img`.](../img)\n\nIt's also important for app developers to ensure image sizes are locked in,\nand after images have fully loaded they do not change size and affect any\nother element sizes. Simply put, to ensure rendering bugs are not introduced,\nit's vital that elements within a virtual item does not dynamically change.\n\nFor virtual scrolling, the natural effects of the `<img>` are not desirable\nfeatures. We recommend using the `<ion-img>` component over the native\n`<img>` element because when an `<img>` element is added to the DOM, it\nimmediately makes a HTTP request for the image file. Additionally, `<img>`\nrenders whenever it wants which could be while the user is scrolling. However,\n`<ion-img>` is governed by the containing `ion-content` and does not render\nimages while scrolling quickly.\n\n\n## Virtual Scroll Performance Tips\n\n### iOS Cordova WKWebView\n\nWhen deploying to iOS with Cordova, it's highly recommended to use the\n[WKWebView plugin](https://blog.ionicframework.com/cordova-ios-performance-improvements-drop-in-speed-with-wkwebview/)\nin order to take advantage of iOS's higher performing webview. Additionally,\nWKWebView is superior at scrolling efficiently in comparison to the older\nUIWebView.\n\n### Lock in element dimensions and locations\n\nIn order for virtual scroll to efficiently size and locate every item, it's\nvery important every element within each virtual item does not dynamically\nchange its dimensions or location. The best way to ensure size and location\ndoes not change, it's recommended each virtual item has locked in its size\nvia CSS.\n\n### Use `ion-img` for images\n\nWhen including images within Virtual Scroll, be sure to use\n[`ion-img`](../img/Img/) rather than the standard `<img>` HTML element.\nWith `ion-img`, images are lazy loaded so only the viewable ones are\nrendered, and HTTP requests are efficiently controlled while scrolling.\n\n### Set Approximate Widths and Heights\n\nAs mentioned above, all elements should lock in their dimensions. However,\nvirtual scroll isn't aware of the dimensions until after they have been\nrendered. For the initial render, virtual scroll still needs to set\nhow many items should be built. With \"approx\" property inputs, such as\n`approxItemHeight`, we're able to give virtual scroll an approximate size,\ntherefore allowing virtual scroll to decide how many items should be\ncreated.\n\n### Changing dataset should use `trackBy`\n\nIt is possible for the identities of elements in the iterator to change\nwhile the data does not. This can happen, for example, if the iterator\nproduced from an RPC to the server, and that RPC is re-run. Even if the\n\"data\" hasn't changed, the second response will produce objects with\ndifferent identities, and Ionic will tear down the entire DOM and rebuild\nit. This is an expensive operation and should be avoided if possible.\n\n### Efficient headers and footer functions\nEach virtual item must stay extremely efficient, but one way to really\nkill its performance is to perform any DOM operations within section header\nand footer functions. These functions are called for every record in the\ndataset, so please make sure they're performant.\n\n## React\n\nThe Virtual Scroll component is not supported in React.\n\n## Vue\n\n`ion-virtual-scroll` is not supported in Vue. We plan on integrating with existing community-driven solutions for virtual scroll in the near future. Follow our [GitHub issue thread](https://github.com/ionic-team/ionic-framework/issues/17887) for the latest updates.\n",
+  "docs": "Virtual Scroll displays a virtual, \"infinite\" list. An array of records\nis passed to the virtual scroll containing the data to create templates\nfor. The template created for each record, referred to as a cell, can\nconsist of items, headers, and footers. For performance reasons, not every record\nin the list is rendered at once; instead a small subset of records (enough to fill the viewport)\nare rendered and reused as the user scrolls.",
+  "docsTags": [],
+  "usage": {
+    "angular": "```html\n<ion-content>\n  <ion-virtual-scroll [items]=\"items\" approxItemHeight=\"320px\">\n    <ion-card *virtualItem=\"let item; let itemBounds = bounds;\">\n      <div>\n        <ion-img [src]=\"item.imgSrc\" [height]=\"item.imgHeight\" [alt]=\"item.name\"></ion-img>\n      </div>\n    <ion-card-header>\n      <ion-card-title>{{ item.name }}</ion-card-title>\n    </ion-card-header>\n    <ion-card-content>{{ item.content }}</ion-card-content>\n    </ion-card>\n  </ion-virtual-scroll>\n</ion-content>\n```\n\n```typescript\nexport class VirtualScrollPageComponent {\n  items: any[] = [];\n\n  constructor() {\n    for (let i = 0; i < 1000; i++) {\n      this.items.push({\n        name: i + ' - ' + images[rotateImg],\n        imgSrc: getImgSrc(),\n        avatarSrc: getImgSrc(),\n        imgHeight: Math.floor(Math.random() * 50 + 150),\n        content: lorem.substring(0, Math.random() * (lorem.length - 100) + 100)\n      });\n\n      rotateImg++;\n      if (rotateImg === images.length) {\n        rotateImg = 0;\n      }\n    }\n  }\n}\n\nconst lorem = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, seddo eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.';\n\nconst images = [\n  'bandit',\n  'batmobile',\n  'blues-brothers',\n  'bueller',\n  'delorean',\n  'eleanor',\n  'general-lee',\n  'ghostbusters',\n  'knight-rider',\n  'mirth-mobile'\n];\n\nfunction getImgSrc() {\n  const src = 'https://dummyimage.com/600x400/${Math.round( Math.random() * 99999)}/fff.png';\n  rotateImg++;\n  if (rotateImg === images.length) {\n    rotateImg = 0;\n  }\n  return src;\n}\n\nlet rotateImg = 0;\n```\n\n### Basic\n\nThe array of records should be passed to the `items` property on the `ion-virtual-scroll` element.\nThe data given to the `items` property must be an array. An item template with the `*virtualItem` property is required in the `ion-virtual-scroll`. The `*virtualItem` property can be added to any element.\n\n```html\n<ion-virtual-scroll [items]=\"items\">\n  <ion-item *virtualItem=\"let item\">\n    {{ item }}\n  </ion-item>\n</ion-virtual-scroll>\n```\n\n### Section Headers and Footers\n\nSection headers and footers are optional. They can be dynamically created\nfrom developer-defined functions. For example, a large list of contacts\nusually has a divider for each letter in the alphabet. Developers provide\ntheir own custom function to be called on each record. The logic in the\ncustom function should determine whether to create the section template\nand what data to provide to the template. The custom function should\nreturn `null` if a template shouldn't be created.\n\n```html\n<ion-virtual-scroll [items]=\"items\" [headerFn]=\"myHeaderFn\">\n  <ion-item-divider *virtualHeader=\"let header\">\n    {{ header }}\n  </ion-item-divider>\n  <ion-item *virtualItem=\"let item\">\n    Item: {{ item }}\n  </ion-item>\n</ion-virtual-scroll>\n```\n\nBelow is an example of a custom function called on every record. It\ngets passed the individual record, the record's index number,\nand the entire array of records. In this example, after every 20\nrecords a header will be inserted. So between the 19th and 20th records,\nbetween the 39th and 40th, and so on, a `<ion-item-divider>` will\nbe created and the template's data will come from the function's\nreturned data.\n\n```ts\nmyHeaderFn(record, recordIndex, records) {\n  if (recordIndex % 20 === 0) {\n    return 'Header ' + recordIndex;\n  }\n  return null;\n}\n```\n\n\n### Custom Components\n\nIf a custom component is going to be used within Virtual Scroll, it's best\nto wrap it with a `<div>` to ensure the component is rendered correctly. Since\neach custom component's implementation and internals can be quite different, wrapping\nwithin a `<div>` is a safe way to make sure dimensions are measured correctly.\n\n```html\n<ion-virtual-scroll [items]=\"items\">\n  <div *virtualItem=\"let item\">\n    <my-custom-item [item]=\"item\">\n      {{ item }}\n    </my-custom-item>\n  </div>\n</ion-virtual-scroll>\n```"
+  },
+  "props": [
+    {
+      "name": "approxFooterHeight",
+      "type": "number",
+      "mutable": false,
+      "attr": "approx-footer-height",
+      "reflectToAttr": false,
+      "docs": "The approximate width of each footer template's cell.\nThis dimension is used to help determine how many cells should\nbe created when initialized, and to help calculate the height of\nthe scrollable area. This height value can only use `px` units.\nNote that the actual rendered size of each cell comes from the\napp's CSS, whereas this approximation is used to help calculate\ninitial dimensions before the item has been rendered.",
+      "docsTags": [],
+      "default": "30",
+      "values": [
+        {
+          "type": "number"
+        }
+      ],
+      "optional": false,
+      "required": false
+    },
+    {
+      "name": "approxHeaderHeight",
+      "type": "number",
+      "mutable": false,
+      "attr": "approx-header-height",
+      "reflectToAttr": false,
+      "docs": "The approximate height of each header template's cell.\nThis dimension is used to help determine how many cells should\nbe created when initialized, and to help calculate the height of\nthe scrollable area. This height value can only use `px` units.\nNote that the actual rendered size of each cell comes from the\napp's CSS, whereas this approximation is used to help calculate\ninitial dimensions before the item has been rendered.",
+      "docsTags": [],
+      "default": "30",
+      "values": [
+        {
+          "type": "number"
+        }
+      ],
+      "optional": false,
+      "required": false
+    },
+    {
+      "name": "approxItemHeight",
+      "type": "number",
+      "mutable": false,
+      "attr": "approx-item-height",
+      "reflectToAttr": false,
+      "docs": "It is important to provide this\nif virtual item height will be significantly larger than the default\nThe approximate height of each virtual item template's cell.\nThis dimension is used to help determine how many cells should\nbe created when initialized, and to help calculate the height of\nthe scrollable area. This height value can only use `px` units.\nNote that the actual rendered size of each cell comes from the\napp's CSS, whereas this approximation is used to help calculate\ninitial dimensions before the item has been rendered.",
+      "docsTags": [],
+      "default": "45",
+      "values": [
+        {
+          "type": "number"
+        }
+      ],
+      "optional": false,
+      "required": false
+    },
+    {
+      "name": "footerFn",
+      "type": "((item: any, index: number, items: any[]) => string | null | undefined) | undefined",
+      "mutable": false,
+      "reflectToAttr": false,
+      "docs": "Section footers and the data used within its given\ntemplate can be dynamically created by passing a function to `footerFn`.\nThe logic within the footer function can decide if the footer template\nshould be used, and what data to give to the footer template. The function\nmust return `null` if a footer cell shouldn't be created.",
+      "docsTags": [],
+      "values": [
+        {
+          "type": "((item: any, index: number, items: any[]) => string"
+        },
+        {
+          "type": "null"
+        },
+        {
+          "type": "undefined)"
+        },
+        {
+          "type": "undefined"
+        }
+      ],
+      "optional": true,
+      "required": false
+    },
+    {
+      "name": "footerHeight",
+      "type": "((item: any, index: number) => number) | undefined",
+      "mutable": false,
+      "reflectToAttr": false,
+      "docs": "An optional function that maps each item footer within their height.",
+      "docsTags": [],
+      "values": [
+        {
+          "type": "((item: any, index: number) => number)"
+        },
+        {
+          "type": "undefined"
+        }
+      ],
+      "optional": true,
+      "required": false
+    },
+    {
+      "name": "headerFn",
+      "type": "((item: any, index: number, items: any[]) => string | null | undefined) | undefined",
+      "mutable": false,
+      "reflectToAttr": false,
+      "docs": "Section headers and the data used within its given\ntemplate can be dynamically created by passing a function to `headerFn`.\nFor example, a large list of contacts usually has dividers between each\nletter in the alphabet. App's can provide their own custom `headerFn`\nwhich is called with each record within the dataset. The logic within\nthe header function can decide if the header template should be used,\nand what data to give to the header template. The function must return\n`null` if a header cell shouldn't be created.",
+      "docsTags": [],
+      "values": [
+        {
+          "type": "((item: any, index: number, items: any[]) => string"
+        },
+        {
+          "type": "null"
+        },
+        {
+          "type": "undefined)"
+        },
+        {
+          "type": "undefined"
+        }
+      ],
+      "optional": true,
+      "required": false
+    },
+    {
+      "name": "headerHeight",
+      "type": "((item: any, index: number) => number) | undefined",
+      "mutable": false,
+      "reflectToAttr": false,
+      "docs": "An optional function that maps each item header within their height.",
+      "docsTags": [],
+      "values": [
+        {
+          "type": "((item: any, index: number) => number)"
+        },
+        {
+          "type": "undefined"
+        }
+      ],
+      "optional": true,
+      "required": false
+    },
+    {
+      "name": "itemHeight",
+      "type": "((item: any, index: number) => number) | undefined",
+      "mutable": false,
+      "reflectToAttr": false,
+      "docs": "An optional function that maps each item within their height.\nWhen this function is provides, heavy optimizations and fast path can be taked by\n`ion-virtual-scroll` leading to massive performance improvements.\n\nThis function allows to skip all DOM reads, which can be Doing so leads\nto massive performance",
+      "docsTags": [],
+      "values": [
+        {
+          "type": "((item: any, index: number) => number)"
+        },
+        {
+          "type": "undefined"
+        }
+      ],
+      "optional": true,
+      "required": false
+    },
+    {
+      "name": "items",
+      "type": "any[] | undefined",
+      "mutable": false,
+      "reflectToAttr": false,
+      "docs": "The data that builds the templates within the virtual scroll.\nIt's important to note that when this data has changed, then the\nentire virtual scroll is reset, which is an expensive operation and\nshould be avoided if possible.",
+      "docsTags": [],
+      "values": [
+        {
+          "type": "any[]"
+        },
+        {
+          "type": "undefined"
+        }
+      ],
+      "optional": true,
+      "required": false
+    },
+    {
+      "name": "nodeRender",
+      "type": "((el: HTMLElement | null, cell: Cell, domIndex: number) => HTMLElement) | undefined",
+      "mutable": false,
+      "reflectToAttr": false,
+      "docs": "NOTE: only Vanilla JS API.",
+      "docsTags": [],
+      "values": [
+        {
+          "type": "((el: HTMLElement"
+        },
+        {
+          "type": "null, cell: Cell, domIndex: number) => HTMLElement)"
+        },
+        {
+          "type": "undefined"
+        }
+      ],
+      "optional": true,
+      "required": false
+    },
+    {
+      "name": "renderFooter",
+      "type": "((item: any, index: number) => any) | undefined",
+      "mutable": false,
+      "reflectToAttr": false,
+      "docs": "NOTE: only JSX API for stencil.\n\nProvide a render function for the footer to be rendered. Returns a JSX virtual-dom.",
+      "docsTags": [],
+      "values": [
+        {
+          "type": "((item: any, index: number) => any)"
+        },
+        {
+          "type": "undefined"
+        }
+      ],
+      "optional": true,
+      "required": false
+    },
+    {
+      "name": "renderHeader",
+      "type": "((item: any, index: number) => any) | undefined",
+      "mutable": false,
+      "reflectToAttr": false,
+      "docs": "NOTE: only JSX API for stencil.\n\nProvide a render function for the header to be rendered. Returns a JSX virtual-dom.",
+      "docsTags": [],
+      "values": [
+        {
+          "type": "((item: any, index: number) => any)"
+        },
+        {
+          "type": "undefined"
+        }
+      ],
+      "optional": true,
+      "required": false
+    },
+    {
+      "name": "renderItem",
+      "type": "((item: any, index: number) => any) | undefined",
+      "mutable": false,
+      "reflectToAttr": false,
+      "docs": "NOTE: only JSX API for stencil.\n\nProvide a render function for the items to be rendered. Returns a JSX virtual-dom.",
+      "docsTags": [],
+      "values": [
+        {
+          "type": "((item: any, index: number) => any)"
+        },
+        {
+          "type": "undefined"
+        }
+      ],
+      "optional": true,
+      "required": false
+    }
+  ],
+  "methods": [
+    {
+      "name": "checkEnd",
+      "returns": {
+        "type": "Promise<void>",
+        "docs": ""
+      },
+      "signature": "checkEnd() => Promise<void>",
+      "parameters": [],
+      "docs": "This method marks the tail the items array as dirty, so they can be re-rendered.\n\nIt's equivalent to calling:\n\n```js\nvirtualScroll.checkRange(lastItemLen);\n```",
+      "docsTags": []
+    },
+    {
+      "name": "checkRange",
+      "returns": {
+        "type": "Promise<void>",
+        "docs": ""
+      },
+      "signature": "checkRange(offset: number, len?: number) => Promise<void>",
+      "parameters": [],
+      "docs": "This method marks a subset of items as dirty, so they can be re-rendered. Items should be marked as\ndirty any time the content or their style changes.\n\nThe subset of items to be updated can are specifing by an offset and a length.",
+      "docsTags": []
+    },
+    {
+      "name": "positionForItem",
+      "returns": {
+        "type": "Promise<number>",
+        "docs": ""
+      },
+      "signature": "positionForItem(index: number) => Promise<number>",
+      "parameters": [],
+      "docs": "Returns the position of the virtual item at the given index.",
+      "docsTags": []
+    }
+  ],
+  "events": [],
+  "listeners": [
+    {
+      "event": "resize",
+      "target": "window",
+      "capture": false,
+      "passive": true
+    }
+  ],
+  "styles": [],
+  "slots": [],
+  "parts": [],
+  "dependents": [],
+  "dependencies": [],
+  "dependencyGraph": {}
+}

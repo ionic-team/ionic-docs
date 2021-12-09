@@ -1,0 +1,13 @@
+{
+  "packageName": "@ionic-native/metrix",
+  "displayName": "Metrix",
+  "description": "\nThis is the Ionic Cordova SDK of Metrix™. You can read more about Metrix™ at metrix.ir.\n\nRequires Cordova plugin: `ir.metrix.sdk`. For more info, please see the [Metrix Cordova SDK](https://github.com/metrixorg/MetrixSDK-CordovaPlugin)\n",
+  "usage": "\n```typescript\n import { Metrix, MetrixConfig } from '@ionic-native/metrix';\n\n constructor(private metrix: Metrix) { }\n\n ...\n\n const config = new MetrixConfig('APP-ID-HERE');\n // Set other config properties.\n metrix.create(config);\n\n```",
+  "platforms": [
+    "Android"
+  ],
+  "repo": "https://github.com/metrixorg/MetrixSDK-CordovaPlugin",
+  "cordovaPlugin": {
+    "name": "ir.metrix.sdk"
+  }
+}

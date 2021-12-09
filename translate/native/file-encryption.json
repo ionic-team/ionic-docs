@@ -1,0 +1,14 @@
+{
+  "packageName": "@ionic-native/file-encryption",
+  "displayName": "File Encryption",
+  "description": "\nSimple file encryption for Cordova.\n",
+  "usage": "\n```typescript\nimport { FileEncryption } from '@ionic-native/file-encryption/ngx';\n\n\nconstructor(private fileEncryption: FileEncryption) { }\n\n...\n\nthis.fileEncryption.decrypt('assets/json/topSecret.json', 'secretKey');\n\nthis.fileEncryption.encrypt('assets/json/topSecret.json', 'secretKey');\n\n```\n",
+  "platforms": [
+    "Android",
+    "iOS"
+  ],
+  "repo": "https://github.com/disusered/cordova-safe",
+  "cordovaPlugin": {
+    "name": "cordova-safe"
+  }
+}

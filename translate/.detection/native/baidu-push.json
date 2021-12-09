@@ -1,0 +1,14 @@
+{
+  "packageName": "@ionic-native/baidu-push",
+  "displayName": "Baidu Push",
+  "description": "\nThis plugin faciliates the use of Baidu Push notifications.\n",
+  "usage": "\n```typescript\nimport { BaiduPush } from '@ionic-native/baidu-push/ngx';\n\n\nconstructor(private baiduPush: BaiduPush) { }\n\n...\n\nthis.baiduPush.startWork('xxxxxx')\n  .then((res: any) => console.log(res))\n  .catch((error: any) => console.error(error));\n\n```",
+  "platforms": [
+    "Android",
+    "iOS"
+  ],
+  "repo": "https://github.com/Ti-webdev/cordova-plugin-push-baidu.git",
+  "cordovaPlugin": {
+    "name": "cordova-plugin-push-baidu"
+  }
+}

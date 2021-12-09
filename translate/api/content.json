@@ -1,0 +1,345 @@
+{
+  "filePath": "./src/components/content/content.tsx",
+  "encapsulation": "shadow",
+  "tag": "ion-content",
+  "readme": "# ion-content\n\nThe content component provides an easy to use content area with some useful methods\nto control the scrollable area. There should only be one content in a single\nview.\n\nContent, along with many other Ionic components, can be customized to modify its padding, margin, and more using the global styles provided in the [CSS Utilities](/docs/layout/css-utilities) or by individually styling it using CSS and the available [CSS Custom Properties](#css-custom-properties).\n\n\n## Fixed Content\n\nIn order to place elements outside of the scrollable area, `slot=\"fixed\"` can be added to the element. This will absolutely position the element placing it in the top left. In order to place the element in a different position, style it using [top, right, bottom, and left](https://developer.mozilla.org/en-US/docs/Web/CSS/position).\n\n",
+  "docs": "The content component provides an easy to use content area with some useful methods\nto control the scrollable area. There should only be one content in a single\nview.\n\nContent, along with many other Ionic components, can be customized to modify its padding, margin, and more using the global styles provided in the [CSS Utilities](/docs/layout/css-utilities) or by individually styling it using CSS and the available [CSS Custom Properties](#css-custom-properties).",
+  "docsTags": [
+    {
+      "text": "- Content is placed in the scrollable area if provided without a slot.",
+      "name": "slot"
+    },
+    {
+      "text": "fixed - Should be used for fixed content that should not scroll.",
+      "name": "slot"
+    },
+    {
+      "text": "background - The background of the content.",
+      "name": "part"
+    },
+    {
+      "text": "scroll - The scrollable container of the content.",
+      "name": "part"
+    }
+  ],
+  "usage": {
+    "angular": "```html\n<ion-content\n  [scrollEvents]=\"true\"\n  (ionScrollStart)=\"logScrollStart()\"\n  (ionScroll)=\"logScrolling($event)\"\n  (ionScrollEnd)=\"logScrollEnd()\">\n    <h1>Main Content</h1>\n\n    <div slot=\"fixed\">\n      <h1>Fixed Content</h1>\n    </div>\n</ion-content>\n```\n\n",
+    "javascript": "```html\n<ion-content>\n  <h1>Main Content</h1>\n\n  <div slot=\"fixed\">\n    <h1>Fixed Content</h1>\n  </div>\n</ion-content>\n```\n\n```javascript\nvar content = document.querySelector('ion-content');\ncontent.scrollEvents = true;\ncontent.addEventListener('ionScrollStart', () => console.log('scroll start'));\ncontent.addEventListener('ionScroll', (ev) => console.log('scroll', ev.detail));\ncontent.addEventListener('ionScrollEnd', () => console.log('scroll end'));\n```\n",
+    "react": "```tsx\nimport React from 'react';\nimport { IonContent } from '@ionic/react';\n\nconst ContentExample: React.FC = () => (\n  <IonContent\n    scrollEvents={true}\n    onIonScrollStart={() => {}}\n    onIonScroll={() => {}}\n    onIonScrollEnd={() => {}}>\n      <h1>Main Content</h1>\n\n      <div slot=\"fixed\">\n        <h1>Fixed Content</h1>\n      </div>\n  </IonContent>\n);\n```\n",
+    "stencil": "```tsx\nimport { Component, h } from '@stencil/core';\n\n@Component({\n  tag: 'content-example',\n  styleUrl: 'content-example.css'\n})\nexport class ContentExample {\n  logScrollStart() {\n    console.log('Scroll start');\n  }\n\n  logScrolling(ev) {\n    console.log('Scrolling', ev);\n  }\n\n  logScrollEnd() {\n    console.log('Scroll end');\n  }\n\n  render() {\n    return [\n      <ion-content\n        scrollEvents={true}\n        onIonScrollStart={() => this.logScrollStart()}\n        onIonScroll={(ev) => this.logScrolling(ev)}\n        onIonScrollEnd={() => this.logScrollEnd()}>\n          <h1>Main Content</h1>\n\n          <div slot=\"fixed\">\n            <h1>Fixed Content</h1>\n          </div>\n      </ion-content>\n    ];\n  }\n}\n```\n",
+    "vue": "```html\n<template>\n  <ion-content\n    :scroll-events=\"true\"\n    @ionScrollStart=\"logScrollStart()\"\n    @ionScroll=\"logScrolling($event)\"\n    @ionScrollEnd=\"logScrollEnd()\">\n      <h1>Main Content</h1>\n\n      <div slot=\"fixed\">\n        <h1>Fixed Content</h1>\n      </div>\n  </ion-content>\n</template>\n\n<script>\nimport { IonContent } from '@ionic/vue';\nimport { defineComponent } from 'vue';\n\nexport default defineComponent({\n  components: { IonContent }\n});\n</script>\n\n```\n\n"
+  },
+  "props": [
+    {
+      "name": "color",
+      "type": "string | undefined",
+      "mutable": false,
+      "attr": "color",
+      "reflectToAttr": false,
+      "docs": "The color to use from your application's color palette.\nDefault options are: `\"primary\"`, `\"secondary\"`, `\"tertiary\"`, `\"success\"`, `\"warning\"`, `\"danger\"`, `\"light\"`, `\"medium\"`, and `\"dark\"`.\nFor more information on colors, see [theming](/docs/theming/basics).",
+      "docsTags": [],
+      "values": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "undefined"
+        }
+      ],
+      "optional": true,
+      "required": false
+    },
+    {
+      "name": "forceOverscroll",
+      "type": "boolean | undefined",
+      "mutable": true,
+      "attr": "force-overscroll",
+      "reflectToAttr": false,
+      "docs": "If `true` and the content does not cause an overflow scroll, the scroll interaction will cause a bounce.\nIf the content exceeds the bounds of ionContent, nothing will change.\nNote, the does not disable the system bounce on iOS. That is an OS level setting.",
+      "docsTags": [],
+      "values": [
+        {
+          "type": "boolean"
+        },
+        {
+          "type": "undefined"
+        }
+      ],
+      "optional": true,
+      "required": false
+    },
+    {
+      "name": "fullscreen",
+      "type": "boolean",
+      "mutable": false,
+      "attr": "fullscreen",
+      "reflectToAttr": false,
+      "docs": "If `true`, the content will scroll behind the headers\nand footers. This effect can easily be seen by setting the toolbar\nto transparent.",
+      "docsTags": [],
+      "default": "false",
+      "values": [
+        {
+          "type": "boolean"
+        }
+      ],
+      "optional": false,
+      "required": false
+    },
+    {
+      "name": "scrollEvents",
+      "type": "boolean",
+      "mutable": false,
+      "attr": "scroll-events",
+      "reflectToAttr": false,
+      "docs": "Because of performance reasons, ionScroll events are disabled by default, in order to enable them\nand start listening from (ionScroll), set this property to `true`.",
+      "docsTags": [],
+      "default": "false",
+      "values": [
+        {
+          "type": "boolean"
+        }
+      ],
+      "optional": false,
+      "required": false
+    },
+    {
+      "name": "scrollX",
+      "type": "boolean",
+      "mutable": false,
+      "attr": "scroll-x",
+      "reflectToAttr": false,
+      "docs": "If you want to enable the content scrolling in the X axis, set this property to `true`.",
+      "docsTags": [],
+      "default": "false",
+      "values": [
+        {
+          "type": "boolean"
+        }
+      ],
+      "optional": false,
+      "required": false
+    },
+    {
+      "name": "scrollY",
+      "type": "boolean",
+      "mutable": false,
+      "attr": "scroll-y",
+      "reflectToAttr": false,
+      "docs": "If you want to disable the content scrolling in the Y axis, set this property to `false`.",
+      "docsTags": [],
+      "default": "true",
+      "values": [
+        {
+          "type": "boolean"
+        }
+      ],
+      "optional": false,
+      "required": false
+    }
+  ],
+  "methods": [
+    {
+      "name": "getScrollElement",
+      "returns": {
+        "type": "Promise<HTMLElement>",
+        "docs": ""
+      },
+      "signature": "getScrollElement() => Promise<HTMLElement>",
+      "parameters": [],
+      "docs": "Get the element where the actual scrolling takes place.\nThis element can be used to subscribe to `scroll` events or manually modify\n`scrollTop`. However, it's recommended to use the API provided by `ion-content`:\n\ni.e. Using `ionScroll`, `ionScrollStart`, `ionScrollEnd` for scrolling events\nand `scrollToPoint()` to scroll the content into a certain point.",
+      "docsTags": []
+    },
+    {
+      "name": "scrollByPoint",
+      "returns": {
+        "type": "Promise<void>",
+        "docs": ""
+      },
+      "signature": "scrollByPoint(x: number, y: number, duration: number) => Promise<void>",
+      "parameters": [],
+      "docs": "Scroll by a specified X/Y distance in the component.",
+      "docsTags": [
+        {
+          "name": "param",
+          "text": "x The amount to scroll by on the horizontal axis."
+        },
+        {
+          "name": "param",
+          "text": "y The amount to scroll by on the vertical axis."
+        },
+        {
+          "name": "param",
+          "text": "duration The amount of time to take scrolling by that amount."
+        }
+      ]
+    },
+    {
+      "name": "scrollToBottom",
+      "returns": {
+        "type": "Promise<void>",
+        "docs": ""
+      },
+      "signature": "scrollToBottom(duration?: number) => Promise<void>",
+      "parameters": [],
+      "docs": "Scroll to the bottom of the component.",
+      "docsTags": [
+        {
+          "name": "param",
+          "text": "duration The amount of time to take scrolling to the bottom. Defaults to `0`."
+        }
+      ]
+    },
+    {
+      "name": "scrollToPoint",
+      "returns": {
+        "type": "Promise<void>",
+        "docs": ""
+      },
+      "signature": "scrollToPoint(x: number | undefined | null, y: number | undefined | null, duration?: number) => Promise<void>",
+      "parameters": [],
+      "docs": "Scroll to a specified X/Y location in the component.",
+      "docsTags": [
+        {
+          "name": "param",
+          "text": "x The point to scroll to on the horizontal axis."
+        },
+        {
+          "name": "param",
+          "text": "y The point to scroll to on the vertical axis."
+        },
+        {
+          "name": "param",
+          "text": "duration The amount of time to take scrolling to that point. Defaults to `0`."
+        }
+      ]
+    },
+    {
+      "name": "scrollToTop",
+      "returns": {
+        "type": "Promise<void>",
+        "docs": ""
+      },
+      "signature": "scrollToTop(duration?: number) => Promise<void>",
+      "parameters": [],
+      "docs": "Scroll to the top of the component.",
+      "docsTags": [
+        {
+          "name": "param",
+          "text": "duration The amount of time to take scrolling to the top. Defaults to `0`."
+        }
+      ]
+    }
+  ],
+  "events": [
+    {
+      "event": "ionScroll",
+      "detail": "ScrollDetail",
+      "bubbles": true,
+      "cancelable": true,
+      "composed": true,
+      "docs": "Emitted while scrolling. This event is disabled by default.\nLook at the property: `scrollEvents`",
+      "docsTags": []
+    },
+    {
+      "event": "ionScrollEnd",
+      "detail": "ScrollBaseDetail",
+      "bubbles": true,
+      "cancelable": true,
+      "composed": true,
+      "docs": "Emitted when the scroll has ended.",
+      "docsTags": []
+    },
+    {
+      "event": "ionScrollStart",
+      "detail": "ScrollBaseDetail",
+      "bubbles": true,
+      "cancelable": true,
+      "composed": true,
+      "docs": "Emitted when the scroll has started.",
+      "docsTags": []
+    }
+  ],
+  "listeners": [
+    {
+      "event": "appload",
+      "target": "window",
+      "capture": false,
+      "passive": false
+    },
+    {
+      "event": "click",
+      "capture": true,
+      "passive": false
+    }
+  ],
+  "styles": [
+    {
+      "name": "--background",
+      "annotation": "prop",
+      "docs": "Background of the content"
+    },
+    {
+      "name": "--color",
+      "annotation": "prop",
+      "docs": "Color of the content"
+    },
+    {
+      "name": "--keyboard-offset",
+      "annotation": "prop",
+      "docs": "Keyboard offset of the content"
+    },
+    {
+      "name": "--offset-bottom",
+      "annotation": "prop",
+      "docs": "Offset bottom of the content"
+    },
+    {
+      "name": "--offset-top",
+      "annotation": "prop",
+      "docs": "Offset top of the content"
+    },
+    {
+      "name": "--padding-bottom",
+      "annotation": "prop",
+      "docs": "Bottom padding of the content"
+    },
+    {
+      "name": "--padding-end",
+      "annotation": "prop",
+      "docs": "Right padding if direction is left-to-right, and left padding if direction is right-to-left of the content"
+    },
+    {
+      "name": "--padding-start",
+      "annotation": "prop",
+      "docs": "Left padding if direction is left-to-right, and right padding if direction is right-to-left of the content"
+    },
+    {
+      "name": "--padding-top",
+      "annotation": "prop",
+      "docs": "Top padding of the content"
+    }
+  ],
+  "slots": [
+    {
+      "name": "",
+      "docs": "Content is placed in the scrollable area if provided without a slot."
+    },
+    {
+      "name": "fixed",
+      "docs": "Should be used for fixed content that should not scroll."
+    }
+  ],
+  "parts": [
+    {
+      "name": "background",
+      "docs": "The background of the content."
+    },
+    {
+      "name": "scroll",
+      "docs": "The scrollable container of the content."
+    }
+  ],
+  "dependents": [],
+  "dependencies": [],
+  "dependencyGraph": {}
+}

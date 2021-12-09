@@ -1,0 +1,53 @@
+{
+  "name": "ionic cordova resources",
+  "namespace": [
+    "ionic",
+    "cordova"
+  ],
+  "summary": "Automatically create icon and splash screen resources",
+  "description": "Generate perfectly sized icons and splash screens from PNG source images for your Cordova platforms with this command.\n\nThe source image for icons should ideally be at least **1024×1024px** and located at **resources/icon.png**. The source image for splash screens should ideally be at least **2732×2732px** and located at **resources/splash.png**. If you used `ionic start`, there should already be default Ionic resources in the **resources/** directory, which you can overwrite.\n\nYou can also generate platform-specific icons and splash screens by placing them in the respective **resources/&lt;platform&gt;/** directory. For example, to generate an icon for Android, place your image at **resources/android/icon.png**.\n\nFor best results, the splash screen's artwork should roughly fit within a square (**1200×1200px**) at the center of the image. You can use **[https://code.ionicframework.com/resources/splash.psd](https://code.ionicframework.com/resources/splash.psd)** as a template for your splash screen.\n\n`ionic cordova resources` will automatically update your **config.xml** to reflect the changes in the generated images, which Cordova then configures.\n\nThis command uses the `cordova-res` [utility](https://github.com/ionic-team/cordova-res) to generate resources locally.\n\nCordova reference documentation:\n- Icons: **[https://cordova.apache.org/docs/en/latest/config_ref/images.html](https://cordova.apache.org/docs/en/latest/config_ref/images.html)**\n- Splash Screens: **[https://cordova.apache.org/docs/en/latest/reference/cordova-plugin-splashscreen/](https://cordova.apache.org/docs/en/latest/reference/cordova-plugin-splashscreen/)**",
+  "footnotes": [],
+  "groups": [],
+  "exampleCommands": [
+    "ionic cordova resources ",
+    "ionic cordova resources ios",
+    "ionic cordova resources android"
+  ],
+  "aliases": [
+    "ionic cordova res"
+  ],
+  "inputs": [
+    {
+      "name": "platform",
+      "summary": "The platform for which you would like to generate resources (`ios`, `android`)",
+      "required": false
+    }
+  ],
+  "options": [
+    {
+      "name": "icon",
+      "type": "boolean",
+      "summary": "Generate icon resources",
+      "groups": [],
+      "aliases": [
+        "i"
+      ],
+      "spec": {
+        "value": "true/false"
+      }
+    },
+    {
+      "name": "splash",
+      "type": "boolean",
+      "summary": "Generate splash screen resources",
+      "groups": [],
+      "aliases": [
+        "s"
+      ],
+      "spec": {
+        "value": "true/false"
+      }
+    }
+  ],
+  "type": "project"
+}

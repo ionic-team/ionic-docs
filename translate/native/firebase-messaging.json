@@ -1,0 +1,14 @@
+{
+  "packageName": "@ionic-native/firebase-messaging",
+  "displayName": "Firebase Messaging",
+  "description": "\nCordova plugin for Firebase Messaging\n",
+  "usage": "\n```typescript\nimport { FirebaseMessaging } from '@ionic-native/firebase-messaging/ngx';\n\n\nconstructor(private firebaseMessaging: FirebaseMessaging) { }\n\n...\n\n\nthis.firebaseMessaging.logEvent('page_view', {page: \"dashboard\"})\n  .then((res: any) => console.log(res))\n  .catch((error: any) => console.error(error));\n\n```",
+  "platforms": [
+    "Android",
+    "iOS"
+  ],
+  "repo": "https://github.com/chemerisuk/cordova-plugin-firebase-messaging",
+  "cordovaPlugin": {
+    "name": "cordova-plugin-firebase-messaging"
+  }
+}

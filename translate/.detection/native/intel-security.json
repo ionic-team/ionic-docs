@@ -1,0 +1,16 @@
+{
+  "packageName": "@ionic-native/intel-security",
+  "displayName": "Intel Security",
+  "description": "\nThe App Security API enables the use of security properties and capabilities on the platform, using a new set of API defined for application developers. You are not required to be a security expert to make good use of the API. Key elements, such as encryption of data and establishments of capabilities, is abstracted and done by the API implementation, for you.\n\nFor example:\n- Use the API to store (E.g. cache) data locally, using the device non-volatile storage. Data protection/encryption will be done for you by the API implementation\n- Establish a connection with remote server (E.g. XHR) using a protected channel. SSL/TLS establishment and usage will be done for you by the API implementation\n\nFor more information please visit the [API documentation](https://software.intel.com/en-us/app-security-api/api).\n",
+  "usage": "\n```typescript\nimport { IntelSecurity } from '@ionic-native/intel-security/ngx';\n...\nconstructor(private intelSecurity: IntelSecurity) { }\n...\n\nlet storageID = 'id';\n\nthis.intelSecurity.data.createFromData({ data: 'Sample Data' })\n  .then((instanceID: Number) => this.intelSecurity.storage.write({ id: storageId, instanceID: instanceID }))\n  .catch((error: any) => console.log(error));\n\nthis.intelSecurity.storage.read({id: storageID })\n  .then((instanceID: number) => this.intelSecurity.data.getData(instanceID))\n  .then((data: string) => console.log(data)) // Resolves to 'Sample Data'\n  .catch((error: any) => console.log(error));\n\nthis.intelSecurity.storage.delete({ id: storageID })\n  .then(() => console.log('Deleted Successfully'))\n  .catch((error: any) => console.log(error));\n```",
+  "platforms": [
+    "Android",
+    "iOS",
+    "Windows",
+    "Windows Phone 8"
+  ],
+  "repo": "https://github.com/AppSecurityApi/com-intel-security-cordova-plugin",
+  "cordovaPlugin": {
+    "name": "com-intel-security-cordova-plugin"
+  }
+}

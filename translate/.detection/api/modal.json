@@ -1,0 +1,414 @@
+{
+  "filePath": "./src/components/modal/modal.tsx",
+  "encapsulation": "scoped",
+  "tag": "ion-modal",
+  "readme": "# ion-modal\n\nA Modal is a dialog that appears on top of the app's content, and must be dismissed by the app before interaction can resume. It is useful as a select component when there are a lot of options to choose from, or when filtering items in a list, as well as many other use cases.\n\n## Dismissing\n\nThe modal can be dismissed after creation by calling the `dismiss()` method on the modal controller. The `onDidDismiss` function can be called to perform an action after the modal is dismissed.\n\n## Customization\n\nModal uses scoped encapsulation, which means it will automatically scope its CSS by appending each of the styles with an additional class at runtime. Overriding scoped selectors in CSS requires a [higher specificity](https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity) selector.\n\nWe recommend passing a custom class to `cssClass` in the `create` method and using that to add custom styles to the host and inner elements. This property can also accept multiple classes separated by spaces. View the [Usage](#usage) section for an example of how to pass a class using `cssClass`.\n\n```css\n/* DOES NOT WORK - not specific enough */\n.modal-wrapper {\n  background: #222;\n}\n\n/* Works - pass \"my-custom-class\" in cssClass to increase specificity */\n.my-custom-class .modal-wrapper {\n  background: #222;\n}\n```\n\nAny of the defined [CSS Custom Properties](#css-custom-properties) can be used to style the Modal without needing to target individual elements:\n\n```css\n.my-custom-class {\n  --background: #222;\n}\n```\n\n> If you are building an Ionic Angular app, the styles need to be added to a global stylesheet file. Read [Style Placement](#style-placement) in the Angular section below for more information.\n",
+  "docs": "A Modal is a dialog that appears on top of the app's content, and must be dismissed by the app before interaction can resume. It is useful as a select component when there are a lot of options to choose from, or when filtering items in a list, as well as many other use cases.",
+  "docsTags": [
+    {
+      "text": "{\"ios\" | \"md\"} mode - The mode determines which platform styles to use.",
+      "name": "virtualProp"
+    }
+  ],
+  "usage": {
+    "angular": "```typescript\nimport { Component } from '@angular/core';\nimport { ModalController } from '@ionic/angular';\nimport { ModalPage } from '../modal/modal.page';\n\n@Component({\n  selector: 'modal-example',\n  templateUrl: 'modal-example.html',\n  styleUrls: ['./modal-example.css']\n})\nexport class ModalExample {\n  constructor(public modalController: ModalController) {\n\n  }\n\n  async presentModal() {\n    const modal = await this.modalController.create({\n      component: ModalPage,\n      cssClass: 'my-custom-class'\n    });\n    return await modal.present();\n  }\n}\n```\n\n```typescript\nimport { Component, Input } from '@angular/core';\n\n@Component({\n  selector: 'modal-page',\n})\nexport class ModalPage {\n\n  constructor() {}\n\n}\n```\n\n> If you need a wrapper element inside of your modal component, we recommend using a `<div class=\"ion-page\">` so that the component dimensions are still computed properly.\n\n### Passing Data\n\nDuring creation of a modal, data can be passed in through the `componentProps`.\nThe previous example can be written to include data:\n\n```typescript\nasync presentModal() {\n  const modal = await this.modalController.create({\n    component: ModalPage,\n    cssClass: 'my-custom-class',\n    componentProps: {\n      'firstName': 'Douglas',\n      'lastName': 'Adams',\n      'middleInitial': 'N'\n    }\n  });\n  return await modal.present();\n}\n```\n\nTo get the data passed into the `componentProps`, set it as an `@Input`:\n\n```typescript\nexport class ModalPage {\n\n  // Data passed in by componentProps\n  @Input() firstName: string;\n  @Input() lastName: string;\n  @Input() middleInitial: string;\n\n}\n```\n\n### Dismissing a Modal\n\nA modal can be dismissed by calling the dismiss method on the modal controller and optionally passing any data from the modal.\n\n```javascript\nexport class ModalPage {\n  ...\n\n  dismiss() {\n    // using the injected ModalController this page\n    // can \"dismiss\" itself and optionally pass back data\n    this.modalCtrl.dismiss({\n      'dismissed': true\n    });\n  }\n}\n```\n\nAfter being dismissed, the data can be read in through the `onWillDismiss` or `onDidDismiss` attached to the modal after creation:\n\n```javascript\nconst { data } = await modal.onWillDismiss();\nconsole.log(data);\n```\n\n\n#### Lazy Loading\n\nWhen lazy loading a modal, it's important to note that the modal will not be loaded when it is opened, but rather when the module that imports the modal's module is loaded.\n\nFor example, say there exists a `CalendarComponent` and an `EventModal`. The modal is presented by clicking a button in the `CalendarComponent`. In Angular, the `EventModalModule` would need to be included in the `CalendarComponentModule` since the modal is created in the `CalendarComponent`:\n\n```typescript\nimport { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport { IonicModule } from '@ionic/angular';\n\nimport { CalendarComponent } from './calendar.component';\nimport { EventModalModule } from '../modals/event/event.module';\n\n@NgModule({\n  declarations: [\n    CalendarComponent\n  ],\n  imports: [\n    IonicModule,\n    CommonModule,\n    EventModalModule\n  ],\n  exports: [\n    CalendarComponent\n  ]\n})\n\nexport class CalendarComponentModule {}\n```\n\n### Swipeable Modals\n\nModals in iOS mode have the ability to be presented in a card-style and swiped to close. The card-style presentation and swipe to close gesture are not mutually exclusive, meaning you can pick and choose which features you want to use. For example, you can have a card-style modal that cannot be swiped or a full sized modal that can be swiped.\n\n> Card style modals when running on iPhone-sized devices do not have backdrops. As a result, the `--backdrop-opacity` variable will not have any effect.\n\nIf you are creating an application that uses `ion-tabs`, it is recommended that you get the parent `ion-router-outlet` using `this.routerOutlet.parentOutlet.nativeEl`, otherwise the tabbar will not scale down when the modal opens.\n\n```javascript\nimport { IonRouterOutlet } from '@ionic/angular';\n\nconstructor(private routerOutlet: IonRouterOutlet) {}\n\nasync presentModal() {\n  const modal = await this.modalController.create({\n    component: ModalPage,\n    cssClass: 'my-custom-class',\n    swipeToClose: true,\n    presentingElement: this.routerOutlet.nativeEl\n  });\n  return await modal.present();\n}\n```\n\nIn most scenarios, using the `ion-router-outlet` element as the `presentingElement` is fine. In cases where you are presenting a card-style modal from within another modal, you should pass in the top-most `ion-modal` element as the `presentingElement`.\n\n```javascript\nimport { ModalController } from '@ionic/angular';\n\nconstructor(private modalCtrl: ModalController) {}\n\nasync presentModal() {\n  const modal = await this.modalController.create({\n    component: ModalPage,\n    cssClass: 'my-custom-class',\n    swipeToClose: true,\n    presentingElement: await this.modalCtrl.getTop() // Get the top-most ion-modal\n  });\n  return await modal.present();\n}\n```\n\n\n### Style Placement\n\nIn Angular, the CSS of a specific page is scoped only to elements of that page. Even though the Modal can be presented from within a page, the `ion-modal` element is appended outside of the current page. This means that any custom styles need to go in a global stylesheet file. In an Ionic Angular starter this can be the `src/global.scss` file or you can register a new global style file by [adding to the `styles` build option in `angular.json`](https://angular.io/guide/workspace-config#style-script-config).\n",
+    "javascript": "\n```javascript\ncustomElements.define('modal-page', class extends HTMLElement {\n  connectedCallback() {\n    this.innerHTML = `\n<ion-header>\n  <ion-toolbar>\n    <ion-title>Modal Header</ion-title>\n    <ion-buttons slot=\"primary\">\n      <ion-button onClick=\"dismissModal()\">\n        <ion-icon slot=\"icon-only\" name=\"close\"></ion-icon>\n      </ion-button>\n    </ion-buttons>\n  </ion-toolbar>\n</ion-header>\n<ion-content class=\"ion-padding\">\n  Modal Content\n</ion-content>`;\n  }\n});\n\nfunction presentModal() {\n  // create the modal with the `modal-page` component\n  const modalElement = document.createElement('ion-modal');\n  modalElement.component = 'modal-page';\n  modalElement.cssClass = 'my-custom-class';\n\n  // present the modal\n  document.body.appendChild(modalElement);\n  return modalElement.present();\n}\n```\n\n> If you need a wrapper element inside of your modal component, we recommend using a `<div class=\"ion-page\">` so that the component dimensions are still computed properly.\n\n### Passing Data\n\nDuring creation of a modal, data can be passed in through the `componentProps`. The previous example can be written to include data:\n\n```javascript\nconst modalElement = document.createElement('ion-modal');\nmodalElement.component = 'modal-page';\nmodalElement.cssClass = 'my-custom-class';\nmodalElement.componentProps = {\n  'firstName': 'Douglas',\n  'lastName': 'Adams',\n  'middleInitial': 'N'\n};\n```\n\nTo get the data passed into the `componentProps`, query for the modal in the `modal-page`:\n\n```js\ncustomElements.define('modal-page', class extends HTMLElement {\n  connectedCallback() {\n    const modalElement = document.querySelector('ion-modal');\n    console.log(modalElement.componentProps.firstName);\n\n    ...\n  }\n}\n```\n\n\n### Dismissing a Modal\n\nA modal can be dismissed by calling the dismiss method and optionally passing any data from the modal.\n\n```javascript\nasync function dismissModal() {\n  await modal.dismiss({\n    'dismissed': true\n  });\n}\n```\n\nAfter being dismissed, the data can be read in through the `onWillDismiss` or `onDidDismiss` attached to the modal after creation:\n\n```javascript\nconst { data } = await modalElement.onWillDismiss();\nconsole.log(data);\n```\n\n\n### Swipeable Modals\n\nModals in iOS mode have the ability to be presented in a card-style and swiped to close. The card-style presentation and swipe to close gesture are not mutually exclusive, meaning you can pick and choose which features you want to use. For example, you can have a card-style modal that cannot be swiped or a full sized modal that can be swiped.\n\n> Card style modals when running on iPhone-sized devices do not have backdrops. As a result, the `--backdrop-opacity` variable will not have any effect.\n\n```javascript\nconst modalElement = document.createElement('ion-modal');\nmodalElement.component = 'modal-page';\nmodalElement.cssClass = 'my-custom-class';\nmodalElement.swipeToClose = true;\nmodalElement.presentingElement = document.querySelector('ion-nav');\n```\n\nIn most scenarios, using the `ion-nav` element as the `presentingElement` is fine. In cases where you are presenting a card-style modal from within a modal, you should pass in the top-most `ion-modal` element as the `presentingElement`.\n\n```javascript\nconst modalElement = document.createElement('ion-modal');\nmodalElement.component = 'modal-page';\nmodalElement.cssClass = 'my-custom-class';\nmodalElement.swipeToClose = true;\nmodalElement.presentingElement = await modalController.getTop(); // Get the top-most ion-modal\n```\n",
+    "react": "```tsx\nimport React, { useState } from 'react';\nimport { IonModal, IonButton, IonContent } from '@ionic/react';\n\nexport const ModalExample: React.FC = () => {\n  const [showModal, setShowModal] = useState(false);\n\n  return (\n    <IonContent>\n      <IonModal isOpen={showModal} cssClass='my-custom-class'>\n        <p>This is modal content</p>\n        <IonButton onClick={() => setShowModal(false)}>Close Modal</IonButton>\n      </IonModal>\n      <IonButton onClick={() => setShowModal(true)}>Show Modal</IonButton>\n    </IonContent>\n  );\n};\n```\n\n> If you need a wrapper element inside of your modal component, we recommend using an `<IonPage>` so that the component dimensions are still computed properly.\n\n### Swipeable Modals\n\nModals in iOS mode have the ability to be presented in a card-style and swiped to close. The card-style presentation and swipe to close gesture are not mutually exclusive, meaning you can pick and choose which features you want to use. For example, you can have a card-style modal that cannot be swiped or a full sized modal that can be swiped.\n\n> Card style modals when running on iPhone-sized devices do not have backdrops. As a result, the `--backdrop-opacity` variable will not have any effect.\n\n```tsx\nconst App: React.FC = () => {\n  const routerRef = useRef<HTMLIonRouterOutletElement | null>(null);\n  \n  return (\n    <IonApp>\n      <IonReactRouter>\n        <IonRouterOutlet ref={routerRef}>\n          <Route path=\"/home\" render={() => <Home router={routerRef.current} />}  exact={true} />\n        </IonRouterOutlet>\n      </IonReactRouter>\n    </IonApp>\n  )\n};\n\n...\n\ninterface HomePageProps {\n  router: HTMLIonRouterOutletElement | null;\n}\n\nconst Home: React.FC<HomePageProps> = ({ router }) => {\n  const [showModal, setShowModal] = useState(false);\n  \n  return (\n    ...\n    \n    <IonModal\n      isOpen={showModal}\n      cssClass='my-custom-class'\n      swipeToClose={true}\n      presentingElement={router || undefined}\n      onDidDismiss={() => setShowModal(false)}>\n      <p>This is modal content</p>\n    </IonModal>\n    \n    ...\n  );\n};\n\n```\n\nIn most scenarios, setting a ref on `IonRouterOutlet` and passing that ref's `current` value to `presentingElement` is fine. In cases where you are presenting a card-style modal from within another modal, you should pass in the top-most `ion-modal` ref as the `presentingElement`.\n\n```tsx\n<IonModal\n  ref={firstModalRef}\n  isOpen={showModal}\n  cssClass='my-custom-class'\n  swipeToClose={true}\n  presentingElement={router || undefined}\n  onDidDismiss={() => setShowModal(false)}>\n    <p>This is modal content</p>\n    <IonButton onClick={() => setShow2ndModal(true)}>Show 2nd Modal</IonButton>\n    <IonButton onClick={() => setShowModal(false)}>Close Modal</IonButton>\n</IonModal>\n<IonModal\n  isOpen={show2ndModal}\n  cssClass='my-custom-class'\n  presentingElement={firstModalRef.current}\n  onDidDismiss={() => setShow2ndModal(false)}>\n  <p>This is more modal content</p>\n  <IonButton onClick={() => setShow2ndModal(false)}>Close Modal</IonButton>\n</IonModal>\n```\n",
+    "stencil": "```tsx\nimport { Component, h } from '@stencil/core';\n\nimport { modalController } from '@ionic/core';\n\n@Component({\n  tag: 'modal-example',\n  styleUrl: 'modal-example.css'\n})\nexport class ModalExample {\n  async presentModal() {\n    const modal = await modalController.create({\n      component: 'page-modal',\n      cssClass: 'my-custom-class'\n    });\n    await modal.present();\n  }\n}\n```\n\n```tsx\nimport { Component, h } from '@stencil/core';\n\n@Component({\n  tag: 'page-modal',\n  styleUrl: 'page-modal.css',\n})\nexport class PageModal {\n  render() {\n    return [\n      <ion-list>\n        <ion-item>\n          <ion-label>Documentation</ion-label>\n        </ion-item>\n        <ion-item>\n          <ion-label>Feedback</ion-label>\n        </ion-item>\n        <ion-item>\n          <ion-label>Settings</ion-label>\n        </ion-item>\n      </ion-list>\n    ];\n  }\n}\n```\n\n> If you need a wrapper element inside of your modal component, we recommend using a `<div class=\"ion-page\">` so that the component dimensions are still computed properly.\n\n### Passing Data\n\nDuring creation of a modal, data can be passed in through the `componentProps`.\nThe previous example can be written to include data:\n\n```tsx\nasync presentModal() {\n  const modal = await modalController.create({\n    component: 'page-modal',\n    cssClass: 'my-custom-class',\n    componentProps: {\n      'firstName': 'Douglas',\n      'lastName': 'Adams',\n      'middleInitial': 'N'\n    }\n  });\n  await modal.present();\n}\n```\n\nTo get the data passed into the `componentProps`, set each one as a `@Prop`:\n\n```tsx\nimport { Component, Prop, h } from '@stencil/core';\n\n@Component({\n  tag: 'page-modal',\n  styleUrl: 'page-modal.css',\n})\nexport class PageModal {\n  // Data passed in by componentProps\n  @Prop() firstName: string;\n  @Prop() lastName: string;\n  @Prop() middleInitial: string;\n}\n```\n\n### Dismissing a Modal\n\nA modal can be dismissed by calling the dismiss method on the modal controller and optionally passing any data from the modal.\n\n```tsx\nexport class ModalPage {\n  ...\n\n  dismiss(data?: any) {\n    // dismiss the closest modal and optionally pass back data\n    (this.el.closest('ion-modal') as any).dismiss({\n      'dismissed': true\n    });\n  }\n}\n```\n\nAfter being dismissed, the data can be read in through the `onWillDismiss` or `onDidDismiss` attached to the modal after creation:\n\n```tsx\nconst { data } = await modal.onWillDismiss();\nconsole.log(data);\n```\n\n### Swipeable Modals\n\nModals in iOS mode have the ability to be presented in a card-style and swiped to close. The card-style presentation and swipe to close gesture are not mutually exclusive, meaning you can pick and choose which features you want to use. For example, you can have a card-style modal that cannot be swiped or a full sized modal that can be swiped.\n\n> Card style modals when running on iPhone-sized devices do not have backdrops. As a result, the `--backdrop-opacity` variable will not have any effect.\n\n```tsx\nimport { Component, Element, h } from '@stencil/core';\n\nimport { modalController } from '@ionic/core';\n\n@Component({\n  tag: 'modal-example',\n  styleUrl: 'modal-example.css'\n})\nexport class ModalExample {\n  @Element() el: any;\n\n  async presentModal() {\n    const modal = await modalController.create({\n      component: 'page-modal',\n      cssClass: 'my-custom-class',\n      swipeToClose: true,\n      presentingElement: this.el.closest('ion-router-outlet'),\n    });\n    await modal.present();\n  }\n\n}\n```\n\nIn most scenarios, using the `ion-router-outlet` element as the `presentingElement` is fine. In cases where you are presenting a card-style modal from within another modal, you should pass in the top-most `ion-modal` element as the `presentingElement`.\n\n```tsx\nasync presentModal() {\n  const modal = await modalController.create({\n    component: 'page-modal',\n    cssClass: 'my-custom-class',\n    swipeToClose: true,\n    presentingElement: await modalController.getTop() // Get the top-most ion-modal\n  });\n  await modal.present();\n}\n```\n",
+    "vue": "```html\n<template>\n  <ion-header>\n    <ion-toolbar>\n      <ion-title>{{ title }}</ion-title>\n    </ion-toolbar>\n  </ion-header>\n  <ion-content class=\"ion-padding\">\n    {{ content }}\n  </ion-content>\n</template>\n\n<script>\nimport { IonContent, IonHeader, IonTitle, IonToolbar } from '@ionic/vue';\nimport { defineComponent } from 'vue';\n\nexport default defineComponent({\n  name: 'Modal',\n  props: {\n    title: { type: String, default: 'Super Modal' },\n  },\n  data() {\n    return {\n      content: 'Content',\n    }\n  },\n  components: { IonContent, IonHeader, IonTitle, IonToolbar }\n});\n</script>\n```\n\n```html\n<template>\n  <ion-page>\n    <ion-content class=\"ion-padding\">\n      <ion-button @click=\"openModal\">Open Modal</ion-button>\n    </ion-content>\n  </ion-page>\n</template>\n\n<script>\nimport { IonButton, IonContent, IonPage, modalController } from '@ionic/vue';\nimport Modal from './modal.vue'\n\nexport default {\n  components: { IonButton, IonContent, IonPage },\n  methods: {\n    async openModal() {\n      const modal = await modalController\n        .create({\n          component: Modal,\n          cssClass: 'my-custom-class',\n          componentProps: {\n            title: 'New Title'\n          },\n        })\n      return modal.present();\n    },\n  },\n}\n</script>\n```\n\nDevelopers can also use this component directly in their template:\n\n```html\n<template>\n  <ion-button @click=\"setOpen(true)\">Show Modal</ion-button>\n  <ion-modal\n    :is-open=\"isOpenRef\"\n    css-class=\"my-custom-class\"\n    @onDidDismiss=\"setOpen(false)\"\n  >\n    <Modal :data=\"data\"></Modal>\n  </ion-modal>\n</template>\n\n<script>\nimport { IonModal, IonButton } from '@ionic/vue';\nimport { defineComponent, ref } from 'vue';\nimport Modal from './modal.vue'\n\nexport default defineComponent({\n  components: { IonModal, IonButton, Modal },\n  setup() {\n    const isOpenRef = ref(false);\n    const setOpen = (state: boolean) => isOpenRef.value = state;\n    const data = { content: 'New Content' };\n    return { isOpenRef, setOpen, data }\n  }\n});\n</script>\n```\n\n> If you need a wrapper element inside of your modal component, we recommend using an `<ion-page>` so that the component dimensions are still computed properly.\n"
+  },
+  "props": [
+    {
+      "name": "animated",
+      "type": "boolean",
+      "mutable": false,
+      "attr": "animated",
+      "reflectToAttr": false,
+      "docs": "If `true`, the modal will animate.",
+      "docsTags": [],
+      "default": "true",
+      "values": [
+        {
+          "type": "boolean"
+        }
+      ],
+      "optional": false,
+      "required": false
+    },
+    {
+      "name": "backdropDismiss",
+      "type": "boolean",
+      "mutable": false,
+      "attr": "backdrop-dismiss",
+      "reflectToAttr": false,
+      "docs": "If `true`, the modal will be dismissed when the backdrop is clicked.",
+      "docsTags": [],
+      "default": "true",
+      "values": [
+        {
+          "type": "boolean"
+        }
+      ],
+      "optional": false,
+      "required": false
+    },
+    {
+      "name": "component",
+      "type": "Function | HTMLElement | null | string",
+      "mutable": false,
+      "attr": "component",
+      "reflectToAttr": false,
+      "docs": "The component to display inside of the modal.",
+      "docsTags": [],
+      "values": [
+        {
+          "type": "Function"
+        },
+        {
+          "type": "HTMLElement"
+        },
+        {
+          "type": "null"
+        },
+        {
+          "type": "string"
+        }
+      ],
+      "optional": false,
+      "required": true
+    },
+    {
+      "name": "componentProps",
+      "type": "undefined | { [key: string]: any; }",
+      "mutable": false,
+      "reflectToAttr": false,
+      "docs": "The data to pass to the modal component.",
+      "docsTags": [],
+      "values": [
+        {
+          "type": "undefined"
+        },
+        {
+          "type": "{ [key: string]: any; }"
+        }
+      ],
+      "optional": true,
+      "required": false
+    },
+    {
+      "name": "cssClass",
+      "type": "string | string[] | undefined",
+      "mutable": false,
+      "attr": "css-class",
+      "reflectToAttr": false,
+      "docs": "Additional classes to apply for custom CSS. If multiple classes are\nprovided they should be separated by spaces.",
+      "docsTags": [],
+      "values": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "string[]"
+        },
+        {
+          "type": "undefined"
+        }
+      ],
+      "optional": true,
+      "required": false
+    },
+    {
+      "name": "enterAnimation",
+      "type": "((baseEl: any, opts?: any) => Animation) | undefined",
+      "mutable": false,
+      "reflectToAttr": false,
+      "docs": "Animation to use when the modal is presented.",
+      "docsTags": [],
+      "values": [
+        {
+          "type": "((baseEl: any, opts?: any) => Animation)"
+        },
+        {
+          "type": "undefined"
+        }
+      ],
+      "optional": true,
+      "required": false
+    },
+    {
+      "name": "keyboardClose",
+      "type": "boolean",
+      "mutable": false,
+      "attr": "keyboard-close",
+      "reflectToAttr": false,
+      "docs": "If `true`, the keyboard will be automatically dismissed when the overlay is presented.",
+      "docsTags": [],
+      "default": "true",
+      "values": [
+        {
+          "type": "boolean"
+        }
+      ],
+      "optional": false,
+      "required": false
+    },
+    {
+      "name": "leaveAnimation",
+      "type": "((baseEl: any, opts?: any) => Animation) | undefined",
+      "mutable": false,
+      "reflectToAttr": false,
+      "docs": "Animation to use when the modal is dismissed.",
+      "docsTags": [],
+      "values": [
+        {
+          "type": "((baseEl: any, opts?: any) => Animation)"
+        },
+        {
+          "type": "undefined"
+        }
+      ],
+      "optional": true,
+      "required": false
+    },
+    {
+      "name": "mode",
+      "type": "\"ios\" | \"md\"",
+      "mutable": false,
+      "attr": "mode",
+      "reflectToAttr": false,
+      "docs": "The mode determines which platform styles to use.",
+      "docsTags": [],
+      "values": [
+        {
+          "value": "ios",
+          "type": "string"
+        },
+        {
+          "value": "md",
+          "type": "string"
+        }
+      ],
+      "optional": true,
+      "required": false
+    },
+    {
+      "name": "presentingElement",
+      "type": "HTMLElement | undefined",
+      "mutable": false,
+      "reflectToAttr": false,
+      "docs": "The element that presented the modal. This is used for card presentation effects\nand for stacking multiple modals on top of each other. Only applies in iOS mode.",
+      "docsTags": [],
+      "values": [
+        {
+          "type": "HTMLElement"
+        },
+        {
+          "type": "undefined"
+        }
+      ],
+      "optional": true,
+      "required": false
+    },
+    {
+      "name": "showBackdrop",
+      "type": "boolean",
+      "mutable": false,
+      "attr": "show-backdrop",
+      "reflectToAttr": false,
+      "docs": "If `true`, a backdrop will be displayed behind the modal.",
+      "docsTags": [],
+      "default": "true",
+      "values": [
+        {
+          "type": "boolean"
+        }
+      ],
+      "optional": false,
+      "required": false
+    },
+    {
+      "name": "swipeToClose",
+      "type": "boolean",
+      "mutable": false,
+      "attr": "swipe-to-close",
+      "reflectToAttr": false,
+      "docs": "If `true`, the modal can be swiped to dismiss. Only applies in iOS mode.",
+      "docsTags": [],
+      "default": "false",
+      "values": [
+        {
+          "type": "boolean"
+        }
+      ],
+      "optional": false,
+      "required": false
+    }
+  ],
+  "methods": [
+    {
+      "name": "dismiss",
+      "returns": {
+        "type": "Promise<boolean>",
+        "docs": ""
+      },
+      "signature": "dismiss(data?: any, role?: string | undefined) => Promise<boolean>",
+      "parameters": [],
+      "docs": "Dismiss the modal overlay after it has been presented.",
+      "docsTags": [
+        {
+          "name": "param",
+          "text": "data Any data to emit in the dismiss events."
+        },
+        {
+          "name": "param",
+          "text": "role The role of the element that is dismissing the modal. For example, 'cancel' or 'backdrop'."
+        }
+      ]
+    },
+    {
+      "name": "onDidDismiss",
+      "returns": {
+        "type": "Promise<OverlayEventDetail<T>>",
+        "docs": ""
+      },
+      "signature": "onDidDismiss<T = any>() => Promise<OverlayEventDetail<T>>",
+      "parameters": [],
+      "docs": "Returns a promise that resolves when the modal did dismiss.",
+      "docsTags": []
+    },
+    {
+      "name": "onWillDismiss",
+      "returns": {
+        "type": "Promise<OverlayEventDetail<T>>",
+        "docs": ""
+      },
+      "signature": "onWillDismiss<T = any>() => Promise<OverlayEventDetail<T>>",
+      "parameters": [],
+      "docs": "Returns a promise that resolves when the modal will dismiss.",
+      "docsTags": []
+    },
+    {
+      "name": "present",
+      "returns": {
+        "type": "Promise<void>",
+        "docs": ""
+      },
+      "signature": "present() => Promise<void>",
+      "parameters": [],
+      "docs": "Present the modal overlay after it has been created.",
+      "docsTags": []
+    }
+  ],
+  "events": [
+    {
+      "event": "ionModalDidDismiss",
+      "detail": "OverlayEventDetail<any>",
+      "bubbles": true,
+      "cancelable": true,
+      "composed": true,
+      "docs": "Emitted after the modal has dismissed.",
+      "docsTags": []
+    },
+    {
+      "event": "ionModalDidPresent",
+      "detail": "void",
+      "bubbles": true,
+      "cancelable": true,
+      "composed": true,
+      "docs": "Emitted after the modal has presented.",
+      "docsTags": []
+    },
+    {
+      "event": "ionModalWillDismiss",
+      "detail": "OverlayEventDetail<any>",
+      "bubbles": true,
+      "cancelable": true,
+      "composed": true,
+      "docs": "Emitted before the modal has dismissed.",
+      "docsTags": []
+    },
+    {
+      "event": "ionModalWillPresent",
+      "detail": "void",
+      "bubbles": true,
+      "cancelable": true,
+      "composed": true,
+      "docs": "Emitted before the modal has presented.",
+      "docsTags": []
+    }
+  ],
+  "listeners": [],
+  "styles": [
+    {
+      "name": "--backdrop-opacity",
+      "annotation": "prop",
+      "docs": "Opacity of the backdrop"
+    },
+    {
+      "name": "--background",
+      "annotation": "prop",
+      "docs": "Background of the modal content"
+    },
+    {
+      "name": "--border-color",
+      "annotation": "prop",
+      "docs": "Border color of the modal content"
+    },
+    {
+      "name": "--border-radius",
+      "annotation": "prop",
+      "docs": "Border radius of the modal content"
+    },
+    {
+      "name": "--border-style",
+      "annotation": "prop",
+      "docs": "Border style of the modal content"
+    },
+    {
+      "name": "--border-width",
+      "annotation": "prop",
+      "docs": "Border width of the modal content"
+    },
+    {
+      "name": "--height",
+      "annotation": "prop",
+      "docs": "Height of the modal"
+    },
+    {
+      "name": "--max-height",
+      "annotation": "prop",
+      "docs": "Maximum height of the modal"
+    },
+    {
+      "name": "--max-width",
+      "annotation": "prop",
+      "docs": "Maximum width of the modal"
+    },
+    {
+      "name": "--min-height",
+      "annotation": "prop",
+      "docs": "Minimum height of the modal"
+    },
+    {
+      "name": "--min-width",
+      "annotation": "prop",
+      "docs": "Minimum width of the modal"
+    },
+    {
+      "name": "--width",
+      "annotation": "prop",
+      "docs": "Width of the modal"
+    }
+  ],
+  "slots": [],
+  "parts": [],
+  "dependents": [],
+  "dependencies": [
+    "ion-backdrop"
+  ],
+  "dependencyGraph": {
+    "ion-modal": [
+      "ion-backdrop"
+    ]
+  }
+}

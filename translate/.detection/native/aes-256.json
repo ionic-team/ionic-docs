@@ -1,0 +1,14 @@
+{
+  "packageName": "@ionic-native/aes-256",
+  "displayName": "AES256",
+  "description": "\nThis cordova ionic plugin allows you to perform AES 256 encryption and decryption on the plain text.\nIt's a cross-platform plugin which supports both Android and iOS.\nThe encryption and decryption are performed on the device native layer so that the performance is much faster.\n",
+  "usage": "\n```typescript\nimport { AES256 } from '@ionic-native/aes-256/ngx';\n\nprivate secureKey: string;\nprivate secureIV: string;\n\nconstructor(private aes256: AES256) {\n   this.generateSecureKeyAndIV(); // To generate the random secureKey and secureIV\n}\n\n...\n\nasync generateSecureKeyAndIV() {\n   this.secureKey = await this.aes256.generateSecureKey('random password 12345'); // Returns a 32 bytes string\n   this.secureIV = await this.aes256.generateSecureIV('random password 12345'); // Returns a 16 bytes string\n}\n\nthis.aes256.encrypt(this.secureKey, this.secureIV, 'testdata')\n  .then(res => console.log('Encrypted Data: ',res))\n  .catch((error: any) => console.error(error));\n\nthis.aes256.decrypt(this.secureKey, this.secureIV, 'encryptedData')\n  .then(res => console.log('Decrypted Data : ',res))\n  .catch((error: any) => console.error(error));\n\n\n* this.aes256.generateSecureKey('random password 12345')\n  .then(res => console.log('Secure Key : ',res))\n  .catch((error: any) => console.error(error));\n\n\n* this.aes256.generateSecureIV('random password 12345')\n  .then(res => console.log('Secure IV : ',res))\n  .catch((error: any) => console.error(error));\n\n```\n",
+  "platforms": [
+    "Android",
+    "iOS"
+  ],
+  "repo": "https://github.com/Ideas2IT/cordova-aes256",
+  "cordovaPlugin": {
+    "name": "cordova-plugin-aes256-encryption"
+  }
+}

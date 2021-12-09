@@ -1,0 +1,111 @@
+{
+  "filePath": "./src/components/label/label.tsx",
+  "encapsulation": "scoped",
+  "tag": "ion-label",
+  "readme": "# ion-label\n\nLabel is a wrapper element that can be used in combination with `ion-item`, `ion-input`, `ion-toggle`, and more. The position of the label inside of an item can be inline, fixed, stacked, or floating.\n\n",
+  "docs": "Label is a wrapper element that can be used in combination with `ion-item`, `ion-input`, `ion-toggle`, and more. The position of the label inside of an item can be inline, fixed, stacked, or floating.",
+  "docsTags": [
+    {
+      "text": "{\"ios\" | \"md\"} mode - The mode determines which platform styles to use.",
+      "name": "virtualProp"
+    }
+  ],
+  "usage": {
+    "angular": "```html\n<!-- Default Label -->\n<ion-label>Label</ion-label>\n\n<!-- Label Colors -->\n<ion-label color=\"primary\">Primary Label</ion-label>\n<ion-label color=\"secondary\">Secondary Label</ion-label>\n<ion-label color=\"danger\">Danger Label</ion-label>\n<ion-label color=\"light\">Light Label</ion-label>\n<ion-label color=\"dark\">Dark Label</ion-label>\n\n<!-- Item Labels -->\n<ion-item>\n  <ion-label>Default Item</ion-label>\n</ion-item>\n\n<ion-item>\n  <ion-label class=\"ion-text-wrap\">\n    Multi-line text that should wrap when it is too long\n    to fit on one line in the item.\n  </ion-label>\n</ion-item>\n\n<!-- Input Labels -->\n<ion-item>\n  <ion-label>Default Input</ion-label>\n  <ion-input></ion-input>\n</ion-item>\n\n<ion-item>\n  <ion-label position=\"fixed\">Fixed</ion-label>\n  <ion-input></ion-input>\n</ion-item>\n\n<ion-item>\n  <ion-label position=\"floating\">Floating</ion-label>\n  <ion-input></ion-input>\n</ion-item>\n\n<ion-item>\n  <ion-label position=\"stacked\">Stacked</ion-label>\n  <ion-input></ion-input>\n</ion-item>\n\n<ion-item>\n  <ion-label>Toggle</ion-label>\n  <ion-toggle slot=\"end\" checked></ion-toggle>\n</ion-item>\n\n<ion-item>\n  <ion-checkbox slot=\"start\" checked></ion-checkbox>\n  <ion-label>Checkbox</ion-label>\n</ion-item>\n```\n",
+    "javascript": "```html\n<!-- Default Label -->\n<ion-label>Label</ion-label>\n\n<!-- Label Colors -->\n<ion-label color=\"primary\">Primary Label</ion-label>\n<ion-label color=\"secondary\">Secondary Label</ion-label>\n<ion-label color=\"danger\">Danger Label</ion-label>\n<ion-label color=\"light\">Light Label</ion-label>\n<ion-label color=\"dark\">Dark Label</ion-label>\n\n<!-- Item Labels -->\n<ion-item>\n  <ion-label>Default Item</ion-label>\n</ion-item>\n\n<ion-item>\n  <ion-label class=\"ion-text-wrap\">\n    Multi-line text that should wrap when it is too long\n    to fit on one line in the item.\n  </ion-label>\n</ion-item>\n\n<!-- Input Labels -->\n<ion-item>\n  <ion-label>Default Input</ion-label>\n  <ion-input></ion-input>\n</ion-item>\n\n<ion-item>\n  <ion-label position=\"fixed\">Fixed</ion-label>\n  <ion-input></ion-input>\n</ion-item>\n\n<ion-item>\n  <ion-label position=\"floating\">Floating</ion-label>\n  <ion-input></ion-input>\n</ion-item>\n\n<ion-item>\n  <ion-label position=\"stacked\">Stacked</ion-label>\n  <ion-input></ion-input>\n</ion-item>\n\n<ion-item>\n  <ion-label>Toggle</ion-label>\n  <ion-toggle slot=\"end\" checked></ion-toggle>\n</ion-item>\n\n<ion-item>\n  <ion-checkbox slot=\"start\" checked></ion-checkbox>\n  <ion-label>Checkbox</ion-label>\n</ion-item>\n```\n",
+    "react": "```tsx\nimport React from 'react';\nimport { IonLabel, IonItem, IonInput, IonToggle, IonCheckbox, IonContent } from '@ionic/react';\n\nexport const LabelExample: React.FC = () => (\n  <IonContent>\n    {/*-- Default Label --*/}\n    <IonLabel>Label</IonLabel><br />\n\n    {/*-- Label Colors --*/}\n    <IonLabel color=\"primary\">Primary Label</IonLabel><br />\n    <IonLabel color=\"secondary\">Secondary Label</IonLabel><br />\n    <IonLabel color=\"danger\">Danger Label</IonLabel><br />\n    <IonLabel color=\"light\">Light Label</IonLabel><br />\n    <IonLabel color=\"dark\">Dark Label</IonLabel><br />\n\n    {/*-- Item Labels --*/}\n    <IonItem>\n      <IonLabel>Default Item</IonLabel>\n    </IonItem>\n\n    <IonItem>\n      <IonLabel className=\"ion-text-wrap\">\n        Multi-line text that should wrap when it is too long\n        to fit on one line in the item.\n      </IonLabel>\n    </IonItem>\n\n    {/*-- Input Labels --*/}\n    <IonItem>\n      <IonLabel>Default Input</IonLabel>\n      <IonInput></IonInput>\n    </IonItem>\n\n    <IonItem>\n      <IonLabel position=\"fixed\">Fixed</IonLabel>\n      <IonInput></IonInput>\n    </IonItem>\n\n    <IonItem>\n      <IonLabel position=\"floating\">Floating</IonLabel>\n      <IonInput></IonInput>\n    </IonItem>\n\n    <IonItem>\n      <IonLabel position=\"stacked\">Stacked</IonLabel>\n      <IonInput></IonInput>\n    </IonItem>\n\n    <IonItem>\n      <IonLabel>Toggle</IonLabel>\n      <IonToggle slot=\"end\" checked></IonToggle>\n    </IonItem>\n\n    <IonItem>\n      <IonCheckbox slot=\"start\" checked />\n      <IonLabel>Checkbox</IonLabel>\n    </IonItem>\n  </IonContent>\n);\n```\n",
+    "stencil": "```tsx\nimport { Component, h } from '@stencil/core';\n\n@Component({\n  tag: 'label-example',\n  styleUrl: 'label-example.css'\n})\nexport class LabelExample {\n  render() {\n    return [\n      // Default Label\n      <ion-label>Label</ion-label>,\n\n      // Label Colors\n      <ion-label color=\"primary\">Primary Label</ion-label>,\n      <ion-label color=\"secondary\">Secondary Label</ion-label>,\n      <ion-label color=\"danger\">Danger Label</ion-label>,\n      <ion-label color=\"light\">Light Label</ion-label>,\n      <ion-label color=\"dark\">Dark Label</ion-label>,\n\n      // Item Labels\n      <ion-item>\n        <ion-label>Default Item</ion-label>\n      </ion-item>,\n\n      <ion-item>\n        <ion-label class=\"ion-text-wrap\">\n          Multi-line text that should wrap when it is too long\n          to fit on one line in the item.\n        </ion-label>\n      </ion-item>,\n\n      // Input Labels\n      <ion-item>\n        <ion-label>Default Input</ion-label>\n        <ion-input></ion-input>\n      </ion-item>,\n\n      <ion-item>\n        <ion-label position=\"fixed\">Fixed</ion-label>\n        <ion-input></ion-input>\n      </ion-item>,\n\n      <ion-item>\n        <ion-label position=\"floating\">Floating</ion-label>\n        <ion-input></ion-input>\n      </ion-item>,\n\n      <ion-item>\n        <ion-label position=\"stacked\">Stacked</ion-label>\n        <ion-input></ion-input>\n      </ion-item>,\n\n      <ion-item>\n        <ion-label>Toggle</ion-label>\n        <ion-toggle slot=\"end\" checked={true}></ion-toggle>\n      </ion-item>,\n\n      <ion-item>\n        <ion-checkbox slot=\"start\" checked={true}></ion-checkbox>\n        <ion-label>Checkbox</ion-label>\n      </ion-item>\n    ];\n  }\n}\n```\n",
+    "vue": "```html\n<template>\n  <!-- Default Label -->\n  <ion-label>Label</ion-label>\n\n  <!-- Label Colors -->\n  <ion-label color=\"primary\">Primary Label</ion-label>\n  <ion-label color=\"secondary\">Secondary Label</ion-label>\n  <ion-label color=\"danger\">Danger Label</ion-label>\n  <ion-label color=\"light\">Light Label</ion-label>\n  <ion-label color=\"dark\">Dark Label</ion-label>\n\n  <!-- Item Labels -->\n  <ion-item>\n    <ion-label>Default Item</ion-label>\n  </ion-item>\n\n  <ion-item>\n    <ion-label class=\"ion-text-wrap\">\n      Multi-line text that should wrap when it is too long\n      to fit on one line in the item.\n    </ion-label>\n  </ion-item>\n\n  <!-- Input Labels -->\n  <ion-item>\n    <ion-label>Default Input</ion-label>\n    <ion-input></ion-input>\n  </ion-item>\n\n  <ion-item>\n    <ion-label position=\"fixed\">Fixed</ion-label>\n    <ion-input></ion-input>\n  </ion-item>\n\n  <ion-item>\n    <ion-label position=\"floating\">Floating</ion-label>\n    <ion-input></ion-input>\n  </ion-item>\n\n  <ion-item>\n    <ion-label position=\"stacked\">Stacked</ion-label>\n    <ion-input></ion-input>\n  </ion-item>\n\n  <ion-item>\n    <ion-label>Toggle</ion-label>\n    <ion-toggle slot=\"end\" checked></ion-toggle>\n  </ion-item>\n\n  <ion-item>\n    <ion-checkbox slot=\"start\" checked></ion-checkbox>\n    <ion-label>Checkbox</ion-label>\n  </ion-item>\n</template>\n\n<script>\nimport { \n  IonCheckbox, \n  IonInput, \n  IonItem, \n  IonLabel,\n  IonToggle\n} from '@ionic/vue';\nimport { defineComponent } from 'vue';\n\nexport default defineComponent({\n  components: { \n    IonCheckbox, \n    IonInput, \n    IonItem, \n    IonLabel,\n    IonToggle\n  }\n});\n</script>\n```\n"
+  },
+  "props": [
+    {
+      "name": "color",
+      "type": "string | undefined",
+      "mutable": false,
+      "attr": "color",
+      "reflectToAttr": false,
+      "docs": "The color to use from your application's color palette.\nDefault options are: `\"primary\"`, `\"secondary\"`, `\"tertiary\"`, `\"success\"`, `\"warning\"`, `\"danger\"`, `\"light\"`, `\"medium\"`, and `\"dark\"`.\nFor more information on colors, see [theming](/docs/theming/basics).",
+      "docsTags": [],
+      "values": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "undefined"
+        }
+      ],
+      "optional": true,
+      "required": false
+    },
+    {
+      "name": "mode",
+      "type": "\"ios\" | \"md\"",
+      "mutable": false,
+      "attr": "mode",
+      "reflectToAttr": false,
+      "docs": "The mode determines which platform styles to use.",
+      "docsTags": [],
+      "values": [
+        {
+          "value": "ios",
+          "type": "string"
+        },
+        {
+          "value": "md",
+          "type": "string"
+        }
+      ],
+      "optional": true,
+      "required": false
+    },
+    {
+      "name": "position",
+      "type": "\"fixed\" | \"floating\" | \"stacked\" | undefined",
+      "mutable": false,
+      "attr": "position",
+      "reflectToAttr": false,
+      "docs": "The position determines where and how the label behaves inside an item.",
+      "docsTags": [],
+      "values": [
+        {
+          "value": "fixed",
+          "type": "string"
+        },
+        {
+          "value": "floating",
+          "type": "string"
+        },
+        {
+          "value": "stacked",
+          "type": "string"
+        },
+        {
+          "type": "undefined"
+        }
+      ],
+      "optional": true,
+      "required": false
+    }
+  ],
+  "methods": [],
+  "events": [],
+  "listeners": [],
+  "styles": [
+    {
+      "name": "--color",
+      "annotation": "prop",
+      "docs": "Color of the label"
+    }
+  ],
+  "slots": [],
+  "parts": [],
+  "dependents": [
+    "ion-select-popover"
+  ],
+  "dependencies": [],
+  "dependencyGraph": {
+    "ion-select-popover": [
+      "ion-label"
+    ]
+  }
+}

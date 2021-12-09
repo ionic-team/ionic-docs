@@ -1,0 +1,18 @@
+{
+  "packageName": "@ionic-native/build-info",
+  "displayName": "Build Info",
+  "description": "\nThis plugin provides build information.\n",
+  "usage": "\n```\nimport { BuildInfo } from '@ionic-native/build-info/ngx';\n\nthis.platform.ready().then(() => {\n    console.log('BuildInfo.baseUrl        =' + BuildInfo.baseUrl)\n    console.log('BuildInfo.packageName    =' + BuildInfo.packageName)\n    console.log('BuildInfo.basePackageName=' + BuildInfo.basePackageName)\n    console.log('BuildInfo.displayName    =' + BuildInfo.displayName)\n    console.log('BuildInfo.name           =' + BuildInfo.name)\n    console.log('BuildInfo.version        =' + BuildInfo.version)\n    console.log('BuildInfo.versionCode    =' + BuildInfo.versionCode)\n    console.log('BuildInfo.debug          =' + BuildInfo.debug)\n    console.log('BuildInfo.buildType      =' + BuildInfo.buildType)\n    console.log('BuildInfo.flavor         =' + BuildInfo.flavor)\n    console.log('BuildInfo.buildDate      =' + BuildInfo.buildDate)\n    console.log('BuildInfo.installDate    =' + BuildInfo.installDate)\n})\n```\n",
+  "platforms": [
+    "Android",
+    "iOS",
+    "Windows",
+    "macOS",
+    "browser",
+    "Electron"
+  ],
+  "repo": "https://github.com/lynrin/cordova-plugin-buildinfo",
+  "cordovaPlugin": {
+    "name": "cordova-plugin-buildinfo"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "packageName": "@ionic-native/youtube-video-player",
+  "displayName": "Youtube Video Player",
+  "description": "\nPlays YouTube videos in Native YouTube App\n",
+  "usage": "\nFor Android 5.0+ you will need to add the following to config.xml\n```xml\n<preference name=\"YouTubeDataApiKey\" value=\"[YOUR YOUTUBE API]\" />\n```\nFor more information: https://developers.google.com/youtube/v3/getting-started\n\n\n```typescript\nimport { YoutubeVideoPlayer } from '@ionic-native/youtube-video-player/ngx';\n\nconstructor(private youtube: YoutubeVideoPlayer) { }\n\n...\n\n\nthis.youtube.openVideo('myvideoid');\n\n```\n",
+  "platforms": [
+    "Android",
+    "iOS"
+  ],
+  "repo": "https://github.com/ihadeed/CordovaYoutubeVideoPlayer",
+  "cordovaPlugin": {
+    "name": "cordova-plugin-youtube-video-player"
+  }
+}
