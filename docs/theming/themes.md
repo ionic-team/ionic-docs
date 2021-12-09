@@ -1,5 +1,5 @@
 ---
-title: Themes
+title: テーマのカスタマイズ
 ---
 
 import CodeColor from '@components/page/theming/CodeColor';

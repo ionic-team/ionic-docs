@@ -1,5 +1,5 @@
 ---
-title: Platform Styles
+title: プラットフォームの外観
 ---
 
 <head>

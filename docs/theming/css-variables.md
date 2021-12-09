@@ -1,5 +1,5 @@
 ---
-title: CSS Variables
+title: CSS変数
 ---
 
 <head>

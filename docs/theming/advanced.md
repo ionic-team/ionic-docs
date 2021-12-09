@@ -1,5 +1,5 @@
 ---
-sidebar_label: Advanced
+sidebar_label: 高度なカスタマイズ
 initialTab: 'preview'
 inlineHtmlPreviews: true
 ---

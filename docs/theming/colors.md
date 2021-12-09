@@ -1,5 +1,5 @@
 ---
-title: Colors
+title: 配色
 initialTab: 'preview'
 inlineHtmlPreviews: true
 ---

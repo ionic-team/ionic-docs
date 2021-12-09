@@ -1,5 +1,5 @@
 ---
-title: Dark Mode
+title: ダークモード
 initialTab: 'preview'
 inlineHtmlPreviews: true
 ---

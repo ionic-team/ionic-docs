@@ -1,6 +1,6 @@
 ---
-title: Theming Basics
-sidebar_label: Basics
+title: テーマの基本
+sidebar_label: 基本的な考え方
 ---
 
 import ColorAccordion from '@components/page/theming/ColorAccordion';
