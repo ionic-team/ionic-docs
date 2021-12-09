@@ -27,6 +27,7 @@ jobs:
       - name: npm install, build
         run: |
           npm ci
+          npm run prebuild
           npm run build:ci
 
       # ビルドの実行
