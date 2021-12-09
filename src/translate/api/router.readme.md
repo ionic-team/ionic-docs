@@ -14,3 +14,25 @@ Routerは、一般的なJavaScriptプロジェクト内でルーティングを�
 Angularを使用している場合は、[ion-router-outlet](../router-outlet)を参照してください。
 
 
+## Interfaces
+
+### RouterEventDetail
+
+```typescript
+interface RouterEventDetail {
+  from: string | null;
+  redirectedFrom: string | null;
+  to: string;
+}
+```
+
+### RouterCustomEvent
+
+While not required, this interface can be used in place of the `CustomEvent` interface for stronger typing with Ionic events emitted from this component.
+
+```typescript
+interface RouterCustomEvent extends CustomEvent {
+  detail: RouterEventDetail;
+  target: HTMLIonRouterElement;
+}
+```

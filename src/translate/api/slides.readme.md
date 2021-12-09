@@ -3,6 +3,7 @@
 Slidesコンポーネントは複数セクションのコンテナです。
 各セクション間をスワイプまたはドラッグできます。これには任意の数の[Slide](../slide)コンポーネントが含まれます。
 
+This guide will cover migration from the deprecated `ion-slides` component to the framework-specific solutions that Swiper.js provides as well as the existing `ion-slides` API for developers who are still using that component.
 
 Swiper.jsを採用しています:
 ハードウェアアクセラレートされたトランジションを備えた最新のモバイルタッチスライダとフレームワークです。

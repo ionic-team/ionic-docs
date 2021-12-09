@@ -25,3 +25,15 @@ item-slidingには、Buttonを表示するためにドラッグできるItemを�
 
 特定のポイントをスワイプすると、オプションを展開してアイテムの幅全体を表示できます。これを `ionSwipe` イベントと組み合わせて、classのmethodを呼び出すことができます。
 
+## Interfaces
+
+### ItemSlidingCustomEvent
+
+While not required, this interface can be used in place of the `CustomEvent` interface for stronger typing with Ionic events emitted from this component.
+
+```typescript
+interface ItemSlidingCustomEvent extends CustomEvent {
+  target: HTMLIonItemSlidingElement;
+}
+```
+
