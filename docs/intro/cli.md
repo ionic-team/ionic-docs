@@ -37,7 +37,7 @@ $ npm install -g @ionic/cli
 
 :::note
 `-g` オプションは、 _グローバルにインストール_ することを意味しています。パッケージをグローバルにインストールすると `EACCES` パーミッションエラーが起きる可能性があります。
-管理権限なしでnpmがグローバルで動作するように設定することを検討してください。詳細については [Resolving Permission Errors](/docs/developing/tips#resolving-permission-errors) をご覧ください。
+管理権限なしでnpmがグローバルで動作するように設定することを検討してください。詳細については [Resolving Permission Errors](../developing/tips.md#resolving-permission-errors) をご覧ください。
 :::
 
 ## アプリケーションの起動
