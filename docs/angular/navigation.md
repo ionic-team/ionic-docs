@@ -1,5 +1,5 @@
 ---
-title: Angular Navigation
+title: 'Angular ナビゲーション'
 sidebar_label: Navigation/Routing
 ---
 

@@ -1,6 +1,6 @@
 ---
-title: 'Your First Ionic App: Angular'
-sidebar_label: Build Your First App
+title: 'はじめてのIonicアプリ: Angular'
+sidebar_label: 'はじめてのアプリ'
 ---
 
 <head>

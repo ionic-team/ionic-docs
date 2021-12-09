@@ -1,5 +1,5 @@
 ---
-title: Platform
+title: 'プラットフォーム'
 toc_max_heading_level: 2
 ---
 

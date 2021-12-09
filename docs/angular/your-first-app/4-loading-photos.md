@@ -1,5 +1,5 @@
 ---
-sidebar_label: Loading Photos
+sidebar_label: 'アルバムから写真の読み込み'
 ---
 
 # Loading Photos from the Filesystem

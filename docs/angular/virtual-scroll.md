@@ -1,4 +1,4 @@
-# Virtual Scroll
+# 仮想スクロール
 
 In the past, we have provided an `ion-virtual-scroll` component in Ionic Framework to help with list virtualization. At the time this was not available in Angular, but recently Angular has provided its own solution via the `@angular/cdk` package.
 

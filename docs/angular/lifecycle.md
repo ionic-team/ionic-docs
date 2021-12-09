@@ -1,5 +1,5 @@
 ---
-title: Ionic Page Life Cycle
+title: 'Ionic PageのLife Cycle'
 sidebar_label: Lifecycle
 ---
 

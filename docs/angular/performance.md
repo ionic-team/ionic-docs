@@ -1,8 +1,8 @@
 ---
-sidebar_label: Performance
+sidebar_label: 'パフォーマンス'
 ---
 
-# Angular Performance
+# Angularのパフォーマンス
 
 ## \*ngFor with Ionic Components
 

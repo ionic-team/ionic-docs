@@ -1,8 +1,8 @@
 ---
-sidebar_label: Live Reload
+sidebar_label: 'ライブリロード'
 ---
 
-# Rapid App Development with Live Reload
+# アプリ開発を高速化するためのライブリロード
 
 So far, we’ve seen how easy it is to develop a cross-platform app that works everywhere. The development experience is pretty quick, but what if I told you there was a way to go faster?
 
