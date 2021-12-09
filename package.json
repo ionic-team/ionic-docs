@@ -6,7 +6,7 @@
     "prebuild": "npm run generate-markdown; if [ -n \"$CROWDIN_PERSONAL_TOKEN\" ]; then npm run crowdin:sync; fi",
     "build": "npm run build:${VERCEL_ENV:-preview}",
     "build:preview": "docusaurus build --locale en",
-    "build:production": "docusaurus build",
+    "build:production": "docusaurus build --locale en",
     "build:ci": "npm run build:production && npm run netlify-redirect && mkdir www && mv build www/docs",
     "clear": "docusaurus clear",
     "crowdin:sync": "docusaurus write-translations && crowdin upload && crowdin download",
