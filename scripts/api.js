@@ -8,8 +8,8 @@ const DEMOS_PATH = path.resolve('static/demos');
 let COMPONENT_LINK_REGEXP;
 
 (async function () {
-  const response = await fetch('https://unpkg.com/@ionic/docs@next/core.json');
-  const { components } = await response.json();
+  const response = require('./data/translated-api.json'); // const response = await fetch('https://unpkg.com/@ionic/docs@next/core.json');
+  const { components } = response; // const { components } = await response.json();
 
   const names = components.map((component) => component.tag.slice(4));
   // matches all relative markdown links to a component, e.g. (../button)
@@ -196,9 +196,13 @@ ${methods
 `;
 }
 
-function renderParts({ parts }) {
-  if (parts.length === 0) {
-    return '';
+function renderParts({ tag, parts }) {
+  try {
+    if (parts.length === 0) {
+      return '';
+    }
+  } catch (e) {
+    console.log(tag + 'がだめらしーーーーーーーーーーーーーーー');
   }
 
   return `
