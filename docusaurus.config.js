@@ -1,13 +1,13 @@
 const path = require('path');
 
-const BASE_URL_TRAILING = '/docs/';
+const BASE_URL = '/docs';
 
 module.exports = {
   title: 'Ionic Documentation',
   tagline:
     'Ionic is the app platform for web developers. Build amazing mobile, web, and desktop apps all with one shared code base and open web standards',
   url: 'https://ionicframework.com',
-  baseUrl: BASE_URL_TRAILING,
+  baseUrl: `${BASE_URL}/`,
   /*
   i18n: {
     defaultLocale: 'en',
@@ -23,7 +23,7 @@ module.exports = {
   */
   onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
-  favicon: 'img/favicon.png',
+  favicon: 'img/meta/favicon.ico',
   organizationName: 'ionic-team',
   projectName: 'ionic-docs',
   themeConfig: {
@@ -34,8 +34,8 @@ module.exports = {
       hideOnScroll: true,
       logo: {
         alt: 'Site Logo',
-        src: `${BASE_URL_TRAILING}logos/ionic-text-docs-dark.svg`,
-        srcDark: `${BASE_URL_TRAILING}logos/ionic-text-docs-light.svg`,
+        src: `${BASE_URL}/logos/ionic-text-docs-dark.svg`,
+        srcDark: `${BASE_URL}/logos/ionic-text-docs-light.svg`,
         href: '/',
         target: '_self',
         width: 139,
@@ -146,36 +146,34 @@ module.exports = {
           type: 'separator',
           position: 'right',
         },
-        {
-          type: 'localeDropdown',
-          position: 'right',
-          dropdownItemsBefore: [],
-          dropdownItemsAfter: [
-            {
-              href: 'https://ionicframework.com/jp/docs/',
-              label: '日本語',
-              target: '_blank',
-              rel: null,
-            },
-            {
-              href: 'https://ionicframework.com/translate',
-              label: 'Translate',
-              target: '_blank',
-              rel: null,
-            },
-          ],
-          className: 'icon-link language navbar__item',
-        },
+        // {
+        //   type: 'localeDropdown',
+        //   position: 'right',
+        //   dropdownItemsBefore: [],
+        //   dropdownItemsAfter: [
+        //     {
+        //       href: 'https://ionicframework.com/jp/docs/',
+        //       label: '日本語',
+        //       target: '_blank',
+        //       rel: null,
+        //     },
+        //     {
+        //       href: 'https://ionicframework.com/translate',
+        //       label: 'Translate',
+        //       target: '_blank',
+        //       rel: null,
+        //     },
+        //   ],
+        //   className: 'icon-link language navbar__item',
+        // },
         {
           type: 'iconLink',
           position: 'right',
           icon: {
             alt: 'twitter logo',
-            src: `${BASE_URL_TRAILING}logos/twitter.svg`,
+            src: `${BASE_URL}/logos/twitter.svg`,
             href: 'https://twitter.com/Ionicframework',
             target: '_blank',
-            width: 18,
-            height: 16,
           },
         },
         {
@@ -183,11 +181,19 @@ module.exports = {
           position: 'right',
           icon: {
             alt: 'github logo',
-            src: `${BASE_URL_TRAILING}logos/github.svg`,
+            src: `${BASE_URL}/logos/github.svg`,
             href: 'https://github.com/ionic-team/ionic-framework',
             target: '_blank',
-            width: 16.5,
-            height: 16,
+          },
+        },
+        {
+          type: 'iconLink',
+          position: 'right',
+          icon: {
+            alt: 'discord logo',
+            src: `${BASE_URL}/logos/discord.svg`,
+            href: 'https://ionic.link/discord',
+            target: '_blank',
           },
         },
       ],

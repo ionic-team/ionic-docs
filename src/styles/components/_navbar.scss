@@ -59,9 +59,6 @@ html[data-theme='dark'] {
       .icon-link,
       [class*='toggle_'] {
         padding: 0.5rem;
-      }
-
-      [class*='toggle_'] {
         display: flex;
 
         transition: opacity 0.2s ease-out;
@@ -91,19 +88,24 @@ html[data-theme='dark'] {
 
         //theme toggle
         &:nth-last-of-type(1) {
-          order: 5;
+          order: 4;
         }
       }
 
       a {
         //twitter icon
         &:nth-of-type(1) {
-          order: 6;
+          order: 5;
         }
 
         //github icon
         &:nth-of-type(2) {
           order: 7;
+        }
+
+        //discord icon
+        &:nth-of-type(3) {
+          order: 6;
         }
       }
     }
