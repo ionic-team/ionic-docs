@@ -49,7 +49,7 @@ title: Glossary
     は、ベンダー固有のプレフィックスを手書きの Sass/CSS コードに追加するツールです。
     これにより、作成する標準化された CSS ルールが、サポートするすべてのブラウザに確実に適用されます。
     たとえば、autoprefixer を使用すると、さまざまなブラウザで使用されるすべての flexbox 構文を知る必要がなく、
-    <code>display: flex;</code> と記述するだけで済み、かつ自動的に正しくCSSに差し込まれます。</p>
+    <code>display: flex;</code> と記述するだけで済み、かつ自動的に正しくCSSに差し込まれます。
   </p>
 </section>
 
@@ -181,7 +181,7 @@ title: Glossary
     このバージョンの JavaScript には、クラス、モジュール、イテレーター、Promise など、
     広範囲の新機能が導入されています。Evergreen のブラウザ(Chrome、Safari、Firefox、Edge)は
     ES6 を完全にサポートしていますが、古いブラウザで ES6 の機能を使うには、<a href="#babel">Babel</a> や
-    <a href="#typescript">TypeScript</a> のようなツールが ES6 のコードを ES5 に<a href="#transpiler">変換</A>する必要があります。
+    <a href="#typescript">TypeScript</a> のようなツールが ES6 のコードを ES5 に<a href="#transpiler">変換</a>する必要があります。
   </p>
 </section>
 
@@ -311,7 +311,7 @@ title: Glossary
   </a>
   <p>
     <strong>Live Reload</strong> (or <strong>live-reload</strong>) は、アプリケーションの変更を検出すると、
-    自動的にブラウザまたは{' '} <a href="../core-concepts/webview"> をリロードするツールです。場合によっては、ウィンドウ全体をリロードしなくても、
+    自動的にブラウザまたは{' '} <a href="../core-concepts/webview">Web View</a> をリロードするツールです。場合によっては、ウィンドウ全体をリロードしなくても、
     アプリケーションの一部を置き換えることができます。ライブリロード には実行中の開発サーバーが必要なので、Web View にはデプロイされたファイルを単に読むのではなく、URLをロードする必要があるため、別のデバイスでライブリロードを使用するのは難しいかもしれません。詳しくは{' '}
     <a href="../cli/livereload">Live Reload docs</a> を御覧ください。
   </p>

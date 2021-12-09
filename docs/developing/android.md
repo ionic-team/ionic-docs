@@ -15,9 +15,9 @@ sidebar_label: Developing for Android
 
 ## Android Studio
 
-[Android Studio](https://developer.android.com/studio/) はネイティブなAndroidアプリを作るためのIDEです。[Android SDK](/docs/reference/glossary#android-sdk)が含まれており、コマンドラインで使用できるように設定する必要があります。
+[Android Studio](https://developer.android.com/studio/) はネイティブなAndroidアプリを作るためのIDEです。[Android SDK](../reference/glossary.md#android-sdk)が含まれており、コマンドラインで使用できるように設定する必要があります。
 
-Androidエミュレータに必要な [Android仮想デバイス](/docs/developing/android#creating-an-android-virtual-device) の作成にもAndroid Studioが使用されます。Ionicアプリは [デバイスに起動](/docs/developing/android#set-up-an-android-device)することもできます。
+Androidエミュレータに必要な [Android仮想デバイス](android.md#creating-an-android-virtual-device) の作成にもAndroid Studioが使用されます。Ionicアプリは [デバイスに起動](android.md#set-up-an-android-device)することもできます。
 
 :::note
 Android Studioを使ってIonicアプリを開発することはお勧めしません。実際には、ネイティブのAndroidプラットフォーム向けにアプリをビルドして実行したり、Android SDKや仮想デバイスを管理するためだけに使うべきです。
@@ -25,7 +25,7 @@ Android Studioを使ってIonicアプリを開発することはお勧めしま�
 
 ### Android Studioのインストール
 
-<a href="https://developer.android.com/studio/" target="_blank">Android website<a>からAndroid Studioをダウンロードします。より詳しいインストール手順は<a href="https://developer.android.com/studio/install" target="_blank">User Guide</a>をご覧ください。
+<a href="https://developer.android.com/studio/" target="_blank">Android website</a> からAndroid Studioをダウンロードします。より詳しいインストール手順は <a href="https://developer.android.com/studio/install" target="_blank">User Guide</a> をご覧ください。
 
 ### Android SDKのインストール
 
