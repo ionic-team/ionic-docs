@@ -1,1 +1,0 @@
-Launches in app Browser
