@@ -19,15 +19,15 @@ jobs:
         with:
           path:
             node_modules
-          key: ${{ runner.os }}-v2-dependencies-${{ hashFiles('**/package-lock.json') }}
+          key: ${{ runner.os }}-v3-dependencies-${{ hashFiles('**/package-lock.json') }}
           restore-keys: |
-            ${{ runner.os }}-v2-dependencies-
+            ${{ runner.os }}-v3-dependencies-
 
       # Lintとテストの実行
       - name: npm install, build
         run: |
           npm ci
-          npm run build:production
+          npm run build:ci
 
       # ビルドの実行
       - name: app build
