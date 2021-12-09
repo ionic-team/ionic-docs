@@ -1,3 +1,0 @@
-# ion-picker-controller
-
-

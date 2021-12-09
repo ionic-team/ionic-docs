@@ -197,12 +197,8 @@ ${methods
 }
 
 function renderParts({ tag, parts }) {
-  try {
-    if (parts.length === 0) {
-      return '';
-    }
-  } catch (e) {
-    console.log(tag + 'がだめらしーーーーーーーーーーーーーーー');
+  if (parts.length === 0) {
+    return '';
   }
 
   return `
