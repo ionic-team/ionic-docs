@@ -1,19 +1,24 @@
 ---
+title: iOS App Store Deployment
 sidebar_label: iOS App Store
-contributors:
-  - zaarheed
 ---
 
-# iOS App Storeでの開発
+<head>
+  <title>iOS App Storeでのリリース: Apple App Store Deployment for Ionic</title>
+  <meta
+    name="description"
+    content="Review the requirements to publish an Ionic app to the Apple iOS App Store. Learn to generate a release build and other necessary steps for deployment."
+  />
+</head>
 
 ## 要件
 
 Submitting an App to the iOS App store requires a few things:
 
-* Xcode
-* A Paid Apple Developers account
-* A valid provisioning profile
-* App Development and Distribution certificates
+- Xcode
+- A Paid Apple Developers account
+- A valid provisioning profile
+- App Development and Distribution certificates
 
 To enroll in the Apple Developer Program, follow the instructions [listed here](https://developer.apple.com/programs/).
 
@@ -64,4 +69,6 @@ An app can be updated by either submitting a new version to Apple, or by using a
 
 With <strong>Live Updates</strong>, app changes can be pushed in realtime directly to users from the Appflow dashboard, without waiting for App Store approvals.
 
-> In order for the iOS App Store to accept the updated build, the config.xml file will need to be edited to increment the version value, then rebuild the app for release following the same instructions above.
+:::note
+In order for the iOS App Store to accept the updated build, the config.xml file will need to be edited to increment the version value, then rebuild the app for release following the same instructions above.
+:::

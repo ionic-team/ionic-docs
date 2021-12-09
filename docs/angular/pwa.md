@@ -1,11 +1,17 @@
 ---
-title: "Progressive Web Apps in Angular"
+title: Progressive Web Apps in Angular
 sidebar_label: Progressive Web Apps
 ---
 
+<head>
+  <title>Make Progressive Web Apps (PWA) in Angular - Ionic Tutorial</title>
+  <meta
+    name="description"
+    content="When Making an Angular app a Progressive Web App, the two main requirements are a Service Worker and a Web Manifest. Read to learn more in Ionic's PWA tutorial."
+  />
+</head>
 
 ## Making your Angular app a PWA
-
 
 The two main requirements of a PWA are a <a href="https://developers.google.com/web/fundamentals/primers/service-workers/" target="_blank">Service Worker</a> and a <a href="https://developers.google.com/web/fundamentals/web-app-manifest/" target="_blank">Web Manifest</a>. While it's possible to add both of these to an app manually, the Angular team has an `@angular/pwa` package that can be used to automate this.
 
@@ -18,10 +24,13 @@ $ ng add @angular/pwa
 
 Once this package has been added run `ionic build --prod` and the `www` directory will be ready to deploy as a PWA.
 
-> By default, the `@angular/pwa` package comes with the Angular logo for the app icons. Be sure to update the manifest to use the correct app name and also replace the icons.
+:::note
+By default, the `@angular/pwa` package comes with the Angular logo for the app icons. Be sure to update the manifest to use the correct app name and also replace the icons.
+:::
 
-
-> Note: Features like Service Workers and many JavaScript APIs (such as geolocation) require the app be hosted in a secure context. When deploying an app through a hosting service, be aware that HTTPS will be required to take full advantage of Service Workers.
+:::note
+Features like Service Workers and many JavaScript APIs (such as geolocation) require the app be hosted in a secure context. When deploying an app through a hosting service, be aware that HTTPS will be required to take full advantage of Service Workers.
+:::
 
 ## Service Worker configuration
 
@@ -36,22 +45,15 @@ After `@angular/pwa` has been added, a new `ngsw-config.json` file will be creat
       "name": "app",
       "installMode": "prefetch",
       "resources": {
-        "files": [
-          "/favicon.ico",
-          "/index.html",
-          "/*.css",
-          "/*.js"
-        ]
+        "files": ["/favicon.ico", "/index.html", "/*.css", "/*.js"]
       }
-    }, {
+    },
+    {
       "name": "assets",
       "installMode": "lazy",
       "updateMode": "prefetch",
       "resources": {
-        "files": [
-          "/assets/**",
-          "/*.(eot|svg|cur|jpg|png|webp|gif|otf|ttf|woff|woff2|ani)"
-        ]
+        "files": ["/assets/**", "/*.(eot|svg|cur|jpg|png|webp|gif|otf|ttf|woff|woff2|ani)"]
       }
     }
   ]
@@ -59,7 +61,6 @@ After `@angular/pwa` has been added, a new `ngsw-config.json` file will be creat
 ```
 
 There are two sections in here, one for app specific resources (JS, CSS, HTML) and assets the app will load on demand. Depending on your app, these options can be customized. For a more detailed guide, read [the official guide from the Angular Team.](https://angular.io/guide/service-worker-config)
-
 
 ## Deploying
 
@@ -75,17 +76,21 @@ Next, in a Terminal, install the Firebase CLI:
 $ npm install -g firebase-tools
 ```
 
-> Note: If it's the first time you use firebase-tools, login to your Google account with `firebase login` command.
+:::note
+If it's the first time you use firebase-tools, login to your Google account with `firebase login` command.
+:::
 
 With the Firebase CLI installed, run `firebase init` within your Ionic project. The CLI prompts:
 
-**"Which Firebase CLI features do you want to set up for this folder?"**  Choose "Hosting: Configure and deploy Firebase Hosting sites."
+**"Which Firebase CLI features do you want to set up for this folder?"** Choose "Hosting: Configure and deploy Firebase Hosting sites."
 
 **"Select a default Firebase project for this directory:"** Choose the project you created on the Firebase website.
 
 **"What do you want to use as your public directory?"** Enter "www".
 
-> Note: Answering these next two questions will ensure that routing, hard reload, and deep linking work in the app:
+:::note
+Answering these next two questions will ensure that routing, hard reload, and deep linking work in the app:
+:::
 
 **Configure as a single-page app (rewrite all urls to /index.html)?"** Enter "Yes".
 
@@ -99,11 +104,7 @@ The last thing needed is to make sure caching headers are being set correctly. T
 {
   "hosting": {
     "public": "www",
-    "ignore": [
-      "firebase.json",
-      "**/.*",
-      "**/node_modules/**"
-    ],
+    "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
     "rewrites": [
       {
         "source": "**",

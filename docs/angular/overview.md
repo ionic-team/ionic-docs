@@ -1,8 +1,15 @@
 ---
+title: 'Ionic Angular Overview'
 sidebar_label: Overview
 ---
 
-# Ionic Angular 概要
+<head>
+  <title>Ionic Angular Overview | Angular Version Support and Tooling</title>
+  <meta
+    name="description"
+    content="@ionic/angular combines the Ionic experience with the tooling and APIs tailored to Angular Developers. Learn more about version support in our Angular Overview."
+  />
+</head>
 
 `@ionic/angular` はcore Ionic experienceに、Angular開発者向けにカスタマイズされたツールとAPIを組み合わせたものです。
 

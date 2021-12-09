@@ -1,7 +1,3 @@
----
-
----
-
 # Studioのインストール
 
 Ionic Studioの最新版のダウンロードはこちらです。 [Ionic Dashboard](https://dashboard.ionicframework.com/personal/downloads).
@@ -9,8 +5,8 @@ Ionic Studioの最新版のダウンロードはこちらです。 [Ionic Dashbo
 ## 必要な環境
 
 * macOS あるいは Windows 10
-* [Node &amp; npm](/docs/intro/environment#node-npm) がセットアップされている必要があります。
-* オプションとして、バージョン管理のために [Git](/docs/intro/environment#git) をインストール
+* [Node &amp; npm](../../intro/environment.md#node-npm) がセットアップされている必要があります。
+* オプションとして、バージョン管理のために [Git](../../intro/environment.md#git) をインストール
 
 ## インストール
 

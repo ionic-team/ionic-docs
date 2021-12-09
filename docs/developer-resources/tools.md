@@ -1,6 +1,3 @@
----
----
-
 # Tools
 
 ### [Angular CLI](https://github.com/angular/angular-cli)
@@ -15,7 +12,7 @@ Angular CLIの機能の詳細
 
 TypeScriptでの作業を素晴らしいものにする機能を調べてください。
 
-### [Glossary](/docs/reference/glossary)
+### [Glossary](../reference/glossary.md)
 
 Ionicで開発中に利用される一般的な用語の一覧。
 

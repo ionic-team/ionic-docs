@@ -1,13 +1,17 @@
 ---
+title: Ionic Page Life Cycle
 sidebar_label: Lifecycle
-contributors:
-  - elylucas
 ---
 
-# Ionicの Page Life Cycle
+<head>
+  <title>AngularのページコンポーネントのLife Cycle - すべてのイベントのドキュメンテーション</title>
+  <meta
+    name="description"
+    content="This guide covers how the page life cycle works in an Ionic app built with Angular. Learn how Ionic embraces life cycle events provided by Angular components."
+  />
+</head>
 
 このガイドでは、IonicとAngularを使用して構築されたアプリでのPage Life Cycleのしくみについて説明します。（追記：Life Cycleとは、表示をはじめてから破棄するまでを指します。この間の特定のタイミングに設定されているイベントをLife Cycle Eventsといいます）
-
 
 ![Ionic life cycle events demo](/img/guides/lifecycle/ioniclifecycle.png)
 
@@ -15,22 +19,23 @@ contributors:
 
 IonicはAngularが提供するLife Cycle Eventsを取り入れています。最もよく使う2つのAngularイベントは次のとおりです。
 
-
-| Event Name         | Description                                                         |
-|--------------------|------------------------------------------------------------------|
+| Event Name    | Description                                                                                                                                                 |
+| ------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `ngOnInit` | コンポーネントの初期化中に発生します。このイベントを使用して、ローカルメンバーを初期化し、一度だけ実行する必要があるServiceを呼び出すことができます。 |
 | `ngOnDestroy`  | Angularがビューを破棄する直前に発生します。 observables の unsubscribe などのクリーンアップに役立ちます。 |
 
 AngularのComponent Life Cycleイベントの詳細については、それらの [component lifecycle docs](https://angular.jp/guide/lifecycle-hooks) をご覧ください。
 
-> `ion-nav` または `ion-router-outlet` を使用するコンポーネントは、 `OnPush` 変更検出方式を使用しないでください。そうすることで、 `ngOnInit` などのライフサイクル・フックが起動するのを防ぐことができます。また、非同期状態の変更は正しくレンダリングされない場合があります。
+:::note
+`ion-nav` または `ion-router-outlet` を使用するコンポーネントは、 `OnPush` 変更検出方式を使用しないでください。そうすることで、 `ngOnInit` などのライフサイクル・フックが起動するのを防ぐことができます。また、非同期状態の変更は正しくレンダリングされない場合があります。
+:::
 
 ## IonicのPage Events
 
 AngularのLife Cycle Eventsに加えて、Ionic Angularには、使用可能ないくつかの追加イベントがあります:
 
-| Event Name         | Description                                                          |
-|--------------------|------------------------------------------------------------------|
+| Event Name         | Description                                                        |
+| ------------------ | ------------------------------------------------------------------ |
 | `ionViewWillEnter` | コンポーネントが表示されるアニメーションがはじまる時に発火します。 |
 | `ionViewDidEnter`  | コンポーネントが表示されるアニメーションが終了した時に発火します。 |
 | `ionViewWillLeave` | コンポーネントを離脱するアニメーションがはじまる時に発火します。  |
@@ -39,7 +44,6 @@ AngularのLife Cycle Eventsに加えて、Ionic Angularには、使用可能な�
 `ionViewWillEnter` と `ionViewDidEnter` の違いは発火するタイミングです。前者は、 `ngOnInit` の直後であり、ページの処理がはじまる前に発火しますが、後者は処理が終了してから発火します。
 
 `ionViewWillLeave` と `ionViewDidLeave` についてですが、 `ionViewWillLeave` は現在のページから離脱する処理がはじまる前に呼び出されますが、 `ionViewDidLeave` は新しいページに遷移する処理が成功してから呼び出されます (新しいページの `ionViewDidEnter` が発火した後になります)。
-
 
 ![Ionic life cycle events demo](/img/guides/lifecycle/ioniclifecycle.gif)
 
@@ -66,7 +70,7 @@ Ionic 3では、いつページにアクセスすることができるか（ `io
 
 ルートガードは、ルートに対して特定のアクションを実行できるかどうかを判断するのに役立ちます。それらは特定のインターフェースを実装するクラスです。`CanActive` と `CanDeactivate` のインターフェイスは、`ionViewCanEnter` と `ionViewCanLeave` と同様のロジックでイベントを削除することができます。
 
-```typescript
+```tsx
 @Injectable()
 export class AuthGuard implements CanActivate {
   constructor(private authService: AuthService) {}
@@ -79,7 +83,7 @@ export class AuthGuard implements CanActivate {
 
 このガードを使用するには、それをルート定義の適切なパラメータに追加します:
 
-```typescript
+```tsx
 { path: 'settings', canActivate: [AuthGuard], loadChildren: '...',  }
 ```
 

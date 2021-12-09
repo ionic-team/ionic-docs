@@ -1,18 +1,27 @@
 ---
+title: Android Development
 sidebar_label: Developing for Android
 ---
 
-# Android開発
+<head>
+  <title>Android App Development Guide: Build Ionic Apps in Android Studio</title>
+  <meta
+    name="description"
+    content="This development guide covers how to run and debug Ionic apps on Android emulators and devices. Learn how to install Android Studio to get started building."
+  />
+</head>
 
-このガイドでは、<a href="/docs/reference/glossary#capacitor">Capacitor</a> または <a href="/docs/reference/glossary#cordova">Cordova</a>を使用して、Androidエミュレータおよびデバイス上でIonicアプリケーションを実行およびデバッグする方法について説明します。AndroidアプリはWindows、macOS、Linux上で開発できます。
+このガイドでは、[Capacitor](../reference/glossary.md#capacitor) または [Cordova](../reference/glossary.md#cordova)を使用して、Androidエミュレータおよびデバイス上でIonicアプリケーションを実行およびデバッグする方法について説明します。AndroidアプリはWindows、macOS、Linux上で開発できます。
 
 ## Android Studio
 
-<a href="https://developer.android.com/studio/" target="_blank">Android Studio</a>はネイティブなAndroidアプリを作るためのIDEです。[Android SDK](/docs/reference/glossary#android-sdk)が含まれており、コマンドラインで使用できるように設定する必要があります。
+[Android Studio](https://developer.android.com/studio/) はネイティブなAndroidアプリを作るためのIDEです。[Android SDK](/docs/reference/glossary#android-sdk)が含まれており、コマンドラインで使用できるように設定する必要があります。
 
 Androidエミュレータに必要な [Android仮想デバイス](/docs/developing/android#creating-an-android-virtual-device) の作成にもAndroid Studioが使用されます。Ionicアプリは [デバイスに起動](/docs/developing/android#set-up-an-android-device)することもできます。
 
-> Android Studioを使ってIonicアプリを開発することはお勧めしません。実際には、ネイティブのAndroidプラットフォーム向けにアプリをビルドして実行したり、Android SDKや仮想デバイスを管理するためだけに使うべきです。
+:::note
+Android Studioを使ってIonicアプリを開発することはお勧めしません。実際には、ネイティブのAndroidプラットフォーム向けにアプリをビルドして実行したり、Android SDKや仮想デバイスを管理するためだけに使うべきです。
+:::
 
 ### Android Studioのインストール
 
@@ -26,8 +35,8 @@ Android Studioをインストールしたら起動します。IDEは、Android S
 
 デフォルトでは、最新の安定版SDKプラットフォームがインストールされ、そのバージョンのAndroidをターゲットにするために必要なパッケージもコレクションされています。
 
-システムイメージやその他のマイナーSDKプラットフォームパッケージをインストールするには、SDK Managerの下部にある [Show Package Details] がオンになっていることを確認する必要があります。
-<img alt="Android Studio SDK Manager" src="/img/installation/android-studio-sdk.png" />
+システムイメージやその他のマイナーSDKプラットフォームパッケージをインストールするには、SDK Managerの下部にある **Show Package Details** がオンになっていることを確認する必要があります。
+![Android Studio SDK Manager](/img/installation/android-studio-sdk.png)
 
 今後の参考情報ですが、Android SDKはAndroid Studioの起動画面の **Configure** &raquo; **SDK Manager** メニュー、またはAndroidプロジェクト内の **Tools** &raquo; **SDK Manager** で管理することができます。
 
@@ -54,9 +63,9 @@ Android SDKには<a href="https://developer.android.com/studio/command-line/" ta
    $ export PATH=$PATH:$ANDROID_SDK_ROOT/emulator
    ```
 
-   <blockquote>
-     <p>For <code>apksigner</code> and <code>zipalign</code>, <code>$ANDROID_SDK_ROOT/build-tools&lt;version></code> must also be added to <code>PATH</code>.</p>
-   </blockquote>
+   :::note
+   For `apksigner` and `zipalign`, `$ANDROID_SDK_ROOT/build-tools&lt;version>` must also be added to `PATH`.
+   :::
 
 ### Android仮想デバイスの作成
 
@@ -97,12 +106,20 @@ Cordovaがプログラムビルドをサポートするには、追加のセッ�
 
 ネイティブのAndroidアプリは <a href="https://java.com/en/" target="_blank">Java</a> プログラミング言語でコンパイルされている。ダウンロードページからJDK 8を<a href="https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html" target="_blank">download page</a>します。
 
-> 残念ながら、Cordovaは最新バージョンのJavaと互換性がありません。
+:::note
+残念ながら、Cordovaは最新バージョンのJavaと互換性がありません。
+:::
 
 ### Gradle
 
-<a href="https://gradle.org/" target="_blank">Gradle</a> はAndroidアプリで使用されるビルドツールで、別途インストールする必要があります。詳細については、<a href="https://gradle.org/install/" target="_blank">インストールページ</a>を参照してください。
-
+<a href="https://gradle.org/" target="_blank">
+  Gradle
+</a> はAndroidアプリで使用されるビルドツールで、別途インストールする必要があります。詳細については、 <a
+  href="https://gradle.org/install/"
+  target="_blank"
+>
+  install page
+</a> を参照してください。
 
 ## プロジェクトのセットアップ
 
@@ -110,24 +127,23 @@ Cordovaがプログラムビルドをサポートするには、追加のセッ�
 
 1. **ネイティブプロジェクトが存在しない場合は、生成します。**
 
-    Capacitorでは以下の実行をサポートしています:
+   Capacitorでは以下の実行をサポートしています:
 
-    ```shell
-    $ ionic capacitor add android
-    ```
+   ```shell
+   $ ionic capacitor add android
+   ```
 
-    Cordovaでは以下の実行をサポートしています:
+   For Cordova, run the following:
 
-    ```shell
-    $ ionic cordova prepare android
-    ```
+   ```shell
+   $ ionic cordova prepare android
+   ```
 
-2. **[Package ID](/docs/reference/glossary#package-id)をご覧ください**
+2. **Set the [Package ID](../reference/glossary.md#package-id).**
 
-    Capacitorの場合は `capacitor.config.json` ファイルを開いて、 `appId` を変更してください。
+   For Capacitor, open the `capacitor.config.json` file and modify the `appId` property.
 
-    Cordovaの場合は、 `config.xml` を開きます。ルート要素の `<widget>` の `id` 属性を変更します。詳細については、[Cordovaのマニュアル](https://cordova.apache.org/docs/en/latest/config_ref/#widget)を参照してください。
-
+   For Cordova, open the `config.xml` file and modify the `id` attribute of the root element, `<widget>`. See [the Cordova documentation](https://cordova.apache.org/docs/en/latest/config_ref/#widget) for more information.
 
 ## Capacitorでの実行
 
@@ -135,27 +151,29 @@ CapacitorはAndroid Studioを使って、シミュレータやデバイスへの
 
 1. **Ionicアプリを開発してネイティブプロジェクトに同期します**
 
-    重要な変更が行われるたびに、変更がAndroidシミュレータやデバイスに表示されるようにするには、WebアセットにIonicアプリを組み込む必要があります。次に、Webアセットをネイティブプロジェクトにコピーする必要があります。幸い、このプロセスはIonic CLIコマンド1つで簡単になります。
+  重要な変更が行われるたびに、変更がAndroidシミュレータやデバイスに表示されるようにするには、WebアセットにIonicアプリを組み込む必要があります。次に、Webアセットをネイティブプロジェクトにコピーする必要があります。幸い、このプロセスはIonic CLIコマンド1つで簡単になります。
 
-    ```shell
-    $ ionic capacitor copy android
-    ```
+   ```shell
+   $ ionic capacitor copy android
+   ```
 
 2. **Android StudioでRunボタンをクリックして、シュミレーターかデバイスを選択ください。**
 
 ![Android Studio Run Button Area](/img/running/android-studio-run-button-area.png)
 
 ### ライブリロード
+
 リロードサーバを起動するには、次のコマンドを実行します。
 
 ```shell
 $ ionic capacitor run android -l --host=YOUR_IP_ADDRESS
 ```
+
 デバイス上で実行する場合は、デバイスと開発マシンが同じネットワークに接続されていることを確認してください。
 
 ## Running with Cordova
 
-The Ionic CLI can build, copy, and deploy Ionic apps to Android simulators and devices with a single command. It can also spin up a development server, like the one used in `ionic serve`, to provide [live-reload](/docs/reference/glossary#livereload) functionality.
+The Ionic CLI can build, copy, and deploy Ionic apps to Android simulators and devices with a single command. It can also spin up a development server, like the one used in `ionic serve`, to provide [live-reload](../reference/glossary.md#livereload) functionality.
 
 Run the following to start a long-running CLI process that boots up a live-reload server:
 
@@ -173,7 +191,9 @@ Now, when changes are made to the app's source files, web assets are rebuilt and
 
 Chromeは、AndroidシミュレータとデバイスのためのWeb開発者ツールをサポートしている。シミュレータが動作している間、またはデバイスがコンピュータに接続されている間にChromeで `chrome://inspect` に移動し、デバッグが必要なアプリケーションを **Inspect** します。
 
-> アプリケーションがデバイスまたはシミュレータで実行されていることを確認してください。実行されていない場合は、リストに表示されません。
+:::note
+アプリケーションがデバイスまたはシミュレータで実行されていることを確認してください。実行されていない場合は、リストに表示されません。
+:::
 
 ![Android Chrome DevTools](/img/running/android-chrome-devtools.png)
 
@@ -182,7 +202,9 @@ Chromeは、AndroidシミュレータとデバイスのためのWeb開発者ツ�
 Android Studioで実行している場合、ネイティブログは **Logcat** に表示されます。
 If running with Android Studio, native logs can be found in **Logcat**.
 
-> **Logcat** ウインドウが非表示の場合は、 **View** &raquo; **Tool Windows** &raquo; **Logcat** から有効にします。
+:::note
+**Logcat** ウインドウが非表示の場合は、 **View** &raquo; **Tool Windows** &raquo; **Logcat** から有効にします。
+:::
 
 ![Android Studio Logcat](/img/running/android-studio-logcat.png)
 

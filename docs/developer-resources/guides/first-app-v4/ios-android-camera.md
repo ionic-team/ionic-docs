@@ -1,7 +1,4 @@
----
----
-
-# Android、iOS、Camera - Oh My!
+# Android, iOS, and the Camera - Oh My!
 
 以前は、Ionic アプリを立ち上げて、ウェブブラウザでローカルに実行していました。さて、自分の iOS または Android デバイスにインストールして、フォトギャラリー機能の構築を始めましょう。
 
@@ -16,9 +13,7 @@ $ ionic cordova platform add android
 
 これらのコマンドは `config.xml` ファイルを作成します。これは Cordova iOS と Android の設定を定義するために使われます。Cordova はこのファイルを読み込み、各ネイティブアプリのバイナリをビルドする際に各設定を適用します。
 
-There are more steps to configure [iOS](/docs/developing/ios) and [Android](/docs/developing/android) native tooling.
-
-
+There are more steps to configure [iOS](../../../developing/ios.md) and [Android](../../../developing/android.md) native tooling.
 
 とてもいいよ！これで、カメラ機能を追加できます。ちなみに、このリファレンスコードは [GitHub](https://github.com/ionic-team/photo-gallery-tutorial-ionic4) にあります。
 
@@ -26,13 +21,13 @@ There are more steps to configure [iOS](/docs/developing/ios) and [Android](/doc
 
 ```html
 <ion-content>
-<img>
+  <img />
 
-<ion-fab vertical="bottom" horizontal="center" slot="fixed">
+  <ion-fab vertical="bottom" horizontal="center" slot="fixed">
     <ion-fab-button>
       <ion-icon name="camera"></ion-icon>
     </ion-fab-button>
-</ion-fab>
+  </ion-fab>
 </ion-content>
 ```
 
@@ -43,12 +38,12 @@ There are more steps to configure [iOS](/docs/developing/ios) and [Android](/doc
 Camera を使用するためには、その JavaScript とネイティブライブラリの依存関係を取り込む必要があります。ターミナルウィンドウに戻り、次のコマンドを実行して JavaScript ライブラリをプロジェクトに追加し、TypeScript コードに Camera API を公開します:
 
 ```shell
-$ npm install @ionic-native/camera
+$ npm install @awesome-cordova-plugins/camera
 ```
 
 `package.json` 内に、次のようなバージョン番号の新しい JavaScript 依存関係が追加されていることがわかります。
 
-`"@ionic-native/camera": "^5.4.0"`
+`"@awesome-cordova-plugins/camera": "^5.4.0"`
 
 次に、このコマンドを実行して iOS と Android のネイティブコードを追加し、実際にカメラをモバイルデバイスで動作させます。こちらのより詳細な情報は、[Cordova](https://cordova.apache.org/docs/en/latest/guide/overview/) と [Ionic Native](https://cordova.apache.org/docs/en/latest/guide/overview/) を御覧ください。
 
@@ -76,7 +71,7 @@ $ ionic cordova plugin add cordova-plugin-camera
 これは Angular プロジェクトなので、もうひとつやるべきことがあります: App Module(`src/app/app.module.ts`) に Camera を登録します。まず、カメラモジュールをインポートします:
 
 ```Javascript
-import { Camera } from '@ionic-native/camera/ngx';
+import { Camera } from '@awesome-cordova-plugins/camera/ngx';
 ```
 
 では、これを Provider として追加します:
@@ -107,13 +102,13 @@ providers: [
 次に、イメージプレースホルダーを更新します。次の例では、"currentImage" 変数(次に取り組んでいきます)がイメージにバインドされ、ユーザに表示されます。
 
 ```html
-<img [src]="currentImage" *ngIf="currentImage">
+<img [src]="currentImage" *ngIf="currentImage" />
 ```
 
 次に、`tab2.page.ts` を開き、Camera ライブラリをインポートします:
 
 ```Javascript
-import { Camera, CameraOptions } from '@ionic-native/camera/ngx';
+import { Camera, CameraOptions } from '@awesome-cordova-plugins/camera/ngx';
 ```
 
 次に、"currentImage” 変数を定義し、コンストラクタを使用して Camera をこのクラスに挿入します:

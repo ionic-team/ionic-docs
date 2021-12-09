@@ -1,5 +1,4 @@
----
----
+import Codepen from '@components/global/Codepen';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
@@ -19,8 +18,11 @@ import TabItem from '@theme/TabItem';
 使用可能な値のリストについては、<a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/inputmode" target="_blank" rel="noreferrer">inputmode Documentation</a>を参照してください。
 
 ### Usage
+
+````mdx-code-block
 <Tabs
   defaultValue="javascript"
+  groupId="framework"
   values={[
     { value: 'javascript', label: 'JavaScript' },
     { value: 'angular', label: 'Angular' },
@@ -85,12 +87,13 @@ import TabItem from '@theme/TabItem';
 ```
 </TabItem>
 </Tabs>
+````
 
-import Codepen from '@site/src/components/Codepen';
+<Codepen user="ionic" slug="abvJVVv" height="400" />
 
-<Codepen user="ionic" slug="abvJVVv" height="400"></Codepen>
-
-> `inputmode` 属性はChrome 66+ と iOS Safari 12.2+のデバイスでサポートされています: https://caniuse.com/#search=inputmode
+:::note
+`inputmode` 属性はChrome 66+ と iOS Safari 12.2+のデバイスでサポートされています: https://caniuse.com/#search=inputmode
+:::
 
 ## enterkeyhint
 
@@ -101,7 +104,10 @@ import Codepen from '@site/src/components/Codepen';
 使用可能な値のリストについては、 <a href="https://html.spec.whatwg.org/dev/interaction.html#input-modalities:-the-enterkeyhint-attribute" target="_blank" rel="noreferrer">enterkeyhint Standard</a> を参照してください。
 
 ### Usage
+
+````mdx-code-block
 <Tabs
+  groupId="framework"
   defaultValue="javascript"
   values={[
     { value: 'javascript', label: 'JavaScript' },
@@ -147,10 +153,13 @@ import Codepen from '@site/src/components/Codepen';
 ```
 </TabItem>
 </Tabs>
+````
 
-<Codepen user="ionic" slug="GRpWyRB" height="350"></Codepen>
+<Codepen user="ionic" slug="GRpWyRB" height="350" />
 
-> `enterkeyhint` 属性は Chrome 77+ and iOS Safari 13.4+ のデバイスでサポートされています
+:::note
+`enterkeyhint` 属性は Chrome 77+ and iOS Safari 13.4+ のデバイスでサポートされています
+:::
 
 ## ダークモード
 
@@ -160,7 +169,6 @@ import Codepen from '@site/src/components/Codepen';
 
 CapacitorまたはCordovaでアプリを実行しているとき、キーボードを特定のテーマで表示させることができます。この設定の詳細については、 <a href="https://capacitor.ionicframework.com/docs/apis/keyboard#keyboard-configuration-ios-only-" target="_blank">Capacitor Keyboard Documentation</a> を参照してください。
 
-
 ## アクセサリバーを非表示にする
 
 ウェブベースのアプリケーションを実行すると、iOSはキーボードの上にアクセサリバーを表示する。これにより、ユーザーは次または前の入力に移動したり、キーボードを閉じることができます。
@@ -169,13 +177,15 @@ CapacitorまたはCordovaでアプリを実行しているとき、キーボー�
 
 CapacitorやCordovaでアプリを実行しているときは、アクセサリバーを隠すことができます。この設定の詳細については、 <a href="https://capacitor.ionicframework.com/docs/apis/keyboard#keyboard-configuration-ios-only-" target="_blank">Capacitor Keyboard Documentation</a> を参照してください。
 
-
 ## キーボードのライフサイクルイベント
 
 スクリーンキーボードの存在を検出することは、そうでなければキーボードによって隠される入力の位置を調整するのに有用です。CapacitorとCordovaアプリでは、開発者は一般的にネイティブのキーボードプラグインを使ってキーボードライフサイクルイベントをListenします。モバイルブラウザやPWAで動作するアプリでは、サポートされていればVisual Viewport APIを使用することができる。Ionic Frameworkはこれらの両方のアプローチをラップし、`window` に `ionKeyboardDidShow` と `ionKeyboardDidHide` イベントを発行します。 `ionKeyboardDidShow` のイベントペイロードには、キーボードの高さの近似値がピクセル単位で含まれています。
 
 ### Usage
+
+````mdx-code-block
 <Tabs
+  groupId="framework"
   defaultValue="javascript"
   values={[
     { value: 'javascript', label: 'JavaScript' },
@@ -199,7 +209,7 @@ window.addEventListener('ionKeyboardDidHide', () => {
 </TabItem>
 <TabItem value="angular">
 
-```typescript
+```tsx
 import { Platform } from '@ionic/angular';
 
 ...
@@ -209,7 +219,7 @@ constructor(private platform: Platform) {
     const { keyboardHeight } = ev;
     // Do something with the keyboard height such as translating an input above the keyboard.
   });
-  
+
   this.platform.keyboardDidHide.subscribe(() => {
     // Move input back to original location
   });
@@ -230,7 +240,7 @@ const { isOpen, keyboardHeight } = useKeyboardState();
 </TabItem>
 <TabItem value="vue">
 
-```typescript
+```tsx
 import { useKeyboard } from '@ionic/vue';
 import { watch } from 'vue';
 
@@ -246,5 +256,8 @@ watch(keyboardHeight, () => {
 ```
 </TabItem>
 </Tabs>
+````
 
-> モバイルWebブラウザやPWAで動作するアプリでは、 Keyboard Lifecycle EventsはChrome 62以降とiOS Safari 13.0以降でのみサポートされています。
+:::note
+モバイルWebブラウザやPWAで動作するアプリでは、 Keyboard Lifecycle EventsはChrome 62以降とiOS Safari 13.0以降でのみサポートされています。
+:::

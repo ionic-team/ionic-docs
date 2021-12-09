@@ -2,6 +2,9 @@
 sidebar_label: Overview
 ---
 
+import DocsCard from '@components/global/DocsCard';
+import DocsCards from '@components/global/DocsCards';
+
 # Ionic Vueの概要
 
 `@ionic/vue` はcore Ionic experienceに、Vue開発者向けにカスタマイズされたツールとAPIを組み合わせたものです。
@@ -33,24 +36,19 @@ $ ionic start myApp tabs --type vue
 $ ionic serve █
 ```
 
-
 ## Resources
 
-import DocsCard from '@site/src/components/DocsCard';
-import DocsCards from '@site/src/components/DocsCards';
-
 <DocsCards>
-  <DocsCard header="Getting Started" href="/docs/vue/your-first-app" icon="/icons/feature-component-actionsheet-icon.png">
+  <DocsCard header="Getting Started" href="your-first-app" icon="/icons/feature-component-actionsheet-icon.png">
     <p>Learn the fundamentals you need to know to start building amazing apps with Ionic Framework.</p>
   </DocsCard>
 
-  <DocsCard header="Navigation" href="/docs/vue/navigation" icon="/icons/feature-component-navigation-icon.png">
-    <p>Learn the basics of navigation inside your app with Ionic and Vue Router</p>
-  </DocsCard>
+<DocsCard header="Navigation" href="navigation" icon="/icons/feature-component-navigation-icon.png">
+  <p>Learn the basics of navigation inside your app with Ionic and Vue Router</p>
+</DocsCard>
 
-  <DocsCard header="Lifecycle" href="/docs/vue/lifecycle" icon="/icons/feature-guide-components-icon.png">
-    <p>Learn about using Ionic lifecycle events in class components and with hooks</p>
-  </DocsCard>
-
+<DocsCard header="Lifecycle" href="lifecycle" icon="/icons/feature-guide-components-icon.png">
+  <p>Learn about using Ionic lifecycle events in class components and with hooks</p>
+</DocsCard>
 
 </DocsCards>

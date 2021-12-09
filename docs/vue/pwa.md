@@ -1,7 +1,8 @@
 ---
-title: "Progressive Web Apps in Vue"
 sidebar_label: Progressive Web Apps
 ---
+
+# Progressive Web Apps in Vue
 
 ## VueアプリをPWAにする
 
@@ -13,62 +14,59 @@ PWAの主な要件は、 <a href="https://developers.google.com/web/fundamentals
 vue add pwa
 ```
 
-> 変更する前に、現在の状況を必ずGitにコミットしてください。
+:::note
+変更する前に、現在の状況を必ずGitにコミットしてください。
+:::
 
 これが完了すると、VueのCLIは新しく `registerServiceWorker.ts` を作成します。それを `main.ts` ファイルにインポートします。
 
-
-```typescript
-import { createApp } from 'vue'
-import App from './App.vue'
-import router from './router'
+```tsx
+import { createApp } from 'vue';
+import App from './App.vue';
+import router from './router';
 // Added by the CLI
-import './registerServiceWorker'
+import './registerServiceWorker';
 
-createApp(App)
-  .use(router)
-  .mount('#app')
+createApp(App).use(router).mount('#app');
 ```
 
 `registerServiceWorker.ts` はCLIがビルド時に作成するservice workerです。ここでは、service workerがアップデート、ネットワーク接続の変更、またはエラーを検出したときのユーザの操作性をカスタマイズできます。
 
-```typescript
-import { register } from 'register-service-worker'
+```tsx
+import { register } from 'register-service-worker';
 
 if (process.env.NODE_ENV === 'production') {
   register(`${process.env.BASE_URL}service-worker.js`, {
-    ready () {
+    ready() {
       console.log(
-        'App is being served from cache by a service worker.\n' +
-        'For more details, visit https://goo.gl/AFskqB'
-      )
+        'App is being served from cache by a service worker.\n' + 'For more details, visit https://goo.gl/AFskqB'
+      );
     },
-    registered () {
-      console.log('Service worker has been registered.')
+    registered() {
+      console.log('Service worker has been registered.');
     },
-    cached () {
-      console.log('Content has been cached for offline use.')
+    cached() {
+      console.log('Content has been cached for offline use.');
     },
-    updatefound () {
-      console.log('New content is downloading.')
+    updatefound() {
+      console.log('New content is downloading.');
     },
-    updated () {
-      console.log('New content is available; please refresh.')
+    updated() {
+      console.log('New content is available; please refresh.');
     },
-    offline () {
-      console.log('No internet connection found. App is running in offline mode.')
+    offline() {
+      console.log('No internet connection found. App is running in offline mode.');
     },
-    error (error) {
-      console.error('Error during service worker registration:', error)
-    }
-  })
+    error(error) {
+      console.error('Error during service worker registration:', error);
+    },
+  });
 }
 ```
 
 生成されるService Workerは、 [Workbox's webpack plugin](https://developers.google.com/web/tools/workbox/modules/workbox-webpack-plugin) に基づいており、デフォルトで `GenerateSW()` を使用するように設定されています。つまり、Workboxはビルド時に、処理するすべてのファイルのService Workerキャッシュを自動的に生成します。
 
 これを設定してデフォルトの動作を変更したい場合は、GitHubにある [PWA plugin docs](https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-pwa#configuration) をチェックアウトします。
-
 
 ### Manifest
 
@@ -115,7 +113,6 @@ Service Workerに加えて、Vue PWAプラグインはアプリケーション�
 
 Firebase, Vercel, Netlify,さらにはAzure Static Web Appsなど、さまざまなホストを使用することができる。いずれの場合も、同様のセットアッププロセスを完了する必要があります。このガイドでは、ホストの例としてFirebaseを使用します。このガイドに加えて、 [Vue CLI docs](https://cli.vuejs.org/guide/deployment.html) のドキュメントには、さまざまなプロバイダーにデプロイするためのガイドも含まれています。
 
-
 ### Firebase
 
 FirebaseホスティングはProgressive Web Appsに多くの利点を提供しており、CDNによる高速応答、デフォルトで有効になっているHTTPS、 [HTTP2 push](https://firebase.googleblog.com/2016/09/http2-comes-to-firebase-hosting.html) のサポートなどがある。
@@ -136,7 +133,9 @@ Firebase CLIをインストールした状態で、Ionicプロジェクト内で
 
 **"What do you want to use as your public directory?"** "dist" を選択ください。
 
-> Note: 次の2つの質問に答えることで、ルーティング、ハードリロード、ディープリンクがアプリ内で動作することが保証されます:
+:::note
+次の2つの質問に答えることで、ルーティング、ハードリロード、ディープリンクがアプリ内で動作することが保証されます:
+:::
 
 **Configure as a single-page app (rewrite all urls to /index.html)?"** "Yes" を選択します.
 
@@ -150,11 +149,7 @@ Firebase CLIをインストールした状態で、Ionicプロジェクト内で
 {
   "hosting": {
     "public": "dist",
-    "ignore": [
-      "firebase.json",
-      "**/.*",
-      "**/node_modules/**"
-    ],
+    "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
     "rewrites": [
       {
         "source": "**",
@@ -189,7 +184,6 @@ Firebase CLIをインストールした状態で、Ionicプロジェクト内で
           }
         ]
       }
-
     ]
   }
 }

@@ -1,8 +1,15 @@
 ---
+title: React Lifecycle
 sidebar_label: Lifecycle
 ---
 
-# Reactのライフサイクル
+<head>
+  <title>React Lifecycle: A Guide to Ionic React App Component Lifecycles</title>
+  <meta
+    name="description"
+    content="The React Lifecycle guide discusses how to use the Ionic Lifecycle events in an Ionic React application. Read to learn more about React component lifecycles."
+  />
+</head>
 
 このガイドでは、Ionic ReactアプリケーションでIonicのライフサイクルイベントを利用する方法について説明します。
 
@@ -23,33 +30,35 @@ Ionicは、アプリで利用できるいくつかのライフサイクルメソ
 
 クラスベースのコンポーネントでIonicのライフサイクルメソッドを使用するには、次のように `withIonLifeCycle` という higher order component (HOC) でコンポーネントをラップする必要があります:
 
-```typescript
+```tsx
 export default withIonLifeCycle(HomePage);
 ```
-> `withIonLifeCycle` は `@ionic/react` からインポートします
+
+:::note
+`withIonLifeCycle` は `@ionic/react` からインポートします
+:::
 
 そして、クラスコンポーネントに適切なライフサイクルメソッドを追加すると、イベントが発生した時にHOCがそのメソッドを呼び出します。以下は、各ライフサイクルメソッドを実装したコンポーネント全体です:
 
-```typescript
+```tsx
 import React from 'react';
 import { IonHeader, IonPage, IonToolbar, IonTitle, IonContent, withIonLifeCycle } from '@ionic/react';
 
 class HomePage extends React.Component {
-
   ionViewWillEnter() {
-    console.log('ionViewWillEnter event fired')
+    console.log('ionViewWillEnter event fired');
   }
 
   ionViewWillLeave() {
-    console.log('ionViewWillLeave event fired')
+    console.log('ionViewWillLeave event fired');
   }
 
   ionViewDidEnter() {
-    console.log('ionViewDidEnter event fired')
+    console.log('ionViewDidEnter event fired');
   }
 
   ionViewDidLeave() {
-    console.log('ionViewDidLeave event fired')
+    console.log('ionViewDidLeave event fired');
   }
 
   render() {
@@ -73,7 +82,7 @@ export default withIonLifeCycle(HomePage);
 
 Ionic Reactは、ファンクションコンポーネントで使用できる各ライフサイクルメソッドのフックをエクスポートします。各フックは、イベントが発生したときに呼び出すメソッドを実行します。
 
-```typescript
+```tsx
 import {
   IonContent,
   IonHeader,
@@ -82,12 +91,11 @@ import {
   useIonViewDidEnter,
   useIonViewDidLeave,
   useIonViewWillEnter,
-  useIonViewWillLeave
+  useIonViewWillLeave,
 } from '@ionic/react';
 import React from 'react';
 
 const HomePage: React.FC = () => {
-
   useIonViewDidEnter(() => {
     console.log('ionViewDidEnter event fired');
   });
@@ -119,7 +127,9 @@ const HomePage: React.FC = () => {
 export default HomePage;
 ```
 
-> Note: クラスコンポーネントのように、ファンクションコンポーネントを `withIonLifeCycle` HOC でラップする必要はありません。
+:::note
+クラスコンポーネントのように、ファンクションコンポーネントを `withIonLifeCycle` HOC でラップする必要はありません。
+:::
 
 ## Reactライフサイクルメソッド
 

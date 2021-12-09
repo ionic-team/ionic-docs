@@ -1,10 +1,15 @@
 ---
+title: Angular Navigation
 sidebar_label: Navigation/Routing
-contributors:
-  - mhartington
 ---
 
-# Angularナビゲーション
+<head>
+  <title>Angular Navigation: How Routing & Redirects Work in Angular Apps</title>
+  <meta
+    name="description"
+    content="Our Angular Navigation guide covers how routing works in an app built with Ionic and Angular. Read to learn more about basic routing and redirects in Angular."
+  />
+</head>
 
 このガイドでは、IonicとAngularを使用して構築されたアプリでのルーティングのしくみについて説明します。
 
@@ -15,7 +20,7 @@ Angular Routerは、Angularアプリケーションで最も重要なライブ�
 
 ほとんどのアプリでは、some sort of route を持つことがしばしば必要になります。最も基本的な設定はこのようになります：
 
-```typescript
+```tsx
 
 import { RouterModule } from '@angular/router';
 
@@ -36,11 +41,11 @@ URL path と Component の組み合わせを確認する最も簡単な方法は
 
 そういう場合には、ルーターリダイレクトを使用できます。リダイレクトは通常のルートオブジェクトと同じように書くことができますが、いくつかの異なるキーが含まれます。
 
-```typescript
+```tsx
 [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
   { path: 'login', component: LoginComponent },
-  { path: 'detail', component: DetailComponent }
+  { path: 'detail', component: DetailComponent },
 ];
 ```
 
@@ -48,7 +53,7 @@ URL path と Component の組み合わせを確認する最も簡単な方法は
 
 `full` を使用すると、たとえ最後まで `/route1/route2/route3` と一致するpathがなかったとしても、フルパスを比較する必要があることをルータに伝えることができます。つまり、次のようになります。
 
-```typescript
+```tsx
 { path: '/route1/route2/route3', redirectTo: 'login', pathMatch: 'full' },
 { path: 'login', component: LoginComponent },
 ```
@@ -57,7 +62,7 @@ URL path と Component の組み合わせを確認する最も簡単な方法は
 
 あるいは、こういう書き方もできます:
 
-```typescript
+```tsx
 { path: '/route1/route2', redirectTo: 'login', pathMatch: 'prefix' },
 { path: 'login', component: LoginComponent },
 ```
@@ -71,7 +76,7 @@ routesについて説明してきましたが、それではどのようにし�
 ```ts
 RouterModule.forRoot([
   { path: '', component: LoginComponent },
-  { path: 'detail', component: DetailComponent }
+  { path: 'detail', component: DetailComponent },
 ]);
 ```
 
@@ -93,7 +98,7 @@ RouterModule.forRoot([
 
 Router APIを使用して、プログラムで遷移することもできます。
 
-```typescript
+```tsx
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 
@@ -112,14 +117,15 @@ export class LoginComponent {
 
 どちらのオプションも同様のナビゲーションメカニズムを提供し、異なるユースケースで利用することができます。
 
-> 相対URLを使用したナビゲーションに関するメモ：現在、複数のナビゲーションスタックをサポートするために、相対URLはサポートされていません。
+:::note
+相対URLを使用したナビゲーションに関するメモ：現在、複数のナビゲーションスタックをサポートするために、相対URLはサポートされていません。
+:::
 
 ## Lazy loading routes
 
 現在のルート設定では、すべてのComponentが、ルートとなる `app.module` と同じ `chunk` に含まれているので理想的ではありません。代わりに、ルータにはコンポーネントを独自の `chunk` に分離できるように設定されています。
 
-
-```typescript
+```tsx
 
 import { RouterModule } from '@angular/router';
 
@@ -137,8 +143,7 @@ import { RouterModule } from '@angular/router';
 
 `loadChildren` プロパティはコンポーネントの代わりにネイティブインポートを直接仕様してモジュールを参照する方法です。ただしこれを行うには、コンポーネントごとにモジュールを作成する必要があります。
 
-
-```typescript
+```tsx
 ...
 import { RouterModule } from '@angular/router';
 import { LoginComponent } from './login.component';
@@ -153,8 +158,9 @@ import { LoginComponent } from './login.component';
 })
 ```
 
-> 一部のコードを省略して紹介しています
-
+:::note
+一部のコードを省略して紹介しています
+:::
 
 ここでは、`RouterModule` のインポートとともに、典型的な `Angular Module` の設定がありますが、`RouterModule` では `forChild` によってコンポーネントを使用することを宣言しています。この設定では、ビルドを実行するときに、`App Component`（Root）、 `login Component` 、および `detail Component` において別々のチャンクを作成します。
 
@@ -165,7 +171,6 @@ If you would prefer to get hands on with the concepts and code described above, 
 ## タブの利用方法
 
 タブを使用すると、Angular Routerにどのコンポーネントをロードする必要があるかを知るためのメカニズムをIonicが提供しますが、タブコンポーネントでは複雑な作業が行われます。簡単な例を見てみましょう。
-
 
 ```ts
 const routes: Routes = [
@@ -178,40 +183,35 @@ const routes: Routes = [
         children: [
           {
             path: '',
-            loadChildren: () => import('../tab1/tab1.module').then(m => m.Tab1PageModule)
-          }
-        ]
+            loadChildren: () => import('../tab1/tab1.module').then((m) => m.Tab1PageModule),
+          },
+        ],
       },
       {
         path: '',
         redirectTo: '/tabs/tab1',
-        pathMatch: 'full'
-      }
-    ]
+        pathMatch: 'full',
+      },
+    ],
   },
   {
     path: '',
     redirectTo: '/tabs/tab1',
-    pathMatch: 'full'
-  }
+    pathMatch: 'full',
+  },
 ];
 ```
 
 ロードする `tabs` パスがあります。この例では、`tabs` と設定していますが、`path` の名前は変更可能です。あなたのアプリに合うように何でも設定することができます。この `routes` のオブジェクトでは、`child route`も定義できます。この例では、最上位の`child route`である `tab1` が `outlet` として機能し、追加の `child route` を読み込むことができます。この例では、新しいコンポーネントをロードする単一の `child route` があります。タブのマークアップは次のとおりです。
 
 ```html
-
 <ion-tabs>
-
   <ion-tab-bar slot="bottom">
-
     <ion-tab-button tab="tab1">
       <ion-icon name="flash"></ion-icon>
       <ion-label>Tab One</ion-label>
     </ion-tab-button>
-
   </ion-tab-bar>
-
 </ion-tabs>
 ```
 

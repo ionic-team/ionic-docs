@@ -1,13 +1,23 @@
 ---
+title: Hardware Back Button
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Hardware Back Button
+<head>
+  <title>Hardware Back Button for Capacitor & Cordova on Android Devices</title>
+  <meta
+    name="description"
+    content="The hardware back button is found on most Android devices. Read to learn more about hardware back button use in Capacitor and Cordova on Ionic applications."
+  />
+</head>
 
 ハードウェアの戻るボタンは、ほとんどのAndroidデバイスにあります。ネイティブアプリケーションでは、これを使って、モデルを閉じたり、前のビューに移動したり、アプリを終了したりすることができる。既定値では、 戻るボタンを押すと、現在のビューがナビゲーションスタックからポップされ、前のビューが表示されます。ナビゲーションスタックに前のビューが存在しない場合は、何も起こりません。このガイドでは、ハードウェアの戻るボタンの動作をカスタマイズする方法について説明します。
 
-> ハードウェアの 「戻る」 ボタンとはAndroidデバイスの物理的な 「戻る」 ボタンのことであり、ブラウザの 「戻る」 ボタンや `ion-back-button` ボタンと混同しないでください。このガイドの情報は、Androidデバイスにのみ適用されます。
+:::note
+ハードウェアの 「戻る」 ボタンとはAndroidデバイスの物理的な 「戻る」 ボタンのことであり、ブラウザの 「戻る」 ボタンや `ion-back-button` ボタンと混同しないでください。このガイドの情報は、Androidデバイスにのみ適用されます。
+:::
 
 ## CapacitorとCordovaにおける戻るボタン
 
@@ -23,11 +33,15 @@ import TabItem from '@theme/TabItem';
 
 ハードウェアバックボタンを完全にサポートするには、CapacitorまたはCordovaの使用をお勧めします。
 
-> ブラウザやPWAで実行してる時、 `ionBackButton` イベントは実行されません。
+:::note
+ブラウザやPWAで実行してる時、 `ionBackButton` イベントは実行されません。
+:::
 
 ## Basic Usage
 
+````mdx-code-block
 <Tabs
+  groupId="framework"
   defaultValue="javascript"
   values={[
     { value: 'javascript', label: 'JavaScript' },
@@ -49,7 +63,7 @@ document.addEventListener('ionBackButton', (ev) => {
 </TabItem>
 <TabItem value="angular">
 
-```typescript
+```tsx
 import { Platform } from '@ionic/angular';
 
 ...
@@ -64,7 +78,7 @@ constructor(private platform: Platform) {
 </TabItem>
 <TabItem value="react">
 
-```typescript
+```tsx
 document.addEventListener('ionBackButton', (ev) => {
   ev.detail.register(10, () => {
     console.log('Handler was called!');
@@ -74,7 +88,7 @@ document.addEventListener('ionBackButton', (ev) => {
 </TabItem>
 <TabItem value="vue">
 
-```typescript
+```tsx
 import { useBackButton } from '@ionic/vue';
 
 ...
@@ -89,6 +103,7 @@ export default {
 ```
 </TabItem>
 </Tabs>
+````
 
 この例では、ハードウェアバックボタンが押されたときに呼び出されるハンドラを登録しています。優先度を10に設定し、次のハンドラを呼び出すことをフレームワークに指定していません。その結果、優先順位が10未満のハンドラは呼び出されません。優先度が10より大きいハンドラが最初に呼び出されます。
 
@@ -98,7 +113,9 @@ export default {
 
 各ハードウェアバックボタンコールバックには、 `processNextHandler` パラメータがあります。この関数を呼び出すと、ハードウェアバックボタンハンドラの呼び出しを続行できます。
 
+````mdx-code-block
 <Tabs
+  groupId="framework"
   defaultValue="javascript"
   values={[
     { value: 'javascript', label: 'JavaScript' },
@@ -114,7 +131,7 @@ document.addEventListener('ionBackButton', (ev) => {
   ev.detail.register(5, () => {
     console.log('Another handler was called!');
   });
-  
+
   ev.detail.register(10, (processNextHandler) => {
     console.log('Handler was called!');
 
@@ -126,7 +143,7 @@ document.addEventListener('ionBackButton', (ev) => {
 </TabItem>
 <TabItem value="angular">
 
-```typescript
+```tsx
 import { Platform } from '@ionic/angular';
 
 ...
@@ -135,7 +152,7 @@ constructor(private platform: Platform) {
   this.platform.backButton.subscribeWithPriority(5, () => {
     console.log('Another handler was called!');
   });
-  
+
   this.platform.backButton.subscribeWithPriority(10, (processNextHandler) => {
     console.log('Handler was called!');
 
@@ -147,7 +164,7 @@ constructor(private platform: Platform) {
 </TabItem>
 <TabItem value="react">
 
-```typescript
+```tsx
 document.addEventListener('ionBackButton', (ev) => {
   ev.detail.register(5, () => {
     console.log('Another handler was called!');
@@ -163,7 +180,7 @@ document.addEventListener('ionBackButton', (ev) => {
 </TabItem>
 <TabItem value="vue">
 
-```typescript
+```tsx
 import { useBackButton } from '@ionic/vue';
 
 ...
@@ -173,10 +190,10 @@ export default {
     useBackButton(5, () => {
       console.log('Another handler was called!');
     });
-    
+
     useBackButton(10, (processNextHandler) => {
       console.log('Handler was called!');
-      
+
       processNextHandler();
     });
   }
@@ -184,6 +201,7 @@ export default {
 ```
 </TabItem>
 </Tabs>
+````
 
 この例は、次のハンドラを起動するようにIonic Frameworkに指示する方法を示しています。すべてのコールバックには、パラメータとして `processNextHandler` 関数が用意されています。これをコールすると、次のハンドラ (存在する場合) が起動されます。
 
@@ -211,12 +229,14 @@ document.addEventListener('ionBackButton', (ev) => {
 
 上の例では、ハンドラAとBの両方の優先度は10です。ハンドラBは最後に登録されているため、Ionic FrameworkはハンドラAを呼び出す前にハンドラBを呼び出します。
 
-
 ## アプリの終了
+>>>>>>> main
 
 場合によっては、ハードウェアの戻るボタンを押したときにアプリケーションを終了することをお勧めします。これは、Capacitor/Cordovaが提供するメソッドと組み合わせた `ionBackButton` イベントを使用することで実現できます。
 
+````mdx-code-block
 <Tabs
+  groupId="framework"
   defaultValue="javascript"
   values={[
     { value: 'javascript', label: 'JavaScript' },
@@ -227,7 +247,7 @@ document.addEventListener('ionBackButton', (ev) => {
 }>
 <TabItem value="javascript">
 
-```typescript
+```tsx
 import { BackButtonEvent } from '@ionic/core';
 import { Plugins } from '@capacitor/core';
 const { App } = Plugins;
@@ -247,7 +267,7 @@ document.addEventListener('ionBackButton', (ev: BackButtonEvent) => {
 </TabItem>
 <TabItem value="angular">
 
-```typescript
+```tsx
 import { IonRouterOutlet, Platform } from '@ionic/angular';
 import { Plugins } from '@capacitor/core';
 const { App } = Plugins;
@@ -269,7 +289,7 @@ constructor(
 </TabItem>
 <TabItem value="react">
 
-```typescript
+```tsx
 import { useIonRouter } from '@ionic/react';
 import { Plugins } from '@capacitor/core';
 const { App } = Plugins;
@@ -288,7 +308,7 @@ document.addEventListener('ionBackButton', (ev) => {
 </TabItem>
 <TabItem value="vue">
 
-```typescript
+```tsx
 import { useBackButton, useIonRouter } from '@ionic/vue';
 import { Plugins } from '@capacitor/core';
 const { App } = Plugins;
@@ -308,6 +328,7 @@ export default {
 ```
 </TabItem>
 </Tabs>
+````
 
 この例は、ユーザがハードウェアの戻るボタンを押したときにアプリケーションが終了し、ナビゲーションスタックに何も残っていないことを示しています。アプリを終了する前に確認ダイアログを表示することも可能です。
 
@@ -317,8 +338,8 @@ export default {
 
 次の表は、Ionic Frameworkが使用するすべての内部ハードウェアバックボタンイベントハンドラの一覧です。 `Propagates` 列は、その特定のハンドラがIonic Frameworkに次の戻るボタンハンドラを呼び出すように指示するかどうかを示します。
 
-| Handler    | Priority | Propagates         | Description                                                                                                                              |
-| -----------| ---------| -------------------| -----------------------------------------------------------------------------------------------------------------------------------------|
-| Overlays   | 100      | No                 | Applies to overlay components `ion-action-sheet`, `ion-alert`, `ion-loading`, `ion-modal`, `ion-popover`, `ion-picker`, and `ion-toast`. |
-| Menu       | 99       | No                 | Applies to `ion-menu`.                                                                                                                   |
-| Navigation | 0        | Yes                | Applies to routing navigation (i.e. Angular Routing).                                                                                    |
+| Handler    | Priority | Propagates | Description                                                                                                                              |
+| ---------- | -------- | ---------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
+| Overlays   | 100      | No         | Applies to overlay components `ion-action-sheet`, `ion-alert`, `ion-loading`, `ion-modal`, `ion-popover`, `ion-picker`, and `ion-toast`. |
+| Menu       | 99       | No         | Applies to `ion-menu`.                                                                                                                   |
+| Navigation | 0        | Yes        | Applies to routing navigation (i.e. Angular Routing).                                                                                    |

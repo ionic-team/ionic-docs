@@ -1,13 +1,10 @@
----
----
-
 # Platform
 
 ## isPlatform
 
 `isPlatform` メソッドを使用して、アプリが特定のプラットフォームで実行されているかどうかを確認できます:
 
-```typescript
+```tsx
 import { isPlatform } from '@ionic/vue';
 
 isPlatform('ios'); // returns true when running on a iOS device
@@ -19,7 +16,7 @@ isPlatform('ios'); // returns true when running on a iOS device
 
 `getPlatforms` メソッドを使用して、アプリが現在実行されているプラットフォームを判別できます。
 
-```typescript
+```tsx
 import { getPlatforms } from '@ionic/vue';
 
 getPlatforms(); // returns ["iphone", "ios", "mobile", "mobileweb"] from an iPhone
@@ -32,7 +29,7 @@ getPlatforms(); // returns ["iphone", "ios", "mobile", "mobileweb"] from an iPho
 次の表に、使用可能なすべてのプラットフォーム値とその説明を示します。
 
 | Platform Name | Description                              |
-|---------------|------------------------------------------|
+| ------------- | ---------------------------------------- |
 | android       | a device running Android                 |
 | capacitor     | a device running Capacitor               |
 | cordova       | a device running Cordova                 |
@@ -47,3 +44,44 @@ getPlatforms(); // returns ["iphone", "ios", "mobile", "mobileweb"] from an iPho
 | phablet       | a phablet device                         |
 | pwa           | a PWA app                                |
 | tablet        | a tablet device                          |
+
+## Customizing Platform Detection Functions
+
+The function used to detect a specific platform can be overridden by providing an alternative function in the global [Ionic config](./config). Each function takes `window` as a parameter and returns a boolean.
+
+```tsx
+createApp(App).use(IonicVue, {
+  platform: {
+    /** The default `desktop` function returns false for devices with a touchscreen.
+     * This is not always wanted, so this function tests the User Agent instead.
+     **/
+    desktop: (win) => {
+      const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(win.navigator.userAgent);
+      return !isMobile;
+    },
+  },
+});
+```
+
+```ts
+type PlatformConfig = {
+  android?: ((win: Window) => boolean) | undefined;
+  capacitor?: ((win: Window) => boolean) | undefined;
+  cordova?: ((win: Window) => boolean) | undefined;
+  desktop?: ((win: Window) => boolean) | undefined;
+  electron?: ((win: Window) => boolean) | undefined;
+  hybrid?: ((win: Window) => boolean) | undefined;
+  ios?: ((win: Window) => boolean) | undefined;
+  ipad?: ((win: Window) => boolean) | undefined;
+  iphone?: ((win: Window) => boolean) | undefined;
+  mobile?: ((win: Window) => boolean) | undefined;
+  mobileweb?: ((win: Window) => boolean) | undefined;
+  phablet?: ((win: Window) => boolean) | undefined;
+  pwa?: ((win: Window) => boolean) | undefined;
+  tablet?: ((win: Window) => boolean) | undefined;
+};
+```
+
+```
+
+```

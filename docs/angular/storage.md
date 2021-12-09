@@ -1,8 +1,15 @@
 ---
+title: Data Storage
 sidebar_label: Storage
 ---
 
-# データストレージ
+<head>
+  <title>Angular App Data Storage Options - Ionic Documentation</title>
+  <meta
+    name="description"
+    content="A variety of options are available for storing data within Ionic apps made using Angular. Read our documentation for Ionic Secure Storage and @ionic/storage."
+  />
+</head>
 
 Ionicアプリ内にデータを保存するためのさまざまなオプションを用意しています。
 

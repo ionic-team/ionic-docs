@@ -1,13 +1,10 @@
----
-contributors:
-  - brandyscarney
----
-
 # ランタイムの問題
 
 ## 真っ白なアプリケーション
 
-> 私のアプリケーションにはエラーはありません。なぜ真っ白な画面が表示されるのでしょうか？
+:::note
+私のアプリケーションにはエラーはありません。なぜ真っ白な画面が表示されるのでしょうか？
+:::
 
 この事象が発生しうる理由がいくつかあります。もしあなたがフォーラム上で解決策を見つけられなかった場合、これらを確認して下さい:
 
@@ -33,11 +30,11 @@ contributors:
 
 これにより、古いブラウザに必要なポリフィルが自動的に追加されます。
 
-
-
 ## ディレクティブが動作しない
 
-> なぜ私のカスタムコンポーネント/ディレクティブは動作しないのでしょうか？
+:::note
+なぜ私のカスタムコンポーネント/ディレクティブは動作しないのでしょうか？
+:::
 
 あなたが確認できるものがいくつか存在します。
 
@@ -50,7 +47,7 @@ contributors:
 
 以下に、属性セレクタの例を挙げます:
 
-```typescript
+```tsx
 @Directive({
   selector: '[my-dir]' // <-- [my-dir] because it is an attribute
 })                     // Could be my-dir, [my-dir], .my-dir
@@ -76,7 +73,9 @@ class MyPage { }
 
 ## クリックの遅延
 
-> なぜ私のクリックイベントは遅延するのでしょうか？
+:::note
+なぜ私のクリックイベントは遅延するのでしょうか？
+:::
 
 一般的に、我々は標準的なクリックイベントを要素に追加する場合は `(click)` のみを勧めています。
 これには `<button>` や `<a>` 要素も含まります。これにより、
@@ -89,12 +88,14 @@ class MyPage { }
 要素に `tappable` 属性を追加することができます。
 
 ```html
- <div tappable (click)="doClick()">I am clickable!</div>
+<div tappable (click)="doClick()">I am clickable!</div>
 ```
 
 ## Angular Change Detection
 
-> Why does Angular change detection run very frequently when my components are initializing?
+:::note
+Why does Angular change detection run very frequently when my components are initializing?
+:::
 
 Angular uses a library called [zone.js](https://github.com/angular/angular/tree/master/packages/zone.js/)
 which helps it determine when to run change detection.
@@ -107,14 +108,14 @@ To prevent this from happening, the zone.js flag that manages this portion of
 change detection can be disabled. In the `src` directory of your application,
 create a file called `zone-flags.ts`. Place the following code into the file:
 
-```typescript
+```tsx
 (window as any).__Zone_disable_customElements = true;
 ```
 
 The `zone-flags.ts` file then needs to be imported into your application's
 `polyfills.ts` file. Be sure to import it _before_ `zone.js` is imported:
 
-```typescript
+```tsx
 ...
 
 import './zone-flags.ts';
@@ -126,7 +127,9 @@ import 'zone.js/dist/zone'; // Included with Angular CLI
 This change will only affect applications that depend on zone.js `0.8.27` or
 newer. Older versions will not be affected by this change.
 
-> Note: This flag is automatically included when creating an Ionic app via
+:::note
+This flag is automatically included when creating an Ionic app via
+:::
 the Ionic CLI.
 
 ## Cordova プラグインがブラウザ上で動作しない
@@ -160,7 +163,7 @@ provider の複数のインスタンスが生成されます。
 子コンポーネントで使用できるようにする場合は、親コンポーネントに一度だけ Provider を
 注入する必要があります。
 
-```typescript
+```tsx
 let id = 0;
 export class MyService {
   id: number;
@@ -173,8 +176,8 @@ export class MyService {
 @Component({
   selector: 'my-component',
   template: 'Hello World',
-  providers: [MyService] // <-- MyService の新しいインスタンスの生成 :(
-})                       // 不要。なぜなら MyService は App の providers の中だらか
+  providers: [MyService], // <-- MyService の新しいインスタンスの生成 :(
+}) // 不要。なぜなら MyService は App の providers の中だらか
 class MyComp {
   // id は 1, s は MyApp とは異なる MyService インスタンス
   constructor(s: MyService) {
@@ -185,7 +188,7 @@ class MyComp {
 @Component({
   template: '<my-component></my-component>',
   providers: [MyService], // MyService はここのみ必要
-  directives: [MyComp]
+  directives: [MyComp],
 })
 class MyApp {
   // id は 0

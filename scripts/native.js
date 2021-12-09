@@ -1,12 +1,29 @@
-const fs = require("fs");
-const nativeJSON = require("./data/native.json");
+const fs = require('fs');
+const nativeJSON = require('./data/native.json');
 const utils = require('./utils.js');
+const { native: nativeOverrides } = require('./data/meta-override.json');
 
-(async function() {
+// Filter out some plugins
+const filteredPlugins = [
+  '@awesome-cordova-plugins/android-fingerprint-auth',
+  '@awesome-cordova-plugins/fingerprint-aio',
+  '@awesome-cordova-plugins/app-center-shared',
+  '@awesome-cordova-plugins/app-update',
+  '@awesome-cordova-plugins/hot-code-push',
+  '@awesome-cordova-plugins/in-app-update',
+  '@awesome-cordova-plugins/checkout',
+  '@awesome-cordova-plugins/secure-storage-echo',
+  '@awesome-cordova-plugins/secure-storage',
+];
+
+let plugins = nativeJSON.filter((plugin) => !filteredPlugins.includes(plugin.packageName));
+const data = fs.writeFileSync('./scripts/data/native.json', JSON.stringify(plugins, null, 2));
+
+(async function () {
   // console.log(cliJSON);
 
-  nativeJSON.map(writePage);
-}());
+  plugins.map(writePage);
+})();
 
 function writePage(page) {
   const data = [
@@ -14,42 +31,44 @@ function writePage(page) {
     renderImports(page),
     renderIntro(page),
     renderSalesCTA(page),
-    // renderProperties(page),
-    // renderEvents(page),
-    // renderMethods(page),
-    // renderParts(page),
-    // renderCustomProps(page),
-    // renderSlots(page)
-  ].join("");
-  
-  const path = `docs/native/plugins/${page.packageName.replace('@ionic-native/','')}.md`;
+    renderInstallation(page),
+    renderSupportedPlatforms(page),
+    renderCapIncompat(page),
+    renderUsage(page),
+  ].join('');
+
+  const path = `docs/native/${page.packageName.replace('@awesome-cordova-plugins/', '')}.md`;
   fs.writeFileSync(path, data);
 }
 
-function renderFrontmatter({ displayName }) {
+function renderFrontmatter({ displayName, packageName }) {
+  const slug = packageName.replace('@awesome-cordova-plugins/', '');
+
   const frontmatter = {
-    title: displayName
+    title: displayName,
   };
 
   return `---
 ${Object.entries(frontmatter)
-  .map(([key, value]) => `${key}: ${value}`)
-  .join("\n")}
+  .map(([key, value]) => `${key}: ${typeof value === 'string' ? `"${value.replace('"', '\\"')}"` : value}`)
+  .join('\n')}
 ---
-
+${utils.getHeadTag(nativeOverrides[slug])}
 `;
 }
 
 function renderImports({}) {
   return `
-import DocsCard from '@site/src/components/DocsCard';
+import DocsCard from '@components/global/DocsCard';
+import DocsButton from '@components/page/native/DocsButton';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import CodeBlock from '@theme/CodeBlock';
 `;
 }
 
-function renderIntro({ description, displayName, repo }) {
+function renderIntro({ description, repo }) {
   return `
-# ${displayName}
-
 ${description}
 
 <p><a href="${repo}" target="_blank" rel="noopener" className="git-link">
@@ -61,161 +80,83 @@ ${description}
 function renderSalesCTA({}) {
   return `
 <h2>Stuck on a Cordova issue?</h2>
-<DocsCard class="cordova-ee-card" header="Don't waste precious time on plugin issues." href="https://ionicframework.com/sales?product_of_interest=Ionic%20Native">
+<DocsCard className="cordova-ee-card" header="Don't waste precious time on plugin issues." href="https://ionicframework.com/sales?product_of_interest=Ionic%20Native">
   <div>
     <img src="/docs/icons/native-cordova-bot.png" class="cordova-ee-img" />
     <p>If you're building a serious project, you can't afford to spend hours troubleshooting. Ionic’s experts offer premium advisory services for both community plugins and premier plugins.</p>
-    <docs-button class="native-ee-detail">Contact Us Today!</docs-button>
+    <DocsButton className="native-ee-detail">Contact Us Today!</DocsButton>
   </div>
 </DocsCard>
 
 `;
 }
 
-// function renderUsage({ usage }) {
-//   const keys = Object.keys(usage);
+function renderInstallation({ cordovaPlugin, packageName }) {
+  return `
+<h2 id="installation">
+  <a href="#installation">Installation</a>
+</h2>
+<Tabs defaultValue="Capacitor" groupId="runtime" values={[
+  {value: 'Capacitor', label: 'Capacitor'},
+  {value: 'Cordova', label: 'Cordova'},
+  {value: 'Enterprise', label: 'Enterprise'},
+]}>
+  <TabItem value="Capacitor">
+    <CodeBlock className="language-shell">
+      $ npm install ${cordovaPlugin.name} {"\\n"}
+      $ npm install ${packageName} {"\\n"}
+      $ ionic cap sync
+    </CodeBlock>
+  </TabItem>
+  <TabItem value="Cordova">
+    <CodeBlock className="language-shell">
+      $ ionic cordova plugin add ${cordovaPlugin.name} {"\\n"}
+      $ npm install ${packageName} {"\\n"}
+    </CodeBlock>
+  </TabItem>
+  <TabItem value="Enterprise">
+    <blockquote>Ionic Enterprise comes with fully supported and maintained plugins from the Ionic Team. &nbsp;
+      <a class="btn" href="https://ionic.io/docs/premier-plugins">Learn More</a> or if you're interested in an enterprise version of this plugin <a class="btn" href="https://ionicframework.com/sales?product_of_interest=Ionic%20Enterprise%20Engine">Contact Us</a></blockquote>
+  </TabItem>
+</Tabs>
+`;
+}
 
-//   if (keys.length === 0) {
-//     return "";
-//   }
+function renderSupportedPlatforms({ platforms }) {
+  return `
+## Supported Platforms
 
-//   if (keys.length === 1) {
-//     return `
-// ## Usage
+${platforms.map((platform) => `- ${platform}`).join('\n')}
+`;
+}
 
-// ${usage[keys[0]]}
-// `;
-//   }
+function renderCapIncompat({ capacitorIncompatible }) {
+  if (!capacitorIncompatible) {
+    return null;
+  }
 
-//   return `
-// ## Usage
+  return `
+## Capacitor
 
-// <Tabs defaultValue="${keys[0]}" values={[${keys
-//     .map(key => `{ value: '${key}', label: '${key.toUpperCase()}' }`)
-//     .join(", ")}]}>
+Not Compatible
+`;
+}
 
-// ${Object.entries(usage)
-//   .map(
-//     ([key, value]) => `
-// <TabItem value="${key}">
+function renderUsage({ usage }) {
+  if (!usage) {
+    return null;
+  }
 
-// ${value}
+  return `
+## Usage
 
-// </TabItem>
-// `
-//   )
-//   .join("\n")}
-// </Tabs>
-// `;
-// }
+### React
 
-// function renderProperties({ props: properties }) {
-//   if (properties.length === 0) {
-//     return "";
-//   }
+[Learn more about using Ionic Native components in React](../native-community.md#react)
 
-//   return `
-// ## Properties
 
-// ${properties
-//   .map(
-//     prop => `
-// ### ${prop.name}
+### Angular
 
-// | | |
-// | --- | --- |
-// | **Description** | ${prop.docs.split("\n").join("<br />")} |
-// | **Attribute** | \`${prop.attr}\` |
-// | **Type** | \`${prop.type.replace(/\|/g, "\\|")}\` |
-// | **Default** | \`${prop.default}\` |
-
-// `
-//   )
-//   .join("\n")}
-// `;
-// }
-
-// function renderEvents({ events }) {
-//   if (events.length === 0) {
-//     return "";
-//   }
-
-//   return `
-// ## Events
-
-// | Name | Description |
-// | --- | --- |
-// ${events.map(event => `| \`${event.event}\` | ${event.docs} |`).join("\n")}
-
-// `;
-// }
-
-// function renderMethods({ methods }) {
-//   if (methods.length === 0) {
-//     return "";
-//   }
-
-//   return `
-// ## Methods
-
-// ${methods
-//   .map(
-//     method => `
-// ### ${method.name}
-
-// | | |
-// | --- | --- |
-// | **Description** | ${method.docs.split("\n").join("<br />")} |
-// | **Signature** | \`${method.signature.replace(/\|/g, "\\|")}\` |
-// `
-//   )
-//   .join("\n")}
-
-// `;
-// }
-
-// function renderParts({ parts }) {
-//   if (parts.length === 0) {
-//     return "";
-//   }
-
-//   return `
-// ## CSS Shadow Parts
-
-// | Name | Description |
-// | --- | --- |
-// ${parts.map(prop => `| \`${prop.name}\` | ${prop.docs} |`).join("\n")}
-
-// `;
-// }
-
-// function renderCustomProps({ styles: customProps }) {
-//   if (customProps.length === 0) {
-//     return "";
-//   }
-
-//   return `
-// ## CSS Custom Properties
-
-// | Name | Description |
-// | --- | --- |
-// ${customProps.map(prop => `| \`${prop.name}\` | ${prop.docs} |`).join("\n")}
-
-// `;
-// }
-
-// function renderSlots({ slots }) {
-//   if (slots.length === 0) {
-//     return "";
-//   }
-
-//   return `
-// ## Slots
-
-// | Name | Description |
-// | --- | --- |
-// ${slots.map(slot => `| \`${slot.name}\` | ${slot.docs} |`).join("\n")}
-
-// `;
-// }
-
+${usage.replace(/</g, '&lt;')}
+`;
+}

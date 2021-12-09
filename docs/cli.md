@@ -1,11 +1,15 @@
 ---
+title: Ionic CLI
 sidebar_label: Overview
-meta:
-  title: "Ionic CLI Framework: Command-Line Interface to Develop Apps"
-  description: The Ionic command-line interface (CLI) is the go-to tool for developing Ionic apps. Install our framework globally with npm.
 ---
 
-# Ionic CLI
+<head>
+  <title>Ionic CLI Framework: Command-Line Interface to Develop Apps</title>
+  <meta
+    name="description"
+    content="The Ionic command-line interface (CLI) is the go-to tool for developing Ionic apps. Install our framework globally with npm."
+  />
+</head>
 
 The Ionic command-line interface ([CLI](/docs/reference/glossary#cli)) は、Ionicアプリを開発する時に頼りになるツールです。
 
@@ -27,9 +31,11 @@ $ ionic <command> --help
 $ ionic <command> <subcommand> --help
 ```
 
-> Be sure to run `ionic <command> --help` in your project directory.
->
-> For some commands, such as `ionic serve`, the help documentation is contextual to the type of your project, e.g. React vs Angular.
+:::note
+Be sure to run `ionic <command> --help` in your project directory.
+
+For some commands, such as `ionic serve`, the help documentation is contextual to the type of your project, e.g. React vs Angular.
+:::
 
 <!-- TODO: image? -->
 

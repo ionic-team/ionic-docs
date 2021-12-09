@@ -1,9 +1,14 @@
 ---
-contributors:
-  - kensodemann
+title: Testing
 ---
 
-# テスト
+<head>
+  <title>Angular Unit and End-to-End Testing for Ionic App Components</title>
+  <meta
+    name="description"
+    content="Angular apps created using Ionic are automatically set up for unit and end-to-end testing. Read to learn more about testing tools for Ionic components."
+  />
+</head>
 
 Ionic CLI を使用して `@ionic/angular` アプリケーションを生成すると、アプリケーションのユニットテストとエンドツーエンドのテスト用に自動的に準備されます。これは Angular CLI で使われる設定と同じものです。Angular で作られたアプリケーションのテストについての詳細は <a href="https://angular.jp/guide/testing" target="_blank">Angular Testing Guide</a> をご参照ください。
 
@@ -53,7 +58,7 @@ Jasmine でモックオブジェクトを作成する一般的な方法は2つ�
 
 例:
 
-```TypeScript
+```tsx
 describe('Calculation', () => {
   describe('divide', () => {
     it('calculates 4 / 2 properly' () => {});
@@ -75,7 +80,7 @@ Pages は単なる Angular コンポーネントです。そのため、ペー�
 
 ページとコンポーネントには TypeScript コードと HTML テンプレートマークアップの両方が含まれているため、コンポーネントクラスのテストとコンポーネント DOM のテストの両方を実行できます。ページが作成されると、生成されるテンプレートテストは次のようになります:
 
-```TypeScript
+```tsx
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
@@ -116,7 +121,7 @@ Service は、多くの場合、計算やその他の操作を実行するユー
 
 たとえば、タイムカードの配列を取得して差引支給額を計算するメソッドを持つ service があるとします。また税金計算は、現在の service が依存しているもう一つの service を介して処理されるとします。この給与計算の service は、このようにテストすることができます:
 
-```TypeScript
+```tsx
 import { PayrollService } from './payroll.service';
 
 describe('PayrollService', () => {
@@ -143,7 +148,7 @@ describe('PayrollService', () => {
 
 `ionic g service name` で service を生成するときに使われる scaffold は Angular のテストユーティリティを使ってテストモジュールをセットアップします。必ずしもそうする必要はありません。ただし、このコードを残しておくことで、手動でサービスを構築したり、次のように注入したりすることができます:
 
-```TypeScript
+```tsx
 import { TestBed, inject } from '@angular/core/testing';
 
 import { PayrollService } from './payroll.service';
@@ -154,24 +159,19 @@ describe('PayrolService', () => {
 
   beforeEach(() => {
     taxServiceSpy = jasmine.createSpyObj('TaxService', {
-       federalIncomeTax: 0,
-       stateIncomeTax: 0,
-       socialSecurity: 0,
-       medicare: 0
-     });
+      federalIncomeTax: 0,
+      stateIncomeTax: 0,
+      socialSecurity: 0,
+      medicare: 0,
+    });
     TestBed.configureTestingModule({
-      providers: [
-        PayrollService,
-        { provide: TaxService, useValue: taxServiceSpy }
-      ]
+      providers: [PayrollService, { provide: TaxService, useValue: taxServiceSpy }],
     });
   });
 
-  it('does some test where it is injected',
-    inject([PayrollService], (service: PayrollService) => {
-      expect(service).toBeTruthy();
-    })
-  );
+  it('does some test where it is injected', inject([PayrollService], (service: PayrollService) => {
+    expect(service).toBeTruthy();
+  }));
 
   it('does some test where it is manually built', () => {
     const service = new PayrollService(taxServiceSpy);
@@ -186,15 +186,9 @@ HTTP 操作を実行するほとんどの service は、それらの操作を実
 
 このようなテストの基本的な設定は次のようになります:
 
-```TypeScript
-import {
-  HttpBackend,
-  HttpClient
-} from '@angular/common/http';
-import {
-  HttpTestingController,
-  HttpClientTestingModule
-} from '@angular/common/http/testing';
+```tsx
+import { HttpBackend, HttpClient } from '@angular/common/http';
+import { HttpTestingController, HttpClientTestingModule } from '@angular/common/http/testing';
 import { TestBed, inject } from '@angular/core/testing';
 
 import { IssTrackingDataService } from './iss-tracking-data.service';
@@ -207,9 +201,7 @@ describe('IssTrackingDataService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       imports: [HttpClientTestingModule],
-      providers: [
-        IssTrackingDataService
-      ]
+      providers: [IssTrackingDataService],
     });
 
     httpClient = TestBed.get(HttpClient);
@@ -218,22 +210,20 @@ describe('IssTrackingDataService', () => {
   });
 
   it('exists', inject([IssTrackingDataService], (service: IssTrackingDataService) => {
-      expect(service).toBeTruthy();
+    expect(service).toBeTruthy();
   }));
 
   describe('location', () => {
     it('gets the location of the ISS now', () => {
-      issTrackingDataService.location().subscribe(x => {
+      issTrackingDataService.location().subscribe((x) => {
         expect(x).toEqual({ longitude: -138.1719, latitude: 44.4423 });
       });
-      const req = httpTestingController.expectOne(
-        'http://api.open-notify.org/iss-now.json'
-      );
+      const req = httpTestingController.expectOne('http://api.open-notify.org/iss-now.json');
       expect(req.request.method).toEqual('GET');
       req.flush({
         iss_position: { longitude: '-138.1719', latitude: '44.4423' },
         timestamp: 1525950644,
-        message: 'success'
+        message: 'success',
       });
       httpTestingController.verify();
     });
@@ -247,7 +237,7 @@ pipe は、特別に定義されたインタフェースを持つ service のよ
 
 簡単な例として、`Person` オブジェクトを受け取り、名前をフォーマットする pipe を見てみましょう。簡単にするために、`Person` は `id`、`firstName`、`lastName`、`middleInitial` で構成されるとします。パイプの要件は、名・姓・ミドルネームのいずれかが存在しない場合に、名前を「性、名 M(ミドルネーム)。」として出力することです。このようなテストは次のようになります:
 
-```TypeScript
+```tsx
 import { NamePipe } from './name.pipe';
 
 import { Person } from '../../models/person';
@@ -262,7 +252,7 @@ describe('NamePipe', () => {
       id: 42,
       firstName: 'Douglas',
       lastName: 'Adams',
-      middleInitial: 'N'
+      middleInitial: 'N',
     };
   });
 
@@ -320,7 +310,7 @@ describe('NamePipe', () => {
 
 すべてのページオブジェクトがサポートを必要とするいくつかのベースメソッドを実装する例を次に示します:
 
-```TypeScript
+```tsx
 import { browser, by, element, ExpectedConditions } from 'protractor';
 
 export class PageObjectBase {
@@ -349,10 +339,7 @@ export class PageObjectBase {
   }
 
   waitUntilNotPresent() {
-    browser.wait(
-      ExpectedConditions.not(ExpectedConditions.presenceOf(this.rootElement())),
-      3000
-    );
+    browser.wait(ExpectedConditions.not(ExpectedConditions.presenceOf(this.rootElement())), 3000);
   }
 
   waitUntilVisible() {
@@ -389,7 +376,7 @@ export class PageObjectBase {
 
 次に、単純ですが典型的なログインページのページオブジェクトの例を示します。`enterEMail()` のような多くのメソッドは、作業の大部分を行うベースクラスのメソッドを呼び出すことに注意してください。
 
-```TypeScript
+```tsx
 import { browser, by, element, ExpectedConditions } from 'protractor';
 import { PageObjectBase } from './base.po';
 
@@ -399,10 +386,7 @@ export class LoginPage extends PageObjectBase {
   }
 
   waitForError() {
-    browser.wait(
-      ExpectedConditions.presenceOf(element(by.css('.error'))),
-      3000
-    );
+    browser.wait(ExpectedConditions.presenceOf(element(by.css('.error'))), 3000);
   }
 
   getErrorMessage() {
@@ -431,7 +415,7 @@ export class LoginPage extends PageObjectBase {
 
 典型的なログインシナリオを実行するエンドツーエンドのテストスクリプトの簡単な例を次に示します。
 
-```TypeScript
+```tsx
 import { AppPage } from '../page-objects/pages/app.po';
 import { AboutPage } from '../page-objects/pages/about.po';
 import { CustomersPage } from '../page-objects/pages/customers.po';
@@ -479,9 +463,7 @@ describe('Login', () => {
       login.enterPassword('bogus');
       login.clickSignIn();
       login.waitForError();
-      expect(login.getErrorMessage()).toEqual(
-        'The password is invalid or the user does not have a password.'
-      );
+      expect(login.getErrorMessage()).toEqual('The password is invalid or the user does not have a password.');
     });
 
     it('navigates to the tasks page if the login succeeds', () => {
@@ -531,13 +513,12 @@ describe('Login', () => {
 
 Angular の `environment.ts` と `environment.prod.ts` ファイルは、アプリケーションのバックエンドのデータサービスのベース URL などの情報を格納するために度々使用されます。また、同じ情報を提供する `environment.e2e.ts` を作成してください。これは、開発または本番のバックエンドサービスではなく、テスト専用のバックエンドサービスにのみ接続します。以下に例を示します:
 
-```TypeScript
+```tsx
 export const environment = {
   production: false,
   databaseURL: 'https://e2e-test-api.my-great-app.com',
-  projectId: 'my-great-app-e2e'
+  projectId: 'my-great-app-e2e',
 };
-
 ```
 
 ##### `angular.json` ファイルを修正
@@ -546,47 +527,47 @@ export const environment = {
 
 `/projects/app/architect/build/configurations` にファイルの置換を行う `test` という名前の設定を追加します:
 
-```JSON
-            "test": {
-              "fileReplacements": [
-                {
-                  "replace": "src/environments/environment.ts",
-                  "with": "src/environments/environment.e2e.ts"
-                }
-              ]
-            }
+```json
+"test": {
+  "fileReplacements": [
+    {
+      "replace": "src/environments/environment.ts",
+      "with": "src/environments/environment.e2e.ts"
+    }
+  ]
+}
 ```
 
 `/projects/app/architect/serve/configurations` に、上記で定義した `test` というビルドの設定をブラウザターゲットに指定する `test` という名前の設定を追加します。
 
-```JSON
-            "test": {
-              "browserTarget": "app:build:test"
-            }
+```json
+"test": {
+  "browserTarget": "app:build:test"
+}
 ```
 
 `/projects/app-e2e/architect/e2e/configurations` に、上記で定義した `test` という起動設定で開発サーバーターゲットを指定する `test` という名前の設定を追加します。
 
-```JSON
-            "test": {
-              "devServerTarget": "app:serve:test"
-            }
+```json
+"test": {
+  "devServerTarget": "app:serve:test"
+}
 ```
 
 ##### `package.json` ファイルを修正
 
 `npm run e2e` が `test` の設定を使うように `package.json` ファイルを修正します。
 
-```JSON
-  "scripts": {
-    "e2e": "ng e2e --configuration=test",
-    "lint": "ng lint",
-    "ng": "ng",
-    "start": "ng serve",
-    "test": "ng test",
-    "test:dev": "ng test --browsers=ChromeHeadlessCI",
-    "test:ci": "ng test --no-watch --browsers=ChromeHeadlessCI"
-  },
+```json
+"scripts": {
+  "e2e": "ng e2e --configuration=test",
+  "lint": "ng lint",
+  "ng": "ng",
+  "start": "ng serve",
+  "test": "ng test",
+  "test:dev": "ng test --browsers=ChromeHeadlessCI",
+  "test:ci": "ng test --no-watch --browsers=ChromeHeadlessCI"
+},
 ```
 
 #### テストクリーンアップ
@@ -598,17 +579,17 @@ export const environment = {
 
 次に例を示します:
 
-```JavaScript
-  onCleanUp() {
-    const axios = require('axios');
-    return axios
-      .post(
-        'https://e2e-test-api.my-great-app.com/purgeDatabase',
-        {}
-      )
-      .then(res => {
-        console.log(res.data);
-      })
-      .catch(err => console.log(err));
-  }
+```javascript
+onCleanUp() {
+  const axios = require('axios');
+  return axios
+    .post(
+      'https://e2e-test-api.my-great-app.com/purgeDatabase',
+      {}
+    )
+    .then(res => {
+      console.log(res.data);
+    })
+    .catch(err => console.log(err));
+}
 ```

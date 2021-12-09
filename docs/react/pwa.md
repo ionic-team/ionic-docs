@@ -27,23 +27,21 @@ ReactDOM.render(<App />, document.getElementById('root'));
 serviceWorker.register();
 ```
 
-
-
 このパッケージを追加したら、 `ionic build` を実行し、 `build` ディレクトリをPWAとしてデプロイする準備ができます。
 
-> デフォルトでは、Reactアプリのパッケージには、アプリアイコン用のIonicロゴが付属しています。正しいアプリケーション名を使用するようにmanifestを更新し、アイコンを置き換えてください。
+:::note
+デフォルトでは、Reactアプリのパッケージには、アプリアイコン用のIonicロゴが付属しています。正しいアプリケーション名を使用するようにmanifestを更新し、アイコンを置き換えてください。
+:::
 
-
-> Note: Service Workersや多くのJavaScript API (位置情報など)のような機能は、セキュアなコンテキストでアプリをホストする必要があります。ホスティングサービスを介してアプリケーションを配備する場合は、Service Workersを最大限に活用するためにHTTPSが必要になることに注意してください。
-
-
+:::note
+Service Workersや多くのJavaScript API (位置情報など)のような機能は、セキュアなコンテキストでアプリをホストする必要があります。ホスティングサービスを介してアプリケーションを配備する場合は、Service Workersを最大限に活用するためにHTTPSが必要になることに注意してください。
+:::
 
 ## Service Workerの設定
 
 デフォルトでは、CRA/React Scriptには [WorkboxのWebpackプラグイン](https://developers.google.com/web/tools/workbox/modules/workbox-webpack-plugin) に基づいて事前設定されたService Workerセットアップが付属しています。これはキャッシュファースト戦略を利用しており、ネットワークが新しいバージョンのアプリを返しても、アプリはキャッシュからロードされます。
 
 CRA/React Scriptsの性質上、この設定はReact Scriptsの内部で行われるため、React Scriptsから抽出しない限りはカスタマイズできません。現在、Ionic CLIはReact Appのイジェクトをサポートしていないため、このアクションを実行する場合は、Ionic CLIの代わりにnpm/yearスクリプトを使用する必要があります。
-
 
 ## デプロイ
 
@@ -61,13 +59,15 @@ $ npm install -g firebase-tools
 
 Firebase CLIをインストールした状態で、Ionicプロジェクト内で `firebase init` を実行します。CLI上で様々な確認を行っていきます:
 
-**"Which Firebase CLI features do you want to set up for this folder?"**  "Hosting: Configure and deploy Firebase Hosting sites." を選択します。
+**"Which Firebase CLI features do you want to set up for this folder?"** "Hosting: Configure and deploy Firebase Hosting sites." を選択します。
 
 **"Select a default Firebase project for this directory:"** FirebaseのWebサイト上で作成したプロジェクトを選択します。
 
 **"What do you want to use as your public directory?"** "dist" を選択ください。
 
-> Note: 次の2つの質問に答えることで、ルーティング、ハードリロード、ディープリンクがアプリ内で動作することが保証されます:
+:::note
+次の2つの質問に答えることで、ルーティング、ハードリロード、ディープリンクがアプリ内で動作することが保証されます:
+:::
 
 **Configure as a single-page app (rewrite all urls to /index.html)?"** "Yes" を選択します.
 
@@ -81,11 +81,7 @@ Firebase CLIをインストールした状態で、Ionicプロジェクト内で
 {
   "hosting": {
     "public": "build",
-    "ignore": [
-      "firebase.json",
-      "**/.*",
-      "**/node_modules/**"
-    ],
+    "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
     "rewrites": [
       {
         "source": "**",

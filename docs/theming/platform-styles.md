@@ -1,20 +1,23 @@
 ---
-disableHtmlPreviews: true
-contributors:
-  - brandyscarney
+title: Platform Styles
 ---
 
-# プラットフォームの外観
+<head>
+  <title>Ionic Platform Styles | Platform-Specific Styles for Ionic Apps</title>
+  <meta
+    name="description"
+    content="Ionic provides platform-specific styles based on the app's device. Styling the components to match the device guidelines allows the app to feel native to users."
+  />
+</head>
 
 Ionicは、アプリケーションが実行されているデバイスに基づいてプラットフォーム固有の外観を提供します。デバイスのガイドラインに合わせてコンポーネントをスタイリングすることで、アクセスしたデバイスに応じてユーザーにはネイティブに見えます。
 
-
 ## Ionic Modes
 
-Ionicは **modes** を使ってコンポーネントの外観をカスタマイズします。それぞれの **プラットフォーム** はデフォルトの **mode** を持っていますが、これはグローバルの [config](../utilities/config) で上書き設定をすることができます。次の表は、それぞれの **プラットフォーム** に追加されているデフォルトの **mode** を示しています。
+Ionicは **modes** を使ってコンポーネントの外観をカスタマイズします。それぞれの **プラットフォーム** はデフォルトの **mode** を持っていますが、これはグローバルの [config](../angular/config.md) で上書き設定をすることができます。次の表は、それぞれの **プラットフォーム** に追加されているデフォルトの **mode** を示しています。
 
-| プラットフォーム  | Mode  | 概要                                                                                                                       |
-|-----------|-------|-----------------------------------------------------------------------------------------------------------------------------------|
+| プラットフォーム  | Mode  | 概要                                                                                                                          |
+| --------- | ----- | -------------------------------------------------------------------------------------------------------------------------------- |
 | `ios`     | `ios` | iPhone, iPad, もしくは iPod で表示する時は [iOS styles](https://www.apple.com/ios) が適用されます。                                   |
 | `android` | `md`  | Androidのデバイスから表示する時は [Material Design styles](https://material.io/guidelines/) が適用されます。.                             |
 | `core`    | `md`  | 上記のどのプラットフォームにも当てはまらないプラットフォームでは、 [Material Design styles](https://material.io/guidelines/) が適用されます。  |
@@ -22,10 +25,10 @@ Ionicは **modes** を使ってコンポーネントの外観をカスタマイ�
 例えば、Androidプラットフォームが利用されている時は `md` (Material Design) が標準で利用されます。 `<html>` エレメントに `class="md"` が追加され、すべてのコンポーネントには Material Design styles が適用されます。:
 
 ```html
-<html class="md">
+<html class="md"></html>
 ```
 
-_Note: **platform** と **mode** は別物です。platformはアプリの [config](../utilities/config) で任意の mode を設定することができます。_
+_Note: **platform** と **mode** は別物です。platformはアプリの [config](../angular/config.md) で任意の mode を設定することができます。_
 
 ## Mode Stylesの上書き
 
@@ -45,4 +48,4 @@ _Note: **platform** と **mode** は別物です。platformはアプリの [conf
 }
 ```
 
-上書きするすべてのグローバルCSS変数のリストについては、[Ionic's color variables](/docs/theming/colors), [theme variables](/docs/theming/themes) and [global component variables](/docs/theming/advanced) をご覧ください。
+上書きするすべてのグローバルCSS変数のリストについては、[Ionic's color variables](colors.md), [theme variables](themes.md) and [global component variables](advanced.md) をご覧ください。

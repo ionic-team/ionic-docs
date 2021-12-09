@@ -1,17 +1,25 @@
 ---
+title: iOS Development
 sidebar_label: Developing for iOS
 skipIntros: true
 ---
 
-# iOSでの開発
+<head>
+  <title>iOS App Development Guide: Xcode Setup to Build and Run iOS Apps</title>
+  <meta
+    name="description"
+    content="Ionic's iOS development guide covers how to build and run Ionic apps on iOS simulators and devices. iOS apps can only be developed on macOS with Xcode setup."
+  />
+</head>
 
-このガイドでは、 <a href="/docs/reference/glossary#capacitor">Capacitor</a> または <a href="/docs/reference/glossary#cordova">Cordova</a>. を使用して、iOSシミュレータおよびデバイス上でIonicアプリケーションを実行およびデバッグする方法について説明します。iOSアプリは、XcodeがインストールされているmacOS上でのみ開発できます。
+このガイドでは、 [Capacitor](../reference/glossary.md#capacitor) または [Cordova](../reference/glossary.md#cordova) を使用して、iOSシミュレータおよびデバイス上でIonicアプリケーションを実行およびデバッグする方法について説明します。iOSアプリは、XcodeがインストールされているmacOS上でのみ開発できます。
 
 iOS上でIonicアプリを実行するためのワークフローは2つあります:
+
 * [Xcodeで実行](#running-with-xcode)
 * [Ionic CLIでの実行](#running-with-the-ionic-cli)
 
-Xcodeアプローチの方が一般的に安定していますが、Ionic CLIを使ったアプローチでは、 [ライブリロード](/docs/reference/glossary#livereload) 機能が提供されています。
+Xcodeアプローチの方が一般的に安定していますが、Ionic CLIを使ったアプローチでは、 [ライブリロード](../reference/glossary.md#livereload) 機能が提供されています。
 
 ## Xcodeのセットアップ
 
@@ -39,94 +47,94 @@ Xcodeを開き、**Window** &raquo; **Devices and Simulators** に移動しま�
 
 ![iOS Simulators](/img/installation/ios-xcode-simulators-setup.png)
 
-
 ## Cordova のセットアップ
 
 Cordovaがプログラムビルドをサポートするには、追加のセットアップが必要です。 Capacitorには不要です。
 
 ### ios-sim & ios-deploy
 
- [`ios-sim`](https://github.com/ios-control/ios-sim) と [`ios-deploy`](https://github.com/ios-control/ios-deploy) は、開発中にiOSシミュレータとiOSデバイスにアプリをデプロイするユーティリティです。これらは [npm](/docs/reference/glossary#npm) を使ってグローバルにインストールすることができます。
+ [`ios-sim`](https://github.com/ios-control/ios-sim) と [`ios-deploy`](https://github.com/ios-control/ios-deploy) は、開発中にiOSシミュレータとiOSデバイスにアプリをデプロイするユーティリティです。これらは [npm](../reference/glossary.md#npm) を使ってグローバルにインストールすることができます。
 
 ```shell
 $ npm install -g ios-sim
 $ brew install ios-deploy
 ```
 
-
 ## プロジェクト設定
 
 アプリをiOSシミュレータやデバイスにデプロイする前に、ネイティブのプロジェクトを設定する必要があります。
 
-1. <strong>ネイティブのプロジェクトが存在しない場合は、以下を実行します。</strong>
+1. **ネイティブのプロジェクトが存在しない場合は、以下を実行します。**
 
-    Capacitorの場合は、以下を実行します。
+   Capacitorの場合は、以下を実行します。
 
-    ```shell
-    $ ionic capacitor add ios
-    ```
+   ```shell
+   $ ionic capacitor add ios
+   ```
 
-    Cordovaの場合は、以下を実行します。
+   Cordovaの場合は、以下を実行します。
 
-    ```shell
-    $ ionic cordova prepare ios
-    ```
+   ```shell
+   $ ionic cordova prepare ios
+   ```
 
-1. <strong>[Package ID](/docs/reference/glossary#package-id)を設定</strong>
+   1. **[Package ID](/reference/glossary.md#package-id)を設定**
 
-    Capacitorの場合は、`capacitor.config.json` ファイルを開き、`appId`プロパティを変更します。
+       Capacitorの場合は、`capacitor.config.json` ファイルを開き、`appId`プロパティを変更します。
 
-    Cordovaの場合は、`config.xml`ファイルを開き、`id`を変更し`<widget>`でルートを設定します。要素の属性を変更します。詳しくは [the Cordova documentation](https://cordova.apache.org/docs/en/latest/config_ref/#widget) をご覧ください。
+       Cordovaの場合は、`config.xml`ファイルを開き、`id`を変更し`<widget>`でルートを設定します。要素の属性を変更します。詳しくは [the Cordova documentation](https://cordova.apache.org/docs/en/latest/config_ref/#widget) をご覧ください。
 
-1. <strong><b>Xcode</b>でプロジェクトを開きます</strong>
+   1. **<b>Xcode</b>でプロジェクトを開きます**
 
-    Capacitorの場合は、次のコマンドを実行してXcodeでアプリを開きます。
+       Capacitorの場合は、次のコマンドを実行してXcodeでアプリを開きます。
 
-    ```shell
-    $ ionic capacitor open ios
-    ```
+   ```shell
+   $ ionic capacitor open ios
+   ```
 
     Cordovaの場合は、Xcodeを起動したあと、**File** &raquo; **Open**からアプリを探します。アプリのディレクトリ`platforms/ios`を開きます。
 
-1. <strong><b>Projectのナビゲーション</b>から、プロジェクトのrootにあるproject editorを開きます。**Identity**で、設定されている Package ID は Bundle Identifier と一致していることを確認します。</strong>
+1. **<b>Projectのナビゲーション</b>から、プロジェクトのrootにあるproject editorを開きます。**Identity**で、設定されている Package ID は Bundle Identifier と一致していることを確認します。**
 
-    ![Xcode Identity Setup](/img/running/ios-xcode-identity-setup.png)
+   ![Xcode Identity Setup](/img/running/ios-xcode-identity-setup.png)
 
-1. <strong>同じproject editorの<b>Signing</b>で、セクションで、<b>Automatically manage signing</b>が有効になっていることを確認します。</strong> 次に、Development Teamを選択してください。Development Teamを選択すると、Xcodeは自動的にプロビジョニングと署名を準備しようとします。
+1. **同じproject editorの<b>Signing</b>で、セクションで、<b>Automatically manage signing</b>が有効になっていることを確認します。** 次に、Development Teamを選択してください。Development Teamを選択すると、Xcodeは自動的にプロビジョニングと署名を準備しようとします。
 
-    ![Xcode Signing Setup](/img/running/ios-xcode-signing-setup.png)
+   ![Xcode Signing Setup](/img/running/ios-xcode-signing-setup.png)
 
 ## Xcodeで実行する
 
 このワークフローでは、Xcodeは一般的なコンパイルと署名の問題を自動的に修正できます。
 
-1. <strong>Ionicアプリを開発し、それをネイティブプロジェクトと同期させます。</strong>
+1. **Ionicアプリを開発し、それをネイティブプロジェクトと同期させます。**
 
     変更が検知がある度に、iOSシミュレータやデバイスが変更を検知するより前に、IonicアプリをWebアセットにビルドする必要があります。その後、Webアセットをネイティブプロジェクトにコピーします。幸いなことに、このプロセスはIonic CLIコマンドひとつで簡単にできます。
 
     Capacitorの場合は、以下を実行します。
 
-    ```shell
-    $ ionic capacitor copy ios
-    ```
+   ```shell
+   $ ionic capacitor copy ios
+   ```
 
-    Cordovaの場合は、以下を実行します。
+   Cordovaの場合は、以下を実行します。
 
-    ```shell
-    $ ionic cordova prepare ios
-    ```
+   ```shell
+   $ ionic cordova prepare ios
+   ```
 
-1. <strong>Xcodeで、目的のシミュレータまたはデバイスを選択して再生ボタンをクリックします。</strong>
+1. **Xcodeで、目的のシミュレータまたはデバイスを選択して再生ボタンをクリックします。**
 
-    ![Xcode Play Button Area](/img/running/ios-xcode-play-button-area.png)
+   ![Xcode Play Button Area](/img/running/ios-xcode-play-button-area.png)
 
 ## Ionic CLIを使用して実行する
 
-Ionic CLIは、コマンドひとつで、Ionicアプリを作成、コピーし、iOSシミュレータやデバイスにデプロイできます。　`ionic serve`のような[ライブリロード](/docs/reference/glossary#livereload) 機能を利用するために、開発用のサーバを遅延することもできます。
+Ionic CLIは、コマンドひとつで、Ionicアプリを作成、コピーし、iOSシミュレータやデバイスにデプロイできます。　`ionic serve`のような[ライブリロード](../reference/glossary.md#livereload) 機能を利用するために、開発用のサーバを遅延することもできます。
 
 ライブリロードを使うと、アプリのソースファイルに加えられた変更がウェブアセットの再構築を引き起こし、その変更は再デプロイすることなくシミュレータやデバイスに反映されます。
 
->**Warning**: iOSデバイスでは、デバイスとコンピュータが同じWi-Fiネットワーク上にある必要があります。デバイスが接続できるように、devサーバーの外部URLも必要です。外部アドレスにバインドするには、--external (または--host=0.0.0.0)を使用します。
+:::caution
+iOSデバイスでは、デバイスとコンピュータが同じWi-Fiネットワーク上にある必要があります。デバイスが接続できるように、devサーバーの外部URLも必要です。外部アドレスにバインドするには、--external (または--host=0.0.0.0)を使用します。
+:::
 
 ### Capacitorを使ったライブリロード
 
@@ -156,9 +164,11 @@ $ ionic cordova run ios -l --external
 
 SafariはiOSシミュレータとデバイスのWeb Inspectorをサポートしています。Developメニューを開いてシミュレータまたはデバイスを選択し、Ionic Appを選択してWeb Inspectorを開きます。
 
-> **Develop** メニューが非表示になってる場合は、**Safari** &raquo; **Preferences** &raquo; **Advanced** &raquo; **Show Develop menu in menu bar** から有効にします。
->
-> アプリがリストにない場合は、 **Settings** &raquo; **Safari** &raquo; **Advanced** &raquo; **Web Inspector** からデバイスのWeb Inspectorを有効にする必要があります。
+:::note
+*Develop** メニューが非表示になってる場合は、**Safari** &raquo; **Preferences** &raquo; **Advanced** &raquo; **Show Develop menu in menu bar** から有効にします。
+
+アプリがリストにない場合は、 **Settings** &raquo; **Safari** &raquo; **Advanced** &raquo; **Web Inspector** からデバイスのWeb Inspectorを有効にする必要があります。
+:::
 
 ![Safari Web Inspector](/img/running/ios-safari-web-inspector-timelines.png)
 
@@ -166,6 +176,8 @@ SafariはiOSシミュレータとデバイスのWeb Inspectorをサポートし�
 
 Xcodeで実行している場合、ネイティブログはXcodeの **Console** にあります。
 
-> **Console** が表示されない場合, **View** &raquo; **Debug Area** &raquo; **Activate Console**を有効化してください。
+:::note
+**Console** が表示されない場合, **View** &raquo; **Debug Area** &raquo; **Activate Console**を有効化してください。
+:::
 
 ![Xcode Console](/img/running/ios-xcode-console.png)

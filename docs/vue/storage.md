@@ -1,8 +1,15 @@
 ---
+title: Data Storage
 sidebar_label: Storage
 ---
 
-# Data Storage
+<head>
+  <title>Vue App Data Storage for iOS and Android - Ionic Documentation</title>
+  <meta
+    name="description"
+    content="There's a variety of options available for storing data within an Ionic app. Read our Vue data storage documentation for options on iOS, Android, and web apps."
+  />
+</head>
 
 There are variety of options available for storing data within an Ionic app.
 

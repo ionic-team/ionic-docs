@@ -1,7 +1,5 @@
 ---
 disableHtmlPreviews: true
-contributors:
-  - rtpHarry
 ---
 
 # クロスプラットフォーム
@@ -14,13 +12,13 @@ Ionicは、どんなプラットフォーム向けに開発を行う場合でも
 
 ### Ionic Native
 
-<a href="/docs/native">Ionic Native</a> はネイティブ環境内かどうか検出するための独自の内部ロジックを持っています。それにより、ネイティブ環境ではなかったりCordovaプラグインが存在しない場合は、ランタイムエラーを発生させるかわりに警告メッセージを表示させます。ネイティブ機能が存在しなくても、アプリがクラッシュすることなく動き続けるということです。
+[Ionic Native](../native.md) はネイティブ環境内かどうか検出するための独自の内部ロジックを持っています。それにより、ネイティブ環境ではなかったりCordovaプラグインが存在しない場合は、ランタイムエラーを発生させるかわりに警告メッセージを表示させます。ネイティブ機能が存在しなくても、アプリがクラッシュすることなく動き続けるということです。
 
 ### プラットフォーム検知
 
 Ionicアプリ内では、ネイティブAPIを呼び出す際はいつでも、現在の環境がネイティブ環境かどうかを確認することが推奨されます。例:
 
-```typescript
+```tsx
 this.platform.ready().then(() => {
   // 'hybrid' detects both Cordova and Capacitor
   if (this.platform.is('hybrid')) {
@@ -35,12 +33,11 @@ this.platform.ready().then(() => {
 
 ### ブラウザのフォールバック
 
-多くのネイティブAPI（例えばFile API）はブラウザで利用できません。APIは常に改良されネイティブに追いついているので、それらを調査することをお勧めします。これらの2つの点を考慮すると、アプリが実行されているプラ​​ットフォームに適応するような素晴らしいエクスペリエンスを作成するのはかなり簡単です。 
-
+多くのネイティブAPI（例えばFile API）はブラウザで利用できません。APIは常に改良されネイティブに追いついているので、それらを調査することをお勧めします。これらの2つの点を考慮すると、アプリが実行されているプラ​​ットフォームに適応するような素晴らしいエクスペリエンスを作成するのはかなり簡単です。
 
 ## デスクトップ
 
-デスクトップ向けアプリの開発を計画しているときは、<a href="https://electronjs.org" target="_blank">Electron</a>として開発するか、<strong>Progressive Web App</strong>として開発するか検討し、より大きなデバイスでアプリがスムーズに機能するかを確認することが重要です。 
+デスクトップ向けアプリの開発を計画しているときは、<a href="https://electronjs.org" target="_blank">Electron</a>として開発するか、<strong>Progressive Web App</strong>として開発するか検討し、より大きなデバイスでアプリがスムーズに機能するかを確認することが重要です。
 
 ### レイアウト
 
@@ -68,9 +65,9 @@ this.platform.ready().then(() => {
 
 このコードは幅が100%の5つの項目をレンダリングします。以下に示すように、これはモバイルデバイスでは見栄えがするかもしれませんが、デスクトップブラウザで見ると異なった印象をうけます。画面幅が広いため各項目は画面全体に表示されるように引き伸ばされ、使われないスペースが多くなってしまいます。
 
-<img src="/img/building/cross-platform-items.png"/>
+<img src="/docs/img/building/cross-platform-items.png" />
 
-これを改善するために、各項目を[Grid](/docs/layout/grid)コンポーネントで囲みましょう。これでより大きな画面でもより使いやすいものに簡単に書き換えることができます:
+これを改善するために、各項目を[Grid](../layout/grid.md)コンポーネントで囲みましょう。これでより大きな画面でもより使いやすいものに簡単に書き換えることができます:
 
 ```html
 <ion-grid>
@@ -106,11 +103,11 @@ this.platform.ready().then(() => {
 
 全体を `ion-grid` 要素で囲むことで、Ionicのグリッドシステムがこのレイアウトに適用されます。それぞれの項目を一つの列で囲むことで、各項目をグリッド内で同じ幅に保ち、同じ行内に表示させます。
 
-<img src="/img/building/cross-platform-grid.png"/>
+<img src="/docs/img/building/cross-platform-grid.png" />
 
-`<ion-grid>` 要素に `fixed` 属性を追加することでより良くすることができます。これにより、グリッドは画面幅に基づいて固定幅を持つようになります。どんなに大きな画面でもグリッド幅が不自然に大きくなることはありません。 
+`<ion-grid>` 要素に `fixed` 属性を追加することでより良くすることができます。これにより、グリッドは画面幅に基づいて固定幅を持つようになります。どんなに大きな画面でもグリッド幅が不自然に大きくなることはありません。
 
-<img src="/img/building/cross-platform-grid-fixed.png"/>
+<img src="/docs/img/building/cross-platform-grid-fixed.png" />
 
 `ion-col` プロパティを追加することで列の幅をよりカスタマイズすることができます。
 
@@ -152,7 +149,7 @@ this.platform.ready().then(() => {
 
 - `size`属性は`size-{breakpoint}`の形式で各画面幅に応じたブレークポイントを持つこともできます。
 
-グリッドのカスタマイズについてより詳細な情報は[Grid](/docs/layout/grid)をご覧ください。
+グリッドのカスタマイズについてより詳細な情報は[Grid](../layout/grid.md)をご覧ください。
 
 ## ストレージ
 
@@ -164,7 +161,7 @@ this.platform.ready().then(() => {
 
 現在、ネイティブ向けにはSQLiteを通して実行され、他にもIndexedDB（使用可能であれば）、WebSql、ローカルストレージなどが内部的に使用されます。これらのすべてに対応し、安定したAPIを使ってデータの読み書きが可能です。
 
-```typescript
+```tsx
 class MyClass {
   constructor(public storage: Storage) {}
 

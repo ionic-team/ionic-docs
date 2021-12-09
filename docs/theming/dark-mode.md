@@ -1,9 +1,18 @@
 ---
+title: Dark Mode
 initialTab: 'preview'
 inlineHtmlPreviews: true
 ---
 
-# ダークモード
+import Codepen from '@components/global/Codepen';
+
+<head>
+  <title>Dark Mode to Change Color Schemes and CSS Properties</title>
+  <meta
+    name="description"
+    content="Developers are adding dark mode CSS on native applications to support their user preferences. Read to learn more about dark color schemes for Ionic apps."
+  />
+</head>
 
 Ionicを使えば、ダークカラーのスキームのサポートなど、アプリのテーマを簡単に変更できます。ネイティブアプリでのダークモードのサポートが拡大していることから、開発者はユーザーの好みをサポートするためにアプリにダークモードを追加する流れがあります。
 
@@ -20,7 +29,6 @@ Ionicを使えば、ダークカラーのスキームのサポートなど、ア
 ```
 
 現在、media query `prefers-color-scheme` は[限られたブラウザサポート](https://caniuse.com/#feat=prefers-color-scheme) であるため、一部のブラウザでは、このメディアクエリを使用してダークモードを適用することはできません。ただし、ダークモードは、 [CSS class fallback](#css-class-fallback) を使用して適用することもできます。
-
 
 ## CSS Class Fallback
 
@@ -42,7 +50,6 @@ body.dark {
 `body.dark` セレクタをターゲットとする変数を使用する場合は、アプリケーション内の `<body>` にクラスを追加するだけです。これはアプリケーションが構築されているフレームワークによってさまざまな方法で行うことができます。
 
 この例では、変数は両方の場所にある必要があります。2つの場所に変数を設定しないようにするために、[JavaScriptを使用](#combining-with-javascript) することができます。
-
 
 ## JavaScriptとの統合
 
@@ -75,12 +82,13 @@ function toggleDarkTheme(shouldAdd) {
 }
 ```
 
-> Tip: make sure to view the Codepen below in a [supported browser](https://caniuse.com/#feat=prefers-color-scheme) and then try changing the system preferences on your device between light & dark mode. Here's [how to enable dark mode on Windows 10](https://blogs.windows.com/windowsexperience/2016/08/08/windows-10-tip-personalize-your-pc-by-enabling-the-dark-theme/) and [how to enable it on a Mac](https://support.apple.com/en-us/HT208976).
-
-import Codepen from '@site/src/components/Codepen';
+:::note
+Tip: make sure to view the Codepen below in a [supported browser](https://caniuse.com/#feat=prefers-color-scheme) and then try changing the system preferences on your device between light & dark mode. Here's [how to enable dark mode on Windows 10](https://blogs.windows.com/windowsexperience/2016/08/08/windows-10-tip-personalize-your-pc-by-enabling-the-dark-theme/) and [how to enable it on a Mac](https://support.apple.com/en-us/HT208976).
+:::
 
 <!-- Codepen https://codepen.io/ionic/pen/jONzJpG -->
-<Codepen preview="false" user="ionic" slug="jONzJpG" height="550px" default-tab="js,result"></Codepen>
+
+<Codepen preview="false" user="ionic" slug="jONzJpG" height="550px" default-tab="js,result" />
 
 ### 手動でダークモードをトグルする
 
@@ -112,7 +120,8 @@ function checkToggle(shouldCheck) {
 ```
 
 <!-- Codepen https://codepen.io/ionic/pen/zYOpQLj -->
-<Codepen preview="false" user="ionic" slug="zYOpQLj" height="600px" default-tab="js,result"></Codepen>
+
+<Codepen preview="false" user="ionic" slug="zYOpQLj" height="600px" default-tab="js,result" />
 
 ## システムUIコンポーネントを調整する
 
@@ -130,25 +139,33 @@ function checkToggle(shouldCheck) {
 color-scheme: light dark;
 ```
 
-| Default scrollbar | Scrollbar with `color-scheme` |
-| ----------------- | ----------------------------- |
-| <figure><img alt="Application without color-scheme" src="/img/theming/color-scheme-light.png" /></figure> | <figure><img alt="Application with color-scheme" src="/img/theming/color-scheme-dark.png" /></figure> |
+| Default scrollbar                                                        | Scrollbar with `color-scheme`                                        |
+| ------------------------------------------------------------------------ | -------------------------------------------------------------------- |
+| ![Application without color-scheme](/img/theming/color-scheme-light.png) | ![Application with color-scheme](/img/theming/color-scheme-dark.png) |
 
 より詳しい `color-scheme` の情報については https://web.dev/color-scheme/ をご覧ください。
 
-> `color-scheme` はキーボードに反映されません。キーボードのダークモードについての詳しい情報は [Keyboard Documentation](/docs/developing/keyboard#dark-mode) をご覧ください。
+:::note
+`color-scheme` はキーボードに反映されません。キーボードのダークモードについての詳しい情報は [Keyboard Documentation](../developing/keyboard.md#dark-mode) をご覧ください。
+:::
+
+:::note
+For developers looking to customize the theme color under the status bar in Safari on iOS 15 or the toolbar in Safari on macOS, see [`theme-color` Meta](./advanced.md#theme-color-meta).
+:::
 
 ## Ionicダークモード
 
 Ionicには、アプリを実行しているデバイスに基づいてダークモードを取得するために使用する変数の推奨テーマがあります。次の部分に分けることができます:
 
-1. すべてのデフォルトの [modes](/docs/theming/platform-styles#ionic-modes) のデフォルトの [Ionic colors](/docs/theming/colors) を変更して `body.dark` セレクタのダークモードの背景色に対応します。
+1. すべてのデフォルトの [modes](platform-styles.md#ionic-modes) のデフォルトの [Ionic colors](colors.md) を変更して `body.dark` セレクタのダークモードの背景色に対応します。
 1. `ios` デバイスでダークテーマの変数を設定します。
 1. `md` デバイスでダークテーマの変数を設定します。
 
 次のコードをコピーしてアプリに貼り付けると、Ionicのダークテーマを取得できます。 [JavaScriptとの統合](#combining-with-javascript) セクションで説明したように、JavaScriptを使用して `dark` クラスをドキュメント bodyに追加します。 `dark` クラスがドキュメント本文に追加されるまで、ダークモードは有効になりません。
 
-> さらにカスタマイズするために追加できるその他の変数など、変更する変数の詳細については [Themes](/docs/theming/themes) をご覧ください。
+:::note
+さらにカスタマイズするために追加できるその他の変数など、変更する変数の詳細については [Themes](themes.md) をご覧ください。
+:::
 
 ```css
 /*
@@ -158,65 +175,65 @@ Ionicには、アプリを実行しているデバイスに基づいてダーク
 
 body.dark {
   --ion-color-primary: #428cff;
-  --ion-color-primary-rgb: 66,140,255;
+  --ion-color-primary-rgb: 66, 140, 255;
   --ion-color-primary-contrast: #ffffff;
-  --ion-color-primary-contrast-rgb: 255,255,255;
+  --ion-color-primary-contrast-rgb: 255, 255, 255;
   --ion-color-primary-shade: #3a7be0;
   --ion-color-primary-tint: #5598ff;
 
   --ion-color-secondary: #50c8ff;
-  --ion-color-secondary-rgb: 80,200,255;
+  --ion-color-secondary-rgb: 80, 200, 255;
   --ion-color-secondary-contrast: #ffffff;
-  --ion-color-secondary-contrast-rgb: 255,255,255;
+  --ion-color-secondary-contrast-rgb: 255, 255, 255;
   --ion-color-secondary-shade: #46b0e0;
   --ion-color-secondary-tint: #62ceff;
 
   --ion-color-tertiary: #6a64ff;
-  --ion-color-tertiary-rgb: 106,100,255;
+  --ion-color-tertiary-rgb: 106, 100, 255;
   --ion-color-tertiary-contrast: #ffffff;
-  --ion-color-tertiary-contrast-rgb: 255,255,255;
+  --ion-color-tertiary-contrast-rgb: 255, 255, 255;
   --ion-color-tertiary-shade: #5d58e0;
   --ion-color-tertiary-tint: #7974ff;
 
   --ion-color-success: #2fdf75;
-  --ion-color-success-rgb: 47,223,117;
+  --ion-color-success-rgb: 47, 223, 117;
   --ion-color-success-contrast: #000000;
-  --ion-color-success-contrast-rgb: 0,0,0;
+  --ion-color-success-contrast-rgb: 0, 0, 0;
   --ion-color-success-shade: #29c467;
   --ion-color-success-tint: #44e283;
 
   --ion-color-warning: #ffd534;
-  --ion-color-warning-rgb: 255,213,52;
+  --ion-color-warning-rgb: 255, 213, 52;
   --ion-color-warning-contrast: #000000;
-  --ion-color-warning-contrast-rgb: 0,0,0;
+  --ion-color-warning-contrast-rgb: 0, 0, 0;
   --ion-color-warning-shade: #e0bb2e;
   --ion-color-warning-tint: #ffd948;
 
   --ion-color-danger: #ff4961;
-  --ion-color-danger-rgb: 255,73,97;
+  --ion-color-danger-rgb: 255, 73, 97;
   --ion-color-danger-contrast: #ffffff;
-  --ion-color-danger-contrast-rgb: 255,255,255;
+  --ion-color-danger-contrast-rgb: 255, 255, 255;
   --ion-color-danger-shade: #e04055;
   --ion-color-danger-tint: #ff5b71;
 
   --ion-color-dark: #f4f5f8;
-  --ion-color-dark-rgb: 244,245,248;
+  --ion-color-dark-rgb: 244, 245, 248;
   --ion-color-dark-contrast: #000000;
-  --ion-color-dark-contrast-rgb: 0,0,0;
+  --ion-color-dark-contrast-rgb: 0, 0, 0;
   --ion-color-dark-shade: #d7d8da;
   --ion-color-dark-tint: #f5f6f9;
 
   --ion-color-medium: #989aa2;
-  --ion-color-medium-rgb: 152,154,162;
+  --ion-color-medium-rgb: 152, 154, 162;
   --ion-color-medium-contrast: #000000;
-  --ion-color-medium-contrast-rgb: 0,0,0;
+  --ion-color-medium-contrast-rgb: 0, 0, 0;
   --ion-color-medium-shade: #86888f;
   --ion-color-medium-tint: #a2a4ab;
 
   --ion-color-light: #222428;
-  --ion-color-light-rgb: 34,36,40;
+  --ion-color-light-rgb: 34, 36, 40;
   --ion-color-light-contrast: #ffffff;
-  --ion-color-light-contrast-rgb: 255,255,255;
+  --ion-color-light-contrast-rgb: 255, 255, 255;
   --ion-color-light-shade: #1e2023;
   --ion-color-light-tint: #383a3e;
 }
@@ -228,10 +245,10 @@ body.dark {
 
 .ios body.dark {
   --ion-background-color: #000000;
-  --ion-background-color-rgb: 0,0,0;
+  --ion-background-color-rgb: 0, 0, 0;
 
   --ion-text-color: #ffffff;
-  --ion-text-color-rgb: 255,255,255;
+  --ion-text-color-rgb: 255, 255, 255;
 
   --ion-color-step-50: #0d0d0d;
   --ion-color-step-100: #1a1a1a;
@@ -265,7 +282,6 @@ body.dark {
   --ion-item-background: var(--ion-color-step-150);
 }
 
-
 /*
  * Material Design Dark Theme
  * -------------------------------------------
@@ -273,10 +289,10 @@ body.dark {
 
 .md body.dark {
   --ion-background-color: #121212;
-  --ion-background-color-rgb: 18,18,18;
+  --ion-background-color-rgb: 18, 18, 18;
 
   --ion-text-color: #ffffff;
-  --ion-text-color-rgb: 255,255,255;
+  --ion-text-color-rgb: 255, 255, 255;
 
   --ion-border-color: #222222;
 

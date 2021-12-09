@@ -1,9 +1,15 @@
 ---
+title: Android Play Store Deployment
 sidebar_label: Android Play Store
 ---
 
-# Android Play Store Deployment
-
+<head>
+  <title>Android Play Store Deployment: Publish Your Ionic Apps</title>
+  <meta
+    name="description"
+    content="Ionic documentation for Android Play Store app deployment. Read about how to generate a release build and publish your Ionic apps to the Google Play Store."
+  />
+</head>
 
 ## アプリのリリースビルド作成
 
@@ -27,7 +33,9 @@ $ keytool -genkey -v -keystore my-release-key.keystore -alias alias_name -keyalg
 
 Once that command has been ran and its prompts have been answered a file called `my-release-key.keystore` will be created in the current directory.
 
-> WARNING: Save this file and keep it somewhere safe. If it is lost the Google Play Store will not accept updates for this app!
+:::caution
+Save this file and keep it somewhere safe. If it is lost the Google Play Store will not accept updates for this app!
+:::
 
 To sign the unsigned APK, run the jarsigner tool which is also included in the Android SDK:
 
@@ -51,7 +59,9 @@ Now that a release APK has been generated, a Play Store listing can be written a
 
 To start, visit the [Google Play Store Developer Console](https://play.google.com/apps/publish) and create a new developer account.
 
-> Making a developer account with Google Play costs $25 USD.
+:::note
+Making a developer account with Google Play costs $25 USD.
+:::
 
 Once a developer account has been created, go ahead and click the `Create an Application`
 
@@ -60,9 +70,10 @@ Once a developer account has been created, go ahead and click the `Create an App
 Be sure to fill out the description for the app along with providing screenshots and additional info.
 When ready, upload the signed release APK that was generated and publish the app.
 
-
 ## アプリのアップデート
 
 As an app evolves, it will need to be updated with new features and fixes. An app can be updated by either submitting a new version to the Google Play Store, or by using a live update service like Appflow's Live Update feature. Using Live Updates, changes can be pushed directly to users from the Appflow dashboard, without submitting changes to the Play Store. Learn more about Live Updates <a href="https://ionic.io/docs/appflow/deploy/intro" target="_blank">here</a>.
 
-> In order for the Google Play Store to accept updated APKs, the config.xml file will need to be edited to increment the version value, then rebuild the app for release following the instructions above.
+:::note
+In order for the Google Play Store to accept updated APKs, the config.xml file will need to be edited to increment the version value, then rebuild the app for release following the instructions above.
+:::

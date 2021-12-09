@@ -1,8 +1,15 @@
 ---
+title: React Navigation
 sidebar_label: Navigation/Routing
 ---
 
-# Reactナビゲーション
+<head>
+  <title>React Navigation: Router Link Redirect to Navigate to Another Page</title>
+  <meta
+    name="description"
+    content="The React Navigation guide covers routing in an app built with Ionic and React. Learn to define a redirect path for router links to navigate to another page."
+  />
+</head>
 
 このガイドでは、IonicとReactで構築されたアプリでのルーティングの仕組みについて説明します。
 
@@ -16,7 +23,7 @@ React Routerを使用したルーティングについて知っていること�
 
 **App.tsx**
 
-```typescript
+```tsx
 const App: React.FC = () => (
   <IonApp>
     <IonReactRouter>
@@ -35,7 +42,7 @@ const App: React.FC = () => (
 
 ユーザーが認証されているかどうかを確認するなど、条件に基づいてルートのrenderメソッドからプログラムでリダイレクトすることもできます:
 
-```typescript
+```tsx
 <Route
   exact
   path="/dashboard"
@@ -55,7 +62,7 @@ DashboardPage 内で、アプリのこの特定のセクションに関連する
 
 **DashboardPage.tsx**
 
-```typescript
+```tsx
 const DashboardPage: React.FC = () => {
   return (
     <IonPage>
@@ -72,7 +79,7 @@ const DashboardPage: React.FC = () => {
 
 ただし、 [`match`](https://reacttraining.com/react-router/web/api/match) オブジェクトの `url` プロパティを使用して、コンポーネントをレンダリングするために match したURLを提供できます。これは、ネストされたルートを操作するときに役立ちます。
 
-```typescript
+```tsx
 const DashboardPage: React.FC<RouteComponentProps> = ({ match }) => {
   return (
     <IonPage>
@@ -105,7 +112,7 @@ We can define a fallback route by placing a `Route` component without a `path` p
 
 **DashboardPage.tsx**
 
-```typescript
+```tsx
 const DashboardPage: React.FC<RouteComponentProps> = ({ match }) => {
   return (
     <IonRouterOutlet>
@@ -121,7 +128,7 @@ Here, we see that in the event a location does not match the first two `Route`s 
 
 You can alternatively supply a component to render instead of providing a redirect.
 
-```typescript
+```tsx
 const DashboardPage: React.FC<RouteComponentProps> = ({ match }) => {
   return (
     <IonRouterOutlet>
@@ -137,15 +144,9 @@ const DashboardPage: React.FC<RouteComponentProps> = ({ match }) => {
 
 The `IonPage` component wraps each view in an Ionic React app and allows page transitions and stack navigation to work properly. Each view that is navigated to using the router must include an `IonPage` component.
 
-```typescript
-import {
-  IonContent,
-  IonHeader,
-  IonPage,
-  IonTitle,
-  IonToolbar,
-} from "@ionic/react";
-import React from "react";
+```tsx
+import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
+import React from 'react';
 
 const Home: React.FC = () => {
   return (
@@ -168,7 +169,7 @@ Ionic Reactアプリでさまざまなビューにルーティングする場合
 
 **UsersListPage.tsx**
 
-```typescript
+```tsx
 const UsersListPage: React.FC = () => {
   return (
     <IonPage>
@@ -206,18 +207,20 @@ Outside of these components that have the `routerLink` prop, you can also use Re
 
 ナビゲーションのためのプログラムオプションとして、React Routerがルート経由でレンダリングするコンポーネントに提供する [`history`](https://reacttraining.com/react-router/web/api/history) prop を使用することもできます。
 
-```typescript
+```tsx
 <IonButton
   onClick={(e) => {
     e.preventDefault();
-    history.push("/dashboard/users/1");
+    history.push('/dashboard/users/1');
   }}
 >
   Go to User 1
 </IonButton>
 ```
 
-> Note: `history` is a prop.
+:::note
+`history` is a prop.
+:::
 
 ## URLパラメーター
 
@@ -225,7 +228,7 @@ Dashboard Pageで定義された2番目のルートには、URLパラメータ�
 
 **UserDetailPage.tsx**
 
-```typescript
+```tsx
 interface UserDetailPageProps
   extends RouteComponentProps<{
     id: string;
@@ -261,7 +264,7 @@ Tabビューで作業する場合、Ionic Reactには、どのビューがどの
 
 例えば、2つのタブ (sessions と speakers) をもつビューのルートは次のように設定できます:
 
-```typescript
+```tsx
 <IonRouterOutlet>
   <Route path="/:tab(sessions)" component={SessionsPage} exact={true} />
   <Route path="/:tab(sessions)/:id" component={SessionDetail} />

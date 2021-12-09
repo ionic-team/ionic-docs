@@ -1,11 +1,15 @@
 ---
+title: Ionic Packages
 sidebar_label: Packages & CDN
-contributors:
-  - brandyscarney
-  - rtpHarry
 ---
 
-# Ionic Packages
+<head>
+  <title>Ionic Framework Packages: CDN, Angular, Vue, and React</title>
+  <meta
+    name="description"
+    content="View our different packages that can be used to quickly start using Ionic Framework or Ionicons CDN in a test environment, Angular, Vue, React, or none at all."
+  />
+</head>
 
 Ionicは、テスト環境、Angular、その他のフレームワーク、またはVanilla JSといったすべての状況で、Ionic Frameworkを使い始めるために使用できるさまざまなパッケージを提供しています。
 
@@ -18,23 +22,24 @@ CDNからフレームワークにアクセスするには、 [jsdelivr](https://
 ```html
 <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.esm.js"></script>
 <script nomodule src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.js"></script>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core/css/ionic.bundle.css"/>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core/css/ionic.bundle.css" />
 ```
 
 これにより、フレームワークをインストールしなくても、すべてのIonic Frameworkのコアコンポーネントを使用することができます。CSSバンドルには、すべてのIonic [Global Stylesheets](../layout/global-stylesheets) が含まれます。
 
-> これはAngularや他のフレームワークをインストールしません。これにより、フレームワークなしでIonic Frameworkのコアコンポーネントを使用できます。
-
+:::note
+これはAngularや他のフレームワークをインストールしません。これにより、フレームワークなしでIonic Frameworkのコアコンポーネントを使用できます。
+:::
 
 ## Ionic + Angular
 
-AngularプロジェクトでIonic Frameworkを使用する場合は、 [npm](/docs/reference/glossary#npm) から最新の `@ionic/angular` をインストールしてください。これによって、すべてのIonic Frameworkコンポーネントと、Angularのサービスおよび機能を使うことができます。
+AngularプロジェクトでIonic Frameworkを使用する場合は、 [npm](../reference/glossary.md#npm) から最新の `@ionic/angular` をインストールしてください。これによって、すべてのIonic Frameworkコンポーネントと、Angularのサービスおよび機能を使うことができます。
 
 ```shell
 $ npm install @ionic/angular@latest --save
 ```
 
-新しいIonic Frameworkのリリースがあるたびに、最新バージョンの機能と修正を入手するために [バージョン](/docs/reference/versioning) を更新する必要があります。最新のバージョンは [npmを使ったアップデート](/docs/developing/tips#updating-dependencies) から取得することができます。
+新しいIonic Frameworkのリリースがあるたびに、最新バージョンの機能と修正を入手するために [バージョン](../reference/versioning.md) を更新する必要があります。最新のバージョンは [npmを使ったアップデート](../developing/tips.md#updating-dependencies) から取得することができます。
 
 Ionicを既存のAngularプロジェクトに追加するには、Angular CLIの `ng add` 機能を使用します。
 
@@ -43,7 +48,6 @@ $ ng add @ionic/angular
 ```
 
 これにより、`@ionic/angular` に必要なパッケージと、必要なスタイルが追加されます。
-
 
 ## Ionic + React
 
@@ -76,7 +80,6 @@ import '@ionic/react/css/flex-utils.css';
 import '@ionic/react/css/display.css';
 ```
 
-
 ## Ionic + Vue
 
 To add Ionic Framework to an existing Vue project, install the `@ionic/vue` and `@ionic/vue-router` packages.
@@ -88,15 +91,14 @@ $ npm install @ionic/vue @ionic/vue-router
 After that, you will need to install the `IonicVue` plugin in your Vue app.
 
 **main.js**
+
 ```javascript
 import { IonicVue } from '@ionic/vue';
 
-import App from './App.vue'
+import App from './App.vue';
 import router from './router';
 
-const app = createApp(App)
-  .use(IonicVue)
-  .use(router);
+const app = createApp(App).use(IonicVue).use(router);
 
 router.isReady().then(() => {
   app.mount('#app');
@@ -116,12 +118,12 @@ import { createRouter, createWebHistory } from '@ionic/vue-router';
 
 const routes = [
   // routes go here
-]
+];
 
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
-  routes
-})
+  routes,
+});
 
 export default router;
 ```
@@ -159,4 +161,6 @@ IoniconsはデフォルトでIonic Frameworkに同梱されているので、Ion
 <script nomodule src="https://cdn.jsdelivr.net/npm/ionicons/dist/ionicons/ionicons.js"></script>
 ```
 
-> アイコンの使い方については [Ionicons usage](https://ionic.io/ionicons/usage) をご覧ください。
+:::note
+アイコンの使い方については [Ionicons usage](https://ionic.io/ionicons/usage) をご覧ください。
+:::

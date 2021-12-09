@@ -1,13 +1,22 @@
 ---
+title: Migration Guide
 sidebar_label: Migration
-contributors:
-  - mhartington
-  - kensodemann
-  - elylucas
 ---
 
-# v4への移行ガイド
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
+<head>
+  <title>App Migration Guide: Documentation to Migrate Ionic 4.x to 5.x</title>
+  <meta
+    name="description"
+    content="The Ionic Migration Guide provides documentation for how to migrate an app from 4.x to 5.x. Read to learn more about what updates this process requires."
+  />
+</head>
+
+## Migrating from Ionic 5.x to Ionic 6.x
+
+Please see the [Ionic 6 Migration Guide](../intro/upgrading-to-ionic-6).
 
 ## Migrating from Ionic 4.x to Ionic 5.x
 
@@ -32,21 +41,22 @@ npm install @ionic/react@latest @ionic/react-router@latest ionicons@latest
 ```
 
 For Stencil / vanilla JS projects, you can run:
+
 ```shell
 npm i @ionic/core@latest --save
 ```
 
 If you would like a fresh project starter, a new project base can be created from the CLI and an existing app can be migrated over manually.
 
-
 ## Migrating from Ionic 3.0 to Ionic 4.0
 
-> For a **complete list of breaking changes** from Ionic 3 to Ionic 4, please refer to [the breaking changes document](https://github.com/ionic-team/ionic/blob/master/angular/BREAKING.md) in the Ionic core repo.
-
+:::note
+For a **complete list of breaking changes** from Ionic 3 to Ionic 4, please refer to [the breaking changes document](https://github.com/ionic-team/ionic/blob/master/angular/BREAKING.md) in the Ionic core repo.
+:::
 
 既存のアプリケーションをIonic 3から4に移行するときは、次の一般的なプロセスをお勧めします。
 
-1. `blank` スターターを使用して新しいプロジェクトを作成します ([アプリ開発をはじめる](/docs/developing/starting)を参照)
+1. `blank` スターターを使用して新しいプロジェクトを作成します ([アプリ開発をはじめる](../developing/starting.md)を参照)
 1. AngularのServiceを `src/providers` から `src/app/services`にコピーする
    - サービスの`@Injectable()` デコレーターに`{ providedIn: 'root' }`を含まなければなりません。詳しくは、Angularの[プロバイダー](https://angular.jp/guide/providers)をご覧ください。
 1. ディレクトリ構成が変化することを念頭に置いて（`src/components`が`src/app/components`になるなど）、rootに置かれている他のアイテム（Pipe、Componentなど）をコピーします。
@@ -77,9 +87,7 @@ One of the major changes between an Ionic 3 app and an Ionic 4 app is the overal
 
 For example, if an app is using Angular, that project structure will be exactly what an Angular CLI app would be. This change, while not too difficult to accommodate, helps to keep common patterns and documentation consistent.
 
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-
+````mdx-code-block
 <Tabs
   defaultValue="v4"
   values={[
@@ -146,6 +154,7 @@ tslint.json
 
 </TabItem>
 </Tabs>
+````
 
 The above comparison is an example of a v4 app's project structure. For developers with experience in a vanilla Angular project, this should feel really familiar.
 
@@ -174,13 +183,13 @@ v4では、[Angular](https://angular.jp/guide/lifecycle-hooks)が提供する一
 
 ルート変更中にコンポーネントのアニメーション化が完了したときに発生するイベントにアクセスすることをお勧めします。この場合には、ionViewWillEnter、ionViewDidEnter、ionViewWillLeave、およびionViewDidLeaveV3から移植されてきました。これらのイベントを使用して、Ionicのアニメーションシステムと調整します。
 
-古いイベント`ionViewDidLoad`、`ionViewCanLeave`、`ionViewCanEnter`は削除されました。適切なAngularの選択肢を利用する必要があります。詳細については、[router-outlet docs](/docs/api/router-outlet)のドキュメントをチェックしてください。
+詳細については、[router-outlet docs](../api/router-outlet.md)のドキュメントをチェックしてください。
 
 ## オーバーレイコンポーネント
 
 Ionicの以前のバージョンでは、Loading、Toast、Alertなどのオーバーレイコンポーネントは同期的に生成されていました。Ionic v4では、これらのコンポーネントはすべて非同期に作成されています。この結果、APIはPromiseベースになりました。
 
-```typescript
+```tsx
 // v3
 showAlert() {
   const alert = this.alertCtrl.create({
@@ -194,7 +203,7 @@ showAlert() {
 
 v4ではPromiseが使われています。
 
-```typescript
+```tsx
 showAlert() {
   this.alertCtrl.create({
     message: "Hello There",
@@ -220,8 +229,7 @@ v4では、ナビゲーションが最も多くの変更がありました。`Na
 
 ユーザーが慣れ親しんでいるプラットフォーム固有のアニメーションを提供するために、`ion-router-outlet`をAngularアプリ用に作成しました。これはAngularの場合と同様に`router-outlet`機能しますが、スタックベースのナビゲーション（tabs）とアニメーションを提供します。
 
-v4プロジェクトでのナビゲーション機能の詳細な説明は、[Angular navigation guide](/docs/angular/navigation) をご覧ください。
-
+v4プロジェクトでのナビゲーション機能の詳細な説明は、[Angular navigation guide](../angular/navigation.md) をご覧ください。
 
 ## Lazy Loading
 
@@ -229,7 +237,7 @@ v4プロジェクトでのナビゲーション機能の詳細な説明は、[An
 
 v3では、一般的にLazy Loadingの設定は次の通りでした。
 
-```typescript
+```tsx
 // home.page.ts
 @IonicPage({
   segment: 'home'
@@ -247,14 +255,11 @@ export class HomePageModule {}
 
 しかしながらv4では、Angular routerのやり方である`loadChildren`を使います。
 
-```typescript
+```tsx
 // home.module.ts
 @NgModule({
-  imports: [
-    IonicModule,
-    RouterModule.forChild([{ path: '', component: HomePage }])
-  ],
-  declarations: [HomePage]
+  imports: [IonicModule, RouterModule.forChild([{ path: '', component: HomePage }])],
+  declarations: [HomePage],
 })
 export class HomePageModule {}
 
@@ -266,15 +271,15 @@ export class HomePageModule {}
     IonicModule.forRoot(),
     RouterModule.forRoot([
       { path: 'home', loadChildren: './pages/home/home.module#HomePageModule' },
-      { path: '', redirectTo: 'home', pathMatch: 'full' }
-    ])
+      { path: '', redirectTo: 'home', pathMatch: 'full' },
+    ]),
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule {}
 ```
 
-v4プロジェクトでのLazy Loadingの詳細な説明は、[Angular navigation guide](docs/navigation/angular#lazy-loading-routes)を調べてください。
+v4プロジェクトでのLazy Loadingの詳細な説明は、[Angular navigation guide](../angular/navigation.md#lazy-loading-routes)を調べてください。
 
 ## マークアップの変更
 
@@ -291,11 +296,13 @@ Migrating from Ionic 1 to Ionic 4.0 involves moving from AngularJS (aka Angular 
 One upside is that for the most part, the Ionic UI components you know and love from V1 haven’t changed much.
 
 Here are some considerations to review before beginning the upgrade:
+
 - **App complexity**: Naturally, the larger and more complex the app is, the longer it will take to migrate.
-- **Framework support**: In 2019, Ionic will release full support for React. You can also use Ionic Framework components [without a framework](/docs/intro/cdn/). Since these are not production-ready yet, we recommend sticking with Angular or waiting until the other framework support is available.
+- **Framework support**: In 2019, Ionic will release full support for React. You can also use Ionic Framework components [without a framework](../intro/cdn.md). Since these are not production-ready yet, we recommend sticking with Angular or waiting until the other framework support is available.
 - **Budget and team makeup**: The length of a migration project will vary based on the size of your team, the complexity of the app, and the amount of time allotted to make the transition.
 
 ### Suggested Strategy
+
 Once your development team has identified a good time frame for beginning the migration, Ionic recommends feature-freezing the Ionic 1 application and getting the code in order: Fix any major bugs, eliminate tech debt, and reorganize as you see fit. Then, identify which features to migrate over and which to abandon.
 
 Once the Ionic 1 app is stable, create a new Ionic 4.0 project. The majority of the dev team’s attention should be given to the new project; only bugs should be fixed in the Ionic 1 app to ensure that the transition happens as quickly and smoothly as possible.
@@ -303,10 +310,13 @@ Once the Ionic 1 app is stable, create a new Ionic 4.0 project. The majority of 
 Once the team is comfortable that the Ionic 4.0 app has become stable and has fulfilled a core set of features, you can then shut down the Ionic 1 app.
 
 ### Moving From AngularJS to Angular
+
 Please reference official [Angular upgrade guide](https://angular.io/guide/upgrade) information.
 
 ### Ionic Changes
-Our Ionic 3.0 to Ionic 4.0 migration sections above may prove to be a useful reference. Generate a new Ionic 4.0 project using the blank starter (see [Starting an App](/docs/developing/starting)). Spend time getting familiar with Ionic 4.0 components. Happy building!
+
+Our Ionic 3.0 to Ionic 4.0 migration sections above may prove to be a useful reference. Generate a new Ionic 4.0 project using the blank starter (see [Starting an App](../developing/starting.md)). Spend time getting familiar with Ionic 4.0 components. Happy building!
 
 ### Need Assistance?
+
 If your team would like assistance with the migration, please [reach out to us](https://ionicframework.com/enterprise-engine)! Ionic offers Advisory Services, which includes Ionic 4.0 training, architecture reviews, and migration assistance.

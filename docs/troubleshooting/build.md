@@ -1,11 +1,8 @@
 ---
 disableHtmlPreviews: true
-contributors:
-  - brandyscarney
 ---
 
 # ビルドエラー
-
 
 ## 一般的な間違い
 
@@ -13,9 +10,9 @@ contributors:
 
 デコレーターはアノテーションの後に丸括弧 `()` を持つべきです。いくつか例を示します: `@Injectable()`, `@Optional()`, `@Input()`, など。
 
-```typescript
+```tsx
 @Directive({
-  selector: 'my-dir'
+  selector: 'my-dir',
 })
 class MyDirective {
   // 誤り、@Optional() とすべき
@@ -37,11 +34,11 @@ Cannot resolve all parameters for 'YourClass'(?). Make sure that all the paramet
 - パラメータのクラスをインポートします。
 - パラメータに適切な注釈をつけるか、パラメータの型を指定します。
 
-```typescript
+```tsx
 import { MyService } from 'my-service'; // 私をインポートすることを忘れないで！
 
 @Component({
-  template: `Hello World`
+  template: `Hello World`,
 })
 export class MyClass {
   // service は MyService のタイプです
@@ -58,25 +55,24 @@ import { forwardRef } from '@angular/core';
 @Component({
   selector: 'my-button',
   template: `<div>
-               <icon></icon>
-               <input type="button" />
-             </div>`,
-  directives: [forwardRef(() => MyIcon)] // MyIcon はまだ定義されていません
-})                                       // forwardRef は MyIcon が必要なときに MyIcon として解決します
+    <icon></icon>
+    <input type="button" />
+  </div>`,
+  directives: [forwardRef(() => MyIcon)], // MyIcon はまだ定義されていません
+}) // forwardRef は MyIcon が必要なときに MyIcon として解決します
 class MyButton {
-  constructor() { }
+  constructor() {}
 }
 
 @Directive({
-  selector: 'icon'
+  selector: 'icon',
 })
 class MyIcon {
-  constructor(containerButton: MyButton) { } // MyButton が定義されました
+  constructor(containerButton: MyButton) {} // MyButton が定義されました
 }
 ```
 
-
-### ParamType の Provider がない
+### No provider for ParamType
 
 ```shell
 No provider for ParamType! (MyClass -> ParamType)
@@ -86,24 +82,23 @@ No provider for ParamType! (MyClass -> ParamType)
 
 パラメータが Service の場合は、指定したクラスがアプリケーションで使用可能な providers のリストに追加されていることを確認します:
 
-
-```typescript
+```tsx
 import { MyService } from 'my-service';
 
 @Component({
   templateUrl: 'app/app.html',
-  providers: [MyService] // 私を忘れないで！
+  providers: [MyService], // 私を忘れないで！
 })
-class MyApp { }
+class MyApp {}
 ```
 
 パラメータが別のコンポーネントまたはDirective（たとえば、親コンポーネント）である場合、パラメータを providers のリストに追加するとエラーはなくなりますが、これは前述の [provider の複数のインスタンス](/docs/faq/runtime#provider-) と同じ効果を持ちます。ここでは、コンポーネントクラスの新しいインスタンスを作成しますが、必要なコンポーネントインスタンスへの参照は取得しません。かわりに、注入されるであろうDirectiveまたはコンポーネントがコンポーネントで使用可能であることを確認します（たとえば、親であることを期待している場合は、実際に親であること）。これはおそらく、例を使用すると最も簡単に理解できます:
 
-```typescript
+```tsx
 @Component({
   selector: 'my-comp',
   template: '<p my-dir></p>',
-  directives: [forwardRef(() => MyDir)]
+  directives: [forwardRef(() => MyDir)],
 })
 class MyComp {
   constructor() {
@@ -112,25 +107,26 @@ class MyComp {
 }
 
 @Directive({
-  selector: '[my-dir]'
+  selector: '[my-dir]',
 })
 class MyDir {
-  constructor(c: MyComp) { // <-- これは興味深い1行です
+  constructor(c: MyComp) {
+    // <-- This is the line of interest
 
     // コンポーネントツリーにMyCompがなく、注入するMyCompがないため、
     // Directiveが通常のdivにある場合のエラーのdivにある場合のエラー
-    console.log('Host component\'s name: ' + c.name);
-
+    console.log("Host component's name: " + c.name);
   }
 }
 
 @Component({
-  template: "<my-comp></my-comp>" + // MyDir コンストラクタ内ではエラーなし、MyComp は MyDir の親
-  "<my-comp my-dir></my-comp>" + // MyDir コンストラクタ内ではエラーなし、MyComp は MyDir のホスト
-  "<div my-dir></div>", // MyDir コンストラクタ内でエラー
-  directives: [MyComp, MyDir]
+  template:
+    '<my-comp></my-comp>' + // MyDir コンストラクタ内ではエラーなし、MyComp は MyDir の親
+    '<my-comp my-dir></my-comp>' + // MyDir コンストラクタ内ではエラーなし、MyComp は MyDir のホスト
+    '<div my-dir></div>', // MyDir コンストラクタ内でエラー
+  directives: [MyComp, MyDir],
 })
-class MyApp { }
+class MyApp {}
 ```
 
 以下に、使用可能な注入するものの図を示します:
@@ -153,9 +149,9 @@ MyComp の注入なし            +------+------+
 
 前の例を拡張するために、コンポーネント/Directiveの参照を常に期待しているわけではない場合には、Angular の `@Option` アノテーションを使うことができます:
 
-```typescript
+```tsx
 @Directive({
-  selector: '[my-dir]'
+  selector: '[my-dir]',
 })
 class MyDir {
   constructor(@Optional() c: MyComp) {
@@ -188,7 +184,7 @@ No provider for ControlContainer! (NgControlName -> ControlContainer)
 
 このエラーは、上記の `No provider` エラーのより具体的なバージョンです。これは、親の [NgForm](https://angular.jp/docs/ts/latest/api/forms/index/NgForm-directive.html) または NgFormModel を指定せずに NgControlName などのフォームコントロールを使用した場合に発生します。ほとんどの場合、これはフォームコントロールが実際のフォーム要素内にあることを確認することで解決できます。NgForm はセレクタとして `form` を使用するので、これは新しいNgFormをインスタンス化します:
 
-```typescript
+```tsx
 @Component({
   template:
   '<form>' +

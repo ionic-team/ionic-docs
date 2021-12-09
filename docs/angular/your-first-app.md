@@ -1,51 +1,76 @@
 ---
+title: 'Your First Ionic App: Angular'
 sidebar_label: Build Your First App
 ---
 
-# 初めての Ionic アプリ: Angular
+<head>
+  <title>Build Your First Ionic Mobile App: Angular Development Tutorial</title>
+  <meta
+    name="description"
+    content="Ionic's single codebase builds for any platform using just HTML, CSS, & JavaScript. Develop your first mobile app with our step-by-step Angular tutorial."
+  />
+</head>
 
 Ionic の素晴らしいところは、1つのコードベースで、使い慣れた Web ツールと言語を使用して任意のプラットフォーム用にビルドできることです。 Follow along as we learn the fundamentals of Ionic app development by creating a realistic app step by step.
 
 Here’s the finished app running on all 3 platforms:
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/0ASQ13Y1Rk4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe
+  width="560"
+  height="315"
+  src="https://www.youtube.com/embed/0ASQ13Y1Rk4"
+  frameborder="0"
+  allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+  allowfullscreen
+></iframe>
 
-> Looking for the previous version of this guide that covered Ionic 4 and Cordova? [See here.](/docs/developer-resources/guides/first-app-v4/intro)
+:::note
+Looking for the previous version of this guide that covered Ionic 4 and Cordova? [See here.](../developer-resources/guides/first-app-v4/intro.md)
+:::
 
 ## What We'll Build
 
 We'll create a Photo Gallery app that offers the ability to take photos with your device's camera, display them in a grid, and store them permanently on the device.
 
 Highlights include:
-* One Angular-based codebase that runs on the web, iOS, and Android using Ionic Framework [UI components](https://ionicframework.com/docs/components).
-* Deployed as a native iOS and Android mobile app using [Capacitor](https://capacitor.ionicframework.com), Ionic's official native app runtime.
-* Photo Gallery functionality powered by the Capacitor [Camera](https://capacitor.ionicframework.com/docs/apis/camera), [Filesystem](https://capacitor.ionicframework.com/docs/apis/filesystem), and [Storage](https://capacitor.ionicframework.com/docs/apis/storage) APIs.
+
+- One Angular-based codebase that runs on the web, iOS, and Android using Ionic Framework [UI components](https://ionicframework.com/docs/components).
+- Deployed as a native iOS and Android mobile app using [Capacitor](https://capacitor.ionicframework.com), Ionic's official native app runtime.
+- Photo Gallery functionality powered by the Capacitor [Camera](https://capacitor.ionicframework.com/docs/apis/camera), [Filesystem](https://capacitor.ionicframework.com/docs/apis/filesystem), and [Storage](https://capacitor.ionicframework.com/docs/apis/storage) APIs.
 
 Find the complete app code referenced in this guide [on GitHub](https://github.com/ionic-team/photo-gallery-capacitor-ng).
 
 ## Download Required Tools
 
 Download and install these right away to ensure an optimal Ionic development experience:
-* <strong>Node.js</strong> for interacting with the Ionic ecosystem. [Download the LTS version here](https://nodejs.org/en/).
-* <strong>A code editor</strong> for... writing code! We are fans of [Visual Studio Code](https://code.visualstudio.com/).
-* <strong>Command-line interface/terminal (CLI)</strong>:
- * <strong>Windows</strong> users: for the best Ionic experience, we recommend the built-in command line (cmd) or the Powershell CLI, running in Administrator mode.
- * <strong>Mac/Linux</strong> users, virtually any terminal will work.
+
+- **Node.js** for interacting with the Ionic ecosystem. [Download the LTS version here](https://nodejs.org/en/).
+- **A code editor** for... writing code! We are fans of [Visual Studio Code](https://code.visualstudio.com/).
+- **Command-line interface/terminal (CLI)**:
+  - **Windows** users: for the best Ionic experience, we recommend the built-in command line (cmd) or the Powershell
+    CLI, running in Administrator mode.
+  - **Mac/Linux** users, virtually any terminal will work.
 
 ## Install Ionic Tooling
+
 Run the following in the command line terminal to install the Ionic CLI (`ionic`), `native-run`, used to run native binaries on devices and simulators/emulators, and `cordova-res`, used to generate native app icons and splash screens:
 
-> To open a terminal in Visual Studio Code, go to Terminal -> New Terminal.
+:::note
+To open a terminal in Visual Studio Code, go to Terminal -> New Terminal.
+:::
 
 ```shell
 $ npm install -g @ionic/cli native-run cordova-res
 ```
 
-> The `-g` option means _install globally_. When packages are installed globally, `EACCES` permission errors can occur.
->
-> Consider setting up npm to operate globally without elevated permissions. See [Resolving Permission Errors](/docs/developing/tips#resolving-permission-errors) for more information.
+:::note
+The `-g` option means _install globally_. When packages are installed globally, `EACCES` permission errors can occur.
+
+Consider setting up npm to operate globally without elevated permissions. See [Resolving Permission Errors](../developing/tips.md#resolving-permission-errors) for more information.
+:::
 
 ## アプリの作成
+
 次に、"Tabs" というアプリテンプレートを使用して Ionic Angular アプリを生成し、Native機能を使うためにCapacitorを追加します。
 
 ```shell
@@ -78,7 +103,7 @@ $ npm install @ionic/pwa-elements
 
 Next, import `@ionic/pwa-elements` by editing `src/main.ts`.
 
-```typescript
+```tsx
 import { defineCustomElements } from '@ionic/pwa-elements/loader';
 
 // Call the element loader after the platform has been bootstrapped
@@ -88,6 +113,7 @@ defineCustomElements(window);
 That’s it! Now for the fun part - let’s see the app in action.
 
 ## アプリを起動
+
 次のコマンドを実行してください:
 
 ```shell
@@ -130,8 +156,7 @@ We put the visual aspects of our app into `<ion-content>`. In this case, it’s 
 
 ```html
 <ion-content>
-<ion-fab vertical="bottom" horizontal="center" slot="fixed">
-
+  <ion-fab vertical="bottom" horizontal="center" slot="fixed">
     <ion-fab-button>
       <ion-icon name="camera"></ion-icon>
     </ion-fab-button>

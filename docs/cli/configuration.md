@@ -1,14 +1,10 @@
----
-
----
-
 # 設定
 
 ## ファイル
 
 設定された値はJSONファイルに格納されます。Ionic CLIは、通常`~/.ionic/config.json`にグローバル設定ファイルを設定します。通常はプロジェクトのルートディレクトリに `ionic.config.json` という名前で保存されます。
 
-CLIには、プロジェクト設定ファイルおよびグローバルCLI設定ファイルから設定値を設定およびprintfするためのコマンドが用意されています。[`ionic config get`](/docs/cli/commands/config-get) と [`ionic config set`](/docs/cli/commands/config-set) の使い方については、`ionic config--help`を参照してください。
+CLIには、プロジェクト設定ファイルおよびグローバルCLI設定ファイルから設定値を設定およびprintfするためのコマンドが用意されています。[`ionic config get`](commands/config-get.md) と [`ionic config set`](commands/config-set.md) の使い方については、`ionic config--help`を参照してください。
 
 ### プロジェクト設定ファイル
 
@@ -45,19 +41,19 @@ CLIには、プロジェクト設定ファイルおよびグローバルCLI設�
 
 CLIは、次の環境変数を検索します:
 
-* `IONIC_CONFIG_DIRECTORY`: The directory of the global CLI config. Defaults to `~/.ionic`.
-* `IONIC_HTTP_PROXY`: Set a URL for proxying all CLI requests through. See [Using a Proxy](./using-a-proxy).
-* `IONIC_TOKEN`: Automatically authenticates with [Appflow](https://ionic.io/appflow).
+- `IONIC_CONFIG_DIRECTORY`: The directory of the global CLI config. Defaults to `~/.ionic`.
+- `IONIC_HTTP_PROXY`: Set a URL for proxying all CLI requests through. See [Using a Proxy](using-a-proxy.md).
+- `IONIC_TOKEN`: Automatically authenticates with [Appflow](https://ionic.io/appflow).
 
 ## Flags
 
 CLI flagsは、CLIコマンドの動作を変更するグローバルオプションです。
 
-* `--help`: Instead of running the command, view its help page.
-* `--verbose`: Show all log messages for debugging purposes.
-* `--quiet`: Only show `WARN` and `ERROR` log messages.
-* `--no-interactive`: Turn off interactive prompts and fancy outputs. If CI or a non-TTY terminal is detected, the CLI is automatically non-interactive.
-* `--confirm`: Turn on auto-confirmation of confirmation prompts. Careful: the CLI prompts before doing something potentially harmful. Auto-confirming may have unintended results.
+- `--help`: Instead of running the command, view its help page.
+- `--verbose`: Show all log messages for debugging purposes.
+- `--quiet`: Only show `WARN` and `ERROR` log messages.
+- `--no-interactive`: Turn off interactive prompts and fancy outputs. If CI or a non-TTY terminal is detected, the CLI is automatically non-interactive.
+- `--confirm`: Turn on auto-confirmation of confirmation prompts. Careful: the CLI prompts before doing something potentially harmful. Auto-confirming may have unintended results.
 
 ## Hooks
 
@@ -104,29 +100,33 @@ JavaScript Hook ファイルは、フックが実行されるたびに単一の�
 `./scripts/build-before.js`:
 
 ```javascript
-module.exports = function(ctx) {
+module.exports = function (ctx) {
   console.log(ctx);
 };
 ```
 
 ## Multi-app Projects
 
-<small><em>Available in CLI 6.2.0+</em></small>
+<small>
+  <em>Available in CLI 6.2.0+</em>
+</small>
 
+The Ionic CLI supports a multi-app configuration setup, which involves multiple Ionic apps and shared code within a single repository, or [monorepo](../reference/glossary.md#monorepo).
+
+:::note
 Ionic CLIは multi-app 構成セットアップをサポートしており、複数のIonicアプリケーションと共有コードが単一のリポジトリ [monorepo](/docs/reference/glossary#monorepo) 内に存在することができます。
 
-> These docs give an overview of the multi-app feature of the Ionic CLI, but don't really go into details for each framework.
->
-> If you're using Angular, please see [this article](https://github.com/ionic-team/ionic-cli/wiki/Angular-Monorepo) for examples.
+If you're using Angular, please see [this article](https://github.com/ionic-team/ionic-cli/wiki/Angular-Monorepo) for examples.
+:::
 
 ### セットアップステップ
 
 1. Create a directory and initialize a monorepo (see [Project Structure](#project-structure) for full details).
 1. Initialize the monorepo as an Ionic multi-app project. This will create a multi-app `ionic.config.json` file. See [Config File](#config-file) for full details.
 
-    ```shell
-    $ ionic init --multi-app
-    ```
+   ```shell
+   $ ionic init --multi-app
+   ```
 
 1. Use `ionic start` to create Ionic apps or `ionic init` to initialize existing apps (see [Adding an App](#adding-an-app) for full details).
 
@@ -196,7 +196,9 @@ $ ionic start "My New App" --no-deps
 
 If an app was created in a way other than `ionic start`, for example by using a prebuilt template, use `ionic init` to register the existing app with the multi-app project.
 
-> Make sure the app doesn't have an existing `ionic.config.json`.
+:::note
+Make sure the app doesn't have an existing `ionic.config.json`.
+:::
 
 ```shell
 $ cd apps/existing-app/

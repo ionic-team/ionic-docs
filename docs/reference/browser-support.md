@@ -1,36 +1,41 @@
----
----
-
 # ブラウザサポート
 
 Ionicの本来の目標は、HTML、CSS、JavaScriptといったWeb技術を使用してモバイルアプリを開発することを簡単にすることでした。Ionicはこのウェブテクノロジーの基盤により、ウェブ、iOS、Android、ブラウザ、PWAなど、どこでも実行できます。
 
-
 ## モバイルブラウザ
 
-[スタイルの適用](/docs/core-concepts/fundamentals#adaptive-styling)を追求するために, Ionicは以下のモバイルプラットフォームを完全にサポート、テストしています。:
+[スタイルの適用](../core-concepts/fundamentals.md#adaptive-styling)を追求するために, Ionicは以下のモバイルプラットフォームを完全にサポート、テストしています。:
 
-| Framework | Android | iOS   |
-|:---------:|:-------:|:-----:|
-| Ionic V5  | 5.0+    | 11.0+ |
-| Ionic V4  | 4.4+  | 10.0+ |
+| Framework |        Android         |  iOS  |
+| :-------: | :--------------------: | :---: |
+| Ionic v6  | 5.0+ with Chromium 60+ | 13.0+ |
+| Ionic v5  |          5.0+          | 11.0+ |
+| Ionic v4  |          4.4+          | 10.0+ |
 
-> 最新のプラットフォームの情報については [latest Android stats](https://developer.android.com/about/dashboards/) と [latest iOS stats](https://developer.apple.com/support/app-store/) をご確認ください。
+:::note
+最新のプラットフォームの情報については [latest Android stats](https://developer.android.com/about/dashboards/) と [latest iOS stats](https://developer.apple.com/support/app-store/) をご確認ください。
+:::
 
+### A Note on Android Support
 
-## デスクトップブラウザ
+Starting with Android 5.0, the webview was moved to a separate application that can be updated independently of Android. This means that most Android 5.0+ devices are going to be running a modern version of Chromium. However, there are a still a subset of Android devices whose manufacturer has locked the webview version and does not allow the webview to update. These webviews are typically stuck at the version that was available when the device initially shipped.
 
-Ionicはモバイルデバイスで正常に動作するだけでなく、ウェブ技術に基づいているので、デスクトップブラウザでも正常に機能します。デスクトップレイアウトの詳細については、[Cross Platform](/docs/core-concepts/cross-platform#desktop)をご覧ください。
+As a result, Ionic Framework v6 only supports Android devices and emulators running Android 5.0+ with a webview of Chromium 60 or newer. For context, this is the version that Stencil can support with no polyfills: https://stenciljs.com/docs/browser-support
 
+To figure out what version of the webview a device is running, log `window.navigator.userAgent` to the console when inspecting the application using Chrome Dev Tools.
 
-| Browser     | Ionic v5 | Ionic V4 |
-|:-----------:|:--------:|:--------:|
-| **Chrome**  | ✔        | ✔        |
-| **Safari**  | ✔        | ✔        |
-| **Edge**    | 79+      | ✔        |
-| **Firefox** | ✔        | ✔        |
-| **IE 11**   | **X**    | **X**        |
+## Desktop Browsers
 
+Because Ionic is based on web technologies, it works just as well on desktop browsers as it does on mobile devices. For more information on desktop layouts, see [Cross Platform](../core-concepts/cross-platform.md#desktop).
 
+|   Browser   | Ionic v6 | Ionic v5 | Ionic v4 |
+| :---------: | :------: | :------: | :------: |
+| **Chrome**  |   60+    |    ✔     |    ✔     |
+| **Safari**  |   13+    |    ✔     |    ✔     |
+|  **Edge**   |   79+    |   79+    |    ✔     |
+| **Firefox** |   63+    |    ✔     |    ✔     |
+|  **IE 11**  |  **X**   |  **X**   |  **X**   |
 
-> Check the docs for [Ionic Animations](/docs/utilities/animations#browser-support) and [Ionic Gestures](/docs/utilities/gestures#browser-support) for specific browser support related to those utilities.
+:::note
+Check the docs for [Ionic Animations](../utilities/animations.md#browser-support) and [Ionic Gestures](../utilities/gestures.md#browser-support) for specific browser support related to those utilities.
+:::

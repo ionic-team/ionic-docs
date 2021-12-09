@@ -1,9 +1,20 @@
 ---
+title: Colors
 initialTab: 'preview'
 inlineHtmlPreviews: true
 ---
 
-# 配色
+import LayeredColorsSelect from '@components/page/theming/LayeredColorsSelect';
+import NewColorGenerator from '@components/page/theming/NewColorGenerator';
+import CodeColor from '@components/page/theming/CodeColor';
+
+<head>
+  <title>Ionic CSS Color Component: Style or Change Default App Colors</title>
+  <meta
+    name="description"
+    content="Ionic has nine default colors that can be used to change the color of many components. Learn how to utilize Ionic CSS color properties to style your apps."
+  />
+</head>
 
 Ionicには、多くのコンポーネントの配色を変更するために使用できる9つのデフォルトカラーがあります。 それぞれの配色は、 `shade` と `tint` を含む複数のプロパティを持つコレクションであり、Ionic全体で利用されます。
 
@@ -24,15 +35,11 @@ Ionicには、多くのコンポーネントの配色を変更するために使
 
 ### 配色のレイヤードスタイル
 
-それぞれの配色は、これらのプロパティで構成されています: `base`, `contrast`, `shade`, と `tint` です。`base` と `contrast` の配色は `rgb` プロパティと同一の配色が求められます。 <a href="https://developer.mozilla.org/en-US/docs/Glossary/RGB" target="_blank">rgb format</a> をご覧ください。この `rgb` の変数が必要な理由は [The Alpha Problem](#the-alpha-problem) をご覧ください。下のドロップダウンから選択することで、Ionicが提供するデフォルトの配色とそのバリエーションを確認することができます。
-
-import LayeredColorsSelect from '@site/src/components/LayeredColorsSelect';
+それぞれの配色は、これらのプロパティで構成されています: `base`, `contrast`, `shade`, と `tint` です。`base` と `contrast` の配色は `rgb` プロパティと同一の配色が求められます。 <a href="https://developer.mozilla.org/en-US/docs/Glossary/RGB" target="_blank">rgb format</a> をご覧ください。この `rgb` の変数が必要な理由は [The Alpha Problem](advanced.md#the-alpha-problem) をご覧ください。下のドロップダウンから選択することで、Ionicが提供するデフォルトの配色とそのバリエーションを確認することができます。
 
 <LayeredColorsSelect />
 
 ## Modifying Colors
-
-import CodeColor from '@site/src/components/CodeColor';
 
 配色を変更するときは、その色についてリストされているすべてのバリエーションを変更する必要があります。例えば、`secondary color` を <code-color mode="md" value="#006600"></code-color> に変更する時、以下のCSSプロパティが必要です。
 
@@ -47,11 +54,13 @@ import CodeColor from '@site/src/components/CodeColor';
 }
 ```
 
-`secondary` をボタンに適用した時、利用されるのはベースカラー <code-color mode="md" value="#006600"></code-color> だけではありません。`contrast color` <code-color mode="md" value="#ffffff"></code-color> はテキストに適用され、それに加えて `shade` <code-color mode="md" value="#005a00"></code-color> と `tint` <code-color mode="md" value="#1a751a"></code-color> はボタンのステータスが変更された時に利用されます。
+`secondary` をボタンに適用した時、利用されるのはベースカラー <CodeColor color="#006600">#006600</CodeColor> だけではありません。`contrast color` <CodeColor color="#ffffff">#ffffff</CodeColor> はテキストに適用され、それに加えて `shade` <CodeColor color="#005a00">#005a00</CodeColor> と `tint` <CodeColor color="#1a751a">#1a751a</CodeColor> はボタンのステータスが変更された時に利用されます。
 
-> ベースカラーからバリエーションカラーを取得する方法がわからない？その場合、 [Color Generator](/docs/theming/color-generator) をお試しください。これはすべてのバリエーションを計算し、アプリにコピー&ペーストできるコードを提供します！
+:::note
+ベースカラーからバリエーションカラーを取得する方法がわからない？その場合、 [Color Generator](color-generator.md) をお試しください。これはすべてのバリエーションを計算し、アプリにコピー&ペーストできるコードを提供します！
+:::
 
-CSS変数についてもっと詳しく知りたい時は [CSS Variables documentation](/docs/theming/css-variables) をご覧ください。
+CSS変数についてもっと詳しく知りたい時は [CSS Variables documentation](css-variables.md) をご覧ください。
 
 ### 配色の追加
 
@@ -98,10 +107,10 @@ div {
 }
 ```
 
-CSS変数の設定方法と使い方についての詳しい情報は [CSS Variables documentation](/docs/theming/css-variables) をご覧ください。
+CSS変数の設定方法と使い方についての詳しい情報は [CSS Variables documentation](css-variables.md) をご覧ください。
 
 ## New Color Creator
 
 名前と値を変更して以下で新しい色を作成し、以下のコードをコピーしてプロジェクトに貼り付けることで、その配色をIonicプロジェクトで利用できます。
 
-<new-color-generator mode="md" no-prerender></new-color-generator>
+<NewColorGenerator />

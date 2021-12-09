@@ -1,17 +1,12 @@
----
-contributors:
-  - rtpHarry
-  - FdezRomero
-  - brandyscarney
----
-
 # 開発者向けのヒント
 
 ## Permission Errors の解決
 
 パッケージをグローバルにインストールすると、 `EACCES` パーミッションエラーが発生する可能性があります。このような場合は、管理者権限なしで動作するようにnpmを設定する必要があります。
 
-> `sudo` とnpmの併用は、さらなる問題を引き起こす可能性があるため、推奨されません。 
+:::note
+`sudo` とnpmの併用は、さらなる問題を引き起こす可能性があるため、推奨されません。
+:::
 
 このガイドには、パーミッションの問題を解決するための2つのオプションがあります。詳細なドキュメントと追加オプションについては、[npm docs](https://docs.npmjs.com/resolving-eacces-permissions-errors-when-installing-packages-globally)を参照してください。
 
@@ -23,40 +18,42 @@ contributors:
 
 1. nvmのインストール
 
-    ```shell
-    $ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh | bash
-    ```
+   ```shell
+   $ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh | bash
+   ```
 
 1. 新しい端末はnvmを使うようになります。確認するには、新しいターミナルを開き、次のコマンドを実行します。何かが表示されれば、インストールは成功です。
 
-    ```shell
-    $ command -v nvm
-    ```
+   ```shell
+   $ command -v nvm
+   ```
 
 1. NodeJSの最新のLTSリリースをダウンロードしてインストールするには、次のコマンドを実行します:
 
-    ```shell
-    $ nvm install --lts
-    ```
+   ```shell
+   $ nvm install --lts
+   ```
 
 1. 新しくインストールしたNodeJSをデフォルト環境として設定します:
 
-    ```shell
-    $ nvm alias default lts/*
-    ```
+   ```shell
+   $ nvm alias default lts/*
+   ```
 
 1. 新しい端末はnvmコントロールのNodeJSを使うようになりました:
 
-    ```shell
-    $ node -v  # will print the version installed above
-    $ which npm  # will print a path somewhere within the ~/.nvm folder
-    ```
+   ```shell
+   $ node -v  # will print the version installed above
+   $ which npm  # will print a path somewhere within the ~/.nvm folder
+   ```
 
 グローバルパッケージが `~/.nvm` にインストールされます。 `sudo` なしで `npm` を使用している限り、パーミッションエラーは発生しません。
 
 ### Option 2
 
-<small><em>Windowsでは利用できません</em></small>
+<small>
+  <em>Windowsでは利用できません</em>
+</small>
 
 npmのディレクトリの所有者を現在のユーザに変更します:
 
@@ -110,7 +107,9 @@ function myBrokenFunction() {
 
 デフォルトでは、アプリケーションがブラウザで表示されると、Ionic は MD モードを適用します。しかし、Ionic コンポーネントはそれぞれのプラットフォームに応じて接続されるため、そのアプリケーションが iOS でどのように見えているか確認できると便利です。そのために、アプリケーションが起動しているURL に `?ionic:mode=ios` を追加します。例えば、アプリが `8100` ポートで起動している場合は、URLはこうなります: `http://localhost:8100/?ionic:mode=ios`
 
-> しかし、どのプラットフォームが現在使用されているかをブラウザがどのように認識するか、ということは変わらないでしょう。プラットフォームはデバイスの検出とユーザーエージェントの検査によって決定されます。そのため、プラットフォームを変更するには、ユーザーエージェントを変更する必要があります。これを行うには、Chrome DevTools を開き、<kbd>Ctrl+Shift+i</kbd>(Mac では <kbd>Cmd+Option+I</kbd>) でデバイスのモードをオンに切り替えでください。デバイスモードの切り替えは、<kbd>Ctrl+Shift+M</kbd>(<kbd>Cmd+Option+M</kbd> on Mac)で行います。
+:::note
+しかし、どのプラットフォームが現在使用されているかをブラウザがどのように認識するか、ということは変わらないでしょう。プラットフォームはデバイスの検出とユーザーエージェントの検査によって決定されます。そのため、プラットフォームを変更するには、ユーザーエージェントを変更する必要があります。これを行うには、Chrome DevTools を開き、<kbd>Ctrl+Shift+i</kbd>(Mac では <kbd>Cmd+Option+I</kbd>) でデバイスのモードをオンに切り替えでください。デバイスモードの切り替えは、<kbd>Ctrl+Shift+M</kbd>(<kbd>Cmd+Option+M</kbd> on Mac)で行います。
+:::
 
 ![別のモードのアプリケーション](/img/faq/tips/change-device-platform.png)
 
@@ -122,7 +121,7 @@ iOS シミュレータは実際のデバイスに届く前にアプリケーシ�
 
 シミュレータを利用可能にする前に、[Xcode](https://developer.apple.com/xcode/download/)、アップルの IDE をインストールする必要があります。
 
-[Ionic CLI](/docs/cli) を用いて、シミュレータ上の現在のディレクトリでアプリケーションを実行可能にします:
+[Ionic CLI](../cli.md) を用いて、シミュレータ上の現在のディレクトリでアプリケーションを実行可能にします:
 
 ```shell
 $ ionic cordova emulate ios -lc

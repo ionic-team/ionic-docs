@@ -20,7 +20,7 @@ Vue Routerを使ったルーティングについて知っていることはす�
 
 **router/index.ts**
 
-```typescript
+```tsx
 import { createRouter, createWebHistory } from '@ionic/vue-router';
 import { RouteRecordRaw } from 'vue-router';
 import HomePage from '@/views/Home.vue';
@@ -29,13 +29,13 @@ const routes: Array<RouteRecordRaw> = [
   {
     path: '/',
     name: 'Home',
-    component: HomePage
+    component: HomePage,
   },
-]
+];
 
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
-  routes
+  routes,
 });
 
 export default router;
@@ -47,18 +47,18 @@ export default router;
 
 最初ロードされたパスに別のパスを設定したい場合はどうすればよいでしょうか。これには、ルータリダイレクトを使用できます。リダイレクトは通常のルートオブジェクトと同じように機能しますが、いくつかの異なるキーが含まれています。
 
-```typescript
+```tsx
 const routes: Array<RouteRecordRaw> = [
   {
     path: '/',
-    redirect: '/home'
+    redirect: '/home',
   },
   {
     path: '/home',
     name: 'Home',
-    component: HomePage
+    component: HomePage,
   },
-]
+];
 ```
 
 このリダイレクトでは、最初にインデックスのパスが参照されます。そして、 `home` routeにリダイレクトしてロードを行います。
@@ -67,26 +67,27 @@ const routes: Array<RouteRecordRaw> = [
 
 これは素晴らしいことですが、実際にルートにナビゲートするにはどうすればよいのでしょうか。これには、 `router-link` プロパティを使用できます。新しいルーティング設定を作成します:
 
-```typescript
+```tsx
 const routes: Array<RouteRecordRaw> = [
   {
     path: '/',
-    redirect: '/home'
+    redirect: '/home',
   },
   {
     path: '/home',
     name: 'Home',
-    component: HomePage
+    component: HomePage,
   },
   {
     path: '/detail',
     name: 'Detail',
-    component: DetailPage
-  }
-]
+    component: DetailPage,
+  },
+];
 ```
 
 `home` routeで開始し、`detail` routeに移動するボタンを追加するとします。`detail` routeに移動するには、次のHTMLを使用します:
+
 ```html
 <ion-button router-link="/detail">Go to detail</ion-button>
 ```
@@ -106,45 +107,105 @@ const routes: Array<RouteRecordRaw> = [
   import { IonButton, IonContent, IonPage } from '@ionic/vue';
   import { defineComponent } from 'vue';
   import { useRouter } from 'vue-router';
-  
+
   export default defineComponent({
     name: 'HomePage',
     components: {
-      IonButton, 
-      IonContent, 
-      IonPage
+      IonButton,
+      IonContent,
+      IonPage,
     },
     setup() {
       const router = useRouter();
       return { router };
-    }
-  })
+    },
+  });
 </script>
 ```
 
 どちらのオプションも同じナビゲーション機構を提供し、異なるユースケースに対応します。
 
-## 遅延読み込みRoute
+### Navigating using `router-link`
+
+The `router-link` attribute can be set on any Ionic Vue component, and the router will navigate to the route specified when the component is clicked. The `router-link` attribute accepts string values as well as named routes, just like `router.push` from Vue Router. For additional control, the `router-direction` and `router-animation` attributes can be set as well.
+
+The `router-direction` attribute accepts values of `forward`, `back`, or `none` and is used to control the direction of the page transition.
+
+The `router-animation` attribute accepts an `AnimationBuilder` function and is used to provide a custom page transition that is only used when clicking the component it is provided on. The `AnimationBuilder` type is a function that returns an Ionic Animation instance. See the [Animations documentation](../utilities/animations) for more information on using animations in Ionic Vue.
+
+```html
+<ion-button router-link="/page2" router-direction="back" :router-animation="myAnimation">Click Me</ion-button>
+```
+
+### Navigating using `useIonRouter`
+
+One downside of using `router-link` is that you cannot run custom code prior to navigating. This makes tasks such as firing off a network request prior to navigation difficult. You could use Vue Router directly, but then you lose the ability to control the page transition. This is where the `useIonRouter` utility is helpful.
+
+The `useIonRouter` utility is a function that provides methods for programmatic navigation while having full control over the page transitions. This makes it easy to run custom code before navigating.
+
+This first example lets us push a new page onto the stack with a custom page transition:
+
+```js
+import { defineComponent } from 'vue';
+import { useIonRouter } from '@ionic/vue';
+import { customAnimation } from '@/animations/customAnimation';
+
+export default defineComponent({
+  ...,
+  setup() {
+    const ionRouter = useIonRouter();
+
+    router.push('/page2', customAnimation);
+  }
+});
+```
+
+`useIonRouter` provides convenience `push`, `replace`, `back`, and `forward` methods to make it easy to use common navigation actions. It also provides a `navigate` method which can be used in more complex navigation scenarios:
+
+```js
+import { defineComponent } from 'vue';
+import { useIonRouter } from '@ionic/vue';
+import { customAnimation } from '@/animations/customAnimation';
+
+export default defineComponent({
+  ...,
+  setup() {
+    const ionRouter = useIonRouter();
+
+    router.navigate('/page2', 'forward', 'replace', customAnimation);
+  }
+});
+```
+
+The example above has the app navigate to `/page2` with a custom animation that uses the forward direction. In addition, the `replace` value ensures that the app replaces the current history entry when navigating.
+
+:::note
+`useIonRouter` uses the Vue `inject()` function and should only be used inside of your `setup()` function.
+:::
+
+See the [useIonRouter documentation](./utility-functions#router) for more details as well as type information.
+
+## Lazy Loading Routes
 
 現在のrouteの設定方法では、アプリをロードするときに同じ初期チャンクに含まれるようになっているが、これは必ずしも理想的ではありません。代わりに、必要に応じてコンポーネントがロードされるようにrouteを設定できます。
 
-```typescript
+```tsx
 const routes: Array<RouteRecordRaw> = [
   {
     path: '/',
-    redirect: '/home'
+    redirect: '/home',
   },
   {
     path: '/home',
     name: 'Home',
-    component: HomePage
+    component: HomePage,
   },
   {
     path: '/detail',
     name: 'Detail',
-    component: () => import('@/views/DetailPage.vue')
-  }
-]
+    component: () => import('@/views/DetailPage.vue'),
+  },
+];
 ```
 
 Here, we have the same setup as before only this time `DetailPage` has been replaced with an import call. This will result in the `DetailPage` component no longer being part of the chunk that is requested on application load.
@@ -157,7 +218,7 @@ A common point of confusion when setting up routing is deciding between shared U
 
 共有URLは、ルートが共通のURLの一部を持つルート設定です。共有URL設定の例を次に示します:
 
-```typescript
+```tsx
 const routes: Array<RouteRecordRaw> = [
   {
     path: '/dashboard',
@@ -165,8 +226,8 @@ const routes: Array<RouteRecordRaw> = [
   },
   {
     path: '/dashboard/stats',
-    component: DashboardStatsPage
-  }
+    component: DashboardStatsPage,
+  },
 ];
 ```
 
@@ -176,22 +237,22 @@ const routes: Array<RouteRecordRaw> = [
 
 Nested Routesは、ルートが他のルートの子としてリストされるルート設定です。ネストされたルート設定の例を次に示します:
 
-```typescript
+```tsx
 const routes: Array<RouteRecordRaw> = [
   {
-    path: '/dashboard/:id', 
+    path: '/dashboard/:id',
     component: DashboardRouterOutlet,
     children: [
       {
         path: '',
-        component: DashboardMainPage
+        component: DashboardMainPage,
       },
-      { 
-        path: 'stats', 
-        component: DashboardStatsPage
+      {
+        path: 'stats',
+        component: DashboardStatsPage,
       },
-    ]
-  }
+    ],
+  },
 ];
 ```
 
@@ -210,11 +271,11 @@ const routes: Array<RouteRecordRaw> = [
 
 タブを操作する場合、Ionic Vueはどのビューがどのタブに属しているかを知る方法を必要とします。ここでは `IonTabs` コンポーネントが便利ですが、この場合のルーティング設定を見てみましょう:
 
-```typescript
+```tsx
 const routes: Array<RouteRecordRaw> = [
   {
     path: '/',
-    redirect: '/tabs/tab1'
+    redirect: '/tabs/tab1',
   },
   {
     path: '/tabs/',
@@ -222,23 +283,23 @@ const routes: Array<RouteRecordRaw> = [
     children: [
       {
         path: '',
-        redirect: 'tab1'
+        redirect: 'tab1',
       },
       {
         path: 'tab1',
-        component: () => import('@/views/Tab1.vue')
+        component: () => import('@/views/Tab1.vue'),
       },
       {
         path: 'tab2',
-        component: () => import('@/views/Tab2.vue')
+        component: () => import('@/views/Tab2.vue'),
       },
       {
         path: 'tab3',
-        component: () => import('@/views/Tab3.vue')
-      }
-    ]
-  }
-]
+        component: () => import('@/views/Tab3.vue'),
+      },
+    ],
+  },
+];
 ```
 
 ここで、 `tabs` パスは `Tabs` コンポーネントをロードします。各タブは、 `children` 配列内のルートオブジェクトとして提供されます。この例では、パスを `tabs` としていますがこれはカスタマイズできます。
@@ -250,17 +311,18 @@ const routes: Array<RouteRecordRaw> = [
   <ion-page>
     <ion-content>
       <ion-tabs>
+        <ion-router-outlet></ion-router-outlet>
         <ion-tab-bar slot="bottom">
           <ion-tab-button tab="tab1" href="/tabs/tab1">
             <ion-icon :icon="triangle" />
             <ion-label>Tab 1</ion-label>
           </ion-tab-button>
-            
+
           <ion-tab-button tab="tab2" href="/tabs/tab2">
             <ion-icon :icon="ellipse" />
             <ion-label>Tab 2</ion-label>
           </ion-tab-button>
-          
+
           <ion-tab-button tab="tab3" href="/tabs/tab3">
             <ion-icon :icon="square" />
             <ion-label>Tab 3</ion-label>
@@ -272,20 +334,38 @@ const routes: Array<RouteRecordRaw> = [
 </template>
 
 <script lang="ts">
-import { IonTabBar, IonTabButton, IonTabs, IonContent, IonLabel, IonIcon, IonPage } from '@ionic/vue';
-import { ellipse, square, triangle } from 'ionicons/icons';
+  import {
+    IonTabBar,
+    IonTabButton,
+    IonTabs,
+    IonContent,
+    IonLabel,
+    IonIcon,
+    IonPage,
+    IonRouterOutlet,
+  } from '@ionic/vue';
+  import { ellipse, square, triangle } from 'ionicons/icons';
 
-export default {
-  name: 'Tabs',
-  components: { IonContent, IonLabel, IonTabs, IonTabBar, IonTabButton, IonIcon, IonPage },
-  setup() {
-    return {
-      ellipse, 
-      square, 
-      triangle,
-    }
-  }
-}
+  export default {
+    name: 'Tabs',
+    components: {
+      IonContent,
+      IonLabel,
+      IonTabs,
+      IonTabBar,
+      IonTabButton,
+      IonIcon,
+      IonPage,
+      IonRouterOutlet,
+    },
+    setup() {
+      return {
+        ellipse,
+        square,
+        triangle,
+      };
+    },
+  };
 </script>
 ```
 
@@ -295,12 +375,11 @@ export default {
 
 When adding additional routes to tabs you should write them as sibling routes with the parent tab as the path prefix. The example below defines the `/tabs/tab1/view` route as a sibling of the `/tabs/tab1` route. Since this new route has the `tab1` prefix, it will be rendered inside of the `Tabs` component, and Tab 1 will still be selected in the `ion-tab-bar`.
 
-
-```typescript
+```tsx
 const routes: Array<RouteRecordRaw> = [
   {
     path: '/',
-    redirect: '/tabs/tab1'
+    redirect: '/tabs/tab1',
   },
   {
     path: '/tabs/',
@@ -308,29 +387,28 @@ const routes: Array<RouteRecordRaw> = [
     children: [
       {
         path: '',
-        redirect: 'tab1'
+        redirect: 'tab1',
       },
       {
         path: 'tab1',
-        component: () => import('@/views/Tab1.vue')
+        component: () => import('@/views/Tab1.vue'),
       },
       {
         path: 'tab1/view',
-        component: () => import('@/views/Tab1View.vue')
+        component: () => import('@/views/Tab1View.vue'),
       },
       {
         path: 'tab2',
-        component: () => import('@/views/Tab2.vue')
+        component: () => import('@/views/Tab2.vue'),
       },
       {
         path: 'tab3',
-        component: () => import('@/views/Tab3.vue')
-      }
-    ]
-  }
-]
+        component: () => import('@/views/Tab3.vue'),
+      },
+    ],
+  },
+];
 ```
-
 
 ## IonRouterOutlet
 
@@ -355,24 +433,18 @@ The `IonPage` component wraps each view in an Ionic Vue app and allows page tran
 </template>
 
 <script lang="ts">
-import {
-  IonContent,
-  IonHeader,
-  IonPage,
-  IonTitle,
-  IonToolbar
-} from '@ionic/vue';
-import { defineComponent } from 'vue';
+  import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/vue';
+  import { defineComponent } from 'vue';
 
-export default defineComponent({
-  components: {
-    IonContent,
-    IonHeader,
-    IonPage,
-    IonTitle,
-    IonToolbar
-  }
-});
+  export default defineComponent({
+    components: {
+      IonContent,
+      IonHeader,
+      IonPage,
+      IonTitle,
+      IonToolbar,
+    },
+  });
 </script>
 ```
 
@@ -382,7 +454,7 @@ Components presented via `IonModal` or `IonPopover` do not typically need an `Io
 
 Vueアプリケーション内から  `IonRouter` インスタンスにアクセスする必要があるユースケースがいくつかあるかもしれません。例えば、Androidでユーザーがハードウェアの 「戻る」 ボタンを押したときに、アプリケーションのルート・ページにいるかどうかを知ることができます。このようなユースケースでは、コンポーネントに `IonRouter` 依存関係を注入できます。
 
-```typescript
+```tsx
 import { useIonRouter } from '@ionic/vue';
 
 ...
@@ -401,23 +473,23 @@ export default {
 
 元のルーティング例を拡張して、URLパラメータの使用方法を示します:
 
-```typescript
+```tsx
 const routes: Array<RouteRecordRaw> = [
   {
     path: '/',
-    redirect: '/home'
+    redirect: '/home',
   },
   {
     path: '/home',
     name: 'Home',
-    component: HomePage
+    component: HomePage,
   },
   {
     path: '/detail/:id',
     name: 'Detail',
-    component: DetailPage
-  }
-]
+    component: DetailPage,
+  },
+];
 ```
 
 ここで、 `detail` パス文字列の最後に `:id` を追加したことに注意してください。URLパラメータは、ルートパスの動的な部分です。ユーザーが `/details/1` などのURLに移動すると、 "1" が "id" という名前のパラメータに保存され、ルートのレンダリング時にコンポーネントでアクセスできるようになります。
@@ -433,32 +505,30 @@ const routes: Array<RouteRecordRaw> = [
       </ion-toolbar>
     </ion-header>
 
-    <ion-content>
-      Detail ID: {{ id }}
-    </ion-content>
+    <ion-content> Detail ID: {{ id }} </ion-content>
   </ion-page>
 </template>
 
 <script lang="ts">
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/vue';
-import { defineComponent } from 'vue';
-import { useRoute } from 'vue-router';
+  import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/vue';
+  import { defineComponent } from 'vue';
+  import { useRoute } from 'vue-router';
 
-export default defineComponent({
-  name: 'Detail',
-  components: {
-    IonContent,
-    IonHeader,
-    IonPage,
-    IonTitle,
-    IonToolbar
-  },
-  setup() {
-    const route = useRoute();
-    const { id } = route.params;
-    return { id };
-  }
-})
+  export default defineComponent({
+    name: 'Detail',
+    components: {
+      IonContent,
+      IonHeader,
+      IonPage,
+      IonTitle,
+      IonToolbar,
+    },
+    setup() {
+      const route = useRoute();
+      const { id } = route.params;
+      return { id };
+    },
+  });
 </script>
 ```
 
@@ -468,13 +538,12 @@ Our `route` variable contains an instance of the current route. It also contains
 
 Vue Router ships with a configurable history mode. Let's look at the different options and why you might want to use each one.
 
-* `createWebHistory`: This option creates an HTML5 history. It leverages the History API to achieve URL navigation without a page reload. This is the most common history mode for single page applications. When in doubt, use `createWebHistory`.
+- `createWebHistory`: This option creates an HTML5 history. It leverages the History API to achieve URL navigation without a page reload. This is the most common history mode for single page applications. When in doubt, use `createWebHistory`.
 
-* `createWebHashHistory`: This option adds a hash (`#`) to your URL. This is useful for web applications with no host or when you do not have full control over the server routes. Search engines sometimes ignore hash fragments, so you should use `createWebHistory` instead if SEO is important for your application.
+- `createWebHashHistory`: This option adds a hash (`#`) to your URL. This is useful for web applications with no host or when you do not have full control over the server routes. Search engines sometimes ignore hash fragments, so you should use `createWebHistory` instead if SEO is important for your application.
 
-* `createMemoryHistory`: This option creates an in-memory based history. This is mainly used to handle server-side rendering (SSR).
+- `createMemoryHistory`: This option creates an in-memory based history. This is mainly used to handle server-side rendering (SSR).
 
 ## More Information
 
 For more info on routing in Vue using Vue Router, check out their docs at http://router.vuejs.org/.
-

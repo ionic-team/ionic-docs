@@ -1,7 +1,5 @@
 ---
 sidebar_label: Electron Desktop App
-contributors:
-  - mhartington
 ---
 
 # デスクトップアプリの開発
@@ -27,10 +25,10 @@ Electronチームは、macOS用のアプリを公開する方法についての�
 
 Windowsアプリをストアでアプリを公開するには、2つの厳しい要件があります。
 
-* Windows 10 with Anniversary Update (released August 2nd, 2016)
-* The Windows 10 SDK, [download here](https://developer.microsoft.com/en-us/windows/downloads/windows-10-sdk)
-* Node
-* electron-windows-store CLI
+- Windows 10 with Anniversary Update (released August 2nd, 2016)
+- The Windows 10 SDK, [download here](https://developer.microsoft.com/en-us/windows/downloads/windows-10-sdk)
+- Node
+- electron-windows-store CLI
 
 `electron-windows-store` は npm を使ってインストールすることができます:
 

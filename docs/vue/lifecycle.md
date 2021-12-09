@@ -19,7 +19,7 @@ Ionic Frameworkはアプリで使えるいくつかのライフサイクルメ�
 
 ライフサイクルメソッドはVueコンポーネントのルートにある関数として、Vueコンポーネントからアクセスすることができます:
 
-```typescript
+```tsx
 import { IonPage } from '@ionic/vue';
 import { defineComponent } from 'vue';
 
@@ -38,29 +38,23 @@ export default defineComponent({
     console.log('Home page will leave');
   },
   components: {
-    IonPage
-  }
-})
+    IonPage,
+  },
+});
 ```
 
 ### Composition API Hooks
 
 These lifecycles can also be expressed using Vue 3's Composition API:
 
-```typescript
-import {
-  IonPage,
-  onIonViewWillEnter,
-  onIonViewDidEnter,
-  onIonViewWillLeave,
-  onIonViewDidLeave
-} from '@ionic/vue';
+```tsx
+import { IonPage, onIonViewWillEnter, onIonViewDidEnter, onIonViewWillLeave, onIonViewDidLeave } from '@ionic/vue';
 import { defineComponent } from 'vue';
 
 export default defineComponent({
   name: 'Home',
   components: {
-    IonPage
+    IonPage,
   },
   setup() {
     onIonViewDidEnter(() => {
@@ -78,12 +72,13 @@ export default defineComponent({
     onIonViewWillLeave(() => {
       console.log('Home page will leave');
     });
-  }
-})
+  },
+});
 ```
 
-> Pages in your app need to be using the `IonPage` component in order for lifecycle methods and hooks to fire properly.
-
+:::note
+Pages in your app need to be using the `IonPage` component in order for lifecycle methods and hooks to fire properly.
+:::
 
 ## Ionic Frameworkがページのライフを処理する仕組み
 
@@ -91,8 +86,8 @@ Ionic Frameworkには `<ion-router-outlet>` と呼ばれるルータアウトレ
 
 アプリが `<ion-router-outlet>` でラップされている場合、Ionic Frameworkはナビゲーションを少し異なる扱いにします。新しいページに移動すると、Ionic Frameworkは古いページを既存のDOMに保持しますが、ビューからは非表示にして新しいページに移動します。これを行う理由は2つあります:
 
-1) 古いページの状態を維持できます(画面上のデータ、スクロール位置など...)
-2) ページはすでに存在しており、作成する必要がないため、よりスムーズにページに戻ることができます。
+1. 古いページの状態を維持できます(画面上のデータ、スクロール位置など...)
+2. ページはすでに存在しており、作成する必要がないため、よりスムーズにページに戻ることができます。
 
 ページがDOMから削除されるのは、UIの戻るボタンやブラウザーの戻るボタンを押すなど、ページが "popped" された場合のみです。
 
