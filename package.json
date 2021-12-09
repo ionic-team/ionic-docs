@@ -6,7 +6,7 @@
     "prebuild": "npm run generate-markdown; if [ -n \"$CROWDIN_PERSONAL_TOKEN\" ]; then npm run crowdin:sync; fi",
     "build": "npm run build:${VERCEL_ENV:-preview}",
     "build:preview": "docusaurus build --locale en",
-    "build:production": "docusaurus build --locale en",
+    "build:production": "docusaurus build",
     "build:ci": "npm run build:production && npm run netlify-redirect && mkdir www && mv build www/docs",
     "clear": "docusaurus clear",
     "crowdin:sync": "docusaurus write-translations && crowdin upload && crowdin download",
@@ -19,7 +19,8 @@
     "swizzle": "docusaurus swizzle --danger",
     "translate": "ts-node -P scripts/build-translate/tsconfig.json scripts/build-translate apply",
     "translate:create": "ts-node -P scripts/build-translate/tsconfig.json scripts/build-translate create && ts-node -P scripts/build-translate/tsconfig.json scripts/build-translate diff",
-    "netlify-redirect": "cp redirects build/_redirects"
+    "netlify-redirect": "cp redirects build/_redirects",
+    "build-site": "git clone https://github.com/ionic-jp/community-site.git site && cd site && npm ci && npm run build.ci && cd .. && mv site/www/* www/ && rm -rf site"
   },
   "browserslist": {
     "production": [
