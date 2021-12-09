@@ -1,8 +1,8 @@
 ---
-sidebar_label: Starting
+sidebar_label: はじめ方
 ---
 
-# Starting an App
+# アプリをはじめよう
 
 Starting a new Ionic app is incredibly simple. From the command line, run the `ionic start` command and the CLI will handle the rest.
 

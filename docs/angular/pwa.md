@@ -1,5 +1,5 @@
 ---
-title: 'AngularでのPWA'
+title: AngularでのPWA
 sidebar_label: Progressive Web Apps
 ---
 

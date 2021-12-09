@@ -1,5 +1,5 @@
 ---
-title: Structure
+title: 構造
 initialTab: 'preview'
 ---
 

@@ -1,5 +1,5 @@
 ---
-title: Previewing
+title: プレビュー
 ---
 
 <head>

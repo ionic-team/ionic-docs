@@ -1,5 +1,5 @@
 ---
-title: Environment Setup
+title: 環境設定
 ---
 
 <head>

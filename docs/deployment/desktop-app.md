@@ -1,5 +1,5 @@
 ---
-sidebar_label: Electron Desktop App
+sidebar_label: Electronデスクトップアプリ
 ---
 
 # デスクトップアプリの開発

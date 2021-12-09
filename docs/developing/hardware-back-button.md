@@ -1,5 +1,5 @@
 ---
-title: Hardware Back Button
+title: ハードウェアの戻るボタン
 ---
 
 import Tabs from '@theme/Tabs';

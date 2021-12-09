@@ -1,4 +1,4 @@
-# Adding Mobile
+# モバイルデバイス機能の追加
 
 Our photo gallery app won’t be complete until it runs on iOS, Android, and the web - all using one codebase. All it takes is some small logic changes to support mobile platforms, installing some native tooling, then running the app on a device. Let’s go!
 

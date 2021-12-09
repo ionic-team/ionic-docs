@@ -1,5 +1,5 @@
 ---
-title: Android Play Store Deployment
+title: Android Play Storeへの開発
 sidebar_label: Android Play Store
 ---
 

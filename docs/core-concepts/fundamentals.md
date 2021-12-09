@@ -1,5 +1,5 @@
 ---
-sidebar_label: Fundamentals
+sidebar_label: 基本的な考え方
 ---
 
 # コアコンセプト

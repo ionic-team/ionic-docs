@@ -1,7 +1,7 @@
 import DocsCard from '@components/global/DocsCard';
 import DocsCards from '@components/global/DocsCards';
 
-# Next Steps
+# 次のステップ
 
 ## Build Your First App
 

@@ -1,4 +1,4 @@
-# Troubleshooting
+# トラブルシューティング
 
 This guide covers some of the more common issues you may run into when developing with Ionic Vue.
 

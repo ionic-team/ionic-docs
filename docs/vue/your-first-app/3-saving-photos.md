@@ -1,5 +1,5 @@
 ---
-sidebar_label: Saving Photos
+sidebar_label: 写真の保存
 ---
 
 # Saving Photos to the Filesystem

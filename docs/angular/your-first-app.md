@@ -1,6 +1,6 @@
 ---
 title: 'はじめてのIonicアプリ: Angular'
-sidebar_label: 'はじめてのアプリ'
+sidebar_label: はじめてのアプリ
 ---
 
 <head>

@@ -1,5 +1,5 @@
 ---
-title: Glossary
+title: 用語集
 ---
 
 <head>

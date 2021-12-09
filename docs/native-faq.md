@@ -1,5 +1,5 @@
 ---
-sidebar_label: FAQ
+sidebar_label: よくある質問
 slug: /native/faq
 ---
 

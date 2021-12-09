@@ -1,4 +1,4 @@
-# Virtual Scroll
+# 仮想スクロール
 
 One virtual scrolling solution to consider for your Ionic Vue app is [vue-virtual-scroller](https://github.com/Akryum/vue-virtual-scroller/blob/next/packages/vue-virtual-scroller/README.md). This guide will go over how to install `vue-virtual-scroller` into your Ionic Vue application and use it with other Ionic components.
 

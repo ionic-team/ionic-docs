@@ -1,6 +1,6 @@
 ---
-title: Ionic Packages
-sidebar_label: Packages & CDN
+title: Ionicパッケージ
+sidebar_label: パッケージ & CDN
 ---
 
 <head>

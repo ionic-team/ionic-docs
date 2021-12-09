@@ -1,6 +1,6 @@
 ---
 title: React Lifecycle
-sidebar_label: Lifecycle
+sidebar_label: ライフサイクル
 ---
 
 <head>

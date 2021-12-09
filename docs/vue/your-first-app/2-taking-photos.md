@@ -1,5 +1,5 @@
 ---
-sidebar_label: Taking Photos
+sidebar_label: カメラ撮影
 ---
 
 # Taking Photos with the Camera

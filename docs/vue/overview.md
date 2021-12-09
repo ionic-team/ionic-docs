@@ -1,5 +1,5 @@
 ---
-sidebar_label: Overview
+sidebar_label: 概要
 ---
 
 import DocsCard from '@components/global/DocsCard';

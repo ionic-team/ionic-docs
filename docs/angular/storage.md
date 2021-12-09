@@ -1,6 +1,6 @@
 ---
-title: 'データストレージ'
-sidebar_label: 'ストレージ'
+title: データストレージ
+sidebar_label: ストレージ
 ---
 
 <head>

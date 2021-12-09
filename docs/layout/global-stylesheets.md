@@ -1,5 +1,5 @@
 ---
-title: Global Stylesheets
+title: グローバルスタイルシート
 initialTab: 'preview'
 inlineHtmlPreviews: true
 ---

@@ -1,5 +1,5 @@
 ---
-sidebar_label: Live Reload
+sidebar_label: ライブリロード
 ---
 
 # Rapid App Development with Live Reload

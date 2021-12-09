@@ -5,7 +5,7 @@ hide_table_of_contents: true
 import DocsCard from '@components/global/DocsCard';
 import DocsCards from '@components/global/DocsCards';
 
-# Build Your First App Tutorial
+# はじめてアプリ制作チュートリアル
 
 Pick the JavaScript framework you plan to use while building your Ionic app:
 

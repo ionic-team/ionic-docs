@@ -1,6 +1,6 @@
 ---
-title: Installing Ionic
-sidebar_label: CLI Installation
+title: Ionicのインストール
+sidebar_label: CLIインストール
 ---
 
 import AppWizard from '@components/page/intro/AppWizard';

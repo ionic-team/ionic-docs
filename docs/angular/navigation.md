@@ -1,6 +1,6 @@
 ---
-title: 'Angular ナビゲーション'
-sidebar_label: Navigation/Routing
+title: Angular ナビゲーション
+sidebar_label: ナビゲーション/ルーティング
 ---
 
 <head>

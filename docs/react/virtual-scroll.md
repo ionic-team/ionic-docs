@@ -1,4 +1,4 @@
-# Virtual Scroll
+# 仮想スクロール
 
 One virtual scrolling solution to consider for your Ionic React app is [Virtuoso](https://virtuoso.dev/). This guide will go over how to install `Virtuoso` into your Ionic React application and use it with other Ionic components.
 

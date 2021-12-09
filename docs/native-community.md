@@ -1,6 +1,6 @@
 ---
-title: Cordova Community Plugins
-sidebar_label: Setup
+title: Cordovaコミュニティプラグイン
+sidebar_label: セットアップ
 hide_table_of_contents: true
 slug: /native/community
 ---

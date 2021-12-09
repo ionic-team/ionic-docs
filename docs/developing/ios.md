@@ -1,6 +1,6 @@
 ---
-title: iOS Development
-sidebar_label: Developing for iOS
+title: iOS開発
+sidebar_label: iOSのための開発
 skipIntros: true
 ---
 

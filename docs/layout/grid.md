@@ -1,5 +1,5 @@
 ---
-title: Responsive Grid
+title: レスポンシブグリッド
 ---
 
 <head>

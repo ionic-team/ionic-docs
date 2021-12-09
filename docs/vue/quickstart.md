@@ -1,6 +1,6 @@
 ---
-title: Ionic Vue Quickstart
-sidebar_label: Quickstart
+title: Ionic Vueクイックスタート
+sidebar_label: クイックスタート
 ---
 
 <head>

@@ -1,6 +1,6 @@
 ---
 title: Ionic CLI
-sidebar_label: Overview
+sidebar_label: 概要
 ---
 
 <head>

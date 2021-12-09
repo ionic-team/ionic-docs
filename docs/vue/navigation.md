@@ -1,5 +1,5 @@
 ---
-sidebar_label: Navigation/Routing
+sidebar_label: ナビゲーション/ルーティング
 ---
 
 # Vueナビゲーション

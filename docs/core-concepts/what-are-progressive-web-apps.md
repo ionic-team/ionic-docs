@@ -1,5 +1,5 @@
 ---
-sidebar_label: What are PWAs?
+sidebar_label: PWAとは
 ---
 
 # Progressive Web Apps

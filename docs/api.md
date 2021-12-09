@@ -1,5 +1,5 @@
 ---
-title: API Index
+title: APIインデックス
 ---
 
 import APIList from '@components/page/api/APIList';

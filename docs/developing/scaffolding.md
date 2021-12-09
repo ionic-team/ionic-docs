@@ -1,4 +1,4 @@
-# Scaffolding
+# アプリ開発の基本
 
 Once an app is created by the Ionic CLI, the next step is to start building out features and components. The majority of the app will be developed in the `src/app/` directory.
 

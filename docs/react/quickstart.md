@@ -1,5 +1,5 @@
 ---
-sidebar_label: Quickstart
+sidebar_label: クイックスタート
 ---
 
 # Ionic Reactクイックスタート

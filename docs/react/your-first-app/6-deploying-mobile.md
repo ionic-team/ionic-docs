@@ -1,5 +1,5 @@
 ---
-sidebar_label: Deploying Mobile
+sidebar_label: モバイルへのデプロイ
 ---
 
 # Deploying to iOS and Android

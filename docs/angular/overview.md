@@ -1,6 +1,6 @@
 ---
-title: 'Ionic Angular の概要'
-sidebar_label: '概要'
+title: Ionic Angular の概要
+sidebar_label: 概要
 ---
 
 <head>

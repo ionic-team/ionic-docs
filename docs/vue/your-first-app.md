@@ -1,5 +1,5 @@
 ---
-sidebar_label: Build Your First App
+sidebar_label: はじめてのアプリ
 ---
 
 # Your First Ionic App: Vue

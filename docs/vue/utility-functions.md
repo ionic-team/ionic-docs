@@ -1,4 +1,4 @@
-# Utility Functions
+# ユーティリティ関数
 
 Ionic Vue ships with several utility functions that you can use in your application to make certain tasks easier such as managing the on-screen keyboard and the hardware back button.
 

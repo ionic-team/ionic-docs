@@ -1,5 +1,5 @@
 ---
-sidebar_label: 'パフォーマンス'
+sidebar_label: パフォーマンス
 ---
 
 # Angularのパフォーマンス

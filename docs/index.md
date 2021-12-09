@@ -1,6 +1,6 @@
 ---
 title: Ionicの紹介
-sidebar_label: Overview
+sidebar_label: 概要
 slug: /
 image: /img/meta/open-graph.png
 hide_table_of_contents: true

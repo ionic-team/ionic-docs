@@ -1,6 +1,6 @@
 ---
-title: 'Ionic PageのLife Cycle'
-sidebar_label: Lifecycle
+title: Ionic PageのLife Cycle
+sidebar_label: ライフサイクル
 ---
 
 <head>

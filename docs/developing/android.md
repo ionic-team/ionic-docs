@@ -1,6 +1,6 @@
 ---
-title: Android Development
-sidebar_label: Developing for Android
+title: Androidでの開発
+sidebar_label: Androidのための開発
 ---
 
 <head>

@@ -1,5 +1,5 @@
 ---
-title: CSS Utilities
+title: CSSユーティリティ
 initialTab: 'preview'
 inlineHtmlPreviews: true
 ---

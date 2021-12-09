@@ -1,5 +1,5 @@
 ---
-sidebar_label: Testing
+sidebar_label: テスト
 ---
 
 # Testing Ionic React
