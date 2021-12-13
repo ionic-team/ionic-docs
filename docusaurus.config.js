@@ -210,6 +210,17 @@ module.exports = {
   plugins: [
     'docusaurus-plugin-sass',
     [
+      '@docusaurus/plugin-client-redirects',
+      {
+        redirects: [
+          {
+            from: `/next/:match*`,
+            to: `/:match*`,
+          },
+        ],
+      },
+    ],
+    [
       'docusaurus-plugin-module-alias',
       {
         alias: {
