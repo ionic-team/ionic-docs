@@ -213,8 +213,8 @@ module.exports = {
       '@docusaurus/plugin-client-redirects',
       {
         createRedirects: (path) => {
-          if (path.startsWith(`${BASE_URL}/next`)) {
-            return [path.replace(`${BASE_URL}/next`, `${BASE_URL}/`)];
+          if (path.startsWith(`/next`)) {
+            return [path.replace(`/next`, `/`)];
           }
         },
       },
