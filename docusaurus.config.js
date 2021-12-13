@@ -13,7 +13,7 @@ module.exports = {
     locales: ['en', 'ja'],
     localeConfigs: {
       en: { label: 'English' },
-      es: { label: '日本語' },
+      ja: { label: '日本語' },
     },
   },
   onBrokenLinks: 'warn',
