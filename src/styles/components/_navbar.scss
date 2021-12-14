@@ -51,6 +51,42 @@ html[data-theme='dark'] {
           }
         }
       }
+
+      .cta {
+        display: flex;
+        align-items: center;
+
+        padding: 0.375rem 0.625rem;
+
+        background: linear-gradient(90deg, #495fff 0%, #18c6ff 114.68%);
+
+        color: #fff;
+
+        border-radius: 200px;
+
+        white-space: nowrap;
+
+        font-weight: 600;
+        font-size: 0.75rem;
+        line-height: 100%;
+
+        transition: opacity 0.2s ease-out;
+
+        margin-inline-start: 0.5rem;
+
+        @media (max-width: 1400px) {
+          display: none;
+        }
+
+        &:hover,
+        &:active {
+          opacity: 0.8;
+        }
+
+        svg {
+          margin-inline-start: 0.125rem;
+        }
+      }
     }
 
     &__items--right {
