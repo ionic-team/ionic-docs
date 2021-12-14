@@ -62,6 +62,12 @@ module.exports = {
           position: 'left',
         },
         {
+          type: 'cta',
+          position: 'left',
+          text: 'Ionic v6.0.0 Upgrade Guide',
+          href: `${BASE_URL}/intro/upgrading-to-ionic-6`,
+        },
+        {
           type: 'docsVersionDropdown',
           position: 'right',
           dropdownItemsAfter: [

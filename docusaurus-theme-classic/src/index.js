@@ -10,6 +10,12 @@ let { ThemeConfigSchema } = require(path.resolve(
   '../../node_modules/@docusaurus/theme-classic/lib/validateThemeConfig.js'
 ));
 
+const NavbarCtaSchema = Joi.object({
+  type: Joi.string().equal('cta').required(),
+  position: Joi.string().default('left'),
+  text: Joi.string().required(),
+  href: Joi.string().required(),
+});
 const NavbarIconLinkSchema = Joi.object({
   type: Joi.string().equal('iconLink').required(),
   position: Joi.string().default('left'),
@@ -29,7 +35,7 @@ const NavbarSeparatorSchema = Joi.object({
 
 ThemeConfigSchema = ThemeConfigSchema.concat(
   Joi.object({
-    navbar: { items: Joi.array().items(NavbarIconLinkSchema).items(NavbarSeparatorSchema) },
+    navbar: { items: Joi.array().items(NavbarIconLinkSchema).items(NavbarSeparatorSchema).items(NavbarCtaSchema) },
   })
 );
 
