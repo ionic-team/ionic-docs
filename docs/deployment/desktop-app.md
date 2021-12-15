@@ -1,8 +1,15 @@
 ---
+title: Deploying a Desktop App
 sidebar_label: Electron Desktop App
 ---
 
-# Deploying a Desktop App
+<head>
+  <title>Building a Desktop Application for Windows and macOS App Stores</title>
+  <meta
+    name="description"
+    content="Building an Ionic desktop application for Windows and macOS app stores lets you reuse 100% of your code. Learn more about deploying a desktop app with Ionic."
+  />
+</head>
 
 Building a desktop app with Ionic allows developers to reuse 100% of their code and ship a traditional desktop app while still having access to all the native device features, like push notifications. This guide assumes familiarity with Electron, and does not go into "how" to build an electron app. For that, check out the official <a href="https://electronjs.org/docs/tutorial/first-app" target="_blank">Electron guide</a>.
 

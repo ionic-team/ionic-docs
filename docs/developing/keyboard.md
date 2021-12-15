@@ -1,8 +1,18 @@
+---
+title: Keyboard
+---
+
 import Codepen from '@components/global/Codepen';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Keyboard
+<head>
+  <title>Keyboard Guide: Tools to Manage an On-Screen Mobile App Keyboard</title>
+  <meta
+    name="description"
+    content="Accounting for an on-screen keyboard is a common developer roadblock. This guide introduces the tools available for managing on-screen keyboards in mobile apps."
+  />
+</head>
 
 Customizing and accounting for the presence of an on-screen keyboard are two common roadblocks developers face when building mobile apps and PWAs. This guide will provide an introduction to the various tools available for managing the on-screen keyboard in your application.
 

@@ -9,10 +9,10 @@ import DocsCards from '@components/global/DocsCards';
 import NativeEnterpriseCard from '@components/page/native/NativeEnterpriseCard';
 
 <head>
-  <title>Native APIs - Build Open-Source Native Application Experiences</title>
+  <title>Native APIs: Open-Source Native Device Plugins and Integrations</title>
   <meta
     name="description"
-    content="Build native application experiences with open-source Native APIs. Easily add native device functionality to any Ionic app with Capacitor or Cordova."
+    content="Build native-powered app experiences with Native APIs. Ionic's open-source plugins and integrations make it easy to add native device functionality to any app."
   />
   <style>{`
     :root {
