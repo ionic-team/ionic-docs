@@ -1,4 +1,5 @@
 ---
+title: Advanced Theming
 sidebar_label: Advanced
 initialTab: 'preview'
 inlineHtmlPreviews: true
@@ -6,7 +7,13 @@ inlineHtmlPreviews: true
 
 import CodeColor from '@components/page/theming/CodeColor';
 
-# Advanced Theming
+<head>
+  <title>Advanced Theming: Quickly Customize App Colors using CSS | Ionic</title>
+  <meta
+    name="description"
+    content="CSS-based theming enables apps to customize colors quickly by loading a CSS file or changing CSS property values. Read to learn about Ionic Advanced Theming."
+  />
+</head>
 
 CSS-based theming enables apps to customize the colors quickly by loading a CSS file or changing a few CSS property values.
 
