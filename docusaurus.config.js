@@ -208,6 +208,7 @@ module.exports = {
       additionalLanguages: ['shell-session', 'http'],
     },
     algolia: {
+      appId: 'BH4D9OD16A',
       apiKey: '43228ce75714201a27efcf69666d6b40',
       indexName: 'ionicframework',
       contextualSearch: true,
