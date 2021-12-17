@@ -282,35 +282,35 @@ const routes: Array<RouteRecordRaw> = [
 npm install @ionic/core@6
 ```
 
-## Updating Your Code
+## コアのアップデート
 
 ### Datetime
 
-1. Remove any usages of the `placeholder`, `pickerOptions`, `pickerFormat`, `monthNames`, `monthShortNames`, `dayNames`, and `dayShortNames` properties. `ion-datetime` now automatically formats the month names, day names, and time displayed inside of the component according to the language and region set on the device. See the [ion-datetime Localization Documentation](../api/datetime#localization) for more information.
+1. `placeholder`, `pickerOptions`, `pickerFormat`, `monthNames`, `monthShortNames`, `dayNames`, `dayShortNames`プロパティの使用をすべて削除してください。`ion-datetime` は、デバイスに設定されている言語と地域に応じて、コンポーネント内に表示される月名、日名、時刻を自動的にフォーマットするようになりました。詳細は、[ion-datetime Localization Documentation](../api/datetime#localization) を参照してください。
 
-2. Remove any usages of the `text` and `placeholder` CSS Shadow Parts.
+2. `text` と `placeholder` の CSS シャドウパーツの使用をすべて削除します。
 
-3. Remove any usages of the `--padding-bottom`, `--padding-end`, `--padding-start`, `--padding-top`, and `--placeholder-color` CSS Variables. To customize the padding on `ion-datetime`, you can use any of the `padding` CSS properties.
+3. CSS変数 `--padding-bottom`, `--padding-end`, `--padding-start`, `--padding-top`, `--placeholder-color` のすべての使用を削除します。 `ion-datetime` のパディングをカスタマイズするには、 `padding` CSSプロパティのいずれかを使用することができます。
 
-4. Remove any usage of the `open` method. To present the datetime in an overlay, place it inside of an `ion-modal` or an `ion-popover` component. See the [ion-datetime Usage Examples](../api/datetime#usage) for more information.
+4. `open` メソッドの使用はすべて削除します。datetime をオーバーレイで表示するには、 `ion-modal` または `ion-popover` コンポーネントの中に配置する。詳細は、[ion-datetime Usage Examples](../api/datetime#usage) を参照してください。
 
-5. Remove any usage of the `displayFormat` or `displayTimezone` properties. To parse the UTC string provided in the payload of the `ionChange` event, we recommend using [date-fns](https://date-fns.org/). See the [ion-datetime Parsing Dates Documentation](../api/datetime#parsing-dates) for examples.
+5. `displayFormat` プロパティまたは `displayTimezone` プロパティの使用をすべて削除します。ionChange` イベントのペイロードで提供される UTC 文字列をパースするには、[date-fns](https://date-fns.org/) を使用することをお勧めします。例としては、[ion-datetime Parsing Dates Documentation](../api/datetime#parsing-dates) を参照してください。
 
 :::note
-See the [Datetime Migration Sample Application](https://github.com/ionic-team/datetime-migration-samples) for more migration examples.
+マイグレーション例は [Datetime Migration Sample Application](https://github.com/ionic-team/datetime-migration-samples) をご覧ください。
 :::
 
 ### Icon
 
-Ionic 6 now ships with Ionicons 6. Review the [Ionicons 6 Breaking Changes Guide](https://github.com/ionic-team/ionicons/releases/tag/v6.0.0) and make any necessary changes.
+Ionic 6には、Ionicons 6が同梱されるようになりました。[Ionicons 6 Breaking Changes Guide](https://github.com/ionic-team/ionicons/releases/tag/v6.0.0) をご確認の上、必要な変更を行なってください。
 
 ### Input
 
-Ensure `null` is not passed in as a value to the `placeholder` property. We recommend using `undefined` instead.
+`placeholder` プロパティの値として `null` が渡されていないことを確認してください。代わりに `undefined` を使用することを推奨します。
 
 ### Modal
 
-`ion-modal` now uses the Shadow DOM. Update any styles targeting the internals of `ion-modal` to use either the [ion-modal CSS Variables](../api/modal#css-custom-properties) or the [ion-modal CSS Shadow Parts](../api/modal#css-shadow-parts):
+`ion-modal` は Shadow DOM を使用するようになりました。 `ion-modal` の内部をターゲットとするスタイルは、[ion-modal CSS Variables](../api/modal#css-custom-properties) または [ion-modal CSS Shadow Parts](../api/modal#css-shadow-parts) を使用して更新してください。
 
 **Before**
 ```css
@@ -336,7 +336,7 @@ ion-modal::part(backdrop) {
 
 ### Popover
 
-`ion-popover` now uses the Shadow DOM. Update any styles targeting the internals of `ion-popover` to use either [ion-popover CSS Variables](../api/popover#css-custom-properties) or the [ion-popover CSS Shadow Parts](../api/popover#css-shadow-parts):
+`ion-popover` は Shadow DOM を使用するようになりました。 `ion-popover` の内部をターゲットとするスタイルは、[ion-popover CSS Variables](../api/popover#css-custom-properties) または [ion-popover CSS Shadow Parts](../api/popover#css-shadow-parts) を使用するように更新してください。
 
 
 **Before**
@@ -371,30 +371,30 @@ ion-popover::part(content) {
 
 ### Radio
 
-Remove any usage of the `RadioChangeEventDetail` interface.
+`RadioChangeEventDetail` インターフェースのすべての使用法を削除します。
 
 ### Select
 
-Ensure `null` is not passed in as a value to the `placeholder` property. We recommend using `undefined` instead.
+`placeholder` プロパティの値として `null` が渡されていないことを確認してください。代わりに `undefined` を使用することを推奨します。
 
 ### Textarea
 
-Ensure `null` is not passed in as a value to the `placeholder` property. We recommend using `undefined` instead.
+`placeholder` プロパティの値として `null` が渡されていないことを確認してください。代わりに `undefined` を使用することを推奨します。
 
 ### Browser Support
 
-The list of browsers that Ionic supports has changed. Review the [Browser Support Guide](../reference/browser-support) to ensure you are deploying apps to supported browsers.
+Ionicがサポートしているブラウザのリストが変更されました。 [ブラウザサポートガイド](../reference/browser-support) を確認し、サポートされているブラウザにアプリをデプロイするようにしましょう。
 
 
 ### Testing
 
-Ionic 6 now ships as ES Modules. ES Modules are supported in all major browsers and bring developer experience and code maintenance improvements. Developers testing with Jest will need to update their Jest configuration as Jest does not have full support for ES Modules as of Jest 27.
+Ionic 6は、ESモジュールとして出荷されるようになりました。ESモジュールは、すべての主要なブラウザでサポートされており、開発者のエクスペリエンスとコードのメンテナンス性を向上させることができます。Jestでテストする開発者は、Jest 27の時点でJestがES Modulesを完全にサポートしていないため、Jestの設定を更新する必要があります。
 
-This update involves using Babel to compile Ionic's ES Modules down to the CommonJS (CJS) format, a format that Jest can understand. Once Jest ships support for ES Modules, this change will no longer be necessary. See https://github.com/facebook/jest/issues/9430 for updates on ES Modules support in Jest.
+このアップデートでは、Babelを使用してIonicのESモジュールをJestが理解できるCommonJS (CJS) 形式にコンパイルする必要があります。JestがESモジュールをサポートするようになれば、この変更は必要なくなります。JestのESモジュールサポートに関する最新情報は、https://github.com/facebook/jest/issues/9430 を参照してください。
 
-If you are starting fresh with a new Ionic app, this configuration is done for you in our starter applications. For those with existing Ionic apps, follow the steps below to get Jest working with Ionic 6:
+新しいIonicアプリを新しく始める場合、この設定はスターターアプリケーションで行われます。既存のIonicアプリをお持ちの方は、以下の手順でJestをIonic 6で動作させることができます。
 
-1. Add a `transformIgnorePatterns` field to your Jest config that includes the relevant Ionic packages. This is typically found in `jest.config.js` or the `jest` field in `package.json`:
+1. Jest の設定に、関連する Ionic パッケージを含む `transformIgnorePatterns` フィールドを追加します。これは通常 `jest.config.js` または `package.json` の `jest` フィールドに含まれています。
 
 ```js title="jest.config.js"
 module.exports = {
@@ -413,10 +413,10 @@ module.exports = {
 ```
 
 :::note
-If you are using Ionic React or Ionic Vue, be sure to add the appropriate packages to the `transformIgnorePatterns` array. For Ionic React this includes `@ionic/react` and `@ionic/react-router`. For Ionic Vue this includes `@ionic/vue` and `@ionic/vue-router`.
+Ionic ReactまたはIonic Vueを使用している場合、適切なパッケージを `transformIgnorePatterns` 配列に追加してください。Ionic Reactの場合は、 `@ionic/react` と `@ionic/react-router` がこれにあたります。Ionic Vueの場合は、 `@ionic/vue` と `@ionic/vue-router` が含まれます。
 :::
 
-For developers using Create React App (CRA), there is currently no way to update the `transformIgnorePatterns` in a Jest config file. This is a CRA restriction and not something Ionic has control over. We can, however, pass the `transformIgnorePatterns` directly into the `react-scripts test` command:
+Create React App (CRA) を使用している開発者にとっては、現在のところ Jest 設定ファイルの `transformIgnorePatterns` を更新する方法がありません。これはCRAの制限であり、Ionicがコントロールできることではありません。しかし、`react-scripts test` コマンドに直接 `transformIgnorePatterns` を渡すことはできます。
 
 ```json title="package.json"
 "scripts": {
@@ -425,15 +425,14 @@ For developers using Create React App (CRA), there is currently no way to update
 }
 ```
 
-If you are still running into issues, here are a couple things to try:
+それでも問題が発生する場合は、以下のことを試してみてください。
 
-1. Verify that `@babel/preset-env` is included in your [project-wide configuration](https://babeljs.io/docs/en/config-files#project-wide-configuration) instead of your [file-relative configuration](https://babeljs.io/docs/en/config-files#file-relative-configuration). This typically means defining the Babel configuration in `<project-root>/babel.config.json`.
+1. `@babel/preset-env` が [file-relative configuration](https://babeljs.io/docs/en/config-files#file-relative-configuration) ではなく、 [project-wide configuration](https://babeljs.io/docs/en/config-files#project-wide-configuration) に含まれていることを確認します。これは通常、 `<project-root>/babel.config.json` で Babel 設定を定義することを意味します。
 
-2. If you have a `browserslist/test` field in `package.json` file, make sure it is set to `current node`.
+2. `package.json` ファイルに `browserslist/test` フィールドがある場合、それが `current node` に設定されていることを確認してください。
 
-## Need Help Upgrading?
+## アップグレートへの助けが必要？
 
-Be sure to look at the [Ionic 6 Breaking Changes Guide](https://github.com/ionic-team/ionic-framework/blob/main/BREAKING.md). There were several changes to default property and CSS Variable values that developers may need to be aware of. Only the breaking changes that required user action are listed on this page.
+[Ionic 6 Breaking Changes Guide](https://github.com/ionic-team/ionic-framework/blob/main/BREAKING.md) を必ずご覧ください。デフォルトのプロパティとCSS変数の値について、開発者が知っておくべき変更がいくつかありました。このページでは、ユーザーによる操作が必要な変更点のみを掲載しています。 
 
-If you need help upgrading, please post a thread on the [Ionic Forum](https://forum.ionicframework.com/).
-
+アップグレードに助けが必要な場合、 [Ionic Forum](https://forum.ionicframework.com/) にスレッドを立ててください。
