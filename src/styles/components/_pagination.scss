@@ -28,7 +28,8 @@
           padding-inline-end: var(--icon-padding);
           position: absolute;
           background-color: var(--ifm-background-color);
-          transform: translateX(calc(var(--icon-padding) * -1));
+          transform: translateX(calc(var(--icon-padding) * -2));
+          line-height: 1;
           content: '←';
         }
       }
@@ -47,7 +48,8 @@
           padding-inline-start: var(--icon-padding);
           position: absolute;
           background-color: var(--ifm-background-color);
-          transform: translateX(calc(-100% + var(--icon-padding)));
+          transform: translateX(calc(var(--icon-padding) * -3));
+          line-height: 1;
           content: '→';
         }
       }
