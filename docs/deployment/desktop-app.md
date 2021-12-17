@@ -1,8 +1,15 @@
 ---
+title: デスクトップアプリへのデプロイ
 sidebar_label: Electronデスクトップアプリ
 ---
 
-# デスクトップアプリの開発
+<head>
+  <title>WindowsとmacOS App Storesのためにデスクトップアプリとしてビルド</title>
+  <meta
+    name="description"
+    content="Building an Ionic desktop application for Windows and macOS app stores lets you reuse 100% of your code. Learn more about deploying a desktop app with Ionic."
+  />
+</head>
 
 Ionicを使ってデスクトップアプリを構築することで、開発者は自分のコードの100%を再利用し、プッシュ通知のようなネイティブデバイスの全機能にアクセスしながら、今までのようにデスクトップアプリをリリースすることができます。このガイドは、Electronに精通していることを前提としており、Electronアプリを構築するための「方法」には触れていません。それらについては <a href="https://electronjs.org/docs/tutorial/first-app" target="_blank">Electron guide</a> を参照ください。
 

@@ -1,4 +1,5 @@
 ---
+title: 高度なカスタマイズ
 sidebar_label: 高度なカスタマイズ
 initialTab: 'preview'
 inlineHtmlPreviews: true
@@ -6,7 +7,13 @@ inlineHtmlPreviews: true
 
 import CodeColor from '@components/page/theming/CodeColor';
 
-# 高度なカスタマイズ
+<head>
+  <title>高度なカスタマイズ: Quickly Customize App Colors using CSS | Ionic</title>
+  <meta
+    name="description"
+    content="CSS-based theming enables apps to customize colors quickly by loading a CSS file or changing CSS property values. Read to learn about Ionic Advanced Theming."
+  />
+</head>
 
 CSSベースのテーマ設定では、CSSファイルをロードするか、いくつかのCSSプロパティ値を変更することで、アプリの配色をすばやくカスタマイズできます。
 

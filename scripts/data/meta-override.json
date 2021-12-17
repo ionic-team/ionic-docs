@@ -152,6 +152,10 @@
       "title": "ion-ripple-effect | Ripple Effect Button Component for Ionic Apps",
       "description": "The ripple effect button component adds the Material Design ink ripple interaction effect. It can only be used in an ion-app and can be added to any component."
     },
+    "ion-route-redirect": {
+      "title": "ion-route-redirect Plugin: Redirect 'from' a URL 'to' Another URL",
+      "description": "ion-route-redirect is used with as a direct child of an ion-router and redirects 'from' a URL 'to' another URL. Read to learn about the route redirect plugin."
+    },
     "ion-picker": {
       "title": "Picker | Display Buttons and Columns for ion-picker on Ionic Apps",
       "description": "A Picker is a dialog that displays a row of buttons and columns underneath. Ion-picker appears on top of the app's content, and at the bottom of the viewport."
@@ -266,6 +270,14 @@
       "title": "Angular NG Build Configuration to Build Ionic Apps | ionic build",
       "description": "Build web assets and prepare your Ionic app for any platform targets. Ionic build uses the Angular CLI—see the ng build docs for how to use the configuration."
     },
+    "capacitor-sync": {
+      "title": "Ionic Capacitor Sync Command: Copy + Update Android/iOS Projects",
+      "description": "Sync (copy + update) an Android or iOS device project with Ionic Capacitor Sync. Read our documentation to learn more about this command on Ionic apps."
+    },
+    "capacitor-update": {
+      "title": "Update/Install Capacitor Native Platforms and Cordova Plugins",
+      "description": "Update Capacitor native platforms and install Capacitor/Cordova plugins with the Ionic Capacitor Update feature. Read to learn more about use and installation."
+    },
     "cordova-emulate": {
       "title": "Emulate Android and iOS Apps with Ionic Cordova Emulator",
       "description": "Emulate an Ionic project on a simulator/emulator for Android and iOS apps. Build your app and deploy it to devices and emulators using Ionic Cordova Emulator."
@@ -328,6 +340,10 @@
       "title": "BLE | Cordova-Plugin-BLE-Central for Bluetooth Low Energy",
       "description": "BLE enables communication between a phone and Bluetooth Low Energy peripherals. Cordova-plugin-ble-central provides a simple JavaScript API for iOS and Android."
     },
+    "bluetooth-serial": {
+      "title": "Bluetooth Serial: Install Plugin for iOS & Android Communication",
+      "description": "Bluetooth Serial was written for communicating between Android or iOS and an Arduino. Install this plugin to enable serial communication over Bluetooth."
+    },
     "calendar": {
       "title": "Calendar Plugin | Ionic Applications & Cordova Plugin Calendar",
       "description": "Use the Cordova Plugin Calendar to add events to the calendar of the mobile device you are on from your Ionic Framework Application. Read to learn about usage."
@@ -347,6 +363,10 @@
     "capacitor-sync": {
       "title": "Ionic Capacitor Sync Command: Copy + Update Android/iOS Projects",
       "description": "Sync (copy + update) an Android or iOS device project with Ionic Capacitor Sync. Read our documentation to learn more about this command on Ionic apps."
+    },
+    "clipboard": {
+      "title": "Clipboard Management Plugin - Install on iOS, Android or Windows",
+      "description": "Ionic's clipboard management plugin for Cordova supports iOS, Android, and Windows Phone 8. Read for more on how to install the clipboard plugin on Ionic apps."
     },
     "contacts": {
       "title": "Cordova Contacts Plugin to Access and Manage Device Contacts",
@@ -459,6 +479,14 @@
     "in-app-browser": {
       "title": "In-App Browser | Cordova Plugin for In-App Browsers on Ionic Apps",
       "description": "Cordova-plugin-inappbrowser launches an in-app browser on Ionic Framework applications. Read for more information about in-app browser installation and usage."
+    },
+    "in-app-purchase": {
+      "title": "In-App Purchase: Cordova Plugin for iOS and Android Ionic Apps",
+      "description": "This is a lightweight Cordova plugin for in-app purchases on iOS and Android devices using Ionic apps. Read to learn more about in-app purchases."
+    },
+    "in-app-purchase-2": {
+      "title": "In-App Purchase (IAP) 2: iOS, Android, Windows, macOS & Xbox Apps",
+      "description": "In-App Purchase 2 lets users make purchases directly from iOS, Android, Windows, macOS, and Xbox devices. Read to learn more about Ionic apps and IAP usage."
     },
     "ionic-webview": {
       "title": "WebView | Ionic Framework Cordova WebView App Plugin",
@@ -587,6 +615,10 @@
     "video-player": {
       "title": "VideoPlayer | Ionic Native Cordova-Plugin-VideoPlayer",
       "description": "The VideoPlayer plugin allows you to immediately play a video in fullscreen mode. Read for more information on cordova-plugin-videoplayer for Ionic Native apps."
+    },
+    "web-socket-server": {
+      "title": "Run a WebSocket Server - Cordova Plugin for Ionic Framework",
+      "description": "Ionic Framework's WebSocket Server Cordova plugin allows you to run a single, lightweight, barebone WebSocket Server. Read to learn more about installation."
     },
     "youtube-video-player": {
       "title": "YouTube Video Player | Cordova Plugin for Native YouTube App",

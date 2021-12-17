@@ -4,6 +4,7 @@ inlineHtmlPreviews: true
 ---
 
 import LayeredColorsSelect from '@components/page/theming/LayeredColorsSelect';
+import NewColorGenerator from '@components/page/theming/NewColorGenerator';
 import CodeColor from '@components/page/theming/CodeColor';
 
 # Colors
@@ -105,4 +106,4 @@ See the [CSS Variables documentation](css-variables.md) for more information on 
 
 Create a new color below by changing the name and value, then copy and paste the code below into your project.
 
-<new-color-generator mode="md" no-prerender></new-color-generator>
+<NewColorGenerator />

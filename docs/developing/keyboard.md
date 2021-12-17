@@ -1,8 +1,18 @@
+---
+title: Keyboard
+---
+
 import Codepen from '@components/global/Codepen';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# キーボード
+<head>
+  <title>キーボードガイド: Tools to Manage an On-Screen Mobile App Keyboard</title>
+  <meta
+    name="description"
+    content="Accounting for an on-screen keyboard is a common developer roadblock. This guide introduces the tools available for managing on-screen keyboards in mobile apps."
+  />
+</head>
 
 開発者がモバイルアプリやPWAを開発する際に直面する一般的な障害は、画面上のキーボードの存在を考慮してカスタマイズすることです。このガイドでは、アプリケーションでオンスクリーンキーボードを管理するためのさまざまなツールの概要を説明します。
 

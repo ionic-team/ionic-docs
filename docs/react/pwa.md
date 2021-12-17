@@ -1,8 +1,15 @@
 ---
+title: Progressive Web Apps in React
 sidebar_label: Progressive Web Apps
 ---
 
-# Progressive Web Apps in React
+<head>
+  <title>Create Progressive Web Apps (PWA) in React - Ionic Framework</title>
+  <meta
+    name="description"
+    content="Create progressive web apps in React with Ionic. Read our React PWA documentation for information on how to make React PWAs using the Ionic CLI."
+  />
+</head>
 
 ## ReactアプリをPWAにする
 

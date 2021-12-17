@@ -4,9 +4,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width initial-scale=1.0" />
     <title>Accordion</title>
-    <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core@next/dist/ionic/ionic.esm.js"></script>
-    <script nomodule src="https://cdn.jsdelivr.net/npm/@ionic/core@next/dist/ionic/ionic.js"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core@next/css/ionic.bundle.css" />
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core@latest/dist/ionic/ionic.esm.js"></script>
+    <script nomodule src="https://cdn.jsdelivr.net/npm/@ionic/core@latest/dist/ionic/ionic.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core@latest/css/ionic.bundle.css" />
     <style>
       :root {
         --ion-safe-area-top: 20px;
@@ -22,7 +22,7 @@
       }
     </style>
     <script type="module">
-      import { toastController } from 'https://cdn.jsdelivr.net/npm/@ionic/core@next/dist/ionic/index.esm.js';
+      import { toastController } from 'https://cdn.jsdelivr.net/npm/@ionic/core@latest/dist/ionic/index.esm.js';
       window.toastController = toastController;
     </script>
   </head>
@@ -44,7 +44,7 @@
           <ion-list-header>Basic</ion-list-header>
           <ion-accordion-group>
             <ion-accordion value="colors">
-              <ion-item slot="header" color="primary">
+              <ion-item slot="header">
                 <ion-label>Colors</ion-label>
               </ion-item>
 
@@ -61,7 +61,7 @@
               </ion-list>
             </ion-accordion>
             <ion-accordion value="shapes">
-              <ion-item slot="header" color="success">
+              <ion-item slot="header">
                 <ion-label>Shapes</ion-label>
               </ion-item>
 
@@ -78,7 +78,7 @@
               </ion-list>
             </ion-accordion>
             <ion-accordion value="numbers">
-              <ion-item slot="header" color="danger">
+              <ion-item slot="header">
                 <ion-label>Numbers</ion-label>
               </ion-item>
 
@@ -101,7 +101,7 @@
           <ion-list-header>Custom Icon</ion-list-header>
           <ion-accordion-group>
             <ion-accordion value="colors" toggle-icon="arrow-down-circle">
-              <ion-item slot="header" color="primary">
+              <ion-item slot="header">
                 <ion-label>Colors</ion-label>
               </ion-item>
 
@@ -118,7 +118,7 @@
               </ion-list>
             </ion-accordion>
             <ion-accordion value="shapes" toggle-icon="arrow-down-circle">
-              <ion-item slot="header" color="success">
+              <ion-item slot="header">
                 <ion-label>Shapes</ion-label>
               </ion-item>
 
@@ -135,7 +135,7 @@
               </ion-list>
             </ion-accordion>
             <ion-accordion value="numbers" toggle-icon="arrow-down-circle">
-              <ion-item slot="header" color="danger">
+              <ion-item slot="header">
                 <ion-label>Numbers</ion-label>
               </ion-item>
 
@@ -158,7 +158,7 @@
           <ion-list-header>Open Accordion</ion-list-header>
           <ion-accordion-group value="colors">
             <ion-accordion value="colors">
-              <ion-item slot="header" color="primary">
+              <ion-item slot="header"">
                 <ion-label>Colors</ion-label>
               </ion-item>
 
@@ -175,7 +175,7 @@
               </ion-list>
             </ion-accordion>
             <ion-accordion value="shapes">
-              <ion-item slot="header" color="success">
+              <ion-item slot="header">
                 <ion-label>Shapes</ion-label>
               </ion-item>
 
@@ -192,7 +192,7 @@
               </ion-list>
             </ion-accordion>
             <ion-accordion value="numbers">
-              <ion-item slot="header" color="danger">
+              <ion-item slot="header">
                 <ion-label>Numbers</ion-label>
               </ion-item>
 
@@ -215,7 +215,7 @@
           <ion-list-header>Multiple Accordions</ion-list-header>
           <ion-accordion-group multiple="true" id="multiple">
             <ion-accordion value="colors">
-              <ion-item slot="header" color="primary">
+              <ion-item slot="header">
                 <ion-label>Colors</ion-label>
               </ion-item>
 
@@ -232,7 +232,7 @@
               </ion-list>
             </ion-accordion>
             <ion-accordion value="shapes">
-              <ion-item slot="header" color="success">
+              <ion-item slot="header">
                 <ion-label>Shapes</ion-label>
               </ion-item>
 
@@ -249,7 +249,7 @@
               </ion-list>
             </ion-accordion>
             <ion-accordion value="numbers">
-              <ion-item slot="header" color="danger">
+              <ion-item slot="header">
                 <ion-label>Numbers</ion-label>
               </ion-item>
 
@@ -272,7 +272,7 @@
           <ion-list-header>Managing State</ion-list-header>
           <ion-accordion-group id="state" value="numbers">
             <ion-accordion value="colors">
-              <ion-item slot="header" color="primary">
+              <ion-item slot="header">
                 <ion-label>Colors</ion-label>
               </ion-item>
 
@@ -289,7 +289,7 @@
               </ion-list>
             </ion-accordion>
             <ion-accordion value="shapes">
-              <ion-item slot="header" color="success">
+              <ion-item slot="header">
                 <ion-label>Shapes</ion-label>
               </ion-item>
 
@@ -306,7 +306,7 @@
               </ion-list>
             </ion-accordion>
             <ion-accordion value="numbers">
-              <ion-item slot="header" color="danger">
+              <ion-item slot="header">
                 <ion-label>Numbers</ion-label>
               </ion-item>
 

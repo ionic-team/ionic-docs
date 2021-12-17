@@ -1,8 +1,15 @@
 ---
+title: 'Your First Ionic App: Vue'
 sidebar_label: はじめてのアプリ
 ---
 
-# Your First Ionic App: Vue
+<head>
+  <title>Vue Step-by-Step Tutorial: Run Your First Ionic App with Vue</title>
+  <meta
+    name="description"
+    content="This Vue tutorial, teaches the fundamentals of Ionic app development by creating a realistic app step-by-step. Learn to run your first Ionic app with Vue."
+  />
+</head>
 
 The great thing about Ionic is that with one codebase, you can build for any platform using just HTML, CSS, and JavaScript. Follow along as we learn the fundamentals of Ionic app development by creating a realistic app step by step.
 

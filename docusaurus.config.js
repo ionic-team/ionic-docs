@@ -8,19 +8,14 @@ module.exports = {
     'Ionic is the app platform for web developers. Build amazing mobile, web, and desktop apps all with one shared code base and open web standards',
   url: 'https://ionicframework.com',
   baseUrl: `${BASE_URL}/`,
-  /*
   i18n: {
     defaultLocale: 'en',
-    locales: ['en', 'es', 'fr', 'pt', 'zh'],
+    locales: ['en', 'ja'],
     localeConfigs: {
       en: { label: 'English' },
-      es: { label: 'Español' },
-      fr: { label: 'Français' },
-      pt: { label: 'Português' },
-      zh: { label: '中文' },
+      ja: { label: '日本語' },
     },
   },
-  */
   onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/meta/favicon.ico',
@@ -65,6 +60,12 @@ module.exports = {
           docId: 'native',
           label: 'Native',
           position: 'left',
+        },
+        {
+          type: 'cta',
+          position: 'left',
+          text: 'Ionic v6.0.0 Upgrade Guide',
+          href: `${BASE_URL}/intro/upgrading-to-ionic-6`,
         },
         {
           type: 'docsVersionDropdown',
