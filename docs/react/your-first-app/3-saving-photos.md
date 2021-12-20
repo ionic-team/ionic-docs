@@ -28,10 +28,12 @@ export function usePhotoGallery() {
 
     // Use webPath to display the new image instead of base64 since it's
     // already loaded into memory
-    return {
-      filepath: fileName,
-      webviewPath: photo.webPath,
-    };
+    return new Promise<Photo>(() => {
+          return {
+              filepath: fileName,
+              webviewPath: photo.webPath,
+          };
+      });
   };
 }
 
