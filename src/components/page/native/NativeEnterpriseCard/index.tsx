@@ -1,3 +1,4 @@
+import useBaseUrl from '@docusaurus/useBaseUrl';
 import clsx from 'clsx';
 import React from 'react';
 
@@ -7,7 +8,7 @@ export default function NativeEnterpriseCard(props) {
   return (
     <a className={clsx(props.className, styles.nativeEnterprise)} href="https://ionicframework.com/native">
       <div className="image-wrapper">
-        <img src="/docs/img/native/native-enterprise@2x.png" width="476" height="228" />
+        <img src={useBaseUrl('/img/native/native-enterprise@2x.png')} width="476" height="228" />
       </div>
 
       <div className="heading-group">

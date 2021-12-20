@@ -29,8 +29,8 @@ module.exports = {
       hideOnScroll: true,
       logo: {
         alt: 'Site Logo',
-        src: `${BASE_URL}/logos/ionic-text-docs-dark.svg`,
-        srcDark: `${BASE_URL}/logos/ionic-text-docs-light.svg`,
+        src: `/logos/ionic-text-docs-dark.svg`,
+        srcDark: `/logos/ionic-text-docs-light.svg`,
         href: '/',
         target: '_self',
         width: 139,
@@ -65,7 +65,7 @@ module.exports = {
           type: 'cta',
           position: 'left',
           text: 'Ionic v6.0.0 Upgrade Guide',
-          href: `${BASE_URL}/intro/upgrading-to-ionic-6`,
+          href: `/intro/upgrading-to-ionic-6`,
         },
         {
           type: 'docsVersionDropdown',
@@ -172,7 +172,7 @@ module.exports = {
           position: 'right',
           icon: {
             alt: 'twitter logo',
-            src: `${BASE_URL}/logos/twitter.svg`,
+            src: `/logos/twitter.svg`,
             href: 'https://twitter.com/Ionicframework',
             target: '_blank',
           },
@@ -182,7 +182,7 @@ module.exports = {
           position: 'right',
           icon: {
             alt: 'github logo',
-            src: `${BASE_URL}/logos/github.svg`,
+            src: `/logos/github.svg`,
             href: 'https://github.com/ionic-team/ionic-framework',
             target: '_blank',
           },
@@ -192,7 +192,7 @@ module.exports = {
           position: 'right',
           icon: {
             alt: 'discord logo',
-            src: `${BASE_URL}/logos/discord.svg`,
+            src: `/logos/discord.svg`,
             href: 'https://ionic.link/discord',
             target: '_blank',
           },
