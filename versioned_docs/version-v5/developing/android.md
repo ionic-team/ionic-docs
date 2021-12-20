@@ -79,7 +79,7 @@ Once the AVD is created, launch the AVD into the Android emulator. Keeping the e
 
 <img
   style={{ maxWidth: '25rem', margin: '1rem auto' }}
-  src="/docs/img/installation/android-emulator-booting.png"
+  src={require('@site/static/img/installation/android-emulator-booting.png').default}
   alt="Android Emulator Booting"
 />
 
