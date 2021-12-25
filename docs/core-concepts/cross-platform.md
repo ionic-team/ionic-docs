@@ -65,7 +65,7 @@ this.platform.ready().then(() => {
 
 このコードは幅が100%の5つの項目をレンダリングします。以下に示すように、これはモバイルデバイスでは見栄えがするかもしれませんが、デスクトップブラウザで見ると異なった印象をうけます。画面幅が広いため各項目は画面全体に表示されるように引き伸ばされ、使われないスペースが多くなってしまいます。
 
-<img src="/docs/img/building/cross-platform-items.png" />
+<img src={require('@site/static/img/building/cross-platform-items.png').default} />
 
 これを改善するために、各項目を[Grid](../layout/grid.md)コンポーネントで囲みましょう。これでより大きな画面でもより使いやすいものに簡単に書き換えることができます:
 
@@ -103,11 +103,11 @@ this.platform.ready().then(() => {
 
 全体を `ion-grid` 要素で囲むことで、Ionicのグリッドシステムがこのレイアウトに適用されます。それぞれの項目を一つの列で囲むことで、各項目をグリッド内で同じ幅に保ち、同じ行内に表示させます。
 
-<img src="/docs/img/building/cross-platform-grid.png" />
+<img src={require('@site/static/img/building/cross-platform-grid.png').default} />
 
 `<ion-grid>` 要素に `fixed` 属性を追加することでより良くすることができます。これにより、グリッドは画面幅に基づいて固定幅を持つようになります。どんなに大きな画面でもグリッド幅が不自然に大きくなることはありません。
 
-<img src="/docs/img/building/cross-platform-grid-fixed.png" />
+<img src={require('@site/static/img/building/cross-platform-grid-fixed.png').default} />
 
 `ion-col` プロパティを追加することで列の幅をよりカスタマイズすることができます。
 

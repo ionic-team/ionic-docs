@@ -26,6 +26,10 @@
       "destination": "/docs/angular/your-first-app/live-reload"
     },
     {
+      "source": "/docs/ja/",
+      "destination": "/docs/ja"
+    },
+    {
       "source": "/docs/(v5|next)?/developer-resources/:path*",
       "destination": "https://ionic.io/resources"
     },

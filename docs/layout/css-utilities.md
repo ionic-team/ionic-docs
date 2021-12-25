@@ -313,7 +313,7 @@ Marginエリアは、隣り合う要素とのスペースを広げるために�
 
 ## Flex プロパティ
 
-<img src="/docs/img/layout/diagram-flex-attributes.png" />
+<img src={require('@site/static/img/layout/diagram-flex-attributes.png').default} />
 
 ### Flex コンテナのプロパティ
 
