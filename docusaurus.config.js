@@ -18,7 +18,7 @@ module.exports = {
   },
   onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
-  favicon: 'img/meta/favicon.ico',
+  favicon: 'img/meta/favicon-96x96.png',
   organizationName: 'ionic-team',
   projectName: 'ionic-docs',
   themeConfig: {
