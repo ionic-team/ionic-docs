@@ -208,7 +208,8 @@ module.exports = {
       additionalLanguages: ['shell-session', 'http'],
     },
     algolia: {
-      apiKey: '43228ce75714201a27efcf69666d6b40',
+      appId: 'O9QSL985BS',
+      apiKey: 'ceb5366064b8fbf70959827cf9f69227',
       indexName: 'ionicframework',
       contextualSearch: true,
     },
