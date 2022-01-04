@@ -147,26 +147,20 @@ module.exports = {
           type: 'separator',
           position: 'right',
         },
-        // {
-        //   type: 'localeDropdown',
-        //   position: 'right',
-        //   dropdownItemsBefore: [],
-        //   dropdownItemsAfter: [
-        //     {
-        //       href: 'https://ionicframework.com/jp/docs/',
-        //       label: '日本語',
-        //       target: '_blank',
-        //       rel: null,
-        //     },
-        //     {
-        //       href: 'https://ionicframework.com/translate',
-        //       label: 'Translate',
-        //       target: '_blank',
-        //       rel: null,
-        //     },
-        //   ],
-        //   className: 'icon-link language navbar__item',
-        // },
+        {
+          type: 'localeDropdown',
+          position: 'right',
+          dropdownItemsBefore: [],
+          dropdownItemsAfter: [
+            {
+              href: 'https://ionicframework.com/translate',
+              label: 'Translate',
+              target: '_blank',
+              rel: null,
+            },
+          ],
+          className: 'icon-link language navbar__item',
+        },
         {
           type: 'iconLink',
           position: 'right',
