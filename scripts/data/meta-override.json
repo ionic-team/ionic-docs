@@ -294,6 +294,10 @@
       "title": "ionic cordova platform: Remove, Add, & Manage Cordova Platforms",
       "description": "Manage, add, and remove Cordova platforms with ionic cordova platform. Like running cordova directly, with added resources and providing friendly checks."
     },
+    "cordova-plugin": {
+      "title": "Install Ionic Cordova Plugin to Manage Updates and Plugin List",
+      "description": "Install the Ionic Cordova plugin to manage your list of Cordova plugins and all inputs, updates, and more. Read to learn more about the Ionic Cordova plugin."
+    },
     "cordova-prepare": {
       "title": "Cordova Prepare: Copy iOS/Android Assets for Native Builds",
       "description": "Ionic Cordova Prepare copies iOS and Android assets to Cordova platforms, preparing them for native builds. Read for examples and to learn more about usage."
@@ -324,6 +328,10 @@
       "title": "AdMob Free | Cordova Plugin Version of Google Admob for Free",
       "description": "AdMob Free is Ionic Framework's free, no ad-sharing version of Google AdMob plugin for Cordova. Read for more info on cordova-plugin-admob-free usage."
     },
+    "android-full-screen": {
+      "title": "Android Full Screen: Plugin for Cordova and PhoneGap Apps",
+      "description": "Android full screen plugin enables developers to offer users a true full screen experience in their Cordova and PhoneGap apps for Android. Read to learn more."
+    },
     "android-permissions": {
       "title": "Android Permissions | Android Device and Ionic App Permissions",
       "description": "This plugin is designed to support Android new permissions checking mechanism. Learn how to install and use Android Device permissions on your Ionic App."
@@ -351,6 +359,10 @@
     "ble": {
       "title": "BLE | Cordova-Plugin-BLE-Central for Bluetooth Low Energy",
       "description": "BLE enables communication between a phone and Bluetooth Low Energy peripherals. Cordova-plugin-ble-central provides a simple JavaScript API for iOS and Android."
+    },
+    "bluetooth-le": {
+      "title": "BluetoothLE | Bluetooth LE Plugin for iOS and Android API Methods",
+      "description": "BluetoothLE supports peripheral and central modes and covers most of the API methods available on Android and iOS. Read to learn more about plugin installation."
     },
     "bluetooth-serial": {
       "title": "Bluetooth Serial: Install Plugin for iOS & Android Communication",
@@ -544,6 +556,10 @@
       "title": "NFC Scanner | PhoneGap iOS/Android/Windows NFC Reader Plugin",
       "description": "The PhoneGap NFC scanner/reader plugin lets you read and write NFC tags. You can beam to, and receive from, other NFC enabled iOS, Android, and Windows devices."
     },
+    "ocr": {
+      "title": "Cordova Mobile OCR Plugin: Extract/Identify Text From Images",
+      "description": "Cordova mobile optical character recognition (OCR) plugin attempts to identify and extract text from an image. Read to learn about iOS and Android installation."
+    },
     "onesignal": {
       "title": "OneSignal | OneSignal Cordova SDK Push Notification Plugin",
       "description": "The OneSignal Cordova SDK plugin is a simple implementation for delivering push notifications on Ionic apps. Read our OneSignal Documentation to learn more."
@@ -615,6 +631,10 @@
     "stripe": {
       "title": "Stripe Plugin Documentation: Use Stripe's SDKs on iOS or Android",
       "description": "The cordova-plugin-stripe let's you use Stripe's Native SDKs for Android and iOS. Read Ionic's Stripe Documentation to learn more about use and installation."
+    },
+    "touch-id": {
+      "title": "Touch ID | Cordova Fingerprint TouchID Plugin for iOS Ionic Apps",
+      "description": "Scan the fingerprint of a user with the TouchID sensor to access an Ionic app on an iOS device. Read to learn more about the Cordova Touch ID plugin."
     },
     "unique-device-id": {
       "title": "Unique Device ID for Android, iOS, and Windows Phone 8",

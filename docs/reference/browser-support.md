@@ -1,4 +1,14 @@
-# Browser Support
+---
+title: Browser Support
+---
+
+<head>
+  <title>Mobile Browser Support to Run Ionic Apps Anywhere</title>
+  <meta
+    name="description"
+    content="Due to a foundation in web technologies, Ionic mobile apps can run anywhere the web runs — iOS, Android, browsers, PWAs, and more. Learn about browser support."
+  />
+</head>
 
 Ionic's earliest goal was to make it easy to develop mobile apps using web technologies like HTML, CSS, and JavaScript. Because of this foundation in web technologies, Ionic can run anywhere the web runs — iOS, Android, browsers, PWAs, and more.
 
