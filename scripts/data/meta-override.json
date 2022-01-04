@@ -278,6 +278,10 @@
       "title": "Update/Install Capacitor Native Platforms and Cordova Plugins",
       "description": "Update Capacitor native platforms and install Capacitor/Cordova plugins with the Ionic Capacitor Update feature. Read to learn more about use and installation."
     },
+    "cordova-build": {
+      "title": "Ionic Cordova Build for Android and iOS Platform Builds",
+      "description": "Like running Cordova Build directly, Ionic Cordova Build also builds web assets from Ionic Build and provides friendly checks for Android and iOS platforms."
+    },
     "cordova-emulate": {
       "title": "Emulate Android and iOS Apps with Ionic Cordova Emulator",
       "description": "Emulate an Ionic project on a simulator/emulator for Android and iOS apps. Build your app and deploy it to devices and emulators using Ionic Cordova Emulator."
@@ -290,6 +294,10 @@
       "title": "ionic cordova platform: Remove, Add, & Manage Cordova Platforms",
       "description": "Manage, add, and remove Cordova platforms with ionic cordova platform. Like running cordova directly, with added resources and providing friendly checks."
     },
+    "cordova-plugin": {
+      "title": "Install Ionic Cordova Plugin to Manage Updates and Plugin List",
+      "description": "Install the Ionic Cordova plugin to manage your list of Cordova plugins and all inputs, updates, and more. Read to learn more about the Ionic Cordova plugin."
+    },
     "cordova-prepare": {
       "title": "Cordova Prepare: Copy iOS/Android Assets for Native Builds",
       "description": "Ionic Cordova Prepare copies iOS and Android assets to Cordova platforms, preparing them for native builds. Read for examples and to learn more about usage."
@@ -297,6 +305,14 @@
     "cordova-run": {
       "title": "ionic cordova run: native-run Android and iOS Apps in Browsers",
       "description": "Build your app and deploy it to devices and emulators using ionic cordova run. Use the native-run utility to run your app in an Android or iOS device browser."
+    },
+    "generate": {
+      "title": "Ionic Generate: Create Pages, Components, & Angular Features",
+      "description": "Automatically create framework features with Ionic Generate. This command uses the Angular CLI to generate pages, components, directives, services, and more."
+    },
+    "livereload": {
+      "title": "Ionic Live Reload on Capacitor and Cordova to Boost Productivity",
+      "description": "Live Reload can boost productivity when building apps with Capacitor, Cordova, or Ionic Serve. Learn more about live reloading browsers when changes are made."
     },
     "serve": {
       "title": "ionic serve: Start a Local Development Server for App Dev/Testing",
@@ -311,6 +327,10 @@
     "admob-free": {
       "title": "AdMob Free | Cordova Plugin Version of Google Admob for Free",
       "description": "AdMob Free is Ionic Framework's free, no ad-sharing version of Google AdMob plugin for Cordova. Read for more info on cordova-plugin-admob-free usage."
+    },
+    "android-full-screen": {
+      "title": "Android Full Screen: Plugin for Cordova and PhoneGap Apps",
+      "description": "Android full screen plugin enables developers to offer users a true full screen experience in their Cordova and PhoneGap apps for Android. Read to learn more."
     },
     "android-permissions": {
       "title": "Android Permissions | Android Device and Ionic App Permissions",
@@ -339,6 +359,10 @@
     "ble": {
       "title": "BLE | Cordova-Plugin-BLE-Central for Bluetooth Low Energy",
       "description": "BLE enables communication between a phone and Bluetooth Low Energy peripherals. Cordova-plugin-ble-central provides a simple JavaScript API for iOS and Android."
+    },
+    "bluetooth-le": {
+      "title": "BluetoothLE | Bluetooth LE Plugin for iOS and Android API Methods",
+      "description": "BluetoothLE supports peripheral and central modes and covers most of the API methods available on Android and iOS. Read to learn more about plugin installation."
     },
     "bluetooth-serial": {
       "title": "Bluetooth Serial: Install Plugin for iOS & Android Communication",
@@ -532,6 +556,10 @@
       "title": "NFC Scanner | PhoneGap iOS/Android/Windows NFC Reader Plugin",
       "description": "The PhoneGap NFC scanner/reader plugin lets you read and write NFC tags. You can beam to, and receive from, other NFC enabled iOS, Android, and Windows devices."
     },
+    "ocr": {
+      "title": "Cordova Mobile OCR Plugin: Extract/Identify Text From Images",
+      "description": "Cordova mobile optical character recognition (OCR) plugin attempts to identify and extract text from an image. Read to learn about iOS and Android installation."
+    },
     "onesignal": {
       "title": "OneSignal | OneSignal Cordova SDK Push Notification Plugin",
       "description": "The OneSignal Cordova SDK plugin is a simple implementation for delivering push notifications on Ionic apps. Read our OneSignal Documentation to learn more."
@@ -603,6 +631,10 @@
     "stripe": {
       "title": "Stripe Plugin Documentation: Use Stripe's SDKs on iOS or Android",
       "description": "The cordova-plugin-stripe let's you use Stripe's Native SDKs for Android and iOS. Read Ionic's Stripe Documentation to learn more about use and installation."
+    },
+    "touch-id": {
+      "title": "Touch ID | Cordova Fingerprint TouchID Plugin for iOS Ionic Apps",
+      "description": "Scan the fingerprint of a user with the TouchID sensor to access an Ionic app on an iOS device. Read to learn more about the Cordova Touch ID plugin."
     },
     "unique-device-id": {
       "title": "Unique Device ID for Android, iOS, and Windows Phone 8",

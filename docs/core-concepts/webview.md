@@ -1,4 +1,14 @@
-# Web View
+---
+title: Web View
+---
+
+<head>
+  <title>Capacitor Web View for iOS and Android Apps - Ionic Framework</title>
+  <meta
+    name="description"
+    content="What is a Web View? Web Views are a full screen and full-powered web browser. Read to learn more about Capacitor Web View on Ionic Framework apps."
+  />
+</head>
 
 Web Views power web apps on native devices.
 

@@ -1,8 +1,15 @@
 ---
+title: Deploying to iOS and Android
 sidebar_label: Deploying Mobile
 ---
 
-# Deploying to iOS and Android
+<head>
+  <title>Build and Deploy Vue Apps for iOS and Android with Capacitor</title>
+  <meta
+    name="description"
+    content="Capacitor is Ionic’s official app runtime to deploy web apps to native platforms like iOS, Android, and more. Read for how to build and deploy Ionic Vue apps."
+  />
+</head>
 
 Since we added Capacitor to our project when it was first created, there’s only a handful of steps remaining until the Photo Gallery app is on our device!
 
