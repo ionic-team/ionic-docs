@@ -103,23 +103,6 @@
     }
   },
   {
-    "packageName": "@awesome-cordova-plugins/alipay",
-    "displayName": "Alipay",
-    "description": "\nThis plugin facilitates the usage of Alipay 支付宝 in an Ionic apps with the integrated AlipaySDK dated on 20180601.\n\nRequires Cordova plugin: `cordova-plugin-gubnoi-alipay`. For more info, please see https://github.com/jing-zhou/cordova-plugin-alipay .\n",
-    "usage": "\n```typescript\nimport { Alipay } from '@awesome-cordova-plugins/alipay/ngx';\n\nconstructor(private alipay: Alipay) {\n\n//alipayOrder is a string that has been generated and signed by the server side.\nthis.alipay.pay(alipayOrder, success, error)\n   .then(result => {\n      console.log(result); // Success\n   })\n   .catch(error => {\n      console.log(error); // Failed\n   });\n\n}\n\n```\n",
-    "platforms": [
-      "Android",
-      "iOS"
-    ],
-    "repo": "https://github.com/jing-zhou/cordova-plugin-alipay",
-    "installVariables": [
-      "APP_ID"
-    ],
-    "cordovaPlugin": {
-      "name": "cordova-plugin-gubnoi-alipay"
-    }
-  },
-  {
     "packageName": "@awesome-cordova-plugins/all-in-one-sdk",
     "displayName": "AllInOneSDK",
     "description": "\nPaytm All-in-One SDK plugin for Cordova/Ionic Applications\nPaytm All-in-One SDK provides a swift, secure and seamless payment experience to your users by invoking the Paytm app (if installed on your user’s smartphone) to complete payment for your order.\nPaytm All-in-One SDK enables payment acceptance via Paytm wallet, Paytm Payments Bank, saved Debit/Credit cards, Net Banking, BHIM UPI and EMI as available in your customer’s Paytm account. If Paytm app is not installed on a customer's device, the transaction will be processed via web view within the All-in-One SDK.\nFor more information about Paytm All-in-One SDK, please visit https://developer.paytm.com/docs/all-in-one-sdk/hybrid-apps/cordova/\n",
@@ -337,19 +320,6 @@
     "premierSlug": "app-version"
   },
   {
-    "packageName": "@awesome-cordova-plugins/apple-pay",
-    "displayName": "Apple Pay",
-    "description": "\nA dependency free Cordova plugin to provide Apple Pay functionality.\n",
-    "usage": "\n```typescript\nimport { ApplePay } from '@awesome-cordova-plugins/apple-pay/ngx';\n\n\nconstructor(private applePay: ApplePay) { }\n\n...\nasync applePay() {\n  // This block is optional -- only if you need to update order items/shipping\n  // methods in response to shipping method selections\n  this.applePay.startListeningForShippingContactSelection()\n    .subscribe(async selection => {\n      try {\n        await this.applePay.updateItemsAndShippingMethods({\n          items: getFromSelection(selection),\n          shippingMethods: getFromSelection(selection),\n        });\n      }\n      catch {\n        // handle update items error\n      }\n    });\n\n  try {\n    const applePayTransaction = await this.applePay.makePaymentRequest({\n      items,\n      shippingMethods,\n      merchantIdentifier,\n      currencyCode,\n      countryCode,\n      billingAddressRequirement: ['name', 'email', 'phone'],\n      shippingAddressRequirement: 'none',\n      shippingType: 'shipping'\n    });\n\n    const transactionStatus = await completeTransactionWithMerchant(applePayTransaction);\n    await this.applePay.completeLastTransaction(transactionStatus);\n  } catch {\n    // handle payment request error\n    // Can also handle stop complete transaction but these should normally not occur\n  }\n\n  // only if you started listening before\n  await this.applePay.stopListeningForShippingContactSelection();\n}\n```\n",
-    "platforms": [
-      "iOS"
-    ],
-    "repo": "https://github.com/samkelleher/cordova-plugin-applepay",
-    "cordovaPlugin": {
-      "name": "cordova-plugin-applepay"
-    }
-  },
-  {
     "packageName": "@awesome-cordova-plugins/apple-wallet",
     "displayName": "Apple Wallet",
     "description": "\nA Cordova plugin that enables users from Add Payment Cards to their Apple Wallet.\n",
@@ -388,19 +358,6 @@
     "repo": "https://github.com/AppsFlyerSDK/cordova-plugin-appsflyer-sdk",
     "cordovaPlugin": {
       "name": "cordova-plugin-appsflyer-sdk"
-    }
-  },
-  {
-    "packageName": "@awesome-cordova-plugins/autostart",
-    "displayName": "Autostart",
-    "description": "\nThis plugin automatically starts your Android app after every boot or auto-update.\nYou can enable or disable the autostart function in your app.\n",
-    "usage": "\n```typescript\nimport { Autostart } from '@awesome-cordova-plugins/autostart/ngx';\n\n\nconstructor(private autostart: Autostart) { }\n\n...\n\nthis.autostart.enable();\n\nthis.autostart.disable();\n\n```\n",
-    "platforms": [
-      "Android"
-    ],
-    "repo": "https://github.com/ToniKorin/cordova-plugin-autostart",
-    "cordovaPlugin": {
-      "name": "cordova-plugin-autostart"
     }
   },
   {
@@ -613,22 +570,6 @@
     }
   },
   {
-    "packageName": "@awesome-cordova-plugins/braintree",
-    "displayName": "Braintree",
-    "description": "\nThis plugin enables the use of the Braintree Drop-In Payments UI in your Ionic applications on Android and iOS, using the native Drop-In UI for each platform (not the Javascript SDK).\n\n Ionic Native utilizes [a maintained fork](https://github.com/taracque/cordova-plugin-braintree) of the original `cordova-plugin-braintree`\n\n For information on how to use Apple Pay with this plugin, please refer to the [plugin documentation](https://github.com/Taracque/cordova-plugin-braintree#apple-pay-ios-only)\n\n**NOTE**: This is not a complete payments solution. All of the Braintree client-side UIs simply generate a payment nonce that must then be processed by your server to complete the payment.\nSee the [Braintree Node server documentation](https://developers.braintreepayments.com/start/hello-server/node) for details and a [sample Express server](https://github.com/braintree/braintree_express_example) that implements the required functionality.\n",
-    "usage": "\n```typescript\nimport { Braintree, ApplePayOptions, PaymentUIOptions } from '@awesome-cordova-plugins/braintree/ngx';\n\nconstructor(private braintree: Braintree) { }\n\n...\n\n// Your Braintree `Tokenization Key` from the Braintree dashboard.\n// Alternatively you can also generate this token server-side\n// using a client ID in order to allow users to use stored payment methods.\n// See the [Braintree Client Token documentation](https://developers.braintreepayments.com/reference/request/client-token/generate/node#customer_id) for details.\nconst BRAINTREE_TOKEN = '<YOUR_BRAINTREE_TOKEN>';\n\n// NOTE: Do not provide this unless you have configured your Apple Developer account\n// as well as your Braintree merchant account, otherwise the Braintree module will fail.\nconst appleOptions: ApplePayOptions = {\n  merchantId: '<YOUR MERCHANT ID>',\n  currency: 'USD',\n  country: 'US'\n}\n\nconst paymentOptions: PaymentUIOptions = {\n  amount: '14.99',\n  primaryDescription: 'Your product or service (per /item, /month, /week, etc)',\n}\n\nthis.braintree.initialize(BRAINTREE_TOKEN)\n  .then(() => this.braintree.setupApplePay(appleOptions))\n  .then(() => this.braintree.presentDropInPaymentUI(paymentOptions))\n  .then((result: PaymentUIResult) => {\n    if (result.userCancelled) {\n      console.log(\"User cancelled payment dialog.\");\n    } else {\n      console.log(\"User successfully completed payment!\");\n      console.log(\"Payment Nonce: \" + result.nonce);\n      console.log(\"Payment Result.\", result);\n    }\n  })\n  .catch((error: string) => console.error(error));\n\n```\n",
-    "platforms": [
-      "Android",
-      "iOS"
-    ],
-    "repo": "https://github.com/taracque/cordova-plugin-braintree",
-    "installVariables": [],
-    "cordovaPlugin": {
-      "name": "cordova-plugin-braintree"
-    },
-    "capacitorIncompatible": true
-  },
-  {
     "packageName": "@awesome-cordova-plugins/branch-io",
     "displayName": "BranchIo",
     "description": "\nBranch.io is an attribution service for deeplinking and invitation links\n",
@@ -705,19 +646,6 @@
     ],
     "cordovaPlugin": {
       "name": "cordova-plugin-call-directory"
-    }
-  },
-  {
-    "packageName": "@awesome-cordova-plugins/call-log",
-    "displayName": "Call Log",
-    "description": "\nThis plugin access the call history on a device and that can be filtered\n",
-    "usage": "\n```typescript\nimport { CallLog } from '@awesome-cordova-plugins/call-log/ngx';\n\n\nconstructor(private callLog: CallLog) { }\n\n````",
-    "platforms": [
-      "Android"
-    ],
-    "repo": "https://github.com/creacore-team/cordova-plugin-calllog",
-    "cordovaPlugin": {
-      "name": "cordova-plugin-calllog"
     }
   },
   {
@@ -824,19 +752,6 @@
     ],
     "cordovaPlugin": {
       "name": "cordova-plugin-cloud-settings"
-    }
-  },
-  {
-    "packageName": "@awesome-cordova-plugins/clover-go",
-    "displayName": "Clover Go",
-    "description": "\nThis plugin connect to Clover Go payment device and process payments.\n",
-    "usage": "\n```typescript\nimport { CloverGo } from '@awesome-cordova-plugins/clover-go/ngx';\n\n\nconstructor(private cloverGo: CloverGo) { }\n\n...\n\n\nthis.cloverGo.init(configuration)\n  .then((res: any) => console.log(res))\n  .catch((error: any) => console.error(error));\n\nthis.cloverGo.connect()\n  .then((res: any) => console.log(res))\n  .catch((error: any) => console.error(error));\n\nthis.cloverGo.disconnect()\n  .then((res: any) => console.log(res))\n  .catch((error: any) => console.error(error));\n\nthis.cloverGo.sale(saleInfo)\n  .then((res: any) => console.log(res))\n  .catch((error: any) => console.error(error));\n\nthis.cloverGo.sign(signInfo)\n  .then((res: any) => console.log(res))\n  .catch((error: any) => console.error(error));\n\nthis.cloverGo.voidPayment(paymentInfo)\n  .then((res: any) => console.log(res))\n  .catch((error: any) => console.error(error));\n\n```\n",
-    "platforms": [
-      "Android"
-    ],
-    "repo": "https://github.com/hotwax/cordova-plugin-clovergo",
-    "cordovaPlugin": {
-      "name": "cordova-plugin-clovergo"
     }
   },
   {
@@ -1168,19 +1083,6 @@
       "name": "cordova-plugin-filepath"
     },
     "premierSlug": "filesystem"
-  },
-  {
-    "packageName": "@awesome-cordova-plugins/file-picker",
-    "displayName": "iOS File Picker",
-    "description": "\n\nOpens the file picker on iOS for the user to select a file, returns a file URI.\n",
-    "usage": "\n```typescript\nimport { IOSFilePicker } from '@awesome-cordova-plugins/file-picker/ngx';\n\nconstructor(private filePicker: IOSFilePicker) { }\n\n...\n\nthis.filePicker.pickFile()\n  .then(uri => console.log(uri))\n  .catch(err => console.log('Error', err));\n\n```",
-    "platforms": [
-      "iOS"
-    ],
-    "repo": "https://github.com/jcesarmobile/FilePicker-Phonegap-iOS-Plugin",
-    "cordovaPlugin": {
-      "name": "cordova-plugin-filepicker"
-    }
   },
   {
     "packageName": "@awesome-cordova-plugins/file-transfer",
@@ -1520,19 +1422,6 @@
     }
   },
   {
-    "packageName": "@awesome-cordova-plugins/google-play-games-services",
-    "displayName": "Google Play Games Services",
-    "description": "\nA Cordova plugin that let's you interact with Google Play Games Services.\n",
-    "usage": "\n```typescript\nimport { GooglePlayGamesServices } from '@awesome-cordova-plugins/google-play-games-services/ngx';\n\n\nconstructor(private googlePlayGamesServices: GooglePlayGamesServices) { }\n\n...\n\n// Authenticate with Play Games Services\nthis.googlePlayGamesServices.auth()\n    .then(() => console.log('Logged in to Play Games Services'))\n    .catch(e) => console.log('Error logging in Play Games Services', e);\n\n// Sign out of Play Games Services.\nthis.googlePlayGamesServices.signOut()\n    .then(() => console.log('Logged out of Play Games Services'))\n    .catch(e => console.log('Error logging out of Play Games Services', e);\n\n// Check auth status.\nthis.googlePlayGamesServices.isSignedIn()\n    .then((signedIn: SignedInResponse) => {\n        if (signedIn.isSignedIn) {\n            hideLoginButton();\n        }\n    });\n\n// Fetch currently authenticated user's data.\nthis.googlePlayGamesServices.showPlayer().then((data: Player) => {\n   console.log('Player data', data);\n});\n\n// Submit a score.\nthis.googlePlayGamesServices.submitScore({\n    score: 100,\n    leaderboardId: 'SomeLeaderboardId'\n});\n\n// Submit a score and wait for reponse.\nthis.googlePlayGamesServices.submitScoreNow({\n    score: 100,\n    leaderboardId: 'SomeLeaderboardId'\n}).then((data: SubmittedScoreData) => {\n   console.log('Score related data', data);\n});\n\n// Get the player score on a leaderboard.\nthis.googlePlayGamesServices.getPlayerScore({\n    leaderboardId: 'SomeLeaderBoardId'\n}).then((data: PlayerScoreData) => {\n    console.log('Player score', data);\n});\n\n// Show the native leaderboards window.\nthis.googlePlayGamesServices.showAllLeaderboards()\n    .then(() => console.log('The leaderboard window is visible.'));\n\n// Show a signle native leaderboard window.\nthis.googlePlayGamesServices.showLeaderboard({\n    leaderboardId: 'SomeLeaderBoardId'\n}).then(() => console.log('The leaderboard window is visible.'));\n\n// Unlock an achievement.\nthis.googlePlayGamesServices.unlockAchievement({\n    achievementId: 'SomeAchievementId'\n}).then(() => console.log('Achievement sent'));\n\n// Unlock an achievement and wait for response.\nthis.googlePlayGamesServices.unlockAchievementNow({\n    achievementId: 'SomeAchievementId'\n}).then(() => console.log('Achievement unlocked'));\n\n// Incremement an achievement.\nthis.googlePlayGamesServices.incrementAchievement({\n    step: 1,\n    achievementId: 'SomeAchievementId'\n}).then(() => console.log('Achievement increment sent'));\n\n// Incremement an achievement and wait for response.\nthis.googlePlayGamesServices.incrementAchievementNow({\n    step: 1,\n    achievementId: 'SomeAchievementId'\n}).then(() => console.log('Achievement incremented'));\n\n// Show the native achievements window.\nthis.googlePlayGamesServices.showAchivements()\n   .then(() => console.log('The achievements window is visible.'));\n\n```\n",
-    "platforms": [
-      "Android"
-    ],
-    "repo": "https://github.com/artberri/cordova-plugin-play-games-services",
-    "cordovaPlugin": {
-      "name": "cordova-plugin-play-games-services"
-    }
-  },
-  {
     "packageName": "@awesome-cordova-plugins/google-plus",
     "displayName": "Google Plus",
     "description": "",
@@ -1646,21 +1535,6 @@
     ],
     "cordovaPlugin": {
       "name": "cordova-plugin-telerik-imagepicker"
-    }
-  },
-  {
-    "packageName": "@awesome-cordova-plugins/image-resizer",
-    "displayName": "Image Resizer",
-    "description": "\nCordova Plugin For Image Resize\n",
-    "usage": "\n```typescript\nimport { ImageResizer, ImageResizerOptions } from '@awesome-cordova-plugins/image-resizer/ngx';\n\nconstructor(private imageResizer: ImageResizer) { }\n\n...\n\nlet options = {\n uri: uri,\n folderName: 'Protonet',\n quality: 90,\n width: 1280,\n height: 1280\n} as ImageResizerOptions;\n\nthis.imageResizer\n  .resize(options)\n  .then((filePath: string) => console.log('FilePath', filePath))\n  .catch(e => console.log(e));\n\n```",
-    "platforms": [
-      "Android",
-      "iOS",
-      "Windows"
-    ],
-    "repo": "https://github.com/JoschkaSchulz/cordova-plugin-image-resizer",
-    "cordovaPlugin": {
-      "name": "info.protonet.imageresizer"
     }
   },
   {
@@ -1809,20 +1683,6 @@
     "repo": "https://github.com/mattlewis92/cordova-plugin-is-debug",
     "cordovaPlugin": {
       "name": "cordova-plugin-is-debug"
-    }
-  },
-  {
-    "packageName": "@awesome-cordova-plugins/jumio",
-    "displayName": "Jumio",
-    "description": "Check out [example with Angular 9.1 & Capacitor 2.1](https://github.com/zendigital/jumio-ionic-demo)\n\n[Platform Customization](https://github.com/Jumio/mobile-cordova#customization) is possible\n\nOriginal source: [Jumio mobile-cordova](https://github.com/Jumio/mobile-cordova) Plugin for Apache Cordova",
-    "usage": "\n```typescript\nimport {\n  Jumio,\n  JumioNetverifyConfig,\n  JumioDocVerificationConfig,\n  NetverifyDocumentData\n  DocVerificationDocumentData\n} from '@awesome-cordova-plugins/jumio/ngx';\n\n\nconstructor(private jumio: Jumio) { }\n\n...\n\nthis.jumio.initNetverify(\"API_TOKEN\", \"API_SECRET\", \"US\", {\n  requireVerification: false,\n  userReference: \"USER_REFERENCE\",\n  preselectedCountry: \"USA\",\n  cameraPosition: \"BACK\",\n  documentTypes: [\"DRIVER_LICENSE\", \"PASSPORT\", \"IDENTITY_CARD\", \"VISA\"],\n  enableWatchlistScreening: \"ENABLED\",\n  watchlistSearchProfile: \"YOUR_PROFILE_NAME\"\n});\n\nlet documentData: NetverifyDocumentData = await this.jumio.startNetverify();\n\n```\n",
-    "platforms": [
-      "Android",
-      "iOS"
-    ],
-    "repo": "https://github.com/danielzen/jumio-cordova",
-    "cordovaPlugin": {
-      "name": "jumio-cordova"
     }
   },
   {
@@ -2441,37 +2301,6 @@
     }
   },
   {
-    "packageName": "@awesome-cordova-plugins/qr-scanner",
-    "displayName": "QR Scanner",
-    "description": "\nA fast, energy efficient, highly-configurable QR code scanner for Cordova apps.\n\nRequires Cordova plugin: `cordova-plugin-qrscanner`. For more info, please see the [QR Scanner plugin docs](https://github.com/bitpay/cordova-plugin-qrscanner).\n",
-    "usage": "\n```typescript\nimport { QRScanner, QRScannerStatus } from '@awesome-cordova-plugins/qr-scanner/ngx';\n\n\nconstructor(private qrScanner: QRScanner) { }\n\n...\n\n// Optionally request the permission early\nthis.qrScanner.prepare()\n  .then((status: QRScannerStatus) => {\n     if (status.authorized) {\n       // camera permission was granted\n\n\n       // start scanning\n       let scanSub = this.qrScanner.scan().subscribe((text: string) => {\n         console.log('Scanned something', text);\n\n         this.qrScanner.hide(); // hide camera preview\n         scanSub.unsubscribe(); // stop scanning\n       });\n\n     } else if (status.denied) {\n       // camera permission was permanently denied\n       // you must use QRScanner.openSettings() method to guide the user to the settings page\n       // then they can grant the permission from there\n     } else {\n       // permission was denied, but not permanently. You can ask for permission again at a later time.\n     }\n  })\n  .catch((e: any) => console.log('Error is', e));\n\n\n```",
-    "platforms": [
-      "Android",
-      "Browser",
-      "iOS",
-      "Windows"
-    ],
-    "repo": "https://github.com/bitpay/cordova-plugin-qrscanner",
-    "cordovaPlugin": {
-      "name": "cordova-plugin-qrscanner"
-    },
-    "capacitorIncompatible": true
-  },
-  {
-    "packageName": "@awesome-cordova-plugins/regula-document-reader",
-    "displayName": "Regula Document Reader",
-    "description": "\nPlugin for reading and validation of identification documents.\n",
-    "usage": "\n```typescript\nimport { RegulaDocumentReader } from '@awesome-cordova-plugins/regula-document-reader/ngx';\n\nlet license; // read regula.license file\nRegulaDocumentReader.initReader(license); // initialize reader\nRegulaDocumentReader.scanDocument().then((result) => {\n\t\t// read result\n})\n```\n",
-    "platforms": [
-      "iOS",
-      "Android"
-    ],
-    "repo": "https://github.com/regulaforensics/cordova-plugin-documentreader.git",
-    "cordovaPlugin": {
-      "name": "cordova-plugin-documentreader"
-    }
-  },
-  {
     "packageName": "@awesome-cordova-plugins/safari-view-controller",
     "displayName": "Safari View Controller",
     "description": "\nFor displaying read-only web content.\n\nRequires Cordova plugin: `cordova-plugin-safariviewcontroller`. For more info, please see the [Safari View Controller plugin docs](https://github.com/EddyVerbruggen/cordova-plugin-safariviewcontroller).\n",
@@ -2526,19 +2355,6 @@
     "repo": "https://github.com/leecrossley/cordova-plugin-shake",
     "cordovaPlugin": {
       "name": "cordova-plugin-shake"
-    }
-  },
-  {
-    "packageName": "@awesome-cordova-plugins/shop-checkout",
-    "displayName": "ShopCheckout",
-    "description": "\nThis is a plugin that allows your Ionic app to use ShopChecout for Android.\nFollow the offical documentation to setup this plugin correctly: https://developer.shoptopup.com/docs/shoptopup-for-cordovaphonegap\n",
-    "usage": "\n```typescript\nimport { ShopCheckout } from '@awesome-cordova-plugins/shop-checkout/ngx';\n\n\nconstructor(private shopCheckout: ShopCheckout) { }\n\n...\n\nthis.shopCheckout.registerAgent();\n...\nthis.shopCheckout.openProducts();\n\n```\n",
-    "platforms": [
-      "Android"
-    ],
-    "repo": "https://github.com/tradedepot/cordova-shop-checkout",
-    "cordovaPlugin": {
-      "name": "cordova-plugin-shop-checkout"
     }
   },
   {
@@ -2734,19 +2550,6 @@
     }
   },
   {
-    "packageName": "@awesome-cordova-plugins/ssh-connect",
-    "displayName": "SSH Connect",
-    "description": "\nCordova plugin to make connections and execute commands through SSH\n",
-    "usage": "\n```typescript\nimport { SSHConnect } from '@awesome-cordova-plugins/ssh-connect/ngx';\n\n\nconstructor(private sshConnect: SSHConnect) { }\n\n...\n\n\nthis.sshConnect.connect('user', 'password', 'host', port)\n  .then(resp => console.log(resp))\n  .catch(error => console.error(error));\n\nthis.sshConnect.executeCommand('command')\n  .then(resp => console.log(resp))\n  .catch(error => console.error(error));\n\nthis.sshConnect.disconnect()\n  .then(resp => console.log(resp))\n  .catch(error => console.error(error));\n\n```\n",
-    "platforms": [
-      "Android"
-    ],
-    "repo": "https://github.com/JosePerez27/cordova-plugin-ssh-connect",
-    "cordovaPlugin": {
-      "name": "cordova-plugin-ssh-connect"
-    }
-  },
-  {
     "packageName": "@awesome-cordova-plugins/star-prnt",
     "displayName": "StarPRNT",
     "description": "\n* Ionic Native wrappers for the starprnt cordova plugin for Star Micronics Bluetooth/LAN printers\n",
@@ -2918,27 +2721,6 @@
     "installVariables": [],
     "cordovaPlugin": {
       "name": "cordova-plugin-theme-detection"
-    }
-  },
-  {
-    "packageName": "@awesome-cordova-plugins/themeable-browser",
-    "displayName": "Themeable Browser",
-    "description": "\nIn-app browser that allows styling.\n",
-    "usage": "\n```typescript\nimport { ThemeableBrowser, ThemeableBrowserOptions, ThemeableBrowserObject } from '@awesome-cordova-plugins/themeable-browser/ngx';\n\nconstructor(private themeableBrowser: ThemeableBrowser) { }\n\n...\n\n// can add options from the original InAppBrowser in a JavaScript object form (not string)\n// This options object also takes additional parameters introduced by the ThemeableBrowser plugin\n// This example only shows the additional parameters for ThemeableBrowser\n// Note that that `image` and `imagePressed` values refer to resources that are stored in your app\nconst options: ThemeableBrowserOptions = {\n     statusbar: {\n         color: '#ffffffff'\n     },\n     toolbar: {\n         height: 44,\n         color: '#f0f0f0ff'\n     },\n     title: {\n         color: '#003264ff',\n         showPageTitle: true\n     },\n     backButton: {\n         image: 'back',\n         imagePressed: 'back_pressed',\n         align: 'left',\n         event: 'backPressed'\n     },\n     forwardButton: {\n         image: 'forward',\n         imagePressed: 'forward_pressed',\n         align: 'left',\n         event: 'forwardPressed'\n     },\n     closeButton: {\n         image: 'close',\n         imagePressed: 'close_pressed',\n         align: 'left',\n         event: 'closePressed'\n     },\n     customButtons: [\n         {\n             image: 'share',\n             imagePressed: 'share_pressed',\n             align: 'right',\n             event: 'sharePressed'\n         }\n     ],\n     menu: {\n         image: 'menu',\n         imagePressed: 'menu_pressed',\n         title: 'Test',\n         cancel: 'Cancel',\n         align: 'right',\n         items: [\n             {\n                 event: 'helloPressed',\n                 label: 'Hello World!'\n             },\n             {\n                 event: 'testPressed',\n                 label: 'Test!'\n             }\n         ]\n     },\n     backButtonCanClose: true\n}\n\nconst browser: ThemeableBrowserObject = this.themeableBrowser.create('https://ionic.io', '_blank', options);\n\n```\nWe suggest that you refer to the plugin's repository for additional information on usage that may not be covered here.",
-    "platforms": [
-      "Amazon Fire OS",
-      "Android",
-      "Blackberry 10",
-      "Browser",
-      "FirefoxOS",
-      "iOS",
-      "Ubuntu",
-      "Windows",
-      "Windows Phone"
-    ],
-    "repo": "https://github.com/initialxy/cordova-plugin-themeablebrowser",
-    "cordovaPlugin": {
-      "name": "cordova-plugin-themeablebrowser"
     }
   },
   {
