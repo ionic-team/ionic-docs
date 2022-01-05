@@ -45,20 +45,6 @@
     }
   },
   {
-    "packageName": "@awesome-cordova-plugins/admob-free",
-    "displayName": "AdMob Free",
-    "description": "\nA free, no ad-sharing version of Google AdMob plugin for Cordova.\n\nRequires Cordova plugin: `cordova-plugin-admob-free`. For more info, please see the [AdMob Free plugin docs](https://github.com/ratson/cordova-plugin-admob-free).\n",
-    "usage": "\n```typescript\nimport { AdMobFree, AdMobFreeBannerConfig } from '@awesome-cordova-plugins/admob-free/ngx';\n\n\nconstructor(private admobFree: AdMobFree) { }\n\n\n...\n\n\nconst bannerConfig: AdMobFreeBannerConfig = {\n // add your config here\n // for the sake of this example we will just use the test config\n isTesting: true,\n autoShow: true\n};\nthis.admobFree.banner.config(bannerConfig);\n\nthis.admobFree.banner.prepare()\n  .then(() => {\n    // banner Ad is ready\n    // if we set autoShow to false, then we will need to call the show method here\n  })\n  .catch(e => console.log(e));\n\n\n```",
-    "platforms": [
-      "Android",
-      "iOS"
-    ],
-    "repo": "https://github.com/ratson/cordova-plugin-admob-free",
-    "cordovaPlugin": {
-      "name": "cordova-plugin-admob-free"
-    }
-  },
-  {
     "packageName": "@awesome-cordova-plugins/admob-plus",
     "displayName": "AdMob Plus",
     "description": "\nAdMob Plus is the successor of cordova-plugin-admob-free, which provides a cleaner API and build with modern tools.\n",
@@ -299,33 +285,6 @@
     }
   },
   {
-    "packageName": "@awesome-cordova-plugins/app-launcher",
-    "displayName": "App Launcher",
-    "description": "\nSimple Cordova plugin to see if other apps are installed and launch them.\n",
-    "usage": "\n```typescript\nimport { AppLauncher, AppLauncherOptions } from '@awesome-cordova-plugins/app-launcher/ngx';\nimport { Platform } from '@ionic/angular';\n\nconstructor(private appLauncher: AppLauncher, private platform: Platform) { }\n\n...\n\nconst options: AppLauncherOptions = {\n}\n\nif(this.platform.is('ios')) {\n  options.uri = 'fb://'\n} else {\n  options.packageName = 'com.facebook.katana'\n}\n\nthis.appLauncher.canLaunch(options)\n  .then((canLaunch: boolean) => console.log('Facebook is available'))\n  .catch((error: any) => console.error('Facebook is not available'));\n\n```\n",
-    "platforms": [
-      "Android",
-      "iOS"
-    ],
-    "repo": "https://github.com/nchutchind/cordova-plugin-app-launcher",
-    "cordovaPlugin": {
-      "name": "cordova-plugin-app-launcher"
-    }
-  },
-  {
-    "packageName": "@awesome-cordova-plugins/app-minimize",
-    "displayName": "App Minimize",
-    "description": "\nAppMinimize is a plugin to minimize the application on android devices\n",
-    "usage": "\n```typescript\nimport { Platfrom } from '@ionic/angular';\nimport { AppMinimize } from '@awesome-cordova-plugins/app-minimize/ngx';\n\n\nconstructor(private platform: Platform, private appMinimize: AppMinimize) { }\n\n...\n\nthis.platform.registerBackButtonAction(() => {\n   this.appMinimize.minimize();\n});\n\n```\n",
-    "platforms": [
-      "Android"
-    ],
-    "repo": "https://github.com/tomloprod/cordova-plugin-appminimize",
-    "cordovaPlugin": {
-      "name": "cordova-plugin-appminimize"
-    }
-  },
-  {
     "packageName": "@awesome-cordova-plugins/app-preferences",
     "displayName": "App Preferences",
     "description": "\nThis plugin allows you to read and write app preferences\n",
@@ -404,20 +363,6 @@
     }
   },
   {
-    "packageName": "@awesome-cordova-plugins/appodeal",
-    "displayName": "Appodeal",
-    "description": "\nPlugin to serve ads through native Appodeal SDKs\n",
-    "usage": "\n```typescript\nimport { Appodeal } from '@awesome-cordova-plugins/appodeal/ngx';\n\nconstructor(private appodeal: Appodeal) {\n\n   const appKey = '<your app key>';\n   appodeal.initialize(appKey, appodeal.AD_TYPES.REWARDED_VIDEO);\n   appodeal.show(appodeal.AD_TYPES.REWARDED_VIDEO);\n\n}\n```\n",
-    "platforms": [
-      "iOS",
-      "Android"
-    ],
-    "repo": "https://github.com/appodeal/appodeal-cordova-plugin",
-    "cordovaPlugin": {
-      "name": "https://github.com/appodeal/appodeal-cordova-plugin.git"
-    }
-  },
-  {
     "packageName": "@awesome-cordova-plugins/approov-advanced-http",
     "displayName": "HTTP",
     "description": "\nCordova / Phonegap plugin for communicating with HTTP servers. Supports iOS and Android.\n\nAdvantages over Javascript requests:\n- SSL / TLS Pinning\n- CORS restrictions do not apply\n- Handling of HTTP code 401 - read more at [Issue CB-2415](https://issues.apache.org/jira/browse/CB-2415)\n\nNote: This plugin extends the pre-existing [cordova-advanced-http-plugin](https://github.com/silkimen/cordova-plugin-advanced-http),\nwe have only added approov functionality on top of it. All credit goes to the actual plugin developer.\n",
@@ -443,19 +388,6 @@
     "repo": "https://github.com/AppsFlyerSDK/cordova-plugin-appsflyer-sdk",
     "cordovaPlugin": {
       "name": "cordova-plugin-appsflyer-sdk"
-    }
-  },
-  {
-    "packageName": "@awesome-cordova-plugins/audio-management",
-    "displayName": "Audio Management",
-    "description": "\nA Cordova plugin to manage volume of audio streams for: ring, music, notification and system. Possible\nringer values for those streams are: silent, vibrate and normal.\n",
-    "usage": "\n```typescript\nimport { AudioManagement } from '@awesome-cordova-plugins/audio-management/ngx';\n\n\nconstructor(public audioman: AudioManagement) { }\n\n...\n\nsetAudioMode() {\n this.audioman.setAudioMode(AudioManagement.AudioMode.NORMAL)\n   .then(() => {\n    console.log('Device audio mode is now NORMAL');\n   })\n   .catch((reason) => {\n     console.log(reason);\n   });\n}\n\ngetAudioMode() {\n this.audioman.getAudioMode()\n   .then((value: AudioManagement.AudioModeReturn) => {\n    console.log('Device audio mode is ' + value.label + ' (' + value.audioMode + ')');\n   })\n   .catch((reason) => {\n     console.log(reason);\n   });\n}\n\n```",
-    "platforms": [
-      "Android"
-    ],
-    "repo": "https://github.com/clovelCed/cordova-plugin-audiomanagement",
-    "cordovaPlugin": {
-      "name": "clovelced-plugin-audiomanagement"
     }
   },
   {
@@ -530,19 +462,6 @@
     }
   },
   {
-    "packageName": "@awesome-cordova-plugins/backlight",
-    "displayName": "Backlight",
-    "description": "\nThis plugin adds turning on/off the device backlight.\n",
-    "usage": "\n```typescript\nimport { Backlight } from '@awesome-cordova-plugins/backlight/ngx';\n\nconstructor(private backlight: Backlight) { }\n\n...\n\n// Turn backlight on\nthis.backlight.on().then(() => console.log('backlight on'));\n\n// Turn backlight off\nthis.backlight.off().then(() => console.log('backlight off'));\n\n```\n",
-    "platforms": [
-      "Android"
-    ],
-    "repo": "https://github.com/mebibou/cordova-plugin-backlight",
-    "cordovaPlugin": {
-      "name": "cordova-plugin-backlight"
-    }
-  },
-  {
     "packageName": "@awesome-cordova-plugins/badge",
     "displayName": "Badge",
     "description": "\nThe essential purpose of badge numbers is to enable an application to inform its users that it has something for them — for example, unread messages — when the application isn’t running in the foreground.\n\nRequires Cordova plugin: cordova-plugin-badge. For more info, please see the [Badge plugin docs](https://github.com/katzer/cordova-plugin-badge).\n\nAndroid Note: Badges have historically only been a feature implemented by third party launchers and not visible unless one of those launchers was being used (E.G. Samsung or Nova Launcher) and if enabled by the user. As of Android 8 (Oreo), [notification badges](https://developer.android.com/training/notify-user/badges) were introduced officially to reflect unread notifications. This plugin is unlikely to work as expected on devices running Android 8 or newer. Please see the [local notifications plugin docs](https://github.com/katzer/cordova-plugin-local-notifications) for more information on badge use with notifications.\n",
@@ -560,20 +479,6 @@
     "premierSlug": "badge"
   },
   {
-    "packageName": "@awesome-cordova-plugins/baidu-push",
-    "displayName": "Baidu Push",
-    "description": "\nThis plugin faciliates the use of Baidu Push notifications.\n",
-    "usage": "\n```typescript\nimport { BaiduPush } from '@awesome-cordova-plugins/baidu-push/ngx';\n\n\nconstructor(private baiduPush: BaiduPush) { }\n\n...\n\nthis.baiduPush.startWork('xxxxxx')\n  .then((res: any) => console.log(res))\n  .catch((error: any) => console.error(error));\n\n```",
-    "platforms": [
-      "Android",
-      "iOS"
-    ],
-    "repo": "https://github.com/Ti-webdev/cordova-plugin-push-baidu.git",
-    "cordovaPlugin": {
-      "name": "cordova-plugin-push-baidu"
-    }
-  },
-  {
     "packageName": "@awesome-cordova-plugins/barcode-scanner",
     "displayName": "Barcode Scanner",
     "description": "\nThe Barcode Scanner Plugin opens a camera view and automatically scans a barcode, returning the data back to you.\n\nRequires Cordova plugin: `phonegap-plugin-barcodescanner`. For more info, please see the [BarcodeScanner plugin docs](https://github.com/phonegap/phonegap-plugin-barcodescanner).\n",
@@ -588,35 +493,6 @@
     "repo": "https://github.com/phonegap/phonegap-plugin-barcodescanner",
     "cordovaPlugin": {
       "name": "phonegap-plugin-barcodescanner"
-    }
-  },
-  {
-    "packageName": "@awesome-cordova-plugins/base64-to-gallery",
-    "displayName": "Base64 To Gallery",
-    "description": "This plugin allows you to save base64 data as a png image into the device",
-    "usage": "\n```typescript\nimport { Base64ToGallery } from '@awesome-cordova-plugins/base64-to-gallery/ngx';\n\nconstructor(private base64ToGallery: Base64ToGallery) { }\n\n\n...\n\n\nthis.base64ToGallery.base64ToGallery(base64Data, { prefix: '_img' }).then(\n  res => console.log('Saved image to gallery ', res),\n  err => console.log('Error saving image to gallery ', err)\n);\n```",
-    "platforms": [
-      "Android",
-      "iOS",
-      "Windows Phone 8"
-    ],
-    "repo": "https://github.com/Nexxa/cordova-base64-to-gallery",
-    "cordovaPlugin": {
-      "name": "cordova-base64-to-gallery"
-    }
-  },
-  {
-    "packageName": "@awesome-cordova-plugins/base64",
-    "displayName": "Base64",
-    "description": "\nThis Plugin is used to encode base64 of any file, it uses js code for iOS, but in case of android it uses native code to handle android versions lower than v.3\n",
-    "usage": "\n```typescript\nimport { Base64 } from '@awesome-cordova-plugins/base64/ngx';\n\nconstructor(private base64: Base64) { }\n\n...\n\nlet filePath: string = 'file:///...';\nthis.base64.encodeFile(filePath).then((base64File: string) => {\n  console.log(base64File);\n}, (err) => {\n  console.log(err);\n});\n\n```\n",
-    "platforms": [
-      "Android",
-      "iOS"
-    ],
-    "repo": "https://github.com/hazemhagrass/phonegap-base64",
-    "cordovaPlugin": {
-      "name": "com-badrit-base64"
     }
   },
   {
@@ -689,20 +565,6 @@
     "repo": "https://github.com/BlinkID/blinkid-phonegap",
     "cordovaPlugin": {
       "name": "blinkid-cordova"
-    }
-  },
-  {
-    "packageName": "@awesome-cordova-plugins/blinkup",
-    "displayName": "BlinkUp",
-    "description": "\nElectric Imp BlinkUp ionic plugin.\n",
-    "usage": "\n```typescript\nimport { BlinkUp } from '@awesome-cordova-plugins/blinkup/ngx';\n\nconst options = <BlinkUpWifiOptions>{\n   apiKey: 'API_KEY',\n   timeoutMs: 60000,\n   ssid: 'MY_SSID',\n   password: 'MY_PASSWORD'\n }\n BlinkUp.flashWifiBlinkUp(options).subscribe(\n    (result) => console.log('Done'),\n    (error) => console.log(error)\n  )\n```\n",
-    "platforms": [
-      "Android",
-      "iOS"
-    ],
-    "repo": "https://github.com/SensorShare/cordova-plugin-blinkup",
-    "cordovaPlugin": {
-      "name": "cordova-plugin-blinkup"
     }
   },
   {
@@ -781,20 +643,6 @@
     }
   },
   {
-    "packageName": "@awesome-cordova-plugins/brightness",
-    "displayName": "Brightness",
-    "description": "\nThe Brightness plugin let you control the display brightness of your device.\n\nRequires Cordova plugin: `cordova-plugin-brightness`. For more info, please see the [Brightness plugin docs](https://github.com/mgcrea/cordova-plugin-brightness).\n",
-    "usage": "\n```typescript\nimport { Brightness } from '@awesome-cordova-plugins/brightness/ngx';\n\nconstructor(private brightness: Brightness) { }\n\n...\n\nlet brightnessValue = 0.8;\nthis.brightness.setBrightness(brightnessValue);\n```\n\n",
-    "platforms": [
-      "Android",
-      "iOS"
-    ],
-    "repo": "https://github.com/mgcrea/cordova-plugin-brightness",
-    "cordovaPlugin": {
-      "name": "cordova-plugin-brightness"
-    }
-  },
-  {
     "packageName": "@awesome-cordova-plugins/broadcaster",
     "displayName": "Broadcaster",
     "description": "\nThis plugin adds exchanging events between native code and your app.\n",
@@ -807,20 +655,6 @@
     "repo": "https://github.com/bsorrentino/cordova-broadcaster",
     "cordovaPlugin": {
       "name": "cordova-plugin-broadcaster"
-    }
-  },
-  {
-    "packageName": "@awesome-cordova-plugins/browser-tab",
-    "displayName": "Browser Tab",
-    "description": "\nThis plugin provides an interface to in-app browser tabs that exist on some mobile platforms, specifically [Custom Tabs](http://developer.android.com/tools/support-library/features.html#custom-tabs) on Android (including the [Chrome Custom Tabs](https://developer.chrome.com/multidevice/android/customtabs) implementation), and [SFSafariViewController](https://developer.apple.com/library/ios/documentation/SafariServices/Reference/SFSafariViewController_Ref/) on iOS.\n",
-    "usage": "\n```typescript\nimport { BrowserTab } from '@awesome-cordova-plugins/browser-tab/ngx';\n\nconstructor(private browserTab: BrowserTab) {\n\n  browserTab.isAvailable()\n    .then(isAvailable => {\n      if (isAvailable) {\n        browserTab.openUrl('https://ionic.io');\n      } else {\n        // open URL with InAppBrowser instead or SafariViewController\n      }\n    });\n}\n\n```\n",
-    "platforms": [
-      "Android",
-      "iOS"
-    ],
-    "repo": "https://github.com/google/cordova-plugin-browsertab",
-    "cordovaPlugin": {
-      "name": "cordova-plugin-browsertab"
     }
   },
   {
@@ -932,20 +766,6 @@
     "premierSlug": "camera"
   },
   {
-    "packageName": "@awesome-cordova-plugins/card-io",
-    "displayName": "Card IO",
-    "description": "",
-    "usage": "\nThis plug-in exposes card.io credit card scanning.\n\n**NOTE**: If you would like to actually process a credit card charge, you might be interested in the [PayPal Cordova Plug-in](https://github.com/paypal/PayPal-Cordova-Plugin).\n\nRequires Cordova plugin: `card.io.cordova.mobilesdk`. For more info, please see the [Card IO plugin docs](https://github.com/card-io/card.io-Cordova-Plugin).\n\nNote: For use with iOS 10 + When building your app with the iOS 10 SDK +, you have to add some info to the info.plist file. This is due to increased security in iOS 10. Go to your app directory and search for the <your app name>Info.plist file. Add the following lines in the main <dict> element.\n```xml\n<key>NSCameraUsageDescription</key>\n<string>To scan credit cards.</string>\n```\n```typescript\nimport { CardIO } from '@awesome-cordova-plugins/card-io/ngx';\n\nconstructor(private cardIO: CardIO) { }\n\n...\n\n\nthis.cardIO.canScan()\n  .then(\n    (res: boolean) => {\n      if(res){\n        let options = {\n          requireExpiry: true,\n          requireCVV: false,\n          requirePostalCode: false\n        };\n        this.cardIO.scan(options);\n      }\n    }\n  );\n```",
-    "platforms": [
-      "Android",
-      "iOS"
-    ],
-    "repo": "https://github.com/card-io/card.io-Cordova-Plugin",
-    "cordovaPlugin": {
-      "name": "card.io.cordova.mobilesdk"
-    }
-  },
-  {
     "packageName": "@awesome-cordova-plugins/chooser",
     "displayName": "Chooser",
     "description": "\nFile chooser plugin for Cordova.\n\nThe following must be added to config.xml to prevent crashing when selecting large files on Android:\n```xml\n<platform name=\"android\">\n <edit-config\n   file=\"app/src/main/AndroidManifest.xml\"\n   mode=\"merge\"\n   target=\"/manifest/application\">\n   <application android:largeHeap=\"true\" />\n </edit-config>\n</platform>\n```\n",
@@ -957,19 +777,6 @@
     "repo": "https://github.com/cyph/cordova-plugin-chooser",
     "cordovaPlugin": {
       "name": "cordova-plugin-chooser"
-    }
-  },
-  {
-    "packageName": "@awesome-cordova-plugins/class-kit",
-    "displayName": "Class Kit",
-    "description": "Plugin for using Apple's ClassKit framework.\n\n\nPrerequisites:\nOnly works with Xcode 9.4 and iOS 11.4. Your Provisioning Profile must include the ClassKit capability. Read more about how to Request ClassKit Resources (https://developer.apple.com/contact/classkit/) in here: https://developer.apple.com/documentation/classkit/enabling_classkit_in_your_app.\nAlso note that you can’t test ClassKit behavior in Simulator because Schoolwork isn’t available in that environment.\n",
-    "usage": "\n```typescript\nimport { ClassKit, CCKContext, CCKBinaryItem, CCKQuantityItem, CCKScoreItem, CCKContextTopic, CCKContextType, CCKBinaryType } from '@awesome-cordova-plugins/class-kit/ngx';\n\n// Init contexts defined in XML file 'CCK-contexts.xml'\nconstructor( ..., private classKit: ClassKit) {\n  platform.ready().then(() => {\n    classKit.initContextsFromXml(\"classkitplugin://\")\n      .then(() => console.log(\"success\"))\n      .catch(e => console.log(\"error: \", e));\n  });\n}\n\n...\n\n// Init context with identifier path\nconst context: CCKContext = {\n  identifierPath: [\"parent_title_one\", \"child_one\", \"child_one_correct_quiz\"],\n  title: \"child one correct quiz\",\n  type: CCKContextType.exercise,\n  topic: CCKContextTopic.science,\n  displayOrder: 0\n};\n\nthis.classKit.addContext(\"classkitplugin://\", context)\n   .then(() => console.log(\"success\"))\n   .catch(e => console.log(\"error: \", e));\n\n\n// Remove all contexts\nthis.classKit.removeContexts()\n   .then(() => console.log(\"success\"))\n   .catch(e => console.log(\"error: \", e));\n\n\n// Remove context with identifier path\nthis.classKit.removeContext([\"parent_title_one\", \"child_one\", \"child_one_correct_quiz\"])\n   .then(() => console.log(\"success\"))\n   .catch(e => console.log(\"error: \", e));\n\n\n// Begin a new activity or restart an activity for a given context\nthis.classKit.beginActivity([\"parent_title_one\", \"child_two\", \"child_two_quiz\"], false)\n   .then(() => console.log(\"success\"))\n   .catch(e => console.log(\"error: \", e));\n\n\n// Adds a progress range to the active given activity\nthis.classKit.setProgressRange(0, 0.66)\n   .then(() => console.log(\"success\"))\n   .catch(e => console.log(\"error: \", e));\n\n\n// Adds a progress to the active given activity\nthis.classKit.setProgress(0.66)\n   .then(() => console.log(\"success\"))\n   .catch(e => console.log(\"error: \", e));\n\n\n// Adds activity information that is true or false, pass or fail, yes or no\nconst binaryItem: CCKBinaryItem = {\n  identifier: \"child_two_quiz_IDENTIFIER_1\",\n  title: \"CHILD TWO QUIZ 1\",\n  type: CCKBinaryType.trueFalse,\n  isCorrect: isCorrect,\n  isPrimaryActivityItem: false\n};\n\nthis.classKit.setBinaryItem(binaryItem)\n   .then(() => console.log(\"success\"))\n   .catch(e => console.log(\"error: \", e));\n\n\n// Adds activity information that signifies a score out of a possible maximum\nconst scoreItem: CCKScoreItem = {\n  identifier: \"total_score\",\n  title: \"Total Score :-)\",\n  score: 0.66,\n  maxScore: 1.0,\n  isPrimaryActivityItem: true\n};\n\nthis.classKit.setScoreItem(scoreItem)\n   .then(() => console.log(\"success\"))\n   .catch(e => console.log(\"error: \", e));\n\n\n// Activity information that signifies a quantity\nconst quantityItem: CCKQuantityItem = {\n   identifier: \"quantity_item_hints\",\n   title: \"Hints\",\n   quantity: 12,\n   isPrimaryActivityItem: false\n};\n\nthis.classKit.setQuantityItem(quantityItem)\n   .then(() => console.log(\"success\"))\n   .catch(e => console.log(\"error: \", e));\n\n```\n",
-    "platforms": [
-      "iOS"
-    ],
-    "repo": "https://github.com/sebastianbaar/cordova-plugin-classkit.git",
-    "cordovaPlugin": {
-      "name": "cordova-plugin-classkit"
     }
   },
   {
@@ -1047,70 +854,6 @@
     }
   },
   {
-    "packageName": "@awesome-cordova-plugins/colored-browser-tabs",
-    "displayName": "Colored Browser Tabs",
-    "description": "\nThis plugin opens Chrome Custom Tabs on Android or SafariViewController on iOS\n",
-    "usage": "\n```typescript\nimport { ColoredBrowserTabs } from '@awesome-cordova-plugins/colored-browser-tabs/ngx';\n\n\nconstructor(private browserTabs: ColoredBrowserTabs) { }\n\n...\n\n\nthis.browserTabs.openTab('www.example.url', '#ffffff')\n  .subscribe()\n\nthis.browserTabs.openTabWithAnimation('www.example.url', 'slide_x', '#ffffff')\n  .subscribe()\n\n```\n",
-    "platforms": [
-      "Android",
-      "iOS"
-    ],
-    "repo": "https://github.com/TobyEb/cordova-plugin-colored-browser-tabs",
-    "cordovaPlugin": {
-      "name": "cordova-plugin-colored-browser-tabs"
-    }
-  },
-  {
-    "packageName": "@awesome-cordova-plugins/contacts",
-    "displayName": "Contacts",
-    "description": "\nAccess and manage Contacts on the device.\n",
-    "usage": "\n\n```typescript\nimport { Contacts, Contact, ContactField, ContactName } from '@awesome-cordova-plugins/contacts/ngx';\n\nconstructor(private contacts: Contacts) { }\n\nlet contact: Contact = this.contacts.create();\n\ncontact.name = new ContactName(null, 'Smith', 'John');\ncontact.phoneNumbers = [new ContactField('mobile', '6471234567')];\ncontact.save().then(\n  () => console.log('Contact saved!', contact),\n  (error: any) => console.error('Error saving contact.', error)\n);\n\n```",
-    "platforms": [
-      "Android",
-      "BlackBerry 10",
-      "Browser",
-      "Firefox OS",
-      "iOS",
-      "Ubuntu",
-      "Windows",
-      "Windows 8",
-      "Windows Phone"
-    ],
-    "repo": "https://github.com/apache/cordova-plugin-contacts",
-    "cordovaPlugin": {
-      "name": "cordova-plugin-contacts"
-    },
-    "premierSlug": "contacts"
-  },
-  {
-    "packageName": "@awesome-cordova-plugins/couchbase-lite",
-    "displayName": "Couchbase Lite",
-    "description": "\nPlugin to install Couchbase Lite in your PhoneGap app on iOS or Android <docs-card href=\"https://ionicframework.com/integrations/couchbase-lite\" ionicon=\"alert\">This Plugin is no longer supported by Couchbase. Please see our Couchbase Lite Integration</docs-card>\n",
-    "usage": "\n```typescript\nimport { CouchbaseLite } from '@awesome-cordova-plugins/couchbase-lite/ngx';\nimport { Http } from '@angular/http';\nimport { Observable } from 'rxjs'\nconstructor(private couchbase: CouchbaseLite, private platform:Platform,private _http:Http) {\n   this.initMethod();\n}\nurl:string;\ninitMethod() {\n   this.couchbase.getURL().then((url)=> {\n       this.url = url;\n   })\n}\ngetUrl() {\n     return this.url;\n}\n// DATABASES //\ncreateDatabase(database_name:string) {\n     let url = this.getUrl();\n     url = url+database_name;\n     return this._http\n       .put(url)\n       .map(data => { this.results = data['results'] })\n       .catch((error:any) => {\n          return Observable.throw(error.json() || 'Couchbase Lite error');\n        })\n }\ndeleteDatabase(database_name:string) {\n     let url = this.getUrl();\n     url = url+database_name;\n     return this._http\n       .delete(url)\n       .map(data => { this.results = data['results'] })\n       .catch((error:any) => {\n          return Observable.throw(error.json() || 'Couchbase Lite error');\n       })\n}\ngetAllDbs() {\n     let url = this.getUrl();\n     url = url+'_all_dbs';\n     return this._http\n       .get(url)\n       .map(data => { this.results = data['results'] })\n       .catch((error:any) => {\n          return Observable.throw(error.json() || 'Couchbase Lite error');\n       })\n}\n// DOCUMENTS //\ngetAllDocuments(database_name:string){\n     let url = this.getUrl();\n     // include_docs=true will include a doc inside response, it is false by default\n     url = url + database_name + '/_all_docs?include_docs=true';\n     return this._http\n       .get(url)\n       .map(data => { this.results = data['results'] })\n       .catch((error:any) => {\n          return Observable.throw(error.json() || 'Couchbase Lite error');\n       })        .\n}\ncreateDocument(database_name:string,document){\n     let url = this.getUrl();\n     url = url + database_name;\n     return this._http\n       .post(url,document)\n       .map(data => { this.results = data['results'] })\n       .catch((error:any) => {\n          return Observable.throw(error.json() || 'Couchbase Lite error');\n       })        .\n}\nlet document = {\n   _id:'You can either specify the document ID (must be string) else couchbase generates one for your doc',\n   data:{name:'sandman',age:25,city:pune}\n }\ncreateDocument('justbe', document);\n// successful response\n{ \"id\": \"string\",\"rev\": \"string\",\"ok\": true }\nupdateDocument(database_name:string,document){\n     let url = this.getUrl();\n     url = url + database_name + '/' + document._id;\n     return this._http\n       .put(url,document)\n       .map(data => { this.results = data['results'] })\n       .catch((error:any) => {\n          return Observable.throw(error.json() || 'Couchbase Lite error');\n       })        .\n}\n// for updation of document your document must contain most recent rev(revision) id.\n// for each updation of document new rev id is get generated\n// successful response\n{ \"id\": \"string\",\"rev\": \"string(new revision id)\",\"ok\": true }\ndeleteDocument(database_name:string,document){\n     let url = this.getUrl();\n     url = url + database_name + '/' + document._id +'?rev='+doc._rev;\n     return this._http\n       .delete(url)\n       .map(data => { this.results = data['results'] })\n       .catch((error:any) => {\n          return Observable.throw(error.json() || 'Couchbase Lite error');\n       })        .\n}\n\n\n```\n",
-    "platforms": [
-      "Android",
-      "iOS"
-    ],
-    "repo": "https://github.com/couchbaselabs/Couchbase-Lite-PhoneGap-Plugin",
-    "cordovaPlugin": {
-      "name": "couchbase-lite-phonegap-plugin"
-    }
-  },
-  {
-    "packageName": "@awesome-cordova-plugins/crop",
-    "displayName": "Crop",
-    "description": "Crops images",
-    "usage": "\n```typescript\nimport { Crop } from '@awesome-cordova-plugins/crop/ngx';\n\nconstructor(private crop: Crop) { }\n\n...\n\nthis.crop.crop('path/to/image.jpg', {quality: 75})\n  .then(\n    newImage => console.log('new image path is: ' + newImage),\n    error => console.error('Error cropping image', error)\n  );\n```",
-    "platforms": [
-      "Android",
-      "iOS"
-    ],
-    "repo": "https://github.com/jeduan/cordova-plugin-crop",
-    "cordovaPlugin": {
-      "name": "cordova-plugin-crop"
-    }
-  },
-  {
     "packageName": "@awesome-cordova-plugins/custom-uisdk",
     "displayName": "CustomUISDK",
     "description": "\nThis plugin is used to access Paytm's native CustomUISDK framework's apis.\n",
@@ -1122,35 +865,6 @@
     "installVariables": [],
     "cordovaPlugin": {
       "name": "cordova-paytm-customuisdk"
-    }
-  },
-  {
-    "packageName": "@awesome-cordova-plugins/date-picker",
-    "displayName": "Date Picker",
-    "description": "\nThe DatePicker plugin allows the user to fetch date or time using native dialogs.\n",
-    "usage": "\n```typescript\nimport { DatePicker } from '@awesome-cordova-plugins/date-picker/ngx';\n\nconstructor(private datePicker: DatePicker) { }\n\n\n...\n\n\nthis.datePicker.show({\n  date: new Date(),\n  mode: 'date',\n  androidTheme: this.datePicker.ANDROID_THEMES.THEME_HOLO_DARK\n}).then(\n  date => console.log('Got date: ', date),\n  err => console.log('Error occurred while getting date: ', err)\n);\n```",
-    "platforms": [
-      "Android",
-      "iOS",
-      "Windows"
-    ],
-    "repo": "https://github.com/VitaliiBlagodir/cordova-plugin-datepicker",
-    "cordovaPlugin": {
-      "name": "cordova-plugin-datepicker"
-    }
-  },
-  {
-    "packageName": "@awesome-cordova-plugins/db-meter",
-    "displayName": "DB Meter",
-    "description": "This plugin defines a global DBMeter object, which permits to get the decibel values from the microphone.",
-    "usage": "\n```typescript\nimport { DBMeter } from '@awesome-cordova-plugins/db-meter/ngx';\n\nconstructor(private dbMeter: DBMeter) { }\n\n...\n\n\n// Start listening\nlet subscription = this.dbMeter.start().subscribe(\n  data => console.log(data)\n);\n\n// Check if we are listening\nthis.dbMeter.isListening().then(\n  isListening => console.log(isListening)\n);\n\n// Stop listening\nsubscription.unsubscribe();\n\n// Delete DBMeter instance from memory\nthis.dbMeter.delete().then(\n  () => console.log('Deleted DB Meter instance'),\n  error => console.log('Error occurred while deleting DB Meter instance')\n);\n```\n",
-    "platforms": [
-      "Android",
-      "iOS"
-    ],
-    "repo": "https://github.com/akofman/cordova-plugin-dbmeter",
-    "cordovaPlugin": {
-      "name": "cordova-plugin-dbmeter"
     }
   },
   {
@@ -1187,20 +901,6 @@
     "cordovaPlugin": {
       "name": "cordova-device-accounts-v2"
     }
-  },
-  {
-    "packageName": "@awesome-cordova-plugins/device-feedback",
-    "displayName": "Device Feedback",
-    "description": "\n\nPlugin that lets you provide haptic or acoustic feedback on Android devices.\n",
-    "usage": "\n```typescript\nimport { DeviceFeedback } from '@awesome-cordova-plugins/device-feedback/ngx';\n\nconstructor(private deviceFeedback: DeviceFeedback) { }\n\n...\n\n\nthis.deviceFeedback.acoustic();\n\nthis.deviceFeedback.haptic(0);\n\nthis.deviceFeedback.isFeedbackEnabled().then(feedback => {\n    console.log(feedback);\n    // {\n    //   acoustic: true,\n    //   haptic: true\n    // }\n  });\n\n```",
-    "platforms": [
-      "Android"
-    ],
-    "repo": "https://github.com/VVelda/device-feedback",
-    "cordovaPlugin": {
-      "name": "cordova-plugin-velda-devicefeedback"
-    },
-    "premierSlug": "vibration"
   },
   {
     "packageName": "@awesome-cordova-plugins/device-motion",
@@ -1369,19 +1069,6 @@
     }
   },
   {
-    "packageName": "@awesome-cordova-plugins/downloader",
-    "displayName": "Downloader",
-    "description": "\nThis plugin is designed to support downloading files using Android DownloadManager.\n\n",
-    "usage": "\n```typescript\nimport { Downloader } from '@awesome-cordova-plugins/downloader/ngx';\n\n\nconstructor(private downloader: Downloader) { }\n\n...\n\n   var request: DownloadRequest = {\n          uri: YOUR_URI,\n          title: 'MyDownload',\n          description: '',\n          mimeType: '',\n          visibleInDownloadsUi: true,\n          notificationVisibility: NotificationVisibility.VisibleNotifyCompleted,\n          destinationInExternalFilesDir: {\n              dirType: 'Downloads',\n              subPath: 'MyFile.apk'\n          }\n      };\n\n\n  this.downloader.download(request)\n  \t\t\t.then((location: string) => console.log('File downloaded at:'+location))\n  \t\t\t.catch((error: any) => console.error(error));\n\n```",
-    "platforms": [
-      "Android"
-    ],
-    "repo": "https://github.com/Luka313/integrator-cordova-plugin-downloader.git",
-    "cordovaPlugin": {
-      "name": "integrator-cordova-plugin-downloader"
-    }
-  },
-  {
     "packageName": "@awesome-cordova-plugins/email-composer",
     "displayName": "Email Composer",
     "description": "\n\nRequires Cordova plugin: cordova-plugin-email-composer. For more info, please see the [Email Composer plugin docs](https://github.com/hypery2k/cordova-email-plugin).\n\n",
@@ -1399,47 +1086,6 @@
       "name": "cordova-plugin-email-composer"
     },
     "premierSlug": "email-composer"
-  },
-  {
-    "packageName": "@awesome-cordova-plugins/emm-app-config",
-    "displayName": "Emm App Config",
-    "description": "\nThis plugin provides information on EMM application configuration\n\nRequires the Cordova plugin: `cordova-plugin-emm-app-config`. For more info, please see the [Cordova EMM App Config Plugin Docs](https://github.com/oracle/cordova-plugin-emm-app-config).\n\n",
-    "usage": "\n```typescript\nimport { EmmAppConfig } from '@awesome-cordova-plugins/emm-app-config/ngx';\n\n\nconstructor(private readonly emmAppConfig: EmmAppConfig) { }\n\n...\n\n// Get all the values of the emm app configuration\nconst values = this.emmAppConfig.getValue();\n\n// Get specific value of the emm app configuration\nconst value = this.emmAppConfig.getValue('serverUrl');\n\n// Get an event every time the emm app config changes\nthis.emmAppConfig.registerChangedListener()\n  .subscribe(() => console.log('App config changes'));\n\n```\n",
-    "platforms": [
-      "Android",
-      "iOS"
-    ],
-    "repo": "https://github.com/oracle/cordova-plugin-emm-app-config",
-    "cordovaPlugin": {
-      "name": "cordova-plugin-emm-app-config"
-    }
-  },
-  {
-    "packageName": "@awesome-cordova-plugins/estimote-beacons",
-    "displayName": "Estimote Beacons\n",
-    "description": "\nThis plugin enables communication between a phone and Estimote Beacons peripherals.\n",
-    "usage": "\n```typescript\nimport { EstimoteBeacons } from '@awesome-cordova-plugins/estimote-beacons/ngx';\n\nconstructor(private eb: EstimoteBeacons) { }\n\n...\n\nthis.eb.requestAlwaysAuthorization();\n\nthis.eb.enableAnalytics(true);\n\n```\n",
-    "platforms": [
-      "Android",
-      "iOS"
-    ],
-    "repo": "https://github.com/evothings/phonegap-estimotebeacons",
-    "cordovaPlugin": {
-      "name": "cordova-plugin-estimote"
-    }
-  },
-  {
-    "packageName": "@awesome-cordova-plugins/extended-device-information",
-    "displayName": "Extended Device Information",
-    "description": "\nRetrieves additional device information from the Device Hardware\n - memory\n - cpumhz\n - totalstorage\n - freestorage\n",
-    "usage": "\n```typescript\nimport { ExtendedDeviceInformation } from '@awesome-cordova-plugins/extended-device-information/ngx';\n\n\nconstructor(private extendedDeviceInformation: ExtendedDeviceInformation) { }\n\n...\n\nconsole.log('The Memory is: ' + this.extendedDeviceInformation.memory);\n```\n",
-    "platforms": [
-      "Android"
-    ],
-    "repo": "https://github.com/danielehrhardt/cordova-plugin-extended-device-information",
-    "cordovaPlugin": {
-      "name": "cordova-plugin-extended-device-information"
-    }
   },
   {
     "packageName": "@awesome-cordova-plugins/fabric",
@@ -1492,33 +1138,6 @@
       "name": "cordova-plugin-fcm-with-dependecy-updated"
     },
     "capacitorIncompatible": true
-  },
-  {
-    "packageName": "@awesome-cordova-plugins/file-chooser",
-    "displayName": "File Chooser",
-    "description": "\n\nOpens the file picker on Android for the user to select a file, returns a file URI.\n",
-    "usage": "\n```typescript\nimport { FileChooser } from '@awesome-cordova-plugins/file-chooser/ngx';\n\nconstructor(private fileChooser: FileChooser) { }\n\n...\n\nthis.fileChooser.open()\n  .then(uri => console.log(uri))\n  .catch(e => console.log(e));\n\n```",
-    "platforms": [
-      "Android"
-    ],
-    "repo": "https://github.com/ihadeed/cordova-filechooser",
-    "cordovaPlugin": {
-      "name": "cordova-plugin-filechooser"
-    }
-  },
-  {
-    "packageName": "@awesome-cordova-plugins/file-encryption",
-    "displayName": "File Encryption",
-    "description": "\nSimple file encryption for Cordova.\n",
-    "usage": "\n```typescript\nimport { FileEncryption } from '@awesome-cordova-plugins/file-encryption/ngx';\n\n\nconstructor(private fileEncryption: FileEncryption) { }\n\n...\n\nthis.fileEncryption.decrypt('assets/json/topSecret.json', 'secretKey');\n\nthis.fileEncryption.encrypt('assets/json/topSecret.json', 'secretKey');\n\n```\n",
-    "platforms": [
-      "Android",
-      "iOS"
-    ],
-    "repo": "https://github.com/disusered/cordova-safe",
-    "cordovaPlugin": {
-      "name": "cordova-safe"
-    }
   },
   {
     "packageName": "@awesome-cordova-plugins/file-opener",
@@ -1766,20 +1385,6 @@
     }
   },
   {
-    "packageName": "@awesome-cordova-plugins/flurry-analytics",
-    "displayName": "Flurry Analytics",
-    "description": "\nThis plugin connects to Flurry Analytics SDK\n",
-    "usage": "\n```typescript\nimport { FlurryAnalytics, FlurryAnalyticsObject, FlurryAnalyticsOptions } from '@awesome-cordova-plugins/flurry-analytics/ngx';\n\nconstructor(private flurryAnalytics: FlurryAnalytics) { }\n\n...\n\nconst options: FlurryAnalyticsOptions = {\n appKey: '<your app key>', // REQUIRED\n reportSessionsOnClose: true,\n enableLogging: true\n}\n\nlet fa: FlurryAnalyticsObject = this.flurryAnalytics.create(options);\n\nfa.logEvent('event name')\n  .then(() => console.log('Logged an event!'))\n  .catch(e => console.log('Error logging the event', e));\n\n```",
-    "platforms": [
-      "Android",
-      "iOS"
-    ],
-    "repo": "https://github.com/blakgeek/cordova-plugin-flurryanalytics",
-    "cordovaPlugin": {
-      "name": "cordova-plugin-flurryanalytics"
-    }
-  },
-  {
     "packageName": "@awesome-cordova-plugins/foreground-service",
     "displayName": "Foreground Service",
     "description": "\nThis plugin allows for android devices to continue running services in the background, using a\nforeground ongoing notification. This is targeted towards use with plugins such as\n'cordova-geolocation' that will not run while the app is in the background on android API 26+.\n\nFor android API 28+, the following xml snippet should be inserted into ```config.xml```:\n\n```\n...\n<platform name=\"android\">\n  <config-file parent=\"/*\" target=\"AndroidManifest.xml\">\n    <uses-permission android:name=\"android.permission.FOREGROUND_SERVICE\" />\n  </config-file>\n  ...\n```",
@@ -1804,20 +1409,6 @@
     "repo": "https://github.com/xfally/cordova-plugin-ftp",
     "cordovaPlugin": {
       "name": "cordova-plugin-ftp"
-    }
-  },
-  {
-    "packageName": "@awesome-cordova-plugins/full-screen-image",
-    "displayName": "Full Screen Image",
-    "description": "\nThis plugin does something\n",
-    "usage": "\n```typescript\nimport { FullScreenImage } from '@awesome-cordova-plugins/full-screen-image';\n\n\nconstructor(private fullScreenImage: FullScreenImage) { }\n\n...\n\nthis.fullScreenImage.showImageURL('/assets/...')\n  .then((data: any) => console.log(res))\n  .catch((error: any) => console.error(error));\n\n...\n\nthis.fullScreenImage.showImageBase64('iVBORw0KGgoAAAANSUhEUgAAA...')\n  .then((data: any) => console.log(res))\n  .catch((error: any) => console.error(error));\n\n```\n",
-    "platforms": [
-      "Android",
-      "iOS"
-    ],
-    "repo": "https://github.com/keensoft/FullScreenImage-Cordova-Plugin",
-    "cordovaPlugin": {
-      "name": "es.keensoft.fullscreenimage"
     }
   },
   {
@@ -1855,22 +1446,6 @@
     ],
     "cordovaPlugin": {
       "name": "cordova-plugin-getuisdk"
-    }
-  },
-  {
-    "packageName": "@awesome-cordova-plugins/geofence",
-    "displayName": "Geofence",
-    "description": "Monitors circular geofences around latitude/longitude coordinates, and sends a notification to the user when the boundary of a geofence is crossed. Notifications can be sent when the user enters and/or exits a geofence.\nGeofences persist after device reboot. Geofences will be monitored even when the app is not running.",
-    "usage": "\n```typescript\nimport { Geofence } from '@awesome-cordova-plugins/geofence/ngx';\n\n...\n\nconstructor(private geofence: Geofence) {\n  // initialize the plugin\n  geofence.initialize().then(\n    // resolved promise does not return a value\n    () => console.log('Geofence Plugin Ready'),\n    (err) => console.log(err)\n  )\n}\n\n...\n\nprivate addGeofence() {\n  //options describing geofence\n  let fence = {\n    id: '69ca1b88-6fbe-4e80-a4d4-ff4d3748acdb', //any unique ID\n    latitude:       37.285951, //center of geofence radius\n    longitude:      -121.936650,\n    radius:         100, //radius to edge of geofence in meters\n    transitionType: 3, //see 'Transition Types' below\n    notification: { //notification settings\n        id:             1, //any unique ID\n        title:          'You crossed a fence', //notification title\n        text:           'You just arrived to Gliwice city center.', //notification body\n        openAppOnClick: true //open app when notification is tapped\n    }\n  }\n\n  this.geofence.addOrUpdate(fence).then(\n     () => console.log('Geofence added'),\n     (err) => console.log('Geofence failed to add')\n   );\n}\n\n```\n### Transition Types ###\nTransition type specifies whether the geofence should trigger when the user enters and/or leaves the geofence.\n\n#### Supported values ####\n- 1: Enter\n- 2: Leave\n- 3: Both\n\n### Defining a Geofence ###\nGeofences are defined by an object that is passed to `addOrUpdate()`. Object properties are:\n- id: Any unique ID for the geofence. This ID is used to remove and update a geofence\n- latitude: Latitude coordinate of the center of the geofence radius\n- longitude: Latitude coordinate of the center of the geofence radius\n- radius: Radius from the center to the edge of the geofence\n- transitionType: Type of geofence transition to monitor for. See 'Transition Types' above\n- notification: Object. Options for defining the notification sent when a geofence is crossed\n  - id: Any unique ID\n  - title: Notification title\n  - text: Notification body\n  - openAppOnClick: Boolean. Whether to open the app when the notification is tapped by the user\n\n### Troubleshooting ###\n#### I get compile errors when I run `ionic build ios` or `ionic run ios`. ####\nThis could be caused by the Cordova project directory in `/platforms/ios` not being named correctly.\nTry running `ionic cordova platform rm <platform>` then run `ionic cordova platform add <platform>` to recreate the\nplatform directories.\n",
-    "platforms": [
-      "Android",
-      "iOS",
-      "Windows",
-      "Windows Phone 8"
-    ],
-    "repo": "https://github.com/cowbell/cordova-plugin-geofence",
-    "cordovaPlugin": {
-      "name": "cordova-plugin-geofence"
     }
   },
   {
@@ -1975,36 +1550,6 @@
     }
   },
   {
-    "packageName": "@awesome-cordova-plugins/gyroscope",
-    "displayName": "Gyroscope",
-    "description": "Read Gyroscope sensor data",
-    "usage": "\n```typescript\nimport { Gyroscope, GyroscopeOrientation, GyroscopeOptions } from '@awesome-cordova-plugins/gyroscope/ngx';\n\n\nconstructor(private gyroscope: Gyroscope) { }\n\n...\n\n\nlet options: GyroscopeOptions = {\n   frequency: 1000\n}\n\nthis.gyroscope.getCurrent(options)\n  .then((orientation: GyroscopeOrientation) => {\n     console.log(orientation.x, orientation.y, orientation.z, orientation.timestamp);\n   })\n  .catch()\n\n\nthis.gyroscope.watch()\n   .subscribe((orientation: GyroscopeOrientation) => {\n      console.log(orientation.x, orientation.y, orientation.z, orientation.timestamp);\n   });\n\n```",
-    "platforms": [
-      "Android",
-      "iOS"
-    ],
-    "repo": "https://github.com/NeoLSN/cordova-plugin-gyroscope",
-    "cordovaPlugin": {
-      "name": "cordova-plugin-gyroscope"
-    }
-  },
-  {
-    "packageName": "@awesome-cordova-plugins/hce",
-    "displayName": "hce",
-    "description": "\nHCE Cordova Wrapper\n",
-    "usage": "\n```typescript\nimport { hce } from '@awesome-cordova-plugins/hce/ngx';\n\n\nconstructor(private hce: hce) { }\n\n...\n\nfunction onCommand(command){\n  var commandAsBytes = new Uint8Array(command);\n  var commandAsString = hce.util.byteArrayToHexString(commandAsBytes);\n\n  // do something with the command\n\n  // send the response\n  hce.sendReponse(commandResponse);\n}\nthis.hce.registerCommandCallback().then(onCommand);\n\n```\n",
-    "platforms": [
-      "Android"
-    ],
-    "repo": "https://github.com/don/cordova-plugin-hce",
-    "installVariables": [
-      "AID_FILTER"
-    ],
-    "cordovaPlugin": {
-      "name": "cordova-plugin-hce"
-    }
-  },
-  {
     "packageName": "@awesome-cordova-plugins/header-color",
     "displayName": "Header Color",
     "description": "\nCordova plugin to change color of header in Android Multitask View\n",
@@ -2045,19 +1590,6 @@
     }
   },
   {
-    "packageName": "@awesome-cordova-plugins/hotspot",
-    "displayName": "Hotspot",
-    "description": "\nA Cordova plugin for managing Hotspot networks on Android.\n\nRequires Cordova plugin: `cordova-plugin-hotspot`. For more info, please see the [Hotspot plugin docs](https://github.com/hypery2k/cordova-hotspot-plugin).\n",
-    "usage": "\n```typescript\nimport { Hotspot, HotspotNetwork } from '@awesome-cordova-plugins/hotspot/ngx';\n\nconstructor(private hotspot: Hotspot) { }\n\n...\n\n\nthis.hotspot.scanWifi().then((networks: HotspotNetwork[]) => {\n    console.log(networks);\n});\n\n```",
-    "platforms": [
-      "Android"
-    ],
-    "repo": "https://github.com/hypery2k/cordova-hotspot-plugin",
-    "cordovaPlugin": {
-      "name": "cordova-plugin-hotspot"
-    }
-  },
-  {
     "packageName": "@awesome-cordova-plugins/http",
     "displayName": "HTTP",
     "description": "\nCordova / Phonegap plugin for communicating with HTTP servers. Supports iOS and Android.\n\nAdvantages over Javascript requests:\n- SSL / TLS Pinning\n- CORS restrictions do not apply\n- Handling of HTTP code 401 - read more at [Issue CB-2415](https://issues.apache.org/jira/browse/CB-2415)\n",
@@ -2069,21 +1601,6 @@
     "repo": "https://github.com/silkimen/cordova-plugin-advanced-http",
     "cordovaPlugin": {
       "name": "cordova-plugin-advanced-http"
-    }
-  },
-  {
-    "packageName": "@awesome-cordova-plugins/httpd",
-    "displayName": "Httpd",
-    "description": "\nEmbedded httpd for Cordova apps. Light weight HTTP server.",
-    "usage": "\n```typescript\nimport { Httpd, HttpdOptions } from '@awesome-cordova-plugins/httpd/ngx';\n\nconstructor(private httpd: Httpd) { }\n\n...\n\n\nlet options: HttpdOptions = {\n     www_root: 'httpd_root', // relative path to app's www directory\n     port: 80,\n     localhost_only: false\n }\n\nthis.httpd.startServer(options).subscribe((data) => {\n console.log('Server is live');\n});\n\n```",
-    "platforms": [
-      "Android",
-      "iOS",
-      "macOS"
-    ],
-    "repo": "https://github.com/floatinghotpot/cordova-httpd",
-    "cordovaPlugin": {
-      "name": "cordova-plugin-httpd"
     }
   },
   {
@@ -2194,20 +1711,6 @@
     }
   },
   {
-    "packageName": "@awesome-cordova-plugins/in-app-purchase",
-    "displayName": "In App Purchase",
-    "description": "\nA lightweight Cordova plugin for in app purchases on iOS/Android.\n",
-    "usage": "\n```typescript\nimport { InAppPurchase } from '@awesome-cordova-plugins/in-app-purchase/ngx';\n\nconstructor(private iap: InAppPurchase) { }\n\n...\n\nthis.iap\n .getProducts(['prod1', 'prod2', ...])\n .then((products) => {\n   console.log(products);\n    //  [{ productId: 'com.yourapp.prod1', 'title': '...', description: '...', price: '...' }, ...]\n })\n .catch((err) => {\n   console.log(err);\n });\n\n\nthis.iap\n  .buy('prod1')\n  .then((data)=> {\n    console.log(data);\n    // {\n    //   transactionId: ...\n    //   receipt: ...\n    //   signature: ...\n    // }\n  })\n  .catch((err)=> {\n    console.log(err);\n  });\n\n```\n",
-    "platforms": [
-      "Android",
-      "iOS"
-    ],
-    "repo": "https://github.com/AlexDisler/cordova-plugin-inapppurchase",
-    "cordovaPlugin": {
-      "name": "cordova-plugin-inapppurchase"
-    }
-  },
-  {
     "packageName": "@awesome-cordova-plugins/in-app-review",
     "displayName": "In App Review",
     "description": "\nThis plugin does use the iOS class SKStore​Review​Controller to open the inApp review popup available since iOS 10.3\n\nThis functionality only works on iOS devices\n\n",
@@ -2218,19 +1721,6 @@
     "repo": "https://github.com/omaxlive/com.omarben.inappreview",
     "cordovaPlugin": {
       "name": "com.omarben.inappreview"
-    }
-  },
-  {
-    "packageName": "@awesome-cordova-plugins/index-app-content",
-    "displayName": "Index App Content",
-    "description": "\nThis plugin gives you a Javascript API to interact with Core Spotlight on iOS (=> iOS 9).\nYou can add, update and delete items to the spotlight search index.\nSpotlight Search will include these items in the result list. You can deep-link the search results with your app.\n",
-    "usage": "\n```typescript\nimport { IndexAppContent } from '@awesome-cordova-plugins/index-app-content/ngx';\n\n\nconstructor(private indexAppContent: IndexAppContent) { }\n\n...\n\nvar items = [\n     {\n       domain: 'com.my.domain',\n       identifier: '88asdf7dsf',\n       title: 'Foo',\n       description: 'Bar',\n       url: 'http://location/of/my/image.jpg',\n   },\n   {\n       domain: 'com.other.domain',\n       identifier: '9asd67g6a',\n       title: 'Baz',\n       description: 'Woot',\n       url: 'http://location/of/my/image2.jpg',\n    }\n];\n\nthis.indexAppContent.setItems(items)\n  .then((res: any) => console.log(res))\n  .catch((error: any) => console.error(error));\n\n```\n",
-    "platforms": [
-      "iOS"
-    ],
-    "repo": "https://github.com/johanblomgren/cordova-plugin-indexappcontent",
-    "cordovaPlugin": {
-      "name": "cordova-plugin-indexappcontent"
     }
   },
   {
@@ -2263,22 +1753,6 @@
     "repo": "https://github.com/vstirbu/InstagramPlugin",
     "cordovaPlugin": {
       "name": "cordova-instagram-plugin"
-    }
-  },
-  {
-    "packageName": "@awesome-cordova-plugins/intel-security",
-    "displayName": "Intel Security",
-    "description": "\nThe App Security API enables the use of security properties and capabilities on the platform, using a new set of API defined for application developers. You are not required to be a security expert to make good use of the API. Key elements, such as encryption of data and establishments of capabilities, is abstracted and done by the API implementation, for you.\n\nFor example:\n- Use the API to store (E.g. cache) data locally, using the device non-volatile storage. Data protection/encryption will be done for you by the API implementation\n- Establish a connection with remote server (E.g. XHR) using a protected channel. SSL/TLS establishment and usage will be done for you by the API implementation\n\nFor more information please visit the [API documentation](https://software.intel.com/en-us/app-security-api/api).\n",
-    "usage": "\n```typescript\nimport { IntelSecurity } from '@awesome-cordova-plugins/intel-security/ngx';\n...\nconstructor(private intelSecurity: IntelSecurity) { }\n...\n\nlet storageID = 'id';\n\nthis.intelSecurity.data.createFromData({ data: 'Sample Data' })\n  .then((instanceID: Number) => this.intelSecurity.storage.write({ id: storageId, instanceID: instanceID }))\n  .catch((error: any) => console.log(error));\n\nthis.intelSecurity.storage.read({id: storageID })\n  .then((instanceID: number) => this.intelSecurity.data.getData(instanceID))\n  .then((data: string) => console.log(data)) // Resolves to 'Sample Data'\n  .catch((error: any) => console.log(error));\n\nthis.intelSecurity.storage.delete({ id: storageID })\n  .then(() => console.log('Deleted Successfully'))\n  .catch((error: any) => console.log(error));\n```",
-    "platforms": [
-      "Android",
-      "iOS",
-      "Windows",
-      "Windows Phone 8"
-    ],
-    "repo": "https://github.com/AppSecurityApi/com-intel-security-cordova-plugin",
-    "cordovaPlugin": {
-      "name": "com-intel-security-cordova-plugin"
     }
   },
   {
@@ -2338,37 +1812,6 @@
     }
   },
   {
-    "packageName": "@awesome-cordova-plugins/janalytics",
-    "displayName": "jAnalytics",
-    "description": "\nThis plugin does something\n",
-    "usage": "\n```typescript\nimport { JAnalytics } from '@awesome-cordova-plugins/JAnalytics/ngx';\n\n\nconstructor(private jAnalytics: JAnalytics) { }\n\n...\n\n\nthis.jAnalytics.functionName('Hello', 123)\n  .then((res: any) => console.log(res))\n  .catch((error: any) => console.error(error));\n\n```\n",
-    "platforms": [
-      "Android",
-      "iOS"
-    ],
-    "repo": "https://github.com/jpush/cordova-plugin-janalytics",
-    "installVariables": [
-      "APP_KEY"
-    ],
-    "cordovaPlugin": {
-      "name": "cordova-plugin-janalytics"
-    }
-  },
-  {
-    "packageName": "@awesome-cordova-plugins/jins-meme",
-    "displayName": "Jins Meme",
-    "description": "\nImplementation of the JINS MEME SDK\n",
-    "usage": "\n```typescript\nimport { JinsMeme } from '@awesome-cordova-plugins/jins-meme/ngx';\n\nconstructor(private jinsMeme: JinsMeme) { }\n\n...\n\nthis.jinsMeme.setAppClientID(appClientId: string, clientSecret: string).then(\n  // Bluetooth should be enabled and the JINS MEME powered on (blinking blue light)\n  this.jinsMeme.startScan().subscribe((meme_addr) => {\n    this.jinsMeme.connect(meme_addr).subscribe((connectResult) => {\n      this.memeService.startDataReport().subscribe((dataReport) => {\n        console.log(dataReport);\n      });\n    });\n  });\n.catch(console.log('jinsMeme.setAppClientID authentication error'));\n\n```\n",
-    "platforms": [
-      "Android",
-      "iOS"
-    ],
-    "repo": "https://github.com/BlyncSync/cordova-plugin-jins-meme",
-    "cordovaPlugin": {
-      "name": "cordova-plugin-jins-meme"
-    }
-  },
-  {
     "packageName": "@awesome-cordova-plugins/jumio",
     "displayName": "Jumio",
     "description": "Check out [example with Angular 9.1 & Capacitor 2.1](https://github.com/zendigital/jumio-ionic-demo)\n\n[Platform Customization](https://github.com/Jumio/mobile-cordova#customization) is possible\n\nOriginal source: [Jumio mobile-cordova](https://github.com/Jumio/mobile-cordova) Plugin for Apache Cordova",
@@ -2399,20 +1842,6 @@
     "capacitorIncompatible": true
   },
   {
-    "packageName": "@awesome-cordova-plugins/keychain-touch-id",
-    "displayName": "Keychain Touch Id",
-    "description": "\nA cordova plugin adding the iOS TouchID / Android fingerprint to your\napp and allowing you to store a password securely in the device keychain.\n",
-    "usage": "\n```typescript\nimport { KeychainTouchId } from '@awesome-cordova-plugins/keychain-touch-id/ngx';\n\n\nconstructor(private keychainTouchId: KeychainTouchId) { }\n\n...\n\n\nthis.keychainTouchId.isAvailable()\n  .then((res: any) => console.log(res))\n  .catch((error: any) => console.error(error));\n\n```\n",
-    "platforms": [
-      "Android",
-      "iOS"
-    ],
-    "repo": "https://github.com/sjhoeksma/cordova-plugin-keychain-touch-id",
-    "cordovaPlugin": {
-      "name": "cordova-plugin-keychain-touch-id"
-    }
-  },
-  {
     "packageName": "@awesome-cordova-plugins/keychain",
     "displayName": "Keychain",
     "description": "\nGet and set data in the iOS Keychain\n\nRequires Cordova plugin: `cordova-plugin-ios-keychain`. For more info, please see the [Keychain plugin docs](https://github.com/ionic-team/cordova-plugin-ios-keychain).\n\nSee also [Secure Storage](https://ionicframework.com/docs/native/secure-storage/) for more supported platforms.\n",
@@ -2438,18 +1867,6 @@
     "repo": "https://github.com/Kommunicate-io/Kommunicate-Cordova-Ionic-PhoneGap-Chat-Plugin",
     "cordovaPlugin": {
       "name": "kommunicate-cordova-plugin"
-    }
-  },
-  {
-    "packageName": "@awesome-cordova-plugins/last-cam",
-    "displayName": "LastCam",
-    "description": "\nLast Cam is a Camera Preview plugin that allows you to take capture both Videos and images in a\ncustom html preview of your choice.\n",
-    "platforms": [
-      "iOS"
-    ],
-    "repo": "https://github.com/bengejd/cordova-plugin-last-cam",
-    "cordovaPlugin": {
-      "name": "cordova-plugin-last-cam"
     }
   },
   {
@@ -2558,48 +1975,6 @@
     }
   },
   {
-    "packageName": "@awesome-cordova-plugins/luxand",
-    "displayName": "Luxand",
-    "description": "\nThis plugin let you integrate Luxand Face SDK into your ionic projects, so you can implement face authentication easily in your application.\n",
-    "usage": "\n```typescript\nimport { Luxand } from '@awesome-cordova-plugins/luxand';\n\n\nconstructor(private luxand: Luxand) { }\n\n...\n\n//init Luxand  Face SDK\n\nthis.luxand.init({\n licence: \"\",\n dbname: \"data.dat\",\n loginTryCount: 3\n})\n  .then((res: any) => console.log(res))\n  .catch((error: any) => console.error(error));\n// register a face\nthis.luxand.register({\n timeout: 20000//20 seconds\n})\n.then(r=>{\n console.log(\"Your FACE ID:\", r.id);\n console.log(\"Your AGE:\", r.extra.AGE);\n console.log(\"Your GENDER:\", r.extra.GENDER);\n console.log(\"SIMILING:\", r.extra.SMILE>35? \"YES\": \"NO\");\n console.log(\"EYE OPENED:\", r.extra.EYESOPENED>45? \"YES\": \"NO\");\n})\n.catch(err=>{\n if(err.messgae === \"Already registered\") {\n   //extra data available\n   console.log(\"Your AGE:\", r.extra.AGE);\n   console.log(\"Your GENDER:\", r.extra.GENDER);\n   console.log(\"SIMILING:\", r.extra.SMILE>35? \"YES\": \"NO\");\n   console.log(\"EYE OPENED:\", r.extra.EYESOPENED>45? \"YES\": \"NO\");\n }\n})\n//to login using a face\nthis.luxand.login({\ntimeout: 20000\n}).then(r=>console.log(r))\n.catch(err=>console.log(err));\n\n```",
-    "platforms": [
-      "Android",
-      "iOS"
-    ],
-    "repo": "https://github.com/molobala/cordova-plugin-luxand",
-    "cordovaPlugin": {
-      "name": "codova-plugin-luxand"
-    }
-  },
-  {
-    "packageName": "@awesome-cordova-plugins/magnetometer",
-    "displayName": "Device eMagnetometer",
-    "description": "\nRequires Cordova plugin: `cordova-plugin-magnetometer`. For more info, please see the [Device Orientation docs](https://github.com/sdesalas/cordova-plugin-magnetometer).\n",
-    "usage": "\n```typescript\n// DeviceOrientationCompassHeading is an interface for compass\nimport { Magnetometer, MagnetometerReading } from '@awesome-cordova-plugins/device-orientation/ngx';\n\nconstructor(private magnetometer: Magnetometer) { }\n\n...\n\n// Get the device current compass heading\nthis.deviceOrientation.getReading().then(\n  (data: MagnetometerReading) => console.log(data),\n  (error: any) => console.log(error)\n);\n\n// Watch the device compass heading change\nvar subscription = this.deviceOrientation.watchReadings().subscribe(\n  (data: MagnetometerReading) => console.log(data)\n);\n\n// Stop watching heading change\nsubscription.unsubscribe();\n```",
-    "platforms": [
-      "Android",
-      "iOS"
-    ],
-    "repo": "https://github.com/sdesalas/cordova-plugin-magnetometer",
-    "cordovaPlugin": {
-      "name": "cordova-plugin-magnetometer"
-    }
-  },
-  {
-    "packageName": "@awesome-cordova-plugins/market",
-    "displayName": "Market",
-    "description": "\nOpens an app's page in the market place (Google Play, App Store)\n",
-    "usage": "\n```typescript\nimport { Market } from '@awesome-cordova-plugins/market/ngx';\n\nconstructor(private market: Market) { }\n\n...\n\nthis.market.open('your.package.name');\n\n```\n",
-    "platforms": [
-      "Android",
-      "iOS"
-    ],
-    "repo": "https://github.com/xmartlabs/cordova-plugin-market",
-    "cordovaPlugin": {
-      "name": "cordova-plugin-market"
-    }
-  },
-  {
     "packageName": "@awesome-cordova-plugins/media-capture",
     "displayName": "Media Capture",
     "description": "\nThis plugin provides access to the device's audio, image, and video capture capabilities.\n\nRequires Cordova plugin: `cordova-plugin-media-capture`. For more info, please see the [Media Capture plugin docs](https://github.com/apache/cordova-plugin-media-capture).\n",
@@ -2676,22 +2051,6 @@
     }
   },
   {
-    "packageName": "@awesome-cordova-plugins/mobile-accessibility",
-    "displayName": "Mobile Accessibility",
-    "description": "\nThis plugin exposes information on the status of various accessibility features of mobile operating systems, including, for example, whether a screen reader is running, invert colors is enabled, and the preferred scaling for text.\nIt also allows an application to send a string to be spoken by the screen reader, or a command to stop the screen reader from speaking.\n",
-    "usage": "\n```typescript\nimport { MobileAccessibility } from '@awesome-cordova-plugins/mobile-accessibility/ngx';\n\n\nconstructor(private mobileAccessibility: MobileAccessibility) { }\n\n...\n\nif(this.mobileAccessibility.isScreenReaderRunningCallback();\n\n```\n",
-    "platforms": [
-      "Android Fire OS",
-      "Android",
-      "iOS",
-      "Windows"
-    ],
-    "repo": "https://github.com/phonegap/phonegap-mobile-accessibility",
-    "cordovaPlugin": {
-      "name": "phonegap-plugin-mobile-accessibility"
-    }
-  },
-  {
     "packageName": "@awesome-cordova-plugins/mobile-messaging",
     "displayName": "Mobile Messaging",
     "description": "\nMobile Messaging SDK is designed and developed to easily enable push notification channel in your mobile application.\nIn almost no time of implementation you get push notification in your application and access to the features of [Infobip IP Messaging Platform](https://portal.infobip.com/push/).\nThis document describes library integration steps for your Cordova project.\n\nFor more info see [Cordova plugin docs](https://github.com/infobip/mobile-messaging-cordova-plugin)\n",
@@ -2703,21 +2062,6 @@
     "repo": "https://github.com/infobip/mobile-messaging-cordova-plugin",
     "cordovaPlugin": {
       "name": "com-infobip-plugins-mobilemessaging"
-    }
-  },
-  {
-    "packageName": "@awesome-cordova-plugins/ms-adal",
-    "displayName": "MS ADAL",
-    "description": "\nActive Directory Authentication Library (ADAL) plugin.\nActive Directory Authentication Library ([ADAL](https://docs.microsoft.com/en-us/dotnet/api/microsoft.identitymodel.clients.activedirectory?view=azure-dotnet))\nplugin provides easy to use authentication functionality for your Apache Cordova apps by taking advantage of\nWindows Server Active Directory and Windows Azure Active Directory. Here you can find the source code for the library.",
-    "usage": "\n```typescript\nimport { MSAdal, AuthenticationContext, AuthenticationResult } from '@awesome-cordova-plugins/ms-adal/ngx';\n\n\nconstructor(private msAdal: MSAdal) {}\n\n...\n\nlet authContext: AuthenticationContext = this.msAdal.createAuthenticationContext('https://login.windows.net/common');\n\nauthContext.acquireTokenAsync('https://graph.windows.net', 'a5d92493-ae5a-4a9f-bcbf-9f1d354067d3', 'http://MyDirectorySearcherApp')\n  .then((authResponse: AuthenticationResult) => {\n    console.log('Token is' , authResponse.accessToken);\n    console.log('Token will expire on', authResponse.expiresOn);\n  })\n  .catch((e: any) => console.log('Authentication failed', e));\n\n\n```\n",
-    "platforms": [
-      "Android",
-      "iOS",
-      "Windows"
-    ],
-    "repo": "https://github.com/AzureAD/azure-activedirectory-library-for-cordova",
-    "cordovaPlugin": {
-      "name": "cordova-plugin-ms-adal"
     }
   },
   {
@@ -2809,20 +2153,6 @@
     }
   },
   {
-    "packageName": "@awesome-cordova-plugins/native-ringtones",
-    "displayName": "Native Ringtones",
-    "description": "\nThe plugin helps get the native ringtones list on Android or IOS devices.\nAnd you can also use this plugin to play or stop the native ringtones and custom ringtones(added in the www folder).\n",
-    "usage": "\n```\nimport { NativeRingtones } from '@awesome-cordova-plugins/native-ringtones/ngx';\n\n\nconstructor(private ringtones: NativeRingtones) { }\n\n...\nthis.ringtones.getRingtone().then((ringtones) => { console.log(ringtones); });\n\nthis.ringtones.playRingtone('assets/ringtones/sound_1.caf');\n\nthis.ringtones.stopRingtone('assets/ringtones/sound_1.caf');\n\n```\n",
-    "platforms": [
-      "Android",
-      "iOS"
-    ],
-    "repo": "https://github.com/TongZhangzt/cordova-plugin-native-ringtones",
-    "cordovaPlugin": {
-      "name": "cordova-plugin-native-ringtones"
-    }
-  },
-  {
     "packageName": "@awesome-cordova-plugins/native-storage",
     "displayName": "Native Storage",
     "description": "Native storage of variables in Android and iOS\n",
@@ -2839,19 +2169,6 @@
       "name": "cordova-plugin-nativestorage"
     },
     "premierSlug": "nativestorage"
-  },
-  {
-    "packageName": "@awesome-cordova-plugins/navigation-bar",
-    "displayName": "Navigation Bar",
-    "description": "\nThe NavigationBar plugin allows you to hide and auto hide the android navigation bar.\n",
-    "usage": "\n```typescript\nimport { NavigationBar } from '@awesome-cordova-plugins/navigation-bar/ngx';\n\nconstructor(private navigationBar: NavigationBar) { }\n\n...\n\nlet autoHide: boolean = true;\nthis.navigationBar.setUp(autoHide);\n```\n",
-    "platforms": [
-      "Android"
-    ],
-    "repo": "https://github.com/cranberrygame/cordova-plugin-navigationbar",
-    "cordovaPlugin": {
-      "name": "cordova-plugin-navigationbar"
-    }
   },
   {
     "packageName": "@awesome-cordova-plugins/network-interface",
@@ -2963,20 +2280,6 @@
     }
   },
   {
-    "packageName": "@awesome-cordova-plugins/paypal",
-    "displayName": "PayPal",
-    "description": "\nPayPal plugin for Cordova/Ionic Applications\n",
-    "usage": "\n```typescript\nimport { PayPal, PayPalPayment, PayPalConfiguration } from '@awesome-cordova-plugins/paypal/ngx';\n\nconstructor(private payPal: PayPal) { }\n\n...\n\n\nthis.payPal.init({\n  PayPalEnvironmentProduction: 'YOUR_PRODUCTION_CLIENT_ID',\n  PayPalEnvironmentSandbox: 'YOUR_SANDBOX_CLIENT_ID'\n}).then(() => {\n  // Environments: PayPalEnvironmentNoNetwork, PayPalEnvironmentSandbox, PayPalEnvironmentProduction\n  this.payPal.prepareToRender('PayPalEnvironmentSandbox', new PayPalConfiguration({\n    // Only needed if you get an \"Internal Service Error\" after PayPal login!\n    //payPalShippingAddressOption: 2 // PayPalShippingAddressOptionPayPal\n  })).then(() => {\n    let payment = new PayPalPayment('3.33', 'USD', 'Description', 'sale');\n    this.payPal.renderSinglePaymentUI(payment).then(() => {\n      // Successfully paid\n\n      // Example sandbox response\n      //\n      // {\n      //   \"client\": {\n      //     \"environment\": \"sandbox\",\n      //     \"product_name\": \"PayPal iOS SDK\",\n      //     \"paypal_sdk_version\": \"2.16.0\",\n      //     \"platform\": \"iOS\"\n      //   },\n      //   \"response_type\": \"payment\",\n      //   \"response\": {\n      //     \"id\": \"PAY-1AB23456CD789012EF34GHIJ\",\n      //     \"state\": \"approved\",\n      //     \"create_time\": \"2016-10-03T13:33:33Z\",\n      //     \"intent\": \"sale\"\n      //   }\n      // }\n    }, () => {\n      // Error or render dialog closed without being successful\n    });\n  }, () => {\n    // Error in configuration\n  });\n}, () => {\n  // Error in initialization, maybe PayPal isn't supported or something else\n});\n```",
-    "platforms": [
-      "Android",
-      "iOS"
-    ],
-    "repo": "https://github.com/paypal/PayPal-Cordova-Plugin",
-    "cordovaPlugin": {
-      "name": "com.paypal.cordova.mobilesdk"
-    }
-  },
-  {
     "packageName": "@awesome-cordova-plugins/paytabs",
     "displayName": "PayTabs",
     "description": "\nA plugin that allows you to use PayTabs's Native SDKs for Android and iOS.\n",
@@ -3002,36 +2305,6 @@
     "repo": "https://github.com/cesarvr/pdf-generator",
     "cordovaPlugin": {
       "name": "cordova-pdf-generator"
-    }
-  },
-  {
-    "packageName": "@awesome-cordova-plugins/pedometer",
-    "displayName": "Pedometer",
-    "description": "\nFetch pedestrian-related pedometer data,\nsuch as step counts and other information about the distance travelled.\n",
-    "usage": "\n```typescript\nimport { Pedometer } from '@awesome-cordova-plugins/pedometer/ngx';\n\nPedometer.isDistanceAvailable()\n  .then((available: boolean) => console.log(available))\n  .catch((error: any) => console.log(error));\n\nPedometer.startPedometerUpdates()\n   .subscribe((data: IPedometerData) => {\n     console.log(data);\n   });\n```\n",
-    "platforms": [
-      "Android",
-      "iOS"
-    ],
-    "repo": "https://github.com/leecrossley/cordova-plugin-pedometer",
-    "cordovaPlugin": {
-      "name": "cordova-plugin-pedometer"
-    }
-  },
-  {
-    "packageName": "@awesome-cordova-plugins/phonegap-local-notification",
-    "displayName": "Phonegap Local Notification",
-    "description": "\nThe Local Notification plugin gives developers the ability to post notifications from their app that show up in the device’s notification area.\nThe API for the local notification plugin follows the W3C Web Notifications specification: https://www.w3.org/TR/notifications/\n",
-    "usage": "\n```\nimport { PhonegapLocalNotification } from '@awesome-cordova-plugins/phonegap-local-notification/ngx';\n\n\nconstructor(private localNotification: PhonegapLocalNotification) { }\n\n...\n\nthis.localNotification.requestPermission().then(\n  (permission) => {\n    if (permission === 'granted') {\n\n      // Create the notification\n      this.localNotification.create('My Title', {\n        tag: 'message1',\n        body: 'My body',\n        icon: 'assets/icon/favicon.ico'\n      });\n\n    }\n  }\n);\n\n```\n",
-    "platforms": [
-      "Android",
-      "Browser",
-      "iOS",
-      "Windows"
-    ],
-    "repo": "https://github.com/phonegap/phonegap-plugin-local-notification",
-    "cordovaPlugin": {
-      "name": "phonegap-plugin-local-notification"
     }
   },
   {
@@ -3067,51 +2340,6 @@
     }
   },
   {
-    "packageName": "@awesome-cordova-plugins/pin-check",
-    "displayName": "Pin Check",
-    "description": "\nThis plugin is for use with Apache Cordova and allows your application to check whether pin/keyguard or passcode is setup on iOS and Android phones.\n\nRequires Cordova plugin: cordova-plugin-pincheck. For more info, please see the [PinCheck plugin docs](https://github.com/ohh2ahh/AppAvailability).\n",
-    "usage": "\n```typescript\nimport { PinCheck } from '@awesome-cordova-plugins/pin-check/ngx';\nimport { Platform } from 'ionic-angular';\n\nconstructor(private pinCheck: PinCheck, private platform: Platform) { }\n\n...\n\nthis.pinCheck.isPinSetup()\n  .then(\n    (success: string) =>  console.log(\"pin is setup.\");,\n    (error: string) => console.log(\"pin not setup.\");\n  );\n```\n",
-    "platforms": [
-      "Android",
-      "iOS"
-    ],
-    "repo": "https://github.com/shangyilim/cordova-plugin-pincheck",
-    "cordovaPlugin": {
-      "name": "cordova-plugin-pincheck"
-    }
-  },
-  {
-    "packageName": "@awesome-cordova-plugins/pin-dialog",
-    "displayName": "Pin Dialog",
-    "description": "\nPhoneGap numeric password dialog plugin for Android and iOS.\n\nRequires Cordova plugin: `cordova-plugin-pin-dialog`. For more info, please see the [Pin Dialog plugin docs](https://github.com/Paldom/PinDialog).\n\n\n",
-    "usage": "\n```typescript\nimport { PinDialog } from '@awesome-cordova-plugins/pin-dialog/ngx';\n\n\nconstructor(private pinDialog: PinDialog) { }\n\n...\n\nthis.pinDialog.prompt('Enter your PIN', 'Verify PIN', ['OK', 'Cancel'])\n  .then(\n    (result: any) => {\n      if (result.buttonIndex == 1) console.log('User clicked OK, value is: ', result.input1);\n      else if(result.buttonIndex == 2) console.log('User cancelled');\n    }\n  );\n```\n",
-    "platforms": [
-      "Android",
-      "iOS"
-    ],
-    "repo": "https://github.com/Paldom/PinDialog",
-    "cordovaPlugin": {
-      "name": "cordova-plugin-pin-dialog"
-    }
-  },
-  {
-    "packageName": "@awesome-cordova-plugins/pinterest",
-    "displayName": "Pinterest",
-    "description": "\nCordova plugin for Pinterest\n",
-    "usage": "\n```typescript\nimport { Pinterest, PinterestUser, PinterestPin, PinterestBoard } from '@awesome-cordova-plugins/pinterest/ngx';\n\nconstructor(private pinterest: Pinterest) { }\n\n...\n\nconst scopes = [\n  this.pinterest.SCOPES.READ_PUBLIC,\n  this.pinterest.SCOPES.WRITE_PUBLIC,\n  this.pinterest.SCOPES.READ_RELATIONSHIPS,\n  this.pinterest.SCOPES.WRITE_RELATIONSHIPS\n];\n\nthis.pinterest.login(scopes)\n  .then(res => console.log('Logged in!', res))\n  .catch(err => console.error('Error loggin in', err));\n\nthis.pinterest.getMyPins()\n  .then((pins: PinterestPin[]) => console.log(pins))\n  .catch(err => console.error(err));\n\nthis.pinterest.getMe()\n  .then((user: PinterestUser) => console.log(user));\n\nthis.pinterest.getMyBoards()\n  .then((boards: PinterestBoard[]) => console.log(boards));\n\n```",
-    "platforms": [
-      "Android",
-      "iOS"
-    ],
-    "repo": "https://github.com/zyramedia/cordova-plugin-pinterest",
-    "installVariables": [
-      "APP_ID"
-    ],
-    "cordovaPlugin": {
-      "name": "cordova-plugin-pinterest"
-    }
-  },
-  {
     "packageName": "@awesome-cordova-plugins/pollfish",
     "displayName": "Pollfish",
     "description": "\nPollfish Ionic Native plugin wrapper\n",
@@ -3123,22 +2351,6 @@
     "repo": "https://github.com/pollfish/cordova-plugin-pollfish",
     "cordovaPlugin": {
       "name": "com.pollfish.cordova_plugin"
-    }
-  },
-  {
-    "packageName": "@awesome-cordova-plugins/power-management",
-    "displayName": "Power Management",
-    "description": "\nThe PowerManagement plugin offers access to the devices power-management functionality.\nIt should be used for applications which keep running for a long time without any user interaction.\n",
-    "usage": "\n```typescript\nimport { PowerManagement } from '@awesome-cordova-plugins/power-management/ngx';\n\nconstructor(private powerManagement: PowerManagement) { }\n\n...\n\nthis.powerManagement.acquire()\n  .then(onSuccess)\n  .catch(onError);\n\n```\n",
-    "platforms": [
-      "Android",
-      "iOS",
-      "Windows",
-      "Windows Phone"
-    ],
-    "repo": "https://github.com/Viras-/cordova-plugin-powermanagement",
-    "cordovaPlugin": {
-      "name": "cordova-plugin-powermanagement-orig"
     }
   },
   {
@@ -3229,23 +2441,6 @@
     }
   },
   {
-    "packageName": "@awesome-cordova-plugins/qqsdk",
-    "displayName": "QQSDK",
-    "description": "\nThis Plugin is a wrapper around the Tencent QQ SDK for Android and iOS. Provides access to QQ ssoLogin, QQ Sharing, QQZone Sharing etc.\n\nRequires Cordova plugin: `cordova-plugin-qqsdk`. For more info, please see the [QQSDK plugin docs](https://github.com/iVanPan/Cordova_QQ).\n",
-    "usage": "\n```typescript\nimport { QQSDK, QQShareOptions } from '@awesome-cordova-plugins/qqsdk/ngx';\n\nconstructor(private qq: QQSDK) { }\n\n...\n\n\nconst options: QQShareOptions = {\n  client: this.qq.ClientType.QQ,\n  scene: this.qq.Scene.QQ,\n  title: 'This is a title for cordova-plugin-qqsdk',\n  url: 'https://cordova.apache.org/',\n  image: 'https://cordova.apache.org/static/img/cordova_bot.png',\n  description: 'This is  Cordova QQ share description',\n  flashUrl:  'http://stream20.qqmusic.qq.com/30577158.mp3',\n}\n\nconst clientOptions: QQShareOptions = {\n  client: this.qq.ClientType.QQ,\n}\n\nconst shareTextOptions: QQShareOptions = {\n  client: this.qq.ClientType.QQ,\n  text: 'This is Share Text',\n  scene: this.qq.Scene.QQ,\n}\n\nthis.qq.ssoLogin(clientOptions)\n   .then(result => {\n      // Success\n      console.log('token is ' + result.access_token);\n      console.log('userid is ' + result.userid);\n      console.log('expires_time is ' + new Date(parseInt(result.expires_time)) + ' TimeStamp is ' + result.expires_time);\n   })\n   .catch(error => {\n      console.log(error); // Failed\n   });\n\nthis.qq.logout()\n   .then(() => {\n      console.log('logout success');\n   })\n   .catch(error => {\n      console.log(error);\n   });\n\nthis.qq.checkClientInstalled(clientOptions)\n   .then(() => {\n      console.log('Installed');\n   })\n   .catch(() => {\n      console.log('Not Installed');\n   });\n\nthis.qq.shareText(shareTextOptions)\n   .then(() => {\n      console.log('shareText success');\n   })\n   .catch(error => {\n      console.log(error);\n   });\n\nthis.qq.shareImage(options)\n   .then(() => {\n      console.log('shareImage success');\n   })\n   .catch(error => {\n      console.log(error);\n   });\n}\n\nthis.qq.shareNews(options)\n   .then(() => {\n      console.log('shareNews success');\n   })\n   .catch(error => {\n      console.log(error);\n   });\n}\n\nthis.qq.shareAudio(options)\n   .then(() => {\n      console.log('shareAudio success');\n   })\n   .catch(error => {\n      console.log(error);\n   });\n\n```\n",
-    "platforms": [
-      "Android",
-      "iOS"
-    ],
-    "repo": "https://github.com/iVanPan/Cordova_QQ",
-    "installVariables": [
-      "QQ_APP_ID"
-    ],
-    "cordovaPlugin": {
-      "name": "cordova-plugin-qqsdk"
-    }
-  },
-  {
     "packageName": "@awesome-cordova-plugins/qr-scanner",
     "displayName": "QR Scanner",
     "description": "\nA fast, energy efficient, highly-configurable QR code scanner for Cordova apps.\n\nRequires Cordova plugin: `cordova-plugin-qrscanner`. For more info, please see the [QR Scanner plugin docs](https://github.com/bitpay/cordova-plugin-qrscanner).\n",
@@ -3263,19 +2458,6 @@
     "capacitorIncompatible": true
   },
   {
-    "packageName": "@awesome-cordova-plugins/quikkly",
-    "displayName": "QuikklyPlugin",
-    "description": "ionic wrapper for cordova-plugin-quikkly\nUse the quikkly scanner in your ionic app\n",
-    "platforms": [
-      "Android",
-      "iOS"
-    ],
-    "repo": "https://github.com/quikkly/cordova-plugin-quikkly.git",
-    "cordovaPlugin": {
-      "name": "cordova-plugin-quikkly"
-    }
-  },
-  {
     "packageName": "@awesome-cordova-plugins/regula-document-reader",
     "displayName": "Regula Document Reader",
     "description": "\nPlugin for reading and validation of identification documents.\n",
@@ -3287,37 +2469,6 @@
     "repo": "https://github.com/regulaforensics/cordova-plugin-documentreader.git",
     "cordovaPlugin": {
       "name": "cordova-plugin-documentreader"
-    }
-  },
-  {
-    "packageName": "@awesome-cordova-plugins/restart",
-    "displayName": "Restart",
-    "description": "\nThis plugin to restart android application\n",
-    "usage": "\n```typescript\nimport { Restart } from '@awesome-cordova-plugins/restart';\n\n\nconstructor(private restart: Restart) { }\n\n...\n\n\nthis.restart.restart(true)\n  .then((res: any) => console.log(res))\n  .catch((error: any) => console.error(error));\n\n```\n",
-    "platforms": [
-      "Android"
-    ],
-    "repo": "https://github.com/MaximBelov/cordova-plugin-restart",
-    "cordovaPlugin": {
-      "name": "cordova-plugin-restart"
-    }
-  },
-  {
-    "packageName": "@awesome-cordova-plugins/rollbar",
-    "displayName": "Rollbar",
-    "description": "\nThis plugin adds [Rollbar](https://rollbar.com/) App monitoring to your application\n",
-    "usage": "\n```typescript\nimport { Rollbar } from '@awesome-cordova-plugins/rollbar/ngx';\n\nconstructor(private rollbar: Rollbar) { }\n\n...\n\nthis.rollbar.init();\n\n```\n",
-    "platforms": [
-      "Android",
-      "iOS"
-    ],
-    "repo": "https://github.com/Resgrid/cordova-plugins-rollbar",
-    "installVariables": [
-      "ROLLBAR_ACCESS_TOKEN",
-      "ROLLBAR_ENVIRONMENT"
-    ],
-    "cordovaPlugin": {
-      "name": "resgrid-cordova-plugins-rollbar"
     }
   },
   {
@@ -3349,48 +2500,6 @@
       "name": "cordova-plugin-screen-orientation"
     },
     "premierSlug": "screen-orientation"
-  },
-  {
-    "packageName": "@awesome-cordova-plugins/screenshot",
-    "displayName": "Screenshot",
-    "description": "Captures a screen shot",
-    "usage": "\n```typescript\nimport { Screenshot } from '@awesome-cordova-plugins/screenshot/ngx';\n\nconstructor(private screenshot: Screenshot) { }\n\n...\n\n// Take a screenshot and save to file\nthis.screenshot.save('jpg', 80, 'myscreenshot.jpg').then(onSuccess, onError);\n\n// Take a screenshot and get temporary file URI\nthis.screenshot.URI(80).then(onSuccess, onError);\n```\n",
-    "platforms": [
-      "Android",
-      "iOS",
-      "macOS"
-    ],
-    "repo": "https://github.com/gitawego/cordova-screenshot",
-    "cordovaPlugin": {
-      "name": "com.darktalker.cordova.screenshot"
-    }
-  },
-  {
-    "packageName": "@awesome-cordova-plugins/sensors",
-    "displayName": "Sensors",
-    "description": "\nThis plugin enables sensors on Android devices\n",
-    "usage": "\n```typescript\nimport { Sensors, TYPE_SENSOR } from '@awesome-cordova-plugins/sensors/ngx';\n\n\nconstructor(private sensors: Sensors) { }\n\n...\n\n\nthis.sensors.enableSensor(TYPE_SENSOR.LIGHT);\n\n```\n",
-    "platforms": [
-      "Android"
-    ],
-    "repo": "https://github.com/fabiorogeriosj/cordova-plugin-sensors.git",
-    "cordovaPlugin": {
-      "name": "https://github.com/fabiorogeriosj/cordova-plugin-sensors.git"
-    }
-  },
-  {
-    "packageName": "@awesome-cordova-plugins/serial",
-    "displayName": "Serial",
-    "description": "\nThis plugin provides functions for working with Serial connections\n",
-    "usage": "\n```typescript\nimport { Serial } from '@awesome-cordova-plugins/serial/ngx';\n\nconstructor(private serial: Serial) { }\n\n...\n\nthis.serial.requestPermission().then(() => {\n  this.serial.open({\n    baudRate: 9800,\n    dataBits: 4,\n    stopBits: 1,\n    parity: 0,\n    dtr: true,\n    rts: true,\n    sleepOnPause: false\n  }).then(() => {\n    console.log('Serial connection opened');\n  });\n}).catch((error: any) => console.log(error));\n\n```\n",
-    "platforms": [
-      "Android",
-      "Ubuntu"
-    ],
-    "repo": "https://github.com/xseignard/cordovarduino",
-    "cordovaPlugin": {
-      "name": "cordovarduino"
-    }
   },
   {
     "packageName": "@awesome-cordova-plugins/service-discovery",
@@ -3433,19 +2542,6 @@
     }
   },
   {
-    "packageName": "@awesome-cordova-plugins/shortcuts-android",
-    "displayName": "ShortcutsAndroid",
-    "description": "\nUse this plugin to create shortcuts in Android. Use this plugin to handle Intents on your application.\nFor more information on Android App Shortcuts: https://developer.android.com/guide/topics/ui/shortcuts.html\nFor more information on Android Intents: https://developer.android.com/guide/components/intents-filters.html\n\nThe work that went into creating this plug-in was inspired by the existing plugins: cordova-plugin-shortcut and cordova-plugin-webintent2.\n",
-    "usage": "\nPlease do refer to the original plugin's repo for detailed usage. The usage example here might not be sufficient.\n\n```typescript\nimport { ShortcutsAndroid } from '@awesome-cordova-plugins/shortcuts-android/ngx';\n\n\nconstructor(private shortcutsAndroid: ShortcutsAndroid) { }\n\n...\n\nthis.shortcutsAndroid.supportsDynamic()\n  .then((supported: boolean) => console.log(`Dynamic shortcuts are ${supported ? '' : 'not'} supported`))\n  .catch((error: any) => console.error(error));\n\n```\n",
-    "platforms": [
-      "Android"
-    ],
-    "repo": "https://github.com/avargaskun/cordova-plugin-shortcuts-android",
-    "cordovaPlugin": {
-      "name": "cordova-plugin-shortcuts-android"
-    }
-  },
-  {
     "packageName": "@awesome-cordova-plugins/sign-in-with-apple",
     "displayName": "Sign In With Apple",
     "description": "\nSign in with Apple makes it easy for users to sign in to your apps and websites using their Apple ID.\nInstead of filling out forms, verifying email addresses, and choosing new passwords,\nthey can use Sign in with Apple to set up an account and start using your app right away.\nAll accounts are protected with two-factor authentication for superior security,\nand Apple will not track users’ activity in your app or website.\n*Source:* https://developer.apple.com/sign-in-with-apple/\n",
@@ -3456,35 +2552,6 @@
     "repo": "https://github.com/twogate/cordova-plugin-sign-in-with-apple",
     "cordovaPlugin": {
       "name": "cordova-plugin-sign-in-with-apple"
-    }
-  },
-  {
-    "packageName": "@awesome-cordova-plugins/sim",
-    "displayName": "Sim",
-    "description": "\nGets info from the Sim card like the carrier name, mcc, mnc and country code and other system dependent info.\n\nRequires Cordova plugin: `cordova-plugin-sim`. For more info, please see the [Cordova Sim docs](https://github.com/pbakondy/cordova-plugin-sim).\n",
-    "usage": "\n```typescript\nimport { Sim } from '@awesome-cordova-plugins/sim/ngx';\n\n\nconstructor(private sim: Sim) { }\n\n...\n\nthis.sim.getSimInfo().then(\n  (info) => console.log('Sim info: ', info),\n  (err) => console.log('Unable to get sim info: ', err)\n);\n\nthis.sim.hasReadPermission().then(\n  (info) => console.log('Has permission: ', info)\n);\n\nthis.sim.requestReadPermission().then(\n  () => console.log('Permission granted'),\n  () => console.log('Permission denied')\n);\n```\n",
-    "platforms": [
-      "Android",
-      "iOS",
-      "Windows",
-      "Windows Phone"
-    ],
-    "repo": "https://github.com/pbakondy/cordova-plugin-sim",
-    "cordovaPlugin": {
-      "name": "cordova-plugin-sim"
-    }
-  },
-  {
-    "packageName": "@awesome-cordova-plugins/siri-shortcuts",
-    "displayName": "Siri Shortcuts",
-    "description": "\nThis plugin only works when your app is built with XCode 10. Shortcuts will only appear on iOS-versions >= 12.0\n\nThis plugin enables the use of Siri shortcuts in Cordova. Siri Shortcuts enable the user to perform certain actions by adding them to Siri.\nAfter you have donated a shortcut to Siri, it will appear in the settings menu, after which the user is able to add the action. You can check\nwhether the user launched your app through a shortcut by calling `getActivatedShortcut()` when the app is resumed. It will return `null`\nif it has not been launched by Siri, and if it did, it will return an object with `SiriShortcut` properties.\n",
-    "usage": "\n```typescript\nimport { SiriShortcuts } from '@awesome-cordova-plugins/siri-shortcuts/ngx';\n\n\nconstructor(private siriShortcuts: SiriShortcuts) { }\n\n...\n\n\nthis.siriShortcuts.donate({\n      persistentIdentifier: 'open-my-app',\n      title: 'Open my app',\n      suggestedInvocationPhrase: 'Open my app',\n      userInfo: { username: 'username' },\n      isEligibleForSearch: true,\n      isEligibleForPrediction: true,\n  })\n  .then(() => console.log('Shortcut donated.'))\n  .catch((error: any) => console.error(error));\n\nthis.siriShortcuts.present({\n      persistentIdentifier: 'open-my-app',\n      title: 'Open my app',\n      suggestedInvocationPhrase: 'Open my app',\n      userInfo: { username: 'username' },\n  })\n  .then(() => console.log('Shortcut added.'))\n  .catch((error: any) => console.error(error));\n\nthis.siriShortcuts.remove('open-my-app')\n  .then(() => console.log('Shortcut removed.'))\n  .catch((error: any) => console.error(error));\n\nthis.siriShortcuts.removeAll()\n  .then(() => console.log('All shortcuts removed removed.'))\n  .catch((error: any) => console.error(error));\n\nthis.siriShortcuts.getActivatedShortcut()\n  .then((data: SiriShortcut|null) => console.log(data))\n  .catch((error: any) => console.error(error));\n\n```\n",
-    "platforms": [
-      "iOS"
-    ],
-    "repo": "https://github.com/bartwesselink/cordova-plugin-siri-shortcuts",
-    "cordovaPlugin": {
-      "name": "cordova-plugin-siri-shortcuts"
     }
   },
   {
@@ -3563,20 +2630,6 @@
     "repo": "https://github.com/pbakondy/cordova-plugin-speechrecognition",
     "cordovaPlugin": {
       "name": "cordova-plugin-speechrecognition"
-    }
-  },
-  {
-    "packageName": "@awesome-cordova-plugins/speechkit",
-    "displayName": "SpeechKit",
-    "description": "\nImplementation of Nuance SpeechKit SDK on Ionic\n",
-    "usage": "\n```typescript\nimport { SpeechKit } from '@awesome-cordova-plugins/speechkit/ngx';\n\nconstructor(private speechkit: SpeechKit) { }\n\n\n// find voice names that match language from: https://developer.nuance.com/public/index.php?task=supportedLanguages\nthis.speechkit.tts('Text to be read out loud', 'ENG-GBR', 'Serena').then(\n  (msg) => { console.log(msg); },\n  (err) => { console.log(err); }\n);\n```\n",
-    "platforms": [
-      "Android",
-      "iOS"
-    ],
-    "repo": "https://github.com/Shmarkus/cordova-plugin-nuance-speechkit",
-    "cordovaPlugin": {
-      "name": "cordova-plugin-nuance-speechkit"
     }
   },
   {
@@ -3725,19 +2778,6 @@
     "capacitorIncompatible": true
   },
   {
-    "packageName": "@awesome-cordova-plugins/stepcounter",
-    "displayName": "Stepcounter",
-    "description": "\nCordova plugin for using device's stepcounter on Android (API > 19)\n\nUse to\n- start and stop stepcounter service\n- read device's stepcounter data\n",
-    "usage": "\n```typescript\nimport { Stepcounter } from '@awesome-cordova-plugins/stepcounter/ngx';\n\nconstructor(private stepcounter: Stepcounter) { }\n\n...\n\nlet startingOffset = 0;\nthis.stepcounter.start(startingOffset).then(onSuccess => console.log('stepcounter-start success', onSuccess), onFailure => console.log('stepcounter-start error', onFailure));\n\nthis.stepcounter.getHistory().then(historyObj => console.log('stepcounter-history success', historyObj), onFailure => console.log('stepcounter-history error', onFailure));\n\n```\n",
-    "platforms": [
-      "Android"
-    ],
-    "repo": "https://github.com/ihadeed/cordova-plugin-stepcounter",
-    "cordovaPlugin": {
-      "name": "cordova-plugin-stepcounter"
-    }
-  },
-  {
     "packageName": "@awesome-cordova-plugins/streaming-media",
     "displayName": "Streaming Media",
     "description": "\nThis plugin allows you to stream audio and video in a fullscreen, native player on iOS and Android.\n",
@@ -3866,21 +2906,6 @@
     }
   },
   {
-    "packageName": "@awesome-cordova-plugins/text-to-speech",
-    "displayName": "Text To Speech",
-    "description": "\nText to Speech plugin\n",
-    "usage": "\n```typescript\nimport { TextToSpeech } from '@awesome-cordova-plugins/text-to-speech/ngx';\n\nconstructor(private tts: TextToSpeech) { }\n\n...\n\nthis.tts.speak('Hello World')\n  .then(() => console.log('Success'))\n  .catch((reason: any) => console.log(reason));\n\n```",
-    "platforms": [
-      "Android",
-      "iOS",
-      "Windows Phone 8"
-    ],
-    "repo": "https://github.com/vilic/cordova-plugin-tts",
-    "cordovaPlugin": {
-      "name": "cordova-plugin-tts"
-    }
-  },
-  {
     "packageName": "@awesome-cordova-plugins/theme-detection",
     "displayName": "Theme Detection",
     "description": "\nCordova plugin to detect whether dark mode is enabled or not\n",
@@ -3960,52 +2985,6 @@
     }
   },
   {
-    "packageName": "@awesome-cordova-plugins/twitter-connect",
-    "displayName": "Twitter Connect",
-    "description": "\nPlugin to use Twitter Single Sign On\nUses Twitter's Fabric SDK\n```typescript\nimport { TwitterConnect } from '@awesome-cordova-plugins/twitter-connect/ngx';\n\nconstructor(private twitter: TwitterConnect) { }\n\n...\n\nfunction onSuccess(response) {\n  console.log(response);\n\n  // Will console log something like:\n  // {\n  //   userName: 'myuser',\n  //   userId: '12358102',\n  //   secret: 'tokenSecret'\n  //   token: 'accessTokenHere'\n  // }\n}\n\nthis.twitter.login().then(onSuccess, onError);\n\nthis.twitter.logout().then(onLogoutSuccess, onLogoutError);\n```",
-    "platforms": [
-      "Android",
-      "iOS"
-    ],
-    "repo": "https://github.com/chroa/twitter-connect-plugin",
-    "installVariables": [
-      "FABRIC_KEY",
-      "TWITTER_KEY",
-      "TWITTER_SECRET"
-    ],
-    "cordovaPlugin": {
-      "name": "twitter-connect-plugin"
-    }
-  },
-  {
-    "packageName": "@awesome-cordova-plugins/uid",
-    "displayName": "Uid",
-    "description": "\nGet unique identifiers: UUID, IMEI, IMSI, ICCID and MAC.\n",
-    "usage": "\n```typescript\nimport { Uid } from '@awesome-cordova-plugins/uid/ngx';\nimport { AndroidPermissions } from '@awesome-cordova-plugins/android-permissions/ngx';\n\nconstructor(private uid: Uid, private androidPermissions: AndroidPermissions) { }\n\n\nasync getImei() {\n const { hasPermission } = await this.androidPermissions.checkPermission(\n   this.androidPermissions.PERMISSION.READ_PHONE_STATE\n );\n\n if (!hasPermission) {\n   const result = await this.androidPermissions.requestPermission(\n     this.androidPermissions.PERMISSION.READ_PHONE_STATE\n   );\n\n   if (!result.hasPermission) {\n     throw new Error('Permissions required');\n   }\n\n   // ok, a user gave us permission, we can get him identifiers after restart app\n   return;\n }\n\n  return this.uid.IMEI\n}\n```\n",
-    "platforms": [
-      "Android"
-    ],
-    "repo": "https://github.com/lionelhe/cordova-plugin-uid",
-    "cordovaPlugin": {
-      "name": "cordova-plugin-uid"
-    }
-  },
-  {
-    "packageName": "@awesome-cordova-plugins/unique-device-id",
-    "displayName": "Unique Device ID",
-    "description": "\nThis plugin produces a unique, cross-install, app-specific device id.\n",
-    "usage": "\n```typescript\nimport { UniqueDeviceID } from '@awesome-cordova-plugins/unique-device-id/ngx';\n\nconstructor(private uniqueDeviceID: UniqueDeviceID) { }\n\n...\n\nthis.uniqueDeviceID.get()\n  .then((uuid: any) => console.log(uuid))\n  .catch((error: any) => console.log(error));\n\n```\n",
-    "platforms": [
-      "Android",
-      "iOS",
-      "Windows Phone 8"
-    ],
-    "repo": "https://github.com/Paldom/UniqueDeviceID",
-    "cordovaPlugin": {
-      "name": "cordova-plugin-uniquedeviceid"
-    }
-  },
-  {
     "packageName": "@awesome-cordova-plugins/unvired-cordova-sdk",
     "displayName": "Unvired Cordova SDK",
     "description": "\nThis plugin lets you build apps which connect to Unvired Mobile Platform (UMP).\n-\niOS Requirements\n-\nUpdate your Cocoapods repo before you install the plugin.\n```\n$ pod repo update\n```\n-\nBrowser Requirements\n-\nAfter you install the plugin, for Ionic/Angular projects, please add a reference to the following JS files within <head></head> section of index.html.\n```\n<script src=\"assets/js/sql.js\"></script>\n<script src=\"assets/js/kernel.js\"></script>\n<script src=\"assets/js/winstore-jscompat.js\"></script>\n<script src=\"assets/js/jquery-3.2.1.js\"></script>\n```",
@@ -4065,20 +3044,6 @@
     }
   },
   {
-    "packageName": "@awesome-cordova-plugins/user-agent",
-    "displayName": "User Agent",
-    "description": "\nThe UserAgent plugin provides functions to set the HTTP  user-agent header. For more info about User-Agents, please [see the HTTP User-Agent docs](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/User-Agent).\n\nRequires Cordova plugin: `cordova-useragent`. For more info, please see the [User-Agent plugin docs](https://github.com/LouisT/cordova-useragent).\n",
-    "usage": "\n```typescript\nimport { UserAgent } from '@awesome-cordova-plugins/user-agent/ngx';\n\n\nconstructor(private userAgent: UserAgent) { }\n\n...\n\n\nthis.userAgent.set('Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.103 Safari/537.36')\n  .then((res: any) => console.log(res))\n  .catch((error: any) => console.error(error));\n\n* this.userAgent.get()\n  .then((res: any) => console.log(res))\n  .catch((error: any) => console.error(error));\n\n* this.userAgent.reset()\n  .then((res: any) => console.log(res))\n  .catch((error: any) => console.error(error));\n\n```\n",
-    "platforms": [
-      "Android",
-      "iOS"
-    ],
-    "repo": "https://github.com/danielsogl/cordova-plugin-useragent",
-    "cordovaPlugin": {
-      "name": "cordova-plugin-useragent"
-    }
-  },
-  {
     "packageName": "@awesome-cordova-plugins/vibes",
     "displayName": "Vibes",
     "description": "\nThis plugin enables integration with the Vibes Push SDK to your Cordova project with Android and iOS supported.\n",
@@ -4111,20 +3076,6 @@
       "name": "cordova-plugin-vibration"
     },
     "premierSlug": "vibration"
-  },
-  {
-    "packageName": "@awesome-cordova-plugins/video-capture-plus",
-    "displayName": "Video Capture Plus",
-    "description": "\nThis plugin offers some useful extras on top of the default Media Capture Plugin capabilities:\n- HD recording.\n- Starting with the front camera.\n- A custom overlay (currently iOS only).\n",
-    "usage": "\n```typescript\nimport { VideoCapturePlus, VideoCapturePlusOptions, MediaFile } from '@awesome-cordova-plugins/video-capture-plus/ngx';\n\n\nconstructor(private videoCapturePlus: VideoCapturePlus) { }\n\n...\n\nconst options: VideoCapturePlusOptions = {\n   limit: 1,\n   highquality: true,\n   portraitOverlay: 'assets/img/camera/overlay/portrait.png',\n   landscapeOverlay: 'assets/img/camera/overlay/landscape.png'\n}\n\nthis.videoCapturePlus.captureVideo(options).then(mediafile: MediaFile[] => console.log(mediafile), error => console.log('Something went wrong'));\n\n```",
-    "platforms": [
-      "Android",
-      "iOS"
-    ],
-    "repo": "https://github.com/danielsogl/cordova-plugin-video-capture-plus",
-    "cordovaPlugin": {
-      "name": "cordova-plugin-video-capture-plus"
-    }
   },
   {
     "packageName": "@awesome-cordova-plugins/video-editor",
@@ -4313,20 +3264,6 @@
     "repo": "https://github.com/becvert/cordova-plugin-zeroconf",
     "cordovaPlugin": {
       "name": "cordova-plugin-zeroconf"
-    }
-  },
-  {
-    "packageName": "@awesome-cordova-plugins/zip",
-    "displayName": "Zip",
-    "description": "\nA Cordova plugin to unzip files in Android and iOS.\n",
-    "usage": "\n```typescript\nimport { Zip } from '@awesome-cordova-plugins/zip/ngx';\n\nconstructor(private zip: Zip) { }\n\n...\n\nthis.zip.unzip('path/to/source.zip', 'path/to/dest', (progress) => console.log('Unzipping, ' + Math.round((progress.loaded / progress.total) * 100) + '%'))\n .then((result) => {\n   if(result === 0) console.log('SUCCESS');\n   if(result === -1) console.log('FAILED');\n });\n\n```\n",
-    "platforms": [
-      "Android",
-      "iOS"
-    ],
-    "repo": "https://github.com/MobileChromeApps/cordova-plugin-zip",
-    "cordovaPlugin": {
-      "name": "cordova-plugin-zip"
     }
   },
   {
