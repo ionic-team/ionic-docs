@@ -52,7 +52,7 @@ npm uninstall --save typescript @types/jest @typescript-eslint/eslint-plugin @ty
 
 3. Remove `@vue/typescript/recommended` and `@typescript-eslint/no-explicit-any: ‘off’, `from `.eslintrc.js`.
 
-4. Remove `Array<RouteRecordRaw>` from `router/index.js`.
+4. Remove `Array<RouteRecordRaw>` from `router/index.js`. Also remove the import `import { RouteRecordRaw } from 'vue-router';`.
 
 5. Delete the `shims-vue.d.ts` file.
 
