@@ -1,11 +1,18 @@
 ---
+title: Security
 disableHtmlPreviews: true
 ---
 
+<head>
+  <title>Security for Angular, React, and Vue Apps - Ionic Framework</title>
+  <meta
+    name="description"
+    content="View Ionic's security info for sanitizing user input, ejecting from the built-in sanitizer, and more. Learn about app security using Angular, React, and Vue."
+  />
+</head>
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
-
-# Security
 
 ## Sanitizing User Input
 

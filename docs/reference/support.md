@@ -1,4 +1,14 @@
-# Support Policy
+---
+title: Support Policy
+---
+
+<head>
+  <title>App Development Support Policy - Ionic Framework API</title>
+  <meta
+    name="description"
+    content="Ionic Framework API is 100% open-source (MIT), and always will be. Read our support policy to see why users know Ionic is the right choice for app development."
+  />
+</head>
 
 ## Community Maintenance
 
@@ -84,11 +94,11 @@ The Ionic team generally recommends the latest releases of third party packages 
 
 |  Framework   |      Ionic Studio       | Ionic Native Community Plugins\* |
 | :----------: | :---------------------: | :------------------------------: |
-| V5 - Angular |  `@ionic/angular` 5.X   |        @awesome-cordova-plugins 5.X         |
-|  V5 - React  | Not currently supported |       @awesome-cordova-plugins 5.X\*        |
-| V4 - Angular |  `@ionic/angular` 5.X   |        @awesome-cordova-plugins 5.X         |
-|  V4 - React  | Not currently supported |       @awesome-cordova-plugins 5.X\*        |
-|      V3      | Not currently supported |        @awesome-cordova-plugins 4.X         |
+| V5 - Angular |  `@ionic/angular` 5.X   |   @awesome-cordova-plugins 5.X   |
+|  V5 - React  | Not currently supported |  @awesome-cordova-plugins 5.X\*  |
+| V4 - Angular |  `@ionic/angular` 5.X   |   @awesome-cordova-plugins 5.X   |
+|  V4 - React  | Not currently supported |  @awesome-cordova-plugins 5.X\*  |
+|      V3      | Not currently supported |   @awesome-cordova-plugins 4.X   |
 
 - Wrappers (and their associated plugins) are community maintained.
 - \*Cordova plugin support with Ionic Native and `@ionic/react` can be achieved using the [vanilla JavaScript implementation](../native.md#vanilla-javascript)
