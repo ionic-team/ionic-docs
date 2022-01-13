@@ -1,8 +1,14 @@
 ---
+title: Rapid App Development with Live Reload
 sidebar_label: Live Reload
 ---
 
-# Rapid App Development with Live Reload
+<head>
+  <meta
+    name="description"
+    content="Use the Ionic CLI’s Live Reload functionality to boost your productivity when building Ionic apps. Learn how you can utilize rapid app development."
+  />
+</head>
 
 So far, we’ve seen how easy it is to develop a cross-platform app that works everywhere. The development experience is pretty quick, but what if I told you there was a way to go faster?
 

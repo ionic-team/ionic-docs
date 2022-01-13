@@ -228,6 +228,10 @@
       "title": "ion-tab-bar with CSS Custom Properties for Tab Bar Components",
       "description": "The tab bar component contains a set of tab buttons and a tab bar must be provided inside of tabs to communicate. Read more about use and CSS custom properties."
     },
+    "ion-tab": {
+      "title": "ion-tab - Ionic Framework Application Component",
+      "description": "ion-tab is a child component of tabs. Each ion-tab can contain a top level navigation stack for an application or a single view. Read to learn more."
+    },
     "ion-tabs": {
       "title": "Ion-Tabs: Tab-Based Component for App Top-Level Navigation",
       "description": "Tabs are top-level components to implement tab-based navigation. Ion-tabs have no styling & work as router outlets for navigation that behaves like native apps."
@@ -310,6 +314,10 @@
       "title": "Ionic Generate: Create Pages, Components, & Angular Features",
       "description": "Automatically create framework features with Ionic Generate. This command uses the Angular CLI to generate pages, components, directives, services, and more."
     },
+    "init": {
+      "title": "ionic init: Command to Initialize Existing Ionic App Projects",
+      "description": "The ionic init command will initialize an Ionic app within the current directory. Read our documentation on how to initialize existing projects with Ionic."
+    },
     "livereload": {
       "title": "Ionic Live Reload on Capacitor and Cordova to Boost Productivity",
       "description": "Live Reload can boost productivity when building apps with Capacitor, Cordova, or Ionic Serve. Learn more about live reloading browsers when changes are made."
@@ -324,9 +332,17 @@
     }
   },
   "native": {
+    "admob": {
+      "title": "AdMob Plugin: Monetize Apps and Games Using Google AdMob SDK",
+      "description": "AdMob for Ionic apps is the most complete AdMob plugin with support for Tappx ads. Monetize apps and games with AdMob ads, using the latest Google AdMob SDK."
+    },
     "admob-free": {
       "title": "AdMob Free | Cordova Plugin Version of Google Admob for Free",
       "description": "AdMob Free is Ionic Framework's free, no ad-sharing version of Google AdMob plugin for Cordova. Read for more info on cordova-plugin-admob-free usage."
+    },
+    "aes-256": {
+      "title": "AES256 | Perform AES 256 Encryption and Decryption on Plain Text",
+      "description": "This plugin allows you to perform AES 256 encryption and decryption on the plain text. It's a cross-platform plugin which supports both Android and iOS."
     },
     "android-full-screen": {
       "title": "Android Full Screen: Plugin for Cordova and PhoneGap Apps",
@@ -335,6 +351,10 @@
     "android-permissions": {
       "title": "Android Permissions | Android Device and Ionic App Permissions",
       "description": "This plugin is designed to support Android new permissions checking mechanism. Learn how to install and use Android Device permissions on your Ionic App."
+    },
+    "app-availability": {
+      "title": "App Availability - Cordova Plugin for iOS and Android Devices",
+      "description": "The app availability plugin allows you to check if an app is installed on a user's iOS or Android device. Read to learn about Cordova plugin requirements."
     },
     "app-version": {
       "title": "App Version | Cordova Plugin App Version to Read Ionic Apps",
@@ -391,6 +411,10 @@
     "clipboard": {
       "title": "Clipboard Management Plugin - Install on iOS, Android or Windows",
       "description": "Ionic's clipboard management plugin for Cordova supports iOS, Android, and Windows Phone 8. Read for more on how to install the clipboard plugin on Ionic apps."
+    },
+    "code-push": {
+      "title": "Code Push | Native CodePush Plugin for Cordova by Microsoft",
+      "description": "The CodePush plugin for Cordova by Microsoft supports iOS and Android devices. Read to learn more about code push on Native Ionic applications."
     },
     "contacts": {
       "title": "Cordova Contacts Plugin to Access and Manage Device Contacts",
@@ -468,9 +492,17 @@
       "title": "Firebase Crashlytics: Google Crash Analytics Plugin iOS/Android",
       "description": "Firebase Crashlytics is a Google crash analytics plugin to capture iOS/Android device crash reports. Read to learn about cordova-plugin-firebase-crashlytics."
     },
+    "firebase-messaging": {
+      "title": "Firebase Messaging: Cordova Plugin for Android and iOS | Ionic",
+      "description": "Learn to install and use the Cordova firebase messaging plugin for Ionic apps on Android and iOS devices. Read our documentation for more information."
+    },
     "firebase-x": {
       "title": "Firebase X | Cordova Firebase X Ionic Native App Plugin",
       "description": "The Firebase X plugin brings push notifications, analytics, event tracking, and more from Google Firebase to your Cordova project on Ionic Framework apps!"
+    },
+    "foreground-service": {
+      "title": "Android Foreground Service Plugin Using Ongoing Notification",
+      "description": "The foreground service plugin allows for android devices to continue running services in the background, using a foreground ongoing notification. Read more."
     },
     "geolocation": {
       "title": "Geolocation | W3C Geolocator Application API Plugin",
@@ -512,6 +544,10 @@
       "title": "In-App Purchase (IAP) 2: iOS, Android, Windows, macOS & Xbox Apps",
       "description": "In-App Purchase 2 lets users make purchases directly from iOS, Android, Windows, macOS, and Xbox devices. Read to learn more about Ionic apps and IAP usage."
     },
+    "insomnia": {
+      "title": "Insomnia Plugin: Prevent Mobile Screen Sleep Mode | Ionic",
+      "description": "The insomnia plugin prevents the screen of mobile devices from falling asleep. Learn more about plugin use and installation to prevent sleep mode on Ionic apps."
+    },
     "ionic-webview": {
       "title": "WebView | Ionic Framework Cordova WebView App Plugin",
       "description": "Cordova WebView plugin allows access to web view utilities on Ionic Framework apps. View the Ionic Web View repository for info on iOS and Android system use."
@@ -535,6 +571,10 @@
     "media-capture": {
       "title": "Media Capture | Native Ionic App Cordova Plugin for Media Capture",
       "description": "The Cordova Media Capture Plugin provides access to the device's audio, image, and video capture capabilities in Native Ionic apps. Read for more usage info."
+    },
+    "music-controls": {
+      "title": "Music Controls - For Android, iOS, and Windows Device Apps",
+      "description": "Display a 'media' notification with buttons that allow users to control their play. Learn about music controls for Ionic Android, iOS, and Windows applications."
     },
     "native-audio": {
       "title": "Native Audio | Cordova Native Audio Plugin for Audio Playback",
