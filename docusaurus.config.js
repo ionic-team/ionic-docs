@@ -18,7 +18,7 @@ module.exports = {
   },
   onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
-  favicon: 'img/meta/favicon.ico',
+  favicon: 'img/meta/favicon-96x96.png',
   organizationName: 'ionic-team',
   projectName: 'ionic-docs',
   themeConfig: {
@@ -147,26 +147,20 @@ module.exports = {
           type: 'separator',
           position: 'right',
         },
-        // {
-        //   type: 'localeDropdown',
-        //   position: 'right',
-        //   dropdownItemsBefore: [],
-        //   dropdownItemsAfter: [
-        //     {
-        //       href: 'https://ionicframework.com/jp/docs/',
-        //       label: '日本語',
-        //       target: '_blank',
-        //       rel: null,
-        //     },
-        //     {
-        //       href: 'https://ionicframework.com/translate',
-        //       label: 'Translate',
-        //       target: '_blank',
-        //       rel: null,
-        //     },
-        //   ],
-        //   className: 'icon-link language navbar__item',
-        // },
+        {
+          type: 'localeDropdown',
+          position: 'right',
+          dropdownItemsBefore: [],
+          dropdownItemsAfter: [
+            {
+              href: 'https://ionicframework.com/translate',
+              label: 'Translate',
+              target: '_blank',
+              rel: null,
+            },
+          ],
+          className: 'icon-link language navbar__item',
+        },
         {
           type: 'iconLink',
           position: 'right',
@@ -208,7 +202,8 @@ module.exports = {
       additionalLanguages: ['shell-session', 'http'],
     },
     algolia: {
-      apiKey: '43228ce75714201a27efcf69666d6b40',
+      appId: 'O9QSL985BS',
+      apiKey: 'ceb5366064b8fbf70959827cf9f69227',
       indexName: 'ionicframework',
       contextualSearch: true,
     },

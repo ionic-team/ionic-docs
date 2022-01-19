@@ -1,4 +1,14 @@
-# ブラウザサポート
+---
+title: ブラウザサポート
+---
+
+<head>
+  <title>Mobile Browser Support to Run Ionic Apps Anywhere</title>
+  <meta
+    name="description"
+    content="Due to a foundation in web technologies, Ionic mobile apps can run anywhere the web runs — iOS, Android, browsers, PWAs, and more. Learn about browser support."
+  />
+</head>
 
 Ionicの本来の目標は、HTML、CSS、JavaScriptといったWeb技術を使用してモバイルアプリを開発することを簡単にすることでした。Ionicはこのウェブテクノロジーの基盤により、ウェブ、iOS、Android、ブラウザ、PWAなど、どこでも実行できます。
 

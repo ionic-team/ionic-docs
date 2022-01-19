@@ -1,8 +1,15 @@
 ---
+title: Ionic Reactクイックスタート
 sidebar_label: クイックスタート
 ---
 
-# Ionic Reactクイックスタート
+<head>
+  <title>Intro to React Native Quickstart Using Ionic CLI: React Basics</title>
+  <meta
+    name="description"
+    content="Intro to React Native Quickstart covers the basics of React and Ionic, including any Ionic-specific features. Learn how to build React apps using the Ionic CLI."
+  />
+</head>
 
 ## Ionic Frameworkとは
 
