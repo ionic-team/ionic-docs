@@ -36,7 +36,7 @@ To figure out what version of the webview a device is running, log `window.navig
 
 ### A Note on Angular 13 Support
 
-The browser support policy for Angular 13 for iOS is the 2 most recent major versions which at time of release is iOS 15 and 14. To support iOS 13 a change is required to `tsconfig.json` in your project to target `es5` rather than the default of `es2015`. Without this change an error of `Unexpected token '.' in promiseReactionJob` will occur on startup of an app in iOS 13.
+Angular's support policy for iOS is the two most recent major versions. At the time of release that is iOS 14 and 15. To support iOS 13, change the project target specified in the tsconfig.json from the default value of `es2015` to `es5`. Without this change an error of `Unexpected token '.' in promiseReactionJob` will occur on app startup in iOS 13.
 
 ## Desktop Browsers
 
