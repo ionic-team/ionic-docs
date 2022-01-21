@@ -1,8 +1,14 @@
 ---
+title: Rapid App Development with Live Reload
 sidebar_label: Live Reload
 ---
 
-# Rapid App Development with Live Reload
+<head>
+  <meta
+    name="description"
+    content="Use the Ionic CLI’s Live Reload functionality to boost your productivity when building Ionic apps. Learn how you can utilize rapid app development."
+  />
+</head>
 
 So far, we’ve seen how easy it is to develop a cross-platform app that works everywhere. The development experience is pretty quick, but what if I told you there was a way to go faster?
 
@@ -43,16 +49,16 @@ constructor(public photoService: PhotoService,
             public actionSheetController: ActionSheetController) {}
 ```
 
-Add `Photo` to the import statement.
+Add `UserPhoto` to the import statement.
 
 ```tsx
-import { Photo, PhotoService } from '../services/photo.service';
+import { PhotoService, UserPhoto } from '../services/photo.service';
 ```
 
 Next, implement the `showActionSheet()` function. We add two options: `Delete` that calls PhotoService’s `deletePicture()` function (to be added next) and `Cancel`, which when given the role of “cancel” will automatically close the action sheet:
 
 ```tsx
-public async showActionSheet(photo: Photo, position: number) {
+public async showActionSheet(photo: UserPhoto, position: number) {
   const actionSheet = await this.actionSheetController.create({
     header: 'Photos',
     buttons: [{

@@ -1,8 +1,15 @@
 ---
+title: Vue Navigation
 sidebar_label: Navigation/Routing
 ---
 
-# Vue Navigation
+<head>
+  <title>Vue Navigation: Use Ionic + Vue Router to Create Multi-Page Apps</title>
+  <meta
+    name="description"
+    content="This Vue Navigation guide covers how routing works in Vue apps. Learn how to create multi-page apps with rich page transitions using Ionic and Vue Router."
+  />
+</head>
 
 This guide covers how routing works in an app built with Ionic and Vue.
 
