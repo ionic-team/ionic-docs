@@ -176,7 +176,7 @@ If the app isn't listed, the Web Inspector may need to be enabled on the device 
 
 ### Viewing Native Logs
 
-If running with Xcode, native logs can be found in in the Xcode **Console**.
+If running with Xcode, native logs can be found in the Xcode **Console**.
 
 :::note
 If the **Console** is hidden, enable it in **View** &raquo; **Debug Area** &raquo; **Activate Console**.
