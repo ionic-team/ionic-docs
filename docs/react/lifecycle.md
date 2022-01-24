@@ -20,9 +20,9 @@ Ionic provides a few lifecycle methods that you can use in your apps:
 | Event Name         | Description                                                        |
 | ------------------ | ------------------------------------------------------------------ |
 | `ionViewWillEnter` | Fired when the component routing to is about to animate into view. |
-| `ionViewDidEnter`  | Fired when the component routing to has finished animating.        |
-| `ionViewWillLeave` | Fired when the component routing from is about to animate.         |
-| `ionViewDidLeave`  | Fired when the component routing to has finished animating.        |
+| `ionViewDidEnter`  | Fired when the component routing to has *finished* animating.      |
+| `ionViewWillLeave` | Fired when the component routing *from* is about to animate.       |
+| `ionViewDidLeave`  | Fired when the component routing *from* has *finished* animating.  |
 
 The way you access these methods varies based on if you are using class-based components or functional components. We cover both methods below.
 
