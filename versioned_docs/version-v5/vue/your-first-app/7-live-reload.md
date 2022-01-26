@@ -106,7 +106,7 @@ return {
 Next, we need to implement the `deletePhoto` method in the `usePhotoGallery` function. Open the file then add:
 
 ```tsx
-const deletePhoto = async (photo: Photo) => {
+const deletePhoto = async (photo: UserPhoto) => {
   // Remove this photo from the Photos reference data array
   photos.value = photos.value.filter((p) => p.filepath !== photo.filepath);
 

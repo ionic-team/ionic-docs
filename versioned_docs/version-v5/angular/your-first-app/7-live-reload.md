@@ -80,7 +80,7 @@ Save both of the files we just edited. The Photo Gallery app will reload automat
 In `src/app/services/photo.service.ts`, add the `deletePicture()` function:
 
 ```tsx
-public async deletePicture(photo: Photo, position: number) {
+public async deletePicture(photo: UserPhoto, position: number) {
   // Remove this photo from the Photos reference data array
   this.photos.splice(position, 1);
 
