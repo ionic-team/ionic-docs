@@ -43,16 +43,16 @@ constructor(public photoService: PhotoService,
             public actionSheetController: ActionSheetController) {}
 ```
 
-Add `Photo` to the import statement.
+Add `UserPhoto` to the import statement.
 
 ```tsx
-import { Photo, PhotoService } from '../services/photo.service';
+import { PhotoService, UserPhoto } from '../services/photo.service';
 ```
 
 Next, implement the `showActionSheet()` function. We add two options: `Delete` that calls PhotoService’s `deletePicture()` function (to be added next) and `Cancel`, which when given the role of “cancel” will automatically close the action sheet:
 
 ```tsx
-public async showActionSheet(photo: Photo, position: number) {
+public async showActionSheet(photo: UserPhoto, position: number) {
   const actionSheet = await this.actionSheetController.create({
     header: 'Photos',
     buttons: [{
@@ -80,7 +80,7 @@ Save both of the files we just edited. The Photo Gallery app will reload automat
 In `src/app/services/photo.service.ts`, add the `deletePicture()` function:
 
 ```tsx
-public async deletePicture(photo: Photo, position: number) {
+public async deletePicture(photo: UserPhoto, position: number) {
   // Remove this photo from the Photos reference data array
   this.photos.splice(position, 1);
 

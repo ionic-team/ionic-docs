@@ -64,7 +64,7 @@ When a user clicks/taps on an image, we will show the action sheet. Add a click 
 Next, within `setup()`, call the `create` function to open a dialog with the option to either delete the selected photo or cancel (close) the dialog:
 
 ```tsx
-const showActionSheet = async (photo: Photo) => {
+const showActionSheet = async (photo: UserPhoto) => {
   const actionSheet = await actionSheetController.create({
     header: 'Photos',
     buttons: [
@@ -106,7 +106,7 @@ return {
 Next, we need to implement the `deletePhoto` method in the `usePhotoGallery` function. Open the file then add:
 
 ```tsx
-const deletePhoto = async (photo: Photo) => {
+const deletePhoto = async (photo: UserPhoto) => {
   // Remove this photo from the Photos reference data array
   photos.value = photos.value.filter((p) => p.filepath !== photo.filepath);
 

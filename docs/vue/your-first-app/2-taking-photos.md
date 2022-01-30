@@ -88,7 +88,7 @@ After taking a photo, it disappears right away. We still need to display it with
 
 ## Displaying Photos
 
-First we will create a new type to define our Photo, which will hold specific metadata. Add the following Photo interface to the `usePhotoGallery.ts` file, somewhere outside of the main function:
+First we will create a new type to define our Photo, which will hold specific metadata. Add the following UserPhoto interface to the `usePhotoGallery.ts` file, somewhere outside of the main function:
 
 ```tsx
 export interface UserPhoto {
@@ -124,7 +124,7 @@ return {
 };
 ```
 
-Back in the Tab2 component, update the import statement to include the `Photo` interface:
+Back in the Tab2 component, update the import statement to include the `UserPhoto` interface:
 
 ```tsx
 import { usePhotoGallery, UserPhoto } from '@/composables/usePhotoGallery';

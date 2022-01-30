@@ -44,7 +44,7 @@ export function usePhotoGallery() {
 }
 ```
 
-Our `usePhotoGallery` hook exposes a method called takePhoto, which in turn calls into Capactior's getPhoto method.
+Our `usePhotoGallery` hook exposes a method called takePhoto, which in turn calls into Capacitor's getPhoto method.
 
 Notice the magic here: there's no platform-specific code (web, iOS, or Android)! The Capacitor Camera plugin abstracts that away for us, leaving just one method call - `getPhoto()` - that will open up the device's camera and allow us to take photos.
 
@@ -73,7 +73,7 @@ After taking a photo, it disappears. We still need to display it within our app 
 
 ## Displaying Photos
 
-First we will create a new type to define our Photo, which will hold specific metadata. Add the following Photo interface to the `usePhotoGallery.ts` file, somewhere outside of the main function:
+First we will create a new type to define our Photo, which will hold specific metadata. Add the following UserPhoto interface to the `usePhotoGallery.ts` file, somewhere outside of the main function:
 
 ```tsx
 export interface UserPhoto {

@@ -400,7 +400,7 @@ export class SearchbarExample {
 
 |                 |                                                             |
 | --------------- | ----------------------------------------------------------- |
-| **Description** | Set the the cancel button text. Only applies to `ios` mode. |
+| **Description** | Set the cancel button text. Only applies to `ios` mode.     |
 | **Attribute**   | `cancel-button-text`                                        |
 | **Type**        | `string`                                                    |
 | **Default**     | `'Cancel'`                                                  |
