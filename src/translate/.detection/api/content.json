@@ -265,11 +265,6 @@
       "target": "window",
       "capture": false,
       "passive": false
-    },
-    {
-      "event": "click",
-      "capture": true,
-      "passive": false
     }
   ],
   "styles": [
