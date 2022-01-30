@@ -1,36 +1,42 @@
-import { components } from '@ionic/docs/core.json';
 import { existsSync, mkdirSync, readFileSync, readdirSync, writeFileSync } from 'fs';
-
+const fetch = require('node-fetch');
 import { commands } from '../data/cli.json';
 
-const translateTypes = [
-  {
-    type: 'api',
-    contents: components,
-    key: 'tag',
-    contentsKey: 'components',
-    markdown: 'readme',
-    resource: require('@ionic/docs/core.json'),
-  },
-  {
-    type: 'cli',
-    contents: commands,
-    key: 'name',
-    contentsKey: 'commands',
-    markdown: 'description',
-    resource: require('../data/cli.json'),
-  },
-  {
-    type: 'native',
-    contents: require('../data/native.json'),
-    key: 'packageName',
-    contentsKey: '',
-    markdown: 'description',
-    resource: require('../data/native.json'),
-  }
-];
+const getTranslateType = async () => {
+  const response = await fetch('https://unpkg.com/@ionic/docs@6.0.1-dev.1639592631.ce89cfa/core.json');
+  const { components } = await response.json();
 
-const apply = () => {
+  return [
+    {
+      type: 'api',
+      contents: components,
+      key: 'tag',
+      contentsKey: 'components',
+      markdown: 'readme',
+      resource: response,
+    },
+    {
+      type: 'cli',
+      contents: commands,
+      key: 'name',
+      contentsKey: 'commands',
+      markdown: 'description',
+      resource: require('../data/cli.json'),
+    },
+    {
+      type: 'native',
+      contents: require('../data/native.json'),
+      key: 'packageName',
+      contentsKey: '',
+      markdown: 'description',
+      resource: require('../data/native.json'),
+    }
+  ];
+}
+
+const apply = async () => {
+  const translateTypes = await getTranslateType();
+
   for (const translateType of translateTypes) {
     const directory = process.cwd() + '/src/translate/' + translateType.type;
     if (!existsSync(directory)) {
@@ -66,7 +72,9 @@ const apply = () => {
   }
 };
 
-const create = () => {
+const create = async () => {
+  const translateTypes = await getTranslateType();
+
   for (const translateType of translateTypes) {
     translateType.contents.map((ob: any) => {
       const key = _changeNameToVariable(ob[translateType.key]);
@@ -103,8 +111,10 @@ const create = () => {
   }
 };
 
-const diff = () => {
+const diff = async () => {
   const execSync = require('child_process').execSync;
+  const translateTypes = await getTranslateType();
+
   for (const translateType of translateTypes) {
     execSync('git diff src/translate/.detection/' + translateType.type + '/*  > structure_' + translateType.type + '.patch');
 
