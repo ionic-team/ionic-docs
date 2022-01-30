@@ -26,6 +26,7 @@ jobs:
       # Lintとテストの実行
       - name: npm install, build
         run: |
+          export NODE_OPTIONS="--max-old-space-size=1024"
           npm ci
           npm run prebuild
           npm run build:ci
