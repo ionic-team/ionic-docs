@@ -28,7 +28,6 @@ jobs:
         run: |
           npm ci
           npm run prebuild
-          export NODE_OPTIONS="--max-old-space-size=2048"
           npm run build:ci
 
       # ビルドの実行
