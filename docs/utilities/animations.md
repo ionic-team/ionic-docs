@@ -1310,12 +1310,14 @@ customElements.define('modal-page', class extends HTMLElement {
 
 function presentModal() {
   const enterAnimation = (baseEl: any) => {
+    const root = baseEl.shadowRoot;
+
     const backdropAnimation = createAnimation()
-      .addElement(baseEl.querySelector('ion-backdrop')!)
+      .addElement(root.querySelector('ion-backdrop')!)
       .fromTo('opacity', '0.01', 'var(--backdrop-opacity)');
 
     const wrapperAnimation = createAnimation()
-      .addElement(baseEl.querySelector('.modal-wrapper')!)
+      .addElement(root.querySelector('.modal-wrapper')!)
       .keyframes([
         { offset: 0, opacity: '0', transform: 'scale(0)' },
         { offset: 1, opacity: '0.99', transform: 'scale(1)' }
@@ -1362,12 +1364,14 @@ export class ModalExample {
 
   async presentModal() {
     const enterAnimation = (baseEl: any) => {
+      const root = baseEl.shadowRoot;
+
       const backdropAnimation = this.animationCtrl.create()
-        .addElement(baseEl.querySelector('ion-backdrop')!)
+        .addElement(root.querySelector('ion-backdrop')!)
         .fromTo('opacity', '0.01', 'var(--backdrop-opacity)');
 
       const wrapperAnimation = this.animationCtrl.create()
-        .addElement(baseEl.querySelector('.modal-wrapper')!)
+        .addElement(root.querySelector('.modal-wrapper')!)
         .keyframes([
           { offset: 0, opacity: '0', transform: 'scale(0)' },
           { offset: 1, opacity: '0.99', transform: 'scale(1)' }
@@ -1404,12 +1408,14 @@ export const ModalExample: React.FC = () => {
   const [showModal, setShowModal] = useState(false);
 
   const enterAnimation = (baseEl: any) => {
+    const root = baseEl.shadowRoot;
+
     const backdropAnimation = createAnimation()
-      .addElement(baseEl.querySelector('ion-backdrop')!)
+      .addElement(root.querySelector('ion-backdrop')!)
       .fromTo('opacity', '0.01', 'var(--backdrop-opacity)');
 
     const wrapperAnimation = createAnimation()
-      .addElement(baseEl.querySelector('.modal-wrapper')!)
+      .addElement(root.querySelector('.modal-wrapper')!)
       .keyframes([
         { offset: 0, opacity: '0', transform: 'scale(0)' },
         { offset: 1, opacity: '0.99', transform: 'scale(1)' }
@@ -1469,12 +1475,14 @@ export default defineComponent({
     const setModalOpen = (state) => isModalOpen.value = state;
 
     const enterAnimation = (baseEl: any) => {
+      const root = baseEl.shadowRoot;
+
       const backdropAnimation = createAnimation()
-        .addElement(baseEl.querySelector('ion-backdrop')!)
+        .addElement(root.querySelector('ion-backdrop')!)
         .fromTo('opacity', '0.01', 'var(--backdrop-opacity)');
 
       const wrapperAnimation = createAnimation()
-        .addElement(baseEl.querySelector('.modal-wrapper')!)
+        .addElement(root.querySelector('.modal-wrapper')!)
         .keyframes([
           { offset: 0, opacity: '0', transform: 'scale(0)' },
           { offset: 1, opacity: '0.99', transform: 'scale(1)' }
