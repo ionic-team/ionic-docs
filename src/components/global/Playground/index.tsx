@@ -8,7 +8,7 @@ import CodeBlock from '@theme/CodeBlock';
 import './playground.css';
 
 enum UsageTarget {
-  HTML = 'HTML',
+  Basic = 'Basic',
   Angular = 'Angular',
   React = 'React',
   Vue = 'Vue',
@@ -101,7 +101,7 @@ export default function Playground({ children, src, title, description }) {
     return null;
   }
 
-  const [selected, setSelected] = useState(UsageTarget.HTML);
+  const [selected, setSelected] = useState(UsageTarget.Basic);
   const [theme, setTheme] = useState(Theme.Light);
   const [mode, setMode] = useState(Mode.iOS);
   const [expanded, setExpanded] = useState(false);
@@ -256,7 +256,7 @@ export default function Playground({ children, src, title, description }) {
       case UsageTarget.Angular:
         openAngularEditor(codeBlock, editorOptions);
         break;
-      case UsageTarget.HTML:
+      case UsageTarget.Basic:
         openHtmlEditor(codeBlock, editorOptions);
         break;
       case UsageTarget.React:
@@ -341,10 +341,11 @@ export default function Playground({ children, src, title, description }) {
       {/* Applying `mode` at this node will update the playground example to mode="md" or mode="ios". */}
       <div className={`playground__preview playground__preview-theme--${theme}`} key={mode} {...{ mode }}>
         {children}
+        <ToggleCodeButton expanded={expanded} setExpanded={setExpanded} />
       </div>
       <div className={'playground__code-block ' + (expanded ? 'playground__code-block--expanded' : '')}>
-        {selected === UsageTarget.HTML && (
-          <CodeBlock className="code-block code--html language-html">{code['html'] ?? ''}</CodeBlock>
+        {selected === UsageTarget.Basic && (
+          <CodeBlock className="code-block code--html language-html">{code['basic'] ?? ''}</CodeBlock>
         )}
         {selected === UsageTarget.Angular && (
           <CodeBlock className="code-block code--angular language-html">{code['angular']}</CodeBlock>
@@ -356,7 +357,6 @@ export default function Playground({ children, src, title, description }) {
           <CodeBlock className="code-block code--vue language-jsx">{code['vue']}</CodeBlock>
         )}
       </div>
-      <ToggleCodeButton expanded={expanded} setExpanded={setExpanded} />
     </div>
   );
 }

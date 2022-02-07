@@ -1,17 +1,25 @@
 
 .playground {
-  padding: 0.75rem;
-  border: 1px solid #dee3ea;
-  border-radius: 12px;
-  position: relative;
   overflow: hidden;
-  background: var(--ion-background-color);
 
-  --code-block-bg-c: #1e2a3a;
-  --ifm-pre-color: white;
+  --playground-toolbar-background: #ecf0f5;
+
+  --playground-btn-color: #5b708b;
+  --playground-btn-background: #000;
+  --playground-btn-selected-color: #000;
+  --playground-btn-selected-background: #fff;
+
 }
 
 .playground--theme-dark {
+  --playground-toolbar-background: #34302f;
+  --playground-btn-color: #fff;
+  --playground-btn-selected-background: #424241;
+  --playground-btn-selected-color: #fff;
+
+  --code-block-bg-c: #1e2a3a;
+  --ifm-pre-color: white;
+
   --ion-color-primary: #428cff;
   --ion-color-primary-rgb: 66,140,255;
   --ion-color-primary-contrast: #ffffff;
@@ -129,6 +137,7 @@
 }
 
 .playground__preview {
+  position: relative;
   margin: 18px 0;
   background-image: radial-gradient(#f1f2f6 2px, #fbfbfd 2px);
   background-size: 12px 12px;
@@ -168,7 +177,7 @@
 }
 
 .playground__control-toolbar {
-  background: #ecf0f5;
+  background: var(--playground-toolbar-background);
   display: flex;
   align-items: center;
   border-radius: 16px;
@@ -178,6 +187,7 @@
   height: 34px;
   overflow-y: auto;
   scrollbar-width: none;
+  transition: background .2s;
 }
 
 .playground__control-toolbar::-webkit-scrollbar {
@@ -191,7 +201,7 @@
   background-color: transparent;
   border: none;
   border-radius: 16px;
-  color: #5b708b;
+  color: var(--playground-btn-color);
   cursor: pointer;
   font-family: var(--font-family);
   font-size: 11px;
@@ -199,7 +209,7 @@
   min-width: 44px;
   height: 22px;
   line-height: 21px;
-  transition: background-color .2s,color .2s;
+  transition: background-color .2s, color .2s;
   padding: 0 12px 0;
   display: inline-flex;
   justify-content: center;
@@ -210,13 +220,19 @@
   height: 100%;
   max-height: 12px;
   width: auto;
+  fill: var(--playground-btn-color);
+  transition: fill .2s;
 }
 
 .playground__control-button--selected {
-  background-color: #fff;
+  background-color: var(--playground-btn-selected-background);
+  color: var(--playground-btn-selected-color);
   box-shadow: 0 2px 3px rgb(0 16 46 / 15%);
-  color: #000;
   font-weight: 600;
+}
+
+.playground--theme-dark .code-block-source__button {
+  background: var(--playground-toolbar-background);
 }
 
 .code-block-source__button {
@@ -225,9 +241,9 @@
   right: 0;
   border: none;
 
-  background-color: #dee3ea;
-  color: #5b708b;
-  border-radius: 6px 0 0 0px;
+  background: #fbfbfd;
+  color: var(--playground-btn-color);
+  border-radius: 12px 0 12px 0;
   padding: 4px 8px;
   font-size: 12px;
   letter-spacing: -.02em;
@@ -244,6 +260,10 @@
 
 /* Disable Docusaurus style conflicts */
 
+pre[class*=language-] {
+  border-radius: 16px;
+}
+
 .button {
   padding: initial;
   text-align: initial;
@@ -255,8 +275,8 @@
   border-color: initial;
   border-radius: initial;
   border-style: initial;
-  color: initial;
   font-size: initial;
+  color: var(--color);
   font-weight: initial;
 }
 
