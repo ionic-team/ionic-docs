@@ -1,0 +1,245 @@
+
+.playground {
+  padding: 0.75rem;
+  border: 1px solid #dee3ea;
+  border-radius: 12px;
+  position: relative;
+  overflow: hidden;
+  background: var(--ion-background-color);
+}
+
+.playground--theme-dark {
+  --ion-color-primary: #428cff;
+  --ion-color-primary-rgb: 66,140,255;
+  --ion-color-primary-contrast: #ffffff;
+  --ion-color-primary-contrast-rgb: 255,255,255;
+  --ion-color-primary-shade: #3a7be0;
+  --ion-color-primary-tint: #5598ff;
+  --ion-color-secondary: #50c8ff;
+  --ion-color-secondary-rgb: 80,200,255;
+  --ion-color-secondary-contrast: #ffffff;
+  --ion-color-secondary-contrast-rgb: 255,255,255;
+  --ion-color-secondary-shade: #46b0e0;
+  --ion-color-secondary-tint: #62ceff;
+  --ion-color-tertiary: #6a64ff;
+  --ion-color-tertiary-rgb: 106,100,255;
+  --ion-color-tertiary-contrast: #ffffff;
+  --ion-color-tertiary-contrast-rgb: 255,255,255;
+  --ion-color-tertiary-shade: #5d58e0;
+  --ion-color-tertiary-tint: #7974ff;
+  --ion-color-success: #2fdf75;
+  --ion-color-success-rgb: 47,223,117;
+  --ion-color-success-contrast: #000000;
+  --ion-color-success-contrast-rgb: 0,0,0;
+  --ion-color-success-shade: #29c467;
+  --ion-color-success-tint: #44e283;
+  --ion-color-warning: #ffd534;
+  --ion-color-warning-rgb: 255,213,52;
+  --ion-color-warning-contrast: #000000;
+  --ion-color-warning-contrast-rgb: 0,0,0;
+  --ion-color-warning-shade: #e0bb2e;
+  --ion-color-warning-tint: #ffd948;
+  --ion-color-danger: #ff4961;
+  --ion-color-danger-rgb: 255,73,97;
+  --ion-color-danger-contrast: #ffffff;
+  --ion-color-danger-contrast-rgb: 255,255,255;
+  --ion-color-danger-shade: #e04055;
+  --ion-color-danger-tint: #ff5b71;
+  --ion-color-dark: #f4f5f8;
+  --ion-color-dark-rgb: 244,245,248;
+  --ion-color-dark-contrast: #000000;
+  --ion-color-dark-contrast-rgb: 0,0,0;
+  --ion-color-dark-shade: #d7d8da;
+  --ion-color-dark-tint: #f5f6f9;
+  --ion-color-medium: #989aa2;
+  --ion-color-medium-rgb: 152,154,162;
+  --ion-color-medium-contrast: #000000;
+  --ion-color-medium-contrast-rgb: 0,0,0;
+  --ion-color-medium-shade: #86888f;
+  --ion-color-medium-tint: #a2a4ab;
+  --ion-color-light: #222428;
+  --ion-color-light-rgb: 34,36,40;
+  --ion-color-light-contrast: #ffffff;
+  --ion-color-light-contrast-rgb: 255,255,255;
+  --ion-color-light-shade: #1e2023;
+  --ion-color-light-tint: #383a3e;
+}
+
+.playground--theme-dark.playground--mode-ios {
+  --ion-background-color: #000000;
+  --ion-background-color-rgb: 0,0,0;
+  --ion-text-color: #ffffff;
+  --ion-text-color-rgb: 255,255,255;
+  --ion-color-step-50: #0d0d0d;
+  --ion-color-step-100: #1a1a1a;
+  --ion-color-step-150: #262626;
+  --ion-color-step-200: #333333;
+  --ion-color-step-250: #404040;
+  --ion-color-step-300: #4d4d4d;
+  --ion-color-step-350: #595959;
+  --ion-color-step-400: #666666;
+  --ion-color-step-450: #737373;
+  --ion-color-step-500: #808080;
+  --ion-color-step-550: #8c8c8c;
+  --ion-color-step-600: #999999;
+  --ion-color-step-650: #a6a6a6;
+  --ion-color-step-700: #b3b3b3;
+  --ion-color-step-750: #bfbfbf;
+  --ion-color-step-800: #cccccc;
+  --ion-color-step-850: #d9d9d9;
+  --ion-color-step-900: #e6e6e6;
+  --ion-color-step-950: #f2f2f2;
+  --ion-toolbar-background: #0d0d0d;
+  --ion-item-background: #000000;
+  --ion-card-background: #1c1c1d;
+}
+
+.playground--theme-dark.playground--mode-md {
+  --ion-background-color: #121212;
+  --ion-background-color-rgb: 18,18,18;
+  --ion-text-color: #ffffff;
+  --ion-text-color-rgb: 255,255,255;
+  --ion-border-color: #222222;
+  --ion-color-step-50: #1e1e1e;
+  --ion-color-step-100: #2a2a2a;
+  --ion-color-step-150: #363636;
+  --ion-color-step-200: #414141;
+  --ion-color-step-250: #4d4d4d;
+  --ion-color-step-300: #595959;
+  --ion-color-step-350: #656565;
+  --ion-color-step-400: #717171;
+  --ion-color-step-450: #7d7d7d;
+  --ion-color-step-500: #898989;
+  --ion-color-step-550: #949494;
+  --ion-color-step-600: #a0a0a0;
+  --ion-color-step-650: #acacac;
+  --ion-color-step-700: #b8b8b8;
+  --ion-color-step-750: #c4c4c4;
+  --ion-color-step-800: #d0d0d0;
+  --ion-color-step-850: #dbdbdb;
+  --ion-color-step-900: #e7e7e7;
+  --ion-color-step-950: #f3f3f3;
+  --ion-item-background: #1e1e1e;
+  --ion-toolbar-background: #1f1f1f;
+  --ion-tab-bar-background: #1f1f1f;
+  --ion-card-background: #1e1e1e;
+}
+
+.playground__preview {
+  margin: 18px 0;
+}
+
+.playground__control-group {
+  display: flex;
+  border-right: 2px solid #dee3ea;
+  padding-left: 6px;
+}
+
+.playground__control-group .playground__control-button:last-child {
+  margin-right: 6px;
+}
+
+.playground__code-block {
+  height: 0px;
+  overflow: hidden;
+}
+
+.playground__code-block--expanded {
+  height: initial;
+}
+
+.playground__control-toolbar {
+  background: #ecf0f5;
+  display: flex;
+  align-items: center;
+  border-radius: 16px;
+  padding-right: 6px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  height: 34px;
+  overflow-y: auto;
+  scrollbar-width: none;
+}
+
+.playground__control-toolbar::-webkit-scrollbar {
+  width: 0;
+  background: transparent;
+  height: 0;
+}
+
+.playground__control-button {
+  appearance: none;
+  background-color: transparent;
+  border: none;
+  border-radius: 16px;
+  color: #5b708b;
+  cursor: pointer;
+  font-family: var(--font-family);
+  font-size: 11px;
+  letter-spacing: -.02em;
+  min-width: 44px;
+  height: 22px;
+  line-height: 21px;
+  transition: background-color .2s,color .2s;
+  padding: 0 12px 0;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.playground__control-button svg {
+  height: 100%;
+  max-height: 12px;
+  width: auto;
+}
+
+.playground__control-button--selected {
+  background-color: #fff;
+  box-shadow: 0 2px 3px rgb(0 16 46 / 15%);
+  color: #000;
+  font-weight: 600;
+}
+
+.code-block-source__button {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  border: none;
+
+  background-color: #dee3ea;
+  color: #5b708b;
+  border-radius: 6px 0 0 0px;
+  padding: 4px 8px;
+  font-size: 12px;
+  letter-spacing: -.02em;
+
+}
+
+.playground__control-button--editor {
+  margin-left: auto;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+
+/* Disable Docusaurus style conflicts */
+
+.button {
+  padding: initial;
+  text-align: initial;
+  vertical-align: initial;
+  white-space: initial;
+  line-height: initial;
+  background-color: initial;
+  border-color: initial;
+  border-radius: initial;
+  border-style: initial;
+  color: initial;
+  font-size: initial;
+  font-weight: initial;
+}
+
+.button:hover {
+  color: initial;
+}

@@ -1,0 +1,12 @@
+```html
+<html>
+  <head>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.skypack.dev/@ionic/core/css/core.css"
+    />
+  </head>
+  <body></body>
+</html>
+```
