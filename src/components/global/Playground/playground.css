@@ -1,22 +1,14 @@
 
 .playground {
-  overflow: hidden;
-
-  --playground-toolbar-background: #ecf0f5;
-
-  --playground-btn-color: #5b708b;
+  --playground-btn-color: #92a1b3;
   --playground-btn-background: #000;
-  --playground-btn-selected-color: #000;
+  --playground-btn-selected-color: #428cff;
   --playground-btn-selected-background: #fff;
 
+  overflow: hidden;
 }
 
 .playground--theme-dark {
-  --playground-toolbar-background: #34302f;
-  --playground-btn-color: #fff;
-  --playground-btn-selected-background: #424241;
-  --playground-btn-selected-color: #fff;
-
   --code-block-bg-c: #1e2a3a;
   --ifm-pre-color: white;
 
@@ -161,6 +153,7 @@
   display: flex;
   border-right: 2px solid #dee3ea;
   padding-left: 6px;
+  min-height: 26px;
 }
 
 .playground__control-group .playground__control-button:last-child {
@@ -177,14 +170,12 @@
 }
 
 .playground__control-toolbar {
-  background: var(--playground-toolbar-background);
   display: flex;
+  border-top: 2px solid #e9edf3;
   align-items: center;
-  border-radius: 16px;
   padding-right: 6px;
-  padding-top: 6px;
+  padding-top: 12px;
   padding-bottom: 6px;
-  height: 34px;
   overflow-y: auto;
   scrollbar-width: none;
   transition: background .2s;
@@ -197,18 +188,19 @@
 }
 
 .playground__control-button {
+  color: var(--playground-btn-color);
+
   appearance: none;
+  text-transform: uppercase;;
   background-color: transparent;
   border: none;
   border-radius: 16px;
-  color: var(--playground-btn-color);
   cursor: pointer;
   font-family: var(--font-family);
-  font-size: 11px;
-  letter-spacing: -.02em;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: .08em;
   min-width: 44px;
-  height: 22px;
-  line-height: 21px;
   transition: background-color .2s, color .2s;
   padding: 0 12px 0;
   display: inline-flex;
@@ -227,12 +219,15 @@
 .playground__control-button--selected {
   background-color: var(--playground-btn-selected-background);
   color: var(--playground-btn-selected-color);
-  box-shadow: 0 2px 3px rgb(0 16 46 / 15%);
-  font-weight: 600;
+}
+
+.playground__control-button--selected svg {
+  fill: #428cff;
 }
 
 .playground--theme-dark .code-block-source__button {
-  background: var(--playground-toolbar-background);
+  cursor: pointer;
+  background: #34302f;
 }
 
 .code-block-source__button {
@@ -251,12 +246,22 @@
 }
 
 .playground__control-button--editor {
+  padding: 0.5rem 1rem;
+  color: #428cff;
+  background:#5598ff29;
+  font-weight: 600;
+  letter-spacing: .08em;
+
   margin-left: auto;
   border: none;
-  background: transparent;
   cursor: pointer;
+
+  transition: background .2s;
 }
 
+.playground__control-button--editor:hover {
+  background:#5598ff38;
+}
 
 /* Disable Docusaurus style conflicts */
 
