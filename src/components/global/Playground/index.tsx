@@ -65,6 +65,15 @@ const ToggleCodeButton = ({ expanded, setExpanded }) => {
   );
 };
 
+const FeedbackButton = () => {
+  // TODO: Open github issue in new tab for the example
+  return (
+    <a href="#" className="code-block-feedback__button">
+      Report an issue
+    </a>
+  );
+};
+
 const CodeBlockButton = ({ language, selected, setSelected }) => {
   return (
     <button
@@ -341,6 +350,7 @@ export default function Playground({ children, src, title, description }) {
       {/* Applying `mode` at this node will update the playground example to mode="md" or mode="ios". */}
       <div className={`playground__preview playground__preview-theme--${theme}`} key={mode} {...{ mode }}>
         {children}
+        <FeedbackButton />
         <ToggleCodeButton expanded={expanded} setExpanded={setExpanded} />
       </div>
       <div className={'playground__code-block ' + (expanded ? 'playground__code-block--expanded' : '')}>

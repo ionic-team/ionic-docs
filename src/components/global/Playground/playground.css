@@ -225,8 +225,7 @@
   fill: #428cff;
 }
 
-.playground--theme-dark .code-block-source__button {
-  cursor: pointer;
+.playground--theme-dark .code-block-source__button, .playground--theme-dark .code-block-feedback__button {
   background: #34302f;
 }
 
@@ -242,7 +241,21 @@
   padding: 4px 8px;
   font-size: 12px;
   letter-spacing: -.02em;
+  cursor: pointer;
+}
 
+.code-block-feedback__button {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  border: none;
+
+  background: #fbfbfd;
+  color: var(--playground-btn-color);
+  border-radius: 0 12px 0 12px;
+  padding: 4px 8px;
+  font-size: 12px;
+  letter-spacing: -.02em;
 }
 
 .playground__control-button--editor {
