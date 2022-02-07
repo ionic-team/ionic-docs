@@ -6,6 +6,9 @@
   position: relative;
   overflow: hidden;
   background: var(--ion-background-color);
+
+  --code-block-bg-c: #1e2a3a;
+  --ifm-pre-color: white;
 }
 
 .playground--theme-dark {
@@ -127,6 +130,22 @@
 
 .playground__preview {
   margin: 18px 0;
+  background-image: radial-gradient(#f1f2f6 2px, #fbfbfd 2px);
+  background-size: 12px 12px;
+  border: 2px solid #dee3ea;
+  border-radius: 16px;
+  min-height: 200px;
+
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+}
+
+.playground--theme-dark .playground__preview {
+  background-image: radial-gradient(var(--ion-color-step-50) 2px, var(--ion-background-color) 2px);
+  border-color: var(--ion-color-step-150);
 }
 
 .playground__control-group {
@@ -229,6 +248,7 @@
   padding: initial;
   text-align: initial;
   vertical-align: initial;
+  display: inline-block;
   white-space: initial;
   line-height: initial;
   background-color: initial;
@@ -238,6 +258,11 @@
   color: initial;
   font-size: initial;
   font-weight: initial;
+}
+
+/* Fixes ion-button expand conflict */
+.button.button-full, .button.button-block {
+  display: block;
 }
 
 .button:hover {
