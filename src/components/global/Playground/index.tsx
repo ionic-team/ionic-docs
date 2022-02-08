@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from 'react';
-import useScript from 'react-script-hook';
+import React, { useState, useEffect, useRef } from 'react';
+import Tippy from '@tippyjs/react';
+import 'tippy.js/dist/tippy.css';
 
 import sdk from '@stackblitz/sdk';
 
@@ -15,11 +16,6 @@ enum UsageTarget {
 }
 
 const UsageTargetList = Object.keys(UsageTarget);
-
-enum Theme {
-  Light = 'light',
-  Dark = 'dark',
-}
 
 enum Mode {
   iOS = 'ios',
@@ -52,28 +48,6 @@ const DEFAULT_IONIC_VERSION = '^6.0.0';
  * @see https://developer.stackblitz.com/docs/platform/javascript-sdk
  */
 
-const ToggleCodeButton = ({ expanded, setExpanded }) => {
-  return (
-    <button
-      type="button"
-      className="code-block-source__button"
-      aria-expanded={expanded ? 'true' : 'false'}
-      onClick={() => setExpanded(!expanded)}
-    >
-      {expanded ? 'Hide code' : 'Show code'}
-    </button>
-  );
-};
-
-const FeedbackButton = () => {
-  // TODO: Open github issue in new tab for the example
-  return (
-    <a href="#" className="code-block-feedback__button">
-      Report an issue
-    </a>
-  );
-};
-
 const CodeBlockButton = ({ language, selected, setSelected }) => {
   return (
     <button
@@ -104,23 +78,31 @@ function convertMdxToCode(text: string) {
   return sourceCode;
 }
 
-export default function Playground({ children, src, title, description }) {
-  if (!src) {
+export default function Playground({ children, src, code, title, description }) {
+  if (!src || !code) {
     console.warn('No src provided to Playground component');
     return null;
   }
 
+  const codeRef = useRef(null);
+  const frameRef = useRef<HTMLIFrameElement>(null);
+
   const [selected, setSelected] = useState(UsageTarget.Basic);
-  const [theme, setTheme] = useState(Theme.Light);
   const [mode, setMode] = useState(Mode.iOS);
   const [expanded, setExpanded] = useState(false);
-  const [code, setCode] = useState({});
+  const [codeSnippet, setCodeSnippet] = useState({
+    basic: '',
+    angular: '',
+    react: '',
+    vue: '',
+  });
+  const [frameHeight, setFrameHeight] = useState(200);
 
   useEffect(() => {
     const fetchCodeSnippets = Promise.all(
-      Object.keys(src).map((target) => {
+      Object.keys(code).map((target) => {
         return new Promise((resolve, reject) => {
-          fetch(src[target])
+          fetch(code[target])
             .then((res) =>
               res.text().then((text) =>
                 resolve({
@@ -141,13 +123,29 @@ export default function Playground({ children, src, title, description }) {
       Object.keys(snippets).forEach((key) => {
         snippets[key] = convertMdxToCode(snippets[key]);
       });
-      setCode(snippets);
+      setCodeSnippet(snippets);
     });
   }, []);
 
-  const [loading, error] = useScript({
-    src: 'https://cdn.jsdelivr.net/npm/@ionic/core@latest/dist/ionic/ionic.js',
-    checkForExisting: true,
+  function onMessage(message: MessageEvent<any>) {
+    if (message.source !== frameRef.current.contentWindow) {
+      return;
+    }
+    try {
+      const ev = JSON.parse(message.data);
+      if (ev.type === 'height') {
+        // Used to resize the preview container to fit the height of the iframe
+        setFrameHeight(ev.data);
+      }
+    } catch {}
+  }
+
+  useEffect(() => {
+    window.addEventListener('message', onMessage);
+
+    return function cleanup() {
+      window.removeEventListener('message', onMessage);
+    };
   });
 
   async function openHtmlEditor(codeBlock: string, options?: EditorOptions) {
@@ -253,6 +251,11 @@ export default function Playground({ children, src, title, description }) {
     });
   }
 
+  function copySourceCode() {
+    const copyButton = codeRef.current.querySelector('button');
+    copyButton.click();
+  }
+
   function openEditor(event) {
     const button = event.target.closest('button');
     // Outer text includes line breaks `\n` to maintain code formatting in editor examples.
@@ -277,94 +280,149 @@ export default function Playground({ children, src, title, description }) {
     }
   }
 
-  const languages = UsageTargetList.filter((lang) => Object.keys(code).includes(lang.toLowerCase()));
+  const languages = UsageTargetList.filter((lang) => Object.keys(codeSnippet).includes(lang.toLowerCase()));
 
   return (
-    <div className={`playground playground--theme-${theme} playground--mode-${mode}`}>
-      <div className="playground__control-toolbar">
-        <div className="playground__control-group">
-          {languages.map((language) => (
-            <CodeBlockButton key={language} language={language} selected={selected} setSelected={setSelected} />
-          ))}
+    <div className={`playground playground--mode-${mode}`}>
+      <div className="playground__container">
+        <div className="playground__control-toolbar">
+          <div className="playground__control-group">
+            {languages.map((language) => (
+              <CodeBlockButton key={language} language={language} selected={selected} setSelected={setSelected} />
+            ))}
+          </div>
+          <div className="playground__control-group">
+            <button
+              type="button"
+              className={
+                'playground__control-button ' + (mode === Mode.iOS ? 'playground__control-button--selected' : '')
+              }
+              onClick={() => setMode(Mode.iOS)}
+            >
+              iOS
+            </button>
+            <button
+              type="button"
+              className={
+                'playground__control-button ' + (mode === Mode.MD ? 'playground__control-button--selected' : '')
+              }
+              onClick={() => setMode(Mode.MD)}
+            >
+              MD
+            </button>
+          </div>
+          <div className="playground__control-group playground__control-group--end">
+            {/* Toggle Source Code */}
+            <Tippy content={expanded ? 'Hide source code' : 'Show full source'}>
+              <button
+                className="playground__icon-button"
+                aria-label={expanded ? 'Hide source code' : 'Show full source'}
+                onClick={() => setExpanded(!expanded)}
+              >
+                <svg
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                >
+                  <path d="M9 16L5 12L9 8" stroke="current" strokeLinecap="round" strokeLinejoin="round" />
+                  <path d="M15 16L19 12L15 8" stroke="current" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </button>
+            </Tippy>
+            {/* Open Feedback */}
+            <Tippy content="Report an issue">
+              <a
+                className="playground__icon-button"
+                href="https://github.com/ionic-team/ionic-docs/issues/new/choose"
+                target="_blank"
+              >
+                <svg aria-hidden="true" width="10" height="10" viewBox="0 0 10 10" fill="none">
+                  <path
+                    d="M2.23077 1H9M9 1V7.76923M9 1L1 9"
+                    stroke="current"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+              </a>
+            </Tippy>
+            {/* Copy Code */}
+            <Tippy content="Copy to clipboard">
+              <button className="playground__icon-button" onClick={copySourceCode}>
+                <svg
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="12"
+                  height="12"
+                  viewBox="0 0 12 12"
+                  fill="none"
+                >
+                  <path
+                    d="M2.06667 9V9C1.47756 9 1 8.52244 1 7.93333V3C1 1.89543 1.89543 1 3 1H7.93333C8.52244 1 9 1.47756 9 2.06667V2.06667"
+                    stroke="#92A0B3"
+                  />
+                  <rect x="3" y="3" width="8" height="8" rx="1.5" stroke="current" />
+                </svg>
+              </button>
+            </Tippy>
+            {/* Open Editor */}
+            <Tippy content="Edit in StackBlitz">
+              <button className="playground__icon-button" title="Edit on Stackblitz" onClick={openEditor}>
+                <svg
+                  aria-hidden="true"
+                  width="12"
+                  height="12"
+                  viewBox="0 0 12 12"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path d="M6 11L11 11" stroke="#92A0B3" strokeLinecap="round" strokeLinejoin="round" />
+                  <path
+                    d="M8.88491 1.36289C9.11726 1.13054 9.43241 1 9.76101 1C9.92371 1 10.0848 1.03205 10.2351 1.09431C10.3855 1.15658 10.5221 1.24784 10.6371 1.36289C10.7522 1.47794 10.8434 1.61453 10.9057 1.76485C10.968 1.91517 11 2.07629 11 2.23899C11 2.4017 10.968 2.56281 10.9057 2.71314C10.8434 2.86346 10.7522 3.00004 10.6371 3.11509L3.33627 10.4159L1 11L1.58407 8.66373L8.88491 1.36289Z"
+                    stroke="current"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </button>
+            </Tippy>
+          </div>
         </div>
-        <div className="playground__control-group">
-          <button
-            type="button"
-            className={
-              'playground__control-button ' + (mode === Mode.iOS ? 'playground__control-button--selected' : '')
-            }
-            onClick={() => setMode(Mode.iOS)}
-          >
-            iOS
-          </button>
-          <button
-            type="button"
-            className={'playground__control-button ' + (mode === Mode.MD ? 'playground__control-button--selected' : '')}
-            onClick={() => setMode(Mode.MD)}
-          >
-            MD
-          </button>
+        <div className="playground__preview">
+          {src ? (
+            <iframe
+              ref={frameRef}
+              key={mode}
+              style={{
+                minHeight: `${frameHeight}px`,
+              }}
+              loading="lazy"
+              src={`${src}?ionic:mode=${mode}`}
+            />
+          ) : (
+            children
+          )}
         </div>
-        <div className="playground__control-group">
-          <button
-            className={
-              'playground__control-button ' + (theme === Theme.Light ? 'playground__control-button--selected' : '')
-            }
-            type="button"
-            title="Enable Light Theme"
-            onClick={() => setTheme(Theme.Light)}
-          >
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-              <path d="M256,118a22,22,0,0,1-22-22V48a22,22,0,0,1,44,0V96A22,22,0,0,1,256,118Z" />
-              <path d="M256,486a22,22,0,0,1-22-22V416a22,22,0,0,1,44,0v48A22,22,0,0,1,256,486Z" />
-              <path d="M369.14,164.86a22,22,0,0,1-15.56-37.55l33.94-33.94a22,22,0,0,1,31.11,31.11l-33.94,33.94A21.93,21.93,0,0,1,369.14,164.86Z" />
-              <path d="M108.92,425.08a22,22,0,0,1-15.55-37.56l33.94-33.94a22,22,0,1,1,31.11,31.11l-33.94,33.94A21.94,21.94,0,0,1,108.92,425.08Z" />
-              <path d="M464,278H416a22,22,0,0,1,0-44h48a22,22,0,0,1,0,44Z" />
-              <path d="M96,278H48a22,22,0,0,1,0-44H96a22,22,0,0,1,0,44Z" />
-              <path d="M403.08,425.08a21.94,21.94,0,0,1-15.56-6.45l-33.94-33.94a22,22,0,0,1,31.11-31.11l33.94,33.94a22,22,0,0,1-15.55,37.56Z" />
-              <path d="M142.86,164.86a21.89,21.89,0,0,1-15.55-6.44L93.37,124.48a22,22,0,0,1,31.11-31.11l33.94,33.94a22,22,0,0,1-15.56,37.55Z" />
-              <path d="M256,358A102,102,0,1,1,358,256,102.12,102.12,0,0,1,256,358Z" />
-            </svg>
-          </button>
-          <button
-            className={
-              'playground__control-button ' + (theme === Theme.Dark ? 'playground__control-button--selected' : '')
-            }
-            type="button"
-            title="Enable Dark Theme"
-            onClick={() => setTheme(Theme.Dark)}
-          >
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-              <path d="M264,480A232,232,0,0,1,32,248C32,154,86,69.72,169.61,33.33a16,16,0,0,1,21.06,21.06C181.07,76.43,176,104.66,176,136c0,110.28,89.72,200,200,200,31.34,0,59.57-5.07,81.61-14.67a16,16,0,0,1,21.06,21.06C442.28,426,358,480,264,480Z" />
-            </svg>
-          </button>
-        </div>
-        <button
-          className="playground__control-button playground__control-button--editor"
-          title="Edit on Stackblitz"
-          onClick={openEditor}
-        >
-          Open Editor
-        </button>
       </div>
-      {/* Applying `mode` at this node will update the playground example to mode="md" or mode="ios". */}
-      <div className={`playground__preview playground__preview-theme--${theme}`} key={mode} {...{ mode }}>
-        {children}
-        <FeedbackButton />
-        <ToggleCodeButton expanded={expanded} setExpanded={setExpanded} />
-      </div>
-      <div className={'playground__code-block ' + (expanded ? 'playground__code-block--expanded' : '')}>
+      <div
+        ref={codeRef}
+        className={'playground__code-block ' + (expanded ? 'playground__code-block--expanded' : '')}
+        aria-expanded={expanded ? 'true' : 'false'}
+      >
         {selected === UsageTarget.Basic && (
-          <CodeBlock className="code-block code--html language-html">{code['basic'] ?? ''}</CodeBlock>
+          <CodeBlock className="code-block code--html language-html">{codeSnippet['basic'] ?? ''}</CodeBlock>
         )}
         {selected === UsageTarget.Angular && (
-          <CodeBlock className="code-block code--angular language-html">{code['angular']}</CodeBlock>
+          <CodeBlock className="code-block code--angular language-html">{codeSnippet['angular']}</CodeBlock>
         )}
         {selected === UsageTarget.React && (
-          <CodeBlock className="code-block code--react language-jsx">{code['react']}</CodeBlock>
+          <CodeBlock className="code-block code--react language-jsx">{codeSnippet['react']}</CodeBlock>
         )}
         {selected === UsageTarget.Vue && (
-          <CodeBlock className="code-block code--vue language-jsx">{code['vue']}</CodeBlock>
+          <CodeBlock className="code-block code--vue language-jsx">{codeSnippet['vue']}</CodeBlock>
         )}
       </div>
     </div>

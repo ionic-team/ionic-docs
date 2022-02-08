@@ -274,5 +274,4 @@ module.exports = {
     path.resolve(__dirname, './node_modules/@docusaurus/theme-search-algolia'),
   ],
   customFields: {},
-  stylesheets: ['https://cdn.jsdelivr.net/npm/@ionic/core/css/core.css'],
 };
