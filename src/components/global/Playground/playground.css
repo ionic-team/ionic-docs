@@ -1,0 +1,106 @@
+/* Dark theme overrides */
+[data-theme="dark"] .playground {
+  --playground-btn-color: var(--c-carbon-20);
+  --playground-btn-selected-color: #fff;
+  --playground-btn-selected-background: var(--c-carbon-70);
+
+  --playground-separator-color: var(--c-carbon-70);
+}
+
+.playground {
+  /**
+   * @prop --playground-btn-color The text color of the button in the toolbar.
+   */
+   --playground-btn-color: var(--c-indigo-90);
+   --playground-btn-selected-color: var(--c-blue-90);
+   --playground-btn-selected-background: var(--c-blue-10);
+
+  --playground-separator-color: var(--c-indigo-30);
+
+  overflow: hidden;
+}
+
+/* Playground container includes the toolbar and preview container */
+.playground__container {
+  border: 1px solid var(--playground-separator-color);
+  border-radius: 16px;
+}
+
+/* Playground preview contains the demo example*/
+.playground__preview {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin: 18px 0;
+  padding: 16px 0;
+}
+
+.playground__control-toolbar {
+  display: flex;
+  align-items: center;
+
+  padding: 8px 12px;
+
+  border-bottom: 1px solid var(--playground-separator-color);
+
+  overflow-y: auto;
+  scrollbar-width: none;
+}
+
+/* Hides the horizontal scrollbar when the toolbar has horizontal overflow */
+.playground__control-toolbar::-webkit-scrollbar {
+  width: 0;
+  background: transparent;
+  height: 0;
+}
+
+/* Playground control group contains a section of buttons in the toolbar */
+.playground__control-group {
+  display: flex;
+  min-height: 24px;
+}
+
+.playground__control-group + .playground__control-group {
+  padding-left: 12px;
+}
+
+.playground__control-group + .playground__control-group:not(.playground__control-group--end) {
+  /* Only render the separator between sections when there is an accompanying section */
+  border-left: 1px solid var(--playground-separator-color);
+}
+
+.playground__control-group .playground__control-button:last-child {
+  margin-right: 12px;
+}
+
+.playground__control-group--end {
+  margin-left: auto;
+  display: grid;
+  gap: 4px;
+  grid-template-columns: repeat(4, auto);
+}
+
+.playground__control-button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 6px 10px;
+
+  color: var(--playground-btn-color);
+  background-color: transparent;
+  border: none;
+  border-radius: 100px;
+
+  font-size: 12px;
+
+  appearance: none;
+  cursor: pointer;
+  transition: background-color .2s, color .2s;
+}
+
+.playground__control-button--selected {
+  background-color: var(--playground-btn-selected-background);
+  color: var(--playground-btn-selected-color);
+  font-weight: 500;
+}
