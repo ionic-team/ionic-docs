@@ -42,6 +42,7 @@ export default function Playground() {
             <a
               className="playground__icon-button"
               href="https://github.com/ionic-team/ionic-docs/issues/new/choose"
+              aria-label="Report an issue"
               target="_blank"
             >
               <svg aria-hidden="true" width="10" height="10" viewBox="0 0 10 10" fill="none">
