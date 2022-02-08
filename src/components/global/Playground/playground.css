@@ -4,6 +4,9 @@
   --playground-btn-selected-color: #fff;
   --playground-btn-selected-background: var(--c-carbon-70);
 
+  --playground-btn-icon-color: var(--c-carbon-20);
+  --playground-btn-icon-hover-background: rgba(67, 79, 93, 0.5);
+
   --playground-separator-color: var(--c-carbon-70);
 }
 
@@ -17,6 +20,8 @@
   --playground-btn-color: var(--c-indigo-90);
   --playground-btn-selected-color: var(--c-blue-90);
   --playground-btn-selected-background: var(--c-blue-10);
+  --playground-btn-icon-hover-background: var(--c-indigo-20);
+  --playground-btn-icon-color: var(--c-indigo-80);
   --playground-separator-color: var(--c-indigo-30);
 
   overflow: hidden;
@@ -97,4 +102,30 @@
   background-color: var(--playground-btn-selected-background);
   color: var(--playground-btn-selected-color);
   font-weight: 500;
+}
+
+/* Icon buttons at the end of the toolbar */
+
+.playground__icon-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;;
+
+  stroke: var(--playground-btn-icon-color);
+  background: transparent;
+
+  width: 24px;
+  height: 24px;
+  padding: 8px 5px;
+
+  border: 0;
+  border-radius: 100px;
+
+  cursor: pointer;
+  appearance: none;
+  transition: background .2s;
+}
+
+.playground__icon-button:hover {
+  background: var(--playground-btn-icon-hover-background);
 }

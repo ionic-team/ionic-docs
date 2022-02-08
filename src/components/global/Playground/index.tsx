@@ -39,6 +39,20 @@ export default function Playground() {
           <div className="playground__control-group playground__control-group--end">
             {/* TODO FW-737: Toggle/Collapse Button */}
             {/* TODO FW-738: Report an Issue Button */}
+            <a
+              className="playground__icon-button"
+              href="https://github.com/ionic-team/ionic-docs/issues/new/choose"
+              target="_blank"
+            >
+              <svg aria-hidden="true" width="10" height="10" viewBox="0 0 10 10" fill="none">
+                <path
+                  d="M2.23077 1H9M9 1V7.76923M9 1L1 9"
+                  stroke="current"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+            </a>
             {/* TODO FW-739: Copy Source Code Button */}
             {/* TODO FW-740: Open Stackblitz Button */}
           </div>
