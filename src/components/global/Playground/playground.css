@@ -130,3 +130,15 @@
 .playground__icon-button:hover {
   background: var(--playground-btn-icon-hover-background);
 }
+
+/* The code block example that users can copy to clipboard */
+.playground__code-block {
+  /* Height is set to zero instead of display: none so that outerText includes line breaks */
+  height: 0px;
+  overflow: hidden;
+}
+
+.playground__code-block--expanded {
+  height: initial;
+  margin-top: 16px;
+}
