@@ -259,11 +259,12 @@ export default function Playground({ children, src, code, title, description }) 
   function openEditor(event) {
     const button = event.target.closest('button');
     // Outer text includes line breaks `\n` to maintain code formatting in editor examples.
-    const codeBlock = button.parentElement.parentElement.querySelector('.code-block pre code')?.outerText;
+    const codeBlock = button.closest('.playground').querySelector('.code-block pre code')?.outerText;
     const editorOptions = {
       title,
       description,
     };
+
     switch (selected) {
       case UsageTarget.Angular:
         openAngularEditor(codeBlock, editorOptions);
