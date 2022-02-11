@@ -1,5 +1,5 @@
 ---
-title: Photos from the Filesystem
+title: Loading Photos from the Filesystem
 sidebar_label: Loading Photos
 ---
 
