@@ -10,11 +10,7 @@ module.exports = {
   baseUrl: `${BASE_URL}/`,
   i18n: {
     defaultLocale: 'en',
-    locales: ['en', 'ja'],
-    localeConfigs: {
-      en: { label: 'English' },
-      ja: { label: '日本語' },
-    },
+    locales: ['en', 'ja', 'fr', 'pt', 'es', 'zh'],
   },
   onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
@@ -153,7 +149,7 @@ module.exports = {
           dropdownItemsBefore: [],
           dropdownItemsAfter: [
             {
-              href: 'https://ionicframework.com/translate',
+              href: 'https://crowdin.com/project/ionic-docs',
               label: 'Translate',
               target: '_blank',
               rel: null,
