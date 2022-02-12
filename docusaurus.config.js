@@ -10,11 +10,11 @@ module.exports = {
   baseUrl: `${BASE_URL}/`,
   i18n: {
     defaultLocale: 'en',
-    locales: ['en', 'ja', 'zh'],
-    // localeConfigs: {
-    //   en: { label: 'English' },
-    //   ja: { label: '日本語' },
-    // },
+    locales: ['en', 'ja'],
+    localeConfigs: {
+      en: { label: 'English' },
+      ja: { label: '日本語' },
+    },
   },
   onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
