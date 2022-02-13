@@ -1,4 +1,14 @@
-# ネイティブエラー
+---
+title: ネイティブエラー
+---
+
+<head>
+  <title>Native App Errors: How to Resolve Native Errors on Ionic Apps</title>
+  <meta
+    name="description"
+    content="Review native app errors including code signing, Xcode build error 65, and clashing Google Play Services versions. Learn to resolve native errors on Ionic apps."
+  />
+</head>
 
 ## コードの署名エラー
 

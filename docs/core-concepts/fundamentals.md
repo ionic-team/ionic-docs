@@ -1,8 +1,15 @@
 ---
-sidebar_label: 基本的な考え方
+title: 基本的な考え方
+sidebar_label: 基礎
 ---
 
-# コアコンセプト
+<head>
+  <title>App Development Core Concepts and Tools - Ionic Framework API</title>
+  <meta
+    name="description"
+    content="For those new to Ionic app development, a high-level understanding of the core concepts and tools behind the project helps. Read to learn more about Ionic API."
+  />
+</head>
 
 Ionicアプリの開発に慣れていない人には、Ionicプロジェクトの背景にある基本的な哲学、概念、およびツールについて知ることが、理解を深めることに役立ちます。複雑なトピックに入る前に、Ionic Frameworkとは何か、そしてそれがどのように機能するかについての基本を説明します。
 

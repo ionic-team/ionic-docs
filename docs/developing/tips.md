@@ -1,4 +1,14 @@
-# 開発者向けのヒント
+---
+title: 開発者向けのヒント
+---
+
+<head>
+  <title>App Development Tips: How to Resolve Permission Errors and Issues</title>
+  <meta
+    name="description"
+    content="If errors occur, npm may need to be set up to operate without elevated permissions. Read our Ionic app Development Tips for more on resolving permission issues."
+  />
+</head>
 
 ## Permission Errors の解決
 
