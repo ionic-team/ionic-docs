@@ -89,7 +89,7 @@ ion-select::part(placeholder)::first-letter {
 }
 ```
 
-Parts work with most <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes" target="_blank" rel="noopener noreferrer">psuedo-classes</a>, as well:
+Parts work with most <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes" target="_blank" rel="noopener noreferrer">pseudo-classes</a>, as well:
 
 ```css
 ion-item::part(native):hover {
