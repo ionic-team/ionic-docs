@@ -27,8 +27,8 @@ However, due to this encapsulation, styles aren’t able to bleed into inner ele
 ```html
 <ion-select>
   #shadow-root
-  <div class="”select-text" select-placeholder”></div>
-  <div class="”select-icon”"></div>
+  <div class="select-text select-placeholder"></div>
+  <div class="select-icon"></div>
 </ion-select>
 ```
 
@@ -56,8 +56,8 @@ Continuing to use the `ion-select` component as an example, the markup is update
 ```html
 <ion-select>
   #shadow-root
-  <div part="”placeholder”" class="”select-text" select-placeholder”></div>
-  <div part="”icon”" class="”select-icon”"></div>
+  <div part="placeholder" class="select-text select-placeholder"></div>
+  <div part="icon" class="select-icon"></div>
 </ion-select>
 ```
 
@@ -89,7 +89,7 @@ ion-select::part(placeholder)::first-letter {
 }
 ```
 
-Parts work with most <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes" target="_blank" rel="noopener noreferrer">psuedo-classes</a>, as well:
+Parts work with most <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes" target="_blank" rel="noopener noreferrer">pseudo-classes</a>, as well:
 
 ```css
 ion-item::part(native):hover {
