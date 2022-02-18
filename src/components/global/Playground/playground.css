@@ -12,9 +12,17 @@
    * @prop --playground-btn-color The text color of the button in the toolbar.
    */
    --playground-btn-color: var(--c-indigo-90);
-   --playground-btn-selected-color: var(--c-blue-90);
-   --playground-btn-selected-background: var(--c-blue-10);
-
+  /**
+   * @prop --playground-btn-selected-color The text color of the button in the toolbar when selected.
+   */
+  --playground-btn-selected-color: var(--c-blue-90);
+  /**
+   * @prop --playground-btn-selected-background The background color of the button in the toolbar when selected.
+   */
+  --playground-btn-selected-background: var(--c-blue-10);
+  /**
+   * @prop --playground-separator-color The color of the separator/border in the toolbar.
+   */
   --playground-separator-color: var(--c-indigo-30);
 
   overflow: hidden;
@@ -23,7 +31,7 @@
 /* Playground container includes the toolbar and preview container */
 .playground__container {
   border: 1px solid var(--playground-separator-color);
-  border-radius: 16px;
+  border-radius: var(--ifm-code-border-radius);
 }
 
 /* Playground preview contains the demo example*/
@@ -58,8 +66,9 @@
   padding-left: 12px;
 }
 
+/** Vertical divider between control groups */
 .playground__control-group + .playground__control-group:not(.playground__control-group--end) {
-  /* Only render the separator between sections when there is an accompanying section */
+  /* Only show the vertical divider when there is a control group after it */
   border-left: 1px solid var(--playground-separator-color);
 }
 
