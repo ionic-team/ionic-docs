@@ -46,15 +46,15 @@ export default function Playground() {
               onClick={() => setCodeExpanded(!codeExpanded)}
             >
               <svg
+                width="16"
+                height="10"
                 aria-hidden="true"
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
+                viewBox="0 0 16 10"
                 fill="none"
+                xmlns="http://www.w3.org/2000/svg"
               >
-                <path d="M9 16L5 12L9 8" stroke="current" strokeLinecap="round" strokeLinejoin="round" />
-                <path d="M15 16L19 12L15 8" stroke="current" strokeLinecap="round" strokeLinejoin="round" />
+                <path d="M5 9L1 5L5 1" stroke="current" strokeLinecap="round" strokeLinejoin="round" />
+                <path d="M11 9L15 5L11 1" stroke="current" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
             </button>
             {/* TODO FW-738: Report an Issue Button */}
