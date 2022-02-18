@@ -44,6 +44,7 @@ export default function Playground() {
               href="https://github.com/ionic-team/ionic-docs/issues/new/choose"
               aria-label="Report an issue"
               target="_blank"
+              rel="noreferrer"
             >
               <svg aria-hidden="true" width="10" height="10" viewBox="0 0 10 10" fill="none">
                 <path
