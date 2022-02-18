@@ -10,6 +10,9 @@ enum Mode {
 export default function Playground() {
   const [mode, setMode] = useState(Mode.iOS);
 
+  const isIOS = mode === Mode.iOS;
+  const isMD = mode === Mode.MD;
+
   // TODO FW-741: Load code snippets remotely
 
   return (
@@ -20,18 +23,14 @@ export default function Playground() {
           <div className="playground__control-group">
             <button
               type="button"
-              className={
-                'playground__control-button ' + (mode === Mode.iOS ? 'playground__control-button--selected' : '')
-              }
+              className={'playground__control-button ' + (isIOS ? 'playground__control-button--selected' : '')}
               onClick={() => setMode(Mode.iOS)}
             >
               iOS
             </button>
             <button
               type="button"
-              className={
-                'playground__control-button ' + (mode === Mode.MD ? 'playground__control-button--selected' : '')
-              }
+              className={'playground__control-button ' + (isMD ? 'playground__control-button--selected' : '')}
               onClick={() => setMode(Mode.MD)}
             >
               MD
