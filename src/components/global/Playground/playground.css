@@ -69,9 +69,8 @@
 
 .playground__control-group--end {
   margin-left: auto;
-  display: grid;
+  display: flex;
   gap: 4px;
-  grid-template-columns: repeat(4, auto);
 }
 
 .playground__control-button {
