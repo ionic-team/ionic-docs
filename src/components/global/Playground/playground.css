@@ -133,7 +133,12 @@
 
 /* The code block example that users can copy to clipboard */
 .playground__code-block {
-  /* Height is set to zero instead of display: none so that outerText includes line breaks */
+  /*
+   * Height is set to zero instead of display: none so that when copying the contents
+   * of the code block to use in Stackblitz, the individual line breaks are preserved.
+   * Otherwise when using display: none, the result of el.outerText will not include
+   * the individual "\n" line breaks and the code snippet will be one line.
+   */
   height: 0px;
   overflow: hidden;
 }
