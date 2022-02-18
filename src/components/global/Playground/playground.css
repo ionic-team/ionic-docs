@@ -48,13 +48,6 @@
   scrollbar-width: none;
 }
 
-/* Hides the horizontal scrollbar when the toolbar has horizontal overflow */
-.playground__control-toolbar::-webkit-scrollbar {
-  width: 0;
-  background: transparent;
-  height: 0;
-}
-
 /* Playground control group contains a section of buttons in the toolbar */
 .playground__control-group {
   display: flex;
