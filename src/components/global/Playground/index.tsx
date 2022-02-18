@@ -14,7 +14,7 @@ export default function Playground() {
 
   return (
     <div className="playground">
-      <div className="playground-container">
+      <div className="playground__container">
         <div className="playground__control-toolbar">
           {/* TODO FW:-742: Code language switcher */}
           <div className="playground__control-group">
