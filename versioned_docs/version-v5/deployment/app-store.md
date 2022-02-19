@@ -52,8 +52,8 @@ With this option selected, select `Archive` from the `Product > Archive` menu. T
 Xcode Organizer displays a list with builds of the current app. Pick the last build and click 'Upload to App Store'.
 There should be a place to select the team followed by some more information on the app and a "Upload" button to click.
 
-If the upload successfully, the app should be listed on [iTunes Connect](https://itunesconnect.apple.com) and listed in 'Activities'.
-From there, TestFlight can be enabled for beta testing, or the App can be sent for approval from Apple.
+If the upload successfully, the app should be listed under 'Activities' on [iTunes Connect](https://itunesconnect.apple.com) or listed under 'Apps' on [App Store Connect](https://appstoreconnect.apple.com/).
+From there, the app can be published to TestFlight, or the App can be sent to Apple for approval for the App Store.
 
 ## Updating an app
 
