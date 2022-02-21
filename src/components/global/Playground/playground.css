@@ -10,19 +10,13 @@
 .playground {
   /**
    * @prop --playground-btn-color The text color of the button in the toolbar.
-   */
-   --playground-btn-color: var(--c-indigo-90);
-  /**
    * @prop --playground-btn-selected-color The text color of the button in the toolbar when selected.
-   */
-  --playground-btn-selected-color: var(--c-blue-90);
-  /**
    * @prop --playground-btn-selected-background The background color of the button in the toolbar when selected.
-   */
-  --playground-btn-selected-background: var(--c-blue-10);
-  /**
    * @prop --playground-separator-color The color of the separator/border in the toolbar.
    */
+  --playground-btn-color: var(--c-indigo-90);
+  --playground-btn-selected-color: var(--c-blue-90);
+  --playground-btn-selected-background: var(--c-blue-10);
   --playground-separator-color: var(--c-indigo-30);
 
   overflow: hidden;
