@@ -46,8 +46,7 @@
 
   border-bottom: 1px solid var(--playground-separator-color);
 
-  overflow-y: auto;
-  scrollbar-width: none;
+  overflow-x: auto;
 }
 
 /* Playground control group contains a section of buttons in the toolbar */
