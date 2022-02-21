@@ -19,7 +19,7 @@ export default function Playground() {
     <div className="playground">
       <div className="playground__container">
         <div className="playground__control-toolbar">
-          {/* TODO FW:-742: Code language switcher */}
+          {/* TODO FW-742: Code language switcher */}
           <div className="playground__control-group">
             <button
               type="button"
