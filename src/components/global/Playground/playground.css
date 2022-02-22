@@ -111,7 +111,6 @@
   align-items: center;
   justify-content: center;
 
-  stroke: var(--playground-btn-icon-color);
   background: transparent;
 
   width: 24px;
