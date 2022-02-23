@@ -127,6 +127,10 @@
   transition: background .2s;
 }
 
+.playground__icon-button--primary {
+  stroke: var(--playground-btn-icon-color);
+}
+
 .playground__icon-button:hover {
   background: var(--playground-btn-icon-hover-background);
 }

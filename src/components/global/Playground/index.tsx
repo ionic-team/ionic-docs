@@ -41,7 +41,7 @@ export default function Playground() {
           </div>
           <div className="playground__control-group playground__control-group--end">
             <button
-              className="playground__icon-button"
+              className="playground__icon-button playground__icon-button--primary"
               aria-label={codeExpanded ? 'Hide source code' : 'Show full source'}
               onClick={() => setCodeExpanded(!codeExpanded)}
             >
