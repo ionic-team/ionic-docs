@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 
 import CodeBlock from '@theme/CodeBlock';
 
@@ -10,6 +10,8 @@ enum Mode {
 }
 
 export default function Playground() {
+  const codeRef = useRef(null);
+
   const [mode, setMode] = useState(Mode.iOS);
   const [codeExpanded, setCodeExpanded] = useState(false);
 
@@ -17,6 +19,11 @@ export default function Playground() {
   const isMD = mode === Mode.MD;
 
   // TODO FW-741: Load code snippets remotely
+
+  function copySourceCode() {
+    const copyButton = codeRef.current.querySelector('button');
+    copyButton.click();
+  }
 
   return (
     <div className="playground">
@@ -57,7 +64,6 @@ export default function Playground() {
                 <path d="M11 9L15 5L11 1" stroke="current" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
             </button>
-            {/* TODO FW-738: Report an Issue Button */}
             <a
               className="playground__icon-button"
               href="https://github.com/ionic-team/ionic-docs/issues/new/choose"
@@ -72,13 +78,29 @@ export default function Playground() {
                 />
               </svg>
             </a>
-            {/* TODO FW-739: Copy Source Code Button */}
+            <button className="playground__icon-button playground__icon-button--primary" onClick={copySourceCode}>
+              <svg
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                width="12"
+                height="12"
+                viewBox="0 0 12 12"
+                fill="none"
+              >
+                <path
+                  d="M2.06667 9V9C1.47756 9 1 8.52244 1 7.93333V3C1 1.89543 1.89543 1 3 1H7.93333C8.52244 1 9 1.47756 9 2.06667V2.06667"
+                  stroke="current"
+                />
+                <rect x="3" y="3" width="8" height="8" rx="1.5" stroke="current" />
+              </svg>
+            </button>
             {/* TODO FW-740: Open Stackblitz Button */}
           </div>
         </div>
         <div className="playground__preview">{/* TODO FW-743: iframe Preview */}</div>
       </div>
       <div
+        ref={codeRef}
         className={'playground__code-block ' + (codeExpanded ? 'playground__code-block--expanded' : '')}
         aria-expanded={codeExpanded ? 'true' : 'false'}
       >
