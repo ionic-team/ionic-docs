@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 
+import CodeBlock from '@theme/CodeBlock';
+
 import './playground.css';
 
 enum Mode {
@@ -9,6 +11,7 @@ enum Mode {
 
 export default function Playground() {
   const [mode, setMode] = useState(Mode.iOS);
+  const [codeExpanded, setCodeExpanded] = useState(false);
 
   const isIOS = mode === Mode.iOS;
   const isMD = mode === Mode.MD;
@@ -37,7 +40,24 @@ export default function Playground() {
             </button>
           </div>
           <div className="playground__control-group playground__control-group--end">
-            {/* TODO FW-737: Toggle/Collapse Button */}
+            <button
+              className="playground__icon-button playground__icon-button--primary"
+              aria-label={codeExpanded ? 'Hide source code' : 'Show full source'}
+              onClick={() => setCodeExpanded(!codeExpanded)}
+            >
+              <svg
+                width="16"
+                height="10"
+                aria-hidden="true"
+                viewBox="0 0 16 10"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path d="M5 9L1 5L5 1" stroke="current" strokeLinecap="round" strokeLinejoin="round" />
+                <path d="M11 9L15 5L11 1" stroke="current" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+            </button>
+            {/* TODO FW-738: Report an Issue Button */}
             <a
               className="playground__icon-button"
               href="https://github.com/ionic-team/ionic-docs/issues/new/choose"
@@ -58,7 +78,13 @@ export default function Playground() {
         </div>
         <div className="playground__preview">{/* TODO FW-743: iframe Preview */}</div>
       </div>
-      <div className="playground__code-block">{/* TODO FW-744: Code blocks per language */}</div>
+      <div
+        className={'playground__code-block ' + (codeExpanded ? 'playground__code-block--expanded' : '')}
+        aria-expanded={codeExpanded ? 'true' : 'false'}
+      >
+        {/* TODO FW-744: Code blocks per language */}
+        <CodeBlock>Fake code block</CodeBlock>
+      </div>
     </div>
   );
 }

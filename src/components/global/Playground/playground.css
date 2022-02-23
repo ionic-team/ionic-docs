@@ -127,6 +127,27 @@
   transition: background .2s;
 }
 
+.playground__icon-button--primary {
+  stroke: var(--playground-btn-icon-color);
+}
+
 .playground__icon-button:hover {
   background: var(--playground-btn-icon-hover-background);
+}
+
+/* The code block example that users can copy to clipboard */
+.playground__code-block {
+  /*
+   * Height is set to zero instead of display: none so that when copying the contents
+   * of the code block to use in Stackblitz, the individual line breaks are preserved.
+   * Otherwise when using display: none, the result of el.outerText will not include
+   * the individual "\n" line breaks and the code snippet will be one line.
+   */
+  height: 0px;
+  overflow: hidden;
+}
+
+.playground__code-block--expanded {
+  height: initial;
+  margin-top: 16px;
 }
