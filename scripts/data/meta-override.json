@@ -604,6 +604,10 @@
       "title": "Insomnia Plugin: Prevent Mobile Screen Sleep Mode | Ionic",
       "description": "The insomnia plugin prevents the screen of mobile devices from falling asleep. Learn more about plugin use and installation to prevent sleep mode on Ionic apps."
     },
+    "instagram": {
+      "title": "Instagram API Plugin Documentation - Share a Photo with the App",
+      "description": "The Instagram API plugin allows content of a canvas element or data URL's encoded image to be shared with an iOS or Android app. Read more in our documentation."
+    },
     "intercom": {
       "title": "Intercom: App Plugin for iOS and Android Devices - Ionic Docs",
       "description": "The intercom plugin allows your Ionic app to use Intercom for iOS and/or Intercom for Android. Read our intercom usage and installation docs to learn more."
