@@ -716,6 +716,10 @@
       "title": "Stripe Plugin Documentation: Use Stripe's SDKs on iOS or Android",
       "description": "The cordova-plugin-stripe let's you use Stripe's Native SDKs for Android and iOS. Read Ionic's Stripe Documentation to learn more about use and installation."
     },
+    "three-dee-touch": {
+      "title": "3D Touch | How to Install and Use 3D Touch on iOS Ionic Apps",
+      "description": "The 3D Touch plugin adds 3D Touch capabilities to your Cordova app. Learn more about how to install and use 3D Touch on iOS apps made with Ionic Framework."
+    },
     "touch-id": {
       "title": "Touch ID | Cordova Fingerprint TouchID Plugin for iOS Ionic Apps",
       "description": "Scan the fingerprint of a user with the TouchID sensor to access an Ionic app on an iOS device. Read to learn more about the Cordova Touch ID plugin."
