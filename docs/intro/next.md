@@ -5,7 +5,7 @@ title: Next Steps
 <head>
   <title>Ionic Troubleshooting Guide: Common Vue App Development Issues</title>
   <meta
-    name="Next Steps for Starting an App: Choose Your JavaScript Framework"
+    name="description"
     content="In order to build an Ionic app, you first need to choose the JavaScript framework you plan to use. Learn more about next steps for starting an app with Ionic."
   />
 </head>

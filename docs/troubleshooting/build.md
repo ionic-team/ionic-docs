@@ -1,6 +1,15 @@
 ---
 disableHtmlPreviews: true
+title: Next Steps
 ---
+
+<head>
+  <title>Build Errors: Learn to Solve Common Mistakes | Ionic Framework</title>
+  <meta
+    name="description"
+    content="Solve common mistakes that can occur when building apps. View our list of potential build errors then check out our Ionic Documentation for any other questions."
+  />
+</head>
 
 # Build Errors
 

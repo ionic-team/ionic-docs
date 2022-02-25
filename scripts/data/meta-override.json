@@ -632,6 +632,10 @@
       "title": "Local Notifications: iOS & Android | Cordova Local Notifications",
       "description": "The Cordova Local Notifications Plugin allows you to display local notifications from your Ionic Framework application on iOS, Android, or Windows devices."
     },
+    "logout": {
+      "title": "Logout Command: How to Logout on Ionic Apps | Ionic Documentation",
+      "description": "Learn how to logout on Ionic Framework apps using the logout command. Read our documentation to learn more about Ionic CLI command installation and usage."
+    },
     "media": {
       "title": "Cordova Media Plugin: Record and Play Back Native App Media Files",
       "description": "The Cordova Media Plugin provides the ability to record and play back audio files on a native app device. Read our Media Documentation to learn more about use."
