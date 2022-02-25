@@ -20,6 +20,10 @@
     min-width: 0;
   }
 
+  [class*='breadcrumbsContainer_'] {
+    display: none;
+  }
+
   [class*='docMainContainer_'] {
     .doc-demo-wrapper {
       @media (max-width: 1364px) {
