@@ -8,7 +8,7 @@ const DEMOS_PATH = path.resolve('static/demos');
 let COMPONENT_LINK_REGEXP;
 
 (async function () {
-  const response = await fetch('https://unpkg.com/@ionic/docs@6.0.10-dev.1645800478.beaed6d/core.json');
+  const response = await fetch('https://unpkg.com/@ionic/docs@6.0.10-dev.11645801048.2804c20/core.json');
   const { components } = await response.json();
 
   const names = components.map((component) => component.tag.slice(4));
