@@ -1,5 +1,6 @@
 ---
 title: Taking Photos with the Camera
+sidebar_label: Taking Photos
 ---
 
 <head>
