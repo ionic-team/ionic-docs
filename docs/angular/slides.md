@@ -307,7 +307,7 @@ export class SlidesExample {
   private slides: any;
 
   constructor() {}
-  setSwiperInstance(swiper: any) {
+  setSwiperInstance(ev: any) {
     this.slides = ev;
   }
 }
