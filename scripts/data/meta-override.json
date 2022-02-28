@@ -36,6 +36,10 @@
       "title": "ion-card: Card UI Components for Ionic Framework API",
       "description": "ion-card UI components are entry points to more detailed information. Cards can be single components or made up of some header, title, subtitle, and content."
     },
+    "ion-card-title": {
+      "title": "ion-card-title | Ionic App Card Title Component and Properties",
+      "description": "ion-card-title is a child component of ion-card. Read to learn more about card title properties and how this component is used on Ionic Framework apps."
+    },
     "ion-checkbox": {
       "title": "ion-checkboxes: Ionic App Component to Select Multiple Options",
       "description": "ion-checkboxes allow selection of multiple options from a set and appear as checked (ticked) when activated. Learn about the checkbox component for Ionic apps."
@@ -140,6 +144,10 @@
       "title": "ion-nav | Nav View Component for Ionic Framework Apps",
       "description": "ion-nav is a standalone for loading arbitrary, and pushing new, components on to the stack. Loading Nav view, and pushing others, won't affect overall routers."
     },
+    "ion-nav-link": {
+      "title": "ion-nav-link: The Element for Navigation to a Specified Component",
+      "description": "Navigation links navigate to specified components. It is the element form of calling the push(), pop(), and setRoot() methods. Read for more on ion-nav-link."
+    },
     "ion-note": {
       "title": "ion-note: Note Text Elements for iOS and Android Ionic Apps",
       "description": "ion-notes are text elements generally used as subtitles that provide more information. Learn how notes can be used and styled on iOS and Android Ionic apps."
@@ -163,6 +171,10 @@
     "ion-ripple-effect": {
       "title": "ion-ripple-effect | Ripple Effect Button Component for Ionic Apps",
       "description": "The ripple effect button component adds the Material Design ink ripple interaction effect. It can only be used in an ion-app and can be added to any component."
+    },
+    "ion-route": {
+      "title": "ion-route: API Route Component for Ionic Framework Apps",
+      "description": "The ion-route component takes a component and renders it when the Browser URL matches the URL property. Learn more about the API route component for Ionic Apps."
     },
     "ion-route-redirect": {
       "title": "ion-route-redirect Plugin: Redirect 'from' a URL 'to' Another URL",
@@ -326,6 +338,10 @@
       "title": "ionic cordova run: native-run Android and iOS Apps in Browsers",
       "description": "Build your app and deploy it to devices and emulators using ionic cordova run. Use the native-run utility to run your app in an Android or iOS device browser."
     },
+    "cordova-compile": {
+      "title": "Ionic Cordova Compile for Native Platform Code",
+      "description": "Use this feature to compile native platform code on Ionic apps. Read for more information on Ionic Cordova compile examples, inputs, and options."
+    },
     "generate": {
       "title": "Ionic Generate: Create Pages, Components, & Angular Features",
       "description": "Automatically create framework features with Ionic Generate. This command uses the Angular CLI to generate pages, components, directives, services, and more."
@@ -341,6 +357,10 @@
     "livereload": {
       "title": "Ionic Live Reload on Capacitor and Cordova to Boost Productivity",
       "description": "Live Reload can boost productivity when building apps with Capacitor, Cordova, or Ionic Serve. Learn more about live reloading browsers when changes are made."
+    },
+    "login": {
+      "title": "Ionic Secure App Login: Authenticate and Retrieve a User Token",
+      "description": "For a secure login, authenticate with Ionic and retrieve a user token — stored in the CLI config. Learn the most secure way to log in to Ionic Framework apps."
     },
     "serve": {
       "title": "ionic serve: Start a Local Development Server for App Dev/Testing",
@@ -464,6 +484,10 @@
       "title": "cordova-plugin-device for Underlying Platform Information",
       "description": "Access information about underlying devices and platforms with cordova-plugin-device for Ionic Framework apps. Read our Device Documentation to learn more."
     },
+    "device-orientation": {
+      "title": "Device Orientation: Cordova Plugin to Access a Device's Compass",
+      "description": "The device orientation plugin provides access to the compass. The compass is a sensor that detects the direction the device is pointed. Read to learn more."
+    },
     "diagnostic": {
       "title": "Cordova Diagnostic Plugin to Check Device Hardware Features",
       "description": "The Cordova Diagnostic plugin checks whether iOS, Android, or Windows device hardware features are enabled or available to the app. Read to learn more."
@@ -552,6 +576,10 @@
       "title": "HTTP Server Plugin Documentation: Advantages for iOS and Android",
       "description": "HTTP is the Cordova / Phonegap plugin for communicating with HTTP servers. View our documentation to learn the advantages on iOS and Android devices."
     },
+    "ibeacon": {
+      "title": "iBeacon: Cordova API Plugin for iOS and Android Devices",
+      "description": "This iOS and Android device Cordova plugin provides functions for working with iBeacons. The plugin's API mimics the one exposed through the CLLocationManager."
+    },
     "image-picker": {
       "title": "Image Picker | Cordova-Plugin-Image-Picker for Ionic Apps",
       "description": "Image picker is a Cordova Plugin for multiple image selection. Read to learn about usage, platforms, and other requirements for image picker installation."
@@ -576,6 +604,10 @@
       "title": "Insomnia Plugin: Prevent Mobile Screen Sleep Mode | Ionic",
       "description": "The insomnia plugin prevents the screen of mobile devices from falling asleep. Learn more about plugin use and installation to prevent sleep mode on Ionic apps."
     },
+    "instagram": {
+      "title": "Instagram API Plugin Documentation - Share a Photo with the App",
+      "description": "The Instagram API plugin allows content of a canvas element or data URL's encoded image to be shared with an iOS or Android app. Read more in our documentation."
+    },
     "intercom": {
       "title": "Intercom: App Plugin for iOS and Android Devices - Ionic Docs",
       "description": "The intercom plugin allows your Ionic app to use Intercom for iOS and/or Intercom for Android. Read our intercom usage and installation docs to learn more."
@@ -588,6 +620,10 @@
       "title": "Keyboard Plugin | Cordova Plugin for Ionic Native App Keyboards",
       "description": "The Ionic Native keyboard plugin requires the plugin cordova-plugin-ionic-keyboard for usage. Read to learn about keyboard plugin installation and platforms."
     },
+    "keychain": {
+      "title": "iOS App Keychain Plugin: Get and Set Data in the iOS Keychain",
+      "description": "Use this Ionic app plugin to get and set data in the iOS Keychain — requires cordova-plugin-ios-keychain. For more info, please see the Keychain plugin docs."
+    },
     "launch-navigator": {
       "title": "Launch Navigator | Get Started with Ionic Launch Navigator Plugin",
       "description": "Get started with the Cordova/PhoneGap Launch Navigator. Launch Navigator requires Cordova plugin for Launch Navigator to open in Ionic apps—read to learn more."
@@ -595,6 +631,10 @@
     "local-notifications": {
       "title": "Local Notifications: iOS & Android | Cordova Local Notifications",
       "description": "The Cordova Local Notifications Plugin allows you to display local notifications from your Ionic Framework application on iOS, Android, or Windows devices."
+    },
+    "logout": {
+      "title": "Logout Command: How to Logout on Ionic Apps | Ionic Documentation",
+      "description": "Learn how to logout on Ionic Framework apps using the logout command. Read our documentation to learn more about Ionic CLI command installation and usage."
     },
     "media": {
       "title": "Cordova Media Plugin: Record and Play Back Native App Media Files",
@@ -704,6 +744,10 @@
       "title": "SQLite | Install Cordova SQLite Plugin for iOS and Android Apps",
       "description": "Access SQLite databases on supported iOS, Android, macOS, and Windows devices by installing the Cordova SQLite Plugin for Ionic Framework Applications."
     },
+    "sqlite-porter": {
+      "title": "SQLite Porter: Plugin to Import to/Export from an SQLite Database",
+      "description": "This Cordova/PhoneGap plugin is used to import to/export from an SQLite database using SQL or JSON. Learn more about SQLite Porter installation and usage."
+    },
     "status-bar": {
       "title": "Status Bar | Cordova StatusBar Plugin for iOS and Android Apps",
       "description": "Manage the appearance of the native status bar with the Cordova StatusBar Plugin. Learn how to install status bar on supported iOS and Android platforms."
@@ -715,6 +759,10 @@
     "stripe": {
       "title": "Stripe Plugin Documentation: Use Stripe's SDKs on iOS or Android",
       "description": "The cordova-plugin-stripe let's you use Stripe's Native SDKs for Android and iOS. Read Ionic's Stripe Documentation to learn more about use and installation."
+    },
+    "three-dee-touch": {
+      "title": "3D Touch | How to Install and Use 3D Touch on iOS Ionic Apps",
+      "description": "The 3D Touch plugin adds 3D Touch capabilities to your Cordova app. Learn more about how to install and use 3D Touch on iOS apps made with Ionic Framework."
     },
     "touch-id": {
       "title": "Touch ID | Cordova Fingerprint TouchID Plugin for iOS Ionic Apps",
