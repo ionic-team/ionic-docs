@@ -1,5 +1,6 @@
 ---
-title: Performance
+title: Angular Performance
+sidebar_label: Performance
 ---
 
 <head>
