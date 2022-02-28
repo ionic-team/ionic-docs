@@ -93,7 +93,7 @@ Swiper Angular exports a `Swiper` component which is the equivalent of `ion-slid
 <ion-content>
   <swiper>
     <ng-template swiperSlide>Slide 1</ng-template>
-    <ng-template swiperSlide>Slide 3</ng-template>
+    <ng-template swiperSlide>Slide 2</ng-template>
     <ng-template swiperSlide>Slide 3</ng-template>
   </swiper>
 </ion-content>
@@ -144,7 +144,7 @@ Finally, we can turn these features on by using the appropriate properties:
 <ion-content>
   <swiper [autoplay]="true" [keyboard]="true" [pagination]="true" [scrollbar]="true" [zoom]="true">
     <ng-template swiperSlide>Slide 1</ng-template>
-    <ng-template swiperSlide>Slide 3</ng-template>
+    <ng-template swiperSlide>Slide 2</ng-template>
     <ng-template swiperSlide>Slide 3</ng-template>
   </swiper>
 </ion-content>
@@ -201,7 +201,7 @@ To set these options as properties directly on `<swiper>` we would do the follow
 ```html
 <swiper [slidesPerView]="3" [loop]="true">
   <ng-template swiperSlide>Slide 1</ng-template>
-  <ng-template swiperSlide>Slide 3</ng-template>
+  <ng-template swiperSlide>Slide 2</ng-template>
   <ng-template swiperSlide>Slide 3</ng-template>
 </swiper>
 ```
@@ -248,7 +248,7 @@ To migrate, we would change the name of the event to `slideChange`:
 ```html
 <swiper (slideChange)="onSlideChange()">
   <ng-template swiperSlide>Slide 1</ng-template>
-  <ng-template swiperSlide>Slide 3</ng-template>
+  <ng-template swiperSlide>Slide 2</ng-template>
   <ng-template swiperSlide>Slide 3</ng-template>
 </swiper>
 ```
@@ -289,7 +289,7 @@ Accessing these properties can be tricky as you want to access the properties on
 
 <swiper (swiper)="setSwiperInstance($event)">
   <ng-template swiperSlide>Slide 1</ng-template>
-  <ng-template swiperSlide>Slide 3</ng-template>
+  <ng-template swiperSlide>Slide 2</ng-template>
   <ng-template swiperSlide>Slide 3</ng-template>
 </swiper>
 ```
@@ -340,7 +340,7 @@ If you are using effects such as Cube or Fade, you can install them just like we
 
 <swiper>
   <ng-template swiperSlide>Slide 1</ng-template>
-  <ng-template swiperSlide>Slide 3</ng-template>
+  <ng-template swiperSlide>Slide 2</ng-template>
   <ng-template swiperSlide>Slide 3</ng-template>
 </swiper>
 ```
@@ -377,7 +377,7 @@ After that, we can activate it by setting the `effect` property on `swiper` to `
 
 <swiper effect="fade">
   <ng-template swiperSlide>Slide 1</ng-template>
-  <ng-template swiperSlide>Slide 3</ng-template>
+  <ng-template swiperSlide>Slide 2</ng-template>
   <ng-template swiperSlide>Slide 3</ng-template>
 </swiper>
 ```
