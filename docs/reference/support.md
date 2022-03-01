@@ -16,7 +16,7 @@ The Ionic Framework has been 100% open source (MIT) since the very beginning, an
 
 ## Framework Maintenance and Support Status
 
-Given the reality of time and resource restraints as well as the desire to keep innovating in the frontend development space, over time it becomes necessary for the Ionic team to shift focus to newer versions of the Framework. However, Ionic will do everything it can to make the transition to newer versions as smooth as possible. The Ionic team recommends updating to the newest version of the Ionic Framework for the latest features, improvements and stability updates. For more details, consult [the Migration page](migration.md).
+Given the reality of time and resource constraints as well as the desire to keep innovating in the frontend development space, over time it becomes necessary for the Ionic team to shift focus to newer versions of the Framework. However, Ionic will do everything it can to make the transition to newer versions as smooth as possible. The Ionic team recommends updating to the newest version of the Ionic Framework for the latest features, improvements and stability updates. For more details, consult [the Migration page](migration.md).
 
 The current status of each Ionic Framework version is:
 
