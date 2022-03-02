@@ -5,20 +5,20 @@
  * LICENSE file in the root directory of this source tree.
  */
 
- import React from 'react';
- import clsx from 'clsx';
- import DocPaginator from '@theme/DocPaginator';
- import DocVersionBanner from '@theme/DocVersionBanner';
- import DocVersionBadge from '@theme/DocVersionBadge';
- import Seo from '@theme/Seo';
- import type {Props} from '@theme/DocItem';
- import DocItemFooter from '@theme/DocItemFooter';
- import TOC from '@theme/TOC';
- import TOCCollapsible from '@theme/TOCCollapsible';
- import Heading from '@theme/Heading';
- import styles from './styles.module.css';
- import {ThemeClassNames, useWindowSize} from '@docusaurus/theme-common';
- import DocBreadcrumbs from '@theme/DocBreadcrumbs';
+import React from 'react';
+import clsx from 'clsx';
+import DocPaginator from '@theme/DocPaginator';
+import DocVersionBanner from '@theme/DocVersionBanner';
+import DocVersionBadge from '@theme/DocVersionBadge';
+import Seo from '@theme/Seo';
+import type {Props} from '@theme/DocItem';
+import DocItemFooter from '@theme/DocItemFooter';
+import TOC from '@theme/TOC';
+import TOCCollapsible from '@theme/TOCCollapsible';
+import Heading from '@theme/Heading';
+import styles from './styles.module.css';
+import {ThemeClassNames, useWindowSize} from '@docusaurus/theme-common';
+import DocBreadcrumbs from '@theme/DocBreadcrumbs';
 
 // CUSTOM CODE
 import DocDemo from '@components/global/DocDemo'
