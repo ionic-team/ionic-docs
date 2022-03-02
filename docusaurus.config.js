@@ -1,4 +1,5 @@
 const path = require('path');
+const { Joi } = require('@docusaurus/utils-validation');
 
 const BASE_URL = '/docs';
 
@@ -207,71 +208,78 @@ module.exports = {
       indexName: 'ionicframework',
       contextualSearch: true,
     },
+    customSchema: {
+      navbar: {
+        items: [
+          Joi.object({
+            type: Joi.string().equal('cta').required(),
+            position: Joi.string().default('left'),
+            text: Joi.string().required(),
+            href: Joi.string().required(),
+          }),
+          Joi.object({
+            type: Joi.string().equal('iconLink').required(),
+            position: Joi.string().default('left'),
+            icon: Joi.object({
+              alt: Joi.string().default('icon link'),
+              src: Joi.string(),
+              href: Joi.string(),
+              target: Joi.string().default('_self'),
+              width: Joi.number(),
+              height: Joi.number(),
+            }),
+          }),
+          Joi.object({
+            type: Joi.string().equal('separator').required(),
+            position: Joi.string().default('left'),
+          }),
+        ],
+      },
+    },
   },
-  plugins: [
-    'docusaurus-plugin-sass',
+  presets: [
     [
-      'docusaurus-plugin-module-alias',
+      '@ionic-internal/docusaurus-preset',
       {
         alias: {
-          'styled-components': path.resolve(__dirname, './node_modules/styled-components'),
-          react: path.resolve(__dirname, './node_modules/react'),
-          'react-dom': path.resolve(__dirname, './node_modules/react-dom'),
-          '@components': path.resolve(__dirname, './src/components'),
+          alias: {
+            'styled-components': path.resolve(__dirname, './node_modules/styled-components'),
+            react: path.resolve(__dirname, './node_modules/react'),
+            'react-dom': path.resolve(__dirname, './node_modules/react-dom'),
+            '@components': path.resolve(__dirname, './src/components'),
+          },
         },
-      },
-    ],
-    [
-      '@docusaurus/plugin-content-docs',
-      {
-        routeBasePath: '/',
-        sidebarPath: require.resolve('./sidebars.js'),
-        editUrl: ({ versionDocsDirPath, docPath, locale }) => {
-          if (locale != 'en') {
-            return 'https://crowdin.com/project/ionic-docs';
-          }
-          if ((match = docPath.match(/api\/(.*)\.md/)) != null) {
-            return `https://github.com/ionic-team/ionic-framework/edit/main/core/src/components/${match[1]}/readme.md`;
-          }
-          if ((match = docPath.match(/cli\/commands\/(.*)\.md/)) != null) {
-            return `https://github.com/ionic-team/ionic-cli/edit/develop/packages/@ionic/cli/src/commands/${match[1].replace(
-              '-',
-              '/'
-            )}.ts`;
-          }
-          if ((match = docPath.match(/native\/(.*)\.md/)) != null) {
-            return `https://github.com/ionic-team/ionic-native/edit/master/src/@awesome-cordova-plugins/plugins/${match[1]}/index.ts`;
-          }
-          return `https://github.com/ionic-team/ionic-docs/edit/main/${versionDocsDirPath}/${docPath}`;
-        },
-        exclude: ['README.md'],
-        lastVersion: 'current',
-        versions: {
-          current: {
-            label: 'v6',
-            banner: 'none',
+        docs: {
+          routeBasePath: '/',
+          sidebarPath: require.resolve('./sidebars.js'),
+          editUrl: ({ versionDocsDirPath, docPath, locale }) => {
+            if (locale != 'en') {
+              return 'https://crowdin.com/project/ionic-docs';
+            }
+            if ((match = docPath.match(/api\/(.*)\.md/)) != null) {
+              return `https://github.com/ionic-team/ionic-framework/edit/main/core/src/components/${match[1]}/readme.md`;
+            }
+            if ((match = docPath.match(/cli\/commands\/(.*)\.md/)) != null) {
+              return `https://github.com/ionic-team/ionic-cli/edit/develop/packages/@ionic/cli/src/commands/${match[1].replace(
+                '-',
+                '/'
+              )}.ts`;
+            }
+            if ((match = docPath.match(/native\/(.*)\.md/)) != null) {
+              return `https://github.com/ionic-team/ionic-native/edit/master/src/@awesome-cordova-plugins/plugins/${match[1]}/index.ts`;
+            }
+            return `https://github.com/ionic-team/ionic-docs/edit/main/${versionDocsDirPath}/${docPath}`;
+          },
+          exclude: ['README.md'],
+          lastVersion: 'current',
+          versions: {
+            current: {
+              label: 'v6',
+              banner: 'none',
+            },
           },
         },
       },
     ],
-    '@docusaurus/plugin-content-pages',
-    '@docusaurus/plugin-debug',
-    '@docusaurus/plugin-sitemap',
-    '@ionic-internal/docusaurus-plugin-tag-manager',
   ],
-  themes: [
-    [
-      //overriding the standard docusaurus-theme-classic to provide custom schema
-      path.resolve(__dirname, 'docusaurus-theme-classic'),
-      {
-        customCss: [
-          require.resolve('./node_modules/modern-normalize/modern-normalize.css'),
-          require.resolve('./node_modules/@ionic-internal/ionic-ds/dist/tokens/tokens.css'),
-          require.resolve('./src/styles/custom.scss'),
-        ],
-      },
-    ],
-    path.resolve(__dirname, './node_modules/@docusaurus/theme-search-algolia'),
-  ],
-  customFields: {},
 };
