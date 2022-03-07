@@ -3,17 +3,26 @@ import React, { useRef, useState } from 'react';
 import CodeBlock from '@theme/CodeBlock';
 
 import './playground.css';
+import { openAngularEditor, openHtmlEditor, openReactEditor, openVueEditor } from './stackblitz.utils';
+import { Mode, UsageTarget, UsageTargetList } from './playground.types';
 
-enum Mode {
-  iOS = 'ios',
-  MD = 'md',
-}
-
-export default function Playground() {
+/**
+ *
+ * @param title Optional title of the generated playground example. Specify to customize the Stackblitz title.
+ * @param description Optional description of the generated playground example. Specify to customize the Stackblitz description.
+ */
+export default function Playground({ title, description }) {
   const codeRef = useRef(null);
 
+  const [usageTarget, setUsageTarget] = useState(UsageTarget.Html);
   const [mode, setMode] = useState(Mode.iOS);
   const [codeExpanded, setCodeExpanded] = useState(false);
+  const [codeSnippet, setCodeSnippet] = useState({
+    html: '',
+    angular: '',
+    react: '',
+    vue: '',
+  });
 
   const isIOS = mode === Mode.iOS;
   const isMD = mode === Mode.MD;
@@ -24,6 +33,34 @@ export default function Playground() {
     const copyButton = codeRef.current.querySelector('button');
     copyButton.click();
   }
+
+  function openEditor(event) {
+    const button = event.target.closest('button');
+    // Outer text includes line breaks `\n` to maintain code formatting in editor examples.
+    const codeBlock = button.closest('.playground').querySelector('.code-block pre code')?.outerText ?? '';
+    const editorOptions = {
+      title,
+      description,
+    };
+
+    switch (usageTarget) {
+      case UsageTarget.Angular:
+        openAngularEditor(codeBlock, editorOptions);
+        break;
+      case UsageTarget.Html:
+        openHtmlEditor(codeBlock, editorOptions);
+        break;
+      case UsageTarget.React:
+        openReactEditor(codeBlock, editorOptions);
+        break;
+      case UsageTarget.Vue:
+        openVueEditor(codeBlock, editorOptions);
+        break;
+    }
+  }
+
+  // TODO: This variable will be used for generating the buttons to change the code language/framework.
+  const languages = UsageTargetList.filter((lang) => Object.keys(codeSnippet).includes(lang.toLowerCase()));
 
   return (
     <div className="playground">
@@ -94,7 +131,24 @@ export default function Playground() {
                 <rect x="3" y="3" width="8" height="8" rx="1.5" stroke="current" />
               </svg>
             </button>
-            {/* TODO FW-740: Open Stackblitz Button */}
+            <button className="playground__icon-button playground__icon-button--primary" onClick={openEditor}>
+              <svg
+                aria-hidden="true"
+                width="12"
+                height="12"
+                viewBox="0 0 12 12"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path d="M6 11L11 11" stroke="#92A0B3" strokeLinecap="round" strokeLinejoin="round" />
+                <path
+                  d="M8.88491 1.36289C9.11726 1.13054 9.43241 1 9.76101 1C9.92371 1 10.0848 1.03205 10.2351 1.09431C10.3855 1.15658 10.5221 1.24784 10.6371 1.36289C10.7522 1.47794 10.8434 1.61453 10.9057 1.76485C10.968 1.91517 11 2.07629 11 2.23899C11 2.4017 10.968 2.56281 10.9057 2.71314C10.8434 2.86346 10.7522 3.00004 10.6371 3.11509L3.33627 10.4159L1 11L1.58407 8.66373L8.88491 1.36289Z"
+                  stroke="current"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </button>
           </div>
         </div>
         <div className="playground__preview">{/* TODO FW-743: iframe Preview */}</div>
