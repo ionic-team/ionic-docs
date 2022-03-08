@@ -35,9 +35,8 @@ export default function Playground({ title, description }) {
   }
 
   function openEditor(event) {
-    const button = event.target.closest('button');
-    // Outer text includes line breaks `\n` to maintain code formatting in editor examples.
-    const codeBlock = button.closest('.playground').querySelector('.code-block pre code')?.outerText ?? '';
+    // TODO assign code block value based on active framework button and loaded code snippets
+    const codeBlock = '';
     const editorOptions: EditorOptions = {
       title,
       description,
