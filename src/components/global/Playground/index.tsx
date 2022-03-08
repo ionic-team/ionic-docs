@@ -4,7 +4,7 @@ import CodeBlock from '@theme/CodeBlock';
 
 import './playground.css';
 import { openAngularEditor, openHtmlEditor, openReactEditor, openVueEditor } from './stackblitz.utils';
-import { Mode, UsageTarget, UsageTargetList } from './playground.types';
+import { Mode, UsageTarget } from './playground.types';
 
 /**
  *
@@ -58,9 +58,6 @@ export default function Playground({ title, description }) {
         break;
     }
   }
-
-  // TODO: This variable will be used for generating the buttons to change the code language/framework.
-  const languages = UsageTargetList.filter((lang) => Object.keys(codeSnippet).includes(lang.toLowerCase()));
 
   return (
     <div className="playground">
