@@ -48,15 +48,17 @@ So, if you’d prefer to use JavaScript instead of TypeScript, you can. After ge
 npm uninstall --save typescript @types/jest @typescript-eslint/eslint-plugin @typescript-eslint/parser @vue/cli-plugin-typescript @vue/eslint-config-typescript
 ```
 
-2. Change all `.ts` files to `.js`. In a blank Ionic Vue app, this should only be `router/index.ts` and `main.ts`.
+2. Change all `.ts` files to `.js`. In a blank Ionic Vue app, this should only be `router/index.ts` and `main.ts`. If you're using tests, you also need to rename `tests/unit/example.spec.ts`.
 
 3. Remove `@vue/typescript/recommended` and `@typescript-eslint/no-explicit-any: ‘off’, `from `.eslintrc.js`.
 
 4. Remove `Array<RouteRecordRaw>` from `router/index.js`.
 
-5. Delete the `shims-vue.d.ts` file.
+5. Delete the `shims-vue.d.ts` and `tsconfig.json` files.
 
 6. Remove `lang="ts"` from the `script` tags in any of your Vue components that have them. In a blank Ionic Vue app, this should only be `App.vue` and `views/Home.vue`.
+
+7. In `jest.config.js`, replace `preset: '@vue/cli-plugin-unit-jest/presets/typescript-and-babel'` with `preset: '@vue/cli-plugin-unit-jest/presets/default'`.
 
 ## A look at a Vue Component
 
