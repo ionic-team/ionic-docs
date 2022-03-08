@@ -7,7 +7,7 @@ const DEFAULT_EDITOR_DESCRIPTION = '';
 // Default package version to use for all @ionic/* packages.
 const DEFAULT_IONIC_VERSION = '^6.0.0';
 
-interface EditorOptions {
+export interface EditorOptions {
   /**
    * The title of the Stackblitz example.
    */

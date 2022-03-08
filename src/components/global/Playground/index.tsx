@@ -3,7 +3,7 @@ import React, { useRef, useState } from 'react';
 import CodeBlock from '@theme/CodeBlock';
 
 import './playground.css';
-import { openAngularEditor, openHtmlEditor, openReactEditor, openVueEditor } from './stackblitz.utils';
+import { EditorOptions, openAngularEditor, openHtmlEditor, openReactEditor, openVueEditor } from './stackblitz.utils';
 import { Mode, UsageTarget } from './playground.types';
 
 /**
@@ -38,7 +38,7 @@ export default function Playground({ title, description }) {
     const button = event.target.closest('button');
     // Outer text includes line breaks `\n` to maintain code formatting in editor examples.
     const codeBlock = button.closest('.playground').querySelector('.code-block pre code')?.outerText ?? '';
-    const editorOptions = {
+    const editorOptions: EditorOptions = {
       title,
       description,
     };
