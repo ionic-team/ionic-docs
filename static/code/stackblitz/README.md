@@ -28,4 +28,10 @@ This directory contains the source files for generating the individual framework
 
 ## Vue
 
-- Coming soon
+| File             | Description                                                   |
+| ---------------- | ------------------------------------------------------------- |
+| `App.vue`        | Main Vue component that wraps each example in `ion-app`.      |
+| `index.html`     | The HTML template to create an element to mount Vue to.       |
+| `main.js`        | Initializes Ionic Vue and imports global styles.              |
+| `package.json`   | Project specific dependencies to create an example with Vite. |
+| `vite.config.js` | Vite configuration file.                                      |
