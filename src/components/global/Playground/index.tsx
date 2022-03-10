@@ -11,7 +11,7 @@ enum Mode {
 }
 
 export default function Playground({ code }) {
-  if (!code) {
+  if (!code || Object.keys(code).length === 0) {
     console.warn('No code usage examples provided for this Playground example.');
     return;
   }
@@ -19,7 +19,7 @@ export default function Playground({ code }) {
 
   const [mode, setMode] = useState(Mode.iOS);
   const [codeExpanded, setCodeExpanded] = useState(false);
-  const [codeSnippet, setCodeSnippet] = useState({});
+  const [codeSnippets, setCodeSnippets] = useState({});
 
   const isIOS = mode === Mode.iOS;
   const isMD = mode === Mode.MD;
@@ -39,11 +39,11 @@ export default function Playground({ code }) {
      */
     Promise.all(Object.keys(code).map((key) => loadCodeSnippet(code[key])))
       .then((codeSnippetContent) => {
-        const codeSnippet = {};
+        const codeSnippets = {};
         Object.keys(code).forEach((lang) => {
           codeSnippet[lang] = codeSnippetContent[lang];
         });
-        setCodeSnippet(codeSnippet);
+        setCodeSnippets(codeSnippet);
       })
       .catch((err) => console.error('Error loading code snippets', err));
   }, []);
