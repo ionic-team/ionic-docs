@@ -1,19 +1,25 @@
-import React, { useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 
 import CodeBlock from '@theme/CodeBlock';
 
 import './playground.css';
+import { loadCodeSnippet } from './code.utils';
 
 enum Mode {
   iOS = 'ios',
   MD = 'md',
 }
 
-export default function Playground() {
+export default function Playground({ code }) {
+  if (!code) {
+    console.warn('No code usage examples provided for this Playground example.');
+    return;
+  }
   const codeRef = useRef(null);
 
   const [mode, setMode] = useState(Mode.iOS);
   const [codeExpanded, setCodeExpanded] = useState(false);
+  const [codeSnippet, setCodeSnippet] = useState({});
 
   const isIOS = mode === Mode.iOS;
   const isMD = mode === Mode.MD;
@@ -24,6 +30,23 @@ export default function Playground() {
     const copyButton = codeRef.current.querySelector('button');
     copyButton.click();
   }
+
+  useEffect(() => {
+    /**
+     * TODO FW-877: Lazy load code snippets with the same solution for preview examples.
+     *
+     * We could also consider only loading code snippets for the active framework button.
+     */
+    Promise.all(Object.keys(code).map((key) => loadCodeSnippet(code[key])))
+      .then((codeSnippetContent) => {
+        const codeSnippet = {};
+        Object.keys(code).forEach((lang) => {
+          codeSnippet[lang] = codeSnippetContent[lang];
+        });
+        setCodeSnippet(codeSnippet);
+      })
+      .catch((err) => console.error('Error loading code snippets', err));
+  }, []);
 
   return (
     <div className="playground">
