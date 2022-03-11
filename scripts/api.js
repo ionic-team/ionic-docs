@@ -22,7 +22,6 @@ function writePage(page) {
   let data = [
     renderFrontmatter(page),
     renderReadme(page),
-    renderUsage(page),
     renderProperties(page),
     renderEvents(page),
     renderMethods(page),
@@ -86,47 +85,6 @@ ${encapsulation !== 'none' ? `<EncapsulationPill type="${encapsulation}" />` : '
 
 ${addAdmonitions(rest)}
   `;
-}
-
-function renderUsage({ usage }) {
-  function capitalizeFirstLetter(string) {
-    return string.charAt(0).toUpperCase() + string.slice(1);
-  }
-
-  const keys = Object.keys(usage);
-
-  if (keys.length === 0) {
-    return '';
-  }
-
-  if (keys.length === 1) {
-    return `
-## Usage
-
-${usage[keys[0]]}
-`;
-  }
-
-  return `
-## Usage
-
-<Tabs groupId="framework" defaultValue="${keys[0]}" values={[${keys
-    .map((key) => `{ value: '${key}', label: '${capitalizeFirstLetter(key)}' }`)
-    .join(', ')}]}>
-
-${Object.entries(usage)
-  .map(
-    ([key, value]) => `
-<TabItem value="${key}">
-
-${value}
-
-</TabItem>
-`
-  )
-  .join('\n')}
-</Tabs>
-`;
 }
 
 function renderProperties({ props: properties }) {
