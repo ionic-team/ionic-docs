@@ -1,6 +1,4 @@
-import React, { useRef, useState } from 'react';
-
-import CodeBlock from '@theme/CodeBlock';
+import React, { useEffect, useRef, useState } from 'react';
 
 import './playground.css';
 
@@ -9,21 +7,37 @@ enum Mode {
   MD = 'md',
 }
 
-export default function Playground() {
+type SupportedFrameworks = 'angular' | 'react' | 'vue' | 'javascript';
+
+export default function Playground({ code }: { code: { [key in SupportedFrameworks]?: () => {} } }) {
+  if (!code || Object.keys(code).length === 0) {
+    console.warn('No code usage examples provided for this Playground example.');
+    return;
+  }
   const codeRef = useRef(null);
 
   const [mode, setMode] = useState(Mode.iOS);
   const [codeExpanded, setCodeExpanded] = useState(false);
+  const [codeSnippets, setCodeSnippets] = useState({});
 
   const isIOS = mode === Mode.iOS;
   const isMD = mode === Mode.MD;
 
-  // TODO FW-741: Load code snippets remotely
+  const activeCodeSnippet: SupportedFrameworks = 'react';
 
   function copySourceCode() {
     const copyButton = codeRef.current.querySelector('button');
     copyButton.click();
   }
+
+  useEffect(() => {
+    const codeSnippets = {};
+    Object.keys(code).forEach((key) => {
+      // Instantiates the React component from the MDX content.
+      codeSnippets[key] = code[key]({});
+    });
+    setCodeSnippets(codeSnippets);
+  }, []);
 
   return (
     <div className="playground">
@@ -104,8 +118,7 @@ export default function Playground() {
         className={'playground__code-block ' + (codeExpanded ? 'playground__code-block--expanded' : '')}
         aria-expanded={codeExpanded ? 'true' : 'false'}
       >
-        {/* TODO FW-744: Code blocks per language */}
-        <CodeBlock>Fake code block</CodeBlock>
+        {codeSnippets[activeCodeSnippet]}
       </div>
     </div>
   );
