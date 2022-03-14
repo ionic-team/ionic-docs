@@ -118,8 +118,35 @@ const openReactEditor = async (code: string, options?: EditorOptions) => {
 }
 
 const openVueEditor = async (code: string, options?: EditorOptions) => {
-  // TODO FW-715: Open Vue editor
-  console.warn('Not implemented');
+  const [package_json, index_html, vite_config_js, main_js, app_vue] = await loadSourceFiles([
+    'vue/package.json',
+    'vue/index.html',
+    'vue/vite.config.js',
+    'vue/main.js',
+    'vue/App.vue'
+  ]);
+  /**
+   * We have to use Stackblitz web containers here (node template), due
+   * to multiple issues with Vite, Vue/Vue Router and Vue 3's script setup.
+   *
+   * https://github.com/stackblitz/core/issues/1308
+   */
+  sdk.openProject({
+    template: 'node',
+    title: options?.title ?? DEFAULT_EDITOR_TITLE,
+    description: options?.description ?? DEFAULT_EDITOR_DESCRIPTION,
+    files: {
+      'src/App.vue': app_vue,
+      'src/components/Example.vue': code,
+      'src/main.js': main_js,
+      'index.html': index_html,
+      'vite.config.js': vite_config_js,
+      'package.json': package_json,
+      '.stackblitzrc': `{
+        "startCommand": "yarn run dev"
+      }`
+    }
+  });
 }
 
 export { openAngularEditor, openHtmlEditor, openReactEditor, openVueEditor };
