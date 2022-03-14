@@ -11,3 +11,5 @@ export enum Mode {
   iOS = 'ios',
   MD = 'md',
 }
+
+export type SupportedFrameworks = 'angular' | 'react' | 'vue' | 'javascript';

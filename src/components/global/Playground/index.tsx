@@ -1,33 +1,38 @@
-import React, { useRef, useState } from 'react';
-
-import CodeBlock from '@theme/CodeBlock';
+import React, { useEffect, useRef, useState } from 'react';
 
 import './playground.css';
 import { EditorOptions, openAngularEditor, openHtmlEditor, openReactEditor, openVueEditor } from './stackblitz.utils';
-import { Mode, UsageTarget } from './playground.types';
+import { Mode, SupportedFrameworks, UsageTarget } from './playground.types';
 
 /**
- *
+ * @param code The code snippets for each supported framework target.
  * @param title Optional title of the generated playground example. Specify to customize the Stackblitz title.
  * @param description Optional description of the generated playground example. Specify to customize the Stackblitz description.
  */
-export default function Playground({ title, description }) {
+export default function Playground({
+  code,
+  title,
+  description,
+}: {
+  code: { [key in SupportedFrameworks]?: () => {} };
+  title?: string;
+  description?: string;
+}) {
+  if (!code || Object.keys(code).length === 0) {
+    console.warn('No code usage examples provided for this Playground example.');
+    return;
+  }
   const codeRef = useRef(null);
 
   const [usageTarget, setUsageTarget] = useState(UsageTarget.Html);
   const [mode, setMode] = useState(Mode.iOS);
   const [codeExpanded, setCodeExpanded] = useState(false);
-  const [codeSnippet, setCodeSnippet] = useState({
-    html: '',
-    angular: '',
-    react: '',
-    vue: '',
-  });
+  const [codeSnippets, setCodeSnippets] = useState({});
 
   const isIOS = mode === Mode.iOS;
   const isMD = mode === Mode.MD;
 
-  // TODO FW-741: Load code snippets remotely
+  const activeCodeSnippet: SupportedFrameworks = 'react';
 
   function copySourceCode() {
     const copyButton = codeRef.current.querySelector('button');
@@ -57,6 +62,15 @@ export default function Playground({ title, description }) {
         break;
     }
   }
+
+  useEffect(() => {
+    const codeSnippets = {};
+    Object.keys(code).forEach((key) => {
+      // Instantiates the React component from the MDX content.
+      codeSnippets[key] = code[key]({});
+    });
+    setCodeSnippets(codeSnippets);
+  }, []);
 
   return (
     <div className="playground">
@@ -154,8 +168,7 @@ export default function Playground({ title, description }) {
         className={'playground__code-block ' + (codeExpanded ? 'playground__code-block--expanded' : '')}
         aria-expanded={codeExpanded ? 'true' : 'false'}
       >
-        {/* TODO FW-744: Code blocks per language */}
-        <CodeBlock>Fake code block</CodeBlock>
+        {codeSnippets[activeCodeSnippet]}
       </div>
     </div>
   );

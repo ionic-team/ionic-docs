@@ -8,6 +8,8 @@
   --playground-btn-icon-hover-background: rgba(67, 79, 93, 0.5);
 
   --playground-separator-color: var(--c-carbon-70);
+
+  --playground-code-background: rgb(22, 29, 37);
 }
 
 .playground {
@@ -18,6 +20,7 @@
    * @prop --playground-btn-icon-color The text color of the button icon in the toolbar.
    * @prop --playground-btn-icon-hover-background The background color of the button icon in the toolbar when hovered.
    * @prop --playground-separator-color The color of the separator/border in the toolbar.
+   * @prop --playground-code-background The background color of the code block when expanded.
    */
   --playground-btn-color: var(--c-indigo-90);
   --playground-btn-selected-color: var(--c-blue-90);
@@ -25,6 +28,7 @@
   --playground-btn-icon-hover-background: var(--c-indigo-20);
   --playground-btn-icon-color: var(--c-indigo-80);
   --playground-separator-color: var(--c-indigo-30);
+  --playground-code-background: var(--c-indigo-10);
 
   overflow: hidden;
 }
@@ -150,4 +154,9 @@
 .playground__code-block--expanded {
   height: initial;
   margin-top: 16px;
+}
+
+/* overwrite existing Docusaurus style */
+.playground__code-block pre[class*='language-'] {
+  background-color: var(--playground-code-background);
 }
