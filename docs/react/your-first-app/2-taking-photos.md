@@ -6,7 +6,7 @@ sidebar_label: Taking Photos
 <head>
   <title>Take Photos From The Camera on React Apps - Ionic Documentation</title>
   <meta
-    name="Take Photos From The Camera on React Apps - Ionic Documentation"
+    name="description"
     content="To take photos from the device's camera on a React app, begin by building it for the web, then make some small tweaks for mobile use on iOS and Android devices."
   />
 </head>
