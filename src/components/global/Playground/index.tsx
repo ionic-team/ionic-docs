@@ -1,16 +1,15 @@
 import React, { useEffect, useRef, useState } from 'react';
 
-import CodeBlock from '@theme/CodeBlock';
-
 import './playground.css';
-import { loadCodeSnippet } from './code.utils';
 
 enum Mode {
   iOS = 'ios',
   MD = 'md',
 }
 
-export default function Playground({ code }) {
+type SupportedFrameworks = 'angular' | 'react' | 'vue' | 'javascript';
+
+export default function Playground({ code }: { code: { [key in SupportedFrameworks]?: () => {} } }) {
   if (!code || Object.keys(code).length === 0) {
     console.warn('No code usage examples provided for this Playground example.');
     return;
@@ -24,7 +23,7 @@ export default function Playground({ code }) {
   const isIOS = mode === Mode.iOS;
   const isMD = mode === Mode.MD;
 
-  // TODO FW-741: Load code snippets remotely
+  const activeCodeSnippet: SupportedFrameworks = 'react';
 
   function copySourceCode() {
     const copyButton = codeRef.current.querySelector('button');
@@ -32,20 +31,12 @@ export default function Playground({ code }) {
   }
 
   useEffect(() => {
-    /**
-     * TODO FW-877: Lazy load code snippets with the same solution for preview examples.
-     *
-     * We could also consider only loading code snippets for the active framework button.
-     */
-    Promise.all(Object.keys(code).map((key) => loadCodeSnippet(code[key])))
-      .then((codeSnippetContent) => {
-        const codeSnippets = {};
-        Object.keys(code).forEach((lang) => {
-          codeSnippet[lang] = codeSnippetContent[lang];
-        });
-        setCodeSnippets(codeSnippet);
-      })
-      .catch((err) => console.error('Error loading code snippets', err));
+    const codeSnippets = {};
+    Object.keys(code).forEach((key) => {
+      // Instantiates the React component from the MDX content.
+      codeSnippets[key] = code[key]({});
+    });
+    setCodeSnippets(codeSnippets);
   }, []);
 
   return (
@@ -127,8 +118,7 @@ export default function Playground({ code }) {
         className={'playground__code-block ' + (codeExpanded ? 'playground__code-block--expanded' : '')}
         aria-expanded={codeExpanded ? 'true' : 'false'}
       >
-        {/* TODO FW-744: Code blocks per language */}
-        <CodeBlock>Fake code block</CodeBlock>
+        {codeSnippets[activeCodeSnippet]}
       </div>
     </div>
   );
