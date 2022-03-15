@@ -362,6 +362,10 @@
       "title": "Ionic Secure App Login: Authenticate and Retrieve a User Token",
       "description": "For a secure login, authenticate with Ionic and retrieve a user token — stored in the CLI config. Learn the most secure way to log in to Ionic Framework apps."
     },
+    "logout": {
+      "title": "Logout Command: How to Logout on Ionic Apps | Ionic Documentation",
+      "description": "Learn how to logout on Ionic Framework apps using the logout command. Read our documentation to learn more about Ionic CLI command installation and usage."
+    },
     "serve": {
       "title": "ionic serve: Start a Local Development Server for App Dev/Testing",
       "description": "Start a local development server for app dev/testing with ionic serve. Learn how to easily spin up a development server which launches in your browser."
