@@ -14,7 +14,8 @@ export default function Playground({
   code,
   title,
   description,
-  source
+  source,
+  size = 'small'
 }: {
   code: { [key in SupportedFrameworks]?: () => {} };
   title?: string;
@@ -30,6 +31,7 @@ export default function Playground({
 
   const frameiOS = useRef(null);
   const frameMD = useRef(null);
+  const frameSize = FRAME_SIZES[size] || size;
 
   const [usageTarget, setUsageTarget] = useState(UsageTarget.Html);
   const [mode, setMode] = useState(Mode.iOS);
@@ -210,8 +212,8 @@ export default function Playground({
             show the other. This is done to avoid flickering
             and doing unnecessary reloads when switching modes.
           */}
-          <iframe className={ !isIOS ? 'frame-hidden' : '' } ref={frameiOS} src={sourceiOS}></iframe>
-          <iframe className={ !isMD ? 'frame-hidden' : '' } ref={frameMD} src={sourceMD}></iframe>
+          <iframe height={frameSize} className={ !isIOS ? 'frame-hidden' : '' } ref={frameiOS} src={sourceiOS}></iframe>
+          <iframe height={frameSize} className={ !isMD ? 'frame-hidden' : '' } ref={frameMD} src={sourceMD}></iframe>
         </div>
       </div>
       <div
@@ -223,4 +225,12 @@ export default function Playground({
       </div>
     </div>
   );
+}
+
+const FRAME_SIZES = {
+  xsmall: '100px',
+  small: '200px',
+  medium: '400px',
+  large: '600px',
+  xlarge: '800px'
 }
