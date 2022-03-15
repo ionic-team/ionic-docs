@@ -35,7 +35,6 @@ export default function Playground({
   const [mode, setMode] = useState(Mode.iOS);
   const [codeExpanded, setCodeExpanded] = useState(false);
   const [codeSnippets, setCodeSnippets] = useState({});
-
   const [isIframeLoaded, setIframeLoaded] = useState(false);
 
   const waitForFrame = (frame: HTMLElement) => {
@@ -44,6 +43,11 @@ export default function Playground({
     });
   }
 
+  /**
+   * Rather than encode isDarkTheme into the frame source
+   * url, we post a message to each frame so that
+   * dark mode can be enabled without a full page reload.
+   */
   useEffect(async () => {
     if (frameiOS.current && frameMD.current) {
       if (!isIframeLoaded) {
@@ -200,6 +204,12 @@ export default function Playground({
           </div>
         </div>
         <div className="playground__preview">
+          {/*
+            We render two iframes, one for each mode.
+            When the set mode changes, we hide one frame and
+            show the other. This is done to avoid flickering
+            and doing unnecessary reloads when switching modes.
+          */}
           <iframe className={ !isIOS ? 'frame-hidden' : '' } ref={frameiOS} src={sourceiOS}></iframe>
           <iframe className={ !isMD ? 'frame-hidden' : '' } ref={frameMD} src={sourceMD}></iframe>
         </div>
