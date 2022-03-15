@@ -49,8 +49,10 @@ export default function Playground({
   }
 
   function openEditor(event) {
-    // TODO assign code block value based on active framework button and loaded code snippets
-    const codeBlock = '';
+    // codeSnippets are React components, so we need to get their rendered text
+    // outerText preserves line breaks for formatting in Stackblitz editor
+    const codeBlock = codeRef.current.querySelector('code').outerText;
+    
     const editorOptions: EditorOptions = {
       title,
       description,
