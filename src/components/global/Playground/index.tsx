@@ -13,7 +13,7 @@ export default function Playground({
   code,
   title,
   description,
-  children
+  source
 }: {
   code: { [key in SupportedFrameworks]?: () => {} };
   title?: string;
@@ -162,7 +162,9 @@ export default function Playground({
             </button>
           </div>
         </div>
-        <div className="playground__preview">{children}</div>
+        <div className="playground__preview">
+          <iframe src={source}></iframe>
+        </div>
       </div>
       <div
         ref={codeRef}
