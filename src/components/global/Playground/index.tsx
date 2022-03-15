@@ -4,6 +4,17 @@ import './playground.css';
 import { EditorOptions, openAngularEditor, openHtmlEditor, openReactEditor, openVueEditor } from './stackblitz.utils';
 import { Mode, UsageTarget } from './playground.types';
 
+const CodeBlockButton = ({ language, usageTarget, setUsageTarget }) => {
+  return (
+    <button
+      type="button"
+      title={`Show ${language} code`}
+      className={`playground__control-button ${usageTarget === language ? "playground__control-button--selected" : ""}`}
+      onClick={() => setUsageTarget(language)}
+    >{language}</button>
+  );
+};
+
 /**
  * @param code The code snippets for each supported framework target.
  * @param title Optional title of the generated playground example. Specify to customize the Stackblitz title.
@@ -23,7 +34,7 @@ export default function Playground({
     return;
   }
   const codeRef = useRef(null);
-  
+
   const [usageTarget, setUsageTarget] = useState(UsageTarget.Html);
   const [mode, setMode] = useState(Mode.iOS);
   const [codeExpanded, setCodeExpanded] = useState(false);
@@ -74,7 +85,11 @@ export default function Playground({
     <div className="playground">
       <div className="playground__container">
         <div className="playground__control-toolbar">
-          {/* TODO FW-742: Code language switcher */}
+          <div className="playground__control-group">
+            {Object.values(UsageTarget).map(lang => (
+              <CodeBlockButton language={lang} usageTarget={usageTarget} setUsageTarget={setUsageTarget} />
+            ))}
+          </div>
           <div className="playground__control-group">
             <button
               type="button"

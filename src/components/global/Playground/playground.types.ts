@@ -5,8 +5,6 @@ export enum UsageTarget {
   Vue = 'Vue',
 }
 
-export const UsageTargetList = Object.keys(UsageTarget);
-
 export enum Mode {
   iOS = 'ios',
   MD = 'md',
