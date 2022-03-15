@@ -25,17 +25,50 @@ export default function Playground({
     return;
   }
   const { isDarkTheme } = useThemeContext();
+
   const codeRef = useRef(null);
+
+  const frameiOS = useRef(null);
+  const frameMD = useRef(null);
 
   const [usageTarget, setUsageTarget] = useState(UsageTarget.Html);
   const [mode, setMode] = useState(Mode.iOS);
   const [codeExpanded, setCodeExpanded] = useState(false);
   const [codeSnippets, setCodeSnippets] = useState({});
 
+  const [isIframeLoaded, setIframeLoaded] = useState(false);
+
+  const waitForFrame = (frame: HTMLElement) => {
+    return new Promise((resolve) => {
+      frame.onload = () => resolve();
+    });
+  }
+
+  useEffect(async () => {
+    if (frameiOS.current && frameMD.current) {
+      if (!isIframeLoaded) {
+        await Promise.all([
+          waitForFrame(frameiOS.current),
+          waitForFrame(frameMD.current)
+        ]);
+
+        setIframeLoaded(true);
+      }
+
+      frameiOS.current.contentWindow.postMessage({
+        darkMode: isDarkTheme
+      });
+      frameMD.current.contentWindow.postMessage({
+        darkMode: isDarkTheme
+      });
+    }
+  }, [isDarkTheme]);
+
   const isIOS = mode === Mode.iOS;
   const isMD = mode === Mode.MD;
 
-  const sourceUrl = `${source}?ionic:mode=${mode}&demo:darkmode=${isDarkTheme}`;
+  const sourceiOS = `${source}?ionic:mode=${Mode.iOS}`;
+  const sourceMD = `${source}?ionic:mode=${Mode.MD}`;
 
   const activeCodeSnippet: SupportedFrameworks = 'react';
 
@@ -167,7 +200,8 @@ export default function Playground({
           </div>
         </div>
         <div className="playground__preview">
-          <iframe src={sourceUrl}></iframe>
+          <iframe className={ !isIOS ? 'frame-hidden' : '' } ref={frameiOS} src={sourceiOS}></iframe>
+          <iframe className={ !isMD ? 'frame-hidden' : '' } ref={frameMD} src={sourceMD}></iframe>
         </div>
       </div>
       <div

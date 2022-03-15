@@ -167,3 +167,7 @@
 
   width: 100%;
 }
+
+.playground iframe.frame-hidden {
+  display: none;
+}

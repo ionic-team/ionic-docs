@@ -258,12 +258,15 @@
       </ion-content>
 
       <script>
-        const params = new URLSearchParams(window.location.search);
-        const darkMode = params.get('demo:darkmode');
+        window.addEventListener('message', (ev) => {
+          const { data } = ev;
 
-        if (darkMode === 'true') {
-          document.body.classList.add('dark');
-        }
+          if (data.darkMode) {
+            document.body.classList.add('dark');
+          } else {
+            document.body.classList.remove('dark');
+          }
+        })
       </script>
     </ion-app>
   </body>
