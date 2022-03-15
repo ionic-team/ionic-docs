@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 
 import './playground.css';
 import { EditorOptions, openAngularEditor, openHtmlEditor, openReactEditor, openVueEditor } from './stackblitz.utils';
-import { Mode, SupportedFrameworks, UsageTarget } from './playground.types';
+import { Mode, UsageTarget } from './playground.types';
 
 /**
  * @param code The code snippets for each supported framework target.
@@ -14,7 +14,7 @@ export default function Playground({
   title,
   description,
 }: {
-  code: { [key in SupportedFrameworks]?: () => {} };
+  code: { [key in UsageTarget]?: () => {} };
   title?: string;
   description?: string;
 }) {
@@ -23,7 +23,7 @@ export default function Playground({
     return;
   }
   const codeRef = useRef(null);
-
+  
   const [usageTarget, setUsageTarget] = useState(UsageTarget.Html);
   const [mode, setMode] = useState(Mode.iOS);
   const [codeExpanded, setCodeExpanded] = useState(false);
@@ -31,8 +31,6 @@ export default function Playground({
 
   const isIOS = mode === Mode.iOS;
   const isMD = mode === Mode.MD;
-
-  const activeCodeSnippet: SupportedFrameworks = 'react';
 
   function copySourceCode() {
     const copyButton = codeRef.current.querySelector('button');
@@ -168,7 +166,7 @@ export default function Playground({
         className={'playground__code-block ' + (codeExpanded ? 'playground__code-block--expanded' : '')}
         aria-expanded={codeExpanded ? 'true' : 'false'}
       >
-        {codeSnippets[activeCodeSnippet]}
+        {codeSnippets[usageTarget]}
       </div>
     </div>
   );
