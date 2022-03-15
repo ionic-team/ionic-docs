@@ -33,6 +33,8 @@ export default function Playground({
   const isIOS = mode === Mode.iOS;
   const isMD = mode === Mode.MD;
 
+  const sourceUrl = `${source}?ionic:mode=${mode}`;
+
   const activeCodeSnippet: SupportedFrameworks = 'react';
 
   function copySourceCode() {
@@ -163,7 +165,7 @@ export default function Playground({
           </div>
         </div>
         <div className="playground__preview">
-          <iframe src={source}></iframe>
+          <iframe src={sourceUrl}></iframe>
         </div>
       </div>
       <div

@@ -160,3 +160,10 @@
 .playground__code-block pre[class*='language-'] {
   background-color: var(--playground-code-background);
 }
+
+.playground iframe {
+  box-shadow: none;
+  background: transparent;
+
+  width: 100%;
+}
