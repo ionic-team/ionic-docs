@@ -13,6 +13,7 @@ export default function Playground({
   code,
   title,
   description,
+  children
 }: {
   code: { [key in SupportedFrameworks]?: () => {} };
   title?: string;
@@ -161,7 +162,7 @@ export default function Playground({
             </button>
           </div>
         </div>
-        <div className="playground__preview">{/* TODO FW-743: iframe Preview */}</div>
+        <div className="playground__preview">{children}</div>
       </div>
       <div
         ref={codeRef}
