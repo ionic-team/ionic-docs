@@ -3,6 +3,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import './playground.css';
 import { EditorOptions, openAngularEditor, openHtmlEditor, openReactEditor, openVueEditor } from './stackblitz.utils';
 import { Mode, SupportedFrameworks, UsageTarget } from './playground.types';
+import useThemeContext from '@theme/hooks/useThemeContext';
 
 /**
  * @param code The code snippets for each supported framework target.
@@ -23,6 +24,7 @@ export default function Playground({
     console.warn('No code usage examples provided for this Playground example.');
     return;
   }
+  const { isDarkTheme } = useThemeContext();
   const codeRef = useRef(null);
 
   const [usageTarget, setUsageTarget] = useState(UsageTarget.Html);
@@ -33,7 +35,7 @@ export default function Playground({
   const isIOS = mode === Mode.iOS;
   const isMD = mode === Mode.MD;
 
-  const sourceUrl = `${source}?ionic:mode=${mode}`;
+  const sourceUrl = `${source}?ionic:mode=${mode}&demo:darkmode=${isDarkTheme}`;
 
   const activeCodeSnippet: SupportedFrameworks = 'react';
 
