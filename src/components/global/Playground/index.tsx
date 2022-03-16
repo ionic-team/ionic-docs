@@ -155,7 +155,7 @@ export default function Playground({
             />
           </div>
           <div className="playground__control-group playground__control-group--end">
-            <Tippy content={codeExpanded ? 'Hide source code' : 'Show full source'}>
+            <Tippy arrow={false} placement="bottom" content={codeExpanded ? 'Hide source code' : 'Show full source'}>
               <button
               className="playground__icon-button playground__icon-button--primary"
               aria-label={codeExpanded ? 'Hide source code' : 'Show full source'}
@@ -174,7 +174,7 @@ export default function Playground({
               </svg>
             </button>
             </Tippy>
-            <Tippy content="Report an issue">
+            <Tippy arrow={false} placement="bottom" content="Report an issue">
               <a
               className="playground__icon-button"
               href="https://github.com/ionic-team/ionic-docs/issues/new/choose"
@@ -190,7 +190,7 @@ export default function Playground({
               </svg>
             </a>
             </Tippy>
-            <Tippy content="Copy source code">
+            <Tippy arrow={false} placement="bottom" content="Copy source code">
               <button className="playground__icon-button playground__icon-button--primary" onClick={copySourceCode}>
               <svg
                 aria-hidden="true"
@@ -208,7 +208,7 @@ export default function Playground({
               </svg>
             </button>
             </Tippy>
-            <Tippy content="Open in StackBlitz">
+            <Tippy arrow={false} placement="bottom" content="Open in StackBlitz">
               <button className="playground__icon-button playground__icon-button--primary" onClick={openEditor}>
               <svg
                 aria-hidden="true"
