@@ -31,6 +31,11 @@ export default function Playground({
 
   const frameiOS = useRef(null);
   const frameMD = useRef(null);
+
+  /**
+   * Developers can set a predefined size
+   * or an explicit pixel value.
+   */
   const frameSize = FRAME_SIZES[size] || size;
 
   const [usageTarget, setUsageTarget] = useState(UsageTarget.Html);
