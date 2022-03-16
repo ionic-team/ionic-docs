@@ -118,7 +118,7 @@ Now that our template is setup, we need to add some CSS to size the virtual scro
 
 ## Usage with Ionic Components
 
-Ionic Framework requires that features such as collapsible large titles, `ion-infinite-scroll, `ion-refresher`and`ion-reorder-group`be used within an`ion-content`. To use these experiences with virtual scrolling, you must add the `.ion-content-scroll-host` class to the virtual scroll viewport.
+Ionic Framework requires that features such as collapsible large titles, `ion-infinite-scroll`, `ion-refresher`, and `ion-reorder-group` be used within an `ion-content`. To use these experiences with virtual scrolling, you must add the `.ion-content-scroll-host` class to the virtual scroll viewport.
 
 For example:
 
