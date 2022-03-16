@@ -4,15 +4,27 @@ import './playground.css';
 import { EditorOptions, openAngularEditor, openHtmlEditor, openReactEditor, openVueEditor } from './stackblitz.utils';
 import { Mode, UsageTarget } from './playground.types';
 
-const CodeBlockButton = ({ language, usageTarget, setUsageTarget }) => {
-  const langValue = UsageTarget[language];
+const ControlButton = ({ isSelected, handleClick, title, label }) => {
   return (
     <button
       type="button"
+      title={title}
+      className={`playground__control-button ${isSelected ? "playground__control-button--selected" : ""}`}
+      onClick={handleClick}
+      data-text={label}
+    >{label}</button>
+  );
+};
+
+const CodeBlockButton = ({ language, usageTarget, setUsageTarget }) => {
+  const langValue = UsageTarget[language];
+  return (
+    <ControlButton
+      isSelected={usageTarget === langValue}
+      handleClick={() => setUsageTarget(langValue)}
       title={`Show ${language} code`}
-      className={`playground__control-button ${usageTarget === langValue ? "playground__control-button--selected" : ""}`}
-      onClick={() => setUsageTarget(langValue)}
-    >{language}</button>
+      label={language}
+    />
   );
 };
 
@@ -93,20 +105,18 @@ export default function Playground({
             ))}
           </div>
           <div className="playground__control-group">
-            <button
-              type="button"
-              className={'playground__control-button ' + (isIOS ? 'playground__control-button--selected' : '')}
-              onClick={() => setMode(Mode.iOS)}
-            >
-              iOS
-            </button>
-            <button
-              type="button"
-              className={'playground__control-button ' + (isMD ? 'playground__control-button--selected' : '')}
-              onClick={() => setMode(Mode.MD)}
-            >
-              MD
-            </button>
+            <ControlButton
+              isSelected={isIOS}
+              handleClick={() => setMode(Mode.iOS)}
+              title="iOS mode"
+              label="iOS"
+            />
+            <ControlButton
+              isSelected={isMD}
+              handleClick={() => setMode(Mode.MD)}
+              title="MD mode"
+              label="MD"
+            />
           </div>
           <div className="playground__control-group playground__control-group--end">
             <button

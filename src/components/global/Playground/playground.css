@@ -88,6 +88,7 @@
 
 .playground__control-button {
   display: inline-flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   padding: 6px 10px;
@@ -102,6 +103,25 @@
   appearance: none;
   cursor: pointer;
   transition: background-color .2s, color .2s;
+}
+
+/* fix layout shifting when button is bolded on select */
+/* has the same text as the button, but bolded in advance to nudge the width */
+.playground__control-button::after {
+  content: attr(data-text);
+  font-weight: 500;
+  overflow: hidden;
+  pointer-events: none;
+  user-select: none;
+  visibility: hidden;
+
+  height: 0;
+}
+
+@media speech {
+  .playground__control-button::after {
+    display: none;
+  }
 }
 
 .playground__control-button--selected {
