@@ -5,6 +5,8 @@ import { EditorOptions, openAngularEditor, openHtmlEditor, openReactEditor, open
 import { Mode, UsageTarget } from './playground.types';
 import useThemeContext from '@theme/hooks/useThemeContext';
 
+import Tippy from '@tippyjs/react';
+import 'tippy.js/dist/tippy.css';
 
 const ControlButton = ({ isSelected, handleClick, title, label }) => {
   return (
@@ -156,7 +158,8 @@ export default function Playground({
             />
           </div>
           <div className="playground__control-group playground__control-group--end">
-            <button
+            <Tippy theme="playground" arrow={false} placement="bottom" content={codeExpanded ? 'Hide source code' : 'Show full source'}>
+              <button
               className="playground__icon-button playground__icon-button--primary"
               aria-label={codeExpanded ? 'Hide source code' : 'Show full source'}
               onClick={() => setCodeExpanded(!codeExpanded)}
@@ -173,7 +176,9 @@ export default function Playground({
                 <path d="M11 9L15 5L11 1" stroke="current" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
             </button>
-            <a
+            </Tippy>
+            <Tippy theme="playground" arrow={false} placement="bottom" content="Report an issue">
+              <a
               className="playground__icon-button"
               href="https://github.com/ionic-team/ionic-docs/issues/new/choose"
               aria-label="Report an issue"
@@ -187,7 +192,9 @@ export default function Playground({
                 />
               </svg>
             </a>
-            <button className="playground__icon-button playground__icon-button--primary" onClick={copySourceCode}>
+            </Tippy>
+            <Tippy theme="playground" arrow={false} placement="bottom" content="Copy source code">
+              <button className="playground__icon-button playground__icon-button--primary" onClick={copySourceCode}>
               <svg
                 aria-hidden="true"
                 xmlns="http://www.w3.org/2000/svg"
@@ -203,7 +210,9 @@ export default function Playground({
                 <rect x="3" y="3" width="8" height="8" rx="1.5" stroke="current" />
               </svg>
             </button>
-            <button className="playground__icon-button playground__icon-button--primary" onClick={openEditor}>
+            </Tippy>
+            <Tippy theme="playground" arrow={false} placement="bottom" content="Open in StackBlitz">
+              <button className="playground__icon-button playground__icon-button--primary" onClick={openEditor}>
               <svg
                 aria-hidden="true"
                 width="12"
@@ -221,6 +230,7 @@ export default function Playground({
                 />
               </svg>
             </button>
+            </Tippy>
           </div>
         </div>
         <div className="playground__preview">
