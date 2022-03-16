@@ -66,7 +66,9 @@ For example:
 ```tsx
 <IonPage>
   <IonContent scrollY={false}>
-    <Virtuoso className="ion-content-scroll-host">// Your existing content and configurations</Virtuoso>
+    <Virtuoso className="ion-content-scroll-host">
+      {/* Your existing content and configurations */}
+    </Virtuoso>
   </IonContent>
 </IonPage>
 ```
