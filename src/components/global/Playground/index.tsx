@@ -18,12 +18,15 @@ const ControlButton = ({ isSelected, handleClick, title, label }) => {
   );
 };
 
-const CodeBlockButton = ({ language, usageTarget, setUsageTarget }) => {
+const CodeBlockButton = ({ language, usageTarget, setUsageTarget, setCodeExpanded }) => {
   const langValue = UsageTarget[language];
   return (
     <ControlButton
       isSelected={usageTarget === langValue}
-      handleClick={() => setUsageTarget(langValue)}
+      handleClick={() => {
+        setCodeExpanded(true);
+        setUsageTarget(langValue);
+      }}
       title={`Show ${language} code`}
       label={language}
     />
@@ -135,7 +138,7 @@ export default function Playground({
         <div className="playground__control-toolbar">
           <div className="playground__control-group">
             {Object.keys(UsageTarget).map(lang => (
-              <CodeBlockButton language={lang} usageTarget={usageTarget} setUsageTarget={setUsageTarget} />
+              <CodeBlockButton language={lang} usageTarget={usageTarget} setUsageTarget={setUsageTarget} setCodeExpanded={setCodeExpanded} />
             ))}
           </div>
           <div className="playground__control-group">
