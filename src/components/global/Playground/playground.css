@@ -29,7 +29,6 @@
   --playground-btn-icon-color: var(--c-indigo-80);
   --playground-separator-color: var(--c-indigo-30);
   --playground-code-background: var(--c-indigo-10);
-  --playground-tooltip-background: var(--c-indigo-90);
 
   overflow: hidden;
 }
