@@ -2,12 +2,12 @@
  * Wait for the initial HTML document to be
  * loaded and parsed before adding the message
  * listener. Otherwise, it is possible that the message
- * listener can fire before the body is ready.
+ * listener will fire before the body is ready.
  */
 window.addEventListener('DOMContentLoaded', () => {
   /**
    * The parent Playground component will
-   * dispatch messages whenever the theme in
+   * dispatch messages whenever the theme on
    * the Ionic Docs website has changed so that
    * the demos loaded in iframes can match the
    * docs website theme.
@@ -24,7 +24,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
   /**
    * The Playground needs to wait for the message listener
-   * to be created before sending any messages otherwise
+   * to be created before sending any messages, otherwise
    * they will be lost. Once the listener is done, fire
    * the demoReady event. In the event that the Playground's
    * useEffect hook fires before the message listener is created,
