@@ -117,7 +117,7 @@ Ionic Framework requires that features such as collapsible large titles, `ion-in
 For example:
 
 ```html
-<ion-content scroll-y="false">
+<ion-content [scrollY]="false">
   <cdk-virtual-scroll-viewport class="ion-content-scroll-host">
     <!-- Your existing content and configurations -->
   </cdk-virtual-scroll-viewport>
