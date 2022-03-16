@@ -29,6 +29,7 @@
   --playground-btn-icon-color: var(--c-indigo-80);
   --playground-separator-color: var(--c-indigo-30);
   --playground-code-background: var(--c-indigo-10);
+  --playground-tooltip-background: var(--c-indigo-90);
 
   overflow: hidden;
 }
@@ -193,13 +194,13 @@
 }
 
 /* Tooltip styling */
-.tippy-box {
-  background-color: var(--playground-tooltip-background);
+.tippy-box[data-theme="playground"] {
+  background-color: var(--c-carbon-90);
   border-radius: 8px;
   line-height: initial;
-  font-size: 11px;
+  font-size: 12px;
 }
 
-.tippy-box .tippy-content {
-  padding: 8px 10px;
+.tippy-box[data-theme="playground"] .tippy-content {
+  padding: 6px 10px;
 }
