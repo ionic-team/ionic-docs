@@ -191,3 +191,15 @@
 .playground iframe.frame-hidden {
   display: none;
 }
+
+/* Tooltip styling */
+.tippy-box {
+  background-color: var(--playground-tooltip-background);
+  border-radius: 8px;
+  line-height: initial;
+  font-size: 11px;
+}
+
+.tippy-box .tippy-content {
+  padding: 8px 10px;
+}
