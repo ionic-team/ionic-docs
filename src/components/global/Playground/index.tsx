@@ -61,12 +61,9 @@ export default function Playground({
         setIframeLoaded(true);
       }
 
-      frameiOS.current.contentWindow.postMessage({
-        darkMode: isDarkTheme
-      });
-      frameMD.current.contentWindow.postMessage({
-        darkMode: isDarkTheme
-      });
+      const message = { darkMode: isDarkTheme };
+      frameiOS.current.contentWindow.postMessage(message);
+      frameMD.current.contentWindow.postMessage(message);
     }
   }, [isDarkTheme]);
 
