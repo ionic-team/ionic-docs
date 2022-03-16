@@ -15,3 +15,22 @@ window.addEventListener('message', (ev) => {
     document.body.classList.remove('dark');
   }
 });
+
+/**
+ * The Playground needs to wait for the message listener
+ * to be created before sending any messages otherwise
+ * they will be lost. Once the listener is done, fire
+ * the demoReady event. In the event that the Playground's
+ * useEffect hook fires before the message listener is created,
+ * the Playground component will wait for the demoReady event
+ * before proceeding.
+ *
+ * We also set window.demoReady in the event that the
+ * useEffect hook fires after the message listener is
+ * already created so that it does not wait on an event
+ * that was already fired.
+ */
+const ev = new CustomEvent('demoReady');
+window.dispatchEvent(ev);
+
+window.demoReady = true;

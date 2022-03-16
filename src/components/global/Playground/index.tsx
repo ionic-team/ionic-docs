@@ -42,7 +42,6 @@ export default function Playground({
   const [mode, setMode] = useState(Mode.iOS);
   const [codeExpanded, setCodeExpanded] = useState(false);
   const [codeSnippets, setCodeSnippets] = useState({});
-  const [isIframeLoaded, setIframeLoaded] = useState(false);
 
   /**
    * Rather than encode isDarkTheme into the frame source
@@ -51,14 +50,10 @@ export default function Playground({
    */
   useEffect(async () => {
     if (frameiOS.current && frameMD.current) {
-      if (!isIframeLoaded) {
-        await Promise.all([
-          waitForFrame(frameiOS.current),
-          waitForFrame(frameMD.current)
-        ]);
-
-        setIframeLoaded(true);
-      }
+      await Promise.all([
+        waitForFrame(frameiOS.current),
+        waitForFrame(frameMD.current)
+      ]);
 
       const message = { darkMode: isDarkTheme };
       frameiOS.current.contentWindow.postMessage(message);
@@ -232,7 +227,15 @@ const FRAME_SIZES = {
 }
 
 const waitForFrame = (frame: HTMLElement) => {
+  if (isFrameReady(frame)) return Promise.resolve();
+
   return new Promise((resolve) => {
-    frame.onload = () => resolve();
+    frame.contentWindow.addEventListener('demoReady', () => {
+      resolve();
+    });
   });
+}
+
+const isFrameReady = (frame: HTMLElement) => {
+  return frame.contentWindow.demoReady === true;
 }
