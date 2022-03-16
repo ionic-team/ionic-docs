@@ -1,5 +1,5 @@
 export enum UsageTarget {
-  Basic = 'javascript',
+  JavaScript = 'javascript',
   Angular = 'angular',
   React = 'react',
   Vue = 'vue',

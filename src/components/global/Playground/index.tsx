@@ -36,7 +36,7 @@ export default function Playground({
   }
   const codeRef = useRef(null);
 
-  const [usageTarget, setUsageTarget] = useState(UsageTarget.Basic);
+  const [usageTarget, setUsageTarget] = useState(UsageTarget.JavaScript);
   const [mode, setMode] = useState(Mode.iOS);
   const [codeExpanded, setCodeExpanded] = useState(false);
   const [codeSnippets, setCodeSnippets] = useState({});
@@ -62,7 +62,7 @@ export default function Playground({
       case UsageTarget.Angular:
         openAngularEditor(codeBlock, editorOptions);
         break;
-      case UsageTarget.Basic:
+      case UsageTarget.JavaScript:
         openHtmlEditor(codeBlock, editorOptions);
         break;
       case UsageTarget.React:
