@@ -112,7 +112,7 @@ Since the viewport is built to fit various use cases, the default sizing is not 
 
 ## Usage with Ionic Components
 
-Ionic Framework requires that features such as collapsible large titles, `ion-infinite-scroll, `ion-refresher`and`ion-reorder-group`be used within an`ion-content`. To use these experiences with virtual scrolling, you must add the `.ion-content-scroll-host` class to the virtual scroll viewport.
+Ionic Framework requires that features such as collapsible large titles, `ion-infinite-scroll`, `ion-refresher`, and `ion-reorder-group` be used within an `ion-content`. To use these experiences with virtual scrolling, you must add the `.ion-content-scroll-host` class to the virtual scroll viewport.
 
 For example:
 
