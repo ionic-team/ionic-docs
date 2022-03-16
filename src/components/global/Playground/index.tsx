@@ -5,12 +5,13 @@ import { EditorOptions, openAngularEditor, openHtmlEditor, openReactEditor, open
 import { Mode, UsageTarget } from './playground.types';
 
 const CodeBlockButton = ({ language, usageTarget, setUsageTarget }) => {
+  const langValue = UsageTarget[language];
   return (
     <button
       type="button"
       title={`Show ${language} code`}
-      className={`playground__control-button ${usageTarget === language ? "playground__control-button--selected" : ""}`}
-      onClick={() => setUsageTarget(language)}
+      className={`playground__control-button ${usageTarget === langValue ? "playground__control-button--selected" : ""}`}
+      onClick={() => setUsageTarget(langValue)}
     >{language}</button>
   );
 };
@@ -35,7 +36,7 @@ export default function Playground({
   }
   const codeRef = useRef(null);
 
-  const [usageTarget, setUsageTarget] = useState(UsageTarget.Html);
+  const [usageTarget, setUsageTarget] = useState(UsageTarget.Basic);
   const [mode, setMode] = useState(Mode.iOS);
   const [codeExpanded, setCodeExpanded] = useState(false);
   const [codeSnippets, setCodeSnippets] = useState({});
@@ -60,7 +61,7 @@ export default function Playground({
       case UsageTarget.Angular:
         openAngularEditor(codeBlock, editorOptions);
         break;
-      case UsageTarget.Html:
+      case UsageTarget.Basic:
         openHtmlEditor(codeBlock, editorOptions);
         break;
       case UsageTarget.React:
@@ -86,7 +87,7 @@ export default function Playground({
       <div className="playground__container">
         <div className="playground__control-toolbar">
           <div className="playground__control-group">
-            {Object.values(UsageTarget).map(lang => (
+            {Object.keys(UsageTarget).map(lang => (
               <CodeBlockButton language={lang} usageTarget={usageTarget} setUsageTarget={setUsageTarget} />
             ))}
           </div>

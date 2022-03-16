@@ -1,8 +1,8 @@
 export enum UsageTarget {
-  Html = 'Basic',
-  Angular = 'Angular',
-  React = 'React',
-  Vue = 'Vue',
+  Basic = 'javascript',
+  Angular = 'angular',
+  React = 'react',
+  Vue = 'vue',
 }
 
 export enum Mode {
