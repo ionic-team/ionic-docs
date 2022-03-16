@@ -3,6 +3,8 @@ import React, { useEffect, useRef, useState } from 'react';
 import './playground.css';
 import { EditorOptions, openAngularEditor, openHtmlEditor, openReactEditor, openVueEditor } from './stackblitz.utils';
 import { Mode, UsageTarget } from './playground.types';
+import useThemeContext from '@theme/hooks/useThemeContext';
+
 
 const ControlButton = ({ isSelected, handleClick, title, label }) => {
   return (
@@ -37,6 +39,8 @@ export default function Playground({
   code,
   title,
   description,
+  source,
+  size = 'small'
 }: {
   code: { [key in UsageTarget]?: () => {} };
   title?: string;
@@ -46,15 +50,45 @@ export default function Playground({
     console.warn('No code usage examples provided for this Playground example.');
     return;
   }
-  const codeRef = useRef(null);
+  const { isDarkTheme } = useThemeContext();
 
+  const codeRef = useRef(null);
+  const frameiOS = useRef(null);
+  const frameMD = useRef(null);
+
+  /**
+   * Developers can set a predefined size
+   * or an explicit pixel value.
+   */
+  const frameSize = FRAME_SIZES[size] || size;
   const [usageTarget, setUsageTarget] = useState(UsageTarget.JavaScript);
   const [mode, setMode] = useState(Mode.iOS);
   const [codeExpanded, setCodeExpanded] = useState(false);
   const [codeSnippets, setCodeSnippets] = useState({});
 
+  /**
+   * Rather than encode isDarkTheme into the frame source
+   * url, we post a message to each frame so that
+   * dark mode can be enabled without a full page reload.
+   */
+  useEffect(async () => {
+    if (frameiOS.current && frameMD.current) {
+      await Promise.all([
+        waitForFrame(frameiOS.current),
+        waitForFrame(frameMD.current)
+      ]);
+
+      const message = { darkMode: isDarkTheme };
+      frameiOS.current.contentWindow.postMessage(message);
+      frameMD.current.contentWindow.postMessage(message);
+    }
+  }, [isDarkTheme]);
+
   const isIOS = mode === Mode.iOS;
   const isMD = mode === Mode.MD;
+
+  const sourceiOS = `${source}?ionic:mode=${Mode.iOS}`;
+  const sourceMD = `${source}?ionic:mode=${Mode.MD}`;
 
   function copySourceCode() {
     const copyButton = codeRef.current.querySelector('button');
@@ -186,7 +220,16 @@ export default function Playground({
             </button>
           </div>
         </div>
-        <div className="playground__preview">{/* TODO FW-743: iframe Preview */}</div>
+        <div className="playground__preview">
+          {/*
+            We render two iframes, one for each mode.
+            When the set mode changes, we hide one frame and
+            show the other. This is done to avoid flickering
+            and doing unnecessary reloads when switching modes.
+          */}
+          <iframe height={frameSize} className={ !isIOS ? 'frame-hidden' : '' } ref={frameiOS} src={sourceiOS}></iframe>
+          <iframe height={frameSize} className={ !isMD ? 'frame-hidden' : '' } ref={frameMD} src={sourceMD}></iframe>
+        </div>
       </div>
       <div
         ref={codeRef}
@@ -197,4 +240,26 @@ export default function Playground({
       </div>
     </div>
   );
+}
+
+const FRAME_SIZES = {
+  xsmall: '100px',
+  small: '200px',
+  medium: '400px',
+  large: '600px',
+  xlarge: '800px'
+}
+
+const waitForFrame = (frame: HTMLElement) => {
+  if (isFrameReady(frame)) return Promise.resolve();
+
+  return new Promise((resolve) => {
+    frame.contentWindow.addEventListener('demoReady', () => {
+      resolve();
+    });
+  });
+}
+
+const isFrameReady = (frame: HTMLElement) => {
+  return frame.contentWindow.demoReady === true;
 }

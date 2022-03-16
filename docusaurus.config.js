@@ -258,6 +258,7 @@ module.exports = {
     '@docusaurus/plugin-debug',
     '@docusaurus/plugin-sitemap',
     '@ionic-internal/docusaurus-plugin-tag-manager',
+    require.resolve('./webpack.plugin.js')
   ],
   themes: [
     [
