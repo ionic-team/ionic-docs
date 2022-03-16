@@ -39,12 +39,6 @@ export default function Playground({
   const [codeSnippets, setCodeSnippets] = useState({});
   const [isIframeLoaded, setIframeLoaded] = useState(false);
 
-  const waitForFrame = (frame: HTMLElement) => {
-    return new Promise((resolve) => {
-      frame.onload = () => resolve();
-    });
-  }
-
   /**
    * Rather than encode isDarkTheme into the frame source
    * url, we post a message to each frame so that
@@ -230,4 +224,10 @@ const FRAME_SIZES = {
   medium: '400px',
   large: '600px',
   xlarge: '800px'
+}
+
+const waitForFrame = (frame: HTMLElement) => {
+  return new Promise((resolve) => {
+    frame.onload = () => resolve();
+  });
 }
