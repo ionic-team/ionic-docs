@@ -1,15 +1,11 @@
 export enum UsageTarget {
-  Html = 'Basic',
-  Angular = 'Angular',
-  React = 'React',
-  Vue = 'Vue',
+  JavaScript = 'javascript',
+  Angular = 'angular',
+  React = 'react',
+  Vue = 'vue',
 }
-
-export const UsageTargetList = Object.keys(UsageTarget);
 
 export enum Mode {
   iOS = 'ios',
   MD = 'md',
 }
-
-export type SupportedFrameworks = 'angular' | 'react' | 'vue' | 'javascript';

@@ -2,7 +2,31 @@ import React, { useEffect, useRef, useState } from 'react';
 
 import './playground.css';
 import { EditorOptions, openAngularEditor, openHtmlEditor, openReactEditor, openVueEditor } from './stackblitz.utils';
-import { Mode, SupportedFrameworks, UsageTarget } from './playground.types';
+import { Mode, UsageTarget } from './playground.types';
+
+const ControlButton = ({ isSelected, handleClick, title, label }) => {
+  return (
+    <button
+      type="button"
+      title={title}
+      className={`playground__control-button ${isSelected ? "playground__control-button--selected" : ""}`}
+      onClick={handleClick}
+      data-text={label}
+    >{label}</button>
+  );
+};
+
+const CodeBlockButton = ({ language, usageTarget, setUsageTarget }) => {
+  const langValue = UsageTarget[language];
+  return (
+    <ControlButton
+      isSelected={usageTarget === langValue}
+      handleClick={() => setUsageTarget(langValue)}
+      title={`Show ${language} code`}
+      label={language}
+    />
+  );
+};
 
 /**
  * @param code The code snippets for each supported framework target.
@@ -14,7 +38,7 @@ export default function Playground({
   title,
   description,
 }: {
-  code: { [key in SupportedFrameworks]?: () => {} };
+  code: { [key in UsageTarget]?: () => {} };
   title?: string;
   description?: string;
 }) {
@@ -24,7 +48,7 @@ export default function Playground({
   }
   const codeRef = useRef(null);
 
-  const [usageTarget, setUsageTarget] = useState(UsageTarget.Html);
+  const [usageTarget, setUsageTarget] = useState(UsageTarget.JavaScript);
   const [mode, setMode] = useState(Mode.iOS);
   const [codeExpanded, setCodeExpanded] = useState(false);
   const [codeSnippets, setCodeSnippets] = useState({});
@@ -32,16 +56,15 @@ export default function Playground({
   const isIOS = mode === Mode.iOS;
   const isMD = mode === Mode.MD;
 
-  const activeCodeSnippet: SupportedFrameworks = 'react';
-
   function copySourceCode() {
     const copyButton = codeRef.current.querySelector('button');
     copyButton.click();
   }
 
   function openEditor(event) {
-    // TODO assign code block value based on active framework button and loaded code snippets
-    const codeBlock = '';
+    // codeSnippets are React components, so we need to get their rendered text
+    // using outerText will preserve line breaks for formatting in Stackblitz editor
+    const codeBlock = codeRef.current.querySelector('code').outerText;
     const editorOptions: EditorOptions = {
       title,
       description,
@@ -51,7 +74,7 @@ export default function Playground({
       case UsageTarget.Angular:
         openAngularEditor(codeBlock, editorOptions);
         break;
-      case UsageTarget.Html:
+      case UsageTarget.JavaScript:
         openHtmlEditor(codeBlock, editorOptions);
         break;
       case UsageTarget.React:
@@ -76,22 +99,24 @@ export default function Playground({
     <div className="playground">
       <div className="playground__container">
         <div className="playground__control-toolbar">
-          {/* TODO FW-742: Code language switcher */}
           <div className="playground__control-group">
-            <button
-              type="button"
-              className={'playground__control-button ' + (isIOS ? 'playground__control-button--selected' : '')}
-              onClick={() => setMode(Mode.iOS)}
-            >
-              iOS
-            </button>
-            <button
-              type="button"
-              className={'playground__control-button ' + (isMD ? 'playground__control-button--selected' : '')}
-              onClick={() => setMode(Mode.MD)}
-            >
-              MD
-            </button>
+            {Object.keys(UsageTarget).map(lang => (
+              <CodeBlockButton language={lang} usageTarget={usageTarget} setUsageTarget={setUsageTarget} />
+            ))}
+          </div>
+          <div className="playground__control-group">
+            <ControlButton
+              isSelected={isIOS}
+              handleClick={() => setMode(Mode.iOS)}
+              title="iOS mode"
+              label="iOS"
+            />
+            <ControlButton
+              isSelected={isMD}
+              handleClick={() => setMode(Mode.MD)}
+              title="MD mode"
+              label="MD"
+            />
           </div>
           <div className="playground__control-group playground__control-group--end">
             <button
@@ -168,7 +193,7 @@ export default function Playground({
         className={'playground__code-block ' + (codeExpanded ? 'playground__code-block--expanded' : '')}
         aria-expanded={codeExpanded ? 'true' : 'false'}
       >
-        {codeSnippets[activeCodeSnippet]}
+        {codeSnippets[usageTarget]}
       </div>
     </div>
   );
