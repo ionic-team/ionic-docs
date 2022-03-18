@@ -1,3 +1,15 @@
+---
+title: Slides
+---
+
+<head>
+  <title>Vue Slides Guide: How to Get Swiper for Vue on Ionic Apps</title>
+  <meta
+    name="description"
+    content="Our Slides guide teaches how to get Swiper for Vue set up in Ionic apps. It has any info needed to move from ion-slides to the official Swiper Vue integration."
+  />
+</head>
+
 # Slides
 
 We recommend <a href="http://swiperjs.com/" target="_blank" rel="noopener noreferrer">Swiper.js</a> if you need a modern touch slider component. It powers our `ion-slides` component, but we now recommend that developers use Swiper for Vue directly.

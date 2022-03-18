@@ -1,6 +1,14 @@
 ---
-sidebar_label: Deploying Mobile
+title: Deploying Mobile
 ---
+
+<head>
+  <title>Deploying to iOS and Android Apps - Capacitor Setup on Ionic</title>
+  <meta
+    name="description"
+    content="Deploying to iOS and Android is easy with Capacitor setup for Ionic Framework apps. Read to learn more about deployment in our Ionic Documentation."
+  />
+</head>
 
 # Deploying to iOS and Android
 
