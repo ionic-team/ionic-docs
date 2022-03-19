@@ -60,6 +60,7 @@ module.exports = {
             'angular/your-first-app/adding-mobile',
             'angular/your-first-app/deploying-mobile',
             'angular/your-first-app/live-reload',
+            'angular/your-first-app/distribute',
           ],
         },
         'angular/lifecycle',

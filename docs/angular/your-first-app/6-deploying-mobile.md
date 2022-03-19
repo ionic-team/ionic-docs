@@ -104,4 +104,4 @@ Once again, upon tapping the Camera button on the Photo Gallery tab, the permiss
 
 Our Photo Gallery app has just been deployed to Android and iOS devices. 🎉
 
-In the final portion of this tutorial, we’ll use the Ionic CLI’s Live Reload functionality to quickly implement photo deletion - thus completing our Photo Gallery feature.
+In the next portion of this tutorial, we’ll use the Ionic CLI’s Live Reload functionality to quickly implement photo deletion - thus completing our Photo Gallery feature.
