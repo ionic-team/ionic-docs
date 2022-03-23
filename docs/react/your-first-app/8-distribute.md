@@ -36,7 +36,7 @@ In order for Appflow to access the latest and greatest changes to your code, you
 ```shell
 git add . # stage any changes
 git commit -m "added appflow sdk" #  commit staged changes
-git push origin master # push the changes from the master branch to your git host
+git push origin main # push the changes from the main branch to your git host
 ```
 
 After the push is made, you will then see your commit under the `Commits` tab of the Appflow Dashboard. For more on this, take a look at the [Push a Commit](https://ionic.io/docs/appflow/quickstart/push) section inside the Appflow docs.
