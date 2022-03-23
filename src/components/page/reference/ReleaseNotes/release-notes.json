@@ -1,5 +1,15 @@
 [
   {
+    "body": "<h2><a href=\"https://github.com/ionic-team/ionic-framework/compare/v6.0.12...v6.0.13\">6.0.13</a> (2022-03-23)</h2>\n<h3>Bug Fixes</h3>\n<ul>\n<li><strong>angular:</strong> ngOnDestroy runs inside angular zone (<a href=\"https://github.com/ionic-team/ionic-framework/issues/24949\">#24949</a>) (<a href=\"https://github.com/ionic-team/ionic-framework/commit/a8fd2d9199ca92d62bce6abf8caccc7709fa5ca1\">a8fd2d9</a>), closes <a href=\"https://github.com/ionic-team/ionic-framework/issues/22571\">#22571</a></li>\n<li><strong>datetime:</strong> presentation time emits ionChange once  (<a href=\"https://github.com/ionic-team/ionic-framework/issues/24968\">#24968</a>) (<a href=\"https://github.com/ionic-team/ionic-framework/commit/2909b080b7020299a4554c1459b4b190ff739085\">2909b08</a>), closes <a href=\"https://github.com/ionic-team/ionic-framework/issues/24967\">#24967</a></li>\n<li><strong>popover:</strong> dismissing nested popover via backdrop now works (<a href=\"https://github.com/ionic-team/ionic-framework/issues/24957\">#24957</a>) (<a href=\"https://github.com/ionic-team/ionic-framework/commit/9e84ef7f91d76ca5a1ecaffc7592287267d5368b\">9e84ef7</a>), closes <a href=\"https://github.com/ionic-team/ionic-framework/issues/24954\">#24954</a></li>\n</ul>\n",
+    "element": "Titanium",
+    "name": "v6.0.13",
+    "published_at": "March 23 2022",
+    "symbol": "Ti",
+    "tag_name": "v6.0.13",
+    "type": "patch",
+    "version": "6.0.13"
+  },
+  {
     "body": "<h2><a href=\"https://github.com/ionic-team/ionic-framework/compare/v6.0.11...v6.0.12\">6.0.12</a> (2022-03-16)</h2>\n<h3>Bug Fixes</h3>\n<ul>\n<li><strong>datetime:</strong> reinit behavior on presentation change (<a href=\"https://github.com/ionic-team/ionic-framework/issues/24828\">#24828</a>) (<a href=\"https://github.com/ionic-team/ionic-framework/commit/d46e1e8506ca5095817b421e9edb37d41451e885\">d46e1e8</a>)</li>\n<li><strong>tabs:</strong> angular, fire willChange event before selected tab changes (<a href=\"https://github.com/ionic-team/ionic-framework/issues/24910\">#24910</a>) (<a href=\"https://github.com/ionic-team/ionic-framework/commit/d5efa113317eaf874712134dc9b8e4502aa4760f\">d5efa11</a>)</li>\n<li><strong>toast:</strong> screen readers now announce toasts when presented (<a href=\"https://github.com/ionic-team/ionic-framework/issues/24937\">#24937</a>) (<a href=\"https://github.com/ionic-team/ionic-framework/commit/8a97f6b5c9ca1e77c1790abd1e924955b6b6ea27\">8a97f6b</a>), closes <a href=\"https://github.com/ionic-team/ionic-framework/issues/22333\">#22333</a></li>\n<li><strong>vue:</strong> tapping the active tab button now correctly resets the tab stack (<a href=\"https://github.com/ionic-team/ionic-framework/issues/24935\">#24935</a>) (<a href=\"https://github.com/ionic-team/ionic-framework/commit/4534c8bc0b2bca7ab6eecd9886243116e9a039b7\">4534c8b</a>), closes <a href=\"https://github.com/ionic-team/ionic-framework/issues/24934\">#24934</a></li>\n</ul>\n",
     "element": "Titanium",
     "name": "v6.0.12",
@@ -218,15 +228,5 @@
     "tag_name": "v5.8.1",
     "type": "patch",
     "version": "5.8.1"
-  },
-  {
-    "body": "<h3>Bug Fixes</h3>\n<ul>\n<li><strong>angular:</strong> nested tabs now go to correct page (<a href=\"https://github.com/ionic-team/ionic/issues/23902\">#23902</a>) (<a href=\"https://github.com/ionic-team/ionic/commit/1ed9f07060736d0c951910427fb12b250d7dd9af\">1ed9f07</a>), closes <a href=\"https://github.com/ionic-team/ionic/issues/23897\">#23897</a></li>\n<li><strong>header:</strong> role attribute can now be customized (<a href=\"https://github.com/ionic-team/ionic/issues/23888\">#23888</a>) (<a href=\"https://github.com/ionic-team/ionic/commit/8888e2bafd76b59f32b932b5d4a6a961b52894d9\">8888e2b</a>), closes <a href=\"https://github.com/ionic-team/ionic/issues/21327\">#21327</a></li>\n<li><strong>react:</strong> modal now mounts child component independently of other modals (<a href=\"https://github.com/ionic-team/ionic/issues/23903\">#23903</a>) (<a href=\"https://github.com/ionic-team/ionic/commit/1e13429731c1d4b5200af7f5ca20aff1f3078bfe\">1e13429</a>), closes <a href=\"https://github.com/ionic-team/ionic/issues/23904\">#23904</a></li>\n<li><strong>tab-bar:</strong> safe area padding now added when slot=\"top\" (<a href=\"https://github.com/ionic-team/ionic/issues/23895\">#23895</a>) (<a href=\"https://github.com/ionic-team/ionic/commit/47829690b538903b70ad4fe77657404013270263\">4782969</a>), closes <a href=\"https://github.com/ionic-team/ionic/issues/23893\">#23893</a></li>\n</ul>\n<h3>Features</h3>\n<ul>\n<li><strong>action-sheet, loading, modal, picker, popover:</strong> pass HTML attributes to host element (<a href=\"https://github.com/ionic-team/ionic/issues/23929\">#23929</a>) (<a href=\"https://github.com/ionic-team/ionic/commit/bd96a81ff80ffe32914804ba9b6234c0286a33db\">bd96a81</a>)</li>\n<li><strong>alert, toast:</strong> pass arbitrary HTML attributes to host element (<a href=\"https://github.com/ionic-team/ionic/issues/23891\">#23891</a>) (<a href=\"https://github.com/ionic-team/ionic/commit/73a1daf0aaf6ffe8c7871619f2aec5f6fca1321a\">73a1daf</a>), closes <a href=\"https://github.com/ionic-team/ionic/issues/23825\">#23825</a></li>\n</ul>\n",
-    "element": "Calcium",
-    "name": "5.8.0 Calcium",
-    "published_at": "September 15 2021",
-    "symbol": "Ca",
-    "tag_name": "v5.8.0",
-    "type": "minor",
-    "version": "5.8.0"
   }
 ]

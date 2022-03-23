@@ -4,19 +4,19 @@ sidebar_label: Distribute
 
 # Build and Deploy your App
 
-Now that you've built your first app, you're going to want to get it distributed so everyone can start using it. The mechanics of building and deploying your application can be quite cumbersome. That's where [Appflow](https://ionic.io/docs/appflow/) comes into play. Appflow allows you to effectively generate web and native builds, push out live app updates, publish your app to the app stores, and automate the whole process. The entire Quickstart guide can be found [here](https://ionic.io/docs/appflow/quickstart).
+Now that you have built your first app, you are going to want to get it distributed so everyone can start using it. The mechanics of building and deploying your application can be quite cumbersome. That is where [Appflow](https://ionic.io/docs/appflow/) comes into play. Appflow allows you to effectively generate web and native builds, push out live app updates, publish your app to the app stores, and automate the whole process. The entire Quickstart guide can be found [here](https://ionic.io/docs/appflow/quickstart).
 
-Below we'll run through an overview of the steps.
+Below we will run through an overview of the steps.
 
 ## Connect Your Repo
 
-Appflow works directly with Git version control and uses your existing code base as the source of truth for Deploy and Package builds. You'll first need to integrate with your hosting service, such as GitHub or Bitbucket, or you can push your code directly to Appflow. Once this is completed, Appflow will have access to your code.
+Appflow works directly with Git version control and uses your existing code base as the source of truth for Deploy and Package builds. You will first need to integrate with your hosting service, such as GitHub or Bitbucket, or you can push your code directly to Appflow. Once this is completed, Appflow will have access to your code.
 
 For more on connecting your code repository to Appflow, checkout the [Connect your Repo](https://ionic.io/docs/appflow/quickstart/connect) section inside the Appflow docs.
 
 ## Install the Appflow SDK
 
-The Appflow SDK (also known as Ionic Deploy plugin) will allow you to take advantage of arguably two of the best Appflow features: deploying live updates to your app and bypassing the app stores. Ionic Appflow's Live Update feature is shipped with Appflow SDK and features the capabilities of detecting and syncing the updates for your app that you've pushed to your identified channels within the dashboard.
+The Appflow SDK (also known as Ionic Deploy plugin) will allow you to take advantage of arguably two of the best Appflow features: deploying live updates to your app and bypassing the app stores. Ionic Appflow's Live Update feature is shipped with Appflow SDK and features the capabilities of detecting and syncing the updates for your app that you have pushed to your identified channels within the dashboard.
 
 To get the Appflow SDK plugin added to your project, you can follow the install instructions within the Appflow Dashboard by clicking on "Install Instructions" inside of the `Deploy > Destinations` section. Alternatively, you can install the plugin manually by excuting the following command in your app's root directory:
 
@@ -31,7 +31,7 @@ For prerequisite and additional instructions on installing the Appflow SDK, visi
 
 ## Push a Commit
 
-In order for Appflow to access the latest and greatest changes to your code, you'll need to push a commit via the version control integration of your choosing. For those that use GitHub or Bitbucket, this would look as follows:
+In order for Appflow to access the latest and greatest changes to your code, you will need to push a commit via the version control integration of your choosing. For those that use GitHub or Bitbucket, this would look as follows:
 
 ```shell
 git add . # stage any changes
@@ -39,29 +39,29 @@ git commit -m "added appflow sdk" #  commit staged changes
 git push origin master # push the changes from the master branch to your git host
 ```
 
-After the push is made, you'll then see your commit under the `Commits` tab of the Appflow Dashboard. For more on this, take a look at the [Push a Commit](https://ionic.io/docs/appflow/quickstart/push) section inside the Appflow docs.
+After the push is made, you will then see your commit under the `Commits` tab of the Appflow Dashboard. For more on this, take a look at the [Push a Commit](https://ionic.io/docs/appflow/quickstart/push) section inside the Appflow docs.
 
 ## Deploy a Live Update
 
-With the Appflow SDK installed and your commit pushed up to the Dashboard, you're ready to deploy a live update to a device. The Live Update feature uses the installed Appflow SDK with your native application to listen to a particular Deploy Channel Destination. When a live update is assigned to a Channel Distination, that update will be deployed to user devices running binaries that are configured to listen to that specific Channel Destination.
+With the Appflow SDK installed and your commit pushed up to the Dashboard, you are ready to deploy a live update to a device. The Live Update feature uses the installed Appflow SDK with your native application to listen to a particular Deploy Channel Destination. When a live update is assigned to a Channel Distination, that update will be deployed to user devices running binaries that are configured to listen to that specific Channel Destination.
 
-To get the live update deployed, a Web build will need to be created. This can be done through the `Start build` icon from the `Commits` tab or by clicking the `New build` button in the top right corner of the `Build > Builds` tab. After selecting the correct commit to deploy, select the `Web` target platform and the `Latest` build stack. Depending on your Appflow plan, you'll then be able to include custom environments, if any are configured. Finally, you can enable `Live Update` and pick the Channel to automatically assign the build to once it successfully completes.
+To get the live update deployed, a Web build will need to be created. This can be done through the `Start build` icon from the `Commits` tab or by clicking the `New build` button in the top right corner of the `Build > Builds` tab. After selecting the correct commit to deploy, select the `Web` target platform and the `Latest` build stack. Depending on your Appflow plan, you will then be able to include custom environments, if any are configured. Finally, you can enable `Live Update` and pick the Channel to automatically assign the build to once it successfully completes.
 
 Upon completion of the Web Build, additional versioning options are available to you. After completing this section and you have a successful Deploy build, you can then assign it to the same Channel you configured the Appflow SDK to listen to when you installed it by clicking the `Deploy live updates` button in the build detail page. The same can be done by clicking the `Deploy live updates` icon on the build in the `Build > Builds` tab and select the Channel from the dropdown.
 
-To receive this live update, you'll need to run the app on a device or an emulator. The quickest and easiest way to do this is through the following command:
+To receive this live update, you will need to run the app on a device or an emulator. The quickest and easiest way to do this is through the following command:
 
 ```shell
 ionic cordova run [ios | android] [options]
 ```
 
-Assuming the app is configured correctly to listen to the channel you deployed too, the app should immediately update on startup if you've chosen the auto update method during setup. If the background update method was chosen, be sure to stay in the app for about 30 seconds to ensure the update was downloaded. Then, close the application, reopen it, and you'll see the updates applied!
+Assuming the app is configured correctly to listen to the channel you deployed too, the app should immediately update on startup if you have chosen the auto update method during setup. If the background update method was chosen, be sure to stay in the app for about 30 seconds to ensure the update was downloaded. Then, close the application, reopen it, and you will see the updates applied!
 
 To dive into more details on the steps to deploy a live update, as well as additional information such as disabling deploy for development, check out the [Deploy a Live Update](https://ionic.io/docs/appflow/quickstart/deploy) section inside the Appflow docs.
 
 ## Build a Native Binary
 
-Next up is a native binary for your app build and deploy process. This is done via the [Ionic Package](https://ionic.io/docs/appflow/package/intro) service. First things first, you'll need to create a [Package build](https://ionic.io/docs/appflow/package/builds). This can be done by clicking the `Start build` icon from the `Commits` tab or by clicking the `New build` button in the top right from the `Build > Builds` tab. Then you'll select the proper commit for you're build and fill in all of the several required fields and any optional fields that you want to specify. After filling in all of the information and the build begins, you can check out it's progress and review the logs if you encounter any errors.
+Next up is a native binary for your app build and deploy process. This is done via the [Ionic Package](https://ionic.io/docs/appflow/package/intro) service. First things first, you will need to create a [Package build](https://ionic.io/docs/appflow/package/builds). This can be done by clicking the `Start build` icon from the `Commits` tab or by clicking the `New build` button in the top right from the `Build > Builds` tab. Then you will select the proper commit for your build and fill in all of the several required fields and any optional fields that you want to specify. After filling in all of the information and the build begins, you can check out it's progress and review the logs if you encounter any errors.
 
 Given a successful Package build, and iOS binary (`.ipa` or IPA) or and Android binary (`.apk` or APK) file becomes available to you. The file can subsequently be downloaded so you can install it on a device by clicking the file name in the `Artifacts` section in the right of the build detail page or clicking the `Download IPA/APK` icon on the build in the `Build > Builds` tab.
 
@@ -81,7 +81,7 @@ Creating an Environment is available for those on our [Basic plans](https://ioni
 
 ## Create a Native Configuration
 
-[Native Configurations](https://ionic.io/docs/appflow/package/native-configs) allow you to easily modify common configuration values that can change between different environments (development, production, staging, etc.) so you don't need to use extra logic or manually commit them to version control. Native configurations can be attached to any [Package build](https://ionic.io/docs/appflow/package/intro) or [Automation](https://ionic.io/docs/appflow/automation/intro).
+[Native Configurations](https://ionic.io/docs/appflow/package/native-configs) allow you to easily modify common configuration values that can change between different environments (development, production, staging, etc.) so you do not need to use extra logic or manually commit them to version control. Native configurations can be attached to any [Package build](https://ionic.io/docs/appflow/package/intro) or [Automation](https://ionic.io/docs/appflow/automation/intro).
 
 Native configs can be used to:
 
@@ -89,12 +89,12 @@ Native configs can be used to:
 - Overwrite the App Name as it will appear on the home screen of a device
 - Overwrite the [Appflow SDK (Deploy Plugin) variables and preferences](https://ionic.io/docs/appflow/deploy/api#plugin-variables)
 
-For access to the ability to create a Native Configuration, you'll need to be on our [Basic plans](https://ionic.io/pricing) and above. Additional details of this feature can be found in the [Create a Native Configuration](https://ionic.io/docs/appflow/quickstart/native-config) section within the Appflow docs.
+For access to the ability to create a Native Configuration, you will need to be on our [Basic plans](https://ionic.io/pricing) and above. Additional details of this feature can be found in the [Create a Native Configuration](https://ionic.io/docs/appflow/quickstart/native-config) section within the Appflow docs.
 
 ## What’s Next?
 
-Congratulations! You built a complete cross-platform Photo Gallery app that runs on the web, iOS, and Android. Not only that, you've also then built the app and deployed it to you users devices!
+Congratulations! You developed a complete cross-platform Photo Gallery app that runs on the web, iOS, and Android. Not only that, you have also then built the app and deployed it to you users devices!
 
-There are many paths to follow from here. Try adding another [Ionic UI component](https://ionicframework.com/docs/components) to the app, or more [native functionality](https://capacitor.ionicframework.com/docs/apis). The sky’s the limit. Once you've added another feature run the the build and deploy process again through Appflow to get it out to your users.
+There are many paths to follow from here. Try adding another [Ionic UI component](https://ionicframework.com/docs/components) to the app, or more [native functionality](https://capacitor.ionicframework.com/docs/apis). The sky’s the limit. Once you have added another feature run the the build and deploy process again through Appflow to get it out to your users.
 
 Happy app building! 💙
