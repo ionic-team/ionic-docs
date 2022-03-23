@@ -5,12 +5,12 @@ hide_table_of_contents: true
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-import Props from '../../static/auto-generated/row/props.md';
-import Events from '../../static/auto-generated/row/events.md';
-import Methods from '../../static/auto-generated/row/methods.md';
-import Parts from '../../static/auto-generated/row/parts.md';
-import CustomProps from '../../static/auto-generated/row/custom-props.md';
-import Slots from '../../static/auto-generated/row/slots.md';
+import Props from '@site/static/auto-generated/row/props.md';
+import Events from '@site/static/auto-generated/row/events.md';
+import Methods from '@site/static/auto-generated/row/methods.md';
+import Parts from '@site/static/auto-generated/row/parts.md';
+import CustomProps from '@site/static/auto-generated/row/custom-props.md';
+import Slots from '@site/static/auto-generated/row/slots.md';
 
 <head>
   <title>ion-row: Horizontal Row Components and Alignment | Ionic API Docs</title>

@@ -7,12 +7,12 @@ demoSourceUrl: "https://github.com/ionic-team/ionic-docs/tree/main/static/demos/
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-import Props from '../../static/auto-generated/avatar/props.md';
-import Events from '../../static/auto-generated/avatar/events.md';
-import Methods from '../../static/auto-generated/avatar/methods.md';
-import Parts from '../../static/auto-generated/avatar/parts.md';
-import CustomProps from '../../static/auto-generated/avatar/custom-props.md';
-import Slots from '../../static/auto-generated/avatar/slots.md';
+import Props from '@site/static/auto-generated/avatar/props.md';
+import Events from '@site/static/auto-generated/avatar/events.md';
+import Methods from '@site/static/auto-generated/avatar/methods.md';
+import Parts from '@site/static/auto-generated/avatar/parts.md';
+import CustomProps from '@site/static/auto-generated/avatar/custom-props.md';
+import Slots from '@site/static/auto-generated/avatar/slots.md';
 
 <head>
   <title>ion-avatar: Circular Application Avatar Icon Component</title>

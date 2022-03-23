@@ -5,12 +5,12 @@ hide_table_of_contents: true
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-import Props from '../../static/auto-generated/tab-bar/props.md';
-import Events from '../../static/auto-generated/tab-bar/events.md';
-import Methods from '../../static/auto-generated/tab-bar/methods.md';
-import Parts from '../../static/auto-generated/tab-bar/parts.md';
-import CustomProps from '../../static/auto-generated/tab-bar/custom-props.md';
-import Slots from '../../static/auto-generated/tab-bar/slots.md';
+import Props from '@site/static/auto-generated/tab-bar/props.md';
+import Events from '@site/static/auto-generated/tab-bar/events.md';
+import Methods from '@site/static/auto-generated/tab-bar/methods.md';
+import Parts from '@site/static/auto-generated/tab-bar/parts.md';
+import CustomProps from '@site/static/auto-generated/tab-bar/custom-props.md';
+import Slots from '@site/static/auto-generated/tab-bar/slots.md';
 
 <head>
   <title>ion-tab-bar with CSS Custom Properties for Tab Bar Components</title>

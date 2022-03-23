@@ -7,12 +7,12 @@ demoSourceUrl: "https://github.com/ionic-team/ionic-docs/tree/main/static/demos/
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-import Props from '../../static/auto-generated/tabs/props.md';
-import Events from '../../static/auto-generated/tabs/events.md';
-import Methods from '../../static/auto-generated/tabs/methods.md';
-import Parts from '../../static/auto-generated/tabs/parts.md';
-import CustomProps from '../../static/auto-generated/tabs/custom-props.md';
-import Slots from '../../static/auto-generated/tabs/slots.md';
+import Props from '@site/static/auto-generated/tabs/props.md';
+import Events from '@site/static/auto-generated/tabs/events.md';
+import Methods from '@site/static/auto-generated/tabs/methods.md';
+import Parts from '@site/static/auto-generated/tabs/parts.md';
+import CustomProps from '@site/static/auto-generated/tabs/custom-props.md';
+import Slots from '@site/static/auto-generated/tabs/slots.md';
 
 <head>
   <title>Ion-Tabs: Tab-Based Component for App Top-Level Navigation</title>

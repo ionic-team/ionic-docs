@@ -7,12 +7,12 @@ demoSourceUrl: "https://github.com/ionic-team/ionic-docs/tree/main/static/demos/
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-import Props from '../../static/auto-generated/back-button/props.md';
-import Events from '../../static/auto-generated/back-button/events.md';
-import Methods from '../../static/auto-generated/back-button/methods.md';
-import Parts from '../../static/auto-generated/back-button/parts.md';
-import CustomProps from '../../static/auto-generated/back-button/custom-props.md';
-import Slots from '../../static/auto-generated/back-button/slots.md';
+import Props from '@site/static/auto-generated/back-button/props.md';
+import Events from '@site/static/auto-generated/back-button/events.md';
+import Methods from '@site/static/auto-generated/back-button/methods.md';
+import Parts from '@site/static/auto-generated/back-button/parts.md';
+import CustomProps from '@site/static/auto-generated/back-button/custom-props.md';
+import Slots from '@site/static/auto-generated/back-button/slots.md';
 
 <head>
   <title>Back Button | ion-back-button: Custom Menu Icon for Applications</title>

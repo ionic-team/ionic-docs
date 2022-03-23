@@ -7,12 +7,12 @@ demoSourceUrl: "https://github.com/ionic-team/ionic-docs/tree/main/static/demos/
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-import Props from '../../static/auto-generated/reorder/props.md';
-import Events from '../../static/auto-generated/reorder/events.md';
-import Methods from '../../static/auto-generated/reorder/methods.md';
-import Parts from '../../static/auto-generated/reorder/parts.md';
-import CustomProps from '../../static/auto-generated/reorder/custom-props.md';
-import Slots from '../../static/auto-generated/reorder/slots.md';
+import Props from '@site/static/auto-generated/reorder/props.md';
+import Events from '@site/static/auto-generated/reorder/events.md';
+import Methods from '@site/static/auto-generated/reorder/methods.md';
+import Parts from '@site/static/auto-generated/reorder/parts.md';
+import CustomProps from '@site/static/auto-generated/reorder/custom-props.md';
+import Slots from '@site/static/auto-generated/reorder/slots.md';
 
 <head>
   <title>Reorder | ion-reorder: Drag and Drop Icon to Reorder Items</title>

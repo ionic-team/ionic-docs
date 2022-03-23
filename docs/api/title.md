@@ -5,12 +5,12 @@ hide_table_of_contents: true
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-import Props from '../../static/auto-generated/title/props.md';
-import Events from '../../static/auto-generated/title/events.md';
-import Methods from '../../static/auto-generated/title/methods.md';
-import Parts from '../../static/auto-generated/title/parts.md';
-import CustomProps from '../../static/auto-generated/title/custom-props.md';
-import Slots from '../../static/auto-generated/title/slots.md';
+import Props from '@site/static/auto-generated/title/props.md';
+import Events from '@site/static/auto-generated/title/events.md';
+import Methods from '@site/static/auto-generated/title/methods.md';
+import Parts from '@site/static/auto-generated/title/parts.md';
+import CustomProps from '@site/static/auto-generated/title/custom-props.md';
+import Slots from '@site/static/auto-generated/title/slots.md';
 
 <head>
   <title>ion-title: Ionic Framework App Title Component for Toolbars</title>

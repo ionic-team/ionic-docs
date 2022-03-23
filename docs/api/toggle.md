@@ -7,12 +7,12 @@ demoSourceUrl: "https://github.com/ionic-team/ionic-docs/tree/main/static/demos/
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-import Props from '../../static/auto-generated/toggle/props.md';
-import Events from '../../static/auto-generated/toggle/events.md';
-import Methods from '../../static/auto-generated/toggle/methods.md';
-import Parts from '../../static/auto-generated/toggle/parts.md';
-import CustomProps from '../../static/auto-generated/toggle/custom-props.md';
-import Slots from '../../static/auto-generated/toggle/slots.md';
+import Props from '@site/static/auto-generated/toggle/props.md';
+import Events from '@site/static/auto-generated/toggle/events.md';
+import Methods from '@site/static/auto-generated/toggle/methods.md';
+import Parts from '@site/static/auto-generated/toggle/parts.md';
+import CustomProps from '@site/static/auto-generated/toggle/custom-props.md';
+import Slots from '@site/static/auto-generated/toggle/slots.md';
 
 <head>
   <title>Toggle | ion-toggle: Custom Toggle Button for Ionic Applications</title>

@@ -5,12 +5,12 @@ hide_table_of_contents: true
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-import Props from '../../static/auto-generated/infinite-scroll-content/props.md';
-import Events from '../../static/auto-generated/infinite-scroll-content/events.md';
-import Methods from '../../static/auto-generated/infinite-scroll-content/methods.md';
-import Parts from '../../static/auto-generated/infinite-scroll-content/parts.md';
-import CustomProps from '../../static/auto-generated/infinite-scroll-content/custom-props.md';
-import Slots from '../../static/auto-generated/infinite-scroll-content/slots.md';
+import Props from '@site/static/auto-generated/infinite-scroll-content/props.md';
+import Events from '@site/static/auto-generated/infinite-scroll-content/events.md';
+import Methods from '@site/static/auto-generated/infinite-scroll-content/methods.md';
+import Parts from '@site/static/auto-generated/infinite-scroll-content/parts.md';
+import CustomProps from '@site/static/auto-generated/infinite-scroll-content/custom-props.md';
+import Slots from '@site/static/auto-generated/infinite-scroll-content/slots.md';
 
 
 

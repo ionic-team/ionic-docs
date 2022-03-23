@@ -5,12 +5,12 @@ hide_table_of_contents: true
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-import Props from '../../static/auto-generated/radio-group/props.md';
-import Events from '../../static/auto-generated/radio-group/events.md';
-import Methods from '../../static/auto-generated/radio-group/methods.md';
-import Parts from '../../static/auto-generated/radio-group/parts.md';
-import CustomProps from '../../static/auto-generated/radio-group/custom-props.md';
-import Slots from '../../static/auto-generated/radio-group/slots.md';
+import Props from '@site/static/auto-generated/radio-group/props.md';
+import Events from '@site/static/auto-generated/radio-group/events.md';
+import Methods from '@site/static/auto-generated/radio-group/methods.md';
+import Parts from '@site/static/auto-generated/radio-group/parts.md';
+import CustomProps from '@site/static/auto-generated/radio-group/custom-props.md';
+import Slots from '@site/static/auto-generated/radio-group/slots.md';
 
 <head>
   <title>ion-radio-group | Radio Button Group Usage for Ionic Apps</title>

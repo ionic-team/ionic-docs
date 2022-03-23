@@ -7,12 +7,12 @@ demoSourceUrl: "https://github.com/ionic-team/ionic-docs/tree/main/static/demos/
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-import Props from '../../static/auto-generated/grid/props.md';
-import Events from '../../static/auto-generated/grid/events.md';
-import Methods from '../../static/auto-generated/grid/methods.md';
-import Parts from '../../static/auto-generated/grid/parts.md';
-import CustomProps from '../../static/auto-generated/grid/custom-props.md';
-import Slots from '../../static/auto-generated/grid/slots.md';
+import Props from '@site/static/auto-generated/grid/props.md';
+import Events from '@site/static/auto-generated/grid/events.md';
+import Methods from '@site/static/auto-generated/grid/methods.md';
+import Parts from '@site/static/auto-generated/grid/parts.md';
+import CustomProps from '@site/static/auto-generated/grid/custom-props.md';
+import Slots from '@site/static/auto-generated/grid/slots.md';
 
 <head>
   <title>Ion-Grid: Display Grids to Build Mobile-First Custom App Layout</title>

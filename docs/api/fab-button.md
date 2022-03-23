@@ -5,12 +5,12 @@ hide_table_of_contents: true
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-import Props from '../../static/auto-generated/fab-button/props.md';
-import Events from '../../static/auto-generated/fab-button/events.md';
-import Methods from '../../static/auto-generated/fab-button/methods.md';
-import Parts from '../../static/auto-generated/fab-button/parts.md';
-import CustomProps from '../../static/auto-generated/fab-button/custom-props.md';
-import Slots from '../../static/auto-generated/fab-button/slots.md';
+import Props from '@site/static/auto-generated/fab-button/props.md';
+import Events from '@site/static/auto-generated/fab-button/events.md';
+import Methods from '@site/static/auto-generated/fab-button/methods.md';
+import Parts from '@site/static/auto-generated/fab-button/parts.md';
+import CustomProps from '@site/static/auto-generated/fab-button/custom-props.md';
+import Slots from '@site/static/auto-generated/fab-button/slots.md';
 
 <head>
   <title>Floating Action Button | Ionic FAB Button Icon for Primary Action</title>

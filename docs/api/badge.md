@@ -7,12 +7,12 @@ demoSourceUrl: "https://github.com/ionic-team/ionic-docs/tree/main/static/demos/
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-import Props from '../../static/auto-generated/badge/props.md';
-import Events from '../../static/auto-generated/badge/events.md';
-import Methods from '../../static/auto-generated/badge/methods.md';
-import Parts from '../../static/auto-generated/badge/parts.md';
-import CustomProps from '../../static/auto-generated/badge/custom-props.md';
-import Slots from '../../static/auto-generated/badge/slots.md';
+import Props from '@site/static/auto-generated/badge/props.md';
+import Events from '@site/static/auto-generated/badge/events.md';
+import Methods from '@site/static/auto-generated/badge/methods.md';
+import Parts from '@site/static/auto-generated/badge/parts.md';
+import CustomProps from '@site/static/auto-generated/badge/custom-props.md';
+import Slots from '@site/static/auto-generated/badge/slots.md';
 
 <head>
   <title>Badges | ion-badge: iOS & Android App Notification Badge Icons</title>
