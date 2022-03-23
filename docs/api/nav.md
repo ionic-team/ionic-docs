@@ -7,12 +7,12 @@ demoSourceUrl: "https://github.com/ionic-team/ionic-docs/tree/main/static/demos/
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-import Props from './auto-generated/nav/props.md';
-import Events from './auto-generated/nav/events.md';
-import Methods from './auto-generated/nav/methods.md';
-import Parts from './auto-generated/nav/parts.md';
-import CustomProps from './auto-generated/nav/custom-props.md';
-import Slots from './auto-generated/nav/slots.md';
+import Props from '../../static/auto-generated/nav/props.md';
+import Events from '../../static/auto-generated/nav/events.md';
+import Methods from '../../static/auto-generated/nav/methods.md';
+import Parts from '../../static/auto-generated/nav/parts.md';
+import CustomProps from '../../static/auto-generated/nav/custom-props.md';
+import Slots from '../../static/auto-generated/nav/slots.md';
 
 <head>
   <title>ion-nav | Nav View Component for Ionic Framework Apps</title>

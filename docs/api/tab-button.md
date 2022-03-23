@@ -5,12 +5,12 @@ hide_table_of_contents: true
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-import Props from './auto-generated/tab-button/props.md';
-import Events from './auto-generated/tab-button/events.md';
-import Methods from './auto-generated/tab-button/methods.md';
-import Parts from './auto-generated/tab-button/parts.md';
-import CustomProps from './auto-generated/tab-button/custom-props.md';
-import Slots from './auto-generated/tab-button/slots.md';
+import Props from '../../static/auto-generated/tab-button/props.md';
+import Events from '../../static/auto-generated/tab-button/events.md';
+import Methods from '../../static/auto-generated/tab-button/methods.md';
+import Parts from '../../static/auto-generated/tab-button/parts.md';
+import CustomProps from '../../static/auto-generated/tab-button/custom-props.md';
+import Slots from '../../static/auto-generated/tab-button/slots.md';
 
 
 

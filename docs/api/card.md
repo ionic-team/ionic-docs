@@ -7,12 +7,12 @@ demoSourceUrl: "https://github.com/ionic-team/ionic-docs/tree/main/static/demos/
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-import Props from './auto-generated/card/props.md';
-import Events from './auto-generated/card/events.md';
-import Methods from './auto-generated/card/methods.md';
-import Parts from './auto-generated/card/parts.md';
-import CustomProps from './auto-generated/card/custom-props.md';
-import Slots from './auto-generated/card/slots.md';
+import Props from '../../static/auto-generated/card/props.md';
+import Events from '../../static/auto-generated/card/events.md';
+import Methods from '../../static/auto-generated/card/methods.md';
+import Parts from '../../static/auto-generated/card/parts.md';
+import CustomProps from '../../static/auto-generated/card/custom-props.md';
+import Slots from '../../static/auto-generated/card/slots.md';
 
 <head>
   <title>ion-card: Card UI Components for Ionic Framework API</title>

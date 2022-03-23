@@ -5,12 +5,12 @@ hide_table_of_contents: true
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-import Props from './auto-generated/reorder-group/props.md';
-import Events from './auto-generated/reorder-group/events.md';
-import Methods from './auto-generated/reorder-group/methods.md';
-import Parts from './auto-generated/reorder-group/parts.md';
-import CustomProps from './auto-generated/reorder-group/custom-props.md';
-import Slots from './auto-generated/reorder-group/slots.md';
+import Props from '../../static/auto-generated/reorder-group/props.md';
+import Events from '../../static/auto-generated/reorder-group/events.md';
+import Methods from '../../static/auto-generated/reorder-group/methods.md';
+import Parts from '../../static/auto-generated/reorder-group/parts.md';
+import CustomProps from '../../static/auto-generated/reorder-group/custom-props.md';
+import Slots from '../../static/auto-generated/reorder-group/slots.md';
 
 <head>
   <title>ion-reorder-group: Wrapper Component for Ionic Framework Apps</title>

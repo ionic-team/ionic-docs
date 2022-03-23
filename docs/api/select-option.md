@@ -5,12 +5,12 @@ hide_table_of_contents: true
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-import Props from './auto-generated/select-option/props.md';
-import Events from './auto-generated/select-option/events.md';
-import Methods from './auto-generated/select-option/methods.md';
-import Parts from './auto-generated/select-option/parts.md';
-import CustomProps from './auto-generated/select-option/custom-props.md';
-import Slots from './auto-generated/select-option/slots.md';
+import Props from '../../static/auto-generated/select-option/props.md';
+import Events from '../../static/auto-generated/select-option/events.md';
+import Methods from '../../static/auto-generated/select-option/methods.md';
+import Parts from '../../static/auto-generated/select-option/parts.md';
+import CustomProps from '../../static/auto-generated/select-option/custom-props.md';
+import Slots from '../../static/auto-generated/select-option/slots.md';
 
 <head>
   <title>Select Option | What Is An Option Select on Ionic Framework Apps</title>

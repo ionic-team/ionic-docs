@@ -5,12 +5,12 @@ hide_table_of_contents: true
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-import Props from './auto-generated/buttons/props.md';
-import Events from './auto-generated/buttons/events.md';
-import Methods from './auto-generated/buttons/methods.md';
-import Parts from './auto-generated/buttons/parts.md';
-import CustomProps from './auto-generated/buttons/custom-props.md';
-import Slots from './auto-generated/buttons/slots.md';
+import Props from '../../static/auto-generated/buttons/props.md';
+import Events from '../../static/auto-generated/buttons/events.md';
+import Methods from '../../static/auto-generated/buttons/methods.md';
+import Parts from '../../static/auto-generated/buttons/parts.md';
+import CustomProps from '../../static/auto-generated/buttons/custom-props.md';
+import Slots from '../../static/auto-generated/buttons/slots.md';
 
 <head>
   <title>ion-buttons: Toolbar Element with Named Slots for Buttons</title>

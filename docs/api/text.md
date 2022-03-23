@@ -7,12 +7,12 @@ demoSourceUrl: "https://github.com/ionic-team/ionic-docs/tree/main/static/demos/
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-import Props from './auto-generated/text/props.md';
-import Events from './auto-generated/text/events.md';
-import Methods from './auto-generated/text/methods.md';
-import Parts from './auto-generated/text/parts.md';
-import CustomProps from './auto-generated/text/custom-props.md';
-import Slots from './auto-generated/text/slots.md';
+import Props from '../../static/auto-generated/text/props.md';
+import Events from '../../static/auto-generated/text/events.md';
+import Methods from '../../static/auto-generated/text/methods.md';
+import Parts from '../../static/auto-generated/text/parts.md';
+import CustomProps from '../../static/auto-generated/text/custom-props.md';
+import Slots from '../../static/auto-generated/text/slots.md';
 
 <head>
   <title>ion-text: Ionic App Component to Style or Change Text Color</title>

@@ -7,12 +7,12 @@ demoSourceUrl: "https://github.com/ionic-team/ionic-docs/tree/main/static/demos/
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-import Props from './auto-generated/action-sheet/props.md';
-import Events from './auto-generated/action-sheet/events.md';
-import Methods from './auto-generated/action-sheet/methods.md';
-import Parts from './auto-generated/action-sheet/parts.md';
-import CustomProps from './auto-generated/action-sheet/custom-props.md';
-import Slots from './auto-generated/action-sheet/slots.md';
+import Props from '../../static/auto-generated/action-sheet/props.md';
+import Events from '../../static/auto-generated/action-sheet/events.md';
+import Methods from '../../static/auto-generated/action-sheet/methods.md';
+import Parts from '../../static/auto-generated/action-sheet/parts.md';
+import CustomProps from '../../static/auto-generated/action-sheet/custom-props.md';
+import Slots from '../../static/auto-generated/action-sheet/slots.md';
 
 <head>
   <title>ion-action-sheet | Action Sheet Dialog for iOS and Android Apps</title>

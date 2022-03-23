@@ -7,12 +7,12 @@ demoSourceUrl: "https://github.com/ionic-team/ionic-docs/tree/main/static/demos/
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-import Props from './auto-generated/menu/props.md';
-import Events from './auto-generated/menu/events.md';
-import Methods from './auto-generated/menu/methods.md';
-import Parts from './auto-generated/menu/parts.md';
-import CustomProps from './auto-generated/menu/custom-props.md';
-import Slots from './auto-generated/menu/slots.md';
+import Props from '../../static/auto-generated/menu/props.md';
+import Events from '../../static/auto-generated/menu/events.md';
+import Methods from '../../static/auto-generated/menu/methods.md';
+import Parts from '../../static/auto-generated/menu/parts.md';
+import CustomProps from '../../static/auto-generated/menu/custom-props.md';
+import Slots from '../../static/auto-generated/menu/slots.md';
 
 <head>
   <title>ion-menu: API Framework Docs for Types of Menu Components</title>

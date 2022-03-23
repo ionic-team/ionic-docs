@@ -7,12 +7,12 @@ demoSourceUrl: "https://github.com/ionic-team/ionic-docs/tree/main/static/demos/
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-import Props from './auto-generated/note/props.md';
-import Events from './auto-generated/note/events.md';
-import Methods from './auto-generated/note/methods.md';
-import Parts from './auto-generated/note/parts.md';
-import CustomProps from './auto-generated/note/custom-props.md';
-import Slots from './auto-generated/note/slots.md';
+import Props from '../../static/auto-generated/note/props.md';
+import Events from '../../static/auto-generated/note/events.md';
+import Methods from '../../static/auto-generated/note/methods.md';
+import Parts from '../../static/auto-generated/note/parts.md';
+import CustomProps from '../../static/auto-generated/note/custom-props.md';
+import Slots from '../../static/auto-generated/note/slots.md';
 
 <head>
   <title>ion-note: Note Text Elements for iOS and Android Ionic Apps</title>

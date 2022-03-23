@@ -5,12 +5,12 @@ hide_table_of_contents: true
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-import Props from './auto-generated/route-redirect/props.md';
-import Events from './auto-generated/route-redirect/events.md';
-import Methods from './auto-generated/route-redirect/methods.md';
-import Parts from './auto-generated/route-redirect/parts.md';
-import CustomProps from './auto-generated/route-redirect/custom-props.md';
-import Slots from './auto-generated/route-redirect/slots.md';
+import Props from '../../static/auto-generated/route-redirect/props.md';
+import Events from '../../static/auto-generated/route-redirect/events.md';
+import Methods from '../../static/auto-generated/route-redirect/methods.md';
+import Parts from '../../static/auto-generated/route-redirect/parts.md';
+import CustomProps from '../../static/auto-generated/route-redirect/custom-props.md';
+import Slots from '../../static/auto-generated/route-redirect/slots.md';
 
 <head>
   <title>ion-route-redirect Plugin: Redirect 'from' a URL 'to' Another URL</title>

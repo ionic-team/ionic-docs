@@ -7,12 +7,12 @@ demoSourceUrl: "https://github.com/ionic-team/ionic-docs/tree/main/static/demos/
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-import Props from './auto-generated/datetime/props.md';
-import Events from './auto-generated/datetime/events.md';
-import Methods from './auto-generated/datetime/methods.md';
-import Parts from './auto-generated/datetime/parts.md';
-import CustomProps from './auto-generated/datetime/custom-props.md';
-import Slots from './auto-generated/datetime/slots.md';
+import Props from '../../static/auto-generated/datetime/props.md';
+import Events from '../../static/auto-generated/datetime/events.md';
+import Methods from '../../static/auto-generated/datetime/methods.md';
+import Parts from '../../static/auto-generated/datetime/parts.md';
+import CustomProps from '../../static/auto-generated/datetime/custom-props.md';
+import Slots from '../../static/auto-generated/datetime/slots.md';
 
 <head>
   <title>ion-datetime: Ionic API Input for Datetime Format Picker</title>

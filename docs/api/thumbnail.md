@@ -7,12 +7,12 @@ demoSourceUrl: "https://github.com/ionic-team/ionic-docs/tree/main/static/demos/
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-import Props from './auto-generated/thumbnail/props.md';
-import Events from './auto-generated/thumbnail/events.md';
-import Methods from './auto-generated/thumbnail/methods.md';
-import Parts from './auto-generated/thumbnail/parts.md';
-import CustomProps from './auto-generated/thumbnail/custom-props.md';
-import Slots from './auto-generated/thumbnail/slots.md';
+import Props from '../../static/auto-generated/thumbnail/props.md';
+import Events from '../../static/auto-generated/thumbnail/events.md';
+import Methods from '../../static/auto-generated/thumbnail/methods.md';
+import Parts from '../../static/auto-generated/thumbnail/parts.md';
+import CustomProps from '../../static/auto-generated/thumbnail/custom-props.md';
+import Slots from '../../static/auto-generated/thumbnail/slots.md';
 
 <head>
   <title>ion-thumbnail | Thumbnail App Component to Wrap Images or Icons</title>

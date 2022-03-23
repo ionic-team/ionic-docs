@@ -7,12 +7,12 @@ demoSourceUrl: "https://github.com/ionic-team/ionic-docs/tree/main/static/demos/
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-import Props from './auto-generated/fab/props.md';
-import Events from './auto-generated/fab/events.md';
-import Methods from './auto-generated/fab/methods.md';
-import Parts from './auto-generated/fab/parts.md';
-import CustomProps from './auto-generated/fab/custom-props.md';
-import Slots from './auto-generated/fab/slots.md';
+import Props from '../../static/auto-generated/fab/props.md';
+import Events from '../../static/auto-generated/fab/events.md';
+import Methods from '../../static/auto-generated/fab/methods.md';
+import Parts from '../../static/auto-generated/fab/parts.md';
+import CustomProps from '../../static/auto-generated/fab/custom-props.md';
+import Slots from '../../static/auto-generated/fab/slots.md';
 
 <head>
   <title>ion-fab: Floating Action Button for Android and iOS Ionic Apps</title>

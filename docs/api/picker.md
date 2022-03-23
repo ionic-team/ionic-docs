@@ -7,12 +7,12 @@ demoSourceUrl: "https://github.com/ionic-team/ionic-docs/tree/main/static/demos/
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-import Props from './auto-generated/picker/props.md';
-import Events from './auto-generated/picker/events.md';
-import Methods from './auto-generated/picker/methods.md';
-import Parts from './auto-generated/picker/parts.md';
-import CustomProps from './auto-generated/picker/custom-props.md';
-import Slots from './auto-generated/picker/slots.md';
+import Props from '../../static/auto-generated/picker/props.md';
+import Events from '../../static/auto-generated/picker/events.md';
+import Methods from '../../static/auto-generated/picker/methods.md';
+import Parts from '../../static/auto-generated/picker/parts.md';
+import CustomProps from '../../static/auto-generated/picker/custom-props.md';
+import Slots from '../../static/auto-generated/picker/slots.md';
 
 <head>
   <title>Picker | Display Buttons and Columns for ion-picker on Ionic Apps</title>

@@ -5,12 +5,12 @@ hide_table_of_contents: true
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-import Props from './auto-generated/label/props.md';
-import Events from './auto-generated/label/events.md';
-import Methods from './auto-generated/label/methods.md';
-import Parts from './auto-generated/label/parts.md';
-import CustomProps from './auto-generated/label/custom-props.md';
-import Slots from './auto-generated/label/slots.md';
+import Props from '../../static/auto-generated/label/props.md';
+import Events from '../../static/auto-generated/label/events.md';
+import Methods from '../../static/auto-generated/label/methods.md';
+import Parts from '../../static/auto-generated/label/parts.md';
+import CustomProps from '../../static/auto-generated/label/custom-props.md';
+import Slots from '../../static/auto-generated/label/slots.md';
 
 <head>
   <title>Item Label Color and Properties for Applications | ion-label</title>

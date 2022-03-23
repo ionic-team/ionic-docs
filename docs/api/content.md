@@ -7,12 +7,12 @@ demoSourceUrl: "https://github.com/ionic-team/ionic-docs/tree/main/static/demos/
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-import Props from './auto-generated/content/props.md';
-import Events from './auto-generated/content/events.md';
-import Methods from './auto-generated/content/methods.md';
-import Parts from './auto-generated/content/parts.md';
-import CustomProps from './auto-generated/content/custom-props.md';
-import Slots from './auto-generated/content/slots.md';
+import Props from '../../static/auto-generated/content/props.md';
+import Events from '../../static/auto-generated/content/events.md';
+import Methods from '../../static/auto-generated/content/methods.md';
+import Parts from '../../static/auto-generated/content/parts.md';
+import CustomProps from '../../static/auto-generated/content/custom-props.md';
+import Slots from '../../static/auto-generated/content/slots.md';
 
 <head>
   <title>ion-content: Scrollable CSS Component for Ionic App Content Areas</title>

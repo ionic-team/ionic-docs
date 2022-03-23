@@ -5,12 +5,12 @@ hide_table_of_contents: true
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-import Props from './auto-generated/route/props.md';
-import Events from './auto-generated/route/events.md';
-import Methods from './auto-generated/route/methods.md';
-import Parts from './auto-generated/route/parts.md';
-import CustomProps from './auto-generated/route/custom-props.md';
-import Slots from './auto-generated/route/slots.md';
+import Props from '../../static/auto-generated/route/props.md';
+import Events from '../../static/auto-generated/route/events.md';
+import Methods from '../../static/auto-generated/route/methods.md';
+import Parts from '../../static/auto-generated/route/parts.md';
+import CustomProps from '../../static/auto-generated/route/custom-props.md';
+import Slots from '../../static/auto-generated/route/slots.md';
 
 <head>
   <title>ion-route: API Route Component for Ionic Framework Apps</title>

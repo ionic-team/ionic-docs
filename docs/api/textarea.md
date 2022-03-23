@@ -5,12 +5,12 @@ hide_table_of_contents: true
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-import Props from './auto-generated/textarea/props.md';
-import Events from './auto-generated/textarea/events.md';
-import Methods from './auto-generated/textarea/methods.md';
-import Parts from './auto-generated/textarea/parts.md';
-import CustomProps from './auto-generated/textarea/custom-props.md';
-import Slots from './auto-generated/textarea/slots.md';
+import Props from '../../static/auto-generated/textarea/props.md';
+import Events from '../../static/auto-generated/textarea/events.md';
+import Methods from '../../static/auto-generated/textarea/methods.md';
+import Parts from '../../static/auto-generated/textarea/parts.md';
+import CustomProps from '../../static/auto-generated/textarea/custom-props.md';
+import Slots from '../../static/auto-generated/textarea/slots.md';
 
 <head>
   <title>Ionic Textarea Component and CSS Properties for Multi-Line Input</title>

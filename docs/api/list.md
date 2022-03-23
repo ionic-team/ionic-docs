@@ -7,12 +7,12 @@ demoSourceUrl: "https://github.com/ionic-team/ionic-docs/tree/main/static/demos/
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-import Props from './auto-generated/list/props.md';
-import Events from './auto-generated/list/events.md';
-import Methods from './auto-generated/list/methods.md';
-import Parts from './auto-generated/list/parts.md';
-import CustomProps from './auto-generated/list/custom-props.md';
-import Slots from './auto-generated/list/slots.md';
+import Props from '../../static/auto-generated/list/props.md';
+import Events from '../../static/auto-generated/list/events.md';
+import Methods from '../../static/auto-generated/list/methods.md';
+import Parts from '../../static/auto-generated/list/parts.md';
+import CustomProps from '../../static/auto-generated/list/custom-props.md';
+import Slots from '../../static/auto-generated/list/slots.md';
 
 <head>
   <title>ion-list: Item List View Component for iOS and Android Apps</title>

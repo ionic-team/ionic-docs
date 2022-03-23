@@ -5,12 +5,12 @@ hide_table_of_contents: true
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-import Props from './auto-generated/col/props.md';
-import Events from './auto-generated/col/events.md';
-import Methods from './auto-generated/col/methods.md';
-import Parts from './auto-generated/col/parts.md';
-import CustomProps from './auto-generated/col/custom-props.md';
-import Slots from './auto-generated/col/slots.md';
+import Props from '../../static/auto-generated/col/props.md';
+import Events from '../../static/auto-generated/col/events.md';
+import Methods from '../../static/auto-generated/col/methods.md';
+import Parts from '../../static/auto-generated/col/parts.md';
+import CustomProps from '../../static/auto-generated/col/custom-props.md';
+import Slots from '../../static/auto-generated/col/slots.md';
 
 <head>
   <title>ion-col: Column Component Padding, Size and Other Properties</title>

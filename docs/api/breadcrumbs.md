@@ -7,12 +7,12 @@ demoSourceUrl: "https://github.com/ionic-team/ionic-docs/tree/main/static/demos/
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-import Props from './auto-generated/breadcrumbs/props.md';
-import Events from './auto-generated/breadcrumbs/events.md';
-import Methods from './auto-generated/breadcrumbs/methods.md';
-import Parts from './auto-generated/breadcrumbs/parts.md';
-import CustomProps from './auto-generated/breadcrumbs/custom-props.md';
-import Slots from './auto-generated/breadcrumbs/slots.md';
+import Props from '../../static/auto-generated/breadcrumbs/props.md';
+import Events from '../../static/auto-generated/breadcrumbs/events.md';
+import Methods from '../../static/auto-generated/breadcrumbs/methods.md';
+import Parts from '../../static/auto-generated/breadcrumbs/parts.md';
+import CustomProps from '../../static/auto-generated/breadcrumbs/custom-props.md';
+import Slots from '../../static/auto-generated/breadcrumbs/slots.md';
 
 
 

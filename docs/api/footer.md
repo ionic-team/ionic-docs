@@ -5,12 +5,12 @@ hide_table_of_contents: true
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-import Props from './auto-generated/footer/props.md';
-import Events from './auto-generated/footer/events.md';
-import Methods from './auto-generated/footer/methods.md';
-import Parts from './auto-generated/footer/parts.md';
-import CustomProps from './auto-generated/footer/custom-props.md';
-import Slots from './auto-generated/footer/slots.md';
+import Props from '../../static/auto-generated/footer/props.md';
+import Events from '../../static/auto-generated/footer/events.md';
+import Methods from '../../static/auto-generated/footer/methods.md';
+import Parts from '../../static/auto-generated/footer/parts.md';
+import CustomProps from '../../static/auto-generated/footer/custom-props.md';
+import Slots from '../../static/auto-generated/footer/slots.md';
 
 <head>
   <title>Page Footer | Ionic App Footer: Wrapper Root Page Component</title>

@@ -7,12 +7,12 @@ demoSourceUrl: "https://github.com/ionic-team/ionic-docs/tree/main/static/demos/
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-import Props from './auto-generated/segment/props.md';
-import Events from './auto-generated/segment/events.md';
-import Methods from './auto-generated/segment/methods.md';
-import Parts from './auto-generated/segment/parts.md';
-import CustomProps from './auto-generated/segment/custom-props.md';
-import Slots from './auto-generated/segment/slots.md';
+import Props from '../../static/auto-generated/segment/props.md';
+import Events from '../../static/auto-generated/segment/events.md';
+import Methods from '../../static/auto-generated/segment/methods.md';
+import Parts from '../../static/auto-generated/segment/parts.md';
+import CustomProps from '../../static/auto-generated/segment/custom-props.md';
+import Slots from '../../static/auto-generated/segment/slots.md';
 
 <head>
   <title>ion-segment: API Documentation for Segmented Controls</title>
