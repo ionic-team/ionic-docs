@@ -83,12 +83,12 @@ ${Object.entries(frontmatter)
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-import Props from '../../static/auto-generated/${tag.slice(4)}/props.md';
-import Events from '../../static/auto-generated/${tag.slice(4)}/events.md';
-import Methods from '../../static/auto-generated/${tag.slice(4)}/methods.md';
-import Parts from '../../static/auto-generated/${tag.slice(4)}/parts.md';
-import CustomProps from '../../static/auto-generated/${tag.slice(4)}/custom-props.md';
-import Slots from '../../static/auto-generated/${tag.slice(4)}/slots.md';
+import Props from '@site/static/auto-generated/${tag.slice(4)}/props.md';
+import Events from '@site/static/auto-generated/${tag.slice(4)}/events.md';
+import Methods from '@site/static/auto-generated/${tag.slice(4)}/methods.md';
+import Parts from '@site/static/auto-generated/${tag.slice(4)}/parts.md';
+import CustomProps from '@site/static/auto-generated/${tag.slice(4)}/custom-props.md';
+import Slots from '@site/static/auto-generated/${tag.slice(4)}/slots.md';
 
 ${utils.getHeadTag(apiOverrides[tag])}
 `;
