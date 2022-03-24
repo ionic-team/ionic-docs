@@ -157,10 +157,11 @@ export default function Playground({
               label="MD"
             />
           </div>
-          <div className="playground__control-group playground__control-group--end" id="">
+          <div className="playground__control-group playground__control-group--end" id="action-group">
             <Tippy theme="playground" arrow={false} placement="bottom" content={codeExpanded ? 'Hide source code' : 'Show full source'}>
               <button
               className="playground__icon-button playground__icon-button--primary"
+              id="toggle-source"
               aria-label={codeExpanded ? 'Hide source code' : 'Show full source'}
               onClick={() => setCodeExpanded(!codeExpanded)}
             >
@@ -179,6 +180,7 @@ export default function Playground({
             </Tippy>
             <Tippy theme="playground" arrow={false} placement="bottom" content="Report an issue">
               <a
+              id="report-issue"
               className="playground__icon-button"
               href="https://github.com/ionic-team/ionic-docs/issues/new/choose"
               aria-label="Report an issue"
@@ -194,7 +196,7 @@ export default function Playground({
             </a>
             </Tippy>
             <Tippy theme="playground" arrow={false} placement="bottom" content="Copy source code">
-              <button className="playground__icon-button playground__icon-button--primary" onClick={copySourceCode}>
+              <button id="copy-source" className="playground__icon-button playground__icon-button--primary" onClick={copySourceCode}>
               <svg
                 aria-hidden="true"
                 xmlns="http://www.w3.org/2000/svg"
@@ -212,7 +214,7 @@ export default function Playground({
             </button>
             </Tippy>
             <Tippy theme="playground" arrow={false} placement="bottom" content="Open in StackBlitz">
-              <button className="playground__icon-button playground__icon-button--primary" onClick={openEditor}>
+              <button id="open-editor" className="playground__icon-button playground__icon-button--primary" onClick={openEditor}>
               <svg
                 aria-hidden="true"
                 width="12"
@@ -246,7 +248,7 @@ export default function Playground({
       </div>
       <div
         ref={codeRef}
-        className={'playground__code-block ' + (codeExpanded ? ' playground__code-block--expanded' : '')}
+        className={'playground__code-block' + (codeExpanded ? '  playground__code-block--expanded' : '')}
         aria-expanded={codeExpanded ? 'true' : 'false'}
       >
         {codeSnippets[usageTarget]}
