@@ -138,12 +138,12 @@ export default function Playground({
     <div className="playground">
       <div className="playground__container">
         <div className="playground__control-toolbar">
-          <div className="playground__control-group">
+          <div className="playground__control-group" id="language-group">
             {Object.keys(UsageTarget).map(lang => (
               <CodeBlockButton language={lang} usageTarget={usageTarget} setUsageTarget={setUsageTarget} setCodeExpanded={setCodeExpanded} />
             ))}
           </div>
-          <div className="playground__control-group">
+          <div className="playground__control-group" id="mode-group">
             <ControlButton
               isSelected={isIOS}
               handleClick={() => setMode(Mode.iOS)}
@@ -157,7 +157,7 @@ export default function Playground({
               label="MD"
             />
           </div>
-          <div className="playground__control-group playground__control-group--end">
+          <div className="playground__control-group playground__control-group--end" id="">
             <Tippy theme="playground" arrow={false} placement="bottom" content={codeExpanded ? 'Hide source code' : 'Show full source'}>
               <button
               className="playground__icon-button playground__icon-button--primary"
@@ -246,7 +246,7 @@ export default function Playground({
       </div>
       <div
         ref={codeRef}
-        className={'playground__code-block ' + (codeExpanded ? 'playground__code-block--expanded' : '')}
+        className={'playground__code-block ' + (codeExpanded ? ' playground__code-block--expanded' : '')}
         aria-expanded={codeExpanded ? 'true' : 'false'}
       >
         {codeSnippets[usageTarget]}
