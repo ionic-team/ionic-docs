@@ -604,7 +604,7 @@
       "title": "HTTP Server Plugin Documentation: Advantages for iOS and Android",
       "description": "HTTP is the Cordova / Phonegap plugin for communicating with HTTP servers. View our documentation to learn the advantages on iOS and Android devices."
     },
-    "health-kit": {      
+    "health-kit": {
       "title": "Health Kit | HealthKit Plugin for iOS Apps | Ionic Documentation",
       "description": "Health Kit lets you read data from and write data to the iOS 8+ HealthKit framework. The plugin shows any data saved in the Health app and on other iOS apps."
     },
