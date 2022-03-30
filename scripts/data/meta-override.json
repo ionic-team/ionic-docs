@@ -96,6 +96,10 @@
       "title": "ion-item: Input, Edit, or Delete iOS and Android Item Elements",
       "description": "ion-item elements for iOS/Android contain text, icons, images, and other custom elements. They're placed in a list and can be input, deleted, edited, and more."
     },
+    "ion-item-option": {
+      "title": "ion-item-options: Option Button Components for Ionic Apps",
+      "description": "ion-item-option is the option button for an ion-item-sliding and must be placed inside of an <ion-item-options>. Read to learn more about properties."
+    },
     "ion-item-options": {
       "title": "ion-item-options: Option Button Components for Ionic Apps",
       "description": "ion-item-options are for ion-item-sliding. These option buttons can be placed either on the start or end side. Read to learn more about use on Ionic apps."
@@ -318,6 +322,10 @@
       "title": "Update/Install Capacitor Native Platforms and Cordova Plugins",
       "description": "Update Capacitor native platforms and install Capacitor/Cordova plugins with the Ionic Capacitor Update feature. Read to learn more about use and installation."
     },
+    "config-set": {
+      "title": "ionic config set: App Command to Write Configuration Values",
+      "description": "ionic config sets config values on Ionic apps. This command writes configuration values to the project's ./ionic.config.json file. Read to learn more."
+    },
     "cordova-build": {
       "title": "Ionic Cordova Build for Android and iOS Platform Builds",
       "description": "Like running Cordova Build directly, Ionic Cordova Build also builds web assets from Ionic Build and provides friendly checks for Android and iOS platforms."
@@ -350,6 +358,10 @@
       "title": "Ionic Cordova Compile for Native Platform Code",
       "description": "Use this feature to compile native platform code on Ionic apps. Read for more information on Ionic Cordova compile examples, inputs, and options."
     },
+    "doctor-check": {
+      "title": "ionic doctor check: Command to Check Issues on Ionic Projects",
+      "description": "Check the health of your Ionic project using the doctor check command. Read more for usage and how to check issues with examples from Ionic Framework."
+    },
     "generate": {
       "title": "Ionic Generate: Create Pages, Components, & Angular Features",
       "description": "Automatically create framework features with Ionic Generate. This command uses the Angular CLI to generate pages, components, directives, services, and more."
@@ -373,6 +385,10 @@
     "logout": {
       "title": "Logout Command: How to Logout on Ionic Apps | Ionic Documentation",
       "description": "Learn how to logout on Ionic Framework apps using the logout command. Read our documentation to learn more about Ionic CLI command installation and usage."
+    },
+    "package-build": {
+      "title": "ionic package build: Create a Package Build on Appflow | Ionic",
+      "description": "The ionic package build command creates a package build on Appflow. If it is successful, it downloads the created app package file in the current directory."
     },
     "serve": {
       "title": "ionic serve: Start a Local Development Server for App Dev/Testing",
@@ -408,6 +424,10 @@
       "title": "Android Full Screen: Plugin for Cordova and PhoneGap Apps",
       "description": "Android full screen plugin enables developers to offer users a true full screen experience in their Cordova and PhoneGap apps for Android. Read to learn more."
     },
+    "android-notch": {
+      "title": "Android Notch: Plugin to Enable Cutout and Devices Inset Sizes",
+      "description": "The Android Notch plugin enables developers to get the cutout and android devices inset sizes. Read to learn more about usage and installation."
+    },
     "android-permissions": {
       "title": "Android Permissions | Android Device and Ionic App Permissions",
       "description": "This plugin is designed to support Android new permissions checking mechanism. Learn how to install and use Android Device permissions on your Ionic App."
@@ -420,11 +440,15 @@
       "title": "App Center Analytics: SDK to Analyze Ionic App User Behavior Data",
       "description": "App Center Analytics helps you analyze user behavior and customer engagement to improve your Ionic apps. This SDK makes utilizing app user data easy."
     },
+    "app-center-crashes": {
+      "title": "App Center Crashes - Report to Analyze Android and iOS Crashes",
+      "description": "App Center Analytics helps you understand user behavior and customer engagement to improve your app. Learn to analyze reports for Android and iOS crashes."
+    },
     "app-version": {
       "title": "App Version | Cordova Plugin App Version to Read Ionic Apps",
       "description": "The App Version feature reads the version of your Ionic app from the target build settings. Usage requires the cordova-plugin-app-version. Read to learn more."
     },
-    "apps-flyer": {
+    "appsflyer": {
       "title": "Appsflyer: Cordova Plugin SDK for iOS and Android | Ionic",
       "description": "Appsflyer is a Cordova SDK plugin for Ionic Native Apps. Read our documentation for more on installation and usage on iOS and Android devices."
     },
@@ -448,6 +472,10 @@
       "title": "Base64 | Use PhoneGap Plugin to Encode Base64 of Any File",
       "description": "This Plugin is used to encode base64 of any file, it uses js code for iOS, but in case of android it uses native code to handle android versions lower than v.3"
     },
+    "battery-status": {
+      "title": "Battery Status Plugin for Android, iOS, Windows, and Browser",
+      "description": "The Cordova battery status plugin is available for installation on Android, iOS, Windows, and Browser Ionic applications. Read for more information on usage."
+    },
     "ble": {
       "title": "BLE | Cordova-Plugin-BLE-Central for Bluetooth Low Energy",
       "description": "BLE enables communication between a phone and Bluetooth Low Energy peripherals. Cordova-plugin-ble-central provides a simple JavaScript API for iOS and Android."
@@ -459,6 +487,10 @@
     "bluetooth-serial": {
       "title": "Bluetooth Serial: Install Plugin for iOS & Android Communication",
       "description": "Bluetooth Serial was written for communicating between Android or iOS and an Arduino. Install this plugin to enable serial communication over Bluetooth."
+    },
+    "broadcaster": {
+      "title": "Broadcaster Plugin for Android, iOS, and Browser Apps | Ionic",
+      "description": "The broadcaster plugin adds exchanging events between native code and your app. Read for more on installation and usage on Android, iOS, and Browser apps."
     },
     "calendar": {
       "title": "Calendar Plugin | Ionic Applications & Cordova Plugin Calendar",
@@ -629,6 +661,10 @@
       "description": "This is a lightweight Cordova plugin for in-app purchases on iOS and Android devices using Ionic apps. Read to learn more about in-app purchases."
     },
     "in-app-purchase-2": {
+      "title": "In App Review Plugin for iOS Devices | Ionic Framework Docs",
+      "description": "The In App Review plugin uses the iOS class SKStore​Review​Controller to open the inApp review popup available since iOS 10.3. Read to learn more about usage."
+    },
+    "in-app-review": {
       "title": "In-App Purchase (IAP) 2: iOS, Android, Windows, macOS & Xbox Apps",
       "description": "In-App Purchase 2 lets users make purchases directly from iOS, Android, Windows, macOS, and Xbox devices. Read to learn more about Ionic apps and IAP usage."
     },
@@ -772,6 +808,10 @@
       "title": "Cordova Speech Recognition Plugin for iOS/Android Devices",
       "description": "The Cordova Speech Recognition plugin does speech recognition using cloud services on iOS and Android devices. Learn more about speech recognition installation."
     },
+    "spinner-dialog": {
+      "title": "Spinner Dialog: Cordova Plugin for Android, iOS, and Windows",
+      "description": "Spinner dialog is a Cordova plugin for showing a native spinner based on Paldom/SpinnerDialog. Read for usage on Android, iOS, Windows, and Windows phone 8."
+    },
     "splash-screen": {
       "title": "Splash Screen | Cordova Splash Screen Plugin for Android & iOS",
       "description": "This Cordova plugin displays and hides a splash screen during application launch. Show and hide the splash screen after the Android or iOS app has loaded."
@@ -783,6 +823,10 @@
     "sqlite-porter": {
       "title": "SQLite Porter: Plugin to Import to/Export from an SQLite Database",
       "description": "This Cordova/PhoneGap plugin is used to import to/export from an SQLite database using SQL or JSON. Learn more about SQLite Porter installation and usage."
+    },
+    "star-prnt": {
+      "title": "StarPRNT Plugin for Star Micronics Bluetooth/LAN Printers | Ionic",
+      "description": "View Ionic Native wrappers for the StarPRNT cordova plugin for Star Micronics Bluetooth/LAN printers. Read to learn more on installation for iOS and Android."
     },
     "status-bar": {
       "title": "Status Bar | Cordova StatusBar Plugin for iOS and Android Apps",
