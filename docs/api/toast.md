@@ -276,7 +276,7 @@ const ToastExample: React.FC = () => {
 
 import React, { useState } from 'react';
 import { IonToast, IonContent, IonButton } from '@ionic/react';
-import { informationCircle } from 'ionicons/icons';
+import { informationCircle, star } from 'ionicons/icons';
 
 export const ToastExample: React.FC = () => {
   const [showToast1, setShowToast1] = useState(false);
@@ -302,7 +302,7 @@ export const ToastExample: React.FC = () => {
         buttons={[
           {
             side: 'start',
-            icon: 'star',
+            icon: star,
             text: 'Favorite',
             handler: () => {
               console.log('Favorite clicked');
