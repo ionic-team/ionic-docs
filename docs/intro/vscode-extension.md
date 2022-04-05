@@ -4,7 +4,10 @@ title: Ionic Visual Studio Code Extension
 
 <head>
   <title>Using the Ionic Visual Studio Code Extension</title>
-  <meta name="description" content="**insert description content here**" />
+  <meta
+    name="description"
+    content="The Ionic Visual Studio Code extension helps you perform various functions that are common to developing an Ionic app"
+  />
 </head>
 
 The Ionic Visual Studio Code extension helps you perform various functions that are common to developing an Ionic app, all without leaving your VS Code window. You can install the [extension on the Visul Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=ionic.ionic). Once you have the extension installed, you'll see the Ionic logo in the activity bar.
