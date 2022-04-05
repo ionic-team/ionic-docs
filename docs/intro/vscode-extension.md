@@ -1,5 +1,5 @@
 ---
-title: Ionic Visual Studio Code Extension
+title: Ionic VS Code Extension
 ---
 
 <head>
@@ -10,7 +10,7 @@ title: Ionic Visual Studio Code Extension
   />
 </head>
 
-The Ionic Visual Studio Code extension helps you perform various functions that are common to developing an Ionic app, all without leaving your VS Code window. You can install the [extension on the Visul Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=ionic.ionic). Once you have the extension installed, you'll see the Ionic logo in the activity bar.
+The Ionic Visual Studio Code extension helps you perform various functions that are common to developing an Ionic app, all without leaving your VS Code window. You can install the [extension on the Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=ionic.ionic). Once you have the extension installed, you'll see the Ionic logo in the activity bar.
 
 ## Create a New Project
 
@@ -25,7 +25,7 @@ With the new project created, the extension will provide access to all of the co
 
 ## Adding Capacitor
 
-You can also add [Capacitor](https://capacitorjs.com/) to your application by choosing "Integrate Capacitor"
+You can also add [Capacitor](https://capacitorjs.com/) to your application by choosing "Integrate Capacitor".
 
 <img
   src="https://user-images.githubusercontent.com/84595830/159510570-b5a151bb-2e17-42c8-8cab-bffbaa849576.gif"
@@ -36,4 +36,4 @@ With Capacitor integrated, you can now run your app on web, Android, and iOS wit
 
 ## Doing More
 
-There is so much more the Ionic VS Code extension can help with, including migrations, debugging, monorepo support, and more. For the full list of all of the extension's capabilities, checkout the [extension overview on the VS Code Marketplace](https://marketplace.visualstudio.com/items?itemName=ionic.ionic).
+There is so much the Ionic VS Code extension can help with, including migrations, debugging, monorepo support, and more. For the full list of all of the extension's capabilities, checkout the [extension overview on the VS Code Marketplace](https://marketplace.visualstudio.com/items?itemName=ionic.ionic).
