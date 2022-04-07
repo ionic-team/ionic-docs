@@ -42,12 +42,12 @@ The Ionic team generally recommends the latest releases of third party packages 
 
 #### Ionic Angular
 
-| Framework | Required Angular Version | TypeScript |
-| :-------: | :----------------------: | :--------: |
-|    v6     |           v12+           |    4.0+    |
-|    v5     |          v8.2+           |    3.5+    |
-|    v4     |          v8.2+           |    3.5+    |
-|    v3     |         v5.2.11          |   2.6.2    |
+| Framework | Minimum Angular Version | Maximum Angular Version | TypeScript |
+| :-------: | :---------------------: | :---------------------: | :--------: |
+|    v6     |           v12           |          v13.x          |    4.0+    |
+|    v5     |          v8.2           |          v12.x          |    3.5+    |
+|    v4     |          v8.2           |          v11.x          |    3.5+    |
+|    v3     |         v5.2.11         |         v5.2.11         |   2.6.2    |
 
 #### Ionic React
 
