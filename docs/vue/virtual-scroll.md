@@ -123,11 +123,15 @@ Ionic Framework requires that features such as collapsible large titles, `ion-in
 For example:
 
 ```html
-<ion-content :scroll-y="false">
-  <RecycleScroller class="ion-content-scroll-host scroller">
-    <!-- Your existing content and configurations -->
-  </RecycleScroller>
-</ion-content>
+<template>
+  <ion-page>
+    <ion-content :scroll-y="false">
+      <RecycleScroller class="ion-content-scroll-host scroller">
+        <!-- Your existing content and configurations -->
+      </RecycleScroller>
+    </ion-content>
+  </ion-page>
+</template>
 ```
 
 ## Further Reading
