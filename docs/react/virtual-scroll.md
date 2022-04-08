@@ -57,6 +57,22 @@ Certain Ionic Framework functionality is currently not compatible with virtual s
 
 We are working to improve compatibility between these components and virtual scrolling solutions. You can follow progress and give feedback here: https://github.com/ionic-team/ionic-framework/issues/23437.
 
+## Usage with Ionic Components
+
+Ionic Framework requires that features such as collapsible large titles, `ion-infinite-scroll`, `ion-refresher`, and `ion-reorder-group` be used within an `ion-content`. To use these experiences with virtual scrolling, you must add the `.ion-content-scroll-host` class to the virtual scroll viewport.
+
+For example:
+
+```tsx
+<IonPage>
+  <IonContent scrollY={false}>
+    <Virtuoso className="ion-content-scroll-host">
+      {/* Your existing content and configurations */}
+    </Virtuoso>
+  </IonContent>
+</IonPage>
+```
+
 ## Further Reading
 
 This guide only covers a small portion of what `Virtuoso` is capable of. For more details, please see the [Virtuoso documentation](https://virtuoso.dev/).
