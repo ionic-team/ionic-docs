@@ -34,7 +34,7 @@ As a result, Ionic Framework v6 only supports Android devices and emulators runn
 
 To figure out what version of the webview a device is running, log `window.navigator.userAgent` to the console when inspecting the application using Chrome Dev Tools.
 
-### A Note on Angular 13 Support
+### A Note on Angular and iOS 13 Support
 
 Angular's support policy for iOS is the two most recent major versions. At the time of release that is iOS 14 and 15. To support iOS 13, change the project target specified in the tsconfig.json from the default value of `es2015` to `es5`. Without this change an error of `Unexpected token '.' in promiseReactionJob` will occur on app startup in iOS 13.
 
