@@ -23,7 +23,7 @@ let COMPONENT_LINK_REGEXP;
  */
 
 (async function () {
-  const response = await fetch('https://unpkg.com/@ionic/docs@6.0.14-dev.11648058957.10b8822b/core.json');
+  const response = await fetch('https://unpkg.com/@ionic/docs/core.json');
   const { components } = await response.json();
 
   const names = components.map((component) => component.tag.slice(4));

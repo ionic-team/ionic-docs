@@ -76,7 +76,7 @@ interface ToastOptions {
   translucent?: boolean;
   animated?: boolean;
   icon?: string;
-  htmlAttributes?: ToastAttributes;
+  htmlAttributes?: { [key: string]: any };
 
   color?: Color;
   mode?: Mode;
@@ -86,11 +86,6 @@ interface ToastOptions {
   enterAnimation?: AnimationBuilder;
   leaveAnimation?: AnimationBuilder;
 }
-```
-
-### ToastAttributes
-```typescript
-interface ToastAttributes extends JSXBase.HTMLAttributes<HTMLElement> {}
 ```
 
 ## Accessibility
@@ -276,7 +271,7 @@ const ToastExample: React.FC = () => {
 
 import React, { useState } from 'react';
 import { IonToast, IonContent, IonButton } from '@ionic/react';
-import { informationCircle, star } from 'ionicons/icons';
+import { informationCircle } from 'ionicons/icons';
 
 export const ToastExample: React.FC = () => {
   const [showToast1, setShowToast1] = useState(false);
@@ -302,7 +297,7 @@ export const ToastExample: React.FC = () => {
         buttons={[
           {
             side: 'start',
-            icon: star,
+            icon: 'star',
             text: 'Favorite',
             handler: () => {
               console.log('Favorite clicked');

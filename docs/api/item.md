@@ -87,6 +87,10 @@ Items containing an input will highlight the bottom border of the input with a d
 
 The highlight color changes based on the item state, but all of the states use Ionic colors by default. When focused, the input highlight will use the `primary` color. If the input is valid it will use the `success` color, and invalid inputs will use the `danger` color. See the [CSS Custom Properties](#css-custom-properties) section below for the highlight color variables.
 
+### Counter Formatter
+
+When using `counter`, the default behavior is to format the value that gets displayed as `itemLength / maxLength`. This behavior can be customized by passing in a formatter function to the `counterFormatter` property. See the [Usage](#usage) section for an example.
+
 
 
 
@@ -432,6 +436,39 @@ The highlight color changes based on the item state, but all of the states use I
 </ion-item>
 ```
 
+### Item Counter
+
+```html
+<ion-item [counter]="true">
+  <ion-label>Counter</ion-label>
+  <ion-input maxlength="20"></ion-input>
+</ion-item>
+```
+
+### Item Counter Formatter
+
+```html
+<ion-item [counter]="true" [counterFormatter]="counterFormatter">
+  <ion-label>Counter</ion-label>
+  <ion-input maxlength="20"></ion-input>
+</ion-item>
+
+```
+
+```typescript
+
+import { Component } from '@angular/core';
+
+@Component({…})
+export class MyComponent {
+  
+  counterFormatter(inputLength: number, maxLength: number) {
+    return `${maxLength - inputLength} characters remaining`;
+  }
+}
+
+```
+
 
 </TabItem>
 
@@ -774,6 +811,29 @@ The highlight color changes based on the item state, but all of the states use I
 </ion-item>
 ```
 
+### Item Counter
+
+```html
+<ion-item counter="true">
+  <ion-label>Counter</ion-label>
+  <ion-input maxlength="20"></ion-input>
+</ion-item>
+```
+
+### Item Counter Formatter
+
+```html
+<ion-item counter="true" id="custom-item">
+  <ion-label>Counter</ion-label>
+  <ion-input maxlength="20"></ion-input>
+</ion-item>
+
+<script>
+  const customItem = document.querySelector('#custom-item');
+  customItem.counterFormatter = (inputLength, maxLength) => `${maxLength - inputLength} characters remaining`; 
+</script>
+
+```
 
 </TabItem>
 
@@ -1098,6 +1158,18 @@ export const ItemExamples: React.FC = () => {
         <IonItem>
           <IonLabel>Range</IonLabel>
           <IonRange></IonRange>
+        </IonItem>
+
+        {/*-- Item Counter --*/}
+        <IonItem counter={true}>
+          <IonLabel>Counter</IonLabel>
+          <IonInput maxlength="20"></IonInput>
+        </IonItem>
+
+        {/*-- Item Counter Formatter --*/}
+        <IonItem counter={true} counterFormatter={(inputLength, maxLength) => `${maxLength - inputLength} characters remaining`}>
+          <IonLabel>Counter</IonLabel>
+          <IonInput maxlength="20"></IonInput>
         </IonItem>
       </IonContent>
     </IonPage>
@@ -1553,6 +1625,48 @@ export class ItemExample {
 }
 ```
 
+### Item Counter
+
+```tsx
+import { Component, h } from '@stencil/core';
+
+@Component({
+  tag: 'item-example',
+  styleUrl: 'item-example.css'
+})
+export class ItemExample {
+  render() {
+    return [
+      <ion-item counter={true}>
+        <ion-label>Counter</ion-label>
+        <ion-input maxlength="20"></ion-input>
+      </ion-item>
+    ];
+  }
+}
+```
+
+### Item Counter Formatter
+
+```tsx
+import { Component, h } from '@stencil/core';
+
+@Component({
+  tag: 'item-example',
+  styleUrl: 'item-example.css'
+})
+export class ItemExample {
+  render() {
+    return [
+      <ion-item counter="true" counterFormatter={(inputLength, maxLength) => `${maxLength - inputLength} characters remaining`}>
+        <ion-label>Counter</ion-label>
+        <ion-input maxlength="20"></ion-input>
+      </ion-item>
+    ];
+  }
+}
+```
+
 </TabItem>
 
 
@@ -1971,6 +2085,40 @@ export default defineComponent({
 </script>
 ```
 
+### Item Counter
+
+```html
+<template>
+  <ion-item :counter="true">
+    <ion-label>Counter</ion-label>
+    <ion-input maxlength="20"></ion-input>
+  </ion-item>
+</template>
+```
+
+### Item Counter Formatter
+
+```html
+<template>
+  <ion-item :counter="true" :counter-formatter="counterFormatter">
+    <ion-label>Counter</ion-label>
+    <ion-input maxlength="20"></ion-input>
+  </ion-item>
+</template>
+<script lang="ts">
+import { IonInput, IonItem, IonLabel } from '@ionic/vue';
+import { defineComponent } from 'vue';
+
+export default defineComponent({
+  components: {  IonItem, IonLabel, IonInput },
+  setup() {
+    const counterFormatter = (inputLength: number, maxLength: number) => `${maxLength - inputLength} characters remaining`;
+    
+    return { counterFormatter };
+  }
+});
+</script>
+```
 
 </TabItem>
 

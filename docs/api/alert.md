@@ -108,16 +108,11 @@ interface AlertInput {
   min?: string | number;
   max?: string | number;
   cssClass?: string | string[];
-  attributes?: AlertInputAttributes | AlertTextareaAttributes;
+  attributes?: { [key: string]: any };
   tabindex?: number;
 }
 ```
 
-### AlertInputAttributes
-
-```typescript
-interface AlertInputAttributes extends JSXBase.InputHTMLAttributes<HTMLInputElement> {}
-```
 
 ### AlertOptions
 
@@ -132,7 +127,7 @@ interface AlertOptions {
   backdropDismiss?: boolean;
   translucent?: boolean;
   animated?: boolean;
-  htmlAttributes?: AlertAttributes;
+  htmlAttributes?: { [key: string]: any };
 
   mode?: Mode;
   keyboardClose?: boolean;
@@ -142,17 +137,6 @@ interface AlertOptions {
   leaveAnimation?: AnimationBuilder;
 }
 ```
-
-### AlertAttributes
-```typescript
-interface AlertAttributes extends JSXBase.HTMLAttributes<HTMLElement> {}
-```
-
-### AlertTextareaAttributes
-```typescript
-interface AlertTextareaAttributes extends JSXBase.TextareaHTMLAttributes<HTMLTextAreaElement> {}
-```
-
 
 
 

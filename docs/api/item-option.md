@@ -12,7 +12,10 @@ import Parts from '@site/static/auto-generated/item-option/parts.md';
 import CustomProps from '@site/static/auto-generated/item-option/custom-props.md';
 import Slots from '@site/static/auto-generated/item-option/slots.md';
 
-
+<head>
+  <title>ion-item-options: Option Button Components for Ionic Apps</title>
+  <meta name="description" content="ion-item-option is the option button for an ion-item-sliding and must be placed inside of an <ion-item-options>. Read to learn more about properties." />
+</head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 import APITOCInline from '@components/page/api/APITOCInline';

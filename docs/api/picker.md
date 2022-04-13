@@ -96,75 +96,19 @@ interface PickerOptions {
   mode?: Mode;
   keyboardClose?: boolean;
   id?: string;
-  htmlAttributes?: PickerAttributes;
+  htmlAttributes?: { [key: string]: any };
 
   enterAnimation?: AnimationBuilder;
   leaveAnimation?: AnimationBuilder;
 }
 ```
 
-### PickerAttributes
-
-```typescript
-interface PickerAttributes extends JSXBase.HTMLAttributes<HTMLElement> {}
-```
 
 
 
 ## Usage
 
-<Tabs groupId="framework" defaultValue="angular" values={[{ value: 'angular', label: 'Angular' }, { value: 'react', label: 'React' }, { value: 'vue', label: 'Vue' }]}>
-
-
-<TabItem value="angular">
-
-```html
-<ion-button expand="block" (click)="presentPicker()">Show Picker</ion-button>
-```
-
-```ts
-import { Component } from '@angular/core';
-import { PickerController } from '@ionic/angular';
-
-@Component({
-  selector: 'app-picker-example',
-  template: 'picker-example.component.html'
-})
-export class PickerExample {
-
-  private selectedAnimal: string;
-
-  constructor(private pickerController: PickerController) { }
-  
-  async presentPicker() {
-    const picker = await this.pickerController.create({
-      buttons: [
-        {
-          text: 'Confirm',
-          handler: (selected) => {
-            this.selectedAnimal = selected.animal.value;
-          },
-        }
-      ],
-      columns: [
-        {
-          name: 'animal',
-          options: [
-            { text: 'Dog', value: 'dog' },
-            { text: 'Cat', value: 'cat' },
-            { text: 'Bird', value: 'bird' },
-          ]
-        }
-      ]
-    });
-    await picker.present();
-  }
-
-}
-
-```
-
-</TabItem>
+<Tabs groupId="framework" defaultValue="react" values={[{ value: 'react', label: 'React' }, { value: 'vue', label: 'Vue' }]}>
 
 <TabItem value="react">
 
