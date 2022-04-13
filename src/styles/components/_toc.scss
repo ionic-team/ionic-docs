@@ -74,13 +74,11 @@ html[data-theme='dark'] {
   }
 
   .internal-ad {
+    cursor: pointer;
+
     max-width: 148px;
     display: block;
     margin: 48px 0 0;
-
-    @media (max-width: 1233px) {
-      display: none;
-    }
 
     p {
       font-size: 13px;
@@ -90,10 +88,6 @@ html[data-theme='dark'] {
 
       color: var(--ifm-font-color-base);
       transition: 0.2s color;
-    }
-
-    a:hover p {
-      color: var(--c-indigo-90);
     }
   }
 
