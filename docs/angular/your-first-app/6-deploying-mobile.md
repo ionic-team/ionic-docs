@@ -1,8 +1,15 @@
 ---
+title: Deploying to iOS and Android
 sidebar_label: Deploying Mobile
 ---
 
-# Deploying to iOS and Android
+<head>
+  <title>Deploying to iOS and Android Apps - Capacitor Setup on Ionic</title>
+  <meta
+    name="description"
+    content="Deploying to iOS and Android is easy with Capacitor setup for Ionic Framework apps. Read to learn more about deployment in our Ionic Documentation."
+  />
+</head>
 
 Since we added Capacitor to our project when it was first created, there’s only a handful of steps remaining until the Photo Gallery app is on our device! Remember, you can find the complete source code for this app [here](https://github.com/ionic-team/photo-gallery-capacitor-ng).
 
@@ -104,4 +111,4 @@ Once again, upon tapping the Camera button on the Photo Gallery tab, the permiss
 
 Our Photo Gallery app has just been deployed to Android and iOS devices. 🎉
 
-In the final portion of this tutorial, we’ll use the Ionic CLI’s Live Reload functionality to quickly implement photo deletion - thus completing our Photo Gallery feature.
+In the next portion of this tutorial, we’ll use the Ionic CLI’s Live Reload functionality to quickly implement photo deletion - thus completing our Photo Gallery feature.

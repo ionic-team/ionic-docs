@@ -75,6 +75,18 @@ Developers must import and call `setupIonicReact` even if they are not setting c
 
 See the [React Config Documentation](../react/config) for more examples.
 
+5. Update all controller imports from `@ionic/core` to `@ionic/core/components`. As an example, here is a migration for `menuController`:
+
+**Before**
+```tsx
+import { menuController } from '@ionic/core';
+```
+
+**After**
+```tsx
+import { menuController } from '@ionic/core/components';
+```
+
 ### Vue
 
 1. Ionic 6 supports Vue 3.0.6+. Update to the latest version of Vue:
