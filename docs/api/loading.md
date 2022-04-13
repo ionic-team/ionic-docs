@@ -91,18 +91,13 @@ interface LoadingOptions {
   mode?: Mode;
   keyboardClose?: boolean;
   id?: string;
-  htmlAttributes?: LoadingAttributes;
+  htmlAttributes?: { [key: string]: any };
 
   enterAnimation?: AnimationBuilder;
   leaveAnimation?: AnimationBuilder;
 }
 ```
 
-### LoadingAttributes
-
-```typescript
-interface LoadingAttributes extends JSXBase.HTMLAttributes<HTMLElement> {}
-```
 
 
 

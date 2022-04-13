@@ -207,6 +207,68 @@ console.log(formattedString); // Jun 4, 2021
 
 See https://date-fns.org/docs/format for a list of all the valid format tokens.
 
+## Disabling Dates
+
+With the `isDateEnabled` property, developers can customize the `ion-datetime` to disable a specific day, range of dates, weekends or any custom rule using an ISO 8601 date string. 
+
+The `isDateEnabled` property accepts a function returning a boolean, indicating if a date is enabled. The function is called for each rendered calendar day, for the previous, current and next month. Custom implementations should be optimized for performance to avoid jank.
+
+```html
+<ion-datetime></ion-datetime>
+
+<script>
+  const datetime = document.querySelector('ion-datetime');
+  datetime.isDateEnabled = function(dateIsoString) {
+    // Write your custom logic here
+    return true;
+  }
+</script>
+```
+
+### Disabling a specific date
+
+```js
+isDateEnabled(dateIsoString) {
+  const date = new Date(dateIsoString);
+  if (date.getUTCFullYear() === 2022 
+    && date.getUTCMonth() === 0 
+    && date.getUTCDate() === 1) {
+    // Disables January 1, 2022
+    return false;
+  }
+  return true;
+}
+```
+
+### Disabling weekends
+
+```js
+isDateEnabled(dateIsoString) {
+  const date = new Date(dateIsoString);
+  if (date.getUTCDay() === 0 && date.getUTCDay() === 6) {
+    // Disables Saturday and Sunday
+    return false;
+  }
+  return true;
+}
+```
+
+### Usage with date-fns
+
+Developers can also use the available functions from `date-fns` to disable dates.
+
+```ts
+import { isMonday } from 'date-fns';
+
+isDateEnabled(dateIsoString) {
+  if (isMonday(new Date(dateIsoString))) {
+    // Disables Monday
+    return false;
+  }
+  return true;
+}
+```
+
 ## Advanced Datetime Validation and Manipulation
 
 The datetime picker provides the simplicity of selecting an exact format, and
@@ -331,6 +393,9 @@ interface DatetimeCustomEvent extends CustomEvent {
 <!-- Clear button -->
 <ion-datetime [showClearButton]="true"></ion-datetime>
 
+<!-- Disable custom days -->
+<ion-datetime [isDateEnabled]="isDateEnabled"></ion-datetime>
+
 <!-- Datetime in overlay -->
 <ion-button id="open-modal">Open Datetime Modal</ion-button>
 <ion-modal trigger="open-modal">
@@ -385,7 +450,7 @@ interface DatetimeCustomEvent extends CustomEvent {
 ```typescript
 import { Component, ViewChild } from '@angular/core';
 import { IonDatetime } from '@ionic/angular';
-import { format, parseISO } from 'date-fns';
+import { format, parseISO, getDate, getMonth, getYear } from 'date-fns';
 
 @Component({…})
 export class MyComponent {
@@ -406,6 +471,15 @@ export class MyComponent {
 
   formatDate(value: string) {
     return format(parseISO(value), 'MMM dd yyyy');
+  }
+
+  isDateEnabled(dateIsoString: string) {
+    const date = new Date(dateIsoString);
+    if (getDate(date) === 1 && getMonth(date) === 0 && getYear(date) === 2022) {
+      // Disables January 1, 2022.
+      return false;
+    }
+    return true;
   }
 }
 ```
@@ -468,6 +542,9 @@ export class MyComponent {
   </ion-buttons>
 </ion-datetime>
 
+<!-- Disable custom dates -->
+<ion-datetime id="disabled-date-datetime"></ion-datetime>
+
 <!-- Datetime in overlay -->
 <ion-button id="open-modal">Open Datetime Modal</ion-button>
 <ion-modal trigger="open-modal">
@@ -498,7 +575,7 @@ export class MyComponent {
 ```
 
 ```javascript
-import { format, parseISO } from 'date-fns';
+import { format, parseISO, getDate, getMonth, getYear } from 'date-fns';
 
 const datetime = document.querySelector('#custom-datetime');
 
@@ -513,6 +590,18 @@ const reset = () => {
 const formatDate = (value: string) => {
   return format(parseISO(value), 'MMM dd yyyy');
 };
+
+const isDateEnabled = (dateIsoString: string) => {
+  const date = new Date(dateIsoString);
+  if (getDate(date) === 1 && getMonth(date) === 0 && getYear(date) === 2022) {
+    // Disables January 1, 2022.
+    return false;
+  }
+  return true;
+};
+
+const disabledDateDatetime = document.querySelector('#disabled-date-datetime');
+disabledDateDatetime.isDateEnabled = isDateEnabled;
 
 const popoverDatetime = document.querySelector('#popover-datetime');
 const dateInput = document.querySelector('#date-input');
@@ -542,7 +631,7 @@ import {
   IonPopover
 } from '@ionic/react';
 import { calendar } from 'ionicons/icons';
-import { format, parseISO } from 'date-fns';
+import { format, parseISO, getDate, getMonth, getYear } from 'date-fns';
 
 export const DateTimeExamples: React.FC = () => {
   const [selectedDate, setSelectedDate] = useState('2012-12-15T13:47:20.789');
@@ -619,6 +708,16 @@ export const DateTimeExamples: React.FC = () => {
           <IonButton onClick={() => reset()}>Reset</IonButton>
         </IonButtons>
       </IonDatetime>
+
+      {/* Disable custom days */}
+      <IonDatetime isDateEnabled={(dateIsoString: string) => {
+        const date = new Date(dateIsoString);
+        if (getDate(date) === 1 && getMonth(date) === 0 && getYear(date) === 2022) {
+          // Disables January 1, 2022.
+          return false;
+        }
+        return true;
+      }}></IonDatetime>
       
       {/* Datetime in overlay */}
       <IonButton id="open-modal">Open Datetime Modal</IonButton>
@@ -665,7 +764,7 @@ export const DateTimeExamples: React.FC = () => {
 
 ```javascript
 import { Component, h } from '@stencil/core';
-import { format, parseISO } from 'date-fns';
+import { format, parseISO, getDate, getMonth, getYear } from 'date-fns';
 
 @Component({
   tag: 'datetime-example',
@@ -746,7 +845,17 @@ export class DatetimeExample {
           <ion-button onClick={() => this.confirm()}>Good to go!</ion-button>
           <ion-button onClick={() => this.reset()}>Reset</ion-button>
         </ion-buttons>
-      </ion-datetime>,
+      </ion-datetime>
+
+      {/* Disable custom days */}
+      <ion-datetime isDateEnabled={(dateIsoString: string) => {
+        const date = new Date(dateIsoString);
+        if (getDate(date) === 1 && getMonth(date) === 0 && getYear(date) === 2022) {
+          // Disables January 1, 2022.
+          return false;
+        }
+        return true;
+      }}></ion-datetime>
       
       {/* Datetime in overlay */}
       <ion-button id="open-modal">Open Datetime Modal</ion-button>
@@ -844,6 +953,9 @@ export class DatetimeExample {
       <ion-button @click="reset()">Reset</ion-button>
     </ion-buttons>
   </ion-datetime>
+
+  <!-- Disable custom days -->
+  <ion-datetime :is-date-enabled="isDateEnabled"></ion-datetime>
   
   <!-- Datetime in overlay -->
   <ion-button id="open-modal">Open Datetime Modal</ion-button>
@@ -892,7 +1004,7 @@ export class DatetimeExample {
     IonModal,
     IonPopover
   } from '@ionic/vue';
-  import { format, parseISO } from 'date-fns';
+  import { format, parseISO, getDate, getMonth, getYear } from 'date-fns';
 
   export default defineComponent({
     components: {
@@ -926,10 +1038,20 @@ export class DatetimeExample {
         return format(parseISO(value), 'MMM dd yyyy');
       };
 
+      const isDateEnabled = (dateIsoString: string) => {
+        const date = new Date(dateIsoString);
+        if (getDate(date) === 1 && getMonth(date) === 0 && getYear(date) === 2022) {
+          // Disables January 1, 2022.
+          return false;
+        }
+        return true;
+      }
+
       return {
         customDatetime,
         confirm,
-        reset
+        reset,
+        isDateEnabled
       }
     }
   })

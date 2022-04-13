@@ -102,17 +102,11 @@ interface ActionSheetOptions {
   mode?: Mode;
   keyboardClose?: boolean;
   id?: string;
-  htmlAttributes?: ActionSheetAttributes;
+  htmlAttributes?: { [key: string]: any };
 
   enterAnimation?: AnimationBuilder;
   leaveAnimation?: AnimationBuilder;
 }
-```
-
-### ActionSheetAttributes
-
-```typescript
-interface ActionSheetAttributes extends JSXBase.HTMLAttributes<HTMLElement> {}
 ```
 
 

@@ -88,7 +88,7 @@ Developers can create a sheet modal effect similar to the drawer components avai
 
 The `breakpoints` property accepts an array which states each breakpoint that the sheet can snap to when swiped. A `breakpoints` property of `[0, 0.5, 1]` would indicate that the sheet can be swiped to show 0% of the modal, 50% of the modal, and 100% of the modal. When the modal is swiped to 0%, the modal will be automatically dismissed.
 
-The `initialBreakpoint` property is required so that the sheet modal knows which breakpoint to start at when presenting. The `initalBreakpoint` value must also exist in the `breakpoints` array. Given a `breakpoints` value of `[0, 0.5, 1]`, an `initialBreakpoint` value of `0.5` would be valid as `0.5` is in the `breakpoints` array. An `initialBreakpoint` value of `0.25` would not be valid as `0.25` does not exist in the `breakpoints` array.
+The `initialBreakpoint` property is required so that the sheet modal knows which breakpoint to start at when presenting. The `initialBreakpoint` value must also exist in the `breakpoints` array. Given a `breakpoints` value of `[0, 0.5, 1]`, an `initialBreakpoint` value of `0.5` would be valid as `0.5` is in the `breakpoints` array. An `initialBreakpoint` value of `0.25` would not be valid as `0.25` does not exist in the `breakpoints` array.
 
 The `backdropBreakpoint` property can be used to customize the point at which the `ion-backdrop` will begin to fade in. This is useful when creating interfaces that have content underneath the sheet that should remain interactive. A common use case is a sheet modal that overlays a map where the map is interactive until the sheet is fully expanded.
 
@@ -99,7 +99,34 @@ See [Usage](#usage) for examples on how to use the sheet modal.
 :::
 
 
+## Preventing a Modal from Dismissing
+
+When entering data into a modal, it is often desirable to have a way of preventing accidental data loss. The `canDismiss` property on `ion-modal` gives developers control over when a modal is allowed to dismiss.
+
+There are two different ways of using the `canDismiss` property.
+
+:::note
+ Note: When using a sheet modal, `canDismiss` will not be checked on swipe if there is no `0` breakpoint set. However, it will still be checked when pressing `Esc` or the hardware back button.
+:::
+
+
+### Setting a boolean value
+
+Developers can set `canDismiss` to a boolean value. If `canDismiss` is `true`, then the modal will close when users attempt to dismiss the modal. If `canDismiss` is `false`, then the modal will not close when users attempt to dismiss the modal.
+
+Setting a boolean value should be used when you need to require a particular action to be taken prior to a modal being dismissed. For example, if developers want to require that a "Terms of Use" checkbox is checked prior to closing the modal, they could set `canDismiss` to `false` initially and update it to `true` when the checkbox is checked.
+
+### Setting a callback function
+
+Developers can set `canDismiss` to be a function. This function must return a `Promise` that resolves to either `true` or `false`. If the promise resolves to `true`, then the modal will dismiss. If the promise resolves to `false`, then the modal will not dismiss.
+
+Setting a callback function should be used when you have complex dismissing criteria such as showing a confirmation dialog prior to dismissing the modal. The option that users select in this dialog can then be used to determine whether or not the modal should proceed with dismissing.
+
+Note that setting a callback function will cause the swipe gesture to be interrupted when using a card or sheet modal. This is because Ionic does not know what your callback function will resolve to ahead of time.
+
 ## Interfaces
+
+### ModalOptions
 
 Below you will find all of the options available to you when using the `modalController`. These options should be supplied when calling `modalController.create()`.
 
@@ -120,6 +147,15 @@ interface ModalOptions {
 
   enterAnimation?: AnimationBuilder;
   leaveAnimation?: AnimationBuilder;
+}
+```
+### ModalCustomEvent
+
+While not required, this interface can be used in place of the `CustomEvent` interface for stronger typing with Ionic events emitted from this component.
+
+```typescript
+interface ModalCustomEvent extends CustomEvent {
+  target: HTMLIonModalElement;
 }
 ```
 
@@ -165,7 +201,7 @@ interface ModalOptions<T extends ComponentRef = ComponentRef> {
   mode?: Mode;
   keyboardClose?: boolean;
   id?: string;
-  htmlAttributes?: ModalAttributes;
+  htmlAttributes?: { [key: string]: any };
 
   enterAnimation?: AnimationBuilder;
   leaveAnimation?: AnimationBuilder;
@@ -177,11 +213,6 @@ interface ModalOptions<T extends ComponentRef = ComponentRef> {
 }
 ```
 
-### ModalAttributes
-
-```typescript
-interface ModalAttributes extends JSXBase.HTMLAttributes<HTMLElement> {}
-```
 
 ## Accessibility
 
@@ -265,11 +296,18 @@ When the backdrop is disabled, users will be able to interact with elements outs
     <app-angular-component title="Ionic"></app-angular-component>
   </ng-template>
 </ion-modal>
+
+<!-- Require Action Sheet confirmation before dismissing -->
+<ion-modal [isOpen]="true" [canDismiss]="canDismiss">
+  <ng-template>
+    <ion-content>Modal Content</ion-content>
+  </ng-template>
+</ion-modal>
 ```
 
 ```typescript
 import { Component } from '@angular/core';
-import { IonRouterOutlet } from '@ionic/angular';
+import { IonRouterOutlet, ActionSheetController } from '@ionic/angular';
 
 @Component({
   selector: 'modal-example',
@@ -277,7 +315,36 @@ import { IonRouterOutlet } from '@ionic/angular';
   styleUrls: ['./modal-example.css']
 })
 export class ModalExample {
-  constructor(public routerOutlet: IonRouterOutlet) {}
+  constructor(
+    public routerOutlet: IonRouterOutlet,
+    private actionSheetCtrl: ActionSheetController
+  ) {}
+
+  async canDismiss() {
+    const actionSheet = await this.actionSheetCtrl.create({
+      header: 'Are you sure you want to discard your changes?',
+      buttons: [
+        {
+          text: 'Discard Changes',
+          role: 'destructive'
+        },
+        {
+          text: 'Keep Editing',
+          role: 'cancel'
+        }
+      ]
+    });
+    
+    await actionSheet.present();
+
+    const { role } = await actionSheet.onDidDismiss();
+    
+    if (role === 'destructive') {
+      return true;
+    }
+
+    return false;
+  }
 }
 ```
 
@@ -493,7 +560,6 @@ async presentModal() {
 
 In Angular, the CSS of a specific page is scoped only to elements of that page. Even though the Modal can be presented from within a page, the `ion-modal` element is appended outside of the current page. This means that any custom styles need to go in a global stylesheet file. In an Ionic Angular starter this can be the `src/global.scss` file or you can register a new global style file by [adding to the `styles` build option in `angular.json`](https://angular.io/guide/workspace-config#style-script-config).
 
-
 </TabItem>
 
 
@@ -502,36 +568,73 @@ In Angular, the CSS of a specific page is scoped only to elements of that page. 
 ### Inline Modal
 
 ```html
-<!-- Default -->
-<ion-modal is-open="true">
-  <ion-content>Modal Content</ion-content>
-</ion-modal>
-
-<!-- Use a trigger -->
-<ion-button id="trigger-button">Click to open modal</ion-button>
-<ion-modal trigger="trigger-button">
-  <ion-content>Modal Content</ion-content>
-</ion-modal>
-
-<!-- Sheet Modal -->
-<ion-modal is-open="true" id="sheet-modal">
-  <ion-content>Modal Content</ion-content>
-</ion-modal>
-
-<!-- Card Modal -->
-<ion-modal is-open="true" id="card-modal">
-  <ion-content>Modal Content</ion-content>
-</ion-modal>
+<ion-app>
+  <!-- Default -->
+  <ion-modal is-open="true">
+    <ion-content>Modal Content</ion-content>
+  </ion-modal>
+  
+  <!-- Use a trigger -->
+  <ion-button id="trigger-button">Click to open modal</ion-button>
+  <ion-modal trigger="trigger-button">
+    <ion-content>Modal Content</ion-content>
+  </ion-modal>
+  
+  <!-- Sheet Modal -->
+  <ion-modal is-open="true" id="sheet-modal">
+    <ion-content>Modal Content</ion-content>
+  </ion-modal>
+  
+  <!-- Card Modal -->
+  <ion-modal is-open="true" id="card-modal">
+    <ion-content>Modal Content</ion-content>
+  </ion-modal>
+  
+  <!-- Require Action Sheet confirmation before dismissing -->
+  <ion-modal is-open="true" id="can-dismiss-modal">
+    <ion-content>Modal Content</ion-content>
+  </ion-modal>
+</ion-app>
 
 <script>
   const sheetModal = document.querySelector('#sheet-modal');
   const cardModal = document.querySelector('#sheet-modal');
+  const canDismissModal = document.querySelector('#can-dismiss-modal');
+  const app = document.querySelector('ion-app');
 
   sheetModal.breakpoints = [0.1, 0.5, 1];
   sheetModal.initialBreakpoint = 0.5;
   
   cardModal.swipeToClose = true;
   cardModal.presentingElement = document.querySelector('ion-app');
+  
+  canDismissModal.canDismiss = async () => {
+    const actionSheet = document.createElement('ion-action-sheet');
+    
+    actionSheet.header = 'Are you sure you want to discard your changes?';
+    actionSheet.buttons = [
+      {
+        text: 'Discard Changes',
+        role: 'destructive'
+      },
+      {
+        text: 'Keep Editing',
+        role: 'cancel'
+      }
+    ];
+    
+    app.appendChild(actionSheet);
+    
+    await actionSheet.present();
+            
+    const { role } = await actionSheet.onDidDismiss();
+    
+    if (role === 'destructive') {
+      return true;
+    }
+    
+    return false;    
+  }
 </script>
 ```
 
@@ -684,8 +787,38 @@ interface Props {
 
 import React from 'react';
 import AppReactComponent from './AppReactComponent';
-import { IonModal, IonContent, IonButton } from '@ionic/react';
+import { IonModal, IonContent, IonButton, useIonActionSheet } from '@ionic/react';
 export const ModalExample: React.FC<Props> = ({ router }) => {
+  const [present, dismiss] = useIonActionSheet();
+
+  const canDismiss = () => {
+    return new Promise(async (resolve) => {
+      await present({
+        header: 'Are you sure you want to discard your changes?',
+        buttons: [
+          {
+            text: 'Discard Changes',
+            role: 'destructive'
+          },
+          {
+            text: 'Keep Editing',
+            role: 'cancel'
+          }
+        ],
+        onDidDismiss: (ev: CustomEvent) => {
+            const role = ev.detail.role;
+            
+            if (role === 'destructive') {
+              resolve(true);
+            }
+            
+            resolve(false);
+          }
+        });
+      });
+    });
+  }
+
   return (
     <>
       {/* Default */}
@@ -720,6 +853,11 @@ export const ModalExample: React.FC<Props> = ({ router }) => {
       {/* Passing Props */}
       <IonModal isOpen={true}>
         <AppReactComponent title="Ionic"></AppReactComponent>
+      </IonModal>
+      
+      {/* Require Action Sheet confirmation before dismissing */}
+      <IonModal isOpen={true} canDismiss={canDismiss}>
+        <IonContent>Modal Content</IonContent>
       </IonModal>
     </>
   );
@@ -928,7 +1066,6 @@ const Home: React.FC = () => {
 
 ```
 
-
 </TabItem>
 
 
@@ -938,6 +1075,7 @@ const Home: React.FC = () => {
 
 ```tsx
 import { Component, Element, h } from '@stencil/core';
+import { actionSheetController } from '@ionic/core';
 
 @Component({
   tag: 'modal-example',
@@ -948,6 +1086,32 @@ export class ModalExample {
   
   componentDidLoad() {
     this.routerOutlet = this.el.closest('ion-router-outlet');
+  }
+  
+  async canDismiss() {
+    const actionSheet = await actionSheetController.create({
+      header: 'Are you sure you want to discard your changes?',
+      buttons: [
+        {
+          text: 'Discard Changes',
+          role: 'destructive'
+        },
+        {
+          text: 'Keep Editing',
+          role: 'cancel'
+        }
+      ]
+    });
+    
+    await actionSheet.present();
+    
+    const { role } = await actionSheet.onDidDismiss();
+    
+    if (role === 'destructive') {
+      return true;
+    }
+    
+    return false;
   }
   
   render() {
@@ -985,6 +1149,11 @@ export class ModalExample {
         {/* Passing Props */}
         <ion-modal isOpen={true}>
           <app-stencil-component title="Ionic"></app-stencil-component>
+        </ion-modal>
+        
+        {/* Require Action Sheet confirmation before dismissing */}
+        <ion-modal isOpen={true} canDismiss={() => this.canDismiss()}>
+          <ion-content>Modal Content</ion-content>
         </ion-modal>
       </div>
     )
@@ -1201,7 +1370,6 @@ export class ModalExample {
 }
 ```
 
-
 </TabItem>
 
 
@@ -1244,13 +1412,50 @@ export class ModalExample {
   <app-vue-component title="Ionic"></app-vue-component>
 </ion-modal>
 
+<!-- Require Action Sheet confirmation before dismissing -->
+<ion-modal
+  :is-open="true"
+  :can-dismiss="canDismiss"
+>
+  <ion-content>Modal Content</ion-content>
+</ion-modal>
+
 <script>
   import { IonModal, IonButton, IonContent } from '@ionic/vue';
   import { defineComponent } from 'vue';
   import AppVueComponent from './AppVueComponent.vue'
   
   export default defineComponent({
-    components: { IonModal, IonButton, IonContent, AppVueComponent }
+    components: { IonModal, IonButton, IonContent, AppVueComponent },
+    setup() {
+      const canDismiss = async () => {
+        const actionSheet = await actionSheetController.create({
+          header: 'Are you sure you want to discard your changes?',
+          buttons: [
+            {
+              text: 'Discard Changes',
+              role: 'destructive'
+            },
+            {
+              text: 'Keep Editing',
+              role: 'cancel'
+            }
+          ]
+        });
+        
+        await actionSheet.present();
+        
+        const { role } = await actionSheet.onDidDismiss();
+        
+        if (role === 'destructive') {
+          return true;
+        }
+        
+        return false;
+      };
+      
+      return { canDismiss }
+    }
   });
 </script>
 ```
