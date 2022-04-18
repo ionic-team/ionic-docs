@@ -198,3 +198,128 @@ document.addEventListener('deviceready', () => {
     .catch((e) => console.log('Error occurred while taking a picture', e));
 });
 ```
+## React + SQLite. 
+
+Simple working component example of Ionic+React App for Android + iOS
+
+import React from 'react'
+import { withRouter } from "react-router-dom";
+
+import { SQLite } from "@awesome-cordova-plugins/sqlite";
+
+class Play extends React.Component {
+    constructor(props) {
+        super();
+        this.history=props.history;
+    }
+    async componentDidMount() {
+
+        try {
+
+                console.log('=== ECHO ');
+                window.alert('=== ECHO ');
+                console.log(SQLite)
+
+                console.log('=== SQL0')
+                window.alert('=== SQL0')
+
+                const del = await SQLite.deleteDatabase({
+                    name: 'data.db',
+                    location: 'default'
+                })
+                window.alert('=== del = ' + JSON.stringify(del) )
+
+                const db = await SQLite.create({
+                        name: 'data.db',
+                        location: 'default'
+                    })
+
+                console.log('=== db create = ' + JSON.stringify(db) )
+                window.alert('=== db create = ' + JSON.stringify(db) )
+
+                const ret1 = await db.executeSql('CREATE table dance_moves(name VARCHAR(32))', [])
+                    .then((xx) => {
+                        window.alert('=== Executed SQL CREATE' + JSON.stringify(xx) )
+                        console.log('Executed SQL CREATE ')
+                    })
+                    .catch(e => {
+                        window.alert('=== ERR1 CREATE ' + JSON.stringify(e) )
+                        console.log(e)
+                    });
+
+
+
+                const ret20 = await db.executeSql("INSERT INTO dance_moves (name) VALUES('Bud 111 ')", [])
+                .then((xx) => {
+                    window.alert('=== Executed SQL INSERT' + JSON.stringify(xx) )
+                    console.log('Executed SQL')
+                })
+                .catch(e => {
+                    window.alert('=== ERR1 INSERT ' + JSON.stringify(e) )
+                    console.log(e)
+                });
+
+                const ret21 = await db.executeSql("INSERT INTO dance_moves (name) VALUES('Bud 222')", [])
+                .then((xx) => {
+                    window.alert('=== Executed SQL INSERT' + JSON.stringify(xx) )
+                    console.log('Executed SQL')
+                })
+                .catch(e => {
+                    window.alert('=== ERR1 INSERT ' + JSON.stringify(e) )
+                    console.log(e)
+                });
+
+                const ret22 = await db.executeSql("SELECT name FROM dance_moves", [])
+                .then((res) => {
+                    window.alert('=== Executed SQL SELECT ' + JSON.stringify(res) )
+                    console.log('Executed SQL SELECT ')
+
+                    let items = [];
+                    if (res.rows.length > 0) {
+                        for (var i = 0; i < res.rows.length; i++) {
+                            items.push({
+                                name: res.rows.item(i).name,
+                                artist_name: res.rows.item(i).name,
+                                song_name: res.rows.item(i).name
+                            });
+                        }
+                    }
+
+                    return items;
+
+                })
+                .catch(e => {
+                    window.alert('=== ERR1 SELECT ' + JSON.stringify(e) )
+                    console.log(e)
+                });
+
+
+                    window.alert('=== ret22                = ' + ret22.toString() )
+                    window.alert('=== ret22 JSON.stringify = ' + JSON.stringify(ret22) )
+
+
+        } catch (err) {
+            window.alert("=== errTry = " + err.message)
+            return false;
+        }
+
+
+
+    }
+
+
+    render() {
+        return (
+            <>
+
+                <div>class Play</div>
+
+            </>
+
+        )
+    }
+}
+
+export default   withRouter(Play)
+
+
