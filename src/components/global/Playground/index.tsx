@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
 import './playground.css';
 import { EditorOptions, openAngularEditor, openHtmlEditor, openReactEditor, openVueEditor } from './stackblitz.utils';
 import { Mode, UsageTarget } from './playground.types';
@@ -46,7 +47,7 @@ export default function Playground({
   code,
   title,
   description,
-  source,
+  src,
   size = 'small',
 }: {
   code: { [key in UsageTarget]?: () => {} };
@@ -91,8 +92,8 @@ export default function Playground({
   const isIOS = mode === Mode.iOS;
   const isMD = mode === Mode.MD;
 
-  const sourceiOS = `${source}?ionic:mode=${Mode.iOS}`;
-  const sourceMD = `${source}?ionic:mode=${Mode.MD}`;
+  const sourceiOS = useBaseUrl(`${src}?ionic:mode=${Mode.iOS}`);
+  const sourceMD = useBaseUrl(`${src}?ionic:mode=${Mode.MD}`);
 
   function copySourceCode() {
     const copyButton = codeRef.current.querySelector('button');
