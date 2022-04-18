@@ -1,4 +1,14 @@
-# Development Tips
+---
+title: Development Tips
+---
+
+<head>
+  <title>App Development Tips: How to Resolve Permission Errors and Issues</title>
+  <meta
+    name="description"
+    content="If errors occur, npm may need to be set up to operate without elevated permissions. Read our Ionic app Development Tips for more on resolving permission issues."
+  />
+</head>
 
 ## Resolving Permission Errors
 

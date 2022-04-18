@@ -1,4 +1,14 @@
-# Troubleshooting
+---
+title: Troubleshooting
+---
+
+<head>
+  <title>Ionic Troubleshooting Guide: Common Vue App Development Issues</title>
+  <meta
+    name="description"
+    content="This troubleshooting guide covers some of the more common issues you may run into when developing apps with Ionic Vue. Read to learn more about troubleshooting."
+  />
+</head>
 
 This guide covers some of the more common issues you may run into when developing with Ionic Vue.
 

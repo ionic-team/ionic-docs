@@ -1,8 +1,15 @@
 ---
+title: Core Concepts
 sidebar_label: Fundamentals
 ---
 
-# Core Concepts
+<head>
+  <title>App Development Core Concepts and Tools - Ionic Framework API</title>
+  <meta
+    name="description"
+    content="For those new to Ionic app development, a high-level understanding of the core concepts and tools behind the project helps. Read to learn more about Ionic API."
+  />
+</head>
 
 For those completely new to Ionic app development, it can be helpful to get a high-level understanding of the core philosophy, concepts, and tools behind the project. Before diving into complex topics, we'll cover the basics of what Ionic Framework is, and how it works.
 

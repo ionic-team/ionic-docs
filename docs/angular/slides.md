@@ -308,7 +308,7 @@ export class SlidesExample {
 
   constructor() {}
   setSwiperInstance(swiper: any) {
-    this.slides = ev;
+    this.slides = swiper;
   }
 }
 ```

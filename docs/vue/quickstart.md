@@ -111,7 +111,7 @@ Let's break it down, starting with the first group of imports.
 import { IonApp, IonRouterOutlet } from '@ionic/vue';
 ```
 
-To use a component in Vue, you must first import it. So for Ionic Framework, this means anytime we want to use a Button or a Card, it must be added to our imports. In the case of our `App` component, we are using `IonApp` and `IonRouterOutlet`. You can also register components globally if you find yourself importing the same components repeatedly. This comes with performance tradeoffs that we cover in [Optimizing Your App](#optimizing-your-app).
+To use a component in Vue, you must first import it. So for Ionic Framework, this means anytime we want to use a Button or a Card, it must be added to our imports. In the case of our `App` component, we are using `IonApp` and `IonRouterOutlet`. You can also register components globally if you find yourself importing the same components repeatedly. This comes with performance tradeoffs that we cover in [Optimizing Your Build](#optimizing-your-build).
 
 From there, let's look at the template.
 

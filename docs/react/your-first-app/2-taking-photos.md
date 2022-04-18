@@ -1,8 +1,15 @@
 ---
+title: Taking Photos with the Camera
 sidebar_label: Taking Photos
 ---
 
-# Taking Photos with the Camera
+<head>
+  <title>Take Photos From The Camera on React Apps - Ionic Documentation</title>
+  <meta
+    name="description"
+    content="To take photos from the device's camera on a React app, begin by building it for the web, then make some small tweaks for mobile use on iOS and Android devices."
+  />
+</head>
 
 Now for the fun part - adding the ability to take photos with the device’s camera using the Capacitor [Camera API](https://capacitor.ionicframework.com/docs/apis/camera). We’ll begin with building it for the web, then make some small tweaks to make it work on mobile (iOS and Android).
 

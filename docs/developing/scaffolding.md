@@ -1,4 +1,14 @@
-# Scaffolding
+---
+title: Scaffolding
+---
+
+<head>
+  <title>App Scaffolding | Create Scaffolding for Ionic Web Apps</title>
+  <meta
+    name="description"
+    content="Once an app is created by the Ionic CLI, the next step is to start building out features and components. Learn how to create scaffolding for Ionic web apps."
+  />
+</head>
 
 Once an app is created by the Ionic CLI, the next step is to start building out features and components. The majority of the app will be developed in the `src/app/` directory.
 

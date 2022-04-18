@@ -1,4 +1,14 @@
-# Runtime Issues
+---
+title: Runtime Issues
+---
+
+<head>
+  <title>Solve App Runtime Issues: Blank App, Plugins Not Working, etc.</title>
+  <meta
+    name="description"
+    content="There are many causes of app runtime issues. Read how to solve issues such as a blank app, plugins not working, Angular change detection, and more with Ionic."
+  />
+</head>
 
 ## Blank App
 

@@ -1,8 +1,15 @@
 ---
+title: Loading Photos from the Filesystem
 sidebar_label: Loading Photos
 ---
 
-# Loading Photos from the Filesystem
+<head>
+  <title>Loading Photos from the Filesystem Using A Key-Value Store</title>
+  <meta
+    name="description"
+    content="We’ve implemented photo taking and saving to the filesystem, now learn how Ionic leverages Capacitor Storage API for loading our photos in a key-value store."
+  />
+</head>
 
 We’ve implemented photo taking and saving to the filesystem. There’s one last piece of functionality missing: the photos are stored in the filesystem, but we need a way to save pointers to each file so that they can be displayed again in the photo gallery.
 

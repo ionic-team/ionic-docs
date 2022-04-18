@@ -1,4 +1,6 @@
 const path = require('path');
+const prismic = require('@prismicio/client');
+const fetch = require('node-fetch');
 
 const BASE_URL = '/docs';
 
@@ -258,6 +260,23 @@ module.exports = {
     '@docusaurus/plugin-debug',
     '@docusaurus/plugin-sitemap',
     '@ionic-internal/docusaurus-plugin-tag-manager',
+    function (context, options) {
+      return {
+        name: 'ionic-docs-ads',
+        async loadContent() {
+          const repoName = 'ionicframeworkcom';
+          const endpoint = prismic.getEndpoint(repoName);
+          const client = prismic.createClient(endpoint, {
+            fetch,
+          });
+
+          return await client.getByType('docs_ad');
+        },
+        async contentLoaded({ content, actions: { setGlobalData, addRoute } }) {
+          return setGlobalData({ prismicAds: content.results });
+        },
+      };
+    },
     require.resolve('./webpack.plugin.js')
   ],
   themes: [
