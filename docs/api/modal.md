@@ -1,8 +1,6 @@
 ---
 title: "ion-modal"
 hide_table_of_contents: true
-demoUrl: "/docs/demos/api/modal/index.html"
-demoSourceUrl: "https://github.com/ionic-team/ionic-docs/tree/main/static/demos/api/modal/index.html"
 ---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -40,23 +38,15 @@ A Modal is a dialog that appears on top of the app's content, and must be dismis
 
 There are two ways to use `ion-modal`: inline or via the `modalController`. Each method comes with different considerations, so be sure to use the approach that best fits your use case.
 
-## Inline Modals
+### Inline Modals
 
-`ion-modal` can be used by writing the component directly in your template. This reduces the number of handlers you need to wire up in order to present the modal. See [Usage](#usage) for an example of how to write a modal inline. 
+`ion-modal` can be used by writing the component directly in your template. This reduces the number of handlers you need to wire up in order to present the modal.
 
 When using `ion-modal` with Angular, React, or Vue, the component you pass in will be destroyed when the modal is dismissed. As this functionality is provided by the JavaScript framework, using `ion-modal` without a JavaScript framework will not destroy the component you passed in. If this is a needed functionality, we recommend using the `modalController` instead.
 
-### Angular 
+import ModalInline from '@site/static/usage/modal/inline/index.md';
 
-Since the component you passed in needs to be created when the modal is presented and destroyed when the modal is dismissed, we are unable to project the content using `<ng-content>` internally. Instead, we use `<ng-container>` which expects an `<ng-template>` to be passed in. As a result, when passing in your component you will need to wrap it in an `<ng-template>`:
-
-```html
-<ion-modal [isOpen]="isModalOpen">
-  <ng-template>
-    <app-modal-content></app-modal-content>
-  </ng-template>
-</ion-modal>
-```
+<ModalInline />
 
 ### When to use
 
@@ -64,9 +54,13 @@ Using a modal inline is useful when you do not want to explicitly wire up click 
 
 If you need fine grained control over when the modal is presented and dismissed, we recommend you use the `modalController`. 
 
-## Controller Modals
+### Controller Modals
 
-`ion-modal` can also be presented programmatically by using the `modalController` imported from Ionic Framework. This allows you to have complete control over when a modal is presented above and beyond the customization that inline modals give you. See [Usage](#usage) for an example of how to use the `modalController`.
+`ion-modal` can also be presented programmatically by using the `modalController` imported from Ionic Framework. This allows you to have complete control over when a modal is presented above and beyond the customization that inline modals give you.
+
+import ModalController from '@site/static/usage/modal/controller/index.md';
+
+<ModalController />
 
 ### When to use
 
