@@ -151,11 +151,7 @@ class DevicePreview extends HTMLElement {
     this.modeChanged();
   }
 
-  attributeChangedCallback(
-    name: string,
-    _previousValue: string,
-    _nextValue: string
-  ) {
+  attributeChangedCallback(name, _previousValue, _nextValue) {
     if (name === 'mode') {
       this.modeChanged();
     }

@@ -7,7 +7,6 @@ import { Mode, UsageTarget } from './playground.types';
 import useThemeContext from '@theme/hooks/useThemeContext';
 
 import Tippy from '@tippyjs/react';
-import { defineCustomElement } from './device-preview';
 import 'tippy.js/dist/tippy.css';
 
 const ControlButton = ({ isSelected, handleClick, title, label }) => {
@@ -54,6 +53,8 @@ export default function Playground({
 }: {
   code: { [key in UsageTarget]?: () => {} };
   title?: string;
+  src: string;
+  size: string;
   description?: string;
   devicePreview?: boolean;
 }) {
@@ -93,7 +94,7 @@ export default function Playground({
   }, [isDarkTheme]);
 
   useEffect(() => {
-    defineCustomElement();
+    import('./device-preview.js').then((comp) => comp.defineCustomElement());
   });
 
   const isIOS = mode === Mode.iOS;
