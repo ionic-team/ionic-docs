@@ -1,12 +1,14 @@
 ```ts
+import { Component } from '@angular/core';
+
 import { ModalController } from '@ionic/angular';
 import { ModalExampleComponent } from './modal-example.component';
 
 @Component({
-  selector: 'app-example',
-  template: `<ion-button (click)="openModal()">Open Modal</ion-button>`,
+  selector: 'app-root',
+  templateUrl: 'app.component.html',
 })
-export class ExampleComponent {
+export class AppComponent {
   constructor(private modalCtrl: ModalController) {}
 
   async openModal() {
