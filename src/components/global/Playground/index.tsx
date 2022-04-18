@@ -38,6 +38,18 @@ const CodeBlockButton = ({ language, usageTarget, setUsageTarget, setCodeExpande
   );
 };
 
+type MdxContent = () => {};
+
+interface OutputTargetOptions {
+  files: {
+    [key: string]: MdxContent;
+  };
+  angularModuleOptions?: {
+    imports: string[];
+    declarations?: string[];
+  };
+}
+
 /**
  * @param code The code snippets for each supported framework target.
  * @param title Optional title of the generated playground example. Specify to customize the Stackblitz title.
@@ -49,10 +61,12 @@ export default function Playground({
   description,
   src,
   size = 'small',
+  id,
 }: {
-  code: { [key in UsageTarget]?: () => {} };
+  code: { [key in UsageTarget]?: MdxContent | OutputTargetOptions };
   title?: string;
   description?: string;
+  id?: string;
 }) {
   if (!code || Object.keys(code).length === 0) {
     console.warn('No code usage examples provided for this Playground example.');
@@ -100,14 +114,28 @@ export default function Playground({
     copyButton.click();
   }
 
+  const hasOutputTargetOptions = codeSnippets[usageTarget] && typeof codeSnippets[usageTarget].$$typeof !== 'symbol';
+
   function openEditor(event) {
-    // codeSnippets are React components, so we need to get their rendered text
-    // using outerText will preserve line breaks for formatting in Stackblitz editor
-    const codeBlock = codeRef.current.querySelector('code').outerText;
     const editorOptions: EditorOptions = {
       title,
       description,
     };
+
+    let codeBlock;
+    if (!hasOutputTargetOptions) {
+      // codeSnippets are React components, so we need to get their rendered text
+      // using outerText will preserve line breaks for formatting in Stackblitz editor
+      codeBlock = codeRef.current.querySelector('code').outerText;
+    } else {
+      editorOptions.angularModuleOptions = (code[usageTarget] as OutputTargetOptions).angularModuleOptions;
+
+      editorOptions.files = Object.keys(codeSnippets[usageTarget])
+        .map((fileName) => ({
+          [fileName]: document.querySelector<HTMLElement>(`#${getCodeSnippetId(fileName)} code`).outerText,
+        }))
+        .reduce((acc, curr) => ({ ...acc, ...curr }), {});
+    }
 
     switch (usageTarget) {
       case UsageTarget.Angular:
@@ -129,10 +157,41 @@ export default function Playground({
     const codeSnippets = {};
     Object.keys(code).forEach((key) => {
       // Instantiates the React component from the MDX content.
-      codeSnippets[key] = code[key]({});
+      if (typeof code[key] === 'function') {
+        codeSnippets[key] = code[key]({});
+      } else if (typeof code[key] === 'object') {
+        const fileSnippets = {};
+        for (const fileName of Object.keys(code[key].files)) {
+          fileSnippets[`${fileName}`] = code[key].files[fileName]({});
+        }
+        codeSnippets[key] = fileSnippets;
+      }
     });
     setCodeSnippets(codeSnippets);
   }, []);
+
+  function getCodeSnippetId(fileName: string) {
+    let fileNameId = fileName;
+    // replace all non-alphanumeric characters with underscores
+    fileNameId = fileNameId.replace(/[^a-zA-Z0-9]/g, '_');
+    return `playground_${id}_${fileNameId}`;
+  }
+
+  function renderCodeSnippets() {
+    if (codeSnippets[usageTarget]) {
+      if (typeof codeSnippets[usageTarget].$$typeof === 'symbol') {
+        return codeSnippets[usageTarget];
+      }
+      return Object.keys(codeSnippets[usageTarget]).map((fileName) => {
+        return (
+          <div key={fileName} id={getCodeSnippetId(fileName)}>
+            <h4>{fileName}</h4>
+            {codeSnippets[usageTarget][fileName]}
+          </div>
+        );
+      });
+    }
+  }
 
   return (
     <div className="playground">
@@ -250,7 +309,7 @@ export default function Playground({
         className={'playground__code-block ' + (codeExpanded ? 'playground__code-block--expanded' : '')}
         aria-expanded={codeExpanded ? 'true' : 'false'}
       >
-        {codeSnippets[usageTarget]}
+        {renderCodeSnippets()}
       </div>
     </div>
   );
@@ -264,16 +323,16 @@ const FRAME_SIZES = {
   xlarge: '800px',
 };
 
-const waitForFrame = (frame: HTMLElement) => {
+const waitForFrame = (frame: HTMLIFrameElement) => {
   if (isFrameReady(frame)) return Promise.resolve();
 
-  return new Promise((resolve) => {
+  return new Promise<void>((resolve) => {
     frame.contentWindow.addEventListener('demoReady', () => {
       resolve();
     });
   });
 };
 
-const isFrameReady = (frame: HTMLElement) => {
-  return frame.contentWindow.demoReady === true;
+const isFrameReady = (frame: HTMLIFrameElement) => {
+  return (frame.contentWindow as any).demoReady === true;
 };
