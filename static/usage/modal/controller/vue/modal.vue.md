@@ -1,4 +1,4 @@
-```vue
+```html
 <template>
   <ion-header>
     <ion-toolbar>
@@ -10,17 +10,17 @@
 </template>
 
 <script>
-import { IonContent, IonHeader, IonTitle, IonToolbar, IonButton, modalController } from '@ionic/vue';
-import { defineComponent } from 'vue';
+  import { IonContent, IonHeader, IonTitle, IonToolbar, IonButton, modalController } from '@ionic/vue';
+  import { defineComponent } from 'vue';
 
-export default defineComponent({
-  name: 'Modal',
-  components: { IonContent, IonHeader, IonTitle, IonToolbar, IonButton },
-  methods: {
-    dismiss() {
-      return modalController.dismiss();
+  export default defineComponent({
+    name: 'Modal',
+    components: { IonContent, IonHeader, IonTitle, IonToolbar, IonButton },
+    methods: {
+      dismiss() {
+        return modalController.dismiss();
+      },
     },
-  },
-});
+  });
 </script>
 ```

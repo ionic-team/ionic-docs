@@ -1,4 +1,4 @@
-```vue
+```html
 <template>
   <ion-page>
     <ion-header>
@@ -13,19 +13,19 @@
 </template>
 
 <script>
-import { IonButton, IonContent, IonPage, IonHeader, IonToolbar, IonTitle modalController } from '@ionic/vue';
-import Modal from './Modal.vue';
+  import { IonButton, IonContent, IonPage, IonHeader, IonToolbar, IonTitle modalController } from '@ionic/vue';
+  import Modal from './Modal.vue';
 
-export default {
-  components: { IonButton, IonContent, IonPage, IonHeader, IonToolbar, IonTitle },
-  methods: {
-    async openModal() {
-      const modal = await modalController.create({
-        component: Modal,
-      });
-      return modal.present();
+  export default {
+    components: { IonButton, IonContent, IonPage, IonHeader, IonToolbar, IonTitle },
+    methods: {
+      async openModal() {
+        const modal = await modalController.create({
+          component: Modal,
+        });
+        return modal.present();
+      },
     },
-  },
-};
+  };
 </script>
 ```
