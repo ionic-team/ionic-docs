@@ -7,6 +7,7 @@ import { Mode, UsageTarget } from './playground.types';
 import useThemeContext from '@theme/hooks/useThemeContext';
 
 import Tippy from '@tippyjs/react';
+import { defineCustomElement } from './device-preview';
 import 'tippy.js/dist/tippy.css';
 
 const ControlButton = ({ isSelected, handleClick, title, label }) => {
@@ -49,10 +50,12 @@ export default function Playground({
   description,
   src,
   size = 'small',
+  devicePreview,
 }: {
   code: { [key in UsageTarget]?: () => {} };
   title?: string;
   description?: string;
+  devicePreview?: boolean;
 }) {
   if (!code || Object.keys(code).length === 0) {
     console.warn('No code usage examples provided for this Playground example.');
@@ -88,6 +91,10 @@ export default function Playground({
       frameMD.current.contentWindow.postMessage(message);
     }
   }, [isDarkTheme]);
+
+  useEffect(() => {
+    defineCustomElement();
+  });
 
   const isIOS = mode === Mode.iOS;
   const isMD = mode === Mode.MD;
@@ -241,8 +248,33 @@ export default function Playground({
             show the other. This is done to avoid flickering
             and doing unnecessary reloads when switching modes.
           */}
-          <iframe height={frameSize} className={!isIOS ? 'frame-hidden' : ''} ref={frameiOS} src={sourceiOS}></iframe>
-          <iframe height={frameSize} className={!isMD ? 'frame-hidden' : ''} ref={frameMD} src={sourceMD}></iframe>
+          {devicePreview
+            ? [
+                <div className={!isIOS ? 'frame-hidden' : ''}>
+                  <device-preview mode="ios">
+                    <iframe height={frameSize} ref={frameiOS} src={sourceiOS}></iframe>
+                  </device-preview>
+                </div>,
+                <div className={!isMD ? 'frame-hidden' : ''}>
+                  <device-preview mode="md">
+                    <iframe height={frameSize} ref={frameMD} src={sourceMD}></iframe>
+                  </device-preview>
+                </div>,
+              ]
+            : [
+                <iframe
+                  height={frameSize}
+                  className={!isIOS ? 'frame-hidden' : ''}
+                  ref={frameiOS}
+                  src={sourceiOS}
+                ></iframe>,
+                <iframe
+                  height={frameSize}
+                  className={!isMD ? 'frame-hidden' : ''}
+                  ref={frameMD}
+                  src={sourceMD}
+                ></iframe>,
+              ]}
         </div>
       </div>
       <div

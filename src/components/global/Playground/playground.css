@@ -188,7 +188,7 @@
   width: 100%;
 }
 
-.playground iframe.frame-hidden {
+.playground .frame-hidden {
   display: none;
 }
 
