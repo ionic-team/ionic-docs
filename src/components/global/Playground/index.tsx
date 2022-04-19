@@ -118,6 +118,9 @@ export default function Playground({
   const sourceMD = useBaseUrl(`${src}?ionic:mode=${Mode.MD}`);
 
   function copySourceCode() {
+    if (hasOutputTargetOptions) {
+      return;
+    }
     const copyButton = codeRef.current.querySelector('button');
     copyButton.click();
   }
@@ -261,8 +264,19 @@ export default function Playground({
                 </svg>
               </a>
             </Tippy>
-            <Tippy theme="playground" arrow={false} placement="bottom" content="Copy source code">
-              <button className="playground__icon-button playground__icon-button--primary" onClick={copySourceCode}>
+            <Tippy
+              theme="playground"
+              arrow={false}
+              placement="bottom"
+              content={hasOutputTargetOptions ? 'Unavailable in multi-file examples' : 'Copy source code'}
+            >
+              <button
+                className={`playground__icon-button playground__icon-button--primary ${
+                  hasOutputTargetOptions ? 'playground__icon-button--disabled' : ''
+                }`}
+                aria-disabled={hasOutputTargetOptions}
+                onClick={copySourceCode}
+              >
                 <svg
                   aria-hidden="true"
                   xmlns="http://www.w3.org/2000/svg"
