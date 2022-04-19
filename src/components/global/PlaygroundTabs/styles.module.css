@@ -1,0 +1,58 @@
+/**
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+ .tabNav {
+  position: relative;
+}
+
+.tabList {
+ margin-bottom: var(--ifm-leading);
+}
+
+.tabItem {
+ margin-top: 0 !important;
+}
+
+.tabIcon {
+ display: inline-flex;
+ padding: 0 8px;
+}
+
+.tabNavItemHidden {
+ display: none;
+}
+
+.tabNavItem {
+ position: sticky;
+ /* Places the nav item above the tab item  */
+ z-index: 10;
+ top: 0;
+ right: 0;
+ height: 40px;
+ width: 32px;
+ display: flex;
+ align-items: center;
+ justify-content: flex-end;
+ background: linear-gradient(90deg, rgba(233, 237, 243, 0.9), var(--c-indigo-30));
+}
+
+.tabNavItemLeft {
+ left: 0;
+ right: initial;
+}
+
+.tabNavButton {
+ appearance: none;
+ background: transparent;
+ border: 0;
+ cursor: pointer;
+ color: var(--c-carbon-100);
+}
+
+.tabs__nav-button--hidden {
+ display: none;
+}
