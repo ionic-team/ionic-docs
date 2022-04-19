@@ -107,15 +107,11 @@ function TabsComponent(props: Props): JSX.Element {
   };
 
   useEffect(() => {
-    setTabNavVisible(tabsNavEl.current?.scrollWidth === tabsNavEl.current?.offsetWidth);
+    setTabNavVisible(tabsNavEl.current?.scrollWidth > tabsNavEl.current?.offsetWidth);
     setTabNavDisabled(isTabNavButtonDisabled());
   }, []);
 
   const isTabNavButtonDisabled = () => {
-    console.log('tabsNavEl', tabsNavEl);
-    console.log(
-      `${tabsNavEl.current?.offsetWidth} + ${tabsNavEl.current?.scrollLeft} >= ${tabsNavEl.current?.scrollWidth}`
-    );
     return tabsNavEl.current?.offsetWidth + tabsNavEl.current?.scrollLeft >= tabsNavEl.current?.scrollWidth;
   };
 
@@ -154,34 +150,30 @@ function TabsComponent(props: Props): JSX.Element {
               {label ?? value}
             </li>
           ))}
-          <div className={clsx('tabs__nav-item', styles.tabNavItem)}>
-            <button
-              className={clsx(
-                'tabs__nav-button',
-                {
-                  'tabs__nav-button--hidden': tabNavVisible,
-                },
-                styles.tabNavButton
-              )}
-              onClick={() => {
-                tabsNavEl.current.scrollTo({
-                  left: tabsNavEl.current.scrollLeft + 150,
-                  behavior: 'smooth',
-                });
-              }}
-            >
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 512 512">
-                <polyline
-                  points="184 112 328 256 184 400"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="48px"
-                />
-              </svg>
-            </button>
-          </div>
+          {tabNavVisible && (
+            <div className={clsx('tabs__nav-item', styles.tabNavItem)}>
+              <button
+                className={clsx('tabs__nav-button', styles.tabNavButton)}
+                onClick={() => {
+                  tabsNavEl.current.scrollTo({
+                    left: tabsNavEl.current.scrollLeft + 150,
+                    behavior: 'smooth',
+                  });
+                }}
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 512 512">
+                  <polyline
+                    points="184 112 328 256 184 400"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="48px"
+                  />
+                </svg>
+              </button>
+            </div>
+          )}
         </ul>
       </div>
 
