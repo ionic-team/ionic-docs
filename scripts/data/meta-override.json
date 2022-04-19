@@ -97,7 +97,7 @@
       "description": "ion-item elements for iOS/Android contain text, icons, images, and other custom elements. They're placed in a list and can be input, deleted, edited, and more."
     },
     "ion-item-option": {
-      "title": "ion-item-options: Option Button Components for Ionic Apps",
+      "title": "ion-item-option: Option Button and Properties for Ionic Apps",
       "description": "ion-item-option is the option button for an ion-item-sliding and must be placed inside of an <ion-item-options>. Read to learn more about properties."
     },
     "ion-item-options": {
@@ -333,6 +333,10 @@
     "cordova-emulate": {
       "title": "Emulate Android and iOS Apps with Ionic Cordova Emulator",
       "description": "Emulate an Ionic project on a simulator/emulator for Android and iOS apps. Build your app and deploy it to devices and emulators using Ionic Cordova Emulator."
+    },
+    "cordova-requirements": {
+      "title": "Cordova Requirements for Apps on iOS and Android | Ionic",
+      "description": "The Cordova Requirements option checks and prints out all the requirements for Ionic apps on iOS and Android platforms. Read our documentation to learn more."
     },
     "cordova-resources": {
       "title": "Splash Screen Image Icon Generator | Generate Cordova Resources",
@@ -640,6 +644,10 @@
       "title": "Health Kit | HealthKit Plugin for iOS Apps | Ionic Documentation",
       "description": "Health Kit lets you read data from and write data to the iOS 8+ HealthKit framework. The plugin shows any data saved in the Health app and on other iOS apps."
     },
+    "header-color": {
+      "title": "Header Color Plugin | Change The Header Color on Ionic Apps",
+      "description": "Header color is the Cordova plugin to change the color of the header in Android Multitask View. Read to learn more about use and installation on Ionic apps."
+    },
     "ibeacon": {
       "title": "iBeacon: Cordova API Plugin for iOS and Android Devices",
       "description": "This iOS and Android device Cordova plugin provides functions for working with iBeacons. The plugin's API mimics the one exposed through the CLLocationManager."
@@ -660,11 +668,11 @@
       "title": "In-App Purchase: Cordova Plugin for iOS and Android Ionic Apps",
       "description": "This is a lightweight Cordova plugin for in-app purchases on iOS and Android devices using Ionic apps. Read to learn more about in-app purchases."
     },
-    "in-app-purchase-2": {
+    "in-app-review": {
       "title": "In App Review Plugin for iOS Devices | Ionic Framework Docs",
       "description": "The In App Review plugin uses the iOS class SKStore​Review​Controller to open the inApp review popup available since iOS 10.3. Read to learn more about usage."
     },
-    "in-app-review": {
+    "in-app-purchase-2": {
       "title": "In-App Purchase (IAP) 2: iOS, Android, Windows, macOS & Xbox Apps",
       "description": "In-App Purchase 2 lets users make purchases directly from iOS, Android, Windows, macOS, and Xbox devices. Read to learn more about Ionic apps and IAP usage."
     },
@@ -711,6 +719,10 @@
     "media-capture": {
       "title": "Media Capture | Native Ionic App Cordova Plugin for Media Capture",
       "description": "The Cordova Media Capture Plugin provides access to the device's audio, image, and video capture capabilities in Native Ionic apps. Read for more usage info."
+    },
+    "mobile-messaging": {
+      "title": "Mobile Messaging SDK for Android and iOS Apps | Ionic",
+      "description": "Mobile Messaging SDK is designed and developed to easily enable push notification channel in your mobile application. Read for more on use with Android and iOS."
     },
     "music-controls": {
       "title": "Music Controls - For Android, iOS, and Windows Device Apps",
@@ -792,6 +804,10 @@
       "title": "Screen Orientation Plugin to Set/Lock on Android, iOS, or Windows",
       "description": "Cordova Screen Orientation plugin sets/locks the screen in a common way. Read more on how to change screen orientation on Android, iOS, or Windows apps."
     },
+    "shake": {
+      "title": "cordova-plugin-shake for iOS Device Apps | Ionic",
+      "description": "The Cordova shake plugin handles the shake gesture on iOS device apps. Read to learn more about plugin use and installation with Ionic applications."
+    },
     "sign-in-with-apple": {
       "title": "Sign in With Apple: Login to Apps & Websites With Apple ID",
       "description": "Sign in with Apple makes it easy for users to sign in to your apps and websites using their Apple ID. Read to learn more about installation and usage."
@@ -819,6 +835,10 @@
     "sqlite": {
       "title": "SQLite | Install Cordova SQLite Plugin for iOS and Android Apps",
       "description": "Access SQLite databases on supported iOS, Android, macOS, and Windows devices by installing the Cordova SQLite Plugin for Ionic Framework Applications."
+    },
+    "sqlite-db-copy": {
+      "title": "SQLite Db Copy | Install SQLite Copy Database for Android and iOS",
+      "description": "Install the Cordova SQLite db copy plugin on Ionic apps. Learn about SQLite database copy capabilities on iOS and Android devices. Read for more information."
     },
     "sqlite-porter": {
       "title": "SQLite Porter: Plugin to Import to/Export from an SQLite Database",
@@ -871,6 +891,10 @@
     "youtube-video-player": {
       "title": "YouTube Video Player | Cordova Plugin for Native YouTube App",
       "description": "The Cordova YouTube Video Player Plugin on Ionic apps lets you play YouTube videos in the Native YouTube App. Read more about usage in Ionic Documentation."
+    },
+    "zbar": {
+      "title": "Zbar Scanner Plugin for 2D Barcodes - Install on iOS and Android",
+      "description": "The ZBar Scanner Plugin allows you to scan 2D barcodes. View our Zbar reader documentation for more information on how to install on iOS and Android devices."
     },
     "zoom": {
       "title": "Cordova Zoom Plugin: Zoom-SDK-Ionic for Native Ionic Apps",

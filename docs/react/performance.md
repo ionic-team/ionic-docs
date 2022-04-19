@@ -1,8 +1,15 @@
 ---
 sidebar_label: Performance
+title: React Performance
 ---
 
-# React Performance
+<head>
+  <title>Progressive Web Applications: What is a PWA - Ionic Documentation</title>
+  <meta
+    name="description"
+    content="What is a PWA? A Progressive Web Application uses modern web capabilities to deliver an app-like experience. Read our core concept documentation to learn more."
+  />
+</head>
 
 ## Loops with Ionic Components
 
