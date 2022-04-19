@@ -204,14 +204,14 @@
   overflow: hidden;
 }
 
-.playground .tabs-container > div {
-  margin-block-start: 0 !important;
-}
-
 .playground .tabs {
   background: var(--c-indigo-20);
 
   --ifm-tabs-spacing: 0;
+}
+
+.playground .tabs-nav {
+  margin-block-start: 0px !important;
 }
 
 .playground .tabs__item {

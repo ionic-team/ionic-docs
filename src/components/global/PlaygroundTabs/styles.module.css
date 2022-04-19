@@ -22,6 +22,10 @@
   padding: 0 8px;
 }
 
+.tabNavItemHidden {
+  display: none;
+}
+
 .tabNavItem {
   position: sticky;
   top: 0;
@@ -32,6 +36,11 @@
   align-items: center;
   justify-content: flex-end;
   background: linear-gradient(90deg, rgba(233, 237, 243, 0.9), var(--c-indigo-30));
+}
+
+.tabNavItemLeft {
+  left: 0;
+  right: initial;
 }
 
 .tabNavButton {

@@ -23,8 +23,8 @@ function isTabItem(comp: ReactElement): comp is ReactElement<TabItemProps & { ic
 
 function TabsComponent(props: Props): JSX.Element {
   const { lazy, block, defaultValue: defaultValueProp, values: valuesProp, groupId, className } = props;
-  const [tabNavVisible, setTabNavVisible] = useState(false);
-  const [tabNavDisabled, setTabNavDisabled] = useState(false);
+  const [leftNavVisible, setLeftNavVisible] = useState(false);
+  const [rightNavVisible, setRightNavVisible] = useState(false);
   const tabsNavEl = createRef<HTMLUListElement>();
   const children = React.Children.map(props.children, (child) => {
     if (isValidElement(child) && isTabItem(child)) {
@@ -107,13 +107,12 @@ function TabsComponent(props: Props): JSX.Element {
   };
 
   useEffect(() => {
-    setTabNavVisible(tabsNavEl.current?.scrollWidth > tabsNavEl.current?.offsetWidth);
-    setTabNavDisabled(isTabNavButtonDisabled());
+    setLeftNavVisible(tabsNavEl.current?.scrollLeft > 40);
+    setRightNavVisible(tabsNavEl.current?.scrollWidth > tabsNavEl.current?.offsetWidth);
   }, []);
 
-  const isTabNavButtonDisabled = () => {
-    return tabsNavEl.current?.offsetWidth + tabsNavEl.current?.scrollLeft >= tabsNavEl.current?.scrollWidth;
-  };
+  console.log('left nav visible -- ' + leftNavVisible);
+  console.log('right nav visible -- ' + rightNavVisible);
 
   return (
     <div className={clsx('tabs-container', styles.tabList)}>
@@ -129,7 +128,35 @@ function TabsComponent(props: Props): JSX.Element {
             },
             className
           )}
+          onScroll={() => {
+            setLeftNavVisible(tabsNavEl.current?.scrollLeft > 40);
+            setRightNavVisible(tabsNavEl.current?.scrollWidth > tabsNavEl.current?.offsetWidth);
+          }}
         >
+          {leftNavVisible && (
+            <div className={clsx('tabs__nav-item', styles.tabNavItem, styles.tabNavItemLeft)}>
+              <button
+                className={clsx('tabs__nav-button', styles.tabNavButton)}
+                onClick={() => {
+                  tabsNavEl.current.scrollTo({
+                    left: tabsNavEl.current.scrollLeft - 150,
+                    behavior: 'smooth',
+                  });
+                }}
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 512 512">
+                  <polyline
+                    points="328 112 184 256 328 400"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="48px"
+                  />
+                </svg>
+              </button>
+            </div>
+          )}
           {values.map(({ value, label, icon, attributes }) => (
             <li
               role="tab"
@@ -150,7 +177,7 @@ function TabsComponent(props: Props): JSX.Element {
               {label ?? value}
             </li>
           ))}
-          {tabNavVisible && (
+          {rightNavVisible && (
             <div className={clsx('tabs__nav-item', styles.tabNavItem)}>
               <button
                 className={clsx('tabs__nav-button', styles.tabNavButton)}
