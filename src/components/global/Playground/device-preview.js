@@ -123,6 +123,26 @@ class DevicePreview extends HTMLElement {
      height: 100%;
    }
 
+   @media only screen and (max-width: 600px) {
+    :host(.ios) .ios-notch,
+    :host(.md) .md-bar,
+    :host(.ios) figure::after {
+      display: none;
+    }
+
+    :host(.ios) figure,
+    :host(.md) figure {
+      border: 0;
+      border-radius: 0;
+      box-shadow: none;
+    }
+
+    :host(.ios) .content {
+      border-radius: 0;
+    }
+
+   }
+
  `;
 
       const _template = document.createElement('template');
