@@ -28,6 +28,8 @@
 
 .tabNavItem {
   position: sticky;
+  /* Places the nav item above the tab item  */
+  z-index: 10;
   top: 0;
   right: 0;
   height: 40px;
