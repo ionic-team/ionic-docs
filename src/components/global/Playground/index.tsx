@@ -251,8 +251,10 @@ export default function Playground({
               className="playground__tab-item"
               value={fileName}
               label={fileName}
-              icon={getFileIcon(fileName)}
               key={fileName}
+              {...{
+                icon: getFileIcon(fileName),
+              }}
             >
               {codeSnippets[usageTarget][fileName]}
             </TabItem>

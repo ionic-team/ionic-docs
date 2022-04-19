@@ -111,9 +111,6 @@ function TabsComponent(props: Props): JSX.Element {
     setRightNavVisible(tabsNavEl.current?.scrollWidth > tabsNavEl.current?.offsetWidth);
   }, []);
 
-  console.log('left nav visible -- ' + leftNavVisible);
-  console.log('right nav visible -- ' + rightNavVisible);
-
   return (
     <div className={clsx('tabs-container', styles.tabList)}>
       <div className={clsx('tabs-nav', styles.tabNav)}>
