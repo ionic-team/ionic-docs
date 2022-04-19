@@ -151,11 +151,16 @@
   transition: background .2s;
 }
 
+.playground__icon-button--disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
 .playground__icon-button--primary {
   stroke: var(--playground-btn-icon-color);
 }
 
-.playground__icon-button:hover {
+.playground__icon-button:not(.playground__icon-button--disabled):hover {
   background: var(--playground-btn-icon-hover-background);
 }
 
