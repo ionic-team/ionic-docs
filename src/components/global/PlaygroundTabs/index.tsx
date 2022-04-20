@@ -210,7 +210,7 @@ function TabsComponent(props: Props): JSX.Element {
           {children.map((tabItem, i) =>
             cloneElement(tabItem, {
               key: i,
-              hidden: tabItem.props.value !== selectedValue,
+              className: `${tabItem.props.className} ${tabItem.props.value !== selectedValue ? 'hidden' : ''}`,
             })
           )}
         </div>
