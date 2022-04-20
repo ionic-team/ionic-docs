@@ -66,8 +66,19 @@ export default function Playground({
   code: { [key in UsageTarget]?: MdxContent | OutputTargetOptions };
   title?: string;
   description?: string;
+  /**
+   * The absolute path to the playground demo.
+   * For example: `/usage/button/basic/demo.html`
+   */
   src?: string;
+  /**
+   * The height of the playground. Supports `xsmall`, `small`, `medium`, `large`, 'xlarge' or any string value.
+   */
   size: string;
+  /**
+   * The id of the playground. Required in multi-file playground examples to scope the code snippet
+   * blocks to the playground instance.
+   */
   id?: string;
 }) {
   if (!code || Object.keys(code).length === 0) {
