@@ -273,7 +273,11 @@ export default function Playground({
               theme="playground"
               arrow={false}
               placement="bottom"
-              content={hasOutputTargetOptions ? 'Unavailable in multi-file examples' : 'Copy source code'}
+              content={
+                hasOutputTargetOptions
+                  ? 'For multi-file examples, use the copy buttons on the code blocks'
+                  : 'Copy source code'
+              }
             >
               <button
                 className={`playground__icon-button playground__icon-button--primary ${
