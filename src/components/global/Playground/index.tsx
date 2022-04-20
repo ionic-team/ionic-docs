@@ -54,6 +54,9 @@ interface OutputTargetOptions {
  * @param code The code snippets for each supported framework target.
  * @param title Optional title of the generated playground example. Specify to customize the Stackblitz title.
  * @param description Optional description of the generated playground example. Specify to customize the Stackblitz description.
+ * @param src The absolute path to the playground demo. For example: `/usage/button/basic/demo.html`
+ * @param size The height of the playground. Supports `xsmall`, `small`, `medium`, `large`, 'xlarge' or any string value.
+ * @param id The id of the playground. Required in multi-file playground examples to scope the code snippet blocks to the playground instance.
  */
 export default function Playground({
   code,
@@ -66,19 +69,8 @@ export default function Playground({
   code: { [key in UsageTarget]?: MdxContent | OutputTargetOptions };
   title?: string;
   description?: string;
-  /**
-   * The absolute path to the playground demo.
-   * For example: `/usage/button/basic/demo.html`
-   */
   src?: string;
-  /**
-   * The height of the playground. Supports `xsmall`, `small`, `medium`, `large`, 'xlarge' or any string value.
-   */
   size: string;
-  /**
-   * The id of the playground. Required in multi-file playground examples to scope the code snippet
-   * blocks to the playground instance.
-   */
   id?: string;
 }) {
   if (!code || Object.keys(code).length === 0) {
