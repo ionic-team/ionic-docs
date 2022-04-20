@@ -194,6 +194,10 @@
   display: none;
 }
 
+.playground .frame-visible {
+  width: 100%;
+}
+
 /* Tooltip styling */
 .tippy-box[data-theme="playground"] {
   background-color: var(--c-carbon-90);

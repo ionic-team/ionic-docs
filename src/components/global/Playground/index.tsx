@@ -251,12 +251,12 @@ export default function Playground({
           */}
           {devicePreview
             ? [
-                <div className={!isIOS ? 'frame-hidden' : ''}>
+                <div className={!isIOS ? 'frame-hidden' : 'frame-visible'}>
                   <device-preview mode="ios">
                     <iframe height={frameSize} ref={frameiOS} src={sourceiOS}></iframe>
                   </device-preview>
                 </div>,
-                <div className={!isMD ? 'frame-hidden' : ''}>
+                <div className={!isMD ? 'frame-hidden' : 'frame-visible'}>
                   <device-preview mode="md">
                     <iframe height={frameSize} ref={frameMD} src={sourceMD}></iframe>
                   </device-preview>

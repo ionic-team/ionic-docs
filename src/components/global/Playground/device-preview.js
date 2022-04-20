@@ -124,6 +124,9 @@ class DevicePreview extends HTMLElement {
    }
 
    @media only screen and (max-width: 600px) {
+    :host {
+      --device-width: 100%;
+    }
     :host(.ios) .ios-notch,
     :host(.md) .md-bar,
     :host(.ios) figure::after {
