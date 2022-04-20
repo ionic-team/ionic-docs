@@ -228,6 +228,11 @@
   margin-right: 40px;
 }
 
+.playground__tab-item.hidden {
+  height: 0px;
+  overflow: hidden;
+}
+
 .playground .tabs__item:not(.tabs__item--active) {
   border-left: 1px solid var(--c-indigo-30);
   border-bottom: 1px solid var(--c-indigo-30);

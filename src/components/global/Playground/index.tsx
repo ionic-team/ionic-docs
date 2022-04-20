@@ -121,7 +121,7 @@ export default function Playground({
     copyButton.click();
   }
 
-  const hasOutputTargetOptions = codeSnippets[usageTarget] && typeof codeSnippets[usageTarget].$$typeof !== 'symbol';
+  const hasOutputTargetOptions = (code[usageTarget] as OutputTargetOptions)?.files !== undefined;
 
   function openEditor(event) {
     const editorOptions: EditorOptions = {
@@ -135,7 +135,8 @@ export default function Playground({
       // using outerText will preserve line breaks for formatting in Stackblitz editor
       codeBlock = codeRef.current.querySelector('code').outerText;
     } else {
-      editorOptions.angularModuleOptions = (code[usageTarget] as OutputTargetOptions).angularModuleOptions;
+      const codeUsageTarget = code[usageTarget] as OutputTargetOptions;
+      editorOptions.angularModuleOptions = codeUsageTarget.angularModuleOptions;
 
       editorOptions.files = Object.keys(codeSnippets[usageTarget])
         .map((fileName) => ({
@@ -234,12 +235,12 @@ export default function Playground({
   }
 
   function renderCodeSnippets() {
-    if (codeSnippets[usageTarget]) {
-      if (typeof codeSnippets[usageTarget].$$typeof === 'symbol') {
+    if (code[usageTarget]) {
+      if (!hasOutputTargetOptions) {
         return codeSnippets[usageTarget];
       }
       return (
-        <PlaygroundTabs className="playground__tabs" key={`tabs-${usageTarget}`}>
+        <PlaygroundTabs className="playground__tabs">
           {Object.keys(codeSnippets[usageTarget]).map((fileName) => (
             <TabItem
               className="playground__tab-item"
@@ -250,7 +251,7 @@ export default function Playground({
                 icon: getFileIcon(fileName),
               }}
             >
-              {codeSnippets[usageTarget][fileName]}
+              <div id={getCodeSnippetId(fileName)}>{codeSnippets[usageTarget][fileName]}</div>
             </TabItem>
           ))}
         </PlaygroundTabs>
