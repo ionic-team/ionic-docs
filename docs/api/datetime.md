@@ -20,6 +20,7 @@ import Values from '@site/static/usage/datetime/date-constraints/values/index.md
 
 import CustomLocale from '@site/static/usage/datetime/localization/custom-locale/index.md';
 import HourCycle from '@site/static/usage/datetime/localization/hour-cycle/index.md';
+import FirstDayOfWeek from '@site/static/usage/datetime/localization/first-day-of-week/index.md';
 
 
 <head>
@@ -153,13 +154,13 @@ In the following example, we can use the `hourCycle` property to force `ion-date
 
 ### First Day of the Week
 
-For `ion-datetime`, the default first day of the week is Sunday. As of 2021, there is no browser API that lets Ionic automatically determine the first day of the week based on a device's locale, though there is on-going work regarding this (see: [TC39 GitHub](https://github.com/tc39/ecma402/issues/6)).
+For `ion-datetime`, the default first day of the week is Sunday. As of 2022, there is no browser API that lets Ionic automatically determine the first day of the week based on a device's locale, though there is on-going work regarding this (see: [TC39 GitHub](https://github.com/tc39/ecma402/issues/6)).
 
 To customize the first day of the week, developers can use the `firstDayOfWeek` property. This property takes in a number between `0` and `6` where `0` represents Sunday and `6` represents Saturday.
 
 For example, if you wanted to have the first day of the week be Monday, you could set `firstDayOfWeek` to `1`:
 
-<Basic />
+<FirstDayOfWeek />
 
 ### Time Label
 
