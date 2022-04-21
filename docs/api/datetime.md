@@ -22,6 +22,7 @@ import CustomLocale from '@site/static/usage/datetime/localization/custom-locale
 import HourCycle from '@site/static/usage/datetime/localization/hour-cycle/index.md';
 import FirstDayOfWeek from '@site/static/usage/datetime/localization/first-day-of-week/index.md';
 import LocaleExtensionTags from '@site/static/usage/datetime/localization/locale-extension-tags/index.md';
+import TimeLabel from '@site/static/usage/datetime/localization/time-label/index.md';
 
 
 <head>
@@ -165,7 +166,9 @@ For example, if you wanted to have the first day of the week be Monday, you coul
 
 ### Time Label
 
-TODO
+The time label is not automatically localized. Fortunately, Ionic makes it easy to provide custom localizations with the `time-label` slot.
+
+<TimeLabel />
 
 ### Locale Extension Tags
 
