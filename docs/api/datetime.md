@@ -22,6 +22,7 @@ import FirstDayOfWeek from '@site/static/usage/datetime/localization/first-day-o
 import LocaleExtensionTags from '@site/static/usage/datetime/localization/locale-extension-tags/index.md';
 import TimeLabel from '@site/static/usage/datetime/localization/time-label/index.md';
 
+import MonthAndYear from '@site/static/usage/datetime/presentation/month-and-year/index.md';
 
 <head>
   <title>ion-datetime: Ionic API Input for Datetime Format Picker</title>
@@ -176,11 +177,17 @@ Be sure to check the [Browser Compatibility Chart](https://developer.mozilla.org
 
 ## Presentation
 
+By default, `ion-datetime` allows users to select both date and time. In addition, users have access to selecting the specific month, year, hour, and minute.
+
 Some use cases may call for only date selection or only time selection. The `presentation` property allows you to specify which pickers to show and the order to show them in.
 
 ### Month and Year Selection
 
-TODO
+Month and year selection is available by passing `month-year`, `year-month`, `month`, or `year` to the `presentation` property.
+
+This example shows a datetime with the `month-year` configuration.
+
+<MonthAndYear />
 
 ### Time Selection
 
