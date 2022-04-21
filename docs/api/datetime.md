@@ -17,6 +17,7 @@ import Values from '@site/static/usage/datetime/date-constraints/values/index.md
 import Advanced from '@site/static/usage/datetime/date-constraints/advanced/index.md';
 
 import CustomLocale from '@site/static/usage/datetime/localization/custom-locale/index.md';
+import HourCycle from '@site/static/usage/datetime/localization/hour-cycle/index.md';
 
 
 <head>
@@ -138,7 +139,7 @@ There may be scenarios where you need to have more control over which hour cycle
 
 In the following example, we can use the `hourCycle` property to force `ion-datetime` to use the 12 hour cycle even though the locale is `en-GB`, which uses a 24 hour cycle by default:
 
-TODO
+<HourCycle />
 
 `ion-datetime` currently supports the `h12` and `h23` hour cycle types. Interested in seeing support for `h11` and `h24` added to `ion-datetime`? [Let us know!](https://github.com/ionic-team/ionic-framework/issues/23750)
 
