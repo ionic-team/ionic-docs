@@ -30,7 +30,7 @@ import ShowingDefaultTitle from '@site/static/usage/datetime/title/showing-defau
 import CustomizingTitle from '@site/static/usage/datetime/title/customizing-title/index.md';
 
 import ShowingConfirmationButtons from '@site/static/usage/datetime/buttons/showing-confirmation-buttons/index.md';
-
+import CustomizingButtons from '@site/static/usage/datetime/buttons/customizing-buttons/index.md';
 
 <head>
   <title>ion-datetime: Ionic API Input for Datetime Format Picker</title>
@@ -235,13 +235,17 @@ TODO
 
 <ShowingConfirmationButtons />
 
-### Customizing Buttons
-
-TODO
-
 ### Customizing Button Texts
 
 TODO
+
+### Customizing Button Elements
+
+Developers can provide their own buttons for advanced custom behavior.
+
+`ion-datetime` has `cancel` and `reset` methods that developers can call when clicking on custom buttons. The `reset` method also allows developers to provide a date to reset the datetime to.
+
+<CustomizingButtons />
 
 ## Theming
 
