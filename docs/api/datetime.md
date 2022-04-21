@@ -29,6 +29,8 @@ import Date from '@site/static/usage/datetime/presentation/date/index.md';
 import ShowingDefaultTitle from '@site/static/usage/datetime/title/showing-default-title/index.md';
 import CustomizingTitle from '@site/static/usage/datetime/title/customizing-title/index.md';
 
+import ShowingConfirmationButtons from '@site/static/usage/datetime/buttons/showing-confirmation-buttons/index.md';
+
 
 <head>
   <title>ion-datetime: Ionic API Input for Datetime Format Picker</title>
@@ -231,7 +233,7 @@ TODO
 
 ### Showing Confirmation Buttons
 
-TODO
+<ShowingConfirmationButtons />
 
 ### Customizing Buttons
 
