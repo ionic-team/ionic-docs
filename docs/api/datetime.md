@@ -23,6 +23,7 @@ import LocaleExtensionTags from '@site/static/usage/datetime/localization/locale
 import TimeLabel from '@site/static/usage/datetime/localization/time-label/index.md';
 
 import MonthAndYear from '@site/static/usage/datetime/presentation/month-and-year/index.md';
+import Time from '@site/static/usage/datetime/presentation/time/index.md';
 
 <head>
   <title>ion-datetime: Ionic API Input for Datetime Format Picker</title>
@@ -191,6 +192,8 @@ By default, `ion-datetime` allows users to select both date and time. In additio
 
 Some use cases may call for only date selection or only time selection. The `presentation` property allows you to specify which pickers to show and the order to show them in.
 
+You can also control the order in which pieces of the datetime appear. For example, setting `date-time` will have the calendar picker appear before the time picker. Setting `time-date` will have the calendar picker appear after the time picker.
+
 ### Month and Year Selection
 
 Month and year selection is available by passing `month-year`, `year-month`, `month`, or `year` to the `presentation` property.
@@ -200,6 +203,12 @@ This example shows a datetime with the `month-year` configuration.
 <MonthAndYear />
 
 ### Time Selection
+
+Time selection is available by passing `date-time`, `time-date`, or `time` to the `presentation` property.
+
+This example shows a datetime with the `time` configuration.
+
+<Time />
 
 ### Date Selection
 
