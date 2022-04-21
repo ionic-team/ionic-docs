@@ -16,6 +16,7 @@ import Slots from '@site/static/auto-generated/datetime/slots.md';
 
 import Basic from '@site/static/usage/datetime/basic/index.md';
 import MaxMin from '@site/static/usage/datetime/date-constraints/max-min/index.md';
+import Values from '@site/static/usage/datetime/date-constraints/values/index.md';
 
 <head>
   <title>ion-datetime: Ionic API Input for Datetime Format Picker</title>
@@ -95,11 +96,9 @@ The following example restricts date selection to March 2022 through May 2022 on
 
 While the `min` and `max` properties allow you to restrict date selection to a certain range, the `monthValues`, `dayValues`, `yearValues`, `hourValues`, and `minuteValues` properties allow you choose specific days and times that you to have enabled.
 
-For example, if we wanted users to only select minutes in increments of 15, we could pass `"0,15,30,45"` to the `minuteValues` property.
+The following example allows minutes to be selected in increments of 15. It also allows for days to be selected in increments of 5.
 
-As another example, if we wanted users to only select from the month of October, we could pass `"10"` to the `monthValues` property.
-
-<Basic />
+<Values />
 
 ### Advanced Date Constraints
 
