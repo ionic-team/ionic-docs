@@ -15,6 +15,7 @@ import CustomProps from '@site/static/auto-generated/datetime/custom-props.md';
 import Slots from '@site/static/auto-generated/datetime/slots.md';
 
 import Basic from '@site/static/usage/datetime/basic/index.md';
+import MaxMin from '@site/static/usage/datetime/date-constraints/max-min/index.md';
 
 <head>
   <title>ion-datetime: Ionic API Input for Datetime Format Picker</title>
@@ -84,9 +85,11 @@ always in the 24-hour format, so `00` is `12am` on a 12-hour clock, `13` means
 
 ### Max and Min Dates
 
-To customize the minimum and maximum datetime values, the `min` and `max` component properties can be provided which may make more sense for the app's use-case. Following the same IS0 8601 format listed in the table above, each component can restrict which dates can be selected by the user. By passing `2016` to the `min` property and `2020-10-31` to the `max` property, the datetime will restrict the date selection between the beginning of `2016`, and `October 31st of 2020`.
+To customize the minimum and maximum datetime values, the `min` and `max` component properties can be provided which may make more sense for the app's use-case. Following the same IS0 8601 format listed in the table above, each component can restrict which dates can be selected by the user.
 
-<Basic />
+The following example restricts date selection to March 2022 through May 2022 only. 
+
+<MaxMin />
 
 ### Selecting Specific Values
 
