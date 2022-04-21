@@ -24,6 +24,7 @@ import TimeLabel from '@site/static/usage/datetime/localization/time-label/index
 
 import MonthAndYear from '@site/static/usage/datetime/presentation/month-and-year/index.md';
 import Time from '@site/static/usage/datetime/presentation/time/index.md';
+import Date from '@site/static/usage/datetime/presentation/date/index.md';
 
 <head>
   <title>ion-datetime: Ionic API Input for Datetime Format Picker</title>
@@ -211,6 +212,12 @@ This example shows a datetime with the `time` configuration.
 <Time />
 
 ### Date Selection
+
+Time selection is available by passing `date-time`, `time-date`, or `date` to the `presentation` property.
+
+This example shows a datetime with the `date` configuration.
+
+<Date />
 
 ## Titles
 
