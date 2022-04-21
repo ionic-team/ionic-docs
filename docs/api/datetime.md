@@ -230,23 +230,23 @@ By default, `ion-datetime` does not show any header or title associated with the
 
 ## Buttons
 
+By default, `ionChange` is emitted with the new datetime value whenever a new date is selected. To require user confirmation before emitting `ionChange`, you can either set the `showDefaultButtons` property to `true` or use the `buttons` slot to pass in a custom confirmation button. When passing in custom buttons, the confirm button must call the `confirm` method on `ion-datetime` for `ionChange` to be emitted.
+
 ### Showing Confirmation Buttons
+
+TODO
 
 ### Customizing Buttons
 
+`ion-datetime` provides `cancel` and `reset` methods that you can call when clicking on custom buttons that you have provided in the `buttons` slot. The `reset` method also allows you to provide a date to reset the datetime to.
+
 ### Customizing Button Texts
+
+TODO
 
 ## Theming
 
-# Here be dragons
-
-## Reset and Cancel Buttons
-
-`ion-datetime` provides `cancel` and `reset` methods that you can call when clicking on custom buttons that you have provided in the `buttons` slot. The `reset` method also allows you to provide a date to reset the datetime to.
-
-## Confirming Selected Values
-
-By default, `ionChange` is emitted with the new datetime value whenever a new date is selected. To require user confirmation before emitting `ionChange`, you can either set the `showDefaultButtons` property to `true` or use the `buttons` slot to pass in a custom confirmation button. When passing in custom buttons, the confirm button must call the `confirm` method on `ion-datetime` for `ionChange` to be emitted.
+TODO
 
 ## Time Zones
 
