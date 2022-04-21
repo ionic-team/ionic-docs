@@ -1,5 +1,35 @@
 [
   {
+    "body": "<h2><a href=\"https://github.com/ionic-team/ionic-framework/compare/v6.1.2...v6.1.3\">6.1.3</a> (2022-04-27)</h2>\n<h3>Bug Fixes</h3>\n<ul>\n<li><strong>core:</strong> inherit aria attributes on host elements (<a href=\"https://github.com/ionic-team/ionic-framework/issues/25156\">#25156</a>) (<a href=\"https://github.com/ionic-team/ionic-framework/commit/611832b0d51da295c1bf2897972c4e8baf6e23a3\">611832b</a>), closes <a href=\"https://github.com/ionic-team/ionic-framework/issues/20127\">#20127</a></li>\n<li><strong>datetime:</strong> if no default value, don't highlight active day until one is selected (<a href=\"https://github.com/ionic-team/ionic-framework/issues/25151\">#25151</a>) (<a href=\"https://github.com/ionic-team/ionic-framework/commit/98969395abd400cc44d2d3825581a63eb64a56e0\">9896939</a>)</li>\n<li><strong>picker-column-internal:</strong> center active item when rapidly opened (<a href=\"https://github.com/ionic-team/ionic-framework/issues/25155\">#25155</a>) (<a href=\"https://github.com/ionic-team/ionic-framework/commit/8e17fa9d5f9b00139693e34bc93b1f9c718ea3cf\">8e17fa9</a>), closes <a href=\"https://github.com/ionic-team/ionic-framework/issues/25154\">#25154</a></li>\n<li><strong>select:</strong> avoid duplicate dialogs and backdrops when clicking (<a href=\"https://github.com/ionic-team/ionic-framework/issues/25175\">#25175</a>) (<a href=\"https://github.com/ionic-team/ionic-framework/commit/70d278414eb5124d17c5ffaba5231c6bfd285656\">70d2784</a>), closes <a href=\"https://github.com/ionic-team/ionic-framework/issues/25126\">#25126</a></li>\n<li><strong>vue:</strong> canDismiss definition is now exposed (<a href=\"https://github.com/ionic-team/ionic-framework/issues/25195\">#25195</a>) (<a href=\"https://github.com/ionic-team/ionic-framework/commit/e5e0e24f76c15c1a49f759b1a140e337f5393edd\">e5e0e24</a>)</li>\n<li><strong>vue:</strong> replacing routes across nested outlets preserves previous route info (<a href=\"https://github.com/ionic-team/ionic-framework/issues/25171\">#25171</a>) (<a href=\"https://github.com/ionic-team/ionic-framework/commit/7b716076b66fbb5bd4620ea8ba74318bbbc1b7e8\">7b71607</a>), closes <a href=\"https://github.com/ionic-team/ionic-framework/issues/25017\">#25017</a></li>\n</ul>\n",
+    "element": "Vanadium",
+    "name": "v6.1.3",
+    "published_at": "April 27 2022",
+    "symbol": "V",
+    "tag_name": "v6.1.3",
+    "type": "patch",
+    "version": "6.1.3"
+  },
+  {
+    "body": "<h2><a href=\"https://github.com/ionic-team/ionic-framework/compare/v6.1.1...v6.1.2\">6.1.2</a> (2022-04-20)</h2>\n<h3>Bug Fixes</h3>\n<ul>\n<li><strong>datetime:</strong> time picker display matches dynamically set value (<a href=\"https://github.com/ionic-team/ionic-framework/issues/25010\">#25010</a>) (<a href=\"https://github.com/ionic-team/ionic-framework/commit/11493a086a4e3f2a4e9d3acdf5a9d49e810a5ef0\">11493a0</a>), closes <a href=\"https://github.com/ionic-team/ionic-framework/issues/24967\">#24967</a></li>\n<li><strong>modal:</strong> add canDismiss option to modal options (<a href=\"https://github.com/ionic-team/ionic-framework/issues/25144\">#25144</a>) (<a href=\"https://github.com/ionic-team/ionic-framework/commit/2984ddf111b6acbd9e47ed90830b6522179b6cee\">2984ddf</a>), closes <a href=\"https://github.com/ionic-team/ionic-framework/issues/25143\">#25143</a></li>\n</ul>\n",
+    "element": "Vanadium",
+    "name": "v6.1.2",
+    "published_at": "April 20 2022",
+    "symbol": "V",
+    "tag_name": "v6.1.2",
+    "type": "patch",
+    "version": "6.1.2"
+  },
+  {
+    "body": "<h2><a href=\"https://github.com/ionic-team/ionic-framework/compare/v6.1.0...v6.1.1\">6.1.1</a> (2022-04-15)</h2>\n<h3>Bug Fixes</h3>\n<ul>\n<li><strong>all:</strong> import path is now correct when using ionic in a stencil app (<a href=\"https://github.com/ionic-team/ionic-framework/issues/25123\">#25123</a>) (<a href=\"https://github.com/ionic-team/ionic-framework/commit/1b407abdf5d8a2a18b6a2b9daca2d58b7b0f782b\">1b407ab</a>), closes <a href=\"https://github.com/ionic-team/ionic-framework/issues/25122\">#25122</a></li>\n<li><strong>datetime:</strong> account for 30 and 45 minute timezones when getting current date (<a href=\"https://github.com/ionic-team/ionic-framework/issues/25120\">#25120</a>) (<a href=\"https://github.com/ionic-team/ionic-framework/commit/96b2003b2bd5089d1faafe262e96c7445c5c3349\">96b2003</a>), closes <a href=\"https://github.com/ionic-team/ionic-framework/issues/25112\">#25112</a></li>\n<li><strong>modal, popover:</strong> do not dismiss when ionDismiss is emitted from select (<a href=\"https://github.com/ionic-team/ionic-framework/issues/25125\">#25125</a>) (<a href=\"https://github.com/ionic-team/ionic-framework/commit/90115db98540a5fc67b611ac2742d1221b8e96ff\">90115db</a>), closes <a href=\"https://github.com/ionic-team/ionic-framework/issues/25124\">#25124</a></li>\n</ul>\n",
+    "element": "Vanadium",
+    "name": "v6.1.1",
+    "published_at": "April 15 2022",
+    "symbol": "V",
+    "tag_name": "v6.1.1",
+    "type": "patch",
+    "version": "6.1.1"
+  },
+  {
     "body": "<h1><a href=\"https://github.com/ionic-team/ionic-framework/compare/v6.0.16...v6.1.0\">6.1.0 Vanadium</a> (2022-04-13)</h1>\n<h3>Bug Fixes</h3>\n<ul>\n<li><strong>accordion-group:</strong> only allow keyboard interaction if header is focused (<a href=\"https://github.com/ionic-team/ionic-framework/issues/25091\">#25091</a>) (<a href=\"https://github.com/ionic-team/ionic-framework/commit/e1b555f286956574876924068304fc44a78c027c\">e1b555f</a>)</li>\n<li><strong>datetime:</strong> resolve warnings when importing into Stencil app (<a href=\"https://github.com/ionic-team/ionic-framework/issues/25106\">#25106</a>) (<a href=\"https://github.com/ionic-team/ionic-framework/commit/a61c004fb0c10d9fb0eca0987edf798386251ec2\">a61c004</a>)</li>\n<li><strong>menu:</strong> preserve scroll position when focusing on open (<a href=\"https://github.com/ionic-team/ionic-framework/issues/25044\">#25044</a>) (<a href=\"https://github.com/ionic-team/ionic-framework/commit/da896848776105ba1f7035c4412495786199bade\">da89684</a>)</li>\n<li><strong>popover:</strong> only focus trap ion-item children (<a href=\"https://github.com/ionic-team/ionic-framework/issues/24990\">#24990</a>) (<a href=\"https://github.com/ionic-team/ionic-framework/commit/0cd06a675474e1893b4c0801fab8ab79813537c8\">0cd06a6</a>), closes <a href=\"https://github.com/ionic-team/ionic-framework/issues/24633\">#24633</a></li>\n<li><strong>ripple-effect:</strong> ripple displays on click or touch (<a href=\"https://github.com/ionic-team/ionic-framework/issues/25102\">#25102</a>) (<a href=\"https://github.com/ionic-team/ionic-framework/commit/2a313e91179e19660a758470ed2218bbcf03e0bb\">2a313e9</a>), closes <a href=\"https://github.com/ionic-team/ionic-framework/issues/25094\">#25094</a></li>\n<li><strong>vue:</strong> ensure that only tab pages get added to the tab navigation stack (<a href=\"https://github.com/ionic-team/ionic-framework/issues/25045\">#25045</a>) (<a href=\"https://github.com/ionic-team/ionic-framework/commit/a0054a7cbd52def24c18fd2dadfd2e49a42b8980\">a0054a7</a>), closes <a href=\"https://github.com/ionic-team/ionic-framework/issues/24859\">#24859</a></li>\n</ul>\n<h3>Features</h3>\n<ul>\n<li><strong>content, reorder-group, header, footer, infinite-scroll, refresher:</strong> add custom scroll target to improve compatibility with virtual scroll (<a href=\"https://github.com/ionic-team/ionic-framework/issues/24883\">#24883</a>) (<a href=\"https://github.com/ionic-team/ionic-framework/commit/2a438da010ddd4d4211e1879e27d7b28409daaa2\">2a438da</a>), closes <a href=\"https://github.com/ionic-team/ionic-framework/issues/23437\">#23437</a></li>\n<li><strong>datetime:</strong> isDateEnabled to enable/disable specific days  (<a href=\"https://github.com/ionic-team/ionic-framework/issues/24898\">#24898</a>) (<a href=\"https://github.com/ionic-team/ionic-framework/commit/e932a042237e6f44bf278bcbd895d8569fc17348\">e932a04</a>), closes <a href=\"https://github.com/ionic-team/ionic-framework/issues/24209\">#24209</a></li>\n<li><strong>item:</strong> counter formatter to customize counter text display (<a href=\"https://github.com/ionic-team/ionic-framework/issues/24336\">#24336</a>) (<a href=\"https://github.com/ionic-team/ionic-framework/commit/171020e9d200ccfdef0f01c427b295bb50dd1fef\">171020e</a>), closes <a href=\"https://github.com/ionic-team/ionic-framework/issues/24327\">#24327</a></li>\n<li><strong>modal:</strong> ability to programmatically set current sheet breakpoint (<a href=\"https://github.com/ionic-team/ionic-framework/issues/24648\">#24648</a>) (<a href=\"https://github.com/ionic-team/ionic-framework/commit/3145c76934ac711038f9dcba98a385dfbe754953\">3145c76</a>), closes <a href=\"https://github.com/ionic-team/ionic-framework/issues/23917\">#23917</a></li>\n<li><strong>modal:</strong> add canDismiss property to manage modal dismissing (<a href=\"https://github.com/ionic-team/ionic-framework/issues/24928\">#24928</a>) (<a href=\"https://github.com/ionic-team/ionic-framework/commit/4b21958ec57019afcde786598880e1f8edada2b1\">4b21958</a>), closes <a href=\"https://github.com/ionic-team/ionic-framework/issues/22297\">#22297</a></li>\n<li><strong>range:</strong> add knobMoveStart and knobMoveEnd events (<a href=\"https://github.com/ionic-team/ionic-framework/issues/25011\">#25011</a>) (<a href=\"https://github.com/ionic-team/ionic-framework/commit/f5cb1f8444ba050042e788f9f9ec7b6309bf1b60\">f5cb1f8</a>)</li>\n<li><strong>select:</strong> add event for when overlay is dismissed (<a href=\"https://github.com/ionic-team/ionic-framework/issues/24400\">#24400</a>) (<a href=\"https://github.com/ionic-team/ionic-framework/commit/b835b7c0c7840f41c54f96743cc0a779ff474ab6\">b835b7c</a>)</li>\n</ul>\n",
     "element": "Vanadium",
     "name": "v6.1.0 Vanadium",
@@ -180,6 +210,16 @@
     "version": "6.0.0"
   },
   {
+    "body": "<h2><a href=\"https://github.com/ionic-team/ionic/compare/v5.9.3...v5.9.4\">5.9.4</a> (2022-04-27)</h2>\n<h3>Bug Fixes</h3>\n<ul>\n<li><strong>core:</strong> inherit aria attributes on host elements (<a href=\"https://github.com/ionic-team/ionic/issues/25156\">#25156</a>) (<a href=\"https://github.com/ionic-team/ionic/issues/25169\">#25169</a>) (<a href=\"https://github.com/ionic-team/ionic/commit/ffb056d50e126a1b89f5133de1e7516d0c29a61a\">ffb056d</a>)</li>\n</ul>\n",
+    "element": "Scandium",
+    "name": "v5.9.4",
+    "published_at": "April 27 2022",
+    "symbol": "Sc",
+    "tag_name": "v5.9.4",
+    "type": "patch",
+    "version": "5.9.4"
+  },
+  {
     "body": "<h3>Bug Fixes</h3>\n<ul>\n<li><strong>vue:</strong> improve query params handling in tabs (<a href=\"https://github.com/ionic-team/ionic/issues/24355\">#24355</a>) (<a href=\"https://github.com/ionic-team/ionic/commit/1c2875044ad4d93fdca866017159a89f4dc8872d\">1c28750</a>), closes <a href=\"https://github.com/ionic-team/ionic/issues/24353\">#24353</a></li>\n<li><strong>vue:</strong> tabs no longer get unmounted when navigating back to a tabs context (<a href=\"https://github.com/ionic-team/ionic/issues/24337\">#24337</a>) (<a href=\"https://github.com/ionic-team/ionic/commit/4aab72b06159729d2dcd18b2ef0b76f693e5a74e\">4aab72b</a>), closes <a href=\"https://github.com/ionic-team/ionic/issues/24332\">#24332</a></li>\n</ul>\n<h3>Performance Improvements</h3>\n<ul>\n<li><strong>content:</strong> remove global click listener to improve interaction performance (<a href=\"https://github.com/ionic-team/ionic/issues/24360\">#24360</a>) (<a href=\"https://github.com/ionic-team/ionic/commit/9c9e28ccc9f899c403c757d911ac02d9099415af\">9c9e28c</a>), closes <a href=\"https://github.com/ionic-team/ionic/issues/24359\">#24359</a></li>\n</ul>\n",
     "element": "Scandium",
     "name": "5.9.3",
@@ -188,65 +228,5 @@
     "tag_name": "v5.9.3",
     "type": "patch",
     "version": "5.9.3"
-  },
-  {
-    "body": "<h3>Bug Fixes</h3>\n<ul>\n<li><strong>angular:</strong> improve typing when compiling with legacy View Engine (<a href=\"https://github.com/ionic-team/ionic/issues/24221\">#24221</a>) (<a href=\"https://github.com/ionic-team/ionic/commit/816096f89747e943a4a273175d384189f25e4628\">816096f</a>)</li>\n<li><strong>content:</strong> ensure fixed slot renders on top of content in iOS (<a href=\"https://github.com/ionic-team/ionic/issues/24300\">#24300</a>) (<a href=\"https://github.com/ionic-team/ionic/commit/e41b0e0cf2a794972d7f4d8943a0bec3d1e08016\">e41b0e0</a>), closes <a href=\"https://github.com/ionic-team/ionic-framework/issues/24286\">#24286</a></li>\n<li><strong>popover:</strong> improve scrolling in popover when using header and footer (<a href=\"https://github.com/ionic-team/ionic/issues/24294\">#24294</a>) (<a href=\"https://github.com/ionic-team/ionic/commit/f6a00ea9544aa70620b5f8f65a7702fa3bedd974\">f6a00ea</a>)</li>\n<li><strong>react:</strong> present and dismiss hooks return promises (<a href=\"https://github.com/ionic-team/ionic/issues/24299\">#24299</a>) (<a href=\"https://github.com/ionic-team/ionic/commit/4b26feaa47efed4806aba565a52554db232b99e2\">4b26fea</a>), closes <a href=\"https://github.com/ionic-team/ionic-framework/issues/24293\">#24293</a></li>\n<li><strong>react:</strong> properly check for custom elements to avoid errors in unit tests (<a href=\"https://github.com/ionic-team/ionic/issues/24156\">#24156</a>) (<a href=\"https://github.com/ionic-team/ionic/commit/8f188eaae7422c9e81053868b9dd93b4ac738e98\">8f188ea</a>), closes <a href=\"https://github.com/ionic-team/ionic/issues/24149\">#24149</a></li>\n<li><strong>router:</strong> popping route now accounts for route params (<a href=\"https://github.com/ionic-team/ionic/issues/24315\">#24315</a>) (<a href=\"https://github.com/ionic-team/ionic/commit/5e5054d369ad68c9ac43e12439d71fb42d6ca26b\">5e5054d</a>), closes <a href=\"https://github.com/ionic-team/ionic-framework/issues/24223\">#24223</a></li>\n<li><strong>slides:</strong> update swiper instance after initialization (<a href=\"https://github.com/ionic-team/ionic/issues/24257\">#24257</a>) (<a href=\"https://github.com/ionic-team/ionic/commit/89e4bc56a1c3cd4fb26fc5514f38c6a01f047297\">89e4bc5</a>), closes <a href=\"https://github.com/ionic-team/ionic-framework/issues/19638\">#19638</a></li>\n<li><strong>vue:</strong> ionic lifecycle hooks now run when using vue 3.2 setup syntax (<a href=\"https://github.com/ionic-team/ionic/issues/24253\">#24253</a>) (<a href=\"https://github.com/ionic-team/ionic/commit/fb96ab5a26d87818a8b64ee82df0020355054183\">fb96ab5</a>), closes <a href=\"https://github.com/ionic-team/ionic/issues/23824\">#23824</a></li>\n<li><strong>vue:</strong> switching between tabs preserves query string (<a href=\"https://github.com/ionic-team/ionic/issues/24297\">#24297</a>) (<a href=\"https://github.com/ionic-team/ionic/commit/047d3c77729db08e4fd84f426f6c5c2af0eacc52\">047d3c7</a>), closes <a href=\"https://github.com/ionic-team/ionic/issues/23699\">#23699</a></li>\n</ul>\n",
-    "element": "Scandium",
-    "name": "5.9.2",
-    "published_at": "December 7 2021",
-    "symbol": "Sc",
-    "tag_name": "v5.9.2",
-    "type": "patch",
-    "version": "5.9.2"
-  },
-  {
-    "body": "<h3>Bug Fixes</h3>\n<ul>\n<li><strong>angular:</strong> build is now in correct directory (<a href=\"https://github.com/ionic-team/ionic/issues/24236\">#24236</a>) (<a href=\"https://github.com/ionic-team/ionic/commit/1d983fa4b3ef0457dc192f376e380c77b611d058\">1d983fa</a>)</li>\n</ul>\n",
-    "element": "Scandium",
-    "name": "5.9.1",
-    "published_at": "November 17 2021",
-    "symbol": "Sc",
-    "tag_name": "v5.9.1",
-    "type": "patch",
-    "version": "5.9.1"
-  },
-  {
-    "body": "<h3>Bug Fixes</h3>\n<ul>\n<li><strong>action-sheet:</strong> safe area is now accounted for in MD mode (<a href=\"https://github.com/ionic-team/ionic/issues/24176\">#24176</a>) (<a href=\"https://github.com/ionic-team/ionic/commit/642255e514fd67238d9bd8ea90781111687c6d03\">642255e</a>), closes <a href=\"https://github.com/ionic-team/ionic/issues/24175\">#24175</a></li>\n<li><strong>input:</strong> date type in ion-input now aligns correctly on iOS 15 (<a href=\"https://github.com/ionic-team/ionic/issues/24217\">#24217</a>) (<a href=\"https://github.com/ionic-team/ionic/commit/0566ec0da3b8a66a1a1ebb1b235e7297ec483c79\">0566ec0</a>)</li>\n<li><strong>vue:</strong> canGoBack method now works correctly (<a href=\"https://github.com/ionic-team/ionic/issues/24188\">#24188</a>) (<a href=\"https://github.com/ionic-team/ionic/commit/7c43589b0a486f71ee2ae5a4cdcd73071fcd31b9\">7c43589</a>), closes <a href=\"https://github.com/ionic-team/ionic/issues/24109\">#24109</a></li>\n</ul>\n<h3>Features</h3>\n<ul>\n<li><strong>slides:</strong> add support for Swiper 7 (<a href=\"https://github.com/ionic-team/ionic/issues/24190\">#24190</a>) (<a href=\"https://github.com/ionic-team/ionic/commit/d0b61307c6b7ff1589646c43f989260b59db1473\">d0b6130</a>)</li>\n</ul>\n",
-    "element": "Scandium",
-    "name": "5.9.0",
-    "published_at": "November 17 2021",
-    "symbol": "Sc",
-    "tag_name": "v5.9.0",
-    "type": "minor",
-    "version": "5.9.0"
-  },
-  {
-    "body": "<h3>Bug Fixes</h3>\n<ul>\n<li><strong>menu:</strong> added focus trapping, improved compatibility with screen readers (<a href=\"https://github.com/ionic-team/ionic/issues/24076\">#24076</a>) (<a href=\"https://github.com/ionic-team/ionic/commit/bdb268aa12c5bf411c96529672486d35e018cefa\">bdb268a</a>)</li>\n<li><strong>vue:</strong> back button now selects correct route when navigating from view multiple times (<a href=\"https://github.com/ionic-team/ionic/issues/24060\">#24060</a>) (<a href=\"https://github.com/ionic-team/ionic/commit/a09d7d4ab6dd0d90204015eaaf232ed190753c56\">a09d7d4</a>), closes <a href=\"https://github.com/ionic-team/ionic/issues/23987\">#23987</a></li>\n<li><strong>vue:</strong> mount correct views when navigating (<a href=\"https://github.com/ionic-team/ionic/issues/24056\">#24056</a>) (<a href=\"https://github.com/ionic-team/ionic/commit/24659a527abe0c70df7e8ae6da3dcb4017bf500c\">24659a5</a>), closes <a href=\"https://github.com/ionic-team/ionic/issues/23914\">#23914</a></li>\n</ul>\n",
-    "element": "Calcium",
-    "name": "5.8.5",
-    "published_at": "October 27 2021",
-    "symbol": "Ca",
-    "tag_name": "v5.8.5",
-    "type": "patch",
-    "version": "5.8.5"
-  },
-  {
-    "body": "<h3>Bug Fixes</h3>\n<ul>\n<li><strong>angular:</strong> setup config properly (<a href=\"https://github.com/ionic-team/ionic/issues/24054\">#24054</a>) (<a href=\"https://github.com/ionic-team/ionic/commit/e001f24f2ca99abbc98b923dd1a132cc83b3b23f\">e001f24</a>), closes <a href=\"https://github.com/ionic-team/ionic/issues/24051\">#24051</a> <a href=\"https://github.com/ionic-team/ionic/issues/24052\">#24052</a></li>\n<li><strong>back-button:</strong> pass aria-label to native element (<a href=\"https://github.com/ionic-team/ionic/issues/24027\">#24027</a>) (<a href=\"https://github.com/ionic-team/ionic/commit/68a7e43345a0261fdeed6054198c5a22fbbcb584\">68a7e43</a>)</li>\n</ul>\n",
-    "element": "Calcium",
-    "name": "5.8.4",
-    "published_at": "October 11 2021",
-    "symbol": "Ca",
-    "tag_name": "v5.8.4",
-    "type": "patch",
-    "version": "5.8.4"
-  },
-  {
-    "body": "<h3>Bug Fixes</h3>\n<ul>\n<li><strong>react:</strong> overlay hooks dismiss method now works (<a href=\"https://github.com/ionic-team/ionic/issues/24038\">#24038</a>) (<a href=\"https://github.com/ionic-team/ionic/commit/655631ddf059ce58066d5384d0ae186d7abc09a9\">655631d</a>), closes <a href=\"https://github.com/ionic-team/ionic/issues/24030\">#24030</a></li>\n</ul>\n",
-    "element": "Calcium",
-    "name": "5.8.3",
-    "published_at": "October 7 2021",
-    "symbol": "Ca",
-    "tag_name": "v5.8.3",
-    "type": "patch",
-    "version": "5.8.3"
   }
 ]

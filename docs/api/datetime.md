@@ -16,6 +16,9 @@ import MaxMin from '@site/static/usage/datetime/date-constraints/max-min/index.m
 import Values from '@site/static/usage/datetime/date-constraints/values/index.md';
 import Advanced from '@site/static/usage/datetime/date-constraints/advanced/index.md';
 
+import CustomLocale from '@site/static/usage/datetime/localization/custom-locale/index.md';
+
+
 <head>
   <title>ion-datetime: Ionic API Input for Datetime Format Picker</title>
   <meta name="description" content="Datetimes present a picker interface to select dates and times. Ionic's API Datetime input component easily displays a preferred format, and manages values." />
@@ -107,9 +110,11 @@ Ionic Framework makes use of the [Intl.DatetimeFormat](https://developer.mozilla
 
 ### Custom Locale
 
-For instances where you need a specific locale, you can use the `locale` property to set it.
+For instances where you need a specific locale, you can use the `locale` property to set it. The locale controls both the language and the date and time formats that are displayed.
 
-TODO
+The following example shows how to set the locale to Spanish (Spain).
+
+<CustomLocale />
 
 ### Hour Cycle
 
