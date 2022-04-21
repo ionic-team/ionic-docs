@@ -18,6 +18,9 @@ import Basic from '@site/static/usage/datetime/basic/index.md';
 import MaxMin from '@site/static/usage/datetime/date-constraints/max-min/index.md';
 import Values from '@site/static/usage/datetime/date-constraints/values/index.md';
 
+import CustomLocale from '@site/static/usage/datetime/localization/custom-locale/index.md';
+
+
 <head>
   <title>ion-datetime: Ionic API Input for Datetime Format Picker</title>
   <meta name="description" content="Datetimes present a picker interface to select dates and times. Ionic's API Datetime input component easily displays a preferred format, and manages values." />
@@ -105,9 +108,9 @@ The following example allows minutes to be selected in increments of 15. It also
 With the `isDateEnabled` property, developers can customize the `ion-datetime` to disable a specific day, range of dates, weekends or any custom rule using an ISO 8601 date string. 
 The `isDateEnabled` property accepts a function returning a boolean, indicating if a date is enabled. The function is called for each rendered calendar day, for the previous, current and next month. Custom implementations should be optimized for performance to avoid jank.
 
-We recommend using a date utilty such as `date-fns` when working with dates.
+We recommend using a date utility such as `date-fns` when working with dates.
 
-<Basic />
+TODO
 
 ## Localization
 
@@ -115,9 +118,11 @@ Ionic Framework makes use of the [Intl.DatetimeFormat](https://developer.mozilla
 
 ### Custom Locale
 
-For instances where you need a specific locale, you can use the `locale` property to set it.
+For instances where you need a specific locale, you can use the `locale` property to set it. The locale controls both the language and the date and time formats that are displayed.
 
-<Basic />
+The following example shows how to set the locale to Spanish (Spain).
+
+<CustomLocale />
 
 ### Hour Cycle
 
