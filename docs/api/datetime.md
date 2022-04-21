@@ -19,6 +19,7 @@ import Advanced from '@site/static/usage/datetime/date-constraints/advanced/inde
 import CustomLocale from '@site/static/usage/datetime/localization/custom-locale/index.md';
 import HourCycle from '@site/static/usage/datetime/localization/hour-cycle/index.md';
 import FirstDayOfWeek from '@site/static/usage/datetime/localization/first-day-of-week/index.md';
+import LocaleExtensionTags from '@site/static/usage/datetime/localization/locale-extension-tags/index.md';
 
 
 <head>
@@ -160,11 +161,15 @@ TODO
 
 ### Locale Extension Tags
 
-`ion-datetime` also supports [locale extension tags](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/Locale). These tags let you encode information about the locale in the locale string itself. Developers may prefer to use the extension tag approach if they are using the [Intl.Locale API](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/Locale) in their apps.
+`ion-datetime` also supports [locale extension tags](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/Locale) as part of the `Intl.Locale` API. These tags let you encode information about the locale in the locale string itself. Developers may prefer to use the extension tag approach if they are using the [Intl.Locale API](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/Locale) in their apps.
 
-For example, if you wanted to use a 12 hour cycle with the `en-GB` locale, you could alternatively do:
+For example, if you wanted to use a 12 hour cycle with the `en-GB` locale, you could provide extension tags instead of using both the `locale` and `hourCycle` properties:
 
-TODO
+<LocaleExtensionTags />
+
+:::note
+Be sure to check the [Browser Compatibility Chart](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/Locale#browser_compatibility)  for `Intl.Locale` before using it in your app.
+:::
 
 ## Presentation
 
