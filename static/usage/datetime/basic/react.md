@@ -1,8 +1,8 @@
 ```tsx
 import React from 'react';
-import { IonButton } from '@ionic/react';
+import { IonDatetime } from '@ionic/react';
 function Example() {
-  return <IonButton>Default</IonButton>;
+  return <IonDatetime></IonDatetime>;
 }
 export default Example;
 ```

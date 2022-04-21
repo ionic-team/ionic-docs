@@ -1,3 +1,3 @@
 ```html
-<ion-button>Default</ion-button>
+<ion-datetime></ion-datetime>
 ```
