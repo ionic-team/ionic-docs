@@ -5,6 +5,7 @@ import './playground.css';
 import { EditorOptions, openAngularEditor, openHtmlEditor, openReactEditor, openVueEditor } from './stackblitz.utils';
 import { Mode, UsageTarget } from './playground.types';
 import useThemeContext from '@theme/hooks/useThemeContext';
+import { defineCustomElement } from './device-preview';
 
 import Tippy from '@tippyjs/react';
 import 'tippy.js/dist/tippy.css';
@@ -94,7 +95,7 @@ export default function Playground({
   }, [isDarkTheme]);
 
   useEffect(() => {
-    import('./device-preview.js').then((comp) => comp.defineCustomElement());
+    defineCustomElement();
   });
 
   const isIOS = mode === Mode.iOS;
