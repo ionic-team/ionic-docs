@@ -27,7 +27,7 @@ import Time from '@site/static/usage/datetime/presentation/time/index.md';
 import Date from '@site/static/usage/datetime/presentation/date/index.md';
 
 import ShowingDefaultTitle from '@site/static/usage/datetime/title/showing-default-title/index.md';
-import CustomizingTitle from '@site/static/usage/datetime/title/showing-default-title/index.md';
+import CustomizingTitle from '@site/static/usage/datetime/title/customizing-title/index.md';
 
 
 <head>
