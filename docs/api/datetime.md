@@ -26,6 +26,10 @@ import MonthAndYear from '@site/static/usage/datetime/presentation/month-and-yea
 import Time from '@site/static/usage/datetime/presentation/time/index.md';
 import Date from '@site/static/usage/datetime/presentation/date/index.md';
 
+import ShowingDefaultTitle from '@site/static/usage/datetime/title/showing-default-title/index.md';
+import CustomizingTitle from '@site/static/usage/datetime/title/showing-default-title/index.md';
+
+
 <head>
   <title>ion-datetime: Ionic API Input for Datetime Format Picker</title>
   <meta name="description" content="Datetimes present a picker interface to select dates and times. Ionic's API Datetime input component easily displays a preferred format, and manages values." />
@@ -221,9 +225,15 @@ This example shows a datetime with the `date` configuration.
 
 ## Titles
 
+By default, `ion-datetime` does not show any header or title associated with the component. Developers can use the `showDefaultTitle` property to show the default title/header configuration. They can also use the `title` slot to customize what is rendered in the header.
+
 ### Showing the Default Title
 
+<ShowingDefaultTitle />
+
 ### Customizing the Title
+
+<CustomizingTitle />
 
 ## Buttons
 
