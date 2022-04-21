@@ -231,15 +231,17 @@ By default, `ion-datetime` does not show any header or title associated with the
 
 ## Buttons
 
-TODO
+By default, `ionChange` is emitted with the new datetime value whenever a new date is selected. To require user confirmation before emitting `ionChange`, you can either set the `showDefaultButtons` property to `true` or use the `buttons` slot to pass in a custom confirmation button. When passing in custom buttons, the confirm button must call the `confirm` method on `ion-datetime` for `ionChange` to be emitted.
 
 ### Showing Confirmation Buttons
+
+The default Done and Cancel buttons are already preconfigured to call the `done` and `cancel` methods, respectively.
 
 <ShowingConfirmationButtons />
 
 ### Customizing Button Texts
 
-For simple use cases, developers can provide custom button text to the confirmation and cancel values through the `okText` and `cancelText` properties. We recommend doing this when you only need to change the button text and do not need any custom behavior.
+For simple use cases, developers can provide custom button text to the confirmation and cancel values through the `doneText` and `cancelText` properties. We recommend doing this when you only need to change the button text and do not need any custom behavior.
 
 <CustomizingButtonTexts />
 
@@ -247,7 +249,7 @@ For simple use cases, developers can provide custom button text to the confirmat
 
 Developers can provide their own buttons for advanced custom behavior.
 
-`ion-datetime` has `cancel` and `reset` methods that developers can call when clicking on custom buttons. The `reset` method also allows developers to provide a date to reset the datetime to.
+`ion-datetime` has `confirm`, `cancel`, and `reset` methods that developers can call when clicking on custom buttons. The `reset` method also allows developers to provide a date to reset the datetime to.
 
 <CustomizingButtons />
 
