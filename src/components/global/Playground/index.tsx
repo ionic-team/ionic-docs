@@ -49,10 +49,14 @@ export default function Playground({
   description,
   src,
   size = 'small',
+  devicePreview,
 }: {
   code: { [key in UsageTarget]?: () => {} };
   title?: string;
+  src: string;
+  size: string;
   description?: string;
+  devicePreview?: boolean;
 }) {
   if (!code || Object.keys(code).length === 0) {
     console.warn('No code usage examples provided for this Playground example.');
@@ -88,6 +92,14 @@ export default function Playground({
       frameMD.current.contentWindow.postMessage(message);
     }
   }, [isDarkTheme]);
+
+  useEffect(() => {
+    /**
+     * Using a dynamic import here to avoid SSR errors when trying to extend `HTMLElement`
+     * to create the custom element.
+     */
+    import('./device-preview.js').then((comp) => comp.defineCustomElement());
+  });
 
   const isIOS = mode === Mode.iOS;
   const isMD = mode === Mode.MD;
@@ -241,8 +253,33 @@ export default function Playground({
             show the other. This is done to avoid flickering
             and doing unnecessary reloads when switching modes.
           */}
-          <iframe height={frameSize} className={!isIOS ? 'frame-hidden' : ''} ref={frameiOS} src={sourceiOS}></iframe>
-          <iframe height={frameSize} className={!isMD ? 'frame-hidden' : ''} ref={frameMD} src={sourceMD}></iframe>
+          {devicePreview
+            ? [
+                <div className={!isIOS ? 'frame-hidden' : 'frame-visible'}>
+                  <device-preview mode="ios">
+                    <iframe height={frameSize} ref={frameiOS} src={sourceiOS}></iframe>
+                  </device-preview>
+                </div>,
+                <div className={!isMD ? 'frame-hidden' : 'frame-visible'}>
+                  <device-preview mode="md">
+                    <iframe height={frameSize} ref={frameMD} src={sourceMD}></iframe>
+                  </device-preview>
+                </div>,
+              ]
+            : [
+                <iframe
+                  height={frameSize}
+                  className={!isIOS ? 'frame-hidden' : ''}
+                  ref={frameiOS}
+                  src={sourceiOS}
+                ></iframe>,
+                <iframe
+                  height={frameSize}
+                  className={!isMD ? 'frame-hidden' : ''}
+                  ref={frameMD}
+                  src={sourceMD}
+                ></iframe>,
+              ]}
         </div>
       </div>
       <div
