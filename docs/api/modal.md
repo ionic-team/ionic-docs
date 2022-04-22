@@ -92,7 +92,11 @@ import DismissIsOpenExample from '@site/static/usage/modal/dismissing/inline/is-
 
 #### Returning data when dismissed
 
-When dismissing a modal, you can optionally send data back to the presenting element that called `present()`. This is useful when you want to provide information entered by the user in the modal, back to the previous view.
+When dismissing a modal, you can optionally send data back in the dismiss event. This is useful when you want to provide information entered by the user in the modal, back to the previous view.
+
+import DismissDataExample from '@site/static/usage/modal/dismissing/inline/data/index.md';
+
+<DismissDataExample />
 
 #### Using roles to distinguish dismiss actions
 
