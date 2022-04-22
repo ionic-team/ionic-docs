@@ -1,6 +1,8 @@
 ```html
 <template>
-  <ion-datetime :show-default-title="true"></ion-datetime>
+  <ion-datetime>
+    <span slot="title">Select a Reservation Date</span>
+  </ion-datetime>
 </template>
 
 <script>

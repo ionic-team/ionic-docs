@@ -106,7 +106,7 @@ The following example restricts date selection to March 2022 through May 2022 on
 
 ### Selecting Specific Values
 
-While the `min` and `max` properties allow you to restrict date selection to a certain range, the `monthValues`, `dayValues`, `yearValues`, `hourValues`, and `minuteValues` properties allow you choose specific days and times that you to have enabled.
+While the `min` and `max` properties allow you to restrict date selection to a certain range, the `monthValues`, `dayValues`, `yearValues`, `hourValues`, and `minuteValues` properties allow you choose specific days and times that users can select.
 
 The following example allows minutes to be selected in increments of 15. It also allows for days to be selected in increments of 5.
 
@@ -197,8 +197,6 @@ By default, `ion-datetime` allows users to select both date and time. In additio
 
 Some use cases may call for only date selection or only time selection. The `presentation` property allows you to specify which pickers to show and the order to show them in.
 
-You can also control the order in which pieces of the datetime appear. For example, setting `date-time` will have the calendar picker appear before the time picker. Setting `time-date` will have the calendar picker appear after the time picker.
-
 ### Month and Year Selection
 
 Month and year selection is available by passing `month-year`, `year-month`, `month`, or `year` to the `presentation` property.
@@ -241,11 +239,13 @@ By default, `ionChange` is emitted with the new datetime value whenever a new da
 
 ### Showing Confirmation Buttons
 
+The default Done and Cancel buttons are already preconfigured to call the `done` and `cancel` methods, respectively.
+
 <ShowingConfirmationButtons />
 
 ### Customizing Button Texts
 
-For simple use cases, developers can provide custom button text to the confirmation and cancel values through the `okText` and `cancelText` properties. We recommend doing this when you only need to change the button text and do not need any custom behavior.
+For simple use cases, developers can provide custom button text to the confirmation and cancel values through the `doneText` and `cancelText` properties. We recommend doing this when you only need to change the button text and do not need any custom behavior.
 
 <CustomizingButtonTexts />
 
@@ -253,13 +253,13 @@ For simple use cases, developers can provide custom button text to the confirmat
 
 Developers can provide their own buttons for advanced custom behavior.
 
-`ion-datetime` has `cancel` and `reset` methods that developers can call when clicking on custom buttons. The `reset` method also allows developers to provide a date to reset the datetime to.
+`ion-datetime` has `confirm`, `cancel`, and `reset` methods that developers can call when clicking on custom buttons. The `reset` method also allows developers to provide a date to reset the datetime to.
 
 <CustomizingButtons />
 
 ## Theming
 
-Ionic's powerful theming system can be used to easily your entire app to match a certain theme. In this example, we used the [Color Creator](../theming/colors#new-color-creator) and the [Stepped Color Generator](../theming/themes#stepped-color-generator) to create a rose color palette that we can use for `ion-datetime`.
+Ionic's powerful theming system can be used to easily change your entire app to match a certain theme. In this example, we used the [Color Creator](../theming/colors#new-color-creator) and the [Stepped Color Generator](../theming/themes#stepped-color-generator) to create a rose color palette that we can use for `ion-datetime`.
 
 The benefit of this approach is that every component, not just `ion-datetime`, can automatically take advantage of this theme.
 

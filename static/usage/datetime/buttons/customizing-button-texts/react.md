@@ -5,7 +5,7 @@ function Example() {
   return (
     <IonDatetime
       showDefaultButtons={true}
-      okText="All set"
+      doneText="All set"
       cancelText="Never mind"
     >
     </IonDatetime>
