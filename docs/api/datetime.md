@@ -31,6 +31,8 @@ import CustomizingTitle from '@site/static/usage/datetime/title/customizing-titl
 
 import ShowingConfirmationButtons from '@site/static/usage/datetime/buttons/showing-confirmation-buttons/index.md';
 import CustomizingButtons from '@site/static/usage/datetime/buttons/customizing-buttons/index.md';
+import CustomizingButtonTexts from '@site/static/usage/datetime/buttons/customizing-button-texts/index.md';
+
 
 <head>
   <title>ion-datetime: Ionic API Input for Datetime Format Picker</title>
@@ -237,7 +239,9 @@ TODO
 
 ### Customizing Button Texts
 
-TODO
+For simple use cases, developers can provide custom button text to the confirmation and cancel values through the `okText` and `cancelText` properties. We recommend doing this when you only need to change the button text and do not need any custom behavior.
+
+<CustomizingButtonTexts />
 
 ### Customizing Button Elements
 
