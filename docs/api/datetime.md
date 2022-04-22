@@ -14,6 +14,7 @@ import Slots from '@site/static/auto-generated/datetime/slots.md';
 import Basic from '@site/static/usage/datetime/basic/index.md';
 import MaxMin from '@site/static/usage/datetime/date-constraints/max-min/index.md';
 import Values from '@site/static/usage/datetime/date-constraints/values/index.md';
+import Advanced from '@site/static/usage/datetime/date-constraints/advanced/index.md';
 
 import CustomLocale from '@site/static/usage/datetime/localization/custom-locale/index.md';
 import HourCycle from '@site/static/usage/datetime/localization/hour-cycle/index.md';
@@ -116,9 +117,9 @@ The following example allows minutes to be selected in increments of 15. It also
 With the `isDateEnabled` property, developers can customize the `ion-datetime` to disable a specific day, range of dates, weekends or any custom rule using an ISO 8601 date string. 
 The `isDateEnabled` property accepts a function returning a boolean, indicating if a date is enabled. The function is called for each rendered calendar day, for the previous, current and next month. Custom implementations should be optimized for performance to avoid jank.
 
-We recommend using a date utility such as `date-fns` when working with dates.
+The following example shows how to disable all weekend dates. For more advanced date manipulation, we recommend using a date utility such as `date-fns`.
 
-TODO
+<Advanced />
 
 ## Localization
 
