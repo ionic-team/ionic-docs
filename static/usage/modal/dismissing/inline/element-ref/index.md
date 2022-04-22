@@ -5,4 +5,8 @@ import react from './react.md';
 import vue from './vue.md';
 import angular from './angular.md';
 
-<Playground code={{ javascript, react, vue, angular }} src="usage/modal/inline/demo.html" devicePreview />
+<Playground
+  code={{ javascript, react, vue, angular }}
+  src="usage/modal/dismissing/inline/element-ref/demo.html"
+  devicePreview
+/>

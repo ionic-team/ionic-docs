@@ -8,12 +8,11 @@
 <ion-content>
   <ion-button id="open-modal">Open Modal</ion-button>
 
-  <ion-modal trigger="open-modal" #modal>
+  <ion-modal trigger="open-modal">
     <ng-template>
       <ion-header>
         <ion-toolbar>
           <ion-title>Modal</ion-title>
-          <ion-button slot="end" fill="clear" (click)="modal.dismiss()">Dismiss</ion-button>
         </ion-toolbar>
       </ion-header>
       <ion-content class="ion-padding">This is an example of an inline full-height modal.</ion-content>

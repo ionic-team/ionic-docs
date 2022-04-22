@@ -34,37 +34,71 @@ import APITOCInline from '@components/page/api/APITOCInline';
 
 A Modal is a dialog that appears on top of the app's content, and must be dismissed by the app before interaction can resume. It is useful as a select component when there are a lot of options to choose from, or when filtering items in a list, as well as many other use cases.
 
-## Presenting
-
 There are two ways to use `ion-modal`: inline or via the `modalController`. Each method comes with different considerations, so be sure to use the approach that best fits your use case.
 
-### Inline Modals
+## Presenting
+
+### Inline Modals (Recommended)
 
 `ion-modal` can be used by writing the component directly in your template. This reduces the number of handlers you need to wire up in order to present the modal.
 
 When using `ion-modal` with Angular, React, or Vue, the component you pass in will be destroyed when the modal is dismissed. As this functionality is provided by the JavaScript framework, using `ion-modal` without a JavaScript framework will not destroy the component you passed in. If this is a needed functionality, we recommend using the `modalController` instead.
 
-import ModalInline from '@site/static/usage/modal/inline/index.md';
+#### Using triggers
 
-<ModalInline />
+A trigger is an element reference, that went selected will automatically open a modal. Triggers are useful when presenting a modal from a button or similar interaction.
 
-### When to use
+import PresentTriggerExample from '@site/static/usage/modal/presenting/inline/trigger/index.md';
 
-Using a modal inline is useful when you do not want to explicitly wire up click events to open the modal. For example, you can use the `is-open` property to easily present or dismiss a modal based on some state in your application.
+<PresentTriggerExample />
 
-If you need fine grained control over when the modal is presented and dismissed, we recommend you use the `modalController`. 
+#### Using `isOpen`
+
+The `isOpen` property on `ion-modal` allows developers to control the presentation state of the modal from their application state. This means when `isOpen` is set to `true` the modal will be presented and when `isOpen` is set to `false` the modal will be dismissed.
+
+`isOpen` uses one-way data binding, meaning it will not automatically be set to `false` when the modal is dismissed. To keep the state of `isOpen` in sync with your UI state, listen for either `ionModalDidDismiss` or `didDismiss` and set the variable to `false`.
+
+import PresentIsOpenExample from '@site/static/usage/modal/presenting/inline/is-open/index.md'; 
+
+<PresentIsOpenExample />
 
 ### Controller Modals
 
-`ion-modal` can also be presented programmatically by using the `modalController` imported from Ionic Framework. This allows you to have complete control over when a modal is presented above and beyond the customization that inline modals give you.
+With the `modalController` developers can present an `ion-modal` programmatically. Developers will have complete control over when a modal is presented and dismissed.
 
-import ModalController from '@site/static/usage/modal/controller/index.md';
+import ModalController from '@site/static/usage/modal/presenting/controller/index.md';
 
 <ModalController />
 
-### When to use
+## Dismissing
 
-We typically recommend that you write your modals inline as it streamlines the amount of code in your application. You should only use the `modalController` for complex use cases where writing a modal inline is impractical.
+### Inline Modals
+
+#### Using dismiss and element references
+
+With the `ion-modal` element reference, developers can call the public API method `dismiss()` to dismiss the modal.
+
+import DismissElementRefExample from '@site/static/usage/modal/dismissing/inline/element-ref/index.md';
+
+<DismissElementRefExample />
+
+#### Using `isOpen`
+
+Setting `isOpen` to `false` will dismiss the `ion-modal`. If you want the variable bound to `isOpen` to be updated, you will need to manually listen for `ionModalDidDismiss` or `didDismiss` and set the variable to `false`.
+
+import DismissIsOpenExample from '@site/static/usage/modal/dismissing/inline/is-open/index.md';
+
+<DismissIsOpenExample />
+
+#### Returning data when dismissed
+
+When dismissing a modal, you can optionally send data back to the presenting element that called `present()`. This is useful when you want to provide information entered by the user in the modal, back to the previous view.
+
+#### Using roles to distinguish dismiss actions
+
+When dismissing a modal, you can optionally specify the `role` responsible for dismissing the modal. Roles are used to differentiate the operation that dismissed the modal, such as "confirm" versus "cancel" operations.
+
+### Controller Modals
 
 ## Card Modal
 

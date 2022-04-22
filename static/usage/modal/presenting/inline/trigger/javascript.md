@@ -13,15 +13,10 @@
       <ion-header>
         <ion-toolbar>
           <ion-title>Modal</ion-title>
-          <ion-button slot="end" fill="clear" onclick="modal.dismiss()">Dismiss</ion-button>
         </ion-toolbar>
       </ion-header>
       <ion-content class="ion-padding">This is an example of an inline full-height modal.</ion-content>
     </ion-modal>
   </ion-content>
 </div>
-
-<script>
-  var modal = document.querySelector('ion-modal');
-</script>
 ```

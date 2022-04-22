@@ -5,8 +5,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Modal | Inline</title>
-  <link rel="stylesheet" href="../../common.css" />
-  <script src="../../common.js"></script>
+  <link rel="stylesheet" href="../../../../common.css" />
+  <script src="../../../../common.js"></script>
   <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core@6/dist/ionic/ionic.esm.js"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core@6/css/ionic.bundle.css" />
 </head>
@@ -18,15 +18,13 @@
         <ion-title>Inline Modal</ion-title>
       </ion-toolbar>
     </ion-header>
-    <ion-content>
-      <div class="container">
-        <ion-button id="open-modal">Open Modal</ion-button>
-      </div>
-      <ion-modal trigger="open-modal">
+    <ion-content class="ion-padding">
+      <p class="ion-text-center">This is the main content</p>
+      <ion-modal is-open="true">
         <ion-header>
           <ion-toolbar>
             <ion-title>Modal</ion-title>
-            <ion-button slot="end" fill="clear" onclick="modal.dismiss()">Dismiss</ion-button>
+            <ion-button slot="end" fill="clear" onclick="dismiss()">Dismiss</ion-button>
           </ion-toolbar>
         </ion-header>
         <ion-content class="ion-padding">
@@ -38,6 +36,10 @@
 
   <script>
     const modal = document.querySelector('ion-modal');
+
+    function dismiss() {
+      modal.isOpen = false;
+    }
   </script>
 </body>
 
