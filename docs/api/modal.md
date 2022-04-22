@@ -102,6 +102,10 @@ import DismissDataExample from '@site/static/usage/modal/dismissing/inline/data/
 
 When dismissing a modal, you can optionally specify the `role` responsible for dismissing the modal. Roles are used to differentiate the operation that dismissed the modal, such as "confirm" versus "cancel" operations.
 
+import DismissRoleExample from '@site/static/usage/modal/dismissing/inline/role/index.md';
+
+<DismissRoleExample />
+
 ### Controller Modals
 
 ## Card Modal
