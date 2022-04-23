@@ -12,6 +12,21 @@ Infinite Scrollコンポーネントは、ユーザーがページの下部ま�
 
 `ion-infinite-scroll` と `ion-infinite-scroll-content` コンポーネントを分離することで、開発者は必要に応じて独自のコンテンツコンポーネントを作成できます。このコンテンツには、SVG要素から固有のCSSアニメーションを持つ要素まで、あらゆるものを含めることができます。
 
+## Usage with Virtual Scroll
+
+Infinite scroll requires a scroll container to function. When using a virtual scrolling solution, you will need to disable scrolling on the `ion-content` and indicate which element container is responsible for the scroll container with the `.ion-content-scroll-host` class target.
+
+```html
+<ion-content scroll-y="false">
+  <virtual-scroll-element class="ion-content-scroll-host">
+    <!-- Your virtual scroll content -->
+  </virtual-scroll-element>
+  <ion-infinite-scroll>
+    <ion-infinite-scroll-content></ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+</ion-content>
+```
+
 ## Interfaces
 
 ### InfiniteScrollCustomEvent

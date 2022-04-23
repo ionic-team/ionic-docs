@@ -51,7 +51,7 @@
       "reflectToAttr": false,
       "docs": "The icon name to use for the close icon. This will appear when the fab button\nis pressed. Only applies if it is the main button inside of a fab containing a\nfab list.",
       "docsTags": [],
-      "default": "'close'",
+      "default": "close",
       "values": [
         {
           "type": "string"

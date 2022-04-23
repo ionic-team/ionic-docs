@@ -2,7 +2,7 @@
   "filePath": "./src/components/range/range.tsx",
   "encapsulation": "shadow",
   "tag": "ion-range",
-  "readme": "# ion-range\n\nThe Range slider lets users select from a range of values by moving\nthe slider knob. It can accept dual knobs, but by default one knob\ncontrols the value of the range.\n\n## Range Labels\n\nLabels can be placed on either side of the range by adding the\n`slot=\"start\"` or `slot=\"end\"` to the element. The element doesn't have to\nbe an `ion-label`, it can be added to any element to place it to the\nleft or right of the range.\n\n## Custom Pin Formatters\n\nWhen using a pin, the default behavior is to round the value that gets displayed using `Math.round()`. This behavior can be customized by passing in a formatter function to the `pinFormatter` property. See the [Usage](#usage) section for an example.\n\n## Interfaces\n\n### RangeChangeEventDetail\n\n```typescript\ninterface RangeChangeEventDetail {\n  value: RangeValue;\n}\n```\n\n### RangeCustomEvent\n\nWhile not required, this interface can be used in place of the `CustomEvent` interface for stronger typing with Ionic events emitted from this component.\n\n```typescript\ninterface RangeCustomEvent extends CustomEvent {\n  detail: RangeChangeEventDetail;\n  target: HTMLIonRangeElement;\n}\n```\n\n## Types\n\n### RangeValue\n\n```typescript\ntype RangeValue = number | { lower: number, upper: number };\n```\n",
+  "readme": "# ion-range\n\nThe Range slider lets users select from a range of values by moving\nthe slider knob. It can accept dual knobs, but by default one knob\ncontrols the value of the range.\n\n## Range Labels\n\nLabels can be placed on either side of the range by adding the\n`slot=\"start\"` or `slot=\"end\"` to the element. The element doesn't have to\nbe an `ion-label`, it can be added to any element to place it to the\nleft or right of the range.\n\n## Custom Pin Formatters\n\nWhen using a pin, the default behavior is to round the value that gets displayed using `Math.round()`. This behavior can be customized by passing in a formatter function to the `pinFormatter` property. See the [Usage](#usage) section for an example.\n\n## Interfaces\n\n### RangeChangeEventDetail\n\n```typescript\ninterface RangeChangeEventDetail {\n  value: RangeValue;\n}\n```\n\n### RangeKnobMoveStartEventDetail\n\n```typescript\ninterface RangeKnobMoveStartEventDetail {\n  value: RangeValue;\n}\n```\n\n### RangeKnobMoveEndEventDetail\n\n```typescript\ninterface RangeKnobMoveEndEventDetail {\n  value: RangeValue;\n}\n```\n\n### RangeCustomEvent\n\nWhile not required, this interface can be used in place of the `CustomEvent` interface for stronger typing with Ionic events emitted from this component.\n\n```typescript\ninterface RangeCustomEvent extends CustomEvent {\n  detail: RangeChangeEventDetail;\n  target: HTMLIonRangeElement;\n}\n```\n\n## Types\n\n### RangeValue\n\n```typescript\ntype RangeValue = number | { lower: number, upper: number };\n```\n",
   "docs": "The Range slider lets users select from a range of values by moving\nthe slider knob. It can accept dual knobs, but by default one knob\ncontrols the value of the range.",
   "docsTags": [
     {
@@ -327,6 +327,24 @@
       "cancelable": true,
       "composed": true,
       "docs": "Emitted when the range has focus.",
+      "docsTags": []
+    },
+    {
+      "event": "ionKnobMoveEnd",
+      "detail": "RangeKnobMoveEndEventDetail",
+      "bubbles": true,
+      "cancelable": true,
+      "composed": true,
+      "docs": "Emitted when the user finishes moving the range knob, whether through\nmouse drag, touch gesture, or keyboard interaction.",
+      "docsTags": []
+    },
+    {
+      "event": "ionKnobMoveStart",
+      "detail": "RangeKnobMoveStartEventDetail",
+      "bubbles": true,
+      "cancelable": true,
+      "composed": true,
+      "docs": "Emitted when the user starts moving the range knob, whether through\nmouse drag, touch gesture, or keyboard interaction.",
       "docsTags": []
     }
   ],

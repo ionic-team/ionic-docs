@@ -2,7 +2,7 @@
   "filePath": "./src/components/alert/alert.tsx",
   "encapsulation": "scoped",
   "tag": "ion-alert",
-  "readme": "# ion-alert\n\nAn Alert is a dialog that presents users with information or collects information from the user using inputs. An alert appears on top of the app's content, and must be manually dismissed by the user before they can resume interaction with the app. It can also optionally have a `header`, `subHeader` and `message`.\n\n## Buttons\n\nIn the array of `buttons`, each button includes properties for its `text`, and optionally a `handler`. If a handler returns `false` then the alert will not automatically be dismissed when the button is clicked. All buttons will show up in the order they have been added to the `buttons` array from left to right. Note: The right most button (the last one in the array) is the main button.\n\nOptionally, a `role` property can be added to a button, such as `cancel`. If a `cancel` role is on one of the buttons, then if the alert is dismissed by tapping the backdrop, then it will fire the handler from the button with a cancel role.\n\n\n## Inputs\n\nAlerts can also include several different inputs whose data can be passed back to the app. Inputs can be used as a simple way to prompt users for information. Radios, checkboxes and text inputs are all accepted, but they cannot be mixed. For example, an alert could have all radio button inputs, or all checkbox inputs, but the same alert cannot mix radio and checkbox inputs. Do note however, different types of \"text\" inputs can be mixed, such as `url`, `email`, `text`, `textarea` etc. If you require a complex form UI which doesn't fit within the guidelines of an alert then we recommend building the form within a modal instead.\n\n## Customization\n\nAlert uses scoped encapsulation, which means it will automatically scope its CSS by appending each of the styles with an additional class at runtime. Overriding scoped selectors in CSS requires a [higher specificity](https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity) selector.\n\nWe recommend passing a custom class to `cssClass` in the `create` method and using that to add custom styles to the host and inner elements. This property can also accept multiple classes separated by spaces. View the [Usage](#usage) section for an example of how to pass a class using `cssClass`.\n\n```css\n/* DOES NOT WORK - not specific enough */\n.alert-wrapper {\n  background: #e5e5e5;\n}\n\n/* Works - pass \"my-custom-class\" in cssClass to increase specificity */\n.my-custom-class .alert-wrapper {\n  background: #e5e5e5;\n}\n```\n\nAny of the defined [CSS Custom Properties](#css-custom-properties) can be used to style the Alert without needing to target individual elements:\n\n```css\n.my-custom-class {\n  --background: #e5e5e5;\n}\n```\n\n> If you are building an Ionic Angular app, the styles need to be added to a global stylesheet file. Read [Style Placement](#style-placement) in the Angular section below for more information.\n\n## Interfaces\n\n### AlertButton\n\n```typescript\ninterface AlertButton {\n  text: string;\n  role?: 'cancel' | 'destructive' | string;\n  cssClass?: string | string[];\n  handler?: (value: any) => boolean | void | {[key: string]: any};\n}\n```\n\n\n### AlertInput\n\n```typescript\ninterface AlertInput {\n  type?: TextFieldTypes | 'checkbox' | 'radio' | 'textarea';\n  name?: string;\n  placeholder?: string;\n  value?: any;\n  label?: string;\n  checked?: boolean;\n  disabled?: boolean;\n  id?: string;\n  handler?: (input: AlertInput) => void;\n  min?: string | number;\n  max?: string | number;\n  cssClass?: string | string[];\n  attributes?: AlertInputAttributes | AlertTextareaAttributes;\n  tabindex?: number;\n}\n```\n\n### AlertInputAttributes\n\n```typescript\ninterface AlertInputAttributes extends JSXBase.InputHTMLAttributes<HTMLInputElement> {}\n```\n\n### AlertOptions\n\n```typescript\ninterface AlertOptions {\n  header?: string;\n  subHeader?: string;\n  message?: string | IonicSafeString;\n  cssClass?: string | string[];\n  inputs?: AlertInput[];\n  buttons?: (AlertButton | string)[];\n  backdropDismiss?: boolean;\n  translucent?: boolean;\n  animated?: boolean;\n  htmlAttributes?: AlertAttributes;\n\n  mode?: Mode;\n  keyboardClose?: boolean;\n  id?: string;\n\n  enterAnimation?: AnimationBuilder;\n  leaveAnimation?: AnimationBuilder;\n}\n```\n\n### AlertAttributes\n```typescript\ninterface AlertAttributes extends JSXBase.HTMLAttributes<HTMLElement> {}\n```\n\n### AlertTextareaAttributes\n```typescript\ninterface AlertTextareaAttributes extends JSXBase.TextareaHTMLAttributes<HTMLTextAreaElement> {}\n```\n\n\n",
+  "readme": "# ion-alert\n\nAn Alert is a dialog that presents users with information or collects information from the user using inputs. An alert appears on top of the app's content, and must be manually dismissed by the user before they can resume interaction with the app. It can also optionally have a `header`, `subHeader` and `message`.\n\n## Buttons\n\nIn the array of `buttons`, each button includes properties for its `text`, and optionally a `handler`. If a handler returns `false` then the alert will not automatically be dismissed when the button is clicked. All buttons will show up in the order they have been added to the `buttons` array from left to right. Note: The right most button (the last one in the array) is the main button.\n\nOptionally, a `role` property can be added to a button, such as `cancel`. If a `cancel` role is on one of the buttons, then if the alert is dismissed by tapping the backdrop, then it will fire the handler from the button with a cancel role.\n\n\n## Inputs\n\nAlerts can also include several different inputs whose data can be passed back to the app. Inputs can be used as a simple way to prompt users for information. Radios, checkboxes and text inputs are all accepted, but they cannot be mixed. For example, an alert could have all radio button inputs, or all checkbox inputs, but the same alert cannot mix radio and checkbox inputs. Do note however, different types of \"text\" inputs can be mixed, such as `url`, `email`, `text`, `textarea` etc. If you require a complex form UI which doesn't fit within the guidelines of an alert then we recommend building the form within a modal instead.\n\n## Customization\n\nAlert uses scoped encapsulation, which means it will automatically scope its CSS by appending each of the styles with an additional class at runtime. Overriding scoped selectors in CSS requires a [higher specificity](https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity) selector.\n\nWe recommend passing a custom class to `cssClass` in the `create` method and using that to add custom styles to the host and inner elements. This property can also accept multiple classes separated by spaces. View the [Usage](#usage) section for an example of how to pass a class using `cssClass`.\n\n```css\n/* DOES NOT WORK - not specific enough */\n.alert-wrapper {\n  background: #e5e5e5;\n}\n\n/* Works - pass \"my-custom-class\" in cssClass to increase specificity */\n.my-custom-class .alert-wrapper {\n  background: #e5e5e5;\n}\n```\n\nAny of the defined [CSS Custom Properties](#css-custom-properties) can be used to style the Alert without needing to target individual elements:\n\n```css\n.my-custom-class {\n  --background: #e5e5e5;\n}\n```\n\n> If you are building an Ionic Angular app, the styles need to be added to a global stylesheet file. Read [Style Placement](#style-placement) in the Angular section below for more information.\n\n## Interfaces\n\n### AlertButton\n\n```typescript\ninterface AlertButton {\n  text: string;\n  role?: 'cancel' | 'destructive' | string;\n  cssClass?: string | string[];\n  handler?: (value: any) => boolean | void | {[key: string]: any};\n}\n```\n\n\n### AlertInput\n\n```typescript\ninterface AlertInput {\n  type?: TextFieldTypes | 'checkbox' | 'radio' | 'textarea';\n  name?: string;\n  placeholder?: string;\n  value?: any;\n  label?: string;\n  checked?: boolean;\n  disabled?: boolean;\n  id?: string;\n  handler?: (input: AlertInput) => void;\n  min?: string | number;\n  max?: string | number;\n  cssClass?: string | string[];\n  attributes?: { [key: string]: any };\n  tabindex?: number;\n}\n```\n\n\n### AlertOptions\n\n```typescript\ninterface AlertOptions {\n  header?: string;\n  subHeader?: string;\n  message?: string | IonicSafeString;\n  cssClass?: string | string[];\n  inputs?: AlertInput[];\n  buttons?: (AlertButton | string)[];\n  backdropDismiss?: boolean;\n  translucent?: boolean;\n  animated?: boolean;\n  htmlAttributes?: { [key: string]: any };\n\n  mode?: Mode;\n  keyboardClose?: boolean;\n  id?: string;\n\n  enterAnimation?: AnimationBuilder;\n  leaveAnimation?: AnimationBuilder;\n}\n```\n\n",
   "docs": "An Alert is a dialog that presents users with information or collects information from the user using inputs. An alert appears on top of the app's content, and must be manually dismissed by the user before they can resume interaction with the app. It can also optionally have a `header`, `subHeader` and `message`.",
   "docsTags": [
     {
@@ -132,17 +132,17 @@
     },
     {
       "name": "htmlAttributes",
-      "type": "AlertAttributes | undefined",
+      "type": "undefined | { [key: string]: any; }",
       "mutable": false,
       "reflectToAttr": false,
       "docs": "Additional attributes to pass to the alert.",
       "docsTags": [],
       "values": [
         {
-          "type": "AlertAttributes"
+          "type": "undefined"
         },
         {
-          "type": "undefined"
+          "type": "{ [key: string]: any; }"
         }
       ],
       "optional": true,
@@ -424,7 +424,9 @@
   ],
   "slots": [],
   "parts": [],
-  "dependents": [],
+  "dependents": [
+    "ion-select"
+  ],
   "dependencies": [
     "ion-ripple-effect",
     "ion-backdrop"
@@ -433,6 +435,9 @@
     "ion-alert": [
       "ion-ripple-effect",
       "ion-backdrop"
+    ],
+    "ion-select": [
+      "ion-alert"
     ]
   }
 }

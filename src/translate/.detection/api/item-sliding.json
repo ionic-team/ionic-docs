@@ -40,7 +40,7 @@
       },
       "signature": "close() => Promise<void>",
       "parameters": [],
-      "docs": "Close the sliding item. Items can also be closed from the [List](../list).",
+      "docs": "Close the sliding item. Items can also be closed from the [List](./list).",
       "docsTags": []
     },
     {
@@ -51,7 +51,7 @@
       },
       "signature": "closeOpened() => Promise<boolean>",
       "parameters": [],
-      "docs": "Close all of the sliding items in the list. Items can also be closed from the [List](../list).",
+      "docs": "Close all of the sliding items in the list. Items can also be closed from the [List](./list).",
       "docsTags": []
     },
     {

@@ -506,13 +506,16 @@
     },
     {
       "name": "max",
-      "type": "string | undefined",
+      "type": "number | string | undefined",
       "mutable": false,
       "attr": "max",
       "reflectToAttr": false,
       "docs": "The maximum value, which must not be less than its minimum (min attribute) value.",
       "docsTags": [],
       "values": [
+        {
+          "type": "number"
+        },
         {
           "type": "string"
         },
@@ -544,13 +547,16 @@
     },
     {
       "name": "min",
-      "type": "string | undefined",
+      "type": "number | string | undefined",
       "mutable": false,
       "attr": "min",
       "reflectToAttr": false,
       "docs": "The minimum value, which must not be greater than its maximum (max attribute) value.",
       "docsTags": [],
       "values": [
+        {
+          "type": "number"
+        },
         {
           "type": "string"
         },
@@ -662,7 +668,7 @@
       "mutable": false,
       "attr": "placeholder",
       "reflectToAttr": false,
-      "docs": "Instructional text that shows before the input has a value.",
+      "docs": "Instructional text that shows before the input has a value.\nThis property applies only when the `type` property is set to `\"email\"`,\n`\"number\"`, `\"password\"`, `\"search\"`, `\"tel\"`, `\"text\"`, or `\"url\"`, otherwise it is ignored.",
       "docsTags": [],
       "values": [
         {

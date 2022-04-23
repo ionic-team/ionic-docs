@@ -293,9 +293,9 @@
       "mutable": false,
       "attr": "cancel-button-icon",
       "reflectToAttr": false,
-      "docs": "Set the cancel button icon. Only applies to `md` mode.\nDefaults to `\"arrow-back-sharp\"`.",
+      "docs": "Set the cancel button icon. Only applies to `md` mode.\nDefaults to `arrow-back-sharp`.",
       "docsTags": [],
-      "default": "config.get('backButtonIcon', 'arrow-back-sharp') as string",
+      "default": "config.get('backButtonIcon', arrowBackSharp) as string",
       "values": [
         {
           "type": "string"
@@ -327,7 +327,7 @@
       "mutable": false,
       "attr": "clear-icon",
       "reflectToAttr": false,
-      "docs": "Set the clear icon. Defaults to `\"close-circle\"` for `ios` and `\"close-sharp\"` for `md`.",
+      "docs": "Set the clear icon. Defaults to `close-circle` for `ios` and `close-sharp` for `md`.",
       "docsTags": [],
       "values": [
         {
@@ -529,7 +529,7 @@
       "mutable": false,
       "attr": "search-icon",
       "reflectToAttr": false,
-      "docs": "The icon to use as the search icon. Defaults to `\"search-outline\"` in\n`ios` mode and `\"search-sharp\"` in `md` mode.",
+      "docs": "The icon to use as the search icon. Defaults to `search-outline` in\n`ios` mode and `search-sharp` in `md` mode.",
       "docsTags": [],
       "values": [
         {

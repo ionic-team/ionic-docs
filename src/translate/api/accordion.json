@@ -101,7 +101,7 @@
       "reflectToAttr": false,
       "docs": "The toggle icon to use. This icon will be\nrotated when the accordion is expanded\nor collapsed.",
       "docsTags": [],
-      "default": "'chevron-down'",
+      "default": "chevronDown",
       "values": [
         {
           "type": "string"

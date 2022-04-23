@@ -41,7 +41,7 @@
       "mutable": false,
       "attr": "autocapitalize",
       "reflectToAttr": false,
-      "docs": "Indicates whether and how the text value should be automatically capitalized as it is entered/edited by the user.",
+      "docs": "Indicates whether and how the text value should be automatically capitalized as it is entered/edited by the user.\nAvailable options: `\"off\"`, `\"none\"`, `\"on\"`, `\"sentences\"`, `\"words\"`, `\"characters\"`.",
       "docsTags": [],
       "default": "'none'",
       "values": [

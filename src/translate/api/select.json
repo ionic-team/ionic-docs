@@ -121,7 +121,7 @@
       "mutable": false,
       "attr": "interface-options",
       "reflectToAttr": false,
-      "docs": "Any additional options that the `alert`, `action-sheet` or `popover` interface\ncan take. See the [ion-alert docs](../alert), the\n[ion-action-sheet docs](../action-sheet) and the\n[ion-popover docs](../popover) for the\ncreate options for each interface.\n\nNote: `interfaceOptions` will not override `inputs` or `buttons` with the `alert` interface.",
+      "docs": "Any additional options that the `alert`, `action-sheet` or `popover` interface\ncan take. See the [ion-alert docs](./alert), the\n[ion-action-sheet docs](./action-sheet) and the\n[ion-popover docs](./popover) for the\ncreate options for each interface.\n\nNote: `interfaceOptions` will not override `inputs` or `buttons` with the `alert` interface.",
       "docsTags": [],
       "default": "{}",
       "values": [
@@ -309,6 +309,15 @@
       "docsTags": []
     },
     {
+      "event": "ionDismiss",
+      "detail": "void",
+      "bubbles": true,
+      "cancelable": true,
+      "composed": true,
+      "docs": "Emitted when the overlay is dismissed.",
+      "docsTags": []
+    },
+    {
       "event": "ionFocus",
       "detail": "void",
       "bubbles": true,
@@ -368,11 +377,17 @@
   ],
   "dependents": [],
   "dependencies": [
-    "ion-select-popover"
+    "ion-select-popover",
+    "ion-popover",
+    "ion-action-sheet",
+    "ion-alert"
   ],
   "dependencyGraph": {
     "ion-select": [
-      "ion-select-popover"
+      "ion-select-popover",
+      "ion-popover",
+      "ion-action-sheet",
+      "ion-alert"
     ],
     "ion-select-popover": [
       "ion-item",
@@ -387,6 +402,18 @@
       "ion-icon",
       "ion-ripple-effect",
       "ion-note"
+    ],
+    "ion-popover": [
+      "ion-backdrop"
+    ],
+    "ion-action-sheet": [
+      "ion-backdrop",
+      "ion-icon",
+      "ion-ripple-effect"
+    ],
+    "ion-alert": [
+      "ion-ripple-effect",
+      "ion-backdrop"
     ]
   }
 }

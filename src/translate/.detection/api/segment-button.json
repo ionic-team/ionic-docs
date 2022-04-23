@@ -143,7 +143,7 @@
       "reflectToAttr": false,
       "docs": "The value of the segment button.",
       "docsTags": [],
-      "default": "'ion-sb-' + (ids++)",
+      "default": "'ion-sb-' + ids++",
       "values": [
         {
           "type": "string"

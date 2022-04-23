@@ -53,3 +53,7 @@ Items containing an input will highlight the bottom border of the input with a d
 
 The highlight color changes based on the item state, but all of the states use Ionic colors by default. When focused, the input highlight will use the `primary` color. If the input is valid it will use the `success` color, and invalid inputs will use the `danger` color. See the [CSS Custom Properties](#css-custom-properties) section below for the highlight color variables.
 
+### Counter Formatter
+
+When using `counter`, the default behavior is to format the value that gets displayed as `itemLength / maxLength`. This behavior can be customized by passing in a formatter function to the `counterFormatter` property. See the [Usage](#usage) section for an example.
+

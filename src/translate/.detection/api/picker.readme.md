@@ -62,15 +62,10 @@ interface PickerOptions {
   mode?: Mode;
   keyboardClose?: boolean;
   id?: string;
-  htmlAttributes?: PickerAttributes;
+  htmlAttributes?: { [key: string]: any };
 
   enterAnimation?: AnimationBuilder;
   leaveAnimation?: AnimationBuilder;
 }
 ```
 
-### PickerAttributes
-
-```typescript
-interface PickerAttributes extends JSXBase.HTMLAttributes<HTMLElement> {}
-```

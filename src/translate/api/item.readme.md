@@ -53,3 +53,7 @@ Inputを含むItemは、フォーカスされたとき、有効なとき、無�
 
 ハイライトカラーはItemsの状態に基づいて変化しますが、デフォルトではすべてのstatesでIonicカラーが使用されます。フォーカスすると、Inputハイライトに `primary` colorが使用されます。Inputが有効な場合、`success` colorが使用され、無効なInputは`danger` colorが使用されます。ハイライトカラー変数については、後述の [CSS Custom Properties](#css-custom-properties) を参照してください。
 
+### Counter Formatter
+
+When using `counter`, the default behavior is to format the value that gets displayed as `itemLength / maxLength`. This behavior can be customized by passing in a formatter function to the `counterFormatter` property. See the [Usage](#usage) section for an example.
+
