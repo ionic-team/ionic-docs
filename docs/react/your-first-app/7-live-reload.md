@@ -117,10 +117,4 @@ return {
 
 Save this file, then tap on a photo again and choose the “Delete” option. This time, the photo is deleted! Implemented much faster using Live Reload. 💪
 
-## What’s Next?
-
-Congratulations! You created a complete cross-platform Photo Gallery app that runs on the web, iOS, and Android.
-
-There are many paths to follow from here. Try adding another [Ionic UI component](https://ionicframework.com/docs/components) to the app, or more [native functionality](https://capacitor.ionicframework.com/docs/apis). The sky’s the limit.
-
-Happy app building! 💙
+In the final portion of this tutorial, we’ll walk you through the basics of the Appflow product used to build and deploy your application to users' devices.

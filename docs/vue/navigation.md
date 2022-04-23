@@ -162,7 +162,7 @@ export default defineComponent({
   setup() {
     const ionRouter = useIonRouter();
 
-    router.push('/page2', customAnimation);
+    ionRouter.push('/page2', customAnimation);
   }
 });
 ```
@@ -179,7 +179,7 @@ export default defineComponent({
   setup() {
     const ionRouter = useIonRouter();
 
-    router.navigate('/page2', 'forward', 'replace', customAnimation);
+    ionRouter.navigate('/page2', 'forward', 'replace', customAnimation);
   }
 });
 ```

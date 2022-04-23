@@ -75,6 +75,18 @@ setupIonicReact({
 
 詳しくは [React Config Documentation](../react/config) をご覧ください。
 
+5. Update all controller imports from `@ionic/core` to `@ionic/core/components`. As an example, here is a migration for `menuController`:
+
+**Before**
+```tsx
+import { menuController } from '@ionic/core';
+```
+
+**After**
+```tsx
+import { menuController } from '@ionic/core/components';
+```
+
 ### Vue
 
 1. Ionic 6 は Vue 3.0.6+ をサポートしています。Vueの最新バージョンに更新ください。

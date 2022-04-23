@@ -110,11 +110,19 @@ cdk-virtual-scroll-viewport {
 
 Since the viewport is built to fit various use cases, the default sizing is not set and is up to developers to set.
 
-## A Note on Ionic Components
+## Usage with Ionic Components
 
-Certain Ionic Framework functionality is currently not compatible with virtual scrolling. Features such as collapsible large titles, `ion-infinite-scroll`, and `ion-refresher` rely on being able to scroll on `ion-content` itself, and as a result will not work when using virtual scrolling.
+Ionic Framework requires that features such as collapsible large titles, `ion-infinite-scroll`, `ion-refresher`, and `ion-reorder-group` be used within an `ion-content`. To use these experiences with virtual scrolling, you must add the `.ion-content-scroll-host` class to the virtual scroll viewport.
 
-We are working to improve compatibility between these components and virtual scrolling solutions. You can follow progress and give feedback here: https://github.com/ionic-team/ionic-framework/issues/23437.
+For example:
+
+```html
+<ion-content [scrollY]="false">
+  <cdk-virtual-scroll-viewport class="ion-content-scroll-host">
+    <!-- Your existing content and configurations -->
+  </cdk-virtual-scroll-viewport>
+</ion-content>
+```
 
 ## Further Reading
 

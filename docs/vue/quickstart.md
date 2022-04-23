@@ -112,7 +112,7 @@ scriptに書かれているimportのグループを分解してみていきま�
 import { IonApp, IonRouterOutlet } from '@ionic/vue';
 ```
 
-Vueでコンポーネントを使用するには、最初にコンポーネントをインポートする必要があります。したがって、Ionic Frameworkの場合、ButtonやCardを使用するときはいつでもインポートに追加する必要があります。 `App` コンポーネントの場合は、 `IonApp` と `IonRouterOutlet` を使用します。 You can also register components globally if you find yourself importing the same components repeatedly. This comes with performance tradeoffs that we cover in [Optimizing Your App](#optimizing-your-app).
+Vueでコンポーネントを使用するには、最初にコンポーネントをインポートする必要があります。したがって、Ionic Frameworkの場合、ButtonやCardを使用するときはいつでもインポートに追加する必要があります。 `App` コンポーネントの場合は、 `IonApp` と `IonRouterOutlet` を使用します。 You can also register components globally if you find yourself importing the same components repeatedly. This comes with performance tradeoffs that we cover in [Optimizing Your Build](#optimizing-your-build).
 
 次に、テンプレートを見てみましょう。
 
@@ -555,9 +555,9 @@ In other framework integrations such as Ionic React, this is not needed as any `
 
 Ionic Vueには [Ionicons](https://ionic.io/ionicons/) がプリインストールされています。開発者がアプリケーションで使用できるオプションはいくつかあります。
 
-### ダイナミックインポート
+### Per-Component Imports
 
-Ioniconsを使用する場合は、ダイナミックインポートを使用することをお勧めします。これには、選択したアイコンを `ionicons` パッケージからインポートし、テンプレートに渡すことが含まれます:
+Per-Component Imports is the recommended approach to using Ionicons. This involves importing the icon of your choice from the `ionicons` package and passing it to your template:
 
 ```html
 <template>

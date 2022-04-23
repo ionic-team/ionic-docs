@@ -1,8 +1,15 @@
 ---
+title: Angularのパフォーマンス
 sidebar_label: パフォーマンス
 ---
 
-# Angularのパフォーマンス
+<head>
+  <title>Angular Performance: Manage App Component Change with ngFor</title>
+  <meta
+    name="description"
+    content="Learn how Angular manages change propagation using ngFor with Ionic Components. Read for more information about Angular performance on Ionic apps."
+  />
+</head>
 
 ## \*ngFor with Ionic Components
 

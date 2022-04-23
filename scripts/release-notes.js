@@ -227,44 +227,14 @@ var versions = [
     element: 'Scandium',
   },
   {
-    minor: '5.10',
+    minor: '6.0',
     symbol: 'Ti',
     element: 'Titanium',
   },
   {
-    minor: '5.11',
+    minor: '6.1',
     symbol: 'V',
     element: 'Vanadium',
-  },
-  {
-    minor: '5.12',
-    symbol: 'Cr',
-    element: 'Chromium',
-  },
-  {
-    minor: '5.13',
-    symbol: 'Mn',
-    element: 'Manganese',
-  },
-  {
-    minor: '5.14',
-    symbol: 'Fe',
-    element: 'Iron',
-  },
-  {
-    minor: '5.15',
-    symbol: 'Co',
-    element: 'Cobalt',
-  },
-  {
-    minor: '5.16',
-    symbol: 'Ni',
-    element: 'Nickel',
-  },
-  {
-    minor: '5.17',
-    symbol: 'Cu',
-    element: 'Copper',
   },
 ];
 
