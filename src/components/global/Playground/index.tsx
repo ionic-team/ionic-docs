@@ -65,8 +65,8 @@ export default function Playground({
   const { isDarkTheme } = useThemeContext();
 
   const codeRef = useRef(null);
-  const frameiOS = useRef<HTMLIFrameElement>(null);
-  const frameMD = useRef<HTMLIFrameElement>(null);
+  const frameiOS = useRef<HTMLIFrameElement | null>(null);
+  const frameMD = useRef<HTMLIFrameElement | null>(null);
 
   /**
    * Developers can set a predefined size
@@ -332,16 +332,16 @@ const FRAME_SIZES = {
   xlarge: '800px',
 };
 
-const waitForFrame = (frame: HTMLElement) => {
+const waitForFrame = (frame: HTMLIFrameElement) => {
   if (isFrameReady(frame)) return Promise.resolve();
 
-  return new Promise((resolve) => {
+  return new Promise<void>((resolve) => {
     frame.contentWindow.addEventListener('demoReady', () => {
       resolve();
     });
   });
 };
 
-const isFrameReady = (frame: HTMLElement) => {
-  return frame.contentWindow.demoReady === true;
+const isFrameReady = (frame: HTMLIFrameElement) => {
+  return (frame.contentWindow as any).demoReady === true;
 };
