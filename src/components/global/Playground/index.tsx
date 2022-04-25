@@ -257,7 +257,7 @@ export default function Playground({
                     fill="#73849A"
                   />
                 </svg>
-              </a>
+              </button>
             </Tippy>
             <Tippy theme="playground" arrow={false} placement="bottom" content="Report an issue">
               <a
