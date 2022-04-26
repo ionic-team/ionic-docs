@@ -65,8 +65,8 @@ export default function Playground({
   const { isDarkTheme } = useThemeContext();
 
   const codeRef = useRef(null);
-  const frameiOS = useRef(null);
-  const frameMD = useRef(null);
+  const frameiOS = useRef<HTMLIFrameElement | null>(null);
+  const frameMD = useRef<HTMLIFrameElement | null>(null);
 
   /**
    * Developers can set a predefined size
@@ -110,6 +110,14 @@ export default function Playground({
   function copySourceCode() {
     const copyButton = codeRef.current.querySelector('button');
     copyButton.click();
+  }
+
+  /**
+   * Reloads the iOS and MD iframe sources back to their original state.
+   */
+  function resetDemo() {
+    frameiOS.current.contentWindow.location.reload();
+    frameMD.current.contentWindow.location.reload();
   }
 
   function openEditor(event) {
@@ -226,6 +234,31 @@ export default function Playground({
                 </svg>
               </button>
             </Tippy>
+            <Tippy theme="playground" arrow={false} placement="bottom" content="Reset demo">
+              <button className="playground__icon-button" onClick={resetDemo}>
+                <svg
+                  aria-hidden="true"
+                  width="10"
+                  height="12"
+                  viewBox="0 0 10 12"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    fillRule="evenodd"
+                    clipRule="evenodd"
+                    d="M2.22215 2.96247C3.0444 2.42025 4.01109 2.13084 5 2.13084C5.63538 2.13084 6.08146 2.15202 6.39321 2.18615C6.68142 2.2177 6.92148 2.26571 7.08584 2.36392C7.17445 2.41686 7.31584 2.52988 7.35221 2.73039C7.38869 2.93151 7.29402 3.07964 7.24155 3.14415C7.18678 3.21149 7.126 3.25445 7.09468 3.275C7.07632 3.28704 7.06001 3.29656 7.04754 3.30345C7.0412 3.30696 7.03557 3.30995 7.03082 3.3124C7.02933 3.31317 7.02792 3.31389 7.0266 3.31456C7.0258 3.31496 7.02503 3.31535 7.02429 3.31572C7.02331 3.31621 7.02238 3.31667 7.0215 3.3171L7.02023 3.31773C7.01994 3.31787 7.01905 3.31831 6.81818 2.91589L7.01905 3.31831C6.79385 3.42779 6.52136 3.33637 6.41043 3.11412C6.40662 3.1065 6.40305 3.09881 6.39972 3.09108C6.36829 3.08669 6.33284 3.08224 6.29298 3.07787C6.02849 3.04892 5.61974 3.02804 5 3.02804C4.1909 3.02804 3.39996 3.26482 2.72721 3.70846C2.05447 4.15209 1.53013 4.78264 1.22049 5.52038C0.910864 6.25812 0.82985 7.0699 0.987699 7.85307C1.14555 8.63625 1.53517 9.35564 2.10729 9.92028C2.67942 10.4849 3.40835 10.8694 4.2019 11.0252C4.99546 11.181 5.81801 11.1011 6.56552 10.7955C7.31304 10.4899 7.95195 9.97241 8.40147 9.30847C8.85098 8.64452 9.09091 7.86394 9.09091 7.06542C9.09091 6.81767 9.29442 6.61682 9.54545 6.61682C9.79649 6.61682 10 6.81767 10 7.06542C10 8.04139 9.70675 8.99544 9.15735 9.80692C8.60794 10.6184 7.82705 11.2509 6.91342 11.6244C5.99979 11.9979 4.99445 12.0956 4.02455 11.9052C3.05464 11.7148 2.16373 11.2448 1.46447 10.5547C0.765206 9.86458 0.289002 8.98532 0.0960758 8.02811C-0.0968502 7.07089 0.00216639 6.07871 0.380605 5.17704C0.759043 4.27536 1.3999 3.50469 2.22215 2.96247Z"
+                    fill="#73849A"
+                  />
+                  <path
+                    fillRule="evenodd"
+                    clipRule="evenodd"
+                    d="M4.67859 0.131391C4.8561 -0.0437971 5.1439 -0.0437971 5.32141 0.131391L7.59414 2.37438C7.77165 2.54957 7.77165 2.83361 7.59414 3.00879L5.32141 5.25178C5.1439 5.42697 4.8561 5.42697 4.67859 5.25178C4.50108 5.0766 4.50108 4.79256 4.67859 4.61737L6.6299 2.69159L4.67859 0.765805C4.50108 0.590616 4.50108 0.30658 4.67859 0.131391Z"
+                    fill="#73849A"
+                  />
+                </svg>
+              </button>
+            </Tippy>
             <Tippy theme="playground" arrow={false} placement="bottom" content="Report an issue">
               <a
                 className="playground__icon-button"
@@ -299,16 +332,16 @@ const FRAME_SIZES = {
   xlarge: '800px',
 };
 
-const waitForFrame = (frame: HTMLElement) => {
+const waitForFrame = (frame: HTMLIFrameElement) => {
   if (isFrameReady(frame)) return Promise.resolve();
 
-  return new Promise((resolve) => {
+  return new Promise<void>((resolve) => {
     frame.contentWindow.addEventListener('demoReady', () => {
       resolve();
     });
   });
 };
 
-const isFrameReady = (frame: HTMLElement) => {
-  return frame.contentWindow.demoReady === true;
+const isFrameReady = (frame: HTMLIFrameElement) => {
+  return (frame.contentWindow as any).demoReady === true;
 };
