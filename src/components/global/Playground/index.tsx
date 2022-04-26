@@ -40,12 +40,35 @@ const CodeBlockButton = ({ language, usageTarget, setUsageTarget, setCodeExpande
 
 type MdxContent = () => {};
 
-interface OutputTargetOptions {
+/**
+ * The advanced configuration of options when creating a
+ * playground example with multiple files for a single usage target
+ * or if needing to modify the generated Stackblitz example code.
+ */
+interface UsageTargetOptions {
+  /**
+   * The list of the file names to use in the Stackblitz example
+   * and their associated MDX content.
+   *
+   * ```ts
+   * files: {
+   *   'src/app/app.component.html': app_component_html,
+   *   'src/app/app.component.ts': app_component_ts,
+   * }
+   * ```
+   */
   files: {
     [key: string]: MdxContent;
   };
   angularModuleOptions?: {
+    /**
+     * The list of import declarations to add to the `AppModule`.
+     * Accepts value formatted as: `'import { FooComponent } from './foo.component';'`.
+     */
     imports: string[];
+    /**
+     * The list of class name declarations to add to the `AppModule`.
+     */
     declarations?: string[];
   };
 }
@@ -66,7 +89,7 @@ export default function Playground({
   size = 'small',
   id,
 }: {
-  code: { [key in UsageTarget]?: MdxContent | OutputTargetOptions };
+  code: { [key in UsageTarget]?: MdxContent | UsageTargetOptions };
   title?: string;
   description?: string;
   src?: string;
@@ -115,14 +138,14 @@ export default function Playground({
   const sourceMD = useBaseUrl(`${src}?ionic:mode=${Mode.MD}`);
 
   function copySourceCode() {
-    if (hasOutputTargetOptions) {
+    if (hasUsageTargetOptions) {
       return;
     }
     const copyButton = codeRef.current.querySelector('button');
     copyButton.click();
   }
 
-  const hasOutputTargetOptions = codeSnippets[usageTarget] && typeof codeSnippets[usageTarget].$$typeof !== 'symbol';
+  const hasUsageTargetOptions = codeSnippets[usageTarget] && typeof codeSnippets[usageTarget].$$typeof !== 'symbol';
 
   function openEditor(event) {
     const editorOptions: EditorOptions = {
@@ -131,12 +154,12 @@ export default function Playground({
     };
 
     let codeBlock;
-    if (!hasOutputTargetOptions) {
+    if (!hasUsageTargetOptions) {
       // codeSnippets are React components, so we need to get their rendered text
       // using outerText will preserve line breaks for formatting in Stackblitz editor
       codeBlock = codeRef.current.querySelector('code').outerText;
     } else {
-      editorOptions.angularModuleOptions = (code[usageTarget] as OutputTargetOptions).angularModuleOptions;
+      editorOptions.angularModuleOptions = (code[usageTarget] as UsageTargetOptions).angularModuleOptions;
 
       editorOptions.files = Object.keys(codeSnippets[usageTarget])
         .map((fileName) => ({
@@ -266,16 +289,16 @@ export default function Playground({
               arrow={false}
               placement="bottom"
               content={
-                hasOutputTargetOptions
+                hasUsageTargetOptions
                   ? 'For multi-file examples, use the copy buttons on the code blocks'
                   : 'Copy source code'
               }
             >
               <button
                 className={`playground__icon-button playground__icon-button--primary ${
-                  hasOutputTargetOptions ? 'playground__icon-button--disabled' : ''
+                  hasUsageTargetOptions ? 'playground__icon-button--disabled' : ''
                 }`}
-                aria-disabled={hasOutputTargetOptions}
+                aria-disabled={hasUsageTargetOptions}
                 onClick={copySourceCode}
               >
                 <svg
