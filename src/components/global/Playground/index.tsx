@@ -44,12 +44,35 @@ const CodeBlockButton = ({ language, usageTarget, setUsageTarget, setCodeExpande
 
 type MdxContent = () => {};
 
-interface OutputTargetOptions {
+/**
+ * The advanced configuration of options when creating a
+ * playground example with multiple files for a single usage target
+ * or if needing to modify the generated Stackblitz example code.
+ */
+interface UsageTargetOptions {
+  /**
+   * The list of the file names to use in the Stackblitz example
+   * and their associated MDX content.
+   *
+   * ```ts
+   * files: {
+   *   'src/app/app.component.html': app_component_html,
+   *   'src/app/app.component.ts': app_component_ts,
+   * }
+   * ```
+   */
   files: {
     [key: string]: MdxContent;
   };
   angularModuleOptions?: {
+    /**
+     * The list of import declarations to add to the `AppModule`.
+     * Accepts value formatted as: `'import { FooComponent } from './foo.component';'`.
+     */
     imports: string[];
+    /**
+     * The list of class name declarations to add to the `AppModule`.
+     */
     declarations?: string[];
   };
 }
@@ -58,6 +81,9 @@ interface OutputTargetOptions {
  * @param code The code snippets for each supported framework target.
  * @param title Optional title of the generated playground example. Specify to customize the Stackblitz title.
  * @param description Optional description of the generated playground example. Specify to customize the Stackblitz description.
+ * @param src The absolute path to the playground demo. For example: `/usage/button/basic/demo.html`
+ * @param size The height of the playground. Supports `xsmall`, `small`, `medium`, `large`, 'xlarge' or any string value.
+ * @param id The id of the playground. Required in multi-file playground examples to scope the code snippet blocks to the playground instance.
  */
 export default function Playground({
   code,
@@ -66,7 +92,7 @@ export default function Playground({
   src,
   size = 'small',
 }: {
-  code: { [key in UsageTarget]?: MdxContent | OutputTargetOptions };
+  code: { [key in UsageTarget]?: MdxContent | UsageTargetOptions };
   title?: string;
   description?: string;
   src?: string;
@@ -115,14 +141,14 @@ export default function Playground({
   const sourceMD = useBaseUrl(`${src}?ionic:mode=${Mode.MD}`);
 
   function copySourceCode() {
-    if (hasOutputTargetOptions) {
+    if (hasUsageTargetOptions) {
       return;
     }
     const copyButton = codeRef.current.querySelector('button');
     copyButton.click();
   }
 
-  const hasOutputTargetOptions = (code[usageTarget] as OutputTargetOptions)?.files !== undefined;
+  const hasUsageTargetOptions = (code[usageTarget] as UsageTargetOptions)?.files !== undefined;
 
   function openEditor(event) {
     const editorOptions: EditorOptions = {
@@ -131,12 +157,12 @@ export default function Playground({
     };
 
     let codeBlock;
-    if (!hasOutputTargetOptions) {
+    if (!hasUsageTargetOptions) {
       // codeSnippets are React components, so we need to get their rendered text
       // using outerText will preserve line breaks for formatting in Stackblitz editor
       codeBlock = codeRef.current.querySelector('code').outerText;
     } else {
-      const codeUsageTarget = code[usageTarget] as OutputTargetOptions;
+      const codeUsageTarget = code[usageTarget] as UsageTargetOptions;
       editorOptions.angularModuleOptions = codeUsageTarget.angularModuleOptions;
 
       editorOptions.files = Object.keys(codeSnippets[usageTarget])
@@ -166,10 +192,17 @@ export default function Playground({
   useEffect(() => {
     const codeSnippets = {};
     Object.keys(code).forEach((key) => {
-      // Instantiates the React component from the MDX content.
       if (typeof code[key] === 'function') {
+        /**
+         * Instantiates the React component from the MDX content for
+         * single-file playground examples.
+         */
         codeSnippets[key] = code[key]({});
       } else if (typeof code[key] === 'object') {
+        /**
+         * Instantiates the list of React components from the MDX content for
+         * multi-file playground examples.
+         */
         const fileSnippets = {};
         for (const fileName of Object.keys(code[key].files)) {
           fileSnippets[`${fileName}`] = code[key].files[fileName]({});
@@ -201,7 +234,7 @@ export default function Playground({
 
   function renderCodeSnippets() {
     if (code[usageTarget]) {
-      if (!hasOutputTargetOptions) {
+      if (!hasUsageTargetOptions) {
         return codeSnippets[usageTarget];
       }
       if (codeSnippets[usageTarget] == null) {
@@ -291,13 +324,17 @@ export default function Playground({
               theme="playground"
               arrow={false}
               placement="bottom"
-              content={hasOutputTargetOptions ? 'Unavailable in multi-file examples' : 'Copy source code'}
+              content={
+                hasUsageTargetOptions
+                  ? 'For multi-file examples, use the copy buttons on the code blocks'
+                  : 'Copy source code'
+              }
             >
               <button
                 className={`playground__icon-button playground__icon-button--primary ${
-                  hasOutputTargetOptions ? 'playground__icon-button--disabled' : ''
+                  hasUsageTargetOptions ? 'playground__icon-button--disabled' : ''
                 }`}
-                aria-disabled={hasOutputTargetOptions}
+                aria-disabled={hasUsageTargetOptions}
                 onClick={copySourceCode}
               >
                 <svg
