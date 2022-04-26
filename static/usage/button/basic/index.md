@@ -5,4 +5,17 @@ import react from './react.md';
 import vue from './vue.md';
 import angular from './angular.md';
 
-<Playground code={{ javascript, react, vue, angular }} src="usage/button/basic/demo.html" />
+<Playground
+  code={{
+    javascript: {
+      files: {
+        'src/example.html': javascript,
+        'src/example-two.html': javascript,
+        'src/example-three.html': javascript,
+        'src/example-four.html': javascript,
+        'src/example-five.html': javascript,
+      },
+    },
+  }}
+  src="usage/button/basic/demo.html"
+/>

@@ -8,6 +8,10 @@ import useThemeContext from '@theme/hooks/useThemeContext';
 
 import Tippy from '@tippyjs/react';
 import 'tippy.js/dist/tippy.css';
+import PlaygroundTabs from '../PlaygroundTabs';
+import TabItem from '@theme/TabItem';
+
+import { IconHtml, IconTs, IconVue } from './icons';
 
 const ControlButton = ({ isSelected, handleClick, title, label }) => {
   return (
@@ -87,14 +91,12 @@ export default function Playground({
   description,
   src,
   size = 'small',
-  id,
 }: {
   code: { [key in UsageTarget]?: MdxContent | UsageTargetOptions };
   title?: string;
   description?: string;
   src?: string;
   size: string;
-  id?: string;
 }) {
   if (!code || Object.keys(code).length === 0) {
     console.warn('No code usage examples provided for this Playground example.');
@@ -102,6 +104,7 @@ export default function Playground({
   }
   const { isDarkTheme } = useThemeContext();
 
+  const hostRef = useRef<HTMLDivElement | null>(null);
   const codeRef = useRef(null);
   const frameiOS = useRef(null);
   const frameMD = useRef(null);
@@ -145,7 +148,7 @@ export default function Playground({
     copyButton.click();
   }
 
-  const hasUsageTargetOptions = codeSnippets[usageTarget] && typeof codeSnippets[usageTarget].$$typeof !== 'symbol';
+  const hasUsageTargetOptions = (code[usageTarget] as UsageTargetOptions)?.files !== undefined;
 
   function openEditor(event) {
     const editorOptions: EditorOptions = {
@@ -159,11 +162,13 @@ export default function Playground({
       // using outerText will preserve line breaks for formatting in Stackblitz editor
       codeBlock = codeRef.current.querySelector('code').outerText;
     } else {
-      editorOptions.angularModuleOptions = (code[usageTarget] as UsageTargetOptions).angularModuleOptions;
+      const codeUsageTarget = code[usageTarget] as UsageTargetOptions;
+      editorOptions.angularModuleOptions = codeUsageTarget.angularModuleOptions;
 
       editorOptions.files = Object.keys(codeSnippets[usageTarget])
         .map((fileName) => ({
-          [fileName]: document.querySelector<HTMLElement>(`#${getCodeSnippetId(fileName)} code`).outerText,
+          [fileName]: hostRef.current!.querySelector<HTMLElement>(`#${getCodeSnippetId(usageTarget, fileName)} code`)
+            .outerText,
         }))
         .reduce((acc, curr) => ({ ...acc, ...curr }), {});
     }
@@ -208,31 +213,55 @@ export default function Playground({
     setCodeSnippets(codeSnippets);
   }, []);
 
-  function getCodeSnippetId(fileName: string) {
+  function getCodeSnippetId(usageTarget: string, fileName: string) {
     let fileNameId = fileName;
     // replace all non-alphanumeric characters with underscores
     fileNameId = fileNameId.replace(/[^a-zA-Z0-9]/g, '_');
-    return `playground_${id}_${fileNameId}`;
+    return `playground_${usageTarget}_${fileNameId}`;
+  }
+
+  function getFileIcon(fileName: string) {
+    const extension = fileName.slice(fileName.lastIndexOf('.') + 1);
+    switch (extension) {
+      case 'ts':
+        return <IconTs />;
+      case 'html':
+        return <IconHtml />;
+      case 'vue':
+        return <IconVue />;
+    }
   }
 
   function renderCodeSnippets() {
-    if (codeSnippets[usageTarget]) {
-      if (typeof codeSnippets[usageTarget].$$typeof === 'symbol') {
+    if (code[usageTarget]) {
+      if (!hasUsageTargetOptions) {
         return codeSnippets[usageTarget];
       }
-      return Object.keys(codeSnippets[usageTarget]).map((fileName) => {
-        return (
-          <div key={fileName} id={getCodeSnippetId(fileName)}>
-            <h4>{fileName}</h4>
-            {codeSnippets[usageTarget][fileName]}
-          </div>
-        );
-      });
+      if (codeSnippets[usageTarget] == null) {
+        return null;
+      }
+      return (
+        <PlaygroundTabs className="playground__tabs">
+          {Object.keys(codeSnippets[usageTarget]).map((fileName) => (
+            <TabItem
+              className="playground__tab-item"
+              value={fileName}
+              label={fileName}
+              key={fileName}
+              {...{
+                icon: getFileIcon(fileName),
+              }}
+            >
+              <div id={getCodeSnippetId(usageTarget, fileName)}>{codeSnippets[usageTarget][fileName]}</div>
+            </TabItem>
+          ))}
+        </PlaygroundTabs>
+      );
     }
   }
 
   return (
-    <div className="playground">
+    <div className="playground" ref={hostRef}>
       <div className="playground__container">
         <div className="playground__control-toolbar">
           <div className="playground__control-group">
