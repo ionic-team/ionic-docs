@@ -277,7 +277,6 @@ module.exports = {
         },
       };
     },
-    require.resolve('./webpack.plugin.js')
   ],
   themes: [
     [

@@ -69,7 +69,6 @@ function TabsComponent(props: Props): JSX.Element {
     );
   }
 
-  // const { tabGroupChoices, setTabGroupChoices } = useTabGroupChoice();
   const [selectedValue, setSelectedValue] = useState(defaultValue);
   const tabRefs: (HTMLLIElement | null)[] = [];
   const { blockElementScrollPositionUntilNextRender } = useScrollPositionBlocker();
