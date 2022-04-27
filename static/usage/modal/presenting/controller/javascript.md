@@ -1,5 +1,5 @@
 ```html
-<div class="ion-page">
+<ion-app>
   <ion-header>
     <ion-toolbar>
       <ion-title>Controller Modal</ion-title>
@@ -8,7 +8,7 @@
   <ion-content>
     <ion-button onclick="openModal()">Open Modal</ion-button>
   </ion-content>
-</div>
+</ion-app>
 
 <script>
   var openModal = async () => {

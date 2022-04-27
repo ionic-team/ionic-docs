@@ -13,7 +13,7 @@
 </template>
 
 <script>
-  import { IonButton, IonContent, IonPage, IonHeader, IonToolbar, IonTitle modalController } from '@ionic/vue';
+  import { IonButton, IonContent, IonPage, IonHeader, IonToolbar, IonTitle, modalController } from '@ionic/vue';
   import Modal from './Modal.vue';
 
   export default {

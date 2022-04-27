@@ -1,6 +1,6 @@
 ```tsx
 import React, { useRef } from 'react';
-import { IonButton, IonModal, IonHeader, IonContent, IonToolbar, IonTitle, IonPage, useIonModal } from '@ionic/react';
+import { IonButton, IonHeader, IonContent, IonToolbar, IonTitle, IonPage, useIonModal } from '@ionic/react';
 
 const ModalExample = ({ onDismiss }) => (
   <div>
@@ -12,13 +12,11 @@ const ModalExample = ({ onDismiss }) => (
         </IonButton>
       </IonToolbar>
     </IonHeader>
-    <IonContent class="ion-padding">This is an example of an inline full-height modal.</IonContent>
+    <IonContent class="ion-padding">This is an example of an controller full-height modal.</IonContent>
   </div>
 );
 
 function Example() {
-  const modal = useRef(null);
-
   const [present, dismiss] = useIonModal(ModalExample, {
     onDismiss: () => dismiss(),
   });
@@ -27,7 +25,7 @@ function Example() {
     <IonPage>
       <IonHeader>
         <IonToolbar>
-          <IonTitle>Inline Modal</IonTitle>
+          <IonTitle>Controller Modal</IonTitle>
         </IonToolbar>
       </IonHeader>
       <IonContent>

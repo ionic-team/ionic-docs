@@ -1,5 +1,5 @@
 ```html
-<div class="ion-page">
+<ion-app>
   <ion-header>
     <ion-toolbar>
       <ion-title>Inline Modal</ion-title>
@@ -18,5 +18,5 @@
       <ion-content class="ion-padding">This is an example of an inline full-height modal.</ion-content>
     </ion-modal>
   </ion-content>
-</div>
+</ion-app>
 ```
