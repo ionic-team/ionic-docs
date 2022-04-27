@@ -8,6 +8,10 @@ import useThemeContext from '@theme/hooks/useThemeContext';
 
 import Tippy from '@tippyjs/react';
 import 'tippy.js/dist/tippy.css';
+import PlaygroundTabs from '../PlaygroundTabs';
+import TabItem from '@theme/TabItem';
+
+import { IconHtml, IconTs, IconVue } from './icons';
 
 const ControlButton = ({ isSelected, handleClick, title, label }) => {
   return (
@@ -38,10 +42,48 @@ const CodeBlockButton = ({ language, usageTarget, setUsageTarget, setCodeExpande
   );
 };
 
+type MdxContent = () => {};
+
+/**
+ * The advanced configuration of options when creating a
+ * playground example with multiple files for a single usage target
+ * or if needing to modify the generated Stackblitz example code.
+ */
+interface UsageTargetOptions {
+  /**
+   * The list of the file names to use in the Stackblitz example
+   * and their associated MDX content.
+   *
+   * ```ts
+   * files: {
+   *   'src/app/app.component.html': app_component_html,
+   *   'src/app/app.component.ts': app_component_ts,
+   * }
+   * ```
+   */
+  files: {
+    [key: string]: MdxContent;
+  };
+  angularModuleOptions?: {
+    /**
+     * The list of import declarations to add to the `AppModule`.
+     * Accepts value formatted as: `'import { FooComponent } from './foo.component';'`.
+     */
+    imports: string[];
+    /**
+     * The list of class name declarations to add to the `AppModule`.
+     */
+    declarations?: string[];
+  };
+}
+
 /**
  * @param code The code snippets for each supported framework target.
  * @param title Optional title of the generated playground example. Specify to customize the Stackblitz title.
  * @param description Optional description of the generated playground example. Specify to customize the Stackblitz description.
+ * @param src The absolute path to the playground demo. For example: `/usage/button/basic/demo.html`
+ * @param size The height of the playground. Supports `xsmall`, `small`, `medium`, `large`, 'xlarge' or any string value.
+ * @param devicePreview `true` if the playground example should render in a device frame (iOS/MD).
  */
 export default function Playground({
   code,
@@ -51,7 +93,7 @@ export default function Playground({
   size = 'small',
   devicePreview,
 }: {
-  code: { [key in UsageTarget]?: () => {} };
+  code: { [key in UsageTarget]?: MdxContent | UsageTargetOptions };
   title?: string;
   src: string;
   size: string;
@@ -64,6 +106,7 @@ export default function Playground({
   }
   const { isDarkTheme } = useThemeContext();
 
+  const hostRef = useRef<HTMLDivElement | null>(null);
   const codeRef = useRef(null);
   const frameiOS = useRef<HTMLIFrameElement | null>(null);
   const frameMD = useRef<HTMLIFrameElement | null>(null);
@@ -108,10 +151,14 @@ export default function Playground({
   const sourceMD = useBaseUrl(`${src}?ionic:mode=${Mode.MD}`);
 
   function copySourceCode() {
+    if (hasUsageTargetOptions) {
+      return;
+    }
     const copyButton = codeRef.current.querySelector('button');
     copyButton.click();
   }
 
+  const hasUsageTargetOptions = (code[usageTarget] as UsageTargetOptions)?.files !== undefined;
   /**
    * Reloads the iOS and MD iframe sources back to their original state.
    */
@@ -121,13 +168,27 @@ export default function Playground({
   }
 
   function openEditor(event) {
-    // codeSnippets are React components, so we need to get their rendered text
-    // using outerText will preserve line breaks for formatting in Stackblitz editor
-    const codeBlock = codeRef.current.querySelector('code').outerText;
     const editorOptions: EditorOptions = {
       title,
       description,
     };
+
+    let codeBlock;
+    if (!hasUsageTargetOptions) {
+      // codeSnippets are React components, so we need to get their rendered text
+      // using outerText will preserve line breaks for formatting in Stackblitz editor
+      codeBlock = codeRef.current.querySelector('code').outerText;
+    } else {
+      const codeUsageTarget = code[usageTarget] as UsageTargetOptions;
+      editorOptions.angularModuleOptions = codeUsageTarget.angularModuleOptions;
+
+      editorOptions.files = Object.keys(codeSnippets[usageTarget])
+        .map((fileName) => ({
+          [fileName]: hostRef.current!.querySelector<HTMLElement>(`#${getCodeSnippetId(usageTarget, fileName)} code`)
+            .outerText,
+        }))
+        .reduce((acc, curr) => ({ ...acc, ...curr }), {});
+    }
 
     switch (usageTarget) {
       case UsageTarget.Angular:
@@ -148,14 +209,76 @@ export default function Playground({
   useEffect(() => {
     const codeSnippets = {};
     Object.keys(code).forEach((key) => {
-      // Instantiates the React component from the MDX content.
-      codeSnippets[key] = code[key]({});
+      if (typeof code[key] === 'function') {
+        /**
+         * Instantiates the React component from the MDX content for
+         * single-file playground examples.
+         */
+        codeSnippets[key] = code[key]({});
+      } else if (typeof code[key] === 'object') {
+        /**
+         * Instantiates the list of React components from the MDX content for
+         * multi-file playground examples.
+         */
+        const fileSnippets = {};
+        for (const fileName of Object.keys(code[key].files)) {
+          fileSnippets[`${fileName}`] = code[key].files[fileName]({});
+        }
+        codeSnippets[key] = fileSnippets;
+      }
     });
     setCodeSnippets(codeSnippets);
   }, []);
 
+  function getCodeSnippetId(usageTarget: string, fileName: string) {
+    let fileNameId = fileName;
+    // replace all non-alphanumeric characters with underscores
+    fileNameId = fileNameId.replace(/[^a-zA-Z0-9]/g, '_');
+    return `playground_${usageTarget}_${fileNameId}`;
+  }
+
+  function getFileIcon(fileName: string) {
+    const extension = fileName.slice(fileName.lastIndexOf('.') + 1);
+    switch (extension) {
+      case 'ts':
+        return <IconTs />;
+      case 'html':
+        return <IconHtml />;
+      case 'vue':
+        return <IconVue />;
+    }
+  }
+
+  function renderCodeSnippets() {
+    if (code[usageTarget]) {
+      if (!hasUsageTargetOptions) {
+        return codeSnippets[usageTarget];
+      }
+      if (codeSnippets[usageTarget] == null) {
+        return null;
+      }
+      return (
+        <PlaygroundTabs className="playground__tabs">
+          {Object.keys(codeSnippets[usageTarget]).map((fileName) => (
+            <TabItem
+              className="playground__tab-item"
+              value={fileName}
+              label={fileName}
+              key={fileName}
+              {...{
+                icon: getFileIcon(fileName),
+              }}
+            >
+              <div id={getCodeSnippetId(usageTarget, fileName)}>{codeSnippets[usageTarget][fileName]}</div>
+            </TabItem>
+          ))}
+        </PlaygroundTabs>
+      );
+    }
+  }
+
   return (
-    <div className="playground">
+    <div className="playground" ref={hostRef}>
       <div className="playground__container">
         <div className="playground__control-toolbar">
           <div className="playground__control-group">
@@ -216,8 +339,23 @@ export default function Playground({
                 </svg>
               </button>
             </Tippy>
-            <Tippy theme="playground" arrow={false} placement="bottom" content="Copy source code">
-              <button className="playground__icon-button playground__icon-button--primary" onClick={copySourceCode}>
+            <Tippy
+              theme="playground"
+              arrow={false}
+              placement="bottom"
+              content={
+                hasUsageTargetOptions
+                  ? 'For multi-file examples, use the copy buttons on the code blocks'
+                  : 'Copy source code'
+              }
+            >
+              <button
+                className={`playground__icon-button playground__icon-button--primary ${
+                  hasUsageTargetOptions ? 'playground__icon-button--disabled' : ''
+                }`}
+                aria-disabled={hasUsageTargetOptions}
+                onClick={copySourceCode}
+              >
                 <svg
                   aria-hidden="true"
                   xmlns="http://www.w3.org/2000/svg"
@@ -318,7 +456,7 @@ export default function Playground({
         className={'playground__code-block ' + (codeExpanded ? 'playground__code-block--expanded' : '')}
         aria-expanded={codeExpanded ? 'true' : 'false'}
       >
-        {codeSnippets[usageTarget]}
+        {renderCodeSnippets()}
       </div>
     </div>
   );
