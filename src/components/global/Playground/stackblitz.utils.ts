@@ -91,6 +91,14 @@ const openAngularEditor = async (code: string, options?: EditorOptions) => {
     },
     dependencies: {
       '@ionic/angular': DEFAULT_IONIC_VERSION,
+      /**
+       * Stackblitz doesn't install the underlying `@ionic/core` package type declarations.
+       * This can lead to issues with extended type declarations, such as our proxies
+       * that extend the JSX component type.
+       *
+       * We manually install this dependency to avoid this issue in Stackblitz.
+       */
+      '@ionic/core': DEFAULT_IONIC_VERSION,
     },
   });
 }
