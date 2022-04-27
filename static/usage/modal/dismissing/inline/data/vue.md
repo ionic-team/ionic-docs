@@ -25,11 +25,11 @@
 </template>
 
 <script>
-  import { IonButton, IonModal, IonHeader, IonToolbar, IonTitle, IonItem, IonInput } from '@ionic/vue';
+  import { IonButton, IonModal, IonHeader, IonToolbar, IonTitle, IonItem, IonInput, IonLabel } from '@ionic/vue';
   import { defineComponent, ref } from 'vue';
 
   export default defineComponent({
-    components: { IonButton, IonModal, IonHeader, IonToolbar, IonTitle, IonItem, IonInput },
+    components: { IonButton, IonModal, IonHeader, IonToolbar, IonTitle, IonItem, IonInput, IonLabel },
     data() {
       return {
         message: '',
