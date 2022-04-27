@@ -94,6 +94,8 @@ import DismissIsOpenExample from '@site/static/usage/modal/dismissing/inline/is-
 
 When dismissing a modal, you can optionally send data back in the dismiss event. This is useful when you want to provide information entered by the user in the modal, back to the previous view.
 
+For framework implementations (Angular, React and Vue), you can directly assign the state of the modal view to the active component. This prevents needing to add event listeners or binding to dismiss hooks.
+
 import DismissDataExample from '@site/static/usage/modal/dismissing/inline/data/index.md';
 
 <DismissDataExample />

@@ -16,10 +16,12 @@ import {
 function Example() {
   const modal = useRef(null);
   const input = useRef(null);
+
   const [message, setMessage] = useState('');
 
   function dismiss() {
-    modal.current?.dismiss(input.current?.value);
+    setMessage(`Hello ${input.current?.value}!`);
+    modal.current?.dismiss();
   }
 
   return (
@@ -31,13 +33,7 @@ function Example() {
       </IonHeader>
       <IonContent className="ion-padding">
         <p className="ion-text-center">{message}</p>
-        <IonModal
-          ref={modal}
-          isOpen={true}
-          onDidDismiss={(ev) => {
-            setMessage(`Hello ${ev.detail.data}!`);
-          }}
-        >
+        <IonModal ref={modal} isOpen={true}>
           <IonHeader>
             <IonToolbar>
               <IonTitle>Modal</IonTitle>
