@@ -120,6 +120,10 @@ The following example shows how to set the locale to Spanish (Spain).
 
 <CustomLocale />
 
+:::note
+The time label is not automatically localized. See [Time Label](#time-label) for more information.
+:::
+
 ### Hour Cycle
 
 `ion-datetime` will use the hour cycle that is specified by the `locale` property by default. For example, if `locale` is set to `en-US`, then `ion-datetime` will use a 12 hour cycle.
