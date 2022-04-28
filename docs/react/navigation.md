@@ -3,6 +3,8 @@ title: React Navigation
 sidebar_label: Navigation/Routing
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 <head>
   <title>React Navigation: Router Link Redirect to Navigate to Another Page</title>
   <meta
@@ -251,6 +253,176 @@ const UserDetailPage: React.FC<UserDetailPageProps> = ({ match }) => {
 The [`match`](https://reacttraining.com/react-router/web/api/match) prop contains information about the matched route, including the URL params. We obtain the `id` param here and display it on the screen.
 
 Note how we use a TypeScript interface to strongly type the props object. The interface gives us type safety and code completion inside of the component.
+
+## Working with Tabs
+
+When working with tabs, Ionic needs a way to know which view belongs to which tab. The `IonTabs` component comes in handy here, but let's look at what the routing setup for this looks like:
+
+```tsx
+<IonApp>
+  <IonReactRouter>
+      <IonRouterOutlet>
+        <Route path="/tabs" render={() => <Tabs />} />
+        <Route exact path="/">
+          <Redirect to="/tabs" />
+        </Route>
+      </IonRouterOutlet>
+    </IonSplitPane>
+  </IonReactRouter>
+</IonApp>
+```
+
+Here, our `tabs` path loads a `Tabs` component. We provide each tab as a route object inside of this component. In this example, we call the path `tabs`, but this can be customized.
+
+Let's start by taking a look at our `Tabs` component:
+
+```tsx
+import { Redirect, Route } from 'react-router-dom';
+import {
+  IonContent,
+  IonIcon,
+  IonLabel,
+  IonPage,
+  IonRouterOutlet,
+  IonTabBar,
+  IonTabButton,
+  IonTabs
+} from '@ionic/react';
+import { IonReactRouter } from '@ionic/react-router';
+import { ellipse, square, triangle } from 'ionicons/icons';
+import Tab1 from './pages/Tab1';
+import Tab2 from './pages/Tab2';
+import Tab3 from './pages/Tab3';
+
+const Tabs: React.FC = () => (
+  <IonPage>
+    <IonContent>
+      <IonTabs>
+        <IonRouterOutlet>
+          <Redirect exact path="/tabs" to="/tabs/tab1" />
+          <Route exact path="/tabs/tab1">
+            <Tab1 />
+          </Route>
+          <Route exact path="/tabs/tab2">
+            <Tab2 />
+          </Route>
+          <Route path="/tabs/tab3">
+            <Tab3 />
+          </Route>
+          <Route exact path="/tabs">
+            <Redirect to="/tabs/tab1" />
+          </Route>
+        </IonRouterOutlet>
+        <IonTabBar slot="bottom">
+          <IonTabButton tab="tab1" href="/tabs/tab1">
+            <IonIcon icon={triangle} />
+            <IonLabel>Tab 1</IonLabel>
+          </IonTabButton>
+          <IonTabButton tab="tab2" href="/tabs/tab2">
+            <IonIcon icon={ellipse} />
+            <IonLabel>Tab 2</IonLabel>
+          </IonTabButton>
+          <IonTabButton tab="tab3" href="/tabs/tab3">
+            <IonIcon icon={square} />
+            <IonLabel>Tab 3</IonLabel>
+          </IonTabButton>
+        </IonTabBar>
+      </IonTabs>
+    </IonContent>
+  </IonPage>
+);
+
+export default Tabs;
+```
+
+If you have worked with Ionic Framework before, this should feel familiar. We create an `IonTabs` component and provide an `IonTabBar`. The `IonTabBar` provides `IonTabButton` components, each with a `tab` property that is associated with its corresponding tab in the router config. We also provide an `IonRouterOutlet` to give `IonTabs` an outlet to render the different tab views in.
+
+### How Tabs in Ionic Work
+
+Each tab in Ionic is treated as an individual navigation stack. This means if you have three tabs in your application, each tab has its own navigation stack. Within each stack you can navigate forwards (push a view) and backwards (pop a view).
+
+ This behavior is important to note as it is different than most tab implementations that are found in other web based UI libraries. Other libraries typically manages tabs as one single history stack. This behavior requires some additional constraints in how developers add child tab routes and switch between tabs.
+ 
+ Since Ionic is focused on helping developers build mobile apps, the tabs in Ionic are designed to match native mobile tabs as closely as possible. As a result, there may be certain behaviors in Ionic's tabs that differ from tabs implementations you have seen in other UI libraries. Read on to learn more about some of these differences.
+
+### Child Routes within Tabs
+
+When adding additional routes to tabs you should write them as sibling routes with the parent tab as the path prefix. The example below defines the `/tabs/tab1/view` route as a sibling of the `/tabs/tab1` route. Since this new route has the `tab1` prefix, it will be rendered inside of the `Tabs` component, and Tab 1 will still be selected in the `IonTabBar`.
+
+```tsx
+<IonTabs>
+  <IonRouterOutlet>
+    <Redirect exact path="/tabs" to="/tabs/tab1" />
+    <Route exact path="/tabs/tab1">
+      <Tab1 />
+    </Route>
+    <Route exact path="/tabs/tab1/view">
+      <Tab1View />
+    </Route>
+    <Route exact path="/tabs/tab2">
+      <Tab2 />
+    </Route>
+    <Route path="/tabs/tab3">
+      <Tab3 />
+    </Route>
+    <Route exact path="/tabs">
+      <Redirect to="/tabs/tab1" />
+    </Route>
+  </IonRouterOutlet>
+  <IonTabBar slot="bottom">
+    <IonTabButton tab="tab1" href="/tabs/tab1">
+      <IonIcon icon={triangle} />
+      <IonLabel>Tab 1</IonLabel>
+    </IonTabButton>
+    <IonTabButton tab="tab2" href="/tabs/tab2">
+      <IonIcon icon={ellipse} />
+      <IonLabel>Tab 2</IonLabel>
+    </IonTabButton>
+    <IonTabButton tab="tab3" href="/tabs/tab3">
+      <IonIcon icon={square} />
+      <IonLabel>Tab 3</IonLabel>
+    </IonTabButton>
+  </IonTabBar>
+</IonTabs>
+```
+
+### Switching Between Tabs
+
+Since each tab is its own navigation stack, it is important to note that these navigation stacks should never interact. This means that there should never be a button in Tab 1 that routes a user to Tab 2. In other words, tabs should only be changed by the user tapping a tab button in the tab bar.
+
+A good example of this in practice is the iOS App Store and Google Play Store mobile applications. These apps both provide tabbed interfaces, but neither one ever routes the user across tabs. For example, the "Games" tab in the iOS App Store app never directs users to the "Search" tab and vice versa.
+
+Let's take a look at a couple common mistakes that are made with tabs.
+
+**A Settings Tab That Multiple Tabs Reference**
+
+A common practice is to create a Settings view as its own tab. This is great if developers need to present several nested settings menus. However, other tabs should never try to route to the Settings tab. As we mentioned above, the only way that the Settings tab should be activated is by a user tapping the appropriate tab button.
+
+If you find that your tabs need to reference the Settings tab, we recommend making the Settings view a modal by using `ion-modal`. This is a practice found in the iOS App Store app, and it works very well. With this approach, any tab can present the modal without breaking the mobile tabs pattern of each tab being its own stack.
+
+The example below shows how the iOS App Store app handles presenting an "Account" view from multiple tabs. By presenting the "Account" view in a modal, the app can work within the mobile tabs best practices to show the same view across multiple tabs.
+
+<video
+  style={{
+    'margin': '40px auto',
+    'display': 'flex'
+  }}
+  width="400"
+  src={useBaseUrl('video/tabs-account-demo.mp4')} 
+  controls
+></video>
+
+**Reusing Views Across Tabs**
+
+Another common practice is to present the same view in multiple tabs. Developers often try to do this by having the view contained in a single tab, with other tabs routing to that tab. As we mentioned above, this breaks the mobile tabs pattern and should be avoided.
+
+Instead, we recommend having routes in each tab that reference the same component. This is a practice done in popular apps like Spotify. For example, you can access an album or podcast from the "Home", "Search", and "Your Library" tabs. When accessing the album or podcast, users stay within that tab. The app does this by creating routes per tab and sharing a common component under the hood.
+
+The example below shows how the Spotify app reuses the same album component to show content in multiple tabs. Notice that each screenshot shows the same album but from a different tab.
+
+| Home Tab | Search Tab |
+| :------: | :--------: |
+| <img src={useBaseUrl('img/usage/tabs-home.jpg')} /> | <img src={useBaseUrl('img/usage/tabs-search.jpg')} /> |
 
 ## Live Example
 
