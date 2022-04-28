@@ -1,3 +1,3 @@
 ```html
-<ion-datetime showDefaultTitle={true}></ion-datetime>
+<ion-datetime [showDefaultTitle]="true"></ion-datetime>
 ```
