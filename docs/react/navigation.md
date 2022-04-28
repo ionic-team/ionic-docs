@@ -341,9 +341,9 @@ If you have worked with Ionic Framework before, this should feel familiar. We cr
 
 Each tab in Ionic is treated as an individual navigation stack. This means if you have three tabs in your application, each tab has its own navigation stack. Within each stack you can navigate forwards (push a view) and backwards (pop a view).
 
- This behavior is important to note as it is different than most tab implementations that are found in other web based UI libraries. Other libraries typically manages tabs as one single history stack. This behavior requires some additional constraints in how developers add child tab routes and switch between tabs.
+This behavior is important to note as it is different than most tab implementations that are found in other web based UI libraries. Other libraries typically manage tabs as one single history stack.
  
- Since Ionic is focused on helping developers build mobile apps, the tabs in Ionic are designed to match native mobile tabs as closely as possible. As a result, there may be certain behaviors in Ionic's tabs that differ from tabs implementations you have seen in other UI libraries. Read on to learn more about some of these differences.
+Since Ionic is focused on helping developers build mobile apps, the tabs in Ionic are designed to match native mobile tabs as closely as possible. As a result, there may be certain behaviors in Ionic's tabs that differ from tabs implementations you have seen in other UI libraries. Read on to learn more about some of these differences.
 
 ### Child Routes within Tabs
 
