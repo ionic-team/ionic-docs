@@ -109,7 +109,7 @@ Ionic Framework makes use of the [Intl.DatetimeFormat](https://developer.mozilla
 
 For instances where you need a specific locale, you can use the `locale` property to set it.
 
-<Basic />
+TODO
 
 ### Hour Cycle
 
@@ -133,7 +133,7 @@ There may be scenarios where you need to have more control over which hour cycle
 
 In the following example, we can use the `hourCycle` property to force `ion-datetime` to use the 12 hour cycle even though the locale is `en-GB`, which uses a 24 hour cycle by default:
 
-<Basic />
+TODO
 
 `ion-datetime` currently supports the `h12` and `h23` hour cycle types. Interested in seeing support for `h11` and `h24` added to `ion-datetime`? [Let us know!](https://github.com/ionic-team/ionic-framework/issues/23750)
 
@@ -145,7 +145,7 @@ To customize the first day of the week, developers can use the `firstDayOfWeek` 
 
 For example, if you wanted to have the first day of the week be Monday, you could set `firstDayOfWeek` to `1`:
 
-<Basic />
+TODO
 
 ### Time Label
 
@@ -157,7 +157,7 @@ TODO
 
 For example, if you wanted to use a 12 hour cycle with the `en-GB` locale, you could alternatively do:
 
-<Basic />
+TODO
 
 ## Presentation
 
@@ -165,35 +165,47 @@ Some use cases may call for only date selection or only time selection. The `pre
 
 ### Month and Year Selection
 
+TODO
+
 ### Time Selection
+
+TODO
 
 ### Date Selection
 
+TODO
+
 ## Titles
+
+TODO
 
 ### Showing the Default Title
 
+TODO
+
 ### Customizing the Title
+
+TODO
 
 ## Buttons
 
+TODO
+
 ### Showing Confirmation Buttons
+
+TODO
 
 ### Customizing Buttons
 
+TODO
+
 ### Customizing Button Texts
+
+TODO
 
 ## Theming
 
-# Here be dragons
-
-## Reset and Cancel Buttons
-
-`ion-datetime` provides `cancel` and `reset` methods that you can call when clicking on custom buttons that you have provided in the `buttons` slot. The `reset` method also allows you to provide a date to reset the datetime to.
-
-## Confirming Selected Values
-
-By default, `ionChange` is emitted with the new datetime value whenever a new date is selected. To require user confirmation before emitting `ionChange`, you can either set the `showDefaultButtons` property to `true` or use the `buttons` slot to pass in a custom confirmation button. When passing in custom buttons, the confirm button must call the `confirm` method on `ion-datetime` for `ionChange` to be emitted.
+TODO
 
 ## Time Zones
 
