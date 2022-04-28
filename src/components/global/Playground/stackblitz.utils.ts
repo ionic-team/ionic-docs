@@ -61,7 +61,6 @@ const openAngularEditor = async (code: string, options?: EditorOptions) => {
     'angular/app.component.ts',
     'angular/styles.css',
     'angular/angular.json',
-    'angular/package.json',
     'angular/tsconfig.json'
   ])
 
