@@ -93,7 +93,7 @@ The following example restricts date selection to March 2022 through May 2022 on
 
 ### Selecting Specific Values
 
-While the `min` and `max` properties allow you to restrict date selection to a certain range, the `monthValues`, `dayValues`, `yearValues`, `hourValues`, and `minuteValues` properties allow you choose specific days and times that you to have enabled.
+While the `min` and `max` properties allow you to restrict date selection to a certain range, the `monthValues`, `dayValues`, `yearValues`, `hourValues`, and `minuteValues` properties allow you choose specific days and times that users can select.
 
 The following example allows minutes to be selected in increments of 15. It also allows for days to be selected in increments of 5.
 
