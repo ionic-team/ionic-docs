@@ -8,6 +8,10 @@ import useThemeContext from '@theme/hooks/useThemeContext';
 
 import Tippy from '@tippyjs/react';
 import 'tippy.js/dist/tippy.css';
+import PlaygroundTabs from '../PlaygroundTabs';
+import TabItem from '@theme/TabItem';
+
+import { IconHtml, IconTs, IconVue } from './icons';
 
 const ControlButton = ({ isSelected, handleClick, title, label }) => {
   return (
@@ -38,10 +42,48 @@ const CodeBlockButton = ({ language, usageTarget, setUsageTarget, setCodeExpande
   );
 };
 
+type MdxContent = () => {};
+
+/**
+ * The advanced configuration of options when creating a
+ * playground example with multiple files for a single usage target
+ * or if needing to modify the generated Stackblitz example code.
+ */
+interface UsageTargetOptions {
+  /**
+   * The list of the file names to use in the Stackblitz example
+   * and their associated MDX content.
+   *
+   * ```ts
+   * files: {
+   *   'src/app/app.component.html': app_component_html,
+   *   'src/app/app.component.ts': app_component_ts,
+   * }
+   * ```
+   */
+  files: {
+    [key: string]: MdxContent;
+  };
+  angularModuleOptions?: {
+    /**
+     * The list of import declarations to add to the `AppModule`.
+     * Accepts value formatted as: `'import { FooComponent } from './foo.component';'`.
+     */
+    imports: string[];
+    /**
+     * The list of class name declarations to add to the `AppModule`.
+     */
+    declarations?: string[];
+  };
+}
+
 /**
  * @param code The code snippets for each supported framework target.
  * @param title Optional title of the generated playground example. Specify to customize the Stackblitz title.
  * @param description Optional description of the generated playground example. Specify to customize the Stackblitz description.
+ * @param src The absolute path to the playground demo. For example: `/usage/button/basic/demo.html`
+ * @param size The height of the playground. Supports `xsmall`, `small`, `medium`, `large`, 'xlarge' or any string value.
+ * @param devicePreview `true` if the playground example should render in a device frame (iOS/MD).
  */
 export default function Playground({
   code,
@@ -49,10 +91,14 @@ export default function Playground({
   description,
   src,
   size = 'small',
+  devicePreview,
 }: {
-  code: { [key in UsageTarget]?: () => {} };
+  code: { [key in UsageTarget]?: MdxContent | UsageTargetOptions };
   title?: string;
+  src: string;
+  size: string;
   description?: string;
+  devicePreview?: boolean;
 }) {
   if (!code || Object.keys(code).length === 0) {
     console.warn('No code usage examples provided for this Playground example.');
@@ -60,9 +106,10 @@ export default function Playground({
   }
   const { isDarkTheme } = useThemeContext();
 
+  const hostRef = useRef<HTMLDivElement | null>(null);
   const codeRef = useRef(null);
-  const frameiOS = useRef(null);
-  const frameMD = useRef(null);
+  const frameiOS = useRef<HTMLIFrameElement | null>(null);
+  const frameMD = useRef<HTMLIFrameElement | null>(null);
 
   /**
    * Developers can set a predefined size
@@ -89,6 +136,14 @@ export default function Playground({
     }
   }, [isDarkTheme]);
 
+  useEffect(() => {
+    /**
+     * Using a dynamic import here to avoid SSR errors when trying to extend `HTMLElement`
+     * to create the custom element.
+     */
+    import('./device-preview.js').then((comp) => comp.defineCustomElement());
+  });
+
   const isIOS = mode === Mode.iOS;
   const isMD = mode === Mode.MD;
 
@@ -96,18 +151,44 @@ export default function Playground({
   const sourceMD = useBaseUrl(`${src}?ionic:mode=${Mode.MD}`);
 
   function copySourceCode() {
+    if (hasUsageTargetOptions) {
+      return;
+    }
     const copyButton = codeRef.current.querySelector('button');
     copyButton.click();
   }
 
+  const hasUsageTargetOptions = (code[usageTarget] as UsageTargetOptions)?.files !== undefined;
+  /**
+   * Reloads the iOS and MD iframe sources back to their original state.
+   */
+  function resetDemo() {
+    frameiOS.current.contentWindow.location.reload();
+    frameMD.current.contentWindow.location.reload();
+  }
+
   function openEditor(event) {
-    // codeSnippets are React components, so we need to get their rendered text
-    // using outerText will preserve line breaks for formatting in Stackblitz editor
-    const codeBlock = codeRef.current.querySelector('code').outerText;
     const editorOptions: EditorOptions = {
       title,
       description,
     };
+
+    let codeBlock;
+    if (!hasUsageTargetOptions) {
+      // codeSnippets are React components, so we need to get their rendered text
+      // using outerText will preserve line breaks for formatting in Stackblitz editor
+      codeBlock = codeRef.current.querySelector('code').outerText;
+    } else {
+      const codeUsageTarget = code[usageTarget] as UsageTargetOptions;
+      editorOptions.angularModuleOptions = codeUsageTarget.angularModuleOptions;
+
+      editorOptions.files = Object.keys(codeSnippets[usageTarget])
+        .map((fileName) => ({
+          [fileName]: hostRef.current!.querySelector<HTMLElement>(`#${getCodeSnippetId(usageTarget, fileName)} code`)
+            .outerText,
+        }))
+        .reduce((acc, curr) => ({ ...acc, ...curr }), {});
+    }
 
     switch (usageTarget) {
       case UsageTarget.Angular:
@@ -128,14 +209,76 @@ export default function Playground({
   useEffect(() => {
     const codeSnippets = {};
     Object.keys(code).forEach((key) => {
-      // Instantiates the React component from the MDX content.
-      codeSnippets[key] = code[key]({});
+      if (typeof code[key] === 'function') {
+        /**
+         * Instantiates the React component from the MDX content for
+         * single-file playground examples.
+         */
+        codeSnippets[key] = code[key]({});
+      } else if (typeof code[key] === 'object') {
+        /**
+         * Instantiates the list of React components from the MDX content for
+         * multi-file playground examples.
+         */
+        const fileSnippets = {};
+        for (const fileName of Object.keys(code[key].files)) {
+          fileSnippets[`${fileName}`] = code[key].files[fileName]({});
+        }
+        codeSnippets[key] = fileSnippets;
+      }
     });
     setCodeSnippets(codeSnippets);
   }, []);
 
+  function getCodeSnippetId(usageTarget: string, fileName: string) {
+    let fileNameId = fileName;
+    // replace all non-alphanumeric characters with underscores
+    fileNameId = fileNameId.replace(/[^a-zA-Z0-9]/g, '_');
+    return `playground_${usageTarget}_${fileNameId}`;
+  }
+
+  function getFileIcon(fileName: string) {
+    const extension = fileName.slice(fileName.lastIndexOf('.') + 1);
+    switch (extension) {
+      case 'ts':
+        return <IconTs />;
+      case 'html':
+        return <IconHtml />;
+      case 'vue':
+        return <IconVue />;
+    }
+  }
+
+  function renderCodeSnippets() {
+    if (code[usageTarget]) {
+      if (!hasUsageTargetOptions) {
+        return codeSnippets[usageTarget];
+      }
+      if (codeSnippets[usageTarget] == null) {
+        return null;
+      }
+      return (
+        <PlaygroundTabs className="playground__tabs">
+          {Object.keys(codeSnippets[usageTarget]).map((fileName) => (
+            <TabItem
+              className="playground__tab-item"
+              value={fileName}
+              label={fileName}
+              key={fileName}
+              {...{
+                icon: getFileIcon(fileName),
+              }}
+            >
+              <div id={getCodeSnippetId(usageTarget, fileName)}>{codeSnippets[usageTarget][fileName]}</div>
+            </TabItem>
+          ))}
+        </PlaygroundTabs>
+      );
+    }
+  }
+
   return (
-    <div className="playground">
+    <div className="playground" ref={hostRef}>
       <div className="playground__container">
         <div className="playground__control-toolbar">
           <div className="playground__control-group">
@@ -178,24 +321,41 @@ export default function Playground({
                 </svg>
               </button>
             </Tippy>
-            <Tippy theme="playground" arrow={false} placement="bottom" content="Report an issue">
-              <a
-                className="playground__icon-button"
-                href="https://github.com/ionic-team/ionic-docs/issues/new/choose"
-                aria-label="Report an issue"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <svg aria-hidden="true" width="12" height="12" viewBox="0 0 12 12" fill="none">
+            <Tippy theme="playground" arrow={false} placement="bottom" content="Open in StackBlitz">
+              <button className="playground__icon-button playground__icon-button--primary" onClick={openEditor}>
+                <svg
+                  aria-hidden="true"
+                  width="10"
+                  height="14"
+                  viewBox="0 0 10 14"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
                   <path
-                    d="M6 0C2.68661 0 0 2.75625 0 6.15268C0 8.87143 1.71964 11.175 4.10357 11.9893C4.14107 11.9973 4.17321 12 4.20536 12C4.42768 12 4.51339 11.8366 4.51339 11.6946C4.51339 11.5473 4.50804 11.1616 4.50536 10.6473C4.28036 10.6982 4.07946 10.7196 3.9 10.7196C2.74554 10.7196 2.48304 9.82232 2.48304 9.82232C2.20982 9.1125 1.81607 8.92232 1.81607 8.92232C1.29375 8.55536 1.81339 8.54464 1.85357 8.54464H1.85625C2.45893 8.59821 2.775 9.18214 2.775 9.18214C3.075 9.70714 3.47679 9.85446 3.83571 9.85446C4.11696 9.85446 4.37143 9.76339 4.52143 9.69375C4.575 9.29732 4.73036 9.02679 4.90179 8.87143C3.57054 8.71607 2.16964 8.18839 2.16964 5.83125C2.16964 5.15893 2.40268 4.60982 2.78571 4.18125C2.72411 4.02589 2.51786 3.39911 2.84464 2.55268C2.84464 2.55268 2.8875 2.53929 2.97857 2.53929C3.19554 2.53929 3.68571 2.62232 4.49464 3.18482C4.97411 3.04821 5.48571 2.98125 5.99732 2.97857C6.50625 2.98125 7.02054 3.04821 7.5 3.18482C8.30893 2.62232 8.79911 2.53929 9.01607 2.53929C9.10714 2.53929 9.15 2.55268 9.15 2.55268C9.47679 3.39911 9.27054 4.02589 9.20893 4.18125C9.59196 4.6125 9.825 5.16161 9.825 5.83125C9.825 8.19375 8.42143 8.71339 7.08482 8.86607C7.29911 9.05625 7.49196 9.43125 7.49196 10.0045C7.49196 10.8268 7.48393 11.4911 7.48393 11.692C7.48393 11.8366 7.56696 12 7.78929 12C7.82143 12 7.85893 11.9973 7.89643 11.9893C10.283 11.175 12 8.86875 12 6.15268C12 2.75625 9.31339 0 6 0Z"
-                    fill="#73849A"
+                    d="M5.53812 5.91743L7.52915 1L1 8.01835H4.42601L2.42601 13L9 5.91743H5.53812Z"
+                    stroke="#73849A"
+                    strokeLinejoin="round"
                   />
                 </svg>
-              </a>
+              </button>
             </Tippy>
-            <Tippy theme="playground" arrow={false} placement="bottom" content="Copy source code">
-              <button className="playground__icon-button playground__icon-button--primary" onClick={copySourceCode}>
+            <Tippy
+              theme="playground"
+              arrow={false}
+              placement="bottom"
+              content={
+                hasUsageTargetOptions
+                  ? 'For multi-file examples, use the copy buttons on the code blocks'
+                  : 'Copy source code'
+              }
+            >
+              <button
+                className={`playground__icon-button playground__icon-button--primary ${
+                  hasUsageTargetOptions ? 'playground__icon-button--disabled' : ''
+                }`}
+                aria-disabled={hasUsageTargetOptions}
+                onClick={copySourceCode}
+              >
                 <svg
                   aria-hidden="true"
                   xmlns="http://www.w3.org/2000/svg"
@@ -212,25 +372,46 @@ export default function Playground({
                 </svg>
               </button>
             </Tippy>
-            <Tippy theme="playground" arrow={false} placement="bottom" content="Open in StackBlitz">
-              <button className="playground__icon-button playground__icon-button--primary" onClick={openEditor}>
+            <Tippy theme="playground" arrow={false} placement="bottom" content="Reset demo">
+              <button className="playground__icon-button" onClick={resetDemo}>
                 <svg
                   aria-hidden="true"
-                  width="12"
+                  width="10"
                   height="12"
-                  viewBox="0 0 12 12"
+                  viewBox="0 0 10 12"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
                 >
-                  <path d="M6 11L11 11" stroke="#92A0B3" strokeLinecap="round" strokeLinejoin="round" />
                   <path
-                    d="M8.88491 1.36289C9.11726 1.13054 9.43241 1 9.76101 1C9.92371 1 10.0848 1.03205 10.2351 1.09431C10.3855 1.15658 10.5221 1.24784 10.6371 1.36289C10.7522 1.47794 10.8434 1.61453 10.9057 1.76485C10.968 1.91517 11 2.07629 11 2.23899C11 2.4017 10.968 2.56281 10.9057 2.71314C10.8434 2.86346 10.7522 3.00004 10.6371 3.11509L3.33627 10.4159L1 11L1.58407 8.66373L8.88491 1.36289Z"
-                    stroke="current"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
+                    fillRule="evenodd"
+                    clipRule="evenodd"
+                    d="M2.22215 2.96247C3.0444 2.42025 4.01109 2.13084 5 2.13084C5.63538 2.13084 6.08146 2.15202 6.39321 2.18615C6.68142 2.2177 6.92148 2.26571 7.08584 2.36392C7.17445 2.41686 7.31584 2.52988 7.35221 2.73039C7.38869 2.93151 7.29402 3.07964 7.24155 3.14415C7.18678 3.21149 7.126 3.25445 7.09468 3.275C7.07632 3.28704 7.06001 3.29656 7.04754 3.30345C7.0412 3.30696 7.03557 3.30995 7.03082 3.3124C7.02933 3.31317 7.02792 3.31389 7.0266 3.31456C7.0258 3.31496 7.02503 3.31535 7.02429 3.31572C7.02331 3.31621 7.02238 3.31667 7.0215 3.3171L7.02023 3.31773C7.01994 3.31787 7.01905 3.31831 6.81818 2.91589L7.01905 3.31831C6.79385 3.42779 6.52136 3.33637 6.41043 3.11412C6.40662 3.1065 6.40305 3.09881 6.39972 3.09108C6.36829 3.08669 6.33284 3.08224 6.29298 3.07787C6.02849 3.04892 5.61974 3.02804 5 3.02804C4.1909 3.02804 3.39996 3.26482 2.72721 3.70846C2.05447 4.15209 1.53013 4.78264 1.22049 5.52038C0.910864 6.25812 0.82985 7.0699 0.987699 7.85307C1.14555 8.63625 1.53517 9.35564 2.10729 9.92028C2.67942 10.4849 3.40835 10.8694 4.2019 11.0252C4.99546 11.181 5.81801 11.1011 6.56552 10.7955C7.31304 10.4899 7.95195 9.97241 8.40147 9.30847C8.85098 8.64452 9.09091 7.86394 9.09091 7.06542C9.09091 6.81767 9.29442 6.61682 9.54545 6.61682C9.79649 6.61682 10 6.81767 10 7.06542C10 8.04139 9.70675 8.99544 9.15735 9.80692C8.60794 10.6184 7.82705 11.2509 6.91342 11.6244C5.99979 11.9979 4.99445 12.0956 4.02455 11.9052C3.05464 11.7148 2.16373 11.2448 1.46447 10.5547C0.765206 9.86458 0.289002 8.98532 0.0960758 8.02811C-0.0968502 7.07089 0.00216639 6.07871 0.380605 5.17704C0.759043 4.27536 1.3999 3.50469 2.22215 2.96247Z"
+                    fill="#73849A"
+                  />
+                  <path
+                    fillRule="evenodd"
+                    clipRule="evenodd"
+                    d="M4.67859 0.131391C4.8561 -0.0437971 5.1439 -0.0437971 5.32141 0.131391L7.59414 2.37438C7.77165 2.54957 7.77165 2.83361 7.59414 3.00879L5.32141 5.25178C5.1439 5.42697 4.8561 5.42697 4.67859 5.25178C4.50108 5.0766 4.50108 4.79256 4.67859 4.61737L6.6299 2.69159L4.67859 0.765805C4.50108 0.590616 4.50108 0.30658 4.67859 0.131391Z"
+                    fill="#73849A"
                   />
                 </svg>
               </button>
+            </Tippy>
+            <Tippy theme="playground" arrow={false} placement="bottom" content="Report an issue">
+              <a
+                className="playground__icon-button"
+                href="https://github.com/ionic-team/ionic-docs/issues/new/choose"
+                aria-label="Report an issue"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <svg aria-hidden="true" width="12" height="12" viewBox="0 0 12 12" fill="none">
+                  <path
+                    d="M6 0C2.68661 0 0 2.75625 0 6.15268C0 8.87143 1.71964 11.175 4.10357 11.9893C4.14107 11.9973 4.17321 12 4.20536 12C4.42768 12 4.51339 11.8366 4.51339 11.6946C4.51339 11.5473 4.50804 11.1616 4.50536 10.6473C4.28036 10.6982 4.07946 10.7196 3.9 10.7196C2.74554 10.7196 2.48304 9.82232 2.48304 9.82232C2.20982 9.1125 1.81607 8.92232 1.81607 8.92232C1.29375 8.55536 1.81339 8.54464 1.85357 8.54464H1.85625C2.45893 8.59821 2.775 9.18214 2.775 9.18214C3.075 9.70714 3.47679 9.85446 3.83571 9.85446C4.11696 9.85446 4.37143 9.76339 4.52143 9.69375C4.575 9.29732 4.73036 9.02679 4.90179 8.87143C3.57054 8.71607 2.16964 8.18839 2.16964 5.83125C2.16964 5.15893 2.40268 4.60982 2.78571 4.18125C2.72411 4.02589 2.51786 3.39911 2.84464 2.55268C2.84464 2.55268 2.8875 2.53929 2.97857 2.53929C3.19554 2.53929 3.68571 2.62232 4.49464 3.18482C4.97411 3.04821 5.48571 2.98125 5.99732 2.97857C6.50625 2.98125 7.02054 3.04821 7.5 3.18482C8.30893 2.62232 8.79911 2.53929 9.01607 2.53929C9.10714 2.53929 9.15 2.55268 9.15 2.55268C9.47679 3.39911 9.27054 4.02589 9.20893 4.18125C9.59196 4.6125 9.825 5.16161 9.825 5.83125C9.825 8.19375 8.42143 8.71339 7.08482 8.86607C7.29911 9.05625 7.49196 9.43125 7.49196 10.0045C7.49196 10.8268 7.48393 11.4911 7.48393 11.692C7.48393 11.8366 7.56696 12 7.78929 12C7.82143 12 7.85893 11.9973 7.89643 11.9893C10.283 11.175 12 8.86875 12 6.15268C12 2.75625 9.31339 0 6 0Z"
+                    fill="#73849A"
+                  />
+                </svg>
+              </a>
             </Tippy>
           </div>
         </div>
@@ -241,8 +422,33 @@ export default function Playground({
             show the other. This is done to avoid flickering
             and doing unnecessary reloads when switching modes.
           */}
-          <iframe height={frameSize} className={!isIOS ? 'frame-hidden' : ''} ref={frameiOS} src={sourceiOS}></iframe>
-          <iframe height={frameSize} className={!isMD ? 'frame-hidden' : ''} ref={frameMD} src={sourceMD}></iframe>
+          {devicePreview
+            ? [
+                <div className={!isIOS ? 'frame-hidden' : 'frame-visible'}>
+                  <device-preview mode="ios">
+                    <iframe height={frameSize} ref={frameiOS} src={sourceiOS}></iframe>
+                  </device-preview>
+                </div>,
+                <div className={!isMD ? 'frame-hidden' : 'frame-visible'}>
+                  <device-preview mode="md">
+                    <iframe height={frameSize} ref={frameMD} src={sourceMD}></iframe>
+                  </device-preview>
+                </div>,
+              ]
+            : [
+                <iframe
+                  height={frameSize}
+                  className={!isIOS ? 'frame-hidden' : ''}
+                  ref={frameiOS}
+                  src={sourceiOS}
+                ></iframe>,
+                <iframe
+                  height={frameSize}
+                  className={!isMD ? 'frame-hidden' : ''}
+                  ref={frameMD}
+                  src={sourceMD}
+                ></iframe>,
+              ]}
         </div>
       </div>
       <div
@@ -250,7 +456,7 @@ export default function Playground({
         className={'playground__code-block ' + (codeExpanded ? 'playground__code-block--expanded' : '')}
         aria-expanded={codeExpanded ? 'true' : 'false'}
       >
-        {codeSnippets[usageTarget]}
+        {renderCodeSnippets()}
       </div>
     </div>
   );
@@ -264,16 +470,16 @@ const FRAME_SIZES = {
   xlarge: '800px',
 };
 
-const waitForFrame = (frame: HTMLElement) => {
+const waitForFrame = (frame: HTMLIFrameElement) => {
   if (isFrameReady(frame)) return Promise.resolve();
 
-  return new Promise((resolve) => {
+  return new Promise<void>((resolve) => {
     frame.contentWindow.addEventListener('demoReady', () => {
       resolve();
     });
   });
 };
 
-const isFrameReady = (frame: HTMLElement) => {
-  return frame.contentWindow.demoReady === true;
+const isFrameReady = (frame: HTMLIFrameElement) => {
+  return (frame.contentWindow as any).demoReady === true;
 };

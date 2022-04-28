@@ -7,6 +7,7 @@ const DEFAULT_EDITOR_DESCRIPTION = '';
 // Default package version to use for all @ionic/* packages.
 const DEFAULT_IONIC_VERSION = '^6.0.0';
 
+
 export interface EditorOptions {
   /**
    * The title of the Stackblitz example.
@@ -16,6 +17,15 @@ export interface EditorOptions {
    * The description of the Stackblitz example.
    */
   description?: string;
+
+  files?: {
+    [key: string]: string;
+  }
+
+  angularModuleOptions?: {
+    imports: string[];
+    declarations?: string[];
+  };
 }
 
 const loadSourceFiles = async (files: string[]) => {
@@ -45,13 +55,23 @@ const openHtmlEditor = async (code: string, options?: EditorOptions) => {
 }
 
 const openAngularEditor = async (code: string, options?: EditorOptions) => {
-  const [main_ts, app_module_ts, app_component_ts, styles_css, angular_json] = await loadSourceFiles([
+  let [main_ts, app_module_ts, app_component_ts, styles_css, angular_json, tsconfig_json] = await loadSourceFiles([
     'angular/main.ts',
     'angular/app.module.ts',
     'angular/app.component.ts',
     'angular/styles.css',
-    'angular/angular.json'
+    'angular/angular.json',
+    'angular/tsconfig.json'
   ])
+
+  if (options.angularModuleOptions) {
+    if (options.angularModuleOptions.imports) {
+      app_module_ts = `${options.angularModuleOptions.imports.join('\n')}\n${app_module_ts}`;
+    }
+    if (options.angularModuleOptions.declarations) {
+      app_module_ts = app_module_ts.replace('/* CUSTOM_DECLARATIONS */', options.angularModuleOptions.declarations.map(d => `\n  ${d}`).join(','));
+    }
+  }
 
   sdk.openProject({
     template: 'angular-cli',
@@ -66,9 +86,19 @@ const openAngularEditor = async (code: string, options?: EditorOptions) => {
       'src/index.html': '<app-root></app-root>',
       'src/styles.css': styles_css,
       'angular.json': angular_json,
+      'tsconfig.json': tsconfig_json,
+      ...options?.files
     },
     dependencies: {
       '@ionic/angular': DEFAULT_IONIC_VERSION,
+      /**
+       * Stackblitz doesn't install the underlying `@ionic/core` package type declarations.
+       * This can lead to issues with extended type declarations, such as our proxies
+       * that extend the JSX component type.
+       *
+       * We manually install this dependency to avoid this issue in Stackblitz.
+       */
+      '@ionic/core': DEFAULT_IONIC_VERSION,
     },
   });
 }
@@ -106,6 +136,7 @@ const openReactEditor = async (code: string, options?: EditorOptions) => {
       'index.js': index_js,
       'App.js': app_tsx_renamed,
       'main.js': code,
+      ...options?.files
     },
     dependencies: {
       react: 'latest',
@@ -142,6 +173,7 @@ const openVueEditor = async (code: string, options?: EditorOptions) => {
       'index.html': index_html,
       'vite.config.js': vite_config_js,
       'package.json': package_json,
+      ...options?.files,
       '.stackblitzrc': `{
         "startCommand": "yarn run dev"
       }`
