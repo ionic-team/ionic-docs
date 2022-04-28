@@ -34,6 +34,6 @@ import vue_modal from './vue/modal.vue.md';
       },
     },
   }}
-  src="usage/modal/presenting/controller/demo.html"
+  src="usage/modal/dismissing/controller/data/demo.html"
   devicePreview
 />

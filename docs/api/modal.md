@@ -102,13 +102,33 @@ import DismissDataExample from '@site/static/usage/modal/dismissing/inline/data/
 
 #### Using roles to distinguish dismiss actions
 
-When dismissing a modal, you can optionally specify the `role` responsible for dismissing the modal. Roles are used to differentiate the operation that dismissed the modal, such as "confirm" versus "cancel" operations.
+When dismissing a modal, you can optionally specify the `role` responsible for dismissing the modal. Roles are used to differentiate the operation that dismissed the modal, such as a cancel or confirm action.
 
 import DismissRoleExample from '@site/static/usage/modal/dismissing/inline/role/index.md';
 
 <DismissRoleExample />
 
 ### Controller Modals
+
+#### Using controller to dismiss the modal
+
+Since controller modals open a new component outside of the scope of the current template, that component will need the ability to dismiss itself and return context to the presenting view.
+
+import ControllerDismissExample from '@site/static/usage/modal/dismissing/controller/dismiss/index.md';
+
+<ControllerDismissExample />
+
+#### Returning data when dismissed
+
+When dismissing a modal, you can optionally send data back to the presenting view.
+
+import ControllerDismissDataExample from '@site/static/usage/modal/dismissing/controller/data/index.md';
+
+<ControllerDismissDataExample />
+
+#### Using roles to distinguish dismiss actions
+
+When dismissing a modal, you can optionally specify the `role` responsible for dismissing the modal. Roles are used to differentiate the operation that dismissed the modal, such as a cancel or confirm action.
 
 ## Card Modal
 
