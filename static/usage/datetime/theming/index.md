@@ -13,8 +13,8 @@ import angularCSS from './angular-css.md';
     javascript, 
     react: {
       files: {
-        'src/main.js': reactHTML,
-        'src/main.css': reactCSS
+        'main.js': reactHTML,
+        'main.css': reactCSS
       }
     }, 
     vue, 
