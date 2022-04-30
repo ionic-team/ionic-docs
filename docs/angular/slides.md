@@ -42,7 +42,7 @@ You can import these files in `global.scss`:
 @import '~@ionic/angular/css/ionic-swiper';
 ```
 
-If you prefer to import these in the CSS file for your slides component, you will need to disable [ViewEncapsultion in Angular](https://angular.io/api/core/ViewEncapsulation), otherwise the styles will not apply:
+If you prefer to import these in the CSS file for your slides component, you will need to disable [ViewEncapsulation in Angular](https://angular.io/api/core/ViewEncapsulation), otherwise the styles will not apply:
 
 ```typescript
 // home.page.ts
