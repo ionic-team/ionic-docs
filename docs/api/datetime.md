@@ -12,6 +12,7 @@ import CustomProps from '@site/static/auto-generated/datetime/custom-props.md';
 import Slots from '@site/static/auto-generated/datetime/slots.md';
 
 import Basic from '@site/static/usage/datetime/basic/index.md';
+
 import MaxMin from '@site/static/usage/datetime/date-constraints/max-min/index.md';
 import Values from '@site/static/usage/datetime/date-constraints/values/index.md';
 import Advanced from '@site/static/usage/datetime/date-constraints/advanced/index.md';
@@ -21,7 +22,6 @@ import HourCycle from '@site/static/usage/datetime/localization/hour-cycle/index
 import FirstDayOfWeek from '@site/static/usage/datetime/localization/first-day-of-week/index.md';
 import LocaleExtensionTags from '@site/static/usage/datetime/localization/locale-extension-tags/index.md';
 import TimeLabel from '@site/static/usage/datetime/localization/time-label/index.md';
-
 
 <head>
   <title>ion-datetime: Ionic API Input for Datetime Format Picker</title>
@@ -114,6 +114,7 @@ Ionic Framework makes use of the [Intl.DatetimeFormat](https://developer.mozilla
 
 ### Custom Locale
 
+<<<<<<< HEAD
 For instances where you need a specific locale, you can use the `locale` property to set it. The locale controls both the language and the date and time formats that are displayed.
 
 The following example shows how to set the locale to Spanish (Spain).
@@ -124,6 +125,12 @@ The following example shows how to set the locale to Spanish (Spain).
 The time label is not automatically localized. See [Time Label](#time-label) for more information.
 :::
 
+=======
+For instances where you need a specific locale, you can use the `locale` property to set it.
+
+TODO
+
+>>>>>>> origin/FW-1295
 ### Hour Cycle
 
 `ion-datetime` will use the hour cycle that is specified by the `locale` property by default. For example, if `locale` is set to `en-US`, then `ion-datetime` will use a 12 hour cycle.
@@ -132,7 +139,7 @@ There are 4 primary hour cycle types:
 
 | Hour cycle type | Description                                                  |
 | --------------- | ------------------------------------------------------------ |
-| `'h12`          | Hour system using 1–12; corresponds to 'h' in patterns. The 12 hour clock, with midnight starting at 12:00 am. |
+| `'h12'`          | Hour system using 1–12; corresponds to 'h' in patterns. The 12 hour clock, with midnight starting at 12:00 am. |
 | `'h23'`         | Hour system using 0–23; corresponds to 'H' in patterns. The 24 hour clock, with midnight starting at 0:00. |
 | `'h11'`         | Hour system using 0–11; corresponds to 'K' in patterns. The 12 hour clock, with midnight starting at 0:00 am. |
 | `'h24'`         | Hour system using 1–24; corresponds to 'k' in pattern. The 24 hour clock, with midnight starting at 24:00. |
@@ -148,16 +155,23 @@ In the following example, we can use the `hourCycle` property to force `ion-date
 
 <HourCycle />
 
-`ion-datetime` currently supports the `h12` and `h23` hour cycle types. Interested in seeing support for `h11` and `h24` added to `ion-datetime`? [Let us know!](https://github.com/ionic-team/ionic-framework/issues/23750)
+## Presentation
 
+<<<<<<< HEAD
 ### First Day of the Week
 
 For `ion-datetime`, the default first day of the week is Sunday. As of 2022, there is no browser API that lets Ionic automatically determine the first day of the week based on a device's locale, though there is on-going work regarding this (see: [TC39 GitHub](https://github.com/tc39/ecma402/issues/6)).
+=======
+Some use cases may call for only date selection or only time selection. The `presentation` property allows you to specify which pickers to show and the order to show them in.
 
-To customize the first day of the week, developers can use the `firstDayOfWeek` property. This property takes in a number between `0` and `6` where `0` represents Sunday and `6` represents Saturday.
+### Month and Year Selection
+>>>>>>> origin/FW-1295
 
-For example, if you wanted to have the first day of the week be Monday, you could set `firstDayOfWeek` to `1`:
+TODO
 
+### Time Selection
+
+<<<<<<< HEAD
 <FirstDayOfWeek />
 
 ### Time Label
@@ -188,6 +202,8 @@ TODO
 
 ### Time Selection
 
+=======
+>>>>>>> origin/FW-1295
 TODO
 
 ### Date Selection
