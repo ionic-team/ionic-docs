@@ -5,9 +5,7 @@ import { Component } from '@angular/core';
   selector: 'app-root',
   templateUrl: 'app.component.html'
 })
-export class AppComponent {
-  constructor() {}
-  
+export class AppComponent {  
   public isWeekday = (dateString: string) => {
     const date = new Date(dateString);
     const utcDay = date.getUTCDay();
