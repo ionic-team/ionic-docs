@@ -47,6 +47,7 @@ const openHtmlEditor = async (code: string, options?: EditorOptions) => {
       // Injects our code sample into the body of the HTML document
       'index.html': index_html.replace(/<body><\/body>/g, `<body>\n` + code + '</body>'),
       'index.ts': index_ts,
+      ...options?.files
     },
     dependencies: {
       '@ionic/core': DEFAULT_IONIC_VERSION,
