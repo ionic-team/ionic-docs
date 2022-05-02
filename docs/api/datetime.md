@@ -184,8 +184,6 @@ TODO
 
 ### Time Selection
 
-=======
->>>>>>> origin/FW-1295
 TODO
 
 ### Date Selection
