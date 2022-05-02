@@ -104,17 +104,13 @@ const openAngularEditor = async (code: string, options?: EditorOptions) => {
 }
 
 const openReactEditor = async (code: string, options?: EditorOptions) => {
-  // Matches the name after `export default` to use as the component tag.
-  let componentTagName;
-  try {
-    componentTagName = new RegExp(/function([\S\s]*?)\(/g).exec(code)[1].trim();
-  } catch (e) {
-    console.error('Error parsing the component tag name from the React code snippet. Please make sure that the code snippet for React ends with export default ComponentName;');
-  }
-
-  if (!componentTagName) {
-    return;
-  }
+  /**
+   * This controls what the component is imported
+   * as. Since we use "export default" in the actual
+   * component template, this does not need to match
+   * up with the actual component name.
+   */
+  const componentTagName = 'Example';
 
   const [index_js, app_tsx] = await loadSourceFiles([
     'react/index.js',
