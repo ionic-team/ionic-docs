@@ -12,6 +12,7 @@ import CustomProps from '@site/static/auto-generated/datetime/custom-props.md';
 import Slots from '@site/static/auto-generated/datetime/slots.md';
 
 import Basic from '@site/static/usage/datetime/basic/index.md';
+
 import MaxMin from '@site/static/usage/datetime/date-constraints/max-min/index.md';
 import Values from '@site/static/usage/datetime/date-constraints/values/index.md';
 import Advanced from '@site/static/usage/datetime/date-constraints/advanced/index.md';
@@ -119,7 +120,7 @@ There are 4 primary hour cycle types:
 
 | Hour cycle type | Description                                                  |
 | --------------- | ------------------------------------------------------------ |
-| `'h12`          | Hour system using 1–12; corresponds to 'h' in patterns. The 12 hour clock, with midnight starting at 12:00 am. |
+| `'h12'`          | Hour system using 1–12; corresponds to 'h' in patterns. The 12 hour clock, with midnight starting at 12:00 am. |
 | `'h23'`         | Hour system using 0–23; corresponds to 'H' in patterns. The 24 hour clock, with midnight starting at 0:00. |
 | `'h11'`         | Hour system using 0–11; corresponds to 'K' in patterns. The 12 hour clock, with midnight starting at 0:00 am. |
 | `'h24'`         | Hour system using 1–24; corresponds to 'k' in pattern. The 24 hour clock, with midnight starting at 24:00. |
