@@ -114,7 +114,6 @@ Ionic Framework makes use of the [Intl.DatetimeFormat](https://developer.mozilla
 
 ### Custom Locale
 
-<<<<<<< HEAD
 For instances where you need a specific locale, you can use the `locale` property to set it. The locale controls both the language and the date and time formats that are displayed.
 
 The following example shows how to set the locale to Spanish (Spain).
@@ -125,12 +124,6 @@ The following example shows how to set the locale to Spanish (Spain).
 The time label is not automatically localized. See [Time Label](#time-label) for more information.
 :::
 
-=======
-For instances where you need a specific locale, you can use the `locale` property to set it.
-
-TODO
-
->>>>>>> origin/FW-1295
 ### Hour Cycle
 
 `ion-datetime` will use the hour cycle that is specified by the `locale` property by default. For example, if `locale` is set to `en-US`, then `ion-datetime` will use a 12 hour cycle.
@@ -157,21 +150,10 @@ In the following example, we can use the `hourCycle` property to force `ion-date
 
 ## Presentation
 
-<<<<<<< HEAD
 ### First Day of the Week
 
 For `ion-datetime`, the default first day of the week is Sunday. As of 2022, there is no browser API that lets Ionic automatically determine the first day of the week based on a device's locale, though there is on-going work regarding this (see: [TC39 GitHub](https://github.com/tc39/ecma402/issues/6)).
-=======
-Some use cases may call for only date selection or only time selection. The `presentation` property allows you to specify which pickers to show and the order to show them in.
 
-### Month and Year Selection
->>>>>>> origin/FW-1295
-
-TODO
-
-### Time Selection
-
-<<<<<<< HEAD
 <FirstDayOfWeek />
 
 ### Time Label
