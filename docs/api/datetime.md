@@ -181,9 +181,7 @@ Be sure to check the [Browser Compatibility Chart](https://developer.mozilla.org
 
 By default, `ion-datetime` allows users to select both date and time. In addition, users have access to selecting the specific month, year, hour, and minute.
 
-Some use cases may call for only date selection or only time selection. The `presentation` property allows you to specify which pickers to show and the order to show them in.
-
-You can also control the order in which pieces of the datetime appear. For example, setting `date-time` will have the calendar picker appear before the time picker. Setting `time-date` will have the calendar picker appear after the time picker.
+Some use cases may call for only date selection or only time selection. The `presentation` property allows you to specify which pickers to show and the order to show them in. For example, setting `date-time` will have the calendar picker appear before the time picker. Setting `time-date` will have the calendar picker appear after the time picker.
 
 ### Month and Year Selection
 
