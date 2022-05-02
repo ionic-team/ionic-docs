@@ -13,6 +13,10 @@ import Slots from '@site/static/auto-generated/datetime/slots.md';
 
 import Basic from '@site/static/usage/datetime/basic/index.md';
 
+import MaxMin from '@site/static/usage/datetime/date-constraints/max-min/index.md';
+import Values from '@site/static/usage/datetime/date-constraints/values/index.md';
+import Advanced from '@site/static/usage/datetime/date-constraints/advanced/index.md';
+
 <head>
   <title>ion-datetime: Ionic API Input for Datetime Format Picker</title>
   <meta name="description" content="Datetimes present a picker interface to select dates and times. Ionic's API Datetime input component easily displays a preferred format, and manages values." />
@@ -75,29 +79,28 @@ always in the 24-hour format, so `00` is `12am` on a 12-hour clock, `13` means
 
 ### Max and Min Dates
 
-To customize the minimum and maximum datetime values, the `min` and `max` component properties can be provided which may make more sense for the app's use-case. Following the same IS0 8601 format listed in the table above, each component can restrict which dates can be selected by the user. By passing `2016` to the `min` property and `2020-10-31` to the `max` property, the datetime will restrict the date selection between the beginning of `2016`, and `October 31st of 2020`.
+To customize the minimum and maximum datetime values, the `min` and `max` component properties can be provided which may make more sense for the app's use-case. Following the same IS0 8601 format listed in the table above, each component can restrict which dates can be selected by the user.
 
-TODO
+The following example restricts date selection to March 2022 through May 2022 only. 
+
+<MaxMin />
 
 ### Selecting Specific Values
 
 While the `min` and `max` properties allow you to restrict date selection to a certain range, the `monthValues`, `dayValues`, `yearValues`, `hourValues`, and `minuteValues` properties allow you choose specific days and times that you to have enabled.
 
-For example, if we wanted users to only select minutes in increments of 15, we could pass `"0,15,30,45"` to the `minuteValues` property.
+The following example allows minutes to be selected in increments of 15. It also allows for days to be selected in increments of 5.
 
-As another example, if we wanted users to only select from the month of October, we could pass `"10"` to the `monthValues` property.
-
-TODO
+<Values />
 
 ### Advanced Date Constraints
 
-With the `isDateEnabled` property, developers can customize the `ion-datetime` to disable a specific day, range of dates, weekends or any custom rule using an ISO 8601 date string.
-
+With the `isDateEnabled` property, developers can customize the `ion-datetime` to disable a specific day, range of dates, weekends or any custom rule using an ISO 8601 date string. 
 The `isDateEnabled` property accepts a function returning a boolean, indicating if a date is enabled. The function is called for each rendered calendar day, for the previous, current and next month. Custom implementations should be optimized for performance to avoid jank.
 
-We recommend using a date utility such as `date-fns` when working with dates.
+The following example shows how to disable all weekend dates. For more advanced date manipulation, we recommend using a date utility such as `date-fns`.
 
-TODO
+<Advanced />
 
 ## Localization
 
