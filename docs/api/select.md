@@ -66,6 +66,9 @@ The alert supports two buttons: `Cancel` and `OK`. Each button's text can be cus
 
 The `action-sheet` and `popover` interfaces do not have an `OK` button, clicking on any of the options will automatically close the overlay and select that value. The `popover` interface does not have a `Cancel` button, clicking on the backdrop will close the overlay.
 
+import ButtonTextExample from '@site/static/usage/select/customization/button-text/index.md';
+
+<ButtonTextExample />
 
 ## Interface Options
 
@@ -75,72 +78,23 @@ See the [ion-alert docs](alert.md), [ion-action-sheet docs](action-sheet.md), an
 
 Note: `interfaceOptions` will not override `inputs` or `buttons` with the `alert` interface.
 
+import InterfaceOptionsExample from '@site/static/usage/select/customization/interface-options/index.md';
+
+<InterfaceOptionsExample />
+
 ## Customization
 
 There are two units that make up the Select component and each need to be styled separately. The `ion-select` element is represented on the view by the selected value(s), or placeholder if there is none, and dropdown icon. The interface, which is defined in the [Interfaces](#interfaces) section above, is the dialog that opens when clicking on the `ion-select`. The interface contains all of the options defined by adding `ion-select-option` elements. The following sections will go over the differences between styling these.
 
 ### Styling Select Element
 
-As mentioned, the `ion-select` element consists only of the value(s), or placeholder, and icon that is displayed on the view. To customize this, style using a combination of CSS and any of the [CSS custom properties](#css-custom-properties):
+As mentioned, the `ion-select` element consists only of the value(s), or placeholder, and icon that is displayed on the view. To customize this, style using a combination of CSS and any of the [CSS custom properties](#css-custom-properties).
 
-```css
-ion-select {
-  /* Applies to the value and placeholder color */
-  color: #545ca7;
+Alternatively, depending on the [browser support](https://caniuse.com/#feat=mdn-css_selectors_part) needed, CSS shadow parts can be used to style the select. Notice that by using `::part`, any CSS property on the element can be targeted.
 
-  /* Set a different placeholder color */
-  --placeholder-color: #971e49;
+import StylingSelectExample from '@site/static/usage/select/customization/styling-select/index.md';
 
-  /* Set full opacity on the placeholder */
-  --placeholder-opacity: 1;
-}
-```
-
-Alternatively, depending on the [browser support](https://caniuse.com/#feat=mdn-css_selectors_part) needed, CSS shadow parts can be used to style the select:
-
-```css
-/* Set the width to the full container and center the content */
-ion-select {
-  width: 100%;
-
-  justify-content: center;
-}
-
-/* Set the flex in order to size the text width to its content */
-ion-select::part(placeholder),
-ion-select::part(text) {
-  flex: 0 0 auto;
-}
-
-/* Set the placeholder color and opacity */
-ion-select::part(placeholder) {
-  color: #20a08a;
-  opacity: 1;
-}
-
-/*
- * Set the font of the first letter of the placeholder
- * Shadow parts work with pseudo-elements, too!
- * https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-elements
- */
-ion-select::part(placeholder)::first-letter {
-  font-size: 24px;
-  font-weight: 500;
-}
-
-/* Set the text color */
-ion-select::part(text) {
-  color: #545ca7;
-}
-
-/* Set the icon color and opacity */
-ion-select::part(icon) {
-  color: #971e49;
-  opacity: 1;
-}
-```
-
-Notice that by using `::part`, any CSS property on the element can be targeted.
+<StylingSelectExample />
 
 ### Styling Select Interface
 
