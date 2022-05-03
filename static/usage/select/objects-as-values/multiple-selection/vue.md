@@ -4,7 +4,7 @@
     placeholder="Select fruit"
     :compareWith="compareWith"
     @ionChange="currentFood = JSON.stringify($event.detail.value)"
-    multiple="true"
+    :multiple="true"
   >
     <ion-select-option v-for="food in foods" :value="food">{{ food.name }}</ion-select-option>
   </ion-select>
