@@ -9,7 +9,7 @@ function Example() {
     present({
       columns: [
         {
-          name: 'programming-languages',
+          name: 'languages',
           options: [
             {
               text: 'JavaScript',
@@ -37,7 +37,9 @@ function Example() {
         },
         {
           text: 'Confirm',
-          handler: (value) => {},
+          handler: (value) => {
+            window.alert(`You selected: ${value.languages.value}`);
+          },
         },
       ],
     });

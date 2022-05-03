@@ -1,6 +1,6 @@
 ```html
 <template>
-  <ion-content fullscreen>
+  <ion-content class="ion-padding">
     <ion-button @click="openPicker()">Open</ion-button>
   </ion-content>
 </template>
@@ -21,7 +21,7 @@
         const picker = await pickerController.create({
           columns: [
             {
-              name: 'programming-languages',
+              name: 'languages',
               options: [
                 {
                   text: 'JavaScript',
@@ -49,7 +49,9 @@
             },
             {
               text: 'Confirm',
-              handler: (value) => {},
+              handler: (value) => {
+                window.alert(`You selected: ${value.languages.value}`);
+              },
             },
           ],
         });

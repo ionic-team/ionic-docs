@@ -1,5 +1,5 @@
 ```html
-<ion-content [fullscreen]="true">
+<ion-content class="ion-padding">
   <ion-button (click)="openPicker()">Open</ion-button>
 </ion-content>
 ```

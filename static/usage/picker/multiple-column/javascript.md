@@ -1,9 +1,7 @@
 ```html
 <ion-app>
-  <ion-content fullscreen>
-    <div class="container">
-      <ion-button onclick="openPicker()">Open</ion-button>
-    </div>
+  <ion-content class="ion-padding">
+    <ion-button onclick="openPicker()">Open</ion-button>
   </ion-content>
 </ion-app>
 <script>
@@ -69,7 +67,9 @@
         },
         {
           text: 'Confirm',
-          handler: (value) => {},
+          handler: (value) => {
+            window.alert(`You selected a ${value.crust.text} pizza with ${value.meat.text} and ${value.veggies.text}`);
+          },
         },
       ],
     });

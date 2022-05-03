@@ -13,7 +13,7 @@ export class AppComponent {
     const picker = await this.pickerCtrl.create({
       columns: [
         {
-          name: 'programming-languages',
+          name: 'languages',
           options: [
             {
               text: 'JavaScript',
@@ -41,7 +41,9 @@ export class AppComponent {
         },
         {
           text: 'Confirm',
-          handler: (value) => {},
+          handler: (value) => {
+            window.alert(`You selected: ${value.languages.value}`);
+          },
         },
       ],
     });

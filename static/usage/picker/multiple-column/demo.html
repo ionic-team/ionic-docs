@@ -17,7 +17,7 @@
 
 <body>
   <ion-app>
-    <ion-content fullscreen>
+    <ion-content>
       <div class="container">
         <ion-button onclick="openPicker()">Open</ion-button>
       </div>
@@ -77,7 +77,7 @@
           {
             text: 'Confirm',
             handler: (value) => {
-
+              window.alert(`You selected a ${value.crust.text} pizza with ${value.meat.text} and ${value.veggies.text}`);
             }
           }
         ]

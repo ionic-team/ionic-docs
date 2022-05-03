@@ -17,7 +17,7 @@
 
 <body>
   <ion-app>
-    <ion-content fullscreen>
+    <ion-content>
       <div class="container">
         <ion-button onclick="openPicker()">Open</ion-button>
       </div>
@@ -27,7 +27,7 @@
     async function openPicker() {
       const picker = await pickerController.create({
         columns: [{
-          name: 'programming-languages',
+          name: 'languages',
           options: [
             {
               text: 'JavaScript',
@@ -52,7 +52,7 @@
           {
             text: 'Confirm',
             handler: (value) => {
-
+              window.alert(`You selected: ${value.languages.value}`);
             }
           }
         ]
