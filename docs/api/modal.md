@@ -62,7 +62,9 @@ TODO: Playground Example
 
 With the `modalController` developers can present an `ion-modal` programmatically. Developers will have complete control over when a modal is presented and dismissed.
 
-TODO: Playground Example
+import PresentControllerExample from '@site/static/usage/modal/presenting/controller/index.md';
+
+<PresentControllerExample />
 
 ## Dismissing
 
