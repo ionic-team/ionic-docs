@@ -38,21 +38,35 @@ A select should be used with child `<ion-select-option>` elements. If the child 
 
 If `value` is set on the `<ion-select>`, the selected option will be chosen based on that value.
 
+## Single Selection
+
+By default, the select allows the user to select only one option. The alert interface presents users with a radio button styled list of options. The select component's value receives the value of the selected option's value.
+
+import SingleSelectionExample from '@site/static/usage/select/basic/single-selection/index.md';
+
+<SingleSelectionExample />
+
 ## Interfaces
 
 By default, select uses [ion-alert](alert.md) to open up the overlay of options in an alert. The interface can be changed to use [ion-action-sheet](action-sheet.md) or [ion-popover](popover.md) by passing `action-sheet` or `popover`, respectively, to the `interface` property. Read on to the other sections for the limitations of the different interfaces.
-
-
-## Single Selection
-
-By default, the select allows the user to select only one option. The alert interface presents users with a radio button styled list of options. The action sheet interface can only be used with a single value select. The select component's value receives the value of the selected option's value.
-
 
 ## Multiple Selection
 
 By adding the `multiple` attribute to select, users are able to select multiple options. When multiple options can be selected, the alert overlay presents users with a checkbox styled list of options. The select component's value receives an array of all of the selected option values.
 
 Note: the `action-sheet` and `popover` interfaces will not work with multiple selection.
+
+import MulipleSelectionExample from '@site/static/usage/select/basic/multiple-selection/index.md';
+
+<MulipleSelectionExample />
+
+## Responding to Interaction
+
+The main ways of handling user interaction with the select are the `ionChange`, `ionDismiss`, and `ionCancel` events. See [Events](#events) for more details on these and other events that select fires.
+
+import RespondingToInteractionExample from '@site/static/usage/select/basic/responding-to-interaction/index.md';
+
+<RespondingToInteractionExample />
 
 ## Object Value References
 
