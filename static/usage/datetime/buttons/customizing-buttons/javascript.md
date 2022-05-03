@@ -8,6 +8,6 @@
 </ion-datetime>
 
 <script>
-  const datetime = document.querySelector('ion-datetime');
+  var datetime = document.querySelector('ion-datetime');
 </script>
 ```
