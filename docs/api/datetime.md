@@ -23,6 +23,10 @@ import FirstDayOfWeek from '@site/static/usage/datetime/localization/first-day-o
 import LocaleExtensionTags from '@site/static/usage/datetime/localization/locale-extension-tags/index.md';
 import TimeLabel from '@site/static/usage/datetime/localization/time-label/index.md';
 
+import MonthAndYear from '@site/static/usage/datetime/presentation/month-and-year/index.md';
+import Time from '@site/static/usage/datetime/presentation/time/index.md';
+import Date from '@site/static/usage/datetime/presentation/date/index.md';
+
 <head>
   <title>ion-datetime: Ionic API Input for Datetime Format Picker</title>
   <meta name="description" content="Datetimes present a picker interface to select dates and times. Ionic's API Datetime input component easily displays a preferred format, and manages values." />
@@ -176,19 +180,33 @@ Be sure to check the [Browser Compatibility Chart](https://developer.mozilla.org
 
 ## Presentation
 
-Some use cases may call for only date selection or only time selection. The `presentation` property allows you to specify which pickers to show and the order to show them in.
+By default, `ion-datetime` allows users to select both date and time. In addition, users have access to selecting the specific month, year, hour, and minute.
+
+Some use cases may call for only date selection or only time selection. The `presentation` property allows you to specify which pickers to show and the order to show them in. For example, setting `date-time` will have the calendar picker appear before the time picker. Setting `time-date` will have the calendar picker appear after the time picker.
 
 ### Month and Year Selection
 
-TODO
+Month and year selection is available by passing `month-year`, `year-month`, `month`, or `year` to the `presentation` property.
+
+This example shows a datetime with the `month-year` configuration.
+
+<MonthAndYear />
 
 ### Time Selection
 
-TODO
+Time selection is available by passing `date-time`, `time-date`, or `time` to the `presentation` property.
+
+This example shows a datetime with the `time` configuration.
+
+<Time />
 
 ### Date Selection
 
-TODO
+Time selection is available by passing `date-time`, `time-date`, or `date` to the `presentation` property.
+
+This example shows a datetime with the `date` configuration.
+
+<Date />
 
 ## Titles
 
