@@ -5,9 +5,11 @@ import { IonicModule } from '@ionic/angular';
 
 import { AppComponent } from './app.component';
 
+const DECLARATIONS = [/* CUSTOM_DECLARATIONS */];
+
 @NgModule({
   imports: [BrowserModule, IonicModule.forRoot({})],
-  declarations: [AppComponent],
+  declarations: [AppComponent, ...DECLARATIONS],
   bootstrap: [AppComponent],
 })
 export class AppModule { }

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Modal | Controller</title>
+  <link rel="stylesheet" href="../../../../common.css" />
+  <script src="../../../../common.js"></script>
+  <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core@6/dist/ionic/ionic.esm.js"></script>
+  <script type="module">
+    import { modalController } from 'https://cdn.jsdelivr.net/npm/@ionic/core@6/dist/ionic/index.esm.js';
+    window.modalController = modalController;
+  </script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core@6/css/ionic.bundle.css" />
+</head>
+
+<body>
+  <ion-app>
+    <ion-header>
+      <ion-toolbar>
+        <ion-title>Controller Modal</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content class="ion-padding">
+      <div class="container">
+        <div id="message"></div>
+      </div>
+    </ion-content>
+  </ion-app>
+
+  <script>
+    const openModal = async () => {
+      const div = document.createElement('div');
+      div.innerHTML = `
+      <ion-header>
+        <ion-toolbar>
+          <ion-button slot="start" fill="clear" onclick="modalController.dismiss(null, 'cancel')">Cancel</ion-button>
+          <ion-title>Modal</ion-title>
+          <ion-button slot="end" fill="clear" onclick="modalController.dismiss(null, 'confirm')">Confirm</ion-button>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content class="ion-padding">
+        <p>Select a button to dismiss the modal.</p>
+      </ion-content>`;
+
+      const modal = await modalController.create({
+        component: div,
+      });
+
+      modal.present();
+
+      const { role } = await modal.onDidDismiss();
+
+      document.querySelector('#message').innerHTML = `Modal was dismissed with role: ${role}`;
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      openModal();
+    });
+
+  </script>
+</body>
+
+</html>

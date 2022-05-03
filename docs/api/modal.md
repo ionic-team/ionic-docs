@@ -101,20 +101,25 @@ TODO: Playground Example
 
 Since controller modals open a new component outside of the scope of the current template, that component will need the ability to dismiss itself and return context to the presenting view.
 
-TODO: Playground Example
+import ControllerDismissExample from '@site/static/usage/modal/dismissing/controller/dismiss/index.md';
+
+<ControllerDismissExample />
 
 #### Returning data when dismissed
 
 When dismissing a modal, you can optionally send data back to the presenting view.
 
-TODO: Playground Example
+import ControllerDismissDataExample from '@site/static/usage/modal/dismissing/controller/data/index.md';
+
+<ControllerDismissDataExample />
 
 #### Using roles to distinguish dismiss actions
 
 When dismissing a modal, you can optionally specify the `role` responsible for dismissing the modal. Roles are used to differentiate the operation that dismissed the modal, such as a cancel or confirm action.
 
-TODO: Playground Example
+import ControllerDismissRoleExample from '@site/static/usage/modal/dismissing/controller/role/index.md';
 
+<ControllerDismissRoleExample />
 
 ### Preventing a modal from dismissing
 
