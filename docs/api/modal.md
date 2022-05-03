@@ -1,8 +1,6 @@
 ---
 title: "ion-modal"
 hide_table_of_contents: true
-demoUrl: "/docs/demos/api/modal/index.html"
-demoSourceUrl: "https://github.com/ionic-team/ionic-docs/tree/main/static/demos/api/modal/index.html"
 ---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
