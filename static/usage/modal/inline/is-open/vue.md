@@ -38,7 +38,7 @@
       };
     },
     methods: {
-      setOpen(isOpen: boolean) {
+      setOpen(isOpen) {
         this.isOpen = isOpen;
       },
     },
