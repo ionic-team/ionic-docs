@@ -6,9 +6,9 @@
     @ionCancel="pushLog('ionCancel fired')"
     @ionDismiss="pushLog('ionDismiss fired')"
   >
-    <ion-select-option>Apples</ion-select-option>
-    <ion-select-option>Oranges</ion-select-option>
-    <ion-select-option>Bananas</ion-select-option>
+    <ion-select-option value="apples">Apples</ion-select-option>
+    <ion-select-option value="oranges">Oranges</ion-select-option>
+    <ion-select-option value="bananas">Bananas</ion-select-option>
   </ion-select>
   <div id="log" class="ion-padding">
     <p v-for="log in logs">{{ log }}</p>

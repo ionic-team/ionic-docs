@@ -17,9 +17,9 @@ function Example() {
         onIonCancel={() => pushLog('ionCancel fired')}
         onIonDismiss={() => pushLog('ionDismiss fired')}
       >
-        <IonSelectOption>Apples</IonSelectOption>
-        <IonSelectOption>Oranges</IonSelectOption>
-        <IonSelectOption>Bananas</IonSelectOption>
+        <IonSelectOption value="apples">Apples</IonSelectOption>
+        <IonSelectOption value="oranges">Oranges</IonSelectOption>
+        <IonSelectOption value="bananas">Bananas</IonSelectOption>
       </IonSelect>
       <div id="log" className="ion-padding">
         {logs.map((log) => <p>{log}</p>)}

@@ -4,9 +4,9 @@ import { IonSelect, IonSelectOption } from '@ionic/react';
 function Example() {
   return (
     <IonSelect placeholder="Select all fruits that apply" multiple>
-      <IonSelectOption>Apples</IonSelectOption>
-      <IonSelectOption>Oranges</IonSelectOption>
-      <IonSelectOption>Bananas</IonSelectOption>
+      <IonSelectOption value="apples">Apples</IonSelectOption>
+      <IonSelectOption value="oranges">Oranges</IonSelectOption>
+      <IonSelectOption value="bananas">Bananas</IonSelectOption>
     </IonSelect>
   );
 }
