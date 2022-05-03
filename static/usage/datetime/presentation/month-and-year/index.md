@@ -5,4 +5,4 @@ import react from './react.md';
 import vue from './vue.md';
 import angular from './angular.md';
 
-<Playground code={{ javascript, react, vue, angular }} src="usage/datetime/presentation/month-and-year/demo.html" />
+<Playground size="240px" code={{ javascript, react, vue, angular }} src="usage/datetime/presentation/month-and-year/demo.html" />

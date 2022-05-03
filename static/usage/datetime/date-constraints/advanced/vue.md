@@ -10,7 +10,7 @@
   export default defineComponent({
     components: { IonDatetime },
     setup() {
-      const isWeekday = (dateString: string) => {
+      const isWeekday = (dateString) => {
         const date = new Date(dateString);
         const utcDay = date.getUTCDay();
         
