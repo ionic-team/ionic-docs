@@ -19,7 +19,7 @@
     components: { IonLabel, IonSelect, IonSelectOption },
     data() {
       return {
-        currentFood: "",
+        currentFood: "[]",
         foods: [
           {
             id: 1,

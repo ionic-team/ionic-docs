@@ -2,7 +2,7 @@
 <ion-select placeholder="Select food" multiple="true"></ion-select>
 <ion-label class="ion-padding">
   Current value:
-  <ion-text></ion-text>
+  <ion-text>[]</ion-text>
 </ion-label>
 
 <script>

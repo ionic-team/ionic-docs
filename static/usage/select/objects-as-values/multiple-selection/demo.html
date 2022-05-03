@@ -9,17 +9,25 @@
   <script src="../../../common.js"></script>
   <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core@6/dist/ionic/ionic.esm.js"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core@6/css/ionic.bundle.css" />
+
+  <style>
+    @media (min-width: 450px) {
+      .wrapper {
+        width: 450px;
+      }
+    }
+  </style>
 </head>
 
 <body>
   <ion-app>
     <ion-content>
       <div class="container">
-        <div class="ion-padding">
+        <div class="wrapper">
           <ion-select placeholder="Select food" multiple="true"></ion-select>
           <ion-label>
             Current value:
-            <ion-text></ion-text>
+            <ion-text>[]</ion-text>
           </ion-label>
         </div>
       </div>
