@@ -42,6 +42,18 @@ If `value` is set on the `<ion-select>`, the selected option will be chosen base
 
 By default, select uses [ion-alert](alert.md) to open up the overlay of options in an alert. The interface can be changed to use [ion-action-sheet](action-sheet.md) or [ion-popover](popover.md) by passing `action-sheet` or `popover`, respectively, to the `interface` property. Read on to the other sections for the limitations of the different interfaces.
 
+### Action Sheet
+
+import ActionSheetExample from '@site/static/usage/select/interfaces/action-sheet/index.md';
+
+<ActionSheetExample />
+
+### Popover
+
+import PopoverExample from '@site/static/usage/select/interfaces/popover/index.md';
+
+<PopoverExample />
+
 
 ## Single Selection
 
