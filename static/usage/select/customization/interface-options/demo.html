@@ -9,6 +9,16 @@
   <script src="../../../common.js"></script>
   <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core@6/dist/ionic/ionic.esm.js"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core@6/css/ionic.bundle.css" />
+
+  <style>
+    .container {
+      align-items: flex-start;
+    }
+
+    .container > ion-list {
+      min-width: 400px;
+    }
+  </style>
 </head>
 
 <body>
@@ -20,11 +30,8 @@
             <ion-label>Alert</ion-label>
             <ion-select id="customAlertSelect" interface="alert" placeholder="Select One">
               <ion-select-option value="bacon">Bacon</ion-select-option>
-              <ion-select-option value="mushrooms">Mushrooms</ion-select-option>
               <ion-select-option value="onions">Onions</ion-select-option>
               <ion-select-option value="pepperoni">Pepperoni</ion-select-option>
-              <ion-select-option value="pineapple">Pineapple</ion-select-option>
-              <ion-select-option value="sausage">Sausage</ion-select-option>
             </ion-select>
           </ion-item>
         
@@ -33,7 +40,6 @@
             <ion-select id="customPopoverSelect" interface="popover" placeholder="Select One">
               <ion-select-option value="brown">Brown</ion-select-option>
               <ion-select-option value="blonde">Blonde</ion-select-option>
-              <ion-select-option value="black">Black</ion-select-option>
               <ion-select-option value="red">Red</ion-select-option>
             </ion-select>
           </ion-item>
@@ -42,10 +48,8 @@
             <ion-label>Action Sheet</ion-label>
             <ion-select id="customActionSheetSelect" interface="action-sheet" placeholder="Select One">
               <ion-select-option value="red">Red</ion-select-option>
-              <ion-select-option value="purple">Purple</ion-select-option>
-              <ion-select-option value="yellow">Yellow</ion-select-option>
-              <ion-select-option value="orange">Orange</ion-select-option>
               <ion-select-option value="green">Green</ion-select-option>
+              <ion-select-option value="blue">Blue</ion-select-option>
             </ion-select>
           </ion-item>
         </ion-list>

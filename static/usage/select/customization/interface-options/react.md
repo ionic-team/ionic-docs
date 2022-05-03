@@ -26,11 +26,8 @@ function Example() {
         <IonLabel>Alert</IonLabel>
         <IonSelect interfaceOptions={customAlertOptions} interface="alert" placeholder="Select One">
           <IonSelectOption value="bacon">Bacon</IonSelectOption>
-          <IonSelectOption value="mushrooms">Mushrooms</IonSelectOption>
           <IonSelectOption value="onions">Onions</IonSelectOption>
           <IonSelectOption value="pepperoni">Pepperoni</IonSelectOption>
-          <IonSelectOption value="pineapple">Pineapple</IonSelectOption>
-          <IonSelectOption value="sausage">Sausage</IonSelectOption>
         </IonSelect>
       </IonItem>
           
@@ -39,7 +36,6 @@ function Example() {
         <IonSelect interfaceOptions={customPopoverOptions} interface="popover" placeholder="Select One">
           <IonSelectOption value="brown">Brown</IonSelectOption>
           <IonSelectOption value="blonde">Blonde</IonSelectOption>
-          <IonSelectOption value="black">Black</IonSelectOption>
           <IonSelectOption value="red">Red</IonSelectOption>
         </IonSelect>
       </IonItem>
@@ -48,10 +44,8 @@ function Example() {
         <IonLabel>Action Sheet</IonLabel>
         <IonSelect interfaceOptions={customActionSheetOptions} interface="action-sheet" placeholder="Select One">
           <IonSelectOption value="red">Red</IonSelectOption>
-          <IonSelectOption value="purple">Purple</IonSelectOption>
-          <IonSelectOption value="yellow">Yellow</IonSelectOption>
-          <IonSelectOption value="orange">Orange</IonSelectOption>
           <IonSelectOption value="green">Green</IonSelectOption>
+          <IonSelectOption value="blue">Blue</IonSelectOption>
         </IonSelect>
       </IonItem>
     </IonList>
