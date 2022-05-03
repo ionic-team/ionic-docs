@@ -31,6 +31,8 @@
   --playground-code-background: var(--c-indigo-10);
 
   overflow: hidden;
+
+  margin-bottom: var(--ifm-leading);
 }
 
 /* Playground container includes the toolbar and preview container */
