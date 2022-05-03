@@ -34,6 +34,8 @@ import ShowingConfirmationButtons from '@site/static/usage/datetime/buttons/show
 import CustomizingButtons from '@site/static/usage/datetime/buttons/customizing-buttons/index.md';
 import CustomizingButtonTexts from '@site/static/usage/datetime/buttons/customizing-button-texts/index.md';
 
+import Theming from '@site/static/usage/datetime/theming/index.md';
+
 <head>
   <title>ion-datetime: Ionic API Input for Datetime Format Picker</title>
   <meta name="description" content="Datetimes present a picker interface to select dates and times. Ionic's API Datetime input component easily displays a preferred format, and manages values." />
@@ -253,7 +255,11 @@ Developers can provide their own buttons for advanced custom behavior.
 
 ## Theming
 
-TODO
+Ionic's powerful theming system can be used to easily change your entire app to match a certain theme. In this example, we used the [Color Creator](../theming/colors#new-color-creator) and the [Stepped Color Generator](../theming/themes#stepped-color-generator) to create a rose color palette that we can use for `ion-datetime`.
+
+The benefit of this approach is that every component, not just `ion-datetime`, can automatically take advantage of this theme.
+
+<Theming />
 
 ## Time Zones
 
