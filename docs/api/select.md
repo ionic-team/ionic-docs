@@ -60,6 +60,18 @@ When using objects for select values, it is possible for the identities of these
 
 By default, the select uses object equality (`===`) to determine if an option is selected. This can be overridden by providing a property name or a function to the `compareWith` property.
 
+### Using compareWith
+
+import UsingCompareWithExample from '@site/static/usage/select/objects-as-values/using-comparewith/index.md';
+
+<UsingCompareWithExample />
+
+### Object Values and Multiple Selection
+
+import ObjectValuesAndMultipleSelectionExample from '@site/static/usage/select/objects-as-values/multiple-selection/index.md';
+
+<ObjectValuesAndMultipleSelectionExample />
+
 ## Select Buttons
 
 The alert supports two buttons: `Cancel` and `OK`. Each button's text can be customized using the `cancelText` and `okText` properties.
