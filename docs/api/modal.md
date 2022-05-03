@@ -249,6 +249,16 @@ ion-modal.stack-modal {
 }
 ```
 
+### Theming
+
+TODO: Playground Example
+
+### Animations
+
+#### Custom animations
+
+TODO: Playground Example
+
 ## Interfaces
 
 ### ModalOptions
