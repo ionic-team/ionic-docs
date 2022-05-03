@@ -1,9 +1,9 @@
 ```html
 <template>
   <ion-select interface="action-sheet" placeholder="Select fruit">
-    <ion-select-option>Apples</ion-select-option>
-    <ion-select-option>Oranges</ion-select-option>
-    <ion-select-option>Bananas</ion-select-option>
+    <ion-select-option value="apples">Apples</ion-select-option>
+    <ion-select-option value="oranges">Oranges</ion-select-option>
+    <ion-select-option value="bananas">Bananas</ion-select-option>
   </ion-select>
 </template>
 

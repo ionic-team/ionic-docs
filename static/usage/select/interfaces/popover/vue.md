@@ -1,9 +1,9 @@
 ```html
 <template>
   <ion-select interface="popover" placeholder="Select fruit">
-    <ion-select-option>Apples</ion-select-option>
-    <ion-select-option>Oranges</ion-select-option>
-    <ion-select-option>Bananas</ion-select-option>
+    <IonSelectOption value="apples">Apples</IonSelectOption>
+    <IonSelectOption value="oranges">Oranges</IonSelectOption>
+    <IonSelectOption value="bananas">Bananas</IonSelectOption>
   </ion-select>
 </template>
 
