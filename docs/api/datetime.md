@@ -17,6 +17,12 @@ import MaxMin from '@site/static/usage/datetime/date-constraints/max-min/index.m
 import Values from '@site/static/usage/datetime/date-constraints/values/index.md';
 import Advanced from '@site/static/usage/datetime/date-constraints/advanced/index.md';
 
+import CustomLocale from '@site/static/usage/datetime/localization/custom-locale/index.md';
+import HourCycle from '@site/static/usage/datetime/localization/hour-cycle/index.md';
+import FirstDayOfWeek from '@site/static/usage/datetime/localization/first-day-of-week/index.md';
+import LocaleExtensionTags from '@site/static/usage/datetime/localization/locale-extension-tags/index.md';
+import TimeLabel from '@site/static/usage/datetime/localization/time-label/index.md';
+
 <head>
   <title>ion-datetime: Ionic API Input for Datetime Format Picker</title>
   <meta name="description" content="Datetimes present a picker interface to select dates and times. Ionic's API Datetime input component easily displays a preferred format, and manages values." />
@@ -87,7 +93,7 @@ The following example restricts date selection to March 2022 through May 2022 on
 
 ### Selecting Specific Values
 
-While the `min` and `max` properties allow you to restrict date selection to a certain range, the `monthValues`, `dayValues`, `yearValues`, `hourValues`, and `minuteValues` properties allow you choose specific days and times that you to have enabled.
+While the `min` and `max` properties allow you to restrict date selection to a certain range, the `monthValues`, `dayValues`, `yearValues`, `hourValues`, and `minuteValues` properties allow you choose specific days and times that users can select.
 
 The following example allows minutes to be selected in increments of 15. It also allows for days to be selected in increments of 5.
 
@@ -108,9 +114,15 @@ Ionic Framework makes use of the [Intl.DatetimeFormat](https://developer.mozilla
 
 ### Custom Locale
 
-For instances where you need a specific locale, you can use the `locale` property to set it.
+For instances where you need a specific locale, you can use the `locale` property to set it. The locale controls both the language and the date and time formats that are displayed.
 
-TODO
+The following example shows how to set the locale to Spanish (Spain).
+
+<CustomLocale />
+
+:::note
+The time label is not automatically localized. See [Time Label](#time-label) for more information.
+:::
 
 ### Hour Cycle
 
@@ -134,31 +146,33 @@ There may be scenarios where you need to have more control over which hour cycle
 
 In the following example, we can use the `hourCycle` property to force `ion-datetime` to use the 12 hour cycle even though the locale is `en-GB`, which uses a 24 hour cycle by default:
 
-TODO
+<HourCycle />
 
-`ion-datetime` currently supports the `h12` and `h23` hour cycle types. Interested in seeing support for `h11` and `h24` added to `ion-datetime`? [Let us know!](https://github.com/ionic-team/ionic-framework/issues/23750)
+## Presentation
 
 ### First Day of the Week
 
-For `ion-datetime`, the default first day of the week is Sunday. As of 2021, there is no browser API that lets Ionic automatically determine the first day of the week based on a device's locale, though there is on-going work regarding this (see: [TC39 GitHub](https://github.com/tc39/ecma402/issues/6)).
+For `ion-datetime`, the default first day of the week is Sunday. As of 2022, there is no browser API that lets Ionic automatically determine the first day of the week based on a device's locale, though there is on-going work regarding this (see: [TC39 GitHub](https://github.com/tc39/ecma402/issues/6)).
 
-To customize the first day of the week, developers can use the `firstDayOfWeek` property. This property takes in a number between `0` and `6` where `0` represents Sunday and `6` represents Saturday.
-
-For example, if you wanted to have the first day of the week be Monday, you could set `firstDayOfWeek` to `1`:
-
-TODO
+<FirstDayOfWeek />
 
 ### Time Label
 
-TODO
+The time label is not automatically localized. Fortunately, Ionic makes it easy to provide custom localizations with the `time-label` slot.
+
+<TimeLabel />
 
 ### Locale Extension Tags
 
-`ion-datetime` also supports [locale extension tags](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/Locale). These tags let you encode information about the locale in the locale string itself. Developers may prefer to use the extension tag approach if they are using the [Intl.Locale API](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/Locale) in their apps.
+`ion-datetime` also supports [locale extension tags](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/Locale) as part of the `Intl.Locale` API. These tags let you encode information about the locale in the locale string itself. Developers may prefer to use the extension tag approach if they are using the [Intl.Locale API](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/Locale) in their apps.
 
-For example, if you wanted to use a 12 hour cycle with the `en-GB` locale, you could alternatively do:
+For example, if you wanted to use a 12 hour cycle with the `en-GB` locale, you could provide extension tags instead of using both the `locale` and `hourCycle` properties:
 
-TODO
+<LocaleExtensionTags />
+
+:::note
+Be sure to check the [Browser Compatibility Chart](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/Locale#browser_compatibility)  for `Intl.Locale` before using it in your app.
+:::
 
 ## Presentation
 
