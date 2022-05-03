@@ -38,68 +38,87 @@ A Modal is a dialog that appears on top of the app's content, and must be dismis
 
 ## Presenting
 
-There are two ways to use `ion-modal`: inline or via the `modalController`. Each method comes with different considerations, so be sure to use the approach that best fits your use case.
+### Inline Modals (Recommended)
 
-## Inline Modals
-
-`ion-modal` can be used by writing the component directly in your template. This reduces the number of handlers you need to wire up in order to present the modal. See [Usage](#usage) for an example of how to write a modal inline. 
+`ion-modal` can be used by writing the component directly in your template. This reduces the number of handlers you need to wire up in order to present the modal.
 
 When using `ion-modal` with Angular, React, or Vue, the component you pass in will be destroyed when the modal is dismissed. As this functionality is provided by the JavaScript framework, using `ion-modal` without a JavaScript framework will not destroy the component you passed in. If this is a needed functionality, we recommend using the `modalController` instead.
 
-### Angular 
+TODO: Playground Example
 
-Since the component you passed in needs to be created when the modal is presented and destroyed when the modal is dismissed, we are unable to project the content using `<ng-content>` internally. Instead, we use `<ng-container>` which expects an `<ng-template>` to be passed in. As a result, when passing in your component you will need to wrap it in an `<ng-template>`:
+#### Using triggers
 
-```html
-<ion-modal [isOpen]="isModalOpen">
-  <ng-template>
-    <app-modal-content></app-modal-content>
-  </ng-template>
-</ion-modal>
-```
+A trigger is an element reference, that when selected will automatically open a modal. Triggers are useful when presenting a modal from a button or similar interaction.
 
-### When to use
+TODO: Playground Example
 
-Using a modal inline is useful when you do not want to explicitly wire up click events to open the modal. For example, you can use the `is-open` property to easily present or dismiss a modal based on some state in your application.
+#### Using `isOpen`
 
-If you need fine grained control over when the modal is presented and dismissed, we recommend you use the `modalController`. 
+The `isOpen` property on `ion-modal` allows developers to control the presentation state of the modal from their application state. This means when `isOpen` is set to `true` the modal will be presented and when `isOpen` is set to `false` the modal will be dismissed.
 
-## Controller Modals
+`isOpen` uses one-way data binding, meaning it will not automatically be set to `false` when the modal is dismissed. To keep the state of `isOpen` in sync with your UI state, listen for either `ionModalDidDismiss` or `didDismiss` and set the variable to `false`.
 
-`ion-modal` can also be presented programmatically by using the `modalController` imported from Ionic Framework. This allows you to have complete control over when a modal is presented above and beyond the customization that inline modals give you. See [Usage](#usage) for an example of how to use the `modalController`.
+TODO: Playground Example
 
-### When to use
+### Controller Modals
 
-We typically recommend that you write your modals inline as it streamlines the amount of code in your application. You should only use the `modalController` for complex use cases where writing a modal inline is impractical.
+With the `modalController` developers can present an `ion-modal` programmatically. Developers will have complete control over when a modal is presented and dismissed.
 
-## Card Modal
+TODO: Playground Example
 
-Developers can create a card modal effect where the modal appears as a card stacked on top of your app's main content. To create a card modal, developers need to set the `presentingElement` property and the `swipeToClose` properties on `ion-modal`.
+## Dismissing
 
-The `presentingElement` property accepts a reference to the element that should display under your modal. This is typically a reference to `ion-router-outlet`.
+### Inline Modals
 
-The `swipeToClose` property can be used to control whether or not the card modal can be swiped to close.
+#### Using dismiss and element references
 
-See [Usage](#usage) for examples on how to use the sheet modal.
+With the `ion-modal` element reference, developers can call the public API method `dismiss()` to dismiss the modal.
 
-## Sheet Modal
+TODO: Playground Example
 
-Developers can create a sheet modal effect similar to the drawer components available in maps applications. To create a sheet modal, developers need to set the `breakpoints` and `initialBreakpoint` properties on `ion-modal`.
+#### Using `isOpen`
 
-The `breakpoints` property accepts an array which states each breakpoint that the sheet can snap to when swiped. A `breakpoints` property of `[0, 0.5, 1]` would indicate that the sheet can be swiped to show 0% of the modal, 50% of the modal, and 100% of the modal. When the modal is swiped to 0%, the modal will be automatically dismissed.
-
-The `initialBreakpoint` property is required so that the sheet modal knows which breakpoint to start at when presenting. The `initialBreakpoint` value must also exist in the `breakpoints` array. Given a `breakpoints` value of `[0, 0.5, 1]`, an `initialBreakpoint` value of `0.5` would be valid as `0.5` is in the `breakpoints` array. An `initialBreakpoint` value of `0.25` would not be valid as `0.25` does not exist in the `breakpoints` array.
-
-The `backdropBreakpoint` property can be used to customize the point at which the `ion-backdrop` will begin to fade in. This is useful when creating interfaces that have content underneath the sheet that should remain interactive. A common use case is a sheet modal that overlays a map where the map is interactive until the sheet is fully expanded.
-
-See [Usage](#usage) for examples on how to use the sheet modal.
-
-:::note
- Note: The `swipeToClose` property has no effect when using a sheet modal as sheet modals must be swipeable in order to be usable.
-:::
+Setting `isOpen` to `false` will dismiss the `ion-modal`. If you want the variable bound to `isOpen` to be updated, you will need to manually listen for `ionModalDidDismiss` or `didDismiss` and set the variable to `false`.
 
 
-## Preventing a Modal from Dismissing
+TODO: Playground Example
+
+#### Returning data when dismissed
+
+When dismissing a modal, you can optionally send data back in the dismiss event. This is useful when you want to provide information entered by the user in the modal, back to the previous view.
+
+For framework implementations (Angular, React and Vue), you can directly assign the state of the modal view to the active component. This prevents needing to add event listeners or binding to dismiss hooks.
+
+TODO: Playground Example
+
+#### Using roles to distinguish dismiss actions
+
+When dismissing a modal, you can optionally specify the `role` responsible for dismissing the modal. Roles are used to differentiate the operation that dismissed the modal, such as a cancel or confirm action.
+
+TODO: Playground Example
+
+### Controller Modals
+
+#### Using controller to dismiss the modal
+
+Since controller modals open a new component outside of the scope of the current template, that component will need the ability to dismiss itself and return context to the presenting view.
+
+TODO: Playground Example
+
+#### Returning data when dismissed
+
+When dismissing a modal, you can optionally send data back to the presenting view.
+
+TODO: Playground Example
+
+#### Using roles to distinguish dismiss actions
+
+When dismissing a modal, you can optionally specify the `role` responsible for dismissing the modal. Roles are used to differentiate the operation that dismissed the modal, such as a cancel or confirm action.
+
+TODO: Playground Example
+
+
+### Preventing a modal from dismissing
 
 When entering data into a modal, it is often desirable to have a way of preventing accidental data loss. The `canDismiss` property on `ion-modal` gives developers control over when a modal is allowed to dismiss.
 
@@ -109,12 +128,13 @@ There are two different ways of using the `canDismiss` property.
  Note: When using a sheet modal, `canDismiss` will not be checked on swipe if there is no `0` breakpoint set. However, it will still be checked when pressing `Esc` or the hardware back button.
 :::
 
-
 ### Setting a boolean value
 
 Developers can set `canDismiss` to a boolean value. If `canDismiss` is `true`, then the modal will close when users attempt to dismiss the modal. If `canDismiss` is `false`, then the modal will not close when users attempt to dismiss the modal.
 
 Setting a boolean value should be used when you need to require a particular action to be taken prior to a modal being dismissed. For example, if developers want to require that a "Terms of Use" checkbox is checked prior to closing the modal, they could set `canDismiss` to `false` initially and update it to `true` when the checkbox is checked.
+
+TODO: Playground Example
 
 ### Setting a callback function
 
@@ -123,6 +143,58 @@ Developers can set `canDismiss` to be a function. This function must return a `P
 Setting a callback function should be used when you have complex dismissing criteria such as showing a confirmation dialog prior to dismissing the modal. The option that users select in this dialog can then be used to determine whether or not the modal should proceed with dismissing.
 
 Note that setting a callback function will cause the swipe gesture to be interrupted when using a card or sheet modal. This is because Ionic does not know what your callback function will resolve to ahead of time.
+
+TODO: Playground Example
+
+## Types of modals
+
+### Full screen
+
+#### Basic
+
+TODO: Playground Example
+
+### Card Modal
+
+Developers can create a card modal effect where the modal appears as a card stacked on top of your app's main content. To create a card modal, developers need to set the `presentingElement` property and the `swipeToClose` properties on `ion-modal`.
+
+The `presentingElement` property accepts a reference to the element that should display under your modal. This is typically a reference to `ion-router-outlet`.
+
+The `swipeToClose` property can be used to control whether or not the card modal can be swiped to close.
+
+#### Basic
+
+TODO: Playground Example
+
+#### Custom sizes
+
+TODO: Playground Example
+
+### Sheet Modal
+
+Developers can create a sheet modal effect similar to the drawer components available in maps applications. To create a sheet modal, developers need to set the `breakpoints` and `initialBreakpoint` properties on `ion-modal`.
+
+The `breakpoints` property accepts an array which states each breakpoint that the sheet can snap to when swiped. A `breakpoints` property of `[0, 0.5, 1]` would indicate that the sheet can be swiped to show 0% of the modal, 50% of the modal, and 100% of the modal. When the modal is swiped to 0%, the modal will be automatically dismissed.
+
+The `initialBreakpoint` property is required so that the sheet modal knows which breakpoint to start at when presenting. The `initialBreakpoint` value must also exist in the `breakpoints` array. Given a `breakpoints` value of `[0, 0.5, 1]`, an `initialBreakpoint` value of `0.5` would be valid as `0.5` is in the `breakpoints` array. An `initialBreakpoint` value of `0.25` would not be valid as `0.25` does not exist in the `breakpoints` array.
+
+The `backdropBreakpoint` property can be used to customize the point at which the `ion-backdrop` will begin to fade in. This is useful when creating interfaces that have content underneath the sheet that should remain interactive. A common use case is a sheet modal that overlays a map where the map is interactive until the sheet is fully expanded.
+
+:::note
+ Note: The `swipeToClose` property has no effect when using a sheet modal as sheet modals must be swipeable in order to be usable.
+:::
+
+#### Using breakpoints
+
+TODO: Playground Example
+
+#### Interacting with background content
+
+TODO: Playground Example
+
+#### Moving to a breakpoint
+
+TODO: Playground Example
 
 ## Interfaces
 
@@ -158,10 +230,6 @@ interface ModalCustomEvent extends CustomEvent {
   target: HTMLIonModalElement;
 }
 ```
-
-## Dismissing
-
-The modal can be dismissed after creation by calling the `dismiss()` method on the modal controller. The `onDidDismiss` function can be called to perform an action after the modal is dismissed.
 
 ## Styling
 
