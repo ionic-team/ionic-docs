@@ -11,6 +11,5 @@
 </ion-select>
 <div class="ion-padding">
   <p *ngFor="let log of logs">{{ log }}</p>
-  <p>Events will log above</p>
 </div>
 ```

@@ -4,9 +4,7 @@
   <ion-select-option value="oranges">Oranges</ion-select-option>
   <ion-select-option value="bananas">Bananas</ion-select-option>
 </ion-select>
-<div id="log" class="ion-padding">
-  <p>Events will log above</p>
-</div>
+<div id="log" class="ion-padding"></div>
 
 <script>
   const select = document.querySelector('ion-select');

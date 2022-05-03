@@ -12,7 +12,6 @@
   </ion-select>
   <div class="ion-padding">
     <p v-for="log in logs">{{ log }}</p>
-    <p>Events will log above</p>
   </div>
 </template>
 

@@ -23,7 +23,6 @@ function Example() {
       </IonSelect>
       <div className="ion-padding">
         {logs.map((log) => <p>{log}</p>)}
-        <p>Events will log above</p>
       </div>
     </>
   );
