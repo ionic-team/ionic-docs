@@ -72,14 +72,17 @@ TODO: Playground Example
 
 With the `ion-modal` element reference, developers can call the public API method `dismiss()` to dismiss the modal.
 
-TODO: Playground Example
+import DismissElementRefExample from '@site/static/usage/modal/dismissing/inline/element-ref/index.md';
+
+<DismissElementRefExample />
 
 #### Using `isOpen`
 
 Setting `isOpen` to `false` will dismiss the `ion-modal`. If you want the variable bound to `isOpen` to be updated, you will need to manually listen for `ionModalDidDismiss` or `didDismiss` and set the variable to `false`.
 
+import DismissIsOpenExample from '@site/static/usage/modal/dismissing/inline/is-open/index.md';
 
-TODO: Playground Example
+<DismissIsOpenExample />
 
 #### Returning data when dismissed
 
@@ -87,13 +90,17 @@ When dismissing a modal, you can optionally send data back in the dismiss event.
 
 For framework implementations (Angular, React and Vue), you can directly assign the state of the modal view to the active component. This prevents needing to add event listeners or binding to dismiss hooks.
 
-TODO: Playground Example
+import DismissDataExample from '@site/static/usage/modal/dismissing/inline/data/index.md';
+
+<DismissDataExample />
 
 #### Using roles to distinguish dismiss actions
 
 When dismissing a modal, you can optionally specify the `role` responsible for dismissing the modal. Roles are used to differentiate the operation that dismissed the modal, such as a cancel or confirm action.
 
-TODO: Playground Example
+import DismissRoleExample from '@site/static/usage/modal/dismissing/inline/role/index.md';
+
+<DismissRoleExample />
 
 ### Controller Modals
 
