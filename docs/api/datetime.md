@@ -30,6 +30,10 @@ import Date from '@site/static/usage/datetime/presentation/date/index.md';
 import ShowingDefaultTitle from '@site/static/usage/datetime/title/showing-default-title/index.md';
 import CustomizingTitle from '@site/static/usage/datetime/title/customizing-title/index.md';
 
+import ShowingConfirmationButtons from '@site/static/usage/datetime/buttons/showing-confirmation-buttons/index.md';
+import CustomizingButtons from '@site/static/usage/datetime/buttons/customizing-buttons/index.md';
+import CustomizingButtonTexts from '@site/static/usage/datetime/buttons/customizing-button-texts/index.md';
+
 <head>
   <title>ion-datetime: Ionic API Input for Datetime Format Picker</title>
   <meta name="description" content="Datetimes present a picker interface to select dates and times. Ionic's API Datetime input component easily displays a preferred format, and manages values." />
@@ -225,19 +229,27 @@ By default, `ion-datetime` does not show any header or title associated with the
 
 ## Buttons
 
-TODO
+By default, `ionChange` is emitted with the new datetime value whenever a new date is selected. To require user confirmation before emitting `ionChange`, you can either set the `showDefaultButtons` property to `true` or use the `buttons` slot to pass in a custom confirmation button. When passing in custom buttons, the confirm button must call the `confirm` method on `ion-datetime` for `ionChange` to be emitted.
 
 ### Showing Confirmation Buttons
 
-TODO
+The default Done and Cancel buttons are already preconfigured to call the `done` and `cancel` methods, respectively.
 
-### Customizing Buttons
-
-TODO
+<ShowingConfirmationButtons />
 
 ### Customizing Button Texts
 
-TODO
+For simple use cases, developers can provide custom button text to the confirmation and cancel values through the `doneText` and `cancelText` properties. We recommend doing this when you only need to change the button text and do not need any custom behavior.
+
+<CustomizingButtonTexts />
+
+### Customizing Button Elements
+
+Developers can provide their own buttons for advanced custom behavior.
+
+`ion-datetime` has `confirm`, `cancel`, and `reset` methods that developers can call when clicking on custom buttons. The `reset` method also allows developers to provide a date to reset the datetime to.
+
+<CustomizingButtons />
 
 ## Theming
 
