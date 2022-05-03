@@ -39,9 +39,9 @@ A Modal is a dialog that appears on top of the app's content, and must be dismis
 
 When using `ion-modal` with Angular, React, or Vue, the component you pass in will be destroyed when the modal is dismissed. As this functionality is provided by the JavaScript framework, using `ion-modal` without a JavaScript framework will not destroy the component you passed in. If this is a needed functionality, we recommend using the `modalController` instead.
 
-It is recommended to using triggers to open inline modals. A trigger is an element reference, that when selected will automatically open a modal. Triggers are useful when presenting a modal from a button or similar interaction.
+import InlineModalTriggerExample from '@site/static/usage/modal/inline/basic/index.md';
 
-TODO: Playground Example
+<InlineModalTriggerExample />
 
 ### Using `isOpen`
 
@@ -49,7 +49,9 @@ The `isOpen` property on `ion-modal` allows developers to control the presentati
 
 `isOpen` uses one-way data binding, meaning it will not automatically be set to `false` when the modal is dismissed. To keep the state of `isOpen` in sync with your UI state, listen for either `ionModalDidDismiss` or `didDismiss` and set the variable to `false`.
 
-TODO: Playground Example
+import InlineModalIsOpenExample from '@site/static/usage/modal/inline/is-open/index.md';
+
+<InlineModalIsOpenExample />
 
 ## Controller Modals
 
