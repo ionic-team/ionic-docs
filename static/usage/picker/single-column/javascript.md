@@ -1,9 +1,7 @@
 ```html
 <ion-app>
   <ion-content class="ion-padding">
-    <div class="container">
-      <ion-button onclick="openPicker()">Open</ion-button>
-    </div>
+    <ion-button onclick="openPicker()">Open</ion-button>
   </ion-content>
 </ion-app>
 <script>
