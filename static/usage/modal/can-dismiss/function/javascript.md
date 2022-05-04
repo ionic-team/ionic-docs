@@ -1,0 +1,63 @@
+```html
+<style>
+  ion-modal {
+    background: rgba(0, 0, 0, 0.2);
+  }
+</style>
+
+<ion-app>
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>App</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content class="ion-padding">
+    <ion-button id="open-modal" expand="block">Open</ion-button>
+
+    <ion-modal trigger="open-modal" swipe-to-close="true">
+      <ion-header>
+        <ion-toolbar>
+          <ion-title>Modal</ion-title>
+          <ion-button slot="end" fill="clear" onclick="dismiss()">Close</ion-button>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content class="ion-padding">
+        <p>You will be prompted when closing this modal.</p>
+      </ion-content>
+    </ion-modal>
+  </ion-content>
+</ion-app>
+
+<script>
+  var modal = document.querySelector('ion-modal');
+
+  modal.canDismiss = promptClose;
+  modal.presentingElement = document.querySelector('.ion-page');
+
+  function dismiss() {
+    modal.dismiss();
+  }
+
+  async function promptClose() {
+    const actionSheet = document.createElement('ion-action-sheet');
+
+    actionSheet.header = 'Are you sure?';
+    actionSheet.buttons = [
+      {
+        text: 'Yes',
+        role: 'confirm',
+      },
+      {
+        text: 'No',
+        role: 'cancel',
+      },
+    ];
+    document.body.appendChild(actionSheet);
+    await actionSheet.present();
+
+    const { role } = await actionSheet.onDidDismiss();
+
+    return role === 'confirm';
+  }
+</script>
+```
