@@ -8,7 +8,7 @@
   <ion-content class="ion-padding">
     <ion-button id="open-modal" expand="block">Open</ion-button>
     <p>{{ message }}</p>
-    <ion-modal ref="modal" trigger="open-modal" @didDismiss="onDidDismiss">
+    <ion-modal ref="modal" trigger="open-modal" @willDismiss="onWillDismiss">
       <ion-header>
         <ion-toolbar>
           <ion-button slot="start" fill="clear" color="medium" @click="cancel()">Cancel</ion-button>
@@ -55,7 +55,7 @@
         const name = this.$refs.input.$el.value;
         this.$refs.modal.$el.dismiss(name, 'confirm');
       },
-      onDidDismiss(ev) {
+      onWillDismiss(ev) {
         if (ev.detail.role === 'confirm') {
           this.message = `Hello, ${ev.detail.data}!`;
         }

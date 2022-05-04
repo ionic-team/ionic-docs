@@ -37,7 +37,7 @@
     modal.dismiss(input.value, 'confirm');
   }
 
-  modal.addEventListener('didDismiss', (ev) => {
+  modal.addEventListener('willDismiss', (ev) => {
     if (ev.detail.role === 'confirm') {
       const message = document.querySelector('#message');
       message.textContent = `Hello ${ev.detail.data}!`;

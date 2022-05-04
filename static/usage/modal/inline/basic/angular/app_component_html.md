@@ -8,7 +8,7 @@
   <ion-content class="ion-padding">
     <ion-button id="open-modal" expand="block">Open</ion-button>
     <p>{{ message }}</p>
-    <ion-modal trigger="open-modal" (didDismiss)="onDidDismiss($event)">
+    <ion-modal trigger="open-modal" (willDismiss)="onWillDismiss($event)">
       <ng-template>
         <ion-header>
           <ion-toolbar>
