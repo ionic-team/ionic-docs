@@ -50,6 +50,18 @@ import SingleSelectionExample from '@site/static/usage/select/basic/single-selec
 
 By default, select uses [ion-alert](alert.md) to open up the overlay of options in an alert. The interface can be changed to use [ion-action-sheet](action-sheet.md) or [ion-popover](popover.md) by passing `action-sheet` or `popover`, respectively, to the `interface` property. Read on to the other sections for the limitations of the different interfaces.
 
+### Action Sheet
+
+import ActionSheetExample from '@site/static/usage/select/interfaces/action-sheet/index.md';
+
+<ActionSheetExample />
+
+### Popover
+
+import PopoverExample from '@site/static/usage/select/interfaces/popover/index.md';
+
+<PopoverExample />
+
 ## Multiple Selection
 
 By adding the `multiple` attribute to select, users are able to select multiple options. When multiple options can be selected, the alert overlay presents users with a checkbox styled list of options. The select component's value receives an array of all of the selected option values.
