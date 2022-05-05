@@ -50,6 +50,7 @@ function Example() {
               </IonLabel>
               <IonCheckbox
                 id="terms"
+                checked={canDismiss}
                 onIonChange={(ev) => {
                   setCanDismiss(ev.detail.checked);
                 }}
