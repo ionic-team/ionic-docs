@@ -6,7 +6,7 @@ import vue from './vue.md';
 import angular from './angular.md';
 
 <Playground
-  size="300px"
+  size="350px"
   code={{ javascript, react, vue, angular }}
   src="usage/select/customization/button-text/demo.html"
 />
