@@ -1,5 +1,5 @@
 ```tsx
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useState, useRef } from 'react';
 import {
   IonButton,
   IonHeader,
@@ -16,7 +16,7 @@ import {
 const ModalExample = ({ onDismiss }) => {
   const inputRef = useRef(null);
   return (
-    <div>
+    <IonPage>
       <IonHeader>
         <IonToolbar>
           <IonButton slot="start" fill="clear" color="medium" onClick={() => onDismiss(null, 'cancel')}>
@@ -34,7 +34,7 @@ const ModalExample = ({ onDismiss }) => {
           <IonInput ref={inputRef} placeholder="Your name" />
         </IonItem>
       </IonContent>
-    </div>
+    </IonPage>
   );
 };
 
