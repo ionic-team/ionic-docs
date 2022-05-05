@@ -1,6 +1,6 @@
 ```tsx
 import React, { useState } from 'react';
-import { IonLabel, IonSelect, IonSelectOption } from '@ionic/react';
+import { IonItem, IonList, IonLabel, IonSelect, IonSelectOption } from '@ionic/react';
 
 const foods = [
   {
@@ -36,19 +36,23 @@ function Example() {
   const [currentFood, setCurrentFood] = useState("[]");
 
   return (
-    <>
-      <IonSelect
-        placeholder="Select food"
-        compareWith={compareWith}
-        onIonChange={ev => setCurrentFood(JSON.stringify(ev.detail.value))}
-        multiple={true}
-      >
-        {foods.map(food => (
-          <IonSelectOption key={food.id} value={food}>{food.name}</IonSelectOption>
-        ))}
-      </IonSelect>
-      <IonLabel class="ion-padding">Current food: {currentFood}</IonLabel>
-    </>
+    <IonList>
+      <IonItem>
+        <IonSelect
+          placeholder="Select food"
+          compareWith={compareWith}
+          onIonChange={ev => setCurrentFood(JSON.stringify(ev.detail.value))}
+          multiple={true}
+        >
+          {foods.map(food => (
+            <IonSelectOption key={food.id} value={food}>{food.name}</IonSelectOption>
+          ))}
+        </IonSelect>
+      </IonItem>
+      <IonItem lines="none">
+        <IonLabel>Current food: {currentFood}</IonLabel>
+      </IonItem>
+    </IonList>
   );
 }
 export default Example;

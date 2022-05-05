@@ -1,9 +1,15 @@
 ```html
-<ion-select placeholder="Select food"></ion-select>
-<ion-label class="ion-padding">
-  Current value:
-  <ion-text></ion-text>
-</ion-label>
+<ion-list>
+  <ion-item>
+    <ion-select placeholder="Select food"></ion-select>
+  </ion-item>
+  <ion-item lines="none">
+    <ion-label>
+      Current value:
+      <ion-text></ion-text>
+    </ion-label>
+  </ion-item>
+</ion-list>
 
 <script>
   const foods = [

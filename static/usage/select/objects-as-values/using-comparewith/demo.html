@@ -11,10 +11,8 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core@6/css/ionic.bundle.css" />
 
   <style>
-    @media (min-width: 450px) {
-      .wrapper {
-        width: 450px;
-      }
+    .container > ion-list {
+      width: 100%;
     }
   </style>
 </head>
@@ -23,13 +21,17 @@
   <ion-app>
     <ion-content>
       <div class="container">
-        <div class="wrapper">
-          <ion-select placeholder="Select food"></ion-select>
-          <ion-label class="ion-padding">
-            Current value:
-            <ion-text></ion-text>
-          </ion-label>
-        </div>
+        <ion-list>
+          <ion-item>
+            <ion-select placeholder="Select food"></ion-select>
+          </ion-item>
+          <ion-item lines="none">
+            <ion-label>
+              Current value:
+              <ion-text></ion-text>
+            </ion-label>
+          </ion-item>
+        </ion-list>
       </div>
     </ion-content>
   </ion-app>

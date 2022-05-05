@@ -1,13 +1,19 @@
 ```html
 <template>
-  <ion-select
-    placeholder="Select fruit"
-    :compareWith="compareWith"
-    @ionChange="currentFood = JSON.stringify($event.detail.value)"
-  >
-    <ion-select-option v-for="food in foods" :value="food">{{ food.name }}</ion-select-option>
-  </ion-select>
-  <ion-label class="ion-padding">Current value: {{ currentFood }}</ion-label>
+  <ion-list>
+    <ion-item>
+      <ion-select
+        placeholder="Select fruit"
+        :compareWith="compareWith"
+        @ionChange="currentFood = JSON.stringify($event.detail.value)"
+      >
+        <ion-select-option v-for="food in foods" :value="food">{{ food.name }}</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-item lines="none">
+      <ion-label>Current value: {{ currentFood }}</ion-label>
+    </ion-item>
+  </ion-list>
 </template>
 
 <script>
