@@ -8,7 +8,7 @@ import angularHTML from './angular/app.component_html.md';
 import angularTS from './angular/app.component_ts.md';
 
 <Playground
-  size="medium"
+  size="large"
   code={{
     javascript,
     react,
