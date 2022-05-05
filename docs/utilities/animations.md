@@ -1385,7 +1385,7 @@ export class ModalExample {
     }
 
     const leaveAnimation = (baseEl: any) => {
-      return enterAnimation(baseEl).direction('reverse');
+      return this.enterAnimation(baseEl).direction('reverse');
     }
 
     const modal = await this.modalController.create({
@@ -1402,7 +1402,7 @@ export class ModalExample {
 
 ```jsx
 import React, { useState } from 'react';
-import { CreateAnimation, IonModal, IonButton, IonContent } from '@ionic/react';
+import { createAnimation, IonModal, IonButton, IonContent } from '@ionic/react';
 
 export const ModalExample: React.FC = () => {
   const [showModal, setShowModal] = useState(false);
