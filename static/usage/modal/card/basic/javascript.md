@@ -66,7 +66,7 @@
 </ion-app>
 
 <script>
-  const modal = document.querySelector('ion-modal');
+  var modal = document.querySelector('ion-modal');
 
   modal.presentingElement = document.querySelector('.ion-page');
 
