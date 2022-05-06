@@ -8,7 +8,7 @@
   <ion-content class="ion-padding">
     <ion-button id="open-modal" expand="block">Open Modal</ion-button>
 
-    <ion-modal trigger="open-modal" [enterAnimation]="enterAnimation" [leaveAnimation]="leaveAnimation">
+    <ion-modal #modal trigger="open-modal" [enterAnimation]="enterAnimation" [leaveAnimation]="leaveAnimation">
       <ng-template>
         <ion-header>
           <ion-toolbar>
