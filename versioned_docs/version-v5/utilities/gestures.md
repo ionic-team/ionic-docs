@@ -173,6 +173,7 @@ const onMove = (detail) => {
 
 ngOnInit() {
   const gesture = this.gestureCtrl.create({
+    gestureName: 'my-gesture',
     el: this.rectangle.nativeElement,
     onMove: (detail) => { this.onMove(detail); }
   })
@@ -186,7 +187,7 @@ private onMove(detail) {
   const deltaX = detail.deltaX;
   const velocityX = detail.velocityX;
 
-  this.p.innerHTML = `
+  this.p.nativeElement.innerHTML = `
     <div>Type: ${type}</div>
     <div>Current X: ${currentX}</div>
     <div>Delta X: ${deltaX}</div>
