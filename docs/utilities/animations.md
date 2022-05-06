@@ -1385,7 +1385,7 @@ export class ModalExample {
     }
 
     const leaveAnimation = (baseEl: any) => {
-      return this.enterAnimation(baseEl).direction('reverse');
+      return enterAnimation(baseEl).direction('reverse');
     }
 
     const modal = await this.modalController.create({
