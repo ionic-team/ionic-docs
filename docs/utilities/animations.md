@@ -1402,7 +1402,7 @@ export class ModalExample {
 
 ```jsx
 import React, { useState } from 'react';
-import { CreateAnimation, IonModal, IonButton, IonContent } from '@ionic/react';
+import { createAnimation, IonModal, IonButton, IonContent } from '@ionic/react';
 
 export const ModalExample: React.FC = () => {
   const [showModal, setShowModal] = useState(false);
