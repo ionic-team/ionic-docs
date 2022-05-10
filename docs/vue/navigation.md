@@ -202,11 +202,11 @@ Say you have the following application history:
 
 `/pageA` --> `/pageB` --> `/pageC`
 
-If you were to call `router.go(-2)` on `/pageC` you would be brought back to `/pageA`. Similarly, if you then called `router.go(2)` you woul be brought to `/pageC`.
+If you were to call `router.go(-2)` on `/pageC`, you would be brought back to `/pageA`. If you then called `router.go(2)`, you would be brought to `/pageC`.
 
 Calling `router.go(-1)` and `router.go(1)` is the equivalent of calling `router.back()` and `router.forward()`, respectively.
 
-An key characteristic of `router.go()` is that it expects your application history to be linear. This means that `router.go()` should not be used on application
+An key characteristic of `router.go()` is that it expects your application history to be linear. This means that `router.go()` should not be used in applications that make use of non-linear routing. See [Linear Routing versus Non-Linear Routing](#linear-routing-versus-non-linear-routing) for more information.
 
 ## Lazy Loading Routes
 
