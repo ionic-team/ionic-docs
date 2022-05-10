@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   templateUrl: 'app.component.html',
 })
 export class AppComponent {
-  currentFood = "";
+  currentFood = undefined;
 
   foods = [
     {
@@ -31,7 +31,7 @@ export class AppComponent {
   }
 
   handleChange(ev) {
-    this.currentFood = JSON.stringify(ev.target.value);
+    this.currentFood = ev.target.value;
   }
 }
 

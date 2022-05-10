@@ -11,7 +11,7 @@
     </ion-select>
   </ion-item>
   <ion-item lines="none">
-    <ion-label>Current value: {{ currentFood }}</ion-label>
+    <ion-label>Current value: {{ currentFood | json }}</ion-label>
   </ion-item>
 </ion-list>
 ```

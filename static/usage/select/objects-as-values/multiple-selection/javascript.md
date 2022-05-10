@@ -6,7 +6,7 @@
   <ion-item lines="none">
     <ion-label>
       Current value:
-      <ion-text>[]</ion-text>
+      <ion-text></ion-text>
     </ion-label>
   </ion-item>
 </ion-list>

@@ -33,7 +33,7 @@ const compareWith = (o1, o2) => {
 };
 
 function Example() {
-  const [currentFood, setCurrentFood] = useState("[]");
+  const [currentFood, setCurrentFood] = useState("");
 
   return (
     <IonList>
