@@ -194,7 +194,7 @@ The example above has the app navigate to `/page2` with a custom animation that 
 
 See the [useIonRouter documentation](./utility-functions#router) for more details as well as type information.
 
-## Navigating through history using `router.go`
+### Navigating using `router.go`
 
 Vue Router has a [router.go](https://router.vuejs.org/api/#go) method that allows developers to move forward or backward through the application history. Let's take a look at an example.
 
@@ -255,7 +255,7 @@ The application history in this example has the following path:
 
 `Accessibility` --> `VoiceOver` --> `Speech`
 
-When we press the back button, we follow that same routing path except in reverse. Linear routing is helpful in that it allows for simple and predictable routing behaviors. It also means we can use router Vue Router APIs such as [router.go()](#navigating-through-history-using-routergo).
+When we press the back button, we follow that same routing path except in reverse. Linear routing is helpful in that it allows for simple and predictable routing behaviors. It also means we can use router Vue Router APIs such as [router.go()](#navigating-using-routergo).
 
 The downside of linear routing is that it does not allow for complex user experiences such as tab views. This is where non-linear routing comes into play.
 
