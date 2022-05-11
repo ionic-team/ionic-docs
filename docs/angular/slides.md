@@ -1,4 +1,14 @@
-# Slides
+---
+title: Slides
+---
+
+<head>
+  <title>Set Up Swiper.js for Angular Slides [Example] | Ionic</title>
+  <meta
+    name="description"
+    content="Read this guide to learn how to get Swiper.js for Angular set up in your Ionic Framework application for a modern touch slider component."
+  />
+</head>
 
 We recommend <a href="http://swiperjs.com/" target="_blank" rel="noopener noreferrer">Swiper.js</a> if you need a modern touch slider component. It powers our `ion-slides` component, but we now recommend that developers use Swiper for Angular directly.
 
