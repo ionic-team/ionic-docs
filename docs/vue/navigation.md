@@ -253,7 +253,7 @@ The application history in this example has the following path:
 
 `Accessibility` --> `VoiceOver` --> `Speech`
 
-When we press the back button, we follow that same routing path except in reverse. Linear routing is helpful in that it allows for simple and predictable routing behaviors. It also means we can use router Vue Router APIs such as [router.go()](#navigating-using-routergo).
+When we press the back button, we follow that same routing path except in reverse. Linear routing is helpful in that it allows for simple and predictable routing behaviors. It also means we can use Vue Router APIs such as [router.go()](#navigating-using-routergo).
 
 The downside of linear routing is that it does not allow for complex user experiences such as tab views. This is where non-linear routing comes into play.
 
