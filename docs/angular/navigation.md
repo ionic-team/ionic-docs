@@ -169,6 +169,62 @@ Here, we have a typical Angular Module setup, along with a RouterModule import, 
 
 If you would prefer to get hands on with the concepts and code described above, please checkout our [live example](https://stackblitz.com/edit/ionic-angular-routing?file=src/app/app-routing.module.ts) of the topics above on StackBlitz.
 
+## Shared URLs versus Nested Routes
+
+A common point of confusion when setting up routing is deciding between shared URLs or nested routes. This part of the guide will explain both and help you decide which one to use.
+
+### Shared URLs
+
+Shared URLs is a route configuration where routes have pieces of the URL in common. The following is an example of a shared URL configuration:
+
+```tsx
+const routes: Routes = [
+  {
+    path: 'dashboard',
+    component: DashboardMainPage,
+  },
+  {
+    path: 'dashboard/stats',
+    component: DashboardStatsPage,
+  },
+];
+```
+
+The above routes are considered "shared" because they reuse the `dashboard` piece of the URL.
+
+### Nested Routes
+
+Nested Routes is a route configuration where routes are listed as children of other routes. The following is an example of a nested route configuration:
+
+```tsx
+const routes: Routes = [
+  {
+    path: 'dashboard',
+    component: DashboardRouterOutlet,
+    children: [
+      {
+        path: '',
+        component: DashboardMainPage,
+      },
+      {
+        path: 'stats',
+        component: DashboardStatsPage,
+      },
+    ],
+  },
+];
+```
+
+The above routes are nested because they are in the `children` array of the parent route. Notice that the parent route renders the `DashboardRouterOutlet` component. When you nest routes, you need to render another instance of `ion-router-outlet`.
+
+### Which one should I choose?
+
+Shared URLs are great when you want to transition from page A to page B while preserving the relationship between the two pages in the URL. In our previous example, a button on the `/dashboard` page could transition to the `/dashboard/stats` page. The relationship between the two pages is preserved because of a) the page transition and b) the url.
+
+Nested routes should be used when you want to render content in outlet A while also rendering sub-content inside of a nested outlet B. The most common use case you will run into is tabs. When you load up a tabs Ionic starter application, you will see `ion-tab-bar` and `ion-tabs` components rendered in the first `ion-router-outlet`. The `ion-tabs` component renders another `ion-router-outlet` which is responsible for rendering the contents of each tab.
+
+There are very few use cases in which nested routes make sense in mobile applications. When in doubt, use the shared URL route configuration. We strongly caution against using nested routing in contexts other than tabs as it can quickly make navigating your app confusing.
+
 ## Working with Tabs
 
 With Tabs, the Angular Router provides Ionic the mechanism to know what components should be loaded, but the heavy lifting is actually done by the tabs component. Let's look at a simple example.
