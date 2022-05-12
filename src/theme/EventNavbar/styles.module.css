@@ -1,0 +1,52 @@
+.eventNavbar {
+  background: #C04848;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #480048, #C04848);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #480048, #C04848); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.eventNavbarContent {
+  max-width: 800px;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 16px 8px;
+}
+
+
+.headerTitle {
+  color: #ffffff;
+  padding: 0;
+  margin: 0;
+  font-size: 1.8rem;
+  line-height: 1.5rem;
+  text-align: right;
+}
+
+.headerCopy {
+  display: block;
+  font-size: 0.9rem;
+  margin: 0 16px;
+  color: #ffffff;
+}
+
+.headerLink {
+  color: #0F2027;
+  background: #FFEB3B;
+  font-size: 0.8rem;
+  font-weight: bold;
+  padding: 8px 16px;
+}
+
+.headerLink:hover {
+  color: #0F2027;
+  background: #FDD835;
+}
+
+
+
+@media (max-width: 767px) {
+  .eventNavbar{
+    display: none;
+  }
+}
