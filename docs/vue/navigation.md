@@ -253,7 +253,7 @@ The application history in this example has the following path:
 
 `Accessibility` --> `VoiceOver` --> `Speech`
 
-When we press the back button, we follow that same routing path except in reverse. Linear routing is helpful in that it allows for simple and predictable routing behaviors. It also means we can use router Vue Router APIs such as [router.go()](#navigating-using-routergo).
+When we press the back button, we follow that same routing path except in reverse. Linear routing is helpful in that it allows for simple and predictable routing behaviors. It also means we can use Vue Router APIs such as [router.go()](#navigating-using-routergo).
 
 The downside of linear routing is that it does not allow for complex user experiences such as tab views. This is where non-linear routing comes into play.
 
@@ -289,7 +289,7 @@ Non-linear routing allows for sophisticated user flows that linear routing canno
 
 We recommend keeping your application as simple as possible until you need to add non-linear routing. Non-linear routing is very powerful, but it also adds a considerable amount of complexity to mobile applications.
 
-The two most common uses of non-linear routing is with tabs and nested `IonRouterOutlets`. We recommend only using non-linear routing if your application meets the tabs or nested router outlet use cases.
+The two most common uses of non-linear routing is with tabs and nested `ion-router-outlet`s. We recommend only using non-linear routing if your application meets the tabs or nested router outlet use cases.
 
 For more on tabs, please see [Working with Tabs](#working-with-tabs).
 
