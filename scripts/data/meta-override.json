@@ -1,5 +1,9 @@
 {
   "api": {
+    "ion-accordion": {
+      "title": "Ion-Accordion Components: How to Build & Examples | Ionic",
+      "description": "Ion-accordion components provide collapsible sections in content to reduce vertical space and organize information. Learn how to build one and see examples."
+    },
     "ion-action-sheet": {
       "title": "ion-action-sheet | Action Sheet Dialog for iOS and Android Apps",
       "description": "Action Sheets are dialogs that display a set of options above app content and must be manually dismissed. Read to learn about use on iOS and Android devices."
@@ -19,6 +23,10 @@
     "ion-back-button": {
       "title": "Back Button | ion-back-button: Custom Menu Icon for Applications",
       "description": "The ion-back-button is a custom menu icon for Android, iOS, and Progressive Web Apps. Use Ionic Framework components to easily build applications."
+    },
+    "ion-backdrop": {
+      "title": "Ionic-Backdrop Component Full Screen Overlay| Ionic Framework",
+      "description": "Ionic-backdrops are full-screen components that overlay other components. Learn more about backdrops, their usage, and their properties here."
     },
     "ion-badge": {
       "title": "Badges | ion-badge: iOS & Android App Notification Badge Icons",
@@ -188,6 +196,10 @@
       "title": "ion-route-redirect Plugin: Redirect 'from' a URL 'to' Another URL",
       "description": "ion-route-redirect is used with as a direct child of an ion-router and redirects 'from' a URL 'to' another URL. Read to learn about the route redirect plugin."
     },
+    "ion-router-outlet": {
+      "title": "Ion-Router-Outlet for Animation & Stacked Navigation | Ionic",
+      "description": "Ion-router-outlet contains the logic for providing stacked navigation and animating views in and out. Learn about the life cycle hooks and properties here."
+    },
     "ion-picker": {
       "title": "Picker | Display Buttons and Columns for ion-picker on Ionic Apps",
       "description": "A Picker is a dialog that displays a row of buttons and columns underneath. Ion-picker appears on top of the app's content, and at the bottom of the viewport."
@@ -256,13 +268,17 @@
       "title": "ion-split-pane: Split Plane View for Menus and Multi-View Layouts",
       "description": "ion-split-pane is useful when creating multi-view app layouts. It allows UI elements, like menus, to be displayed as the viewport width increases."
     },
+    "ion-tab": {
+      "title": "ion-tab - Ionic Framework Application Component",
+      "description": "ion-tab is a child component of tabs. Each ion-tab can contain a top level navigation stack for an application or a single view. Read to learn more."
+    },
     "ion-tab-bar": {
       "title": "ion-tab-bar with CSS Custom Properties for Tab Bar Components",
       "description": "The tab bar component contains a set of tab buttons and a tab bar must be provided inside of tabs to communicate. Read more about use and CSS custom properties."
     },
-    "ion-tab": {
-      "title": "ion-tab - Ionic Framework Application Component",
-      "description": "ion-tab is a child component of tabs. Each ion-tab can contain a top level navigation stack for an application or a single view. Read to learn more."
+    "ion-tab-button": {
+      "title": "Ion-Tab-Button: What it is, Usage & Properties | Ionic Framework",
+      "description": "What is an ion-tab-button? It's a UI component that is placed inside of a tab bar and can specify the layout of the icon and connect to a tab view."
     },
     "ion-tabs": {
       "title": "Ion-Tabs: Tab-Based Component for App Top-Level Navigation",
