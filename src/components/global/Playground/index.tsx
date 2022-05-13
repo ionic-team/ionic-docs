@@ -92,7 +92,7 @@ export default function Playground({
   src,
   size = 'small',
   devicePreview,
-  defaultCodeExpanded = false,
+  expandCodeByDefault = false,
 }: {
   code: { [key in UsageTarget]?: MdxContent | UsageTargetOptions };
   title?: string;
@@ -100,7 +100,7 @@ export default function Playground({
   size: string;
   description?: string;
   devicePreview?: boolean;
-  defaultCodeExpanded: boolean
+  expandCodeByDefault: boolean
 }) {
   if (!code || Object.keys(code).length === 0) {
     console.warn('No code usage examples provided for this Playground example.');
@@ -120,7 +120,7 @@ export default function Playground({
   const frameSize = FRAME_SIZES[size] || size;
   const [usageTarget, setUsageTarget] = useState(UsageTarget.JavaScript);
   const [mode, setMode] = useState(Mode.iOS);
-  const [codeExpanded, setCodeExpanded] = useState(defaultCodeExpanded);
+  const [codeExpanded, setCodeExpanded] = useState(expandCodeByDefault);
   const [codeSnippets, setCodeSnippets] = useState({});
 
   /**
