@@ -18,4 +18,5 @@ import angular from './angular.md';
     },
   }}
   src="usage/button/basic/demo.html"
+  expandCodeByDefault={true}
 />
