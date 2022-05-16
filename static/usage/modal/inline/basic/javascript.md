@@ -11,9 +11,9 @@
     <ion-modal trigger="open-modal">
       <ion-header>
         <ion-toolbar>
-          <ion-button slot="start" fill="clear" onclick="cancel()" color="medium">Cancel</ion-button>
+          <ion-button slot="start" fill="clear" onclick="cancel()">Cancel</ion-button>
           <ion-title>Welcome</ion-title>
-          <ion-button slot="end" fill="clear" onclick="confirm()">Confirm</ion-button>
+          <ion-button slot="end" fill="clear" onclick="confirm()" strong="true">Confirm</ion-button>
         </ion-toolbar>
       </ion-header>
       <ion-content class="ion-padding">

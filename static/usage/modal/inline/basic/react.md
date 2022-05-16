@@ -46,11 +46,11 @@ function Example() {
         <IonModal ref={modal} trigger="open-modal" onWillDismiss={(ev) => onWillDismiss(ev)}>
           <IonHeader>
             <IonToolbar>
-              <IonButton slot="start" fill="clear" color="medium" onClick={() => modal.current?.dismiss()}>
+              <IonButton slot="start" fill="clear" onClick={() => modal.current?.dismiss()}>
                 Cancel
               </IonButton>
               <IonTitle>Welcome</IonTitle>
-              <IonButton slot="end" fill="clear" onClick={() => confirm()}>
+              <IonButton slot="end" fill="clear" strong={true} onClick={() => confirm()}>
                 Confirm
               </IonButton>
             </IonToolbar>

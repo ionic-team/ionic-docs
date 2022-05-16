@@ -12,9 +12,9 @@
       <ng-template>
         <ion-header>
           <ion-toolbar>
-            <ion-button slot="start" fill="clear" (click)="cancel()" color="medium">Cancel</ion-button>
+            <ion-button slot="start" fill="clear" (click)="cancel()">Cancel</ion-button>
             <ion-title>Welcome</ion-title>
-            <ion-button slot="end" fill="clear" (click)="confirm()">Confirm</ion-button>
+            <ion-button slot="end" fill="clear" (click)="confirm()" [strong]="true">Confirm</ion-button>
           </ion-toolbar>
         </ion-header>
         <ion-content class="ion-padding">
