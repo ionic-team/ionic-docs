@@ -3,7 +3,7 @@
   <ion-button>Default</ion-button>
 </template>
 
-<script>
+<script lang="ts">
   import { IonButton } from '@ionic/vue';
   import { defineComponent } from 'vue';
 
