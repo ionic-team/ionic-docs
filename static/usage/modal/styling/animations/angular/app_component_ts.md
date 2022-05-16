@@ -10,7 +10,7 @@ import { AnimationController } from '@ionic/angular';
 export class AppComponent {
   constructor(private animationCtrl: AnimationController) {}
 
-  enterAnimation = (baseEl: any) => {
+  enterAnimation = (baseEl: HTMLElement) => {
     const root = baseEl.shadowRoot;
 
     const backdropAnimation = this.animationCtrl
@@ -34,7 +34,7 @@ export class AppComponent {
       .addAnimation([backdropAnimation, wrapperAnimation]);
   };
 
-  leaveAnimation = (baseEl: any) => {
+  leaveAnimation = (baseEl: HTMLElement) => {
     return this.enterAnimation(baseEl).direction('reverse');
   };
 }
