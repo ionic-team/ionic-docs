@@ -1,5 +1,5 @@
 ```tsx
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import {
   IonButton,
   IonModal,
@@ -15,15 +15,21 @@ import {
 
 function Example() {
   const modal = useRef(null);
+  const page = useRef(undefined);
 
   const [canDismiss, setCanDismiss] = useState(false);
+  const [presentingElement, setPresentingElement] = useState(undefined);
+
+  useEffect(() => {
+    setPresentingElement(page.current);
+  }, []);
 
   function dismiss() {
     modal.current?.dismiss();
   }
 
   return (
-    <IonPage>
+    <IonPage ref={page}>
       <IonHeader>
         <IonToolbar>
           <IonTitle>App</IonTitle>
@@ -33,7 +39,7 @@ function Example() {
         <IonButton id="open-modal" expand="block">
           Open
         </IonButton>
-        <IonModal ref={modal} trigger="open-modal" canDismiss={canDismiss}>
+        <IonModal ref={modal} trigger="open-modal" canDismiss={canDismiss} presentingElement={presentingElement}>
           <IonHeader>
             <IonToolbar>
               <IonTitle>Modal</IonTitle>
@@ -42,8 +48,8 @@ function Example() {
               </IonButton>
             </IonToolbar>
           </IonHeader>
-          <IonContent className="ion-padding">
-            <p>You must accept the terms and conditions to close this modal.</p>
+          <IonContent>
+            <p className="ion-padding-horizontal">You must accept the terms and conditions to close this modal.</p>
             <IonItem>
               <IonLabel className="ion-text-wrap" for="terms">
                 Do you accept the terms and conditions?

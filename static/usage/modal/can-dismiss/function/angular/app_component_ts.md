@@ -6,10 +6,15 @@ import { ActionSheetController } from '@ionic/angular';
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html',
-  styleUrls: ['app.component.css'],
 })
 export class AppComponent {
+  presentingElement = undefined;
+
   constructor(private actionSheetCtrl: ActionSheetController) {}
+
+  ngOnInit() {
+    this.presentingElement = document.querySelector('.ion-page');
+  }
 
   canDismiss = async () => {
     const actionSheet = await this.actionSheetCtrl.create({

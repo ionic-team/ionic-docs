@@ -1,35 +1,31 @@
 ```html
-<style>
-  ion-modal {
-    background: rgba(0, 0, 0, 0.2);
-  }
-</style>
-
 <ion-app>
-  <ion-header>
-    <ion-toolbar>
-      <ion-title>App</ion-title>
-    </ion-toolbar>
-  </ion-header>
-  <ion-content class="ion-padding">
-    <ion-button id="open-modal" expand="block">Open</ion-button>
+  <div class="ion-page">
+    <ion-header>
+      <ion-toolbar>
+        <ion-title>App</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content class="ion-padding">
+      <ion-button id="open-modal" expand="block">Open</ion-button>
 
-    <ion-modal trigger="open-modal" swipe-to-close="true">
-      <ion-header>
-        <ion-toolbar>
-          <ion-title>Modal</ion-title>
-          <ion-button slot="end" fill="clear" onclick="dismiss()">Close</ion-button>
-        </ion-toolbar>
-      </ion-header>
-      <ion-content class="ion-padding">
-        <p>You must accept the terms and conditions to close this modal.</p>
-        <ion-item>
-          <ion-label class="ion-text-wrap" for="terms">Do you accept the terms and conditions?</ion-label>
-          <ion-checkbox id="terms"></ion-checkbox>
-        </ion-item>
-      </ion-content>
-    </ion-modal>
-  </ion-content>
+      <ion-modal trigger="open-modal">
+        <ion-header>
+          <ion-toolbar>
+            <ion-title>Modal</ion-title>
+            <ion-button slot="end" fill="clear" onclick="dismiss()">Close</ion-button>
+          </ion-toolbar>
+        </ion-header>
+        <ion-content>
+          <p class="ion-padding-horizontal">You must accept the terms and conditions to close this modal.</p>
+          <ion-item>
+            <ion-label class="ion-text-wrap" for="terms">Do you accept the terms and conditions?</ion-label>
+            <ion-checkbox id="terms"></ion-checkbox>
+          </ion-item>
+        </ion-content>
+      </ion-modal>
+    </ion-content>
+  </div>
 </ion-app>
 
 <script>

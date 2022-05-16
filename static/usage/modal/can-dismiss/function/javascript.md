@@ -1,31 +1,27 @@
 ```html
-<style>
-  ion-modal {
-    background: rgba(0, 0, 0, 0.2);
-  }
-</style>
-
 <ion-app>
-  <ion-header>
-    <ion-toolbar>
-      <ion-title>App</ion-title>
-    </ion-toolbar>
-  </ion-header>
-  <ion-content class="ion-padding">
-    <ion-button id="open-modal" expand="block">Open</ion-button>
+  <div class="ion-page">
+    <ion-header>
+      <ion-toolbar>
+        <ion-title>App</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content class="ion-padding">
+      <ion-button id="open-modal" expand="block">Open</ion-button>
 
-    <ion-modal trigger="open-modal" swipe-to-close="true">
-      <ion-header>
-        <ion-toolbar>
-          <ion-title>Modal</ion-title>
-          <ion-button slot="end" fill="clear" onclick="dismiss()">Close</ion-button>
-        </ion-toolbar>
-      </ion-header>
-      <ion-content class="ion-padding">
-        <p>You will be prompted when closing this modal.</p>
-      </ion-content>
-    </ion-modal>
-  </ion-content>
+      <ion-modal trigger="open-modal" swipe-to-close="true">
+        <ion-header>
+          <ion-toolbar>
+            <ion-title>Modal</ion-title>
+            <ion-button slot="end" fill="clear" onclick="dismiss()">Close</ion-button>
+          </ion-toolbar>
+        </ion-header>
+        <ion-content class="ion-padding">
+          <p>You will be prompted when closing this modal.</p>
+        </ion-content>
+      </ion-modal>
+    </ion-content>
+  </div>
 </ion-app>
 
 <script>

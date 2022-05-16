@@ -9,36 +9,33 @@
   <script src="../../../common.js"></script>
   <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core@6/dist/ionic/ionic.esm.js"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core@6/css/ionic.bundle.css" />
-  <style>
-    ion-modal {
-      background: rgba(0, 0, 0, 0.2);
-    }
-  </style>
 
 </head>
 
 <body>
   <ion-app>
-    <ion-header>
-      <ion-toolbar>
-        <ion-title>App</ion-title>
-      </ion-toolbar>
-    </ion-header>
-    <ion-content class="ion-padding">
-      <ion-button id="open-modal" expand="block">Open</ion-button>
+    <div class="ion-page">
+      <ion-header>
+        <ion-toolbar>
+          <ion-title>App</ion-title>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content class="ion-padding">
+        <ion-button id="open-modal" expand="block">Open</ion-button>
 
-      <ion-modal trigger="open-modal" swipe-to-close="true">
-        <ion-header>
-          <ion-toolbar>
-            <ion-title>Modal</ion-title>
-            <ion-button slot="end" fill="clear" onclick="dismiss()">Close</ion-button>
-          </ion-toolbar>
-        </ion-header>
-        <ion-content class="ion-padding">
-          <p>You will be prompted when closing this modal.</p>
-        </ion-content>
-      </ion-modal>
-    </ion-content>
+        <ion-modal trigger="open-modal" swipe-to-close="true">
+          <ion-header>
+            <ion-toolbar>
+              <ion-title>Modal</ion-title>
+              <ion-button slot="end" fill="clear" onclick="dismiss()">Close</ion-button>
+            </ion-toolbar>
+          </ion-header>
+          <ion-content class="ion-padding">
+            <p>You will be prompted when closing this modal.</p>
+          </ion-content>
+        </ion-modal>
+      </ion-content>
+    </div>
   </ion-app>
 
   <script>

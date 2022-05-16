@@ -1,5 +1,5 @@
 ```tsx
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import {
   IonButton,
   IonModal,
@@ -13,8 +13,14 @@ import {
 
 function Example() {
   const modal = useRef(null);
+  const page = useRef(null);
 
+  const [presentingElement, setPresentingElement] = useState(undefined);
   const [present] = useIonActionSheet();
+
+  useEffect(() => {
+    setPresentingElement(page.current);
+  }, []);
 
   function dismiss() {
     modal.current?.dismiss();
@@ -46,7 +52,7 @@ function Example() {
   }
 
   return (
-    <IonPage>
+    <IonPage ref={page}>
       <IonHeader>
         <IonToolbar>
           <IonTitle>App</IonTitle>
@@ -56,7 +62,7 @@ function Example() {
         <IonButton id="open-modal" expand="block">
           Open
         </IonButton>
-        <IonModal ref={modal} trigger="open-modal" canDismiss={canDismiss} swipeToClose={true}>
+        <IonModal ref={modal} trigger="open-modal" canDismiss={canDismiss} presentingElement={presentingElement}>
           <IonHeader>
             <IonToolbar>
               <IonTitle>Modal</IonTitle>
