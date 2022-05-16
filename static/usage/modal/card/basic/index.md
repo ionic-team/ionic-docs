@@ -6,7 +6,6 @@ import react from './react.md';
 
 import angular_app_component_html from './angular/app_component_html.md';
 import angular_app_component_ts from './angular/app_component_ts.md';
-import angular_app_component_css from './angular/app_component_css.md';
 
 <Playground
   code={{
@@ -17,7 +16,6 @@ import angular_app_component_css from './angular/app_component_css.md';
       files: {
         'src/app/app.component.html': angular_app_component_html,
         'src/app/app.component.ts': angular_app_component_ts,
-        'src/app/app.component.css': angular_app_component_css,
       },
     },
   }}

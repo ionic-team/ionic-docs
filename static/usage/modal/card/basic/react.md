@@ -1,5 +1,5 @@
 ```tsx
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import {
   IonButton,
   IonModal,
@@ -17,31 +17,30 @@ import {
 
 function Example() {
   const modal = useRef(null);
+  const page = useRef(null);
+
+  const [presentingElement, setPresentingElement] = useState(null);
+
+  useEffect(() => {
+    setPresentingElement(page.current);
+  }, []);
 
   function dismiss() {
     modal.current?.dismiss();
   }
 
   return (
-    <IonPage>
+    <IonPage ref={page}>
       <IonHeader>
         <IonToolbar>
           <IonTitle>App</IonTitle>
         </IonToolbar>
       </IonHeader>
-      <IonContent>
+      <IonContent className="ion-padding">
         <IonButton id="open-modal" expand="block">
           Open
         </IonButton>
-        <IonModal
-          ref={modal}
-          trigger="open-modal"
-          swipeToClose={true}
-          presentingElement={document.querySelector('.ion-page')}
-          style={{
-            '--backdrop-opacity': '0.2',
-          }}
-        >
+        <IonModal ref={modal} trigger="open-modal" presentingElement={presentingElement}>
           <IonHeader>
             <IonToolbar>
               <IonTitle>Modal</IonTitle>
