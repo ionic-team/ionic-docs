@@ -42,6 +42,24 @@ There are two ways to use `ion-popover`: inline or via the `popoverController`. 
 
 When using `ion-popover` with Angular, React, or Vue, the component you pass in will be destroyed when the popover is dismissed. As this functionality is provided by the JavaScript framework, using `ion-popover` without a JavaScript framework will not destroy the component you passed in. If this is a needed functionality, we recommend using the `popoverController` instead.
 
+### When to use
+
+Using a popover inline is useful when you do not want to explicitly wire up click events to open the popover. For example, you can use the `trigger` property to designate a button that should present the popover when clicked. You can also use the `trigger-action` property to customize whether the popover should be presented when the trigger is left clicked, right clicked, or hovered over.
+
+If you need fine grained control over when the popover is presented and dismissed, we recommend you use the `popoverController`.
+
+### Triggers
+
+A trigger for an inline `ion-popover` is the element that will open a popover when interacted with. The interaction behavior can be customized by setting the `trigger-action` property. Note that `trigger-action="context-menu"` will prevent your system's default context menu from opening.
+
+:::note
+ Triggers are not applicable when using the `popoverController` because the `ion-popover` is not created ahead of time.
+:::
+
+import InlineTrigger from '@site/static/usage/popover/presenting/inline-trigger/index.md';
+
+<InlineTrigger />
+
 ### Angular 
 
 Since the component you passed in needs to be created when the popover is presented and destroyed when the popover is dismissed, we are unable to project the content using `<ng-content>` internally. Instead, we use `<ng-container>` which expects an `<ng-template>` to be passed in. As a result, when passing in your component you will need to wrap it in an `<ng-template>`:
@@ -53,12 +71,6 @@ Since the component you passed in needs to be created when the popover is presen
   </ng-template>
 </ion-popover>
 ```
-
-### When to use
-
-Using a popover inline is useful when you do not want to explicitly wire up click events to open the popover. For example, you can use the `trigger` property to designate a button that should present the popover when clicked. You can also use the `trigger-action` property to customize whether the popover should be presented when the trigger is left clicked, right clicked, or hovered over.
-
-If you need fine grained control over when the popover is presented and dismissed, we recommend you use the `popoverController`. 
 
 ## Controller Popovers
 
@@ -75,16 +87,6 @@ Popovers are presented at the root of your application so they overlay your enti
 
 :::note
  If you are building an Ionic Angular app, the styles need to be added to a global stylesheet file. Read [Style Placement](#style-placement) in the Angular section below for more information.
-:::
-
-
-
-## Triggers
-
-A trigger for an `ion-popover` is the element that will open a popover when interacted with. The interaction behavior can be customized by setting the `trigger-action` property. Note that `trigger-action="context-menu"` will prevent your system's default context menu from opening.
-
-:::note
- Triggers are not applicable when using the `popoverController` because the `ion-popover` is not created ahead of time.
 :::
 
 
