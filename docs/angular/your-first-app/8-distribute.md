@@ -43,7 +43,7 @@ After the push is made, you will then see your commit under the `Commits` tab of
 
 ## Deploy a Live Update
 
-With the Appflow SDK installed and your commit pushed up to the Dashboard, you are ready to deploy a live update to a device. The Live Update feature uses the installed Appflow SDK with your native application to listen to a particular Deploy Channel Destination. When a live update is assigned to a Channel Distination, that update will be deployed to user devices running binaries that are configured to listen to that specific Channel Destination.
+With the Appflow SDK installed and your commit pushed up to the Dashboard, you are ready to deploy a live update to a device. The Live Update feature uses the installed Appflow SDK with your native application to listen to a particular Deploy Channel Destination. When a live update is assigned to a Channel Destination, that update will be deployed to user devices running binaries that are configured to listen to that specific Channel Destination.
 
 To get the live update deployed, a Web build will need to be created. This can be done through the `Start build` icon from the `Commits` tab or by clicking the `New build` button in the top right corner of the `Build > Builds` tab. After selecting the correct commit to deploy, select the `Web` target platform and the `Latest` build stack. Depending on your Appflow plan, you will then be able to include custom environments, if any are configured. Finally, you can enable `Live Update` and pick the Channel to automatically assign the build to once it successfully completes.
 
@@ -52,7 +52,7 @@ Upon completion of the Web Build, additional versioning options are available to
 To receive this live update, you will need to run the app on a device or an emulator. The quickest and easiest way to do this is through the following command:
 
 ```shell
-ionic cordova run [ios | android] [options]
+ionic [cordova | cap] run [ios | android] [options]
 ```
 
 Assuming the app is configured correctly to listen to the channel you deployed too, the app should immediately update on startup if you have chosen the auto update method during setup. If the background update method was chosen, be sure to stay in the app for about 30 seconds to ensure the update was downloaded. Then, close the application, reopen it, and you will see the updates applied!
@@ -63,7 +63,7 @@ To dive into more details on the steps to deploy a live update, as well as addit
 
 Next up is a native binary for your app build and deploy process. This is done via the [Ionic Package](https://ionic.io/docs/appflow/package/intro) service. First things first, you will need to create a [Package build](https://ionic.io/docs/appflow/package/builds). This can be done by clicking the `Start build` icon from the `Commits` tab or by clicking the `New build` button in the top right from the `Build > Builds` tab. Then you will select the proper commit for your build and fill in all of the several required fields and any optional fields that you want to specify. After filling in all of the information and the build begins, you can check out it's progress and review the logs if you encounter any errors.
 
-Given a successful Package build, and iOS binary (`.ipa` or IPA) or and Android binary (`.apk` or APK) file becomes available to you. The file can subsequently be downloaded so you can install it on a device by clicking the file name in the `Artifacts` section in the right of the build detail page or clicking the `Download IPA/APK` icon on the build in the `Build > Builds` tab.
+Given a successful Package build, an iOS binary (`.ipa` or IPA) or/and an Android binary (`.apk` or APK) file becomes available to you. The file can subsequently be downloaded so you can install it on a device by clicking the file name in the `Artifacts` section in the right of the build detail page or clicking the `Download IPA/APK` icon on the build in the `Build > Builds` tab.
 
 Further information regarding building native binaries can be found inside of the [Build a Native Binary](https://ionic.io/docs/appflow/quickstart/package) section inside the Appflow docs.
 
