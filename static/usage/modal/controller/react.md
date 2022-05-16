@@ -28,7 +28,7 @@ const ModalExample = ({ onDismiss }) => {
           </IonButton>
         </IonToolbar>
       </IonHeader>
-      <IonContent class="ion-padding">
+      <IonContent className="ion-padding">
         <IonItem>
           <IonLabel position="stacked">Enter your name</IonLabel>
           <IonInput ref={inputRef} placeholder="Your name" />
@@ -61,7 +61,7 @@ function Example() {
           <IonTitle>Controller Modal</IonTitle>
         </IonToolbar>
       </IonHeader>
-      <IonContent>
+      <IonContent className="ion-padding">
         <IonButton expand="block" onClick={() => openModal()}>
           Open
         </IonButton>
