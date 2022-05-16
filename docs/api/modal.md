@@ -77,7 +77,9 @@ Developers can set `canDismiss` to a boolean value. If `canDismiss` is `true`, t
 
 Setting a boolean value should be used when you need to require a particular action to be taken prior to a modal being dismissed. For example, if developers want to require that a "Terms of Use" checkbox is checked prior to closing the modal, they could set `canDismiss` to `false` initially and update it to `true` when the checkbox is checked.
 
-TODO: Playground Example
+import CanDismissBooleanExample from '@site/static/usage/modal/can-dismiss/boolean/index.md';
+
+<CanDismissBooleanExample />
 
 ### Setting a callback function
 
@@ -87,7 +89,9 @@ Setting a callback function should be used when you have complex dismissing crit
 
 Note that setting a callback function will cause the swipe gesture to be interrupted when using a card or sheet modal. This is because Ionic does not know what your callback function will resolve to ahead of time.
 
-TODO: Playground Example
+import CanDismissFunctionExample from '@site/static/usage/modal/can-dismiss/function/index.md';
+
+<CanDismissFunctionExample />
 
 ## Types of modals
 
