@@ -113,9 +113,11 @@ const openReactEditor = async (code: string, options?: EditorOptions) => {
    */
   const componentTagName = 'Example';
 
-  const [index_js, app_tsx] = await loadSourceFiles([
-    'react/index.js',
-    'react/app.tsx'
+  const [index_tsx, app_tsx, ts_config_json, package_json] = await loadSourceFiles([
+    'react/index.tsx',
+    'react/app.tsx',
+    'react/tsconfig.json',
+    'react/package.json'
   ]);
 
   const app_tsx_renamed = app_tsx
@@ -125,23 +127,21 @@ const openReactEditor = async (code: string, options?: EditorOptions) => {
     .replace(/setupIonicReact\(\);/g, `import ${componentTagName} from "./main";\n\n` + 'setupIonicReact();');
 
   sdk.openProject({
-    template: 'create-react-app',
+    template: 'node',
     title: options?.title ?? DEFAULT_EDITOR_TITLE,
     description: options?.description ?? DEFAULT_EDITOR_DESCRIPTION,
     files: {
-      'index.html': `<div id="root"></div>`,
-      'index.js': index_js,
-      'App.js': app_tsx_renamed,
-      'main.js': code,
-      ...options?.files
-    },
-    dependencies: {
-      react: 'latest',
-      'react-dom': 'latest',
-      '@ionic/react': DEFAULT_IONIC_VERSION,
-      // Stackblitz requires this dependency to run
-      '@stencil/core': '^2.13.0',
-    },
+      'public/index.html': `<div id="root"></div>`,
+      'src/index.tsx': index_tsx,
+      'src/App.tsx': app_tsx_renamed,
+      'src/main.tsx': code,
+      'tsconfig.json': ts_config_json,
+      'package.json': package_json,
+      ...options?.files,
+      '.stackblitzrc': `{
+        "startCommand": "yarn run start"
+      }`
+    }
   })
 }
 
