@@ -146,12 +146,15 @@ const openReactEditor = async (code: string, options?: EditorOptions) => {
 }
 
 const openVueEditor = async (code: string, options?: EditorOptions) => {
-  const [package_json, index_html, vite_config_js, main_js, app_vue] = await loadSourceFiles([
+  const [package_json, index_html, vite_config_ts, main_ts, app_vue, tsconfig_json, tsconfig_node_json, env_d_ts] = await loadSourceFiles([
     'vue/package.json',
     'vue/index.html',
-    'vue/vite.config.js',
-    'vue/main.js',
-    'vue/App.vue'
+    'vue/vite.config.ts',
+    'vue/main.ts',
+    'vue/App.vue',
+    'vue/tsconfig.json',
+    'vue/tsconfig.node.json',
+    'vue/env.d.ts'
   ]);
   /**
    * We have to use Stackblitz web containers here (node template), due
@@ -166,10 +169,13 @@ const openVueEditor = async (code: string, options?: EditorOptions) => {
     files: {
       'src/App.vue': app_vue,
       'src/components/Example.vue': code,
-      'src/main.js': main_js,
+      'src/main.ts': main_ts,
+      'src/env.d.ts': env_d_ts,
       'index.html': index_html,
-      'vite.config.js': vite_config_js,
+      'vite.config.ts': vite_config_ts,
       'package.json': package_json,
+      'tsconfig.json': tsconfig_json,
+      'tsconfig.node.json': tsconfig_node_json,
       ...options?.files,
       '.stackblitzrc': `{
         "startCommand": "yarn run dev"
