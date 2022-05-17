@@ -49,7 +49,7 @@ title: Glossary
     is a tool that adds vendor-specific-prefixes to hand-written Sass/CSS code. This ensures that standardized CSS rules
     you write will be applied across all supporting browsers. For example, instead of having to know every flexbox
     syntax used by various browsers, autoprefixer allows you to just write <code>display: flex;</code> and it'll
-    automatically plug in the correct CSS. Autoprefixer has an [online version](https://goonlinetools.com/autoprefixer/) that allows you to enter your non-prefixed CSS and gives you a prefix-added CSS.
+    automatically plug in the correct CSS. Autoprefixer has an <a href="https://goonlinetools.com/autoprefixer/" target="_blank">online version</a> that allows you to enter your non-prefixed CSS and gives you a prefix-added CSS.
   </p>
 </section>
 
