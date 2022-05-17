@@ -60,6 +60,16 @@ import InlineTrigger from '@site/static/usage/popover/presenting/inline-trigger/
 
 <InlineTrigger />
 
+### isOpen Property
+
+Inline popovers can also be opened by setting the `isOpen` property to `true`. This method can be used if you need finer grained control over the popover than with a trigger.
+
+Note that `isOpen` will *not* automatically be set back to `false` when the popover dismisses. It needs to be set back manually, using a `didDismiss` listener for example. 
+
+import IsOpenTrigger from '@site/static/usage/popover/presenting/inline-isopen/index.md';
+
+<IsOpenTrigger />
+
 ### Angular 
 
 Since the component you passed in needs to be created when the popover is presented and destroyed when the popover is dismissed, we are unable to project the content using `<ng-content>` internally. Instead, we use `<ng-container>` which expects an `<ng-template>` to be passed in. As a result, when passing in your component you will need to wrap it in an `<ng-template>`:
