@@ -1,24 +1,23 @@
 ```tsx
-import React from 'react';
+import React, { useRef, useState } from 'react';
 import { IonButton, IonContent, IonPopover } from '@ionic/react';
+
 function Example() {
+  const popover = useRef<HTMLIonPopoverElement>(null);
+  const [popoverOpen, setPopoverOpen] = useState(false);
+
+  const openPopover = (e: any) => {
+    popover.current!.event = e;
+    setPopoverOpen(true);
+  };
+
   return (
-    <div>
-      <IonButton id="click-trigger">Left-Click Me</IonButton>
-      <IonPopover trigger="click-trigger" triggerAction="click">
+    <>
+      <IonButton onClick={openPopover}>Click Me</IonButton>
+      <IonPopover ref={popover} isOpen={popoverOpen} onDidDismiss={() => setPopoverOpen(false)}>
         <IonContent class="ion-padding">Hello World!</IonContent>
       </IonPopover>
-
-      <IonButton id="context-menu-trigger">Right-Click Me</IonButton>
-      <IonPopover trigger="context-menu-trigger" triggerAction="context-menu">
-        <IonContent class="ion-padding">Hello World!</IonContent>
-      </IonPopover>
-
-      <IonButton id="hover-trigger">Hover Over Me</IonButton>
-      <IonPopover trigger="hover-trigger" triggerAction="hover">
-        <IonContent class="ion-padding">Hello World!</IonContent>
-      </IonPopover>
-    </div>
+    </>
   );
 }
 export default Example;
