@@ -94,13 +94,7 @@ import CanDismissFunctionExample from '@site/static/usage/modal/can-dismiss/func
 <CanDismissFunctionExample />
 
 ## Types of modals
-
-### Full screen
-
-#### Basic
-
-TODO: Playground Example
-
+ 
 ### Card Modal
 
 Developers can create a card modal effect where the modal appears as a card stacked on top of your app's main content. To create a card modal, developers need to set the `presentingElement` property and the `swipeToClose` properties on `ion-modal`.
@@ -109,11 +103,13 @@ The `presentingElement` property accepts a reference to the element that should 
 
 The `swipeToClose` property can be used to control whether or not the card modal can be swiped to close.
 
-TODO: Playground Example
+:::note
+The card display style is only available on iOS.
+:::
 
-#### Custom sizes
+import CardExample from '@site/static/usage/modal/card/basic/index.md';
 
-TODO: Playground Example
+<CardExample />
 
 ### Sheet Modal
 
