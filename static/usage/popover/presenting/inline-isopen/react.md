@@ -12,12 +12,12 @@ function Example() {
   };
 
   return (
-    <>
+    <IonContent>
       <IonButton onClick={openPopover}>Click Me</IonButton>
       <IonPopover ref={popover} isOpen={popoverOpen} onDidDismiss={() => setPopoverOpen(false)}>
         <IonContent class="ion-padding">Hello World!</IonContent>
       </IonPopover>
-    </>
+    </IonContent>
   );
 }
 export default Example;
