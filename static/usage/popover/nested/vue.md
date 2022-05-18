@@ -1,6 +1,6 @@
 ```html
 <template>
-  <div>
+  <ion-content>
     <ion-button id="popover-button">Open Menu</ion-button>
     <ion-popover trigger="popover-button" :dismiss-on-select="true">
       <ion-content>
@@ -19,7 +19,7 @@
         </ion-list>
       </ion-content>
     </ion-popover>
-  </div>
+  </ion-content>
 </template>
 
 <script lang="ts">
