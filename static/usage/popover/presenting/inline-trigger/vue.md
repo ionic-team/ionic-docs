@@ -1,6 +1,6 @@
 ```html
 <template>
-  <div>
+  <ion-content>
     <ion-button id="click-trigger">Left-Click Me</ion-button>
     <ion-popover trigger="click-trigger" trigger-action="click">
       <ion-content class="ion-padding">Hello World!</ion-content>
@@ -15,7 +15,7 @@
     <ion-popover trigger="hover-trigger" trigger-action="hover">
       <ion-content class="ion-padding">Hello World!</ion-content>
     </ion-popover>
-  </div>
+  </ion-content>
 </template>
 
 <script lang="ts">

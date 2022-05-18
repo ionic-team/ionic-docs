@@ -11,13 +11,13 @@ function Example() {
   const [roleMsg, setRoleMsg] = useState('');
 
   return (
-    <div>
+    <IonContent>
       <IonButton onClick={(e: any) => present({
         event: e,
         onDidDismiss: (e: CustomEvent) => setRoleMsg(`Popover dismissed with role: ${e.detail.role}`)
       })}>Click Me</IonButton>
       <p>{roleMsg}</p>
-    </div>
+    </IonContent>
   );
 }
 export default Example;

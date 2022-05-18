@@ -1,17 +1,17 @@
 ```html
 <template>
-  <div>
+  <ion-content>
     <ion-button @click="openPopover">Click Me</ion-button>
     <p>{{ roleMsg }}</p>
-  </div>
+  </ion-content>
 </template>
 
 <script lang="ts">
-import { IonButton, popoverController } from '@ionic/vue';
+import { IonButton, IonContent, popoverController } from '@ionic/vue';
 import Popover from './Popover.vue';
 
 export default {
-  components: { IonButton },
+  components: { IonButton, IonContent },
   data() {
     return {
       roleMsg: ''
