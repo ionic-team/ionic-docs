@@ -11,7 +11,7 @@ export class AppComponent {
 
   isOpen = false;
 
-  presentPopover(e) {
+  presentPopover(e: Event) {
     this.popover.event = e;
     this.isOpen = true;
   }

@@ -23,7 +23,7 @@
       }
     },
     methods: {
-      openPopover(e) {
+      openPopover(e: Event) {
         this.event = e;
         this.popoverOpen = true;
       }
