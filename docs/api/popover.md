@@ -48,6 +48,18 @@ Using a popover inline is useful when you do not want to explicitly wire up clic
 
 If you need fine grained control over when the popover is presented and dismissed, we recommend you use the `popoverController`.
 
+### Angular 
+
+Since the component you passed in needs to be created when the popover is presented and destroyed when the popover is dismissed, we are unable to project the content using `<ng-content>` internally. Instead, we use `<ng-container>` which expects an `<ng-template>` to be passed in. As a result, when passing in your component you will need to wrap it in an `<ng-template>`:
+
+```html
+<ion-popover [isOpen]="isPopoverOpen">
+  <ng-template>
+    <app-popover-content></app-popover-content>
+  </ng-template>
+</ion-popover>
+```
+
 ### Triggers
 
 A trigger for an inline `ion-popover` is the element that will open a popover when interacted with. The interaction behavior can be customized by setting the `trigger-action` property. Note that `trigger-action="context-menu"` will prevent your system's default context menu from opening.
@@ -70,18 +82,6 @@ import IsOpenTrigger from '@site/static/usage/popover/presenting/inline-isopen/i
 
 <IsOpenTrigger />
 
-### Angular 
-
-Since the component you passed in needs to be created when the popover is presented and destroyed when the popover is dismissed, we are unable to project the content using `<ng-content>` internally. Instead, we use `<ng-container>` which expects an `<ng-template>` to be passed in. As a result, when passing in your component you will need to wrap it in an `<ng-template>`:
-
-```html
-<ion-popover [isOpen]="isPopoverOpen">
-  <ng-template>
-    <app-popover-content></app-popover-content>
-  </ng-template>
-</ion-popover>
-```
-
 ## Controller Popovers
 
 `ion-popover` can also be presented programmatically by using the `popoverController` imported from Ionic Framework. This allows you to have complete control over when a popover is presented above and beyond the customization that inline popovers give you.
@@ -89,6 +89,16 @@ Since the component you passed in needs to be created when the popover is presen
 ### When to use
 
 We typically recommend that you write your popovers inline as it streamlines the amount of code in your application. You should only use the `popoverController` for complex use cases where writing a popover inline is impractical. When using a controller, your popover is not created ahead of time, so properties such as `trigger` and `trigger-action` are not applicable here. In addition, nested popovers are not compatible with the controller approach because the popover is automatically added to the root of your application when the `create` method is called.
+
+### React
+
+Instead of a controller, React has a hook called `useIonPopover` which behaves in a similar fashion. Note that `useIonPopover` requires being a descendant of `<IonApp>`. If you need to use a popover outside of an `<IonApp>`, consider using an inline popover instead.
+
+### Usage
+
+import ControllerExample from '@site/static/usage/popover/presenting/controller/index.md';
+
+<ControllerExample />
 
 
 ## Styling

@@ -3,8 +3,8 @@
   <ion-button @click="openPopover($event)">Click Me</ion-button>
   <ion-popover
     :is-open="popoverOpen"
-    @didDismiss="popoverOpen = false"
     :event="event"
+    @didDismiss="popoverOpen = false"
   >
     <ion-content class="ion-padding">Hello World!</ion-content>
   </ion-popover>
