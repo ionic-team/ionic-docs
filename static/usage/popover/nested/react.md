@@ -3,7 +3,7 @@ import React from 'react';
 import { IonButton, IonContent, IonItem, IonList, IonPopover } from '@ionic/react';
 function Example() {
   return (
-    <div>
+    <IonContent>
       <IonButton id="popover-button">Open Menu</IonButton>
       <IonPopover trigger="popover-button" dismissOnSelect={true}>
         <IonContent>
@@ -22,7 +22,7 @@ function Example() {
           </IonList>
         </IonContent>
       </IonPopover>
-    </div>
+    </IonContent>
   );
 }
 export default Example;
