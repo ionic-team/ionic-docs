@@ -142,6 +142,10 @@ You can use the `dismissOnSelect` property to automatically close the popover wh
  Nested popovers cannot be created when using the `popoverController` because the popover is automatically added to the root of your application when the `create` method is called.
 :::
 
+import NestedPopover from '@site/static/usage/popover/nested/index.md';
+
+<NestedPopover />
+
 
 ## Interfaces
 
