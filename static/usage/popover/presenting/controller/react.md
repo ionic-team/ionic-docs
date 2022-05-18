@@ -6,18 +6,18 @@ const Popover = () => <IonContent className="ion-padding">Hello World!</IonConte
 
 function Example() {
   const [present, dismiss] = useIonPopover(Popover, {
-    onDismiss: (data, role) => dismiss(data, role)
+    onDismiss: (data: any, role: string) => dismiss(data, role)
   });
   const [roleMsg, setRoleMsg] = useState('');
 
   return (
-    <div>
+    <IonContent>
       <IonButton onClick={(e: any) => present({
         event: e,
-        onDidDismiss: (e: any) => setRoleMsg(`Popover dismissed with role: ${e.detail.role}`)
+        onDidDismiss: (e: CustomEvent) => setRoleMsg(`Popover dismissed with role: ${e.detail.role}`)
       })}>Click Me</IonButton>
       <p>{roleMsg}</p>
-    </div>
+    </IonContent>
   );
 }
 export default Example;
