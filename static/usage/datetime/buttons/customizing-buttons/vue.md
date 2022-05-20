@@ -9,7 +9,7 @@
   </ion-datetime>
 </template>
 
-<script>
+<script lang="ts">
   import { IonButtons, IonButton, IonDatetime } from '@ionic/vue';
   import { defineComponent, ref } from 'vue';
 

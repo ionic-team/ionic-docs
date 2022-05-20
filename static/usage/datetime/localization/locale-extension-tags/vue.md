@@ -3,7 +3,7 @@
   <ion-datetime locale="en-GB-u-hc-h12"></ion-datetime>
 </template>
 
-<script>
+<script lang="ts">
   import { IonDatetime } from '@ionic/vue';
   import { defineComponent } from 'vue';
 

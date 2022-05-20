@@ -2,15 +2,15 @@
 import React, { useRef } from 'react';
 import { IonButtons, IonButton, IonDatetime } from '@ionic/react';
 function Example() {
-  const datetime = useRef();
+  const datetime = useRef<null | HTMLIonDatetimeElement>(null);
   const reset = () => {
-    datetime.current.reset();
+    datetime.current?.reset();
   }
   const cancel = () => {
-    datetime.current.cancel();
+    datetime.current?.cancel();
   }
   const confirm = () => {
-    datetime.current.confirm();
+    datetime.current?.confirm();
   }
   return (
     <IonDatetime ref={datetime}>

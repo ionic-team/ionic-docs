@@ -1,7 +1,7 @@
 ```html
 <ion-datetime
   [showDefaultButtons]="true"
-  okText="All set"
+  doneText="All set"
   cancelText="Never mind"
 >
 </ion-datetime>
