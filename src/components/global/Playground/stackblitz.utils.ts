@@ -56,10 +56,11 @@ const openHtmlEditor = async (code: string, options?: EditorOptions) => {
 }
 
 const openAngularEditor = async (code: string, options?: EditorOptions) => {
-  let [main_ts, app_module_ts, app_component_ts, styles_css, angular_json, tsconfig_json] = await loadSourceFiles([
+  let [main_ts, app_module_ts, app_component_ts, app_component_css, styles_css, angular_json, tsconfig_json] = await loadSourceFiles([
     'angular/main.ts',
     'angular/app.module.ts',
     'angular/app.component.ts',
+    'angular/app.component.css',
     'angular/styles.css',
     'angular/angular.json',
     'angular/tsconfig.json'
@@ -84,6 +85,7 @@ const openAngularEditor = async (code: string, options?: EditorOptions) => {
       'src/app/app.module.ts': app_module_ts,
       'src/app/app.component.ts': app_component_ts,
       'src/app/app.component.html': code,
+      'src/app/app.component.css': app_component_css,
       'src/index.html': '<app-root></app-root>',
       'src/styles.css': styles_css,
       'angular.json': angular_json,

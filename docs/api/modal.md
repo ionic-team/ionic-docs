@@ -192,15 +192,17 @@ ion-modal.stack-modal {
 }
 ```
 
-### Theming
+import ThemeExample from '@site/static/usage/modal/styling/theming/index.md';
 
-TODO: Playground Example
+<ThemeExample />
 
 ### Animations
 
-#### Custom animations
+The enter and leave animations can be customized by using our animation builder and assigning animations to `enterAnimation` and `leaveAnimation`.
 
-TODO: Playground Example
+import AnimationsExample from '@site/static/usage/modal/styling/animations/index.md';
+
+<AnimationsExample />
 
 ## Interfaces
 
