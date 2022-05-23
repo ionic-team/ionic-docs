@@ -3,7 +3,7 @@ import Playground from '@site/src/components/global/Playground';
 import javascript from './javascript.md';
 import vue from './vue.md';
 
-import react_main_js from './react/main_js.md';
+import react_main_tsx from './react/main_tsx.md';
 import react_main_css from './react/main_css.md';
 
 import angular_app_component_css from './angular/app_component_css.md';
@@ -15,7 +15,7 @@ import angular_app_component_html from './angular/app_component_html.md';
     vue,
     react: {
       files: {
-        'main.js': react_main_js,
+        'main.tsx': react_main_tsx,
         'main.css': react_main_css,
       },
     },

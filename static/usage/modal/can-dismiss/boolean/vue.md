@@ -41,6 +41,7 @@
     IonLabel,
     IonPage,
   } from '@ionic/vue';
+  import { CheckboxCustomEvent } from '@ionic/core';
   import { defineComponent } from 'vue';
 
   export default defineComponent({
@@ -66,7 +67,7 @@
       dismiss() {
         this.$refs.modal.$el.dismiss();
       },
-      onTermsChanged(ev) {
+      onTermsChanged(ev: CheckboxCustomEvent) {
         this.canDismiss = ev.detail.checked;
       },
     },

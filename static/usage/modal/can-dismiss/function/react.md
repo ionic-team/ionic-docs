@@ -15,7 +15,7 @@ function Example() {
   const modal = useRef(null);
   const page = useRef(null);
 
-  const [presentingElement, setPresentingElement] = useState(undefined);
+  const [presentingElement, setPresentingElement] = useState<HTMLElement | null>(null);
   const [present] = useIonActionSheet();
 
   useEffect(() => {
@@ -27,7 +27,7 @@ function Example() {
   }
 
   function canDismiss() {
-    return new Promise((resolve, reject) => {
+    return new Promise<boolean>((resolve, reject) => {
       present({
         header: 'Are you sure?',
         buttons: [

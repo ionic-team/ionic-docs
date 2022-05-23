@@ -12,6 +12,7 @@ import {
   IonInput,
   useIonModal,
 } from '@ionic/react';
+import { OverlayEventDetail } from '@ionic/core/components';
 
 const ModalExample = ({ onDismiss }) => {
   const inputRef = useRef(null);
@@ -46,7 +47,7 @@ function Example() {
 
   function openModal() {
     present({
-      onWillDismiss: (ev) => {
+      onWillDismiss: (ev: CustomEvent<OverlayEventDetail>) => {
         if (ev.detail.role === 'confirm') {
           setMessage(`Hello, ${ev.detail.data}!`);
         }

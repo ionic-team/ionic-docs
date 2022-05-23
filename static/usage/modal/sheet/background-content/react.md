@@ -18,7 +18,7 @@ import {
 
 function Example() {
   const modal = useRef(null);
-  const [count, setCount] = useState(0);
+  const [count, setCount] = useState<boolean>(0);
 
   return (
     <IonPage>

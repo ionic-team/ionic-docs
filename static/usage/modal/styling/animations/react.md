@@ -23,7 +23,7 @@ function Example() {
     modal.current?.dismiss();
   }
 
-  const enterAnimation = (baseEl) => {
+  const enterAnimation = (baseEl: HTMLElement) => {
     const root = baseEl.shadowRoot;
 
     const backdropAnimation = createAnimation()
@@ -44,7 +44,7 @@ function Example() {
       .addAnimation([backdropAnimation, wrapperAnimation]);
   };
 
-  const leaveAnimation = (baseEl) => {
+  const leaveAnimation = (baseEl: HTMLElement) => {
     return enterAnimation(baseEl).direction('reverse');
   };
 

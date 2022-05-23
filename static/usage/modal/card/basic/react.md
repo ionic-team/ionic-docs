@@ -19,7 +19,7 @@ function Example() {
   const modal = useRef(null);
   const page = useRef(null);
 
-  const [presentingElement, setPresentingElement] = useState(null);
+  const [presentingElement, setPresentingElement] = useState<HTMLElement | null>(null);
 
   useEffect(() => {
     setPresentingElement(page.current);
