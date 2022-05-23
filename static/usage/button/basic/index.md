@@ -16,6 +16,10 @@ import angular from './angular.md';
         'src/example-five.html': javascript,
       },
     },
+    react,
+    vue,
+    angular,
   }}
   src="usage/button/basic/demo.html"
+  expandCodeByDefault={true}
 />

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Select - Styling the Select</title>
+  <link rel="stylesheet" href="../../../common.css" />
+  <script src="../../../common.js"></script>
+  <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core@6/dist/ionic/ionic.esm.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core@6/css/ionic.bundle.css" />
+
+  <style>
+    ion-select {
+      --placeholder-color: #971e49;
+      --placeholder-opacity: 1;
+      width: 100%;
+      justify-content: center;
+    }
+
+    ion-select::part(placeholder),
+    ion-select::part(text) {
+      flex: 0 0 auto;
+    }
+
+    ion-select::part(placeholder)::first-letter {
+      font-size: 24px;
+      font-weight: 500;
+    }
+
+    ion-select::part(text) {
+      color: #545ca7;
+    }
+
+    ion-select::part(icon) {
+      color: #971e49;
+      opacity: 1;
+    }
+  </style>
+</head>
+
+<body>
+  <ion-app>
+    <ion-content>
+      <div class="container">
+        <ion-list>
+          <ion-item>
+            <ion-select placeholder="Select fruit">
+              <ion-select-option value="apples">Apples</ion-select-option>
+              <ion-select-option value="oranges">Oranges</ion-select-option>
+              <ion-select-option value="bananas">Bananas</ion-select-option>
+            </ion-select>
+          </ion-item>
+        </ion-list>
+      </div>
+    </ion-content>
+  </ion-app>
+</body>
+
+</html>

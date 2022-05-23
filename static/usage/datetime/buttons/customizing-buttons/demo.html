@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Datetime</title>
+    <link rel="stylesheet" href="../../../common.css" />
+    <script src="../../../common.js"></script>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core@6/dist/ionic/ionic.esm.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core@6/css/ionic.bundle.css" />
+    <style>
+      ion-datetime {
+        width: 350px;
+        min-height: 400px;
+      }
+    </style>
+  </head>
+  <body>
+    <ion-app>
+      <ion-content>
+        <div class="container">
+          <ion-datetime>
+            <ion-buttons slot="buttons">
+              <ion-button color="danger" onclick="datetime.reset()">Reset</ion-button>
+              <ion-button color="primary" onclick="datetime.cancel()">Never mind</ion-button>
+              <ion-button color="primary" onclick="datetime.confirm()">All Set</ion-button>
+            </ion-buttons>
+          </ion-datetime>
+        </div>
+      </ion-content>
+    </ion-app>
+
+    <script>
+      const datetime = document.querySelector('ion-datetime');
+    </script>
+  </body>
+</html>

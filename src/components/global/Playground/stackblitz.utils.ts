@@ -115,9 +115,11 @@ const openReactEditor = async (code: string, options?: EditorOptions) => {
    */
   const componentTagName = 'Example';
 
-  const [index_js, app_tsx] = await loadSourceFiles([
-    'react/index.js',
-    'react/app.tsx'
+  const [index_tsx, app_tsx, ts_config_json, package_json] = await loadSourceFiles([
+    'react/index.tsx',
+    'react/app.tsx',
+    'react/tsconfig.json',
+    'react/package.json'
   ]);
 
   const app_tsx_renamed = app_tsx
@@ -127,33 +129,34 @@ const openReactEditor = async (code: string, options?: EditorOptions) => {
     .replace(/setupIonicReact\(\);/g, `import ${componentTagName} from "./main";\n\n` + 'setupIonicReact();');
 
   sdk.openProject({
-    template: 'create-react-app',
+    template: 'node',
     title: options?.title ?? DEFAULT_EDITOR_TITLE,
     description: options?.description ?? DEFAULT_EDITOR_DESCRIPTION,
     files: {
-      'index.html': `<div id="root"></div>`,
-      'index.js': index_js,
-      'App.js': app_tsx_renamed,
-      'main.js': code,
-      ...options?.files
-    },
-    dependencies: {
-      react: 'latest',
-      'react-dom': 'latest',
-      '@ionic/react': DEFAULT_IONIC_VERSION,
-      // Stackblitz requires this dependency to run
-      '@stencil/core': '^2.13.0',
-    },
+      'public/index.html': `<div id="root"></div>`,
+      'src/index.tsx': index_tsx,
+      'src/App.tsx': app_tsx_renamed,
+      'src/main.tsx': code,
+      'tsconfig.json': ts_config_json,
+      'package.json': package_json,
+      ...options?.files,
+      '.stackblitzrc': `{
+        "startCommand": "yarn run start"
+      }`
+    }
   })
 }
 
 const openVueEditor = async (code: string, options?: EditorOptions) => {
-  const [package_json, index_html, vite_config_js, main_js, app_vue] = await loadSourceFiles([
+  const [package_json, index_html, vite_config_ts, main_ts, app_vue, tsconfig_json, tsconfig_node_json, env_d_ts] = await loadSourceFiles([
     'vue/package.json',
     'vue/index.html',
-    'vue/vite.config.js',
-    'vue/main.js',
-    'vue/App.vue'
+    'vue/vite.config.ts',
+    'vue/main.ts',
+    'vue/App.vue',
+    'vue/tsconfig.json',
+    'vue/tsconfig.node.json',
+    'vue/env.d.ts'
   ]);
   /**
    * We have to use Stackblitz web containers here (node template), due
@@ -168,10 +171,13 @@ const openVueEditor = async (code: string, options?: EditorOptions) => {
     files: {
       'src/App.vue': app_vue,
       'src/components/Example.vue': code,
-      'src/main.js': main_js,
+      'src/main.ts': main_ts,
+      'src/env.d.ts': env_d_ts,
       'index.html': index_html,
-      'vite.config.js': vite_config_js,
+      'vite.config.ts': vite_config_ts,
       'package.json': package_json,
+      'tsconfig.json': tsconfig_json,
+      'tsconfig.node.json': tsconfig_node_json,
       ...options?.files,
       '.stackblitzrc': `{
         "startCommand": "yarn run dev"
