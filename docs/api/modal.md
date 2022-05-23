@@ -125,17 +125,15 @@ The `backdropBreakpoint` property can be used to customize the point at which th
  Note: The `swipeToClose` property has no effect when using a sheet modal as sheet modals must be swipeable in order to be usable.
 :::
 
-#### Using breakpoints
+import SheetExample from '@site/static/usage/modal/sheet/basic/index.md';
 
-TODO: Playground Example
+<SheetExample />
 
 #### Interacting with background content
 
-TODO: Playground Example
+import SheetBackgroundContentExample from '@site/static/usage/modal/sheet/background-content/index.md';
 
-#### Moving to a breakpoint
-
-TODO: Playground Example
+<SheetBackgroundContentExample />
 
 ## Interfaces
 
