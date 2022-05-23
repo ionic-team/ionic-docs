@@ -7,11 +7,11 @@ ion-popover {
   --width: 300px;
 }
 
-ion-popover::part(backdrop) {
-  background-color: rgb(6, 14, 106);
+ion-popover ion-content {
+  --background: rgba(40, 173, 218, 0.6);
 }
 
-ion-popover::part(content) {
-  padding: 16px 25px;
+ion-popover::part(backdrop) {
+  background-color: rgb(6, 14, 106);
 }
 ```

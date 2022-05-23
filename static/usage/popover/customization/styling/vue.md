@@ -2,7 +2,9 @@
 <template>
   <ion-content>
     <ion-button id="trigger-button">Click Me</ion-button>
-    <ion-popover trigger="trigger-button">Hello Styled World!</ion-popover>
+    <ion-popover trigger="trigger-button">
+      <ion-content>Hello Styled World!</ion-content>
+    </ion-popover>
   </ion-content>
 </template>
 
@@ -24,12 +26,12 @@
     --width: 300px;
   }
 
-  ion-popover::part(backdrop) {
-    background-color: rgb(6, 14, 106);
+  ion-popover ion-content {
+    --background: rgba(40, 173, 218, 0.6);
   }
 
-  ion-popover::part(content) {
-    padding: 16px 25px;
+  ion-popover::part(backdrop) {
+    background-color: rgb(6, 14, 106);
   }
 </style>
 ```

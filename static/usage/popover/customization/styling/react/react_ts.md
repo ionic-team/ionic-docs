@@ -8,7 +8,9 @@ function Example() {
   return (
     <IonContent>
       <IonButton id="trigger-button">Click Me</IonButton>
-      <IonPopover trigger="trigger-button">Hello Styled World!</IonPopover>
+      <IonPopover trigger="trigger-button">
+        <IonContent className="ion-padding">Hello Styled World!</IonContent>
+      </IonPopover>
     </IonContent>
   );
 }
