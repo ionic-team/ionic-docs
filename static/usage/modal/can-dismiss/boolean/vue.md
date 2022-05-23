@@ -28,7 +28,7 @@
   </ion-page>
 </template>
 
-<script>
+<script lang="ts">
   import {
     IonButton,
     IonModal,
@@ -41,7 +41,7 @@
     IonLabel,
     IonPage,
   } from '@ionic/vue';
-  import { CheckboxCustomEvent } from '@ionic/core';
+  import { CheckboxCustomEvent } from '@ionic/core/components';
   import { defineComponent } from 'vue';
 
   export default defineComponent({

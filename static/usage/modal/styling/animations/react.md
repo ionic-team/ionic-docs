@@ -17,7 +17,7 @@ import {
 } from '@ionic/react';
 
 function Example() {
-  const modal = useRef(null);
+  const modal = useRef<HTMLIonModalElement>(null);
 
   function dismiss() {
     modal.current?.dismiss();
@@ -27,11 +27,11 @@ function Example() {
     const root = baseEl.shadowRoot;
 
     const backdropAnimation = createAnimation()
-      .addElement(root.querySelector('ion-backdrop'))
+      .addElement(root?.querySelector('ion-backdrop')!)
       .fromTo('opacity', '0.01', 'var(--backdrop-opacity)');
 
     const wrapperAnimation = createAnimation()
-      .addElement(root.querySelector('.modal-wrapper'))
+      .addElement(root?.querySelector('.modal-wrapper')!)
       .keyframes([
         { offset: 0, opacity: '0', transform: 'scale(0)' },
         { offset: 1, opacity: '0.99', transform: 'scale(1)' },

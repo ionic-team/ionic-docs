@@ -15,8 +15,8 @@ import angular_app_component_html from './angular/app_component_html.md';
     vue,
     react: {
       files: {
-        'main.tsx': react_main_tsx,
-        'main.css': react_main_css,
+        'src/main.tsx': react_main_tsx,
+        'src/main.css': react_main_css,
       },
     },
     angular: {

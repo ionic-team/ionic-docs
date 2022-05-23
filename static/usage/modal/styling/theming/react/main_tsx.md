@@ -1,5 +1,5 @@
 ```tsx
-import React, { useState, useRef } from 'react';
+import React, { useRef } from 'react';
 import {
   IonButton,
   IonModal,
@@ -18,7 +18,7 @@ import {
 import './main.css';
 
 function Example() {
-  const modal = useRef(null);
+  const modal = useRef<HTMLIonModalElement>(null);
 
   function dismiss() {
     modal.current?.dismiss();

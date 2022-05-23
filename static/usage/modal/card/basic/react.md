@@ -16,7 +16,7 @@ import {
 } from '@ionic/react';
 
 function Example() {
-  const modal = useRef(null);
+  const modal = useRef<HTMLIonModalElement>(null);
   const page = useRef(null);
 
   const [presentingElement, setPresentingElement] = useState<HTMLElement | null>(null);
@@ -40,7 +40,7 @@ function Example() {
         <IonButton id="open-modal" expand="block">
           Open
         </IonButton>
-        <IonModal ref={modal} trigger="open-modal" presentingElement={presentingElement}>
+        <IonModal ref={modal} trigger="open-modal" presentingElement={presentingElement!}>
           <IonHeader>
             <IonToolbar>
               <IonTitle>Modal</IonTitle>

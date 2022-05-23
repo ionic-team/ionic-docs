@@ -15,8 +15,8 @@ import {
 import { OverlayEventDetail } from '@ionic/core/components';
 
 function Example() {
-  const modal = useRef(null);
-  const input = useRef(null);
+  const modal = useRef<HTMLIonModalElement>(null);
+  const input = useRef<HTMLIonInputElement>(null);
 
   const [message, setMessage] = useState<string>(
     'This modal example uses triggers to automatically open a modal when the button is clicked.'

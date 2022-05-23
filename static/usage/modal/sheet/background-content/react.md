@@ -17,8 +17,8 @@ import {
 } from '@ionic/react';
 
 function Example() {
-  const modal = useRef(null);
-  const [count, setCount] = useState<boolean>(0);
+  const modal = useRef<HTMLIonModalElement>(null);
+  const [count, setCount] = useState<number>(0);
 
   return (
     <IonPage>
