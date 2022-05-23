@@ -30,6 +30,7 @@
 
 <script lang="ts">
   import {
+    CheckboxCustomEvent,
     IonButton,
     IonModal,
     IonHeader,
@@ -41,7 +42,6 @@
     IonLabel,
     IonPage,
   } from '@ionic/vue';
-  import { CheckboxCustomEvent } from '@ionic/core/components';
   import { defineComponent } from 'vue';
 
   export default defineComponent({
