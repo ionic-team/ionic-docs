@@ -11,7 +11,7 @@
     <ion-modal #modal trigger="open-modal" [initialBreakpoint]="0.25" [breakpoints]="[0, 0.25, 0.5, 0.75]">
       <ng-template>
         <ion-content>
-          <ion-searchbar placeholder="Search" (ionFocus)="modal.setCurrentBreakpoint(0.75)"></ion-searchbar>
+          <ion-searchbar placeholder="Search" (click)="modal.setCurrentBreakpoint(0.75)"></ion-searchbar>
           <ion-list>
             <ion-item>
               <ion-avatar slot="start">

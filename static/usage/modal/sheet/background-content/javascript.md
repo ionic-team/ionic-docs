@@ -74,7 +74,7 @@
 
   modal.breakpoints = [0, 0.25, 0.5, 0.75];
 
-  searchBar.addEventListener('ionFocus', () => {
+  searchBar.addEventListener('click', () => {
     modal.setCurrentBreakpoint(0.75);
   });
 

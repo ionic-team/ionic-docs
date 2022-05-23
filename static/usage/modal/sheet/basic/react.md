@@ -32,10 +32,7 @@ function Example() {
         </IonButton>
         <IonModal ref={modal} trigger="open-modal" initialBreakpoint={0.25} breakpoints={[0, 0.25, 0.5, 0.75]}>
           <IonContent className="ion-padding">
-            <IonSearchbar
-              onIonFocus={() => modal.current?.setCurrentBreakpoint(0.75)}
-              placeholder="Search"
-            ></IonSearchbar>
+            <IonSearchbar onClick={() => modal.current?.setCurrentBreakpoint(0.75)} placeholder="Search"></IonSearchbar>
             <IonList>
               <IonItem>
                 <IonAvatar slot="start">

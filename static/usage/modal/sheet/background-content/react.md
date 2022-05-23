@@ -50,10 +50,7 @@ function Example() {
           backdropBreakpoint={0.5}
         >
           <IonContent className="ion-padding">
-            <IonSearchbar
-              onIonFocus={() => modal.current?.setCurrentBreakpoint(0.75)}
-              placeholder="Search"
-            ></IonSearchbar>
+            <IonSearchbar onClick={() => modal.current?.setCurrentBreakpoint(0.75)} placeholder="Search"></IonSearchbar>
             <IonList>
               <IonItem>
                 <IonAvatar slot="start">

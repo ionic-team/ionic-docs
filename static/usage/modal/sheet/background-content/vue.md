@@ -32,7 +32,7 @@
       :backdrop-breakpoint="0.5"
     >
       <ion-content class="ion-padding">
-        <ion-searchbar @ionFocus="$refs.modal.$el.setCurrentBreakpoint(0.75)" placeholder="Search"></ion-searchbar>
+        <ion-searchbar @click="$refs.modal.$el.setCurrentBreakpoint(0.75)" placeholder="Search"></ion-searchbar>
         <ion-list>
           <ion-item>
             <ion-avatar slot="start">

@@ -25,7 +25,7 @@
     >
       <ng-template>
         <ion-content>
-          <ion-searchbar placeholder="Search" (ionFocus)="modal.setCurrentBreakpoint(0.75)"></ion-searchbar>
+          <ion-searchbar placeholder="Search" (click)="modal.setCurrentBreakpoint(0.75)"></ion-searchbar>
           <ion-list>
             <ion-item>
               <ion-avatar slot="start">
