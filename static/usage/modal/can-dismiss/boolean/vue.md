@@ -28,8 +28,9 @@
   </ion-page>
 </template>
 
-<script>
+<script lang="ts">
   import {
+    CheckboxCustomEvent,
     IonButton,
     IonModal,
     IonHeader,
@@ -66,7 +67,7 @@
       dismiss() {
         this.$refs.modal.$el.dismiss();
       },
-      onTermsChanged(ev) {
+      onTermsChanged(ev: CheckboxCustomEvent) {
         this.canDismiss = ev.detail.checked;
       },
     },

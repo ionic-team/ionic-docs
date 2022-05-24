@@ -26,7 +26,7 @@
   </ion-content>
 </template>
 
-<script>
+<script lang="ts">
   import { IonButton, IonModal, IonHeader, IonToolbar, IonContent, IonTitle } from '@ionic/vue';
   import { defineComponent, ref } from 'vue';
 
@@ -38,7 +38,7 @@
       };
     },
     methods: {
-      setOpen(isOpen) {
+      setOpen(isOpen: boolean) {
         this.isOpen = isOpen;
       },
     },

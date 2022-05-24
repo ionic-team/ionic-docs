@@ -24,7 +24,7 @@
   </ion-page>
 </template>
 
-<script>
+<script lang="ts">
   import {
     IonButton,
     IonModal,

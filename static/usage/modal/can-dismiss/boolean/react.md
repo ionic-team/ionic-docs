@@ -14,11 +14,11 @@ import {
 } from '@ionic/react';
 
 function Example() {
-  const modal = useRef(null);
+  const modal = useRef<HTMLIonModalElement>(null);
   const page = useRef(undefined);
 
   const [canDismiss, setCanDismiss] = useState(false);
-  const [presentingElement, setPresentingElement] = useState(undefined);
+  const [presentingElement, setPresentingElement] = useState<HTMLElement | undefined>(undefined);
 
   useEffect(() => {
     setPresentingElement(page.current);
@@ -51,7 +51,7 @@ function Example() {
           <IonContent>
             <p className="ion-padding-horizontal">You must accept the terms and conditions to close this modal.</p>
             <IonItem>
-              <IonLabel className="ion-text-wrap" for="terms">
+              <IonLabel className="ion-text-wrap" {...{ for: 'terms' }}>
                 Do you accept the terms and conditions?
               </IonLabel>
               <IonCheckbox

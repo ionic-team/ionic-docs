@@ -57,7 +57,7 @@
   </ion-content>
 </template>
 
-<script>
+<script lang="ts">
   import {
     createAnimation,
     IonButton,
@@ -89,7 +89,7 @@
       IonLabel,
     },
     setup() {
-      const enterAnimation = (baseEl) => {
+      const enterAnimation = (baseEl: HTMLElement) => {
         const root = baseEl.shadowRoot;
 
         const backdropAnimation = createAnimation()

@@ -13,7 +13,7 @@
   </ion-page>
 </template>
 
-<script>
+<script lang="ts">
   import { IonButton, IonContent, IonPage, IonHeader, IonToolbar, IonTitle, modalController } from '@ionic/vue';
   import Modal from './Modal.vue';
 

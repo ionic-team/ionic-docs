@@ -12,9 +12,14 @@ import {
   IonInput,
   useIonModal,
 } from '@ionic/react';
+import { OverlayEventDetail } from '@ionic/core/components';
 
-const ModalExample = ({ onDismiss }) => {
-  const inputRef = useRef(null);
+const ModalExample = ({
+  onDismiss,
+}: {
+  onDismiss: (data?: string | null | undefined | number, role?: string) => void;
+}) => {
+  const inputRef = useRef<HTMLIonInputElement>(null);
   return (
     <IonPage>
       <IonHeader>
@@ -40,13 +45,13 @@ const ModalExample = ({ onDismiss }) => {
 
 function Example() {
   const [present, dismiss] = useIonModal(ModalExample, {
-    onDismiss: (data, role) => dismiss(data, role),
+    onDismiss: (data: string, role: string) => dismiss(data, role),
   });
   const [message, setMessage] = useState('This modal example uses the modalController to present and dismiss modals.');
 
   function openModal() {
     present({
-      onWillDismiss: (ev) => {
+      onWillDismiss: (ev: CustomEvent<OverlayEventDetail>) => {
         if (ev.detail.role === 'confirm') {
           setMessage(`Hello, ${ev.detail.data}!`);
         }

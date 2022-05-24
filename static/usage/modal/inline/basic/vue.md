@@ -26,7 +26,7 @@
   </ion-content>
 </template>
 
-<script>
+<script lang="ts">
   import {
     IonButton,
     IonModal,
@@ -38,6 +38,7 @@
     IonInput,
     IonLabel,
   } from '@ionic/vue';
+  import { OverlayEventDetail } from '@ionic/core/components';
   import { defineComponent, ref } from 'vue';
 
   export default defineComponent({
@@ -55,7 +56,7 @@
         const name = this.$refs.input.$el.value;
         this.$refs.modal.$el.dismiss(name, 'confirm');
       },
-      onWillDismiss(ev) {
+      onWillDismiss(ev: CustomEvent<OverlayEventDetail>) {
         if (ev.detail.role === 'confirm') {
           this.message = `Hello, ${ev.detail.data}!`;
         }

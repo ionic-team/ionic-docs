@@ -12,10 +12,11 @@ import {
   IonLabel,
   IonInput,
 } from '@ionic/react';
+import { OverlayEventDetail } from '@ionic/core/components';
 
 function Example() {
-  const modal = useRef(null);
-  const input = useRef(null);
+  const modal = useRef<HTMLIonModalElement>(null);
+  const input = useRef<HTMLIonInputElement>(null);
 
   const [message, setMessage] = useState(
     'This modal example uses triggers to automatically open a modal when the button is clicked.'
@@ -25,7 +26,7 @@ function Example() {
     modal.current?.dismiss(input.current?.value, 'confirm');
   }
 
-  function onWillDismiss(ev) {
+  function onWillDismiss(ev: CustomEvent<OverlayEventDetail>) {
     if (ev.detail.role === 'confirm') {
       setMessage(`Hello, ${ev.detail.data}!`);
     }

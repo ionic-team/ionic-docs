@@ -17,7 +17,7 @@ import {
 } from '@ionic/react';
 
 function Example() {
-  const modal = useRef(null);
+  const modal = useRef<HTMLIonModalElement>(null);
 
   return (
     <IonPage>
