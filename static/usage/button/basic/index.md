@@ -16,7 +16,13 @@ import angular from './angular.md';
         'src/example-five.html': javascript,
       },
     },
-    react,
+    react: {
+      files: {
+        'src/react-example.html': react,
+        'src/react-example-two.html': react,
+        'src/react-example-three.html': react,
+      }
+    },
     vue,
     angular,
   }}
