@@ -17,7 +17,7 @@ function Example() {
   const modal = useRef<HTMLIonModalElement>(null);
   const page = useRef(undefined);
 
-  const [canDismiss, setCanDismiss] = useState<boolean>(false);
+  const [canDismiss, setCanDismiss] = useState(false);
   const [presentingElement, setPresentingElement] = useState<HTMLElement | undefined>(undefined);
 
   useEffect(() => {
