@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Popover</title>
+  <link rel="stylesheet" href="../../../common.css" />
+  <script src="../../../common.js"></script>
+  <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core@6/dist/ionic/ionic.esm.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core@6/css/ionic.bundle.css" />
+
+  <style>
+    .container {
+      flex-direction: column;
+    }
+
+    ion-popover {
+      --width: 80px;
+    }
+  </style>
+</head>
+
+<body>
+  <ion-app>
+    <ion-content>
+      <div class="container">
+        <ion-button id="top-center">Side=Top, Alignment=Center</ion-button>
+        <ion-popover trigger="top-center" side="top" alignment="center">
+          <ion-content class="ion-padding">Hello World!</ion-content>
+        </ion-popover>
+
+        <ion-button id="bottom-start">Side=Bottom, Alignment=Start</ion-button>
+        <ion-popover trigger="bottom-start" side="bottom" alignment="start">
+          <ion-content class="ion-padding">Hello World!</ion-content>
+        </ion-popover>
+
+        <ion-button id="left-start">Side=Left, Alignment=Start</ion-button>
+        <ion-popover trigger="left-start" side="left" alignment="start">
+          <ion-content class="ion-padding">Hello World!</ion-content>
+        </ion-popover>
+
+        <ion-button id="right-end">Side=Right, Alignment=End</ion-button>
+        <ion-popover trigger="right-end" side="right" alignment="end">
+          <ion-content class="ion-padding">Hello World!</ion-content>
+        </ion-popover>
+      </div>
+    </ion-content>
+  </ion-app>
+</body>
+
+</html>
