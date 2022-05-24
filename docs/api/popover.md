@@ -42,6 +42,12 @@ There are two ways to use `ion-popover`: inline or via the `popoverController`. 
 
 When using `ion-popover` with Angular, React, or Vue, the component you pass in will be destroyed when the popover is dismissed. As this functionality is provided by the JavaScript framework, using `ion-popover` without a JavaScript framework will not destroy the component you passed in. If this is a needed functionality, we recommend using the `popoverController` instead.
 
+### When to use
+
+Using a popover inline is useful when you do not want to explicitly wire up click events to open the popover. For example, you can use the `trigger` property to designate a button that should present the popover when clicked. You can also use the `trigger-action` property to customize whether the popover should be presented when the trigger is left clicked, right clicked, or hovered over.
+
+If you need fine grained control over when the popover is presented and dismissed, we recommend you use the `popoverController`.
+
 ### Angular 
 
 Since the component you passed in needs to be created when the popover is presented and destroyed when the popover is dismissed, we are unable to project the content using `<ng-content>` internally. Instead, we use `<ng-container>` which expects an `<ng-template>` to be passed in. As a result, when passing in your component you will need to wrap it in an `<ng-template>`:
@@ -54,11 +60,27 @@ Since the component you passed in needs to be created when the popover is presen
 </ion-popover>
 ```
 
-### When to use
+### Triggers
 
-Using a popover inline is useful when you do not want to explicitly wire up click events to open the popover. For example, you can use the `trigger` property to designate a button that should present the popover when clicked. You can also use the `trigger-action` property to customize whether the popover should be presented when the trigger is left clicked, right clicked, or hovered over.
+A trigger for an inline `ion-popover` is the element that will open a popover when interacted with. The interaction behavior can be customized by setting the `trigger-action` property. Note that `trigger-action="context-menu"` will prevent your system's default context menu from opening.
 
-If you need fine grained control over when the popover is presented and dismissed, we recommend you use the `popoverController`. 
+:::note
+ Triggers are not applicable when using the `popoverController` because the `ion-popover` is not created ahead of time.
+:::
+
+import InlineTrigger from '@site/static/usage/popover/presenting/inline-trigger/index.md';
+
+<InlineTrigger />
+
+### isOpen Property
+
+Inline popovers can also be opened by setting the `isOpen` property to `true`. This method can be used if you need finer grained control over the popover than with a trigger.
+
+Note that `isOpen` will *not* automatically be set back to `false` when the popover dismisses. It needs to be set back manually, using a `didDismiss` listener for example. 
+
+import IsOpenTrigger from '@site/static/usage/popover/presenting/inline-isopen/index.md';
+
+<IsOpenTrigger />
 
 ## Controller Popovers
 
@@ -68,24 +90,28 @@ If you need fine grained control over when the popover is presented and dismisse
 
 We typically recommend that you write your popovers inline as it streamlines the amount of code in your application. You should only use the `popoverController` for complex use cases where writing a popover inline is impractical. When using a controller, your popover is not created ahead of time, so properties such as `trigger` and `trigger-action` are not applicable here. In addition, nested popovers are not compatible with the controller approach because the popover is automatically added to the root of your application when the `create` method is called.
 
+### React
+
+Instead of a controller, React has a hook called `useIonPopover` which behaves in a similar fashion. Note that `useIonPopover` requires being a descendant of `<IonApp>`. If you need to use a popover outside of an `<IonApp>`, consider using an inline popover instead.
+
+### Usage
+
+import ControllerExample from '@site/static/usage/popover/presenting/controller/index.md';
+
+<ControllerExample />
+
 
 ## Styling
 
 Popovers are presented at the root of your application so they overlay your entire app. This behavior applies to both inline popovers and popovers presented from a controller. As a result, custom popover styles can not be scoped to a particular component as they will not apply to the popover. Instead, styles must be applied globally. For most developers, placing the custom styles in `global.css` is sufficient.
 
 :::note
- If you are building an Ionic Angular app, the styles need to be added to a global stylesheet file. Read [Style Placement](#style-placement) in the Angular section below for more information.
+ If you are building an Ionic Angular app, the styles need to be added to a global stylesheet file.
 :::
 
+import Styling from '@site/static/usage/popover/customization/styling/index.md';
 
-
-## Triggers
-
-A trigger for an `ion-popover` is the element that will open a popover when interacted with. The interaction behavior can be customized by setting the `trigger-action` property. Note that `trigger-action="context-menu"` will prevent your system's default context menu from opening.
-
-:::note
- Triggers are not applicable when using the `popoverController` because the `ion-popover` is not created ahead of time.
-:::
+<Styling />
 
 
 ## Positioning
@@ -102,13 +128,25 @@ Regardless of what you choose for your reference point, you can position a popov
 
 The `alignment` property allows you to line up an edge of your popover with a corresponding edge on your trigger element. The exact edge that is used depends on the value of the `side` property. 
 
+### Side and Alignment Demo
+
+import Positioning from '@site/static/usage/popover/customization/positioning/index.md';
+
+<Positioning />
+
 ### Offsets
 
 If you need finer grained control over the positioning of your popover you can use the `--offset-x` and `--offset-y` CSS Variables. For example, `--offset-x: 10px` will move your popover content to the right by `10px`.
 
 ## Sizing
 
-When making dropdown menus, you may want to have the width of the popover match the width of the trigger element. Doing this without knowing the trigger width ahead of time is tricky. You can set the `size` property to `'cover'` and Ionic Framework will ensure that the width of the popover matches the width of your trigger element. If you are using the `popoverController`, you must provide an event via the `event` option and Ionic Framework will use `event.target` as the reference element.
+When making dropdown menus, you may want to have the width of the popover match the width of the trigger element. Doing this without knowing the trigger width ahead of time is tricky. You can set the `size` property to `'cover'` and Ionic Framework will ensure that the width of the popover matches the width of your trigger element.
+
+If you are using the `popoverController`, you must provide an event via the `event` option and Ionic Framework will use `event.target` as the reference element. See the [controller demo](#controller-popovers) for an example of this pattern.
+
+import Sizing from '@site/static/usage/popover/customization/sizing/index.md';
+
+<Sizing />
 
 ## Nested Popovers
 
@@ -119,6 +157,10 @@ You can use the `dismissOnSelect` property to automatically close the popover wh
 :::note
  Nested popovers cannot be created when using the `popoverController` because the popover is automatically added to the root of your application when the `create` method is called.
 :::
+
+import NestedPopover from '@site/static/usage/popover/nested/index.md';
+
+<NestedPopover />
 
 
 ## Interfaces
