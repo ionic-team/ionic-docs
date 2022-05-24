@@ -135,41 +135,6 @@ import SheetBackgroundContentExample from '@site/static/usage/modal/sheet/backgr
 
 <SheetBackgroundContentExample />
 
-## Interfaces
-
-### ModalOptions
-
-Below you will find all of the options available to you when using the `modalController`. These options should be supplied when calling `modalController.create()`.
-
-```typescript
-interface ModalOptions {
-  component: any;
-  componentProps?: { [key: string]: any };
-  presentingElement?: HTMLElement;
-  showBackdrop?: boolean;
-  backdropDismiss?: boolean;
-  cssClass?: string | string[];
-  animated?: boolean;
-  swipeToClose?: boolean;
-
-  mode?: 'ios' | 'md';
-  keyboardClose?: boolean;
-  id?: string;
-
-  enterAnimation?: AnimationBuilder;
-  leaveAnimation?: AnimationBuilder;
-}
-```
-### ModalCustomEvent
-
-While not required, this interface can be used in place of the `CustomEvent` interface for stronger typing with Ionic events emitted from this component.
-
-```typescript
-interface ModalCustomEvent extends CustomEvent {
-  target: HTMLIonModalElement;
-}
-```
-
 ## Styling
 
 Modals are presented at the root of your application so they overlay your entire app. This behavior applies to both inline modals and modals presented from a controller. As a result, custom modal styles can not be scoped to a particular component as they will not apply to the modal. Instead, styles must be applied globally. For most developers, placing the custom styles in `global.css` is sufficient.
@@ -206,10 +171,12 @@ import AnimationsExample from '@site/static/usage/modal/styling/animations/index
 
 ### ModalOptions
 
+Below you will find all of the options available to you when using the `modalController`. These options should be supplied when calling `modalController.create()`.
+
 ```typescript
-interface ModalOptions<T extends ComponentRef = ComponentRef> {
-  component: T;
-  componentProps?: ComponentProps<T>;
+interface ModalOptions {
+  component: any;
+  componentProps?: { [key: string]: any };
   presentingElement?: HTMLElement;
   showBackdrop?: boolean;
   backdropDismiss?: boolean;
@@ -217,7 +184,7 @@ interface ModalOptions<T extends ComponentRef = ComponentRef> {
   animated?: boolean;
   swipeToClose?: boolean;
 
-  mode?: Mode;
+  mode?: 'ios' | 'md';
   keyboardClose?: boolean;
   id?: string;
   htmlAttributes?: { [key: string]: any };
@@ -231,7 +198,15 @@ interface ModalOptions<T extends ComponentRef = ComponentRef> {
   handle?: boolean;
 }
 ```
+### ModalCustomEvent
 
+While not required, this interface can be used in place of the `CustomEvent` interface for stronger typing with Ionic events emitted from this component.
+
+```typescript
+interface ModalCustomEvent extends CustomEvent {
+  target: HTMLIonModalElement;
+}
+```
 
 ## Accessibility
 
