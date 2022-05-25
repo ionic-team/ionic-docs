@@ -11,11 +11,13 @@
     <ion-modal ref="modal" trigger="open-modal" @willDismiss="onWillDismiss">
       <ion-header>
         <ion-toolbar>
-          <ion-button class="ion-no-margin" slot="start" fill="clear" @click="cancel()">Cancel</ion-button>
+          <ion-buttons slot="start">
+            <ion-button @click="cancel()">Cancel</ion-button>
+          </ion-buttons>
           <ion-title>Welcome</ion-title>
-          <ion-button class="ion-no-margin" slot="end" fill="clear" :strong="true" @click="confirm()"
-            >Confirm</ion-button
-          >
+          <ion-buttons slot="end">
+            <ion-button :strong="true" @click="confirm()">Confirm</ion-button>
+          </ion-buttons>
         </ion-toolbar>
       </ion-header>
       <ion-content class="ion-padding">
@@ -30,6 +32,7 @@
 
 <script lang="ts">
   import {
+    IonButtons,
     IonButton,
     IonModal,
     IonHeader,
@@ -44,7 +47,18 @@
   import { defineComponent, ref } from 'vue';
 
   export default defineComponent({
-    components: { IonButton, IonModal, IonHeader, IonContent, IonToolbar, IonTitle, IonItem, IonInput, IonLabel },
+    components: {
+      IonButtons,
+      IonButton,
+      IonModal,
+      IonHeader,
+      IonContent,
+      IonToolbar,
+      IonTitle,
+      IonItem,
+      IonInput,
+      IonLabel,
+    },
     data() {
       return {
         message: 'This modal example uses triggers to automatically open a modal when the button is clicked.',

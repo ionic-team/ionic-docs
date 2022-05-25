@@ -2,6 +2,7 @@
 import React, { useRef } from 'react';
 import {
   createAnimation,
+  IonButtons,
   IonButton,
   IonModal,
   IonHeader,
@@ -69,9 +70,9 @@ function Example() {
           <IonContent>
             <IonToolbar>
               <IonTitle>Modal</IonTitle>
-              <IonButton className="ion-no-margin" slot="end" fill="clear" onClick={() => dismiss()}>
-                Close
-              </IonButton>
+              <IonButtons slot="end">
+                <IonButton onClick={() => dismiss()}>Close</IonButton>
+              </IonButtons>
             </IonToolbar>
             <IonList>
               <IonItem>

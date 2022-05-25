@@ -17,9 +17,13 @@
     div.innerHTML = `
       <ion-header>
         <ion-toolbar>
-          <ion-button class="ion-no-margin" slot="start" fill="clear" color="medium" onclick="cancel()">Cancel</ion-button>
+          <ion-buttons slot="start">
+            <ion-button color="medium" onclick="cancel()">Cancel</ion-button>
+          </ion-buttons>
           <ion-title>Welcome</ion-title>
-          <ion-button class="ion-no-margin" slot="end" fill="clear" onclick="confirm()">Confirm</ion-button>
+          <ion-buttons slot="end">
+            <ion-button onclick="confirm()">Confirm</ion-button>
+          </ion-buttons>
         </ion-toolbar>
       </ion-header>
       <ion-content class="ion-padding">

@@ -2,9 +2,13 @@
 <template>
   <ion-header>
     <ion-toolbar>
-      <ion-button class="ion-no-margin" slot="start" fill="clear" color="medium" @click="cancel">Cancel</ion-button>
+      <ion-buttons slot="start">
+        <ion-button color="medium" @click="cancel">Cancel</ion-button>
+      </ion-buttons>
       <ion-title>Modal</ion-title>
-      <ion-button class="ion-no-margin" slot="end" fill="clear" @click="confirm">Confirm</ion-button>
+      <ion-buttons slot="end">
+        <ion-button @click="confirm">Confirm</ion-button>
+      </ion-buttons>
     </ion-toolbar>
   </ion-header>
   <ion-content class="ion-padding">
@@ -21,6 +25,7 @@
     IonHeader,
     IonTitle,
     IonToolbar,
+    IonButtons,
     IonButton,
     IonItem,
     IonLabel,
@@ -31,7 +36,7 @@
 
   export default defineComponent({
     name: 'Modal',
-    components: { IonContent, IonHeader, IonTitle, IonToolbar, IonButton, IonItem, IonLabel, IonInput },
+    components: { IonContent, IonHeader, IonTitle, IonToolbar, IonButtons, IonButton, IonItem, IonLabel, IonInput },
     methods: {
       cancel() {
         return modalController.dismiss(null, 'cancel');

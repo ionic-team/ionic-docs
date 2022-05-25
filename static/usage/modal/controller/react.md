@@ -1,6 +1,7 @@
 ```tsx
 import React, { useState, useRef } from 'react';
 import {
+  IonButtons,
   IonButton,
   IonHeader,
   IonContent,
@@ -24,24 +25,15 @@ const ModalExample = ({
     <IonPage>
       <IonHeader>
         <IonToolbar>
-          <IonButton
-            className="ion-no-margin"
-            slot="start"
-            fill="clear"
-            color="medium"
-            onClick={() => onDismiss(null, 'cancel')}
-          >
-            Cancel
-          </IonButton>
+          <IonButtons slot="start">
+            <IonButton color="medium" onClick={() => onDismiss(null, 'cancel')}>
+              Cancel
+            </IonButton>
+          </IonButtons>
           <IonTitle>Welcome</IonTitle>
-          <IonButton
-            className="ion-no-margin"
-            slot="end"
-            fill="clear"
-            onClick={() => onDismiss(inputRef.current?.value, 'confirm')}
-          >
-            Confirm
-          </IonButton>
+          <IonButtons slot="end">
+            <IonButton onClick={() => onDismiss(inputRef.current?.value, 'confirm')}>Confirm</IonButton>
+          </IonButtons>
         </IonToolbar>
       </IonHeader>
       <IonContent className="ion-padding">

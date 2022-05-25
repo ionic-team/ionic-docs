@@ -12,11 +12,13 @@
       <ng-template>
         <ion-header>
           <ion-toolbar>
-            <ion-button class="ion-no-margin" slot="start" fill="clear" (click)="cancel()">Cancel</ion-button>
+            <ion-buttons slot="start">
+              <ion-button (click)="cancel()">Cancel</ion-button>
+            </ion-buttons>
             <ion-title>Welcome</ion-title>
-            <ion-button class="ion-no-margin" slot="end" fill="clear" (click)="confirm()" [strong]="true"
-              >Confirm</ion-button
-            >
+            <ion-buttons slot="end">
+              <ion-button (click)="confirm()" [strong]="true">Confirm</ion-button>
+            </ion-buttons>
           </ion-toolbar>
         </ion-header>
         <ion-content class="ion-padding">

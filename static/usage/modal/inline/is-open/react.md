@@ -1,6 +1,6 @@
 ```tsx
 import React, { useState } from 'react';
-import { IonButton, IonModal, IonHeader, IonContent, IonToolbar, IonTitle, IonPage } from '@ionic/react';
+import { IonButtons, IonButton, IonModal, IonHeader, IonContent, IonToolbar, IonTitle, IonPage } from '@ionic/react';
 
 function Example() {
   const [isOpen, setIsOpen] = useState(false);
@@ -20,9 +20,9 @@ function Example() {
           <IonHeader>
             <IonToolbar>
               <IonTitle>Modal</IonTitle>
-              <IonButton className="ion-no-margin" slot="end" fill="clear" onClick={() => setIsOpen(false)}>
-                Close
-              </IonButton>
+              <IonButtons slot="end">
+                <IonButton onClick={() => setIsOpen(false)}>Close</IonButton>
+              </IonButtons>
             </IonToolbar>
           </IonHeader>
           <IonContent className="ion-padding">

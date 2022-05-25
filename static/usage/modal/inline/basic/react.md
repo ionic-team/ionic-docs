@@ -1,6 +1,7 @@
 ```tsx
 import React, { useState, useRef } from 'react';
 import {
+  IonButtons,
   IonButton,
   IonModal,
   IonHeader,
@@ -47,13 +48,15 @@ function Example() {
         <IonModal ref={modal} trigger="open-modal" onWillDismiss={(ev) => onWillDismiss(ev)}>
           <IonHeader>
             <IonToolbar>
-              <IonButton className="ion-no-margin" slot="start" fill="clear" onClick={() => modal.current?.dismiss()}>
-                Cancel
-              </IonButton>
+              <IonButtons slot="start">
+                <IonButton onClick={() => modal.current?.dismiss()}>Cancel</IonButton>
+              </IonButtons>
               <IonTitle>Welcome</IonTitle>
-              <IonButton className="ion-no-margin" slot="end" fill="clear" strong={true} onClick={() => confirm()}>
-                Confirm
-              </IonButton>
+              <IonButtons slot="end">
+                <IonButton strong={true} onClick={() => confirm()}>
+                  Confirm
+                </IonButton>
+              </IonButtons>
             </IonToolbar>
           </IonHeader>
           <IonContent className="ion-padding">
