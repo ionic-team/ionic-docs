@@ -2,9 +2,9 @@
 <template>
   <ion-header>
     <ion-toolbar>
-      <ion-button slot="start" fill="clear" color="medium" @click="cancel">Cancel</ion-button>
+      <ion-button class="ion-no-margin" slot="start" fill="clear" color="medium" @click="cancel">Cancel</ion-button>
       <ion-title>Modal</ion-title>
-      <ion-button slot="end" fill="clear" @click="confirm">Confirm</ion-button>
+      <ion-button class="ion-no-margin" slot="end" fill="clear" @click="confirm">Confirm</ion-button>
     </ion-toolbar>
   </ion-header>
   <ion-content class="ion-padding">

@@ -11,7 +11,7 @@
       <ion-header>
         <ion-toolbar>
           <ion-title>Modal</ion-title>
-          <ion-button slot="end" fill="clear" onclick="modal.isOpen = false">Close</ion-button>
+          <ion-button class="ion-no-margin" slot="end" fill="clear" onclick="modal.isOpen = false">Close</ion-button>
         </ion-toolbar>
       </ion-header>
       <ion-content class="ion-padding">

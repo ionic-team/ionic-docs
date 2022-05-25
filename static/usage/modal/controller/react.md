@@ -24,11 +24,22 @@ const ModalExample = ({
     <IonPage>
       <IonHeader>
         <IonToolbar>
-          <IonButton slot="start" fill="clear" color="medium" onClick={() => onDismiss(null, 'cancel')}>
+          <IonButton
+            className="ion-no-margin"
+            slot="start"
+            fill="clear"
+            color="medium"
+            onClick={() => onDismiss(null, 'cancel')}
+          >
             Cancel
           </IonButton>
           <IonTitle>Welcome</IonTitle>
-          <IonButton slot="end" fill="clear" onClick={() => onDismiss(inputRef.current?.value, 'confirm')}>
+          <IonButton
+            className="ion-no-margin"
+            slot="end"
+            fill="clear"
+            onClick={() => onDismiss(inputRef.current?.value, 'confirm')}
+          >
             Confirm
           </IonButton>
         </IonToolbar>

@@ -20,7 +20,7 @@ function Example() {
           <IonHeader>
             <IonToolbar>
               <IonTitle>Modal</IonTitle>
-              <IonButton slot="end" fill="clear" onClick={() => setIsOpen(false)}>
+              <IonButton className="ion-no-margin" slot="end" fill="clear" onClick={() => setIsOpen(false)}>
                 Close
               </IonButton>
             </IonToolbar>

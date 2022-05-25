@@ -69,7 +69,7 @@ function Example() {
           <IonContent>
             <IonToolbar>
               <IonTitle>Modal</IonTitle>
-              <IonButton slot="end" fill="clear" onClick={() => dismiss()}>
+              <IonButton className="ion-no-margin" slot="end" fill="clear" onClick={() => dismiss()}>
                 Close
               </IonButton>
             </IonToolbar>
