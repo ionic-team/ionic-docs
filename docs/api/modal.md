@@ -36,6 +36,8 @@ import APITOCInline from '@components/page/api/APITOCInline';
 
 A Modal is a dialog that appears on top of the app's content, and must be dismissed by the app before interaction can resume. It is useful as a select component when there are a lot of options to choose from, or when filtering items in a list, as well as many other use cases.
 
+A modal should always contain an [ion-content](./content).
+
 ## Presenting
 
 There are two ways to use `ion-modal`: inline or via the `modalController`. Each method comes with different considerations, so be sure to use the approach that best fits your use case.
@@ -90,6 +92,11 @@ The `swipeToClose` property can be used to control whether or not the card modal
 
 See [Usage](#usage) for examples on how to use the sheet modal.
 
+
+:::note
+An [ion-content](./content) must be used in order for the swipe gesture to function.
+:::
+
 ## Sheet Modal
 
 Developers can create a sheet modal effect similar to the drawer components available in maps applications. To create a sheet modal, developers need to set the `breakpoints` and `initialBreakpoint` properties on `ion-modal`.
@@ -101,6 +108,10 @@ The `initialBreakpoint` property is required so that the sheet modal knows which
 The `backdropBreakpoint` property can be used to customize the point at which the `ion-backdrop` will begin to fade in. This is useful when creating interfaces that have content underneath the sheet that should remain interactive. A common use case is a sheet modal that overlays a map where the map is interactive until the sheet is fully expanded.
 
 See [Usage](#usage) for examples on how to use the sheet modal.
+
+:::note
+An [ion-content](./content) must be used in order for the swipe gesture to function.
+:::
 
 :::note
  Note: The `swipeToClose` property has no effect when using a sheet modal as sheet modals must be swipeable in order to be usable.
