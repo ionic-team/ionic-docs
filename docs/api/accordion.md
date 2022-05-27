@@ -120,7 +120,7 @@ For example, using [ion-img](./img) may cause layout shifts as it lazily loads i
 
 2. Set a minimum width and height on `ion-img`. If you need to use lazy loading and know the dimensions of the images ahead of time (such as if you are loading icons of the same size), you can set the `ion-img` to have a minimum width or height using CSS. This gives developers the benefit of lazy loading while avoiding layout shifts. This works when using an `img` element with `loading="lazy"` too!
 
-3. If neither of these options are applicable, developers may want to consider disabling animations altogether by using the `animated` property on [ion-accordion-group]('./accordion-group').
+3. If neither of these options are applicable, developers may want to consider disabling animations altogether by using the `animated` property on [ion-accordion-group](./accordion-group).
 
 ## Usage
 
