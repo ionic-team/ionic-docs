@@ -89,7 +89,7 @@ export interface UserPhoto {
 }
 ```
 
-Back at the top of the function (right after the call to `usePhotoGallery`, we will define a state variable to store the array of each photo captured with the Camera.
+Back at the top of the `Tab2` function in `Tab2.tsx` (right after the call to `usePhotoGallery`, we will define a state variable to store the array of each photo captured with the Camera.
 
 ```tsx
 const [photos, setPhotos] = useState<UserPhoto[]>([]);
