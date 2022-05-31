@@ -12,7 +12,9 @@
         <ion-header>
           <ion-toolbar>
             <ion-title>Modal</ion-title>
-            <ion-button slot="end" fill="clear" (click)="modal.dismiss()">Close</ion-button>
+            <ion-buttons slot="end">
+              <ion-button (click)="modal.dismiss()">Close</ion-button>
+            </ion-buttons>
           </ion-toolbar>
         </ion-header>
         <ion-content class="ion-padding">

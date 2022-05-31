@@ -13,7 +13,9 @@
         <ion-header>
           <ion-toolbar>
             <ion-title>Modal</ion-title>
-            <ion-button slot="end" fill="clear" @click="dismiss()">Close</ion-button>
+            <ion-buttons slot="end">
+              <ion-button @click="dismiss()">Close</ion-button>
+            </ion-buttons>
           </ion-toolbar>
         </ion-header>
         <ion-content>
@@ -31,6 +33,7 @@
 <script lang="ts">
   import {
     CheckboxCustomEvent,
+    IonButtons,
     IonButton,
     IonModal,
     IonHeader,
@@ -46,6 +49,7 @@
 
   export default defineComponent({
     components: {
+      IonButtons,
       IonButton,
       IonModal,
       IonHeader,

@@ -30,7 +30,9 @@
       <ion-content>
         <ion-toolbar>
           <ion-title>Modal</ion-title>
-          <ion-button slot="end" fill="clear" color="light" @click="dismiss()">Close</ion-button>
+          <ion-buttons slot="end">
+            <ion-button color="light" @click="dismiss()">Close</ion-button>
+          </ion-buttons>
         </ion-toolbar>
         <ion-list>
           <ion-item>
@@ -77,6 +79,7 @@
 
 <script lang="ts">
   import {
+    IonButtons,
     IonButton,
     IonModal,
     IonHeader,
@@ -93,6 +96,7 @@
 
   export default defineComponent({
     components: {
+      IonButtons,
       IonButton,
       IonModal,
       IonHeader,

@@ -12,7 +12,9 @@
       <ion-header>
         <ion-toolbar>
           <ion-title>Modal</ion-title>
-          <ion-button slot="end" fill="clear" @click="setOpen(false)">Close</ion-button>
+          <ion-buttons slot="end">
+            <ion-button @click="setOpen(false)">Close</ion-button>
+          </ion-buttons>
         </ion-toolbar>
       </ion-header>
       <ion-content class="ion-padding">
@@ -27,11 +29,11 @@
 </template>
 
 <script lang="ts">
-  import { IonButton, IonModal, IonHeader, IonToolbar, IonContent, IonTitle } from '@ionic/vue';
+  import { IonButtons, IonButton, IonModal, IonHeader, IonToolbar, IonContent, IonTitle } from '@ionic/vue';
   import { defineComponent, ref } from 'vue';
 
   export default defineComponent({
-    components: { IonButton, IonModal, IonHeader, IonContent, IonToolbar, IonTitle },
+    components: { IonButtons, IonButton, IonModal, IonHeader, IonContent, IonToolbar, IonTitle },
     data() {
       return {
         isOpen: false,
