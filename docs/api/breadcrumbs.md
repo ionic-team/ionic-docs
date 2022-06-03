@@ -31,6 +31,26 @@ import APITOCInline from '@components/page/api/APITOCInline';
 
 Breadcrumbs are navigation items that are used to indicate where a user is on an app or site. They should be used for large sites and apps with hierarchically arranged pages. Breadcrumbs can be collapsed based on the maximum number that can show, and the collapsed indicator can be clicked on to present a popover with more information or expand the collapsed breadcrumbs.
 
+## Basic Usage
+
+import Basic from '@site/static/usage/breadcrumbs/basic/index.md';
+
+<Basic />
+
+## Using Icons
+
+### Icons on Items
+
+import IconsOnItems from '@site/static/usage/breadcrumbs/icons/icons-on-items/index.md';
+
+<IconsOnItems />
+
+### Custom Separators
+
+import CustomSeparators from '@site/static/usage/breadcrumbs/icons/custom-separators/index.md';
+
+<CustomSeparators />
+
 
 <Props />
 <Events />
