@@ -6,7 +6,7 @@ import { arrowForwardCircle } from 'ionicons/icons';
 function Example() {
   return (
     <IonBreadcrumbs>
-      <IonBreadcrumb href="#">
+      <IonBreadcrumb href="#home">
         Home
         <IonIcon slot="separator" icon={arrowForwardCircle}></IonIcon>
       </IonBreadcrumb>

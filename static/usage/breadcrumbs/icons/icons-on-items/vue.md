@@ -3,7 +3,7 @@
   <ion-content>
     <ion-label>Icons at Start</ion-label>
     <ion-breadcrumbs>
-      <ion-breadcrumb href="#">
+      <ion-breadcrumb href="#home">
         <ion-icon slot="start" :icon="home"></ion-icon>
         Home
       </ion-breadcrumb>
@@ -23,7 +23,7 @@
 
     <ion-label class="ion-margin-top">Icons at End</ion-label>
     <ion-breadcrumbs>
-      <ion-breadcrumb href="#">
+      <ion-breadcrumb href="#home">
         Home
         <ion-icon slot="end" :icon="home"></ion-icon>
       </ion-breadcrumb>

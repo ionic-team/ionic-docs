@@ -1,7 +1,7 @@
 ```html
 <template>
   <ion-breadcrumbs>
-    <ion-breadcrumb href="#">
+    <ion-breadcrumb href="#home">
       Home
       <ion-icon slot="separator" :icon="arrowForwardCircle"></ion-icon>
     </ion-breadcrumb>

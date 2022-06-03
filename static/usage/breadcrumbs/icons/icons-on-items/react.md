@@ -8,7 +8,7 @@ function Example() {
     <IonContent>
       <IonLabel>Icons at Start</IonLabel>
       <IonBreadcrumbs>
-        <IonBreadcrumb href="#">
+        <IonBreadcrumb href="#home">
           <IonIcon slot="start" icon={home}></IonIcon>
           Home
         </IonBreadcrumb>
@@ -28,7 +28,7 @@ function Example() {
 
       <IonLabel class="ion-margin-top">Icons at End</IonLabel>
       <IonBreadcrumbs>
-        <IonBreadcrumb href="#">
+        <IonBreadcrumb href="#home">
           Home
           <IonIcon slot="end" icon={home}></IonIcon>
         </IonBreadcrumb>

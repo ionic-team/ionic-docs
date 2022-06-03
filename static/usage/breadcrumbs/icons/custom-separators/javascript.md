@@ -1,6 +1,6 @@
 ```html
 <ion-breadcrumbs>
-  <ion-breadcrumb href="#">
+  <ion-breadcrumb href="#home">
     Home
     <ion-icon slot="separator" name="arrow-forward-circle"></ion-icon>
   </ion-breadcrumb>

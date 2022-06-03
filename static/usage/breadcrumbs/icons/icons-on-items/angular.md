@@ -1,7 +1,7 @@
 ```html
 <ion-label>Icons at Start</ion-label>
 <ion-breadcrumbs>
-  <ion-breadcrumb href="#">
+  <ion-breadcrumb href="#home">
     <ion-icon slot="start" name="home"></ion-icon>
     Home
   </ion-breadcrumb>
@@ -21,7 +21,7 @@
 
 <ion-label class="ion-margin-top">Icons at End</ion-label>
 <ion-breadcrumbs>
-  <ion-breadcrumb href="#">
+  <ion-breadcrumb href="#home">
     Home
     <ion-icon slot="end" name="home"></ion-icon>
   </ion-breadcrumb>
