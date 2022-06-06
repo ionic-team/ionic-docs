@@ -13,5 +13,4 @@ import angular from './angular.md';
     angular,
   }}
   src="usage/accordion/disable-individual/demo.html"
-  expandCodeByDefault={true}
 />
