@@ -41,7 +41,11 @@ TODO  Playground
 
 ### Individual Accordion
 
-TODO Playground
+Individual accordions can be disabled with the `accordion` property on `ion-accordion`.
+
+import DisableIndividual from '@site/static/usage/accordion/disable-individual/index.md';
+
+<DisableIndividual />
 
 ### Accordion Group
 
