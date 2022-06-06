@@ -23,7 +23,9 @@ Accordions provide collapsible sections in your content to reduce vertical space
 
 ## Basic Usage
 
-TODO Playground
+import Basic from '@site/static/usage/accordion/basic/index.md';
+
+<Basic />
 
 ## Toggle Accordions
 
