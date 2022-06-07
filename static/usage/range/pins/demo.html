@@ -24,6 +24,12 @@
       </div>
     </ion-content>
   </ion-app>
+  <script>
+    const range = document.querySelector('ion-range');
+    range.pinFormatter = (value) => {
+      return `${value}%`;
+    };
+  </script>
 </body>
 
 </html>
