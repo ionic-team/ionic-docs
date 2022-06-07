@@ -19,7 +19,7 @@ function Example() {
       </IonAccordion>
       <IonAccordion value="second" readonly={true}>
         <IonItem slot="header" color="light">
-          <IonLabel>Second Accordion (Readonlg)</IonLabel>
+          <IonLabel>Second Accordion (Readonly)</IonLabel>
         </IonItem>
         <div className="ion-padding" slot="content">
           Second Content
