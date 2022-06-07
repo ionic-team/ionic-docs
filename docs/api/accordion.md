@@ -49,6 +49,24 @@ TODO Playground
 
 TODO Playground
 
+## Readonly Accordions
+
+### Individual Accordion
+
+Individual accordions can be disabled with the `readonly` property on `ion-accordion`.
+
+import ReadonlyIndividual from '@site/static/usage/accordion/readonly-individual/index.md';
+
+<ReadonlyIndividual />
+
+### Accordion Group
+
+The accordion group can be disabled with the `readonly` property on `ion-accordion-group`.
+
+import ReadonlyGroup from '@site/static/usage/accordion/readonly-group/index.md';
+
+<ReadonlyGroup />
+
 ## Anatomy
 
 ### Header
