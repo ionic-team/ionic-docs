@@ -41,7 +41,7 @@ import Basic from '@site/static/usage/range/basic/index.md';
 
 ## Range Labels
 
-Labels and custom UI elements can be slotted on either side of the range by adding `slot="start"` or `slot="end"` to the element. The element can be any element, such as an `ion-label`, `ion-icon` or a `div`. If the directionality of the document is set to left to right (default), the contents slotted to the `start` position will display to the left of the range, where as contents slotted to the `end` position will display to the right of the range. In right-to-left directionality, this display is inverted. 
+Labels and custom UI elements can be slotted on either side of the range by adding `slot="start"` or `slot="end"` to the element. The element can be any element, such as an `ion-label`, `ion-icon` or a `div`. If the directionality of the document is set to left to right (default), the contents slotted to the `start` position will display to the left of the range, where as contents slotted to the `end` position will display to the right of the range. In right to left (rtl) directionality, this display is inverted. 
 
 import SlotsPlayground from '@site/static/usage/range/slots/index.md';
 
