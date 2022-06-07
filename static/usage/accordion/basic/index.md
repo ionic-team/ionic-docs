@@ -13,5 +13,6 @@ import angular from './angular.md';
     angular,
   }}
   src="usage/accordion/basic/demo.html"
+  size="210px"
   expandCodeByDefault={true}
 />
