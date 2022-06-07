@@ -56,7 +56,11 @@ TODO: Playground Example
 
 ## Pins
 
-TODO: Playground Example
+The `pin` attribute will display the value of the Range above the knob when dragged. This allows users to select a specific value within the Range.
+
+import Pins from '@site/static/usage/range/pins/index.md';
+
+<Pins />
 
 ## Ticks
 
