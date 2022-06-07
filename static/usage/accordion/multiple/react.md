@@ -1,5 +1,5 @@
 ```tsx
-import React from 'react';
+import React, { useRef, useEffect } from 'react';
 import { 
   IonAccordion, 
   IonAccordionGroup,
@@ -8,9 +8,17 @@ import {
   IonLabel
 } from '@ionic/react';
 function Example() {
+  const accordionGroup = useRef<null | HTMLIonAccordionGroupElement>(null);
+
+  useEffect(() => {
+    if (!accordionGroup.current) { return; }
+    
+    accordionGroup.current.value = ['first', 'third'];
+  }, []);
+
   return (
     <IonContent>
-      <IonAccordionGroup multiple={true} value={['first', 'third']}>
+      <IonAccordionGroup ref={accordionGroup} multiple={true}>
         <IonAccordion value="first">
           <IonItem slot="header" color="light">
             <IonLabel>First Accordion</IonLabel>
