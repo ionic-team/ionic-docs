@@ -31,10 +31,13 @@ import APITOCInline from '@components/page/api/APITOCInline';
 />
 
 
+The Range slider lets users select from a range of values by moving the slider knob. By default one knob controls the value of the range. This behavior can be customized using [dual knobs](#dual-knobs).
 
-The Range slider lets users select from a range of values by moving
-the slider knob. It can accept dual knobs, but by default one knob
-controls the value of the range.
+By default the Range slider has a minimum value of `0` and a maximum value of `100`. This can be configured with the `min` and `max` properties.
+
+import Basic from '@site/static/usage/range/basic/index.md';
+
+<Basic />
 
 TODO: Playground Example
 
@@ -45,8 +48,6 @@ Labels and custom UI elements can be slotted on either side of the range by addi
 import SlotsPlayground from '@site/static/usage/range/slots/index.md';
 
 <SlotsPlayground />
-
-## Dual Knobs
 
 TODO: Playground Example
 
