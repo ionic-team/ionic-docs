@@ -32,7 +32,7 @@
 
 <script>
   const accordionGroup = document.querySelector('ion-accordion-group');
-  const toggleAccordion = () => {
+  var toggleAccordion = () => {
     if (accordionGroup.value === 'second') {
       accordionGroup.value = undefined;
     } else {
