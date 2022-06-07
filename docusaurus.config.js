@@ -233,7 +233,7 @@ module.exports = {
             return 'https://crowdin.com/project/ionic-docs';
           }
           if ((match = docPath.match(/api\/(.*)\.md/)) != null) {
-            return `https://github.com/ionic-team/ionic-framework/edit/main/core/src/components/${match[1]}/readme.md`;
+            return `https://github.com/ionic-team/ionic-docs/tree/main/docs/api/${match[1]}.md`;
           }
           if ((match = docPath.match(/cli\/commands\/(.*)\.md/)) != null) {
             return `https://github.com/ionic-team/ionic-cli/edit/develop/packages/@ionic/cli/src/commands/${match[1].replace(
