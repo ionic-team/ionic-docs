@@ -1,6 +1,6 @@
 ```html
 <template>
-  <ion-range :dual-knobs="true" :value="{ lower: 20, upper: 80 }"></ion-range>
+  <ion-range :dualKnobs="true" :value="{ lower: 20, upper: 80 }"></ion-range>
 </template>
 
 <script lang="ts">
