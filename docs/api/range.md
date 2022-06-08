@@ -84,7 +84,9 @@ TODO: Playground Example
 
 ## Styling
 
-TODO: Playground Example
+import Styling from '@site/static/usage/range/styling/index.md';
+
+<Styling />
 
 ### Theming
 
