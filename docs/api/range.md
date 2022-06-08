@@ -58,13 +58,15 @@ TODO: Playground Example
 
 TODO: Playground Example
 
-## Ticks
+## Snapping & Ticks
 
-TODO: Playground Example
+Ticks show indications for each available value on the Range. In order to use ticks, developers must set both `snaps` and the `ticks` property to `true`. 
 
-## Snapping
+With snapping enabled, the Range knob will snap to the nearest available value as the knob is dragged and released. 
 
-TODO: Playground Example
+import SnappingTicks from '@site/static/usage/range/snapping-ticks/index.md';
+
+<SnappingTicks />
 
 ## Event Handling
 
