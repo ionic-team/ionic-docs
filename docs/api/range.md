@@ -70,7 +70,9 @@ TODO: Playground Example
 
 ### Using `ionChange`
 
-import IonChangeEvent from '@site/static/usage/range/ion-change/index.md';
+The `ionChange` event emits as the Range knob value changes. 
+
+import IonChangeEvent from '@site/static/usage/range/ion-change-event/index.md';
 
 <IonChangeEvent />
 

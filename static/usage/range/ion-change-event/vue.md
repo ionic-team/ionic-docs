@@ -7,11 +7,11 @@
 </template>
 
 <script lang="ts">
-  import { IonRange } from '@ionic/vue';
+  import { IonLabel, IonRange } from '@ionic/vue';
   import { defineComponent } from 'vue';
 
   export default defineComponent({
-    components: { IonRange },
+    components: { IonLabel, IonRange },
     data() {
       return {
         lastEmittedValue: '',

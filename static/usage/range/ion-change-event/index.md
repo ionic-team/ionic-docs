@@ -19,5 +19,5 @@ import angular_app_component_ts from './angular/app_component_ts.md';
       },
     },
   }}
-  src="usage/range/ion-change/demo.html"
+  src="usage/range/ion-change-event/demo.html"
 />
