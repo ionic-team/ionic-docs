@@ -70,7 +70,9 @@ TODO: Playground Example
 
 ### Using `ionChange`
 
-TODO: Playground Example
+import IonChangeEvent from '@site/static/usage/range/ion-change/index.md';
+
+<IonChangeEvent />
 
 ### Using `ionKnobMoveStart` and `ionKnobMoveEnd`
 
