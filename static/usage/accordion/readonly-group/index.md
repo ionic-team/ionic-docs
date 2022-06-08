@@ -12,7 +12,6 @@ import angular from './angular.md';
     vue,
     angular,
   }}
-  src="usage/accordion/basic/demo.html"
   size="210px"
-  expandCodeByDefault={true}
+  src="usage/accordion/readonly-group/demo.html"
 />
