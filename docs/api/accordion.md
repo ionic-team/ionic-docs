@@ -115,7 +115,9 @@ TODO Playground
 
 By default, animations are enabled when expanding or collapsing an accordion item. Animations will be automatically disabled when the `prefers-reduced-motion` media query is supported and set to `reduce`. For browsers that do not support this, animations can be disabled by setting the `animated` config in your Ionic Framework app.
 
-TODO Playground
+import AccessibilityAnimations from '@site/static/usage/accordion/accessibility/animations/index.md';
+
+<AccessibilityAnimations />
 
 ### Keyboard Navigation
 
