@@ -27,5 +27,5 @@ import angular_app_component_css from './angular/app_component_css.md';
       },
     },
   }}
-  src="usage/range/styling/demo.html"
+  src="usage/range/css-shadow-parts/demo.html"
 />

@@ -84,13 +84,21 @@ TODO: Playground Example
 
 ## Styling
 
-import Styling from '@site/static/usage/range/styling/index.md';
+### Styling with CSS Variables
 
-<Styling />
+Range includes [CSS Variables](#css-custom-properties) to quickly theme and customize the appearance of the Range component to match your application's design.
 
-### Theming
+import CssVariablesPlayground from '@site/static/usage/range/css-variables/index.md';
 
-TODO: Playground Example
+<CssVariablesPlayground />
+
+### Styling with CSS Shadow Parts
+
+Range includes [CSS Shadow Parts](#css-shadow-parts) to allow complete customization of specific element nodes within the Range component. CSS Shadow Parts offer the most customization capabilities and are the recommended approach when requiring advance styling with the Range component.
+
+import CssShadowPartsPlayground from '@site/static/usage/range/css-shadow-parts/index.md';
+
+<CssShadowPartsPlayground />
 
 ## Interfaces
 
