@@ -1,5 +1,5 @@
 ```html
-<div>
+<ion-content>
   <ion-range
     (ionKnobMoveStart)="onIonKnobMoveStart($any($event))"
     (ionKnobMoveEnd)="onIonKnobMoveEnd($any($event))"
@@ -10,5 +10,5 @@
   <div>
     <ion-label>ionKnobMoveEnd: {{ moveEnd }}</ion-label>
   </div>
-</div>
+</ion-content>
 ```

@@ -1,6 +1,6 @@
 ```html
 <template>
-  <div>
+  <ion-content>
     <ion-range @ionKnobMoveStart="onIonKnobMoveStart" @ionKnobMoveEnd="onIonKnobMoveEnd"></ion-range>
     <div>
       <ion-label>ionKnobMoveStart: {{moveStart}}</ion-label>
@@ -8,15 +8,15 @@
     <div>
       <ion-label>onIonKnobMoveEnd: {{moveEnd}}</ion-label>
     </div>
-  </div>
+  </ion-content>
 </template>
 
 <script lang="ts">
-  import { IonRange, IonLabel } from '@ionic/vue';
+  import { IonContent, IonLabel, IonRange } from '@ionic/vue';
   import { defineComponent } from 'vue';
 
   export default defineComponent({
-    components: { IonRange, IonLabel },
+    components: { IonContent, IonLabel, IonRange },
     data() {
       return {
         moveStart: '',
