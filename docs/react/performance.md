@@ -4,10 +4,10 @@ title: React Performance
 ---
 
 <head>
-  <title>Progressive Web Applications: What is a PWA - Ionic Documentation</title>
+  <title>React Performance Testing - Using Loops with Ionic App Components</title>
   <meta
     name="description"
-    content="What is a PWA? A Progressive Web Application uses modern web capabilities to deliver an app-like experience. Read our core concept documentation to learn more."
+    content="React performance testing for Ionic apps. When using loops with Ionic components, we recommend using React's key attribute. Read to learn more."
   />
 </head>
 
