@@ -1,8 +1,12 @@
 ```tsx
 import React from 'react';
-import { IonRange } from '@ionic/react';
+import { IonContent, IonRange } from '@ionic/react';
 function Example() {
-  return <IonRange></IonRange>;
+  return (
+    <IonContent>
+      <IonRange></IonRange>
+    </IonContent>
+  );
 }
 export default Example;
 ```

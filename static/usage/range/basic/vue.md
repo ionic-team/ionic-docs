@@ -1,14 +1,16 @@
 ```html
 <template>
-  <ion-range></ion-range>
+  <ion-content>
+    <ion-range></ion-range>
+  </ion-content>
 </template>
 
 <script lang="ts">
-  import { IonRange } from '@ionic/vue';
+  import { IonContent, IonRange } from '@ionic/vue';
   import { defineComponent } from 'vue';
 
   export default defineComponent({
-    components: { IonRange },
+    components: { IonContent, IonRange },
   });
 </script>
 ```
