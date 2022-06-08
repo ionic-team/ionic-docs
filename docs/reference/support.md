@@ -49,7 +49,7 @@ The Ionic team generally recommends the latest releases of third party packages 
 |    v4     |          v8.2           |          v11.x          |    3.5+    |
 |    v3     |         v5.2.11         |         v5.2.11         |   2.6.2    |
 
-:::
+:::note
 ^ Angular 14.x support was added in Ionic v6.1.9
 :::
 
