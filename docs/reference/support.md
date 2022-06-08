@@ -36,8 +36,6 @@ The current status of each Ionic Framework version is:
 
 The Ionic team has compiled a set of recommendations for using the Ionic Framework in conjunction with other contextually-relevant software. This is not meant to be a comprehensive list, but covers many common compatibility questions. The Ionic team strongly recommends reviewing your project dependencies once each quarter to keep track of new releases, features and bug fixes.
 
-The Ionic team generally recommends the latest releases of third party packages and strives to support the latest releases within 2-4 weeks of general availability.
-
 ### Core Dependencies
 
 #### Ionic Angular
