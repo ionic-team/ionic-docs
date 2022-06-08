@@ -4,8 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Accordion</title>
-    <link rel="stylesheet" href="../../common.css" />
-    <script src="../../common.js"></script>
+    <link rel="stylesheet" href="../../../common.css" />
+    <script src="../../../common.js"></script>
     <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core@6/dist/ionic/ionic.esm.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core@6/css/ionic.bundle.css" />
   </head>
@@ -22,9 +22,9 @@
                 First Content
               </div>
             </ion-accordion>
-            <ion-accordion value="second" readonly="true">
+            <ion-accordion value="second" disabled="true">
               <ion-item slot="header" color="light">
-                <ion-label>Second Accordion (Readonly)</ion-label>
+                <ion-label>Second Accordion (Disabled)</ion-label>
               </ion-item>
               <div class="ion-padding" slot="content">
                 Second Content

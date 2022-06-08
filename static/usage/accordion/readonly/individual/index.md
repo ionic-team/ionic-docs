@@ -12,5 +12,5 @@ import angular from './angular.md';
     vue,
     angular,
   }}
-  src="usage/accordion/readonly-individual/demo.html"
+  src="usage/accordion/readonly/individual/demo.html"
 />
