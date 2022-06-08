@@ -14,8 +14,8 @@ import angular_app_component_html from './angular/app_component_html.md';
     vue,
     angular: {
       files: {
-        'src/app/app.component.ts': angular_app_component_ts,
         'src/app/app.component.html': angular_app_component_html,
+        'src/app/app.component.ts': angular_app_component_ts,
       },
     },
   }}
