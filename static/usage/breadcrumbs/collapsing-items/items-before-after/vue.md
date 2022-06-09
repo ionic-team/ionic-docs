@@ -1,7 +1,7 @@
 ```html
 <template>
   <ion-content>
-    <ion-label>Before Collapse = 2</ion-label>
+    <div>Before Collapse = 2</div>
     <ion-breadcrumbs :max-items="4" :items-before-collapse="2">
       <ion-breadcrumb href="#home">Home</ion-breadcrumb>
       <ion-breadcrumb href="#electronics">Electronics</ion-breadcrumb>
@@ -11,7 +11,7 @@
       <ion-breadcrumb href="#35mm">35 mm</ion-breadcrumb>
     </ion-breadcrumbs>
 
-    <ion-label class="ion-margin-top">Before Collapse = 0</ion-label>
+    <div class="ion-margin-top">Before Collapse = 0</div>
     <ion-breadcrumbs :max-items="4" :items-before-collapse="0">
       <ion-breadcrumb href="#home">Home</ion-breadcrumb>
       <ion-breadcrumb href="#electronics">Electronics</ion-breadcrumb>
@@ -21,7 +21,7 @@
       <ion-breadcrumb href="#35mm">35 mm</ion-breadcrumb>
     </ion-breadcrumbs>
 
-    <ion-label class="ion-margin-top">After Collapse = 2</ion-label>
+    <div class="ion-margin-top">After Collapse = 2</div>
     <ion-breadcrumbs :max-items="4" :items-after-collapse="2">
       <ion-breadcrumb href="#home">Home</ion-breadcrumb>
       <ion-breadcrumb href="#electronics">Electronics</ion-breadcrumb>
@@ -31,7 +31,7 @@
       <ion-breadcrumb href="#35mm">35 mm</ion-breadcrumb>
     </ion-breadcrumbs>
 
-    <ion-label class="ion-margin-top">Before Collapse = 2, After Collapse = 2</ion-label>
+    <div class="ion-margin-top">Before Collapse = 2, After Collapse = 2</div>
     <ion-breadcrumbs :max-items="4" :items-before-collapse="2" :items-after-collapse="2">
       <ion-breadcrumb href="#home">Home</ion-breadcrumb>
       <ion-breadcrumb href="#electronics">Electronics</ion-breadcrumb>
@@ -44,11 +44,11 @@
 </template>
 
 <script lang="ts">
-  import { IonBreadcrumb, IonBreadcrumbs, IonContent, IonLabel } from '@ionic/vue';
+  import { IonBreadcrumb, IonBreadcrumbs, IonContent } from '@ionic/vue';
   import { defineComponent } from 'vue';
 
   export default defineComponent({
-    components: { IonBreadcrumb, IonBreadcrumbs, IonContent, IonLabel },
+    components: { IonBreadcrumb, IonBreadcrumbs, IonContent },
   });
 </script>
 ```
