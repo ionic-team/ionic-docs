@@ -55,7 +55,7 @@ import CustomSeparators from '@site/static/usage/breadcrumbs/icons/custom-separa
 
 ### Max Items
 
-If there are more items than the value of `max-items`, the breadcrumbs will be collapsed. By default, only the first and last items will be shown.
+If there are more items than the value of `maxItems`, the breadcrumbs will be collapsed. By default, only the first and last items will be shown.
 
 import MaxItems from '@site/static/usage/breadcrumbs/collapsing-items/max-items/index.md';
 
@@ -63,7 +63,7 @@ import MaxItems from '@site/static/usage/breadcrumbs/collapsing-items/max-items/
 
 ### Items Before or After Collapse
 
-Once the items are collapsed, the number of items to show can be controlled by the `items-before-collapse` and `items-after-collase` properties.
+Once the items are collapsed, the number of items to show can be controlled by the `itemsBeforeCollapse` and `itemsAfterCollapse` properties.
 
 import ItemsBeforeAfter from '@site/static/usage/breadcrumbs/collapsing-items/items-before-after/index.md';
 
