@@ -95,6 +95,10 @@ There are two built in expansion styles: `compact` and `inset`. This expansion s
 
 TODO Playground
 
+### Advanced Expansion Styles
+
+TODO Playground
+
 ### Icons
 
 When using an `ion-item` in the `header` slot, we automatically add an `ion-icon`. The type of icon used can be controlled by the `toggleIcon` property, and the slot it is added to can be controlled with the `toggleIconSlot` property.
