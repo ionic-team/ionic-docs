@@ -8,6 +8,10 @@ ion-range::part(tick-active) {
 }
 
 ion-range::part(pin) {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
   background: #ffafcc;
   color: #fff;
 
