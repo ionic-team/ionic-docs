@@ -14,15 +14,15 @@ import angularCSS from './angular/angular_css.md';
     javascript,
     react: {
       files: {
-        'src/main.tsx': reactTS,
-        'src/main.css': reactCSS
+        'src/main.css': reactCSS,
+        'src/main.tsx': reactTS
       }
     },
     vue,
     angular: {
       files: {
-        'src/app/app.component.html': angularHTML,
-        'src/app/app.component.css': angularCSS
+        'src/app/app.component.css': angularCSS,
+        'src/app/app.component.html': angularHTML
       }
     }
   }}
