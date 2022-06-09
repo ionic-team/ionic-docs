@@ -15,8 +15,8 @@ import angularHTML from './angular/angular-html.md';
     javascript,
     react: {
       files: {
-        'main.js': reactTS,
-        'main.css': reactCSS
+        'src/main.tsx': reactTS,
+        'src/main.css': reactCSS
       }
     },
     vue,
