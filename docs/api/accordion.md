@@ -101,7 +101,27 @@ import ExpansionStyles from '@site/static/usage/accordion/customization/expansio
 
 ### Advanced Expansion Styles
 
-TODO Playground
+You can customize the expansion behavior by styling based on the accordion's state. There are four state classes applied to `ion-accordion`. Styling using these classes can allow you to create advanced state transitions:
+
+| Class Name | Description |
+| ---------- | ----------- |
+| `.accordion-expanding` | Applied when the accordion is actively expanding |
+| `.accordion-expanded` | Applied when the accordion is fully expanded |
+| `.accordion-collapsing` | Applied when the accordion is actively collapsing |
+| `.accordion-collapsed` | Applied when the accordion is fully collapsed |
+
+If you need to target specific pieces of the accordion, we recommend targeting the element directly. For example, if you want to customize the ion-item in your header slot when the accordion is expanded, you can use the following selector:
+
+```css
+ion-accordion.accordion-expanding ion-item[slot="header"],
+ion-accordion.accordion-expanded ion-item[slot="header"] {
+  --color: red;
+}
+```
+
+import AdvancedExpansionStyles from '@site/static/usage/accordion/customization/advanced-expansion-styles/index.md';
+
+<AdvancedExpansionStyles />
 
 ### Icons
 
