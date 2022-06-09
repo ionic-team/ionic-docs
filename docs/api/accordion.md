@@ -131,7 +131,9 @@ If you would like to manage the icon yourself or use an icon that is not an `ion
 
 Regardless of which option you choose, the icon will automatically be rotated when you expand or collapse the accordion.
 
-TODO Playground
+import Icons from '@site/static/usage/accordion/customization/icons/index.md';
+
+<Icons />
 
 ### Theming
 
