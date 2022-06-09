@@ -137,7 +137,11 @@ import Icons from '@site/static/usage/accordion/customization/icons/index.md';
 
 ### Theming
 
-TODO Playground
+Since `ion-accordion` acts as a shell around the header and content elements, you can easily theme the accordion however you would like. You can theme the header by targeting the slotted `ion-item`. Since you are using `ion-item`, you also have access to all of the [ion-item CSS Variables](./item#css-custom-properties) and [ion-item Shadow Parts](./item#css-shadow-parts). Theming the content is also easily achieved by targeting the element that is in the `content` slot.
+
+import Theming from '@site/static/usage/accordion/customization/theming/index.md';
+
+<Theming />
 
 ## Accessibility
 
