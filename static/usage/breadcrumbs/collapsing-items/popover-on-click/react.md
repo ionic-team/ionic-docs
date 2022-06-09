@@ -1,31 +1,21 @@
 ```tsx
-import React, { useState } from 'react';
-import { IonBreadcrumb, IonBreadcrumbs, IonContent, IonItem, IonLabel, IonList, useIonPopover } from '@ionic/react';
-
-const Popover: React.FC<{
-  collapsedBreadcrumbs: HTMLIonBreadcrumbElement[]
-}> = ({ collapsedBreadcrumbs }) => (
-  <IonContent>
-    <IonList>
-      {collapsedBreadcrumbs.map(breadcrumb => (
-        <IonItem href={breadcrumb.href}>
-          <IonLabel>{breadcrumb.textContent}</IonLabel>
-        </IonItem>
-      ))}
-    </IonList>
-  </IonContent>
-);
+import React, { useRef, useState } from 'react';
+import { IonBreadcrumb, IonBreadcrumbs, IonContent, IonItem, IonLabel, IonList, IonPopover } from '@ionic/react';
 
 function Example() {
+  const popover = useRef<HTMLIonPopoverElement>(null);
   const [collapsedBreadcrumbs, setCollapsedBreadcrumbs] = useState<HTMLIonBreadcrumbElement[]>([]);
-  const [present] = useIonPopover(<Popover collapsedBreadcrumbs={collapsedBreadcrumbs} />);
+  const [popoverOpen, setPopoverOpen] = useState(false);
+
+  const openPopover = (e: any) => {
+    setCollapsedBreadcrumbs(e.detail.collapsedBreadcrumbs!);
+    popover.current!.event = e;
+    setPopoverOpen(true);
+  };
 
   return (
     <>
-      <IonBreadcrumbs maxItems={4} onIonCollapsedClick={e => {
-        setCollapsedBreadcrumbs(e.detail.collapsedBreadcrumbs!);
-        present({ event: e });
-      }}>
+      <IonBreadcrumbs maxItems={4} onIonCollapsedClick={openPopover}>
         <IonBreadcrumb href="#home">Home</IonBreadcrumb>
         <IonBreadcrumb href="#electronics">Electronics</IonBreadcrumb>
         <IonBreadcrumb href="#photography">Photography</IonBreadcrumb>
@@ -33,6 +23,17 @@ function Example() {
         <IonBreadcrumb href="#film">Film</IonBreadcrumb>
         <IonBreadcrumb href="#35mm">35 mm</IonBreadcrumb>
       </IonBreadcrumbs>
+      <IonPopover ref={popover} isOpen={popoverOpen} onDidDismiss={() => setPopoverOpen(false)}>
+        <IonContent>
+          <IonList>
+            {collapsedBreadcrumbs.map(breadcrumb => (
+              <IonItem href={breadcrumb.href}>
+                <IonLabel>{breadcrumb.textContent}</IonLabel>
+              </IonItem>
+            ))}
+          </IonList>
+        </IonContent>
+      </IonPopover>
     </>
   );
 }

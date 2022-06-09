@@ -7,4 +7,15 @@
   <ion-breadcrumb href="#film">Film</ion-breadcrumb>
   <ion-breadcrumb href="#35mm">35 mm</ion-breadcrumb>
 </ion-breadcrumbs>
+<ion-popover #popover [isOpen]="isOpen" (didDismiss)="isOpen = false">
+  <ng-template>
+    <ion-content>
+      <ion-list>
+        <ion-item *ngFor="let breadcrumb of collapsedBreadcrumbs" [href]="breadcrumb.href">
+          <ion-label>{{ breadcrumb.textContent }}</ion-label>
+        </ion-item>
+      </ion-list>
+    </ion-content>
+  </ng-template>
+</ion-popover>
 ```

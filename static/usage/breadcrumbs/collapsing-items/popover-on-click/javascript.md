@@ -7,49 +7,32 @@
   <ion-breadcrumb href="#film">Film</ion-breadcrumb>
   <ion-breadcrumb href="#35mm">35 mm</ion-breadcrumb>
 </ion-breadcrumbs>
+<ion-popover>
+  <ion-content>
+    <ion-list></ion-list>
+  </ion-content>
+</ion-popover>
 
 <script>
   const breadcrumbs = document.querySelector('ion-breadcrumbs');
-  breadcrumbs.addEventListener('ionCollapsedClick', presentPopover);
+  const popover = document.querySelector('ion-popover');
+  const popoverList = document.querySelector('ion-popover ion-list');
 
-  class PopoverPage extends HTMLElement {
-    constructor() {
-      super();
-    }
-
-    connectedCallback() {
-      let breadcrumbTemplate = ``;
-      this.collapsedBreadcrumbs.forEach(breadcrumb => {
-        breadcrumbTemplate += `
-          <ion-item href="${breadcrumb.href}">
-            <ion-label>${breadcrumb.textContent}</ion-label>
-          </ion-item>
-        `;
-      });
-
-      this.innerHTML = `
-        <ion-content>
-          <ion-list>
-            ${breadcrumbTemplate}
-          </ion-list>
-        </ion-content>
+  breadcrumbs.addEventListener('ionCollapsedClick', e => {
+    let listHTML = ``;
+    e.detail.collapsedBreadcrumbs.forEach(breadcrumb => {
+      listHTML += `
+        <ion-item href="${breadcrumb.href}">
+          <ion-label>${breadcrumb.textContent}</ion-label>
+        </ion-item>
       `;
-    }
-  }
-
-  customElements.define('popover-page', PopoverPage);
-
-  async function presentPopover(e) {
-    const popover = Object.assign(document.createElement('ion-popover'), {
-      component: 'popover-page',
-      event: e,
-      componentProps: {
-        collapsedBreadcrumbs: e.detail.collapsedBreadcrumbs
-      }
     });
 
-    document.body.appendChild(popover);
-    await popover.present();
-  }
+    popoverList.innerHTML = listHTML;
+    popover.event = e;
+    popover.isOpen = true;
+  });
+
+  popover.addEventListener('didDismiss', () => popover.isOpen = false);
 </script>
 ```
