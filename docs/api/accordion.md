@@ -91,9 +91,13 @@ The `content` slot is used as the part of the accordion that is revealed or hidd
 
 ### Expansion Styles
 
-There are two built in expansion styles: `compact` and `inset`. This expansion style is set via the `expand` property on `ion-accordion-group`. When `expand="inset"`, the accordion group is given a border radius. On `md` mode, the entire accordion will shift down when it is opened.
+There are two built in expansion styles: `compact` and `inset`. This expansion style is set via the `expand` property on `ion-accordion-group`.
 
-TODO Playground
+When `expand="inset"`, the accordion group is given a border radius. On `md` mode, the entire accordion will shift down when it is opened.
+
+import ExpansionStyles from '@site/static/usage/accordion/customization/expansion-styles/index.md';
+
+<ExpansionStyles />
 
 ### Advanced Expansion Styles
 
