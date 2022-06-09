@@ -39,9 +39,12 @@
 
     breadcrumbs.addEventListener('ionCollapsedClick', e => {
       let listHTML = ``;
-      e.detail.collapsedBreadcrumbs.forEach(breadcrumb => {
+      e.detail.collapsedBreadcrumbs.forEach((breadcrumb, i) => {
         listHTML += `
-          <ion-item href="${breadcrumb.href}">
+          <ion-item
+            ${i === e.detail.collapsedBreadcrumbs.length - 1 ? `lines="none"` : ""}
+            href="${breadcrumb.href}"
+          >
             <ion-label>${breadcrumb.textContent}</ion-label>
           </ion-item>
         `;

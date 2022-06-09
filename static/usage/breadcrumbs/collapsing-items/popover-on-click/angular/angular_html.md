@@ -11,7 +11,11 @@
   <ng-template>
     <ion-content>
       <ion-list>
-        <ion-item *ngFor="let breadcrumb of collapsedBreadcrumbs" [href]="breadcrumb.href">
+        <ion-item
+          *ngFor="let breadcrumb of collapsedBreadcrumbs; last as isLast"
+          [href]="breadcrumb.href"
+          [lines]="isLast ? 'none' : null"
+        >
           <ion-label>{{ breadcrumb.textContent }}</ion-label>
         </ion-item>
       </ion-list>

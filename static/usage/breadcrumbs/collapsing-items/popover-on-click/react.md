@@ -26,8 +26,11 @@ function Example() {
       <IonPopover ref={popover} isOpen={popoverOpen} onDidDismiss={() => setPopoverOpen(false)}>
         <IonContent>
           <IonList>
-            {collapsedBreadcrumbs.map(breadcrumb => (
-              <IonItem href={breadcrumb.href}>
+            {collapsedBreadcrumbs.map((breadcrumb, i) => (
+              <IonItem
+                href={breadcrumb.href}
+                lines={i === collapsedBreadcrumbs.length - 1 ? "none" : undefined}
+              >
                 <IonLabel>{breadcrumb.textContent}</IonLabel>
               </IonItem>
             ))}

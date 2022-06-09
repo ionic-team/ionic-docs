@@ -11,7 +11,11 @@
   <ion-popover :is-open="popoverOpen" :event="event" @didDismiss="popoverOpen = false">
     <ion-content>
       <ion-list>
-        <ion-item v-for="breadcrumb in collapsedBreadcrumbs" :href="breadcrumb.href">
+        <ion-item
+          v-for="(breadcrumb, i) in collapsedBreadcrumbs"
+          :href="breadcrumb.href"
+          :lines="i === collapsedBreadcrumbs.length - 1 ? 'none' : undefined"
+        >
           <ion-label>{{ breadcrumb.textContent }}</ion-label>
         </ion-item>
       </ion-list>
