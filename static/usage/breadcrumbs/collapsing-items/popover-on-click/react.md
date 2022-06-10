@@ -7,8 +7,8 @@ function Example() {
   const [collapsedBreadcrumbs, setCollapsedBreadcrumbs] = useState<HTMLIonBreadcrumbElement[]>([]);
   const [popoverOpen, setPopoverOpen] = useState(false);
 
-  const openPopover = (e: any) => {
-    setCollapsedBreadcrumbs(e.detail.collapsedBreadcrumbs!);
+  const openPopover = (e: Event) => {
+    setCollapsedBreadcrumbs((e as CustomEvent).detail.collapsedBreadcrumbs);
     popover.current!.event = e;
     setPopoverOpen(true);
   };
