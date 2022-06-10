@@ -7,7 +7,6 @@ import { Component, ViewChild } from '@angular/core';
 })
 export class AppComponent {
   @ViewChild('popover') popover;
-  constructor() {}
 
   isOpen = false;
   collapsedBreadcrumbs: HTMLIonBreadcrumbElement[] = [];

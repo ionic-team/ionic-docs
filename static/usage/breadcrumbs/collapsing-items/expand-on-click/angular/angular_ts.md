@@ -6,8 +6,6 @@ import { Component, ViewChild } from '@angular/core';
   templateUrl: 'app.component.html',
 })
 export class AppComponent {
-  constructor() {}
-
   maxBreadcrumbs = 4;
 
   expandBreadcrumbs() {
