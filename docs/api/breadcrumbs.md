@@ -51,6 +51,54 @@ import CustomSeparators from '@site/static/usage/breadcrumbs/icons/custom-separa
 
 <CustomSeparators />
 
+## Collapsing Items
+
+### Max Items
+
+If there are more items than the value of `maxItems`, the breadcrumbs will be collapsed. By default, only the first and last items will be shown.
+
+import MaxItems from '@site/static/usage/breadcrumbs/collapsing-items/max-items/index.md';
+
+<MaxItems />
+
+### Items Before or After Collapse
+
+Once the items are collapsed, the number of items to show can be controlled by the `itemsBeforeCollapse` and `itemsAfterCollapse` properties.
+
+import ItemsBeforeAfter from '@site/static/usage/breadcrumbs/collapsing-items/items-before-after/index.md';
+
+<ItemsBeforeAfter />
+
+### Collapsed Indicator Click -- Expand Breadcrumbs
+
+Clicking the collapsed indicator will fire the `ionCollapsedClick` event. This can be used to, for example, expand the breadcrumbs.
+
+import ExpandOnClick from '@site/static/usage/breadcrumbs/collapsing-items/expand-on-click/index.md';
+
+<ExpandOnClick />
+
+### Collapsed Indicator Click -- Present Popover
+
+The `ionCollapsedClick` event can also be used to present an overlay (in this case, an `ion-popover`) showing the hidden breadcrumbs.
+
+import PopoverOnClick from '@site/static/usage/breadcrumbs/collapsing-items/popover-on-click/index.md';
+
+<PopoverOnClick />
+
+## Styling
+
+## Color Property
+
+import ColorProp from '@site/static/usage/breadcrumbs/styling/color/index.md';
+
+<ColorProp />
+
+## CSS Properties
+
+import CSSProps from '@site/static/usage/breadcrumbs/styling/css-props/index.md';
+
+<CSSProps />
+
 
 <Props />
 <Events />
