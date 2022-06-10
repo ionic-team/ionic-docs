@@ -24,11 +24,11 @@
 </template>
 
 <script lang="ts">
-import { IonBreadcrumb, IonBreadcrumbs, IonContent, IonItem, IonLabel, IonList } from '@ionic/vue';
+import { IonBreadcrumb, IonBreadcrumbs, IonContent, IonItem, IonLabel, IonList, IonPopover } from '@ionic/vue';
 import Popover from './Popover.vue';
 
 export default {
-  components: { IonBreadcrumb, IonBreadcrumbs, IonContent, IonItem, IonLabel, IonList },
+  components: { IonBreadcrumb, IonBreadcrumbs, IonContent, IonItem, IonLabel, IonList, IonPopover },
   data() {
     return {
       popoverOpen: false,
