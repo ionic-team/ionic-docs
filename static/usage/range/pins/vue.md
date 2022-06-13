@@ -1,7 +1,7 @@
 ```html
 <template>
   <ion-content>
-    <ion-range></ion-range>
+    <ion-range :pin="true" :pin-formatter="pinFormatter"></ion-range>
   </ion-content>
 </template>
 
@@ -11,6 +11,11 @@
 
   export default defineComponent({
     components: { IonContent, IonRange },
+    setup() {
+      return {
+        pinFormatter: (value: number) => `${value}%`,
+      };
+    },
   });
 </script>
 ```

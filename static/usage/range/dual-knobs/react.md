@@ -4,7 +4,13 @@ import { IonContent, IonRange } from '@ionic/react';
 function Example() {
   return (
     <IonContent>
-      <IonRange></IonRange>
+      <IonRange
+        dualKnobs={true}
+        value={{
+          lower: 20,
+          upper: 80,
+        }}
+      ></IonRange>
     </IonContent>
   );
 }

@@ -47,17 +47,33 @@ import SlotsPlayground from '@site/static/usage/range/slots/index.md';
 
 <SlotsPlayground />
 
+## Dual Knobs
+
+Dual knobs introduce two knob controls that users can use to select a value at a lower and upper bounds. When selected, the Range will emit an `ionChange` event with a [RangeValue](#rangevalue), containing the upper and lower values selected.
+
+import DualKnobs from '@site/static/usage/range/dual-knobs/index.md';
+
+<DualKnobs />
+
 ## Pins
 
-TODO: Playground Example
+The `pin` attribute will display the value of the Range above the knob when dragged. This allows users to select a specific value within the Range.
 
-## Ticks
+With the `pinFormatter` function, developers can customize the formatting of the range value to the user.
 
-TODO: Playground Example
+import Pins from '@site/static/usage/range/pins/index.md';
 
-## Snapping
+<Pins />
 
-TODO: Playground Example
+## Snapping & Ticks
+
+Ticks show indications for each available value on the Range. In order to use ticks, developers must set both `snaps` and the `ticks` property to `true`. 
+
+With snapping enabled, the Range knob will snap to the nearest available value as the knob is dragged and released. 
+
+import SnappingTicks from '@site/static/usage/range/snapping-ticks/index.md';
+
+<SnappingTicks />
 
 ## Event Handling
 

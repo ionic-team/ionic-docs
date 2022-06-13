@@ -4,7 +4,7 @@ import { IonContent, IonRange } from '@ionic/react';
 function Example() {
   return (
     <IonContent>
-      <IonRange></IonRange>
+      <IonRange ticks={true} snaps={true} min={0} max={10}></IonRange>
     </IonContent>
   );
 }

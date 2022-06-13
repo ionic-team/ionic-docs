@@ -1,7 +1,7 @@
 ```html
 <template>
   <ion-content>
-    <ion-range></ion-range>
+    <ion-range :dual-knobs="true" :value="{ lower: 20, upper: 80 }"></ion-range>
   </ion-content>
 </template>
 
