@@ -91,9 +91,37 @@ The `content` slot is used as the part of the accordion that is revealed or hidd
 
 ### Expansion Styles
 
-There are two built in expansion styles: `compact` and `inset`. This expansion style is set via the `expand` property on `ion-accordion-group`. When `expand="inset"`, the accordion group is given a border radius. On `md` mode, the entire accordion will shift down when it is opened.
+There are two built in expansion styles: `compact` and `inset`. This expansion style is set via the `expand` property on `ion-accordion-group`.
 
-TODO Playground
+When `expand="inset"`, the accordion group is given a border radius. On `md` mode, the entire accordion will shift down when it is opened.
+
+import ExpansionStyles from '@site/static/usage/accordion/customization/expansion-styles/index.md';
+
+<ExpansionStyles />
+
+### Advanced Expansion Styles
+
+You can customize the expansion behavior by styling based on the accordion's state. There are four state classes applied to `ion-accordion`. Styling using these classes can allow you to create advanced state transitions:
+
+| Class Name | Description |
+| ---------- | ----------- |
+| `.accordion-expanding` | Applied when the accordion is actively expanding |
+| `.accordion-expanded` | Applied when the accordion is fully expanded |
+| `.accordion-collapsing` | Applied when the accordion is actively collapsing |
+| `.accordion-collapsed` | Applied when the accordion is fully collapsed |
+
+If you need to target specific pieces of the accordion, we recommend targeting the element directly. For example, if you want to customize the ion-item in your header slot when the accordion is expanded, you can use the following selector:
+
+```css
+ion-accordion.accordion-expanding ion-item[slot="header"],
+ion-accordion.accordion-expanded ion-item[slot="header"] {
+  --color: red;
+}
+```
+
+import AdvancedExpansionStyles from '@site/static/usage/accordion/customization/advanced-expansion-styles/index.md';
+
+<AdvancedExpansionStyles />
 
 ### Icons
 
@@ -103,11 +131,17 @@ If you would like to manage the icon yourself or use an icon that is not an `ion
 
 Regardless of which option you choose, the icon will automatically be rotated when you expand or collapse the accordion.
 
-TODO Playground
+import Icons from '@site/static/usage/accordion/customization/icons/index.md';
+
+<Icons />
 
 ### Theming
 
-TODO Playground
+Since `ion-accordion` acts as a shell around the header and content elements, you can easily theme the accordion however you would like. You can theme the header by targeting the slotted `ion-item`. Since you are using `ion-item`, you also have access to all of the [ion-item CSS Variables](./item#css-custom-properties) and [ion-item Shadow Parts](./item#css-shadow-parts). Theming the content is also easily achieved by targeting the element that is in the `content` slot.
+
+import Theming from '@site/static/usage/accordion/customization/theming/index.md';
+
+<Theming />
 
 ## Accessibility
 
