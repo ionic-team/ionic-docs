@@ -231,6 +231,12 @@ Certain `presentation` options have both grid and wheel styles that developers c
 | `time-date`    | Yes             | Yes              |
 | `year`         | No              | Yes              |
 
+The example below shows the wheel picker with `presentation="date-time"`.
+
+import Wheel from '@site/static/usage/datetime/presentation/wheel/index.md';
+
+<Wheel />
+
 ## Titles
 
 By default, `ion-datetime` does not show any header or title associated with the component. Developers can use the `showDefaultTitle` property to show the default title/header configuration. They can also use the `title` slot to customize what is rendered in the header.
