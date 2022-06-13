@@ -29,15 +29,27 @@ import Basic from '@site/static/usage/accordion/basic/index.md';
 
 ## Toggle Accordions
 
-TODO Playground
+Which accordion is open is controlled by setting the `value` property on `ion-accordion-group`. Setting this property allows developers to programmatically expand or collapse certain accordions. 
+
+import Toggle from '@site/static/usage/accordion/toggle/index.md';
+
+<Toggle />
 
 ## Listen for Accordion State Changes
 
-TODO Playground
+Developers can listen for the `ionChange` event to be notified when accordions expand or collapse.
+
+import ListenChanges from '@site/static/usage/accordion/listen-changes/index.md';
+
+<ListenChanges />
 
 ## Multiple Accordions
 
-TODO  Playground
+Developers can allow multiple accordions to be open at once with the `multiple` property.
+
+import Multiple from '@site/static/usage/accordion/multiple/index.md';
+
+<Multiple />
 
 ## Disabling Accordions
 
