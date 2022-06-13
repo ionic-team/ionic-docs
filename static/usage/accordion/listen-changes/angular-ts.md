@@ -11,7 +11,6 @@ export class AppComponent {
 
   accordionGroupChange = (ev: any) => {
     const nativeEl = this.listenerOut.nativeElement;
-    console.log('test',this.listenerOut)
     if (!nativeEl) { return; }
 
     const collapsedItems = this.values.filter(value => value !== ev.detail.value);
