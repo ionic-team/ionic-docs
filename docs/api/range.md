@@ -50,7 +50,11 @@ TODO: Playground Example
 
 ## Dual Knobs
 
-TODO: Playground Example
+Dual knobs introduce two knob controls that users can use to select a value at a lower and upper bounds. When selected, the Range will emit an `ionChange` event with a [RangeValue](#rangevalue), containing the upper and lower values selected.
+
+import DualKnobs from '@site/static/usage/range/dual-knobs/index.md';
+
+<DualKnobs />
 
 ## Pins
 
