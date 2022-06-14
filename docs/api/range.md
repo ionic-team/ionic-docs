@@ -1,8 +1,6 @@
 ---
 title: "ion-range"
 hide_table_of_contents: true
-demoUrl: "/docs/demos/api/range/index.html"
-demoSourceUrl: "https://github.com/ionic-team/ionic-docs/tree/main/static/demos/api/range/index.html"
 ---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -33,21 +31,85 @@ import APITOCInline from '@components/page/api/APITOCInline';
 />
 
 
+The Range slider lets users select from a range of values by moving the slider knob. By default one knob controls the value of the range. This behavior can be customized using [dual knobs](#dual-knobs).
 
-The Range slider lets users select from a range of values by moving
-the slider knob. It can accept dual knobs, but by default one knob
-controls the value of the range.
+By default the Range slider has a minimum value of `0` and a maximum value of `100`. This can be configured with the `min` and `max` properties.
+
+import Basic from '@site/static/usage/range/basic/index.md';
+
+<Basic />
 
 ## Range Labels
 
-Labels can be placed on either side of the range by adding the
-`slot="start"` or `slot="end"` to the element. The element doesn't have to
-be an `ion-label`, it can be added to any element to place it to the
-left or right of the range.
+Labels and custom UI elements can be slotted on either side of the range by adding `slot="start"` or `slot="end"` to the element. The element can be any element, such as an `ion-label`, `ion-icon` or a `div`. If the directionality of the document is set to left to right, the contents slotted to the `start` position will display to the left of the range, where as contents slotted to the `end` position will display to the right of the range. In right to left (rtl) directionality, the contents slotted to the `start` position will display to the right of the range, where as contents slotted to the `end` position` will display to the left of the range.
 
-## Custom Pin Formatters
+import SlotsPlayground from '@site/static/usage/range/slots/index.md';
 
-When using a pin, the default behavior is to round the value that gets displayed using `Math.round()`. This behavior can be customized by passing in a formatter function to the `pinFormatter` property. See the [Usage](#usage) section for an example.
+<SlotsPlayground />
+
+## Dual Knobs
+
+Dual knobs introduce two knob controls that users can use to select a value at a lower and upper bounds. When selected, the Range will emit an `ionChange` event with a [RangeValue](#rangevalue), containing the upper and lower values selected.
+
+import DualKnobs from '@site/static/usage/range/dual-knobs/index.md';
+
+<DualKnobs />
+
+## Pins
+
+The `pin` attribute will display the value of the Range above the knob when dragged. This allows users to select a specific value within the Range.
+
+With the `pinFormatter` function, developers can customize the formatting of the range value to the user.
+
+import Pins from '@site/static/usage/range/pins/index.md';
+
+<Pins />
+
+## Snapping & Ticks
+
+Ticks show indications for each available value on the Range. In order to use ticks, developers must set both `snaps` and the `ticks` property to `true`. 
+
+With snapping enabled, the Range knob will snap to the nearest available value as the knob is dragged and released. 
+
+import SnappingTicks from '@site/static/usage/range/snapping-ticks/index.md';
+
+<SnappingTicks />
+
+## Event Handling
+
+### Using `ionChange`
+
+The `ionChange` event emits as the Range knob value changes. 
+
+import IonChangeEvent from '@site/static/usage/range/ion-change-event/index.md';
+
+<IonChangeEvent />
+
+### Using `ionKnobMoveStart` and `ionKnobMoveEnd`
+
+The `ionKnobMoveStart` event emits when the Range knob begins dragging, whether through mouse drag, touch gesture or keyboard interaction. Inversely, `ionKnobMoveEnd` emits when the Range knob is released. Both events emit with the `RangeValue` type and work in combination with the `dualKnobs` property.
+
+import IonKnobMoveEvent from '@site/static/usage/range/ion-knob-move-event/index.md';
+
+<IonKnobMoveEvent />
+
+## Styling
+
+### Styling with CSS Variables
+
+Range includes [CSS Variables](#css-custom-properties) to quickly theme and customize the appearance of the Range component to match your application's design.
+
+import CssVariablesPlayground from '@site/static/usage/range/css-variables/index.md';
+
+<CssVariablesPlayground />
+
+### Styling with CSS Shadow Parts
+
+Range includes [CSS Shadow Parts](#css-shadow-parts) to allow complete customization of specific element nodes within the Range component. CSS Shadow Parts offer the most customization capabilities and are the recommended approach when requiring advance styling with the Range component.
+
+import CssShadowPartsPlayground from '@site/static/usage/range/css-shadow-parts/index.md';
+
+<CssShadowPartsPlayground />
 
 ## Interfaces
 
@@ -94,322 +156,6 @@ interface RangeCustomEvent extends CustomEvent {
 type RangeValue = number | { lower: number, upper: number };
 ```
 
-
-
-## Usage
-
-<Tabs groupId="framework" defaultValue="angular" values={[{ value: 'angular', label: 'Angular' }, { value: 'javascript', label: 'Javascript' }, { value: 'react', label: 'React' }, { value: 'stencil', label: 'Stencil' }, { value: 'vue', label: 'Vue' }]}>
-
-<TabItem value="angular">
-
-```html
-<ion-list>
-  <ion-item>
-    <ion-range color="danger" [pin]="true"></ion-range>
-  </ion-item>
-
-  <ion-item>
-    <ion-range min="-200" max="200" color="secondary">
-      <ion-label slot="start">-200</ion-label>
-      <ion-label slot="end">200</ion-label>
-    </ion-range>
-  </ion-item>
-
-  <ion-item>
-    <ion-range min="20" max="80" step="2">
-      <ion-icon size="small" slot="start" name="sunny"></ion-icon>
-      <ion-icon slot="end" name="sunny"></ion-icon>
-    </ion-range>
-  </ion-item>
-
-  <ion-item>
-    <ion-range min="1000" max="2000" step="100" snaps="true" color="secondary"></ion-range>
-  </ion-item>
-
-  <ion-item>
-    <ion-range min="1000" max="2000" step="100" snaps="true" ticks="false" color="secondary"></ion-range>
-  </ion-item>
-
-  <ion-item>
-    <ion-range dualKnobs="true" min="21" max="72" step="3" snaps="true"></ion-range>
-  </ion-item>
-  
-  <ion-item>
-    <ion-range min="0" max="100" [pinFormatter]="customFormatter" [pin]="true"></ion-range>
-  </ion-item>
-</ion-list>
-```
-
-```typescript
-import { Component } from '@angular/core';
-
-@Component({…})
-export class MyComponent {
-  constructor() {}
-  
-  public customFormatter(value: number) {
-    return `${value}%`
-  }
-}
-```
-
-</TabItem>
-
-
-<TabItem value="javascript">
-
-```html
-<ion-list>
-  <ion-item>
-    <ion-range color="danger" pin="true"></ion-range>
-  </ion-item>
-
-  <ion-item>
-    <ion-range min="-200" max="200" color="secondary">
-      <ion-label slot="start">-200</ion-label>
-      <ion-label slot="end">200</ion-label>
-    </ion-range>
-  </ion-item>
-
-  <ion-item>
-    <ion-range min="20" max="80" step="2">
-      <ion-icon size="small" slot="start" name="sunny"></ion-icon>
-      <ion-icon slot="end" name="sunny"></ion-icon>
-    </ion-range>
-  </ion-item>
-
-  <ion-item>
-    <ion-range min="1000" max="2000" step="100" snaps="true" color="secondary"></ion-range>
-  </ion-item>
-
-  <ion-item>
-    <ion-range min="1000" max="2000" step="100" snaps="true" ticks="false" color="secondary"></ion-range>
-  </ion-item>
-
-  <ion-item>
-    <ion-range dual-knobs="true" min="21" max="72" step="3" snaps="true"></ion-range>
-  </ion-item>
-  
-  <ion-item>
-    <ion-range min="0" max="100" pin="true" id="custom-range"></ion-range>
-  </ion-item>
-</ion-list>
-
-<script>
-  const customRange = document.querySelector('#custom-range');
-  customRange.pinFormatter = (value) => `${value}%`; 
-</script>
-```
-
-
-</TabItem>
-
-
-<TabItem value="react">
-
-```tsx
-import React, { useState } from 'react';
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonList, IonItem, IonRange, IonLabel, IonIcon, IonItemDivider } from '@ionic/react';
-import { sunny } from 'ionicons/icons';
-import { RangeValue } from '@ionic/core';
-
-export const RangeExamples: React.FC = () => {
-
-  const [value, setValue] = useState(0);
-  const [rangeValue, setRangeValue] = useState<{
-    lower: number;
-    upper: number;
-  }>({ lower: 0, upper: 0 });
-  
-  const customFormatter = (value: number) => `${value}%`;
-
-  return (
-    <IonPage>
-      <IonHeader>
-        <IonToolbar>
-          <IonTitle>IonRange Examples</IonTitle>
-        </IonToolbar>
-      </IonHeader>
-      <IonContent>
-        <IonList>
-          <IonItemDivider>Default</IonItemDivider>
-          <IonItem>
-            <IonRange pin={true} value={value} onIonChange={e => setValue(e.detail.value as number)} />
-          </IonItem>
-          <IonItem>
-            <IonLabel>Value: {value}</IonLabel>
-          </IonItem>
-
-          <IonItemDivider>Min & Max</IonItemDivider>
-          <IonItem>
-            <IonRange min={-200} max={200} color="secondary">
-              <IonLabel slot="start">-200</IonLabel>
-              <IonLabel slot="end">200</IonLabel>
-            </IonRange>
-          </IonItem>
-
-          <IonItemDivider>Icons</IonItemDivider>
-          <IonItem>
-            <IonRange min={20} max={80} step={2}>
-              <IonIcon size="small" slot="start" icon={sunny} />
-              <IonIcon slot="end" icon={sunny} />
-            </IonRange>
-          </IonItem>
-
-          <IonItemDivider>With Snaps & Ticks</IonItemDivider>
-          <IonItem>
-            <IonRange min={1000} max={2000} step={100} snaps={true} color="secondary" />
-          </IonItem>
-
-          <IonItemDivider>With Snaps & No Ticks</IonItemDivider>
-          <IonItem>
-            <IonRange min={1000} max={2000} step={100} snaps={true} ticks={false} color="secondary" />
-          </IonItem>
-
-          <IonItemDivider>Dual Knobs</IonItemDivider>
-          <IonItem>
-            <IonRange dualKnobs={true} min={0} max={60} step={3} snaps={true} onIonChange={e => setRangeValue(e.detail.value as any)} />
-          </IonItem>
-          <IonItem>
-            <IonLabel>Value: lower: {rangeValue.lower} upper: {rangeValue.upper}</IonLabel>
-          </IonItem>
-          
-          <IonItem>
-            <IonRange min={0} max={100} pinFormatter={customFormatter} pin={true}></IonRange>
-          </IonItem>
-        </IonList>
-      </IonContent>
-    </IonPage>
-  );
-};
-```
-
-
-</TabItem>
-
-
-<TabItem value="stencil">
-
-```tsx
-import { Component, h } from '@stencil/core';
-
-@Component({
-  tag: 'range-example',
-  styleUrl: 'range-example.css'
-})
-export class RangeExample {
-  private customFormatter = (value: number) => `${value}%`;
-  
-  render() {
-    return [
-      <ion-list>
-        <ion-item>
-          <ion-range color="danger" pin={true}></ion-range>
-        </ion-item>
-
-        <ion-item>
-          <ion-range min={-200} max={200} color="secondary">
-            <ion-label slot="start">-200</ion-label>
-            <ion-label slot="end">200</ion-label>
-          </ion-range>
-        </ion-item>
-
-        <ion-item>
-          <ion-range min={20} max={80} step={2}>
-            <ion-icon size="small" slot="start" name="sunny"></ion-icon>
-            <ion-icon slot="end" name="sunny"></ion-icon>
-          </ion-range>
-        </ion-item>
-
-        <ion-item>
-          <ion-range min={1000} max={2000} step={100} snaps={true} color="secondary"></ion-range>
-        </ion-item>
-
-        <ion-item>
-          <ion-range min={1000} max={2000} step={100} snaps={true} ticks={false} color="secondary"></ion-range>
-        </ion-item>
-
-        <ion-item>
-          <ion-range dualKnobs={true} min={21} max={72} step={3} snaps={true}></ion-range>
-        </ion-item>
-        
-        <ion-item>
-          <ion-range min="0" max="100" pinFormatter={this.customFormatter} pin={true}></ion-range>
-        </ion-item>
-      </ion-list>
-    ];
-  }
-}
-```
-
-
-</TabItem>
-
-
-<TabItem value="vue">
-
-```html
-<template>
-  <ion-list>
-    <ion-item>
-      <ion-range color="danger" :pin="true"></ion-range>
-    </ion-item>
-
-    <ion-item>
-      <ion-range min="-200" max="200" color="secondary">
-        <ion-label slot="start">-200</ion-label>
-        <ion-label slot="end">200</ion-label>
-      </ion-range>
-    </ion-item>
-
-    <ion-item>
-      <ion-range min="20" max="80" step="2">
-        <ion-icon size="small" slot="start" name="sunny"></ion-icon>
-        <ion-icon slot="end" name="sunny"></ion-icon>
-      </ion-range>
-    </ion-item>
-
-    <ion-item>
-      <ion-range min="1000" max="2000" step="100" snaps="true" color="secondary"></ion-range>
-    </ion-item>
-
-    <ion-item>
-      <ion-range min="1000" max="2000" step="100" snaps="true" ticks="false" color="secondary"></ion-range>
-    </ion-item>
-
-    <ion-item>
-      <ion-range ref="rangeDualKnobs" dual-knobs="true" min="21" max="72" step="3" snaps="true"></ion-range>
-    </ion-item>
-    
-    <ion-item>
-      <ion-range min="0" max="100" :pin-formatter="customFormatter" :pin="true"></ion-range>
-    </ion-item>
-  </ion-list>
-</template>
-
-<script lang="ts">
-import { IonItem, IonLabel, IonList, IonRange } from '@ionic/vue';
-import { defineComponent } from 'vue';
-
-export default defineComponent({
-  components: {  IonItem, IonLabel, IonList, IonRange },
-  mounted() {
-    // Sets initial value for dual-knob ion-range
-    this.$refs.rangeDualKnobs.value = { lower: 24, upper: 42 };
-  },
-  setup() {
-    const customFormatter = (value: number) => `${value}%`;
-    
-    return { customFormatter };
-  }
-});
-</script>
-```
-
-
-</TabItem>
-
-</Tabs>
 
 <Props />
 <Events />
