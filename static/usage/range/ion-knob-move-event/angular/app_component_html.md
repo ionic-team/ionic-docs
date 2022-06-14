@@ -1,9 +1,6 @@
 ```html
 <ion-content>
-  <ion-range
-    (ionKnobMoveStart)="onIonKnobMoveStart($any($event))"
-    (ionKnobMoveEnd)="onIonKnobMoveEnd($any($event))"
-  ></ion-range>
+  <ion-range (ionKnobMoveStart)="onIonKnobMoveStart($event)" (ionKnobMoveEnd)="onIonKnobMoveEnd($event)"></ion-range>
   <div>
     <ion-label>ionKnobMoveStart: {{ moveStart }}</ion-label>
   </div>
