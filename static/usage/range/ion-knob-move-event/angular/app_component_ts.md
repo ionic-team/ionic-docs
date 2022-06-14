@@ -13,12 +13,12 @@ export class AppComponent {
   moveStart: RangeValue;
   moveEnd: RangeValue;
 
-  onIonKnobMoveStart(ev: RangeCustomEvent) {
-    this.moveStart = ev.detail.value;
+  onIonKnobMoveStart(ev: Event) {
+    this.moveStart = (ev as RangeCustomEvent).detail.value;
   }
 
-  onIonKnobMoveEnd(ev: RangeCustomEvent) {
-    this.moveEnd = ev.detail.value;
+  onIonKnobMoveEnd(ev: Event) {
+    this.moveEnd = (ev as RangeCustomEvent).detail.value;
   }
 }
 ```

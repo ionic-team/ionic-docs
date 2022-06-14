@@ -12,8 +12,8 @@ import { RangeValue } from '@ionic/core';
 export class AppComponent {
   lastEmittedValue: RangeValue;
 
-  onIonChange(ev: RangeCustomEvent) {
-    this.lastEmittedValue = ev.detail.value;
+  onIonChange(ev: Event) {
+    this.lastEmittedValue = (ev as RangeCustomEvent).detail.value;
   }
 }
 ```
