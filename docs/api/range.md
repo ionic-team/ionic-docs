@@ -79,11 +79,19 @@ import SnappingTicks from '@site/static/usage/range/snapping-ticks/index.md';
 
 ### Using `ionChange`
 
-TODO: Playground Example
+The `ionChange` event emits as the Range knob value changes. 
+
+import IonChangeEvent from '@site/static/usage/range/ion-change-event/index.md';
+
+<IonChangeEvent />
 
 ### Using `ionKnobMoveStart` and `ionKnobMoveEnd`
 
-TODO: Playground Example
+The `ionKnobMoveStart` event emits when the Range knob begins dragging, whether through mouse drag, touch gesture or keyboard interaction. Inversely, `ionKnobMoveEnd` emits when the Range knob is released. Both events emit with the `RangeValue` type and work in combination with the `dualKnobs` property.
+
+import IonKnobMoveEvent from '@site/static/usage/range/ion-knob-move-event/index.md';
+
+<IonKnobMoveEvent />
 
 ## Styling
 
