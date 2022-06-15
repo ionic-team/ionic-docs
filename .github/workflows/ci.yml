@@ -19,9 +19,9 @@ jobs:
         with:
           path:
             node_modules
-          key: ${{ runner.os }}-v3-dependencies-${{ hashFiles('**/package-lock.json') }}
+          key: ${{ runner.os }}-v4-dependencies-${{ hashFiles('**/package-lock.json') }}
           restore-keys: |
-            ${{ runner.os }}-v3-dependencies-
+            ${{ runner.os }}-v4-dependencies-
 
       # Lintとテストの実行
       - name: npm install, build
