@@ -26,7 +26,7 @@ jobs:
       # Lintとテストの実行
       - name: npm install, build
         run: |
-          npm ci
+          npm install --legacy-peer-deps
           npm run prebuild
           npm run build:ci
 
