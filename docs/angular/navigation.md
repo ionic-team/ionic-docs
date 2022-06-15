@@ -123,6 +123,18 @@ export class LoginComponent {
 相対URLを使用したナビゲーションに関するメモ：現在、複数のナビゲーションスタックをサポートするために、相対URLはサポートされていません。
 :::
 
+### Navigating using LocationStrategy.historyGo
+
+Angular Router has a [LocationStrategy.historyGo](https://angular.io/api/common/LocationStrategy#historyGo) method that allows developers to move forward or backward through the application history. Let's take a look at an example.
+
+Say you have the following application history:
+
+`/pageA` --> `/pageB` --> `/pageC`
+
+If you were to call `LocationStrategy.historyGo(-2)` on `/pageC`, you would be brought back to `/pageA`. If you then called `LocationStrategy.historyGo(2)`, you would be brought to `/pageC`.
+
+An key characteristic of `LocationStrategy.historyGo()` is that it expects your application history to be linear. This means that `LocationStrategy.historyGo()` should not be used in applications that make use of non-linear routing. See [Linear Routing versus Non-Linear Routing](#linear-routing-versus-non-linear-routing) for more information.
+
 ## Lazy loading routes
 
 現在のルート設定では、すべてのComponentが、ルートとなる `app.module` と同じ `chunk` に含まれているので理想的ではありません。代わりに、ルータにはコンポーネントを独自の `chunk` に分離できるように設定されています。
@@ -170,7 +182,127 @@ import { LoginComponent } from './login.component';
 
 If you would prefer to get hands on with the concepts and code described above, please checkout our [live example](https://stackblitz.com/edit/ionic-angular-routing?file=src/app/app-routing.module.ts) of the topics above on StackBlitz.
 
-## タブの利用方法
+## Linear Routing versus Non-Linear Routing
+
+### Linear Routing
+
+If you have built a web app that uses routing, you likely have used linear routing before. Linear routing means that you can move forward or backward through the application history by pushing and popping pages.
+
+The following is an example of linear routing in a mobile app:
+
+<video
+  style={{
+    'margin': '40px auto',
+    'display': 'flex'
+  }}
+  width="400"
+  src={useBaseUrl('video/linear-routing-demo.mp4')}
+  controls
+></video>
+
+The application history in this example has the following path:
+
+`Accessibility` --> `VoiceOver` --> `Speech`
+
+When we press the back button, we follow that same routing path except in reverse. Linear routing is helpful in that it allows for simple and predictable routing behaviors. It also means we can use router Angular Router APIs such as [LocationStrategy.historyGo()](#navigating-using-locationstrategy).
+
+The downside of linear routing is that it does not allow for complex user experiences such as tab views. This is where non-linear routing comes into play.
+
+### Non-Linear Routing
+
+Non-linear routing is a concept that may be new to many web developers learning to build mobile apps with Ionic.
+
+Non-linear routing means that the view that the user should go back to is not necessarily the previous view that was displayed on the screen.
+
+The following is an example of non-linear routing:
+
+<video
+  style={{
+    'margin': '40px auto',
+    'display': 'flex'
+  }}
+  width="400"
+  src={useBaseUrl('video/non-linear-routing-demo.mp4')}
+  controls
+></video>
+
+In the example above, we start on the `Originals` tab. Tapping a card brings us to the `Ted Lasso` view within the `Originals` tab.
+
+From here, we switch to the `Search` tab. Then, we tap the `Originals` tab again and are brought back to the `Ted Lasso` view. At this point, we have started using non-linear routing.
+
+Why is this non-linear routing? The previous view we were on was the `Search` view. However, pressing the back button on the `Ted Lasso` view should bring us back to the root `Originals` view. This happens because each tab in a mobile app is treated as its own stack. The [Working with Tabs](#working-with-tabs) sections goes over this in more detail.
+
+If tapping the back button simply called `LocationStrategy.historyGo(-1)` from the `Ted Lasso` view, we would be brought back to the `Search` view which is not correct.
+
+Non-linear routing allows for sophisticated user flows that linear routing cannot handle. However, certain linear routing APIs such as `LocationStrategy.historyGo()` cannot be used in this non-linear environment. This means that `LocationStrategy.historyGo()` should not be used when using tabs or nested outlets.
+
+### Which one should I choose?
+
+We recommend keeping your application as simple as possible until you need to add non-linear routing. Non-linear routing is very powerful, but it also adds a considerable amount of complexity to mobile applications.
+
+The two most common uses of non-linear routing is with tabs and nested `ion-router-outlet`s. We recommend only using non-linear routing if your application meets the tabs or nested router outlet use cases.
+
+For more on tabs, please see [Working with Tabs](#working-with-tabs).
+
+For more on nested router outlets, please see [Nested Routes](#nested-routes).
+
+## Shared URLs versus Nested Routes
+
+A common point of confusion when setting up routing is deciding between shared URLs or nested routes. This part of the guide will explain both and help you decide which one to use.
+
+### Shared URLs
+
+Shared URLs is a route configuration where routes have pieces of the URL in common. The following is an example of a shared URL configuration:
+
+```tsx
+const routes: Routes = [
+  {
+    path: 'dashboard',
+    component: DashboardMainPage,
+  },
+  {
+    path: 'dashboard/stats',
+    component: DashboardStatsPage,
+  },
+];
+```
+
+The above routes are considered "shared" because they reuse the `dashboard` piece of the URL.
+
+### Nested Routes
+
+Nested Routes is a route configuration where routes are listed as children of other routes. The following is an example of a nested route configuration:
+
+```tsx
+const routes: Routes = [
+  {
+    path: 'dashboard',
+    component: DashboardRouterOutlet,
+    children: [
+      {
+        path: '',
+        component: DashboardMainPage,
+      },
+      {
+        path: 'stats',
+        component: DashboardStatsPage,
+      },
+    ],
+  },
+];
+```
+
+The above routes are nested because they are in the `children` array of the parent route. Notice that the parent route renders the `DashboardRouterOutlet` component. When you nest routes, you need to render another instance of `ion-router-outlet`.
+
+### Which one should I choose?
+
+Shared URLs are great when you want to transition from page A to page B while preserving the relationship between the two pages in the URL. In our previous example, a button on the `/dashboard` page could transition to the `/dashboard/stats` page. The relationship between the two pages is preserved because of a) the page transition and b) the url.
+
+Nested routes should be used when you want to render content in outlet A while also rendering sub-content inside of a nested outlet B. The most common use case you will run into is tabs. When you load up a tabs Ionic starter application, you will see `ion-tab-bar` and `ion-tabs` components rendered in the first `ion-router-outlet`. The `ion-tabs` component renders another `ion-router-outlet` which is responsible for rendering the contents of each tab.
+
+There are very few use cases in which nested routes make sense in mobile applications. When in doubt, use the shared URL route configuration. We strongly caution against using nested routing in contexts other than tabs as it can quickly make navigating your app confusing.
+
+## Working with Tabs
 
 タブを使用すると、Angular Routerにどのコンポーネントをロードする必要があるかを知るためのメカニズムをIonicが提供しますが、タブコンポーネントでは複雑な作業が行われます。簡単な例を見てみましょう。
 

@@ -224,7 +224,19 @@ Outside of these components that have the `routerLink` prop, you can also use Re
 `history` is a prop.
 :::
 
-## URLパラメーター
+### Navigating using `history.go`
+
+React Router uses the `history` package which has a [history.go](https://github.com/remix-run/history/blob/dev/docs/api-reference.md#history.go) method that allows developers to move forward or backward through the application history. Let's take a look at an example.
+
+Say you have the following application history:
+
+`/pageA` --> `/pageB` --> `/pageC`
+
+If you were to call `router.go(-2)` on `/pageC`, you would be brought back to `/pageA`. If you then called `router.go(2)`, you would be brought to `/pageC`.
+
+Using `history.go()` in Ionic React is not supported at the moment. Interested in seeing support for this get added to Ionic React? [Let us know on GitHub](https://github.com/ionic-team/ionic-framework/issues/23775)!
+
+## URL Parameters
 
 Dashboard Pageで定義された2番目のルートには、URLパラメーターが定義されています（パスの ":id" 部分）。 URLパラメーターは `path` の動的な部分であり、ユーザーが "/dashboard/users/1" などのURLに移動すると、"1" はルートがレンダリングするコンポーネント上で "id" という名前のパラメーターに保存されます。それがどのように行われるかを見てみましょう。
 
@@ -253,6 +265,136 @@ const UserDetailPage: React.FC<UserDetailPageProps> = ({ match }) => {
 [`match`](https://reacttraining.com/react-router/web/api/match) prop には、URLパラメーターなど、一致したルートに関する情報が含まれます。 ここで `id` パラメータを取得し、画面に表示します。
 
 > Note: TypeScriptインターフェイスを使用して props オブジェクトを厳密に入力する方法に注意してください。 このインターフェースにより、コンポーネント内部でタイプセーフティとコード補完が可能になります。
+
+## Linear Routing versus Non-Linear Routing
+
+### Linear Routing
+
+If you have built a web app that uses routing, you likely have used linear routing before. Linear routing means that you can move forward or backward through the application history by pushing and popping pages.
+
+The following is an example of linear routing in a mobile app:
+
+<video
+  style={{
+    'margin': '40px auto',
+    'display': 'flex'
+  }}
+  width="400"
+  src={useBaseUrl('video/linear-routing-demo.mp4')}
+  controls
+></video>
+
+The application history in this example has the following path:
+
+`Accessibility` --> `VoiceOver` --> `Speech`
+
+When we press the back button, we follow that same routing path except in reverse. Linear routing is helpful in that it allows for simple and predictable routing behaviors.
+
+The downside of linear routing is that it does not allow for complex user experiences such as tab views. This is where non-linear routing comes into play.
+
+### Non-Linear Routing
+
+Non-linear routing is a concept that may be new to many web developers learning to build mobile apps with Ionic.
+
+Non-linear routing means that the view that the user should go back to is not necessarily the previous view that was displayed on the screen.
+
+The following is an example of non-linear routing:
+
+<video
+  style={{
+    'margin': '40px auto',
+    'display': 'flex'
+  }}
+  width="400"
+  src={useBaseUrl('video/non-linear-routing-demo.mp4')}
+  controls
+></video>
+
+In the example above, we start on the `Originals` tab. Tapping a card brings us to the `Ted Lasso` view within the `Originals` tab.
+
+From here, we switch to the `Search` tab. Then, we tap the `Originals` tab again and are brought back to the `Ted Lasso` view. At this point, we have started using non-linear routing.
+
+Why is this non-linear routing? The previous view we were on was the `Search` view. However, pressing the back button on the `Ted Lasso` view should bring us back to the root `Originals` view. This happens because each tab in a mobile app is treated as its own stack. The [Working with Tabs](#working-with-tabs) sections goes over this in more detail.
+
+If tapping the back button simply called `history.go(-1)` from the `Ted Lasso` view, we would be brought back to the `Search` view which is not correct.
+
+Non-linear routing allows for sophisticated user flows that linear routing cannot handle. However, certain linear routing APIs such as `history.go()` cannot be used in this non-linear environment. This means that `history.go()` should not be used when using tabs or nested outlets.
+
+### Which one should I choose?
+
+We recommend keeping your application as simple as possible until you need to add non-linear routing. Non-linear routing is very powerful, but it also adds a considerable amount of complexity to mobile applications.
+
+The two most common uses of non-linear routing is with tabs and nested `IonRouterOutlets`. We recommend only using non-linear routing if your application meets the tabs or nested router outlet use cases.
+
+For more on tabs, please see [Working with Tabs](#working-with-tabs).
+
+For more on nested router outlets, please see [Nested Routes](#nested-routes).
+
+## Shared URLs versus Nested Routes
+
+A common point of confusion when setting up routing is deciding between shared URLs or nested routes. This part of the guide will explain both and help you decide which one to use.
+
+### Shared URLs
+
+Shared URLs is a route configuration where routes have pieces of the URL in common. The following is an example of a shared URL configuration:
+
+```tsx
+const App: React.FC = () => {
+  <IonApp>
+    <IonReactRouter>
+      <IonRouterOutlet>
+        <Route path="/dashboard" exact={true}>
+          <DashboardMainPage />
+        </Route>
+        <Route path="/dashboard/stats" exact={true}>
+          <DashboardStatsPage />
+        </Route>
+      </IonRouterOutlet>
+    </IonReactRouter>
+  </IonApp>
+}
+```
+
+The above routes are considered "shared" because they reuse the `dashboard` piece of the URL.
+
+### Nested Routes
+
+Nested Routes is a route configuration where routes are listed as children of other routes. The following is an example of a nested route configuration:
+
+```tsx
+const App: React.FC = () => (
+  <IonApp>
+    <IonReactRouter>
+      <IonRouterOutlet>
+        <Route path="/dashboard/:id">
+          <DashboardRouterOutlet />
+        </Route>
+      </IonRouterOutlet>
+    </IonReactRouter>
+  </IonApp>
+)
+
+const DashboardRouterOutlet: React.FC = () => (
+  <IonRouterOutlet>
+    <Route path="/dashboard" exact={true}>
+      <DashboardMainPage />
+    </Route>
+    <Route path="/dashboard/stats" exact={true}>
+      <DashboardStatsPage />
+    </Route>
+  </IonRouterOutlet>
+)
+```
+
+The above routes are nested because they are in the `children` array of the parent route. Notice that the parent route renders the `DashboardRouterOutlet` component. When you nest routes, you need to render another instance of `IonRouterOutlet`.
+
+### Which one should I choose?
+
+Shared URLs are great when you want to transition from page A to page B while preserving the relationship between the two pages in the URL. In our previous example, a button on the `/dashboard` page could transition to the `/dashboard/stats` page. The relationship between the two pages is preserved because of a) the page transition and b) the url.
+
+Nested routes should be used when you want to render content in outlet A while also rendering sub-content inside of a nested outlet B. The most common use case you will run into is tabs. When you load up a tabs Ionic starter application, you will see `IonTabBar` and `IonTabs` components rendered in the first `IonRouterOutlet`. The `IonTabs` component renders another `IonRouterOutlet` which is responsible for rendering the contents of each tab.
+
+There are very few use cases in which nested routes make sense in mobile applications. When in doubt, use the shared URL route configuration. We strongly caution against using nested routing in contexts other than tabs as it can quickly make navigating your app confusing.
 
 ## Working with Tabs
 
@@ -342,7 +484,7 @@ If you have worked with Ionic Framework before, this should feel familiar. We cr
 Each tab in Ionic is treated as an individual navigation stack. This means if you have three tabs in your application, each tab has its own navigation stack. Within each stack you can navigate forwards (push a view) and backwards (pop a view).
 
 This behavior is important to note as it is different than most tab implementations that are found in other web based UI libraries. Other libraries typically manage tabs as one single history stack.
- 
+
 Since Ionic is focused on helping developers build mobile apps, the tabs in Ionic are designed to match native mobile tabs as closely as possible. As a result, there may be certain behaviors in Ionic's tabs that differ from tabs implementations you have seen in other UI libraries. Read on to learn more about some of these differences.
 
 ### Child Routes within Tabs
@@ -408,7 +550,7 @@ The example below shows how the iOS App Store app handles presenting an "Account
     'display': 'flex'
   }}
   width="400"
-  src={useBaseUrl('video/tabs-account-demo.mp4')} 
+  src={useBaseUrl('video/tabs-account-demo.mp4')}
   controls
 ></video>
 

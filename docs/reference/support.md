@@ -36,18 +36,18 @@ The current status of each Ionic Framework version is:
 
 The Ionic team has compiled a set of recommendations for using the Ionic Framework in conjunction with other contextually-relevant software. This is not meant to be a comprehensive list, but covers many common compatibility questions. The Ionic team strongly recommends reviewing your project dependencies once each quarter to keep track of new releases, features and bug fixes.
 
-The Ionic team generally recommends the latest releases of third party packages and strives to support the latest releases within 2-4 weeks of general availability.
-
 ### Core Dependencies
 
 #### Ionic Angular
 
 | Framework | Minimum Angular Version | Maximum Angular Version | TypeScript |
 | :-------: | :---------------------: | :---------------------: | :--------: |
-|    v6     |           v12           |          v13.x          |    4.0+    |
+|    v6     |           v12           |          v14.x^         |    4.0+    |
 |    v5     |          v8.2           |          v12.x          |    3.5+    |
 |    v4     |          v8.2           |          v11.x          |    3.5+    |
 |    v3     |         v5.2.11         |         v5.2.11         |   2.6.2    |
+
+> ^ Angular 14.x support was added in Ionic v6.1.9.
 
 #### Ionic React
 

@@ -194,6 +194,18 @@ The example above has the app navigate to `/page2` with a custom animation that 
 
 See the [useIonRouter documentation](./utility-functions#router) for more details as well as type information.
 
+### Navigating using `router.go`
+
+Vue Router has a [router.go](https://router.vuejs.org/api/#go) method that allows developers to move forward or backward through the application history. Let's take a look at an example.
+
+Say you have the following application history:
+
+`/pageA` --> `/pageB` --> `/pageC`
+
+If you were to call `router.go(-2)` on `/pageC`, you would be brought back to `/pageA`. If you then called `router.go(2)`, you would be brought to `/pageC`.
+
+An key characteristic of `router.go()` is that it expects your application history to be linear. This means that `router.go()` should not be used in applications that make use of non-linear routing. See [Linear Routing versus Non-Linear Routing](#linear-routing-versus-non-linear-routing) for more information.
+
 ## Lazy Loading Routes
 
 現在のrouteの設定方法では、アプリをロードするときに同じ初期チャンクに含まれるようになっているが、これは必ずしも理想的ではありません。代わりに、必要に応じてコンポーネントがロードされるようにrouteを設定できます。
@@ -218,6 +230,70 @@ const routes: Array<RouteRecordRaw> = [
 ```
 
 Here, we have the same setup as before only this time `DetailPage` has been replaced with an import call. This will result in the `DetailPage` component no longer being part of the chunk that is requested on application load.
+
+## Linear Routing versus Non-Linear Routing
+
+### Linear Routing
+
+If you have built a web app that uses routing, you likely have used linear routing before. Linear routing means that you can move forward or backward through the application history by pushing and popping pages.
+
+The following is an example of linear routing in a mobile app:
+
+<video
+  style={{
+    'margin': '40px auto',
+    'display': 'flex'
+  }}
+  width="400"
+  src={useBaseUrl('video/linear-routing-demo.mp4')}
+  controls
+></video>
+
+The application history in this example has the following path:
+
+`Accessibility` --> `VoiceOver` --> `Speech`
+
+When we press the back button, we follow that same routing path except in reverse. Linear routing is helpful in that it allows for simple and predictable routing behaviors. It also means we can use Vue Router APIs such as [router.go()](#navigating-using-routergo).
+
+The downside of linear routing is that it does not allow for complex user experiences such as tab views. This is where non-linear routing comes into play.
+
+### Non-Linear Routing
+
+Non-linear routing is a concept that may be new to many web developers learning to build mobile apps with Ionic.
+
+Non-linear routing means that the view that the user should go back to is not necessarily the previous view that was displayed on the screen.
+
+The following is an example of non-linear routing:
+
+<video
+  style={{
+    'margin': '40px auto',
+    'display': 'flex'
+  }}
+  width="400"
+  src={useBaseUrl('video/non-linear-routing-demo.mp4')}
+  controls
+></video>
+
+In the example above, we start on the `Originals` tab. Tapping a card brings us to the `Ted Lasso` view within the `Originals` tab.
+
+From here, we switch to the `Search` tab. Then, we tap the `Originals` tab again and are brought back to the `Ted Lasso` view. At this point, we have started using non-linear routing.
+
+Why is this non-linear routing? The previous view we were on was the `Search` view. However, pressing the back button on the `Ted Lasso` view should bring us back to the root `Originals` view. This happens because each tab in a mobile app is treated as its own stack. The [Working with Tabs](#working-with-tabs) sections goes over this in more detail.
+
+If tapping the back button simply called `router.go(-1)` from the `Ted Lasso` view, we would be brought back to the `Search` view which is not correct.
+
+Non-linear routing allows for sophisticated user flows that linear routing cannot handle. However, certain linear routing APIs such as `router.go()` cannot be used in this non-linear environment. This means that `router.go()` should not be used when using tabs or nested outlets.
+
+### Which one should I choose?
+
+We recommend keeping your application as simple as possible until you need to add non-linear routing. Non-linear routing is very powerful, but it also adds a considerable amount of complexity to mobile applications.
+
+The two most common uses of non-linear routing is with tabs and nested `ion-router-outlet`s. We recommend only using non-linear routing if your application meets the tabs or nested router outlet use cases.
+
+For more on tabs, please see [Working with Tabs](#working-with-tabs).
+
+For more on nested router outlets, please see [Nested Routes](#nested-routes).
 
 ## Shared URLs versus Nested Routes
 
