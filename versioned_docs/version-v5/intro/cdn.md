@@ -29,7 +29,7 @@ This does not install Angular or any other frameworks. This allows use of the Io
 When using Ionic Framework in an Angular project, install the latest `@ionic/angular` package from [npm](../reference/glossary.md#npm). This comes with all of the Ionic Framework components and Angular specific services and features.
 
 ```shell
-$ npm install @ionic/angular@latest --save
+npm install @ionic/angular@latest --save
 ```
 
 Each time there is a new Ionic Framework release, this [version](../reference/versioning.md) will need to be updated to get the latest features and fixes. The version can be [updated using npm](../developing/tips.md#updating-dependencies), as well.
@@ -37,7 +37,7 @@ Each time there is a new Ionic Framework release, this [version](../reference/ve
 For adding Ionic to an already existing Angular project, use the Angular CLI's `ng add` feature.
 
 ```shell
-$ ng add @ionic/angular
+ng add @ionic/angular
 ```
 
 This will add the necessary imports to the `@ionic/angular` package as well as add the styles needed.
@@ -78,7 +78,7 @@ import '@ionic/react/css/display.css';
 To add Ionic Framework to an existing Vue project, install the `@ionic/vue` and `@ionic/vue-router` packages.
 
 ```shell
-$ npm install @ionic/vue @ionic/vue-router
+npm install @ionic/vue @ionic/vue-router
 ```
 
 After that, you will need to install the `IonicVue` plugin in your Vue app.

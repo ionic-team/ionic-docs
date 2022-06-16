@@ -9,7 +9,7 @@ sidebar_label: 'cordova run'
 Run an Ionic project on a connected device
 
 ```shell
-$ ionic cordova run [options]
+ionic cordova run [options]
 ```
 
 Build your app and deploy it to devices and emulators using this command. Optionally specify the `--livereload` option to use the dev server from `ionic serve` for livereload functionality.

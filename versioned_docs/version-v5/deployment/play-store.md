@@ -9,7 +9,7 @@ sidebar_label: Android Play Store
 To generate a release build for Android, run the following cli command:
 
 ```shell
-$ ionic cordova build android --prod --release
+ionic cordova build android --prod --release
 ```
 
 This will generate a release build based on the settings in the `config.xml` in the `platforms/android/app/build/outputs/apk` directory of an app.
@@ -21,7 +21,7 @@ First, the unsigned APK must be signed. If a signing key has already been genera
 Generate a private key using the keytool command that comes with the Android SDK:
 
 ```shell
-$ keytool -genkey -v -keystore my-release-key.keystore -alias alias_name -keyalg RSA -keysize 2048 -validity 10000
+keytool -genkey -v -keystore my-release-key.keystore -alias alias_name -keyalg RSA -keysize 2048 -validity 10000
 ```
 
 Once that command has been ran and its prompts have been answered a file called `my-release-key.keystore` will be created in the current directory.
@@ -33,7 +33,7 @@ Save this file and keep it somewhere safe. If it is lost the Google Play Store w
 To sign the unsigned APK, run the jarsigner tool which is also included in the Android SDK:
 
 ```shell
-$ jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore my-release-key.keystore HelloWorld-release-unsigned.apk alias_name
+jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore my-release-key.keystore HelloWorld-release-unsigned.apk alias_name
 ```
 
 Finally, the zip align tool must be ran to optimize the APK.
@@ -41,7 +41,7 @@ The `zipalign` tool can be found in `/path/to/Android/sdk/build-tools/VERSION/zi
 For example, on macOS with Android Studio installed, `zipalign` is in `~/Library/Android/sdk/build-tools/VERSION/zipalign`:
 
 ```shell
-$ zipalign -v 4 HelloWorld-release-unsigned.apk HelloWorld.apk
+zipalign -v 4 HelloWorld-release-unsigned.apk HelloWorld.apk
 ```
 
 This generates a final release binary called HelloWorld.apk that can be accepted into the Google Play Store.
