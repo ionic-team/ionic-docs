@@ -14,7 +14,7 @@ The Ionic DevApp is a free app that makes it easy to run your Ionic app directly
 Afterwards, open a terminal and navigate to your Ionic project. Execute the following:
 
 ```shell
-$ ionic serve -c
+ionic serve -c
 ```
 
 In DevApp, you should now see the app appear. If it doesn't, or you have any issues throughout creating this app, [see here](https://ionicframework.com/docs/pro/devapp/).
@@ -42,7 +42,7 @@ Save the file and watch - a camera button appears! Tap on it and notice that it 
 In order to use the Camera, we need to bring in its JavaScript and native library dependencies. Back over in your Terminal window, run the following command, which adds the JavaScript library to the project, thus exposing the Camera API in TypeScript code:
 
 ```shell
-$ npm install --save @awesome-cordova-plugins/camera
+npm install --save @awesome-cordova-plugins/camera
 ```
 
 In `package.json`, you’ll notice a new JavaScript dependency has been added:
@@ -52,7 +52,7 @@ In `package.json`, you’ll notice a new JavaScript dependency has been added:
 Next, run this command to add the native iOS and Android code, effectively allowing the Camera to work on a mobile device:
 
 ```shell
-$ ionic cordova plugin add cordova-plugin-camera
+ionic cordova plugin add cordova-plugin-camera
 ```
 
 In `config.xml`, a new plugin entry is created:

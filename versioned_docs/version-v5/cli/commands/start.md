@@ -9,7 +9,7 @@ sidebar_label: 'start'
 Create a new project
 
 ```shell
-$ ionic start [options]
+ionic start [options]
 ```
 
 This command creates a working Ionic app. It installs dependencies for you and sets up your project.

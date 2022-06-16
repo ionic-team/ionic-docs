@@ -7,7 +7,7 @@ sidebar_label: 'link'
 Connect local apps to Ionic
 
 ```shell
-$ ionic link [options]
+ionic link [options]
 ```
 
 Link apps on Appflow to local Ionic projects with this command.

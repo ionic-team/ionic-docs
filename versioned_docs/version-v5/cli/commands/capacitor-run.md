@@ -7,7 +7,7 @@ sidebar_label: 'capacitor run'
 Run an Ionic project on a connected device
 
 ```shell
-$ ionic capacitor run [options]
+ionic capacitor run [options]
 ```
 
 `ionic capacitor run` will do the following:

@@ -7,7 +7,7 @@ sidebar_label: 'cordova plugin'
 Manage Cordova plugins
 
 ```shell
-$ ionic cordova plugin [options]
+ionic cordova plugin [options]
 ```
 
 Like running `cordova plugin` directly, but provides friendly checks.
