@@ -48,7 +48,7 @@ When using `ion-popover` with Angular, React, or Vue, the component you pass in 
 
 When using inline modals, developers have access to the `isOpen` property which allows them to control the state of the modal through the state of their application. This is helpful for opening a modal after a state change without needing to explicitly call the `present` method on `ion-modal`.
 
- Note that `isOpen` uses a one way data binding. This means that a reactive variable that sets `isOpen` to `true` will not be automatically set to `false` when the modal dismisses. Developers need to listen for the `ionModalDidDismiss` or `didDismiss` events and set the reactive variable to `false` themselves.
+ Note that `isOpen` uses a one way data binding. This means that a reactive variable that sets `isOpen` to `true` will not be automatically set to `false` when the modal dismisses. Developers need to listen for the `ionPopoverDidDismiss` or `didDismiss` events and set the reactive variable to `false` themselves.
  
  The reason for this is it prevents the internals of `ion-modal` from being tightly coupled with the state of the application. With a one way data binding, the modal only needs to concern itself with the boolean value that the reactive variable provides. With a two way data binding, the modal needs to concern itself with both the boolean value as well as the existence of the reactive variable itself. This can lead to non-deterministic behaviors and make applications harder to debug.
 
