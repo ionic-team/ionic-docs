@@ -71,13 +71,13 @@ Error: more than one library with package name com.google.android.gms
 This error is caused by two separate plugins trying to use different versions of the `Google Play Services`. To fix this issue make sure you are running `cordova` version `7.1.0` or higher and `cordova-android` `6.3.0` or higher. To install latest `cordova` run:
 
 ```shell
-$ npm install cordova@latest
+npm install cordova@latest
 ```
 
 and to update `cordova-android` run:
 
 ```shell
-$ cordova platform update android
+cordova platform update android
 ```
 
 Plugins that depend on `Google Play Services` can now be updated to use the same version. For example, if `pluginA` uses version 11.0 and `pluginB` uses version 15.0 they can be updated to use the same version with the following snippet in the `config.xml` file:

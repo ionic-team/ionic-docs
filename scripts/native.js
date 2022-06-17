@@ -15,6 +15,7 @@ const filteredPlugins = [
   '@awesome-cordova-plugins/secure-storage-echo',
   '@awesome-cordova-plugins/secure-storage',
   '@awesome-cordova-plugins/admob-pro',
+  '@awesome-cordova-plugins/approov-advanced-http'
 ];
 
 let plugins = nativeJSON.filter((plugin) => !filteredPlugins.includes(plugin.packageName));

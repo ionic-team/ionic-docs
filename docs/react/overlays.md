@@ -83,7 +83,7 @@ The Overlay Components are still a valid way of displaying overlays and are in n
 For full docs and to see usage examples for both the hook and component approach, visit the docs page for each of the overlays in Ionic:
 
 - [Action Sheet](https://ionicframework.com/docs/api/action-sheet)
-- [Alert](https://ionicframework.com/docs/api/modal#usage)
+- [Alert](https://ionicframework.com/docs/api/alert)
 - [Loading](https://ionicframework.com/docs/api/loading)
 - [Modal](https://ionicframework.com/docs/api/modal)
 - [Picker](https://ionicframework.com/docs/api/picker)

@@ -3,6 +3,8 @@ title: Vue Navigation
 sidebar_label: Navigation/Routing
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 <head>
   <title>Vue Navigation: Use Ionic + Vue Router to Create Multi-Page Apps</title>
   <meta
@@ -192,6 +194,18 @@ The example above has the app navigate to `/page2` with a custom animation that 
 
 See the [useIonRouter documentation](./utility-functions#router) for more details as well as type information.
 
+### Navigating using `router.go`
+
+Vue Router has a [router.go](https://router.vuejs.org/api/#go) method that allows developers to move forward or backward through the application history. Let's take a look at an example.
+
+Say you have the following application history:
+
+`/pageA` --> `/pageB` --> `/pageC`
+
+If you were to call `router.go(-2)` on `/pageC`, you would be brought back to `/pageA`. If you then called `router.go(2)`, you would be brought to `/pageC`.
+
+An key characteristic of `router.go()` is that it expects your application history to be linear. This means that `router.go()` should not be used in applications that make use of non-linear routing. See [Linear Routing versus Non-Linear Routing](#linear-routing-versus-non-linear-routing) for more information.
+
 ## Lazy Loading Routes
 
 The current way our routes are setup makes it so they are included in the same initial chunk when loading the app, which is not always ideal. Instead, we can set up our routes so that components are loaded as they are needed:
@@ -216,6 +230,70 @@ const routes: Array<RouteRecordRaw> = [
 ```
 
 Here, we have the same setup as before only this time `DetailPage` has been replaced with an import call. This will result in the `DetailPage` component no longer being part of the chunk that is requested on application load.
+
+## Linear Routing versus Non-Linear Routing
+
+### Linear Routing
+
+If you have built a web app that uses routing, you likely have used linear routing before. Linear routing means that you can move forward or backward through the application history by pushing and popping pages.
+
+The following is an example of linear routing in a mobile app:
+
+<video
+  style={{
+    'margin': '40px auto',
+    'display': 'flex'
+  }}
+  width="400"
+  src={useBaseUrl('video/linear-routing-demo.mp4')} 
+  controls
+></video>
+
+The application history in this example has the following path:
+
+`Accessibility` --> `VoiceOver` --> `Speech`
+
+When we press the back button, we follow that same routing path except in reverse. Linear routing is helpful in that it allows for simple and predictable routing behaviors. It also means we can use Vue Router APIs such as [router.go()](#navigating-using-routergo).
+
+The downside of linear routing is that it does not allow for complex user experiences such as tab views. This is where non-linear routing comes into play.
+
+### Non-Linear Routing
+
+Non-linear routing is a concept that may be new to many web developers learning to build mobile apps with Ionic.
+
+Non-linear routing means that the view that the user should go back to is not necessarily the previous view that was displayed on the screen.
+
+The following is an example of non-linear routing:
+
+<video
+  style={{
+    'margin': '40px auto',
+    'display': 'flex'
+  }}
+  width="400"
+  src={useBaseUrl('video/non-linear-routing-demo.mp4')} 
+  controls
+></video>
+
+In the example above, we start on the `Originals` tab. Tapping a card brings us to the `Ted Lasso` view within the `Originals` tab.
+
+From here, we switch to the `Search` tab. Then, we tap the `Originals` tab again and are brought back to the `Ted Lasso` view. At this point, we have started using non-linear routing.
+
+Why is this non-linear routing? The previous view we were on was the `Search` view. However, pressing the back button on the `Ted Lasso` view should bring us back to the root `Originals` view. This happens because each tab in a mobile app is treated as its own stack. The [Working with Tabs](#working-with-tabs) sections goes over this in more detail.
+
+If tapping the back button simply called `router.go(-1)` from the `Ted Lasso` view, we would be brought back to the `Search` view which is not correct.
+
+Non-linear routing allows for sophisticated user flows that linear routing cannot handle. However, certain linear routing APIs such as `router.go()` cannot be used in this non-linear environment. This means that `router.go()` should not be used when using tabs or nested outlets.
+
+### Which one should I choose?
+
+We recommend keeping your application as simple as possible until you need to add non-linear routing. Non-linear routing is very powerful, but it also adds a considerable amount of complexity to mobile applications.
+
+The two most common uses of non-linear routing is with tabs and nested `ion-router-outlet`s. We recommend only using non-linear routing if your application meets the tabs or nested router outlet use cases.
+
+For more on tabs, please see [Working with Tabs](#working-with-tabs).
+
+For more on nested router outlets, please see [Nested Routes](#nested-routes).
 
 ## Shared URLs versus Nested Routes
 
@@ -269,7 +347,7 @@ The above routes are nested because they are in the `children` array of the pare
 
 Shared URLs are great when you want to transition from page A to page B while preserving the relationship between the two pages in the URL. In our previous example, a button on the `/dashboard` page could transition to the `/dashboard/stats` page. The relationship between the two pages is preserved because of a) the page transition and b) the url.
 
-Nested routes are mostly useful when you need to render content in outlet A while also rendering sub-content inside of a nested outlet B. The most common use case you will run into is tabs. When you load up a tabs Ionic starter application, you will see `ion-tab-bar` and `ion-tabs` components rendered in the first `ion-router-outlet`. The `ion-tabs` component renders another `ion-router-outlet` which is responsible for rendering the contents of each tab.
+Nested routes should be used when you want to render content in outlet A while also rendering sub-content inside of a nested outlet B. The most common use case you will run into is tabs. When you load up a tabs Ionic starter application, you will see `ion-tab-bar` and `ion-tabs` components rendered in the first `ion-router-outlet`. The `ion-tabs` component renders another `ion-router-outlet` which is responsible for rendering the contents of each tab.
 
 There are very few use cases in which nested routes make sense in mobile applications. When in doubt, use the shared URL route configuration. We strongly caution against using nested routing in contexts other than tabs as it can quickly make navigating your app confusing.
 
@@ -377,6 +455,14 @@ Let's start by taking a look at our `Tabs` component:
 
 If you have worked with Ionic Framework before, this should feel familiar. We create an `ion-tabs` component and provide an `ion-tab-bar`. The `ion-tab-bar` provides `ion-tab-button` components, each with a `tab` property that is associated with its corresponding tab in the router config. We also provide an `ion-router-outlet` to give `ion-tabs` an outlet to render the different tab views in.
 
+### How Tabs in Ionic Work
+
+Each tab in Ionic is treated as an individual navigation stack. This means if you have three tabs in your application, each tab has its own navigation stack. Within each stack you can navigate forwards (push a view) and backwards (pop a view).
+
+This behavior is important to note as it is different than most tab implementations that are found in other web based UI libraries. Other libraries typically manage tabs as one single history stack.
+ 
+Since Ionic is focused on helping developers build mobile apps, the tabs in Ionic are designed to match native mobile tabs as closely as possible. As a result, there may be certain behaviors in Ionic's tabs that differ from tabs implementations you have seen in other UI libraries. Read on to learn more about some of these differences.
+
 ### Child Routes within Tabs
 
 When adding additional routes to tabs you should write them as sibling routes with the parent tab as the path prefix. The example below defines the `/tabs/tab1/view` route as a sibling of the `/tabs/tab1` route. Since this new route has the `tab1` prefix, it will be rendered inside of the `Tabs` component, and Tab 1 will still be selected in the `ion-tab-bar`.
@@ -415,6 +501,44 @@ const routes: Array<RouteRecordRaw> = [
   },
 ];
 ```
+
+### Switching Between Tabs
+
+Since each tab is its own navigation stack, it is important to note that these navigation stacks should never interact. This means that there should never be a button in Tab 1 that routes a user to Tab 2. In other words, tabs should only be changed by the user tapping a tab button in the tab bar.
+
+A good example of this in practice is the iOS App Store and Google Play Store mobile applications. These apps both provide tabbed interfaces, but neither one ever routes the user across tabs. For example, the "Games" tab in the iOS App Store app never directs users to the "Search" tab and vice versa.
+
+Let's take a look at a couple common mistakes that are made with tabs.
+
+**A Settings Tab That Multiple Tabs Reference**
+
+A common practice is to create a Settings view as its own tab. This is great if developers need to present several nested settings menus. However, other tabs should never try to route to the Settings tab. As we mentioned above, the only way that the Settings tab should be activated is by a user tapping the appropriate tab button.
+
+If you find that your tabs need to reference the Settings tab, we recommend making the Settings view a modal by using `ion-modal`. This is a practice found in the iOS App Store app. With this approach, any tab can present the modal without breaking the mobile tabs pattern of each tab being its own stack.
+
+The example below shows how the iOS App Store app handles presenting an "Account" view from multiple tabs. By presenting the "Account" view in a modal, the app can work within the mobile tabs best practices to show the same view across multiple tabs.
+
+<video
+  style={{
+    'margin': '40px auto',
+    'display': 'flex'
+  }}
+  width="400"
+  src={useBaseUrl('video/tabs-account-demo.mp4')} 
+  controls
+></video>
+
+**Reusing Views Across Tabs**
+
+Another common practice is to present the same view in multiple tabs. Developers often try to do this by having the view contained in a single tab, with other tabs routing to that tab. As we mentioned above, this breaks the mobile tabs pattern and should be avoided.
+
+Instead, we recommend having routes in each tab that reference the same component. This is a practice done in popular apps like Spotify. For example, you can access an album or podcast from the "Home", "Search", and "Your Library" tabs. When accessing the album or podcast, users stay within that tab. The app does this by creating routes per tab and sharing a common component in the codebase.
+
+The example below shows how the Spotify app reuses the same album component to show content in multiple tabs. Notice that each screenshot shows the same album but from a different tab.
+
+| Home Tab | Search Tab |
+| :------: | :--------: |
+| <img src={useBaseUrl('img/usage/tabs-home.jpg')} /> | <img src={useBaseUrl('img/usage/tabs-search.jpg')} /> |
 
 ## IonRouterOutlet
 
