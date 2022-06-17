@@ -182,13 +182,13 @@ Then, add the FAB to the bottom of the page. Use the camera image as the icon, a
 
 We’ll be creating the `takePhoto` method and the logic to use the Camera and other native features in a moment.
 
-Next, open `src/App.tsx` then import the `images` icon:
+Next, open `src/App.tsx`, remove the `ellipse` icon from the import and import the `images` icon instead:
 
 ```tsx
 import { images, square, triangle } from 'ionicons/icons';
 ```
 
-Within the tab bar (`<IonTabBar>`), change the label to “Photos” and the icon to `images` for the middle tab button:
+Within the tab bar (`<IonTabBar>`), change the label to “Photos” and  the `ellipse` icon to `images` for the middle tab button:
 
 ```tsx
 <IonTabButton tab="tab2" href="/tab2">
