@@ -93,7 +93,7 @@ Actual Android hardware can also be used for Ionic app development. But first, t
 Verify the connection works by connecting the device to the computer with a USB cable and using the following command:
 
 ```shell
-$ adb devices
+adb devices
 ```
 
 The device should be listed. See the full <a href="https://developer.android.com/studio/command-line/adb" target="_blank">`adb` documentation</a> for troubleshooting and detailed information.
@@ -166,7 +166,7 @@ Capacitor uses Android Studio to build and run apps to simulators and devices.
 To start a live-reload server run the following command.
 
 ```shell
-$ ionic capacitor run android -l --host=YOUR_IP_ADDRESS
+ionic capacitor run android -l --host=YOUR_IP_ADDRESS
 ```
 
 When running on a device make sure the device and your development machine are connected to the same network.
@@ -178,7 +178,7 @@ The Ionic CLI can build, copy, and deploy Ionic apps to Android simulators and d
 Run the following to start a long-running CLI process that boots up a live-reload server:
 
 ```shell
-$ ionic cordova run android -l
+ionic cordova run android -l
 ```
 
 Now, when changes are made to the app's source files, web assets are rebuilt and the changes are reflected on the simulator or device without having to deploy again.
@@ -210,5 +210,5 @@ If the **Logcat** window is hidden, you can enable it in **View** &raquo; **Tool
 You can also access **Logcat** with [ADB](https://developer.android.com/studio/command-line/adb).
 
 ```shell
-$ adb logcat
+adb logcat
 ```

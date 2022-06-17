@@ -9,7 +9,7 @@ sidebar_label: 'cordova platform'
 Manage Cordova platform targets
 
 ```shell
-$ ionic cordova platform [options]
+ionic cordova platform [options]
 ```
 
 Like running `cordova platform` directly, but adds default Ionic icons and splash screen resources (during `add`) and provides friendly checks.

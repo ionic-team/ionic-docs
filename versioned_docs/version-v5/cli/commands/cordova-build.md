@@ -7,7 +7,7 @@ sidebar_label: 'cordova build'
 Use Cordova to build for Android and iOS platform targets
 
 ```shell
-$ ionic cordova build [options]
+ionic cordova build [options]
 ```
 
 Like running `cordova build` directly, `ionic cordova build` also builds web assets from `ionic build` and provides friendly checks for Android and iOS platforms.

@@ -27,13 +27,13 @@ To enroll in the Apple Developer Program, follow the instructions [listed here](
 If the iOS platform is not already added, be sure to add it:
 
 ```shell
-$ ionic cordova platform add ios
+ionic cordova platform add ios
 ```
 
 With the platform added, run the build command with the `--prod` flag:
 
 ```shell
-$ ionic cordova build ios --prod
+ionic cordova build ios --prod
 ```
 
 This will generate the minified code for the web portion of an app and copy it over the iOS code base.

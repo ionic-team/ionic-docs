@@ -7,7 +7,7 @@ sidebar_label: 'integrations enable'
 Add & enable integrations to your app
 
 ```shell
-$ ionic integrations enable [options]
+ionic integrations enable [options]
 ```
 
 Integrations, such as Cordova, can be enabled with this command. If the integration has never been added to the project, `ionic integrations enable` will download and add the integration.

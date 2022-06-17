@@ -248,8 +248,7 @@ In some scenarios, it may be desirable to quit the app when pressing the hardwar
 
 ```tsx
 import { BackButtonEvent } from '@ionic/core';
-import { Plugins } from '@capacitor/core';
-const { App } = Plugins;
+import { App } from '@capacitor/app';
 
 ...
 
@@ -268,8 +267,7 @@ document.addEventListener('ionBackButton', (ev: BackButtonEvent) => {
 
 ```tsx
 import { IonRouterOutlet, Platform } from '@ionic/angular';
-import { Plugins } from '@capacitor/core';
-const { App } = Plugins;
+import { App } from '@capacitor/app';
 
 ...
 
@@ -290,8 +288,7 @@ constructor(
 
 ```tsx
 import { useIonRouter } from '@ionic/react';
-import { Plugins } from '@capacitor/core';
-const { App } = Plugins;
+import { App } from '@capacitor/app';
 
 ...
 
@@ -309,8 +306,7 @@ document.addEventListener('ionBackButton', (ev) => {
 
 ```tsx
 import { useBackButton, useIonRouter } from '@ionic/vue';
-import { Plugins } from '@capacitor/core';
-const { App } = Plugins;
+import { App } from '@capacitor/app';
 
 ...
 
