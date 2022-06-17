@@ -7,7 +7,7 @@ sidebar_label: 'repair'
 Remove and recreate dependencies and generated files
 
 ```shell
-$ ionic repair [options]
+ionic repair [options]
 ```
 
 This command may be useful when obscure errors or issues are encountered. It removes and recreates dependencies of your project.

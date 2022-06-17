@@ -7,7 +7,7 @@ sidebar_label: 'doctor check'
 Check the health of your Ionic project
 
 ```shell
-$ ionic doctor check [options]
+ionic doctor check [options]
 ```
 
 This command detects and prints common issues and suggested steps to fix them.

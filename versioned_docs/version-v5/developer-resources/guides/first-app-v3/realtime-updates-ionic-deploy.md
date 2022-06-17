@@ -5,7 +5,7 @@ As you’ve seen so far, building web and mobile apps is quick and easy with the
 Setting it up is quick and easy. For reference, continue to refer to [the part 3 folder](https://github.com/ionic-team/photo-gallery-tutorial-ionic3/tree/master/part3) on GitHub. First, install the Appflow JavaScript library:
 
 ```shell
-$ npm install @ionic/pro@latest --save
+npm install @ionic/pro@latest --save
 ```
 
 Then, add the Appflow plugin. Here’s the command to install it:

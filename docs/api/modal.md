@@ -32,6 +32,11 @@ import APITOCInline from '@components/page/api/APITOCInline';
 
 A Modal is a dialog that appears on top of the app's content, and must be dismissed by the app before interaction can resume. It is useful as a select component when there are a lot of options to choose from, or when filtering items in a list, as well as many other use cases.
 
+A modal should always contain an [ion-content](./content).
+
+## Presenting
+
+There are two ways to use `ion-modal`: inline or via the `modalController`. Each method comes with different considerations, so be sure to use the approach that best fits your use case.
 
 ## Inline Modals (Recommended)
 
@@ -53,6 +58,10 @@ import InlineModalIsOpenExample from '@site/static/usage/modal/inline/is-open/in
 
 <InlineModalIsOpenExample />
 
+:::note
+An [ion-content](./content) must be used in order for the swipe gesture to function.
+:::
+
 ## Controller Modals
 
 With the `modalController` developers can present an `ion-modal` programmatically. Developers will have complete control over when a modal is presented and dismissed.
@@ -60,6 +69,14 @@ With the `modalController` developers can present an `ion-modal` programmaticall
 import ControllerExample from '@site/static/usage/modal/controller/index.md';
 
 <ControllerExample />
+
+:::note
+An [ion-content](./content) must be used in order for the swipe gesture to function.
+:::
+
+:::note
+ Note: The `swipeToClose` property has no effect when using a sheet modal as sheet modals must be swipeable in order to be usable.
+:::
 
 ## Preventing a Modal from Dismissing
 

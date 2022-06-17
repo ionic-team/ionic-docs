@@ -100,7 +100,7 @@ constructor(private imagePicker: ImagePicker) { }
 ...
 
 this.imagePicker.getPictures(options).then((results) => {
-  for (var i = 0; i &lt; results.length; i++) {
+  for (var i = 0; i < results.length; i++) {
       console.log('Image URI: ' + results[i]);
   }
 }, (err) => { });

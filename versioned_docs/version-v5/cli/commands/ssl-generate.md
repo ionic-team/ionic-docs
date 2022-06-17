@@ -7,7 +7,7 @@ sidebar_label: 'ssl generate'
 Generates an SSL key & certificate
 
 ```shell
-$ ionic ssl generate [options]
+ionic ssl generate [options]
 ```
 
 Uses OpenSSL to create a self-signed certificate for **localhost** (by default).
