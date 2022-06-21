@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Breadcrumbs</title>
+  <link rel="stylesheet" href="../../../common.css" />
+  <script src="../../../common.js"></script>
+  <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core@6/dist/ionic/ionic.esm.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core@6/css/ionic.bundle.css" />
+
+  <style>
+    ion-breadcrumb {
+      --color: rgb(81, 155, 198);
+      --color-active: rgb(150, 112, 220);
+      --color-hover: rgb(103, 61, 180);
+    }
+  </style>
+</head>
+
+<body>
+  <ion-app>
+    <ion-content>
+      <div class="container">
+        <ion-breadcrumbs>
+          <ion-breadcrumb href="#home">Home</ion-breadcrumb>
+          <ion-breadcrumb href="#electronics">Electronics</ion-breadcrumb>
+          <ion-breadcrumb href="#cameras">Cameras</ion-breadcrumb>
+          <ion-breadcrumb href="#film">Film</ion-breadcrumb>
+        </ion-breadcrumbs>
+      </div>
+    </ion-content>
+  </ion-app>
+</body>
+
+</html>

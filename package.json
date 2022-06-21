@@ -47,6 +47,8 @@
     "@mdx-js/react": "^1.6.22",
     "@prismicio/client": "^6.4.2",
     "@prismicio/react": "^2.2.0",
+    "@stackblitz/sdk": "^1.6.0",
+    "@tippyjs/react": "^4.2.6",
     "clsx": "^1.1.1",
     "concurrently": "^6.2.0",
     "crowdin": "^3.5.0",
@@ -66,6 +68,7 @@
     "@ionic/prettier-config": "^2.0.0",
     "@tsconfig/docusaurus": "^1.0.4",
     "@types/react": "^17.0.37",
+    "html-loader": "^3.1.0",
     "prettier": "^2.5.0",
     "typescript": "^4.5.2"
   }

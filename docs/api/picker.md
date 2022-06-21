@@ -1,8 +1,6 @@
 ---
 title: "ion-picker"
 hide_table_of_contents: true
-demoUrl: "/docs/demos/api/picker/index.html"
-demoSourceUrl: "https://github.com/ionic-team/ionic-docs/tree/main/static/demos/api/picker/index.html"
 ---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -35,6 +33,23 @@ import APITOCInline from '@components/page/api/APITOCInline';
 
 
 A Picker is a dialog that displays a row of buttons and columns underneath. It appears on top of the app's content, and at the bottom of the viewport.
+
+## Single Column
+
+Display a list of options in a single, scrollable column.
+
+import SingleColumn from '@site/static/usage/picker/single-column/index.md';
+
+<SingleColumn />
+
+
+## Multiple Columns
+
+Display multiple columns of different options.
+
+import MultipleColumn from '@site/static/usage/picker/multiple-column/index.md';
+
+<MultipleColumn />
 
 ## Interfaces
 
