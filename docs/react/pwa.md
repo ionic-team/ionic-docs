@@ -59,7 +59,7 @@ First, if not already available, [create the project](https://console.firebase.g
 Next, in a Terminal, install the Firebase CLI:
 
 ```shell
-$ npm install -g firebase-tools
+npm install -g firebase-tools
 ```
 
 With the Firebase CLI installed, run `firebase init` within your Ionic project. The CLI prompts:
@@ -113,13 +113,13 @@ For more information about the `firebase.json` properties, see the [Firebase doc
 Next, build an optimized version of the app by running:
 
 ```shell
-$ ionic build --prod
+ionic build --prod
 ```
 
 Last, deploy the app by running:
 
 ```shell
-$ firebase deploy
+firebase deploy
 ```
 
 After this completes, the app will be live.

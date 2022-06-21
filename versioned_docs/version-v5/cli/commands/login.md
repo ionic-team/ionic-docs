@@ -7,7 +7,7 @@ sidebar_label: 'login'
 Log in to Ionic
 
 ```shell
-$ ionic login [options]
+ionic login [options]
 ```
 
 Authenticate with Ionic and retrieve a user token, which is stored in the CLI config. The most secure way to log in is running `ionic login` without arguments, which will open a browser where you can submit your credentials.

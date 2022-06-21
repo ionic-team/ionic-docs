@@ -7,7 +7,7 @@ sidebar_label: 'config unset'
 Delete config values
 
 ```shell
-$ ionic config unset [options]
+ionic config unset [options]
 ```
 
 This command deletes configuration values from the project's **./ionic.config.json** file. It can also operate on the global CLI configuration (**~/.ionic/config.json**) using the `--global` option.

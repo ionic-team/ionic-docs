@@ -24,7 +24,7 @@ Before proceeding, make sure your computer has [Node.js](../reference/glossary.m
 Install the Ionic CLI with npm:
 
 ```shell
-$ npm install -g @ionic/cli
+npm install -g @ionic/cli
 ```
 
 If there was a previous installation of the Ionic CLI, it will need to be uninstalled due to a change in package name.
@@ -45,7 +45,7 @@ Consider setting up npm to operate globally without elevated permissions. See [R
 Create an Ionic app using one of the pre-made app templates, or a blank one to start fresh. The three most common starters are the `blank` starter, `tabs` starter, and `sidemenu` starter. Get started with the `ionic start` command:
 
 ```shell
-$ ionic start
+ionic start
 ```
 
 ![start app thumbnails](/img/installation/start-app-thumbnails.png)

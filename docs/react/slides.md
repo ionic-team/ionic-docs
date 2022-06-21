@@ -1,4 +1,14 @@
-# Slides
+---
+title: Slides
+---
+
+<head>
+  <title>Set Up Swiper.js for React Slides [Example] | Ionic</title>
+  <meta
+    name="description"
+    content="We recommend Swiper.js if you need a modern touch slider component. Get Swiper for React set up in your application and learn how to migrate from IonSlides."
+  />
+</head>
 
 We recommend <a href="http://swiperjs.com/" target="_blank" rel="noopener noreferrer">Swiper.js</a> if you need a modern touch slider component. It powers our `IonSlides` component, but we now recommend that developers use Swiper for React directly.
 

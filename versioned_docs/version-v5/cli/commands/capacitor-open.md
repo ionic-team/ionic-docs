@@ -7,7 +7,7 @@ sidebar_label: 'capacitor open'
 Open the IDE for a given native platform project
 
 ```shell
-$ ionic capacitor open [options]
+ionic capacitor open [options]
 ```
 
 `ionic capacitor open` will do the following:

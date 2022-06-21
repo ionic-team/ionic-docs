@@ -43,7 +43,7 @@ After the push is made, you will then see your commit under the `Commits` tab of
 
 ## Deploy a Live Update
 
-With the Appflow SDK installed and your commit pushed up to the Dashboard, you are ready to deploy a live update to a device. The Live Update feature uses the installed Appflow SDK with your native application to listen to a particular Deploy Channel Destination. When a live update is assigned to a Channel Distination, that update will be deployed to user devices running binaries that are configured to listen to that specific Channel Destination.
+With the Appflow SDK installed and your commit pushed up to the Dashboard, you are ready to deploy a live update to a device. The Live Update feature uses the installed Appflow SDK with your native application to listen to a particular Deploy Channel Destination. When a live update is assigned to a Channel Destination, that update will be deployed to user devices running binaries that are configured to listen to that specific Channel Destination.
 
 To get the live update deployed, a Web build will need to be created. This can be done through the `Start build` icon from the `Commits` tab or by clicking the `New build` button in the top right corner of the `Build > Builds` tab. After selecting the correct commit to deploy, select the `Web` target platform and the `Latest` build stack. Depending on your Appflow plan, you will then be able to include custom environments, if any are configured. Finally, you can enable `Live Update` and pick the Channel to automatically assign the build to once it successfully completes.
 

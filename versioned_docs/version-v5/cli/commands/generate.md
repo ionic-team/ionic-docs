@@ -7,7 +7,7 @@ sidebar_label: 'generate'
 Create Pages, Components, & Angular Features
 
 ```shell
-$ ionic generate [options]
+ionic generate [options]
 ```
 
 Automatically create framework features with Ionic Generate. This command uses the Angular CLI to generate features such as `pages`, `components`, `directives`, `services`, and more.

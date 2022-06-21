@@ -1,4 +1,14 @@
-# Slides
+---
+title: Slides
+---
+
+<head>
+  <title>Set Up Swiper.js for Angular Slides [Example] | Ionic</title>
+  <meta
+    name="description"
+    content="Read this guide to learn how to get Swiper.js for Angular set up in your Ionic Framework application for a modern touch slider component."
+  />
+</head>
 
 We recommend <a href="http://swiperjs.com/" target="_blank" rel="noopener noreferrer">Swiper.js</a> if you need a modern touch slider component. It powers our `ion-slides` component, but we now recommend that developers use Swiper for Angular directly.
 
@@ -42,7 +52,7 @@ You can import these files in `global.scss`:
 @import '~@ionic/angular/css/ionic-swiper';
 ```
 
-If you prefer to import these in the CSS file for your slides component, you will need to disable [ViewEncapsultion in Angular](https://angular.io/api/core/ViewEncapsulation), otherwise the styles will not apply:
+If you prefer to import these in the CSS file for your slides component, you will need to disable [ViewEncapsulation in Angular](https://angular.io/api/core/ViewEncapsulation), otherwise the styles will not apply:
 
 ```typescript
 // home.page.ts
@@ -93,7 +103,7 @@ Swiper Angular exports a `Swiper` component which is the equivalent of `ion-slid
 <ion-content>
   <swiper>
     <ng-template swiperSlide>Slide 1</ng-template>
-    <ng-template swiperSlide>Slide 3</ng-template>
+    <ng-template swiperSlide>Slide 2</ng-template>
     <ng-template swiperSlide>Slide 3</ng-template>
   </swiper>
 </ion-content>
@@ -144,7 +154,7 @@ Finally, we can turn these features on by using the appropriate properties:
 <ion-content>
   <swiper [autoplay]="true" [keyboard]="true" [pagination]="true" [scrollbar]="true" [zoom]="true">
     <ng-template swiperSlide>Slide 1</ng-template>
-    <ng-template swiperSlide>Slide 3</ng-template>
+    <ng-template swiperSlide>Slide 2</ng-template>
     <ng-template swiperSlide>Slide 3</ng-template>
   </swiper>
 </ion-content>
@@ -201,7 +211,7 @@ To set these options as properties directly on `<swiper>` we would do the follow
 ```html
 <swiper [slidesPerView]="3" [loop]="true">
   <ng-template swiperSlide>Slide 1</ng-template>
-  <ng-template swiperSlide>Slide 3</ng-template>
+  <ng-template swiperSlide>Slide 2</ng-template>
   <ng-template swiperSlide>Slide 3</ng-template>
 </swiper>
 ```
@@ -248,7 +258,7 @@ To migrate, we would change the name of the event to `slideChange`:
 ```html
 <swiper (slideChange)="onSlideChange()">
   <ng-template swiperSlide>Slide 1</ng-template>
-  <ng-template swiperSlide>Slide 3</ng-template>
+  <ng-template swiperSlide>Slide 2</ng-template>
   <ng-template swiperSlide>Slide 3</ng-template>
 </swiper>
 ```
@@ -289,7 +299,7 @@ Accessing these properties can be tricky as you want to access the properties on
 
 <swiper (swiper)="setSwiperInstance($event)">
   <ng-template swiperSlide>Slide 1</ng-template>
-  <ng-template swiperSlide>Slide 3</ng-template>
+  <ng-template swiperSlide>Slide 2</ng-template>
   <ng-template swiperSlide>Slide 3</ng-template>
 </swiper>
 ```
@@ -340,7 +350,7 @@ If you are using effects such as Cube or Fade, you can install them just like we
 
 <swiper>
   <ng-template swiperSlide>Slide 1</ng-template>
-  <ng-template swiperSlide>Slide 3</ng-template>
+  <ng-template swiperSlide>Slide 2</ng-template>
   <ng-template swiperSlide>Slide 3</ng-template>
 </swiper>
 ```
@@ -377,7 +387,7 @@ After that, we can activate it by setting the `effect` property on `swiper` to `
 
 <swiper effect="fade">
   <ng-template swiperSlide>Slide 1</ng-template>
-  <ng-template swiperSlide>Slide 3</ng-template>
+  <ng-template swiperSlide>Slide 2</ng-template>
   <ng-template swiperSlide>Slide 3</ng-template>
 </swiper>
 ```
