@@ -8,7 +8,7 @@ import angularHTML from './angular-html.md';
 import angularCSS from './angular-css.md';
 
 <Playground 
-  size="medium" 
+  size="450px" 
   code={{ 
     javascript, 
     react: {
