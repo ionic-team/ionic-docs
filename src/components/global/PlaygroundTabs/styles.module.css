@@ -1,3 +1,9 @@
+/* Dark theme overrides */
+[data-theme="dark"] .tabNav {
+  --tab-nav-btn-background: rgba(34, 45, 58, 0.5);
+  --tab-nav-btn-color: var(--c-carbon-20);
+}
+
 /**
  * Copyright (c) Facebook, Inc. and its affiliates.
  *
@@ -7,6 +13,13 @@
 
 .tabNav {
   position: relative;
+
+  /**
+   * @prop --tab-nav-btn-background: The background color of the next/prev arrow buttons
+   * @prop --tab-nav-btn-color: The text color of the next/prev arrow buttons.
+   */
+  --tab-nav-btn-background: linear-gradient(90deg, rgba(233, 237, 243, 0.9), var(--c-indigo-30));
+  --tab-nav-btn-color: var(--c-carbon-100);
 }
 
 .tabList {
@@ -37,7 +50,7 @@
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  background: linear-gradient(90deg, rgba(233, 237, 243, 0.9), var(--c-indigo-30));
+  background: var(--tab-nav-btn-background);
 }
 
 .tabNavItemLeft {
@@ -50,7 +63,7 @@
   background: transparent;
   border: 0;
   cursor: pointer;
-  color: var(--c-carbon-100);
+  color: var(--tab-nav-btn-color);
 }
 
 .tabs__nav-button--hidden {
