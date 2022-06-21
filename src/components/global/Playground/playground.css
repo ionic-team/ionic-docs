@@ -25,6 +25,9 @@
    * @prop --playground-btn-icon-hover-background The background color of the button icon in the toolbar when hovered.
    * @prop --playground-separator-color The color of the separator/border in the toolbar.
    * @prop --playground-code-background The background color of the code block when expanded.
+   * @prop --playground-tabs-background: The background color of the tabs bar not including the active tab button.
+   * @prop --playground-tab-btn-color: The text color of the tab buttons.
+   * @prop --playground-tab-btn-border-color: The border color of the tab buttons.
    */
   --playground-btn-color: var(--c-indigo-90);
   --playground-btn-selected-color: var(--c-blue-90);
