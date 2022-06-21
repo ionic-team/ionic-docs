@@ -58,7 +58,7 @@
     "modern-normalize": "^1.1.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
-    "remark-html": "^13.0.1",
+    "remark-html": "^13.0.2",
     "remark-parse": "^8.0.3",
     "sass": "^1.44.0",
     "semver": "^7.3.5"
