@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Accordion</title>
+    <link rel="stylesheet" href="../../../common.css" />
+    <script src="../../../common.js"></script>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core@6/dist/ionic/ionic.esm.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core@6/css/ionic.bundle.css" />
+    <style>
+      :root {
+        --ion-color-rose: #fecdd3;
+        --ion-color-rose-rgb: 254,205,211;
+        --ion-color-rose-contrast: #000000;
+        --ion-color-rose-contrast-rgb: 0,0,0;
+        --ion-color-rose-shade: #e0b4ba;
+        --ion-color-rose-tint: #fed2d7;
+      }
+
+      .ion-color-rose {
+        --ion-color-base: var(--ion-color-rose);
+        --ion-color-base-rgb: var(--ion-color-rose-rgb);
+        --ion-color-contrast: var(--ion-color-rose-contrast);
+        --ion-color-contrast-rgb: var(--ion-color-rose-contrast-rgb);
+        --ion-color-shade: var(--ion-color-rose-shade);
+        --ion-color-tint: var(--ion-color-rose-tint);
+      }
+
+      div[slot="content"] {
+        background: rgba(var(--ion-color-rose-rgb), 0.25)
+      }
+    </style>
+  </head>
+  <body>
+    <ion-app>
+      <ion-content>
+        <div class="container">
+          <ion-accordion-group expand="inset">
+            <ion-accordion value="first">
+              <ion-item slot="header" color="rose">
+                <ion-label>First Accordion</ion-label>
+              </ion-item>
+              <div class="ion-padding" slot="content">
+                First Content
+              </div>
+            </ion-accordion>
+            <ion-accordion value="second">
+              <ion-item slot="header" color="rose">
+                <ion-label>Second Accordion</ion-label>
+              </ion-item>
+              <div class="ion-padding" slot="content">
+                Second Content
+              </div>
+            </ion-accordion>
+            <ion-accordion value="third">
+              <ion-item slot="header" color="rose">
+                <ion-label>Third Accordion</ion-label>
+              </ion-item>
+              <div class="ion-padding" slot="content">
+                Third Content
+              </div>
+            </ion-accordion>
+          </ion-accordion-group>
+        </div>
+      </ion-content>
+    </ion-app>
+  </body>
+</html>
