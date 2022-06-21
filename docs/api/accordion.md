@@ -14,7 +14,10 @@ import Parts from '@site/static/auto-generated/accordion/parts.md';
 import CustomProps from '@site/static/auto-generated/accordion/custom-props.md';
 import Slots from '@site/static/auto-generated/accordion/slots.md';
 
-
+<head>
+  <title>Ion-Accordion Components: How to Build & Examples | Ionic</title>
+  <meta name="description" content="Ion-accordion components provide collapsible sections in content to reduce vertical space and organize information. Learn how to build one and see examples." />
+</head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 import APITOCInline from '@components/page/api/APITOCInline';
