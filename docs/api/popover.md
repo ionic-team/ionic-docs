@@ -76,7 +76,8 @@ import InlineTrigger from '@site/static/usage/popover/presenting/inline-trigger/
 
 Inline popovers can also be opened by setting the `isOpen` property to `true`. This method can be used if you need finer grained control over the popover than with a trigger.
 
-Note that `isOpen` will *not* automatically be set back to `false` when the popover dismisses. It needs to be set back manually, using a `didDismiss` listener for example. 
+`isOpen` uses a one-way data binding, meaning it will not automatically be set to `false` when the popover is dismissed. Developers should listen for the `ionPopoverDidDismiss` or `didDismiss` event and set `isOpen` to `false`. The reason for this is it prevents the internals of `ion-popover` from being tightly coupled with the state of the application. With a one way data binding, the popover only needs to concern itself with the boolean value that the reactive variable provides. With a two way data binding, the popover needs to concern itself with both the boolean value as well as the existence of the reactive variable itself. This can lead to non-deterministic behaviors and make applications harder to debug.
+
 
 import IsOpenTrigger from '@site/static/usage/popover/presenting/inline-isopen/index.md';
 

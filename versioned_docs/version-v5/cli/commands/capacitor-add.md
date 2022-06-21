@@ -7,7 +7,7 @@ sidebar_label: 'capacitor add'
 Add a native platform to your Ionic project
 
 ```shell
-$ ionic capacitor add [options]
+ionic capacitor add [options]
 ```
 
 `ionic capacitor add` will do the following:

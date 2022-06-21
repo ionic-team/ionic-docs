@@ -49,7 +49,7 @@ To open a terminal in Visual Studio Code, go to Terminal -> New Terminal.
 :::
 
 ```shell
-$ npm install -g @ionic/cli@latest native-run cordova-res
+npm install -g @ionic/cli@latest native-run cordova-res
 ```
 
 :::note
@@ -63,7 +63,7 @@ Consider setting up npm to operate globally without elevated permissions. See [R
 Next, create an Ionic Vue app that uses the "Tabs" starter template and adds Capacitor for native functionality:
 
 ```shell
-$ ionic start photo-gallery tabs --type vue --capacitor
+ionic start photo-gallery tabs --type vue --capacitor
 ```
 
 This starter project comes complete with three pre-built pages and best practices for Ionic development. With common building blocks already in place, we can add more features easily!
@@ -71,7 +71,7 @@ This starter project comes complete with three pre-built pages and best practice
 Next, change into the app folder:
 
 ```shell
-$ cd photo-gallery
+cd photo-gallery
 ```
 
 Next we'll need to install the necessary Capacitor plugins to make the app's native functionality work:
@@ -87,7 +87,7 @@ Some Capacitor plugins, including the Camera API, provide the web-based function
 It's a separate dependency, so install it next:
 
 ```shell
-$ npm install @ionic/pwa-elements
+npm install @ionic/pwa-elements
 ```
 
 After installation, open up the project in your code editor of choice.
@@ -109,7 +109,7 @@ That’s it! Now for the fun part - let’s see the app in action.
 Run this command in your shell:
 
 ```shell
-$ ionic serve
+ionic serve
 ```
 
 And voilà! Your Ionic app is now running in a web browser. Most of your app can be built and tested right in the browser, greatly increasing development and testing speed.
@@ -224,19 +224,31 @@ Then, add the FAB to the bottom of the page. Use the camera image as the icon, a
 
 We’ll be creating the `takePhoto` method and the logic to use the Camera and other native features in a moment.
 
-Next, open `src/views/Tabs.vue` then import the `images` icon:
+Next, open `src/views/TabsPage.vue`, remove the `ellipse` icon from the import and import the `images` icon instead:
 
 ```tsx
 import { images, square, triangle } from 'ionicons/icons';
 ```
 
-Within the tab bar (`<ion-tab-bar>`), change the label to "Photos" and the icon to `images` for the middle tab button:
+Within the tab bar (`<ion-tab-bar>`), change the label to "Photos" and the `ellipse` icon to `images` for the middle tab button:
 
 ```html
 <ion-tab-button tab="tab2" href="/tabs/tab2">
   <ion-icon :icon="images" />
   <ion-label>Photos</ion-label>
 </ion-tab-button>
+```
+
+Finally replace `ellipse` with `images` in the `setup()` method.
+
+```typescript
+  setup() {
+    return {
+      images,
+      square,
+      triangle,
+    }
+  }
 ```
 
 That’s just the start of all the cool things we can do with Ionic. Up next, implementing camera taking functionality on the web, then building for iOS and Android.

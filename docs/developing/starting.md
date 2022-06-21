@@ -1,8 +1,15 @@
 ---
+title: Starting an App
 sidebar_label: Starting
 ---
 
-# Starting an App
+<head>
+  <title>Starting an App: How to Guide | Ionic Documentation</title>
+  <meta
+    name="description"
+    content="Starting a new Ionic app is incredibly simple. Learn how to run the ionic start command from the command line and let the CLI handle the rest."
+  />
+</head>
 
 Starting a new Ionic app is incredibly simple. From the command line, run the `ionic start` command and the CLI will handle the rest.
 

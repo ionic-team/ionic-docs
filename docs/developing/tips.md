@@ -79,13 +79,13 @@ Since these global directories are no longer owned by `root`, packages can be in
 To update an [npm](https://www.npmjs.com/) dependency, run the following, where `<package-name>` is the package to update:
 
 ```shell
-$ npm install <package-name>@<version|latest> --save
+npm install <package-name>@<version|latest> --save
 ```
 
 For example, to update the `@ionic/angular` package to the release tagged `latest`, run:
 
 ```shell
-$ npm install @ionic/angular@latest --save
+npm install @ionic/angular@latest --save
 ```
 
 It is recommended that packages get updated through the CLI since npm will now read package versions from the `package-lock.json` first.
@@ -134,7 +134,7 @@ Before it can be used, [Xcode](https://developer.apple.com/xcode/download/), App
 The [Ionic CLI](../cli.md) can then be used to run the app in the current directory on the simulator:
 
 ```shell
-$ ionic cordova emulate ios -lc
+ionic cordova emulate ios -lc
 ```
 
 Passing in the `-lc` flag will enable livereload and log console output to a terminal.
