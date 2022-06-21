@@ -9,7 +9,7 @@ sidebar_label: 'cordova resources'
 Automatically create icon and splash screen resources
 
 ```shell
-$ ionic cordova resources [options]
+ionic cordova resources [options]
 ```
 
 Generate perfectly sized icons and splash screens from PNG source images for your Cordova platforms with this command.

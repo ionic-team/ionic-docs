@@ -549,9 +549,9 @@ In other framework integrations such as Ionic React, this is not needed as any `
 
 Ionic Vue comes with [Ionicons](https://ionic.io/ionicons/) pre-installed. There are a couple options developers have for using them in their application.
 
-### Dynamic Imports
+### Per-Component Imports
 
-Dynamic Imports is the recommended approach to using Ionicons. This involves importing the icon of your choice from the `ionicons` package and passing it to your template:
+Per-Component Imports is the recommended approach to using Ionicons. This involves importing the icon of your choice from the `ionicons` package and passing it to your template:
 
 ```html
 <template>

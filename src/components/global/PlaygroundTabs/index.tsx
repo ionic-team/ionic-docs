@@ -110,6 +110,17 @@ function TabsComponent(props: Props): JSX.Element {
     setRightNavVisible(tabsNavEl.current?.scrollWidth > tabsNavEl.current?.offsetWidth);
   }, []);
 
+  /**
+   * If the selected value is not in the available tabs, fall back to the first tab.
+   * This can happen if the tab children are changed after the initial render.
+   * 
+   * Note that actually updating selectedValue (for example, when defaultValue or the
+   * children are changed) would defer the fallback selection to the next render cycle,
+   * adding flicker.
+   */
+  const useFallback = values.find(item => item.value === selectedValue) === undefined;
+  const isTabSelected = (value: string) => useFallback ? value === values[0].value : value === selectedValue;
+
   return (
     <div className={clsx('tabs-container', styles.tabList)}>
       <div className={clsx('tabs-nav', styles.tabNav)}>
@@ -153,26 +164,29 @@ function TabsComponent(props: Props): JSX.Element {
               </button>
             </div>
           )}
-          {values.map(({ value, label, icon, attributes }) => (
-            <li
-              role="tab"
-              tabIndex={selectedValue === value ? 0 : -1}
-              aria-selected={selectedValue === value}
-              key={value}
-              ref={(tabControl) => tabRefs.push(tabControl)}
-              onKeyDown={handleKeydown}
-              onFocus={handleTabChange}
-              onClick={handleTabChange}
-              {...attributes}
-              className={clsx('tabs__item', styles.tabItem, attributes?.className as string, {
-                'tabs__item--active': selectedValue === value,
-              })}
-            >
-              {/* Ionic extended portion to add icon support to tab items */}
-              {icon && <span className={clsx('tabs__icon', styles.tabIcon)}>{icon}</span>}
-              {label ?? value}
-            </li>
-          ))}
+          {values.map(({ value, label, icon, attributes }) => {
+            const isSelected = isTabSelected(value);
+            return (
+              <li
+                role="tab"
+                tabIndex={isSelected ? 0 : -1}
+                aria-selected={isSelected}
+                key={value}
+                ref={(tabControl) => tabRefs.push(tabControl)}
+                onKeyDown={handleKeydown}
+                onFocus={handleTabChange}
+                onClick={handleTabChange}
+                {...attributes}
+                className={clsx('tabs__item', styles.tabItem, attributes?.className as string, {
+                  'tabs__item--active': isSelected,
+                })}
+              >
+                {/* Ionic extended portion to add icon support to tab items */}
+                {icon && <span className={clsx('tabs__icon', styles.tabIcon)}>{icon}</span>}
+                {label ?? value}
+              </li>
+            )
+          })}
           {rightNavVisible && (
             <div className={clsx('tabs__nav-item', styles.tabNavItem)}>
               <button
@@ -201,7 +215,7 @@ function TabsComponent(props: Props): JSX.Element {
       </div>
 
       {lazy ? (
-        cloneElement(children.filter((tabItem) => tabItem.props.value === selectedValue)[0]!, {
+        cloneElement(children.filter((tabItem) => isTabSelected(tabItem.props.value))[0]!, {
           className: 'margin-top--md',
         })
       ) : (
@@ -209,7 +223,7 @@ function TabsComponent(props: Props): JSX.Element {
           {children.map((tabItem, i) =>
             cloneElement(tabItem, {
               key: i,
-              className: `${tabItem.props.className} ${tabItem.props.value !== selectedValue ? 'hidden' : ''}`,
+              className: `${tabItem.props.className} ${!isTabSelected(tabItem.props.value) ? 'hidden' : ''}`,
             })
           )}
         </div>

@@ -7,7 +7,7 @@ sidebar_label: 'capacitor update'
 Update Capacitor native platforms, install Capacitor/Cordova plugins
 
 ```shell
-$ ionic capacitor update [options]
+ionic capacitor update [options]
 ```
 
 `ionic capacitor update` will do the following:

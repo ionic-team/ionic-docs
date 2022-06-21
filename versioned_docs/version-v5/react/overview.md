@@ -9,13 +9,13 @@ The first official version of Ionic React is v4.11.
 First, install the Ionic CLI:
 
 ```shell
-$ npm install -g @ionic/cli
+npm install -g @ionic/cli
 ```
 
 then run:
 
 ```shell
-$ ionic start myAppName
+ionic start myAppName
 ```
 
 The CLI will guide you through the setup process by asking a couple of questions, including the framework to use (React, of course!) and the starter code template.

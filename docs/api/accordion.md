@@ -179,6 +179,7 @@ When used inside an `ion-accordion-group`, `ion-accordion` has full keyboard sup
 | `Home`             | When focus is on an accordion header, moves focus to the first accordion header. |
 | `End`              | When focus is on an accordion header, moves focus to the last accordion header. |
 
+## Performance
 
 <Props />
 <Events />

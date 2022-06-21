@@ -3,14 +3,14 @@
   <ion-datetime :is-date-enabled="isWeekday"></ion-datetime>
 </template>
 
-<script>
+<script lang="ts">
   import { IonDatetime } from '@ionic/vue';
   import { defineComponent } from 'vue';
 
   export default defineComponent({
     components: { IonDatetime },
     setup() {
-      const isWeekday = (dateString) => {
+      const isWeekday = (dateString: string) => {
         const date = new Date(dateString);
         const utcDay = date.getUTCDay();
         

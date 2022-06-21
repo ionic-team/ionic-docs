@@ -2,7 +2,7 @@
 import React from 'react';
 import { IonDatetime } from '@ionic/react';
 function Example() {
-  const isWeekday = (dateString) => {
+  const isWeekday = (dateString: string) => {
     const date = new Date(dateString);
     const utcDay = date.getUTCDay();
     
