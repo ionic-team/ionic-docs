@@ -1,8 +1,6 @@
 ---
 title: "ion-nav"
 hide_table_of_contents: true
-demoUrl: "/docs/demos/api/nav/index.html"
-demoSourceUrl: "https://github.com/ionic-team/ionic-docs/tree/main/static/demos/api/nav/index.html"
 ---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -37,6 +35,26 @@ import APITOCInline from '@components/page/api/APITOCInline';
 Nav is a standalone component for loading arbitrary components and pushing new components on to the stack.
 
 Unlike Router Outlet, Nav is not tied to a particular router. This means that if we load a Nav component, and push other components to the stack, they will not affect the app's overall router. This fits use cases where you could have a modal, which needs its own sub-navigation, without making it tied to the apps URL.
+
+## Using NavController
+
+TODO: Playground Example
+
+## Using NavLink
+
+TODO: Playground Example
+
+## Navigation within a Modal
+
+TODO: Playground Example
+
+## Animations
+
+TODO: Playground Example
+
+## Event Handling
+
+TODO: Playground Example
 
 ## Interfaces
 
