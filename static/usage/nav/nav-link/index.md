@@ -9,6 +9,11 @@ import angular_page_one_component_ts from './angular/page_one_component_ts.md';
 import angular_page_two_component_ts from './angular/page_two_component_ts.md';
 import angular_page_three_component_ts from './angular/page_three_component_ts.md';
 
+import react_main_tsx from './react/main_tsx.md';
+import react_page_one_tsx from './react/page_one_tsx.md';
+import react_page_two_tsx from './react/page_two_tsx.md';
+import react_page_three_tsx from './react/page_three_tsx.md';
+
 <Playground
   code={{
     javascript,
@@ -20,6 +25,14 @@ import angular_page_three_component_ts from './angular/page_three_component_ts.m
         'src/app/page-two.component.ts': angular_page_two_component_ts,
         'src/app/page-three.component.ts': angular_page_three_component_ts,
         'src/app/app.module.ts': angular_app_module_ts,
+      },
+    },
+    react: {
+      files: {
+        'src/main.tsx': react_main_tsx,
+        'src/page-one.tsx': react_page_one_tsx,
+        'src/page-two.tsx': react_page_two_tsx,
+        'src/page-three.tsx': react_page_three_tsx,
       },
     },
   }}
