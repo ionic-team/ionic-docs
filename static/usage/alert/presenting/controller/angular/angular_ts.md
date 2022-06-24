@@ -1,5 +1,5 @@
 ```ts
-import { Component, ViewChild } from '@angular/core';
+import { Component } from '@angular/core';
 import { AlertController } from '@ionic/angular';
 
 @Component({
