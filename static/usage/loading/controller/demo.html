@@ -6,16 +6,12 @@
     <title>Datetime</title>
     <link rel="stylesheet" href="../../common.css" />
     <script src="../../common.js"></script>
-    <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core@6/dist/ionic/ionic.esm.js">
-      import { loadingController } from ''
-
-    </script>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core@6/dist/ionic/ionic.esm.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core@6/css/ionic.bundle.css" />
-    <style>
-      ion-datetime {
-        width: 350px;
-      }
-    </style>
+    <script type="module">
+      import { loadingController } from 'https://cdn.jsdelivr.net/npm/@ionic/core@6/dist/ionic/index.esm.js';
+      window.loadingController = loadingController;
+    </script>
   </head>
   <body>
     <ion-app>
@@ -24,12 +20,15 @@
           <ion-button onclick="showLoading()">Show Loading</ion-button>
         </div>
       </ion-content>
-      <ion-loading message="Dismissing after 3 seconds..." duration="3000"></ion-loading>
     </ion-app>
 
     <script>
       const loading = document.querySelector('ion-loading');
-      const showLoading = () => {
+      const showLoading = async () => {
+        const loading = await loadingController.create({
+          message: 'Dismissing after 3 seconds...',
+          duration: 3000
+        });
         loading.present();
       }
     </script>
