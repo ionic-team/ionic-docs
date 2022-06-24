@@ -38,7 +38,72 @@ import Controller from '@site/static/usage/loading/controller/index.md';
 
 ### Inline
 
-TODO Explainer
+Ionic React and Ionic Vue users also have the option to use the `ion-loading` component directly in their template.
+
+<Tabs defaultValue="react" values={[{ value: 'react', label: 'React' }, { value: 'vue', label: 'Vue' }]}>
+<TabItem value="react">
+
+```tsx
+import React, { useState } from 'react';
+import { IonLoading, IonButton, IonContent } from '@ionic/react';
+
+export const LoadingExample: React.FC = () => {
+  const [showLoading, setShowLoading] = useState(true);
+  setTimeout(() => {
+    setShowLoading(false);
+  }, 2000);
+
+  return (
+    <IonContent>
+      <IonButton onClick={() => setShowLoading(true)}>Show Loading</IonButton>
+      <IonLoading
+        cssClass='my-custom-class'
+        isOpen={showLoading}
+        onDidDismiss={() => setShowLoading(false)}
+        message={'Please wait...'}
+        duration={5000}
+      />
+    </IonContent>
+  );
+};
+```
+</TabItem>
+<TabItem value="vue">
+
+```html
+<template>
+  <ion-content>
+    <ion-button @click="setOpen(true)">Show Loading</ion-button>
+    <ion-loading
+      :is-open="isOpenRef"
+      cssClass="my-custom-class"
+      message="Please wait..."
+      :duration="timeout"
+      @didDismiss="setOpen(false)"
+    >
+    </ion-loading>
+  </ion-content>
+</template>
+
+<script>
+import { IonButton, IonContent, IonLoading } from '@ionic/vue';
+import { defineComponent, ref } from 'vue';
+export default defineComponent({
+  props: {
+    timeout: { type: Number, default: 1000 },
+  },
+  components: { IonButton, IonContent, IonLoading },
+  setup() {
+    const isOpenRef = ref(false);
+    const setOpen = (state: boolean) => isOpenRef.value = state;
+    
+    return { isOpenRef, setOpen }
+  }
+});
+</script>
+```
+</TabItem>
+</Tabs>
 
 ## Customization
 
