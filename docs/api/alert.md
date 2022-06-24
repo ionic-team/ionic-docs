@@ -115,6 +115,18 @@ import Buttons from '@site/static/usage/alert/buttons/index.md';
 
 Alerts can also include several different inputs whose data can be passed back to the app. Inputs can be used as a simple way to prompt users for information. Radios, checkboxes and text inputs are all accepted, but they cannot be mixed. For example, an alert could have all radio button inputs, or all checkbox inputs, but the same alert cannot mix radio and checkbox inputs. Do note however, different types of "text" inputs can be mixed, such as `url`, `email`, `text`, `textarea` etc. If you require a complex form UI which doesn't fit within the guidelines of an alert then we recommend building the form within a modal instead.
 
+### Text Inputs Example
+
+import TextInputs from '@site/static/usage/alert/inputs/text-inputs/index.md';
+
+<TextInputs />
+
+### Radio Example
+
+import Radios from '@site/static/usage/alert/inputs/radios/index.md';
+
+<Radios />
+
 ## Customization
 
 Alert uses scoped encapsulation, which means it will automatically scope its CSS by appending each of the styles with an additional class at runtime. Overriding scoped selectors in CSS requires a [higher specificity](https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity) selector.
