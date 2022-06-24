@@ -24,41 +24,48 @@ import APITOCInline from '@components/page/api/APITOCInline';
 
 An overlay that can be used to indicate activity while blocking user interaction. The loading indicator appears on top of the app's content, and can be dismissed by the app to resume user interaction with the app. It includes an optional backdrop, which can be disabled by setting `showBackdrop: false` upon creation.
 
+## Presenting
+
+### Controller
+
+TODO Playground
+
+### Inline
+
+TODO Playground
+
 ## Dismissing
 
-The loading indicator can be dismissed automatically after a specific amount of time by passing the number of milliseconds to display it in the `duration` of the loading options. To dismiss the loading indicator after creation, call the `dismiss()` method on the loading instance. The `onDidDismiss` function can be called to perform an action after the loading indicator is dismissed.
+The loading indicator can be dismissed automatically after a specific amount of time by passing the number of milliseconds to display it in the `duration` of the loading options.
+
+ To manually dismiss the loading indicator after creation, call the `dismiss()` method on the loading instance. The `onDidDismiss` function can be called to perform an action after the loading indicator is dismissed.
+
+### Controller
+
+TODO Playground
+
+### Inline
+
+TODO Playground
 
 ## Customization
 
+### Spinners
+
+The spinner that is used can be customized using the `spinner` property. See the [spinner property documentation](#spinner) for a full list of options.
+
+TODO Playground
+
+### Theming
+
 Loading uses scoped encapsulation, which means it will automatically scope its CSS by appending each of the styles with an additional class at runtime. Overriding scoped selectors in CSS requires a [higher specificity](https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity) selector.
 
-We recommend passing a custom class to `cssClass` in the `create` method and using that to add custom styles to the host and inner elements. This property can also accept multiple classes separated by spaces. View the [Usage](#usage) section for an example of how to pass a class using `cssClass`.
+We recommend passing a custom class and using that to add custom styles to the host and inner elements.
 
-```css
-/* DOES NOT WORK - not specific enough */
-ion-loading {
-  color: green;
-}
-
-/* Works - pass "my-custom-class" in cssClass to increase specificity */
-.my-custom-class {
-  color: green;
-}
-```
-
-Any of the defined [CSS Custom Properties](#css-custom-properties) can be used to style the Loading without needing to target individual elements:
-
-```css
-.my-custom-class {
-  --background: #222;
-  --spinner-color: #fff;
-
-  color: #fff;
-}
-```
+TODO Playground
 
 :::note
- If you are building an Ionic Angular app, the styles need to be added to a global stylesheet file. Read [Style Placement](#style-placement) in the Angular section below for more information.
+ `ion-loading` is presented at the root of your application, so we recommend placing any `ion-loading` styles in a global stylesheet.
 :::
 
 
