@@ -38,7 +38,7 @@ import Controller from '@site/static/usage/loading/controller/index.md';
 
 ### Inline
 
-TODO Playground
+TODO Explainer
 
 ## Customization
 
