@@ -106,6 +106,10 @@ In the array of `buttons`, each button includes properties for its `text`, and o
 
 Optionally, a `role` property can be added to a button, such as `cancel`. If a `cancel` role is on one of the buttons, then if the alert is dismissed by tapping the backdrop, then it will fire the handler from the button with a cancel role.
 
+import Buttons from '@site/static/usage/alert/buttons/index.md';
+
+<Buttons />
+
 
 ## Inputs
 
