@@ -32,7 +32,9 @@ Alternatively, developers can configure the loading indicator to dismiss automat
 
 ### Controller
 
-TODO Playground
+import Controller from '@site/static/usage/loading/controller/index.md';
+
+<Controller />
 
 ### Inline
 
