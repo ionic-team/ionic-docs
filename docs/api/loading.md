@@ -34,6 +34,10 @@ Alternatively, developers can configure the loading indicator to dismiss automat
 
 TODO Playground
 
+### Inline
+
+TODO Explainer
+
 ## Customization
 
 ### Spinners
