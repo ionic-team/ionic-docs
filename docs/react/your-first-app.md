@@ -84,7 +84,7 @@ cd photo-gallery
 Next we'll need to install the necessary Capacitor plugins to make the app's native functionality work:
 
 ```shell
-npm install @capacitor/camera @capacitor/storage @capacitor/filesystem
+npm install --save @capacitor/camera @capacitor/storage @capacitor/filesystem
 ```
 
 ### PWA Elements
