@@ -85,7 +85,7 @@ IonicはネイティブアプリケーションのUIガイドラインをエミ�
 
 ### Web標準
 
-Ionic Frameworkは、Custom ElementsやShadow DOMなどの最新のWeb APIを使用して、信頼性の高い [Web標準テクノロジー](reference/glossary#web-standards) : HTML、CSS、およびJavaScriptの上に構築されています。このため、Ionicコンポーネントは安定したAPIを備えており、単一のプラットフォーム・ベンダーの思い付きではありません。
+Ionic Frameworkは、Custom ElementsやShadow DOMなどの最新のWeb APIを使用して、信頼性の高い [Web標準テクノロジー](reference/glossary.md#web-standards) : HTML、CSS、およびJavaScriptの上に構築されています。このため、Ionicコンポーネントは安定したAPIを備えており、単一のプラットフォーム・ベンダーの思い付きではありません。
 
 ### 美しいデザイン
 
@@ -122,7 +122,7 @@ Ionicは現在、人気のVue3ライブラリを公式にサポートしてい�
 
 ## Ionic CLI
 
-公式の [Ionic CLI](cli) は、Ionicアプリを迅速に構築し、Ionic開発者に多くの役に立つコマンドを提供するツールです。CLIには、Ionicのインストールとアップデートに加えて、組み込みの開発サーバ、ビルドとデバッグのためのツールなどが含まれています。 [Appflow](#appflow) のメンバーの場合は、CLIを使用してクラウドの構築と展開を実行し、アカウントを管理できます。
+公式の [Ionic CLI](cli.md) は、Ionicアプリを迅速に構築し、Ionic開発者に多くの役に立つコマンドを提供するツールです。CLIには、Ionicのインストールとアップデートに加えて、組み込みの開発サーバ、ビルドとデバッグのためのツールなどが含まれています。 [Appflow](#appflow) のメンバーの場合は、CLIを使用してクラウドの構築と展開を実行し、アカウントを管理できます。
 
 ## Appflow
 

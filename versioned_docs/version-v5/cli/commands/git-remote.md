@@ -7,7 +7,7 @@ sidebar_label: 'git remote'
 Adds/updates the Appflow git remote to your local Ionic app
 
 ```shell
-$ ionic git remote [options]
+ionic git remote [options]
 ```
 
 This command is used by `ionic link` when Appflow is used as the git host.

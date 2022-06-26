@@ -13,7 +13,7 @@ Capacitor is Ionic’s official app runtime that makes it easy to deploy web app
 If you’re still running `ionic serve` in the terminal, cancel it. Complete a fresh build of the Ionic project, fixing any errors that it reports:
 
 ```shell
-$ ionic build
+ionic build
 ```
 
 Next, create both the iOS and Android projects:
@@ -28,13 +28,13 @@ Both android and ios folders at the root of the project are created. These are e
 Every time you perform a build (e.g. `ionic build`) that updates your web directory (default: `build`), you'll need to copy those changes into your native projects:
 
 ```shell
-$ ionic cap copy
+ionic cap copy
 ```
 
 Note: After making updates to the native portion of the code (such as adding a new plugin), use the `sync` command:
 
 ```shell
-$ ionic cap sync
+ionic cap sync
 ```
 
 ## iOS
@@ -48,7 +48,7 @@ Capacitor iOS apps are configured and managed through Xcode (Apple’s iOS/Mac I
 First, run the Capacitor `open` command, which opens the native iOS project in Xcode:
 
 ```shell
-$ ionic cap open ios
+ionic cap open ios
 ```
 
 In order for some native plugins to work, user permissions must be configured. In our photo gallery app, this includes the Camera plugin: iOS displays a modal dialog automatically after the first time that `Camera.getPhoto()` is called, prompting the user to allow the app to use the Camera. The permission that drives this is labeled “Privacy - Camera Usage.” To set it, the `Info.plist` file must be modified ([more details here](https://capacitor.ionicframework.com/docs/ios/configuration)). To access it, click "Info," then expand "Custom iOS Target Properties."
@@ -80,7 +80,7 @@ Capacitor Android apps are configured and managed through Android Studio. Before
 First, run the Capacitor `open` command, which opens the native Android project in Android Studio:
 
 ```shell
-$ ionic cap open android
+ionic cap open android
 ```
 
 Similar to iOS, we must enable the correct permissions to use the Camera. Configure these in the `AndroidManifest.xml` file. Android Studio will likely open this file automatically, but in case it doesn't, locate it under `android/app/src/main/`.

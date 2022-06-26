@@ -7,7 +7,7 @@ sidebar_label: 'deploy add'
 Adds Appflow Deploy to the project
 
 ```shell
-$ ionic deploy add [options]
+ionic deploy add [options]
 ```
 
 This command adds the Appflow Deploy plugin (`cordova-plugin-ionic`) for both Capacitor and Cordova projects.

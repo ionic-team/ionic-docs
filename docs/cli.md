@@ -18,7 +18,7 @@ The Ionic command-line interface ([CLI](/docs/reference/glossary#cli)) は、Ion
 Ionic CLI はnpmでグローバルにインストールできます:
 
 ```shell
-$ npm install -g @ionic/cli
+npm install -g @ionic/cli
 ```
 
 ## Help

@@ -24,7 +24,7 @@ Ionicアプリは、主にIonic CLI（[command-line](../reference/glossary.md#cl
 npmを使って Ionic CLI をインストールします:
 
 ```shell
-$ npm install -g @ionic/cli
+npm install -g @ionic/cli
 ```
 
 Ionic CLIが以前にインストールされていた場合は、パッケージ名が変更されているため、アンインストールする必要があります。
@@ -45,7 +45,7 @@ $ npm install -g @ionic/cli
 Ionicアプリを作成するには、スターターテンプレートを利用するか、まっさらな状態からつくるための`blank`テンプレートを利用して作成します。汎用的な3つのスターターテンプレートは、`blank`、`tabs`、`sidemenu`があります。`ionic start`コマンドで作成を開始できます。
 
 ```shell
-$ ionic start
+ionic start
 ```
 
 ![start app thumbnails](/img/installation/start-app-thumbnails.png)

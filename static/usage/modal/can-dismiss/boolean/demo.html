@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Modal | Can Dismiss</title>
+  <link rel="stylesheet" href="../../../common.css" />
+  <script src="../../../common.js"></script>
+  <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core@6/dist/ionic/ionic.esm.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core@6/css/ionic.bundle.css" />
+</head>
+
+<body>
+  <ion-app>
+    <div class="ion-page">
+      <ion-header>
+        <ion-toolbar>
+          <ion-title>App</ion-title>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content class="ion-padding">
+        <ion-button id="open-modal" expand="block">Open</ion-button>
+
+        <ion-modal trigger="open-modal" swipe-to-close="true">
+          <ion-header>
+            <ion-toolbar>
+              <ion-title>Modal</ion-title>
+              <ion-buttons slot="end">
+                <ion-button onclick="dismiss()">Close</ion-button>
+              </ion-buttons>
+            </ion-toolbar>
+          </ion-header>
+          <ion-content>
+            <p class="ion-padding-horizontal">You must accept the terms and conditions to close this modal.</p>
+            <ion-item>
+              <ion-label class="ion-text-wrap" for="terms">Do you accept the terms and conditions?</ion-label>
+              <ion-checkbox id="terms"></ion-checkbox>
+            </ion-item>
+          </ion-content>
+        </ion-modal>
+      </ion-content>
+    </div>
+  </ion-app>
+
+  <script>
+    const modal = document.querySelector('ion-modal');
+
+    modal.canDismiss = false;
+    modal.presentingElement = document.querySelector('.ion-page');
+
+    function dismiss() {
+      modal.dismiss();
+    }
+
+    modal.addEventListener('didPresent', () => {
+      const terms = document.getElementById('terms');
+      terms.addEventListener('ionChange', ev => {
+        modal.canDismiss = ev.detail.checked;
+      });
+    });
+
+
+  </script>
+</body>
+
+</html>

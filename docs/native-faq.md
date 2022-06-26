@@ -23,7 +23,7 @@ $ ionic cordova plugin add cordova-plugin-camera
 To ensure that the same version of a plugin is always installed via `npm install`, specify the version number:
 
 ```shell
-$ ionic cordova plugin add cordova-plugin-camera@4.3.2
+ionic cordova plugin add cordova-plugin-camera@4.3.2
 ```
 
 **4) Restore Cordova in an existing Ionic project**

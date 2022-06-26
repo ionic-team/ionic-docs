@@ -122,7 +122,7 @@ FirebaseホスティングはProgressive Web Appsに多くの利点を提供し�
 次にターミナルでFirebase CLIをインストールします:
 
 ```shell
-$ npm install -g firebase-tools
+npm install -g firebase-tools
 ```
 
 Firebase CLIをインストールした状態で、Ionicプロジェクト内で `firebase init` を実行します。CLI上で様々な確認を行っていきます:
@@ -194,13 +194,13 @@ Firebase CLIをインストールした状態で、Ionicプロジェクト内で
 次に、次のコマンドを実行して、アプリケーションの最適化バージョンを構築します:
 
 ```shell
-$ ionic build
+ionic build
 ```
 
 最後に、アプリをデプロイします:
 
 ```shell
-$ firebase deploy
+firebase deploy
 ```
 
 これが完了すると、アプリがライブになります。

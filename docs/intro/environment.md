@@ -60,7 +60,7 @@ Gitは [GitHub](https://github.com/) のようなGitホスティングサービ�
 インストールできているかを確認するためには、新しいターミナルウィンドウを開いて以下を実行します。
 
 ```shell
-$ git --version
+git --version
 ```
 
 ### Git GUI

@@ -40,7 +40,7 @@ Windowsアプリをストアでアプリを公開するには、2つの厳しい
 `electron-windows-store` は npm を使ってインストールすることができます:
 
 ```shell
-$ npm install -g electron-windows-store
+npm install -g electron-windows-store
 ```
 
 ### リリース作業

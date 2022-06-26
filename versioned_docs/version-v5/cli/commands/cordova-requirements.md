@@ -7,7 +7,7 @@ sidebar_label: 'cordova requirements'
 Checks and print out all the requirements for platforms
 
 ```shell
-$ ionic cordova requirements [options]
+ionic cordova requirements [options]
 ```
 
 Like running `cordova requirements` directly, but provides friendly checks.

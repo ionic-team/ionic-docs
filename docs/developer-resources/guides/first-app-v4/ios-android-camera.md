@@ -38,7 +38,7 @@ There are more steps to configure [iOS](../../../developing/ios.md) and [Android
 Camera を使用するためには、その JavaScript とネイティブライブラリの依存関係を取り込む必要があります。ターミナルウィンドウに戻り、次のコマンドを実行して JavaScript ライブラリをプロジェクトに追加し、TypeScript コードに Camera API を公開します:
 
 ```shell
-$ npm install @awesome-cordova-plugins/camera
+npm install @awesome-cordova-plugins/camera
 ```
 
 `package.json` 内に、次のようなバージョン番号の新しい JavaScript 依存関係が追加されていることがわかります。
@@ -48,7 +48,7 @@ $ npm install @awesome-cordova-plugins/camera
 次に、このコマンドを実行して iOS と Android のネイティブコードを追加し、実際にカメラをモバイルデバイスで動作させます。こちらのより詳細な情報は、[Cordova](https://cordova.apache.org/docs/en/latest/guide/overview/) と [Ionic Native](https://cordova.apache.org/docs/en/latest/guide/overview/) を御覧ください。
 
 ```shell
-$ ionic cordova plugin add cordova-plugin-camera
+ionic cordova plugin add cordova-plugin-camera
 ```
 
 `config.xml` ファイルが更新され、ネイティブカメラコードに次のようなエントリが追加されます。

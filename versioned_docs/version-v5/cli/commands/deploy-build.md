@@ -7,7 +7,7 @@ sidebar_label: 'deploy build'
 Create a deploy build on Appflow
 
 ```shell
-$ ionic deploy build [options]
+ionic deploy build [options]
 ```
 
 This command creates a deploy build on Appflow. While the build is running, it prints the remote build log to the terminal.

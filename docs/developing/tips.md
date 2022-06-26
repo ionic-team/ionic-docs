@@ -79,13 +79,13 @@ $ sudo chown -R $(whoami) ~/.npm ~/.npmrc
 [npm](https://www.npmjs.com/) dependencyをアップデートするためには、`<package-name>` をアップデートしたいパッケージ名に変更して以下を実行します:
 
 ```shell
-$ npm install <package-name>@<version|latest> --save
+npm install <package-name>@<version|latest> --save
 ```
 
 例えば、`@ionic/angular` パッケージを `最新` リリースのものに更新するには、以下を実行してください:
 
 ```shell
-$ npm install @ionic/angular@latest --save
+npm install @ionic/angular@latest --save
 ```
 
 npm は最初に `package.lock.json` からパッケージのバージョンを読み込みにいきますので、パッケージを更新する際は CLI を利用することをおすすめします。
@@ -134,7 +134,7 @@ iOS シミュレータは実際のデバイスに届く前にアプリケーシ�
 [Ionic CLI](../cli.md) を用いて、シミュレータ上の現在のディレクトリでアプリケーションを実行可能にします:
 
 ```shell
-$ ionic cordova emulate ios -lc
+ionic cordova emulate ios -lc
 ```
 
 `-lc` フラグを渡すことでライブリロードを有効にし、かつログコンソールををターミナルに出力することができます。

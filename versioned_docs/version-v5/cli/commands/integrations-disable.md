@@ -7,7 +7,7 @@ sidebar_label: 'integrations disable'
 Disable an integration
 
 ```shell
-$ ionic integrations disable [options]
+ionic integrations disable [options]
 ```
 
 Integrations, such as Cordova, can be disabled with this command.

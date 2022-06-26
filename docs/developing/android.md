@@ -93,7 +93,7 @@ Androidハードウェアの実物は、Ionicアプリ開発でも使用でき�
 USBケーブルでデバイスをコンピュータに接続し、次のコマンドを使用して接続が機能することを確認します。
 
 ```shell
-$ adb devices
+adb devices
 ```
 
 デバイスがリストされます。トラブルシューティングと詳細情報については、 <a href="https://developer.android.com/studio/command-line/adb" target="_blank">`adb` documentation</a> を参照してください。
@@ -166,7 +166,7 @@ CapacitorはAndroid Studioを使って、シミュレータやデバイスへの
 リロードサーバを起動するには、次のコマンドを実行します。
 
 ```shell
-$ ionic capacitor run android -l --host=YOUR_IP_ADDRESS
+ionic capacitor run android -l --host=YOUR_IP_ADDRESS
 ```
 
 デバイス上で実行する場合は、デバイスと開発マシンが同じネットワークに接続されていることを確認してください。
@@ -178,7 +178,7 @@ The Ionic CLI can build, copy, and deploy Ionic apps to Android simulators and d
 Run the following to start a long-running CLI process that boots up a live-reload server:
 
 ```shell
-$ ionic cordova run android -l
+ionic cordova run android -l
 ```
 
 Now, when changes are made to the app's source files, web assets are rebuilt and the changes are reflected on the simulator or device without having to deploy again.
@@ -211,5 +211,5 @@ If running with Android Studio, native logs can be found in **Logcat**.
 **Logcat** には [ADB](https://developer.android.com/studio/command-line/adb) を利用してアクセスすることもできます。
 
 ```shell
-$ adb logcat
+adb logcat
 ```

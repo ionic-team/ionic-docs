@@ -82,13 +82,13 @@ Error: more than one library with package name com.google.android.gms
 このエラーは、2つの異なるプラグインが異なるバージョンの  `Google Play Services` を使用しようとしたことが原因です。この問題を解決するには、バージョンが `7.1.0` 以上の `cordova` および バージョンが `6.3.0` 以上の `cordova-android` を実行していることを確認してください。最新の `cordova` をインストールするには次を実行してください:
 
 ```shell
-$ npm install cordova@latest
+npm install cordova@latest
 ```
 
 また、`cordova-android` をアップデートするには次を実行してください:
 
 ```shell
-$ cordova platform update android
+cordova platform update android
 ```
 
 `Google Play Services` に依存するプラグインをアップデートして、同じバージョンを使用できるようになりました。例えば、`pluginA` ではバージョン 11.0 を使用し、`pluginB` では バージョン 15.0 を使用する場合、`config.xml` ファイルでは以下のスニペットで同じバージョンを使用するように更新できます:

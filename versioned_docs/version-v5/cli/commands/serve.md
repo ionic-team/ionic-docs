@@ -7,7 +7,7 @@ sidebar_label: 'serve'
 Start a local dev server for app dev/testing
 
 ```shell
-$ ionic serve [options]
+ionic serve [options]
 ```
 
 Easily spin up a development server which launches in your browser. It watches for changes in your source files and automatically reloads with the updated build.

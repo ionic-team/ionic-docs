@@ -28,7 +28,7 @@ Xcodeアプローチの方が一般的に安定していますが、Ionic CLIを
 Xcodeをインストールしたら、使用するコマンドラインツールが選択されていることを確認します:
 
 ```shell
-$ xcode-select --install
+xcode-select --install
 ```
 
 ### Development Teamの設定
@@ -143,7 +143,7 @@ CapacitorにはXcodeを利用してアプリケーションバイナリの構築
 以下を実行し、ターゲットシミュレータまたはデバイスを選択し、Xcodeの再生ボタンをクリックします:
 
 ```shell
-$ ionic capacitor run ios -l --external
+ionic capacitor run ios -l --external
 ```
 
 ### Cordovaを使ったライブリロード
@@ -153,7 +153,7 @@ Cordovaはネイティブプロジェクトをプログラムでビルドして�
 ライブリロードサーバを起動し、アプリをビルドしてデプロイするには、以下を実行します:
 
 ```shell
-$ ionic cordova run ios -l --external
+ionic cordova run ios -l --external
 ```
 
 ## iOSアプリのデバッグ

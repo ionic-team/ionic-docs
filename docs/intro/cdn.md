@@ -36,7 +36,7 @@ CDNからフレームワークにアクセスするには、 [jsdelivr](https://
 AngularプロジェクトでIonic Frameworkを使用する場合は、 [npm](../reference/glossary.md#npm) から最新の `@ionic/angular` をインストールしてください。これによって、すべてのIonic Frameworkコンポーネントと、Angularのサービスおよび機能を使うことができます。
 
 ```shell
-$ npm install @ionic/angular@latest --save
+npm install @ionic/angular@latest --save
 ```
 
 新しいIonic Frameworkのリリースがあるたびに、最新バージョンの機能と修正を入手するために [バージョン](../reference/versioning.md) を更新する必要があります。最新のバージョンは [npmを使ったアップデート](../developing/tips.md#updating-dependencies) から取得することができます。
@@ -44,7 +44,7 @@ $ npm install @ionic/angular@latest --save
 Ionicを既存のAngularプロジェクトに追加するには、Angular CLIの `ng add` 機能を使用します。
 
 ```shell
-$ ng add @ionic/angular
+ng add @ionic/angular
 ```
 
 これにより、`@ionic/angular` に必要なパッケージと、必要なスタイルが追加されます。
@@ -85,7 +85,7 @@ import '@ionic/react/css/display.css';
 To add Ionic Framework to an existing Vue project, install the `@ionic/vue` and `@ionic/vue-router` packages.
 
 ```shell
-$ npm install @ionic/vue @ionic/vue-router
+npm install @ionic/vue @ionic/vue-router
 ```
 
 After that, you will need to install the `IonicVue` plugin in your Vue app.
