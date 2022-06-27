@@ -82,7 +82,7 @@ export const LoadingExample: React.FC = () => {
   </ion-content>
 </template>
 
-<script>
+<script lang="ts">
 import { IonButton, IonContent, IonLoading } from '@ionic/vue';
 import { defineComponent, ref } from 'vue';
 export default defineComponent({
