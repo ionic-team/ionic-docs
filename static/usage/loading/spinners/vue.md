@@ -1,6 +1,6 @@
 ```html
 <template>
-  <ion-button @click="showLoading()">Show Loading</ion-button>
+  <ion-button @click="showLoading">Show Loading</ion-button>
 </template>
 
 <script lang="ts">
