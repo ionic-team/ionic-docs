@@ -44,7 +44,9 @@ TODO Explainer
 
 The spinner that is used can be customized using the `spinner` property. See the [spinner property documentation](#spinner) for a full list of options.
 
-TODO Playground
+import Spinners from '@site/static/usage/loading/spinners/index.md';
+
+<Spinners />
 
 ### Theming
 
