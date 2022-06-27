@@ -54,7 +54,9 @@ Loading uses scoped encapsulation, which means it will automatically scope its C
 
 We recommend passing a custom class and using that to add custom styles to the host and inner elements.
 
-TODO Playground
+import Theming from '@site/static/usage/loading/theming/index.md';
+
+<Theming />
 
 :::note
  `ion-loading` is presented at the root of your application, so we recommend placing any `ion-loading` styles in a global stylesheet.
