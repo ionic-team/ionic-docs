@@ -1,5 +1,5 @@
 ```html
-<ion-button>Click Me</ion-button>
+<ion-button onclick="presentAlert()">Click Me</ion-button>
 
 <script>
   async function presentAlert() {
@@ -17,9 +17,6 @@
     document.body.appendChild(alert);
     await alert.present();
   }
-
-  const button = document.querySelector('ion-button');
-  button.addEventListener('click', presentAlert);
 </script>
 
 <style>
