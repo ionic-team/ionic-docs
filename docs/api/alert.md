@@ -153,15 +153,13 @@ Any of the defined [CSS Custom Properties](#css-custom-properties) can be used t
 }
 ```
 
-:::note
- If you are building an Ionic Angular app, the styles need to be added to a global stylesheet file.
-:::
-
-### Example
-
 import Customization from '@site/static/usage/alert/customization/index.md';
 
 <Customization />
+
+:::note
+ If you are building an Ionic Angular app, the styles need to be added to a global stylesheet file.
+:::
 
 
 ## Interfaces
