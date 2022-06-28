@@ -7,7 +7,8 @@ import { AlertController } from '@ionic/angular';
   templateUrl: 'app.component.html',
 })
 export class AppComponent {
-  message = "";
+  handlerMessage = "";
+  roleMessage = "";
 
   constructor(public alertController: AlertController) {}
 
@@ -18,16 +19,20 @@ export class AppComponent {
         {
           text: 'Cancel',
           role: 'cancel',
-          handler: () => { this.message = 'Alert canceled'; }
+          handler: () => { this.handlerMessage = 'Alert canceled'; }
         },
         {
           text: 'OK',
-          handler: () => { this.message = 'Alert confirmed'; }
+          role: 'confirm',
+          handler: () => { this.handlerMessage = 'Alert confirmed'; }
         }
       ]
     });
 
     await alert.present();
+
+    const { role } = await alert.onDidDismiss();
+    this.roleMessage = `Dismissed with role: ${role}`;
   }
 }
 ```

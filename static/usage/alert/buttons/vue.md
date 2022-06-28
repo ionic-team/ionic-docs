@@ -2,7 +2,8 @@
 <template>
   <ion-content>
     <ion-button @click="presentAlert">Click Me</ion-button>
-    <p>{{ message }}</p>
+    <p>{{ handlerMessage }}</p>
+    <p>{{ roleMessage }}</p>
   </ion-content>
 </template>
 
@@ -13,7 +14,8 @@ export default {
   components: { IonButton, IonContent },
   data() {
     return {
-      message: ''
+      handlerMessage: '',
+      roleMessage: ''
     };
   },
   methods: {
@@ -24,16 +26,20 @@ export default {
           {
             text: 'Cancel',
             role: 'cancel',
-            handler: () => { this.message = 'Alert canceled'; }
+            handler: () => { this.handlerMessage = 'Alert canceled'; }
           },
           {
             text: 'OK',
-            handler: () => { this.message = 'Alert confirmed'; }
+            role: 'confirm',
+            handler: () => { this.handlerMessage = 'Alert confirmed'; }
           }
         ]
       });
 
       await alert.present();
+
+      const { role } = await alert.onDidDismiss();
+      this.roleMessage = `Dismissed with role: ${role}`;
     },
   },
 }

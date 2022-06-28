@@ -4,7 +4,8 @@ import { IonButton, IonContent, useIonAlert } from '@ionic/react';
 
 function Example() {
   const [presentAlert] = useIonAlert();
-  const [message, setMessage] = useState('');
+  const [handlerMessage, setHandlerMessage] = useState('');
+  const [roleMessage, setRoleMessage] = useState('');
 
   return (
     <IonContent>
@@ -14,15 +15,18 @@ function Example() {
           {
             text: 'Cancel',
             role: 'cancel',
-            handler: () => { setMessage('Alert canceled'); }
+            handler: () => { setHandlerMessage('Alert canceled'); }
           },
           {
             text: 'OK',
-            handler: () => { setMessage('Alert confirmed'); }
+            role: 'confirm',
+            handler: () => { setHandlerMessage('Alert confirmed'); }
           }
-        ]
+        ],
+        onDidDismiss: (e: CustomEvent) => setRoleMessage(`Dismissed with role: ${e.detail.role}`)
       })}>Click Me</IonButton>
-      <p>{message}</p>
+      <p>{handlerMessage}</p>
+      <p>{roleMessage}</p>
     </IonContent>
   );
 }

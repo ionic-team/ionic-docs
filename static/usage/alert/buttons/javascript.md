@@ -1,9 +1,11 @@
 ```html
 <ion-button>Click Me</ion-button>
-<p></p>
+<p id="handlerResult"></p>
+<p id="roleResult"></p>
 
 <script>
-  const output = document.querySelector('p');
+  const handlerOutput = document.querySelector('#handlerResult');
+  const roleOutput = document.querySelector('#roleResult');
 
   async function presentAlert() {
     const alert = document.createElement('ion-alert');
@@ -12,16 +14,20 @@
       {
         text: 'Cancel',
         role: 'cancel',
-        handler: () => { output.innerText = 'Alert canceled'; }
+        handler: () => { handlerOutput.innerText = 'Alert canceled'; }
       },
       {
         text: 'OK',
-        handler: () => { output.innerText = 'Alert confirmed'; }
+        role: 'confirm',
+        handler: () => { handlerOutput.innerText = 'Alert confirmed'; }
       }
     ];
 
     document.body.appendChild(alert);
     await alert.present();
+
+    const { role } = await alert.onDidDismiss();
+    roleOutput.innerText = `Dismissed with role: ${role}`;
   }
 
   const button = document.querySelector('ion-button');
