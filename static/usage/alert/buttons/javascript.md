@@ -1,5 +1,5 @@
 ```html
-<ion-button>Click Me</ion-button>
+<ion-button onclick="presentAlert()">Click Me</ion-button>
 <p id="handlerResult"></p>
 <p id="roleResult"></p>
 
@@ -29,8 +29,5 @@
     const { role } = await alert.onDidDismiss();
     roleOutput.innerText = `Dismissed with role: ${role}`;
   }
-
-  const button = document.querySelector('ion-button');
-  button.addEventListener('click', presentAlert);
 </script>
 ```
