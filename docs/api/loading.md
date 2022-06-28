@@ -44,7 +44,9 @@ TODO Explainer
 
 The spinner that is used can be customized using the `spinner` property. See the [spinner property documentation](#spinner) for a full list of options.
 
-TODO Playground
+import Spinners from '@site/static/usage/loading/spinners/index.md';
+
+<Spinners />
 
 ### Theming
 
@@ -52,7 +54,9 @@ Loading uses scoped encapsulation, which means it will automatically scope its C
 
 We recommend passing a custom class and using that to add custom styles to the host and inner elements.
 
-TODO Playground
+import Theming from '@site/static/usage/loading/theming/index.md';
+
+<Theming />
 
 :::note
  `ion-loading` is presented at the root of your application, so we recommend placing any `ion-loading` styles in a global stylesheet.
