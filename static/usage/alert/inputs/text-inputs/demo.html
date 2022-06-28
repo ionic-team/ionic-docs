@@ -15,7 +15,7 @@
   <ion-app>
     <ion-content>
       <div class="container">
-        <ion-button>Click Me</ion-button>
+        <ion-button onclick="presentAlert()">Click Me</ion-button>
       </div>
     </ion-content>
   </ion-app>
@@ -50,9 +50,6 @@
       document.body.appendChild(alert);
       await alert.present();
     }
-
-    const button = document.querySelector('ion-button');
-    button.addEventListener('click', presentAlert);
   </script>
 </body>
 
