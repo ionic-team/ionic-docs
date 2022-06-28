@@ -1747,7 +1747,7 @@
       "summary": "Create a deploy build on Appflow",
       "description": "This command creates a deploy build on Appflow. While the build is running, it prints the remote build log to the terminal. If the build is successful, it downloads the created web build zip file in the current directory. Downloading build artifacts can be skipped by supplying the flag `skip-download`.\n\nApart from `--commit`, every option can be specified using the full name setup within the Appflow [Dashboard](https://dashboard.ionicframework.com).\n\nCustomizing the build:\n- The `--environment` and `--channel` options can be used to customize the groups of values exposed to the build.",
       "footnotes": [],
-      "groups": ["paid"],
+      "groups": ["paid", "deprecated"],
       "exampleCommands": [
         "ionic deploy build ",
         "ionic deploy build --environment=\"My Custom Environment Name\"",
@@ -2259,20 +2259,20 @@
       "name": "ionic login",
       "namespace": ["ionic"],
       "summary": "Log in to Ionic",
-      "description": "Authenticate with Ionic and retrieve a user token, which is stored in the CLI config. The most secure way to log in is running `ionic login` without arguments, which will open a browser where you can submit your credentials.\n\nIf the `IONIC_TOKEN` environment variable is set, the CLI will automatically authenticate you. To retrieve your user token, first use `ionic login <email> <password>` to log in, then use `ionic config get -g tokens.user` to print the token. (**Note**: Tokens retrieved from the browser login are short-lived and not recommended for use with `IONIC_TOKEN`.)\n\n`ionic login` will also accept `password` through stdin, e.g.: `echo \"<password>\" | ionic login <email>`.\n\nIf you need to create an Ionic account, use `ionic signup` or the Ionic [Website](https://ionicframework.com/signup).\n\nYou can reset your password in the [Dashboard](https://dashboard.ionicframework.com/reset-password).\n\nIf you are having issues logging in, please get in touch with our [Support](https://ion.link/support-request).",
+      "description": "Authenticate with Ionic and retrieve a user token, which is stored in the CLI config. Running `ionic login` will open a browser where you can submit your credentials.\n\nIf the `IONIC_TOKEN` environment variable is set, the CLI will automatically authenticate you. Use the Dashboard to generate a Personal Access Token.\n\nIf you need to create an Ionic account, use `ionic signup` or the Ionic [Website](https://ionicframework.com/signup).\n\nIf you are having issues logging in, please get in touch with our [Support](https://ion.link/support-request).",
       "footnotes": [],
       "groups": [],
-      "exampleCommands": ["ionic login ", "ionic login john@example.com", "ionic login hello@example.com secret"],
+      "exampleCommands": ["ionic login "],
       "aliases": [],
       "inputs": [
         {
           "name": "email",
-          "summary": "Your email address",
+          "summary": "Your email address (deprecated)",
           "required": false
         },
         {
           "name": "password",
-          "summary": "Your password",
+          "summary": "Your password (deprecated)",
           "required": false
         }
       ],
@@ -2298,7 +2298,7 @@
       "summary": "Create a package build on Appflow",
       "description": "This command creates a package build on Appflow. While the build is running, it prints the remote build log to the terminal. If the build is successful, it downloads the created app package file in the current directory. Downloading build artifacts can be skipped by supplying the flag `skip-download`.\n\nApart from `--commit`, every option can be specified using the full name setup within the [Dashboard](https://dashboard.ionicframework.com).\n\nThe `--signing-certificate` option is mandatory for any iOS build but not for Android debug builds.\n\nCustomizing the build:\n- The `--environment` and `--native-config` options can be used to customize the groups of values exposed to the build.\n- Override the preferred platform with `--build-stack`. This is useful for building older iOS apps.\n\nDeploying the build to an App Store:\n- The `--destination` option can be used to deliver the app created by the build to the configured App Store. This can be used only together with build type `release` for Android and build types `app-store` or `enterprise` for iOS.\n\nDownloading build artifacts:\n- By default once the build is complete, all artifacts are downloaded for the selected platform. `aab` and `apk` for Android `ipa` and `dsym` for iOS.\n- The `--artifact-type` option can be used to limit artifact downloads to only of that type. For instance, with Android, you can specify `aab` if you do not wish to download `apk`.",
       "footnotes": [],
-      "groups": ["paid"],
+      "groups": ["paid", "deprecated"],
       "exampleCommands": [
         "ionic package build android debug",
         "ionic package build ios development --signing-certificate=\"iOS Signing Certificate Name\"",
@@ -2466,7 +2466,7 @@
       "summary": "Deploys a binary to a destination, such as an app store using Appflow",
       "description": "This command deploys a binary to a destination using Appflow. While running, the remote log is printed to the terminal.\n\nThe command takes two parameters: the numeric ID of the package build that previously created the binary and the name of the destination where the binary is going to be deployed.\nBoth can be retrieved from the [Dashboard](https://dashboard.ionicframework.com).",
       "footnotes": [],
-      "groups": ["paid"],
+      "groups": ["paid", "deprecated"],
       "exampleCommands": ["ionic package deploy 123456789 \"My app store destination\""],
       "aliases": [],
       "inputs": [
@@ -3033,7 +3033,7 @@
           "name": "cordova",
           "type": "boolean",
           "summary": "Include Cordova integration",
-          "groups": [],
+          "groups": ["deprecated"],
           "aliases": [],
           "spec": {
             "value": "true/false"
@@ -3043,7 +3043,7 @@
           "name": "capacitor",
           "type": "boolean",
           "summary": "Include Capacitor integration",
-          "groups": ["experimental"],
+          "groups": [],
           "aliases": [],
           "spec": {
             "value": "true/false"
