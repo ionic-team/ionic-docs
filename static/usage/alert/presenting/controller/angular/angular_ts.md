@@ -7,8 +7,6 @@ import { AlertController } from '@ionic/angular';
   templateUrl: 'app.component.html',
 })
 export class AppComponent {
-  roleMsg = "";
-
   constructor(public alertController: AlertController) {}
 
   async presentAlert() {
@@ -20,9 +18,6 @@ export class AppComponent {
     });
 
     await alert.present();
-  
-    const { role } = await alert.onDidDismiss();
-    this.roleMsg = `Alert dismissed with role: ${role}`;
   }
 }
 ```

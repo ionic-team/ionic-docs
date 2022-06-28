@@ -9,12 +9,6 @@
   <script src="../../../common.js"></script>
   <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core@6/dist/ionic/ionic.esm.js"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core@6/css/ionic.bundle.css" />
-
-  <style>
-    .container {
-      flex-direction: column;
-    }
-  </style>
 </head>
 
 <body>
@@ -22,14 +16,11 @@
     <ion-content>
       <div class="container">
         <ion-button>Click Me</ion-button>
-        <p></p>
       </div>
     </ion-content>
   </ion-app>
 
   <script>
-    const output = document.querySelector('p');
-
     async function presentAlert() {
       const alert = document.createElement('ion-alert');
       alert.header = 'Alert';
@@ -39,9 +30,6 @@
 
       document.body.appendChild(alert);
       await alert.present();
-
-      const { role } = await alert.onDidDismiss();
-      output.innerText = `Alert dismissed with role: ${role}`;
     }
 
     const button = document.querySelector('ion-button');

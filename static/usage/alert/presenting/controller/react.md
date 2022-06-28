@@ -1,10 +1,9 @@
 ```tsx
-import React, { useState } from 'react';
+import React from 'react';
 import { IonButton, IonContent, useIonAlert } from '@ionic/react';
 
 function Example() {
   const [presentAlert] = useIonAlert();
-  const [roleMsg, setRoleMsg] = useState('');
 
   return (
     <IonContent>
@@ -13,9 +12,7 @@ function Example() {
         subHeader: 'Important message',
         message: 'This is an alert!',
         buttons: ['OK'],
-        onDidDismiss: (e: CustomEvent) => setRoleMsg(`Popover dismissed with role: ${e.detail.role}`)
       })}>Click Me</IonButton>
-      <p>{roleMsg}</p>
     </IonContent>
   );
 }
