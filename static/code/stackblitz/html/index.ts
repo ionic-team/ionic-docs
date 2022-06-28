@@ -1,6 +1,6 @@
 import { defineCustomElements } from '@ionic/core/loader';
 
-import { modalController, pickerController } from '@ionic/core';
+import { loadingController, modalController, pickerController } from '@ionic/core';
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/core/css/core.css';
@@ -19,5 +19,6 @@ import '@ionic/core/css/flex-utils.css';
 
 defineCustomElements();
 
+(window as any).loadingController = loadingController;
 (window as any).modalController = modalController;
 (window as any).pickerController = pickerController;
