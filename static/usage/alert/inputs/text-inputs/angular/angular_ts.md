@@ -7,7 +7,7 @@ import { AlertController } from '@ionic/angular';
   templateUrl: 'app.component.html',
 })
 export class AppComponent {
-  constructor(public alertController: AlertController) {}
+  constructor(private alertController: AlertController) {}
 
   async presentAlert() {
     const alert = await this.alertController.create({
