@@ -10,7 +10,7 @@ export class AppComponent {
   handlerMessage = "";
   roleMessage = "";
 
-  constructor(public alertController: AlertController) {}
+  constructor(private alertController: AlertController) {}
 
   async presentAlert() {
     const alert = await this.alertController.create({
