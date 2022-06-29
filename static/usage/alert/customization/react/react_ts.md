@@ -13,7 +13,10 @@ function Example() {
         header: 'Are you sure?',
         cssClass: 'custom-alert',
         buttons: [
-          'No',
+          {
+            text: 'No',
+            cssClass: 'alert-button-cancel'
+          },
           {
             text: 'Yes, I\'m sure',
             cssClass: 'alert-button-confirm'

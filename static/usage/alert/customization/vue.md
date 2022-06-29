@@ -16,7 +16,10 @@
           header: 'Are you sure?',
           cssClass: 'custom-alert',
           buttons: [
-            'No',
+            {
+              text: 'No',
+              cssClass: 'alert-button-cancel'
+            },
             {
               text: 'Yes, I\'m sure',
               cssClass: 'alert-button-confirm'
@@ -45,12 +48,22 @@
   }
 
   .md button.alert-button.alert-button-confirm {
-    border-radius: 5px;
+    border-radius: 4px;
+  }
+
+  .ios .custom-alert button.alert-button {
+    border: 0.55px solid rgba(var(--ion-text-color-rgb, 0, 0, 0), 0.2)
+  }
+
+  .ios button.alert-button.alert-button-cancel {
+    border-right: 0;
+    border-bottom-left-radius: 13px;
+    border-top-left-radius: 13px;
   }
 
   .ios button.alert-button.alert-button-confirm {
-    border-bottom-right-radius: 5px;
-    border-top-right-radius: 5px;
+    border-bottom-right-radius: 13px;
+    border-top-right-radius: 13px;
   }
 </style>
 ```
