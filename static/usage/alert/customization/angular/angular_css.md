@@ -20,16 +20,16 @@ ion-alert.custom-alert {
   padding: 8px;
 }
 
-button.alert-button.alert-button-danger {
-  background-color: var(--ion-color-danger);
-  color: var(--ion-color-danger-contrast);
+button.alert-button.alert-button-confirm {
+  background-color: var(--ion-color-success);
+  color: var(--ion-color-success-contrast);
 }
 
-.md button.alert-button.alert-button-danger {
+.md button.alert-button.alert-button-confirm {
   border-radius: 5px;
 }
 
-.ios button.alert-button.alert-button-danger {
+.ios button.alert-button.alert-button-confirm {
   border-bottom-right-radius: 5px;
   border-top-right-radius: 5px;
 }

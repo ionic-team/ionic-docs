@@ -16,7 +16,7 @@ function Example() {
           'No',
           {
             text: 'Yes, I\'m sure',
-            cssClass: 'alert-button-danger'
+            cssClass: 'alert-button-confirm'
           }
         ]
       })}>Click Me</IonButton>
