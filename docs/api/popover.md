@@ -233,6 +233,17 @@ type PositionAlign = 'start' | 'center' | 'end';
 | `ArrowLeft`        | When used in a child popover, closes the popover and returns focus to the parent popover. |
 | `Space`, `Enter`, and `ArrowRight`       | When focusing a trigger element, opens the associated popover. |
 
+## Performance
+
+### Mounting Inner Contents
+
+The content of `ion-popover` is unmounted when closed. If this content is expensive to render, developers can use the `keepContentsMounted` property to mount the content as soon as the popover is mounted. This can help optimize the responsiveness of your application as the inner contents will have already been mounted when the popover opens.
+
+import Mount from '@site/static/usage/popover/performance/mount/index.md';
+
+<Mount />
+
+This feature should be used as a last resort in order to deal with existing performance problems. Try to identify and resolve performance bottlenecks before using this feature. Additionally, do not use this to anticipate performance problems.
 
 <Props />
 <Events />
