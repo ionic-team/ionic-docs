@@ -237,13 +237,19 @@ type PositionAlign = 'start' | 'center' | 'end';
 
 ### Mounting Inner Contents
 
-The content of `ion-popover` is unmounted when closed. If this content is expensive to render, developers can use the `keepContentsMounted` property to mount the content as soon as the popover is mounted. This can help optimize the responsiveness of your application as the inner contents will have already been mounted when the popover opens.
+The content of an inline `ion-popover` is unmounted when closed. If this content is expensive to render, developers can use the `keepContentsMounted` property to mount the content as soon as the popover is mounted. This can help optimize the responsiveness of your application as the inner contents will have already been mounted when the popover opens.
 
 import Mount from '@site/static/usage/popover/performance/mount/index.md';
 
 <Mount />
 
-This feature should be used as a last resort in order to deal with existing performance problems. Try to identify and resolve performance bottlenecks before using this feature. Additionally, do not use this to anticipate performance problems.
+Developers should keep the following in mind when using `keepContentsMounted`:
+
+- This feature should be used as a last resort in order to deal with existing performance problems. Try to identify and resolve performance bottlenecks before using this feature. Additionally, do not use this to anticipate performance problems.
+
+- This feature is only needed when using a JavaScript Framework. Developers not using a framework can  pass the contents to be rendered into the popover, and the contents will be rendered automatically.
+
+- This feature only works with inline popovers. Popovers created with the `popoverController` are not created ahead of time, so the inner contents are not created either.
 
 <Props />
 <Events />

@@ -240,15 +240,19 @@ When the backdrop is disabled, users will be able to interact with elements outs
 
 ### Mounting Inner Contents
 
-The content of `ion-modal` is unmounted when closed. If this content is expensive to render, developers can use the `keepContentsMounted` property to mount the content as soon as the modal is mounted. This can help optimize the responsiveness of your application as the inner contents will have already been mounted when the modal opens.
+The content of an inline `ion-modal` is unmounted when closed. If this content is expensive to render, developers can use the `keepContentsMounted` property to mount the content as soon as the modal is mounted. This can help optimize the responsiveness of your application as the inner contents will have already been mounted when the modal opens.
 
 import Mount from '@site/static/usage/modal/performance/mount/index.md';
 
 <Mount />
 
-This feature should be used as a last resort in order to deal with existing performance problems. Try to identify and resolve performance bottlenecks before using this feature. Additionally, do not use this to anticipate performance problems.
+Developers should keep the following in mind when using `keepContentsMounted`:
 
-This feature is only needed when using a JavaScript Framework. Developers not using a framework can  pass the contents to be rendered into the modal, and the contents will be rendered automatically.
+- This feature should be used as a last resort in order to deal with existing performance problems. Try to identify and resolve performance bottlenecks before using this feature. Additionally, do not use this to anticipate performance problems.
+
+- This feature is only needed when using a JavaScript Framework. Developers not using a framework can  pass the contents to be rendered into the modal, and the contents will be rendered automatically.
+
+- This feature only works with inline modals. Modals created with the `modalController` are not created ahead of time, so the inner contents are not created either.
 
 <Props />
 <Events />
