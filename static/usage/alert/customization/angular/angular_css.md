@@ -15,16 +15,22 @@
 ion-alert.custom-alert {
   --backdrop-opacity: 0.7;
 }
-    
-.custom-alert .alert-wrapper {
-  box-shadow: 5px 5px 5px 0 #0000ff;
-}
 
 .custom-alert .alert-button-group {
-  background-color: #d3d3ff;
+  padding: 8px;
 }
 
-button.alert-button.custom-alert-button {
-  color: #8600c9;
+button.alert-button.alert-button-danger {
+  background-color: var(--ion-color-danger);
+  color: var(--ion-color-danger-contrast);
+}
+
+.md button.alert-button.alert-button-danger {
+  border-radius: 5px;
+}
+
+.ios button.alert-button.alert-button-danger {
+  border-bottom-right-radius: 5px;
+  border-top-right-radius: 5px;
 }
 ```

@@ -11,13 +11,13 @@ export class AppComponent {
 
   async presentAlert() {
     const alert = await this.alertController.create({
-      header: 'Alert!',
+      header: 'Are you sure?',
       cssClass: 'custom-alert',
       buttons: [
-        'OK',
+        'No',
         {
-          text: 'Wow!',
-          cssClass: 'custom-alert-button'
+          text: 'Yes, I\'m sure',
+          cssClass: 'alert-button-danger'
         }
       ]
     });

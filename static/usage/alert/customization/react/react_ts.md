@@ -10,13 +10,13 @@ function Example() {
   return (
     <IonContent>
       <IonButton onClick={() => presentAlert({
-        header: 'Alert!',
+        header: 'Are you sure?',
         cssClass: 'custom-alert',
         buttons: [
-          'OK',
+          'No',
           {
-            text: 'Wow!',
-            cssClass: 'custom-alert-button'
+            text: 'Yes, I\'m sure',
+            cssClass: 'alert-button-danger'
           }
         ]
       })}>Click Me</IonButton>
