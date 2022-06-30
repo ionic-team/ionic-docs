@@ -7,8 +7,8 @@ import { AlertController } from '@ionic/angular';
   templateUrl: 'app.component.html',
 })
 export class AppComponent {
-  handlerMessage = "";
-  roleMessage = "";
+  handlerMessage = '';
+  roleMessage = '';
 
   constructor(private alertController: AlertController) {}
 
