@@ -18,7 +18,7 @@ function Example() {
             cssClass: 'alert-button-cancel'
           },
           {
-            text: 'Yes, I\'m sure',
+            text: 'Yes',
             cssClass: 'alert-button-confirm'
           }
         ]
