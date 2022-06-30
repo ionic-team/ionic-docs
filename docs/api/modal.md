@@ -254,6 +254,8 @@ Developers should keep the following in mind when using `keepContentsMounted`:
 
 - This feature only works with inline modals. Modals created with the `modalController` are not created ahead of time, so the inner contents are not created either.
 
+- Any JavaScript Framework lifecycle hooks on the inner component will run as soon as the modal is mounted, not when the modal is presented.
+
 <Props />
 <Events />
 <Methods />
