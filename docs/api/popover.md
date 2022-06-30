@@ -251,6 +251,8 @@ Developers should keep the following in mind when using `keepContentsMounted`:
 
 - This feature only works with inline popovers. Popovers created with the `popoverController` are not created ahead of time, so the inner contents are not created either.
 
+- Any JavaScript Framework lifecycle hooks on the inner component will run as soon as the popover is mounted, not when the popover is presented.
+
 <Props />
 <Events />
 <Methods />
