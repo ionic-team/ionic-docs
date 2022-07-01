@@ -115,11 +115,23 @@ import Buttons from '@site/static/usage/alert/buttons/index.md';
 
 Alerts can also include several different inputs whose data can be passed back to the app. Inputs can be used as a simple way to prompt users for information. Radios, checkboxes and text inputs are all accepted, but they cannot be mixed. For example, an alert could have all radio button inputs, or all checkbox inputs, but the same alert cannot mix radio and checkbox inputs. Do note however, different types of "text" inputs can be mixed, such as `url`, `email`, `text`, `textarea` etc. If you require a complex form UI which doesn't fit within the guidelines of an alert then we recommend building the form within a modal instead.
 
+### Text Inputs Example
+
+import TextInputs from '@site/static/usage/alert/inputs/text-inputs/index.md';
+
+<TextInputs />
+
+### Radio Example
+
+import Radios from '@site/static/usage/alert/inputs/radios/index.md';
+
+<Radios />
+
 ## Customization
 
 Alert uses scoped encapsulation, which means it will automatically scope its CSS by appending each of the styles with an additional class at runtime. Overriding scoped selectors in CSS requires a [higher specificity](https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity) selector.
 
-We recommend passing a custom class to `cssClass` in the `create` method and using that to add custom styles to the host and inner elements. This property can also accept multiple classes separated by spaces. View the [Usage](#usage) section for an example of how to pass a class using `cssClass`.
+We recommend passing a custom class to `cssClass` in the `create` method and using that to add custom styles to the host and inner elements. This property can also accept multiple classes separated by spaces.
 
 ```css
 /* DOES NOT WORK - not specific enough */
@@ -141,8 +153,12 @@ Any of the defined [CSS Custom Properties](#css-custom-properties) can be used t
 }
 ```
 
+import Customization from '@site/static/usage/alert/customization/index.md';
+
+<Customization />
+
 :::note
- If you are building an Ionic Angular app, the styles need to be added to a global stylesheet file. Read [Style Placement](#style-placement) in the Angular section below for more information.
+ If you are building an Ionic Angular app, the styles need to be added to a global stylesheet file.
 :::
 
 
