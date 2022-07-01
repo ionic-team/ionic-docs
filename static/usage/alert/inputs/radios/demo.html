@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Alert</title>
+  <link rel="stylesheet" href="../../../common.css" />
+  <script src="../../../common.js"></script>
+  <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core@6/dist/ionic/ionic.esm.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core@6/css/ionic.bundle.css" />
+</head>
+
+<body>
+  <ion-app>
+    <ion-content>
+      <div class="container">
+        <ion-button onclick="presentAlert()">Click Me</ion-button>
+      </div>
+    </ion-content>
+  </ion-app>
+
+  <script>
+    async function presentAlert() {
+      const alert = document.createElement('ion-alert');
+      alert.header = 'Select your favorite color';
+      alert.buttons = ['OK'];
+      alert.inputs = [
+        {
+          label: 'Red',
+          type: 'radio',
+          value: 'red'
+        },
+        {
+          label: 'Blue',
+          type: 'radio',
+          value: 'blue'
+        },
+        {
+          label: 'Green',
+          type: 'radio',
+          value: 'green'
+        }
+      ];
+
+      document.body.appendChild(alert);
+      await alert.present();
+    }
+  </script>
+</body>
+
+</html>
