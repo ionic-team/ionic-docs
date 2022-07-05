@@ -66,8 +66,7 @@ for its value. The value is simply a string, rather than using JavaScript's
 `Date` object. Using the ISO datetime format makes it easy to serialize
 and parse within JSON objects and databases.
 
-Any of the ISO formats below can be used, and after a user selects a new value, Ionic Framework will continue to use
-the same ISO format which datetime value was originally given as.
+Below are some examples of ISO 8601 formats that can be used with `ion-datetime`:
 
 | Description          | Format                 | Datetime Value Example        |
 | -------------------- | ---------------------- | ----------------------------  |
