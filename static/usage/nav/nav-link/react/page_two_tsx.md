@@ -9,14 +9,13 @@ import {
   IonNavLink,
   IonToolbar,
   IonTitle,
-  IonPage,
 } from '@ionic/react';
 
 import PageThree from './page-three';
 
 function PageTwo() {
   return (
-    <IonPage>
+    <>
       <IonHeader>
         <IonToolbar>
           <IonButtons slot="start">
@@ -31,7 +30,7 @@ function PageTwo() {
           <IonButton>Go to Page Three</IonButton>
         </IonNavLink>
       </IonContent>
-    </IonPage>
+    </>
   );
 }
 
