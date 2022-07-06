@@ -50,7 +50,9 @@ import NavLinkExample from '@site/static/usage/nav/nav-link/index.md';
 
 ## Navigation within a Modal
 
-TODO: Playground Example
+import ModalNavigationExample from '@site/static/usage/nav/modal-navigation/index.md';
+
+<ModalNavigationExample />
 
 ## Animations
 
