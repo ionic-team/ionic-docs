@@ -14,6 +14,11 @@ import react_page_one_tsx from './react/page_one_tsx.md';
 import react_page_two_tsx from './react/page_two_tsx.md';
 import react_page_three_tsx from './react/page_three_tsx.md';
 
+import vue_example from './vue/example_vue.md';
+import vue_page_one from './vue/page_one_vue.md';
+import vue_page_two from './vue/page_two_vue.md';
+import vue_page_three from './vue/page_three_vue.md';
+
 <Playground
   code={{
     javascript,
@@ -33,6 +38,14 @@ import react_page_three_tsx from './react/page_three_tsx.md';
         'src/page-one.tsx': react_page_one_tsx,
         'src/page-two.tsx': react_page_two_tsx,
         'src/page-three.tsx': react_page_three_tsx,
+      },
+    },
+    vue: {
+      files: {
+        'src/components/Example.vue': vue_example,
+        'src/components/PageOne.vue': vue_page_one,
+        'src/components/PageTwo.vue': vue_page_two,
+        'src/components/PageThree.vue': vue_page_three,
       },
     },
   }}
