@@ -8,6 +8,6 @@ import { PageOneComponent } from './page-one.component';
   templateUrl: 'app.component.html',
 })
 export class AppComponent {
-  pageOne = PageOneComponent;
+  component = PageOneComponent;
 }
 ```

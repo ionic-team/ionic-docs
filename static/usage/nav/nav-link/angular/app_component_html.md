@@ -1,3 +1,3 @@
 ```html
-<ion-nav [root]="pageOne"></ion-nav>
+<ion-nav [root]="component"></ion-nav>
 ```

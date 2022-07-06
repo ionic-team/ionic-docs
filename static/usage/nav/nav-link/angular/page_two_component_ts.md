@@ -17,7 +17,7 @@ import { PageThreeComponent } from './page-three.component';
     <ion-content class="ion-padding">
       <h1>Page Two</h1>
       <div>
-        <ion-nav-link router-direction="forward" [component]="pageThree">
+        <ion-nav-link router-direction="forward" [component]="component">
           <ion-button>Go to Page Three</ion-button>
         </ion-nav-link>
       </div>
@@ -25,6 +25,6 @@ import { PageThreeComponent } from './page-three.component';
   `,
 })
 export class PageTwoComponent {
-  pageThree = PageThreeComponent;
+  component = PageThreeComponent;
 }
 ```
