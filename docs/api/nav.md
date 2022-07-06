@@ -42,7 +42,11 @@ TODO: Playground Example
 
 ## Using NavLink
 
-TODO: Playground Example
+NavLink is a simplified API when interacting with Nav. Developers can customize the component, pass along component properties, modify the direction of the route animation or define a custom animation when navigating. 
+
+import NavLinkExample from '@site/static/usage/nav/nav-link/index.md';
+
+<NavLinkExample />
 
 ## Navigation within a Modal
 
