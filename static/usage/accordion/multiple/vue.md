@@ -5,46 +5,33 @@
       <ion-item slot="header" color="light">
         <ion-label>First Accordion</ion-label>
       </ion-item>
-      <div class="ion-padding" slot="content">
-        First Content
-      </div>
+      <div class="ion-padding" slot="content">First Content</div>
     </ion-accordion>
     <ion-accordion value="second">
       <ion-item slot="header" color="light">
         <ion-label>Second Accordion</ion-label>
       </ion-item>
-      <div class="ion-padding" slot="content">
-        Second Content
-      </div>
+      <div class="ion-padding" slot="content">Second Content</div>
     </ion-accordion>
     <ion-accordion value="third">
       <ion-item slot="header" color="light">
         <ion-label>Third Accordion</ion-label>
       </ion-item>
-      <div class="ion-padding" slot="content">
-        Third Content
-      </div>
+      <div class="ion-padding" slot="content">Third Content</div>
     </ion-accordion>
   </ion-accordion-group>
 </template>
 
 <script lang="ts">
-  import {
-    IonAccordion, 
-    IonAccordionGroup,
-    IonContent,
-    IonItem, 
-    IonLabel
-  } from '@ionic/vue';
+  import { IonAccordion, IonAccordionGroup, IonItem, IonLabel } from '@ionic/vue';
   import { defineComponent } from 'vue';
 
   export default defineComponent({
     components: {
-      IonAccordion, 
+      IonAccordion,
       IonAccordionGroup,
-      IonContent,
-      IonItem, 
-      IonLabel
+      IonItem,
+      IonLabel,
     },
   });
 </script>

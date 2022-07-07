@@ -16,16 +16,16 @@ import angularHTML from './angular/angular-html.md';
     react: {
       files: {
         'src/main.tsx': reactTS,
-        'src/main.css': reactCSS
-      }
+        'src/main.css': reactCSS,
+      },
     },
     vue,
     angular: {
       files: {
-        'src/app/app.component.html': angularHTML,
-        'src/styles.css': angularCSS
-      }
-    }
+        'src/app/example.component.html': angularHTML,
+        'src/styles.css': angularCSS,
+      },
+    },
   }}
   size="250px"
   src="usage/accordion/customization/theming/demo.html"

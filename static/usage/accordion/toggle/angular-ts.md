@@ -3,10 +3,10 @@ import { Component, ViewChild } from '@angular/core';
 import { IonAccordionGroup } from '@ionic/angular';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: 'app.component.html'
+  selector: 'app-example',
+  templateUrl: 'example.component.html',
 })
-export class AppComponent {  
+export class ExampleComponent {
   @ViewChild('accordionGroup', { static: true }) accordionGroup: IonAccordionGroup;
 
   toggleAccordion = () => {
@@ -16,6 +16,6 @@ export class AppComponent {
     } else {
       nativeEl.value = 'second';
     }
-  }
+  };
 }
 ```
