@@ -5,11 +5,10 @@ import { RangeCustomEvent } from '@ionic/angular';
 import { RangeValue } from '@ionic/core';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: 'app.component.html',
-  styleUrls: ['app.component.css'],
+  selector: 'app-example',
+  templateUrl: 'example.component.html',
 })
-export class AppComponent {
+export class ExampleComponent {
   moveStart: RangeValue;
   moveEnd: RangeValue;
 

@@ -5,11 +5,11 @@ import { RangeCustomEvent } from '@ionic/angular';
 import { RangeValue } from '@ionic/core';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: 'app.component.html',
-  styleUrls: ['app.component.css'],
+  selector: 'app-example',
+  templateUrl: 'example.component.html',
+  styleUrls: ['example.component.css'],
 })
-export class AppComponent {
+export class ExampleComponent {
   lastEmittedValue: RangeValue;
 
   onIonChange(ev: Event) {
