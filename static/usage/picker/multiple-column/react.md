@@ -1,6 +1,6 @@
 ```tsx
 import React from 'react';
-import { IonButton, IonContent, IonPage, useIonPicker } from '@ionic/react';
+import { IonButton, useIonPicker } from '@ionic/react';
 
 function Example() {
   const [present] = useIonPicker();
@@ -75,13 +75,7 @@ function Example() {
     });
   };
 
-  return (
-    <IonPage>
-      <IonContent className="ion-padding">
-        <IonButton onClick={openPicker}>Open</IonButton>
-      </IonContent>
-    </IonPage>
-  );
+  return <IonButton onClick={openPicker}>Open</IonButton>;
 }
 
 export default Example;

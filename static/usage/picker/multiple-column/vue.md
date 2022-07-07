@@ -1,12 +1,10 @@
 ```html
 <template>
-  <ion-content class="ion-padding">
-    <ion-button @click="openPicker()">Open</ion-button>
-  </ion-content>
+  <ion-button @click="openPicker()">Open</ion-button>
 </template>
 
 <script>
-  import { IonButton, IonContent, pickerController } from '@ionic/vue';
+  import { IonButton, pickerController } from '@ionic/vue';
   import { defineComponent } from 'vue';
 
   export default defineComponent({
