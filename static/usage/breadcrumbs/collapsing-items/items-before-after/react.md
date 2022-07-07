@@ -1,9 +1,9 @@
 ```tsx
 import React from 'react';
-import { IonBreadcrumb, IonBreadcrumbs, IonContent } from '@ionic/react';
+import { IonBreadcrumb, IonBreadcrumbs } from '@ionic/react';
 function Example() {
   return (
-    <IonContent>
+    <>
       <div>Before Collapse = 2</div>
       <IonBreadcrumbs maxItems={4} itemsBeforeCollapse={2}>
         <IonBreadcrumb href="#home">Home</IonBreadcrumb>
@@ -43,7 +43,7 @@ function Example() {
         <IonBreadcrumb href="#film">Film</IonBreadcrumb>
         <IonBreadcrumb href="#35mm">35 mm</IonBreadcrumb>
       </IonBreadcrumbs>
-    </IonContent>
+    </>
   );
 }
 export default Example;
