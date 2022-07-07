@@ -100,9 +100,20 @@ import CSSProps from '@site/static/usage/breadcrumbs/styling/css-props/index.md'
 <CSSProps />
 
 
+## Properties
 <Props />
+
+## Events
 <Events />
+
+## Methods
 <Methods />
+
+## CSS Shadow Parts
 <Parts />
+
+## CSS Custom Properties
 <CustomProps />
+
+## Slots
 <Slots />

@@ -46,9 +46,20 @@ You can combine the `ionSwipe` event plus the `expandable` directive to create a
 
 
 
+## Properties
 <Props />
+
+## Events
 <Events />
+
+## Methods
 <Methods />
+
+## CSS Shadow Parts
 <Parts />
+
+## CSS Custom Properties
 <CustomProps />
+
+## Slots
 <Slots />
