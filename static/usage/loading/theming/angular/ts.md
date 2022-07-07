@@ -4,19 +4,19 @@ import { Component } from '@angular/core';
 import { LoadingController } from '@ionic/angular';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: 'app.component.html',
+  selector: 'app-example',
+  templateUrl: 'example.component.html',
 })
-export class AppComponent {
+export class ExampleComponent {
   constructor(private loadingCtrl: LoadingController) {}
 
   async showLoading() {
     const loading = await this.loadingCtrl.create({
       message: 'Loading...',
       duration: 3000,
-      cssClass: 'custom-loading'
+      cssClass: 'custom-loading',
     });
-    
+
     loading.present();
   }
 }
