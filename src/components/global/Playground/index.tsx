@@ -92,6 +92,7 @@ export default function Playground({
   src,
   size = 'small',
   devicePreview,
+  includeIonContent = true,
   expandCodeByDefault = false,
 }: {
   code: { [key in UsageTarget]?: MdxContent | UsageTargetOptions };
@@ -100,7 +101,8 @@ export default function Playground({
   size: string;
   description?: string;
   devicePreview?: boolean;
-  expandCodeByDefault: boolean
+  includeIonContent: boolean;
+  expandCodeByDefault: boolean;
 }) {
   if (!code || Object.keys(code).length === 0) {
     console.warn('No code usage examples provided for this Playground example.');
@@ -155,21 +157,24 @@ export default function Playground({
    * before loading the iframes.
    */
   useEffect(() => {
-    const io = new IntersectionObserver((entries: IntersectionObserverEntry[]) => {
-      const ev = entries[0];
-      if (!ev.isIntersecting || renderIframes) return;
+    const io = new IntersectionObserver(
+      (entries: IntersectionObserverEntry[]) => {
+        const ev = entries[0];
+        if (!ev.isIntersecting || renderIframes) return;
 
-      setRenderIframes(true);
+        setRenderIframes(true);
 
-      /**
-       * Once the playground is loaded, it is never "unloaded"
-       * so we can safely disconnect the observer.
-       */
-      io.disconnect();
-    }, { threshold: 0 });
+        /**
+         * Once the playground is loaded, it is never "unloaded"
+         * so we can safely disconnect the observer.
+         */
+        io.disconnect();
+      },
+      { threshold: 0 }
+    );
 
     io.observe(hostRef.current!);
-  })
+  });
 
   const isIOS = mode === Mode.iOS;
   const isMD = mode === Mode.MD;
@@ -198,6 +203,7 @@ export default function Playground({
     const editorOptions: EditorOptions = {
       title,
       description,
+      includeIonContent,
     };
 
     let codeBlock;
@@ -442,44 +448,45 @@ export default function Playground({
             </Tippy>
           </div>
         </div>
-        { renderIframes ? [
-          <div className="playground__preview">
-            {/*
+        {renderIframes
+          ? [
+              <div className="playground__preview">
+                {/*
               We render two iframes, one for each mode.
               When the set mode changes, we hide one frame and
               show the other. This is done to avoid flickering
               and doing unnecessary reloads when switching modes.
             */}
-            {devicePreview
-              ? [
-                  <div className={!isIOS ? 'frame-hidden' : 'frame-visible'}>
-                    <device-preview mode="ios">
-                      <iframe height={frameSize} ref={frameiOS} src={sourceiOS}></iframe>
-                    </device-preview>
-                  </div>,
-                  <div className={!isMD ? 'frame-hidden' : 'frame-visible'}>
-                    <device-preview mode="md">
-                      <iframe height={frameSize} ref={frameMD} src={sourceMD}></iframe>
-                    </device-preview>
-                  </div>,
-                ]
-              : [
-                  <iframe
-                    height={frameSize}
-                    className={!isIOS ? 'frame-hidden' : ''}
-                    ref={frameiOS}
-                    src={sourceiOS}
-                  ></iframe>,
-                  <iframe
-                    height={frameSize}
-                    className={!isMD ? 'frame-hidden' : ''}
-                    ref={frameMD}
-                    src={sourceMD}
-                  ></iframe>,
-                ]}
-          </div>
-        ] : []
-      }
+                {devicePreview
+                  ? [
+                      <div className={!isIOS ? 'frame-hidden' : 'frame-visible'}>
+                        <device-preview mode="ios">
+                          <iframe height={frameSize} ref={frameiOS} src={sourceiOS}></iframe>
+                        </device-preview>
+                      </div>,
+                      <div className={!isMD ? 'frame-hidden' : 'frame-visible'}>
+                        <device-preview mode="md">
+                          <iframe height={frameSize} ref={frameMD} src={sourceMD}></iframe>
+                        </device-preview>
+                      </div>,
+                    ]
+                  : [
+                      <iframe
+                        height={frameSize}
+                        className={!isIOS ? 'frame-hidden' : ''}
+                        ref={frameiOS}
+                        src={sourceiOS}
+                      ></iframe>,
+                      <iframe
+                        height={frameSize}
+                        className={!isMD ? 'frame-hidden' : ''}
+                        ref={frameMD}
+                        src={sourceMD}
+                      ></iframe>,
+                    ]}
+              </div>,
+            ]
+          : []}
       </div>
       <div
         ref={codeRef}
