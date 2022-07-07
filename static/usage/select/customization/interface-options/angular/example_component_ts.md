@@ -2,27 +2,26 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: 'app.component.html',
+  selector: 'app-example',
+  templateUrl: 'example.component.html',
 })
-export class AppComponent {
+export class ExampleComponent {
   customAlertOptions = {
     header: 'Pizza Toppings',
     subHeader: 'Select your favorite topping',
     message: 'Choose only one',
-    translucent: true
+    translucent: true,
   };
 
   customPopoverOptions = {
     header: 'Hair Color',
     subHeader: 'Select your hair color',
-    message: 'Only select your dominant hair color'
+    message: 'Only select your dominant hair color',
   };
 
   customActionSheetOptions = {
     header: 'Colors',
-    subHeader: 'Select your favorite color'
+    subHeader: 'Select your favorite color',
   };
 }
-
 ```

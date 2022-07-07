@@ -2,28 +2,28 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: 'app.component.html',
+  selector: 'app-example',
+  templateUrl: 'example.component.html',
 })
-export class AppComponent {
+export class ExampleComponent {
   currentFood = undefined;
 
   foods = [
     {
       id: 1,
-      name: "Apples",
-      type: "fruit"
+      name: 'Apples',
+      type: 'fruit',
     },
     {
       id: 2,
-      name: "Carrots",
-      type: "vegetable"
+      name: 'Carrots',
+      type: 'vegetable',
     },
     {
       id: 3,
-      name: "Cupcakes",
-      type: "dessert"
-    }
+      name: 'Cupcakes',
+      type: 'dessert',
+    },
   ];
 
   compareWith(o1, o2) {
@@ -34,5 +34,4 @@ export class AppComponent {
     this.currentFood = ev.target.value;
   }
 }
-
 ```
