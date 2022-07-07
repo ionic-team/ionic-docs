@@ -1,9 +1,9 @@
 ```tsx
 import React from 'react';
-import { IonButton, IonContent, IonPopover } from '@ionic/react';
+import { IonButton, IonPopover } from '@ionic/react';
 function Example() {
   return (
-    <IonContent>
+    <>
       <IonButton id="auto-trigger">Size=Auto</IonButton>
       <IonPopover trigger="auto-trigger" size="auto">
         <IonContent class="ion-padding">Hello!</IonContent>
@@ -13,7 +13,7 @@ function Example() {
       <IonPopover trigger="cover-trigger" size="cover">
         <IonContent class="ion-padding">Hello!</IonContent>
       </IonPopover>
-    </IonContent>
+    </>
   );
 }
 export default Example;

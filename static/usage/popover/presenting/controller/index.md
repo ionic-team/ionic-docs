@@ -20,18 +20,18 @@ import angularModule from './angular/angular_module.md';
     vue: {
       files: {
         'src/components/Example.vue': vueMain,
-        'src/components/Popover.vue': vuePopover
-      }
+        'src/components/Popover.vue': vuePopover,
+      },
     },
     angular: {
       files: {
-        'src/app/app.component.html': angularHTML,
-        'src/app/app.component.ts': angularTS,
+        'src/app/example.component.html': angularHTML,
+        'src/app/example.component.ts': angularTS,
         'src/app/popover.component.html': angularPopoverHTML,
         'src/app/popover.component.ts': angularPopoverTS,
-        'src/app/app.module.ts': angularModule
-      }
-    }
+        'src/app/app.module.ts': angularModule,
+      },
+    },
   }}
   src="usage/popover/presenting/controller/demo.html"
 />

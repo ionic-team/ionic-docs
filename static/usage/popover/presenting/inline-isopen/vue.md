@@ -1,15 +1,9 @@
 ```html
 <template>
-  <ion-content>
-    <ion-button @click="openPopover($event)">Click Me</ion-button>
-    <ion-popover
-      :is-open="popoverOpen"
-      :event="event"
-      @didDismiss="popoverOpen = false"
-    >
-      <ion-content class="ion-padding">Hello World!</ion-content>
-    </ion-popover>
-  </ion-content>
+  <ion-button @click="openPopover($event)">Click Me</ion-button>
+  <ion-popover :is-open="popoverOpen" :event="event" @didDismiss="popoverOpen = false">
+    <ion-content class="ion-padding">Hello World!</ion-content>
+  </ion-popover>
 </template>
 
 <script lang="ts">
@@ -21,15 +15,15 @@
     data() {
       return {
         popoverOpen: false,
-        event: null
-      }
+        event: null,
+      };
     },
     methods: {
       openPopover(e: Event) {
         this.event = e;
         this.popoverOpen = true;
-      }
-    }
+      },
+    },
   });
 </script>
 ```
