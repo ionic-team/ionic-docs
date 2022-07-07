@@ -5,10 +5,10 @@ import { ModalController } from '@ionic/angular';
 import { ModalExampleComponent } from './modal-example.component';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: 'app.component.html',
+  selector: 'app-example',
+  templateUrl: 'example.component.html',
 })
-export class AppComponent {
+export class ExampleComponent {
   message = 'This modal example uses the modalController to present and dismiss modals.';
 
   constructor(private modalCtrl: ModalController) {}

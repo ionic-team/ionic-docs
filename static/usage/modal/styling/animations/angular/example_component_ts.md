@@ -3,11 +3,10 @@ import { Component } from '@angular/core';
 import { AnimationController } from '@ionic/angular';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: 'app.component.html',
-  styleUrls: ['app.component.css'],
+  selector: 'app-example',
+  templateUrl: 'example.component.html',
 })
-export class AppComponent {
+export class ExampleComponent {
   constructor(private animationCtrl: AnimationController) {}
 
   enterAnimation = (baseEl: HTMLElement) => {

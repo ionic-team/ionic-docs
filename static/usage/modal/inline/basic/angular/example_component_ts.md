@@ -4,10 +4,10 @@ import { IonModal } from '@ionic/angular';
 import { OverlayEventDetail } from '@ionic/core/components';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: 'app.component.html',
+  selector: 'app-example',
+  templateUrl: 'example.component.html',
 })
-export class AppComponent {
+export class ExampleComponent {
   @ViewChild(IonModal) modal: IonModal;
 
   message = 'This modal example uses triggers to automatically open a modal when the button is clicked.';

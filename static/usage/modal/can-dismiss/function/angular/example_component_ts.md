@@ -4,10 +4,10 @@ import { Component } from '@angular/core';
 import { ActionSheetController } from '@ionic/angular';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: 'app.component.html',
+  selector: 'app-example',
+  templateUrl: 'example.component.html',
 })
-export class AppComponent {
+export class ExampleComponent {
   presentingElement = undefined;
 
   constructor(private actionSheetCtrl: ActionSheetController) {}

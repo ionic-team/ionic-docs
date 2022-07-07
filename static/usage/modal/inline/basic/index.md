@@ -4,9 +4,8 @@ import javascript from './javascript.md';
 import react from './react.md';
 import vue from './vue.md';
 
-import angular_app_module_ts from './angular/app_module_ts.md';
-import angular_app_component_html from './angular/app_component_html.md';
-import angular_app_component_ts from './angular/app_component_ts.md';
+import angular_example_component_html from './angular/example_component_html.md';
+import angular_example_component_ts from './angular/example_component_ts.md';
 
 <Playground
   code={{
@@ -15,9 +14,8 @@ import angular_app_component_ts from './angular/app_component_ts.md';
     vue,
     angular: {
       files: {
-        'src/app/app.component.html': angular_app_component_html,
-        'src/app/app.component.ts': angular_app_component_ts,
-        'src/app/app.module.ts': angular_app_module_ts,
+        'src/app/example.component.html': angular_example_component_html,
+        'src/app/example.component.ts': angular_example_component_ts,
       },
     },
   }}

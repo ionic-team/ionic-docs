@@ -5,9 +5,23 @@
   </ion-toolbar>
 </ion-header>
 <ion-content class="ion-padding">
-  <ion-button id="open-modal" expand="block">Open Sheet Modal</ion-button>
+  <p>You can interact with the +/- buttons until the sheet is fully expanded.</p>
 
-  <ion-modal #modal trigger="open-modal" [initialBreakpoint]="0.25" [breakpoints]="[0, 0.25, 0.5, 0.75]">
+  <div class="counter__section">
+    <ion-button (click)="decrement()">-</ion-button>
+    <p>{{count }}</p>
+    <ion-button (click)="increment()">+</ion-button>
+  </div>
+
+  <ion-modal
+    #modal
+    trigger="open-modal"
+    [isOpen]="true"
+    [initialBreakpoint]="0.25"
+    [breakpoints]="[0.25, 0.5, 0.75]"
+    [backdropDismiss]="false"
+    [backdropBreakpoint]="0.5"
+  >
     <ng-template>
       <ion-content>
         <ion-searchbar placeholder="Search" (click)="modal.setCurrentBreakpoint(0.75)"></ion-searchbar>
