@@ -28,4 +28,5 @@ import angular_example_component_ts from './angular/example_component_ts.md';
   }}
   src="usage/modal/styling/animations/demo.html"
   devicePreview
+  includeIonContent={false}
 />

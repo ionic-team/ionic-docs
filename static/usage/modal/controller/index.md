@@ -34,4 +34,5 @@ import angular_modal_example_component_html from './angular/modal-example_compon
   }}
   src="usage/modal/controller/demo.html"
   devicePreview
+  includeIonContent={false}
 />
