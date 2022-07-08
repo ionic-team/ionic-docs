@@ -1,6 +1,6 @@
 ```tsx
 import React, { useRef, useState } from 'react';
-import { IonButton, IonPopover } from '@ionic/react';
+import { IonButton, IonContent, IonPopover } from '@ionic/react';
 
 function Example() {
   const popover = useRef<HTMLIonPopoverElement>(null);

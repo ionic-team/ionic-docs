@@ -1,6 +1,6 @@
 ```tsx
 import React from 'react';
-import { IonButton, IonPopover } from '@ionic/react';
+import { IonButton, IonContent, IonPopover } from '@ionic/react';
 function Example() {
   return (
     <>
