@@ -2,7 +2,13 @@
 import React, { useState } from 'react';
 import { IonItem, IonList, IonLabel, IonSelect, IonSelectOption } from '@ionic/react';
 
-const foods = [
+interface Food {
+  id: number;
+  name: string;
+  type: string;
+}
+
+const foods: Food[] = [
   {
     id: 1,
     name: 'Apples',
@@ -20,7 +26,7 @@ const foods = [
   },
 ];
 
-const compareWith = (o1, o2) => {
+const compareWith = (o1: Food, o2: Food) => {
   if (!o1 || !o2) {
     return o1 === o2;
   }
