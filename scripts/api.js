@@ -115,7 +115,7 @@ ${methods
 
 function renderParts({ parts }) {
   if (parts.length === 0) {
-    return 'No CSS Shadow Parts available for this component.';
+    return 'No CSS shadow parts available for this component.';
   }
 
   return `
