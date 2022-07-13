@@ -34,6 +34,8 @@ import ShowingConfirmationButtons from '@site/static/usage/datetime/buttons/show
 import CustomizingButtons from '@site/static/usage/datetime/buttons/customizing-buttons/index.md';
 import CustomizingButtonTexts from '@site/static/usage/datetime/buttons/customizing-button-texts/index.md';
 
+import MultipleDateSelection from '@site/static/usage/datetime/multiple/index.md';
+
 import Theming from '@site/static/usage/datetime/theming/index.md';
 
 <head>
@@ -272,6 +274,14 @@ Developers can provide their own buttons for advanced custom behavior.
 `ion-datetime` has `confirm`, `cancel`, and `reset` methods that developers can call when clicking on custom buttons. The `reset` method also allows developers to provide a date to reset the datetime to.
 
 <CustomizingButtons />
+
+## Multiple Date Selection
+
+If the `multiple` property is set to `true`, multiple dates can be selected from the calendar picker at once. Clicking a selected date will deselect it.
+
+Note that this property is only supported when `presentation="date"`.
+
+<MultipleDateSelection />
 
 ## Theming
 
