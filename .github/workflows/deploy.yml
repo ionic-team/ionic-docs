@@ -15,17 +15,23 @@ jobs:
           cache: 'npm'
           cache-dependency-path: package-lock.json
 
-      # Docsのビルド
-      - name: npm install, build
-        run: |
-          npm install --legacy-peer-deps
-          npm run prebuild
-          npm run build:ci
+      - name: prepare code
+        run: git clone https://github.com/ionic-jp/community-site.git site
 
       # community-siteのビルド
       - name: community-site build
         run: |
-          npm run build-site
+          npm install
+          npm run build.ci
+        working-directory: site
+
+      # Docsのビルド
+      - name: npm install, build
+        run: |
+          npm ci --legacy-peer-deps
+          npm run prebuild
+          npm run build:ci
+          mv site/www/* www/
 
       # デプロイ
       - name: deploy
