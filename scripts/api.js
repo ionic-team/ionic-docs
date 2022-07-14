@@ -54,13 +54,11 @@ function formatMultiline(str) {
 
 function renderProperties({ props: properties }) {
   if (properties.length === 0) {
-    return '';
+    return 'No properties available for this component.';
   }
 
   // NOTE: replaces | with U+FF5C since MDX renders \| in tables incorrectly
   return `
-## Properties
-
 ${properties
   .map(
     (prop) => `
@@ -81,12 +79,10 @@ ${properties
 
 function renderEvents({ events }) {
   if (events.length === 0) {
-    return '';
+    return 'No events available for this component.';
   }
 
   return `
-## Events
-
 | Name | Description |
 | --- | --- |
 ${events.map((event) => `| \`${event.event}\` | ${formatMultiline(event.docs)} |`).join('\n')}
@@ -96,13 +92,11 @@ ${events.map((event) => `| \`${event.event}\` | ${formatMultiline(event.docs)} |
 
 function renderMethods({ methods }) {
   if (methods.length === 0) {
-    return '';
+    return 'No public methods available for this component.';
   }
 
   // NOTE: replaces | with U+FF5C since MDX renders \| in tables incorrectly
   return `
-## Methods
-
 ${methods
   .map(
     (method) => `
@@ -121,12 +115,10 @@ ${methods
 
 function renderParts({ tag, parts }) {
   if (parts.length === 0) {
-    return '';
+    return 'No CSS shadow parts available for this component.';
   }
 
   return `
-## CSS Shadow Parts
-
 | Name | Description |
 | --- | --- |
 ${parts.map((prop) => `| \`${prop.name}\` | ${formatMultiline(prop.docs)} |`).join('\n')}
@@ -136,12 +128,10 @@ ${parts.map((prop) => `| \`${prop.name}\` | ${formatMultiline(prop.docs)} |`).jo
 
 function renderCustomProps({ styles: customProps }) {
   if (customProps.length === 0) {
-    return '';
+    return 'No CSS custom properties available for this component.';
   }
 
   return `
-## CSS Custom Properties
-
 | Name | Description |
 | --- | --- |
 ${customProps.map((prop) => `| \`${prop.name}\` | ${formatMultiline(prop.docs)} |`).join('\n')}
@@ -151,12 +141,10 @@ ${customProps.map((prop) => `| \`${prop.name}\` | ${formatMultiline(prop.docs)} 
 
 function renderSlots({ slots }) {
   if (slots.length === 0) {
-    return '';
+    return 'No slots available for this component.';
   }
 
   return `
-## Slots
-
 | Name | Description |
 | --- | --- |
 ${slots.map((slot) => `| \`${slot.name}\` | ${formatMultiline(slot.docs)} |`).join('\n')}

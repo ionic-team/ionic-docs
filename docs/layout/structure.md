@@ -92,7 +92,7 @@ These can also be combined on one page to have a toolbar above _and_ below the c
 
 ### Live examples
 
-You can view a live example of this setup in Angular [here](https://stackblitz.com/edit/ionic-ng-header-footer) and for React [here](https://stackblitz.com/edit/ionic-react-head-foot).
+You can view a live example of this setup in Angular [here](https://stackblitz.com/edit/ionic-ng-header-footer) and in React [here](https://stackblitz.com/edit/ionic-react-head-foot).
 
 ## Tabs Layout
 
@@ -124,7 +124,7 @@ A layout consisting of horizontal [tabs](../api/tabs.md) can be used to let the 
 
 ### Live examples
 
-You can view a live example of this setup in Angular [here](https://stackblitz.com/edit/ionic-ng-tabs) and for React [here](https://stackblitz.com/edit/ionic-react-tab-layout).
+You can view a live example of this setup in Angular [here](https://stackblitz.com/edit/ionic-ng-tabs) and in React [here](https://stackblitz.com/edit/ionic-react-tab-layout).
 
 ## Menu Layout
 
@@ -177,7 +177,7 @@ A standard layout among mobile apps includes the ability to toggle a side [menu]
 
 ### Live examples
 
-You can view a live example of this setup in Angular [here](https://stackblitz.com/edit/ionic-ng-menu-layout) and for React [here](https://stackblitz.com/edit/ionic-react-menu).
+You can view a live example of this setup in Angular [here](https://stackblitz.com/edit/ionic-ng-menu-layout) and in React [here](https://stackblitz.com/edit/ionic-react-menu).
 
 ## Split Pane Layout
 
@@ -233,4 +233,4 @@ It's important to note that the element with the `id` matching the `content-id` 
 
 ### Live examples
 
-You can view a live example of this setup in Angular [here](https://stackblitz.com/edit/ionic-ng-split-pane) and for React [here](https://stackblitz.com/edit/ionic-react-split-pane).
+You can view a live example of this setup in Angular [here](https://stackblitz.com/edit/ionic-ng-split-pane) and in React [here](https://stackblitz.com/edit/ionic-react-split-pane).

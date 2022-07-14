@@ -39,9 +39,20 @@ It is the element form of calling the `push()`, `pop()`, and `setRoot()` methods
 
 
 
+## Properties
 <Props />
+
+## Events
 <Events />
+
+## Methods
 <Methods />
+
+## CSS Shadow Parts
 <Parts />
+
+## CSS Custom Properties
 <CustomProps />
+
+## Slots
 <Slots />

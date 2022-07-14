@@ -66,10 +66,7 @@ for its value. The value is simply a string, rather than using JavaScript's
 `Date` object. Using the ISO datetime format makes it easy to serialize
 and parse within JSON objects and databases.
 
-An ISO format can be used as a simple year, or just the hour and minute, or get
-more detailed down to the millisecond and time zone. Any of the ISO formats below
-can be used, and after a user selects a new value, Ionic Framework will continue to use
-the same ISO format which datetime value was originally given as.
+Below are some examples of ISO 8601 formats that can be used with `ion-datetime`:
 
 | Description          | Format                 | Datetime Value Example        |
 | -------------------- | ---------------------- | ----------------------------  |
@@ -80,13 +77,16 @@ the same ISO format which datetime value was originally given as.
 | UTC Timezone         | YYYY-MM-DDTHH:mm:ssZ   | 1994-12-15T13:47:20Z          |
 | Timezone Offset      | YYYY-MM-DDTHH:mm:ssTZD | 1994-12-15T13:47:20+05:00     |
 | Hour and Minute      | HH:mm                  | 13:47                         |
-| Hour, Minute, Second | HH:mm:ss               | 13:47:20                      |
 
 Note that the year is always four-digits, milliseconds (if it's added) is always
 three-digits, and all others are always two-digits. So the number representing
 January always has a leading zero, such as `01`. Additionally, the hour is
 always in the 24-hour format, so `00` is `12am` on a 12-hour clock, `13` means
 `1pm`, and `23` means `11pm`.
+
+:::note
+While seconds and milliseconds can be specified using the ISO 8601 datetime format, `ion-datetime` does not provide an interface for second and millisecond selection. Any second or millisecond values provided will be ignored.
+:::
 
 ## Basic Usage
 
@@ -376,9 +376,20 @@ interface DatetimeCustomEvent extends CustomEvent {
 }
 ```
 
+## Properties
 <Props />
+
+## Events
 <Events />
+
+## Methods
 <Methods />
+
+## CSS Shadow Parts
 <Parts />
+
+## CSS Custom Properties
 <CustomProps />
+
+## Slots
 <Slots />
