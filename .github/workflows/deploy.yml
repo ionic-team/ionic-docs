@@ -1,4 +1,4 @@
-name: CI
+name: Deploy
 on:
   push:
     branches: [ main ]
@@ -8,30 +8,22 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v1
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
         with:
           node-version: 16.x
+          cache: 'npm'
+          cache-dependency-path: package-lock.json
 
-      # パッケージのキャッシュ
-      - name: Use cached node_modules
-        uses: actions/cache@v1
-        with:
-          path:
-            node_modules
-          key: ${{ runner.os }}-v4-dependencies-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-v4-dependencies-
-
-      # Lintとテストの実行
+      # Docsのビルド
       - name: npm install, build
         run: |
           npm install --legacy-peer-deps
           npm run prebuild
           npm run build:ci
 
-      # ビルドの実行
-      - name: app build
+      # community-siteのビルド
+      - name: community-site build
         run: |
           npm run build-site
 
