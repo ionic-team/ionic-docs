@@ -376,9 +376,20 @@ interface DatetimeCustomEvent extends CustomEvent {
 }
 ```
 
+## Properties
 <Props />
+
+## Events
 <Events />
+
+## Methods
 <Methods />
+
+## CSS Shadow Parts
 <Parts />
+
+## CSS Custom Properties
 <CustomProps />
+
+## Slots
 <Slots />
