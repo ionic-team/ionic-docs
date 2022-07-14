@@ -20,7 +20,7 @@
     "translate": "ts-node -P scripts/build-translate/tsconfig.json scripts/build-translate apply",
     "translate:create": "ts-node -P scripts/build-translate/tsconfig.json scripts/build-translate create && ts-node -P scripts/build-translate/tsconfig.json scripts/build-translate diff",
     "netlify-redirect": "cp redirects build/_redirects",
-    "build-site": "git clone https://github.com/ionic-jp/community-site.git site && cd site && npm ci && npm run build.ci && cd .. && mv site/www/* www/ && rm -rf site"
+    "build-site": "git clone https://github.com/ionic-jp/community-site.git site && cd site && npm install && npm run build.ci && cd .. && mv site/www/* www/ && rm -rf site"
   },
   "browserslist": {
     "production": [
