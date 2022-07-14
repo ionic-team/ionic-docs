@@ -28,7 +28,7 @@ import Basic from '@site/static/usage/breadcrumbs/basic/index.md';
 
 ## Using Icons
 
-### Icons on Items
+### アイテムでのアイコン
 
 import IconsOnItems from '@site/static/usage/breadcrumbs/icons/icons-on-items/index.md';
 

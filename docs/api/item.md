@@ -332,7 +332,7 @@ When using `counter`, the default behavior is to format the value that gets disp
 </ion-item>
 ```
 
-### Icons in Items
+### アイテム上のアイコン
 
 ```html
 <ion-item>
@@ -707,7 +707,7 @@ export class MyComponent {
 </ion-item>
 ```
 
-### Icons in Items
+### アイテム上のアイコン
 
 ```html
 <ion-item>
@@ -1497,7 +1497,7 @@ export class ItemExample {
 }
 ```
 
-### Icons in Items
+### アイテム上のアイコン
 
 ```tsx
 import { Component, h } from '@stencil/core';
@@ -1916,7 +1916,7 @@ export class ItemExample {
 </template>
 ```
 
-### Icons in Items
+### アイテム上のアイコン
 
 ```html
 <template>

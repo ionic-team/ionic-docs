@@ -32,7 +32,7 @@ import Basic from '@site/static/usage/accordion/basic/index.md';
 
 <Basic />
 
-## Toggle Accordions
+## アコーディオンをトグルする方法
 
 どのアコーディオンを開くかは、`ion-accordion-group` の `value` プロパティを設定することで制御できます。このプロパティを設定することで、開発者はプログラムによって特定のアコーディオンを展開したり折りたたんだりすることができます。
 
@@ -40,15 +40,15 @@ import Toggle from '@site/static/usage/accordion/toggle/index.md';
 
 <Toggle />
 
-## Listen for Accordion State Changes
+## アコーディオンの状態変化を監視
 
-開発者は `ionChange` イベントをリスンすることで、アコーディオンが展開または折りたたまれたときに通知されるようにすることができます。
+開発者は `ionChange` イベントを監視することで、アコーディオンが展開または折りたたまれたときに通知されるようにすることができます。
 
 import ListenChanges from '@site/static/usage/accordion/listen-changes/index.md';
 
 <ListenChanges />
 
-## Multiple Accordions
+## 複数のアコーディオン
 
 開発者は `multiple` プロパティを使用して、複数のアコーディオンを一度に開くことができるようにすることができます。
 
@@ -140,7 +140,7 @@ import AdvancedExpansionStyles from '@site/static/usage/accordion/customization/
 
 <AdvancedExpansionStyles />
 
-### Icons
+### アイコン
 
 `header` slot に `ion-item` を使用する場合、自動的に `ion-icon` が追加されます。使用するアイコンの種類は `toggleIcon` プロパティで制御でき、追加するスロットも `toggleIconSlot` プロパティで制御することができます。
 
