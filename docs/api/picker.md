@@ -69,7 +69,6 @@ interface PickerColumn {
   prefixWidth?: string;
   suffixWidth?: string;
   optionsWidth?: string;
-  refresh?: () => void;
 }
 ```
 
