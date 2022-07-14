@@ -148,19 +148,19 @@ type RangeValue = number | { lower: number, upper: number };
 ```
 
 
-## Properties
+## プロパティ
 <Props />
 
-## Events
+## イベント
 <Events />
 
-## Methods
+## メソッド
 <Methods />
 
 ## CSS Shadow Parts
 <Parts />
 
-## CSS Custom Properties
+## CSSカスタムプロパティ
 <CustomProps />
 
 ## Slots

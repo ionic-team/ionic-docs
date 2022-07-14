@@ -309,19 +309,19 @@ export default {
 
 </Tabs>
 
-## Properties
+## プロパティ
 <Props />
 
-## Events
+## イベント
 <Events />
 
-## Methods
+## メソッド
 <Methods />
 
 ## CSS Shadow Parts
 <Parts />
 
-## CSS Custom Properties
+## CSSカスタムプロパティ
 <CustomProps />
 
 ## Slots

@@ -19,7 +19,7 @@ import APITOCInline from '@components/page/api/APITOCInline';
 
 <EncapsulationPill type="shadow" />
 
-<h2 className="table-of-contents__title">Contents</h2>
+<h2 className="table-of-contents__title">コンテンツ</h2>
 
 <APITOCInline
   toc={toc}
@@ -29,9 +29,9 @@ import APITOCInline from '@components/page/api/APITOCInline';
 
 
 
-Accordion group is a container for accordion instances. It manages the state of the accordions and provides keyboard navigation.
+アコーディオン・グループは、アコーディオンインスタンスのためのコンテナです。これは、アコーディオンの状態を管理し、キーボードナビゲーションを提供します。
 
-For more information as well as usage, see the [Accordion Documentation](./accordion)
+より詳細な情報や使用方法については、 [Accordion Documentation](./accordion) を参照ください。
 
 ## Interfaces
 
@@ -45,7 +45,7 @@ interface AccordionGroupChangeEventDetail<T = any> {
 
 ### AccordionGroupCustomEvent
 
-While not required, this interface can be used in place of the `CustomEvent` interface for stronger typing with Ionic events emitted from this component.
+必須ではありませんが、このコンポーネントから発行される Ionic イベントでより強い型付けを行うために、`CustomEvent` インターフェースの代わりにこのインターフェースを使用することが可能である。
 
 ```typescript
 interface AccordionGroupCustomEvent<T = any> extends CustomEvent {
@@ -56,19 +56,19 @@ interface AccordionGroupCustomEvent<T = any> extends CustomEvent {
 
 
 
-## Properties
+## プロパティ
 <Props />
 
-## Events
+## イベント
 <Events />
 
-## Methods
+## メソッド
 <Methods />
 
 ## CSS Shadow Parts
 <Parts />
 
-## CSS Custom Properties
+## CSSカスタムプロパティ
 <CustomProps />
 
 ## Slots

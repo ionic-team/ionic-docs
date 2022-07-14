@@ -110,7 +110,7 @@ import InterfaceOptionsExample from '@site/static/usage/select/customization/int
 
 <InterfaceOptionsExample />
 
-## Customization
+## カスタマイズ
 
 There are two units that make up the Select component and each need to be styled separately. The `ion-select` element is represented on the view by the selected value(s), or placeholder if there is none, and dropdown icon. The interface, which is defined in the [Interfaces](#interfaces) section above, is the dialog that opens when clicking on the `ion-select`. The interface contains all of the options defined by adding `ion-select-option` elements. The following sections will go over the differences between styling these.
 
@@ -155,19 +155,19 @@ interface SelectCustomEvent<T = any> extends CustomEvent {
 }
 ```
 
-## Properties
+## プロパティ
 <Props />
 
-## Events
+## イベント
 <Events />
 
-## Methods
+## メソッド
 <Methods />
 
 ## CSS Shadow Parts
 <Parts />
 
-## CSS Custom Properties
+## CSSカスタムプロパティ
 <CustomProps />
 
 ## Slots

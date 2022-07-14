@@ -24,7 +24,7 @@ import APITOCInline from '@components/page/api/APITOCInline';
 
 <EncapsulationPill type="scoped" />
 
-<h2 className="table-of-contents__title">Contents</h2>
+<h2 className="table-of-contents__title">コンテンツ</h2>
 
 <APITOCInline
   toc={toc}
@@ -40,13 +40,13 @@ Action Sheetは複数の選択肢を表示するダイアログです。アプ�
 
 Buttonの `role` プロパティは、 `destructive` か `cancel` のどちらかを利用できます。 roleプロパティがない場合は、プラットフォームに応じたデフォルトの外観となります。`cancel` role を持つButtonは、配列 `buttons` のどこに配置してもAction Sheetの最下部に表示されます。 Note: `destructive` roleをつけるButtonは、一番上のButtonとして配置することをおすすめします。また、背景をタップしてAction Sheetを破棄した場合、cancel role に設定されているhandlerが実行されます。
 
-A button can also be passed data via the `data` property on `ActionSheetButton`. This will populate the `data` field in the return value of the `onDidDismiss` method.
+Buttonは `ActionSheetButton` の `data` プロパティを介してデータを渡すこともできます。これは `onDidDismiss` メソッドの戻り値にある `data` フィールドにデータを入力します。
 
-## Customization
+## カスタマイズ
 
-Action Sheet uses scoped encapsulation, which means it will automatically scope its CSS by appending each of the styles with an additional class at runtime. Overriding scoped selectors in CSS requires a [higher specificity](https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity) selector.
+Action Sheetはscopedによるカプセル化を採用しており、実行時に各スタイルにクラスを追加することで、自動的にCSSをスコープ化します。CSSでscopedセレクタをオーバーライドするには、[higher specificity](https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity) セレクタが必要です。
 
-We recommend passing a custom class to `cssClass` in the `create` method and using that to add custom styles to the host and inner elements. This property can also accept multiple classes separated by spaces. View the [Usage](#usage) section for an example of how to pass a class using `cssClass`.
+私たちは、 `create` メソッドで `cssClass` にカスタムクラスを渡し、それを使ってホストと内部要素にカスタムスタイルを追加することをお勧めします。このプロパティは、スペースで区切られた複数のクラスを受け付けることもできます。 `cssClass` を使用してクラスを渡す例については、[Usage](#usage) のセクションを参照してください。
 
 ```css
 /* DOES NOT WORK - not specific enough */
@@ -60,7 +60,7 @@ We recommend passing a custom class to `cssClass` in the `create` method and usi
 }
 ```
 
-Any of the defined [CSS Custom Properties](#css-custom-properties) can be used to style the Action Sheet without needing to target individual elements:
+CSSカスタムプロパティ](#css-custom-properties)は、個々の要素をターゲットにしなくても、アクションシートのスタイルに使用することができます。
 
 ```css
 .my-custom-class {
@@ -69,7 +69,7 @@ Any of the defined [CSS Custom Properties](#css-custom-properties) can be used t
 ```
 
 :::note
- If you are building an Ionic Angular app, the styles need to be added to a global stylesheet file. Read [Style Placement](#style-placement) in the Angular section below for more information.
+IonicのAngularアプリを構築する場合、スタイルはグローバルなスタイルシートファイルに追加する必要があります。詳しくは、以下のAngularセクションの [Style Placement](#style-placement) をお読みください。
 :::
 
 
@@ -186,7 +186,7 @@ export class ActionSheetExample {
 
 ### Style Placement
 
-In Angular, the CSS of a specific page is scoped only to elements of that page. Even though the Action Sheet can be presented from within a page, the `ion-action-sheet` element is appended outside of the current page. This means that any custom styles need to go in a global stylesheet file. In an Ionic Angular starter this can be the `src/global.scss` file or you can register a new global style file by [adding to the `styles` build option in `angular.json`](https://angular.io/guide/workspace-config#style-script-config).
+Angularでは、特定のページのCSSは、そのページの要素にのみスコープされます。アクションシートはページ内から表示することができますが、`ion-action-sheet` 要素は現在のページの外側に追加されます。これは、カスタムスタイルはグローバルなスタイルシートファイルに記述する必要があることを意味します。Ionic Angular スターターでは、`src/global.scss` ファイルを使用するか、[`angular.json` の `styles` build オプションに追加して、新しいグローバルスタイルファイルを登録します](https://angular.io/guide/workspace-config#style-script-config).
 
 
 </TabItem>
@@ -606,19 +606,19 @@ export default defineComponent({
 
 </Tabs>
 
-## Properties
+## プロパティ
 <Props />
 
-## Events
+## イベント
 <Events />
 
-## Methods
+## メソッド
 <Methods />
 
 ## CSS Shadow Parts
 <Parts />
 
-## CSS Custom Properties
+## CSSカスタムプロパティ
 <CustomProps />
 
 ## Slots

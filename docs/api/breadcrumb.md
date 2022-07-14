@@ -19,7 +19,7 @@ import APITOCInline from '@components/page/api/APITOCInline';
 
 <EncapsulationPill type="shadow" />
 
-<h2 className="table-of-contents__title">Contents</h2>
+<h2 className="table-of-contents__title">コンテンツ</h2>
 
 <APITOCInline
   toc={toc}
@@ -29,9 +29,9 @@ import APITOCInline from '@components/page/api/APITOCInline';
 
 
 
-A Breadcrumb is a single navigation item that is a child of the Breadcrumbs component. A breadcrumb can link elsewhere in an app or it can be plain text. Each breadcrumb has a separator between it and the next breadcrumb and can optionally contain an icon.
+Breadcrumbは、Breadcrumbsコンポーネントの子であり、単一のナビゲーションアイテムです。Breadcrumbは、アプリ内の他の場所にリンクすることも、プレーンテキストにすることもできます。Breadcrumbsは、次のBreadcrumbとの間にセパレータを持ち、オプションでアイコンを含むことができます。
 
-For usage examples, see the [Breadcrumbs](/docs/api/breadcrumbs) documentation.
+詳しい説明は [Breadcrumbs](/docs/api/breadcrumbs) を参照ください。
 
 ## Interfaces
 
@@ -45,7 +45,7 @@ interface BreadcrumbCollapsedClickEventDetail {
 
 ### BreadcrumbCustomEvent
 
-While not required, this interface can be used in place of the `CustomEvent` interface for stronger typing .
+必須ではありませんが、より強い型付のために、このインターフェースを `CustomEvent` インターフェースの代わりに使用することができます。
 
 ```typescript
 interface BreadcrumbCustomEvent extends CustomEvent {
@@ -57,19 +57,19 @@ interface BreadcrumbCustomEvent extends CustomEvent {
 
 
 
-## Properties
+## プロパティ
 <Props />
 
-## Events
+## イベント
 <Events />
 
-## Methods
+## メソッド
 <Methods />
 
 ## CSS Shadow Parts
 <Parts />
 
-## CSS Custom Properties
+## CSSカスタムプロパティ
 <CustomProps />
 
 ## Slots

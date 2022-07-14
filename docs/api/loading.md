@@ -24,7 +24,7 @@ import APITOCInline from '@components/page/api/APITOCInline';
 
 ユーザインタラクションをブロックしながらアクティビティを示すためのオーバーレイです。ローディング・インジケータはアプリのコンテンツの上に表示され、ユーザーの操作を再開するために消すことができます。オプションでbackdropが含まれており、`showBackdrop: false` で無効にすることができます。
 
-## Basic Usage
+## 基本的な使い方
 
 Once presented, the loading indicator will display indefinitely by default. Developers can manually dismiss the loading indicator after creation by calling the `dismiss()` method on the component. The `onDidDismiss` function can be called to perform an action after the loading indicator is dismissed.
 
@@ -102,7 +102,7 @@ export default defineComponent({
 </TabItem>
 </Tabs>
 
-## Customization
+## カスタマイズ
 
 ### Spinners
 
@@ -152,19 +152,19 @@ interface LoadingOptions {
 ```
 
 
-## Properties
+## プロパティ
 <Props />
 
-## Events
+## イベント
 <Events />
 
-## Methods
+## メソッド
 <Methods />
 
 ## CSS Shadow Parts
 <Parts />
 
-## CSS Custom Properties
+## CSSカスタムプロパティ
 <CustomProps />
 
 ## Slots

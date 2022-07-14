@@ -18,9 +18,9 @@ import APITOCInline from '@components/page/api/APITOCInline';
 
 <EncapsulationPill type="shadow" />
 
-Breadcrumbs are navigation items that are used to indicate where a user is on an app or site. They should be used for large sites and apps with hierarchically arranged pages. Breadcrumbs can be collapsed based on the maximum number that can show, and the collapsed indicator can be clicked on to present a popover with more information or expand the collapsed breadcrumbs.
+Breadcrumbsは、ユーザーがアプリやサイトのどこにいるのかを示すために使用されるナビゲーションアイテムです。大規模なサイトや、階層的に配置されたページを持つアプリで使用する必要があります。Breadcrumbsは、表示可能な最大数に応じて折りたたむことができ、折りたたんだインジケータをクリックすると、詳細情報を示すポップオーバーが表示され、折りたたんだBreadcrumbを展開することができます。
 
-## Basic Usage
+## 基本的な使い方
 
 import Basic from '@site/static/usage/breadcrumbs/basic/index.md';
 
@@ -44,7 +44,7 @@ import CustomSeparators from '@site/static/usage/breadcrumbs/icons/custom-separa
 
 ### Max Items
 
-If there are more items than the value of `maxItems`, the breadcrumbs will be collapsed. By default, only the first and last items will be shown.
+`maxItems` の値よりも多くのアイテムがある場合、breadcrumbsは折りたたまれます。デフォルトでは、最初と最後のアイテムのみが表示されます。
 
 import MaxItems from '@site/static/usage/breadcrumbs/collapsing-items/max-items/index.md';
 
@@ -52,7 +52,7 @@ import MaxItems from '@site/static/usage/breadcrumbs/collapsing-items/max-items/
 
 ### Items Before or After Collapse
 
-Once the items are collapsed, the number of items to show can be controlled by the `itemsBeforeCollapse` and `itemsAfterCollapse` properties.
+アイテムが折りたたまれた後、表示するアイテムの数は `itemsBeforeCollapse` と `itemsAfterCollapse` プロパティで制御することができます。
 
 import ItemsBeforeAfter from '@site/static/usage/breadcrumbs/collapsing-items/items-before-after/index.md';
 
@@ -60,7 +60,7 @@ import ItemsBeforeAfter from '@site/static/usage/breadcrumbs/collapsing-items/it
 
 ### Collapsed Indicator Click -- Expand Breadcrumbs
 
-Clicking the collapsed indicator will fire the `ionCollapsedClick` event. This can be used to, for example, expand the breadcrumbs.
+インジケータをクリックすると、`ionCollapsedClick` イベントが発生します。これは、例えば、breadcrumbsを展開するために使うことができます。
 
 import ExpandOnClick from '@site/static/usage/breadcrumbs/collapsing-items/expand-on-click/index.md';
 
@@ -68,7 +68,7 @@ import ExpandOnClick from '@site/static/usage/breadcrumbs/collapsing-items/expan
 
 ### Collapsed Indicator Click -- Present Popover
 
-The `ionCollapsedClick` event can also be used to present an overlay (in this case, an `ion-popover`) showing the hidden breadcrumbs.
+また、`ionCollapsedClick` イベントは、隠されたパンくずを表示するオーバーレイ（この場合は `ion-popover` ）を提示するために使用することができます。
 
 import PopoverOnClick from '@site/static/usage/breadcrumbs/collapsing-items/popover-on-click/index.md';
 
@@ -89,19 +89,19 @@ import CSSProps from '@site/static/usage/breadcrumbs/styling/css-props/index.md'
 <CSSProps />
 
 
-## Properties
+## プロパティ
 <Props />
 
-## Events
+## イベント
 <Events />
 
-## Methods
+## メソッド
 <Methods />
 
 ## CSS Shadow Parts
 <Parts />
 
-## CSS Custom Properties
+## CSSカスタムプロパティ
 <CustomProps />
 
 ## Slots

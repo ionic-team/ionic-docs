@@ -35,7 +35,7 @@ import Controller from '@site/static/usage/alert/presenting/controller/index.md'
 
 ### Inline
 
-When using Ionic with React or Vue, `ion-alert` can also be placed directly in the template through use of the `isOpen` property. Note that `isOpen` must be set to `false` manually when the alert is dismissed; it will not be updated automatically.
+React や Vue と共に Ionic を使用する場合、 `isOpen` プロパティを使用して `ion-alert` をテンプレートに直接配置することもできます。ただし、アラートを解除する際には手動で `isOpen` を `false` に設定する必要があり、自動的に更新されることはありません。
 
 <Tabs defaultValue="react" values={[{ value: 'react', label: 'React' }, { value: 'vue', label: 'Vue' }]}>
 <TabItem value="react">
@@ -127,11 +127,11 @@ import Radios from '@site/static/usage/alert/inputs/radios/index.md';
 
 <Radios />
 
-## Customization
+## カスタマイズ
 
-Alert uses scoped encapsulation, which means it will automatically scope its CSS by appending each of the styles with an additional class at runtime. Overriding scoped selectors in CSS requires a [higher specificity](https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity) selector.
+Alertはscopedによるカプセル化を使用しており、実行時に各スタイルにクラスを追加することで自動的にCSSをスコープします。CSSでscopedセレクタをオーバーライドするには、[higher specificity](https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity) セレクタが必要です。
 
-We recommend passing a custom class to `cssClass` in the `create` method and using that to add custom styles to the host and inner elements. This property can also accept multiple classes separated by spaces.
+`create` メソッドで `cssClass` にカスタムクラスを渡し、それを使ってホストと内部要素にカスタムスタイルを追加することをお勧めします。このプロパティは、スペースで区切られた複数のクラスを受け付けることもできます。
 
 ```css
 /* DOES NOT WORK - not specific enough */
@@ -145,7 +145,7 @@ We recommend passing a custom class to `cssClass` in the `create` method and usi
 }
 ```
 
-Any of the defined [CSS Custom Properties](#css-custom-properties) can be used to style the Alert without needing to target individual elements:
+[CSSカスタムプロパティ](#css-custom-properties) は、個々の要素をターゲットにすることなく、アラートのスタイルに使用することができます。
 
 ```css
 .my-custom-class {
@@ -158,7 +158,7 @@ import Customization from '@site/static/usage/alert/customization/index.md';
 <Customization />
 
 :::note
- If you are building an Ionic Angular app, the styles need to be added to a global stylesheet file.
+IonicのAngularアプリを構築する場合、スタイルはグローバルなスタイルシートファイルに追加する必要があります。
 :::
 
 
@@ -222,19 +222,19 @@ interface AlertOptions {
 }
 ```
 
-## Properties
+## プロパティ
 <Props />
 
-## Events
+## イベント
 <Events />
 
-## Methods
+## メソッド
 <Methods />
 
 ## CSS Shadow Parts
 <Parts />
 
-## CSS Custom Properties
+## CSSカスタムプロパティ
 <CustomProps />
 
 ## Slots

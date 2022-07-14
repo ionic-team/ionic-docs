@@ -22,7 +22,7 @@ import APITOCInline from '@components/page/api/APITOCInline';
 
 <EncapsulationPill type="shadow" />
 
-<h2 className="table-of-contents__title">Contents</h2>
+<h2 className="table-of-contents__title">コンテンツ</h2>
 
 <APITOCInline
   toc={toc}
@@ -43,19 +43,19 @@ See the [tabs documentation](tabs.md) for more details on configuring tabs.
 
 
 
-## Properties
+## プロパティ
 <Props />
 
-## Events
+## イベント
 <Events />
 
-## Methods
+## メソッド
 <Methods />
 
 ## CSS Shadow Parts
 <Parts />
 
-## CSS Custom Properties
+## CSSカスタムプロパティ
 <CustomProps />
 
 ## Slots

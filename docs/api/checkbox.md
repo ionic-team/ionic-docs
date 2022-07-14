@@ -24,7 +24,7 @@ import APITOCInline from '@components/page/api/APITOCInline';
 
 <EncapsulationPill type="shadow" />
 
-<h2 className="table-of-contents__title">Contents</h2>
+<h2 className="table-of-contents__title">コンテンツ</h2>
 
 <APITOCInline
   toc={toc}
@@ -49,7 +49,7 @@ interface CheckboxChangeEventDetail<T = any> {
 
 ### CheckboxCustomEvent
 
-While not required, this interface can be used in place of the `CustomEvent` interface for stronger typing with Ionic events emitted from this component.
+必須ではないが、このコンポーネントから発行される Ionic イベントでより強力な型付けを行うために、`CustomEvent` インターフェースの代わりにこのインターフェースを使用することが可能である。
 
 ```typescript
 interface CheckboxCustomEvent<T = any> extends CustomEvent {
@@ -324,19 +324,19 @@ export default defineComponent({
 
 </Tabs>
 
-## Properties
+## プロパティ
 <Props />
 
-## Events
+## イベント
 <Events />
 
-## Methods
+## メソッド
 <Methods />
 
 ## CSS Shadow Parts
 <Parts />
 
-## CSS Custom Properties
+## CSSカスタムプロパティ
 <CustomProps />
 
 ## Slots

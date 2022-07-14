@@ -225,19 +225,19 @@ type PositionAlign = 'start' | 'center' | 'end';
 | `Space`, `Enter`, and `ArrowRight`       | When focusing a trigger element, opens the associated popover. |
 
 
-## Properties
+## プロパティ
 <Props />
 
-## Events
+## イベント
 <Events />
 
-## Methods
+## メソッド
 <Methods />
 
 ## CSS Shadow Parts
 <Parts />
 
-## CSS Custom Properties
+## CSSカスタムプロパティ
 <CustomProps />
 
 ## Slots
