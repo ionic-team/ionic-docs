@@ -60,8 +60,8 @@ function renderProperties({ props: properties }) {
   // NOTE: replaces | with U+FF5C since MDX renders \| in tables incorrectly
   return `
 ${properties
-  .map(
-    (prop) => `
+    .map(
+      (prop) => `
 ### ${prop.name}
 
 | | |
@@ -72,8 +72,8 @@ ${properties
 | **Default** | \`${prop.default}\` |
 
 `
-  )
-  .join('\n')}
+    )
+    .join('\n')}
 `;
 }
 
@@ -98,8 +98,8 @@ function renderMethods({ methods }) {
   // NOTE: replaces | with U+FF5C since MDX renders \| in tables incorrectly
   return `
 ${methods
-  .map(
-    (method) => `
+    .map(
+      (method) => `
 ### ${method.name}
 
 | | |
@@ -107,13 +107,13 @@ ${methods
 | **Description** | ${formatMultiline(method.docs)} |
 | **Signature** | \`${method.signature.replace(/\|/g, '\uff5c')}\` |
 `
-  )
-  .join('\n')}
+    )
+    .join('\n')}
 
 `;
 }
 
-function renderParts({ tag, parts }) {
+function renderParts({ parts }) {
   if (parts.length === 0) {
     return 'No CSS shadow parts available for this component.';
   }

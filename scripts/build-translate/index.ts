@@ -12,7 +12,7 @@ const getTranslateType = async () => {
       contents: components,
       key: 'tag',
       contentsKey: 'components',
-      markdown: 'readme',
+      markdown: 'docs',
       resource: response,
     },
     {
