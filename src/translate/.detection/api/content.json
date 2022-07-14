@@ -2,8 +2,7 @@
   "filePath": "./src/components/content/content.tsx",
   "encapsulation": "shadow",
   "tag": "ion-content",
-  "readme": "# ion-content\n\nThe content component provides an easy to use content area with some useful methods\nto control the scrollable area. There should only be one content in a single\nview.\n\nContent, along with many other Ionic components, can be customized to modify its padding, margin, and more using the global styles provided in the [CSS Utilities](/docs/layout/css-utilities) or by individually styling it using CSS and the available [CSS Custom Properties](#css-custom-properties).\n\n\n## Fixed Content\n\nIn order to place elements outside of the scrollable area, `slot=\"fixed\"` can be added to the element. This will absolutely position the element placing it in the top left. In order to place the element in a different position, style it using [top, right, bottom, and left](https://developer.mozilla.org/en-US/docs/Web/CSS/position).\n\n## Interfaces\n\n### ScrollBaseDetail\n\n```typescript\ninterface ScrollBaseDetail {\n  isScrolling: boolean;\n}\n```\n\n### ScrollDetail\n\n```typescript\ninterface ScrollDetail extends GestureDetail, ScrollBaseDetail {\n  scrollTop: number;\n  scrollLeft: number;\n}\n```\n\n### ScrollBaseCustomEvent \n\nWhile not required, this interface can be used in place of the `CustomEvent` interface for stronger typing on the `ionScrollStart` and `ionScrollEnd` events.\n\n```typescript\ninterface ScrollBaseCustomEvent extends CustomEvent {\n  detail: ScrollBaseDetail;\n  target: HTMLIonContentElement;\n}\n```\n\n### ScrollCustomEvent \n\nWhile not required, this interface can be used in place of the `CustomEvent` interface for stronger typing on the `ionScroll` event.\n\n```typescript\ninterface ScrollCustomEvent extends ScrollBaseCustomEvent {\n  detail: ScrollDetail;\n}\n```\n\n",
-  "docs": "The content component provides an easy to use content area with some useful methods\nto control the scrollable area. There should only be one content in a single\nview.\n\nContent, along with many other Ionic components, can be customized to modify its padding, margin, and more using the global styles provided in the [CSS Utilities](/docs/layout/css-utilities) or by individually styling it using CSS and the available [CSS Custom Properties](#css-custom-properties).",
+  "docs": "",
   "docsTags": [
     {
       "name": "slot",
@@ -22,17 +21,11 @@
       "text": "scroll - The scrollable container of the content."
     }
   ],
-  "usage": {
-    "angular": "```html\n<ion-content\n  [scrollEvents]=\"true\"\n  (ionScrollStart)=\"logScrollStart()\"\n  (ionScroll)=\"logScrolling($event)\"\n  (ionScrollEnd)=\"logScrollEnd()\">\n    <h1>Main Content</h1>\n\n    <div slot=\"fixed\">\n      <h1>Fixed Content</h1>\n    </div>\n</ion-content>\n```\n\n",
-    "javascript": "```html\n<ion-content>\n  <h1>Main Content</h1>\n\n  <div slot=\"fixed\">\n    <h1>Fixed Content</h1>\n  </div>\n</ion-content>\n```\n\n```javascript\nvar content = document.querySelector('ion-content');\ncontent.scrollEvents = true;\ncontent.addEventListener('ionScrollStart', () => console.log('scroll start'));\ncontent.addEventListener('ionScroll', (ev) => console.log('scroll', ev.detail));\ncontent.addEventListener('ionScrollEnd', () => console.log('scroll end'));\n```\n",
-    "react": "```tsx\nimport React from 'react';\nimport { IonContent } from '@ionic/react';\n\nconst ContentExample: React.FC = () => (\n  <IonContent\n    scrollEvents={true}\n    onIonScrollStart={() => {}}\n    onIonScroll={() => {}}\n    onIonScrollEnd={() => {}}>\n      <h1>Main Content</h1>\n\n      <div slot=\"fixed\">\n        <h1>Fixed Content</h1>\n      </div>\n  </IonContent>\n);\n```\n",
-    "stencil": "```tsx\nimport { Component, h } from '@stencil/core';\n\n@Component({\n  tag: 'content-example',\n  styleUrl: 'content-example.css'\n})\nexport class ContentExample {\n  logScrollStart() {\n    console.log('Scroll start');\n  }\n\n  logScrolling(ev) {\n    console.log('Scrolling', ev);\n  }\n\n  logScrollEnd() {\n    console.log('Scroll end');\n  }\n\n  render() {\n    return [\n      <ion-content\n        scrollEvents={true}\n        onIonScrollStart={() => this.logScrollStart()}\n        onIonScroll={(ev) => this.logScrolling(ev)}\n        onIonScrollEnd={() => this.logScrollEnd()}>\n          <h1>Main Content</h1>\n\n          <div slot=\"fixed\">\n            <h1>Fixed Content</h1>\n          </div>\n      </ion-content>\n    ];\n  }\n}\n```\n",
-    "vue": "```html\n<template>\n  <ion-content\n    :scroll-events=\"true\"\n    @ionScrollStart=\"logScrollStart()\"\n    @ionScroll=\"logScrolling($event)\"\n    @ionScrollEnd=\"logScrollEnd()\">\n      <h1>Main Content</h1>\n\n      <div slot=\"fixed\">\n        <h1>Fixed Content</h1>\n      </div>\n  </ion-content>\n</template>\n\n<script>\nimport { IonContent } from '@ionic/vue';\nimport { defineComponent } from 'vue';\n\nexport default defineComponent({\n  components: { IonContent }\n});\n</script>\n\n```\n\n"
-  },
+  "usage": {},
   "props": [
     {
       "name": "color",
-      "type": "string | undefined",
+      "type": "\"danger\" | \"dark\" | \"light\" | \"medium\" | \"primary\" | \"secondary\" | \"success\" | \"tertiary\" | \"warning\" | string & Record<never, never> | undefined",
       "mutable": false,
       "attr": "color",
       "reflectToAttr": true,
@@ -40,7 +33,43 @@
       "docsTags": [],
       "values": [
         {
+          "value": "danger",
           "type": "string"
+        },
+        {
+          "value": "dark",
+          "type": "string"
+        },
+        {
+          "value": "light",
+          "type": "string"
+        },
+        {
+          "value": "medium",
+          "type": "string"
+        },
+        {
+          "value": "primary",
+          "type": "string"
+        },
+        {
+          "value": "secondary",
+          "type": "string"
+        },
+        {
+          "value": "success",
+          "type": "string"
+        },
+        {
+          "value": "tertiary",
+          "type": "string"
+        },
+        {
+          "value": "warning",
+          "type": "string"
+        },
+        {
+          "type": "string & Record<never, never>"
         },
         {
           "type": "undefined"
@@ -237,7 +266,7 @@
       "bubbles": true,
       "cancelable": true,
       "composed": true,
-      "docs": "Emitted while scrolling. This event is disabled by default.\nLook at the property: `scrollEvents`",
+      "docs": "Emitted while scrolling. This event is disabled by default.\nSet `scrollEvents` to `true` to enable.",
       "docsTags": []
     },
     {
@@ -246,7 +275,7 @@
       "bubbles": true,
       "cancelable": true,
       "composed": true,
-      "docs": "Emitted when the scroll has ended.",
+      "docs": "Emitted when the scroll has ended. This event is disabled by default.\nSet `scrollEvents` to `true` to enable.",
       "docsTags": []
     },
     {
@@ -255,7 +284,7 @@
       "bubbles": true,
       "cancelable": true,
       "composed": true,
-      "docs": "Emitted when the scroll has started.",
+      "docs": "Emitted when the scroll has started. This event is disabled by default.\nSet `scrollEvents` to `true` to enable.",
       "docsTags": []
     }
   ],

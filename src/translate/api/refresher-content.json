@@ -2,8 +2,7 @@
   "filePath": "./src/components/refresher-content/refresher-content.tsx",
   "encapsulation": "none",
   "tag": "ion-refresher-content",
-  "readme": "# ion-refresher-content\n\nThe refresher content contains the text, icon and spinner to display during a pull-to-refresh. Ionic provides the pulling icon and refreshing spinner based on the platform. However, the default icon, spinner, and text can be customized based on the state of the refresher.\n\n\n",
-  "docs": "The refresher content contains the text, icon and spinner to display during a pull-to-refresh. Ionic provides the pulling icon and refreshing spinner based on the platform. However, the default icon, spinner, and text can be customized based on the state of the refresher.",
+  "docs": "",
   "docsTags": [],
   "usage": {},
   "props": [

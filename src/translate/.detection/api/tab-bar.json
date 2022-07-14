@@ -2,25 +2,18 @@
   "filePath": "./src/components/tab-bar/tab-bar.tsx",
   "encapsulation": "shadow",
   "tag": "ion-tab-bar",
-  "readme": "# ion-tab-bar\n\nThe tab bar is a UI component that contains a set of [tab buttons](../tab-button). A tab bar must be provided inside of [tabs](../tabs) to communicate with each [tab](../tab).\n\n",
-  "docs": "The tab bar is a UI component that contains a set of [tab buttons](../tab-button). A tab bar must be provided inside of [tabs](../tabs) to communicate with each [tab](../tab).",
+  "docs": "",
   "docsTags": [
     {
       "name": "virtualProp",
       "text": "{\"ios\" | \"md\"} mode - The mode determines which platform styles to use."
     }
   ],
-  "usage": {
-    "angular": "```html\n<ion-tabs>\n  <!-- Tab bar -->\n  <ion-tab-bar slot=\"bottom\">\n    <ion-tab-button tab=\"account\">\n      <ion-icon name=\"person\"></ion-icon>\n    </ion-tab-button>\n    <ion-tab-button tab=\"contact\">\n      <ion-icon name=\"call\"></ion-icon>\n    </ion-tab-button>\n    <ion-tab-button tab=\"settings\">\n      <ion-icon name=\"settings\"></ion-icon>\n    </ion-tab-button>\n  </ion-tab-bar>\n</ion-tabs>\n```",
-    "javascript": "```html\n<ion-tabs>\n  <!-- Tab views -->\n  <ion-tab tab=\"account\"></ion-tab>\n  <ion-tab tab=\"contact\"></ion-tab>\n  <ion-tab tab=\"settings\"></ion-tab>\n\n  <!-- Tab bar -->\n  <ion-tab-bar slot=\"bottom\">\n    <ion-tab-button tab=\"account\">\n      <ion-icon name=\"person\"></ion-icon>\n    </ion-tab-button>\n    <ion-tab-button tab=\"contact\">\n      <ion-icon name=\"call\"></ion-icon>\n    </ion-tab-button>\n    <ion-tab-button tab=\"settings\">\n      <ion-icon name=\"settings\"></ion-icon>\n    </ion-tab-button>\n  </ion-tab-bar>\n</ion-tabs>\n```",
-    "react": "```tsx\nimport React from 'react';\nimport { IonTabs, IonTabBar, IonTabButton, IonIcon, IonContent } from '@ionic/react';\nimport { call, person, settings } from 'ionicons/icons';\n\nexport const TabBarExample: React.FC = () => (\n  <IonContent>\n    <IonTabs>\n      {/*-- Tab bar --*/}\n      <IonTabBar slot=\"bottom\">\n        <IonTabButton tab=\"account\">\n          <IonIcon icon={person} />\n        </IonTabButton>\n        <IonTabButton tab=\"contact\">\n          <IonIcon icon={call} />\n        </IonTabButton>\n        <IonTabButton tab=\"settings\">\n          <IonIcon icon={settings} />\n        </IonTabButton>\n      </IonTabBar>\n    </IonTabs>\n  </IonContent>\n);\n```\n",
-    "stencil": "```tsx\nimport { Component, h } from '@stencil/core';\n\n@Component({\n  tag: 'tab-bar-example',\n  styleUrl: 'tab-bar-example.css'\n})\nexport class TabBarExample {\n  render() {\n    return [\n      <ion-tabs>\n        {/* Tab views */}\n        <ion-tab tab=\"account\" component=\"page-account\"></ion-tab>\n        <ion-tab tab=\"contact\" component=\"page-contact\"></ion-tab>\n        <ion-tab tab=\"settings\" component=\"page-settings\"></ion-tab>\n\n        {/* Tab bar */}\n        <ion-tab-bar slot=\"bottom\">\n          <ion-tab-button tab=\"account\">\n            <ion-icon name=\"person\"></ion-icon>\n          </ion-tab-button>\n          <ion-tab-button tab=\"contact\">\n            <ion-icon name=\"call\"></ion-icon>\n          </ion-tab-button>\n          <ion-tab-button tab=\"settings\">\n            <ion-icon name=\"settings\"></ion-icon>\n          </ion-tab-button>\n        </ion-tab-bar>\n      </ion-tabs>\n    ];\n  }\n}\n```\n",
-    "vue": "```html\n<template>\n  <ion-tabs>\n    <!-- Tab bar -->\n    <ion-tab-bar slot=\"bottom\">\n      <ion-tab-button tab=\"account\">\n        <ion-icon :icon=\"person\"></ion-icon>\n      </ion-tab-button>\n      <ion-tab-button tab=\"contact\">\n        <ion-icon :icon=\"call\"></ion-icon>\n      </ion-tab-button>\n      <ion-tab-button tab=\"settings\">\n        <ion-icon :icon=\"settings\"></ion-icon>\n      </ion-tab-button>\n    </ion-tab-bar>\n  </ion-tabs>\n</template>\n\n<script>\nimport { IonIcon, IonTabBar, IonTabButton, IonTabs } from '@ionic/vue';\nimport { call, person, settings } from 'ionicons/icons';\nimport { defineComponent } from 'vue';\n\nexport default defineComponent({\n  components: { IonIcon, IonTabBar, IonTabButton, IonTabs },\n  setup() {\n    return { call, person, settings }\n  }\n});\n</script>\n```"
-  },
+  "usage": {},
   "props": [
     {
       "name": "color",
-      "type": "string | undefined",
+      "type": "\"danger\" | \"dark\" | \"light\" | \"medium\" | \"primary\" | \"secondary\" | \"success\" | \"tertiary\" | \"warning\" | string & Record<never, never> | undefined",
       "mutable": false,
       "attr": "color",
       "reflectToAttr": true,
@@ -28,7 +21,43 @@
       "docsTags": [],
       "values": [
         {
+          "value": "danger",
           "type": "string"
+        },
+        {
+          "value": "dark",
+          "type": "string"
+        },
+        {
+          "value": "light",
+          "type": "string"
+        },
+        {
+          "value": "medium",
+          "type": "string"
+        },
+        {
+          "value": "primary",
+          "type": "string"
+        },
+        {
+          "value": "secondary",
+          "type": "string"
+        },
+        {
+          "value": "success",
+          "type": "string"
+        },
+        {
+          "value": "tertiary",
+          "type": "string"
+        },
+        {
+          "value": "warning",
+          "type": "string"
+        },
+        {
+          "type": "string & Record<never, never>"
         },
         {
           "type": "undefined"

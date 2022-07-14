@@ -35,11 +35,11 @@ import APITOCInline from '@components/page/api/APITOCInline';
 
 
 
-The grid is a powerful mobile-first flexbox system for building custom layouts.
+grid はカスタムレイアウトを作成するための強力なモバイルファーストのflexboxシステムです。
 
-It is composed of three units — a grid, [row(s)](row.md) and [column(s)](col.md). Columns will expand to fill the row, and will resize to fit additional columns. It is based on a 12 column layout with different breakpoints based on the screen size. The number of columns can be customized using CSS.
+グリッド、[row(s)](row.md)、 [column(s)](col.md)の3つのユニットで構成されます。rowは行全体に展開され、他の列に合わせてサイズが変更されます。画面サイズに応じてブレークポイントが異なる、12列のレイアウトに基づいています。カラム数はCSSを使用してカスタマイズできます。
 
-See the [Responsive Grid documentation](/docs/layout/grid) for more information.
+詳しくは [Responsive Grid documentation](/docs/layout/grid) をご覧ください。
 
 
 

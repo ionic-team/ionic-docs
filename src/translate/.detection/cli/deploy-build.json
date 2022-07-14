@@ -8,7 +8,8 @@
   "description": "This command creates a deploy build on Appflow. While the build is running, it prints the remote build log to the terminal. If the build is successful, it downloads the created web build zip file in the current directory. Downloading build artifacts can be skipped by supplying the flag `skip-download`.\n\nApart from `--commit`, every option can be specified using the full name setup within the Appflow [Dashboard](https://dashboard.ionicframework.com).\n\nCustomizing the build:\n- The `--environment` and `--channel` options can be used to customize the groups of values exposed to the build.",
   "footnotes": [],
   "groups": [
-    "paid"
+    "paid",
+    "deprecated"
   ],
   "exampleCommands": [
     "ionic deploy build ",

@@ -29,7 +29,7 @@ import APITOCInline from '@components/page/api/APITOCInline';
 
 
 
-The `ion-infinite-scroll-content` component is the default child used by the `ion-infinite-scroll`. It displays an infinite scroll spinner that looks best based on the platform and changes the look depending on the infinite scroll's state. The default spinner can be changed and text can be added by setting the `loadingSpinner` and `loadingText` properties.
+`ion-infinite-scroll-content` コンポーネントは、`ion-infinite-scroll` で使用されるデフォルトの子コンポーネントです。無限スクロールのスピナーが表示されます。このスピナーはプラットフォームに応じて最適に表示され、無限スクロールの状態に応じて外観が変化します。`loadingSpinner` and `loadingText` プロパティを設定することにより、既定値のスピナーを変更したり、テキストを追加することができます。
 
 
 

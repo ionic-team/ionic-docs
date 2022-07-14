@@ -32,7 +32,7 @@ import APITOCInline from '@components/page/api/APITOCInline';
 
 
 
-The ripple effect component adds the [Material Design ink ripple interaction effect](https://material.io/develop/web/supporting/ripple). This component can only be used inside of an `<ion-app>` and can be added to any component.
+ripple effectコンポーネントは、 [Material Design ink ripple interaction effect](https://material.io/develop/web/components/ripples/) を追加します。このコンポーネントは `<ion-app>` 内でのみ利用することができ、どのコンポーネントにも追加できます。
 
 It's important to note that the parent should have [relative positioning](https://developer.mozilla.org/en-US/docs/Web/CSS/position) because the ripple effect is absolutely positioned and will cover the closest parent with relative positioning. The parent element should also be given the `ion-activatable` class, which tells the ripple effect that the element is clickable.
 

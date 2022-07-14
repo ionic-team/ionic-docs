@@ -32,8 +32,8 @@ import APITOCInline from '@components/page/api/APITOCInline';
 
 
 
-The option buttons for an `ion-item-sliding`. These buttons can be placed either on the [start or end side](#side-description).
-You can combine the `ionSwipe` event plus the `expandable` directive to create a full swipe action for the item.
+`ion-item-sliding`で利用するButton要素のオプションです。これらのButtonは、[start or end side](#side-description)に配置できます。
+`ionSwipe` イベントと `expandable` ディレクティブを組み合わせて、Itemのすべてのスワイプアクションを作成できます。
 
 
 ## Side Description

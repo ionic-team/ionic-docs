@@ -32,9 +32,9 @@ import APITOCInline from '@components/page/api/APITOCInline';
 
 
 
-Floating Action Buttons (FABs) represent the primary action in an application. By default, they have a circular shape. When pressed, the button may open more related actions. As the name suggests, FABs generally float over the content in a fixed position. This is not achieved exclusively by using an `<ion-fab-button>FAB</ion-fab-button>`. They need to be wrapped with an `<ion-fab>` component in order to be fixed over the content.
+Floating Action Buttons (FABs) は、アプリケーションでの主要なアクションを表します。デフォルトでは、円形状になっています。ボタンを押すと、関連するアクションがさらに開きます。名前が示すように、FABは通常、固定された位置で内容の上に浮動します。これは、 `<ion-fab-button>FAB</ion-fab-button>` だけで実装することはできません。コンテンツを固定するには、 `<ion-fab>` コンポーネントでラップする必要があります。
 
-If the FAB button is not wrapped with `<ion-fab>`, it will scroll with the content. FAB buttons have a default size, a mini size and can accept different colors:
+FABボタンが `<ion-fab>` で囲まれていない場合は、`content` とともにスクロールします。FABボタンには、default size と mini size があり、異なるcolorを使用できます:
 
 
 

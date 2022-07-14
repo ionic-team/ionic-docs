@@ -34,7 +34,7 @@ import APITOCInline from '@components/page/api/APITOCInline';
 
 
 
-The text component is a simple component that can be used to style the text color of any element. The `ion-text` element should wrap the element in order to change the text color of that element.
+textコンポーネントは、任意の要素のテキストカラーのスタイル設定に使用できる単純なコンポーネントです。テキストカラーを変更するには、要素を `ion-text` 要素で囲む必要があります。
 
 
 

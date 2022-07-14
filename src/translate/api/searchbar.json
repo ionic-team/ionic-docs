@@ -2,21 +2,14 @@
   "filePath": "./src/components/searchbar/searchbar.tsx",
   "encapsulation": "scoped",
   "tag": "ion-searchbar",
-  "readme": "# ion-searchbar\n\nSearchbars represent a text field that can be used to search through a collection. They can be displayed inside of a toolbar or the main content.\n\nA Searchbar should be used instead of an input to search lists. A clear button is displayed upon entering input in the searchbar's text field. Clicking on the clear button will erase the text field and the input will remain focused. A cancel button can be enabled which will clear the input and lose the focus upon click.\n\n## Keyboard Display\n\n### Android\n\nBy default, tapping the input will cause the keyboard to appear with a magnifying glass icon on the submit button. You can optionally set the `inputmode` property to `\"search\"`, which will change the icon from a magnifying glass to a carriage return.\n\n### iOS\n\nBy default, tapping the input will cause the keyboard to appear with the text \"return\" on a gray submit button. You can optionally set the `inputmode` property to `\"search\"`, which will change the text from \"return\" to \"go\", and change the button color from gray to blue. Alternatively, you can wrap the `ion-searchbar` in a `form` element with an `action` property. This will cause the keyboard to appear with a blue submit button that says \"search\".\n\n## Interfaces\n\n### SearchbarChangeEventDetail\n\n```typescript\ninterface SearchbarChangeEventDetail {\n  value?: string;\n}\n```\n\n### SearchbarCustomEvent\n\nWhile not required, this interface can be used in place of the `CustomEvent` interface for stronger typing with Ionic events emitted from this component.\n\n```typescript\ninterface SearchbarCustomEvent extends CustomEvent {\n  detail: SearchbarChangeEventDetail;\n  target: HTMLIonSearchbarElement;\n}\n```\n",
-  "docs": "Searchbars represent a text field that can be used to search through a collection. They can be displayed inside of a toolbar or the main content.\n\nA Searchbar should be used instead of an input to search lists. A clear button is displayed upon entering input in the searchbar's text field. Clicking on the clear button will erase the text field and the input will remain focused. A cancel button can be enabled which will clear the input and lose the focus upon click.",
+  "docs": "",
   "docsTags": [
     {
       "name": "virtualProp",
       "text": "{\"ios\" | \"md\"} mode - The mode determines which platform styles to use."
     }
   ],
-  "usage": {
-    "angular": "```html\n<!-- Default Searchbar -->\n<ion-searchbar></ion-searchbar>\n\n<!-- Searchbar with cancel button always shown -->\n<ion-searchbar showCancelButton=\"always\"></ion-searchbar>\n\n<!-- Searchbar with cancel button never shown -->\n<ion-searchbar showCancelButton=\"never\"></ion-searchbar>\n\n<!-- Searchbar with cancel button shown on focus -->\n<ion-searchbar showCancelButton=\"focus\"></ion-searchbar>\n\n<!-- Searchbar with danger color -->\n<ion-searchbar color=\"danger\"></ion-searchbar>\n\n<!-- Searchbar with value -->\n<ion-searchbar value=\"Ionic\"></ion-searchbar>\n\n<!-- Searchbar with telephone type -->\n<ion-searchbar type=\"tel\"></ion-searchbar>\n\n<!-- Searchbar with numeric inputmode -->\n<ion-searchbar inputmode=\"numeric\"></ion-searchbar>\n\n<!-- Searchbar disabled -->\n<ion-searchbar disabled=\"true\"></ion-searchbar>\n\n<!-- Searchbar with a cancel button and custom cancel button text -->\n<ion-searchbar showCancelButton=\"focus\" cancelButtonText=\"Custom Cancel\"></ion-searchbar>\n\n<!-- Searchbar with a custom debounce -->\n<ion-searchbar debounce=\"500\"></ion-searchbar>\n\n<!-- Animated Searchbar -->\n<ion-searchbar animated></ion-searchbar>\n\n<!-- Searchbar with a placeholder -->\n<ion-searchbar placeholder=\"Filter Schedules\"></ion-searchbar>\n\n<!-- Searchbar in a Toolbar -->\n<ion-toolbar>\n  <ion-searchbar></ion-searchbar>\n</ion-toolbar>\n```",
-    "javascript": "```html\n<!-- Default Searchbar -->\n<ion-searchbar></ion-searchbar>\n\n<!-- Searchbar with cancel button always shown -->\n<ion-searchbar show-cancel-button=\"always\"></ion-searchbar>\n\n<!-- Searchbar with cancel button never shown -->\n<ion-searchbar show-cancel-button=\"never\"></ion-searchbar>\n\n<!-- Searchbar with cancel button shown on focus -->\n<ion-searchbar show-cancel-button=\"focus\"></ion-searchbar>\n\n<!-- Searchbar with danger color -->\n<ion-searchbar color=\"danger\"></ion-searchbar>\n\n<!-- Searchbar with value -->\n<ion-searchbar value=\"Ionic\"></ion-searchbar>\n\n<!-- Searchbar with telephone type -->\n<ion-searchbar type=\"tel\"></ion-searchbar>\n\n<!-- Searchbar with numeric inputmode -->\n<ion-searchbar inputmode=\"numeric\"></ion-searchbar>\n\n<!-- Searchbar disabled -->\n<ion-searchbar disabled=\"true\"></ion-searchbar>\n\n<!-- Searchbar with a cancel button and custom cancel button text -->\n<ion-searchbar show-cancel-button=\"focus\" cancel-button-text=\"Custom Cancel\"></ion-searchbar>\n\n<!-- Searchbar with a custom debounce -->\n<ion-searchbar debounce=\"500\"></ion-searchbar>\n\n<!-- Animated Searchbar -->\n<ion-searchbar animated></ion-searchbar>\n\n<!-- Searchbar with a placeholder -->\n<ion-searchbar placeholder=\"Filter Schedules\"></ion-searchbar>\n\n<!-- Searchbar in a Toolbar -->\n<ion-toolbar>\n  <ion-searchbar></ion-searchbar>\n</ion-toolbar>\n```",
-    "react": "```tsx\nimport React, { useState } from 'react';\nimport { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonSearchbar, IonFooter } from '@ionic/react';\n\nexport const SearchBarExamples: React.FC = () => {\n  const [searchText, setSearchText] = useState('');\n  return (\n    <IonPage>\n      <IonHeader>\n        <IonToolbar>\n          <IonTitle>IonSearchBar Examples</IonTitle>\n        </IonToolbar>\n      </IonHeader>\n      <IonContent>\n        <p>Default Searchbar</p>\n        <IonSearchbar value={searchText} onIonChange={e => setSearchText(e.detail.value!)}></IonSearchbar>\n\n        <p>Searchbar with cancel button always shown</p>\n        <IonSearchbar value={searchText} onIonChange={e => setSearchText(e.detail.value!)} showCancelButton=\"always\"></IonSearchbar>\n\n        <p>Searchbar with cancel button never shown</p>\n        <IonSearchbar value={searchText} onIonChange={e => setSearchText(e.detail.value!)} showCancelButton=\"never\"></IonSearchbar>\n\n        <p>Searchbar with cancel button shown on focus</p>\n        <IonSearchbar value={searchText} onIonChange={e => setSearchText(e.detail.value!)} showCancelButton=\"focus\"></IonSearchbar>\n\n        <p>Searchbar with danger color</p>\n        <IonSearchbar value={searchText} onIonChange={e => setSearchText(e.detail.value!)} color=\"danger\"></IonSearchbar>\n\n        <p>Searchbar with telephone type</p>\n        <IonSearchbar value={searchText} onIonChange={e => setSearchText(e.detail.value!)} type=\"tel\"></IonSearchbar>\n\n        <p>Searchbar with numeric inputmode</p>\n        <IonSearchbar value={searchText} onIonChange={e => setSearchText(e.detail.value!)} inputmode=\"numeric\"></IonSearchbar>\n\n        <p>Searchbar disabled </p>\n        <IonSearchbar value={searchText} onIonChange={e => setSearchText(e.detail.value!)} disabled={true}></IonSearchbar>\n\n        <p>Searchbar with a cancel button and custom cancel button text</p>\n        <IonSearchbar value={searchText} onIonChange={e => setSearchText(e.detail.value!)} showCancelButton=\"focus\" cancelButtonText=\"Custom Cancel\"></IonSearchbar>\n\n        <p>Searchbar with a custom debounce - Note: debounce only works on onIonChange event</p>\n        <IonSearchbar value={searchText} onIonChange={e => setSearchText(e.detail.value!)} debounce={1000}></IonSearchbar>\n\n        <p>Animated Searchbar</p>\n        <IonSearchbar value={searchText} onIonChange={e => setSearchText(e.detail.value!)} animated></IonSearchbar>\n\n        <p>Searchbar with a placeholder</p>\n        <IonSearchbar value={searchText} onIonChange={e => setSearchText(e.detail.value!)} placeholder=\"Filter Schedules\"></IonSearchbar>\n\n        <p>Searchbar in a Toolbar</p>\n        <IonToolbar>\n          <IonSearchbar value={searchText} onIonChange={e => setSearchText(e.detail.value!)}></IonSearchbar>\n        </IonToolbar>\n\n      </IonContent>\n      <IonFooter>\n        <IonToolbar>\n          Search Text: {searchText ?? '(none)'}\n        </IonToolbar>\n      </IonFooter>\n    </IonPage>\n  );\n};\n```",
-    "stencil": "```tsx\nimport { Component, h } from '@stencil/core';\n\n@Component({\n  tag: 'searchbar-example',\n  styleUrl: 'searchbar-example.css'\n})\nexport class SearchbarExample {\n  render() {\n    return [\n       // Default Searchbar\n      <ion-searchbar></ion-searchbar>,\n\n      // Searchbar with cancel button always shown\n      <ion-searchbar showCancelButton=\"always\"></ion-searchbar>,\n\n      // Searchbar with cancel button never shown\n      <ion-searchbar showCancelButton=\"never\"></ion-searchbar>,\n\n      // Searchbar with cancel button shown on focus\n      <ion-searchbar showCancelButton=\"focus\"></ion-searchbar>,\n\n      // Searchbar with danger color\n      <ion-searchbar color=\"danger\"></ion-searchbar>,\n\n      // Searchbar with value\n      <ion-searchbar value=\"Ionic\"></ion-searchbar>,\n\n      // Searchbar with telephone type\n      <ion-searchbar type=\"tel\"></ion-searchbar>,\n\n      // Searchbar with numeric inputmode\n      <ion-searchbar inputmode=\"numeric\"></ion-searchbar>,\n\n      // Searchbar disabled\n      <ion-searchbar disabled={true}></ion-searchbar>,\n\n      // Searchbar with a cancel button and custom cancel button text\n      <ion-searchbar showCancelButton=\"focus\" cancelButtonText=\"Custom Cancel\"></ion-searchbar>,\n\n      // Searchbar with a custom debounce\n      <ion-searchbar debounce={500}></ion-searchbar>,\n\n      // Animated Searchbar\n      <ion-searchbar animated={true}></ion-searchbar>,\n\n      // Searchbar with a placeholder\n      <ion-searchbar placeholder=\"Filter Schedules\"></ion-searchbar>,\n\n      // Searchbar in a Toolbar\n      <ion-toolbar>\n        <ion-searchbar></ion-searchbar>\n      </ion-toolbar>\n    ];\n  }\n}\n```\n",
-    "vue": "```html\n<template>\n  <!-- Default Searchbar -->\n  <ion-searchbar></ion-searchbar>\n\n  <!-- Searchbar with cancel button always shown -->\n  <ion-searchbar show-cancel-button=\"always\"></ion-searchbar>\n\n  <!-- Searchbar with cancel button never shown -->\n  <ion-searchbar show-cancel-button=\"never\"></ion-searchbar>\n\n  <!-- Searchbar with cancel button shown on focus -->\n  <ion-searchbar show-cancel-button=\"focus\"></ion-searchbar>\n\n  <!-- Searchbar with danger color -->\n  <ion-searchbar color=\"danger\"></ion-searchbar>\n\n  <!-- Searchbar with value -->\n  <ion-searchbar value=\"Ionic\"></ion-searchbar>\n\n  <!-- Searchbar with telephone type -->\n  <ion-searchbar type=\"tel\"></ion-searchbar>\n\n  <!-- Searchbar with numeric inputmode -->\n  <ion-searchbar inputmode=\"numeric\"></ion-searchbar>\n\n  <!-- Searchbar disabled -->\n  <ion-searchbar disabled=\"true\"></ion-searchbar>\n\n  <!-- Searchbar with a cancel button and custom cancel button text -->\n  <ion-searchbar show-cancel-button=\"focus\" cancel-button-text=\"Custom Cancel\"></ion-searchbar>\n\n  <!-- Searchbar with a custom debounce -->\n  <ion-searchbar debounce=\"500\"></ion-searchbar>\n\n  <!-- Animated Searchbar -->\n  <ion-searchbar animated></ion-searchbar>\n\n  <!-- Searchbar with a placeholder -->\n  <ion-searchbar placeholder=\"Filter Schedules\"></ion-searchbar>\n\n  <!-- Searchbar in a Toolbar -->\n  <ion-toolbar>\n    <ion-searchbar></ion-searchbar>\n  </ion-toolbar>\n</template>\n\n<script>\nimport { IonSearchbar, IonToolbar } from '@ionic/vue';\nimport { defineComponent } from 'vue';\n\nexport default defineComponent({\n  components: { IonSearchbar, IonToolbar }\n});\n</script>\n```"
-  },
+  "usage": {},
   "props": [
     {
       "name": "animated",
@@ -342,7 +335,7 @@
     },
     {
       "name": "color",
-      "type": "string | undefined",
+      "type": "\"danger\" | \"dark\" | \"light\" | \"medium\" | \"primary\" | \"secondary\" | \"success\" | \"tertiary\" | \"warning\" | string & Record<never, never> | undefined",
       "mutable": false,
       "attr": "color",
       "reflectToAttr": true,
@@ -350,7 +343,43 @@
       "docsTags": [],
       "values": [
         {
+          "value": "danger",
           "type": "string"
+        },
+        {
+          "value": "dark",
+          "type": "string"
+        },
+        {
+          "value": "light",
+          "type": "string"
+        },
+        {
+          "value": "medium",
+          "type": "string"
+        },
+        {
+          "value": "primary",
+          "type": "string"
+        },
+        {
+          "value": "secondary",
+          "type": "string"
+        },
+        {
+          "value": "success",
+          "type": "string"
+        },
+        {
+          "value": "tertiary",
+          "type": "string"
+        },
+        {
+          "value": "warning",
+          "type": "string"
+        },
+        {
+          "type": "string & Record<never, never>"
         },
         {
           "type": "undefined"

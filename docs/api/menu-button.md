@@ -32,7 +32,7 @@ import APITOCInline from '@components/page/api/APITOCInline';
 
 
 
-Menu Button is component that automatically creates the icon and functionality to open a menu on a page.
+Menu Buttonは、ページ上でMenuを開くためのアイコンおよび機能を自動的に作成するコンポーネントです。
 
 
 

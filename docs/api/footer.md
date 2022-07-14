@@ -32,8 +32,8 @@ import APITOCInline from '@components/page/api/APITOCInline';
 
 
 
-Footer is a root component of a page that sits at the bottom of the page.
-Footer can be a wrapper for ion-toolbar to make sure the content area is sized correctly.
+Footerは、ページの最下部にあるページのルートコンポーネントです。
+Footerは、コンテンツ領域が正しくサイズ設定されていることを確認するために、`ion-toolbar` のラッパーとして使用できます。
 
 ## Fade Footer
 

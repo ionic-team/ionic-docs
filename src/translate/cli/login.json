@@ -4,24 +4,22 @@
     "ionic"
   ],
   "summary": "Log in to Ionic",
-  "description": "Authenticate with Ionic and retrieve a user token, which is stored in the CLI config. The most secure way to log in is running `ionic login` without arguments, which will open a browser where you can submit your credentials.\n\nIf the `IONIC_TOKEN` environment variable is set, the CLI will automatically authenticate you. To retrieve your user token, first use `ionic login <email> <password>` to log in, then use `ionic config get -g tokens.user` to print the token. (**Note**: Tokens retrieved from the browser login are short-lived and not recommended for use with `IONIC_TOKEN`.)\n\n`ionic login` will also accept `password` through stdin, e.g.: `echo \"<password>\" | ionic login <email>`.\n\nIf you need to create an Ionic account, use `ionic signup` or the Ionic [Website](https://ionicframework.com/signup).\n\nYou can reset your password in the [Dashboard](https://dashboard.ionicframework.com/reset-password).\n\nIf you are having issues logging in, please get in touch with our [Support](https://ion.link/support-request).",
+  "description": "Authenticate with Ionic and retrieve a user token, which is stored in the CLI config. Running `ionic login` will open a browser where you can submit your credentials.\n\nIf the `IONIC_TOKEN` environment variable is set, the CLI will automatically authenticate you. Use the Dashboard to generate a Personal Access Token.\n\nIf you need to create an Ionic account, use `ionic signup` or the Ionic [Website](https://ionicframework.com/signup).\n\nIf you are having issues logging in, please get in touch with our [Support](https://ion.link/support-request).",
   "footnotes": [],
   "groups": [],
   "exampleCommands": [
-    "ionic login ",
-    "ionic login john@example.com",
-    "ionic login hello@example.com secret"
+    "ionic login "
   ],
   "aliases": [],
   "inputs": [
     {
       "name": "email",
-      "summary": "Your email address",
+      "summary": "Your email address (deprecated)",
       "required": false
     },
     {
       "name": "password",
-      "summary": "Your password",
+      "summary": "Your password (deprecated)",
       "required": false
     }
   ],

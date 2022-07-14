@@ -39,14 +39,14 @@ The router is a component for handling routing inside vanilla and Stencil JavaSc
 :::
 
 
-Apps should have a single `ion-router` component in the codebase.
-This component controls all interactions with the browser history and it aggregates updates through an event system.
+アプリケーションはコードベースに単一の `ion-router` コンポーネントを持たなければなりません。
+このコンポーネントは、ブラウザの履歴とのすべての対話を制御し、イベント・システムを介して更新を集約します。
 
-`ion-router` is just a URL coordinator for the navigation outlets of ionic: `ion-nav`, `ion-tabs`, and `ion-router-outlet`.
+`ion-router` は、`ion-nav` と `ion-tabs` 、 `ion-router-outlet` というIonicのナビゲーション機能のURL調整機能に過ぎません。
 
-That means the `ion-router` never touches the DOM, it does NOT show the components or emit any kind of lifecycle events, it just tells `ion-nav`, `ion-tabs`, and `ion-router-outlet` what and when to "show" based on the browser's URL.
+つまり、 `ion-router` はDOMにアクセスすることはなく、コンポーネントを表示することも、何らかのライフサイクルイベントを発行することもなく、ブラウザのURLに基づいて、`ion-nav` と `ion-tabs` 、 `ion-router-outlet`  に何をいつ「show」すべきかを指示するだけです。
 
-In order to configure this relationship between components (to load/select) and URLs, `ion-router` uses a declarative syntax using JSX/HTML to define a tree of routes.
+コンポーネント(ロード/選択)とURLの間の関係を設定するために、`ion-router` はJSX/HTMLを使ってルートのツリーを定義する宣言的な構文を利用します。
 
 ## Interfaces
 

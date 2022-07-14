@@ -34,11 +34,11 @@ import APITOCInline from '@components/page/api/APITOCInline';
 
 
 
-A Toast is a subtle notification commonly used in modern applications. It can be used to provide feedback about an operation or to display a system message. The toast appears on top of the app's content, and can be dismissed by the app to resume user interaction with the app.
+Toastは、現代のアプリケーションで一般的に使用される小さな通知です。操作に関するフィードバックを提供したり、システムメッセージを表示したりするために使用できます。Toastはアプリのコンテンツの上に表示され、終了するとアプリとの対話を再開することができます。
 
-## Positioning
+## ポジション
 
-Toasts can be positioned at the top, bottom or middle of the viewport. The position can be passed upon creation. The possible values are `top`, `bottom` and `middle`. If the position is not specified, the toast will be displayed at the bottom of the viewport.
+Toastsは、ビューポートの上部、下部、または中央に配置できます。positionは作成時に値を渡すことができます。指定できる値は、`top`, `bottom` , `middle` です。位置を指定しない場合、Toastはビューポートの下部に表示されます。
 
 ## Dismissing
 

@@ -32,11 +32,11 @@ import APITOCInline from '@components/page/api/APITOCInline';
 
 
 
-The MenuToggle component can be used to toggle a menu open or closed.
+MenuToggleコンポーネントを使用すると、Menuの表示/非表示を切り替えることができます。
 
-By default, it's only visible when the selected menu is active. A menu is active when it can be opened/closed. If the menu is disabled or it's being presented as a split-pane, the menu is marked as non-active and ion-menu-toggle hides itself.
+デフォルトでは、選択したMenuがアクティブな場合にのみ表示されます。Menuは、開いたり閉じたりできるときにアクティブになります。Menuが無効になっている場合、または分割ペインとして表示されている場合、メニューは非アクティブとしてマークされ、ion-menu-toggleが非表示になります。
 
-In case it's desired to keep `ion-menu-toggle` always visible, the `autoHide` property can be set to `false`.
+`ion-menu-toggle` を常に表示しておきたい場合は、`autoHide`プロパティを`false`に設定できます。
 
 
 

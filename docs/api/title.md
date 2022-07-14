@@ -32,7 +32,7 @@ import APITOCInline from '@components/page/api/APITOCInline';
 
 
 
-`ion-title` is a component that sets the title of the `Toolbar`.
+`ion-title` は、 `Toolbar` のタイトルを設定するコンポーネントです。
 
 
 

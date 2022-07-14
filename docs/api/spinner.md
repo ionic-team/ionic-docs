@@ -34,9 +34,9 @@ import APITOCInline from '@components/page/api/APITOCInline';
 
 
 
-The Spinner component provides a variety of animated SVG spinners. Spinners are visual indicators that the app is loading content or performing another process that the user needs to wait on.
+Spinnerコンポーネントには、さまざまなアニメーションつきのSVG Spinnerが用意されています。Spinnerは、アプリがコンテンツを読み込んだり、ユーザーが待つ必要のある別のプロセスを実行していることを視覚的に示すものです。
 
-The default spinner to use is based on the platform. The default spinner for `ios` is `"lines"`, and the default for `android` is `"crescent"`. If the platform is not `ios` or `android`, the spinner will default to `crescent`. If the `name` property is set, then that spinner will be used instead of the platform specific spinner.
+デフォルトのSpinnerはプラットフォームに基づいて使用されます。`ios`のデフォルトのSpinnerは`"lines"`であり、`android`のデフォルトは`"crescent"`である。プラットフォームが `ios` または `android` でない場合、Spinnerはデフォルトで `crescent` に設定されます。`name` プロパティが設定されている場合、プラットフォーム固有のSpinnerの代わりに指定されたSpinnerが使用されます。
 
 
 

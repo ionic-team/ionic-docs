@@ -34,10 +34,10 @@ import APITOCInline from '@components/page/api/APITOCInline';
 
 
 
-Lists are made up of multiple rows of items which can contain text, buttons, toggles,
-icons, thumbnails, and much more. Lists generally contain items with similar data content, such as images and text.
+Listは、text、button、toggle、icon、thumbnail等を含むことができる複数個の並んだitem要素によって構成されます。
+Listには通常、画像やテキストなど、データの内容が似ているitem要素が含まれています。
 
-Lists support several interactions including swiping items to reveal options, dragging to reorder items within the list, and deleting items.
+Listはitem要素を、オプションを表示させるためにをスワイプしたり、List内で順番を変えるためにドラッグしたり、削除することを含んだいくつかの対話的機能をサポートしています。
 
 
 

@@ -2,8 +2,7 @@
   "filePath": "./src/components/card-subtitle/card-subtitle.tsx",
   "encapsulation": "shadow",
   "tag": "ion-card-subtitle",
-  "readme": "# ion-card-subtitle\n\n`ion-card-subtitle` is a child component of `ion-card`\n",
-  "docs": "`ion-card-subtitle` is a child component of `ion-card`",
+  "docs": "",
   "docsTags": [
     {
       "name": "virtualProp",
@@ -14,7 +13,7 @@
   "props": [
     {
       "name": "color",
-      "type": "string | undefined",
+      "type": "\"danger\" | \"dark\" | \"light\" | \"medium\" | \"primary\" | \"secondary\" | \"success\" | \"tertiary\" | \"warning\" | string & Record<never, never> | undefined",
       "mutable": false,
       "attr": "color",
       "reflectToAttr": true,
@@ -22,7 +21,43 @@
       "docsTags": [],
       "values": [
         {
+          "value": "danger",
           "type": "string"
+        },
+        {
+          "value": "dark",
+          "type": "string"
+        },
+        {
+          "value": "light",
+          "type": "string"
+        },
+        {
+          "value": "medium",
+          "type": "string"
+        },
+        {
+          "value": "primary",
+          "type": "string"
+        },
+        {
+          "value": "secondary",
+          "type": "string"
+        },
+        {
+          "value": "success",
+          "type": "string"
+        },
+        {
+          "value": "tertiary",
+          "type": "string"
+        },
+        {
+          "value": "warning",
+          "type": "string"
+        },
+        {
+          "type": "string & Record<never, never>"
         },
         {
           "type": "undefined"

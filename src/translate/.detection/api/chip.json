@@ -2,25 +2,18 @@
   "filePath": "./src/components/chip/chip.tsx",
   "encapsulation": "shadow",
   "tag": "ion-chip",
-  "readme": "# ion-chip\n\nChips represent complex entities in small blocks, such as a contact. A chip can contain several different elements such as avatars, text, and icons.\n",
-  "docs": "Chips represent complex entities in small blocks, such as a contact. A chip can contain several different elements such as avatars, text, and icons.",
+  "docs": "",
   "docsTags": [
     {
       "name": "virtualProp",
       "text": "{\"ios\" | \"md\"} mode - The mode determines which platform styles to use."
     }
   ],
-  "usage": {
-    "angular": "```html\n<ion-chip>\n  <ion-label>Default</ion-label>\n</ion-chip>\n\n<ion-chip>\n  <ion-label color=\"secondary\">Secondary Label</ion-label>\n</ion-chip>\n\n<ion-chip color=\"secondary\">\n  <ion-label color=\"dark\">Secondary w/ Dark label</ion-label>\n</ion-chip>\n\n<ion-chip [disabled]=\"true\">\n  <ion-label>Disabled Chip</ion-label>\n</ion-chip>\n\n<ion-chip>\n  <ion-icon name=\"pin\"></ion-icon>\n  <ion-label>Default</ion-label>\n</ion-chip>\n\n<ion-chip>\n  <ion-icon name=\"heart\" color=\"dark\"></ion-icon>\n  <ion-label>Default</ion-label>\n</ion-chip>\n\n<ion-chip>\n  <ion-label>Button Chip</ion-label>\n  <ion-icon name=\"close-circle\"></ion-icon>\n</ion-chip>\n\n<ion-chip>\n  <ion-icon name=\"pin\" color=\"primary\"></ion-icon>\n  <ion-label>Icon Chip</ion-label>\n  <ion-icon name=\"close\"></ion-icon>\n</ion-chip>\n\n<ion-chip>\n  <ion-avatar>\n    <img src=\"https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y\">\n  </ion-avatar>\n  <ion-label>Avatar Chip</ion-label>\n  <ion-icon name=\"close-circle\"></ion-icon>\n</ion-chip>\n```\n",
-    "javascript": "```html\n<ion-chip>\n  <ion-label>Default</ion-label>\n</ion-chip>\n\n<ion-chip>\n  <ion-label color=\"secondary\">Secondary Label</ion-label>\n</ion-chip>\n\n<ion-chip color=\"secondary\">\n  <ion-label color=\"dark\">Secondary w/ Dark label</ion-label>\n</ion-chip>\n\n<ion-chip disabled=\"true\">\n  <ion-label>Disabled Chip</ion-label>\n</ion-chip>\n\n<ion-chip>\n  <ion-icon name=\"pin\"></ion-icon>\n  <ion-label>Default</ion-label>\n</ion-chip>\n\n<ion-chip>\n  <ion-icon name=\"heart\" color=\"dark\"></ion-icon>\n  <ion-label>Default</ion-label>\n</ion-chip>\n\n<ion-chip>\n  <ion-label>Button Chip</ion-label>\n  <ion-icon name=\"close-circle\"></ion-icon>\n</ion-chip>\n\n<ion-chip>\n  <ion-icon name=\"pin\" color=\"primary\"></ion-icon>\n  <ion-label>Icon Chip</ion-label>\n  <ion-icon name=\"close\"></ion-icon>\n</ion-chip>\n\n<ion-chip>\n  <ion-avatar>\n    <img src=\"https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y\">\n  </ion-avatar>\n  <ion-label>Avatar Chip</ion-label>\n  <ion-icon name=\"close-circle\"></ion-icon>\n</ion-chip>\n```\n",
-    "react": "```tsx\nimport React from 'react';\nimport { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonChip, IonLabel, IonIcon, IonAvatar } from '@ionic/react';\nimport { pin, heart, closeCircle, close } from 'ionicons/icons';\n\nexport const ChipExamples: React.FC = () => {\n  return (\n    <IonPage>\n      <IonHeader>\n        <IonToolbar>\n          <IonTitle>ChipExamples</IonTitle>\n        </IonToolbar>\n      </IonHeader>\n      <IonContent>\n        <IonChip>\n          <IonLabel>Default</IonLabel>\n        </IonChip>\n\n        <IonChip>\n          <IonLabel color=\"secondary\">Secondary Label</IonLabel>\n        </IonChip>\n\n        <IonChip color=\"secondary\">\n          <IonLabel color=\"dark\">Secondary w/ Dark label</IonLabel>\n        </IonChip>\n\n        <IonChip disabled={true}>\n          <IonLabel>Disabled Chip</IonLabel>\n        </IonChip>\n\n        <IonChip>\n          <IonIcon icon={pin} />\n          <IonLabel>Default</IonLabel>\n        </IonChip>\n\n        <IonChip>\n          <IonIcon icon={heart} color=\"dark\" />\n          <IonLabel>Default</IonLabel>\n        </IonChip>\n\n        <IonChip>\n          <IonLabel>Button Chip</IonLabel>\n          <IonIcon icon={closeCircle} />\n        </IonChip>\n\n        <IonChip>\n          <IonIcon icon={pin} color=\"primary\" />\n          <IonLabel>Icon Chip</IonLabel>\n          <IonIcon icon={close} />\n        </IonChip>\n\n        <IonChip>\n          <IonAvatar>\n            <img src=\"https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y\" />\n          </IonAvatar>\n          <IonLabel>Avatar Chip</IonLabel>\n          <IonIcon icon={closeCircle} />\n        </IonChip>\n      </IonContent>\n    </IonPage>\n  );\n};\n\n```\n",
-    "stencil": "```tsx\nimport { Component, h } from '@stencil/core';\n\n@Component({\n  tag: 'chip-example',\n  styleUrl: 'chip-example.css'\n})\nexport class ChipExample {\n  render() {\n    return [\n      <ion-chip>\n        <ion-label>Default</ion-label>\n      </ion-chip>,\n\n      <ion-chip>\n        <ion-label color=\"secondary\">Secondary Label</ion-label>\n      </ion-chip>,\n\n      <ion-chip color=\"secondary\">\n        <ion-label color=\"dark\">Secondary w/ Dark label</ion-label>\n      </ion-chip>,\n\n      <ion-chip>\n        <ion-icon name=\"pin\"></ion-icon>\n        <ion-label>Default</ion-label>\n      </ion-chip>,\n\n      <ion-chip>\n        <ion-icon name=\"heart\" color=\"dark\"></ion-icon>\n        <ion-label>Default</ion-label>\n      </ion-chip>,\n\n      <ion-chip>\n        <ion-label>Button Chip</ion-label>\n        <ion-icon name=\"close-circle\"></ion-icon>\n      </ion-chip>,\n\n      <ion-chip>\n        <ion-icon name=\"pin\" color=\"primary\"></ion-icon>\n        <ion-label>Icon Chip</ion-label>\n        <ion-icon name=\"close\"></ion-icon>\n      </ion-chip>,\n\n      <ion-chip>\n        <ion-avatar>\n          <img src=\"https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y\"/>\n        </ion-avatar>\n        <ion-label>Avatar Chip</ion-label>\n        <ion-icon name=\"close-circle\"></ion-icon>\n      </ion-chip>\n    ];\n  }\n}\n```",
-    "vue": "```html\n<template>\n  <ion-chip>\n    <ion-label>Default</ion-label>\n  </ion-chip>\n\n  <ion-chip>\n    <ion-label color=\"secondary\">Secondary Label</ion-label>\n  </ion-chip>\n\n  <ion-chip color=\"secondary\">\n    <ion-label color=\"dark\">Secondary w/ Dark label</ion-label>\n  </ion-chip>\n\n  <ion-chip :disabled=\"true\">\n    <ion-label>Disabled Chip</ion-label>\n  </ion-chip>\n\n  <ion-chip>\n    <ion-icon :icon=\"pin\"></ion-icon>\n    <ion-label>Default</ion-label>\n  </ion-chip>\n\n  <ion-chip>\n    <ion-icon :icon=\"heart\" color=\"dark\"></ion-icon>\n    <ion-label>Default</ion-label>\n  </ion-chip>\n\n  <ion-chip>\n    <ion-label>Button Chip</ion-label>\n    <ion-icon :icon=\"closeCircle\"></ion-icon>\n  </ion-chip>\n\n  <ion-chip>\n    <ion-icon :icon=\"pin\" color=\"primary\"></ion-icon>\n    <ion-label>Icon Chip</ion-label>\n    <ion-icon :icon=\"close\"></ion-icon>\n  </ion-chip>\n\n  <ion-chip>\n    <ion-avatar>\n      <img src=\"https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y\">\n    </ion-avatar>\n    <ion-label>Avatar Chip</ion-label>\n    <ion-icon :icon=\"closeCircle\"></ion-icon>\n  </ion-chip>\n</template>\n\n<script>\nimport { IonAvatar, IonChip, IonIcon, IonLabel } from '@ionic/vue';\nimport { close, closeCircle, heart, pin } from 'ionicons/icons';\n\nimport { defineComponent } from 'vue';\n\nexport default defineComponent({\n  components: { IonAvatar, IonChip, IonIcon, IonLabel },\n  setup() {\n    return { close, closeCircle, heart, pin }\n  }\n});\n</script>\n```\n"
-  },
+  "usage": {},
   "props": [
     {
       "name": "color",
-      "type": "string | undefined",
+      "type": "\"danger\" | \"dark\" | \"light\" | \"medium\" | \"primary\" | \"secondary\" | \"success\" | \"tertiary\" | \"warning\" | string & Record<never, never> | undefined",
       "mutable": false,
       "attr": "color",
       "reflectToAttr": true,
@@ -28,7 +21,43 @@
       "docsTags": [],
       "values": [
         {
+          "value": "danger",
           "type": "string"
+        },
+        {
+          "value": "dark",
+          "type": "string"
+        },
+        {
+          "value": "light",
+          "type": "string"
+        },
+        {
+          "value": "medium",
+          "type": "string"
+        },
+        {
+          "value": "primary",
+          "type": "string"
+        },
+        {
+          "value": "secondary",
+          "type": "string"
+        },
+        {
+          "value": "success",
+          "type": "string"
+        },
+        {
+          "value": "tertiary",
+          "type": "string"
+        },
+        {
+          "value": "warning",
+          "type": "string"
+        },
+        {
+          "type": "string & Record<never, never>"
         },
         {
           "type": "undefined"

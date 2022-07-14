@@ -34,9 +34,9 @@ import APITOCInline from '@components/page/api/APITOCInline';
 
 
 
-Thumbnails are square components that usually wrap an image or icon. They can be used to make it easier to display a group of larger images or provide a preview of the full-size image.
+Thumbnailsは、通常、画像またはアイコンをラップする四角形のコンポーネントです。これを使用すると、大きな画像のグループを簡単に表示したり、フルサイズのイメージのプレビューを表示したりできます。
 
-Thumbnails can be used by themselves or inside of any element. If placed inside of an `ion-item`, the thumbnail will resize to fit the parent component. To position a thumbnail on the left or right side of an item, set the slot to `start` or `end`, respectively.
+Thumbnailsは、単独で使用することも、任意の要素の内部で使用することもできます。`ion-item` の内部に配置すると、Thumbnailsのサイズが親コンポーネントに合わせて変更されます。Thumbnailsをアイテムの左側または右側に配置するには、slotをそれぞれ `start` または `end` に設定します。
 
 
 

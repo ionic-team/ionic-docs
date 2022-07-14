@@ -2,8 +2,7 @@
   "filePath": "./src/components/checkbox/checkbox.tsx",
   "encapsulation": "shadow",
   "tag": "ion-checkbox",
-  "readme": "# ion-checkbox\n\nCheckboxes allow the selection of multiple options from a set of options. They appear as checked (ticked) when activated. Clicking on a checkbox will toggle the `checked` property. They can also be checked programmatically by setting the `checked` property.\n\n## Interfaces\n\n### CheckboxChangeEventDetail\n\n```typescript\ninterface CheckboxChangeEventDetail<T = any> {\n  value: T;\n  checked: boolean;\n}\n```\n\n### CheckboxCustomEvent\n\nWhile not required, this interface can be used in place of the `CustomEvent` interface for stronger typing with Ionic events emitted from this component.\n\n```typescript\ninterface CheckboxCustomEvent<T = any> extends CustomEvent {\n  detail: CheckboxChangeEventDetail<T>;\n  target: HTMLIonCheckboxElement;\n}\n```\n\n",
-  "docs": "Checkboxes allow the selection of multiple options from a set of options. They appear as checked (ticked) when activated. Clicking on a checkbox will toggle the `checked` property. They can also be checked programmatically by setting the `checked` property.",
+  "docs": "",
   "docsTags": [
     {
       "name": "virtualProp",
@@ -18,13 +17,7 @@
       "text": "mark - The checkmark used to indicate the checked state."
     }
   ],
-  "usage": {
-    "angular": "```html\n<!-- Default Checkbox -->\n<ion-checkbox></ion-checkbox>\n\n<!-- Disabled Checkbox -->\n<ion-checkbox disabled=\"true\"></ion-checkbox>\n\n<!-- Checked Checkbox -->\n<ion-checkbox checked=\"true\"></ion-checkbox>\n\n<!-- Checkbox Colors -->\n<ion-checkbox color=\"primary\"></ion-checkbox>\n<ion-checkbox color=\"secondary\"></ion-checkbox>\n<ion-checkbox color=\"danger\"></ion-checkbox>\n<ion-checkbox color=\"light\"></ion-checkbox>\n<ion-checkbox color=\"dark\"></ion-checkbox>\n\n<!-- Checkboxes in a List -->\n<ion-list>\n  <ion-item *ngFor=\"let entry of form\">\n    <ion-label>{{entry.val}}</ion-label>\n    <ion-checkbox slot=\"end\" [(ngModel)]=\"entry.isChecked\"></ion-checkbox>\n  </ion-item>\n</ion-list>\n```\n\n```typescript\nimport { Component } from '@angular/core';\n\n@Component({\n  selector: 'app-page-home',\n  templateUrl: 'home.page.html',\n  styleUrls: ['home.page.scss']\n})\nexport class HomePage {\n  public form = [\n      { val: 'Pepperoni', isChecked: true },\n      { val: 'Sausage', isChecked: false },\n      { val: 'Mushroom', isChecked: false }\n    ];\n}\n```\n",
-    "javascript": "```html\n<!-- Default Checkbox -->\n<ion-checkbox></ion-checkbox>\n\n<!-- Disabled Checkbox -->\n<ion-checkbox disabled></ion-checkbox>\n\n<!-- Checked Checkbox -->\n<ion-checkbox checked></ion-checkbox>\n\n<!-- Checkbox Colors -->\n<ion-checkbox color=\"primary\"></ion-checkbox>\n<ion-checkbox color=\"secondary\"></ion-checkbox>\n<ion-checkbox color=\"danger\"></ion-checkbox>\n<ion-checkbox color=\"light\"></ion-checkbox>\n<ion-checkbox color=\"dark\"></ion-checkbox>\n\n<!-- Checkboxes in a List -->\n<ion-list>\n  <ion-item>\n    <ion-label>Pepperoni</ion-label>\n    <ion-checkbox slot=\"end\" value=\"pepperoni\" checked></ion-checkbox>\n  </ion-item>\n\n  <ion-item>\n    <ion-label>Sausage</ion-label>\n    <ion-checkbox slot=\"end\" value=\"sausage\" disabled></ion-checkbox>\n  </ion-item>\n\n  <ion-item>\n    <ion-label>Mushrooms</ion-label>\n    <ion-checkbox slot=\"end\" value=\"mushrooms\"></ion-checkbox>\n  </ion-item>\n</ion-list>\n```\n",
-    "react": "```tsx\nimport React, { useState } from 'react';\nimport { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonCheckbox, IonList, IonItem, IonLabel, IonItemDivider } from '@ionic/react';\n\nconst checkboxList = [\n  { val: 'Pepperoni', isChecked: true },\n  { val: 'Sausage', isChecked: false },\n  { val: 'Mushroom', isChecked: false }\n];\n\nexport const CheckboxExamples: React.FC = () => {\n\n  const [checked, setChecked] = useState(false);\n\n  return (\n    <IonPage>\n      <IonHeader>\n        <IonToolbar>\n          <IonTitle>CheckboxExamples</IonTitle>\n        </IonToolbar>\n      </IonHeader>\n      <IonContent>\n        <IonList>\n          <IonItemDivider>Default Checkbox</IonItemDivider>\n          <IonItem>\n            <IonLabel>Checked: {JSON.stringify(checked)}</IonLabel>\n            <IonCheckbox checked={checked} onIonChange={e => setChecked(e.detail.checked)} />\n          </IonItem>\n\n          <IonItemDivider>Disabled Checkbox</IonItemDivider>\n          <IonItem><IonCheckbox slot=\"end\" disabled={true} /></IonItem>\n\n          <IonItemDivider>Checkbox Colors</IonItemDivider>\n          <IonItem>\n            <IonCheckbox slot=\"end\" color=\"primary\" />\n            <IonCheckbox slot=\"end\" color=\"secondary\" />\n            <IonCheckbox slot=\"end\" color=\"danger\" />\n            <IonCheckbox slot=\"end\" color=\"light\" />\n            <IonCheckbox slot=\"end\" color=\"dark\" />\n          </IonItem>\n          <IonItemDivider>Checkboxes in a List</IonItemDivider>\n\n          {checkboxList.map(({ val, isChecked }, i) => (\n            <IonItem key={i}>\n              <IonLabel>{val}</IonLabel>\n              <IonCheckbox slot=\"end\" value={val} checked={isChecked} />\n            </IonItem>\n          ))}\n        </IonList>\n      </IonContent>\n    </IonPage>\n  );\n};\n```",
-    "stencil": "```tsx\nimport { Component, h } from '@stencil/core';\n\n@Component({\n  tag: 'checkbox-example',\n  styleUrl: 'checkbox-example.css'\n})\nexport class CheckboxExample {\n  private form = [\n    { val: 'Pepperoni', isChecked: true },\n    { val: 'Sausage', isChecked: false },\n    { val: 'Mushroom', isChecked: false }\n  ];\n\n  render() {\n    return [\n      // Default Checkbox\n      <ion-checkbox></ion-checkbox>,\n\n      // Disabled Checkbox\n      <ion-checkbox disabled={true}></ion-checkbox>,\n\n      // Checked Checkbox\n      <ion-checkbox checked={true}></ion-checkbox>,\n\n      // Checkbox Colors\n      <ion-checkbox color=\"primary\"></ion-checkbox>,\n      <ion-checkbox color=\"secondary\"></ion-checkbox>,\n      <ion-checkbox color=\"danger\"></ion-checkbox>,\n      <ion-checkbox color=\"light\"></ion-checkbox>,\n      <ion-checkbox color=\"dark\"></ion-checkbox>,\n\n      // Checkboxes in a List\n      <ion-list>\n        {this.form.map(entry =>\n          <ion-item>\n            <ion-label>{entry.val}</ion-label>\n            <ion-checkbox slot=\"end\" checked={entry.isChecked}></ion-checkbox>\n          </ion-item>\n        )}\n      </ion-list>\n    ];\n  }\n}\n```\n",
-    "vue": "```html\n<template>\n  <!-- Default Checkbox -->\n  <ion-checkbox></ion-checkbox>\n\n  <!-- Disabled Checkbox -->\n  <ion-checkbox disabled=\"true\"></ion-checkbox>\n\n  <!-- Checked Checkbox -->\n  <ion-checkbox checked=\"true\"></ion-checkbox>\n\n  <!-- Checkbox Colors -->\n  <ion-checkbox color=\"primary\"></ion-checkbox>\n  <ion-checkbox color=\"secondary\"></ion-checkbox>\n  <ion-checkbox color=\"danger\"></ion-checkbox>\n  <ion-checkbox color=\"light\"></ion-checkbox>\n  <ion-checkbox color=\"dark\"></ion-checkbox>\n\n  <!-- Checkboxes in a List -->\n  <ion-list>\n    <ion-item v-for=\"entry in form\">\n      <ion-label>{{entry.val}}</ion-label>\n      <ion-checkbox\n        slot=\"end\"\n        @update:modelValue=\"entry.isChecked = $event\"\n        :modelValue=\"entry.isChecked\">\n      </ion-checkbox>\n    </ion-item>\n  </ion-list>\n</template>\n\n<script>\nimport { IonCheckbox, IonItem, IonLabel, IonList } from '@ionic/vue';\nimport { defineComponent } from 'vue';\n\nexport default defineComponent({\n  components: { IonCheckbox, IonItem, IonLabel, IonList },\n  setup() {\n    const form = [\n      { val: 'Pepperoni', isChecked: true },\n      { val: 'Sausage', isChecked: false },\n      { val: 'Mushroom', isChecked: false }\n    ];\n    \n    return { form };\n  }\n});\n</script>\n```"
-  },
+  "usage": {},
   "props": [
     {
       "name": "checked",
@@ -45,7 +38,7 @@
     },
     {
       "name": "color",
-      "type": "string | undefined",
+      "type": "\"danger\" | \"dark\" | \"light\" | \"medium\" | \"primary\" | \"secondary\" | \"success\" | \"tertiary\" | \"warning\" | string & Record<never, never> | undefined",
       "mutable": false,
       "attr": "color",
       "reflectToAttr": true,
@@ -53,7 +46,43 @@
       "docsTags": [],
       "values": [
         {
+          "value": "danger",
           "type": "string"
+        },
+        {
+          "value": "dark",
+          "type": "string"
+        },
+        {
+          "value": "light",
+          "type": "string"
+        },
+        {
+          "value": "medium",
+          "type": "string"
+        },
+        {
+          "value": "primary",
+          "type": "string"
+        },
+        {
+          "value": "secondary",
+          "type": "string"
+        },
+        {
+          "value": "success",
+          "type": "string"
+        },
+        {
+          "value": "tertiary",
+          "type": "string"
+        },
+        {
+          "value": "warning",
+          "type": "string"
+        },
+        {
+          "type": "string & Record<never, never>"
         },
         {
           "type": "undefined"

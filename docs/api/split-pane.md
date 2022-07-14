@@ -32,15 +32,15 @@ import APITOCInline from '@components/page/api/APITOCInline';
 
 
 
-A split pane is useful when creating multi-view layouts. It allows UI elements, like menus, to be
-displayed as the viewport width increases.
+Split-Paneはマルチビューレイアウトを作成するときに便利です。
+ビューポートの幅を広げると、メニューのようなUI要素を表示できます。
 
-If the device's screen width is below a certain size, the split pane will collapse and the menu will be hidden. This is ideal for creating an app that will be served in a browser and deployed through the app store to phones and tablets.
+デバイスの画面幅が特定のサイズより小さい場合、分割ペインは縮小され、メニューは非表示になります。これは、ブラウザで提供され、アプリストアを通じてスマートフォンやタブレットにデプロイされるアプリを作成するのに理想的な動作です。
 
 
 ## Setting Breakpoints
 
-By default, the split pane will expand when the screen is larger than 992px. To customize this, pass a breakpoint in the `when` property. The `when` property can accept a boolean value, any valid media query, or one of Ionic's predefined sizes.
+デフォルトでは、画面が992pxを超えると分割ペインが拡張表示されます。これをカスタマイズするには、 `when` プロパティにブレークポイントを渡します。`when` プロパティには、真偽値、有効なメディア・クエリー、またはIonicの事前定義サイズのいずれかを指定できます。
 
 
 ```html

@@ -34,7 +34,7 @@ import APITOCInline from '@components/page/api/APITOCInline';
 
 
 
-Fabs are container elements that contain one or more fab buttons. They should be placed in a fixed position that does not scroll with the content. Fab should have one main fab-button. Fabs can also contain fab-lists which contain related buttons that show when the main fab button is clicked. The same fab container can contain several [fab-list](fab-list.md) elements with different side values.
+Fabは、1つ以上のFabボタンを含むコンテナ要素です。コンテンツとともにスクロールしない固定位置に配置する必要があります。Fabにはメインのfabボタンが1つあるはずです。Fabには、メインのFabボタンがクリックされたときに表示される関連ボタン [fab-list](fab-list.md) によって含めることもできます。同じfabコンテナに、side 値が異なる複数のfabリスト要素を含めることができます。
 
 
 

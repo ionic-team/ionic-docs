@@ -32,7 +32,7 @@ import APITOCInline from '@components/page/api/APITOCInline';
 
 
 
-Item Dividers are block elements that can be used to separate items in a list. They are similar to list headers, but instead of being placed at the top of a list, they should go in between groups of items.
+Item Dividersは、List内のItemsを分割するために使用できるブロック要素です。これらはlist headersに似ていますが、listの先頭に配置するのではなく、類似したItemsのグループの間に配置する必要があります。
 
 
 

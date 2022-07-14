@@ -2,8 +2,7 @@
   "filePath": "./src/components/item-divider/item-divider.tsx",
   "encapsulation": "shadow",
   "tag": "ion-item-divider",
-  "readme": "# ion-item-divider\n\nItem Dividers are block elements that can be used to separate items in a list. They are similar to list headers, but instead of being placed at the top of a list, they should go in between groups of items.\n",
-  "docs": "Item Dividers are block elements that can be used to separate items in a list. They are similar to list headers, but instead of being placed at the top of a list, they should go in between groups of items.",
+  "docs": "",
   "docsTags": [
     {
       "name": "virtualProp",
@@ -22,17 +21,11 @@
       "text": "end - Content is placed to the right of the divider text in LTR, and to the left in RTL."
     }
   ],
-  "usage": {
-    "angular": "```html\n<ion-item-divider>\n  <ion-label>\n    Basic Item Divider\n  </ion-label>\n</ion-item-divider>\n\n<ion-item-divider color=\"secondary\">\n  <ion-label>\n    Secondary Item Divider\n  </ion-label>\n</ion-item-divider>\n\n<!-- Item Dividers in a List -->\n<ion-list>\n  <ion-item-divider>\n    <ion-label>\n      Section A\n    </ion-label>\n  </ion-item-divider>\n\n  <ion-item><ion-label>A1</ion-label></ion-item>\n  <ion-item><ion-label>A2</ion-label></ion-item>\n  <ion-item><ion-label>A3</ion-label></ion-item>\n  <ion-item><ion-label>A4</ion-label></ion-item>\n  <ion-item><ion-label>A5</ion-label></ion-item>\n\n  <ion-item-divider>\n    <ion-label>\n      Section B\n    </ion-label>\n  </ion-item-divider>\n\n  <ion-item><ion-label>B1</ion-label></ion-item>\n  <ion-item><ion-label>B2</ion-label></ion-item>\n  <ion-item><ion-label>B3</ion-label></ion-item>\n  <ion-item><ion-label>B4</ion-label></ion-item>\n  <ion-item><ion-label>B5</ion-label></ion-item>\n</ion-list>\n```\n",
-    "javascript": "```html\n<ion-item-divider>\n  <ion-label>\n    Basic Item Divider\n  </ion-label>\n</ion-item-divider>\n\n<ion-item-divider color=\"secondary\">\n  <ion-label>\n    Secondary Item Divider\n  </ion-label>\n</ion-item-divider>\n\n<!-- Item Dividers in a List -->\n<ion-list>\n  <ion-item-divider>\n    <ion-label>\n      Section A\n    </ion-label>\n  </ion-item-divider>\n\n  <ion-item><ion-label>A1</ion-label></ion-item>\n  <ion-item><ion-label>A2</ion-label></ion-item>\n  <ion-item><ion-label>A3</ion-label></ion-item>\n  <ion-item><ion-label>A4</ion-label></ion-item>\n  <ion-item><ion-label>A5</ion-label></ion-item>\n\n  <ion-item-divider>\n    <ion-label>\n      Section B\n    </ion-label>\n  </ion-item-divider>\n\n  <ion-item><ion-label>B1</ion-label></ion-item>\n  <ion-item><ion-label>B2</ion-label></ion-item>\n  <ion-item><ion-label>B3</ion-label></ion-item>\n  <ion-item><ion-label>B4</ion-label></ion-item>\n  <ion-item><ion-label>B5</ion-label></ion-item>\n</ion-list>\n```\n",
-    "react": "```tsx\nimport React from 'react';\nimport { IonItemDivider, IonLabel, IonList, IonItem, IonContent } from '@ionic/react';\n\nexport const ItemDividerExample: React.FC = () => (\n  <IonContent>\n    <IonItemDivider>\n      <IonLabel>\n        Basic Item Divider\n      </IonLabel>\n    </IonItemDivider>\n\n    <IonItemDivider color=\"secondary\">\n      <IonLabel>\n        Secondary Item Divider\n      </IonLabel>\n    </IonItemDivider>\n\n    {/*-- Item Dividers in a List --*/}\n    <IonList>\n      <IonItemDivider>\n        <IonLabel>\n          Section A\n        </IonLabel>\n      </IonItemDivider>\n\n      <IonItem><IonLabel>A1</IonLabel></IonItem>\n      <IonItem><IonLabel>A2</IonLabel></IonItem>\n      <IonItem><IonLabel>A3</IonLabel></IonItem>\n      <IonItem><IonLabel>A4</IonLabel></IonItem>\n      <IonItem><IonLabel>A5</IonLabel></IonItem>\n\n      <IonItemDivider>\n        <IonLabel>\n          Section B\n        </IonLabel>\n      </IonItemDivider>\n\n      <IonItem><IonLabel>B1</IonLabel></IonItem>\n      <IonItem><IonLabel>B2</IonLabel></IonItem>\n      <IonItem><IonLabel>B3</IonLabel></IonItem>\n      <IonItem><IonLabel>B4</IonLabel></IonItem>\n      <IonItem><IonLabel>B5</IonLabel></IonItem>\n    </IonList>\n  </IonContent>\n);\n```",
-    "stencil": "```tsx\nimport { Component, h } from '@stencil/core';\n\n@Component({\n  tag: 'item-divider-example',\n  styleUrl: 'item-divider-example.css'\n})\nexport class ItemDividerExample {\n  render() {\n    return [\n      <ion-item-divider>\n        <ion-label>\n          Basic Item Divider\n        </ion-label>\n      </ion-item-divider>,\n\n      <ion-item-divider color=\"secondary\">\n        <ion-label>\n          Secondary Item Divider\n        </ion-label>\n      </ion-item-divider>,\n\n      //  Item Dividers in a List\n      <ion-list>\n        <ion-item-divider>\n          <ion-label>\n            Section A\n          </ion-label>\n        </ion-item-divider>\n\n        <ion-item><ion-label>A1</ion-label></ion-item>\n        <ion-item><ion-label>A2</ion-label></ion-item>\n        <ion-item><ion-label>A3</ion-label></ion-item>\n        <ion-item><ion-label>A4</ion-label></ion-item>\n        <ion-item><ion-label>A5</ion-label></ion-item>\n\n        <ion-item-divider>\n          <ion-label>\n            Section B\n          </ion-label>\n        </ion-item-divider>\n\n        <ion-item><ion-label>B1</ion-label></ion-item>\n        <ion-item><ion-label>B2</ion-label></ion-item>\n        <ion-item><ion-label>B3</ion-label></ion-item>\n        <ion-item><ion-label>B4</ion-label></ion-item>\n        <ion-item><ion-label>B5</ion-label></ion-item>\n      </ion-list>\n    ];\n  }\n}\n```",
-    "vue": "```html\n<template>\n  <ion-item-divider>\n    <ion-label>\n      Basic Item Divider\n    </ion-label>\n  </ion-item-divider>\n\n  <ion-item-divider color=\"secondary\">\n    <ion-label>\n      Secondary Item Divider\n    </ion-label>\n  </ion-item-divider>\n\n  <!-- Item Dividers in a List -->\n  <ion-list>\n    <ion-item-divider>\n      <ion-label>\n        Section A\n      </ion-label>\n    </ion-item-divider>\n\n    <ion-item><ion-label>A1</ion-label></ion-item>\n    <ion-item><ion-label>A2</ion-label></ion-item>\n    <ion-item><ion-label>A3</ion-label></ion-item>\n    <ion-item><ion-label>A4</ion-label></ion-item>\n    <ion-item><ion-label>A5</ion-label></ion-item>\n\n    <ion-item-divider>\n      <ion-label>\n        Section B\n      </ion-label>\n    </ion-item-divider>\n\n    <ion-item><ion-label>B1</ion-label></ion-item>\n    <ion-item><ion-label>B2</ion-label></ion-item>\n    <ion-item><ion-label>B3</ion-label></ion-item>\n    <ion-item><ion-label>B4</ion-label></ion-item>\n    <ion-item><ion-label>B5</ion-label></ion-item>\n  </ion-list>\n</template>\n\n<script>\nimport { IonItem, IonItemDivider, IonLabel } from '@ionic/vue';\nimport { defineComponent } from 'vue';\n\nexport default defineComponent({\n  components: { IonItem, IonItemDivider, IonLabel }\n});\n</script>\n```\n"
-  },
+  "usage": {},
   "props": [
     {
       "name": "color",
-      "type": "string | undefined",
+      "type": "\"danger\" | \"dark\" | \"light\" | \"medium\" | \"primary\" | \"secondary\" | \"success\" | \"tertiary\" | \"warning\" | string & Record<never, never> | undefined",
       "mutable": false,
       "attr": "color",
       "reflectToAttr": true,
@@ -40,7 +33,43 @@
       "docsTags": [],
       "values": [
         {
+          "value": "danger",
           "type": "string"
+        },
+        {
+          "value": "dark",
+          "type": "string"
+        },
+        {
+          "value": "light",
+          "type": "string"
+        },
+        {
+          "value": "medium",
+          "type": "string"
+        },
+        {
+          "value": "primary",
+          "type": "string"
+        },
+        {
+          "value": "secondary",
+          "type": "string"
+        },
+        {
+          "value": "success",
+          "type": "string"
+        },
+        {
+          "value": "tertiary",
+          "type": "string"
+        },
+        {
+          "value": "warning",
+          "type": "string"
+        },
+        {
+          "type": "string & Record<never, never>"
         },
         {
           "type": "undefined"

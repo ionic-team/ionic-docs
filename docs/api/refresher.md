@@ -34,13 +34,13 @@ import APITOCInline from '@components/page/api/APITOCInline';
 
 
 
-The refresher provides pull-to-refresh functionality on a content component.
-The pull-to-refresh pattern lets a user pull down on a list of data using touch
-in order to retrieve more data.
+RefresherはContentコンポーネント引っ張って更新する機能を提供します。
+ユーザーはより多くのデータを取得するために、
+タッチ操作でリストを引っ張って更新できます。
 
-Data should be modified during the refresher's output events. Once the async
-operation has completed and the refreshing should end, call `complete()` on the
-refresher.
+データはRefresherの外部のイベントで更新すべきです。
+一回の非同期処理が完了すれば、`complete()`を呼び出すことで、
+Refresherも終了するべきです。
 
 ## Native Refreshers
 

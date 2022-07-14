@@ -2,20 +2,13 @@
   "filePath": "./src/components/spinner/spinner.tsx",
   "encapsulation": "shadow",
   "tag": "ion-spinner",
-  "readme": "# ion-spinner\n\nThe Spinner component provides a variety of animated SVG spinners. Spinners are visual indicators that the app is loading content or performing another process that the user needs to wait on.\n\nThe default spinner to use is based on the platform. The default spinner for `ios` is `\"lines\"`, and the default for `android` is `\"crescent\"`. If the platform is not `ios` or `android`, the spinner will default to `crescent`. If the `name` property is set, then that spinner will be used instead of the platform specific spinner.\n\n\n",
-  "docs": "The Spinner component provides a variety of animated SVG spinners. Spinners are visual indicators that the app is loading content or performing another process that the user needs to wait on.\n\nThe default spinner to use is based on the platform. The default spinner for `ios` is `\"lines\"`, and the default for `android` is `\"crescent\"`. If the platform is not `ios` or `android`, the spinner will default to `crescent`. If the `name` property is set, then that spinner will be used instead of the platform specific spinner.",
+  "docs": "",
   "docsTags": [],
-  "usage": {
-    "angular": "```html\n<!-- Default Spinner -->\n<ion-spinner></ion-spinner>\n\n<!-- Lines -->\n<ion-spinner name=\"lines\"></ion-spinner>\n\n<!-- Lines Small -->\n<ion-spinner name=\"lines-small\"></ion-spinner>\n\n<!-- Dots -->\n<ion-spinner name=\"dots\"></ion-spinner>\n\n<!-- Bubbles -->\n<ion-spinner name=\"bubbles\"></ion-spinner>\n\n<!-- Circles -->\n<ion-spinner name=\"circles\"></ion-spinner>\n\n<!-- Crescent -->\n<ion-spinner name=\"crescent\"></ion-spinner>\n\n<!-- Paused Default Spinner -->\n<ion-spinner paused></ion-spinner>\n```\n",
-    "javascript": "```html\n<!-- Default Spinner -->\n<ion-spinner></ion-spinner>\n\n<!-- Lines -->\n<ion-spinner name=\"lines\"></ion-spinner>\n\n<!-- Lines Small -->\n<ion-spinner name=\"lines-small\"></ion-spinner>\n\n<!-- Dots -->\n<ion-spinner name=\"dots\"></ion-spinner>\n\n<!-- Bubbles -->\n<ion-spinner name=\"bubbles\"></ion-spinner>\n\n<!-- Circles -->\n<ion-spinner name=\"circles\"></ion-spinner>\n\n<!-- Crescent -->\n<ion-spinner name=\"crescent\"></ion-spinner>\n\n<!-- Paused Default Spinner -->\n<ion-spinner paused></ion-spinner>\n```\n",
-    "react": "```tsx\nimport React from 'react';\nimport { IonSpinner, IonContent } from '@ionic/react';\n\nexport const SpinnerExample: React.FC = () => (\n  <IonContent>\n    {/*-- Default Spinner --*/}\n    <IonSpinner />\n\n    {/*-- Lines --*/}\n    <IonSpinner name=\"lines\" />\n\n    {/*-- Lines Small --*/}\n    <IonSpinner name=\"lines-small\" />\n\n    {/*-- Dots --*/}\n    <IonSpinner name=\"dots\" />\n\n    {/*-- Bubbles --*/}\n    <IonSpinner name=\"bubbles\" />\n\n    {/*-- Circles --*/}\n    <IonSpinner name=\"circles\" />\n\n    {/*-- Crescent --*/}\n    <IonSpinner name=\"crescent\" />\n\n    {/*-- Paused Default Spinner --*/}\n    <IonSpinner paused />\n  </IonContent>\n);\n```\n",
-    "stencil": "```tsx\nimport { Component, h } from '@stencil/core';\n\n@Component({\n  tag: 'spinner-example',\n  styleUrl: 'spinner-example.css'\n})\nexport class SpinnerExample {\n  render() {\n    return [\n      // Default Spinner\n      <ion-spinner></ion-spinner>,\n\n      // Lines\n      <ion-spinner name=\"lines\"></ion-spinner>,\n\n      // Lines Small\n      <ion-spinner name=\"lines-small\"></ion-spinner>,\n\n      // Dots\n      <ion-spinner name=\"dots\"></ion-spinner>,\n\n      // Bubbles\n      <ion-spinner name=\"bubbles\"></ion-spinner>,\n\n      // Circles\n      <ion-spinner name=\"circles\"></ion-spinner>,\n\n      // Crescent\n      <ion-spinner name=\"crescent\"></ion-spinner>,\n\n      // Paused Default Spinner\n      <ion-spinner paused={true}></ion-spinner>\n    ];\n  }\n}\n```\n",
-    "vue": "```html\n<template>\n  <!-- Default Spinner -->\n  <ion-spinner></ion-spinner>\n\n  <!-- Lines -->\n  <ion-spinner name=\"lines\"></ion-spinner>\n\n  <!-- Lines Small -->\n  <ion-spinner name=\"lines-small\"></ion-spinner>\n\n  <!-- Dots -->\n  <ion-spinner name=\"dots\"></ion-spinner>\n\n  <!-- Bubbles -->\n  <ion-spinner name=\"bubbles\"></ion-spinner>\n\n  <!-- Circles -->\n  <ion-spinner name=\"circles\"></ion-spinner>\n\n  <!-- Crescent -->\n  <ion-spinner name=\"crescent\"></ion-spinner>\n\n  <!-- Paused Default Spinner -->\n  <ion-spinner paused></ion-spinner>\n</template>\n\n<script>\nimport { IonSpinner } from '@ionic/vue';\nimport { defineComponent } from 'vue';\n\nexport default defineComponent({\n  components: { IonSpinner }\n});\n</script>\n```\n"
-  },
+  "usage": {},
   "props": [
     {
       "name": "color",
-      "type": "string | undefined",
+      "type": "\"danger\" | \"dark\" | \"light\" | \"medium\" | \"primary\" | \"secondary\" | \"success\" | \"tertiary\" | \"warning\" | string & Record<never, never> | undefined",
       "mutable": false,
       "attr": "color",
       "reflectToAttr": true,
@@ -23,7 +16,43 @@
       "docsTags": [],
       "values": [
         {
+          "value": "danger",
           "type": "string"
+        },
+        {
+          "value": "dark",
+          "type": "string"
+        },
+        {
+          "value": "light",
+          "type": "string"
+        },
+        {
+          "value": "medium",
+          "type": "string"
+        },
+        {
+          "value": "primary",
+          "type": "string"
+        },
+        {
+          "value": "secondary",
+          "type": "string"
+        },
+        {
+          "value": "success",
+          "type": "string"
+        },
+        {
+          "value": "tertiary",
+          "type": "string"
+        },
+        {
+          "value": "warning",
+          "type": "string"
+        },
+        {
+          "type": "string & Record<never, never>"
         },
         {
           "type": "undefined"

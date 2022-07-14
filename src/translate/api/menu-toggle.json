@@ -2,20 +2,14 @@
   "filePath": "./src/components/menu-toggle/menu-toggle.tsx",
   "encapsulation": "shadow",
   "tag": "ion-menu-toggle",
-  "readme": "# ion-menu-toggle\n\nThe MenuToggle component can be used to toggle a menu open or closed.\n\nBy default, it's only visible when the selected menu is active. A menu is active when it can be opened/closed. If the menu is disabled or it's being presented as a split-pane, the menu is marked as non-active and ion-menu-toggle hides itself.\n\nIn case it's desired to keep `ion-menu-toggle` always visible, the `autoHide` property can be set to `false`.\n",
-  "docs": "The MenuToggle component can be used to toggle a menu open or closed.\n\nBy default, it's only visible when the selected menu is active. A menu is active when it can be opened/closed. If the menu is disabled or it's being presented as a split-pane, the menu is marked as non-active and ion-menu-toggle hides itself.\n\nIn case it's desired to keep `ion-menu-toggle` always visible, the `autoHide` property can be set to `false`.",
+  "docs": "",
   "docsTags": [
     {
       "name": "slot",
       "text": "- Content is placed inside the toggle to act as the click target."
     }
   ],
-  "usage": {
-    "angular": "```html\n<ion-app>\n  <ion-menu side=\"start\" menuId=\"first\" contentId=\"main\">\n    <ion-header>\n      <ion-toolbar color=\"secondary\">\n        <ion-title>Example Menu</ion-title>\n      </ion-toolbar>\n    </ion-header>\n    <ion-content>\n      <ion-list>\n        <ion-item>Menu Item</ion-item>\n      </ion-list>\n    </ion-content>\n  </ion-menu>\n  <div class=\"ion-page\" id=\"main\">\n    <ion-content class=\"ion-padding\">\n      <ion-menu-toggle>\n        <ion-button>Toggle Menu</ion-button>\n      </ion-menu-toggle>\n    </ion-content>\n  </div>\n</ion-app>\n```\n\n",
-    "javascript": "```html\n<ion-app>\n  <ion-menu side=\"start\" menu-id=\"first\" content-id=\"main\">\n    <ion-header>\n      <ion-toolbar color=\"secondary\">\n        <ion-title>Example Menu</ion-title>\n      </ion-toolbar>\n    </ion-header>\n    <ion-content>\n      <ion-list>\n        <ion-item>Menu Item</ion-item>\n      </ion-list>\n    </ion-content>\n  </ion-menu>\n  <div class=\"ion-page\" id=\"main\">\n    <ion-content class=\"ion-padding\">\n      <ion-menu-toggle>\n        <ion-button>Toggle Menu</ion-button>\n      </ion-menu-toggle>\n    </ion-content>\n  </div>\n</ion-app>\n```\n\n",
-    "react": "```tsx\nimport React from 'react';\nimport { IonMenu, IonHeader, IonToolbar, IonTitle, IonContent, IonList, IonItem, IonMenuToggle, IonButton, IonPage } from '@ionic/react';\n\nexport const MenuExample: React.FC = () => (\n  <>\n    <IonMenu side=\"start\" menuId=\"first\" contentId=\"main\">\n      <IonHeader>\n        <IonToolbar color=\"primary\">\n          <IonTitle>Example Menu</IonTitle>\n        </IonToolbar>\n      </IonHeader>\n      <IonContent>\n        <IonList>\n          <IonItem>Menu Item</IonItem>\n        </IonList>\n      </IonContent>\n    </IonMenu>\n    <IonPage id=\"main\">\n      <IonContent>\n        <IonMenuToggle>\n          <IonButton>Toggle Menu</IonButton>\n        </IonMenuToggle>\n      </IonContent>\n    </IonPage>\n  </>\n);\n```",
-    "vue": "```html\n<template>\n  <ion-menu side=\"start\" menu-id=\"first\" content-id=\"main\">\n    <ion-header>\n      <ion-toolbar color=\"primary\">\n        <ion-title>Example Menu</ion-title>\n      </ion-toolbar>\n    </ion-header>\n    <ion-content>\n      <ion-list>\n        <ion-item>Menu Item</ion-item>\n      </ion-list>\n    </ion-content>\n  </ion-menu>\n\n  <div class=\"ion-page\" id=\"main\">\n    <ion-content>\n      <ion-menu-toggle>\n        <ion-button>Toggle Menu</ion-button>\n      </ion-menu-toggle>\n    </ion-content>\n  </div>\n</template>\n\n<script>\nimport { \n  IonContent, \n  IonHeader, \n  IonItem, \n  IonList, \n  IonMenu, \n  IonMenuToggle,\n  IonButton,\n  IonTitle, \n  IonToolbar\n} from '@ionic/vue';\nimport { defineComponent } from 'vue';\n\nexport default defineComponent({\n  components: {\n    IonContent, \n    IonHeader, \n    IonItem, \n    IonList, \n    IonMenu, \n    IonMenuToggle,\n    IonButton,\n    IonTitle, \n    IonToolbar\n  }\n});\n</script>\n```"
-  },
+  "usage": {},
   "props": [
     {
       "name": "autoHide",

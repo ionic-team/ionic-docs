@@ -22,7 +22,7 @@ import APITOCInline from '@components/page/api/APITOCInline';
 <EncapsulationPill type="shadow" />
 
 
-A Modal is a dialog that appears on top of the app's content, and must be dismissed by the app before interaction can resume. It is useful as a select component when there are a lot of options to choose from, or when filtering items in a list, as well as many other use cases.
+Modalは、アプリのコンテンツの上に表示されるダイアログであり、インタラクションを再開する前にはアプリによって消されなければならない。選択できるオプションが多い場合や、リスト内の項目をフィルタする場合、およびその他の多くのユースケースで、Selectコンポーネントとして役立ちます。
 
 
 ## Inline Modals (Recommended)

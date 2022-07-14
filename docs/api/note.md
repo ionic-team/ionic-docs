@@ -34,7 +34,7 @@ import APITOCInline from '@components/page/api/APITOCInline';
 
 
 
-Notes are text elements generally used as subtitles that provide more information. Notes are styled to appear grey by default. Notes can be used in an item as metadata text.
+通常Noteは詳細な情報を提供するサブタイトルとして使われます。デフォルトでは灰色に見えるようスタイリングされています。またNoteはitem内ではメタデータとして使用できます。
 
 
 

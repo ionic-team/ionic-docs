@@ -2,8 +2,7 @@
   "filePath": "./src/components/fab-button/fab-button.tsx",
   "encapsulation": "shadow",
   "tag": "ion-fab-button",
-  "readme": "# ion-fab-button\n\nFloating Action Buttons (FABs) represent the primary action in an application. By default, they have a circular shape. When pressed, the button may open more related actions. As the name suggests, FABs generally float over the content in a fixed position. This is not achieved exclusively by using an `<ion-fab-button>FAB</ion-fab-button>`. They need to be wrapped with an `<ion-fab>` component in order to be fixed over the content.\n\nIf the FAB button is not wrapped with `<ion-fab>`, it will scroll with the content. FAB buttons have a default size, a mini size and can accept different colors:\n",
-  "docs": "Floating Action Buttons (FABs) represent the primary action in an application. By default, they have a circular shape. When pressed, the button may open more related actions. As the name suggests, FABs generally float over the content in a fixed position. This is not achieved exclusively by using an `<ion-fab-button>FAB</ion-fab-button>`. They need to be wrapped with an `<ion-fab>` component in order to be fixed over the content.\n\nIf the FAB button is not wrapped with `<ion-fab>`, it will scroll with the content. FAB buttons have a default size, a mini size and can accept different colors:",
+  "docs": "",
   "docsTags": [
     {
       "name": "virtualProp",
@@ -18,13 +17,7 @@
       "text": "close-icon - The close icon that is displayed when a fab list opens (uses ion-icon)."
     }
   ],
-  "usage": {
-    "angular": "```html\n<ion-content>\n\n  <!-- Fixed Floating Action Button that does not scroll with the content -->\n  <ion-fab slot=\"fixed\">\n    <ion-fab-button>Button</ion-fab-button>\n  </ion-fab>\n\n  <!-- Default Floating Action Button that scrolls with the content.-->\n  <ion-fab-button>Default</ion-fab-button>\n\n  <!-- Mini -->\n  <ion-fab-button size=\"small\">Mini</ion-fab-button>\n\n  <!-- Colors -->\n  <ion-fab-button color=\"primary\">Primary</ion-fab-button>\n  <ion-fab-button color=\"secondary\">Secondary</ion-fab-button>\n  <ion-fab-button color=\"danger\">Danger</ion-fab-button>\n  <ion-fab-button color=\"light\">Light</ion-fab-button>\n  <ion-fab-button color=\"dark\">Dark</ion-fab-button>\n\n</ion-content>\n```\n",
-    "javascript": "```html\n<ion-content>\n\n  <!-- Fixed Floating Action Button that does not scroll with the content -->\n  <ion-fab slot=\"fixed\">\n    <ion-fab-button>Button</ion-fab-button>\n  </ion-fab>\n\n  <!-- Default Floating Action Button that scrolls with the content.-->\n  <ion-fab-button>Default</ion-fab-button>\n\n  <!-- Mini -->\n  <ion-fab-button size=\"small\">Mini</ion-fab-button>\n\n  <!-- Colors -->\n  <ion-fab-button color=\"primary\">Primary</ion-fab-button>\n  <ion-fab-button color=\"secondary\">Secondary</ion-fab-button>\n  <ion-fab-button color=\"danger\">Danger</ion-fab-button>\n  <ion-fab-button color=\"light\">Light</ion-fab-button>\n  <ion-fab-button color=\"dark\">Dark</ion-fab-button>\n\n</ion-content>\n```\n",
-    "react": "```tsx\nimport React from 'react';\nimport { IonContent, IonFab, IonFabButton } from '@ionic/react';\n\nexport const FabButtonExample: React.FC = () => (\n  <IonContent>\n    {/*-- Fixed Floating Action Button that does not scroll with the content --*/}\n    <IonFab slot=\"fixed\">\n      <IonFabButton>Button</IonFabButton>\n    </IonFab>\n\n    {/*-- Default Floating Action Button that scrolls with the content.--*/}\n    <IonFabButton>Default</IonFabButton>\n\n    {/*-- Mini --*/}\n    <IonFabButton size=\"small\">Mini</IonFabButton>\n\n    {/*-- Colors --*/}\n    <IonFabButton color=\"primary\">Primary</IonFabButton>\n    <IonFabButton color=\"secondary\">Secondary</IonFabButton>\n    <IonFabButton color=\"danger\">Danger</IonFabButton>\n    <IonFabButton color=\"light\">Light</IonFabButton>\n    <IonFabButton color=\"dark\">Dark</IonFabButton>\n  </IonContent>\n);\n```",
-    "stencil": "```tsx\nimport { Component, h } from '@stencil/core';\n\n@Component({\n  tag: 'fab-button-example',\n  styleUrl: 'fab-button-example.css'\n})\nexport class FabButtonExample {\n  render() {\n    return [\n      <ion-content>\n\n        {/* Fixed Floating Action Button that does not scroll with the content */}\n        <ion-fab slot=\"fixed\">\n          <ion-fab-button>Button</ion-fab-button>\n        </ion-fab>\n\n        {/* Default Floating Action Button that scrolls with the content */}\n        <ion-fab-button>Default</ion-fab-button>\n\n        {/* Mini */}\n        <ion-fab-button size=\"small\">Mini</ion-fab-button>\n\n        {/* Colors */}\n        <ion-fab-button color=\"primary\">Primary</ion-fab-button>\n        <ion-fab-button color=\"secondary\">Secondary</ion-fab-button>\n        <ion-fab-button color=\"danger\">Danger</ion-fab-button>\n        <ion-fab-button color=\"light\">Light</ion-fab-button>\n        <ion-fab-button color=\"dark\">Dark</ion-fab-button>\n\n      </ion-content>\n    ];\n  }\n}\n```",
-    "vue": "```html\n<template>\n  <ion-content>\n\n    <!-- Fixed Floating Action Button that does not scroll with the content -->\n    <ion-fab slot=\"fixed\">\n      <ion-fab-button>Button</ion-fab-button>\n    </ion-fab>\n\n    <!-- Default Floating Action Button that scrolls with the content.-->\n    <ion-fab-button>Default</ion-fab-button>\n\n    <!-- Mini -->\n    <ion-fab-button size=\"small\">Mini</ion-fab-button>\n\n    <!-- Colors -->\n    <ion-fab-button color=\"primary\">Primary</ion-fab-button>\n    <ion-fab-button color=\"secondary\">Secondary</ion-fab-button>\n    <ion-fab-button color=\"danger\">Danger</ion-fab-button>\n    <ion-fab-button color=\"light\">Light</ion-fab-button>\n    <ion-fab-button color=\"dark\">Dark</ion-fab-button>\n\n  </ion-content>\n</template>\n\n<script>\nimport { IonContent, IonFab, IonFabButton } from '@ionic/vue';\nimport { defineComponent } from 'vue';\n\nexport default defineComponent({\n  components: { IonContent, IonFab, IonFabButton }\n});\n</script>\n```\n"
-  },
+  "usage": {},
   "props": [
     {
       "name": "activated",
@@ -62,7 +55,7 @@
     },
     {
       "name": "color",
-      "type": "string | undefined",
+      "type": "\"danger\" | \"dark\" | \"light\" | \"medium\" | \"primary\" | \"secondary\" | \"success\" | \"tertiary\" | \"warning\" | string & Record<never, never> | undefined",
       "mutable": false,
       "attr": "color",
       "reflectToAttr": true,
@@ -70,7 +63,43 @@
       "docsTags": [],
       "values": [
         {
+          "value": "danger",
           "type": "string"
+        },
+        {
+          "value": "dark",
+          "type": "string"
+        },
+        {
+          "value": "light",
+          "type": "string"
+        },
+        {
+          "value": "medium",
+          "type": "string"
+        },
+        {
+          "value": "primary",
+          "type": "string"
+        },
+        {
+          "value": "secondary",
+          "type": "string"
+        },
+        {
+          "value": "success",
+          "type": "string"
+        },
+        {
+          "value": "tertiary",
+          "type": "string"
+        },
+        {
+          "value": "warning",
+          "type": "string"
+        },
+        {
+          "type": "string & Record<never, never>"
         },
         {
           "type": "undefined"

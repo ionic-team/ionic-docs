@@ -2,21 +2,14 @@
   "filePath": "./src/components/textarea/textarea.tsx",
   "encapsulation": "scoped",
   "tag": "ion-textarea",
-  "readme": "# ion-textarea\n\nThe textarea component is used for multi-line text input. A native textarea element is rendered inside of the component. The user experience and interactivity of the textarea component is improved by having control over the native textarea.\n\nUnlike the native textarea element, the Ionic textarea does not support loading its value from the inner content. The textarea value should be set in the `value` attribute.\n\nThe textarea component accepts the [native textarea attributes](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/textarea) in addition to the Ionic properties.\n\n## Interfaces\n\n### TextareaChangeEventDetail\n\n```typescript\ninterface TextareaChangeEventDetail {\n  value?: string | null;\n}\n```\n\n### TextareaCustomEvent\n\nWhile not required, this interface can be used in place of the `CustomEvent` interface for stronger typing with Ionic events emitted from this component.\n\n```typescript\ninterface TextareaCustomEvent extends CustomEvent {\n  detail: TextareaChangeEventDetail;\n  target: HTMLIonTextareaElement;\n}\n```\n",
-  "docs": "The textarea component is used for multi-line text input. A native textarea element is rendered inside of the component. The user experience and interactivity of the textarea component is improved by having control over the native textarea.\n\nUnlike the native textarea element, the Ionic textarea does not support loading its value from the inner content. The textarea value should be set in the `value` attribute.\n\nThe textarea component accepts the [native textarea attributes](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/textarea) in addition to the Ionic properties.",
+  "docs": "",
   "docsTags": [
     {
       "name": "virtualProp",
       "text": "{\"ios\" | \"md\"} mode - The mode determines which platform styles to use."
     }
   ],
-  "usage": {
-    "angular": "```html\n<!-- Default textarea -->\n<ion-textarea></ion-textarea>\n\n<!-- Textarea in an item with a placeholder -->\n<ion-item>\n  <ion-textarea placeholder=\"Enter more information here...\"></ion-textarea>\n</ion-item>\n\n<!-- Textarea in an item with a floating label -->\n<ion-item>\n  <ion-label position=\"floating\">Description</ion-label>\n  <ion-textarea></ion-textarea>\n</ion-item>\n\n<!-- Disabled and readonly textarea in an item with a stacked label -->\n<ion-item>\n  <ion-label position=\"stacked\">Summary</ion-label>\n  <ion-textarea\n    disabled\n    readonly\n    value=\"Ionic enables developers to build performant, high-quality mobile apps.\">\n  </ion-textarea>\n</ion-item>\n\n<!-- Textarea that clears the value on edit -->\n<ion-item>\n  <ion-label>Comment</ion-label>\n  <ion-textarea clearOnEdit=\"true\"></ion-textarea>\n</ion-item>\n\n<!-- Textarea with custom number of rows and cols -->\n<ion-item>\n  <ion-label>Notes</ion-label>\n  <ion-textarea rows=\"6\" cols=\"20\" placeholder=\"Enter any notes here...\"></ion-textarea>\n</ion-item>\n```\n",
-    "javascript": "```html\n<!-- Default textarea -->\n<ion-textarea></ion-textarea>\n\n<!-- Textarea in an item with a placeholder -->\n<ion-item>\n  <ion-textarea placeholder=\"Enter more information here...\"></ion-textarea>\n</ion-item>\n\n<!-- Textarea in an item with a floating label -->\n<ion-item>\n  <ion-label position=\"floating\">Description</ion-label>\n  <ion-textarea></ion-textarea>\n</ion-item>\n\n<!-- Disabled and readonly textarea in an item with a stacked label -->\n<ion-item>\n  <ion-label position=\"stacked\">Summary</ion-label>\n  <ion-textarea\n    disabled\n    readonly\n    value=\"Ionic enables developers to build performant, high-quality mobile apps.\">\n  </ion-textarea>\n</ion-item>\n\n<!-- Textarea that clears the value on edit -->\n<ion-item>\n  <ion-label>Comment</ion-label>\n  <ion-textarea clear-on-edit=\"true\"></ion-textarea>\n</ion-item>\n\n<!-- Textarea with custom number of rows and cols -->\n<ion-item>\n  <ion-label>Notes</ion-label>\n  <ion-textarea rows=\"6\" cols=\"20\" placeholder=\"Enter any notes here...\"></ion-textarea>\n</ion-item>\n```\n",
-    "react": "```tsx\nimport React, { useState } from 'react';\nimport { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonTextarea, IonItem, IonLabel, IonItemDivider, IonList } from '@ionic/react';\n\nexport const TextAreaExamples: React.FC = () => {\n  const [text, setText] = useState<string>();\n\n  return (\n    <IonPage>\n      <IonHeader>\n        <IonToolbar>\n          <IonTitle>TextArea Examples</IonTitle>\n        </IonToolbar>\n      </IonHeader>\n      <IonContent>\n        <IonList>\n          <IonItemDivider>Default textarea</IonItemDivider>          \n          <IonItem>\n            <IonTextarea value={text} onIonChange={e => setText(e.detail.value!)}></IonTextarea>\n          </IonItem>\n\n          <IonItemDivider>Textarea in an item with a placeholder</IonItemDivider>\n          <IonItem>\n            <IonTextarea placeholder=\"Enter more information here...\" value={text} onIonChange={e => setText(e.detail.value!)}></IonTextarea>\n          </IonItem>\n\n          <IonItemDivider>Textarea in an item with a floating label</IonItemDivider>\n          <IonItem>\n            <IonLabel position=\"floating\">Description</IonLabel>\n            <IonTextarea value={text} onIonChange={e => setText(e.detail.value!)}></IonTextarea>\n          </IonItem>\n\n          <IonItemDivider>Disabled and readonly textarea in an item with a stacked label</IonItemDivider>\n          <IonItem>\n            <IonLabel position=\"stacked\">Summary</IonLabel>\n            <IonTextarea\n              disabled\n              readonly\n              value={text} onIonChange={e => setText(e.detail.value!)}>\n            </IonTextarea>\n          </IonItem>\n\n          <IonItemDivider>Textarea that clears the value on edit</IonItemDivider>\n          <IonItem>\n            <IonLabel>Comment</IonLabel>\n            <IonTextarea clearOnEdit={true} value={text} onIonChange={e => setText(e.detail.value!)}></IonTextarea>\n          </IonItem>\n\n          <IonItemDivider>Textarea with custom number of rows and cols</IonItemDivider>\n          <IonItem>\n            <IonLabel>Notes</IonLabel>\n            <IonTextarea rows={6} cols={20} placeholder=\"Enter any notes here...\" value={text} onIonChange={e => setText(e.detail.value!)}></IonTextarea>\n          </IonItem>\n        </IonList>\n      </IonContent>\n    </IonPage>\n  );\n};\n```\n",
-    "stencil": "```tsx\nimport { Component, h } from '@stencil/core';\n\n@Component({\n  tag: 'textarea-example',\n  styleUrl: 'textarea-example.css'\n})\nexport class TextareaExample {\n  render() {\n    return [\n      // Default textarea\n      <ion-textarea></ion-textarea>,\n\n      // Textarea in an item with a placeholder\n      <ion-item>\n        <ion-textarea placeholder=\"Enter more information here...\"></ion-textarea>\n      </ion-item>,\n\n      // Textarea in an item with a floating label\n      <ion-item>\n        <ion-label position=\"floating\">Description</ion-label>\n        <ion-textarea></ion-textarea>\n      </ion-item>,\n\n      // Disabled and readonly textarea in an item with a stacked label\n      <ion-item>\n        <ion-label position=\"stacked\">Summary</ion-label>\n        <ion-textarea\n          disabled\n          readonly\n          value=\"Ionic enables developers to build performant, high-quality mobile apps.\">\n        </ion-textarea>\n      </ion-item>,\n\n      // Textarea that clears the value on edit\n      <ion-item>\n        <ion-label>Comment</ion-label>\n        <ion-textarea clearOnEdit={true}></ion-textarea>\n      </ion-item>,\n\n      // Textarea with custom number of rows and cols\n      <ion-item>\n        <ion-label>Notes</ion-label>\n        <ion-textarea rows={6} cols={20} placeholder=\"Enter any notes here...\"></ion-textarea>\n      </ion-item>\n    ];\n  }\n}\n```\n",
-    "vue": "```html\n<template>\n  <!-- Default textarea -->\n  <ion-textarea></ion-textarea>\n\n  <!-- Textarea in an item with a placeholder -->\n  <ion-item>\n    <ion-textarea placeholder=\"Enter more information here...\"></ion-textarea>\n  </ion-item>\n\n  <!-- Textarea in an item with a floating label -->\n  <ion-item>\n    <ion-label position=\"floating\">Description</ion-label>\n    <ion-textarea></ion-textarea>\n  </ion-item>\n\n  <!-- Disabled and readonly textarea in an item with a stacked label -->\n  <ion-item>\n    <ion-label position=\"stacked\">Summary</ion-label>\n    <ion-textarea\n      disabled\n      readonly\n      value=\"Ionic enables developers to build performant, high-quality mobile apps.\">\n    </ion-textarea>\n  </ion-item>\n\n  <!-- Textarea that clears the value on edit -->\n  <ion-item>\n    <ion-label>Comment</ion-label>\n    <ion-textarea clear-on-edit=\"true\"></ion-textarea>\n  </ion-item>\n\n  <!-- Textarea with custom number of rows and cols -->\n  <ion-item>\n    <ion-label>Notes</ion-label>\n    <ion-textarea rows=\"6\" cols=\"20\" placeholder=\"Enter any notes here...\"></ion-textarea>\n  </ion-item>\n</template>\n\n<script>\nimport { IonItem, IonLabel, IonTextarea } from '@ionic/vue';\nimport { defineComponent } from 'vue';\n\nexport default defineComponent({\n  components: { IonItem, IonLabel, IonTextarea }\n});\n</script>\n```\n"
-  },
+  "usage": {},
   "props": [
     {
       "name": "autoGrow",
@@ -88,7 +81,7 @@
     },
     {
       "name": "color",
-      "type": "string | undefined",
+      "type": "\"danger\" | \"dark\" | \"light\" | \"medium\" | \"primary\" | \"secondary\" | \"success\" | \"tertiary\" | \"warning\" | string & Record<never, never> | undefined",
       "mutable": false,
       "attr": "color",
       "reflectToAttr": true,
@@ -96,7 +89,43 @@
       "docsTags": [],
       "values": [
         {
+          "value": "danger",
           "type": "string"
+        },
+        {
+          "value": "dark",
+          "type": "string"
+        },
+        {
+          "value": "light",
+          "type": "string"
+        },
+        {
+          "value": "medium",
+          "type": "string"
+        },
+        {
+          "value": "primary",
+          "type": "string"
+        },
+        {
+          "value": "secondary",
+          "type": "string"
+        },
+        {
+          "value": "success",
+          "type": "string"
+        },
+        {
+          "value": "tertiary",
+          "type": "string"
+        },
+        {
+          "value": "warning",
+          "type": "string"
+        },
+        {
+          "type": "string & Record<never, never>"
         },
         {
           "type": "undefined"

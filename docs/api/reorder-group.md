@@ -32,11 +32,11 @@ import APITOCInline from '@components/page/api/APITOCInline';
 
 
 
-The reorder group is a wrapper component for items using the `ion-reorder` component. See the [Reorder documentation](reorder.md) for further information about the anchor component that is used to drag items within the `ion-reorder-group`.
+reorder groupは、`ion-reorder` コンポーネントを使用するアイテムのラッパーコンポーネントです。`ion-reorder-group` の中でアイテムをドラッグするために使用されるアンカーコンポーネントの詳細については、[Reorder documentation](reorder.md) を参照してください。
 
-Once the user drags an item and drops it in a new position, the `ionItemReorder` event is dispatched. A handler for it should be implemented that calls the `complete()` method.
+ユーザがアイテムをドラッグして新しい位置にドロップすると、 `ionItemReorder` イベントが送出されます。`complete()` メソッドを呼び出すハンドラを実装する必要があります。
 
-The `detail` property of the `ionItemReorder` event includes all of the relevant information about the reorder operation, including the `from` and `to` indexes. In the context of reordering, an item moves `from` an index `to` a new index.
+`ionItemReorder` イベントの `detail` プロパティには、 `from` および `to` インデックスを含む、reorderの操作に関するすべての関連情報が含まれている。並べ替えのコンテキストでは、アイテムは`from`インデックスから新しい `to`インデックスに移動します。
 
 ## Completing a Reorder
 

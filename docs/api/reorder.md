@@ -34,9 +34,9 @@ import APITOCInline from '@components/page/api/APITOCInline';
 
 
 
-Reorder is a component that allows an item in a group of items to be dragged to change its order within that group. It must be used within an `ion-reorder-group` to provide a visual drag and drop interface.
+Reorderは、Itemをドラッグして順序を変更できるようにするコンポーネントです。視覚的なドラッグ&ドロップインターフェイスを提供するために、 `ion-reorder-group` 内で使用する必要があります。
 
-`ion-reorder` is the anchor used to drag and drop the items inside of the `ion-reorder-group`. See the [Reorder Group](reorder-group.md) for more information on how to complete the reorder operation.
+`ion-reorder` は、`ion-reorder-group` 内でアイテムをドラッグ&ドロップするためのアンカーです。Reorder operationの実行方法の詳細については、[Reorder Group](reorder-group.md)を参照してください。
 
 
 

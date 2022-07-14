@@ -34,9 +34,9 @@ import APITOCInline from '@components/page/api/APITOCInline';
 
 
 
-The input component is a wrapper to the HTML input element with custom styling and additional functionality. It accepts most of the same properties as the HTML input, but works great on desktop devices and integrates with the keyboard on mobile devices.
+inputコンポーネントは、カスタム・スタイル設定と追加機能を持つHTMLのInput要素のラッパーです。HTML Inputとほとんど同じプロパティーを受け入れますが、デスクトップ・デバイスでは優れた動作をし、モバイル・デバイスではキーボードと統合されます。
 
-It is meant for text `type` inputs only, such as `"text"`, `"password"`, `"email"`, `"number"`, `"search"`, `"tel"`, and `"url"`. It supports all standard text input events including keyup, keydown, keypress, and more.
+`"text"`, `"password"`, `"email"`, `"number"`, `"search"`, `"tel"`, と `"url"` などは、Inputのtypeのみで利用できます。 keyup, keydown, keypressなど、すべての標準のtext inputの入力イベントをサポートします。
 
 ## Interfaces
 

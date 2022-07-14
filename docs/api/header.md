@@ -32,8 +32,8 @@ import APITOCInline from '@components/page/api/APITOCInline';
 
 
 
-Header is a parent component that holds the toolbar component.
-It's important to note that ion-header needs to be the one of the three root elements of a page
+Headerは、`toolbar`コンポーネントを保持する親コンポーネントです。
+`ion-header` はページの3つのルート要素のうちの1つでなければならないことに注意してください。
 
 ## Fade Header
 

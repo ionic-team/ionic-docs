@@ -34,12 +34,12 @@ import APITOCInline from '@components/page/api/APITOCInline';
 
 
 
-The Menu component is a navigation drawer that slides in from the side of the current view.
-By default, it slides in from the left, but the side can be overridden.
-The menu will be displayed differently based on the mode, however the display type can be changed to any of the available menu types.
-The menu element should be a sibling to the root content element.
-There can be any number of menus attached to the content.
-These can be controlled from the templates, or programmatically using the MenuController.
+Menuコンポーネントは、現在のビューの横からスライドするナビゲーションパネルです。
+デフォルトでは左からスライドしますが、サイドはオーバーライドできます。
+Menuの表示はmodeによって異なりますが、表示するtypeはmenuのtypeによって変更することができます。
+menu要素は、root content要素と同じ深度である必要があります。
+コンテンツにつけるMenuの数に制限はありません。
+これらはテンプレートから、またはプログラムでMenuControllerを使用して制御できます。
 
 ## Interfaces
 

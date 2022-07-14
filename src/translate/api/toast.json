@@ -2,8 +2,7 @@
   "filePath": "./src/components/toast/toast.tsx",
   "encapsulation": "shadow",
   "tag": "ion-toast",
-  "readme": "# ion-toast\n\nA Toast is a subtle notification commonly used in modern applications. It can be used to provide feedback about an operation or to display a system message. The toast appears on top of the app's content, and can be dismissed by the app to resume user interaction with the app.\n\n## Positioning\n\nToasts can be positioned at the top, bottom or middle of the viewport. The position can be passed upon creation. The possible values are `top`, `bottom` and `middle`. If the position is not specified, the toast will be displayed at the bottom of the viewport.\n\n## Dismissing\n\nThe toast can be dismissed automatically after a specific amount of time by passing the number of milliseconds to display it in the `duration` of the toast options. If a button with a role of `\"cancel\"` is added, then that button will dismiss the toast. To dismiss the toast after creation, call the `dismiss()` method on the instance.\n\n## Icons\n\nAn icon can be added next to the content inside of the toast. In general, icons in toasts should be used to add additional style or context, not to grab the user's attention or elevate the priority of the toast. If you wish to convey a higher priority message to the user or guarantee a response, we recommend using an [Alert](../alert) instead.\n\n## Interfaces\n\n### ToastButton\n\n```typescript\ninterface ToastButton {\n  text?: string;\n  icon?: string;\n  side?: 'start' | 'end';\n  role?: 'cancel' | string;\n  cssClass?: string | string[];\n  handler?: () => boolean | void | Promise<boolean | void>;\n}\n```\n\n### ToastOptions\n\n```typescript\ninterface ToastOptions {\n  header?: string;\n  message?: string | IonicSafeString;\n  cssClass?: string | string[];\n  duration?: number;\n  buttons?: (ToastButton | string)[];\n  position?: 'top' | 'bottom' | 'middle';\n  translucent?: boolean;\n  animated?: boolean;\n  icon?: string;\n  htmlAttributes?: { [key: string]: any };\n\n  color?: Color;\n  mode?: Mode;\n  keyboardClose?: boolean;\n  id?: string;\n\n  enterAnimation?: AnimationBuilder;\n  leaveAnimation?: AnimationBuilder;\n}\n```\n\n## Accessibility\n\n### Focus Management\n\nToasts are intended to be subtle notifications and are not intended to interrupt the user. User interaction should not be required to dismiss the toast. As a result, focus is not automatically moved to a toast when one is presented.\n\n### Screen Readers\n\n`ion-toast` has `aria-live=\"polite\"` and `aria-atomic=\"true\"` set by default.\n\n`aria-live` causes screen readers to announce the content of the toast when it is presented. However, since the attribute is set to `'polite'`, screen readers generally do not interrupt the current task. Developers can customize this behavior by using the `htmlAttributes` property to set `aria-live` to `'assertive'`. This will cause screen readers to immediately notify the user when a toast is presented, potentially interrupting any previous updates.\n\n`aria-atomic=\"true\"` is set to ensure that the entire toast is announced as a single unit. This is useful when dynamically updating the content of the toast as it prevents screen readers from announcing only the content that has changed. \n\n### Tips\n\nWhile this is not a complete list, here are some guidelines to follow when using toasts.\n\n* Do not require user interaction to dismiss toasts. For example, having a \"Dismiss\" button in the toast is fine, but the toast should also automatically dismiss on its own after a timeout period. If you need user interaction for a notification, consider using [ion-alert](./alert) instead.\n\n* Avoid opening multiple toasts in quick succession. If `aria-live` is set to `'assertive'`, screen readers may interrupt the reading of the current task to announce the new toast, causing the context of the previous toast to be lost.\n\n* For toasts with long messages, consider adjusting the `duration` property to allow users enough time to read the content of the toast.\n",
-  "docs": "A Toast is a subtle notification commonly used in modern applications. It can be used to provide feedback about an operation or to display a system message. The toast appears on top of the app's content, and can be dismissed by the app to resume user interaction with the app.",
+  "docs": "",
   "docsTags": [
     {
       "name": "virtualProp",
@@ -30,13 +29,7 @@
       "text": "icon - The icon that appears next to the toast content."
     }
   ],
-  "usage": {
-    "angular": "```typescript\nimport { Component } from '@angular/core';\nimport { ToastController } from '@ionic/angular';\n\n@Component({\n  selector: 'toast-example',\n  templateUrl: 'toast-example.html',\n  styleUrls: ['./toast-example.css'],\n})\nexport class ToastExample {\n\n  constructor(public toastController: ToastController) {}\n\n  async presentToast() {\n    const toast = await this.toastController.create({\n      message: 'Your settings have been saved.',\n      duration: 2000\n    });\n    toast.present();\n  }\n\n  async presentToastWithOptions() {\n    const toast = await this.toastController.create({\n      header: 'Toast header',\n      message: 'Click to Close',\n      icon: 'information-circle',\n      position: 'top',\n      buttons: [\n        {\n          side: 'start',\n          icon: 'star',\n          text: 'Favorite',\n          handler: () => {\n            console.log('Favorite clicked');\n          }\n        }, {\n          text: 'Done',\n          role: 'cancel',\n          handler: () => {\n            console.log('Cancel clicked');\n          }\n        }\n      ]\n    });\n    await toast.present();\n\n    const { role } = await toast.onDidDismiss();\n    console.log('onDidDismiss resolved with role', role);\n  }\n\n}\n```\n",
-    "javascript": "```javascript\nasync function presentToast() {\n  const toast = document.createElement('ion-toast');\n  toast.message = 'Your settings have been saved.';\n  toast.duration = 2000;\n\n  document.body.appendChild(toast);\n  return toast.present();\n}\n\nasync function presentToastWithOptions() {\n  const toast = document.createElement('ion-toast');\n  toast.header = 'Toast header';\n  toast.message = 'Click to Close';\n  toast.icon = 'information-circle',\n  toast.position = 'top';\n  toast.buttons = [\n    {\n      side: 'start',\n      icon: 'star',\n      text: 'Favorite',\n      handler: () => {\n        console.log('Favorite clicked');\n      }\n    }, {\n      text: 'Done',\n      role: 'cancel',\n      handler: () => {\n        console.log('Cancel clicked');\n      }\n    }\n  ];\n\n  document.body.appendChild(toast);\n  await toast.present();\n\n  const { role } = await toast.onDidDismiss();\n  console.log('onDidDismiss resolved with role', role);\n}\n```\n",
-    "react": "```tsx\n/* Using the useIonToast Hook */\n\nimport React from 'react';\nimport { IonButton, IonContent, IonPage, useIonToast } from '@ionic/react';\n\nconst ToastExample: React.FC = () => {\n  const [present, dismiss] = useIonToast();\n\n  return (\n    <IonPage>\n      <IonContent>\n        <IonButton\n          expand=\"block\"\n          onClick={() =>\n            present({\n              buttons: [{ text: 'hide', handler: () => dismiss() }],\n              message: 'toast from hook, click hide to dismiss',\n              onDidDismiss: () => console.log('dismissed'),\n              onWillDismiss: () => console.log('will dismiss'),\n            })\n          }\n        >\n          Show Toast\n        </IonButton>\n        <IonButton\n          expand=\"block\"\n          onClick={() => present('hello from hook', 3000)}\n        >\n          Show Toast using params, closes in 3 secs\n        </IonButton>\n        <IonButton expand=\"block\" onClick={dismiss}>\n          Hide Toast\n        </IonButton>\n      </IonContent>\n    </IonPage>\n  );\n};\n```\n\n```tsx\n/* Using the IonToast Component */\n\nimport React, { useState } from 'react';\nimport { IonToast, IonContent, IonButton } from '@ionic/react';\nimport { informationCircle } from 'ionicons/icons';\n\nexport const ToastExample: React.FC = () => {\n  const [showToast1, setShowToast1] = useState(false);\n  const [showToast2, setShowToast2] = useState(false);\n\n  return (\n    <IonContent>\n      <IonButton onClick={() => setShowToast1(true)} expand=\"block\">Show Toast 1</IonButton>\n      <IonButton onClick={() => setShowToast2(true)} expand=\"block\">Show Toast 2</IonButton>\n      <IonToast\n        isOpen={showToast1}\n        onDidDismiss={() => setShowToast1(false)}\n        message=\"Your settings have been saved.\"\n        duration={200}\n      />\n\n      <IonToast\n        isOpen={showToast2}\n        onDidDismiss={() => setShowToast2(false)}\n        message=\"Click to Close\"\n        icon={informationCircle}\n        position=\"top\"\n        buttons={[\n          {\n            side: 'start',\n            icon: 'star',\n            text: 'Favorite',\n            handler: () => {\n              console.log('Favorite clicked');\n            }\n          },\n          {\n            text: 'Done',\n            role: 'cancel',\n            handler: () => {\n              console.log('Cancel clicked');\n            }\n          }\n        ]}\n      />\n    </IonContent>\n  );\n};\n```\n",
-    "stencil": "```tsx\nimport { Component, h } from '@stencil/core';\n\nimport { toastController } from '@ionic/core';\n\n@Component({\n  tag: 'toast-example',\n  styleUrl: 'toast-example.css'\n})\nexport class ToastExample {\n  async presentToast() {\n    const toast = await toastController.create({\n      message: 'Your settings have been saved.',\n      duration: 2000\n    });\n    toast.present();\n  }\n\n  async presentToastWithOptions() {\n    const toast = await toastController.create({\n      header: 'Toast header',\n      message: 'Click to Close',\n      icon: 'information-circle',\n      position: 'top',\n      buttons: [\n        {\n          side: 'start',\n          icon: 'star',\n          text: 'Favorite',\n          handler: () => {\n            console.log('Favorite clicked');\n          }\n        }, {\n          text: 'Done',\n          role: 'cancel',\n          handler: () => {\n            console.log('Cancel clicked');\n          }\n        }\n      ]\n    });\n    await toast.present();\n\n    const { role } = await toast.onDidDismiss();\n    console.log('onDidDismiss resolved with role', role);\n  }\n\n  render() {\n    return [\n      <ion-content>\n        <ion-button onClick={() => this.presentToast()}>Present Toast</ion-button>\n        <ion-button onClick={() => this.presentToastWithOptions()}>Present Toast: Options</ion-button>\n      </ion-content>\n    ];\n  }\n}\n```\n",
-    "vue": "```html\n<template>\n  <ion-page>\n    <ion-content class=\"ion-padding\">\n      <ion-button @click=\"openToast\">Open Toast</ion-button>\n      <ion-button @click=\"openToastOptions\">Open Toast: Options</ion-button>\n    </ion-content>\n  </ion-page>\n</template>\n\n<script>\nimport { IonButton, IonContent, IonPage, toastController } from '@ionic/vue';\nimport { informationCircle } from 'ionicons/icons';\n\nexport default {\n  components: { IonButton, IonContent, IonPage },\n  methods: {\n    async openToast() {\n      const toast = await toastController\n        .create({\n          message: 'Your settings have been saved.',\n          duration: 2000\n        })\n      return toast.present();\n    },\n    async openToastOptions() {\n      const toast = await toastController\n        .create({\n          header: 'Toast header',\n          message: 'Click to Close',\n          icon: informationCircle,\n          position: 'top',\n          buttons: [\n            {\n              side: 'start',\n              icon: 'star',\n              text: 'Favorite',\n              handler: () => {\n                console.log('Favorite clicked');\n              }\n            }, {\n              text: 'Done',\n              role: 'cancel',\n              handler: () => {\n                console.log('Cancel clicked');\n              }\n            }\n          ]\n        })\n      await toast.present();\n\n      const { role } = await toast.onDidDismiss();\n      console.log('onDidDismiss resolved with role', role);\n    },\n  },\n}\n</script>\n```\n\nDevelopers can also use this component directly in their template:\n\n```html\n<template>\n  <ion-button @click=\"setOpen(true)\">Show Toast</ion-button>\n  <ion-toast\n    :is-open=\"isOpenRef\"\n    message=\"Your settings have been saved.\"\n    :duration=\"2000\"\n    @didDismiss=\"setOpen(false)\"\n  >\n  </ion-toast>\n</template>\n\n<script>\nimport { IonToast, IonButton } from '@ionic/vue';\nimport { defineComponent, ref } from 'vue';\n\nexport default defineComponent({\n  components: { IonToast, IonButton },\n  setup() {\n    const isOpenRef = ref(false);\n    const setOpen = (state: boolean) => isOpenRef.value = state;\n\n    return { isOpenRef, setOpen }\n  }\n});\n</script>\n```\n"
-  },
+  "usage": {},
   "props": [
     {
       "name": "animated",
@@ -78,7 +71,7 @@
     },
     {
       "name": "color",
-      "type": "string | undefined",
+      "type": "\"danger\" | \"dark\" | \"light\" | \"medium\" | \"primary\" | \"secondary\" | \"success\" | \"tertiary\" | \"warning\" | string & Record<never, never> | undefined",
       "mutable": false,
       "attr": "color",
       "reflectToAttr": true,
@@ -86,7 +79,43 @@
       "docsTags": [],
       "values": [
         {
+          "value": "danger",
           "type": "string"
+        },
+        {
+          "value": "dark",
+          "type": "string"
+        },
+        {
+          "value": "light",
+          "type": "string"
+        },
+        {
+          "value": "medium",
+          "type": "string"
+        },
+        {
+          "value": "primary",
+          "type": "string"
+        },
+        {
+          "value": "secondary",
+          "type": "string"
+        },
+        {
+          "value": "success",
+          "type": "string"
+        },
+        {
+          "value": "tertiary",
+          "type": "string"
+        },
+        {
+          "value": "warning",
+          "type": "string"
+        },
+        {
+          "type": "string & Record<never, never>"
         },
         {
           "type": "undefined"

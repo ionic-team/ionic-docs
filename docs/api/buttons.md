@@ -32,9 +32,9 @@ import APITOCInline from '@components/page/api/APITOCInline';
 
 
 
-The Buttons component is a container element. Buttons placed in a toolbar should be placed inside of the `<ion-buttons>` element.
+Buttonsコンポーネントはコンテナ要素です。toolbarに配置するButtonは、 `<ion-buttons>` 要素の内部に配置する必要があります。
 
-The `<ion-buttons>` element can be positioned inside of the toolbar using a named slot. The below chart has a description of each slot.
+`<ion-buttons>` 要素は、値を指定したslotを使用してtoolbarの内側に配置できます。次の表に、各slotの説明を示します。
 
 | Slot         | Description                                                                                              |
 |--------------|----------------------------------------------------------------------------------------------------------|

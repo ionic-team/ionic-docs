@@ -32,7 +32,7 @@ import APITOCInline from '@components/page/api/APITOCInline';
 
 
 
-The tab bar is a UI component that contains a set of [tab buttons](tab-button.md). A tab bar must be provided inside of [tabs](tabs.md) to communicate with each [tab](tab.md).
+TabBarは、[tab buttons](tab-button.md)のセットを含むUIコンポーネントです。各[tab](tab.md)と通信するには、[tabs](tabs.md)の内部にTabBarを設定する必要があります。
 
 
 

@@ -2,20 +2,14 @@
   "filePath": "./src/components/img/img.tsx",
   "encapsulation": "shadow",
   "tag": "ion-img",
-  "readme": "# ion-img\n\nImg is a tag that will lazily load an image when ever the tag is in the viewport. This is extremely useful when generating a large list as images are only loaded when they're visible. The component uses [Intersection Observer](https://caniuse.com/#feat=intersectionobserver) internally, which is supported in most modern browser, but falls back to a `setTimeout` when it is not supported.\n\n",
-  "docs": "Img is a tag that will lazily load an image when ever the tag is in the viewport. This is extremely useful when generating a large list as images are only loaded when they're visible. The component uses [Intersection Observer](https://caniuse.com/#feat=intersectionobserver) internally, which is supported in most modern browser, but falls back to a `setTimeout` when it is not supported.",
+  "docs": "",
   "docsTags": [
     {
       "name": "part",
       "text": "image - The inner `img` element."
     }
   ],
-  "usage": {
-    "angular": "```html\n<ion-list>\n  <ion-item *ngFor=\"let item of items\">\n    <ion-thumbnail slot=\"start\">\n      <ion-img [src]=\"item.src\"></ion-img>\n    </ion-thumbnail>\n    <ion-label>{{item.text}}</ion-label>\n  </ion-item>\n</ion-list>\n```\n",
-    "react": "```tsx\nimport React from 'react';\nimport { IonList, IonItem, IonThumbnail, IonImg, IonLabel, IonContent } from '@ionic/react';\n\ntype Item = {\n  src: string;\n  text: string;\n};\nconst items: Item[] = [{ src: 'http://placekitten.com/g/200/300', text: 'a picture of a cat' }];\n\nexport const ImgExample: React.FC = () => (\n  <IonContent>\n    <IonList>\n      {items.map((image, i) => (\n        <IonItem key={i}>\n          <IonThumbnail slot=\"start\">\n            <IonImg src={image.src} />\n          </IonThumbnail>\n          <IonLabel>{image.text}</IonLabel>\n        </IonItem>\n      ))}\n    </IonList>\n  </IonContent>\n);\n```",
-    "stencil": "```tsx\nimport { Component, h } from '@stencil/core';\n\n@Component({\n  tag: 'img-example',\n  styleUrl: 'img-example.css'\n})\nexport class ImgExample {\n  private items = [{\n    'text': 'Item 1',\n    'src': '/path/to/external/file.png'\n  }, {\n    'text': 'Item 2',\n    'src': '/path/to/external/file.png'\n  }, {\n    'text': 'Item 3',\n    'src': '/path/to/external/file.png'\n  }];\n\n  render() {\n    return [\n      <ion-list>\n        {this.items.map(item =>\n          <ion-item>\n            <ion-thumbnail slot=\"start\">\n              <ion-img src={item.src}></ion-img>\n            </ion-thumbnail>\n            <ion-label>{item.text}</ion-label>\n          </ion-item>\n        )}\n      </ion-list>\n    ];\n  }\n}\n```",
-    "vue": "```html\n<template>\n  <ion-list>\n    <ion-item v-for=\"item in items\" :key=\"item.src\">\n      <ion-thumbnail slot=\"start\">\n        <ion-img :src=\"item.src\"></ion-img>\n      </ion-thumbnail>\n      <ion-label>{{item.text}}</ion-label>\n    </ion-item>\n  </ion-list>\n</template>\n\n<script>\nimport { IonImg, IonItem, IonLabel, IonList, IonThumbnail } from '@ionic/vue';\nimport { defineComponent } from 'vue';\n\nexport default defineComponent({\n  components: { IonImg, IonItem, IonLabel, IonList, IonThumbnail },\n  setup() {\n    const items = [{\n      'text': 'Item 1',\n      'src': '/path/to/external/file.png'\n    }, {\n      'text': 'Item 2',\n      'src': '/path/to/external/file.png'\n    }, {\n      'text': 'Item 3',\n      'src': '/path/to/external/file.png'\n    }];\n    return { items }\n  }\n});\n</script>\n```\n"
-  },
+  "usage": {},
   "props": [
     {
       "name": "alt",

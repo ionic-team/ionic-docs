@@ -29,7 +29,7 @@ import APITOCInline from '@components/page/api/APITOCInline';
 
 
 
-The `ion-fab-list` element is a container for multiple fab buttons. This collection of fab buttons contains actions related to the main fab button and is flung out on click. To specify what side the buttons should appear on, set the `side` property to 'start', 'end', 'top', 'bottom'
+`ion-fab-list` 要素は、複数のfab buttonのコンテナです。この一連のfab buttonには、メインのfab buttonに関連するアクションが含まれ、メインのfab buttonをクリックすると表示されます。ボタンを表示する方向を指定するためには、 `side` プロパティを'start', 'end', 'top', 'bottom' に設定します。
 
 
 

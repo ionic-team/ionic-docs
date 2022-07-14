@@ -34,11 +34,11 @@ import APITOCInline from '@components/page/api/APITOCInline';
 
 
 
-Cards are a standard piece of UI that serves as an entry point to more detailed
-information. A card can be a single component, but is often made up of some
-header, title, subtitle, and content. `ion-card` is broken up into several
-sub-components to reflect this. Please see `ion-card-content`,
-`ion-card-header`, `ion-card-title`, `ion-card-subtitle`.
+Cardは、より詳細な情報へのエントリポイントとして機能する標準的なUIです。
+Cardは1つのコンポーネントである場合もありますが、多くの場合、
+header, title, subtitle, と content で構成されます。
+これを反映するため、`ion-card` はいくつかのサブコンポーネントに分割されています。
+`ion-card-content`, `ion-card-header`, `ion-card-title`, `ion-card-subtitle` をご覧ください。
 
 
 

@@ -2,8 +2,7 @@
   "filePath": "./src/components/col/col.tsx",
   "encapsulation": "shadow",
   "tag": "ion-col",
-  "readme": "# ion-col\n\nColumns are cellular components of the [grid](../grid) system and go inside of a [row](../row).\nThey will expand to fill their row. All content within a grid should go inside of a column.\n\nSee [Grid Layout](/docs/layout/grid) for more information.\n\n\n## Column Alignment\n\nBy default, columns will stretch to fill the entire height of the row. Columns are [flex items](https://developer.mozilla.org/en-US/docs/Glossary/Flex_Item), so there are several [CSS classes](/docs/layout/css-utilities#flex-item-properties) that can be applied to a column to customize this behavior.\n\n",
-  "docs": "Columns are cellular components of the [grid](../grid) system and go inside of a [row](../row).\nThey will expand to fill their row. All content within a grid should go inside of a column.\n\nSee [Grid Layout](/docs/layout/grid) for more information.",
+  "docs": "",
   "docsTags": [],
   "usage": {},
   "props": [

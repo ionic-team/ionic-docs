@@ -32,17 +32,17 @@ import APITOCInline from '@components/page/api/APITOCInline';
 
 
 
-A sliding item contains an item that can be dragged to reveal buttons. It requires an [item](item.md) component as a child. All options to reveal should be placed in the [item options](item-options.md) element.
+item-slidingには、Buttonを表示するためにドラッグできるItemを含む必要があるため、[item](item.md)コンポーネントを子要素に配置します。表示するすべてのオプションは、[item options](item-options.md)要素に配置する必要があります。
 
 
-## Swipe Direction
+## スワイプの方向
 
-By default, the buttons are placed on the `"end"` side. This means that options are revealed when the sliding item is swiped from end to start, i.e. from right to left in LTR, but from left to right in RTL. To place them on the opposite side, so that they are revealed when swiping in the opposite direction, set the `side` attribute to `"start"` on the [`ion-item-options`](item-options.md) element. Up to two `ion-item-options` can be used at the same time in order to reveal two different sets of options depending on the swiping direction.
+デフォルトでは、ボタンは `"end"` 側に配置されます。つまり、スライドするItemを最後から最初にスワイプすると、オプションが表示されます。LTRでは右から左、RTLでは左から右です。反対側に配置するには、反対方向にスワイプすると表示されるように、 [`ion-item-options`](item-options.md) 要素の `side` 属性を `"start"` に設定します。最大2つの `ion-item-options` を同時に使用して、スワイプ方向に応じて2つの異なるオプションセットを表示できます。
 
 
-## Options Layout
+## レイアウトのオプション
 
-By default if an icon is placed with text in the [item option](item-option.md), it will display the icon on top of the text, but the icon slot can be changed to any of the following to position it in the option.
+デフォルトでは、iconを [item option](item-option.md) 内にtextとともに配置すると、iconはtextの上に表示されますが、icon slotを次のいずれかに変更してオプション内に配置することができます。
 
 | Slot        | Description                                                              |
 | ----------- | ------------------------------------------------------------------------ |
@@ -53,9 +53,9 @@ By default if an icon is placed with text in the [item option](item-option.md), 
 | `end`       | In LTR, end is the right side of the button, and in RTL it is the left   |
 
 
-## Expandable Options
+## 拡張可能なオプション
 
-Options can be expanded to take up the full width of the item if you swipe past a certain point. This can be combined with the `ionSwipe` event to call methods on the class.
+特定のポイントをスワイプすると、オプションを展開してアイテムの幅全体を表示できます。これを `ionSwipe` イベントと組み合わせて、classのmethodを呼び出すことができます。
 
 ## Interfaces
 

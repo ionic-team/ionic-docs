@@ -34,9 +34,9 @@ import APITOCInline from '@components/page/api/APITOCInline';
 
 
 
-The back button navigates back in the app's history upon click. It is smart enough to know what to render based on the mode and when to show based on the navigation stack.
+back buttonは、クリックするとアプリのひとつ前の履歴に戻ります。modeに基づいてどのようにレンダリングし、ナビゲーションスタックに基づいていつ表示するかを知っていれば十分です。
 
-To change what is displayed in the back button, use the `text` and `icon` properties.
+back buttonの表示内容を変更するには、`text` と `icon` のプロパティを使用します。
 
 
 

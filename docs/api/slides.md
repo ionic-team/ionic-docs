@@ -34,13 +34,13 @@ import APITOCInline from '@components/page/api/APITOCInline';
 
 
 
-The Slides component is a multi-section container. Each section can be swiped
-or dragged between. It contains any number of [Slide](slide.md) components.
+Slidesコンポーネントは複数セクションのコンテナです。
+各セクション間をスワイプまたはドラッグできます。これには任意の数の[Slide](slide.md)コンポーネントが含まれます。
 
 This guide will cover migration from the deprecated `ion-slides` component to the framework-specific solutions that Swiper.js provides as well as the existing `ion-slides` API for developers who are still using that component.
 
-Adopted from Swiper.js:
-The most modern mobile touch slider and framework with hardware accelerated transitions.
+Swiper.jsを採用しています:
+ハードウェアアクセラレートされたトランジションを備えた最新のモバイルタッチスライダとフレームワークです。
 
 http://www.idangero.us/swiper/
 

@@ -32,10 +32,10 @@ import APITOCInline from '@components/page/api/APITOCInline';
 
 
 
-Columns are cellular components of the [grid](grid.md) system and go inside of a [row](row.md).
-They will expand to fill their row. All content within a grid should go inside of a column.
+Columnは [grid](grid.md) system のセルとなるコンポーネントで、行の内側に入ります。 [row](row.md) を埋めるように展開されます。
+グリッド内のすべてのコンテンツは、Columnの内側に配置する必要があります。
 
-See [Grid Layout](/docs/layout/grid) for more information.
+詳しくは [Grid Layout](/docs/layout/grid) をご覧ください。
 
 
 ## Column Alignment

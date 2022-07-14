@@ -2,8 +2,7 @@
   "filePath": "./src/components/accordion-group/accordion-group.tsx",
   "encapsulation": "shadow",
   "tag": "ion-accordion-group",
-  "readme": "# ion-accordion-group\n\nAccordion group is a container for accordion instances. It manages the state of the accordions and provides keyboard navigation.\n\nFor more information as well as usage, see the [Accordion Documentation](./accordion)\n\n## Interfaces\n\n### AccordionGroupChangeEventDetail\n\n```typescript\ninterface AccordionGroupChangeEventDetail<T = any> {\n  value: T;\n}\n```\n\n### AccordionGroupCustomEvent\n\nWhile not required, this interface can be used in place of the `CustomEvent` interface for stronger typing with Ionic events emitted from this component.\n\n```typescript\ninterface AccordionGroupCustomEvent<T = any> extends CustomEvent {\n  detail: AccordionGroupChangeEventDetail<T>;\n  target: HTMLIonAccordionGroupElement;\n}\n```\n",
-  "docs": "Accordion group is a container for accordion instances. It manages the state of the accordions and provides keyboard navigation.\n\nFor more information as well as usage, see the [Accordion Documentation](./accordion)",
+  "docs": "",
   "docsTags": [
     {
       "name": "virtualProp",

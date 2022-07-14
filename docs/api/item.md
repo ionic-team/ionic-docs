@@ -34,15 +34,15 @@ import APITOCInline from '@components/page/api/APITOCInline';
 
 
 
-Items are elements that can contain text, icons, avatars, images, inputs, and any other native or custom elements. Generally they are placed in a list with other items. Items can be swiped, deleted, reordered, edited, and more.
+Itemsは、text, icons, avatars, images, inputsや、その他のnative elements, custom elementsを含むことができる要素です。通常は、他のitemsと共にlistに配置されます。Itemsは、swiped, deleted, reordered, editedなどが可能です。
 
-## Clickable Items
+## clickableなItems
 
-An item is considered "clickable" if it has an `href` or `button` property set. Clickable items have a few visual differences that indicate they can be interacted with. For example, a clickable item receives the ripple effect upon activation in `md` mode, has a highlight when activated in `ios` mode, and has a [detail arrow](#detail-arrows) by default in `ios` mode.
+`href` か `button` プロパティが設定されている場合、itemは "clickable（クリック可能）" と見なされます。clickableなitemsには、インタラクティブに操作できることを示す視覚的な違いがいくつかあります。たとえば、clickableなitemは、`md` modeではrippleエフェクトを持ち、`ios` modeではハイライト表示され、`ios` modeでの [detail arrow](/#detail-arrows) が表示されます。
 
 ## Detail Arrows
 
-By default [clickable items](#clickable-items) will display a right arrow icon on `ios` mode. To hide the right arrow icon on clickable elements, set the `detail` property to `false`. To show the right arrow icon on an item that doesn't display it naturally, set the `detail` property to `true`.
+デフォルトでは、[clickableなitems](/#clickable-items) は、`ios` modeで右矢印アイコンを表示します。clickableな要素の右矢印アイコンを非表示にするには、 `detail` プロパティを `false` に設定します。自動的に表示されない項目に右矢印アイコンを表示するには、`detail`プロパティを `true` に設定します。
 
 <!--
 
@@ -59,33 +59,33 @@ See the [theming documentation](/docs/theming/css-variables) for more informatio
 -->
 
 
-## Item Placement
+## Itemの配置
 
-Item uses named [slots](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/slot) in order to position content. This logic makes it possible to write a complex item with simple, understandable markup without having to worry about styling and positioning the elements.
+Itemは、コンテンツを配置するために [slots](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/slot) を使用します。このロジックにより、エレメントのスタイル設定や配置を気にすることなく、単純でわかりやすいマークアップを使用して複雑なアイテムを作成できます。
 
-The below chart details the item slots and where it will place the element inside of the item:
+次の表に、itemのslotsの詳細と、item内で要素がどこに配置されるかを示します:
 
 | Slot    | Description                                                                 |
 |---------|-----------------------------------------------------------------------------|
-| `start` | Placed to the left of all other content in LTR, and to the `right` in RTL.  |
-| `end`   | Placed to the right of all other content in LTR, and to the `left` in RTL.  |
+| `start` | LTRではほかのすべてのコンテンツの左側に配置され、RTLでは `右側` に配置されます        |
+| `end`   | LTRではほかのすべてのコンテンツの右側に配置され、RTLでは `左側` に配置されます        |
 | none    | Placed inside of the input wrapper.                                         |
 
 
-### Text Alignment
+### 文字揃え
 
-Items left align text and add an ellipsis when the text is wider than the item. See the [CSS Utilities Documentation](/docs/layout/css-utilities) for classes that can be added to `<ion-item>` to transform the text.
+Itemsはテキストを左揃えにし、テキストがItemsよりも広い場合は省略記号を追加します。テキストを変換するために `<ion-item>` に追加できる属性については、[CSS Utilities Documentation](/docs/layout/css-utilities) を参照してください。
 
 
 ## Input Highlight
 
-### Highlight Height
+### ハイライトのheight
 
-Items containing an input will highlight the bottom border of the input with a different color when focused, valid, or invalid. By default, `md` items have a highlight with a height set to `2px` and `ios` has no highlight (technically the height is set to `0`). The height can be changed using the `--highlight-height` CSS property. To turn off the highlight, set this variable to `0`. For more information on setting CSS properties, see the [theming documentation](/docs/theming/css-variables).
+Inputを含むItemは、フォーカスされたとき、有効なとき、無効なときに、異なる色で入力の下枠を強調表示します。デフォルトでは、`md` itemsは height `2px` でハイライトされ、iosはハイライトされません(技術的にはheight `0`に設定される)。heightは `--highlight-height` CSSプロパティーを使用して変更できます。強調表示をオフにするには、この変数を `0` に設定します。CSSプロパティーの設定について詳しくは、[theming documentation](/docs/theming/css-variables)を参照してください。
 
-### Highlight Color
+### ハイライトカラー
 
-The highlight color changes based on the item state, but all of the states use Ionic colors by default. When focused, the input highlight will use the `primary` color. If the input is valid it will use the `success` color, and invalid inputs will use the `danger` color. See the [CSS Custom Properties](#css-custom-properties) section below for the highlight color variables.
+ハイライトカラーはItemsの状態に基づいて変化しますが、デフォルトではすべてのstatesでIonicカラーが使用されます。フォーカスすると、Inputハイライトに `primary` colorが使用されます。Inputが有効な場合、`success` colorが使用され、無効なInputは`danger` colorが使用されます。ハイライトカラー変数については、後述の [CSS Custom Properties](#css-custom-properties) を参照してください。
 
 ### Counter Formatter
 

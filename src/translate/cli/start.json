@@ -60,7 +60,9 @@
       "name": "cordova",
       "type": "boolean",
       "summary": "Include Cordova integration",
-      "groups": [],
+      "groups": [
+        "deprecated"
+      ],
       "aliases": [],
       "spec": {
         "value": "true/false"
@@ -70,9 +72,7 @@
       "name": "capacitor",
       "type": "boolean",
       "summary": "Include Capacitor integration",
-      "groups": [
-        "experimental"
-      ],
+      "groups": [],
       "aliases": [],
       "spec": {
         "value": "true/false"

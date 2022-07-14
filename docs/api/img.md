@@ -32,7 +32,7 @@ import APITOCInline from '@components/page/api/APITOCInline';
 
 
 
-Img is a tag that will lazily load an image when ever the tag is in the viewport. This is extremely useful when generating a large list as images are only loaded when they're visible. The component uses [Intersection Observer](https://caniuse.com/#feat=intersectionobserver) internally, which is supported in most modern browser, but falls back to a `setTimeout` when it is not supported.
+Img は、タグがビューポートに表示されているときに画像をLazy Loadするタグです。これは、画像が表示されているときにのみロードされるため、巨大なリストを生成する場合に非常に便利です。このコンポーネントは [Intersection Observer](https://caniuse.com/#feat=intersectionobserver) を内部的に使用します。Intersection Observerは、最近のほとんどのブラウザでサポートされていますが、サポートされていない場合は `setTimeout` で処理されます。
 
 
 

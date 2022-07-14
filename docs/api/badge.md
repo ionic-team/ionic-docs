@@ -34,7 +34,7 @@ import APITOCInline from '@components/page/api/APITOCInline';
 
 
 
-Badges are inline block elements that usually appear near another element. Typically they contain a number or other characters. They can be used as a notification that there are additional items associated with an element and indicate how many items there are.
+Badgeは、通常は別の要素の近くに表示されるinline-block要素です。通常は、数字またはその他の文字とともに利用します。これらは、要素に関連付けられた未読のアイテムがあることの通知として使用でき、アイテムの数を示します。
 
 
 

@@ -32,11 +32,11 @@ import APITOCInline from '@components/page/api/APITOCInline';
 
 
 
-The Slide component is a child component of [Slides](slides.md). The template
-should be written as `ion-slide`. Any slide content should be written
-in this component and it should be used in conjunction with [Slides](slides.md).
+Slideコンポーネントは、[Slides](slides.md)の子コンポーネントです。
+テンプレートは、`ion-slide`と記述します。
+slideの内容はすべてこのコンポーネントに記述し、[Slides](slides.md)と組み合わせて使用する必要があります。
 
-See the [Slides API Docs](slides.md) for more usage information.
+使用方法の詳細については、[Slides API Docs](slides.md)を参照してください。
 
 
 

@@ -29,7 +29,7 @@ import APITOCInline from '@components/page/api/APITOCInline';
 
 
 
-`ion-card-subtitle` is a child component of `ion-card`
+`ion-card-subtitle` は `ion-card` の子コンポーネントです。
 
 
 

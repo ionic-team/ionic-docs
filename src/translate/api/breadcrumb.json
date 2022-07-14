@@ -2,8 +2,7 @@
   "filePath": "./src/components/breadcrumb/breadcrumb.tsx",
   "encapsulation": "shadow",
   "tag": "ion-breadcrumb",
-  "readme": "# ion-breadcrumb\n\nA Breadcrumb is a single navigation item that is a child of the Breadcrumbs component. A breadcrumb can link elsewhere in an app or it can be plain text. Each breadcrumb has a separator between it and the next breadcrumb and can optionally contain an icon.\n\n## Interfaces\n\n### BreadcrumbCollapsedClickEventDetail\n\n```typescript\ninterface BreadcrumbCollapsedClickEventDetail {\n  collapsedBreadcrumbs?: HTMLIonBreadcrumbElement[];\n}\n```\n\n### BreadcrumbCustomEvent\n\nWhile not required, this interface can be used in place of the `CustomEvent` interface for stronger typing .\n\n```typescript\ninterface BreadcrumbCustomEvent extends CustomEvent {\n  detail: BreadcrumbCollapsedClickEventDetail;\n  target: HTMLIonBreadcrumbElement;\n}\n```\n\n",
-  "docs": "A Breadcrumb is a single navigation item that is a child of the Breadcrumbs component. A breadcrumb can link elsewhere in an app or it can be plain text. Each breadcrumb has a separator between it and the next breadcrumb and can optionally contain an icon.",
+  "docs": "",
   "docsTags": [
     {
       "name": "virtualProp",
@@ -43,7 +42,7 @@
     },
     {
       "name": "color",
-      "type": "string | undefined",
+      "type": "\"danger\" | \"dark\" | \"light\" | \"medium\" | \"primary\" | \"secondary\" | \"success\" | \"tertiary\" | \"warning\" | string & Record<never, never> | undefined",
       "mutable": false,
       "attr": "color",
       "reflectToAttr": false,
@@ -51,7 +50,43 @@
       "docsTags": [],
       "values": [
         {
+          "value": "danger",
           "type": "string"
+        },
+        {
+          "value": "dark",
+          "type": "string"
+        },
+        {
+          "value": "light",
+          "type": "string"
+        },
+        {
+          "value": "medium",
+          "type": "string"
+        },
+        {
+          "value": "primary",
+          "type": "string"
+        },
+        {
+          "value": "secondary",
+          "type": "string"
+        },
+        {
+          "value": "success",
+          "type": "string"
+        },
+        {
+          "value": "tertiary",
+          "type": "string"
+        },
+        {
+          "value": "warning",
+          "type": "string"
+        },
+        {
+          "type": "string & Record<never, never>"
         },
         {
           "type": "undefined"

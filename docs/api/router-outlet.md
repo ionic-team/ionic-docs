@@ -33,22 +33,22 @@ The router outlet behaves in a similar way to Angular's built-in router outlet c
 
 Although router outlet has methods for navigating around, it's recommended to use the navigation methods in your framework's router.
 
-## Life Cycle Hooks
+## ライフサイクルHook
 
-Routes rendered in a Router Outlet have access to specific Ionic events that are wired up to animations
-
-
-| Event Name         | Trigger                                                            |
-|--------------------|--------------------------------------------------------------------|
-| `ionViewWillEnter` | Fired when the component routing to is about to animate into view. |
-| `ionViewDidEnter`  | Fired when the component routing to has finished animating.        |
-| `ionViewWillLeave` | Fired when the component routing from is about to animate.         |
-| `ionViewDidLeave`  | Fired when the component routing to has finished animating.        |
+Router OutletでRoutesがレンダリングされた時、アニメーションに関連付けられた特定のIonicイベントにアクセスできます。
 
 
-These event tie into Ionic's animation system and can be used to coordinate parts of your app when a Components is done with its animation. These events are not a replacement for your framework's own event system, but an addition.
+| Event Name         | Description                                                          |
+|--------------------|------------------------------------------------------------------|
+| `ionViewWillEnter` | コンポーネントが表示されるアニメーションがはじまる時に発火します。 |
+| `ionViewDidEnter`  | コンポーネントが表示されるアニメーションが終了した時に発火します。 |
+| `ionViewWillLeave` | コンポーネントを離脱するアニメーションがはじまる時に発火します。  |
+| `ionViewDidLeave`  | コンポーネントを離脱するアニメーションが終了した時に発火します。 |
 
-For handling Router Guards, the older `ionViewCanEnter` and `ionViewCanLeave` have been replaced with their framework specific equivalent. For Angular, there are [Router Guards](https://angular.io/guide/router#milestone-5-route-guards).
+
+これらのイベントはIonicのアニメーションシステムと連携し、コンポーネントがアニメーションを完成させたときにアプリの挙動を調整するのに使用できる。これらのイベントはフレームワーク独自のイベントシステムに代わるものではなく、追加されたものです。
+
+Router Guardsを扱うために、以前の`ionViewCanEnter` と `ionViewCanLeave`は、フレームワーク特有の同等のものに置き換えられました。Angularには[Router Guards](https://angular.jp/guide/router#milestone-5-route-guards)があります。
 
 
 
