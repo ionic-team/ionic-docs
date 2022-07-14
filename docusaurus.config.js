@@ -66,8 +66,8 @@ module.exports = {
         {
           type: 'cta',
           position: 'left',
-          text: 'Ionic v6.0.0 Upgrade Guide',
-          href: `/intro/upgrading-to-ionic-6`,
+          text: 'Ionic採用事例をみよう',
+          href: `https://ionicframework.jp/case/`,
         },
         {
           type: 'docsVersionDropdown',
