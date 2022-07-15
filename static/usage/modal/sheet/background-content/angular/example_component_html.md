@@ -1,5 +1,5 @@
 ```html
-<ion-app>
+<div class="ion-page">
   <ion-header>
     <ion-toolbar>
       <ion-title>App</ion-title>
@@ -68,5 +68,5 @@
       </ng-template>
     </ion-modal>
   </ion-content>
-</ion-app>
+</div>
 ```

@@ -62,7 +62,7 @@ By default, Playground examples will automatically include the following templat
 
 Note: The above code is just a sample. The code will be slightly different based on each framework target.
 
-To opt-out of this behavior, set `includeIonContent={false}` to disable this wrapper. You will be responsible for manually including `ion-app` and `ion-content` in your code snippets.
+To opt-out of this behavior, set `includeIonContent={false}` to disable this wrapper. You will be responsible for manually including `ion-content` in your code snippets.
 
 ```tsx
 <Playground includeIonContent={false} />
