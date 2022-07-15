@@ -26,5 +26,4 @@ import angularCSS from './angular-css.md';
     },
   }}
   src="usage/datetime/theming/demo.html"
-  includeIonContent={false}
 />
