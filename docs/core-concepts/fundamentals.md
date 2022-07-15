@@ -1,6 +1,6 @@
 ---
 title: 基本的な考え方
-sidebar_label: 基礎
+sidebar_label: 基本的な考え方
 ---
 
 <head>
