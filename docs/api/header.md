@@ -35,15 +35,15 @@ import APITOCInline from '@components/page/api/APITOCInline';
 Headerは、`toolbar`コンポーネントを保持する親コンポーネントです。
 `ion-header` はページの3つのルート要素のうちの1つでなければならないことに注意してください。
 
-## Fade Header
+## フェードヘッダー
 
-The `collapse` property can be set to `'fade'` on a page's main `ion-header` to have the background color of the toolbars fade in as users scroll. This provides the same fade effect that is found in many native iOS applications.
+ページのメイン `ion-header` で `collapse` プロパティを `'fade'` に設定すると、ユーザがスクロールするたびにツールバーの背景色がフェードインするようになります。これは、多くのネイティブ iOS アプリケーションで見られるのと同じフェード効果を提供します。
 
-This functionality can be combined with [Collapsible Large Titles](https://ionicframework.com/docs/api/title#collapsible-large-titles) as well. The `collapse="condense"` value should be set on the `ion-header` inside of your `ion-content`. The `collapse="fade"` value should be set on the `ion-header` outside of your `ion-content`.
+この機能は、 [Collapsible Large Titles](https://ionicframework.com/docs/api/title#collapsible-large-titles) とも組み合わせることができます。 `collapse="condense"` 値は、`ion-content` 内の `ion-header` に設定する必要があります。 `collapse="fade"` 値は、`ion-content` の外側の `ion-header` に設定する必要があります。
 
-### Usage with Virtual Scroll
+### 仮想スクロールの使用方法
 
-Fade and collapsible large titles require a scroll container to function. When using a virtual scrolling solution, you will need to disable scrolling on the `ion-content` and indicate which element container is responsible for the scroll container with the `.ion-content-scroll-host` class target.
+フェードや折りたたみ可能なラージタイトルは、機能するためにスクロールコンテナが必要です。仮想スクロールを使用する場合は、`ion-content` のスクロールを無効にして、`.ion-content-scroll-host` クラスターゲットでどの要素コンテナがスクロールコンテナを担当するかを指定する必要があります。
 
 ```html
 <ion-header collapse="fade">
@@ -65,7 +65,7 @@ Fade and collapsible large titles require a scroll container to function. When u
 
 
 
-## Usage
+## 使い方
 
 <Tabs groupId="framework" defaultValue="angular" values={[{ value: 'angular', label: 'Angular' }, { value: 'javascript', label: 'Javascript' }, { value: 'react', label: 'React' }, { value: 'stencil', label: 'Stencil' }, { value: 'vue', label: 'Vue' }]}>
 

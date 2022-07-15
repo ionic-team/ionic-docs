@@ -42,11 +42,11 @@ Toastsは、ビューポートの上部、下部、または中央に配置で�
 
 ## Dismissing
 
-The toast can be dismissed automatically after a specific amount of time by passing the number of milliseconds to display it in the `duration` of the toast options. If a button with a role of `"cancel"` is added, then that button will dismiss the toast. To dismiss the toast after creation, call the `dismiss()` method on the instance.
+トーストオプションの `duration` に表示するミリ秒数を渡すことで、特定の時間経過後に自動的にトーストを終了させることができます。もし、 `"cancel"` というロールを持つボタンが追加されていれば、そのボタンがトーストを終了させることになります。作成後にトーストを終了させるには、インスタンスの `dismiss()` メソッドを呼び出してください。
 
-## Icons
+## アイコン
 
-An icon can be added next to the content inside of the toast. In general, icons in toasts should be used to add additional style or context, not to grab the user's attention or elevate the priority of the toast. If you wish to convey a higher priority message to the user or guarantee a response, we recommend using an [Alert](alert.md) instead.
+トースト内のコンテンツの横にアイコンを追加することができます。一般的に、トーストのアイコンはスタイルやコンテキストを追加するために使用されるべきで、ユーザーの注意を引いたり、トーストの優先順位を上げたりするために使用すべきではありません。より優先順位の高いメッセージをユーザーに伝えたい場合や、応答を保証したい場合は、代わりに [Alert](alert.md) を使用することをお勧めします。
 
 ## Interfaces
 
@@ -88,33 +88,33 @@ interface ToastOptions {
 }
 ```
 
-## Accessibility
+## アクセシビリティ
 
-### Focus Management
+### フォーカスの管理
 
-Toasts are intended to be subtle notifications and are not intended to interrupt the user. User interaction should not be required to dismiss the toast. As a result, focus is not automatically moved to a toast when one is presented.
+トーストはさりげなく通知するものであり、ユーザーの邪魔をするものではありません。トーストを消すためにユーザーの操作が必要であってはなりません。そのため、トーストが表示されても、フォーカスが自動的に移動することはありません。
 
-### Screen Readers
+### スクリーンリーダー
 
-`ion-toast` has `aria-live="polite"` and `aria-atomic="true"` set by default.
+`ion-toast` は、デフォルトで `aria-live="polite"` と `aria-atomic="true"` が設定されています。
 
-`aria-live` causes screen readers to announce the content of the toast when it is presented. However, since the attribute is set to `'polite'`, screen readers generally do not interrupt the current task. Developers can customize this behavior by using the `htmlAttributes` property to set `aria-live` to `'assertive'`. This will cause screen readers to immediately notify the user when a toast is presented, potentially interrupting any previous updates.
+`aria-live`は、スクリーンリーダーがトーストを提示したときに、その内容をアナウンスするようにします。しかし、この属性は `'polite'` に設定されているため、スクリーン・リーダーは通常、現在のタスクを中断しません。開発者は `htmlAttributes` プロパティを使用して `aria-live` を `'assertive'` に設定することで、この動作をカスタマイズすることができます。これにより、スクリーンリーダーはトーストが表示されるとすぐにユーザーに通知し、それまでの更新を中断させる可能性があります。
 
-`aria-atomic="true"` is set to ensure that the entire toast is announced as a single unit. This is useful when dynamically updating the content of the toast as it prevents screen readers from announcing only the content that has changed. 
+また、`aria-atomic="true"`を設定すると、トースト全体を1つのユニットとしてアナウンスすることができます。これはトーストのコンテンツを動的に更新するときに便利で、スクリーン・リーダーが変更されたコンテンツのみをアナウンスすることを防ぎます。
 
-### Tips
+### ヒント
 
-While this is not a complete list, here are some guidelines to follow when using toasts.
+これは完全なリストではありませんが、トーストを使用する際に従うべきガイドラインをいくつか紹介します。
 
-* Do not require user interaction to dismiss toasts. For example, having a "Dismiss" button in the toast is fine, but the toast should also automatically dismiss on its own after a timeout period. If you need user interaction for a notification, consider using [ion-alert](./alert) instead.
+* トーストの解除にユーザーの操作を必要としないようにします。例えば、トーストに "Dismiss" ボタンがあるのは良いですが、タイムアウト後にトーストが自動的に終了するようにします。通知のためにユーザーの操作が必要な場合は、代わりに [ion-alert](./alert) を使用することを検討してください。
 
-* Avoid opening multiple toasts in quick succession. If `aria-live` is set to `'assertive'`, screen readers may interrupt the reading of the current task to announce the new toast, causing the context of the previous toast to be lost.
+* 複数のトーストを連続して開くことは避けてください。もし `aria-live` が `'assertive'` に設定されている場合、スクリーンリーダーは新しいトーストをアナウンスするために現在のタスクの読み込みを中断し、前のトーストのコンテキストが失われる可能性があります。
 
-* For toasts with long messages, consider adjusting the `duration` property to allow users enough time to read the content of the toast.
+* 長いメッセージのトーストの場合は、`duration`プロパティを調整して、ユーザーがトーストの内容を読むのに十分な時間を確保することを検討してください。
 
 
 
-## Usage
+## 使い方
 
 <Tabs groupId="framework" defaultValue="angular" values={[{ value: 'angular', label: 'Angular' }, { value: 'javascript', label: 'Javascript' }, { value: 'react', label: 'React' }, { value: 'stencil', label: 'Stencil' }, { value: 'vue', label: 'Vue' }]}>
 

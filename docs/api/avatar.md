@@ -41,7 +41,7 @@ Avatarは、単独で使用することも、任意の要素の内部で使用�
 
 
 
-## Usage
+## 使い方
 
 <Tabs groupId="framework" defaultValue="angular" values={[{ value: 'angular', label: 'Angular' }, { value: 'javascript', label: 'Javascript' }, { value: 'react', label: 'React' }, { value: 'stencil', label: 'Stencil' }, { value: 'vue', label: 'Vue' }]}>
 

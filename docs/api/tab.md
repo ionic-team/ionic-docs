@@ -32,14 +32,14 @@ import APITOCInline from '@components/page/api/APITOCInline';
 
 
 
-The tab component is a child component of [tabs](tabs.md). Each tab can contain a top level navigation stack for an app or a single view. An app can have many tabs, all with their own independent navigation.
+タブコンポーネントは、[tabs](tabs.md) の子コンポーネントです。各タブには、アプリまたは単一のビューのトップレベルのナビゲーション スタックを含めることができます。アプリには多くのタブがあり、それぞれが独立したナビゲーションを持つことができます。
 
 :::note
- Note: This component should only be used with vanilla or Stencil JavaScript projects. For Angular, React, and Vue apps you do not need to use `ion-tab` to declare your tab components.
+ Note: このコンポーネントは、バニラまたはステンシルJavaScriptプロジェクトでのみ使用する必要があります。Angular、React、Vue のアプリでは、タブコンポーネントを宣言するために `ion-tab` を使用する必要はありません。
 :::
 
 
-See the [tabs documentation](tabs.md) for more details on configuring tabs.
+詳しい設定方法は [tabs documentation](tabs.md) をご覧ください。
 
 
 

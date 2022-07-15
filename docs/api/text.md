@@ -39,7 +39,7 @@ textコンポーネントは、任意の要素のテキストカラーのスタ�
 
 
 
-## Usage
+## 使い方
 
 ```html
 <ion-text color="secondary">

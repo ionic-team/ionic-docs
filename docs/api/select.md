@@ -64,7 +64,7 @@ import MulipleSelectionExample from '@site/static/usage/select/basic/multiple-se
 
 ## Responding to Interaction
 
-The main ways of handling user interaction with the select are the `ionChange`, `ionDismiss`, and `ionCancel` events. See [Events](#events) for more details on these and other events that select fires.
+select とユーザーのインタラクションを処理する主な方法は、 `ionChange` イベント、 `ionDismiss` イベント、 `ionCancel` イベントです。これらのイベントと select が発生するその他のイベントの詳細については、[イベント](#events) を参照してください。
 
 import RespondingToInteractionExample from '@site/static/usage/select/basic/responding-to-interaction/index.md';
 
@@ -100,11 +100,11 @@ import ButtonTextExample from '@site/static/usage/select/customization/button-te
 
 ## インターフェイスオプション
 
-Since select uses the alert, action sheet and popover interfaces, options can be passed to these components through the `interfaceOptions` property. This can be used to pass a custom header, subheader, css class, and more.
+select は alert、action sheet、popover インターフェースを使用するので、`interfaceOptions` プロパティを通して、これらのコンポーネントにオプションを渡すことができます。これは、カスタムヘッダー、サブヘッダー、CSS クラスなどを渡すために使用できます。
 
-See the [ion-alert docs](alert.md), [ion-action-sheet docs](action-sheet.md), and [ion-popover docs](popover.md) for the properties that each interface accepts.
+各インターフェースが受け付けるプロパティは、[ion-alert docs](alert.md), [ion-action-sheet docs](action-sheet.md), [ion-popover docs](popover.md) を参照してください。
 
-Note: `interfaceOptions` will not override `inputs` or `buttons` with the `alert` interface.
+Note: `alert` インターフェースでは、 `interfaceOptions` は `inputs` や `buttons` をオーバーライドしません。
 
 import InterfaceOptionsExample from '@site/static/usage/select/customization/interface-options/index.md';
 
@@ -112,27 +112,27 @@ import InterfaceOptionsExample from '@site/static/usage/select/customization/int
 
 ## カスタマイズ
 
-There are two units that make up the Select component and each need to be styled separately. The `ion-select` element is represented on the view by the selected value(s), or placeholder if there is none, and dropdown icon. The interface, which is defined in the [Interfaces](#interfaces) section above, is the dialog that opens when clicking on the `ion-select`. The interface contains all of the options defined by adding `ion-select-option` elements. The following sections will go over the differences between styling these.
+Selectコンポーネントを構成する2つのユニットがあり、それぞれを別々にスタイルする必要があります。 `ion-select`要素は、ビュー上で選択された値（複数可）、または何もない場合はプレースホルダー、およびドロップダウンのアイコンによって表現されます。インターフェースは、上記の [インターフェース](#interfaces) セクションで定義されており、 `ion-select` をクリックすると開かれるダイアログです。インターフェースには、 `ion-select-option` 要素を追加することで定義されるすべてのオプションが含まれています。次のセクションでは、これらのスタイリングの違いについて説明します。
 
-### Styling Select Element
+### Select 要素のスタイリング
 
-As mentioned, the `ion-select` element consists only of the value(s), or placeholder, and icon that is displayed on the view. To customize this, style using a combination of CSS and any of the [CSS custom properties](#css-custom-properties).
+前述の通り、`ion-select` 要素は、ビューに表示される値 (またはプレースホルダ) とアイコンのみで構成されています。これをカスタマイズするには、CSSと[CSSカスタムプロパティ](#css-custom-properties)を組み合わせてスタイルを設定します。
 
-Alternatively, depending on the [browser support](https://caniuse.com/#feat=mdn-css_selectors_part) needed, CSS shadow parts can be used to style the select. Notice that by using `::part`, any CSS property on the element can be targeted.
+また、必要な [ブラウザサポート](https://caniuse.com/#feat=mdn-css_selectors_part) に応じて、CSSのシャドウパーツを使用してセレクトのスタイルを設定することができます。part` を使用することで、要素上の任意のCSSプロパティをターゲットにすることができることに注意してください。
 
 import StylingSelectExample from '@site/static/usage/select/customization/styling-select/index.md';
 
 <StylingSelectExample />
 
-### Styling Select Interface
+### Select インターフェイスのスタイリング
 
-Customizing the interface dialog should be done by following the Customization section in that interface's documentation:
+インターフェイスのダイアログのカスタマイズは、そのインターフェイスのドキュメントのカスタマイズのセクションにしたがって行ってください。
 
-- [Alert Customization](alert.md#customization)
-- [Action Sheet Customization](action-sheet.md#customization)
-- [Popover Customization](popover.md#customization)
+- [アラートのカスタマイズ](alert.md#customization)
+- [アクションシートのカスタマイズ](action-sheet.md#customization)
+- [ポップオーバーのカスタマイズ](popover.md#customization)
 
-However, the Select Option does set a class for easier styling and allows for the ability to pass a class to the overlay option, see the [Select Options documentation](select-option.md) for usage examples of customizing options.
+ただし、Selectオプションでは、スタイリングを容易にするためにクラスを設定し、オーバーレイオプションにクラスを渡す機能があります。オプションのカスタマイズの使用例については、[Selectオプションのドキュメント](select-option.md)を参照してください。
 
 ## Interfaces
 
@@ -146,7 +146,7 @@ interface SelectChangeEventDetail<T = any> {
 
 ### SelectCustomEvent
 
-While not required, this interface can be used in place of the `CustomEvent` interface for stronger typing with Ionic events emitted from this component.
+必須ではありませんが、このコンポーネントから発行される Ionic イベントでより強く型付けを行うために、`CustomEvent` インターフェースの代わりにこのインターフェースを使用することが可能です。
 
 ```typescript
 interface SelectCustomEvent<T = any> extends CustomEvent {

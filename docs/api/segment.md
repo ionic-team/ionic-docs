@@ -38,15 +38,15 @@ Segmentsは、関連するボタンのグループを水平方向の行に表示
 
 これらの機能は、1つを選択すると他のすべてが選択解除されるTabsと似ています。Segmentsは、コンテンツ内の異なるビューを切り替える場合に便利です。クリックしてページ間の遷移をコントロールする場合は、Segmentsの代わりにTabsを使用してください。
 
-## Scrollable Segments
+## スクロール可能なセグメント
 
-Segments are not scrollable by default. Each segment button has a fixed width, and the width is determined by dividing the number of segment buttons by the screen width. This ensures that each segment button can be displayed on the screen without having to scroll. As a result, some segment buttons with longer labels may get cut off. To avoid this we recommend either using a shorter label or switching to a scrollable segment by setting the `scrollable` property to `true`. This will cause the segment to scroll horizontally, but will allow each segment button to have a variable width.
+デフォルトでは、セグメントはスクロールできません。各セグメントボタンの幅は固定で、セグメントボタンの数を画面幅で割って幅を決定します。これにより、各セグメントボタンがスクロールすることなく画面に表示されることが保証されます。そのため、ラベルが長いセグメントボタンは、一部が切れてしまうことがあります。これを避けるために、短いラベルを使用するか、`scrollable` プロパティを `true` に設定してスクロール可能なセグメントに変更することをお勧めします。これはセグメントを水平方向にスクロールさせますが、各セグメントボタンの幅を変更することができます。
 
-## Accessibility
+## アクセシビリティ
 
-### Keyboard Navigation
+### キーボードナビゲーション
 
-The component has full keyboard support for navigating between and selecting `ion-segment-button` elements. By default, keyboard navigation will only focus `ion-segment-button` elements, but you can use the `selectOnFocus` property to ensure that they get selected on focus as well. The following table details what each key does:
+このコンポーネントは、`ion-segment-button`要素間のナビゲーションと選択について、フルキーボードサポートを備えています。デフォルトでは、キーボードナビゲーションは `ion-segment-button` 要素にのみフォーカスしますが、`selectOnFocus` プロパティを使用すると、フォーカスされた要素も確実に選択されるようになります。次の表は、それぞれのキーが何をするのかの詳細です。
 
 | Key                | Function                                                       |
 | ------------------ | -------------------------------------------------------------- |
@@ -68,7 +68,7 @@ interface SegmentChangeEventDetail {
 
 ### SegmentCustomEvent
 
-While not required, this interface can be used in place of the `CustomEvent` interface for stronger typing with Ionic events emitted from this component.
+必須ではありませんが、このコンポーネントから発行される Ionic イベントでより強く型付けを行うために、`CustomEvent` インターフェースの代わりにこのインターフェースを使用することが可能です。
 
 ```typescript
 interface SegmentCustomEvent extends CustomEvent {
@@ -79,7 +79,7 @@ interface SegmentCustomEvent extends CustomEvent {
 
 
 
-## Usage
+## 使い方
 
 <Tabs groupId="framework" defaultValue="angular" values={[{ value: 'angular', label: 'Angular' }, { value: 'javascript', label: 'Javascript' }, { value: 'react', label: 'React' }, { value: 'stencil', label: 'Stencil' }, { value: 'vue', label: 'Vue' }]}>
 

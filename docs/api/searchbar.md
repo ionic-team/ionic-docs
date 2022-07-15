@@ -38,15 +38,15 @@ Searchbarは、collection内の検索に使用できるテキストフィール�
 
 Listを検索するInputの代わりに、Searchbarを使用する必要があります。Searchbarのテキストフィールドに入力すると、クリアボタンが表示されます。クリアボタンをクリックすると、テキストフィールドが消去され、入力はフォーカスされたままになります。キャンセルボタンを有効にすると、入力がクリアされ、クリック時にフォーカスが失われます。
 
-## Keyboard Display
+## キーボード表示
 
 ### Android
 
-By default, tapping the input will cause the keyboard to appear with a magnifying glass icon on the submit button. You can optionally set the `inputmode` property to `"search"`, which will change the icon from a magnifying glass to a carriage return.
+デフォルトでは、入力をタップするとキーボードが表示され、サブミットボタンに虫眼鏡のアイコンが表示されます。オプションで `inputmode` プロパティを `"search"` に設定すると、アイコンが虫眼鏡からarriage returnに変更されます。
 
 ### iOS
 
-By default, tapping the input will cause the keyboard to appear with the text "return" on a gray submit button. You can optionally set the `inputmode` property to `"search"`, which will change the text from "return" to "go", and change the button color from gray to blue. Alternatively, you can wrap the `ion-searchbar` in a `form` element with an `action` property. This will cause the keyboard to appear with a blue submit button that says "search".
+デフォルトでは、入力をタップするとキーボードが表示され、グレーのSubmitボタンに「return」のテキストが表示されます。オプションで `inputmode` プロパティを `"search"` に設定すると、テキストが "return" から "go" に変わり、ボタンの色もグレーから青に変わります。また、`ion-searchbar` を `form` 要素でラップして、 `action` プロパティを設定することもできます。これにより、キーボードが表示され、"search "という青いSubmitボタンが表示されるようになります。
 
 ## Interfaces
 
@@ -60,7 +60,7 @@ interface SearchbarChangeEventDetail {
 
 ### SearchbarCustomEvent
 
-While not required, this interface can be used in place of the `CustomEvent` interface for stronger typing with Ionic events emitted from this component.
+必須ではありませんが、このコンポーネントから発行される Ionic イベントでより強く型付けを行うために、`CustomEvent` インターフェースの代わりにこのインターフェースを使用することが可能です。
 
 ```typescript
 interface SearchbarCustomEvent extends CustomEvent {
@@ -71,7 +71,7 @@ interface SearchbarCustomEvent extends CustomEvent {
 
 
 
-## Usage
+## 使い方
 
 <Tabs groupId="framework" defaultValue="angular" values={[{ value: 'angular', label: 'Angular' }, { value: 'javascript', label: 'Javascript' }, { value: 'react', label: 'React' }, { value: 'stencil', label: 'Stencil' }, { value: 'vue', label: 'Vue' }]}>
 

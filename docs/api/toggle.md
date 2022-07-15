@@ -38,9 +38,9 @@ import APITOCInline from '@components/page/api/APITOCInline';
 
 ## カスタマイズ
 
-### Customizing Background
+### 背景のカスタマイズ
 
-The background of the toggle track and handle can be customized using CSS variables. There are also variables for setting the background differently when the toggle is checked.
+Toggleトラックとハンドルの背景は、CSS変数を使ってカスタマイズすることができます。また、Toggleがチェックされたときに背景を異なるように設定するための変数もあります。
 
 ```css
 ion-toggle {
@@ -52,9 +52,9 @@ ion-toggle {
 }
 ```
 
-Because these variables set the `background` property, which is a shorthand, it can accept any value that the [background property](https://developer.mozilla.org/en-US/docs/Web/CSS/background) accepts.
+これらの変数は `background` プロパティを設定しますが、これは省略形なので、 [background property](https://developer.mozilla.org/en-US/docs/Web/CSS/background) が受け入れるどんな値でも受け入れることができます。
 
-A more complex case may involve adding an image to the handle background.
+より複雑なケースでは、ハンドルの背景に画像を追加することもできます。
 
 ```css
 ion-toggle {
@@ -62,7 +62,7 @@ ion-toggle {
 }
 ```
 
-Taking it a step further, we could use the `::before` or `::after` pseudo-elements to position text on top of the background.
+さらに一歩進んで、`::before` や `::after` という擬似要素を使って、テキストを背景の上に配置することもできます。
 
 ```css
 ion-toggle::before {
@@ -81,9 +81,9 @@ ion-toggle::before {
 ```
 
 
-### Customizing Width
+### 幅のカスタマイズ
 
-Adjusting the width of the toggle **smaller** will result in a narrower track, with the handle remaining the default width. If desired, set `--handle-width` to make the handle narrower.
+トグルの幅を**小さく**すると、トラックの幅が狭くなり、ハンドルはデフォルトの幅のままになります。必要であれば、`--handle-width`を設定すると、ハンドルがより狭くなります。
 
 ```css
 ion-toggle {
@@ -91,7 +91,7 @@ ion-toggle {
 }
 ```
 
-Adjusting the width of the toggle **larger** will result in a wider track, with the handle remaining the default width. If desired, set `--handle-width` to make the handle wider.
+Toggleの幅を**大きく**調整すると、ハンドルはデフォルトの幅のままで、トラックの幅が広くなります。必要であれば、`--handle-width`を設定して、ハンドルをより広くすることができます。
 
 ```css
 ion-toggle {
@@ -99,9 +99,9 @@ ion-toggle {
 }
 ```
 
-### Customizing Height
+### 高さのカスタマイズ
 
-Adjusting the height of the toggle **smaller** than the default will result in the handle height auto-sizing itself to the track. In `ios` the handle is shorter than the track (`100% - 4px`) and in `md` the handle is taller than the track (`100% + 6px`).
+Toggleの高さをデフォルトより**小さく**調整すると、ハンドルの高さがトラックに合わせて自動的にサイズ調整されます。 `ios` では、ハンドルはトラックより短く (`100% - 4px`) 、`md` では、ハンドルはトラックより高く (`100% + 6px`) なります。
 
 ```css
 ion-toggle {
@@ -110,11 +110,11 @@ ion-toggle {
 ```
 
 :::note
- Note: this does not affect the handle width, width should be set using `--handle-width`.
+ Note: これはハンドルの幅には影響しません。幅は `--handle-width` を使用して設定する必要があります。
 :::
 
 
-Adjusting the height of the toggle **larger** will keep the handle in the center at the default height. This can be modified by setting `--handle-height` which can be set to any amount but will not exceed the `--handle-max-height`.
+Toggleの高さを**大きく**すると、中央のハンドルはデフォルトの高さに保たれます。これは `--handle-height` を設定することで変更することができます。これは任意の量を設定することができますが、 `--handle-max-height` を超えることはありません。
 
 ```css
 ion-toggle {
@@ -123,15 +123,15 @@ ion-toggle {
 ```
 
 :::note
- Note: this does not affect the handle width, width should be set using `--handle-width`.
+ Note: これはハンドルの幅には影響しません。幅は `--handle-width` を使用して設定する必要があります。
 :::
 
 
-### Customizing Spacing
+### スペーシングのカスタマイズ
 
-The spacing refers to the horizontal gap between the handle and the track. By default, the handle has `2px` of spacing around it in `ios` **only**. In `md` mode there is no default spacing.
+スペーシングとは、ハンドルとトラックの間の水平方向の隙間のことです。デフォルトでは、`ios` **のみ**でハンドルの周囲に `2px` のスペーシングがあります。md` モードでは、デフォルトのスペーシングはありません。
 
-To remove the **horizontal** spacing, set `--handle-spacing` to `0px`.
+水平方向の**間隔をなくすには、 `--handle-spacing` を `0px` に設定します。
 
 ```css
 ion-toggle {
@@ -139,7 +139,7 @@ ion-toggle {
 }
 ```
 
-Due to the handle having a fixed height, to remove the spacing on the top and bottom, set the height to 100%.
+ハンドルの高さが固定されているため、上下の間隔をなくすには、高さを100%に設定します。
 
 ```css
 ion-toggle {
@@ -149,9 +149,9 @@ ion-toggle {
 ```
 
 
-### Customizing Border Radius
+### Border Radiusのカスタマイズ
 
-The `--handle-border-radius` can be used to change the `border-radius` on the handle.
+ハンドルのBorder Radius半径を変更するには、`--handle-border-radius` を使用します。
 
 ```css
 ion-toggle {
@@ -159,7 +159,7 @@ ion-toggle {
 }
 ```
 
-To target the `border-radius` only when the toggle is checked, target `.toggle-checked`:
+Toggleがチェックされたときだけ `border-radius` をターゲットにするには、`.toggle-checked` をターゲットにします。
 
 ```css
 ion-toggle.toggle-checked {
@@ -168,9 +168,9 @@ ion-toggle.toggle-checked {
 ```
 
 
-### Customizing Box Shadow
+### Box Shadowのカスタマイズ
 
-The `--handle-box-shadow` can be used to change the `box-shadow` on the handle.
+ハンドルの `box-shadow` を変更するには、`--handle-box-shadow` を使用することができます。
 
 ```css
 ion-toggle {
@@ -178,7 +178,7 @@ ion-toggle {
 }
 ```
 
-To target the box shadow only when the toggle is checked, target `.toggle-checked`:
+Toggleがチェックされたときだけボックスシャドウをターゲットにするには、`.toggle-checked`をターゲットにします。
 
 ```css
 ion-toggle.toggle-checked {
@@ -186,12 +186,12 @@ ion-toggle.toggle-checked {
 }
 ```
 
-See the section on [customizing overflow](#customizing-overflow) to allow the `box-shadow` to overflow the toggle container.
+box-shadow` が Toggle コンテナをオーバーフローするようにするには、[customizing overflow](#customizing-overflow) のセクションを参照してください。
 
 
-### Customizing Overflow
+### Overflowのカスタマイズ
 
-Setting `overflow` on the toggle will be inherited by the toggle handle. By default, overflow is set to `hidden` in `ios` only. The `box-shadow` will still appear cut off due to the `contain` css property. Set `contain` to `none` in order to overflow the toggle container.
+Toggleで `overflow` を設定すると、Toggleハンドルに継承されます。デフォルトでは、オーバーフローは `ios` でのみ `hidden` に設定されています。 `box-shadow` は `contain` css プロパティによって切り取られたまま表示されます。toggleコンテナをオーバーフローさせるには、 `contain` を `none` に設定します。
 
 ```css
 ion-toggle {
@@ -216,7 +216,7 @@ interface ToggleChangeEventDetail<T = any> {
 
 ### ToggleCustomEvent
 
-While not required, this interface can be used in place of the `CustomEvent` interface for stronger typing with Ionic events emitted from this component.
+必須ではありませんが、このコンポーネントから発行される Ionic イベントでより強く型付けを行うために、`CustomEvent` インターフェースの代わりにこのインターフェースを使用することが可能です。
 
 ```typescript
 interface ToggleCustomEvent<T = any> extends CustomEvent {
@@ -228,7 +228,7 @@ interface ToggleCustomEvent<T = any> extends CustomEvent {
 
 
 
-## Usage
+## 使い方
 
 <Tabs groupId="framework" defaultValue="angular" values={[{ value: 'angular', label: 'Angular' }, { value: 'javascript', label: 'Javascript' }, { value: 'react', label: 'React' }, { value: 'stencil', label: 'Stencil' }, { value: 'vue', label: 'Vue' }]}>
 

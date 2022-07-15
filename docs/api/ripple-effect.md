@@ -34,13 +34,13 @@ import APITOCInline from '@components/page/api/APITOCInline';
 
 ripple effectコンポーネントは、 [Material Design ink ripple interaction effect](https://material.io/develop/web/components/ripples/) を追加します。このコンポーネントは `<ion-app>` 内でのみ利用することができ、どのコンポーネントにも追加できます。
 
-It's important to note that the parent should have [relative positioning](https://developer.mozilla.org/en-US/docs/Web/CSS/position) because the ripple effect is absolutely positioned and will cover the closest parent with relative positioning. The parent element should also be given the `ion-activatable` class, which tells the ripple effect that the element is clickable.
+重要なのは、親要素は [相対位置](https://developer.mozilla.org/en-US/docs/Web/CSS/position) であることです。なぜなら、波及効果は絶対位置で、相対位置で最も近い親要素をカバーすることになるからです。親要素には `ion-activatable` クラスも指定します。これは波及効果に、その要素がクリック可能であることを伝えるものです。
 
-The default type, `"bounded"`, will expand the ripple effect from the click position outwards. To add a ripple effect that always starts in the center of the element and expands in a circle, add an `"unbounded"` type. It's recommended to add `overflow: hidden` to the parent element to avoid the ripple overflowing its container, especially with an unbounded ripple.
+デフォルトのタイプである `"bounded"` は、クリック位置から外側に波紋を広げます。常に要素の中心から始まり、円形に広がる波紋効果を追加するには、 `"unbounded"` タイプを追加します。特にunbounded rippleでは、波紋がコンテナからはみ出さないように、親要素に `overflow: hidden` を追加することが推奨されます。
 
 
 
-## Usage
+## 使い方
 
 <Tabs groupId="framework" defaultValue="angular" values={[{ value: 'angular', label: 'Angular' }, { value: 'javascript', label: 'Javascript' }, { value: 'react', label: 'React' }, { value: 'stencil', label: 'Stencil' }, { value: 'vue', label: 'Vue' }]}>
 

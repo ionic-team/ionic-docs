@@ -34,23 +34,23 @@ import APITOCInline from '@components/page/api/APITOCInline';
 
 
 
-Progress bars inform users about the status of ongoing processes, such as loading an app, submitting a form, or saving updates. There are two types of progress bars: `determinate` and `indeterminate`.
+プログレスバーは、アプリのロード、フォームの送信、更新の保存など、進行中の処理の状態をユーザーに知らせるものです。プログレスバーには2つのタイプがあります。プログレスバーには、`determinate`と`indeterminate`の2種類があります。
 
-## Progress Type
+## 進捗のタイプ
 
 ### Determinate
 
-Determinate is the default type. It should be used when the percentage of an operation is known. The progress is represented by setting the `value` property. This can be used to show the progress increasing from 0 to 100% of the track.
+Determinateはデフォルトのタイプです。操作のパーセンテージがわかっている場合に使用されるべきです。進行状況は `value` プロパティを設定することで表現されます。これは、進捗が0から100%まで増加するように表示するために使用できます。
 
-If the `buffer` property is set, a buffer stream will show with animated circles to indicate activity. The value of the `buffer` property will also be represented by how much visible track there is. If the value of `buffer` is less than the `value` property, there will be no visible track. If `buffer` is equal to `1` then the buffer stream will be hidden.
+`buffer` プロパティが設定されている場合、バッファストリームがアニメーションの円と共に表示され、アクティビティを示します。また、`buffer`プロパティの値は、目に見えるトラックの量によって表されます。もし、`buffer`の値が `value` プロパティよりも小さい場合、可視トラックはありません。もし `buffer` が `1` と等しい場合は、バッファストリームは隠されます。
 
 ### Indeterminate
 
-The indeterminate type should be used when it is unknown how long the process will take. The progress bar is not tied to the `value`, instead it continually slides along the track until the process is complete.
+Indeterminateタイプは、処理にかかる時間が不明な場合に使用します。プログレスバーは `value` と連動しておらず、処理が完了するまでトラックに沿ってスライドしつづけます。
 
 
 
-## Usage
+## 使い方
 
 <Tabs groupId="framework" defaultValue="angular" values={[{ value: 'angular', label: 'Angular' }, { value: 'javascript', label: 'Javascript' }, { value: 'react', label: 'React' }, { value: 'stencil', label: 'Stencil' }, { value: 'vue', label: 'Vue' }]}>
 

@@ -43,7 +43,7 @@ Contentは、他の多くのIonicコンポーネントと同様に、 [CSS Utili
 
 ## Fixed Content
 
-In order to place elements outside of the scrollable area, `slot="fixed"` can be added to the element. This will absolutely position the element placing it in the top left. In order to place the element in a different position, style it using [top, right, bottom, and left](https://developer.mozilla.org/en-US/docs/Web/CSS/position).
+スクロール可能な領域の外側に要素を配置するために、要素に `slot="fixed"` を追加することができます。これは、要素を左上に絶対配置します。それ以外の場所に配置するには、[top, right, bottom, left](https://developer.mozilla.org/en-US/docs/Web/CSS/position) でスタイルを指定します。
 
 ## Interfaces
 
@@ -66,7 +66,7 @@ interface ScrollDetail extends GestureDetail, ScrollBaseDetail {
 
 ### ScrollBaseCustomEvent 
 
-While not required, this interface can be used in place of the `CustomEvent` interface for stronger typing on the `ionScrollStart` and `ionScrollEnd` events.
+必須ではありませんが、`ionScrollStart` と `ionScrollEnd` イベントをより強く型付けするために、`CustomEvent` インターフェースの代わりにこのインターフェースを利用することが可能です。
 
 ```typescript
 interface ScrollBaseCustomEvent extends CustomEvent {
@@ -77,7 +77,7 @@ interface ScrollBaseCustomEvent extends CustomEvent {
 
 ### ScrollCustomEvent 
 
-While not required, this interface can be used in place of the `CustomEvent` interface for stronger typing on the `ionScroll` event.
+必須ではありませんが、`ionScroll` イベントをより強く型付けするために、`CustomEvent` インターフェースの代わりにこのインターフェースを利用することが可能です。
 
 ```typescript
 interface ScrollCustomEvent extends ScrollBaseCustomEvent {
@@ -88,7 +88,7 @@ interface ScrollCustomEvent extends ScrollBaseCustomEvent {
 
 
 
-## Usage
+## 使い方
 
 <Tabs groupId="framework" defaultValue="angular" values={[{ value: 'angular', label: 'Angular' }, { value: 'javascript', label: 'Javascript' }, { value: 'react', label: 'React' }, { value: 'stencil', label: 'Stencil' }, { value: 'vue', label: 'Vue' }]}>
 

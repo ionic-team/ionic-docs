@@ -22,17 +22,17 @@ import APITOCInline from '@components/page/api/APITOCInline';
 <EncapsulationPill type="shadow" />
 
 
-The Range slider lets users select from a range of values by moving the slider knob. By default one knob controls the value of the range. This behavior can be customized using [dual knobs](#dual-knobs).
+Rangeスライダは、スライダノブを動かして、ユーザーが値の範囲を選択できるようにするものです。デフォルトでは、1つのノブがレンジの値を制御します。この動作は [dual knobs](#dual-knobs) を使ってカスタマイズすることができます。
 
-By default the Range slider has a minimum value of `0` and a maximum value of `100`. This can be configured with the `min` and `max` properties.
+デフォルトでは、Rangeスライダーの最小値は`0`、最大値は`100`です。これは `min` と `max` プロパティで設定することができます。
 
 import Basic from '@site/static/usage/range/basic/index.md';
 
 <Basic />
 
-## Range Labels
+## Rangeラベル
 
-Labels and custom UI elements can be slotted on either side of the range by adding `slot="start"` or `slot="end"` to the element. The element can be any element, such as an `ion-label`, `ion-icon` or a `div`. If the directionality of the document is set to left to right, the contents slotted to the `start` position will display to the left of the range, where as contents slotted to the `end` position will display to the right of the range. In right to left (rtl) directionality, the contents slotted to the `start` position will display to the right of the range, where as contents slotted to the `end` position` will display to the left of the range.
+ラベルやカスタム UI 要素は、要素に `slot="start"` または `slot="end"` を追加することで、範囲のどちら側にもスロットさせることができます。この要素には、 `ion-label` や `ion-icon` 、 `div` など、任意の要素を指定することができます。ドキュメントの方向性が左から右に設定されている場合、 `start` 位置にスロットされたコンテンツは範囲の左側に表示され、 `end` 位置にスロットされたコンテンツは範囲の右側に表示されます。右から左へ(rtl)の方向性の場合、`start`の位置にスロットされたコンテンツは範囲の右側に表示され、`end`の位置にスロットされたコンテンツは範囲の左側に表示されます。
 
 import SlotsPlayground from '@site/static/usage/range/slots/index.md';
 
@@ -40,17 +40,17 @@ import SlotsPlayground from '@site/static/usage/range/slots/index.md';
 
 ## Dual Knobs
 
-Dual knobs introduce two knob controls that users can use to select a value at a lower and upper bounds. When selected, the Range will emit an `ionChange` event with a [RangeValue](#rangevalue), containing the upper and lower values selected.
+Dual knobs はユーザーが下限と上限の値を選択するために使用できる2つのknobsコントロールを導入しています。選択されると、Range は選択された上下限の値を含む [RangeValue](#rangevalue) を持つ `ionChange` イベントを発信します。
 
 import DualKnobs from '@site/static/usage/range/dual-knobs/index.md';
 
 <DualKnobs />
 
-## Pins
+## ピン
 
-The `pin` attribute will display the value of the Range above the knob when dragged. This allows users to select a specific value within the Range.
+`pin` 属性は、ドラッグしたときにノブの上にレンジの値を表示します。これにより、ユーザはRange内の特定の値を選択することができます。
 
-With the `pinFormatter` function, developers can customize the formatting of the range value to the user.
+`pinFormatter` 関数を使用すると、開発者はユーザーに対してレンジの値のフォーマットをカスタマイズすることができます。
 
 import Pins from '@site/static/usage/range/pins/index.md';
 
@@ -58,9 +58,9 @@ import Pins from '@site/static/usage/range/pins/index.md';
 
 ## Snapping & Ticks
 
-Ticks show indications for each available value on the Range. In order to use ticks, developers must set both `snaps` and the `ticks` property to `true`. 
+TicksはRange 上で利用可能な各値のインジケータを表示します。Ticksを使用するためには、開発者は `snaps` と `ticks` プロパティの両方を `true` に設定する必要があります。
 
-With snapping enabled, the Range knob will snap to the nearest available value as the knob is dragged and released. 
+snapsを有効にし、knobをドラッグして放すと、Range knobは最も近い利用可能な値にスナップします。
 
 import SnappingTicks from '@site/static/usage/range/snapping-ticks/index.md';
 
@@ -70,33 +70,33 @@ import SnappingTicks from '@site/static/usage/range/snapping-ticks/index.md';
 
 ### Using `ionChange`
 
-The `ionChange` event emits as the Range knob value changes. 
+`ionChange` イベントはRange knobの値の変更を監視します。
 
 import IonChangeEvent from '@site/static/usage/range/ion-change-event/index.md';
 
 <IonChangeEvent />
 
-### Using `ionKnobMoveStart` and `ionKnobMoveEnd`
+### `ionKnobMoveStart` と `ionKnobMoveEnd` を使う
 
-The `ionKnobMoveStart` event emits when the Range knob begins dragging, whether through mouse drag, touch gesture or keyboard interaction. Inversely, `ionKnobMoveEnd` emits when the Range knob is released. Both events emit with the `RangeValue` type and work in combination with the `dualKnobs` property.
+マウスドラッグ、タッチジェスチャー、キーボード操作のいずれであっても、Range knobのドラッグが開始されると `ionKnobMoveStart` イベントが発行されます。逆に、`ionKnobMoveEnd`はRange knobがリリースされたときに発生します。両イベントは `RangeValue` タイプで発生し、`dualKnobs` プロパティと組み合わせて動作します。
 
 import IonKnobMoveEvent from '@site/static/usage/range/ion-knob-move-event/index.md';
 
 <IonKnobMoveEvent />
 
-## Styling
+## スタイリング
 
-### Styling with CSS Variables
+### CSS変数を使ったスタイリング
 
-Range includes [CSS Variables](#css-custom-properties) to quickly theme and customize the appearance of the Range component to match your application's design.
+Rangeには、アプリケーションのデザインに合わせてRangeコンポーネントの外観を素早くテーマ化してカスタマイズするための[CSS Variables](#css-custom-properties)が含まれています。
 
 import CssVariablesPlayground from '@site/static/usage/range/css-variables/index.md';
 
 <CssVariablesPlayground />
 
-### Styling with CSS Shadow Parts
+### CSS Shadow Partsによるスタイリング
 
-Range includes [CSS Shadow Parts](#css-shadow-parts) to allow complete customization of specific element nodes within the Range component. CSS Shadow Parts offer the most customization capabilities and are the recommended approach when requiring advance styling with the Range component.
+Rangeには [CSS Shadow Parts](#css-shadow-parts) があり、Rangeコンポーネント内の特定の要素ノードを完全にカスタマイズすることができます。CSS Shadow Partsは最も多くのカスタマイズ機能を提供し、Rangeコンポーネントで高度なスタイリングが必要な場合に推奨されるアプローチです。
 
 import CssShadowPartsPlayground from '@site/static/usage/range/css-shadow-parts/index.md';
 
@@ -130,7 +130,7 @@ interface RangeKnobMoveEndEventDetail {
 
 ### RangeCustomEvent
 
-While not required, this interface can be used in place of the `CustomEvent` interface for stronger typing with Ionic events emitted from this component.
+必須ではありませんが、このコンポーネントから発行される Ionic イベントでより強く型付けを行うために、`CustomEvent` インターフェースの代わりにこのインターフェースを使用することが可能です。
 
 ```typescript
 interface RangeCustomEvent extends CustomEvent {

@@ -36,7 +36,7 @@ import APITOCInline from '@components/page/api/APITOCInline';
 
 Itemsは、text, icons, avatars, images, inputsや、その他のnative elements, custom elementsを含むことができる要素です。通常は、他のitemsと共にlistに配置されます。Itemsは、swiped, deleted, reordered, editedなどが可能です。
 
-## clickableなItems
+## クリック可能なItems
 
 `href` か `button` プロパティが設定されている場合、itemは "clickable（クリック可能）" と見なされます。clickableなitemsには、インタラクティブに操作できることを示す視覚的な違いがいくつかあります。たとえば、clickableなitemは、`md` modeではrippleエフェクトを持ち、`ios` modeではハイライト表示され、`ios` modeでの [detail arrow](/#detail-arrows) が表示されます。
 
@@ -61,7 +61,7 @@ See the [theming documentation](/docs/theming/css-variables) for more informatio
 
 ## Itemの配置
 
-Itemは、コンテンツを配置するために [slots](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/slot) を使用します。このロジックにより、エレメントのスタイル設定や配置を気にすることなく、単純でわかりやすいマークアップを使用して複雑なアイテムを作成できます。
+Itemは、コンテンツを配置するために [slots](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/slot) を使用します。このロジックにより、要素のスタイル設定や配置を気にすることなく、単純でわかりやすいマークアップを使用して複雑なアイテムを作成できます。
 
 次の表に、itemのslotsの詳細と、item内で要素がどこに配置されるかを示します:
 
@@ -87,14 +87,14 @@ Inputを含むItemは、フォーカスされたとき、有効なとき、無�
 
 ハイライトカラーはItemsの状態に基づいて変化しますが、デフォルトではすべてのstatesでIonicカラーが使用されます。フォーカスすると、Inputハイライトに `primary` colorが使用されます。Inputが有効な場合、`success` colorが使用され、無効なInputは`danger` colorが使用されます。ハイライトカラー変数については、後述の [CSS Custom Properties](#css-custom-properties) を参照してください。
 
-### Counter Formatter
+### カウンターフォーマッタ
 
-When using `counter`, the default behavior is to format the value that gets displayed as `itemLength / maxLength`. This behavior can be customized by passing in a formatter function to the `counterFormatter` property. See the [Usage](#usage) section for an example.
-
-
+`counter` を使用する場合、デフォルトの動作は `itemLength / maxLength` として値を表示します。この動作は、 `counterFormatter` プロパティにフォーマッタ関数を渡すことで、カスタマイズすることができます。例については、 [使い方](#usage) のセクションを参照してください。
 
 
-## Usage
+
+
+## 使い方
 
 <Tabs groupId="framework" defaultValue="angular" values={[{ value: 'angular', label: 'Angular' }, { value: 'javascript', label: 'Javascript' }, { value: 'react', label: 'React' }, { value: 'stencil', label: 'Stencil' }, { value: 'vue', label: 'Vue' }]}>
 

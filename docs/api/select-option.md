@@ -32,11 +32,11 @@ import APITOCInline from '@components/page/api/APITOCInline';
 
 
 
-Select Options are components that are child elements of a Select. Each option defined is passed and displayed in the Select dialog. For more information, see the [Select docs](select.md).
+Select Optionsは、Selectの子要素となるコンポーネントです。定義された各オプションは、Selectダイアログに渡され表示されます。詳しくは、[Select docs](select.md) を参照してください。
 
 ## カスタマイズ
 
-Each `ion-select-option` component that is added as a child of an `ion-select` is passed to the interface to display it in the dialog. It's important to note that the `ion-select-option` element itself is hidden from the view. This means that attempting to style it will not have any effect on the option in the dialog:
+`ion-select` の子要素として追加された各 `ion-select-option` コンポーネントは、ダイアログに表示するためにインターフェースに渡されます。ここで重要なことは、 `ion-select-option` 要素自体はビューから隠されているということです。つまり、この要素にスタイルを設定しても、ダイアログのオプションに影響を与えることはありません。
 
 ```css
 /* DOES NOT work */
@@ -45,7 +45,7 @@ ion-select-option {
 }
 ```
 
-Instead, each interface option has the class `.select-interface-option` which can be styled. Keep in mind that due to the overlays being scoped components the selector by itself will not work and a custom `cssClass` is recommended to be passed to the interface.
+その代わりに、各インターフェイスオプションは `.select-interface-option` というクラスを持っており、スタイルを設定することができます。オーバーレイはスコープされたコンポーネントであるため、セレクタはそれ自体では動作せず、カスタム `cssClass` をインターフェイスに渡すことが推奨されることを覚えておいてください。
 
 ```css
 /* This will NOT work on its own */
@@ -63,16 +63,16 @@ Instead, each interface option has the class `.select-interface-option` which ca
 ```
 
 :::note
- Note: Some interfaces require more in depth styling due to how the options are rendered. See usage for expanded information on this.
+ Note: いくつかのインターフェースは、オプションのレンダリング方法によって、より詳細なスタイリングを必要とします。これに関する詳細な情報については、使用法を参照してください。
 :::
 
 
-The options can be styled individually by adding your own class on the `ion-select-option` which gets passed to the interface option. See the [Usage](#usage) section below for examples of styling and setting individual classes on options.
+オプションは、インターフェイスオプションに渡される `ion-select-option` に独自のクラスを追加することで、個別にスタイルを設定することができます。オプションに独自のクラスを設定する例については、以下の [使い方](#usage)セクションを参照してください。
 
 
 
 
-## Usage
+## 使い方
 
 <Tabs groupId="framework" defaultValue="javascript" values={[{ value: 'javascript', label: 'Javascript' }, { value: 'react', label: 'React' }, { value: 'stencil', label: 'Stencil' }, { value: 'vue', label: 'Vue' }]}>
 

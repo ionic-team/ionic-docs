@@ -37,7 +37,7 @@ import APITOCInline from '@components/page/api/APITOCInline';
 Slidesコンポーネントは複数セクションのコンテナです。
 各セクション間をスワイプまたはドラッグできます。これには任意の数の[Slide](slide.md)コンポーネントが含まれます。
 
-This guide will cover migration from the deprecated `ion-slides` component to the framework-specific solutions that Swiper.js provides as well as the existing `ion-slides` API for developers who are still using that component.
+このガイドでは、廃止予定の `ion-slides` コンポーネントから、Swiper.jsが提供するフレームワーク固有のソリューションへの移行、および、まだそのコンポーネントを使用している開発者向けの既存の `ion-slides` API について説明します。
 
 Swiper.jsを採用しています:
 ハードウェアアクセラレートされたトランジションを備えた最新のモバイルタッチスライダとフレームワークです。
@@ -50,33 +50,33 @@ http://www.idangero.us/
 
 Licensed under MIT
 
-## Migration
+## 移行
 
-With the release of Ionic Framework v6, the Ionic Team has deprecated the `ion-slides` and `ion-slide` components in favor of using the official framework integrations provided by Swiper. Fear not! You will still be able to use slides components in your application. Additionally, because you are still using Swiper, the functionality of your slides component should remain exactly the same.
+Ionic Framework v6のリリースに伴い、Ionicチームは `ion-slides` と `ion-slide` コンポーネントを非推奨とし、Swiperが提供する公式フレームワーク統合を使用することを決定しました。心配はご無用です。Ionicチームは `ion-slides` と `ion-slide` コンポーネントを廃止しましたが、Swiperを使用しているため、slidesコンポーネントの機能は全く変わりません。
 
-### What is Swiper.js?
+### Swiper.jsとは？
 
-Swiper.js is the carousel/slider library that powers `ion-slides`. The library is bundled automatically with all versions of Ionic Framework. When Ionic Framework v4. was first released, Swiper did not have framework specific integrations of its library, so `ion-slides` was created as a way of bridging the gap between the core Swiper library and frameworks such as Angular, React, and Vue.
+Swiper.jsは `ion-slides` を駆動するカルーセル/スライダーライブラリです。このライブラリは、Ionic Frameworkのすべてのバージョンに自動的にバンドルされています。Ionic Framework v4.がリリースされた当初、Swiperにはフレームワーク固有のライブラリ統合機能がなかったため、SwiperのコアライブラリとAngular、React、Vueなどのフレームワークのギャップを埋める手段として `ion-slides` が作成されました。
 
-Since then, the Swiper team has released framework specific integrations of Swiper.js for Angular, React, Vue, and more!
+それ以来、Swiperチームは、Angular、React、Vueなどのフレームワークに特化したSwiper.jsの統合をリリースしています。
 
-### What are the benefits of this change?
+### この変更の利点は何ですか？
 
-There are several benefits for members of the Ionic Framework community. By using the official Swiper.js framework integrations:
+Ionic Frameworkコミュニティのメンバーにとって、いくつかの利点があります。公式のSwiper.jsフレームワーク統合を使用することで、。
 
-- Developers can now be in control of the exact version of Swiper.js they want to use. Previously, developers would need to rely on the Ionic Team to update the version internally and release a new version of Ionic Framework.
-- The Ionic Team can spend more time triaging and fixing other non-slides issues, speeding up our development process so we can make the framework work better for our community.
-- Developers should experience fewer bugs.
-- Application bundle sizes can shrink in some cases. By installing Swiper.js as a 3rd party dependency in your application, bundlers such as Webpack or Rollup should be able to treeshake your code better.
-- Developers have access to new features that they previously did not have when using `ion-slides`.
+- 開発者は、使用したいSwiper.jsのバージョンを正確にコントロールできるようになりました。これまで開発者は、Ionicチームが内部でバージョンを更新し、Ionic Frameworkの新バージョンをリリースすることに依存する必要がありました。
+- Ionicチームは、スライド以外の問題のトリアージと修正により多くの時間を費やし、開発プロセスをスピードアップして、コミュニティのためにフレームワークをより良く機能させることができます。
+- 開発者はより少ないバグを経験することができます。
+- アプリケーションのバンドルサイズを縮小できる場合があります。Swiper.jsをサードパーティの依存関係としてアプリケーションにインストールすることで、WebpackやRollupなどのバンドルは、コードをよりよくトレースすることができるようになるはずです。
+- 開発者は、`ion-slides`を使用する場合、以前はなかった新しい機能にアクセスすることができます。
 
-### How long do I have to migrate?
+### いつまでに移行しなければならないのですか？
 
-We plan to remove `ion-slides` and `ion-slide` in Ionic Framework v7. `ion-slides` and `ion-slide` will continue to be available for the entire Ionic Framework v6 lifecycle but will only receive critical bug fixes.
+Ionic Framework v7 で `ion-slides` と `ion-slide` を削除する予定です。 `ion-slides` と `ion-slide` は Ionic Framework v6 のライフサイクルを通して引き続き使用できますが、重要なバグ修正のみが行われます。
 
-### How do I migrate?
+### 移行方法は？
 
-Since the underlying technology that powers your slides is the same, the migration process is easy! Follow the guides below for your specific framework.
+スライドを動かす基本的な技術は同じなので、移行は簡単です。以下のガイドに従ってください。
 
 [Migration for Ionic Angular users](../angular/slides)
 
@@ -86,11 +86,11 @@ Since the underlying technology that powers your slides is the same, the migrati
 
 ------
 
-The following documentation applies to the `ion-slides` component.
+以上のドキュメントは `ion-slides` コンポーネントに適用されます。
 
-## Custom Animations
+## カスタムアニメーション
 
-By default, Ionic slides use the built-in `slide` animation effect. Custom animations can be provided via the `options` property. Examples of other animations can be found below.
+デフォルトでは、Ionicのスライドはビルトインの `slide` アニメーションエフェクトを使用します。カスタムのアニメーションは `options` プロパティで指定できます。その他のアニメーションの例は以下をご参照ください。
 
 
 ### Coverflow
@@ -504,7 +504,7 @@ const slideOpts = {
 
 
 
-## Usage
+## 使い方
 
 <Tabs groupId="framework" defaultValue="angular" values={[{ value: 'angular', label: 'Angular' }, { value: 'javascript', label: 'Javascript' }, { value: 'react', label: 'React' }, { value: 'stencil', label: 'Stencil' }, { value: 'vue', label: 'Vue' }]}>
 

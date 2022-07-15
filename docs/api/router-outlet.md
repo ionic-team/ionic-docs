@@ -29,9 +29,9 @@ import APITOCInline from '@components/page/api/APITOCInline';
 
 
 
-The router outlet behaves in a similar way to Angular's built-in router outlet component and Vue's router view component, but contains the logic for providing a stacked navigation, and animating views in and out.
+router outletはAngularの組み込みrouter outletコンポーネントやVueのルーター・ビューコンポーネントと同様の振る舞いをしますが、スタック式のナビゲーションを提供し、ビューをアニメーションで出し入れするためのロジックを含んでいます。
 
-Although router outlet has methods for navigating around, it's recommended to use the navigation methods in your framework's router.
+router outlet はナビゲーション用のメソッドを備えていますが、フレームワークのルーターにあるナビゲーションメソッドを使用することをお勧めします。
 
 ## ライフサイクルHook
 

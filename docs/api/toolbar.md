@@ -51,13 +51,13 @@ Toolbarに配置するボタンは`<ion-buttons>`要素の中に配置しなけ�
 
 ## Borders
 
-In `md` mode, the `<ion-header>` will receive a box-shadow on the bottom, and the `<ion-footer>` will receive a box-shadow on the top.  In `ios` mode, the `<ion-header>` will receive a border on the bottom, and the `<ion-footer>` will receive a border on the top.
+`md` モードでは、`<ion-header>` は下部にボックスシャドウを、`<ion-footer>` は上部にボックスシャドウを表示します。 `ios` モードでは、`<ion-header>` の下部にボーダーが、`<ion-footer>` の上部にボーダーが表示されます。
 
 
 
 
 
-## Usage
+## 使い方
 
 <Tabs groupId="framework" defaultValue="angular" values={[{ value: 'angular', label: 'Angular' }, { value: 'javascript', label: 'Javascript' }, { value: 'react', label: 'React' }, { value: 'stencil', label: 'Stencil' }, { value: 'vue', label: 'Vue' }]}>
 

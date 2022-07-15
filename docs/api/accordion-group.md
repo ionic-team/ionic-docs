@@ -45,7 +45,7 @@ interface AccordionGroupChangeEventDetail<T = any> {
 
 ### AccordionGroupCustomEvent
 
-必須ではありませんが、このコンポーネントから発行される Ionic イベントでより強い型付けを行うために、`CustomEvent` インターフェースの代わりにこのインターフェースを使用することが可能である。
+必須ではありませんが、このコンポーネントから発行される Ionic イベントでより強く型付けを行うために、`CustomEvent` インターフェースの代わりにこのインターフェースを使用することが可能です。
 
 ```typescript
 interface AccordionGroupCustomEvent<T = any> extends CustomEvent {

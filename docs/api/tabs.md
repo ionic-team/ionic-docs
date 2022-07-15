@@ -34,20 +34,20 @@ import APITOCInline from '@components/page/api/APITOCInline';
 
 
 
-Tabs are a top level navigation component to implement a tab-based navigation.
-The component is a container of individual [Tab](tab.md) components.
+Tabsは、タブベースのナビゲーションを実現するためのトップレベル・ナビゲーション・コンポーネントです。
+このコンポーネントは、個々の [Tab] (tab.md) コンポーネントのコンテナです。
 
-The `ion-tabs` component does not have any styling and works as a router outlet in order to handle navigation. It does not provide any UI feedback or mechanism to switch between tabs. In order to do so, an `ion-tab-bar` should be provided as a direct child of `ion-tabs`.
+`ion-tabs` コンポーネントはスタイルを持たず、ナビゲーションを処理するためのルータアウトレットとして動作します。また、UI フィードバックやタブを切り替えるための機構は提供しない。タブを切り替えるには、`ion-tabs` の直接の子として `ion-tab-bar` を用意しなければなりません。
 
-Both `ion-tabs` and `ion-tab-bar` can be used as standalone elements. They don’t depend on each other to work, but they are usually used together in order to implement a tab-based navigation that behaves like a native app.
+`ion-tabs` と `ion-tab-bar` はどちらもスタンドアロンな要素として利用することができます。これらは互いに依存せずに動作しますが、通常は、ネイティブアプリのように動作するタブベースのナビゲーションを実装するために一緒に使用します。
 
-The `ion-tab-bar` needs a slot defined in order to be projected to the right place in an `ion-tabs` component.
+`ion-tab-bar` は、`ion-tabs` コンポーネントの適切な場所に投影するために、スロットを定義する必要があります。
 
 ## Interfaces
 
 ### TabsCustomEvent
 
-While not required, this interface can be used in place of the `CustomEvent` interface for stronger typing with Ionic events emitted from this component.
+必須ではありませんが、このコンポーネントから発行される Ionic イベントでより強く型付けを行うために、`CustomEvent` インターフェースの代わりにこのインターフェースを使用することが可能です。
 
 ```typescript
 interface TabsCustomEvent extends CustomEvent {
@@ -59,7 +59,7 @@ interface TabsCustomEvent extends CustomEvent {
 
 
 
-## Usage
+## 使い方
 
 <Tabs groupId="framework" defaultValue="angular" values={[{ value: 'angular', label: 'Angular' }, { value: 'javascript', label: 'Javascript' }, { value: 'react', label: 'React' }, { value: 'stencil', label: 'Stencil' }, { value: 'vue', label: 'Vue' }]}>
 

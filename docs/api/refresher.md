@@ -44,23 +44,23 @@ Refresherも終了するべきです。
 
 ## Native Refreshers
 
-Both iOS and Android platforms provide refreshers that take advantage of properties exposed by their respective devices that give pull to refresh a fluid, native-like feel.
+iOS と Android の両プラットフォームは、それぞれのデバイスで公開されているプロパティを利用したリフレッシュ機能を提供しており、Pull によるリフレッシュがネイティブに近い流動的な感覚を与えます。
 
-Certain properties such as `pullMin` and `snapbackDuration` are not compatible because much of the native refreshers are scroll-based. See [Refresher Properties](#properties) for more information.
+pullMin` や `snapbackDuration` などの特定のプロパティは、ネイティブのリフレッシャーの多くがスクロールベースであるため、互換性がありません。詳しくは [Refresher Properties](#properties) を参照してください。
 
-### iOS Usage
+### iOS での使用法
 
-Using the iOS native `ion-refresher` requires setting the `pullingIcon` property on `ion-refresher-content` to the value of one of the available spinners. See the [Spinner Documentation](spinner.md#properties) for accepted values. The `pullingIcon` defaults to the `lines` spinner on iOS. The spinner tick marks will be progressively shown as the user pulls down on the page.
+iOS ネイティブの `ion-refresher` を使用するには、 `ion-refresher-content` の `pullingIcon` プロパティを、使用可能なスピナーのいずれかに設定する必要があります。利用可能な値については、[Spinner Documentation](spinner.md#properties) を参照してください。 `pullingIcon` のデフォルトは、iOS の `lines` スピナーです。ユーザーがページをプルダウンすると、スピナーの目盛りが徐々に表示されます。
 
-The iOS native `ion-refresher` relies on rubber band scrolling in order to work properly and is only compatible with iOS devices as a result. We provide a fallback refresher for apps running in iOS mode on devices that do not support rubber band scrolling.
+iOS ネイティブの `ion-refresher` は、正しく動作するためにラバーバンドスクロールに依存しており、その結果、iOS デバイスにのみ対応しています。ラバーバンドスクロールをサポートしないデバイスで iOS モードで動作するアプリのために、フォールバックリフレッシュを提供しています。
 
-### Android Usage
+### Android での使用方法
 
-Using the MD native `ion-refresher` requires setting the `pullingIcon` property on `ion-refresher-content` to the value of one of the available spinners. See the [ion-spinner Documentation](spinner.md#properties) for accepted values. `pullingIcon` defaults to the `circular` spinner on MD.
+MD ネイティブの `ion-refresher` を使用するには、 `ion-refresher-content` の `pullingIcon` プロパティに、使用可能なスピナーのいずれかの値を設定する必要があります。利用可能な値については、[ion-spinner Documentation](spinner.md#properties) を参照してください。 `pullingIcon` のデフォルトは、MDの `circular` スピナーです。
 
-### Virtual Scroll Usage
+### 仮想スクロールの使用方法
 
-Refresher requires a scroll container to function. When using a virtual scrolling solution, you will need to disable scrolling on the `ion-content` and indicate which element container is responsible for the scroll container with the `.ion-content-scroll-host` class target.
+Refresher が機能するためには、スクロールコンテナが必要です。仮想スクロールを使用する場合は、`ion-content` のスクロールを無効にし、`.ion-content-scroll-host` クラスターゲットで、どの要素コンテナがスクロールコンテナを担当するかを指定する必要があります。
 
 ```html
 <ion-content scroll-y="false">
@@ -85,7 +85,7 @@ interface RefresherEventDetail {
 
 ### RefresherCustomEvent
 
-While not required, this interface can be used in place of the `CustomEvent` interface for stronger typing with Ionic events emitted from this component.
+必須ではありませんが、このコンポーネントから発行される Ionic イベントでより強く型付けを行うために、`CustomEvent` インターフェースの代わりにこのインターフェースを使用することが可能です。
 
 ```typescript
 interface RefresherCustomEvent extends CustomEvent {
@@ -96,7 +96,7 @@ interface RefresherCustomEvent extends CustomEvent {
 
 
 
-## Usage
+## 使い方
 
 <Tabs groupId="framework" defaultValue="angular" values={[{ value: 'angular', label: 'Angular' }, { value: 'javascript', label: 'Javascript' }, { value: 'react', label: 'React' }, { value: 'stencil', label: 'Stencil' }, { value: 'vue', label: 'Vue' }]}>
 

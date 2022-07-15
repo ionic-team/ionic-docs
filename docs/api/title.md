@@ -36,7 +36,7 @@ import APITOCInline from '@components/page/api/APITOCInline';
 
 
 
-## Usage
+## 使い方
 
 <Tabs groupId="framework" defaultValue="angular" values={[{ value: 'angular', label: 'Angular' }, { value: 'javascript', label: 'Javascript' }, { value: 'react', label: 'React' }, { value: 'stencil', label: 'Stencil' }, { value: 'vue', label: 'Vue' }]}>
 
@@ -64,7 +64,7 @@ import APITOCInline from '@components/page/api/APITOCInline';
 
 ### Collapsible Large Titles
 
-Ionic provides a way to create the collapsible titles that exist on stock iOS apps. Getting this setup requires configuring your `ion-title`, `ion-header`, and (optionally) `ion-buttons` elements.
+Ionic では、iOS 標準のアプリに存在するCollapsible Large Titlesを作成する方法が用意されています。この設定を行うには、`ion-title`、`ion-header`、（オプションで）`ion-buttons` 要素を設定する必要があります。
 
 ```html
 <ion-header translucent="true">
@@ -88,7 +88,7 @@ Ionic provides a way to create the collapsible titles that exist on stock iOS ap
 </ion-content>
 ```
 
-In the example above, notice there are two `ion-header` elements. The first `ion-header` represents the "collapsed" state of your collapsible header, and the second `ion-header` represents the "expanded" state of your collapsible header. Notice that the second `ion-header` must have `collapse="condense"` and must exist within `ion-content`. Additionally, in order to get the large title styling, `ion-title` must have `size="large"`.
+上の例では、2つの `ion-header` 要素があることに注目してください。最初の `ion-header` は折りたたみ可能なヘッダの "折りたたまれた" 状態を表し、2番目の `ion-header` は折りたたみ可能なヘッダの "展開された" 状態を表します。2 番目の `ion-header` は `collapse="condense"` でなければならず、 `ion-content` 内に存在しなければならないことに注意してください。さらに、大きなタイトルのスタイルを取得するには、 `ion-title` は `size="large"` でなければなりません。
 
 ```html
 <ion-header translucent="true">
@@ -118,21 +118,21 @@ In the example above, notice there are two `ion-header` elements. The first `ion
 </ion-content>
 ```
 
-In this example, notice that we have added two sets of `ion-buttons` both with `collapse` set to `true`. When the secondary header collapses, the buttons in the secondary header will hide, and the buttons in the primary header will show. This is useful for ensuring that your header buttons always appear next to an `ion-title` element.
+この例では、2つの `ion-buttons` のセットを追加し、両方とも `collapse` を `true` に設定していることに注目してください。セカンダリヘッダーが折りたたまれると、セカンダリヘッダーのボタンは隠れ、プライマリヘッダーのボタンが表示されます。これは、ヘッダボタンが常に `ion-title` 要素の隣に表示されるようにするために便利です。
 
-`ion-buttons` elements that do not have `collapse` set will always be visible, regardless of collapsed state. When using the large title and `ion-buttons` elements inside of `ion-content`, the `ion-buttons` elements should always be placed in the `end` slot.
+また、 `collapse` が設定されていない `ion-buttons` 要素は、折りたたまれた状態に関わらず常に表示されます。ラージタイトルと `ion-buttons` 要素を `ion-content` の中で使用する場合、 `ion-buttons` 要素は常に `end` スロットに配置されるべきです。
 
-> When using collapsible large titles, it is required that `fullscreen` is set to `true` on `ion-content` and `translucent` is set to `true` on the main `ion-header`.
+> Collapsible Large Titlesを使用する場合、 `ion-content` では `fullscreen` を `true` に設定し、メインの `ion-header` では `translucent` を `true` に設定することが必要です。
 
-### Styling Collapsible Large Titles
+### Collapsible Large Titlesのスタイリング
 
-The collapsible large title should appear seamless in relation to the rest of your content. This means that the background color of the `ion-toolbar` that contains the collapsible large title should always match the background color of `ion-content`. 
+Collapsible Large Titlesは、他のコンテンツとの関係でシームレスに表示される必要があります。つまり、Collapsible Large Titlesを含む `ion-toolbar` の背景色は、常に `ion-content` の背景色と一致する必要があります。
 
-By default, the `ion-toolbar` that contains the standard title is hidden using `opacity: 0` and is progressively shown as you collapse the large title by scrolling. As a result, the background color that you see behind the standard title is actually the background color of `ion-content`.
+デフォルトでは、標準のタイトルを含む `ion-toolbar` は `opacity: 0` を使って非表示になっており、スクロールしてラージタイトルを折りたたむと徐々に表示されるようになっています。その結果、標準タイトルの後ろに見える背景色は、実際には `ion-content` の背景色となります。
 
-You can change the background color of the toolbar with the standard title by setting the `--background` CSS variable on `ion-toolbar`. This will give the effect of the header changing color as you collapse the large title.
+標準タイトルのあるツールバーの背景色は、 `ion-toolbar` に `--background` という CSS 変数を設定することで変更することができます。これにより、大きなタイトルを折りたたむと、ヘッダの色が変わるような効果が得られます。
 
-When styling the text color of the large title, you should target the large title globally as opposed to within the context of a particular page or tab, otherwise its styles will not be applied during the navigation animation.
+ラージタイトルのテキストカラーをスタイルする場合、特定のページやタブのコンテキスト内ではなく、グローバルにラージタイトルをターゲットにする必要があり、そうしないとナビゲーションアニメーションの間にそのスタイルが適用されません。
 
 ```css
 ion-title.title-large {
@@ -169,7 +169,7 @@ ion-title.title-large {
 
 ### Collapsible Large Titles
 
-Ionic provides a way to create the collapsible titles that exist on stock iOS apps. Getting this setup requires configuring your `ion-title`, `ion-header`, and (optionally) `ion-buttons` elements.
+Ionic では、iOS 標準のアプリに存在するCollapsible Large Titlesを作成する方法が用意されています。この設定を行うには、`ion-title`、`ion-header`、（オプションで）`ion-buttons` 要素を設定する必要があります。
 
 ```html
 <ion-header translucent="true">
@@ -193,7 +193,7 @@ Ionic provides a way to create the collapsible titles that exist on stock iOS ap
 </ion-content>
 ```
 
-In the example above, notice there are two `ion-header` elements. The first `ion-header` represents the "collapsed" state of your collapsible header, and the second `ion-header` represents the "expanded" state of your collapsible header. Notice that the second `ion-header` must have `collapse="condense"` and must exist within `ion-content`. Additionally, in order to get the large title styling, `ion-title` must have `size="large"`.
+上の例では、2つの `ion-header` 要素があることに注目してください。最初の `ion-header` は折りたたみ可能なヘッダの "折りたたまれた" 状態を表し、2番目の `ion-header` は折りたたみ可能なヘッダの "展開された" 状態を表します。2 番目の `ion-header` は `collapse="condense"` でなければならず、 `ion-content` 内に存在しなければならないことに注意してください。さらに、大きなタイトルのスタイルを取得するには、 `ion-title` は `size="large"` でなければなりません。
 
 ```html
 <ion-header translucent="true">
@@ -223,21 +223,21 @@ In the example above, notice there are two `ion-header` elements. The first `ion
 </ion-content>
 ```
 
-In this example, notice that we have added two sets of `ion-buttons` both with `collapse` set to `true`. When the secondary header collapses, the buttons in the secondary header will hide, and the buttons in the primary header will show. This is useful for ensuring that your header buttons always appear next to an `ion-title` element.
+この例では、2つの `ion-buttons` のセットを追加し、両方とも `collapse` を `true` に設定していることに注目してください。セカンダリヘッダーが折りたたまれると、セカンダリヘッダーのボタンは隠れ、プライマリヘッダーのボタンが表示されます。これは、ヘッダボタンが常に `ion-title` 要素の隣に表示されるようにするために便利です。
 
-`ion-buttons` elements that do not have `collapse` set will always be visible, regardless of collapsed state. When using the large title and `ion-buttons` elements inside of `ion-content`, the `ion-buttons` elements should always be placed in the `end` slot.
+また、 `collapse` が設定されていない `ion-buttons` 要素は、折りたたまれた状態に関わらず常に表示されます。ラージタイトルと `ion-buttons` 要素を `ion-content` の中で使用する場合、 `ion-buttons` 要素は常に `end` スロットに配置されるべきです。
 
-> When using collapsible large titles, it is required that `fullscreen` is set to `true` on `ion-content` and `translucent` is set to `true` on the main `ion-header`.
+> Collapsible Large Titlesを使用する場合、 `ion-content` では `fullscreen` を `true` に設定し、メインの `ion-header` では `translucent` を `true` に設定することが必要です。
 
-### Styling Collapsible Large Titles
+### Collapsible Large Titlesのスタイリング
 
-The collapsible large title should appear seamless in relation to the rest of your content. This means that the background color of the `ion-toolbar` that contains the collapsible large title should always match the background color of `ion-content`. 
+Collapsible Large Titlesは、他のコンテンツとの関係でシームレスに表示される必要があります。つまり、Collapsible Large Titlesを含む `ion-toolbar` の背景色は、常に `ion-content` の背景色と一致する必要があります。
 
-By default, the `ion-toolbar` that contains the standard title is hidden using `opacity: 0` and is progressively shown as you collapse the large title by scrolling. As a result, the background color that you see behind the standard title is actually the background color of `ion-content`.
+デフォルトでは、標準のタイトルを含む `ion-toolbar` は `opacity: 0` を使って非表示になっており、スクロールして大きなタイトルを折りたたむと、徐々に表示されます。その結果、標準タイトルの後ろに見える背景色は、実際には `ion-content` の背景色となります。
 
-You can change the background color of the toolbar with the standard title by setting the `--background` CSS variable on `ion-toolbar`. This will give the effect of the header changing color as you collapse the large title.
+標準タイトルのあるツールバーの背景色は、 `ion-toolbar` に `--background` という CSS 変数を設定することで変更できます。これにより、大きなタイトルを折りたたむと、ヘッダの色が変わるような効果が得られます。
 
-When styling the text color of the large title, you should target the large title globally as opposed to within the context of a particular page or tab, otherwise its styles will not be applied during the navigation animation.
+ラージタイトルのテキストカラーをスタイルする場合、特定のページやタブのコンテキスト内ではなく、グローバルにラージタイトルをターゲットにする必要があり、そうしないとナビゲーションアニメーションの間にそのスタイルが適用されません。
 
 ```css
 ion-title.title-large {
@@ -281,7 +281,7 @@ export const ToolbarExample: React.FC = () => (
 
 ### Collapsible Large Titles
 
-Ionic provides a way to create the collapsible titles that exist on stock iOS apps. Getting this setup requires configuring your `IonTitle`, `IonHeader`, and (optionally) `IonButtons` elements.
+Ionic では、純正 iOS アプリに存在するCollapsible Large Titlesを作成する方法が用意されています。この設定を行うには、`IonTitle`、`IonHeader`、（オプションで）`IonButtons` 要素を設定する必要があります。
 
 ```tsx
 import React from 'react';
@@ -318,7 +318,7 @@ export const LargeTitleExample: React.FC = () => (
 );
 ```
 
-In the example above, notice there are two `IonHeader` elements. The first `IonHeader` represents the "collapsed" state of your collapsible header, and the second `IonHeader` represents the "expanded" state of your collapsible header. Notice that the second `IonHeader` must have `collapse="condense"` and must exist within `IonContent`. Additionally, in order to get the large title styling, `IonTitle` must have `size="large"`.
+上の例では、2つの `IonHeader` 要素があることに注目してください。最初の `IonHeader` は折りたたみ可能なヘッダーの "折りたたまれた" 状態を表し、2番目の `IonHeader` は折りたたみ可能なヘッダーの "展開された" 状態を表します。2つ目の `IonHeader` は `collapse="condense"` でなければならず、 `IonContent` 内に存在しなければならないことに注意してください。さらに、大きなタイトルのスタイルを取得するには、`IonTitle` が `size="large"` である必要があります。
 
 ```tsx
 import React from 'react';
@@ -363,21 +363,21 @@ export const LargeTitleExample: React.FC = () => (
 );
 ```
 
-In this example, notice that we have added two sets of `IonButtons` both with `collapse` set to `true`. When the secondary header collapses, the buttons in the secondary header will hide, and the buttons in the primary header will show. This is useful for ensuring that your header buttons always appear next to an `IonTitle` element.
+この例では、2つの `IonButtons` のセットを追加し、両方とも `collapse` を `true` に設定していることに注目してください。セカンダリヘッダーが折りたたまれると、セカンダリヘッダーのボタンは隠れ、プライマリヘッダーのボタンが表示されます。これは、ヘッダーボタンが常に `IonTitle` 要素の隣に表示されるようにするために便利です。
 
-`IonButtons` elements that do not have `collapse` set will always be visible, regardless of collapsed state. When using the large title and `ion-buttons` elements inside of `ion-content`, the `ion-buttons` elements should always be placed in the `end` slot.
+また、 `collapse` が設定されていない `IonButtons` 要素は、折りたたまれた状態に関わらず常に表示されます。ラージタイトルと `ion-buttons` 要素を `ion-content` 内で使用する場合、 `ion-buttons` 要素は常に `end` スロットに配置されるべきです。
 
-> When using collapsible large titles, it is required that `fullscreen` is set to `true` on `IonContent` and `translucent="true"` be set on the main `IonHeader`.
+> Collapsible Large Titlesを使用する場合、`IonContent` では `fullscreen` を `true` に設定し、メインの `IonHeader` では `translucent="true"` を設定する必要があります。
 
-### Styling Collapsible Large Titles
+### Collapsible Large Titlesのスタイリング
 
-The collapsible large title should appear seamless in relation to the rest of your content. This means that the background color of the `IonToolbar` that contains the collapsible large title should always match the background color of `IonContent`. 
+Collapsible Large Titlesは、他のコンテンツとの関係でシームレスに表示される必要があります。つまり、Collapsible Large Titlesを含む `ion-toolbar` の背景色は、常に `ion-content` の背景色と一致する必要があります。
 
-By default, the `IonToolbar` that contains the standard title is hidden using `opacity: 0` and is progressively shown as you collapse the large title by scrolling. As a result, the background color that you see behind the standard title is actually the background color of `IonContent`.
+デフォルトでは、標準のタイトルを含む `ion-toolbar` は `opacity: 0` を使って非表示になっており、スクロールして大きなタイトルを折りたたむと、徐々に表示されます。その結果、標準タイトルの後ろに見える背景色は、実際には `ion-content` の背景色となります。
 
-You can change the background color of the toolbar with the standard title by setting the `--background` CSS variable on `IonToolbar`. This will give the effect of the header changing color as you collapse the large title.
+標準タイトルのあるツールバーの背景色は、 `ion-toolbar` に `--background` という CSS 変数を設定することで変更できます。これにより、大きなタイトルを折りたたむと、ヘッダの色が変わるような効果が得られます。
 
-When styling the text color of the large title, you should target the large title globally as opposed to within the context of a particular page or tab, otherwise its styles will not be applied during the navigation animation.
+ラージタイトルのテキストカラーをスタイルする場合、特定のページやタブのコンテキスト内ではなく、グローバルにラージタイトルをターゲットにする必要があり、そうしないとナビゲーションアニメーションの間にそのスタイルが適用されません。
 
 ```css
 ion-title.title-large {
@@ -426,7 +426,7 @@ export class TitleExample {
 
 ### Collapsible Large Titles
 
-Ionic provides a way to create the collapsible titles that exist on stock iOS apps. Getting this setup requires configuring your `ion-title`, `ion-header`, and (optionally) `ion-buttons` elements.
+Ionic は、iOS 標準のアプリに存在するCollapsible Large Titlesを作成する方法を提供します。この設定を行うには、`ion-title`、`ion-header`、および（オプションで）`ion-buttons` 要素を設定する必要があります。
 
 ```tsx
 import { Component, h } from '@stencil/core';
@@ -462,7 +462,7 @@ export class TitleExample {
 }
 ```
 
-In the example above, notice there are two `ion-header` elements. The first `ion-header` represents the "collapsed" state of your collapsible header, and the second `ion-header` represents the "expanded" state of your collapsible header. Notice that the second `ion-header` must have `collapse="condense"` and must exist within `ion-content`. Additionally, in order to get the large title styling, `ion-title` must have `size="large"`.
+上の例では、2つの `ion-header` 要素があることに注目してください。最初の `ion-header` は折りたたみ可能なヘッダの "折りたたまれた" 状態を表し、2番目の `ion-header` は折りたたみ可能なヘッダの "展開された" 状態を表します。2 番目の `ion-header` は `collapse="condense"` でなければならず、 `ion-content` 内に存在しなければならないことに注意してください。さらに、大きなタイトルのスタイルを取得するには、 `ion-title` は `size="large"` でなければなりません。
 
 ```tsx
 import { Component, h } from '@stencil/core';
@@ -504,23 +504,23 @@ export class TitleExample {
 }
 ```
 
-In this example, notice that we have added two sets of `ion-buttons` both with `collapse` set to `true`. When the secondary header collapses, the buttons in the secondary header will hide, and the buttons in the primary header will show. This is useful for ensuring that your header buttons always appear next to an `ion-title` element.
+この例では、2つの `ion-buttons` のセットを追加し、両方とも `collapse` を `true` に設定していることに注目してください。セカンダリヘッダーが折りたたまれると、セカンダリヘッダーのボタンは隠れ、プライマリヘッダーのボタンが表示されます。これは、ヘッダボタンが常に `ion-title` 要素の隣に表示されるようにするために便利です。
 
-`ion-buttons` elements that do not have `collapse` set will always be visible, regardless of collapsed state. When using the large title and `ion-buttons` elements inside of `ion-content`, the `ion-buttons` elements should always be placed in the `end` slot.
+また、 `collapse` が設定されていない `ion-buttons` 要素は、折りたたまれた状態に関わらず常に表示されます。ラージタイトルと `ion-buttons` 要素を `ion-content` 内で使用する場合、 `ion-buttons` 要素は常に `end` スロットに配置する必要があります。
 
-When styling the large title, you should target the large title globally as opposed to within the context of a particular page or tab, otherwise its styles will not be applied during the navigation animation.
+ラージ・タイトルにスタイルを設定する場合、特定のページやタブのコンテキスト内ではなく、グローバルにラージ・タイトルをターゲットにする必要があり、そうしないとナビゲーション・アニメーションの間にそのスタイルが適用されません。
 
-> When using collapsible large titles, it is required that `fullscreen` is set to `true` on `ion-content` and `translucent` is set to `true` on the main `ion-header`.
+> 折りたたみ可能なラージタイトルを使用する場合、 `ion-content` では `fullscreen` を `true` に設定し、メインの `ion-header` では `translucent` を `true` に設定することが必要です。
 
-### Styling Collapsible Large Titles
+### Collapsible Large Titlesのスタイリング
 
-The collapsible large title should appear seamless in relation to the rest of your content. This means that the background color of the `ion-toolbar` that contains the collapsible large title should always match the background color of `ion-content`. 
+Collapsible Large Titlesは、他のコンテンツとの関係でシームレスに表示される必要があります。つまり、Collapsible Large Titlesを含む `ion-toolbar` の背景色は、常に `ion-content` の背景色と一致する必要があります。
 
-By default, the `ion-toolbar` that contains the standard title is hidden using `opacity: 0` and is progressively shown as you collapse the large title by scrolling. As a result, the background color that you see behind the standard title is actually the background color of `ion-content`.
+デフォルトでは、標準のタイトルを含む `ion-toolbar` は `opacity: 0` を使って非表示になっており、スクロールして大きなタイトルを折りたたむと、徐々に表示されます。その結果、標準タイトルの後ろに見える背景色は、実際には `ion-content` の背景色となります。
 
-You can change the background color of the toolbar with the standard title by setting the `--background` CSS variable on `ion-toolbar`. This will give the effect of the header changing color as you collapse the large title.
+標準タイトルのあるツールバーの背景色は、 `ion-toolbar` に `--background` という CSS 変数を設定することで変更できます。これにより、大きなタイトルを折りたたむと、ヘッダの色が変わるような効果が得られます。
 
-When styling the text color of the large title, you should target the large title globally as opposed to within the context of a particular page or tab, otherwise its styles will not be applied during the navigation animation.
+ラージタイトルのテキストカラーをスタイルする場合、特定のページやタブのコンテキスト内ではなく、グローバルにラージタイトルをターゲットにする必要があり、そうしないとナビゲーションアニメーションの間にそのスタイルが適用されません。
 
 ```css
 ion-title.title-large {
@@ -567,7 +567,7 @@ export default defineComponent({
 
 ### Collapsible Large Titles
 
-Ionic provides a way to create the collapsible titles that exist on stock iOS apps. Getting this setup requires configuring your `ion-title`, `ion-header`, and (optionally) `ion-buttons` elements.
+Ionic は、iOS 標準のアプリに存在するCollapsible Large Titlesを作成する方法を提供します。この設定を行うには、`ion-title`、`ion-header`、および（オプションで）`ion-buttons` 要素を設定する必要があります。
 
 ```html
 <template>
@@ -614,7 +614,7 @@ export default defineComponent({
 </script>
 ```
 
-In the example above, notice there are two `ion-header` elements. The first `ion-header` represents the "collapsed" state of your collapsible header, and the second `ion-header` represents the "expanded" state of your collapsible header. Notice that the second `ion-header` must have `collapse="condense"` and must exist within `ion-content`. Additionally, in order to get the large title styling, `ion-title` must have `size="large"`.
+上の例では、2つの `ion-header` 要素があることに注目してください。最初の `ion-header` は折りたたみ可能なヘッダの "折りたたまれた" 状態を表し、2番目の `ion-header` は折りたたみ可能なヘッダの "展開された" 状態を表します。2 番目の `ion-header` は `collapse="condense"` でなければならず、 `ion-content` 内に存在しなければならないことに注意してください。さらに、大きなタイトルのスタイルを取得するには、 `ion-title` は `size="large"` でなければなりません。
 
 ```html
 <template>
@@ -671,21 +671,21 @@ export default defineComponent({
 </script>
 ```
 
-In this example, notice that we have added two sets of `ion-buttons` both with `collapse` set to `true`. When the secondary header collapses, the buttons in the secondary header will hide, and the buttons in the primary header will show. This is useful for ensuring that your header buttons always appear next to an `ion-title` element.
+この例では、2つの `ion-buttons` のセットを追加し、両方とも `collapse` を `true` に設定していることに注目してください。セカンダリヘッダーが折りたたまれると、セカンダリヘッダーのボタンは隠れ、プライマリヘッダーのボタンが表示されます。これは、ヘッダボタンが常に `ion-title` 要素の隣に表示されるようにするために便利です。
 
-`ion-buttons` elements that do not have `collapse` set will always be visible, regardless of collapsed state. When using the large title and `ion-buttons` elements inside of `ion-content`, the `ion-buttons` elements should always be placed in the `end` slot.
+また、 `collapse` が設定されていない `ion-buttons` 要素は、折りたたまれた状態に関わらず常に表示されます。ラージタイトルと `ion-buttons` 要素を `ion-content` の中で使用する場合、 `ion-buttons` 要素は常に `end` スロットに配置されるべきです。
 
-> When using collapsible large titles, it is required that `fullscreen` is set to `true` on `ion-content` and `translucent` is set to `true` on the main `ion-header`.
+> 折りたたみ可能なラージタイトルを使用する場合、 `ion-content` では `fullscreen` を `true` に設定し、メインの `ion-header` では `translucent` を `true` に設定することが必要です。
 
-### Styling Collapsible Large Titles
+### Collapsible Large Titlesのスタイリング
 
-The collapsible large title should appear seamless in relation to the rest of your content. This means that the background color of the `ion-toolbar` that contains the collapsible large title should always match the background color of `ion-content`. 
+Collapsible Large Titlesは、他のコンテンツとの関係でシームレスに表示される必要があります。つまり、Collapsible Large Titlesを含む `ion-toolbar` の背景色は、常に `ion-content` の背景色と一致する必要があります。
 
-By default, the `ion-toolbar` that contains the standard title is hidden using `opacity: 0` and is progressively shown as you collapse the large title by scrolling. As a result, the background color that you see behind the standard title is actually the background color of `ion-content`.
+デフォルトでは、標準のタイトルを含む `ion-toolbar` は `opacity: 0` を使って非表示になっており、スクロールして大きなタイトルを折りたたむと、徐々に表示されます。その結果、標準タイトルの後ろに見える背景色は、実際には `ion-content` の背景色となります。
 
-You can change the background color of the toolbar with the standard title by setting the `--background` CSS variable on `ion-toolbar`. This will give the effect of the header changing color as you collapse the large title.
+標準タイトルのあるツールバーの背景色は、 `ion-toolbar` に `--background` という CSS 変数を設定することで変更できます。これにより、大きなタイトルを折りたたむと、ヘッダの色が変わるような効果が得られます。
 
-When styling the text color of the large title, you should target the large title globally as opposed to within the context of a particular page or tab, otherwise its styles will not be applied during the navigation animation.
+ラージタイトルのテキストカラーをスタイルする場合、特定のページやタブのコンテキスト内ではなく、グローバルにラージタイトルをターゲットにする必要があり、そうしないとナビゲーションアニメーションの間にそのスタイルが適用されません。
 
 ```css
 ion-title.title-large {

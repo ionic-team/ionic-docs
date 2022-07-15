@@ -32,27 +32,27 @@ import APITOCInline from '@components/page/api/APITOCInline';
 
 
 
-A route redirect can only be used with an `ion-router` as a direct child of it.
+route redirectは `ion-router` を直接の子としてのみ使用することができます。
 
 :::note
- Note: this component should only be used with vanilla and Stencil JavaScript projects. For Angular projects, use [`ion-router-outlet`](router-outlet.md) and the Angular router.
+ Note: このコンポーネントは、バニラおよびステンシルJavaScriptプロジェクトでのみ使用してください。Angularプロジェクトでは、[`ion-router-outlet`](router-outlet.md) と Angularルータを使用してください。
 :::
 
 
-The route redirect has two configurable properties:
- - `from`
- - `to`
+ルートリダイレクトには、2つの設定可能なプロパティがあります。
+- `from`
+- `to`
 
-It redirects "from" a URL "to" another URL. When the defined `ion-route-redirect` rule matches, the router will redirect from the path specified in the `from` property to the path in the `to` property. In order for a redirect to occur the `from` path needs to be an exact match to the navigated URL.
+これは、ある URL から別の URL へとリダイレクトします。定義された `ion-route-redirect` ルールがマッチすると、ルータは `from` プロパティで指定されたパスから `to` プロパティで指定されたパスへリダイレクトします。リダイレクトを行うには、`from` のパスがナビゲートされる URL と完全に一致する必要があります。
 
 
-## Multiple Route Redirects
+## 複数ルートのリダイレクト
 
-An arbitrary number of redirect routes can be defined inside an `ion-router`, but only one can match.
+任意の数のリダイレクトルートを `ion-router` の内部で定義することができますが、合致するのは1つだけです。
 
-A route redirect will never call another redirect after its own redirect, since this could lead to infinite loops.
+ルートリダイレクトは、それ自身のリダイレクトの後に別のリダイレクトを呼び出すことはありません。
 
-Take the following two redirects:
+次の2つのリダイレクトを考えてみましょう。
 
 ```html
 <ion-router>
@@ -61,12 +61,12 @@ Take the following two redirects:
 </ion-router>
 ```
 
-If the user navigates to `/admin` the router will redirect to `/login` and stop there. It will never evaluate more than one redirect.
+ユーザーが `/admin` に移動した場合、ルーターは `/login` にリダイレクトし、そこで停止します。複数のリダイレクトを評価することはありません。
 
 
 
 
-## Usage
+## 使い方
 
 ```html
 <!-- Redirects when the user navigates to `/admin` but
@@ -78,11 +78,11 @@ any subpath of admin -->
 <ion-route-redirect from="/admin/*" to="/login"></ion-route-redirect>
 ```
 
-### Route Redirects as Guards
+### ルートリダイレクトのガード
 
-Redirection routes can work as guards to prevent users from navigating to certain areas of an application based on a given condition, such as if the user is authenticated or not.
+リダイレクトルートは、ユーザーが認証されているかどうかなど、与えられた条件に基づいて、ユーザーがアプリケーションの特定の領域に移動するのを防ぐためのガードとして機能することができます。
 
-A route redirect can be added and removed dynamically to redirect (or guard) some routes from being accessed. In the following example, all urls `*` will be redirected to the `/login` url if `isLoggedIn` is `false`.
+ルートリダイレクトは動的に追加・削除することができ、一部のルートをアクセスできないようにリダイレクト（ガード）することができます。次の例では、 `isLoggedIn` が `false` の場合、すべての URL `*` は `/login` にリダイレクトされます。
 
 ```tsx
 const isLoggedIn = false;
@@ -97,7 +97,7 @@ if (!isLoggedIn) {
 }
 ```
 
-Alternatively, the value of `to` can be modified based on a condition. In the following example, the route redirect will check if the user is logged in and redirect to the `/login` url if not.
+また、`to`の値は条件に基づいて変更することもできます。次の例では、ルートリダイレクトはユーザーがログインしているかどうかをチェックし、ログインしていない場合は `/login` url にリダイレクトします。
 
 ```html
 <ion-route-redirect id="tutorialRedirect" from="*"></ion-route-redirect>

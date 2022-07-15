@@ -32,10 +32,10 @@ import APITOCInline from '@components/page/api/APITOCInline';
 
 
 
-The router is a component for handling routing inside vanilla and Stencil JavaScript projects.
+router バニラおよびステンシルJavaScriptプロジェクト内部でルーティングを処理するためのコンポーネントです。
 
 :::note
- Note: this component should only be used with vanilla and Stencil JavaScript projects. For Angular projects, use [`ion-router-outlet`](router-outlet.md) and the Angular router.
+ Note: このコンポーネントは、バニラおよびステンシルJavaScriptプロジェクトでのみ使用してください。Angularプロジェクトでは、[`ion-router-outlet`](router-outlet.md) と Angularルータを使用してください。
 :::
 
 
@@ -62,7 +62,7 @@ interface RouterEventDetail {
 
 ### RouterCustomEvent
 
-While not required, this interface can be used in place of the `CustomEvent` interface for stronger typing with Ionic events emitted from this component.
+必須ではありませんが、このコンポーネントから発行される Ionic イベントでより強く型付けを行うために、`CustomEvent` インターフェースの代わりにこのインターフェースを使用することが可能です。
 
 ```typescript
 interface RouterCustomEvent extends CustomEvent {
@@ -73,7 +73,7 @@ interface RouterCustomEvent extends CustomEvent {
 
 
 
-## Usage
+## 使い方
 
 ```html
 <ion-router>

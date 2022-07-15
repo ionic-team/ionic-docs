@@ -34,10 +34,10 @@ import APITOCInline from '@components/page/api/APITOCInline';
 
 
 
-The router link component is used for navigating to a specified link. Similar to the browser's anchor tag, it can accept a href for the location, and a direction for the transition animation.
+router linkコンポーネントは、指定されたリンクに移動するために使用します。ブラウザのアンカータグと同様に、hrefで場所を、directionで遷移のアニメーションを指定することができます。
 
 :::note
- Note: this component should only be used with vanilla and Stencil JavaScript projects. For Angular projects, use an `<a>` and `routerLink` with the Angular router.
+ Note: このコンポーネントは、バニラおよびステンシルJavaScriptプロジェクトでのみ使用してください。Angularプロジェクトでは、[`ion-router-outlet`](router-outlet.md) と Angularルータを使用してください。
 :::
 
 

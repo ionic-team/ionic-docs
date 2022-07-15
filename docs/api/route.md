@@ -32,16 +32,16 @@ import APITOCInline from '@components/page/api/APITOCInline';
 
 
 
-The route component takes a component and renders it when the Browser URL matches the url property.
+routeコンポーネントは、コンポーネントを受け取り、ブラウザのURLがurlプロパティと一致したときにそれをレンダリングします。
 
 :::note
- Note: this component should only be used with vanilla and Stencil JavaScript projects. For Angular projects, use [`ion-router-outlet`](router-outlet.md) and the Angular router.
+ Note: このコンポーネントは、バニラおよびステンシルJavaScriptプロジェクトでのみ使用してください。Angularプロジェクトでは、[`ion-router-outlet`](router-outlet.md) と Angularルータを使用してください。
 :::
 
 
-## Navigation Hooks
+## ナビゲーションフック
 
-Navigation hooks can be used to perform tasks or act as navigation guards. Hooks are used by providing functions to the `beforeEnter` and `beforeLeave` properties on each `ion-route`. Returning `true` allows navigation to proceed, while returning `false` causes it to be cancelled. Returning an object of type `NavigationHookOptions` allows you to redirect navigation to another page.
+ナビゲーションフックは、タスクを実行したり、ナビゲーションガードとして動作させるために使用することができます。フックは、各 `ion-route` の `beforeEnter` と `beforeLeave` プロパティに関数を提供することで使用します。`true` を返すとナビゲーションを進めることができ、`false` を返すとナビゲーションがキャンセルされる。NavigationHookOptions` 型のオブジェクトを返すと、ナビゲーションを別のページにリダイレクトすることができます。
 
 ## Interfaces
 
@@ -57,7 +57,7 @@ interface NavigationHookOptions {
 
 
 
-## Usage
+## 使い方
 
 <Tabs groupId="framework" defaultValue="javascript" values={[{ value: 'javascript', label: 'Javascript' }, { value: 'stencil', label: 'Stencil' }, { value: 'vue', label: 'Vue' }]}>
 

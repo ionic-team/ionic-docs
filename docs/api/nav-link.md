@@ -32,9 +32,9 @@ import APITOCInline from '@components/page/api/APITOCInline';
 
 
 
-A navigation link is used to navigate to a specified component. The component can be navigated to by going `forward`, `back` or as a `root` component.
+ナビゲーションリンクは指定されたコンポーネントに移動するために使用されます。コンポーネントは `forward`, `back` または `root` コンポーネントとして移動することができます。
 
-It is the element form of calling the `push()`, `pop()`, and `setRoot()` methods on the navigation controller.
+これは、ナビゲーションコントローラの `push()`, `pop()`, `setRoot()` メソッドを呼び出すための要素形式となります。
 
 
 

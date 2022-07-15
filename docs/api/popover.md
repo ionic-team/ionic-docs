@@ -24,23 +24,23 @@ import APITOCInline from '@components/page/api/APITOCInline';
 
 Popoverは、現在のページの上部に表示されるダイアログです。これは何にでも使用できますが、通常はナビゲーションバーに収まらないオーバーフローアクションに使用されます。
 
-There are two ways to use `ion-popover`: inline or via the `popoverController`. Each method comes with different considerations, so be sure to use the approach that best fits your use case.
+`ion-popover` を使用するには、インラインで使用する方法と `popoverController` を使用する方法がります。それぞれの方法には異なる考慮点があるので、あなたのユースケースに最も適した方法を使用するようにしましょう。
 
-## Inline Popovers
+## インラインポップオーバー
 
-`ion-popover` can be used by writing the component directly in your template. This reduces the number of handlers you need to wire up in order to present the popover.
+`ion-popover` は、テンプレートに直接コンポーネントを記述して使用することができます。これにより、ポップオーバーを表示するために必要なハンドラの数を減らすことができます。
 
-When using `ion-popover` with Angular, React, or Vue, the component you pass in will be destroyed when the popover is dismissed. As this functionality is provided by the JavaScript framework, using `ion-popover` without a JavaScript framework will not destroy the component you passed in. If this is a needed functionality, we recommend using the `popoverController` instead.
+Angular、React、Vue で `ion-popover` を使用する場合、渡されたコンポーネントはポップオーバーが解除されると破棄されます。この機能は JavaScript フレームワークによって提供されるので、JavaScript フレームワークを使わずに `ion-popover` を使用しても、渡したコンポーネントは破棄されない。この機能が必要な場合は、代わりに `popoverController` を使用することを推奨します
 
-### When to use
+### いつ使うか
 
-Using a popover inline is useful when you do not want to explicitly wire up click events to open the popover. For example, you can use the `trigger` property to designate a button that should present the popover when clicked. You can also use the `trigger-action` property to customize whether the popover should be presented when the trigger is left clicked, right clicked, or hovered over.
+ポップオーバーをインラインで使用することは、ポップオーバーを開くためにクリックイベントを明示的に配線したくない場合に便利です。例えば、 `trigger` プロパティを使用して、クリックされたときにポップオーバーを表示するボタンを指定することができます。また、`trigger-action` プロパティを使って、トリガーが左クリックされたとき、右クリックされたとき、ホーバーされたときにポップオーバーを表示するかどうかをカスタマイズすることができます。
 
-If you need fine grained control over when the popover is presented and dismissed, we recommend you use the `popoverController`.
+もし、ポップオーバーの表示と非表示を細かく制御したい場合は、 `popoverController` を使用することをお勧めします。
 
 ### Angular 
 
-Since the component you passed in needs to be created when the popover is presented and destroyed when the popover is dismissed, we are unable to project the content using `<ng-content>` internally. Instead, we use `<ng-container>` which expects an `<ng-template>` to be passed in. As a result, when passing in your component you will need to wrap it in an `<ng-template>`:
+渡されたコンポーネントは、ポップオーバーが表示されたときに作成され、ポップオーバーが解除されたときに破棄される必要があるため、内部で `<ng-content>` を使用してコンテンツを投影することはできません。代わりに、`<ng-container>` を使用します。これは、`<ng-template>` が渡されることを想定しています。そのため、コンポーネントを渡す際には、`<ng-template>`でラップする必要があります。
 
 ```html
 <ion-popover [isOpen]="isPopoverOpen">
@@ -50,51 +50,51 @@ Since the component you passed in needs to be created when the popover is presen
 </ion-popover>
 ```
 
-### Triggers
+### トリガー
 
-A trigger for an inline `ion-popover` is the element that will open a popover when interacted with. The interaction behavior can be customized by setting the `trigger-action` property. Note that `trigger-action="context-menu"` will prevent your system's default context menu from opening.
+インラインの `ion-popover` のトリガーは、インタラクションされたときにポップオーバーを開く要素です。インタラクションの動作は `trigger-action` プロパティを設定することでカスタマイズすることができます。なお、`trigger-action="context-menu"` はシステムのデフォルトのコンテキストメニューを開かせないようにします。
 
 :::note
- Triggers are not applicable when using the `popoverController` because the `ion-popover` is not created ahead of time.
+ `popoverController` を使用する場合、`ion-popover` は前もって作成されないので、トリガーは適用されません。
 :::
 
 import InlineTrigger from '@site/static/usage/popover/presenting/inline-trigger/index.md';
 
 <InlineTrigger />
 
-### isOpen Property
+### isOpen プロパティ
 
-Inline popovers can also be opened by setting the `isOpen` property to `true`. This method can be used if you need finer grained control over the popover than with a trigger.
+インラインポップオーバーは `isOpen` プロパティを `true` に設定することによっても開くことができます。この方法はトリガーよりも細かくポップオーバーをコントロールする必要がある場合に使用されます。
 
-`isOpen` uses a one-way data binding, meaning it will not automatically be set to `false` when the popover is dismissed. Developers should listen for the `ionPopoverDidDismiss` or `didDismiss` event and set `isOpen` to `false`. The reason for this is it prevents the internals of `ion-popover` from being tightly coupled with the state of the application. With a one way data binding, the popover only needs to concern itself with the boolean value that the reactive variable provides. With a two way data binding, the popover needs to concern itself with both the boolean value as well as the existence of the reactive variable itself. This can lead to non-deterministic behaviors and make applications harder to debug.
+`isOpen` は一方向のデータバインディングを使用しています。つまり、ポップオーバーが閉じられたときに自動的に `false` に設定されることはありません。開発者は `ionPopoverDidDismiss` または `didDismiss` イベントをリッスンして `isOpen` を `false` にセットする必要があります。この理由は、`ion-popover` の内部がアプリケーションの状態と密に結合されるのを防ぐためである。一方通行のデータバインディングでは、ポップオーバーはリアクティブ変数が提供するブーリアン値だけを気にすればよいのです。双方向のデータバインディングでは、ポップオーバーはブール値とリアクティブ変数の存在の両方に関心を持つ必要があります。これは非決定的な動作につながり、アプリケーションのデバッグを難しくします。
 
 
 import IsOpenTrigger from '@site/static/usage/popover/presenting/inline-isopen/index.md';
 
 <IsOpenTrigger />
 
-## Controller Popovers
+## ポップオーバーコントローラ
 
-`ion-popover` can also be presented programmatically by using the `popoverController` imported from Ionic Framework. This allows you to have complete control over when a popover is presented above and beyond the customization that inline popovers give you.
+Ionic Framework からインポートされた `popoverController` を使用することで、`ion-popover` をプログラム的に表示することも可能です。これにより、インラインポップオーバーのカスタマイズ以上に、ポップオーバーを表示するタイミングを完全に制御することができます。
 
-### When to use
+### どのような場合に使用するのか
 
-We typically recommend that you write your popovers inline as it streamlines the amount of code in your application. You should only use the `popoverController` for complex use cases where writing a popover inline is impractical. When using a controller, your popover is not created ahead of time, so properties such as `trigger` and `trigger-action` are not applicable here. In addition, nested popovers are not compatible with the controller approach because the popover is automatically added to the root of your application when the `create` method is called.
+ポップオーバーはインラインで記述することをお勧めします。ポップオーバーをインラインで書くことが現実的でない複雑なユースケースの場合にのみ `popoverController` を使用すべきです。コントローラを使用する場合、ポップオーバーは前もって作成されないので、 `trigger` や `trigger-action` などのプロパティはここでは適用されません。さらに、ネストされたポップオーバーはコントローラのアプローチと互換性がありません。なぜなら、ポップオーバーは `create` メソッドが呼ばれたときに自動的にアプリケーションのルートに追加されるからです。
 
 ### React
 
-Instead of a controller, React has a hook called `useIonPopover` which behaves in a similar fashion. Note that `useIonPopover` requires being a descendant of `<IonApp>`. If you need to use a popover outside of an `<IonApp>`, consider using an inline popover instead.
+コントローラの代わりに、React には `useIonPopover` というHookがあり、同じような振る舞いをします。なお、 `useIonPopover` は `<IonApp>` の子孫であることが必要です。もし、 `<IonApp>` の外側でポップオーバーを使用する必要がある場合は、代わりにインラインポップオーバーを使用することを検討してください。
 
-### Usage
+### 使い方
 
 import ControllerExample from '@site/static/usage/popover/presenting/controller/index.md';
 
 <ControllerExample />
 
 
-## Styling
+## スタイリング
 
-Popovers are presented at the root of your application so they overlay your entire app. This behavior applies to both inline popovers and popovers presented from a controller. As a result, custom popover styles can not be scoped to a particular component as they will not apply to the popover. Instead, styles must be applied globally. For most developers, placing the custom styles in `global.css` is sufficient.
+ポップオーバーはアプリケーションのルートで表示されるので、アプリケーション全体を覆うように表示されます。この動作はインラインポップオーバーとコントローラから表示されるポップオーバーの両方に適用されます。そのため、カスタムポップオーバースタイリングは特定のコンポーネントにスコープすることができません。代わりに、スタイルはグローバルに適用されなければなりません。ほとんどの開発者は、カスタムスタイルを `global.css` に配置すれば十分です。
 
 :::note
  If you are building an Ionic Angular app, the styles need to be added to a global stylesheet file.
@@ -105,19 +105,19 @@ import Styling from '@site/static/usage/popover/customization/styling/index.md';
 <Styling />
 
 
-## Positioning
+## 配置
 
-### Reference
+### リファレンス
 
-When presenting a popover, Ionic Framework needs a reference point to present the popover relative to. With `reference="event"`, the popover will be presented relative to the x-y coordinates of the pointer event that was dispatched on your trigger element. With `reference="trigger"`, the popover will be presented relative to the bounding box of your trigger element.
+ポップオーバーを表示するとき、Ionic Framework はポップオーバーを相対的に表示するための参照点を必要とします。`reference="event"` を指定すると、ポップオーバーはトリガー要素で dispatch されたポインターイベントのx-y座標に相対的に表示されます。 `reference="trigger"` を指定すると、ポップオーバーはトリガー要素のバウンディングボックスに対して相対的に表示されます。
 
 ### Side
 
-Regardless of what you choose for your reference point, you can position a popover to the `top`, `right`, `left`, or `bottom` of your reference point by using the `side` property. You can also use the `start` or `end` values if you would like the side to switch based on LTR or RTL modes.
+`side` プロパティを使用することで、基準点の上、右、左、下のいずれかにポップオーバーを配置することができます。また、LTRやRTLのモードに応じてサイドを切り替えたい場合は、 `start` や `end` を使用することができます。
 
 ### Alignment
 
-The `alignment` property allows you to line up an edge of your popover with a corresponding edge on your trigger element. The exact edge that is used depends on the value of the `side` property. 
+`alignment` プロパティは、ポップオーバーのエッジをトリガーエレメントの対応するエッジに揃えることができます。使用される正確なエッジは `side` プロパティの値に依存します。
 
 ### Side and Alignment Demo
 
@@ -125,28 +125,28 @@ import Positioning from '@site/static/usage/popover/customization/positioning/in
 
 <Positioning />
 
-### Offsets
+### オフセット
 
-If you need finer grained control over the positioning of your popover you can use the `--offset-x` and `--offset-y` CSS Variables. For example, `--offset-x: 10px` will move your popover content to the right by `10px`.
+ポップオーバーの位置をより細かく制御したい場合は、CSS 変数 `--offset-x` と `--offset-y` を使用することができます。例えば、`--offset-x: 10px` はポップオーバーのコンテンツを `10px` だけ右側に移動させます。
 
-## Sizing
+## サイズ調整
 
-When making dropdown menus, you may want to have the width of the popover match the width of the trigger element. Doing this without knowing the trigger width ahead of time is tricky. You can set the `size` property to `'cover'` and Ionic Framework will ensure that the width of the popover matches the width of your trigger element.
+ドロップダウンメニューを作成するとき、ポップオーバーの幅をトリガー要素の幅と一致させたい場合があります。トリガーの幅を事前に知らずにこれを行うのは厄介です。 `size` プロパティを `'cover'` に設定すると、Ionic Framework はポップオーバーの幅をトリガー要素の幅に一致させるようにします。
 
-If you are using the `popoverController`, you must provide an event via the `event` option and Ionic Framework will use `event.target` as the reference element. See the [controller demo](#controller-popovers) for an example of this pattern.
+`popoverController` を使用する場合は、`event` オプションでイベントを指定する必要があり、Ionic Framework は `event.target` を参照要素に使用します。このパターンの例は [controller demo](#controller-popovers) を参照してください。
 
 import Sizing from '@site/static/usage/popover/customization/sizing/index.md';
 
 <Sizing />
 
-## Nested Popovers
+## ポップオーバーをネスト
 
-When using `ion-popover` inline, you can nested popovers to create nested dropdown menus. When doing this, only the backdrop on the first popover will appear so that the screen does not get progressively darker as you open more popovers.
+インラインで `ion-popover` を使用する場合、ポップオーバーを入れ子にして入れ子のドロップダウンメニューを作成することができます。このとき、最初のポップオーバーの背景だけが表示されるので、ポップオーバーを開くたびに画面がだんだん暗くなっていくことはありません。
 
-You can use the `dismissOnSelect` property to automatically close the popover when the popover content has been clicked. This behavior does not apply when clicking a trigger element for another popover.
+`dismissOnSelect` プロパティを使用すると、ポップオーバーのコンテンツがクリックされたときに自動的にポップオーバーを閉じることができます。この動作は、他のポップオーバーのトリガー要素をクリックしたときには適用されません。
 
 :::note
- Nested popovers cannot be created when using the `popoverController` because the popover is automatically added to the root of your application when the `create` method is called.
+ `popoverController` を使用する場合、ネストしたポップオーバーは作成できません。なぜなら、ポップオーバーは `create` メソッドが呼ばれたときに、自動的にアプリケーションのルートに追加されるからです。
 :::
 
 import NestedPopover from '@site/static/usage/popover/nested/index.md';
@@ -156,7 +156,7 @@ import NestedPopover from '@site/static/usage/popover/nested/index.md';
 
 ## Interfaces
 
-Below you will find all of the options available to you when using the `popoverController`. These options should be supplied when calling `popoverController.create()`.
+以下に、`popoverController` を使用する際に利用可能なすべてのオプションを示します。これらのオプションは `popoverController.create()` を呼び出す際に指定します。
 
 ```typescript
 interface PopoverOptions {
@@ -189,7 +189,7 @@ interface PopoverOptions {
 
 ## Types
 
-Below you will find all of the custom types for `ion-popover`:
+以下に、`ion-popover` のすべてのカスタムTypeを紹介します。
 
 ```typescript
 type PopoverSize = 'cover' | 'auto';
@@ -199,11 +199,11 @@ type PositionSide = 'top' | 'right' | 'bottom' | 'left' | 'start' | 'end';
 type PositionAlign = 'start' | 'center' | 'end';
 ```
 
-## Accessibility
+## アクセシビリティ
 
-### Keyboard Navigation
+### キーボードナビゲーション
 
-`ion-popover` has basic keyboard support for navigating between focusable elements inside of the popover. The following table details what each key does:
+`ion-popover` は、ポップオーバー内のフォーカス可能な要素間を移動するための基本的なキーボードをサポートしています。次の表は、それぞれのキーが何をするのかの詳細です:
 
 | Key                | Function                                                     |
 | ------------------ | ------------------------------------------------------------ |
@@ -213,7 +213,7 @@ type PositionAlign = 'start' | 'center' | 'end';
 | `Space` or `Enter` | Clicks the focusable element. |
 
 
-`ion-popover` has full arrow key support for navigating between `ion-item` elements with the `button` property. The most common use case for this is as a dropdown menu in a desktop-focused application. In addition to the basic keyboard support, the following table details arrow key support for dropdown menus:
+`ion-popover` は、 `button` プロパティを持つ `ion-item` 要素間を移動するための矢印キーを完全にサポートしています。最も一般的な使用例としては、デスクトップにフォーカスしたアプリケーションにおけるドロップダウンメニューとして使用することができます。基本的なキーボードのサポートに加え、次の表ではドロップダウンメニューの矢印キーのサポートについて詳しく説明します。
 
 | Key                | Function                                                       |
 | ------------------ | -------------------------------------------------------------- |

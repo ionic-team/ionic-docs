@@ -35,13 +35,13 @@ import APITOCInline from '@components/page/api/APITOCInline';
 Footerは、ページの最下部にあるページのルートコンポーネントです。
 Footerは、コンテンツ領域が正しくサイズ設定されていることを確認するために、`ion-toolbar` のラッパーとして使用できます。
 
-## Fade Footer
+## フェードフッター
 
-The `collapse` property can be set to `'fade'` on a page's `ion-footer` to have the background color of the toolbars fade in as users scroll. This provides the same fade effect that is found in many native iOS applications.
+ページの `ion-footer` で `collapse` プロパティを `'fade'` に設定すると、ユーザがスクロールするたびにツールバーの背景色がフェードインしていくようになります。これは、多くのネイティブ iOS アプリケーションで見られるのと同じフェード効果を提供します。
 
-### Usage with Virtual Scroll
+### 仮想スクロールでの使用方法
 
-Fade footer requires a scroll container to function. When using a virtual scrolling solution, you will need to disable scrolling on the `ion-content` and indicate which element container is responsible for the scroll container with the `.ion-content-scroll-host` class target.
+フェードフッターを機能させるには、スクロールコンテナが必要です。仮想スクロールを使用する場合は、`ion-content` のスクロールを無効にし、`.ion-content-scroll-host` クラスターゲットで、どの要素コンテナがスクロールコンテナを担当するのかを指定する必要があります。
 
 ```html
 <ion-content scroll-y="false">
@@ -58,7 +58,7 @@ Fade footer requires a scroll container to function. When using a virtual scroll
 
 
 
-## Usage
+## 使い方
 
 <Tabs groupId="framework" defaultValue="angular" values={[{ value: 'angular', label: 'Angular' }, { value: 'javascript', label: 'Javascript' }, { value: 'react', label: 'React' }, { value: 'stencil', label: 'Stencil' }, { value: 'vue', label: 'Vue' }]}>
 

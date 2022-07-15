@@ -45,7 +45,7 @@ interface BreadcrumbCollapsedClickEventDetail {
 
 ### BreadcrumbCustomEvent
 
-必須ではありませんが、より強い型付のために、このインターフェースを `CustomEvent` インターフェースの代わりに使用することができます。
+必須ではありませんが、より強い型付けのために、このインターフェースを `CustomEvent` インターフェースの代わりに使用することができます。
 
 ```typescript
 interface BreadcrumbCustomEvent extends CustomEvent {

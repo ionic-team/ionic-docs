@@ -39,23 +39,23 @@ Virtual Scrollは、Virtualの "infinite" リストを表示します。
 パフォーマンス上の理由から、リスト内のすべてのレコードが一度にレンダリングされるわけではありません。
 その代わりに、レコードの小さなサブセット(ビューポートをいっぱいにするのに十分な数)がレンダリングされ、ユーザーのスクロールに再利用されます。
 
-This guide will go over the recommended virtual scrolling packages for each framework integration as well as documentation for the deprecated `ion-virtual-scroll` component for Ionic Angular. We recommend using the framework-specific solutions listed below, but the `ion-virtual-scroll` documentation is available below for developers who are still using that component.
+このガイドでは、各フレームワークの統合に推奨される仮想スクロールパッケージと、Ionic Angularの非推奨コンポーネントである `ion-virtual-scroll` のドキュメントについて説明します。フレームワーク固有のソリューションの利用をお勧めしますが、まだそのコンポーネントを使用している開発者のために `ion-virtual-scroll` のドキュメントを以下に掲載します。
 
 ## Angular
 
-For virtual scrolling options in Ionic Angular, please see [Angular Virtual Scroll Guide](../angular/virtual-scroll.md).
+Ionic Angularの仮想スクロールのオプションについては、[Angular仮想スクロールガイド](../angular/virtual-scroll.md)を参照してください。
 
 ## React
 
-For virtual scrolling options in Ionic React, please see [React Virtual Scroll Guide](../react/virtual-scroll.md).
+Ionic Reactでの仮想スクロールのオプションについては、[React仮想スクロールガイド](../react/virtual-scroll.md)を参照してください。
 
 ## Vue
 
-For virtual scrolling options in Ionic Vue, please see [Vue Virtual Scroll Guide](../vue/virtual-scroll.md).
+Ionic Vueでの仮想スクロールのオプションについては、[Vue仮想スクロールガイド](../vue/virtual-scroll.md)を参照してください。
 
 ------
 
-The following documentation applies to the `ion-virtual-scroll` component.
+以下のドキュメントは `ion-virtual-scroll` コンポーネントに適用されます。
 
 ## Approximate Widths and Heights
 
@@ -148,7 +148,7 @@ dataset, so please make sure they're performant.
 
 
 
-## Usage
+## 使い方
 
 ```html
 <ion-content>

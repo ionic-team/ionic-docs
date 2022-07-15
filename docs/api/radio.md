@@ -34,16 +34,16 @@ import APITOCInline from '@components/page/api/APITOCInline';
 
 
 
-Radios should be used inside of an [`ion-radio-group`](radio-group.md). Pressing on a radio will check it. They can also be checked programmatically by setting the value property of the parent `ion-radio-group` to the value of the radio.
+Radioは [`ion-radio-group`] (radio-group.md) 内で使用します。Radioを押すと、そのRadioがチェックされます。また、親である `ion-radio-group` の value プロパティをRadioの値に設定することで、プログラムによってチェックすることもできます。
 
-When radios are inside of a radio group, only one radio in the group will be checked at any time. Pressing a radio will check it and uncheck the previously selected radio, if there is one. If a radio is not in a group with another radio, then both radios will have the ability to be checked at the same time.
-
-
+RadioがRadioグループの中にある場合、グループ内の1つのRadioだけが常にチェックされる。Radioを押すと、そのRadioがチェックされ、前に選択されていたRadioがあれば、そのチェックが解除されます。Radioが他のRadioとグループ内にない場合、両方のRadioが同時にチェックされる機能を持ちます。
 
 
 
 
-## Usage
+
+
+## 使い方
 
 <Tabs groupId="framework" defaultValue="angular" values={[{ value: 'angular', label: 'Angular' }, { value: 'javascript', label: 'Javascript' }, { value: 'react', label: 'React' }, { value: 'stencil', label: 'Stencil' }, { value: 'vue', label: 'Vue' }]}>
 

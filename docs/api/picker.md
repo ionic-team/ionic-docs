@@ -23,18 +23,18 @@ import APITOCInline from '@components/page/api/APITOCInline';
 
 Pickerは、画面下にボタンと列の行を表示するダイアログです。アプリケーションのコンテンツの上部とビューポートの下部に表示されます。
 
-## Single Column
+## シングルカラム
 
-Display a list of options in a single, scrollable column.
+オプションのリストをスクロール可能な1つのカラムに表示します。
 
 import SingleColumn from '@site/static/usage/picker/single-column/index.md';
 
 <SingleColumn />
 
 
-## Multiple Columns
+## マルチカラム
 
-Display multiple columns of different options.
+異なるオプションの複数のカラムを表示します。
 
 import MultipleColumn from '@site/static/usage/picker/multiple-column/index.md';
 
@@ -110,7 +110,7 @@ interface PickerOptions {
 
 
 
-## Usage
+## 使い方
 
 <Tabs groupId="framework" defaultValue="angular" values={[{ value: 'angular', label: 'Angular' }, { value: 'react', label: 'React' }, { value: 'vue', label: 'Vue' }]}>
 

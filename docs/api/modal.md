@@ -25,75 +25,75 @@ import APITOCInline from '@components/page/api/APITOCInline';
 Modalは、アプリのコンテンツの上に表示されるダイアログであり、インタラクションを再開する前にはアプリによって消されなければならない。選択できるオプションが多い場合や、リスト内の項目をフィルタする場合、およびその他の多くのユースケースで、Selectコンポーネントとして役立ちます。
 
 
-## Inline Modals (Recommended)
+## インラインモーダル(推奨)
 
-`ion-modal` can be used by writing the component directly in your template. This reduces the number of handlers you need to wire up in order to present the modal.
+テンプレートに直接コンポーネントを記述することで、 `ion-modal` を使用することができます。これにより、モーダルを表示するために必要なハンドラの数を減らすことができます。
 
-When using `ion-modal` with Angular, React, or Vue, the component you pass in will be destroyed when the modal is dismissed. As this functionality is provided by the JavaScript framework, using `ion-modal` without a JavaScript framework will not destroy the component you passed in. If this is a needed functionality, we recommend using the `modalController` instead.
+Angular、React、Vue で `ion-modal` を使用する場合、渡されたコンポーネントはモーダルが解除されると破棄されます。この機能は JavaScript フレームワークによって提供されるので、JavaScript フレームワークなしで `ion-modal` を使用しても、渡されたコンポーネントは破棄されません。この機能が必要な場合は、代わりに `modalController` を使用することをお勧めします。
 
 import InlineModalTriggerExample from '@site/static/usage/modal/inline/basic/index.md';
 
 <InlineModalTriggerExample />
 
-### Using `isOpen`
+### `isOpen` の使用
 
-The `isOpen` property on `ion-modal` allows developers to control the presentation state of the modal from their application state. This means when `isOpen` is set to `true` the modal will be presented and when `isOpen` is set to `false` the modal will be dismissed.
+`ion-modal` の `isOpen` プロパティを使用すると、開発者がアプリケーションの状態からモーダルの表示状態を制御することができます。つまり、 `isOpen` を `true` に設定するとモーダルが表示され、 `isOpen` を `false` に設定するとモーダルが解除されます。
 
-`isOpen` uses a one-way data binding, meaning it will not automatically be set to `false` when the modal is dismissed. Developers should listen for the `ionModalDidDismiss` or `didDismiss` event and set `isOpen` to `false`. The reason for this is it prevents the internals of `ion-modal` from being tightly coupled with the state of the application. With a one way data binding, the modal only needs to concern itself with the boolean value that the reactive variable provides. With a two way data binding, the modal needs to concern itself with both the boolean value as well as the existence of the reactive variable itself. This can lead to non-deterministic behaviors and make applications harder to debug.
+`isOpen` は一方向のデータバインディングを使用します。つまり、モーダルが解除されたときに自動的に `false` にセットされることはありません。開発者は `ionModalDidDismiss` または `didDismiss` イベントを監視して、 `isOpen` を `false` に設定する必要があります。この理由は、`ion-modal` の内部がアプリケーションの状態と密に結合するのを防ぐためである。一方通行のデータバインディングでは、モーダルはリアクティブ変数が提供するboolean値だけを気にすればいいです。双方向のデータバインディングでは、モーダルはboolean値とリアクティブ変数の存在の両方を考慮する必要があります。これは、非決定的な動作につながり、アプリケーションのデバッグを困難にします。
 
 import InlineModalIsOpenExample from '@site/static/usage/modal/inline/is-open/index.md';
 
 <InlineModalIsOpenExample />
 
-## Controller Modals
+## モーダルコントローラ
 
-With the `modalController` developers can present an `ion-modal` programmatically. Developers will have complete control over when a modal is presented and dismissed.
+`ModalController` を使用すると、開発者はプログラムによって `ion-modal` を表示させることができます。開発者は、モーダルの表示と非表示を完全に制御することができます。
 
 import ControllerExample from '@site/static/usage/modal/controller/index.md';
 
 <ControllerExample />
 
-## Preventing a Modal from Dismissing
+## モーダルの終了を防止する
 
-When entering data into a modal, it is often desirable to have a way of preventing accidental data loss. The `canDismiss` property on `ion-modal` gives developers control over when a modal is allowed to dismiss.
+モーダルにデータを入力しているとき、誤ってデータが失われないようにする方法があると便利です。 `ion-modal` の `canDismiss` プロパティは、モーダルをいつ終了させるかを開発者がコントロールできるようにします。
 
-There are two different ways of using the `canDismiss` property.
+`canDismiss` プロパティの使用方法は2つあります。
 
 :::note
- Note: When using a sheet modal, `canDismiss` will not be checked on swipe if there is no `0` breakpoint set. However, it will still be checked when pressing `Esc` or the hardware back button.
+ Note: シートモーダルでは、`0` ブレークポイントが設定されていない場合、スワイプ時に `canDismiss` はチェックされません。しかし、`Esc` やハードウェアのバックボタンを押すと、チェックされます。
 :::
 
-### Setting a boolean value
+### boolean値の設定
 
-Developers can set `canDismiss` to a boolean value. If `canDismiss` is `true`, then the modal will close when users attempt to dismiss the modal. If `canDismiss` is `false`, then the modal will not close when users attempt to dismiss the modal.
+開発者は `canDismiss` にboolean値を設定することができます。 `canDismiss` が `true` の場合、ユーザーがモーダルを閉じようとすると、モーダルは閉じます。 `canDismiss` が `false` の場合、ユーザーがモーダルを閉じようとしても、モーダルは閉じません。
 
-Setting a boolean value should be used when you need to require a particular action to be taken prior to a modal being dismissed. For example, if developers want to require that a "Terms of Use" checkbox is checked prior to closing the modal, they could set `canDismiss` to `false` initially and update it to `true` when the checkbox is checked.
+boolean値を設定するのは、モーダルが終了する前に特定のアクションを実行する必要がある場合に使用する必要があります。たとえば、開発者がモーダルを閉じる前に "利用規約" チェックボックスをチェックすることを要求したい場合、最初は `canDismiss` を `false` に設定し、チェックボックスがチェックされたら `true` に更新することが可能です。
 
 import CanDismissBooleanExample from '@site/static/usage/modal/can-dismiss/boolean/index.md';
 
 <CanDismissBooleanExample />
 
-### Setting a callback function
+### コールバック関数を設定する
 
-Developers can set `canDismiss` to be a function. This function must return a `Promise` that resolves to either `true` or `false`. If the promise resolves to `true`, then the modal will dismiss. If the promise resolves to `false`, then the modal will not dismiss.
+開発者は `canDismiss` を関数として設定することができます。この関数は、 `true` か `false` のどちらかに解決する `Promise` を返さなければなりません。もし、約束が `true` に解決されたら、モーダルは解除されます。もし、プロミスが `false` に解決された場合、モーダルは解除されません。
 
-Setting a callback function should be used when you have complex dismissing criteria such as showing a confirmation dialog prior to dismissing the modal. The option that users select in this dialog can then be used to determine whether or not the modal should proceed with dismissing.
+コールバック関数を設定するのは、モーダルを終了する前に確認ダイアログを表示するなど、終了条件が複雑な場合に使用する必要があります。ユーザーがこのダイアログで選択したオプションは、モーダルの終了を続行するかどうかの判断に使用されます。
 
-Note that setting a callback function will cause the swipe gesture to be interrupted when using a card or sheet modal. This is because Ionic does not know what your callback function will resolve to ahead of time.
+コールバック関数を設定すると、カードまたはシートモーダルの使用時にスワイプジェスチャが中断されることに注意してください。これは、Ionicが、あなたのコールバック関数が何を解決するか事前に知らないためです。
 
 import CanDismissFunctionExample from '@site/static/usage/modal/can-dismiss/function/index.md';
 
 <CanDismissFunctionExample />
 
-## Types of modals
- 
-### Card Modal
+## モーダルの種類
 
-Developers can create a card modal effect where the modal appears as a card stacked on top of your app's main content. To create a card modal, developers need to set the `presentingElement` property and the `swipeToClose` properties on `ion-modal`.
+### カードモーダル
 
-The `presentingElement` property accepts a reference to the element that should display under your modal. This is typically a reference to `ion-router-outlet`.
+開発者は、アプリのメインコンテンツの上にカードが積み重なったように表示されるカードモーダル効果を作成することができます。カードモーダルを作成するには、開発者は `ion-modal` に `presentingElement` プロパティと `swipeToClose` プロパティを設定する必要があります。
 
-The `swipeToClose` property can be used to control whether or not the card modal can be swiped to close.
+`presentingElement` プロパティは、モーダルの下に表示する要素への参照を受け取ります。これは通常、 `ion-router-outlet` への参照となります。
+
+`swipeToClose` プロパティは、カードモーダルをスワイプして閉じることができるかどうかを制御するために使用されます。
 
 :::note
 The card display style is only available on iOS.
@@ -103,41 +103,41 @@ import CardExample from '@site/static/usage/modal/card/basic/index.md';
 
 <CardExample />
 
-### Sheet Modal
+### シートモーダル
 
-Developers can create a sheet modal effect similar to the drawer components available in maps applications. To create a sheet modal, developers need to set the `breakpoints` and `initialBreakpoint` properties on `ion-modal`.
+マップアプリのドロワーコンポーネントに似たシートモーダルエフェクトを作成します。シートモーダルを作成するには、`ion-modal` に `breakpoints` と `initialBreakpoint` プロパティを設定する必要があります。
 
-The `breakpoints` property accepts an array which states each breakpoint that the sheet can snap to when swiped. A `breakpoints` property of `[0, 0.5, 1]` would indicate that the sheet can be swiped to show 0% of the modal, 50% of the modal, and 100% of the modal. When the modal is swiped to 0%, the modal will be automatically dismissed.
+`breakpoints` プロパティには、スワイプしたときにシートがスナップすることができる各ブレークポイントを記述した配列を指定します。 `[0, 0.5, 1]` の `breakpoints` プロパティは、シートが 0%、50%、100% の範囲でスワイプできることを意味します。0%までスワイプされると、モーダルは自動的に解除されます。
 
-The `initialBreakpoint` property is required so that the sheet modal knows which breakpoint to start at when presenting. The `initialBreakpoint` value must also exist in the `breakpoints` array. Given a `breakpoints` value of `[0, 0.5, 1]`, an `initialBreakpoint` value of `0.5` would be valid as `0.5` is in the `breakpoints` array. An `initialBreakpoint` value of `0.25` would not be valid as `0.25` does not exist in the `breakpoints` array.
+`initialBreakpoint` プロパティは、シート モーダルが表示されるときに、どのブレークポイントから開始するかを知るために必要なものです。 `initialBreakpoint` の値は、 `breakpoints` 配列にも存在する必要があります。例えば、 `breakpoints` の値が `[0, 0.5, 1]` である場合、 `initialBreakpoint` の値が `0.5` であれば、 `breakpoints` 配列に `0.5` が存在するため有効であると考えられます。 `0.25` は `breakpoints` 配列に存在しないので、 `initialBreakpoint` の値は無効になります。
 
-The `backdropBreakpoint` property can be used to customize the point at which the `ion-backdrop` will begin to fade in. This is useful when creating interfaces that have content underneath the sheet that should remain interactive. A common use case is a sheet modal that overlays a map where the map is interactive until the sheet is fully expanded.
+`backdropBreakpoint` プロパティは、 `ion-backdrop` がフェードインし始めるポイントをカスタマイズするために使用することができます。これは、シートの下にインタラクティブなコンテンツがあるようなインタフェースを作成する際に便利です。よくある使用例としては、シートが完全に展開されるまでマップがインタラクティブになるような、マップをオーバーレイするシートモーダルです。
 
 :::note
- Note: The `swipeToClose` property has no effect when using a sheet modal as sheet modals must be swipeable in order to be usable.
+ Note: シートモーダルを使用する場合、`swipeToClose` プロパティは何の効果もありません。
 :::
 
 import SheetExample from '@site/static/usage/modal/sheet/basic/index.md';
 
 <SheetExample />
 
-#### Interacting with background content
+#### 背景コンテンツとのインタラクション
 
 import SheetBackgroundContentExample from '@site/static/usage/modal/sheet/background-content/index.md';
 
 <SheetBackgroundContentExample />
 
-## Styling
+## スタイリング
 
-Modals are presented at the root of your application so they overlay your entire app. This behavior applies to both inline modals and modals presented from a controller. As a result, custom modal styles can not be scoped to a particular component as they will not apply to the modal. Instead, styles must be applied globally. For most developers, placing the custom styles in `global.css` is sufficient.
+モーダルはアプリケーションのルートで表示されるので、アプリ全体を覆うように表示されます。この動作は、インライン モーダルおよびコントローラから表示されるモーダルの両方に適用されます。その結果、カスタムのモーダルスタイルを特定のコンポーネントにスコープすることはできず、モーダルには適用されません。代わりに、スタイルはグローバルに適用する必要があります。ほとんどの開発者は、カスタムスタイルを `global.css` に配置すれば十分です。
 
 :::note
- If you are building an Ionic Angular app, the styles need to be added to a global stylesheet file. Read [Style Placement](#style-placement) in the Angular section below for more information.
+IonicのAngularアプリを構築する場合、スタイルはグローバルなスタイルシートファイルに追加する必要があります。詳しくは、以下のAngularセクションの [Style Placement](#style-placement) をお読みください。
 :::
 
 
 :::note
- `ion-modal` works under the assumption that stacked modals are the same size. As a result, each subsequent modal will have no box shadow and a backdrop opacity of `0`. This is to avoid the effect of shadows and backdrops getting darker with each added modal. This can be changed by setting the `--box-shadow` and `--backdrop-opacity` CSS variables:
+`ion-modal` は、積み重ねられたモーダルは同じサイズであるという前提で動作します。その結果、後続の各モーダルはボックスシャドウを持たず、背景の不透明度は `0` になります。これは、モーダルが追加されるたびに影や背景が濃くなるのを避けるためです。これは、CSS 変数 `--box-shadow` と `--backdrop-opacity` を設定することで変更することができます。
 :::
 
 ``` 
@@ -151,9 +151,9 @@ import ThemeExample from '@site/static/usage/modal/styling/theming/index.md';
 
 <ThemeExample />
 
-### Animations
+### アニメーション
 
-The enter and leave animations can be customized by using our animation builder and assigning animations to `enterAnimation` and `leaveAnimation`.
+アニメーションビルダーを使用し、`enterAnimation` と `leaveAnimation` にアニメーションを割り当てることで、表示時、非表示時のアニメーションをカスタマイズすることができます。
 
 import AnimationsExample from '@site/static/usage/modal/styling/animations/index.md';
 
@@ -163,7 +163,7 @@ import AnimationsExample from '@site/static/usage/modal/styling/animations/index
 
 ### ModalOptions
 
-Below you will find all of the options available to you when using the `modalController`. These options should be supplied when calling `modalController.create()`.
+下記は `modalController` を使用する際に利用できるすべてのオプションです。これらのオプションは、 `modalController.create()` を呼び出す際に指定します。
 
 ```typescript
 interface ModalOptions {
@@ -192,7 +192,7 @@ interface ModalOptions {
 ```
 ### ModalCustomEvent
 
-While not required, this interface can be used in place of the `CustomEvent` interface for stronger typing with Ionic events emitted from this component.
+必須ではありませんが、このコンポーネントから発行される Ionic イベントでより強く型付けを行うために、`CustomEvent` インターフェースの代わりにこのインターフェースを使用することが可能です。
 
 ```typescript
 interface ModalCustomEvent extends CustomEvent {
@@ -208,25 +208,25 @@ interface ModalCustomEvent extends CustomEvent {
 | ----- | ------------------- |
 | `Esc` | Dismisses the modal |
 
-### Screen Readers
+### スクリーンリーダー
 
-Modals have the `aria-modal` attribute applied. This attribute can cause assistive technologies to limit navigation to the modal element's contents. As a result, using gestures that move to the next or previous items may not focus elements outside of the modal. This applies even when the backdrop is disabled in sheet modals using the `backdropBreakpoint` property.
+モーダルには `aria-modal` 属性が適用されています。この属性は、支援技術によるナビゲーションをモーダル要素のコンテンツに制限させることがあります。その結果、次や前の項目に移動するジェスチャを使用しても、モーダルの外側の要素にフォーカスが当たらない場合があります。これは、`backdropBreakpoint` プロパティを使用して、シート モーダルでバックドロップを無効にした場合にも当てはまります。
 
-Assistive technologies will not limit navigation to the modal element's contents if developers manually move focus. However, manually moving focus outside of a modal is not supported in Ionic for modals that have focus trapping enabled.
+開発者が手動でフォーカスを移動しても、アシストはモーダル要素のコンテンツへのナビゲーションを制限しません。ただし、Ionic では、フォーカスのトラッピングが有効になっているモーダルに対して、モーダルの外側に手動でフォーカスを移動することはサポートされていません。
 
 See https://w3c.github.io/aria/#aria-modal for more information.
 
-### Focus Trapping
+### フォーカスのトラッピング
 
-When a modal is presented, focus will be trapped inside of the presented modal. Users can focus other interactive elements inside the modal but will never be able to focus interactive elements outside the modal while the modal is presented. For applications that present multiple stacked modals, focus will be trapped on the modal that was presented last.
+モーダルが表示されると、フォーカスは表示されたモーダルの内側に閉じ込められます。ユーザーは、モーダル内の他のインタラクティブ要素にフォーカスを合わせることができますが、モーダルが表示されている間は、モーダルの外側のインタラクティブ要素にフォーカスを合わせることができません。複数のスタック モーダルを表示するアプリケーションでは、最後に表示されたモーダルにフォーカスが移動します。
 
-Sheet modals that have had their backdrop disabled by the `backdropBreakpoint` property are not subject to focus trapping.
+`backdropBreakpoint` プロパティによって背景が無効にされたシート モーダルは、フォーカスのトラッピングの対象にはなりません。
 
-### Sheet Modals
+### シートモーダル
 
-Sheet modals allow users to interact with content behind the modal when the `backdropBreakpoint` property is used. The backdrop will be disabled up to and including the specified `backdropBreakpoint` and will be enabled after it.
+シートモーダルでは、`backdropBreakpoint` プロパティが使用されているとき、ユーザがモーダルの後ろのコンテンツとインタラクトできるようにします。バックドロップは、指定された `backdropBreakpoint` までは無効になり、それ以降は有効になります。
 
-When the backdrop is disabled, users will be able to interact with elements outside the sheet modal using a pointer or keyboard. Assistive technologies may not focus outside the sheet modal by default due to the usage of `aria-modal`. We recommend avoiding features such as autofocus here as it can cause assistive technologies to jump between two interactive contexts without warning the user.  
+バックドロップが無効になると、ユーザーはポインタやキーボードを使用して、シートモーダルの外側の要素を操作することができるようになります。入力支援は、`aria-modal` の使用により、デフォルトではシートモーダルの外側にフォーカスを当てないかもしれません。オートフォーカスなどの機能は、ユーザーに警告することなく、支援技術が 2つのインタラクティブなコンテキスト間をジャンプする原因となるため、ここでは避けることをお勧めします。
 
 
 ## プロパティ

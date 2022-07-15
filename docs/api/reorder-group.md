@@ -38,19 +38,19 @@ reorder groupは、`ion-reorder` コンポーネントを使用するアイテ�
 
 `ionItemReorder` イベントの `detail` プロパティには、 `from` および `to` インデックスを含む、reorderの操作に関するすべての関連情報が含まれている。並べ替えのコンテキストでは、アイテムは`from`インデックスから新しい `to`インデックスに移動します。
 
-## Completing a Reorder
+## Reorderの完了
 
-When the `ionItemReorder` event is dispatched, developers have the option to call the `complete()` method on `ion-reorder-group`. This will complete the reorder operation.
+`ionItemReorder` イベントがdispatchされたとき、開発者は `ion-reorder-group` の `complete()` メソッドを呼び出すすることができます。これにより、並び替えの操作が完了します。
 
-By default, the `complete()` method will re-order the DOM nodes inside of `ion-reorder-group`.
+デフォルトでは、`complete()` メソッドは `ion-reorder-group` の中の DOMノードを並び替えます。
 
-For developers who need to sort an array based on the order of the items in `ion-reorder-group`, we recommend passing the array as a parameter in `complete()`. Ionic will sort and return the array so that it can be reassigned.
+`ion-reorder-group` 内のアイテムの順序に基づいて配列を並べ替える必要がある開発者には、 `complete()` のパラメータとして配列を渡すことをおすすめします。Ionicは配列をソートして返すので、再アサインが可能になります。
 
-In some cases, it may be necessary for an app to re-order both the array and the DOM nodes on its own. When this happens, it is recommended to pass `false` to the `complete()` method. This will prevent Ionic from re-ordering any DOM nodes inside of `ion-reorder-group`.
+場合によっては、アプリが独自に配列とDOMノードの両方を並べ替える必要があるかもしれません。このような場合には、`complete()` メソッドに `false` を渡すことが推奨されます。これにより、Ionicは `ion-reorder-group` 内のDOMノードの並び替えを行わないようにすることができます。
 
-## Usage with Virtual Scroll
+## 仮想スクロールでの使い方
 
-The reorder group requires a scroll container to function. When using a virtual scrolling solution, you will need to disable scrolling on the `ion-content` and indicate which element container is responsible for the scroll container with the `.ion-content-scroll-host` class target.
+並べ替えグループが機能するためには、スクロールコンテナが必要です。仮想スクロールを使用する場合は、`ion-content` のスクロールを無効にし、`.ion-content-scroll-host` クラスターゲットで、どの要素コンテナがスクロールコンテナを担当するかを指定する必要があります。
 
 ```html
 <ion-content scroll-y="false">
@@ -87,7 +87,7 @@ interface ItemReorderEventDetail {
 
 ### ItemReorderCustomEvent
 
-While not required, this interface can be used in place of the `CustomEvent` interface for stronger typing with Ionic events emitted from this component.
+必須ではありませんが、このコンポーネントから発行される Ionic イベントでより強く型付けを行うために、`CustomEvent` インターフェースの代わりにこのインターフェースを使用することが可能です。
 
 ```typescript
 interface ItemReorderCustomEvent extends CustomEvent {
@@ -98,7 +98,7 @@ interface ItemReorderCustomEvent extends CustomEvent {
 
 
 
-## Usage
+## 使い方
 
 <Tabs groupId="framework" defaultValue="angular" values={[{ value: 'angular', label: 'Angular' }, { value: 'javascript', label: 'Javascript' }, { value: 'react', label: 'React' }, { value: 'stencil', label: 'Stencil' }, { value: 'vue', label: 'Vue' }]}>
 

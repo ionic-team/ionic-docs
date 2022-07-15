@@ -42,7 +42,7 @@ RouterOutletとは異なり、Navは特定のルーターに関連付けられ�
 
 ### NavCustomEvent
 
-While not required, this interface can be used in place of the `CustomEvent` interface for stronger typing with Ionic events emitted from this component.
+必須ではありませんが、このコンポーネントから発行される Ionic イベントでより強く型付けを行うために、`CustomEvent` インターフェースの代わりにこのインターフェースを使用することが可能です。
 
 ```typescript
 interface NavCustomEvent extends CustomEvent {

@@ -32,15 +32,15 @@ import APITOCInline from '@components/page/api/APITOCInline';
 
 
 
-Rows are horizontal components of the [grid](grid.md) system and contain varying numbers of
-[columns](col.md). They ensure the columns are positioned properly.
+Rowsは [grid](grid.md)システムの水平方向の構成要素で、さまざまな数の
+[列](col.md)を含んでいます。列が適切に配置されるようにします。
 
-See [Grid Layout](/docs/layout/grid) for more information.
+詳しくは、[グリッドレイアウト](/docs/layout/grid) を参照してください。
 
 
 ## Row Alignment
 
-By default, columns will stretch to fill the entire height of the row and wrap when necessary. Rows are [flex containers](https://developer.mozilla.org/en-US/docs/Glossary/Flex_Container), so there are several [CSS classes](/docs/layout/css-utilities#flex-container-properties) that can be applied to a row to customize this behavior.
+デフォルトでは、列は行の高さ全体を埋めるように伸縮し、必要に応じて折り返されます。行は [Flexコンテナ](https://developer.mozilla.org/en-US/docs/Glossary/Flex_Container) なので、この動作をカスタマイズするために、行に適用できるいくつかの [CSS クラス](/docs/layout/css-utilities#flex-container-properties) が用意されています。
 
 
 

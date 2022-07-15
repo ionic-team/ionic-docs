@@ -26,9 +26,9 @@ import APITOCInline from '@components/page/api/APITOCInline';
 
 ## 基本的な使い方
 
-Once presented, the loading indicator will display indefinitely by default. Developers can manually dismiss the loading indicator after creation by calling the `dismiss()` method on the component. The `onDidDismiss` function can be called to perform an action after the loading indicator is dismissed.
+一度表示されると、ロードインジケータはデフォルトで無期限に表示されます。開発者は、コンポーネント上で `dismiss()` メソッドを呼び出すことで、作成後にローディングインジケータを手動で解除することができます。onDidDismiss` 関数を呼び出すと、ローディングインジケータが解除された後にアクションを実行することができます。
 
-Alternatively, developers can configure the loading indicator to dismiss automatically after a specific amount of time by passing the number of milliseconds to display it in the `duration` of the loading options.
+また、ロードオプションの `duration` に表示するミリ秒数を渡すことで、特定の時間が経過した後にロードインジケータを自動的に解除するよう設定することもできます。
 
 ### Controller
 
@@ -36,9 +36,9 @@ import Controller from '@site/static/usage/loading/controller/index.md';
 
 <Controller />
 
-### Inline
+### インライン
 
-Ionic React and Ionic Vue users also have the option to use the `ion-loading` component directly in their template.
+Ionic ReactとIonic Vueのユーザーは、`ion-loading`コンポーネントをテンプレートで直接使用するオプションもあります。
 
 <Tabs defaultValue="react" values={[{ value: 'react', label: 'React' }, { value: 'vue', label: 'Vue' }]}>
 <TabItem value="react">
@@ -104,19 +104,19 @@ export default defineComponent({
 
 ## カスタマイズ
 
-### Spinners
+### スピナー
 
-The spinner that is used can be customized using the `spinner` property. See the [spinner property documentation](#spinner) for a full list of options.
+使用するスピナーは `spinner` プロパティを使用してカスタマイズすることができます。オプションの完全なリストは [spinner property documentation](#spinner) を参照してください。
 
 import Spinners from '@site/static/usage/loading/spinners/index.md';
 
 <Spinners />
 
-### Theming
+### テーマ
 
-Loading uses scoped encapsulation, which means it will automatically scope its CSS by appending each of the styles with an additional class at runtime. Overriding scoped selectors in CSS requires a [higher specificity](https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity) selector.
+Loading は scoped encapsulation を使用しています。これは、実行時に各スタイルに追加のクラスを付加することで、自動的に CSS をスコープ化することを意味します。CSSでscopedセレクタをオーバーライドするには、[higher specificity](https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity) セレクタが必要です。
 
-We recommend passing a custom class and using that to add custom styles to the host and inner elements.
+カスタムクラスを渡して、それを使ってホストと内部要素にカスタムスタイルを追加することをお勧めします。
 
 import Theming from '@site/static/usage/loading/theming/index.md';
 
