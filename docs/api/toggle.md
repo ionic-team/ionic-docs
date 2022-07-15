@@ -15,7 +15,7 @@ import CustomProps from '@site/static/auto-generated/toggle/custom-props.md';
 import Slots from '@site/static/auto-generated/toggle/slots.md';
 
 <head>
-  <title>Toggle | ion-toggle: Custom Toggle Button for Ionic Applications</title>
+  <title>ion-toggle: Custom Toggle Button for Ionic Applications</title>
   <meta name="description" content="Toggle changes the state of a single option. Use ion-toggle to create customizable toggle buttons that can be switched on or off for your applications." />
 </head>
 

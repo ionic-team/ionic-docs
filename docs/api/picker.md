@@ -12,7 +12,7 @@ import CustomProps from '@site/static/auto-generated/picker/custom-props.md';
 import Slots from '@site/static/auto-generated/picker/slots.md';
 
 <head>
-  <title>Picker | Display Buttons and Columns for ion-picker on Ionic Apps</title>
+  <title>ion-picker: Display Buttons and Columns for Picker on Ionic Apps</title>
   <meta name="description" content="A Picker is a dialog that displays a row of buttons and columns underneath. Ion-picker appears on top of the app's content, and at the bottom of the viewport." />
 </head>
 

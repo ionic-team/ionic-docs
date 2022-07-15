@@ -15,7 +15,7 @@ import CustomProps from '@site/static/auto-generated/router-link/custom-props.md
 import Slots from '@site/static/auto-generated/router-link/slots.md';
 
 <head>
-  <title>Router Link | Navigating The ion-router-link Component</title>
+  <title>ion-router-link | Navigating The Router Link Component</title>
   <meta name="description" content="Use the ion-router-link component to navigate to a specified link. The router link can accept an href for location and a direction for the transition animation." />
 </head>
 

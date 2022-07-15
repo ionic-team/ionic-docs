@@ -13,7 +13,7 @@ import CustomProps from '@site/static/auto-generated/label/custom-props.md';
 import Slots from '@site/static/auto-generated/label/slots.md';
 
 <head>
-  <title>Item Label Color and Properties for Applications | ion-label</title>
+  <title>ion-label: Item Label Color and Properties for Applications</title>
   <meta name="description" content="Label is a wrapper element that can be used in combination with other Ionic components. Easily design item label colors and other properties with ion-label." />
 </head>
 

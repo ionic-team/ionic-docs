@@ -13,7 +13,7 @@ import CustomProps from '@site/static/auto-generated/select-option/custom-props.
 import Slots from '@site/static/auto-generated/select-option/slots.md';
 
 <head>
-  <title>Select Option | What Is An Option Select on Ionic Framework Apps</title>
+  <title>ion-select-option: What Is An Option Select on Ionic Framework Apps</title>
   <meta name="description" content="What is an option select? Select Options are child element components of a Select—each option defined is passed and displayed in the Select dialog." />
 </head>
 

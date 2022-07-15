@@ -15,7 +15,7 @@ import CustomProps from '@site/static/auto-generated/searchbar/custom-props.md';
 import Slots from '@site/static/auto-generated/searchbar/slots.md';
 
 <head>
-  <title>Search Bar Icon for Keyboard Text Display | Ion-Search Bar</title>
+  <title>ion-searchbar: Search Bar Icon for Keyboard Text Display</title>
   <meta name="description" content="Search bars represent a text field that can be used to search through a collection. Learn to input Ion-Search Bar as an icon on Android & iOS keyboard displays." />
 </head>
 

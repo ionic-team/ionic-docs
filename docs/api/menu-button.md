@@ -13,7 +13,7 @@ import CustomProps from '@site/static/auto-generated/menu-button/custom-props.md
 import Slots from '@site/static/auto-generated/menu-button/slots.md';
 
 <head>
-  <title>Menu Button | ion-menu-button to Open an App Menu on A Page</title>
+  <title>ion-menu-button: Menu Button for Open an App Menu on A Page</title>
   <meta name="description" content="Menu Button is component that automatically creates the icon and functionality to open a menu on an app page. Read to learn more about ion-menu-button." />
 </head>
 

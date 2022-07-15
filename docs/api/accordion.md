@@ -12,7 +12,7 @@ import CustomProps from '@site/static/auto-generated/accordion/custom-props.md';
 import Slots from '@site/static/auto-generated/accordion/slots.md';
 
 <head>
-  <title>Ion-Accordion Components: How to Build & Examples | Ionic</title>
+  <title>ion-accordion: How to Build & Examples | Ionic</title>
   <meta name="description" content="Ion-accordion components provide collapsible sections in content to reduce vertical space and organize information. Learn how to build one and see examples." />
 </head>
 

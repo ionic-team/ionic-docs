@@ -15,7 +15,7 @@ import CustomProps from '@site/static/auto-generated/toolbar/custom-props.md';
 import Slots from '@site/static/auto-generated/toolbar/slots.md';
 
 <head>
-  <title>Toolbar | Customize App Menu Toolbar Buttons and Icons</title>
+  <title>ion-toolbar | Customize App Menu Toolbar Buttons and Icons</title>
   <meta name="description" content="Ion-toolbar component lets you customize toolbar buttons on your app menu. Add fixed toolbars above or below content or use full screen to scroll with content." />
 </head>
 

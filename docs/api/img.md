@@ -13,7 +13,7 @@ import CustomProps from '@site/static/auto-generated/img/custom-props.md';
 import Slots from '@site/static/auto-generated/img/slots.md';
 
 <head>
-  <title>Img Tag to Lazy Load Images in Viewport | ion-img Tag</title>
+  <title>ion-img: Img Tag to Lazy Load Images in Viewport</title>
   <meta name="description" content="Img tag lazy loads images whenever the tag is in the viewport. Utilize this component when generating large lists—as images are only loaded when visible." />
 </head>
 

@@ -13,7 +13,7 @@ import CustomProps from '@site/static/auto-generated/textarea/custom-props.md';
 import Slots from '@site/static/auto-generated/textarea/slots.md';
 
 <head>
-  <title>Ionic Textarea Component and CSS Properties for Multi-Line Input</title>
+  <title>ion-textarea: Ionic Textarea Component and CSS Properties for Multi-Line Input</title>
   <meta name="description" content="Textarea is for multi-line input. The component accepts native textarea attributes in addition to Ionic properties. Read to learn about use and CSS elements." />
 </head>
 

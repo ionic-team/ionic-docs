@@ -15,7 +15,7 @@ import CustomProps from '@site/static/auto-generated/tabs/custom-props.md';
 import Slots from '@site/static/auto-generated/tabs/slots.md';
 
 <head>
-  <title>Ion-Tabs: Tab-Based Component for App Top-Level Navigation</title>
+  <title>ion-tabs: Tab-Based Component for App Top-Level Navigation</title>
   <meta name="description" content="Tabs are top-level components to implement tab-based navigation. Ion-tabs have no styling & work as router outlets for navigation that behaves like native apps." />
 </head>
 

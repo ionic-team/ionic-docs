@@ -13,7 +13,7 @@ import CustomProps from '@site/static/auto-generated/item-sliding/custom-props.m
 import Slots from '@site/static/auto-generated/item-sliding/slots.md';
 
 <head>
-  <title>Slide Buttons | Slide Right to Left with ion-item-sliding</title>
+  <title>ion-item-sliding: Slide Right to Left within ion-item</title>
   <meta name="description" content="ion-item-sliding component contains items that are dragged to reveal buttons. Options are revealed when the sliding item is swiped from left to right." />
 </head>
 

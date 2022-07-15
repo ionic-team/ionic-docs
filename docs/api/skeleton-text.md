@@ -15,7 +15,7 @@ import CustomProps from '@site/static/auto-generated/skeleton-text/custom-props.
 import Slots from '@site/static/auto-generated/skeleton-text/slots.md';
 
 <head>
-  <title>Skeleton Text | Skeleton Loading Placeholder & Framework for Text</title>
+  <title>ion-skeleton-text: Skeleton Loading Placeholder & Framework for Text</title>
   <meta name="description" content="ion-skeleton-text is a component for rendering placeholder content. The element will render a gray block at the specified width as a loading text framework." />
 </head>
 

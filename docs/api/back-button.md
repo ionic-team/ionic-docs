@@ -15,7 +15,7 @@ import CustomProps from '@site/static/auto-generated/back-button/custom-props.md
 import Slots from '@site/static/auto-generated/back-button/slots.md';
 
 <head>
-  <title>Back Button | ion-back-button: Custom Menu Icon for Applications</title>
+  <title>ion-back-button: Custom Menu Icon for Applications</title>
   <meta name="description" content="The ion-back-button is a custom menu icon for Android, iOS, and Progressive Web Apps. Use Ionic Framework components to easily build applications." />
 </head>
 

@@ -13,7 +13,7 @@ import CustomProps from '@site/static/auto-generated/slide/custom-props.md';
 import Slots from '@site/static/auto-generated/slide/slots.md';
 
 <head>
-  <title>ion-slide | Slide API Component for Ionic Framework Apps</title>
+  <title>ion-slide: Slide API Component for Ionic Framework Apps</title>
   <meta name="description" content="Slide is a child API component of Slides—written as ion-slide. Any slide content should be written in this component and used in conjunction with Slides." />
 </head>
 

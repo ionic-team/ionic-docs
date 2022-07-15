@@ -15,7 +15,7 @@ import CustomProps from '@site/static/auto-generated/toast/custom-props.md';
 import Slots from '@site/static/auto-generated/toast/slots.md';
 
 <head>
-  <title>ion-toast Component: A Dismissible App Notification Alert</title>
+  <title>ion-toast: A Dismissible App Notification Alert</title>
   <meta name="description" content="ion-toast component is an app notification displaying system messages or feedback. Toast alerts appear above content and are dismissed to resume interaction." />
 </head>
 

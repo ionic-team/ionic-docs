@@ -15,7 +15,7 @@ import CustomProps from '@site/static/auto-generated/spinner/custom-props.md';
 import Slots from '@site/static/auto-generated/spinner/slots.md';
 
 <head>
-  <title>ion-spinner | Animated Spinner Icon Components and Properties</title>
+  <title>ion-spinner: Animated Spinner Icon Components and Properties</title>
   <meta name="description" content="The ion-spinner component provides a variety of animated SVG spinners. These icons indicate that the app is loading or performing another process to wait on." />
 </head>
 

@@ -15,7 +15,7 @@ import CustomProps from '@site/static/auto-generated/slides/custom-props.md';
 import Slots from '@site/static/auto-generated/slides/slots.md';
 
 <head>
-  <title>Ion-Slides: Mobile Touch Slider with Built-In & Custom Animation</title>
+  <title>ion-slides: Mobile Touch Slider with Built-In & Custom Animation</title>
   <meta name="description" content="Ion-Slides is a multi-section container which offers custom and built-in mobile touch slider animation effects. See how Ion-Slides works with iOS and Android." />
 </head>
 

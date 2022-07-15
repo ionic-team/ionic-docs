@@ -13,7 +13,7 @@ import CustomProps from '@site/static/auto-generated/segment-button/custom-props
 import Slots from '@site/static/auto-generated/segment-button/slots.md';
 
 <head>
-  <title>ion-segment-button | Segment Button Icon and Segment Value</title>
+  <title>ion-segment-button: Segment Button Icon and Segment Value</title>
   <meta name="description" content="ion-segment-buttons are groups of related buttons inside of a Segment. Learn to use segment button icons and check their values on Ionic Framework Apps." />
 </head>
 

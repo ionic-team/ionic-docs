@@ -13,7 +13,7 @@ import CustomProps from '@site/static/auto-generated/fab-button/custom-props.md'
 import Slots from '@site/static/auto-generated/fab-button/slots.md';
 
 <head>
-  <title>Floating Action Button | Ionic FAB Button Icon for Primary Action</title>
+  <title>ion-fab-button: Ionic Floating Action Button Icon for Primary Action</title>
   <meta name="description" content="Floating Action Buttons (FABs) represent the primary action in an app. The icons are circular and, when pressed, the button may open more related actions." />
 </head>
 

@@ -13,8 +13,8 @@ import CustomProps from '@site/static/auto-generated/virtual-scroll/custom-props
 import Slots from '@site/static/auto-generated/virtual-scroll/slots.md';
 
 <head>
-  <title>ion-virtual-scroll | Angular Virtual Scroll List for Ionic Apps</title>
-  <meta name="description" content="ion-virtual-scroll, supported in Angular, displays a virtual, infinite list. Records are passed to the virtual scroll containing the data to create templates." />
+  <title>ion-virtual-scroll: Virtual Scroll List for Ionic Apps</title>
+  <meta name="description" content="ion-virtual-scroll displays a virtual, infinite list. Records are passed to the virtual scroll containing the data to create templates." />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';

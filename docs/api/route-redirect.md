@@ -13,7 +13,7 @@ import CustomProps from '@site/static/auto-generated/route-redirect/custom-props
 import Slots from '@site/static/auto-generated/route-redirect/slots.md';
 
 <head>
-  <title>ion-route-redirect Plugin: Redirect 'from' a URL 'to' Another URL</title>
+  <title>ion-route-redirect: Redirect 'from' a URL 'to' Another URL</title>
   <meta name="description" content="ion-route-redirect is used with as a direct child of an ion-router and redirects 'from' a URL 'to' another URL. Read to learn about the route redirect plugin." />
 </head>
 

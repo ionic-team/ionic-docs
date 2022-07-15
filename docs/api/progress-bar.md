@@ -15,7 +15,7 @@ import CustomProps from '@site/static/auto-generated/progress-bar/custom-props.m
 import Slots from '@site/static/auto-generated/progress-bar/slots.md';
 
 <head>
-  <title>Progress Bar | Horizontal App Progress Bar for Loading Indicator</title>
+  <title>ion-progress-bar: Horizontal App Progress Bar for Loading Indicator</title>
   <meta name="description" content="ion-progress-bars are horizontal loading indicators that inform users about the status of ongoing app processes—such as submitting a form or saving updates." />
 </head>
 

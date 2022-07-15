@@ -15,7 +15,7 @@ import CustomProps from '@site/static/auto-generated/thumbnail/custom-props.md';
 import Slots from '@site/static/auto-generated/thumbnail/slots.md';
 
 <head>
-  <title>ion-thumbnail | Thumbnail App Component to Wrap Images or Icons</title>
+  <title>ion-thumbnail: Thumbnail App Component to Wrap Images or Icons</title>
   <meta name="description" content="What is a thumbnail image? Thumbnail app components wrap an image or icon and can be used to display a layout of images or for previews of full-size images." />
 </head>
 

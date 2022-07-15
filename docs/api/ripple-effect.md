@@ -13,7 +13,7 @@ import CustomProps from '@site/static/auto-generated/ripple-effect/custom-props.
 import Slots from '@site/static/auto-generated/ripple-effect/slots.md';
 
 <head>
-  <title>ion-ripple-effect | Ripple Effect Button Component for Ionic Apps</title>
+  <title>ion-ripple-effect: Ripple Effect Button Component for Ionic Apps</title>
   <meta name="description" content="The ripple effect button component adds the Material Design ink ripple interaction effect. It can only be used in an ion-app and can be added to any component." />
 </head>
 

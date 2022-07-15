@@ -15,7 +15,7 @@ import CustomProps from '@site/static/auto-generated/grid/custom-props.md';
 import Slots from '@site/static/auto-generated/grid/slots.md';
 
 <head>
-  <title>Ion-Grid: Display Grids to Build Mobile-First Custom App Layout</title>
+  <title>ion-grid: Display Grids to Build Mobile-First Custom App Layout</title>
   <meta name="description" content="Ion-Grid is a mobile-first flexbox system to build custom application display layouts with a 12 column layout and different breakpoints based on screen size." />
 </head>
 

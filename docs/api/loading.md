@@ -12,7 +12,7 @@ import CustomProps from '@site/static/auto-generated/loading/custom-props.md';
 import Slots from '@site/static/auto-generated/loading/slots.md';
 
 <head>
-  <title>Loading | Application Loading Indicator Overlay | ion-loading</title>
+  <title>ion-loading: Application Loading Indicator Overlay</title>
   <meta name="description" content="The ion-loading overlay indicates activity while blocking user interaction. The loading indicator appears on top of the app's content, and can be dismissed." />
 </head>
 

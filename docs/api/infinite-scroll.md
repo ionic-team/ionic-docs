@@ -15,7 +15,7 @@ import CustomProps from '@site/static/auto-generated/infinite-scroll/custom-prop
 import Slots from '@site/static/auto-generated/infinite-scroll/slots.md';
 
 <head>
-  <title>Infinite Scroller | ion-infinite-scroll Action Component</title>
+  <title>ion-infinite-scroll: Infinite Scroller Action Component</title>
   <meta name="description" content="The ion-infinite-scroll component calls an action to be performed when the user scrolls a specified distance from the bottom or top of the page." />
 </head>
 
