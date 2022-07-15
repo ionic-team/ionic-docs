@@ -6,7 +6,7 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
 <head>
-  <title>Hardware Back Button for Capacitor & Cordova on Android Devices</title>
+  <title>Androidデバイスでのハードウェアの戻るボタン</title>
   <meta
     name="description"
     content="The hardware back button is found on most Android devices. Read to learn more about hardware back button use in Capacitor and Cordova on Ionic applications."

@@ -3,24 +3,24 @@ title: プレビュー
 ---
 
 <head>
-  <title>Previewing: To Run Ionic Apps Locally in A Web Browser</title>
+  <title>プレビュー: WebブラウザでのIonicアプリローカル実行</title>
   <meta
     name="description"
     content="Previewing provides many different options to test native functionality based on needs. Use this feature to easily run your Ionic app locally in a web browser."
   />
 </head>
 
-There are many different options to test native functionality depending on your target platforms and needs.
+ネイティブ機能のテストには、ターゲットとするプラットフォームやニーズに応じて、さまざまなオプションがあります。
 
-- Run locally in a web browser (using [Platform Detection](../core-concepts/cross-platform.md) for native functionality)
-- [Deploy to iOS](ios.md)
-- [Deploy to Android](android.md)
+- Web ブラウザでローカルに実行する (ネイティブ機能については [Platform Detection](../core-concepts/cross-platform.md) を使用します)
+- [iOSへのデプロイ](ios.md)
+- [Androidへのデプロイ](android.md)
 
-## Run Locally in a Web Browser
+## ウェブブラウザでローカルに実行する
 
-One of the most powerful features of Ionic is that the majority of your app development can happen right in a browser on your desktop. With full access to traditional web development tools (Chrome/Safari/Firefox dev tools), you can write code then test/debug it quickly without having to recompile or deploy to a simulator or device.
+Ionic の最も強力な機能の1つは、アプリ開発の大部分をデスクトップ上のブラウザで行えることです。従来のウェブ開発ツール（Chrome/Safari/Firefoxの開発ツール）に完全にアクセスできるため、コードを書いてから、再コンパイルやシミュレーターやデバイスへのデプロイの必要なく、迅速にテスト/デバッグを行うことが可能です。
 
-To do so, run `ionic serve` from the command line in the project's directory:
+これを行うには、プロジェクトのディレクトリで、コマンドラインから `ionic serve` を実行します。
 
 ```shell-session
 $ ionic serve
@@ -36,7 +36,7 @@ $ ionic serve
 [INFO] Browser window opened to http://localhost:8100!
 ```
 
-With `ionic serve` running, continue developing your app. As you save changes, the app reloads with those changes applied.
+`ionic serve` を起動したまま、アプリの開発を続けます。変更を保存すると、その変更が適用された状態でアプリがリロードされます。
 
-When implementing native functionality, use [Platform Detection](../core-concepts/cross-platform.md).
-When you're ready to test on a real device, see here for [iOS](ios.md) and [Android](android.md).
+ネイティブ機能を実装する場合は、[Platform Detection](../core-concepts/cross-platform.md) を使用します。
+実機でテストする場合は、 [iOS](ios.md) 、 [Android](android.md) はこちらを参照してください。

@@ -1,10 +1,10 @@
 ---
 title: Androidでの開発
-sidebar_label: Androidのための開発
+sidebar_label: Androidでの開発
 ---
 
 <head>
-  <title>Android App Development Guide: Build Ionic Apps in Android Studio</title>
+  <title>Androidアプリ開発ガイド: Build Ionic Apps in Android Studio</title>
   <meta
     name="description"
     content="This development guide covers how to run and debug Ionic apps on Android emulators and devices. Learn how to install Android Studio to get started building."
@@ -171,17 +171,17 @@ ionic capacitor run android -l --host=YOUR_IP_ADDRESS
 
 デバイス上で実行する場合は、デバイスと開発マシンが同じネットワークに接続されていることを確認してください。
 
-## Running with Cordova
+## Cordova で実行する
 
-The Ionic CLI can build, copy, and deploy Ionic apps to Android simulators and devices with a single command. It can also spin up a development server, like the one used in `ionic serve`, to provide [live-reload](../reference/glossary.md#livereload) functionality.
+Ionic CLI は、コマンドひとつで Ionic アプリをビルド、コピー、Android シミュレーターやデバイスにデプロイすることができます。また、`ionic serve`で使用されているような開発サーバーをスピンアップして、[live-reload](../reference/glossary.md#livereload) 機能を提供することが可能です。
 
-Run the following to start a long-running CLI process that boots up a live-reload server:
+次のコマンドを実行すると、live-reload サーバを起動する CLI プロセスが長時間実行されます。
 
 ```shell
 ionic cordova run android -l
 ```
 
-Now, when changes are made to the app's source files, web assets are rebuilt and the changes are reflected on the simulator or device without having to deploy again.
+これで、アプリのソースファイルに変更があった場合、Web アセットが再構築され、再度デプロイしなくてもシミュレータやデバイスに変更が反映されるようになりました。
 
 ## Androidアプリのデバッグ
 
@@ -200,7 +200,6 @@ Chromeは、AndroidシミュレータとデバイスのためのWeb開発者ツ�
 ### Native Logsの表示
 
 Android Studioで実行している場合、ネイティブログは **Logcat** に表示されます。
-If running with Android Studio, native logs can be found in **Logcat**.
 
 :::note
 **Logcat** ウインドウが非表示の場合は、 **View** &raquo; **Tool Windows** &raquo; **Logcat** から有効にします。

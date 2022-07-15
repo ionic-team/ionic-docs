@@ -4,14 +4,14 @@ sidebar_label: はじめ方
 ---
 
 <head>
-  <title>Starting an App: How to Guide | Ionic Documentation</title>
+  <title>アプリをはじめよう: スタートガイド | Ionic Documentation</title>
   <meta
     name="description"
     content="Starting a new Ionic app is incredibly simple. Learn how to run the ionic start command from the command line and let the CLI handle the rest."
   />
 </head>
 
-Starting a new Ionic app is incredibly simple. From the command line, run the `ionic start` command and the CLI will handle the rest.
+新しいIonicアプリの起動は、驚くほど簡単です。コマンドラインから `ionic start` コマンドを実行すれば、あとはCLIが処理してくれる。
 
 ```shell-session
 $ ionic start
@@ -25,24 +25,24 @@ the first argument to ionic start.
 ? Project name: █
 ```
 
-The Ionic CLI will display prompts asking for the new project's name and which template to use. These details can be provided as command arguments:
+Ionic CLIでは、新しいプロジェクトの名前と使用するテンプレートの入力を求めるプロンプトが表示されます。これらの詳細は、コマンドの引数として提供することができます。
 
 ```shell-session
 $ ionic start myApp tabs
 ```
 
-Here, `myApp` is the name of the project, `tabs` is the starter template, and the project type is `angular`.
+ここでは、 `myApp` がプロジェクト名、 `tabs` がスターターテンプレート、そしてプロジェクトの種類は `angular` です。
 
-`tabs` is not the only project template available. Between all project types, there are three templates available:
+利用できるプロジェクトテンプレートは `tabs` だけではありません。すべてのプロジェクトタイプの間で、3つのテンプレートが利用可能です。
 
-- `tabs`: A tabs based layout
-- `sidemenu`: A sidemenu based layout
-- `blank`: An empty project with a single page
+- `tabs`: タブベースのレイアウト
+- `sidemenu`: サイドメニューレイアウト
+- `blank`: 単一ページで構成された空のプロジェクト
 
-See all available templates with the following command:
+以下のコマンドで利用可能なすべてのテンプレートを見ることができます。
 
 ```shell-session
 $ ionic start --list
 ```
 
-These templates provide a great starting point for any app and include all the best practices for making a code base scale.
+これらのテンプレートは、どんなアプリにも素晴らしい出発点を提供し、コードベースを拡張するためのすべてのベストプラクティスを含んでいます。

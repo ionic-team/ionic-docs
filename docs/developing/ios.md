@@ -1,11 +1,11 @@
 ---
-title: iOS開発
-sidebar_label: iOSのための開発
+title: iOSでの開発
+sidebar_label: iOSでの開発
 skipIntros: true
 ---
 
 <head>
-  <title>iOS App Development Guide: Xcode Setup to Build and Run iOS Apps</title>
+  <title>iOSアプリ開発ガイド: Xcode Setup to Build and Run iOS Apps</title>
   <meta
     name="description"
     content="Ionic's iOS development guide covers how to build and run Ionic apps on iOS simulators and devices. iOS apps can only be developed on macOS with Xcode setup."

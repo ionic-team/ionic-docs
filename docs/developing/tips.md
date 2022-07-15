@@ -3,7 +3,7 @@ title: 開発者向けのヒント
 ---
 
 <head>
-  <title>App Development Tips: How to Resolve Permission Errors and Issues</title>
+  <title>アプリ開発チップ: How to Resolve Permission Errors and Issues</title>
   <meta
     name="description"
     content="If errors occur, npm may need to be set up to operate without elevated permissions. Read our Ionic app Development Tips for more on resolving permission issues."
@@ -18,7 +18,7 @@ title: 開発者向けのヒント
 `sudo` とnpmの併用は、さらなる問題を引き起こす可能性があるため、推奨されません。
 :::
 
-このガイドには、パーミッションの問題を解決するための2つのオプションがあります。詳細なドキュメントと追加オプションについては、[npm docs](https://docs.npmjs.com/resolving-eacces-permissions-errors-when-installing-packages-globally)を参照してください。
+このガイドには、パーミッションの問題を解決するための2つのオプションがあります。詳細なドキュメントと追加オプションについては、[npm docs](https://docs.npmjs.com/resolving-eacces-permissions-errors-when-installing-packages-globally) を参照してください。
 
 ### Option 1
 
