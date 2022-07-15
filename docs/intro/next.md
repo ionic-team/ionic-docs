@@ -1,9 +1,9 @@
 ---
-title: Next Steps
+title: 次のステップ
 ---
 
 <head>
-  <title>Next Steps for Starting an App: Choose Your JavaScript Framework</title>
+  <title>アプリをはじめるための次のステップ: JavaScript Frameworkを選ぼう</title>
   <meta
     name="description"
     content="In order to build an Ionic app, you first need to choose the JavaScript framework you plan to use. Learn more about next steps for starting an app with Ionic."
@@ -13,20 +13,20 @@ title: Next Steps
 import DocsCard from '@components/global/DocsCard';
 import DocsCards from '@components/global/DocsCards';
 
-## Build Your First App
+## 最初のアプリを作る
 
-Pick the JavaScript framework you plan to use while building your Ionic app:
+Ionicアプリを構築する際に使用する予定のJavaScriptフレームワークを選択します。
 
 <DocsCards>
-  <DocsCard header="Start with Angular" href="../angular/your-first-app" icon="/icons/logo-angular-icon.png">
-    <p>A complete guide to get you up to speed with the basics of building Ionic apps with Angular.</p>
+  <DocsCard header="Angularではじめる" href="../angular/your-first-app" icon="/icons/logo-angular-icon.png">
+    <p>AngularでIonicアプリを作るための基本を押さえた完全ガイドです</p>
   </DocsCard>
 
-<DocsCard header="Start with React" href="../react/your-first-app" icon="/icons/logo-react-icon.png">
-  <p>A complete guide to get you up to speed with the basics of building Ionic apps with React.</p>
-</DocsCard>
+  <DocsCard header="Reactではじめる" href="../react/your-first-app" icon="/icons/logo-react-icon.png">
+    <p>ReactでIonicアプリを作るための基本を押さえた完全ガイドです</p>
+  </DocsCard>
 
-  <DocsCard header="Start with Vue" href="../vue/your-first-app" icon="/icons/logo-vue-icon.png">
-    <p>A complete guide to get you up to speed with the basics of building Ionic apps with Vue.</p>
+  <DocsCard class="disabled" header="Vueではじめる" href="" icon="/icons/logo-vue-icon.png">
+    <p>VueでIonicアプリを作るための基本を押さえた完全ガイドです</p>
   </DocsCard>
 </DocsCards>

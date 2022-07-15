@@ -21,7 +21,7 @@ import NativeEnterpriseCard from '@components/page/native/NativeEnterpriseCard';
   `}</style>
 </head>
 
-Build native-powered app experiences with a collection of open source and premium plugins and integrations that make it easy to add native device functionality to any Ionic app with Capacitor or Cordova.
+CapacitorやCordovaを使用したIonicアプリにネイティブデバイスの機能を簡単に追加できる、オープンソースおよびプレミアムプラグインと統合を使用して、ネイティブパワーによるアプリ体験を構築できます。
 
 <intro-end />
 
@@ -34,14 +34,14 @@ Build native-powered app experiences with a collection of open source and premiu
 <DocsCards>
   <DocsCard header="Capacitor plugins" img="/img/native/capacitor@2x.png" href="https://capacitorjs.com/docs/plugins">
     <p>
-      A modern, open source native runtime built and maintained by the Ionic team and the Capacitor community. Our
-      recommended native solution.
+      IonicチームとCapacitorコミュニティによって構築・維持されている、モダンでオープンソースのネイティブランタイムです。
+      推奨ネイティブソリューションです。
     </p>
   </DocsCard>
   <DocsCard header="Cordova plugins" img="/img/native/cordova@2x.png" href="/native/community">
     <p>
-      A collection of free Cordova plugins, built and maintained by the community, with TypeScript wrappers and a
-      consistent API and naming convention.
+      コミュニティによって構築、維持されている無料の Cordova プラグインのコレクションです。
+      一貫した API と命名規則があります。
     </p>
   </DocsCard>
 </DocsCards>

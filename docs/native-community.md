@@ -16,30 +16,29 @@ import TabItem from '@theme/TabItem';
   />
 </head>
 
-[Apache Cordova](https://cordova.apache.org/) is an open source native runtime that allows developers to build native mobile apps with HTML, CSS, and JavaScript. Similar to [Capacitor](https://capacitorjs.com/), Ionic’s own native runtime, Cordova allows developers to access native device features, such as camera, keyboard, and geolocation, using a system of plugins. A plugin is a small amount of add-on code that provides JavaScript interface to native components. They allow your app to use native device capabilities beyond what is available to pure web apps.
+[Apache Cordova](https://cordova.apache.org/) は、開発者がHTML、CSS、JavaScriptでネイティブモバイルアプリを構築できるようにするオープンソースのネイティブランタイムです。Ionic独自のネイティブランタイムである[Capacitor](https://capacitorjs.com/) と同様に、Cordovaではプラグインシステムを使用して、カメラ、キーボード、ジオロケーションなどのネイティブデバイス機能にアクセスすることができます。プラグインは、ネイティブコンポーネントへの JavaScript インターフェースを提供する少量のアドオンコードです。プラグインを使用すると、純粋なウェブアプリで利用できる機能以上に、アプリでネイティブデバイスの機能を使用できるようになります。
 
-For developers using Ionic with Cordova, our team has developed a collection of TypeScript wrappers for open source Cordova plugins that make it easy to add native functionality to any Ionic app. See [Ionic Native](https://github.com/ionic-team/ionic-native).
+IonicとCordovaを使用する開発者のために、Ionicアプリにネイティブ機能を簡単に追加できる、オープンソースのCordovaプラグイン用のTypeScriptラッパーコレクションを開発しました。 [Ionic Native](https://github.com/ionic-team/ionic-native)を参照してください。
 
-These plugins are submitted and maintained by the Ionic community. While community members are generally quick to find and fix issues, certain plugins may not function properly.
+これらのプラグインは、Ionicコミュニティによって投稿され、メンテナンスされています。コミュニティメンバーは通常、問題の発見と修正に迅速に対応していますが、一部のプラグインは正常に機能しない場合があります。
 
-For professional developers and teams that require dedicated native plugin support & SLAs, ongoing maintenance, and security patches, please explore our [premium options](https://ionicframework.com/native), including plugin support and pre-built solutions for common native use cases.
-
+ネイティブプラグインのサポートとSLA、継続的なメンテナンス、セキュリティパッチを必要とするプロの開発者やチームには、一般的なネイティブユースケースのプラグインサポートやビルド済みソリューションなどの [プレミアムオプション](https://ionicframework.com/native) をご検討ください。
 <intro-end />
 
 :::note
-These docs are for apps built with Ionic Framework 4.0.0 and greater. For older Ionic v3 projects, please [see here](https://ionicframework.com/docs/v3/native).
+このドキュメントは、Ionic Framework 4.0.0以降でビルドされたアプリを対象としています。古い Ionic v3 プロジェクトについては、[こちら](https://ionicframework.com/docs/v3/native) を参照してください。
 :::
 
-## Capacitor Support
+## Capacitor サポート
 
-In addition to Cordova, Ionic Native also works with [Capacitor](https://capacitor.ionicframework.com), Ionic's official native runtime. Basic usage below. For complete details, [see the Capacitor documentation](https://capacitor.ionicframework.com/docs/cordova/using-cordova-plugins).
+Ionic NativeはCordovaに加え、Ionicの公式ネイティブランタイムである [Capacitor](https://capacitor.ionicframework.com) でも動作します。基本的な使い方は以下の通りです。詳細は [Capacitorのドキュメントをご覧ください](https://capacitor.ionicframework.com/docs/cordova/using-cordova-plugins)。
 
-## Usage
+## 使い方
 
-All plugins have two components - the native code (Cordova) and the TypeScript code (Ionic Native).
-Cordova plugins are also wrapped in a `Promise` or `Observable` in order to provide a common plugin interface and modernized development approach.
+すべてのプラグインは、ネイティブコード（Cordova）とTypeScriptコード（Ionic Native）の2つのコンポーネントを持っています。
+Cordovaプラグインは、共通のプラグインインターフェースと近代的な開発アプローチを提供するために、`Promise`または`Observable`でラップされています。
 
-Using the [Camera plugin](native/camera.md) as an example, first install it:
+[Camera plugin](native/camera.md) を例として、まずインストールします。
 
 ````mdx-code-block
 <Tabs
@@ -83,11 +82,11 @@ $ ionic cap sync
 </Tabs>
 ````
 
-Next, begin using the plugin, following the various framework usage options below. For FAQ, see [here](native-faq.md).
+次に、以下の様々なフレームワークの使用方法に従って、プラグインの使用を開始します。FAQについては、[こちら](native-faq.md)を参照してください。
 
 ## Angular
 
-Angular apps can use either Cordova or Capacitor to build native mobile apps. Import the plugin in a `@NgModule` and add it to the list of Providers. For Angular, the import path should end with `/ngx`. Angular's change detection is automatically handled.
+AngularアプリはCordovaまたはCapacitorを使用してネイティブモバイルアプリを構築することができます。プラグインを `@NgModule` でインポートして、Providers のリストに追加します。Angularの場合、インポートパスは `/ngx` で終わっている必要があります。Angularの変更検出は自動的に処理されます。
 
 ```tsx
 // app.module.ts
@@ -108,7 +107,7 @@ import { Camera } from '@awesome-cordova-plugins/camera/ngx';
 export class AppModule { }
 ```
 
-After the plugin has been declared, it can be imported and injected like any other service:
+プラグインを宣言した後は、他のサービスと同じようにインポートやインジェクションが可能です。
 
 ```tsx
 // camera.service.ts
@@ -144,7 +143,7 @@ export class PhotoService {
 
 ## React
 
-React apps must use Capacitor to build native mobile apps. However, Ionic Native (and therefore, Cordova plugins) can still be used.
+Reactアプリは、ネイティブモバイルアプリを構築するためにCapacitorを使用する必要があります。ただし、Ionic Native（したがって、Cordovaプラグイン）も引き続き使用可能です。
 
 ```shell-session
 // Install Core library (once per project)
@@ -160,7 +159,7 @@ $ npm install phonegap-plugin-barcodescanner
 $ ionic cap sync
 ```
 
-Import the plugin object then use its static methods:
+プラグインオブジェクトをインポートし、その静的メソッドを使用します。
 
 ```tsx
 import { BarcodeScanner } from '@awesome-cordova-plugins/barcode-scanner';
@@ -187,7 +186,7 @@ const Tab1: React.FC = () => {
 
 ## Vanilla JavaScript
 
-Vanilla JavaScript apps, targeting ES2015+ and/or TypeScript, can use either Cordova or Capacitor to build native mobile apps. To use any plugin, import the class from the appropriate package and use its static methods:
+ES2015+ や TypeScript をターゲットとする Vanilla JavaScript アプリは、Cordova や Capacitor を使用してネイティブモバイルアプリを構築することができます。プラグインを使用するには、適切なパッケージからクラスをインポートし、その静的メソッドを使用します。
 
 ```js
 import { Camera } from '@awesome-cordova-plugins/camera';

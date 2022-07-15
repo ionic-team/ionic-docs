@@ -7,18 +7,18 @@ import DocsCards from '@components/global/DocsCards';
 
 # はじめてアプリ制作チュートリアル
 
-Pick the JavaScript framework you plan to use while building your Ionic app:
+Ionicアプリの構築に使用する予定のJavaScriptフレームワークを選びます。
 
 <DocsCards>
-  <DocsCard header="Start with Angular" href="../angular/your-first-app" icon="/icons/logo-angular-icon.png">
-    <p>A complete guide to get you up to speed with the basics of building Ionic apps with Angular.</p>
+  <DocsCard header="Angularではじめる" href="../angular/your-first-app" icon="/icons/logo-angular-icon.png">
+    <p>AngularでIonicアプリを作るための基本を押さえた完全ガイドです</p>
   </DocsCard>
 
-<DocsCard header="Start with React" href="../react/your-first-app" icon="/icons/logo-react-icon.png">
-  <p>A complete guide to get you up to speed with the basics of building Ionic apps with React.</p>
-</DocsCard>
+  <DocsCard header="Reactではじめる" href="../react/your-first-app" icon="/icons/logo-react-icon.png">
+    <p>ReactでIonicアプリを作るための基本を押さえた完全ガイドです</p>
+  </DocsCard>
 
-  <DocsCard class="disabled" header="Start with Vue (soon)" href="" icon="/icons/logo-vue-icon.png">
-    <p>A complete guide to get you up to speed with the basics of building Ionic apps with Vue.</p>
+  <DocsCard class="disabled" header="Vueではじめる" href="" icon="/icons/logo-vue-icon.png">
+    <p>VueでIonicアプリを作るための基本を押さえた完全ガイドです</p>
   </DocsCard>
 </DocsCards>

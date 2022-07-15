@@ -32,9 +32,9 @@ $ ionic <command> <subcommand> --help
 ```
 
 :::note
-Be sure to run `ionic <command> --help` in your project directory.
+プロジェクトディレクトリで `ionic <command> --help` を必ず実行してください。
 
-For some commands, such as `ionic serve`, the help documentation is contextual to the type of your project, e.g. React vs Angular.
+コマンドの中には `ionic serve` のように、React と Angular のように、プロジェクトのタイプに応じたヘルプが表示されるものがあります。
 :::
 
 <!-- TODO: image? -->
@@ -47,8 +47,8 @@ Ionic CLI は、[TypeScript](/docs/reference/glossary#typescript)と [Node.js](/
 
 Ionic CLIの問題をトラブルシューティングするには、以下の方法が役立ちます:
 
-- Make sure the latest version of the Ionic CLI is installed. Get the installed version by running `ionic --version`.
-- Make sure the latest Node LTS is installed. See [Node & npm](/docs/intro/environment#node-npm) environment setup.
-- The `--verbose` flag prints debugging messages, which may narrow down the issue.
-- Connection issues may be due to improperly configured proxy settings. See [Using a Proxy](/docs/cli/using-a-proxy) to configure request proxying.
-- The global Ionic CLI configuration directory is `~/.ionic` on all platforms. It can safely be deleted and the Ionic CLI will repopulate it, but all configuration (including user sessions) will be lost. Configure this directory with [CLI environment variables](/docs/cli/configuration#environment-variables).
+- 最新バージョンのIonic CLIがインストールされていることを確認します。インストールされているバージョンは、`ionic --version`を実行することで取得できます。
+- 最新のNode LTSがインストールされていることを確認します。[Node & npm](/docs/intro/environment#node-npm) environment setupを参照してください。
+- `verbose` フラグは、デバッグメッセージを表示し、問題を絞り込むことができます。
+- 接続の問題は、プロキシの設定が適切でないことが原因である可能性があります。リクエストプロキシの設定については、[Using a Proxy](/docs/cli/using-a-proxy) を参照してください。
+- Ionic CLI のグローバルな設定ディレクトリは、すべてのプラットフォームで `~/.ionic` です。このディレクトリは安全に削除でき、Ionic CLIが再投入しますが、すべての設定（ユーザーセッションを含む）は失われます。このディレクトリは[CLI環境変数](/docs/cli/configuration#environment-variables)で設定します。

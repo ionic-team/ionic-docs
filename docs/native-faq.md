@@ -5,45 +5,45 @@ slug: /native/faq
 
 # Ionic Native FAQ
 
-## Cordova Management Tips
+## Cordova の管理に関するヒント
 
-**1) Use the [Ionic CLI](cli.md) to add/update/delete plugins.**
+**1) プラグインの追加・更新・削除は[Ionic CLI](cli.md)を利用する**
 
-Instead of directly editing `config.xml` and `package.json`. Use `ionic` in front of Cordova commands for a better experience and additional functionality (`ionic cordova build ios` instead of `cordova build ios`).
+プラグインの追加・更新・削除には、[Ionic CLI](cli.md) を使用します。Cordovaコマンドの前に`ionic`を使用すると、より良い経験と追加機能が得られます（`cordova build ios`の代わりに`ionic cordova build ios`）。
 
-**2) Upgrade plugins by removing, then re-adding them.**
+**2) プラグインを削除し、再追加することによるアップグレード**
 
 ```shell
 $ ionic cordova plugin remove cordova-plugin-camera
 $ ionic cordova plugin add cordova-plugin-camera
 ```
 
-**3) Install explicit versions.**
+**3) 明示的なバージョンのインストール**
 
-To ensure that the same version of a plugin is always installed via `npm install`, specify the version number:
+`npm install`で常に同じバージョンのプラグインをインストールするようにするには、バージョン番号を指定します。
 
 ```shell
 ionic cordova plugin add cordova-plugin-camera@4.3.2
 ```
 
-**4) Restore Cordova in an existing Ionic project**
+**4) 既存のIonicプロジェクトでCordovaを復活させる**
 
-Useful when adding new developers to a project. `ionic cordova prepare` restores platforms and plugins from `package.json` and `config.xml`. The version to be installed is taken from `package.json` or `config.xml`, if found in those files. In case of conflicts, `package.json` is given precedence over `config.xml`.
+プロジェクトに新しい開発者を追加するときに便利です。`ionic cordova prepare` は `package.json` と `config.xml` からプラットフォームとプラグインをリストアします。インストールされるバージョンは、 `package.json` や `config.xml` に含まれていれば、そこから取得されます。競合する場合は、`package.json` が `config.xml` よりも優先されます。
 
-**5) Troubleshoot Cordova issues with Ionic CLI commands**
+**5) Ionic CLIコマンドでCordovaの問題をトラブルシュートする**
 
-- `ionic doctor list`: Detects [common issues](cli/commands/doctor-list.md) and suggests steps to fix them
-- `ionic repair`: Remove, then [regenerate](cli/commands/repair.md) all dependencies
+- `ionic doctor list`: [よくある問題](cli/commands/doctor-list.md) を検出し、修正するためのステップを提案します。
+- `ionic repair`: [すべての依存関係を削除し、再生成する](cli/commands/repair.md)
 
-## Understanding Version Numbers
+## バージョン番号の理解
 
-For any given Ionic Native plugin, the Ionic Native (TypeScript code) and Cordova (native code) version numbers will not match. The Ionic Native version number is found in `package.json`:
+あるIonic Nativeプラグインについて、Ionic Native（TypeScriptコード）とCordova（ネイティブコード）のバージョン番号は一致しません。Ionic Nativeのバージョン番号は `package.json` に記載されています。
 
 ```json
 "@awesome-cordova-plugins/camera": "^5.3.0",
 ```
 
-The Cordova plugin version number is found in both `package.json` and `config.xml`:
+Cordovaプラグインのバージョン番号は `package.json` と `config.xml` の両方で確認することができます。
 
 ```json
 "cordova-plugin-camera": "4.0.3",
@@ -53,33 +53,33 @@ The Cordova plugin version number is found in both `package.json` and `config.xm
 <plugin name="cordova-plugin-camera" spec="4.0.3" />
 ```
 
-When checking for new native functionality or bug fixes, look for new versions on the Cordova plugin GitHub page itself (here's the [Camera one](https://github.com/apache/cordova-plugin-camera), for example).
+ネイティブの新機能やバグフィックスを確認する場合は、CordovaプラグインのGitHubページ自体で新バージョンを探します（例えばこちらは [Camera one](https://github.com/apache/cordova-plugin-camera) です）。
 
-To check for new Ionic Native releases (may include exposing methods recently added by the Cordova plugin, etc.), see [here](https://github.com/ionic-team/ionic-native/releases).
+Ionic Nativeの新しいリリース（Cordovaプラグインによって最近追加されたメソッドの公開などが含まれる場合があります）を確認するには、 [こちら](https://github.com/ionic-team/ionic-native/releases) を参照してください。
 
-## Troubleshooting Failed Builds
+## ビルドに失敗したときのトラブルシューティング
 
-Research the build error(s) by checking out these resources:
+ビルドエラーを調査するために、以下のリソースをチェックしてください。
 
-- Google & [StackOverflow](https://stackoverflow.com): Many issues are documented online
-- Ask the [Ionic Community Ionic Forum](https://forum.ionicframework.com) (see the Ionic Native category)
-- See the Ionic Customer Success [Knowledge Base](https://ionic.zendesk.com)
+- Google と [StackOverflow](https://stackoverflow.com)。多くの問題がオンラインで文書化されています。
+- [Ionic Community Ionic Forum](https://forum.ionicframework.com) で質問する (Ionic Native カテゴリを参照)
+- Ionic Customer Success [ナレッジベース](https://ionic.zendesk.com) を参照してください。
 
-### Cordova Plugin Conflicts
+### Cordova プラグインのコンフリクト
 
-Plugins can conflict with each other when they share the same underlying native dependencies or when more than one plugin tries to access the same native code at once. For example, common libraries like the Google Play Services version (Google Maps is using GPS v24.2 but Firebase wants GPS v27.1). Keeping these plugins updated regularly can help with this.
+プラグインが同じネイティブ依存関係を共有するとき、あるいは複数のプラグインが一度に同じネイティブコードにアクセスしようとするとき、プラグイン同士が競合することがあります。たとえば、Google Play Services のバージョン (Google Maps は GPS v24.2 を使用していますが、Firebase は GPS v27.1 を必要としています) のような一般的なライブラリです。これらのプラグインを定期的に更新しておくと、この問題を解決できます。
 
-Another tip is to ensure that your app uses only one plugin per specific feature/functionality (example: Push Notifications).
+もうひとつのコツは、アプリが特定の機能ごとにひとつのプラグインしか使わないようにすることです（例：Push Notifications）。
 
-## Recommended Upgrade Strategy
+## 推奨されるアップグレード戦略
 
-The most Ionic stable apps are routinely updated, especially at the native layer. Keeping native plugins up to date ensures your project has the latest security fixes, new features, and improved performance.
+最もIonicが安定しているアプリは、特にネイティブ層が定期的にアップデートされています。ネイティブプラグインを最新の状態に保つことで、プロジェクトに最新のセキュリティ修正、新機能、パフォーマンス向上がもたらされます。
 
-Update your project's plugins one at a time, ideally in separate code branches. This reduces the surface area that issues can arise from - if you update everything in your project at once, it's sometimes hard to tell where the problem stems from.
+プロジェクトのプラグインは一度にひとつずつ、理想的には別々のコードブランチでアップデートしてください。これにより、問題が発生する可能性のある領域を減らすことができます。プロジェクトのすべてを一度にアップデートすると、問題がどこから発生しているのかがわからなくなることがあります。
 
-### When should I update?
+### いつアップデートすればよいですか？
 
-- When a new feature/bug is released: Run `npm outdated` to see a list of available updates.
-- When new major versions are released: Official blogs, such as the [Cordova blog](https://cordova.apache.org/blog/) and [Ionic blog](https://ionicframework.com/blog/), will publish announcements and news.
-- Evaluate the nature of the update: is it a shiny new feature or critical security fix?
-- Timing: Where does it fit in against your team's project goals?
+- 新しい機能/バグがリリースされたときです。npm outdated` を実行すると、利用可能なアップデートのリストが表示されます。
+- 新しいメジャーバージョンがリリースされたとき。Cordova blog](https://cordova.apache.org/blog/) や [Ionic blog](https://ionicframework.com/blog/) などの公式ブログでアナウンスやニュースが公開されます。
+- アップデートの内容: 新機能なのか、それとも重要なセキュリティ修正なのかを見極める。
+- タイミング。チームのプロジェクト目標に対して、どのような位置づけにあるか？

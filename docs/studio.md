@@ -5,27 +5,27 @@ hide_table_of_contents: true
 import DocsCard from '@components/global/DocsCard';
 import DocsCards from '@components/global/DocsCards';
 
-# Welcome to Studio
+# Studioへようこそ
 
-Ionic Studio is a fast and easy app builder that helps teams build and prototype apps with minimal coding.
+Ionic Studioは、最小限のコーディングでアプリを構築し、プロトタイプを作成できるようにする、高速で簡単なアプリビルダーです。
 
-Studio is designed to integrate into an existing developer workflow, rather than replace it, enabling developers and architects to build visually _or_ drop down to code using their favorite tools.
+Studioは、開発者のワークフローを置き換えるのではなく、既存のワークフローに統合するように設計されており、開発者やアーキテクトはお気に入りのツールを使って視覚的に構築したり、コードに落とし込んだりすることが可能です。
 
 Studio
-fully supports bringing code back into the tool, something virtually unheard of in the app development tools market.
+は、コードをツールに戻すことを完全にサポートしています。これは、アプリ開発ツール市場では事実上前例のないことです。
 
-Studio is a desktop tool and requires a subscription, and is only for Ionic Angular 4.x+ projects. To get started, sign up below:
+Studioはデスクトップツールであり、サブスクリプションが必要で、Ionic Angular 4.x+プロジェクトのみが対象です。開始するには、下記からサインアップしてください。
 
 <DocsCards class="static-width">
-  <DocsCard header="Get Studio" href="https://ionicframework.com/studio?utm_source=docs&utm_medium=website&utm_campaign=studio%20launch" icon="/icons/guide-installation-icon.png">
-    <p>Sign up for Studio and start building today.</p>
+  <DocsCard header="Studioをはじめる" href="https://ionicframework.com/studio?utm_source=docs&utm_medium=website&utm_campaign=studio%20launch" icon="/icons/guide-installation-icon.png">
+    <p>Studioにサインアップして、今すぐビルドを開始しましょう。</p>
   </DocsCard>
 
-<DocsCard header="News & Updates" icon="/icons/guide-news-icon.png">
-  <p>Delivered within Studio as well as over email.</p>
+<DocsCard header="ニュースとアップデート" icon="/icons/guide-news-icon.png">
+  <p>Studio内だけでなく、メールでも配信。</p>
 </DocsCard>
 
   <DocsCard header="Studio FAQ" href="studio/faq" icon="/icons/guide-faq-icon.png">
-    <p>Find answers to common questions about Ionic Studio.</p>
+    <p>Ionic Studioに関するよくあるご質問にお答えします。</p>
   </DocsCard>
 </DocsCards>

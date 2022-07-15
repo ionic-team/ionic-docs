@@ -6,7 +6,7 @@ sidebar_label: CLIインストール
 import AppWizard from '@components/page/intro/AppWizard';
 
 <head>
-  <title>How to Install The Ionic Framework CLI to Build Mobile Apps</title>
+  <title>Ionic Framework CLIのインストール方法</title>
   <meta
     name="description"
     content="The Ionic CLI is the preferred method of installation—offering a wide range of dev tools and help options. Learn how to install Ionic and begin building apps."
@@ -61,4 +61,4 @@ $ cd myApp
 $ ionic serve
 ```
 
-There are a number of other ways to run an app, it's recommended to start with this workflow. To develop and test apps on devices and emulators, see the [Running an App Guide](../developing/previewing.md).
+アプリを実行する方法は他にもたくさんありますが、まずはこのワークフローから始めることをおすすめします。デバイスやエミュレーターでアプリを開発・テストするには、[アプリの実行ガイド](../developing/previewing.md) を参照してください。

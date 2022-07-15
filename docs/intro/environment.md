@@ -3,7 +3,7 @@ title: 環境設定
 ---
 
 <head>
-  <title>Environment Setup | Node & NPM Environment for Ionic App Setup</title>
+  <title>環境設定 | IonicアプリをはじめるためのNode と NPM 環境</title>
   <meta
     name="description"
     content="To get started with Ionic Framework, the only requirement is a Node & npm environment. Learn what environment setup is required for your Ionic apps."

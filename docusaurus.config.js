@@ -5,10 +5,10 @@ const fetch = require('node-fetch');
 const BASE_URL = '/docs';
 
 module.exports = {
-  title: 'Ionic Documentation',
+  title: 'Ionic日本語ドキュメンテーション',
   tagline:
-    'Ionic is the app platform for web developers. Build amazing mobile, web, and desktop apps all with one shared code base and open web standards',
-  url: 'https://ionicframework.com',
+    'Ionicは、ウェブ開発者のためのアプリプラットフォームです。1つの共有コードベースとオープンなWeb標準を使用して、素晴らしいモバイル、Web、デスクトップアプリケーションのすべてを構築できます。',
+  url: 'https://ionicframework.jp',
   baseUrl: `${BASE_URL}/`,
   i18n: {
     defaultLocale: 'en',

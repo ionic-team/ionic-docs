@@ -3,37 +3,37 @@ title: Ionic VS Code Extension
 ---
 
 <head>
-  <title>Using the Ionic Visual Studio Code Extension</title>
+  <title>Ionic Visual Studio Codeエクステンションを使う</title>
   <meta
     name="description"
-    content="The Ionic Visual Studio Code extension helps you perform various functions that are common to developing an Ionic app"
+    content="Ionic Visual Studio Code 拡張は、Ionicアプリの開発に共通するさまざまな機能の実行を支援します。"
   />
 </head>
 
-The Ionic Visual Studio Code extension helps you perform various functions that are common to developing an Ionic app, all without leaving your VS Code window. You can install the [extension on the Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=ionic.ionic). Once you have the extension installed, you'll see the Ionic logo in the activity bar.
+Ionic Visual Studio Code 拡張は、Ionicアプリの開発に共通するさまざまな機能を、VS Codeのウィンドウを開いたまま実行できるようにします。 [Visual Studio Marketplace上の拡張機能](https://marketplace.visualstudio.com/items?itemName=ionic.ionic) をインストールすることができます。エクステンションをインストールすると、アクティビティバーにIonicのロゴが表示されるようになります。
 
-## Create a New Project
+## 新規プロジェクトの作成
 
-From an empty directory, you can create a new Angular, React, or Vue project by clicking one of the template options and providing an app name.
+空のディレクトリから、テンプレートオプションの1つをクリックし、アプリ名を指定することで、新しいAngular、React、またはVueプロジェクトを作成することができます。
 
 <img
   src="https://user-images.githubusercontent.com/84595830/159510276-6766a5b8-132d-4284-a3fa-cd6374d64891.gif"
   alt="Video of creating a project"
 />
 
-With the new project created, the extension will provide access to all of the common tasks in your `package.json`.
+新しいプロジェクトを作成すると、拡張機能は `package.json` にあるすべての共通タスクにアクセスできるようになります。
 
-## Adding Capacitor
+## Capacitor の追加
 
-You can also add [Capacitor](https://capacitorjs.com/) to your application by choosing "Integrate Capacitor".
+[Capacitor](https://capacitorjs.com/) をアプリケーションに追加するには、"Integrate Capacitor "を選択します。
 
 <img
   src="https://user-images.githubusercontent.com/84595830/159510570-b5a151bb-2e17-42c8-8cab-bffbaa849576.gif"
-  alt="Video of adding Capacitor"
+  alt="Capacitor追加のビデオ"
 />
 
-With Capacitor integrated, you can now run your app on web, Android, and iOS with the "Run On Web", "Run On Android", and "Run On iOS" options.
+Capacitorが統合され、"Run On Web", "Run On Android", "Run On iOS "のオプションで、Web, Android, iOS上でアプリを実行することができるようになりました。
 
 ## Doing More
 
-There is so much the Ionic VS Code extension can help with, including migrations, debugging, monorepo support, and more. For the full list of all of the extension's capabilities, checkout the [extension overview on the VS Code Marketplace](https://marketplace.visualstudio.com/items?itemName=ionic.ionic).
+Ionic VS Code 拡張は、マイグレーション、デバッグ、モノレポのサポートなど、非常に多くのことを支援します。拡張機能の全リストは、[extension overview on the VS Code Marketplace](https://marketplace.visualstudio.com/items?itemName=ionic.ionic) をご確認ください。

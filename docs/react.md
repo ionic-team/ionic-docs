@@ -12,7 +12,7 @@ import DocsCard from '@components/global/DocsCard';
 import DocsCards from '@components/global/DocsCards';
 
 <head>
-  <title>Create an Ionic React App: Framework and Documentation</title>
+  <title>Ionic Reactでアプリをつくろう: Framework and Documentation</title>
   <meta
     name="description"
     content="One codebase, any platform, just React. View our documentation for creating apps with Ionic React—the native React version of Ionic Framework's open-source SDK."
@@ -23,11 +23,11 @@ import DocsCards from '@components/global/DocsCards';
 
 <div class='flex main-flex'>
   <div class="pull-left">
-  <h1>One Codebase <br/> Any Platform <br/> <strong>Just React</strong></h1>
+  <h1>コードひとつで <br/> あらゆるプラットフォーム <br/> <strong>まさにReact</strong></h1>
 
-- ✓ 100+ mobile optimized React UI components
-- ✓ Standard React tooling with react-dom
-- ✓ iOS / Android / Electron / PWA
+- ✓ 100 以上のモバイルに最適化された React UI コンポーネント
+- ✓ Reactの標準的なツールであるreact-dom
+- ✓ iOS / Android / Electron / PWAに対応
 
 [Get Started](#installation)
 
@@ -38,19 +38,19 @@ import DocsCards from '@components/global/DocsCards';
   </div>
 </div>
 
-### Build awesome apps across mobile, desktop, and web, with the React you know and love.
+### モバイル、デスクトップ、ウェブにまたがる素晴らしいアプリを、あなたが知っている、そして愛するReactで構築してください。
 
-Ionic React is native React version of Ionic Framework, the free, open source SDK powering millions of mission-critical apps all over the world.
+Ionic Reactは、Ionic FrameworkのネイティブReactバージョンで、世界中の何百万ものミッションクリティカルなアプリを動かしている、無料のオープンソースSDKです。
 
-It's everything you need to ship award-winning apps for any platform, with React.
+Reactを使用して、あらゆるプラットフォーム向けに受賞歴のあるアプリを出荷するために必要なすべてが揃っています。
 
 <div class="flex" >
 
 <div class="pull-left">
 
-## Amazing Design
+## すばらしいデザイン
 
-Choose from over 100 beautiful, mobile-ready UI components, animations, and gestures, lightweight and customized to fit your brand.
+100種類以上の美しいモバイル対応のUIコンポーネント、アニメーション、ジェスチャーから選択でき、軽量であなたのブランドに合うようにカスタマイズできます。
 
 [Explore UI components](/docs/components)
 
@@ -66,10 +66,10 @@ Choose from over 100 beautiful, mobile-ready UI components, animations, and gest
 
 <div class="pull-left">
 
-## Familiar tooling
+## 使い慣れたツール
 
-Ionic React projects are just like React projects, leveraging [react-dom](https://reactjs.org/docs/react-dom.html) and with setup normally found in a [Create React App (CRA)](https://github.com/facebook/create-react-app) app. For [routing and navigation](/docs/react/navigation), React Router is used under the hood.
-Compatible with React version 16.8 and above.
+IonicのReactプロジェクトはReactプロジェクトと同じように、[react-dom](https://reactjs.org/docs/react-dom.html) を活用し、[Create React App (CRA)](https://github.com/facebook/create-react-app) アプリで見られるようなセットアップが可能です。ルーティングとナビゲーション](/docs/react/navigation)では、React Routerが使用されています。
+React バージョン 16.8 以降に対応しています。
 
 </div>
 
@@ -85,7 +85,7 @@ Compatible with React version 16.8 and above.
 
 ## More than mobile
 
-Deploy your Ionic React projects to native iOS, Android, Electron, and the web as a Progressive Web App, using [Capacitor](https://capacitor.ionicframework.com), a modern native runtime. All with one shared codebase.
+最新のネイティブランタイムである [Capacitor](https://capacitor.ionicframework.com) を使用して、Ionic ReactプロジェクトをネイティブのiOS、Android、Electron、WebにProgressive Web Appとしてデプロイできます。すべて1つの共有コードベースで。
 
 </div>
 
@@ -99,9 +99,9 @@ Deploy your Ionic React projects to native iOS, Android, Electron, and the web a
 
   <div class="pull-left">
 
-## Just React
+## まさにReact
 
-At the end of the day, it's just React. Ionic React uses open web standards and built-in browser capabilities, so it's compatible with any of the millions of web libraries out there.
+結局のところ、ただのReactなのです。Ionic ReactはオープンなWeb標準とビルトインのブラウザ機能を使用しているため、何百万とあるWebライブラリのどれとも互換性があります。
 
   </div>
 
@@ -111,7 +111,7 @@ At the end of the day, it's just React. Ionic React uses open web standards and 
 
 </div>
 
-## Installation
+## インストール
 
 ```shell-session
 $ npm install -g @ionic/cli
@@ -123,24 +123,24 @@ $ ionic serve █
 ## Resources
 
 <DocsCards>
-  <DocsCard header="Getting Started" href="react/your-first-app" icon="/icons/feature-component-actionsheet-icon.png">
-    <p>Learn the fundamentals you need to know to start building amazing apps with Ionic Framework.</p>
+  <DocsCard header="はじめ方" href="react/your-first-app" icon="/icons/feature-component-actionsheet-icon.png">
+    <p>Ionic Frameworkで素晴らしいアプリを作り始めるために知っておくべき基礎知識を学びます。</p>
   </DocsCard>
 
 <DocsCard
-  header="Add Ionic to Existing React App"
+  header="既存のReactアプリにIonicを追加する"
   href="https://dev.to/ionic/adding-ionic-react-to-an-existing-react-project-4kib"
   icon="/icons/logo-react-icon.png"
 >
-  <p>Use individual components or the complete app experience.</p>
+  <p>個々のコンポーネントを使用するか、完全なアプリ体験をつくるか。</p>
 </DocsCard>
 
-<DocsCard header="Navigation" href="react/navigation" icon="/icons/feature-component-navigation-icon.png">
-  <p>Learn the basics of navigation inside your app with Ionic and React Router</p>
+<DocsCard header="ナビゲーション" href="react/navigation" icon="/icons/feature-component-navigation-icon.png">
+  <p>IonicとReact Routerでアプリ内ナビゲーションの基本を学ぶ</p>
 </DocsCard>
 
-<DocsCard header="Lifecycle" href="react/lifecycle" icon="/icons/feature-guide-components-icon.png">
-  <p>Learn about using Ionic lifecycle events in class components and with hooks</p>
+<DocsCard header="ライフサイクル" href="react/lifecycle" icon="/icons/feature-guide-components-icon.png">
+  <p>Ionicのライフサイクルイベントをクラスコンポーネントやフックで使用する方法について学びます。</p>
 </DocsCard>
 
 </DocsCards>

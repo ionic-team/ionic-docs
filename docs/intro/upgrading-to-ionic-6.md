@@ -20,7 +20,7 @@ npm install @ionic/angular@6 @ionic/angular-server@6
 ```
 
 3. `Config.set()` を削除します。そして代わりに `IonicModule.forRoot()` を使いましょう。くわしくは [Angular Config Documentation](../angular/config) をご覧ください。
-4. Remove any usage of the `setupConfig` function previously exported from `@ionic/angular`. Set your config in `IonicModule.forRoot()` instead.
+4. 以前に `@ionic/angular` からエクスポートされた `setupConfig` 関数の使用をすべて削除します。代わりに `IonicModule.forRoot()` で設定を行います。
 
 ### React
 
@@ -75,7 +75,7 @@ setupIonicReact({
 
 詳しくは [React Config Documentation](../react/config) をご覧ください。
 
-5. Update all controller imports from `@ionic/core` to `@ionic/core/components`. As an example, here is a migration for `menuController`:
+5.すべてのコントローラのインポートを `@ionic/core` から `@ionic/core/components` に更新します。例として、`menuController` のマイグレーションを紹介します。
 
 **Before**
 ```tsx
@@ -393,12 +393,12 @@ ion-popover::part(content) {
 
 `placeholder` プロパティの値として `null` が渡されていないことを確認してください。代わりに `undefined` を使用することを推奨します。
 
-### Browser Support
+### ブラウザサポート
 
 Ionicがサポートしているブラウザのリストが変更されました。 [ブラウザサポートガイド](../reference/browser-support) を確認し、サポートされているブラウザにアプリをデプロイするようにしましょう。
 
 
-### Testing
+### テスト
 
 Ionic 6は、ESモジュールとして出荷されるようになりました。ESモジュールは、すべての主要なブラウザでサポートされており、開発者のエクスペリエンスとコードのメンテナンス性を向上させることができます。Jestでテストする開発者は、Jest 27の時点でJestがES Modulesを完全にサポートしていないため、Jestの設定を更新する必要があります。
 

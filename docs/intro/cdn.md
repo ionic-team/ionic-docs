@@ -82,13 +82,13 @@ import '@ionic/react/css/display.css';
 
 ## Ionic + Vue
 
-To add Ionic Framework to an existing Vue project, install the `@ionic/vue` and `@ionic/vue-router` packages.
+既存のVueプロジェクトにIonic Frameworkを追加するには、 `@ionic/vue` と `@ionic/vue-router` パッケージをインストールします。
 
 ```shell
 npm install @ionic/vue @ionic/vue-router
 ```
 
-After that, you will need to install the `IonicVue` plugin in your Vue app.
+その後、Vueアプリに`IonicVue`プラグインをインストールする必要があります。
 
 **main.js**
 
@@ -105,11 +105,11 @@ router.isReady().then(() => {
 });
 ```
 
-Be sure to mount your app once `router.isReady()` has resolved.
+`router.isReady()`が解決したら、必ずアプリをマウントしてください。
 
-### Routing
+### ルーティング
 
-When setting up routing in your Vue app, you will need to import your dependencies from `@ionic/vue-router` instead of `vue-router`.
+Vueアプリでルーティングを設定する場合、`vue-router`ではなく、`@ionic/vue-router`から依存関係をインポートする必要があります。
 
 **router/index.js**
 
@@ -130,7 +130,7 @@ export default router;
 
 ### CSS
 
-To include the necessary CSS in a Vue project, add the following to your `main.js` file.
+Vueプロジェクトで必要なCSSをimportするには、`main.js` ファイルに以下を追加します。
 
 ```javascript
 /* Core CSS required for Ionic components to work properly */
@@ -150,7 +150,7 @@ import '@ionic/vue/css/flex-utils.css';
 import '@ionic/vue/css/display.css';
 ```
 
-From here, you can learn about how to develop with Ionic Framework in our [Ionic Vue Quickstart Guide](https://ionicframework.com/docs/vue/quickstart).
+ここからは、Ionic Frameworkでの開発方法について、 [Ionic Vue Quickstart Guide](https://ionicframework.com/docs/vue/quickstart) でご紹介しています。
 
 ## Ionicons CDN
 
