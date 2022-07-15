@@ -14,7 +14,7 @@ import Slots from '@site/static/auto-generated/footer/slots.md';
 
 <head>
   <title>Page Footer | Ionic App Footer: Wrapper Root Page Component</title>
-  <meta name="description" content="A footer is a root component that sits at the bottom of a page. Ionic footers can be a wrapper for ion-toolbar to make sure the content area is sized correctly." />
+  <meta name="description" content="footerはページの下部に配置されるルートコンポーネントのことです。Ionicのfooterはion-toolbarのラッパーとして、コンテンツ領域が正しいサイズであることを確認することができます。" />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';

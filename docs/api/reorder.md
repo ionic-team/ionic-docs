@@ -16,7 +16,7 @@ import Slots from '@site/static/auto-generated/reorder/slots.md';
 
 <head>
   <title>Reorder | ion-reorder: Drag and Drop Icon to Reorder Items</title>
-  <meta name="description" content="Ion-reorder is the anchor used to drag and drop the items inside of the ion-reorder-group. Read to learn more about custom reorder icons and items." />
+  <meta name="description" content="ion-reorderは、ion-reorder-groupの中のアイテムをドラッグ＆ドロップするために使用されるアンカーです。カスタム並び替えアイコンとアイテムの詳細については、こちらをご覧ください。" />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';

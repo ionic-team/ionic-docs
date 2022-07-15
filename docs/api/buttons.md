@@ -14,7 +14,7 @@ import Slots from '@site/static/auto-generated/buttons/slots.md';
 
 <head>
   <title>ion-buttons: Toolbar Element with Named Slots for Buttons</title>
-  <meta name="description" content="The Buttons component is a container element. Buttons placed in a toolbar should be inside the ion-buttons element and can be positioned using named slots." />
+  <meta name="description" content="Buttonsコンポーネントは、コンテナ要素です。ツールバーに配置されるボタンはion-buttons要素の中にあるべきで、名前付きスロットを使って配置することができます。" />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';

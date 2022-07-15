@@ -16,7 +16,7 @@ import Slots from '@site/static/auto-generated/card/slots.md';
 
 <head>
   <title>ion-card: Card UI Components for Ionic Framework API</title>
-  <meta name="description" content="ion-card UI components are entry points to more detailed information. Cards can be single components or made up of some header, title, subtitle, and content." />
+  <meta name="description" content="ion-card UIコンポーネントは、より詳細な情報へのエントリーポイントです。カードは単一のコンポーネントであることも、いくつかのヘッダ、タイトル、サブタイトル、コンテンツから構成されることもあります。" />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';

@@ -16,7 +16,7 @@ import Slots from '@site/static/auto-generated/router-link/slots.md';
 
 <head>
   <title>Router Link | Navigating The ion-router-link Component</title>
-  <meta name="description" content="Use the ion-router-link component to navigate to a specified link. The router link can accept an href for location and a direction for the transition animation." />
+  <meta name="description" content="ion-router-linkコンポーネントを使用すると、指定したリンクに移動することができます。ルーターリンクは、hrefで場所を、directionで遷移のアニメーションを指定することができます。" />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';

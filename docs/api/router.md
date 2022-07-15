@@ -14,7 +14,7 @@ import Slots from '@site/static/auto-generated/router/slots.md';
 
 <head>
   <title>ion-router: Router Component to Coordinate URL Navigation</title>
-  <meta name="description" content="ion-router is a URL coordinator for navigation outlets of ionic: ion-nav and ion-tabs. Router components handle routing inside vanilla and Stencil JavaScript." />
+  <meta name="description" content="ion-routerは、ionicのナビゲーションアウトレットであるion-navとion-tabsのためのURLコーディネータです。ルーターコンポーネントは vanilla と Stencil JavaScript 内のルーティングを処理します。" />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';

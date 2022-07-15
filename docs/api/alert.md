@@ -13,7 +13,7 @@ import Slots from '@site/static/auto-generated/alert/slots.md';
 
 <head>
   <title>ion-alert: Ionic API Alert Buttons with Custom Message Prompts</title>
-  <meta name="description" content="ion-alert dialog presents or collects information using inputs. Custom alert button messages appear above the app's content and must be manually dismissed." />
+  <meta name="description" content="ion-alertダイアログは、入力を使用して情報を提示または収集します。カスタムアラートボタンメッセージは、アプリのコンテンツの上に表示され、手動で解除する必要があります。" />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';

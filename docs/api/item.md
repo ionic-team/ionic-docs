@@ -16,7 +16,7 @@ import Slots from '@site/static/auto-generated/item/slots.md';
 
 <head>
   <title>ion-item: Input, Edit, or Delete iOS and Android Item Elements</title>
-  <meta name="description" content="ion-item elements for iOS/Android contain text, icons, images, and other custom elements. They're placed in a list and can be input, deleted, edited, and more." />
+  <meta name="description" content="iOS/Android用ion-item要素は、テキスト、アイコン、画像、その他のカスタム要素を含みます。これらはリストに配置され、入力、削除、編集などが可能です。" />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';

@@ -14,7 +14,7 @@ import Slots from '@site/static/auto-generated/row/slots.md';
 
 <head>
   <title>ion-row: Horizontal Row Components and Alignment | Ionic API Docs</title>
-  <meta name="description" content="Rows are horizontal components of the grid system and contain varying numbers of columns. Read our ion-row API Docs for more information on alignment and usage." />
+  <meta name="description" content="Rowsはグリッドシステムの水平方向のコンポーネントで、さまざまな数のカラムを含んでいます。行の配置や使用方法については、ion-row API Docs を参照してください。" />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';

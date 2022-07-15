@@ -14,7 +14,7 @@ import Slots from '@site/static/auto-generated/fab-button/slots.md';
 
 <head>
   <title>Floating Action Button | Ionic FAB Button Icon for Primary Action</title>
-  <meta name="description" content="Floating Action Buttons (FABs) represent the primary action in an app. The icons are circular and, when pressed, the button may open more related actions." />
+  <meta name="description" content="フローティング・アクション・ボタン（FAB）は、アプリ内の主要なアクションを表します。アイコンは円形で、ボタンを押すと、関連するアクションを開くことができます。" />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';

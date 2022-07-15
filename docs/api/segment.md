@@ -16,7 +16,7 @@ import Slots from '@site/static/auto-generated/segment/slots.md';
 
 <head>
   <title>ion-segment: API Documentation for Segmented Controls</title>
-  <meta name="description" content="ion-segments display a group of related buttons—sometimes known as segmented controls. View our Segment API Documentation to learn more about usage." />
+  <meta name="description" content="ion-segmentは、関連するボタンのグループを表示します（セグメントコントロールとも呼ばれます）。使用方法の詳細については、Segment API ドキュメンテーションを参照してください。" />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';

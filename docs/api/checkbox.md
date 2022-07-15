@@ -16,7 +16,7 @@ import Slots from '@site/static/auto-generated/checkbox/slots.md';
 
 <head>
   <title>ion-checkboxes: Ionic App Component to Select Multiple Options</title>
-  <meta name="description" content="ion-checkboxes allow selection of multiple options from a set and appear as checked (ticked) when activated. Learn about the checkbox component for Ionic apps." />
+  <meta name="description" content="ion-checkboxは、セットから複数の選択肢を選択でき、アクティブにするとチェックされた（ticked）ように表示されます。Ionicアプリのチェックボックスコンポーネントについて説明します。" />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';

@@ -16,7 +16,7 @@ import Slots from '@site/static/auto-generated/thumbnail/slots.md';
 
 <head>
   <title>ion-thumbnail | Thumbnail App Component to Wrap Images or Icons</title>
-  <meta name="description" content="What is a thumbnail image? Thumbnail app components wrap an image or icon and can be used to display a layout of images or for previews of full-size images." />
+  <meta name="description" content="ion-thumbnailコンポーネントは、画像やアイコンを包み込み、画像のレイアウト表示や原寸大のプレビューに使用することができます。" />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';

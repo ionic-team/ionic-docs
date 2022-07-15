@@ -14,7 +14,7 @@ import Slots from '@site/static/auto-generated/item-sliding/slots.md';
 
 <head>
   <title>Slide Buttons | Slide Right to Left with ion-item-sliding</title>
-  <meta name="description" content="ion-item-sliding component contains items that are dragged to reveal buttons. Options are revealed when the sliding item is swiped from left to right." />
+  <meta name="description" content="ion-item-sliding コンポーネントには、ドラッグしてボタンを表示するアイテムが含まれています。スライドしたアイテムが左から右にスワイプされると、オプションが表示されます。" />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';

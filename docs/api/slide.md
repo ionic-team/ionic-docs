@@ -14,7 +14,7 @@ import Slots from '@site/static/auto-generated/slide/slots.md';
 
 <head>
   <title>ion-slide | Slide API Component for Ionic Framework Apps</title>
-  <meta name="description" content="Slide is a child API component of Slides—written as ion-slide. Any slide content should be written in this component and used in conjunction with Slides." />
+  <meta name="description" content="Slideは、Slidesの子APIコンポーネントで、ion-slideと記述します。スライドのコンテンツは、このコンポーネントで記述し、Slidesと組み合わせて使用します。" />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';

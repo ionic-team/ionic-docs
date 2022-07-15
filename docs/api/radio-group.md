@@ -14,7 +14,7 @@ import Slots from '@site/static/auto-generated/radio-group/slots.md';
 
 <head>
   <title>ion-radio-group | Radio Button Group Usage for Ionic Apps</title>
-  <meta name="description" content="A radio group is a group of radio buttons. Radio groups allow a user to select at most one radio button from a set. Learn more about ion-radio-group usage." />
+  <meta name="description" content="radio groupとは、radioボタンのグループです。radio groupは、ユーザーがセットから最大1つのradioボタンを選択できるようにします。 ion-radio-groupの使用方法について、詳しくはこちらをご覧ください。" />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';

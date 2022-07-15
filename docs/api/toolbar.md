@@ -16,7 +16,7 @@ import Slots from '@site/static/auto-generated/toolbar/slots.md';
 
 <head>
   <title>Toolbar | Customize App Menu Toolbar Buttons and Icons</title>
-  <meta name="description" content="Ion-toolbar component lets you customize toolbar buttons on your app menu. Add fixed toolbars above or below content or use full screen to scroll with content." />
+  <meta name="description" content="Ion-toolbar コンポーネントは、アプリのメニューにあるツールバーボタンをカスタマイズすることができます。コンテンツの上下に固定ツールバーを追加したり、コンテンツと一緒にスクロールするフルスクリーンを使用することができます。" />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';

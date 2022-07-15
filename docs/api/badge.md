@@ -16,7 +16,7 @@ import Slots from '@site/static/auto-generated/badge/slots.md';
 
 <head>
   <title>Badges | ion-badge: iOS & Android App Notification Badge Icons</title>
-  <meta name="description" content="Badges are inline block elements that appear near other elements on iOS & Android apps—use ion-badges as notifications that indicate how many items there are." />
+  <meta name="description" content="BadgesはiOS/Androidアプリで他の要素の近くに表示されるインラインブロック要素で、アイテムの数を示す通知として使用します。" />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';

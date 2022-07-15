@@ -14,7 +14,7 @@ import Slots from '@site/static/auto-generated/split-pane/slots.md';
 
 <head>
   <title>ion-split-pane: Split Plane View for Menus and Multi-View Layouts</title>
-  <meta name="description" content="ion-split-pane is useful when creating multi-view app layouts. It allows UI elements, like menus, to be displayed as the viewport width increases." />
+  <meta name="description" content="ion-split-paneは、マルチビューのアプリレイアウトを作成する際に便利です。これにより、メニューなどのUI要素を、ビューポートの幅が広がるにつれて表示することができます。" />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';

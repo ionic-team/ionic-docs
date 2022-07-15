@@ -16,7 +16,7 @@ import Slots from '@site/static/auto-generated/button/slots.md';
 
 <head>
   <title>ion-button: Design and Style Buttons with Custom CSS Properties</title>
-  <meta name="description" content="ion-button provides a clickable element for use anywhere needing standard button functionality. Design and style button elements with custom CSS properties." />
+  <meta name="description" content="ion-button は、標準的なボタン機能が必要な場所で使用するためのクリック可能な要素を提供します。カスタム CSS プロパティを使用して、ボタン要素をデザインし、スタイルを設定します。" />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';

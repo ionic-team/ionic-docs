@@ -14,7 +14,7 @@ import Slots from '@site/static/auto-generated/nav-link/slots.md';
 
 <head>
   <title>ion-nav-link: The Element for Navigation to a Specified Component</title>
-  <meta name="description" content="Navigation links navigate to specified components. It is the element form of calling the push(), pop(), and setRoot() methods. Read for more on ion-nav-link." />
+  <meta name="description" content="ナビゲーションリンクは、指定されたコンポーネントにナビゲートします。これは、push(), pop(), setRoot() メソッドを呼び出すための要素形式です。ion-nav-linkの詳細については、こちらをご覧ください。" />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';

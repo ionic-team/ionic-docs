@@ -14,7 +14,7 @@ import Slots from '@site/static/auto-generated/title/slots.md';
 
 <head>
   <title>ion-title: Ionic Framework App Title Component for Toolbars</title>
-  <meta name="description" content="ion-title is a component that sets the title of the toolbar. Read to learn more about title and collapsible title components and usage for Ionic Framework Apps." />
+  <meta name="description" content="ion-titleは、ツールバーのタイトルを設定するコンポーネントです。Ionic Frameworkアプリのtitleとcollapsible titleコンポーネントの詳細と使用方法については、こちらをご覧ください。" />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';

@@ -14,7 +14,7 @@ import Slots from '@site/static/auto-generated/item-group/slots.md';
 
 <head>
   <title>ion-item-group: Group Items to Divide into Multiple Sections</title>
-  <meta name="description" content="Item groups are containers that organize similar items together. ion-item-groups can contain item dividers to divide the items into multiple sections. " />
+  <meta name="description" content="ion-item-groupには、アイテムを複数のセクションに分割するためのアイテムディバイダを含めることができます。" />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';

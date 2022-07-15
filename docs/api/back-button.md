@@ -16,7 +16,7 @@ import Slots from '@site/static/auto-generated/back-button/slots.md';
 
 <head>
   <title>Back Button | ion-back-button: Custom Menu Icon for Applications</title>
-  <meta name="description" content="The ion-back-button is a custom menu icon for Android, iOS, and Progressive Web Apps. Use Ionic Framework components to easily build applications." />
+  <meta name="description" content="ion-back-buttonは、Android、iOS、およびProgressive Web Apps用のカスタムメニューアイコンです。Ionic Frameworkのコンポーネントを使用して、簡単にアプリケーションを構築できます。" />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';

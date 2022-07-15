@@ -14,7 +14,7 @@ import Slots from '@site/static/auto-generated/item-option/slots.md';
 
 <head>
   <title>ion-item-options: Option Button Components for Ionic Apps</title>
-  <meta name="description" content="ion-item-option is the option button for an ion-item-sliding and must be placed inside of an <ion-item-options>. Read to learn more about properties." />
+  <meta name="description" content="ion-item-optionはion-item-slidingのオプションボタンで、ion-item-optionsの中に配置する必要があります。プロパティの詳細については、こちらをご覧ください。" />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';

@@ -14,7 +14,7 @@ import Slots from '@site/static/auto-generated/ripple-effect/slots.md';
 
 <head>
   <title>ion-ripple-effect | Ripple Effect Button Component for Ionic Apps</title>
-  <meta name="description" content="The ripple effect button component adds the Material Design ink ripple interaction effect. It can only be used in an ion-app and can be added to any component." />
+  <meta name="description" content="ripple effect buttonコンポーネントは、Material Designインクのリップルインタラクション効果を追加します。ion-appでのみ使用可能で、任意のコンポーネントに追加することができます。" />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';

@@ -14,7 +14,7 @@ import Slots from '@site/static/auto-generated/app/slots.md';
 
 <head>
   <title>ion-app: Container Element for an Ionic Application</title>
-  <meta name="description" content="ion-app is a container element for an Ionic application. Apps can have many Ionic components including menus, headers, content, and footers. Read to learn more." />
+  <meta name="description" content="ion-appは、Ionicアプリケーションのためのコンテナ要素です。アプリは、メニュー、ヘッダー、コンテンツ、フッターなど、多くのIonicコンポーネントを持つことができます。詳しくはこちらをご覧ください。" />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';

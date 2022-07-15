@@ -14,7 +14,7 @@ import Slots from '@site/static/auto-generated/item-options/slots.md';
 
 <head>
   <title>ion-item-options: Option Button Components for Ionic Apps</title>
-  <meta name="description" content="ion-item-options are for ion-item-sliding. These option buttons can be placed either on the start or end side. Read to learn more about use on Ionic apps." />
+  <meta name="description" content="ion-item-optionsはion-item-slidingのためのものです。このオプションボタンは、開始側と終了側のどちらにも配置することができます。Ionicアプリでの使用については、こちらをご覧ください。" />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';

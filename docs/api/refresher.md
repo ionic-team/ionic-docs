@@ -16,7 +16,7 @@ import Slots from '@site/static/auto-generated/refresher/slots.md';
 
 <head>
   <title>ion-refresher: Pull-to-Refresh Page Content on Ionic Apps</title>
-  <meta name="description" content="ion-refresher provides pull-to-refresh functionality on content components. Learn how this lets users pull down on a page using touch to retrieve more data." />
+  <meta name="description" content="ion-refresherは、コンテンツコンポーネントにpull-to-refresh機能を提供します。これにより、ユーザーはタッチ操作でページをプルダウンし、より多くのデータを取得することができます。" />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';

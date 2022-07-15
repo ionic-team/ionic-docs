@@ -14,7 +14,7 @@ import Slots from '@site/static/auto-generated/menu-toggle/slots.md';
 
 <head>
   <title>ion-menu-toggle | MenuToggle Component to Open/Close Active Menus</title>
-  <meta name="description" content="The MenuToggle component can be used to toggle a menu open or closed—by default, it's only visible when the selected menu is active. Read more about usage." />
+  <meta name="description" content="MenuToggleコンポーネントは、メニューの開閉を切り替えるために使用します。デフォルトでは、選択されたメニューがアクティブなときにのみ表示されます。使用方法についてもっと読む。" />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';

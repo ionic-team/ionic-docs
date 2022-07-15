@@ -38,7 +38,7 @@ import Theming from '@site/static/usage/datetime/theming/index.md';
 
 <head>
   <title>ion-datetime: Ionic API Input for Datetime Format Picker</title>
-  <meta name="description" content="Datetimes present a picker interface to select dates and times. Ionic's API Datetime input component easily displays a preferred format, and manages values." />
+  <meta name="description" content="Datetimeは、日付や時刻を選択するためのピッカーインターフェイスを提供します。IonicのAPI Datetime入力コンポーネントは、好みの形式を簡単に表示し、値を管理します。" />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';

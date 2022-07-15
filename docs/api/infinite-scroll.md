@@ -16,7 +16,7 @@ import Slots from '@site/static/auto-generated/infinite-scroll/slots.md';
 
 <head>
   <title>Infinite Scroller | ion-infinite-scroll Action Component</title>
-  <meta name="description" content="The ion-infinite-scroll component calls an action to be performed when the user scrolls a specified distance from the bottom or top of the page." />
+  <meta name="description" content="ion-infinite-scrollコンポーネントは、ユーザーがページの下部または上部から指定された距離だけスクロールしたときに実行されるアクションを呼び出します。" />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';

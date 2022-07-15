@@ -16,7 +16,7 @@ import Slots from '@site/static/auto-generated/tabs/slots.md';
 
 <head>
   <title>Ion-Tabs: Tab-Based Component for App Top-Level Navigation</title>
-  <meta name="description" content="Tabs are top-level components to implement tab-based navigation. Ion-tabs have no styling & work as router outlets for navigation that behaves like native apps." />
+  <meta name="description" content="Tabsは、タブベースのナビゲーションを実装するためのトップレベルのコンポーネントです。イオンタブはスタイリングを持たず、ネイティブアプリのように動作するナビゲーションのルーター出口として機能します。" />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';

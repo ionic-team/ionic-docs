@@ -16,7 +16,7 @@ import Slots from '@site/static/auto-generated/progress-bar/slots.md';
 
 <head>
   <title>Progress Bar | Horizontal App Progress Bar for Loading Indicator</title>
-  <meta name="description" content="ion-progress-bars are horizontal loading indicators that inform users about the status of ongoing app processes—such as submitting a form or saving updates." />
+  <meta name="description" content="ion-progress-barは、水平方向の読み込みインジケーターで、フォームの送信や更新の保存など、進行中のアプリ処理のステータスをユーザーに知らせます。" />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';

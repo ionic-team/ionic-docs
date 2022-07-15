@@ -13,7 +13,7 @@ import Slots from '@site/static/auto-generated/loading/slots.md';
 
 <head>
   <title>Loading | Application Loading Indicator Overlay | ion-loading</title>
-  <meta name="description" content="The ion-loading overlay indicates activity while blocking user interaction. The loading indicator appears on top of the app's content, and can be dismissed." />
+  <meta name="description" content="ion-loadingは、ユーザーのインタラクションをブロックしながら、アクティビティを表示します。ローディングインジケータは、アプリのコンテンツの上に表示され、解除することができます。" />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';

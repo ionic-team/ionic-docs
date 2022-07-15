@@ -14,7 +14,7 @@ import Slots from '@site/static/auto-generated/item-divider/slots.md';
 
 <head>
   <title>Item Divider | List Item Divider Block Element for Ionic Apps</title>
-  <meta name="description" content="Item Dividers are block elements that can be used to separate items in a list. They are similar to list headers, but instead, go in between groups of items." />
+  <meta name="description" content="Item Dividersは、リスト内のアイテムを区切るために使用するブロック要素です。リストヘッダーに似ていますが、項目のグループの間に挟みます。" />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';

@@ -16,7 +16,7 @@ import Slots from '@site/static/auto-generated/fab/slots.md';
 
 <head>
   <title>ion-fab: Floating Action Button for Android and iOS Ionic Apps</title>
-  <meta name="description" content="Fabs, floating action buttons, are container elements that contain one or more fab buttons. Use ion-fab when creating Android and iOS apps with Ionic Framework." />
+  <meta name="description" content="Fabs（フローティングアクションボタン）は、1つまたは複数のFabボタンを含むコンテナ要素です。Ionic FrameworkでAndroidおよびiOSアプリを作成する際にion-fabを使用します。" />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';

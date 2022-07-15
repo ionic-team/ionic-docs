@@ -16,7 +16,7 @@ import Slots from '@site/static/auto-generated/spinner/slots.md';
 
 <head>
   <title>ion-spinner | Animated Spinner Icon Components and Properties</title>
-  <meta name="description" content="The ion-spinner component provides a variety of animated SVG spinners. These icons indicate that the app is loading or performing another process to wait on." />
+  <meta name="description" content="ion-spinner コンポーネントは、アニメーションするさまざまな SVG スピナーを提供します。これらのアイコンは、アプリがロード中であることや、別の処理を実行していることを示し、待機させることができます。" />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';

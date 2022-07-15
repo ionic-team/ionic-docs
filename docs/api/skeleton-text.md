@@ -16,7 +16,7 @@ import Slots from '@site/static/auto-generated/skeleton-text/slots.md';
 
 <head>
   <title>Skeleton Text | Skeleton Loading Placeholder & Framework for Text</title>
-  <meta name="description" content="ion-skeleton-text is a component for rendering placeholder content. The element will render a gray block at the specified width as a loading text framework." />
+  <meta name="description" content="ion-skeleton-text は、プレースホルダコンテンツをレンダリングするためのコンポーネントです。この要素は、ローディングテキストのフレームワークとして、指定された幅で灰色のブロックをレンダリングします。" />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';

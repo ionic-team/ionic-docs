@@ -16,7 +16,7 @@ import Slots from '@site/static/auto-generated/searchbar/slots.md';
 
 <head>
   <title>Search Bar Icon for Keyboard Text Display | Ion-Search Bar</title>
-  <meta name="description" content="Search bars represent a text field that can be used to search through a collection. Learn to input Ion-Search Bar as an icon on Android & iOS keyboard displays." />
+  <meta name="description" content="Search barsは、コレクションを検索するために使用できるテキストフィールドを表します。AndroidとiOSのキーボード表示で、Ion-Search Barをアイコンとして入力する方法をご紹介します。" />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';

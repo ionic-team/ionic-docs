@@ -16,7 +16,7 @@ import Slots from '@site/static/auto-generated/chip/slots.md';
 
 <head>
   <title>ion-chip:  Name, Text, Icon and Avatar for Ionic Framework Apps</title>
-  <meta name="description" content="ion-chips represent complex entities in small blocks, such as a contact. A chip can contain several different elements such as names, avatars, text, and icons." />
+  <meta name="description" content="ion-chipは、複雑な実体をコンタクトのような小さなブロックに表現します。1つのチップには、名前、アバター、テキスト、アイコンなど、複数の異なる要素を含めることができます。" />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';

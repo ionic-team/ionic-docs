@@ -16,7 +16,7 @@ import Slots from '@site/static/auto-generated/list/slots.md';
 
 <head>
   <title>ion-list: Item List View Component for iOS and Android Apps</title>
-  <meta name="description" content="ion-lists are made up of multiple rows of items containing text, icons, toggles, and more. Learn about the list view component for iOS and Android Ionic apps." />
+  <meta name="description" content="ion-listsは、テキスト、アイコン、トグルなどを含むアイテムの複数の行で構成されています。iOSおよびAndroidのIonicアプリのリストビューコンポーネントについて説明します。" />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';

@@ -16,7 +16,7 @@ import Slots from '@site/static/auto-generated/toast/slots.md';
 
 <head>
   <title>ion-toast Component: A Dismissible App Notification Alert</title>
-  <meta name="description" content="ion-toast component is an app notification displaying system messages or feedback. Toast alerts appear above content and are dismissed to resume interaction." />
+  <meta name="description" content="ion-toast コンポーネントは、システムメッセージやフィードバックを表示するアプリの通知です。トーストのアラートはコンテンツの上に表示され、インタラクションを再開するには解除されます。" />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';

@@ -14,7 +14,7 @@ import Slots from '@site/static/auto-generated/col/slots.md';
 
 <head>
   <title>ion-col: Column Component Padding, Size and Other Properties</title>
-  <meta name="description" content="ion-col is a column component that goes inside a row. Content within a grid goes inside of a column. Read more on column padding, size, and other properties." />
+  <meta name="description" content="ion-colは、rowの内側に入るカラムコンポーネントです。グリッド内のコンテンツは、カラムの中に入ります。列のパディング、サイズ、その他のプロパティについては、こちらをご覧ください。" />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';

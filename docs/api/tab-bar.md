@@ -14,7 +14,7 @@ import Slots from '@site/static/auto-generated/tab-bar/slots.md';
 
 <head>
   <title>ion-tab-bar with CSS Custom Properties for Tab Bar Components</title>
-  <meta name="description" content="The tab bar component contains a set of tab buttons and a tab bar must be provided inside of tabs to communicate. Read more about use and CSS custom properties." />
+  <meta name="description" content="tab barコンポーネントには、タブボタンのセットが含まれており、通信するためにはタブの内側にタブバーを用意する必要があります。使用方法とCSSカスタムプロパティについてはこちらをご覧ください。" />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';

@@ -14,7 +14,7 @@ import Slots from '@site/static/auto-generated/menu-button/slots.md';
 
 <head>
   <title>Menu Button | ion-menu-button to Open an App Menu on A Page</title>
-  <meta name="description" content="Menu Button is component that automatically creates the icon and functionality to open a menu on an app page. Read to learn more about ion-menu-button." />
+  <meta name="description" content="Menu Buttonは、アプリのページでメニューを開くためのアイコンと機能を自動的に作成するコンポーネントです。ion-menu-buttonの詳細については、こちらをご覧ください。" />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';

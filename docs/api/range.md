@@ -13,7 +13,7 @@ import Slots from '@site/static/auto-generated/range/slots.md';
 
 <head>
   <title>Range Slider | ion-range: Slider Knob Controls with Labels</title>
-  <meta name="description" content="ion-range lets you select from a range of values by moving the slider. It accepts dual knobs but one controls the value and labels can be placed on either side." />
+  <meta name="description" content="ion-rangeは、スライダーを動かして値の範囲を選択することができます。2つのノブを使用できますが、1つは値を制御し、ラベルはどちらか一方に置くことができます。" />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';

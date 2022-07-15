@@ -14,7 +14,7 @@ import Slots from '@site/static/auto-generated/card-title/slots.md';
 
 <head>
   <title>ion-card-title | Ionic App Card Title Component and Properties</title>
-  <meta name="description" content="ion-card-title is a child component of ion-card. Read to learn more about card title properties and how this component is used on Ionic Framework apps." />
+  <meta name="description" content="ion-card-titleは、ion-cardの子コンポーネントです。カードタイトルのプロパティの詳細と、このコンポーネントがIonic Frameworkアプリでどのように使用されるかについては、こちらをご覧ください。" />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';

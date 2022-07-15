@@ -16,7 +16,7 @@ import Slots from '@site/static/auto-generated/menu/slots.md';
 
 <head>
   <title>ion-menu: API Framework Docs for Types of Menu Components</title>
-  <meta name="description" content="ion-menu components are navigation drawers that slide in from the side of the current view. Read our framework docs for the available menu types on Ionic API." />
+  <meta name="description" content="ion-menuコンポーネントは、現在のビューの横からスライドして入ってくるナビゲーションドロワーです。Ionic APIで利用可能なメニューの種類については、フレームワークのドキュメントをご覧ください。" />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';

@@ -14,7 +14,7 @@ import Slots from '@site/static/auto-generated/reorder-group/slots.md';
 
 <head>
   <title>ion-reorder-group: Wrapper Component for Ionic Framework Apps</title>
-  <meta name="description" content="ion-reorder-group is a wrapper component for items using the ion-reorder component on Ionic apps. Read to learn more about ion-reorder-group usage." />
+  <meta name="description" content="ion-reorder-groupは、Ionicアプリでion-reorderコンポーネントを使用するアイテムのためのラッパーコンポーネントです。ion-reorder-groupの使い方はこちらをご覧ください。" />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';

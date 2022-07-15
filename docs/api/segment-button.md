@@ -14,7 +14,7 @@ import Slots from '@site/static/auto-generated/segment-button/slots.md';
 
 <head>
   <title>ion-segment-button | Segment Button Icon and Segment Value</title>
-  <meta name="description" content="ion-segment-buttons are groups of related buttons inside of a Segment. Learn to use segment button icons and check their values on Ionic Framework Apps." />
+  <meta name="description" content="ion-segment-buttonsは、Segmentの中にある関連するボタンのグループです。Ionic Frameworkアプリでsegment-buttonsのアイコンの使い方を学び、その値を確認します。" />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';

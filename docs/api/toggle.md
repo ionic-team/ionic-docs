@@ -16,7 +16,7 @@ import Slots from '@site/static/auto-generated/toggle/slots.md';
 
 <head>
   <title>Toggle | ion-toggle: Custom Toggle Button for Ionic Applications</title>
-  <meta name="description" content="Toggle changes the state of a single option. Use ion-toggle to create customizable toggle buttons that can be switched on or off for your applications." />
+  <meta name="description" content="Toggleは、1つのオプションの状態を変更します。ion-toggleを使用して、アプリケーションのオン/オフを切り替えることができるカスタマイズ可能なトグルボタンを作成します。" />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';

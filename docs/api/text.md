@@ -16,7 +16,7 @@ import Slots from '@site/static/auto-generated/text/slots.md';
 
 <head>
   <title>ion-text: Ionic App Component to Style or Change Text Color</title>
-  <meta name="description" content="ion-text is a simple app component that can be used to style the text color of any element. Learn how ion-text wraps elements in order to change the text color." />
+  <meta name="description" content="ion-textは、任意の要素のテキストカラーをスタイルするために使用できるシンプルなアプリコンポーネントです。テキスト色を変更するために、ion-textがどのように要素をラップしているかを説明します。" />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';

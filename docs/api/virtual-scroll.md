@@ -14,7 +14,7 @@ import Slots from '@site/static/auto-generated/virtual-scroll/slots.md';
 
 <head>
   <title>ion-virtual-scroll | Angular Virtual Scroll List for Ionic Apps</title>
-  <meta name="description" content="ion-virtual-scroll, supported in Angular, displays a virtual, infinite list. Records are passed to the virtual scroll containing the data to create templates." />
+  <meta name="description" content="ion-virtual-scrollは、仮想的な無限リストを表示します。テンプレートを作成するためのデータを含むレコードが仮想スクロールに渡されます。" />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';

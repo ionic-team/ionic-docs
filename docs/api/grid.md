@@ -16,7 +16,7 @@ import Slots from '@site/static/auto-generated/grid/slots.md';
 
 <head>
   <title>Ion-Grid: Display Grids to Build Mobile-First Custom App Layout</title>
-  <meta name="description" content="Ion-Grid is a mobile-first flexbox system to build custom application display layouts with a 12 column layout and different breakpoints based on screen size." />
+  <meta name="description" content="Ion-Gridは、12カラムのレイアウトと画面サイズに応じて異なるブレークポイントを持つカスタムアプリケーションの表示レイアウトを構築するためのモバイルファーストのフレックスボックスシステムです。" />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';

@@ -13,7 +13,7 @@ import Slots from '@site/static/auto-generated/modal/slots.md';
 
 <head>
   <title>ion-modal: Ionic Mobile App Custom Modal API Component</title>
-  <meta name="description" content="ion-modal is a dialog that appears on top of mobile app content, and must be dismissed before interaction resumes. Learn more about custom modal components." />
+  <meta name="description" content="ion-modal は、モバイルアプリケーションのコンテンツの上に表示されるダイアログで、インタラクションを再開する前に解除する必要があります。カスタムモーダルコンポーネントについて詳しくはこちら" />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';

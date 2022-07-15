@@ -16,7 +16,7 @@ import Slots from '@site/static/auto-generated/avatar/slots.md';
 
 <head>
   <title>ion-avatar: Circular Application Avatar Icon Component</title>
-  <meta name="description" content="Ion-avatars are circular application components that wrap an image or icon. They can represent a person or an object, by themselves or inside of any element." />
+  <meta name="description" content="Ion-avatarsは画像やアイコンを包む円形のアプリケーション部品です。人物や物体を表現することができ、単体でも、要素の中に入れてもかまいません。" />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';

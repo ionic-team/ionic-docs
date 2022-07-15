@@ -14,7 +14,7 @@ import Slots from '@site/static/auto-generated/header/slots.md';
 
 <head>
   <title>ion-header: Header Parent Component for Ionic Framework Apps</title>
-  <meta name="description" content="Ion-header is a parent component that holds the toolbar. It's important to note that ion-header needs to be the one of the three root elements of a page." />
+  <meta name="description" content="ion-headerは、ツールバーを保持する親コンポーネントです。ion-headerは、ページの3つのルート要素のうちの1つである必要があることに注意することが重要です。" />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';

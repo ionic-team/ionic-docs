@@ -14,7 +14,7 @@ import Slots from '@site/static/auto-generated/label/slots.md';
 
 <head>
   <title>Item Label Color and Properties for Applications | ion-label</title>
-  <meta name="description" content="Label is a wrapper element that can be used in combination with other Ionic components. Easily design item label colors and other properties with ion-label." />
+  <meta name="description" content="Labelは、他のIonicコンポーネントと組み合わせて使用できるラッパー要素です。ion-labelでアイテムラベルの色やその他のプロパティを簡単にデザインできます。" />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';

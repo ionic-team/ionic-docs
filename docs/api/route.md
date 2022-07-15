@@ -14,7 +14,7 @@ import Slots from '@site/static/auto-generated/route/slots.md';
 
 <head>
   <title>ion-route: API Route Component for Ionic Framework Apps</title>
-  <meta name="description" content="The ion-route component takes a component and renders it when the Browser URL matches the URL property. Learn more about the API route component for Ionic Apps." />
+  <meta name="description" content="ion-routeコンポーネントは、コンポーネントを受け取り、Browser URLがURLプロパティに一致したときにレンダリングします。Ionic AppsのAPIルートコンポーネントの詳細はこちら。" />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';

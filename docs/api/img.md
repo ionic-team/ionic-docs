@@ -14,7 +14,7 @@ import Slots from '@site/static/auto-generated/img/slots.md';
 
 <head>
   <title>Img Tag to Lazy Load Images in Viewport | ion-img Tag</title>
-  <meta name="description" content="Img tag lazy loads images whenever the tag is in the viewport. Utilize this component when generating large lists—as images are only loaded when visible." />
+  <meta name="description" content="Imgタグは、タグがビューポートにあるときに、画像を遅延して読み込みます。大きなリストを作成する際にこのコンポーネントを利用すると、画像が表示されているときだけ読み込まれます。" />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';

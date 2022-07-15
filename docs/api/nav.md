@@ -16,7 +16,7 @@ import Slots from '@site/static/auto-generated/nav/slots.md';
 
 <head>
   <title>ion-nav | Nav View Component for Ionic Framework Apps</title>
-  <meta name="description" content="ion-nav is a standalone for loading arbitrary, and pushing new, components on to the stack. Loading Nav view, and pushing others, won't affect overall routers." />
+  <meta name="description" content="ion-navは、任意のコンポーネントをロードしたり、新しいコンポーネントをスタックにPushするために単独で利用できます。ナビビューをロードしたり、他をプッシュしても、ルータ全体に影響を与えることはありません。" />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';

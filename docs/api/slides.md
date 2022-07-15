@@ -16,7 +16,7 @@ import Slots from '@site/static/auto-generated/slides/slots.md';
 
 <head>
   <title>Ion-Slides: Mobile Touch Slider with Built-In & Custom Animation</title>
-  <meta name="description" content="Ion-Slides is a multi-section container which offers custom and built-in mobile touch slider animation effects. See how Ion-Slides works with iOS and Android." />
+  <meta name="description" content="Ion-Slidesは、カスタムおよびビルトインモバイルタッチスライダーアニメーション効果を提供するマルチセクションコンテナです。Ion-SlidesのiOSとAndroidでの動作をご覧ください。" />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';

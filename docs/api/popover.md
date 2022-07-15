@@ -13,7 +13,7 @@ import Slots from '@site/static/auto-generated/popover/slots.md';
 
 <head>
   <title>ion-popover: iOS / Android Popover UI Component & CSS Properties</title>
-  <meta name="description" content="ion-popover is a dialog that appears on top of the current page. Learn about the popover UI component and CSS custom properties for iOS and Android devices." />
+  <meta name="description" content="ion-popoverは、現在のページの上に表示されるダイアログです。iOSとAndroidデバイス用のpopover UIコンポーネントとCSSカスタムプロパティについて説明します。" />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';

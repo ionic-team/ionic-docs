@@ -16,7 +16,7 @@ import Slots from '@site/static/auto-generated/note/slots.md';
 
 <head>
   <title>ion-note: Note Text Elements for iOS and Android Ionic Apps</title>
-  <meta name="description" content="ion-notes are text elements generally used as subtitles that provide more information. Learn how notes can be used and styled on iOS and Android Ionic apps." />
+  <meta name="description" content="ion-notesは、一般的に詳細な情報を提供するテキスト要素です。iOSおよびAndroidのIonicアプリでnotesをどのように使用し、どのようにスタイリングできるかをご紹介します。" />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';

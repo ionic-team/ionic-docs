@@ -16,7 +16,7 @@ import Slots from '@site/static/auto-generated/content/slots.md';
 
 <head>
   <title>ion-content: Scrollable CSS Component for Ionic App Content Areas</title>
-  <meta name="description" content="ion-content provides an easy to use content area with useful methods to control the scrollable area. Learn more about this CSS component for Ionic apps." />
+  <meta name="description" content="ion-contentは、スクロール可能な領域を制御する便利なメソッドを備えた、使いやすいコンテンツ領域を提供します。このIonicアプリ用CSSコンポーネントの詳細については、こちらをご覧ください。" />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';

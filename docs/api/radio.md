@@ -16,7 +16,7 @@ import Slots from '@site/static/auto-generated/radio/slots.md';
 
 <head>
   <title>ion-radio Component: Radio Property for iOS and Android</title>
-  <meta name="description" content="Radio components should be used inside of ion-radio-groups on iOS and Android devices. Read to learn more about radio property usage and installation." />
+  <meta name="description" content="Radioコンポーネントは、iOSおよびAndroidデバイスのion-radio-groupsの内部で使用する必要があります。Radioコンポーネントの使用方法とインストール方法については、こちらをご覧ください。" />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';

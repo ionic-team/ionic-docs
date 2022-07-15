@@ -14,7 +14,7 @@ import Slots from '@site/static/auto-generated/route-redirect/slots.md';
 
 <head>
   <title>ion-route-redirect Plugin: Redirect 'from' a URL 'to' Another URL</title>
-  <meta name="description" content="ion-route-redirect is used with as a direct child of an ion-router and redirects 'from' a URL 'to' another URL. Read to learn about the route redirect plugin." />
+  <meta name="description" content="ion-route-redirectは、ion-routerの直接の子として使用され、URLから他のURLへのリダイレクトを行います。ルートリダイレクトプラグインについては、こちらをご覧ください。" />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
