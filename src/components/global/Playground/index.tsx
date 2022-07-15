@@ -11,7 +11,7 @@ import 'tippy.js/dist/tippy.css';
 import PlaygroundTabs from '../PlaygroundTabs';
 import TabItem from '@theme/TabItem';
 
-import { IconHtml, IconTs, IconVue } from './icons';
+import { IconHtml, IconTs, IconVue, IconDots } from './icons';
 
 const ControlButton = ({ isSelected, handleClick, title, label }) => {
   return (
@@ -318,7 +318,7 @@ export default function Playground({
 
   function renderLoadingScreen() {
     return (
-      <div class="playground__loading">Loading...</div>
+      <div class="playground__loading"><IconDots /></div>
     )
   }
 
