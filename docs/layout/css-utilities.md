@@ -5,7 +5,7 @@ inlineHtmlPreviews: true
 ---
 
 <head>
-  <title>CSS Utilities: Classes for Text/Element Alignment or Modification</title>
+  <title>CSSユーティリティ: Classes for Text/Element Alignment or Modification</title>
   <meta
     name="description"
     content="Ionic CSS utility classes can be used on any element for text modification/alignment, element placement, or to adjust padding and margin. Read to learn more."
@@ -113,7 +113,7 @@ Ionic Frameworは、テキストの順番を入れ替えたり、要素の配置
 
 ### Responsive Text Classes
 
-All of the text classes listed above have additional classes to modify the text based on the screen size. Instead of `text-` in each class, use `text-{breakpoint}-` to only use the class on specific screen sizes, where `{breakpoint}` is one of the breakpoint names listed in [Ionic Breakpoints](#ionic-breakpoints).
+上に挙げたすべてのテキストクラスには、スクリーンサイズに応じてテキストを変更するための追加のクラスがあります。各クラスで `text-` の代わりに `text-{breakpoint}-` を使用すると、特定のスクリーンサイズでのみそのクラスを使用できます。ここで `{breakpoint}` は [Ionic Breakpoints](#ionic-breakpoints) にリストされているブレークポイント名のうちの1つです。
 
 以下の表は、 `{modifier}` のデフォルトの挙動です。 `left`, `right`, `start`, `end`, `center`, `justify`, `wrap`, `nowrap`, `uppercase`, `lowercase`, `capitalize` は上記の通りです。
 

@@ -6,7 +6,7 @@ sidebar_label: 基本的な考え方
 import ColorAccordion from '@components/page/theming/ColorAccordion';
 
 <head>
-  <title>Theming | Ionic Apps: Color and Theming Basics Definition</title>
+  <title>テーマ | Ionic Apps: Color and Theming Basics Definition</title>
   <meta
     name="description"
     content="The definition of theming apps just got simplified. Ionic Framework is built with pre-baked styles and colors which are extremely easy to change and modify."
@@ -15,24 +15,24 @@ import ColorAccordion from '@components/page/theming/ColorAccordion';
 
 Ionic Frameworkは、さまざまなプラットフォームの標準デザインに準拠しながら、白紙の状態からブランディングに合わせて簡単にカスタマイズおよび変更できるように構築されています。IonicアプリのThemingは今まで以上に簡単です。フレームワークはCSSで構築されているため、事前に用意されているデフォルトスタイルは簡単に変更や修正をすることができます。
 
-## Colors
+## 配色
 
-Ionic has nine default colors that can be used to change the color of many components. Each color is actually a collection of multiple properties, including a `shade` and `tint`, used throughout Ionic.
+Ionicには9つのデフォルトカラーがあり、多くのコンポーネントの色を変更するのに利用できます。各色は実際には `shade` や `tint` などの複数のプロパティの集まりで、Ionic全体で使用されます。
 
-When changing a color, it is important to set all of the related properties. This can be done easily with the [Color Generator](color-generator.md) tool, but these can also be manually written if desired. For more information on Ionic colors, see [Colors](colors.md).
+色を変更する際には、関連するすべてのプロパティを設定することが重要です。これは[Color Generator](color-generator.md)ツールで簡単に行えますが、必要であればこれらは手動で記述することもできます。Ionicの色については、[Colors](colors.md)を参照してください。
 
 <ColorAccordion />
 
 ## Platform Standards
 
-Ionic components adapt their look and behavior based on the platform the app is running on. We call this <strong>Adaptive Styling</strong>. This allows developers to build apps that use the same codebase for multiple platforms, while still looking "native" to those particular platforms.
+Ionicコンポーネントは、アプリが動作しているプラットフォームに応じて、見た目や動作を調整します。私たちはこれを __Adaptive Styling__ と呼んでいます。これにより、開発者は複数のプラットフォームで同じコードベースを使用しながら、特定のプラットフォームで「ネイティブ」な外観のアプリを構築することができます。
 
 Ionicは、2つの **modes** をもっており、これらはプラットフォーム: `ios` と `md` に基づいてコンポーネントの外観がカスタマイズされます。各プラットフォームにはデフォルトモードがありますが、簡単に変更できます。プラットフォームに基づいてアプリケーションをカスタマイズする方法の詳細については、[Platform Styles](platform-styles.md) をご覧ください。
 
 ## CSS Variables
 Ionicコンポーネントは、 <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_variables" target="_blank" rel="noopener noreferrer">CSS properties (variables)</a>を使ってテーマ化されています。CSS変数は、動的な値を静的なCSSで利用することができます。これは今まではSassのようなCSSプリプロセッサを必要としていたものです。アプリケーションの外観は、[Ionic Variables](/docs/theming/css-variables#ionic-variables)のいずれかの値を変更することで簡単に変更できます。
 
-The Ionic Framework components are themed using <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_variables" target="_blank" rel="noopener noreferrer">CSS properties (variables)</a>. CSS variables add dynamic values to an otherwise static language. This is something that has traditionally required a CSS preprocessor like Sass. The look of an application can easily be changed by changing the value of any of the [CSS Variables](css-variables.md) Ionic Framework provides.
+Ionic Frameworkのコンポーネントは、<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_variables" target="_blank" rel="noopener noreferrer">CSSプロパティ（変数）</a>を使ってテーマ化されています。CSS 変数は、静的な言語に対して動的な値を追加するものです。これは、従来はSassのようなCSSプリプロセッサが必要だったものです。Ionic Frameworkが提供する[CSS Variables](css-variables.md)のいずれかの値を変更することで、アプリケーションの外観を簡単に変更することができます。
 
 ## CSS Shadow Parts
 

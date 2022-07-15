@@ -7,7 +7,7 @@ inlineHtmlPreviews: true
 import Codepen from '@components/global/Codepen';
 
 <head>
-  <title>Dark Mode to Change Color Schemes and CSS Properties</title>
+  <title>ダークモード to Change Color Schemes and CSS Properties</title>
   <meta
     name="description"
     content="Developers are adding dark mode CSS on native applications to support their user preferences. Read to learn more about dark color schemes for Ionic apps."

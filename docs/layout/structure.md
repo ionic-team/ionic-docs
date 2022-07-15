@@ -7,16 +7,16 @@ import DocsCard from '@components/global/DocsCard';
 import DocsCards from '@components/global/DocsCards';
 
 <head>
-  <title>Structure Layout | Structures for Content Layout on Ionic Apps</title>
+  <title>レイアウトの構成 | Structures for Content Layout on Ionic Apps</title>
   <meta
     name="description"
     content="Ionic provides several different layouts that can be used to structure an app and its content—from single page layouts, to split pane views and modals."
   />
 </head>
 
-Ionic Framework provides several different layouts that can be used to structure an app. From single page layouts, to split pane views and modals.
+Ionic Frameworkは、アプリを構成するために使用できるいくつかの異なるレイアウトを提供します。シングルページレイアウトから、スプリットペインビューやモーダルまで、さまざまなレイアウトがあります。
 
-## Header and Footer Layout
+## HeaderとFooterのレイアウト
 
 ### Header
 
@@ -26,7 +26,7 @@ Ionic Framework provides several different layouts that can be used to structure
   </DocsCard>
 </aside>
 
-The most simple layout available consists of a [header](../api/header.md) and [content](../api/content.md). Most pages in an app generally have both of these, but a header is not required in order to use content.
+最もシンプルなレイアウトは、[header](../api/header.md) と [content](../api/content.md) で構成されています。アプリのほとんどのページは、一般にこの両方を持ちますが、contentを使用するためにheaderは必要ありません。
 
 ```html
 <ion-app>
@@ -50,7 +50,7 @@ The most simple layout available consists of a [header](../api/header.md) and [c
   </DocsCard>
 </aside>
 
-As you can see, a toolbar in a header appears above the content. Sometimes an app needs to have a toolbar below the content, which is when a footer is used.
+ご覧のように、footerのツールバーはコンテンツの上に表示されます。アプリでは、コンテンツの下にツールバーを表示する必要がある場合があり、そのような場合にfooterが使用されます。
 
 ```html
 <ion-app>
@@ -66,9 +66,9 @@ As you can see, a toolbar in a header appears above the content. Sometimes an ap
 </ion-app>
 ```
 
-### Header and Footer
+### Header と Footer
 
-These can also be combined on one page to have a toolbar above _and_ below the content.
+また、これらを1つのページにまとめて、コンテンツの上と下にツールバーを表示させることも可能です。
 
 ```html
 <ion-app>
@@ -90,13 +90,13 @@ These can also be combined on one page to have a toolbar above _and_ below the c
 </ion-app>
 ```
 
-### Live examples
+### ライブでの実装例
 
-You can view a live example of this setup in Angular [here](https://stackblitz.com/edit/ionic-ng-header-footer) and in React [here](https://stackblitz.com/edit/ionic-react-head-foot).
+この設定のライブ例を、Angularでは [こちら](https://stackblitz.com/edit/ionic-ng-header-footer) 、Reactでは [こちら](https://stackblitz.com/edit/ionic-react-head-foot) で見ることができます。
 
-## Tabs Layout
+## タブレイアウト
 
-A layout consisting of horizontal [tabs](../api/tabs.md) can be used to let the user quickly change between content views. Each tab can contain static content or a navigation stack by using an `ion-router-outlet` or `ion-nav`.
+水平な[tabs](../api/tabs.md)からなるレイアウトを使用すると、ユーザーはコンテンツビュー間をすばやく切り替えることができます。各タブには、静的コンテンツや、`ion-router-outlet` や `ion-nav` を利用したナビゲーションスタックを格納することができます。
 
 ```html
 <ion-app>
@@ -122,13 +122,13 @@ A layout consisting of horizontal [tabs](../api/tabs.md) can be used to let the 
 </ion-app>
 ```
 
-### Live examples
+### ライブでの実装例
 
-You can view a live example of this setup in Angular [here](https://stackblitz.com/edit/ionic-ng-tabs) and in React [here](https://stackblitz.com/edit/ionic-react-tab-layout).
+この設定は、Angularでは [こちら](https://stackblitz.com/edit/ionic-ng-tabs) 、Reactでは [こちら](https://stackblitz.com/edit/ionic-react-tab-layout) で実例を見ることができます。
 
-## Menu Layout
+## メニューレイアウト
 
-A standard layout among mobile apps includes the ability to toggle a side [menu](../api/menu.md) by clicking a button or swiping it open from the side. Side menus are generally used for navigation, but they can contain any content.
+モバイルアプリの標準的なレイアウトには、ボタンをクリックするか、横からスワイプして開くことで サイドメニュー [menu](../api/menu.md) を切り替えられる機能が含まれています。サイドメニューは一般的にナビゲーションのために使用されますが、任意のコンテンツを含むことができます。
 
 ```html
 <ion-app>
@@ -175,15 +175,15 @@ A standard layout among mobile apps includes the ability to toggle a side [menu]
 <ion-menu-controller></ion-menu-controller>
 ```
 
-### Live examples
+### ライブでの実装例
 
-You can view a live example of this setup in Angular [here](https://stackblitz.com/edit/ionic-ng-menu-layout) and in React [here](https://stackblitz.com/edit/ionic-react-menu).
+この設定は、Angularでは [こちら](https://stackblitz.com/edit/ionic-ng-menu-layout) 、Reactでは [こちら](https://stackblitz.com/edit/ionic-react-menu)で 実例を見ることができます。
 
-## Split Pane Layout
+## 分割ペインレイアウト
 
-A [split pane](../api/split-pane.md) layout has a more complex structure because it can combine the previous layouts. It allows for multiple views to be displayed when the viewport is above a specified breakpoint. If the device's screen size is below a certain size, the split pane view will be hidden.
+[split pane](../api/split-pane.md) レイアウトは、前述のレイアウトを組み合わせることができるため、より複雑な構造を持っています。これは、ビューポートが指定されたブレークポイントより上にある場合に、複数のビューを表示することができます。デバイスの画面サイズが一定以下の場合、分割ペインビューは非表示になります。
 
-By default, the split pane view will show when the screen is larger than `768px`, or the `md` breakpoint, but this can be customized to use different breakpoints by setting the `when` property. Below is an example where the split pane contains a menu that is visible for `sm` screens and up, or when the viewport is larger than `576px`. By resizing the browser horizontally so that the app is smaller than this, the split pane view will disappear.
+デフォルトでは、画面が `768px` または `md` ブレークポイントより大きい場合に分割ペインビューが表示されますが、`when` プロパティを設定することで、異なるブレークポイントを使用するようにカスタマイズすることが可能です。以下は、`sm`スクリーン以上、またはビューポートが `576px` より大きい場合に表示されるメニューを分割ペインに含む例です。これよりアプリが小さくなるようにブラウザの水平サイズを変更することで、分割ペインの表示が消えます。
 
 ```html
 <ion-app>
@@ -229,8 +229,8 @@ By default, the split pane view will show when the screen is larger than `768px`
 </ion-app>
 ```
 
-It's important to note that the element with the `id` matching the `content-id` specified by the split pane will be the main content that is always visible. This can be any element, including an [ion-nav](../api/nav.md), [ion-router-outlet](../api/router-outlet.md), or an [ion-tabs](../api/tabs.md).
+重要なのは、分割ペインで指定した `content-id` に一致する `id` を持つ要素が、常に表示されるメインコンテンツとなることです。これは、[ion-nav](../api/nav.md), [ion-router-outlet](../api/router-outlet.md), または [ion-tabs](../api/tabs.md) など任意の要素にすることが可能です。
 
-### Live examples
+### ライブでの実装例
 
-You can view a live example of this setup in Angular [here](https://stackblitz.com/edit/ionic-ng-split-pane) and in React [here](https://stackblitz.com/edit/ionic-react-split-pane).
+Angularでの実装例は [こちら](https://stackblitz.com/edit/ionic-ng-split-pane) 、Reactでの実装例は [こちら](https://stackblitz.com/edit/ionic-react-split-pane) をご覧ください。

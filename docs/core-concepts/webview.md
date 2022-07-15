@@ -10,11 +10,11 @@ title: Web View
   />
 </head>
 
-Web Views power web apps on native devices.
+Web Viewは、ネイティブデバイス上のWebアプリを強化します。
 
-The Web View is automatically provided for apps integrated with [Capacitor](../reference/glossary.md#capacitor).
+[Capacitor](../reference/glossary.md#capacitor) と統合されたアプリでは、Web Viewは自動的に提供されます。
 
-For [Cordova](../reference/glossary.md#cordova), Ionic maintains a <a href="https://github.com/ionic-team/cordova-plugin-ionic-webview" target="_blank">Web View plugin</a>. The plugin is provided by default when using the Ionic CLI.
+[Cordova](../reference/glossary.md#cordova)については、Ionicが<a href="https://github.com/ionic-team/cordova-plugin-ionic-webview" target="_blank">Web View のプラグイン</a>を管理しています。このプラグインは、Ionic CLIを使用する際にデフォルトで提供されます。
 
 ## Web Viewとは
 
@@ -34,7 +34,7 @@ Web Views enforce [CORS](../reference/glossary.md#cors), so it's important that 
 
 CordovaとCapacitorのアプリはローカルのHTTPサーバーでホストされており、`http://` プロトコルとして提供されます。ただし、一部のプラグインは `file://` プロトコルを利用してデバイスファイルにアクセスしようとします。`http://` と `file://` プロトコルの間にある問題を回避するためには、ファイルアクセスするパスをローカルのHTTPサーバに書き換える必要がありあす。例えば、 `file:///path/to/device/file` はアプリがレンダリングする前に `http://<host>:<port>/<prefix>/path/to/device/file` に書き換えなければなりません。
 
-For Capacitor apps, convert file URIs like so:
+Capacitorアプリの場合、URIはこのように変換します。
 
 ```javascript
 import { Capacitor } from '@capacitor/core';
@@ -42,9 +42,9 @@ import { Capacitor } from '@capacitor/core';
 Capacitor.convertFileSrc(filePath);
 ```
 
-For Cordova apps, the [Ionic Web View plugin](https://github.com/ionic-team/cordova-plugin-ionic-webview) provides a utility function for converting File URIs: `window.Ionic.WebView.convertFileSrc()`. There is also a corresponding Ionic Native plugin: [`@awesome-cordova-plugins/ionic-webview`](../native/ionic-webview.md).
+Cordovaアプリでは、[Ionic Web View plugin](https://github.com/ionic-team/cordova-plugin-ionic-webview)　がFile URIを変換するユーティリティ関数 `window.Ionic.WebView.convertFileSrc()` を提供しています。また、対応するIonic Nativeプラグインもあります。また、対応するIonic Nativeプラグインとして [`@awesome-cordova-plugins/ionic-webview`](../native/ionic-webview.md) があります。
 
-### Implementations
+### 実装
 
 - **iOS**: <a href="https://developer.apple.com/documentation/webkit/wkwebview" target="_blank">WKWebView</a>
 - **Android**: <a href="https://developer.chrome.com/multidevice/webview/overview" target="_blank">Web View for Android</a>

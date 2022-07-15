@@ -19,15 +19,15 @@ CSSベースのテーマ設定では、CSSファイルをロードするか、�
 
 ## `theme-color` Meta
 
-The `theme-color` value for a meta tag indicates a color that browsers can use to customize the display of a page or of the surrounding interface. This kind of meta tag can also accept media queries which allow developers to set the theme color for both light and dark modes.
+メタタグの `theme-color` は、ブラウザがページや周囲のインターフェイスの表示をカスタマイズするために使用する色を示します。この種類のmetaタグはメディアクエリも受け付けることができ、開発者はライトモードとダークモードの両方でテーマカラーを設定することができます。
 
-The `content` value for the `theme-color` meta must contain a valid <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/color_value" target="_blank" rel="noopener noreferrer">CSS Color</a> and cannot contain CSS Variables.
+メタタグ `theme-color` の `content` 値には、有効な <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/color_value" target="_blank" rel="noopener noreferrer">CSS Color</a> を含める必要があり、CSS Variables を含めることはできません。
 
 :::note
-The `theme-color` meta controls the interface theme when running in a web browser or as a PWA and has no effect when an app is deployed using Capacitor or Cordova. If you are looking to customize the area under the status bar, we recommend using the [Capacitor Status Bar Plugin](https://capacitorjs.com/docs/apis/status-bar).
+`Theme-color`メタは、WebブラウザまたはPWAとして実行するときにインターフェースのテーマを制御し、アプリがCapacitorまたはCordovaを使用してデプロイされるときには影響しません。ステータスバーの下の領域をカスタマイズしたい場合は、[Capacitor Status Bar Plugin](https://capacitorjs.com/docs/apis/status-bar)を使用することをお勧めします。
 :::
 
-The example below demonstrates how to use `theme-color` to style the browser interface on iOS 15.
+以下の例では、iOS 15 でブラウザのインターフェイスをスタイルするために `theme-color` を使用する方法を示しています。
 
 ```html
 <meta name="theme-color" media="(prefers-color-scheme: light)" content="#3880ff" />
@@ -38,21 +38,21 @@ The example below demonstrates how to use `theme-color` to style the browser int
 | -------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------ |
 | ![Application with theme-color meta in light mode](/img/theming/theme-color-light.png) | ![Application with theme-color meta in dark mode](/img/theming/theme-color-dark.png) |
 
-The `theme-color` meta can also be used to customize the toolbar in Safari on macOS Monterey or newer.
+macOS Monterey以降のSafariでは、`theme-color`メタを使用してツールバーをカスタマイズすることもできます。
 
-Safari on iOS 15 and macOS will automatically determine an appropriate theme color to use, but adding this meta tag is useful if you need more control over the theme.
+iOS 15とmacOSのSafariは自動的に適切なテーマカラーを決定しますが、テーマをより細かく制御したい場合はこのmetaタグを追加すると便利です。
 
-There is a small subset of colors that browsers will not use as they interfere with the browser interface. For example, setting `content="red"` will not work in Safari on macOS because that color interferes with the red close button in the toolbar. If you run into this situation, try altering your color selection slightly.
+ブラウザのインターフェイスに干渉するため、ブラウザが使用しない色の小さなサブセットがあります。例えば、`content="red"`と設定すると、macOSのSafariでは、ツールバーの赤い閉じるボタンと干渉してしまうため、動作しません。このような状況に遭遇した場合は、色の選択を少し変えてみてください。
 
 :::note
-Browsers will prefer the `theme-color` meta over `theme` in `manifest.json` if both are present.
+ブラウザは `manifest.json` に `theme` よりも `theme-color` メタが存在する場合、それを優先します。
 :::
 
-For more information, see the <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta/name/theme-color" target="_blank" rel="noopener noreferrer">MDN theme-color documentation</a>.
+詳しくは、<a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta/name/theme-color" target="_blank" rel="noopener noreferrer">MDN theme-color documentation</a> をご覧ください。
 
-## Global Variables
+## グローバル変数
 
-While the application and stepped variables in the themes section are useful for changing the colors of an application, often times there is a need for variables that are used in multiple components. The following variables are shared across components to change global padding settings and more.
+テーマセクションのアプリケーション変数とステップ変数は、アプリケーションの色を変更するのに便利ですが、しばしば、複数のコンポーネントで使用される変数が必要になることがあります。以下の変数は、コンポーネント間で共有され、グローバルなパディング設定などを変更することができます。
 
 ### Application Variables
 
@@ -83,7 +83,7 @@ While the application and stepped variables in the themes section are useful for
 | `--ion-grid-column-padding-lg` | Padding of the grid columns for lg breakpoints |
 | `--ion-grid-column-padding-xl` | Padding of the grid columns for xl breakpoints |
 
-## Known Limitations with Variables
+## 既知の変数の制限
 
 ### The Alpha Problem
 

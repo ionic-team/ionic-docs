@@ -42,6 +42,6 @@ Ionicの最も一般的な使用例の1つは、 <a href="https://www.apple.com/
 
 <a href="https://capacitor.ionicframework.com/" target="_blank">Capacitor</a>や<a href="https://cordova.apache.org/" target="_blank">Cordova</a>などのプロジェクトは、IonicアプリにネイティブSDKへのアクセスを許可するためによく使用されます。つまり、開発者は一般的なWeb開発ツールを使用してアプリをすばやく構築しながら、デバイスの加速度計、カメラ、GPSなどのネイティブ機能にアクセスすることができます。
 
-## Theming
+## テーマ
 
 基本的に、Ionic Frameworkは<a href="https://developer.mozilla.org/en-US/docs/Web/CSS" target="_blank">CSS</a>を使用して構築されているので、<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_variables" target="_blank">CSSプロパティ (variables)</a>の柔軟性を利用することができます。これにより、Web標準に準拠しながら見栄えのするアプリを設計することがとても簡単になります。デフォルトでもすばらしいものがつくれるように、私たちはテーマカラーのデフォルトセットを提供しますが、ブランド、会社、または希望のカラーパレットに合うデザインにするためにそれらを上書きすることをお勧めします。アプリケーションの背景色からテキストの色まで、すべてカスタマイズ可能です。アプリのテーマに関する詳細は[Theming](../theming/basics.md)をご覧ください。

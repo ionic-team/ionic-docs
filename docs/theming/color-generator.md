@@ -1,5 +1,5 @@
 ---
-title: Color Generator
+title: カラージェネレーター
 hide_table_of_contents: true
 demoUrl: /docs/demos/color-generator/index.html
 ---

@@ -3,14 +3,14 @@ title: レスポンシブグリッド
 ---
 
 <head>
-  <title>Responsive Grid System and Column Layout Based on Screen Size</title>
+  <title>レスポンシブグリッドシステムとスクリーンサイズに応じたカルムレイアウト</title>
   <meta
     name="description"
     content="Ionic's responsive grid is a powerful mobile-first flexbox system for building custom layouts based on a 12 column layout with breakpoints based on screen size."
   />
 </head>
 
-The grid is a powerful mobile-first flexbox system for building custom layouts. It is composed of three units — a [grid](../api/grid.md), [row(s)](../api/row.md) and [column(s)](../api/col.md). Columns will expand to fill their row, and will resize to fit additional columns. It is based on a 12 column layout with different breakpoints based on the screen size. The number of columns can be customized using CSS.
+グリッドは、カスタムレイアウトを構築するための強力なモバイルファーストのフレックスボックスシステムです。グリッドは、[grid](../api/grid.md), [row(s)](../api/row.md), [column(s)](../api/col.md) という三つの単位で構成されています。列はその行を埋めるように拡張され、追加の列に合うようにサイズが変更されます。これは、画面サイズに応じて異なるブレイクポイントを持つ12列のレイアウトに基づいています。カラムの数はCSSを使ってカスタマイズすることができます。
 
 ## How it works
 
@@ -30,28 +30,28 @@ The grid is a powerful mobile-first flexbox system for building custom layouts. 
 </ion-grid>
 ```
 
-- Grids act as a container for all rows and columns. Grids take up the full width of their container,
-  but adding the `fixed` attribute will specify the width per screen size, see [grid size](#grid-size) below.
-- Rows are horizontal groups of columns that line the columns up properly.
-- Content should be placed within columns, and only columns may be immediate children of rows.
-- The `size-{breakpoint}` attributes indicate the number of columns to use out of the default 12 per row.
-  So, `size="4"` can be added to a column in order to take up 1/3 of the grid, or 4 of the 12 columns.
-- Columns without a value for size will automatically have equal widths. For example, four instances of `size-sm` will each automatically be 25% wide for the small breakpoint and up.
-- Column widths are set as a percentage, so they’re always fluid and sized relative to their parent element.
-- Columns have padding between individual columns, however, the padding can be removed from the grid and
-  columns by adding the `ion-no-padding` class to the grid. See the [CSS Utilities](css-utilities.md) for more styles that can be applied to the grid.
-- There are five grid tiers, one for each responsive breakpoint: all breakpoints (extra small), small, medium, large, and extra large.
-- Grid tiers are based on minimum widths, meaning they apply to their tier and all those larger than them
-  (e.g., `size-sm="4"` applies to small, medium, large, and extra large devices).
-- Grids can easily be customized via CSS variables. See [customizing the grid](#customizing-the-grid).
+- グリッドは、すべての行と列のためのコンテナとして機能します。グリッドはコンテナの幅いっぱいに表示されます。
+  しかし、`fixed`属性を追加すると、スクリーンサイズごとの幅を指定することができます。
+- 行は、列を適切に並べるための水平方向のグループです。
+- コンテンツは列の中に配置されるべきで、列のみが行の直接の子となることができます。
+- `size-{breakpoint}` 属性は、1行あたりデフォルトの12列のうち、使用する列の数を指定します。
+  つまり、`size="4"` を指定すると、グリッドの1/3、つまり12列のうち4列を占有することができます。
+- sizeに値を指定しないカラムは、自動的に同じ幅になります。例えば、`size-sm`を4つ指定すると、スモールブレイクポイント以上の幅は、それぞれ自動的に25%になります。
+- カラムの幅はパーセンテージで設定されるため、常に流動的で、親要素からの相対的な大きさになります。
+- カラムは個々のカラムの間にパディングを持ちますが、パディングはグリッドとカラムから削除することができます。
+  しかし、グリッドに `ion-no-padding` クラスを追加することで、グリッドとカラムからパディングを取り除くことができます。グリッドに適用できるその他のスタイルについては、[CSS ユーティリティ](css-utilities.md) を参照してください。
+- グリッドの階層は、レスポンシブ・ブレークポイントごとに、すべてのブレークポイント（特小）、小、中、大、特大の5段階あります。
+- グリッドの階層は最小幅を基準にしており、その階層とそれより大きな階層に適用されます。
+  (例: `size-sm="4"` は、小型、中型、大型、特大のデバイスに適用されます)。
+- グリッドは CSS 変数で簡単にカスタマイズすることができます。グリッドのカスタマイズ](#customizing-the-grid)を参照してください。
 
-### Live Example
+### ライブでの実装例
 
-You can view a live example of this in Angular [here](https://stackblitz.com/edit/ionic-ng-basic-grid) and for React [here](https://stackblitz.com/edit/ionic-react-basic-grid).
+Angularの場合は [こちら](https://stackblitz.com/edit/ionic-ng-basic-grid) 、Reactの場合は [こちら](https://stackblitz.com/edit/ionic-react-basic-grid) で、ライブでの実装例を見ることができます。
 
-## Grid size
+## グリッドの大きさ
 
-By default, the grid will take up 100% width. To set a specific width based on the screen size, add the `fixed` attribute. The width of the grid for each breakpoint is defined in the `--ion-grid-width-{breakpoint}` CSS variables. For more information, see [customizing the grid](#customizing-the-grid).
+デフォルトでは、グリッドは100%の幅を占めます。画面サイズに応じた幅を設定するには、 `fixed` 属性を追加します。各ブレークポイントにおけるグリッドの幅は、CSS変数 `--ion-grid-width-{breakpoint}` で定義される。詳しくは、[グリッドのカスタマイズ](#customizing-the-grid) を参照してください。
 
 | Name | Value  | Description                                       |
 | ---- | ------ | ------------------------------------------------- |
@@ -61,21 +61,21 @@ By default, the grid will take up 100% width. To set a specific width based on t
 | lg   | 960px  | Set grid width to 960px when (min-width: 992px)   |
 | xl   | 1140px | Set grid width to 1140px when (min-width: 1200px) |
 
-### Live Example
+### ライブでの実装例
 
-You can view a live example of this in Angular [here](https://stackblitz.com/edit/ionic-ng-fixed-width-grid) and for React [here](https://stackblitz.com/edit/ionic-react-fixed-width-grid).
+Angularの場合は [こちら](https://stackblitz.com/edit/ionic-ng-fixed-width-grid) 、Reactの場合は [こちら](https://stackblitz.com/edit/ionic-react-fixed-width-grid) で、ライブの例を見ることができます。
 
-## Grid attributes
+## グリッドの属性
 
-The grid takes up the entire width of the screen by default. This can be modified using the attribute below.
+グリッドは、デフォルトでは画面の幅いっぱいに表示されます。これは、以下の属性を使って変更できます。
 
 | Property | Description                                       |
 | -------- | ------------------------------------------------- |
 | fixed    | Set a max width based on the current screen size. |
 
-## Default breakpoints
+## デフォルトのブレークポイント
 
-The default breakpoints are defined in the table below. Breakpoints can not be customized at this time. For more information on why they can't be customized, see [Variables in Media Queries](../theming/advanced.md#variables-in-media-queries).
+デフォルトのブレークポイントは、以下の表で定義されています。現時点では、ブレイクポイントをカスタマイズすることはできません。カスタマイズできない理由については、 [Variables in Media Queries](../theming/advanced.md#variables-in-media-queries) を参照してください。
 
 | Name | Value  | Width Prefix | Offset Prefix | Push Prefix | Pull Prefix | Description                          |
 | ---- | ------ | ------------ | ------------- | ----------- | ----------- | ------------------------------------ |
@@ -85,11 +85,11 @@ The default breakpoints are defined in the table below. Breakpoints can not be c
 | lg   | 992px  | `size-lg-`   | `offset-lg-`  | `push-lg-`  | `pull-lg-`  | Set columns when (min-width: 992px)  |
 | xl   | 1200px | `size-xl-`   | `offset-xl-`  | `push-xl-`  | `pull-xl-`  | Set columns when (min-width: 1200px) |
 
-## Auto-layout columns
+## オートレイアウトカラム
 
-### Equal-width
+### 均等な幅
 
-By default, columns will take up equal width inside of a row for all devices and screen sizes.
+デフォルトでは、すべてのデバイスと画面サイズにおいて、カラムは行の中で同じ幅を占めます。
 
 ```html
 <ion-grid>
@@ -115,9 +115,9 @@ By default, columns will take up equal width inside of a row for all devices and
 </ion-grid>
 ```
 
-### Setting one column width
+### 1列の幅を設定する
 
-Set the width of one column and the others will automatically resize around it. This can be done using our predefined grid attributes. In the example below, the other columns will resize no matter the width of the center column.
+1つのカラムの幅を設定すると、他のカラムは自動的にその幅にリサイズされます。これは、あらかじめ定義されたグリッド属性を使って行うことができます。以下の例では、中央のカラムの幅に関係なく、他のカラムがリサイズされます。
 
 ```html
 <ion-grid>
@@ -146,13 +146,13 @@ Set the width of one column and the others will automatically resize around it. 
 </ion-grid>
 ```
 
-#### Live Example
+#### ライブでの実装例
 
-You can view a live example of this in Angular [here](https://stackblitz.com/edit/ionic-ng-set-width-col) and for React [here](https://stackblitz.com/edit/ionic-react-set-width-col).
+Angularでは [こちら](https://stackblitz.com/edit/ionic-ng-set-width-col) 、Reactでは [こちら](https://stackblitz.com/edit/ionic-react-set-width-col) で、実例を見ることができます。
 
-### Variable-width
+### 可変幅
 
-By setting the `size-{breakpoint}` properties to `"auto"` the column can size itself based on the natural width of its content. This is extremely useful for setting a column width using pixels. The columns next to the variable-width column will resize to fill the row.
+`size-{breakpoint}` プロパティを `"auto"` に設定することで、カラムはそのコンテンツの自然な幅に基づいてサイズを変更することができます。これは、ピクセルでカラムの幅を設定する場合に非常に便利です。可変幅のカラムの隣のカラムは、行を埋めるようにリサイズされます。
 
 ```html
 <ion-grid>
@@ -186,15 +186,15 @@ By setting the `size-{breakpoint}` properties to `"auto"` the column can size it
 </ion-grid>
 ```
 
-#### Live Example
+#### ライブでの実装例
 
-You can view a live example of this in Angular [here](https://stackblitz.com/edit/ionic-ng-var-width-col) and for React [here](https://stackblitz.com/edit/ionic-react-var-width-col).
+Angularでは [こちら](https://stackblitz.com/edit/ionic-ng-var-width-col) 、Reactでは [こちら](https://stackblitz.com/edit/ionic-react-var-width-col) で、実例を見ることができます。
 
-## Responsive attributes
+## レスポンシブ属性
 
-### All breakpoints
+### すべてのブレークポイント
 
-To customize a column's width for all devices and screens, set the `size` property. The value of this property determines how many columns this column should take up out of the total available columns.
+すべてのデバイスとスクリーンに対してカラムの幅をカスタマイズするには、`size` プロパティを設定します。このプロパティの値は、利用可能なカラムのうち、このカラムが占めるべきカラムの数を決定します。
 
 ```html
 <ion-grid>
@@ -215,9 +215,9 @@ To customize a column's width for all devices and screens, set the `size` proper
 </ion-grid>
 ```
 
-### Stacked to horizontal
+### 積み上げから水平へ
 
-Use a combination of width and breakpoint attributes to create a grid that starts out stacked on extra small screens before becoming horizontal on small screens.
+width属性とbreakpoint属性の組み合わせで、超小型画面では積み上げ型、小型画面では水平型になるようなグリッドを作成することができます。
 
 ```html
 <ion-grid>
@@ -238,15 +238,15 @@ Use a combination of width and breakpoint attributes to create a grid that start
 </ion-grid>
 ```
 
-#### Live Example
+#### ライブでの実装例
 
-You can view a live example of this in Angular [here](https://stackblitz.com/edit/ionic-ng-stacked-horizontal-grid) and for React [here](https://stackblitz.com/edit/ionic-react-stacked-horizontal-grid).
+Angularでは [こちら](https://stackblitz.com/edit/ionic-ng-stacked-horizontal-grid) 、Reactでは [こちら](https://stackblitz.com/edit/ionic-react-stacked-horizontal-grid) で実例を見ることができます。
 
-## Reordering
+##並び替え
 
-### Offsetting columns
+### カラムのオフセット
 
-Move columns to the right by adding the `offset` property. This property increases the margin left of the column by the number of specified columns. For example, in the following grid the last column will be offset by 3 columns and take up 3 columns:
+offset` プロパティを追加することで、カラムを右に移動させることができます。このプロパティは、カラムの左側のマージンを指定したカラム数だけ増加させる。例えば、以下のグリッドでは、最後のカラムは3カラム分オフセットされ、3カラムを占めることになります。
 
 ```html
 <ion-grid>
@@ -261,7 +261,7 @@ Move columns to the right by adding the `offset` property. This property increas
 </ion-grid>
 ```
 
-Offsets can also be added based on screen breakpoints. Here's an example of a grid where the last column will be offset by 3 columns for `md` screens and up:
+また、スクリーンのブレークポイントに基づいてオフセットを追加することもできます。以下は、`md`スクリーン以上では最後のカラムが3カラム分オフセットされるグリッドの例です。
 
 ```html
 <ion-grid>
@@ -279,13 +279,13 @@ Offsets can also be added based on screen breakpoints. Here's an example of a gr
 </ion-grid>
 ```
 
-#### Live Example
+#### ライブでの実装例
 
-You can view a live example of this in Angular [here](https://stackblitz.com/edit/ionic-ng-offset-grid-cols) and for React [here](https://stackblitz.com/edit/ionic-react-offset-grid-cols).
+Angularでは [こちら](https://stackblitz.com/edit/ionic-ng-offset-grid-cols) 、Reactでは [こちら](https://stackblitz.com/edit/ionic-react-offset-grid-cols) で、実例を見ることができます。
 
-### Push and pull
+### プッシュとプル
 
-Reorder the columns by adding the `push` and `pull` properties. These properties adjust the `left` and `right` of the columns by the specified number of columns making it easy to reorder columns. For example, in the following grid the column with the `1 of 2` description will actually be the last column and the `2 of 2` will be the first column.
+`push` と `pull` というプロパティを追加することで、カラムの並び替えを行うことができます。これらのプロパティは、カラムの `left` と `right` を指定したカラム数だけ調整し、カラムの並び替えを簡単に行うことができます。例えば、以下のグリッドでは、`1 of 2`と記述されたカラムが実際には最後のカラムとなり、`2 of 2`が最初のカラムとなります。
 
 ```html
 <ion-grid>
@@ -300,7 +300,7 @@ Reorder the columns by adding the `push` and `pull` properties. These properties
 </ion-grid>
 ```
 
-Push and pull can also be added based on screen breakpoints. In the following example, the column with the `3 of 3` column description will actually be the first column for `md` screens and up:
+また、画面のブレークポイントに基づいてPushとPullを追加することができます。以下の例では、`3 of 3`のカラムの記述があるカラムは、実際には`md`画面以上の最初のカラムになります。
 
 ```html
 <ion-grid>
@@ -318,15 +318,15 @@ Push and pull can also be added based on screen breakpoints. In the following ex
 </ion-grid>
 ```
 
-#### Live Example
+#### ライブでの実装例
 
-You can view a live example of this in Angular [here](https://stackblitz.com/edit/ionic-ng-grid-push-pull) and for React [here](https://stackblitz.com/edit/ionic-react-grid-push-pull).
+Angularでは [こちら](https://stackblitz.com/edit/ionic-ng-grid-push-pull) 、Reactでは [こちら](https://stackblitz.com/edit/ionic-react-grid-push-pull) で実例を見ることができます。
 
-## Alignment
+## アライメント
 
-### Vertical alignment
+### 垂直方向のアラインメント
 
-All columns can be vertically aligned inside of a row by adding different classes to the row. For a list of available classes, see [css utilities](css-utilities.md#flex-container-properties).
+行に異なるクラスを追加することで、すべての列を行の内側に垂直に整列させることができます。利用可能なクラスの一覧は、[css utilities](css-utilities.md#flex-container-properties) を参照してください。
 
 ```html
 <ion-grid>
@@ -377,7 +377,7 @@ All columns can be vertically aligned inside of a row by adding different classe
 </ion-grid>
 ```
 
-Columns can also align themselves differently than other columns by adding the alignment class directly to the column. For a list of available classes, see [css utilities](css-utilities.md#flex-item-properties).
+カラムはまた、カラムに直接alignmentクラスを追加することによって、他のカラムと異なるように自分自身を配置することができます。利用可能なクラスの一覧は、[css utilities](css-utilities.md#flex-item-properties) を参照してください。
 
 ```html
 <ion-grid>
@@ -398,13 +398,13 @@ Columns can also align themselves differently than other columns by adding the a
 </ion-grid>
 ```
 
-#### Live Example
+#### ライブでの実装例
 
-You can view a live example of this in Angular [here](https://stackblitz.com/edit/ionic-ng-grid-vertical-align) and for React [here](https://stackblitz.com/edit/ionic-react-grid-vertical-align).
+Angularでは [こちら](https://stackblitz.com/edit/ionic-ng-grid-vertical-align) 、Reactでは [こちら](https://stackblitz.com/edit/ionic-react-grid-vertical-align) で、実例を見ることができます。
 
-### Horizontal alignment
+### 水平方向の整列
 
-All columns can be horizontally aligned inside of a row by adding different classes to the row. For a list of available classes, see [css utilities](css-utilities.md#flex-container-properties).
+行に異なるクラスを追加することで、すべての列を行の内側に水平に揃えることができます。利用可能なクラスの一覧は、[cssユーティリティ](css-utilities.md#flex-container-properties) を参照してください。
 
 ```html
 <ion-grid>
@@ -455,25 +455,25 @@ All columns can be horizontally aligned inside of a row by adding different clas
 </ion-grid>
 ```
 
-#### Live Example
+#### ライブでの実装例
 
-You can view a live example of this in Angular [here](https://stackblitz.com/edit/ionic-ng-grid-horizontal-align) and for React [here](https://stackblitz.com/edit/ionic-react-grid-horizontal-align).
+Angularでは [こちら](https://stackblitz.com/edit/ionic-ng-grid-horizontal-align) 、Reactでは [こちら](https://stackblitz.com/edit/ionic-react-grid-horizontal-align) で実例を見ることができます。
 
-## Customizing the grid
+## グリッドのカスタマイズ
 
-Using our built-in CSS variables, it’s possible to customize the predefined grid attributes. Change the values of the padding, the number of columns, and more.
+組み込みの CSS 変数を使用すると、定義済みのグリッド属性をカスタマイズすることができます。パディングの値やカラムの数などを変更できます。
 
-### Number of columns
+### 列の数
 
-The number of grid columns can be modified with the `--ion-grid-columns` CSS variable. By default there are 12 grid columns, but this can be changed to any positive integer and be used to calculate the width of each individual column.
+グリッドのカラム数は、CSS変数 `--ion-grid-columns` で変更することができます。デフォルトでは12列ですが、これを任意の正の整数に変更し、個々の列の幅を計算するために使用することができます。
 
 ```css
 --ion-grid-columns: 12;
 ```
 
-### Grid Padding
+### グリッドのPadding
 
-The padding on the grid container can be set for all breakpoints with the `--ion-grid-padding` CSS variable. To override individual breakpoints, use the `--ion-grid-padding-{breakpoint}` CSS variables.
+グリッドコンテナのPaddingは、CSS変数 `--ion-grid-padding` を使ってすべてのブレークポイントに対して設定することができます。個々のブレイクポイントを上書きするには、CSS変数 `--ion-grid-padding-{breakpoint}` を使用します。
 
 ```css
 --ion-grid-padding: 5px;
@@ -487,7 +487,7 @@ The padding on the grid container can be set for all breakpoints with the `--ion
 
 ### Grid width
 
-To customize the width values of the fixed grid based on the screen size, override the values of `--ion-grid-width-{breakpoint}` for each breakpoint.
+固定グリッドの幅の値を画面サイズに応じてカスタマイズするには、各ブレークポイントごとに `--ion-grid-width-{breakpoint}` の値をオーバーライドします。
 
 ```css
 --ion-grid-width-xs: 100%;
@@ -499,7 +499,7 @@ To customize the width values of the fixed grid based on the screen size, overri
 
 ### Column Padding
 
-The padding on the columns can be set for all breakpoints with the `--ion-grid-column-padding` CSS variable. To override individual breakpoints, use the `--ion-grid-column-padding-{breakpoint}` CSS variables.
+列のpaddingは `--ion-grid-column-padding` CSS 変数で全てのブレークポイントに対して設定することができます。個々のブレークポイントを上書きするには、CSS変数 `--ion-grid-column-padding-{breakpoint}` を使用します。
 
 ```css
 --ion-grid-column-padding: 5px;
