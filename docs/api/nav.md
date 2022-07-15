@@ -50,6 +50,9 @@ import NavLinkExample from '@site/static/usage/nav/nav-link/index.md';
 
 ## Navigation within a Modal
 
+
+Modal experiences can use Nav to offer navigation within the overlay. This is useful for navigation that is independent of the apps URL.
+
 import ModalNavigationExample from '@site/static/usage/nav/modal-navigation/index.md';
 
 <ModalNavigationExample />

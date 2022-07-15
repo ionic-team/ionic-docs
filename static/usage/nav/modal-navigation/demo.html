@@ -24,12 +24,12 @@
       <ion-modal trigger="openModal">
         <ion-header>
           <ion-toolbar>
-            <ion-buttons slot="start">
-              <ion-button id="backButton" disabled="true" onclick="navigateBack()">
-                <ion-icon slot="icon-only" name="chevron-back-outline"></ion-icon>
+            <ion-title>Modal</ion-title>
+            <ion-buttons slot="end">
+              <ion-button onclick="dismiss()">
+                Close
               </ion-button>
             </ion-buttons>
-            <ion-title>Modal</ion-title>
           </ion-toolbar>
         </ion-header>
         <ion-content>
@@ -42,19 +42,23 @@
   <script>
     const modal = document.querySelector('ion-modal');
     const nav = document.querySelector('ion-nav');
-    const backButton = document.querySelector('#backButton');
 
     modal.addEventListener('willPresent', () => {
-      nav.push('page-one');
+      nav.setRoot('page-one');
     });
+
+    const dismiss = () => modal.dismiss();
 
     const navigate = (component) => {
       nav.push(component);
-      backButton.disabled = false;
     }
 
     const navigateBack = () => {
       nav.pop();
+    }
+
+    const navigateToRoot = () => {
+      nav.popToRoot();
     }
 
     class PageOne extends HTMLElement {
@@ -84,6 +88,8 @@
         this.innerHTML = `
         <ion-content class="ion-padding">
           <h1>Page Three</h1>
+          <ion-button onclick="navigateBack()">Go Back</ion-button>
+          <ion-button onclick="navigateToRoot()">Go to Root</ion-button>
         </ion-content>
       `;
       }
