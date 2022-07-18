@@ -182,7 +182,6 @@
 /* The code block example that users can copy to clipboard */
 .playground__code-block {
   margin-top: 16px;
-  overflow: hidden;
 }
 
 /* overwrite existing Docusaurus style */
