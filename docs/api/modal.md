@@ -135,6 +135,14 @@ import SheetBackgroundContentExample from '@site/static/usage/modal/sheet/backgr
 
 <SheetBackgroundContentExample />
 
+#### Handle Behavior
+
+Sheet modals can optionally render a handle indicator used for dragging the sheet between breakpoints. The `handleBehavior` property can be used to configure the behavior of when the handle is tapped or clicked by the user.
+
+import SheetHandleBehaviorExample from '@site/static/usage/modal/sheet/handle-behavior/index.md';
+
+<SheetHandleBehaviorExample />
+
 ## Styling
 
 Modals are presented at the root of your application so they overlay your entire app. This behavior applies to both inline modals and modals presented from a controller. As a result, custom modal styles can not be scoped to a particular component as they will not apply to the modal. Instead, styles must be applied globally. For most developers, placing the custom styles in `global.css` is sufficient.
