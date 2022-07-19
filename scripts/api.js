@@ -18,7 +18,7 @@ const fs = require('fs');
  */
 
 (async function () {
-  const response = await fetch('https://unpkg.com/@ionic/docs/core.json');
+  const response = await fetch('https://unpkg.com/@ionic/docs@6.1.14-dev.11658247553.1b5403d1/core.json');
   const { components } = await response.json();
 
   const names = components.map((component) => component.tag.slice(4));
