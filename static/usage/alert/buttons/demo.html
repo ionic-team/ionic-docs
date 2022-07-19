@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Alert</title>
+  <link rel="stylesheet" href="../../common.css" />
+  <script src="../../common.js"></script>
+  <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core@6/dist/ionic/ionic.esm.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core@6/css/ionic.bundle.css" />
+
+  <style>
+    .container {
+      flex-direction: column;
+    }
+
+    .container p {
+      margin-bottom: 0;
+    }
+  </style>
+</head>
+
+<body>
+  <ion-app>
+    <ion-content>
+      <div class="container">
+        <ion-button onclick="presentAlert()">Click Me</ion-button>
+        <p id="handlerResult"></p>
+        <p id="roleResult"></p>
+      </div>
+    </ion-content>
+  </ion-app>
+
+  <script>
+    const handlerOutput = document.querySelector('#handlerResult');
+    const roleOutput = document.querySelector('#roleResult');
+
+    async function presentAlert() {
+      const alert = document.createElement('ion-alert');
+      alert.header = 'Alert!';
+      alert.buttons = [
+        {
+          text: 'Cancel',
+          role: 'cancel',
+          handler: () => { handlerOutput.innerText = 'Alert canceled'; }
+        },
+        {
+          text: 'OK',
+          role: 'confirm',
+          handler: () => { handlerOutput.innerText = 'Alert confirmed'; }
+        }
+      ];
+
+      document.body.appendChild(alert);
+      await alert.present();
+
+      const { role } = await alert.onDidDismiss();
+      roleOutput.innerText = `Dismissed with role: ${role}`;
+    }
+  </script>
+</body>
+
+</html>

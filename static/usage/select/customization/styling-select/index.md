@@ -16,8 +16,8 @@ import angularTS from './angular/angular-ts.md';
     javascript,
     react: {
       files: {
-        'main.js': reactTS,
-        'main.css': reactCSS
+        'src/main.tsx': reactTS,
+        'src/main.css': reactCSS
       }
     },
     vue,

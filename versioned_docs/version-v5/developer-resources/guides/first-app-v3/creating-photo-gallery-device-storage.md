@@ -7,7 +7,7 @@ Last time, we successfully added the Camera plugin to the About page of our Tabs
 From a terminal window, navigate to your Ionic project and run:
 
 ```shell
-$ ionic g provider PhotoProvider
+ionic g provider PhotoProvider
 ```
 
 This creates a PhotoProvider class in a dedicated providers/photo folder:
@@ -114,13 +114,13 @@ Having a working photo gallery is pretty cool, but you’ll likely notice that w
 The Storage plugin works perfectly for our base64 image data. To begin, add the SQLite plugin for native:
 
 ```shell
-$ ionic cordova plugin add cordova-sqlite-storage
+ionic cordova plugin add cordova-sqlite-storage
 ```
 
 Next, add the JavaScript library for the web:
 
 ```shell
-$ npm install --save @ionic/storage
+npm install --save @ionic/storage
 ```
 
 Last, import the Storage module and add it to the imports list in `app.module.ts`:

@@ -284,9 +284,20 @@ within a `<div>` is a safe way to make sure dimensions are measured correctly.
 </ion-virtual-scroll>
 ```
 
+## Properties
 <Props />
+
+## Events
 <Events />
+
+## Methods
 <Methods />
+
+## CSS Shadow Parts
 <Parts />
+
+## CSS Custom Properties
 <CustomProps />
+
+## Slots
 <Slots />

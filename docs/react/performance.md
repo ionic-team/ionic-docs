@@ -1,8 +1,15 @@
 ---
 sidebar_label: Performance
+title: React Performance
 ---
 
-# React Performance
+<head>
+  <title>React Performance Testing - Using Loops with Ionic App Components</title>
+  <meta
+    name="description"
+    content="React performance testing for Ionic apps. When using loops with Ionic components, we recommend using React's key attribute. Read to learn more."
+  />
+</head>
 
 ## Loops with Ionic Components
 
