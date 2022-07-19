@@ -277,7 +277,7 @@ Developers can provide their own buttons for advanced custom behavior.
 
 ## Multiple Date Selection
 
-If the `multiple` property is set to `true`, multiple dates can be selected from the calendar picker at once. Clicking a selected date will deselect it.
+If the `multiple` property is set to `true`, multiple dates can be selected from the calendar picker. Clicking a selected date will deselect it.
 
 :::note
 This property is only supported when using `presentation="date"`.
