@@ -9,7 +9,7 @@
     <ion-button id="open-modal" expand="block">Open Sheet Modal</ion-button>
 
     <ion-modal trigger="open-modal" initial-breakpoint="0.25" handle-behavior="cycle">
-      <ion-content>
+      <ion-content class="ion-padding">
         <div class="ion-margin-top">
           <ion-label>Click the handle above to advance to the next breakpoint.</ion-label>
         </div>
