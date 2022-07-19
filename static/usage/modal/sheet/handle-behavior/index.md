@@ -12,6 +12,6 @@ import angular from './angular.md';
     vue,
     angular,
   }}
-  src="usage/modal/sheet/basic/demo.html"
+  src="usage/modal/sheet/handle-behavior/demo.html"
   devicePreview
 />
