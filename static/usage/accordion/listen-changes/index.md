@@ -20,5 +20,4 @@ import angularTS from './angular-ts.md';
   }}
   size="320px"
   src="usage/accordion/listen-changes/demo.html"
-  expandCodeByDefault={true}
 />

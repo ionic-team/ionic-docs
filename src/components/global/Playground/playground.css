@@ -24,7 +24,7 @@
    * @prop --playground-btn-icon-color The text color of the button icon in the toolbar.
    * @prop --playground-btn-icon-hover-background The background color of the button icon in the toolbar when hovered.
    * @prop --playground-separator-color The color of the separator/border in the toolbar.
-   * @prop --playground-code-background The background color of the code block when expanded.
+   * @prop --playground-code-background The background color of the code block.
    * @prop --playground-tabs-background: The background color of the tabs bar not including the active tab button.
    * @prop --playground-tab-btn-color: The text color of the tab buttons.
    * @prop --playground-tab-btn-border-color: The border color of the tab buttons.
@@ -183,18 +183,6 @@
 
 /* The code block example that users can copy to clipboard */
 .playground__code-block {
-  /*
-   * Height is set to zero instead of display: none so that when copying the contents
-   * of the code block to use in Stackblitz, the individual line breaks are preserved.
-   * Otherwise when using display: none, the result of el.outerText will not include
-   * the individual "\n" line breaks and the code snippet will be one line.
-   */
-  height: 0px;
-  overflow: hidden;
-}
-
-.playground__code-block--expanded {
-  height: initial;
   margin-top: 16px;
 }
 
