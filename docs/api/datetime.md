@@ -92,6 +92,10 @@ While seconds and milliseconds can be specified using the ISO 8601 datetime form
 
 <Basic />
 
+## Usage with Datetime Button
+
+If you need to present a datetime in an overlay such as a modal or a popover, we recommend using [ion-datetime-button](./datetime-button). `ion-datetime-button` should be used when space is constrained. This component displays buttons which show the current date and time values. When the buttons are tapped, the date or time pickers open in the overlay.
+
 ## Date Constraints
 
 ### Max and Min Dates
