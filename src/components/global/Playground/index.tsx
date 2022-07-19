@@ -11,7 +11,7 @@ import 'tippy.js/dist/tippy.css';
 import PlaygroundTabs from '../PlaygroundTabs';
 import TabItem from '@theme/TabItem';
 
-import { IconHtml, IconTs, IconVue } from './icons';
+import { IconHtml, IconTs, IconVue, IconDots } from './icons';
 
 const ControlButton = ({ isSelected, handleClick, title, label }) => {
   return (
@@ -123,6 +123,7 @@ export default function Playground({
   const [codeExpanded, setCodeExpanded] = useState(expandCodeByDefault);
   const [codeSnippets, setCodeSnippets] = useState({});
   const [renderIframes, setRenderIframes] = useState(false);
+  const [iframesLoaded, setIframesLoaded] = useState(false);
 
   /**
    * Rather than encode isDarkTheme into the frame source
@@ -138,6 +139,17 @@ export default function Playground({
       frameMD.current.contentWindow.postMessage(message);
     }
   }, [isDarkTheme]);
+
+  /**
+   * The source of the iframe takes a moment to
+   * load, so a loading screen is shown by default.
+   * Once the source of the iframe loads we can
+   * hide the loading screen and show the inner content.
+   */
+  useEffect(async () => {
+    await Promise.all([waitForFrame(frameiOS.current), waitForFrame(frameMD.current)]);
+    setIframesLoaded(true);
+  }, [renderIframes]);
 
   useEffect(() => {
     /**
@@ -304,6 +316,12 @@ export default function Playground({
     }
   }
 
+  function renderLoadingScreen() {
+    return (
+      <div class="playground__loading"><IconDots /></div>
+    )
+  }
+
   return (
     <div className="playground" ref={hostRef}>
       <div className="playground__container">
@@ -444,6 +462,7 @@ export default function Playground({
         </div>
         { renderIframes ? [
           <div className="playground__preview">
+            {!iframesLoaded && renderLoadingScreen()}
             {/*
               We render two iframes, one for each mode.
               When the set mode changes, we hide one frame and
