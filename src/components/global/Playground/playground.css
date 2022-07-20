@@ -217,6 +217,17 @@
   background: var(--playground-tabs-background);
 
   --ifm-tabs-spacing: 0;
+
+  /**
+   * This fixes an issue in WebKit that causes the
+   * border radius to not be respected when hovering
+   * over a tab item. Note: This fix can be applied
+   * to .tabs-container too, but applying the fix
+   * here reduces the additional memory required to
+   * promote the element to its own layer.
+   */
+  border-radius: 16px 16px 0px 0px;
+  transform: translateZ(0);
 }
 
 .playground .tabs-nav {
