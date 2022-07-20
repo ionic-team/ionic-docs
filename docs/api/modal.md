@@ -137,7 +137,7 @@ import SheetBackgroundContentExample from '@site/static/usage/modal/sheet/backgr
 
 #### Handle Behavior
 
-Sheet modals can optionally render a handle indicator used for dragging the sheet between breakpoints. The `handleBehavior` property can be used to configure the behavior of when the handle is tapped or clicked by the user.
+Sheet modals can optionally render a handle indicator used for dragging the sheet between breakpoints. The `handleBehavior` property can be used to configure the behavior of when the handle is activated by the user.
 
 import SheetHandleBehaviorExample from '@site/static/usage/modal/sheet/handle-behavior/index.md';
 
