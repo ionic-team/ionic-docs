@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Modal | Custom Dialog</title>
+    <link rel="stylesheet" href="../../common.css" />
+    <script src="../../common.js"></script>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core@6.1.15-dev.11657743655.1e3dcc3c/dist/ionic/ionic.esm.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core@6.1.15-dev.11657743655.1e3dcc3c/css/ionic.bundle.css" />
+    <style>
+      ion-modal {
+        --width: fit-content;
+        --min-width: 250px;
+        --height: fit-content;
+        --border-radius: 6px;
+        --box-shadow: 0 28px 48px rgba(0, 0, 0, 0.4);
+      }
+
+      ion-modal h1 {
+        margin: 20px 20px 10px 20px;
+      }
+
+      ion-modal ion-icon {
+        margin-right: 6px;
+
+        width: 48px;
+        height: 48px;
+
+        padding: 4px 0;
+
+        color: #aaaaaa;
+      }
+
+      ion-modal .wrapper {
+        margin-bottom: 10px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <ion-app>
+      <ion-header>
+        <ion-toolbar>
+          <ion-title>App</ion-title>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content class="ion-padding">
+        <ion-button id="custom-modal" expand="block">Open Custom Dialog</ion-button>
+
+        <ion-modal trigger="custom-modal">
+          <div class="wrapper">
+            <h1>Dialog header</h1>
+
+            <ion-list lines="none">
+              <ion-item button="true" detail="false" onclick="dismiss()">
+                <ion-icon name="person-circle"></ion-icon>
+                <ion-label>Item 1</ion-label>
+              </ion-item>
+              <ion-item button="true" detail="false" onclick="dismiss()">
+                <ion-icon name="person-circle"></ion-icon>
+                <ion-label>Item 2</ion-label>
+              </ion-item>
+              <ion-item button="true" detail="false" onclick="dismiss()">
+                <ion-icon name="person-circle"></ion-icon>
+                <ion-label>Item 3</ion-label>
+              </ion-item>
+            </ion-list>
+          </div>
+        </ion-modal>
+      </ion-content>
+    </ion-app>
+
+    <script>
+      const modal = document.querySelector('ion-modal');
+      const dismiss = () => modal.dismiss();
+    </script>
+  </body>
+
+</html>
