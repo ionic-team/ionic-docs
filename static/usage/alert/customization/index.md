@@ -25,7 +25,7 @@ import angularTS from './angular/angular_ts.md';
       files: {
         'src/app/app.component.html': angularHTML,
         'src/app/app.component.ts': angularTS,
-        'src/styles.css': angularCSS
+        'src/global.css': angularCSS
       }
     }
   }}
