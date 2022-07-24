@@ -17,7 +17,6 @@ import Slots from '@site/static/auto-generated/modal/slots.md';
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
-import APITOCInline from '@components/page/api/APITOCInline';
 
 <EncapsulationPill type="shadow" />
 
@@ -158,6 +157,19 @@ import ThemeExample from '@site/static/usage/modal/styling/theming/index.md';
 import AnimationsExample from '@site/static/usage/modal/styling/animations/index.md';
 
 <AnimationsExample />
+
+## Custom Dialogs
+
+While `ion-modal` is most often used for full-page views, cards, or sheets, it is also possible to use it for custom dialogs. This is useful if developers need an interface that is more complex than what components such as [ion-alert](./alert) or [ion-loading](./loading) provide.
+
+import CustomDialogs from '@site/static/usage/modal/custom-dialogs/index.md';
+
+<CustomDialogs />
+
+A few things to keep in mind when creating custom dialogs:
+
+* `ion-content` is intended to be used in full-page modals, cards, and sheets. If your custom dialog has a dynamic or unknown size, `ion-content` should not be used.
+* Creating custom dialogs provides a way of ejecting from the default modal experience. As a result, custom dialogs should not be used with card or sheet modals.
 
 ## Interfaces
 
