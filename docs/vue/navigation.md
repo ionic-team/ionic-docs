@@ -21,7 +21,7 @@ Everything you know about routing using Vue Router carries over into Ionic Vue. 
 
 ## A Brief Note
 
-While reading this guide, you may notice that most of these concepts are very similar to the concepts found in Vue Router without Ionic Framework. You observation would be correct! Ionic Vue leverages the best parts of Vue Router to make the transition to building apps with Ionic Framework as seamless as possible. As a result, we recommend relying on Vue Router features as much as possible rather than trying to build your own routing solutions.
+While reading this guide, you may notice that most of these concepts are very similar to the concepts found in Vue Router without Ionic Framework. Your observation would be correct! Ionic Vue leverages the best parts of Vue Router to make the transition to building apps with Ionic Framework as seamless as possible. As a result, we recommend relying on Vue Router features as much as possible rather than trying to build your own routing solutions.
 
 ## A Simple Route
 
