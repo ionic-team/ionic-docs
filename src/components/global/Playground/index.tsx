@@ -11,7 +11,7 @@ import 'tippy.js/dist/tippy.css';
 import PlaygroundTabs from '../PlaygroundTabs';
 import TabItem from '@theme/TabItem';
 
-import { IconHtml, IconTs, IconVue, IconDefault, IconCss } from './icons';
+import { IconHtml, IconTs, IconVue, IconDefault, IconCss, IconDots } from './icons';
 
 const ControlButton = ({ isSelected, handleClick, title, label }) => {
   return (
@@ -27,13 +27,12 @@ const ControlButton = ({ isSelected, handleClick, title, label }) => {
   );
 };
 
-const CodeBlockButton = ({ language, usageTarget, setUsageTarget, setCodeExpanded }) => {
+const CodeBlockButton = ({ language, usageTarget, setUsageTarget }) => {
   const langValue = UsageTarget[language];
   return (
     <ControlButton
       isSelected={usageTarget === langValue}
       handleClick={() => {
-        setCodeExpanded(true);
         setUsageTarget(langValue);
       }}
       title={`Show ${language} code`}
@@ -92,7 +91,6 @@ export default function Playground({
   src,
   size = 'small',
   devicePreview,
-  expandCodeByDefault = false,
 }: {
   code: { [key in UsageTarget]?: MdxContent | UsageTargetOptions };
   title?: string;
@@ -100,7 +98,6 @@ export default function Playground({
   size: string;
   description?: string;
   devicePreview?: boolean;
-  expandCodeByDefault: boolean;
 }) {
   if (!code || Object.keys(code).length === 0) {
     console.warn('No code usage examples provided for this Playground example.');
@@ -120,9 +117,9 @@ export default function Playground({
   const frameSize = FRAME_SIZES[size] || size;
   const [usageTarget, setUsageTarget] = useState(UsageTarget.JavaScript);
   const [mode, setMode] = useState(Mode.iOS);
-  const [codeExpanded, setCodeExpanded] = useState(expandCodeByDefault);
   const [codeSnippets, setCodeSnippets] = useState({});
   const [renderIframes, setRenderIframes] = useState(false);
+  const [iframesLoaded, setIframesLoaded] = useState(false);
 
   /**
    * Rather than encode isDarkTheme into the frame source
@@ -138,6 +135,17 @@ export default function Playground({
       frameMD.current.contentWindow.postMessage(message);
     }
   }, [isDarkTheme]);
+
+  /**
+   * The source of the iframe takes a moment to
+   * load, so a loading screen is shown by default.
+   * Once the source of the iframe loads we can
+   * hide the loading screen and show the inner content.
+   */
+  useEffect(async () => {
+    await Promise.all([waitForFrame(frameiOS.current), waitForFrame(frameMD.current)]);
+    setIframesLoaded(true);
+  }, [renderIframes]);
 
   useEffect(() => {
     /**
@@ -312,6 +320,12 @@ export default function Playground({
     }
   }
 
+  function renderLoadingScreen() {
+    return (
+      <div class="playground__loading"><IconDots /></div>
+    )
+  }
+
   return (
     <div className="playground" ref={hostRef}>
       <div className="playground__container">
@@ -323,7 +337,6 @@ export default function Playground({
                 language={lang}
                 usageTarget={usageTarget}
                 setUsageTarget={setUsageTarget}
-                setCodeExpanded={setCodeExpanded}
               />
             ))}
           </div>
@@ -332,30 +345,6 @@ export default function Playground({
             <ControlButton isSelected={isMD} handleClick={() => setMode(Mode.MD)} title="MD mode" label="MD" />
           </div>
           <div className="playground__control-group playground__control-group--end">
-            <Tippy
-              theme="playground"
-              arrow={false}
-              placement="bottom"
-              content={codeExpanded ? 'Hide source code' : 'Show full source'}
-            >
-              <button
-                className="playground__icon-button playground__icon-button--primary"
-                aria-label={codeExpanded ? 'Hide source code' : 'Show full source'}
-                onClick={() => setCodeExpanded(!codeExpanded)}
-              >
-                <svg
-                  width="16"
-                  height="10"
-                  aria-hidden="true"
-                  viewBox="0 0 16 10"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path d="M5 9L1 5L5 1" stroke="current" strokeLinecap="round" strokeLinejoin="round" />
-                  <path d="M11 9L15 5L11 1" stroke="current" strokeLinecap="round" strokeLinejoin="round" />
-                </svg>
-              </button>
-            </Tippy>
             <Tippy theme="playground" arrow={false} placement="bottom" content="Open in StackBlitz">
               <button className="playground__icon-button playground__icon-button--primary" onClick={openEditor}>
                 <svg
@@ -450,10 +439,10 @@ export default function Playground({
             </Tippy>
           </div>
         </div>
-        {renderIframes
-          ? [
-              <div className="playground__preview">
-                {/*
+        { renderIframes ? [
+          <div className="playground__preview">
+            {!iframesLoaded && renderLoadingScreen()}
+            {/*
               We render two iframes, one for each mode.
               When the set mode changes, we hide one frame and
               show the other. This is done to avoid flickering
@@ -492,8 +481,7 @@ export default function Playground({
       </div>
       <div
         ref={codeRef}
-        className={'playground__code-block ' + (codeExpanded ? 'playground__code-block--expanded' : '')}
-        aria-expanded={codeExpanded ? 'true' : 'false'}
+        className='playground__code-block'
       >
         {renderCodeSnippets()}
       </div>
