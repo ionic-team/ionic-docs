@@ -11,7 +11,7 @@ import 'tippy.js/dist/tippy.css';
 import PlaygroundTabs from '../PlaygroundTabs';
 import TabItem from '@theme/TabItem';
 
-import { IconHtml, IconTs, IconVue, IconDots } from './icons';
+import { IconHtml, IconTs, IconVue, IconDefault, IconCss, IconDots } from './icons';
 
 const ControlButton = ({ isSelected, handleClick, title, label }) => {
   return (
@@ -163,21 +163,24 @@ export default function Playground({
    * before loading the iframes.
    */
   useEffect(() => {
-    const io = new IntersectionObserver((entries: IntersectionObserverEntry[]) => {
-      const ev = entries[0];
-      if (!ev.isIntersecting || renderIframes) return;
+    const io = new IntersectionObserver(
+      (entries: IntersectionObserverEntry[]) => {
+        const ev = entries[0];
+        if (!ev.isIntersecting || renderIframes) return;
 
-      setRenderIframes(true);
+        setRenderIframes(true);
 
-      /**
-       * Once the playground is loaded, it is never "unloaded"
-       * so we can safely disconnect the observer.
-       */
-      io.disconnect();
-    }, { threshold: 0 });
+        /**
+         * Once the playground is loaded, it is never "unloaded"
+         * so we can safely disconnect the observer.
+         */
+        io.disconnect();
+      },
+      { threshold: 0 }
+    );
 
     io.observe(hostRef.current!);
-  })
+  });
 
   const isIOS = mode === Mode.iOS;
   const isMD = mode === Mode.MD;
@@ -276,11 +279,16 @@ export default function Playground({
     const extension = fileName.slice(fileName.lastIndexOf('.') + 1);
     switch (extension) {
       case 'ts':
+      case 'tsx':
         return <IconTs />;
       case 'html':
         return <IconHtml />;
       case 'vue':
         return <IconVue />;
+      case 'css':
+        return <IconCss />;
+      default:
+        return <IconDefault />;
     }
   }
 
@@ -440,36 +448,36 @@ export default function Playground({
               show the other. This is done to avoid flickering
               and doing unnecessary reloads when switching modes.
             */}
-            {devicePreview
-              ? [
-                  <div className={!isIOS ? 'frame-hidden' : 'frame-visible'}>
-                    <device-preview mode="ios">
-                      <iframe height={frameSize} ref={frameiOS} src={sourceiOS}></iframe>
-                    </device-preview>
-                  </div>,
-                  <div className={!isMD ? 'frame-hidden' : 'frame-visible'}>
-                    <device-preview mode="md">
-                      <iframe height={frameSize} ref={frameMD} src={sourceMD}></iframe>
-                    </device-preview>
-                  </div>,
-                ]
-              : [
-                  <iframe
-                    height={frameSize}
-                    className={!isIOS ? 'frame-hidden' : ''}
-                    ref={frameiOS}
-                    src={sourceiOS}
-                  ></iframe>,
-                  <iframe
-                    height={frameSize}
-                    className={!isMD ? 'frame-hidden' : ''}
-                    ref={frameMD}
-                    src={sourceMD}
-                  ></iframe>,
-                ]}
-          </div>
-        ] : []
-      }
+                {devicePreview
+                  ? [
+                      <div className={!isIOS ? 'frame-hidden' : 'frame-visible'}>
+                        <device-preview mode="ios">
+                          <iframe height={frameSize} ref={frameiOS} src={sourceiOS}></iframe>
+                        </device-preview>
+                      </div>,
+                      <div className={!isMD ? 'frame-hidden' : 'frame-visible'}>
+                        <device-preview mode="md">
+                          <iframe height={frameSize} ref={frameMD} src={sourceMD}></iframe>
+                        </device-preview>
+                      </div>,
+                    ]
+                  : [
+                      <iframe
+                        height={frameSize}
+                        className={!isIOS ? 'frame-hidden' : ''}
+                        ref={frameiOS}
+                        src={sourceiOS}
+                      ></iframe>,
+                      <iframe
+                        height={frameSize}
+                        className={!isMD ? 'frame-hidden' : ''}
+                        ref={frameMD}
+                        src={sourceMD}
+                      ></iframe>,
+                    ]}
+              </div>,
+            ]
+          : []}
       </div>
       <div
         ref={codeRef}
