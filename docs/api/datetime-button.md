@@ -37,7 +37,7 @@ import Basic from '@site/static/usage/datetime-button/basic/index.md';
 
 ## Localization
 
-TODO
+The localized text on `ion-datetime-button` is determined by the `locale` property on the associated `ion-datetime` instance. See [Datetime Localization](./datetime#localization) for more details.
 
 ## Usage with Modal
 
