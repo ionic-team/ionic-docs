@@ -7,7 +7,7 @@ sidebar_label: 'capacitor build'
 Build an Ionic project for a given platform
 
 ```shell
-$ ionic capacitor build [options]
+ionic capacitor build [options]
 ```
 
 `ionic capacitor build` will do the following:

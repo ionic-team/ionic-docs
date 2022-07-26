@@ -115,11 +115,12 @@ const openReactEditor = async (code: string, options?: EditorOptions) => {
    */
   const componentTagName = 'Example';
 
-  const [index_tsx, app_tsx, ts_config_json, package_json] = await loadSourceFiles([
+  const [index_tsx, app_tsx, ts_config_json, package_json, package_lock_json] = await loadSourceFiles([
     'react/index.tsx',
     'react/app.tsx',
     'react/tsconfig.json',
-    'react/package.json'
+    'react/package.json',
+    'react/package-lock.json'
   ]);
 
   const app_tsx_renamed = app_tsx
@@ -139,6 +140,7 @@ const openReactEditor = async (code: string, options?: EditorOptions) => {
       'src/main.tsx': code,
       'tsconfig.json': ts_config_json,
       'package.json': package_json,
+      'package-lock.json': package_lock_json,
       ...options?.files,
       '.stackblitzrc': `{
         "startCommand": "yarn run start"
@@ -148,8 +150,9 @@ const openReactEditor = async (code: string, options?: EditorOptions) => {
 }
 
 const openVueEditor = async (code: string, options?: EditorOptions) => {
-  const [package_json, index_html, vite_config_ts, main_ts, app_vue, tsconfig_json, tsconfig_node_json, env_d_ts] = await loadSourceFiles([
+  const [package_json, package_lock_json, index_html, vite_config_ts, main_ts, app_vue, tsconfig_json, tsconfig_node_json, env_d_ts] = await loadSourceFiles([
     'vue/package.json',
+    'vue/package-lock.json',
     'vue/index.html',
     'vue/vite.config.ts',
     'vue/main.ts',
@@ -176,6 +179,7 @@ const openVueEditor = async (code: string, options?: EditorOptions) => {
       'index.html': index_html,
       'vite.config.ts': vite_config_ts,
       'package.json': package_json,
+      'package-lock.json': package_lock_json,
       'tsconfig.json': tsconfig_json,
       'tsconfig.node.json': tsconfig_node_json,
       ...options?.files,

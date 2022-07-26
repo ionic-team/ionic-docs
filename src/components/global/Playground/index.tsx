@@ -122,6 +122,7 @@ export default function Playground({
   const [mode, setMode] = useState(Mode.iOS);
   const [codeExpanded, setCodeExpanded] = useState(expandCodeByDefault);
   const [codeSnippets, setCodeSnippets] = useState({});
+  const [renderIframes, setRenderIframes] = useState(false);
 
   /**
    * Rather than encode isDarkTheme into the frame source
@@ -145,6 +146,30 @@ export default function Playground({
      */
     import('./device-preview.js').then((comp) => comp.defineCustomElement());
   });
+
+  /**
+   * By default, we do not render the iframe content
+   * as it could cause delays on page load. Instead
+   * we wait for even 1 pixel of the playground to
+   * scroll into view (intersect with the viewport)
+   * before loading the iframes.
+   */
+  useEffect(() => {
+    const io = new IntersectionObserver((entries: IntersectionObserverEntry[]) => {
+      const ev = entries[0];
+      if (!ev.isIntersecting || renderIframes) return;
+
+      setRenderIframes(true);
+
+      /**
+       * Once the playground is loaded, it is never "unloaded"
+       * so we can safely disconnect the observer.
+       */
+      io.disconnect();
+    }, { threshold: 0 });
+
+    io.observe(hostRef.current!);
+  })
 
   const isIOS = mode === Mode.iOS;
   const isMD = mode === Mode.MD;
@@ -417,41 +442,44 @@ export default function Playground({
             </Tippy>
           </div>
         </div>
-        <div className="playground__preview">
-          {/*
-            We render two iframes, one for each mode.
-            When the set mode changes, we hide one frame and
-            show the other. This is done to avoid flickering
-            and doing unnecessary reloads when switching modes.
-          */}
-          {devicePreview
-            ? [
-                <div className={!isIOS ? 'frame-hidden' : 'frame-visible'}>
-                  <device-preview mode="ios">
-                    <iframe height={frameSize} ref={frameiOS} src={sourceiOS}></iframe>
-                  </device-preview>
-                </div>,
-                <div className={!isMD ? 'frame-hidden' : 'frame-visible'}>
-                  <device-preview mode="md">
-                    <iframe height={frameSize} ref={frameMD} src={sourceMD}></iframe>
-                  </device-preview>
-                </div>,
-              ]
-            : [
-                <iframe
-                  height={frameSize}
-                  className={!isIOS ? 'frame-hidden' : ''}
-                  ref={frameiOS}
-                  src={sourceiOS}
-                ></iframe>,
-                <iframe
-                  height={frameSize}
-                  className={!isMD ? 'frame-hidden' : ''}
-                  ref={frameMD}
-                  src={sourceMD}
-                ></iframe>,
-              ]}
-        </div>
+        { renderIframes ? [
+          <div className="playground__preview">
+            {/*
+              We render two iframes, one for each mode.
+              When the set mode changes, we hide one frame and
+              show the other. This is done to avoid flickering
+              and doing unnecessary reloads when switching modes.
+            */}
+            {devicePreview
+              ? [
+                  <div className={!isIOS ? 'frame-hidden' : 'frame-visible'}>
+                    <device-preview mode="ios">
+                      <iframe height={frameSize} ref={frameiOS} src={sourceiOS}></iframe>
+                    </device-preview>
+                  </div>,
+                  <div className={!isMD ? 'frame-hidden' : 'frame-visible'}>
+                    <device-preview mode="md">
+                      <iframe height={frameSize} ref={frameMD} src={sourceMD}></iframe>
+                    </device-preview>
+                  </div>,
+                ]
+              : [
+                  <iframe
+                    height={frameSize}
+                    className={!isIOS ? 'frame-hidden' : ''}
+                    ref={frameiOS}
+                    src={sourceiOS}
+                  ></iframe>,
+                  <iframe
+                    height={frameSize}
+                    className={!isMD ? 'frame-hidden' : ''}
+                    ref={frameMD}
+                    src={sourceMD}
+                  ></iframe>,
+                ]}
+          </div>
+        ] : []
+      }
       </div>
       <div
         ref={codeRef}

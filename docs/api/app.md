@@ -36,9 +36,20 @@ App is a container element for an Ionic application. There should only be one `<
 
 
 
+## Properties
 <Props />
+
+## Events
 <Events />
+
+## Methods
 <Methods />
+
+## CSS Shadow Parts
 <Parts />
+
+## CSS Custom Properties
 <CustomProps />
+
+## Slots
 <Slots />

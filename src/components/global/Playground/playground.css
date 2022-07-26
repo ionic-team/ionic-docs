@@ -10,6 +10,10 @@
   --playground-separator-color: var(--c-carbon-70);
 
   --playground-code-background: rgb(22, 29, 37);
+
+  --playground-tabs-background: var(--c-carbon-90);
+  --playground-tab-btn-color: var(--c-carbon-20);
+  --playground-tab-btn-border-color: transparent;
 }
 
 .playground {
@@ -21,6 +25,9 @@
    * @prop --playground-btn-icon-hover-background The background color of the button icon in the toolbar when hovered.
    * @prop --playground-separator-color The color of the separator/border in the toolbar.
    * @prop --playground-code-background The background color of the code block when expanded.
+   * @prop --playground-tabs-background: The background color of the tabs bar not including the active tab button.
+   * @prop --playground-tab-btn-color: The text color of the tab buttons.
+   * @prop --playground-tab-btn-border-color: The border color of the tab buttons.
    */
   --playground-btn-color: var(--c-indigo-90);
   --playground-btn-selected-color: var(--c-blue-90);
@@ -29,6 +36,10 @@
   --playground-btn-icon-color: var(--c-indigo-80);
   --playground-separator-color: var(--c-indigo-30);
   --playground-code-background: var(--c-indigo-10);
+
+  --playground-tabs-background: var(--c-indigo-20);
+  --playground-tab-btn-color: var(--c-carbon-100);
+  --playground-tab-btn-border-color: var(--c-indigo-30);
 
   overflow: hidden;
 
@@ -207,13 +218,13 @@
 
 /** Tabs **/
 .playground .tabs-container {
-  background: var(--c-indigo-10);
+  background: var(--playground-code-background);
   border-radius: 16px;
   overflow: hidden;
 }
 
 .playground .tabs {
-  background: var(--c-indigo-20);
+  background: var(--playground-tabs-background);
 
   --ifm-tabs-spacing: 0;
 }
@@ -223,7 +234,7 @@
 }
 
 .playground .tabs__item {
-  color: var(--c-carbon-100);
+  color: var(--playground-tab-btn-color);
   font-size: 12px;
   display: inline-flex;
   align-items: center;
@@ -242,18 +253,18 @@
 }
 
 .playground .tabs__item:not(.tabs__item--active) {
-  border-left: 1px solid var(--c-indigo-30);
-  border-bottom: 1px solid var(--c-indigo-30);
+  border-left: 1px solid var(--playground-tab-btn-border-color);
+  border-bottom: 1px solid var(--playground-tab-btn-border-color);
 }
 
 .playground .tabs__item--active {
   border-color: transparent;
-  background: var(--c-indigo-10);
+  background: var(--playground-code-background);
   font-weight: 400;
 }
 
 .playground .tabs__item--active:hover {
-  background: var(--c-indigo-10);
+  background: var(--playground-code-background);
 }
 
 /* Tooltip styling */

@@ -8,13 +8,13 @@ import angularHTML from './angular-html.md';
 import angularCSS from './angular-css.md';
 
 <Playground 
-  size="medium" 
+  size="450px" 
   code={{ 
     javascript, 
     react: {
       files: {
-        'main.js': reactHTML,
-        'main.css': reactCSS
+        'src/main.tsx': reactHTML,
+        'src/main.css': reactCSS
       }
     }, 
     vue, 
