@@ -31,17 +31,17 @@
     nav.setRoot('page-one');
   });
 
-  const dismiss = () => modal.dismiss();
+  var dismiss = () => modal.dismiss();
 
-  const navigate = (component) => {
+  var navigate = (component) => {
     nav.push(component);
   };
 
-  const navigateBack = () => {
+  var navigateBack = () => {
     nav.pop();
   };
 
-  const navigateToRoot = () => {
+  var navigateToRoot = () => {
     nav.popToRoot();
   };
 
