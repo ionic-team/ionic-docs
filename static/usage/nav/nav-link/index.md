@@ -50,4 +50,5 @@ import vue_page_three from './vue/page_three_vue.md';
     },
   }}
   src="usage/nav/nav-link/demo.html"
+  devicePreview
 />

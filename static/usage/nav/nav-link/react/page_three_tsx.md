@@ -1,10 +1,10 @@
 ```tsx
 import React from 'react';
-import { IonBackButton, IonButtons, IonHeader, IonContent, IonToolbar, IonTitle, IonPage } from '@ionic/react';
+import { IonBackButton, IonButtons, IonHeader, IonContent, IonToolbar, IonTitle } from '@ionic/react';
 
 function PageThree() {
   return (
-    <IonPage>
+    <>
       <IonHeader>
         <IonToolbar>
           <IonButtons slot="start">
@@ -16,7 +16,7 @@ function PageThree() {
       <IonContent class="ion-padding">
         <h1>Page Three</h1>
       </IonContent>
-    </IonPage>
+    </>
   );
 }
 

@@ -1,12 +1,12 @@
 ```tsx
 import React from 'react';
-import { IonButton, IonHeader, IonContent, IonNavLink, IonToolbar, IonTitle, IonPage } from '@ionic/react';
+import { IonButton, IonHeader, IonContent, IonNavLink, IonToolbar, IonTitle } from '@ionic/react';
 
 import PageTwo from './page-two';
 
 function PageOne() {
   return (
-    <IonPage>
+    <>
       <IonHeader>
         <IonToolbar>
           <IonTitle>Page One</IonTitle>
@@ -18,7 +18,7 @@ function PageOne() {
           <IonButton>Go to Page Two</IonButton>
         </IonNavLink>
       </IonContent>
-    </IonPage>
+    </>
   );
 }
 

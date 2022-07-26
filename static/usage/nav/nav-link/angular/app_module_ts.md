@@ -12,7 +12,7 @@ import { PageTwoComponent } from './page-two.component';
 import { PageThreeComponent } from './page-three.component';
 
 @NgModule({
-  imports: [BrowserModule, RouterModule, IonicModule.forRoot({})],
+  imports: [BrowserModule, RouterModule.forRoot([]), IonicModule.forRoot({})],
   declarations: [AppComponent, PageOneComponent, PageTwoComponent, PageThreeComponent],
   bootstrap: [AppComponent],
 })
