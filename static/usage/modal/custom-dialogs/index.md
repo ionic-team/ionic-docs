@@ -6,7 +6,7 @@ import vue from './vue.md';
 import react_main_tsx from './react/main_tsx.md';
 import react_main_css from './react/main_css.md';
 
-import angular_app_component_css from './angular/app_component_css.md';
+import angular_css from './angular/angular_css.md';
 import angular_app_component_html from './angular/app_component_html.md';
 
 <Playground
@@ -22,7 +22,7 @@ import angular_app_component_html from './angular/app_component_html.md';
     angular: {
       files: {
         'src/app/app.component.html': angular_app_component_html,
-        'src/app/app.component.css': angular_app_component_css,
+        'src/global.css': angular_css,
       },
     },
   }}

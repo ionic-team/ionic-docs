@@ -23,7 +23,7 @@ import angularCSS from './angular/angular_css.md';
     angular: {
       files: {
         'src/app/app.component.html': angularHTML,
-        'src/styles.css': angularCSS
+        'src/global.css': angularCSS
       }
     }
   }}
