@@ -34,6 +34,8 @@ import ShowingConfirmationButtons from '@site/static/usage/datetime/buttons/show
 import CustomizingButtons from '@site/static/usage/datetime/buttons/customizing-buttons/index.md';
 import CustomizingButtonTexts from '@site/static/usage/datetime/buttons/customizing-button-texts/index.md';
 
+import MultipleDateSelection from '@site/static/usage/datetime/multiple/index.md';
+
 import Theming from '@site/static/usage/datetime/theming/index.md';
 
 <head>
@@ -207,11 +209,43 @@ This example shows a datetime with the `time` configuration.
 
 ### Date Selection
 
-Time selection is available by passing `date-time`, `time-date`, or `date` to the `presentation` property.
+Date selection is available by passing `date-time`, `time-date`, or `date` to the `presentation` property.
 
 This example shows a datetime with the `date` configuration.
 
 <Date />
+
+### Wheel Style Pickers
+
+By default, Ionic will prefer to show a grid style layout when using `presentation`. However, it is possible to show a wheel style using the `preferWheel` property. When `preferWheel` is `true`, Ionic will prefer to show the wheel style layout when possible.
+
+Certain `presentation` options have both grid and wheel styles that developers can choose from with the `preferWheel` property. Other `presentation` values only have a wheel style and will never show a grid style. The table below shows which `presentation` values have grid or wheel styles.
+
+| `presentation` | Has Grid Style? | Has Wheel Style? |
+| -------------- | --------------- | ---------------- |
+| `date`         | Yes             | Yes              |
+| `date-time`    | Yes             | Yes              |
+| `month`        | No              | Yes              |
+| `month-year`   | No              | Yes              |
+| `time`         | No              | Yes              |
+| `time-date`    | Yes             | Yes              |
+| `year`         | No              | Yes              |
+
+The example below shows the wheel picker with `presentation="date-time"`.
+
+import Wheel from '@site/static/usage/datetime/presentation/wheel/index.md';
+
+<Wheel />
+
+## Multiple Date Selection
+
+If the `multiple` property is set to `true`, multiple dates can be selected from the calendar picker. Clicking a selected date will deselect it.
+
+:::note
+This property is only supported when using `presentation="date"` and `preferWheel="false"`.
+:::
+
+<MultipleDateSelection />
 
 ## Titles
 
