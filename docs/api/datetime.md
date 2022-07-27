@@ -239,6 +239,16 @@ import Wheel from '@site/static/usage/datetime/presentation/wheel/index.md';
 
 <Wheel />
 
+## Multiple Date Selection
+
+If the `multiple` property is set to `true`, multiple dates can be selected from the calendar picker. Clicking a selected date will deselect it.
+
+:::note
+This property is only supported when using `presentation="date"` and `preferWheel="false"`.
+:::
+
+<MultipleDateSelection />
+
 ## Titles
 
 By default, `ion-datetime` does not show any header or title associated with the component. Developers can use the `showDefaultTitle` property to show the default title/header configuration. They can also use the `title` slot to customize what is rendered in the header.
@@ -274,16 +284,6 @@ Developers can provide their own buttons for advanced custom behavior.
 `ion-datetime` has `confirm`, `cancel`, and `reset` methods that developers can call when clicking on custom buttons. The `reset` method also allows developers to provide a date to reset the datetime to.
 
 <CustomizingButtons />
-
-## Multiple Date Selection
-
-If the `multiple` property is set to `true`, multiple dates can be selected from the calendar picker. Clicking a selected date will deselect it.
-
-:::note
-This property is only supported when using `presentation="date"`.
-:::
-
-<MultipleDateSelection />
 
 ## Theming
 
