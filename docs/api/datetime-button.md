@@ -41,12 +41,14 @@ The localized text on `ion-datetime-button` is determined by the `locale` proper
 
 ## Usage with Modal
 
-TODO
+`ion-datetime-button` must be associated with a mounted `ion-datetime` instance. As a result, [Inline Modals](./modal#inline-modals-recommended) with the `keepContentsMounted` property set to `true` must be used.
 
 ## Usage with Popover
 
-TODO
+`ion-datetime-button` must be associated with a mounted `ion-datetime` instance. As a result, [Inline Popovers](./popover#inline-popovers) with the `keepContentsMounted` property set to `true` must be used.
 
+
+<!--
 ## Customization
 
 TODO
@@ -58,6 +60,7 @@ TODO
 ### Theming
 
 TODO
+-->
 
 ## Properties
 <Props />
