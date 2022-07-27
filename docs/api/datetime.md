@@ -34,6 +34,8 @@ import ShowingConfirmationButtons from '@site/static/usage/datetime/buttons/show
 import CustomizingButtons from '@site/static/usage/datetime/buttons/customizing-buttons/index.md';
 import CustomizingButtonTexts from '@site/static/usage/datetime/buttons/customizing-button-texts/index.md';
 
+import MultipleDateSelection from '@site/static/usage/datetime/multiple/index.md';
+
 import Theming from '@site/static/usage/datetime/theming/index.md';
 
 <head>
@@ -234,6 +236,16 @@ The example below shows the wheel picker with `presentation="date-time"`.
 import Wheel from '@site/static/usage/datetime/presentation/wheel/index.md';
 
 <Wheel />
+
+## Multiple Date Selection
+
+If the `multiple` property is set to `true`, multiple dates can be selected from the calendar picker. Clicking a selected date will deselect it.
+
+:::note
+This property is only supported when using `presentation="date"` and `preferWheel="false"`.
+:::
+
+<MultipleDateSelection />
 
 ## Titles
 
