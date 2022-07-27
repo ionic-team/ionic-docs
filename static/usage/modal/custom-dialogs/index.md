@@ -26,6 +26,6 @@ import angular_app_component_html from './angular/app_component_html.md';
       },
     },
   }}
-  src="usage/modal/styling/theming/demo.html"
+  src="usage/modal/custom-dialogs/demo.html"
   devicePreview
 />

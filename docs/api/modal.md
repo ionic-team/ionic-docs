@@ -17,13 +17,10 @@ import Slots from '@site/static/auto-generated/modal/slots.md';
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
-import APITOCInline from '@components/page/api/APITOCInline';
 
 <EncapsulationPill type="shadow" />
 
-
 A Modal is a dialog that appears on top of the app's content, and must be dismissed by the app before interaction can resume. It is useful as a select component when there are a lot of options to choose from, or when filtering items in a list, as well as many other use cases.
-
 
 ## Inline Modals (Recommended)
 
@@ -167,6 +164,19 @@ import AnimationsExample from '@site/static/usage/modal/styling/animations/index
 
 <AnimationsExample />
 
+## Custom Dialogs
+
+While `ion-modal` is most often used for full-page views, cards, or sheets, it is also possible to use it for custom dialogs. This is useful if developers need an interface that is more complex than what components such as [ion-alert](./alert) or [ion-loading](./loading) provide.
+
+import CustomDialogs from '@site/static/usage/modal/custom-dialogs/index.md';
+
+<CustomDialogs />
+
+A few things to keep in mind when creating custom dialogs:
+
+* `ion-content` is intended to be used in full-page modals, cards, and sheets. If your custom dialog has a dynamic or unknown size, `ion-content` should not be used.
+* Creating custom dialogs provides a way of ejecting from the default modal experience. As a result, custom dialogs should not be used with card or sheet modals.
+
 ## Interfaces
 
 ### ModalOptions
@@ -234,7 +244,7 @@ Sheet modals that have had their backdrop disabled by the `backdropBreakpoint` p
 
 Sheet modals allow users to interact with content behind the modal when the `backdropBreakpoint` property is used. The backdrop will be disabled up to and including the specified `backdropBreakpoint` and will be enabled after it.
 
-When the backdrop is disabled, users will be able to interact with elements outside the sheet modal using a pointer or keyboard. Assistive technologies may not focus outside the sheet modal by default due to the usage of `aria-modal`. We recommend avoiding features such as autofocus here as it can cause assistive technologies to jump between two interactive contexts without warning the user.  
+When the backdrop is disabled, users will be able to interact with elements outside the sheet modal using a pointer or keyboard. Assistive technologies may not focus outside the sheet modal by default due to the usage of `aria-modal`. We recommend avoiding features such as autofocus here as it can cause assistive technologies to jump between two interactive contexts without warning the user.
 
 ## Performance
 
