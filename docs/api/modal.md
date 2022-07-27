@@ -127,6 +127,14 @@ import SheetBackgroundContentExample from '@site/static/usage/modal/sheet/backgr
 
 <SheetBackgroundContentExample />
 
+#### Handle Behavior
+
+Sheet modals can optionally render a handle indicator used for dragging the sheet between breakpoints. The `handleBehavior` property can be used to configure the behavior of when the handle is activated by the user.
+
+import SheetHandleBehaviorExample from '@site/static/usage/modal/sheet/handle-behavior/index.md';
+
+<SheetHandleBehaviorExample />
+
 ## Styling
 
 Modals are presented at the root of your application so they overlay your entire app. This behavior applies to both inline modals and modals presented from a controller. As a result, custom modal styles can not be scoped to a particular component as they will not apply to the modal. Instead, styles must be applied globally. For most developers, placing the custom styles in `global.css` is sufficient.
@@ -228,6 +236,25 @@ Sheet modals allow users to interact with content behind the modal when the `bac
 
 When the backdrop is disabled, users will be able to interact with elements outside the sheet modal using a pointer or keyboard. Assistive technologies may not focus outside the sheet modal by default due to the usage of `aria-modal`. We recommend avoiding features such as autofocus here as it can cause assistive technologies to jump between two interactive contexts without warning the user.  
 
+## Performance
+
+### Mounting Inner Contents
+
+The content of an inline `ion-modal` is unmounted when closed. If this content is expensive to render, developers can use the `keepContentsMounted` property to mount the content as soon as the modal is mounted. This can help optimize the responsiveness of your application as the inner contents will have already been mounted when the modal opens.
+
+import Mount from '@site/static/usage/modal/performance/mount/index.md';
+
+<Mount />
+
+Developers should keep the following in mind when using `keepContentsMounted`:
+
+- This feature should be used as a last resort in order to deal with existing performance problems. Try to identify and resolve performance bottlenecks before using this feature. Additionally, do not use this to anticipate performance problems.
+
+- This feature is only needed when using a JavaScript Framework. Developers not using a framework can  pass the contents to be rendered into the modal, and the contents will be rendered automatically.
+
+- This feature only works with inline modals. Modals created with the `modalController` are not created ahead of time, so the inner contents are not created either.
+
+- Any JavaScript Framework lifecycle hooks on the inner component will run as soon as the modal is mounted, not when the modal is presented.
 
 ## Properties
 <Props />
