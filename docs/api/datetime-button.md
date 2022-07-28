@@ -39,14 +39,9 @@ import Basic from '@site/static/usage/datetime-button/basic/index.md';
 
 The localized text on `ion-datetime-button` is determined by the `locale` property on the associated `ion-datetime` instance. See [Datetime Localization](./datetime#localization) for more details.
 
-## Usage with Modal
+## Usage with Modals and Popovers
 
-`ion-datetime-button` must be associated with a mounted `ion-datetime` instance. As a result, [Inline Modals](./modal#inline-modals-recommended) with the `keepContentsMounted` property set to `true` must be used.
-
-## Usage with Popover
-
-`ion-datetime-button` must be associated with a mounted `ion-datetime` instance. As a result, [Inline Popovers](./popover#inline-popovers) with the `keepContentsMounted` property set to `true` must be used.
-
+`ion-datetime-button` must be associated with a mounted `ion-datetime` instance. As a result, [Inline Modals](./modal#inline-modals-recommended) and [Inline Popovers](./popover#inline-popovers) with the `keepContentsMounted` property set to `true` must be used.
 
 <!--
 ## Customization
