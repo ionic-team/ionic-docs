@@ -383,6 +383,23 @@
       "required": false
     },
     {
+      "name": "multiple",
+      "type": "boolean",
+      "mutable": false,
+      "attr": "multiple",
+      "reflectToAttr": false,
+      "docs": "If `true`, multiple dates can be selected at once. Only\napplies to `presentation=\"date\"` and `preferWheel=\"false\"`.",
+      "docsTags": [],
+      "default": "false",
+      "values": [
+        {
+          "type": "boolean"
+        }
+      ],
+      "optional": false,
+      "required": false
+    },
+    {
       "name": "name",
       "type": "string",
       "mutable": false,
@@ -394,6 +411,23 @@
       "values": [
         {
           "type": "string"
+        }
+      ],
+      "optional": false,
+      "required": false
+    },
+    {
+      "name": "preferWheel",
+      "type": "boolean",
+      "mutable": false,
+      "attr": "prefer-wheel",
+      "reflectToAttr": false,
+      "docs": "If `true`, a wheel picker will be rendered instead of a calendar grid\nwhere possible. If `false`, a calendar grid will be rendered instead of\na wheel picker where possible.\n\nA wheel picker can be rendered instead of a grid when `presentation` is\none of the following values: `'date'`, `'date-time'`, or `'time-date'`.\n\nA wheel picker will always be rendered regardless of\nthe `preferWheel` value when `presentation` is one of the following values:\n`'time'`, `'month'`, `'month-year'`, or `'year'`.",
+      "docsTags": [],
+      "default": "false",
+      "values": [
+        {
+          "type": "boolean"
         }
       ],
       "optional": false,
@@ -550,11 +584,11 @@
     },
     {
       "name": "value",
-      "type": "null | string | undefined",
+      "type": "null | string | string[] | undefined",
       "mutable": true,
       "attr": "value",
       "reflectToAttr": false,
-      "docs": "The value of the datetime as a valid ISO 8601 datetime string.",
+      "docs": "The value of the datetime as a valid ISO 8601 datetime string.\nShould be an array of strings if `multiple=\"true\"`.",
       "docsTags": [],
       "values": [
         {
@@ -562,6 +596,9 @@
         },
         {
           "type": "string"
+        },
+        {
+          "type": "string[]"
         },
         {
           "type": "undefined"

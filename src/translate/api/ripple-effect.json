@@ -63,6 +63,7 @@
     "ion-button",
     "ion-card",
     "ion-chip",
+    "ion-datetime-button",
     "ion-fab-button",
     "ion-item",
     "ion-item-option",
@@ -89,6 +90,9 @@
       "ion-ripple-effect"
     ],
     "ion-chip": [
+      "ion-ripple-effect"
+    ],
+    "ion-datetime-button": [
       "ion-ripple-effect"
     ],
     "ion-fab-button": [

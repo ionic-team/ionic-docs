@@ -44,6 +44,25 @@
   "usage": {},
   "props": [
     {
+      "name": "activeBarStart",
+      "type": "number | undefined",
+      "mutable": true,
+      "attr": "active-bar-start",
+      "reflectToAttr": false,
+      "docs": "The start position of the range active bar. This feature is only available with a single knob (dualKnobs=\"false\").\nValid values are greater than or equal to the min value and less than or equal to the max value.",
+      "docsTags": [],
+      "values": [
+        {
+          "type": "number"
+        },
+        {
+          "type": "undefined"
+        }
+      ],
+      "optional": true,
+      "required": false
+    },
+    {
       "name": "color",
       "type": "\"danger\" | \"dark\" | \"light\" | \"medium\" | \"primary\" | \"secondary\" | \"success\" | \"tertiary\" | \"warning\" | string & Record<never, never> | undefined",
       "mutable": false,

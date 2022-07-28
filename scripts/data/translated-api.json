@@ -5145,6 +5145,175 @@
       "dependencyGraph": {}
     },
     {
+      "filePath": "./src/components/datetime-button/datetime-button.tsx",
+      "encapsulation": "shadow",
+      "tag": "ion-datetime-button",
+      "docs": "",
+      "docsTags": [
+        {
+          "name": "virtualProp",
+          "text": "{\"ios\" | \"md\"} mode - The mode determines which platform styles to use."
+        },
+        {
+          "name": "slot",
+          "text": "date-target - Content displayed inside of the date button."
+        },
+        {
+          "name": "slot",
+          "text": "time-target - Content displayed inside of the time button."
+        },
+        {
+          "name": "part",
+          "text": "native - The native HTML button that wraps the slotted text."
+        }
+      ],
+      "usage": {},
+      "props": [
+        {
+          "name": "color",
+          "type": "\"danger\" | \"dark\" | \"light\" | \"medium\" | \"primary\" | \"secondary\" | \"success\" | \"tertiary\" | \"warning\" | string & Record<never, never> | undefined",
+          "mutable": false,
+          "attr": "color",
+          "reflectToAttr": true,
+          "docs": "The color to use from your application's color palette.\nDefault options are: `\"primary\"`, `\"secondary\"`, `\"tertiary\"`, `\"success\"`, `\"warning\"`, `\"danger\"`, `\"light\"`, `\"medium\"`, and `\"dark\"`.\nFor more information on colors, see [theming](/docs/theming/basics).",
+          "docsTags": [],
+          "default": "'primary'",
+          "values": [
+            {
+              "value": "danger",
+              "type": "string"
+            },
+            {
+              "value": "dark",
+              "type": "string"
+            },
+            {
+              "value": "light",
+              "type": "string"
+            },
+            {
+              "value": "medium",
+              "type": "string"
+            },
+            {
+              "value": "primary",
+              "type": "string"
+            },
+            {
+              "value": "secondary",
+              "type": "string"
+            },
+            {
+              "value": "success",
+              "type": "string"
+            },
+            {
+              "value": "tertiary",
+              "type": "string"
+            },
+            {
+              "value": "warning",
+              "type": "string"
+            },
+            {
+              "type": "string & Record<never, never>"
+            },
+            {
+              "type": "undefined"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "datetime",
+          "type": "string | undefined",
+          "mutable": false,
+          "attr": "datetime",
+          "reflectToAttr": false,
+          "docs": "The ID of the `ion-datetime` instance\nassociated with the datetime button.",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "undefined"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "disabled",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "disabled",
+          "reflectToAttr": true,
+          "docs": "If `true`, the user cannot interact with the button.",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "mode",
+          "type": "\"ios\" | \"md\"",
+          "mutable": false,
+          "attr": "mode",
+          "reflectToAttr": false,
+          "docs": "The mode determines which platform styles to use.",
+          "docsTags": [],
+          "values": [
+            {
+              "value": "ios",
+              "type": "string"
+            },
+            {
+              "value": "md",
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [
+        {
+          "name": "date-target",
+          "docs": "Content displayed inside of the date button."
+        },
+        {
+          "name": "time-target",
+          "docs": "Content displayed inside of the time button."
+        }
+      ],
+      "parts": [
+        {
+          "name": "native",
+          "docs": "The native HTML button that wraps the slotted text."
+        }
+      ],
+      "dependents": [],
+      "dependencies": [
+        "ion-ripple-effect"
+      ],
+      "dependencyGraph": {
+        "ion-datetime-button": [
+          "ion-ripple-effect"
+        ]
+      }
+    },
+    {
       "filePath": "./src/components/datetime/datetime.tsx",
       "encapsulation": "shadow",
       "tag": "ion-datetime",
@@ -5529,6 +5698,23 @@
           "required": false
         },
         {
+          "name": "multiple",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "multiple",
+          "reflectToAttr": false,
+          "docs": "If `true`, multiple dates can be selected at once. Only\napplies to `presentation=\"date\"` and `preferWheel=\"false\"`.",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
           "name": "name",
           "type": "string",
           "mutable": false,
@@ -5540,6 +5726,23 @@
           "values": [
             {
               "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "preferWheel",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "prefer-wheel",
+          "reflectToAttr": false,
+          "docs": "If `true`, a wheel picker will be rendered instead of a calendar grid\nwhere possible. If `false`, a calendar grid will be rendered instead of\na wheel picker where possible.\n\nA wheel picker can be rendered instead of a grid when `presentation` is\none of the following values: `'date'`, `'date-time'`, or `'time-date'`.\n\nA wheel picker will always be rendered regardless of\nthe `preferWheel` value when `presentation` is one of the following values:\n`'time'`, `'month'`, `'month-year'`, or `'year'`.",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
             }
           ],
           "optional": false,
@@ -5696,11 +5899,11 @@
         },
         {
           "name": "value",
-          "type": "null | string | undefined",
+          "type": "null | string | string[] | undefined",
           "mutable": true,
           "attr": "value",
           "reflectToAttr": false,
-          "docs": "The value of the datetime as a valid ISO 8601 datetime string.",
+          "docs": "The value of the datetime as a valid ISO 8601 datetime string.\nShould be an array of strings if `multiple=\"true\"`.",
           "docsTags": [],
           "values": [
             {
@@ -5708,6 +5911,9 @@
             },
             {
               "type": "string"
+            },
+            {
+              "type": "string[]"
             },
             {
               "type": "undefined"
@@ -11239,6 +11445,31 @@
           "required": false
         },
         {
+          "name": "handleBehavior",
+          "type": "\"cycle\" | \"none\" | undefined",
+          "mutable": false,
+          "attr": "handle-behavior",
+          "reflectToAttr": false,
+          "docs": "The interaction behavior for the sheet modal when the handle is pressed.\n\nDefaults to `\"none\"`, which  means the modal will not change size or position when the handle is pressed.\nSet to `\"cycle\"` to let the modal cycle between available breakpoints when pressed.\n\nHandle behavior is unavailable when the `handle` property is set to `false` or\nwhen the `breakpoints` property is not set (using a fullscreen or card modal).",
+          "docsTags": [],
+          "default": "'none'",
+          "values": [
+            {
+              "value": "cycle",
+              "type": "string"
+            },
+            {
+              "value": "none",
+              "type": "string"
+            },
+            {
+              "type": "undefined"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
           "name": "htmlAttributes",
           "type": "undefined | { [key: string]: any; }",
           "mutable": false,
@@ -11282,6 +11513,23 @@
           "attr": "is-open",
           "reflectToAttr": false,
           "docs": "If `true`, the modal will open. If `false`, the modal will close.\nUse this if you need finer grained control over presentation, otherwise\njust use the modalController or the `trigger` property.\nNote: `isOpen` will not automatically be set back to `false` when\nthe modal dismisses. You will need to do that in your code.",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "keepContentsMounted",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "keep-contents-mounted",
+          "reflectToAttr": false,
+          "docs": "If `true`, the component passed into `ion-modal` will\nautomatically be mounted when the modal is created. The\ncomponent will remain mounted even when the modal is dismissed.\nHowever, the component will be destroyed when the modal is\ndestroyed. This property is not reactive and should only be\nused when initially creating a modal.\n\nNote: This feature only applies to inline modals in JavaScript\nframeworks such as Angular, React, and Vue.",
           "docsTags": [],
           "default": "false",
           "values": [
@@ -12996,6 +13244,23 @@
           "required": false
         },
         {
+          "name": "keepContentsMounted",
+          "type": "boolean",
+          "mutable": false,
+          "attr": "keep-contents-mounted",
+          "reflectToAttr": false,
+          "docs": "If `true`, the component passed into `ion-popover` will\nautomatically be mounted when the popover is created. The\ncomponent will remain mounted even when the popover is dismissed.\nHowever, the component will be destroyed when the popover is\ndestroyed. This property is not reactive and should only be\nused when initially creating a popover.\n\nNote: This feature only applies to inline popovers in JavaScript\nframeworks such as Angular, React, and Vue.",
+          "docsTags": [],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
           "name": "keyboardClose",
           "type": "boolean",
           "mutable": false,
@@ -14008,6 +14273,25 @@
       "usage": {},
       "props": [
         {
+          "name": "activeBarStart",
+          "type": "number | undefined",
+          "mutable": true,
+          "attr": "active-bar-start",
+          "reflectToAttr": false,
+          "docs": "The start position of the range active bar. This feature is only available with a single knob (dualKnobs=\"false\").\nValid values are greater than or equal to the min value and less than or equal to the max value.",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "undefined"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
           "name": "color",
           "type": "\"danger\" | \"dark\" | \"light\" | \"medium\" | \"primary\" | \"secondary\" | \"success\" | \"tertiary\" | \"warning\" | string & Record<never, never> | undefined",
           "mutable": false,
@@ -14938,6 +15222,7 @@
         "ion-button",
         "ion-card",
         "ion-chip",
+        "ion-datetime-button",
         "ion-fab-button",
         "ion-item",
         "ion-item-option",
@@ -14964,6 +15249,9 @@
           "ion-ripple-effect"
         ],
         "ion-chip": [
+          "ion-ripple-effect"
+        ],
+        "ion-datetime-button": [
           "ion-ripple-effect"
         ],
         "ion-fab-button": [
@@ -19029,8 +19317,8 @@
           "type": "boolean",
           "mutable": false,
           "attr": "auto-grow",
-          "reflectToAttr": false,
-          "docs": "If `true`, the element height will increase based on the value.",
+          "reflectToAttr": true,
+          "docs": "If `true`, the textarea container will grow and shrink based\non the contents of the textarea.",
           "docsTags": [],
           "default": "false",
           "values": [
@@ -20456,6 +20744,26 @@
           "required": false
         },
         {
+          "name": "enableOnOffLabels",
+          "type": "boolean | undefined",
+          "mutable": false,
+          "attr": "enable-on-off-labels",
+          "reflectToAttr": false,
+          "docs": "Enables the on/off accessibility switch labels within the toggle.",
+          "docsTags": [],
+          "default": "undefined",
+          "values": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "undefined"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
           "name": "mode",
           "type": "\"ios\" | \"md\"",
           "mutable": false,
@@ -20622,8 +20930,14 @@
         }
       ],
       "dependents": [],
-      "dependencies": [],
-      "dependencyGraph": {}
+      "dependencies": [
+        "ion-icon"
+      ],
+      "dependencyGraph": {
+        "ion-toggle": [
+          "ion-icon"
+        ]
+      }
     },
     {
       "filePath": "./src/components/toolbar/toolbar.tsx",

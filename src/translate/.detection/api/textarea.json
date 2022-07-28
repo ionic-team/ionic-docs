@@ -16,8 +16,8 @@
       "type": "boolean",
       "mutable": false,
       "attr": "auto-grow",
-      "reflectToAttr": false,
-      "docs": "If `true`, the element height will increase based on the value.",
+      "reflectToAttr": true,
+      "docs": "If `true`, the textarea container will grow and shrink based\non the contents of the textarea.",
       "docsTags": [],
       "default": "false",
       "values": [

@@ -109,6 +109,26 @@
       "required": false
     },
     {
+      "name": "enableOnOffLabels",
+      "type": "boolean | undefined",
+      "mutable": false,
+      "attr": "enable-on-off-labels",
+      "reflectToAttr": false,
+      "docs": "Enables the on/off accessibility switch labels within the toggle.",
+      "docsTags": [],
+      "default": "undefined",
+      "values": [
+        {
+          "type": "boolean"
+        },
+        {
+          "type": "undefined"
+        }
+      ],
+      "optional": false,
+      "required": false
+    },
+    {
       "name": "mode",
       "type": "\"ios\" | \"md\"",
       "mutable": false,
@@ -275,6 +295,12 @@
     }
   ],
   "dependents": [],
-  "dependencies": [],
-  "dependencyGraph": {}
+  "dependencies": [
+    "ion-icon"
+  ],
+  "dependencyGraph": {
+    "ion-toggle": [
+      "ion-icon"
+    ]
+  }
 }

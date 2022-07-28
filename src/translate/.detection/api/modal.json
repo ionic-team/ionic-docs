@@ -156,6 +156,31 @@
       "required": false
     },
     {
+      "name": "handleBehavior",
+      "type": "\"cycle\" | \"none\" | undefined",
+      "mutable": false,
+      "attr": "handle-behavior",
+      "reflectToAttr": false,
+      "docs": "The interaction behavior for the sheet modal when the handle is pressed.\n\nDefaults to `\"none\"`, which  means the modal will not change size or position when the handle is pressed.\nSet to `\"cycle\"` to let the modal cycle between available breakpoints when pressed.\n\nHandle behavior is unavailable when the `handle` property is set to `false` or\nwhen the `breakpoints` property is not set (using a fullscreen or card modal).",
+      "docsTags": [],
+      "default": "'none'",
+      "values": [
+        {
+          "value": "cycle",
+          "type": "string"
+        },
+        {
+          "value": "none",
+          "type": "string"
+        },
+        {
+          "type": "undefined"
+        }
+      ],
+      "optional": true,
+      "required": false
+    },
+    {
       "name": "htmlAttributes",
       "type": "undefined | { [key: string]: any; }",
       "mutable": false,
@@ -199,6 +224,23 @@
       "attr": "is-open",
       "reflectToAttr": false,
       "docs": "If `true`, the modal will open. If `false`, the modal will close.\nUse this if you need finer grained control over presentation, otherwise\njust use the modalController or the `trigger` property.\nNote: `isOpen` will not automatically be set back to `false` when\nthe modal dismisses. You will need to do that in your code.",
+      "docsTags": [],
+      "default": "false",
+      "values": [
+        {
+          "type": "boolean"
+        }
+      ],
+      "optional": false,
+      "required": false
+    },
+    {
+      "name": "keepContentsMounted",
+      "type": "boolean",
+      "mutable": false,
+      "attr": "keep-contents-mounted",
+      "reflectToAttr": false,
+      "docs": "If `true`, the component passed into `ion-modal` will\nautomatically be mounted when the modal is created. The\ncomponent will remain mounted even when the modal is dismissed.\nHowever, the component will be destroyed when the modal is\ndestroyed. This property is not reactive and should only be\nused when initially creating a modal.\n\nNote: This feature only applies to inline modals in JavaScript\nframeworks such as Angular, React, and Vue.",
       "docsTags": [],
       "default": "false",
       "values": [

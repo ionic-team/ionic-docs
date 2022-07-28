@@ -1,0 +1,169 @@
+{
+  "filePath": "./src/components/datetime-button/datetime-button.tsx",
+  "encapsulation": "shadow",
+  "tag": "ion-datetime-button",
+  "docs": "",
+  "docsTags": [
+    {
+      "name": "virtualProp",
+      "text": "{\"ios\" | \"md\"} mode - The mode determines which platform styles to use."
+    },
+    {
+      "name": "slot",
+      "text": "date-target - Content displayed inside of the date button."
+    },
+    {
+      "name": "slot",
+      "text": "time-target - Content displayed inside of the time button."
+    },
+    {
+      "name": "part",
+      "text": "native - The native HTML button that wraps the slotted text."
+    }
+  ],
+  "usage": {},
+  "props": [
+    {
+      "name": "color",
+      "type": "\"danger\" | \"dark\" | \"light\" | \"medium\" | \"primary\" | \"secondary\" | \"success\" | \"tertiary\" | \"warning\" | string & Record<never, never> | undefined",
+      "mutable": false,
+      "attr": "color",
+      "reflectToAttr": true,
+      "docs": "The color to use from your application's color palette.\nDefault options are: `\"primary\"`, `\"secondary\"`, `\"tertiary\"`, `\"success\"`, `\"warning\"`, `\"danger\"`, `\"light\"`, `\"medium\"`, and `\"dark\"`.\nFor more information on colors, see [theming](/docs/theming/basics).",
+      "docsTags": [],
+      "default": "'primary'",
+      "values": [
+        {
+          "value": "danger",
+          "type": "string"
+        },
+        {
+          "value": "dark",
+          "type": "string"
+        },
+        {
+          "value": "light",
+          "type": "string"
+        },
+        {
+          "value": "medium",
+          "type": "string"
+        },
+        {
+          "value": "primary",
+          "type": "string"
+        },
+        {
+          "value": "secondary",
+          "type": "string"
+        },
+        {
+          "value": "success",
+          "type": "string"
+        },
+        {
+          "value": "tertiary",
+          "type": "string"
+        },
+        {
+          "value": "warning",
+          "type": "string"
+        },
+        {
+          "type": "string & Record<never, never>"
+        },
+        {
+          "type": "undefined"
+        }
+      ],
+      "optional": true,
+      "required": false
+    },
+    {
+      "name": "datetime",
+      "type": "string | undefined",
+      "mutable": false,
+      "attr": "datetime",
+      "reflectToAttr": false,
+      "docs": "The ID of the `ion-datetime` instance\nassociated with the datetime button.",
+      "docsTags": [],
+      "values": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "undefined"
+        }
+      ],
+      "optional": true,
+      "required": false
+    },
+    {
+      "name": "disabled",
+      "type": "boolean",
+      "mutable": false,
+      "attr": "disabled",
+      "reflectToAttr": true,
+      "docs": "If `true`, the user cannot interact with the button.",
+      "docsTags": [],
+      "default": "false",
+      "values": [
+        {
+          "type": "boolean"
+        }
+      ],
+      "optional": false,
+      "required": false
+    },
+    {
+      "name": "mode",
+      "type": "\"ios\" | \"md\"",
+      "mutable": false,
+      "attr": "mode",
+      "reflectToAttr": false,
+      "docs": "The mode determines which platform styles to use.",
+      "docsTags": [],
+      "values": [
+        {
+          "value": "ios",
+          "type": "string"
+        },
+        {
+          "value": "md",
+          "type": "string"
+        }
+      ],
+      "optional": true,
+      "required": false
+    }
+  ],
+  "methods": [],
+  "events": [],
+  "listeners": [],
+  "styles": [],
+  "slots": [
+    {
+      "name": "date-target",
+      "docs": "Content displayed inside of the date button."
+    },
+    {
+      "name": "time-target",
+      "docs": "Content displayed inside of the time button."
+    }
+  ],
+  "parts": [
+    {
+      "name": "native",
+      "docs": "The native HTML button that wraps the slotted text."
+    }
+  ],
+  "dependents": [],
+  "dependencies": [
+    "ion-ripple-effect"
+  ],
+  "dependencyGraph": {
+    "ion-datetime-button": [
+      "ion-ripple-effect"
+    ]
+  }
+}
