@@ -34,6 +34,8 @@ import ShowingConfirmationButtons from '@site/static/usage/datetime/buttons/show
 import CustomizingButtons from '@site/static/usage/datetime/buttons/customizing-buttons/index.md';
 import CustomizingButtonTexts from '@site/static/usage/datetime/buttons/customizing-button-texts/index.md';
 
+import MultipleDateSelection from '@site/static/usage/datetime/multiple/index.md';
+
 import Theming from '@site/static/usage/datetime/theming/index.md';
 
 <head>
@@ -207,11 +209,43 @@ Ionic Frameworkでは、[Intl.DatetimeFormat](https://developer.mozilla.org/en-U
 
 ### 日付の選択
 
-時刻の選択は、 `presentation` プロパティに `date-time`, `time-date`, または `date` を渡すことで行うことができます。
+時刻の選択は、 `presentation` プロパティに `date-time`, `time-date`, または `date` を渡すことで行うことで有効になります。
 
 この例では、`date`の設定でdatetimeを指定しています。
 
 <Date />
+
+### ピッカーのホイールスタイル
+
+デフォルトでは、Ionicは `presentation` を使用する場合、グリッドスタイルのレイアウトを優先して表示します。しかし、`preferWheel` プロパティを使用すると、ホイールスタイルを表示することができます。preferWheel` が `true` の場合、Ionic は可能な限りホイールスタイルのレイアウトを優先して表示します。
+
+特定の `presentation` オプションには、グリッドとホイールの両方のスタイルがあり、開発者は `preferWheel` プロパティで選択することができます。その他の `presentation` の値はホイールスタイルのみを持ち、グリッドスタイルは決して表示されません。下の表は、どの `presentation` の値がグリッドスタイルとホイールスタイルを持つかを示しています。
+
+| `presentation` | グリッドシステム   | ホイールシステム   |
+| -------------- | --------------- | ---------------- |
+| `date`         | Yes             | Yes              |
+| `date-time`    | Yes             | Yes              |
+| `month`        | No              | Yes              |
+| `month-year`   | No              | Yes              |
+| `time`         | No              | Yes              |
+| `time-date`    | Yes             | Yes              |
+| `year`         | No              | Yes              |
+
+以下の例では、ホイールピッカーに `presentation="date-time"` を指定しています。
+
+import Wheel from '@site/static/usage/datetime/presentation/wheel/index.md';
+
+<Wheel />
+
+## Multiple Date Selection
+
+If the `multiple` property is set to `true`, multiple dates can be selected from the calendar picker. Clicking a selected date will deselect it.
+
+:::note
+This property is only supported when using `presentation="date"` and `preferWheel="false"`.
+:::
+
+<MultipleDateSelection />
 
 ## タイトル
 
