@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useMemo, useRef, useState } from 'react';
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import './playground.css';
@@ -115,7 +115,7 @@ export default function Playground({
    * or an explicit pixel value.
    */
   const frameSize = FRAME_SIZES[size] || size;
-  const [usageTarget, setUsageTarget] = useState(UsageTarget.JavaScript);
+  const [usageTarget, setUsageTarget] = useState(UsageTarget.Angular);
   const [mode, setMode] = useState(Mode.iOS);
   const [codeSnippets, setCodeSnippets] = useState({});
   const [renderIframes, setRenderIframes] = useState(false);
@@ -322,16 +322,20 @@ export default function Playground({
 
   function renderLoadingScreen() {
     return (
-      <div class="playground__loading"><IconDots /></div>
-    )
+      <div className="playground__loading">
+        <IconDots />
+      </div>
+    );
   }
+
+  const sortedUsageTargets = useMemo(() => Object.keys(UsageTarget).sort(), []);
 
   return (
     <div className="playground" ref={hostRef}>
       <div className="playground__container">
         <div className="playground__control-toolbar">
           <div className="playground__control-group">
-            {Object.keys(UsageTarget).map((lang) => (
+            {sortedUsageTargets.map((lang) => (
               <CodeBlockButton
                 key={`code-block-${lang}`}
                 language={lang}
@@ -439,10 +443,11 @@ export default function Playground({
             </Tippy>
           </div>
         </div>
-        { renderIframes ? [
-          <div className="playground__preview">
-            {!iframesLoaded && renderLoadingScreen()}
-            {/*
+        {renderIframes
+          ? [
+              <div className="playground__preview">
+                {!iframesLoaded && renderLoadingScreen()}
+                {/*
               We render two iframes, one for each mode.
               When the set mode changes, we hide one frame and
               show the other. This is done to avoid flickering
@@ -479,10 +484,7 @@ export default function Playground({
             ]
           : []}
       </div>
-      <div
-        ref={codeRef}
-        className='playground__code-block'
-      >
+      <div ref={codeRef} className="playground__code-block">
         {renderCodeSnippets()}
       </div>
     </div>
