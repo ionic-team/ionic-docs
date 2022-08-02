@@ -1,28 +1,61 @@
 ```html
-<ion-accordion-group>
-  <ion-accordion value="first">
-    <ion-item slot="header" color="light">
-      <ion-label>First Accordion</ion-label>
-    </ion-item>
-    <div class="ion-padding" slot="content">
-      First Content
-    </div>
-  </ion-accordion>
-  <ion-accordion value="second">
-    <ion-item slot="header" color="light">
-      <ion-label>Second Accordion</ion-label>
-    </ion-item>
-    <div class="ion-padding" slot="content">
-      Second Content
-    </div>
-  </ion-accordion>
-  <ion-accordion value="third">
-    <ion-item slot="header" color="light">
-      <ion-label>Third Accordion</ion-label>
-    </ion-item>
-    <div class="ion-padding" slot="content">
-      Third Content
-    </div>
-  </ion-accordion>
-</ion-accordion-group>
+<ion-list></ion-list><br />
+<ion-button onclick="toggle()">Toggle</ion-button>
+
+<script>
+  const list = document.querySelector('ion-list');
+  let loaded = false;
+  function toggle() {
+    if (loaded) {
+      setSkeletonText();
+    } else {
+      setContent();
+    }
+
+    loaded = !loaded;
+  }
+
+  function setSkeletonText() {
+    list.innerHTML = `
+      <ion-list-header>
+        <ion-skeleton-text animated style="width: 80px"></ion-skeleton-text>
+      </ion-list-header>
+      <ion-item>
+        <ion-thumbnail slot="start">
+          <ion-skeleton-text></ion-skeleton-text>
+        </ion-thumbnail>
+        <ion-label>
+          <h3>
+            <ion-skeleton-text animated style="width: 80%;"></ion-skeleton-text>
+          </h3>
+          <p>
+            <ion-skeleton-text animated style="width: 60%;"></ion-skeleton-text>
+          </p>
+          <p>
+            <ion-skeleton-text animated style="width: 30%;"></ion-skeleton-text>
+          </p>
+        </ion-label>
+      </ion-item>
+    `;
+  }
+
+  function setContent() {
+    list.innerHTML = `
+      <ion-list-header>Albums</ion-list-header>
+      <ion-item>
+        <ion-thumbnail slot="start">
+          <ion-icon style="width: 100%; height: 100%" name="musical-notes"></ion-icon>
+        </ion-thumbnail>
+        <ion-label>
+          <h3>Abbey Road</h3>
+          <p>The Beatles</p>
+          <p>1969</p>
+        </ion-label>
+      </ion-item>
+    `;
+  }
+
+  setSkeletonText();
+
+</script>
 ```
