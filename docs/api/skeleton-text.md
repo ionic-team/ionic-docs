@@ -27,7 +27,9 @@ Skeleton Text is a component for rendering placeholder content. The element will
 
 ## Basic Usage
 
-TODO Playground
+import Basic from '@site/static/usage/skeleton-text/basic/index.md';
+
+<Basic />
 
 ## Customization
 
