@@ -14,7 +14,7 @@ import { musicalNotes } from 'ionicons/icons';
 function Example() {
   const [loaded, setLoaded] = useState(false);
   return (
-    <div>
+    <>
       {loaded && 
         <IonList>
           <IonListHeader>Albums</IonListHeader>
@@ -54,7 +54,7 @@ function Example() {
         </IonList>
       }
       <IonButton onClick={() => setLoaded(!loaded)}>Toggle</IonButton>
-    </div>
+    </>
   );
 }
 export default Example;
