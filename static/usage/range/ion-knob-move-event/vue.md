@@ -1,22 +1,20 @@
 ```html
 <template>
-  <ion-content>
-    <ion-range @ionKnobMoveStart="onIonKnobMoveStart" @ionKnobMoveEnd="onIonKnobMoveEnd"></ion-range>
-    <div>
-      <ion-label>ionKnobMoveStart: {{moveStart}}</ion-label>
-    </div>
-    <div>
-      <ion-label>onIonKnobMoveEnd: {{moveEnd}}</ion-label>
-    </div>
-  </ion-content>
+  <ion-range @ionKnobMoveStart="onIonKnobMoveStart" @ionKnobMoveEnd="onIonKnobMoveEnd"></ion-range>
+  <div>
+    <ion-label>ionKnobMoveStart: {{moveStart}}</ion-label>
+  </div>
+  <div>
+    <ion-label>onIonKnobMoveEnd: {{moveEnd}}</ion-label>
+  </div>
 </template>
 
 <script lang="ts">
-  import { IonContent, IonLabel, IonRange } from '@ionic/vue';
+  import { IonLabel, IonRange } from '@ionic/vue';
   import { defineComponent } from 'vue';
 
   export default defineComponent({
-    components: { IonContent, IonLabel, IonRange },
+    components: { IonLabel, IonRange },
     data() {
       return {
         moveStart: '',

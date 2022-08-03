@@ -32,7 +32,7 @@ function Example() {
           <IonTitle>App</IonTitle>
         </IonToolbar>
       </IonHeader>
-      <IonContent>
+      <IonContent className="ion-padding">
         <IonButton id="open-modal" expand="block">
           Open Modal
         </IonButton>

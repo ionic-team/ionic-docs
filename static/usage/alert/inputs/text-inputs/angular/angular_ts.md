@@ -3,10 +3,10 @@ import { Component } from '@angular/core';
 import { AlertController } from '@ionic/angular';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: 'app.component.html',
+  selector: 'app-example',
+  templateUrl: 'example.component.html',
 })
-export class AppComponent {
+export class ExampleComponent {
   constructor(private alertController: AlertController) {}
 
   async presentAlert() {
@@ -15,25 +15,25 @@ export class AppComponent {
       buttons: ['OK'],
       inputs: [
         {
-          placeholder: 'Name'
+          placeholder: 'Name',
         },
         {
           placeholder: 'Nickname (max 8 characters)',
           attributes: {
-            maxlength: 8
-          }
+            maxlength: 8,
+          },
         },
         {
           type: 'number',
           placeholder: 'Age',
           min: 1,
-          max: 100
+          max: 100,
         },
         {
           type: 'textarea',
-          placeholder: 'A little about yourself'
-        }
-      ]
+          placeholder: 'A little about yourself',
+        },
+      ],
     });
 
     await alert.present();

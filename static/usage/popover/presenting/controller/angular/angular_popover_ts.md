@@ -3,10 +3,8 @@ import { Component } from '@angular/core';
 import { PopoverController } from '@ionic/angular';
 
 @Component({
-  selector: 'popover-component',
+  selector: 'app-popover',
   templateUrl: 'popover.component.html',
 })
-export class PopoverComponent {
-  constructor() {}
-}
+export class PopoverComponent {}
 ```

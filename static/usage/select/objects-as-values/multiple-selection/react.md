@@ -2,30 +2,36 @@
 import React, { useState } from 'react';
 import { IonItem, IonList, IonLabel, IonSelect, IonSelectOption } from '@ionic/react';
 
-const foods = [
+interface Food {
+  id: number;
+  name: string;
+  type: string;
+}
+
+const foods: Food[] = [
   {
     id: 1,
-    name: "Apples",
-    type: "fruit"
+    name: 'Apples',
+    type: 'fruit',
   },
   {
     id: 2,
-    name: "Carrots",
-    type: "vegetable"
+    name: 'Carrots',
+    type: 'vegetable',
   },
   {
     id: 3,
-    name: "Cupcakes",
-    type: "dessert"
-  }
+    name: 'Cupcakes',
+    type: 'dessert',
+  },
 ];
 
-const compareWith = (o1, o2) => {
-  if(!o1 || !o2) {
+const compareWith = (o1: Food, o2: Food) => {
+  if (!o1 || !o2) {
     return o1 === o2;
   }
 
-  if(Array.isArray(o2)) {
+  if (Array.isArray(o2)) {
     return o2.some((o) => o.id === o1.id);
   }
 
@@ -33,7 +39,7 @@ const compareWith = (o1, o2) => {
 };
 
 function Example() {
-  const [currentFood, setCurrentFood] = useState("");
+  const [currentFood, setCurrentFood] = useState('');
 
   return (
     <IonList>
@@ -41,11 +47,13 @@ function Example() {
         <IonSelect
           placeholder="Select food"
           compareWith={compareWith}
-          onIonChange={ev => setCurrentFood(JSON.stringify(ev.detail.value))}
+          onIonChange={(ev) => setCurrentFood(JSON.stringify(ev.detail.value))}
           multiple={true}
         >
-          {foods.map(food => (
-            <IonSelectOption key={food.id} value={food}>{food.name}</IonSelectOption>
+          {foods.map((food) => (
+            <IonSelectOption key={food.id} value={food}>
+              {food.name}
+            </IonSelectOption>
           ))}
         </IonSelect>
       </IonItem>

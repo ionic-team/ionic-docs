@@ -1,15 +1,13 @@
 ```html
 <template>
-  <ion-content>
-    <ion-button @click="presentAlert">Click Me</ion-button>
-  </ion-content>
+  <ion-button @click="presentAlert">Click Me</ion-button>
 </template>
 
 <script lang="ts">
-  import { IonButton, IonContent, alertController } from '@ionic/vue';
+  import { IonButton, alertController } from '@ionic/vue';
 
   export default {
-    components: { IonButton, IonContent },
+    components: { IonButton },
     methods: {
       async presentAlert() {
         const alert = await alertController.create({
@@ -18,19 +16,19 @@
           buttons: [
             {
               text: 'No',
-              cssClass: 'alert-button-cancel'
+              cssClass: 'alert-button-cancel',
             },
             {
               text: 'Yes',
-              cssClass: 'alert-button-confirm'
-            }
-          ]
+              cssClass: 'alert-button-confirm',
+            },
+          ],
         });
 
         await alert.present();
       },
     },
-  }
+  };
 </script>
 
 <style>
@@ -52,7 +50,7 @@
   }
 
   .ios .custom-alert button.alert-button {
-    border: 0.55px solid rgba(var(--ion-text-color-rgb, 0, 0, 0), 0.2)
+    border: 0.55px solid rgba(var(--ion-text-color-rgb, 0, 0, 0), 0.2);
   }
 
   .ios button.alert-button.alert-button-cancel {

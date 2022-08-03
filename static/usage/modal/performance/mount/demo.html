@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Modal | Controller</title>
+  <title>Modal | Performance</title>
   <link rel="stylesheet" href="../../../common.css" />
   <script src="../../../common.js"></script>
   <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core@6/dist/ionic/ionic.esm.js"></script>
@@ -23,12 +23,12 @@
       </ion-toolbar>
     </ion-header>
     <ion-content class="ion-padding">
-      <ion-button id="open-button" expand="block">Open Modal</ion-button>
-      <ion-modal trigger="open-button">
+      <ion-button id="open-modal" expand="block">Open Modal</ion-button>
+      <ion-modal trigger="open-modal">
         <ion-header>
           <ion-toolbar>
             <ion-buttons slot="start">
-              <ion-button onclick="close()">Close</ion-button>
+              <ion-button id="close">Close</ion-button>
             </ion-buttons>
             <ion-title>Modal</ion-title>
           </ion-toolbar>
@@ -42,6 +42,9 @@
 
   <script>
     const modal = document.querySelector('ion-modal');
+
+    const closeBtn = document.querySelector('#close');
+    closeBtn.addEventListener('click', () => close());
 
     const close = () => {
       modal.dismiss();

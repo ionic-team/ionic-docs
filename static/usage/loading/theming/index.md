@@ -11,20 +11,23 @@ import angularHTML from './angular/html.md';
 import angularCSS from './angular/css.md';
 import angularTS from './angular/ts.md';
 
-<Playground code={{
-  javascript, 
-  react: {
-    'files': {
-      'src/main.tsx': reactTSX,
-      'src/main.css': reactCSS
-    }
-  },
-  vue, 
-  angular: {
-    'files': {
-      'src/app/app.component.html': angularHTML,
-      'src/app/app.component.ts': angularTS,
-      'src/global.css': angularCSS
-    }
-  }
-}} src="usage/loading/theming/demo.html" />
+<Playground
+  code={{
+    javascript,
+    react: {
+      files: {
+        'src/main.tsx': reactTSX,
+        'src/main.css': reactCSS,
+      },
+    },
+    vue,
+    angular: {
+      files: {
+        'src/app/example.component.html': angularHTML,
+        'src/app/example.component.ts': angularTS,
+        'src/global.css': angularCSS,
+      },
+    },
+  }}
+  src="usage/loading/theming/demo.html"
+/>

@@ -2,10 +2,10 @@
 import { Component, ViewChild } from '@angular/core';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: 'app.component.html',
+  selector: 'app-example',
+  templateUrl: 'example.component.html',
 })
-export class AppComponent {
+export class ExampleComponent {
   @ViewChild('popover') popover;
 
   isOpen = false;

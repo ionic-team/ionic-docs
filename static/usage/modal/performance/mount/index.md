@@ -10,8 +10,9 @@ import angular from './angular.md';
     javascript,
     react,
     vue,
-    angular
+    angular,
   }}
   src="usage/modal/performance/mount/demo.html"
   devicePreview
+  includeIonContent={false}
 />

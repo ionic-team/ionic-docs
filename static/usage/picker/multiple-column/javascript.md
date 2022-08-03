@@ -1,9 +1,6 @@
 ```html
-<ion-app>
-  <ion-content class="ion-padding">
-    <ion-button onclick="openPicker()">Open</ion-button>
-  </ion-content>
-</ion-app>
+<ion-button onclick="openPicker()">Open</ion-button>
+
 <script>
   async function openPicker() {
     const picker = await pickerController.create({
