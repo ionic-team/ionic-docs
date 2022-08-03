@@ -14,4 +14,5 @@ import angular from './angular.md';
   }}
   src="usage/modal/sheet/handle-behavior/demo.html"
   devicePreview
+  includeIonContent={false}
 />

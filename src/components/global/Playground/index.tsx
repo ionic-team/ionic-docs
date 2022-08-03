@@ -203,8 +203,12 @@ export default function Playground({
    * Reloads the iOS and MD iframe sources back to their original state.
    */
   function resetDemo() {
-    frameiOS.current.contentWindow.location.reload();
-    frameMD.current.contentWindow.location.reload();
+    if (frameiOS.current) {
+      frameiOS.current.contentWindow.location.reload();
+    }
+    if (frameMD.current) {
+      frameMD.current.contentWindow.location.reload();
+    }
   }
 
   function openEditor(event) {
@@ -506,12 +510,17 @@ const waitForFrame = (frame: HTMLIFrameElement) => {
   if (isFrameReady(frame)) return Promise.resolve();
 
   return new Promise<void>((resolve) => {
-    frame.contentWindow.addEventListener('demoReady', () => {
-      resolve();
-    });
+    if (frame) {
+      frame.contentWindow.addEventListener('demoReady', () => {
+        resolve();
+      });
+    }
   });
 };
 
 const isFrameReady = (frame: HTMLIFrameElement) => {
+  if (!frame) {
+    return false;
+  }
   return (frame.contentWindow as any).demoReady === true;
 };
