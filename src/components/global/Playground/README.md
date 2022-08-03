@@ -50,7 +50,7 @@ The file location is respective to the Stackblitz demo project. If you are unsur
 
 ## Ejecting from IonApp/IonContent Boilerplate
 
-By default, Playground examples will automatically include the following template wrapper each component example when opened in Stackblitz.
+By default, Playground examples will automatically include the following template wrapper for each component example when opened in Stackblitz.
 
 ```html
 <ion-app>
