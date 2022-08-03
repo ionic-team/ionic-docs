@@ -23,9 +23,9 @@ import angularCSS from './angular/angular_css.md';
     angular: {
       files: {
         'src/app/example.component.html': angularHTML,
-        'src/styles.css': angularCSS,
-      },
-    },
+        'src/global.css': angularCSS
+      }
+    }
   }}
   src="usage/popover/customization/styling/demo.html"
 />

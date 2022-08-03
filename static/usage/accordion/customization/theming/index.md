@@ -23,9 +23,9 @@ import angularHTML from './angular/angular-html.md';
     angular: {
       files: {
         'src/app/example.component.html': angularHTML,
-        'src/styles.css': angularCSS,
-      },
-    },
+        'src/global.css': angularCSS
+      }
+    }
   }}
   size="250px"
   src="usage/accordion/customization/theming/demo.html"

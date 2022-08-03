@@ -1,3 +1,14 @@
+@font-face {
+  font-family: "Roboto";
+  src: url("../fonts/Roboto-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: url("../fonts/Roboto-Medium.ttf") format("truetype");
+  font-weight: 450 500;
+}
+
 :root {
   /** primary **/
   --ion-color-primary: #3880ff;

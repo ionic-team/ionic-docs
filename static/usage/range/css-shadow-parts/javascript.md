@@ -40,7 +40,7 @@
     background: #a2d2ff;
   }
 
-  ion-range::par(bar-active) {
+  ion-range::part(bar-active) {
     background: #bde0fe;
   }
 </style>

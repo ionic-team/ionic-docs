@@ -24,7 +24,7 @@
       [backdropBreakpoint]="0.5"
     >
       <ng-template>
-        <ion-content>
+        <ion-content class="ion-padding">
           <ion-searchbar placeholder="Search" (click)="modal.setCurrentBreakpoint(0.75)"></ion-searchbar>
           <ion-list>
             <ion-item>

@@ -198,9 +198,20 @@ For example, using [ion-img](./img) may cause layout shifts as it lazily loads i
 
 3. If neither of these options are applicable, developers may want to consider disabling animations altogether by using the `animated` property on [ion-accordion-group](./accordion-group).
 
+## Properties
 <Props />
+
+## Events
 <Events />
+
+## Methods
 <Methods />
+
+## CSS Shadow Parts
 <Parts />
+
+## CSS Custom Properties
 <CustomProps />
+
+## Slots
 <Slots />

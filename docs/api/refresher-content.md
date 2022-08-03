@@ -35,9 +35,20 @@ The refresher content contains the text, icon and spinner to display during a pu
 
 
 
+## Properties
 <Props />
+
+## Events
 <Events />
+
+## Methods
 <Methods />
+
+## CSS Shadow Parts
 <Parts />
+
+## CSS Custom Properties
 <CustomProps />
+
+## Slots
 <Slots />

@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useMemo, useRef, useState } from 'react';
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import './playground.css';
@@ -11,7 +11,7 @@ import 'tippy.js/dist/tippy.css';
 import PlaygroundTabs from '../PlaygroundTabs';
 import TabItem from '@theme/TabItem';
 
-import { IconHtml, IconTs, IconVue } from './icons';
+import { IconHtml, IconTs, IconVue, IconDefault, IconCss, IconDots } from './icons';
 
 const ControlButton = ({ isSelected, handleClick, title, label }) => {
   return (
@@ -27,13 +27,12 @@ const ControlButton = ({ isSelected, handleClick, title, label }) => {
   );
 };
 
-const CodeBlockButton = ({ language, usageTarget, setUsageTarget, setCodeExpanded }) => {
+const CodeBlockButton = ({ language, usageTarget, setUsageTarget }) => {
   const langValue = UsageTarget[language];
   return (
     <ControlButton
       isSelected={usageTarget === langValue}
       handleClick={() => {
-        setCodeExpanded(true);
         setUsageTarget(langValue);
       }}
       title={`Show ${language} code`}
@@ -93,7 +92,6 @@ export default function Playground({
   size = 'small',
   devicePreview,
   includeIonContent = true,
-  expandCodeByDefault = false,
 }: {
   code: { [key in UsageTarget]?: MdxContent | UsageTargetOptions };
   title?: string;
@@ -102,7 +100,6 @@ export default function Playground({
   description?: string;
   devicePreview?: boolean;
   includeIonContent: boolean;
-  expandCodeByDefault: boolean;
 }) {
   if (!code || Object.keys(code).length === 0) {
     console.warn('No code usage examples provided for this Playground example.');
@@ -120,11 +117,11 @@ export default function Playground({
    * or an explicit pixel value.
    */
   const frameSize = FRAME_SIZES[size] || size;
-  const [usageTarget, setUsageTarget] = useState(UsageTarget.JavaScript);
+  const [usageTarget, setUsageTarget] = useState(UsageTarget.Angular);
   const [mode, setMode] = useState(Mode.iOS);
-  const [codeExpanded, setCodeExpanded] = useState(expandCodeByDefault);
   const [codeSnippets, setCodeSnippets] = useState({});
   const [renderIframes, setRenderIframes] = useState(false);
+  const [iframesLoaded, setIframesLoaded] = useState(false);
 
   /**
    * Rather than encode isDarkTheme into the frame source
@@ -140,6 +137,17 @@ export default function Playground({
       frameMD.current.contentWindow.postMessage(message);
     }
   }, [isDarkTheme]);
+
+  /**
+   * The source of the iframe takes a moment to
+   * load, so a loading screen is shown by default.
+   * Once the source of the iframe loads we can
+   * hide the loading screen and show the inner content.
+   */
+  useEffect(async () => {
+    await Promise.all([waitForFrame(frameiOS.current), waitForFrame(frameMD.current)]);
+    setIframesLoaded(true);
+  }, [renderIframes]);
 
   useEffect(() => {
     /**
@@ -274,11 +282,16 @@ export default function Playground({
     const extension = fileName.slice(fileName.lastIndexOf('.') + 1);
     switch (extension) {
       case 'ts':
+      case 'tsx':
         return <IconTs />;
       case 'html':
         return <IconHtml />;
       case 'vue':
         return <IconVue />;
+      case 'css':
+        return <IconCss />;
+      default:
+        return <IconDefault />;
     }
   }
 
@@ -310,18 +323,27 @@ export default function Playground({
     }
   }
 
+  function renderLoadingScreen() {
+    return (
+      <div className="playground__loading">
+        <IconDots />
+      </div>
+    );
+  }
+
+  const sortedUsageTargets = useMemo(() => Object.keys(UsageTarget).sort(), []);
+
   return (
     <div className="playground" ref={hostRef}>
       <div className="playground__container">
         <div className="playground__control-toolbar">
           <div className="playground__control-group">
-            {Object.keys(UsageTarget).map((lang) => (
+            {sortedUsageTargets.map((lang) => (
               <CodeBlockButton
                 key={`code-block-${lang}`}
                 language={lang}
                 usageTarget={usageTarget}
                 setUsageTarget={setUsageTarget}
-                setCodeExpanded={setCodeExpanded}
               />
             ))}
           </div>
@@ -330,30 +352,6 @@ export default function Playground({
             <ControlButton isSelected={isMD} handleClick={() => setMode(Mode.MD)} title="MD mode" label="MD" />
           </div>
           <div className="playground__control-group playground__control-group--end">
-            <Tippy
-              theme="playground"
-              arrow={false}
-              placement="bottom"
-              content={codeExpanded ? 'Hide source code' : 'Show full source'}
-            >
-              <button
-                className="playground__icon-button playground__icon-button--primary"
-                aria-label={codeExpanded ? 'Hide source code' : 'Show full source'}
-                onClick={() => setCodeExpanded(!codeExpanded)}
-              >
-                <svg
-                  width="16"
-                  height="10"
-                  aria-hidden="true"
-                  viewBox="0 0 16 10"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path d="M5 9L1 5L5 1" stroke="current" strokeLinecap="round" strokeLinejoin="round" />
-                  <path d="M11 9L15 5L11 1" stroke="current" strokeLinecap="round" strokeLinejoin="round" />
-                </svg>
-              </button>
-            </Tippy>
             <Tippy theme="playground" arrow={false} placement="bottom" content="Open in StackBlitz">
               <button className="playground__icon-button playground__icon-button--primary" onClick={openEditor}>
                 <svg
@@ -451,6 +449,7 @@ export default function Playground({
         {renderIframes
           ? [
               <div className="playground__preview">
+                {!iframesLoaded && renderLoadingScreen()}
                 {/*
               We render two iframes, one for each mode.
               When the set mode changes, we hide one frame and
@@ -488,11 +487,7 @@ export default function Playground({
             ]
           : []}
       </div>
-      <div
-        ref={codeRef}
-        className={'playground__code-block ' + (codeExpanded ? 'playground__code-block--expanded' : '')}
-        aria-expanded={codeExpanded ? 'true' : 'false'}
-      >
+      <div ref={codeRef} className="playground__code-block">
         {renderCodeSnippets()}
       </div>
     </div>

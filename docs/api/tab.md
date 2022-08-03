@@ -43,9 +43,20 @@ See the [tabs documentation](tabs.md) for more details on configuring tabs.
 
 
 
+## Properties
 <Props />
+
+## Events
 <Events />
+
+## Methods
 <Methods />
+
+## CSS Shadow Parts
 <Parts />
+
+## CSS Custom Properties
 <CustomProps />
+
+## Slots
 <Slots />

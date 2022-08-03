@@ -200,9 +200,20 @@ export default defineComponent({
 
 </Tabs>
 
+## Properties
 <Props />
+
+## Events
 <Events />
+
+## Methods
 <Methods />
+
+## CSS Shadow Parts
 <Parts />
+
+## CSS Custom Properties
 <CustomProps />
+
+## Slots
 <Slots />
