@@ -95,6 +95,7 @@ const openAngularEditor = async (code: string, options?: EditorOptions) => {
       'src/app/app.component.html': app_component_html,
       'src/app/example.component.ts': example_component_ts,
       'src/app/example.component.html': code,
+      'src/app/example.component.css': '',
       'src/app/app.component.css': app_component_css,
       'src/index.html': '<app-root></app-root>',
       'src/styles.css': styles_css,
