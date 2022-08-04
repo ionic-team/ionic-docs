@@ -138,8 +138,8 @@ export default function Playground({
     }
   };
 
-  const handleFrameRef = (ref: HTMLIFrameElement, frameMode: 'iOS' | 'md') => {
-    if (frameMode === 'iOS') {
+  const handleFrameRef = (ref: HTMLIFrameElement, frameMode: 'ios' | 'md') => {
+    if (frameMode === 'ios') {
       frameiOS.current = ref;
     } else {
       frameMD.current = ref;
@@ -497,7 +497,7 @@ export default function Playground({
                   ? [
                       <div className={!isIOS ? 'frame-hidden' : 'frame-visible'}>
                         <device-preview mode="ios">
-                          <iframe height={frameSize} ref={ref => handleFrameRef(ref, 'iOS')} src={sourceiOS}></iframe>
+                          <iframe height={frameSize} ref={ref => handleFrameRef(ref, 'ios')} src={sourceiOS}></iframe>
                         </device-preview>
                       </div>,
                       <div className={!isMD ? 'frame-hidden' : 'frame-visible'}>
@@ -510,7 +510,7 @@ export default function Playground({
                       <iframe
                         height={frameSize}
                         className={!isIOS ? 'frame-hidden' : ''}
-                        ref={ref => handleFrameRef(ref, 'iOS')}
+                        ref={ref => handleFrameRef(ref, 'ios')}
                         src={sourceiOS}
                       ></iframe>,
                       <iframe
