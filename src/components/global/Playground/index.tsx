@@ -128,7 +128,7 @@ export default function Playground({
    * url, we post a message to each frame so that
    * dark mode can be enabled without a full page reload.
    */
-  useEffect(async () => {
+  const postDarkThemeMessage = async () => {
     if (frameiOS.current && frameMD.current) {
       await Promise.all([waitForFrame(frameiOS.current), waitForFrame(frameMD.current)]);
 
@@ -136,6 +136,32 @@ export default function Playground({
       frameiOS.current.contentWindow.postMessage(message);
       frameMD.current.contentWindow.postMessage(message);
     }
+  };
+
+  const handleFrameRef = (ref: HTMLIFrameElement, frameMode: 'iOS' | 'md') => {
+    if (frameMode === 'iOS') {
+      frameiOS.current = ref;
+    } else {
+      frameMD.current = ref;
+    }
+
+    /**
+     * If both frames are loaded, init the dark theme for the first page load.
+     * When dark mode is toggled after the fact, that's handled by the
+     * useEffect below.
+     */
+    if (frameiOS.current && frameMD.current) {
+      postDarkThemeMessage();
+    }
+  };
+
+  useEffect(() => {
+    /**
+     * Note that we can't just do useEffect(postDarkThemeMessage)
+     * because useEffect callbacks cannot return a Promise, as
+     * async functions do.
+     */
+    postDarkThemeMessage();
   }, [isDarkTheme]);
 
   /**
@@ -143,10 +169,17 @@ export default function Playground({
    * load, so a loading screen is shown by default.
    * Once the source of the iframe loads we can
    * hide the loading screen and show the inner content.
+   * 
+   * We call this as a local function because useEffect
+   * callbacks cannot return a Promise, as async functions do.
    */
-  useEffect(async () => {
-    await Promise.all([waitForFrame(frameiOS.current), waitForFrame(frameMD.current)]);
-    setIframesLoaded(true);
+  useEffect(() => {
+    const setFramesLoaded = async () => {
+      await Promise.all([waitForFrame(frameiOS.current), waitForFrame(frameMD.current)]);
+      setIframesLoaded(true);
+    };
+
+    setFramesLoaded();
   }, [renderIframes]);
 
   useEffect(() => {
@@ -464,12 +497,12 @@ export default function Playground({
                   ? [
                       <div className={!isIOS ? 'frame-hidden' : 'frame-visible'}>
                         <device-preview mode="ios">
-                          <iframe height={frameSize} ref={frameiOS} src={sourceiOS}></iframe>
+                          <iframe height={frameSize} ref={ref => handleFrameRef(ref, 'iOS')} src={sourceiOS}></iframe>
                         </device-preview>
                       </div>,
                       <div className={!isMD ? 'frame-hidden' : 'frame-visible'}>
                         <device-preview mode="md">
-                          <iframe height={frameSize} ref={frameMD} src={sourceMD}></iframe>
+                          <iframe height={frameSize} ref={ref => handleFrameRef(ref, 'md')} src={sourceMD}></iframe>
                         </device-preview>
                       </div>,
                     ]
@@ -477,13 +510,13 @@ export default function Playground({
                       <iframe
                         height={frameSize}
                         className={!isIOS ? 'frame-hidden' : ''}
-                        ref={frameiOS}
+                        ref={ref => handleFrameRef(ref, 'iOS')}
                         src={sourceiOS}
                       ></iframe>,
                       <iframe
                         height={frameSize}
                         className={!isMD ? 'frame-hidden' : ''}
-                        ref={frameMD}
+                        ref={ref => handleFrameRef(ref, 'md')}
                         src={sourceMD}
                       ></iframe>,
                     ]}
