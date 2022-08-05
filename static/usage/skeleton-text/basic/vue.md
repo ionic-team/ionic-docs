@@ -20,7 +20,7 @@
     </ion-list-header>
     <ion-item>
       <ion-thumbnail slot="start">
-        <ion-skeleton-text></ion-skeleton-text>
+        <ion-skeleton-text :animated="true"></ion-skeleton-text>
       </ion-thumbnail>
       <ion-label>
         <h3>
