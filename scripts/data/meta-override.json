@@ -600,6 +600,10 @@
       "title": "File Chooser | Opens File Picker on Android and Returns File URI",
       "description": "File Chooser opens the file picker on Android for the user to select a file and returns a file URI. Read for more about File Chooser installation and usage."
     },
+    "file-opener": {
+      "title": "File Opener - Plugin for Cordova | Ionic Documentation",
+      "description": "File opener2 plugin for Cordova opens files on your device file system with its default application. Learn more about installation and usage."
+    },
     "file-transfer": {
       "title": "File Transfer | Cordova Docs File Transfer Download Plugin",
       "description": "The Cordova File Transfer plug in allows you to upload and download docs files. This plugin is supported on iOS, Android, Windows, and more platforms."
