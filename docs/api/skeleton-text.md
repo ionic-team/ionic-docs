@@ -33,13 +33,11 @@ import Basic from '@site/static/usage/skeleton-text/basic/index.md';
 
 ## Customization
 
-### Animations
-
-TODO Playground
-
 ### Theming
 
-TODO Playground
+import Theming from '@site/static/usage/skeleton-text/theming/index.md';
+
+<Theming />
 
 ## Properties
 <Props />

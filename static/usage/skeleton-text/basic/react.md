@@ -37,7 +37,7 @@ function Example() {
           </IonListHeader>
           <IonItem>
             <IonThumbnail slot="start">
-              <IonSkeletonText></IonSkeletonText>
+              <IonSkeletonText animated={true}></IonSkeletonText>
             </IonThumbnail>
             <IonLabel>
               <h3>
