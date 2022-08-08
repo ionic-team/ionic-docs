@@ -2,6 +2,14 @@
 sidebar_label: Progressive Web Apps
 ---
 
+<head>
+  <title>Vue PWA | Add Progressive Web Apps to Vue.js Projects | Ionic</title>
+  <meta
+    name="description"
+    content="Run the 'vue add' command to install the progressive web app plugin. Learn more about how to add PWA to your existing Vue project."
+  />
+</head>
+
 # Progressive Web Apps in Vue
 
 ## Making your Vue app a PWA
