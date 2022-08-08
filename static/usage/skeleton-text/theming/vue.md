@@ -32,7 +32,7 @@
     IonSkeletonText,
     IonThumbnail,
   } from '@ionic/vue';
-  import { defineComponent, ref } from 'vue';
+  import { defineComponent } from 'vue';
 
   export default defineComponent({
     components: {
