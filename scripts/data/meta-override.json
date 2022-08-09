@@ -322,6 +322,10 @@
       "title": "Angular NG Build Configuration to Build Ionic Apps | ionic build",
       "description": "Build web assets and prepare your Ionic app for any platform targets. Ionic build uses the Angular CLI—see the ng build docs for how to use the configuration."
     },
+    "capacitor-build": {
+      "title": "Ionic Capacitor Build for Apps - Documentation",
+      "description": "Build an Ionic project for a given platform. Once Ionic Capacitor Build copies web assets into the native platform, you can build your app using the native IDE."
+    },
     "capacitor-copy": {
       "title": "Ionic Capacitor Copy - Options to Copy and Compile Web Assets",
       "description": "Perform an Ionic build, which compiles web assets and copies web assets to Capacitor native platform(s), with Ionic Capacitor Copy. Read to learn about options."
