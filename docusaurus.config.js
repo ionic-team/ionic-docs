@@ -24,6 +24,7 @@ module.exports = {
   organizationName: 'ionic-team',
   projectName: 'ionic-docs',
   themeConfig: {
+    metadata: [{ name: 'og:image', content: 'https://ionicframework.com/docs/img/meta/open-graph.png' }],
     colorMode: {
       defaultMode: 'light',
     },
