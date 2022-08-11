@@ -2,7 +2,6 @@
 title: Introduction to Ionic
 sidebar_label: Overview
 slug: /
-image: /img/meta/open-graph.png
 hide_table_of_contents: true
 demoUrl: https://docs-demo.ionic.io/
 demoSourceUrl: https://github.com/ionic-team/docs-demo
