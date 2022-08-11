@@ -24,7 +24,38 @@ module.exports = {
   organizationName: 'ionic-team',
   projectName: 'ionic-docs',
   themeConfig: {
-    metadata: [{ name: 'og:image', content: 'https://ionicframework.com/docs/img/meta/open-graph.png' }],
+    metadata: [
+      { name: 'og:image', content: 'https://ionicframework.com/docs/img/meta/open-graph.png' },
+      { name: 'twitter:image', content: 'https://ionicframework.com/docs/img/meta/open-graph.png' },
+      {
+        name: 'twitter:card',
+        content: 'summary_large_image',
+      },
+      {
+        name: 'twitter:domain',
+        content: 'ionicframework.com',
+      },
+      {
+        name: 'twitter:site',
+        content: '@ionicframework',
+      },
+      {
+        name: 'twitter:creator',
+        content: 'ionicframework',
+      },
+      {
+        name: 'fb:page_id',
+        content: '1321836767955949',
+      },
+      {
+        name: 'og:type',
+        content: 'website',
+      },
+      {
+        name: 'og:site_name',
+        content: 'Ionic Framework Docs',
+      },
+    ],
     colorMode: {
       defaultMode: 'light',
     },
