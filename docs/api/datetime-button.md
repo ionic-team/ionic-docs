@@ -21,27 +21,27 @@ import APITOCInline from '@components/page/api/APITOCInline';
 
 <EncapsulationPill type="shadow" />
 
-Datetime Button links with a [Datetime](./datetime) component to display the formatted date and time. It also provides buttons to present the datetime in a modal, popover, and more.
+Datetimeボタンは、[Datetime](./datetime) コンポーネントとリンクし、フォーマットされた日付と時刻を表示します。また、モーダルやポップオーバーなどで日時を表示するためのボタンも用意されています。
 
-## Overview
+## 概要
 
-Datetime Button should be used when space is constrained. This component displays buttons which show the current date and time values. When the buttons are tapped, the date or time pickers open in the overlay.
+Datetimeボタンは、スペースに制約がある場合に使用する必要があります。このコンポーネントは、現在の日付と時刻の値を表示するボタンを表示します。ボタンがタップされると、日付や時刻のピッカーがオーバーレイで表示されます。
 
-When using Datetime Button with a JavaScript framework such as Angular, React, or Vue be sure to use the [keepContentsMounted property on ion-modal](./modal#keepcontentsmounted) or the [keepContentsMounted property on ion-popover](./popover#keepcontentsmounted). This allows the linked datetime instance to be mounted even if the overlay has not been presented yet.
+Angular、React、VueなどのJavaScriptフレームワークでDatetime Buttonを使用する場合は、 [ion-modalのkeepContentsMountedプロパティ](./modal#keepcontentsmounted) または [ion-popover](./popover#keepcontentsmounted) を使用していることを確認してください。これにより、オーバーレイがまだ表示されていない場合でも、リンクされたdatetimeインスタンスがマウントされるようになります。
 
-## Basic Usage
+## 基本的な使い方
 
 import Basic from '@site/static/usage/datetime-button/basic/index.md';
 
 <Basic />
 
-## Localization
+## ローカライゼーション
 
 The localized text on `ion-datetime-button` is determined by the `locale` property on the associated `ion-datetime` instance. See [Datetime Localization](./datetime#localization) for more details.
 
-## Usage with Modals and Popovers
+## モーダルやポップオーバーと使う
 
-`ion-datetime-button` must be associated with a mounted `ion-datetime` instance. As a result, [Inline Modals](./modal#inline-modals-recommended) and [Inline Popovers](./popover#inline-popovers) with the `keepContentsMounted` property set to `true` must be used.
+`ion-datetime-button` は、マウントされた `ion-datetime` インスタンスと関連付ける必要があります。そのため、[Inline Modals](./modal#inline-modals-recommended) と [Inline Popovers](./popover#inline-popovers) は `keepContentsMounted` プロパティを `true` に設定して使用しなければなりません。
 
 <!--
 ## Customization
