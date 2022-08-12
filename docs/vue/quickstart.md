@@ -287,11 +287,7 @@ const routes: Array<RouteRecordRaw> = [
 
 最初に確認した `App` コンポーネントと同様に、特定のIonic Frameworkコンポーネントのインポート、Vueからのインポート、Vueコンポーネント、そして私たちのコンポーネントに合わせたスタイルがあります。
 
-<<<<<<< HEAD
 スタイルに `scoped` を指定していることに注目してください。つまり、ここで記述するスタイルは、このコンポーネントにのみ適用されます。これは、スタイルがコンポーネントから漏れてアプリケーションの他の部分に影響するのを防ぐのに役立ちます。Ionic Vueアプリケーションでは、 `scoped` のついたスタイルを使用することを強くお勧めします。
-=======
-For our styles, notice that we have specified our styles to be `scoped`. This means that the styles we write here will only apply to this component. This is useful for preventing styles from leaking out of a component and affecting other parts of your application. We strongly recommend using `scoped` styles for Ionic Vue applications.
->>>>>>> main
 
 `IonPage` はすべてのページ(route/URLを持つコンポーネント)の基本コンポーネントであり、header, title, contentコンポーネントなど、フルスクリーンコンポーネントの一般的な構成要素がいくつか含まれています。
 
