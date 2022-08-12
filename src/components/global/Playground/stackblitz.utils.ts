@@ -22,6 +22,12 @@ export interface EditorOptions {
     [key: string]: string;
   }
 
+  /**
+   * `true` if `ion-app` and `ion-content` should automatically be injected into the
+   * Stackblitz example.
+   */
+  includeIonContent: boolean;
+
   angularModuleOptions?: {
     imports: string[];
     declarations?: string[];
@@ -36,7 +42,7 @@ const loadSourceFiles = async (files: string[]) => {
 const openHtmlEditor = async (code: string, options?: EditorOptions) => {
   const [index_ts, index_html] = await loadSourceFiles([
     'html/index.ts',
-    'html/index.html',
+    options?.includeIonContent ? 'html/index.withContent.html' : 'html/index.html',
   ]);
 
   sdk.openProject({
@@ -44,8 +50,7 @@ const openHtmlEditor = async (code: string, options?: EditorOptions) => {
     title: options?.title ?? DEFAULT_EDITOR_TITLE,
     description: options?.description ?? DEFAULT_EDITOR_DESCRIPTION,
     files: {
-      // Injects our code sample into the body of the HTML document
-      'index.html': index_html.replace(/<body><\/body>/g, `<body>\n` + code + '</body>'),
+      'index.html': index_html.replace(/{{ TEMPLATE }}/g, code),
       'index.ts': index_ts,
       ...options?.files
     },
@@ -56,11 +61,13 @@ const openHtmlEditor = async (code: string, options?: EditorOptions) => {
 }
 
 const openAngularEditor = async (code: string, options?: EditorOptions) => {
-  let [main_ts, app_module_ts, app_component_ts, app_component_css, styles_css, global_css, angular_json, tsconfig_json] = await loadSourceFiles([
+  let [main_ts, app_module_ts, app_component_ts, app_component_css, app_component_html, example_component_ts, styles_css, global_css, angular_json, tsconfig_json] = await loadSourceFiles([
     'angular/main.ts',
     'angular/app.module.ts',
     'angular/app.component.ts',
     'angular/app.component.css',
+    options?.includeIonContent ? 'angular/app.component.withContent.html' : 'angular/app.component.html',
+    'angular/example.component.ts',
     'angular/styles.css',
     'angular/global.css',
     'angular/angular.json',
@@ -85,7 +92,10 @@ const openAngularEditor = async (code: string, options?: EditorOptions) => {
       'src/polyfills.ts': `import 'zone.js/dist/zone';`,
       'src/app/app.module.ts': app_module_ts,
       'src/app/app.component.ts': app_component_ts,
-      'src/app/app.component.html': code,
+      'src/app/app.component.html': app_component_html,
+      'src/app/example.component.ts': example_component_ts,
+      'src/app/example.component.html': code,
+      'src/app/example.component.css': '',
       'src/app/app.component.css': app_component_css,
       'src/index.html': '<app-root></app-root>',
       'src/styles.css': styles_css,
@@ -109,27 +119,13 @@ const openAngularEditor = async (code: string, options?: EditorOptions) => {
 }
 
 const openReactEditor = async (code: string, options?: EditorOptions) => {
-  /**
-   * This controls what the component is imported
-   * as. Since we use "export default" in the actual
-   * component template, this does not need to match
-   * up with the actual component name.
-   */
-  const componentTagName = 'Example';
-
   const [index_tsx, app_tsx, ts_config_json, package_json, package_lock_json] = await loadSourceFiles([
     'react/index.tsx',
-    'react/app.tsx',
+    options?.includeIonContent ? 'react/app.withContent.tsx' : 'react/app.tsx',
     'react/tsconfig.json',
     'react/package.json',
     'react/package-lock.json'
   ]);
-
-  const app_tsx_renamed = app_tsx
-    // Inserts the component name from the sample into the <IonApp> tag.
-    .replace(/<IonApp><\/IonApp>/g, `<IonApp><${componentTagName} /></IonApp>`)
-    // Imports the component from our `main` example file.
-    .replace(/setupIonicReact\(\);/g, `import ${componentTagName} from "./main";\n\n` + 'setupIonicReact();');
 
   sdk.openProject({
     template: 'node',
@@ -138,7 +134,7 @@ const openReactEditor = async (code: string, options?: EditorOptions) => {
     files: {
       'public/index.html': `<div id="root"></div>`,
       'src/index.tsx': index_tsx,
-      'src/App.tsx': app_tsx_renamed,
+      'src/App.tsx': app_tsx,
       'src/main.tsx': code,
       'tsconfig.json': ts_config_json,
       'package.json': package_json,
@@ -158,7 +154,7 @@ const openVueEditor = async (code: string, options?: EditorOptions) => {
     'vue/index.html',
     'vue/vite.config.ts',
     'vue/main.ts',
-    'vue/App.vue',
+    options?.includeIonContent ? 'vue/App.withContent.vue' : 'vue/App.vue',
     'vue/tsconfig.json',
     'vue/tsconfig.node.json',
     'vue/env.d.ts'

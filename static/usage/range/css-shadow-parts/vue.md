@@ -44,17 +44,15 @@
 </style>
 
 <template>
-  <ion-content class="ion-padding">
-    <ion-range :min="0" :max="10" :value="5" :pin="true" :ticks="true" :snaps="true"></ion-range>
-  </ion-content>
+  <ion-range :min="0" :max="10" :value="5" :pin="true" :ticks="true" :snaps="true"></ion-range>
 </template>
 
 <script lang="ts">
-  import { IonContent, IonRange } from '@ionic/vue';
+  import { IonRange } from '@ionic/vue';
   import { defineComponent } from 'vue';
 
   export default defineComponent({
-    components: { IonContent, IonRange },
+    components: { IonRange },
   });
 </script>
 ```

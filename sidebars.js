@@ -287,7 +287,7 @@ module.exports = {
       type: 'category',
       label: '日付 & タイムピッカー',
       collapsed: false,
-      items: ['api/datetime', 'api/picker'],
+      items: ['api/datetime', 'api/datetime-button', 'api/picker'],
     },
     {
       type: 'category',

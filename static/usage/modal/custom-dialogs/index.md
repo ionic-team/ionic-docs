@@ -7,7 +7,7 @@ import react_main_tsx from './react/main_tsx.md';
 import react_main_css from './react/main_css.md';
 
 import angular_css from './angular/angular_css.md';
-import angular_app_component_html from './angular/app_component_html.md';
+import angular_example_component_html from './angular/example_component_html.md';
 
 <Playground
   code={{
@@ -21,11 +21,12 @@ import angular_app_component_html from './angular/app_component_html.md';
     },
     angular: {
       files: {
-        'src/app/app.component.html': angular_app_component_html,
+        'src/app/example.component.html': angular_example_component_html,
         'src/global.css': angular_css,
       },
     },
   }}
   src="usage/modal/custom-dialogs/demo.html"
   devicePreview
+  includeIonContent={false}
 />

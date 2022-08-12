@@ -1,15 +1,11 @@
 ```tsx
 import React from 'react';
-import { IonContent, IonRange } from '@ionic/react';
+import { IonRange } from '@ionic/react';
 
 import './main.css';
 
 function Example() {
-  return (
-    <IonContent className="ion-padding">
-      <IonRange value={50} pin={true}></IonRange>
-    </IonContent>
-  );
+  return <IonRange value={50} pin={true}></IonRange>;
 }
 export default Example;
 ```

@@ -1,15 +1,13 @@
 ```html
-<ion-app>
-  <ion-header>
-    <ion-toolbar>
-      <ion-title>Controller Modal</ion-title>
-    </ion-toolbar>
-  </ion-header>
-  <ion-content class="ion-padding">
-    <ion-button expand="block" onclick="openModal()">Open</ion-button>
-    <p id="message">This modal example uses the modalController to present and dismiss modals.</p>
-  </ion-content>
-</ion-app>
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Controller Modal</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="ion-padding">
+  <ion-button expand="block" onclick="openModal()">Open</ion-button>
+  <p id="message">This modal example uses the modalController to present and dismiss modals.</p>
+</ion-content>
 
 <script>
   var openModal = async () => {

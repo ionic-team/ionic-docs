@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useMemo, useRef, useState } from 'react';
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import './playground.css';
@@ -91,6 +91,7 @@ export default function Playground({
   src,
   size = 'small',
   devicePreview,
+  includeIonContent = true,
 }: {
   code: { [key in UsageTarget]?: MdxContent | UsageTargetOptions };
   title?: string;
@@ -98,6 +99,7 @@ export default function Playground({
   size: string;
   description?: string;
   devicePreview?: boolean;
+  includeIonContent: boolean;
 }) {
   if (!code || Object.keys(code).length === 0) {
     console.warn('No code usage examples provided for this Playground example.');
@@ -115,7 +117,7 @@ export default function Playground({
    * or an explicit pixel value.
    */
   const frameSize = FRAME_SIZES[size] || size;
-  const [usageTarget, setUsageTarget] = useState(UsageTarget.JavaScript);
+  const [usageTarget, setUsageTarget] = useState(UsageTarget.Angular);
   const [mode, setMode] = useState(Mode.iOS);
   const [codeSnippets, setCodeSnippets] = useState({});
   const [renderIframes, setRenderIframes] = useState(false);
@@ -126,7 +128,7 @@ export default function Playground({
    * url, we post a message to each frame so that
    * dark mode can be enabled without a full page reload.
    */
-  useEffect(async () => {
+  const postDarkThemeMessage = async () => {
     if (frameiOS.current && frameMD.current) {
       await Promise.all([waitForFrame(frameiOS.current), waitForFrame(frameMD.current)]);
 
@@ -134,6 +136,32 @@ export default function Playground({
       frameiOS.current.contentWindow.postMessage(message);
       frameMD.current.contentWindow.postMessage(message);
     }
+  };
+
+  const handleFrameRef = (ref: HTMLIFrameElement, frameMode: 'ios' | 'md') => {
+    if (frameMode === 'ios') {
+      frameiOS.current = ref;
+    } else {
+      frameMD.current = ref;
+    }
+
+    /**
+     * If both frames are loaded, init the dark theme for the first page load.
+     * When dark mode is toggled after the fact, that's handled by the
+     * useEffect below.
+     */
+    if (frameiOS.current && frameMD.current) {
+      postDarkThemeMessage();
+    }
+  };
+
+  useEffect(() => {
+    /**
+     * Note that we can't just do useEffect(postDarkThemeMessage)
+     * because useEffect callbacks cannot return a Promise, as
+     * async functions do.
+     */
+    postDarkThemeMessage();
   }, [isDarkTheme]);
 
   /**
@@ -141,10 +169,17 @@ export default function Playground({
    * load, so a loading screen is shown by default.
    * Once the source of the iframe loads we can
    * hide the loading screen and show the inner content.
+   * 
+   * We call this as a local function because useEffect
+   * callbacks cannot return a Promise, as async functions do.
    */
-  useEffect(async () => {
-    await Promise.all([waitForFrame(frameiOS.current), waitForFrame(frameMD.current)]);
-    setIframesLoaded(true);
+  useEffect(() => {
+    const setFramesLoaded = async () => {
+      await Promise.all([waitForFrame(frameiOS.current), waitForFrame(frameMD.current)]);
+      setIframesLoaded(true);
+    };
+
+    setFramesLoaded();
   }, [renderIframes]);
 
   useEffect(() => {
@@ -201,14 +236,19 @@ export default function Playground({
    * Reloads the iOS and MD iframe sources back to their original state.
    */
   function resetDemo() {
-    frameiOS.current.contentWindow.location.reload();
-    frameMD.current.contentWindow.location.reload();
+    if (frameiOS.current) {
+      frameiOS.current.contentWindow.location.reload();
+    }
+    if (frameMD.current) {
+      frameMD.current.contentWindow.location.reload();
+    }
   }
 
   function openEditor(event) {
     const editorOptions: EditorOptions = {
       title,
       description,
+      includeIonContent,
     };
 
     let codeBlock;
@@ -322,16 +362,20 @@ export default function Playground({
 
   function renderLoadingScreen() {
     return (
-      <div class="playground__loading"><IconDots /></div>
-    )
+      <div className="playground__loading">
+        <IconDots />
+      </div>
+    );
   }
+
+  const sortedUsageTargets = useMemo(() => Object.keys(UsageTarget).sort(), []);
 
   return (
     <div className="playground" ref={hostRef}>
       <div className="playground__container">
         <div className="playground__control-toolbar">
           <div className="playground__control-group">
-            {Object.keys(UsageTarget).map((lang) => (
+            {sortedUsageTargets.map((lang) => (
               <CodeBlockButton
                 key={`code-block-${lang}`}
                 language={lang}
@@ -439,10 +483,11 @@ export default function Playground({
             </Tippy>
           </div>
         </div>
-        { renderIframes ? [
-          <div className="playground__preview">
-            {!iframesLoaded && renderLoadingScreen()}
-            {/*
+        {renderIframes
+          ? [
+              <div className="playground__preview">
+                {!iframesLoaded && renderLoadingScreen()}
+                {/*
               We render two iframes, one for each mode.
               When the set mode changes, we hide one frame and
               show the other. This is done to avoid flickering
@@ -452,12 +497,12 @@ export default function Playground({
                   ? [
                       <div className={!isIOS ? 'frame-hidden' : 'frame-visible'}>
                         <device-preview mode="ios">
-                          <iframe height={frameSize} ref={frameiOS} src={sourceiOS}></iframe>
+                          <iframe height={frameSize} ref={ref => handleFrameRef(ref, 'ios')} src={sourceiOS}></iframe>
                         </device-preview>
                       </div>,
                       <div className={!isMD ? 'frame-hidden' : 'frame-visible'}>
                         <device-preview mode="md">
-                          <iframe height={frameSize} ref={frameMD} src={sourceMD}></iframe>
+                          <iframe height={frameSize} ref={ref => handleFrameRef(ref, 'md')} src={sourceMD}></iframe>
                         </device-preview>
                       </div>,
                     ]
@@ -465,13 +510,13 @@ export default function Playground({
                       <iframe
                         height={frameSize}
                         className={!isIOS ? 'frame-hidden' : ''}
-                        ref={frameiOS}
+                        ref={ref => handleFrameRef(ref, 'ios')}
                         src={sourceiOS}
                       ></iframe>,
                       <iframe
                         height={frameSize}
                         className={!isMD ? 'frame-hidden' : ''}
-                        ref={frameMD}
+                        ref={ref => handleFrameRef(ref, 'md')}
                         src={sourceMD}
                       ></iframe>,
                     ]}
@@ -479,10 +524,7 @@ export default function Playground({
             ]
           : []}
       </div>
-      <div
-        ref={codeRef}
-        className='playground__code-block'
-      >
+      <div ref={codeRef} className="playground__code-block">
         {renderCodeSnippets()}
       </div>
     </div>
@@ -501,12 +543,17 @@ const waitForFrame = (frame: HTMLIFrameElement) => {
   if (isFrameReady(frame)) return Promise.resolve();
 
   return new Promise<void>((resolve) => {
-    frame.contentWindow.addEventListener('demoReady', () => {
-      resolve();
-    });
+    if (frame) {
+      frame.contentWindow.addEventListener('demoReady', () => {
+        resolve();
+      });
+    }
   });
 };
 
 const isFrameReady = (frame: HTMLIFrameElement) => {
+  if (!frame) {
+    return false;
+  }
   return (frame.contentWindow as any).demoReady === true;
 };

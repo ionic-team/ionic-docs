@@ -13,8 +13,14 @@ import '@ionic/react/css/text-alignment.css';
 import '@ionic/react/css/text-transformation.css';
 import '@ionic/react/css/flex-utils.css';
 
+import Example from './main';
+
 setupIonicReact();
 
 export default function App() {
-  return <IonApp></IonApp>;
+  return (
+    <IonApp>
+      <Example />
+    </IonApp>
+  );
 }

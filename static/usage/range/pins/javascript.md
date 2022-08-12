@@ -1,9 +1,5 @@
 ```html
-<ion-app>
-  <ion-content>
-    <ion-range pin="true"></ion-range>
-  </ion-content>
-</ion-app>
+<ion-range pin="true"></ion-range>
 
 <script>
   const range = document.querySelector('ion-range');

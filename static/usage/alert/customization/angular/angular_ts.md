@@ -3,10 +3,10 @@ import { Component } from '@angular/core';
 import { AlertController } from '@ionic/angular';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: 'app.component.html',
+  selector: 'app-example',
+  templateUrl: 'example.component.html',
 })
-export class AppComponent {
+export class ExampleComponent {
   constructor(private alertController: AlertController) {}
 
   async presentAlert() {
@@ -16,13 +16,13 @@ export class AppComponent {
       buttons: [
         {
           text: 'No',
-          cssClass: 'alert-button-cancel'
+          cssClass: 'alert-button-cancel',
         },
         {
           text: 'Yes',
-          cssClass: 'alert-button-confirm'
-        }
-      ]
+          cssClass: 'alert-button-confirm',
+        },
+      ],
     });
 
     await alert.present();

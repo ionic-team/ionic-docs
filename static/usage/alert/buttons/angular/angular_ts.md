@@ -3,10 +3,10 @@ import { Component } from '@angular/core';
 import { AlertController } from '@ionic/angular';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: 'app.component.html',
+  selector: 'app-example',
+  templateUrl: 'example.component.html',
 })
-export class AppComponent {
+export class ExampleComponent {
   handlerMessage = '';
   roleMessage = '';
 
@@ -19,14 +19,18 @@ export class AppComponent {
         {
           text: 'Cancel',
           role: 'cancel',
-          handler: () => { this.handlerMessage = 'Alert canceled'; }
+          handler: () => {
+            this.handlerMessage = 'Alert canceled';
+          },
         },
         {
           text: 'OK',
           role: 'confirm',
-          handler: () => { this.handlerMessage = 'Alert confirmed'; }
-        }
-      ]
+          handler: () => {
+            this.handlerMessage = 'Alert confirmed';
+          },
+        },
+      ],
     });
 
     await alert.present();

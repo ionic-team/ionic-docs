@@ -3,10 +3,10 @@ import { Component } from '@angular/core';
 import { AlertController } from '@ionic/angular';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: 'app.component.html',
+  selector: 'app-example',
+  templateUrl: 'example.component.html',
 })
-export class AppComponent {
+export class ExampleComponent {
   constructor(private alertController: AlertController) {}
 
   async presentAlert() {
@@ -17,19 +17,19 @@ export class AppComponent {
         {
           label: 'Red',
           type: 'radio',
-          value: 'red'
+          value: 'red',
         },
         {
           label: 'Blue',
           type: 'radio',
-          value: 'blue'
+          value: 'blue',
         },
         {
           label: 'Green',
           type: 'radio',
-          value: 'green'
-        }
-      ]
+          value: 'green',
+        },
+      ],
     });
 
     await alert.present();
