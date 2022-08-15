@@ -36,10 +36,6 @@ Nav is a standalone component for loading arbitrary components and pushing new c
 
 Unlike Router Outlet, Nav is not tied to a particular router. This means that if we load a Nav component, and push other components to the stack, they will not affect the app's overall router. This fits use cases where you could have a modal, which needs its own sub-navigation, without making it tied to the apps URL.
 
-## Using NavController
-
-TODO: Playground Example
-
 ## Using NavLink
 
 NavLink is a simplified API when interacting with Nav. Developers can customize the component, pass along component properties, modify the direction of the route animation or define a custom animation when navigating. 
@@ -50,22 +46,17 @@ import NavLinkExample from '@site/static/usage/nav/nav-link/index.md';
 
 ## Navigation within a Modal
 
+Modal can use Nav to offer a linear navigation that is independent of the URL.
 
-Modal experiences can use Nav to offer navigation within the overlay. This is useful for navigation that is independent of the apps URL.
+:::note
 
 The example below uses a reference to Nav and the public method APIs to push and pop views. It is recommended to use NavLink in implementations that do not require this level of granular access and control.
+
+:::
 
 import ModalNavigationExample from '@site/static/usage/nav/modal-navigation/index.md';
 
 <ModalNavigationExample />
-
-## Animations
-
-TODO: Playground Example
-
-## Event Handling
-
-TODO: Playground Example
 
 ## Interfaces
 
