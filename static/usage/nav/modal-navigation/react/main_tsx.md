@@ -37,7 +37,7 @@ function Example() {
           <IonTitle>Modal Navigation</IonTitle>
         </IonToolbar>
       </IonHeader>
-      <IonContent>
+      <IonContent className="ion-padding">
         <IonButton id="openModal">Open Modal</IonButton>
         <IonModal ref={modal} trigger="openModal" onDidPresent={didPresent}>
           <IonHeader>

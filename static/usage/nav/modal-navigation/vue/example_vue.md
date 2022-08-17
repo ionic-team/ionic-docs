@@ -6,7 +6,7 @@
         <ion-title>Modal Navigation</ion-title>
       </ion-toolbar>
     </ion-header>
-    <ion-content>
+    <ion-content class="ion-padding">
       <ion-button id="openModal">Open Modal</ion-button>
       <ion-modal ref="modal" trigger="openModal" @will-present="onWillPresent">
         <ion-header>

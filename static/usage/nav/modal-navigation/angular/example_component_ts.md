@@ -5,10 +5,10 @@ import { IonNav } from '@ionic/angular';
 import { PageOneComponent } from './page-one.component';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: 'app.component.html',
+  selector: 'app-example',
+  templateUrl: 'example.component.html',
 })
-export class AppComponent {
+export class ExampleComponent {
   @ViewChild('nav') private nav: IonNav;
 
   onWillPresent() {

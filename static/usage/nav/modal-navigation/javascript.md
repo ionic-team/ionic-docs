@@ -5,7 +5,7 @@
       <ion-title>Modal Navigation</ion-title>
     </ion-toolbar>
   </ion-header>
-  <ion-content>
+  <ion-content class="ion-padding">
     <ion-button id="openModal">Open Modal</ion-button>
     <ion-modal trigger="openModal">
       <ion-header>
