@@ -16,18 +16,18 @@ import angularTS from './angular/angular-ts.md';
     javascript,
     react: {
       files: {
-        'main.js': reactTS,
-        'main.css': reactCSS
-      }
+        'src/main.tsx': reactTS,
+        'src/main.css': reactCSS,
+      },
     },
     vue,
     angular: {
       files: {
-        'src/app/app.component.html': angularHTML,
-        'src/app/app.component.css': angularCSS,
-        'src/app/app.component.ts': angularTS
-      }
-    }
+        'src/app/example.component.html': angularHTML,
+        'src/app/example.component.css': angularCSS,
+        'src/app/example.component.ts': angularTS,
+      },
+    },
   }}
   src="usage/select/customization/styling-select/demo.html"
 />

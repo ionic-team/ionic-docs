@@ -1,9 +1,5 @@
 ```html
-<ion-app>
-  <ion-content class="ion-padding">
-    <ion-range min="0" max="10" value="5" pin="true" ticks="true" snaps="true"></ion-range>
-  </ion-content>
-</ion-app>
+<ion-range min="0" max="10" value="5" pin="true" ticks="true" snaps="true"></ion-range>
 
 <style>
   ion-range::part(tick) {
@@ -44,7 +40,7 @@
     background: #a2d2ff;
   }
 
-  ion-range::par(bar-active) {
+  ion-range::part(bar-active) {
     background: #bde0fe;
   }
 </style>

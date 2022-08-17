@@ -1,5 +1,4 @@
 ```html
-<ion-content>
   <ion-accordion-group animated="false">
     <ion-accordion value="first">
       <ion-item slot="header" color="light">
@@ -26,5 +25,4 @@
       </div>
     </ion-accordion>
   </ion-accordion-group>
-</ion-content>
 ```

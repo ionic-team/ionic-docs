@@ -13,12 +13,11 @@ import angularTS from './angular-ts.md';
     vue,
     angular: {
       files: {
-        'src/app/app.component.html': angularHTML,
-        'src/app/app.component.ts': angularTS
-      }
-    }
+        'src/app/example.component.html': angularHTML,
+        'src/app/example.component.ts': angularTS,
+      },
+    },
   }}
   size="320px"
   src="usage/accordion/listen-changes/demo.html"
-  expandCodeByDefault={true}
 />

@@ -3,9 +3,9 @@ import React, { useState } from 'react';
 import { IonItem, IonList, IonSelect, IonSelectOption } from '@ionic/react';
 
 function Example() {
-  const [logs, setLogs] = useState([]);
+  const [logs, setLogs] = useState<string[]>([]);
 
-  const pushLog = (msg) => {
+  const pushLog = (msg: string) => {
     setLogs([msg, ...logs]);
   };
 
@@ -26,7 +26,9 @@ function Example() {
         </IonItem>
       </IonList>
       <div className="ion-padding">
-        {logs.map((log) => <p>{log}</p>)}
+        {logs.map((log) => (
+          <p>{log}</p>
+        ))}
       </div>
     </>
   );

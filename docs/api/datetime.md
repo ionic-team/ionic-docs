@@ -34,6 +34,8 @@ import ShowingConfirmationButtons from '@site/static/usage/datetime/buttons/show
 import CustomizingButtons from '@site/static/usage/datetime/buttons/customizing-buttons/index.md';
 import CustomizingButtonTexts from '@site/static/usage/datetime/buttons/customizing-button-texts/index.md';
 
+import MultipleDateSelection from '@site/static/usage/datetime/multiple/index.md';
+
 import Theming from '@site/static/usage/datetime/theming/index.md';
 
 <head>
@@ -45,8 +47,6 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 import APITOCInline from '@components/page/api/APITOCInline';
 
 <EncapsulationPill type="shadow" />
-
-<h2 className="table-of-contents__title">Contents</h2>
 
 Datetimes present a calendar interface and time wheel, making it easy for users to select dates and times. Datetimes are similar to the native `input` elements of `datetime-local`, however, Ionic Framework's Datetime component makes it easy to display the date and time in the preferred format, and manage the datetime values.
 
@@ -68,10 +68,7 @@ for its value. The value is simply a string, rather than using JavaScript's
 `Date` object. Using the ISO datetime format makes it easy to serialize
 and parse within JSON objects and databases.
 
-An ISO format can be used as a simple year, or just the hour and minute, or get
-more detailed down to the millisecond and time zone. Any of the ISO formats below
-can be used, and after a user selects a new value, Ionic Framework will continue to use
-the same ISO format which datetime value was originally given as.
+Below are some examples of ISO 8601 formats that can be used with `ion-datetime`:
 
 | Description          | Format                 | Datetime Value Example        |
 | -------------------- | ---------------------- | ----------------------------  |
@@ -82,7 +79,6 @@ the same ISO format which datetime value was originally given as.
 | UTC Timezone         | YYYY-MM-DDTHH:mm:ssZ   | 1994-12-15T13:47:20Z          |
 | Timezone Offset      | YYYY-MM-DDTHH:mm:ssTZD | 1994-12-15T13:47:20+05:00     |
 | Hour and Minute      | HH:mm                  | 13:47                         |
-| Hour, Minute, Second | HH:mm:ss               | 13:47:20                      |
 
 Note that the year is always four-digits, milliseconds (if it's added) is always
 three-digits, and all others are always two-digits. So the number representing
@@ -90,9 +86,17 @@ January always has a leading zero, such as `01`. Additionally, the hour is
 always in the 24-hour format, so `00` is `12am` on a 12-hour clock, `13` means
 `1pm`, and `23` means `11pm`.
 
+:::note
+While seconds and milliseconds can be specified using the ISO 8601 datetime format, `ion-datetime` does not provide an interface for second and millisecond selection. Any second or millisecond values provided will be ignored.
+:::
+
 ## Basic Usage
 
 <Basic />
+
+## Usage with Datetime Button
+
+If you need to present a datetime in an overlay such as a modal or a popover, we recommend using [ion-datetime-button](./datetime-button). `ion-datetime-button` should be used when space is constrained. This component displays buttons which show the current date and time values. When the buttons are tapped, the date or time pickers open in the overlay.
 
 ## Date Constraints
 
@@ -209,11 +213,43 @@ This example shows a datetime with the `time` configuration.
 
 ### Date Selection
 
-Time selection is available by passing `date-time`, `time-date`, or `date` to the `presentation` property.
+Date selection is available by passing `date-time`, `time-date`, or `date` to the `presentation` property.
 
 This example shows a datetime with the `date` configuration.
 
 <Date />
+
+### Wheel Style Pickers
+
+By default, Ionic will prefer to show a grid style layout when using `presentation`. However, it is possible to show a wheel style using the `preferWheel` property. When `preferWheel` is `true`, Ionic will prefer to show the wheel style layout when possible.
+
+Certain `presentation` options have both grid and wheel styles that developers can choose from with the `preferWheel` property. Other `presentation` values only have a wheel style and will never show a grid style. The table below shows which `presentation` values have grid or wheel styles.
+
+| `presentation` | Has Grid Style? | Has Wheel Style? |
+| -------------- | --------------- | ---------------- |
+| `date`         | Yes             | Yes              |
+| `date-time`    | Yes             | Yes              |
+| `month`        | No              | Yes              |
+| `month-year`   | No              | Yes              |
+| `time`         | No              | Yes              |
+| `time-date`    | Yes             | Yes              |
+| `year`         | No              | Yes              |
+
+The example below shows the wheel picker with `presentation="date-time"`.
+
+import Wheel from '@site/static/usage/datetime/presentation/wheel/index.md';
+
+<Wheel />
+
+## Multiple Date Selection
+
+If the `multiple` property is set to `true`, multiple dates can be selected from the calendar picker. Clicking a selected date will deselect it.
+
+:::note
+This property is only supported when using `presentation="date"` and `preferWheel="false"`.
+:::
+
+<MultipleDateSelection />
 
 ## Titles
 
@@ -378,9 +414,20 @@ interface DatetimeCustomEvent extends CustomEvent {
 }
 ```
 
+## Properties
 <Props />
+
+## Events
 <Events />
+
+## Methods
 <Methods />
+
+## CSS Shadow Parts
 <Parts />
+
+## CSS Custom Properties
 <CustomProps />
+
+## Slots
 <Slots />

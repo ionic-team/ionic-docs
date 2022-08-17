@@ -1,31 +1,26 @@
 ```tsx
 import React, { useRef } from 'react';
-import { 
-  IonAccordion, 
-  IonAccordionGroup,
-  IonContent,
-  IonItem, 
-  IonLabel,
-  AccordionGroupCustomEvent
-} from '@ionic/react';
+import { IonAccordion, IonAccordionGroup, IonItem, IonLabel, AccordionGroupCustomEvent } from '@ionic/react';
 function Example() {
   const listenerOut = useRef<null | HTMLParagraphElement>(null);
   const values = ['first', 'second', 'third'];
   const accordionGroupChange = (ev: AccordionGroupCustomEvent) => {
     const nativeEl = listenerOut.current;
-    if (!nativeEl) { return; }
-    
-    const collapsedItems = values.filter(value => value !== ev.detail.value);
+    if (!nativeEl) {
+      return;
+    }
+
+    const collapsedItems = values.filter((value) => value !== ev.detail.value);
     const selectedValue = ev.detail.value;
-    
+
     nativeEl.innerText = `
       Expanded: ${selectedValue === undefined ? 'None' : ev.detail.value}
       Collapsed: ${collapsedItems.join(', ')}
-    ` 
-  }
-    
+    `;
+  };
+
   return (
-    <IonContent>
+    <>
       <IonAccordionGroup onIonChange={accordionGroupChange}>
         <IonAccordion value="first">
           <IonItem slot="header" color="light">
@@ -53,7 +48,7 @@ function Example() {
         </IonAccordion>
       </IonAccordionGroup>
       <p ref={listenerOut}></p>
-    </IonContent>
+    </>
   );
 }
 export default Example;

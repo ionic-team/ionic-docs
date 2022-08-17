@@ -41,9 +41,20 @@ For an example of how to use `ion-nav-link`, visit the [`ion-nav` docs](./nav#us
 
 
 
+## Properties
 <Props />
+
+## Events
 <Events />
+
+## Methods
 <Methods />
+
+## CSS Shadow Parts
 <Parts />
+
+## CSS Custom Properties
 <CustomProps />
+
+## Slots
 <Slots />

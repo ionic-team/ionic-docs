@@ -1,11 +1,11 @@
 ```tsx
 import React from 'react';
-import { IonBreadcrumb, IonBreadcrumbs, IonContent, IonIcon, IonLabel } from '@ionic/react';
+import { IonBreadcrumb, IonBreadcrumbs, IonIcon, IonLabel } from '@ionic/react';
 import { camera, film, flash, home } from 'ionicons/icons';
 
 function Example() {
   return (
-    <IonContent>
+    <>
       <IonLabel>Icons at Start</IonLabel>
       <IonBreadcrumbs>
         <IonBreadcrumb href="#home">
@@ -45,7 +45,7 @@ function Example() {
           <IonIcon slot="end" icon={film}></IonIcon>
         </IonBreadcrumb>
       </IonBreadcrumbs>
-    </IonContent>
+    </>
   );
 }
 export default Example;

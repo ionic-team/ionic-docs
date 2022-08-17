@@ -1,30 +1,28 @@
 ```html
-<ion-app>
-  <div class="ion-page">
-    <ion-header>
-      <ion-toolbar>
-        <ion-title>App</ion-title>
-      </ion-toolbar>
-    </ion-header>
-    <ion-content class="ion-padding">
-      <ion-button id="open-modal" expand="block">Open</ion-button>
+<div class="ion-page">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>App</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content class="ion-padding">
+    <ion-button id="open-modal" expand="block">Open</ion-button>
 
-      <ion-modal trigger="open-modal" swipe-to-close="true">
-        <ion-header>
-          <ion-toolbar>
-            <ion-title>Modal</ion-title>
-            <ion-buttons slot="end">
-              <ion-button onclick="dismiss()">Close</ion-button>
-            </ion-buttons>
-          </ion-toolbar>
-        </ion-header>
-        <ion-content class="ion-padding">
-          <p>You will be prompted when closing this modal.</p>
-        </ion-content>
-      </ion-modal>
-    </ion-content>
-  </div>
-</ion-app>
+    <ion-modal trigger="open-modal" swipe-to-close="true">
+      <ion-header>
+        <ion-toolbar>
+          <ion-title>Modal</ion-title>
+          <ion-buttons slot="end">
+            <ion-button onclick="dismiss()">Close</ion-button>
+          </ion-buttons>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content class="ion-padding">
+        <p>You will be prompted when closing this modal.</p>
+      </ion-content>
+    </ion-modal>
+  </ion-content>
+</div>
 
 <script>
   var modal = document.querySelector('ion-modal');

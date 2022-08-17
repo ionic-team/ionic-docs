@@ -6,8 +6,8 @@ import vue from './vue.md';
 import react_main_tsx from './react/main_tsx.md';
 import react_main_css from './react/main_css.md';
 
-import angular_app_component_css from './angular/app_component_css.md';
-import angular_app_component_html from './angular/app_component_html.md';
+import angular_global_css from './angular/global_css.md';
+import angular_example_component_html from './angular/example_component_html.md';
 
 <Playground
   code={{
@@ -21,11 +21,12 @@ import angular_app_component_html from './angular/app_component_html.md';
     },
     angular: {
       files: {
-        'src/app/app.component.html': angular_app_component_html,
-        'src/app/app.component.css': angular_app_component_css,
+        'src/app/example.component.html': angular_example_component_html,
+        'src/global.css': angular_global_css,
       },
     },
   }}
   src="usage/modal/styling/theming/demo.html"
   devicePreview
+  includeIonContent={false}
 />

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Accordion</title>
+    <link rel="stylesheet" href="../../common.css" />
+    <script src="../../common.js"></script>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core@6/dist/ionic/ionic.esm.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core@6/css/ionic.bundle.css" />
+
+    <style>
+      ion-list {
+        width: 300px;
+      }
+
+      .container {
+        flex-direction: column;
+      }
+    </style>
+  </head>
+  <body>
+    <ion-app>
+      <ion-content>
+        <div class="container">
+          <ion-list></ion-list><br />
+          <ion-button onclick="toggle()">Toggle</ion-button>
+        </div>
+      </ion-content>
+    </ion-app>
+
+    <script>
+      const list = document.querySelector('ion-list');
+      let loaded = false;
+      const toggle = () => {
+        if (loaded) {
+          setSkeletonText();
+        } else {
+          setContent();
+        }
+
+        loaded = !loaded;
+      }
+
+      const setSkeletonText = () => {
+        list.innerHTML = `
+          <ion-list-header>
+            <ion-skeleton-text animated="true" style="width: 80px"></ion-skeleton-text>
+          </ion-list-header>
+          <ion-item>
+            <ion-thumbnail slot="start">
+              <ion-skeleton-text animated="true"></ion-skeleton-text>
+            </ion-thumbnail>
+            <ion-label>
+              <h3>
+                <ion-skeleton-text animated="true" style="width: 80%;"></ion-skeleton-text>
+              </h3>
+              <p>
+                <ion-skeleton-text animated="true" style="width: 60%;"></ion-skeleton-text>
+              </p>
+              <p>
+                <ion-skeleton-text animated="true" style="width: 30%;"></ion-skeleton-text>
+              </p>
+            </ion-label>
+          </ion-item>
+        `;
+      }
+
+      const setContent = () => {
+        list.innerHTML = `
+          <ion-list-header>Albums</ion-list-header>
+          <ion-item>
+            <ion-thumbnail slot="start">
+              <ion-icon style="width: 100%; height: 100%" name="musical-notes"></ion-icon>
+            </ion-thumbnail>
+            <ion-label>
+              <h3>Abbey Road</h3>
+              <p>The Beatles</p>
+              <p>1969</p>
+            </ion-label>
+          </ion-item>
+        `;
+      }
+
+      setSkeletonText();
+
+    </script>
+  </body>
+</html>

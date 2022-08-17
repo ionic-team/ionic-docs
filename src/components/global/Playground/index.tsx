@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useMemo, useRef, useState } from 'react';
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import './playground.css';
@@ -11,7 +11,7 @@ import 'tippy.js/dist/tippy.css';
 import PlaygroundTabs from '../PlaygroundTabs';
 import TabItem from '@theme/TabItem';
 
-import { IconHtml, IconTs, IconVue } from './icons';
+import { IconHtml, IconTs, IconVue, IconDefault, IconCss, IconDots } from './icons';
 
 const ControlButton = ({ isSelected, handleClick, title, label }) => {
   return (
@@ -27,13 +27,12 @@ const ControlButton = ({ isSelected, handleClick, title, label }) => {
   );
 };
 
-const CodeBlockButton = ({ language, usageTarget, setUsageTarget, setCodeExpanded }) => {
+const CodeBlockButton = ({ language, usageTarget, setUsageTarget }) => {
   const langValue = UsageTarget[language];
   return (
     <ControlButton
       isSelected={usageTarget === langValue}
       handleClick={() => {
-        setCodeExpanded(true);
         setUsageTarget(langValue);
       }}
       title={`Show ${language} code`}
@@ -92,7 +91,7 @@ export default function Playground({
   src,
   size = 'small',
   devicePreview,
-  expandCodeByDefault = false,
+  includeIonContent = true,
 }: {
   code: { [key in UsageTarget]?: MdxContent | UsageTargetOptions };
   title?: string;
@@ -100,7 +99,7 @@ export default function Playground({
   size: string;
   description?: string;
   devicePreview?: boolean;
-  expandCodeByDefault: boolean
+  includeIonContent: boolean;
 }) {
   if (!code || Object.keys(code).length === 0) {
     console.warn('No code usage examples provided for this Playground example.');
@@ -118,17 +117,18 @@ export default function Playground({
    * or an explicit pixel value.
    */
   const frameSize = FRAME_SIZES[size] || size;
-  const [usageTarget, setUsageTarget] = useState(UsageTarget.JavaScript);
+  const [usageTarget, setUsageTarget] = useState(UsageTarget.Angular);
   const [mode, setMode] = useState(Mode.iOS);
-  const [codeExpanded, setCodeExpanded] = useState(expandCodeByDefault);
   const [codeSnippets, setCodeSnippets] = useState({});
+  const [renderIframes, setRenderIframes] = useState(false);
+  const [iframesLoaded, setIframesLoaded] = useState(false);
 
   /**
    * Rather than encode isDarkTheme into the frame source
    * url, we post a message to each frame so that
    * dark mode can be enabled without a full page reload.
    */
-  useEffect(async () => {
+  const postDarkThemeMessage = async () => {
     if (frameiOS.current && frameMD.current) {
       await Promise.all([waitForFrame(frameiOS.current), waitForFrame(frameMD.current)]);
 
@@ -136,7 +136,51 @@ export default function Playground({
       frameiOS.current.contentWindow.postMessage(message);
       frameMD.current.contentWindow.postMessage(message);
     }
+  };
+
+  const handleFrameRef = (ref: HTMLIFrameElement, frameMode: 'ios' | 'md') => {
+    if (frameMode === 'ios') {
+      frameiOS.current = ref;
+    } else {
+      frameMD.current = ref;
+    }
+
+    /**
+     * If both frames are loaded, init the dark theme for the first page load.
+     * When dark mode is toggled after the fact, that's handled by the
+     * useEffect below.
+     */
+    if (frameiOS.current && frameMD.current) {
+      postDarkThemeMessage();
+    }
+  };
+
+  useEffect(() => {
+    /**
+     * Note that we can't just do useEffect(postDarkThemeMessage)
+     * because useEffect callbacks cannot return a Promise, as
+     * async functions do.
+     */
+    postDarkThemeMessage();
   }, [isDarkTheme]);
+
+  /**
+   * The source of the iframe takes a moment to
+   * load, so a loading screen is shown by default.
+   * Once the source of the iframe loads we can
+   * hide the loading screen and show the inner content.
+   * 
+   * We call this as a local function because useEffect
+   * callbacks cannot return a Promise, as async functions do.
+   */
+  useEffect(() => {
+    const setFramesLoaded = async () => {
+      await Promise.all([waitForFrame(frameiOS.current), waitForFrame(frameMD.current)]);
+      setIframesLoaded(true);
+    };
+
+    setFramesLoaded();
+  }, [renderIframes]);
 
   useEffect(() => {
     /**
@@ -144,6 +188,33 @@ export default function Playground({
      * to create the custom element.
      */
     import('./device-preview.js').then((comp) => comp.defineCustomElement());
+  });
+
+  /**
+   * By default, we do not render the iframe content
+   * as it could cause delays on page load. Instead
+   * we wait for even 1 pixel of the playground to
+   * scroll into view (intersect with the viewport)
+   * before loading the iframes.
+   */
+  useEffect(() => {
+    const io = new IntersectionObserver(
+      (entries: IntersectionObserverEntry[]) => {
+        const ev = entries[0];
+        if (!ev.isIntersecting || renderIframes) return;
+
+        setRenderIframes(true);
+
+        /**
+         * Once the playground is loaded, it is never "unloaded"
+         * so we can safely disconnect the observer.
+         */
+        io.disconnect();
+      },
+      { threshold: 0 }
+    );
+
+    io.observe(hostRef.current!);
   });
 
   const isIOS = mode === Mode.iOS;
@@ -165,14 +236,19 @@ export default function Playground({
    * Reloads the iOS and MD iframe sources back to their original state.
    */
   function resetDemo() {
-    frameiOS.current.contentWindow.location.reload();
-    frameMD.current.contentWindow.location.reload();
+    if (frameiOS.current) {
+      frameiOS.current.contentWindow.location.reload();
+    }
+    if (frameMD.current) {
+      frameMD.current.contentWindow.location.reload();
+    }
   }
 
   function openEditor(event) {
     const editorOptions: EditorOptions = {
       title,
       description,
+      includeIonContent,
     };
 
     let codeBlock;
@@ -243,11 +319,16 @@ export default function Playground({
     const extension = fileName.slice(fileName.lastIndexOf('.') + 1);
     switch (extension) {
       case 'ts':
+      case 'tsx':
         return <IconTs />;
       case 'html':
         return <IconHtml />;
       case 'vue':
         return <IconVue />;
+      case 'css':
+        return <IconCss />;
+      default:
+        return <IconDefault />;
     }
   }
 
@@ -279,18 +360,27 @@ export default function Playground({
     }
   }
 
+  function renderLoadingScreen() {
+    return (
+      <div className="playground__loading">
+        <IconDots />
+      </div>
+    );
+  }
+
+  const sortedUsageTargets = useMemo(() => Object.keys(UsageTarget).sort(), []);
+
   return (
     <div className="playground" ref={hostRef}>
       <div className="playground__container">
         <div className="playground__control-toolbar">
           <div className="playground__control-group">
-            {Object.keys(UsageTarget).map((lang) => (
+            {sortedUsageTargets.map((lang) => (
               <CodeBlockButton
                 key={`code-block-${lang}`}
                 language={lang}
                 usageTarget={usageTarget}
                 setUsageTarget={setUsageTarget}
-                setCodeExpanded={setCodeExpanded}
               />
             ))}
           </div>
@@ -299,30 +389,6 @@ export default function Playground({
             <ControlButton isSelected={isMD} handleClick={() => setMode(Mode.MD)} title="MD mode" label="MD" />
           </div>
           <div className="playground__control-group playground__control-group--end">
-            <Tippy
-              theme="playground"
-              arrow={false}
-              placement="bottom"
-              content={codeExpanded ? 'Hide source code' : 'Show full source'}
-            >
-              <button
-                className="playground__icon-button playground__icon-button--primary"
-                aria-label={codeExpanded ? 'Hide source code' : 'Show full source'}
-                onClick={() => setCodeExpanded(!codeExpanded)}
-              >
-                <svg
-                  width="16"
-                  height="10"
-                  aria-hidden="true"
-                  viewBox="0 0 16 10"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path d="M5 9L1 5L5 1" stroke="current" strokeLinecap="round" strokeLinejoin="round" />
-                  <path d="M11 9L15 5L11 1" stroke="current" strokeLinecap="round" strokeLinejoin="round" />
-                </svg>
-              </button>
-            </Tippy>
             <Tippy theme="playground" arrow={false} placement="bottom" content="Open in StackBlitz">
               <button className="playground__icon-button playground__icon-button--primary" onClick={openEditor}>
                 <svg
@@ -417,47 +483,48 @@ export default function Playground({
             </Tippy>
           </div>
         </div>
-        <div className="playground__preview">
-          {/*
-            We render two iframes, one for each mode.
-            When the set mode changes, we hide one frame and
-            show the other. This is done to avoid flickering
-            and doing unnecessary reloads when switching modes.
-          */}
-          {devicePreview
-            ? [
-                <div className={!isIOS ? 'frame-hidden' : 'frame-visible'}>
-                  <device-preview mode="ios">
-                    <iframe height={frameSize} ref={frameiOS} src={sourceiOS}></iframe>
-                  </device-preview>
-                </div>,
-                <div className={!isMD ? 'frame-hidden' : 'frame-visible'}>
-                  <device-preview mode="md">
-                    <iframe height={frameSize} ref={frameMD} src={sourceMD}></iframe>
-                  </device-preview>
-                </div>,
-              ]
-            : [
-                <iframe
-                  height={frameSize}
-                  className={!isIOS ? 'frame-hidden' : ''}
-                  ref={frameiOS}
-                  src={sourceiOS}
-                ></iframe>,
-                <iframe
-                  height={frameSize}
-                  className={!isMD ? 'frame-hidden' : ''}
-                  ref={frameMD}
-                  src={sourceMD}
-                ></iframe>,
-              ]}
-        </div>
+        {renderIframes
+          ? [
+              <div className="playground__preview">
+                {!iframesLoaded && renderLoadingScreen()}
+                {/*
+              We render two iframes, one for each mode.
+              When the set mode changes, we hide one frame and
+              show the other. This is done to avoid flickering
+              and doing unnecessary reloads when switching modes.
+            */}
+                {devicePreview
+                  ? [
+                      <div className={!isIOS ? 'frame-hidden' : 'frame-visible'}>
+                        <device-preview mode="ios">
+                          <iframe height={frameSize} ref={ref => handleFrameRef(ref, 'ios')} src={sourceiOS}></iframe>
+                        </device-preview>
+                      </div>,
+                      <div className={!isMD ? 'frame-hidden' : 'frame-visible'}>
+                        <device-preview mode="md">
+                          <iframe height={frameSize} ref={ref => handleFrameRef(ref, 'md')} src={sourceMD}></iframe>
+                        </device-preview>
+                      </div>,
+                    ]
+                  : [
+                      <iframe
+                        height={frameSize}
+                        className={!isIOS ? 'frame-hidden' : ''}
+                        ref={ref => handleFrameRef(ref, 'ios')}
+                        src={sourceiOS}
+                      ></iframe>,
+                      <iframe
+                        height={frameSize}
+                        className={!isMD ? 'frame-hidden' : ''}
+                        ref={ref => handleFrameRef(ref, 'md')}
+                        src={sourceMD}
+                      ></iframe>,
+                    ]}
+              </div>,
+            ]
+          : []}
       </div>
-      <div
-        ref={codeRef}
-        className={'playground__code-block ' + (codeExpanded ? 'playground__code-block--expanded' : '')}
-        aria-expanded={codeExpanded ? 'true' : 'false'}
-      >
+      <div ref={codeRef} className="playground__code-block">
         {renderCodeSnippets()}
       </div>
     </div>
@@ -476,12 +543,17 @@ const waitForFrame = (frame: HTMLIFrameElement) => {
   if (isFrameReady(frame)) return Promise.resolve();
 
   return new Promise<void>((resolve) => {
-    frame.contentWindow.addEventListener('demoReady', () => {
-      resolve();
-    });
+    if (frame) {
+      frame.contentWindow.addEventListener('demoReady', () => {
+        resolve();
+      });
+    }
   });
 };
 
 const isFrameReady = (frame: HTMLIFrameElement) => {
+  if (!frame) {
+    return false;
+  }
   return (frame.contentWindow as any).demoReady === true;
 };

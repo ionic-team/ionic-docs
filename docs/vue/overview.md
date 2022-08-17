@@ -2,6 +2,14 @@
 sidebar_label: Overview
 ---
 
+<head>
+  <title>Ionic Vue Overview | Vue.js Framework Documentation</title>
+  <meta
+    name="description"
+    content="Read this overview to learn how Ionic Vue combines the core Ionic Framework with the tooling and APIs that are tailored to Vue.js developers."
+  />
+</head>
+
 import DocsCard from '@components/global/DocsCard';
 import DocsCards from '@components/global/DocsCards';
 

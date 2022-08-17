@@ -3,7 +3,7 @@ import React from 'react';
 import { IonButton, IonContent, IonPopover } from '@ionic/react';
 function Example() {
   return (
-    <IonContent>
+    <>
       <IonButton id="click-trigger">Left-Click Me</IonButton>
       <IonPopover trigger="click-trigger" triggerAction="click">
         <IonContent class="ion-padding">Hello World!</IonContent>
@@ -18,7 +18,7 @@ function Example() {
       <IonPopover trigger="hover-trigger" triggerAction="hover">
         <IonContent class="ion-padding">Hello World!</IonContent>
       </IonPopover>
-    </IonContent>
+    </>
   );
 }
 export default Example;

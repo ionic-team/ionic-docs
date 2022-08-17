@@ -1,10 +1,6 @@
 ```html
-<ion-app>
-  <ion-content>
-    <ion-range></ion-range>
-    <ion-label>ionChange emitted value: <span id="lastValue"></span></ion-label>
-  </ion-content>
-</ion-app>
+<ion-range></ion-range>
+<ion-label>ionChange emitted value: <span id="lastValue"></span></ion-label>
 
 <script>
   const range = document.querySelector('ion-range');

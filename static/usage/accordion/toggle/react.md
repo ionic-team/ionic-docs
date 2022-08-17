@@ -1,17 +1,12 @@
 ```tsx
 import React, { useRef } from 'react';
-import { 
-  IonAccordion, 
-  IonAccordionGroup,
-  IonButton,
-  IonContent,
-  IonItem, 
-  IonLabel
-} from '@ionic/react';
+import { IonAccordion, IonAccordionGroup, IonButton, IonItem, IonLabel } from '@ionic/react';
 function Example() {
   const accordionGroup = useRef<null | HTMLIonAccordionGroupElement>(null);
   const toggleAccordion = () => {
-    if (!accordionGroup.current) { return; }
+    if (!accordionGroup.current) {
+      return;
+    }
     const nativeEl = accordionGroup.current;
 
     if (nativeEl.value === 'second') {
@@ -19,9 +14,9 @@ function Example() {
     } else {
       nativeEl.value = 'second';
     }
-  }
+  };
   return (
-    <IonContent>
+    <>
       <IonAccordionGroup ref={accordionGroup}>
         <IonAccordion value="first">
           <IonItem slot="header" color="light">
@@ -49,7 +44,7 @@ function Example() {
         </IonAccordion>
       </IonAccordionGroup>
       <IonButton onClick={toggleAccordion}>Toggle Second Accordion</IonButton>
-    </IonContent>
+    </>
   );
 }
 export default Example;

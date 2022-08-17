@@ -110,9 +110,20 @@ const routeRedirect = document.querySelector('#tutorialRedirect');
 routeRedirect.setAttribute('to', isLoggedIn ? undefined : '/login');
 ```
 
+## Properties
 <Props />
+
+## Events
 <Events />
+
+## Methods
 <Methods />
+
+## CSS Shadow Parts
 <Parts />
+
+## CSS Custom Properties
 <CustomProps />
+
+## Slots
 <Slots />

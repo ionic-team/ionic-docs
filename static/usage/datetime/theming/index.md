@@ -7,21 +7,21 @@ import vue from './vue.md';
 import angularHTML from './angular-html.md';
 import angularCSS from './angular-css.md';
 
-<Playground 
-  size="450px" 
-  code={{ 
-    javascript, 
+<Playground
+  size="450px"
+  code={{
+    javascript,
     react: {
       files: {
-        'main.js': reactHTML,
-        'main.css': reactCSS
-      }
-    }, 
-    vue, 
+        'src/main.tsx': reactHTML,
+        'src/main.css': reactCSS,
+      },
+    },
+    vue,
     angular: {
       files: {
-        'src/app/app.component.html': angularHTML,
-        'src/styles.css': angularCSS
+        'src/app/example.component.html': angularHTML,
+        'src/global.css': angularCSS
       }
     }
   }} 
