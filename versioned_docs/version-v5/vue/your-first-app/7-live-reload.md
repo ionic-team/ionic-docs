@@ -125,7 +125,7 @@ Remember that removing the photo from the `photos` array triggers the `cachePhot
 
 ```tsx
 const cachePhotos = () => {
-  Storage.set({
+  Preferences.set({
     key: PHOTO_STORAGE,
     value: JSON.stringify(photos.value),
   });
