@@ -22,7 +22,8 @@ The current status of each Ionic Framework version is:
 
 | Version |        Status         |   Released   | Maintenance Ends | Ext. Support Ends |
 | :-----: | :-------------------: | :----------: | :--------------: | :---------------: |
-| V6      | **Active**            | Dec 8, 2021  | TBD              | TBD               |
+| V7      | **Active**            | TBD          | TBD              | TBD               |
+| V6      | Maintenance           | Dec 8, 2021  | TBD              | TBD               |
 | V5      | Extended Support Only | Feb 11, 2020 | June 8, 2022     | Dec 8, 2022       |
 | V4      | Extended Support Only | Jan 23, 2019 | Aug 11, 2020     | Sept 30, 2022     |
 | V3      | End of Support        | Apr 5, 2017  | Oct 30, 2019     | Aug 11, 2020      |
@@ -42,10 +43,11 @@ The Ionic team has compiled a set of recommendations for using the Ionic Framewo
 
 | Framework | Minimum Angular Version | Maximum Angular Version | TypeScript |
 | :-------: | :---------------------: | :---------------------: | :--------: |
-|    v6     |           v12           |          v14.x^         |    4.0+    |
-|    v5     |          v8.2           |          v12.x          |    3.5+    |
-|    v4     |          v8.2           |          v11.x          |    3.5+    |
-|    v3     |         v5.2.11         |         v5.2.11         |   2.6.2    |
+| v7        | v13                     | v14.x                   | 4.4+       |   
+| v6        | v12                     | v14.x^                  | 4.0+       |
+| v5        | v8.2                    | v12.x                   | 3.5+       |
+| v4        | v8.2                    | v11.x                   | 3.5+       |
+| v3        | v5.2.11                 | v5.2.11                 | 2.6.2      |
 
 > ^ Angular 14.x support was added in Ionic v6.1.9.
 
@@ -53,16 +55,18 @@ The Ionic team has compiled a set of recommendations for using the Ionic Framewo
 
 | Framework | Required React Version | TypeScript |
 | :-------: | :--------------------: | :--------: |
-|    v6     |          v17+          |    3.7+    |
-|    v5     |         v16.8+         |    3.7+    |
-|    v4     |         v16.8+         |    3.7+    |
+| v7        | v17+                   | 3.7+       |
+| v6        | v17+                   | 3.7+       |
+| v5        | v16.8+                 | 3.7+       |
+| v4        | v16.8+                 | 3.7+       |
 
 #### Ionic Vue
 
 | Framework | Required Vue Version | TypeScript |
 | :-------: | :------------------: | :--------: |
-|    v6     |       v3.0.6+        |    3.9+    |
-|    v5     |        v3.0+         |    3.9+    |
+| v7        | v3.0.6+              | 3.9+       |
+| v6        | v3.0.6+              | 3.9+       |
+| v5        | v3.0+                | 3.9+       |
 
 ### Native Bridges
 
