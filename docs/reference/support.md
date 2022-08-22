@@ -51,6 +51,10 @@ The Ionic team has compiled a set of recommendations for using the Ionic Framewo
 
 > ^ Angular 14.x support was added in Ionic v6.1.9.
 
+**Angular 13+ Support On Older Versions of iOS**
+
+Angular's support policy for iOS is the two most recent major versions. This means that changes to your Angular project may be necessary to use Ionic Angular v4-v6 on iOS 13. To support iOS 13, change the project `target` specified in `compilerOptions` in the tsconfig.json to `es5`. Without this change an error of `Unexpected token '.' in promiseReactionJob` will occur on app startup in iOS 13.
+
 #### Ionic React
 
 | Framework | Required React Version | TypeScript |
