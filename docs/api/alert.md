@@ -162,7 +162,7 @@ import Customization from '@site/static/usage/alert/customization/index.md';
 
 ## Accessibility
 
-Ionic automatically sets the Alert's `role` to either `alertdialog` or `alert`, depending on whether any buttons or inputs are included.
+Ionic automatically sets the Alert's `role` to either [`alertdialog`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/alertdialog_role) if there are any inputs or buttons included, or [`alert`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/alert_role) if there are none.
 
 If the `header` property is defined for the Alert, the `aria-labelledby` attribute will be automatically set to the header's ID. The `subHeader` element will be used as a fallback if `header` is not defined. Similarly, the `aria-describedby` attribute will be automatically set to the ID of the `message` element if that property is defined.
 
