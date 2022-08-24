@@ -344,7 +344,7 @@ module.exports = {
       type: 'category',
       label: 'List',
       collapsed: false,
-      items: ['api/list', 'api/list-header', 'api/virtual-scroll'],
+      items: ['api/list', 'api/list-header'],
     },
     {
       type: 'category',
