@@ -61,6 +61,34 @@ Infinite scroll requires a scroll container to function. When using a virtual sc
 </ion-content>
 ```
 
+## Accessibility
+
+Developers should assign the `role="feed"` attribute to the scrollable list of items that are added to or removed from as the user scrolls.
+
+Individual list items should either have `role="article"` or use the `<article>` element directly.
+
+For example, when rendering a collection of items in an `ion-list`:
+
+```html
+<ion-content role="feed">
+  <ion-list>
+    <ion-item role="article">
+      First item
+    </ion-item>
+    <ion-item role="article">
+      Second item
+    </ion-item>
+    ...
+  </ion-list>
+
+  <ion-infinite-scroll>
+    <ion-infinite-scroll-content></ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+</ion-content>
+```
+
+Please refer to the [ARIA: feed role](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/feed_role) documentation for additional information.
+
 ## Interfaces
 
 ### InfiniteScrollCustomEvent
