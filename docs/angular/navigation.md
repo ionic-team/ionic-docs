@@ -181,13 +181,13 @@ Here, we have a typical Angular Module setup, along with a RouterModule import, 
 
 :::caution Experimental API
 
-Standalone components is an experimental API introduced into Angular 14.x and available in Ionic 6.3 and later.
+Standalone components is an experimental API introduced in Angular 14.x and available in Ionic 6.3 and later.
 
 :::
 
-Standalone components allows developers to lazy load a component on a route without having to declare the component to an Angular module first.
+Standalone components allow developers to lazy load a component on a route without having to declare the component to an Angular module.
 
-To use standalone components with routing and Ionic Framework, you must first be on Ionic ^6.3.0 when the experimental API support was introduced. This experimental API requires developers to assign the `EnvironmentInjector` instance for each router outlet (`ion-router-outlet` and `ion-tabs`) that uses standalone component routing.
+To use standalone components with routing and Ionic Framework, you must first be on Ionic ^6.3.0. The experimental API requires developers to assign the `EnvironmentInjector` instance for each router outlet (`ion-router-outlet` and `ion-tabs`) that uses standalone component routing.
 
 ```ts title="app.component.ts"
 import { Component, EnvironmentInjector } from '@angular/core';
@@ -203,6 +203,8 @@ export class AppComponent {
 
 ```html title="app.component.html"
 <ion-router-outlet [environmentInjector]="environmentInjector"></ion-router-outlet>
+<!-- or if you are using ion-tabs -->
+<ion-tabs [environmentInjector]="environmentInjector"> ... </ion-tabs>
 ```
 
 Developers can use the existing syntax for standalone component routing from Angular:
