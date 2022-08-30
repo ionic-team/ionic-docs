@@ -6,9 +6,9 @@ sidebar_label: Loading Photos
 
 We’ve implemented photo taking and saving to the filesystem. There’s one last piece of functionality missing: the photos are stored in the filesystem, but we need a way to save pointers to each file so that they can be displayed again in the photo gallery.
 
-Fortunately, this is easy: we’ll leverage the Capacitor [Storage API](https://capacitor.ionicframework.com/docs/apis/storage) to store our array of Photos in a key-value store.
+Fortunately, this is easy: we’ll leverage the Capacitor [Preferences API](https://capacitor.ionicframework.com/docs/apis/preferences) to store our array of Photos in a key-value store.
 
-## Storage API
+## Preferences API
 
 Begin by defining a constant variable that will act as the key for the store at the top of the `usePhotoGallery` function in `src/composables/usePhotoGallery.ts`:
 
@@ -16,11 +16,11 @@ Begin by defining a constant variable that will act as the key for the store at 
 const PHOTO_STORAGE = 'photos';
 ```
 
-Next, add a `cachePhotos` function that saves the Photos array as JSON to file storage:
+Next, add a `cachePhotos` function that saves the Photos array as JSON to preferences:
 
 ```tsx
 const cachePhotos = () => {
-  Storage.set({
+  Preferences.set({
     key: PHOTO_STORAGE,
     value: JSON.stringify(photos.value),
   });
@@ -33,14 +33,14 @@ Next, use the Vue [watch function](https://v3.vuejs.org/guide/composition-api-in
 watch(photos, cachePhotos);
 ```
 
-Now that the photo array data is saved, create a function to retrieve the data when Tab2 loads. First, retrieve photo data from Storage, then each photo's data into base64 format:
+Now that the photo array data is saved, create a function to retrieve the data when Tab2 loads. First, retrieve photo data from Preferences, then each photo's data into base64 format:
 
 ```tsx
 const loadSaved = async () => {
-  const photoList = await Storage.get({ key: PHOTO_STORAGE });
-  const photosInStorage = photoList.value ? JSON.parse(photoList.value) : [];
+  const photoList = await Preferences.get({ key: PHOTO_STORAGE });
+  const photosInPreferences = photoList.value ? JSON.parse(photoList.value) : [];
 
-  for (const photo of photosInStorage) {
+  for (const photo of photosInPreferences) {
     const file = await Filesystem.readFile({
       path: photo.filepath,
       directory: Directory.Data,
@@ -48,7 +48,7 @@ const loadSaved = async () => {
     photo.webviewPath = `data:image/jpeg;base64,${file.data}`;
   }
 
-  photos.value = photosInStorage;
+  photos.value = photosInPreferences;
 };
 ```
 

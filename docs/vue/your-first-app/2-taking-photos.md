@@ -20,7 +20,7 @@ We will start by importing the various utilities we will use from Vue core and C
 import { ref, onMounted, watch } from 'vue';
 import { Camera, CameraResultType, CameraSource, Photo } from '@capacitor/camera';
 import { Filesystem, Directory } from '@capacitor/filesystem';
-import { Storage } from '@capacitor/storage';
+import { Preferences } from '@capacitor/preferences';
 ```
 
 Next, create a function named usePhotoGallery:
