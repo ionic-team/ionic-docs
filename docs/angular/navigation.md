@@ -181,7 +181,7 @@ Here, we have a typical Angular Module setup, along with a RouterModule import, 
 
 :::caution Experimental API
 
-Standalone components is an experimental API introduced in Angular 14.x and available in Ionic 6.3 and later.
+Standalone components is an experimental API introduced in Angular 14.x and available in Ionic 6.3 and later. This feature may change before it is stable.
 
 :::
 
