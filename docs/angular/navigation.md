@@ -193,7 +193,7 @@ To use standalone components with routing and Ionic Framework, you must first be
 import { Component, EnvironmentInjector } from '@angular/core';
 
 @Component({
-  selector: 'app-cmp',
+  selector: 'app-root',
   template: 'app.component.html',
 })
 export class AppComponent {
