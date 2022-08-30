@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Toast</title>
+  <link rel="stylesheet" href="../../common.css" />
+  <script src="../../common.js"></script>
+  <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core@6/dist/ionic/ionic.esm.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core@6/css/ionic.bundle.css" />
+
+  <style>
+    ion-toast.custom-toast {
+      --background: darkblue;
+      --button-color: lightblue;
+      --color: white;
+    }
+    
+    ion-toast.custom-toast::part(message) {
+      font-style: italic;
+    }
+
+    ion-toast.custom-toast::part(button) {
+      border-left: 1px solid white;
+    }
+  </style>
+</head>
+
+<body>
+  <ion-app>
+    <ion-content>
+      <div class="container">
+        <ion-button onclick="presentToast()">Click Me</ion-button>
+      </div>
+    </ion-content>
+  </ion-app>
+
+  <script>
+    async function presentToast() {
+      const toast = document.createElement('ion-toast');
+      toast.message = 'Hello Styled World!';
+      toast.duration = 3000;
+      toast.cssClass = 'custom-toast';
+      toast.buttons = [
+        {
+          text: 'Dismiss',
+          role: 'cancel'
+        }
+      ];
+
+      document.body.appendChild(toast);
+      await toast.present();
+    }
+  </script>
+</body>
+
+</html>
