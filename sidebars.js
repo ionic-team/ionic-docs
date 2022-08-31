@@ -441,12 +441,6 @@ module.exports = {
     },
     {
       type: 'category',
-      label: 'Slides',
-      collapsed: false,
-      items: ['api/slides', 'api/slide'],
-    },
-    {
-      type: 'category',
       label: 'Tabs',
       collapsed: false,
       items: ['api/tabs', 'api/tab', 'api/tab-bar', 'api/tab-button'],
