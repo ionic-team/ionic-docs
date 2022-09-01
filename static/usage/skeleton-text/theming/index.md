@@ -22,8 +22,8 @@ import angularCSS from './angular/angular-css.md';
     vue,
     angular: {
       files: {
-        'src/app/app.component.html': angularHTML,
-        'src/app/app.component.css': angularCSS
+        'src/app/example.component.html': angularHTML,
+        'src/app/example.component.css': angularCSS
       }
     },
   }}
