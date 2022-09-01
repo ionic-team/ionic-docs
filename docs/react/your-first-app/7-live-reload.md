@@ -91,7 +91,7 @@ const deletePhoto = async (photo: UserPhoto) => {
   const newPhotos = photos.filter((p) => p.filepath !== photo.filepath);
 
   // Update photos array cache by overwriting the existing photo array
-  Storage.set({ key: PHOTO_STORAGE, value: JSON.stringify(newPhotos) });
+  Preferences.set({ key: PHOTO_STORAGE, value: JSON.stringify(newPhotos) });
 
   // delete photo file from filesystem
   const filename = photo.filepath.substr(photo.filepath.lastIndexOf('/') + 1);
@@ -103,7 +103,7 @@ const deletePhoto = async (photo: UserPhoto) => {
 };
 ```
 
-The selected photo is removed from the Photos array first. Then, we use the Capacitor Storage API to update the cached version of the Photos array. Finally, we delete the actual photo file itself using the Filesystem API.
+The selected photo is removed from the Photos array first. Then, we use the Capacitor Preferences API to update the cached version of the Photos array. Finally, we delete the actual photo file itself using the Filesystem API.
 
 Make sure to return the `deletePhoto` function so it is as a part of the hook API that we expose:
 

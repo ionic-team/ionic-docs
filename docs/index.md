@@ -2,7 +2,6 @@
 title: Ionicの紹介
 sidebar_label: 概要
 slug: /
-image: /img/meta/open-graph.png
 hide_table_of_contents: true
 demoUrl: https://docs-demo.ionic.io/
 demoSourceUrl: https://github.com/ionic-team/docs-demo
@@ -15,7 +14,7 @@ import DocsCards from '@components/global/DocsCards';
   <title>モバイルとディスクトップアプリをつくるためのオープンソースのUIキット</title>
   <meta
     name="description"
-    content="Ionic Framework is an open-source UI toolkit to create your own mobile and desktop apps using web technologies with integrations for popular frameworks."
+    content="Ionic Framework is an open-source UI toolkit to create your own mobile apps using web technologies with integrations for popular frameworks."
   />
   <link rel="canonical" href="https://ionicframework.com/docs" />
   <link rel="alternate" href="https://ionicframework.com/docs" hreflang="x-default" />

@@ -29,7 +29,7 @@ import { isPlatform } from '@ionic/react';
 
 import { Camera, CameraResultType, CameraSource, Photo } from '@capacitor/camera';
 import { Filesystem, Directory } from '@capacitor/filesystem';
-import { Storage } from '@capacitor/storage';
+import { Preferences } from '@capacitor/preferences';
 import { Capacitor } from '@capacitor/core';
 ```
 

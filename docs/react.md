@@ -3,7 +3,6 @@ title: Ionic React
 sidebar_label: 概要
 hide_title: true
 hide_table_of_contents: true
-image: /img/meta/open-graph.png
 ---
 
 import PageStyles from '@components/page/react/PageStyles';

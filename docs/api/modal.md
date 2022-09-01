@@ -228,6 +228,11 @@ interface ModalCustomEvent extends CustomEvent {
 | ----- | ------------------- |
 | `Esc` | Dismisses the modal |
 
+
+### ラベル
+
+モーダルには [`dialog`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/dialog_role) という役割があります。そのため、開発者はモーダルに適切なラベル付けを行う必要があります。モーダルが `ion-title` を使用している場合、 `ion-modal` で [`aria-labelledby`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-labelledby) を設定すると、内部のテキストをモーダル自体のラベルに使用することができます。モーダルに追加の説明テキストが含まれている場合、このテキストは [`aria-describedby`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-describedby) を使ってモーダルと関連付けることができます。
+
 ### スクリーンリーダー
 
 モーダルには `aria-modal` 属性が適用されています。この属性は、支援技術によるナビゲーションをモーダル要素のコンテンツに制限させることがあります。その結果、次や前の項目に移動するジェスチャを使用しても、モーダルの外側の要素にフォーカスが当たらない場合があります。これは、`backdropBreakpoint` プロパティを使用して、シート モーダルでバックドロップを無効にした場合にも当てはまります。

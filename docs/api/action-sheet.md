@@ -72,6 +72,11 @@ CSSカスタムプロパティ](#css-custom-properties)は、個々の要素を�
 IonicのAngularアプリを構築する場合、スタイルはグローバルなスタイルシートファイルに追加する必要があります。詳しくは、以下のAngularセクションの [Style Placement](#style-placement) をお読みください。
 :::
 
+## Accessibility
+
+Action Sheets are given a `role` of [`dialog`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/dialog_role). In order to align with the ARIA spec, either the `aria-label` or `aria-labelledby` attribute must be set.
+
+It is strongly recommended that every Action Sheet have the `header` property defined, as Ionic will automatically set `aria-labelledby` to point to the header element. However, if you choose not to include a `header`, an alternative is to use the `htmlAttributes` property to provide a descriptive `aria-label` or set a custom `aria-labelledby` value.
 
 ## Interfaces
 
