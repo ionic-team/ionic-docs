@@ -2,13 +2,13 @@ import Playground from '@site/src/components/global/Playground';
 
 import javascript from './javascript.md';
 
-import reactTSX from './react/react-tsx.md';
-import reactCSS from './react/react-css.md';
+import reactTSX from './react/main_tsx.md';
+import reactCSS from './react/main_css.md';
 
 import vue from './vue.md';
 
-import angularHTML from './angular/angular-html.md';
-import angularCSS from './angular/angular-css.md';
+import angularHTML from './angular/example_component_html.md';
+import angularCSS from './angular/example_component_css.md';
 
 <Playground
   code={{
@@ -22,8 +22,8 @@ import angularCSS from './angular/angular-css.md';
     vue,
     angular: {
       files: {
-        'src/app/app.component.html': angularHTML,
-        'src/app/app.component.css': angularCSS
+        'src/app/example.component.html': angularHTML,
+        'src/app/example.component.css': angularCSS
       }
     },
   }}
