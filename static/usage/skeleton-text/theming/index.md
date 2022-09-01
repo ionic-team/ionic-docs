@@ -27,6 +27,6 @@ import angularCSS from './angular/angular-css.md';
       }
     },
   }}
-  src="usage/skeleton-text/theming/demo.html"
+  src="usage/skeleton-text/theming/demo.html" 
   size="250px"
 />
