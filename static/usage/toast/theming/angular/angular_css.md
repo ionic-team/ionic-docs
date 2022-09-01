@@ -2,7 +2,7 @@
 ion-toast.custom-toast {
   --background: #F4F4FA;
   --box-shadow: 3px 3px 10px 0 rgba(0, 0, 0, 0.2);
-  --color: #908F96;
+  --color: #4b4a50;
 }
     
 ion-toast.custom-toast::part(message) {
