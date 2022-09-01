@@ -2,8 +2,8 @@ import Playground from '@site/src/components/global/Playground';
 
 import javascript from './javascript.md';
 
-import reactTSX from './react/main-tsx.md';
-import reactCSS from './react/main-css.md';
+import reactTSX from './react/main_tsx.md';
+import reactCSS from './react/main_css.md';
 
 import vue from './vue.md';
 
