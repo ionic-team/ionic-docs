@@ -7,7 +7,7 @@ function Example() {
     <>
       <IonItem>
         <IonThumbnail slot="start">
-          <img src="https://ionicframework.com/docs/demos/api/thumbnail/thumbnail.svg" />
+          <img alt="Silhouette of mountains" src="https://ionicframework.com/docs/demos/api/thumbnail/thumbnail.svg" />
         </IonThumbnail>
         <IonLabel>Item Thumbnail</IonLabel>
       </IonItem>
