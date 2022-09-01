@@ -30,7 +30,9 @@ import Basic from '@site/static/usage/checkbox/basic/index.md';
 
 ## Indeterminate Checkboxes
 
-TODO Playground
+import Indeterminate from '@site/static/usage/checkbox/indeterminate/index.md';
+
+<Indeterminate />
 
 ## Theming
 
