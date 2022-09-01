@@ -73,9 +73,9 @@ import PopoverOnClick from '@site/static/usage/breadcrumbs/collapsing-items/popo
 
 <PopoverOnClick />
 
-## Styling
+## Theming
 
-## Color Property
+### Color Property
 
 import ColorProp from '@site/static/usage/breadcrumbs/styling/color/index.md';
 
