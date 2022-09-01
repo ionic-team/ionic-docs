@@ -1,5 +1,5 @@
 ```tsx
-import React, { useState } from 'react';
+import React from 'react';
 import { IonButton, useIonToast } from '@ionic/react';
 import { globe } from 'ionicons/icons';
 
