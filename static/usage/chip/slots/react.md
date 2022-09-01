@@ -8,7 +8,7 @@ function Example() {
     <>
       <IonChip>
         <IonAvatar>
-          <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y" />
+          <img src="https://ionicframework.com/docs/demos/api/avatar/avatar.svg" />
         </IonAvatar>
         <IonLabel>Avatar Chip</IonLabel>
         <IonIcon icon={closeCircle}></IonIcon>

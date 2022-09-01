@@ -2,7 +2,7 @@
 <template>
   <ion-chip>
     <ion-avatar>
-      <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y" />
+      <img src="https://ionicframework.com/docs/demos/api/avatar/avatar.svg" />
     </ion-avatar>
     <ion-label>Avatar Chip</ion-label>
     <ion-icon :icon="closeCircle"></ion-icon>
