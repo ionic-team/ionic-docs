@@ -7,5 +7,5 @@ import angular from './angular.md';
 
 <Playground
   code={{ javascript, react, vue, angular }}
-  src="usage/breadcrumbs/styling/color/demo.html"
+  src="usage/breadcrumbs/theming/color/demo.html"
 />
