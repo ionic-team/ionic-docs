@@ -81,7 +81,7 @@ import ColorProp from '@site/static/usage/breadcrumbs/styling/color/index.md';
 
 <ColorProp />
 
-## CSS Properties
+### CSS Properties
 
 import CSSProps from '@site/static/usage/breadcrumbs/styling/css-props/index.md';
 
