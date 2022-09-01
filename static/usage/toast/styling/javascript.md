@@ -3,18 +3,18 @@
 
 <script>
   async function presentToast() {
-    const toast = document.createElement('ion-toast');
-    toast.message = 'Hello Styled World!';
-    toast.duration = 3000;
-    toast.cssClass = 'custom-toast';
-    toast.buttons = [
-      {
-        text: 'Dismiss',
-        role: 'cancel'
-      }
-    ];
+    const toast = await this.toastController.create({
+      message: 'Hello Styled World!',
+      duration: 3000,
+      cssClass: 'custom-toast',
+      buttons: [
+        {
+          text: 'Dismiss',
+          role: 'cancel'
+        }
+      ],
+    });
 
-    document.body.appendChild(toast);
     await toast.present();
   }
 </script>

@@ -5,12 +5,12 @@
 
 <script>
   async function presentToast(position) {
-    const toast = document.createElement('ion-toast');
-    toast.message = 'Hello World!';
-    toast.duration = 1500;
-    toast.position = position;
+    const toast = await this.toastController.create({
+      message: 'Hello World!',
+      duration: 1500,
+      position: position
+    });
 
-    document.body.appendChild(toast);
     await toast.present();
   }
 </script>

@@ -8,23 +8,23 @@
   const roleOutput = document.querySelector('#roleResult');
 
   async function presentToast() {
-    const toast = document.createElement('ion-toast');
-    toast.message = 'Hello World!';
-    toast.duration = 3000;
-    toast.buttons = [
-      {
-        text: 'More Info',
-        role: 'info',
-        handler: () => { handlerOutput.innerText = 'More Info clicked'; }
-      },
-      {
-        text: 'Dismiss',
-        role: 'cancel',
-        handler: () => { handlerOutput.innerText = 'Dismiss clicked'; }
-      }
-    ];
+    const toast = await toastController.create({
+      message: 'Hello World!',
+      duration: 3000,
+      buttons: [
+        {
+          text: 'More Info',
+          role: 'info',
+          handler: () => { handlerOutput.innerText = 'More Info clicked'; }
+        },
+        {
+          text: 'Dismiss',
+          role: 'cancel',
+          handler: () => { handlerOutput.innerText = 'Dismiss clicked'; }
+        }
+      ]
+    });
 
-    document.body.appendChild(toast);
     await toast.present();
 
     const { role } = await toast.onDidDismiss();
