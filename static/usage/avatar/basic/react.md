@@ -6,7 +6,7 @@ function Example() {
   return (
     <>
       <IonAvatar>
-        <img src="https://ionicframework.com/docs/demos/api/avatar/avatar.svg" />
+        <img alt="Silhouette of a person's head" src="https://ionicframework.com/docs/demos/api/avatar/avatar.svg" />
       </IonAvatar>
     </>
   );

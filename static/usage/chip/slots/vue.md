@@ -2,7 +2,7 @@
 <template>
   <ion-chip>
     <ion-avatar>
-      <img src="https://ionicframework.com/docs/demos/api/avatar/avatar.svg" />
+      <img alt="Silhouette of a person's head" src="https://ionicframework.com/docs/demos/api/avatar/avatar.svg" />
     </ion-avatar>
     <ion-label>Avatar Chip</ion-label>
     <ion-icon :icon="closeCircle"></ion-icon>
