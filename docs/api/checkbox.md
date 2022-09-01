@@ -24,7 +24,9 @@ Checkboxes allow the selection of multiple options from a set of options. They a
 
 ## Basic
 
-TODO Playground
+import Basic from '@site/static/usage/checkbox/basic/index.md';
+
+<Basic />
 
 ## Indeterminate Checkboxes
 
