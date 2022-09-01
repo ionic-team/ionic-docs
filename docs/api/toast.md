@@ -113,11 +113,11 @@ import IconPlayground from '@site/static/usage/toast/icon/index.md';
 
 <IconPlayground />
 
-## Styling
+## Theming
 
-import StylingPlayground from '@site/static/usage/toast/styling/index.md';
+import ThemingPlayground from '@site/static/usage/toast/theming/index.md';
 
-<StylingPlayground />
+<ThemingPlayground />
 
 ## Interfaces
 
