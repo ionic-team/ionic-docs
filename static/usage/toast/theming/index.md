@@ -29,5 +29,5 @@ import angularTS from './angular/angular_ts.md';
       }
     }
   }}
-  src="usage/toast/styling/demo.html"
+  src="usage/toast/theming/demo.html"
 />
