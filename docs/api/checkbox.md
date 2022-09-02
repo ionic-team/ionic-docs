@@ -36,7 +36,9 @@ import Indeterminate from '@site/static/usage/checkbox/indeterminate/index.md';
 
 ## Theming
 
-TODO Playground
+import Theming from '@site/static/usage/checkbox/theming/index.md';
+
+<Theming />
 
 ## Interfaces
 
