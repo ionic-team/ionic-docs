@@ -138,10 +138,6 @@ Ionic apps are made of high-level building blocks called Components, which allow
   <p>Select is similar to the native HTML select, with a few improvements to sorting and selecting.</p>
 </DocsCard>
 
-<DocsCard header="Slides" href="api/slides" icon="/icons/component-slides-icon.png">
-  <p>Slides make it easy to create complex UI such as galleries, tutorials, and page-based layouts.</p>
-</DocsCard>
-
 <DocsCard header="Tabs" href="api/tabs" img="/icons/feature-component-tabs-icon.png">
   <p>Tabs enable tabbed navigation, a standard navigation pattern in modern apps.</p>
 </DocsCard>
