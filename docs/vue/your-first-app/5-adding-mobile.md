@@ -57,7 +57,7 @@ Next, add a new bit of logic in the `loadSaved` function. On mobile, we can dire
 
 ```tsx
 const loadSaved = async () => {
-  const photoList = await Storage.get({ key: PHOTO_STORAGE });
+  const photoList = await Preferences.get({ key: PHOTO_STORAGE });
   const photosInPreferences = photoList.value ? JSON.parse(photoList.value) : [];
 
   // If running on the web...
