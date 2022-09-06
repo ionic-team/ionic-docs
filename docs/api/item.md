@@ -38,6 +38,11 @@ import Clickable from '@site/static/usage/item/clickable/index.md';
 
 By default [clickable items](#clickable-items) will display a right arrow icon on `ios` mode. To hide the right arrow icon on clickable elements, set the `detail` property to `false`. To show the right arrow icon on an item that doesn't display it naturally, set the `detail` property to `true`.
 
+import DetailArrows from '@site/static/usage/item/detail-arrows/index.md';
+
+<DetailArrows />
+
+
 <!--
 
 TODO add this functionality back as a css variable
