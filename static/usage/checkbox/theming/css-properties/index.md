@@ -27,5 +27,5 @@ import angular_example_component_css from './angular/example_component_css.md';
       }
     }
   }}
-  src="usage/checkbox/theming/demo.html"
+  src="usage/checkbox/theming/css-properties/demo.html"
 />
