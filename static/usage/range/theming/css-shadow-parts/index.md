@@ -27,5 +27,5 @@ import angular_example_component_css from './angular/example_component_css.md';
       },
     },
   }}
-  src="usage/range/css-shadow-parts/demo.html"
+  src="usage/range/theming/css-shadow-parts/demo.html"
 />

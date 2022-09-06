@@ -22,7 +22,7 @@ import APITOCInline from '@components/page/api/APITOCInline';
 
 Checkboxes allow the selection of multiple options from a set of options. They appear as checked (ticked) when activated. Clicking on a checkbox will toggle the `checked` property. They can also be checked programmatically by setting the `checked` property.
 
-## Basic
+## Basic Usage
 
 import Basic from '@site/static/usage/checkbox/basic/index.md';
 
@@ -36,9 +36,11 @@ import Indeterminate from '@site/static/usage/checkbox/indeterminate/index.md';
 
 ## Theming
 
-import Theming from '@site/static/usage/checkbox/theming/index.md';
+### CSS Custom Properties
 
-<Theming />
+import CSSProps from '@site/static/usage/checkbox/theming/css-properties/index.md';
+
+<CSSProps />
 
 ## Interfaces
 

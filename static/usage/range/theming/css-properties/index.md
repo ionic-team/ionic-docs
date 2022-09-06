@@ -15,17 +15,17 @@ import angular_example_component_css from './angular/example_component_css.md';
     javascript,
     react: {
       files: {
+        'src/main.css': react_main_css,
         'src/main.tsx': react_main_tsx,
-        'src/main.css': react_main_css
-      }
+      },
     },
     vue,
     angular: {
       files: {
+        'src/app/example.component.css': angular_example_component_css,
         'src/app/example.component.html': angular_example_component_html,
-        'src/app/example.component.css': angular_example_component_css
-      }
-    }
+      },
+    },
   }}
-  src="usage/checkbox/theming/demo.html"
+  src="usage/range/theming/css-properties/demo.html"
 />

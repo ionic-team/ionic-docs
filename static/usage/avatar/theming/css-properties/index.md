@@ -27,6 +27,6 @@ import angularCSS from './angular/example_component_css.md';
       }
     },
   }}
-  src="usage/avatar/theming/demo.html"
+  src="usage/avatar/theming/css-properties/demo.html"
   size="250px"
 />
