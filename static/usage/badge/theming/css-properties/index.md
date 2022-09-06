@@ -27,5 +27,5 @@ import angularCSS from './angular/angular-css.md';
       },
     },
   }}
-  src="usage/badge/customization/css-properties/demo.html"
+  src="usage/badge/theming/css-properties/demo.html"
 />

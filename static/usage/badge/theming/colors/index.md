@@ -8,5 +8,5 @@ import angular from './angular.md';
 <Playground
   size="medium"
   code={{ javascript, react, vue, angular }}
-  src="usage/badge/customization/color/demo.html"
+  src="usage/badge/theming/colors/demo.html"
 />
