@@ -5,4 +5,4 @@ import react from './react.md';
 import vue from './vue.md';
 import angular from './angular.md';
 
-<Playground code={{ javascript, react, vue, angular }} src="usage/chip/color/demo.html" />
+<Playground code={{ javascript, react, vue, angular }} src="usage/chip/theming/colors/demo.html" />

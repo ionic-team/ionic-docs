@@ -27,5 +27,5 @@ import angular_example_component_html from './angular/example_component_html.md'
       },
     },
   }}
-  src="usage/chip/styling/demo.html"
+  src="usage/chip/theming/css-properties/demo.html"
 />
