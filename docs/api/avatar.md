@@ -22,7 +22,7 @@ Avatars are circular components that usually wrap an image or icon. They can be 
 
 Avatars can be used by themselves or inside of any element. If placed inside of an `ion-chip` or `ion-item`, the avatar will resize to fit the parent component. To position an avatar on the left or right side of an item, set the slot to `start` or `end`, respectively.
 
-## Basic
+## Basic Usage
 
 import Basic from '@site/static/usage/avatar/basic/index.md';
 
@@ -42,9 +42,11 @@ import Item from '@site/static/usage/avatar/item/index.md';
 
 ## Theming
 
-import Theming from '@site/static/usage/avatar/theming/index.md';
+### CSS Custom Properties
 
-<Theming />
+import CSSProps from '@site/static/usage/avatar/theming/css-properties/index.md';
+
+<CSSProps />
 
 ## Properties
 <Props />
