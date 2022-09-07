@@ -18,7 +18,7 @@ import APITOCInline from '@components/page/api/APITOCInline';
 
 <EncapsulationPill type="shadow" />
 
-Items are elements that can contain text, icons, avatars, images, inputs, and any other native or custom elements. Generally they are placed in a list with other items. Items can be swiped, deleted, reordered, edited, and more.
+Items are elements that can contain text, icons, avatars, images, inputs, and any other native or custom elements. Generally they are placed in a [list](./list) with other items. Items can be swiped, deleted, reordered, edited, and more.
 
 ## Basic Usage
 
@@ -57,6 +57,14 @@ See the [theming documentation](/docs/theming/css-variables) for more informatio
 
 -->
 
+
+## Item Lines
+
+Items show an inset bottom border by default. The border has padding on the left and does not appear under any content that is slotted in the `"start"` slot. The `lines` property can be modified to `"full"` or `"none"` which will show a full width border or no border, respectively.
+
+import Lines from '@site/static/usage/item/lines/index.md';
+
+<Lines />
 
 ## Item Placement
 
