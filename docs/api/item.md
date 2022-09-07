@@ -66,15 +66,10 @@ import Lines from '@site/static/usage/item/lines/index.md';
 
 <Lines />
 
-## Media Items
-
-[Avatars](./avatar) and [Thumbnails](./thumbnail) can be slotted inside of an item. This is useful when making lists of images and text.
-
-import Media from '@site/static/usage/item/media/index.md';
-
-<Media />
 
 ## Item Placement
+
+### Slotted Content
 
 Item uses named [slots](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/slot) in order to position content. This logic makes it possible to write a complex item with simple, understandable markup without having to worry about styling and positioning the elements.
 
@@ -86,10 +81,27 @@ The below chart details the item slots and where it will place the element insid
 | `end`   | Placed to the right of all other content in LTR, and to the `left` in RTL.  |
 | none    | Placed inside of the input wrapper.                                         |
 
-
 ### Text Alignment
 
 Items left align text and add an ellipsis when the text is wider than the item. See the [CSS Utilities Documentation](/docs/layout/css-utilities) for classes that can be added to `<ion-item>` to transform the text.
+
+
+## Media Items
+
+[Avatars](./avatar) and [Thumbnails](./thumbnail) can be slotted inside of an item. This is useful when making lists of images and text.
+
+import Media from '@site/static/usage/item/media/index.md';
+
+<Media />
+
+
+## Buttons in Items
+
+Buttons are styled smaller inside of items than when they are outside of them. To make the button size match buttons outside of an item, set the `size` attribute to `"default"`.
+
+import Buttons from '@site/static/usage/item/buttons/index.md';
+
+<Buttons />
 
 
 ## Input Highlight
