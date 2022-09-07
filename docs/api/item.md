@@ -66,6 +66,14 @@ import Lines from '@site/static/usage/item/lines/index.md';
 
 <Lines />
 
+## Media Items
+
+[Avatars](./avatar) and [Thumbnails](./thumbnail) can be slotted inside of an item. This is useful when making lists of images and text.
+
+import Media from '@site/static/usage/item/media/index.md';
+
+<Media />
+
 ## Item Placement
 
 Item uses named [slots](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/slot) in order to position content. This logic makes it possible to write a complex item with simple, understandable markup without having to worry about styling and positioning the elements.
