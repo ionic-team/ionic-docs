@@ -109,6 +109,12 @@ import Icons from '@site/static/usage/item/icons/index.md';
 
 <Icons />
 
+## Item Inputs
+
+import Inputs from '@site/static/usage/item/inputs/index.md';
+
+<Inputs />
+
 
 ## Input Highlight
 
