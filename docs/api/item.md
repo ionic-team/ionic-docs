@@ -103,6 +103,12 @@ import Buttons from '@site/static/usage/item/buttons/index.md';
 
 <Buttons />
 
+## Icons in Items
+
+import Icons from '@site/static/usage/item/icons/index.md';
+
+<Icons />
+
 
 ## Input Highlight
 
