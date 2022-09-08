@@ -154,6 +154,12 @@ import Colors from '@site/static/usage/item/theming/colors/index.md';
 
 <Colors />
 
+### CSS Shadow Parts
+
+import CSSParts from '@site/static/usage/item/theming/css-shadow-parts/index.md';
+
+<CSSParts />
+
 ### CSS Custom Properties
 
 import CSSProps from '@site/static/usage/item/theming/css-properties/index.md';
