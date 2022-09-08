@@ -126,11 +126,6 @@ Items containing an input will highlight the bottom border of the input with a d
 
 The highlight color changes based on the item state, but all of the states use Ionic colors by default. When focused, the input highlight will use the `primary` color. If the input is valid it will use the `success` color, and invalid inputs will use the `danger` color. See the [CSS Custom Properties](#css-custom-properties) section below for the highlight color variables.
 
-### Counter Formatter
-
-When using `counter`, the default behavior is to format the value that gets displayed as `itemLength / maxLength`. This behavior can be customized by passing in a formatter function to the `counterFormatter` property. See the [Usage](#usage) section for an example.
-
-
 ## Helper & Error Text
 
 Helper & error text can be used inside of an item with an input by slotting a note in the `"helper"` and `"error"` slots. The error slot will not be displayed unless the `ion-invalid` class is added to the `ion-item`. In Angular, this is done automatically through form validation. In JavaScript, React and Vue, the class needs to be manually added based on your own validation.
@@ -139,6 +134,13 @@ import HelperError from '@site/static/usage/item/helper-error/index.md';
 
 <HelperError />
 
+## Item Counter
+
+The item counter is helper text that displays under an input to notify the user of how many characters have been entered out of the total that the input will accept. When adding `counter`, the default behavior is to format the value that gets displayed as `inputLength / maxLength`. This behavior can be customized by passing in a formatter function to the `counterFormatter` property.
+
+import Counter from '@site/static/usage/item/counter/index.md';
+
+<Counter />
 
 ## Properties
 <Props />
