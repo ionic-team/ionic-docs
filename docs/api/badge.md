@@ -22,23 +22,25 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 Badges are inline block elements that usually appear near another element. Typically they contain a number or other characters. They can be used as a notification that there are additional items associated with an element and indicate how many items there are.
 
-import BasicExample from '@site/static/usage/badge/basic/index.md';
+## Basic Usage
 
-<BasicExample />
+import Basic from '@site/static/usage/badge/basic/index.md';
 
-## Customization Examples
+<Basic />
 
-### Color
+## Theming
 
-import ColorExample from '@site/static/usage/badge/customization/color/index.md';
+### Colors
 
-<ColorExample />
+import Colors from '@site/static/usage/badge/theming/colors/index.md';
+
+<Colors />
 
 ### CSS Properties
 
-import CSSPropsExample from '@site/static/usage/badge/customization/css-properties/index.md';
+import CSSProps from '@site/static/usage/badge/theming/css-properties/index.md';
 
-<CSSPropsExample />
+<CSSProps />
 
 ## Properties
 <Props />

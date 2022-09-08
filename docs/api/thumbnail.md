@@ -22,7 +22,7 @@ Thumbnails are square components that usually wrap an image or icon. They can be
 
 Thumbnails can be used by themselves or inside of any element. If placed inside of an `ion-item`, the thumbnail will resize to fit the parent component. To position a thumbnail on the left or right side of an item, set the slot to `start` or `end`, respectively.
 
-## Basic
+## Basic Usage
 
 import Basic from '@site/static/usage/thumbnail/basic/index.md';
 
@@ -36,9 +36,11 @@ import Item from '@site/static/usage/thumbnail/item/index.md';
 
 ## Theming
 
-import Theming from '@site/static/usage/thumbnail/theming/index.md';
+### CSS Custom Properties
 
-<Theming />
+import CSSProps from '@site/static/usage/thumbnail/theming/css-properties/index.md';
+
+<CSSProps />
 
 ## Properties
 <Props />
