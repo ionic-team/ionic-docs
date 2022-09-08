@@ -1,6 +1,5 @@
 ```ts
 import { Component } from '@angular/core';
-import { CheckboxCustomEvent } from '@ionic/angular';
 
 @Component({
   selector: 'app-example',

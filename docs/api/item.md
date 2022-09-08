@@ -131,6 +131,15 @@ The highlight color changes based on the item state, but all of the states use I
 When using `counter`, the default behavior is to format the value that gets displayed as `itemLength / maxLength`. This behavior can be customized by passing in a formatter function to the `counterFormatter` property. See the [Usage](#usage) section for an example.
 
 
+## Helper & Error Text
+
+Helper & error text can be used inside of an item with an input by slotting a note in the `"helper"` and `"error"` slots. The error slot will not be displayed unless the `ion-invalid` class is added to the `ion-item`. In Angular, this is done automatically through form validation. In JavaScript, React and Vue, the class needs to be manually added based on your own validation.
+
+import HelperError from '@site/static/usage/item/helper-error/index.md';
+
+<HelperError />
+
+
 ## Properties
 <Props />
 
