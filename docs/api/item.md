@@ -25,6 +25,7 @@ import Basic from '@site/static/usage/item/basic/index.md';
 
 <Basic />
 
+
 ## Clickable Items
 
 An item is considered "clickable" if it has an `href` or `button` property set. Clickable items have a few visual differences that indicate they can be interacted with. For example, a clickable item receives the ripple effect upon activation in `md` mode, has a highlight when activated in `ios` mode, and has a [detail arrow](#detail-arrows) by default in `ios` mode.
@@ -32,6 +33,7 @@ An item is considered "clickable" if it has an `href` or `button` property set. 
 import Clickable from '@site/static/usage/item/clickable/index.md';
 
 <Clickable />
+
 
 ## Detail Arrows
 
@@ -102,11 +104,13 @@ import Buttons from '@site/static/usage/item/buttons/index.md';
 
 <Buttons />
 
+
 ## Icons in Items
 
 import Icons from '@site/static/usage/item/icons/index.md';
 
 <Icons />
+
 
 ## Item Inputs
 
@@ -133,6 +137,7 @@ import HelperError from '@site/static/usage/item/helper-error/index.md';
 
 <HelperError />
 
+
 ## Item Counter
 
 The item counter is helper text that displays under an input to notify the user of how many characters have been entered out of the total that the input will accept. When adding `counter`, the default behavior is to format the value that gets displayed as `inputLength / maxLength`. This behavior can be customized by passing in a formatter function to the `counterFormatter` property.
@@ -140,6 +145,15 @@ The item counter is helper text that displays under an input to notify the user 
 import Counter from '@site/static/usage/item/counter/index.md';
 
 <Counter />
+
+## Theming
+
+### Colors
+
+import Colors from '@site/static/usage/item/theming/colors/index.md';
+
+<Colors />
+
 
 ## Properties
 <Props />
