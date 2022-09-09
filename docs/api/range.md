@@ -17,7 +17,6 @@ import Slots from '@site/static/auto-generated/range/slots.md';
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
-import APITOCInline from '@components/page/api/APITOCInline';
 
 <EncapsulationPill type="shadow" />
 
@@ -25,6 +24,8 @@ import APITOCInline from '@components/page/api/APITOCInline';
 The Range slider lets users select from a range of values by moving the slider knob. By default one knob controls the value of the range. This behavior can be customized using [dual knobs](#dual-knobs).
 
 By default the Range slider has a minimum value of `0` and a maximum value of `100`. This can be configured with the `min` and `max` properties.
+
+## Basic Usage
 
 import Basic from '@site/static/usage/range/basic/index.md';
 
@@ -58,9 +59,9 @@ import Pins from '@site/static/usage/range/pins/index.md';
 
 ## Snapping & Ticks
 
-Ticks show indications for each available value on the Range. In order to use ticks, developers must set both `snaps` and the `ticks` property to `true`. 
+Ticks show indications for each available value on the Range. In order to use ticks, developers must set both `snaps` and the `ticks` property to `true`.
 
-With snapping enabled, the Range knob will snap to the nearest available value as the knob is dragged and released. 
+With snapping enabled, the Range knob will snap to the nearest available value as the knob is dragged and released.
 
 import SnappingTicks from '@site/static/usage/range/snapping-ticks/index.md';
 
@@ -70,7 +71,7 @@ import SnappingTicks from '@site/static/usage/range/snapping-ticks/index.md';
 
 ### Using `ionChange`
 
-The `ionChange` event emits as the Range knob value changes. 
+The `ionChange` event emits as the Range knob value changes.
 
 import IonChangeEvent from '@site/static/usage/range/ion-change-event/index.md';
 
@@ -84,23 +85,23 @@ import IonKnobMoveEvent from '@site/static/usage/range/ion-knob-move-event/index
 
 <IonKnobMoveEvent />
 
-## Styling
+## Theming
 
-### Styling with CSS Variables
+### CSS Custom Properties
 
 Range includes [CSS Variables](#css-custom-properties) to quickly theme and customize the appearance of the Range component to match your application's design.
 
-import CssVariablesPlayground from '@site/static/usage/range/css-variables/index.md';
+import CSSProps from '@site/static/usage/range/theming/css-properties/index.md';
 
-<CssVariablesPlayground />
+<CSSProps />
 
-### Styling with CSS Shadow Parts
+### CSS Shadow Parts
 
 Range includes [CSS Shadow Parts](#css-shadow-parts) to allow complete customization of specific element nodes within the Range component. CSS Shadow Parts offer the most customization capabilities and are the recommended approach when requiring advance styling with the Range component.
 
-import CssShadowPartsPlayground from '@site/static/usage/range/css-shadow-parts/index.md';
+import CSSParts from '@site/static/usage/range/theming/css-shadow-parts/index.md';
 
-<CssShadowPartsPlayground />
+<CSSParts />
 
 ## Interfaces
 

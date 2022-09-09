@@ -6,9 +6,9 @@ sidebar_label: Loading Photos
 
 We’ve implemented photo taking and saving to the filesystem. There’s one last piece of functionality missing: the photos are stored in the filesystem, but we need a way to save pointers to each file so that they can be displayed again in the photo gallery.
 
-Fortunately, this is easy: we’ll leverage the Capacitor [Storage API](https://capacitor.ionicframework.com/docs/apis/storage) to store our array of Photos in a key-value store.
+Fortunately, this is easy: we’ll leverage the Capacitor [Preferences API](https://capacitor.ionicframework.com/docs/apis/preferences) to store our array of Photos in a key-value store.
 
-## Storage API
+## Preferences API
 
 Begin by defining a constant variable that will act as the key for the store:
 
@@ -21,10 +21,10 @@ export class PhotoService {
 }
 ```
 
-Next, at the end of the `addNewToGallery` function, add a call to `Storage.set()` to save the Photos array. By adding it here, the Photos array is stored each time a new photo is taken. This way, it doesn’t matter when the app user closes or switches to a different app - all photo data is saved.
+Next, at the end of the `addNewToGallery` function, add a call to `Preferences.set()` to save the Photos array. By adding it here, the Photos array is stored each time a new photo is taken. This way, it doesn’t matter when the app user closes or switches to a different app - all photo data is saved.
 
 ```tsx
-Storage.set({
+Preferences.set({
   key: this.PHOTO_STORAGE,
   value: JSON.stringify(this.photos),
 });
@@ -35,7 +35,7 @@ With the photo array data saved, create a function called `loadSaved()` that can
 ```tsx
 public async loadSaved() {
   // Retrieve cached photo array data
-  const photoList = await Storage.get({ key: this.PHOTO_STORAGE });
+  const photoList = await Preferences.get({ key: this.PHOTO_STORAGE });
   this.photos = JSON.parse(photoList.value) || [];
 
   // more to come...

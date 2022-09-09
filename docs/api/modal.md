@@ -226,6 +226,11 @@ interface ModalCustomEvent extends CustomEvent {
 | ----- | ------------------- |
 | `Esc` | Dismisses the modal |
 
+
+### Labels
+
+Modals have a [`dialog`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/dialog_role) role. As a result, developers **must** properly label their modals. If the modal is using `ion-title`, the text inside can be used to label the modal itself by setting [`aria-labelledby`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-labelledby) on `ion-modal`. If the modal contains additional descriptive text, this text can be associated with the modal by using [`aria-describedby`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-describedby).
+
 ### Screen Readers
 
 Modals have the `aria-modal` attribute applied. This attribute can cause assistive technologies to limit navigation to the modal element's contents. As a result, using gestures that move to the next or previous items may not focus elements outside of the modal. This applies even when the backdrop is disabled in sheet modals using the `backdropBreakpoint` property.

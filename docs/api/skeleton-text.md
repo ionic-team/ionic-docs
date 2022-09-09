@@ -17,7 +17,6 @@ import Slots from '@site/static/auto-generated/skeleton-text/slots.md';
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
-import APITOCInline from '@components/page/api/APITOCInline';
 
 <EncapsulationPill type="shadow" />
 
@@ -31,13 +30,13 @@ import Basic from '@site/static/usage/skeleton-text/basic/index.md';
 
 <Basic />
 
-## Customization
+## Theming
 
-### Theming
+### CSS Custom Properties
 
-import Theming from '@site/static/usage/skeleton-text/theming/index.md';
+import CSSProps from '@site/static/usage/skeleton-text/theming/css-properties/index.md';
 
-<Theming />
+<CSSProps />
 
 ## Properties
 <Props />

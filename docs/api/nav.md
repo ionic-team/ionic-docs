@@ -3,6 +3,7 @@ title: "ion-nav"
 ---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+import TOCInline from '@theme/TOCInline';
 
 import Props from '@site/static/auto-generated/nav/props.md';
 import Events from '@site/static/auto-generated/nav/events.md';
@@ -17,8 +18,6 @@ import Slots from '@site/static/auto-generated/nav/slots.md';
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
-import APITOCInline from '@components/page/api/APITOCInline';
-
 <EncapsulationPill type="shadow" />
 
 Nav is a standalone component for loading arbitrary components and pushing new components on to the stack.
