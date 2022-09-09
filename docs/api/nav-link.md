@@ -33,6 +33,8 @@ A navigation link is used to navigate to a specified component. The component ca
 
 It is the element form of calling the `push()`, `pop()`, and `setRoot()` methods on the navigation controller.
 
+For an example of how to use `ion-nav-link`, visit the [`ion-nav` docs](./nav#using-navlink).
+
 
 
 
