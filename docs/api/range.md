@@ -90,7 +90,7 @@ import IonKnobMoveEvent from '@site/static/usage/range/ion-knob-move-event/index
 
 Rangeには、アプリケーションのデザインに合わせてRangeコンポーネントの外観を素早くテーマ化してカスタマイズするための[CSS Variables](#css-custom-properties)が含まれています。
 
-import CssVariablesPlayground from '@site/static/usage/range/css-variables/index.md';
+import CssVariablesPlayground from '@site/static/usage/range/theming/css-properties/index.md';
 
 <CssVariablesPlayground />
 
@@ -98,7 +98,7 @@ import CssVariablesPlayground from '@site/static/usage/range/css-variables/index
 
 Rangeには [CSS Shadow Parts](#css-shadow-parts) があり、Rangeコンポーネント内の特定の要素ノードを完全にカスタマイズすることができます。CSS Shadow Partsは最も多くのカスタマイズ機能を提供し、Rangeコンポーネントで高度なスタイリングが必要な場合に推奨されるアプローチです。
 
-import CssShadowPartsPlayground from '@site/static/usage/range/css-shadow-parts/index.md';
+import CssShadowPartsPlayground from '@site/static/usage/range/theming/css-shadow-parts/index.md';
 
 <CssShadowPartsPlayground />
 
