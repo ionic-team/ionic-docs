@@ -44,7 +44,6 @@ import Theming from '@site/static/usage/datetime/theming/index.md';
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
-import APITOCInline from '@components/page/api/APITOCInline';
 
 <EncapsulationPill type="shadow" />
 

@@ -17,7 +17,7 @@ import Slots from '@site/static/auto-generated/loading/slots.md';
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
-import APITOCInline from '@components/page/api/APITOCInline';
+import TOCInline from '@theme/TOCInline';
 
 <EncapsulationPill type="scoped" />
 
