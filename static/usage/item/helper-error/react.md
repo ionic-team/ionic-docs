@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { IonInput, IonItem, IonLabel, IonNote } from '@ionic/react';
 
 function Example() {
+  const [isTouched, setIsTouched] = useState(false);
   const [isValid, setIsValid] = useState(false);
   const [isInvalid, setIsInvalid] = useState(false);
 
@@ -21,11 +22,15 @@ function Example() {
     validateEmail(value) !== null ? setIsValid(true) : setIsInvalid(true);
   }
 
+  const markTouched = () => {
+    setIsTouched(true);
+  }
+
   return (
     <>
-      <IonItem fill="solid" className={`${isValid && "ion-valid"} ${isInvalid && "ion-invalid"}`}>
+      <IonItem fill="solid" className={`${isValid && "ion-valid"} ${isInvalid && "ion-invalid"} ${isTouched && "ion-touched"}`}>
         <IonLabel position="floating">Email</IonLabel>
-        <IonInput type="email" onIonInput={(event) => validate(event)}></IonInput>
+        <IonInput type="email" onIonInput={(event) => validate(event)} onIonBlur={() => markTouched()}></IonInput>
         <IonNote slot="helper">Enter a valid email</IonNote>
         <IonNote slot="error">Invalid email</IonNote>
       </IonItem>

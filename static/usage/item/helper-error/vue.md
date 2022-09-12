@@ -2,7 +2,7 @@
 <template>
   <ion-item fill="solid" ref="item">
     <ion-label position="floating">Email</ion-label>
-    <ion-input type="email" @ionInput="validate"></ion-input>
+    <ion-input type="email" @ionInput="validate" @ionBlur="markTouched"></ion-input>
     <ion-note slot="helper">Enter a valid email</ion-note>
     <ion-note slot="error">Invalid email</ion-note>
   </ion-item>
@@ -31,6 +31,10 @@
           ? this.$refs.item.$el.classList.add('ion-valid')
           : this.$refs.item.$el.classList.add('ion-invalid');
       },
+
+      markTouched() {
+        this.$refs.item.$el.classList.add('ion-touched')
+      }
     },
   });
 </script>

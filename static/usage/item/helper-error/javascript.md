@@ -11,6 +11,7 @@
   const input = item.querySelector('ion-input');
 
   input.addEventListener('ionInput', (ev) => validate(ev));
+  input.addEventListener('ionBlur', () => markTouched());
 
   const validateEmail = (email) => {
     return email.match(/^(?=.{1,254}$)(?=.{1,64}@)[a-zA-Z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-zA-Z0-9!#$%&'*+/=?^_`{|}~-]+)*@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/);
@@ -25,6 +26,10 @@
     if (value === "") return;
 
     validateEmail(value) ? item.classList.add('ion-valid') : item.classList.add('ion-invalid');
+  }
+
+  const markTouched = () => {
+    item.classList.add('ion-touched');
   }
 </script>
 ```
