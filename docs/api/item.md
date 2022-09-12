@@ -119,16 +119,6 @@ import Inputs from '@site/static/usage/item/inputs/index.md';
 <Inputs />
 
 
-## Input Highlight
-
-### Highlight Height
-
-Items containing an input will highlight the bottom border of the input with a different color when focused, valid, or invalid. By default, `md` items have a highlight with a height set to `2px` and `ios` has no highlight (technically the height is set to `0`). The height can be changed using the `--highlight-height` CSS property. To turn off the highlight, set this variable to `0`. For more information on setting CSS properties, see the [theming documentation](/docs/theming/css-variables).
-
-### Highlight Color
-
-The highlight color changes based on the item state, but all of the states use Ionic colors by default. When focused, the input highlight will use the `primary` color. If the input is valid it will use the `success` color, and invalid inputs will use the `danger` color. See the [CSS Custom Properties](#css-custom-properties) section below for the highlight color variables.
-
 ## Helper & Error Text
 
 Helper & error text can be used inside of an item with an input by slotting a note in the `"helper"` and `"error"` slots. The error slot will not be displayed unless the `ion-invalid` class is added to the `ion-item`. In Angular, this is done automatically through form validation. In JavaScript, React and Vue, the class needs to be manually added based on your own validation.
@@ -165,6 +155,17 @@ import CSSParts from '@site/static/usage/item/theming/css-shadow-parts/index.md'
 import CSSProps from '@site/static/usage/item/theming/css-properties/index.md';
 
 <CSSProps />
+
+
+### Input Highlight
+
+Items containing an input will highlight the bottom border of the input with a different color when focused, valid, or invalid. By default, `md` items have a highlight with a height set to `2px` and `ios` has no highlight (technically the height is set to `0`). The height can be changed using the `--highlight-height` CSS property. To turn off the highlight, set this variable to `0`.
+
+The highlight color changes based on the item state, but all of the states use Ionic colors by default. When focused, the input highlight will use the `primary` color. If the input is valid it will use the `success` color, and invalid inputs will use the `danger` color. This can be customized using the provided CSS properties.
+
+import InputHighlight from '@site/static/usage/item/theming/input-highlight/index.md';
+
+<InputHighlight />
 
 
 ## Properties
