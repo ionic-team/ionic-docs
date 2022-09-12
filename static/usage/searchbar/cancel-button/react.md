@@ -1,7 +1,7 @@
 ```tsx
 import React from 'react';
 import { IonSearchbar } from '@ionic/react';
-  import { trash } from 'ionicons/icons';
+import { trash } from 'ionicons/icons';
 
 function Example() {
   return (

@@ -27,6 +27,15 @@ import Basic from '@site/static/usage/searchbar/basic/index.md';
 <Basic />
 
 
+## Search Icon
+
+A search icon is displayed to the left of the input field in a searchbar. It can be customized to any [Ionicon](https://ionic.io/ionicons/).
+
+import SearchIcon from '@site/static/usage/searchbar/search-icon/index.md';
+
+<SearchIcon />
+
+
 ## Clear Button
 
 A clear button is displayed when a searchbar has a value or upon entering input in the searchbar's text field. Clicking on the clear button will erase the text field and the input will remain focused. By default, the clear button is set to show when focusing the searchbar, but it can be set to always show or never show. The icon inside of the clear button can also be customized to any [Ionicon](https://ionic.io/ionicons/).
