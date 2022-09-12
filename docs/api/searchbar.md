@@ -19,7 +19,7 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 Searchbars represent a text field that can be used to search through a collection. They can be displayed inside of a toolbar or the main content.
 
-A Searchbar should be used instead of an input to search lists. A clear button is displayed upon entering input in the searchbar's text field. Clicking on the clear button will erase the text field and the input will remain focused. A cancel button can be enabled which will clear the input and lose the focus upon click.
+A Searchbar should be used instead of an input to search lists. A clear button is displayed upon entering input in the searchbar's text field. Clicking on the clear button will erase the text field and the input will remain focused.
 
 
 ## Basic Usage
@@ -27,6 +27,15 @@ A Searchbar should be used instead of an input to search lists. A clear button i
 import Basic from '@site/static/usage/searchbar/basic/index.md';
 
 <Basic />
+
+
+## Cancel Button
+
+A cancel button can be enabled which will clear the input and lose the focus upon click. By default, cancel buttons are set to never show, but they can be set to always show or only show when focusing the searchbar. The cancel button text can be customized on iOS only, since MD displays an icon as its cancel button.
+
+import CancelButton from '@site/static/usage/searchbar/cancel-button/index.md';
+
+<CancelButton />
 
 
 ## Keyboard Display
