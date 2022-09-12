@@ -19,18 +19,11 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 Chips represent complex entities in small blocks, such as a contact. A chip can contain several different elements such as avatars, text, and icons.
 
-## Basic
+## Basic Usage
 
-import BasicExample from '@site/static/usage/chip/basic/index.md';
+import Basic from '@site/static/usage/chip/basic/index.md';
 
-<BasicExample />
-
-## Colors
-
-import ColorExample from '@site/static/usage/chip/color/index.md';
-
-<ColorExample />
-
+<Basic />
 
 ## Slotting Components and Icons
 
@@ -38,11 +31,19 @@ import SlotExample from '@site/static/usage/chip/slots/index.md';
 
 <SlotExample />
 
-## Styling
+## Theming
 
-import StylingExample from '@site/static/usage/chip/styling/index.md';
+### Colors
 
-<StylingExample />
+import Colors from '@site/static/usage/chip/theming/colors/index.md';
+
+<Colors />
+
+### CSS Custom Properties
+
+import CSSProps from '@site/static/usage/chip/theming/css-properties/index.md';
+
+<CSSProps />
 
 ## Properties
 <Props />
