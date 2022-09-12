@@ -17,9 +17,7 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="scoped" />
 
-Searchbars represent a text field that can be used to search through a collection. They can be displayed inside of a toolbar or the main content.
-
-A Searchbar should be used instead of an input to search lists. A clear button is displayed upon entering input in the searchbar's text field. Clicking on the clear button will erase the text field and the input will remain focused.
+Searchbars represent a text field that can be used to search through a collection. They can be displayed inside of a toolbar or the main content. A searchbar should be used instead of an input to search lists.
 
 
 ## Basic Usage
@@ -27,6 +25,15 @@ A Searchbar should be used instead of an input to search lists. A clear button i
 import Basic from '@site/static/usage/searchbar/basic/index.md';
 
 <Basic />
+
+
+## Clear Button
+
+A clear button is displayed when a searchbar has a value or upon entering input in the searchbar's text field. Clicking on the clear button will erase the text field and the input will remain focused. By default, the clear button is set to show when focusing the searchbar, but it can be set to always show or never show. The icon inside of the clear button can also be customized to any [Ionicon](https://ionic.io/ionicons/).
+
+import ClearButton from '@site/static/usage/searchbar/clear-button/index.md';
+
+<ClearButton />
 
 
 ## Cancel Button
