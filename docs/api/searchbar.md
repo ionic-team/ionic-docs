@@ -38,7 +38,7 @@ import ClearButton from '@site/static/usage/searchbar/clear-button/index.md';
 
 ## Cancel Button
 
-A cancel button can be enabled which will clear the input and lose the focus upon click. By default, cancel buttons are set to never show, but they can be set to always show or only show when focusing the searchbar. The cancel button text can be customized on iOS only, since MD displays an icon as its cancel button.
+A cancel button can be enabled which will clear the input and lose the focus upon click. By default, cancel buttons are set to never show, but they can be set to always show or only show when focusing the searchbar. The cancel button is displayed as text in `ios` mode, and as an icon in `md` mode. Both the text and icon can be customized using different properties, with the icon accepting any [Ionicon](https://ionic.io/ionicons/).
 
 import CancelButton from '@site/static/usage/searchbar/cancel-button/index.md';
 
