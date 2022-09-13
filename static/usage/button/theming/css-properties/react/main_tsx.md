@@ -6,9 +6,7 @@ import './main.css';
 
 function Example() {
   return (
-    <>
-      <IonButton>Custom Button</IonButton>
-    </>
+    <IonButton>Custom Button</IonButton>
   );
 }
 export default Example;
