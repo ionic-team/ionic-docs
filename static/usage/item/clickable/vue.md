@@ -1,18 +1,18 @@
 ```html
 <template>
-  <ion-item href="#" @click="testClick($event)">
+  <ion-item href="#">
     <ion-label>Anchor Item</ion-label>
   </ion-item>
 
-  <ion-item href="#" disabled="true" @click="testClick($event)">
+  <ion-item href="#" disabled="true">
     <ion-label>Disabled Anchor Item</ion-label>
   </ion-item>
 
-  <ion-item button @click="testClick($event)">
+  <ion-item button>
     <ion-label>Button Item</ion-label>
   </ion-item>
 
-  <ion-item button disabled="true" @click="testClick($event)">
+  <ion-item button disabled="true">
     <ion-label>Disabled Button Item</ion-label>
   </ion-item>
 </template>
@@ -23,11 +23,6 @@
 
   export default defineComponent({
     components: { IonItem, IonLabel },
-    methods: {
-      testClick(ev: Event) {
-        console.log('Clicked item: ', ev.target.textContent.trim());
-      },
-    },
   });
 </script>
 ```
