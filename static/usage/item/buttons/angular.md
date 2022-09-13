@@ -1,5 +1,5 @@
 ```html
- <ion-item>
+<ion-item>
   <ion-button slot="start">
     Start
   </ion-button>
