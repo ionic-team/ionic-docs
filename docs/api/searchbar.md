@@ -63,6 +63,15 @@ import Toolbar from '@site/static/usage/searchbar/toolbar/index.md';
 <Toolbar />
 
 
+## Debounce
+
+A debounce can be set on the searchbar in order to delay triggering the `ionChange` event. This is useful when querying data, as it can be used to wait to make a request instead of requesting the data each time a character is entered in the input.
+
+import Debounce from '@site/static/usage/searchbar/debounce/index.md';
+
+<Debounce />
+
+
 ## Keyboard Display
 
 ### Android
