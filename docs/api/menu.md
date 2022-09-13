@@ -27,7 +27,9 @@ These can be controlled from the templates, or programmatically using the MenuCo
 
 ## Basic Usage
 
-TODO Playground
+import BasicUsage from '@site/static/usage/menu/basic/index.md';
+
+<BasicUsage />
 
 ## Menu Toggle
 
