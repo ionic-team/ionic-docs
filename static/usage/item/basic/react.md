@@ -45,13 +45,6 @@ function Example() {
           <p>Paragraph</p>
         </IonLabel>
       </IonItem>
-
-      <IonItem>
-        <IonLabel>
-          <h4>H4 Heading</h4>
-          <p>Paragraph</p>
-        </IonLabel>
-      </IonItem>
     </>
   );
 }

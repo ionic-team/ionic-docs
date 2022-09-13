@@ -28,4 +28,5 @@ import angular_example_component_html from './angular/example_component_html.md'
     },
   }}
   src="usage/item/theming/input-highlight/demo.html"
+  size="250px"
 />

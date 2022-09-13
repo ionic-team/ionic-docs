@@ -40,13 +40,6 @@
       <p>Paragraph</p>
     </ion-label>
   </ion-item>
-
-  <ion-item>
-    <ion-label>
-      <h4>H4 Heading</h4>
-      <p>Paragraph</p>
-    </ion-label>
-  </ion-item>
 </template>
 
 <script lang="ts">
