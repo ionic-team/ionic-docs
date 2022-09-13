@@ -80,6 +80,14 @@ import Colors from '@site/static/usage/searchbar/theming/colors/index.md';
 
 <Colors />
 
+### CSS Custom Properties
+
+Searchbar is a scoped component which requires a [higher specificity selector](https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity) to customize. Targeting the `ion-searchbar` for customization will not work, therefore we have to add a class and customize it that way.
+
+import CSSProps from '@site/static/usage/searchbar/theming/css-properties/index.md';
+
+<CSSProps />
+
 
 ## Keyboard Display
 
