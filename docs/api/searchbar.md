@@ -72,6 +72,15 @@ import Debounce from '@site/static/usage/searchbar/debounce/index.md';
 <Debounce />
 
 
+## Theming
+
+### Colors
+
+import Colors from '@site/static/usage/searchbar/theming/colors/index.md';
+
+<Colors />
+
+
 ## Keyboard Display
 
 ### Android
