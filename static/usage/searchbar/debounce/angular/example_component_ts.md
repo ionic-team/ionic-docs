@@ -1,22 +1,17 @@
 ```ts
-import { Component, ElementRef, ViewChildren } from '@angular/core';
-import { IonItem } from '@ionic/angular';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-example',
   templateUrl: 'example.component.html',
 })
 export class ExampleComponent {
-  @ViewChildren(IonItem, {read: ElementRef}) items;
+  public data = ['Amsterdam', 'Buenos Aires', 'Cairo', 'Geneva', 'Hong Kong', 'Istanbul', 'London', 'Madrid', 'New York', 'Panama City'];
+  public results = [...this.data];
 
   handleChange(event) {
     const query = event.target.value.toLowerCase();
-
-    this.items.forEach((i) => {
-      const item = i.nativeElement;
-      const shouldShow = item.textContent.toLowerCase().indexOf(query) > -1;
-      item.style.display = shouldShow ? 'block' : 'none';
-    });
+    this.results = this.data.filter(d => d.toLowerCase().indexOf(query) > -1);
   }
 }
 ```
