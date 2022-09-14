@@ -6,9 +6,7 @@ import './main.css';
 
 function Example() {
   return (
-    <>
-      <IonSearchbar showCancelButton="focus" class="custom"></IonSearchbar>
-    </>
+    <IonSearchbar showCancelButton="focus" class="custom"></IonSearchbar>
   );
 }
 export default Example;
