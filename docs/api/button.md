@@ -8,8 +8,6 @@ import Parts from '@site/static/auto-generated/button/parts.md';
 import CustomProps from '@site/static/auto-generated/button/custom-props.md';
 import Slots from '@site/static/auto-generated/button/slots.md';
 
-import EncapsulationPill from '@components/page/api/EncapsulationPill';
-
 <head>
   <title>ion-button: Design and Style Buttons with Custom CSS Properties</title>
   <meta name="description" content="ion-button provides a clickable element for use anywhere needing standard button functionality. Design and style button elements with custom CSS properties." />
