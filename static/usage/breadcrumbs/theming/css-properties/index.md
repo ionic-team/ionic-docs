@@ -26,5 +26,5 @@ import angularCSS from './angular/angular_css.md';
       },
     },
   }}
-  src="usage/breadcrumbs/styling/css-props/demo.html"
+  src="usage/breadcrumbs/theming/css-properties/demo.html"
 />
