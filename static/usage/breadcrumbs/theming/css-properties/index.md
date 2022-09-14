@@ -15,16 +15,16 @@ import angularCSS from './angular/angular_css.md';
     react: {
       files: {
         'src/main.css': reactCSS,
-        'src/main.tsx': reactTS
-      }
+        'src/main.tsx': reactTS,
+      },
     },
     vue,
     angular: {
       files: {
         'src/app/app.component.css': angularCSS,
-        'src/app/app.component.html': angularHTML
-      }
-    }
+        'src/app/app.component.html': angularHTML,
+      },
+    },
   }}
-  src="usage/breadcrumbs/styling/css-props/demo.html"
+  src="usage/breadcrumbs/theming/css-properties/demo.html"
 />

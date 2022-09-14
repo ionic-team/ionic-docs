@@ -73,17 +73,17 @@ import PopoverOnClick from '@site/static/usage/breadcrumbs/collapsing-items/popo
 
 <PopoverOnClick />
 
-## Styling
+## Theming
 
-## Color Property
+### Colors
 
-import ColorProp from '@site/static/usage/breadcrumbs/styling/color/index.md';
+import Colors from '@site/static/usage/breadcrumbs/theming/colors/index.md';
 
-<ColorProp />
+<Colors />
 
-## CSS Properties
+### CSS Custom Properties
 
-import CSSProps from '@site/static/usage/breadcrumbs/styling/css-props/index.md';
+import CSSProps from '@site/static/usage/breadcrumbs/theming/css-properties/index.md';
 
 <CSSProps />
 

@@ -5,7 +5,4 @@ import react from './react.md';
 import vue from './vue.md';
 import angular from './angular.md';
 
-<Playground
-  code={{ javascript, react, vue, angular }}
-  src="usage/breadcrumbs/styling/color/demo.html"
-/>
+<Playground code={{ javascript, react, vue, angular }} src="usage/breadcrumbs/theming/colors/demo.html" />
