@@ -21,6 +21,8 @@ Items are elements that can contain text, icons, avatars, images, inputs, and an
 
 ## Basic Usage
 
+Items left align text and add an ellipsis when the text is wider than the item. We can modify this behavior using the CSS Utilities provided by Ionic Framework, such as using `.ion-text-wrap` in the below example. See the [CSS Utilities Documentation](/docs/layout/css-utilities) for more classes that can be added to an item to transform the text.
+
 import Basic from '@site/static/usage/item/basic/index.md';
 
 <Basic />
@@ -66,25 +68,6 @@ Items show an inset bottom border by default. The border has padding on the left
 import Lines from '@site/static/usage/item/lines/index.md';
 
 <Lines />
-
-
-## Item Placement
-
-### Slotted Content
-
-Item uses named [slots](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/slot) in order to position content. This logic makes it possible to write a complex item with simple, understandable markup without having to worry about styling and positioning the elements.
-
-The below chart details the item slots and where it will place the element inside of the item:
-
-| Slot    | Description                                                                 |
-|---------|-----------------------------------------------------------------------------|
-| `start` | Placed to the left of all other content in LTR, and to the `right` in RTL.  |
-| `end`   | Placed to the right of all other content in LTR, and to the `left` in RTL.  |
-| none    | Placed inside of the input wrapper.                                         |
-
-### Text Alignment
-
-Items left align text and add an ellipsis when the text is wider than the item. See the [CSS Utilities Documentation](/docs/layout/css-utilities) for classes that can be added to `<ion-item>` to transform the text.
 
 
 ## Media Items

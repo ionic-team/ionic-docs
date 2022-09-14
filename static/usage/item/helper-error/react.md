@@ -27,14 +27,12 @@ function Example() {
   };
 
   return (
-    <>
-      <IonItem fill="solid" className={`${isValid && 'ion-valid'} ${isValid === false && 'ion-invalid'} ${isTouched && 'ion-touched'}`}>
-        <IonLabel position="floating">Email</IonLabel>
-        <IonInput type="email" onIonInput={(event) => validate(event)} onIonBlur={() => markTouched()}></IonInput>
-        <IonNote slot="helper">Enter a valid email</IonNote>
-        <IonNote slot="error">Invalid email</IonNote>
-      </IonItem>
-    </>
+    <IonItem fill="solid" className={`${isValid && 'ion-valid'} ${isValid === false && 'ion-invalid'} ${isTouched && 'ion-touched'}`}>
+      <IonLabel position="floating">Email</IonLabel>
+      <IonInput type="email" onIonInput={(event) => validate(event)} onIonBlur={() => markTouched()}></IonInput>
+      <IonNote slot="helper">Enter a valid email</IonNote>
+      <IonNote slot="error">Invalid email</IonNote>
+    </IonItem>
   );
 }
 export default Example;
