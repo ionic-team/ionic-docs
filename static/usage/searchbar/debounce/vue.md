@@ -27,11 +27,9 @@
         const query = event.target.value.toLowerCase();
         const items = Array.from(this.$refs.list.$el.children);
 
-        requestAnimationFrame(() => {
-          items.forEach((item) => {
-            const shouldShow = item.textContent.toLowerCase().indexOf(query) > -1;
-            item.style.display = shouldShow ? 'block' : 'none';
-          });
+        items.forEach((item) => {
+          const shouldShow = item.textContent.toLowerCase().indexOf(query) > -1;
+          item.style.display = shouldShow ? 'block' : 'none';
         });
       },
     },

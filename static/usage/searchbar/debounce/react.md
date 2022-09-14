@@ -10,11 +10,9 @@ function Example() {
 
     const items = Array.from(document.querySelector('ion-list')!.children) as HTMLElement[];
 
-    requestAnimationFrame(() => {
-      items.forEach((item) => {
-        const shouldShow = item.textContent!.toLowerCase().indexOf(query) > -1;
-        item.style.display = shouldShow ? 'block' : 'none';
-      });
+    items.forEach((item) => {
+      const shouldShow = item.textContent!.toLowerCase().indexOf(query) > -1;
+      item.style.display = shouldShow ? 'block' : 'none';
     });
   }
 
@@ -34,7 +32,6 @@ function Example() {
         <IonItem>New York</IonItem>
         <IonItem>Panama City</IonItem>
       </IonList>
-
     </>
   );
 }
