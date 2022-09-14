@@ -30,11 +30,6 @@ import Basic from '@site/static/usage/button/basic/index.md';
 
 This property lets you specify how wide the button should be. By default, buttons are inline blocks, but setting this property will change the button to a full-width block element.
 
-| Value          | Details                                                                      |
-|----------------|------------------------------------------------------------------------------|
-| `block`        | Full-width button with rounded corners.                                      |
-| `full`         | Full-width button with square corners and no border on the left or right.    |
-
 import Expand from '@site/static/usage/button/expand/index.md';
 
 <Expand />
@@ -52,12 +47,6 @@ import Shape from '@site/static/usage/button/shape/index.md';
 
 This property determines the background and border color of the button. By default, buttons have a solid background unless the button is inside of a toolbar, in which case it has a transparent background.
 
-| Value          | Details                                                                      |
-|----------------|------------------------------------------------------------------------------|
-| `clear`        | Button with a transparent background that resembles a flat button.           |
-| `outline`      | Button with a transparent background and a visible border.                   |
-| `solid`        | Button with a filled background. Useful for buttons in a toolbar.            |
-
 import Fill from '@site/static/usage/button/fill/index.md';
 
 <Fill />
@@ -65,12 +54,6 @@ import Fill from '@site/static/usage/button/fill/index.md';
 ## Size
 
 This property specifies the size of the button. Setting this property will change the height and padding of a button.
-
-| Value          | Details                                                                      |
-|----------------|------------------------------------------------------------------------------|
-| `small`        | Button with less height and padding. Default for buttons in an item.         |
-| `default`      | Button with the default height and padding. Useful for buttons in an item.   |
-| `large`        | Button with more height and padding.                                         |
 
 import Size from '@site/static/usage/button/size/index.md';
 
