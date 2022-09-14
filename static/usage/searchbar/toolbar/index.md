@@ -9,4 +9,5 @@ import angular from './angular.md';
   code={{ javascript, react, vue, angular }}
   src="usage/searchbar/toolbar/demo.html"
   devicePreview
+  includeIonContent={false}
 />
