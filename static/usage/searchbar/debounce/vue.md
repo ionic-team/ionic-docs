@@ -1,6 +1,6 @@
 ```html
 <template>
-  <ion-searchbar debounce="1000" @ionChange="handleChange($event)"></ion-searchbar>
+  <ion-searchbar :debounce="1000" @ionChange="handleChange($event)"></ion-searchbar>
 
   <ion-list ref="list">
     <ion-item>Amsterdam</ion-item>
