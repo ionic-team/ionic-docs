@@ -2,8 +2,6 @@
 title: "ion-card-content"
 hide_table_of_contents: true
 ---
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
 import TOCInline from '@theme/TOCInline';
 
 import Props from '@site/static/auto-generated/card-content/props.md';

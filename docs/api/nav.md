@@ -1,8 +1,6 @@
 ---
 title: "ion-nav"
 ---
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
 import TOCInline from '@theme/TOCInline';
 
 import Props from '@site/static/auto-generated/nav/props.md';

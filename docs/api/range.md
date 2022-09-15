@@ -1,9 +1,6 @@
 ---
 title: "ion-range"
 ---
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-
 import Props from '@site/static/auto-generated/range/props.md';
 import Events from '@site/static/auto-generated/range/events.md';
 import Methods from '@site/static/auto-generated/range/methods.md';

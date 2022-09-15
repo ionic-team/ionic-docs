@@ -1,9 +1,6 @@
 ---
 title: "ion-skeleton-text"
 ---
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-
 import Props from '@site/static/auto-generated/skeleton-text/props.md';
 import Events from '@site/static/auto-generated/skeleton-text/events.md';
 import Methods from '@site/static/auto-generated/skeleton-text/methods.md';

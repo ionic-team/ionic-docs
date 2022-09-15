@@ -2,8 +2,6 @@
 title: "ion-route-redirect"
 hide_table_of_contents: true
 ---
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
 import TOCInline from '@theme/TOCInline';
 
 import Props from '@site/static/auto-generated/route-redirect/props.md';
