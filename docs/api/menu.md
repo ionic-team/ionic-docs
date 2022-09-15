@@ -33,7 +33,11 @@ import BasicUsage from '@site/static/usage/menu/basic/index.md';
 
 ## Menu Toggle
 
-TODO Playground
+The [ion-menu-toggle](./menu-toggle) component can be used to create custom button that can open or close the menu.
+
+import MenuToggle from '@site/static/usage/menu/toggle/index.md';
+
+<MenuToggle />
 
 ## Menu Types
 
