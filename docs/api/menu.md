@@ -41,7 +41,11 @@ import MenuToggle from '@site/static/usage/menu/toggle/index.md';
 
 ## Menu Types
 
-TODO Playground
+The `type` property can be used to customize how menus display in your application.
+
+import MenuType from '@site/static/usage/menu/type/index.md';
+
+<MenuType />
 
 ## Theming
 
