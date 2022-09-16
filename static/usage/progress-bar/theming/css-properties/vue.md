@@ -15,7 +15,7 @@
 
 <style scoped>
   ion-progress-bar {
-    --background: #88f4be;
+    --background: #f3e895;
     --progress-background: #09c567;
   }
 </style>

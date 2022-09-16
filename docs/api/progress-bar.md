@@ -63,6 +63,13 @@ import CSSProps from '@site/static/usage/progress-bar/theming/css-properties/ind
 <CSSProps />
 
 
+### CSS Shadow Parts
+
+import CSSParts from '@site/static/usage/progress-bar/theming/css-shadow-parts/index.md';
+
+<CSSParts />
+
+
 ## Properties
 <Props />
 
