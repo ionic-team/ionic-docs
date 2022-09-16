@@ -1,9 +1,6 @@
 ---
 title: "ion-badge"
 ---
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-
 import Props from '@site/static/auto-generated/badge/props.md';
 import Events from '@site/static/auto-generated/badge/events.md';
 import Methods from '@site/static/auto-generated/badge/methods.md';

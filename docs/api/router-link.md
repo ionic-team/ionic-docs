@@ -4,8 +4,6 @@ hide_table_of_contents: true
 demoUrl: "/docs/demos/api/router-link/index.html"
 demoSourceUrl: "https://github.com/ionic-team/ionic-docs/tree/main/static/demos/api/router-link/index.html"
 ---
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
 import TOCInline from '@theme/TOCInline';
 
 import Props from '@site/static/auto-generated/router-link/props.md';
