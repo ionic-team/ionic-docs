@@ -56,6 +56,13 @@ import Colors from '@site/static/usage/progress-bar/theming/colors/index.md';
 <Colors />
 
 
+### CSS Custom Properties
+
+import CSSProps from '@site/static/usage/progress-bar/theming/css-properties/index.md';
+
+<CSSProps />
+
+
 ## Properties
 <Props />
 
