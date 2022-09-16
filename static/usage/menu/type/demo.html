@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Menu - Type</title>
+    <link rel="stylesheet" href="../../common.css" />
+    <script src="../../common.js"></script>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core@6/dist/ionic/ionic.esm.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core@6/css/ionic.bundle.css" />
+  </head>
+  <body>
+    <ion-app>
+      <ion-menu type="overlay" content-id="main-content">
+        <ion-header>
+          <ion-toolbar>
+            <ion-title>Menu Content</ion-title>
+          </ion-toolbar>
+        </ion-header>
+        <ion-content class="ion-padding">
+          <ion-menu-toggle>
+            <ion-button>Click to close the menu</ion-button>
+          </ion-menu-toggle>
+        </ion-content>
+      </ion-menu>
+
+      <div class="ion-page" id="main-content">
+        <ion-header>
+          <ion-toolbar>
+            <ion-title>Menu</ion-title>
+          </ion-toolbar>
+        </ion-header>
+        <ion-content class="ion-padding">
+          <h2>Select an overlay type:</h2>
+          <ion-radio-group value="overlay">
+            <ion-item>
+              <ion-label>
+                <code>overlay</code>
+              </ion-label>
+              <ion-radio value="overlay"></ion-radio>
+            </ion-item>
+            <ion-item>
+              <ion-label>
+                <code>reveal</code>
+              </ion-label>
+              <ion-radio value="reveal"></ion-radio>
+            </ion-item>
+            <ion-item>
+              <ion-label>
+                <code>push</code>
+              </ion-label>
+              <ion-radio value="push"></ion-radio>
+            </ion-item>
+          </ion-radio-group> <br />
+          <ion-menu-toggle>
+            <ion-button>Click to open the menu</ion-button>
+          </ion-menu-toggle>
+        </ion-content>
+      </div>
+    </ion-app>
+
+    <script>
+      const menu = document.querySelector('ion-menu');
+      const radioGroup = document.querySelector('ion-radio-group');
+
+      radioGroup.addEventListener('ionChange', (ev) => {
+        menu.type = ev.detail.value;
+      });
+    </script>
+  </body>
+</html>
