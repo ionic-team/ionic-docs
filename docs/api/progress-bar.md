@@ -42,6 +42,10 @@ import Buffer from '@site/static/usage/progress-bar/buffer/index.md';
 
 The indeterminate type should be used when it is unknown how long the process will take. The progress bar is not tied to the `value`, instead it continually slides along the track until the process is complete.
 
+import Indeterminate from '@site/static/usage/progress-bar/indeterminate/index.md';
+
+<Indeterminate />
+
 
 ## Properties
 <Props />
