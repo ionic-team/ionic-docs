@@ -45,7 +45,9 @@ TODO Playground
 
 ## Theming
 
-TODO Playground
+import Theming from '@site/static/usage/menu/theming/index.md';
+
+<Theming />
 
 ## Interfaces
 
