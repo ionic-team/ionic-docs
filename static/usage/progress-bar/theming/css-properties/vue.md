@@ -1,6 +1,7 @@
 ```html
 <template>
-  <ion-progress-bar value=".25" buffer=".5"></ion-progress-bar>
+  <ion-progress-bar :value=".25" :buffer=".5"></ion-progress-bar>
+  <ion-progress-bar type="indeterminate"></ion-progress-bar>
 </template>
 
 <script lang="ts">
