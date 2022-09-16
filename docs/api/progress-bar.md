@@ -47,6 +47,15 @@ import Indeterminate from '@site/static/usage/progress-bar/indeterminate/index.m
 <Indeterminate />
 
 
+## Theming
+
+### Colors
+
+import Colors from '@site/static/usage/progress-bar/theming/colors/index.md';
+
+<Colors />
+
+
 ## Properties
 <Props />
 
