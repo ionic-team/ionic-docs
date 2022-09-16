@@ -25,7 +25,7 @@ The Spinner component provides a variety of animated SVG spinners. Spinners are 
 
 ## Basic Usage
 
-The default spinner is based on the mode. When the mode is `ios` the spinner will be `"lines"`, and when the mode is `md` the spinner will be `"crescent"`. If the `name` property is set, then that spinner will be used instead of the mode specific spinner.
+The default spinner is based on the mode. When the mode is `ios` the spinner will be `"lines"`, and when the mode is `md` the spinner will be `"circular"`. If the `name` property is set, then that spinner will be used instead of the mode specific spinner.
 
 import Basic from '@site/static/usage/spinner/basic/index.md';
 

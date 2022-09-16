@@ -5,4 +5,4 @@ import react from './react.md';
 import vue from './vue.md';
 import angular from './angular.md';
 
-<Playground code={{ javascript, react, vue, angular }} src="usage/spinner/basic/demo.html" size="350px" />
+<Playground code={{ javascript, react, vue, angular }} src="usage/spinner/basic/demo.html" size="500px" />

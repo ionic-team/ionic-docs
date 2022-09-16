@@ -26,6 +26,16 @@ function Example() {
       </IonItem>
 
       <IonItem>
+        <IonLabel>Lines Sharp</IonLabel>
+        <IonSpinner name="lines-sharp"></IonSpinner>
+      </IonItem>
+
+      <IonItem>
+        <IonLabel>Lines Sharp Small</IonLabel>
+        <IonSpinner name="lines-sharp-small"></IonSpinner>
+      </IonItem>
+
+      <IonItem>
         <IonLabel>Bubbles</IonLabel>
         <IonSpinner name="bubbles"></IonSpinner>
       </IonItem>
@@ -33,6 +43,11 @@ function Example() {
       <IonItem>
         <IonLabel>Circles</IonLabel>
         <IonSpinner name="circles"></IonSpinner>
+      </IonItem>
+
+      <IonItem>
+        <IonLabel>Circular</IonLabel>
+        <IonSpinner name="circular"></IonSpinner>
       </IonItem>
 
       <IonItem>
