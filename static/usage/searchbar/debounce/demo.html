@@ -22,19 +22,7 @@
     <ion-content>
       <div class="container">
         <ion-searchbar debounce="1000"></ion-searchbar>
-
-        <ion-list>
-          <ion-item>Amsterdam</ion-item>
-          <ion-item>Buenos Aires</ion-item>
-          <ion-item>Cairo</ion-item>
-          <ion-item>Geneva</ion-item>
-          <ion-item>Hong Kong</ion-item>
-          <ion-item>Istanbul</ion-item>
-          <ion-item>London</ion-item>
-          <ion-item>Madrid</ion-item>
-          <ion-item>New York</ion-item>
-          <ion-item>Panama City</ion-item>
-        </ion-list>
+        <ion-list></ion-list>
       </div>
     </ion-content>
   </ion-app>
@@ -42,17 +30,34 @@
 
 <script>
   const searchbar = document.querySelector('ion-searchbar');
-  const items = Array.from(document.querySelector('ion-list').children);
+  const list = document.querySelector('ion-list');
+
+  const data = ['Amsterdam', 'Buenos Aires', 'Cairo', 'Geneva', 'Hong Kong', 'Istanbul', 'London', 'Madrid', 'New York', 'Panama City'];
+  let results = [...data];
+  filterItems(results);
 
   searchbar.addEventListener('ionChange', handleChange);
 
   function handleChange(event) {
     const query = event.target.value.toLowerCase();
+    results = data.filter(d => d.toLowerCase().indexOf(query) > -1);
+    filterItems(results);
+  }
 
-    items.forEach((item) => {
-      const shouldShow = item.textContent.toLowerCase().indexOf(query) > -1;
-      item.style.display = shouldShow ? 'block' : 'none';
-    });
+  function filterItems(results) {
+    list.replaceChildren();
+
+    let items = '';
+
+    for (let i = 0; i < results.length; i++) {
+      items += `
+        <ion-item>
+          <ion-label>${results[i]}</ion-label>
+        </ion-item>
+      `;
+    }
+
+    list.innerHTML = items;
   }
 </script>
 

@@ -2,35 +2,29 @@
 <template>
   <ion-searchbar :debounce="1000" @ionChange="handleChange($event)"></ion-searchbar>
 
-  <ion-list ref="list">
-    <ion-item>Amsterdam</ion-item>
-    <ion-item>Buenos Aires</ion-item>
-    <ion-item>Cairo</ion-item>
-    <ion-item>Geneva</ion-item>
-    <ion-item>Hong Kong</ion-item>
-    <ion-item>Istanbul</ion-item>
-    <ion-item>London</ion-item>
-    <ion-item>Madrid</ion-item>
-    <ion-item>New York</ion-item>
-    <ion-item>Panama City</ion-item>
+  <ion-list>
+    <ion-item v-for="result in results">
+      <ion-label>{{ result }}</ion-label>
+    </ion-item>
   </ion-list>
 </template>
 
 <script lang="ts">
   import { IonItem, IonList, IonSearchbar } from '@ionic/vue';
-  import { defineComponent } from 'vue';
+  import { defineComponent, ref } from 'vue';
 
   export default defineComponent({
     components: { IonItem, IonList, IonSearchbar },
+    setup() {
+      const data = ['Amsterdam', 'Buenos Aires', 'Cairo', 'Geneva', 'Hong Kong', 'Istanbul', 'London', 'Madrid', 'New York', 'Panama City'];
+      const results = ref(data);
+
+      return { data, results };
+    },
     methods: {
       handleChange(event) {
         const query = event.target.value.toLowerCase();
-        const items = Array.from(this.$refs.list.$el.children);
-
-        items.forEach((item) => {
-          const shouldShow = item.textContent.toLowerCase().indexOf(query) > -1;
-          item.style.display = shouldShow ? 'block' : 'none';
-        });
+        this.results = this.data.filter(d => d.toLowerCase().indexOf(query) > -1);
       },
     },
   });
