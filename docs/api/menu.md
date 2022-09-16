@@ -45,6 +45,8 @@ TODO Playground
 
 ## Theming
 
+### CSS Shadow Parts
+
 import Theming from '@site/static/usage/menu/theming/index.md';
 
 <Theming />
