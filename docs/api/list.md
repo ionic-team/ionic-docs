@@ -37,6 +37,15 @@ import Basic from '@site/static/usage/list/basic/index.md';
 <Basic />
 
 
+## Inset List
+
+Adding the `inset` property to a list will apply margin around the list. In `ios` mode it will also add rounded corners to the list.
+
+import Inset from '@site/static/usage/list/inset/index.md';
+
+<Inset />
+
+
 
 ## Properties
 <Props />
