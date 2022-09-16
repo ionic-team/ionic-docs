@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Item</title>
+  <link rel="stylesheet" href="../../../common.css" />
+  <script src="../../../common.js"></script>
+  <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core@6/dist/ionic/ionic.esm.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core@6/css/ionic.bundle.css" />
+
+  <style>
+    .container {
+      display: block;
+    }
+
+    ion-item {
+      --background: #19422d;
+      --color: #fff;
+
+      --border-color: #fff;
+      --border-style: dashed;
+      --border-width: 2px;
+
+      --border-radius: 20px;
+
+      --ripple-color: purple;
+
+      --detail-icon-color: white;
+      --detail-icon-opacity: 1;
+      --detail-icon-font-size: 20px;
+    }
+  </style>
+</head>
+
+<body>
+  <ion-app>
+    <ion-content>
+      <div class="container">
+        <ion-item button lines="full">
+          <ion-label>Custom Item</ion-label>
+        </ion-item>
+
+        <ion-item button lines="full">
+          <ion-label>Custom Item</ion-label>
+        </ion-item>
+
+        <ion-item button lines="full">
+          <ion-label>Custom Item</ion-label>
+        </ion-item>
+      </div>
+    </ion-content>
+  </ion-app>
+</body>
+
+</html>
