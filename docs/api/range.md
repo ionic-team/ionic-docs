@@ -1,9 +1,6 @@
 ---
 title: "ion-range"
 ---
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-
 import Props from '@site/static/auto-generated/range/props.md';
 import Events from '@site/static/auto-generated/range/events.md';
 import Methods from '@site/static/auto-generated/range/methods.md';
@@ -24,6 +21,8 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 Rangeスライダは、スライダノブを動かして、ユーザーが値の範囲を選択できるようにするものです。デフォルトでは、1つのノブがレンジの値を制御します。この動作は [dual knobs](#dual-knobs) を使ってカスタマイズすることができます。
 
 デフォルトでは、Rangeスライダーの最小値は`0`、最大値は`100`です。これは `min` と `max` プロパティで設定することができます。
+
+## Basic Usage
 
 import Basic from '@site/static/usage/range/basic/index.md';
 
@@ -83,23 +82,23 @@ import IonKnobMoveEvent from '@site/static/usage/range/ion-knob-move-event/index
 
 <IonKnobMoveEvent />
 
-## スタイリング
+## Theming
 
-### CSS変数を使ったスタイリング
+### CSS Custom Properties
 
 Rangeには、アプリケーションのデザインに合わせてRangeコンポーネントの外観を素早くテーマ化してカスタマイズするための[CSS Variables](#css-custom-properties)が含まれています。
 
-import CssVariablesPlayground from '@site/static/usage/range/css-variables/index.md';
+import CSSProps from '@site/static/usage/range/theming/css-properties/index.md';
 
-<CssVariablesPlayground />
+<CSSProps />
 
-### CSS Shadow Partsによるスタイリング
+### CSS Shadow Parts
 
 Rangeには [CSS Shadow Parts](#css-shadow-parts) があり、Rangeコンポーネント内の特定の要素ノードを完全にカスタマイズすることができます。CSS Shadow Partsは最も多くのカスタマイズ機能を提供し、Rangeコンポーネントで高度なスタイリングが必要な場合に推奨されるアプローチです。
 
-import CssShadowPartsPlayground from '@site/static/usage/range/css-shadow-parts/index.md';
+import CSSParts from '@site/static/usage/range/theming/css-shadow-parts/index.md';
 
-<CssShadowPartsPlayground />
+<CSSParts />
 
 ## Interfaces
 

@@ -1,9 +1,6 @@
 ---
 title: "ion-datetime-button"
 ---
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-
 import Props from '@site/static/auto-generated/datetime-button/props.md';
 import Events from '@site/static/auto-generated/datetime-button/events.md';
 import Methods from '@site/static/auto-generated/datetime-button/methods.md';

@@ -22,7 +22,7 @@ Thumbnailsは、通常、画像またはアイコンをラップする四角形�
 
 Thumbnailsは、単独で使用することも、任意の要素の内部で使用することもできます。`ion-item` の内部に配置すると、Thumbnailsのサイズが親コンポーネントに合わせて変更されます。Thumbnailsをアイテムの左側または右側に配置するには、slotをそれぞれ `start` または `end` に設定します。
 
-## Basic
+## Basic Usage
 
 import Basic from '@site/static/usage/thumbnail/basic/index.md';
 
@@ -36,9 +36,11 @@ import Item from '@site/static/usage/thumbnail/item/index.md';
 
 ## Theming
 
-import Theming from '@site/static/usage/thumbnail/theming/index.md';
+### CSS Custom Properties
 
-<Theming />
+import CSSProps from '@site/static/usage/thumbnail/theming/css-properties/index.md';
+
+<CSSProps />
 
 ## プロパティ
 <Props />

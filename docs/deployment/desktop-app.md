@@ -11,7 +11,7 @@ sidebar_label: Electronデスクトップアプリ
   />
 </head>
 
-Ionicを使ってデスクトップアプリを構築することで、開発者は自分のコードの100%を再利用し、プッシュ通知のようなネイティブデバイスの全機能にアクセスしながら、今までのようにデスクトップアプリをリリースすることができます。このガイドは、Electronに精通していることを前提としており、Electronアプリを構築するための「方法」には触れていません。それらについては <a href="https://electronjs.org/docs/tutorial/first-app" target="_blank">Electron guide</a> を参照ください。
+Ionicでデスクトップアプリケーションを構築すると、開発者はコードを100%再利用し、従来のデスクトップアプリケーションをリリースしながら、プッシュ通知などのすべてのネイティブデバイスの機能を利用することができます。このガイドでは、Electronに精通していることを前提としており、Electronアプリの「作り方」については触れません。 詳しくは <a href="https://www.electronjs.org/docs/latest/tutorial/tutorial-first-app" target="_blank">Electron guide</a>. をご覧ください。
 
 ## macOSアプリ
 

@@ -1,9 +1,6 @@
 ---
 title: "ion-select"
 ---
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-
 import Props from '@site/static/auto-generated/select/props.md';
 import Events from '@site/static/auto-generated/select/events.md';
 import Methods from '@site/static/auto-generated/select/methods.md';

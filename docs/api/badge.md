@@ -1,9 +1,6 @@
 ---
 title: "ion-badge"
 ---
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-
 import Props from '@site/static/auto-generated/badge/props.md';
 import Events from '@site/static/auto-generated/badge/events.md';
 import Methods from '@site/static/auto-generated/badge/methods.md';
@@ -22,23 +19,25 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 Badgeは、通常は別の要素の近くに表示されるinline-block要素です。通常は、数字またはその他の文字とともに利用します。これらは、要素に関連付けられた未読のアイテムがあることの通知として使用でき、アイテムの数を示します。
 
-import BasicExample from '@site/static/usage/badge/basic/index.md';
+## Basic Usage
 
-<BasicExample />
+import Basic from '@site/static/usage/badge/basic/index.md';
 
-## カスタマイズ例
+<Basic />
 
-### 配色
+## Theming
 
-import ColorExample from '@site/static/usage/badge/customization/color/index.md';
+### Colors
 
-<ColorExample />
+import Colors from '@site/static/usage/badge/theming/colors/index.md';
+
+<Colors />
 
 ### CSS Properties
 
-import CSSPropsExample from '@site/static/usage/badge/customization/css-properties/index.md';
+import CSSProps from '@site/static/usage/badge/theming/css-properties/index.md';
 
-<CSSPropsExample />
+<CSSProps />
 
 ## プロパティ
 <Props />

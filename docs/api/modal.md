@@ -1,9 +1,6 @@
 ---
 title: "ion-modal"
 ---
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-
 import Props from '@site/static/auto-generated/modal/props.md';
 import Events from '@site/static/auto-generated/modal/events.md';
 import Methods from '@site/static/auto-generated/modal/methods.md';
