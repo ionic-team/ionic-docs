@@ -4,9 +4,7 @@ import { IonSpinner } from '@ionic/react';
 
 function Example() {
   return (
-    <>
-      <IonSpinner></IonSpinner>
-    </>
+    <IonSpinner></IonSpinner>
   );
 }
 export default Example;
