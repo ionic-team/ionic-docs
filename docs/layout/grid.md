@@ -240,7 +240,7 @@ Use a combination of width and breakpoint attributes to create a grid that start
 
 #### Live Example
 
-You can view a live example of this in Angular [here](https://stackblitz.com/edit/ionic-ng-stacked-horizontal-grid) and for React [here](https://stackblitz.com/edit/ionic-react-stacked-horizontal-grid).
+You can view a live example of this in Angular [here](https://stackblitz.com/edit/ionic-ng-stacked-horizontal-grid) and in React [here](https://stackblitz.com/edit/ionic-react-stacked-horizontal-grid).
 
 ## Reordering
 
