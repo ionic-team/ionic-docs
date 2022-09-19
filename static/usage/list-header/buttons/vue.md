@@ -24,7 +24,7 @@
 </template>
 
 <script lang="ts">
-  import { IonItem, IonLabel, IonList, IonListHeader } from '@ionic/vue';
+  import { IonButton, IonItem, IonLabel, IonList, IonListHeader } from '@ionic/vue';
   import { defineComponent } from 'vue';
 
   export default defineComponent({
