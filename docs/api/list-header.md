@@ -32,6 +32,15 @@ import Buttons from '@site/static/usage/list-header/buttons/index.md';
 <Buttons />
 
 
+## List Header Lines
+
+List headers do not show a bottom border by default. The `lines` property can be modified to `"full"` or `"inset"` which will show a full width border or an inset border with left padding, respectively.
+
+import Lines from '@site/static/usage/list-header/lines/index.md';
+
+<Lines />
+
+
 ## Properties
 <Props />
 
