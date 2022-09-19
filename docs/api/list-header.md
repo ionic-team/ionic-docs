@@ -23,6 +23,15 @@ import Basic from '@site/static/usage/list-header/basic/index.md';
 <Basic />
 
 
+## Buttons in List Headers
+
+A [button](./button) placed in a list header can be useful for showing part of a list and redirecting to the full list with the button.
+
+import Buttons from '@site/static/usage/list-header/buttons/index.md';
+
+<Buttons />
+
+
 ## Properties
 <Props />
 
