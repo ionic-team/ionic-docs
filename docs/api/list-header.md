@@ -48,6 +48,12 @@ import Colors from '@site/static/usage/list-header/theming/colors/index.md';
 
 <Colors />
 
+### CSS Custom Properties
+
+import CSSProps from '@site/static/usage/list-header/theming/css-properties/index.md';
+
+<CSSProps />
+
 
 
 ## Properties
