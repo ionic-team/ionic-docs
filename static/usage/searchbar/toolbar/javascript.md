@@ -1,0 +1,12 @@
+```html
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Searchbar
+    </ion-title>
+  </ion-toolbar>
+  <ion-toolbar>
+    <ion-searchbar></ion-searchbar>
+  </ion-toolbar>
+</ion-header>
+```
