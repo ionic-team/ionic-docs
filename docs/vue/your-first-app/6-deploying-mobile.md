@@ -30,8 +30,8 @@ ionic build
 Next, create both the iOS and Android projects:
 
 ```shell
-$ ionic cap add ios
-$ ionic cap add android
+ionic cap add ios
+ionic cap add android
 ```
 
 Both android and ios folders at the root of the project are created. These are entirely standalone native projects that should be considered part of your Ionic app (i.e., check them into source control, edit them using their native tooling, etc.).
