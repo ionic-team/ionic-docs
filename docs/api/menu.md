@@ -49,7 +49,11 @@ import MenuType from '@site/static/usage/menu/type/index.md';
 
 ## Theming
 
-TODO Playground
+### CSS Shadow Parts
+
+import Theming from '@site/static/usage/menu/theming/index.md';
+
+<Theming />
 
 ## Interfaces
 
