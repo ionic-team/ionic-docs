@@ -40,6 +40,15 @@ import Lines from '@site/static/usage/list-header/lines/index.md';
 
 <Lines />
 
+## Theming
+
+### Colors
+
+import Colors from '@site/static/usage/list-header/theming/colors/index.md';
+
+<Colors />
+
+
 
 ## Properties
 <Props />
