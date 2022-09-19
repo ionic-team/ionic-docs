@@ -4,7 +4,7 @@ import { IonItem, IonLabel, IonList } from '@ionic/react';
 
 function Example() {
   return (
-    <IonList inset>
+    <IonList inset={true}>
       <IonItem>
         <IonLabel>Pokémon Yellow</IonLabel>
       </IonItem>
