@@ -14,7 +14,7 @@ function Example() {
   }, []);
 
   if (progress > 1) {
-    const timer = setTimeout(() => {
+    setTimeout(() => {
       setProgress(0);
     }, 1000);
   }
