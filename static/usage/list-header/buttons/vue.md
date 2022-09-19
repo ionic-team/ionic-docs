@@ -28,7 +28,7 @@
   import { defineComponent } from 'vue';
 
   export default defineComponent({
-    components: { IonItem, IonLabel, IonList, IonListHeader },
+    components: { IonButton, IonItem, IonLabel, IonList, IonListHeader },
   });
 </script>
 ```
