@@ -48,7 +48,7 @@ import Inset from '@site/static/usage/list/inset/index.md';
 
 ## List Lines
 
-Adding the `lines` property to a list will adjust the bottom borders of all of the items in the list. Setting it to `"full"` will display full width borders, `"inset"` will display borders adjusted with left padding, and `"none"` will show no borders. If the `lines` property is set on an item in a list that will take priority over the property on the list.
+Adding the `lines` property to a list will adjust the bottom borders of all of the items in the list. Setting it to `"full"` will display full width borders, `"inset"` will display borders adjusted with left padding, and `"none"` will show no borders. If the `lines` property is set on an item in a list, that will take priority over the property on the list.
 
 import Lines from '@site/static/usage/list/lines/index.md';
 
