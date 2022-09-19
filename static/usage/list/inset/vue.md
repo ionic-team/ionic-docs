@@ -1,6 +1,6 @@
 ```html
 <template>
-  <ion-list inset>
+  <ion-list :inset="true">
     <ion-item>
       <ion-label>Pokémon Yellow</ion-label>
     </ion-item>
