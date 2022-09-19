@@ -4,9 +4,7 @@ import { IonProgressBar } from '@ionic/react';
 
 function Example() {
   return (
-    <>
-      <IonProgressBar type="indeterminate"></IonProgressBar>
-    </>
+    <IonProgressBar type="indeterminate"></IonProgressBar>
   );
 }
 export default Example;
