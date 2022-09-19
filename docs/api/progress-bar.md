@@ -1,13 +1,6 @@
 ---
 title: "ion-progress-bar"
-hide_table_of_contents: true
-demoUrl: "/docs/demos/api/progress-bar/index.html"
-demoSourceUrl: "https://github.com/ionic-team/ionic-docs/tree/main/static/demos/api/progress-bar/index.html"
 ---
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-import TOCInline from '@theme/TOCInline';
-
 import Props from '@site/static/auto-generated/progress-bar/props.md';
 import Events from '@site/static/auto-generated/progress-bar/events.md';
 import Methods from '@site/static/auto-generated/progress-bar/methods.md';
@@ -26,178 +19,56 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <h2 className="table-of-contents__title">Contents</h2>
 
-<TOCInline
-  toc={toc}
-  maxHeadingLevel={2}
-/>
-
-
-
 Progress bars inform users about the status of ongoing processes, such as loading an app, submitting a form, or saving updates. There are two types of progress bars: `determinate` and `indeterminate`.
 
-## Progress Type
-
-### Determinate
+## Determinate
 
 Determinate is the default type. It should be used when the percentage of an operation is known. The progress is represented by setting the `value` property. This can be used to show the progress increasing from 0 to 100% of the track.
 
+import Determinate from '@site/static/usage/progress-bar/determinate/index.md';
+
+<Determinate />
+
+### Buffer
+
 If the `buffer` property is set, a buffer stream will show with animated circles to indicate activity. The value of the `buffer` property will also be represented by how much visible track there is. If the value of `buffer` is less than the `value` property, there will be no visible track. If `buffer` is equal to `1` then the buffer stream will be hidden.
 
-### Indeterminate
+import Buffer from '@site/static/usage/progress-bar/buffer/index.md';
+
+<Buffer />
+
+
+## Indeterminate
 
 The indeterminate type should be used when it is unknown how long the process will take. The progress bar is not tied to the `value`, instead it continually slides along the track until the process is complete.
 
+import Indeterminate from '@site/static/usage/progress-bar/indeterminate/index.md';
+
+<Indeterminate />
 
 
-## Usage
+## Theming
 
-<Tabs groupId="framework" defaultValue="angular" values={[{ value: 'angular', label: 'Angular' }, { value: 'javascript', label: 'Javascript' }, { value: 'react', label: 'React' }, { value: 'stencil', label: 'Stencil' }, { value: 'vue', label: 'Vue' }]}>
+### Colors
 
-<TabItem value="angular">
+import Colors from '@site/static/usage/progress-bar/theming/colors/index.md';
 
-```html
-<!-- Default Progressbar -->
-<ion-progress-bar></ion-progress-bar>
-
-<!-- Default Progressbar with 50 percent -->
-<ion-progress-bar value="0.5"></ion-progress-bar>
-
-<!-- Colorize Progressbar -->
-<ion-progress-bar color="primary" value="0.5"></ion-progress-bar>
-<ion-progress-bar color="secondary" value="0.5"></ion-progress-bar>
-
-<!-- Other types -->
-<ion-progress-bar value="0.25" buffer="0.5"></ion-progress-bar>
-<ion-progress-bar type="indeterminate"></ion-progress-bar>
-<ion-progress-bar type="indeterminate" reversed="true"></ion-progress-bar>
-```
+<Colors />
 
 
-</TabItem>
+### CSS Custom Properties
+
+import CSSProps from '@site/static/usage/progress-bar/theming/css-properties/index.md';
+
+<CSSProps />
 
 
-<TabItem value="javascript">
+### CSS Shadow Parts
 
-```html
-<!-- Default Progressbar -->
-<ion-progress-bar></ion-progress-bar>
+import CSSParts from '@site/static/usage/progress-bar/theming/css-shadow-parts/index.md';
 
-<!-- Default Progressbar with 50 percent -->
-<ion-progress-bar value="0.5"></ion-progress-bar>
+<CSSParts />
 
-<!-- Colorize Progressbar -->
-<ion-progress-bar color="primary" value="0.5"></ion-progress-bar>
-<ion-progress-bar color="secondary" value="0.5"></ion-progress-bar>
-
-<!-- Other types -->
-<ion-progress-bar value="0.25" buffer="0.5"></ion-progress-bar>
-<ion-progress-bar type="indeterminate"></ion-progress-bar>
-<ion-progress-bar type="indeterminate" reversed="true"></ion-progress-bar>
-```
-
-
-</TabItem>
-
-
-<TabItem value="react">
-
-```tsx
-import React from 'react';
-import { IonProgressBar, IonContent } from '@ionic/react';
-
-export const ProgressbarExample: React.FC = () => (
-  <IonContent>
-    {/*-- Default Progressbar --*/}
-    <IonProgressBar></IonProgressBar><br />
-
-    {/*-- Default Progressbar with 50 percent --*/}
-    <IonProgressBar value={0.5}></IonProgressBar><br />
-
-    {/*-- Colorize Progressbar --*/}
-    <IonProgressBar color="primary" value={0.5}></IonProgressBar><br />
-    <IonProgressBar color="secondary" value={0.5}></IonProgressBar><br />
-
-    {/*-- Other types --*/}
-    <IonProgressBar value={0.25} buffer={0.5}></IonProgressBar><br />
-    <IonProgressBar type="indeterminate"></IonProgressBar><br />
-    <IonProgressBar type="indeterminate" reversed={true}></IonProgressBar><br />
-  </IonContent>
-);
-```
-
-
-</TabItem>
-
-
-<TabItem value="stencil">
-
-```tsx
-import { Component, h } from '@stencil/core';
-
-@Component({
-  tag: 'progress-bar-example',
-  styleUrl: 'progress-bar-example.css'
-})
-export class ProgressBarExample {
-  render() {
-    return [
-      // Default Progressbar
-      <ion-progress-bar></ion-progress-bar>,
-
-      // Default Progressbar with 50 percent
-      <ion-progress-bar value={0.5}></ion-progress-bar>,
-
-      // Colorize Progressbar
-      <ion-progress-bar color="primary" value={0.5}></ion-progress-bar>,
-      <ion-progress-bar color="secondary" value={0.5}></ion-progress-bar>,
-
-      // Other types
-      <ion-progress-bar value={0.25} buffer={0.5}></ion-progress-bar>,
-      <ion-progress-bar type="indeterminate"></ion-progress-bar>,
-      <ion-progress-bar type="indeterminate" reversed={true}></ion-progress-bar>
-    ];
-  }
-}
-```
-
-
-</TabItem>
-
-
-<TabItem value="vue">
-
-```html
-<template>
-  <!-- Default Progressbar -->
-  <ion-progress-bar></ion-progress-bar>
-
-  <!-- Default Progressbar with 50 percent -->
-  <ion-progress-bar value="0.5"></ion-progress-bar>
-
-  <!-- Colorize Progressbar -->
-  <ion-progress-bar color="primary" value="0.5"></ion-progress-bar>
-  <ion-progress-bar color="secondary" value="0.5"></ion-progress-bar>
-
-  <!-- Other types -->
-  <ion-progress-bar value="0.25" buffer="0.5"></ion-progress-bar>
-  <ion-progress-bar type="indeterminate"></ion-progress-bar>
-  <ion-progress-bar type="indeterminate" reversed="true"></ion-progress-bar>
-</template>
-
-<script>
-import { IonProgressBar } from '@ionic/vue';
-import { defineComponent } from 'vue';
-
-export default defineComponent({
-  components: { IonProgressBar }
-});
-</script>
-```
-
-
-</TabItem>
-
-</Tabs>
 
 ## Properties
 <Props />
