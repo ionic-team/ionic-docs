@@ -166,7 +166,7 @@ By default the keyboard theme is determined by the OS. For example, if dark mode
 
 When running an app in a mobile web browser or as a PWA there is no way to force the keyboard to appear with a certain theme.
 
-When running an app in Capacitor or Cordova, it is possible to force the keyboard to appear with a certain theme. For more information regarding this configuration, see the <a href="https://capacitor.ionicframework.com/docs/apis/keyboard#keyboard-configuration-ios-only-" target="_blank">Capacitor Keyboard Documentation</a>.
+When running an app in Capacitor or Cordova, it is possible to force the keyboard to appear with a certain theme. For more information regarding this configuration, see the <a href="https://capacitorjs.com/docs/apis/keyboard#keyboard-configuration-ios-only-" target="_blank">Capacitor Keyboard Documentation</a>.
 
 ## Hiding the Accessory Bar
 
@@ -174,7 +174,7 @@ When running any kind of web based application, iOS will show an accessory bar a
 
 When running an app in a mobile web browser or as a PWA there is no way to hide the accessory bar.
 
-When running an app in Capacitor or Cordova, it is possible to hide the accessory bar. For more information regarding this configuration, see the <a href="https://capacitor.ionicframework.com/docs/apis/keyboard#keyboard-configuration-ios-only-" target="_blank">Capacitor Keyboard Documentation</a>.
+When running an app in Capacitor or Cordova, it is possible to hide the accessory bar. For more information regarding this configuration, see the <a href="https://capacitorjs.com/docs/apis/keyboard#keyboard-configuration-ios-only-" target="_blank">Capacitor Keyboard Documentation</a>.
 
 ## Keyboard Lifecycle Events
 

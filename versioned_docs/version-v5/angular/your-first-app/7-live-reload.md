@@ -107,6 +107,6 @@ Save this file, then tap on a photo again and choose the “Delete” option. Th
 
 ## What’s Next?
 
-Congratulations! You built a complete cross-platform Photo Gallery app that runs on the web, iOS, and Android. There are many paths to follow from here. Try adding another [Ionic UI component](https://ionicframework.com/docs/components) to the app, or more [native functionality](https://capacitor.ionicframework.com/docs/apis). The sky’s the limit.
+Congratulations! You built a complete cross-platform Photo Gallery app that runs on the web, iOS, and Android. There are many paths to follow from here. Try adding another [Ionic UI component](https://ionicframework.com/docs/components) to the app, or more [native functionality](https://capacitorjs.com/docs/apis). The sky’s the limit.
 
 Happy app building! 💙
