@@ -57,6 +57,12 @@ import Colors from '@site/static/usage/segment/theming/colors/index.md';
 
 <Colors />
 
+### CSS Custom Properties
+
+import CSSProps from '@site/static/usage/segment/theming/css-properties/index.md';
+
+<CSSProps />
+
 
 ## Accessibility
 
