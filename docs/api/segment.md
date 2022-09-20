@@ -49,6 +49,15 @@ import Toolbar from '@site/static/usage/segment/toolbar/index.md';
 <Toolbar />
 
 
+## Theming
+
+### Colors
+
+import Colors from '@site/static/usage/segment/theming/colors/index.md';
+
+<Colors />
+
+
 ## Accessibility
 
 ### Keyboard Navigation
