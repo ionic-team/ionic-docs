@@ -42,6 +42,13 @@ import Scrollable from '@site/static/usage/segment/scrollable/index.md';
 <Scrollable />
 
 
+## Toolbar Segments
+
+import Toolbar from '@site/static/usage/segment/toolbar/index.md';
+
+<Toolbar />
+
+
 ## Accessibility
 
 ### Keyboard Navigation
