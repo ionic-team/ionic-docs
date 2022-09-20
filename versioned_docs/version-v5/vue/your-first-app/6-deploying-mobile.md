@@ -12,7 +12,7 @@ Remember, you can find the complete source code for this app [here](https://gith
 
 ## Capacitor Setup
 
-Capacitor is Ionic’s official app runtime that makes it easy to deploy web apps to native platforms like iOS, Android, and more. If you’ve used Cordova in the past, consider reading more about the differences [here](https://capacitor.ionicframework.com/docs/cordova#differences-between-capacitor-and-cordova).
+Capacitor is Ionic’s official app runtime that makes it easy to deploy web apps to native platforms like iOS, Android, and more. If you’ve used Cordova in the past, consider reading more about the differences [here](https://capacitorjs.com/docs/cordova#differences-between-capacitor-and-cordova).
 
 If you’re still running `ionic serve` in the terminal, cancel it. Complete a fresh build of the Ionic project, fixing any errors that it reports:
 
@@ -55,7 +55,7 @@ First, run the Capacitor `open` command, which opens the native iOS project in X
 ionic cap open ios
 ```
 
-In order for some native plugins to work, user permissions must be configured. In our photo gallery app, this includes the Camera plugin: iOS displays a modal dialog automatically after the first time that `Camera.getPhoto()` is called, prompting the user to allow the app to use the Camera. The permission that drives this is labeled "Privacy - Camera Usage." To set it, the `Info.plist` file must be modified ([more details here](https://capacitor.ionicframework.com/docs/ios/configuration)). To access it, click "Info," then expand "Custom iOS Target Properties."
+In order for some native plugins to work, user permissions must be configured. In our photo gallery app, this includes the Camera plugin: iOS displays a modal dialog automatically after the first time that `Camera.getPhoto()` is called, prompting the user to allow the app to use the Camera. The permission that drives this is labeled "Privacy - Camera Usage." To set it, the `Info.plist` file must be modified ([more details here](https://capacitorjs.com/docs/ios/configuration)). To access it, click "Info," then expand "Custom iOS Target Properties."
 
 ![Xcode Custom iOS Target Properties](/img/guides/first-app-cap-ng/xcode-info-plist.png)
 

@@ -32,7 +32,7 @@ These docs are for apps built with Ionic Framework 4.0.0 and greater. For older 
 
 ## Capacitor Support
 
-In addition to Cordova, Ionic Native also works with [Capacitor](https://capacitor.ionicframework.com), Ionic's official native runtime. Basic usage below. For complete details, [see the Capacitor documentation](https://capacitor.ionicframework.com/docs/cordova/using-cordova-plugins).
+In addition to Cordova, Ionic Native also works with [Capacitor](https://capacitorjs.com), Ionic's official native runtime. Basic usage below. For complete details, [see the Capacitor documentation](https://capacitorjs.com/docs/cordova/using-cordova-plugins).
 
 ## Usage
 
@@ -66,7 +66,7 @@ $ npm install @awesome-cordova-plugins/core
 </TabItem>
 <TabItem value="capacitor">
 
-For complete details, [see the Capacitor documentation](https://capacitor.ionicframework.com/docs/cordova/using-cordova-plugins).
+For complete details, [see the Capacitor documentation](https://capacitorjs.com/docs/cordova/using-cordova-plugins).
 
 ```shell
 // Install Ionic Native TypeScript wrapper
