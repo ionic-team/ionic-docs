@@ -5,19 +5,19 @@ title: "bug: "
 body:
   - type: textarea
     attributes:
-      label: Describe the bug
+      label: Describe the Bug
       description: A clear description of what the bug is and how it manifests.
     validation:
       required: true
   - type: textarea
     attributes:
-      label: Expected behavior
+      label: Expected Behavior
       description: A clear description of what you expected to happen.
     validation:
       required: true
   - type: textarea
     attributes:
-      label: Steps to reproduce
+      label: Steps to Reproduce
       description: Please explain the steps required to duplicate this issue.
     validation:
       required: true
@@ -32,12 +32,12 @@ body:
   - type: input
     attributes:
       label: Browser
-      description: The browser you are running (e.g. Chrome, Safari) 
+      description: The browser you are running (e.g. Chrome, Safari)
   - type: input
     attributes:
       label: Version
       description: The browser version you are running (e.g. 14)
   - type: textarea
     attributes:
-      label: Additional information
+      label: Additional Information
       description: List any other information that is relevant to your issue.
