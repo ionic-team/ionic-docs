@@ -7,19 +7,19 @@ body:
     attributes:
       label: Describe the Bug
       description: A clear description of what the bug is and how it manifests.
-    validation:
+    validations:
       required: true
   - type: textarea
     attributes:
       label: Expected Behavior
       description: A clear description of what you expected to happen.
-    validation:
+    validations:
       required: true
   - type: textarea
     attributes:
       label: Steps to Reproduce
       description: Please explain the steps required to duplicate this issue.
-    validation:
+    validations:
       required: true
   - type: textarea
     attributes:
