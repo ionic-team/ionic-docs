@@ -38,6 +38,21 @@ import Layout from '@site/static/usage/segment-button/layout/index.md';
 <Layout />
 
 
+## Theming
+### CSS Shadow Parts
+
+import CSSParts from '@site/static/usage/segment-button/theming/css-shadow-parts/index.md';
+
+<CSSParts />
+
+
+### CSS Custom Properties
+
+import CSSProps from '@site/static/usage/segment-button/theming/css-properties/index.md';
+
+<CSSProps />
+
+
 ## Properties
 <Props />
 
