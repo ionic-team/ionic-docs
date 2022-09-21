@@ -25,13 +25,8 @@
 
   export default {
     components: { IonButton },
-    data() {
-      return {
-        result: '',
-      };
-    },
-    methods: {
-      async presentActionSheet() {
+    setup() {
+      const presentActionSheet = async () => {
         const actionSheet = await actionSheetController.create({
           header: 'Example header',
           subHeader: 'Example subheader',
@@ -63,7 +58,12 @@
 
         const result = await actionSheet.onDidDismiss();
         this.result = JSON.stringify(result, null, 2);
-      },
+      };
+
+      return {
+        result: '',
+        presentActionSheet,
+      };
     },
   };
 </script>

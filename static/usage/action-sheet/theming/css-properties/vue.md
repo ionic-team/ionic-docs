@@ -18,8 +18,8 @@
 
   export default {
     components: { IonButton },
-    methods: {
-      async presentActionSheet() {
+    setup() {
+      const presentActionSheet = async () => {
         const actionSheet = await actionSheetController.create({
           header: 'Example header',
           subHeader: 'Example subheader',
@@ -49,7 +49,9 @@
         });
 
         actionSheet.present();
-      },
+      };
+
+      return { presentActionSheet };
     },
   };
 </script>
