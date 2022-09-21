@@ -53,6 +53,10 @@ We recommend passing a custom class to `cssClass` in the `create` method and usi
 }
 ```
 
+import Styling from '@site/static/usage/action-sheet/theming/styling/index.md';
+
+<Styling />
+
 ### CSS Custom Properties
 
 Any of the defined [CSS Custom Properties](#css-custom-properties-1) can be used to style the Action Sheet without needing to target individual elements.
