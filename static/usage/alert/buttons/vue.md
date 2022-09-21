@@ -10,14 +10,8 @@
 
   export default {
     components: { IonButton },
-    data() {
-      return {
-        handlerMessage: '',
-        roleMessage: '',
-      };
-    },
-    methods: {
-      async presentAlert() {
+    setup() {
+      const presentAlert = async () => {
         const alert = await alertController.create({
           header: 'Alert!',
           buttons: [
@@ -42,7 +36,13 @@
 
         const { role } = await alert.onDidDismiss();
         this.roleMessage = `Dismissed with role: ${role}`;
-      },
+      };
+
+      return {
+        handlerMessage: '',
+        roleMessage: '',
+        presentAlert,
+      };
     },
   };
 </script>

@@ -8,8 +8,8 @@
 
   export default {
     components: { IonButton },
-    methods: {
-      async presentAlert() {
+    setup() {
+      const presentAlert = async () => {
         const alert = await alertController.create({
           header: 'Select your favorite color',
           buttons: ['OK'],
@@ -33,7 +33,9 @@
         });
 
         await alert.present();
-      },
+      };
+
+      return { presentAlert };
     },
   };
 </script>
