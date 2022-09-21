@@ -33,11 +33,13 @@ A button's `role` property can either be `destructive` or `cancel`. Buttons with
 
 A button can also be passed data via the `data` property on `ActionSheetButton`. This will populate the `data` field in the return value of the `onDidDismiss` method.
 
-## Customization
+## Theming
 
 Action Sheet uses scoped encapsulation, which means it will automatically scope its CSS by appending each of the styles with an additional class at runtime. Overriding scoped selectors in CSS requires a [higher specificity](https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity) selector.
 
-We recommend passing a custom class to `cssClass` in the `create` method and using that to add custom styles to the host and inner elements. This property can also accept multiple classes separated by spaces. View the [Usage](#usage) section for an example of how to pass a class using `cssClass`.
+### Styling
+
+We recommend passing a custom class to `cssClass` in the `create` method and using that to add custom styles to the host and inner elements. This property can also accept multiple classes separated by spaces.
 
 ```css
 /* DOES NOT WORK - not specific enough */
@@ -51,17 +53,13 @@ We recommend passing a custom class to `cssClass` in the `create` method and usi
 }
 ```
 
-Any of the defined [CSS Custom Properties](#css-custom-properties) can be used to style the Action Sheet without needing to target individual elements:
+### CSS Custom Properties
 
-```css
-.my-custom-class {
-  --background: #e5e5e5;
-}
-```
+Any of the defined [CSS Custom Properties](#css-custom-properties-1) can be used to style the Action Sheet without needing to target individual elements.
 
-:::note
- If you are building an Ionic Angular app, the styles need to be added to a global stylesheet file. Read [Style Placement](#style-placement) in the Angular section below for more information.
-:::
+import CssCustomProperties from '@site/static/usage/action-sheet/theming/css-properties/index.md';
+
+<CssCustomProperties />
 
 ## Accessibility
 
