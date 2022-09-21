@@ -16,7 +16,7 @@
 <template>
   <div class="container">
     <ion-button @click="presentActionSheet">Open</ion-button>
-    <code>{{result}}</code>
+    <code>{{ result }}</code>
   </div>
 </template>
 
