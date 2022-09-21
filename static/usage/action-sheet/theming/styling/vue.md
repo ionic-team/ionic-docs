@@ -5,14 +5,15 @@
   }
 
   ion-action-sheet.my-custom-class .action-sheet-title {
-    color: #eadede;
+    color: #fff;
   }
 
   ion-action-sheet.my-custom-class .action-sheet-cancel::after {
     background: #e97223;
   }
 
-  ion-action-sheet.my-custom-class .action-sheet-button {
+  ion-action-sheet.my-custom-class .action-sheet-button,
+  ion-action-sheet.my-custom-class .action-sheet-button.ion-focused {
     color: #000000;
   }
 
@@ -26,7 +27,8 @@
     }
   }
 
-  ion-action-sheet.my-custom-class .action-sheet-destructive {
+  ion-action-sheet.my-custom-class .action-sheet-destructive,
+  ion-action-sheet.my-custom-class .action-sheet-destructive.ion-focused {
     color: #fff;
   }
 
