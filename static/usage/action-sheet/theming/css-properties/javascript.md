@@ -1,6 +1,6 @@
 ```html
 <style>
-  ion-action-sheet.custom-class {
+  ion-action-sheet.my-custom-class {
     --background: #f58840;
     --backdrop-opacity: 0.6;
     --button-background-selected: #e97223;
@@ -15,7 +15,7 @@
 <script>
   async function presentActionSheet() {
     const actionSheet = document.createElement('ion-action-sheet');
-    actionSheet.cssClass = 'custom-class';
+    actionSheet.cssClass = 'my-custom-class';
     actionSheet.header = 'Example header';
     actionSheet.subHeader = 'Example subheader';
     actionSheet.buttons = [

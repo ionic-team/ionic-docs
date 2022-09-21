@@ -1,4 +1,5 @@
 ```css
+/* Note: These styles should be located in your global stylesheet */
 ion-action-sheet.my-custom-class .action-sheet-group {
   background: #f58840;
 }

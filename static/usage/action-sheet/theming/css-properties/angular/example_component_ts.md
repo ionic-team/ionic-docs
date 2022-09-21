@@ -15,7 +15,7 @@ export class ExampleComponent {
     const actionSheet = await this.actionSheetCtrl.create({
       header: 'Example header',
       subHeader: 'Example subheader',
-      cssClass: 'custom-class',
+      cssClass: 'my-custom-class',
       buttons: [
         {
           text: 'Delete',

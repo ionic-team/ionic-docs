@@ -13,7 +13,7 @@ function Example() {
         present({
           header: 'Example header',
           subHeader: 'Example subheader',
-          cssClass: 'custom-class',
+          cssClass: 'my-custom-class',
           buttons: [
             {
               text: 'Delete',

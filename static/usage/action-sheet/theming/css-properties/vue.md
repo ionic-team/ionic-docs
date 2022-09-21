@@ -1,6 +1,6 @@
 ```html
 <style>
-  ion-action-sheet.custom-class {
+  ion-action-sheet.my-custom-class {
     --background: #f58840;
     --backdrop-opacity: 0.6;
     --button-background-selected: #e97223;
@@ -24,7 +24,7 @@
         const actionSheet = await actionSheetController.create({
           header: 'Example header',
           subHeader: 'Example subheader',
-          cssClass: 'custom-class',
+          cssClass: 'my-custom-class',
           buttons: [
             {
               text: 'Delete',
