@@ -37,6 +37,13 @@ import Buttons from '@site/static/usage/toolbar/buttons/index.md';
 <Buttons />
 
 
+## Searchbars in Toolbars
+
+import Searchbars from '@site/static/usage/toolbar/searchbars/index.md';
+
+<Searchbars />
+
+
 ## Segments in Toolbars
 
 import Segments from '@site/static/usage/toolbar/segments/index.md';
