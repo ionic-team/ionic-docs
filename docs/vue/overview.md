@@ -1,4 +1,5 @@
 ---
+title: 'Ionic Vue Overview'
 sidebar_label: Overview
 ---
 
@@ -12,8 +13,6 @@ sidebar_label: Overview
 
 import DocsCard from '@components/global/DocsCard';
 import DocsCards from '@components/global/DocsCards';
-
-# Ionic Vue Overview
 
 `@ionic/vue` combines the core Ionic Framework experience with the tooling and APIs that are tailored to Vue Developers.
 
