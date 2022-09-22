@@ -21,11 +21,14 @@
 </template>
 
 <script lang="ts">
+  import { ref } from 'vue';
   import { IonButton, actionSheetController } from '@ionic/vue';
 
   export default {
     components: { IonButton },
     setup() {
+      const result = ref('');
+
       const presentActionSheet = async () => {
         const actionSheet = await actionSheetController.create({
           header: 'Example header',
@@ -56,12 +59,12 @@
 
         await actionSheet.present();
 
-        const result = await actionSheet.onDidDismiss();
-        this.result = JSON.stringify(result, null, 2);
+        const res = await actionSheet.onDidDismiss();
+        result.value = JSON.stringify(res, null, 2);
       };
 
       return {
-        result: '',
+        result,
         presentActionSheet,
       };
     },
