@@ -28,16 +28,13 @@ import Basic from '@site/static/usage/toolbar/basic/index.md';
 <Basic />
 
 
-## Buttons
+## Buttons in Toolbars
 
-Buttons placed in a toolbar should be placed inside of the `<ion-buttons>` element. The `<ion-buttons>` element can be positioned inside of the toolbar using a named slot. The below chart has a description of each slot.
+Buttons placed in a toolbar should be placed inside of the [buttons](./buttons) component. The buttons component can be positioned inside of the toolbar using a named [slot](#slots). The `"primary"` and `"secondary"` slots behave differently in `ios` and `md` mode. The buttons component can wrap a standard [button](./button), [back button](./back-button), or a [menu button](./menu-button). A button in a toolbar is styled to be clear by default, but this can be changed using the [`fill`](./button#fill) property on the button. Back buttons are linked to the app's navigation and will only show up when there is a previous page in the navigation stack, but we can bypass this by setting the `defaultHref` property. The menu button is set to only show when a linked menu is active, but this can be overridden by setting the `autoHide` to `false`.
 
-| Slot         | Description                                                                                              |
-|--------------|----------------------------------------------------------------------------------------------------------|
-| `secondary`  | Positions element to the `left` of the content in `ios` mode, and directly to the `right` in `md` mode.  |
-| `primary`    | Positions element to the `right` of the content in `ios` mode, and to the far `right` in `md` mode.      |
-| `start`      | Positions to the `left` of the content in LTR, and to the `right` in RTL.                                |
-| `end`        | Positions to the `right` of the content in LTR, and to the `left` in RTL.                                |
+import Buttons from '@site/static/usage/toolbar/buttons/index.md';
+
+<Buttons />
 
 
 ## Borders
