@@ -1,9 +1,6 @@
 ---
 title: "ion-action-sheet"
 ---
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-
 import Props from '@site/static/auto-generated/action-sheet/props.md';
 import Events from '@site/static/auto-generated/action-sheet/events.md';
 import Methods from '@site/static/auto-generated/action-sheet/methods.md';
