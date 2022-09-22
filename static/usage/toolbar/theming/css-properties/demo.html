@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Toolbar</title>
+  <link rel="stylesheet" href="../../../common.css" />
+  <script src="../../../common.js"></script>
+  <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core@6/dist/ionic/ionic.esm.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core@6/css/ionic.bundle.css" />
+
+  <style>
+    .container {
+      flex-flow: column;
+      justify-content: space-evenly;
+    }
+
+    ion-toolbar {
+      --background: #19422d;
+      --color: white;
+
+      --border-color: #f24aec;
+      --border-width: 4px 0;
+      --border-style: double;
+
+      --min-height: 80px;
+      --padding-top: 20px;
+      --padding-bottom: 20px;
+    }
+  </style>
+</head>
+
+<body>
+  <ion-app>
+    <ion-content>
+      <div class="container">
+        <ion-toolbar>
+          <ion-title>Custom Toolbar</ion-title>
+        </ion-toolbar>
+      </div>
+    </ion-content>
+  </ion-app>
+</body>
+
+</html>

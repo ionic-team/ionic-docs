@@ -77,6 +77,12 @@ import Colors from '@site/static/usage/toolbar/theming/colors/index.md';
 
 <Colors />
 
+### CSS Custom Properties
+
+import CSSProps from '@site/static/usage/toolbar/theming/css-properties/index.md';
+
+<CSSProps />
+
 
 ## Borders
 
