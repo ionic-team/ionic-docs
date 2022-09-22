@@ -37,6 +37,13 @@ import Buttons from '@site/static/usage/toolbar/buttons/index.md';
 <Buttons />
 
 
+## Segments in Toolbars
+
+import Segments from '@site/static/usage/toolbar/segments/index.md';
+
+<Segments />
+
+
 ## Borders
 
 In `md` mode, the `<ion-header>` will receive a box-shadow on the bottom, and the `<ion-footer>` will receive a box-shadow on the top.  In `ios` mode, the `<ion-header>` will receive a border on the bottom, and the `<ion-footer>` will receive a border on the top.
