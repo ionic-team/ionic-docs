@@ -69,6 +69,15 @@ import ProgressBars from '@site/static/usage/toolbar/progress-bars/index.md';
 <ProgressBars />
 
 
+## Theming
+
+### Colors
+
+import Colors from '@site/static/usage/toolbar/theming/colors/index.md';
+
+<Colors />
+
+
 ## Borders
 
 In `md` mode, the `<ion-header>` will receive a box-shadow on the bottom, and the `<ion-footer>` will receive a box-shadow on the top.  In `ios` mode, the `<ion-header>` will receive a border on the bottom, and the `<ion-footer>` will receive a border on the top.
