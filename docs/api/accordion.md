@@ -17,8 +17,6 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="shadow" />
 
-<h2 className="table-of-contents__title">Contents</h2>
-
 
 Accordions provide collapsible sections in your content to reduce vertical space while providing a way of organizing and grouping information. All `ion-accordion` components should be grouped inside `ion-accordion-group` components.
 
@@ -30,7 +28,7 @@ import Basic from '@site/static/usage/accordion/basic/index.md';
 
 ## Toggle Accordions
 
-Which accordion is open is controlled by setting the `value` property on `ion-accordion-group`. Setting this property allows developers to programmatically expand or collapse certain accordions. 
+Which accordion is open is controlled by setting the `value` property on `ion-accordion-group`. Setting this property allows developers to programmatically expand or collapse certain accordions.
 
 import Toggle from '@site/static/usage/accordion/toggle/index.md';
 

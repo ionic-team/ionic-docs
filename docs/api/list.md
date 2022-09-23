@@ -16,15 +16,6 @@ import Slots from '@site/static/auto-generated/list/slots.md';
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 
-<h2 className="table-of-contents__title">Contents</h2>
-
-<TOCInline
-  toc={toc}
-  maxHeadingLevel={2}
-/>
-
-
-
 Lists are made up of multiple rows of [items](./item) which can contain text, buttons, toggles,
 icons, thumbnails, and much more. Lists generally contain items with similar data content, such as images and text.
 
