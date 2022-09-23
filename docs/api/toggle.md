@@ -18,13 +18,22 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 <EncapsulationPill type="shadow" />
 
 
-Toggles change the state of a single option. Toggles can be switched on or off by pressing or swiping them. They can also be checked programmatically by setting the `checked` property.
+Toggles are switches that change the state of a single option. They can be switched on or off by pressing or swiping them. Toggles can also be checked programmatically by setting the `checked` property.
 
 ## Basic Usage
 
 import Basic from '@site/static/usage/toggle/basic/index.md';
 
 <Basic />
+
+
+## On / Off Labels
+
+Toggles can enable on/off labels by setting the `enableOnOffLabels` property. This is important for accessibility as it makes it easier to differentiate between a checked and unchecked toggle.
+
+import OnOff from '@site/static/usage/toggle/on-off/index.md';
+
+<OnOff />
 
 
 ## Customization
