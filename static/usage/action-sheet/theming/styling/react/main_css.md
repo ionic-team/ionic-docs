@@ -20,15 +20,6 @@ ion-action-sheet.my-custom-class .action-sheet-button.ion-focused {
   ion-action-sheet.my-custom-class .action-sheet-button:hover {
     color: #000000;
   }
-
-  ion-action-sheet.my-custom-class .action-sheet-destructive:hover {
-    color: #fff;
-  }
-}
-
-ion-action-sheet.my-custom-class .action-sheet-destructive,
-ion-action-sheet.my-custom-class .action-sheet-destructive.ion-focused {
-  color: #fff;
 }
 
 ion-action-sheet.my-custom-class ion-backdrop {
