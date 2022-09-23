@@ -45,6 +45,15 @@ import List from '@site/static/usage/toggle/list/index.md';
 <List />
 
 
+## Theming
+
+### Colors
+
+import Colors from '@site/static/usage/toggle/theming/colors/index.md';
+
+<Colors />
+
+
 ## Customization
 
 ### Customizing Background
