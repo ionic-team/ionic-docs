@@ -6,18 +6,16 @@
 </template>
 
 <script lang="ts">
+  import { ref } from 'vue';
   import { IonButton, alertController } from '@ionic/vue';
 
   export default {
     components: { IonButton },
-    data() {
-      return {
-        handlerMessage: '',
-        roleMessage: '',
-      };
-    },
-    methods: {
-      async presentAlert() {
+    setup() {
+      const handlerMessage = ref('');
+      const roleMessage = ref('');
+
+      const presentAlert = async () => {
         const alert = await alertController.create({
           header: 'Alert!',
           buttons: [
@@ -25,14 +23,14 @@
               text: 'Cancel',
               role: 'cancel',
               handler: () => {
-                this.handlerMessage = 'Alert canceled';
+                handlerMessage.value = 'Alert canceled';
               },
             },
             {
               text: 'OK',
               role: 'confirm',
               handler: () => {
-                this.handlerMessage = 'Alert confirmed';
+                handlerMessage.value = 'Alert confirmed';
               },
             },
           ],
@@ -41,8 +39,14 @@
         await alert.present();
 
         const { role } = await alert.onDidDismiss();
-        this.roleMessage = `Dismissed with role: ${role}`;
-      },
+        roleMessage.value = `Dismissed with role: ${role}`;
+      };
+
+      return {
+        handlerMessage,
+        roleMessage,
+        presentAlert,
+      };
     },
   };
 </script>
