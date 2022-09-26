@@ -53,6 +53,14 @@ import Colors from '@site/static/usage/toggle/theming/colors/index.md';
 
 <Colors />
 
+### CSS Custom Properties
+
+CSS custom properties can be combined with standard CSS to target different parts of a toggle. We can modify the `width` and `height` of the toggle directly to change the size of the track, while using the `--handle-width` and `--handle-height` custom properties to customize the handle size.
+
+import CSSProps from '@site/static/usage/toggle/theming/css-properties/index.md';
+
+<CSSProps />
+
 
 ## Customization
 
