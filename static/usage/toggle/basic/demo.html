@@ -10,16 +10,35 @@
   <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core@6/dist/ionic/ionic.esm.js"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core@6/css/ionic.bundle.css" />
 
+  <style>
+    ion-list {
+      width: 100%;
+    }
+  </style>
 </head>
 
 <body>
   <ion-app>
     <ion-content>
       <div class="container">
-        <ion-toggle></ion-toggle>
-        <ion-toggle checked="true"></ion-toggle>
-        <ion-toggle disabled="true"></ion-toggle>
-        <ion-toggle disabled="true" checked="true"></ion-toggle>
+        <ion-list>
+          <ion-item>
+            <ion-label>Default Toggle</ion-label>
+            <ion-toggle slot="end"></ion-toggle>
+          </ion-item>
+          <ion-item>
+            <ion-label>Checked Toggle</ion-label>
+            <ion-toggle slot="end" checked="true"></ion-toggle>
+          </ion-item>
+          <ion-item>
+            <ion-label>Disabled Toggle</ion-label>
+            <ion-toggle slot="end" disabled="true"></ion-toggle>
+          </ion-item>
+          <ion-item>
+            <ion-label>Disabled Checked Toggle</ion-label>
+            <ion-toggle slot="end" checked="true" disabled="true"></ion-toggle>
+          </ion-item>
+        </ion-list>
       </div>
     </ion-content>
   </ion-app>

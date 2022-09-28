@@ -36,15 +36,6 @@ import OnOff from '@site/static/usage/toggle/on-off/index.md';
 <OnOff />
 
 
-## List Toggles
-
-Toggles can be slotted inside of an item in a list. Native designs place toggles at the end of an item, but they can also be placed at the start.
-
-import List from '@site/static/usage/toggle/list/index.md';
-
-<List />
-
-
 ## Theming
 
 ### Colors
