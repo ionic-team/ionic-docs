@@ -53,6 +53,13 @@ import Items from '@site/static/usage/card/items/index.md';
 <Items />
 
 
+## List Card
+
+import List from '@site/static/usage/card/list/index.md';
+
+<List />
+
+
 ## Properties
 <Props />
 
