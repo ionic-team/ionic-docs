@@ -15,6 +15,12 @@
       max-width: 400px;
       margin: 0 auto;
     }
+
+    /* iOS places the subtitle above the title */
+    ion-card-header.ios {
+      display: flex;
+      flex-flow: column-reverse;
+    }
   </style>
 </head>
 

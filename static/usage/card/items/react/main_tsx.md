@@ -2,6 +2,8 @@
 import React from 'react';
 import { IonAvatar, IonCard, IonCardContent, IonCardHeader, IonCardSubtitle, IonCardTitle, IonItem } from '@ionic/react';
 
+import './main.css';
+
 function Example() {
   return (
     <IonCard>
