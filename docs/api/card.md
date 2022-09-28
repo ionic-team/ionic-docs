@@ -32,6 +32,13 @@ import Basic from '@site/static/usage/card/basic/index.md';
 <Basic />
 
 
+## Media Cards
+
+import Media from '@site/static/usage/card/media/index.md';
+
+<Media />
+
+
 ## Properties
 <Props />
 
