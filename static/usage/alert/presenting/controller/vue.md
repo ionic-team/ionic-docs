@@ -8,8 +8,8 @@
 
   export default {
     components: { IonButton },
-    methods: {
-      async presentAlert() {
+    setup() {
+      const presentAlert = async () => {
         const alert = await alertController.create({
           header: 'Alert',
           subHeader: 'Important message',
@@ -18,7 +18,9 @@
         });
 
         await alert.present();
-      },
+      };
+
+      return { presentAlert };
     },
   };
 </script>

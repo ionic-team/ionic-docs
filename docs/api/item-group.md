@@ -15,7 +15,6 @@ import Slots from '@site/static/auto-generated/item-group/slots.md';
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
-<h2 className="table-of-contents__title">Contents</h2>
 
 Item groups are containers that organize similar [items](./item) together. They can contain [item dividers](./item-divider) to divide the items into multiple sections. They can also be used to group [sliding items](./item-sliding).
 
