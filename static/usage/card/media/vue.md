@@ -1,7 +1,7 @@
 ```html
 <template>
   <ion-card>
-    <img alt="Two abstract triangles and a circle representing a mountain and sun" src="https://ionicframework.com/docs/img/demos/card-media.png" />
+    <img alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/card-media.png" />
     <ion-card-header>
       <ion-card-title>Card Title</ion-card-title>
       <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
