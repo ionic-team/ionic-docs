@@ -4,34 +4,35 @@
 
 <style>
   ion-toggle {
-    height: 60px;
-    width: 100px;
+    height: 10px;
+    width: 65px;
 
-    --handle-width: 50%;
-    --handle-height: 100%;
-    --handle-spacing: 0px;
+    padding: 12px;
+
+    --handle-width: 25px;
+    --handle-height: 27px;
+    --handle-max-height: auto;
+    --handle-spacing: 6px;
+
+    /* Required for iOS handle to overflow the height of the track */
+    overflow: visible;
+    contain: none;
   }
 
-  ion-toggle::part(track) {
-    background: #000;
-  }
-
+  ion-toggle::part(track),
   ion-toggle.toggle-checked::part(track) {
-    background: #09c567;
+    background: #ddd;
   }
 
   ion-toggle::part(handle) {
-    background: #f3e895;
+    background: #eb7769;
 
-    border-radius: 14px 4px 4px 14px;
-    box-shadow: 4px 0 2px 0 red;
+    border-radius: 4px;
+    box-shadow: none;
   }
 
   ion-toggle.toggle-checked::part(handle) {
-    background: #7a49a5;
-
-    border-radius: 4px 14px 14px 4px;
-    box-shadow: -4px 0 2px 0 red;
+    background: #95c34e;
   }
 </style>
 ```
