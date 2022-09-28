@@ -46,6 +46,13 @@ import Buttons from '@site/static/usage/card/buttons/index.md';
 <Buttons />
 
 
+## Card Items
+
+import Items from '@site/static/usage/card/items/index.md';
+
+<Items />
+
+
 ## Properties
 <Props />
 
