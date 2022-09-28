@@ -11,8 +11,7 @@ function Example() {
       </IonCardHeader>
 
       <IonCardContent>
-        Keep close to Nature's heart... and break clear away, once in awhile,
-        and climb a mountain or spend a week in the woods. Wash your spirit clean.
+        Here's a small text description for the card content. Nothing more, nothing less.
       </IonCardContent>
     </IonCard>
   );
