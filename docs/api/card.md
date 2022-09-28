@@ -39,6 +39,13 @@ import Media from '@site/static/usage/card/media/index.md';
 <Media />
 
 
+## Card Buttons
+
+import Buttons from '@site/static/usage/card/buttons/index.md';
+
+<Buttons />
+
+
 ## Properties
 <Props />
 
