@@ -10,8 +10,8 @@ function Example() {
           <img src="./avatar.svg" />
         </IonAvatar>
         <IonCardHeader>
-          <IonCardSubtitle>Card Subtitle</IonCardSubtitle>
           <IonCardTitle>Card Title</IonCardTitle>
+          <IonCardSubtitle>Card Subtitle</IonCardSubtitle>
         </IonCardHeader>
       </IonItem>
 

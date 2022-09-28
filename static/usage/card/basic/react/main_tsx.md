@@ -2,12 +2,14 @@
 import React from 'react';
 import { IonCard, IonCardContent, IonCardHeader, IonCardSubtitle, IonCardTitle } from '@ionic/react';
 
+import './main.css';
+
 function Example() {
   return (
     <IonCard>
       <IonCardHeader>
-        <IonCardSubtitle>Card Subtitle</IonCardSubtitle>
         <IonCardTitle>Card Title</IonCardTitle>
+        <IonCardSubtitle>Card Subtitle</IonCardSubtitle>
       </IonCardHeader>
 
       <IonCardContent>

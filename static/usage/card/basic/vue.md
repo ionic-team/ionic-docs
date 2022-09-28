@@ -2,8 +2,8 @@
 <template>
   <ion-card>
     <ion-card-header>
-      <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
       <ion-card-title>Card Title</ion-card-title>
+      <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
     </ion-card-header>
 
     <ion-card-content>
@@ -20,4 +20,12 @@
     components: { IonCard, IonCardContent, IonCardHeader, IonCardSubtitle, IonCardTitle },
   });
 </script>
+
+<style scoped>
+  /* iOS places the subtitle above the title */
+  ion-card-header.ios {
+    display: flex;
+    flex-flow: column-reverse;
+  }
+</style>
 ```

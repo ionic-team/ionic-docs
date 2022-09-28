@@ -6,8 +6,8 @@ function Example() {
   return (
     <IonCard>
       <IonCardHeader>
-        <IonCardSubtitle>Card Subtitle</IonCardSubtitle>
         <IonCardTitle>Card Title</IonCardTitle>
+        <IonCardSubtitle>Card Subtitle</IonCardSubtitle>
       </IonCardHeader>
 
       <IonCardContent>

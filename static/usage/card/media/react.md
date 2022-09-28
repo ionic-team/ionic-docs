@@ -7,8 +7,8 @@ function Example() {
     <IonCard>
       <img src="./card-media.png" />
       <IonCardHeader>
-        <IonCardSubtitle>Card Subtitle</IonCardSubtitle>
         <IonCardTitle>Card Title</IonCardTitle>
+        <IonCardSubtitle>Card Subtitle</IonCardSubtitle>
       </IonCardHeader>
 
       <IonCardContent>

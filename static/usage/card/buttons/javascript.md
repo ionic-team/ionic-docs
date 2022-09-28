@@ -1,8 +1,8 @@
 ```html
 <ion-card>
   <ion-card-header>
-    <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
     <ion-card-title>Card Title</ion-card-title>
+    <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
   </ion-card-header>
 
   <ion-card-content>
