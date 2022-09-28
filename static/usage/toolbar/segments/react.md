@@ -6,9 +6,6 @@ function Example() {
   return (
     <IonHeader>
       <IonToolbar>
-        <IonTitle>Toolbar</IonTitle>
-      </IonToolbar>
-      <IonToolbar>
         <IonSegment value="all">
           <IonSegmentButton value="all">
             All

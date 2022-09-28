@@ -2,9 +2,6 @@
 <template>
   <ion-header>
     <ion-toolbar>
-      <ion-title>Toolbar</ion-title>
-    </ion-toolbar>
-    <ion-toolbar>
       <ion-segment value="all">
         <ion-segment-button value="all">
           All
