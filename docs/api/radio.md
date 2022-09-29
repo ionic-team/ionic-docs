@@ -52,6 +52,12 @@ import CSSProps from '@site/static/usage/radio/theming/css-properties/index.md';
 
 <CSSProps />
 
+### CSS Shadow Parts
+
+import CSSParts from '@site/static/usage/radio/theming/css-shadow-parts/index.md';
+
+<CSSParts />
+
 
 ## Properties
 <Props />
