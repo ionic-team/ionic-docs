@@ -46,6 +46,14 @@ import Indeterminate from '@site/static/usage/progress-bar/indeterminate/index.m
 <Indeterminate />
 
 
+## Progress Bars in Toolbars
+
+<!-- Reuse the playground from the Toolbar directory -->
+import Toolbar from '@site/static/usage/toolbar/progress-bars/index.md';
+
+<Toolbar />
+
+
 ## Theming
 
 ### Colors

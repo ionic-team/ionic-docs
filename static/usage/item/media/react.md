@@ -7,7 +7,7 @@ function Example() {
     <>
       <IonItem>
         <IonAvatar slot="start">
-          <img alt="Silhouette of a person's head" src="https://ionicframework.com/docs/demos/api/avatar/avatar.svg" />
+          <img alt="Silhouette of a person's head" src="https://ionicframework.com/docs/img/demos/avatar.svg" />
         </IonAvatar>
         <IonLabel>
           Avatar Item
@@ -16,7 +16,7 @@ function Example() {
 
       <IonItem>
         <IonThumbnail slot="start">
-          <img alt="Silhouette of mountains" src="https://ionicframework.com/docs/demos/api/thumbnail/thumbnail.svg" />
+          <img alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/thumbnail.svg" />
         </IonThumbnail>
         <IonLabel>
           Thumbnail Item

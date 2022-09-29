@@ -4,10 +4,10 @@
     <ion-toolbar>
       <ion-segment value="all">
         <ion-segment-button value="all">
-          <ion-label>All</ion-label>
+          All
         </ion-segment-button>
         <ion-segment-button value="favorites">
-          <ion-label>Favorites</ion-label>
+          Favorites
         </ion-segment-button>
       </ion-segment>
     </ion-toolbar>
@@ -15,11 +15,11 @@
 </template>
 
 <script lang="ts">
-  import { IonLabel, IonHeader, IonSegment, IonSegmentButton, IonToolbar } from '@ionic/vue';
+  import { IonHeader, IonSegment, IonSegmentButton, IonTitle, IonToolbar } from '@ionic/vue';
   import { defineComponent } from 'vue';
 
   export default defineComponent({
-    components: { IonLabel, IonHeader, IonSegment, IonSegmentButton, IonToolbar },
+    components: { IonHeader, IonSegment, IonSegmentButton, IonTitle, IonToolbar },
   });
 </script>
 ```
