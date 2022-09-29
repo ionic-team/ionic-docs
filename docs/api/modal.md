@@ -86,11 +86,11 @@ import CanDismissFunctionExample from '@site/static/usage/modal/can-dismiss/func
  
 ### Card Modal
 
-Developers can create a card modal effect where the modal appears as a card stacked on top of your app's main content. To create a card modal, developers need to set the `presentingElement` property and the `swipeToClose` properties on `ion-modal`.
+Developers can create a card modal effect where the modal appears as a card stacked on top of your app's main content. To create a card modal, developers need to set the `presentingElement` property on `ion-modal`.
 
 The `presentingElement` property accepts a reference to the element that should display under your modal. This is typically a reference to `ion-router-outlet`.
 
-The `swipeToClose` property can be used to control whether or not the card modal can be swiped to close.
+The `canDismiss` property can be used to control whether or not the card modal can be swiped to close.
 
 :::note
 The card display style is only available on iOS.
@@ -109,10 +109,6 @@ The `breakpoints` property accepts an array which states each breakpoint that th
 The `initialBreakpoint` property is required so that the sheet modal knows which breakpoint to start at when presenting. The `initialBreakpoint` value must also exist in the `breakpoints` array. Given a `breakpoints` value of `[0, 0.5, 1]`, an `initialBreakpoint` value of `0.5` would be valid as `0.5` is in the `breakpoints` array. An `initialBreakpoint` value of `0.25` would not be valid as `0.25` does not exist in the `breakpoints` array.
 
 The `backdropBreakpoint` property can be used to customize the point at which the `ion-backdrop` will begin to fade in. This is useful when creating interfaces that have content underneath the sheet that should remain interactive. A common use case is a sheet modal that overlays a map where the map is interactive until the sheet is fully expanded.
-
-:::note
- Note: The `swipeToClose` property has no effect when using a sheet modal as sheet modals must be swipeable in order to be usable.
-:::
 
 import SheetExample from '@site/static/usage/modal/sheet/basic/index.md';
 
@@ -192,7 +188,6 @@ interface ModalOptions {
   backdropDismiss?: boolean;
   cssClass?: string | string[];
   animated?: boolean;
-  swipeToClose?: boolean;
 
   mode?: 'ios' | 'md';
   keyboardClose?: boolean;
