@@ -68,6 +68,12 @@ import Colors from '@site/static/usage/card/theming/colors/index.md';
 
 <Colors />
 
+### CSS Custom Properties
+
+import CSSProps from '@site/static/usage/card/theming/css-properties/index.md';
+
+<CSSProps />
+
 
 ## Properties
 <Props />
