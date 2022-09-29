@@ -6,9 +6,7 @@ function Example() {
   return (
     <IonHeader>
       <IonToolbar>
-        <IonTitle>
-          Searchbar
-        </IonTitle>
+        <IonTitle>Toolbar</IonTitle>
       </IonToolbar>
       <IonToolbar>
         <IonSearchbar></IonSearchbar>

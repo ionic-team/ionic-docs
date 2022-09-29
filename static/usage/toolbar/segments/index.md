@@ -5,9 +5,4 @@ import react from './react.md';
 import vue from './vue.md';
 import angular from './angular.md';
 
-<Playground
-  code={{ javascript, react, vue, angular }}
-  src="usage/searchbar/toolbar/demo.html"
-  devicePreview
-  includeIonContent={false}
-/>
+<Playground code={{ javascript, react, vue, angular }} src="usage/toolbar/segments/demo.html" devicePreview includeIonContent={false} />
