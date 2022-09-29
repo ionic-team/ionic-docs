@@ -60,6 +60,15 @@ import List from '@site/static/usage/card/list/index.md';
 <List />
 
 
+## Theming
+
+### Colors
+
+import Colors from '@site/static/usage/card/theming/colors/index.md';
+
+<Colors />
+
+
 ## Properties
 <Props />
 
