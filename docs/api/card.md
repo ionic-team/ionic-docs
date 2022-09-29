@@ -46,13 +46,6 @@ import Buttons from '@site/static/usage/card/buttons/index.md';
 <Buttons />
 
 
-## Card Items
-
-import Items from '@site/static/usage/card/items/index.md';
-
-<Items />
-
-
 ## List Card
 
 import List from '@site/static/usage/card/list/index.md';
