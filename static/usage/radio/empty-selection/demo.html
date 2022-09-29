@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Radio</title>
+  <link rel="stylesheet" href="../../common.css" />
+  <script src="../../common.js"></script>
+  <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core@6/dist/ionic/ionic.esm.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core@6/css/ionic.bundle.css" />
+
+  <style>
+    ion-list {
+      width: 100%;
+    }
+  </style>
+</head>
+
+<body>
+  <ion-app>
+    <ion-content>
+      <div class="container">
+        <ion-list>
+          <ion-radio-group allow-empty-selection="true" value="turtles">
+            <ion-item>
+              <ion-label>Dogs</ion-label>
+              <ion-radio slot="end" value="dogs"></ion-radio>
+            </ion-item>
+
+            <ion-item>
+              <ion-label>Cats</ion-label>
+              <ion-radio slot="end" value="cats"></ion-radio>
+            </ion-item>
+
+            <ion-item>
+              <ion-label>Turtles</ion-label>
+              <ion-radio slot="end" value="turtles"></ion-radio>
+            </ion-item>
+
+            <ion-item>
+              <ion-label>Fish</ion-label>
+              <ion-radio slot="end" value="fish"></ion-radio>
+            </ion-item>
+          </ion-radio-group>
+        </ion-list>
+      </div>
+    </ion-content>
+  </ion-app>
+</body>
+
+</html>

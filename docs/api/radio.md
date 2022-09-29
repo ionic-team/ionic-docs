@@ -20,13 +20,22 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 Radios should be used inside of a [radio group](./radio-group). Pressing a radio will check it and uncheck the previously selected radio, if there is one. They can also be checked programmatically by setting the value property of the parent radio group to the value of the radio.
 
-When radios are inside of a radio group, only one radio will be checked at any time. If more than one item should be selected, [checkboxes](./checkbox) should be instead. Radios can be disabled within a group to prevent interaction with them.
+When radios are inside of a radio group, only one radio will be checked at any time. If more than one item should be selected, [checkboxes](./checkbox) should be used instead. Radios can be disabled within a group to prevent interaction with them.
 
 ## Basic Usage
 
 import Basic from '@site/static/usage/radio/basic/index.md';
 
 <Basic />
+
+
+## Deselecting Radios
+
+By default, once a radio is selected it cannot be deselected; pressing it again will keep it selected. This behavior can be modified by using the `allowEmptySelection` property on the parent radio group, which enables the radios to be deselected.
+
+import EmptySelection from '@site/static/usage/radio/empty-selection/index.md';
+
+<EmptySelection />
 
 
 ## Properties
