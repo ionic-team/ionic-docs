@@ -266,6 +266,7 @@ document.addEventListener('ionBackButton', (ev: BackButtonEvent) => {
 <TabItem value="angular">
 
 ```tsx
+import { Optional } from '@angular/core';
 import { IonRouterOutlet, Platform } from '@ionic/angular';
 import { App } from '@capacitor/app';
 
@@ -273,7 +274,7 @@ import { App } from '@capacitor/app';
 
 constructor(
   private platform: Platform,
-  private routerOutlet: IonRouterOutlet
+  @Optional() private routerOutlet?: IonRouterOutlet
 ) {
   this.platform.backButton.subscribeWithPriority(-1, () => {
     if (!this.routerOutlet.canGoBack()) {

@@ -2,9 +2,7 @@
 <template>
   <ion-header>
     <ion-toolbar>
-      <ion-title>
-        Searchbar
-      </ion-title>
+      <ion-title>Toolbar</ion-title>
     </ion-toolbar>
     <ion-toolbar>
       <ion-searchbar></ion-searchbar>
