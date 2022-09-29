@@ -7,7 +7,7 @@
   </ion-header>
   <ion-content class="ion-padding">
     <ion-button id="open-modal" expand="block">Open</ion-button>
-    <ion-modal #modal trigger="open-modal" [swipeToClose]="true" [canDismiss]="canDismiss">
+    <ion-modal #modal trigger="open-modal" [canDismiss]="canDismiss">
       <ng-template>
         <ion-header>
           <ion-toolbar>
