@@ -36,7 +36,7 @@ import Basic from '@site/static/usage/toolbar/basic/index.md';
 
 Buttons placed in a toolbar should be placed inside of the [buttons](./buttons) component. The buttons component can be positioned inside of the toolbar using a named [slot](#slots). The `"primary"` and `"secondary"` slots behave differently in `ios` and `md` mode.
 
-The buttons component can wrap a standard [button](./button), [back button](./back-button), a [menu button](./menu-button), or several of any of them. A button in a toolbar is styled to be clear by default, but this can be changed using the [`fill`](./button#fill) property on the button. The properties included on back button and menu button in this example are for display purposes, see their respective documentation for proper usage.
+The buttons component can wrap a standard [button](./button), [back button](./back-button), a [menu button](./menu-button), or several of any of them. A button in a toolbar is styled to be clear by default, but this can be changed using the [`fill`](./button#fill) property on the button. The properties included on back button and menu button in this example are for display purposes; see their respective documentation for proper usage.
 
 import Buttons from '@site/static/usage/toolbar/buttons/index.md';
 
