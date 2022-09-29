@@ -38,6 +38,15 @@ import EmptySelection from '@site/static/usage/radio/empty-selection/index.md';
 <EmptySelection />
 
 
+## Theming
+
+### Colors
+
+import Colors from '@site/static/usage/radio/theming/colors/index.md';
+
+<Colors />
+
+
 ## Properties
 <Props />
 
