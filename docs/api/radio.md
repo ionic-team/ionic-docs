@@ -46,6 +46,12 @@ import Colors from '@site/static/usage/radio/theming/colors/index.md';
 
 <Colors />
 
+### CSS Custom Properties
+
+import CSSProps from '@site/static/usage/radio/theming/css-properties/index.md';
+
+<CSSProps />
+
 
 ## Properties
 <Props />
