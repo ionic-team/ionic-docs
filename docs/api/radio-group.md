@@ -16,7 +16,7 @@ import Slots from '@site/static/auto-generated/radio-group/slots.md';
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 
-A radio group is a container for a group of [radios](./radio). It allows a user to select at most one radio button from a set. Checking one radio button that belongs to a radio group unchecks any previous checked radio button within the same group. For example usage of the radio group, see the radio documentation.
+A radio group is a container for a group of [radios](./radio). It allows a user to select at most one radio button from a set. Checking one radio button that belongs to a radio group unchecks any previous checked radio button within the same group. For example usage of the radio group, see the [radio](./radio) documentation.
 
 
 ## Interfaces
