@@ -83,6 +83,15 @@ import Counter from '@site/static/usage/item/counter/index.md';
 <Counter />
 
 
+## Theming
+
+### Colors
+
+import Colors from '@site/static/usage/input/theming/colors/index.md';
+
+<Colors />
+
+
 ## Interfaces
 
 ### InputChangeEventDetail
