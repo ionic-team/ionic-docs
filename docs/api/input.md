@@ -55,6 +55,15 @@ import Clear from '@site/static/usage/input/clear/index.md';
 <Clear />
 
 
+## Filled Inputs
+
+Material Design offers filled styles for an input when it is inside of an item. The `fill` property on the item can be set to either `"solid"` or `"outline"`.
+
+import Fill from '@site/static/usage/input/fill/index.md';
+
+<Fill />
+
+
 ## Interfaces
 
 ### InputChangeEventDetail
