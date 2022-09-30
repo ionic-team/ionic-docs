@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Toast</title>
+  <link rel="stylesheet" href="../../common.css" />
+  <script src="../../common.js"></script>
+  <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core@6/dist/ionic/ionic.esm.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core@6/css/ionic.bundle.css" />
+
+  <style>
+    ion-toast.custom-toast {
+      --background: #F4F4FA;
+      --box-shadow: 3px 3px 10px 0 rgba(0, 0, 0, 0.2);
+      --color: #4b4a50;
+    }
+    
+    ion-toast.custom-toast::part(message) {
+      font-style: italic;
+    }
+
+    ion-toast.custom-toast::part(button) {
+      border-left: 1px solid #d2d2d2;
+      color: #030207;
+      font-size: 15px;
+    }
+  </style>
+</head>
+
+<body>
+  <ion-app>
+    <ion-header>
+      <ion-toolbar>
+        <ion-title>Toast</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content>
+      <div class="container">
+        <ion-button onclick="presentToast()">Click Me</ion-button>
+      </div>
+    </ion-content>
+  </ion-app>
+
+  <script type="module">
+    import { toastController } from 'https://cdn.jsdelivr.net/npm/@ionic/core@6/dist/ionic/index.esm.js';
+    window.toastController = toastController;
+  </script>
+
+  <script>
+    async function presentToast() {
+      const toast = await this.toastController.create({
+        message: 'Hello Styled World!',
+        duration: 3000,
+        cssClass: 'custom-toast',
+        buttons: [
+          {
+            text: 'Dismiss',
+            role: 'cancel'
+          }
+        ],
+      });
+
+      await toast.present();
+    }
+  </script>
+</body>
+
+</html>

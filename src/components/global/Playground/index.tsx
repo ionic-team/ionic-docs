@@ -169,7 +169,7 @@ export default function Playground({
    * load, so a loading screen is shown by default.
    * Once the source of the iframe loads we can
    * hide the loading screen and show the inner content.
-   * 
+   *
    * We call this as a local function because useEffect
    * callbacks cannot return a Promise, as async functions do.
    */

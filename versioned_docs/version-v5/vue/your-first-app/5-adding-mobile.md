@@ -57,12 +57,12 @@ Next, add a new bit of logic in the `loadSaved` function. On mobile, we can dire
 
 ```tsx
 const loadSaved = async () => {
-  const photoList = await Storage.get({ key: PHOTO_STORAGE });
-  const photosInStorage = photoList.value ? JSON.parse(photoList.value) : [];
+  const photoList = await Preferences.get({ key: PHOTO_STORAGE });
+  const photosInPreferences = photoList.value ? JSON.parse(photoList.value) : [];
 
   // If running on the web...
   if (!isPlatform('hybrid')) {
-    for (const photo of photosInStorage) {
+    for (const photo of photosInPreferences) {
       const file = await Filesystem.readFile({
         path: photo.filepath,
         directory: Directory.Data,
@@ -72,7 +72,7 @@ const loadSaved = async () => {
     }
   }
 
-  photos.value = photosInStorage;
+  photos.value = photosInPreferences;
 };
 ```
 

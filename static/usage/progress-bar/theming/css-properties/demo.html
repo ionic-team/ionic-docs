@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Progress Bar</title>
+  <link rel="stylesheet" href="../../../common.css" />
+  <script src="../../../common.js"></script>
+  <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core@6/dist/ionic/ionic.esm.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core@6/css/ionic.bundle.css" />
+
+  <style>
+    .container {
+      flex-flow: column;
+      justify-content: space-evenly;
+    }
+
+    ion-progress-bar {
+      --background: #f3e895;
+      --progress-background: #09c567;
+    }
+  </style>
+</head>
+
+<body>
+  <ion-app>
+    <ion-content>
+      <div class="container">
+        <ion-progress-bar value=".25" buffer=".5"></ion-progress-bar>
+        <ion-progress-bar type="indeterminate"></ion-progress-bar>
+      </div>
+    </ion-content>
+  </ion-app>
+</body>
+
+</html>

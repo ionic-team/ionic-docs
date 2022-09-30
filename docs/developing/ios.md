@@ -114,6 +114,7 @@ In this workflow, Xcode can automatically fix common compilation and signing iss
 
    ```shell
    $ ionic capacitor copy ios
+   $ ionic capacitor update
    ```
 
    For Cordova, run the following:

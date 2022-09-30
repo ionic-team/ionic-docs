@@ -43,11 +43,18 @@ The Ionic team has compiled a set of recommendations for using the Ionic Framewo
 
 | Framework | Minimum Angular Version | Maximum Angular Version | TypeScript |
 | :-------: | :---------------------: | :---------------------: | :--------: |
+<<<<<<< HEAD
 | v7        | v13                     | v14.x                   | 4.4+       |   
 | v6        | v12                     | v14.x^                  | 4.0+       |
 | v5        | v8.2                    | v12.x                   | 3.5+       |
 | v4        | v8.2                    | v11.x                   | 3.5+       |
 | v3        | v5.2.11                 | v5.2.11                 | 2.6.2      |
+=======
+|    v6     |           v12           |         v14.x^          |    4.0+    |
+|    v5     |          v8.2           |          v12.x          |    3.5+    |
+|    v4     |          v8.2           |          v11.x          |    3.5+    |
+|    v3     |         v5.2.11         |         v5.2.11         |   2.6.2    |
+>>>>>>> origin/main
 
 > ^ Angular 14.x support was added in Ionic v6.1.9.
 
@@ -98,7 +105,7 @@ Note that later versions of Ionic do not support iOS 13; see [mobile support tab
 |      V3      | `ionic-angular` 3.9.X | Use latest; special configuration may be required |
 
 - Native Premier Plugins require `@ionic-enterprise/cordova` for installation [see here](https://ionic.io/docs/premier-plugins/setup#install-tooling)
-- For Capacitor projects, follow the [Capacitor installation guide for Cordova plugins](https://capacitor.ionicframework.com/docs/cordova/using-cordova-plugins)
+- For Capacitor projects, follow the [Capacitor installation guide for Cordova plugins](https://capacitorjs.com/docs/cordova/using-cordova-plugins)
 - If you need to use an Enterprise plugin with an Ionic 3 project, please [contact us](https://ionic.zendesk.com/hc)
 
 ### Ionic Platform & Products (Cont.)

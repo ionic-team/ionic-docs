@@ -195,7 +195,7 @@ The following is an example of linear routing in a mobile app:
     'display': 'flex'
   }}
   width="400"
-  src={useBaseUrl('video/linear-routing-demo.mp4')} 
+  src={useBaseUrl('video/linear-routing-demo.mp4')}
   controls
 ></video>
 
@@ -221,7 +221,7 @@ The following is an example of non-linear routing:
     'display': 'flex'
   }}
   width="400"
-  src={useBaseUrl('video/non-linear-routing-demo.mp4')} 
+  src={useBaseUrl('video/non-linear-routing-demo.mp4')}
   controls
 ></video>
 
@@ -335,7 +335,7 @@ const routes: Routes = [
 ];
 ```
 
-Here we have a "tabs" path that we load. In this example we call the path "tabs", but the name of the paths can be changed. They can be called whatever fits your app. In that route object, we can define a child route as well. In this example, the top level child route "tab1" acts as our "outlet", and can load additional child routes. For this example, we have a single sub-child-route, which just loads a new component. The markup for the tab is as followed:
+Here we have a "tabs" path that we load. In this example we call the path "tabs", but the name of the paths can be changed. They can be called whatever fits your app. In that route object, we can define a child route as well. In this example, the top level child route "tab1" acts as our "outlet", and can load additional child routes. For this example, we have a single sub-child-route, which just loads a new component. The markup for the tab is as follows:
 
 ```html
 <ion-tabs>
@@ -355,7 +355,7 @@ If you've built apps with Ionic before, this should feel familiar. We create a `
 Each tab in Ionic is treated as an individual navigation stack. This means if you have three tabs in your application, each tab has its own navigation stack. Within each stack you can navigate forwards (push a view) and backwards (pop a view).
 
 This behavior is important to note as it is different than most tab implementations that are found in other web based UI libraries. Other libraries typically manage tabs as one single history stack.
- 
+
 Since Ionic is focused on helping developers build mobile apps, the tabs in Ionic are designed to match native mobile tabs as closely as possible. As a result, there may be certain behaviors in Ionic's tabs that differ from tabs implementations you have seen in other UI libraries. Read on to learn more about some of these differences.
 
 ### Child Routes within Tabs
@@ -436,7 +436,7 @@ The example below shows how the iOS App Store app handles presenting an "Account
     'display': 'flex'
   }}
   width="400"
-  src={useBaseUrl('video/tabs-account-demo.mp4')} 
+  src={useBaseUrl('video/tabs-account-demo.mp4')}
   controls
 ></video>
 

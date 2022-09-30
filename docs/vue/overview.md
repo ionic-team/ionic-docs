@@ -1,4 +1,5 @@
 ---
+title: 'Ionic Vue Overview'
 sidebar_label: Overview
 ---
 
@@ -13,8 +14,6 @@ sidebar_label: Overview
 import DocsCard from '@components/global/DocsCard';
 import DocsCards from '@components/global/DocsCards';
 
-# Ionic Vue Overview
-
 `@ionic/vue` combines the core Ionic Framework experience with the tooling and APIs that are tailored to Vue Developers.
 
 ## Vue Version Support
@@ -27,9 +26,9 @@ Ionic Vue projects ship with the same tooling as regular Vue CLI projects. Meani
 
 ## Native Tooling
 
-[Capacitor](https://capacitor.ionicframework.com) is the official cross-platform app runtime used to make your `Ionic Vue` web app run natively on iOS, Android, and the web.
+[Capacitor](https://capacitorjs.com) is the official cross-platform app runtime used to make your `Ionic Vue` web app run natively on iOS, Android, and the web.
 
-While there are no known technical limitations to using `Ionic Vue` with [Cordova](https://cordova.apache.org/) plugins, Capacitor is officially recommended. There are no plans to support a Cordova integration for `Ionic Vue` in the [Ionic CLI tooling](../cli.md) at this time. For more details, please [see here](https://capacitor.ionicframework.com/docs/cordova).
+While there are no known technical limitations to using `Ionic Vue` with [Cordova](https://cordova.apache.org/) plugins, Capacitor is officially recommended. There are no plans to support a Cordova integration for `Ionic Vue` in the [Ionic CLI tooling](../cli.md) at this time. For more details, please [see here](https://capacitorjs.com/docs/cordova).
 
 ## From the Community
 
