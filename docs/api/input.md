@@ -46,6 +46,15 @@ import Labels from '@site/static/usage/input/labels/index.md';
 <Labels />
 
 
+## Clear Options
+
+Inputs offer two options for clearing the input based on how you interact with it. The first way is by adding the `clearInput` property which will show a clear button when the input has a `value`. The second way is the `clearOnEdit` property which will clear the input after it has been blurred and then typed in again. Inputs with a `type` set to `"password"` will have `clearOnEdit` enabled by default.
+
+import Clear from '@site/static/usage/input/clear/index.md';
+
+<Clear />
+
+
 ## Interfaces
 
 ### InputChangeEventDetail
