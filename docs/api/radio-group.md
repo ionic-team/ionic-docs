@@ -1,9 +1,6 @@
 ---
 title: "ion-radio-group"
-hide_table_of_contents: true
 ---
-import TOCInline from '@theme/TOCInline';
-
 import Props from '@site/static/auto-generated/radio-group/props.md';
 import Events from '@site/static/auto-generated/radio-group/events.md';
 import Methods from '@site/static/auto-generated/radio-group/methods.md';
@@ -18,15 +15,8 @@ import Slots from '@site/static/auto-generated/radio-group/slots.md';
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
-<h2 className="table-of-contents__title">Contents</h2>
 
-<TOCInline
-  toc={toc}
-  maxHeadingLevel={2}
-/>
-
-
-A radio group is a container for a group of [radio buttons](./radio). It allows a user to select at most one radio button from a set. Checking one radio button that belongs to a radio group unchecks any previous checked radio button within the same group.
+A radio group is a container for a group of [radios](./radio). It allows a user to select at most one radio button from a set. Checking one radio button that belongs to a radio group unchecks any previous checked radio button within the same group. For example usage of the radio group, see the radio documentation.
 
 
 ## Interfaces
