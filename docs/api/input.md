@@ -37,6 +37,15 @@ import Types from '@site/static/usage/input/types/index.md';
 <Types />
 
 
+## Label Positioning
+
+Labels will take up the width of their content by default. This positioning can be changed to be a fixed width, stacked, or floating label.
+
+import Labels from '@site/static/usage/input/labels/index.md';
+
+<Labels />
+
+
 ## Interfaces
 
 ### InputChangeEventDetail
