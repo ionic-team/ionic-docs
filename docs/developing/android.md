@@ -1,4 +1,4 @@
-  ---
+---
 title: Android Development
 sidebar_label: Developing for Android
 ---
