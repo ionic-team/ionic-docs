@@ -107,7 +107,7 @@ All exposed parts for an Ionic Framework component can be found under the CSS Sh
 
 In order to have parts a component must meet the following criteria:
 
-- It is a [Shadow DOM](../reference/glossary.md#shadow) component. If it is a [Scoped](../reference/glossary.md#scoped)> or Light DOM component, the child elements can be targeted directly. If a component is Scoped or Shadow, it will be listed by its name on its [component documentation page](../components.md).
+- It is a [Shadow DOM](../reference/glossary.md#shadow) component. If it is a [Scoped](../reference/glossary.md#scoped) or Light DOM component, the child elements can be targeted directly. If a component is Scoped or Shadow, it will be listed by its name on its [component documentation page](../components.md).
 - It contains children elements. For example, `ion-card-header` is a Shadow component, but all styles are applied to the host element. Since it has no child elements, there’s no need for parts.
 - The children elements are not structural. In certain components, including `ion-title`, the child element is a structural element used to position the inner elements. We do not recommend customizing structural elements as this can have unexpected results.
 
