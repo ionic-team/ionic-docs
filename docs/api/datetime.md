@@ -1,9 +1,6 @@
 ---
 title: "ion-datetime"
 ---
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-
 import Props from '@site/static/auto-generated/datetime/props.md';
 import Events from '@site/static/auto-generated/datetime/events.md';
 import Methods from '@site/static/auto-generated/datetime/methods.md';

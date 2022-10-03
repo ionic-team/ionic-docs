@@ -1,9 +1,6 @@
 ---
 title: "ion-modal"
 ---
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-
 import Props from '@site/static/auto-generated/modal/props.md';
 import Events from '@site/static/auto-generated/modal/events.md';
 import Methods from '@site/static/auto-generated/modal/methods.md';
@@ -188,6 +185,7 @@ interface ModalOptions {
   backdropDismiss?: boolean;
   cssClass?: string | string[];
   animated?: boolean;
+  canDismiss?: boolean | (() => Promise<boolean>);
 
   mode?: 'ios' | 'md';
   keyboardClose?: boolean;
@@ -220,6 +218,11 @@ interface ModalCustomEvent extends CustomEvent {
 | Key   | Function            |
 | ----- | ------------------- |
 | `Esc` | Dismisses the modal |
+
+
+### Labels
+
+Modals have a [`dialog`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/dialog_role) role. As a result, developers **must** properly label their modals. If the modal is using `ion-title`, the text inside can be used to label the modal itself by setting [`aria-labelledby`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-labelledby) on `ion-modal`. If the modal contains additional descriptive text, this text can be associated with the modal by using [`aria-describedby`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-describedby).
 
 ### Screen Readers
 

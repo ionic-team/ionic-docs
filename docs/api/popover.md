@@ -1,9 +1,6 @@
 ---
 title: "ion-popover"
 ---
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-
 import Props from '@site/static/auto-generated/popover/props.md';
 import Events from '@site/static/auto-generated/popover/events.md';
 import Methods from '@site/static/auto-generated/popover/methods.md';

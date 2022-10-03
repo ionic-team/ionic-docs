@@ -1,0 +1,43 @@
+name: 🐛 Bug Report
+description: Report a bug on the docs site
+labels: ["triage"]
+title: "bug: "
+body:
+  - type: textarea
+    attributes:
+      label: Describe the Bug
+      description: A clear description of what the bug is and how it manifests.
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Expected Behavior
+      description: A clear description of what you expected to happen.
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Steps to Reproduce
+      description: Please explain the steps required to duplicate this issue.
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Screenshots
+      description: If applicable, add screenshots to help explain the problem.
+  - type: input
+    attributes:
+      label: Operating System
+      description: The operating system you are running (e.g. Windows)
+  - type: input
+    attributes:
+      label: Browser
+      description: The browser you are running (e.g. Chrome, Safari)
+  - type: input
+    attributes:
+      label: Version
+      description: The browser version you are running (e.g. 14)
+  - type: textarea
+    attributes:
+      label: Additional Information
+      description: List any other information that is relevant to your issue.

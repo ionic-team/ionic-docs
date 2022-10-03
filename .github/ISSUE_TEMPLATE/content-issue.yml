@@ -1,0 +1,17 @@
+name: 📕 Content Issue
+description: Report missing or inaccurate content on the docs
+labels: ["triage"]
+title: "content: "
+body:
+  - type: input
+    attributes:
+      label: URL
+      description: The URL at which the content is missing or inaccurate
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Issue Description
+      description: What is missing or inaccurate about the content on this page?
+    validations:
+      required: true

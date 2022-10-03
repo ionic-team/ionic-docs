@@ -160,6 +160,16 @@ import Customization from '@site/static/usage/alert/customization/index.md';
  If you are building an Ionic Angular app, the styles need to be added to a global stylesheet file.
 :::
 
+## Accessibility
+
+Ionic automatically sets the Alert's `role` to either [`alertdialog`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/alertdialog_role) if there are any inputs or buttons included, or [`alert`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/alert_role) if there are none.
+
+If the `header` property is defined for the Alert, the `aria-labelledby` attribute will be automatically set to the header's ID. The `subHeader` element will be used as a fallback if `header` is not defined. Similarly, the `aria-describedby` attribute will be automatically set to the ID of the `message` element if that property is defined.
+
+It is strongly recommended that your Alert have a `message`, as well as either a `header` or `subHeader`, in order to align with the ARIA spec. If you choose not to include a `header` or `subHeader`, an alternative is to provide a descriptive `aria-label` using the `htmlAttributes` property.
+
+All ARIA attributes can be manually overwritten by defining custom values in the `htmlAttributes` property of the Alert.
+
 
 ## Interfaces
 

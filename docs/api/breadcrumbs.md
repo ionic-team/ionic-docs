@@ -1,9 +1,6 @@
 ---
 title: "ion-breadcrumbs"
 ---
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-
 import Props from '@site/static/auto-generated/breadcrumbs/props.md';
 import Events from '@site/static/auto-generated/breadcrumbs/events.md';
 import Methods from '@site/static/auto-generated/breadcrumbs/methods.md';
@@ -73,17 +70,17 @@ import PopoverOnClick from '@site/static/usage/breadcrumbs/collapsing-items/popo
 
 <PopoverOnClick />
 
-## Styling
+## Theming
 
-## Color Property
+### Colors
 
-import ColorProp from '@site/static/usage/breadcrumbs/styling/color/index.md';
+import Colors from '@site/static/usage/breadcrumbs/theming/colors/index.md';
 
-<ColorProp />
+<Colors />
 
-## CSS Properties
+### CSS Custom Properties
 
-import CSSProps from '@site/static/usage/breadcrumbs/styling/css-props/index.md';
+import CSSProps from '@site/static/usage/breadcrumbs/theming/css-properties/index.md';
 
 <CSSProps />
 

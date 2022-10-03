@@ -11,7 +11,7 @@ sidebar_label: Electron Desktop App
   />
 </head>
 
-Building a desktop app with Ionic allows developers to reuse 100% of their code and ship a traditional desktop app while still having access to all the native device features, like push notifications. This guide assumes familiarity with Electron, and does not go into "how" to build an electron app. For that, check out the official <a href="https://electronjs.org/docs/tutorial/first-app" target="_blank">Electron guide</a>.
+Building a desktop app with Ionic allows developers to reuse 100% of their code and ship a traditional desktop app while still having access to all the native device features, like push notifications. This guide assumes familiarity with Electron, and does not go into "how" to build an electron app. For that, check out the official <a href="https://www.electronjs.org/docs/latest/tutorial/tutorial-first-app" target="_blank">Electron guide</a>.
 
 ## macOS App
 

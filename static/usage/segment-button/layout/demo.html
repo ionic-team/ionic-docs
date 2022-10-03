@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <Viewport="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Segment Button</title>
+  <link rel="stylesheet" href="../../common.css" />
+  <script src="../../common.js"></script>
+  <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core@6/dist/ionic/ionic.esm.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core@6/css/ionic.bundle.css" />
+
+  <style>
+    .container {
+      flex-flow: column;
+      justify-content: space-evenly;
+
+      max-width: 400px;
+      margin: 0 auto;
+    }
+  </style>
+</head>
+
+<body>
+  <ion-app>
+    <ion-content>
+      <div class="container">
+        <ion-segment value="heart">
+          <ion-segment-button value="call">
+            <ion-icon name="call"></ion-icon>
+          </ion-segment-button>
+          <ion-segment-button value="heart">
+            <ion-icon name="heart"></ion-icon>
+          </ion-segment-button>
+          <ion-segment-button value="pin">
+            <ion-icon name="pin"></ion-icon>
+          </ion-segment-button>
+        </ion-segment>
+
+        <ion-segment value="heart">
+          <ion-segment-button value="call">
+            <ion-label>Call</ion-label>
+            <ion-icon name="call"></ion-icon>
+          </ion-segment-button>
+          <ion-segment-button value="heart">
+            <ion-label>Heart</ion-label>
+            <ion-icon name="heart"></ion-icon>
+          </ion-segment-button>
+          <ion-segment-button value="pin">
+            <ion-label>Pin</ion-label>
+            <ion-icon name="pin"></ion-icon>
+          </ion-segment-button>
+        </ion-segment>
+
+        <ion-segment value="heart">
+          <ion-segment-button value="call" layout="icon-bottom">
+            <ion-label>Call</ion-label>
+            <ion-icon name="call"></ion-icon>
+          </ion-segment-button>
+          <ion-segment-button value="heart" layout="icon-bottom">
+            <ion-label>Heart</ion-label>
+            <ion-icon name="heart"></ion-icon>
+          </ion-segment-button>
+          <ion-segment-button value="pin" layout="icon-bottom">
+            <ion-label>Pin</ion-label>
+            <ion-icon name="pin"></ion-icon>
+          </ion-segment-button>
+        </ion-segment>
+
+        <ion-segment value="heart">
+          <ion-segment-button value="call" layout="icon-start">
+            <ion-label>Call</ion-label>
+            <ion-icon name="call"></ion-icon>
+          </ion-segment-button>
+          <ion-segment-button value="heart" layout="icon-start">
+            <ion-label>Heart</ion-label>
+            <ion-icon name="heart"></ion-icon>
+          </ion-segment-button>
+          <ion-segment-button value="pin" layout="icon-start">
+            <ion-label>Pin</ion-label>
+            <ion-icon name="pin"></ion-icon>
+          </ion-segment-button>
+        </ion-segment>
+
+        <ion-segment value="heart">
+          <ion-segment-button value="call" layout="icon-end">
+            <ion-label>Call</ion-label>
+            <ion-icon name="call"></ion-icon>
+          </ion-segment-button>
+          <ion-segment-button value="heart" layout="icon-end">
+            <ion-label>Heart</ion-label>
+            <ion-icon name="heart"></ion-icon>
+          </ion-segment-button>
+          <ion-segment-button value="pin" layout="icon-end">
+            <ion-label>Pin</ion-label>
+            <ion-icon name="pin"></ion-icon>
+          </ion-segment-button>
+        </ion-segment>
+      </div>
+    </ion-content>
+  </ion-app>
+</body>
+
+</html>

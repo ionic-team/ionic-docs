@@ -423,7 +423,7 @@ Below is a full list of method changes when going from `ion-slides` to Swiper Vu
 | isBeginning()      | Use the `isBeginning` property instead.                                              |
 | isEnd()            | Use the `isEnd` property instead.                                                    |
 | length()           | Use the `slides` property instead. (i.e swiperRef.slides.length)                     |
-| lockSwipeToNext()  | Use the `allowSlidesNext` property instead.                                          |
+| lockSwipeToNext()  | Use the `allowSlideNext` property instead.                                          |
 | lockSwipeToPrev()  | Use the `allowSlidePrev` property instead.                                           |
 | lockSwipes()       | Use the `allowSlideNext`, `allowSlidePrev`, and `allowTouchMove` properties instead. |
 | startAutoplay()    | Use the `autoplay` property instead.                                                 |

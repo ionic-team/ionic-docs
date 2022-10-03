@@ -35,8 +35,8 @@ We'll create a Photo Gallery app that offers the ability to take photos with you
 Highlights include:
 
 - One Angular-based codebase that runs on the web, iOS, and Android using Ionic Framework [UI components](https://ionicframework.com/docs/components).
-- Deployed as a native iOS and Android mobile app using [Capacitor](https://capacitor.ionicframework.com), Ionic's official native app runtime.
-- Photo Gallery functionality powered by the Capacitor [Camera](https://capacitor.ionicframework.com/docs/apis/camera), [Filesystem](https://capacitor.ionicframework.com/docs/apis/filesystem), and [Storage](https://capacitor.ionicframework.com/docs/apis/storage) APIs.
+- Deployed as a native iOS and Android mobile app using [Capacitor](https://capacitorjs.com), Ionic's official native app runtime.
+- Photo Gallery functionality powered by the Capacitor [Camera](https://capacitorjs.com/docs/apis/camera), [Filesystem](https://capacitorjs.com/docs/apis/filesystem), and [Preferences](https://capacitorjs.com/docs/apis/preferences) APIs.
 
 Find the complete app code referenced in this guide [on GitHub](https://github.com/ionic-team/photo-gallery-capacitor-ng).
 
@@ -88,7 +88,7 @@ cd photo-gallery
 Next we'll need to install the necessary Capacitor plugins to make the app's native functionality work:
 
 ```shell
-npm install @capacitor/camera @capacitor/storage @capacitor/filesystem
+npm install @capacitor/camera @capacitor/preferences @capacitor/filesystem
 ```
 
 ### PWA Elements
