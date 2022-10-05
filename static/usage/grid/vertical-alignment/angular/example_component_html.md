@@ -3,16 +3,16 @@
 <ion-grid>
   <ion-row class="ion-align-items-start">
     <ion-col>
-      1 of 4
+      1
     </ion-col>
     <ion-col>
-      2 of 4
+      2
     </ion-col>
     <ion-col>
-      3 of 4
+      3
     </ion-col>
     <ion-col>
-      4 of 4 <br />
+      4 <br />
       # <br />
       # <br />
       # <br />
@@ -24,16 +24,16 @@
 <ion-grid>
   <ion-row class="ion-align-items-center">
     <ion-col>
-      1 of 4
+      1
     </ion-col>
     <ion-col>
-      2 of 4
+      2
     </ion-col>
     <ion-col>
-      3 of 4
+      3
     </ion-col>
     <ion-col>
-      4 of 4 <br />
+      4 <br />
       # <br />
       # <br />
       # <br />
@@ -45,16 +45,16 @@
 <ion-grid>
   <ion-row class="ion-align-items-end">
     <ion-col>
-      1 of 4
+      1
     </ion-col>
     <ion-col>
-      2 of 4
+      2
     </ion-col>
     <ion-col>
-      3 of 4
+      3
     </ion-col>
     <ion-col>
-      4 of 4 <br />
+      4 <br />
       # <br />
       # <br />
       # <br />

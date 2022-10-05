@@ -11,10 +11,10 @@ function Example() {
       <IonGrid>
         <IonRow class="ion-justify-content-start">
           <IonCol size="3">
-            1 of 2
+            1
           </IonCol>
           <IonCol size="3">
-            2 of 2
+            2
           </IonCol>
         </IonRow>
       </IonGrid>
@@ -23,10 +23,10 @@ function Example() {
       <IonGrid>
         <IonRow class="ion-justify-content-center">
           <IonCol size="3">
-            1 of 2
+            1
           </IonCol>
           <IonCol size="3">
-            2 of 2
+            2
           </IonCol>
         </IonRow>
       </IonGrid>
@@ -35,10 +35,10 @@ function Example() {
       <IonGrid>
         <IonRow class="ion-justify-content-end">
           <IonCol size="3">
-            1 of 2
+            1
           </IonCol>
           <IonCol size="3">
-            2 of 2
+            2
           </IonCol>
         </IonRow>
       </IonGrid>
@@ -47,10 +47,10 @@ function Example() {
       <IonGrid>
         <IonRow class="ion-justify-content-around">
           <IonCol size="3">
-            1 of 2
+            1
           </IonCol>
           <IonCol size="3">
-            2 of 2
+            2
           </IonCol>
         </IonRow>
       </IonGrid>
@@ -59,10 +59,10 @@ function Example() {
       <IonGrid>
         <IonRow class="ion-justify-content-between">
           <IonCol size="3">
-            1 of 2
+            1
           </IonCol>
           <IonCol size="3">
-            2 of 2
+            2
           </IonCol>
         </IonRow>
       </IonGrid>

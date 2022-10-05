@@ -1,6 +1,8 @@
 ```css
 ion-col {
-  background-color: #f7f7f7;
-  border: solid 1px #ddd;
+  background-color: #135d54;
+  border: solid 1px #fff;
+  color: #fff;
+  text-align: center;
 }
 ```

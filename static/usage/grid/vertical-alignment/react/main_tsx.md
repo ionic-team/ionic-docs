@@ -11,16 +11,16 @@ function Example() {
       <IonGrid>
         <IonRow class="ion-align-items-start">
           <IonCol>
-            1 of 4
+            1
           </IonCol>
           <IonCol>
-            2 of 4
+            2
           </IonCol>
           <IonCol>
-            3 of 4
+            3
           </IonCol>
           <IonCol>
-            4 of 4 <br />
+            4 <br />
             # <br />
             # <br />
             # <br />
@@ -32,16 +32,16 @@ function Example() {
       <IonGrid>
         <IonRow class="ion-align-items-center">
           <IonCol>
-            1 of 4
+            1
           </IonCol>
           <IonCol>
-            2 of 4
+            2
           </IonCol>
           <IonCol>
-            3 of 4
+            3
           </IonCol>
           <IonCol>
-            4 of 4 <br />
+            4 <br />
             # <br />
             # <br />
             # <br />
@@ -53,16 +53,16 @@ function Example() {
       <IonGrid>
         <IonRow class="ion-align-items-end">
           <IonCol>
-            1 of 4
+            1
           </IonCol>
           <IonCol>
-            2 of 4
+            2
           </IonCol>
           <IonCol>
-            3 of 4
+            3
           </IonCol>
           <IonCol>
-            4 of 4 <br />
+            4 <br />
             # <br />
             # <br />
             # <br />
