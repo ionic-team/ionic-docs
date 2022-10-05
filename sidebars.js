@@ -25,7 +25,7 @@ module.exports = {
       type: 'category',
       label: 'Layout',
       collapsed: false,
-      items: ['layout/structure', 'layout/grid', 'layout/global-stylesheets', 'layout/css-utilities'],
+      items: ['layout/structure', 'layout/global-stylesheets', 'layout/css-utilities'],
     },
     {
       type: 'category',
