@@ -22,8 +22,7 @@ function Example() {
           <IonCol>1</IonCol>
           <IonCol>2</IonCol>
           <IonCol size="auto">
-            3
-            <IonInput placeholder="default input"></IonInput>
+            <IonInput placeholder="3"></IonInput>
           </IonCol>
           <IonCol>4</IonCol>
           <IonCol>5</IonCol>

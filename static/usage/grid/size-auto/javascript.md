@@ -14,8 +14,7 @@
     <ion-col>1</ion-col>
     <ion-col>2</ion-col>
     <ion-col size="auto">
-      3
-      <ion-input placeholder="default input"></ion-input>
+      <ion-input placeholder="3"></ion-input>
     </ion-col>
     <ion-col>4</ion-col>
     <ion-col>5</ion-col>
@@ -33,10 +32,14 @@
 
 <style>
   ion-col {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
     background-color: #135d54;
     border: solid 1px #fff;
     color: #fff;
-    text-align: center;
   }
 </style>
 ```
