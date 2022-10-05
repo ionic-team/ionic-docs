@@ -1,24 +1,27 @@
 ```html
 <template>
+  <b>Column 1 has <code>push</code> set to <code>"4"</code> and column 2 has <code>pull</code> set to <code>"4"</code></b>
   <ion-grid>
     <ion-row>
-      <ion-col push="4">1 (push="4")</ion-col>
-      <ion-col pull="4">2 (pull="4")</ion-col>
+      <ion-col push="4">1</ion-col>
+      <ion-col pull="4">2</ion-col>
       <ion-col>3</ion-col>
     </ion-row>
   </ion-grid>
 
+  <b>Column 2 has <code>push</code> set to <code>"4"</code> and column 3 & 4 have <code>pull</code> set to <code>"2"</code></b>
   <ion-grid>
     <ion-row>
       <ion-col>1</ion-col>
-      <ion-col push="4">2 (push="4")</ion-col>
-      <ion-col pull="2">3 (pull="2")</ion-col>
-      <ion-col pull="2">4 (pull="2")</ion-col>
+      <ion-col push="4">2</ion-col>
+      <ion-col pull="2">3</ion-col>
+      <ion-col pull="2">4</ion-col>
       <ion-col>5</ion-col>
       <ion-col>6</ion-col>
     </ion-row>
   </ion-grid>
 
+  <b>Column 1 has <code>push</code> set to <code>"3"</code> and column 2 has <code>pull</code> set to <code>"9"</code></b>
   <ion-grid>
     <ion-row>
       <ion-col size="9" push="3">1</ion-col>
