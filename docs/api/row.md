@@ -1,9 +1,6 @@
 ---
 title: "ion-row"
-hide_table_of_contents: true
 ---
-import TOCInline from '@theme/TOCInline';
-
 import Props from '@site/static/auto-generated/row/props.md';
 import Events from '@site/static/auto-generated/row/events.md';
 import Methods from '@site/static/auto-generated/row/methods.md';
@@ -20,19 +17,10 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="shadow" />
 
-<h2 className="table-of-contents__title">Contents</h2>
+Rows are horizontal components of the [grid](./grid) system and contain varying numbers of
+[columns](./col). They ensure the columns are positioned properly.
 
-<TOCInline
-  toc={toc}
-  maxHeadingLevel={2}
-/>
-
-
-
-Rows are horizontal components of the [grid](grid.md) system and contain varying numbers of
-[columns](col.md). They ensure the columns are positioned properly.
-
-See [Grid Layout](/docs/layout/grid) for more information.
+See the [grid](./grid) documentation for more information.
 
 
 ## Row Alignment
