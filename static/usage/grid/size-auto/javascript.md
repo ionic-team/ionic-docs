@@ -1,37 +1,42 @@
 ```html
+<b>Column 1 has <code>size</code> set to <code>"auto"</code>.</b>
 <ion-grid>
   <ion-row>
-    <ion-col size="auto">1 of 3 (size="auto")</ion-col>
-    <ion-col>2 of 3</ion-col>
-    <ion-col>3 of 3</ion-col>
+    <ion-col size="auto">1</ion-col>
+    <ion-col>2</ion-col>
+    <ion-col>3</ion-col>
   </ion-row>
 </ion-grid>
 
+<b>Column 3 contains an input and has <code>size</code> set to <code>"auto"</code>.</b>
 <ion-grid>
   <ion-row>
-    <ion-col>1 of 6</ion-col>
-    <ion-col>2 of 6</ion-col>
+    <ion-col>1</ion-col>
+    <ion-col>2</ion-col>
     <ion-col size="auto">
-      3 of 6 (size="auto")
+      3
       <ion-input placeholder="default input"></ion-input>
     </ion-col>
-    <ion-col>4 of 6</ion-col>
-    <ion-col>5 of 6</ion-col>
-    <ion-col>6 of 6</ion-col>
+    <ion-col>4</ion-col>
+    <ion-col>5</ion-col>
+    <ion-col>6</ion-col>
   </ion-row>
 </ion-grid>
 
+<b>Column 2 has <code>size</code> set to <code>"auto"</code>.</b>
 <ion-grid>
   <ion-row>
-    <ion-col>1 of 2</ion-col>
-    <ion-col size="auto">2 of 2 (size="auto")</ion-col>
+    <ion-col>1</ion-col>
+    <ion-col size="auto">2</ion-col>
   </ion-row>
 </ion-grid>
 
 <style>
   ion-col {
-    background-color: #f7f7f7;
-    border: solid 1px #ddd;
+    background-color: #135d54;
+    border: solid 1px #fff;
+    color: #fff;
+    text-align: center;
   }
 </style>
 ```
