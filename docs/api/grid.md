@@ -20,10 +20,26 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 The grid is a powerful mobile-first flexbox system for building custom layouts. It is composed of three units — a grid, [row(s)](row.md) and [column(s)](col.md). Columns will expand to fill the row, and will resize to fit additional columns. It is based on a 12 column layout with different breakpoints based on the screen size. The number of columns can be customized using CSS.
 
+## Overview
+
+- Grids act as a container for all rows and columns. Grids take up the full width of their container,
+  but adding the `fixed` property will set the width based on the screen size, see [Fixed Grid](#fixed-grid) below.
+- Rows are horizontal groups of columns that line the columns up properly.
+- Content should be placed within columns, and only columns may be immediate children of rows.
+- The `size` property indicates the number of columns to use out of the default 12 per row.
+  So, `size="4"` can be added to a column in order to take up 1/3 of the grid, or 4 of the 12 columns.
+- Columns without a value for size will automatically have equal widths. For example, four columns will each automatically be 25% wide.
+- Column widths are set as a percentage, so they’re always fluid and sized relative to their parent element.
+- Columns have padding between individual columns, however, the padding can be removed from the grid and
+  columns by adding the `ion-no-padding` class to the grid. See the [CSS Utilities](../layout/css-utilities) for more styles that can be applied to the grid.
+- There are five grid tiers, one for each responsive breakpoint: all breakpoints (extra small), small, medium, large, and extra large.
+- Grid tiers are based on minimum widths, meaning they apply to their tier and all those larger than them
+  (e.g., `size-sm="4"` applies to small, medium, large, and extra large devices).
+- Grids can be customized via CSS variables. See [Customizing the Grid](#customizing-the-grid).
 
 ## Default Breakpoints
 
-The default breakpoints for the grid are defined in the table below. Breakpoints can not be customized at this time. For more information on why they can't be customized, see [Variables in Media Queries](../theming/advanced.md#variables-in-media-queries).
+The default breakpoints for the grid and the corresponding properties are defined in the table below. Breakpoint values can not be customized at this time. For more information on why they can't be customized, see [Variables in Media Queries](../theming/advanced#variables-in-media-queries).
 
 | Name | Value  | Width Property | Offset Property | Push Property | Pull Property | Description                          |
 | ---- | ------ | -------------- | --------------- | ------------- | ------------- | ------------------------------------ |
@@ -42,9 +58,27 @@ import Basic from '@site/static/usage/grid/basic/index.md';
 
 <Basic />
 
+
+## Fixed Grid
+
+By default, the grid will take up 100% width. By adding the `fixed` property to the grid, the width will be set based on the screen size. The width of the grid for each breakpoint is listed in the table below, but it can be customized. For more information, see [Customizing the Grid](#customizing-the-grid). Open the below example in StackBlitz and resize the screen to see the grid width change.
+
+| Name | Value  | Description                                       |
+| ---- | ------ | ------------------------------------------------- |
+| xs   | 100%   | Width is 100% for xs screens                      |
+| sm   | 540px  | Set grid width to 540px when (min-width: 576px)   |
+| md   | 720px  | Set grid width to 720px when (min-width: 768px)   |
+| lg   | 960px  | Set grid width to 960px when (min-width: 992px)   |
+| xl   | 1140px | Set grid width to 1140px when (min-width: 1200px) |
+
+import Fixed from '@site/static/usage/grid/fixed/index.md';
+
+<Fixed />
+
+
 ## Column Size
 
-Columns can be set to specific sizes to take up a certain number out of the total number of columns, or to resize their width based on the content.
+Columns can be set to specific sizes to take up a certain number out of the total number of columns, or to resize their width based on the content. The default number of columns is 12, but this can be customized. See the [Number of Columns](#number-of-columns) section below for more information.
 
 ### Content-based size
 
@@ -132,6 +166,35 @@ import HorizontalAlignment from '@site/static/usage/grid/horizontal-alignment/in
 
 <HorizontalAlignment />
 
+## Customizing the Grid
+
+Using our built-in CSS variables, it’s possible to customize the predefined grid attributes. Change the values of the padding, the number of columns, and more.
+
+### Fixed Width
+
+The width of a fixed grid can be set for all breakpoints with the `--ion-grid-width` CSS variable. To override individual breakpoints, use the `--ion-grid-width-{breakpoint}` CSS variables. The default value for each of the breakpoints can be found in the [Fixed Grid](#fixed-grid) section. Open the below example in StackBlitz and resize the screen to see the grid width change.
+
+import Width from '@site/static/usage/grid/customizing/width/index.md';
+
+<Width />
+
+### Number of Columns
+
+The number of grid columns can be modified with the `--ion-grid-columns` CSS variable. By default there are 12 grid columns, but this can be changed to any positive integer and be used to calculate the width of each individual column.
+
+import ColumnNumber from '@site/static/usage/grid/customizing/column-number/index.md';
+
+<ColumnNumber />
+
+### Padding
+
+The padding on the grid container can be set for all breakpoints with the `--ion-grid-padding` CSS variable. To override individual breakpoints, use the `--ion-grid-padding-{breakpoint}` CSS variables.
+
+The padding on the columns can be set for all breakpoints with the `--ion-grid-column-padding` CSS variable. To override individual breakpoints, use the `--ion-grid-column-padding-{breakpoint}` CSS variables.
+
+import Padding from '@site/static/usage/grid/customizing/padding/index.md';
+
+<Padding />
 
 ## Properties
 <Props />
