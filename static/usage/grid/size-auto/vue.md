@@ -1,6 +1,6 @@
 ```html
 <template>
-  <b>Column 1 has <code>size</code> set to <code>"auto"</code>.</b>
+  <b>Column 1 has <code>size</code> set to <code>"auto"</code></b>
   <ion-grid>
     <ion-row>
       <ion-col size="auto">1</ion-col>
@@ -9,7 +9,7 @@
     </ion-row>
   </ion-grid>
 
-  <b>Column 3 contains an input and has <code>size</code> set to <code>"auto"</code>.</b>
+  <b>Column 3 contains an input and has <code>size</code> set to <code>"auto"</code></b>
   <ion-grid>
     <ion-row>
       <ion-col>1</ion-col>
@@ -23,7 +23,7 @@
     </ion-row>
   </ion-grid>
 
-  <b>Column 2 has <code>size</code> set to <code>"auto"</code>.</b>
+  <b>Column 2 has <code>size</code> set to <code>"auto"</code></b>
   <ion-grid>
     <ion-row>
       <ion-col>1</ion-col>
