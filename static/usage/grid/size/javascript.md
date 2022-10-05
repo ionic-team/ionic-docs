@@ -24,4 +24,11 @@
     <ion-col size="4">2 of 2 (size="4")</ion-col>
   </ion-row>
 </ion-grid>
+
+<style>
+  ion-col {
+    background-color: #f7f7f7;
+    border: solid 1px #ddd;
+  }
+</style>
 ```

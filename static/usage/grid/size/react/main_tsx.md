@@ -1,14 +1,16 @@
 ```tsx
 import React from 'react';
-import { IonCol, IonGrid, IonInput, IonRow } from '@ionic/react';
+import { IonCol, IonGrid, IonRow } from '@ionic/react';
+
+import './main.css';
 
 function Example() {
   return (
     <>
       <IonGrid>
         <IonRow>
-          <IonCol size="auto">1 of 3 (size="auto")</IonCol>
-          <IonCol>2 of 3</IonCol>
+          <IonCol>1 of 3</IonCol>
+          <IonCol size="8">2 of 3 (size="8")</IonCol>
           <IonCol>3 of 3</IonCol>
         </IonRow>
       </IonGrid>
@@ -17,11 +19,8 @@ function Example() {
         <IonRow>
           <IonCol>1 of 6</IonCol>
           <IonCol>2 of 6</IonCol>
-          <IonCol size="auto">
-            3 of 6 (size="auto")
-            <IonInput placeholder="default input"></IonInput>
-          </IonCol>
-          <IonCol>4 of 6</IonCol>
+          <IonCol size="3">3 of 6 (size="3")</IonCol>
+          <IonCol size="3">4 of 6 (size="3")</IonCol>
           <IonCol>5 of 6</IonCol>
           <IonCol>6 of 6</IonCol>
         </IonRow>
@@ -29,8 +28,8 @@ function Example() {
 
       <IonGrid>
         <IonRow>
-          <IonCol>1 of 2</IonCol>
-          <IonCol size="auto">2 of 2 (size="auto")</IonCol>
+          <IonCol size="4">1 of 2 (size="4")</IonCol>
+          <IonCol size="4">2 of 2 (size="4")</IonCol>
         </IonRow>
       </IonGrid>
     </>

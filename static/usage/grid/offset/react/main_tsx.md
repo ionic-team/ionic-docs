@@ -2,6 +2,8 @@
 import React from 'react';
 import { IonCol, IonGrid, IonRow } from '@ionic/react';
 
+import './main.css';
+
 function Example() {
   return (
     <>

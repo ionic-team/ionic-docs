@@ -29,4 +29,11 @@
     <ion-col size="6" size-md="4" size-lg="2">6 of 6</ion-col>
   </ion-row>
 </ion-grid>
+
+<style>
+  ion-col {
+    background-color: #f7f7f7;
+    border: solid 1px #ddd;
+  }
+</style>
 ```
