@@ -61,7 +61,7 @@ import Basic from '@site/static/usage/grid/basic/index.md';
 
 ## Fixed Grid
 
-By default, the grid will take up 100% width. By adding the `fixed` property to the grid, the width will be set based on the screen size. The width of the grid for each breakpoint is listed in the table below, but it can be customized. For more information, see [Customizing the Grid](#customizing-the-grid). Open the below example in StackBlitz and resize the screen to see the grid width change.
+Grids take up 100% width of their container. By adding the `fixed` property to the grid, the width will be set based on the screen size. The width of the grid for each breakpoint is listed in the table below, but it can be customized. For more information, see [Customizing the Grid](#customizing-the-grid). Open the below example in StackBlitz and resize the screen to see the grid width change.
 
 | Name | Value  | Description                                       |
 | ---- | ------ | ------------------------------------------------- |
@@ -78,7 +78,7 @@ import Fixed from '@site/static/usage/grid/fixed/index.md';
 
 ## Column Size
 
-Columns can be set to specific sizes to take up a certain number out of the total number of columns, or to resize their width based on the content. The default number of columns is 12, but this can be customized. See the [Number of Columns](#number-of-columns) section below for more information.
+Columns can be set to specific sizes to take up a certain number out of the total number of columns, or resize their width based on the content. The default number of columns is 12, but this can be customized. See the [Number of Columns](#number-of-columns) section below for more information.
 
 ### Content-based size
 
@@ -91,7 +91,7 @@ import SizeAuto from '@site/static/usage/grid/size-auto/index.md';
 
 ### Specified size
 
-Set the `size` of one column and the others will automatically resize around it. If a size is specified on all of the columns, no columns will resize to fill the remaining space.
+Set the `size` of a column and the others will automatically resize around it. If a size is specified on all of the columns and it doesn't add up to the total number of columns, there will be empty space after the columns.
 
 import Size from '@site/static/usage/grid/size/index.md';
 
