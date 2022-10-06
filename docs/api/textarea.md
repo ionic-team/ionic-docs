@@ -39,7 +39,7 @@ import AutogrowPlayground from '@site/static/usage/textarea/autogrow/index.md';
 
 ## Clear on Edit
 
-Setting the `clearOnInput` property to `true` will clear the textarea after it has been blurred and then typed in again.
+Setting the `clearOnEdit` property to `true` will clear the textarea after it has been blurred and then typed in again.
 
 import ClearOnEditPlayground from '@site/static/usage/textarea/clear-on-edit/index.md';
 
