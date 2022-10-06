@@ -2,7 +2,7 @@
 <ion-list>
   <ion-item>
     <ion-label position="stacked">Input with clear button</ion-label>
-    <ion-input [clearInput]="true" placeholder="Enter text to see clear button"></ion-input>
+    <ion-input [clearInput]="true" placeholder="Enter text to see clear button" value="Default value"></ion-input>
   </ion-item>
 
   <ion-item>

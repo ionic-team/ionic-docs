@@ -7,7 +7,7 @@ function Example() {
     <IonList>
       <IonItem>
         <IonLabel position="stacked">Input with clear button</IonLabel>
-        <IonInput clearInput={true} placeholder="Enter text to see clear button"></IonInput>
+        <IonInput clearInput={true} placeholder="Enter text to see clear button" value="Default value"></IonInput>
       </IonItem>
 
       <IonItem>
