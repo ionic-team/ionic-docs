@@ -93,7 +93,7 @@ import Colors from '@site/static/usage/input/theming/colors/index.md';
 
 ### CSS Custom Properties
 
-Input uses scoped encapsulation, which means it will automatically scope its CSS by appending each of the styles with an additional class at runtime. Overriding scoped selectors in CSS requires a [higher specificity](https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity) selector. Targeting the `ion-input` for customization will not work, therefore we recommend adding a class and customizing it that way.
+Input uses scoped encapsulation, which means it will automatically scope its CSS by appending each of the styles with an additional class at runtime. Overriding scoped selectors in CSS requires a [higher specificity](https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity) selector. Targeting the `ion-input` for customization will not work; therefore we recommend adding a class and customizing it that way.
 
 import CSSProps from '@site/static/usage/input/theming/css-properties/index.md';
 
