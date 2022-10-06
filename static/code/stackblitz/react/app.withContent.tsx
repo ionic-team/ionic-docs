@@ -15,7 +15,9 @@ import '@ionic/react/css/flex-utils.css';
 
 import Example from './main';
 
-setupIonicReact();
+setupIonicReact({
+  mode: '{{ MODE }}',
+});
 
 export default function App() {
   return (

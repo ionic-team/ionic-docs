@@ -19,4 +19,6 @@ import '@ionic/vue/css/text-transformation.css';
 import '@ionic/vue/css/flex-utils.css';
 import '@ionic/vue/css/display.css';
 
-createApp(App).use(IonicVue).mount('#app');
+createApp(App).use(IonicVue, {
+  mode: '{{ MODE }}'
+}).mount('#app');
