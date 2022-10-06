@@ -28,5 +28,5 @@ import angularCSS from './angular/example_component_css.md';
     },
   }}
   src="usage/grid/size-auto/demo.html"
-  size="300px"
+  size="250px"
 />

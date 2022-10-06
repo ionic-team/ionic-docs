@@ -28,5 +28,5 @@ import angularCSS from './angular/example_component_css.md';
     },
   }}
   src="usage/grid/push-pull-responsive/demo.html"
-  size="300px"
+  size="200px"
 />
