@@ -37,6 +37,7 @@ Using `ion-app` enables the following behaviors:
 * [Hardware Back Button Listeners](../developing/hardware-back-button) for customizing the hardware back button behavior on Android devices
 * Status bar support in Capacitor or Cordova which allows users to scroll to the top of the view by tapping the status bar
 * Scroll assist utilities which scroll the content so focused text inputs are not covered by the on-screen keyboard
+* Ripple effect when activating buttons on Material Design mode
 * Other tap and focus utilities which make the experience of using an Ionic app feel more native
 
 
