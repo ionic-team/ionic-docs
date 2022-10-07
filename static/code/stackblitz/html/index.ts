@@ -16,6 +16,9 @@ import '@ionic/core/css/float-elements.css';
 import '@ionic/core/css/text-alignment.css';
 import '@ionic/core/css/text-transformation.css';
 import '@ionic/core/css/flex-utils.css';
+import '@ionic/core/css/display.css';
+
+import './theme/variables.css';
 
 defineCustomElements();
 

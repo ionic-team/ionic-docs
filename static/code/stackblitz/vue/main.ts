@@ -19,4 +19,7 @@ import '@ionic/vue/css/text-transformation.css';
 import '@ionic/vue/css/flex-utils.css';
 import '@ionic/vue/css/display.css';
 
+/* Theme variables */
+import './theme/variables.css';
+
 createApp(App).use(IonicVue).mount('#app');
