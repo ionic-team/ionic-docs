@@ -22,6 +22,10 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 ## Basic
 
+import Basic from '@site/static/usage/title/basic/index.md';
+
+<Basic />
+
 ## Collapsible Large Titles
 
 ## Theming
