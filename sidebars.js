@@ -30,7 +30,7 @@ module.exports = {
         {
           type: 'link',
           label: 'Responsive Grid',
-          href: './api/grid',
+          href: '/docs/api/grid',
         },
         'layout/global-stylesheets',
         'layout/css-utilities'
