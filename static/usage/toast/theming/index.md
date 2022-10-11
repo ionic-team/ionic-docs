@@ -3,8 +3,8 @@ import Playground from '@site/src/components/global/Playground';
 import javascript from './javascript.md';
 import vue from './vue.md';
 
-import reactTS from './react/react_ts.md';
-import reactCSS from './react/react_css.md';
+import reactTSX from './react/main_tsx.md';
+import reactCSS from './react/main_css.md';
 
 import angularHTML from './angular/angular_html.md';
 import angularCSS from './angular/angular_css.md';
@@ -16,7 +16,7 @@ import angularTS from './angular/angular_ts.md';
     javascript,
     react: {
       files: {
-        'src/main.tsx': reactTS,
+        'src/main.tsx': reactTSX,
         'src/main.css': reactCSS,
       },
     },
