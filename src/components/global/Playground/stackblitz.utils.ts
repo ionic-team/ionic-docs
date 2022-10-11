@@ -119,12 +119,13 @@ const openAngularEditor = async (code: string, options?: EditorOptions) => {
 }
 
 const openReactEditor = async (code: string, options?: EditorOptions) => {
-  const [index_tsx, app_tsx, ts_config_json, package_json, package_lock_json] = await loadSourceFiles([
+  const [index_tsx, app_tsx, ts_config_json, package_json, package_lock_json, index_html] = await loadSourceFiles([
     'react/index.tsx',
     options?.includeIonContent ? 'react/app.withContent.tsx' : 'react/app.tsx',
     'react/tsconfig.json',
     'react/package.json',
-    'react/package-lock.json'
+    'react/package-lock.json',
+    'react/index.html'
   ]);
 
   sdk.openProject({
@@ -132,7 +133,7 @@ const openReactEditor = async (code: string, options?: EditorOptions) => {
     title: options?.title ?? DEFAULT_EDITOR_TITLE,
     description: options?.description ?? DEFAULT_EDITOR_DESCRIPTION,
     files: {
-      'public/index.html': `<div id="root"></div>`,
+      'public/index.html': index_html,
       'src/index.tsx': index_tsx,
       'src/App.tsx': app_tsx,
       'src/main.tsx': code,

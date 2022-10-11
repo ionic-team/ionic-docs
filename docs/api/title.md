@@ -51,7 +51,19 @@ import CollapsibleLargeTitleButtons from '@site/static/usage/title/collapsible-l
 
 ## Theming
 
+The collapsible large title should appear seamless in relation to the rest of your content. This means that the background color of the `ion-toolbar` that contains the collapsible large title should always match the background color of `ion-content`.
+
+By default, the `ion-toolbar` that contains the standard title is hidden using `opacity: 0` and is progressively shown as you collapse the large title by scrolling. As a result, the background color that you see behind the standard title is actually the background color of `ion-content`.
+
+You can change the background color of the toolbar with the standard title by setting the `--background` CSS variable on `ion-toolbar`. This will give the effect of the header changing color as you collapse the large title.
+
+When styling the text color of the large title, you should target the large title globally as opposed to within the context of a particular page or tab, otherwise its styles will not be applied during the navigation animation.
+
 ### CSS Custom Properties
+
+import CSSCustomProperties from '@site/static/usage/title/theming/css-properties/index.md';
+
+<CSSCustomProperties />
 
 ## Properties
 <Props />
