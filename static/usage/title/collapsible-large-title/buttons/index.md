@@ -7,7 +7,7 @@ import angular from './angular.md';
 
 <Playground
   code={{ javascript, react, vue, angular }}
-  src="usage/title/collapsible-large-title/demo.html"
+  src="usage/title/collapsible-large-title/buttons/demo.html"
   devicePreview={true}
   includeIonContent={false}
 />

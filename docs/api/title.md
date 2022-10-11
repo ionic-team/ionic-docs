@@ -36,9 +36,18 @@ This feature is only available for iOS.
 
 :::
 
-import CollapsibleLargeTitle from '@site/static/usage/title/collapsible-large-title/index.md';
+import CollapsibleLargeTitle from '@site/static/usage/title/collapsible-large-title/basic/index.md';
 
 <CollapsibleLargeTitle />
+
+### Collapsible Buttons
+
+The [`ion-buttons`](./buttons.md) component can be used with the [`collapse`](./buttons.md#collapse) property to additionally display in the header as the toolbar is collapsed.
+
+
+import CollapsibleLargeTitleButtons from '@site/static/usage/title/collapsible-large-title/buttons/index.md';
+
+<CollapsibleLargeTitleButtons />
 
 ## Theming
 
