@@ -14,5 +14,6 @@ import angular from './angular.md';
     angular,
   }}
   src="usage/item/helper-error/demo.html"
+  size="150px"
 />
 
