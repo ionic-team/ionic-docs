@@ -28,6 +28,18 @@ import Basic from '@site/static/usage/title/basic/index.md';
 
 ## Collapsible Large Titles
 
+The Large Title will display when the `ion-content` is scrolled to the start of the scroll container. When the title is scrolled behind the header, the condensed title will fade in.
+
+:::info  
+
+This feature is only available for iOS.
+
+:::
+
+import CollapsibleLargeTitle from '@site/static/usage/title/collapsible-large-title/index.md';
+
+<CollapsibleLargeTitle />
+
 ## Theming
 
 ### CSS Custom Properties
