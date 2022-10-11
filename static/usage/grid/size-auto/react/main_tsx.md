@@ -30,11 +30,13 @@ function Example() {
         </IonRow>
       </IonGrid>
 
-      <b>Column 2 has <code>size</code> set to <code>"auto"</code></b>
+      <b>Column 2 has <code>size</code> set to <code>"auto"</code> and a defined width</b>
       <IonGrid>
         <IonRow>
           <IonCol>1</IonCol>
-          <IonCol size="auto">2</IonCol>
+          <IonCol size="auto">
+            <div style={{width: "150px"}}>2</div>
+          </IonCol>
         </IonRow>
       </IonGrid>
     </>
