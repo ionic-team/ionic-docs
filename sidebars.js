@@ -25,7 +25,16 @@ module.exports = {
       type: 'category',
       label: 'Layout',
       collapsed: false,
-      items: ['layout/structure', 'layout/global-stylesheets', 'layout/css-utilities'],
+      items: [
+        'layout/structure',
+        {
+          type: 'link',
+          label: 'Responsive Grid',
+          href: 'api/grid',
+        },
+        'layout/global-stylesheets',
+        'layout/css-utilities'
+      ],
     },
     {
       type: 'category',
