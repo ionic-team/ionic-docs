@@ -30,7 +30,7 @@ The grid is a powerful mobile-first flexbox system for building custom layouts. 
   So, `size="4"` can be added to a column in order to take up 1/3 of the grid, or 4 of the 12 columns.
 - Columns without a value for size will automatically have equal widths. For example, four columns will each automatically be 25% wide.
 - Column widths are set as a percentage, so they’re always fluid and sized relative to their parent element.
-- Columns have padding between individual columns, however, the padding can be removed from the grid and
+- There is padding between individual columns. However, the padding can be removed from the grid and
   columns by adding the `ion-no-padding` class to the grid. See the [CSS Utilities](../layout/css-utilities) for more styles that can be applied to the grid.
 - There are five grid tiers, one for each responsive breakpoint: all breakpoints (extra small), small, medium, large, and extra large.
 - Grid tiers are based on minimum widths, meaning they apply to their tier and all those larger than them
