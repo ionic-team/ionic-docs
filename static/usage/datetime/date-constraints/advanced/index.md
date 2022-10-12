@@ -3,8 +3,9 @@ import Playground from '@site/src/components/global/Playground';
 import javascript from './javascript.md';
 import react from './react.md';
 import vue from './vue.md';
-import angular_example_component_html from './angular-html.md';
-import angular_example_component_ts from './angular-ts.md';
+
+import angular_example_component_html from './angular/example_component_html.md';
+import angular_example_component_ts from './angular/example_component_ts.md';
 
 <Playground
   size="medium"
