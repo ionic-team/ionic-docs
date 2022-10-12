@@ -6,9 +6,9 @@ import vue from './vue.md';
 import reactTSX from './react/main_tsx.md';
 import reactCSS from './react/main_css.md';
 
-import angularHTML from './angular/angular_html.md';
-import angularCSS from './angular/angular_css.md';
-import angularTS from './angular/angular_ts.md';
+import angularHTML from './angular/example_component_html.md';
+import angularCSS from './angular/example_component_css.md';
+import angularTS from './angular/example_component_ts.md';
 
 <Playground
   size="400px"

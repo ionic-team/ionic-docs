@@ -6,8 +6,8 @@ import vue from './vue.md';
 import reactTSX from './react/main_tsx.md';
 import reactCSS from './react/main_css.md';
 
-import angularHTML from './angular/angular-html.md';
-import angularCSS from './angular/angular-css.md';
+import angularHTML from './angular/example_component_html.md';
+import angularCSS from './angular/example_component_css.md';
 
 <Playground
   size="300px"

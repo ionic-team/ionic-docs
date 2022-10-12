@@ -7,8 +7,8 @@ import reactCSS from './react/main_css.md';
 
 import vue from './vue.md';
 
-import angularCSS from './angular/angular-css.md';
-import angularHTML from './angular/angular-html.md';
+import angularCSS from './angular/example_component_css.md';
+import angularHTML from './angular/example_component_html.md';
 
 <Playground
   code={{

@@ -4,8 +4,8 @@ import javascript from './javascript.md';
 import react from './react.md';
 import vue from './vue.md';
 
-import angularHTML from './angular/html.md';
-import angularTS from './angular/ts.md';
+import angularHTML from './angular/example_component_html.md';
+import angularTS from './angular/example_component_ts.md';
 
 <Playground
   code={{

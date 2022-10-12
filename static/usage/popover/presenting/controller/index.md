@@ -6,8 +6,8 @@ import react from './react.md';
 import vuePopover from './vue/vue_popover.md';
 import vueMain from './vue/vue_main.md';
 
-import angularHTML from './angular/angular_html.md';
-import angularTS from './angular/angular_ts.md';
+import angularHTML from './angular/example_component_html.md';
+import angularTS from './angular/example_component_ts.md';
 import angularPopoverHTML from './angular/angular_popover_html.md';
 import angularPopoverTS from './angular/angular_popover_ts.md';
 import angularModule from './angular/angular_module.md';
