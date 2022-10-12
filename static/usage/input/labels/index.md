@@ -5,15 +5,4 @@ import react from './react.md';
 import vue from './vue.md';
 import angular from './angular.md';
 
-
-<Playground
-  code={{
-  javascript,
-    react,
-    vue,
-    angular,
-  }}
-  src="usage/item/helper-error/demo.html"
-  size="150px"
-/>
-
+<Playground code={{ javascript, react, vue, angular }} src="usage/input/labels/demo.html" size="300px" />
