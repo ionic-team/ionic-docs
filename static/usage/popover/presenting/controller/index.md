@@ -3,8 +3,8 @@ import Playground from '@site/src/components/global/Playground';
 import javascript from './javascript.md';
 import react from './react.md';
 
-import vuePopover from './vue/vue_popover.md';
-import vueMain from './vue/vue_main.md';
+import vue_example from './vue/example_vue.md';
+import vue_popover from './vue/popover_vue.md';
 
 import angular_example_component_html from './angular/example_component_html.md';
 import angular_example_component_ts from './angular/example_component_ts.md';
@@ -19,8 +19,8 @@ import angular_app_module from './angular/app_module_ts.md';
     react,
     vue: {
       files: {
-        'src/components/Example.vue': vueMain,
-        'src/components/Popover.vue': vuePopover,
+        'src/components/Example.vue': vue_example,
+        'src/components/Popover.vue': vue_popover,
       },
     },
     angular: {
