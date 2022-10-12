@@ -249,6 +249,7 @@ export default function Playground({
       title,
       description,
       includeIonContent,
+      mode: isIOS ? 'ios' : 'md'
     };
 
     let codeBlock;
