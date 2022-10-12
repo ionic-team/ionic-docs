@@ -2,10 +2,10 @@ import Playground from '@site/src/components/global/Playground';
 
 import javascript from './javascript.md';
 import reactHTML from './react-html.md';
-import reactCSS from './react-css.md';
+import react_main_css from './react-css.md';
 import vue from './vue.md';
-import angularHTML from './angular-html.md';
-import angularCSS from './angular-css.md';
+import angular_example_component_html from './angular-html.md';
+import angular_example_component_css from './angular-css.md';
 
 <Playground
   size="450px"
@@ -14,16 +14,16 @@ import angularCSS from './angular-css.md';
     react: {
       files: {
         'src/main.tsx': reactHTML,
-        'src/main.css': reactCSS,
+        'src/main.css': react_main_css,
       },
     },
     vue,
     angular: {
       files: {
-        'src/app/example.component.html': angularHTML,
-        'src/global.css': angularCSS
+        'src/app/example.component.html': angular_example_component_html,
+        'src/global.css': angular_example_component_css
       }
     }
-  }} 
+  }}
   src="usage/datetime/theming/demo.html"
 />

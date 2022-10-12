@@ -3,8 +3,8 @@ import Playground from '@site/src/components/global/Playground';
 import javascript from './javascript.md';
 import react from './react.md';
 import vue from './vue.md';
-import angularHTML from './angular-html.md';
-import angularTS from './angular-ts.md';
+import angular_example_component_html from './angular-html.md';
+import angular_example_component_ts from './angular-ts.md';
 
 <Playground
   code={{
@@ -13,8 +13,8 @@ import angularTS from './angular-ts.md';
     vue,
     angular: {
       files: {
-        'src/app/example.component.html': angularHTML,
-        'src/app/example.component.ts': angularTS,
+        'src/app/example.component.html': angular_example_component_html,
+        'src/app/example.component.ts': angular_example_component_ts,
       },
     },
   }}

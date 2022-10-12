@@ -4,8 +4,8 @@ import javascript from './javascript.md';
 import react from './react.md';
 import vue from './vue.md';
 
-import angularHTML from './angular/example_component_html.md';
-import angularTS from './angular/example_component_ts.md';
+import angular_example_component_html from './angular/example_component_html.md';
+import angular_example_component_ts from './angular/example_component_ts.md';
 
 <Playground
   size="500px"
@@ -15,8 +15,8 @@ import angularTS from './angular/example_component_ts.md';
     vue,
     angular: {
       files: {
-        'src/app/example.component.html': angularHTML,
-        'src/app/example.component.ts': angularTS,
+        'src/app/example.component.html': angular_example_component_html,
+        'src/app/example.component.ts': angular_example_component_ts,
       },
     },
   }}
