@@ -7,8 +7,8 @@ import react_main_css from './react/main_css.md';
 
 import vue from './vue.md';
 
-import angular_example_component_css from './angular/example_component_css.md';
 import angular_example_component_html from './angular/example_component_html.md';
+import angular_global_css from './angular/global_css.md';
 
 <Playground
   code={{
@@ -23,7 +23,7 @@ import angular_example_component_html from './angular/example_component_html.md'
     angular: {
       files: {
         'src/app/example.component.html': angular_example_component_html,
-        'src/global.css': angular_example_component_css
+        'src/global.css': angular_global_css,
       }
     }
   }}

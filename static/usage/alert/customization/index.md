@@ -7,8 +7,8 @@ import react_main_tsx from './react/main_tsx.md';
 import react_main_css from './react/main_css.md';
 
 import angular_example_component_html from './angular/example_component_html.md';
-import angular_example_component_css from './angular/example_component_css.md';
 import angular_example_component_ts from './angular/example_component_ts.md';
+import angular_global_css from './angular/global_css.md';
 
 <Playground
   size="300px"
@@ -25,7 +25,7 @@ import angular_example_component_ts from './angular/example_component_ts.md';
       files: {
         'src/app/example.component.html': angular_example_component_html,
         'src/app/example.component.ts': angular_example_component_ts,
-        'src/global.css': angular_example_component_css
+        'src/global.css': angular_global_css,
       }
     }
   }}
