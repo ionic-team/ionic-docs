@@ -34,7 +34,7 @@
   }
 
   .custom-ripple {
-    color: #c0ffee;
+    color: #501ace;
   }
 </style>
 ```
