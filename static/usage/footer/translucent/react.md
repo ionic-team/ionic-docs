@@ -5,7 +5,7 @@ import { IonContent, IonFooter, IonTitle, IonToolbar } from '@ionic/react';
 function Example() {
   return (
     <>
-      <IonContent fullscreen={true} class="ion-padding">
+      <IonContent fullscreen={true} className="ion-padding">
         <h1>Content</h1>
 
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas blandit, justo vitae rhoncus porttitor, massa elit molestie nisl, ut tincidunt orci enim ac ante. Vestibulum tincidunt dignissim elit. Morbi cursus hendrerit turpis, ut egestas tortor pulvinar sit amet. Interdum et malesuada fames ac ante ipsum primis in faucibus. Phasellus faucibus consequat purus vel mollis. Ut ultricies elit nunc. Quisque ultrices turpis vel augue auctor accumsan. Donec bibendum at nisi vel finibus. Fusce id imperdiet odio. Morbi orci ipsum, imperdiet ut iaculis sit amet, suscipit vulputate felis. Nullam arcu leo, volutpat eu porttitor sed, fringilla et arcu. Pellentesque ac libero sapien. Quisque id dui velit. Mauris et pretium tortor.</p>

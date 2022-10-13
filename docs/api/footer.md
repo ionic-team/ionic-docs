@@ -51,6 +51,14 @@ import CustomScrollTarget from '@site/static/usage/footer/custom-scroll-target/i
 
 <CustomScrollTarget />
 
+## Borders
+
+In `"md"` mode, the footer will have a `box-shadow` on the top. In `"ios"` mode, it will receive a `border` on the top. These can be removed by adding the `.ion-no-border` class to the footer.
+
+import NoBorder from '@site/static/usage/footer/no-border/index.md';
+
+<NoBorder />
+
 
 ## Properties
 <Props />

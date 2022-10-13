@@ -8,7 +8,7 @@ function Example() {
       <IonContent className="ion-padding">
         <h1>Content</h1>
       </IonContent>
-      <IonFooter>
+      <IonFooter className="ion-no-border">
         <IonToolbar>
           <IonTitle>Footer</IonTitle>
         </IonToolbar>
