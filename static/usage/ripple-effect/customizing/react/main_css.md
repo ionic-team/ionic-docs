@@ -1,4 +1,22 @@
 ```css
+.wrapper {
+  display: flex;
+  flex-wrap: wrap;
+
+  align-items: center;
+  justify-content: space-between;
+  text-align: center;
+
+  height: 170px;
+  width: 400px;
+
+  margin: 0 auto;
+}
+
+b {
+  width: 100%;
+}
+
 .ripple-parent {
   display: flex;
   align-items: center;

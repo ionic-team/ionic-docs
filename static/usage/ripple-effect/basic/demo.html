@@ -11,14 +11,18 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core@6/css/ionic.bundle.css" />
 
   <style>
-    .container {
-      width: 300px;
-      margin: 0 auto;
-
+    .wrapper {
+      display: flex;
       flex-wrap: wrap;
-      justify-content: space-between;
 
+      align-items: center;
+      justify-content: space-between;
       text-align: center;
+
+      height: 300px;
+      width: 300px;
+
+      margin: 0 auto;
     }
 
     b {
@@ -55,18 +59,20 @@
   <ion-app>
     <ion-content>
       <div class="container">
-        <b>Click on a shape to see the ripple</b>
+        <div class="wrapper">
+          <b>Click on a shape to see the ripple</b>
 
-        <div class="ion-activatable ripple-parent rectangle">
-          <ion-ripple-effect></ion-ripple-effect>
-        </div>
+          <div class="ion-activatable ripple-parent rectangle">
+            <ion-ripple-effect></ion-ripple-effect>
+          </div>
 
-        <div class="ion-activatable ripple-parent rounded-rectangle">
-          <ion-ripple-effect></ion-ripple-effect>
-        </div>
+          <div class="ion-activatable ripple-parent rounded-rectangle">
+            <ion-ripple-effect></ion-ripple-effect>
+          </div>
 
-        <div class="ion-activatable ripple-parent circle">
-          <ion-ripple-effect></ion-ripple-effect>
+          <div class="ion-activatable ripple-parent circle">
+            <ion-ripple-effect></ion-ripple-effect>
+          </div>
         </div>
       </div>
     </ion-content>

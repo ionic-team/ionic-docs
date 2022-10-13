@@ -1,15 +1,17 @@
 ```html
 <template>
-  <b>Click on a shape to see the ripple</b>
+  <div class="wrapper">
+    <b>Click on a shape to see the ripple</b>
 
-  <div class="ion-activatable ripple-parent rounded-rectangle">
-    Bounded
-    <ion-ripple-effect></ion-ripple-effect>
-  </div>
+    <div class="ion-activatable ripple-parent rounded-rectangle">
+      Bounded
+      <ion-ripple-effect></ion-ripple-effect>
+    </div>
 
-  <div class="ion-activatable ripple-parent circle">
-    Unbounded
-    <ion-ripple-effect type="unbounded"></ion-ripple-effect>
+    <div class="ion-activatable ripple-parent circle">
+      Unbounded
+      <ion-ripple-effect type="unbounded"></ion-ripple-effect>
+    </div>
   </div>
 </template>
 
@@ -23,6 +25,24 @@
 </script>
 
 <style scoped>
+  .wrapper {
+    display: flex;
+    flex-wrap: wrap;
+
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+
+    height: 170px;
+    width: 400px;
+
+    margin: 0 auto;
+  }
+
+  b {
+    width: 100%;
+  }
+
   .ripple-parent {
     display: flex;
     align-items: center;

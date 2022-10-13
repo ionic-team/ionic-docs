@@ -1,15 +1,17 @@
 ```html
 <template>
-  <b>Click on a shape to see the ripple</b>
+  <div class="wrapper">
+    <b>Click on a shape to see the ripple</b>
 
-  <div class="ion-activatable ripple-parent custom-parent">
-    Custom Parent Color
-    <ion-ripple-effect></ion-ripple-effect>
-  </div>
+    <div class="ion-activatable ripple-parent custom-parent">
+      Custom Parent Color
+      <ion-ripple-effect></ion-ripple-effect>
+    </div>
 
-  <div class="ion-activatable ripple-parent">
-    Custom Ripple Color
-    <ion-ripple-effect class="custom-ripple"></ion-ripple-effect>
+    <div class="ion-activatable ripple-parent">
+      Custom Ripple Color
+      <ion-ripple-effect class="custom-ripple"></ion-ripple-effect>
+    </div>
   </div>
 </template>
 
@@ -23,6 +25,24 @@
 </script>
 
 <style scoped>
+  .wrapper {
+    display: flex;
+    flex-wrap: wrap;
+
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+
+    height: 170px;
+    width: 400px;
+
+    margin: 0 auto;
+  }
+
+  b {
+    width: 100%;
+  }
+
   .ripple-parent {
     display: flex;
     align-items: center;
