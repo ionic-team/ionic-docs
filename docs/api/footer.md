@@ -1,11 +1,6 @@
 ---
 title: "ion-footer"
-hide_table_of_contents: true
 ---
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-import TOCInline from '@theme/TOCInline';
-
 import Props from '@site/static/auto-generated/footer/props.md';
 import Events from '@site/static/auto-generated/footer/events.md';
 import Methods from '@site/static/auto-generated/footer/methods.md';
@@ -21,225 +16,41 @@ import Slots from '@site/static/auto-generated/footer/slots.md';
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 
-<h2 className="table-of-contents__title">Contents</h2>
+Footer is a root component of a page that aligns itself to the bottom of the page. It is recommended to be used as a wrapper for [toolbar](./toolbar), but it can be used to wrap any element. When a toolbar is used inside of a footer, the content will be adjusted so it is sized correctly, and the footer will account for any device safe areas.
 
-<TOCInline
-  toc={toc}
-  maxHeadingLevel={2}
-/>
+## Basic Usage
+
+import Basic from '@site/static/usage/footer/basic/index.md';
+
+<Basic />
 
 
+## Translucent Footer
 
-Footer is a root component of a page that sits at the bottom of the page.
-Footer can be a wrapper for ion-toolbar to make sure the content area is sized correctly.
+Footers can match the transparency found in native iOS applications by setting the `translucent` property. In order to see the content scrolling behind the footer, the `fullscreen` property needs to be set on the content. This effect will only apply when the mode is `"ios"` and the device supports [backdrop-filter](https://developer.mozilla.org/en-US/docs/Web/CSS/backdrop-filter#browser_compatibility).
+
+import Translucent from '@site/static/usage/footer/translucent/index.md';
+
+<Translucent />
+
 
 ## Fade Footer
 
-The `collapse` property can be set to `'fade'` on a page's `ion-footer` to have the background color of the toolbars fade in as users scroll. This provides the same fade effect that is found in many native iOS applications.
+Many native iOS applications have a fade effect on the toolbar. This can be achieved by setting the `collapse` property on the footer to `"fade"`. When the content is scrolled to the end, the background and border on the footer will fade away. This effect will only apply when the mode is `"ios"`.
 
-### Usage with Virtual Scroll
+import Fade from '@site/static/usage/footer/fade/index.md';
 
-Fade footer requires a scroll container to function. When using a virtual scrolling solution, you will need to disable scrolling on the `ion-content` and indicate which element container is responsible for the scroll container with the `.ion-content-scroll-host` class target.
-
-```html
-<ion-content scroll-y="false">
-  <virtual-scroll-element class="ion-content-scroll-host">
-    <!-- Your virtual scroll content -->
-  </virtual-scroll-element>
-</ion-content>
-<ion-footer collapse="fade">
-  <ion-toolbar>
-    <ion-title>Footer</ion-title>
-  </ion-toolbar>
-</ion-footer>
-```
+<Fade />
 
 
+### Virtual Scrolling
 
-## Usage
+A fade footer requires a scroll container to work properly. When using a virtual scrolling solution, a custom scroll target needs to be provided. Scrolling on the content needs to be disabled and the `.ion-content-scroll-host` class needs to be added to the element responsible for scrolling.
 
-<Tabs groupId="framework" defaultValue="angular" values={[{ value: 'angular', label: 'Angular' }, { value: 'javascript', label: 'Javascript' }, { value: 'react', label: 'React' }, { value: 'stencil', label: 'Stencil' }, { value: 'vue', label: 'Vue' }]}>
+import CustomScrollTarget from '@site/static/usage/footer/custom-scroll-target/index.md';
 
-<TabItem value="angular">
+<CustomScrollTarget />
 
-```html
-<ion-content></ion-content>
-
-<!-- Footer without a border -->
-<ion-footer class="ion-no-border">
-  <ion-toolbar>
-    <ion-title>Footer - No Border</ion-title>
-  </ion-toolbar>
-</ion-footer>
-
-<ion-footer>
-  <ion-toolbar>
-    <ion-title>Footer</ion-title>
-  </ion-toolbar>
-</ion-footer>
-
-<!-- Fade Footer -->
-<ion-footer collapse="fade">
-  <ion-toolbar>
-    <ion-title>Footer</ion-title>
-  </ion-toolbar>
-</ion-footer>
-```
-
-
-</TabItem>
-
-
-<TabItem value="javascript">
-
-```html
-<ion-content></ion-content>
-
-<!-- Footer without a border -->
-<ion-footer class="ion-no-border">
-  <ion-toolbar>
-    <ion-title>Footer - No Border</ion-title>
-  </ion-toolbar>
-</ion-footer>
-
-<ion-footer>
-  <ion-toolbar>
-    <ion-title>Footer</ion-title>
-  </ion-toolbar>
-</ion-footer>
-
-<!-- Fade Footer -->
-<ion-footer collapse="fade">
-  <ion-toolbar>
-    <ion-title>Footer</ion-title>
-  </ion-toolbar>
-</ion-footer>
-```
-
-
-</TabItem>
-
-
-<TabItem value="react">
-
-```tsx
-import React from 'react';
-import { IonContent, IonFooter, IonToolbar, IonTitle } from '@ionic/react';
-
-export const FooterExample: React.FC = () => (
-  <>
-    <IonContent />
-    
-    {/*-- Footer without a border --*/}
-    <IonFooter className="ion-no-border">
-      <IonToolbar>
-        <IonTitle>Footer - No Border</IonTitle>
-      </IonToolbar>
-    </IonFooter>
-
-    <IonFooter>
-      <IonToolbar>
-        <IonTitle>Footer</IonTitle>
-      </IonToolbar>
-    </IonFooter>
-    
-    {/*-- Fade Footer --*/}
-    <IonFooter collapse="fade">
-      <IonToolbar>
-        <IonTitle>Footer</IonTitle>
-      </IonToolbar>
-    </IonFooter>
-  </>
-);
-```
-
-
-</TabItem>
-
-
-<TabItem value="stencil">
-
-```tsx
-import { Component, h } from '@stencil/core';
-
-@Component({
-  tag: 'footer-example',
-  styleUrl: 'footer-example.css'
-})
-export class FooterExample {
-  render() {
-    return [
-      <ion-content></ion-content>,
-
-      {/*-- Footer without a border --*/}
-      <ion-footer class="ion-no-border">
-        <ion-toolbar>
-          <ion-title>Footer - No Border</ion-title>
-        </ion-toolbar>
-      </ion-footer>,
-
-      <ion-footer>
-        <ion-toolbar>
-          <ion-title>Footer</ion-title>
-        </ion-toolbar>
-      </ion-footer>,
-      
-      {/*-- Fade Footer --*/}
-      <ion-footer collapse="fade">
-        <ion-toolbar>
-          <ion-title>Footer</ion-title>
-        </ion-toolbar>
-      </ion-footer>
-    ];
-  }
-}
-```
-
-
-</TabItem>
-
-
-<TabItem value="vue">
-
-```html
-<template>
-  <ion-content></ion-content>
-  
-  <!-- Footer without a border -->
-  <ion-footer class="ion-no-border">
-    <ion-toolbar>
-      <ion-title>Footer - No Border</ion-title>
-    </ion-toolbar>
-  </ion-footer>
-  
-  <ion-footer>
-    <ion-toolbar>
-      <ion-title>Footer</ion-title>
-    </ion-toolbar>
-  </ion-footer>
-  
-  <!-- Fade Footer -->
-  <ion-footer collapse="fade">
-    <ion-toolbar>
-      <ion-title>Footer</ion-title>
-    </ion-toolbar>
-  </ion-footer>
-</template>
-
-<script>
-import { IonContent, IonFooter, IonTitle, IonToolbar } from '@ionic/vue';
-import { defineComponent } from 'vue';
-
-export default defineComponent({
-  components: { IonContent, IonFooter, IonTitle, IonToolbar }
-});
-</script>
-```
-
-
-</TabItem>
-
-</Tabs>
 
 ## Properties
 <Props />
