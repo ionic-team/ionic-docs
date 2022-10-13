@@ -48,11 +48,19 @@ In `~/.bashrc`, `~/.bash_profile`, or similar shell startup scripts, make the fo
 
 1. Set the `ANDROID_SDK_ROOT` environment variable. This path should be the **Android SDK Location** used in the previous section.
 
+   For Mac:
+
    ```shell
-   $ export ANDROID_SDK_ROOT=$HOME/Library/Android/sdk
+   $ export ANDROID_SDK_ROOT=$HOME/Android/sdk
    ```
 
-1. Add the Android SDK command-line directories to `PATH`. Each directory corresponds to the category of <a href="https://developer.android.com/studio/command-line/" target="_blank">command-line tool</a>.
+   For Linux/Windows:
+
+   ```shell
+   $ export ANDROID_SDK_ROOT=$HOME/Android/Sdk
+   ```
+
+2. Add the Android SDK command-line directories to `PATH`. Each directory corresponds to the category of <a href="https://developer.android.com/studio/command-line/" target="_blank">command-line tool</a>.
 
    ```shell-session
    $ # avdmanager, sdkmanager
