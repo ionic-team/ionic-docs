@@ -6,7 +6,7 @@ import vue from './vue.md';
 import angular from './angular.md';
 
 <Playground
-  size="xsmall"
+  size="250px"
   code={{ javascript, react, vue, angular }}
   src="usage/textarea/basic/demo.html"
 />

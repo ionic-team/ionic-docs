@@ -11,8 +11,8 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core@6/css/ionic.bundle.css" />
 
   <style>
-    .container {
-      padding: 0 40px;
+    ion-list {
+      width: calc(100% - 20px);
     }
   </style>
 </head>
@@ -21,7 +21,20 @@
   <ion-app>
     <ion-content>
       <div class="container">
-        <ion-textarea placeholder="Type something here"></ion-textarea>
+        <ion-list>
+          <ion-item>
+            <ion-label>Regular textarea</ion-label>
+            <ion-textarea placeholder="Type something here"></ion-textarea>
+          </ion-item>
+          <ion-item>
+            <ion-label>Readonly textarea</ion-label>
+            <ion-textarea readonly="true" placeholder="Can't edit this"></ion-textarea>
+          </ion-item>
+          <ion-item>
+            <ion-label>Disabled textarea</ion-label>
+            <ion-textarea disabled="true" placeholder="Can't type here"></ion-textarea>
+          </ion-item>
+        </ion-list>
       </div>
     </ion-content>
   </ion-app>
