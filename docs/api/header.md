@@ -28,7 +28,7 @@ import Basic from '@site/static/usage/header/basic/index.md';
 
 ## Translucent Header
 
-Headers can match the transparency found in native iOS applications by setting the `translucent` property. In order to see the content scrolling behind the footer, the `fullscreen` property needs to be set on the content. This effect will only apply when the mode is `"ios"` and the device supports [backdrop-filter](https://developer.mozilla.org/en-US/docs/Web/CSS/backdrop-filter#browser_compatibility).
+Headers can match the transparency found in native iOS applications by setting the `translucent` property. In order to see the content scrolling behind the header, the `fullscreen` property needs to be set on the content. This effect will only apply when the mode is `"ios"` and the device supports [backdrop-filter](https://developer.mozilla.org/en-US/docs/Web/CSS/backdrop-filter#browser_compatibility).
 
 import Translucent from '@site/static/usage/header/translucent/index.md';
 
@@ -45,27 +45,13 @@ import Fade from '@site/static/usage/header/fade/index.md';
 
 <Fade />
 
-### Usage with Virtual Scroll
+### Virtual Scrolling
 
-Fade and collapsible large titles require a scroll container to function. When using a virtual scrolling solution, you will need to disable scrolling on the `ion-content` and indicate which element container is responsible for the scroll container with the `.ion-content-scroll-host` class target.
+A fade header requires a scroll container to work properly. When using a virtual scrolling solution, a custom scroll target needs to be provided. Scrolling on the content needs to be disabled and the `.ion-content-scroll-host` class needs to be added to the element responsible for scrolling.
 
-```html
-<ion-header collapse="fade">
-  <ion-toolbar>
-    <ion-title>Header</ion-title>
-  </ion-toolbar>
-</ion-header>
-<ion-content fullscreen="true" scroll-y="false">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Header</ion-title>
-    </ion-toolbar>
-  </ion-header>
-  <virtual-scroll-element class="ion-content-scroll-host">
-    <!-- Your virtual scroll content -->
-  </virtual-scroll-element>
-</ion-content>
-```
+import CustomScrollTarget from '@site/static/usage/header/custom-scroll-target/index.md';
+
+<CustomScrollTarget />
 
 
 ## Properties
