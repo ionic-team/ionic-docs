@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Textarea - Theming</title>
+  <link rel="stylesheet" href="../../common.css" />
+  <script src="../../common.js"></script>
+  <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core@6/dist/ionic/ionic.esm.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core@6/css/ionic.bundle.css" />
+  <style>
+    .container {
+      padding: 0 40px;
+    }
+
+    ion-textarea.custom-textarea {
+      --background: #373737;
+      --color: #fff;
+      --padding-end: 10px;
+      --padding-start: 10px;
+      --placeholder-color: #ddd;
+      --placeholder-opacity: 0.8;
+    }
+  </style>
+</head>
+
+<body>
+  <ion-app>
+    <ion-content>
+      <div class="container">
+        <ion-textarea class="custom-textarea" placeholder="Type something here"></ion-textarea>
+      </div>
+    </ion-content>
+  </ion-app>
+</body>
+
+</html>
