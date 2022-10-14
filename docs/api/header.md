@@ -61,6 +61,15 @@ import CustomScrollTarget from '@site/static/usage/header/custom-scroll-target/i
 <CustomScrollTarget />
 
 
+## Borders
+
+In `"md"` mode, the header will have a `box-shadow` on the bottom. In `"ios"` mode, it will receive a `border` on the bottom. These can be removed by adding the `.ion-no-border` class to the header.
+
+import NoBorder from '@site/static/usage/header/no-border/index.md';
+
+<NoBorder />
+
+
 ## Properties
 <Props />
 
