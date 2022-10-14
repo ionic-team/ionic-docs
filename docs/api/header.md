@@ -37,9 +37,13 @@ import Translucent from '@site/static/usage/header/translucent/index.md';
 
 ## Fade Header
 
-The `collapse` property can be set to `'fade'` on a page's main `ion-header` to have the background color of the toolbars fade in as users scroll. This provides the same fade effect that is found in many native iOS applications.
+Many native iOS applications have a fade effect on the toolbar. This can be achieved by setting the `collapse` property on the header to `"fade"`. When the page is first loaded, the background and border on the header will be hidden. As the content is scrolled, the header will fade back in. This effect will only apply when the mode is "ios".
 
-This functionality can be combined with [Collapsible Large Titles](https://ionicframework.com/docs/api/title#collapsible-large-titles) as well. The `collapse="condense"` value should be set on the `ion-header` inside of your `ion-content`. The `collapse="fade"` value should be set on the `ion-header` outside of your `ion-content`.
+<!-- This functionality can be combined with [Collapsible Large Titles](./title#collapsible-large-titles) as well. The `collapse="condense"` value should be set on the `ion-header` inside of your `ion-content`. The `collapse="fade"` value should be set on the `ion-header` outside of your `ion-content`. -->
+
+import Fade from '@site/static/usage/header/fade/index.md';
+
+<Fade />
 
 ### Usage with Virtual Scroll
 
