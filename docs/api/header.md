@@ -16,14 +16,23 @@ import Slots from '@site/static/auto-generated/header/slots.md';
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 
-Header is a parent component that holds the toolbar component.
-It's important to note that ion-header needs to be the one of the three root elements of a page
+Header is a root component of a page that aligns itself to the top of the page. It is recommended to be used as a wrapper for one or more [toolbars](./toolbar), but it can be used to wrap any element. When a toolbar is used inside of a header, the content will be adjusted so it is sized correctly, and the header will account for any device safe areas.
+
 
 ## Basic Usage
 
 import Basic from '@site/static/usage/header/basic/index.md';
 
 <Basic />
+
+
+## Translucent Header
+
+Headers can match the transparency found in native iOS applications by setting the `translucent` property. In order to see the content scrolling behind the footer, the `fullscreen` property needs to be set on the content. This effect will only apply when the mode is `"ios"` and the device supports [backdrop-filter](https://developer.mozilla.org/en-US/docs/Web/CSS/backdrop-filter#browser_compatibility).
+
+import Translucent from '@site/static/usage/header/translucent/index.md';
+
+<Translucent />
 
 
 ## Fade Header
