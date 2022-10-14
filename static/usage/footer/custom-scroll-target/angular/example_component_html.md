@@ -1,5 +1,5 @@
 ```html
-<ion-content scroll-y="false">
+<ion-content [scrollY]="false">
   <div class="ion-content-scroll-host ion-padding">
     <h1>Animal Facts</h1>
 
