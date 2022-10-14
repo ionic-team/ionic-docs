@@ -1,6 +1,6 @@
 ```html
 <template>
-  <ion-content scroll-y="false">
+  <ion-content :scroll-y="false">
     <div class="ion-content-scroll-host ion-padding">
       <h1>Animal Facts</h1>
 
