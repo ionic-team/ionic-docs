@@ -34,6 +34,7 @@ import Translucent from '@site/static/usage/header/translucent/index.md';
 
 <Translucent />
 
+
 ## Condensed Header
 
 Ionic provides the functionality found in native iOS applications to show a large toolbar title and then collapse it to a small title when scrolling. This can be done by adding two headers, one above the content and one inside of the content, and then setting the `collapse` property to `"condense"` on the header inside of the content. This effect will only apply when the mode is "ios".
@@ -41,6 +42,7 @@ Ionic provides the functionality found in native iOS applications to show a larg
 import Condense from '@site/static/usage/header/condense/index.md';
 
 <Condense />
+
 
 ## Fade Header
 
@@ -51,6 +53,7 @@ This functionality can be combined with a [Condensed Header](#condensed-header) 
 import Fade from '@site/static/usage/header/fade/index.md';
 
 <Fade />
+
 
 ### Virtual Scrolling
 
