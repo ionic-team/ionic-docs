@@ -16,7 +16,7 @@ import Slots from '@site/static/auto-generated/footer/slots.md';
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 
-Footer is a root component of a page that aligns itself to the bottom of the page. It is recommended to be used as a wrapper for [toolbar](./toolbar), but it can be used to wrap any element. When a toolbar is used inside of a footer, the content will be adjusted so it is sized correctly, and the footer will account for any device safe areas.
+Footer is a root component of a page that aligns itself to the bottom of the page. It is recommended to be used as a wrapper for one or more [toolbars](./toolbar), but it can be used to wrap any element. When a toolbar is used inside of a footer, the content will be adjusted so it is sized correctly, and the footer will account for any device safe areas.
 
 ## Basic Usage
 
