@@ -34,12 +34,19 @@ import Translucent from '@site/static/usage/header/translucent/index.md';
 
 <Translucent />
 
+## Condensed Header
+
+Ionic provides the functionality found in native iOS applications to show a large toolbar title and then collapse it to a small title when scrolling. This can be done by adding two headers, one above the content and one inside of the content, and then setting the `collapse` property to `"condense"` on the header inside of the content. This effect will only apply when the mode is "ios".
+
+import Condense from '@site/static/usage/header/condense/index.md';
+
+<Condense />
 
 ## Fade Header
 
 Many native iOS applications have a fade effect on the toolbar. This can be achieved by setting the `collapse` property on the header to `"fade"`. When the page is first loaded, the background and border on the header will be hidden. As the content is scrolled, the header will fade back in. This effect will only apply when the mode is "ios".
 
-<!-- This functionality can be combined with [Collapsible Large Titles](./title#collapsible-large-titles) as well. The `collapse="condense"` value should be set on the `ion-header` inside of your `ion-content`. The `collapse="fade"` value should be set on the `ion-header` outside of your `ion-content`. -->
+This functionality can be combined with a [Condensed Header](#condensed-header) as well. The `collapse` property with a value set to `"fade"` should be on the header outside of the content.
 
 import Fade from '@site/static/usage/header/fade/index.md';
 
