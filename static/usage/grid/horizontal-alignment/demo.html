@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Grid</title>
+  <link rel="stylesheet" href="../../common.css" />
+  <script src="../../common.js"></script>
+  <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core@6/dist/ionic/ionic.esm.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core@6/css/ionic.bundle.css" />
+
+  <style>
+    .container {
+      flex-direction: column;
+      justify-content: space-evenly;
+    }
+
+    ion-grid {
+      width: 100%;
+      flex-grow: 0;
+    }
+
+    ion-col {
+      background-color: #135d54;
+      border: solid 1px #fff;
+      color: #fff;
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+  <ion-app>
+    <ion-content>
+      <div class="container">
+        <b>Columns aligned at the start</b>
+        <ion-grid>
+          <ion-row class="ion-justify-content-start">
+            <ion-col size="3">
+              1
+            </ion-col>
+            <ion-col size="3">
+              2
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+
+        <b>Columns aligned at the center</b>
+        <ion-grid>
+          <ion-row class="ion-justify-content-center">
+            <ion-col size="3">
+              1
+            </ion-col>
+            <ion-col size="3">
+              2
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+
+        <b>Columns aligned at the end</b>
+        <ion-grid>
+          <ion-row class="ion-justify-content-end">
+            <ion-col size="3">
+              1
+            </ion-col>
+            <ion-col size="3">
+              2
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+
+        <b>Columns aligned with space around</b>
+        <ion-grid>
+          <ion-row class="ion-justify-content-around">
+            <ion-col size="3">
+              1
+            </ion-col>
+            <ion-col size="3">
+              2
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+
+        <b>Columns aligned with space between</b>
+        <ion-grid>
+          <ion-row class="ion-justify-content-between">
+            <ion-col size="3">
+              1
+            </ion-col>
+            <ion-col size="3">
+              2
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+    </ion-content>
+  </ion-app>
+</body>
+
+</html>
