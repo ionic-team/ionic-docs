@@ -120,6 +120,9 @@
   appearance: none;
   cursor: pointer;
   transition: background-color .2s, color .2s;
+.playground__control-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
 }
 
 /* fix layout shifting when button is bolded on select */
