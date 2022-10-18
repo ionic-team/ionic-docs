@@ -540,13 +540,15 @@ The example below shows how the Spotify app reuses the same album component to s
 | :------: | :--------: |
 | <img src={useBaseUrl('img/usage/tabs-home.jpg')} /> | <img src={useBaseUrl('img/usage/tabs-search.jpg')} /> |
 
-## IonRouterOutlet
+## Components
+
+### IonRouterOutlet
 
 The `IonRouterOutlet` component provides a container to render your views in. It is similar to the `RouterView` component found in other Vue applications except that `IonRouterOutlet` can render multiple pages in the DOM in the same outlet. When a component is rendered in `IonRouterOutlet` we consider this to be an Ionic Framework "page". The router outlet container controls the transition animation between the pages as well as controls when a page is created and destroyed. This helps maintain the state between the views when switching back and forth between them.
 
 Nothing should be provided inside of `IonRouterOutlet` when setting it up in your template. While `IonRouterOutlet` can be nested in child components, we caution against it as it typically makes navigation in apps confusing. See [Shared URLs versus Nested Routes](#shared-urls-versus-nested-routes) for more information.
 
-## IonPage
+### IonPage
 
 The `IonPage` component wraps each view in an Ionic Vue app and allows page transitions and stack navigation to work properly. Each view that is navigated to using the router must include an `IonPage` component.
 
@@ -580,24 +582,15 @@ The `IonPage` component wraps each view in an Ionic Vue app and allows page tran
 
 Components presented via `IonModal` or `IonPopover` do not typically need an `IonPage` component unless you need a wrapper element. In that case, we recommend using `IonPage` so that the component dimensions are still computed properly.
 
-## Accessing the IonRouter Instance
+## Functions
 
-There may be a few use cases where you need to get access to the `IonRouter` instance from within your Vue application. For example, you might want to know if you are at the root page of the application when a user presses the hardware back button on Android. For use cases like these, you can inject the `IonRouter` dependency into your component:
+### useIonRouter
 
-```tsx
-import { useIonRouter } from '@ionic/vue';
+▸ **useIonRouter**(): [`UseIonRouterResult`](utility-functions#useionrouterresult)
 
-...
+Returns the Ionic router instance, containing API methods for navigating, customizing page transitions and routing context for native features. This function can be used in combination with the [`useRouter`](https://router.vuejs.org/api/index.html#userouter) function from Vue.
 
-export default {
-  setup() {
-    const ionRouter = useIonRouter();
-    if (ionRouter.canGoBack()) {
-      // Perform some action here
-    }
-  }
-}
-```
+For example usages, please refer to our [Utility Functions](utility-functions#useionrouter).
 
 ## URL Parameters
 
