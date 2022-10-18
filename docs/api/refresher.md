@@ -32,7 +32,7 @@ import Basic from '@site/static/usage/refresher/basic/index.md';
 
 The refresher has several properties for customizing the pull gesture. Set the `pullFactor` to change the speed of the pull, the `pullMin` property to change the minimum distance the user must pull down, and the `pullMax` property to change the maximum distance the user must pull down before the refresher enters the `refreshing` state.
 
-These properties do not apply when the refresher content uses a spinner which enables the native refresher.
+These properties do not apply when the refresher content has a spinner set which enables the native refresher.
 
 import PullProperties from '@site/static/usage/refresher/pull-properties/index.md';
 

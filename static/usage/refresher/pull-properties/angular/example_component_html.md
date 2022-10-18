@@ -5,19 +5,11 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content class="ion-padding">
   <ion-refresher slot="fixed" [pullFactor]="0.5" [pullMin]="100" [pullMax]="200" (ionRefresh)="handleRefresh($event)">
     <ion-refresher-content></ion-refresher-content>
   </ion-refresher>
 
-  <ion-list>
-    <ion-item [button]="true" *ngFor="let item of items">
-      <ion-icon slot="start" color="primary" [name]="item.unread ? 'ellipse' : ''"></ion-icon>
-      <ion-label>
-        <h2>{{ item.name }}</h2>
-        <p>New message from {{ item.name }}</p>
-      </ion-label>
-    </ion-item>
-  </ion-list>
+  <p>Pull this content down to trigger the refresh.</p>
 </ion-content>
 ```
