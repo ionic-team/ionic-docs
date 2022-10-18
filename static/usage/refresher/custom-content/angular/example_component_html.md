@@ -5,7 +5,7 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content class="ion-padding">
   <ion-refresher slot="fixed" (ionRefresh)="handleRefresh($event)">
     <ion-refresher-content
       pullingIcon="chevron-down-circle-outline"
@@ -15,6 +15,6 @@
     </ion-refresher-content>
   </ion-refresher>
 
-  <p class="ion-margin">Pull this content down to trigger the refresh.</p>
+  <p>Pull this content down to trigger the refresh.</p>
 </ion-content>
 ```

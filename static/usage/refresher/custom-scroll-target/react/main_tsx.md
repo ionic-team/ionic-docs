@@ -1,7 +1,8 @@
 ```tsx
 import React from 'react';
 import { IonContent, IonHeader, IonRefresher, IonRefresherContent, IonTitle, IonToolbar, RefresherEventDetail } from '@ionic/react';
-import { chevronDownCircleOutline } from 'ionicons/icons';
+
+import './main.css';
 
 function Example() {
 
@@ -20,17 +21,14 @@ function Example() {
         </IonToolbar>
       </IonHeader>
 
-      <IonContent className="ion-padding">
+      <IonContent scrollY={false}>
         <IonRefresher slot="fixed" onIonRefresh={handleRefresh}>
-          <IonRefresherContent
-            pullingIcon={chevronDownCircleOutline}
-            pullingText="Pull to refresh"
-            refreshingSpinner="circles"
-            refreshingText="Refreshing...">
-          </IonRefresherContent>
+          <IonRefresherContent></IonRefresherContent>
         </IonRefresher>
 
-        <p>Pull this content down to trigger the refresh.</p>
+        <div className="ion-content-scroll-host ion-padding">
+          <p>Pull this content down to trigger the refresh.</p>
+        </div>
       </IonContent>
     </>
   );

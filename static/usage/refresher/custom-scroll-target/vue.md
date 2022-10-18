@@ -6,17 +6,14 @@
     </ion-toolbar>
   </ion-header>
 
-  <ion-content class="ion-padding">
+  <ion-content :scroll-y="false">
     <ion-refresher slot="fixed" @ionRefresh="handleRefresh($event)">
-      <ion-refresher-content
-        :pulling-icon="chevronDownCircleOutline"
-        pulling-text="Pull to refresh"
-        refreshing-spinner="circles"
-        refreshing-text="Refreshing...">
-      </ion-refresher-content>
+      <ion-refresher-content></ion-refresher-content>
     </ion-refresher>
 
-    <p>Pull this content down to trigger the refresh.</p>
+    <div class="ion-content-scroll-host ion-padding">
+      <p>Pull this content down to trigger the refresh.</p>
+    </div>
   </ion-content>
 </template>
 
@@ -39,4 +36,15 @@
     },
   });
 </script>
+
+<style scoped>
+  .ion-content-scroll-host {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    overflow-y: auto;
+  }
+</style>
 ```
