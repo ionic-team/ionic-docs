@@ -55,6 +55,10 @@
 </script>
 
 <style>
+  ion-item {
+    --padding-start: 8px;
+  }
+
   ion-icon {
     font-size: 12px;
     align-self: start;
