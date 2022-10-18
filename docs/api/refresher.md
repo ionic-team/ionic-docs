@@ -16,7 +16,7 @@ import Slots from '@site/static/auto-generated/refresher/slots.md';
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 
-The refresher provides pull-to-refresh functionality on a content component. The pull-to-refresh pattern lets a user pull down on a list of data in order to retrieve more data.
+Refresher provides pull-to-refresh functionality on a content component. The pull-to-refresh pattern lets a user pull down on a list of data in order to retrieve more data.
 
 Data should be modified during the refresher's output events. Once the async operation has completed and the refreshing should end, `complete()` needs to be called on the refresher.
 
@@ -37,6 +37,15 @@ These properties do not apply when the refresher content uses a spinner which en
 import PullProperties from '@site/static/usage/refresher/pull-properties/index.md';
 
 <PullProperties />
+
+
+## Custom Refresher Content
+
+The default icon, spinner, and text can be customized on the [refresher content](./refresher-content) based on whether the state of the refresher is `pulling` or `refreshing`.
+
+import CustomContent from '@site/static/usage/refresher/custom-content/index.md';
+
+<CustomContent />
 
 
 ## Native Refreshers
