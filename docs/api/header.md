@@ -55,7 +55,7 @@ import Fade from '@site/static/usage/header/fade/index.md';
 <Fade />
 
 
-### Virtual Scrolling
+### Usage with Virtual Scroll
 
 A fade header requires a scroll container to work properly. When using a virtual scrolling solution, a custom scroll target needs to be provided. Scrolling on the content needs to be disabled and the `.ion-content-scroll-host` class needs to be added to the element responsible for scrolling.
 
