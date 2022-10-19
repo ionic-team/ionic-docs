@@ -219,7 +219,7 @@ class AppComponent {
 
 ### IonicConfig
 
-Below is the config options that Ionic uses.
+Below are the config options that Ionic uses.
 
 | Config                   | Type                                                                              | Description                                                                                              |
 | ------------------------ | --------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
