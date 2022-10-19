@@ -14,7 +14,7 @@ Ionic Config provides a way to change the properties of components globally acro
 
 ## Global Config
 
-To override the default Ionic configurations for your application, provide your own custom config to `IonicModule.forRoot(...)`. The available config keys can be found in the [`IonicConfig`](#ionicconfig) interface.
+To override the default Ionic configurations for your app, provide your own custom config to `IonicModule.forRoot(...)`. The available config keys can be found in the [`IonicConfig`](#ionicconfig) interface.
 
 For example, to disable ripple effects and default the mode to Material Design:
 
@@ -35,16 +35,18 @@ import { IonicModule } from '@ionic/angular';
 
 ## Per-Component Config
 
-Ionic Config is not reactive. It is recommended to use a component's properties or a directive when you want to override its default behavior.
+Ionic Config is not reactive. Updating the config's value after the component has rendered will result in the previous value. It is recommended to use a component's properties instead of updating the config, when you require reactive values.
 
-```tsx
+**Not recommended**
+
+```ts
 import { IonicModule } from '@ionic/angular';
 
 @NgModule({
   ...
   imports: [
     IonicModule.forRoot({
-      // Not recommended when you require reactive values
+      // Not recommended when your app requires reactive values
       backButtonText: 'Go Back'
     })
   ],
@@ -52,19 +54,27 @@ import { IonicModule } from '@ionic/angular';
 })
 ```
 
-This will set the default text for `ion-back-button` to `Go Back`. However, if you were to change the value of the `backButtonText` config to `Do Not Go Back`, the `ion-back-button` default text would still default to `Go Back` as the component has already been initialized and rendered. Instead, it is recommended to use the `text` property on `ion-back-button`.
+**Recommended**
 
 ```html
-<ion-back-button [text]="getBackButtonText()"></ion-back-button>
+<ion-back-button [text]="backButtonText"></ion-back-button>
 ```
 
-In this example we have used our `ion-back-button` in such a way that the text can be dynamically updated if there were to be a change that warranted it, such as a language or locale change. The `getBackButtonText` method would be responsible for returning the correct text.
+```ts
+@Component(...)
+class MyComponent {
+  backButtonText = this.config.get('backButtonText');
 
-:::note
+  constructor(private config: Config) { }
 
-When binding a function to a property, it is recommended to use `ChangeDetectionStrategy.OnPush`.
+  localeChanged(locale: string) {
+    if (locale === 'es_ES') {
+      this.backButtonText = 'Devolver';
+    }
+  }
 
-:::
+}
+```
 
 ## Per-Platform Config
 
