@@ -1,6 +1,5 @@
 ---
 title: Platform
-toc_max_heading_level: 2
 ---
 
 <head>
@@ -28,9 +27,12 @@ export class MyPage {
 
 ## Methods
 
-### `is(platformName: Platforms) => boolean`
+### is
 
-Depending on the platform the user is on, `is(platformName)` will return true or false. Note that the same app can return true for more than one platform name. For example, an app running from an iPad would return true for the platform names: `mobile`, `ios`, `ipad`, and `tablet`. Additionally, if the app was running from Cordova then `cordova` would be true.
+|                 |                                                                                                                                                                                                                                                                                                                                                                           |
+| --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Description** | Depending on the platform the user is on, `is(platformName)` will return true or false. Note that the same app can return true for more than one platform name. For example, an app running from an iPad would return true for the platform names: `mobile`, `ios`, `ipad`, and `tablet`. Additionally, if the app was running from Cordova then `cordova` would be true. |
+| **Signature**   | `is(platformName: Platforms) => boolean`                                                                                                                                                                                                                                                                                                                                  |
 
 #### Parameters
 
@@ -106,43 +108,68 @@ type PlatformConfig = {
 };
 ```
 
-### `platforms() => string[]`
+### platforms
 
-Depending on what device you are on, `platforms` can return multiple values. Each possible value is a hierarchy of platforms. For example, on an iPhone, it would return `mobile`, `ios`, and `iphone`.
+|                 |                                                                                                                                                                                                         |
+| --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Description** | Depending on what device you are on, `platforms` can return multiple values. Each possible value is a hierarchy of platforms. For example, on an iPhone, it would return `mobile`, `ios`, and `iphone`. |
+| **Signature**   | `platforms() => string[]`                                                                                                                                                                               |
 
-### `ready() => Promise<string>`
+### ready
 
-Returns a promise when the platform is ready and native functionality can be called. If the app is running from within a web browser, then the promise will resolve when the DOM is ready. When the app is running from an application engine such as Cordova, then the promise will resolve when Cordova triggers the `deviceready` event. The resolved value is the `readySource`, which states the platform that was used.
+|                 |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
+| --------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Description** | Returns a promise when the platform is ready and native functionality can be called. If the app is running from within a web browser, then the promise will resolve when the DOM is ready. When the app is running from an application engine such as Cordova, then the promise will resolve when Cordova triggers the `deviceready` event. The resolved value is the `readySource`, which states the platform that was used. <br /><br />For example, when Cordova is ready, the resolved ready source is `cordova`. The default ready source value will be `dom`. The `readySource` is useful if different logic should run depending on the platform the app is running from. For example, only Capacitor and Cordova can execute the status bar plugin, so the web should not run status bar plugin logic. |
+| **Signature**   | `ready() => Promise<string>`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
 
-For example, when Cordova is ready, the resolved ready source is `cordova`. The default ready source value will be `dom`. The `readySource` is useful if different logic should run depending on the platform the app is running from. For example, only Capacitor and Cordova can execute the status bar plugin, so the web should not run status bar plugin logic.
+### isRTL
 
-### `isRTL() => boolean`
+|                 |                                                                                                                                                                                                                                                                                                                                    |
+| --------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Description** | Returns if this app is using right-to-left language direction or not. We recommend the app's `index.html` file already has the correct `dir` attribute value set, such as `<html dir="ltr">` or `<html dir="rtl">`. [W3C: Structural markup and right-to-left text in HTML](http://www.w3.org/International/questions/qa-html-dir) |
+| **Signature**   | `isRTL() => boolean`                                                                                                                                                                                                                                                                                                               |
 
-Returns if this app is using right-to-left language direction or not. We recommend the app's `index.html` file already has the correct `dir` attribute value set, such as `<html dir="ltr">` or `<html dir="rtl">`. [W3C: Structural markup and right-to-left text in HTML](http://www.w3.org/International/questions/qa-html-dir)
+### isLandscape
 
-### `isLandscape() => boolean`
+|                 |                                                 |
+| --------------- | ----------------------------------------------- |
+| **Description** | Returns `true` if the app is in landscape mode. |
+| **Signature**   | `isLandscape() => boolean`                      |
 
-Returns `true` if the app is in landscape mode.
+### isPortrait
 
-### `isPortrait() => boolean`
+|                 |                                                |
+| --------------- | ---------------------------------------------- |
+| **Description** | Returns `true` if the app is in portrait mode. |
+| **Signature**   | `isPortrait() => boolean`                      |
 
-Returns `true` if the app is in portrait mode.
+### width
 
-### `width() => number`
+|                 |                                                                      |
+| --------------- | -------------------------------------------------------------------- |
+| **Description** | Gets the width of the platform's viewport using `window.innerWidth`. |
+| **Signature**   | `width() => number`                                                  |
 
-Gets the width of the platform's viewport using `window.innerWidth`.
+### height
 
-### `height() => number`
+|                 |                                                                        |
+| --------------- | ---------------------------------------------------------------------- |
+| **Description** | Gets the height of the platform's viewport using `window.innerHeight`. |
+| **Signature**   | `height() => number`                                                   |
 
-Gets the height of the platform's viewport using `window.innerHeight`.
+### url
 
-### `url() => string`
+|                 |                      |
+| --------------- | -------------------- |
+| **Description** | Get the current url. |
+| **Signature**   | `url() => string`    |
 
-Get the current url.
+### testUserAgent
 
-### `testUserAgent(expression: string) => boolean`
-
-Returns `true` if the expression is included in the user agent string.
+|                 |                                                                        |
+| --------------- | ---------------------------------------------------------------------- |
+| **Description** | Returns `true` if the expression is included in the user agent string. |
+| **Signature**   | `testUserAgent(expression: string) => boolean`                         |
 
 ### Parameters
 
