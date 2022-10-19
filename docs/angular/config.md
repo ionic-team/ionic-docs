@@ -162,6 +162,8 @@ const getConfig = () => {
 | **Description** | Returns a config value as an `any`. Returns `null` if the config is not defined. |
 | **Signature**   | `get(key: string, fallback?: any): any`                                          |
 
+#### Examples
+
 ```ts
 import { Config } from '@ionic/angular';
 
@@ -180,6 +182,8 @@ class AppComponent {
 | **Description** | Returns a config value as a `boolean`. Returns `false` if the config is not defined. |
 | **Signature**   | `getBoolean(key: string, fallback?: boolean): boolean`                               |
 
+#### Examples
+
 ```ts
 import { Config } from '@ionic/angular';
 
@@ -197,6 +201,8 @@ class AppComponent {
 | --------------- | ------------------------------------------------------------------------------- |
 | **Description** | Returns a config value as a `number`. Returns `0` if the config is not defined. |
 | **Signature**   | `getNumber(key: string, fallback?: number): number`                             |
+
+#### Examples
 
 ```ts
 import { Config } from '@ionic/angular';
