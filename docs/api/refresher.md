@@ -28,13 +28,6 @@ import Basic from '@site/static/usage/refresher/basic/index.md';
 <Basic />
 
 
-## Advanced Usage
-
-import Advanced from '@site/static/usage/refresher/advanced/index.md';
-
-<Advanced />
-
-
 ## Pull Properties
 
 The refresher has several properties for customizing the pull gesture. Set the `pullFactor` to change the speed of the pull, the `pullMin` property to change the minimum distance the user must pull down, and the `pullMax` property to change the maximum distance the user must pull down before the refresher enters the `refreshing` state.
@@ -75,6 +68,15 @@ Refresher requires a scroll container to function. When using a virtual scrollin
 import CustomScrollTarget from '@site/static/usage/refresher/custom-scroll-target/index.md';
 
 <CustomScrollTarget />
+
+
+## Advanced Usage
+
+While the refresher can be used with any type of content, a common use case in native apps is to display a list of data that gets updated on refresh. In the below example, the app generates a list of data and then appends data to the top of the list when the refresh is completed. In a real app, the data would be received and updated after sending a request via a network or database call.
+
+import Advanced from '@site/static/usage/refresher/advanced/index.md';
+
+<Advanced />
 
 
 ## Interfaces
