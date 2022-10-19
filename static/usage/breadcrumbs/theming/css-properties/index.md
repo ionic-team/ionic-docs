@@ -3,26 +3,26 @@ import Playground from '@site/src/components/global/Playground';
 import javascript from './javascript.md';
 import vue from './vue.md';
 
-import reactTS from './react/react_ts.md';
-import reactCSS from './react/react_css.md';
+import react_main_tsx from './react/main_tsx.md';
+import react_main_css from './react/main_css.md';
 
-import angularHTML from './angular/angular_html.md';
-import angularCSS from './angular/angular_css.md';
+import angular_example_component_html from './angular/example_component_html.md';
+import angular_example_component_css from './angular/example_component_css.md';
 
 <Playground
   code={{
     javascript,
     react: {
       files: {
-        'src/main.css': reactCSS,
-        'src/main.tsx': reactTS,
+        'src/main.css': react_main_css,
+        'src/main.tsx': react_main_tsx,
       },
     },
     vue,
     angular: {
       files: {
-        'src/app/example.component.css': angularCSS,
-        'src/app/example.component.html': angularHTML,
+        'src/app/example.component.css': angular_example_component_css,
+        'src/app/example.component.html': angular_example_component_html,
       },
     },
   }}
