@@ -1,7 +1,6 @@
 ```tsx
 import React from 'react';
 import { IonContent, IonHeader, IonRefresher, IonRefresherContent, IonTitle, IonToolbar, RefresherEventDetail } from '@ionic/react';
-import { chevronDownCircleOutline } from 'ionicons/icons';
 
 function Example() {
 
