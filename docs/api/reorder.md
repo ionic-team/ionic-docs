@@ -30,6 +30,15 @@ import Basic from '@site/static/usage/reorder/basic/index.md';
 <Basic />
 
 
+## Custom Reorder Icon
+
+The reorder component uses a reorder icon with three lines on iOS and two lines on Material Design. This can be customized by adding an [Icon](https://ionic.io/ionicons) component inside of the reorder with any of the available Ionicons.
+
+import CustomIcon from '@site/static/usage/reorder/custom-icon/index.md';
+
+<CustomIcon />
+
+
 ## Properties
 <Props />
 
