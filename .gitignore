@@ -20,3 +20,5 @@ src/components/page/reference/ReleaseNotes/release-notes.json
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+static/**/node_modules/
