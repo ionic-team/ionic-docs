@@ -27,7 +27,7 @@ export class MyPage {
 
 ## Methods
 
-### is
+### `is`
 
 |                 |                                                                                                                                                                                                                                                                                                                                                                           |
 | --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -108,63 +108,63 @@ type PlatformConfig = {
 };
 ```
 
-### platforms
+### `platforms`
 
 |                 |                                                                                                                                                                                                         |
 | --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Description** | Depending on what device you are on, `platforms` can return multiple values. Each possible value is a hierarchy of platforms. For example, on an iPhone, it would return `mobile`, `ios`, and `iphone`. |
 | **Signature**   | `platforms() => string[]`                                                                                                                                                                               |
 
-### ready
+### `ready`
 
 |                 |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
 | --------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Description** | Returns a promise when the platform is ready and native functionality can be called. If the app is running from within a web browser, then the promise will resolve when the DOM is ready. When the app is running from an application engine such as Cordova, then the promise will resolve when Cordova triggers the `deviceready` event. The resolved value is the `readySource`, which states the platform that was used. <br /><br />For example, when Cordova is ready, the resolved ready source is `cordova`. The default ready source value will be `dom`. The `readySource` is useful if different logic should run depending on the platform the app is running from. For example, only Capacitor and Cordova can execute the status bar plugin, so the web should not run status bar plugin logic. |
 | **Signature**   | `ready() => Promise<string>`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
 
-### isRTL
+### `isRTL`
 
 |                 |                                                                                                                                                                                                                                                                                                                                    |
 | --------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Description** | Returns if this app is using right-to-left language direction or not. We recommend the app's `index.html` file already has the correct `dir` attribute value set, such as `<html dir="ltr">` or `<html dir="rtl">`. [W3C: Structural markup and right-to-left text in HTML](http://www.w3.org/International/questions/qa-html-dir) |
 | **Signature**   | `isRTL() => boolean`                                                                                                                                                                                                                                                                                                               |
 
-### isLandscape
+### `isLandscape`
 
 |                 |                                                 |
 | --------------- | ----------------------------------------------- |
 | **Description** | Returns `true` if the app is in landscape mode. |
 | **Signature**   | `isLandscape() => boolean`                      |
 
-### isPortrait
+### `isPortrait`
 
 |                 |                                                |
 | --------------- | ---------------------------------------------- |
 | **Description** | Returns `true` if the app is in portrait mode. |
 | **Signature**   | `isPortrait() => boolean`                      |
 
-### width
+### `width`
 
 |                 |                                                                      |
 | --------------- | -------------------------------------------------------------------- |
 | **Description** | Gets the width of the platform's viewport using `window.innerWidth`. |
 | **Signature**   | `width() => number`                                                  |
 
-### height
+### `height`
 
 |                 |                                                                        |
 | --------------- | ---------------------------------------------------------------------- |
 | **Description** | Gets the height of the platform's viewport using `window.innerHeight`. |
 | **Signature**   | `height() => number`                                                   |
 
-### url
+### `url`
 
 |                 |                      |
 | --------------- | -------------------- |
 | **Description** | Get the current url. |
 | **Signature**   | `url() => string`    |
 
-### testUserAgent
+### `testUserAgent`
 
 |                 |                                                                        |
 | --------------- | ---------------------------------------------------------------------- |
@@ -183,7 +183,7 @@ type PlatformConfig = {
 
 The `pause` event emits when the native platform puts the application into the background, typically when the user switches to a different application. This event emits when a Cordova/Capacitor app is put into the background but doesn't fire in a standard web browser.
 
-#### Usage
+#### Examples
 
 ```tsx
 this.platform.pause.subscribe(async () => {
@@ -195,7 +195,7 @@ this.platform.pause.subscribe(async () => {
 
 The `resize` event emits when the browser window has changed dimensions. This could be from a browser window being physically resized, or from a device changing orientation.
 
-#### Usage
+#### Examples
 
 ```tsx
 this.platform.resize.subscribe(async () => {
@@ -207,7 +207,7 @@ this.platform.resize.subscribe(async () => {
 
 The `resume` event fires when the native platform pulls the application out from the background. This event emits when a Cordova/Capacitor app comes out from the background but doesn't fire in a standard web browser.
 
-#### Usage
+#### Examples
 
 ```tsx
 this.platform.resume.subscribe(async () => {
