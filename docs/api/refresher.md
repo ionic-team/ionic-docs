@@ -32,7 +32,7 @@ import Basic from '@site/static/usage/refresher/basic/index.md';
 
 The refresher has several properties for customizing the pull gesture. Set the `pullFactor` to change the speed of the pull, the `pullMin` property to change the minimum distance the user must pull down, and the `pullMax` property to change the maximum distance the user must pull down before the refresher enters the `refreshing` state.
 
-These properties do not apply when the refresher content has a spinner set which enables the [native refresher](#native-refreshers).
+These properties do not apply when the [native refresher](#native-refreshers) is enabled.
 
 import PullProperties from '@site/static/usage/refresher/pull-properties/index.md';
 
@@ -58,7 +58,7 @@ The native refresher uses a `circular` spinner for Material Design, while iOS us
 
 Certain refresher properties such as the [Pull Properties](#pull-properties), `closeDuration` and `snapbackDuration` are not compatible because much of the native refreshers are scroll-based. See [Properties](#properties) for more information on unsupported properties.
 
-The native refreshers can be disabled by setting the `pullingIcon` on the [refresher content](#custom-refresher-content). See the [Spinner Documentation](./spinner#properties) for accepted values.
+The native refreshers can be disabled by setting the `pullingIcon` on the [refresher content](#custom-refresher-content). See the [Spinner](./spinner#properties) documentation for accepted values.
 
 
 ## Usage with Virtual Scroll
