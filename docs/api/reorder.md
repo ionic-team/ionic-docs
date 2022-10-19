@@ -39,6 +39,15 @@ import CustomIcon from '@site/static/usage/reorder/custom-icon/index.md';
 <CustomIcon />
 
 
+## Reorder Wrapper
+
+Reorder can also be used as a wrapper around an item, making the item itself the anchor. Drag anywhere on an item below to reorder the list.
+
+import Wrapper from '@site/static/usage/reorder/wrapper/index.md';
+
+<Wrapper />
+
+
 ## Properties
 <Props />
 
