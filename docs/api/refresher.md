@@ -39,7 +39,7 @@ import Advanced from '@site/static/usage/refresher/advanced/index.md';
 
 The refresher has several properties for customizing the pull gesture. Set the `pullFactor` to change the speed of the pull, the `pullMin` property to change the minimum distance the user must pull down, and the `pullMax` property to change the maximum distance the user must pull down before the refresher enters the `refreshing` state.
 
-These properties do not apply when the refresher content has a spinner set which enables the native refresher.
+These properties do not apply when the refresher content has a spinner set which enables the [native refresher](#native-refreshers).
 
 import PullProperties from '@site/static/usage/refresher/pull-properties/index.md';
 
@@ -57,21 +57,18 @@ import CustomContent from '@site/static/usage/refresher/custom-content/index.md'
 
 ## Native Refreshers
 
-Both iOS and Android platforms provide refreshers that take advantage of properties exposed by their respective devices that give pull to refresh a fluid, native-like feel.
+Both iOS and Android platforms provide refreshers that use properties exposed by their respective devices in order to give pull-to-refresh a fluid, native-like feel.
 
-Certain properties such as `pullMin` and `snapbackDuration` are not compatible because much of the native refreshers are scroll-based. See [Refresher Properties](#properties) for more information.
+The iOS and Material Design native refreshers are enabled by default in Ionic. However, the native iOS refresher relies on rubber band scrolling in order to work properly and is only compatible with iOS devices as a result. We provide a fallback refresher for apps running in iOS mode on devices that do not support rubber band scrolling.
 
-### iOS Usage
+The native refresher uses a `circular` spinner for Material Design, while iOS uses the `lines` spinner. On iOS, the tick marks will progressively show as the page is pulled down.
 
-Using the iOS native `ion-refresher` requires setting the `pullingIcon` property on `ion-refresher-content` to the value of one of the available spinners. See the [Spinner Documentation](spinner.md#properties) for accepted values. The `pullingIcon` defaults to the `lines` spinner on iOS. The spinner tick marks will be progressively shown as the user pulls down on the page.
+Certain refresher properties such as the [Pull Properties](#pull-properties), `closeDuration` and `snapbackDuration` are not compatible because much of the native refreshers are scroll-based. See [Properties](#properties) for more information on unsupported properties.
 
-The iOS native `ion-refresher` relies on rubber band scrolling in order to work properly and is only compatible with iOS devices as a result. We provide a fallback refresher for apps running in iOS mode on devices that do not support rubber band scrolling.
+The native refreshers can be disabled by setting the `pullingIcon` on the [refresher content](#custom-refresher-content). See the [Spinner Documentation](./spinner#properties) for accepted values.
 
-### Android Usage
 
-Using the MD native `ion-refresher` requires setting the `pullingIcon` property on `ion-refresher-content` to the value of one of the available spinners. See the [ion-spinner Documentation](spinner.md#properties) for accepted values. `pullingIcon` defaults to the `circular` spinner on MD.
-
-## Virtual Scroll Usage
+## Usage with Virtual Scroll
 
 Refresher requires a scroll container to function. When using a virtual scrolling solution, you will need to disable scrolling on the `ion-content` and indicate which element container is responsible for the scroll container with the `.ion-content-scroll-host` class target.
 
