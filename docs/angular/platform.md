@@ -171,7 +171,7 @@ type PlatformConfig = {
 | **Description** | Returns `true` if the expression is included in the user agent string. |
 | **Signature**   | `testUserAgent(expression: string) => boolean`                         |
 
-### Parameters
+#### Parameters
 
 | Name       | Type   | Description                           |
 | ---------- | ------ | ------------------------------------- |
