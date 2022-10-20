@@ -48,6 +48,15 @@ import Wrapper from '@site/static/usage/reorder/wrapper/index.md';
 <Wrapper />
 
 
+## Usage with Virtual Scroll
+
+Reorder requires a scroll container to work properly. When using a virtual scrolling solution, a custom scroll target needs to be provided. Scrolling on the content needs to be disabled and the `.ion-content-scroll-host` class needs to be added to the element responsible for scrolling.
+
+import CustomScrollTarget from '@site/static/usage/reorder/custom-scroll-target/index.md';
+
+<CustomScrollTarget />
+
+
 ## Properties
 <Props />
 
