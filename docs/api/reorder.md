@@ -18,12 +18,14 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 <EncapsulationPill type="shadow" />
 
 
-Reorder is a component that allows an item in a group of items to be dragged to change its order within that group. It must be used within a [reorder group](./reorder-group) to provide a visual drag and drop interface.
+Reorder is a component that allows an item to be dragged to change its order within a group of items. It must be used within a [reorder group](./reorder-group) to provide a visual drag and drop interface.
 
 The reorder is the anchor used to drag and drop the items. Once the reorder is complete, the `ionItemReorder` event will be dispatched from the reorder group and the `complete` method needs to be called.
 
 
 ## Basic Usage
+
+The most basic example of a reorder is slotting it inside of an item. By default, the reorder functionality is disabled for a reorder group. It can be enabled by setting the `disabled` property on the reorder group to `false`. The reorder icon can then be used to drag and drop the items and reorder them.
 
 import Basic from '@site/static/usage/reorder/basic/index.md';
 
@@ -32,7 +34,7 @@ import Basic from '@site/static/usage/reorder/basic/index.md';
 
 ## Toggling Reorder
 
-By default, the reorder functionality is disabled for a reorder group. It can be enabled by setting the `disabled` property to `false`. In some cases, it may be desired to have the option to toggle the reorder functionality.
+In some cases, it may be desired to have the option to toggle the reorder functionality. This can be done by making the `disabled` property reactive, based on a function or variable.
 
 import TogglingDisabled from '@site/static/usage/reorder/toggling-disabled/index.md';
 
@@ -50,7 +52,7 @@ import CustomIcon from '@site/static/usage/reorder/custom-icon/index.md';
 
 ## Reorder Wrapper
 
-Reorder can also be used as a wrapper around an item, making the item itself the anchor. Drag anywhere on an item below to reorder the list.
+Reorder can also be used as a wrapper around an item, making the item itself the anchor. Click anywhere on an item below and drag it to reorder the list.
 
 import Wrapper from '@site/static/usage/reorder/wrapper/index.md';
 
