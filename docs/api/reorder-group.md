@@ -1,11 +1,6 @@
 ---
 title: "ion-reorder-group"
-hide_table_of_contents: true
 ---
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-import TOCInline from '@theme/TOCInline';
-
 import Props from '@site/static/auto-generated/reorder-group/props.md';
 import Events from '@site/static/auto-generated/reorder-group/events.md';
 import Methods from '@site/static/auto-generated/reorder-group/methods.md';
@@ -21,19 +16,9 @@ import Slots from '@site/static/auto-generated/reorder-group/slots.md';
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 
-<h2 className="table-of-contents__title">Contents</h2>
+The reorder group is a container for items using the [reorder](./reorder) component. When the user drags an item and drops it in a new position, the `ionItemReorder` event is dispatched. A handler for this event should be implemented that calls the `complete` method.
 
-<TOCInline
-  toc={toc}
-  maxHeadingLevel={2}
-/>
-
-
-The reorder group is a wrapper component for items using the `ion-reorder` component. See the [Reorder documentation](reorder.md) for further information about the anchor component that is used to drag items within the `ion-reorder-group`.
-
-Once the user drags an item and drops it in a new position, the `ionItemReorder` event is dispatched. A handler for it should be implemented that calls the `complete` method.
-
-The `detail` property of the `ionItemReorder` event includes all of the relevant information about the reorder operation, including the `from` and `to` indexes. In the context of reordering, an item moves `from` an index `to` a new index.
+The `detail` property of the `ionItemReorder` event includes all of the relevant information about the reorder operation, including the `from` and `to` indexes. In the context of reordering, an item moves `from` an index `to` a new index. For example usage of the reorder group, see the [reorder](./reorder) documentation.
 
 
 ## Interfaces
