@@ -174,7 +174,7 @@ Capacitor uses Android Studio to build and run apps to simulators and devices.
 To start a live-reload server run the following command.
 
 ```shell
-ionic capacitor run android -l --host=YOUR_IP_ADDRESS
+ionic capacitor run android -l --external
 ```
 
 When running on a device make sure the device and your development machine are connected to the same network.
