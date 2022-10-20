@@ -30,6 +30,15 @@ import Basic from '@site/static/usage/reorder/basic/index.md';
 <Basic />
 
 
+## Toggling Reorder
+
+By default, the reorder functionality is disabled for a reorder group. It can be enabled by setting the `disabled` property to `false`. In some cases, it may be desired to have the option to toggle the reorder functionality.
+
+import TogglingDisabled from '@site/static/usage/reorder/toggling-disabled/index.md';
+
+<TogglingDisabled />
+
+
 ## Custom Reorder Icon
 
 The reorder component uses a reorder icon with three lines on iOS and two lines on Material Design. This can be customized by adding an [Icon](https://ionic.io/ionicons) component inside of the reorder with any of the available Ionicons.

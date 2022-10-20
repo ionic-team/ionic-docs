@@ -63,6 +63,7 @@
         // by the reorder group
         event.detail.complete();
       }
+
       return { handleReorder }
     }
   });

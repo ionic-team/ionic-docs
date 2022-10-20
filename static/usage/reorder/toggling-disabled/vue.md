@@ -1,8 +1,7 @@
 ```html
 <template>
   <ion-list>
-    <!-- The reorder gesture is disabled by default, enable it to drag and drop items -->
-    <ion-reorder-group :disabled="false" @ionItemReorder="handleReorder($event)">
+    <ion-reorder-group :disabled="isDisabled" @ionItemReorder="handleReorder($event)">
       <ion-item>
         <ion-label>
           Item 1
@@ -39,15 +38,22 @@
       </ion-item>
     </ion-reorder-group>
   </ion-list>
+
+  <!-- The reorder gesture is disabled by default, enable it to drag and drop items -->
+  <ion-button @click="toggleReorder()">
+    Toggle Reorder
+  </ion-button>
 </template>
 
 <script lang="ts">
-  import { IonItem, IonLabel, IonList, IonReorder, IonReorderGroup } from '@ionic/vue';
-  import { defineComponent } from 'vue';
+  import { IonButton, IonItem, IonLabel, IonList, IonReorder, IonReorderGroup } from '@ionic/vue';
+  import { defineComponent, ref } from 'vue';
 
   export default defineComponent({
     components: { IonItem, IonLabel, IonList, IonReorder, IonReorderGroup },
     setup() {
+      let isDisabled = ref(true);
+
       const handleReorder = (event: CustomEvent) => {
         // The `from` and `to` properties contain the index of the item
         // when the drag started and ended, respectively
@@ -59,7 +65,11 @@
         event.detail.complete();
       }
 
-      return { handleReorder }
+      const toggleReorder = () => {
+        isDisabled.value = !isDisabled.value;
+      }
+
+      return { isDisabled, handleReorder, toggleReorder }
     }
   });
 </script>
