@@ -20,7 +20,7 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 Reorder is a component that allows an item in a group of items to be dragged to change its order within that group. It must be used within a [reorder group](./reorder-group) to provide a visual drag and drop interface.
 
-The reorder is the anchor used to drag and drop the items. Once the reorder is complete, the `complete()` method on the reorder group needs to be called.
+The reorder is the anchor used to drag and drop the items. Once the reorder is complete, the `ionItemReorder` event will be dispatched from the reorder group and the `complete` method needs to be called.
 
 
 ## Basic Usage
@@ -46,6 +46,17 @@ Reorder can also be used as a wrapper around an item, making the item itself the
 import Wrapper from '@site/static/usage/reorder/wrapper/index.md';
 
 <Wrapper />
+
+
+## Updating Data
+
+When the `complete` method is called on the reorder group with no parameters, the DOM nodes will be reordered. If the items are rendered from an array of data that needs to be sorted, this can result in the data and DOM being out of sync. In order to sort the array upon completion of the reorder, the array should be passed as a parameter to the `complete` method. The `complete` method will sort the array and return it so it can be reassigned.
+
+In some cases, it may be necessary for an app to reorder both the array and the DOM nodes on its own. If this is required, `false` should be passed as a parameter to the `complete` method. This will prevent Ionic from reordering any DOM nodes inside of the reorder group.
+
+import UpdatingData from '@site/static/usage/reorder/updating-data/index.md';
+
+<UpdatingData />
 
 
 ## Usage with Virtual Scroll
