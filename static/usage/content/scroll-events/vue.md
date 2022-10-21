@@ -1,5 +1,6 @@
 ```html
 <template>
+  <!-- Scroll events are disabled by default for content for performance reasons, enable them to listen to them -->
   <ion-content
     :scroll-events="true"
     @ionScrollStart="handleScrollStart()"

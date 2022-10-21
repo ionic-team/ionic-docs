@@ -12,7 +12,7 @@
 <script>
   const content = document.querySelector('ion-content');
   // Scroll events are disabled by default for content for
-  // performanmce reasons, enable them to listen to them
+  // performance reasons, enable them to listen to them
   content.scrollEvents = true;
 
   content.addEventListener('ionScrollStart', () => console.log('scroll start'));

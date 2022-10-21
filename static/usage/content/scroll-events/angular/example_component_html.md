@@ -1,4 +1,5 @@
 ```html
+<!-- Scroll events are disabled by default for content for performance reasons, enable them to listen to them -->
 <!-- Casting $event to $any is a temporary fix for this bug https://github.com/ionic-team/ionic-framework/issues/24245 -->
 <ion-content
   [scrollEvents]="true"
