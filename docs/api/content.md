@@ -54,6 +54,12 @@ import Fixed from '@site/static/usage/content/fixed/index.md';
 
 <Fixed />
 
+## Scroll Methods
+
+import ScrollMethods from '@site/static/usage/content/scroll-methods/index.md';
+
+<ScrollMethods />
+
 
 ## Interfaces
 
