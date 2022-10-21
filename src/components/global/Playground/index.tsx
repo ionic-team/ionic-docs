@@ -13,11 +13,23 @@ import TabItem from '@theme/TabItem';
 
 import { IconHtml, IconTs, IconVue, IconDefault, IconCss, IconDots } from './icons';
 
-const ControlButton = ({ isSelected, handleClick, title, label }) => {
-  return (
+const ControlButton = ({
+  isSelected,
+  handleClick,
+  title,
+  label,
+  disabled,
+}: {
+  isSelected: boolean;
+  handleClick: () => void;
+  title: string;
+  label: string;
+  disabled?: boolean;
+}) => {
+  const controlButton = (
     <button
-      type="button"
-      title={title}
+      title={disabled ? undefined : title}
+      disabled={disabled}
       className={`playground__control-button ${isSelected ? 'playground__control-button--selected' : ''}`}
       onClick={handleClick}
       data-text={label}
@@ -25,6 +37,15 @@ const ControlButton = ({ isSelected, handleClick, title, label }) => {
       {label}
     </button>
   );
+  if (disabled) {
+    return (
+      <Tippy theme="playground" arrow={false} placement="bottom" content={`Unavailable for ${label}`}>
+        {/* Tippy requires a wrapper element for disabled elements: https://atomiks.github.io/tippyjs/v5/creating-tooltips/#disabled-elements */}
+        <div>{controlButton}</div>
+      </Tippy>
+    );
+  }
+  return controlButton;
 };
 
 const CodeBlockButton = ({ language, usageTarget, setUsageTarget }) => {
@@ -90,6 +111,7 @@ export default function Playground({
   description,
   src,
   size = 'small',
+  mode,
   devicePreview,
   includeIonContent = true,
 }: {
@@ -97,6 +119,12 @@ export default function Playground({
   title?: string;
   src: string;
   size: string;
+  /**
+   * Restricts the playground to a single specified mode.
+   * If not specified, the user can toggle between modes.
+   * Acceptable values are: `ios` or `md`.
+   */
+  mode?: 'ios' | 'md';
   description?: string;
   devicePreview?: boolean;
   includeIonContent: boolean;
@@ -105,6 +133,11 @@ export default function Playground({
     console.warn('No code usage examples provided for this Playground example.');
     return;
   }
+  if (typeof mode !== 'undefined' && mode !== 'ios' && mode !== 'md') {
+    console.warn(`Invalid mode provided: ${mode}. Accepted values are: "ios" or "md".`);
+    return;
+  }
+
   const { isDarkTheme } = useThemeContext();
 
   const hostRef = useRef<HTMLDivElement | null>(null);
@@ -112,13 +145,15 @@ export default function Playground({
   const frameiOS = useRef<HTMLIFrameElement | null>(null);
   const frameMD = useRef<HTMLIFrameElement | null>(null);
 
+  const defaultMode = typeof mode !== 'undefined' ? mode : Mode.iOS;
+
   /**
    * Developers can set a predefined size
    * or an explicit pixel value.
    */
   const frameSize = FRAME_SIZES[size] || size;
   const [usageTarget, setUsageTarget] = useState(UsageTarget.Angular);
-  const [mode, setMode] = useState(Mode.iOS);
+  const [ionicMode, setIonicMode] = useState(defaultMode);
   const [codeSnippets, setCodeSnippets] = useState({});
   const [renderIframes, setRenderIframes] = useState(false);
   const [iframesLoaded, setIframesLoaded] = useState(false);
@@ -217,8 +252,8 @@ export default function Playground({
     io.observe(hostRef.current!);
   });
 
-  const isIOS = mode === Mode.iOS;
-  const isMD = mode === Mode.MD;
+  const isIOS = ionicMode === Mode.iOS;
+  const isMD = ionicMode === Mode.MD;
 
   const sourceiOS = useBaseUrl(`${src}?ionic:mode=${Mode.iOS}`);
   const sourceMD = useBaseUrl(`${src}?ionic:mode=${Mode.MD}`);
@@ -249,7 +284,7 @@ export default function Playground({
       title,
       description,
       includeIonContent,
-      mode: isIOS ? 'ios' : 'md'
+      mode: isIOS ? 'ios' : 'md',
     };
 
     let codeBlock;
@@ -386,8 +421,20 @@ export default function Playground({
             ))}
           </div>
           <div className="playground__control-group">
-            <ControlButton isSelected={isIOS} handleClick={() => setMode(Mode.iOS)} title="iOS mode" label="iOS" />
-            <ControlButton isSelected={isMD} handleClick={() => setMode(Mode.MD)} title="MD mode" label="MD" />
+            <ControlButton
+              disabled={mode && mode === 'md'}
+              isSelected={isIOS}
+              handleClick={() => setIonicMode(Mode.iOS)}
+              title="iOS mode"
+              label="iOS"
+            />
+            <ControlButton
+              disabled={mode && mode === 'ios'}
+              isSelected={isMD}
+              handleClick={() => setIonicMode(Mode.MD)}
+              title="MD mode"
+              label="MD"
+            />
           </div>
           <div className="playground__control-group playground__control-group--end">
             <Tippy theme="playground" arrow={false} placement="bottom" content="Open in StackBlitz">
@@ -498,12 +545,12 @@ export default function Playground({
                   ? [
                       <div className={!isIOS ? 'frame-hidden' : 'frame-visible'}>
                         <device-preview mode="ios">
-                          <iframe height={frameSize} ref={ref => handleFrameRef(ref, 'ios')} src={sourceiOS}></iframe>
+                          <iframe height={frameSize} ref={(ref) => handleFrameRef(ref, 'ios')} src={sourceiOS}></iframe>
                         </device-preview>
                       </div>,
                       <div className={!isMD ? 'frame-hidden' : 'frame-visible'}>
                         <device-preview mode="md">
-                          <iframe height={frameSize} ref={ref => handleFrameRef(ref, 'md')} src={sourceMD}></iframe>
+                          <iframe height={frameSize} ref={(ref) => handleFrameRef(ref, 'md')} src={sourceMD}></iframe>
                         </device-preview>
                       </div>,
                     ]
@@ -511,13 +558,13 @@ export default function Playground({
                       <iframe
                         height={frameSize}
                         className={!isIOS ? 'frame-hidden' : ''}
-                        ref={ref => handleFrameRef(ref, 'ios')}
+                        ref={(ref) => handleFrameRef(ref, 'ios')}
                         src={sourceiOS}
                       ></iframe>,
                       <iframe
                         height={frameSize}
                         className={!isMD ? 'frame-hidden' : ''}
-                        ref={ref => handleFrameRef(ref, 'md')}
+                        ref={(ref) => handleFrameRef(ref, 'md')}
                         src={sourceMD}
                       ></iframe>,
                     ]}
