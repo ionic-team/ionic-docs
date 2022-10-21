@@ -1,13 +1,6 @@
 ---
 title: "ion-content"
-hide_table_of_contents: true
-demoUrl: "/docs/demos/api/content/index.html"
-demoSourceUrl: "https://github.com/ionic-team/ionic-docs/tree/main/static/demos/api/content/index.html"
 ---
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-import TOCInline from '@theme/TOCInline';
-
 import Props from '@site/static/auto-generated/content/props.md';
 import Events from '@site/static/auto-generated/content/events.md';
 import Methods from '@site/static/auto-generated/content/methods.md';
@@ -24,14 +17,6 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="shadow" />
 
-<h2 className="table-of-contents__title">Contents</h2>
-
-<TOCInline
-  toc={toc}
-  maxHeadingLevel={2}
-/>
-
-
 
 The content component provides an easy to use content area with some useful methods
 to control the scrollable area. There should only be one content in a single
@@ -40,9 +25,35 @@ view.
 Content, along with many other Ionic components, can be customized to modify its padding, margin, and more using the global styles provided in the [CSS Utilities](/docs/layout/css-utilities) or by individually styling it using CSS and the available [CSS Custom Properties](#css-custom-properties).
 
 
+## Basic Usage
+
+import Basic from '@site/static/usage/content/basic/index.md';
+
+<Basic />
+
+
+## Header & Footer
+
+import HeaderFooter from '@site/static/usage/content/header-footer/index.md';
+
+<HeaderFooter />
+
+
+## Fullscreen Content
+
+import Fullscreen from '@site/static/usage/content/fullscreen/index.md';
+
+<Fullscreen />
+
+
 ## Fixed Content
 
-In order to place elements outside of the scrollable area, `slot="fixed"` can be added to the element. This will absolutely position the element placing it in the top left. In order to place the element in a different position, style it using [top, right, bottom, and left](https://developer.mozilla.org/en-US/docs/Web/CSS/position).
+To place elements outside of the scrollable area, assign them to the `fixed` slot. Doing so will [absolutely position](https://developer.mozilla.org/en-US/docs/Web/CSS/position#absolute_positioning) the element to the top left of the content. In order to change the position of the element, it can be styled using the [top, right, bottom, and left](https://developer.mozilla.org/en-US/docs/Web/CSS/position) CSS properties.
+
+import Fixed from '@site/static/usage/content/fixed/index.md';
+
+<Fixed />
+
 
 ## Interfaces
 
@@ -63,7 +74,7 @@ interface ScrollDetail extends GestureDetail, ScrollBaseDetail {
 }
 ```
 
-### ScrollBaseCustomEvent 
+### ScrollBaseCustomEvent
 
 While not required, this interface can be used in place of the `CustomEvent` interface for stronger typing on the `ionScrollStart` and `ionScrollEnd` events.
 
@@ -74,7 +85,7 @@ interface ScrollBaseCustomEvent extends CustomEvent {
 }
 ```
 
-### ScrollCustomEvent 
+### ScrollCustomEvent
 
 While not required, this interface can be used in place of the `CustomEvent` interface for stronger typing on the `ionScroll` event.
 
@@ -84,160 +95,6 @@ interface ScrollCustomEvent extends ScrollBaseCustomEvent {
 }
 ```
 
-
-
-
-## Usage
-
-<Tabs groupId="framework" defaultValue="angular" values={[{ value: 'angular', label: 'Angular' }, { value: 'javascript', label: 'Javascript' }, { value: 'react', label: 'React' }, { value: 'stencil', label: 'Stencil' }, { value: 'vue', label: 'Vue' }]}>
-
-<TabItem value="angular">
-
-```html
-<ion-content
-  [scrollEvents]="true"
-  (ionScrollStart)="logScrollStart()"
-  (ionScroll)="logScrolling($event)"
-  (ionScrollEnd)="logScrollEnd()">
-    <h1>Main Content</h1>
-
-    <div slot="fixed">
-      <h1>Fixed Content</h1>
-    </div>
-</ion-content>
-```
-
-
-
-</TabItem>
-
-
-<TabItem value="javascript">
-
-```html
-<ion-content>
-  <h1>Main Content</h1>
-
-  <div slot="fixed">
-    <h1>Fixed Content</h1>
-  </div>
-</ion-content>
-```
-
-```javascript
-var content = document.querySelector('ion-content');
-content.scrollEvents = true;
-content.addEventListener('ionScrollStart', () => console.log('scroll start'));
-content.addEventListener('ionScroll', (ev) => console.log('scroll', ev.detail));
-content.addEventListener('ionScrollEnd', () => console.log('scroll end'));
-```
-
-
-</TabItem>
-
-
-<TabItem value="react">
-
-```tsx
-import React from 'react';
-import { IonContent } from '@ionic/react';
-
-const ContentExample: React.FC = () => (
-  <IonContent
-    scrollEvents={true}
-    onIonScrollStart={() => {}}
-    onIonScroll={() => {}}
-    onIonScrollEnd={() => {}}>
-      <h1>Main Content</h1>
-
-      <div slot="fixed">
-        <h1>Fixed Content</h1>
-      </div>
-  </IonContent>
-);
-```
-
-
-</TabItem>
-
-
-<TabItem value="stencil">
-
-```tsx
-import { Component, h } from '@stencil/core';
-
-@Component({
-  tag: 'content-example',
-  styleUrl: 'content-example.css'
-})
-export class ContentExample {
-  logScrollStart() {
-    console.log('Scroll start');
-  }
-
-  logScrolling(ev) {
-    console.log('Scrolling', ev);
-  }
-
-  logScrollEnd() {
-    console.log('Scroll end');
-  }
-
-  render() {
-    return [
-      <ion-content
-        scrollEvents={true}
-        onIonScrollStart={() => this.logScrollStart()}
-        onIonScroll={(ev) => this.logScrolling(ev)}
-        onIonScrollEnd={() => this.logScrollEnd()}>
-          <h1>Main Content</h1>
-
-          <div slot="fixed">
-            <h1>Fixed Content</h1>
-          </div>
-      </ion-content>
-    ];
-  }
-}
-```
-
-
-</TabItem>
-
-
-<TabItem value="vue">
-
-```html
-<template>
-  <ion-content
-    :scroll-events="true"
-    @ionScrollStart="logScrollStart()"
-    @ionScroll="logScrolling($event)"
-    @ionScrollEnd="logScrollEnd()">
-      <h1>Main Content</h1>
-
-      <div slot="fixed">
-        <h1>Fixed Content</h1>
-      </div>
-  </ion-content>
-</template>
-
-<script>
-import { IonContent } from '@ionic/vue';
-import { defineComponent } from 'vue';
-
-export default defineComponent({
-  components: { IonContent }
-});
-</script>
-
-```
-
-
-
-</TabItem>
-
-</Tabs>
 
 ## Properties
 <Props />
