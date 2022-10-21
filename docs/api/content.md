@@ -60,6 +60,13 @@ import ScrollMethods from '@site/static/usage/content/scroll-methods/index.md';
 
 <ScrollMethods />
 
+## Scroll Events
+
+
+import ScrollEvents from '@site/static/usage/content/scroll-events/index.md';
+
+<ScrollEvents />
+
 
 ## Interfaces
 
