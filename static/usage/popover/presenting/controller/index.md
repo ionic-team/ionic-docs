@@ -3,14 +3,14 @@ import Playground from '@site/src/components/global/Playground';
 import javascript from './javascript.md';
 import react from './react.md';
 
-import vuePopover from './vue/vue_popover.md';
-import vueMain from './vue/vue_main.md';
+import vue_example from './vue/example_vue.md';
+import vue_popover from './vue/popover_vue.md';
 
-import angularHTML from './angular/angular_html.md';
-import angularTS from './angular/angular_ts.md';
-import angularPopoverHTML from './angular/angular_popover_html.md';
-import angularPopoverTS from './angular/angular_popover_ts.md';
-import angularModule from './angular/angular_module.md';
+import angular_example_component_html from './angular/example_component_html.md';
+import angular_example_component_ts from './angular/example_component_ts.md';
+import angular_popover_component_html from './angular/popover_component_html.md';
+import angular_popover_component_ts from './angular/popover_component_ts.md';
+import angular_app_module from './angular/app_module_ts.md';
 
 <Playground
   size="300px"
@@ -19,17 +19,17 @@ import angularModule from './angular/angular_module.md';
     react,
     vue: {
       files: {
-        'src/components/Example.vue': vueMain,
-        'src/components/Popover.vue': vuePopover,
+        'src/components/Example.vue': vue_example,
+        'src/components/Popover.vue': vue_popover,
       },
     },
     angular: {
       files: {
-        'src/app/example.component.html': angularHTML,
-        'src/app/example.component.ts': angularTS,
-        'src/app/popover.component.html': angularPopoverHTML,
-        'src/app/popover.component.ts': angularPopoverTS,
-        'src/app/app.module.ts': angularModule,
+        'src/app/example.component.html': angular_example_component_html,
+        'src/app/example.component.ts': angular_example_component_ts,
+        'src/app/popover.component.html': angular_popover_component_html,
+        'src/app/popover.component.ts': angular_popover_component_ts,
+        'src/app/app.module.ts': angular_app_module,
       },
     },
   }}

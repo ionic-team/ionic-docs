@@ -22,4 +22,6 @@ import '@ionic/vue/css/display.css';
 /* Theme variables */
 import './theme/variables.css';
 
-createApp(App).use(IonicVue).mount('#app');
+createApp(App).use(IonicVue, {
+  mode: '{{ MODE }}'
+}).mount('#app');

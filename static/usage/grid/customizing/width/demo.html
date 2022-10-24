@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Grid</title>
+  <link rel="stylesheet" href="../../../common.css" />
+  <script src="../../../common.js"></script>
+  <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core@6/dist/ionic/ionic.esm.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core@6/css/ionic.bundle.css" />
+
+  <style>
+    .container {
+      flex-direction: column;
+      justify-content: space-evenly;
+    }
+
+    ion-grid {
+      flex-grow: 0;
+
+      --ion-grid-width: 50%;
+
+      --ion-grid-width-xs: 50%;
+      --ion-grid-width-sm: 288px;
+      --ion-grid-width-md: 384px;
+      --ion-grid-width-lg: 480px;
+      --ion-grid-width-xl: 570px;
+    }
+
+    ion-col {
+      background-color: #135d54;
+      border: solid 1px #fff;
+      color: #fff;
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+  <ion-app>
+    <ion-content>
+      <div class="container">
+        <ion-grid fixed="true">
+          <ion-row>
+            <ion-col>1</ion-col>
+            <ion-col>2</ion-col>
+            <ion-col>3</ion-col>
+          </ion-row>
+        </ion-grid>
+      </div>
+    </ion-content>
+  </ion-app>
+</body>
+
+</html>
