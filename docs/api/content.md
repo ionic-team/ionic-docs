@@ -82,11 +82,11 @@ import CSSParts from '@site/static/usage/content/theming/css-shadow-parts/index.
 
 <CSSParts />
 
-<!-- ### CSS Custom Properties
+### CSS Custom Properties
 
 import CSSProps from '@site/static/usage/content/theming/css-properties/index.md';
 
-<CSSProps /> -->
+<CSSProps />
 
 
 ## Interfaces
