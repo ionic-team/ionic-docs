@@ -67,6 +67,14 @@ import ScrollEvents from '@site/static/usage/content/scroll-events/index.md';
 
 <ScrollEvents />
 
+## Theming
+
+### Colors
+
+import Colors from '@site/static/usage/content/theming/colors/index.md';
+
+<Colors />
+
 
 ## Interfaces
 
