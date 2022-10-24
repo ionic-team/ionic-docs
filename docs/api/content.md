@@ -34,12 +34,16 @@ import Basic from '@site/static/usage/content/basic/index.md';
 
 ## Header & Footer
 
+Content can be the only top-level component in a page, or it can be used alongside a [header](./header), [footer](./footer), or both. When used with a header or footer, it will adjust its size to fill the remaining height.
+
 import HeaderFooter from '@site/static/usage/content/header-footer/index.md';
 
 <HeaderFooter />
 
 
 ## Fullscreen Content
+
+By default, content fills the space between a [header](./header) and [footer](./footer) but does not go behind them. In certain cases, it may be desired to have the content scroll behind the header and footer, such as when the `translucent` property is set on either of them. This can be achieved by setting the `fullscreen` property on the content to `true`.
 
 import Fullscreen from '@site/static/usage/content/fullscreen/index.md';
 
@@ -56,12 +60,15 @@ import Fixed from '@site/static/usage/content/fixed/index.md';
 
 ## Scroll Methods
 
+Content provides [methods](#methods) that can be called to scroll the content to the bottom, top, or to a specific point. They can be passed a `duration` in order to smoothly transition instead of instantly changing the position.
+
 import ScrollMethods from '@site/static/usage/content/scroll-methods/index.md';
 
 <ScrollMethods />
 
 ## Scroll Events
 
+Scroll events are disabled by default for content due to performance. However, they can be enabled by setting `scrollEvents` to `true`. This is necessary before listening to any of the scroll [events](#events).
 
 import ScrollEvents from '@site/static/usage/content/scroll-events/index.md';
 
