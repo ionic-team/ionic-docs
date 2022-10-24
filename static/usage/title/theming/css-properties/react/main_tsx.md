@@ -1,6 +1,6 @@
 ```tsx
 import React from 'react';
-import { IonContent, IonHeader, IonToolbar, IonTitle, IonText, IonList, IonItem } from '@ionic/react';
+import { IonContent, IonHeader, IonToolbar, IonTitle, IonList, IonItem } from '@ionic/react';
 
 import './main.css';
 
@@ -18,8 +18,6 @@ function Example() {
             <IonTitle size="large">Hello world</IonTitle>
           </IonToolbar>
         </IonHeader>
-
-        <IonText className="ion-padding">Scroll the list to see the title collapse.</IonText>
 
         <IonList>
           <IonItem>Item 1</IonItem>

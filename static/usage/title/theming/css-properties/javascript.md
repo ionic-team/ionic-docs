@@ -5,6 +5,10 @@
     font-size: 30px;
   }
 
+  ion-title {
+    --color: #000;
+  }
+
   ion-toolbar {
     --background: #c897d8;
   }
@@ -21,8 +25,6 @@
       <ion-title size="large">Hello world</ion-title>
     </ion-toolbar>
   </ion-header>
-
-  <ion-text class="ion-padding">Scroll the list to see the title collapse.</ion-text>
 
   <ion-list>
     <ion-item>Item 1</ion-item>

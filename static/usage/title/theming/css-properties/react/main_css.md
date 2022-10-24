@@ -4,6 +4,10 @@ ion-title.title-large {
   font-size: 30px;
 }
 
+ion-title {
+  --color: #000;
+}
+
 ion-toolbar {
   --background: #c897d8;
 }

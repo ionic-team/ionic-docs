@@ -6,6 +6,7 @@ import vue from './vue.md';
 import angular from './angular.md';
 
 <Playground
+  mode="ios"
   code={{ javascript, react, vue, angular }}
   src="usage/title/collapsible-large-title/basic/demo.html"
   devicePreview={true}

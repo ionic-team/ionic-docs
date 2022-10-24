@@ -5,6 +5,10 @@
     font-size: 30px;
   }
 
+  ion-title {
+    --color: #000;
+  }
+
   ion-toolbar {
     --background: #c897d8;
   }
@@ -21,8 +25,6 @@
         <ion-title size="large">Hello world</ion-title>
       </ion-toolbar>
     </ion-header>
-
-    <ion-text class="ion-padding">Scroll the list to see the title collapse.</ion-text>
 
     <ion-list>
       <ion-item>Item 1</ion-item>
@@ -50,11 +52,11 @@
 </template>
 
 <script lang="ts">
-  import { IonContent, IonHeader, IonToolbar, IonTitle, IonText, IonList, IonItem } from '@ionic/vue';
+  import { IonContent, IonHeader, IonToolbar, IonTitle, IonList, IonItem } from '@ionic/vue';
   import { defineComponent } from 'vue';
 
   export default defineComponent({
-    components: { IonContent, IonHeader, IonToolbar, IonTitle, IonText, IonList, IonItem },
+    components: { IonContent, IonHeader, IonToolbar, IonTitle, IonList, IonItem },
   });
 </script>
 ```
