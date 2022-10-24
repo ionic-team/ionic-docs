@@ -33,7 +33,9 @@ function Example() {
           </IonToolbar>
         </IonHeader>
 
-        <IonText className="ion-padding">Scroll the list to see the title & buttons collapse.</IonText>
+        <div className="ion-padding">
+          <IonText>Scroll the list to see the title & buttons collapse.</IonText>
+        </div>
 
         <IonList>
           <IonItem>Item 1</IonItem>
