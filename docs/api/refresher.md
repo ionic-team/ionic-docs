@@ -43,6 +43,8 @@ import PullProperties from '@site/static/usage/refresher/pull-properties/index.m
 
 The default icon, spinner, and text can be customized on the [refresher content](./refresher-content) based on whether the state of the refresher is `pulling` or `refreshing`.
 
+Setting `pullingIcon` will disable the [native refresher](#native-refreshers).
+
 import CustomContent from '@site/static/usage/refresher/custom-content/index.md';
 
 <CustomContent />
@@ -58,7 +60,7 @@ The native refresher uses a `circular` spinner for Material Design, while iOS us
 
 Certain refresher properties such as the [Pull Properties](#pull-properties), `closeDuration` and `snapbackDuration` are not compatible because much of the native refreshers are scroll-based. See [Properties](#properties) for more information on unsupported properties.
 
-The native refreshers can be disabled by setting the `pullingIcon` on the [refresher content](#custom-refresher-content). See the [Spinner](./spinner#properties) documentation for accepted values.
+The native refreshers can be disabled by setting the `pullingIcon` on the [refresher content](#custom-refresher-content) to any icon or spinner. See the [Ionicons](https://ionic.io/ionicons) and [Spinner](./spinner) documentation for accepted values.
 
 
 ## Usage with Virtual Scroll
