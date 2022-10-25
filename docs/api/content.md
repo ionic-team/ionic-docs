@@ -43,7 +43,7 @@ import HeaderFooter from '@site/static/usage/content/header-footer/index.md';
 
 ## Fullscreen Content
 
-By default, content fills the space between a [header](./header) and [footer](./footer) but does not go behind them. In certain cases, it may be desired to have the content scroll behind the header and footer, such as when the `translucent` property is set on either of them. This can be achieved by setting the `fullscreen` property on the content to `true`.
+By default, content fills the space between a [header](./header) and [footer](./footer) but does not go behind them. In certain cases, it may be desired to have the content scroll behind the header and footer, such as when the `translucent` property is set on either of them, or `opacity` is set on the toolbar. This can be achieved by setting the `fullscreen` property on the content to `true`.
 
 import Fullscreen from '@site/static/usage/content/fullscreen/index.md';
 
