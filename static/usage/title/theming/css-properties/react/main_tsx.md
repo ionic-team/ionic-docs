@@ -9,13 +9,13 @@ function Example() {
     <>
       <IonHeader translucent={true}>
         <IonToolbar>
-          <IonTitle>Hello world</IonTitle>
+          <IonTitle>Title</IonTitle>
         </IonToolbar>
       </IonHeader>
       <IonContent fullscreen={true}>
         <IonHeader collapse="condense">
           <IonToolbar>
-            <IonTitle size="large">Hello world</IonTitle>
+            <IonTitle size="large">Title</IonTitle>
           </IonToolbar>
         </IonHeader>
 

@@ -1,13 +1,13 @@
 ```html
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>Hello world</ion-title>
+    <ion-title>Title</ion-title>
   </ion-toolbar>
 </ion-header>
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Hello world</ion-title>
+      <ion-title size="large">Title</ion-title>
     </ion-toolbar>
   </ion-header>
 

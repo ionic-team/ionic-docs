@@ -6,7 +6,7 @@ function Example() {
   return (
     <IonHeader>
       <IonToolbar>
-        <IonTitle>Hello world</IonTitle>
+        <IonTitle>Title</IonTitle>
       </IonToolbar>
     </IonHeader>
   );

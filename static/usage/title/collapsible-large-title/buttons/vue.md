@@ -2,7 +2,7 @@
 <template>
   <ion-header :translucent="true">
     <ion-toolbar>
-      <ion-title>Hello world</ion-title>
+      <ion-title>Title</ion-title>
       <ion-buttons :collapse="true" slot="end">
         <ion-button>Click Me</ion-button>
       </ion-buttons>
@@ -11,7 +11,7 @@
   <ion-content :fullscreen="true">
     <ion-header collapse="condense">
       <ion-toolbar>
-        <ion-title size="large">Hello world</ion-title>
+        <ion-title size="large">Title</ion-title>
         <ion-buttons :collapse="true" slot="end">
           <ion-button>Click Me</ion-button>
         </ion-buttons>

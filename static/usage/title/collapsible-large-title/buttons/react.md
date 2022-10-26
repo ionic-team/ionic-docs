@@ -17,7 +17,7 @@ function Example() {
     <>
       <IonHeader translucent={true}>
         <IonToolbar>
-          <IonTitle>Hello world</IonTitle>
+          <IonTitle>Title</IonTitle>
           <IonButtons collapse={true} slot="end">
             <IonButton>Click Me</IonButton>
           </IonButtons>
@@ -26,7 +26,7 @@ function Example() {
       <IonContent fullscreen={true}>
         <IonHeader collapse="condense">
           <IonToolbar>
-            <IonTitle size="large">Hello world</IonTitle>
+            <IonTitle size="large">Title</IonTitle>
             <IonButtons collapse={true} slot="end">
               <IonButton>Click Me</IonButton>
             </IonButtons>
