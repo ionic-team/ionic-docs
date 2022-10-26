@@ -18,7 +18,7 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 <EncapsulationPill type="shadow" />
 
 
-`ion-title` is a component that sets the title of the `Toolbar`.
+Title is a text component that sets the title for a [toolbar](./toolbar). It can be used to describe the screen or section a user is currently on or the app being used.
 
 ## Basic
 
