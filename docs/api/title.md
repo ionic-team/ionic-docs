@@ -42,7 +42,7 @@ import CollapsibleLargeTitle from '@site/static/usage/title/collapsible-large-ti
 
 ### Collapsible Buttons
 
-The [`ion-buttons`](./buttons.md) component can be used with the [`collapse`](./buttons.md#collapse) property to additionally display in the header as the toolbar is collapsed.
+The [buttons](./buttons.md) component can be used with the [`collapse`](./buttons.md#collapse) property to additionally display in the header as the toolbar is collapsed.
 
 
 import CollapsibleLargeTitleButtons from '@site/static/usage/title/collapsible-large-title/buttons/index.md';
