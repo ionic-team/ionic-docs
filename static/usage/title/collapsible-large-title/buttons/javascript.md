@@ -17,9 +17,7 @@
     </ion-toolbar>
   </ion-header>
 
-  <div class="ion-padding">
-    <ion-text>Scroll the list to see the title & buttons collapse.</ion-text>
-  </div>
+  <div class="ion-padding">Scroll the list to see the title & buttons collapse.</div>
 
   <ion-list>
     <ion-item>Item 1</ion-item>

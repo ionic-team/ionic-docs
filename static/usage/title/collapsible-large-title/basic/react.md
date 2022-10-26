@@ -1,6 +1,6 @@
 ```tsx
 import React from 'react';
-import { IonContent, IonHeader, IonToolbar, IonTitle, IonText, IonList, IonItem } from '@ionic/react';
+import { IonContent, IonHeader, IonToolbar, IonTitle, IonList, IonItem } from '@ionic/react';
 
 function Example() {
   return (
@@ -17,7 +17,7 @@ function Example() {
           </IonToolbar>
         </IonHeader>
 
-        <IonText className="ion-padding">Scroll the list to see the title collapse.</IonText>
+        <div className="ion-padding">Scroll the list to see the title collapse.</div>
 
         <IonList>
           <IonItem>Item 1</IonItem>

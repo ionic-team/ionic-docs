@@ -18,9 +18,7 @@
       </ion-toolbar>
     </ion-header>
 
-    <div class="ion-padding">
-      <ion-text>Scroll the list to see the title & buttons collapse.</ion-text>
-    </div>
+    <div class="ion-padding">Scroll the list to see the title & buttons collapse.</div>
 
     <ion-list>
       <ion-item>Item 1</ion-item>
@@ -48,21 +46,11 @@
 </template>
 
 <script lang="ts">
-  import {
-    IonContent,
-    IonHeader,
-    IonToolbar,
-    IonTitle,
-    IonText,
-    IonList,
-    IonItem,
-    IonButtons,
-    IonButton,
-  } from '@ionic/vue';
+  import { IonContent, IonHeader, IonToolbar, IonTitle, IonList, IonItem, IonButtons, IonButton } from '@ionic/vue';
   import { defineComponent } from 'vue';
 
   export default defineComponent({
-    components: { IonContent, IonHeader, IonToolbar, IonTitle, IonText, IonList, IonItem, IonButtons, IonButton },
+    components: { IonContent, IonHeader, IonToolbar, IonTitle, IonList, IonItem, IonButtons, IonButton },
   });
 </script>
 ```
