@@ -177,7 +177,7 @@ import TabItem from '@theme/TabItem';
 
 モバイルWebブラウザやPWAでアプリを実行しているとき、キーボードを特定のテーマで表示させる方法はありません。
 
-CapacitorまたはCordovaでアプリを実行しているとき、キーボードを特定のテーマで表示させることができます。この設定の詳細については、 <a href="https://capacitor.ionicframework.com/docs/apis/keyboard#keyboard-configuration-ios-only-" target="_blank">Capacitor Keyboard Documentation</a> を参照してください。
+When running an app in Capacitor or Cordova, it is possible to force the keyboard to appear with a certain theme. For more information regarding this configuration, see the <a href="https://capacitorjs.com/docs/apis/keyboard#keyboard-configuration-ios-only-" target="_blank">Capacitor Keyboard Documentation</a>.
 
 ## アクセサリバーを非表示にする
 
@@ -185,7 +185,7 @@ CapacitorまたはCordovaでアプリを実行しているとき、キーボー�
 
 モバイルWebブラウザやPWAでアプリを実行する場合、アクセサリバーを非表示にする方法はありません。
 
-CapacitorやCordovaでアプリを実行しているときは、アクセサリバーを隠すことができます。この設定の詳細については、 <a href="https://capacitor.ionicframework.com/docs/apis/keyboard#keyboard-configuration-ios-only-" target="_blank">Capacitor Keyboard Documentation</a> を参照してください。
+When running an app in Capacitor or Cordova, it is possible to hide the accessory bar. For more information regarding this configuration, see the <a href="https://capacitorjs.com/docs/apis/keyboard#keyboard-configuration-ios-only-" target="_blank">Capacitor Keyboard Documentation</a>.
 
 ## キーボードのライフサイクルイベント
 

@@ -1,6 +1,5 @@
 ---
 title: Platform
-toc_max_heading_level: 2
 ---
 
 <head>
@@ -28,9 +27,12 @@ export class MyPage {
 
 ## Methods
 
-### `is(platformName: Platforms) => boolean`
+### `is`
 
-ユーザーの利用しているプラットフォームに応じて、`is(platformName)` によってtrueまたはfalseが返されます。同じアプリが複数のプラットフォーム名に対してtrueを返す可能性があることに注意してください。たとえば、iPadから実行しているアプリは、これらのプラットフォーム名に対してtrueを返します：`mobile`, `ios`, `ipad`, and `tablet`。さらに、アプリがCordovaから実行されているのであれば、`cordova`に対してもtrueを返します。
+|                 |                                                                                                                                                                                                                                                                                                                                                                           |
+| --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Description** | Depending on the platform the user is on, `is(platformName)` will return true or false. Note that the same app can return true for more than one platform name. For example, an app running from an iPad would return true for the platform names: `mobile`, `ios`, `ipad`, and `tablet`. Additionally, if the app was running from Cordova then `cordova` would be true. |
+| **Signature**   | `is(platformName: Platforms) => boolean`                                                                                                                                                                                                                                                                                                                                  |
 
 #### Parameters
 
@@ -106,45 +108,70 @@ type PlatformConfig = {
 };
 ```
 
-### `platforms() => string[]`
+### `platforms`
 
-利用しているデバイスによっては、 `platforms` は複数の値を返します。Each possible value is a hierarchy of platforms. 例えば、iPhoneを利用している場合は、`mobile`, `ios`, と `iphone`が返ってきます。
+|                 |                                                                                                                                                                                                         |
+| --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Description** | Depending on what device you are on, `platforms` can return multiple values. Each possible value is a hierarchy of platforms. For example, on an iPhone, it would return `mobile`, `ios`, and `iphone`. |
+| **Signature**   | `platforms() => string[]`                                                                                                                                                                               |
 
-### `ready() => Promise<string>`
+### `ready`
 
-プラットフォームの準備が整い、ネイティブ機能を呼び出せるようになったときにPromiseを返します。アプリがWebブラウザ内から実行されている場合は、DOMの準備が整った時点でPromiseは解決されます。アプリがCordovaなどのアプリケーションエンジンから実行されている場合、Cordovaが `deviceready` イベントをトリガーした時点でPromiseは解決されます。解決された時に返ってくる値は `readySource` で、これは利用しているプラットフォームが利用できる状態になったことを示します。
+|                 |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
+| --------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Description** | Returns a promise when the platform is ready and native functionality can be called. If the app is running from within a web browser, then the promise will resolve when the DOM is ready. When the app is running from an application engine such as Cordova, then the promise will resolve when Cordova triggers the `deviceready` event. The resolved value is the `readySource`, which states the platform that was used. <br /><br />For example, when Cordova is ready, the resolved ready source is `cordova`. The default ready source value will be `dom`. The `readySource` is useful if different logic should run depending on the platform the app is running from. For example, only Capacitor and Cordova can execute the status bar plugin, so the web should not run status bar plugin logic. |
+| **Signature**   | `ready() => Promise<string>`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
 
-たとえば、Cordovaの準備ができている場合、解決されるべき準備ソースは `cordova` です。デフォルトの準備ソースは `dom` になります。`readySource` は、異なるロジックをアプリが実行されているプラットフォームに応じて実行する必要がある場合に便利です。たとえば、status bar pluginを実行できるのはCapacitorとCordovaだけなので、Webではstatus bar pluginを実行しないでください。
+### `isRTL`
 
-### `isRTL() => boolean`
+|                 |                                                                                                                                                                                                                                                                                                                                    |
+| --------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Description** | Returns if this app is using right-to-left language direction or not. We recommend the app's `index.html` file already has the correct `dir` attribute value set, such as `<html dir="ltr">` or `<html dir="rtl">`. [W3C: Structural markup and right-to-left text in HTML](http://www.w3.org/International/questions/qa-html-dir) |
+| **Signature**   | `isRTL() => boolean`                                                                                                                                                                                                                                                                                                               |
 
-このアプリが右から左への言語の方向を使用しているかどうかを返します。アプリの `index.html` ファイルには、 `dir` に正しい属性値が設定されていることをお勧めします。`<html dir="ltr">` or `<html dir="rtl">`. [W3C: Structural markup and right-to-left text in HTML](http://www.w3.org/International/questions/qa-html-dir)
+### `isLandscape`
 
-### `isLandscape() => boolean`
+|                 |                                                 |
+| --------------- | ----------------------------------------------- |
+| **Description** | Returns `true` if the app is in landscape mode. |
+| **Signature**   | `isLandscape() => boolean`                      |
 
-アプリが横向きである時に、 `true` を返します。
+### `isPortrait`
 
-### `isPortrait() => boolean`
+|                 |                                                |
+| --------------- | ---------------------------------------------- |
+| **Description** | Returns `true` if the app is in portrait mode. |
+| **Signature**   | `isPortrait() => boolean`                      |
 
-アプリがポートレートモードである時に、 `true` を返します。
+### `width`
 
-### `width() => number`
+|                 |                                                                      |
+| --------------- | -------------------------------------------------------------------- |
+| **Description** | Gets the width of the platform's viewport using `window.innerWidth`. |
+| **Signature**   | `width() => number`                                                  |
 
-`window.innerWidth` を使用してプラットフォームのビューポートの幅を取得します。
+### `height`
 
-### `height() => number`
+|                 |                                                                        |
+| --------------- | ---------------------------------------------------------------------- |
+| **Description** | Gets the height of the platform's viewport using `window.innerHeight`. |
+| **Signature**   | `height() => number`                                                   |
 
-`window.innerHeight` を使用してプラットフォームのビューポートの高さを取得します
+### `url`
 
-### `url() => string`
+|                 |                      |
+| --------------- | -------------------- |
+| **Description** | Get the current url. |
+| **Signature**   | `url() => string`    |
 
-現在のURLを取得します。
+### `testUserAgent`
 
-### `testUserAgent(expression: string) => boolean`
+|                 |                                                                        |
+| --------------- | ---------------------------------------------------------------------- |
+| **Description** | Returns `true` if the expression is included in the user agent string. |
+| **Signature**   | `testUserAgent(expression: string) => boolean`                         |
 
-ユーザエージェント文字列に含まれている時に `true`  を返します。
-
-### Parameters
+#### Parameters
 
 | Name       | Type   | Description                           |
 | ---------- | ------ | ------------------------------------- |
@@ -156,7 +183,7 @@ type PlatformConfig = {
 
 `pause` イベントは、ネイティブ・プラットフォームがアプリケーションをバックグラウンドに置いたとき、通常はユーザーが別のアプリケーションに切り替えたときに発生します。このイベントは、Cordova/Capacitorアプリケーションがバックグラウンドに置かれたときに発生しますが、標準的なWebブラウザでは発生しません。
 
-#### Usage
+#### Examples
 
 ```tsx
 this.platform.pause.subscribe(async () => {
@@ -168,7 +195,7 @@ this.platform.pause.subscribe(async () => {
 
 `resize` イベントは、ブラウザウィンドウの寸法が変更されたときに発生します。これは、ブラウザーウィンドウが物理的にサイズ変更されている場合や、デバイスの向きが変わっている場合に発生します。
 
-#### Usage
+#### Examples
 
 ```tsx
 this.platform.resize.subscribe(async () => {
@@ -180,7 +207,7 @@ this.platform.resize.subscribe(async () => {
 
 `resume` イベントは、ネイティブプラットフォームがバックグラウンドからアプリケーションを引き出したときに発生します。このイベントは、Cordova/Capacitorアプリがバックグラウンドから出てきても、標準的なWebブラウザで起動しない場合に発生します。
 
-#### Usage
+#### Examples
 
 ```tsx
 this.platform.resume.subscribe(async () => {

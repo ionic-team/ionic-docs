@@ -67,7 +67,7 @@ this.platform.ready().then(() => {
 
 <img src={require('@site/static/img/building/cross-platform-items.png').default} />
 
-これを改善するために、各項目を[Grid](../layout/grid.md)コンポーネントで囲みましょう。これでより大きな画面でもより使いやすいものに簡単に書き換えることができます:
+To improve this experience, we can wrap the items in a [Grid](../api/grid.md) component. The view can be easily rewritten into something more usable on larger screens:
 
 ```html
 <ion-grid>
@@ -149,7 +149,7 @@ this.platform.ready().then(() => {
 
 - `size`属性は`size-{breakpoint}`の形式で各画面幅に応じたブレークポイントを持つこともできます。
 
-グリッドのカスタマイズについてより詳細な情報は[Grid](../layout/grid.md)をご覧ください。
+グリッドのカスタマイズについてより詳細な情報は[Grid]((../api/grid.md)をご覧ください。
 
 ## ストレージ
 

@@ -31,7 +31,7 @@ IonicとCordovaを使用する開発者のために、Ionicアプリにネイテ
 
 ## Capacitor サポート
 
-Ionic NativeはCordovaに加え、Ionicの公式ネイティブランタイムである [Capacitor](https://capacitor.ionicframework.com) でも動作します。基本的な使い方は以下の通りです。詳細は [Capacitorのドキュメントをご覧ください](https://capacitor.ionicframework.com/docs/cordova/using-cordova-plugins)。
+In addition to Cordova, Ionic Native also works with [Capacitor](https://capacitorjs.com), Ionic's official native runtime. Basic usage below. For complete details, [see the Capacitor documentation](https://capacitorjs.com/docs/cordova/using-cordova-plugins).
 
 ## 使い方
 
@@ -65,7 +65,7 @@ $ npm install @awesome-cordova-plugins/core
 </TabItem>
 <TabItem value="capacitor">
 
-For complete details, [see the Capacitor documentation](https://capacitor.ionicframework.com/docs/cordova/using-cordova-plugins).
+For complete details, [see the Capacitor documentation](https://capacitorjs.com/docs/cordova/using-cordova-plugins).
 
 ```shell
 // Install Ionic Native TypeScript wrapper

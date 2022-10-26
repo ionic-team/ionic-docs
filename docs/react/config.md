@@ -73,7 +73,9 @@ const getConfig = () => {
 setupIonicReact(getConfig());
 ```
 
-## Config Options
+## Interfaces
+
+### IonicConfig
 
 以下は、Ionicで使用できる設定オプションのリストです。
 

@@ -17,8 +17,6 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="shadow" />
 
-<h2 className="table-of-contents__title">コンテンツ</h2>
-
 
 アコーディオンは、情報を整理してグループ化する方法を提供しながら、垂直方向のスペースを減らすために、コンテンツに折り畳み可能なセクションを提供します。すべての `ion-accordion` コンポーネントは `ion-accordion-group` コンポーネントの中にグループ化されている必要があります。
 

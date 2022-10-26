@@ -1,9 +1,6 @@
 ---
 title: "ion-refresher-content"
-hide_table_of_contents: true
 ---
-import TOCInline from '@theme/TOCInline';
-
 import Props from '@site/static/auto-generated/refresher-content/props.md';
 import Events from '@site/static/auto-generated/refresher-content/events.md';
 import Methods from '@site/static/auto-generated/refresher-content/methods.md';
@@ -14,20 +11,9 @@ import Slots from '@site/static/auto-generated/refresher-content/slots.md';
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 
+The refresher content contains the text, icon and spinner to display during a pull-to-refresh. Ionic displays a pulling icon and refreshing spinner based on the platform. However, the default icon, spinner, and text can be customized based on the state of the refresher.
 
-<h2 className="table-of-contents__title">コンテンツ</h2>
-
-<TOCInline
-  toc={toc}
-  maxHeadingLevel={2}
-/>
-
-
-
-refresher contentには、引っ張って解放されるまでの間に表示されるtext, icon and spinnerが含まれています。Ionicは、プラットフォームに基づいて、pulling icon と refreshing spinnerを提供します。ただし、既定値の icon, spinnerとtextは、refresherの状態に基づいてカスタマイズできます。
-
-
-
+For usage examples, see the [Refresher](/docs/api/refresher) documentation.
 
 
 ## プロパティ

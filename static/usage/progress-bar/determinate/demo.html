@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Progress Bar</title>
+  <link rel="stylesheet" href="../../common.css" />
+  <script src="../../common.js"></script>
+  <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core@6/dist/ionic/ionic.esm.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core@6/css/ionic.bundle.css" />
+
+</head>
+
+<body>
+  <ion-app>
+    <ion-content>
+      <div class="container">
+        <ion-progress-bar></ion-progress-bar>
+      </div>
+    </ion-content>
+  </ion-app>
+</body>
+
+<script>
+  let progress = 0;
+  let progressBar = document.querySelector('ion-progress-bar');
+
+  setInterval(() => {
+    progressBar.value = progress += 0.01;
+
+    // Reset the progress bar when it reaches 100%
+    // to continuously show the demo
+    if (progress > 1) {
+      setTimeout(() => {
+        progressBar.value = progress = 0;
+      }, 1000);
+    }
+  }, 50);
+</script>
+
+</html>

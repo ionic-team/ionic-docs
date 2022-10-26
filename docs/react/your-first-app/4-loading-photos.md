@@ -13,7 +13,7 @@ sidebar_label: 写真の読み込み
 
 We’ve implemented photo taking and saving to the filesystem. There’s one last piece of functionality missing: the photos are stored in the filesystem, but we need a way to save pointers to each file so that they can be displayed again in the photo gallery.
 
-Fortunately, this is easy: we’ll leverage the Capacitor [Preferences API](https://capacitor.ionicframework.com/docs/apis/preferences) to store our array of Photos in a key-value store.
+Fortunately, this is easy: we’ll leverage the Capacitor [Preferences API](https://capacitorjs.com/docs/apis/preferences) to store our array of Photos in a key-value store.
 
 ## Preferences API
 

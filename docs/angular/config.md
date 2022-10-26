@@ -14,54 +14,67 @@ Ionic Config provides は、アプリケーション全体でコンポーネン�
 
 ## Global Config
 
-アプリケーションの初期のIonic Configを上書きするには、`IonicModule` に設定を指定します。 `app.module.ts` にある `IonicModule.forRoot` を指定ください。
+アプリのデフォルトのIonicコンフィグをオーバーライドするには、独自のカスタム設定を `IonicModule.forRoot(...)` に指定します。利用可能な設定キーは [`IonicConfig`](#ionicconfig) インターフェースで確認することができます。
 
-```tsx
+For example, to disable ripple effects and default the mode to Material Design:
+
+```tsx title="app.module.ts"
 import { IonicModule } from '@ionic/angular';
 
 @NgModule({
   ...
   imports: [
-    BrowserModule,
     IonicModule.forRoot({
       rippleEffect: false,
       mode: 'md'
-    }),
-    AppRoutingModule
+    })
   ],
   ...
 })
 ```
 
-上記の例では、アプリ全体でマテリアルデザインのripple effectを無効にし、同時にmodeをマテリアルデザインに統一しています。
+## コンポーネント単位のコンフィグ
 
-## コンポーネント毎の設定
+Ionic Configはリアクティブではありません。コンポーネントがレンダリングされた後にコンフィグの値を更新すると、以前の値が適用されます。リアクティブな値が必要な場合は、configを更新するのではなく、コンポーネントのプロパティを使用することが推奨されます。
 
-Ionic Configはリアクティブではないため、構成をグローバルに設定するのではなく、デフォルトの動作を上書きする場合は、コンポーネントのプロパティを使用することをお勧めします。
+**Not recommended**
 
-```tsx
+```ts
 import { IonicModule } from '@ionic/angular';
 
 @NgModule({
   ...
   imports: [
-    BrowserModule,
     IonicModule.forRoot({
+      // Not recommended when your app requires reactive values
       backButtonText: 'Go Back'
-    }),
-    AppRoutingModule
+    })
   ],
   ...
 })
 ```
 
-この設定は `ion-back-button` のデフォルトのテキストを `Go Back` に変更します。しかし、この設定を行っていると `backButtonText` を `Do Not Go Back` と変更しても、 `ion-back-button` のテキストは `Go Back` のままでレンダリングされます。ですので、 `ion-back-button` の `text` プロパティを使うことをおすすめします。
+**Recommended**
 
 ```html
-<ion-back-button [text]="getBackButtonText()"></ion-back-button>
+<ion-back-button [text]="backButtonText"></ion-back-button>
 ```
 
-この例では、 `ion-back-button` を使用して、言語やロケールの変更など、それを保証する変更がある場合にテキストを動的に更新できるようにしています。 `getBackButtonText` メソッドは、正しいテキストを返す処理を行います。
+```ts
+@Component(...)
+class MyComponent {
+  backButtonText = this.config.get('backButtonText');
+
+  constructor(private config: Config) { }
+
+  localeChanged(locale: string) {
+    if (locale === 'es_ES') {
+      this.backButtonText = 'Devolver';
+    }
+  }
+
+}
+```
 
 ## プラットフォームごとの設定Per-Platform Config
 
@@ -79,17 +92,15 @@ import { isPlatform, IonicModule } from '@ionic/angular';
 @NgModule({
   ...
   imports: [
-    BrowserModule,
     IonicModule.forRoot({
       animated: !isPlatform('mobileweb')
-    }),
-    AppRoutingModule
+    })
   ],
   ...
 })
 ```
 
-次の例では、プラットフォームに基づいてまったく異なる構成を設定し、一致するプラットフォームがない場合はデフォルトの構成に戻すことができます:
+**プラットフォームごとの設定とフォールバック機能により、不一致のプラットフォームにも対応:**
 
 ```tsx
 import { isPlatform, IonicModule } from '@ionic/angular';
@@ -109,15 +120,13 @@ const getConfig = () => {
 @NgModule({
   ...
   imports: [
-    BrowserModule,
-    IonicModule.forRoot(getConfig()),
-    AppRoutingModule
+    IonicModule.forRoot(getConfig())
   ],
   ...
 })
 ```
 
-最後に、この例では、異なるプラットフォーム要件に基づいて構成オブジェクトを設定できます:
+**プラットフォームごとの設定上書き:**
 
 ```tsx
 import { isPlatform, IonicModule } from '@ionic/angular';
@@ -139,15 +148,77 @@ const getConfig = () => {
 @NgModule({
   ...
   imports: [
-    BrowserModule,
-    IonicModule.forRoot(getConfig()),
-    AppRoutingModule
+    IonicModule.forRoot(getConfig())
   ],
   ...
 })
 ```
 
-## Configオプション
+## Methods
+
+### get
+
+|                 |                                                                                  |
+| --------------- | -------------------------------------------------------------------------------- |
+| **Description** | Returns a config value as an `any`. Returns `null` if the config is not defined. |
+| **Signature**   | `get(key: string, fallback?: any) => any`                                          |
+
+#### Examples
+
+```ts
+import { Config } from '@ionic/angular';
+
+@Component(...)
+class AppComponent {
+  constructor(config: Config) {
+    const mode = config.get('mode');
+  }
+}
+```
+
+### getBoolean
+
+|                 |                                                                                      |
+| --------------- | ------------------------------------------------------------------------------------ |
+| **Description** | Returns a config value as a `boolean`. Returns `false` if the config is not defined. |
+| **Signature**   | `getBoolean(key: string, fallback?: boolean) => boolean`                               |
+
+#### Examples
+
+```ts
+import { Config } from '@ionic/angular';
+
+@Component(...)
+class AppComponent {
+  constructor(config: Config) {
+    const swipeBackEnabled = config.getBoolean('swipeBackEnabled');
+  }
+}
+```
+
+### getNumber
+
+|                 |                                                                                 |
+| --------------- | ------------------------------------------------------------------------------- |
+| **Description** | Returns a config value as a `number`. Returns `0` if the config is not defined. |
+| **Signature**   | `getNumber(key: string, fallback?: number) => number`                             |
+
+#### Examples
+
+```ts
+import { Config } from '@ionic/angular';
+
+@Component(...)
+class AppComponent {
+  constructor(config: Config) {
+    const keyboardHeight = config.getNumber('keyboardHeight');
+  }
+}
+```
+
+## Interfaces
+
+### Configオプション
 
 以下はIonicが使用する設定オプションのリストです。
 

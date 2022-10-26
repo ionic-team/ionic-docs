@@ -74,7 +74,9 @@ const getConfig = () => {
 createApp(App).use(IonicVue, getConfig());
 ```
 
-## Configオプション
+## Interfaces
+
+### Configオプション
 
 以下はIonicで使用できる設定オプションのリストです。
 

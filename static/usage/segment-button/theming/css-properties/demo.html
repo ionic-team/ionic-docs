@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Segment Button</title>
+  <link rel="stylesheet" href="../../../common.css" />
+  <script src="../../../common.js"></script>
+  <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core@6/dist/ionic/ionic.esm.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core@6/css/ionic.bundle.css" />
+
+  <style>
+    .container {
+      max-width: 400px;
+      margin: 0 auto;
+    }
+
+    ion-segment-button {
+      --indicator-color: #08a391;
+    }
+
+    /* Material Design styles */
+    ion-segment-button.md {
+      --color: #000;
+      --color-checked: #08a391;
+      --indicator-height: 4px;
+    }
+
+    /* iOS styles */
+    ion-segment-button.ios {
+      --color: #08a391;
+      --color-checked: #fff;
+      --border-radius: 20px;
+    }
+  </style>
+</head>
+
+<body>
+  <ion-app>
+    <ion-content>
+      <div class="container">
+        <ion-segment value="custom">
+          <ion-segment-button value="custom">
+            <ion-label>Custom</ion-label>
+          </ion-segment-button>
+          <ion-segment-button value="segment">
+            <ion-label>Segment</ion-label>
+          </ion-segment-button>
+          <ion-segment-button value="buttons">
+            <ion-label>Buttons</ion-label>
+          </ion-segment-button>
+        </ion-segment>
+      </div>
+    </ion-content>
+  </ion-app>
+</body>
+
+</html>

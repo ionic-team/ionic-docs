@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ripple Effect</title>
+  <link rel="stylesheet" href="../../common.css" />
+  <script src="../../common.js"></script>
+  <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core@6/dist/ionic/ionic.esm.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core@6/css/ionic.bundle.css" />
+
+  <style>
+    .wrapper {
+      display: flex;
+      flex-wrap: wrap;
+
+      align-items: center;
+      justify-content: space-between;
+      text-align: center;
+
+      height: 300px;
+      width: 300px;
+
+      margin: 0 auto;
+    }
+
+    b {
+      width: 100%;
+    }
+
+    .ripple-parent {
+      position: relative;
+      overflow: hidden;
+
+      border: 1px solid #ddd;
+    }
+
+    .rectangle {
+      width: 300px;
+      height: 150px;
+    }
+
+    .rounded-rectangle {
+      width: 185px;
+      height: 65px;
+      border-radius: 8px;
+    }
+
+    .circle {
+      width: 90px;
+      height: 90px;
+      border-radius: 50%;
+    }
+  </style>
+</head>
+
+<body>
+  <ion-app>
+    <ion-content>
+      <div class="container">
+        <div class="wrapper">
+          <b>Click on a shape to see the ripple</b>
+
+          <div class="ion-activatable ripple-parent rectangle">
+            <ion-ripple-effect></ion-ripple-effect>
+          </div>
+
+          <div class="ion-activatable ripple-parent rounded-rectangle">
+            <ion-ripple-effect></ion-ripple-effect>
+          </div>
+
+          <div class="ion-activatable ripple-parent circle">
+            <ion-ripple-effect></ion-ripple-effect>
+          </div>
+        </div>
+      </div>
+    </ion-content>
+  </ion-app>
+</body>
+
+</html>

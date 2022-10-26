@@ -1,9 +1,6 @@
 ---
 title: "ion-col"
-hide_table_of_contents: true
 ---
-import TOCInline from '@theme/TOCInline';
-
 import Props from '@site/static/auto-generated/col/props.md';
 import Events from '@site/static/auto-generated/col/events.md';
 import Methods from '@site/static/auto-generated/col/methods.md';
@@ -20,19 +17,10 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="shadow" />
 
-<h2 className="table-of-contents__title">コンテンツ</h2>
 
-<TOCInline
-  toc={toc}
-  maxHeadingLevel={2}
-/>
+Columnは、[Grid](./grid) システムのセルラーコンポーネントで、[row](./row)の内部に配置されます。列は行を埋めるように拡張されます。グリッド内のすべてのコンテンツは、カラムの内部に配置する必要があります。
 
-
-
-Columnは [grid](grid.md) system のセルとなるコンポーネントで、行の内側に入ります。 [row](row.md) を埋めるように展開されます。
-グリッド内のすべてのコンテンツは、Columnの内側に配置する必要があります。
-
-詳しくは [Grid Layout](/docs/layout/grid) をご覧ください。
+詳しくは、[grid](./grid)のドキュメントを参照してください。
 
 
 ## Column Alignment

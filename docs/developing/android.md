@@ -48,11 +48,19 @@ Android SDKには<a href="https://developer.android.com/studio/command-line/" ta
 
 1. `ANDROID_SDK_ROOT`環境変数を設定します。このパスは、前のセクションでメモした**Android SDKのパス**です。
 
+   For Mac:
+
    ```shell
-   $ export ANDROID_SDK_ROOT=$HOME/Library/Android/sdk
+   $ export ANDROID_SDK_ROOT=$HOME/Android/sdk
    ```
 
-1. `PATH`にAndroid SDK コマンドラインのディレクトリを追加します。それぞれのディレクトリは、<a href="https://developer.android.com/studio/command-line/" target="_blank">コマンドラインツール</a>のカテゴリに対応しています。.
+   For Linux/Windows:
+
+   ```shell
+   $ export ANDROID_SDK_ROOT=$HOME/Android/Sdk
+   ```
+
+2. Add the Android SDK command-line directories to `PATH`. Each directory corresponds to the category of <a href="https://developer.android.com/studio/command-line/" target="_blank">command-line tool</a>.
 
    ```shell-session
    $ # avdmanager, sdkmanager
@@ -79,8 +87,8 @@ AVDはAVD Managerで管理します。Android Studioの初期画面で、 **Conf
 
 AVDが作成されたら、AndroidエミュレータでAVDを起動します。エミュレータを実行し続けることは、Android用のIonicアプリケーションを開発しながら検出を確実にするための最良の方法です。
 
-<figure class="device">
-  <img alt="Android Emulator Booting" src="/img/installation/android-emulator-booting.png" />
+<figure className="device">
+  <img alt="Android Emulator Booting" src="/docs/img/installation/android-emulator-booting.png" />
 </figure>
 
 ### Androidデバイスを設定する
@@ -166,7 +174,7 @@ CapacitorはAndroid Studioを使って、シミュレータやデバイスへの
 リロードサーバを起動するには、次のコマンドを実行します。
 
 ```shell
-ionic capacitor run android -l --host=YOUR_IP_ADDRESS
+ionic capacitor run android -l --external
 ```
 
 デバイス上で実行する場合は、デバイスと開発マシンが同じネットワークに接続されていることを確認してください。

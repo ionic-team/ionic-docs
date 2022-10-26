@@ -541,13 +541,15 @@ The example below shows how the Spotify app reuses the same album component to s
 | :------: | :--------: |
 | <img src={useBaseUrl('img/usage/tabs-home.jpg')} /> | <img src={useBaseUrl('img/usage/tabs-search.jpg')} /> |
 
-## IonRouterOutlet
+## Components
+
+### IonRouterOutlet
 
 `IonRouterOutlet` コンポーネントは、ビューをレンダリングするためのコンテナを提供します。これは他のVueアプリケーションに見られる `RouterView` コンポーネントに似ていますが、 `IonRouterOutlet` は同じアウトレット内のDOMで複数のページをレンダリングできるという点が異なります。コンポーネントが `IonRouterOutlet` でレンダリングされる場合、これはIonic Framework "Page"と見なされます。ルーター・アウトレット・コンテナーは、ページ間の遷移アニメーションを制御するだけでなく、ページがいつ作成および破棄されるかを制御します。これにより、ビューを切り替えるときにビュー間の状態を維持することができます。
 
 テンプレートで設定する際に、 `IonRouterOutlet` の内部には何も指定しないでください。`IonRouterOutlet` は子コンポーネントにネストすることができますが、通常はアプリケーション内のナビゲーションが混乱するため注意が必要です。詳細については、[Shared URLs versus Nested Routes](#shared-urls-versus-nested-routes) を参照してください。
 
-## IonPage
+### IonPage
 
 The `IonPage` component wraps each view in an Ionic Vue app and allows page transitions and stack navigation to work properly. Each view that is navigated to using the router must include an `IonPage` component.
 
@@ -581,24 +583,15 @@ The `IonPage` component wraps each view in an Ionic Vue app and allows page tran
 
 Components presented via `IonModal` or `IonPopover` do not typically need an `IonPage` component unless you need a wrapper element. In that case, we recommend using `IonPage` so that the component dimensions are still computed properly.
 
-## Accessing the IonRouter Instance
+## Functions
 
-Vueアプリケーション内から  `IonRouter` インスタンスにアクセスする必要があるユースケースがいくつかあるかもしれません。例えば、Androidでユーザーがハードウェアの 「戻る」 ボタンを押したときに、アプリケーションのルート・ページにいるかどうかを知ることができます。このようなユースケースでは、コンポーネントに `IonRouter` 依存関係を注入できます。
+### useIonRouter
 
-```tsx
-import { useIonRouter } from '@ionic/vue';
+▸ **useIonRouter**(): [`UseIonRouterResult`](utility-functions#useionrouterresult)
 
-...
+Returns the Ionic router instance, containing API methods for navigating, customizing page transitions and routing context for native features. This function can be used in combination with the [`useRouter`](https://router.vuejs.org/api/index.html#userouter) function from Vue.
 
-export default {
-  setup() {
-    const ionRouter = useIonRouter();
-    if (ionRouter.canGoBack()) {
-      // Perform some action here
-    }
-  }
-}
-```
+For example usages, please refer to our [Utility Functions](utility-functions#useionrouter).
 
 ## URLパラメーター
 

@@ -122,6 +122,11 @@
   transition: background-color .2s, color .2s;
 }
 
+.playground__control-button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
 /* fix layout shifting when button is bolded on select */
 /* has the same text as the button, but bolded in advance to nudge the width */
 .playground__control-button::after {

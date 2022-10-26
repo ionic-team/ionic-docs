@@ -15,8 +15,6 @@ import Slots from '@site/static/auto-generated/item-sliding/slots.md';
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
-<h2 className="table-of-contents__title">コンテンツ</h2>
-
 
 A sliding item contains an item that can be dragged to reveal option buttons. It requires an [item](./item) component as a child. All options to reveal should be placed in the [item options](./item-options) element.
 

@@ -40,7 +40,7 @@ Webテクノロジで構築されたアプリ（Ionicアプリなど）の素晴
 
 Ionicの最も一般的な使用例の1つは、 <a href="https://www.apple.com/ios/app-store/" target="_blank">App Store</a> と <a href="https://play.google.com/" target="_blank">Play Store</a> の両方からダウンロードできるアプリを作成することです。iOSとAndroidの両方のソフトウェア開発キット（SDK）は、完全なネイティブSDKアクセスを可能にしながら、あらゆるIonicアプリをレンダリングする [Web Views](webview.md) を提供します。
 
-<a href="https://capacitor.ionicframework.com/" target="_blank">Capacitor</a>や<a href="https://cordova.apache.org/" target="_blank">Cordova</a>などのプロジェクトは、IonicアプリにネイティブSDKへのアクセスを許可するためによく使用されます。つまり、開発者は一般的なWeb開発ツールを使用してアプリをすばやく構築しながら、デバイスの加速度計、カメラ、GPSなどのネイティブ機能にアクセスすることができます。
+Projects such as <a href="https://capacitorjs.com/" target="_blank">Capacitor</a> and <a href="https://cordova.apache.org/" target="_blank">Cordova</a> are commonly used to give Ionic apps this access to Native SDKs. This means developers can quickly build out an app using common web development tools, and still have access to native features such as the device's accelerometer, camera, GPS, and more.
 
 ## テーマ
 

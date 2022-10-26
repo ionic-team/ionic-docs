@@ -1,5 +1,6 @@
 ---
-sidebar_label: 概要
+title: 'Ionic Vue Overview'
+sidebar_label: Overview
 ---
 
 <head>
@@ -13,9 +14,7 @@ sidebar_label: 概要
 import DocsCard from '@components/global/DocsCard';
 import DocsCards from '@components/global/DocsCards';
 
-# Ionic Vueの概要
-
-`@ionic/vue` はcore Ionic experienceに、Vue開発者向けにカスタマイズされたツールとAPIを組み合わせたものです。
+Ionic Frameworkのコアな経験と、Vue開発者向けにカスタマイズされたツールやAPIを組み合わせたものが `@ionic/vue` です。
 
 ## Vueバージョンサポート
 
@@ -27,9 +26,9 @@ Ionic Vueプロジェクトには通常のVue CLIプロジェクトと同じツ�
 
 ## Native Tooling
 
-[Capacitor](https://capacitor.ionicframework.com) は、Ionic VueウェブアプリをiOS、Android、ウェブ上でネイティブに動作させるための公式クロスプラットフォームアプリライブラリです。
+[Capacitor](https://capacitorjs.com) は、Ionic VueウェブアプリをiOS、Android、ウェブ上でネイティブに動作させるための公式クロスプラットフォームアプリライブラリです。
 
-[Cordova](https://cordova.apache.org/) とCordovaプラグインでIonic Vueを使用する際の技術的な制限はありませんが、Capacitorが公式に推奨されています。現時点では、[Ionic CLIツール](/docs/cli) ツールでIonic VueのCordova統合をサポートする計画はない。詳細は [こちら](https://capacitor.ionicframework.com/docs/cordova) をご覧ください。
+[Cordova](https://cordova.apache.org/) とCordovaプラグインでIonic Vueを使用する際の技術的な制限はありませんが、Capacitorが公式に推奨されています。現時点では、[Ionic CLIツール](/docs/cli) ツールでIonic VueのCordova統合をサポートする計画はない。詳細は [こちら](https://capacitorjs.com/docs/cordova) をご覧ください。
 
 ## コミュニティからの情報
 

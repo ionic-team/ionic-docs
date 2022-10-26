@@ -1,13 +1,6 @@
 ---
 title: "ion-refresher"
-hide_table_of_contents: true
-demoUrl: "/docs/demos/api/refresher/index.html"
-demoSourceUrl: "https://github.com/ionic-team/ionic-docs/tree/main/static/demos/api/refresher/index.html"
 ---
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-import TOCInline from '@theme/TOCInline';
-
 import Props from '@site/static/auto-generated/refresher/props.md';
 import Events from '@site/static/auto-generated/refresher/events.md';
 import Methods from '@site/static/auto-generated/refresher/methods.md';
@@ -23,53 +16,70 @@ import Slots from '@site/static/auto-generated/refresher/slots.md';
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 
-<h2 className="table-of-contents__title">コンテンツ</h2>
+Refresher provides pull-to-refresh functionality on a content component. The pull-to-refresh pattern lets a user pull down on a list of data in order to retrieve more data.
 
-<TOCInline
-  toc={toc}
-  maxHeadingLevel={2}
-/>
+Data should be modified during the refresher's output events. Once the async operation has completed and the refreshing should end, `complete()` needs to be called on the refresher.
 
 
+## Basic Usage
 
-RefresherはContentコンポーネント引っ張って更新する機能を提供します。
-ユーザーはより多くのデータを取得するために、
-タッチ操作でリストを引っ張って更新できます。
+import Basic from '@site/static/usage/refresher/basic/index.md';
 
-データはRefresherの外部のイベントで更新すべきです。
-一回の非同期処理が完了すれば、`complete()`を呼び出すことで、
-Refresherも終了するべきです。
+<Basic />
+
+
+## Pull Properties
+
+The refresher has several properties for customizing the pull gesture. Set the `pullFactor` to change the speed of the pull, the `pullMin` property to change the minimum distance the user must pull down, and the `pullMax` property to change the maximum distance the user must pull down before the refresher enters the `refreshing` state.
+
+These properties do not apply when the [native refresher](#native-refreshers) is enabled.
+
+import PullProperties from '@site/static/usage/refresher/pull-properties/index.md';
+
+<PullProperties />
+
+
+## Custom Refresher Content
+
+The default icon, spinner, and text can be customized on the [refresher content](./refresher-content) based on whether the state of the refresher is `pulling` or `refreshing`.
+
+Setting `pullingIcon` will disable the [native refresher](#native-refreshers).
+
+import CustomContent from '@site/static/usage/refresher/custom-content/index.md';
+
+<CustomContent />
+
 
 ## Native Refreshers
 
-iOS と Android の両プラットフォームは、それぞれのデバイスで公開されているプロパティを利用したリフレッシュ機能を提供しており、Pull によるリフレッシュがネイティブに近い流動的な感覚を与えます。
+Both iOS and Android platforms provide refreshers that use properties exposed by their respective devices in order to give pull-to-refresh a fluid, native-like feel.
 
-pullMin` や `snapbackDuration` などの特定のプロパティは、ネイティブのリフレッシャーの多くがスクロールベースであるため、互換性がありません。詳しくは [Refresher Properties](#properties) を参照してください。
+The iOS and Material Design native refreshers are enabled by default in Ionic. However, the native iOS refresher relies on rubber band scrolling in order to work properly and is only compatible with iOS devices as a result. We provide a fallback refresher for apps running in iOS mode on devices that do not support rubber band scrolling.
 
-### iOS での使用法
+The native refresher uses a `circular` spinner for Material Design, while iOS uses the `lines` spinner. On iOS, the tick marks will progressively show as the page is pulled down.
 
-iOS ネイティブの `ion-refresher` を使用するには、 `ion-refresher-content` の `pullingIcon` プロパティを、使用可能なスピナーのいずれかに設定する必要があります。利用可能な値については、[Spinner Documentation](spinner.md#properties) を参照してください。 `pullingIcon` のデフォルトは、iOS の `lines` スピナーです。ユーザーがページをプルダウンすると、スピナーの目盛りが徐々に表示されます。
+Certain refresher properties such as the [Pull Properties](#pull-properties), `closeDuration` and `snapbackDuration` are not compatible because much of the native refreshers are scroll-based. See [Properties](#properties) for more information on unsupported properties.
 
-iOS ネイティブの `ion-refresher` は、正しく動作するためにラバーバンドスクロールに依存しており、その結果、iOS デバイスにのみ対応しています。ラバーバンドスクロールをサポートしないデバイスで iOS モードで動作するアプリのために、フォールバックリフレッシュを提供しています。
+The native refreshers can be disabled by setting the `pullingIcon` on the [refresher content](#custom-refresher-content) to any icon or spinner. See the [Ionicons](https://ionic.io/ionicons) and [Spinner](./spinner) documentation for accepted values.
 
-### Android での使用方法
 
-MD ネイティブの `ion-refresher` を使用するには、 `ion-refresher-content` の `pullingIcon` プロパティに、使用可能なスピナーのいずれかの値を設定する必要があります。利用可能な値については、[ion-spinner Documentation](spinner.md#properties) を参照してください。 `pullingIcon` のデフォルトは、MDの `circular` スピナーです。
-
-### 仮想スクロールの使用方法
+## Usage with Virtual Scroll
 
 Refresher が機能するためには、スクロールコンテナが必要です。仮想スクロールを使用する場合は、`ion-content` のスクロールを無効にし、`.ion-content-scroll-host` クラスターゲットで、どの要素コンテナがスクロールコンテナを担当するかを指定する必要があります。
 
-```html
-<ion-content scroll-y="false">
-  <ion-refresher slot="fixed">
-    <ion-refresher-content></ion-refresher-content>
-  </ion-refresher>
-  <virtual-scroll-element class="ion-content-scroll-host">
-    <!-- Your virtual scroll content -->
-  </virtual-scroll-element>
-</ion-content>
-```
+import CustomScrollTarget from '@site/static/usage/refresher/custom-scroll-target/index.md';
+
+<CustomScrollTarget />
+
+
+## Advanced Usage
+
+While the refresher can be used with any type of content, a common use case in native apps is to display a list of data that gets updated on refresh. In the below example, the app generates a list of data and then appends data to the top of the list when the refresh is completed. In a real app, the data would be received and updated after sending a request via a network or database call.
+
+import Advanced from '@site/static/usage/refresher/advanced/index.md';
+
+<Advanced />
+
 
 ## Interfaces
 
@@ -92,263 +102,7 @@ interface RefresherCustomEvent extends CustomEvent {
 }
 ```
 
-
-
-## 使い方
-
-<Tabs groupId="framework" defaultValue="angular" values={[{ value: 'angular', label: 'Angular' }, { value: 'javascript', label: 'Javascript' }, { value: 'react', label: 'React' }, { value: 'stencil', label: 'Stencil' }, { value: 'vue', label: 'Vue' }]}>
-
-<TabItem value="angular">
-
-```html
-<!-- Default Refresher -->
-<ion-content>
-  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
-    <ion-refresher-content></ion-refresher-content>
-  </ion-refresher>
-</ion-content>
-
-<!-- Custom Refresher Properties -->
-<ion-content>
-  <ion-refresher slot="fixed" pullFactor="0.5" pullMin="100" pullMax="200">
-    <ion-refresher-content></ion-refresher-content>
-  </ion-refresher>
-</ion-content>
-
-<!-- Custom Refresher Content -->
-<ion-content>
-  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
-    <ion-refresher-content
-      pullingIcon="chevron-down-circle-outline"
-      pullingText="Pull to refresh"
-      refreshingSpinner="circles"
-      refreshingText="Refreshing...">
-    </ion-refresher-content>
-  </ion-refresher>
-</ion-content>
-```
-
-```typescript
-import { Component } from '@angular/core';
-
-@Component({
-  selector: 'refresher-example',
-  templateUrl: 'refresher-example.html',
-  styleUrls: ['./refresher-example.css'],
-})
-export class RefresherExample {
-  constructor() {}
-
-  doRefresh(event) {
-    console.log('Begin async operation');
-
-    setTimeout(() => {
-      console.log('Async operation has ended');
-      event.target.complete();
-    }, 2000);
-  }
-}
-```
-
-</TabItem>
-
-
-<TabItem value="javascript">
-
-```html
-<!-- Default Refresher -->
-<ion-content>
-  <ion-refresher slot="fixed">
-    <ion-refresher-content></ion-refresher-content>
-  </ion-refresher>
-</ion-content>
-
-<!-- Custom Refresher Properties -->
-<ion-content>
-  <ion-refresher slot="fixed" pull-factor="0.5" pull-min="100" pull-max="200">
-    <ion-refresher-content></ion-refresher-content>
-  </ion-refresher>
-</ion-content>
-
-<!-- Custom Refresher Content -->
-<ion-content>
-  <ion-refresher slot="fixed">
-    <ion-refresher-content
-      pulling-icon="chevron-down-circle-outline"
-      pulling-text="Pull to refresh"
-      refreshing-spinner="circles"
-      refreshing-text="Refreshing...">
-    </ion-refresher-content>
-  </ion-refresher>
-</ion-content>
-```
-
-</TabItem>
-
-
-<TabItem value="react">
-
-```tsx
-import React from 'react';
-import { IonContent, IonRefresher, IonRefresherContent } from '@ionic/react';
-import { RefresherEventDetail } from '@ionic/core';
-import { chevronDownCircleOutline } from 'ionicons/icons';
-
-function doRefresh(event: CustomEvent<RefresherEventDetail>) {
-  console.log('Begin async operation');
-
-  setTimeout(() => {
-    console.log('Async operation has ended');
-    event.detail.complete();
-  }, 2000);
-}
-
-export const RefresherExample: React.FC = () => (
-  <IonContent>
-    {/*-- Default Refresher --*/}
-    <IonContent>
-      <IonRefresher slot="fixed" onIonRefresh={doRefresh}>
-        <IonRefresherContent></IonRefresherContent>
-      </IonRefresher>
-    </IonContent>
-
-    {/*-- Custom Refresher Properties --*/}
-    <IonContent>
-      <IonRefresher slot="fixed" onIonRefresh={doRefresh} pullFactor={0.5} pullMin={100} pullMax={200}>
-        <IonRefresherContent></IonRefresherContent>
-      </IonRefresher>
-    </IonContent>
-
-    {/*-- Custom Refresher Content --*/}
-    <IonContent>
-      <IonRefresher slot="fixed" onIonRefresh={doRefresh}>
-        <IonRefresherContent
-          pullingIcon={chevronDownCircleOutline}
-          pullingText="Pull to refresh"
-          refreshingSpinner="circles"
-          refreshingText="Refreshing...">
-        </IonRefresherContent>
-      </IonRefresher>
-    </IonContent>
-  </IonContent>
-);
-```
-
-</TabItem>
-
-
-<TabItem value="stencil">
-
-```tsx
-import { Component, h } from '@stencil/core';
-
-@Component({
-  tag: 'refresher-example',
-  styleUrl: 'refresher-example.css'
-})
-export class RefresherExample {
-  doRefresh(ev: any) {
-    console.log('Begin async operation');
-
-    setTimeout(() => {
-      console.log('Async operation has ended');
-      ev.target.complete();
-    }, 2000);
-  }
-
-  render() {
-    return [
-      // Default Refresher
-      <ion-content>
-        <ion-refresher slot="fixed" onIonRefresh={(ev) => this.doRefresh(ev)}>
-          <ion-refresher-content></ion-refresher-content>
-        </ion-refresher>
-      </ion-content>,
-
-      // Custom Refresher Properties
-      <ion-content>
-        <ion-refresher slot="fixed" pullFactor={0.5} pullMin={100} pullMax={200}>
-          <ion-refresher-content></ion-refresher-content>
-        </ion-refresher>
-      </ion-content>,
-
-      // Custom Refresher Content
-      <ion-content>
-        <ion-refresher slot="fixed" onIonRefresh={(ev) => this.doRefresh(ev)}>
-          <ion-refresher-content
-            pullingIcon="chevron-down-circle-outline"
-            pullingText="Pull to refresh"
-            refreshingSpinner="circles"
-            refreshingText="Refreshing...">
-          </ion-refresher-content>
-        </ion-refresher>
-      </ion-content>
-    ];
-  }
-}
-```
-
-</TabItem>
-
-
-<TabItem value="vue">
-
-```html
-<template>
-  <!-- Default Refresher -->
-  <ion-content>
-    <ion-refresher slot="fixed" @ionRefresh="doRefresh($event)">
-      <ion-refresher-content></ion-refresher-content>
-    </ion-refresher>
-  </ion-content>
-
-  <!-- Custom Refresher Properties -->
-  <ion-content>
-    <ion-refresher slot="fixed" pull-factor="0.5" pull-min="100" pull-max="200">
-      <ion-refresher-content></ion-refresher-content>
-    </ion-refresher>
-  </ion-content>
-
-  <!-- Custom Refresher Content -->
-  <ion-content>
-    <ion-refresher slot="fixed" @ionRefresh="doRefresh($event)">
-      <ion-refresher-content
-        :pulling-icon="chevronDownCircleOutline"
-        pulling-text="Pull to refresh"
-        refreshing-spinner="circles"
-        refreshing-text="Refreshing...">
-      </ion-refresher-content>
-    </ion-refresher>
-  </ion-content>
-</template>
-
-<script lang="ts">
-import { IonContent, IonRefresher, IonRefresherContent } from '@ionic/vue';
-import { chevronDownCircleOutline } from 'ionicons/icons'
-import { defineComponent } from 'vue';
-
-export default defineComponent({
-  components: { IonContent, IonRefresher, IonRefresherContent },
-  setup() {
-    const doRefresh = (event: CustomEvent) => {
-      console.log('Begin async operation');
-      
-      setTimeout(() => {
-        console.log('Async operation has ended');
-        event.target.complete();
-      }, 2000);
-    }
-    return { chevronDownCircleOutline, doRefresh }
-  }
-});
-</script>
-```
-
-</TabItem>
-
-</Tabs>
-
-## プロパティ
+## Properties
 <Props />
 
 ## イベント

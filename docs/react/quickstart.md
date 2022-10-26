@@ -382,7 +382,7 @@ export const IconExample: React.FC = () => {
 
 ## Build a Native App
 
-UIコンポーネントやナビゲーションなど、Ionic Reactアプリの基本的な部分はすでに完成しています。Ionic Frameworkのコンポーネントの素晴らしいところは、iOS、Android、PWAを含むどこでも動作することです。モバイル、デスクトップ、その他にもデプロイするために、Ionicのクロスプラットフォームライブラリ [Capacitor](https://capacitor.ionicframework.com) を使用することができます。一貫性のあるWebに特化したAPIセットを提供することで、 Web標準をサポートするプラットフォーム上の豊富なネイティブデバイス機能にアクセスしながら、アプリケーションを可能な限りWeb標準に近づけることが可能になります。
+UIコンポーネントやナビゲーションなど、Ionic Reactアプリの基本的な部分はすでに完成しています。Ionic Frameworkのコンポーネントの素晴らしいところは、iOS、Android、PWAを含むどこでも動作することです。モバイル、デスクトップ、その他にもデプロイするために、Ionicのクロスプラットフォームライブラリ [Capacitor](https://capacitorjs.com) を使用することができます。一貫性のあるWebに特化したAPIセットを提供することで、 Web標準をサポートするプラットフォーム上の豊富なネイティブデバイス機能にアクセスしながら、アプリケーションを可能な限りWeb標準に近づけることが可能になります。
 
 ネイティブ機能を追加するのは簡単で、最初にプロジェクトにCapacitorを追加します:
 
@@ -405,9 +405,9 @@ ionic cap open ios
 ionic cap open android
 ```
 
-詳細は [こちら](https://capacitor.ionicframework.com/docs/getting-started/with-ionic) をご覧ください。
+詳細は [こちら](https://capacitorjs.com/docs/getting-started/with-ionic) をご覧ください。
 
-次に、 [すべての利用可能なAPIs](https://capacitor.ionicframework.com/docs/apis) を確認します。[Camera API](https://capacitor.ionicframework.com/docs/apis/camera) を含むすばらしい機能があります。以下の数行のコードでカメラ機能を実装することができます￥:
+次に、 [すべての利用可能なAPIs](https://capacitorjs.com/docs/apis) を確認します。[Camera API](https://capacitorjs.com/docs/apis/camera) を含むすばらしい機能があります。以下の数行のコードでカメラ機能を実装することができます￥:
 
 ```tsx
 import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonButton } from '@ionic/react';
@@ -447,6 +447,6 @@ export default Home;
 
 このガイドでは、Ionic Reactアプリの作成の基本、基本的なナビゲーションの追加、ネイティブアプリを構築する方法としてのCapacitorの紹介について説明した。ReactとCapacitorで完全なIonicアプリを作るには、[First App guide](your-first-app.md)を参照してください。
 
-Ionicのコンポーネントの詳細は [component API pages](https://ionicframework.com/docs/components) をチェックしてほしい。Reactの詳細については、 [React Docs](https://reactjs.org/) を参照ください。ネイティブ機能の構築を続けるには、 [Capacitor docs](https://capacitor.ionicframework.com/docs/) を参照してください。
+Ionicのコンポーネントの詳細は [component API pages](https://ionicframework.com/docs/components) をチェックしてほしい。Reactの詳細については、 [React Docs](https://reactjs.org/) を参照ください。ネイティブ機能の構築を続けるには、 [Capacitor docs](https://capacitorjs.com/docs/) を参照してください。
 
 アプリ構築をお楽しみください! 🎉

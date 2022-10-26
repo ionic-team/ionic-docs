@@ -84,7 +84,7 @@ React バージョン 16.8 以降に対応しています。
 
 ## More than mobile
 
-最新のネイティブランタイムである [Capacitor](https://capacitor.ionicframework.com) を使用して、Ionic ReactプロジェクトをネイティブのiOS、Android、Electron、WebにProgressive Web Appとしてデプロイできます。すべて1つの共有コードベースで。
+最新のネイティブランタイムである [Capacitor](https://capacitorjs.com) を使用して、Ionic ReactプロジェクトをネイティブのiOS、Android、Electron、WebにProgressive Web Appとしてデプロイできます。すべて1つの共有コードベースで。
 
 </div>
 

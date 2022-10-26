@@ -191,7 +191,12 @@ interface ModalOptions {
   backdropDismiss?: boolean;
   cssClass?: string | string[];
   animated?: boolean;
+  /**
+   * If `true`, the modal can be swiped to dismiss. Only applies in iOS mode.
+   * @deprecated - To prevent modals from dismissing, use canDismiss instead.
+   */
   swipeToClose?: boolean;
+  canDismiss?: boolean | (() => Promise<boolean>);
 
   mode?: 'ios' | 'md';
   keyboardClose?: boolean;

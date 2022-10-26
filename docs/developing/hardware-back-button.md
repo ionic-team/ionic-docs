@@ -21,7 +21,11 @@ import TabItem from '@theme/TabItem';
 
 ## CapacitorとCordovaにおける戻るボタン
 
-キャパシターまたはCordovaアプリケーションで実行している場合、ユーザーがハードウェアの戻るボタンを押すと、Ionic Frameworkは `ionBackButton` イベントを発行します。
+:::note
+The `@capacitor/app` package must be installed in Capacitor apps to use the hardware back button.
+:::
+
+When running in a Capacitor or Cordova application, Ionic Framework will emit an `ionBackButton` event when a user presses the hardware back button.
 
 `ionBackButton` イベントを監視して、起動するハンドラを登録できます。このハンドラは、アプリケーションの終了や確認ダイアログのオープンなどのアクションを実行できます。各ハンドラには優先順位を割り当てる必要があります。既定では、ハードウェアの戻るボタンを押すごとに1つのハンドラだけが起動されます。優先順位の値は、どのコールバックを呼び出すかを決定するために使用されます。これが便利なのは、モーダルを開いている場合、ハードウェアの戻るボタンを押したときにモーダルが閉じられたり、アプリが後方に移動したりしないようにしたいからです。一度に1つのハンドラだけを実行すると、モーダルを閉じることができますが、戻るにはハードウェアの戻るボタンをもう一度押す必要があります。
 
@@ -267,6 +271,7 @@ document.addEventListener('ionBackButton', (ev: BackButtonEvent) => {
 <TabItem value="angular">
 
 ```tsx
+import { Optional } from '@angular/core';
 import { IonRouterOutlet, Platform } from '@ionic/angular';
 import { App } from '@capacitor/app';
 
@@ -274,7 +279,7 @@ import { App } from '@capacitor/app';
 
 constructor(
   private platform: Platform,
-  private routerOutlet: IonRouterOutlet
+  @Optional() private routerOutlet?: IonRouterOutlet
 ) {
   this.platform.backButton.subscribeWithPriority(-1, () => {
     if (!this.routerOutlet.canGoBack()) {

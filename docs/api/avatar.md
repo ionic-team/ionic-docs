@@ -28,11 +28,7 @@ import Basic from '@site/static/usage/avatar/basic/index.md';
 
 <Basic />
 
-<<<<<<< HEAD
-## 使い方
-=======
 ## Chip Avatar
->>>>>>> 9f35d7834766666e360bd30e88506a7c3d0700bd
 
 import Chip from '@site/static/usage/avatar/chip/index.md';
 

@@ -1,11 +1,6 @@
 ---
 title: "ion-ripple-effect"
-hide_table_of_contents: true
 ---
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-import TOCInline from '@theme/TOCInline';
-
 import Props from '@site/static/auto-generated/ripple-effect/props.md';
 import Events from '@site/static/auto-generated/ripple-effect/events.md';
 import Methods from '@site/static/auto-generated/ripple-effect/methods.md';
@@ -22,246 +17,36 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="shadow" />
 
-<h2 className="table-of-contents__title">コンテンツ</h2>
 
-<TOCInline
-  toc={toc}
-  maxHeadingLevel={2}
-/>
+The ripple effect component adds the [Material Design ink ripple interaction effect](https://material.io/develop/web/supporting/ripple). This component can only be used inside of an `<ion-app>` and can be added inside of any element.
+
+It's important to set [relative positioning](https://developer.mozilla.org/en-US/docs/Web/CSS/position) on the parent element because the ripple effect is absolutely positioned and will cover its closest parent that has relative positioning. The parent element should also be given the `ion-activatable` class, which tells the ripple effect that the element is clickable. It's recommended to add `overflow: hidden` to the parent element if the ripple is overflowing its container.
 
 
+## Basic Usage
 
-ripple effectコンポーネントは、 [Material Design ink ripple interaction effect](https://material.io/develop/web/components/ripples/) を追加します。このコンポーネントは `<ion-app>` 内でのみ利用することができ、どのコンポーネントにも追加できます。
+import Basic from '@site/static/usage/ripple-effect/basic/index.md';
 
-重要なのは、親要素は [相対位置](https://developer.mozilla.org/en-US/docs/Web/CSS/position) であることです。なぜなら、波及効果は絶対位置で、相対位置で最も近い親要素をカバーすることになるからです。親要素には `ion-activatable` クラスも指定します。これは波及効果に、その要素がクリック可能であることを伝えるものです。
-
-デフォルトのタイプである `"bounded"` は、クリック位置から外側に波紋を広げます。常に要素の中心から始まり、円形に広がる波紋効果を追加するには、 `"unbounded"` タイプを追加します。特にunbounded rippleでは、波紋がコンテナからはみ出さないように、親要素に `overflow: hidden` を追加することが推奨されます。
-
+<Basic />
 
 
-## 使い方
+## Type
 
-<Tabs groupId="framework" defaultValue="angular" values={[{ value: 'angular', label: 'Angular' }, { value: 'javascript', label: 'Javascript' }, { value: 'react', label: 'React' }, { value: 'stencil', label: 'Stencil' }, { value: 'vue', label: 'Vue' }]}>
+There are two types of ripple effects: `"bounded"` and `"unbounded"`. The default type, `"bounded"`, will expand the ripple effect from the click position outwards. To add a ripple effect that always starts in the center of the element and expands in a circle, set the type to `"unbounded"`.
 
-<TabItem value="angular">
+import Type from '@site/static/usage/ripple-effect/type/index.md';
 
-```html
-<ion-app>
-  <ion-content>
-    <div class="ion-activatable ripple-parent">
-      A plain div with a bounded ripple effect
-      <ion-ripple-effect></ion-ripple-effect>
-    </div>
-
-    <button class="ion-activatable ripple-parent">
-      A button with a bounded ripple effect
-      <ion-ripple-effect></ion-ripple-effect>
-    </button>
-
-    <div class="ion-activatable ripple-parent">
-      A plain div with an unbounded ripple effect
-      <ion-ripple-effect type="unbounded"></ion-ripple-effect>
-    </div>
-
-    <button class="ion-activatable ripple-parent">
-      A button with an unbounded ripple effect
-      <ion-ripple-effect type="unbounded"></ion-ripple-effect>
-    </button>
-  </ion-content>
-</ion-app>
-```
-
-```css
-.ripple-parent {
-  position: relative;
-  overflow: hidden;
-}
-```
-
-</TabItem>
+<Type />
 
 
-<TabItem value="javascript">
+## Customizing
 
-```html
-<ion-app>
-  <ion-content>
-    <div class="ion-activatable ripple-parent">
-      A plain div with a bounded ripple effect
-      <ion-ripple-effect></ion-ripple-effect>
-    </div>
+The ripple can be customized to a different color through CSS. By default the ripple color is set to inherit the text color, which is generally the body color. This can be changed by setting the CSS `color` on the parent or the ripple effect itself.
 
-    <button class="ion-activatable ripple-parent">
-      A button with a bounded ripple effect
-      <ion-ripple-effect></ion-ripple-effect>
-    </button>
+import Customizing from '@site/static/usage/ripple-effect/customizing/index.md';
 
-    <div class="ion-activatable ripple-parent">
-      A plain div with an unbounded ripple effect
-      <ion-ripple-effect type="unbounded"></ion-ripple-effect>
-    </div>
+<Customizing />
 
-    <button class="ion-activatable ripple-parent">
-      A button with an unbounded ripple effect
-      <ion-ripple-effect type="unbounded"></ion-ripple-effect>
-    </button>
-  </ion-content>
-</ion-app>
-```
-
-```css
-.ripple-parent {
-  position: relative;
-  overflow: hidden;
-}
-```
-
-</TabItem>
-
-
-<TabItem value="react">
-
-```tsx
-import React from 'react';
-import { IonApp, IonContent, IonRippleEffect } from '@ionic/react';
-import './RippleEffectExample.css';
-
-export const RippleExample: React.FC = () => (
-  <IonApp>
-   <IonContent>
-      <div className="ion-activatable ripple-parent">
-        A plain div with a bounded ripple effect
-        <IonRippleEffect></IonRippleEffect>
-      </div>
-
-      <button className="ion-activatable ripple-parent">
-        A button with a bounded ripple effect
-        <IonRippleEffect></IonRippleEffect>
-      </button>
-
-      <div className="ion-activatable ripple-parent">
-        A plain div with an unbounded ripple effect
-        <IonRippleEffect type="unbounded"></IonRippleEffect>
-      </div>
-
-      <button className="ion-activatable ripple-parent">
-        A button with an unbounded ripple effect
-        <IonRippleEffect type="unbounded"></IonRippleEffect>
-      </button>
-    </IonContent>
-  </IonApp>
-);
-```
-
-```css
-.ripple-parent {
-  position: relative;
-  overflow: hidden;
-}
-```
-
-</TabItem>
-
-
-<TabItem value="stencil">
-
-```tsx
-import { Component, h } from '@stencil/core';
-
-@Component({
-  tag: 'ripple-effect-example',
-  styleUrl: 'ripple-effect-example.css'
-})
-export class RippleEffectExample {
-  render() {
-    return [
-      <ion-app>
-        <ion-content>
-          <div class="ion-activatable ripple-parent">
-            A plain div with a bounded ripple effect
-            <ion-ripple-effect></ion-ripple-effect>
-          </div>
-
-          <button class="ion-activatable ripple-parent">
-            A button with a bounded ripple effect
-            <ion-ripple-effect></ion-ripple-effect>
-          </button>
-
-          <div class="ion-activatable ripple-parent">
-            A plain div with an unbounded ripple effect
-            <ion-ripple-effect type="unbounded"></ion-ripple-effect>
-          </div>
-
-          <button class="ion-activatable ripple-parent">
-            A button with an unbounded ripple effect
-            <ion-ripple-effect type="unbounded"></ion-ripple-effect>
-          </button>
-        </ion-content>
-      </ion-app>
-    ];
-  }
-}
-```
-
-```css
-.ripple-parent {
-  position: relative;
-  overflow: hidden;
-}
-```
-
-</TabItem>
-
-
-<TabItem value="vue">
-
-```html
-<template>
-  <ion-app>
-    <ion-content>
-      <div class="ion-activatable ripple-parent">
-        A plain div with a bounded ripple effect
-        <ion-ripple-effect></ion-ripple-effect>
-      </div>
-
-      <button class="ion-activatable ripple-parent">
-        A button with a bounded ripple effect
-        <ion-ripple-effect></ion-ripple-effect>
-      </button>
-
-      <div class="ion-activatable ripple-parent">
-        A plain div with an unbounded ripple effect
-        <ion-ripple-effect type="unbounded"></ion-ripple-effect>
-      </div>
-
-      <button class="ion-activatable ripple-parent">
-        A button with an unbounded ripple effect
-        <ion-ripple-effect type="unbounded"></ion-ripple-effect>
-      </button>
-    </ion-content>
-  </ion-app>
-</template>
-
-<style>
-  .ripple-parent {
-    position: relative;
-    overflow: hidden;
-  }
-</style>
-
-<script>
-import { IonApp, IonContent, IonRippleEffect } from '@ionic/vue';
-import { defineComponent } from 'vue';
-
-export default defineComponent({
-  components: { IonApp, IonContent, IonRippleEffect }
-});
-</script>
-```
-
-</TabItem>
-
-</Tabs>
 
 ## プロパティ
 <Props />
