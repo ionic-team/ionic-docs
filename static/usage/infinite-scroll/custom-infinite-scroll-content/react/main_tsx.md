@@ -45,11 +45,11 @@ function Example() {
             viewBox="0 0 100 100"
             enableBackground="new 0 0 100 100"
           >
-            <circle fill="none" stroke="#e74c3c" stroke-width="4" stroke-miterlimit="10" cx="50" cy="50" r="48" />
+            <circle fill="none" stroke="#1b6dff" stroke-width="4" stroke-miterlimit="10" cx="50" cy="50" r="48" />
             <line
               fill="none"
               strokeLinecap="round"
-              stroke="#e74c3c"
+              stroke="#1b6dff"
               strokeWidth="4"
               strokeMiterlimit="10"
               x1="50"
@@ -69,7 +69,7 @@ function Example() {
             <line
               fill="none"
               strokeLinecap="round"
-              stroke="#e74c3c"
+              stroke="#1b6dff"
               strokeWidth="4"
               strokeMiterlimit="10"
               x1="50"

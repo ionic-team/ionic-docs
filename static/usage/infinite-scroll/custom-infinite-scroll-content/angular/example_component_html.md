@@ -20,11 +20,11 @@
         enable-background="new 0 0 100 100"
         xml:space="preserve"
       >
-        <circle fill="none" stroke="#e74c3c" stroke-width="4" stroke-miterlimit="10" cx="50" cy="50" r="48" />
+        <circle fill="none" stroke="#1b6dff" stroke-width="4" stroke-miterlimit="10" cx="50" cy="50" r="48" />
         <line
           fill="none"
           stroke-linecap="round"
-          stroke="#e74c3c"
+          stroke="#1b6dff"
           stroke-width="4"
           stroke-miterlimit="10"
           x1="50"
@@ -44,7 +44,7 @@
         <line
           fill="none"
           stroke-linecap="round"
-          stroke="#e74c3c"
+          stroke="#1b6dff"
           stroke-width="4"
           stroke-miterlimit="10"
           x1="50"
