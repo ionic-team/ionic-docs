@@ -37,6 +37,10 @@ import InfiniteScrollContent from '@site/static/usage/infinite-scroll/infinite-s
 
 Separating the `ion-infinite-scroll` and `ion-infinite-scroll-content` components allows developers to create their own content components, if desired. This content can contain anything, from an SVG element to elements with unique CSS animations.
 
+import CustomContent from '@site/static/usage/infinite-scroll/custom-infinite-scroll-content/index.md';
+
+<CustomContent />
+
 ## Usage with Virtual Scroll
 
 Infinite scroll requires a scroll container to function. When using a virtual scrolling solution, you will need to disable scrolling on the `ion-content` and indicate which element container is responsible for the scroll container with the `.ion-content-scroll-host` class target.
