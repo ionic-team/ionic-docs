@@ -130,7 +130,7 @@ const openAngularEditor = async (code: string, options?: EditorOptions) => {
 }
 
 const openReactEditor = async (code: string, options?: EditorOptions) => {
-  const [index_tsx, app_tsx, variables_css, ts_config_json, package_json, package_lock_json, index_html] = await loadSourceFiles([
+  let [index_tsx, app_tsx, variables_css, ts_config_json, package_json, package_lock_json, index_html] = await loadSourceFiles([
     'react/index.tsx',
     options?.includeIonContent ? 'react/app.withContent.tsx' : 'react/app.tsx',
     'react/variables.css',
