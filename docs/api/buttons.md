@@ -1,11 +1,6 @@
 ---
 title: "ion-buttons"
-hide_table_of_contents: true
 ---
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-import TOCInline from '@theme/TOCInline';
-
 import Props from '@site/static/auto-generated/buttons/props.md';
 import Events from '@site/static/auto-generated/buttons/events.md';
 import Methods from '@site/static/auto-generated/buttons/methods.md';
@@ -22,18 +17,10 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="scoped" />
 
-<h2 className="table-of-contents__title">Contents</h2>
 
-<TOCInline
-  toc={toc}
-  maxHeadingLevel={2}
-/>
+The Buttons component is a container element. It should be used inside of a toolbar and can contain several types of buttons, including standard [buttons](./button), [menu buttons](./menu-button), and [back buttons](./back-button).
 
-
-
-The Buttons component is a container element. Buttons placed in a toolbar should be placed inside of the `<ion-buttons>` element.
-
-The `<ion-buttons>` element can be positioned inside of the toolbar using a named slot. The below chart has a description of each slot.
+Buttons can be positioned inside of the toolbar using a named slot. The below chart has a description of each slot.
 
 | Slot         | Description                                                                                              |
 |--------------|----------------------------------------------------------------------------------------------------------|
@@ -41,6 +28,12 @@ The `<ion-buttons>` element can be positioned inside of the toolbar using a name
 | `primary`    | Positions element to the `right` of the content in `ios` mode, and to the far `right` in `md` mode.      |
 | `start`      | Positions to the `left` of the content in LTR, and to the `right` in RTL.                                |
 | `end`        | Positions to the `right` of the content in LTR, and to the `left` in RTL.                                |
+
+## Basic Usage
+
+import Basic from '@site/static/usage/buttons/basic/index.md';
+
+<Basic />
 
 
 
