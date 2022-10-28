@@ -1,9 +1,6 @@
 ---
 title: "ion-virtual-scroll"
-hide_table_of_contents: true
 ---
-import TOCInline from '@theme/TOCInline';
-
 import Props from '@site/static/auto-generated/virtual-scroll/props.md';
 import Events from '@site/static/auto-generated/virtual-scroll/events.md';
 import Methods from '@site/static/auto-generated/virtual-scroll/methods.md';
@@ -17,15 +14,6 @@ import Slots from '@site/static/auto-generated/virtual-scroll/slots.md';
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
-
-
-<h2 className="table-of-contents__title">Contents</h2>
-
-<TOCInline
-  toc={toc}
-  maxHeadingLevel={2}
-/>
-
 
 
 Virtual Scroll displays a virtual, "infinite" list. An array of records

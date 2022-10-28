@@ -1,9 +1,6 @@
 ---
 title: "ion-accordion-group"
-hide_table_of_contents: true
 ---
-import TOCInline from '@theme/TOCInline';
-
 import Props from '@site/static/auto-generated/accordion-group/props.md';
 import Events from '@site/static/auto-generated/accordion-group/events.md';
 import Methods from '@site/static/auto-generated/accordion-group/methods.md';
@@ -15,18 +12,10 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="shadow" />
 
-<h2 className="table-of-contents__title">Contents</h2>
-
-<TOCInline
-  toc={toc}
-  maxHeadingLevel={2}
-/>
-
-
-
 Accordion group is a container for accordion instances. It manages the state of the accordions and provides keyboard navigation.
 
-For more information as well as usage, see the [Accordion Documentation](./accordion)
+See the [Accordion](./accordion) documentation for more information.
+
 
 ## Interfaces
 
