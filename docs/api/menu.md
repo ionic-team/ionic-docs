@@ -18,26 +18,25 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 <EncapsulationPill type="shadow" />
 
 
-The Menu component is a navigation drawer that slides in from the side of the current view.
-By default, it slides in from the left, but the side can be overridden.
-The menu will be displayed differently based on the mode, however the display type can be changed to any of the available menu types.
-The menu element should be a sibling to the root content element.
-There can be any number of menus attached to the content.
-These can be controlled from the templates, or programmatically using the MenuController.
+The menu component is a navigation drawer that slides in from the side of the current view. By default, it uses the start side, making it slide in from the left for LTR and right for RTL, but the side can be overridden. The menu will be displayed differently based on the mode, however the display type can be changed to any of the available menu types.
+
+The menu element should be a sibling to the root content element. There can be any number of menus attached to the content. These can be controlled from the templates, or programmatically using the `MenuController`.
 
 ## Basic Usage
 
-import BasicUsage from '@site/static/usage/menu/basic/index.md';
+import Basic from '@site/static/usage/menu/basic/index.md';
 
-<BasicUsage />
+<Basic />
+
 
 ## Menu Toggle
 
-The [ion-menu-toggle](./menu-toggle) component can be used to create custom button that can open or close the menu.
+The [menu toggle](./menu-toggle) component can be used to create custom button that can open or close the menu.
 
 import MenuToggle from '@site/static/usage/menu/toggle/index.md';
 
 <MenuToggle />
+
 
 ## Menu Types
 
@@ -46,6 +45,27 @@ The `type` property can be used to customize how menus display in your applicati
 import MenuType from '@site/static/usage/menu/type/index.md';
 
 <MenuType />
+
+
+## Menu Sides
+
+Menus are displayed on the `"start"` side by default. In apps that use left-to-right direction, this is the left side, and in right-to-left apps, this will be the right side. Menus can also be set to display on the `"end"` side, which is the opposite of `"start"`.
+
+If menus on both sides are needed in an app, the menu can be opened by passing the `side` value to the `open` method on `MenuController`. If a side is not provided, the menu on the `"start"` side will be opened. See the [multiple menus](#multiple-menus) section below for an example using `MenuControler`.
+
+import Sides from '@site/static/usage/menu/sides/index.md';
+
+<Sides />
+
+
+## Multiple Menus
+
+When multiple menus exist on the same side, we need to enable the menu that we want to open before it can be opened. This can be done by calling the `enable` method on the `MenuController`. We can then call `open` on a menu based on its `menuId` or `side`.
+
+import Multiple from '@site/static/usage/menu/multiple/index.md';
+
+<Multiple />
+
 
 ## Theming
 
