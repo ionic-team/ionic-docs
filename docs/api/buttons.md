@@ -26,20 +26,37 @@ import Basic from '@site/static/usage/buttons/basic/index.md';
 
 <Basic />
 
+
 ## Buttons Placement
 
 Buttons can be positioned inside of the toolbar using a named slot. The below chart has a description of each slot.
 
 | Slot         | Description                                                                                              |
 |--------------|----------------------------------------------------------------------------------------------------------|
-| `secondary`  | Positions element to the `left` of the content in `ios` mode, and directly to the `right` in `md` mode.  |
-| `primary`    | Positions element to the `right` of the content in `ios` mode, and to the far `right` in `md` mode.      |
 | `start`      | Positions to the `left` of the content in LTR, and to the `right` in RTL.                                |
 | `end`        | Positions to the `right` of the content in LTR, and to the `left` in RTL.                                |
+| `secondary`  | Positions element to the `left` of the content in `ios` mode, and directly to the `right` in `md` mode.  |
+| `primary`    | Positions element to the `right` of the content in `ios` mode, and to the far `right` in `md` mode.      |
 
 import Placement from '@site/static/usage/buttons/placement/index.md';
 
 <Placement />
+
+
+## Collapsible Buttons
+
+The `collapse` property can be set on the buttons to collapse them when the header collapses. This is typically used with [collapsible large titles](./title#collapsible-large-titles).
+
+:::info
+
+This feature is only available for iOS.
+
+:::
+
+<!-- Reuse the playground from the Title directory -->
+import CollapsibleLargeTitleButtons from '@site/static/usage/title/collapsible-large-title/buttons/index.md';
+
+<CollapsibleLargeTitleButtons />
 
 
 ## Usage
