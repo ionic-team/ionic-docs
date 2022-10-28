@@ -20,6 +20,14 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 The Buttons component is a container element. It should be used inside of a toolbar and can contain several types of buttons, including standard [buttons](./button), [menu buttons](./menu-button), and [back buttons](./back-button).
 
+## Basic Usage
+
+import Basic from '@site/static/usage/buttons/basic/index.md';
+
+<Basic />
+
+## Buttons Placement
+
 Buttons can be positioned inside of the toolbar using a named slot. The below chart has a description of each slot.
 
 | Slot         | Description                                                                                              |
@@ -29,13 +37,9 @@ Buttons can be positioned inside of the toolbar using a named slot. The below ch
 | `start`      | Positions to the `left` of the content in LTR, and to the `right` in RTL.                                |
 | `end`        | Positions to the `right` of the content in LTR, and to the `left` in RTL.                                |
 
-## Basic Usage
+import Placement from '@site/static/usage/buttons/placement/index.md';
 
-import Basic from '@site/static/usage/buttons/basic/index.md';
-
-<Basic />
-
-
+<Placement />
 
 
 ## Usage
