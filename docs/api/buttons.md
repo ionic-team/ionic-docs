@@ -43,6 +43,15 @@ import Placement from '@site/static/usage/buttons/placement/index.md';
 <Placement />
 
 
+## Types of Buttons
+
+A button in a toolbar is styled to be clear by default, but this can be changed using the [`fill`](./button#fill) property on the button. The properties included on [back button](./back-button) and [menu button](./menu-button) in this example are for display purposes; see their respective documentation for proper usage.
+
+import Types from '@site/static/usage/buttons/types/index.md';
+
+<Types />
+
+
 ## Collapsible Buttons
 
 The `collapse` property can be set on the buttons to collapse them when the header collapses. This is typically used with [collapsible large titles](./title#collapsible-large-titles).

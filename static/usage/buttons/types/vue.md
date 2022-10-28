@@ -1,31 +1,17 @@
 ```html
 <template>
   <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-button>
-        Start
-      </ion-button>
-    </ion-buttons>
-    <ion-title>Start / End Buttons</ion-title>
-    <ion-buttons slot="end">
-      <ion-button>
-        End
-      </ion-button>
-    </ion-buttons>
-  </ion-toolbar>
-
-  <ion-toolbar>
     <ion-buttons slot="secondary">
-      <ion-button>
-        Secondary
+      <ion-button size="large">
+        Favorite
       </ion-button>
     </ion-buttons>
+    <ion-title>Default Buttons</ion-title>
     <ion-buttons slot="primary">
       <ion-button>
-        Primary
+        Delete
       </ion-button>
     </ion-buttons>
-    <ion-title>Primary / Secondary Buttons</ion-title>
   </ion-toolbar>
 
   <ion-toolbar>
@@ -94,14 +80,14 @@
 
 <script lang="ts">
   import { IonBackButton, IonButton, IonButtons, IonIcon, IonMenuButton, IonTitle, IonToolbar } from '@ionic/vue';
-  import { create, ellipsisHorizontal, ellipsisVertical, helpCircle, search, personCircle, star } from 'ionicons/icons';
   import { defineComponent } from 'vue';
+  import { create, ellipsisHorizontal, ellipsisVertical, helpCircle, personCircle, search, star } from 'ionicons/icons';
 
   export default defineComponent({
     components: { IonBackButton, IonButton, IonButtons, IonIcon, IonMenuButton, IonTitle, IonToolbar },
     setup() {
-      return { create, ellipsisHorizontal, ellipsisVertical, helpCircle, search, personCircle, star };
-    },
+      return { create, ellipsisHorizontal, ellipsisVertical, helpCircle, personCircle, search, star };
+    }
   });
 </script>
 ```

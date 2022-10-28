@@ -1,37 +1,23 @@
 ```tsx
 import React from 'react';
 import { IonBackButton, IonButton, IonButtons, IonIcon, IonMenuButton, IonTitle, IonToolbar } from '@ionic/react';
-import { create, ellipsisHorizontal, ellipsisVertical, helpCircle, search, personCircle, star } from 'ionicons/icons';
+import { create, ellipsisHorizontal, ellipsisVertical, helpCircle, personCircle, search, star } from 'ionicons/icons';
 
 function Example() {
   return (
     <>
       <IonToolbar>
-        <IonButtons slot="start">
-          <IonButton>
-            Start
-          </IonButton>
-        </IonButtons>
-        <IonTitle>Start / End Buttons</IonTitle>
-        <IonButtons slot="end">
-          <IonButton>
-            End
-          </IonButton>
-        </IonButtons>
-      </IonToolbar>
-
-      <IonToolbar>
         <IonButtons slot="secondary">
-          <IonButton>
-            Secondary
+          <IonButton size="large">
+            Favorite
           </IonButton>
         </IonButtons>
+        <IonTitle>Default Buttons</IonTitle>
         <IonButtons slot="primary">
           <IonButton>
-            Primary
+            Delete
           </IonButton>
         </IonButtons>
-        <IonTitle>Primary / Secondary Buttons</IonTitle>
       </IonToolbar>
 
       <IonToolbar>
@@ -100,4 +86,5 @@ function Example() {
   );
 }
 export default Example;
+
 ```
