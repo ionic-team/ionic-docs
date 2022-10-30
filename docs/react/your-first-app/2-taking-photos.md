@@ -131,7 +131,7 @@ With the photo(s) stored into the main array we can display the images on the sc
   <IonGrid>
     <IonRow>
       {photos.map((photo, index) => (
-        <IonCol size="6" key={index}>
+        <IonCol size="6" key={photo.filepath}>
           <IonImg src={photo.webviewPath} />
         </IonCol>
       ))}
