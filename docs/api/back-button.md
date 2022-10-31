@@ -34,6 +34,13 @@ import Custom from '@site/static/usage/back-button/custom/index.md';
 
 <Custom />
 
+## Default Back History
+
+Occasionally an app may need to show the back button and navigate back when there is no history. This can be done by setting the `defaultHref` on the back button to a path. In order to use `defaultHref`, the app must contain a router with paths set.
+
+import DefaultHref from '@site/static/usage/back-button/default-href/index.md';
+
+<DefaultHref />
 
 ## Properties
 <Props />
