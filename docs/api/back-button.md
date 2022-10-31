@@ -28,6 +28,12 @@ import Basic from '@site/static/usage/back-button/basic/index.md';
 
 <Basic />
 
+## Custom Back Button
+
+import Custom from '@site/static/usage/back-button/custom/index.md';
+
+<Custom />
+
 
 ## Properties
 <Props />
