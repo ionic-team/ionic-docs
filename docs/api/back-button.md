@@ -18,9 +18,7 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 <EncapsulationPill type="shadow" />
 
 
-The back button navigates back in the app's history upon click. It is smart enough to know what to render based on the mode and when to show based on the navigation stack.
-
-To change what is displayed in the back button, use the `text` and `icon` properties.
+The back button navigates back in the app's history when clicked. It is only displayed when there is history in the navigation stack, unless [`defaultHref`](#default-back-history) is set. The back button displays different text and icon based on the mode, but this can be customized.
 
 ## Basic Usage
 
@@ -29,6 +27,8 @@ import Basic from '@site/static/usage/back-button/basic/index.md';
 <Basic />
 
 ## Custom Back Button
+
+By default, the back button will display the text `"Back"` with a `"chevron-back"` icon on `ios`, and an `"arrow-back-sharp"` icon on `md`. This can be customized per back button component by setting the `icon` or `text` properties.
 
 import Custom from '@site/static/usage/back-button/custom/index.md';
 
