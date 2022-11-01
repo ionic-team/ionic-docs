@@ -1,24 +1,26 @@
 ```html
 <template>
-  <ion-header>
-    <ion-toolbar>
-      <ion-buttons slot="start">
-        <ion-back-button default-href="/one"></ion-back-button>
-      </ion-buttons>
-      <ion-title>Back Button</ion-title>
-    </ion-toolbar>
-  </ion-header>
-  <ion-content class="ion-padding">
-    <h1>Page Two</h1>
-    <p>Use the back button to navigate to the previous page.</p>
-  </ion-content>
+  <ion-page>
+    <ion-header>
+      <ion-toolbar>
+        <ion-buttons slot="start">
+          <ion-back-button default-href="/one"></ion-back-button>
+        </ion-buttons>
+        <ion-title>Back Button</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content class="ion-padding">
+      <h1>Page Two</h1>
+      <p>Use the back button to navigate to the previous page.</p>
+    </ion-content>
+  </ion-page>
 </template>
 
 <script lang="ts">
-  import { IonHeader, IonTitle, IonToolbar, IonContent, IonButton, IonButtons, IonBackButton } from '@ionic/vue';
+  import { IonBackButton, IonButton, IonButtons, IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/vue';
 
   export default {
-    components: { IonHeader, IonTitle, IonToolbar, IonContent, IonButton, IonButtons, IonBackButton }
+    components: { IonBackButton, IonButton, IonButtons, IonContent, IonHeader, IonPage, IonTitle, IonToolbar }
   };
 </script>
 ```
