@@ -5,7 +5,7 @@ import { IonButton, IonButtons, IonTitle, IonToolbar } from '@ionic/react';
 function Example() {
   return (
     <IonToolbar>
-      <IonButtons>
+      <IonButtons slot="start">
         <IonButton>Button</IonButton>
       </IonButtons>
       <IonTitle>Default Buttons</IonTitle>
