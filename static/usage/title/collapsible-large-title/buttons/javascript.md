@@ -3,7 +3,7 @@
   <ion-toolbar>
     <ion-title>Title</ion-title>
     <ion-buttons collapse="true" slot="end">
-      <ion-button>Click Me</ion-button>
+      <ion-button>Button</ion-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
@@ -12,7 +12,7 @@
     <ion-toolbar>
       <ion-title size="large">Title</ion-title>
       <ion-buttons collapse="true" slot="end">
-        <ion-button>Click Me</ion-button>
+        <ion-button>Button</ion-button>
       </ion-buttons>
     </ion-toolbar>
   </ion-header>
