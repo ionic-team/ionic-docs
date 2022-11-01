@@ -107,7 +107,7 @@ Over in the `addNewToGallery` function, add the newly captured photo to the begi
   });
 
   this.photos.unshift({
-    filepath: "soon...",
+    filepath: 'soon...',
     webviewPath: capturedPhoto.webPath
   });
 }
