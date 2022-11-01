@@ -1,10 +1,10 @@
 ```tsx
 import React from 'react';
-import { IonBackButton, IonButtons, IonHeader, IonContent, IonToolbar, IonTitle } from '@ionic/react';
+import { IonBackButton, IonButtons, IonHeader, IonContent, IonPage, IonToolbar, IonTitle } from '@ionic/react';
 
 function PageTwo() {
   return (
-    <>
+    <IonPage>
       <IonHeader>
         <IonToolbar>
           <IonButtons slot="start">
@@ -17,7 +17,7 @@ function PageTwo() {
         <h1>Page Two</h1>
         <p>Use the back button to navigate to the previous page.</p>
       </IonContent>
-    </>
+    </IonPage>
   );
 }
 
