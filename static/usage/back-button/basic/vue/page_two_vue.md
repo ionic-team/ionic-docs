@@ -15,10 +15,10 @@
 </template>
 
 <script lang="ts">
-  import { IonHeader, IonTitle, IonToolbar, IonContent, IonButton, IonButtons, IonBackButton } from '@ionic/vue';
+  import { IonBackButton, IonButton, IonButtons, IonContent, IonHeader, IonTitle, IonToolbar } from '@ionic/vue';
 
   export default {
-    components: { IonHeader, IonTitle, IonToolbar, IonContent, IonButton, IonButtons, IonBackButton }
+    components: { IonBackButton, IonButton, IonButtons, IonContent, IonHeader, IonTitle, IonToolbar }
   };
 </script>
 ```

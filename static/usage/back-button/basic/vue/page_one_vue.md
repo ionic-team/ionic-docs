@@ -15,11 +15,11 @@
 </template>
 
 <script lang="ts">
-  import { IonHeader, IonTitle, IonToolbar, IonContent, IonNavLink, IonButton } from '@ionic/vue';
+  import { IonButton, IonContent, IonHeader, IonNavLink, IonPage, IonTitle, IonToolbar } from '@ionic/vue';
   import PageTwo from './PageTwo.vue';
 
   export default {
-    components: { IonHeader, IonTitle, IonToolbar, IonContent, IonNavLink, IonButton },
+    components: { IonButton, IonContent, IonHeader, IonNavLink, IonPage, IonTitle, IonToolbar },
     data() {
       return {
         component: PageTwo,
