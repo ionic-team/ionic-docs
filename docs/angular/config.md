@@ -14,54 +14,67 @@ Ionic Config provides a way to change the properties of components globally acro
 
 ## Global Config
 
-To override the initial Ionic config for the app, provide a config in `IonicModule.forRoot` in the `app.module.ts` file.
+To override the default Ionic configurations for your app, provide your own custom config to `IonicModule.forRoot(...)`. The available config keys can be found in the [`IonicConfig`](#ionicconfig) interface.
 
-```tsx
+For example, to disable ripple effects and default the mode to Material Design:
+
+```tsx title="app.module.ts"
 import { IonicModule } from '@ionic/angular';
 
 @NgModule({
   ...
   imports: [
-    BrowserModule,
     IonicModule.forRoot({
       rippleEffect: false,
       mode: 'md'
-    }),
-    AppRoutingModule
+    })
   ],
   ...
 })
 ```
 
-In the above example, we are disabling the Material Design ripple effect across the app, as well as forcing the mode to be Material Design.
-
 ## Per-Component Config
 
-Ionic Config is not reactive, so it is recommended to use a component's properties when you want to override its default behavior rather than set its config globally.
+Ionic Config is not reactive. Updating the config's value after the component has rendered will result in the previous value. It is recommended to use a component's properties instead of updating the config, when you require reactive values.
 
-```tsx
+**Not recommended**
+
+```ts
 import { IonicModule } from '@ionic/angular';
 
 @NgModule({
   ...
   imports: [
-    BrowserModule,
     IonicModule.forRoot({
+      // Not recommended when your app requires reactive values
       backButtonText: 'Go Back'
-    }),
-    AppRoutingModule
+    })
   ],
   ...
 })
 ```
 
-This will set the default text for `ion-back-button` to `Go Back`. However, if you were to change the value of the `backButtonText` config to `Do Not Go Back`, the `ion-back-button` default text would still default to `Go Back` as the component has already been initialized and rendered. Instead, it is recommended to use the `text` property on `ion-back-button`.
+**Recommended**
 
 ```html
-<ion-back-button [text]="getBackButtonText()"></ion-back-button>
+<ion-back-button [text]="backButtonText"></ion-back-button>
 ```
 
-In this example we have used our `ion-back-button` in such a way that the text can be dynamically updated if there were to be a change that warranted it, such as a language or locale change. The `getBackButtonText` method would be responsible for returning the correct text.
+```ts
+@Component(...)
+class MyComponent {
+  backButtonText = this.config.get('backButtonText');
+
+  constructor(private config: Config) { }
+
+  localeChanged(locale: string) {
+    if (locale === 'es_ES') {
+      this.backButtonText = 'Devolver';
+    }
+  }
+
+}
+```
 
 ## Per-Platform Config
 
@@ -78,17 +91,15 @@ import { isPlatform, IonicModule } from '@ionic/angular';
 @NgModule({
   ...
   imports: [
-    BrowserModule,
     IonicModule.forRoot({
       animated: !isPlatform('mobileweb')
-    }),
-    AppRoutingModule
+    })
   ],
   ...
 })
 ```
 
-The next example allows you to set an entirely different configuration based upon the platform, falling back to a default config if no platforms match:
+**Per-platform config with fallback for unmatched platforms:**
 
 ```tsx
 import { isPlatform, IonicModule } from '@ionic/angular';
@@ -108,15 +119,13 @@ const getConfig = () => {
 @NgModule({
   ...
   imports: [
-    BrowserModule,
-    IonicModule.forRoot(getConfig()),
-    AppRoutingModule
+    IonicModule.forRoot(getConfig())
   ],
   ...
 })
 ```
 
-Finally, this example allows you to accumulate a config object based upon different platform requirements:
+**Per-platform config overrides:**
 
 ```tsx
 import { isPlatform, IonicModule } from '@ionic/angular';
@@ -138,17 +147,79 @@ const getConfig = () => {
 @NgModule({
   ...
   imports: [
-    BrowserModule,
-    IonicModule.forRoot(getConfig()),
-    AppRoutingModule
+    IonicModule.forRoot(getConfig())
   ],
   ...
 })
 ```
 
-## Config Options
+## Methods
 
-Below is a list of config options that Ionic uses.
+### get
+
+|                 |                                                                                  |
+| --------------- | -------------------------------------------------------------------------------- |
+| **Description** | Returns a config value as an `any`. Returns `null` if the config is not defined. |
+| **Signature**   | `get(key: string, fallback?: any) => any`                                          |
+
+#### Examples
+
+```ts
+import { Config } from '@ionic/angular';
+
+@Component(...)
+class AppComponent {
+  constructor(config: Config) {
+    const mode = config.get('mode');
+  }
+}
+```
+
+### getBoolean
+
+|                 |                                                                                      |
+| --------------- | ------------------------------------------------------------------------------------ |
+| **Description** | Returns a config value as a `boolean`. Returns `false` if the config is not defined. |
+| **Signature**   | `getBoolean(key: string, fallback?: boolean) => boolean`                               |
+
+#### Examples
+
+```ts
+import { Config } from '@ionic/angular';
+
+@Component(...)
+class AppComponent {
+  constructor(config: Config) {
+    const swipeBackEnabled = config.getBoolean('swipeBackEnabled');
+  }
+}
+```
+
+### getNumber
+
+|                 |                                                                                 |
+| --------------- | ------------------------------------------------------------------------------- |
+| **Description** | Returns a config value as a `number`. Returns `0` if the config is not defined. |
+| **Signature**   | `getNumber(key: string, fallback?: number) => number`                             |
+
+#### Examples
+
+```ts
+import { Config } from '@ionic/angular';
+
+@Component(...)
+class AppComponent {
+  constructor(config: Config) {
+    const keyboardHeight = config.getNumber('keyboardHeight');
+  }
+}
+```
+
+## Interfaces
+
+### IonicConfig
+
+Below are the config options that Ionic uses.
 
 | Config                   | Type                                                                              | Description                                                                                              |
 | ------------------------ | --------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |

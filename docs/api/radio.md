@@ -1,13 +1,6 @@
 ---
 title: "ion-radio"
-hide_table_of_contents: true
-demoUrl: "/docs/demos/api/radio/index.html"
-demoSourceUrl: "https://github.com/ionic-team/ionic-docs/tree/main/static/demos/api/radio/index.html"
 ---
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-import TOCInline from '@theme/TOCInline';
-
 import Props from '@site/static/auto-generated/radio/props.md';
 import Events from '@site/static/auto-generated/radio/events.md';
 import Methods from '@site/static/auto-generated/radio/methods.md';
@@ -24,238 +17,47 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="shadow" />
 
-<h2 className="table-of-contents__title">Contents</h2>
 
-<TOCInline
-  toc={toc}
-  maxHeadingLevel={2}
-/>
+Radios should be used inside of a [radio group](./radio-group). Pressing a radio will check it and uncheck the previously selected radio, if there is one. They can also be checked programmatically by setting the value property of the parent radio group to the value of the radio.
 
+When radios are inside of a radio group, only one radio will be checked at any time. If more than one item should be selected, [checkboxes](./checkbox) should be used instead. Radios can be disabled within a group to prevent interaction with them.
 
+## Basic Usage
 
-Radios should be used inside of an [`ion-radio-group`](radio-group.md). Pressing on a radio will check it. They can also be checked programmatically by setting the value property of the parent `ion-radio-group` to the value of the radio.
+import Basic from '@site/static/usage/radio/basic/index.md';
 
-When radios are inside of a radio group, only one radio in the group will be checked at any time. Pressing a radio will check it and uncheck the previously selected radio, if there is one. If a radio is not in a group with another radio, then both radios will have the ability to be checked at the same time.
+<Basic />
 
 
+## Deselecting Radios
+
+By default, once a radio is selected it cannot be deselected; pressing it again will keep it selected. This behavior can be modified by using the `allowEmptySelection` property on the parent radio group, which enables the radios to be deselected.
+
+import EmptySelection from '@site/static/usage/radio/empty-selection/index.md';
+
+<EmptySelection />
 
 
+## Theming
 
+### Colors
 
-## Usage
+import Colors from '@site/static/usage/radio/theming/colors/index.md';
 
-<Tabs groupId="framework" defaultValue="angular" values={[{ value: 'angular', label: 'Angular' }, { value: 'javascript', label: 'Javascript' }, { value: 'react', label: 'React' }, { value: 'stencil', label: 'Stencil' }, { value: 'vue', label: 'Vue' }]}>
+<Colors />
 
-<TabItem value="angular">
+### CSS Custom Properties
 
-```html
-<ion-list>
-  <ion-radio-group value="biff">
-    <ion-list-header>
-      <ion-label>Name</ion-label>
-    </ion-list-header>
+import CSSProps from '@site/static/usage/radio/theming/css-properties/index.md';
 
-    <ion-item>
-      <ion-label>Biff</ion-label>
-      <ion-radio slot="start" value="biff"></ion-radio>
-    </ion-item>
+<CSSProps />
 
-    <ion-item>
-      <ion-label>Griff</ion-label>
-      <ion-radio slot="start" value="griff"></ion-radio>
-    </ion-item>
+### CSS Shadow Parts
 
-    <ion-item>
-      <ion-label>Buford</ion-label>
-      <ion-radio slot="start" value="buford"></ion-radio>
-    </ion-item>
-  </ion-radio-group>
-</ion-list>
-```
+import CSSParts from '@site/static/usage/radio/theming/css-shadow-parts/index.md';
 
+<CSSParts />
 
-</TabItem>
-
-
-<TabItem value="javascript">
-
-```html
-<ion-list>
-  <ion-radio-group value="biff">
-    <ion-list-header>
-      <ion-label>Name</ion-label>
-    </ion-list-header>
-
-    <ion-item>
-      <ion-label>Biff</ion-label>
-      <ion-radio slot="start" value="biff"></ion-radio>
-    </ion-item>
-
-    <ion-item>
-      <ion-label>Griff</ion-label>
-      <ion-radio slot="start" value="griff"></ion-radio>
-    </ion-item>
-
-    <ion-item>
-      <ion-label>Buford</ion-label>
-      <ion-radio slot="start" value="buford"></ion-radio>
-    </ion-item>
-  </ion-radio-group>
-</ion-list>
-```
-
-
-</TabItem>
-
-
-<TabItem value="react">
-
-```tsx
-import React, { useState } from 'react';
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonList, IonRadioGroup, IonListHeader, IonLabel, IonItem, IonRadio, IonItemDivider } from '@ionic/react';
-
-export const RadioExamples: React.FC = () => {
-  const [selected, setSelected] = useState<string>('biff');
-  return (
-    <IonPage>
-      <IonHeader>
-        <IonToolbar>
-          <IonTitle>Radio Examples</IonTitle>
-        </IonToolbar>
-      </IonHeader>
-      <IonContent>
-        <IonList>
-          <IonRadioGroup value={selected} onIonChange={e => setSelected(e.detail.value)}>
-            <IonListHeader>
-              <IonLabel>Name</IonLabel>
-            </IonListHeader>
-
-            <IonItem>
-              <IonLabel>Biff</IonLabel>
-              <IonRadio slot="start" value="biff" />
-            </IonItem>
-
-            <IonItem>
-              <IonLabel>Griff</IonLabel>
-              <IonRadio slot="start" value="griff" />
-            </IonItem>
-
-            <IonItem>
-              <IonLabel>Buford</IonLabel>
-              <IonRadio slot="start" value="buford" />
-            </IonItem>
-          </IonRadioGroup>
-          <IonItemDivider>Your Selection</IonItemDivider>
-          <IonItem>{selected ?? '(none selected'}</IonItem>
-        </IonList>
-      </IonContent>
-    </IonPage>
-  );
-};
-```
-
-</TabItem>
-
-
-<TabItem value="stencil">
-
-```tsx
-import { Component, h } from '@stencil/core';
-
-@Component({
-  tag: 'radio-example',
-  styleUrl: 'radio-example.css'
-})
-export class RadioExample {
-  render() {
-    return [
-      <ion-list>
-        <ion-radio-group value="biff">
-          <ion-list-header>
-            <ion-label>Name</ion-label>
-          </ion-list-header>
-
-          <ion-item>
-            <ion-label>Biff</ion-label>
-            <ion-radio slot="start" value="biff"></ion-radio>
-          </ion-item>
-
-          <ion-item>
-            <ion-label>Griff</ion-label>
-            <ion-radio slot="start" value="griff"></ion-radio>
-          </ion-item>
-
-          <ion-item>
-            <ion-label>Buford</ion-label>
-            <ion-radio slot="start" value="buford"></ion-radio>
-          </ion-item>
-        </ion-radio-group>
-      </ion-list>
-    ];
-  }
-}
-```
-
-
-</TabItem>
-
-
-<TabItem value="vue">
-
-```html
-<template>
-  <ion-list>
-    <ion-radio-group value="biff">
-      <ion-list-header>
-        <ion-label>Name</ion-label>
-      </ion-list-header>
-
-      <ion-item>
-        <ion-label>Biff</ion-label>
-        <ion-radio slot="start" value="biff"></ion-radio>
-      </ion-item>
-
-      <ion-item>
-        <ion-label>Griff</ion-label>
-        <ion-radio slot="start" value="griff"></ion-radio>
-      </ion-item>
-
-      <ion-item>
-        <ion-label>Buford</ion-label>
-        <ion-radio slot="start" value="buford"></ion-radio>
-      </ion-item>
-    </ion-radio-group>
-  </ion-list>
-</template>
-
-<script>
-import { 
-  IonItem, 
-  IonLabel, 
-  IonList, 
-  IonListHeader,
-  IonRadio, 
-  IonRadioGroup
-} from '@ionic/vue';
-import { defineComponent } from 'vue';
-
-export default defineComponent({
-  components: { 
-    IonItem, 
-    IonLabel, 
-    IonList, 
-    IonListHeader,
-    IonRadio, 
-    IonRadioGroup
-  }
-});
-</script>
-```
-
-
-</TabItem>
-
-</Tabs>
 
 ## Properties
 <Props />

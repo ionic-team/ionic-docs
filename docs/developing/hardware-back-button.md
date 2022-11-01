@@ -21,6 +21,10 @@ The hardware back button refers to the physical back button on an Android device
 
 ## Hardware Back Button in Capacitor and Cordova
 
+:::note
+The `@capacitor/app` package must be installed in Capacitor apps to use the hardware back button.
+:::
+
 When running in a Capacitor or Cordova application, Ionic Framework will emit an `ionBackButton` event when a user presses the hardware back button.
 
 When listening for the `ionBackButton` event, you can register a handler to be fired. This handler can perform actions such as quitting the app or opening a confirmation dialog. Each handler must be assigned a priority. By default, only one handler is fired per hardware back button press. The priority value is used to determine which callback should be called. This is useful because if you have a modal open, you likely would not want the modal to close _and_ the app to navigate backwards when pressing the hardware back button. Only running one handler at a time allows the modal to close but still requires another press of the hardware back button to navigate backwards.
