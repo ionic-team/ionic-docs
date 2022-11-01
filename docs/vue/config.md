@@ -74,9 +74,11 @@ const getConfig = () => {
 createApp(App).use(IonicVue, getConfig());
 ```
 
-## Config Options
+## Interfaces
 
-Below is a list of config options that Ionic uses.
+### IonicConfig
+
+Below are the config options that Ionic uses.
 
 | Config                   | Type                                                                          | Description                                                                                              |
 | ------------------------ | ----------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |

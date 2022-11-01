@@ -48,11 +48,19 @@ In `~/.bashrc`, `~/.bash_profile`, or similar shell startup scripts, make the fo
 
 1. Set the `ANDROID_SDK_ROOT` environment variable. This path should be the **Android SDK Location** used in the previous section.
 
+   For Mac:
+
    ```shell
-   $ export ANDROID_SDK_ROOT=$HOME/Library/Android/sdk
+   $ export ANDROID_SDK_ROOT=$HOME/Android/sdk
    ```
 
-1. Add the Android SDK command-line directories to `PATH`. Each directory corresponds to the category of <a href="https://developer.android.com/studio/command-line/" target="_blank">command-line tool</a>.
+   For Linux/Windows:
+
+   ```shell
+   $ export ANDROID_SDK_ROOT=$HOME/Android/Sdk
+   ```
+
+2. Add the Android SDK command-line directories to `PATH`. Each directory corresponds to the category of <a href="https://developer.android.com/studio/command-line/" target="_blank">command-line tool</a>.
 
    ```shell-session
    $ # avdmanager, sdkmanager
@@ -79,8 +87,8 @@ Click **Create Virtual Device** and select a suitable device definition. If unsu
 
 Once the AVD is created, launch the AVD into the Android emulator. Keeping the emulator running is the best way to ensure detection while developing Ionic apps for Android.
 
-<figure class="device">
-  <img alt="Android Emulator Booting" src="/img/installation/android-emulator-booting.png" />
+<figure className="device">
+  <img alt="Android Emulator Booting" src="/docs/img/installation/android-emulator-booting.png" />
 </figure>
 
 ### Set up an Android Device
@@ -166,7 +174,7 @@ Capacitor uses Android Studio to build and run apps to simulators and devices.
 To start a live-reload server run the following command.
 
 ```shell
-ionic capacitor run android -l --host=YOUR_IP_ADDRESS
+ionic capacitor run android -l --external
 ```
 
 When running on a device make sure the device and your development machine are connected to the same network.

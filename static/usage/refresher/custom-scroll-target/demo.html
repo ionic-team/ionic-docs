@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Refresher</title>
+  <link rel="stylesheet" href="../../common.css" />
+  <script src="../../common.js"></script>
+  <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core@6/dist/ionic/ionic.esm.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core@6/css/ionic.bundle.css" />
+
+  <style>
+    .ion-content-scroll-host {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      overflow-y: auto;
+    }
+  </style>
+</head>
+
+<body>
+  <ion-app>
+    <ion-header>
+      <ion-toolbar>
+        <ion-title>Pull to Refresh</ion-title>
+      </ion-toolbar>
+    </ion-header>
+
+    <ion-content scroll-y="false">
+      <ion-refresher id="refresher" slot="fixed">
+        <ion-refresher-content></ion-refresher-content>
+      </ion-refresher>
+
+      <div class="ion-content-scroll-host ion-padding">
+        <p>Pull this content down to trigger the refresh.</p>
+      </div>
+    </ion-content>
+  </ion-app>
+
+  <script>
+    const refresher = document.getElementById('refresher');
+
+    refresher.addEventListener('ionRefresh', () => {
+      setTimeout(() => {
+        // Any calls to load data go here
+        refresher.complete();
+      }, 2000);
+    });
+  </script>
+</body>
+
+</html>
