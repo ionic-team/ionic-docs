@@ -20,9 +20,9 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 Floating Action Buttons (FABs) represent the primary action in an application. By default, they have a circular shape. When pressed, the button may open more related actions.
 
-As the name suggests, FABs generally float over the content in a fixed position. This is achieved by wrapping the fab button in an [`ion-fab` component](/docs/api/fab). If the button is not wrapped with an `ion-fab`, it will scroll with the content.
+As the name suggests, FABs generally float over the content in a fixed position. This is achieved by wrapping the fab button in a [fab](./fab) component. If the button is not wrapped with a fab, it will scroll with the content.
 
-For usage examples, see the [`ion-fab` page](/docs/api/fab).
+For usage examples, see the [fab documentation](./fab).
 
 ## Properties
 <Props />

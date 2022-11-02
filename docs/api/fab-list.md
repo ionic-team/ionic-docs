@@ -12,11 +12,9 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="shadow" />
 
+The fab list component is a container for multiple [fab buttons](./fab-button). It contains actions related to the main fab button and is flung out on click. To specify what side the buttons should appear on, set the `side` property to `"start"`, `"end"`, `"top"`, or `"bottom"`.
 
-
-The `ion-fab-list` element is a container for multiple [fab buttons](/docs/api/fab-button). It contains actions related to the main fab button and is flung out on click. To specify what side the buttons should appear on, set the `side` property to 'start', 'end', 'top', 'bottom'.
-
-For usage examples, see the [`ion-fab` page](/docs/api/fab).
+For usage examples, see the [fab documentation](./fab).
 
 ## Properties
 <Props />
