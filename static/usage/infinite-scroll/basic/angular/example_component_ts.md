@@ -23,7 +23,7 @@ export class ExampleComponent implements OnInit {
   }
 
   onIonInfinite(ev) {
-    this.generateItem();
+    this.generateItems();
     setTimeout(() => {
       (ev as InfiniteScrollCustomEvent).target.complete();
     }, 500);
