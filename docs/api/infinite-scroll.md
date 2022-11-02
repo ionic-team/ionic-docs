@@ -25,7 +25,7 @@ import Basic from '@site/static/usage/infinite-scroll/basic/index.md';
 
 <Basic />
 
-## Infinite Scroll Content
+## Loading Text and Spinner
 
 The `ion-infinite-scroll-content` is responsible for the visual display of the infinite scroll interaction. By default this component changes its look depending on the infinite scroll's state. It displays a spinner that looks best based on the platform the user is on. Both the spinner and loading text can be customized by setting properties on the `ion-infinite-scroll-content` component.
 
