@@ -1,11 +1,6 @@
 ---
 title: "ion-buttons"
-hide_table_of_contents: true
 ---
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-import TOCInline from '@theme/TOCInline';
-
 import Props from '@site/static/auto-generated/buttons/props.md';
 import Events from '@site/static/auto-generated/buttons/events.md';
 import Methods from '@site/static/auto-generated/buttons/methods.md';
@@ -22,340 +17,56 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="scoped" />
 
-<h2 className="table-of-contents__title">Contents</h2>
 
-<TOCInline
-  toc={toc}
-  maxHeadingLevel={2}
-/>
+The Buttons component is a container element. It should be used inside of a [toolbar](./toolbar) and can contain several types of buttons, including standard [buttons](./button), [menu buttons](./menu-button), and [back buttons](./back-button).
+
+## Basic Usage
+
+import Basic from '@site/static/usage/buttons/basic/index.md';
+
+<Basic />
 
 
+## Buttons Placement
 
-The Buttons component is a container element. Buttons placed in a toolbar should be placed inside of the `<ion-buttons>` element.
-
-The `<ion-buttons>` element can be positioned inside of the toolbar using a named slot. The below chart has a description of each slot.
+Buttons can be positioned inside of the toolbar using a named slot. The below chart has a description of each slot.
 
 | Slot         | Description                                                                                              |
 |--------------|----------------------------------------------------------------------------------------------------------|
-| `secondary`  | Positions element to the `left` of the content in `ios` mode, and directly to the `right` in `md` mode.  |
-| `primary`    | Positions element to the `right` of the content in `ios` mode, and to the far `right` in `md` mode.      |
 | `start`      | Positions to the `left` of the content in LTR, and to the `right` in RTL.                                |
 | `end`        | Positions to the `right` of the content in LTR, and to the `left` in RTL.                                |
+| `secondary`  | Positions element to the `left` of the content in `ios` mode, and directly to the `right` in `md` mode.  |
+| `primary`    | Positions element to the `right` of the content in `ios` mode, and to the far `right` in `md` mode.      |
+
+import Placement from '@site/static/usage/buttons/placement/index.md';
+
+<Placement />
 
 
+## Types of Buttons
+
+A button in a toolbar is styled to be clear by default, but this can be changed using the [`fill`](./button#fill) property on the button. The properties included on [back button](./back-button) and [menu button](./menu-button) in this example are for display purposes; see their respective documentation for proper usage.
+
+import Types from '@site/static/usage/buttons/types/index.md';
+
+<Types />
 
 
-## Usage
+## Collapsible Buttons
 
-<Tabs groupId="framework" defaultValue="angular" values={[{ value: 'angular', label: 'Angular' }, { value: 'javascript', label: 'Javascript' }, { value: 'react', label: 'React' }, { value: 'stencil', label: 'Stencil' }, { value: 'vue', label: 'Vue' }]}>
+The `collapse` property can be set on the buttons to collapse them when the header collapses. This is typically used with [collapsible large titles](./title#collapsible-large-titles).
 
-<TabItem value="angular">
+:::info
 
-```html
-<ion-toolbar>
-  <ion-buttons slot="start">
-    <ion-back-button></ion-back-button>
-  </ion-buttons>
-  <ion-title>Back Button</ion-title>
-</ion-toolbar>
+This feature is only available for iOS.
 
-<ion-toolbar>
-  <ion-buttons slot="secondary">
-    <ion-button>
-      <ion-icon slot="icon-only" name="person-circle"></ion-icon>
-    </ion-button>
-    <ion-button>
-      <ion-icon slot="icon-only" name="search"></ion-icon>
-    </ion-button>
-  </ion-buttons>
-  <ion-title>Default Buttons</ion-title>
-  <ion-buttons slot="primary">
-    <ion-button color="secondary">
-      <ion-icon slot="icon-only" ios="ellipsis-horizontal" md="ellipsis-vertical"></ion-icon>
-    </ion-button>
-  </ion-buttons>
-</ion-toolbar>
+:::
 
-<ion-toolbar>
-  <ion-buttons slot="primary">
-    <ion-button (click)="clickedStar()">
-      <ion-icon slot="icon-only" name="star"></ion-icon>
-    </ion-button>
-  </ion-buttons>
-  <ion-title>Right side menu toggle</ion-title>
-  <ion-buttons slot="end">
-    <ion-menu-button autoHide="false"></ion-menu-button>
-  </ion-buttons>
-</ion-toolbar>
+<!-- Reuse the playground from the Title directory -->
+import CollapsibleLargeTitleButtons from '@site/static/usage/title/collapsible-large-title/buttons/index.md';
 
-<ion-toolbar>
-  <ion-buttons collapse="true">
-    <ion-button>
-      <ion-icon slot="icon-only" name="star"></ion-icon>
-    </ion-button>
-  </ion-buttons>
-  <ion-title>Collapsible Buttons</ion-title>
-</ion-toolbar>
-```
+<CollapsibleLargeTitleButtons />
 
-</TabItem>
-
-
-<TabItem value="javascript">
-
-```html
-<ion-toolbar>
-  <ion-buttons slot="start">
-    <ion-back-button></ion-back-button>
-  </ion-buttons>
-  <ion-title>Back Button</ion-title>
-</ion-toolbar>
-
-<ion-toolbar>
-  <ion-buttons slot="secondary">
-    <ion-button>
-      <ion-icon slot="icon-only" name="person-circle"></ion-icon>
-    </ion-button>
-    <ion-button>
-      <ion-icon slot="icon-only" name="search"></ion-icon>
-    </ion-button>
-  </ion-buttons>
-  <ion-title>Default Buttons</ion-title>
-  <ion-buttons slot="primary">
-    <ion-button color="secondary">
-      <ion-icon slot="icon-only" ios="ellipsis-horizontal" md="ellipsis-vertical"></ion-icon>
-    </ion-button>
-  </ion-buttons>
-</ion-toolbar>
-
-<ion-toolbar>
-  <ion-buttons slot="primary">
-    <ion-button onclick="clickedStar()">
-      <ion-icon slot="icon-only" name="star"></ion-icon>
-    </ion-button>
-  </ion-buttons>
-  <ion-title>Right side menu toggle</ion-title>
-  <ion-buttons slot="end">
-    <ion-menu-toggle auto-hide="false">
-      <ion-button>
-        <ion-icon slot="icon-only" name="menu"></ion-icon>
-      </ion-button>
-    </ion-menu-toggle>
-  </ion-buttons>
-</ion-toolbar>
-
-<ion-toolbar>
-  <ion-buttons collapse="true">
-    <ion-button>
-      <ion-icon slot="icon-only" name="star"></ion-icon>
-    </ion-button>
-  </ion-buttons>
-  <ion-title>Collapsible Buttons</ion-title>
-</ion-toolbar>
-```
-
-</TabItem>
-
-
-<TabItem value="react">
-
-```tsx
-import React from 'react';
-import { IonButtons, IonToolbar, IonBackButton, IonTitle, IonButton, IonIcon, IonMenuButton, IonContent } from '@ionic/react';
-import { personCircle, search, star, ellipsisHorizontal, ellipsisVertical } from 'ionicons/icons';
-
-export const ButtonsExample: React.FC = () => (
-  <IonContent>
-    <IonToolbar>
-      <IonButtons slot="start">
-        <IonBackButton defaultHref="/" />
-      </IonButtons>
-      <IonTitle>Back Button</IonTitle>
-    </IonToolbar>
-
-    <IonToolbar>
-      <IonButtons slot="secondary">
-        <IonButton>
-          <IonIcon slot="icon-only" icon={personCircle} />
-        </IonButton>
-        <IonButton>
-          <IonIcon slot="icon-only" icon={search} />
-        </IonButton>
-      </IonButtons>
-      <IonTitle>Default Buttons</IonTitle>
-      <IonButtons slot="primary">
-        <IonButton color="secondary">
-          <IonIcon slot="icon-only" ios={ellipsisHorizontal} md={ellipsisVertical} />
-        </IonButton>
-      </IonButtons>
-    </IonToolbar>
-
-    <IonToolbar>
-      <IonButtons slot="primary">
-        <IonButton onClick={() => {}}>
-          <IonIcon slot="icon-only" icon={star} />
-        </IonButton>
-      </IonButtons>
-      <IonTitle>Right side menu toggle</IonTitle>
-      <IonButtons slot="end">
-        <IonMenuButton autoHide={false} />
-      </IonButtons>
-    </IonToolbar>
-
-    <IonToolbar>
-      <IonButtons collapse="true">
-        <IonButton>
-          <IonIcon slot="icon-only" icon={star} />
-        </IonButton>
-      </IonButtons>
-      <IonTitle>Collapsible Buttons</IonTitle>
-    </IonToolbar>
-  </IonContent>
-);
-```
-
-</TabItem>
-
-
-<TabItem value="stencil">
-
-```tsx
-import { Component, h } from '@stencil/core';
-
-@Component({
-  tag: 'buttons-example',
-  styleUrl: 'buttons-example.css'
-})
-export class ButtonsExample {
-
-  clickedStar() {
-    console.log("Clicked star button");
-  }
-
-  render() {
-    return [
-      <ion-toolbar>
-        <ion-buttons slot="start">
-          <ion-back-button></ion-back-button>
-        </ion-buttons>
-        <ion-title>Back Button</ion-title>
-      </ion-toolbar>,
-
-      <ion-toolbar>
-        <ion-buttons slot="secondary">
-          <ion-button>
-            <ion-icon slot="icon-only" name="person-circle"></ion-icon>
-          </ion-button>
-          <ion-button>
-            <ion-icon slot="icon-only" name="search"></ion-icon>
-          </ion-button>
-        </ion-buttons>
-        <ion-title>Default Buttons</ion-title>
-        <ion-buttons slot="primary">
-          <ion-button color="secondary">
-            <ion-icon slot="icon-only" ios="ellipsis-horizontal" md="ellipsis-vertical"></ion-icon>
-          </ion-button>
-        </ion-buttons>
-      </ion-toolbar>,
-
-      <ion-toolbar>
-        <ion-buttons slot="primary">
-          <ion-button onClick={() => this.clickedStar()}>
-            <ion-icon slot="icon-only" name="star"></ion-icon>
-          </ion-button>
-        </ion-buttons>
-        <ion-title>Right side menu toggle</ion-title>
-        <ion-buttons slot="end">
-          <ion-menu-button autoHide={false}></ion-menu-button>
-        </ion-buttons>
-      </ion-toolbar>,
-
-      <ion-toolbar>
-        <ion-buttons collapse={true}>
-          <ion-button>
-            <ion-icon slot="icon-only" name="star"></ion-icon>
-          </ion-button>
-        </ion-buttons>
-        <ion-title>Collapsible Buttons</ion-title>
-      </ion-toolbar>
-    ];
-  }
-}
-```
-
-</TabItem>
-
-
-<TabItem value="vue">
-
-```html
-<template>
-  <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-back-button></ion-back-button>
-    </ion-buttons>
-    <ion-title>Back Button</ion-title>
-  </ion-toolbar>
-
-  <ion-toolbar>
-    <ion-buttons slot="secondary">
-      <ion-button>
-        <ion-icon slot="icon-only" :icon="personCircle"></ion-icon>
-      </ion-button>
-      <ion-button>
-        <ion-icon slot="icon-only" :icon="search"></ion-icon>
-      </ion-button>
-    </ion-buttons>
-    <ion-title>Default Buttons</ion-title>
-    <ion-buttons slot="primary">
-      <ion-button color="secondary">
-        <ion-icon slot="icon-only" ios="ellipsis-horizontal" md="ellipsis-vertical"></ion-icon>
-      </ion-button>
-    </ion-buttons>
-  </ion-toolbar>
-
-  <ion-toolbar>
-    <ion-buttons slot="primary">
-      <ion-button @click="clickedStar()">
-        <ion-icon slot="icon-only" name="star"></ion-icon>
-      </ion-button>
-    </ion-buttons>
-    <ion-title>Right side menu toggle</ion-title>
-    <ion-buttons slot="end">
-      <ion-menu-button auto-hide="false"></ion-menu-button>
-    </ion-buttons>
-  </ion-toolbar>
-
-  <ion-toolbar>
-    <ion-buttons collapse="true">
-      <ion-button>
-        <ion-icon slot="icon-only" name="star"></ion-icon>
-      </ion-button>
-    </ion-buttons>
-    <ion-title>Collapsible Buttons</ion-title>
-  </ion-toolbar>
-</template>
-
-<script>
-import { IonBackButton, IonButton, IonButtons, IonIcon, IonMenuButton, IonTitle, IonToolbar } from '@ionic/vue';
-import { personCircle, search } from 'ionicons/icons';
-import { defineComponent } from 'vue';
-
-export default defineComponent({
-  components: { IonBackButton, IonButton, IonButtons, IonIcon, IonMenuButton, IonTitle, IonToolbar },
-  setup() {
-    const clickedStar = () => {
-      console.log('Star clicked!');
-    }
-    return { personCircle, search, clickedStar };
-  }
-});
-</script>
-```
-
-</TabItem>
-
-</Tabs>
 
 ## Properties
 <Props />
