@@ -23,13 +23,14 @@ function Example() {
 
   useEffect(() => {
     generateItems();
-  }, [generateItems]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <IonContent>
       <IonList>
         {items.map((item, index) => (
-          <IonItem>
+          <IonItem key={item}>
             <IonAvatar slot="start">
               <img src={'https://picsum.photos/80/80?random=' + index} alt="avatar" />
             </IonAvatar>
