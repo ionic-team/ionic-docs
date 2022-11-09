@@ -29,7 +29,7 @@ function Example() {
         {items.map((item, index) => (
           <IonItem>
             <IonAvatar slot="start">
-              <img src={'https://loremflickr.com/80/80/person?random=' + index} alt="avatar" />
+              <img src={'https://picsum.photos/80/80?random=' + index} alt="avatar" />
             </IonAvatar>
             <IonLabel>{item}</IonLabel>
           </IonItem>
