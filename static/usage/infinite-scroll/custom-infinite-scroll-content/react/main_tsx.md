@@ -1,14 +1,6 @@
 ```tsx
 import React, { useState, useEffect } from 'react';
-import {
-  IonContent,
-  IonInfiniteScroll,
-  IonInfiniteScrollContent,
-  IonList,
-  IonItem,
-  IonAvatar,
-  IonLabel,
-} from '@ionic/react';
+import { IonContent, IonInfiniteScroll, IonList, IonItem, IonAvatar, IonLabel } from '@ionic/react';
 
 import './main.css';
 
@@ -21,7 +13,7 @@ function Example() {
       newItems.push(`Item ${items.length + i}`);
     }
     setItems([...items, ...newItems]);
-  }, []);
+  });
 
   return (
     <IonContent>

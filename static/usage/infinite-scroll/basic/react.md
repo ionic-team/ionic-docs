@@ -23,7 +23,7 @@ function Example() {
 
   useEffect(() => {
     generateItems();
-  }, []);
+  }, [generateItems]);
 
   return (
     <IonContent>

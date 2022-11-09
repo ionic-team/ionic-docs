@@ -19,7 +19,7 @@ function Example() {
       newItems.push(`Item ${items.length + i}`);
     }
     setItems([...items, ...newItems]);
-  }, []);
+  });
 
   return (
     <IonContent>
