@@ -12,9 +12,9 @@ function Example() {
         <IonItem>
           <IonLabel>Item</IonLabel>
         </IonItem>
-        <ion-item>
+        <IonItem>
           <IonLabel>Item</IonLabel>
-        </ion-item>
+        </IonItem>
       </IonList>
 
       <IonList>
