@@ -60,21 +60,24 @@ function renderProperties({ props: properties }) {
   // NOTE: replaces | with U+FF5C since MDX renders \| in tables incorrectly
   return `
 ${properties
-  .map(
-    (prop) => `
-### ${prop.name}
+  .map((prop) => {
+    const isDeprecated = prop.deprecation !== undefined;
+
+    const docs = isDeprecated ? `${prop.docs}\n_Deprecated_ ${prop.deprecation}` : prop.docs;
+
+    return `
+### ${prop.name} ${isDeprecated ? '(deprecated)' : ''}
 
 | | |
 | --- | --- |
-| **Description** | ${formatMultiline(prop.docs)} |
+| **Description** | ${formatMultiline(docs)} |
 | **Attribute** | \`${prop.attr}\` |
 | **Type** | \`${prop.type.replace(/\|/g, '\uff5c')}\` |
 | **Default** | \`${prop.default}\` |
 
-`
-  )
-  .join('\n')}
 `;
+  })
+  .join('\n')}`;
 }
 
 function renderEvents({ events }) {
