@@ -2693,7 +2693,7 @@
         {
           "name": "lab",
           "type": "boolean",
-          "summary": "Test your apps on multiple platform types in the browser. This option is deprecated and will be removed in an upcoming major release of Ionic CLI.",
+          "summary": "Test your apps on multiple platform types in the browser",
           "groups": [],
           "aliases": ["l"],
           "spec": {
