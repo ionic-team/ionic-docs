@@ -86,6 +86,7 @@ Below are the config options that Ionic uses.
 | `alertEnter`             | `AnimationBuilder`                                                              | Provides a custom enter animation for all `ion-alert`, overriding the default "animation".               |
 | `alertLeave`             | `AnimationBuilder`                                                              | Provides a custom leave animation for all `ion-alert`, overriding the default "animation".               |
 | `animated`               | `boolean`                                                                       | If `true`, Ionic will enable all animations and transitions across the app.                              |
+| `backButtonDefaultHref`  | `string`                                                                        | Overrides the default value for the `defaultHref` property in all `<ion-back-button>` components.        |
 | `backButtonIcon`         | `string`                                                                        | Overrides the default icon in all `<ion-back-button>` components.                                        |
 | `backButtonText`         | `string`                                                                        | Overrides the default text in all `<ion-back-button>` components.                                        |
 | `hardwareBackButton`     | `boolean`                                                                       | If `true`, Ionic will respond to the hardware back button in an Android device.                          |
