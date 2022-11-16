@@ -309,6 +309,17 @@ module.exports = {
         },
       };
     },
+    [
+      '@docusaurus/plugin-client-redirects',
+      {
+        redirects: [
+          {
+            to: '/docs/api/grid',
+            from: '/docs/layout/grid'
+          }
+        ]
+      }
+    ]
   ],
   themes: [
     [
