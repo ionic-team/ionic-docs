@@ -1,9 +1,6 @@
 ---
 title: "ion-menu-button"
-hide_table_of_contents: true
 ---
-import TOCInline from '@theme/TOCInline';
-
 import Props from '@site/static/auto-generated/menu-button/props.md';
 import Events from '@site/static/auto-generated/menu-button/events.md';
 import Methods from '@site/static/auto-generated/menu-button/methods.md';
@@ -20,18 +17,10 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="shadow" />
 
-<h2 className="table-of-contents__title">コンテンツ</h2>
 
-<TOCInline
-  toc={toc}
-  maxHeadingLevel={2}
-/>
+The Menu Button component contains an icon and automatically adds functionality to open a menu when clicked.
 
-
-
-Menu Buttonは、ページ上でMenuを開くためのアイコンおよび機能を自動的に作成するコンポーネントです。
-
-
+See the [menu](./menu) documentation for more information.
 
 
 ## プロパティ

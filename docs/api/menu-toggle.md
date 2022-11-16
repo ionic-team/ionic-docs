@@ -1,11 +1,6 @@
 ---
 title: "ion-menu-toggle"
-hide_table_of_contents: true
 ---
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-import TOCInline from '@theme/TOCInline';
-
 import Props from '@site/static/auto-generated/menu-toggle/props.md';
 import Events from '@site/static/auto-generated/menu-toggle/events.md';
 import Methods from '@site/static/auto-generated/menu-toggle/methods.md';
@@ -22,22 +17,13 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="shadow" />
 
-<h2 className="table-of-contents__title">コンテンツ</h2>
 
-<TOCInline
-  toc={toc}
-  maxHeadingLevel={2}
-/>
+The Menu Toggle component can be used to toggle a menu open or closed.
 
+Menu toggles are only visible when the selected menu is enabled. If the menu is disabled or it's being presented as a split pane, the menu toggle will be hidden. To always display the menu toggle, the `autoHide` property can be set to `false`.
 
+See the [menu](./menu#menu-toggle) documentation for more information.
 
-MenuToggleコンポーネントを使用すると、Menuの表示/非表示を切り替えることができます。
-
-デフォルトでは、選択したMenuがアクティブな場合にのみ表示されます。Menuは、開いたり閉じたりできるときにアクティブになります。Menuが無効になっている場合、または分割ペインとして表示されている場合、メニューは非アクティブとしてマークされ、ion-menu-toggleが非表示になります。
-
-`ion-menu-toggle` を常に表示しておきたい場合は、`autoHide`プロパティを`false`に設定できます。
-
-See the [Menu documentation](./menu#menu-toggle) for an example.
 
 ## プロパティ
 <Props />

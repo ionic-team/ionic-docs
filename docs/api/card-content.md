@@ -1,9 +1,6 @@
 ---
 title: "ion-card-content"
-hide_table_of_contents: true
 ---
-import TOCInline from '@theme/TOCInline';
-
 import Props from '@site/static/auto-generated/card-content/props.md';
 import Events from '@site/static/auto-generated/card-content/events.md';
 import Methods from '@site/static/auto-generated/card-content/methods.md';
@@ -13,19 +10,10 @@ import Slots from '@site/static/auto-generated/card-content/slots.md';
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
-<h2 className="table-of-contents__title">コンテンツ</h2>
 
-<TOCInline
-  toc={toc}
-  maxHeadingLevel={2}
-/>
+Card content is a child component of card that adds padding around its contents. It is recommended that any text content for a card should be placed inside of card content.
 
-
-
-`ion-card-content` は、 `ion-card` の子コンポーネントであり、コンテンツに padding を追加します。
-`ion-card-content` はすべて、`ion-card`コンポーネントに配置することをお勧めします。
-
-
+See the [Card](./card) documentation for more information.
 
 
 ## プロパティ

@@ -1,9 +1,6 @@
 ---
 title: "ion-virtual-scroll"
-hide_table_of_contents: true
 ---
-import TOCInline from '@theme/TOCInline';
-
 import Props from '@site/static/auto-generated/virtual-scroll/props.md';
 import Events from '@site/static/auto-generated/virtual-scroll/events.md';
 import Methods from '@site/static/auto-generated/virtual-scroll/methods.md';
@@ -19,21 +16,12 @@ import Slots from '@site/static/auto-generated/virtual-scroll/slots.md';
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 
-<h2 className="table-of-contents__title">コンテンツ</h2>
-
-<TOCInline
-  toc={toc}
-  maxHeadingLevel={2}
-/>
-
-
-
-Virtual Scrollは、Virtualの "infinite" リストを表示します。
-レコードの配列が、テンプレートを作成するデータを含むVirtual Scrollに渡されます。
-各レコードに対して作成されるセルと呼ばれるテンプレートは、
-アイテム、ヘッダー、およびフッターで構成できます。
-パフォーマンス上の理由から、リスト内のすべてのレコードが一度にレンダリングされるわけではありません。
-その代わりに、レコードの小さなサブセット(ビューポートをいっぱいにするのに十分な数)がレンダリングされ、ユーザーのスクロールに再利用されます。
+Virtual Scroll displays a virtual, "infinite" list. An array of records
+is passed to the virtual scroll containing the data to create templates
+for. The template created for each record, referred to as a cell, can
+consist of items, headers, and footers. For performance reasons, not every record
+in the list is rendered at once; instead a small subset of records (enough to fill the viewport)
+are rendered and reused as the user scrolls.
 
 このガイドでは、各フレームワークの統合に推奨される仮想スクロールパッケージと、Ionic Angularの非推奨コンポーネントである `ion-virtual-scroll` のドキュメントについて説明します。フレームワーク固有のソリューションの利用をお勧めしますが、まだそのコンポーネントを使用している開発者のために `ion-virtual-scroll` のドキュメントを以下に掲載します。
 

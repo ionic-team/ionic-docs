@@ -1,9 +1,6 @@
 ---
 title: "ion-accordion-group"
-hide_table_of_contents: true
 ---
-import TOCInline from '@theme/TOCInline';
-
 import Props from '@site/static/auto-generated/accordion-group/props.md';
 import Events from '@site/static/auto-generated/accordion-group/events.md';
 import Methods from '@site/static/auto-generated/accordion-group/methods.md';
@@ -15,18 +12,10 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="shadow" />
 
-<h2 className="table-of-contents__title">コンテンツ</h2>
-
-<TOCInline
-  toc={toc}
-  maxHeadingLevel={2}
-/>
-
-
-
 アコーディオン・グループは、アコーディオンインスタンスのためのコンテナです。これは、アコーディオンの状態を管理し、キーボードナビゲーションを提供します。
 
-より詳細な情報や使用方法については、 [Accordion Documentation](./accordion) を参照ください。
+より詳細な情報や使用方法については、 [Accordion](./accordion) を参照ください。
+
 
 ## Interfaces
 

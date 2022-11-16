@@ -265,7 +265,7 @@ This property is only supported when using `presentation="date"` and `preferWhee
 
 ### 確認ボタンの表示
 
-デフォルトの Done ボタンと Cancel ボタンは、それぞれ `done` メソッドと `cancel` メソッドを呼び出すように、あらかじめ設定されています。
+デフォルトのDoneボタンとCancelボタンは、それぞれ [`confirm`](#confirm) と [`cancel`](#cancel) メソッドを呼び出すように予め設定されています。
 
 <ShowingConfirmationButtons />
 

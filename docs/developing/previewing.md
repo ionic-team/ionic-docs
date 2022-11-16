@@ -38,5 +38,45 @@ $ ionic serve
 
 `ionic serve` を起動したまま、アプリの開発を続けます。変更を保存すると、その変更が適用された状態でアプリがリロードされます。
 
-ネイティブ機能を実装する場合は、[Platform Detection](../core-concepts/cross-platform.md) を使用します。
-実機でテストする場合は、 [iOS](ios.md) 、 [Android](android.md) はこちらを参照してください。
+When implementing native functionality, use [Platform Detection](../core-concepts/cross-platform.md).
+When you're ready to test on a real device, see here for [iOS](ios.md) and [Android](android.md).
+
+## Simulating a Mobile Viewport
+
+Each major browser vendor includes developer tools for mobile emulation. These tools offer the ability to change the emulated device type.
+
+### Chrome
+
+Open your application at the local or remote address that it is being served from. For example, `http://localhost:4200`. Then, open the Chrome developer tools by pressing `Ctrl+Shift+I` on Windows/Linux or `Cmd+Opt+I` on Mac.
+
+<img src="/docs/img/developing/previewing/chrome-dev-tools.png" alt="Chrome Dev Tools" />
+
+From here you can select different device types from the dropdown, change the orientation of the device and throttle the network speed.
+
+For additional features and information visit: https://developer.chrome.com/docs/devtools/device-mode/.
+
+### Safari
+
+:::note
+
+Prerequisites: Show Develop menu in menu bar option must be enabled in Safari Advanced options.
+
+:::
+
+Open your application at the local or remote address that it is being served from. For example, `http://localhost:4200`. Select the **Develop** menu in Safari and select **Enter Responsive Design Mode** . Alternatively you can use the keyboard shortcut `Cmd+Opt+R`.
+
+<img src="/docs/img/developing/previewing/safari-responsive-design-mode.png" alt="Safari Responsive Design Mode" />
+
+From here you can select different device types to emulate as well as change the orientation of the device.
+
+For additional features and information visit: https://developer.apple.com/safari/tools/.
+
+### Firefox
+
+Open your application at the local or remote address that it is being served from. For example, `http://localhost:4200`. Then, open the Firefox developer tools by pressing `Ctrl+Shift+M` on Windows/Linux or `Cmd+Opt+M` on Mac.
+
+<img src="/docs/img/developing/previewing/firefox-responsive-design-mode.png" alt="Firefox Responsive Design Mode" />
+
+From here you can select different device types from the dropdown, change the orientation of the device and throttle the network speed.
+
+For additional features and information visit: https://firefox-source-docs.mozilla.org/devtools-user/responsive_design_mode/.

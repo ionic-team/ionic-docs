@@ -114,3 +114,21 @@ In order for page transitions to work correctly, each page must have an `ion-pag
 ```
 
 See the [IonPage documentation](navigation.md#ionpage) for more information.
+
+## Ionic events bound in JavaScript are not firing
+
+When creating event listeners in JavaScript (i.e. `addEventListener`), event names should be written as kebab-case:
+
+```javascript
+const modal = await modalController.create({
+  component: Modal
+});
+
+modal.addEventListener('ion-modal-did-present', () => {
+  ...
+});
+
+await modal.present();
+```
+
+This is done to align with how developers bind events in their Vue templates by using kebab-case: https://vuejs.org/guide/essentials/component-basics.html#case-insensitivity

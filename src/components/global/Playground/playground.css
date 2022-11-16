@@ -204,11 +204,8 @@
 }
 
 .playground .frame-hidden {
-  display: none;
-}
-
-.playground .frame-visible {
-  width: 100%;
+  visibility: hidden;
+  width: 0%;
 }
 
 /** Tabs **/

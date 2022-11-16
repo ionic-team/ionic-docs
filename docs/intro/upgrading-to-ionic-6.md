@@ -397,6 +397,16 @@ ion-popover::part(content) {
 
 Ionicがサポートしているブラウザのリストが変更されました。 [ブラウザサポートガイド](../reference/browser-support) を確認し、サポートされているブラウザにアプリをデプロイするようにしましょう。
 
+If you have a `browserslist` or `.browserslistrc` file, update it with the following content:
+
+```
+Chrome >=60
+Firefox >=63
+Edge >=79
+Safari >=13
+iOS >=13
+```
+
 
 ### テスト
 

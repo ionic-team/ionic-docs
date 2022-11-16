@@ -1,9 +1,6 @@
 ---
 title: "ion-card-title"
-hide_table_of_contents: true
 ---
-import TOCInline from '@theme/TOCInline';
-
 import Props from '@site/static/auto-generated/card-title/props.md';
 import Events from '@site/static/auto-generated/card-title/events.md';
 import Methods from '@site/static/auto-generated/card-title/methods.md';
@@ -20,18 +17,10 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="shadow" />
 
-<h2 className="table-of-contents__title">コンテンツ</h2>
 
-<TOCInline
-  toc={toc}
-  maxHeadingLevel={2}
-/>
+Card title is a child component of card that should be placed inside of a [card header](./card-header).
 
-
-
-`ion-card-title` は `ion-card` の子コンポーネントです。
-
-
+See the [Card](./card) documentation for more information.
 
 
 ## プロパティ

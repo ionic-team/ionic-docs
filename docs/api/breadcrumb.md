@@ -1,9 +1,6 @@
 ---
 title: "ion-breadcrumb"
-hide_table_of_contents: true
 ---
-import TOCInline from '@theme/TOCInline';
-
 import Props from '@site/static/auto-generated/breadcrumb/props.md';
 import Events from '@site/static/auto-generated/breadcrumb/events.md';
 import Methods from '@site/static/auto-generated/breadcrumb/methods.md';
@@ -15,18 +12,10 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="shadow" />
 
-<h2 className="table-of-contents__title">コンテンツ</h2>
-
-<TOCInline
-  toc={toc}
-  maxHeadingLevel={2}
-/>
-
-
 
 Breadcrumbは、Breadcrumbsコンポーネントの子であり、単一のナビゲーションアイテムです。Breadcrumbは、アプリ内の他の場所にリンクすることも、プレーンテキストにすることもできます。Breadcrumbsは、次のBreadcrumbとの間にセパレータを持ち、オプションでアイコンを含むことができます。
 
-詳しい説明は [Breadcrumbs](/docs/api/breadcrumbs) を参照ください。
+詳しい説明は [Breadcrumbs](./breadcrumbs) を参照ください。
 
 ## Interfaces
 
