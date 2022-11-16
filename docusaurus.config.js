@@ -314,12 +314,12 @@ module.exports = {
       {
         redirects: [
           {
-            to: '/docs/api/grid',
-            from: '/docs/layout/grid'
-          }
-        ]
-      }
-    ]
+            to: '/api/grid',
+            from: '/docs/layout/grid',
+          },
+        ],
+      },
+    ],
   ],
   themes: [
     [
