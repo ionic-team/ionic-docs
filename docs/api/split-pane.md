@@ -58,7 +58,9 @@ By default, the split pane will expand when the screen is larger than 992px. To 
 
 ### CSS Custom Properties
 
-TODO
+import CSSProperties from '@site/static/usage/split-pane/theming/css-properties/index.md';
+
+<CSSProperties />
 
 ## Properties
 <Props />
