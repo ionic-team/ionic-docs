@@ -1,8 +1,6 @@
 ---
 title: "ion-backdrop"
 ---
-import TOCInline from '@theme/TOCInline';
-
 import Props from '@site/static/auto-generated/backdrop/props.md';
 import Events from '@site/static/auto-generated/backdrop/events.md';
 import Methods from '@site/static/auto-generated/backdrop/methods.md';
