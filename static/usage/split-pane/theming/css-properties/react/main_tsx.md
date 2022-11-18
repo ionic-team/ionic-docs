@@ -14,7 +14,7 @@ function Example() {
           </IonToolbar>
         </IonHeader>
         <IonContent className="ion-padding">
-          Menu Content
+          Menu Content is 350px wide and has a blue dashed border
         </IonContent>
       </IonMenu>
     

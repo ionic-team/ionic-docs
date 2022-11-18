@@ -7,7 +7,7 @@
       </ion-toolbar>
     </ion-header>
     <ion-content class="ion-padding">
-      Menu Content
+      Menu Content is 350px wide and has a blue dashed border
     </ion-content>
   </ion-menu>
 
