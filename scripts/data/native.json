@@ -954,6 +954,20 @@
     }
   },
   {
+    "packageName": "@awesome-cordova-plugins/dynamsoft-barcode-scanner",
+    "displayName": "Dynamsoft Barcode Scanner",
+    "description": "\nThis plugin offers an API to scan barcodes from the camera using Dynamsoft Barcode Reader.\n",
+    "usage": "\nCheck out the [Angular example](https://github.com/tony-xlh/Ionic-Angular-Cordova-Barcode-Scanner/blob/main/src/app/barcode-scanner/barcode-scanner.component.ts).\n",
+    "platforms": [
+      "Android",
+      "iOS"
+    ],
+    "repo": "https://github.com/tony-xlh/cordova-plugin-dynamsoft-barcode-reader",
+    "cordovaPlugin": {
+      "name": "cordova-plugin-dynamsoft-barcode-reader"
+    }
+  },
+  {
     "packageName": "@awesome-cordova-plugins/email-composer",
     "displayName": "Email Composer",
     "description": "\n\nRequires Cordova plugin: cordova-plugin-email-composer. For more info, please see the [Email Composer plugin docs](https://github.com/hypery2k/cordova-email-plugin).\n\n",
