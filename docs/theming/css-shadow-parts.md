@@ -123,10 +123,12 @@ CSS Shadow Parts are supported in the recent versions of all of the major browse
 
 ### Vendor Prefixed Pseudo-Elements
 
+<p>
 <a href="https://developer.mozilla.org/en-US/docs/Glossary/Vendor_Prefix" target="_blank" rel="noopener noreferrer">
   Vendor prefixed
 </a> pseudo-elements are not supported at this time. An example of this would be any of the `::-webkit-scrollbar` pseudo-elements:
-
+</p>
+  
 ```css
 /* Does NOT work */
 my-component::part(scroll)::-webkit-scrollbar {
