@@ -24,7 +24,7 @@
 
   function scrollToTop() {
     // Passing a duration to the method makes it so the scroll slowly
-    // goes to the bottom instead of instantly
+    // goes to the top instead of instantly
     content.scrollToTop(500);
   }
 </script>
