@@ -15,11 +15,11 @@
 </template>
 
 <script lang="ts">
-  import { IonHeader, IonTitle, IonToolbar, IonContent, IonButton, IonButtons, IonBackButton } from '@ionic/vue';
+  import { IonHeader, IonTitle, IonToolbar, IonContent, IonButtons, IonBackButton } from '@ionic/vue';
   import { caretBack } from 'ionicons/icons';
 
   export default {
-    components: { IonHeader, IonTitle, IonToolbar, IonContent, IonButton, IonButtons, IonBackButton },
+    components: { IonHeader, IonTitle, IonToolbar, IonContent, IonButtons, IonBackButton },
     setup() {
       return { caretBack }
     }

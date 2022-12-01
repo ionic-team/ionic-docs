@@ -17,10 +17,10 @@
 </template>
 
 <script lang="ts">
-  import { IonBackButton, IonButton, IonButtons, IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/vue';
+  import { IonBackButton, IonButtons, IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/vue';
 
   export default {
-    components: { IonBackButton, IonButton, IonButtons, IonContent, IonHeader, IonPage, IonTitle, IonToolbar }
+    components: { IonBackButton, IonButtons, IonContent, IonHeader, IonPage, IonTitle, IonToolbar }
   };
 </script>
 ```
