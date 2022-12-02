@@ -18,11 +18,9 @@ import TabItem from '@theme/TabItem';
 
 [Apache Cordova](https://cordova.apache.org/) is an open source native runtime that allows developers to build native mobile apps with HTML, CSS, and JavaScript. Similar to [Capacitor](https://capacitorjs.com/), Ionic’s own native runtime, Cordova allows developers to access native device features, such as camera, keyboard, and geolocation, using a system of plugins. A plugin is a small amount of add-on code that provides JavaScript interface to native components. They allow your app to use native device capabilities beyond what is available to pure web apps.
 
-For developers using Ionic with Cordova, our team has developed a collection of TypeScript wrappers for open source Cordova plugins that make it easy to add native functionality to any Ionic app. See [Ionic Native](https://github.com/ionic-team/ionic-native).
+For developers using Ionic with Cordova, a collection of TypeScript wrappers for open source Cordova plugins have been developed to make it easy to add native functionality to any Ionic app. See [Awesome Cordova Plugins](https://github.com/danielsogl/awesome-cordova-plugins).
 
 These plugins are submitted and maintained by the Ionic community. While community members are generally quick to find and fix issues, certain plugins may not function properly.
-
-For professional developers and teams that require dedicated native plugin support & SLAs, ongoing maintenance, and security patches, please explore our [premium options](https://ionicframework.com/native), including plugin support and pre-built solutions for common native use cases.
 
 <intro-end />
 
@@ -32,11 +30,11 @@ These docs are for apps built with Ionic Framework 4.0.0 and greater. For older 
 
 ## Capacitor Support
 
-In addition to Cordova, Ionic Native also works with [Capacitor](https://capacitorjs.com), Ionic's official native runtime. Basic usage below. For complete details, [see the Capacitor documentation](https://capacitorjs.com/docs/cordova/using-cordova-plugins).
+In addition to Cordova, the TypeScript wrappers also work with [Capacitor](https://capacitorjs.com), Ionic's official native runtime. Basic usage below. For complete details, [see the Capacitor documentation](https://capacitorjs.com/docs/cordova/using-cordova-plugins).
 
 ## Usage
 
-All plugins have two components - the native code (Cordova) and the TypeScript code (Ionic Native).
+All plugins have two components - the native code (Cordova) and the TypeScript code (Awesome Cordova Plugins).
 Cordova plugins are also wrapped in a `Promise` or `Observable` in order to provide a common plugin interface and modernized development approach.
 
 Using the [Camera plugin](native/camera.md) as an example, first install it:
