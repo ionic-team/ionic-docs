@@ -23,9 +23,13 @@
     components: { IonButton, IonContent },
     methods: {
       scrollToBottom() {
+        // Passing a duration to the method makes it so the scroll slowly
+        // goes to the bottom instead of instantly
         this.$refs.content.$el.scrollToBottom(500);
       },
       scrollToTop() {
+        // Passing a duration to the method makes it so the scroll slowly
+        // goes to the top instead of instantly
         this.$refs.content.$el.scrollToTop(500);
       },
     }

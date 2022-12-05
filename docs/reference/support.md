@@ -43,13 +43,13 @@ The Ionic team has compiled a set of recommendations for using the Ionic Framewo
 
 | Framework | Minimum Angular Version | Maximum Angular Version | TypeScript |
 | :-------: | :---------------------: | :---------------------: | :--------: |
-| v7        | v13                     | v14.x^                   | 4.4+       |   
-| v6        | v12                     | v14.x^                  | 4.0+       |
+| v7        | v13                     | v15.x^                   | 4.4+       |   
+| v6        | v12                     | v15.x^                  | 4.0+       |
 | v5        | v8.2                    | v12.x                   | 3.5+       |
 | v4        | v8.2                    | v11.x                   | 3.5+       |
 | v3        | v5.2.11                 | v5.2.11                 | 2.6.2      |
 
-> ^ Angular 14.x support was added in Ionic v6.1.9.
+> ^ Angular 14.x supported starting in Ionic v6.1.9. Angular 15.x supported starting in Ionic v6.3.6.
 
 **Angular 13+ Support On Older Versions of iOS**
 

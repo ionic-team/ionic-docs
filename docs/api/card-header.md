@@ -1,9 +1,6 @@
 ---
 title: "ion-card-header"
-hide_table_of_contents: true
 ---
-import TOCInline from '@theme/TOCInline';
-
 import Props from '@site/static/auto-generated/card-header/props.md';
 import Events from '@site/static/auto-generated/card-header/events.md';
 import Methods from '@site/static/auto-generated/card-header/methods.md';
@@ -15,18 +12,10 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="shadow" />
 
-<h2 className="table-of-contents__title">Contents</h2>
 
-<TOCInline
-  toc={toc}
-  maxHeadingLevel={2}
-/>
+Card header is a child component of card that should be placed before the card content. It can contain a [card title](./card-title) and a [card subtitle](./card-subtitle).
 
-
-
-`ion-card-header` is a header component for `ion-card`.
-
-
+See the [Card](./card) documentation for more information.
 
 
 ## Properties

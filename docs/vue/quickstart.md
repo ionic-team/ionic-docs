@@ -479,7 +479,7 @@ Let's fill the `NewItem.vue` file with some placeholder content for the moment.
   </ion-page>
 </template>
 
-<script>
+<script lang="ts">
   import { IonBackButton, IonButtons, IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/vue';
   import { defineComponent } from 'vue';
 
