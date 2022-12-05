@@ -85,14 +85,14 @@ function Example() {
 
       <IonToolbar>
         <IonButtons slot="start">
-          <IonBackButton default-href="#"></IonBackButton>
+          <IonBackButton defaultHref="#"></IonBackButton>
         </IonButtons>
         <IonTitle>Back Button</IonTitle>
       </IonToolbar>
 
       <IonToolbar>
         <IonButtons slot="start">
-          <IonMenuButton auto-hide="false"></IonMenuButton>
+          <IonMenuButton autoHide={false}></IonMenuButton>
         </IonButtons>
         <IonTitle>Menu Button</IonTitle>
       </IonToolbar>

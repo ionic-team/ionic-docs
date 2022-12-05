@@ -1,9 +1,6 @@
 ---
 title: "ion-nav-link"
-hide_table_of_contents: true
 ---
-import TOCInline from '@theme/TOCInline';
-
 import Props from '@site/static/auto-generated/nav-link/props.md';
 import Events from '@site/static/auto-generated/nav-link/events.md';
 import Methods from '@site/static/auto-generated/nav-link/methods.md';
@@ -18,22 +15,12 @@ import Slots from '@site/static/auto-generated/nav-link/slots.md';
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
-<h2 className="table-of-contents__title">Contents</h2>
-
-<TOCInline
-  toc={toc}
-  maxHeadingLevel={2}
-/>
-
-
 
 A navigation link is used to navigate to a specified component. The component can be navigated to by going `forward`, `back` or as a `root` component.
 
 It is the element form of calling the `push()`, `pop()`, and `setRoot()` methods on the navigation controller.
 
-For an example of how to use `ion-nav-link`, visit the [`ion-nav` docs](./nav#using-navlink).
-
-
+See the [nav](./nav#using-navlink) documentation for more information.
 
 
 ## Properties

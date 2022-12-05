@@ -397,6 +397,16 @@ Ensure `null` is not passed in as a value to the `placeholder` property. We reco
 
 The list of browsers that Ionic supports has changed. Review the [Browser Support Guide](../reference/browser-support) to ensure you are deploying apps to supported browsers.
 
+If you have a `browserslist` or `.browserslistrc` file, update it with the following content:
+
+```
+Chrome >=60
+Firefox >=63
+Edge >=79
+Safari >=13
+iOS >=13
+```
+
 
 ### Testing
 

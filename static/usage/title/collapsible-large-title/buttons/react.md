@@ -9,7 +9,7 @@ function Example() {
         <IonToolbar>
           <IonTitle>Title</IonTitle>
           <IonButtons collapse={true} slot="end">
-            <IonButton>Click Me</IonButton>
+            <IonButton>Button</IonButton>
           </IonButtons>
         </IonToolbar>
       </IonHeader>
@@ -18,7 +18,7 @@ function Example() {
           <IonToolbar>
             <IonTitle size="large">Title</IonTitle>
             <IonButtons collapse={true} slot="end">
-              <IonButton>Click Me</IonButton>
+              <IonButton>Button</IonButton>
             </IonButtons>
           </IonToolbar>
         </IonHeader>
