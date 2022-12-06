@@ -168,8 +168,24 @@ export default function Playground({
       await Promise.all([waitForFrame(frameiOS.current), waitForFrame(frameMD.current)]);
 
       const message = { darkMode: isDarkTheme };
-      frameiOS.current.contentWindow.postMessage(message);
-      frameMD.current.contentWindow.postMessage(message);
+      /**
+       * When changing the versioned docs, the frame reference can be undefined
+       * after the waitForFrame promise resolves.
+       *
+       * We need to check for the iOS frame reference before posting the message.
+       */
+      if (frameiOS.current) {
+        frameiOS.current.contentWindow.postMessage(message);
+      }
+      /**
+       * When changing the versioned docs, the frame reference can be undefined
+       * after the waitForFrame promise resolves.
+       *
+       * We need to check for the MD frame reference before posting the message.
+       */
+      if (frameMD.current) {
+        frameMD.current.contentWindow.postMessage(message);
+      }
     }
   };
 
