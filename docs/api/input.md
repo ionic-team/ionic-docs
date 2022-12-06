@@ -23,7 +23,7 @@ The input component is a wrapper to the HTML input element with custom styling a
 
 ## Basic Usage
 
-import Basic from '@site/static/usage/input/basic/index.md';
+import Basic from '@site/static/usage/v7/input/basic/index.md';
 
 <Basic />
 
@@ -32,7 +32,7 @@ import Basic from '@site/static/usage/input/basic/index.md';
 
 The input component is meant for text type inputs only, such as `"text"`, `"password"`, `"email"`, `"number"`, `"search"`, `"tel"`, and `"url"`. It supports all standard text input events including keyup, keydown, keypress, and more. The default `type` is `"text"`.
 
-import Types from '@site/static/usage/input/types/index.md';
+import Types from '@site/static/usage/v7/input/types/index.md';
 
 <Types />
 
@@ -41,7 +41,7 @@ import Types from '@site/static/usage/input/types/index.md';
 
 Labels will take up the width of their content by default. This positioning can be changed to be a fixed width, stacked, or floating label.
 
-import Labels from '@site/static/usage/input/labels/index.md';
+import Labels from '@site/static/usage/v7/input/labels/index.md';
 
 <Labels />
 
@@ -50,7 +50,7 @@ import Labels from '@site/static/usage/input/labels/index.md';
 
 Inputs offer two options for clearing the input based on how you interact with it. The first way is by adding the `clearInput` property which will show a clear button when the input has a `value`. The second way is the `clearOnEdit` property which will clear the input after it has been blurred and then typed in again. Inputs with a `type` set to `"password"` will have `clearOnEdit` enabled by default.
 
-import Clear from '@site/static/usage/input/clear/index.md';
+import Clear from '@site/static/usage/v7/input/clear/index.md';
 
 <Clear />
 
@@ -59,7 +59,7 @@ import Clear from '@site/static/usage/input/clear/index.md';
 
 Material Design offers filled styles for an input when it is inside of an item. The `fill` property on the item can be set to either `"solid"` or `"outline"`.
 
-import Fill from '@site/static/usage/input/fill/index.md';
+import Fill from '@site/static/usage/v7/input/fill/index.md';
 
 <Fill />
 
@@ -69,7 +69,7 @@ import Fill from '@site/static/usage/input/fill/index.md';
 Helper & error text can be used inside of an item with an input by slotting a note in the `"helper"` and `"error"` slots. The error slot will not be displayed unless the `ion-invalid` class is added to the `ion-item`. In Angular, this is done automatically through form validation. In JavaScript, React and Vue, the class needs to be manually added based on your own validation.
 
 <!-- Reuse the playground from the Item directory -->
-import HelperError from '@site/static/usage/item/helper-error/index.md';
+import HelperError from '@site/static/usage/v7/item/helper-error/index.md';
 
 <HelperError />
 
@@ -78,7 +78,7 @@ import HelperError from '@site/static/usage/item/helper-error/index.md';
 The item counter is helper text that displays under an input to notify the user of how many characters have been entered out of the total that the input will accept. When adding counter, the default behavior is to format the value that gets displayed as `inputLength` / `maxLength`. This behavior can be customized by passing in a formatter function to the `counterFormatter` property.
 
 <!-- Reuse the playground from the Item directory -->
-import Counter from '@site/static/usage/item/counter/index.md';
+import Counter from '@site/static/usage/v7/item/counter/index.md';
 
 <Counter />
 
@@ -87,7 +87,7 @@ import Counter from '@site/static/usage/item/counter/index.md';
 
 ### Colors
 
-import Colors from '@site/static/usage/input/theming/colors/index.md';
+import Colors from '@site/static/usage/v7/input/theming/colors/index.md';
 
 <Colors />
 
@@ -95,7 +95,7 @@ import Colors from '@site/static/usage/input/theming/colors/index.md';
 
 Input uses scoped encapsulation, which means it will automatically scope its CSS by appending each of the styles with an additional class at runtime. Overriding scoped selectors in CSS requires a [higher specificity](https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity) selector. Targeting the `ion-input` for customization will not work; therefore we recommend adding a class and customizing it that way.
 
-import CSSProps from '@site/static/usage/input/theming/css-properties/index.md';
+import CSSProps from '@site/static/usage/v7/input/theming/css-properties/index.md';
 
 <CSSProps />
 

@@ -23,13 +23,13 @@ Checkboxes allow the selection of multiple options from a set of options. They a
 
 ## Basic Usage
 
-import Basic from '@site/static/usage/checkbox/basic/index.md';
+import Basic from '@site/static/usage/v7/checkbox/basic/index.md';
 
 <Basic />
 
 ## Indeterminate Checkboxes
 
-import Indeterminate from '@site/static/usage/checkbox/indeterminate/index.md';
+import Indeterminate from '@site/static/usage/v7/checkbox/indeterminate/index.md';
 
 <Indeterminate />
 
@@ -37,7 +37,7 @@ import Indeterminate from '@site/static/usage/checkbox/indeterminate/index.md';
 
 ### CSS Custom Properties
 
-import CSSProps from '@site/static/usage/checkbox/theming/css-properties/index.md';
+import CSSProps from '@site/static/usage/v7/checkbox/theming/css-properties/index.md';
 
 <CSSProps />
 
