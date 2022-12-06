@@ -5,9 +5,4 @@ import react from './react.md';
 import vue from './vue.md';
 import angular from './angular.md';
 
-<Playground
-  version="7"
-  code={{ javascript, react, vue, angular }}
-  src="usage/v6/item/detail-arrows/demo.html"
-  size="350px"
-/>
+<Playground code={{ javascript, react, vue, angular }} src="usage/v6/item/detail-arrows/demo.html" size="350px" />
