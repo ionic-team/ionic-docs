@@ -1,5 +1,5 @@
 ---
-title: "ion-avatar"
+title: 'ion-avatar'
 ---
 
 import Props from '@site/static/auto-generated/avatar/props.md';
@@ -11,7 +11,10 @@ import Slots from '@site/static/auto-generated/avatar/slots.md';
 
 <head>
   <title>ion-avatar: Circular Application Avatar Icon Component</title>
-  <meta name="description" content="Ion-avatars are circular application components that wrap an image or icon. They can represent a person or an object, by themselves or inside of any element." />
+  <meta
+    name="description"
+    content="Ion-avatars are circular application components that wrap an image or icon. They can represent a person or an object, by themselves or inside of any element."
+  />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
@@ -24,19 +27,19 @@ Avatars can be used by themselves or inside of any element. If placed inside of 
 
 ## Basic Usage
 
-import Basic from '@site/static/usage/avatar/basic/index.md';
+import Basic from '@site/static/usage/v6/avatar/basic/index.md';
 
 <Basic />
 
 ## Chip Avatar
 
-import Chip from '@site/static/usage/avatar/chip/index.md';
+import Chip from '@site/static/usage/v6/avatar/chip/index.md';
 
 <Chip />
 
 ## Item Avatar
 
-import Item from '@site/static/usage/avatar/item/index.md';
+import Item from '@site/static/usage/v6/avatar/item/index.md';
 
 <Item />
 
@@ -44,24 +47,30 @@ import Item from '@site/static/usage/avatar/item/index.md';
 
 ### CSS Custom Properties
 
-import CSSProps from '@site/static/usage/avatar/theming/css-properties/index.md';
+import CSSProps from '@site/static/usage/v6/avatar/theming/css-properties/index.md';
 
 <CSSProps />
 
 ## Properties
+
 <Props />
 
 ## Events
+
 <Events />
 
 ## Methods
+
 <Methods />
 
 ## CSS Shadow Parts
+
 <Parts />
 
 ## CSS Custom Properties
+
 <CustomProps />
 
 ## Slots
+
 <Slots />

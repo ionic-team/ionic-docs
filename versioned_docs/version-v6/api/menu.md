@@ -1,6 +1,7 @@
 ---
-title: "ion-menu"
+title: 'ion-menu'
 ---
+
 import Props from '@site/static/auto-generated/menu/props.md';
 import Events from '@site/static/auto-generated/menu/events.md';
 import Methods from '@site/static/auto-generated/menu/methods.md';
@@ -10,13 +11,15 @@ import Slots from '@site/static/auto-generated/menu/slots.md';
 
 <head>
   <title>ion-menu: API Framework Docs for Types of Menu Components</title>
-  <meta name="description" content="ion-menu components are navigation drawers that slide in from the side of the current view. Read our framework docs for the available menu types on Ionic API." />
+  <meta
+    name="description"
+    content="ion-menu components are navigation drawers that slide in from the side of the current view. Read our framework docs for the available menu types on Ionic API."
+  />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="shadow" />
-
 
 The Menu component is a navigation drawer that slides in from the side of the current view.
 By default, it slides in from the left, but the side can be overridden.
@@ -27,7 +30,7 @@ These can be controlled from the templates, or programmatically using the MenuCo
 
 ## Basic Usage
 
-import BasicUsage from '@site/static/usage/menu/basic/index.md';
+import BasicUsage from '@site/static/usage/v6/menu/basic/index.md';
 
 <BasicUsage />
 
@@ -35,7 +38,7 @@ import BasicUsage from '@site/static/usage/menu/basic/index.md';
 
 The [ion-menu-toggle](./menu-toggle) component can be used to create custom button that can open or close the menu.
 
-import MenuToggle from '@site/static/usage/menu/toggle/index.md';
+import MenuToggle from '@site/static/usage/v6/menu/toggle/index.md';
 
 <MenuToggle />
 
@@ -43,7 +46,7 @@ import MenuToggle from '@site/static/usage/menu/toggle/index.md';
 
 The `type` property can be used to customize how menus display in your application.
 
-import MenuType from '@site/static/usage/menu/type/index.md';
+import MenuType from '@site/static/usage/v6/menu/type/index.md';
 
 <MenuType />
 
@@ -51,7 +54,7 @@ import MenuType from '@site/static/usage/menu/type/index.md';
 
 ### CSS Shadow Parts
 
-import Theming from '@site/static/usage/menu/theming/index.md';
+import Theming from '@site/static/usage/v6/menu/theming/index.md';
 
 <Theming />
 
@@ -68,23 +71,26 @@ interface MenuCustomEvent<T = any> extends CustomEvent {
 }
 ```
 
-
-
-
 ## Properties
+
 <Props />
 
 ## Events
+
 <Events />
 
 ## Methods
+
 <Methods />
 
 ## CSS Shadow Parts
+
 <Parts />
 
 ## CSS Custom Properties
+
 <CustomProps />
 
 ## Slots
+
 <Slots />

@@ -1,6 +1,7 @@
 ---
-title: "ion-refresher"
+title: 'ion-refresher'
 ---
+
 import Props from '@site/static/auto-generated/refresher/props.md';
 import Events from '@site/static/auto-generated/refresher/events.md';
 import Methods from '@site/static/auto-generated/refresher/methods.md';
@@ -10,23 +11,23 @@ import Slots from '@site/static/auto-generated/refresher/slots.md';
 
 <head>
   <title>ion-refresher: Pull-to-Refresh Page Content on Ionic Apps</title>
-  <meta name="description" content="ion-refresher provides pull-to-refresh functionality on content components. Learn how this lets users pull down on a page using touch to retrieve more data." />
+  <meta
+    name="description"
+    content="ion-refresher provides pull-to-refresh functionality on content components. Learn how this lets users pull down on a page using touch to retrieve more data."
+  />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
-
 
 Refresher provides pull-to-refresh functionality on a content component. The pull-to-refresh pattern lets a user pull down on a list of data in order to retrieve more data.
 
 Data should be modified during the refresher's output events. Once the async operation has completed and the refreshing should end, `complete()` needs to be called on the refresher.
 
-
 ## Basic Usage
 
-import Basic from '@site/static/usage/refresher/basic/index.md';
+import Basic from '@site/static/usage/v6/refresher/basic/index.md';
 
 <Basic />
-
 
 ## Pull Properties
 
@@ -34,10 +35,9 @@ The refresher has several properties for customizing the pull gesture. Set the `
 
 These properties do not apply when the [native refresher](#native-refreshers) is enabled.
 
-import PullProperties from '@site/static/usage/refresher/pull-properties/index.md';
+import PullProperties from '@site/static/usage/v6/refresher/pull-properties/index.md';
 
 <PullProperties />
-
 
 ## Custom Refresher Content
 
@@ -45,10 +45,9 @@ The default icon, spinner, and text can be customized on the [refresher content]
 
 Setting `pullingIcon` will disable the [native refresher](#native-refreshers).
 
-import CustomContent from '@site/static/usage/refresher/custom-content/index.md';
+import CustomContent from '@site/static/usage/v6/refresher/custom-content/index.md';
 
 <CustomContent />
-
 
 ## Native Refreshers
 
@@ -62,24 +61,21 @@ Certain refresher properties such as the [Pull Properties](#pull-properties), `c
 
 The native refreshers can be disabled by setting the `pullingIcon` on the [refresher content](#custom-refresher-content) to any icon or spinner. See the [Ionicons](https://ionic.io/ionicons) and [Spinner](./spinner) documentation for accepted values.
 
-
 ## Usage with Virtual Scroll
 
 Refresher requires a scroll container to function. When using a virtual scrolling solution, you will need to disable scrolling on the `ion-content` and indicate which element container is responsible for the scroll container with the `.ion-content-scroll-host` class target.
 
-import CustomScrollTarget from '@site/static/usage/refresher/custom-scroll-target/index.md';
+import CustomScrollTarget from '@site/static/usage/v6/refresher/custom-scroll-target/index.md';
 
 <CustomScrollTarget />
-
 
 ## Advanced Usage
 
 While the refresher can be used with any type of content, a common use case in native apps is to display a list of data that gets updated on refresh. In the below example, the app generates a list of data and then appends data to the top of the list when the refresh is completed. In a real app, the data would be received and updated after sending a request via a network or database call.
 
-import Advanced from '@site/static/usage/refresher/advanced/index.md';
+import Advanced from '@site/static/usage/v6/refresher/advanced/index.md';
 
 <Advanced />
-
 
 ## Interfaces
 
@@ -103,19 +99,25 @@ interface RefresherCustomEvent extends CustomEvent {
 ```
 
 ## Properties
+
 <Props />
 
 ## Events
+
 <Events />
 
 ## Methods
+
 <Methods />
 
 ## CSS Shadow Parts
+
 <Parts />
 
 ## CSS Custom Properties
+
 <CustomProps />
 
 ## Slots
+
 <Slots />

@@ -1,6 +1,7 @@
 ---
-title: "ion-nav"
+title: 'ion-nav'
 ---
+
 import Props from '@site/static/auto-generated/nav/props.md';
 import Events from '@site/static/auto-generated/nav/events.md';
 import Methods from '@site/static/auto-generated/nav/methods.md';
@@ -10,7 +11,10 @@ import Slots from '@site/static/auto-generated/nav/slots.md';
 
 <head>
   <title>ion-nav | Nav View Component for Ionic Framework Apps</title>
-  <meta name="description" content="ion-nav is a standalone for loading arbitrary, and pushing new, components on to the stack. Loading Nav view, and pushing others, won't affect overall routers." />
+  <meta
+    name="description"
+    content="ion-nav is a standalone for loading arbitrary, and pushing new, components on to the stack. Loading Nav view, and pushing others, won't affect overall routers."
+  />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
@@ -25,7 +29,7 @@ Unlike Router Outlet, Nav is not tied to a particular router. This means that if
 
 NavLink is a simplified API when interacting with Nav. Developers can customize the component, pass along component properties, modify the direction of the route animation or define a custom animation when navigating.
 
-import NavLinkExample from '@site/static/usage/nav/nav-link/index.md';
+import NavLinkExample from '@site/static/usage/v6/nav/nav-link/index.md';
 
 <NavLinkExample />
 
@@ -41,22 +45,26 @@ interface NavCustomEvent extends CustomEvent {
 }
 ```
 
-
-
 ## Properties
+
 <Props />
 
 ## Events
+
 <Events />
 
 ## Methods
+
 <Methods />
 
 ## CSS Shadow Parts
+
 <Parts />
 
 ## CSS Custom Properties
+
 <CustomProps />
 
 ## Slots
+
 <Slots />

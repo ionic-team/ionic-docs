@@ -1,6 +1,7 @@
 ---
-title: "ion-badge"
+title: 'ion-badge'
 ---
+
 import Props from '@site/static/auto-generated/badge/props.md';
 import Events from '@site/static/auto-generated/badge/events.md';
 import Methods from '@site/static/auto-generated/badge/methods.md';
@@ -10,7 +11,10 @@ import Slots from '@site/static/auto-generated/badge/slots.md';
 
 <head>
   <title>Badges | ion-badge: iOS & Android App Notification Badge Icons</title>
-  <meta name="description" content="Badges are inline block elements that appear near other elements on iOS & Android apps—use ion-badges as notifications that indicate how many items there are." />
+  <meta
+    name="description"
+    content="Badges are inline block elements that appear near other elements on iOS & Android apps—use ion-badges as notifications that indicate how many items there are."
+  />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
@@ -21,7 +25,7 @@ Badges are inline block elements that usually appear near another element. Typic
 
 ## Basic Usage
 
-import Basic from '@site/static/usage/badge/basic/index.md';
+import Basic from '@site/static/usage/v6/badge/basic/index.md';
 
 <Basic />
 
@@ -29,30 +33,36 @@ import Basic from '@site/static/usage/badge/basic/index.md';
 
 ### Colors
 
-import Colors from '@site/static/usage/badge/theming/colors/index.md';
+import Colors from '@site/static/usage/v6/badge/theming/colors/index.md';
 
 <Colors />
 
 ### CSS Properties
 
-import CSSProps from '@site/static/usage/badge/theming/css-properties/index.md';
+import CSSProps from '@site/static/usage/v6/badge/theming/css-properties/index.md';
 
 <CSSProps />
 
 ## Properties
+
 <Props />
 
 ## Events
+
 <Events />
 
 ## Methods
+
 <Methods />
 
 ## CSS Shadow Parts
+
 <Parts />
 
 ## CSS Custom Properties
+
 <CustomProps />
 
 ## Slots
+
 <Slots />

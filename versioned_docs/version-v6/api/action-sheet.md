@@ -1,6 +1,7 @@
 ---
-title: "ion-action-sheet"
+title: 'ion-action-sheet'
 ---
+
 import Props from '@site/static/auto-generated/action-sheet/props.md';
 import Events from '@site/static/auto-generated/action-sheet/events.md';
 import Methods from '@site/static/auto-generated/action-sheet/methods.md';
@@ -10,17 +11,19 @@ import Slots from '@site/static/auto-generated/action-sheet/slots.md';
 
 <head>
   <title>ion-action-sheet | Action Sheet Dialog for iOS and Android Apps</title>
-  <meta name="description" content="Action Sheets are dialogs that display a set of options above app content and must be manually dismissed. Read to learn about use on iOS and Android devices." />
+  <meta
+    name="description"
+    content="Action Sheets are dialogs that display a set of options above app content and must be manually dismissed. Read to learn about use on iOS and Android devices."
+  />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="scoped" />
 
-
 An Action Sheet is a dialog that displays a set of options. It appears on top of the app's content, and must be manually dismissed by the user before they can resume interaction with the app. Destructive options are made obvious in `ios` mode. There are multiple ways to dismiss the action sheet, including tapping the backdrop or hitting the escape key on desktop.
 
-import Basic from '@site/static/usage/action-sheet/basic/index.md';
+import Basic from '@site/static/usage/v6/action-sheet/basic/index.md';
 
 <Basic />
 
@@ -50,7 +53,7 @@ We recommend passing a custom class to `cssClass` in the `create` method and usi
 }
 ```
 
-import Styling from '@site/static/usage/action-sheet/theming/styling/index.md';
+import Styling from '@site/static/usage/v6/action-sheet/theming/styling/index.md';
 
 <Styling />
 
@@ -58,7 +61,7 @@ import Styling from '@site/static/usage/action-sheet/theming/styling/index.md';
 
 Any of the defined [CSS Custom Properties](#css-custom-properties-1) can be used to style the Action Sheet without needing to target individual elements.
 
-import CssCustomProperties from '@site/static/usage/action-sheet/theming/css-properties/index.md';
+import CssCustomProperties from '@site/static/usage/v6/action-sheet/theming/css-properties/index.md';
 
 <CssCustomProperties />
 
@@ -105,19 +108,25 @@ interface ActionSheetOptions {
 ```
 
 ## Properties
+
 <Props />
 
 ## Events
+
 <Events />
 
 ## Methods
+
 <Methods />
 
 ## CSS Shadow Parts
+
 <Parts />
 
 ## CSS Custom Properties
+
 <CustomProps />
 
 ## Slots
+
 <Slots />

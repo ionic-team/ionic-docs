@@ -1,6 +1,7 @@
 ---
-title: "ion-picker"
+title: 'ion-picker'
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
@@ -13,7 +14,10 @@ import Slots from '@site/static/auto-generated/picker/slots.md';
 
 <head>
   <title>Picker | Display Buttons and Columns for ion-picker on Ionic Apps</title>
-  <meta name="description" content="A Picker is a dialog that displays a row of buttons and columns underneath. Ion-picker appears on top of the app's content, and at the bottom of the viewport." />
+  <meta
+    name="description"
+    content="A Picker is a dialog that displays a row of buttons and columns underneath. Ion-picker appears on top of the app's content, and at the bottom of the viewport."
+  />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
@@ -26,16 +30,15 @@ A Picker is a dialog that displays a row of buttons and columns underneath. It a
 
 Display a list of options in a single, scrollable column.
 
-import SingleColumn from '@site/static/usage/picker/single-column/index.md';
+import SingleColumn from '@site/static/usage/v6/picker/single-column/index.md';
 
 <SingleColumn />
-
 
 ## Multiple Columns
 
 Display multiple columns of different options.
 
-import MultipleColumn from '@site/static/usage/picker/multiple-column/index.md';
+import MultipleColumn from '@site/static/usage/v6/picker/multiple-column/index.md';
 
 <MultipleColumn />
 
@@ -105,13 +108,9 @@ interface PickerOptions {
 }
 ```
 
-
-
-
 ## Usage
 
 <Tabs groupId="framework" defaultValue="angular" values={[{ value: 'angular', label: 'Angular' }, { value: 'react', label: 'React' }, { value: 'vue', label: 'Vue' }]}>
-
 
 <TabItem value="angular">
 
@@ -124,12 +123,12 @@ import { Component } from '@angular/core';
 import { PickerController } from '@ionic/angular';
 @Component({
   selector: 'app-picker-example',
-  template: 'picker-example.component.html'
+  template: 'picker-example.component.html',
 })
 export class PickerExample {
   private selectedAnimal: string;
-  constructor(private pickerController: PickerController) { }
-  
+  constructor(private pickerController: PickerController) {}
+
   async presentPicker() {
     const picker = await this.pickerController.create({
       buttons: [
@@ -138,7 +137,7 @@ export class PickerExample {
           handler: (selected) => {
             this.selectedAnimal = selected.animal.value;
           },
-        }
+        },
       ],
       columns: [
         {
@@ -147,9 +146,9 @@ export class PickerExample {
             { text: 'Dog', value: 'dog' },
             { text: 'Cat', value: 'cat' },
             { text: 'Bird', value: 'bird' },
-          ]
-        }
-      ]
+          ],
+        },
+      ],
     });
     await picker.present();
   }
@@ -180,7 +179,7 @@ const PickerExample: React.FC = () => {
                 {
                   text: 'Confirm',
                   handler: (selected) => {
-                    setValue(selected.animal.value)
+                    setValue(selected.animal.value);
                   },
                 },
               ],
@@ -225,7 +224,7 @@ const PickerExample: React.FC = () => {
                 {
                   text: 'Confirm',
                   handler: (selected) => {
-                    setValue(`${selected.animal.value}, ${selected.vehicle.value}`)
+                    setValue(`${selected.animal.value}, ${selected.vehicle.value}`);
                   },
                 },
               ]
@@ -234,9 +233,7 @@ const PickerExample: React.FC = () => {
         >
           Show Picker using params
         </IonButton>
-        {value && (
-          <div>Selected Value: {value}</div>
-        )}
+        {value && <div>Selected Value: {value}</div>}
       </IonContent>
     </IonPage>
   );
@@ -244,7 +241,6 @@ const PickerExample: React.FC = () => {
 ```
 
 </TabItem>
-
 
 <TabItem value="vue">
 
@@ -257,7 +253,7 @@ const PickerExample: React.FC = () => {
 </template>
 
 <script>
-import { IonButton, pickerController } from "@ionic/vue";
+import { IonButton, pickerController } from '@ionic/vue';
 export default {
   components: {
     IonButton,
@@ -265,15 +261,15 @@ export default {
   data() {
     return {
       pickingOptions: {
-        name: "animal",
+        name: 'animal',
         options: [
-          { text: "Dog", value: "dog" },
-          { text: "Cat", value: "cat" },
-          { text: "Bird", value: "bird" },
+          { text: 'Dog', value: 'dog' },
+          { text: 'Cat', value: 'cat' },
+          { text: 'Bird', value: 'bird' },
         ],
       },
       picked: {
-        animal: "",
+        animal: '',
       },
     };
   },
@@ -283,11 +279,11 @@ export default {
         columns: [this.pickingOptions],
         buttons: [
           {
-            text: "Cancel",
-            role: "cancel",
+            text: 'Cancel',
+            role: 'cancel',
           },
           {
-            text: "Confirm",
+            text: 'Confirm',
             handler: (value) => {
               this.picked = value;
               console.log(`Got Value ${value}`);
@@ -302,25 +298,30 @@ export default {
 </script>
 ```
 
-
 </TabItem>
 
 </Tabs>
 
 ## Properties
+
 <Props />
 
 ## Events
+
 <Events />
 
 ## Methods
+
 <Methods />
 
 ## CSS Shadow Parts
+
 <Parts />
 
 ## CSS Custom Properties
+
 <CustomProps />
 
 ## Slots
+
 <Slots />

@@ -1,6 +1,7 @@
 ---
-title: "ion-alert"
+title: 'ion-alert'
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
@@ -13,14 +14,15 @@ import Slots from '@site/static/auto-generated/alert/slots.md';
 
 <head>
   <title>ion-alert: Ionic API Alert Buttons with Custom Message Prompts</title>
-  <meta name="description" content="ion-alert dialog presents or collects information using inputs. Custom alert button messages appear above the app's content and must be manually dismissed." />
+  <meta
+    name="description"
+    content="ion-alert dialog presents or collects information using inputs. Custom alert button messages appear above the app's content and must be manually dismissed."
+  />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="scoped" />
-
-
 
 An Alert is a dialog that presents users with information or collects information from the user using inputs. An alert appears on top of the app's content, and must be manually dismissed by the user before they can resume interaction with the app. It can also optionally have a `header`, `subHeader` and `message`.
 
@@ -28,7 +30,7 @@ An Alert is a dialog that presents users with information or collects informatio
 
 ### Controller
 
-import Controller from '@site/static/usage/alert/presenting/controller/index.md';
+import Controller from '@site/static/usage/v6/alert/presenting/controller/index.md';
 
 <Controller />
 
@@ -81,18 +83,18 @@ function Example() {
 </template>
 
 <script lang="ts">
-import { IonAlert, IonButton, IonContent } from '@ionic/vue';
-import { defineComponent, ref } from 'vue';
+  import { IonAlert, IonButton, IonContent } from '@ionic/vue';
+  import { defineComponent, ref } from 'vue';
 
-export default defineComponent({
-  components: { IonAlert, IonButton },
-  setup() {
-    const isOpenRef = ref(false);
-    const setOpen = (state: boolean) => isOpenRef.value = state;
-    
-    return { isOpenRef, setOpen }
-  }
-});
+  export default defineComponent({
+    components: { IonAlert, IonButton },
+    setup() {
+      const isOpenRef = ref(false);
+      const setOpen = (state: boolean) => (isOpenRef.value = state);
+
+      return { isOpenRef, setOpen };
+    },
+  });
 </script>
 ```
 
@@ -105,10 +107,9 @@ In the array of `buttons`, each button includes properties for its `text`, and o
 
 Optionally, a `role` property can be added to a button, such as `cancel`. If a `cancel` role is on one of the buttons, then if the alert is dismissed by tapping the backdrop, then it will fire the handler from the button with a cancel role.
 
-import Buttons from '@site/static/usage/alert/buttons/index.md';
+import Buttons from '@site/static/usage/v6/alert/buttons/index.md';
 
 <Buttons />
-
 
 ## Inputs
 
@@ -116,13 +117,13 @@ Alerts can also include several different inputs whose data can be passed back t
 
 ### Text Inputs Example
 
-import TextInputs from '@site/static/usage/alert/inputs/text-inputs/index.md';
+import TextInputs from '@site/static/usage/v6/alert/inputs/text-inputs/index.md';
 
 <TextInputs />
 
 ### Radio Example
 
-import Radios from '@site/static/usage/alert/inputs/radios/index.md';
+import Radios from '@site/static/usage/v6/alert/inputs/radios/index.md';
 
 <Radios />
 
@@ -152,12 +153,12 @@ Any of the defined [CSS Custom Properties](#css-custom-properties) can be used t
 }
 ```
 
-import Customization from '@site/static/usage/alert/customization/index.md';
+import Customization from '@site/static/usage/v6/alert/customization/index.md';
 
 <Customization />
 
 :::note
- If you are building an Ionic Angular app, the styles need to be added to a global stylesheet file.
+If you are building an Ionic Angular app, the styles need to be added to a global stylesheet file.
 :::
 
 ## Accessibility
@@ -170,7 +171,6 @@ It is strongly recommended that your Alert have a `message`, as well as either a
 
 All ARIA attributes can be manually overwritten by defining custom values in the `htmlAttributes` property of the Alert.
 
-
 ## Interfaces
 
 ### AlertButton
@@ -180,10 +180,9 @@ interface AlertButton {
   text: string;
   role?: 'cancel' | 'destructive' | string;
   cssClass?: string | string[];
-  handler?: (value: any) => boolean | void | {[key: string]: any};
+  handler?: (value: any) => boolean | void | { [key: string]: any };
 }
 ```
-
 
 ### AlertInput
 
@@ -205,7 +204,6 @@ interface AlertInput {
   tabindex?: number;
 }
 ```
-
 
 ### AlertOptions
 
@@ -232,19 +230,25 @@ interface AlertOptions {
 ```
 
 ## Properties
+
 <Props />
 
 ## Events
+
 <Events />
 
 ## Methods
+
 <Methods />
 
 ## CSS Shadow Parts
+
 <Parts />
 
 ## CSS Custom Properties
+
 <CustomProps />
 
 ## Slots
+
 <Slots />

@@ -1,6 +1,7 @@
 ---
-title: "ion-datetime"
+title: 'ion-datetime'
 ---
+
 import Props from '@site/static/auto-generated/datetime/props.md';
 import Events from '@site/static/auto-generated/datetime/events.md';
 import Methods from '@site/static/auto-generated/datetime/methods.md';
@@ -8,36 +9,39 @@ import Parts from '@site/static/auto-generated/datetime/parts.md';
 import CustomProps from '@site/static/auto-generated/datetime/custom-props.md';
 import Slots from '@site/static/auto-generated/datetime/slots.md';
 
-import Basic from '@site/static/usage/datetime/basic/index.md';
+import Basic from '@site/static/usage/v6/datetime/basic/index.md';
 
-import MaxMin from '@site/static/usage/datetime/date-constraints/max-min/index.md';
-import Values from '@site/static/usage/datetime/date-constraints/values/index.md';
-import Advanced from '@site/static/usage/datetime/date-constraints/advanced/index.md';
+import MaxMin from '@site/static/usage/v6/datetime/date-constraints/max-min/index.md';
+import Values from '@site/static/usage/v6/datetime/date-constraints/values/index.md';
+import Advanced from '@site/static/usage/v6/datetime/date-constraints/advanced/index.md';
 
-import CustomLocale from '@site/static/usage/datetime/localization/custom-locale/index.md';
-import HourCycle from '@site/static/usage/datetime/localization/hour-cycle/index.md';
-import FirstDayOfWeek from '@site/static/usage/datetime/localization/first-day-of-week/index.md';
-import LocaleExtensionTags from '@site/static/usage/datetime/localization/locale-extension-tags/index.md';
-import TimeLabel from '@site/static/usage/datetime/localization/time-label/index.md';
+import CustomLocale from '@site/static/usage/v6/datetime/localization/custom-locale/index.md';
+import HourCycle from '@site/static/usage/v6/datetime/localization/hour-cycle/index.md';
+import FirstDayOfWeek from '@site/static/usage/v6/datetime/localization/first-day-of-week/index.md';
+import LocaleExtensionTags from '@site/static/usage/v6/datetime/localization/locale-extension-tags/index.md';
+import TimeLabel from '@site/static/usage/v6/datetime/localization/time-label/index.md';
 
-import MonthAndYear from '@site/static/usage/datetime/presentation/month-and-year/index.md';
-import Time from '@site/static/usage/datetime/presentation/time/index.md';
-import Date from '@site/static/usage/datetime/presentation/date/index.md';
+import MonthAndYear from '@site/static/usage/v6/datetime/presentation/month-and-year/index.md';
+import Time from '@site/static/usage/v6/datetime/presentation/time/index.md';
+import Date from '@site/static/usage/v6/datetime/presentation/date/index.md';
 
-import ShowingDefaultTitle from '@site/static/usage/datetime/title/showing-default-title/index.md';
-import CustomizingTitle from '@site/static/usage/datetime/title/customizing-title/index.md';
+import ShowingDefaultTitle from '@site/static/usage/v6/datetime/title/showing-default-title/index.md';
+import CustomizingTitle from '@site/static/usage/v6/datetime/title/customizing-title/index.md';
 
-import ShowingConfirmationButtons from '@site/static/usage/datetime/buttons/showing-confirmation-buttons/index.md';
-import CustomizingButtons from '@site/static/usage/datetime/buttons/customizing-buttons/index.md';
-import CustomizingButtonTexts from '@site/static/usage/datetime/buttons/customizing-button-texts/index.md';
+import ShowingConfirmationButtons from '@site/static/usage/v6/datetime/buttons/showing-confirmation-buttons/index.md';
+import CustomizingButtons from '@site/static/usage/v6/datetime/buttons/customizing-buttons/index.md';
+import CustomizingButtonTexts from '@site/static/usage/v6/datetime/buttons/customizing-button-texts/index.md';
 
-import MultipleDateSelection from '@site/static/usage/datetime/multiple/index.md';
+import MultipleDateSelection from '@site/static/usage/v6/datetime/multiple/index.md';
 
-import Theming from '@site/static/usage/datetime/theming/index.md';
+import Theming from '@site/static/usage/v6/datetime/theming/index.md';
 
 <head>
   <title>ion-datetime: Ionic API Input for Datetime Format Picker</title>
-  <meta name="description" content="Datetimes present a picker interface to select dates and times. Ionic's API Datetime input component easily displays a preferred format, and manages values." />
+  <meta
+    name="description"
+    content="Datetimes present a picker interface to select dates and times. Ionic's API Datetime input component easily displays a preferred format, and manages values."
+  />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
@@ -46,7 +50,7 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 Datetimes present a calendar interface and time wheel, making it easy for users to select dates and times. Datetimes are similar to the native `input` elements of `datetime-local`, however, Ionic Framework's Datetime component makes it easy to display the date and time in the preferred format, and manage the datetime values.
 
-## Overview 
+## Overview
 
 Historically, handling datetime values within JavaScript, or even within HTML
 inputs, has always been a challenge. Specifically, JavaScript's `Date` object is
@@ -66,15 +70,15 @@ and parse within JSON objects and databases.
 
 Below are some examples of ISO 8601 formats that can be used with `ion-datetime`:
 
-| Description          | Format                 | Datetime Value Example        |
-| -------------------- | ---------------------- | ----------------------------  |
-| Year                 | YYYY                   | 1994                          |
-| Year and Month       | YYYY-MM                | 1994-12                       |
-| Complete Date        | YYYY-MM-DD             | 1994-12-15                    |
-| Date and Time        | YYYY-MM-DDTHH:mm       | 1994-12-15T13:47              |
-| UTC Timezone         | YYYY-MM-DDTHH:mm:ssZ   | 1994-12-15T13:47:20Z          |
-| Timezone Offset      | YYYY-MM-DDTHH:mm:ssTZD | 1994-12-15T13:47:20+05:00     |
-| Hour and Minute      | HH:mm                  | 13:47                         |
+| Description     | Format                 | Datetime Value Example    |
+| --------------- | ---------------------- | ------------------------- |
+| Year            | YYYY                   | 1994                      |
+| Year and Month  | YYYY-MM                | 1994-12                   |
+| Complete Date   | YYYY-MM-DD             | 1994-12-15                |
+| Date and Time   | YYYY-MM-DDTHH:mm       | 1994-12-15T13:47          |
+| UTC Timezone    | YYYY-MM-DDTHH:mm:ssZ   | 1994-12-15T13:47:20Z      |
+| Timezone Offset | YYYY-MM-DDTHH:mm:ssTZD | 1994-12-15T13:47:20+05:00 |
+| Hour and Minute | HH:mm                  | 13:47                     |
 
 Note that the year is always four-digits, milliseconds (if it's added) is always
 three-digits, and all others are always two-digits. So the number representing
@@ -100,7 +104,7 @@ If you need to present a datetime in an overlay such as a modal or a popover, we
 
 To customize the minimum and maximum datetime values, the `min` and `max` component properties can be provided which may make more sense for the app's use-case. Following the same IS0 8601 format listed in the table above, each component can restrict which dates can be selected by the user.
 
-The following example restricts date selection to March 2022 through May 2022 only. 
+The following example restricts date selection to March 2022 through May 2022 only.
 
 <MaxMin />
 
@@ -114,7 +118,7 @@ The following example allows minutes to be selected in increments of 15. It also
 
 ### Advanced Date Constraints
 
-With the `isDateEnabled` property, developers can customize the `ion-datetime` to disable a specific day, range of dates, weekends or any custom rule using an ISO 8601 date string. 
+With the `isDateEnabled` property, developers can customize the `ion-datetime` to disable a specific day, range of dates, weekends or any custom rule using an ISO 8601 date string.
 The `isDateEnabled` property accepts a function returning a boolean, indicating if a date is enabled. The function is called for each rendered calendar day, for the previous, current and next month. Custom implementations should be optimized for performance to avoid jank.
 
 The following example shows how to disable all weekend dates. For more advanced date manipulation, we recommend using a date utility such as `date-fns`.
@@ -143,17 +147,16 @@ The time label is not automatically localized. See [Time Label](#time-label) for
 
 There are 4 primary hour cycle types:
 
-| Hour cycle type | Description                                                  |
-| --------------- | ------------------------------------------------------------ |
-| `'h12'`          | Hour system using 1–12; corresponds to 'h' in patterns. The 12 hour clock, with midnight starting at 12:00 am. |
-| `'h23'`         | Hour system using 0–23; corresponds to 'H' in patterns. The 24 hour clock, with midnight starting at 0:00. |
-| `'h11'`         | Hour system using 0–11; corresponds to 'K' in patterns. The 12 hour clock, with midnight starting at 0:00 am. |
-| `'h24'`         | Hour system using 1–24; corresponds to 'k' in pattern. The 24 hour clock, with midnight starting at 24:00. |
+| Hour cycle type | Description                                                                                                    |
+| --------------- | -------------------------------------------------------------------------------------------------------------- |
+| `'h12'`         | Hour system using 1–12; corresponds to 'h' in patterns. The 12 hour clock, with midnight starting at 12:00 am. |
+| `'h23'`         | Hour system using 0–23; corresponds to 'H' in patterns. The 24 hour clock, with midnight starting at 0:00.     |
+| `'h11'`         | Hour system using 0–11; corresponds to 'K' in patterns. The 12 hour clock, with midnight starting at 0:00 am.  |
+| `'h24'`         | Hour system using 1–24; corresponds to 'k' in pattern. The 24 hour clock, with midnight starting at 24:00.     |
 
 :::note
-  Source: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/Locale/hourCycle
+Source: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/Locale/hourCycle
 :::
-
 
 There may be scenarios where you need to have more control over which hour cycle is used. This is where the `hourCycle` property can help.
 
@@ -182,7 +185,7 @@ For example, if you wanted to use a 12 hour cycle with the `en-GB` locale, you c
 <LocaleExtensionTags />
 
 :::note
-Be sure to check the [Browser Compatibility Chart](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/Locale#browser_compatibility)  for `Intl.Locale` before using it in your app.
+Be sure to check the [Browser Compatibility Chart](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/Locale#browser_compatibility) for `Intl.Locale` before using it in your app.
 :::
 
 ## Presentation
@@ -233,7 +236,7 @@ Certain `presentation` options have both grid and wheel styles that developers c
 
 The example below shows the wheel picker with `presentation="date-time"`.
 
-import Wheel from '@site/static/usage/datetime/presentation/wheel/index.md';
+import Wheel from '@site/static/usage/v6/datetime/presentation/wheel/index.md';
 
 <Wheel />
 
@@ -327,7 +330,7 @@ import { format, parseISO } from 'date-fns';
 /**
  * This is provided in the event
  * payload from the `ionChange` event.
- * 
+ *
  * The value is an ISO-8601 date string.
  */
 const dateFromIonDatetime = '2021-06-04T14:23:00-04:00';
@@ -337,7 +340,6 @@ console.log(formattedString); // Jun 4, 2021
 ```
 
 See https://date-fns.org/docs/format for a list of all the valid format tokens.
-
 
 ## Advanced Datetime Validation and Manipulation
 
@@ -357,37 +359,37 @@ dates in JavaScript.
 
 `ion-datetime` has full keyboard support for navigating between focusable elements inside of the component. The following table details what each key does:
 
-| Key                | Function                                                     |
-| ------------------ | ------------------------------------------------------------ |
-| `Tab`              | Moves focus to the next focusable element.                   |
-| `Shift` + `Tab`    | Moves focus to the previous focusable element.               |
-| `Space` or `Enter` | Clicks the focusable element.                                |
+| Key                | Function                                       |
+| ------------------ | ---------------------------------------------- |
+| `Tab`              | Moves focus to the next focusable element.     |
+| `Shift` + `Tab`    | Moves focus to the previous focusable element. |
+| `Space` or `Enter` | Clicks the focusable element.                  |
 
 #### Date Grid
 
-| Key                | Function                                                     |
-| ------------------ | ------------------------------------------------------------ |
-| `ArrowUp` | Moves focus to the same day of the previous week. |
-| `ArrowDown` | Moves focus to the same day of the next week. |
-| `ArrowRight` | Moves focus to the next day. |
-| `ArrowLeft` | Moves focus to the previous day. |
-| `Home` | Moves focus to the first day of the current week. |
-| `End` | Moves focus to the last day of the current week. |
-| `PageUp` | Changes the grid of dates to the previous month. |
-| `PageDown` | Changes the grid of dates to the next month. |
-| `Shift` + `PageUp` | Changes the grid of dates to the previous year. |
-| `Shift` + `PageDown` | Changes the grid of dates to the next year. |
+| Key                  | Function                                          |
+| -------------------- | ------------------------------------------------- |
+| `ArrowUp`            | Moves focus to the same day of the previous week. |
+| `ArrowDown`          | Moves focus to the same day of the next week.     |
+| `ArrowRight`         | Moves focus to the next day.                      |
+| `ArrowLeft`          | Moves focus to the previous day.                  |
+| `Home`               | Moves focus to the first day of the current week. |
+| `End`                | Moves focus to the last day of the current week.  |
+| `PageUp`             | Changes the grid of dates to the previous month.  |
+| `PageDown`           | Changes the grid of dates to the next month.      |
+| `Shift` + `PageUp`   | Changes the grid of dates to the previous year.   |
+| `Shift` + `PageDown` | Changes the grid of dates to the next year.       |
 
 #### Time, Month, and Year Wheels
 
 When using the time wheel picker, you can use the number keys to select hour and minute values when the columns are focused.
 
-| Key                | Function                                                     |
-| ------------------ | ------------------------------------------------------------ |
-| `ArrowUp` | Scroll to the previous item. |
-| `ArrowDown` | Scroll to the next item. |
-| `Home` | Scroll to the first item. |
-| `End` | Scroll to the last item. |
+| Key         | Function                     |
+| ----------- | ---------------------------- |
+| `ArrowUp`   | Scroll to the previous item. |
+| `ArrowDown` | Scroll to the next item.     |
+| `Home`      | Scroll to the first item.    |
+| `End`       | Scroll to the last item.     |
 
 ## Interfaces
 
@@ -411,19 +413,25 @@ interface DatetimeCustomEvent extends CustomEvent {
 ```
 
 ## Properties
+
 <Props />
 
 ## Events
+
 <Events />
 
 ## Methods
+
 <Methods />
 
 ## CSS Shadow Parts
+
 <Parts />
 
 ## CSS Custom Properties
+
 <CustomProps />
 
 ## Slots
+
 <Slots />

@@ -1,6 +1,7 @@
 ---
-title: "ion-textarea"
+title: 'ion-textarea'
 ---
+
 import Props from '@site/static/auto-generated/textarea/props.md';
 import Events from '@site/static/auto-generated/textarea/events.md';
 import Methods from '@site/static/auto-generated/textarea/methods.md';
@@ -10,7 +11,10 @@ import Slots from '@site/static/auto-generated/textarea/slots.md';
 
 <head>
   <title>Ionic Textarea Component and CSS Properties for Multi-Line Input</title>
-  <meta name="description" content="Textarea is for multi-line input. The component accepts native textarea attributes in addition to Ionic properties. Read to learn about use and CSS elements." />
+  <meta
+    name="description"
+    content="Textarea is for multi-line input. The component accepts native textarea attributes in addition to Ionic properties. Read to learn about use and CSS elements."
+  />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
@@ -25,7 +29,7 @@ The textarea component accepts the [native textarea attributes](https://develope
 
 ## Basic Usage
 
-import BasicPlayground from '@site/static/usage/textarea/basic/index.md';
+import BasicPlayground from '@site/static/usage/v6/textarea/basic/index.md';
 
 <BasicPlayground />
 
@@ -33,7 +37,7 @@ import BasicPlayground from '@site/static/usage/textarea/basic/index.md';
 
 When the `autoGrow` property is set to `true`, the textarea will grow and shrink based on its contents.
 
-import AutogrowPlayground from '@site/static/usage/textarea/autogrow/index.md';
+import AutogrowPlayground from '@site/static/usage/v6/textarea/autogrow/index.md';
 
 <AutogrowPlayground />
 
@@ -41,13 +45,13 @@ import AutogrowPlayground from '@site/static/usage/textarea/autogrow/index.md';
 
 Setting the `clearOnEdit` property to `true` will clear the textarea after it has been blurred and then typed in again.
 
-import ClearOnEditPlayground from '@site/static/usage/textarea/clear-on-edit/index.md';
+import ClearOnEditPlayground from '@site/static/usage/v6/textarea/clear-on-edit/index.md';
 
 <ClearOnEditPlayground />
 
 ## Theming
 
-import ThemingPlayground from '@site/static/usage/textarea/theming/index.md';
+import ThemingPlayground from '@site/static/usage/v6/textarea/theming/index.md';
 
 <ThemingPlayground />
 
@@ -73,19 +77,25 @@ interface TextareaCustomEvent extends CustomEvent {
 ```
 
 ## Properties
+
 <Props />
 
 ## Events
+
 <Events />
 
 ## Methods
+
 <Methods />
 
 ## CSS Shadow Parts
+
 <Parts />
 
 ## CSS Custom Properties
+
 <CustomProps />
 
 ## Slots
+
 <Slots />

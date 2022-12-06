@@ -1,14 +1,13 @@
 ---
-title: "ion-breadcrumbs"
+title: 'ion-breadcrumbs'
 ---
+
 import Props from '@site/static/auto-generated/breadcrumbs/props.md';
 import Events from '@site/static/auto-generated/breadcrumbs/events.md';
 import Methods from '@site/static/auto-generated/breadcrumbs/methods.md';
 import Parts from '@site/static/auto-generated/breadcrumbs/parts.md';
 import CustomProps from '@site/static/auto-generated/breadcrumbs/custom-props.md';
 import Slots from '@site/static/auto-generated/breadcrumbs/slots.md';
-
-
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
@@ -18,7 +17,7 @@ Breadcrumbs are navigation items that are used to indicate where a user is on an
 
 ## Basic Usage
 
-import Basic from '@site/static/usage/breadcrumbs/basic/index.md';
+import Basic from '@site/static/usage/v6/breadcrumbs/basic/index.md';
 
 <Basic />
 
@@ -26,13 +25,13 @@ import Basic from '@site/static/usage/breadcrumbs/basic/index.md';
 
 ### Icons on Items
 
-import IconsOnItems from '@site/static/usage/breadcrumbs/icons/icons-on-items/index.md';
+import IconsOnItems from '@site/static/usage/v6/breadcrumbs/icons/icons-on-items/index.md';
 
 <IconsOnItems />
 
 ### Custom Separators
 
-import CustomSeparators from '@site/static/usage/breadcrumbs/icons/custom-separators/index.md';
+import CustomSeparators from '@site/static/usage/v6/breadcrumbs/icons/custom-separators/index.md';
 
 <CustomSeparators />
 
@@ -42,7 +41,7 @@ import CustomSeparators from '@site/static/usage/breadcrumbs/icons/custom-separa
 
 If there are more items than the value of `maxItems`, the breadcrumbs will be collapsed. By default, only the first and last items will be shown.
 
-import MaxItems from '@site/static/usage/breadcrumbs/collapsing-items/max-items/index.md';
+import MaxItems from '@site/static/usage/v6/breadcrumbs/collapsing-items/max-items/index.md';
 
 <MaxItems />
 
@@ -50,7 +49,7 @@ import MaxItems from '@site/static/usage/breadcrumbs/collapsing-items/max-items/
 
 Once the items are collapsed, the number of items to show can be controlled by the `itemsBeforeCollapse` and `itemsAfterCollapse` properties.
 
-import ItemsBeforeAfter from '@site/static/usage/breadcrumbs/collapsing-items/items-before-after/index.md';
+import ItemsBeforeAfter from '@site/static/usage/v6/breadcrumbs/collapsing-items/items-before-after/index.md';
 
 <ItemsBeforeAfter />
 
@@ -58,7 +57,7 @@ import ItemsBeforeAfter from '@site/static/usage/breadcrumbs/collapsing-items/it
 
 Clicking the collapsed indicator will fire the `ionCollapsedClick` event. This can be used to, for example, expand the breadcrumbs.
 
-import ExpandOnClick from '@site/static/usage/breadcrumbs/collapsing-items/expand-on-click/index.md';
+import ExpandOnClick from '@site/static/usage/v6/breadcrumbs/collapsing-items/expand-on-click/index.md';
 
 <ExpandOnClick />
 
@@ -66,7 +65,7 @@ import ExpandOnClick from '@site/static/usage/breadcrumbs/collapsing-items/expan
 
 The `ionCollapsedClick` event can also be used to present an overlay (in this case, an `ion-popover`) showing the hidden breadcrumbs.
 
-import PopoverOnClick from '@site/static/usage/breadcrumbs/collapsing-items/popover-on-click/index.md';
+import PopoverOnClick from '@site/static/usage/v6/breadcrumbs/collapsing-items/popover-on-click/index.md';
 
 <PopoverOnClick />
 
@@ -74,31 +73,36 @@ import PopoverOnClick from '@site/static/usage/breadcrumbs/collapsing-items/popo
 
 ### Colors
 
-import Colors from '@site/static/usage/breadcrumbs/theming/colors/index.md';
+import Colors from '@site/static/usage/v6/breadcrumbs/theming/colors/index.md';
 
 <Colors />
 
 ### CSS Custom Properties
 
-import CSSProps from '@site/static/usage/breadcrumbs/theming/css-properties/index.md';
+import CSSProps from '@site/static/usage/v6/breadcrumbs/theming/css-properties/index.md';
 
 <CSSProps />
 
-
 ## Properties
+
 <Props />
 
 ## Events
+
 <Events />
 
 ## Methods
+
 <Methods />
 
 ## CSS Shadow Parts
+
 <Parts />
 
 ## CSS Custom Properties
+
 <CustomProps />
 
 ## Slots
+
 <Slots />

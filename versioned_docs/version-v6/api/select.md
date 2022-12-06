@@ -1,6 +1,7 @@
 ---
-title: "ion-select"
+title: 'ion-select'
 ---
+
 import Props from '@site/static/auto-generated/select/props.md';
 import Events from '@site/static/auto-generated/select/events.md';
 import Methods from '@site/static/auto-generated/select/methods.md';
@@ -10,13 +11,15 @@ import Slots from '@site/static/auto-generated/select/slots.md';
 
 <head>
   <title>ion-select: Select One or Multiple Value Boxes or Placeholders</title>
-  <meta name="description" content="ion-select is represented by selected value(s), or a placeholder, and dropdown icon. When you tap select, a dialog box appears with an easy to select list." />
+  <meta
+    name="description"
+    content="ion-select is represented by selected value(s), or a placeholder, and dropdown icon. When you tap select, a dialog box appears with an easy to select list."
+  />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="shadow" />
-
 
 Selects are form controls to select an option, or options, from a set of options, similar to a native `<select>` element. When a user taps the select, a dialog appears with all of the options in a large, easy to select list.
 
@@ -28,7 +31,7 @@ If `value` is set on the `<ion-select>`, the selected option will be chosen base
 
 By default, the select allows the user to select only one option. The alert interface presents users with a radio button styled list of options. The select component's value receives the value of the selected option's value.
 
-import SingleSelectionExample from '@site/static/usage/select/basic/single-selection/index.md';
+import SingleSelectionExample from '@site/static/usage/v6/select/basic/single-selection/index.md';
 
 <SingleSelectionExample />
 
@@ -38,13 +41,13 @@ By default, select uses [ion-alert](alert.md) to open up the overlay of options 
 
 ### Action Sheet
 
-import ActionSheetExample from '@site/static/usage/select/interfaces/action-sheet/index.md';
+import ActionSheetExample from '@site/static/usage/v6/select/interfaces/action-sheet/index.md';
 
 <ActionSheetExample />
 
 ### Popover
 
-import PopoverExample from '@site/static/usage/select/interfaces/popover/index.md';
+import PopoverExample from '@site/static/usage/v6/select/interfaces/popover/index.md';
 
 <PopoverExample />
 
@@ -54,7 +57,7 @@ By adding the `multiple` attribute to select, users are able to select multiple 
 
 Note: the `action-sheet` and `popover` interfaces will not work with multiple selection.
 
-import MulipleSelectionExample from '@site/static/usage/select/basic/multiple-selection/index.md';
+import MulipleSelectionExample from '@site/static/usage/v6/select/basic/multiple-selection/index.md';
 
 <MulipleSelectionExample />
 
@@ -62,7 +65,7 @@ import MulipleSelectionExample from '@site/static/usage/select/basic/multiple-se
 
 The main ways of handling user interaction with the select are the `ionChange`, `ionDismiss`, and `ionCancel` events. See [Events](#events) for more details on these and other events that select fires.
 
-import RespondingToInteractionExample from '@site/static/usage/select/basic/responding-to-interaction/index.md';
+import RespondingToInteractionExample from '@site/static/usage/v6/select/basic/responding-to-interaction/index.md';
 
 <RespondingToInteractionExample />
 
@@ -74,13 +77,13 @@ By default, the select uses object equality (`===`) to determine if an option is
 
 ### Using compareWith
 
-import UsingCompareWithExample from '@site/static/usage/select/objects-as-values/using-comparewith/index.md';
+import UsingCompareWithExample from '@site/static/usage/v6/select/objects-as-values/using-comparewith/index.md';
 
 <UsingCompareWithExample />
 
 ### Object Values and Multiple Selection
 
-import ObjectValuesAndMultipleSelectionExample from '@site/static/usage/select/objects-as-values/multiple-selection/index.md';
+import ObjectValuesAndMultipleSelectionExample from '@site/static/usage/v6/select/objects-as-values/multiple-selection/index.md';
 
 <ObjectValuesAndMultipleSelectionExample />
 
@@ -90,7 +93,7 @@ The alert supports two buttons: `Cancel` and `OK`. Each button's text can be cus
 
 The `action-sheet` and `popover` interfaces do not have an `OK` button, clicking on any of the options will automatically close the overlay and select that value. The `popover` interface does not have a `Cancel` button, clicking on the backdrop will close the overlay.
 
-import ButtonTextExample from '@site/static/usage/select/customization/button-text/index.md';
+import ButtonTextExample from '@site/static/usage/v6/select/customization/button-text/index.md';
 
 <ButtonTextExample />
 
@@ -102,7 +105,7 @@ See the [ion-alert docs](alert.md), [ion-action-sheet docs](action-sheet.md), an
 
 Note: `interfaceOptions` will not override `inputs` or `buttons` with the `alert` interface.
 
-import InterfaceOptionsExample from '@site/static/usage/select/customization/interface-options/index.md';
+import InterfaceOptionsExample from '@site/static/usage/v6/select/customization/interface-options/index.md';
 
 <InterfaceOptionsExample />
 
@@ -116,7 +119,7 @@ As mentioned, the `ion-select` element consists only of the value(s), or placeho
 
 Alternatively, depending on the [browser support](https://caniuse.com/#feat=mdn-css_selectors_part) needed, CSS shadow parts can be used to style the select. Notice that by using `::part`, any CSS property on the element can be targeted.
 
-import StylingSelectExample from '@site/static/usage/select/customization/styling-select/index.md';
+import StylingSelectExample from '@site/static/usage/v6/select/customization/styling-select/index.md';
 
 <StylingSelectExample />
 
@@ -152,19 +155,25 @@ interface SelectCustomEvent<T = any> extends CustomEvent {
 ```
 
 ## Properties
+
 <Props />
 
 ## Events
+
 <Events />
 
 ## Methods
+
 <Methods />
 
 ## CSS Shadow Parts
+
 <Parts />
 
 ## CSS Custom Properties
+
 <CustomProps />
 
 ## Slots
+
 <Slots />

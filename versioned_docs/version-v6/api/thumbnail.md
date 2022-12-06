@@ -1,5 +1,5 @@
 ---
-title: "ion-thumbnail"
+title: 'ion-thumbnail'
 ---
 
 import Props from '@site/static/auto-generated/thumbnail/props.md';
@@ -11,7 +11,10 @@ import Slots from '@site/static/auto-generated/thumbnail/slots.md';
 
 <head>
   <title>ion-thumbnail | Thumbnail App Component to Wrap Images or Icons</title>
-  <meta name="description" content="What is a thumbnail image? Thumbnail app components wrap an image or icon and can be used to display a layout of images or for previews of full-size images." />
+  <meta
+    name="description"
+    content="What is a thumbnail image? Thumbnail app components wrap an image or icon and can be used to display a layout of images or for previews of full-size images."
+  />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
@@ -24,13 +27,13 @@ Thumbnails can be used by themselves or inside of any element. If placed inside 
 
 ## Basic Usage
 
-import Basic from '@site/static/usage/thumbnail/basic/index.md';
+import Basic from '@site/static/usage/v6/thumbnail/basic/index.md';
 
 <Basic />
 
 ## Item Thumbnails
 
-import Item from '@site/static/usage/thumbnail/item/index.md';
+import Item from '@site/static/usage/v6/thumbnail/item/index.md';
 
 <Item />
 
@@ -38,24 +41,30 @@ import Item from '@site/static/usage/thumbnail/item/index.md';
 
 ### CSS Custom Properties
 
-import CSSProps from '@site/static/usage/thumbnail/theming/css-properties/index.md';
+import CSSProps from '@site/static/usage/v6/thumbnail/theming/css-properties/index.md';
 
 <CSSProps />
 
 ## Properties
+
 <Props />
 
 ## Events
+
 <Events />
 
 ## Methods
+
 <Methods />
 
 ## CSS Shadow Parts
+
 <Parts />
 
 ## CSS Custom Properties
+
 <CustomProps />
 
 ## Slots
+
 <Slots />
