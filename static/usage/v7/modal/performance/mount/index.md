@@ -13,7 +13,7 @@ import angular from './angular.md';
     vue,
     angular,
   }}
-  src="usage/v6/modal/performance/mount/demo.html"
+  src="usage/v7/modal/performance/mount/demo.html"
   devicePreview
   includeIonContent={false}
 />

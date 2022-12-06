@@ -28,6 +28,6 @@ import angular_example_component_css from './angular/example_component_css.md';
       },
     },
   }}
-  src="usage/v6/thumbnail/theming/css-properties/demo.html"
+  src="usage/v7/thumbnail/theming/css-properties/demo.html"
   size="250px"
 />

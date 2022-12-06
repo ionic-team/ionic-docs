@@ -20,6 +20,6 @@ import angular_example_component_html from './angular/example_component_html.md'
       },
     },
   }}
-  src="usage/v6/reorder/toggling-disabled/demo.html"
+  src="usage/v7/reorder/toggling-disabled/demo.html"
   size="350px"
 />

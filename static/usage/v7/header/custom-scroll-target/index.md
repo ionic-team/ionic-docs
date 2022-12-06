@@ -28,7 +28,7 @@ import angular_example_component_css from './angular/example_component_css.md';
       },
     },
   }}
-  src="usage/v6/header/custom-scroll-target/demo.html"
+  src="usage/v7/header/custom-scroll-target/demo.html"
   devicePreview
   includeIonContent={false}
 />

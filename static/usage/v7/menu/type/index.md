@@ -20,6 +20,6 @@ import angular_example_component_ts from './angular/example_component_ts.md';
       },
     },
   }}
-  src="usage/v6/menu/type/demo.html"
+  src="usage/v7/menu/type/demo.html"
   devicePreview
 />

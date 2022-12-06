@@ -8,7 +8,7 @@ import angular from './angular.md';
 <Playground
   version="7"
   code={{ javascript, react, vue, angular }}
-  src="usage/v6/toolbar/segments/demo.html"
+  src="usage/v7/toolbar/segments/demo.html"
   devicePreview
   includeIonContent={false}
 />

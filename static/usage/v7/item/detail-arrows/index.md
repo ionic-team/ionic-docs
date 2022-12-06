@@ -8,6 +8,6 @@ import angular from './angular.md';
 <Playground
   version="7"
   code={{ javascript, react, vue, angular }}
-  src="usage/v6/item/detail-arrows/demo.html"
+  src="usage/v7/item/detail-arrows/demo.html"
   size="350px"
 />

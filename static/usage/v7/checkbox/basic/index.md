@@ -13,5 +13,5 @@ import angular from './angular.md';
     vue,
     angular,
   }}
-  src="usage/v6/checkbox/basic/demo.html"
+  src="usage/v7/checkbox/basic/demo.html"
 />

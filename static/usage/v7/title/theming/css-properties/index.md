@@ -28,7 +28,7 @@ import angular_global_css from './angular/global_css.md';
       },
     },
   }}
-  src="usage/v6/title/theming/css-properties/demo.html"
+  src="usage/v7/title/theming/css-properties/demo.html"
   devicePreview={true}
   includeIonContent={false}
 />

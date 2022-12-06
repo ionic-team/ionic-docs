@@ -9,5 +9,5 @@ import angular from './angular.md';
   version="7"
   size="xsmall"
   code={{ javascript, react, vue, angular }}
-  src="usage/v6/textarea/clear-on-edit/demo.html"
+  src="usage/v7/textarea/clear-on-edit/demo.html"
 />

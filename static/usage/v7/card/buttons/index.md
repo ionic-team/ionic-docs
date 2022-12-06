@@ -28,6 +28,6 @@ import angular_example_component_css from './angular/example_component_css.md';
       },
     },
   }}
-  src="usage/v6/card/buttons/demo.html"
+  src="usage/v7/card/buttons/demo.html"
   size="300px"
 />

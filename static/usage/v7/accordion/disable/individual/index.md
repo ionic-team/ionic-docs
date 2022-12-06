@@ -14,5 +14,5 @@ import angular from './angular.md';
     angular,
   }}
   size="210px"
-  src="usage/v6/accordion/disable/individual/demo.html"
+  src="usage/v7/accordion/disable/individual/demo.html"
 />

@@ -28,5 +28,5 @@ import angular_example_component_html from './angular/example_component_html.md'
       },
     },
   }}
-  src="usage/v6/segment-button/theming/css-properties/demo.html"
+  src="usage/v7/segment-button/theming/css-properties/demo.html"
 />

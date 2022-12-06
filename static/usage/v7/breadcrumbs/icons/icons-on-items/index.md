@@ -9,5 +9,5 @@ import angular from './angular.md';
   version="7"
   size="300px"
   code={{ javascript, react, vue, angular }}
-  src="usage/v6/breadcrumbs/icons/icons-on-items/demo.html"
+  src="usage/v7/breadcrumbs/icons/icons-on-items/demo.html"
 />

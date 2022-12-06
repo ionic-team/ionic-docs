@@ -28,7 +28,7 @@ import angular_example_component_css from './angular/example_component_css.md';
       },
     },
   }}
-  src="usage/v6/content/theming/css-shadow-parts/demo.html"
+  src="usage/v7/content/theming/css-shadow-parts/demo.html"
   includeIonContent={false}
   devicePreview={true}
 />

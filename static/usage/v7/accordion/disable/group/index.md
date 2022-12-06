@@ -13,5 +13,5 @@ import angular from './angular.md';
     vue,
     angular,
   }}
-  src="usage/v6/accordion/disable/group/demo.html"
+  src="usage/v7/accordion/disable/group/demo.html"
 />

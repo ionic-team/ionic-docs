@@ -28,5 +28,5 @@ import angular_example_component_css from './angular/example_component_css.md';
       },
     },
   }}
-  src="usage/v6/searchbar/theming/css-properties/demo.html"
+  src="usage/v7/searchbar/theming/css-properties/demo.html"
 />

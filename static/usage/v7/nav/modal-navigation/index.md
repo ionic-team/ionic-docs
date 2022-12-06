@@ -50,7 +50,7 @@ import vue_page_three from './vue/page_three_vue.md';
       },
     },
   }}
-  src="usage/v6/nav/modal-navigation/demo.html"
+  src="usage/v7/nav/modal-navigation/demo.html"
   devicePreview
   includeIonContent={false}
 />

@@ -13,6 +13,6 @@ import angular from './angular.md';
     vue,
     angular,
   }}
-  src="usage/v6/menu/toggle/demo.html"
+  src="usage/v7/menu/toggle/demo.html"
   devicePreview
 />

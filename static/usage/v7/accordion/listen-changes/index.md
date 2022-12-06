@@ -21,5 +21,5 @@ import angular_example_component_ts from './angular/example_component_ts.md';
     },
   }}
   size="320px"
-  src="usage/v6/accordion/listen-changes/demo.html"
+  src="usage/v7/accordion/listen-changes/demo.html"
 />

@@ -8,6 +8,6 @@ import angular from './angular.md';
 <Playground
   version="7"
   code={{ javascript, react, vue, angular }}
-  src="usage/v6/radio/empty-selection/demo.html"
+  src="usage/v7/radio/empty-selection/demo.html"
   size="250px"
 />

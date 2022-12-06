@@ -9,5 +9,5 @@ import angular from './angular.md';
   version="7"
   size="500px"
   code={{ javascript, react, vue, angular }}
-  src="usage/v6/datetime/buttons/customizing-button-texts/demo.html"
+  src="usage/v7/datetime/buttons/customizing-button-texts/demo.html"
 />

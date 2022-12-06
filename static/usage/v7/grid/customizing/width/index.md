@@ -28,6 +28,6 @@ import angular_example_component_css from './angular/example_component_css.md';
       },
     },
   }}
-  src="usage/v6/grid/customizing/width/demo.html"
+  src="usage/v7/grid/customizing/width/demo.html"
   size="100px"
 />

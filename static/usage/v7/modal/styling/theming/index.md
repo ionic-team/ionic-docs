@@ -27,7 +27,7 @@ import angular_example_component_html from './angular/example_component_html.md'
       },
     },
   }}
-  src="usage/v6/modal/styling/theming/demo.html"
+  src="usage/v7/modal/styling/theming/demo.html"
   devicePreview
   includeIonContent={false}
 />

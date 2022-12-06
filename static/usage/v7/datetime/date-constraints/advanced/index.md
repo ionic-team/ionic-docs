@@ -21,5 +21,5 @@ import angular_example_component_ts from './angular/example_component_ts.md';
       },
     },
   }}
-  src="usage/v6/datetime/date-constraints/advanced/demo.html"
+  src="usage/v7/datetime/date-constraints/advanced/demo.html"
 />

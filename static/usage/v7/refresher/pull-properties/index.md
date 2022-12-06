@@ -20,7 +20,7 @@ import angular_example_component_ts from './angular/example_component_ts.md';
       },
     },
   }}
-  src="usage/v6/refresher/pull-properties/demo.html"
+  src="usage/v7/refresher/pull-properties/demo.html"
   devicePreview
   includeIonContent={false}
 />

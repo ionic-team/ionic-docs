@@ -30,5 +30,5 @@ import angular_example_component_ts from './angular/example_component_ts.md';
       },
     },
   }}
-  src="usage/v6/select/customization/styling-select/demo.html"
+  src="usage/v7/select/customization/styling-select/demo.html"
 />

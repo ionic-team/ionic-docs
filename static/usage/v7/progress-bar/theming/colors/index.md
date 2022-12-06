@@ -8,5 +8,5 @@ import angular from './angular.md';
 <Playground
   version="7"
   code={{ javascript, react, vue, angular }}
-  src="usage/v6/progress-bar/theming/colors/demo.html"
+  src="usage/v7/progress-bar/theming/colors/demo.html"
 />

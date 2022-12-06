@@ -28,6 +28,6 @@ import angular_example_component_html from './angular/example_component_html.md'
       },
     },
   }}
-  src="usage/v6/item/theming/input-highlight/demo.html"
+  src="usage/v7/item/theming/input-highlight/demo.html"
   size="250px"
 />

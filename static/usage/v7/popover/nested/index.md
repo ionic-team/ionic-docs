@@ -9,5 +9,5 @@ import angular from './angular.md';
   version="7"
   size="medium"
   code={{ javascript, react, vue, angular }}
-  src="usage/v6/popover/nested/demo.html"
+  src="usage/v7/popover/nested/demo.html"
 />

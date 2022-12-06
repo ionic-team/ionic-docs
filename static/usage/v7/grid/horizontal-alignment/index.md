@@ -28,6 +28,6 @@ import angular_example_component_css from './angular/example_component_css.md';
       },
     },
   }}
-  src="usage/v6/grid/horizontal-alignment/demo.html"
+  src="usage/v7/grid/horizontal-alignment/demo.html"
   size="400px"
 />

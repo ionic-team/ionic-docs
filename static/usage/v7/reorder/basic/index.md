@@ -20,6 +20,6 @@ import angular_example_component_html from './angular/example_component_html.md'
       },
     },
   }}
-  src="usage/v6/reorder/basic/demo.html"
+  src="usage/v7/reorder/basic/demo.html"
   size="300px"
 />

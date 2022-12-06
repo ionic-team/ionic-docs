@@ -30,6 +30,6 @@ import angular_global_css from './angular/global_css.md';
       },
     },
   }}
-  src="usage/v6/action-sheet/theming/css-properties/demo.html"
+  src="usage/v7/action-sheet/theming/css-properties/demo.html"
   devicePreview
 />

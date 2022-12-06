@@ -28,5 +28,5 @@ import angular_global_css from './angular/global_css.md';
       },
     },
   }}
-  src="usage/v6/popover/customization/styling/demo.html"
+  src="usage/v7/popover/customization/styling/demo.html"
 />

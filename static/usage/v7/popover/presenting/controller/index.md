@@ -34,5 +34,5 @@ import angular_app_module from './angular/app_module_ts.md';
       },
     },
   }}
-  src="usage/v6/popover/presenting/controller/demo.html"
+  src="usage/v7/popover/presenting/controller/demo.html"
 />

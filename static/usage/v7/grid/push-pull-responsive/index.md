@@ -28,6 +28,6 @@ import angular_example_component_css from './angular/example_component_css.md';
       },
     },
   }}
-  src="usage/v6/grid/push-pull-responsive/demo.html"
+  src="usage/v7/grid/push-pull-responsive/demo.html"
   size="200px"
 />

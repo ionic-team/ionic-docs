@@ -8,7 +8,7 @@ import angular from './angular.md';
 <Playground
   version="7"
   code={{ javascript, react, vue, angular }}
-  src="usage/v6/content/theming/colors/demo.html"
+  src="usage/v7/content/theming/colors/demo.html"
   includeIonContent={false}
   size="xlarge"
 />

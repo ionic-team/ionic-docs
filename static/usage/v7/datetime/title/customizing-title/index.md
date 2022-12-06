@@ -9,5 +9,5 @@ import angular from './angular.md';
   version="7"
   size="large"
   code={{ javascript, react, vue, angular }}
-  src="usage/v6/datetime/title/customizing-title/demo.html"
+  src="usage/v7/datetime/title/customizing-title/demo.html"
 />

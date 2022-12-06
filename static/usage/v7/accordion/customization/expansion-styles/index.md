@@ -14,5 +14,5 @@ import angular from './angular.md';
     angular,
   }}
   size="250px"
-  src="usage/v6/accordion/customization/expansion-styles/demo.html"
+  src="usage/v7/accordion/customization/expansion-styles/demo.html"
 />

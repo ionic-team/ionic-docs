@@ -9,7 +9,7 @@ import angular from './angular.md';
   version="7"
   mode="ios"
   code={{ javascript, react, vue, angular }}
-  src="usage/v6/title/collapsible-large-title/basic/demo.html"
+  src="usage/v7/title/collapsible-large-title/basic/demo.html"
   devicePreview={true}
   includeIonContent={false}
 />

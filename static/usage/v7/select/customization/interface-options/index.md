@@ -21,5 +21,5 @@ import angular_example_component_ts from './angular/example_component_ts.md';
       },
     },
   }}
-  src="usage/v6/select/customization/interface-options/demo.html"
+  src="usage/v7/select/customization/interface-options/demo.html"
 />

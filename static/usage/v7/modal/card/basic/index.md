@@ -20,6 +20,6 @@ import angular_example_component_ts from './angular/example_component_ts.md';
       },
     },
   }}
-  src="usage/v6/modal/card/basic/demo.html"
+  src="usage/v7/modal/card/basic/demo.html"
   devicePreview
 />

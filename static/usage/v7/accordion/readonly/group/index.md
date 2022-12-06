@@ -14,5 +14,5 @@ import angular from './angular.md';
     angular,
   }}
   size="210px"
-  src="usage/v6/accordion/readonly/group/demo.html"
+  src="usage/v7/accordion/readonly/group/demo.html"
 />

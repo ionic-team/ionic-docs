@@ -29,5 +29,5 @@ import angular_global_css from './angular/global_css.md';
       },
     },
   }}
-  src="usage/v6/datetime/theming/demo.html"
+  src="usage/v7/datetime/theming/demo.html"
 />

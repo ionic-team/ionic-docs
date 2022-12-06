@@ -30,5 +30,5 @@ import angular_example_component_css from './angular/example_component_css.md';
       },
     },
   }}
-  src="usage/v6/infinite-scroll/custom-infinite-scroll-content/demo.html"
+  src="usage/v7/infinite-scroll/custom-infinite-scroll-content/demo.html"
 />
