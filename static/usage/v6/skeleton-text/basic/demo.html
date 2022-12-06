@@ -1,49 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Accordion</title>
-    <link rel="stylesheet" href="../../common.css" />
-    <script src="../../common.js"></script>
-    <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core@6/dist/ionic/ionic.esm.js"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core@6/css/ionic.bundle.css" />
 
-    <style>
-      ion-list {
-        width: 300px;
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Accordion</title>
+  <link rel="stylesheet" href="../../../common.css" />
+  <script src="../../common.js"></script>
+  <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core@6/dist/ionic/ionic.esm.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core@6/css/ionic.bundle.css" />
+
+  <style>
+    ion-list {
+      width: 300px;
+    }
+
+    .container {
+      flex-direction: column;
+    }
+  </style>
+</head>
+
+<body>
+  <ion-app>
+    <ion-content>
+      <div class="container">
+        <ion-list></ion-list><br />
+        <ion-button onclick="toggle()">Toggle</ion-button>
+      </div>
+    </ion-content>
+  </ion-app>
+
+  <script>
+    const list = document.querySelector('ion-list');
+    let loaded = false;
+    const toggle = () => {
+      if (loaded) {
+        setSkeletonText();
+      } else {
+        setContent();
       }
 
-      .container {
-        flex-direction: column;
-      }
-    </style>
-  </head>
-  <body>
-    <ion-app>
-      <ion-content>
-        <div class="container">
-          <ion-list></ion-list><br />
-          <ion-button onclick="toggle()">Toggle</ion-button>
-        </div>
-      </ion-content>
-    </ion-app>
+      loaded = !loaded;
+    }
 
-    <script>
-      const list = document.querySelector('ion-list');
-      let loaded = false;
-      const toggle = () => {
-        if (loaded) {
-          setSkeletonText();
-        } else {
-          setContent();
-        }
-
-        loaded = !loaded;
-      }
-
-      const setSkeletonText = () => {
-        list.innerHTML = `
+    const setSkeletonText = () => {
+      list.innerHTML = `
           <ion-list-header>
             <ion-skeleton-text animated="true" style="width: 80px"></ion-skeleton-text>
           </ion-list-header>
@@ -64,10 +66,10 @@
             </ion-label>
           </ion-item>
         `;
-      }
+    }
 
-      const setContent = () => {
-        list.innerHTML = `
+    const setContent = () => {
+      list.innerHTML = `
           <ion-list-header>Albums</ion-list-header>
           <ion-item>
             <ion-thumbnail slot="start">
@@ -80,10 +82,11 @@
             </ion-label>
           </ion-item>
         `;
-      }
+    }
 
-      setSkeletonText();
+    setSkeletonText();
 
-    </script>
-  </body>
+  </script>
+</body>
+
 </html>

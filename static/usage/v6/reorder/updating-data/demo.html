@@ -5,7 +5,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Reorder</title>
-  <link rel="stylesheet" href="../../common.css" />
+  <link rel="stylesheet" href="../../../common.css" />
   <script src="../../common.js"></script>
   <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core@6/dist/ionic/ionic.esm.js"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core@6/css/ionic.bundle.css" />
@@ -35,7 +35,7 @@
     let items = [1, 2, 3, 4, 5];
     reorderItems(items);
 
-    reorderGroup.addEventListener('ionItemReorder', ({detail}) => {
+    reorderGroup.addEventListener('ionItemReorder', ({ detail }) => {
       // Before complete is called with the items they will remain in the
       // order before the drag
       console.log('Before complete', items);
