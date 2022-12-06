@@ -95,6 +95,11 @@ interface UsageTargetOptions {
      */
     declarations?: string[];
   };
+  /**
+   * The major version of Ionic to use in the generated Stackblitz examples.
+   * This will also load assets for Stackblitz from the specified version directory.
+   */
+  version?: number;
 }
 
 /**
@@ -114,6 +119,7 @@ export default function Playground({
   mode,
   devicePreview,
   includeIonContent = true,
+  version = 6,
 }: {
   code: { [key in UsageTarget]?: MdxContent | UsageTargetOptions };
   title?: string;
@@ -128,6 +134,7 @@ export default function Playground({
   description?: string;
   devicePreview?: boolean;
   includeIonContent: boolean;
+  version: number;
 }) {
   if (!code || Object.keys(code).length === 0) {
     console.warn('No code usage examples provided for this Playground example.');
@@ -301,6 +308,7 @@ export default function Playground({
       description,
       includeIonContent,
       mode: isIOS ? 'ios' : 'md',
+      version,
     };
 
     let codeBlock;
