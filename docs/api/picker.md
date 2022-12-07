@@ -26,7 +26,7 @@ A Picker is a dialog that displays a row of buttons and columns underneath. It a
 
 Display a list of options in a single, scrollable column.
 
-import SingleColumn from '@site/static/usage/picker/single-column/index.md';
+import SingleColumn from '@site/static/usage/v7/picker/single-column/index.md';
 
 <SingleColumn />
 
@@ -35,7 +35,7 @@ import SingleColumn from '@site/static/usage/picker/single-column/index.md';
 
 Display multiple columns of different options.
 
-import MultipleColumn from '@site/static/usage/picker/multiple-column/index.md';
+import MultipleColumn from '@site/static/usage/v7/picker/multiple-column/index.md';
 
 <MultipleColumn />
 

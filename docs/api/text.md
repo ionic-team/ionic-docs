@@ -21,7 +21,7 @@ The text component is a simple component that can be used to style the text colo
 
 ## Basic Usage
 
-import Basic from '@site/static/usage/text/basic/index.md';
+import Basic from '@site/static/usage/v7/text/basic/index.md';
 
 <Basic />
 

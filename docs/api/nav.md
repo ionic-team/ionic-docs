@@ -25,7 +25,7 @@ Unlike Router Outlet, Nav is not tied to a particular router. This means that if
 
 NavLink is a simplified API when interacting with Nav. Developers can customize the component, pass along component properties, modify the direction of the route animation or define a custom animation when navigating.
 
-import NavLinkExample from '@site/static/usage/nav/nav-link/index.md';
+import NavLinkExample from '@site/static/usage/v7/nav/nav-link/index.md';
 
 <NavLinkExample />
 

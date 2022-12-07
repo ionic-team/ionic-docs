@@ -24,7 +24,7 @@ When radios are inside of a radio group, only one radio will be checked at any t
 
 ## Basic Usage
 
-import Basic from '@site/static/usage/radio/basic/index.md';
+import Basic from '@site/static/usage/v7/radio/basic/index.md';
 
 <Basic />
 
@@ -33,7 +33,7 @@ import Basic from '@site/static/usage/radio/basic/index.md';
 
 By default, once a radio is selected it cannot be deselected; pressing it again will keep it selected. This behavior can be modified by using the `allowEmptySelection` property on the parent radio group, which enables the radios to be deselected.
 
-import EmptySelection from '@site/static/usage/radio/empty-selection/index.md';
+import EmptySelection from '@site/static/usage/v7/radio/empty-selection/index.md';
 
 <EmptySelection />
 
@@ -42,19 +42,19 @@ import EmptySelection from '@site/static/usage/radio/empty-selection/index.md';
 
 ### Colors
 
-import Colors from '@site/static/usage/radio/theming/colors/index.md';
+import Colors from '@site/static/usage/v7/radio/theming/colors/index.md';
 
 <Colors />
 
 ### CSS Custom Properties
 
-import CSSProps from '@site/static/usage/radio/theming/css-properties/index.md';
+import CSSProps from '@site/static/usage/v7/radio/theming/css-properties/index.md';
 
 <CSSProps />
 
 ### CSS Shadow Parts
 
-import CSSParts from '@site/static/usage/radio/theming/css-shadow-parts/index.md';
+import CSSParts from '@site/static/usage/v7/radio/theming/css-shadow-parts/index.md';
 
 <CSSParts />
 

@@ -28,7 +28,7 @@ An Alert is a dialog that presents users with information or collects informatio
 
 ### Controller
 
-import Controller from '@site/static/usage/alert/presenting/controller/index.md';
+import Controller from '@site/static/usage/v7/alert/presenting/controller/index.md';
 
 <Controller />
 
@@ -105,7 +105,7 @@ In the array of `buttons`, each button includes properties for its `text`, and o
 
 Optionally, a `role` property can be added to a button, such as `cancel`. If a `cancel` role is on one of the buttons, then if the alert is dismissed by tapping the backdrop, then it will fire the handler from the button with a cancel role.
 
-import Buttons from '@site/static/usage/alert/buttons/index.md';
+import Buttons from '@site/static/usage/v7/alert/buttons/index.md';
 
 <Buttons />
 
@@ -116,13 +116,13 @@ Alerts can also include several different inputs whose data can be passed back t
 
 ### Text Inputs Example
 
-import TextInputs from '@site/static/usage/alert/inputs/text-inputs/index.md';
+import TextInputs from '@site/static/usage/v7/alert/inputs/text-inputs/index.md';
 
 <TextInputs />
 
 ### Radio Example
 
-import Radios from '@site/static/usage/alert/inputs/radios/index.md';
+import Radios from '@site/static/usage/v7/alert/inputs/radios/index.md';
 
 <Radios />
 
@@ -152,7 +152,7 @@ Any of the defined [CSS Custom Properties](#css-custom-properties) can be used t
 }
 ```
 
-import Customization from '@site/static/usage/alert/customization/index.md';
+import Customization from '@site/static/usage/v7/alert/customization/index.md';
 
 <Customization />
 

@@ -31,7 +31,7 @@ Alternatively, developers can configure the loading indicator to dismiss automat
 
 ### Controller
 
-import Controller from '@site/static/usage/loading/controller/index.md';
+import Controller from '@site/static/usage/v7/loading/controller/index.md';
 
 <Controller />
 
@@ -107,7 +107,7 @@ export default defineComponent({
 
 The spinner that is used can be customized using the `spinner` property. See the [spinner property documentation](#spinner) for a full list of options.
 
-import Spinners from '@site/static/usage/loading/spinners/index.md';
+import Spinners from '@site/static/usage/v7/loading/spinners/index.md';
 
 <Spinners />
 
@@ -117,7 +117,7 @@ Loading uses scoped encapsulation, which means it will automatically scope its C
 
 We recommend passing a custom class and using that to add custom styles to the host and inner elements.
 
-import Theming from '@site/static/usage/loading/theming/index.md';
+import Theming from '@site/static/usage/v7/loading/theming/index.md';
 
 <Theming />
 

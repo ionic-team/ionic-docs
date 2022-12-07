@@ -30,7 +30,7 @@ Toasts can be positioned at the top, bottom or middle of the viewport. The posit
 
 ### Controller
 
-import ControllerExample from '@site/static/usage/toast/presenting/controller/index.md';
+import ControllerExample from '@site/static/usage/v7/toast/presenting/controller/index.md';
 
 <ControllerExample />
 
@@ -101,7 +101,7 @@ The toast can be dismissed automatically after a specific amount of time by pass
 
 The following example demonstrates how to use the `buttons` property to add a button that automatically dismisses the toast when clicked, as well as how to collect the `role` of the dismiss event.
 
-import ButtonsPlayground from '@site/static/usage/toast/buttons/index.md';
+import ButtonsPlayground from '@site/static/usage/v7/toast/buttons/index.md';
 
 <ButtonsPlayground />
 
@@ -109,13 +109,13 @@ import ButtonsPlayground from '@site/static/usage/toast/buttons/index.md';
 
 An icon can be added next to the content inside of the toast. In general, icons in toasts should be used to add additional style or context, not to grab the user's attention or elevate the priority of the toast. If you wish to convey a higher priority message to the user or guarantee a response, we recommend using an [Alert](alert.md) instead.
 
-import IconPlayground from '@site/static/usage/toast/icon/index.md';
+import IconPlayground from '@site/static/usage/v7/toast/icon/index.md';
 
 <IconPlayground />
 
 ## Theming
 
-import ThemingPlayground from '@site/static/usage/toast/theming/index.md';
+import ThemingPlayground from '@site/static/usage/v7/toast/theming/index.md';
 
 <ThemingPlayground />
 

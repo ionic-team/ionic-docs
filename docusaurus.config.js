@@ -282,7 +282,7 @@ module.exports = {
         lastVersion: 'current',
         versions: {
           current: {
-            label: 'v6',
+            label: 'v7',
             banner: 'none',
           },
         },
