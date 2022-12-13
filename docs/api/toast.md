@@ -36,7 +36,9 @@ The `isOpen` property on `ion-toast` allows developers to control the presentati
 
 `isOpen` uses a one-way data binding, meaning it will not automatically be set to `false` when the toast is dismissed. Developers should listen for the `ionToastDidDismiss` or `didDismiss` event and set `isOpen` to `false`. The reason for this is it prevents the internals of `ion-toast` from being tightly coupled with the state of the application. With a one way data binding, the toast only needs to concern itself with the boolean value that the reactive variable provides. With a two way data binding, the toast needs to concern itself with both the boolean value as well as the existence of the reactive variable itself. This can lead to non-deterministic behaviors and make applications harder to debug.
 
-TODO Playground
+import InlineToastIsOpenExample from '@site/static/usage/v7/toast/inline/is-open/index.md';
+
+<InlineToastIsOpenExample />
 
 ## Controller Toasts
 
