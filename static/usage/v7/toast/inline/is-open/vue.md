@@ -9,8 +9,9 @@
     <ion-button expand="block" @click="setOpen(true)">Open</ion-button>
     <ion-toast 
       :is-open="isOpen"
-      message="Click the 'Close' button to dismiss"
-      :buttons="toastButtons"
+      message="This toast will close in 5 seconds"
+      :duration="5000"
+      @didDismiss="setOpen(false)"
     ></ion-toast>
   </ion-content>
 </template>
@@ -26,14 +27,8 @@
       const setOpen = (state: boolean) => {
         isOpen.value = state;
       };
-      const toastButtons = [
-        {
-          text: 'Close',
-          handler: () => setOpen(false)
-        }
-      ]
-      
-      return { isOpen, setOpen, toastButtons };
+
+      return { isOpen, setOpen };
     }
   });
 </script>

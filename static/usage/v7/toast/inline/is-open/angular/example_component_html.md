@@ -8,8 +8,9 @@
   <ion-button expand="block" (click)="setOpen(true)">Open</ion-button>
   <ion-toast
     [isOpen]="isToastOpen"
-    message="Click the 'Close' button to dismiss"
-    [buttons]="toastButtons"
+    message="This toast will close in 5 seconds"
+    [duration]="5000"
+    (didDismiss)="setOpen(false)"
   ></ion-toast>
 </ion-content>
 ```

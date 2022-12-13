@@ -18,13 +18,9 @@ function Example() {
         </IonButton>
         <IonToast
           isOpen={isOpen}
-          message="Click the 'Close' button to dismiss"
-          buttons={[
-            {
-              text: 'Close',
-              handler: () => setIsOpen(false)
-            }
-          ]}
+          message="This toast will close in 5 seconds"
+          onDidDismiss={() => setIsOpen(false)}
+          duration={5000}
         ></IonToast>
       </IonContent>
     </IonPage>
