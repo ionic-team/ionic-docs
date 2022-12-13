@@ -1,30 +1,24 @@
 ```html
 <template>
-  <ion-button @click="presentToast">Click Me</ion-button>
+  <ion-button id="open-toast">Open Toast</ion-button>
+  <ion-toast trigger="open-toast" :duration="3000" message="Hello Styled World!" class="custom-toast" :buttons="toastButtons"></ion-toast>
 </template>
 
 <script lang="ts">
-  import { IonButton, toastController } from '@ionic/vue';
+  import { IonButton, IonToast } from '@ionic/vue';
 
   export default {
-    components: { IonButton },
-    methods: {
-      async presentToast() {
-        const toast = await toastController.create({
-          message: 'Hello Styled World!',
-          duration: 3000,
-          cssClass: 'custom-toast',
-          buttons: [
-            {
-              text: 'Dismiss',
-              role: 'cancel'
-            }
-          ],
-        });
-
-        await toast.present();
-      },
-    },
+    components: { IonButton, IonToast },
+    setup() {
+      const toastButtons = [
+        {
+          text: 'Dismiss',
+          role: 'cancel'
+        }
+      ];
+      
+      return { toastButtons };
+    }
   };
 </script>
 

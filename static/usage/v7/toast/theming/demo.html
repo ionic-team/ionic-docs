@@ -7,8 +7,8 @@
   <title>Toast</title>
   <link rel="stylesheet" href="../../../common.css" />
   <script src="../../../common.js"></script>
-  <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core@6/dist/ionic/ionic.esm.js"></script>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core@6/css/ionic.bundle.css" />
+  <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core@6.4.1-dev.11670949653.116404ab/dist/ionic/ionic.esm.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core@6.4.1-dev.11670949653.116404ab/css/ionic.bundle.css" />
 
   <style>
     ion-toast.custom-toast {
@@ -38,33 +38,21 @@
     </ion-header>
     <ion-content>
       <div class="container">
-        <ion-button onclick="presentToast()">Click Me</ion-button>
+        <ion-button id="open-toast">Open Toast</ion-button>
+        <ion-toast trigger="open-toast" duration="3000" message="Hello Styled World!" class="custom-toast"></ion-toast>
       </div>
     </ion-content>
   </ion-app>
 
-  <script type="module">
-    import { toastController } from 'https://cdn.jsdelivr.net/npm/@ionic/core@6/dist/ionic/index.esm.js';
-    window.toastController = toastController;
-  </script>
-
   <script>
-    async function presentToast() {
-      const toast = await this.toastController.create({
-        message: 'Hello Styled World!',
-        duration: 3000,
-        cssClass: 'custom-toast',
-        buttons: [
-          {
-            text: 'Dismiss',
-            role: 'cancel'
-          }
-        ],
-      });
-
-      await toast.present();
-    }
-  </script>
+    const toast = document.querySelector('ion-toast');
+    toast.buttons = [
+      {
+        text: 'Dismiss',
+        role: 'cancel'
+      }
+    ];
+    </script>
 </body>
 
 </html>

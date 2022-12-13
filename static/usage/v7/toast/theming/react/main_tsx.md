@@ -1,30 +1,26 @@
 ```tsx
 import React from 'react';
-import { IonButton, useIonToast } from '@ionic/react';
+import { IonButton, IonToast } from '@ionic/react';
 
 import './main.css';
 
 function Example() {
-  const [presentToast] = useIonToast();
-
   return (
-    <IonButton
-      onClick={() =>
-        presentToast({
-          message: 'Hello Styled World!',
-          duration: 3000,
-          cssClass: 'custom-toast',
-          buttons: [
-            {
-              text: 'Dismiss',
-              role: 'cancel'
-            }
-          ],
-        })
-      }
-    >
-      Click Me
-    </IonButton>
+    <>
+      <IonButton id="open-toast">Open Toast</IonButton>
+      <IonToast
+        trigger="open-toast" 
+        duration={3000}
+        message="Hello Styled World!"
+        class="custom-toast"
+        buttons={[
+          {
+            text: 'Dismiss',
+            role: 'cancel'
+          }
+        ]}>
+      </IonToast>
+    </>
   );
 }
 export default Example;

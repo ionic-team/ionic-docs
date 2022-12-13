@@ -1,22 +1,15 @@
 ```html
-<ion-button onclick="presentToast()">Click Me</ion-button>
+<ion-button id="open-toast">Open Toast</ion-button>
+<ion-toast trigger="open-toast" duration="3000" message="Hello Styled World!" class="custom-toast"></ion-toast>
 
 <script>
-  async function presentToast() {
-    const toast = await this.toastController.create({
-      message: 'Hello Styled World!',
-      duration: 3000,
-      cssClass: 'custom-toast',
-      buttons: [
-        {
-          text: 'Dismiss',
-          role: 'cancel'
-        }
-      ],
-    });
-
-    await toast.present();
-  }
+  const toast = document.querySelector('ion-toast');
+  toast.buttons = [
+    {
+      text: 'Dismiss',
+      role: 'cancel'
+    }
+  ];
 </script>
 
 <style>
