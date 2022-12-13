@@ -26,7 +26,9 @@ A Toast is a subtle notification commonly used in modern applications. It can be
 
 `ion-toast` can be used by writing the component directly in your template. This reduces the number of handlers you need to wire up in order to present the toast.
 
-TODO Playground
+import InlineToastTriggerExample from '@site/static/usage/v7/toast/inline/basic/index.md';
+
+<InlineToastTriggerExample />
 
 ### Using `isOpen​`
 
@@ -41,7 +43,6 @@ TODO Playground
 import ControllerExample from '@site/static/usage/v7/toast/presenting/controller/index.md';
 
 <ControllerExample />
-
 
 ## Dismissing
 
