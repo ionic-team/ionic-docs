@@ -1,23 +1,19 @@
 ```html
 <ion-list>
   <ion-item>
-    <ion-label>Default label</ion-label>
-    <ion-input placeholder="Enter text"></ion-input>
+    <ion-input label="Default label" placeholder="Enter text"></ion-input>
   </ion-item>
-
+  
   <ion-item>
-    <ion-label position="fixed">Fixed label</ion-label>
-    <ion-input placeholder="Enter text"></ion-input>
+    <ion-input label="Fixed label" label-placement="fixed" placeholder="Enter text"></ion-input>
   </ion-item>
-
+  
   <ion-item>
-    <ion-label position="stacked">Stacked label</ion-label>
-    <ion-input placeholder="Enter text"></ion-input>
+    <ion-input label="Stacked label" label-placement="stacked" placeholder="Enter text"></ion-input>
   </ion-item>
-
+  
   <ion-item>
-    <ion-label position="floating">Floating label</ion-label>
-    <ion-input placeholder="Enter text"></ion-input>
+    <ion-input label="Floating label" label-placement="floating" placeholder="Enter text"></ion-input>
   </ion-item>
 </ion-list>
 ```
