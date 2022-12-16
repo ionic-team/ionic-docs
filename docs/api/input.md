@@ -57,7 +57,7 @@ import Clear from '@site/static/usage/v7/input/clear/index.md';
 
 ## Filled Inputs
 
-Material Design offers filled styles for an input when it is inside of an item. The `fill` property on the item can be set to either `"solid"` or `"outline"`.
+Material Design offers filled styles for an input. The `fill` property on the item can be set to either `"solid"` or `"outline"`.
 
 import Fill from '@site/static/usage/v7/input/fill/index.md';
 
@@ -66,16 +66,16 @@ import Fill from '@site/static/usage/v7/input/fill/index.md';
 
 ## Helper & Error Text
 
-Helper & error text can be used inside of an item with an input by slotting a note in the `"helper"` and `"error"` slots. The error slot will not be displayed unless the `ion-invalid` class is added to the `ion-item`. In Angular, this is done automatically through form validation. In JavaScript, React and Vue, the class needs to be manually added based on your own validation.
+Helper and error text can be used inside of an input with the `helperText` and `errorText` property. The error text will not be displayed unless the `ion-invalid` class is added to the `ion-input`. In Angular, this is done automatically through form validation. In JavaScript, React and Vue, the class needs to be manually added based on your own validation.
 
 <!-- Reuse the playground from the Item directory -->
 import HelperError from '@site/static/usage/v7/item/helper-error/index.md';
 
 <HelperError />
 
-## Item Counter
+## Input Counter
 
-The item counter is helper text that displays under an input to notify the user of how many characters have been entered out of the total that the input will accept. When adding counter, the default behavior is to format the value that gets displayed as `inputLength` / `maxLength`. This behavior can be customized by passing in a formatter function to the `counterFormatter` property.
+The input counter is text that displays under an input to notify the user of how many characters have been entered out of the total that the input will accept. When adding counter, the default behavior is to format the value that gets displayed as `inputLength` / `maxLength`. This behavior can be customized by passing in a formatter function to the `counterFormatter` property.
 
 <!-- Reuse the playground from the Item directory -->
 import Counter from '@site/static/usage/v7/item/counter/index.md';
