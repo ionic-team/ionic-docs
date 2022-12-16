@@ -19,11 +19,11 @@
 </template>
 
 <script lang="ts">
-  import { IonInput, IonItem, IonLabel, IonList } from '@ionic/vue';
+  import { IonInput, IonItem, IonList } from '@ionic/vue';
   import { defineComponent } from 'vue';
 
   export default defineComponent({
-    components: { IonInput, IonItem, IonLabel, IonList },
+    components: { IonInput, IonItem, IonList },
   });
 </script>
 ```
