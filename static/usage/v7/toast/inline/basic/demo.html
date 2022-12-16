@@ -4,9 +4,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Toast</title>
-  <link rel="stylesheet" href="../../../common.css" />
-  <script src="../../../common.js"></script>
+  <title>Toast | Inline</title>
+  <link rel="stylesheet" href="../../../../common.css" />
+  <script src="../../../../common.js"></script>
   <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core@6.4.1-dev.11670949653.116404ab/dist/ionic/ionic.esm.js"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core@6.4.1-dev.11670949653.116404ab/css/ionic.bundle.css" />
 </head>
@@ -15,14 +15,13 @@
   <ion-app>
     <ion-header>
       <ion-toolbar>
-        <ion-title>Toast</ion-title>
+        <ion-title>Inline Toast</ion-title>
       </ion-toolbar>
     </ion-header>
-    <ion-content>
-      <div class="container">
-        <ion-button id="open-toast">Open Toast</ion-button>
-        <ion-toast trigger="open-toast" message="Hello World!" duration="3000" icon="globe"></ion-toast>
-      </div>
+    <ion-content class="ion-padding">
+      <ion-button id="open-toast" expand="block">Open</ion-button>
+      <p id="message">This toast example uses triggers to automatically open a toast when the button is clicked.</p>
+      <ion-toast trigger="open-toast" message="This toast will disappear after 5 seconds" duration="5000"></ion-toast>
     </ion-content>
   </ion-app>
 </body>

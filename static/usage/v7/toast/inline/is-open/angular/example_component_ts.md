@@ -6,13 +6,10 @@ import { Component } from '@angular/core';
   templateUrl: 'example.component.html',
 })
 export class ExampleComponent {
-  public toastButtons = [
-    {
-      text: 'Dismiss',
-      role: 'cancel'
-    }
-  ];
+  isToastOpen = false;
 
-  constructor() {}
+  setOpen(isOpen: boolean) {
+    this.isToastOpen = isOpen;
+  }
 }
 ```

@@ -7,32 +7,25 @@ import { ToastController } from '@ionic/angular';
   templateUrl: 'example.component.html',
 })
 export class ExampleComponent {
+  public toastButtons = [
+    {
+      text: 'More Info',
+      role: 'info',
+      handler: () => { this.handlerMessage = 'More Info clicked'; }
+    },
+    {
+      text: 'Dismiss',
+      role: 'cancel',
+      handler: () => { this.handlerMessage = 'Dismiss clicked'; }
+    }
+  ];
   handlerMessage = '';
   roleMessage = '';
 
   constructor(private toastController: ToastController) {}
 
-  async presentToast() {
-    const toast = await this.toastController.create({
-      message: 'Hello World!',
-      duration: 3000,
-      buttons: [
-        {
-          text: 'More Info',
-          role: 'info',
-          handler: () => { this.handlerMessage = 'More Info clicked'; }
-        },
-        {
-          text: 'Dismiss',
-          role: 'cancel',
-          handler: () => { this.handlerMessage = 'Dismiss clicked'; }
-        }
-      ]
-    });
-
-    await toast.present();
-
-    const { role } = await toast.onDidDismiss();
+  setRoleMessage(ev) {
+    const { role } = ev.detail
     this.roleMessage = `Dismissed with role: ${role}`;
   }
 }
