@@ -1,16 +1,10 @@
 ```html
-<ion-item counter="true">
-  <ion-label position="floating">Default Counter</ion-label>
-  <ion-input maxlength="20"></ion-input>
-</ion-item>
+<ion-input label="Default counter" label-placement="floating" counter="true" maxlength="20"></ion-input>
 
-<ion-item id="custom-item" counter="true">
-  <ion-label position="floating">Custom Counter Format</ion-label>
-  <ion-input maxlength="20"></ion-input>
-</ion-item>
+<ion-input id="custom-input" label="Custom Counter Format" label-placement="floating" counter="true" maxlength="20"></ion-input>
 
 <script>
-  const customItem = document.querySelector('#custom-item');
-  customItem.counterFormatter = (inputLength, maxLength) => `${maxLength - inputLength} characters remaining`;
+  const customInput = document.querySelector('#custom-input');
+  customInput.counterFormatter = (inputLength, maxLength) => `${maxLength - inputLength} characters remaining`;
 </script>
 ```

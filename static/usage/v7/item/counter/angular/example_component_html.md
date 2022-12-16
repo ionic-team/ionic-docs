@@ -1,11 +1,5 @@
 ```html
-<ion-item counter="true">
-  <ion-label position="floating">Default Counter</ion-label>
-  <ion-input maxlength="20"></ion-input>
-</ion-item>
+<ion-input label="Default counter" labelPlacement="floating" [counter]="true" maxlength="20"></ion-input>
 
-<ion-item id="custom-item" counter="true" [counterFormatter]="customCounterFormatter">
-  <ion-label position="floating">Custom Counter Format</ion-label>
-  <ion-input maxlength="20"></ion-input>
-</ion-item>
+<ion-input id="custom-input" label="Custom Counter Format" labelPlacement="floating" [counter]="true" maxlength="20" [counterFormatter]="customCounterFormatter"></ion-input>
 ```

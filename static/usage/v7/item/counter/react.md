@@ -1,19 +1,13 @@
 ```tsx
 import React from 'react';
-import { IonInput, IonItem, IonLabel } from '@ionic/react';
+import { IonInput } from '@ionic/react';
 
 function Example() {
   return (
     <>
-      <IonItem counter={true}>
-        <IonLabel position="floating">Default Counter</IonLabel>
-        <IonInput maxlength={20}></IonInput>
-      </IonItem>
-
-      <IonItem counter={true} counterFormatter={(inputLength, maxLength) => `${maxLength - inputLength} characters remaining`}>
-        <IonLabel position="floating">Custom Counter Format</IonLabel>
-        <IonInput maxlength={20}></IonInput>
-      </IonItem>
+      <IonInput label="Default counter" labelPlacement="floating" counter={true} maxlength={20}></IonInput>
+      
+      <IonInput id="custom-input" label="Custom Counter Format" labelPlacement="floating" counter={true} maxlength={20} counterFormatter={(inputLength, maxLength) => `${maxLength - inputLength} characters remaining`}></IonInput>
     </>
   );
 }
