@@ -59,6 +59,8 @@ import Clear from '@site/static/usage/v7/input/clear/index.md';
 
 Material Design offers filled styles for an input. The `fill` property on the item can be set to either `"solid"` or `"outline"`.
 
+Since the `fill` styles visually defines the input container, inputs that use `fill` should not be used in `ion-item`.
+
 import Fill from '@site/static/usage/v7/input/fill/index.md';
 
 <Fill />

@@ -5,15 +5,11 @@ import { IonInput } from '@ionic/react';
 function Example() {
   return (
     <>
-      <IonInput label="Default input" labelPlacement="floating" placeholder="Enter text"></IonInput>
+      <IonInput mode="md" label="Solid input" labelPlacement="floating" fill="solid" placeholder="Enter text"></IonInput>
       
       <br />
       
-      <IonInput label="Solid input" labelPlacement="floating" fill="solid" placeholder="Enter text"></IonInput>
-      
-      <br />
-      
-      <IonInput label="Outline input" labelPlacement="floating" fill="outline" placeholder="Enter text"></IonInput>
+      <IonInput mode="md" label="Outline input" labelPlacement="floating" fill="outline" placeholder="Enter text"></IonInput>
     </>
   );
 }
