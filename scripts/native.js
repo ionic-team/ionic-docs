@@ -1,7 +1,8 @@
 const fs = require('fs');
 const fetch = require('node-fetch');
 
-const API_DIR = "./docs/native";
+const API_DIR = './docs/native/';
+
 
 // replace with latest once it's relased
 const tag = 'latest';
@@ -38,7 +39,7 @@ async function buildPluginApiDocs(pluginId) {
 
   const apiContent = createApiPage(pluginId, readme, pkgJson);
   const fileName = `${pluginId}.md`;
-  const filePath = `${API_DIR}/${fileName}`
+  const filePath = `${API_DIR}${fileName}`
   fs.writeFileSync(filePath, apiContent);
 }
 
