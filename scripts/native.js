@@ -1,164 +1,90 @@
 const fs = require('fs');
-const nativeJSON = require('./data/native.json');
-const utils = require('./utils.js');
-const { native: nativeOverrides } = require('./data/meta-override.json');
+const fetch = require('node-fetch');
 
-// Filter out some plugins
-const filteredPlugins = [
-  '@awesome-cordova-plugins/android-fingerprint-auth',
-  '@awesome-cordova-plugins/fingerprint-aio',
-  '@awesome-cordova-plugins/app-center-shared',
-  '@awesome-cordova-plugins/app-update',
-  '@awesome-cordova-plugins/hot-code-push',
-  '@awesome-cordova-plugins/in-app-update',
-  '@awesome-cordova-plugins/checkout',
-  '@awesome-cordova-plugins/secure-storage-echo',
-  '@awesome-cordova-plugins/secure-storage',
-  '@awesome-cordova-plugins/admob-pro',
-  '@awesome-cordova-plugins/approov-advanced-http'
+const API_DIR = "./docs/native";
+
+// replace with latest once it's relased
+const tag = 'latest';
+
+const pluginApis = [
+  'action-sheet',
+  'app',
+  'app-launcher',
+  'browser',
+  'camera',
+  'clipboard',
+  'device',
+  'dialog',
+  'filesystem',
+  'geolocation',
+  'google-maps',
+  'haptics',
+  'keyboard',
+  'local-notifications',
+  'motion',
+  'network',
+  'preferences',
+  'push-notifications',
+  'screen-reader',
+  'share',
+  'splash-screen',
+  'status-bar',
+  'text-zoom',
+  'toast',
 ];
 
-let plugins = nativeJSON.filter((plugin) => !filteredPlugins.includes(plugin.packageName));
-const data = fs.writeFileSync('./scripts/data/native.json', JSON.stringify(plugins, null, 2));
+async function buildPluginApiDocs(pluginId) {
+  const [readme, pkgJson] = await Promise.all([getReadme(pluginId), getPkgJsonData(pluginId)]);
 
-(async function () {
-  // console.log(cliJSON);
-
-  plugins.map(writePage);
-})();
-
-function writePage(page) {
-  const data = [
-    renderFrontmatter(page),
-    renderImports(page),
-    renderIntro(page),
-    renderSalesCTA(page),
-    renderInstallation(page),
-    renderSupportedPlatforms(page),
-    renderCapIncompat(page),
-    renderUsage(page),
-  ].join('');
-
-  const path = `docs/native/${page.packageName.replace('@awesome-cordova-plugins/', '')}.md`;
-  fs.writeFileSync(path, data);
+  const apiContent = createApiPage(pluginId, readme, pkgJson);
+  const fileName = `${pluginId}.md`;
+  const filePath = `${API_DIR}/${fileName}`
+  fs.writeFileSync(filePath, apiContent);
 }
 
-function renderFrontmatter({ displayName, packageName }) {
-  const slug = packageName.replace('@awesome-cordova-plugins/', '');
+function createApiPage(pluginId, readme, pkgJson) {
+  const title = `${toTitleCase(pluginId)} Capacitor Plugin API`;
+  const desc = pkgJson.description ? pkgJson.description.replace(/\n/g, ' ') : title;
+  const editUrl = `https://github.com/ionic-team/capacitor-plugins/blob/main/${pluginId}/README.md`;
+  const editApiUrl = `https://github.com/ionic-team/capacitor-plugins/blob/main/${pluginId}/src/definitions.ts`;
+  const sidebarLabel = toTitleCase(pluginId);
 
-  const frontmatter = {
-    title: displayName,
-  };
+  // removes JSDoc HTML comments as they break docusauurs
+  readme = readme.replaceAll(/<!--.*-->/g, '');
 
-  return `---
-${Object.entries(frontmatter)
-  .map(([key, value]) => `${key}: ${typeof value === 'string' ? `"${value.replace('"', '\\"')}"` : value}`)
-  .join('\n')}
+  return `
 ---
-${utils.getHeadTag(nativeOverrides[slug])}
-`;
+title: ${title}
+description: ${desc}
+editUrl: ${editUrl}
+editApiUrl: ${editApiUrl}
+sidebar_label: ${sidebarLabel}
+---
+${readme}`.trim();
 }
 
-function renderImports({}) {
-  return `
-import DocsCard from '@components/global/DocsCard';
-import DocsButton from '@components/page/native/DocsButton';
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-import CodeBlock from '@theme/CodeBlock';
-`;
+async function getReadme(pluginId) {
+  const url = `https://cdn.jsdelivr.net/npm/@capacitor/${pluginId}@${tag}/README.md`;
+  const rsp = await fetch(url);
+  return rsp.text();
 }
 
-function renderIntro({ description, repo }) {
-  return `
-${description}
-
-<p><a href="${repo}" target="_blank" rel="noopener" className="git-link">
-  ${utils.gitBranchSVG()} ${repo}
-</a></p>
-`;
+async function getPkgJsonData(pluginId) {
+  const url = `https://cdn.jsdelivr.net/npm/@capacitor/${pluginId}@${tag}/package.json`;
+  const rsp = await fetch(url);
+  return rsp.json();
 }
 
-function renderSalesCTA({}) {
-  return `
-<h2>Stuck on a Cordova issue?</h2>
-<DocsCard className="cordova-ee-card" header="Don't waste precious time on plugin issues." href="https://ionicframework.com/sales?product_of_interest=Ionic%20Native">
-  <div>
-    <img src="/docs/icons/native-cordova-bot.png" class="cordova-ee-img" />
-    <p>If you're building a serious project, you can't afford to spend hours troubleshooting. Ionic’s experts offer premium advisory services for both community plugins and premier plugins.</p>
-    <DocsButton className="native-ee-detail">Contact Us Today!</DocsButton>
-  </div>
-</DocsCard>
-
-`;
+async function main() {
+  await Promise.all(pluginApis.map(buildPluginApiDocs));
+  console.log(`Plugin API Files Updated 🎸`);
 }
 
-function renderInstallation({ cordovaPlugin, packageName }) {
-  return `
-<h2 id="installation">
-  <a href="#installation">Installation</a>
-</h2>
-<Tabs defaultValue="Capacitor" groupId="runtime" values={[
-  {value: 'Capacitor', label: 'Capacitor'},
-  {value: 'Cordova', label: 'Cordova'},
-  {value: 'Enterprise', label: 'Enterprise'},
-]}>
-  <TabItem value="Capacitor">
-    <CodeBlock className="language-shell">
-      $ npm install ${cordovaPlugin.name} {"\\n"}
-      $ npm install ${packageName} {"\\n"}
-      $ ionic cap sync
-    </CodeBlock>
-  </TabItem>
-  <TabItem value="Cordova">
-    <CodeBlock className="language-shell">
-      $ ionic cordova plugin add ${cordovaPlugin.name} {"\\n"}
-      $ npm install ${packageName} {"\\n"}
-    </CodeBlock>
-  </TabItem>
-  <TabItem value="Enterprise">
-    <blockquote>Ionic Enterprise comes with fully supported and maintained plugins from the Ionic Team. &nbsp;
-      <a class="btn" href="https://ionic.io/docs/premier-plugins">Learn More</a> or if you're interested in an enterprise version of this plugin <a class="btn" href="https://ionicframework.com/sales?product_of_interest=Ionic%20Enterprise%20Engine">Contact Us</a></blockquote>
-  </TabItem>
-</Tabs>
-`;
+function toTitleCase(str) {
+  return str.replace(/(^\w|-\w)/g, (s) => {
+    return s.replace(/-/, ' ').toUpperCase();
+  });
 }
 
-function renderSupportedPlatforms({ platforms }) {
-  return `
-## Supported Platforms
+main();
 
-${platforms.map((platform) => `- ${platform}`).join('\n')}
-`;
-}
-
-function renderCapIncompat({ capacitorIncompatible }) {
-  if (!capacitorIncompatible) {
-    return null;
-  }
-
-  return `
-## Capacitor
-
-Not Compatible
-`;
-}
-
-function renderUsage({ usage }) {
-  if (!usage) {
-    return null;
-  }
-
-  return `
-## Usage
-
-### React
-
-[Learn more about using Ionic Native components in React](../native-community.md#react)
-
-
-### Angular
-
-${usage.replace(/</g, '&lt;')}
-`;
-}
