@@ -369,6 +369,8 @@ will match the following tab:
 <template>
   <ion-page>
     <ion-tabs @ionTabsWillChange="beforeTabChange" @ionTabsDidChange="afterTabChange">
+      <!-- https://ionicframework.com/docs/vue/navigation#working-with-tabs -->
+      <ion-router-outlet></ion-router-outlet>
       <ion-tab-bar slot="bottom">
         <ion-tab-button tab="schedule" href="/tabs/schedule">
           <ion-icon :icon="calendar"></ion-icon>
