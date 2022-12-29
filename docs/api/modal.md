@@ -194,7 +194,7 @@ interface ModalOptions {
    * @deprecated - To prevent modals from dismissing, use canDismiss instead.
    */
   swipeToClose?: boolean;
-  canDismiss?: boolean | (() => Promise<boolean>);
+  canDismiss?: boolean | ((data?: any, role?: string) => Promise<boolean>);
 
   mode?: 'ios' | 'md';
   keyboardClose?: boolean;
