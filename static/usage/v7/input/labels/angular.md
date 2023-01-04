@@ -5,7 +5,7 @@
   </ion-item>
   
   <ion-item>
-    <ion-input label="Fixed label" label-placement="fixed" placeholder="Enter text"></ion-input>
+    <ion-input label="Fixed label" labelPlacement="fixed" placeholder="Enter text"></ion-input>
   </ion-item>
   
   <ion-item>
