@@ -393,6 +393,7 @@ import {
   IonIcon, 
   IonLabel, 
   IonPage,
+  IonRouterOutlet,
   IonTabBar, 
   IonTabButton, 
   IonTabs
@@ -400,7 +401,7 @@ import {
 import { calendar, personCircle } from 'ionicons/icons';
 
 export default defineComponent({
-  components: { IonIcon, IonLabel, IonPage, IonTabBar, IonTabButton, IonTabs },
+  components: { IonIcon, IonLabel, IonPage, IonRouterOutlet, IonTabBar, IonTabButton, IonTabs },
   setup() {
     const beforeTabChange = () => {
       // do something before tab change
