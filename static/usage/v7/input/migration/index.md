@@ -128,7 +128,7 @@ import angular from './angular.md';
 
 {/* Before */}
 <IonItem>
-  <ion-label position="floating">Email:</ion-label>
+  <IonLabel position="floating">Email:</IonLabel>
   <IonInput></IonInput>
 </IonItem>
 
