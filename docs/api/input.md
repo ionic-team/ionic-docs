@@ -89,6 +89,8 @@ import Counter from '@site/static/usage/v7/item/counter/index.md';
 
 ### Colors
 
+Setting the `color` property changes the color palette for each input. On `ios` mode, this property changes the caret color. On `md` mode, this property changes the caret color and the highlight/underline color.
+
 import Colors from '@site/static/usage/v7/input/theming/colors/index.md';
 
 <Colors />
