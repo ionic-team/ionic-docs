@@ -155,7 +155,7 @@ import angular from './angular.md';
 
 {/* Before */}
 <IonItem counter={true}>
-  <ion-label position="floating">Email:</ion-label>
+  <IonLabel position="floating">Email:</IonLabel>
   <IonInput maxlength="100"></IonInput>
   <div slot="helper">Enter an email</div>
   <div slot="error">Please enter a valid email</div>
