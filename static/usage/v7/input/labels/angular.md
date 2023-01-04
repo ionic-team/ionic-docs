@@ -9,7 +9,7 @@
   </ion-item>
   
   <ion-item>
-    <ion-input label="Stacked label" label-placement="stacked" placeholder="Enter text"></ion-input>
+    <ion-input label="Stacked label" labelPlacement="stacked" placeholder="Enter text"></ion-input>
   </ion-item>
   
   <ion-item>
