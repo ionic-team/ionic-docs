@@ -110,7 +110,7 @@ While developers can continue using the legacy syntax, we recommend migrating as
 
 ### Using the Modern Syntax
 
-Using the modern syntax involves two steps:
+Using the modern syntax involves three steps:
 
 1. Remove `ion-label` and use the `label` property on `ion-input` instead. The placement of the label can be configured using the `labelPlacement` property on `ion-input`.
 2. Move input-specific properties from `ion-item` on to `ion-input`. This includes the `counter`, `counterFormatter`, `fill`, and `shape` properties.
