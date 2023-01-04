@@ -13,7 +13,7 @@
   </ion-item>
   
   <ion-item>
-    <ion-input label="Floating label" label-placement="floating" placeholder="Enter text"></ion-input>
+    <ion-input label="Floating label" labelPlacement="floating" placeholder="Enter text"></ion-input>
   </ion-item>
 </ion-list>
 ```
