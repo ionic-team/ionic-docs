@@ -112,8 +112,9 @@ While developers can continue using the legacy syntax, we recommend migrating as
 
 Using the modern syntax involves two steps:
 
-1. Removing `ion-label` and using the `label` property on `ion-input` instead. The placement of the label can be configured using the `labelPlacement` property on `ion-input`.
-2. Moving input-specific properties from `ion-item` on to `ion-input`. This includes the `counter`, `counterFormatter`, `fill`, and `shape` properties, as well as the `helper` and `error` slots.
+1. Remove `ion-label` and use the `label` property on `ion-input` instead. The placement of the label can be configured using the `labelPlacement` property on `ion-input`.
+2. Move input-specific properties from `ion-item` on to `ion-input`. This includes the `counter`, `counterFormatter`, `fill`, and `shape` properties.
+3. Remove usages of the `helper` and `error` slots on `ion-item` and use the `helperText` and `errorText` properties on `ion-input` instead.
 
 import Migration from '@site/static/usage/v7/input/migration/index.md';
 
