@@ -1,11 +1,6 @@
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-import javascript from './javascript.md';
-import react from './react.md';
-import vue from './vue.md';
-import angular from './angular.md';
-
 ````mdx-code-block
 <Tabs
   groupId="framework"
