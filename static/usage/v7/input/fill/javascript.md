@@ -1,16 +1,7 @@
 ```html
-<ion-item>
-  <ion-label position="floating">Default input</ion-label>
-  <ion-input placeholder="Enter text"></ion-input>
-</ion-item>
+<ion-input mode="md" label="Solid input" label-placement="floating" fill="solid" placeholder="Enter text"></ion-input>
 
-<ion-item fill="solid">
-  <ion-label position="floating">Solid input</ion-label>
-  <ion-input placeholder="Enter text"></ion-input>
-</ion-item>
+<br />
 
-<ion-item fill="outline">
-  <ion-label position="floating">Outline input</ion-label>
-  <ion-input placeholder="Enter text"></ion-input>
-</ion-item>
+<ion-input mode="md" label="Outline input" label-placement="floating" fill="outline" placeholder="Enter text"></ion-input>
 ```

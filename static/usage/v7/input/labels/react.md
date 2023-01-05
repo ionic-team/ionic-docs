@@ -1,28 +1,24 @@
 ```tsx
 import React from 'react';
-import { IonInput, IonItem, IonLabel, IonList } from '@ionic/react';
+import { IonInput, IonItem, IonList } from '@ionic/react';
 
 function Example() {
   return (
     <IonList>
       <IonItem>
-        <IonLabel>Default label</IonLabel>
-        <IonInput placeholder="Enter text"></IonInput>
+        <IonInput label="Default label" placeholder="Enter text"></IonInput>
       </IonItem>
-
+      
       <IonItem>
-        <IonLabel position="fixed">Fixed label</IonLabel>
-        <IonInput placeholder="Enter text"></IonInput>
+        <IonInput label="Fixed label" labelPlacement="fixed" placeholder="Enter text"></IonInput>
       </IonItem>
-
+      
       <IonItem>
-        <IonLabel position="stacked">Stacked label</IonLabel>
-        <IonInput placeholder="Enter text"></IonInput>
+        <IonInput label="Stacked label" labelPlacement="stacked" placeholder="Enter text"></IonInput>
       </IonItem>
-
+      
       <IonItem>
-        <IonLabel position="floating">Floating label</IonLabel>
-        <IonInput placeholder="Enter text"></IonInput>
+        <IonInput label="Floating label" labelPlacement="floating" placeholder="Enter text"></IonInput>
       </IonItem>
     </IonList>
   );

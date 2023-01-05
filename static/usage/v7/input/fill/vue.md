@@ -1,27 +1,18 @@
 ```html
 <template>
-  <ion-item>
-    <ion-label position="floating">Default input</ion-label>
-    <ion-input placeholder="Enter text"></ion-input>
-  </ion-item>
-
-  <ion-item fill="solid">
-    <ion-label position="floating">Solid input</ion-label>
-    <ion-input placeholder="Enter text"></ion-input>
-  </ion-item>
-
-  <ion-item fill="outline">
-    <ion-label position="floating">Outline input</ion-label>
-    <ion-input placeholder="Enter text"></ion-input>
-  </ion-item>
+  <ion-input mode="md" label="Solid input" label-placement="floating" fill="solid" placeholder="Enter text"></ion-input>
+  
+  <br />
+  
+  <ion-input mode="md" label="Outline input" label-placement="floating" fill="outline" placeholder="Enter text"></ion-input>
 </template>
 
 <script lang="ts">
-  import { IonInput, IonItem, IonLabel } from '@ionic/vue';
+  import { IonInput } from '@ionic/vue';
   import { defineComponent } from 'vue';
 
   export default defineComponent({
-    components: { IonInput, IonItem, IonLabel },
+    components: { IonInput },
   });
 </script>
 ```

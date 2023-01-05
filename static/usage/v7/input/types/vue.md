@@ -2,38 +2,33 @@
 <template>
   <ion-list>
     <ion-item>
-      <ion-label>Text input</ion-label>
-      <ion-input placeholder="Enter text"></ion-input>
+      <ion-input label="Text input" placeholder="Enter text"></ion-input>
     </ion-item>
-
+  
     <ion-item>
-      <ion-label>Number input</ion-label>
-      <ion-input type="number" placeholder="000"></ion-input>
+      <ion-input label="Number input" type="number" placeholder="000"></ion-input>
     </ion-item>
-
+  
     <ion-item>
-      <ion-label>Password input</ion-label>
-      <ion-input type="password" value="password"></ion-input>
+      <ion-input label="Password input" type="password" value="password"></ion-input>
     </ion-item>
-
+  
     <ion-item>
-      <ion-label>Email input</ion-label>
-      <ion-input type="email" placeholder="email@domain.com"></ion-input>
+      <ion-input label="Email input" type="email" placeholder="email@domain.com"></ion-input>
     </ion-item>
-
+  
     <ion-item>
-      <ion-label>Telephone input</ion-label>
-      <ion-input type="tel" placeholder="888-888-8888"></ion-input>
+      <ion-input label="Telephone input" type="tel" placeholder="888-888-8888"></ion-input>
     </ion-item>
   </ion-list>
 </template>
 
 <script lang="ts">
-  import { IonInput, IonItem, IonLabel, IonList } from '@ionic/vue';
+  import { IonInput, IonItem, IonList } from '@ionic/vue';
   import { defineComponent } from 'vue';
 
   export default defineComponent({
-    components: { IonInput, IonItem, IonLabel, IonList },
+    components: { IonInput, IonItem, IonList },
   });
 </script>
 ```

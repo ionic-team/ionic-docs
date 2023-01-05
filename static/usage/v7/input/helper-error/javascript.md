@@ -1,14 +1,15 @@
 ```html
-<ion-item fill="solid">
-  <ion-label position="floating">Email</ion-label>
-  <ion-input type="email"></ion-input>
-  <ion-note slot="helper">Enter a valid email</ion-note>
-  <ion-note slot="error">Invalid email</ion-note>
-</ion-item>
+<ion-input
+  type="email"
+  fill="solid"
+  label="Email"
+  label-placement="floating"
+  helper-text="Enter a valid email"
+  error-text="Invalid email"
+></ion-input>
 
 <script>
-  const item = document.querySelector('ion-item');
-  const input = item.querySelector('ion-input');
+  const input = input.querySelector('ion-input');
 
   input.addEventListener('ionInput', (ev) => validate(ev));
   input.addEventListener('ionBlur', () => markTouched());
@@ -20,16 +21,16 @@
   const validate = (ev) => {
     const value = ev.target.value;
 
-    item.classList.remove('ion-valid');
-    item.classList.remove('ion-invalid');
+    input.classList.remove('ion-valid');
+    input.classList.remove('ion-invalid');
 
     if (value === "") return;
 
-    validateEmail(value) ? item.classList.add('ion-valid') : item.classList.add('ion-invalid');
+    validateEmail(value) ? input.classList.add('ion-valid') : input.classList.add('ion-invalid');
   }
 
   const markTouched = () => {
-    item.classList.add('ion-touched');
+    input.classList.add('ion-touched');
   }
 </script>
 ```
