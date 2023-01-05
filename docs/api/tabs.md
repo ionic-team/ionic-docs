@@ -369,6 +369,8 @@ will match the following tab:
 <template>
   <ion-page>
     <ion-tabs @ionTabsWillChange="beforeTabChange" @ionTabsDidChange="afterTabChange">
+      <!-- https://ionicframework.com/docs/vue/navigation#working-with-tabs -->
+      <ion-router-outlet></ion-router-outlet>
       <ion-tab-bar slot="bottom">
         <ion-tab-button tab="schedule" href="/tabs/schedule">
           <ion-icon :icon="calendar"></ion-icon>
@@ -391,6 +393,7 @@ import {
   IonIcon, 
   IonLabel, 
   IonPage,
+  IonRouterOutlet,
   IonTabBar, 
   IonTabButton, 
   IonTabs
@@ -398,7 +401,7 @@ import {
 import { calendar, personCircle } from 'ionicons/icons';
 
 export default defineComponent({
-  components: { IonIcon, IonLabel, IonPage, IonTabBar, IonTabButton, IonTabs },
+  components: { IonIcon, IonLabel, IonPage, IonRouterOutlet, IonTabBar, IonTabButton, IonTabs },
   setup() {
     const beforeTabChange = () => {
       // do something before tab change
