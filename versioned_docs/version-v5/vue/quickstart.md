@@ -51,6 +51,8 @@ npm uninstall --save typescript @types/jest @typescript-eslint/eslint-plugin @ty
 
 6. Remove `lang="ts"` from the `script` tags in any of your Vue components that have them. In a blank Ionic Vue app, this should only be `App.vue` and `views/Home.vue`.
 
+7. Delete the `tsconfig.json` file.
+
 ## A look at a Vue Component
 
 The base of our app will be in the `src` directory, and the main entry point will be our `main.ts` file. If we open our project in a code editor and open `main.ts`, we should see the following:
