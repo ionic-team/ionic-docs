@@ -5,6 +5,10 @@ slug: /native/faq
 
 # Frequently Asked Question
 
+## What is Capacitor? 
+
+Capacitor a native runtime built by the Ionic team that offers web developers the ability to deploy their web apps to a native device. Capacitor also exposing native device capabilities through JavaScript so developers could access features like native location services, filesystem access, or notifications as if they are interacting with any other JavaScript library. 
+
 ## Permission Issues
 
 If you're using a plugin, it may require adding additional permissions to your native project after you install the plugin. For instance, the Capacitor Camera plugin requires the following permission for iOS:
