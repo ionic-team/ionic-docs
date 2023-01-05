@@ -93,8 +93,8 @@ Next, head back over to the `loadSaved()` function we implemented for the web ea
 ```tsx
 public async loadSaved() {
   // Retrieve cached photo array data
-  const photoList = await Preferences.get({ key: this.PHOTO_STORAGE });
-  this.photos = JSON.parse(photoList.value) || [];
+  const { value } = await Preferences.get({ key: this.PHOTO_STORAGE });
+  this.photos = (value ? JSON.parse(value) : []);
 
   // Easiest way to detect when running on the web:
   // “when the platform is NOT hybrid, do this”

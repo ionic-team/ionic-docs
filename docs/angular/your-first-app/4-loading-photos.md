@@ -35,8 +35,8 @@ With the photo array data saved, create a function called `loadSaved()` that can
 ```tsx
 public async loadSaved() {
   // Retrieve cached photo array data
-  const photoList = await Preferences.get({ key: this.PHOTO_STORAGE });
-  this.photos = JSON.parse(photoList.value) || [];
+  const { value } = await Preferences.get({ key: this.PHOTO_STORAGE });
+  this.photos = (value ? JSON.parse(value) : []);
 
   // more to come...
 }
