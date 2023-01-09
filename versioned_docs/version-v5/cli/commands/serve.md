@@ -335,32 +335,6 @@ $ ionic serve -- --proxy-config proxy.conf.json
     <tr>
       <th colSpan="2">
         <h3>
-          <a href="#option-lab-port" id="option-lab-port">
-            --lab-port
-            <span class="option-spec"> =&lt;port&gt;</span>
-          </a>
-        </h3>
-      </th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>Description</th>
-      <td>
-        <div>
-          <p>Use specific port for Ionic Lab server</p>
-        </div>
-      </td>
-    </tr>
-    <tr>
-      <th>Default</th>
-      <td>8200</td>
-    </tr>
-  </tbody>
-  <thead>
-    <tr>
-      <th colSpan="2">
-        <h3>
           <a href="#option-browser" id="option-browser">
             --browser
             <span class="option-spec"> =&lt;browser&gt;</span>
