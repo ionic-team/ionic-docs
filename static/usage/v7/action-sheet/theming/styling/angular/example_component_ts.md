@@ -1,8 +1,6 @@
 ```ts
 import { Component } from '@angular/core';
 
-import { ActionSheetController } from '@ionic/angular';
-
 @Component({
   selector: 'app-example',
   templateUrl: 'example.component.html',
@@ -32,6 +30,6 @@ export class ExampleComponent {
     }
   ];
 
-  constructor(private actionSheetCtrl: ActionSheetController) {}
+  constructor() {}
 }
 ```
