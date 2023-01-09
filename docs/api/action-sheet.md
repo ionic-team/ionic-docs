@@ -22,7 +22,11 @@ An Action Sheet is a dialog that displays a set of options. It appears on top of
 
 ## Inline Action Sheets (Recommended)
 
-TODO
+`ion-action-sheet` can be used by writing the component directly in your template. This reduces the number of handlers you need to wire up in order to present the Action Sheet.
+
+import Trigger from '@site/static/usage/v7/action-sheet/inline/trigger/index.md';
+
+<Trigger />
 
 ## Controller Action Sheets
 
