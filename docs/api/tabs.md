@@ -237,23 +237,23 @@ export const TabsExample: React.FC = () => (
   <IonTabs>
     <IonTabBar slot="bottom">
       <IonTabButton tab="schedule">
-        <IonIcon icon={calendar} />
+        <IonIcon icon={calendar} aria-hidden="true" />
         <IonLabel>Schedule</IonLabel>
         <IonBadge>6</IonBadge>
       </IonTabButton>
 
       <IonTabButton tab="speakers">
-        <IonIcon icon={personCircle} />
+        <IonIcon icon={personCircle} aria-hidden="true" />
         <IonLabel>Speakers</IonLabel>
       </IonTabButton>
 
       <IonTabButton tab="map">
-        <IonIcon icon={map} />
+        <IonIcon icon={map} aria-hidden="true" />
         <IonLabel>Map</IonLabel>
       </IonTabButton>
 
       <IonTabButton tab="about">
-        <IonIcon icon={informationCircle} />
+        <IonIcon icon={informationCircle} aria-hidden="true" />
         <IonLabel>About</IonLabel>
       </IonTabButton>
     </IonTabBar>
