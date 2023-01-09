@@ -46,22 +46,22 @@ See the [tabs documentation](tabs.md) for more details on configuring tabs.
   <!-- Tab bar -->
   <ion-tab-bar slot="bottom">
     <ion-tab-button tab="schedule">
-      <ion-icon name="calendar"></ion-icon>
+      <ion-icon name="calendar" aria-hidden="true"></ion-icon>
       <ion-label>Schedule</ion-label>
     </ion-tab-button>
 
     <ion-tab-button tab="speakers">
-      <ion-icon name="person-circle"></ion-icon>
+      <ion-icon name="person-circle" aria-hidden="true"></ion-icon>
       <ion-label>Speakers</ion-label>
     </ion-tab-button>
 
     <ion-tab-button tab="map">
-      <ion-icon name="map"></ion-icon>
+      <ion-icon name="map" aria-hidden="true"></ion-icon>
       <ion-label>Map</ion-label>
     </ion-tab-button>
 
     <ion-tab-button tab="about">
-      <ion-icon name="information-circle"></ion-icon>
+      <ion-icon name="information-circle" aria-hidden="true"></ion-icon>
       <ion-label>About</ion-label>
     </ion-tab-button>
   </ion-tab-bar>
@@ -96,22 +96,22 @@ See the [tabs documentation](tabs.md) for more details on configuring tabs.
   <!-- Tab bar -->
   <ion-tab-bar slot="bottom">
     <ion-tab-button tab="schedule" href="/app/tabs/(schedule:schedule)">
-      <ion-icon name="calendar"></ion-icon>
+      <ion-icon name="calendar" aria-hidden="true"></ion-icon>
       <ion-label>Schedule</ion-label>
     </ion-tab-button>
 
     <ion-tab-button tab="speakers" href="/app/tabs/(speakers:speakers)">
-      <ion-icon name="person-circle"></ion-icon>
+      <ion-icon name="person-circle" aria-hidden="true"></ion-icon>
       <ion-label>Speakers</ion-label>
     </ion-tab-button>
 
     <ion-tab-button tab="map" href="/app/tabs/(map:map)">
-      <ion-icon name="map"></ion-icon>
+      <ion-icon name="map" aria-hidden="true"></ion-icon>
       <ion-label>Map</ion-label>
     </ion-tab-button>
 
     <ion-tab-button tab="about" href="/app/tabs/(about:about)">
-      <ion-icon name="information-circle"></ion-icon>
+      <ion-icon name="information-circle" aria-hidden="true"></ion-icon>
       <ion-label>About</ion-label>
     </ion-tab-button>
   </ion-tab-bar>
@@ -135,22 +135,22 @@ export const TabButtonExample: React.FC = () => (
       {/*-- Tab bar --*/}
       <IonTabBar slot="bottom">
         <IonTabButton tab="schedule">
-          <IonIcon icon={calendar} />
+          <IonIcon icon={calendar} aria-hidden="true" />
           <IonLabel>Schedule</IonLabel>
         </IonTabButton>
 
         <IonTabButton tab="speakers">
-          <IonIcon icon={personCircle} />
+          <IonIcon icon={personCircle} aria-hidden="true" />
           <IonLabel>Speakers</IonLabel>
         </IonTabButton>
 
         <IonTabButton tab="map">
-          <IonIcon icon={map} />
+          <IonIcon icon={map} aria-hidden="true" />
           <IonLabel>Map</IonLabel>
         </IonTabButton>
 
         <IonTabButton tab="about">
-          <IonIcon icon={informationCircle} />
+          <IonIcon icon={informationCircle} aria-hidden="true" />
           <IonLabel>About</IonLabel>
         </IonTabButton>
       </IonTabBar>
@@ -196,22 +196,22 @@ export class TabButtonExample {
         {/* Tab bar */}
         <ion-tab-bar slot="bottom">
           <ion-tab-button tab="schedule" href="/app/tabs/(schedule:schedule)">
-            <ion-icon name="calendar"></ion-icon>
+            <ion-icon name="calendar" aria-hidden="true"></ion-icon>
             <ion-label>Schedule</ion-label>
           </ion-tab-button>
 
           <ion-tab-button tab="speakers" href="/app/tabs/(speakers:speakers)">
-            <ion-icon name="person-circle"></ion-icon>
+            <ion-icon name="person-circle" aria-hidden="true"></ion-icon>
             <ion-label>Speakers</ion-label>
           </ion-tab-button>
 
           <ion-tab-button tab="map" href="/app/tabs/(map:map)">
-            <ion-icon name="map"></ion-icon>
+            <ion-icon name="map" aria-hidden="true"></ion-icon>
             <ion-label>Map</ion-label>
           </ion-tab-button>
 
           <ion-tab-button tab="about" href="/app/tabs/(about:about)">
-            <ion-icon name="information-circle"></ion-icon>
+            <ion-icon name="information-circle" aria-hidden="true"></ion-icon>
             <ion-label>About</ion-label>
           </ion-tab-button>
         </ion-tab-bar>
@@ -233,22 +233,22 @@ export class TabButtonExample {
     <!-- Tab bar -->
     <ion-tab-bar slot="bottom">
       <ion-tab-button tab="schedule" href="/tabs/schedule">
-        <ion-icon :icon="calendar"></ion-icon>
+        <ion-icon :icon="calendar" aria-hidden="true"></ion-icon>
         <ion-label>Schedule</ion-label>
       </ion-tab-button>
 
       <ion-tab-button tab="speakers" href="/tabs/speakers">
-        <ion-icon :icon="person-circle"></ion-icon>
+        <ion-icon :icon="person-circle" aria-hidden="true"></ion-icon>
         <ion-label>Speakers</ion-label>
       </ion-tab-button>
 
       <ion-tab-button tab="map" href="/tabs/map">
-        <ion-icon :icon="map"></ion-icon>
+        <ion-icon :icon="map" aria-hidden="true"></ion-icon>
         <ion-label>Map</ion-label>
       </ion-tab-button>
 
       <ion-tab-button tab="about" href="/tabs/about">
-        <ion-icon :icon="informationCircle"></ion-icon>
+        <ion-icon :icon="informationCircle" aria-hidden="true"></ion-icon>
         <ion-label>About</ion-label>
       </ion-tab-button>
     </ion-tab-bar>
