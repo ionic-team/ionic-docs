@@ -28,6 +28,16 @@ import Trigger from '@site/static/usage/v7/action-sheet/inline/trigger/index.md'
 
 <Trigger />
 
+### Using `isOpen`
+
+The `isOpen` property on `ion-action-sheet` allows developers to control the presentation state of the Action Sheet from their application state. This means when `isOpen` is set to `true` the Action Sheet will be presented, and when `isOpen` is set to `false` the Action Sheet will be dismissed.
+
+`isOpen` uses a one-way data binding, meaning it will not automatically be set to `false` when the Action Sheet is dismissed. Developers should listen for the `ionActionSheetDidDismiss` or `didDismiss` event and set `isOpen` to `false`. The reason for this is it prevents the internals of `ion-action-sheet` from being tightly coupled with the state of the application. With a one way data binding, the Action Sheet only needs to concern itself with the boolean value that the reactive variable provides. With a two way data binding, the Action Sheet needs to concern itself with both the boolean value as well as the existence of the reactive variable itself. This can lead to non-deterministic behaviors and make applications harder to debug.
+
+import IsOpen from '@site/static/usage/v7/action-sheet/inline/isOpen/index.md';
+
+<IsOpen />
+
 ## Controller Action Sheets
 
 The `actionSheetController` can be used in situations where more control is needed over when the Action Sheet is presented and dismissed.
