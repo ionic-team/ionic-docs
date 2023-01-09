@@ -7,8 +7,8 @@
   <title>Action Sheet</title>
   <link rel="stylesheet" href="../../../../common.css" />
   <script src="../../../../common.js"></script>
-  <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core@6/dist/ionic/ionic.esm.js"></script>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core@6/css/ionic.bundle.css" />
+  <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core@6.4.1-dev.11670949653.116404ab/dist/ionic/ionic.esm.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core@6.4.1-dev.11670949653.116404ab/css/ionic.bundle.css" />
 
   <style>
     ion-action-sheet.my-custom-class .action-sheet-group {
@@ -44,17 +44,17 @@
   <ion-app>
     <ion-content>
       <div class="container">
-        <ion-button onclick="presentActionSheet()">Open</ion-button>
+        <ion-button id="open-action-sheet">Open</ion-button>
+        <ion-action-sheet trigger="open-action-sheet" css-class="my-custom-class" header="Example header"
+          sub-header="Example subheader"></ion-action-sheet>
       </div>
     </ion-content>
   </ion-app>
   <script>
-    async function presentActionSheet() {
-      const actionSheet = document.createElement('ion-action-sheet');
-      actionSheet.cssClass = 'my-custom-class';
-      actionSheet.header = 'Example header';
-      actionSheet.subHeader = 'Example subheader';
-      actionSheet.buttons = [{
+    const actionSheet = document.querySelector('ion-action-sheet');
+
+    actionSheet.buttons = [
+      {
         text: 'Delete',
         role: 'destructive',
         data: {
@@ -73,11 +73,8 @@
         data: {
           action: 'cancel'
         }
-      }];
-
-      document.body.appendChild(actionSheet);
-      await actionSheet.present();
-    }
+      }
+    ];
   </script>
 </body>
 
