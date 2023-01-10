@@ -25,6 +25,7 @@ The dev server can use HTTPS via the `--ssl` option **(experimental)**. There ar
 ```shell
 $ ionic serve
 $ ionic serve --external
+$ ionic serve --lab
 $ ionic serve -- --proxy-config proxy.conf.json
 ```
 
@@ -130,7 +131,7 @@ $ ionic serve -- --proxy-config proxy.conf.json
       </td>
     </tr>
   </tbody>
-    <thead>
+  <thead>
     <tr>
       <th colSpan="2">
         <h3>
@@ -356,6 +357,32 @@ $ ionic serve -- --proxy-config proxy.conf.json
     <tr>
       <th>Default</th>
       <td>localhost</td>
+    </tr>
+  </tbody>
+  <thead>
+    <tr>
+      <th colSpan="2">
+        <h3>
+          <a href="#option-lab-port" id="option-lab-port">
+            --lab-port
+            <span class="option-spec"> =&lt;port&gt;</span>
+          </a>
+        </h3>
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Description</th>
+      <td>
+        <div>
+          <p>Use specific port for Ionic Lab server</p>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <th>Default</th>
+      <td>8200</td>
     </tr>
   </tbody>
   <thead>
