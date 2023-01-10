@@ -30,7 +30,7 @@ function writePage(page) {
   fs.writeFileSync(path, data);
 }
 
-function renderFrontmatter({ name }) {
+function renderFrontmatter({ name, groups }) {
   const shortName = name.replace('ionic ', '');
   const slug = commandToKebab(shortName);
 
@@ -39,12 +39,16 @@ function renderFrontmatter({ name }) {
     sidebar_label: shortName,
   };
 
+  const deprecated = (groups.includes('deprecated')) ? ':::warning\nThis command has been deprecated and will be removed in an upcoming major release of the Ionic CLI.\n:::' : '';
+
   return `---
 ${Object.entries(frontmatter)
   .map(([key, value]) => `${key}: ${typeof value === 'string' ? `"${value.replace('"', '\\"')}"` : value}`)
   .join('\n')}
 ---
 ${utils.getHeadTag(cliOverrides[slug])}
+
+${deprecated}
 `;
 }
 
