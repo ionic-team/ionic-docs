@@ -29,7 +29,7 @@
         {
           "name": "configuration",
           "type": "string",
-          "summary": "Specify the configuration to use.",
+          "summary": "Specify the configuration to use",
           "groups": ["advanced", "cordova"],
           "aliases": ["c"],
           "spec": {
@@ -150,7 +150,7 @@
         {
           "name": "configuration",
           "type": "string",
-          "summary": "Specify the configuration to use.",
+          "summary": "Specify the configuration to use",
           "groups": ["advanced", "cordova"],
           "aliases": ["c"],
           "spec": {
@@ -221,7 +221,7 @@
         {
           "name": "configuration",
           "type": "string",
-          "summary": "Specify the configuration to use.",
+          "summary": "Specify the configuration to use",
           "groups": ["advanced", "cordova"],
           "aliases": ["c"],
           "spec": {
@@ -409,7 +409,7 @@
         {
           "name": "configuration",
           "type": "string",
-          "summary": "Specify the configuration to use.",
+          "summary": "Specify the configuration to use",
           "groups": ["advanced", "cordova"],
           "aliases": ["c"],
           "spec": {
@@ -480,7 +480,7 @@
         {
           "name": "configuration",
           "type": "string",
-          "summary": "Specify the configuration to use.",
+          "summary": "Specify the configuration to use",
           "groups": ["advanced", "cordova"],
           "aliases": ["c"],
           "spec": {
@@ -815,7 +815,7 @@
         {
           "name": "configuration",
           "type": "string",
-          "summary": "Specify the configuration to use.",
+          "summary": "Specify the configuration to use",
           "groups": ["advanced", "cordova"],
           "aliases": ["c"],
           "spec": {
@@ -1068,7 +1068,7 @@
         {
           "name": "configuration",
           "type": "string",
-          "summary": "Specify the configuration to use.",
+          "summary": "Specify the configuration to use",
           "groups": ["advanced", "cordova"],
           "aliases": ["c"],
           "spec": {
@@ -1311,7 +1311,7 @@
         {
           "name": "configuration",
           "type": "string",
-          "summary": "Specify the configuration to use.",
+          "summary": "Specify the configuration to use",
           "groups": ["advanced", "cordova"],
           "aliases": ["c"],
           "spec": {
@@ -1559,7 +1559,7 @@
         {
           "name": "configuration",
           "type": "string",
-          "summary": "Specify the configuration to use.",
+          "summary": "Specify the configuration to use",
           "groups": ["advanced", "cordova"],
           "aliases": ["c"],
           "spec": {
@@ -1920,7 +1920,7 @@
     {
       "name": "ionic doctor check",
       "namespace": ["ionic", "doctor"],
-      "summary": "Check the health of your Ionic project",
+      "summary": "\n\n:::warning\nThis command has been deprecated and will be removed in an upcoming major release of the Ionic CLI.\n:::\nCheck the health of your Ionic project",
       "description": "This command detects and prints common issues and suggested steps to fix them.\n\nSome issues can be fixed automatically. See `ionic doctor treat --help`.\n\nOptionally supply the `id` argument to check a single issue. Use `ionic doctor list` to list all known issues.",
       "footnotes": [],
       "groups": [],
@@ -1939,7 +1939,7 @@
     {
       "name": "ionic doctor list",
       "namespace": ["ionic", "doctor"],
-      "summary": "List all issues and their identifiers",
+      "summary": "\n\n:::warning\nThis command has been deprecated and will be removed in an upcoming major release of the Ionic CLI.\n:::\nList all issues and their identifiers",
       "description": "Issues can have various tags:\n- **treatable**: `ionic doctor treat` can attempt to fix the issue\n- **ignored**: configured not to be detected in `ionic doctor check` or `ionic doctor treat`\n- **explicit-detection**: issue is only detected explicitly with `ionic doctor check <issue-id>`\n\nYou can flip whether an issue is ignored or not by using `ionic config set -g doctor.issues.<issue-id>.ignored true/false`, where `<issue-id>` matches an ID listed with this command.",
       "footnotes": [],
       "groups": [],
@@ -1952,7 +1952,7 @@
     {
       "name": "ionic doctor treat",
       "namespace": ["ionic", "doctor"],
-      "summary": "Attempt to fix issues in your Ionic project",
+      "summary": "\n\n:::warning\nThis command has been deprecated and will be removed in an upcoming major release of the Ionic CLI.\n:::\nAttempt to fix issues in your Ionic project",
       "description": "This command detects and attempts to fix common issues. Before a fix is attempted, the steps are printed and a confirmation prompt is displayed.\n\nOptionally supply the `id` argument to attempt to fix a single issue. Use `ionic doctor list` to list all known issues.",
       "footnotes": [],
       "groups": [],
@@ -2567,7 +2567,7 @@
         {
           "name": "configuration",
           "type": "string",
-          "summary": "Specify the configuration to use.",
+          "summary": "Specify the configuration to use",
           "groups": ["advanced", "cordova"],
           "aliases": ["c"],
           "spec": {
@@ -2646,17 +2646,6 @@
           "aliases": [],
           "spec": {
             "value": "host"
-          }
-        },
-        {
-          "name": "lab-port",
-          "type": "string",
-          "summary": "Use specific port for Ionic Lab server",
-          "default": "8200",
-          "groups": ["advanced"],
-          "aliases": [],
-          "spec": {
-            "value": "port"
           }
         },
         {

@@ -20,10 +20,10 @@ function writePage(page) {
   const data = [
     renderFrontmatter(page),
     renderIntro(page),
-    renderExamples(page),
     renderInputs(page),
     renderOptions(page),
     renderAdvancedOptions(page),
+    renderExamples(page),
   ].join('');
 
   const path = `docs/cli/commands/${commandToKebab(page.name)}.md`;
@@ -48,12 +48,22 @@ ${utils.getHeadTag(cliOverrides[slug])}
 `;
 }
 
-function renderIntro({ description, summary, name }) {
+function renderIntro({ description, summary, name, options, inputs }) {
+  let args = '';
+  if (inputs && inputs.length > 0) {
+    for(let input of inputs) {
+      args += ` [${input.name}]`;
+    }
+  }
+  if (options && options.length > 0) {
+    args += ' [options]';
+  }
+
   return `
 ${summary}
 
 \`\`\`shell
-$ ${name} [options]
+$ ${name}${args}
 \`\`\`
 
 ${description}`;
@@ -78,15 +88,7 @@ function renderInputs({ inputs }) {
     return '';
   }
 
-  return `
-## Inputs
-
-${utils.renderReference(inputs, {
-  Head: (input) => input.name,
-  Description: (input) => utils.renderMarkdown(input.summary),
-})}
-
-`;
+  return utils.renderList('Inputs', inputs);
 }
 
 function renderOptions({ options }) {
@@ -95,19 +97,7 @@ function renderOptions({ options }) {
   if (options.length === 0) {
     return '';
   }
-
-  return `
-## Options
-
-${utils.renderReference(options, {
-  Head: (option) => utils.renderOptionSpec(option),
-  Description: (option) => utils.renderMarkdown(option.summary),
-  Aliases: (option) =>
-    option.aliases.length > 0 ? option.aliases.map((alias) => `<code>-${alias}</code>`).join(' ') : null,
-  Default: (option) => (option.default && option.type === 'string' ? option.default : null),
-})}
-
-`;
+  return utils.renderOptions('Options', options);
 }
 
 function renderAdvancedOptions({ options }) {
@@ -116,19 +106,7 @@ function renderAdvancedOptions({ options }) {
   if (options.length === 0) {
     return '';
   }
-
-  return `
-## Advanced Options
-
-${utils.renderReference(options, {
-  Head: (option) => utils.renderOptionSpec(option),
-  Description: (option) => `<div>${utils.renderMarkdown(option.summary)}</div>`,
-  Aliases: (option) =>
-    option.aliases.length > 0 ? option.aliases.map((alias) => `<code>-${alias}</code>`).join(' ') : null,
-  Default: (option) => (option.default && option.type === 'string' ? option.default : null),
-})}
-
-`;
+  return utils.renderOptions('Advanced Options', options);
 }
 
 // function renderProperties({ props: properties }) {
