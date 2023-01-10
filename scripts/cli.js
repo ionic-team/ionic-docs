@@ -39,7 +39,9 @@ function renderFrontmatter({ name, groups }) {
     sidebar_label: shortName,
   };
 
-  const deprecated = (groups.includes('deprecated')) ? ':::warning\nThis command has been deprecated and will be removed in an upcoming major release of the Ionic CLI.\n:::' : '';
+  const deprecated = groups.includes('deprecated')
+    ? ':::warning\nThis command has been deprecated and will be removed in an upcoming major release of the Ionic CLI.\n:::'
+    : '';
 
   return `---
 ${Object.entries(frontmatter)
@@ -55,7 +57,7 @@ ${deprecated}
 function renderIntro({ description, summary, name, options, inputs }) {
   let args = '';
   if (inputs && inputs.length > 0) {
-    for(let input of inputs) {
+    for (let input of inputs) {
       args += ` [${input.name}]`;
     }
   }
