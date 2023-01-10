@@ -56,7 +56,7 @@ import LabelPlacement from '@site/static/usage/v7/toggle/label-placement/index.m
 
 ## Justification
 
-Developers can use the `justify` property to control how the label and control are packed on the line.
+Developers can use the `justify` property to control how the label and control are packed on a line.
 
 import Justify from '@site/static/usage/v7/toggle/justify/index.md';
 
