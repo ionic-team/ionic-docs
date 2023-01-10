@@ -1,5 +1,13 @@
 ```html
-<ion-toggle labelPlacement="start">Label at the Start</ion-toggle><br /><br />
-<ion-toggle labelPlacement="end">Label at the End</ion-toggle><br /><br />
-<ion-toggle labelPlacement="fixed">Fixed Width Label</ion-toggle><br /><br />
+<ion-list>
+  <ion-item>
+    <ion-toggle justify="start">Packed at the Start of Line</ion-toggle>
+  </ion-item>
+  <ion-item>
+    <ion-toggle justify="end">Packed at the End of Line</ion-toggle>
+  </ion-item>
+  <ion-item>
+    <ion-toggle justify="space-between">Space Between Label and Control</ion-toggle>
+  </ion-item>
+</ion-list>
 ```
