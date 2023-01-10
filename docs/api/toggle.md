@@ -53,6 +53,16 @@ import LabelPlacement from '@site/static/usage/v7/toggle/label-placement/index.m
 
 <LabelPlacement />
 
+
+## Justification
+
+Developers can use the `justify` property to control how the label and control are packed on the line.
+
+import Justify from '@site/static/usage/v7/toggle/justify/index.md';
+
+<Justify />
+
+
 ## Theming
 
 ### Colors
