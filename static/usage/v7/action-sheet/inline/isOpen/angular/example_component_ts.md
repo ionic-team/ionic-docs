@@ -4,10 +4,8 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-example',
   templateUrl: 'example.component.html',
-  styleUrls: ['./example.component.css'],
 })
 export class ExampleComponent {
-  result: string;
   isActionSheetOpen = false;
   public actionSheetButtons = [
     {
@@ -31,9 +29,7 @@ export class ExampleComponent {
       }
     }
   ];
-
-  constructor() {}
-
+  
   setOpen(isOpen: boolean) {
     this.isActionSheetOpen = isOpen;
   }

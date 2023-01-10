@@ -1,12 +1,31 @@
 ```html
+<style>
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    flex-direction: column;
+  }
+
+  code {
+    white-space: pre-wrap;
+  }
+</style>
+
 <template>
-  <ion-button @click="setOpen(true)">Open</ion-button>
-  <ion-action-sheet
-    :is-open="isOpen"
-    header="Actions"
-    :buttons="actionSheetButtons"
-    @didDismiss="setOpen(false)"
-  ></ion-action-sheet>
+  <div class="container">
+    <ion-button id="open-action-sheet">Open</ion-button>
+    <ion-action-sheet
+      trigger="open-action-sheet"
+      header="Example header"
+      sub-header="Example subheader"
+      :buttons="actionSheetButtons"
+      @didDismiss="setResult($event)"
+    ></ion-action-sheet>
+
+    <code>{{ result }}</code>
+  </div>
 </template>
 
 <script lang="ts">
@@ -16,7 +35,7 @@
   export default {
     components: { IonActionSheet, IonButton },
     setup() {
-      const isOpen = ref(false);
+      const result = ref('');
       const actionSheetButtons = [
         {
           text: 'Delete',
@@ -40,14 +59,14 @@
         },
       ];
 
-      const setOpen = (state: boolean) => {
-        isOpen.value = state;
+      const setResult = (ev: CustomEvent) => {
+        result.value = JSON.stringify(ev.detail, null, 2);
       };
 
       return {
+        result,
         actionSheetButtons,
-        isOpen,
-        setOpen
+        setResult
       };
     },
   };

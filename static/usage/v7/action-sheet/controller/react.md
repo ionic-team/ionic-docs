@@ -1,16 +1,14 @@
-```html
-<template>
-  <ion-button @click="presentActionSheet">Open</ion-button>
-</template>
+```tsx
+import React from 'react';
+import { IonButton, useIonActionSheet } from '@ionic/react';
 
-<script lang="ts">
-  import { IonButton, actionSheetController } from '@ionic/vue';
+function Example() {
+  const [present] = useIonActionSheet();
 
-  export default {
-    components: { IonButton },
-    setup() {
-      const presentActionSheet = async () => {
-        const actionSheet = await actionSheetController.create({
+  return (
+    <IonButton
+      onClick={() =>
+        present({
           header: 'Actions',
           buttons: [
             {
@@ -34,13 +32,12 @@
               },
             },
           ],
-        });
-
-        await actionSheet.present();
-      };
-
-      return { presentActionSheet };
-    },
-  };
-</script>
+        })
+      }
+    >
+      Open
+    </IonButton>
+  );
+}
+export default Example;
 ```

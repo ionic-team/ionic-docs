@@ -1,30 +1,10 @@
 ```html
-<style>
-  .container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
-    flex-direction: column;
-  }
-
-  code {
-    white-space: pre-wrap;
-  }
-</style>
-
-<div class="container">
-  <ion-button onclick="presentActionSheet()">Open</ion-button>
-  <code id="action"></code>
-</div>
+<ion-button onclick="presentActionSheet()">Open</ion-button>
 
 <script>
-  const action = document.getElementById('action');
-
   async function presentActionSheet() {
     const actionSheet = document.createElement('ion-action-sheet');
-    actionSheet.header = 'Example header';
-    actionSheet.subHeader = 'Example subheader';
+    actionSheet.header = 'Actions';
     actionSheet.buttons = [
       {
         text: 'Delete',
@@ -50,9 +30,6 @@
 
     document.body.appendChild(actionSheet);
     await actionSheet.present();
-
-    const result = await actionSheet.onDidDismiss();
-    action.innerText = JSON.stringify(result, null, 2);
   }
 </script>
 ```

@@ -52,6 +52,14 @@ A button's `role` property can either be `destructive` or `cancel`. Buttons with
 
 A button can also be passed data via the `data` property on `ActionSheetButton`. This will populate the `data` field in the return value of the `onDidDismiss` method.
 
+## Collecting Role Information on Dismiss
+
+When the `didDismiss` event is fired, the `data` and `role` fields of the event detail can be used to gather information about how the Action Sheet was dismissed.
+
+import RoleInfo from '@site/static/usage/v7/action-sheet/role-info-on-dismiss/index.md';
+
+<RoleInfo />
+
 ## Theming
 
 Action Sheet uses scoped encapsulation, which means it will automatically scope its CSS by appending each of the styles with an additional class at runtime. Overriding scoped selectors in CSS requires a [higher specificity](https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity) selector.

@@ -6,17 +6,13 @@ import { ActionSheetController } from '@ionic/angular';
 @Component({
   selector: 'app-example',
   templateUrl: 'example.component.html',
-  styleUrls: ['./example.component.css'],
 })
 export class ExampleComponent {
-  result: string;
-
   constructor(private actionSheetCtrl: ActionSheetController) {}
 
   async presentActionSheet() {
     const actionSheet = await this.actionSheetCtrl.create({
-      header: 'Example header',
-      subHeader: 'Example subheader',
+      header: 'Actions',
       buttons: [
         {
           text: 'Delete',
@@ -42,9 +38,6 @@ export class ExampleComponent {
     });
 
     await actionSheet.present();
-
-    const result = await actionSheet.onDidDismiss();
-    this.result = JSON.stringify(result, null, 2);
   }
 }
 ```
