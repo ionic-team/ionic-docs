@@ -35,6 +35,13 @@ import OnOff from '@site/static/usage/v7/toggle/on-off/index.md';
 
 <OnOff />
 
+## Toggles in a List
+
+Toggles can also be used in a list view by using the [Item](./item) and [List](./list) components.
+
+import List from '@site/static/usage/v7/toggle/list/index.md';
+
+<List />
 
 ## Theming
 
