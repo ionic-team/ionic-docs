@@ -35,6 +35,7 @@ import OnOff from '@site/static/usage/v7/toggle/on-off/index.md';
 
 <OnOff />
 
+
 ## Toggles in a List
 
 Toggles can also be used in a list view by using the [Item](./item) and [List](./list) components.
@@ -42,6 +43,15 @@ Toggles can also be used in a list view by using the [Item](./item) and [List](.
 import List from '@site/static/usage/v7/toggle/list/index.md';
 
 <List />
+
+
+## Label Placement
+
+Developers can use the `labelPlacement` property to control how the label is placed relative to the control.
+
+import LabelPlacement from '@site/static/usage/v7/toggle/label-placement/index.md';
+
+<LabelPlacement />
 
 ## Theming
 
