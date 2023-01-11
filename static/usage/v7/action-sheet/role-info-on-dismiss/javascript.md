@@ -25,8 +25,8 @@
 </div>
 
 <script>
-  const actionSheet = document.querySelector('ion-action-sheet');
-  const action = document.getElementById('action');
+  var actionSheet = document.querySelector('ion-action-sheet');
+  var action = document.getElementById('action');
 
   actionSheet.buttons = [
     {

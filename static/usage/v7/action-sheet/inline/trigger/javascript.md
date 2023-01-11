@@ -6,7 +6,7 @@
 ></ion-action-sheet>
 
 <script>
-  const actionSheet = document.querySelector('ion-action-sheet');
+  var actionSheet = document.querySelector('ion-action-sheet');
 
   actionSheet.buttons = [
     {
