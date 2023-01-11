@@ -15,7 +15,7 @@
   <ion-button id="open-action-sheet">Open</ion-button>
   <ion-action-sheet
     trigger="open-action-sheet"
-    css-class="my-custom-class"
+    class="my-custom-class"
     header="Example header"
     sub-header="Example subheader"
     :buttons="actionSheetButtons"

@@ -10,7 +10,7 @@ function Example() {
       <IonButton id="open-action-sheet">Open</IonButton>
       <IonActionSheet
         trigger="open-action-sheet"
-        cssClass="my-custom-class"
+        className="my-custom-class"
         header="Example header"
         subHeader="Example subheader"
         buttons={[
