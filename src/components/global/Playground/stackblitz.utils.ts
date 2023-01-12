@@ -47,11 +47,12 @@ const loadSourceFiles = async (files: string[], version: number) => {
 }
 
 const openHtmlEditor = async (code: string, options?: EditorOptions) => {
-  const [index_html, server_js, package_json, package_lock_json] = await loadSourceFiles([
+  const [index_html, server_js, package_json, package_lock_json, nodemon_json] = await loadSourceFiles([
     options?.includeIonContent ? 'html/index.withContent.html' : 'html/index.html',
     'html/server.js',
     'html/package.json',
     'html/package-lock.json',
+    'html/nodemon.json',
   ], options.version);
 
   sdk.openProject({
@@ -63,6 +64,7 @@ const openHtmlEditor = async (code: string, options?: EditorOptions) => {
       'server.js': server_js,
       'package.json': package_json,
       'package-lock.json': package_lock_json,
+      'nodemon.json': nodemon_json
       ...options?.files,
       '.stackblitzrc': `{
         "installDependencies": true,
