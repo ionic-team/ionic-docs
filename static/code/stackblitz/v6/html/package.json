@@ -1,5 +1,12 @@
 {
+  "name": "node-starter",
+  "version": "0.0.0",
+  "private": true,
   "dependencies": {
-    "@ionic/core": "^6.0.0"
+    "express": "^4.18.2",
+    "nodemon": "^2.0.7"
+  },
+  "scripts": {
+    "start": "node server.js"
   }
 }

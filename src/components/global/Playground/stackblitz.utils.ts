@@ -47,35 +47,29 @@ const loadSourceFiles = async (files: string[], version: number) => {
 }
 
 const openHtmlEditor = async (code: string, options?: EditorOptions) => {
-  const [index_ts, index_html, variables_css, package_json] = await loadSourceFiles([
-    'html/index.ts',
+  const [index_html, server_js, package_json, package_lock_json] = await loadSourceFiles([
     options?.includeIonContent ? 'html/index.withContent.html' : 'html/index.html',
-    'html/variables.css',
-    'html/package.json'
+    'html/server.js',
+    'html/package.json',
+    'html/package-lock.json',
   ], options.version);
 
-  let dependencies = {};
-  try {
-    dependencies = {
-      ...dependencies,
-      ...JSON.parse(package_json).dependencies
-    }
-  } catch (e) {
-    console.error('Failed to parse package.json contents', e);
-  }
-
   sdk.openProject({
-    template: 'typescript',
+    template: 'node',
     title: options?.title ?? DEFAULT_EDITOR_TITLE,
     description: options?.description ?? DEFAULT_EDITOR_DESCRIPTION,
     files: {
-      'index.html': index_html.replace(/{{ TEMPLATE }}/g, code).replace(/{{ MODE }}/g, options?.mode),
-      'index.ts': index_ts,
-      'theme/variables.css': variables_css,
-      ...options?.files
-    },
-    dependencies
-  })
+      'public/index.html': index_html.replace(/{{ TEMPLATE }}/g, code).replace(/{{ MODE }}/g, options?.mode),
+      'server.js': server_js,
+      'package.json': package_json,
+      'package-lock.json': package_lock_json,
+      ...options?.files,
+      '.stackblitzrc': `{
+        "installDependencies": true,
+        "startCommand": "npx nodemon server.js"
+      }`
+    }
+  });
 }
 
 const openAngularEditor = async (code: string, options?: EditorOptions) => {
