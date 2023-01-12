@@ -73,7 +73,24 @@ const openHtmlEditor = async (code: string, options?: EditorOptions) => {
 }
 
 const openAngularEditor = async (code: string, options?: EditorOptions) => {
-  let [main_ts, app_module_ts, app_component_ts, app_component_css, app_component_html, example_component_ts, styles_css, global_css, variables_css, angular_json, tsconfig_json, package_json] = await loadSourceFiles([
+  let [
+    main_ts,
+    app_module_ts,
+    app_component_ts,
+    app_component_css,
+    app_component_html,
+    example_component_ts,
+    styles_css,
+    global_css,
+    variables_css,
+    angular_json,
+    tsconfig_json,
+    tsconfig_app_json,
+    package_json,
+    package_lock_json,
+    zone_flags_ts,
+    browsers_list_rc
+  ] = await loadSourceFiles([
     'angular/main.ts',
     'angular/app.module.ts',
     'angular/app.component.ts',
@@ -85,7 +102,11 @@ const openAngularEditor = async (code: string, options?: EditorOptions) => {
     'angular/variables.css',
     'angular/angular.json',
     'angular/tsconfig.json',
-    'angular/package.json'
+    'angular/tsconfig.app.json',
+    'angular/package.json',
+    'angular/package-lock.json',
+    'angular/zone-flags.ts',
+    'angular/.browserslistrc'
   ], options.version)
 
   if (options.angularModuleOptions) {
@@ -99,18 +120,8 @@ const openAngularEditor = async (code: string, options?: EditorOptions) => {
 
   app_module_ts = app_module_ts.replace('{{ MODE }}', options?.mode);
 
-  let dependencies = {};
-  try {
-    dependencies = {
-      ...dependencies,
-      ...JSON.parse(package_json).dependencies
-    }
-  } catch (e) {
-    console.error('Failed to parse package.json contents', e);
-  }
-
   sdk.openProject({
-    template: 'angular-cli',
+    template: 'node',
     title: options?.title ?? DEFAULT_EDITOR_TITLE,
     description: options?.description ?? DEFAULT_EDITOR_DESCRIPTION,
     files: {
@@ -126,12 +137,20 @@ const openAngularEditor = async (code: string, options?: EditorOptions) => {
       'src/index.html': '<app-root></app-root>',
       'src/styles.css': styles_css,
       'src/global.css': global_css,
+      'src/zone-flags.ts': zone_flags_ts,
+      'src/.browserslistrc': browsers_list_rc,
       'src/theme/variables.css': variables_css,
       'angular.json': angular_json,
       'tsconfig.json': tsconfig_json,
-      ...options?.files
+      'tsconfig.app.json': tsconfig_app_json,
+      'package.json': package_json,
+      'package-lock.json': package_lock_json,
+      ...options?.files,
+      '.stackblitzrc': `{
+        "installDependencies": true,
+        "startCommand": "npm run start"
+      }`
     },
-    dependencies
   });
 }
 
