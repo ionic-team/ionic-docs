@@ -1,6 +1,5 @@
 ```ts
 import { Component } from '@angular/core';
-import { ToastController } from '@ionic/angular';
 
 @Component({
   selector: 'app-example',
@@ -21,8 +20,6 @@ export class ExampleComponent {
   ];
   handlerMessage = '';
   roleMessage = '';
-
-  constructor(private toastController: ToastController) {}
 
   setRoleMessage(ev) {
     const { role } = ev.detail
