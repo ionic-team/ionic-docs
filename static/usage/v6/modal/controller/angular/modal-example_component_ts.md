@@ -8,7 +8,7 @@ import { ModalController } from '@ionic/angular';
   templateUrl: 'modal-example.component.html',
 })
 export class ModalExampleComponent {
-  name: string;
+  name!: string;
 
   constructor(private modalCtrl: ModalController) {}
 
