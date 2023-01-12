@@ -4,11 +4,11 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-example',
   templateUrl: 'example.component.html',
-  styleUrls: ['example.component.css']
+  styleUrls: ['example.component.css'],
 })
 export class ExampleComponent {
-  public buffer = 0.06;
-  public progress = 0;
+  buffer = 0.06;
+  progress = 0;
 
   constructor() {
     setInterval(() => {

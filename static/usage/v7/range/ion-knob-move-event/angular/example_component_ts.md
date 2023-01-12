@@ -9,8 +9,8 @@ import { RangeValue } from '@ionic/core';
   templateUrl: 'example.component.html',
 })
 export class ExampleComponent {
-  moveStart: RangeValue;
-  moveEnd: RangeValue;
+  moveStart?: RangeValue;
+  moveEnd?: RangeValue;
 
   onIonKnobMoveStart(ev: Event) {
     this.moveStart = (ev as RangeCustomEvent).detail.value;

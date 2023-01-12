@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   templateUrl: 'example.component.html',
 })
 export class ExampleComponent {
-  currentFood = undefined;
+  currentFood: any = undefined;
 
   foods = [
     {

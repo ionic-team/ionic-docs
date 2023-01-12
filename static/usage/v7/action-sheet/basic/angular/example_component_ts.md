@@ -9,7 +9,7 @@ import { ActionSheetController } from '@ionic/angular';
   styleUrls: ['./example.component.css'],
 })
 export class ExampleComponent {
-  result: string;
+  result?: string;
 
   constructor(private actionSheetCtrl: ActionSheetController) {}
 

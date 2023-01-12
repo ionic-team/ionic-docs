@@ -9,7 +9,7 @@ import { CheckboxCustomEvent } from '@ionic/angular';
 export class ExampleComponent {
   canDismiss = false;
 
-  presentingElement = null;
+  presentingElement: HTMLElement | null = null;
 
   ngOnInit() {
     this.presentingElement = document.querySelector('.ion-page');

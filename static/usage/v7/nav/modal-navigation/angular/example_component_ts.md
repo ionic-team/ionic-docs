@@ -9,7 +9,7 @@ import { PageOneComponent } from './page-one.component';
   templateUrl: 'example.component.html',
 })
 export class ExampleComponent {
-  @ViewChild('nav') private nav: IonNav;
+  @ViewChild('nav') private nav!: IonNav;
 
   onWillPresent() {
     this.nav.setRoot(PageOneComponent);

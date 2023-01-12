@@ -7,7 +7,7 @@ import { IonContent } from '@ionic/angular';
   templateUrl: 'example.component.html',
 })
 export class ExampleComponent {
-  @ViewChild(IonContent) content: IonContent;
+  @ViewChild(IonContent) content!: IonContent;
 
   scrollToBottom() {
     // Passing a duration to the method makes it so the scroll slowly

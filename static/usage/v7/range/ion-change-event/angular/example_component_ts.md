@@ -9,7 +9,7 @@ import { RangeValue } from '@ionic/core';
   templateUrl: 'example.component.html',
 })
 export class ExampleComponent {
-  lastEmittedValue: RangeValue;
+  lastEmittedValue?: RangeValue;
 
   onIonChange(ev: Event) {
     this.lastEmittedValue = (ev as RangeCustomEvent).detail.value;

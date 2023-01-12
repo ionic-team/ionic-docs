@@ -5,10 +5,10 @@ import { ItemReorderEventDetail } from '@ionic/angular';
 
 @Component({
   selector: 'app-example',
-  templateUrl: 'example.component.html'
+  templateUrl: 'example.component.html',
 })
 export class ExampleComponent {
-  public isDisabled = true;
+  isDisabled = true;
 
   handleReorder(ev: CustomEvent<ItemReorderEventDetail>) {
     // The `from` and `to` properties contain the index of the item

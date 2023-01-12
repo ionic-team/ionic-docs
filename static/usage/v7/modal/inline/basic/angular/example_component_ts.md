@@ -8,10 +8,10 @@ import { OverlayEventDetail } from '@ionic/core/components';
   templateUrl: 'example.component.html',
 })
 export class ExampleComponent {
-  @ViewChild(IonModal) modal: IonModal;
+  @ViewChild(IonModal) modal!: IonModal;
 
   message = 'This modal example uses triggers to automatically open a modal when the button is clicked.';
-  name: string;
+  name?: string;
 
   cancel() {
     this.modal.dismiss(null, 'cancel');

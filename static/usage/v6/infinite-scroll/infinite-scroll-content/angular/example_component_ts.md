@@ -9,7 +9,7 @@ import { InfiniteScrollCustomEvent } from '@ionic/angular';
   styleUrls: ['example.component.scss'],
 })
 export class ExampleComponent implements OnInit {
-  items = [];
+  items: string[] = [];
 
   ngOnInit() {
     for (let i = 1; i < 51; i++) {

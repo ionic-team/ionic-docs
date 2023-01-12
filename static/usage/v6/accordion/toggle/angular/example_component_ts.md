@@ -7,7 +7,7 @@ import { IonAccordionGroup } from '@ionic/angular';
   templateUrl: 'example.component.html',
 })
 export class ExampleComponent {
-  @ViewChild('accordionGroup', { static: true }) accordionGroup: IonAccordionGroup;
+  @ViewChild('accordionGroup', { static: true }) accordionGroup!: IonAccordionGroup;
 
   toggleAccordion = () => {
     const nativeEl = this.accordionGroup;

@@ -8,7 +8,7 @@ import { ActionSheetController } from '@ionic/angular';
   templateUrl: 'example.component.html',
 })
 export class ExampleComponent {
-  presentingElement = undefined;
+  presentingElement: HTMLElement | null = undefined;
 
   constructor(private actionSheetCtrl: ActionSheetController) {}
 

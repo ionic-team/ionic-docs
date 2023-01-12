@@ -7,17 +7,21 @@ import { ToastController } from '@ionic/angular';
   templateUrl: 'example.component.html',
 })
 export class ExampleComponent {
-  public toastButtons = [
+  toastButtons = [
     {
       text: 'More Info',
       role: 'info',
-      handler: () => { this.handlerMessage = 'More Info clicked'; }
+      handler: () => {
+        this.handlerMessage = 'More Info clicked';
+      },
     },
     {
       text: 'Dismiss',
       role: 'cancel',
-      handler: () => { this.handlerMessage = 'Dismiss clicked'; }
-    }
+      handler: () => {
+        this.handlerMessage = 'Dismiss clicked';
+      },
+    },
   ];
   handlerMessage = '';
   roleMessage = '';
@@ -25,7 +29,7 @@ export class ExampleComponent {
   constructor(private toastController: ToastController) {}
 
   setRoleMessage(ev) {
-    const { role } = ev.detail
+    const { role } = ev.detail;
     this.roleMessage = `Dismissed with role: ${role}`;
   }
 }

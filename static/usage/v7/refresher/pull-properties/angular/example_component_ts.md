@@ -6,11 +6,11 @@ import { Component } from '@angular/core';
   templateUrl: 'example.component.html',
 })
 export class ExampleComponent {
-  handleRefresh(event) {
+  handleRefresh(event: any) {
     setTimeout(() => {
       // Any calls to load data go here
       event.target.complete();
     }, 2000);
-  };
+  }
 }
 ```

@@ -6,7 +6,7 @@ import { Component, ElementRef, ViewChild } from '@angular/core';
   templateUrl: 'example.component.html',
 })
 export class ExampleComponent {
-  @ViewChild('listenerOut', { static: true }) listenerOut: ElementRef;
+  @ViewChild('listenerOut', { static: true }) listenerOut!: ElementRef;
   private values: string[] = ['first', 'second', 'third'];
 
   accordionGroupChange = (ev: any) => {
