@@ -74,7 +74,7 @@ import CSSShadowParts from '@site/static/usage/fab/theming/css-shadow-parts/inde
 
 ### Labels
 
-Since FABs are allowed to only contain icons, developers must provide an `aria-label` on each `ion-fab-button` instance. Without this label, assistive technologies will not be able to announce the purpose of the button.
+Since FABs are allowed to contain only icons, developers must provide an `aria-label` on each `ion-fab-button` instance. Without this label, assistive technologies will not be able to announce the purpose of the button.
 
 ## Properties
 <Props />
