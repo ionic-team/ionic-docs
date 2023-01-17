@@ -137,7 +137,7 @@ import TabItem from '@theme/TabItem';
 
 {/* After */}
 <IonItem>
-  <IonToggle label-placement="end">Notifications</IonToggle>
+  <IonToggle labelPlacement="end">Notifications</IonToggle>
 </IonItem>
 ```
 </TabItem>
