@@ -9,4 +9,5 @@ import angular from './angular.md';
   code={{ javascript, react, vue, angular }}
   src="usage/select/typeahead/demo.html"
   devicePreview
+  includeIonContent={false}
 />
