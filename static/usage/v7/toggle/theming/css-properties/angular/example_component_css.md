@@ -1,12 +1,9 @@
 ```css
 ion-toggle {
-  height: 10px;
-  width: 65px;
-
   padding: 12px;
 
-  --background: #ddd;
-  --background-checked: #ddd;
+  --track-background: #ddd;
+  --track-background-checked: #ddd;
 
   --handle-background: #eb7769;
   --handle-background-checked: #95c34e;
@@ -18,9 +15,13 @@ ion-toggle {
 
   --handle-border-radius: 4px;
   --handle-box-shadow: none;
+}
+
+ion-toggle::part(track) {
+  height: 10px;
+  width: 65px;
 
   /* Required for iOS handle to overflow the height of the track */
   overflow: visible;
-  contain: none;
 }
 ```

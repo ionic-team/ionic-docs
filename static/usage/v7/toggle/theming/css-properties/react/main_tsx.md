@@ -7,8 +7,8 @@ import './main.css';
 function Example() {
   return (
     <>
-      <IonToggle></IonToggle>
-      <IonToggle checked={true}></IonToggle>
+      <IonToggle aria-label="Enable Notifications"></IonToggle>
+      <IonToggle checked={true} aria-label="Enable Notifications"></IonToggle>
     </>
   );
 }

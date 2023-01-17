@@ -36,6 +36,33 @@ import OnOff from '@site/static/usage/v7/toggle/on-off/index.md';
 <OnOff />
 
 
+## Toggles in a List
+
+Toggles can also be used in a list view by using the [Item](./item) and [List](./list) components.
+
+import List from '@site/static/usage/v7/toggle/list/index.md';
+
+<List />
+
+
+## Label Placement
+
+Developers can use the `labelPlacement` property to control how the label is placed relative to the control.
+
+import LabelPlacement from '@site/static/usage/v7/toggle/label-placement/index.md';
+
+<LabelPlacement />
+
+
+## Justification
+
+Developers can use the `justify` property to control how the label and control are packed on a line.
+
+import Justify from '@site/static/usage/v7/toggle/justify/index.md';
+
+<Justify />
+
+
 ## Theming
 
 ### Colors
@@ -60,6 +87,28 @@ import CSSParts from '@site/static/usage/v7/toggle/theming/css-shadow-parts/inde
 
 <CSSParts />
 
+## Migrating from Legacy Toggle Syntax
+
+A simpler toggle syntax was introduced in Ionic 7.0. This new syntax reduces the boilerplate required to setup an toggle, resolves accessibility issues, and improves the developer experience.
+
+While developers can continue using the legacy syntax, we recommend migrating as soon as possible.
+
+### Using the Modern Syntax
+
+Using the modern syntax involves removing the `ion-label` and passing the label directly inside of `ion-toggle`. The placement of the label can be configured using the `labelPlacement` property on `ion-toggle`. The way the label and the control are packed on a line can be controlled using the `justify` property on `ion-toggle`.
+
+import Migration from '@site/static/usage/v7/toggle/migration/index.md';
+
+<Migration />
+  
+
+:::note
+In past versions of Ionic, `ion-item` was required for `ion-toggle` to function properly. Starting in Ionic 7.0, `ion-toggle` should only be used in an `ion-item` when the item is placed in an `ion-list`. Additionally, `ion-item` is no longer required for `ion-toggle` to function properly.
+:::
+
+### Using the Legacy Syntax
+
+Ionic uses heuristics to detect if an app is using the modern toggle syntax. In some instances, it may be preferable to continue using the legacy syntax. Developers can set the `legacy` property on `ion-toggle` to `true` to force that instance of the toggle to use the legacy syntax.
 
 ## Interfaces
 

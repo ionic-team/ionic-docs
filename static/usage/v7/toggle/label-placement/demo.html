@@ -9,14 +9,17 @@
   <script src="../../../common.js"></script>
   <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core@6.4.1-dev.11670949653.116404ab/dist/ionic/ionic.esm.js"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core@6.4.1-dev.11670949653.116404ab/css/ionic.bundle.css" />
-
 </head>
 
 <body>
   <ion-app>
     <ion-content>
       <div class="container">
-        <ion-toggle enable-on-off-labels="true">Enable Notifications</ion-toggle>
+        <div>
+          <ion-toggle label-placement="start">Label at the Start</ion-toggle><br /><br />
+          <ion-toggle label-placement="end">Label at the End</ion-toggle><br /><br />
+          <ion-toggle label-placement="fixed">Fixed Width Label</ion-toggle><br /><br />
+        </div>
       </div>
     </ion-content>
   </ion-app>
