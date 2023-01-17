@@ -1,6 +1,6 @@
 ```tsx
 import React, { useRef, useState } from 'react';
-import { IonButton, IonButtons, IonContent, IonHeader, IonItem, IonLabel, IonList, IonModal, IonNote, IonTitle, IonSearchbar, IonToolbar } from '@ionic/react';
+import { IonButton, IonButtons, IonContent, IonHeader, IonItem, IonLabel, IonList, IonModal, IonTitle, IonSearchbar, IonToolbar } from '@ionic/react';
 
 interface Fruit {
   text: string;
@@ -97,7 +97,7 @@ function Example() {
         <IonList inset={true}>
           <IonItem button={true} detail={false} id="select-fruit">
             <IonLabel>Favorite Fruit</IonLabel>
-            <IonNote slot="end" id="selected-fruit">{ selectedFruit }</IonNote>
+            <div slot="end" id="selected-fruit">{ selectedFruit }</div>
           </IonItem>
         </IonList>
       </IonContent>

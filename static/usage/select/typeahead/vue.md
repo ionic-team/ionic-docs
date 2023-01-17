@@ -4,7 +4,7 @@
     <ion-list :inset="true">
       <ion-item :button="true" :detail="false" id="select-fruit">
         <ion-label>Favorite Fruit</ion-label>
-        <ion-note slot="end" id="selected-fruit">{{ selectedFruit }}</ion-note>
+        <div slot="end" id="selected-fruit">{{ selectedFruit }}</div>
       </ion-item>
     </ion-list>
   </ion-content>
@@ -42,7 +42,7 @@
 </template>
 
 <script lang="ts">
-  import { IonButton, IonButtons, IonContent, IonHeader, IonItem, IonLabel, IonList, IonModal, IonNote, IonTitle, IonSearchbar, IonToolbar } from '@ionic/vue';
+  import { IonButton, IonButtons, IonContent, IonHeader, IonItem, IonLabel, IonList, IonModal, IonTitle, IonSearchbar, IonToolbar } from '@ionic/vue';
   import { defineComponent, ref } from 'vue';
   
   interface Fruit {
@@ -51,7 +51,7 @@
   }
 
   export default defineComponent({
-    components: { IonButton, IonButtons, IonContent, IonHeader, IonItem, IonLabel, IonList, IonModal, IonNote, IonTitle, IonSearchbar, IonToolbar },
+    components: { IonButton, IonButtons, IonContent, IonHeader, IonItem, IonLabel, IonList, IonModal, IonTitle, IonSearchbar, IonToolbar },
     setup() {
       const fruits: Fruit[] = [
         { text: 'Apple', value: 'apple' },

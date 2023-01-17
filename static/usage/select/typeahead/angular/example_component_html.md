@@ -3,7 +3,7 @@
   <ion-list [inset]="true">
     <ion-item [button]="true" [detail]="false" id="select-fruit">
       <ion-label>Favorite Fruit</ion-label>
-      <ion-note slot="end" id="selected-fruit">{{ selectedFruit }}</ion-note>
+      <div slot="end" id="selected-fruit">{{ selectedFruit }}</div>
     </ion-item>
   </ion-list>
 </ion-content>
