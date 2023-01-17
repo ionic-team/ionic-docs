@@ -1,0 +1,120 @@
+# Upgrading to Ionic 7
+
+Follow this guide to upgrade your Ionic 6 apps to Ionic 7.
+
+:::note
+Ionic 7 is in beta. Please report any issues on [the Ionic Framework GitHub Repo](https://github.com/ionic-team/ionic-framework).
+:::
+
+## Getting Started
+
+:::note
+This guide assumes that you have already updated your app to the latest version of Ionic 6. Make sure you have followed the [Upgrading to Ionic 6 Guide](./upgrading-to-ionic-6) before starting this guide.
+:::
+
+### Angular
+
+1. Ionic 7 supports Angular 13+. Update to the latest version of Angular by following the [Angular Update Guide](https://update.angular.io/).
+2. Update to the latest version of Ionic 7:
+
+```shell
+npm install @ionic/angular@next
+```
+
+If you are using Ionic Angular Server, be sure to update that as well:
+
+```shell
+npm install @ionic/angular@next @ionic/angular-server@next
+```
+
+### React
+
+1. Ionic 7 supports React 17+. Update to the latest version of React:
+
+```shell
+npm install react@latest react-dom@latest
+```
+
+2. Update to the latest version of Ionic 7:
+
+```shell
+npm install @ionic/react@next @ionic/react-router@next
+```
+
+### Vue
+
+1. Ionic 7 supports Vue 3.0.6+. Update to the latest version of Vue:
+
+```shell
+npm install vue@latest vue-router@latest
+```
+
+3. Update to the latest version of Ionic 7:
+
+```shell
+npm install @ionic/vue@next @ionic/vue-router@next
+```
+
+### Core
+
+1. Update to the latest version of Ionic 7:
+
+```shell
+npm install @ionic/core@next
+```
+
+## Updating Your Code
+
+### Types
+
+1. `ActionSheetAttributes`, `AlertAttributes`, `AlertTextareaAttributes`, `AlertInputAttributes`, `LoadingAttributes`, `ModalAttributes`, `PickerAttributes`, `PopoverAttributes`, and `ToastAttributes` have been removed. Developers should use `{ [key: string]: any }` instead.
+
+
+### Checkbox
+
+1. Rename any usages of the `--background` and `--background-checked` CSS Variables to `--checkbox-background` and `--checkbox-background-checked`, respectively.
+
+### Datetime
+
+1. Remove any code that sets the `value` property to the empty string (`''`).
+2. Remove any code that accesses the time zone information on the `value` property. Datetime does not manage time zones, so any time zone information provided is ignored.
+
+### Modal
+
+1. Remove any usage of the `swipeToClose` property. Use the [canDismiss](https://ionicframework.com/docs/api/modal#preventing-a-modal-from-dismissing) property to control when a modal can dismiss.
+2. Remove any code that sets the `canDismiss` property to `undefined`. The `canDismiss` property now defaults to `true`, so this code is no longer needed.
+
+### Picker
+
+1. Remove any code that accesses `refresh` on `ion-picker-column`. Developers should use the `columns` property on `ion-picker` to refresh the view instead.
+
+### Segment
+
+1. Remove any code that sets the `value` property to `null`. Developers should use either `''` or `undefined` instead.
+
+### Slides
+
+1. Remove `ion-slides`, `ion-slide`, and any associated types. These components have been removed in favor of using Swiper.js directly. The guides below contain more information about this migration:
+
+[Angular Migration Guide](https://ionicframework.com/docs/angular/slides)<br />
+[React Migration Guide](https://ionicframework.com/docs/react/slides)<br />
+[Vue Migration Guide](https://ionicframework.com/docs/vue/slides)
+
+### Toggle
+
+1. Rename any usages of the `--background` and `--background-checked` CSS Variables to `--track-background` and `--track-background-checked`, respectively.
+
+### Virtual Scroll
+
+1. Remove `ion-virtual-scroll` and any associated types. This component has been removed in favor of using virtual scroll solutions provided by JavaScript Frameworks. The guides below contain more information about this migration:
+
+[Angular Migration Guide](https://ionicframework.com/docs/angular/virtual-scroll)<br />
+[React Migration Guide](https://ionicframework.com/docs/react/virtual-scroll)<br />
+[Vue Migration Guide](hhttps://ionicframework.com/docs/vue/virtual-scroll)
+
+## Need Help Upgrading?
+
+Be sure to look at the [Ionic 7 Breaking Changes Guide](https://github.com/ionic-team/ionic-framework/blob/feature-7.0/BREAKING.md#version-7x-accordion-group). There were several changes to default property and CSS Variable values that developers may need to be aware of. Only the breaking changes that require user action are listed on this page.
+
+If you need help upgrading, please post a thread on the [Ionic Forum](https://forum.ionicframework.com/).
+
