@@ -14,7 +14,7 @@ interface Fruit {
 export class ExampleComponent {
   @ViewChild('modal', { static: true }) modal!: IonModal;
   
-  filteredFruits: Fruit[] = [...this.fruits];
+  filteredFruits: Fruit[] = [];
   selectedFruit: string = 'None';
   
   private fruits: Fruit[] = [
@@ -45,7 +45,9 @@ export class ExampleComponent {
     { text: 'Strawberry', value: 'strawberry' }
   ];
   
-  constructor() {}
+  constructor() {
+    this.filteredFruits = [...this.fruits];
+  }
 
   searchbarInput(ev: any) {
     this.filterList(ev.target.value);
