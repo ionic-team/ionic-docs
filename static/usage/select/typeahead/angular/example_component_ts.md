@@ -12,7 +12,7 @@ interface Fruit {
   templateUrl: 'example.component.html',
 })
 export class ExampleComponent {
-  @ViewChild('modal', { static: true }) modal: IonModal;
+  @ViewChild('modal', { static: true }) modal!: IonModal;
 
   private fruits: Fruit[] = [
     { text: 'Apple', value: 'apple' },
