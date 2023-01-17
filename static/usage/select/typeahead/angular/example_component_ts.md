@@ -13,7 +13,10 @@ interface Fruit {
 })
 export class ExampleComponent {
   @ViewChild('modal', { static: true }) modal!: IonModal;
-
+  
+  filteredFruits: Fruit[] = [...this.fruits];
+  selectedFruit: string = 'None';
+  
   private fruits: Fruit[] = [
     { text: 'Apple', value: 'apple' },
     { text: 'Apricot', value: 'apricot' },
@@ -42,12 +45,9 @@ export class ExampleComponent {
     { text: 'Strawberry', value: 'strawberry' }
   ];
   
-  public filteredFruits: Fruit[] = [...this.fruits];
-  public selectedFruit: string = 'None';
-  
   constructor() {}
 
-  public searchbarInput(ev: any) {
+  searchbarInput(ev: any) {
     this.filterList(ev.target.value);
   }
   
@@ -57,7 +57,7 @@ export class ExampleComponent {
    * query is provided, all data
    * will be rendered.
    */
-  public filterList(searchQuery: string | undefined) {
+  filterList(searchQuery: string | undefined) {
     /**
      * If no search query is defined,
      * return all options.
@@ -80,7 +80,7 @@ export class ExampleComponent {
   /**
    * Commit an item and dismiss the modal.
    */
-  public selectFruit(fruit: Fruit) {
+  selectFruit(fruit: Fruit) {
     this.modal.dismiss(fruit);
   }
   
@@ -88,7 +88,7 @@ export class ExampleComponent {
    * When the modal is about to dismiss,
    * update the parent view with the selected item.
    */
-  public modalWillDismiss(ev: any) {
+  modalWillDismiss(ev: any) {
     const { data } = ev.detail;
   
     if (data !== undefined) {
@@ -100,11 +100,11 @@ export class ExampleComponent {
    * Reset the state of the modal
    * once it is fully dismissed.
    */ 
-  public modalDidDismiss() {
+  modalDidDismiss() {
     this.filteredFruits = [...this.fruits];
   }
   
-  public dismissModal() {
+  dismissModal() {
     this.modal.dismiss();
   }
 }
