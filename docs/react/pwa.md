@@ -64,17 +64,35 @@ npm install -g firebase-tools
 
 With the Firebase CLI installed, run `firebase init` within your Ionic project. The CLI prompts:
 
-**"Which Firebase CLI features do you want to set up for this folder?"** Choose "Hosting: Configure and deploy Firebase Hosting sites."
+**"Which Firebase CLI features do you want to set up for this folder?"** Choose "Hosting: Configure files for Firebase Hosting and (optionally) set up GitHub Action deploys" and press spacebar & then enter
+
+Create a new Firebase project or select an existing one.
 
 **"Select a default Firebase project for this directory:"** Choose the project you created on the Firebase website.
 
 **"What do you want to use as your public directory?"** Enter "build".
 
 :::note
-Answering these next two questions will ensure that routing, hard reload, and deep linking work in the app:
+Answering this next question will ensure that routing, hard reload, and deep linking work in the app:
 :::
 
 **Configure as a single-page app (rewrite all urls to /index.html)?"** Enter "Yes".
+
+**Set up automatic builds and deploys with github?** Enter "Yes".
+
+**For which GitHub repository would you like to set up a Github Workflow?** Enter your project name.
+
+**Set up the workflow to run a build script before every deploy?** Enter "Yes".
+
+**What script should be run before every deploy? (npm ci && npm run build)** Enter `npm ci && npm run build`.
+
+**Set up automatic deployment to your sites live channel when a PR is merged?** Enter "Yes".
+
+**What is the name of the get hooked branch associated with your sites live channel?** Enter your project's main brainch name.
+
+:::note
+Answering this next question also will ensure that routing, hard reload, and deep linking work in the app:
+:::
 
 **"File build/index.html already exists. Overwrite?"** Enter "No".
 
