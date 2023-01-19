@@ -330,13 +330,7 @@ module.exports = {
       type: 'category',
       label: 'Icons',
       collapsed: false,
-      items: [
-        {
-          type: 'link',
-          label: 'ion-icon',
-          href: 'https://ionicons.com',
-        },
-      ],
+      items: ['api/icon'],
     },
     {
       type: 'category',
@@ -371,11 +365,7 @@ module.exports = {
       collapsed: false,
       items: [
         'api/avatar',
-        {
-          type: 'link',
-          label: 'ion-icon',
-          href: 'https://ionicons.com',
-        },
+        'api/icon',
         'api/img',
         'api/thumbnail',
       ],
