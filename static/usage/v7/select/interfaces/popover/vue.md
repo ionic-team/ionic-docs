@@ -2,7 +2,7 @@
 <template>
   <ion-list>
     <ion-item>
-      <ion-select interface="popover" placeholder="Select fruit">
+      <ion-select aria-label="Fruit" interface="popover" placeholder="Select fruit">
         <IonSelectOption value="apples">Apples</IonSelectOption>
         <IonSelectOption value="oranges">Oranges</IonSelectOption>
         <IonSelectOption value="bananas">Bananas</IonSelectOption>
