@@ -6,7 +6,7 @@ import './main.css';
 
 function Example() {
   return (
-    <IonSelect placeholder="Select fruit">
+    <IonSelect aria-label="Fruit" placeholder="Select fruit">
       <IonSelectOption value="apples">Apples</IonSelectOption>
       <IonSelectOption value="oranges">Oranges</IonSelectOption>
       <IonSelectOption value="bananas">Bananas</IonSelectOption>
