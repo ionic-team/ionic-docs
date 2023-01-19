@@ -2,6 +2,7 @@
 <ion-list>
   <ion-item>
     <ion-select
+      aria-label="Fruit"
       placeholder="Select fruit"
       (ionChange)="handleChange($event)"
       (ionCancel)="pushLog('ionCancel fired')"
