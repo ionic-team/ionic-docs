@@ -1,11 +1,7 @@
 ```ts
 import { Component, ViewChild } from '@angular/core';
 import { IonModal } from '@ionic/angular';
-
-interface Fruit {
-  text: string;
-  value: string;
-}
+import { Item } from './types'; 
 
 @Component({
   selector: 'app-example',
@@ -14,10 +10,10 @@ interface Fruit {
 export class ExampleComponent {
   @ViewChild('modal', { static: true }) modal!: IonModal;
   
-  filteredFruits: Fruit[] = [];
-  selectedFruit: string = 'None';
+  selectedFruitsText: string = '0 Items';
+  selectedFruits: string[] = [];
   
-  private fruits: Fruit[] = [
+  fruits: Item[] = [
     { text: 'Apple', value: 'apple' },
     { text: 'Apricot', value: 'apricot' },
     { text: 'Banana', value: 'banana' },
@@ -45,68 +41,18 @@ export class ExampleComponent {
     { text: 'Strawberry', value: 'strawberry' }
   ];
   
-  constructor() {
-    this.filteredFruits = [...this.fruits];
-  }
-
-  searchbarInput(ev: any) {
-    this.filterList(ev.target.value);
-  }
-  
-  /**
-   * Update the rendered view with
-   * the provided search query. If no
-   * query is provided, all data
-   * will be rendered.
-   */
-  filterList(searchQuery: string | undefined) {
-    /**
-     * If no search query is defined,
-     * return all options.
-     */
-    if (searchQuery === undefined) {
-      this.filteredFruits = [...this.fruits];
-    } else {
-      /**
-       * Otherwise, normalize the search
-       * query and check to see which items
-       * contain the search query as a substring.
-       */
-      const normalizedQuery = searchQuery.toLowerCase(); 
-      this.filteredFruits = this.fruits.filter(fruit => {
-        return fruit.value.includes(normalizedQuery);
-      });
+  private formatData(data: string[]) {
+    if (data.length === 1) {
+      const fruit = this.fruits.find(fruit => fruit.value === data[0])
+      return fruit.text;
     }
+  
+    return `${data.length} items`;
   }
   
-  /**
-   * Commit an item and dismiss the modal.
-   */
-  selectFruit(fruit: Fruit) {
-    this.modal.dismiss(fruit);
-  }
-  
-  /**
-   * When the modal is about to dismiss,
-   * update the parent view with the selected item.
-   */
-  modalWillDismiss(ev: any) {
-    const { data } = ev.detail;
-  
-    if (data !== undefined) {
-      this.selectedFruit = data.text;
-    }
-  }
-  
-  /**
-   * Reset the state of the modal
-   * once it is fully dismissed.
-   */ 
-  modalDidDismiss() {
-    this.filteredFruits = [...this.fruits];
-  }
-  
-  dismissModal() {
+  fruitSelectionChanged(fruits: string[]) {
+    this.selectedFruits = fruits;
+    this.selectedFruitsText = this.formatData(this.selectedFruits);
     this.modal.dismiss();
   }
 }
