@@ -12,13 +12,35 @@ To get started with using components install the `@ionic/react` package:
 npm i @ionic/react
 ```
 
-Next, import the stylesheets from Ionic in your main app file:
+Import the stylesheets from Ionic in your main app file:
 
 ```tsx title="App.tsx"
 import '@ionic/react/css/core.css';
 ```
 
-Now, you can import any of the components and begin to use them right away. Here we are importing the `IonButton` and `IonDatetime` components and using them anywhere in our app:
+Add the `setupIonicReact` function to your app:
+
+```tsx title="App.tsx"
+import { setupIonicReact } from '@ionic/react';
+
+setupIonicReact();
+
+const App = () => {
+  return (
+    ...
+  );
+}
+
+export default App;
+```
+
+:::note
+
+`setupIonicReact` is a function that will set up the Ionic React components to work with your app. It is required to be called before using any of the Ionic React components.
+
+:::
+
+You can import any of the components and begin to use them right away. Here we are importing the `IonButton` and `IonDatetime` components and using them anywhere in our app:
 
 ```tsx
 import React from 'react';
@@ -72,6 +94,11 @@ The main Ionic page will need a couple of base components. First, use a `IonApp`
 Then, wrap all your routes in an `IonRouterOutlet`, which is what manages our Ionic pages.
 
 ```tsx
+import { IonApp, IonRouterOutlet } from '@ionic/react';
+import { IonReactRouter } from '@ionic/react-router';
+
+...
+
 <IonApp>
   <IonReactRouter>
     <IonRouterOutlet>
