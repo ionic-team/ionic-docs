@@ -22,18 +22,33 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 A Picker is a dialog that displays a row of buttons and columns underneath. It appears on top of the app's content, and at the bottom of the viewport.
 
-## Single Column
+## Inline Pickers (Recommended)
 
-Display a list of options in a single, scrollable column.
+`ion-picker` can be used by writing the component directly in your template. This reduces the number of handlers you need to wire up in order to present the Picker.
 
-import SingleColumn from '@site/static/usage/v7/picker/single-column/index.md';
+import Trigger from '@site/static/usage/v7/picker/inline/trigger/index.md';
 
-<SingleColumn />
+<Trigger />
 
+### Using `isOpen`
+
+The `isOpen` property on `ion-picker` allows developers to control the presentation state of the Picker from their application state. This means when `isOpen` is set to `true` the Picker will be presented, and when `isOpen` is set to `false` the Picker will be dismissed.
+
+`isOpen` uses a one-way data binding, meaning it will not automatically be set to `false` when the Picker is dismissed. Developers should listen for the `ionPickerDidDismiss` or `didDismiss` event and set `isOpen` to `false`. The reason for this is it prevents the internals of `ion-picker` from being tightly coupled with the state of the application. With a one way data binding, the Picker only needs to concern itself with the boolean value that the reactive variable provides. With a two way data binding, the Picker needs to concern itself with both the boolean value as well as the existence of the reactive variable itself. This can lead to non-deterministic behaviors and make applications harder to debug.
+
+TODO: playground
+
+## Controller Pickers
+
+The `pickerController` can be used in situations where more control is needed over when the Picker is presented and dismissed.
+
+import Controller from '@site/static/usage/v7/picker/controller/index.md';
+
+<Controller />
 
 ## Multiple Columns
 
-Display multiple columns of different options.
+The `columns` property can be used to display a Picker with multiple columns of different options.
 
 import MultipleColumn from '@site/static/usage/v7/picker/multiple-column/index.md';
 
