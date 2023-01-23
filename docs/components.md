@@ -66,7 +66,7 @@ Ionic apps are made of high-level building blocks called Components, which allow
   <p>Floating action buttons are circular buttons that perform a primary action on a screen.</p>
 </DocsCard>
 
-<DocsCard header="Icons" href="https://ionic.io/ionicons" img="/icons/feature-component-icons-icon.png">
+<DocsCard header="Icons" href="api/icon" img="/icons/feature-component-icons-icon.png">
   <p>Beautifully designed icons for use in web, iOS, Android, and desktop apps.</p>
 </DocsCard>
 
