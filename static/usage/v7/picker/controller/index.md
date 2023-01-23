@@ -20,6 +20,6 @@ import angular_example_component_html from './angular/example_component_html.md'
       },
     },
   }}
-  src="usage/v7/picker/single-column/demo.html"
+  src="usage/v7/picker/controller/demo.html"
   size="medium"
 />
