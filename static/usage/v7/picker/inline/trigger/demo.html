@@ -4,9 +4,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Picker | Multiple Columns</title>
-  <link rel="stylesheet" href="../../../common.css" />
-  <script src="../../../common.js"></script>
+  <title>Picker | Trigger</title>
+  <link rel="stylesheet" href="../../../../common.css" />
+  <script src="../../../../common.js"></script>
   <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core@6.4.1-dev.11670949653.116404ab/dist/ionic/ionic.esm.js"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core@6.4.1-dev.11670949653.116404ab/css/ionic.bundle.css" />
 </head>
@@ -24,45 +24,20 @@
     const picker = document.querySelector('ion-picker');
 
     picker.columns = [{
-      name: 'meat',
+      name: 'languages',
       options: [
         {
-          text: 'Pepperoni',
-          value: 'pepperoni'
+          text: 'JavaScript',
+          value: 'javascript'
         }, {
-          text: 'Smoked Ham',
-          value: 'smoked-ham'
+          text: 'TypeScript',
+          value: 'typescript'
         }, {
-          text: 'Crispy Bacon',
-          value: 'bacon'
-        }
-      ]
-    }, {
-      name: 'veggies',
-      options: [
-        {
-          text: 'Red onion',
-          value: 'red-onion'
+          text: 'Rust',
+          value: 'rust'
         }, {
-          text: 'Peppers',
-          value: 'peppers'
-        }, {
-          text: 'Black olives',
-          value: 'black-olives'
-        }
-      ]
-    }, {
-      name: 'crust',
-      options: [
-        {
-          text: 'Pan style',
-          value: 'pan'
-        }, {
-          text: 'Hand tossed',
-          value: 'hand-tossed'
-        }, {
-          text: 'Stuffed crust',
-          value: 'stuffed-crust'
+          text: 'C#',
+          value: 'c#'
         }
       ]
     }];
@@ -75,7 +50,7 @@
       {
         text: 'Confirm',
         handler: (value) => {
-          window.alert(`You selected a ${value.crust.text} pizza with ${value.meat.text} and ${value.veggies.text}`);
+          window.alert(`You selected: ${value.languages.value}`);
         }
       }
     ];
