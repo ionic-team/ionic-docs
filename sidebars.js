@@ -105,6 +105,7 @@ module.exports = {
             'react/your-first-app/distribute',
           ],
         },
+        'react/adding-ionic-react-to-an-existing-react-project',
         'react/lifecycle',
         'react/navigation',
         'react/virtual-scroll',
