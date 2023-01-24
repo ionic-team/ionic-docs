@@ -28,39 +28,38 @@
   }
 </style>
 
-<ion-button onclick="presentActionSheet()">Open</ion-button>
+<ion-button id="open-action-sheet">Open</ion-button>
+<ion-action-sheet
+  trigger="open-action-sheet"
+  class="my-custom-class"
+  header="Example header"
+  sub-header="Example subheader"
+></ion-action-sheet>
 
 <script>
-  async function presentActionSheet() {
-    const actionSheet = document.createElement('ion-action-sheet');
-    actionSheet.cssClass = 'my-custom-class';
-    actionSheet.header = 'Example header';
-    actionSheet.subHeader = 'Example subheader';
-    actionSheet.buttons = [
-      {
-        text: 'Delete',
-        role: 'destructive',
-        data: {
-          action: 'delete',
-        },
-      },
-      {
-        text: 'Share',
-        data: {
-          action: 'share',
-        },
-      },
-      {
-        text: 'Cancel',
-        role: 'cancel',
-        data: {
-          action: 'cancel',
-        },
-      },
-    ];
+  var actionSheet = document.querySelector('ion-action-sheet');
 
-    document.body.appendChild(actionSheet);
-    await actionSheet.present();
-  }
+  actionSheet.buttons = [
+    {
+      text: 'Delete',
+      role: 'destructive',
+      data: {
+        action: 'delete'
+      }
+    },
+    {
+      text: 'Share',
+      data: {
+        action: 'share'
+      }
+    },
+    {
+      text: 'Cancel',
+      role: 'cancel',
+      data: {
+        action: 'cancel'
+      }
+    }
+  ];
 </script>
 ```

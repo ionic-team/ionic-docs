@@ -1,16 +1,18 @@
 ```tsx
-import React from 'react';
+import React, { useState } from 'react';
 import { IonActionSheet, IonButton } from '@ionic/react';
+import type { OverlayEventDetail } from '@ionic/core';
 
 import './main.css';
 
 function Example() {
+  const [result, setResult] = useState<OverlayEventDetail>();
+
   return (
-    <>
+    <div className="container">
       <IonButton id="open-action-sheet">Open</IonButton>
       <IonActionSheet
         trigger="open-action-sheet"
-        className="my-custom-class"
         header="Example header"
         subHeader="Example subheader"
         buttons={[
@@ -35,8 +37,11 @@ function Example() {
             }
           }
         ]}
+        onDidDismiss={({ detail }) => setResult(detail)}
       ></IonActionSheet>
-    </>
+
+      {result && <code>{JSON.stringify(result, null, 2)}</code>}
+    </div>
   );
 }
 export default Example;

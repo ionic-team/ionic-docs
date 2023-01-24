@@ -9,36 +9,19 @@
   <script src="../../../../common.js"></script>
   <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core@6.4.1-dev.11670949653.116404ab/dist/ionic/ionic.esm.js"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core@6.4.1-dev.11670949653.116404ab/css/ionic.bundle.css" />
-
-  <style>
-    ion-action-sheet.my-custom-class {
-      --background: #F58840;
-      --backdrop-opacity: 0.6;
-      --button-background-selected: #e97223;
-      --button-color: #000000;
-      --color: #fff;
-      /* role: "destructive" button iOS styling override */
-      --ion-color-danger: #000000;
-    }
-  </style>
 </head>
 
 <body>
   <ion-app>
     <ion-content>
       <div class="container">
-        <ion-button id="open-action-sheet">Open</ion-button>
-        <ion-action-sheet
-          trigger="open-action-sheet"
-          class="my-custom-class"
-          header="Example header"
-          sub-header="Example subheader"
-        ></ion-action-sheet>
+        <ion-button onclick="actionSheet.isOpen = true">Open</ion-button>
+        <ion-action-sheet header="Actions"></ion-action-sheet>
       </div>
     </ion-content>
   </ion-app>
   <script>
-    const actionSheet = document.querySelector('ion-action-sheet');
+    var actionSheet = document.querySelector('ion-action-sheet');
 
     actionSheet.buttons = [
       {
@@ -62,6 +45,10 @@
         }
       }
     ];
+
+    actionSheet.addEventListener('ionActionSheetDidDismiss', (ev) => {
+      actionSheet.isOpen = false;
+    });
   </script>
 </body>
 

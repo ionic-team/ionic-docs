@@ -2,17 +2,13 @@
 import React from 'react';
 import { IonActionSheet, IonButton } from '@ionic/react';
 
-import './main.css';
-
 function Example() {
   return (
     <>
       <IonButton id="open-action-sheet">Open</IonButton>
       <IonActionSheet
         trigger="open-action-sheet"
-        className="my-custom-class"
-        header="Example header"
-        subHeader="Example subheader"
+        header="Actions"
         buttons={[
           {
             text: 'Delete',

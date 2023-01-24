@@ -4,9 +4,9 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-example',
   templateUrl: 'example.component.html',
-  styleUrls: ['./example.component.css'],
 })
 export class ExampleComponent {
+  isActionSheetOpen = false;
   public actionSheetButtons = [
     {
       text: 'Delete',
@@ -29,7 +29,9 @@ export class ExampleComponent {
       }
     }
   ];
-
-  constructor() {}
+  
+  setOpen(isOpen: boolean) {
+    this.isActionSheetOpen = isOpen;
+  }
 }
 ```

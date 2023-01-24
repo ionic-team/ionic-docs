@@ -1,18 +1,16 @@
 ```tsx
-import React from 'react';
+import React, { useState } from 'react';
 import { IonActionSheet, IonButton } from '@ionic/react';
 
-import './main.css';
-
 function Example() {
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
     <>
-      <IonButton id="open-action-sheet">Open</IonButton>
+      <IonButton onClick={() => setIsOpen(true)}>Open</IonButton>
       <IonActionSheet
-        trigger="open-action-sheet"
-        className="my-custom-class"
-        header="Example header"
-        subHeader="Example subheader"
+        isOpen={isOpen}
+        header="Actions"
         buttons={[
           {
             text: 'Delete',
@@ -35,6 +33,7 @@ function Example() {
             }
           }
         ]}
+        onDidDismiss={() => setIsOpen(false)}
       ></IonActionSheet>
     </>
   );
