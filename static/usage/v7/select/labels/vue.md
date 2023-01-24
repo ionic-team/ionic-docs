@@ -36,11 +36,11 @@
 </template>
 
 <script lang="ts">
-  import { IonItem, IonList, IonSelect } from '@ionic/vue';
+  import { IonItem, IonList, IonSelect, IonSelectOption } from '@ionic/vue';
   import { defineComponent } from 'vue';
 
   export default defineComponent({
-    components: { IonItem, IonList, IonSelect },
+    components: { IonItem, IonList, IonSelect, IonSelectOption },
   });
 </script>
 ```

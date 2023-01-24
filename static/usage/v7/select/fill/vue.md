@@ -16,11 +16,11 @@
 </template>
 
 <script lang="ts">
-  import { IonSelect } from '@ionic/vue';
+  import { IonSelect, IonSelectOption } from '@ionic/vue';
   import { defineComponent } from 'vue';
 
   export default defineComponent({
-    components: { IonSelect },
+    components: { IonSelect, IonSelectOption },
   });
 </script>
 ```
