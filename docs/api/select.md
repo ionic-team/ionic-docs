@@ -92,6 +92,15 @@ Labels will take up the width of their content by default. This positioning can 
 import LabelExample from '@site/static/usage/v7/select/labels/index.md';
 
 <LabelExample />
+  
+
+## Justification
+  
+Developers can use the `justify` property to control how the label and control are packed on a line.
+
+import JustifyExample from '@site/static/usage/v7/select/justify/index.md';
+
+<JustifyExample />
 
 ## Filled Selects
 
