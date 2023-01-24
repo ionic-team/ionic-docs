@@ -93,6 +93,10 @@ import LabelExample from '@site/static/usage/v7/select/labels/index.md';
 
 ## Filled Selects
 
+Material Design offers filled styles for a select. The `fill` property on the select can be set to either `"solid"` or `"outline"`.
+
+Since the `fill` styles visually defines the select container, selects that use `fill` should not be used in `ion-item`.
+
 import FillExample from '@site/static/usage/v7/select/fill/index.md';
 
 <FillExample />
