@@ -83,6 +83,17 @@ import UsingCompareWithExample from '@site/static/usage/v7/select/objects-as-val
 import ObjectValuesAndMultipleSelectionExample from '@site/static/usage/v7/select/objects-as-values/multiple-selection/index.md';
 
 <ObjectValuesAndMultipleSelectionExample />
+  
+
+## Label Positioning
+
+import LabelExample from '@site/static/usage/v7/select/labels/index.md';
+
+<LabelExample />
+
+## Filled Selects
+
+TODO
 
 ## Select Buttons
 
