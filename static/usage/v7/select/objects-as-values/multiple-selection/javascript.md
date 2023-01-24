@@ -1,7 +1,7 @@
 ```html
 <ion-list>
   <ion-item>
-    <ion-select  aria-label="Food" placeholder="Select food" multiple="true"></ion-select>
+    <ion-select aria-label="Food" placeholder="Select food" multiple="true"></ion-select>
   </ion-item>
   <ion-item lines="none">
     <ion-label>
