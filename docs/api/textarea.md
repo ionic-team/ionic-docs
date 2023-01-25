@@ -47,6 +47,13 @@ import Fill from '@site/static/usage/v7/textarea/fill/index.md';
 
 <Fill />
 
+## Helper & Error Text
+
+Helper and error text can be used inside of a textarea with the `helperText` and `errorText` property. The error text will not be displayed unless the `ion-invalid` class is added to the `ion-textarea`. In Angular, this is done automatically through form validation. In JavaScript, React and Vue, the class needs to be manually added based on your own validation.
+
+import HelperError from '@site/static/usage/v7/textarea/helper-error/index.md';
+
+<HelperError />
 
 ## Autogrow
 
