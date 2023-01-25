@@ -83,6 +83,34 @@ import UsingCompareWithExample from '@site/static/usage/v7/select/objects-as-val
 import ObjectValuesAndMultipleSelectionExample from '@site/static/usage/v7/select/objects-as-values/multiple-selection/index.md';
 
 <ObjectValuesAndMultipleSelectionExample />
+  
+
+## Label Positioning
+
+Labels will take up the width of their content by default. This positioning can be changed to be a fixed width, stacked, or floating label.
+
+import LabelExample from '@site/static/usage/v7/select/labels/index.md';
+
+<LabelExample />
+  
+
+## Justification
+  
+Developers can use the `justify` property to control how the label and control are packed on a line.
+
+import JustifyExample from '@site/static/usage/v7/select/justify/index.md';
+
+<JustifyExample />
+
+## Filled Selects
+
+Material Design offers filled styles for a select. The `fill` property on the select can be set to either `"solid"` or `"outline"`.
+
+Since the `fill` styles visually defines the select container, selects that use `fill` should not be used in `ion-item`.
+
+import FillExample from '@site/static/usage/v7/select/fill/index.md';
+
+<FillExample />
 
 ## Select Buttons
 
@@ -150,6 +178,28 @@ interface SelectCustomEvent<T = any> extends CustomEvent {
   target: HTMLIonSelectElement;
 }
 ```
+
+## Migrating from Legacy Select Syntax
+
+A simpler select syntax was introduced in Ionic 7.0. This new syntax reduces the boilerplate required to setup an select, resolves accessibility issues, and improves the developer experience.
+
+While developers can continue using the legacy syntax, we recommend migrating as soon as possible.
+
+
+### Using the Modern Syntax
+
+Using the modern syntax involves two steps:
+
+1. Remove `ion-label` and use the `label` property on `ion-select` instead. The placement of the label can be configured using the `labelPlacement` property on `ion-select`.
+2. Move any usage of `fill` and `shape` from `ion-item` on to `ion-select`.
+
+import Migration from '@site/static/usage/v7/select/migration/index.md';
+
+<Migration />
+
+### Using the Legacy Syntax
+
+Ionic uses heuristics to detect if an app is using the modern select syntax. In some instances, it may be preferable to continue using the legacy syntax. Developers can set the `legacy` property on `ion-select` to `true` to force that instance of the input to use the legacy syntax.
 
 ## Properties
 <Props />

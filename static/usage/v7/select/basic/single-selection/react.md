@@ -5,7 +5,7 @@ function Example() {
   return (
     <IonList>
       <IonItem>
-        <IonSelect placeholder="Select fruit">
+        <IonSelect aria-label="fruit" placeholder="Select fruit">
           <IonSelectOption value="apples">Apples</IonSelectOption>
           <IonSelectOption value="oranges">Oranges</IonSelectOption>
           <IonSelectOption value="bananas">Bananas</IonSelectOption>

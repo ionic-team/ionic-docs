@@ -45,6 +45,7 @@ function Example() {
     <IonList>
       <IonItem>
         <IonSelect
+          aria-label="Food"
           placeholder="Select food"
           compareWith={compareWith}
           onIonChange={(ev) => setCurrentFood(JSON.stringify(ev.detail.value))}
