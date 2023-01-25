@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@ionic/react": "6.4.2-dev.11673981545.1e612253",
+    "@ionic/react": "6.5.1-dev.11674614335.18d3edd0",
     "@types/node": "^16.11.35",
     "@types/react": "^18.0.9",
     "@types/react-dom": "^18.0.4",
