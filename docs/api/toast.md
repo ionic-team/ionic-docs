@@ -22,78 +22,29 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 A Toast is a subtle notification commonly used in modern applications. It can be used to provide feedback about an operation or to display a system message. The toast appears on top of the app's content, and can be dismissed by the app to resume user interaction with the app.
 
-## Presenting
+## Inline Toasts (Recommended)
 
-### Positioning
+`ion-toast` can be used by writing the component directly in your template. This reduces the number of handlers you need to wire up in order to present the toast.
 
-Toasts can be positioned at the top, bottom or middle of the viewport. The position can be passed upon creation. The possible values are `top`, `bottom` and `middle`. If the position is not specified, the toast will be displayed at the bottom of the viewport.
+import InlineToastTriggerExample from '@site/static/usage/v7/toast/inline/basic/index.md';
 
-### Controller
+<InlineToastTriggerExample />
 
-import ControllerExample from '@site/static/usage/toast/presenting/controller/index.md';
+### Using `isOpen​`
+
+The `isOpen` property on `ion-toast` allows developers to control the presentation state of the toast from their application state. This means when `isOpen` is set to `true` the toast will be presented and when `isOpen` is set to `false` the toast will be dismissed.
+
+`isOpen` uses a one-way data binding, meaning it will not automatically be set to `false` when the toast is dismissed. Developers should listen for the `ionToastDidDismiss` or `didDismiss` event and set `isOpen` to `false`. The reason for this is it prevents the internals of `ion-toast` from being tightly coupled with the state of the application. With a one way data binding, the toast only needs to concern itself with the boolean value that the reactive variable provides. With a two way data binding, the toast needs to concern itself with both the boolean value as well as the existence of the reactive variable itself. This can lead to non-deterministic behaviors and make applications harder to debug.
+
+import InlineToastIsOpenExample from '@site/static/usage/v7/toast/inline/is-open/index.md';
+
+<InlineToastIsOpenExample />
+
+## Controller Toasts
+
+import ControllerExample from '@site/static/usage/v7/toast/presenting/controller/index.md';
 
 <ControllerExample />
-
-### Inline
-
-When using Ionic with React or Vue, `ion-toast` can also be placed directly in the template through use of the `isOpen` property. Note that `isOpen` must be set to `false` manually when the toast is dismissed; it will not be updated automatically.
-
-<Tabs defaultValue="react" values={[{ value: 'react', label: 'React' }, { value: 'vue', label: 'Vue' }]}>
-<TabItem value="react">
-
-```tsx
-import React, { useState } from 'react';
-import { IonButton, IonToast } from '@ionic/react';
-
-function Example() {
-  const [showToast, setShowToast] = useState(false);
-
-  return (
-    <>
-      <IonButton onClick={() => setShowToast(true)}>Show Toast</IonButton>
-      <IonToast
-        isOpen={showToast}
-        onDidDismiss={() => setShowToast(false)}
-        message="Hello World!"
-        duration={1500}
-      />
-    </>
-  );
-}
-```
-
-</TabItem>
-<TabItem value="vue">
-
-```html
-<template>
-  <ion-button @click="setOpen(true)">Show Toast</ion-button>
-  <ion-toast
-    :is-open="isOpenRef"
-    @didDismiss="setOpen(false)"
-    message="Hello World!"
-    :duration="1500"
-  ></ion-toast>
-</template>
-
-<script lang="ts">
-import { IonButton, IonToast } from '@ionic/vue';
-import { defineComponent, ref } from 'vue';
-
-export default defineComponent({
-  components: { IonButton, IonToast },
-  setup() {
-    const isOpenRef = ref(false);
-    const setOpen = (state: boolean) => isOpenRef.value = state;
-    
-    return { isOpenRef, setOpen }
-  }
-});
-</script>
-```
-
-</TabItem>
-</Tabs>
 
 ## Dismissing
 
@@ -101,21 +52,26 @@ The toast can be dismissed automatically after a specific amount of time by pass
 
 The following example demonstrates how to use the `buttons` property to add a button that automatically dismisses the toast when clicked, as well as how to collect the `role` of the dismiss event.
 
-import ButtonsPlayground from '@site/static/usage/toast/buttons/index.md';
+import ButtonsPlayground from '@site/static/usage/v7/toast/buttons/index.md';
 
 <ButtonsPlayground />
+  
+
+## Positioning
+
+Toasts can be positioned at the top, bottom or middle of the viewport. The position can be passed upon creation. The possible values are `top`, `bottom` and `middle`. If the position is not specified, the toast will be displayed at the bottom of the viewport.
 
 ## Icons
 
 An icon can be added next to the content inside of the toast. In general, icons in toasts should be used to add additional style or context, not to grab the user's attention or elevate the priority of the toast. If you wish to convey a higher priority message to the user or guarantee a response, we recommend using an [Alert](alert.md) instead.
 
-import IconPlayground from '@site/static/usage/toast/icon/index.md';
+import IconPlayground from '@site/static/usage/v7/toast/icon/index.md';
 
 <IconPlayground />
 
 ## Theming
 
-import ThemingPlayground from '@site/static/usage/toast/theming/index.md';
+import ThemingPlayground from '@site/static/usage/v7/toast/theming/index.md';
 
 <ThemingPlayground />
 

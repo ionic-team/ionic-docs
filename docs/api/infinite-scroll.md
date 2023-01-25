@@ -21,7 +21,7 @@ The Infinite Scroll component calls an action to be performed when the user scro
 
 The expression assigned to the `ionInfinite` event is called when the user reaches that defined distance. When this expression has finished any and all tasks, it should call the `complete()` method on the infinite scroll instance.
 
-import Basic from '@site/static/usage/infinite-scroll/basic/index.md';
+import Basic from '@site/static/usage/v7/infinite-scroll/basic/index.md';
 
 <Basic />
 
@@ -29,7 +29,7 @@ import Basic from '@site/static/usage/infinite-scroll/basic/index.md';
 
 The `ion-infinite-scroll-content` is responsible for the visual display of the infinite scroll interaction. By default this component changes its look depending on the infinite scroll's state. It displays a spinner that looks best based on the platform the user is on. Both the spinner and loading text can be customized by setting properties on the `ion-infinite-scroll-content` component.
 
-import InfiniteScrollContent from '@site/static/usage/infinite-scroll/infinite-scroll-content/index.md';
+import InfiniteScrollContent from '@site/static/usage/v7/infinite-scroll/infinite-scroll-content/index.md';
 
 <InfiniteScrollContent />
 
@@ -37,7 +37,7 @@ import InfiniteScrollContent from '@site/static/usage/infinite-scroll/infinite-s
 
 Separating the `ion-infinite-scroll` and `ion-infinite-scroll-content` components allows developers to create their own content components, if desired. This content can contain anything, from an SVG element to elements with unique CSS animations.
 
-import CustomContent from '@site/static/usage/infinite-scroll/custom-infinite-scroll-content/index.md';
+import CustomContent from '@site/static/usage/v7/infinite-scroll/custom-infinite-scroll-content/index.md';
 
 <CustomContent />
 

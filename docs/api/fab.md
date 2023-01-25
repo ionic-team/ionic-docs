@@ -21,7 +21,7 @@ Fabs are container elements that contain one or more [fab buttons](./fab-button)
 
 ## Basic Usage
 
-import BasicUsage from '@site/static/usage/fab/basic/index.md';
+import BasicUsage from '@site/static/usage/v7/fab/basic/index.md';
 
 <BasicUsage />
 
@@ -29,7 +29,7 @@ import BasicUsage from '@site/static/usage/fab/basic/index.md';
 
 The `side` property of the [fab list](./fab-list) component controls where it appears relative to the main fab button. A single fab can have multiple fab lists as long as they all have different values for `side`.
 
-import ListSide from '@site/static/usage/fab/list-side/index.md';
+import ListSide from '@site/static/usage/v7/fab/list-side/index.md';
 
 <ListSide />
 
@@ -37,7 +37,7 @@ import ListSide from '@site/static/usage/fab/list-side/index.md';
 
 In order to place the fab in a fixed position, it should be assigned to the `fixed` slot of the outer [content](./content) component. Use the `vertical` and `horizontal` props to control the alignment of the fab in the viewport. The `edge` prop will cause the fab button to overlap with the app's header or footer.
 
-import Positioning from '@site/static/usage/fab/positioning/index.md';
+import Positioning from '@site/static/usage/v7/fab/positioning/index.md';
 
 <Positioning />
 
@@ -45,7 +45,7 @@ import Positioning from '@site/static/usage/fab/positioning/index.md';
 
 Setting the `size` property of the main fab button to `"small"` will render it at a mini size. Note that this property will not have an effect when used with the inner fab buttons.
 
-import ButtonSizing from '@site/static/usage/fab/button-sizing/index.md';
+import ButtonSizing from '@site/static/usage/v7/fab/button-sizing/index.md';
 
 <ButtonSizing />
 
@@ -53,19 +53,19 @@ import ButtonSizing from '@site/static/usage/fab/button-sizing/index.md';
 
 ### Colors
 
-import Colors from '@site/static/usage/fab/theming/colors/index.md';
+import Colors from '@site/static/usage/v7/fab/theming/colors/index.md';
 
 <Colors />
 
 ### CSS Custom Properties
 
-import CSSCustomProperties from '@site/static/usage/fab/theming/css-custom-properties/index.md';
+import CSSCustomProperties from '@site/static/usage/v7/fab/theming/css-custom-properties/index.md';
 
 <CSSCustomProperties />
 
 ### CSS Shadow Parts
 
-import CSSShadowParts from '@site/static/usage/fab/theming/css-shadow-parts/index.md';
+import CSSShadowParts from '@site/static/usage/v7/fab/theming/css-shadow-parts/index.md';
 
 <CSSShadowParts />
  

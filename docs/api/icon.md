@@ -16,6 +16,6 @@ For more information, including styling and all available icons, see <a href="ht
 
 ## Basic Usage
 
-import Basic from '@site/static/usage/icon/basic/index.md';
+import Basic from '@site/static/usage/v7/icon/basic/index.md';
 
 <Basic />

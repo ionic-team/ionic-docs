@@ -54,7 +54,7 @@ The default breakpoints for the grid and the corresponding properties are define
 
 By default, columns will take up equal width inside of a row for all devices and screen sizes.
 
-import Basic from '@site/static/usage/grid/basic/index.md';
+import Basic from '@site/static/usage/v7/grid/basic/index.md';
 
 <Basic />
 
@@ -71,7 +71,7 @@ Grids take up 100% width of their container. By adding the `fixed` property to t
 | lg   | 960px  | Set grid width to 960px when (min-width: 992px)   |
 | xl   | 1140px | Set grid width to 1140px when (min-width: 1200px) |
 
-import Fixed from '@site/static/usage/grid/fixed/index.md';
+import Fixed from '@site/static/usage/v7/grid/fixed/index.md';
 
 <Fixed />
 
@@ -84,7 +84,7 @@ Columns can be set to specific sizes to take up a certain number out of the tota
 
 By setting the `size` to `"auto"` the column can size itself based on the natural width of its content. This is necessary when setting a column to an absolute width, such as a specific number of pixels. The columns next to the auto-width column will resize to fill the row.
 
-import SizeAuto from '@site/static/usage/grid/size-auto/index.md';
+import SizeAuto from '@site/static/usage/v7/grid/size-auto/index.md';
 
 <SizeAuto />
 
@@ -93,7 +93,7 @@ import SizeAuto from '@site/static/usage/grid/size-auto/index.md';
 
 Set the `size` of a column and the others will automatically resize around it. If a size is specified on all of the columns and it doesn't add up to the total number of columns, there will be empty space after the columns.
 
-import Size from '@site/static/usage/grid/size/index.md';
+import Size from '@site/static/usage/v7/grid/size/index.md';
 
 <Size />
 
@@ -101,7 +101,7 @@ import Size from '@site/static/usage/grid/size/index.md';
 
 The `size` property will change the column width for all [breakpoints](#default-breakpoints). Column also provides several size properties with the breakpoint name appended to the end of "size". These properties can be used to change the width of the column based on the screen size. Open the below example in StackBlitz and resize the screen to see the column widths change.
 
-import SizeResponsive from '@site/static/usage/grid/size-responsive/index.md';
+import SizeResponsive from '@site/static/usage/v7/grid/size-responsive/index.md';
 
 <SizeResponsive />
 
@@ -114,7 +114,7 @@ Columns can be offset to shift to the right by a certain number of columns out o
 
 Columns can be moved to the right by using the `offset` property. This property increases the left margin of the column by the number of specified columns. It also shifts the columns to the right of it, if any exist.
 
-import Offset from '@site/static/usage/grid/offset/index.md';
+import Offset from '@site/static/usage/v7/grid/offset/index.md';
 
 <Offset />
 
@@ -122,7 +122,7 @@ import Offset from '@site/static/usage/grid/offset/index.md';
 
 The `offset` property will change the column's left margin for all [breakpoints](#default-breakpoints). Column also provides several offset properties with the breakpoint name appended to the end of "offset". These properties can be used to change the offset of the column based on the screen size. Open the below example in StackBlitz and resize the screen to see the column offsets change.
 
-import OffsetResponsive from '@site/static/usage/grid/offset-responsive/index.md';
+import OffsetResponsive from '@site/static/usage/v7/grid/offset-responsive/index.md';
 
 <OffsetResponsive />
 
@@ -135,7 +135,7 @@ Columns can be pushed to to the right or pulled to the left by a certain number 
 
 Reorder the columns by adding the `push` and `pull` properties. These properties adjust the `left` and `right` of the columns by the specified number of columns making it easy to reorder columns. This will cause columns to overlap if they are shifted to where another column is positioned.
 
-import PushPull from '@site/static/usage/grid/push-pull/index.md';
+import PushPull from '@site/static/usage/v7/grid/push-pull/index.md';
 
 <PushPull />
 
@@ -143,7 +143,7 @@ import PushPull from '@site/static/usage/grid/push-pull/index.md';
 
 The `push` and `pull` properties will change the column's position for all [breakpoints](#default-breakpoints). Column also provides several `push` and `pull` properties with the breakpoint name appended to the end of "push" / "pull". These properties can be used to change the position of the column based on the screen size. Open the below example in StackBlitz and resize the screen to see the column positions change.
 
-import PushPullResponsive from '@site/static/usage/grid/push-pull-responsive/index.md';
+import PushPullResponsive from '@site/static/usage/v7/grid/push-pull-responsive/index.md';
 
 <PushPullResponsive />
 
@@ -153,7 +153,7 @@ import PushPullResponsive from '@site/static/usage/grid/push-pull-responsive/ind
 
 All columns can be vertically aligned inside of a row by adding different classes to the row. For a list of available classes, see [css utilities](/layout/css-utilities#flex-container-properties).
 
-import VerticalAlignment from '@site/static/usage/grid/vertical-alignment/index.md';
+import VerticalAlignment from '@site/static/usage/v7/grid/vertical-alignment/index.md';
 
 <VerticalAlignment />
 
@@ -162,7 +162,7 @@ import VerticalAlignment from '@site/static/usage/grid/vertical-alignment/index.
 
 All columns can be horizontally aligned inside of a row by adding different classes to the row. For a list of available classes, see [css utilities](/layout/css-utilities.md#flex-container-properties).
 
-import HorizontalAlignment from '@site/static/usage/grid/horizontal-alignment/index.md';
+import HorizontalAlignment from '@site/static/usage/v7/grid/horizontal-alignment/index.md';
 
 <HorizontalAlignment />
 
@@ -174,7 +174,7 @@ Using our built-in CSS variables, it’s possible to customize the predefined gr
 
 The width of a fixed grid can be set for all breakpoints with the `--ion-grid-width` CSS variable. To override individual breakpoints, use the `--ion-grid-width-{breakpoint}` CSS variables. The default value for each of the breakpoints can be found in the [Fixed Grid](#fixed-grid) section. Open the below example in StackBlitz and resize the screen to see the grid width change.
 
-import Width from '@site/static/usage/grid/customizing/width/index.md';
+import Width from '@site/static/usage/v7/grid/customizing/width/index.md';
 
 <Width />
 
@@ -182,7 +182,7 @@ import Width from '@site/static/usage/grid/customizing/width/index.md';
 
 The number of grid columns can be modified with the `--ion-grid-columns` CSS variable. By default there are 12 grid columns, but this can be changed to any positive integer and be used to calculate the width of each individual column.
 
-import ColumnNumber from '@site/static/usage/grid/customizing/column-number/index.md';
+import ColumnNumber from '@site/static/usage/v7/grid/customizing/column-number/index.md';
 
 <ColumnNumber />
 
@@ -192,7 +192,7 @@ The padding on the grid container can be set for all breakpoints with the `--ion
 
 The padding on the columns can be set for all breakpoints with the `--ion-grid-column-padding` CSS variable. To override individual breakpoints, use the `--ion-grid-column-padding-{breakpoint}` CSS variables.
 
-import Padding from '@site/static/usage/grid/customizing/padding/index.md';
+import Padding from '@site/static/usage/v7/grid/customizing/padding/index.md';
 
 <Padding />
 

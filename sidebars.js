@@ -4,7 +4,18 @@ module.exports = {
       type: 'category',
       label: 'Getting Started',
       collapsed: false,
-      items: ['index', 'intro/upgrading-to-ionic-6', 'intro/environment', 'intro/cli', 'intro/cdn', 'intro/vscode-extension', 'intro/next'],
+      items: ['index', 'intro/environment', 'intro/cli', 'intro/cdn', 'intro/vscode-extension', 'intro/next'],
+    },
+    {
+      type: 'category',
+      label: 'Upgrade Guides',
+      collapsed: false,
+      items: [
+        'updating/7-0',
+        'updating/6-0',
+        'updating/5-0',
+        'updating/4-0'
+      ]
     },
     {
       type: 'category',
@@ -219,8 +230,7 @@ module.exports = {
           href: 'https://github.com/ionic-team/ionic/blob/master/CHANGELOG.md',
         },
         'reference/support',
-        'reference/browser-support',
-        'reference/migration',
+        'reference/browser-support'
       ],
     },
   ],
@@ -347,7 +357,7 @@ module.exports = {
       type: 'category',
       label: 'List',
       collapsed: false,
-      items: ['api/list', 'api/list-header', 'api/virtual-scroll'],
+      items: ['api/list', 'api/list-header'],
     },
     {
       type: 'category',
@@ -437,12 +447,6 @@ module.exports = {
       label: 'Select',
       collapsed: false,
       items: ['api/select', 'api/select-option'],
-    },
-    {
-      type: 'category',
-      label: 'Slides',
-      collapsed: false,
-      items: ['api/slides', 'api/slide'],
     },
     {
       type: 'category',

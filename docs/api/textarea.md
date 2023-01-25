@@ -25,7 +25,7 @@ The textarea component accepts the [native textarea attributes](https://develope
 
 ## Basic Usage
 
-import BasicPlayground from '@site/static/usage/textarea/basic/index.md';
+import BasicPlayground from '@site/static/usage/v7/textarea/basic/index.md';
 
 <BasicPlayground />
 
@@ -33,7 +33,7 @@ import BasicPlayground from '@site/static/usage/textarea/basic/index.md';
 
 When the `autoGrow` property is set to `true`, the textarea will grow and shrink based on its contents.
 
-import AutogrowPlayground from '@site/static/usage/textarea/autogrow/index.md';
+import AutogrowPlayground from '@site/static/usage/v7/textarea/autogrow/index.md';
 
 <AutogrowPlayground />
 
@@ -41,13 +41,13 @@ import AutogrowPlayground from '@site/static/usage/textarea/autogrow/index.md';
 
 Setting the `clearOnEdit` property to `true` will clear the textarea after it has been blurred and then typed in again.
 
-import ClearOnEditPlayground from '@site/static/usage/textarea/clear-on-edit/index.md';
+import ClearOnEditPlayground from '@site/static/usage/v7/textarea/clear-on-edit/index.md';
 
 <ClearOnEditPlayground />
 
 ## Theming
 
-import ThemingPlayground from '@site/static/usage/textarea/theming/index.md';
+import ThemingPlayground from '@site/static/usage/v7/textarea/theming/index.md';
 
 <ThemingPlayground />
 

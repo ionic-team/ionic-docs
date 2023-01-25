@@ -95,6 +95,11 @@ interface UsageTargetOptions {
      */
     declarations?: string[];
   };
+  /**
+   * The major version of Ionic to use in the generated Stackblitz examples.
+   * This will also load assets for Stackblitz from the specified version directory.
+   */
+  version?: number;
 }
 
 /**
@@ -114,6 +119,7 @@ export default function Playground({
   mode,
   devicePreview,
   includeIonContent = true,
+  version = 6,
 }: {
   code: { [key in UsageTarget]?: MdxContent | UsageTargetOptions };
   title?: string;
@@ -128,6 +134,7 @@ export default function Playground({
   description?: string;
   devicePreview?: boolean;
   includeIonContent: boolean;
+  version: number;
 }) {
   if (!code || Object.keys(code).length === 0) {
     console.warn('No code usage examples provided for this Playground example.');
@@ -168,8 +175,24 @@ export default function Playground({
       await Promise.all([waitForFrame(frameiOS.current), waitForFrame(frameMD.current)]);
 
       const message = { darkMode: isDarkTheme };
-      frameiOS.current.contentWindow.postMessage(message);
-      frameMD.current.contentWindow.postMessage(message);
+      /**
+       * When changing the versioned docs, the frame reference can be undefined
+       * after the waitForFrame promise resolves.
+       *
+       * We need to check for the iOS frame reference before posting the message.
+       */
+      if (frameiOS.current) {
+        frameiOS.current.contentWindow.postMessage(message);
+      }
+      /**
+       * When changing the versioned docs, the frame reference can be undefined
+       * after the waitForFrame promise resolves.
+       *
+       * We need to check for the MD frame reference before posting the message.
+       */
+      if (frameMD.current) {
+        frameMD.current.contentWindow.postMessage(message);
+      }
     }
   };
 
@@ -285,6 +308,7 @@ export default function Playground({
       description,
       includeIonContent,
       mode: isIOS ? 'ios' : 'md',
+      version,
     };
 
     let codeBlock;

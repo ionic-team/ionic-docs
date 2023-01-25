@@ -23,7 +23,7 @@ Lists support several interactions including swiping items to reveal options, dr
 
 ## Basic Usage
 
-import Basic from '@site/static/usage/list/basic/index.md';
+import Basic from '@site/static/usage/v7/list/basic/index.md';
 
 <Basic />
 
@@ -32,7 +32,7 @@ import Basic from '@site/static/usage/list/basic/index.md';
 
 Adding the `inset` property to a list will apply margin around the list. In `ios` mode it will also add rounded corners to the list.
 
-import Inset from '@site/static/usage/list/inset/index.md';
+import Inset from '@site/static/usage/v7/list/inset/index.md';
 
 <Inset />
 
@@ -41,7 +41,7 @@ import Inset from '@site/static/usage/list/inset/index.md';
 
 Adding the `lines` property to a list will adjust the bottom borders of all of the items in the list. Setting it to `"full"` will display full width borders, `"inset"` will display borders adjusted with left padding, and `"none"` will show no borders. If the `lines` property is set on an item in a list, that will take priority over the property on the list.
 
-import Lines from '@site/static/usage/list/lines/index.md';
+import Lines from '@site/static/usage/v7/list/lines/index.md';
 
 <Lines />
 
