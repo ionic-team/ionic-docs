@@ -188,7 +188,7 @@ While developers can continue using the legacy syntax, we recommend migrating as
 
 ### Using the Modern Syntax
 
-Using the modern syntax involves three steps:
+Using the modern syntax involves two steps:
 
 1. Remove `ion-label` and use the `label` property on `ion-select` instead. The placement of the label can be configured using the `labelPlacement` property on `ion-select`.
 2. Move any usage of `fill` and `shape` from `ion-item` on to `ion-select`.
