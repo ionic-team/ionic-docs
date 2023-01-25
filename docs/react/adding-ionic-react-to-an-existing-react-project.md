@@ -210,4 +210,4 @@ For more info on theming your Ionic app, see the guide [here](/docs/theming/them
 
 Adding Ionic React to an existing React project is fairly simple and can be done in just a few minutes.
 
-The great thing about using individual components from Ionic React is that you only import the component you need. Each component is lazy loaded at runtime so that it won't bloat your bundle size. This makes Ionic React ideal for adding it to existing projects that need to look and work great on mobile devices.
+The great thing about using individual components from Ionic React is that you only import the component you need. This makes Ionic React ideal for adding it to existing projects that need to look and work great on mobile devices.
