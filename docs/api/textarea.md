@@ -55,6 +55,14 @@ import HelperError from '@site/static/usage/v7/textarea/helper-error/index.md';
 
 <HelperError />
 
+## Textarea Counter
+
+The textarea counter is text that displays under a textarea to notify the user of how many characters have been entered out of the total that the textarea will accept. When adding counter, the default behavior is to format the value that gets displayed as `inputLength` / `maxLength`. This behavior can be customized by passing in a formatter function to the `counterFormatter` property.
+
+import Counter from '@site/static/usage/v7/textarea/counter/index.md';
+
+<Counter />
+
 ## Autogrow
 
 When the `autoGrow` property is set to `true`, the textarea will grow and shrink based on its contents.

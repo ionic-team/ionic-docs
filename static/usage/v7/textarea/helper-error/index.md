@@ -14,5 +14,5 @@ import angular from './angular.md';
     angular,
   }}
   src="usage/v7/textarea/helper-error/demo.html"
-  size="150px"
+  size="200px"
 />
