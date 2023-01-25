@@ -185,7 +185,7 @@ interface ModalOptions {
   backdropDismiss?: boolean;
   cssClass?: string | string[];
   animated?: boolean;
-  canDismiss?: boolean | (() => Promise<boolean>);
+  canDismiss?: boolean | ((data?: any, role?: string) => Promise<boolean>);
 
   mode?: 'ios' | 'md';
   keyboardClose?: boolean;

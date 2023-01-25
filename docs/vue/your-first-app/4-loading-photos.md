@@ -54,13 +54,13 @@ const loadSaved = async () => {
 
 On mobile (coming up next!), we can directly set the source of an image tag - `<img src="x" />` - to each photo file on the Filesystem, displaying them automatically. On the web, however, we must read each image from the Filesystem into base64 format, because the Filesystem API stores them in base64 within [IndexedDB](https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API) under the hood.
 
-Finally, we need a way to call the `loadSaved` function when the Photo Gallery page is loaded. To do so, use the Vue [mounted lifecycle hook](https://v3.vuejs.org/guide/composition-api-introduction.html#lifecycle-hook-registration-inside-setup). First, import `onMounted` from Vue:
+Finally, we need a way to call the `loadSaved` function when the Photo Gallery page is loaded. To do so, use the Vue [mounted lifecycle hook](https://v3.vuejs.org/guide/composition-api-introduction.html#lifecycle-hook-registration-inside-setup). Earlier we had already imported `onMounted` from Vue:
 
 ```tsx
 import { ref, onMounted, watch } from 'vue';
 ```
 
-Then, within the `usePhotoGallery` function, add the `onMounted` function and call `loadSaved`:
+Within the `usePhotoGallery` function, add the `onMounted` function and call `loadSaved`:
 
 ```tsx
 onMounted(loadSaved);

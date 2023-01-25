@@ -523,13 +523,8 @@ module.exports = {
       collapsed: false,
       items: [
         'native',
-        'native-community',
+        'native-setup',
         'native-faq',
-        {
-          type: 'link',
-          label: 'Community vs. Enterprise',
-          href: 'https://ionic.io/docs/premier-plugins',
-        },
       ],
     },
     {
