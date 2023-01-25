@@ -17,7 +17,7 @@
   </ion-item>
 
   <ion-item>
-    <ion-select label="Stacked label" label-placement="stacked" placeholder="Favorite fruit">
+    <ion-select label="Stacked label" label-placement="stacked">
       <ion-select-option value="apple">Apple</ion-select-option>
       <ion-select-option value="banana">Banana</ion-select-option>
       <ion-select-option value="orange">Orange</ion-select-option>
@@ -25,7 +25,7 @@
   </ion-item>
 
   <ion-item>
-    <ion-select label="Floating label" label-placement="floating" placeholder="Favorite fruit">
+    <ion-select label="Floating label" label-placement="floating">
       <ion-select-option value="apple">Apple</ion-select-option>
       <ion-select-option value="banana">Banana</ion-select-option>
       <ion-select-option value="orange">Orange</ion-select-option>
