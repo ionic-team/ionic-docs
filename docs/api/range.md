@@ -26,7 +26,7 @@ Rangeスライダは、スライダノブを動かして、ユーザーが値の
 
 デフォルトでは、Rangeスライダーの最小値は`0`、最大値は`100`です。これは `min` と `max` プロパティで設定することができます。
 
-import Basic from '@site/static/usage/range/basic/index.md';
+import Basic from '@site/static/usage/v6/range/basic/index.md';
 
 <Basic />
 
@@ -34,7 +34,7 @@ import Basic from '@site/static/usage/range/basic/index.md';
 
 ラベルやカスタム UI 要素は、要素に `slot="start"` または `slot="end"` を追加することで、範囲のどちら側にもスロットさせることができます。この要素には、 `ion-label` や `ion-icon` 、 `div` など、任意の要素を指定することができます。ドキュメントの方向性が左から右に設定されている場合、 `start` 位置にスロットされたコンテンツは範囲の左側に表示され、 `end` 位置にスロットされたコンテンツは範囲の右側に表示されます。右から左へ(rtl)の方向性の場合、`start`の位置にスロットされたコンテンツは範囲の右側に表示され、`end`の位置にスロットされたコンテンツは範囲の左側に表示されます。
 
-import SlotsPlayground from '@site/static/usage/range/slots/index.md';
+import SlotsPlayground from '@site/static/usage/v6/range/slots/index.md';
 
 <SlotsPlayground />
 
@@ -42,7 +42,7 @@ import SlotsPlayground from '@site/static/usage/range/slots/index.md';
 
 Dual knobs はユーザーが下限と上限の値を選択するために使用できる2つのknobsコントロールを導入しています。選択されると、Range は選択された上下限の値を含む [RangeValue](#rangevalue) を持つ `ionChange` イベントを発信します。
 
-import DualKnobs from '@site/static/usage/range/dual-knobs/index.md';
+import DualKnobs from '@site/static/usage/v6/range/dual-knobs/index.md';
 
 <DualKnobs />
 
@@ -52,7 +52,7 @@ import DualKnobs from '@site/static/usage/range/dual-knobs/index.md';
 
 `pinFormatter` 関数を使用すると、開発者はユーザーに対してレンジの値のフォーマットをカスタマイズすることができます。
 
-import Pins from '@site/static/usage/range/pins/index.md';
+import Pins from '@site/static/usage/v6/range/pins/index.md';
 
 <Pins />
 
@@ -62,7 +62,7 @@ TicksはRange 上で利用可能な各値のインジケータを表示します
 
 snapsを有効にし、knobをドラッグして放すと、Range knobは最も近い利用可能な値にスナップします。
 
-import SnappingTicks from '@site/static/usage/range/snapping-ticks/index.md';
+import SnappingTicks from '@site/static/usage/v6/range/snapping-ticks/index.md';
 
 <SnappingTicks />
 
@@ -72,7 +72,7 @@ import SnappingTicks from '@site/static/usage/range/snapping-ticks/index.md';
 
 `ionChange` イベントはRange knobの値の変更を監視します。
 
-import IonChangeEvent from '@site/static/usage/range/ion-change-event/index.md';
+import IonChangeEvent from '@site/static/usage/v6/range/ion-change-event/index.md';
 
 <IonChangeEvent />
 
@@ -80,7 +80,7 @@ import IonChangeEvent from '@site/static/usage/range/ion-change-event/index.md';
 
 マウスドラッグ、タッチジェスチャー、キーボード操作のいずれであっても、Range knobのドラッグが開始されると `ionKnobMoveStart` イベントが発行されます。逆に、`ionKnobMoveEnd`はRange knobがリリースされたときに発生します。両イベントは `RangeValue` タイプで発生し、`dualKnobs` プロパティと組み合わせて動作します。
 
-import IonKnobMoveEvent from '@site/static/usage/range/ion-knob-move-event/index.md';
+import IonKnobMoveEvent from '@site/static/usage/v6/range/ion-knob-move-event/index.md';
 
 <IonKnobMoveEvent />
 
@@ -90,7 +90,7 @@ import IonKnobMoveEvent from '@site/static/usage/range/ion-knob-move-event/index
 
 Rangeには、アプリケーションのデザインに合わせてRangeコンポーネントの外観を素早くテーマ化してカスタマイズするための[CSS Variables](#css-custom-properties)が含まれています。
 
-import CssVariablesPlayground from '@site/static/usage/range/theming/css-properties/index.md';
+import CssVariablesPlayground from '@site/static/usage/v6/range/theming/css-properties/index.md';
 
 <CssVariablesPlayground />
 
@@ -98,7 +98,7 @@ import CssVariablesPlayground from '@site/static/usage/range/theming/css-propert
 
 Rangeには [CSS Shadow Parts](#css-shadow-parts) があり、Rangeコンポーネント内の特定の要素ノードを完全にカスタマイズすることができます。CSS Shadow Partsは最も多くのカスタマイズ機能を提供し、Rangeコンポーネントで高度なスタイリングが必要な場合に推奨されるアプローチです。
 
-import CssShadowPartsPlayground from '@site/static/usage/range/theming/css-shadow-parts/index.md';
+import CssShadowPartsPlayground from '@site/static/usage/v6/range/theming/css-shadow-parts/index.md';
 
 <CssShadowPartsPlayground />
 

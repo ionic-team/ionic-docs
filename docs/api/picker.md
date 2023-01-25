@@ -27,7 +27,7 @@ Pickerは、画面下にボタンと列の行を表示するダイアログで�
 
 オプションのリストをスクロール可能な1つのカラムに表示します。
 
-import SingleColumn from '@site/static/usage/picker/single-column/index.md';
+import SingleColumn from '@site/static/usage/v6/picker/single-column/index.md';
 
 <SingleColumn />
 
@@ -36,7 +36,7 @@ import SingleColumn from '@site/static/usage/picker/single-column/index.md';
 
 異なるオプションの複数のカラムを表示します。
 
-import MultipleColumn from '@site/static/usage/picker/multiple-column/index.md';
+import MultipleColumn from '@site/static/usage/v6/picker/multiple-column/index.md';
 
 <MultipleColumn />
 

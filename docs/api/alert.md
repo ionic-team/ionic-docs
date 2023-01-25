@@ -28,7 +28,7 @@ Alertは、ユーザーに情報を提示したり、Inputを使用してユー�
 
 ### Controller
 
-import Controller from '@site/static/usage/alert/presenting/controller/index.md';
+import Controller from '@site/static/usage/v6/alert/presenting/controller/index.md';
 
 <Controller />
 
@@ -105,7 +105,7 @@ export default defineComponent({
 
 オプションで、`cancel`のような `role` プロパティをボタンに追加することができます。もし `cancel` ロールがボタンのいずれかに設定されている場合、バックドロップをタップしてアラートが解除されると、キャンセルロールを持つボタンから handler が起動されます。
 
-import Buttons from '@site/static/usage/alert/buttons/index.md';
+import Buttons from '@site/static/usage/v6/alert/buttons/index.md';
 
 <Buttons />
 
@@ -116,13 +116,13 @@ Alertには、複数の異なるInputを含めることもでき、そのデー�
 
 ### Text Inputs Example
 
-import TextInputs from '@site/static/usage/alert/inputs/text-inputs/index.md';
+import TextInputs from '@site/static/usage/v6/alert/inputs/text-inputs/index.md';
 
 <TextInputs />
 
 ### Radio Example
 
-import Radios from '@site/static/usage/alert/inputs/radios/index.md';
+import Radios from '@site/static/usage/v6/alert/inputs/radios/index.md';
 
 <Radios />
 
@@ -152,7 +152,7 @@ Alertはscopedによるカプセル化を使用しており、実行時に各ス
 }
 ```
 
-import Customization from '@site/static/usage/alert/customization/index.md';
+import Customization from '@site/static/usage/v6/alert/customization/index.md';
 
 <Customization />
 

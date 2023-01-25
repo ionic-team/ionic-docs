@@ -32,7 +32,7 @@ import TOCInline from '@theme/TOCInline';
 
 ### Controller
 
-import Controller from '@site/static/usage/loading/controller/index.md';
+import Controller from '@site/static/usage/v6/loading/controller/index.md';
 
 <Controller />
 
@@ -108,7 +108,7 @@ export default defineComponent({
 
 使用するスピナーは `spinner` プロパティを使用してカスタマイズすることができます。オプションの完全なリストは [spinner property documentation](#spinner) を参照してください。
 
-import Spinners from '@site/static/usage/loading/spinners/index.md';
+import Spinners from '@site/static/usage/v6/loading/spinners/index.md';
 
 <Spinners />
 
@@ -118,7 +118,7 @@ Loading は scoped encapsulation を使用しています。これは、実行�
 
 カスタムクラスを渡して、それを使ってホストと内部要素にカスタムスタイルを追加することをお勧めします。
 
-import Theming from '@site/static/usage/loading/theming/index.md';
+import Theming from '@site/static/usage/v6/loading/theming/index.md';
 
 <Theming />
 

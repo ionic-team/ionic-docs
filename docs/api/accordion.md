@@ -27,7 +27,7 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 ## 基本的な使い方
 
-import Basic from '@site/static/usage/accordion/basic/index.md';
+import Basic from '@site/static/usage/v6/accordion/basic/index.md';
 
 <Basic />
 
@@ -35,7 +35,7 @@ import Basic from '@site/static/usage/accordion/basic/index.md';
 
 どのアコーディオンを開くかは、`ion-accordion-group` の `value` プロパティを設定することで制御できます。このプロパティを設定することで、開発者はプログラムによって特定のアコーディオンを展開したり折りたたんだりすることができます。
 
-import Toggle from '@site/static/usage/accordion/toggle/index.md';
+import Toggle from '@site/static/usage/v6/accordion/toggle/index.md';
 
 <Toggle />
 
@@ -43,7 +43,7 @@ import Toggle from '@site/static/usage/accordion/toggle/index.md';
 
 開発者は `ionChange` イベントを監視することで、アコーディオンが展開または折りたたまれたときに通知されるようにすることができます。
 
-import ListenChanges from '@site/static/usage/accordion/listen-changes/index.md';
+import ListenChanges from '@site/static/usage/v6/accordion/listen-changes/index.md';
 
 <ListenChanges />
 
@@ -51,7 +51,7 @@ import ListenChanges from '@site/static/usage/accordion/listen-changes/index.md'
 
 開発者は `multiple` プロパティを使用して、複数のアコーディオンを一度に開くことができるようにすることができます。
 
-import Multiple from '@site/static/usage/accordion/multiple/index.md';
+import Multiple from '@site/static/usage/v6/accordion/multiple/index.md';
 
 <Multiple />
 
@@ -61,7 +61,7 @@ import Multiple from '@site/static/usage/accordion/multiple/index.md';
 
 個々のアコーディオンは、`ion-accordion` の `disabled` プロパティで無効にできます。
 
-import DisableIndividual from '@site/static/usage/accordion/disable/individual/index.md';
+import DisableIndividual from '@site/static/usage/v6/accordion/disable/individual/index.md';
 
 <DisableIndividual />
 
@@ -69,7 +69,7 @@ import DisableIndividual from '@site/static/usage/accordion/disable/individual/i
 
 アコーディオングループは、`ion-accordion-group` の `disabled` プロパティで無効にすることができます。
 
-import DisableGroup from '@site/static/usage/accordion/disable/group/index.md';
+import DisableGroup from '@site/static/usage/v6/accordion/disable/group/index.md';
 
 <DisableGroup />
 
@@ -79,7 +79,7 @@ import DisableGroup from '@site/static/usage/accordion/disable/group/index.md';
 
 個々のアコーディオンは、`ion-accordion` の `readonly` プロパティで無効にできます。
 
-import ReadonlyIndividual from '@site/static/usage/accordion/readonly/individual/index.md';
+import ReadonlyIndividual from '@site/static/usage/v6/accordion/readonly/individual/index.md';
 
 <ReadonlyIndividual />
 
@@ -87,7 +87,7 @@ import ReadonlyIndividual from '@site/static/usage/accordion/readonly/individual
 
 アコーディオングループは、`ion-accordion-group` の `readonly` プロパティで無効にできます。
 
-import ReadonlyGroup from '@site/static/usage/accordion/readonly/group/index.md';
+import ReadonlyGroup from '@site/static/usage/v6/accordion/readonly/group/index.md';
 
 <ReadonlyGroup />
 
@@ -111,7 +111,7 @@ import ReadonlyGroup from '@site/static/usage/accordion/readonly/group/index.md'
 
 `expand="inset"` の場合、アコーディオングループにはborder radiusが与えられます。 `md` モードでは、アコーディオン全体を開くと下に移動します。
 
-import ExpansionStyles from '@site/static/usage/accordion/customization/expansion-styles/index.md';
+import ExpansionStyles from '@site/static/usage/v6/accordion/customization/expansion-styles/index.md';
 
 <ExpansionStyles />
 
@@ -135,7 +135,7 @@ ion-accordion.accordion-expanded ion-item[slot="header"] {
 }
 ```
 
-import AdvancedExpansionStyles from '@site/static/usage/accordion/customization/advanced-expansion-styles/index.md';
+import AdvancedExpansionStyles from '@site/static/usage/v6/accordion/customization/advanced-expansion-styles/index.md';
 
 <AdvancedExpansionStyles />
 
@@ -147,7 +147,7 @@ import AdvancedExpansionStyles from '@site/static/usage/accordion/customization/
 
 どのオプションを選択しても、アコーディオンを展開または折りたたむと、アイコンは自動的に回転します。
 
-import Icons from '@site/static/usage/accordion/customization/icons/index.md';
+import Icons from '@site/static/usage/v6/accordion/customization/icons/index.md';
 
 <Icons />
 
@@ -155,7 +155,7 @@ import Icons from '@site/static/usage/accordion/customization/icons/index.md';
 
 `ion-accordion` はヘッダーとコンテンツ要素を囲むシェルとして機能するので、アコーディオンを簡単に好きなようにテーマ化することができます。ヘッダーのテーマは、スロットの `ion-item` をターゲットにすることで行うことができます。 `ion-item` を使用しているので、 [ion-item CSS Variables](./item#css-custom-properties) と  [ion-item Shadow Parts](./item#css-shadow-parts) にもすべてアクセスすることができます。コンテンツのテイムも、`content` slotにある要素をターゲットにすることで簡単に実現できます。
 
-import Theming from '@site/static/usage/accordion/customization/theming/index.md';
+import Theming from '@site/static/usage/v6/accordion/customization/theming/index.md';
 
 <Theming />
 
@@ -165,7 +165,7 @@ import Theming from '@site/static/usage/accordion/customization/theming/index.md
 
 デフォルトでは、アコーディオン・アイテムを展開したり折りたたんだりする際にアニメーションが有効になります。アニメーションは `prefers-reduced-motion` メディアクエリがサポートされ、`reduce` に設定されると自動的に無効化されます。対応していないブラウザでは、Ionic Frameworkアプリで `animated` を設定することで、アニメーションを無効にすることができます。
 
-import AccessibilityAnimations from '@site/static/usage/accordion/accessibility/animations/index.md';
+import AccessibilityAnimations from '@site/static/usage/v6/accordion/accessibility/animations/index.md';
 
 <AccessibilityAnimations />
 

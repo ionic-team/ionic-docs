@@ -11,32 +11,32 @@ import Parts from '@site/static/auto-generated/datetime/parts.md';
 import CustomProps from '@site/static/auto-generated/datetime/custom-props.md';
 import Slots from '@site/static/auto-generated/datetime/slots.md';
 
-import Basic from '@site/static/usage/datetime/basic/index.md';
+import Basic from '@site/static/usage/v6/datetime/basic/index.md';
 
-import MaxMin from '@site/static/usage/datetime/date-constraints/max-min/index.md';
-import Values from '@site/static/usage/datetime/date-constraints/values/index.md';
-import Advanced from '@site/static/usage/datetime/date-constraints/advanced/index.md';
+import MaxMin from '@site/static/usage/v6/datetime/date-constraints/max-min/index.md';
+import Values from '@site/static/usage/v6/datetime/date-constraints/values/index.md';
+import Advanced from '@site/static/usage/v6/datetime/date-constraints/advanced/index.md';
 
-import CustomLocale from '@site/static/usage/datetime/localization/custom-locale/index.md';
-import HourCycle from '@site/static/usage/datetime/localization/hour-cycle/index.md';
-import FirstDayOfWeek from '@site/static/usage/datetime/localization/first-day-of-week/index.md';
-import LocaleExtensionTags from '@site/static/usage/datetime/localization/locale-extension-tags/index.md';
-import TimeLabel from '@site/static/usage/datetime/localization/time-label/index.md';
+import CustomLocale from '@site/static/usage/v6/datetime/localization/custom-locale/index.md';
+import HourCycle from '@site/static/usage/v6/datetime/localization/hour-cycle/index.md';
+import FirstDayOfWeek from '@site/static/usage/v6/datetime/localization/first-day-of-week/index.md';
+import LocaleExtensionTags from '@site/static/usage/v6/datetime/localization/locale-extension-tags/index.md';
+import TimeLabel from '@site/static/usage/v6/datetime/localization/time-label/index.md';
 
-import MonthAndYear from '@site/static/usage/datetime/presentation/month-and-year/index.md';
-import Time from '@site/static/usage/datetime/presentation/time/index.md';
-import Date from '@site/static/usage/datetime/presentation/date/index.md';
+import MonthAndYear from '@site/static/usage/v6/datetime/presentation/month-and-year/index.md';
+import Time from '@site/static/usage/v6/datetime/presentation/time/index.md';
+import Date from '@site/static/usage/v6/datetime/presentation/date/index.md';
 
-import ShowingDefaultTitle from '@site/static/usage/datetime/title/showing-default-title/index.md';
-import CustomizingTitle from '@site/static/usage/datetime/title/customizing-title/index.md';
+import ShowingDefaultTitle from '@site/static/usage/v6/datetime/title/showing-default-title/index.md';
+import CustomizingTitle from '@site/static/usage/v6/datetime/title/customizing-title/index.md';
 
-import ShowingConfirmationButtons from '@site/static/usage/datetime/buttons/showing-confirmation-buttons/index.md';
-import CustomizingButtons from '@site/static/usage/datetime/buttons/customizing-buttons/index.md';
-import CustomizingButtonTexts from '@site/static/usage/datetime/buttons/customizing-button-texts/index.md';
+import ShowingConfirmationButtons from '@site/static/usage/v6/datetime/buttons/showing-confirmation-buttons/index.md';
+import CustomizingButtons from '@site/static/usage/v6/datetime/buttons/customizing-buttons/index.md';
+import CustomizingButtonTexts from '@site/static/usage/v6/datetime/buttons/customizing-button-texts/index.md';
 
-import MultipleDateSelection from '@site/static/usage/datetime/multiple/index.md';
+import MultipleDateSelection from '@site/static/usage/v6/datetime/multiple/index.md';
 
-import Theming from '@site/static/usage/datetime/theming/index.md';
+import Theming from '@site/static/usage/v6/datetime/theming/index.md';
 
 <head>
   <title>ion-datetime: Ionic API Input for Datetime Format Picker</title>
@@ -232,7 +232,7 @@ Ionic Frameworkでは、[Intl.DatetimeFormat](https://developer.mozilla.org/en-U
 
 以下の例では、ホイールピッカーに `presentation="date-time"` を指定しています。
 
-import Wheel from '@site/static/usage/datetime/presentation/wheel/index.md';
+import Wheel from '@site/static/usage/v6/datetime/presentation/wheel/index.md';
 
 <Wheel />
 

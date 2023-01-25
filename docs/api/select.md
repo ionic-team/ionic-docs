@@ -32,7 +32,7 @@ selectは、子要素 `<ion-select-option>` とともに使用する必要があ
 
 デフォルトでは、selectを使用すると、ユーザは1つのOptionだけを選択できます。Alertのインターフェースでは、Optionのリストがradio button形式で表示されます。action sheetインタフェースは、1つの値選択でのみ使用できます。selectコンポーネントの値は、選択したオプションの値の値を受け取ります。
 
-import SingleSelectionExample from '@site/static/usage/select/basic/single-selection/index.md';
+import SingleSelectionExample from '@site/static/usage/v6/select/basic/single-selection/index.md';
 
 <SingleSelectionExample />
 
@@ -42,13 +42,13 @@ import SingleSelectionExample from '@site/static/usage/select/basic/single-selec
 
 ### Action Sheet
 
-import ActionSheetExample from '@site/static/usage/select/interfaces/action-sheet/index.md';
+import ActionSheetExample from '@site/static/usage/v6/select/interfaces/action-sheet/index.md';
 
 <ActionSheetExample />
 
 ### Popover
 
-import PopoverExample from '@site/static/usage/select/interfaces/popover/index.md';
+import PopoverExample from '@site/static/usage/v6/select/interfaces/popover/index.md';
 
 <PopoverExample />
 
@@ -58,7 +58,7 @@ import PopoverExample from '@site/static/usage/select/interfaces/popover/index.m
 
 Note: `action-sheet` と `popover` インターフェイスでは、複数選択は動作しません
 
-import MulipleSelectionExample from '@site/static/usage/select/basic/multiple-selection/index.md';
+import MulipleSelectionExample from '@site/static/usage/v6/select/basic/multiple-selection/index.md';
 
 <MulipleSelectionExample />
 
@@ -66,7 +66,7 @@ import MulipleSelectionExample from '@site/static/usage/select/basic/multiple-se
 
 select とユーザーのインタラクションを処理する主な方法は、 `ionChange` イベント、 `ionDismiss` イベント、 `ionCancel` イベントです。これらのイベントと select が発生するその他のイベントの詳細については、[イベント](#events) を参照してください。
 
-import RespondingToInteractionExample from '@site/static/usage/select/basic/responding-to-interaction/index.md';
+import RespondingToInteractionExample from '@site/static/usage/v6/select/basic/responding-to-interaction/index.md';
 
 <RespondingToInteractionExample />
 
@@ -78,13 +78,13 @@ import RespondingToInteractionExample from '@site/static/usage/select/basic/resp
 
 ### Using compareWith
 
-import UsingCompareWithExample from '@site/static/usage/select/objects-as-values/using-comparewith/index.md';
+import UsingCompareWithExample from '@site/static/usage/v6/select/objects-as-values/using-comparewith/index.md';
 
 <UsingCompareWithExample />
 
 ### Object Values and Multiple Selection
 
-import ObjectValuesAndMultipleSelectionExample from '@site/static/usage/select/objects-as-values/multiple-selection/index.md';
+import ObjectValuesAndMultipleSelectionExample from '@site/static/usage/v6/select/objects-as-values/multiple-selection/index.md';
 
 <ObjectValuesAndMultipleSelectionExample />
 
@@ -94,7 +94,7 @@ alertはふたつのボタンをサポートしています: `Cancel` と `OK` �
 
 `action-sheet` と `popover` インタフェースには `OK` ボタンがありません。いずれかのオプションをクリックすると、自動的にオーバーレイが閉じ、その値が選択されます。`popover` インターフェースには`Cancel`ボタンがないので、backdropをクリックするとオーバーレイが閉じます。
 
-import ButtonTextExample from '@site/static/usage/select/customization/button-text/index.md';
+import ButtonTextExample from '@site/static/usage/v6/select/customization/button-text/index.md';
 
 <ButtonTextExample />
 
@@ -106,7 +106,7 @@ select は alert、action sheet、popover インターフェースを使用す�
 
 Note: `alert` インターフェースでは、 `interfaceOptions` は `inputs` や `buttons` をオーバーライドしません。
 
-import InterfaceOptionsExample from '@site/static/usage/select/customization/interface-options/index.md';
+import InterfaceOptionsExample from '@site/static/usage/v6/select/customization/interface-options/index.md';
 
 <InterfaceOptionsExample />
 
@@ -120,7 +120,7 @@ Selectコンポーネントを構成する2つのユニットがあり、それ�
 
 また、必要な [ブラウザサポート](https://caniuse.com/#feat=mdn-css_selectors_part) に応じて、CSSのシャドウパーツを使用してセレクトのスタイルを設定することができます。part` を使用することで、要素上の任意のCSSプロパティをターゲットにすることができることに注意してください。
 
-import StylingSelectExample from '@site/static/usage/select/customization/styling-select/index.md';
+import StylingSelectExample from '@site/static/usage/v6/select/customization/styling-select/index.md';
 
 <StylingSelectExample />
 

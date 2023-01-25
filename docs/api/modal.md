@@ -30,7 +30,7 @@ Modalは、アプリのコンテンツの上に表示されるダイアログで
 
 Angular、React、Vue で `ion-modal` を使用する場合、渡されたコンポーネントはモーダルが解除されると破棄されます。この機能は JavaScript フレームワークによって提供されるので、JavaScript フレームワークなしで `ion-modal` を使用しても、渡されたコンポーネントは破棄されません。この機能が必要な場合は、代わりに `modalController` を使用することをお勧めします。
 
-import InlineModalTriggerExample from '@site/static/usage/modal/inline/basic/index.md';
+import InlineModalTriggerExample from '@site/static/usage/v6/modal/inline/basic/index.md';
 
 <InlineModalTriggerExample />
 
@@ -40,7 +40,7 @@ import InlineModalTriggerExample from '@site/static/usage/modal/inline/basic/ind
 
 `isOpen` は一方向のデータバインディングを使用します。つまり、モーダルが解除されたときに自動的に `false` にセットされることはありません。開発者は `ionModalDidDismiss` または `didDismiss` イベントを監視して、 `isOpen` を `false` に設定する必要があります。この理由は、`ion-modal` の内部がアプリケーションの状態と密に結合するのを防ぐためである。一方通行のデータバインディングでは、モーダルはリアクティブ変数が提供するboolean値だけを気にすればいいです。双方向のデータバインディングでは、モーダルはboolean値とリアクティブ変数の存在の両方を考慮する必要があります。これは、非決定的な動作につながり、アプリケーションのデバッグを困難にします。
 
-import InlineModalIsOpenExample from '@site/static/usage/modal/inline/is-open/index.md';
+import InlineModalIsOpenExample from '@site/static/usage/v6/modal/inline/is-open/index.md';
 
 <InlineModalIsOpenExample />
 
@@ -48,7 +48,7 @@ import InlineModalIsOpenExample from '@site/static/usage/modal/inline/is-open/in
 
 `ModalController` を使用すると、開発者はプログラムによって `ion-modal` を表示させることができます。開発者は、モーダルの表示と非表示を完全に制御することができます。
 
-import ControllerExample from '@site/static/usage/modal/controller/index.md';
+import ControllerExample from '@site/static/usage/v6/modal/controller/index.md';
 
 <ControllerExample />
 
@@ -68,7 +68,7 @@ import ControllerExample from '@site/static/usage/modal/controller/index.md';
 
 boolean値を設定するのは、モーダルが終了する前に特定のアクションを実行する必要がある場合に使用する必要があります。たとえば、開発者がモーダルを閉じる前に "利用規約" チェックボックスをチェックすることを要求したい場合、最初は `canDismiss` を `false` に設定し、チェックボックスがチェックされたら `true` に更新することが可能です。
 
-import CanDismissBooleanExample from '@site/static/usage/modal/can-dismiss/boolean/index.md';
+import CanDismissBooleanExample from '@site/static/usage/v6/modal/can-dismiss/boolean/index.md';
 
 <CanDismissBooleanExample />
 
@@ -80,7 +80,7 @@ import CanDismissBooleanExample from '@site/static/usage/modal/can-dismiss/boole
 
 コールバック関数を設定すると、カードまたはシートモーダルの使用時にスワイプジェスチャが中断されることに注意してください。これは、Ionicが、あなたのコールバック関数が何を解決するか事前に知らないためです。
 
-import CanDismissFunctionExample from '@site/static/usage/modal/can-dismiss/function/index.md';
+import CanDismissFunctionExample from '@site/static/usage/v6/modal/can-dismiss/function/index.md';
 
 <CanDismissFunctionExample />
 
@@ -98,7 +98,7 @@ import CanDismissFunctionExample from '@site/static/usage/modal/can-dismiss/func
 The card display style is only available on iOS.
 :::
 
-import CardExample from '@site/static/usage/modal/card/basic/index.md';
+import CardExample from '@site/static/usage/v6/modal/card/basic/index.md';
 
 <CardExample />
 
@@ -116,13 +116,13 @@ import CardExample from '@site/static/usage/modal/card/basic/index.md';
  Note: シートモーダルを使用する場合、`swipeToClose` プロパティは何の効果もありません。
 :::
 
-import SheetExample from '@site/static/usage/modal/sheet/basic/index.md';
+import SheetExample from '@site/static/usage/v6/modal/sheet/basic/index.md';
 
 <SheetExample />
 
 #### 背景コンテンツとのインタラクション
 
-import SheetBackgroundContentExample from '@site/static/usage/modal/sheet/background-content/index.md';
+import SheetBackgroundContentExample from '@site/static/usage/v6/modal/sheet/background-content/index.md';
 
 <SheetBackgroundContentExample />
 
@@ -130,7 +130,7 @@ import SheetBackgroundContentExample from '@site/static/usage/modal/sheet/backgr
 
 シートモーダルでは、ブレークポイント間でシートをドラッグするために使用されるハンドルインジケータをオプションでレンダリングすることができます。 `handleBehavior` プロパティは、ハンドルがユーザーによってアクティブにされたときの振る舞いを設定するために使用されます。
 
-import SheetHandleBehaviorExample from '@site/static/usage/modal/sheet/handle-behavior/index.md';
+import SheetHandleBehaviorExample from '@site/static/usage/v6/modal/sheet/handle-behavior/index.md';
 
 <SheetHandleBehaviorExample />
 
@@ -154,7 +154,7 @@ ion-modal.stack-modal {
 }
 ```
 
-import ThemeExample from '@site/static/usage/modal/styling/theming/index.md';
+import ThemeExample from '@site/static/usage/v6/modal/styling/theming/index.md';
 
 <ThemeExample />
 
@@ -162,7 +162,7 @@ import ThemeExample from '@site/static/usage/modal/styling/theming/index.md';
 
 アニメーションビルダーを使用し、`enterAnimation` と `leaveAnimation` にアニメーションを割り当てることで、表示時、非表示時のアニメーションをカスタマイズすることができます。
 
-import AnimationsExample from '@site/static/usage/modal/styling/animations/index.md';
+import AnimationsExample from '@site/static/usage/v6/modal/styling/animations/index.md';
 
 <AnimationsExample />
 
@@ -170,7 +170,7 @@ import AnimationsExample from '@site/static/usage/modal/styling/animations/index
 
 While `ion-modal` is most often used for full-page views, cards, or sheets, it is also possible to use it for custom dialogs. This is useful if developers need an interface that is more complex than what components such as [ion-alert](./alert) or [ion-loading](./loading) provide.
 
-import CustomDialogs from '@site/static/usage/modal/custom-dialogs/index.md';
+import CustomDialogs from '@site/static/usage/v6/modal/custom-dialogs/index.md';
 
 <CustomDialogs />
 
@@ -254,7 +254,7 @@ See https://w3c.github.io/aria/#aria-modal for more information.
 
 インラインの `ion-modal` のコンテンツは、閉じられるとアンマウントされます。このコンテンツがレンダリングに時間がかかる場合、開発者は `keepContentsMounted` プロパティを使用して、モーダルがマウントされると同時にコンテンツをマウントすることができます。これにより、モーダルが開かれたときにインナー コンテンツがすでにマウントされているので、アプリケーションの応答性を最適化することができます。
 
-import Mount from '@site/static/usage/modal/performance/mount/index.md';
+import Mount from '@site/static/usage/v6/modal/performance/mount/index.md';
 
 <Mount />
 
