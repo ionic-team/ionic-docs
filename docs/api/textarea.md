@@ -37,6 +37,16 @@ import Labels from '@site/static/usage/v7/textarea/labels/index.md';
 
 <Labels />
 
+## Filled Textareas
+
+Material Design offers filled styles for a textarea. The `fill` property on the item can be set to either `"solid"` or `"outline"`.
+
+Since the `fill` styles visually defines the textarea container, textareas that use `fill` should not be used in `ion-item`.
+
+import Fill from '@site/static/usage/v7/textarea/fill/index.md';
+
+<Fill />
+
 
 ## Autogrow
 
