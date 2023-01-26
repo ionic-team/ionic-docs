@@ -1,35 +1,31 @@
 ```html
-<ion-button onclick="presentAlert()">Click Me</ion-button>
+<ion-button id="present-alert">Click Me</ion-button>
+<ion-alert trigger="present-alert" header="Please enter your info"></ion-alert>
 
 <script>
-  async function presentAlert() {
-    const alert = document.createElement('ion-alert');
-    alert.header = 'Please enter your info';
-    alert.buttons = ['OK'];
-    alert.inputs = [
-      {
-        placeholder: 'Name'
-      },
-      {
-        placeholder: 'Nickname (max 8 characters)',
-        attributes: {
-          maxlength: 8
-        }
-      },
-      {
-        type: 'number',
-        placeholder: 'Age',
-        min: 1,
-        max: 100
-      },
-      {
-        type: 'textarea',
-        placeholder: 'A little about yourself'
-      }
-    ];
+  const alert = document.querySelector('ion-alert');
 
-    document.body.appendChild(alert);
-    await alert.present();
-  }
+  alert.buttons = ['OK'];
+  alert.inputs = [
+    {
+      placeholder: 'Name'
+    },
+    {
+      placeholder: 'Nickname (max 8 characters)',
+      attributes: {
+        maxlength: 8
+      }
+    },
+    {
+      type: 'number',
+      placeholder: 'Age',
+      min: 1,
+      max: 100
+    },
+    {
+      type: 'textarea',
+      placeholder: 'A little about yourself'
+    }
+  ];
 </script>
 ```

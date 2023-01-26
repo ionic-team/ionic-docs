@@ -1,25 +1,20 @@
 ```html
-<ion-button onclick="presentAlert()">Click Me</ion-button>
+<ion-button id="present-alert">Click Me</ion-button>
+<ion-alert trigger="present-alert" class="custom-alert" header="Are you sure?"></ion-alert>
 
 <script>
-  async function presentAlert() {
-    const alert = document.createElement('ion-alert');
-    alert.header = 'Are you sure?';
-    alert.cssClass = 'custom-alert';
-    alert.buttons = [
-      {
-        text: 'No',
-        cssClass: 'alert-button-cancel'
-      },
-      {
-        text: 'Yes',
-        cssClass: 'alert-button-confirm'
-      }
-    ];
+  const alert = document.querySelector('ion-alert');
 
-    document.body.appendChild(alert);
-    await alert.present();
-  }
+  alert.buttons = [
+    {
+      text: 'No',
+      cssClass: 'alert-button-cancel'
+    },
+    {
+      text: 'Yes',
+      cssClass: 'alert-button-confirm'
+    }
+  ];
 </script>
 
 <style>

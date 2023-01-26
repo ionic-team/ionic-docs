@@ -2,8 +2,9 @@
 <ion-button id="present-alert">Click Me</ion-button>
 <ion-alert
   trigger="present-alert"
-  class="custom-alert"
-  header="Are you sure?"
+  header="Alert"
+  subHeader="Important message"
+  message="This is an alert!"
   [buttons]="alertButtons"
 ></ion-alert>
 ```

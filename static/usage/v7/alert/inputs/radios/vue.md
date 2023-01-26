@@ -1,41 +1,40 @@
 ```html
 <template>
-  <ion-button @click="presentAlert">Click Me</ion-button>
+  <ion-button id="present-alert">Click Me</ion-button>
+  <ion-alert
+    trigger="present-alert"
+    header="Select your favorite color"
+    :buttons="alertButtons"
+    :inputs="alertInputs"
+  ></ion-alert>
 </template>
 
 <script lang="ts">
-  import { IonButton, alertController } from '@ionic/vue';
+  import { IonAlert, IonButton } from '@ionic/vue';
 
   export default {
-    components: { IonButton },
+    components: { IonAlert, IonButton },
     setup() {
-      const presentAlert = async () => {
-        const alert = await alertController.create({
-          header: 'Select your favorite color',
-          buttons: ['OK'],
-          inputs: [
-            {
-              label: 'Red',
-              type: 'radio',
-              value: 'red',
-            },
-            {
-              label: 'Blue',
-              type: 'radio',
-              value: 'blue',
-            },
-            {
-              label: 'Green',
-              type: 'radio',
-              value: 'green',
-            },
-          ],
-        });
+      const alertButtons = ['OK'];
+      const alertInputs = [
+        {
+          label: 'Red',
+          type: 'radio',
+          value: 'red',
+        },
+        {
+          label: 'Blue',
+          type: 'radio',
+          value: 'blue',
+        },
+        {
+          label: 'Green',
+          type: 'radio',
+          value: 'green',
+        },
+      ];
 
-        await alert.present();
-      };
-
-      return { presentAlert };
+      return { alertButtons, alertInputs };
     },
   };
 </script>

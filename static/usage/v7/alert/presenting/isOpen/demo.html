@@ -15,8 +15,12 @@
   <ion-app>
     <ion-content>
       <div class="container">
-        <ion-button id="present-alert">Click Me</ion-button>
-        <ion-alert trigger="present-alert" header="Select your favorite color"></ion-alert>
+        <ion-button onclick="alert.isOpen = true">Click Me</ion-button>
+        <ion-alert
+          header="Alert"
+          sub-header="Important message"
+          message="This is an alert!"
+        ></ion-alert>
       </div>
     </ion-content>
   </ion-app>
@@ -25,23 +29,9 @@
     const alert = document.querySelector('ion-alert');
 
     alert.buttons = ['OK'];
-    alert.inputs = [
-      {
-        label: 'Red',
-        type: 'radio',
-        value: 'red'
-      },
-      {
-        label: 'Blue',
-        type: 'radio',
-        value: 'blue'
-      },
-      {
-        label: 'Green',
-        type: 'radio',
-        value: 'green'
-      }
-    ];
+    alert.addEventListener('ionAlertDidDismiss', () => {
+      alert.isOpen = false;
+    });
   </script>
 </body>
 
