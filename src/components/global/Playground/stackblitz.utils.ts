@@ -154,6 +154,8 @@ const openReactEditor = async (code: string, options?: EditorOptions) => {
 
   app_tsx = app_tsx.replace('{{ MODE }}', options?.mode);
 
+  console.log('open react editor...', options);
+
   sdk.openProject({
     template: 'node',
     title: options?.title ?? DEFAULT_EDITOR_TITLE,

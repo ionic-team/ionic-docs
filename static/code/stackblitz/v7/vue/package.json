@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "@ionic/vue": "6.4.2-dev.11673981545.1e612253",
+    "@ionic/vue-router": "6.4.2-dev.11673981545.1e612253",
     "vue": "^3.2.25",
     "vue-router": "4.0.13"
   },

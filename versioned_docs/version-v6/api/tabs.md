@@ -44,7 +44,6 @@ Ionic has guides on best practices for routing patterns with tabs. Check out the
 
 :::
 
-## Theming
 
 ## Interfaces
 
