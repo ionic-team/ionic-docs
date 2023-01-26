@@ -28,6 +28,12 @@ import angular_page_component_css from './angular/page_component_css.md';
 
 import vue from './vue.md';
 
+import react_main_tsx from './react/main_tsx.md';
+import react_home_page_tsx from './react/home_page_tsx.md';
+import react_radio_page_tsx from './react/radio_page_tsx.md';
+import react_library_page_tsx from './react/library_page_tsx.md';
+import react_search_page_tsx from './react/search_page_tsx.md';
+
 <Playground
   code={{
     javascript,
@@ -56,6 +62,15 @@ import vue from './vue.md';
       },
     },
     vue,
+    react: {
+      files: {
+        'src/main.tsx': react_main_tsx,
+        'src/pages/HomePage.tsx': react_home_page_tsx,
+        'src/pages/RadioPage.tsx': react_radio_page_tsx,
+        'src/pages/LibraryPage.tsx': react_library_page_tsx,
+        'src/pages/SearchPage.tsx': react_search_page_tsx,
+      },
+    },
   }}
   src="usage/v6/tabs/router/demo.html"
   devicePreview
