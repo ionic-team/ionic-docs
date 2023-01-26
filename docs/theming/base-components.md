@@ -28,7 +28,52 @@ The previous example showed a basic usage of base components on `ion-button`. Ho
 import Variants from '@site/static/usage/v7/base-components/variants/index.md';
 
 <Variants />
-  
+
+
+## Configuration
+
+In the previous examples, we configured every Ionic component to use base components.However, base components allows for more granular configuration.
+
+### `includeComponents` and `excludeComponents`
+
+ Developers have access to the `includeComponents` and `excludeComponents`  options within the base component config.
+
+`includeComponents` lets you define the components that will use base components. All other components will use [Platform Styles](./platform-styles). This is useful for when you are beginning to use base components as it lets you focus on certain components to theme while letting the remaining components fall back to using the platform styles:
+
+
+```js
+{
+  ...,
+  baseComponents: {
+  /**
+   * Only ion-button and ion-chip will
+   * use base components. All other components
+   * will use the platform styles.
+   */
+   includeComponents: ['ion-button', 'ion-chip']
+  }
+}
+```
+
+`excludeComponents` lets you define the components that should _not_ use base components. All other components will use base components. Developers will sometimes choose to keep the platform styles with controls such as `ion-toggle` or `ion-checkbox` as they are familiar components on iOS and Android.
+
+```js
+{
+  ...,
+  baseComponents: {
+  /**
+   * All other components will use
+   * base components except for ion-datetime
+   * and ion-toggle which will use the platform styles.
+   */
+   excludeComponents: ['ion-datetime', 'ion-toggle']
+  }
+}
+```
+
+:::note
+Developers should use either `includeComponents` or `excludeComponents` in their app, not both.
+:::
 
 ## Scaling your Theme
 
