@@ -30,6 +30,7 @@ module.exports = {
         'developing/tips',
         'developing/hardware-back-button',
         'developing/keyboard',
+        'developing/config'
       ],
     },
     {
