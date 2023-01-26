@@ -54,6 +54,7 @@ module.exports = {
       items: [
         'theming/basics',
         'theming/platform-styles',
+        'theming/base-components',
         'theming/css-variables',
         'theming/css-shadow-parts',
         'theming/colors',
