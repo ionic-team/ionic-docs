@@ -32,7 +32,7 @@ import Variants from '@site/static/usage/v7/base-components/variants/index.md';
 
 ## Configuration
 
-In the previous examples, we configured every Ionic component to use base components.However, base components allows for more granular configuration.
+In the previous examples, we configured every Ionic component to use base components. However, base components allows for more granular configuration.
 
 ### `includeComponents` and `excludeComponents`
 
