@@ -21,6 +21,17 @@ Ionic Config is not reactive. Updating the config's value after the component ha
 import PerComponentExample from '@site/docs/developing/config/per-component/index.md';
 
 <PerComponentExample />
+  
+
+## Per-Platform Config
+
+Ionic Config can also be set on a per-platform basis. For example, this allows you to disable animations if the app is being run in a browser on a potentially slower device. Developers can take advantage of the Platform utilities to accomplish this.
+
+In the following example, we are disabling all animations in our Ionic app only if the app is running in a mobile web browser.
+
+import PerPlatformExample from '@site/docs/developing/config/per-platform/index.md';
+
+<PerPlatformExample />
 
 ## Interfaces
 
