@@ -3,7 +3,7 @@
 <ion-alert
   trigger="present-alert"
   header="Alert"
-  sub-header="Important message"
+  subHeader="Important message"
   message="This is an alert!"
   [buttons]="alertButtons"
 ></ion-alert>

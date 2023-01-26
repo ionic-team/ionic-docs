@@ -3,7 +3,7 @@
 <ion-alert
   [isOpen]="isAlertOpen"
   header="Alert"
-  sub-header="Important message"
+  subHeader="Important message"
   message="This is an alert!"
   [buttons]="alertButtons"
   (didDismiss)="setOpen(false)"
