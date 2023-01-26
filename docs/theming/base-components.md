@@ -18,6 +18,9 @@ import Basic from '@site/static/usage/v7/base-components/basic/index.md';
 
 <Basic />
 
+
+One thing you may notice is that the font families are different across iOS and Android. This behavior lets components use the default fonts for each platform. The font family can be customized using [Application Variables](./advanced#application-variables).
+
 ## When to Use
 
 Ionic ships with [Platform Styles](./platform-styles) that match the iOS and Material Design specifications. This allows developers to begin building with Ionic components that look good without worrying about the design. However, since these designs follow specifications provided by Apple and Google, they are very opinionated. Developers who want to have their application look consistent across iOS and Android may have difficulty extending the iOS and Material Design implementations to meet their requirements.
