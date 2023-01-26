@@ -14,6 +14,14 @@ import GlobalExample from '@site/docs/developing/config/global/index.md';
 
 <GlobalExample />
 
+## Per-Component Config
+
+Ionic Config is not reactive. Updating the config's value after the component has rendered will result in the previous value. It is recommended to use a component's properties instead of updating the config, when you require reactive values.
+
+import PerComponentExample from '@site/docs/developing/config/per-component/index.md';
+
+<PerComponentExample />
+
 ## Interfaces
 
 ### IonicConfig
