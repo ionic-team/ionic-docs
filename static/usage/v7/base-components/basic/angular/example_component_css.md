@@ -1,6 +1,9 @@
 ```css
 ion-button {
-  margin: 4px;
+  --padding-top: 10px;
+  --padding-bottom: 10px;
+  --padding-start: 20px;
+  --padding-end: 20px;
 
   --border-radius: 12px;
 
@@ -9,11 +12,8 @@ ion-button {
   --background-focused: var(--ion-color-shade, var(--ion-color-primary-shade));
 
   --box-shadow: 0px 10px 15px -3px rgba(var(--ion-color-base-rgb, var(--ion-color-primary-rgb)), 0.5);
-}
 
-ion-button::part(native) {
-  padding: 10px 20px;
-
-  min-height: 56px;
+  height: 56px;
+  margin: 4px;
 }
 ```
