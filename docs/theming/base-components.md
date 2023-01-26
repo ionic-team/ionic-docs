@@ -75,6 +75,16 @@ In the previous examples, we configured every Ionic component to use base compon
 Developers should use either `includeComponents` or `excludeComponents` in their app, not both.
 :::
 
+### `useBase` property
+
+Developers also have the option to set the base components configuration on a per-component instance basis using the `useBase` property. Components using base components can be targeted using the `.base` CSS selector.
+
+import UseBase from '@site/static/usage/v7/base-components/use-base/index.md';
+
+<UseBase />
+  
+
+
 ## Scaling your Theme
 
 As you customize Ionic components, your CSS will become complex. It is important to structure your styles in a way that you can scale your styles. We recommend implementing two patterns to accomplish this.
