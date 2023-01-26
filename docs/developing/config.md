@@ -33,6 +33,24 @@ import PerPlatformExample from '@site/docs/developing/config/per-platform/index.
 
 <PerPlatformExample />
 
+
+### Fallbacks
+
+The next example allows you to set an entirely different configuration based upon the platform, falling back to a default config if no platforms match:
+
+import PerPlatformFallbackExample from '@site/docs/developing/config/per-platform-overrides/index.md';
+
+<PerPlatformFallbackExample />
+
+### Overrides
+
+This final example allows you to accumulate a config object based upon different platform requirements.
+
+import PerPlatformOverridesExample from '@site/docs/developing/config/per-platform-fallback/index.md';
+
+<PerPlatformOverridesExample />
+
+
 ## Interfaces
 
 ### IonicConfig
