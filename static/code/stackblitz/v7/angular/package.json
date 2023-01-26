@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "@ionic/angular": "6.4.2-dev.11673981545.1e612253",
-    "@ionic/core": "6.4.2-dev.11673981545.1e612253"
+    "@ionic/angular": "next",
+    "@ionic/core": "next"
   }
 }
