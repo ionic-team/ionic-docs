@@ -28,6 +28,116 @@ The previous example showed a basic usage of base components on `ion-button`. Ho
 import Variants from '@site/static/usage/v7/base-components/variants/index.md';
 
 <Variants />
+  
+
+## Theming for Scale
+
+As you customize Ionic components, your CSS will become complex. It is important to structure your styles in a way that you can scale your styles. We recommend implementing two patterns to accomplish this.
+
+### Separate Files for Each Component
+
+We recommend separating component styles into separate files. For example, if you are customizing `ion-badge`, `ion-button`, and `ion-chip`, you could have a file structure like this:
+
+```
+├── src
+│   ├── styles
+│   │   ├── badge.css
+│   │   ├── button.css
+│   │   ├── chip.css
+└── └── └── global.css
+```
+
+Each component stylesheet is placed into its own file, and then the `global.css` file imports each stylesheet. For components that have complex variants, you may even want to consider breaking styles out further:
+
+```
+├── src
+│   ├── styles
+│   │   ├── badge.css
+│   │   ├── button
+│   │   │   ├── button.css
+│   │   │   ├── button.outline.css
+│   │   │   ├── button.clear.css
+│   │   ├── chip.css
+└── └── └── global.css
+```
+
+In this scenario, we broke the button styles out into multiple files in its own directory. The `button.css` file would import `button.outline.css` and `button.clear.css`. The `global.css` file would continue to import `button/button.css`.
+
+### Design Tokens
+
+As your design system scales, you will likely have components that have similar styles. Consider the following CSS:
+
+
+```css title="badge.css"
+ion-badge {
+  border-radius: 8px;
+}
+```
+
+```css title="chip.css"
+ion-chip {
+  border-radius: 8px;
+}
+```
+
+In this scenario, both `ion-badge` and `ion-chip` use the same `8px` `border-radius` value. If you were to change the `border-radius` value for `ion-badge`, you would then need to manually update the `border-radius` value for `ion-chip` too, otherwise your components would not have consistent values.
+
+You _could_ work around this by having the button and badge share selectors:
+
+```css title="badge-chip-please-do-not-do-this.css"
+ion-badge,
+ion-chip {
+  border-radius: 8px;
+}
+```
+
+While this avoids having to update the border radius value in multiple places, your badge and chip styles are now tightly coupled together.
+
+Instead, a better approach would to implement design tokens. Design tokens provide a high-level way to customize your components in a consistent manner. These tokens can be implemented using [CSS Variables](./css-variables).
+
+For this example, we could implement a token for border radius that defines a standardized value:
+
+```css title="tokens.css"
+:root {
+  --ion-radius: 8px;
+}
+```
+
+The component styles would then be updated to consume this token.
+
+```css title="badge.css"
+ion-badge {
+  border-radius: var(--ion-radius);
+}
+```
+
+```css title="chip.css"
+ion-chip {
+  border-radius: var(--ion-radius);
+}
+```
+
+If we wanted to increase the border radius, all we would have to do is update the value of `--ion-radius`: 
+
+```css title="tokens.css"
+:root {
+  --ion-radius: 10px;
+}
+```
+
+If you have components with multiple border radius values, you could also define a set of design tokens for different sizes:
+
+```css title="tokens.css"
+:root {
+  --ion-radius-sm: 4px;
+  --ion-radius-md: 6px;
+  --ion-radius-lg: 8px;
+  --ion-radius-xl: 12px;
+}
+```
+
+Design tokens in other libraries will sometimes use [em](https://developer.mozilla.org/en-US/docs/Web/CSS/font-size#ems) or [rem](https://developer.mozilla.org/en-US/docs/Web/CSS/font-size#rems) units. While you can certainly use those units in Ionic, be aware that these units will cause the computed value of your tokens to scale with your application's font size. This means that as the font size increases, the border radius on `ion-badge` and `ion-chip` would increase too.
+
 
 ## When to Use
 
