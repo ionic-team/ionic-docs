@@ -14,7 +14,7 @@ Ionic provides platform specific styles based on the device the application is r
 
 ## Ionic Modes
 
-Ionic uses **modes** to customize the look of components. Each **platform** has a default **mode**, but this can be overridden through the global [config](../angular/config.md). The following chart displays the default **mode** that is added to each **platform**:
+Ionic uses **modes** to customize the look of components. Each **platform** has a default **mode**, but this can be overridden through the global [config](../developing/config.md). The following chart displays the default **mode** that is added to each **platform**:
 
 | Platform  | Mode  | Description                                                                                                                      |
 | --------- | ----- | -------------------------------------------------------------------------------------------------------------------------------- |
