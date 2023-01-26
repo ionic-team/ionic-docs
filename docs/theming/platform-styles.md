@@ -28,7 +28,7 @@ For example, an app being viewed on an Android platform will use the `md` (Mater
 <html class="md"></html>
 ```
 
-_Note: The **platform** and the **mode** are not the same. The platform can be set to use any mode in the [config](../angular/config.md) of an app._
+_Note: The **platform** and the **mode** are not the same. The platform can be set to use any mode in the [config](../developing/config.md) of an app._
 
 ## Overriding Mode Styles
 
