@@ -2,11 +2,15 @@
 title: Base Components
 ---
 
-Base Components allow developers to opt-out of the iOS and Material Design styles to build a theme that fully meets their needs.
-
 :::note
 Base Components is in Developer Preview and should not be used in production applications. Please file any feedback on [Ionic's GitHub Repo](https://github.com/ionic-team/ionic-framework/issues).
 :::
+
+## Overview
+
+Ionic ships with [Platform Styles](./platform-styles) that match the iOS and Material Design specifications. This allows developers to begin building Ionic applications that look good without worrying about the design. However, since these designs follow specifications provided by Apple and Google, they are very opinionated. Developers who want to have their application look consistent across iOS and Android may have difficulty extending the iOS and Material Design implementations to meet their requirements.
+
+Base Components allow developers to opt-out of the iOS and Material Design styles to build a theme that fully meets their needs.
 
 ## Usage
 
@@ -195,8 +199,6 @@ Design tokens in other libraries will sometimes use [em](https://developer.mozil
 
 
 ## When to Use
-
-Ionic ships with [Platform Styles](./platform-styles) that match the iOS and Material Design specifications. This allows developers to begin building with Ionic components that look good without worrying about the design. However, since these designs follow specifications provided by Apple and Google, they are very opinionated. Developers who want to have their application look consistent across iOS and Android may have difficulty extending the iOS and Material Design implementations to meet their requirements.
 
 Developers should consider base components when they have a pre-existing design system or brand identity that they need to bring to Ionic in a consistent way across iOS and Android.
 
