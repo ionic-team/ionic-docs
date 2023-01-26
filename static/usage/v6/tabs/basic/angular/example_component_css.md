@@ -1,8 +1,0 @@
-```css
-.example-content {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100%;
-}
-```
