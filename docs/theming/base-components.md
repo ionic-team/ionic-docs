@@ -30,7 +30,7 @@ import Variants from '@site/static/usage/v7/base-components/variants/index.md';
 <Variants />
   
 
-## Theming for Scale
+## Scaling your Theme
 
 As you customize Ionic components, your CSS will become complex. It is important to structure your styles in a way that you can scale your styles. We recommend implementing two patterns to accomplish this.
 
