@@ -50,6 +50,56 @@ import PerPlatformOverridesExample from '@site/docs/developing/config/per-platfo
 
 <PerPlatformOverridesExample />
 
+## Reading the Config (Angular)
+
+Ionic Angular provides a `Config` provider for accessing the Ionic Config.
+
+### get
+
+|                 |                                                                                  |
+| --------------- | -------------------------------------------------------------------------------- |
+| **Description** | Returns a config value as an `any`. Returns `null` if the config is not defined. |
+| **Signature**   | `get(key: string, fallback?: any) => any`                                          |
+
+#### Examples
+
+```ts
+import { Config } from '@ionic/angular';
+
+@Component(...)
+class AppComponent {
+  constructor(config: Config) {
+    const mode = config.get('mode');
+  }
+}
+```
+
+### getBoolean
+
+|                 |                                                                                      |
+| --------------- | ------------------------------------------------------------------------------------ |
+| **Description** | Returns a config value as a `boolean`. Returns `false` if the config is not defined. |
+| **Signature**   | `getBoolean(key: string, fallback?: boolean) => boolean`                               |
+
+#### Examples
+
+```ts
+import { Config } from '@ionic/angular';
+
+@Component(...)
+class AppComponent {
+  constructor(config: Config) {
+    const swipeBackEnabled = config.getBoolean('swipeBackEnabled');
+  }
+}
+```
+
+### getNumber
+
+|                 |                                                                                 |
+| --------------- | ------------------------------------------------------------------------------- |
+| **Description** | Returns a config value as a `number`. Returns `0` if the config is not defined. |
+| **Signature**   | `getNumber(key: string, fallback?: number) => number`                             |
 
 ## Interfaces
 
