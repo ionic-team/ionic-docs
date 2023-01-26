@@ -1,40 +1,35 @@
 ```tsx
 import React, { useState } from 'react';
-import { IonButton, useIonAlert } from '@ionic/react';
+import { IonAlert, IonButton } from '@ionic/react';
 
 function Example() {
-  const [presentAlert] = useIonAlert();
   const [handlerMessage, setHandlerMessage] = useState('');
   const [roleMessage, setRoleMessage] = useState('');
 
   return (
     <>
-      <IonButton
-        onClick={() =>
-          presentAlert({
-            header: 'Alert!',
-            buttons: [
-              {
-                text: 'Cancel',
-                role: 'cancel',
-                handler: () => {
-                  setHandlerMessage('Alert canceled');
-                },
-              },
-              {
-                text: 'OK',
-                role: 'confirm',
-                handler: () => {
-                  setHandlerMessage('Alert confirmed');
-                },
-              },
-            ],
-            onDidDismiss: (e: CustomEvent) => setRoleMessage(`Dismissed with role: ${e.detail.role}`),
-          })
-        }
-      >
-        Click Me
-      </IonButton>
+      <IonButton id="present-alert">Click Me</IonButton>
+      <IonAlert
+        header="Alert!"
+        trigger="present-alert"
+        buttons={[
+          {
+            text: 'Cancel',
+            role: 'cancel',
+            handler: () => {
+              setHandlerMessage('Alert canceled');
+            },
+          },
+          {
+            text: 'OK',
+            role: 'confirm',
+            handler: () => {
+              setHandlerMessage('Alert confirmed');
+            },
+          },
+        ]}
+        onDidDismiss={({ detail }) => setRoleMessage(`Dismissed with role: ${detail.role}`)}
+      ></IonAlert>
       <p>{handlerMessage}</p>
       <p>{roleMessage}</p>
     </>
