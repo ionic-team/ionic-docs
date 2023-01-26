@@ -91,7 +91,7 @@ import UseBase from '@site/static/usage/v7/base-components/use-base/index.md';
 
 ## Scaling your Theme
 
-As you customize Ionic components, your CSS will become complex. It is important to structure your styles in a way that you can scale your styles. We recommend implementing two patterns to accomplish this.
+As you customize Ionic components, your CSS will become complex. It is important to structure your styles in a way that they scale well. We recommend implementing two patterns to accomplish this.
 
 ### Separate Files for Each Component
 
