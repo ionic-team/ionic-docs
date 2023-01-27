@@ -94,7 +94,7 @@ import TabItem from '@theme/TabItem';
 <!-- Textareas using `fill` should not be placed in ion-item -->
 <ion-textarea fill="outline" shape="round" label="Label:" labelPlacement="floating"></ion-textarea>
 
-<!-- Input-specific features on ion-item -->
+<!-- Textarea-specific features on ion-item -->
 
 <!-- Before -->
 <ion-item [counter]="true">
@@ -143,10 +143,10 @@ import TabItem from '@theme/TabItem';
 
 {/* After */}
 
-{/* Inputs using `fill` should not be placed in IonItem */}
+{/* Textareas using `fill` should not be placed in IonItem */}
 <IonTextarea fill="outline" shape="round" label="Label:" labelPlacement="floating"></IonTextarea>
 
-{/* Input-specific features on IonItem */}
+{/* Textarea-specific features on IonItem */}
 
 {/* Before */}
 <IonItem counter={true}>
@@ -195,7 +195,7 @@ import TabItem from '@theme/TabItem';
 
 <!-- After -->
 
-<!-- Inputs using `fill` should not be placed in ion-item -->
+<!-- Textareas using `fill` should not be placed in ion-item -->
 <ion-textarea fill="outline" shape="round" label="Label:" label-placement="floating"></ion-textarea>
 
 <!-- Textarea-specific features on ion-item -->
