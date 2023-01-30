@@ -1,11 +1,5 @@
 # Virtual Scroll
 
-:::caution Looking for `ion-virtual-scroll`?
-
-`ion-virtual-scroll` was deprecated in v6.0.0 and removed in v7.0.0. We recommend using the Virtuoso package detailed below.
-
-:::
-
 One virtual scrolling solution to consider for your Ionic React app is [Virtuoso](https://virtuoso.dev/). This guide will go over how to install `Virtuoso` into your Ionic React application and use it with other Ionic components.
 
 ## Installation
@@ -57,6 +51,12 @@ From there, we can use the `itemContent` property to pass a function that will b
 
 An important thing to note here is the `div` that wraps our `IonItem` component. When lazy loading Ionic components, there may be a few frames where the component is loaded but the styles have not loaded in. When this happens, the component's dimension will be `0`, and Virtuoso may throw an error. This is because Virtuoso needs distinct positions for each item it renders, and it cannot determine that when a component's dimension is `0`.
 
+## A Note on Ionic Components
+
+Certain Ionic Framework functionality is currently not compatible with virtual scrolling. Features such as collapsible large titles, `ion-infinite-scroll`, and `ion-refresher` rely on being able to scroll on `ion-content` itself, and as a result will not work when using virtual scrolling.
+
+We are working to improve compatibility between these components and virtual scrolling solutions. You can follow progress and give feedback here: https://github.com/ionic-team/ionic-framework/issues/23437.
+
 ## Usage with Ionic Components
 
 Ionic Framework requires that features such as collapsible large titles, `ion-infinite-scroll`, `ion-refresher`, and `ion-reorder-group` be used within an `ion-content`. To use these experiences with virtual scrolling, you must add the `.ion-content-scroll-host` class to the virtual scroll viewport.
@@ -66,7 +66,9 @@ For example:
 ```tsx
 <IonPage>
   <IonContent scrollY={false}>
-    <Virtuoso className="ion-content-scroll-host">{/* Your existing content and configurations */}</Virtuoso>
+    <Virtuoso className="ion-content-scroll-host">
+      {/* Your existing content and configurations */}
+    </Virtuoso>
   </IonContent>
 </IonPage>
 ```

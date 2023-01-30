@@ -1,12 +1,8 @@
 # Virtual Scroll
 
-:::caution Looking for `ion-virtual-scroll`?
+In the past, we have provided an `ion-virtual-scroll` component in Ionic Framework to help with list virtualization. At the time this was not available in Angular, but recently Angular has provided its own solution via the `@angular/cdk` package.
 
-`ion-virtual-scroll` was deprecated in v6.0.0 and removed in v7.0.0. We recommend using the `@angular/cdk` package detailed below.
-
-:::
-
-## Installation
+## Setup
 
 To setup the CDK Scroller, first install `@angular/cdk`:
 
