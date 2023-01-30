@@ -22,7 +22,7 @@ The back button navigates back in the app's history when clicked. It is only dis
 
 ## Basic Usage
 
-import Basic from '@site/static/usage/back-button/basic/index.md';
+import Basic from '@site/static/usage/v7/back-button/basic/index.md';
 
 <Basic />
 
@@ -30,7 +30,7 @@ import Basic from '@site/static/usage/back-button/basic/index.md';
 
 By default, the back button will display the text `"Back"` with a `"chevron-back"` icon on `ios`, and an `"arrow-back-sharp"` icon on `md`. This can be customized per back button component by setting the `icon` or `text` properties.
 
-import Custom from '@site/static/usage/back-button/custom/index.md';
+import Custom from '@site/static/usage/v7/back-button/custom/index.md';
 
 <Custom />
 
@@ -38,7 +38,7 @@ import Custom from '@site/static/usage/back-button/custom/index.md';
 
 Occasionally an app may need to show the back button and navigate back when there is no history. This can be done by setting the `defaultHref` on the back button to a path. In order to use `defaultHref`, the app must contain a router with paths set.
 
-import DefaultHref from '@site/static/usage/back-button/default-href/index.md';
+import DefaultHref from '@site/static/usage/v7/back-button/default-href/index.md';
 
 <DefaultHref />
 

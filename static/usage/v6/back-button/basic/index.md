@@ -43,7 +43,7 @@ import vue_page_two from './vue/page_two_vue.md';
       },
     },
   }}
-  src="usage/back-button/basic/demo.html"
+  src="usage/v6/back-button/basic/demo.html"
   devicePreview
   includeIonContent={false}
 />

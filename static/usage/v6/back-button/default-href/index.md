@@ -15,6 +15,8 @@ import react_page_two_tsx from './react/page_two_tsx.md';
 import vue_example from './vue/example_vue.md';
 import vue_page_one from './vue/page_one_vue.md';
 import vue_page_two from './vue/page_two_vue.md';
+import main_ts from './vue/main_ts.md';
+import router_ts from './vue/router_ts.md';
 
 <Playground
   code={{
@@ -40,10 +42,12 @@ import vue_page_two from './vue/page_two_vue.md';
         'src/components/Example.vue': vue_example,
         'src/components/PageOne.vue': vue_page_one,
         'src/components/PageTwo.vue': vue_page_two,
+        'src/main.ts': main_ts,
+        'src/router.ts': router_ts,
       },
     },
   }}
-  src="usage/back-button/custom/demo.html"
+  src="usage/v6/back-button/default-href/demo.html"
   devicePreview
   includeIonContent={false}
 />
