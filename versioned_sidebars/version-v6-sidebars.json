@@ -920,6 +920,10 @@
         {
           "type": "doc",
           "id": "version-v6/api/list-header"
+        },
+        {
+          "type": "doc",
+          "id": "version-v6/api/virtual-scroll"
         }
       ],
       "collapsible": true
@@ -1168,6 +1172,22 @@
         {
           "type": "doc",
           "id": "version-v6/api/select-option"
+        }
+      ],
+      "collapsible": true
+    },
+    {
+      "type": "category",
+      "label": "Slides",
+      "collapsed": false,
+      "items": [
+        {
+          "type": "doc",
+          "id": "version-v6/api/slides"
+        },
+        {
+          "type": "doc",
+          "id": "version-v6/api/slide"
         }
       ],
       "collapsible": true
