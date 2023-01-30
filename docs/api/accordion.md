@@ -22,7 +22,7 @@ Accordions provide collapsible sections in your content to reduce vertical space
 
 ## Basic Usage
 
-import Basic from '@site/static/usage/accordion/basic/index.md';
+import Basic from '@site/static/usage/v7/accordion/basic/index.md';
 
 <Basic />
 
@@ -30,7 +30,7 @@ import Basic from '@site/static/usage/accordion/basic/index.md';
 
 Which accordion is open is controlled by setting the `value` property on `ion-accordion-group`. Setting this property allows developers to programmatically expand or collapse certain accordions.
 
-import Toggle from '@site/static/usage/accordion/toggle/index.md';
+import Toggle from '@site/static/usage/v7/accordion/toggle/index.md';
 
 <Toggle />
 
@@ -38,7 +38,7 @@ import Toggle from '@site/static/usage/accordion/toggle/index.md';
 
 Developers can listen for the `ionChange` event to be notified when accordions expand or collapse.
 
-import ListenChanges from '@site/static/usage/accordion/listen-changes/index.md';
+import ListenChanges from '@site/static/usage/v7/accordion/listen-changes/index.md';
 
 <ListenChanges />
 
@@ -46,7 +46,7 @@ import ListenChanges from '@site/static/usage/accordion/listen-changes/index.md'
 
 Developers can allow multiple accordions to be open at once with the `multiple` property.
 
-import Multiple from '@site/static/usage/accordion/multiple/index.md';
+import Multiple from '@site/static/usage/v7/accordion/multiple/index.md';
 
 <Multiple />
 
@@ -56,7 +56,7 @@ import Multiple from '@site/static/usage/accordion/multiple/index.md';
 
 Individual accordions can be disabled with the `disabled` property on `ion-accordion`.
 
-import DisableIndividual from '@site/static/usage/accordion/disable/individual/index.md';
+import DisableIndividual from '@site/static/usage/v7/accordion/disable/individual/index.md';
 
 <DisableIndividual />
 
@@ -64,7 +64,7 @@ import DisableIndividual from '@site/static/usage/accordion/disable/individual/i
 
 The accordion group can be disabled with the `disabled` property on `ion-accordion-group`.
 
-import DisableGroup from '@site/static/usage/accordion/disable/group/index.md';
+import DisableGroup from '@site/static/usage/v7/accordion/disable/group/index.md';
 
 <DisableGroup />
 
@@ -74,7 +74,7 @@ import DisableGroup from '@site/static/usage/accordion/disable/group/index.md';
 
 Individual accordions can be disabled with the `readonly` property on `ion-accordion`.
 
-import ReadonlyIndividual from '@site/static/usage/accordion/readonly/individual/index.md';
+import ReadonlyIndividual from '@site/static/usage/v7/accordion/readonly/individual/index.md';
 
 <ReadonlyIndividual />
 
@@ -82,7 +82,7 @@ import ReadonlyIndividual from '@site/static/usage/accordion/readonly/individual
 
 The accordion group can be disabled with the `readonly` property on `ion-accordion-group`.
 
-import ReadonlyGroup from '@site/static/usage/accordion/readonly/group/index.md';
+import ReadonlyGroup from '@site/static/usage/v7/accordion/readonly/group/index.md';
 
 <ReadonlyGroup />
 
@@ -106,7 +106,7 @@ There are two built in expansion styles: `compact` and `inset`. This expansion s
 
 When `expand="inset"`, the accordion group is given a border radius. On `md` mode, the entire accordion will shift down when it is opened.
 
-import ExpansionStyles from '@site/static/usage/accordion/customization/expansion-styles/index.md';
+import ExpansionStyles from '@site/static/usage/v7/accordion/customization/expansion-styles/index.md';
 
 <ExpansionStyles />
 
@@ -130,7 +130,7 @@ ion-accordion.accordion-expanded ion-item[slot="header"] {
 }
 ```
 
-import AdvancedExpansionStyles from '@site/static/usage/accordion/customization/advanced-expansion-styles/index.md';
+import AdvancedExpansionStyles from '@site/static/usage/v7/accordion/customization/advanced-expansion-styles/index.md';
 
 <AdvancedExpansionStyles />
 
@@ -142,7 +142,7 @@ If you would like to manage the icon yourself or use an icon that is not an `ion
 
 Regardless of which option you choose, the icon will automatically be rotated when you expand or collapse the accordion.
 
-import Icons from '@site/static/usage/accordion/customization/icons/index.md';
+import Icons from '@site/static/usage/v7/accordion/customization/icons/index.md';
 
 <Icons />
 
@@ -150,7 +150,7 @@ import Icons from '@site/static/usage/accordion/customization/icons/index.md';
 
 Since `ion-accordion` acts as a shell around the header and content elements, you can easily theme the accordion however you would like. You can theme the header by targeting the slotted `ion-item`. Since you are using `ion-item`, you also have access to all of the [ion-item CSS Variables](./item#css-custom-properties) and [ion-item Shadow Parts](./item#css-shadow-parts). Theming the content is also easily achieved by targeting the element that is in the `content` slot.
 
-import Theming from '@site/static/usage/accordion/customization/theming/index.md';
+import Theming from '@site/static/usage/v7/accordion/customization/theming/index.md';
 
 <Theming />
 
@@ -160,7 +160,7 @@ import Theming from '@site/static/usage/accordion/customization/theming/index.md
 
 By default, animations are enabled when expanding or collapsing an accordion item. Animations will be automatically disabled when the `prefers-reduced-motion` media query is supported and set to `reduce`. For browsers that do not support this, animations can be disabled by setting the `animated` config in your Ionic Framework app.
 
-import AccessibilityAnimations from '@site/static/usage/accordion/accessibility/animations/index.md';
+import AccessibilityAnimations from '@site/static/usage/v7/accordion/accessibility/animations/index.md';
 
 <AccessibilityAnimations />
 

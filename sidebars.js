@@ -4,7 +4,18 @@ module.exports = {
       type: 'category',
       label: 'Getting Started',
       collapsed: false,
-      items: ['index', 'intro/upgrading-to-ionic-6', 'intro/environment', 'intro/cli', 'intro/cdn', 'intro/vscode-extension', 'intro/next'],
+      items: ['index', 'intro/environment', 'intro/cli', 'intro/cdn', 'intro/vscode-extension', 'intro/next'],
+    },
+    {
+      type: 'category',
+      label: 'Upgrade Guides',
+      collapsed: false,
+      items: [
+        'updating/7-0',
+        'updating/6-0',
+        'updating/5-0',
+        'updating/4-0'
+      ]
     },
     {
       type: 'category',
@@ -105,6 +116,7 @@ module.exports = {
             'react/your-first-app/distribute',
           ],
         },
+        'react/adding-ionic-react-to-an-existing-react-project',
         'react/lifecycle',
         'react/navigation',
         'react/virtual-scroll',
@@ -219,8 +231,7 @@ module.exports = {
           href: 'https://github.com/ionic-team/ionic/blob/master/CHANGELOG.md',
         },
         'reference/support',
-        'reference/browser-support',
-        'reference/migration',
+        'reference/browser-support'
       ],
     },
   ],
@@ -320,13 +331,7 @@ module.exports = {
       type: 'category',
       label: 'Icons',
       collapsed: false,
-      items: [
-        {
-          type: 'link',
-          label: 'ion-icon',
-          href: 'https://ionicons.com',
-        },
-      ],
+      items: ['api/icon'],
     },
     {
       type: 'category',
@@ -353,7 +358,7 @@ module.exports = {
       type: 'category',
       label: 'List',
       collapsed: false,
-      items: ['api/list', 'api/list-header', 'api/virtual-scroll'],
+      items: ['api/list', 'api/list-header'],
     },
     {
       type: 'category',
@@ -361,11 +366,7 @@ module.exports = {
       collapsed: false,
       items: [
         'api/avatar',
-        {
-          type: 'link',
-          label: 'ion-icon',
-          href: 'https://ionicons.com',
-        },
+        'api/icon',
         'api/img',
         'api/thumbnail',
       ],
@@ -450,12 +451,6 @@ module.exports = {
     },
     {
       type: 'category',
-      label: 'Slides',
-      collapsed: false,
-      items: ['api/slides', 'api/slide'],
-    },
-    {
-      type: 'category',
       label: 'Tabs',
       collapsed: false,
       items: ['api/tabs', 'api/tab', 'api/tab-bar', 'api/tab-button'],
@@ -529,13 +524,8 @@ module.exports = {
       collapsed: false,
       items: [
         'native',
-        'native-community',
+        'native-setup',
         'native-faq',
-        {
-          type: 'link',
-          label: 'Community vs. Enterprise',
-          href: 'https://ionic.io/docs/premier-plugins',
-        },
       ],
     },
     {

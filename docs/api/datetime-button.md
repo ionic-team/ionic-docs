@@ -27,7 +27,7 @@ When using Datetime Button with a JavaScript framework such as Angular, React, o
 
 ## Basic Usage
 
-import Basic from '@site/static/usage/datetime-button/basic/index.md';
+import Basic from '@site/static/usage/v7/datetime-button/basic/index.md';
 
 <Basic />
 

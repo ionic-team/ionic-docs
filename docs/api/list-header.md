@@ -17,7 +17,7 @@ List headers are block elements that are used to describe the contents of a [lis
 
 ## Basic Usage
 
-import Basic from '@site/static/usage/list-header/basic/index.md';
+import Basic from '@site/static/usage/v7/list-header/basic/index.md';
 
 <Basic />
 
@@ -26,7 +26,7 @@ import Basic from '@site/static/usage/list-header/basic/index.md';
 
 A [button](./button) placed in a list header can be useful for showing part of a list and redirecting to the full list with the button.
 
-import Buttons from '@site/static/usage/list-header/buttons/index.md';
+import Buttons from '@site/static/usage/v7/list-header/buttons/index.md';
 
 <Buttons />
 
@@ -35,7 +35,7 @@ import Buttons from '@site/static/usage/list-header/buttons/index.md';
 
 List headers do not show a bottom border by default. The `lines` property can be modified to `"full"` or `"inset"` which will show a full width border or an inset border with left padding, respectively.
 
-import Lines from '@site/static/usage/list-header/lines/index.md';
+import Lines from '@site/static/usage/v7/list-header/lines/index.md';
 
 <Lines />
 
@@ -43,13 +43,13 @@ import Lines from '@site/static/usage/list-header/lines/index.md';
 
 ### Colors
 
-import Colors from '@site/static/usage/list-header/theming/colors/index.md';
+import Colors from '@site/static/usage/v7/list-header/theming/colors/index.md';
 
 <Colors />
 
 ### CSS Custom Properties
 
-import CSSProps from '@site/static/usage/list-header/theming/css-properties/index.md';
+import CSSProps from '@site/static/usage/v7/list-header/theming/css-properties/index.md';
 
 <CSSProps />
 

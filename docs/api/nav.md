@@ -1,8 +1,6 @@
 ---
 title: "ion-nav"
 ---
-import TOCInline from '@theme/TOCInline';
-
 import Props from '@site/static/auto-generated/nav/props.md';
 import Events from '@site/static/auto-generated/nav/events.md';
 import Methods from '@site/static/auto-generated/nav/methods.md';
@@ -16,6 +14,7 @@ import Slots from '@site/static/auto-generated/nav/slots.md';
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
+
 <EncapsulationPill type="shadow" />
 
 Nav is a standalone component for loading arbitrary components and pushing new components on to the stack.
@@ -24,9 +23,9 @@ Unlike Router Outlet, Nav is not tied to a particular router. This means that if
 
 ## Using NavLink
 
-NavLink is a simplified API when interacting with Nav. Developers can customize the component, pass along component properties, modify the direction of the route animation or define a custom animation when navigating. 
+NavLink is a simplified API when interacting with Nav. Developers can customize the component, pass along component properties, modify the direction of the route animation or define a custom animation when navigating.
 
-import NavLinkExample from '@site/static/usage/nav/nav-link/index.md';
+import NavLinkExample from '@site/static/usage/v7/nav/nav-link/index.md';
 
 <NavLinkExample />
 

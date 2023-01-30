@@ -87,6 +87,7 @@ Below are the config options that Ionic uses.
 | `alertEnter`             | `AnimationBuilder`                                                            | Provides a custom enter animation for all `ion-alert`, overriding the default "animation".               |
 | `alertLeave`             | `AnimationBuilder`                                                            | Provides a custom leave animation for all `ion-alert`, overriding the default "animation".               |
 | `animated`               | `boolean`                                                                     | If `true`, Ionic will enable all animations and transitions across the app.                              |
+| `backButtonDefaultHref`  | `string`                                                                      | Overrides the default value for the `defaultHref` property in all `<ion-back-button>` components.        |
 | `backButtonIcon`         | `string`                                                                      | Overrides the default icon in all `<ion-back-button>` components.                                        |
 | `backButtonText`         | `string`                                                                      | Overrides the default text in all `<ion-back-button>` components.                                        |
 | `hardwareBackButton`     | `boolean`                                                                     | If `true`, Ionic will respond to the hardware back button in an Android device.                          |
@@ -112,5 +113,7 @@ Below are the config options that Ionic uses.
 | `statusTap`              | `boolean`                                                                     | If `true`, clicking or tapping the status bar will cause the content to scroll to the top.               |
 | `swipeBackEnabled`       | `boolean`                                                                     | If `true`, Ionic will enable the "swipe-to-go-back" gesture across the application.                      |
 | `tabButtonLayout`        | `TabButtonLayout`                                                             | Overrides the default "layout" of all `ion-bar-button` across the whole application.                     |
+| `toastDuration`          | `number`                                                                      | Overrides the default `duration` for all `ion-toast` components.                                         |
 | `toastEnter`             | `AnimationBuilder`                                                            | Provides a custom enter animation for all `ion-toast`, overriding the default "animation".               |
 | `toastLeave`             | `AnimationBuilder`                                                            | Provides a custom leave animation for all `ion-toast`, overriding the default "animation".               |
+| `toggleOnOffLabels`      | `boolean`                                                                     | Overrides the default `enableOnOffLabels` in all `ion-toggle` components.                                |
