@@ -13,7 +13,7 @@ function Example() {
   };
 
   const validate = (ev: Event) => {
-    const value = (ev.target as HTMLTextareaElement).value;
+    const value = (ev.target as HTMLTextAreaElement).value;
 
     setIsValid(undefined);
 
