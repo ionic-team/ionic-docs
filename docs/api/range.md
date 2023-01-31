@@ -27,10 +27,12 @@ By default the Range slider has a minimum value of `0` and a maximum value of `1
 import Basic from '@site/static/usage/v7/range/basic/index.md';
 
 <Basic />
-  
+
 ## Label Placement
 
-TODO
+import LabelsPlayground from '@site/static/usage/v7/range/labels/index.md';
+
+<LabelsPlayground />
 
 ## Decorations
 
