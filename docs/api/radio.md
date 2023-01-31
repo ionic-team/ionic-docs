@@ -78,6 +78,30 @@ import CSSParts from '@site/static/usage/v7/radio/theming/css-shadow-parts/index
 
 <CSSParts />
 
+## Migrating from Legacy Radio Syntax
+
+A simpler radio syntax was introduced in Ionic 7.0. This new syntax reduces the boilerplate required to setup an radio, resolves accessibility issues, and improves the developer experience.
+
+Developers can perform this migration one radio at a time. While developers can continue using the legacy syntax, we recommend migrating as soon as possible.
+
+### Using the Modern Syntax
+
+Using the modern syntax involves removing the `ion-label` and passing the label directly inside of `ion-radio`. The placement of the label can be configured using the `labelPlacement` property on `ion-radio`. The way the label and the control are packed on a line can be controlled using the `justify` property on `ion-radio`.
+
+import Migration from '@site/static/usage/v7/radio/migration/index.md';
+
+<Migration />
+  
+
+:::note
+In past versions of Ionic, `ion-item` was required for `ion-radio` to function properly. Starting in Ionic 7.0, `ion-radio` should only be used in an `ion-item` when the item is placed in an `ion-list`. Additionally, `ion-item` is no longer required for `ion-radio` to function properly.
+:::
+
+### Using the Legacy Syntax
+
+Ionic uses heuristics to detect if an app is using the modern radio syntax. In some instances, it may be preferable to continue using the legacy syntax. Developers can set the `legacy` property on `ion-radio` to `true` to force that instance of the radio to use the legacy syntax.
+
+
 
 ## Properties
 <Props />
