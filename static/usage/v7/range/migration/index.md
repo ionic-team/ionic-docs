@@ -104,7 +104,7 @@ import TabItem from '@theme/TabItem';
 
 <!-- After -->
 <ion-item>
-  <ion-range label-placement="end">
+  <ion-range labelPlacement="end">
     <div slot="label">Notifications</div>
   </ion-range>
 </ion-item>
