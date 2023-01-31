@@ -47,7 +47,7 @@ In order to configure this relationship between components (to load/select) and 
 
 ## Usage
 
-import BasicExample from '@site/static/usage/v6/router/basic/index.md';
+import BasicExample from '@site/static/usage/v7/router/basic/index.md';
 
 <BasicExample />
 
