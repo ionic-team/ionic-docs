@@ -1,6 +1,6 @@
 ```html
 <template>
-  <ion-range :ticks="true" :snaps="true" :min="0" :max="10"></ion-range>
+  <ion-range aria-label="Range with ticks" :ticks="true" :snaps="true" :min="0" :max="10"></ion-range>
 </template>
 
 <script lang="ts">
