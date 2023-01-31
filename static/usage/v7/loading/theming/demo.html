@@ -27,22 +27,11 @@
   <ion-app>
     <ion-content>
       <div class="container">
-        <ion-button onclick="showLoading()">Show Loading</ion-button>
+        <ion-button id="open-loading">Show Loading</ion-button>
+        <ion-loading class="custom-loading" trigger="open-loading" message="Loading..." duration="3000"></ion-loading>
       </div>
     </ion-content>
   </ion-app>
-
-  <script>
-    const loading = document.querySelector('ion-loading');
-    const showLoading = async () => {
-      const loading = await loadingController.create({
-        message: 'Loading...',
-        duration: 3000,
-        cssClass: 'custom-loading'
-      });
-      loading.present();
-    }
-  </script>
 </body>
 
 </html>
