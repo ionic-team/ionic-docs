@@ -7,8 +7,8 @@
   <title>Alert</title>
   <link rel="stylesheet" href="../../../common.css" />
   <script src="../../../common.js"></script>
-  <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core@6/dist/ionic/ionic.esm.js"></script>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core@6/css/ionic.bundle.css" />
+  <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core@next/dist/ionic/ionic.esm.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core@next/css/ionic.bundle.css" />
 
   <style>
     ion-alert.custom-alert {
@@ -49,30 +49,25 @@
   <ion-app>
     <ion-content>
       <div class="container">
-        <ion-button onclick="presentAlert()">Click Me</ion-button>
+        <ion-button id="present-alert">Click Me</ion-button>
+        <ion-alert trigger="present-alert" class="custom-alert" header="Are you sure?"></ion-alert>
       </div>
     </ion-content>
   </ion-app>
 
   <script>
-    async function presentAlert() {
-      const alert = document.createElement('ion-alert');
-      alert.header = 'Are you sure?';
-      alert.cssClass = 'custom-alert';
-      alert.buttons = [
-        {
-          text: 'No',
-          cssClass: 'alert-button-cancel'
-        },
-        {
-          text: 'Yes',
-          cssClass: 'alert-button-confirm'
-        }
-      ];
+    const alert = document.querySelector('ion-alert');
 
-      document.body.appendChild(alert);
-      await alert.present();
-    }
+    alert.buttons = [
+      {
+        text: 'No',
+        cssClass: 'alert-button-cancel'
+      },
+      {
+        text: 'Yes',
+        cssClass: 'alert-button-confirm'
+      }
+    ];
   </script>
 </body>
 

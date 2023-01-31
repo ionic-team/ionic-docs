@@ -57,6 +57,10 @@ We recommend importing the styles in the component in which Swiper is being used
 </script>
 ```
 
+:::note
+Importing `@ionic/vue/css/ionic-swiper.css'` is **not** required to use Swiper.js with Ionic. This files is used for backward-compatibility with the `ion-slides` component and can be safely omitted if you prefer not to use the CSS Variables provided in the stylesheet.
+:::
+
 ### Updating Selectors
 
 Previously, we were able to target `ion-slides` and `ion-slide` to apply any custom styling. The contents of those style blocks remain the same, but we need to update the selectors. Below is a list of selector changes when going from `ion-slides` to Swiper Vue:
@@ -246,7 +250,7 @@ See <a href="https://swiperjs.com/vue#usage" target="_blank" rel="noopener noref
 
 ## The IonicSlides Module
 
-With `ion-slides`, Ionic automatically customized dozens of Swiper properties. This resulted in an experience that felt smooth when swiping on mobile devices. We recommend using the `IonicSlides` module to ensure that these properties are also set when using Swiper directly.
+With `ion-slides`, Ionic automatically customized dozens of Swiper properties. This resulted in an experience that felt smooth when swiping on mobile devices. We recommend using the `IonicSlides` module to ensure that these properties are also set when using Swiper directly. However, using this module is **not** required to use Swiper.js in Ionic.
 
 We can install the `IonicSlides` module by importing it from `@ionic/vue` and passing it in as the last item in the `modules` array:
 

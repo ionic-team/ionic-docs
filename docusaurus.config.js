@@ -98,8 +98,8 @@ module.exports = {
         {
           type: 'cta',
           position: 'left',
-          text: 'Ionic v7.0.0 Upgrade Guide',
-          href: `/updating/7-0`,
+          text: 'Ionic v6.0.0 Upgrade Guide',
+          href: `/intro/upgrading-to-ionic-6`,
         },
         {
           type: 'docsVersionDropdown',
@@ -274,15 +274,20 @@ module.exports = {
             )}.ts`;
           }
           if ((match = docPath.match(/native\/(.*)\.md/)) != null) {
-            return `https://github.com/ionic-team/ionic-native/edit/master/src/@awesome-cordova-plugins/plugins/${match[1]}/index.ts`;
+            return `https://github.com/ionic-team/capacitor-plugins/edit/main/${match[1]}/README.md`;
           }
           return `https://github.com/ionic-team/ionic-docs/edit/main/${versionDocsDirPath}/${docPath}`;
         },
         exclude: ['README.md'],
-        lastVersion: 'current',
+        lastVersion: 'v6',
         versions: {
           current: {
-            label: 'v7',
+            label: 'v7 (beta)',
+            banner: 'unreleased',
+            path: 'v7',
+          },
+          v6: {
+            label: 'v6',
             banner: 'none',
           },
         },

@@ -116,6 +116,7 @@ module.exports = {
             'react/your-first-app/distribute',
           ],
         },
+        'react/adding-ionic-react-to-an-existing-react-project',
         'react/lifecycle',
         'react/navigation',
         'react/virtual-scroll',
@@ -523,13 +524,8 @@ module.exports = {
       collapsed: false,
       items: [
         'native',
-        'native-community',
+        'native-setup',
         'native-faq',
-        {
-          type: 'link',
-          label: 'Community vs. Enterprise',
-          href: 'https://ionic.io/docs/premier-plugins',
-        },
       ],
     },
     {

@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "@ionic/angular": "6.5.1-dev.11674614335.18d3edd0",
-    "@ionic/core": "6.5.1-dev.11674614335.18d3edd0"
+    "@ionic/angular": "^7.0.0-beta.0",
+    "@ionic/core": "^7.0.0-beta.0"
   }
 }

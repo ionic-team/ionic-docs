@@ -27,7 +27,7 @@ import Basic from '@site/static/usage/v7/button/basic/index.md';
 
 ## Expand
 
-This property lets you specify how wide the button should be. By default, buttons are inline blocks, but setting this property will change the button to a full-width block element.
+This property lets you specify how wide the button should be. By default, buttons have `display: inline-block`, but setting this property will change the button to a full-width element with `display: block`.
 
 import Expand from '@site/static/usage/v7/button/expand/index.md';
 

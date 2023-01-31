@@ -113,5 +113,7 @@ Below are the config options that Ionic uses.
 | `statusTap`              | `boolean`                                                                     | If `true`, clicking or tapping the status bar will cause the content to scroll to the top.               |
 | `swipeBackEnabled`       | `boolean`                                                                     | If `true`, Ionic will enable the "swipe-to-go-back" gesture across the application.                      |
 | `tabButtonLayout`        | `TabButtonLayout`                                                             | Overrides the default "layout" of all `ion-bar-button` across the whole application.                     |
+| `toastDuration`          | `number`                                                                      | Overrides the default `duration` for all `ion-toast` components.                                         |
 | `toastEnter`             | `AnimationBuilder`                                                            | Provides a custom enter animation for all `ion-toast`, overriding the default "animation".               |
 | `toastLeave`             | `AnimationBuilder`                                                            | Provides a custom leave animation for all `ion-toast`, overriding the default "animation".               |
+| `toggleOnOffLabels`      | `boolean`                                                                     | Overrides the default `enableOnOffLabels` in all `ion-toggle` components.                                |

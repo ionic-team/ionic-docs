@@ -3,6 +3,7 @@
   <ion-list>
     <ion-item>
       <ion-select
+        aria-label="Food"
         placeholder="Select fruit"
         :compareWith="compareWith"
         @ionChange="currentFood = JSON.stringify($event.detail.value)"

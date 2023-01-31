@@ -1,34 +1,32 @@
 ```html
 <template>
-  <ion-button @click="presentAlert">Click Me</ion-button>
+  <ion-button id="present-alert">Click Me</ion-button>
+  <ion-alert
+    trigger="present-alert"
+    class="custom-alert"
+    header="Are you sure?"
+    :buttons="alertButtons"
+  ></ion-alert>
 </template>
 
 <script lang="ts">
-  import { IonButton, alertController } from '@ionic/vue';
+  import { IonAlert, IonButton } from '@ionic/vue';
 
   export default {
-    components: { IonButton },
+    components: { IonAlert, IonButton },
     setup() {
-      const presentAlert = async () => {
-        const alert = await alertController.create({
-          header: 'Are you sure?',
-          cssClass: 'custom-alert',
-          buttons: [
-            {
-              text: 'No',
-              cssClass: 'alert-button-cancel',
-            },
-            {
-              text: 'Yes',
-              cssClass: 'alert-button-confirm',
-            },
-          ],
-        });
+      const alertButtons = [
+        {
+          text: 'No',
+          cssClass: 'alert-button-cancel',
+        },
+        {
+          text: 'Yes',
+          cssClass: 'alert-button-confirm',
+        },
+      ];
 
-        await alert.present();
-      };
-
-      return { presentAlert };
+      return { alertButtons };
     },
   };
 </script>
