@@ -55,6 +55,10 @@ export default Home;
 ```
 
 :::note
+Importing `@ionic/react/css/ionic-swiper.css'` is **not** required to use Swiper.js with Ionic. This files is used for backward-compatibility with the `ion-slides` component and can be safely omitted if you prefer not to use the CSS Variables provided in the stylesheet.
+:::
+
+:::note
 
 Not using Create React App? You can import the Swiper CSS from `swiper/css` instead.
 
@@ -266,7 +270,7 @@ See <a href="https://swiperjs.com/react#usage" target="_blank" rel="noopener nor
 
 ## The IonicSlides Module
 
-With `ion-slides`, Ionic automatically customized dozens of Swiper properties. This resulted in an experience that felt smooth when swiping on mobile devices. We recommend using the `IonicSlides` module to ensure that these properties are also set when using Swiper directly.
+With `ion-slides`, Ionic automatically customized dozens of Swiper properties. This resulted in an experience that felt smooth when swiping on mobile devices. We recommend using the `IonicSlides` module to ensure that these properties are also set when using Swiper directly. However, using this module is **not** required to use Swiper.js in Ionic.
 
 We can install the `IonicSlides` module by importing it from `@ionic/react` and passing it in as the last item in the `modules` array:
 
