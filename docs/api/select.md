@@ -182,7 +182,7 @@ interface SelectCustomEvent<T = any> extends CustomEvent {
 
 A simpler select syntax was introduced in Ionic 7.0. This new syntax reduces the boilerplate required to setup an select, resolves accessibility issues, and improves the developer experience.
 
-While developers can continue using the legacy syntax, we recommend migrating as soon as possible.
+Developers can perform this migration one select at a time. While developers can continue using the legacy syntax, we recommend migrating as soon as possible.
 
 
 ### Using the Modern Syntax
