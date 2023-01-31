@@ -339,11 +339,11 @@ export class BackButtonExample {
 </template>
 
 <script>
-import { IonButtons, IonHeader, IonMenuButton, IonToolbar } from '@ionic/vue';
+import { IonBackButton, IonButtons, IonHeader, IonMenuButton, IonToolbar } from '@ionic/vue';
 import { defineComponent } from 'vue';
 
 export default defineComponent({
-  components: { IonButtons, IonHeader, IonMenuButton, IonToolbar }
+  components: { IonBackButton, IonButtons, IonHeader, IonMenuButton, IonToolbar }
 });
 </script>
 ```
