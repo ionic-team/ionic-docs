@@ -45,7 +45,7 @@ That means the `ion-router` never touches the DOM, it does NOT show the componen
 
 In order to configure this relationship between components (to load/select) and URLs, `ion-router` uses a declarative syntax using JSX/HTML to define a tree of routes.
 
-## Usage
+## Basic Usage
 
 import BasicExample from '@site/static/usage/v7/router/basic/index.md';
 
