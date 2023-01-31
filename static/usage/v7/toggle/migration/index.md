@@ -46,7 +46,7 @@ import TabItem from '@theme/TabItem';
 <!-- Before -->
 <ion-item>
   <ion-label slot="end">Notifications</ion-label>
-  <ion-input></ion-input>
+  <ion-toggle></ion-toggle>
 </ion-item>
 
 <!-- After -->
@@ -89,7 +89,7 @@ import TabItem from '@theme/TabItem';
 <!-- Before -->
 <ion-item>
   <ion-label slot="end">Notifications</ion-label>
-  <ion-input></ion-input>
+  <ion-toggle></ion-toggle>
 </ion-item>
 
 <!-- After -->
@@ -132,7 +132,7 @@ import TabItem from '@theme/TabItem';
 {/* Before */}
 <IonItem>
   <IonLabel slot="end">Notifications</IonLabel>
-  <ion-input></ion-input>
+  <IonToggle></IonToggle>
 </IonItem>
 
 {/* After */}
@@ -175,7 +175,7 @@ import TabItem from '@theme/TabItem';
 <!-- Before -->
 <ion-item>
   <ion-label slot="end">Notifications</ion-label>
-  <ion-input></ion-input>
+  <ion-toggle></ion-toggle>
 </ion-item>
 
 <!-- After -->
