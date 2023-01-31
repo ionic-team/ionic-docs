@@ -37,13 +37,13 @@ import Types from '@site/static/usage/v7/input/types/index.md';
 <Types />
 
 
-## Label Positioning
+## Label Placement
 
-Labels will take up the width of their content by default. This positioning can be changed to be a fixed width, stacked, or floating label.
+Labels will take up the width of their content by default. Developers can use the `labelPlacement` property to control how the label is placed relative to the control.
 
-import Labels from '@site/static/usage/v7/input/labels/index.md';
+import LabelPlacement from '@site/static/usage/v7/input/label-placement/index.md';
 
-<Labels />
+<LabelPlacement />
 
 
 ## Clear Options
