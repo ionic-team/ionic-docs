@@ -28,6 +28,13 @@ import Basic from '@site/static/usage/v7/radio/basic/index.md';
 
 <Basic />
 
+## Label Placement
+
+Developers can use the `labelPlacement` property to control how the label is placed relative to the control.
+
+import LabelPlacement from '@site/static/usage/v7/radio/label-placement/index.md';
+
+<LabelPlacement />
 
 ## Deselecting Radios
 
