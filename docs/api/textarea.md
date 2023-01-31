@@ -83,7 +83,7 @@ import ClearOnEditPlayground from '@site/static/usage/v7/textarea/clear-on-edit/
 
 A simpler textarea syntax was introduced in Ionic 7.0. This new syntax reduces the boilerplate required to setup an textarea, resolves accessibility issues, and improves the developer experience.
 
-While developers can continue using the legacy syntax, we recommend migrating as soon as possible.
+Developers can perform this migration one textarea at a time. While developers can continue using the legacy syntax, we recommend migrating as soon as possible.
 
 
 ### Using the Modern Syntax
