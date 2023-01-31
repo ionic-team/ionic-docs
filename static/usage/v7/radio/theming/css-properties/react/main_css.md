@@ -7,7 +7,7 @@ ion-radio {
   --color-checked: #6815ec;
 }
 
-ion-radio.ios {
+ion-radio.ios::part(container) {
   width: 20px;
   height: 20px;
 
@@ -15,7 +15,7 @@ ion-radio.ios {
   border-radius: 4px;
 }
 
-.radio-checked.ios {
+.radio-checked.ios::part(container) {
   border-color: #6815ec;
 }
 ```
