@@ -1,4 +1,3 @@
-test
 ---
 title: "ion-radio"
 ---
