@@ -36,6 +36,19 @@ import LabelPlacement from '@site/static/usage/v7/radio/label-placement/index.md
 
 <LabelPlacement />
 
+## Justification
+
+Developers can use the `justify` property to control how the label and control are packed on a line.
+
+import Justify from '@site/static/usage/v7/radio/justify/index.md';
+
+<Justify />
+
+
+:::note
+`ion-item` is only used in the demos to emphasize how `justify` works. It is not needed in order for `justify` to function correctly.
+:::
+
 ## Deselecting Radios
 
 By default, once a radio is selected it cannot be deselected; pressing it again will keep it selected. This behavior can be modified by using the `allowEmptySelection` property on the parent radio group, which enables the radios to be deselected.
