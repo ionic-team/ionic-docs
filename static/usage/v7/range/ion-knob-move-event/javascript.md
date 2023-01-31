@@ -1,5 +1,5 @@
 ```html
-<ion-range></ion-range>
+<ion-range aria-label="Range with knob events"></ion-range>
 <div>
   <ion-label>ionKnobMoveStart: <span id="moveStart"></span></ion-label>
 </div>
