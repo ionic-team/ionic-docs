@@ -26,17 +26,17 @@ Once presented, the loading indicator will display indefinitely by default. Deve
 
 Alternatively, developers can configure the loading indicator to dismiss automatically after a specific amount of time by passing the number of milliseconds to display it in the `duration` of the loading options.
 
+### Inline (Recommended)
+
+import Inline from '@site/static/usage/v7/loading/inline/index.md';
+
+<Inline />
+
 ### Controller
 
 import Controller from '@site/static/usage/v7/loading/controller/index.md';
 
 <Controller />
-
-### Inline
-
-import Inline from '@site/static/usage/v7/loading/inline/index.md';
-
-<Inline />
 
 ## Customization
 
