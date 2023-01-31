@@ -1,5 +1,7 @@
 ```tsx
 import React, { useState } from 'react';
+import { clsx } from 'clsx';
+
 import { IonTextarea } from '@ionic/react';
 
 function Example() {
@@ -28,7 +30,11 @@ function Example() {
 
   return (
     <IonTextarea
-      className={`${isValid && 'ion-valid'} ${isValid === false && 'ion-invalid'} ${isTouched && 'ion-touched'}`}
+      className={clsx({
+        'ion-valid': isValid,
+        'ion-invalid': isValid === false,
+        'ion-touched': isTouched,
+      })}
       fill="solid"
       label="Email"
       labelPlacement="floating"
