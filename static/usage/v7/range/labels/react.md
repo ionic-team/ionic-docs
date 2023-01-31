@@ -3,21 +3,23 @@ import React from 'react';
 import { IonRange } from '@ionic/react';
 function Example() {
   return (
-    <IonRange labelPlacement="start">
-      <div slot="label">Label at the Start</div>
-    </IonRange>
+    <>
+      <IonRange labelPlacement="start">
+        <div slot="label">Label at the Start</div>
+      </IonRange>
     
-    <br />
+      <br />
     
-    <IonRange labelPlacement="end">
-      <div slot="label">Label at the End</div>
-    </IonRange>
+      <IonRange labelPlacement="end">
+        <div slot="label">Label at the End</div>
+      </IonRange>
     
-    <br />
+      <br />
     
-    <IonRange labelPlacement="fixed">
-      <div slot="label">Fixed Width Label</div>
-    </IonRange>
+      <IonRange labelPlacement="fixed">
+        <div slot="label">Fixed Width Label</div>
+      </IonRange>
+   </>
   );
 }
 export default Example;
