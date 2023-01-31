@@ -7,8 +7,8 @@ import './main.css';
 function Example() {
   return (
     <IonRadioGroup value="custom-checked">
-      <IonRadio value="custom"></IonRadio>
-      <IonRadio value="custom-checked"></IonRadio>
+      <IonRadio value="custom" aria-label="Custom checkbox"></IonRadio>
+      <IonRadio value="custom-checked" aria-label="Custom checkbox that is checked"></IonRadio>
     </IonRadioGroup>
   );
 }
