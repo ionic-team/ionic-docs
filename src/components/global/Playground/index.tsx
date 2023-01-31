@@ -154,12 +154,22 @@ export default function Playground({
 
   const defaultMode = typeof mode !== 'undefined' ? mode : Mode.iOS;
 
+  const getDefaultUsageTarget = () => {
+    // If defined, Angular target should be the default
+    if (code[UsageTarget.Angular] !== undefined) {
+      return UsageTarget.Angular;
+    }
+
+    // Otherwise, default to the first target passed.
+    return Object.keys(code)[0];
+  }
+
   /**
    * Developers can set a predefined size
    * or an explicit pixel value.
    */
   const frameSize = FRAME_SIZES[size] || size;
-  const [usageTarget, setUsageTarget] = useState(UsageTarget.Angular);
+  const [usageTarget, setUsageTarget] = useState(getDefaultUsageTarget());
   const [ionicMode, setIonicMode] = useState(defaultMode);
   const [codeSnippets, setCodeSnippets] = useState({});
   const [renderIframes, setRenderIframes] = useState(false);
