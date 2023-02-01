@@ -35,6 +35,19 @@ import LabelPlacement from '@site/static/usage/v7/checkbox/label-placement/index
 
 <LabelPlacement />
 
+## Justification
+
+Developers can use the `justify` property to control how the label and control are packed on a line.
+
+import Justify from '@site/static/usage/v7/checkbox/justify/index.md';
+
+<Justify />
+
+
+:::note
+`ion-item` is only used in the demos to emphasize how `justify` works. It is not needed in order for `justify` to function correctly.
+:::
+
 ## Indeterminate Checkboxes
 
 import Indeterminate from '@site/static/usage/v7/checkbox/indeterminate/index.md';
