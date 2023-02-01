@@ -4,17 +4,11 @@
 </template>
 
 <script lang="ts">
-  import {
-    IonCheckbox,
-    IonItem,
-    IonLabel
-  } from '@ionic/vue';
+  import { IonCheckbox } from '@ionic/vue';
   import { defineComponent } from 'vue';
 
   export default defineComponent({
-    components: {
-      IonCheckbox
-    }
+    components: { IonCheckbox }
   });
 </script>
 ```
