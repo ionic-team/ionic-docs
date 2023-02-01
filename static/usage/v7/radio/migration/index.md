@@ -94,7 +94,7 @@ import TabItem from '@theme/TabItem';
 
 <!-- After -->
 <ion-item>
-  <ion-radio label-placement="end">Radio Label</ion-radio>
+  <ion-radio labelPlacement="end">Radio Label</ion-radio>
 </ion-item>
 ```
 </TabItem>
