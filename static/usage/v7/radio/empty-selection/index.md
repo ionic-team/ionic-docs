@@ -9,5 +9,4 @@ import angular from './angular.md';
   version="7"
   code={{ javascript, react, vue, angular }}
   src="usage/v7/radio/empty-selection/demo.html"
-  size="250px"
 />

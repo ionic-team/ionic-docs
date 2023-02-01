@@ -9,24 +9,29 @@
   <script src="../../../common.js"></script>
   <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core@next/dist/ionic/ionic.esm.js"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core@next/css/ionic.bundle.css" />
-
-  <style>
-    ion-list {
-      width: 100%;
-    }
-  </style>
 </head>
 
 <body>
   <ion-app>
     <ion-content>
       <div class="container">
-        <ion-radio-group value="strawberries">
-          <ion-radio value="grapes">Grapes</ion-radio><br/>
-          <ion-radio value="strawberries">Strawberries</ion-radio><br />
-          <ion-radio value="pineapple">Pineapple</ion-radio><br />
-          <ion-radio value="cherries">Cherries</ion-radio>
-        </ion-radio-group>
+        <div>
+          <ion-radio-group value="start">
+            <ion-radio value="start" label-placement="start">Label at the Start</ion-radio>
+          </ion-radio-group>
+
+          <br />
+
+          <ion-radio-group value="end">
+            <ion-radio value="end" label-placement="end">Label at the End</ion-radio>
+          </ion-radio-group>
+
+          <br />
+
+          <ion-radio-group value="fixed">
+            <ion-radio value="fixed" label-placement="fixed">Fixed Width Label</ion-radio>
+          </ion-radio-group>
+        </div>
       </div>
     </ion-content>
   </ion-app>
