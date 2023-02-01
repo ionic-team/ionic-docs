@@ -27,6 +27,14 @@ import Basic from '@site/static/usage/v7/checkbox/basic/index.md';
 
 <Basic />
 
+## Label Placement
+
+Developers can use the `labelPlacement` property to control how the label is placed relative to the control.
+
+import LabelPlacement from '@site/static/usage/v7/checkbox/label-placement/index.md';
+
+<LabelPlacement />
+
 ## Indeterminate Checkboxes
 
 import Indeterminate from '@site/static/usage/v7/checkbox/indeterminate/index.md';
