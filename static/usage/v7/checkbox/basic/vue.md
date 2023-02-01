@@ -1,9 +1,6 @@
 ```html
 <template>
-  <ion-item>
-    <ion-checkbox slot="start"></ion-checkbox>
-    <ion-label>I agree to the terms and conditions</ion-label>
-  </ion-item>
+  <ion-checkbox>I agree to the terms and conditions</ion-checkbox>
 </template>
 
 <script lang="ts">
@@ -16,9 +13,7 @@
 
   export default defineComponent({
     components: {
-      IonCheckbox,
-      IonItem,
-      IonLabel
+      IonCheckbox
     }
   });
 </script>
