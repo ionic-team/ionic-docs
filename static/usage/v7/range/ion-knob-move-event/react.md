@@ -8,6 +8,7 @@ function Example() {
   return (
     <>
       <IonRange
+        aria-label="Range with knob events"
         onIonKnobMoveStart={({ detail }) => setMoveStartValue(detail.value)}
         onIonKnobMoveEnd={({ detail }) => setMoveEndValue(detail.value)}
       ></IonRange>

@@ -1,5 +1,5 @@
 ```html
-<ion-range dual-knobs="true"></ion-range>
+<ion-range aria-label="Dual Knobs Range" dual-knobs="true"></ion-range>
 
 <script>
   const range = document.querySelector('ion-range');

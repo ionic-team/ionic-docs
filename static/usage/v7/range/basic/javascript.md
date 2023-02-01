@@ -1,3 +1,3 @@
 ```html
-<ion-range></ion-range>
+<ion-range aria-label="Volume"></ion-range>
 ```

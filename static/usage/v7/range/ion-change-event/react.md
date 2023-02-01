@@ -6,7 +6,7 @@ function Example() {
   const [lastEmittedValue, setLastEmittedValue] = useState<RangeValue>();
   return (
     <>
-      <IonRange onIonChange={({ detail }) => setLastEmittedValue(detail.value)}></IonRange>
+      <IonRange aria-label="Range with ionChange" onIonChange={({ detail }) => setLastEmittedValue(detail.value)}></IonRange>
       <IonLabel>ionChange emitted value: {lastEmittedValue as number}</IonLabel>
     </>
   );
