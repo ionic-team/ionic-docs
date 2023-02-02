@@ -12,7 +12,7 @@ In a native application, it's common to make API calls to communicate with the d
 
 ### Ionic Native
 
-[Ionic Native](../native.md) has its own internal logic to detect if it is inside of a native environment. Instead of throwing a runtime error, it will print a warning if it is not a native environment and there are no Cordova plugins available. The app won’t break and it will continue to work, although without the native functionality.
+[Ionic Native](/native) has its own internal logic to detect if it is inside of a native environment. Instead of throwing a runtime error, it will print a warning if it is not a native environment and there are no Cordova plugins available. The app won’t break and it will continue to work, although without the native functionality.
 
 ### Platform Detection
 

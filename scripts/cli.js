@@ -27,8 +27,7 @@ function writePage(page) {
   ].join('');
 
   const path = `cli/commands/${commandToKebab(page.name)}.md`;
-  fs.writeFileSync(`docs/${path}`, data);
-  fs.writeFileSync(`versioned_docs/version-v6/${path}`, data);
+  fs.writeFileSync(path, data);
 }
 
 function renderFrontmatter({ name, groups }) {

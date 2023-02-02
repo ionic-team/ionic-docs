@@ -112,4 +112,4 @@ Note that later versions of Ionic do not support iOS 13; see [mobile support tab
 |      V3      | Not currently supported |   @awesome-cordova-plugins 4.X   |
 
 - Wrappers (and their associated plugins) are community maintained.
-- \*Cordova plugin support with Ionic Native and `@ionic/react` can be achieved using the [vanilla JavaScript implementation](../native.md#vanilla-javascript)
+- \*Cordova plugin support with Ionic Native and `@ionic/react` can be achieved using the [vanilla JavaScript implementation](/native#vanilla-javascript)

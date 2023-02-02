@@ -13,5 +13,5 @@ If components are meant to be shared across versions, they can be put in `src/co
 All markdown files in these directories are generated from [scripts](/scripts):
 
 - `docs/api/`
-- `docs/cli/commands/`
-- `docs/native/`
+- `cli/commands/`
+- `native/plugins/`

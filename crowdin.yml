@@ -9,5 +9,13 @@ files:
     translation: /i18n/%two_letters_code%/docusaurus-plugin-content-docs/current/**/%original_file_name%
     ignore:
       - /docs/api/**/*
-      - /docs/cli/commands/**/*
-      - /docs/native/**/*
+  - source: /cli/**/*
+    translation: /i18n/%two_letters_code%/docusaurus-plugin-content-docs-cli/current/**/%original_file_name%
+    ignore:
+      - /cli/commands/**/*
+  - source: /native/**/*
+    translation: /i18n/%two_letters_code%/docusaurus-plugin-content-docs-native/current/**/%original_file_name%
+    ignore:
+      - /native/**/*
+  - source: /studio/**/*
+    translation: /i18n/%two_letters_code%/docusaurus-plugin-content-docs-studio/current/**/%original_file_name%

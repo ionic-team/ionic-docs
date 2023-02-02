@@ -76,7 +76,7 @@
     A CLI, or <strong>C</strong>ommand-<strong>L</strong>ine <strong>I</strong>nterface, is a text-based interface for
     interacting with a program. The common command-line app for a Mac user is the Terminal app, and Windows users often
     use Command Prompt. The Ionic community often uses this term to refer to{' '}
-    <a href="https://ionicframework.com/docs/v1/cli/">Ionic's CLI</a>. Ionic's CLI can be used for a number of things,
+    <a href="/cli">Ionic's CLI</a>. Ionic's CLI can be used for a number of things,
     such as creating production builds of an app, running the development server, and accessing{' '}
     <a href="https://ionic.io/appflow" target="_blank">
       Ionic commercial services
@@ -303,7 +303,7 @@
     <strong>Live Reload</strong> (or <strong>live-reload</strong>) is a tool that automatically reloads the browser or{' '}
     <a href="../core-concepts/webview">Web View</a> when it detects changes in your app. In some cases, it can replace
     parts of your app without having to reload the entire window. See the{' '}
-    <a href="../cli/livereload">Live Reload docs</a> for more information.
+    <a href="/cli/livereload">Live Reload docs</a> for more information.
   </p>
 </section>
 

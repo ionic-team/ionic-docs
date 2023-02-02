@@ -11,7 +11,7 @@
 
 ## Live Reload
 
-Live Reload is useful for debugging native functionality (such as plugins) on device hardware. Rather than deploy a new native binary each time you make a code change, it reloads the browser (or WebView) when changes in the app are detected. [Learn more here](../cli/livereload.md).
+Live Reload is useful for debugging native functionality (such as plugins) on device hardware. Rather than deploy a new native binary each time you make a code change, it reloads the browser (or WebView) when changes in the app are detected. [Learn more here](/cli/livereload).
 
 ## iOS and Safari
 

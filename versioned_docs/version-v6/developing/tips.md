@@ -131,7 +131,7 @@ The iOS simulator enables testing and debugging of an app before it reaches an a
 
 Before it can be used, [Xcode](https://developer.apple.com/xcode/download/), Apple's IDE, must be installed.
 
-The [Ionic CLI](../cli.md) can then be used to run the app in the current directory on the simulator:
+The [Ionic CLI](/cli) can then be used to run the app in the current directory on the simulator:
 
 ```shell
 ionic cordova emulate ios -lc

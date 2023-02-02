@@ -44,7 +44,7 @@ The `src/app/` directory contains the root app component and module as well as a
 
 ## Generating New Features
 
-The Ionic CLI can generate new app features with the [`ionic generate`](../cli/commands/generate.md) command. By running `ionic generate` in the command line, a selection prompt is displayed which lists the available features that can be generated.
+The Ionic CLI can generate new app features with the [`ionic generate`](/cli/commands/generate) command. By running `ionic generate` in the command line, a selection prompt is displayed which lists the available features that can be generated.
 
 ```shell-session
 $ ionic generate
@@ -88,4 +88,4 @@ The Ionic CLI uses the underlying framework tooling to stay close to best practi
 
 After creating the files and directories for the new page, the CLI will also update the router configuration to include the new page. This reduces the amount of manual work needed to keep the development lifecycle moving.
 
-For more details, run `ionic g --help` from the command line or see [the documentation](../cli/commands/generate.md) for `ionic generate`.
+For more details, run `ionic g --help` from the command line or see [the documentation](/cli/commands/generate) for `ionic generate`.
