@@ -86,7 +86,7 @@ interface CheckboxCustomEvent<T = any> extends CustomEvent {
 
 ## Migrating from Legacy Checkbox Syntax
 
-A simpler checkbox syntax was introduced in Ionic 7.0. This new syntax reduces the boilerplate required to setup an checkbox, resolves accessibility issues, and improves the developer experience.
+A simpler checkbox syntax was introduced in Ionic 7.0. This new syntax reduces the boilerplate required to setup a checkbox, resolves accessibility issues, and improves the developer experience.
 
 Developers can perform this migration one checkbox at a time. While developers can continue using the legacy syntax, we recommend migrating as soon as possible.
 
