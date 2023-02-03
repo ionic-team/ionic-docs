@@ -76,7 +76,7 @@ import SnappingTicks from '@site/static/usage/v7/range/snapping-ticks/index.md';
 
 ### Using `ionChange`
 
-The `ionChange` event emits as the Range knob value changes.
+The `ionChange` event emits as the Range knob value changes the expected type of IonChanage is [PutTypeHere].
 
 import IonChangeEvent from '@site/static/usage/v7/range/ion-change-event/index.md';
 
