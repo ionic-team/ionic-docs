@@ -84,7 +84,10 @@ import React from 'react';
 import { IonContent, IonPage } from '@ionic/react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
+//If using Create-React-App
 import 'swiper/swiper.less';
+//If using Vite
+import 'swiper/less';
 import '@ionic/react/css/ionic-swiper.css';
 
 const Home: React.FC = () => {
@@ -102,7 +105,10 @@ import React from 'react';
 import { IonContent, IonPage } from '@ionic/react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
+//If using Create-React-App
 import 'swiper/swiper.scss';
+//If using Vite
+import 'swiper/scss';
 import '@ionic/react/css/ionic-swiper.css';
 
 const Home: React.FC = () => {
