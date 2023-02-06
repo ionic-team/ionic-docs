@@ -98,8 +98,8 @@ module.exports = {
         {
           type: 'cta',
           position: 'left',
-          text: 'Ionic v7.0.0 Upgrade Guide',
-          href: `/updating/7-0`,
+          text: 'Ionic v6.0.0 Upgrade Guide',
+          href: `/intro/upgrading-to-ionic-6`,
         },
         {
           type: 'docsVersionDropdown',
@@ -284,12 +284,12 @@ module.exports = {
           current: {
             label: 'v7 (beta)',
             banner: 'unreleased',
-            path: 'v7'
+            path: 'v7',
           },
-          'v6': {
+          v6: {
             label: 'v6',
-            banner: 'none'
-          }
+            banner: 'none',
+          },
         },
       },
     ],

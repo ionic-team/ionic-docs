@@ -1,10 +1,8 @@
 ```css
-ion-radio {
+ion-radio::part(container) {
   width: 30px;
   height: 30px;
-}
-
-ion-radio::part(container) {
+  
   border-radius: 8px;
   border: 2px solid #ddd;
 }

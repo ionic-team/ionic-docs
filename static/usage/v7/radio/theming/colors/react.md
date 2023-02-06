@@ -6,31 +6,31 @@ function Example() {
   return (
     <>
       <IonRadioGroup value="primary">
-        <IonRadio color="primary" value="primary"></IonRadio>
+        <IonRadio aria-label="Primary" color="primary" value="primary"></IonRadio>
       </IonRadioGroup>
       <IonRadioGroup value="secondary">
-        <IonRadio color="secondary" value="secondary"></IonRadio>
+        <IonRadio aria-label="Secondary" color="secondary" value="secondary"></IonRadio>
       </IonRadioGroup>
       <IonRadioGroup value="tertiary">
-        <IonRadio color="tertiary" value="tertiary"></IonRadio>
+        <IonRadio aria-label="Tertiary" color="tertiary" value="tertiary"></IonRadio>
       </IonRadioGroup>
       <IonRadioGroup value="success">
-        <IonRadio color="success" value="success"></IonRadio>
+        <IonRadio aria-label="Success" color="success" value="success"></IonRadio>
       </IonRadioGroup>
       <IonRadioGroup value="warning">
-        <IonRadio color="warning" value="warning"></IonRadio>
+        <IonRadio aria-label="Warning" color="warning" value="warning"></IonRadio>
       </IonRadioGroup>
       <IonRadioGroup value="danger">
-        <IonRadio color="danger" value="danger"></IonRadio>
+        <IonRadio aria-label="Danger" color="danger" value="danger"></IonRadio>
       </IonRadioGroup>
       <IonRadioGroup value="light">
-        <IonRadio color="light" value="light"></IonRadio>
+        <IonRadio aria-label="Light" color="light" value="light"></IonRadio>
       </IonRadioGroup>
       <IonRadioGroup value="medium">
-        <IonRadio color="medium" value="medium"></IonRadio>
+        <IonRadio aria-label="Medium" color="medium" value="medium"></IonRadio>
       </IonRadioGroup>
       <IonRadioGroup value="dark">
-        <IonRadio color="dark" value="dark"></IonRadio>
+        <IonRadio aria-label="Dark" color="dark" value="dark"></IonRadio>
       </IonRadioGroup>
     </>
   );

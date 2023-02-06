@@ -208,6 +208,10 @@
   width: 0%;
 }
 
+.playground .frame-visible {
+  width: 100%;
+}
+
 /** Tabs **/
 .playground .tabs-container {
   background: var(--playground-code-background);

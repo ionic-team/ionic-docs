@@ -13,7 +13,7 @@
 </style>
 
 <template>
-  <ion-range :value="50" :pin="true"></ion-range>
+  <ion-range aria-label="Custom range" :value="50" :pin="true"></ion-range>
 </template>
 
 <script lang="ts">
