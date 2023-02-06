@@ -23,12 +23,4 @@
     components: { IonButton, IonCard, IonCardContent, IonCardHeader, IonCardSubtitle, IonCardTitle },
   });
 </script>
-
-<style scoped>
-  /* iOS places the subtitle above the title */
-  ion-card-header.ios {
-    display: flex;
-    flex-flow: column-reverse;
-  }
-</style>
 ```

@@ -97,12 +97,4 @@
     Card Content
   </ion-card-content>
 </ion-card>
-
-<style>
-  /* iOS places the subtitle above the title */
-  ion-card-header.ios {
-    display: flex;
-    flex-flow: column-reverse;
-  }
-</style>
 ```
