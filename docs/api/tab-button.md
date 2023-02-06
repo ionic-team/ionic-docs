@@ -1,10 +1,8 @@
 ---
 title: "ion-tab-button"
-hide_table_of_contents: true
 ---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
-import TOCInline from '@theme/TOCInline';
 
 import Props from '@site/static/auto-generated/tab-button/props.md';
 import Events from '@site/static/auto-generated/tab-button/events.md';
@@ -18,14 +16,6 @@ import Slots from '@site/static/auto-generated/tab-button/slots.md';
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="shadow" />
-
-<h2 className="table-of-contents__title">Contents</h2>
-
-<TOCInline
-  toc={toc}
-  maxHeadingLevel={2}
-/>
-
 
 
 A tab button is a UI component that is placed inside of a [tab bar](tab-bar.md). The tab button can specify the layout of the icon and label and connect to a [tab view](tab.md).

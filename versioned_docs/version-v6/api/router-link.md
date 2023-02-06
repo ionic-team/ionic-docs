@@ -1,8 +1,5 @@
 ---
 title: "ion-router-link"
-hide_table_of_contents: true
-demoUrl: "/docs/demos/api/router-link/index.html"
-demoSourceUrl: "https://github.com/ionic-team/ionic-docs/tree/main/static/demos/api/router-link/index.html"
 ---
 import TOCInline from '@theme/TOCInline';
 
@@ -21,14 +18,6 @@ import Slots from '@site/static/auto-generated/router-link/slots.md';
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="shadow" />
-
-<h2 className="table-of-contents__title">Contents</h2>
-
-<TOCInline
-  toc={toc}
-  maxHeadingLevel={2}
-/>
-
 
 
 The router link component is used for navigating to a specified link. Similar to the browser's anchor tag, it can accept a href for the location, and a direction for the transition animation.

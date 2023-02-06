@@ -1,12 +1,8 @@
 ---
 title: "ion-tabs"
-hide_table_of_contents: true
-demoUrl: "/docs/demos/api/tabs/index.html"
-demoSourceUrl: "https://github.com/ionic-team/ionic-docs/tree/main/static/demos/api/tabs/index.html"
 ---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
-import TOCInline from '@theme/TOCInline';
 
 import Props from '@site/static/auto-generated/tabs/props.md';
 import Events from '@site/static/auto-generated/tabs/events.md';
@@ -23,14 +19,6 @@ import Slots from '@site/static/auto-generated/tabs/slots.md';
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="shadow" />
-
-<h2 className="table-of-contents__title">Contents</h2>
-
-<TOCInline
-  toc={toc}
-  maxHeadingLevel={2}
-/>
-
 
 
 Tabs are a top level navigation component to implement a tab-based navigation.
