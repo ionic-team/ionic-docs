@@ -1,6 +1,13 @@
 ```html
 <template>
-  <ion-input aria-label="Custom input" placeholder="Custom input" class="custom"></ion-input>
+  <ion-input
+    aria-label="Custom input" 
+    placeholder="Custom input" 
+    class="custom"
+    helper-text="Helper text"
+    :counter="true"
+    maxlength="20"
+  ></ion-input>
 </template>
 
 <script lang="ts">
@@ -23,6 +30,11 @@
     --padding-end: 10px;
     --padding-start: 10px;
     --padding-top: 10px;
+  }
+  
+  ion-input.custom .helper-text,
+  ion-input.custom .counter {
+    color: #373737;
   }
 </style>
 ```
