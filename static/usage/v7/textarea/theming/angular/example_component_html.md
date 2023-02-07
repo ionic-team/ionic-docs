@@ -5,6 +5,6 @@
   class="custom"
   helperText="Helper text"
   [counter]="true"
-  maxlength="100"
+  [maxlength]="100"
 ></ion-textarea>
 ```

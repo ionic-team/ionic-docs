@@ -22,7 +22,7 @@
     class="custom"
     helper-text="Helper text"
     :counter="true"
-    maxlength="100"
+    :maxlength="100"
   ></ion-textarea>
 </template>
 
