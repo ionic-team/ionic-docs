@@ -6,7 +6,7 @@
     class="custom"
     helper-text="Helper text"
     :counter="true"
-    maxlength="20"
+    :maxlength="20"
   ></ion-input>
 </template>
 

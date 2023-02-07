@@ -5,6 +5,6 @@
   class="custom" 
   helperText="Helper text"
   [counter]="true"
-  maxlength="20"
+  [maxlength]="20"
 ></ion-input>
 ```
