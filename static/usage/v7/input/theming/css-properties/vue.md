@@ -19,7 +19,7 @@
   });
 </script>
 
-<style scoped>
+<style>
   ion-input.custom {
     --background: #373737;
     --color: #fff;
