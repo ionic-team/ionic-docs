@@ -13,6 +13,6 @@ ion-input.custom {
 
 ion-input.custom .helper-text,
 ion-input.custom .counter {
-  color: #373737;
+  color: var(--ion-color-step-700, #373737);
 }
 ```
