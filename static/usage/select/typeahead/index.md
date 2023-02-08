@@ -1,7 +1,10 @@
 import Playground from '@site/src/components/global/Playground';
 
 import javascript from './javascript.md';
-import react from './react.md';
+
+import react_main_tsx from './react/main_tsx.md';
+import react_types_ts from './react/react_types_ts.md';
+import typeahead_component_tsx from './react/typeahead_component_tsx.md';
 
 import vue_example from './vue/example_vue.md';
 import vue_types_ts from './vue/vue_types_ts.md';
@@ -17,7 +20,13 @@ import angular_types_ts from './angular/angular_types_ts.md';
 <Playground
   code={{ 
     javascript, 
-    react, 
+    react: {
+      files: {
+        'src/main.tsx': react_main_tsx,
+        'src/types.ts': react_types_ts,
+        'src/AppTypeahead.tsx': typeahead_component_tsx
+      }
+    }, 
     vue: {
       files: {
         'src/components/Example.vue': vue_example,
