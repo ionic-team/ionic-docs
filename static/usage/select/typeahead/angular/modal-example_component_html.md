@@ -16,7 +16,7 @@
 
 <ion-content color="light" class="ion-padding">
   <ion-list id="modal-list" [inset]="true">
-    <ion-item *ngFor="let item of filteredItems">
+    <ion-item *ngFor="let item of filteredItems; trackBy: trackItems">
       <ion-label>{{ item.text }}</ion-label>
       <ion-checkbox
         [value]="item.value" 

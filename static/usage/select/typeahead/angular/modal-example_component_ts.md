@@ -22,6 +22,10 @@ export class TypeaheadComponent {
     this.workingSelectedValues = [...this.selectedItems];
   }
   
+  trackItems(index: number, item: Item) {
+    return item.value;
+  }
+  
   cancelChanges() {
     this.selectionCancel.emit();
   }
