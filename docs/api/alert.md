@@ -20,84 +20,33 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="scoped" />
 
-
-
 An Alert is a dialog that presents users with information or collects information from the user using inputs. An alert appears on top of the app's content, and must be manually dismissed by the user before they can resume interaction with the app. It can also optionally have a `header`, `subHeader` and `message`.
 
-## Presenting
+## Inline Alerts (Recommended)
 
-### Controller
+`ion-alert` can be used by writing the component directly in your template. This reduces the number of handlers you need to wire up in order to present the Alert.
 
-import Controller from '@site/static/usage/alert/presenting/controller/index.md';
+import Trigger from '@site/static/usage/v7/alert/presenting/trigger/index.md';
+
+<Trigger />
+
+### Using `isOpen`
+
+The `isOpen` property on `ion-alert` allows developers to control the presentation state of the Alert from their application state. This means when `isOpen` is set to `true` the Alert will be presented, and when `isOpen` is set to `false` the Alert will be dismissed.
+
+`isOpen` uses a one-way data binding, meaning it will not automatically be set to `false` when the Alert is dismissed. Developers should listen for the `ionAlertDidDismiss` or `didDismiss` event and set `isOpen` to `false`. The reason for this is it prevents the internals of `ion-alert` from being tightly coupled with the state of the application. With a one way data binding, the Alert only needs to concern itself with the boolean value that the reactive variable provides. With a two way data binding, the Alert needs to concern itself with both the boolean value as well as the existence of the reactive variable itself. This can lead to non-deterministic behaviors and make applications harder to debug.
+
+import IsOpen from '@site/static/usage/v7/alert/presenting/isOpen/index.md';
+
+<IsOpen />
+
+## Controller Alerts
+
+The `alertController` can be used in situations where more control is needed over when the Alert is presented and dismissed.
+
+import Controller from '@site/static/usage/v7/alert/presenting/controller/index.md';
 
 <Controller />
-
-### Inline
-
-When using Ionic with React or Vue, `ion-alert` can also be placed directly in the template through use of the `isOpen` property. Note that `isOpen` must be set to `false` manually when the alert is dismissed; it will not be updated automatically.
-
-<Tabs defaultValue="react" values={[{ value: 'react', label: 'React' }, { value: 'vue', label: 'Vue' }]}>
-<TabItem value="react">
-
-```tsx
-import React, { useState } from 'react';
-import { IonAlert, IonButton, IonContent } from '@ionic/react';
-
-function Example() {
-  const [showAlert, setShowAlert] = useState(false);
-
-  return (
-    <IonContent>
-      <IonButton onClick={() => setShowAlert(true)}>Click Me</IonButton>
-      <IonAlert
-        isOpen={showAlert}
-        onDidDismiss={() => setShowAlert(false)}
-        header="Alert"
-        subHeader="Important message"
-        message="This is an alert!"
-        buttons={['OK']}
-      />
-    </IonContent>
-  );
-}
-```
-
-</TabItem>
-<TabItem value="vue">
-
-```html
-<template>
-  <ion-content>
-    <ion-button @click="setOpen(true)">Show Alert</ion-button>
-    <ion-alert
-      :is-open="isOpenRef"
-      header="Alert"
-      sub-header="Important message"
-      message="This is an alert!"
-      :buttons="['OK']"
-      @didDismiss="setOpen(false)"
-    ></ion-alert>
-  </ion-content>
-</template>
-
-<script lang="ts">
-import { IonAlert, IonButton, IonContent } from '@ionic/vue';
-import { defineComponent, ref } from 'vue';
-
-export default defineComponent({
-  components: { IonAlert, IonButton },
-  setup() {
-    const isOpenRef = ref(false);
-    const setOpen = (state: boolean) => isOpenRef.value = state;
-    
-    return { isOpenRef, setOpen }
-  }
-});
-</script>
-```
-
-</TabItem>
-</Tabs>
 
 ## Buttons
 
@@ -105,7 +54,7 @@ In the array of `buttons`, each button includes properties for its `text`, and o
 
 Optionally, a `role` property can be added to a button, such as `cancel`. If a `cancel` role is on one of the buttons, then if the alert is dismissed by tapping the backdrop, then it will fire the handler from the button with a cancel role.
 
-import Buttons from '@site/static/usage/alert/buttons/index.md';
+import Buttons from '@site/static/usage/v7/alert/buttons/index.md';
 
 <Buttons />
 
@@ -116,13 +65,13 @@ Alerts can also include several different inputs whose data can be passed back t
 
 ### Text Inputs Example
 
-import TextInputs from '@site/static/usage/alert/inputs/text-inputs/index.md';
+import TextInputs from '@site/static/usage/v7/alert/inputs/text-inputs/index.md';
 
 <TextInputs />
 
 ### Radio Example
 
-import Radios from '@site/static/usage/alert/inputs/radios/index.md';
+import Radios from '@site/static/usage/v7/alert/inputs/radios/index.md';
 
 <Radios />
 
@@ -152,7 +101,7 @@ Any of the defined [CSS Custom Properties](#css-custom-properties) can be used t
 }
 ```
 
-import Customization from '@site/static/usage/alert/customization/index.md';
+import Customization from '@site/static/usage/v7/alert/customization/index.md';
 
 <Customization />
 

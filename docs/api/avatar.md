@@ -24,19 +24,19 @@ Avatars can be used by themselves or inside of any element. If placed inside of 
 
 ## Basic Usage
 
-import Basic from '@site/static/usage/avatar/basic/index.md';
+import Basic from '@site/static/usage/v7/avatar/basic/index.md';
 
 <Basic />
 
 ## Chip Avatar
 
-import Chip from '@site/static/usage/avatar/chip/index.md';
+import Chip from '@site/static/usage/v7/avatar/chip/index.md';
 
 <Chip />
 
 ## Item Avatar
 
-import Item from '@site/static/usage/avatar/item/index.md';
+import Item from '@site/static/usage/v7/avatar/item/index.md';
 
 <Item />
 
@@ -44,7 +44,7 @@ import Item from '@site/static/usage/avatar/item/index.md';
 
 ### CSS Custom Properties
 
-import CSSProps from '@site/static/usage/avatar/theming/css-properties/index.md';
+import CSSProps from '@site/static/usage/v7/avatar/theming/css-properties/index.md';
 
 <CSSProps />
 

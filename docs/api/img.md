@@ -23,7 +23,7 @@ Img is a tag that will lazily load an image whenever the tag is in the viewport.
 
 ## Basic Usage
 
-import Basic from '@site/static/usage/img/basic/index.md';
+import Basic from '@site/static/usage/v7/img/basic/index.md';
 
 <Basic />
 

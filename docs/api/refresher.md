@@ -23,7 +23,7 @@ Data should be modified during the refresher's output events. Once the async ope
 
 ## Basic Usage
 
-import Basic from '@site/static/usage/refresher/basic/index.md';
+import Basic from '@site/static/usage/v7/refresher/basic/index.md';
 
 <Basic />
 
@@ -34,7 +34,7 @@ The refresher has several properties for customizing the pull gesture. Set the `
 
 These properties do not apply when the [native refresher](#native-refreshers) is enabled.
 
-import PullProperties from '@site/static/usage/refresher/pull-properties/index.md';
+import PullProperties from '@site/static/usage/v7/refresher/pull-properties/index.md';
 
 <PullProperties />
 
@@ -45,7 +45,7 @@ The default icon, spinner, and text can be customized on the [refresher content]
 
 Setting `pullingIcon` will disable the [native refresher](#native-refreshers).
 
-import CustomContent from '@site/static/usage/refresher/custom-content/index.md';
+import CustomContent from '@site/static/usage/v7/refresher/custom-content/index.md';
 
 <CustomContent />
 
@@ -67,7 +67,7 @@ The native refreshers can be disabled by setting the `pullingIcon` on the [refre
 
 Refresher requires a scroll container to function. When using a virtual scrolling solution, you will need to disable scrolling on the `ion-content` and indicate which element container is responsible for the scroll container with the `.ion-content-scroll-host` class target.
 
-import CustomScrollTarget from '@site/static/usage/refresher/custom-scroll-target/index.md';
+import CustomScrollTarget from '@site/static/usage/v7/refresher/custom-scroll-target/index.md';
 
 <CustomScrollTarget />
 
@@ -76,7 +76,7 @@ import CustomScrollTarget from '@site/static/usage/refresher/custom-scroll-targe
 
 While the refresher can be used with any type of content, a common use case in native apps is to display a list of data that gets updated on refresh. In the below example, the app generates a list of data and then appends data to the top of the list when the refresh is completed. In a real app, the data would be received and updated after sending a request via a network or database call.
 
-import Advanced from '@site/static/usage/refresher/advanced/index.md';
+import Advanced from '@site/static/usage/v7/refresher/advanced/index.md';
 
 <Advanced />
 
