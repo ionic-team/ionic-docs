@@ -10,4 +10,5 @@ import angular from './angular.md';
   src="usage/v6/footer/fade/demo.html"
   devicePreview
   includeIonContent={false}
+  mode="ios"
 />

@@ -30,4 +30,5 @@ import angular_example_component_css from './angular/example_component_css.md';
   src="usage/v6/footer/custom-scroll-target/demo.html"
   devicePreview
   includeIonContent={false}
+  mode="ios"
 />
