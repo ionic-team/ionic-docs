@@ -1,8 +1,6 @@
 ---
 title: "ion-slide"
-hide_table_of_contents: true
 ---
-import TOCInline from '@theme/TOCInline';
 
 import Props from '@site/static/auto-generated/slide/props.md';
 import Events from '@site/static/auto-generated/slide/events.md';
@@ -17,15 +15,6 @@ import Slots from '@site/static/auto-generated/slide/slots.md';
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
-
-
-
-<h2 className="table-of-contents__title">Contents</h2>
-
-<TOCInline
-  toc={toc}
-  maxHeadingLevel={2}
-/>
 
 :::note
 This component has been deprecated in favor of using Swiper.js directly. Please see the [Slides Documentation](./slides#migration) for a migration guide.
