@@ -53,7 +53,7 @@
       const workingSelectedValues = ref([...props.selectedItems]);
       
       const isChecked = (value: string) => {
-        return workingSelectedValues.find(item => item === value) !== undefined;
+        return workingSelectedValues.value.find(item => item === value) !== undefined;
       }
       
       const cancelChanges = () => {
