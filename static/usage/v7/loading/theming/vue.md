@@ -1,27 +1,15 @@
 ```html
 <template>
-  <ion-button @click="showLoading()">Show Loading</ion-button>
+  <ion-button id="open-loading">Show Loading</ion-button>
+  <ion-loading class="custom-loading" trigger="open-loading" message="Loading..." duration="3000"></ion-loading>
 </template>
 
 <script lang="ts">
-  import { IonButton, loadingController } from '@ionic/vue';
+  import { IonButton, IonLoading } from '@ionic/vue';
   import { defineComponent } from 'vue';
 
   export default defineComponent({
-    components: { IonButton },
-    setup() {
-      const showLoading = async () => {
-        const loading = await loadingController.create({
-          message: 'Loading...',
-          duration: 3000,
-          cssClass: 'custom-loading'
-        });
-        
-        loading.present();
-      }
-      
-      return { showLoading }
-    }
+    components: { IonButton, IonLoading },
   });
 </script>
 <style>

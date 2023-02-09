@@ -1,9 +1,9 @@
 import Playground from '@site/src/components/global/Playground';
 
 import javascript from './javascript.md';
-import angular from './angular.md';
 import react from './react.md';
 import vue from './vue.md';
+import angular from './angular.md';
 
 <Playground
   version="7"
@@ -13,5 +13,5 @@ import vue from './vue.md';
     vue,
     angular,
   }}
-  src="usage/v7/loading/spinners/demo.html"
+  src="usage/v7/loading/inline/demo.html"
 />
