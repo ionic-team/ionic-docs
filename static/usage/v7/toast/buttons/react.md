@@ -1,37 +1,32 @@
 ```tsx
 import React, { useState } from 'react';
-import { IonButton, useIonToast } from '@ionic/react';
+import { IonButton, IonToast } from '@ionic/react';
 
 function Example() {
-  const [presentToast] = useIonToast();
   const [handlerMessage, setHandlerMessage] = useState('');
   const [roleMessage, setRoleMessage] = useState('');
 
   return (
     <>
-      <IonButton
-        onClick={() => {
-          presentToast({
-            message: 'Hello World!',
-            duration: 3000,
-            onDidDismiss: (e: CustomEvent) => setRoleMessage(`Dismissed with role: ${e.detail.role}`),
-            buttons: [
-              {
-                text: 'More Info',
-                role: 'info',
-                handler: () => { setHandlerMessage('More Info clicked'); }
-              },
-              {
-                text: 'Dismiss',
-                role: 'cancel',
-                handler: () => { setHandlerMessage('Dismiss clicked'); }
-              }
-            ]
-          })
-        }}
-      >
-        Click Me
-      </IonButton>
+      <IonButton id="open-toast">Open Toast</IonButton>
+      <IonToast
+        trigger="open-toast"
+        message="Hello World!"
+        duration={3000}
+        buttons={[
+          {
+            text: 'More Info',
+            role: 'info',
+            handler: () => { setHandlerMessage('More Info clicked'); }
+          },
+          {
+            text: 'Dismiss',
+            role: 'cancel',
+            handler: () => { setHandlerMessage('Dismiss clicked'); }
+          }
+        ]}
+        onDidDismiss={(e: CustomEvent) => setRoleMessage(`Dismissed with role: ${e.detail.role}`)}
+      ></IonToast>
       <p>{handlerMessage}</p>
       <p>{roleMessage}</p>
     </>

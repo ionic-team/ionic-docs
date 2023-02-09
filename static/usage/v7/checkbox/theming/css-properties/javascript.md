@@ -1,13 +1,10 @@
 ```html
-<ion-item>
-  <ion-checkbox slot="start"></ion-checkbox>
-  <ion-label>Themed checkbox</ion-label>
-</ion-item>
+<ion-checkbox>Themed checkbox</ion-checkbox>
 
 <style>
   ion-checkbox {
     --size: 32px;
-    --background-checked: #6815ec;
+    --checkbox-background-checked: #6815ec;
   }
   
   ion-checkbox::part(container) {

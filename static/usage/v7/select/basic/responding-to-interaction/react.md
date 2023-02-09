@@ -14,6 +14,7 @@ function Example() {
       <IonList>
         <IonItem>
           <IonSelect
+            aria-label="Fruit"
             placeholder="Select fruit"
             onIonChange={(e) => pushLog(`ionChange fired with value: ${e.detail.value}`)}
             onIonCancel={() => pushLog('ionCancel fired')}

@@ -846,9 +846,8 @@
       "collapsed": false,
       "items": [
         {
-          "type": "link",
-          "label": "ion-icon",
-          "href": "https://ionicons.com"
+          "type": "doc",
+          "id": "version-v6/api/icon"
         }
       ],
       "collapsible": true
@@ -921,6 +920,10 @@
         {
           "type": "doc",
           "id": "version-v6/api/list-header"
+        },
+        {
+          "type": "doc",
+          "id": "version-v6/api/virtual-scroll"
         }
       ],
       "collapsible": true
@@ -935,9 +938,8 @@
           "id": "version-v6/api/avatar"
         },
         {
-          "type": "link",
-          "label": "ion-icon",
-          "href": "https://ionicons.com"
+          "type": "doc",
+          "id": "version-v6/api/icon"
         },
         {
           "type": "doc",
@@ -1176,6 +1178,22 @@
     },
     {
       "type": "category",
+      "label": "Slides",
+      "collapsed": false,
+      "items": [
+        {
+          "type": "doc",
+          "id": "version-v6/api/slides"
+        },
+        {
+          "type": "doc",
+          "id": "version-v6/api/slide"
+        }
+      ],
+      "collapsible": true
+    },
+    {
+      "type": "category",
       "label": "Tabs",
       "collapsed": false,
       "items": [
@@ -1334,16 +1352,11 @@
         },
         {
           "type": "doc",
-          "id": "version-v6/native-community"
+          "id": "version-v6/native-setup"
         },
         {
           "type": "doc",
           "id": "version-v6/native-faq"
-        },
-        {
-          "type": "link",
-          "label": "Community vs. Enterprise",
-          "href": "https://ionic.io/docs/premier-plugins"
         }
       ],
       "collapsible": true

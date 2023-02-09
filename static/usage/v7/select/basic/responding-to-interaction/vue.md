@@ -3,6 +3,7 @@
   <ion-list>
     <ion-item>
       <ion-select
+        aria-label="Fruit"
         placeholder="Select fruit"
         @ionChange="pushLog('ionChange fired with value: ' + $event.detail.value)"
         @ionCancel="pushLog('ionCancel fired')"

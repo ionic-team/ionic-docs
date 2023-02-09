@@ -11,10 +11,4 @@ ion-card-title {
 ion-card-subtitle {
   --color: #d1fff8;
 }
-
-/* iOS places the subtitle above the title */
-ion-card-header.ios {
-  display: flex;
-  flex-flow: column-reverse;
-}
 ```

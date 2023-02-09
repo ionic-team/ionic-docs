@@ -1,7 +1,7 @@
 ```html
 <template>
-  <ion-toggle></ion-toggle>
-  <ion-toggle :checked="true"></ion-toggle>
+  <ion-toggle aria-label="Enable Notifications"></ion-toggle>
+  <ion-toggle :checked="true" aria-label="Enable Notifications"></ion-toggle>
 </template>
 
 <script lang="ts">
@@ -15,28 +15,29 @@
 
 <style scoped>
   ion-toggle {
-    height: 10px;
-    width: 65px;
-
     padding: 12px;
-
-    --background: #ddd;
-    --background-checked: #ddd;
-
+  
+    --track-background: #ddd;
+    --track-background-checked: #ddd;
+  
     --handle-background: #eb7769;
     --handle-background-checked: #95c34e;
-
+  
     --handle-width: 25px;
     --handle-height: 27px;
     --handle-max-height: auto;
     --handle-spacing: 6px;
-
+  
     --handle-border-radius: 4px;
     --handle-box-shadow: none;
-
+  }
+  
+  ion-toggle::part(track) {
+    height: 10px;
+    width: 65px;
+  
     /* Required for iOS handle to overflow the height of the track */
     overflow: visible;
-    contain: none;
   }
 </style>
 ```

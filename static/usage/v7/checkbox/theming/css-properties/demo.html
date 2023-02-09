@@ -7,12 +7,12 @@
   <title>Checkbox</title>
   <link rel="stylesheet" href="../../../../common.css" />
   <script src="../../../../common.js"></script>
-  <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core@6/dist/ionic/ionic.esm.js"></script>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core@6/css/ionic.bundle.css" />
+  <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core@7.0.0-beta.1/dist/ionic/ionic.esm.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core@7.0.0-beta.1/css/ionic.bundle.css" />
   <style>
     ion-checkbox {
       --size: 32px;
-      --background-checked: #6815ec;
+      --checkbox-background-checked: #6815ec;
     }
 
     ion-checkbox::part(container) {
@@ -26,10 +26,7 @@
   <ion-app>
     <ion-content>
       <div class="container">
-        <ion-item>
-          <ion-checkbox slot="start"></ion-checkbox>
-          <ion-label>Themed checkbox</ion-label>
-        </ion-item>
+        <ion-checkbox>Themed checkbox</ion-checkbox>
       </div>
     </ion-content>
   </ion-app>

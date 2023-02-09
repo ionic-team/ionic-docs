@@ -29,47 +29,46 @@
 </style>
 
 <template>
-  <ion-button @click="presentActionSheet">Open</ion-button>
+  <ion-button id="open-action-sheet">Open</ion-button>
+  <ion-action-sheet
+    trigger="open-action-sheet"
+    class="my-custom-class"
+    header="Example header"
+    sub-header="Example subheader"
+    :buttons="actionSheetButtons"
+  ></ion-action-sheet>
 </template>
 
 <script lang="ts">
-  import { IonButton, actionSheetController } from '@ionic/vue';
+  import { IonActionSheet, IonButton } from '@ionic/vue';
 
   export default {
-    components: { IonButton },
+    components: { IonActionSheet, IonButton },
     setup() {
-      const presentActionSheet = async () => {
-        const actionSheet = await actionSheetController.create({
-          header: 'Example header',
-          subHeader: 'Example subheader',
-          cssClass: 'my-custom-class',
-          buttons: [
-            {
-              text: 'Delete',
-              role: 'destructive',
-              data: {
-                action: 'delete',
-              },
-            },
-            {
-              text: 'Share',
-              data: {
-                action: 'share',
-              },
-            },
-            {
-              text: 'Cancel',
-              role: 'cancel',
-              data: {
-                action: 'cancel',
-              },
-            },
-          ],
-        });
-        actionSheet.present();
-      };
+      const actionSheetButtons = [
+        {
+          text: 'Delete',
+          role: 'destructive',
+          data: {
+            action: 'delete',
+          },
+        },
+        {
+          text: 'Share',
+          data: {
+            action: 'share',
+          },
+        },
+        {
+          text: 'Cancel',
+          role: 'cancel',
+          data: {
+            action: 'cancel',
+          },
+        },
+      ];
 
-      return { presentActionSheet };
+      return { actionSheetButtons };
     },
   };
 </script>

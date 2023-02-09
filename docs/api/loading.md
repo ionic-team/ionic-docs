@@ -62,6 +62,13 @@ import Theming from '@site/static/usage/v7/loading/theming/index.md';
  `ion-loading` is presented at the root of your application, so we recommend placing any `ion-loading` styles in a global stylesheet.
 :::
 
+## Accessibility
+  
+Ionic automatically sets Loading's `role` to [`dialog`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/dialog_role).
+
+If the `message` property is defined for Loading, then the `aria-labelledby` attribute will be automatically set to the message element's ID. Otherwise, `aria-labelledby` will not be set, and developers must provide an `aria-label` using the `htmlAttributes` property.
+  
+All ARIA attributes can be manually overwritten by defining custom values in the `htmlAttributes` property of Loading.
 
 ## Interfaces
 

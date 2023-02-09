@@ -1,4 +1,4 @@
 ```html
-<ion-toggle></ion-toggle>
-<ion-toggle [checked]="true"></ion-toggle>
+<ion-toggle aria-label="Enable Notifications"></ion-toggle>
+<ion-toggle [checked]="true" aria-label="Enable Notifications"></ion-toggle>
 ```

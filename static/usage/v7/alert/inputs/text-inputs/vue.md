@@ -1,45 +1,44 @@
 ```html
 <template>
-  <ion-button @click="presentAlert">Click Me</ion-button>
+  <ion-button id="present-alert">Click Me</ion-button>
+  <ion-alert
+    trigger="present-alert"
+    header="Please enter your info"
+    :buttons="alertButtons"
+    :inputs="alertInputs"
+  ></ion-alert>
 </template>
 
 <script lang="ts">
-  import { IonButton, alertController } from '@ionic/vue';
+  import { IonAlert, IonButton } from '@ionic/vue';
 
   export default {
-    components: { IonButton },
+    components: { IonAlert, IonButton },
     setup() {
-      const presentAlert = async () => {
-        const alert = await alertController.create({
-          header: 'Please enter your info',
-          buttons: ['OK'],
-          inputs: [
-            {
-              placeholder: 'Name',
-            },
-            {
-              placeholder: 'Nickname (max 8 characters)',
-              attributes: {
-                maxlength: 8,
-              },
-            },
-            {
-              type: 'number',
-              placeholder: 'Age',
-              min: 1,
-              max: 100,
-            },
-            {
-              type: 'textarea',
-              placeholder: 'A little about yourself',
-            },
-          ],
-        });
+      const alertButtons = ['OK'];
+      const alertInputs = [
+        {
+          placeholder: 'Name',
+        },
+        {
+          placeholder: 'Nickname (max 8 characters)',
+          attributes: {
+            maxlength: 8,
+          },
+        },
+        {
+          type: 'number',
+          placeholder: 'Age',
+          min: 1,
+          max: 100,
+        },
+        {
+          type: 'textarea',
+          placeholder: 'A little about yourself',
+        },
+      ];
 
-        await alert.present();
-      };
-
-      return { presentAlert };
+      return { alertButtons, alertInputs };
     },
   };
 </script>

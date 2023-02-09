@@ -37,13 +37,13 @@ import Types from '@site/static/usage/v7/input/types/index.md';
 <Types />
 
 
-## Label Positioning
+## Label Placement
 
-Labels will take up the width of their content by default. This positioning can be changed to be a fixed width, stacked, or floating label.
+Labels will take up the width of their content by default. Developers can use the `labelPlacement` property to control how the label is placed relative to the control.
 
-import Labels from '@site/static/usage/v7/input/labels/index.md';
+import LabelPlacement from '@site/static/usage/v7/input/label-placement/index.md';
 
-<Labels />
+<LabelPlacement />
 
 
 ## Clear Options
@@ -57,7 +57,9 @@ import Clear from '@site/static/usage/v7/input/clear/index.md';
 
 ## Filled Inputs
 
-Material Design offers filled styles for an input when it is inside of an item. The `fill` property on the item can be set to either `"solid"` or `"outline"`.
+Material Design offers filled styles for an input. The `fill` property on the input can be set to either `"solid"` or `"outline"`.
+
+Since the `fill` styles visually defines the input container, inputs that use `fill` should not be used in `ion-item`.
 
 import Fill from '@site/static/usage/v7/input/fill/index.md';
 
@@ -66,19 +68,17 @@ import Fill from '@site/static/usage/v7/input/fill/index.md';
 
 ## Helper & Error Text
 
-Helper & error text can be used inside of an item with an input by slotting a note in the `"helper"` and `"error"` slots. The error slot will not be displayed unless the `ion-invalid` class is added to the `ion-item`. In Angular, this is done automatically through form validation. In JavaScript, React and Vue, the class needs to be manually added based on your own validation.
+Helper and error text can be used inside of an input with the `helperText` and `errorText` property. The error text will not be displayed unless the `ion-invalid` class is added to the `ion-input`. In Angular, this is done automatically through form validation. In JavaScript, React and Vue, the class needs to be manually added based on your own validation.
 
-<!-- Reuse the playground from the Item directory -->
-import HelperError from '@site/static/usage/v7/item/helper-error/index.md';
+import HelperError from '@site/static/usage/v7/input/helper-error/index.md';
 
 <HelperError />
 
-## Item Counter
+## Input Counter
 
-The item counter is helper text that displays under an input to notify the user of how many characters have been entered out of the total that the input will accept. When adding counter, the default behavior is to format the value that gets displayed as `inputLength` / `maxLength`. This behavior can be customized by passing in a formatter function to the `counterFormatter` property.
+The input counter is text that displays under an input to notify the user of how many characters have been entered out of the total that the input will accept. When adding counter, the default behavior is to format the value that gets displayed as `inputLength` / `maxLength`. This behavior can be customized by passing in a formatter function to the `counterFormatter` property.
 
-<!-- Reuse the playground from the Item directory -->
-import Counter from '@site/static/usage/v7/item/counter/index.md';
+import Counter from '@site/static/usage/v7/input/counter/index.md';
 
 <Counter />
 
@@ -86,6 +86,8 @@ import Counter from '@site/static/usage/v7/item/counter/index.md';
 ## Theming
 
 ### Colors
+
+Setting the `color` property changes the color palette for each input. On `ios` mode, this property changes the caret color. On `md` mode, this property changes the caret color and the highlight/underline color.
 
 import Colors from '@site/static/usage/v7/input/theming/colors/index.md';
 
@@ -99,6 +101,27 @@ import CSSProps from '@site/static/usage/v7/input/theming/css-properties/index.m
 
 <CSSProps />
 
+## Migrating from Legacy Input Syntax
+
+A simpler input syntax was introduced in Ionic 7.0. This new syntax reduces the boilerplate required to setup an input, resolves accessibility issues, and improves the developer experience.
+
+Developers can perform this migration one input at a time. While developers can continue using the legacy syntax, we recommend migrating as soon as possible.
+
+### Using the Modern Syntax
+
+Using the modern syntax involves three steps:
+
+1. Remove `ion-label` and use the `label` property on `ion-input` instead. The placement of the label can be configured using the `labelPlacement` property on `ion-input`.
+2. Move input-specific properties from `ion-item` on to `ion-input`. This includes the `counter`, `counterFormatter`, `fill`, and `shape` properties.
+3. Remove usages of the `helper` and `error` slots on `ion-item` and use the `helperText` and `errorText` properties on `ion-input` instead.
+
+import Migration from '@site/static/usage/v7/input/migration/index.md';
+
+<Migration />
+
+### Using the Legacy Syntax
+
+Ionic uses heuristics to detect if an app is using the modern input syntax. In some instances, it may be preferable to continue using the legacy syntax. Developers can set the `legacy` property on `ion-input` to `true` to force that instance of the input to use the legacy syntax.
 
 ## Interfaces
 

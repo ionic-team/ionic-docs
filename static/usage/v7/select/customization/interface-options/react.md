@@ -23,8 +23,7 @@ function Example() {
   return (
     <IonList>        
       <IonItem>
-        <IonLabel>Alert</IonLabel>
-        <IonSelect interfaceOptions={customAlertOptions} interface="alert" placeholder="Select One">
+        <IonSelect label="Alert" interfaceOptions={customAlertOptions} interface="alert" placeholder="Select One">
           <IonSelectOption value="bacon">Bacon</IonSelectOption>
           <IonSelectOption value="onions">Onions</IonSelectOption>
           <IonSelectOption value="pepperoni">Pepperoni</IonSelectOption>
@@ -32,8 +31,7 @@ function Example() {
       </IonItem>
           
       <IonItem>
-        <IonLabel>Popover</IonLabel>
-        <IonSelect interfaceOptions={customPopoverOptions} interface="popover" placeholder="Select One">
+        <IonSelect label="Popover" interfaceOptions={customPopoverOptions} interface="popover" placeholder="Select One">
           <IonSelectOption value="brown">Brown</IonSelectOption>
           <IonSelectOption value="blonde">Blonde</IonSelectOption>
           <IonSelectOption value="red">Red</IonSelectOption>
@@ -41,8 +39,7 @@ function Example() {
       </IonItem>
           
       <IonItem>
-        <IonLabel>Action Sheet</IonLabel>
-        <IonSelect interfaceOptions={customActionSheetOptions} interface="action-sheet" placeholder="Select One">
+        <IonSelect label="Action Sheet" interfaceOptions={customActionSheetOptions} interface="action-sheet" placeholder="Select One">
           <IonSelectOption value="red">Red</IonSelectOption>
           <IonSelectOption value="green">Green</IonSelectOption>
           <IonSelectOption value="blue">Blue</IonSelectOption>

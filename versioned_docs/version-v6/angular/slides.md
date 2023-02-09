@@ -10,13 +10,9 @@ title: Slides
   />
 </head>
 
-:::caution Looking for `ion-slides`?
+We recommend <a href="http://swiperjs.com/" target="_blank" rel="noopener noreferrer">Swiper.js</a> if you need a modern touch slider component. It powers our `ion-slides` component, but we now recommend that developers use Swiper for Angular directly.
 
-`ion-slides` was deprecated in v6.0.0 and removed in v7.0.0. We recommend using the Swiper.js library directly. The migration process is detailed below.
-
-:::
-
-We recommend <a href="http://swiperjs.com/" target="_blank" rel="noopener noreferrer">Swiper.js</a> if you need a modern touch slider component. This guide will go over how to get Swiper for Angular set up in your Ionic Framework application. It will also go over any migration information you may need to move from `ion-slides` to the official Swiper Angular integration.
+This guide will go over how to get Swiper for Angular set up in your Ionic Framework application. It will also go over any migration information you may need to move from `ion-slides` to the official Swiper Angular integration.
 
 ## Getting Started
 
@@ -78,6 +74,10 @@ export class HomePage {
 @import '~swiper/scss';
 @import '~@ionic/angular/css/ionic-swiper';
 ```
+
+:::note
+Importing `@ionic/angular/css/ionic-swiper'` is **not** required to use Swiper.js with Ionic. This files is used for backward-compatibility with the `ion-slides` component and can be safely omitted if you prefer not to use the CSS Variables provided in the stylesheet.
+:::
 
 ### Updating Selectors
 
@@ -170,7 +170,7 @@ See <a href="https://swiperjs.com/angular#usage" target="_blank" rel="noopener n
 
 ## The IonicSlides Module
 
-With `ion-slides`, Ionic automatically customized dozens of Swiper properties. This resulted in an experience that felt smooth when swiping on mobile devices. We recommend using the `IonicSlides` module to ensure that these properties are also set when using Swiper directly.
+With `ion-slides`, Ionic automatically customized dozens of Swiper properties. This resulted in an experience that felt smooth when swiping on mobile devices. We recommend using the `IonicSlides` module to ensure that these properties are also set when using Swiper directly. However, using this module is **not** required to use Swiper.js in Ionic.
 
 We can install the `IonicSlides` module by importing it from `@ionic/angular` and passing it in as the last item in the array provided in `SwiperCore.use`:
 

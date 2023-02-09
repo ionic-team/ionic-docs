@@ -42,7 +42,7 @@ Because Ionic is based on web technologies, it works just as well on desktop bro
 | **Chrome**  | 79+      | 60+      | ✔        | ✔        |
 | **Safari**  | 14+      | 13+      | ✔        | ✔        |
 |  **Edge**   | 79+      | 79+      | 79+      | ✔        |
-| **Firefox** | 63+      | 63+      | ✔        | ✔        |
+| **Firefox** | 70+      | 63+      | ✔        | ✔        |
 |  **IE 11**  | **X**    | **X**    | **X**    | **X**    |
 
 :::note
