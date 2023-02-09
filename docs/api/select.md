@@ -159,9 +159,9 @@ However, the Select Option does set a class for easier styling and allows for th
 
 ## Typeahead Component
 
-Typeahead or autocomplete functionality does not exist in `ion-select` but can be built using existing Ionic components. We recommend using an `ion-modal` to make the best use of the available screen space.
+Typeahead or autocomplete functionality can be built using existing Ionic components. We recommend using an `ion-modal` to make the best use of the available screen space.
 
-import TypeaheadExample from '@site/static/usage/select/typeahead/index.md';
+import TypeaheadExample from '@site/static/usage/v7/select/typeahead/index.md';
 
 <TypeaheadExample />
 
