@@ -1,8 +1,6 @@
 ---
 title: "ion-router"
-hide_table_of_contents: true
 ---
-import TOCInline from '@theme/TOCInline';
 
 import Props from '@site/static/auto-generated/router/props.md';
 import Events from '@site/static/auto-generated/router/events.md';
@@ -20,19 +18,10 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 
 
-<h2 className="table-of-contents__title">Contents</h2>
-
-<TOCInline
-  toc={toc}
-  maxHeadingLevel={2}
-/>
-
-
-
 The router is a component for handling routing inside vanilla and Stencil JavaScript projects.
 
 :::note
- Note: this component should only be used with vanilla and Stencil JavaScript projects. For Angular projects, use [`ion-router-outlet`](router-outlet.md) and the Angular router.
+ Note: This component should only be used with vanilla and Stencil JavaScript projects. See the routing guides for [Angular](../angular/navigation), [React](../react/navigation), and [Vue](../vue/navigation) for framework-specific routing solutions.
 :::
 
 
@@ -44,6 +33,12 @@ This component controls all interactions with the browser history and it aggrega
 That means the `ion-router` never touches the DOM, it does NOT show the components or emit any kind of lifecycle events, it just tells `ion-nav`, `ion-tabs`, and `ion-router-outlet` what and when to "show" based on the browser's URL.
 
 In order to configure this relationship between components (to load/select) and URLs, `ion-router` uses a declarative syntax using JSX/HTML to define a tree of routes.
+
+## Basic Usage
+
+import BasicExample from '@site/static/usage/v7/router/basic/index.md';
+
+<BasicExample />
 
 ## Interfaces
 

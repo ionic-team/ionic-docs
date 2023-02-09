@@ -1,8 +1,6 @@
 ---
 title: "ion-router-outlet"
-hide_table_of_contents: true
 ---
-import TOCInline from '@theme/TOCInline';
 
 import Props from '@site/static/auto-generated/router-outlet/props.md';
 import Events from '@site/static/auto-generated/router-outlet/events.md';
@@ -16,14 +14,6 @@ import Slots from '@site/static/auto-generated/router-outlet/slots.md';
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="shadow" />
-
-<h2 className="table-of-contents__title">Contents</h2>
-
-<TOCInline
-  toc={toc}
-  maxHeadingLevel={2}
-/>
-
 
 
 The router outlet behaves in a similar way to Angular's built-in router outlet component and Vue's router view component, but contains the logic for providing a stacked navigation, and animating views in and out.

@@ -1,32 +1,15 @@
 ```tsx
 import React from 'react';
-import { IonItem, IonLabel, IonList, IonRadio, IonRadioGroup } from '@ionic/react';
+import { IonRadio, IonRadioGroup } from '@ionic/react';
 
 function Example() {
   return (
-    <IonList>
-      <IonRadioGroup value="strawberries">
-        <IonItem>
-          <IonLabel>Grapes</IonLabel>
-          <IonRadio slot="end" value="grapes"></IonRadio>
-        </IonItem>
-
-        <IonItem>
-          <IonLabel>Strawberries</IonLabel>
-          <IonRadio slot="end" value="strawberries"></IonRadio>
-        </IonItem>
-
-        <IonItem>
-          <IonLabel>Pineapple</IonLabel>
-          <IonRadio slot="end" value="pineapple"></IonRadio>
-        </IonItem>
-
-        <IonItem>
-          <IonLabel>Cherries (Disabled)</IonLabel>
-          <IonRadio slot="end" value="cherries" disabled={true}></IonRadio>
-        </IonItem>
-      </IonRadioGroup>
-    </IonList>
+    <IonRadioGroup value="strawberries">
+      <IonRadio value="grapes">Grapes</IonRadio><br/>
+      <IonRadio value="strawberries">Strawberries</IonRadio><br />
+      <IonRadio value="pineapple">Pineapple</IonRadio><br />
+      <IonRadio value="cherries">Cherries</IonRadio>
+    </IonRadioGroup>
   );
 }
 export default Example;

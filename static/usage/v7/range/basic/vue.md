@@ -1,6 +1,6 @@
 ```html
 <template>
-  <ion-range></ion-range>
+  <ion-range aria-label="Volume"></ion-range>
 </template>
 
 <script lang="ts">

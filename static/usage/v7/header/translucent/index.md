@@ -11,4 +11,5 @@ import angular from './angular.md';
   src="usage/v7/header/translucent/demo.html"
   devicePreview
   includeIonContent={false}
+  mode="ios"
 />

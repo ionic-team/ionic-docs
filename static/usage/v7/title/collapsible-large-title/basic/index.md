@@ -12,4 +12,5 @@ import angular from './angular.md';
   src="usage/v7/title/collapsible-large-title/basic/demo.html"
   devicePreview={true}
   includeIonContent={false}
+  mode="ios"
 />

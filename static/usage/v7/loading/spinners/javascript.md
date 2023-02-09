@@ -1,15 +1,4 @@
 ```html
-<ion-button onclick="showLoading()">Show Loading</ion-button>
-
-<script>
-var showLoading = async () => {
-  const loading = await loadingController.create({
-    message: 'Loading...',
-    duration: 3000,
-    spinner: 'circles'
-  });
-  
-  loading.present();
-}
-</script>
+<ion-button id="open-loading">Show Loading</ion-button>
+<ion-loading trigger="open-loading" message="Loading..." duration="3000" spinner="circles"></ion-loading>
 ```

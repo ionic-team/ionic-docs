@@ -1,10 +1,8 @@
 ---
 title: "ion-tab-bar"
-hide_table_of_contents: true
 ---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
-import TOCInline from '@theme/TOCInline';
 
 import Props from '@site/static/auto-generated/tab-bar/props.md';
 import Events from '@site/static/auto-generated/tab-bar/events.md';
@@ -21,14 +19,6 @@ import Slots from '@site/static/auto-generated/tab-bar/slots.md';
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="shadow" />
-
-<h2 className="table-of-contents__title">Contents</h2>
-
-<TOCInline
-  toc={toc}
-  maxHeadingLevel={2}
-/>
-
 
 
 The tab bar is a UI component that contains a set of [tab buttons](tab-button.md). A tab bar must be provided inside of [tabs](tabs.md) to communicate with each [tab](tab.md).

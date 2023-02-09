@@ -1,6 +1,3 @@
 ```html
-<ion-item>
-  <ion-checkbox slot="start" indeterminate="true"></ion-checkbox>
-  <ion-label>Indeterminate checkbox</ion-label>
-</ion-item>
+<ion-checkbox indeterminate="true">Indeterminate checkbox</ion-checkbox>
 ```

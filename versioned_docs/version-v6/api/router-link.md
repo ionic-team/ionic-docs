@@ -21,7 +21,7 @@ import Slots from '@site/static/auto-generated/router-link/slots.md';
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="shadow" />
-
+  
 <h2 className="table-of-contents__title">Contents</h2>
 
 <TOCInline

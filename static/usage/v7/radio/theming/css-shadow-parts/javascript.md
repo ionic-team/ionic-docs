@@ -1,16 +1,14 @@
 ```html
 <ion-radio-group value="custom-checked">
-  <ion-radio value="custom"></ion-radio>
-  <ion-radio value="custom-checked"></ion-radio>
+  <ion-radio value="custom" aria-label="Custom checkbox"></ion-radio>
+  <ion-radio value="custom-checked" aria-label="Custom checkbox that is checked"></ion-radio>
 </ion-radio-group>
 
 <style>
-  ion-radio {
+  ion-radio::part(container) {
     width: 30px;
     height: 30px;
-  }
-
-  ion-radio::part(container) {
+    
     border-radius: 8px;
     border: 2px solid #ddd;
   }

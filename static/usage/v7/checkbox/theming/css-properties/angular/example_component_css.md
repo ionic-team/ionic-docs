@@ -1,7 +1,7 @@
 ```css
 ion-checkbox {
   --size: 32px;
-  --background-checked: #6815ec;
+  --checkbox-background-checked: #6815ec;
 }
 
 ion-checkbox::part(container) {

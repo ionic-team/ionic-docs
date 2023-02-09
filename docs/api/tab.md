@@ -1,8 +1,6 @@
 ---
 title: "ion-tab"
-hide_table_of_contents: true
 ---
-import TOCInline from '@theme/TOCInline';
 
 import Props from '@site/static/auto-generated/tab/props.md';
 import Events from '@site/static/auto-generated/tab/events.md';
@@ -19,14 +17,6 @@ import Slots from '@site/static/auto-generated/tab/slots.md';
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="shadow" />
-
-<h2 className="table-of-contents__title">Contents</h2>
-
-<TOCInline
-  toc={toc}
-  maxHeadingLevel={2}
-/>
-
 
 
 The tab component is a child component of [tabs](tabs.md). Each tab can contain a top level navigation stack for an app or a single view. An app can have many tabs, all with their own independent navigation.

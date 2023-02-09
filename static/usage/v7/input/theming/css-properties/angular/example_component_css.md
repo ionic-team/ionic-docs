@@ -10,4 +10,9 @@ ion-input.custom {
   --padding-start: 10px;
   --padding-top: 10px;
 }
+
+ion-input.custom .helper-text,
+ion-input.custom .counter {
+  color: var(--ion-color-step-700, #373737);
+}
 ```

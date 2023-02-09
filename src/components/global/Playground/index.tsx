@@ -48,7 +48,7 @@ const ControlButton = ({
   return controlButton;
 };
 
-const CodeBlockButton = ({ language, usageTarget, setUsageTarget }) => {
+const CodeBlockButton = ({ language, usageTarget, setUsageTarget, disabled }) => {
   const langValue = UsageTarget[language];
   return (
     <ControlButton
@@ -58,6 +58,7 @@ const CodeBlockButton = ({ language, usageTarget, setUsageTarget }) => {
       }}
       title={`Show ${language} code`}
       label={language}
+      disabled={disabled}
     />
   );
 };
@@ -154,12 +155,22 @@ export default function Playground({
 
   const defaultMode = typeof mode !== 'undefined' ? mode : Mode.iOS;
 
+  const getDefaultUsageTarget = () => {
+    // If defined, Angular target should be the default
+    if (code[UsageTarget.Angular] !== undefined) {
+      return UsageTarget.Angular;
+    }
+
+    // Otherwise, default to the first target passed.
+    return Object.keys(code)[0];
+  }
+
   /**
    * Developers can set a predefined size
    * or an explicit pixel value.
    */
   const frameSize = FRAME_SIZES[size] || size;
-  const [usageTarget, setUsageTarget] = useState(UsageTarget.Angular);
+  const [usageTarget, setUsageTarget] = useState(getDefaultUsageTarget());
   const [ionicMode, setIonicMode] = useState(defaultMode);
   const [codeSnippets, setCodeSnippets] = useState({});
   const [renderIframes, setRenderIframes] = useState(false);
@@ -435,14 +446,24 @@ export default function Playground({
       <div className="playground__container">
         <div className="playground__control-toolbar">
           <div className="playground__control-group">
-            {sortedUsageTargets.map((lang) => (
-              <CodeBlockButton
-                key={`code-block-${lang}`}
-                language={lang}
-                usageTarget={usageTarget}
-                setUsageTarget={setUsageTarget}
-              />
-            ))}
+            {sortedUsageTargets.map((lang) => {
+
+              /**
+               * If code was not passed for this target
+               * then we should disable the button.
+               */
+              const langValue = UsageTarget[lang];
+              const hasCode = code[langValue] !== undefined;
+              return (
+                  <CodeBlockButton
+                  key={`code-block-${lang}`}
+                  language={lang}
+                  usageTarget={usageTarget}
+                  setUsageTarget={setUsageTarget}
+                  disabled={!hasCode}
+                />)
+              ;
+            })}
           </div>
           <div className="playground__control-group">
             <ControlButton

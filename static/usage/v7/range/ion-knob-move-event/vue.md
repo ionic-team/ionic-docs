@@ -1,6 +1,6 @@
 ```html
 <template>
-  <ion-range @ionKnobMoveStart="onIonKnobMoveStart" @ionKnobMoveEnd="onIonKnobMoveEnd"></ion-range>
+  <ion-range aria-label="Range with knob events" @ionKnobMoveStart="onIonKnobMoveStart" @ionKnobMoveEnd="onIonKnobMoveEnd"></ion-range>
   <div>
     <ion-label>ionKnobMoveStart: {{moveStart}}</ion-label>
   </div>
