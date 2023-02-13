@@ -5,8 +5,8 @@ import { IonButton, IonToast } from '@ionic/react';
 function Example() {
   return (
     <>
-      <IonButton id="open-stacked-toast">Open Stacked Toast</IonButton>
-      <IonButton id="open-inline-toast">Open Inline Toast</IonButton>
+      <IonButton id="open-stacked-toast">Open Stacked Layout Toast</IonButton>
+      <IonButton id="open-inline-toast">Open Inline Layout Toast</IonButton>
       <IonToast
         trigger="open-inline-toast"
         message="This is a toast with a long message and a button that appears on the same line."
