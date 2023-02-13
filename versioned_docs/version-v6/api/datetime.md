@@ -299,8 +299,6 @@ This property is only supported when `preferWheel="false"`, and using a `present
 
 ### Using Array
 
-Note that provided `date` strings should not contain any time information.
-
 <HighlightedDatesArray />
 
 ### Using Callback
