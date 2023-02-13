@@ -32,6 +32,9 @@ import ShowingConfirmationButtons from '@site/static/usage/v6/datetime/buttons/s
 import CustomizingButtons from '@site/static/usage/v6/datetime/buttons/customizing-buttons/index.md';
 import CustomizingButtonTexts from '@site/static/usage/v6/datetime/buttons/customizing-button-texts/index.md';
 
+import HighlightedDatesArray from '@site/static/usage/v6/datetime/highlightedDates/array/index.md';
+import HighlightedDatesCallback from '@site/static/usage/v6/datetime/highlightedDates/callback/index.md';
+
 import MultipleDateSelection from '@site/static/usage/v6/datetime/multiple/index.md';
 
 import Theming from '@site/static/usage/v6/datetime/theming/index.md';
@@ -285,6 +288,24 @@ Developers can provide their own buttons for advanced custom behavior.
 `ion-datetime` has `confirm`, `cancel`, and `reset` methods that developers can call when clicking on custom buttons. The `reset` method also allows developers to provide a date to reset the datetime to.
 
 <CustomizingButtons />
+
+## Highlighting Specific Dates
+
+Using the `highlightedDates` property, developers can style particular dates with custom text or background colors. This property can be defined as either an array of dates and their colors, or a callback that receives an ISO string and returns the colors to use.
+
+:::note
+This property is only supported when `preferWheel="false"`, and using a `presentation` of either `"date"`, `"date-time"`, or `"time-date"`.
+:::
+
+### Using Array
+
+Note that provided `date` strings should not contain any time information.
+
+<HighlightedDatesArray />
+
+### Using Callback
+
+<HighlightedDatesCallback />
 
 ## Theming
 
