@@ -1,6 +1,6 @@
 ```html
 <template>
-  <ion-button @click="presentInlineToast()">Open Inline Layout Toast</ion-button>
+  <ion-button @click="presentBaselineToast()">Open Baseline Layout Toast</ion-button>
   <ion-button @click="presentStackedToast()">Click Stacked Layout Toast</ion-button>
 </template>
 
@@ -17,7 +17,7 @@
         await toast.present();
       }
       
-      const presentInlineToast = async () => {
+      const presentBaselineToast = async () => {
         await presentToast({
           duration: 3000,
           message: "This is a toast with a long message and a button that appears on the same line.",
@@ -38,7 +38,7 @@
         });
       }
       
-      return { presentInlineToast, presentStackedToast }
+      return { presentBaselineToast, presentStackedToast }
     }
   });
 </script>

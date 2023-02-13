@@ -1,6 +1,6 @@
 ```html
 <template>
-  <ion-button id="open-inline-toast">Open Inline Layout Toast</ion-button>
+  <ion-button id="open-inline-toast">Open Baseline Layout Toast</ion-button>
   <ion-button id="open-stacked-toast">Open Stacked Layout Toast</ion-button>
   <ion-toast 
     trigger="open-inline-toast" 

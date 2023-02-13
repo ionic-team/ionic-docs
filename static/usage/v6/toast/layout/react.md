@@ -18,7 +18,7 @@ function Example() {
           })
         }}
       >
-        Open Inline Layout Toast
+        Open Baseline Layout Toast
       </IonButton>
       <IonButton
         onClick={() => {

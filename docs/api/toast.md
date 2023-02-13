@@ -62,7 +62,7 @@ Toasts can be positioned at the top, bottom or middle of the viewport. The posit
 
 ## Layout
 
-Button containers within the toast can be displayed either inline with the message or stacked on separate lines using the `layout` property. The stacked layout should be used with buttons that have long text values. Additionally, buttons in a stacked toast layout can use a `side` value of either `start` or `end`, but not both.
+Button containers within the toast can be displayed either on the same line as the message or stacked on separate lines using the `layout` property. The stacked layout should be used with buttons that have long text values. Additionally, buttons in a stacked toast layout can use a `side` value of either `start` or `end`, but not both.
 
 import StackedPlayground from '@site/static/usage/v7/toast/layout/index.md';
 

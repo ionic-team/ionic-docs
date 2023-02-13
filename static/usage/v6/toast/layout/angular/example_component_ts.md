@@ -16,7 +16,7 @@ export class ExampleComponent {
     await toast.present();
   }
   
-  async presentInlineToast() {
+  async presentBaselineToast() {
     await this.presentToast({
       duration: 3000,
       message: "This is a toast with a long message and a button that appears on the same line.",
