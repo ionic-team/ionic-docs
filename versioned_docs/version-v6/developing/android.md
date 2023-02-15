@@ -51,7 +51,7 @@ In `~/.bashrc`, `~/.bash_profile`, or similar shell startup scripts, make the fo
    For Mac:
 
    ```shell
-   $ export ANDROID_SDK_ROOT=$HOME/Android/sdk
+   $ export ANDROID_SDK_ROOT=$HOME/Library/Android/sdk
    ```
 
    For Linux/Windows:
