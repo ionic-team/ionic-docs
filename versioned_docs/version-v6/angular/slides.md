@@ -10,6 +10,10 @@ title: Slides
   />
 </head>
 
+:::note
+This migration guide is compatible with Swiper 8. An updated guide for Swiper 9 is coming soon!
+:::
+
 We recommend <a href="http://swiperjs.com/" target="_blank" rel="noopener noreferrer">Swiper.js</a> if you need a modern touch slider component. It powers our `ion-slides` component, but we now recommend that developers use Swiper for Angular directly.
 
 This guide will go over how to get Swiper for Angular set up in your Ionic Framework application. It will also go over any migration information you may need to move from `ion-slides` to the official Swiper Angular integration.
@@ -25,7 +29,7 @@ npm install @ionic/angular@latest
 Once that is done, install the Swiper dependency in your project:
 
 ```shell
-npm install swiper
+npm install swiper@8
 ```
 
 Once that is done, we need to import the `SwiperModule` module. This should be done in your component's module file:
