@@ -59,7 +59,7 @@ function Example() {
         </IonSelect>
       </IonItem>
       <IonItem lines="none">
-        <IonLabel>Current food: {currentFood}</IonLabel>
+        <IonLabel>Current value: {currentFood}</IonLabel>
       </IonItem>
     </IonList>
   );
