@@ -16,6 +16,11 @@ title: Slides
 
 :::
 
+:::note
+This migration guide is compatible with Swiper 8. An updated guide for Swiper 9 is coming soon!
+:::
+
+
 We recommend <a href="http://swiperjs.com/" target="_blank" rel="noopener noreferrer">Swiper.js</a> if you need a modern touch slider component. This guide will go over how to get Swiper for Vue set up in your Ionic Framework application. It will also go over any migration information you may need to move from `ion-slides` to the official Swiper Vue integration.
 
 ## Getting Started
@@ -35,7 +40,7 @@ vue upgrade --next
 Once that is done, install the Swiper dependency in your project:
 
 ```shell
-npm install swiper
+npm install swiper@8
 ```
 
 ## Swiping with Style
