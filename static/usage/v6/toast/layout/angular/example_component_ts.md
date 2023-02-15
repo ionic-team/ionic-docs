@@ -1,6 +1,7 @@
 ```ts
 import { Component } from '@angular/core';
 import { ToastController } from '@ionic/angular';
+import type { ToastOptions } from '@ionic/angular';
 
 @Component({
   selector: 'app-example',
@@ -10,7 +11,7 @@ export class ExampleComponent {
 
   constructor(private toastController: ToastController) {}
   
-  async presentToast(opts) {
+  async presentToast(opts: ToastOptions) {
     const toast = await this.toastController.create(opts);
   
     await toast.present();

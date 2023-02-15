@@ -6,12 +6,13 @@
 
 <script lang="ts">
   import { IonButton, toastController } from '@ionic/vue';
+  import type { ToastOptions } from '@ionic/vue';
   import { defineComponent } from 'vue';
 
   export default defineComponent({
     components: { IonButton },
     setup() {
-      const presentToast = async (opts) => {
+      const presentToast = async (opts: ToastOptions) => {
         const toast = await toastController.create(opts);
       
         await toast.present();
