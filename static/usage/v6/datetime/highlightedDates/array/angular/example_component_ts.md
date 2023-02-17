@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   templateUrl: 'example.component.html',
 })
 export class ExampleComponent {
-  public highlightedDates = [
+  highlightedDates = [
     {
       date: '2023-01-05',
       textColor: '#800080',
