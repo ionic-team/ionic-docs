@@ -10,7 +10,7 @@ import { Item } from './types';
 export class ExampleComponent {
   @ViewChild('modal', { static: true }) modal!: IonModal;
   
-  selectedFruitsText: string = '0 Items';
+  selectedFruitsText = '0 Items';
   selectedFruits: string[] = [];
   
   fruits: Item[] = [
