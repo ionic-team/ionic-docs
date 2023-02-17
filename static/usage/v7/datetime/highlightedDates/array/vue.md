@@ -27,13 +27,13 @@
         },
         {
           date: '2023-01-20',
-          textColor: '#0000ff',
-          backgroundColor: '#add8e6',
+          textColor: 'var(--ion-color-secondary-contrast)',
+          backgroundColor: 'var(--ion-color-secondary)',
         },
         {
           date: '2023-01-23',
-          textColor: '#440ab8',
-          backgroundColor: '#d3c8e5'
+          textColor: 'rgb(68, 10, 184)',
+          backgroundColor: 'rgb(211, 200, 229)'
         }
       ];
       

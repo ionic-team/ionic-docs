@@ -19,8 +19,8 @@ export class ExampleComponent {
 
     if(utcDay % 3 === 0) {
       return {
-        textColor: '#0000ff',
-        backgroundColor: '#add8e6',
+        textColor: 'var(--ion-color-secondary-contrast)',
+        backgroundColor: 'var(--ion-color-secondary)',
       };
     }
 
