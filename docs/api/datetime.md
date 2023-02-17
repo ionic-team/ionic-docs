@@ -298,9 +298,13 @@ This property is only supported when `preferWheel="false"`, and using a `present
 
 ### Using Array
 
+An array is better when the highlights apply to fixed dates, such as due dates.
+
 <HighlightedDatesArray />
 
 ### Using Callback
+
+A callback is better when the highlighted dates are recurring, such as birthdays or recurring meetings.
 
 <HighlightedDatesCallback />
 
