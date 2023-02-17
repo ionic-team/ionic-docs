@@ -1,12 +1,13 @@
 ```ts
 import { Component, Input, Output, EventEmitter } from '@angular/core';
+import type { OnInit } from '@angular/core';
 import { Item } from './types';
 
 @Component({
   selector: 'app-typeahead',
   templateUrl: 'typeahead.component.html',
 })
-export class TypeaheadComponent {
+export class TypeaheadComponentt implements OnInit {
   @Input() items: Item[] = [];
   @Input() selectedItems: string[] = [];
   @Input() title = 'Select Items';
