@@ -1,7 +1,7 @@
 ```tsx
 import React, { useState } from 'react';
-  import { IonButton, IonButtons, IonCheckbox, IonContent, IonHeader, IonItem, IonLabel, IonList, IonTitle, IonSearchbar, IonToolbar } from '@ionic/react';
-  import type { CheckboxCustomEvent } from '@ionic/react';
+import { IonButton, IonButtons, IonCheckbox, IonContent, IonHeader, IonItem, IonLabel, IonList, IonTitle, IonSearchbar, IonToolbar } from '@ionic/react';
+import type { CheckboxCustomEvent } from '@ionic/react';
 import type { Item } from './types';
 
 interface TypeaheadProps {
