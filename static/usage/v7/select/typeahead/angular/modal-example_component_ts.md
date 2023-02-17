@@ -9,7 +9,7 @@ import { Item } from './types';
 export class TypeaheadComponent {
   @Input() items: Item[] = [];
   @Input() selectedItems: string[] = [];
-  @Input() title: string = 'Select Items';
+  @Input() title = 'Select Items';
 
   @Output() selectionCancel = new EventEmitter<void>();
   @Output() selectionChange = new EventEmitter<string[]>();
