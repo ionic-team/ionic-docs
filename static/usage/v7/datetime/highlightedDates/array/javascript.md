@@ -2,7 +2,7 @@
 <ion-datetime presentation="date" value="2023-01-01"></ion-datetime>
 
 <script>
-  const datetime = document.querySelector('ion-datetime');
+  var datetime = document.querySelector('ion-datetime');
   datetime.highlightedDates = [
     {
       date: '2023-01-05',

@@ -2,7 +2,7 @@
 <ion-datetime presentation="date"></ion-datetime>
 
 <script>
-  const datetime = document.querySelector('ion-datetime');
+  var datetime = document.querySelector('ion-datetime');
   datetime.highlightedDates = (isoString) => {
     const date = new Date(isoString);
     const utcDay = date.getUTCDate();
