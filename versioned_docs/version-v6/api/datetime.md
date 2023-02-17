@@ -293,6 +293,8 @@ Developers can provide their own buttons for advanced custom behavior.
 
 Using the `highlightedDates` property, developers can style particular dates with custom text or background colors. This property can be defined as either an array of dates and their colors, or a callback that receives an ISO string and returns the colors to use.
 
+To maintain a consistent user experience, the style of selected date(s) will always override custom highlights.
+
 :::note
 This property is only supported when `preferWheel="false"`, and using a `presentation` of either `"date"`, `"date-time"`, or `"time-date"`.
 :::
