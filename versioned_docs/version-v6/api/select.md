@@ -133,6 +133,14 @@ Customizing the interface dialog should be done by following the Customization s
 
 However, the Select Option does set a class for easier styling and allows for the ability to pass a class to the overlay option, see the [Select Options documentation](select-option.md) for usage examples of customizing options.
 
+## Typeahead Component
+
+Typeahead or autocomplete functionality can be built using existing Ionic components. We recommend using an `ion-modal` to make the best use of the available screen space.
+
+import TypeaheadExample from '@site/static/usage/v6/select/typeahead/index.md';
+
+<TypeaheadExample />
+
 ## Interfaces
 
 ### SelectChangeEventDetail
