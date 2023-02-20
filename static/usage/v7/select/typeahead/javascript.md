@@ -110,8 +110,7 @@
       const checked = workingSelectedFruits.includes(item.value);
       template += `
         <ion-item>
-          <ion-label>${item.text}</ion-label>
-          <ion-checkbox slot="end" value="${item.value}" checked="${checked}"></ion-checkbox>
+          <ion-checkbox value="${item.value}" checked="${checked}">${item.text}</ion-checkbox>
         </ion-item>
       `
     });

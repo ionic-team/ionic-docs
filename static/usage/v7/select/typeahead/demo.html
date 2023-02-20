@@ -13,7 +13,7 @@
   <body>
     <ion-app>
       <ion-content color="light">
-        <div class="container">
+        <div class="container">
           <ion-list inset="true">
             <ion-item button="true" detail="false" id="select-fruits">
               <ion-label>Favorite Fruits</ion-label>
@@ -124,8 +124,7 @@
           const checked = workingSelectedFruits.includes(item.value);
           template += `
             <ion-item>
-              <ion-label>${item.text}</ion-label>
-              <ion-checkbox slot="end" value="${item.value}" checked="${checked}"></ion-checkbox>
+              <ion-checkbox value="${item.value}" checked="${checked}">${item.text}</ion-checkbox>
             </ion-item>
           `
         });
