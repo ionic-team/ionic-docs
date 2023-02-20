@@ -1,6 +1,6 @@
 ```tsx
 import React, { useState } from 'react';
-import { IonButton, IonButtons, IonCheckbox, IonContent, IonHeader, IonItem, IonLabel, IonList, IonTitle, IonSearchbar, IonToolbar } from '@ionic/react';
+import { IonButton, IonButtons, IonCheckbox, IonContent, IonHeader, IonItem, IonList, IonTitle, IonSearchbar, IonToolbar } from '@ionic/react';
 import type { CheckboxCustomEvent } from '@ionic/react';
 import type { Item } from './types';
 
@@ -95,12 +95,11 @@ function AppTypeahead(props: TypeaheadProps) {
         <IonList id="modal-list" inset={true}>
           {filteredItems.map(item => (
             <IonItem key={item.value}>
-              <IonLabel>{item.text}</IonLabel>
               <IonCheckbox
                 value={item.value}
                 checked={isChecked(item.value)}
                 onIonChange={checkboxChange}
-              ></IonCheckbox>
+              >{item.text}</IonCheckbox>
             </IonItem>
           ))}
         </IonList>

@@ -21,19 +21,18 @@
         v-for="item in filteredItems"
         :key="item.value"
       >
-        <ion-label>{{ item.text }}</ion-label>
         <ion-checkbox
           :value="item.value" 
           :checked="isChecked(item.value)"
           @ionChange="checkboxChange($event)"
-        ></ion-checkbox>
+        >{{ item.text }}</ion-checkbox>
       </ion-item>
     </ion-list>
   </ion-content>
 </template>
 
 <script lang="ts">
-  import { IonButton, IonButtons, IonCheckbox, IonContent, IonHeader, IonItem, IonLabel, IonList, IonTitle, IonSearchbar, IonToolbar } from '@ionic/vue';
+  import { IonButton, IonButtons, IonCheckbox, IonContent, IonHeader, IonItem, IonList, IonTitle, IonSearchbar, IonToolbar } from '@ionic/vue';
   import type { CheckboxCustomEvent, SearchbarCustomEvent } from '@ionic/vue';
   import { defineComponent, ref } from 'vue';
 
@@ -47,7 +46,7 @@
       }
     },
     emits: ['selection-cancel', 'selection-change'],
-    components: { IonButton, IonButtons, IonCheckbox, IonContent, IonHeader, IonItem, IonLabel, IonList, IonTitle, IonSearchbar, IonToolbar },
+    components: { IonButton, IonButtons, IonCheckbox, IonContent, IonHeader, IonItem, IonList, IonTitle, IonSearchbar, IonToolbar },
     setup(props, { emit }) {
       const filteredItems = ref([...props.items]);
       const workingSelectedValues = ref([...props.selectedItems]);
