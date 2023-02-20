@@ -82,6 +82,11 @@ import Counter from '@site/static/usage/v7/input/counter/index.md';
 
 <Counter />
 
+## Filtering Data
+
+import FilteringData from '@site/static/usage/v7/input/filtering/index.md';
+
+<FilteringData />
 
 ## Theming
 
