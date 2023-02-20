@@ -82,7 +82,11 @@ import Counter from '@site/static/usage/v7/input/counter/index.md';
 
 <Counter />
 
-## Filtering Data
+## Updating Value in Response to User Input
+
+Developers can use the `ionInput` event to update the input value in response to user input such as a keypress. This is useful for filtering out invalid or unwanted characters.
+
+When storing the value in a state variable, we recommend updating both the state variable and the `ion-input` component value. This ensures that the state variable and the `ion-input` component value remain in sync.
 
 import FilteringData from '@site/static/usage/v7/input/filtering/index.md';
 
