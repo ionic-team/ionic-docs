@@ -9,6 +9,7 @@ import angular_example_component_ts from './angular/example_component_ts.md';
 
 <Playground
   size="medium"
+  version={6}
   code={{
     javascript,
     react,
