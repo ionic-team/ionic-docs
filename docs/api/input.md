@@ -82,7 +82,7 @@ import Counter from '@site/static/usage/v7/input/counter/index.md';
 
 <Counter />
 
-## Updating Value in Response to User Input
+## Filtering User Input
 
 Developers can use the `ionInput` event to update the input value in response to user input such as a keypress. This is useful for filtering out invalid or unwanted characters.
 
