@@ -24,7 +24,7 @@ Migrating an app from 4.x to 5.x requires a few updates to the API properties, C
 
 ### API and CSS Updates
 
-For a complete list of breaking changes from 4.x to 5.x, please refer to [the breaking changes document](https://github.com/ionic-team/ionic/blob/master/BREAKING.md#version-5x) in the Ionic core repo.
+For a complete list of breaking changes from 4.x to 5.x, please refer to [the breaking changes document](https://github.com/ionic-team/ionic/blob/main/BREAKING.md#version-5x) in the Ionic core repo.
 
 ### Packages and Dependencies
 
@@ -51,7 +51,7 @@ If you would like a fresh project starter, a new project base can be created fro
 ## Migrating from Ionic 3.0 to Ionic 4.0
 
 :::note
-For a **complete list of breaking changes** from Ionic 3 to Ionic 4, please refer to [the breaking changes document](https://github.com/ionic-team/ionic/blob/master/angular/BREAKING.md) in the Ionic core repo.
+For a **complete list of breaking changes** from Ionic 3 to Ionic 4, please refer to [the breaking changes document](https://github.com/ionic-team/ionic/blob/main/angular/BREAKING.md) in the Ionic core repo.
 :::
 
 We suggest the following general process when migrating an existing application from Ionic 3 to 4:
@@ -283,7 +283,7 @@ For a detailed explanation of lazy loading in V4 project, check out the [Angular
 
 ## Markup Changes
 
-Since v4 moved to Custom Elements, there's been a significant change to the markup for each component. These changes have all been made to follow the Custom Elements spec, and have been documented in a <a href="https://github.com/ionic-team/ionic/blob/master/angular/BREAKING.md#breaking-changes" target="_blank">dedicated file on GitHub</a>.
+Since v4 moved to Custom Elements, there's been a significant change to the markup for each component. These changes have all been made to follow the Custom Elements spec, and have been documented in a <a href="https://github.com/ionic-team/ionic/blob/main/angular/BREAKING.md#breaking-changes" target="_blank">dedicated file on GitHub</a>.
 
 To help with these markup changes, we've released a TSLint-based <a href="https://github.com/ionic-team/v4-migration-tslint" target="_blank">Migration Tool</a>, which detects issues and can even fix some of them automatically.
 
