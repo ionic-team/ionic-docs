@@ -208,8 +208,10 @@
   width: 0%;
 }
 
-.playground .frame-visible {
-  width: 100%;
+@media only screen and (max-width: 600px) {
+  .playground .frame-visible {
+    width: 100%;
+  }
 }
 
 /** Tabs **/
