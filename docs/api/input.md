@@ -1,12 +1,12 @@
 ---
 title: "ion-input"
 ---
-import Props from '@site/static/auto-generated/input/props.md';
-import Events from '@site/static/auto-generated/input/events.md';
-import Methods from '@site/static/auto-generated/input/methods.md';
-import Parts from '@site/static/auto-generated/input/parts.md';
-import CustomProps from '@site/static/auto-generated/input/custom-props.md';
-import Slots from '@site/static/auto-generated/input/slots.md';
+import Props from '@site/static/auto-generated/v7/input/props.md';
+import Events from '@site/static/auto-generated/v7/input/events.md';
+import Methods from '@site/static/auto-generated/v7/input/methods.md';
+import Parts from '@site/static/auto-generated/v7/input/parts.md';
+import CustomProps from '@site/static/auto-generated/v7/input/custom-props.md';
+import Slots from '@site/static/auto-generated/v7/input/slots.md';
 
 <head>
   <title>ion-input: Custom Input Value Type Styling and CSS Properties</title>

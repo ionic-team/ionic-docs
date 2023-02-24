@@ -1,12 +1,12 @@
 ---
 title: "ion-menu"
 ---
-import Props from '@site/static/auto-generated/menu/props.md';
-import Events from '@site/static/auto-generated/menu/events.md';
-import Methods from '@site/static/auto-generated/menu/methods.md';
-import Parts from '@site/static/auto-generated/menu/parts.md';
-import CustomProps from '@site/static/auto-generated/menu/custom-props.md';
-import Slots from '@site/static/auto-generated/menu/slots.md';
+import Props from '@site/static/auto-generated/v7/menu/props.md';
+import Events from '@site/static/auto-generated/v7/menu/events.md';
+import Methods from '@site/static/auto-generated/v7/menu/methods.md';
+import Parts from '@site/static/auto-generated/v7/menu/parts.md';
+import CustomProps from '@site/static/auto-generated/v7/menu/custom-props.md';
+import Slots from '@site/static/auto-generated/v7/menu/slots.md';
 
 <head>
   <title>ion-menu: API Framework Docs for Types of Menu Components</title>

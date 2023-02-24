@@ -1,12 +1,12 @@
 ---
 title: "ion-breadcrumbs"
 ---
-import Props from '@site/static/auto-generated/breadcrumbs/props.md';
-import Events from '@site/static/auto-generated/breadcrumbs/events.md';
-import Methods from '@site/static/auto-generated/breadcrumbs/methods.md';
-import Parts from '@site/static/auto-generated/breadcrumbs/parts.md';
-import CustomProps from '@site/static/auto-generated/breadcrumbs/custom-props.md';
-import Slots from '@site/static/auto-generated/breadcrumbs/slots.md';
+import Props from '@site/static/auto-generated/v7/breadcrumbs/props.md';
+import Events from '@site/static/auto-generated/v7/breadcrumbs/events.md';
+import Methods from '@site/static/auto-generated/v7/breadcrumbs/methods.md';
+import Parts from '@site/static/auto-generated/v7/breadcrumbs/parts.md';
+import CustomProps from '@site/static/auto-generated/v7/breadcrumbs/custom-props.md';
+import Slots from '@site/static/auto-generated/v7/breadcrumbs/slots.md';
 
 
 

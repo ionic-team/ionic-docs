@@ -1,12 +1,12 @@
 ---
 title: "ion-col"
 ---
-import Props from '@site/static/auto-generated/col/props.md';
-import Events from '@site/static/auto-generated/col/events.md';
-import Methods from '@site/static/auto-generated/col/methods.md';
-import Parts from '@site/static/auto-generated/col/parts.md';
-import CustomProps from '@site/static/auto-generated/col/custom-props.md';
-import Slots from '@site/static/auto-generated/col/slots.md';
+import Props from '@site/static/auto-generated/v7/col/props.md';
+import Events from '@site/static/auto-generated/v7/col/events.md';
+import Methods from '@site/static/auto-generated/v7/col/methods.md';
+import Parts from '@site/static/auto-generated/v7/col/parts.md';
+import CustomProps from '@site/static/auto-generated/v7/col/custom-props.md';
+import Slots from '@site/static/auto-generated/v7/col/slots.md';
 
 <head>
   <title>ion-col: Column Component Padding, Size and Other Properties</title>

@@ -1,12 +1,12 @@
 ---
 title: "ion-item-option"
 ---
-import Props from '@site/static/auto-generated/item-option/props.md';
-import Events from '@site/static/auto-generated/item-option/events.md';
-import Methods from '@site/static/auto-generated/item-option/methods.md';
-import Parts from '@site/static/auto-generated/item-option/parts.md';
-import CustomProps from '@site/static/auto-generated/item-option/custom-props.md';
-import Slots from '@site/static/auto-generated/item-option/slots.md';
+import Props from '@site/static/auto-generated/v7/item-option/props.md';
+import Events from '@site/static/auto-generated/v7/item-option/events.md';
+import Methods from '@site/static/auto-generated/v7/item-option/methods.md';
+import Parts from '@site/static/auto-generated/v7/item-option/parts.md';
+import CustomProps from '@site/static/auto-generated/v7/item-option/custom-props.md';
+import Slots from '@site/static/auto-generated/v7/item-option/slots.md';
 
 <head>
   <title>ion-item-options: Option Button Components for Ionic Apps</title>

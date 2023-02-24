@@ -4,12 +4,12 @@ title: "ion-tab-button"
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-import Props from '@site/static/auto-generated/tab-button/props.md';
-import Events from '@site/static/auto-generated/tab-button/events.md';
-import Methods from '@site/static/auto-generated/tab-button/methods.md';
-import Parts from '@site/static/auto-generated/tab-button/parts.md';
-import CustomProps from '@site/static/auto-generated/tab-button/custom-props.md';
-import Slots from '@site/static/auto-generated/tab-button/slots.md';
+import Props from '@site/static/auto-generated/v7/tab-button/props.md';
+import Events from '@site/static/auto-generated/v7/tab-button/events.md';
+import Methods from '@site/static/auto-generated/v7/tab-button/methods.md';
+import Parts from '@site/static/auto-generated/v7/tab-button/parts.md';
+import CustomProps from '@site/static/auto-generated/v7/tab-button/custom-props.md';
+import Slots from '@site/static/auto-generated/v7/tab-button/slots.md';
 
 
 

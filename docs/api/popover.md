@@ -1,12 +1,12 @@
 ---
 title: "ion-popover"
 ---
-import Props from '@site/static/auto-generated/popover/props.md';
-import Events from '@site/static/auto-generated/popover/events.md';
-import Methods from '@site/static/auto-generated/popover/methods.md';
-import Parts from '@site/static/auto-generated/popover/parts.md';
-import CustomProps from '@site/static/auto-generated/popover/custom-props.md';
-import Slots from '@site/static/auto-generated/popover/slots.md';
+import Props from '@site/static/auto-generated/v7/popover/props.md';
+import Events from '@site/static/auto-generated/v7/popover/events.md';
+import Methods from '@site/static/auto-generated/v7/popover/methods.md';
+import Parts from '@site/static/auto-generated/v7/popover/parts.md';
+import CustomProps from '@site/static/auto-generated/v7/popover/custom-props.md';
+import Slots from '@site/static/auto-generated/v7/popover/slots.md';
 
 <head>
   <title>ion-popover: iOS / Android Popover UI Component & CSS Properties</title>

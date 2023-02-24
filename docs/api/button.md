@@ -1,12 +1,12 @@
 ---
 title: "ion-button"
 ---
-import Props from '@site/static/auto-generated/button/props.md';
-import Events from '@site/static/auto-generated/button/events.md';
-import Methods from '@site/static/auto-generated/button/methods.md';
-import Parts from '@site/static/auto-generated/button/parts.md';
-import CustomProps from '@site/static/auto-generated/button/custom-props.md';
-import Slots from '@site/static/auto-generated/button/slots.md';
+import Props from '@site/static/auto-generated/v7/button/props.md';
+import Events from '@site/static/auto-generated/v7/button/events.md';
+import Methods from '@site/static/auto-generated/v7/button/methods.md';
+import Parts from '@site/static/auto-generated/v7/button/parts.md';
+import CustomProps from '@site/static/auto-generated/v7/button/custom-props.md';
+import Slots from '@site/static/auto-generated/v7/button/slots.md';
 
 <head>
   <title>ion-button: Design and Style Buttons with Custom CSS Properties</title>

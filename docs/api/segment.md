@@ -1,12 +1,12 @@
 ---
 title: "ion-segment"
 ---
-import Props from '@site/static/auto-generated/segment/props.md';
-import Events from '@site/static/auto-generated/segment/events.md';
-import Methods from '@site/static/auto-generated/segment/methods.md';
-import Parts from '@site/static/auto-generated/segment/parts.md';
-import CustomProps from '@site/static/auto-generated/segment/custom-props.md';
-import Slots from '@site/static/auto-generated/segment/slots.md';
+import Props from '@site/static/auto-generated/v7/segment/props.md';
+import Events from '@site/static/auto-generated/v7/segment/events.md';
+import Methods from '@site/static/auto-generated/v7/segment/methods.md';
+import Parts from '@site/static/auto-generated/v7/segment/parts.md';
+import CustomProps from '@site/static/auto-generated/v7/segment/custom-props.md';
+import Slots from '@site/static/auto-generated/v7/segment/slots.md';
 
 <head>
   <title>ion-segment: API Documentation for Segmented Controls</title>

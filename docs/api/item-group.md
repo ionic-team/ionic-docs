@@ -1,12 +1,12 @@
 ---
 title: "ion-item-group"
 ---
-import Props from '@site/static/auto-generated/item-group/props.md';
-import Events from '@site/static/auto-generated/item-group/events.md';
-import Methods from '@site/static/auto-generated/item-group/methods.md';
-import Parts from '@site/static/auto-generated/item-group/parts.md';
-import CustomProps from '@site/static/auto-generated/item-group/custom-props.md';
-import Slots from '@site/static/auto-generated/item-group/slots.md';
+import Props from '@site/static/auto-generated/v7/item-group/props.md';
+import Events from '@site/static/auto-generated/v7/item-group/events.md';
+import Methods from '@site/static/auto-generated/v7/item-group/methods.md';
+import Parts from '@site/static/auto-generated/v7/item-group/parts.md';
+import CustomProps from '@site/static/auto-generated/v7/item-group/custom-props.md';
+import Slots from '@site/static/auto-generated/v7/item-group/slots.md';
 
 <head>
   <title>ion-item-group: Group Items to Divide into Multiple Sections</title>
