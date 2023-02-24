@@ -2,12 +2,12 @@
 title: 'ion-chip'
 ---
 
-import Props from '@site/static/auto-generated/chip/props.md';
-import Events from '@site/static/auto-generated/chip/events.md';
-import Methods from '@site/static/auto-generated/chip/methods.md';
-import Parts from '@site/static/auto-generated/chip/parts.md';
-import CustomProps from '@site/static/auto-generated/chip/custom-props.md';
-import Slots from '@site/static/auto-generated/chip/slots.md';
+import Props from '@site/static/auto-generated/v6/chip/props.md';
+import Events from '@site/static/auto-generated/v6/chip/events.md';
+import Methods from '@site/static/auto-generated/v6/chip/methods.md';
+import Parts from '@site/static/auto-generated/v6/chip/parts.md';
+import CustomProps from '@site/static/auto-generated/v6/chip/custom-props.md';
+import Slots from '@site/static/auto-generated/v6/chip/slots.md';
 
 <head>
   <title>ion-chip: Name, Text, Icon and Avatar for Ionic Framework Apps</title>

@@ -1,12 +1,13 @@
 ---
-title: "ion-fab-list"
+title: 'ion-fab-list'
 ---
-import Props from '@site/static/auto-generated/fab-list/props.md';
-import Events from '@site/static/auto-generated/fab-list/events.md';
-import Methods from '@site/static/auto-generated/fab-list/methods.md';
-import Parts from '@site/static/auto-generated/fab-list/parts.md';
-import CustomProps from '@site/static/auto-generated/fab-list/custom-props.md';
-import Slots from '@site/static/auto-generated/fab-list/slots.md';
+
+import Props from '@site/static/auto-generated/v6/fab-list/props.md';
+import Events from '@site/static/auto-generated/v6/fab-list/events.md';
+import Methods from '@site/static/auto-generated/v6/fab-list/methods.md';
+import Parts from '@site/static/auto-generated/v6/fab-list/parts.md';
+import CustomProps from '@site/static/auto-generated/v6/fab-list/custom-props.md';
+import Slots from '@site/static/auto-generated/v6/fab-list/slots.md';
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
@@ -17,19 +18,25 @@ The fab list component is a container for multiple [fab buttons](./fab-button). 
 For usage examples, see the [fab documentation](./fab).
 
 ## Properties
+
 <Props />
 
 ## Events
+
 <Events />
 
 ## Methods
+
 <Methods />
 
 ## CSS Shadow Parts
+
 <Parts />
 
 ## CSS Custom Properties
+
 <CustomProps />
 
 ## Slots
+
 <Slots />

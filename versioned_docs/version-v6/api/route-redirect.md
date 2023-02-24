@@ -1,35 +1,36 @@
 ---
-title: "ion-route-redirect"
+title: 'ion-route-redirect'
 ---
 
-import Props from '@site/static/auto-generated/route-redirect/props.md';
-import Events from '@site/static/auto-generated/route-redirect/events.md';
-import Methods from '@site/static/auto-generated/route-redirect/methods.md';
-import Parts from '@site/static/auto-generated/route-redirect/parts.md';
-import CustomProps from '@site/static/auto-generated/route-redirect/custom-props.md';
-import Slots from '@site/static/auto-generated/route-redirect/slots.md';
+import Props from '@site/static/auto-generated/v6/route-redirect/props.md';
+import Events from '@site/static/auto-generated/v6/route-redirect/events.md';
+import Methods from '@site/static/auto-generated/v6/route-redirect/methods.md';
+import Parts from '@site/static/auto-generated/v6/route-redirect/parts.md';
+import CustomProps from '@site/static/auto-generated/v6/route-redirect/custom-props.md';
+import Slots from '@site/static/auto-generated/v6/route-redirect/slots.md';
 
 <head>
   <title>ion-route-redirect Plugin: Redirect 'from' a URL 'to' Another URL</title>
-  <meta name="description" content="ion-route-redirect is used with as a direct child of an ion-router and redirects 'from' a URL 'to' another URL. Read to learn about the route redirect plugin." />
+  <meta
+    name="description"
+    content="ion-route-redirect is used with as a direct child of an ion-router and redirects 'from' a URL 'to' another URL. Read to learn about the route redirect plugin."
+  />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
-
 A route redirect can only be used with an `ion-router` as a direct child of it.
 
 :::note
- Note: this component should only be used with vanilla and Stencil JavaScript projects. For Angular projects, use [`ion-router-outlet`](router-outlet.md) and the Angular router.
+Note: this component should only be used with vanilla and Stencil JavaScript projects. For Angular projects, use [`ion-router-outlet`](router-outlet.md) and the Angular router.
 :::
 
-
 The route redirect has two configurable properties:
- - `from`
- - `to`
+
+- `from`
+- `to`
 
 It redirects "from" a URL "to" another URL. When the defined `ion-route-redirect` rule matches, the router will redirect from the path specified in the `from` property to the path in the `to` property. In order for a redirect to occur the `from` path needs to be an exact match to the navigated URL.
-
 
 ## Multiple Route Redirects
 
@@ -47,9 +48,6 @@ Take the following two redirects:
 ```
 
 If the user navigates to `/admin` the router will redirect to `/login` and stop there. It will never evaluate more than one redirect.
-
-
-
 
 ## Usage
 
@@ -96,19 +94,25 @@ routeRedirect.setAttribute('to', isLoggedIn ? undefined : '/login');
 ```
 
 ## Properties
+
 <Props />
 
 ## Events
+
 <Events />
 
 ## Methods
+
 <Methods />
 
 ## CSS Shadow Parts
+
 <Parts />
 
 ## CSS Custom Properties
+
 <CustomProps />
 
 ## Slots
+
 <Slots />

@@ -2,12 +2,12 @@
 title: 'ion-note'
 ---
 
-import Props from '@site/static/auto-generated/note/props.md';
-import Events from '@site/static/auto-generated/note/events.md';
-import Methods from '@site/static/auto-generated/note/methods.md';
-import Parts from '@site/static/auto-generated/note/parts.md';
-import CustomProps from '@site/static/auto-generated/note/custom-props.md';
-import Slots from '@site/static/auto-generated/note/slots.md';
+import Props from '@site/static/auto-generated/v6/note/props.md';
+import Events from '@site/static/auto-generated/v6/note/events.md';
+import Methods from '@site/static/auto-generated/v6/note/methods.md';
+import Parts from '@site/static/auto-generated/v6/note/parts.md';
+import CustomProps from '@site/static/auto-generated/v6/note/custom-props.md';
+import Slots from '@site/static/auto-generated/v6/note/slots.md';
 
 <head>
   <title>ion-note: Note Text Elements for iOS and Android Ionic Apps</title>

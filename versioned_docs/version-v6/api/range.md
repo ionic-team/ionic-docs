@@ -2,12 +2,12 @@
 title: 'ion-range'
 ---
 
-import Props from '@site/static/auto-generated/range/props.md';
-import Events from '@site/static/auto-generated/range/events.md';
-import Methods from '@site/static/auto-generated/range/methods.md';
-import Parts from '@site/static/auto-generated/range/parts.md';
-import CustomProps from '@site/static/auto-generated/range/custom-props.md';
-import Slots from '@site/static/auto-generated/range/slots.md';
+import Props from '@site/static/auto-generated/v6/range/props.md';
+import Events from '@site/static/auto-generated/v6/range/events.md';
+import Methods from '@site/static/auto-generated/v6/range/methods.md';
+import Parts from '@site/static/auto-generated/v6/range/parts.md';
+import CustomProps from '@site/static/auto-generated/v6/range/custom-props.md';
+import Slots from '@site/static/auto-generated/v6/range/slots.md';
 
 <head>
   <title>Range Slider | ion-range: Slider Knob Controls with Labels</title>

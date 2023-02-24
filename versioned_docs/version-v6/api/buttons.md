@@ -2,12 +2,12 @@
 title: 'ion-buttons'
 ---
 
-import Props from '@site/static/auto-generated/buttons/props.md';
-import Events from '@site/static/auto-generated/buttons/events.md';
-import Methods from '@site/static/auto-generated/buttons/methods.md';
-import Parts from '@site/static/auto-generated/buttons/parts.md';
-import CustomProps from '@site/static/auto-generated/buttons/custom-props.md';
-import Slots from '@site/static/auto-generated/buttons/slots.md';
+import Props from '@site/static/auto-generated/v6/buttons/props.md';
+import Events from '@site/static/auto-generated/v6/buttons/events.md';
+import Methods from '@site/static/auto-generated/v6/buttons/methods.md';
+import Parts from '@site/static/auto-generated/v6/buttons/parts.md';
+import CustomProps from '@site/static/auto-generated/v6/buttons/custom-props.md';
+import Slots from '@site/static/auto-generated/v6/buttons/slots.md';
 
 <head>
   <title>ion-buttons: Toolbar Element with Named Slots for Buttons</title>

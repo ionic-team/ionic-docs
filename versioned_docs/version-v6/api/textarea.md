@@ -2,12 +2,12 @@
 title: 'ion-textarea'
 ---
 
-import Props from '@site/static/auto-generated/textarea/props.md';
-import Events from '@site/static/auto-generated/textarea/events.md';
-import Methods from '@site/static/auto-generated/textarea/methods.md';
-import Parts from '@site/static/auto-generated/textarea/parts.md';
-import CustomProps from '@site/static/auto-generated/textarea/custom-props.md';
-import Slots from '@site/static/auto-generated/textarea/slots.md';
+import Props from '@site/static/auto-generated/v6/textarea/props.md';
+import Events from '@site/static/auto-generated/v6/textarea/events.md';
+import Methods from '@site/static/auto-generated/v6/textarea/methods.md';
+import Parts from '@site/static/auto-generated/v6/textarea/parts.md';
+import CustomProps from '@site/static/auto-generated/v6/textarea/custom-props.md';
+import Slots from '@site/static/auto-generated/v6/textarea/slots.md';
 
 <head>
   <title>Ionic Textarea Component and CSS Properties for Multi-Line Input</title>

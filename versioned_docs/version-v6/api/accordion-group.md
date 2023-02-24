@@ -1,12 +1,13 @@
 ---
-title: "ion-accordion-group"
+title: 'ion-accordion-group'
 ---
-import Props from '@site/static/auto-generated/accordion-group/props.md';
-import Events from '@site/static/auto-generated/accordion-group/events.md';
-import Methods from '@site/static/auto-generated/accordion-group/methods.md';
-import Parts from '@site/static/auto-generated/accordion-group/parts.md';
-import CustomProps from '@site/static/auto-generated/accordion-group/custom-props.md';
-import Slots from '@site/static/auto-generated/accordion-group/slots.md';
+
+import Props from '@site/static/auto-generated/v6/accordion-group/props.md';
+import Events from '@site/static/auto-generated/v6/accordion-group/events.md';
+import Methods from '@site/static/auto-generated/v6/accordion-group/methods.md';
+import Parts from '@site/static/auto-generated/v6/accordion-group/parts.md';
+import CustomProps from '@site/static/auto-generated/v6/accordion-group/custom-props.md';
+import Slots from '@site/static/auto-generated/v6/accordion-group/slots.md';
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
@@ -15,7 +16,6 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 Accordion group is a container for accordion instances. It manages the state of the accordions and provides keyboard navigation.
 
 See the [Accordion](./accordion) documentation for more information.
-
 
 ## Interfaces
 
@@ -38,22 +38,26 @@ interface AccordionGroupCustomEvent<T = any> extends CustomEvent {
 }
 ```
 
-
-
 ## Properties
+
 <Props />
 
 ## Events
+
 <Events />
 
 ## Methods
+
 <Methods />
 
 ## CSS Shadow Parts
+
 <Parts />
 
 ## CSS Custom Properties
+
 <CustomProps />
 
 ## Slots
+
 <Slots />

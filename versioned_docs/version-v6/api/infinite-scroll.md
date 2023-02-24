@@ -2,12 +2,12 @@
 title: 'ion-infinite-scroll'
 ---
 
-import Props from '@site/static/auto-generated/infinite-scroll/props.md';
-import Events from '@site/static/auto-generated/infinite-scroll/events.md';
-import Methods from '@site/static/auto-generated/infinite-scroll/methods.md';
-import Parts from '@site/static/auto-generated/infinite-scroll/parts.md';
-import CustomProps from '@site/static/auto-generated/infinite-scroll/custom-props.md';
-import Slots from '@site/static/auto-generated/infinite-scroll/slots.md';
+import Props from '@site/static/auto-generated/v6/infinite-scroll/props.md';
+import Events from '@site/static/auto-generated/v6/infinite-scroll/events.md';
+import Methods from '@site/static/auto-generated/v6/infinite-scroll/methods.md';
+import Parts from '@site/static/auto-generated/v6/infinite-scroll/parts.md';
+import CustomProps from '@site/static/auto-generated/v6/infinite-scroll/custom-props.md';
+import Slots from '@site/static/auto-generated/v6/infinite-scroll/slots.md';
 
 <head>
   <title>Infinite Scroller | ion-infinite-scroll Action Component</title>

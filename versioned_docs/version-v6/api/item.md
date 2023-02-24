@@ -2,12 +2,12 @@
 title: 'ion-item'
 ---
 
-import Props from '@site/static/auto-generated/item/props.md';
-import Events from '@site/static/auto-generated/item/events.md';
-import Methods from '@site/static/auto-generated/item/methods.md';
-import Parts from '@site/static/auto-generated/item/parts.md';
-import CustomProps from '@site/static/auto-generated/item/custom-props.md';
-import Slots from '@site/static/auto-generated/item/slots.md';
+import Props from '@site/static/auto-generated/v6/item/props.md';
+import Events from '@site/static/auto-generated/v6/item/events.md';
+import Methods from '@site/static/auto-generated/v6/item/methods.md';
+import Parts from '@site/static/auto-generated/v6/item/parts.md';
+import CustomProps from '@site/static/auto-generated/v6/item/custom-props.md';
+import Slots from '@site/static/auto-generated/v6/item/slots.md';
 
 <head>
   <title>ion-item: Input, Edit, or Delete iOS and Android Item Elements</title>
