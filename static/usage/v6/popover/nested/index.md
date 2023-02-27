@@ -5,4 +5,9 @@ import react from './react.md';
 import vue from './vue.md';
 import angular from './angular.md';
 
-<Playground size="medium" code={{ javascript, react, vue, angular }} src="usage/v6/popover/nested/demo.html" />
+<Playground
+  version="6"
+  size="medium"
+  code={{ javascript, react, vue, angular }}
+  src="usage/v6/popover/nested/demo.html"
+/>

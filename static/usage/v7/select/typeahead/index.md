@@ -18,6 +18,7 @@ import angular_modal_example_component_html from './angular/modal-example_compon
 import angular_types_ts from './angular/angular_types_ts.md';
 
 <Playground
+  version="7"
   code={{ 
     javascript, 
     react: {
