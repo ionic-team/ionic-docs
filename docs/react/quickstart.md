@@ -239,10 +239,10 @@ Now let's wire up a click handler to this. What we want to do is when we click t
 
 ```tsx
 import { add } from 'ionicons/icons';
-import { useHistory } from "react-router";
+import { useHistory } from 'react-router';
 ...
 const Home: React.FC<RouteComponentProps> = () => {
-const history = useHistory();
+  const history = useHistory();
   return (
     <IonPage>
       <IonHeader>...</IonHeader>
