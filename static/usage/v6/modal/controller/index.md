@@ -13,6 +13,7 @@ import angular_modal_example_component_ts from './angular/modal-example_componen
 import angular_modal_example_component_html from './angular/modal-example_component_html.md';
 
 <Playground
+  version="6"
   code={{
     javascript,
     react,

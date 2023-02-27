@@ -6,6 +6,7 @@ import react from './react.md';
 import angular from './angular.md';
 
 <Playground
+  version="6"
   code={{
     javascript,
     react,

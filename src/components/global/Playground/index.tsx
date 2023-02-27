@@ -96,11 +96,6 @@ interface UsageTargetOptions {
      */
     declarations?: string[];
   };
-  /**
-   * The major version of Ionic to use in the generated Stackblitz examples.
-   * This will also load assets for Stackblitz from the specified version directory.
-   */
-  version?: number;
 }
 
 /**
@@ -120,7 +115,7 @@ export default function Playground({
   mode,
   devicePreview,
   includeIonContent = true,
-  version = 6,
+  version,
 }: {
   code: { [key in UsageTarget]?: MdxContent | UsageTargetOptions };
   title?: string;
@@ -135,6 +130,10 @@ export default function Playground({
   description?: string;
   devicePreview?: boolean;
   includeIonContent: boolean;
+  /**
+   * The major version of Ionic to use in the generated Stackblitz examples.
+   * This will also load assets for Stackblitz from the specified version directory.
+   */
   version: number;
 }) {
   if (!code || Object.keys(code).length === 0) {
@@ -143,6 +142,10 @@ export default function Playground({
   }
   if (typeof mode !== 'undefined' && mode !== 'ios' && mode !== 'md') {
     console.warn(`Invalid mode provided: ${mode}. Accepted values are: "ios" or "md".`);
+    return;
+  }
+  if (typeof version === 'undefined') {
+    console.warn('You must specify a `version` for the Playground example. For example: <Playground version="7" />');
     return;
   }
 
