@@ -314,6 +314,7 @@ module.exports = {
         },
       };
     },
+    path.resolve(__dirname, 'plugins', 'docusaurus-plugin-ionic-component-api'),
   ],
   themes: [
     [
