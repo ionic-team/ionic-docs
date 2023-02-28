@@ -8,8 +8,6 @@
 .docusaurus
 .cache-loader
 src/components/page/reference/ReleaseNotes/release-notes.json
-docs/api/auto-generated/
-versioned_docs/**/api/auto-generated/
 
 # Misc
 .DS_Store
