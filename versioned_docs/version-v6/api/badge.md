@@ -2,12 +2,12 @@
 title: 'ion-badge'
 ---
 
-import Props from '@site/static/auto-generated/v6/badge/props.md';
-import Events from '@site/static/auto-generated/v6/badge/events.md';
-import Methods from '@site/static/auto-generated/v6/badge/methods.md';
-import Parts from '@site/static/auto-generated/v6/badge/parts.md';
-import CustomProps from '@site/static/auto-generated/v6/badge/custom-props.md';
-import Slots from '@site/static/auto-generated/v6/badge/slots.md';
+import Props from './auto-generated/badge/props.md';
+import Events from './auto-generated/badge/events.md';
+import Methods from './auto-generated/badge/methods.md';
+import Parts from './auto-generated/badge/parts.md';
+import CustomProps from './auto-generated/badge/custom-props.md';
+import Slots from './auto-generated/badge/slots.md';
 
 <head>
   <title>Badges | ion-badge: iOS & Android App Notification Badge Icons</title>

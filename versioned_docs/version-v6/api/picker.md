@@ -2,12 +2,12 @@
 title: 'ion-picker'
 ---
 
-import Props from '@site/static/auto-generated/v6/picker/props.md';
-import Events from '@site/static/auto-generated/v6/picker/events.md';
-import Methods from '@site/static/auto-generated/v6/picker/methods.md';
-import Parts from '@site/static/auto-generated/v6/picker/parts.md';
-import CustomProps from '@site/static/auto-generated/v6/picker/custom-props.md';
-import Slots from '@site/static/auto-generated/v6/picker/slots.md';
+import Props from './auto-generated/picker/props.md';
+import Events from './auto-generated/picker/events.md';
+import Methods from './auto-generated/picker/methods.md';
+import Parts from './auto-generated/picker/parts.md';
+import CustomProps from './auto-generated/picker/custom-props.md';
+import Slots from './auto-generated/picker/slots.md';
 
 <head>
   <title>Picker | Display Buttons and Columns for ion-picker on Ionic Apps</title>

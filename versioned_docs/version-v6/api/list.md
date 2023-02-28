@@ -2,12 +2,12 @@
 title: 'ion-list'
 ---
 
-import Props from '@site/static/auto-generated/v6/list/props.md';
-import Events from '@site/static/auto-generated/v6/list/events.md';
-import Methods from '@site/static/auto-generated/v6/list/methods.md';
-import Parts from '@site/static/auto-generated/v6/list/parts.md';
-import CustomProps from '@site/static/auto-generated/v6/list/custom-props.md';
-import Slots from '@site/static/auto-generated/v6/list/slots.md';
+import Props from './auto-generated/list/props.md';
+import Events from './auto-generated/list/events.md';
+import Methods from './auto-generated/list/methods.md';
+import Parts from './auto-generated/list/parts.md';
+import CustomProps from './auto-generated/list/custom-props.md';
+import Slots from './auto-generated/list/slots.md';
 
 <head>
   <title>ion-list: Item List View Component for iOS and Android Apps</title>

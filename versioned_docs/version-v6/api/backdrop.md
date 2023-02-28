@@ -2,12 +2,12 @@
 title: 'ion-backdrop'
 ---
 
-import Props from '@site/static/auto-generated/v6/backdrop/props.md';
-import Events from '@site/static/auto-generated/v6/backdrop/events.md';
-import Methods from '@site/static/auto-generated/v6/backdrop/methods.md';
-import Parts from '@site/static/auto-generated/v6/backdrop/parts.md';
-import CustomProps from '@site/static/auto-generated/v6/backdrop/custom-props.md';
-import Slots from '@site/static/auto-generated/v6/backdrop/slots.md';
+import Props from './auto-generated/backdrop/props.md';
+import Events from './auto-generated/backdrop/events.md';
+import Methods from './auto-generated/backdrop/methods.md';
+import Parts from './auto-generated/backdrop/parts.md';
+import CustomProps from './auto-generated/backdrop/custom-props.md';
+import Slots from './auto-generated/backdrop/slots.md';
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 

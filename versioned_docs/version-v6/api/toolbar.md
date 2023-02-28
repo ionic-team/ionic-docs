@@ -2,12 +2,12 @@
 title: 'ion-toolbar'
 ---
 
-import Props from '@site/static/auto-generated/v6/toolbar/props.md';
-import Events from '@site/static/auto-generated/v6/toolbar/events.md';
-import Methods from '@site/static/auto-generated/v6/toolbar/methods.md';
-import Parts from '@site/static/auto-generated/v6/toolbar/parts.md';
-import CustomProps from '@site/static/auto-generated/v6/toolbar/custom-props.md';
-import Slots from '@site/static/auto-generated/v6/toolbar/slots.md';
+import Props from './auto-generated/toolbar/props.md';
+import Events from './auto-generated/toolbar/events.md';
+import Methods from './auto-generated/toolbar/methods.md';
+import Parts from './auto-generated/toolbar/parts.md';
+import CustomProps from './auto-generated/toolbar/custom-props.md';
+import Slots from './auto-generated/toolbar/slots.md';
 
 <head>
   <title>Toolbar | Customize App Menu Toolbar Buttons and Icons</title>

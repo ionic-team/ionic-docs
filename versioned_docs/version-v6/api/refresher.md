@@ -2,12 +2,12 @@
 title: 'ion-refresher'
 ---
 
-import Props from '@site/static/auto-generated/v6/refresher/props.md';
-import Events from '@site/static/auto-generated/v6/refresher/events.md';
-import Methods from '@site/static/auto-generated/v6/refresher/methods.md';
-import Parts from '@site/static/auto-generated/v6/refresher/parts.md';
-import CustomProps from '@site/static/auto-generated/v6/refresher/custom-props.md';
-import Slots from '@site/static/auto-generated/v6/refresher/slots.md';
+import Props from './auto-generated/refresher/props.md';
+import Events from './auto-generated/refresher/events.md';
+import Methods from './auto-generated/refresher/methods.md';
+import Parts from './auto-generated/refresher/parts.md';
+import CustomProps from './auto-generated/refresher/custom-props.md';
+import Slots from './auto-generated/refresher/slots.md';
 
 <head>
   <title>ion-refresher: Pull-to-Refresh Page Content on Ionic Apps</title>

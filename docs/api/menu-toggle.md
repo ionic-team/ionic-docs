@@ -1,12 +1,12 @@
 ---
 title: "ion-menu-toggle"
 ---
-import Props from '@site/static/auto-generated/v7/menu-toggle/props.md';
-import Events from '@site/static/auto-generated/v7/menu-toggle/events.md';
-import Methods from '@site/static/auto-generated/v7/menu-toggle/methods.md';
-import Parts from '@site/static/auto-generated/v7/menu-toggle/parts.md';
-import CustomProps from '@site/static/auto-generated/v7/menu-toggle/custom-props.md';
-import Slots from '@site/static/auto-generated/v7/menu-toggle/slots.md';
+import Props from './auto-generated/menu-toggle/props.md';
+import Events from './auto-generated/menu-toggle/events.md';
+import Methods from './auto-generated/menu-toggle/methods.md';
+import Parts from './auto-generated/menu-toggle/parts.md';
+import CustomProps from './auto-generated/menu-toggle/custom-props.md';
+import Slots from './auto-generated/menu-toggle/slots.md';
 
 <head>
   <title>ion-menu-toggle | MenuToggle Component to Open/Close Active Menus</title>

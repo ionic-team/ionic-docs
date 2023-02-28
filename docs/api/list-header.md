@@ -1,12 +1,12 @@
 ---
 title: "ion-list-header"
 ---
-import Props from '@site/static/auto-generated/v7/list-header/props.md';
-import Events from '@site/static/auto-generated/v7/list-header/events.md';
-import Methods from '@site/static/auto-generated/v7/list-header/methods.md';
-import Parts from '@site/static/auto-generated/v7/list-header/parts.md';
-import CustomProps from '@site/static/auto-generated/v7/list-header/custom-props.md';
-import Slots from '@site/static/auto-generated/v7/list-header/slots.md';
+import Props from './auto-generated/list-header/props.md';
+import Events from './auto-generated/list-header/events.md';
+import Methods from './auto-generated/list-header/methods.md';
+import Parts from './auto-generated/list-header/parts.md';
+import CustomProps from './auto-generated/list-header/custom-props.md';
+import Slots from './auto-generated/list-header/slots.md';
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 

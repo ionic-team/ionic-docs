@@ -2,12 +2,12 @@
 title: 'ion-checkbox'
 ---
 
-import Props from '@site/static/auto-generated/v6/checkbox/props.md';
-import Events from '@site/static/auto-generated/v6/checkbox/events.md';
-import Methods from '@site/static/auto-generated/v6/checkbox/methods.md';
-import Parts from '@site/static/auto-generated/v6/checkbox/parts.md';
-import CustomProps from '@site/static/auto-generated/v6/checkbox/custom-props.md';
-import Slots from '@site/static/auto-generated/v6/checkbox/slots.md';
+import Props from './auto-generated/checkbox/props.md';
+import Events from './auto-generated/checkbox/events.md';
+import Methods from './auto-generated/checkbox/methods.md';
+import Parts from './auto-generated/checkbox/parts.md';
+import CustomProps from './auto-generated/checkbox/custom-props.md';
+import Slots from './auto-generated/checkbox/slots.md';
 
 <head>
   <title>ion-checkboxes: Ionic App Component to Select Multiple Options</title>

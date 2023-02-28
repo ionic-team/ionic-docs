@@ -2,12 +2,12 @@
 title: 'ion-back-button'
 ---
 
-import Props from '@site/static/auto-generated/v6/back-button/props.md';
-import Events from '@site/static/auto-generated/v6/back-button/events.md';
-import Methods from '@site/static/auto-generated/v6/back-button/methods.md';
-import Parts from '@site/static/auto-generated/v6/back-button/parts.md';
-import CustomProps from '@site/static/auto-generated/v6/back-button/custom-props.md';
-import Slots from '@site/static/auto-generated/v6/back-button/slots.md';
+import Props from './auto-generated/back-button/props.md';
+import Events from './auto-generated/back-button/events.md';
+import Methods from './auto-generated/back-button/methods.md';
+import Parts from './auto-generated/back-button/parts.md';
+import CustomProps from './auto-generated/back-button/custom-props.md';
+import Slots from './auto-generated/back-button/slots.md';
 
 <head>
   <title>Back Button | ion-back-button: Custom Menu Icon for Applications</title>

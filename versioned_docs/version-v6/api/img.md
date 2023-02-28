@@ -2,12 +2,12 @@
 title: 'ion-img'
 ---
 
-import Props from '@site/static/auto-generated/v6/img/props.md';
-import Events from '@site/static/auto-generated/v6/img/events.md';
-import Methods from '@site/static/auto-generated/v6/img/methods.md';
-import Parts from '@site/static/auto-generated/v6/img/parts.md';
-import CustomProps from '@site/static/auto-generated/v6/img/custom-props.md';
-import Slots from '@site/static/auto-generated/v6/img/slots.md';
+import Props from './auto-generated/img/props.md';
+import Events from './auto-generated/img/events.md';
+import Methods from './auto-generated/img/methods.md';
+import Parts from './auto-generated/img/parts.md';
+import CustomProps from './auto-generated/img/custom-props.md';
+import Slots from './auto-generated/img/slots.md';
 
 <head>
   <title>Img Tag to Lazy Load Images in Viewport | ion-img Tag</title>

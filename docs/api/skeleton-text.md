@@ -1,12 +1,12 @@
 ---
 title: "ion-skeleton-text"
 ---
-import Props from '@site/static/auto-generated/v7/skeleton-text/props.md';
-import Events from '@site/static/auto-generated/v7/skeleton-text/events.md';
-import Methods from '@site/static/auto-generated/v7/skeleton-text/methods.md';
-import Parts from '@site/static/auto-generated/v7/skeleton-text/parts.md';
-import CustomProps from '@site/static/auto-generated/v7/skeleton-text/custom-props.md';
-import Slots from '@site/static/auto-generated/v7/skeleton-text/slots.md';
+import Props from './auto-generated/skeleton-text/props.md';
+import Events from './auto-generated/skeleton-text/events.md';
+import Methods from './auto-generated/skeleton-text/methods.md';
+import Parts from './auto-generated/skeleton-text/parts.md';
+import CustomProps from './auto-generated/skeleton-text/custom-props.md';
+import Slots from './auto-generated/skeleton-text/slots.md';
 
 <head>
   <title>Skeleton Text | Skeleton Loading Placeholder & Framework for Text</title>

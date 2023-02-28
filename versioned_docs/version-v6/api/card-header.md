@@ -2,12 +2,12 @@
 title: 'ion-card-header'
 ---
 
-import Props from '@site/static/auto-generated/v6/card-header/props.md';
-import Events from '@site/static/auto-generated/v6/card-header/events.md';
-import Methods from '@site/static/auto-generated/v6/card-header/methods.md';
-import Parts from '@site/static/auto-generated/v6/card-header/parts.md';
-import CustomProps from '@site/static/auto-generated/v6/card-header/custom-props.md';
-import Slots from '@site/static/auto-generated/v6/card-header/slots.md';
+import Props from './auto-generated/card-header/props.md';
+import Events from './auto-generated/card-header/events.md';
+import Methods from './auto-generated/card-header/methods.md';
+import Parts from './auto-generated/card-header/parts.md';
+import CustomProps from './auto-generated/card-header/custom-props.md';
+import Slots from './auto-generated/card-header/slots.md';
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 

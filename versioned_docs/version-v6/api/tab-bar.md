@@ -5,12 +5,12 @@ title: 'ion-tab-bar'
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-import Props from '@site/static/auto-generated/v6/tab-bar/props.md';
-import Events from '@site/static/auto-generated/v6/tab-bar/events.md';
-import Methods from '@site/static/auto-generated/v6/tab-bar/methods.md';
-import Parts from '@site/static/auto-generated/v6/tab-bar/parts.md';
-import CustomProps from '@site/static/auto-generated/v6/tab-bar/custom-props.md';
-import Slots from '@site/static/auto-generated/v6/tab-bar/slots.md';
+import Props from './auto-generated/tab-bar/props.md';
+import Events from './auto-generated/tab-bar/events.md';
+import Methods from './auto-generated/tab-bar/methods.md';
+import Parts from './auto-generated/tab-bar/parts.md';
+import CustomProps from './auto-generated/tab-bar/custom-props.md';
+import Slots from './auto-generated/tab-bar/slots.md';
 
 <head>
   <title>ion-tab-bar with CSS Custom Properties for Tab Bar Components</title>

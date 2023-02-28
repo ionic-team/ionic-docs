@@ -2,12 +2,12 @@
 title: 'ion-refresher-content'
 ---
 
-import Props from '@site/static/auto-generated/v6/refresher-content/props.md';
-import Events from '@site/static/auto-generated/v6/refresher-content/events.md';
-import Methods from '@site/static/auto-generated/v6/refresher-content/methods.md';
-import Parts from '@site/static/auto-generated/v6/refresher-content/parts.md';
-import CustomProps from '@site/static/auto-generated/v6/refresher-content/custom-props.md';
-import Slots from '@site/static/auto-generated/v6/refresher-content/slots.md';
+import Props from './auto-generated/refresher-content/props.md';
+import Events from './auto-generated/refresher-content/events.md';
+import Methods from './auto-generated/refresher-content/methods.md';
+import Parts from './auto-generated/refresher-content/parts.md';
+import CustomProps from './auto-generated/refresher-content/custom-props.md';
+import Slots from './auto-generated/refresher-content/slots.md';
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 

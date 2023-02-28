@@ -2,12 +2,12 @@
 title: "ion-tab"
 ---
 
-import Props from '@site/static/auto-generated/v7/tab/props.md';
-import Events from '@site/static/auto-generated/v7/tab/events.md';
-import Methods from '@site/static/auto-generated/v7/tab/methods.md';
-import Parts from '@site/static/auto-generated/v7/tab/parts.md';
-import CustomProps from '@site/static/auto-generated/v7/tab/custom-props.md';
-import Slots from '@site/static/auto-generated/v7/tab/slots.md';
+import Props from './auto-generated/tab/props.md';
+import Events from './auto-generated/tab/events.md';
+import Methods from './auto-generated/tab/methods.md';
+import Parts from './auto-generated/tab/parts.md';
+import CustomProps from './auto-generated/tab/custom-props.md';
+import Slots from './auto-generated/tab/slots.md';
 
 <head>
   <title>ion-tab - Ionic Framework Application Component</title>

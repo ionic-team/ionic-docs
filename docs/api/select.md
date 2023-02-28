@@ -1,12 +1,12 @@
 ---
 title: "ion-select"
 ---
-import Props from '@site/static/auto-generated/v7/select/props.md';
-import Events from '@site/static/auto-generated/v7/select/events.md';
-import Methods from '@site/static/auto-generated/v7/select/methods.md';
-import Parts from '@site/static/auto-generated/v7/select/parts.md';
-import CustomProps from '@site/static/auto-generated/v7/select/custom-props.md';
-import Slots from '@site/static/auto-generated/v7/select/slots.md';
+import Props from './auto-generated/select/props.md';
+import Events from './auto-generated/select/events.md';
+import Methods from './auto-generated/select/methods.md';
+import Parts from './auto-generated/select/parts.md';
+import CustomProps from './auto-generated/select/custom-props.md';
+import Slots from './auto-generated/select/slots.md';
 
 <head>
   <title>ion-select: Select One or Multiple Value Boxes or Placeholders</title>

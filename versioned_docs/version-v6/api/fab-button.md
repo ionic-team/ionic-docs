@@ -2,12 +2,12 @@
 title: 'ion-fab-button'
 ---
 
-import Props from '@site/static/auto-generated/v6/fab-button/props.md';
-import Events from '@site/static/auto-generated/v6/fab-button/events.md';
-import Methods from '@site/static/auto-generated/v6/fab-button/methods.md';
-import Parts from '@site/static/auto-generated/v6/fab-button/parts.md';
-import CustomProps from '@site/static/auto-generated/v6/fab-button/custom-props.md';
-import Slots from '@site/static/auto-generated/v6/fab-button/slots.md';
+import Props from './auto-generated/fab-button/props.md';
+import Events from './auto-generated/fab-button/events.md';
+import Methods from './auto-generated/fab-button/methods.md';
+import Parts from './auto-generated/fab-button/parts.md';
+import CustomProps from './auto-generated/fab-button/custom-props.md';
+import Slots from './auto-generated/fab-button/slots.md';
 
 <head>
   <title>Floating Action Button | Ionic FAB Button Icon for Primary Action</title>

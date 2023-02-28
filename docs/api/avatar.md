@@ -2,12 +2,12 @@
 title: "ion-avatar"
 ---
 
-import Props from '@site/static/auto-generated/v7/avatar/props.md';
-import Events from '@site/static/auto-generated/v7/avatar/events.md';
-import Methods from '@site/static/auto-generated/v7/avatar/methods.md';
-import Parts from '@site/static/auto-generated/v7/avatar/parts.md';
-import CustomProps from '@site/static/auto-generated/v7/avatar/custom-props.md';
-import Slots from '@site/static/auto-generated/v7/avatar/slots.md';
+import Props from './auto-generated/avatar/props.md';
+import Events from './auto-generated/avatar/events.md';
+import Methods from './auto-generated/avatar/methods.md';
+import Parts from './auto-generated/avatar/parts.md';
+import CustomProps from './auto-generated/avatar/custom-props.md';
+import Slots from './auto-generated/avatar/slots.md';
 
 <head>
   <title>ion-avatar: Circular Application Avatar Icon Component</title>

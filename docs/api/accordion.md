@@ -1,12 +1,12 @@
 ---
 title: "ion-accordion"
 ---
-import Props from '@site/static/auto-generated/v7/accordion/props.md';
-import Events from '@site/static/auto-generated/v7/accordion/events.md';
-import Methods from '@site/static/auto-generated/v7/accordion/methods.md';
-import Parts from '@site/static/auto-generated/v7/accordion/parts.md';
-import CustomProps from '@site/static/auto-generated/v7/accordion/custom-props.md';
-import Slots from '@site/static/auto-generated/v7/accordion/slots.md';
+import Props from './auto-generated/accordion/props.md';
+import Events from './auto-generated/accordion/events.md';
+import Methods from './auto-generated/accordion/methods.md';
+import Parts from './auto-generated/accordion/parts.md';
+import CustomProps from './auto-generated/accordion/custom-props.md';
+import Slots from './auto-generated/accordion/slots.md';
 
 <head>
   <title>Ion-Accordion Components: How to Build & Examples | Ionic</title>

@@ -2,12 +2,12 @@
 title: 'ion-virtual-scroll'
 ---
 
-import Props from '@site/static/auto-generated/v6/virtual-scroll/props.md';
-import Events from '@site/static/auto-generated/v6/virtual-scroll/events.md';
-import Methods from '@site/static/auto-generated/v6/virtual-scroll/methods.md';
-import Parts from '@site/static/auto-generated/v6/virtual-scroll/parts.md';
-import CustomProps from '@site/static/auto-generated/v6/virtual-scroll/custom-props.md';
-import Slots from '@site/static/auto-generated/v6/virtual-scroll/slots.md';
+import Props from './auto-generated/virtual-scroll/props.md';
+import Events from './auto-generated/virtual-scroll/events.md';
+import Methods from './auto-generated/virtual-scroll/methods.md';
+import Parts from './auto-generated/virtual-scroll/parts.md';
+import CustomProps from './auto-generated/virtual-scroll/custom-props.md';
+import Slots from './auto-generated/virtual-scroll/slots.md';
 
 <head>
   <title>ion-virtual-scroll | Angular Virtual Scroll List for Ionic Apps</title>

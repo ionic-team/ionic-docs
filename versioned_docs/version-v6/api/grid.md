@@ -2,12 +2,12 @@
 title: 'ion-grid'
 ---
 
-import Props from '@site/static/auto-generated/v6/grid/props.md';
-import Events from '@site/static/auto-generated/v6/grid/events.md';
-import Methods from '@site/static/auto-generated/v6/grid/methods.md';
-import Parts from '@site/static/auto-generated/v6/grid/parts.md';
-import CustomProps from '@site/static/auto-generated/v6/grid/custom-props.md';
-import Slots from '@site/static/auto-generated/v6/grid/slots.md';
+import Props from './auto-generated/grid/props.md';
+import Events from './auto-generated/grid/events.md';
+import Methods from './auto-generated/grid/methods.md';
+import Parts from './auto-generated/grid/parts.md';
+import CustomProps from './auto-generated/grid/custom-props.md';
+import Slots from './auto-generated/grid/slots.md';
 
 <head>
   <title>Ion-Grid: Display Grids to Build Mobile-First Custom App Layout</title>

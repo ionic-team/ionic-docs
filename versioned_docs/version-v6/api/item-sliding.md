@@ -2,12 +2,12 @@
 title: 'ion-item-sliding'
 ---
 
-import Props from '@site/static/auto-generated/v6/item-sliding/props.md';
-import Events from '@site/static/auto-generated/v6/item-sliding/events.md';
-import Methods from '@site/static/auto-generated/v6/item-sliding/methods.md';
-import Parts from '@site/static/auto-generated/v6/item-sliding/parts.md';
-import CustomProps from '@site/static/auto-generated/v6/item-sliding/custom-props.md';
-import Slots from '@site/static/auto-generated/v6/item-sliding/slots.md';
+import Props from './auto-generated/item-sliding/props.md';
+import Events from './auto-generated/item-sliding/events.md';
+import Methods from './auto-generated/item-sliding/methods.md';
+import Parts from './auto-generated/item-sliding/parts.md';
+import CustomProps from './auto-generated/item-sliding/custom-props.md';
+import Slots from './auto-generated/item-sliding/slots.md';
 
 <head>
   <title>Slide Buttons | Slide Right to Left with ion-item-sliding</title>

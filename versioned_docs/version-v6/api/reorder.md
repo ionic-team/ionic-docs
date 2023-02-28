@@ -2,12 +2,12 @@
 title: 'ion-reorder'
 ---
 
-import Props from '@site/static/auto-generated/v6/reorder/props.md';
-import Events from '@site/static/auto-generated/v6/reorder/events.md';
-import Methods from '@site/static/auto-generated/v6/reorder/methods.md';
-import Parts from '@site/static/auto-generated/v6/reorder/parts.md';
-import CustomProps from '@site/static/auto-generated/v6/reorder/custom-props.md';
-import Slots from '@site/static/auto-generated/v6/reorder/slots.md';
+import Props from './auto-generated/reorder/props.md';
+import Events from './auto-generated/reorder/events.md';
+import Methods from './auto-generated/reorder/methods.md';
+import Parts from './auto-generated/reorder/parts.md';
+import CustomProps from './auto-generated/reorder/custom-props.md';
+import Slots from './auto-generated/reorder/slots.md';
 
 <head>
   <title>Reorder | ion-reorder: Drag and Drop Icon to Reorder Items</title>

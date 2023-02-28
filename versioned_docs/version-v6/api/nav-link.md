@@ -2,12 +2,12 @@
 title: 'ion-nav-link'
 ---
 
-import Props from '@site/static/auto-generated/v6/nav-link/props.md';
-import Events from '@site/static/auto-generated/v6/nav-link/events.md';
-import Methods from '@site/static/auto-generated/v6/nav-link/methods.md';
-import Parts from '@site/static/auto-generated/v6/nav-link/parts.md';
-import CustomProps from '@site/static/auto-generated/v6/nav-link/custom-props.md';
-import Slots from '@site/static/auto-generated/v6/nav-link/slots.md';
+import Props from './auto-generated/nav-link/props.md';
+import Events from './auto-generated/nav-link/events.md';
+import Methods from './auto-generated/nav-link/methods.md';
+import Parts from './auto-generated/nav-link/parts.md';
+import CustomProps from './auto-generated/nav-link/custom-props.md';
+import Slots from './auto-generated/nav-link/slots.md';
 
 <head>
   <title>ion-nav-link: The Element for Navigation to a Specified Component</title>

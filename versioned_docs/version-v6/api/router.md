@@ -2,12 +2,12 @@
 title: 'ion-router'
 ---
 
-import Props from '@site/static/auto-generated/v6/router/props.md';
-import Events from '@site/static/auto-generated/v6/router/events.md';
-import Methods from '@site/static/auto-generated/v6/router/methods.md';
-import Parts from '@site/static/auto-generated/v6/router/parts.md';
-import CustomProps from '@site/static/auto-generated/v6/router/custom-props.md';
-import Slots from '@site/static/auto-generated/v6/router/slots.md';
+import Props from './auto-generated/router/props.md';
+import Events from './auto-generated/router/events.md';
+import Methods from './auto-generated/router/methods.md';
+import Parts from './auto-generated/router/parts.md';
+import CustomProps from './auto-generated/router/custom-props.md';
+import Slots from './auto-generated/router/slots.md';
 
 <head>
   <title>ion-router: Router Component to Coordinate URL Navigation</title>

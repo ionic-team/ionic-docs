@@ -2,12 +2,12 @@
 title: 'ion-slide'
 ---
 
-import Props from '@site/static/auto-generated/v6/slide/props.md';
-import Events from '@site/static/auto-generated/v6/slide/events.md';
-import Methods from '@site/static/auto-generated/v6/slide/methods.md';
-import Parts from '@site/static/auto-generated/v6/slide/parts.md';
-import CustomProps from '@site/static/auto-generated/v6/slide/custom-props.md';
-import Slots from '@site/static/auto-generated/v6/slide/slots.md';
+import Props from './auto-generated/slide/props.md';
+import Events from './auto-generated/slide/events.md';
+import Methods from './auto-generated/slide/methods.md';
+import Parts from './auto-generated/slide/parts.md';
+import CustomProps from './auto-generated/slide/custom-props.md';
+import Slots from './auto-generated/slide/slots.md';
 
 <head>
   <title>ion-slide | Slide API Component for Ionic Framework Apps</title>

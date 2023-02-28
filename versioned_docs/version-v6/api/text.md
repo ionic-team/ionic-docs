@@ -2,12 +2,12 @@
 title: 'ion-text'
 ---
 
-import Props from '@site/static/auto-generated/v6/text/props.md';
-import Events from '@site/static/auto-generated/v6/text/events.md';
-import Methods from '@site/static/auto-generated/v6/text/methods.md';
-import Parts from '@site/static/auto-generated/v6/text/parts.md';
-import CustomProps from '@site/static/auto-generated/v6/text/custom-props.md';
-import Slots from '@site/static/auto-generated/v6/text/slots.md';
+import Props from './auto-generated/text/props.md';
+import Events from './auto-generated/text/events.md';
+import Methods from './auto-generated/text/methods.md';
+import Parts from './auto-generated/text/parts.md';
+import CustomProps from './auto-generated/text/custom-props.md';
+import Slots from './auto-generated/text/slots.md';
 
 <head>
   <title>ion-text: Ionic App Component to Style or Change Text Color</title>

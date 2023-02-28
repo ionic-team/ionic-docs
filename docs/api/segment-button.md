@@ -1,12 +1,12 @@
 ---
 title: "ion-segment-button"
 ---
-import Props from '@site/static/auto-generated/v7/segment-button/props.md';
-import Events from '@site/static/auto-generated/v7/segment-button/events.md';
-import Methods from '@site/static/auto-generated/v7/segment-button/methods.md';
-import Parts from '@site/static/auto-generated/v7/segment-button/parts.md';
-import CustomProps from '@site/static/auto-generated/v7/segment-button/custom-props.md';
-import Slots from '@site/static/auto-generated/v7/segment-button/slots.md';
+import Props from './auto-generated/segment-button/props.md';
+import Events from './auto-generated/segment-button/events.md';
+import Methods from './auto-generated/segment-button/methods.md';
+import Parts from './auto-generated/segment-button/parts.md';
+import CustomProps from './auto-generated/segment-button/custom-props.md';
+import Slots from './auto-generated/segment-button/slots.md';
 
 <head>
   <title>ion-segment-button | Segment Button Icon and Segment Value</title>

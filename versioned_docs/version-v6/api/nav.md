@@ -2,12 +2,12 @@
 title: 'ion-nav'
 ---
 
-import Props from '@site/static/auto-generated/v6/nav/props.md';
-import Events from '@site/static/auto-generated/v6/nav/events.md';
-import Methods from '@site/static/auto-generated/v6/nav/methods.md';
-import Parts from '@site/static/auto-generated/v6/nav/parts.md';
-import CustomProps from '@site/static/auto-generated/v6/nav/custom-props.md';
-import Slots from '@site/static/auto-generated/v6/nav/slots.md';
+import Props from './auto-generated/nav/props.md';
+import Events from './auto-generated/nav/events.md';
+import Methods from './auto-generated/nav/methods.md';
+import Parts from './auto-generated/nav/parts.md';
+import CustomProps from './auto-generated/nav/custom-props.md';
+import Slots from './auto-generated/nav/slots.md';
 
 <head>
   <title>ion-nav | Nav View Component for Ionic Framework Apps</title>
