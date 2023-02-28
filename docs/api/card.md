@@ -1,12 +1,12 @@
 ---
 title: "ion-card"
 ---
-import Props from './auto-generated/card/props.md';
-import Events from './auto-generated/card/events.md';
-import Methods from './auto-generated/card/methods.md';
-import Parts from './auto-generated/card/parts.md';
-import CustomProps from './auto-generated/card/custom-props.md';
-import Slots from './auto-generated/card/slots.md';
+import Props from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v7/card/props.md';
+import Events from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v7/card/events.md';
+import Methods from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v7/card/methods.md';
+import Parts from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v7/card/parts.md';
+import CustomProps from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v7/card/custom-props.md';
+import Slots from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v7/card/slots.md';
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 

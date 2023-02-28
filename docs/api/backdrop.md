@@ -1,12 +1,12 @@
 ---
 title: "ion-backdrop"
 ---
-import Props from './auto-generated/backdrop/props.md';
-import Events from './auto-generated/backdrop/events.md';
-import Methods from './auto-generated/backdrop/methods.md';
-import Parts from './auto-generated/backdrop/parts.md';
-import CustomProps from './auto-generated/backdrop/custom-props.md';
-import Slots from './auto-generated/backdrop/slots.md';
+import Props from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v7/backdrop/props.md';
+import Events from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v7/backdrop/events.md';
+import Methods from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v7/backdrop/methods.md';
+import Parts from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v7/backdrop/parts.md';
+import CustomProps from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v7/backdrop/custom-props.md';
+import Slots from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v7/backdrop/slots.md';
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 

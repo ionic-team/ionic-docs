@@ -1,12 +1,12 @@
 ---
 title: "ion-chip"
 ---
-import Props from './auto-generated/chip/props.md';
-import Events from './auto-generated/chip/events.md';
-import Methods from './auto-generated/chip/methods.md';
-import Parts from './auto-generated/chip/parts.md';
-import CustomProps from './auto-generated/chip/custom-props.md';
-import Slots from './auto-generated/chip/slots.md';
+import Props from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v7/chip/props.md';
+import Events from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v7/chip/events.md';
+import Methods from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v7/chip/methods.md';
+import Parts from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v7/chip/parts.md';
+import CustomProps from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v7/chip/custom-props.md';
+import Slots from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v7/chip/slots.md';
 
 <head>
   <title>ion-chip:  Name, Text, Icon and Avatar for Ionic Framework Apps</title>

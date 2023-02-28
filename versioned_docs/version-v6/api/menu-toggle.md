@@ -2,12 +2,12 @@
 title: 'ion-menu-toggle'
 ---
 
-import Props from './auto-generated/menu-toggle/props.md';
-import Events from './auto-generated/menu-toggle/events.md';
-import Methods from './auto-generated/menu-toggle/methods.md';
-import Parts from './auto-generated/menu-toggle/parts.md';
-import CustomProps from './auto-generated/menu-toggle/custom-props.md';
-import Slots from './auto-generated/menu-toggle/slots.md';
+import Props from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v6/menu-toggle/props.md';
+import Events from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v6/menu-toggle/events.md';
+import Methods from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v6/menu-toggle/methods.md';
+import Parts from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v6/menu-toggle/parts.md';
+import CustomProps from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v6/menu-toggle/custom-props.md';
+import Slots from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v6/menu-toggle/slots.md';
 
 <head>
   <title>ion-menu-toggle | MenuToggle Component to Open/Close Active Menus</title>

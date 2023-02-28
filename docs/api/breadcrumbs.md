@@ -1,12 +1,12 @@
 ---
 title: "ion-breadcrumbs"
 ---
-import Props from './auto-generated/breadcrumbs/props.md';
-import Events from './auto-generated/breadcrumbs/events.md';
-import Methods from './auto-generated/breadcrumbs/methods.md';
-import Parts from './auto-generated/breadcrumbs/parts.md';
-import CustomProps from './auto-generated/breadcrumbs/custom-props.md';
-import Slots from './auto-generated/breadcrumbs/slots.md';
+import Props from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v7/breadcrumbs/props.md';
+import Events from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v7/breadcrumbs/events.md';
+import Methods from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v7/breadcrumbs/methods.md';
+import Parts from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v7/breadcrumbs/parts.md';
+import CustomProps from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v7/breadcrumbs/custom-props.md';
+import Slots from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v7/breadcrumbs/slots.md';
 
 
 

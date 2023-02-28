@@ -2,12 +2,12 @@
 title: 'ion-action-sheet'
 ---
 
-import Props from './auto-generated/action-sheet/props.md';
-import Events from './auto-generated/action-sheet/events.md';
-import Methods from './auto-generated/action-sheet/methods.md';
-import Parts from './auto-generated/action-sheet/parts.md';
-import CustomProps from './auto-generated/action-sheet/custom-props.md';
-import Slots from './auto-generated/action-sheet/slots.md';
+import Props from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v6/action-sheet/props.md';
+import Events from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v6/action-sheet/events.md';
+import Methods from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v6/action-sheet/methods.md';
+import Parts from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v6/action-sheet/parts.md';
+import CustomProps from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v6/action-sheet/custom-props.md';
+import Slots from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v6/action-sheet/slots.md';
 
 <head>
   <title>ion-action-sheet | Action Sheet Dialog for iOS and Android Apps</title>

@@ -1,12 +1,12 @@
 ---
 title: "ion-content"
 ---
-import Props from './auto-generated/content/props.md';
-import Events from './auto-generated/content/events.md';
-import Methods from './auto-generated/content/methods.md';
-import Parts from './auto-generated/content/parts.md';
-import CustomProps from './auto-generated/content/custom-props.md';
-import Slots from './auto-generated/content/slots.md';
+import Props from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v7/content/props.md';
+import Events from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v7/content/events.md';
+import Methods from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v7/content/methods.md';
+import Parts from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v7/content/parts.md';
+import CustomProps from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v7/content/custom-props.md';
+import Slots from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v7/content/slots.md';
 
 <head>
   <title>ion-content: Scrollable CSS Component for Ionic App Content Areas</title>

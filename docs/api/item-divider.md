@@ -1,12 +1,12 @@
 ---
 title: "ion-item-divider"
 ---
-import Props from './auto-generated/item-divider/props.md';
-import Events from './auto-generated/item-divider/events.md';
-import Methods from './auto-generated/item-divider/methods.md';
-import Parts from './auto-generated/item-divider/parts.md';
-import CustomProps from './auto-generated/item-divider/custom-props.md';
-import Slots from './auto-generated/item-divider/slots.md';
+import Props from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v7/item-divider/props.md';
+import Events from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v7/item-divider/events.md';
+import Methods from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v7/item-divider/methods.md';
+import Parts from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v7/item-divider/parts.md';
+import CustomProps from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v7/item-divider/custom-props.md';
+import Slots from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v7/item-divider/slots.md';
 
 <head>
   <title>Item Divider | List Item Divider Block Element for Ionic Apps</title>

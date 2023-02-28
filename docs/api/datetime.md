@@ -1,12 +1,12 @@
 ---
 title: "ion-datetime"
 ---
-import Props from './auto-generated/datetime/props.md';
-import Events from './auto-generated/datetime/events.md';
-import Methods from './auto-generated/datetime/methods.md';
-import Parts from './auto-generated/datetime/parts.md';
-import CustomProps from './auto-generated/datetime/custom-props.md';
-import Slots from './auto-generated/datetime/slots.md';
+import Props from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v7/datetime/props.md';
+import Events from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v7/datetime/events.md';
+import Methods from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v7/datetime/methods.md';
+import Parts from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v7/datetime/parts.md';
+import CustomProps from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v7/datetime/custom-props.md';
+import Slots from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v7/datetime/slots.md';
 
 import Basic from '@site/static/usage/v7/datetime/basic/index.md';
 

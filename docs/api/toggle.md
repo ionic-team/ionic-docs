@@ -1,12 +1,12 @@
 ---
 title: "ion-toggle"
 ---
-import Props from './auto-generated/toggle/props.md';
-import Events from './auto-generated/toggle/events.md';
-import Methods from './auto-generated/toggle/methods.md';
-import Parts from './auto-generated/toggle/parts.md';
-import CustomProps from './auto-generated/toggle/custom-props.md';
-import Slots from './auto-generated/toggle/slots.md';
+import Props from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v7/toggle/props.md';
+import Events from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v7/toggle/events.md';
+import Methods from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v7/toggle/methods.md';
+import Parts from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v7/toggle/parts.md';
+import CustomProps from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v7/toggle/custom-props.md';
+import Slots from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v7/toggle/slots.md';
 
 <head>
   <title>Toggle | ion-toggle: Custom Toggle Button for Ionic Applications</title>

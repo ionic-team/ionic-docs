@@ -1,12 +1,12 @@
 ---
 title: "ion-text"
 ---
-import Props from './auto-generated/text/props.md';
-import Events from './auto-generated/text/events.md';
-import Methods from './auto-generated/text/methods.md';
-import Parts from './auto-generated/text/parts.md';
-import CustomProps from './auto-generated/text/custom-props.md';
-import Slots from './auto-generated/text/slots.md';
+import Props from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v7/text/props.md';
+import Events from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v7/text/events.md';
+import Methods from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v7/text/methods.md';
+import Parts from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v7/text/parts.md';
+import CustomProps from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v7/text/custom-props.md';
+import Slots from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v7/text/slots.md';
 
 <head>
   <title>ion-text: Ionic App Component to Style or Change Text Color</title>

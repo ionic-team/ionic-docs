@@ -1,12 +1,12 @@
 ---
 title: "ion-range"
 ---
-import Props from './auto-generated/range/props.md';
-import Events from './auto-generated/range/events.md';
-import Methods from './auto-generated/range/methods.md';
-import Parts from './auto-generated/range/parts.md';
-import CustomProps from './auto-generated/range/custom-props.md';
-import Slots from './auto-generated/range/slots.md';
+import Props from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v7/range/props.md';
+import Events from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v7/range/events.md';
+import Methods from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v7/range/methods.md';
+import Parts from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v7/range/parts.md';
+import CustomProps from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v7/range/custom-props.md';
+import Slots from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v7/range/slots.md';
 
 <head>
   <title>Range Slider | ion-range: Slider Knob Controls with Labels</title>

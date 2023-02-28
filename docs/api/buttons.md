@@ -1,12 +1,12 @@
 ---
 title: "ion-buttons"
 ---
-import Props from './auto-generated/buttons/props.md';
-import Events from './auto-generated/buttons/events.md';
-import Methods from './auto-generated/buttons/methods.md';
-import Parts from './auto-generated/buttons/parts.md';
-import CustomProps from './auto-generated/buttons/custom-props.md';
-import Slots from './auto-generated/buttons/slots.md';
+import Props from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v7/buttons/props.md';
+import Events from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v7/buttons/events.md';
+import Methods from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v7/buttons/methods.md';
+import Parts from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v7/buttons/parts.md';
+import CustomProps from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v7/buttons/custom-props.md';
+import Slots from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v7/buttons/slots.md';
 
 <head>
   <title>ion-buttons: Toolbar Element with Named Slots for Buttons</title>

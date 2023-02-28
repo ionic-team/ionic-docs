@@ -2,12 +2,12 @@
 title: 'ion-tabs'
 ---
 
-import Props from './auto-generated/tabs/props.md';
-import Events from './auto-generated/tabs/events.md';
-import Methods from './auto-generated/tabs/methods.md';
-import Parts from './auto-generated/tabs/parts.md';
-import CustomProps from './auto-generated/tabs/custom-props.md';
-import Slots from './auto-generated/tabs/slots.md';
+import Props from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v6/tabs/props.md';
+import Events from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v6/tabs/events.md';
+import Methods from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v6/tabs/methods.md';
+import Parts from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v6/tabs/parts.md';
+import CustomProps from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v6/tabs/custom-props.md';
+import Slots from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v6/tabs/slots.md';
 
 <head>
   <title>Ion-Tabs: Tab-Based Component for App Top-Level Navigation</title>

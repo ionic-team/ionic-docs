@@ -2,12 +2,12 @@
 title: 'ion-accordion-group'
 ---
 
-import Props from './auto-generated/accordion-group/props.md';
-import Events from './auto-generated/accordion-group/events.md';
-import Methods from './auto-generated/accordion-group/methods.md';
-import Parts from './auto-generated/accordion-group/parts.md';
-import CustomProps from './auto-generated/accordion-group/custom-props.md';
-import Slots from './auto-generated/accordion-group/slots.md';
+import Props from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v6/accordion-group/props.md';
+import Events from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v6/accordion-group/events.md';
+import Methods from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v6/accordion-group/methods.md';
+import Parts from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v6/accordion-group/parts.md';
+import CustomProps from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v6/accordion-group/custom-props.md';
+import Slots from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v6/accordion-group/slots.md';
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 

@@ -1,12 +1,12 @@
 ---
 title: "ion-fab"
 ---
-import Props from './auto-generated/fab/props.md';
-import Events from './auto-generated/fab/events.md';
-import Methods from './auto-generated/fab/methods.md';
-import Parts from './auto-generated/fab/parts.md';
-import CustomProps from './auto-generated/fab/custom-props.md';
-import Slots from './auto-generated/fab/slots.md';
+import Props from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v7/fab/props.md';
+import Events from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v7/fab/events.md';
+import Methods from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v7/fab/methods.md';
+import Parts from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v7/fab/parts.md';
+import CustomProps from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v7/fab/custom-props.md';
+import Slots from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v7/fab/slots.md';
 
 <head>
   <title>ion-fab: Floating Action Button for Android and iOS Ionic Apps</title>

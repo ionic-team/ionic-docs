@@ -1,12 +1,12 @@
 ---
 title: "ion-app"
 ---
-import Props from './auto-generated/app/props.md';
-import Events from './auto-generated/app/events.md';
-import Methods from './auto-generated/app/methods.md';
-import Parts from './auto-generated/app/parts.md';
-import CustomProps from './auto-generated/app/custom-props.md';
-import Slots from './auto-generated/app/slots.md';
+import Props from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v7/app/props.md';
+import Events from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v7/app/events.md';
+import Methods from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v7/app/methods.md';
+import Parts from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v7/app/parts.md';
+import CustomProps from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v7/app/custom-props.md';
+import Slots from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v7/app/slots.md';
 
 <head>
   <title>ion-app: Container Element for an Ionic Application</title>

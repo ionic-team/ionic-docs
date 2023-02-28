@@ -2,12 +2,12 @@
 title: 'ion-item-options'
 ---
 
-import Props from './auto-generated/item-options/props.md';
-import Events from './auto-generated/item-options/events.md';
-import Methods from './auto-generated/item-options/methods.md';
-import Parts from './auto-generated/item-options/parts.md';
-import CustomProps from './auto-generated/item-options/custom-props.md';
-import Slots from './auto-generated/item-options/slots.md';
+import Props from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v6/item-options/props.md';
+import Events from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v6/item-options/events.md';
+import Methods from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v6/item-options/methods.md';
+import Parts from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v6/item-options/parts.md';
+import CustomProps from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v6/item-options/custom-props.md';
+import Slots from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v6/item-options/slots.md';
 
 <head>
   <title>ion-item-options: Option Button Components for Ionic Apps</title>

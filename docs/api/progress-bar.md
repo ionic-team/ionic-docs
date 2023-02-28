@@ -1,12 +1,12 @@
 ---
 title: "ion-progress-bar"
 ---
-import Props from './auto-generated/progress-bar/props.md';
-import Events from './auto-generated/progress-bar/events.md';
-import Methods from './auto-generated/progress-bar/methods.md';
-import Parts from './auto-generated/progress-bar/parts.md';
-import CustomProps from './auto-generated/progress-bar/custom-props.md';
-import Slots from './auto-generated/progress-bar/slots.md';
+import Props from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v7/progress-bar/props.md';
+import Events from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v7/progress-bar/events.md';
+import Methods from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v7/progress-bar/methods.md';
+import Parts from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v7/progress-bar/parts.md';
+import CustomProps from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v7/progress-bar/custom-props.md';
+import Slots from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v7/progress-bar/slots.md';
 
 <head>
   <title>Progress Bar | Horizontal App Progress Bar for Loading Indicator</title>

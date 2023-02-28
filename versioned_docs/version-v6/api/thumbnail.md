@@ -2,12 +2,12 @@
 title: 'ion-thumbnail'
 ---
 
-import Props from './auto-generated/thumbnail/props.md';
-import Events from './auto-generated/thumbnail/events.md';
-import Methods from './auto-generated/thumbnail/methods.md';
-import Parts from './auto-generated/thumbnail/parts.md';
-import CustomProps from './auto-generated/thumbnail/custom-props.md';
-import Slots from './auto-generated/thumbnail/slots.md';
+import Props from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v6/thumbnail/props.md';
+import Events from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v6/thumbnail/events.md';
+import Methods from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v6/thumbnail/methods.md';
+import Parts from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v6/thumbnail/parts.md';
+import CustomProps from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v6/thumbnail/custom-props.md';
+import Slots from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v6/thumbnail/slots.md';
 
 <head>
   <title>ion-thumbnail | Thumbnail App Component to Wrap Images or Icons</title>

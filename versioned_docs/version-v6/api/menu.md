@@ -2,12 +2,12 @@
 title: 'ion-menu'
 ---
 
-import Props from './auto-generated/menu/props.md';
-import Events from './auto-generated/menu/events.md';
-import Methods from './auto-generated/menu/methods.md';
-import Parts from './auto-generated/menu/parts.md';
-import CustomProps from './auto-generated/menu/custom-props.md';
-import Slots from './auto-generated/menu/slots.md';
+import Props from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v6/menu/props.md';
+import Events from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v6/menu/events.md';
+import Methods from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v6/menu/methods.md';
+import Parts from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v6/menu/parts.md';
+import CustomProps from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v6/menu/custom-props.md';
+import Slots from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v6/menu/slots.md';
 
 <head>
   <title>ion-menu: API Framework Docs for Types of Menu Components</title>

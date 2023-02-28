@@ -2,12 +2,12 @@
 title: 'ion-modal'
 ---
 
-import Props from './auto-generated/modal/props.md';
-import Events from './auto-generated/modal/events.md';
-import Methods from './auto-generated/modal/methods.md';
-import Parts from './auto-generated/modal/parts.md';
-import CustomProps from './auto-generated/modal/custom-props.md';
-import Slots from './auto-generated/modal/slots.md';
+import Props from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v6/modal/props.md';
+import Events from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v6/modal/events.md';
+import Methods from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v6/modal/methods.md';
+import Parts from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v6/modal/parts.md';
+import CustomProps from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v6/modal/custom-props.md';
+import Slots from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v6/modal/slots.md';
 
 <head>
   <title>ion-modal: Ionic Mobile App Custom Modal API Component</title>

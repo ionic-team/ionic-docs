@@ -5,12 +5,12 @@ title: 'ion-alert'
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-import Props from './auto-generated/alert/props.md';
-import Events from './auto-generated/alert/events.md';
-import Methods from './auto-generated/alert/methods.md';
-import Parts from './auto-generated/alert/parts.md';
-import CustomProps from './auto-generated/alert/custom-props.md';
-import Slots from './auto-generated/alert/slots.md';
+import Props from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v6/alert/props.md';
+import Events from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v6/alert/events.md';
+import Methods from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v6/alert/methods.md';
+import Parts from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v6/alert/parts.md';
+import CustomProps from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v6/alert/custom-props.md';
+import Slots from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v6/alert/slots.md';
 
 <head>
   <title>ion-alert: Ionic API Alert Buttons with Custom Message Prompts</title>

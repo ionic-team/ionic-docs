@@ -2,12 +2,12 @@
 title: 'ion-radio'
 ---
 
-import Props from './auto-generated/radio/props.md';
-import Events from './auto-generated/radio/events.md';
-import Methods from './auto-generated/radio/methods.md';
-import Parts from './auto-generated/radio/parts.md';
-import CustomProps from './auto-generated/radio/custom-props.md';
-import Slots from './auto-generated/radio/slots.md';
+import Props from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v6/radio/props.md';
+import Events from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v6/radio/events.md';
+import Methods from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v6/radio/methods.md';
+import Parts from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v6/radio/parts.md';
+import CustomProps from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v6/radio/custom-props.md';
+import Slots from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v6/radio/slots.md';
 
 <head>
   <title>ion-radio Component: Radio Property for iOS and Android</title>

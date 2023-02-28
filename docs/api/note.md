@@ -1,12 +1,12 @@
 ---
 title: "ion-note"
 ---
-import Props from './auto-generated/note/props.md';
-import Events from './auto-generated/note/events.md';
-import Methods from './auto-generated/note/methods.md';
-import Parts from './auto-generated/note/parts.md';
-import CustomProps from './auto-generated/note/custom-props.md';
-import Slots from './auto-generated/note/slots.md';
+import Props from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v7/note/props.md';
+import Events from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v7/note/events.md';
+import Methods from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v7/note/methods.md';
+import Parts from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v7/note/parts.md';
+import CustomProps from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v7/note/custom-props.md';
+import Slots from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v7/note/slots.md';
 
 <head>
   <title>ion-note: Note Text Elements for iOS and Android Ionic Apps</title>

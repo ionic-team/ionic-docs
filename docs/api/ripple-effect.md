@@ -1,12 +1,12 @@
 ---
 title: "ion-ripple-effect"
 ---
-import Props from './auto-generated/ripple-effect/props.md';
-import Events from './auto-generated/ripple-effect/events.md';
-import Methods from './auto-generated/ripple-effect/methods.md';
-import Parts from './auto-generated/ripple-effect/parts.md';
-import CustomProps from './auto-generated/ripple-effect/custom-props.md';
-import Slots from './auto-generated/ripple-effect/slots.md';
+import Props from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v7/ripple-effect/props.md';
+import Events from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v7/ripple-effect/events.md';
+import Methods from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v7/ripple-effect/methods.md';
+import Parts from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v7/ripple-effect/parts.md';
+import CustomProps from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v7/ripple-effect/custom-props.md';
+import Slots from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v7/ripple-effect/slots.md';
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 

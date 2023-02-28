@@ -2,12 +2,12 @@
 title: 'ion-card-subtitle'
 ---
 
-import Props from './auto-generated/card-subtitle/props.md';
-import Events from './auto-generated/card-subtitle/events.md';
-import Methods from './auto-generated/card-subtitle/methods.md';
-import Parts from './auto-generated/card-subtitle/parts.md';
-import CustomProps from './auto-generated/card-subtitle/custom-props.md';
-import Slots from './auto-generated/card-subtitle/slots.md';
+import Props from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v6/card-subtitle/props.md';
+import Events from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v6/card-subtitle/events.md';
+import Methods from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v6/card-subtitle/methods.md';
+import Parts from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v6/card-subtitle/parts.md';
+import CustomProps from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v6/card-subtitle/custom-props.md';
+import Slots from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v6/card-subtitle/slots.md';
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 

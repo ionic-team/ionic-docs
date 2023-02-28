@@ -7,12 +7,12 @@ demoSourceUrl: 'https://github.com/ionic-team/ionic-docs/tree/main/static/demos/
 
 import TOCInline from '@theme/TOCInline';
 
-import Props from './auto-generated/router-link/props.md';
-import Events from './auto-generated/router-link/events.md';
-import Methods from './auto-generated/router-link/methods.md';
-import Parts from './auto-generated/router-link/parts.md';
-import CustomProps from './auto-generated/router-link/custom-props.md';
-import Slots from './auto-generated/router-link/slots.md';
+import Props from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v6/router-link/props.md';
+import Events from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v6/router-link/events.md';
+import Methods from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v6/router-link/methods.md';
+import Parts from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v6/router-link/parts.md';
+import CustomProps from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v6/router-link/custom-props.md';
+import Slots from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v6/router-link/slots.md';
 
 <head>
   <title>Router Link | Navigating The ion-router-link Component</title>

@@ -2,12 +2,12 @@
 title: 'ion-header'
 ---
 
-import Props from './auto-generated/header/props.md';
-import Events from './auto-generated/header/events.md';
-import Methods from './auto-generated/header/methods.md';
-import Parts from './auto-generated/header/parts.md';
-import CustomProps from './auto-generated/header/custom-props.md';
-import Slots from './auto-generated/header/slots.md';
+import Props from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v6/header/props.md';
+import Events from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v6/header/events.md';
+import Methods from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v6/header/methods.md';
+import Parts from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v6/header/parts.md';
+import CustomProps from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v6/header/custom-props.md';
+import Slots from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v6/header/slots.md';
 
 <head>
   <title>ion-header: Header Parent Component for Ionic Framework Apps</title>

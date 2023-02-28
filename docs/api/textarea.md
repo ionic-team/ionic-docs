@@ -1,12 +1,12 @@
 ---
 title: "ion-textarea"
 ---
-import Props from './auto-generated/textarea/props.md';
-import Events from './auto-generated/textarea/events.md';
-import Methods from './auto-generated/textarea/methods.md';
-import Parts from './auto-generated/textarea/parts.md';
-import CustomProps from './auto-generated/textarea/custom-props.md';
-import Slots from './auto-generated/textarea/slots.md';
+import Props from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v7/textarea/props.md';
+import Events from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v7/textarea/events.md';
+import Methods from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v7/textarea/methods.md';
+import Parts from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v7/textarea/parts.md';
+import CustomProps from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v7/textarea/custom-props.md';
+import Slots from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v7/textarea/slots.md';
 
 <head>
   <title>Ionic Textarea Component and CSS Properties for Multi-Line Input</title>

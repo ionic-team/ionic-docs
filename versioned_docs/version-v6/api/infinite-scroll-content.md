@@ -2,12 +2,12 @@
 title: 'ion-infinite-scroll-content'
 ---
 
-import Props from './auto-generated/infinite-scroll-content/props.md';
-import Events from './auto-generated/infinite-scroll-content/events.md';
-import Methods from './auto-generated/infinite-scroll-content/methods.md';
-import Parts from './auto-generated/infinite-scroll-content/parts.md';
-import CustomProps from './auto-generated/infinite-scroll-content/custom-props.md';
-import Slots from './auto-generated/infinite-scroll-content/slots.md';
+import Props from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v6/infinite-scroll-content/props.md';
+import Events from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v6/infinite-scroll-content/events.md';
+import Methods from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v6/infinite-scroll-content/methods.md';
+import Parts from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v6/infinite-scroll-content/parts.md';
+import CustomProps from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v6/infinite-scroll-content/custom-props.md';
+import Slots from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v6/infinite-scroll-content/slots.md';
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 

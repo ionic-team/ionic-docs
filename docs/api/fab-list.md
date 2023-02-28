@@ -1,12 +1,12 @@
 ---
 title: "ion-fab-list"
 ---
-import Props from './auto-generated/fab-list/props.md';
-import Events from './auto-generated/fab-list/events.md';
-import Methods from './auto-generated/fab-list/methods.md';
-import Parts from './auto-generated/fab-list/parts.md';
-import CustomProps from './auto-generated/fab-list/custom-props.md';
-import Slots from './auto-generated/fab-list/slots.md';
+import Props from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v7/fab-list/props.md';
+import Events from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v7/fab-list/events.md';
+import Methods from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v7/fab-list/methods.md';
+import Parts from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v7/fab-list/parts.md';
+import CustomProps from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v7/fab-list/custom-props.md';
+import Slots from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v7/fab-list/slots.md';
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
