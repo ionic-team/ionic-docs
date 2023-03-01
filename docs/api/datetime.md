@@ -31,6 +31,9 @@ import ShowingConfirmationButtons from '@site/static/usage/v7/datetime/buttons/s
 import CustomizingButtons from '@site/static/usage/v7/datetime/buttons/customizing-buttons/index.md';
 import CustomizingButtonTexts from '@site/static/usage/v7/datetime/buttons/customizing-button-texts/index.md';
 
+import HighlightedDatesArray from '@site/static/usage/v7/datetime/highlightedDates/array/index.md';
+import HighlightedDatesCallback from '@site/static/usage/v7/datetime/highlightedDates/callback/index.md';
+
 import MultipleDateSelection from '@site/static/usage/v7/datetime/multiple/index.md';
 
 import Theming from '@site/static/usage/v7/datetime/theming/index.md';
@@ -282,6 +285,30 @@ Developers can provide their own buttons for advanced custom behavior.
 `ion-datetime` has `confirm`, `cancel`, and `reset` methods that developers can call when clicking on custom buttons. The `reset` method also allows developers to provide a date to reset the datetime to.
 
 <CustomizingButtons />
+
+## Highlighting Specific Dates
+
+Using the `highlightedDates` property, developers can style particular dates with custom text or background colors. This property can be defined as either an array of dates and their colors, or a callback that receives an ISO string and returns the colors to use.
+
+When specifying colors, any valid CSS color format can be used. This includes hex codes, rgba, [color variables](../theming/colors), etc.
+
+To maintain a consistent user experience, the style of selected date(s) will always override custom highlights.
+
+:::note
+This property is only supported when `preferWheel="false"`, and using a `presentation` of either `"date"`, `"date-time"`, or `"time-date"`.
+:::
+
+### Using Array
+
+An array is better when the highlights apply to fixed dates, such as due dates.
+
+<HighlightedDatesArray />
+
+### Using Callback
+
+A callback is better when the highlighted dates are recurring, such as birthdays or recurring meetings.
+
+<HighlightedDatesCallback />
 
 ## Theming
 
