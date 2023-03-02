@@ -336,7 +336,7 @@ const userTimeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
 const date = new Date('2014-10-25T10:46:20Z');
 
 // Use date-fns-tz to convert from UTC to a zoned time
-const zonedTime = dateFnsTz.utcToZonedTime(date, userTimeZone);
+const zonedTime = utcToZonedTime(date, userTimeZone);
 
 // Create a formatted string from the zoned time
 format(zonedTime, 'yyyy-MM-dd HH:mm:ssXXX', { timeZone: userTimeZone });
