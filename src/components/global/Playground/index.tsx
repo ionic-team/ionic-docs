@@ -591,12 +591,12 @@ export default function Playground({
             */}
                 {devicePreview
                   ? [
-                      <div className={!isIOS ? 'frame-hidden' : 'frame-visible'}>
+                      <div className={!isIOS ? 'frame-hidden' : 'frame-visible'} aria-hidden={!isIOS ? 'true' : null}>
                         <device-preview mode="ios">
                           <iframe height={frameSize} ref={(ref) => handleFrameRef(ref, 'ios')} src={sourceiOS}></iframe>
                         </device-preview>
                       </div>,
-                      <div className={!isMD ? 'frame-hidden' : 'frame-visible'}>
+                      <div className={!isMD ? 'frame-hidden' : 'frame-visible'} aria-hidden={!isMD ? 'true' : null}>
                         <device-preview mode="md">
                           <iframe height={frameSize} ref={(ref) => handleFrameRef(ref, 'md')} src={sourceMD}></iframe>
                         </device-preview>
@@ -608,12 +608,14 @@ export default function Playground({
                         className={!isIOS ? 'frame-hidden' : ''}
                         ref={(ref) => handleFrameRef(ref, 'ios')}
                         src={sourceiOS}
+                        aria-hidden={!isIOS ? 'true' : null}
                       ></iframe>,
                       <iframe
                         height={frameSize}
                         className={!isMD ? 'frame-hidden' : ''}
                         ref={(ref) => handleFrameRef(ref, 'md')}
                         src={sourceMD}
+                        aria-hidden={!isMD ? 'true' : null}
                       ></iframe>,
                     ]}
               </div>,
