@@ -31,7 +31,7 @@ For a complete list of breaking changes from 4.x to 5.x, please refer to [the br
 For Angular based projects, you can simply run:
 
 ```shell
-npm install @ionic/angular@latest @ionic/angular-toolkit@latest --save
+npm install @ionic/angular@5 @ionic/angular-toolkit@5 --save
 ```
 
 For React projects, you can run:
