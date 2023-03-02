@@ -2,12 +2,12 @@
 title: 'ion-checkbox'
 ---
 
-import Props from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v6/checkbox/props.md';
-import Events from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v6/checkbox/events.md';
-import Methods from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v6/checkbox/methods.md';
-import Parts from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v6/checkbox/parts.md';
-import CustomProps from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v6/checkbox/custom-props.md';
-import Slots from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v6/checkbox/slots.md';
+import Props from '@ionic-internal/component-api/v6/checkbox/props.md';
+import Events from '@ionic-internal/component-api/v6/checkbox/events.md';
+import Methods from '@ionic-internal/component-api/v6/checkbox/methods.md';
+import Parts from '@ionic-internal/component-api/v6/checkbox/parts.md';
+import CustomProps from '@ionic-internal/component-api/v6/checkbox/custom-props.md';
+import Slots from '@ionic-internal/component-api/v6/checkbox/slots.md';
 
 <head>
   <title>ion-checkboxes: Ionic App Component to Select Multiple Options</title>

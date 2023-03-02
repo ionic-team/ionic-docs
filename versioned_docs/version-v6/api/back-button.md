@@ -2,12 +2,12 @@
 title: 'ion-back-button'
 ---
 
-import Props from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v6/back-button/props.md';
-import Events from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v6/back-button/events.md';
-import Methods from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v6/back-button/methods.md';
-import Parts from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v6/back-button/parts.md';
-import CustomProps from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v6/back-button/custom-props.md';
-import Slots from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v6/back-button/slots.md';
+import Props from '@ionic-internal/component-api/v6/back-button/props.md';
+import Events from '@ionic-internal/component-api/v6/back-button/events.md';
+import Methods from '@ionic-internal/component-api/v6/back-button/methods.md';
+import Parts from '@ionic-internal/component-api/v6/back-button/parts.md';
+import CustomProps from '@ionic-internal/component-api/v6/back-button/custom-props.md';
+import Slots from '@ionic-internal/component-api/v6/back-button/slots.md';
 
 <head>
   <title>Back Button | ion-back-button: Custom Menu Icon for Applications</title>

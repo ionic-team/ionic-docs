@@ -1,12 +1,12 @@
 ---
 title: "ion-nav"
 ---
-import Props from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v7/nav/props.md';
-import Events from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v7/nav/events.md';
-import Methods from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v7/nav/methods.md';
-import Parts from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v7/nav/parts.md';
-import CustomProps from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v7/nav/custom-props.md';
-import Slots from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v7/nav/slots.md';
+import Props from '@ionic-internal/component-api/v7/nav/props.md';
+import Events from '@ionic-internal/component-api/v7/nav/events.md';
+import Methods from '@ionic-internal/component-api/v7/nav/methods.md';
+import Parts from '@ionic-internal/component-api/v7/nav/parts.md';
+import CustomProps from '@ionic-internal/component-api/v7/nav/custom-props.md';
+import Slots from '@ionic-internal/component-api/v7/nav/slots.md';
 
 <head>
   <title>ion-nav | Nav View Component for Ionic Framework Apps</title>

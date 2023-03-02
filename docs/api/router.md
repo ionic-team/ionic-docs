@@ -2,12 +2,12 @@
 title: "ion-router"
 ---
 
-import Props from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v7/router/props.md';
-import Events from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v7/router/events.md';
-import Methods from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v7/router/methods.md';
-import Parts from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v7/router/parts.md';
-import CustomProps from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v7/router/custom-props.md';
-import Slots from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v7/router/slots.md';
+import Props from '@ionic-internal/component-api/v7/router/props.md';
+import Events from '@ionic-internal/component-api/v7/router/events.md';
+import Methods from '@ionic-internal/component-api/v7/router/methods.md';
+import Parts from '@ionic-internal/component-api/v7/router/parts.md';
+import CustomProps from '@ionic-internal/component-api/v7/router/custom-props.md';
+import Slots from '@ionic-internal/component-api/v7/router/slots.md';
 
 <head>
   <title>ion-router: Router Component to Coordinate URL Navigation</title>

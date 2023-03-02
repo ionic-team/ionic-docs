@@ -72,6 +72,19 @@ module.exports = function (context, options) {
 
       await Promise.all(promises);
     },
+    configureWebpack(config, isServer, utils) {
+      /**
+       * Adds a custom import alias to the webpack configuration, so that the markdown files
+       * can import the auto-generated markdown files from: @ionic-internal/component-api/{version}/{componentTag}
+       */
+      return {
+        resolve: {
+          alias: {
+            '@ionic-internal/component-api': `${context.siteDir}/.docusaurus/docusaurus-plugin-ionic-component-api/default`,
+          },
+        },
+      };
+    },
   };
 };
 

@@ -2,12 +2,12 @@
 title: 'ion-button'
 ---
 
-import Props from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v6/button/props.md';
-import Events from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v6/button/events.md';
-import Methods from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v6/button/methods.md';
-import Parts from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v6/button/parts.md';
-import CustomProps from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v6/button/custom-props.md';
-import Slots from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v6/button/slots.md';
+import Props from '@ionic-internal/component-api/v6/button/props.md';
+import Events from '@ionic-internal/component-api/v6/button/events.md';
+import Methods from '@ionic-internal/component-api/v6/button/methods.md';
+import Parts from '@ionic-internal/component-api/v6/button/parts.md';
+import CustomProps from '@ionic-internal/component-api/v6/button/custom-props.md';
+import Slots from '@ionic-internal/component-api/v6/button/slots.md';
 
 <head>
   <title>ion-button: Design and Style Buttons with Custom CSS Properties</title>

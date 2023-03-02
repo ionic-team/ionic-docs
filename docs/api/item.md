@@ -1,12 +1,12 @@
 ---
 title: "ion-item"
 ---
-import Props from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v7/item/props.md';
-import Events from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v7/item/events.md';
-import Methods from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v7/item/methods.md';
-import Parts from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v7/item/parts.md';
-import CustomProps from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v7/item/custom-props.md';
-import Slots from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v7/item/slots.md';
+import Props from '@ionic-internal/component-api/v7/item/props.md';
+import Events from '@ionic-internal/component-api/v7/item/events.md';
+import Methods from '@ionic-internal/component-api/v7/item/methods.md';
+import Parts from '@ionic-internal/component-api/v7/item/parts.md';
+import CustomProps from '@ionic-internal/component-api/v7/item/custom-props.md';
+import Slots from '@ionic-internal/component-api/v7/item/slots.md';
 
 <head>
   <title>ion-item: Input, Edit, or Delete iOS and Android Item Elements</title>

@@ -1,12 +1,12 @@
 ---
 title: "ion-searchbar"
 ---
-import Props from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v7/searchbar/props.md';
-import Events from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v7/searchbar/events.md';
-import Methods from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v7/searchbar/methods.md';
-import Parts from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v7/searchbar/parts.md';
-import CustomProps from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v7/searchbar/custom-props.md';
-import Slots from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v7/searchbar/slots.md';
+import Props from '@ionic-internal/component-api/v7/searchbar/props.md';
+import Events from '@ionic-internal/component-api/v7/searchbar/events.md';
+import Methods from '@ionic-internal/component-api/v7/searchbar/methods.md';
+import Parts from '@ionic-internal/component-api/v7/searchbar/parts.md';
+import CustomProps from '@ionic-internal/component-api/v7/searchbar/custom-props.md';
+import Slots from '@ionic-internal/component-api/v7/searchbar/slots.md';
 
 <head>
   <title>Search Bar Icon for Keyboard Text Display | Ion-Search Bar</title>

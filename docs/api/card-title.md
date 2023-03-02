@@ -1,12 +1,12 @@
 ---
 title: "ion-card-title"
 ---
-import Props from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v7/card-title/props.md';
-import Events from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v7/card-title/events.md';
-import Methods from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v7/card-title/methods.md';
-import Parts from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v7/card-title/parts.md';
-import CustomProps from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v7/card-title/custom-props.md';
-import Slots from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v7/card-title/slots.md';
+import Props from '@ionic-internal/component-api/v7/card-title/props.md';
+import Events from '@ionic-internal/component-api/v7/card-title/events.md';
+import Methods from '@ionic-internal/component-api/v7/card-title/methods.md';
+import Parts from '@ionic-internal/component-api/v7/card-title/parts.md';
+import CustomProps from '@ionic-internal/component-api/v7/card-title/custom-props.md';
+import Slots from '@ionic-internal/component-api/v7/card-title/slots.md';
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 

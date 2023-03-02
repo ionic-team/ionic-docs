@@ -1,12 +1,12 @@
 ---
 title: "ion-select"
 ---
-import Props from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v7/select/props.md';
-import Events from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v7/select/events.md';
-import Methods from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v7/select/methods.md';
-import Parts from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v7/select/parts.md';
-import CustomProps from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v7/select/custom-props.md';
-import Slots from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v7/select/slots.md';
+import Props from '@ionic-internal/component-api/v7/select/props.md';
+import Events from '@ionic-internal/component-api/v7/select/events.md';
+import Methods from '@ionic-internal/component-api/v7/select/methods.md';
+import Parts from '@ionic-internal/component-api/v7/select/parts.md';
+import CustomProps from '@ionic-internal/component-api/v7/select/custom-props.md';
+import Slots from '@ionic-internal/component-api/v7/select/slots.md';
 
 <head>
   <title>ion-select: Select One or Multiple Value Boxes or Placeholders</title>

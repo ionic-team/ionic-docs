@@ -9,12 +9,12 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import TOCInline from '@theme/TOCInline';
 
-import Props from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v6/slides/props.md';
-import Events from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v6/slides/events.md';
-import Methods from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v6/slides/methods.md';
-import Parts from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v6/slides/parts.md';
-import CustomProps from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v6/slides/custom-props.md';
-import Slots from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v6/slides/slots.md';
+import Props from '@ionic-internal/component-api/v6/slides/props.md';
+import Events from '@ionic-internal/component-api/v6/slides/events.md';
+import Methods from '@ionic-internal/component-api/v6/slides/methods.md';
+import Parts from '@ionic-internal/component-api/v6/slides/parts.md';
+import CustomProps from '@ionic-internal/component-api/v6/slides/custom-props.md';
+import Slots from '@ionic-internal/component-api/v6/slides/slots.md';
 
 <head>
   <title>Ion-Slides: Mobile Touch Slider with Built-In & Custom Animation</title>

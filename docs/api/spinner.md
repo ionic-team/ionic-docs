@@ -1,12 +1,12 @@
 ---
 title: "ion-spinner"
 ---
-import Props from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v7/spinner/props.md';
-import Events from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v7/spinner/events.md';
-import Methods from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v7/spinner/methods.md';
-import Parts from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v7/spinner/parts.md';
-import CustomProps from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v7/spinner/custom-props.md';
-import Slots from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v7/spinner/slots.md';
+import Props from '@ionic-internal/component-api/v7/spinner/props.md';
+import Events from '@ionic-internal/component-api/v7/spinner/events.md';
+import Methods from '@ionic-internal/component-api/v7/spinner/methods.md';
+import Parts from '@ionic-internal/component-api/v7/spinner/parts.md';
+import CustomProps from '@ionic-internal/component-api/v7/spinner/custom-props.md';
+import Slots from '@ionic-internal/component-api/v7/spinner/slots.md';
 
 <head>
   <title>ion-spinner | Animated Spinner Icon Components and Properties</title>

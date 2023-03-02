@@ -1,12 +1,12 @@
 ---
 title: "ion-grid"
 ---
-import Props from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v7/grid/props.md';
-import Events from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v7/grid/events.md';
-import Methods from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v7/grid/methods.md';
-import Parts from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v7/grid/parts.md';
-import CustomProps from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v7/grid/custom-props.md';
-import Slots from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v7/grid/slots.md';
+import Props from '@ionic-internal/component-api/v7/grid/props.md';
+import Events from '@ionic-internal/component-api/v7/grid/events.md';
+import Methods from '@ionic-internal/component-api/v7/grid/methods.md';
+import Parts from '@ionic-internal/component-api/v7/grid/parts.md';
+import CustomProps from '@ionic-internal/component-api/v7/grid/custom-props.md';
+import Slots from '@ionic-internal/component-api/v7/grid/slots.md';
 
 <head>
   <title>Ion-Grid: Display Grids to Build Mobile-First Custom App Layout</title>

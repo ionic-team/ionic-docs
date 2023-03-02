@@ -2,12 +2,12 @@
 title: 'ion-reorder'
 ---
 
-import Props from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v6/reorder/props.md';
-import Events from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v6/reorder/events.md';
-import Methods from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v6/reorder/methods.md';
-import Parts from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v6/reorder/parts.md';
-import CustomProps from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v6/reorder/custom-props.md';
-import Slots from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v6/reorder/slots.md';
+import Props from '@ionic-internal/component-api/v6/reorder/props.md';
+import Events from '@ionic-internal/component-api/v6/reorder/events.md';
+import Methods from '@ionic-internal/component-api/v6/reorder/methods.md';
+import Parts from '@ionic-internal/component-api/v6/reorder/parts.md';
+import CustomProps from '@ionic-internal/component-api/v6/reorder/custom-props.md';
+import Slots from '@ionic-internal/component-api/v6/reorder/slots.md';
 
 <head>
   <title>Reorder | ion-reorder: Drag and Drop Icon to Reorder Items</title>

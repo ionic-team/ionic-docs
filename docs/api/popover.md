@@ -1,12 +1,12 @@
 ---
 title: "ion-popover"
 ---
-import Props from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v7/popover/props.md';
-import Events from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v7/popover/events.md';
-import Methods from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v7/popover/methods.md';
-import Parts from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v7/popover/parts.md';
-import CustomProps from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v7/popover/custom-props.md';
-import Slots from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v7/popover/slots.md';
+import Props from '@ionic-internal/component-api/v7/popover/props.md';
+import Events from '@ionic-internal/component-api/v7/popover/events.md';
+import Methods from '@ionic-internal/component-api/v7/popover/methods.md';
+import Parts from '@ionic-internal/component-api/v7/popover/parts.md';
+import CustomProps from '@ionic-internal/component-api/v7/popover/custom-props.md';
+import Slots from '@ionic-internal/component-api/v7/popover/slots.md';
 
 <head>
   <title>ion-popover: iOS / Android Popover UI Component & CSS Properties</title>

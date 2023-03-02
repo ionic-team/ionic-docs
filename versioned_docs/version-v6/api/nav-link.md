@@ -2,12 +2,12 @@
 title: 'ion-nav-link'
 ---
 
-import Props from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v6/nav-link/props.md';
-import Events from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v6/nav-link/events.md';
-import Methods from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v6/nav-link/methods.md';
-import Parts from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v6/nav-link/parts.md';
-import CustomProps from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v6/nav-link/custom-props.md';
-import Slots from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v6/nav-link/slots.md';
+import Props from '@ionic-internal/component-api/v6/nav-link/props.md';
+import Events from '@ionic-internal/component-api/v6/nav-link/events.md';
+import Methods from '@ionic-internal/component-api/v6/nav-link/methods.md';
+import Parts from '@ionic-internal/component-api/v6/nav-link/parts.md';
+import CustomProps from '@ionic-internal/component-api/v6/nav-link/custom-props.md';
+import Slots from '@ionic-internal/component-api/v6/nav-link/slots.md';
 
 <head>
   <title>ion-nav-link: The Element for Navigation to a Specified Component</title>

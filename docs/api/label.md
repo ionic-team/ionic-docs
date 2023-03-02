@@ -1,12 +1,12 @@
 ---
 title: "ion-label"
 ---
-import Props from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v7/label/props.md';
-import Events from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v7/label/events.md';
-import Methods from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v7/label/methods.md';
-import Parts from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v7/label/parts.md';
-import CustomProps from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v7/label/custom-props.md';
-import Slots from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v7/label/slots.md';
+import Props from '@ionic-internal/component-api/v7/label/props.md';
+import Events from '@ionic-internal/component-api/v7/label/events.md';
+import Methods from '@ionic-internal/component-api/v7/label/methods.md';
+import Parts from '@ionic-internal/component-api/v7/label/parts.md';
+import CustomProps from '@ionic-internal/component-api/v7/label/custom-props.md';
+import Slots from '@ionic-internal/component-api/v7/label/slots.md';
 
 <head>
   <title>Item Label Color and Properties for Applications | ion-label</title>

@@ -2,12 +2,12 @@
 title: 'ion-segment-button'
 ---
 
-import Props from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v6/segment-button/props.md';
-import Events from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v6/segment-button/events.md';
-import Methods from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v6/segment-button/methods.md';
-import Parts from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v6/segment-button/parts.md';
-import CustomProps from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v6/segment-button/custom-props.md';
-import Slots from '@site/.docusaurus/docusaurus-plugin-ionic-component-api/default/v6/segment-button/slots.md';
+import Props from '@ionic-internal/component-api/v6/segment-button/props.md';
+import Events from '@ionic-internal/component-api/v6/segment-button/events.md';
+import Methods from '@ionic-internal/component-api/v6/segment-button/methods.md';
+import Parts from '@ionic-internal/component-api/v6/segment-button/parts.md';
+import CustomProps from '@ionic-internal/component-api/v6/segment-button/custom-props.md';
+import Slots from '@ionic-internal/component-api/v6/segment-button/slots.md';
 
 <head>
   <title>ion-segment-button | Segment Button Icon and Segment Value</title>
