@@ -204,8 +204,7 @@
 }
 
 .playground .frame-hidden {
-  visibility: hidden;
-  width: 0%;
+  display: none;
 }
 
 @media only screen and (max-width: 600px) {
