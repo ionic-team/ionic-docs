@@ -10,19 +10,16 @@ module.exports = function (context, options) {
       )[1];
 
       const data = [];
+      const currentVersion = docsPluginOptions.versions.current;
 
-      for (const version of Object.keys(docsPluginOptions.versions)) {
-        const versionData = docsPluginOptions.versions[version];
-        /**
-         * If the version has an unreleased banner option enabled, we treat it as the next version,
-         * with the @next npm tag. Otherwise, we parse the version from the key of the versions object.
-         */
-        const npmTag =
-          typeof versionData.banner !== 'undefined' && versionData.banner === 'unreleased'
-            ? '@next'
-            : `@${version.slice(1)}`;
-
-        const response = await fetch(`https://unpkg.com/@ionic/docs${npmTag}/core.json`);
+      /**
+       * Generates the markdown files for all components in a given version.
+       * @param {*} version The version, e.g.: v6
+       * @param {*} npmTag The npm tag, e.g.: 6 or next
+       * @param {*} isCurrentVersion Whether or not this is the current version of the docs
+       */
+      const generateMarkdownForVersion = async (version, npmTag, isCurrentVersion) => {
+        const response = await fetch(`https://unpkg.com/@ionic/docs@${npmTag}/core.json`);
         const { components } = await response.json();
 
         const names = components.map((component) => component.tag.slice(4));
@@ -31,13 +28,12 @@ module.exports = function (context, options) {
 
         components.forEach((comp) => {
           const compTag = comp.tag.slice(4);
-          const versionPath = versionData.path ?? version;
-          const outDir = getDirectoryPath(compTag, versionPath, version === 'current');
+          const outDir = getDirectoryPath(compTag, version, isCurrentVersion);
 
           data.push({
             outDir,
             componentTag: compTag,
-            version: versionPath,
+            version,
             props: renderProperties(comp),
             events: renderEvents(comp),
             methods: renderMethods(comp),
@@ -46,7 +42,16 @@ module.exports = function (context, options) {
             slots: renderSlots(comp),
           });
         });
+      };
+
+      for (const version of options.versions) {
+        const npmTag = version.slice(1);
+        await generateMarkdownForVersion(version, npmTag, false);
       }
+
+      const npmTag = currentVersion.banner === 'unreleased' ? 'next' : currentVersion.path.slice(1);
+      // Latest version
+      await generateMarkdownForVersion(currentVersion.path, npmTag, true);
 
       return data;
     },

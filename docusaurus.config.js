@@ -2,6 +2,8 @@ const path = require('path');
 const prismic = require('@prismicio/client');
 const fetch = require('node-fetch');
 
+const VERSIONS_JSON = require('./versions.json');
+
 const BASE_URL = '/docs';
 
 module.exports = {
@@ -314,7 +316,12 @@ module.exports = {
         },
       };
     },
-    path.resolve(__dirname, 'plugins', 'docusaurus-plugin-ionic-component-api'),
+    [
+      path.resolve(__dirname, 'plugins', 'docusaurus-plugin-ionic-component-api'),
+      {
+        versions: VERSIONS_JSON,
+      },
+    ],
   ],
   themes: [
     [
