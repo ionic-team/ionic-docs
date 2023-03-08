@@ -53,7 +53,6 @@ function renderOptions(title, data) {
 ### ${title}
 ${data
   .map((item) => {
-    console.log(item);
     const alias = item.aliases.length > 0 ? '(or ' + item.aliases.map((alias) => `\`-${alias}\``).join(' ') + ')' : '';
     let name = item.type === 'boolean' && item.default === true ? `no-${item.name}` : item.name;
     if (item.type === 'string') name += `=<${item.spec.value}>`;
