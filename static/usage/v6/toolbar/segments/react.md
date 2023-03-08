@@ -1,6 +1,6 @@
 ```tsx
 import React from 'react';
-import { IonHeader, IonSegment, IonSegmentButton, IonTitle, IonToolbar } from '@ionic/react';
+import { IonHeader, IonLabel, IonSegment, IonSegmentButton, IonTitle, IonToolbar } from '@ionic/react';
 
 function Example() {
   return (
@@ -8,10 +8,10 @@ function Example() {
       <IonToolbar>
         <IonSegment value="all">
           <IonSegmentButton value="all">
-            All
+            <IonLabel>All</IonLabel>
           </IonSegmentButton>
           <IonSegmentButton value="favorites">
-            Favorites
+            <IonLabel>Favorites</IonLabel>
           </IonSegmentButton>
         </IonSegment>
       </IonToolbar>
