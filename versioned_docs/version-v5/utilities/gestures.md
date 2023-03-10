@@ -439,18 +439,6 @@ In the example above, we want to be able to detect double clicks on an element. 
 
 See our guide on implementing gesture animations: [Gesture Animations with Ionic Animations](animations.md#gesture-animations)
 
-## Browser Support
-
-| Browser/Platform | Supported Versions |
-| ---------------- | ------------------ |
-| **Chrome**       | 22+                |
-| **Safari**       | 9+                 |
-| **Firefox**      | 32+                |
-| **IE/Edge**      | 11+                |
-| **Opera**        | 30+                |
-| **iOS**          | 9+                 |
-| **Android**      | 5+                 |
-
 ## Types
 
 | Name              | Value                                        |
