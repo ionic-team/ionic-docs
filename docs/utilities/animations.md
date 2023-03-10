@@ -18,7 +18,7 @@ import TabItem from '@theme/TabItem';
 
 Ionic Animations is a tool that enables developers to create complex animations in a platform-agnostic manner, without requiring a specific framework or an Ionic app.
 
-Creating efficient animations can be challenging, as it is limited by the available libraries and hardware resources of the app. Moreover, many animation libraries use a JavaScript-driven approach, which can reduce the scalability of animations and use up CPU time.
+Creating efficient animations can be challenging, as developers are limited by the available libraries and hardware resources of the device. Moreover, many animation libraries use a JavaScript-driven approach, which can reduce the scalability of animations and use up CPU time.
 
 Ionic Animations, on the other hand, uses the [Web Animations API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Animations_API), which offloads all the computation and running of animations to the browser. This approach allows the browser to optimize the animations and ensure their smooth execution. In cases where Web Animations are not supported, Ionic Animations will fall back to [CSS Animations](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Animations/Using_CSS_animations), which should have a negligible difference in performance.
 
