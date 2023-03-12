@@ -21,7 +21,7 @@ Badgeは、通常は別の要素の近くに表示されるinline-block要素で
 
 ## Basic Usage
 
-import Basic from '@site/static/usage/badge/basic/index.md';
+import Basic from '@site/static/usage/v7/badge/basic/index.md';
 
 <Basic />
 
@@ -29,13 +29,13 @@ import Basic from '@site/static/usage/badge/basic/index.md';
 
 ### Colors
 
-import Colors from '@site/static/usage/badge/theming/colors/index.md';
+import Colors from '@site/static/usage/v7/badge/theming/colors/index.md';
 
 <Colors />
 
 ### CSS Properties
 
-import CSSProps from '@site/static/usage/badge/theming/css-properties/index.md';
+import CSSProps from '@site/static/usage/v7/badge/theming/css-properties/index.md';
 
 <CSSProps />
 

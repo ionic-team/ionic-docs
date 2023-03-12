@@ -21,15 +21,15 @@ Buttonはクリック可能な要素を提供し、Form内や、標準の単機�
 
 ## Basic Usage
 
-import Basic from '@site/static/usage/button/basic/index.md';
+import Basic from '@site/static/usage/v7/button/basic/index.md';
 
 <Basic />
 
 ## Expand
 
-この属性では、Buttonの横幅を指定します。デフォルトでは、ボタンはinline-blockですが、Expandを設定すると、Buttonは横幅100%のblock要素になります。
+This property lets you specify how wide the button should be. By default, buttons have `display: inline-block`, but setting this property will change the button to a full-width element with `display: block`.
 
-import Expand from '@site/static/usage/button/expand/index.md';
+import Expand from '@site/static/usage/v7/button/expand/index.md';
 
 <Expand />
 
@@ -37,7 +37,7 @@ import Expand from '@site/static/usage/button/expand/index.md';
 
 このプロパティは、ボタンの形状を指定することができます。デフォルトでは、ボタンは小さなボーダー半径を持つ長方形ですが、これを `"round"` に設定すると、ボタンは丸みを帯びた要素に変更されます。
 
-import Shape from '@site/static/usage/button/shape/index.md';
+import Shape from '@site/static/usage/v7/button/shape/index.md';
 
 <Shape />
 
@@ -46,7 +46,7 @@ import Shape from '@site/static/usage/button/shape/index.md';
 
 この属性は、Buttonのbackgroundとborder-colorを設定します。デフォルトでは、Buttonはtoolbar内にない限り、backgroundは塗りつぶされます。toolbar内にある場合は、backgroundは透明になります。
 
-import Fill from '@site/static/usage/button/fill/index.md';
+import Fill from '@site/static/usage/v7/button/fill/index.md';
 
 <Fill />
 
@@ -54,13 +54,13 @@ import Fill from '@site/static/usage/button/fill/index.md';
 
 この属性は、Buttonのサイズを指定します。この属性を設定すると、Buttonの高さとpaddingが変更されます
 
-import Size from '@site/static/usage/button/size/index.md';
+import Size from '@site/static/usage/v7/button/size/index.md';
 
 <Size />
 
 ## Icons
 
-import Icons from '@site/static/usage/button/icons/index.md';
+import Icons from '@site/static/usage/v7/button/icons/index.md';
 
 <Icons />
 
@@ -68,13 +68,13 @@ import Icons from '@site/static/usage/button/icons/index.md';
 
 ### Colors
 
-import Colors from '@site/static/usage/button/theming/colors/index.md';
+import Colors from '@site/static/usage/v7/button/theming/colors/index.md';
 
 <Colors />
 
 ### CSS Custom Properties
 
-import CSSProps from '@site/static/usage/button/theming/css-properties/index.md';
+import CSSProps from '@site/static/usage/v7/button/theming/css-properties/index.md';
 
 <CSSProps />
 

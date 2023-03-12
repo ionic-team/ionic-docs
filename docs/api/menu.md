@@ -27,7 +27,7 @@ menu要素は、root content要素と同じ深度である必要があります�
 
 ## Basic Usage
 
-import BasicUsage from '@site/static/usage/menu/basic/index.md';
+import BasicUsage from '@site/static/usage/v7/menu/basic/index.md';
 
 <BasicUsage />
 
@@ -35,7 +35,7 @@ import BasicUsage from '@site/static/usage/menu/basic/index.md';
 
 The [ion-menu-toggle](./menu-toggle) component can be used to create custom button that can open or close the menu.
 
-import MenuToggle from '@site/static/usage/menu/toggle/index.md';
+import MenuToggle from '@site/static/usage/v7/menu/toggle/index.md';
 
 <MenuToggle />
 
@@ -43,7 +43,7 @@ import MenuToggle from '@site/static/usage/menu/toggle/index.md';
 
 The `type` property can be used to customize how menus display in your application.
 
-import MenuType from '@site/static/usage/menu/type/index.md';
+import MenuType from '@site/static/usage/v7/menu/type/index.md';
 
 <MenuType />
 
@@ -51,7 +51,7 @@ import MenuType from '@site/static/usage/menu/type/index.md';
 
 ### CSS Shadow Parts
 
-import Theming from '@site/static/usage/menu/theming/index.md';
+import Theming from '@site/static/usage/v7/menu/theming/index.md';
 
 <Theming />
 

@@ -27,28 +27,28 @@ and [card content](./card-content).
 
 ## Basic Usage
 
-import Basic from '@site/static/usage/card/basic/index.md';
+import Basic from '@site/static/usage/v7/card/basic/index.md';
 
 <Basic />
 
 
 ## Media Cards
 
-import Media from '@site/static/usage/card/media/index.md';
+import Media from '@site/static/usage/v7/card/media/index.md';
 
 <Media />
 
 
 ## Card Buttons
 
-import Buttons from '@site/static/usage/card/buttons/index.md';
+import Buttons from '@site/static/usage/v7/card/buttons/index.md';
 
 <Buttons />
 
 
 ## List Card
 
-import List from '@site/static/usage/card/list/index.md';
+import List from '@site/static/usage/v7/card/list/index.md';
 
 <List />
 
@@ -57,13 +57,13 @@ import List from '@site/static/usage/card/list/index.md';
 
 ### Colors
 
-import Colors from '@site/static/usage/card/theming/colors/index.md';
+import Colors from '@site/static/usage/v7/card/theming/colors/index.md';
 
 <Colors />
 
 ### CSS Custom Properties
 
-import CSSProps from '@site/static/usage/card/theming/css-properties/index.md';
+import CSSProps from '@site/static/usage/v7/card/theming/css-properties/index.md';
 
 <CSSProps />
 

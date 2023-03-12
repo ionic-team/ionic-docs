@@ -481,7 +481,7 @@ routeに `/new` を追加したので、該当するコンポーネントとな�
   </ion-page>
 </template>
 
-<script>
+<script lang="ts">
   import { IonBackButton, IonButtons, IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/vue';
   import { defineComponent } from 'vue';
 

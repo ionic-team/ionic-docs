@@ -20,9 +20,31 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 Action Sheetは複数の選択肢を表示するダイアログです。アプリのコンテンツ上に表示され、ユーザが手動で破棄しないとアプリの利用を再開することはできません。`ios` modeでは、破壊的な選択肢は明示されます（コンテンツの削除などは赤字などでわかりやすく表示されます）。Action Sheetを破棄するには、背景をタップする、デスクトップのパソコンの場合はエスケープキーを押すなど、複数の選択肢があります。
 
-import Basic from '@site/static/usage/action-sheet/basic/index.md';
+## Inline Action Sheets (Recommended)
 
-<Basic />
+`ion-action-sheet` can be used by writing the component directly in your template. This reduces the number of handlers you need to wire up in order to present the Action Sheet.
+
+import Trigger from '@site/static/usage/v7/action-sheet/inline/trigger/index.md';
+
+<Trigger />
+
+### Using `isOpen`
+
+The `isOpen` property on `ion-action-sheet` allows developers to control the presentation state of the Action Sheet from their application state. This means when `isOpen` is set to `true` the Action Sheet will be presented, and when `isOpen` is set to `false` the Action Sheet will be dismissed.
+
+`isOpen` uses a one-way data binding, meaning it will not automatically be set to `false` when the Action Sheet is dismissed. Developers should listen for the `ionActionSheetDidDismiss` or `didDismiss` event and set `isOpen` to `false`. The reason for this is it prevents the internals of `ion-action-sheet` from being tightly coupled with the state of the application. With a one way data binding, the Action Sheet only needs to concern itself with the boolean value that the reactive variable provides. With a two way data binding, the Action Sheet needs to concern itself with both the boolean value as well as the existence of the reactive variable itself. This can lead to non-deterministic behaviors and make applications harder to debug.
+
+import IsOpen from '@site/static/usage/v7/action-sheet/inline/isOpen/index.md';
+
+<IsOpen />
+
+## Controller Action Sheets
+
+The `actionSheetController` can be used in situations where more control is needed over when the Action Sheet is presented and dismissed.
+
+import Controller from '@site/static/usage/v7/action-sheet/controller/index.md';
+
+<Controller />
 
 ## Buttons
 
@@ -30,7 +52,15 @@ Buttonの `role` プロパティは、 `destructive` か `cancel` のどちら�
 
 Buttonは `ActionSheetButton` の `data` プロパティを介してデータを渡すこともできます。これは `onDidDismiss` メソッドの戻り値にある `data` フィールドにデータを入力します。
 
-## テーマ
+## Collecting Role Information on Dismiss
+
+When the `didDismiss` event is fired, the `data` and `role` fields of the event detail can be used to gather information about how the Action Sheet was dismissed.
+
+import RoleInfo from '@site/static/usage/v7/action-sheet/role-info-on-dismiss/index.md';
+
+<RoleInfo />
+
+## Theming
 
 Action Sheetはscopedによるカプセル化を採用しており、実行時に各スタイルにクラスを追加することで、自動的にCSSをスコープ化します。CSSでscopedセレクタをオーバーライドするには、[higher specificity](https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity) セレクタが必要です。
 
@@ -50,7 +80,7 @@ Action Sheetはscopedによるカプセル化を採用しており、実行時�
 }
 ```
 
-import Styling from '@site/static/usage/action-sheet/theming/styling/index.md';
+import Styling from '@site/static/usage/v7/action-sheet/theming/styling/index.md';
 
 <Styling />
 
@@ -58,7 +88,7 @@ import Styling from '@site/static/usage/action-sheet/theming/styling/index.md';
 
 Any of the defined [CSS Custom Properties](#css-custom-properties-1) can be used to style the Action Sheet without needing to target individual elements.
 
-import CssCustomProperties from '@site/static/usage/action-sheet/theming/css-properties/index.md';
+import CssCustomProperties from '@site/static/usage/v7/action-sheet/theming/css-properties/index.md';
 
 <CssCustomProperties />
 

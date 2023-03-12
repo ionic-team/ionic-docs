@@ -21,7 +21,7 @@ Infinite Scrollコンポーネントは、ユーザーがページの下部ま�
 
 ユーザが定義された距離に達したときに、`ionInfinite` イベントに割り当てられた関数が呼び出されます。この関数がすべてのタスクを完了したら、無限スクロールインスタンスに対して `complete()` メソッドを呼び出す必要があります。
 
-import Basic from '@site/static/usage/infinite-scroll/basic/index.md';
+import Basic from '@site/static/usage/v7/infinite-scroll/basic/index.md';
 
 <Basic />
 
@@ -29,7 +29,7 @@ import Basic from '@site/static/usage/infinite-scroll/basic/index.md';
 
 `ion-infinite-scroll`コンポーネントは、無限スクロールのロジックを持っています。コンテンツを表示するには、子コンポーネントが必要です。Ionicは、デフォルトでその `ion-infinite-scroll-content` コンポーネントを使用します。このコンポーネントは、無限スクロールを表示し、無限スクロールの状態に応じて外観を変更します。ユーザが使用しているプラットフォームに応じて最適なスピナーが表示されます。ただし、`ion-infinite-scroll-content` コンポーネントのプロパティを設定することにより、デフォルトのスピナーを変更したり、テキストを追加することができます。
 
-import InfiniteScrollContent from '@site/static/usage/infinite-scroll/infinite-scroll-content/index.md';
+import InfiniteScrollContent from '@site/static/usage/v7/infinite-scroll/infinite-scroll-content/index.md';
 
 <InfiniteScrollContent />
 
@@ -37,7 +37,7 @@ import InfiniteScrollContent from '@site/static/usage/infinite-scroll/infinite-s
 
 `ion-infinite-scroll` と `ion-infinite-scroll-content` コンポーネントを分離することで、開発者は必要に応じて独自のコンテンツコンポーネントを作成できます。このコンテンツには、SVG要素から固有のCSSアニメーションを持つ要素まで、あらゆるものを含めることができます。
 
-import CustomContent from '@site/static/usage/infinite-scroll/custom-infinite-scroll-content/index.md';
+import CustomContent from '@site/static/usage/v7/infinite-scroll/custom-infinite-scroll-content/index.md';
 
 <CustomContent />
 

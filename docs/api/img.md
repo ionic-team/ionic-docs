@@ -23,7 +23,7 @@ Img は、タグがビューポートに表示されているときに画像をL
 
 ## Basic Usage
 
-import Basic from '@site/static/usage/img/basic/index.md';
+import Basic from '@site/static/usage/v7/img/basic/index.md';
 
 <Basic />
 

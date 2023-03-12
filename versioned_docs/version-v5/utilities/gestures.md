@@ -173,6 +173,7 @@ const onMove = (detail) => {
 
 ngOnInit() {
   const gesture = this.gestureCtrl.create({
+    gestureName: 'my-gesture',
     el: this.rectangle.nativeElement,
     onMove: (detail) => { this.onMove(detail); }
   })
@@ -186,7 +187,7 @@ private onMove(detail) {
   const deltaX = detail.deltaX;
   const velocityX = detail.velocityX;
 
-  this.p.innerHTML = `
+  this.p.nativeElement.innerHTML = `
     <div>Type: ${type}</div>
     <div>Current X: ${currentX}</div>
     <div>Delta X: ${deltaX}</div>
@@ -437,18 +438,6 @@ In the example above, we want to be able to detect double clicks on an element. 
 ## Gesture Animations
 
 See our guide on implementing gesture animations: [Gesture Animations with Ionic Animations](animations.md#gesture-animations)
-
-## Browser Support
-
-| Browser/Platform | Supported Versions |
-| ---------------- | ------------------ |
-| **Chrome**       | 22+                |
-| **Safari**       | 9+                 |
-| **Firefox**      | 32+                |
-| **IE/Edge**      | 11+                |
-| **Opera**        | 30+                |
-| **iOS**          | 9+                 |
-| **Android**      | 5+                 |
 
 ## Types
 

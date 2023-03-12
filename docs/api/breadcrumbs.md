@@ -18,7 +18,7 @@ Breadcrumbsは、ユーザーがアプリやサイトのどこにいるのかを
 
 ## 基本的な使い方
 
-import Basic from '@site/static/usage/breadcrumbs/basic/index.md';
+import Basic from '@site/static/usage/v7/breadcrumbs/basic/index.md';
 
 <Basic />
 
@@ -26,13 +26,13 @@ import Basic from '@site/static/usage/breadcrumbs/basic/index.md';
 
 ### アイテムでのアイコン
 
-import IconsOnItems from '@site/static/usage/breadcrumbs/icons/icons-on-items/index.md';
+import IconsOnItems from '@site/static/usage/v7/breadcrumbs/icons/icons-on-items/index.md';
 
 <IconsOnItems />
 
 ### Custom Separators
 
-import CustomSeparators from '@site/static/usage/breadcrumbs/icons/custom-separators/index.md';
+import CustomSeparators from '@site/static/usage/v7/breadcrumbs/icons/custom-separators/index.md';
 
 <CustomSeparators />
 
@@ -42,7 +42,7 @@ import CustomSeparators from '@site/static/usage/breadcrumbs/icons/custom-separa
 
 `maxItems` の値よりも多くのアイテムがある場合、breadcrumbsは折りたたまれます。デフォルトでは、最初と最後のアイテムのみが表示されます。
 
-import MaxItems from '@site/static/usage/breadcrumbs/collapsing-items/max-items/index.md';
+import MaxItems from '@site/static/usage/v7/breadcrumbs/collapsing-items/max-items/index.md';
 
 <MaxItems />
 
@@ -50,7 +50,7 @@ import MaxItems from '@site/static/usage/breadcrumbs/collapsing-items/max-items/
 
 アイテムが折りたたまれた後、表示するアイテムの数は `itemsBeforeCollapse` と `itemsAfterCollapse` プロパティで制御することができます。
 
-import ItemsBeforeAfter from '@site/static/usage/breadcrumbs/collapsing-items/items-before-after/index.md';
+import ItemsBeforeAfter from '@site/static/usage/v7/breadcrumbs/collapsing-items/items-before-after/index.md';
 
 <ItemsBeforeAfter />
 
@@ -58,7 +58,7 @@ import ItemsBeforeAfter from '@site/static/usage/breadcrumbs/collapsing-items/it
 
 インジケータをクリックすると、`ionCollapsedClick` イベントが発生します。これは、例えば、breadcrumbsを展開するために使うことができます。
 
-import ExpandOnClick from '@site/static/usage/breadcrumbs/collapsing-items/expand-on-click/index.md';
+import ExpandOnClick from '@site/static/usage/v7/breadcrumbs/collapsing-items/expand-on-click/index.md';
 
 <ExpandOnClick />
 
@@ -66,7 +66,7 @@ import ExpandOnClick from '@site/static/usage/breadcrumbs/collapsing-items/expan
 
 また、`ionCollapsedClick` イベントは、隠されたパンくずを表示するオーバーレイ（この場合は `ion-popover` ）を提示するために使用することができます。
 
-import PopoverOnClick from '@site/static/usage/breadcrumbs/collapsing-items/popover-on-click/index.md';
+import PopoverOnClick from '@site/static/usage/v7/breadcrumbs/collapsing-items/popover-on-click/index.md';
 
 <PopoverOnClick />
 
@@ -74,13 +74,13 @@ import PopoverOnClick from '@site/static/usage/breadcrumbs/collapsing-items/popo
 
 ### Colors
 
-import Colors from '@site/static/usage/breadcrumbs/theming/colors/index.md';
+import Colors from '@site/static/usage/v7/breadcrumbs/theming/colors/index.md';
 
 <Colors />
 
 ### CSS Custom Properties
 
-import CSSProps from '@site/static/usage/breadcrumbs/theming/css-properties/index.md';
+import CSSProps from '@site/static/usage/v7/breadcrumbs/theming/css-properties/index.md';
 
 <CSSProps />
 

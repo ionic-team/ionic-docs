@@ -27,7 +27,7 @@ The reorder is the anchor used to drag and drop the items. Once the reorder is c
 
 The most basic example of a reorder is slotting it inside of an item. By default, the reorder functionality is disabled for a reorder group. It can be enabled by setting the `disabled` property on the reorder group to `false`. The reorder icon can then be used to drag and drop the items and reorder them.
 
-import Basic from '@site/static/usage/reorder/basic/index.md';
+import Basic from '@site/static/usage/v7/reorder/basic/index.md';
 
 <Basic />
 
@@ -36,7 +36,7 @@ import Basic from '@site/static/usage/reorder/basic/index.md';
 
 In some cases, it may be desired to have the option to toggle the reorder functionality. This can be done by making the `disabled` property reactive, based on a function or variable.
 
-import TogglingDisabled from '@site/static/usage/reorder/toggling-disabled/index.md';
+import TogglingDisabled from '@site/static/usage/v7/reorder/toggling-disabled/index.md';
 
 <TogglingDisabled />
 
@@ -45,7 +45,7 @@ import TogglingDisabled from '@site/static/usage/reorder/toggling-disabled/index
 
 The reorder component uses a reorder icon with three lines on iOS and two lines on Material Design. This can be customized by adding an [Icon](https://ionic.io/ionicons) component inside of the reorder with any of the available Ionicons.
 
-import CustomIcon from '@site/static/usage/reorder/custom-icon/index.md';
+import CustomIcon from '@site/static/usage/v7/reorder/custom-icon/index.md';
 
 <CustomIcon />
 
@@ -54,7 +54,7 @@ import CustomIcon from '@site/static/usage/reorder/custom-icon/index.md';
 
 Reorder can also be used as a wrapper around an item, making the item itself the anchor. Click anywhere on an item below and drag it to reorder the list.
 
-import Wrapper from '@site/static/usage/reorder/wrapper/index.md';
+import Wrapper from '@site/static/usage/v7/reorder/wrapper/index.md';
 
 <Wrapper />
 
@@ -65,7 +65,7 @@ When the `complete` method is called on the reorder group with no parameters, th
 
 In some cases, it may be necessary for an app to reorder both the array and the DOM nodes on its own. If this is required, `false` should be passed as a parameter to the `complete` method. This will prevent Ionic from reordering any DOM nodes inside of the reorder group.
 
-import UpdatingData from '@site/static/usage/reorder/updating-data/index.md';
+import UpdatingData from '@site/static/usage/v7/reorder/updating-data/index.md';
 
 <UpdatingData />
 
@@ -74,7 +74,7 @@ import UpdatingData from '@site/static/usage/reorder/updating-data/index.md';
 
 Reorder requires a scroll container to work properly. When using a virtual scrolling solution, a custom scroll target needs to be provided. Scrolling on the content needs to be disabled and the `.ion-content-scroll-host` class needs to be added to the element responsible for scrolling.
 
-import CustomScrollTarget from '@site/static/usage/reorder/custom-scroll-target/index.md';
+import CustomScrollTarget from '@site/static/usage/v7/reorder/custom-scroll-target/index.md';
 
 <CustomScrollTarget />
 

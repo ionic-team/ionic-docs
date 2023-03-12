@@ -20,84 +20,33 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="scoped" />
 
+アラートは、ユーザーに情報を提示したり、入力を使ってユーザーから情報を収集したりするダイアログである。アラートはアプリのコンテンツの上に表示され、アプリとの対話を再開する前に、ユーザーが手動で解除する必要があります。また、オプションで `header`、`subHeader`、`message` を持つことができます。
 
+## Inline Alerts (Recommended)
 
-Alertは、ユーザーに情報を提示したり、Inputを使用してユーザーから情報を収集したりするダイアログです。Alertはアプリのコンテンツの上に表示され、アプリの利用を再開する前にユーザーが手動で破棄する必要があります。 オプションに `header`, `subHeader` と `message` を持つことができます。
+`ion-alert` can be used by writing the component directly in your template. This reduces the number of handlers you need to wire up in order to present the Alert.
 
-## Presenting
+import Trigger from '@site/static/usage/v7/alert/presenting/trigger/index.md';
 
-### Controller
+<Trigger />
 
-import Controller from '@site/static/usage/alert/presenting/controller/index.md';
+### Using `isOpen`
+
+The `isOpen` property on `ion-alert` allows developers to control the presentation state of the Alert from their application state. This means when `isOpen` is set to `true` the Alert will be presented, and when `isOpen` is set to `false` the Alert will be dismissed.
+
+`isOpen` uses a one-way data binding, meaning it will not automatically be set to `false` when the Alert is dismissed. Developers should listen for the `ionAlertDidDismiss` or `didDismiss` event and set `isOpen` to `false`. The reason for this is it prevents the internals of `ion-alert` from being tightly coupled with the state of the application. With a one way data binding, the Alert only needs to concern itself with the boolean value that the reactive variable provides. With a two way data binding, the Alert needs to concern itself with both the boolean value as well as the existence of the reactive variable itself. This can lead to non-deterministic behaviors and make applications harder to debug.
+
+import IsOpen from '@site/static/usage/v7/alert/presenting/isOpen/index.md';
+
+<IsOpen />
+
+## Controller Alerts
+
+The `alertController` can be used in situations where more control is needed over when the Alert is presented and dismissed.
+
+import Controller from '@site/static/usage/v7/alert/presenting/controller/index.md';
 
 <Controller />
-
-### Inline
-
-React や Vue と共に Ionic を使用する場合、 `isOpen` プロパティを使用して `ion-alert` をテンプレートに直接配置することもできます。ただし、アラートを解除する際には手動で `isOpen` を `false` に設定する必要があり、自動的に更新されることはありません。
-
-<Tabs defaultValue="react" values={[{ value: 'react', label: 'React' }, { value: 'vue', label: 'Vue' }]}>
-<TabItem value="react">
-
-```tsx
-import React, { useState } from 'react';
-import { IonAlert, IonButton, IonContent } from '@ionic/react';
-
-function Example() {
-  const [showAlert, setShowAlert] = useState(false);
-
-  return (
-    <IonContent>
-      <IonButton onClick={() => setShowAlert(true)}>Click Me</IonButton>
-      <IonAlert
-        isOpen={showAlert}
-        onDidDismiss={() => setShowAlert(false)}
-        header="Alert"
-        subHeader="Important message"
-        message="This is an alert!"
-        buttons={['OK']}
-      />
-    </IonContent>
-  );
-}
-```
-
-</TabItem>
-<TabItem value="vue">
-
-```html
-<template>
-  <ion-content>
-    <ion-button @click="setOpen(true)">Show Alert</ion-button>
-    <ion-alert
-      :is-open="isOpenRef"
-      header="Alert"
-      sub-header="Important message"
-      message="This is an alert!"
-      :buttons="['OK']"
-      @didDismiss="setOpen(false)"
-    ></ion-alert>
-  </ion-content>
-</template>
-
-<script lang="ts">
-import { IonAlert, IonButton, IonContent } from '@ionic/vue';
-import { defineComponent, ref } from 'vue';
-
-export default defineComponent({
-  components: { IonAlert, IonButton },
-  setup() {
-    const isOpenRef = ref(false);
-    const setOpen = (state: boolean) => isOpenRef.value = state;
-    
-    return { isOpenRef, setOpen }
-  }
-});
-</script>
-```
-
-</TabItem>
-</Tabs>
 
 ## Buttons
 
@@ -105,7 +54,7 @@ export default defineComponent({
 
 オプションで、`cancel`のような `role` プロパティをボタンに追加することができます。もし `cancel` ロールがボタンのいずれかに設定されている場合、バックドロップをタップしてアラートが解除されると、キャンセルロールを持つボタンから handler が起動されます。
 
-import Buttons from '@site/static/usage/alert/buttons/index.md';
+import Buttons from '@site/static/usage/v7/alert/buttons/index.md';
 
 <Buttons />
 
@@ -116,13 +65,13 @@ Alertには、複数の異なるInputを含めることもでき、そのデー�
 
 ### Text Inputs Example
 
-import TextInputs from '@site/static/usage/alert/inputs/text-inputs/index.md';
+import TextInputs from '@site/static/usage/v7/alert/inputs/text-inputs/index.md';
 
 <TextInputs />
 
 ### Radio Example
 
-import Radios from '@site/static/usage/alert/inputs/radios/index.md';
+import Radios from '@site/static/usage/v7/alert/inputs/radios/index.md';
 
 <Radios />
 
@@ -152,7 +101,7 @@ Alertはscopedによるカプセル化を使用しており、実行時に各ス
 }
 ```
 
-import Customization from '@site/static/usage/alert/customization/index.md';
+import Customization from '@site/static/usage/v7/alert/customization/index.md';
 
 <Customization />
 

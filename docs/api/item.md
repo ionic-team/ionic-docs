@@ -23,7 +23,7 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 アイテムはテキストを左寄せにし、テキストがアイテムより幅が広い場合は省略記号を追加しています。この動作は、Ionic Framework が提供する CSS Utilities を使って変更することができます。例えば、以下の例では `.ion-text-wrap` を使っています。テキストを変換するためにアイテムに追加できる他のクラスについては、[CSS Utilities Documentation](/docs/layout/css-utilities) を参照してください。
 
-import Basic from '@site/static/usage/item/basic/index.md';
+import Basic from '@site/static/usage/v7/item/basic/index.md';
 
 <Basic />
 
@@ -32,7 +32,7 @@ import Basic from '@site/static/usage/item/basic/index.md';
 
 `href` か `button` プロパティが設定されている場合、itemは "clickable（クリック可能）" と見なされます。clickableなitemsには、インタラクティブに操作できることを示す視覚的な違いがいくつかあります。たとえば、clickableなitemは、`md` modeではrippleエフェクトを持ち、`ios` modeではハイライト表示され、`ios` modeでの [detail arrow](/#detail-arrows) が表示されます。
 
-import Clickable from '@site/static/usage/item/clickable/index.md';
+import Clickable from '@site/static/usage/v7/item/clickable/index.md';
 
 <Clickable />
 
@@ -41,7 +41,7 @@ import Clickable from '@site/static/usage/item/clickable/index.md';
 
 デフォルトでは、[clickableなitems](/#clickable-items) は、`ios` modeで右矢印アイコンを表示します。clickableな要素の右矢印アイコンを非表示にするには、 `detail` プロパティを `false` に設定します。自動的に表示されない項目に右矢印アイコンを表示するには、`detail`プロパティを `true` に設定します。
 
-import DetailArrows from '@site/static/usage/item/detail-arrows/index.md';
+import DetailArrows from '@site/static/usage/v7/item/detail-arrows/index.md';
 
 <DetailArrows />
 
@@ -65,7 +65,7 @@ See the [theming documentation](/docs/theming/css-variables) for more informatio
 
 アイテムはデフォルトで下部のボーダーを挿入して表示します。ボーダーは左側にパディングを持ち、 `"start"` スロットにスロットされたコンテンツの下に表示されることはありません。 `lines` プロパティを `"full"` または `"none"` に変更すると、それぞれ全幅のボーダーが表示され、ボーダーを表示しないようになります。
 
-import Lines from '@site/static/usage/item/lines/index.md';
+import Lines from '@site/static/usage/v7/item/lines/index.md';
 
 <Lines />
 
@@ -74,7 +74,7 @@ import Lines from '@site/static/usage/item/lines/index.md';
 
 [Avatars](./avatar) and [Thumbnails](./thumbnail) can be slotted inside of an item. This is useful when making lists of images and text.
 
-import Media from '@site/static/usage/item/media/index.md';
+import Media from '@site/static/usage/v7/item/media/index.md';
 
 <Media />
 
@@ -83,59 +83,41 @@ import Media from '@site/static/usage/item/media/index.md';
 
 Buttons are styled smaller inside of items than when they are outside of them. To make the button size match buttons outside of an item, set the `size` attribute to `"default"`.
 
-import Buttons from '@site/static/usage/item/buttons/index.md';
+import Buttons from '@site/static/usage/v7/item/buttons/index.md';
 
 <Buttons />
 
 
 ## Icons in Items
 
-import Icons from '@site/static/usage/item/icons/index.md';
+import Icons from '@site/static/usage/v7/item/icons/index.md';
 
 <Icons />
 
 
 ## Item Inputs
 
-import Inputs from '@site/static/usage/item/inputs/index.md';
+import Inputs from '@site/static/usage/v7/item/inputs/index.md';
 
 <Inputs />
-
-
-## Helper & Error Text
-
-Helper & error text can be used inside of an item with an input by slotting a note in the `"helper"` and `"error"` slots. The error slot will not be displayed unless the `ion-invalid` class is added to the `ion-item`. In Angular, this is done automatically through form validation. In JavaScript, React and Vue, the class needs to be manually added based on your own validation.
-
-import HelperError from '@site/static/usage/item/helper-error/index.md';
-
-<HelperError />
-
-
-## Item Counter
-
-The item counter is helper text that displays under an input to notify the user of how many characters have been entered out of the total that the input will accept. When adding `counter`, the default behavior is to format the value that gets displayed as `inputLength / maxLength`. This behavior can be customized by passing in a formatter function to the `counterFormatter` property.
-
-import Counter from '@site/static/usage/item/counter/index.md';
-
-<Counter />
 
 ## Theming
 
 ### Colors
 
-import Colors from '@site/static/usage/item/theming/colors/index.md';
+import Colors from '@site/static/usage/v7/item/theming/colors/index.md';
 
 <Colors />
 
 ### CSS Shadow Parts
 
-import CSSParts from '@site/static/usage/item/theming/css-shadow-parts/index.md';
+import CSSParts from '@site/static/usage/v7/item/theming/css-shadow-parts/index.md';
 
 <CSSParts />
 
 ### CSS Custom Properties
 
-import CSSProps from '@site/static/usage/item/theming/css-properties/index.md';
+import CSSProps from '@site/static/usage/v7/item/theming/css-properties/index.md';
 
 <CSSProps />
 
@@ -146,7 +128,7 @@ Items containing an input will highlight the bottom border of the input with a d
 
 The highlight color changes based on the item state, but all of the states use Ionic colors by default. When focused, the input highlight will use the `primary` color. If the input is valid it will use the `success` color, and invalid inputs will use the `danger` color. This can be customized using the provided CSS properties.
 
-import InputHighlight from '@site/static/usage/item/theming/input-highlight/index.md';
+import InputHighlight from '@site/static/usage/v7/item/theming/input-highlight/index.md';
 
 <InputHighlight />
 

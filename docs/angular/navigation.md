@@ -178,6 +178,54 @@ import { LoginComponent } from './login.component';
 
 ここでは、`RouterModule` のインポートとともに、典型的な `Angular Module` の設定がありますが、`RouterModule` では `forChild` によってコンポーネントを使用することを宣言しています。この設定では、ビルドを実行するときに、`App Component`（Root）、 `login Component` 、および `detail Component` において別々のチャンクを作成します。
 
+## Standalone Components
+
+:::caution Experimental API
+
+Standalone components is an experimental API introduced in Angular 14.x and available in Ionic 6.3 and later. This feature may change before it is stable.
+
+:::
+
+Standalone components allow developers to lazy load a component on a route without having to declare the component to an Angular module.
+
+To use standalone components with routing and Ionic Framework, you must first be on Ionic ^6.3.0. The experimental API requires developers to assign the `EnvironmentInjector` instance for each router outlet (`ion-router-outlet` and `ion-tabs`) that uses standalone component routing.
+
+```ts title="app.component.ts"
+import { Component, EnvironmentInjector } from '@angular/core';
+
+@Component({
+  selector: 'app-root',
+  template: 'app.component.html',
+})
+export class AppComponent {
+  constructor(public environmentInjector: EnvironmentInjector) {}
+}
+```
+
+```html title="app.component.html"
+<ion-router-outlet [environmentInjector]="environmentInjector"></ion-router-outlet>
+<!-- or if you are using ion-tabs -->
+<ion-tabs [environmentInjector]="environmentInjector"> ... </ion-tabs>
+```
+
+Developers can use the existing syntax for standalone component routing from Angular:
+
+```ts
+@NgModule({
+  imports: [
+    RouterModule.forRoot([
+      {
+        path: 'standalone-route',
+        loadComponent: () => import('./path/to/my-component.component').then((c) => c.MyComponent),
+      },
+    ]),
+  ],
+})
+export class AppRoutingModule {}
+```
+
+To get started with standalone components [visit Angular's official docs](https://angular.io/guide/standalone-components).
+
 ## Live Example
 
 If you would prefer to get hands on with the concepts and code described above, please checkout our [live example](https://stackblitz.com/edit/ionic-angular-routing?file=src/app/app-routing.module.ts) of the topics above on StackBlitz.
@@ -192,8 +240,8 @@ The following is an example of linear routing in a mobile app:
 
 <video
   style={{
-    'margin': '40px auto',
-    'display': 'flex'
+    margin: '40px auto',
+    display: 'flex',
   }}
   width="400"
   src={useBaseUrl('video/linear-routing-demo.mp4')}
@@ -218,8 +266,8 @@ The following is an example of non-linear routing:
 
 <video
   style={{
-    'margin': '40px auto',
-    'display': 'flex'
+    margin: '40px auto',
+    display: 'flex',
   }}
   width="400"
   src={useBaseUrl('video/non-linear-routing-demo.mp4')}
@@ -433,8 +481,8 @@ The example below shows how the iOS App Store app handles presenting an "Account
 
 <video
   style={{
-    'margin': '40px auto',
-    'display': 'flex'
+    margin: '40px auto',
+    display: 'flex',
   }}
   width="400"
   src={useBaseUrl('video/tabs-account-demo.mp4')}
@@ -449,6 +497,6 @@ Instead, we recommend having routes in each tab that reference the same componen
 
 The example below shows how the Spotify app reuses the same album component to show content in multiple tabs. Notice that each screenshot shows the same album but from a different tab.
 
-| Home Tab | Search Tab |
-| :------: | :--------: |
+|                      Home Tab                       |                      Search Tab                       |
+| :-------------------------------------------------: | :---------------------------------------------------: |
 | <img src={useBaseUrl('img/usage/tabs-home.jpg')} /> | <img src={useBaseUrl('img/usage/tabs-search.jpg')} /> |

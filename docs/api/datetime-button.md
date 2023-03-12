@@ -27,7 +27,7 @@ Angular、React、VueなどのJavaScriptフレームワークでDatetime Button�
 
 ## 基本的な使い方
 
-import Basic from '@site/static/usage/datetime-button/basic/index.md';
+import Basic from '@site/static/usage/v7/datetime-button/basic/index.md';
 
 <Basic />
 

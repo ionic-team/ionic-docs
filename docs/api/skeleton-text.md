@@ -23,7 +23,7 @@ Skeleton Textは、placeholderコンテンツをレンダリングするため�
 
 ## Basic Usage
 
-import Basic from '@site/static/usage/skeleton-text/basic/index.md';
+import Basic from '@site/static/usage/v7/skeleton-text/basic/index.md';
 
 <Basic />
 
@@ -31,7 +31,7 @@ import Basic from '@site/static/usage/skeleton-text/basic/index.md';
 
 ### CSS Custom Properties
 
-import CSSProps from '@site/static/usage/skeleton-text/theming/css-properties/index.md';
+import CSSProps from '@site/static/usage/v7/skeleton-text/theming/css-properties/index.md';
 
 <CSSProps />
 

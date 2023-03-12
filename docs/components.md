@@ -66,8 +66,8 @@ Ionicアプリは、コンポーネントと呼ばれる高レイヤーの構成
   <p>フローティングアクションボタン（FAB）は、画面上で主要な、または最も一般的なアクションを実行する円形のボタンです。</p>
 </DocsCard>
 
-<DocsCard header="Icons" href="https://ionic.io/ionicons" img="/icons/feature-component-icons-icon.png">
-  <p>Web、iOS、Android、デスクトップアプリケーションで使用するために美しくデザインされたアイコン。</p>
+<DocsCard header="Icons" href="api/icon" img="/icons/feature-component-icons-icon.png">
+  <p>Beautifully designed icons for use in web, iOS, Android, and desktop apps.</p>
 </DocsCard>
 
 <DocsCard header="Grid" href="api/grid" icon="/icons/component-grid-icon.png">
@@ -136,10 +136,6 @@ Ionicアプリは、コンポーネントと呼ばれる高レイヤーの構成
 
 <DocsCard header="Select" href="api/select" icon="/icons/component-select-icon.png">
   <p>SelectはネイティブのHTML選択に似ていますが、Sortと選択が少し改善されています。</p>
-</DocsCard>
-
-<DocsCard header="Slides" href="api/slides" icon="/icons/component-slides-icon.png">
-  <p>Slideを使用すると、ギャラリー、チュートリアル、ページベースのレイアウトなどの複雑なUIを簡単に作成できます。</p>
 </DocsCard>
 
 <DocsCard header="Tabs" href="api/tabs" img="/icons/feature-component-tabs-icon.png">

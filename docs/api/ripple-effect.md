@@ -25,7 +25,7 @@ It's important to set [relative positioning](https://developer.mozilla.org/en-US
 
 ## Basic Usage
 
-import Basic from '@site/static/usage/ripple-effect/basic/index.md';
+import Basic from '@site/static/usage/v7/ripple-effect/basic/index.md';
 
 <Basic />
 
@@ -34,7 +34,7 @@ import Basic from '@site/static/usage/ripple-effect/basic/index.md';
 
 There are two types of ripple effects: `"bounded"` and `"unbounded"`. The default type, `"bounded"`, will expand the ripple effect from the click position outwards. To add a ripple effect that always starts in the center of the element and expands in a circle, set the type to `"unbounded"`.
 
-import Type from '@site/static/usage/ripple-effect/type/index.md';
+import Type from '@site/static/usage/v7/ripple-effect/type/index.md';
 
 <Type />
 
@@ -43,7 +43,7 @@ import Type from '@site/static/usage/ripple-effect/type/index.md';
 
 The ripple can be customized to a different color through CSS. By default the ripple color is set to inherit the text color, which is generally the body color. This can be changed by setting the CSS `color` on the parent or the ripple effect itself.
 
-import Customizing from '@site/static/usage/ripple-effect/customizing/index.md';
+import Customizing from '@site/static/usage/v7/ripple-effect/customizing/index.md';
 
 <Customizing />
 

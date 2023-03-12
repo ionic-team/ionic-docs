@@ -22,19 +22,19 @@ Labelは `ion-item`、`ion-input`、`ion-toggle` 等と共に使用できるラ�
 
 ## Basic Usage
 
-import Basic from '@site/static/usage/label/basic/index.md';
+import Basic from '@site/static/usage/v7/label/basic/index.md';
 
 <Basic />
 
 ## Item Labels
 
-import Item from '@site/static/usage/label/item/index.md';
+import Item from '@site/static/usage/v7/label/item/index.md';
 
 <Item />
 
 ## Input Labels
 
-import Input from '@site/static/usage/label/input/index.md';
+import Input from '@site/static/usage/v7/label/input/index.md';
 
 <Input />
 
@@ -42,7 +42,7 @@ import Input from '@site/static/usage/label/input/index.md';
 
 ### Colors
 
-import Colors from '@site/static/usage/label/theming/colors/index.md';
+import Colors from '@site/static/usage/v7/label/theming/colors/index.md';
 
 <Colors />
 

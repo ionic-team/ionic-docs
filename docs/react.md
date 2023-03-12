@@ -127,8 +127,8 @@ $ ionic serve █
   </DocsCard>
 
 <DocsCard
-  header="既存のReactアプリにIonicを追加する"
-  href="https://dev.to/ionic/adding-ionic-react-to-an-existing-react-project-4kib"
+  header="Add Ionic to Existing React App"
+  href="/docs/react/adding-ionic-react-to-an-existing-react-project"
   icon="/icons/logo-react-icon.png"
 >
   <p>個々のコンポーネントを使用するか、完全なアプリ体験をつくるか。</p>

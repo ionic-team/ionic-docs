@@ -12,11 +12,11 @@ Ionic Frameworkは<a href="https://semver.org/" target="_blank">Semantic Version
 
 ### マイナーリリース
 
-マイナーリリースは、新機能が追加されたとき、または非破壊的なAPIの変更が導入されたときに公開されます。私たちはリリースに自信を持てるように、どんな変更でも徹底的にテストしますが、新しいコードで新しい問題が起きる可能性があります。機能やAPIの変更があった場合は、**毎月**マイナーバージョンをリリースする予定です。
+A minor release will be published when a new feature is added or API changes that are non-breaking are introduced. We will heavily test any changes so that we are confident with the release, but with new code comes the potential for new issues. We are scheduled to release a minor version **every 6 weeks**, if any features or API changes were made.
 
 ### パッチリリース
 
-パッチリリースは、バグ修正が行われた時に公開されますが、APIは変更されておらず、重大な変更は導入されません。隔週で新しいパッチバージョンをリリースする予定ですが、予定からずれてリリースする必要がある場合があります。マイナーリリースの新機能で新しい問題を発生させることがないように、パッチリリースは常にマイナーリリースの前に公開されます。
+A patch release will be published when bug fixes were included, but the API has not changed and no breaking changes were introduced. We are scheduled to release a new patch version **every week**, but there may be times where we need to release sooner or later than scheduled. To ensure patch releases can fix existing code without introducing new issues from the new features, patch releases will always be published prior to a minor release.
 
 ## Changelog
 

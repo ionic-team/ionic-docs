@@ -21,13 +21,13 @@ Noteは、一般的に詳細情報を提供するサブタイトルとして使�
 
 ## Basic Usage
 
-import Basic from '@site/static/usage/note/basic/index.md';
+import Basic from '@site/static/usage/v7/note/basic/index.md';
 
 <Basic />
 
 ## Item Notes
 
-import Item from '@site/static/usage/note/item/index.md';
+import Item from '@site/static/usage/v7/note/item/index.md';
 
 <Item />
 
@@ -35,13 +35,13 @@ import Item from '@site/static/usage/note/item/index.md';
 
 ### Colors
 
-import Colors from '@site/static/usage/note/theming/colors/index.md';
+import Colors from '@site/static/usage/v7/note/theming/colors/index.md';
 
 <Colors />
 
 ### CSS Custom Properties
 
-import CSSProps from '@site/static/usage/note/theming/css-properties/index.md';
+import CSSProps from '@site/static/usage/v7/note/theming/css-properties/index.md';
 
 <CSSProps />
 

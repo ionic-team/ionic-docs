@@ -24,23 +24,31 @@ Rangeスライダは、スライダノブを動かして、ユーザーが値の
 
 ## Basic Usage
 
-import Basic from '@site/static/usage/range/basic/index.md';
+import Basic from '@site/static/usage/v7/range/basic/index.md';
 
 <Basic />
 
-## Rangeラベル
+## Label Placement
 
-ラベルやカスタム UI 要素は、要素に `slot="start"` または `slot="end"` を追加することで、範囲のどちら側にもスロットさせることができます。この要素には、 `ion-label` や `ion-icon` 、 `div` など、任意の要素を指定することができます。ドキュメントの方向性が左から右に設定されている場合、 `start` 位置にスロットされたコンテンツは範囲の左側に表示され、 `end` 位置にスロットされたコンテンツは範囲の右側に表示されます。右から左へ(rtl)の方向性の場合、`start`の位置にスロットされたコンテンツは範囲の右側に表示され、`end`の位置にスロットされたコンテンツは範囲の左側に表示されます。
+import LabelsPlayground from '@site/static/usage/v7/range/labels/index.md';
 
-import SlotsPlayground from '@site/static/usage/range/slots/index.md';
+<LabelsPlayground />
 
-<SlotsPlayground />
+## Decorations
+
+Decorative elements can be passed into the `start` or `end` slots of the range. This is useful for adding icons such as low volume or high volume icons. Since these elements are decorative, they should not be announced by assistive technology such as screen readers.
+
+If the directionality of the document is set to left to right, the contents slotted to the `start` position will display to the left of the range, where as contents slotted to the `end` position will display to the right of the range. In right to left (rtl) directionality, the contents slotted to the `start` position will display to the right of the range, where as contents slotted to the `end` position will display to the left of the range.
+
+import DecorationsPlayground from '@site/static/usage/v7/range/slots/index.md';
+
+<DecorationsPlayground />
 
 ## Dual Knobs
 
 Dual knobs はユーザーが下限と上限の値を選択するために使用できる2つのknobsコントロールを導入しています。選択されると、Range は選択された上下限の値を含む [RangeValue](#rangevalue) を持つ `ionChange` イベントを発信します。
 
-import DualKnobs from '@site/static/usage/range/dual-knobs/index.md';
+import DualKnobs from '@site/static/usage/v7/range/dual-knobs/index.md';
 
 <DualKnobs />
 
@@ -50,7 +58,7 @@ import DualKnobs from '@site/static/usage/range/dual-knobs/index.md';
 
 `pinFormatter` 関数を使用すると、開発者はユーザーに対してレンジの値のフォーマットをカスタマイズすることができます。
 
-import Pins from '@site/static/usage/range/pins/index.md';
+import Pins from '@site/static/usage/v7/range/pins/index.md';
 
 <Pins />
 
@@ -60,7 +68,7 @@ TicksはRange 上で利用可能な各値のインジケータを表示します
 
 snapsを有効にし、knobをドラッグして放すと、Range knobは最も近い利用可能な値にスナップします。
 
-import SnappingTicks from '@site/static/usage/range/snapping-ticks/index.md';
+import SnappingTicks from '@site/static/usage/v7/range/snapping-ticks/index.md';
 
 <SnappingTicks />
 
@@ -70,7 +78,7 @@ import SnappingTicks from '@site/static/usage/range/snapping-ticks/index.md';
 
 `ionChange` イベントはRange knobの値の変更を監視します。
 
-import IonChangeEvent from '@site/static/usage/range/ion-change-event/index.md';
+import IonChangeEvent from '@site/static/usage/v7/range/ion-change-event/index.md';
 
 <IonChangeEvent />
 
@@ -78,7 +86,7 @@ import IonChangeEvent from '@site/static/usage/range/ion-change-event/index.md';
 
 マウスドラッグ、タッチジェスチャー、キーボード操作のいずれであっても、Range knobのドラッグが開始されると `ionKnobMoveStart` イベントが発行されます。逆に、`ionKnobMoveEnd`はRange knobがリリースされたときに発生します。両イベントは `RangeValue` タイプで発生し、`dualKnobs` プロパティと組み合わせて動作します。
 
-import IonKnobMoveEvent from '@site/static/usage/range/ion-knob-move-event/index.md';
+import IonKnobMoveEvent from '@site/static/usage/v7/range/ion-knob-move-event/index.md';
 
 <IonKnobMoveEvent />
 
@@ -88,7 +96,7 @@ import IonKnobMoveEvent from '@site/static/usage/range/ion-knob-move-event/index
 
 Rangeには、アプリケーションのデザインに合わせてRangeコンポーネントの外観を素早くテーマ化してカスタマイズするための[CSS Variables](#css-custom-properties)が含まれています。
 
-import CSSProps from '@site/static/usage/range/theming/css-properties/index.md';
+import CSSProps from '@site/static/usage/v7/range/theming/css-properties/index.md';
 
 <CSSProps />
 
@@ -96,9 +104,33 @@ import CSSProps from '@site/static/usage/range/theming/css-properties/index.md';
 
 Rangeには [CSS Shadow Parts](#css-shadow-parts) があり、Rangeコンポーネント内の特定の要素ノードを完全にカスタマイズすることができます。CSS Shadow Partsは最も多くのカスタマイズ機能を提供し、Rangeコンポーネントで高度なスタイリングが必要な場合に推奨されるアプローチです。
 
-import CSSParts from '@site/static/usage/range/theming/css-shadow-parts/index.md';
+import CSSParts from '@site/static/usage/v7/range/theming/css-shadow-parts/index.md';
 
 <CSSParts />
+
+## Migrating from Legacy Range Syntax
+
+A simpler range syntax was introduced in Ionic 7.0. This new syntax reduces the boilerplate required to setup an range, resolves accessibility issues, and improves the developer experience.
+
+Developers can perform this migration one range at a time. While developers can continue using the legacy syntax, we recommend migrating as soon as possible.
+
+### Using the Modern Syntax
+
+Using the modern syntax involves removing the `ion-label` and passing the label directly inside of `ion-range` using `slot="label"`. The placement of the label can be configured using the `labelPlacement` property on `ion-range`.
+
+import Migration from '@site/static/usage/v7/range/migration/index.md';
+
+<Migration />
+
+
+:::note
+In past versions of Ionic, `ion-item` was required for `ion-range` to function properly. Starting in Ionic 7.0, `ion-range` should only be used in an `ion-item` when the item is placed in an `ion-list`. Additionally, `ion-item` is no longer required for `ion-range` to function properly.
+:::
+
+### Using the Legacy Syntax
+
+Ionic uses heuristics to detect if an app is using the modern range syntax. In some instances, it may be preferable to continue using the legacy syntax. Developers can set the `legacy` property on `ion-range` to `true` to force that instance of the range to use the legacy syntax.
+
 
 ## Interfaces
 

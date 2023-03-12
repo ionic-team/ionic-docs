@@ -10,48 +10,58 @@ function renderMarkdown(markdownString) {
 // https://github.com/ionic-team/ionic-docs/blob/master/src/components/reference/reference.tsx
 function renderReference(data, methodKeys) {
   return `
-<table className="reference-table">
+
   ${data
     .map((item) => {
       const { Head, ...keys } = methodKeys;
 
       return `
-      <thead>
-        <tr>
-          <th colSpan="2">
-            <h3>${Head(item)}</h3>
-          </th>
-        </tr>
-      </thead>
-      <tbody>
+### ${Head(item)}
         ${Object.keys(keys)
           .map((name) => {
             const content = keys[name](item);
             if (content) {
               return `
-              <tr>
-                <th>${name}</th>
-                <td>${content}</td>
-              </tr>
+- \`${name}\`: ${content}
             `;
             }
           })
           .join(' ')}
-      </tbody>`;
+      `;
     })
     .join('')}
-</table>
 `;
 }
 
-// a String equivalent to this functional component
-// https://github.com/ionic-team/ionic-docs/blob/master/src/components/page/templates/cli.tsx#L146-L157
-function renderOptionSpec(option) {
+function renderList(title, data) {
   return `
-<a href="#option-${option.name}" id="option-${option.name}">
-  --${option.type === 'boolean' && option.default === true ? `no-${option.name}` : option.name}
-  ${option.type === 'string' ? `<span class="option-spec"> =&lt;${option.spec.value}&gt;</span>` : ''}
-</a>`.replace('\n', '');
+${data
+  .map((item) => {
+    return `
+### ${item.name}
+${item.summary}
+
+`;
+  })
+  .join('')}
+`;
+}
+
+function renderOptions(title, data) {
+  return `
+
+### ${title}
+${data
+  .map((item) => {
+    const alias = item.aliases.length > 0 ? '(or ' + item.aliases.map((alias) => `\`-${alias}\``).join(' ') + ')' : '';
+    let name = item.type === 'boolean' && item.default === true ? `no-${item.name}` : item.name;
+    if (item.type === 'string') name += `=<${item.spec.value}>`;
+    return `
+ - \`--${name}\`: ${item.summary} ${alias}
+      `;
+  })
+  .join('')}
+`;
 }
 
 function gitBranchSVG() {
@@ -69,8 +79,9 @@ function getHeadTag({ title: metaTitle, description: metaDescription } = {}) {
 
 module.exports = {
   gitBranchSVG,
-  renderOptionSpec,
   renderMarkdown,
   renderReference,
+  renderOptions,
+  renderList,
   getHeadTag,
 };

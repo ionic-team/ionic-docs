@@ -27,7 +27,7 @@ Toolbars can contain several different components including titles, buttons, ico
 
 It is recommended to put a toolbar inside of a [header](./header) or [footer](./footer) for proper positioning. When a toolbar is placed in a header it will appear fixed at the top of the content. When it is placed in a footer it will appear fixed at the bottom. Fullscreen content will scroll behind a toolbar in a header or footer. A [title](./title) component can be used to display text inside of the toolbar.
 
-import Basic from '@site/static/usage/toolbar/basic/index.md';
+import Basic from '@site/static/usage/v7/toolbar/basic/index.md';
 
 <Basic />
 
@@ -38,7 +38,7 @@ Buttons placed in a toolbar should be placed inside of the [buttons](./buttons) 
 
 The buttons component can wrap a standard [button](./button), [back button](./back-button), [menu button](./menu-button), or several of any of them. A button in a toolbar is styled to be clear by default, but this can be changed using the [`fill`](./button#fill) property on the button. The properties included on back button and menu button in this example are for display purposes; see their respective documentation for proper usage.
 
-import Buttons from '@site/static/usage/toolbar/buttons/index.md';
+import Buttons from '@site/static/usage/v7/toolbar/buttons/index.md';
 
 <Buttons />
 
@@ -47,7 +47,7 @@ import Buttons from '@site/static/usage/toolbar/buttons/index.md';
 
 A [searchbar](./searchbar) can be placed inside of a toolbar to search through the content. It should be the only child component of the toolbar, and will take up the full width and height.
 
-import Searchbars from '@site/static/usage/toolbar/searchbars/index.md';
+import Searchbars from '@site/static/usage/v7/toolbar/searchbars/index.md';
 
 <Searchbars />
 
@@ -56,7 +56,7 @@ import Searchbars from '@site/static/usage/toolbar/searchbars/index.md';
 
 [Segments](./segment) are generally used in toolbars to toggle between two different content views on the same page. They can be placed in a toolbar with other components, such as buttons, but should not be placed alongside a title.
 
-import Segments from '@site/static/usage/toolbar/segments/index.md';
+import Segments from '@site/static/usage/v7/toolbar/segments/index.md';
 
 <Segments />
 
@@ -65,7 +65,7 @@ import Segments from '@site/static/usage/toolbar/segments/index.md';
 
 A [progress bar](./progress-bar) is used as a loading indicator to show an ongoing process in an app. Progress bars can be placed with any other components inside of a toolbar as they will align with the bottom of the toolbar.
 
-import ProgressBars from '@site/static/usage/toolbar/progress-bars/index.md';
+import ProgressBars from '@site/static/usage/v7/toolbar/progress-bars/index.md';
 
 <ProgressBars />
 
@@ -74,13 +74,13 @@ import ProgressBars from '@site/static/usage/toolbar/progress-bars/index.md';
 
 ### Colors
 
-import Colors from '@site/static/usage/toolbar/theming/colors/index.md';
+import Colors from '@site/static/usage/v7/toolbar/theming/colors/index.md';
 
 <Colors />
 
 ### CSS Custom Properties
 
-import CSSProps from '@site/static/usage/toolbar/theming/css-properties/index.md';
+import CSSProps from '@site/static/usage/v7/toolbar/theming/css-properties/index.md';
 
 <CSSProps />
 

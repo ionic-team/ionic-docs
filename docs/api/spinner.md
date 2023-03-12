@@ -25,7 +25,7 @@ Spinnerコンポーネントには、さまざまなアニメーションつき�
 
 The default spinner is based on the mode. When the mode is `ios` the spinner will be `"lines"`, and when the mode is `md` the spinner will be `"circular"`. If the `name` property is set, then that spinner will be used instead of the mode specific spinner.
 
-import Basic from '@site/static/usage/spinner/basic/index.md';
+import Basic from '@site/static/usage/v7/spinner/basic/index.md';
 
 <Basic />
 
@@ -33,13 +33,13 @@ import Basic from '@site/static/usage/spinner/basic/index.md';
 
 ### Colors
 
-import Colors from '@site/static/usage/spinner/theming/colors/index.md';
+import Colors from '@site/static/usage/v7/spinner/theming/colors/index.md';
 
 <Colors />
 
 ### CSS Custom Properties
 
-import CSSProps from '@site/static/usage/spinner/theming/css-properties/index.md';
+import CSSProps from '@site/static/usage/v7/spinner/theming/css-properties/index.md';
 
 <CSSProps />
 

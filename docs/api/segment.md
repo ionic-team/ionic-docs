@@ -27,7 +27,7 @@ Segmentsは、関連するボタンのグループを水平方向の行に表示
 
 Segments consist of [segment buttons](./segment-button) with a `value` property on each button. Set the `value` property on the segment to match the value of a button to select that button. Segments can also be disabled to prevent users from interacting with them.
 
-import Basic from '@site/static/usage/segment/basic/index.md';
+import Basic from '@site/static/usage/v7/segment/basic/index.md';
 
 <Basic />
 
@@ -36,7 +36,7 @@ import Basic from '@site/static/usage/segment/basic/index.md';
 
 デフォルトでは、セグメントはスクロールできません。各セグメントボタンの幅は固定で、セグメントボタンの数を画面幅で割って幅を決定します。これにより、各セグメントボタンがスクロールすることなく画面に表示されることが保証されます。そのため、ラベルが長いセグメントボタンは、一部が切れてしまうことがあります。これを避けるために、短いラベルを使用するか、`scrollable` プロパティを `true` に設定してスクロール可能なセグメントに変更することをお勧めします。これはセグメントを水平方向にスクロールさせますが、各セグメントボタンの幅を変更することができます。
 
-import Scrollable from '@site/static/usage/segment/scrollable/index.md';
+import Scrollable from '@site/static/usage/v7/segment/scrollable/index.md';
 
 <Scrollable />
 
@@ -44,7 +44,7 @@ import Scrollable from '@site/static/usage/segment/scrollable/index.md';
 ## Segments in Toolbars
 
 <!-- Reuse the playground from the Toolbar directory -->
-import Toolbar from '@site/static/usage/toolbar/segments/index.md';
+import Toolbar from '@site/static/usage/v7/toolbar/segments/index.md';
 
 <Toolbar />
 
@@ -53,13 +53,13 @@ import Toolbar from '@site/static/usage/toolbar/segments/index.md';
 
 ### Colors
 
-import Colors from '@site/static/usage/segment/theming/colors/index.md';
+import Colors from '@site/static/usage/v7/segment/theming/colors/index.md';
 
 <Colors />
 
 ### CSS Custom Properties
 
-import CSSProps from '@site/static/usage/segment/theming/css-properties/index.md';
+import CSSProps from '@site/static/usage/v7/segment/theming/css-properties/index.md';
 
 <CSSProps />
 

@@ -23,7 +23,7 @@ Item dividers are block elements that can be used to separate [items](./item) in
 
 ## Basic Usage
 
-import Basic from '@site/static/usage/item-divider/basic/index.md';
+import Basic from '@site/static/usage/v7/item-divider/basic/index.md';
 
 <Basic />
 
@@ -32,14 +32,14 @@ import Basic from '@site/static/usage/item-divider/basic/index.md';
 
 ### Colors
 
-import Colors from '@site/static/usage/item-divider/theming/colors/index.md';
+import Colors from '@site/static/usage/v7/item-divider/theming/colors/index.md';
 
 <Colors />
 
 
 ### CSS Custom Properties
 
-import CSSProps from '@site/static/usage/item-divider/theming/css-properties/index.md';
+import CSSProps from '@site/static/usage/v7/item-divider/theming/css-properties/index.md';
 
 <CSSProps />
 
