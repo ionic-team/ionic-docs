@@ -234,7 +234,6 @@ document.addEventListener('ionBackButton', (ev) => {
 上の例では、ハンドラAとBの両方の優先度は10です。ハンドラBは最後に登録されているため、Ionic FrameworkはハンドラAを呼び出す前にハンドラBを呼び出します。
 
 ## アプリの終了
->>>>>>> main
 
 場合によっては、ハードウェアの戻るボタンを押したときにアプリケーションを終了することをお勧めします。これは、Capacitor/Cordovaが提供するメソッドと組み合わせた `ionBackButton` イベントを使用することで実現できます。
 

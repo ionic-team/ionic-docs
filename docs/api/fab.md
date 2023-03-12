@@ -31,11 +31,7 @@ The `side` property of the [fab list](./fab-list) component controls where it ap
 
 import ListSide from '@site/static/usage/v7/fab/list-side/index.md';
 
-<<<<<<< HEAD
-## 使い方
-=======
 <ListSide />
->>>>>>> 99d3f5222ffbfc340f268bf630572d37e9d9586b
 
 ## Positioning
 

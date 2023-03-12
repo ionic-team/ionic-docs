@@ -52,9 +52,6 @@ import Fullscreen from '@site/static/usage/v7/content/fullscreen/index.md';
 
 ## Fixed Content
 
-<<<<<<< HEAD
-スクロール可能な領域の外側に要素を配置するために、要素に `slot="fixed"` を追加することができます。これは、要素を左上に絶対配置します。それ以外の場所に配置するには、[top, right, bottom, left](https://developer.mozilla.org/en-US/docs/Web/CSS/position) でスタイルを指定します。
-=======
 To place elements outside of the scrollable area, assign them to the `fixed` slot. Doing so will [absolutely position](https://developer.mozilla.org/en-US/docs/Web/CSS/position#absolute_positioning) the element to the top left of the content. In order to change the position of the element, it can be styled using the [top, right, bottom, and left](https://developer.mozilla.org/en-US/docs/Web/CSS/position) CSS properties.
 
 import Fixed from '@site/static/usage/v7/content/fixed/index.md';
@@ -98,7 +95,6 @@ import CSSProps from '@site/static/usage/v7/content/theming/css-properties/index
 
 <CSSProps />
 
->>>>>>> 99d3f5222ffbfc340f268bf630572d37e9d9586b
 
 ## Interfaces
 
@@ -296,10 +292,7 @@ export default defineComponent({
 
 </Tabs>
 
-## プロパティ
-=======
 ## Properties
->>>>>>> 99d3f5222ffbfc340f268bf630572d37e9d9586b
 <Props />
 
 ## イベント
