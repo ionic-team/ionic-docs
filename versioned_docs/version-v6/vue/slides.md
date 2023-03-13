@@ -1,5 +1,5 @@
 ---
-title: Slides
+title: Migrating From ion-slides to Swiper.js
 ---
 
 <head>
@@ -10,13 +10,15 @@ title: Slides
   />
 </head>
 
-:::note
-This migration guide is compatible with Swiper 8. An updated guide for Swiper 9 is coming soon!
-:::
-
 We recommend <a href="http://swiperjs.com/" target="_blank" rel="noopener noreferrer">Swiper.js</a> if you need a modern touch slider component. It powers our `ion-slides` component, but we now recommend that developers use Swiper for Vue directly.
 
 This guide will go over how to get Swiper for Vue set up in your Ionic Framework application. It will also go over any migration information you may need to move from `ion-slides` to the official Swiper Vue integration.
+
+:::note
+Swiper's Vue component is set to be removed in a future release of Swiper, with <a href="https://swiperjs.com/element" target="_blank" rel="noopener noreferrer">Swiper Element</a> as the replacement. However, this guide shows how to migrate to the Vue component because it provides the most stable experience at the time of writing.
+
+Using Swiper's Vue component is **not** required to use Swiper.js with Ionic Framework.
+:::
 
 ## Getting Started
 
@@ -35,7 +37,7 @@ vue upgrade --next
 Once that is done, install the Swiper dependency in your project:
 
 ```shell
-npm install swiper@8
+npm install swiper@latest
 ```
 
 ## Swiping with Style
@@ -58,7 +60,7 @@ We recommend importing the styles in the component in which Swiper is being used
 ```
 
 :::note
-Importing `@ionic/vue/css/ionic-swiper.css'` is **not** required to use Swiper.js with Ionic. This files is used for backward-compatibility with the `ion-slides` component and can be safely omitted if you prefer not to use the CSS Variables provided in the stylesheet.
+Importing `@ionic/vue/css/ionic-swiper.css` is **not** required to use Swiper.js with Ionic. This files is used for backward-compatibility with the `ion-slides` component and can be safely omitted if you prefer not to use the CSS Variables provided in the stylesheet.
 :::
 
 ### Updating Selectors
