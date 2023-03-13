@@ -1,12 +1,12 @@
 ---
 title: "ion-card-subtitle"
 ---
-import Props from '@ionic-internal/component-api/v7/card-subtitle/props.md';
-import Events from '@ionic-internal/component-api/v7/card-subtitle/events.md';
-import Methods from '@ionic-internal/component-api/v7/card-subtitle/methods.md';
-import Parts from '@ionic-internal/component-api/v7/card-subtitle/parts.md';
-import CustomProps from '@ionic-internal/component-api/v7/card-subtitle/custom-props.md';
-import Slots from '@ionic-internal/component-api/v7/card-subtitle/slots.md';
+import Props from '@site/static/auto-generated/card-subtitle/props.md';
+import Events from '@site/static/auto-generated/card-subtitle/events.md';
+import Methods from '@site/static/auto-generated/card-subtitle/methods.md';
+import Parts from '@site/static/auto-generated/card-subtitle/parts.md';
+import CustomProps from '@site/static/auto-generated/card-subtitle/custom-props.md';
+import Slots from '@site/static/auto-generated/card-subtitle/slots.md';
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 

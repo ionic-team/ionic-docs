@@ -1,20 +1,16 @@
 ---
-title: 'ion-row'
+title: "ion-row"
 ---
-
-import Props from '@ionic-internal/component-api/v6/row/props.md';
-import Events from '@ionic-internal/component-api/v6/row/events.md';
-import Methods from '@ionic-internal/component-api/v6/row/methods.md';
-import Parts from '@ionic-internal/component-api/v6/row/parts.md';
-import CustomProps from '@ionic-internal/component-api/v6/row/custom-props.md';
-import Slots from '@ionic-internal/component-api/v6/row/slots.md';
+import Props from '@site/static/auto-generated/row/props.md';
+import Events from '@site/static/auto-generated/row/events.md';
+import Methods from '@site/static/auto-generated/row/methods.md';
+import Parts from '@site/static/auto-generated/row/parts.md';
+import CustomProps from '@site/static/auto-generated/row/custom-props.md';
+import Slots from '@site/static/auto-generated/row/slots.md';
 
 <head>
   <title>ion-row: Horizontal Row Components and Alignment | Ionic API Docs</title>
-  <meta
-    name="description"
-    content="Rows are horizontal components of the grid system and contain varying numbers of columns. Read our ion-row API Docs for more information on alignment and usage."
-  />
+  <meta name="description" content="Rows are horizontal components of the grid system and contain varying numbers of columns. Read our ion-row API Docs for more information on alignment and usage." />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
@@ -26,30 +22,28 @@ Rows are horizontal components of the [grid](./grid) system and contain varying 
 
 See the [grid](./grid) documentation for more information.
 
+
 ## Row Alignment
 
 By default, columns will stretch to fill the entire height of the row and wrap when necessary. Rows are [flex containers](https://developer.mozilla.org/en-US/docs/Glossary/Flex_Container), so there are several [CSS classes](/docs/layout/css-utilities#flex-container-properties) that can be applied to a row to customize this behavior.
 
-## Properties
 
+
+
+## Properties
 <Props />
 
 ## Events
-
 <Events />
 
 ## Methods
-
 <Methods />
 
 ## CSS Shadow Parts
-
 <Parts />
 
 ## CSS Custom Properties
-
 <CustomProps />
 
 ## Slots
-
 <Slots />

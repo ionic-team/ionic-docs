@@ -1,12 +1,12 @@
 ---
 title: "ion-loading"
 ---
-import Props from '@ionic-internal/component-api/v7/loading/props.md';
-import Events from '@ionic-internal/component-api/v7/loading/events.md';
-import Methods from '@ionic-internal/component-api/v7/loading/methods.md';
-import Parts from '@ionic-internal/component-api/v7/loading/parts.md';
-import CustomProps from '@ionic-internal/component-api/v7/loading/custom-props.md';
-import Slots from '@ionic-internal/component-api/v7/loading/slots.md';
+import Props from '@site/static/auto-generated/loading/props.md';
+import Events from '@site/static/auto-generated/loading/events.md';
+import Methods from '@site/static/auto-generated/loading/methods.md';
+import Parts from '@site/static/auto-generated/loading/parts.md';
+import CustomProps from '@site/static/auto-generated/loading/custom-props.md';
+import Slots from '@site/static/auto-generated/loading/slots.md';
 
 <head>
   <title>Loading | Application Loading Indicator Overlay | ion-loading</title>
