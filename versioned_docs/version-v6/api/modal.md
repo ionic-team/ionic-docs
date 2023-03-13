@@ -83,6 +83,14 @@ import CanDismissFunctionExample from '@site/static/usage/v6/modal/can-dismiss/f
 
 <CanDismissFunctionExample />
 
+### Prevent swipe to close
+
+Developers may want to prevent users from swiping to close a modal. This can be done by setting a callback function for `canDismiss` and checking if the `role` is not `gesture`.
+
+import CanDismissPreventSwipeToCloseExample from '@site/static/usage/v6/modal/can-dismiss/prevent-swipe-to-close/index.md';
+
+<CanDismissPreventSwipeToCloseExample />
+
 ## Types of modals
 
 ### Card Modal

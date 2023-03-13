@@ -87,7 +87,6 @@ import CanDismissPreventSwipeToCloseExample from '@site/static/usage/v7/modal/ca
 
 <CanDismissPreventSwipeToCloseExample />
 
-
 ## Types of modals
  
 ### Card Modal
