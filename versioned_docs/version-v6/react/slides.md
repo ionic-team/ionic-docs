@@ -15,7 +15,7 @@ We recommend <a href="http://swiperjs.com/" target="_blank" rel="noopener norefe
 This guide will go over how to get Swiper for React set up in your Ionic Framework application. It will also go over any migration information you may need to move from `IonSlides` to the official Swiper React integration.
 
 :::note
-Swiper's React component is set to be removed in a future release of Swiper, with <a href="https://swiperjs.com/element" target="_blank" rel="noopener noreferrer">Swiper Element</a> as the replacement. However, this guide shows how to migrate to the React component because it provides the most stable experience at the time of writing. Notably, React does not have strong support for custom elements yet.
+Swiper's React component is set to be removed in a future release of Swiper, with <a href="https://swiperjs.com/element" target="_blank" rel="noopener noreferrer">Swiper Element</a> as the replacement. However, this guide shows how to migrate to the React component because it provides the most stable experience at the time of writing. Notably, React does not have strong support for Web Components yet.
 
 Using Swiper's React component is **not** required to use Swiper.js with Ionic Framework.
 :::
