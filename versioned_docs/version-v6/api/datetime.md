@@ -90,7 +90,7 @@ always in the 24-hour format, so `00` is `12am` on a 12-hour clock, `13` means
 `1pm`, and `23` means `11pm`.
 
 :::note
-While seconds and milliseconds can be specified using the ISO 8601 datetime format, `ion-datetime` does not provide an interface for second and millisecond selection. Any second or millisecond values provided will be ignored.
+While seconds, milliseconds, and time zone can be specified using the ISO 8601 datetime format, `ion-datetime` does not provide an interface for second, millisecond, and time zone selection. Any second, millisecond, or time zone values provided will be ignored.
 :::
 
 ## Basic Usage
