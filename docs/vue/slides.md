@@ -62,7 +62,7 @@ We recommend importing the styles in the component in which Swiper is being used
 ```
 
 :::note
-Importing `@ionic/vue/css/ionic-swiper.css'` is **not** required to use Swiper.js with Ionic. This files is used for backward-compatibility with the `ion-slides` component and can be safely omitted if you prefer not to use the CSS Variables provided in the stylesheet.
+Importing `@ionic/vue/css/ionic-swiper.css` is **not** required to use Swiper.js with Ionic. This files is used for backward-compatibility with the `ion-slides` component and can be safely omitted if you prefer not to use the CSS Variables provided in the stylesheet.
 :::
 
 ### Updating Selectors

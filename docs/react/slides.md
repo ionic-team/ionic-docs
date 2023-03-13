@@ -65,7 +65,7 @@ export default Home;
 ```
 
 :::note
-Importing `@ionic/react/css/ionic-swiper.css'` is **not** required to use Swiper.js with Ionic. This files is used for backward-compatibility with the `IonSlides` component and can be safely omitted if you prefer not to use the CSS Variables provided in the stylesheet.
+Importing `@ionic/react/css/ionic-swiper.css` is **not** required to use Swiper.js with Ionic. This files is used for backward-compatibility with the `IonSlides` component and can be safely omitted if you prefer not to use the CSS Variables provided in the stylesheet.
 :::
 
 :::note
