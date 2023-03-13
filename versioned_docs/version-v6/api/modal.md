@@ -55,7 +55,7 @@ import ControllerExample from '@site/static/usage/v6/modal/controller/index.md';
 
 When entering data into a modal, it is often desirable to have a way of preventing accidental data loss. The `canDismiss` property on `ion-modal` gives developers control over when a modal is allowed to dismiss.
 
-There are two different ways of using the `canDismiss` property.
+There are two different ways of using the `canDismiss` property: setting a boolean value or setting a callback function.
 
 :::note
 Note: When using a sheet modal, `canDismiss` will not be checked on swipe if there is no `0` breakpoint set. However, it will still be checked when pressing `Esc` or the hardware back button.
