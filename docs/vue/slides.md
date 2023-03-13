@@ -1,5 +1,5 @@
 ---
-title: Slides
+title: Migrating From ion-slides to Swiper.js
 ---
 
 <head>
@@ -11,17 +11,16 @@ title: Slides
 </head>
 
 :::caution Looking for `ion-slides`?
-
 `ion-slides` was deprecated in v6.0.0 and removed in v7.0.0. We recommend using the Swiper.js library directly. The migration process is detailed below.
-
 :::
-
-:::note
-This migration guide is compatible with Swiper 8. An updated guide for Swiper 9 is coming soon!
-:::
-
 
 We recommend <a href="http://swiperjs.com/" target="_blank" rel="noopener noreferrer">Swiper.js</a> if you need a modern touch slider component. This guide will go over how to get Swiper for Vue set up in your Ionic Framework application. It will also go over any migration information you may need to move from `ion-slides` to the official Swiper Vue integration.
+
+:::note
+Swiper's Vue component is set to be removed in a future release of Swiper, with <a href="https://swiperjs.com/element" target="_blank" rel="noopener noreferrer">Swiper Element</a> as the replacement. However, this guide shows how to migrate to the Vue component because it provides the most stable experience at the time of writing.
+
+Using Swiper's Vue component is **not** required to use Swiper.js with Ionic Framework.
+:::
 
 ## Getting Started
 
@@ -40,7 +39,7 @@ vue upgrade --next
 Once that is done, install the Swiper dependency in your project:
 
 ```shell
-npm install swiper@8
+npm install swiper@latest
 ```
 
 ## Swiping with Style
@@ -53,7 +52,7 @@ We recommend importing the styles in the component in which Swiper is being used
 <script>
   import { defineComponent } from 'vue';
 
-  import 'swiper/css';
+  import 'swiper/swiper.css';
   import '@ionic/vue/css/ionic-swiper.css';
 
   export default defineComponent({
@@ -82,14 +81,14 @@ For developers using SCSS or Less styles, Swiper also provides imports for those
 For Less styles, replace `css` with `less` in the Swiper import path:
 
 ```js
-import 'swiper/less';
+import 'swiper/swiper.less';
 import '@ionic/vue/css/ionic-swiper.css';
 ```
 
 For SCSS styles replace `css` with `scss` in the Swiper import path:
 
 ```js
-import 'swiper/scss';
+import 'swiper/swiper.scss';
 import '@ionic/vue/css/ionic-swiper.css';
 ```
 
@@ -114,10 +113,10 @@ These components are imported from `swiper/vue` and provided to your Vue compone
 
 <script>
   import { defineComponent } from 'vue';
-  import { Swiper, SwiperSlide } from 'swiper/vue';
+  import { Swiper, SwiperSlide } from 'swiper/vue/swiper-vue.js';
   import { IonContent, IonPage } from '@ionic/vue';
 
-  import 'swiper/css';
+  import 'swiper/swiper.css';
   import '@ionic/vue/css/ionic-swiper.css';
 
   export default defineComponent({
@@ -154,15 +153,15 @@ To begin, we need to import the modules and their corresponding CSS files from t
 <script>
   import { defineComponent } from 'vue';
   import { Autoplay, Keyboard, Pagination, Scrollbar, Zoom } from 'swiper';
-  import { Swiper, SwiperSlide } from 'swiper/vue';
+  import { Swiper, SwiperSlide } from 'swiper/vue/swiper-vue.js';
   import { IonContent, IonPage } from '@ionic/vue';
 
-  import 'swiper/css';
-  import 'swiper/css/autoplay';
-  import 'swiper/css/keyboard';
-  import 'swiper/css/pagination';
-  import 'swiper/css/scrollbar';
-  import 'swiper/css/zoom';
+  import 'swiper/swiper.min.css';
+  import 'swiper/modules/autoplay/autoplay.min.css';
+  import 'swiper/modules/keyboard/keyboard.min.css';
+  import 'swiper/modules/pagination/pagination.min.css';
+  import 'swiper/modules/scrollbar/scrollbar.min.css';
+  import 'swiper/modules/zoom/zoom.min.css';
   import '@ionic/vue/css/ionic-swiper.css';
 
   export default defineComponent({
@@ -188,15 +187,15 @@ From here, we need to provide these modules to Swiper by using the `modules` pro
 <script>
   import { defineComponent } from 'vue';
   import { Autoplay, Keyboard, Pagination, Scrollbar, Zoom } from 'swiper';
-  import { Swiper, SwiperSlide } from 'swiper/vue';
+  import { Swiper, SwiperSlide } from 'swiper/vue/swiper-vue.js';
   import { IonContent, IonPage } from '@ionic/vue';
 
-  import 'swiper/css';
-  import 'swiper/css/autoplay';
-  import 'swiper/css/keyboard';
-  import 'swiper/css/pagination';
-  import 'swiper/css/scrollbar';
-  import 'swiper/css/zoom';
+  import 'swiper/swiper.min.css';
+  import 'swiper/modules/autoplay/autoplay.min.css';
+  import 'swiper/modules/keyboard/keyboard.min.css';
+  import 'swiper/modules/pagination/pagination.min.css';
+  import 'swiper/modules/scrollbar/scrollbar.min.css';
+  import 'swiper/modules/zoom/zoom.min.css';
   import '@ionic/vue/css/ionic-swiper.css';
 
   export default defineComponent({
@@ -227,15 +226,15 @@ Finally, we can turn these features on by using the appropriate properties:
 <script>
   import { defineComponent } from 'vue';
   import { Autoplay, Keyboard, Pagination, Scrollbar, Zoom } from 'swiper';
-  import { Swiper, SwiperSlide } from 'swiper/vue';
+  import { Swiper, SwiperSlide } from 'swiper/vue/swiper-vue.js';
   import { IonContent, IonPage } from '@ionic/vue';
 
-  import 'swiper/css';
-  import 'swiper/css/autoplay';
-  import 'swiper/css/keyboard';
-  import 'swiper/css/pagination';
-  import 'swiper/css/scrollbar';
-  import 'swiper/css/zoom';
+  import 'swiper/swiper.min.css';
+  import 'swiper/modules/autoplay/autoplay.min.css';
+  import 'swiper/modules/keyboard/keyboard.min.css';
+  import 'swiper/modules/pagination/pagination.min.css';
+  import 'swiper/modules/scrollbar/scrollbar.min.css';
+  import 'swiper/modules/zoom/zoom.min.css';
   import '@ionic/vue/css/ionic-swiper.css';
 
   export default defineComponent({
@@ -274,15 +273,15 @@ We can install the `IonicSlides` module by importing it from `@ionic/vue` and pa
 <script>
   import { defineComponent } from 'vue';
   import { Autoplay, Keyboard, Pagination, Scrollbar, Zoom } from 'swiper';
-  import { Swiper, SwiperSlide } from 'swiper/vue';
+  import { Swiper, SwiperSlide } from 'swiper/vue/swiper-vue.js';
   import { IonContent, IonPage, IonicSlides } from '@ionic/vue';
 
-  import 'swiper/css';
-  import 'swiper/css/autoplay';
-  import 'swiper/css/keyboard';
-  import 'swiper/css/pagination';
-  import 'swiper/css/scrollbar';
-  import 'swiper/css/zoom';
+  import 'swiper/swiper.min.css';
+  import 'swiper/modules/autoplay/autoplay.min.css';
+  import 'swiper/modules/keyboard/keyboard.min.css';
+  import 'swiper/modules/pagination/pagination.min.css';
+  import 'swiper/modules/scrollbar/scrollbar.min.css';
+  import 'swiper/modules/zoom/zoom.min.css';
   import '@ionic/vue/css/ionic-swiper.css';
 
   export default defineComponent({
@@ -457,10 +456,10 @@ If you are using effects such as Cube or Fade, you can install them just like we
 <script>
   import { defineComponent } from 'vue';
   import { EffectFade } from 'swiper';
-  import { Swiper, SwiperSlide } from 'swiper/vue';
+  import { Swiper, SwiperSlide } from 'swiper/vue/swiper-vue.js';
   import { IonContent, IonPage, IonicSlides } from '@ionic/vue';
 
-  import 'swiper/css';
+  import 'swiper/swiper.css';
   import '@ionic/vue/css/ionic-swiper.css';
 
   export default defineComponent({
@@ -491,11 +490,11 @@ Next, we need to import the stylesheet associated with the effect:
 <script>
   import { defineComponent } from 'vue';
   import { EffectFade } from 'swiper';
-  import { Swiper, SwiperSlide } from 'swiper/vue';
+  import { Swiper, SwiperSlide } from 'swiper/vue/swiper-vue.js';
   import { IonContent, IonPage, IonicSlides } from '@ionic/vue';
 
-  import 'swiper/css';
-  import 'swiper/css/effect-fade';
+  import 'swiper/swiper.css';
+  import 'swiper/modules/effect-fade/effect-fade.min.css';
   import '@ionic/vue/css/ionic-swiper.css';
 
   export default defineComponent({
@@ -526,11 +525,11 @@ After that, we can activate it by setting the `effect` property on `swiper` to `
 <script>
   import { defineComponent } from 'vue';
   import { EffectFade } from 'swiper';
-  import { Swiper, SwiperSlide } from 'swiper/vue';
+  import { Swiper, SwiperSlide } from 'swiper/vue/swiper-vue.js';
   import { IonContent, IonPage, IonicSlides } from '@ionic/vue';
 
-  import 'swiper/css';
-  import 'swiper/css/effect-fade';
+  import 'swiper/swiper.css';
+  import 'swiper/modules/effect-fade/effect-fade.min.css';
   import '@ionic/vue/css/ionic-swiper.css';
 
   export default defineComponent({
