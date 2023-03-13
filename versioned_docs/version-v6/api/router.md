@@ -1,29 +1,28 @@
 ---
-title: 'ion-router'
+title: "ion-router"
 ---
 
-import Props from '@ionic-internal/component-api/v6/router/props.md';
-import Events from '@ionic-internal/component-api/v6/router/events.md';
-import Methods from '@ionic-internal/component-api/v6/router/methods.md';
-import Parts from '@ionic-internal/component-api/v6/router/parts.md';
-import CustomProps from '@ionic-internal/component-api/v6/router/custom-props.md';
-import Slots from '@ionic-internal/component-api/v6/router/slots.md';
+import Props from '@site/static/auto-generated/router/props.md';
+import Events from '@site/static/auto-generated/router/events.md';
+import Methods from '@site/static/auto-generated/router/methods.md';
+import Parts from '@site/static/auto-generated/router/parts.md';
+import CustomProps from '@site/static/auto-generated/router/custom-props.md';
+import Slots from '@site/static/auto-generated/router/slots.md';
 
 <head>
   <title>ion-router: Router Component to Coordinate URL Navigation</title>
-  <meta
-    name="description"
-    content="ion-router is a URL coordinator for navigation outlets of ionic: ion-nav and ion-tabs. Router components handle routing inside vanilla and Stencil JavaScript."
-  />
+  <meta name="description" content="ion-router is a URL coordinator for navigation outlets of ionic: ion-nav and ion-tabs. Router components handle routing inside vanilla and Stencil JavaScript." />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
+
 The router is a component for handling routing inside vanilla and Stencil JavaScript projects.
 
 :::note
-Note: This component should only be used with vanilla and Stencil JavaScript projects. See the routing guides for [Angular](../angular/navigation), [React](../react/navigation), and [Vue](../vue/navigation) for framework-specific routing solutions.
+ Note: This component should only be used with vanilla and Stencil JavaScript projects. See the routing guides for [Angular](../angular/navigation), [React](../react/navigation), and [Vue](../vue/navigation) for framework-specific routing solutions.
 :::
+
 
 Apps should have a single `ion-router` component in the codebase.
 This component controls all interactions with the browser history and it aggregates updates through an event system.
@@ -63,6 +62,8 @@ interface RouterCustomEvent extends CustomEvent {
 }
 ```
 
+
+
 ## Usage
 
 ```html
@@ -89,28 +90,24 @@ interface RouterCustomEvent extends CustomEvent {
   <ion-route url="/signup" component="page-signup"></ion-route>
   <ion-route url="/support" component="page-support"></ion-route>
 </ion-router>
+
 ```
 
-## Properties
 
+## Properties
 <Props />
 
 ## Events
-
 <Events />
 
 ## Methods
-
 <Methods />
 
 ## CSS Shadow Parts
-
 <Parts />
 
 ## CSS Custom Properties
-
 <CustomProps />
 
 ## Slots
-
 <Slots />

@@ -1,12 +1,12 @@
 ---
 title: "ion-toolbar"
 ---
-import Props from '@ionic-internal/component-api/v7/toolbar/props.md';
-import Events from '@ionic-internal/component-api/v7/toolbar/events.md';
-import Methods from '@ionic-internal/component-api/v7/toolbar/methods.md';
-import Parts from '@ionic-internal/component-api/v7/toolbar/parts.md';
-import CustomProps from '@ionic-internal/component-api/v7/toolbar/custom-props.md';
-import Slots from '@ionic-internal/component-api/v7/toolbar/slots.md';
+import Props from '@site/static/auto-generated/toolbar/props.md';
+import Events from '@site/static/auto-generated/toolbar/events.md';
+import Methods from '@site/static/auto-generated/toolbar/methods.md';
+import Parts from '@site/static/auto-generated/toolbar/parts.md';
+import CustomProps from '@site/static/auto-generated/toolbar/custom-props.md';
+import Slots from '@site/static/auto-generated/toolbar/slots.md';
 
 <head>
   <title>Toolbar | Customize App Menu Toolbar Buttons and Icons</title>

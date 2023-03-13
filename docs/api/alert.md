@@ -4,12 +4,12 @@ title: "ion-alert"
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-import Props from '@ionic-internal/component-api/v7/alert/props.md';
-import Events from '@ionic-internal/component-api/v7/alert/events.md';
-import Methods from '@ionic-internal/component-api/v7/alert/methods.md';
-import Parts from '@ionic-internal/component-api/v7/alert/parts.md';
-import CustomProps from '@ionic-internal/component-api/v7/alert/custom-props.md';
-import Slots from '@ionic-internal/component-api/v7/alert/slots.md';
+import Props from '@site/static/auto-generated/alert/props.md';
+import Events from '@site/static/auto-generated/alert/events.md';
+import Methods from '@site/static/auto-generated/alert/methods.md';
+import Parts from '@site/static/auto-generated/alert/parts.md';
+import CustomProps from '@site/static/auto-generated/alert/custom-props.md';
+import Slots from '@site/static/auto-generated/alert/slots.md';
 
 <head>
   <title>ion-alert: Ionic API Alert Buttons with Custom Message Prompts</title>

@@ -1,12 +1,12 @@
 ---
 title: "ion-badge"
 ---
-import Props from '@ionic-internal/component-api/v7/badge/props.md';
-import Events from '@ionic-internal/component-api/v7/badge/events.md';
-import Methods from '@ionic-internal/component-api/v7/badge/methods.md';
-import Parts from '@ionic-internal/component-api/v7/badge/parts.md';
-import CustomProps from '@ionic-internal/component-api/v7/badge/custom-props.md';
-import Slots from '@ionic-internal/component-api/v7/badge/slots.md';
+import Props from '@site/static/auto-generated/badge/props.md';
+import Events from '@site/static/auto-generated/badge/events.md';
+import Methods from '@site/static/auto-generated/badge/methods.md';
+import Parts from '@site/static/auto-generated/badge/parts.md';
+import CustomProps from '@site/static/auto-generated/badge/custom-props.md';
+import Slots from '@site/static/auto-generated/badge/slots.md';
 
 <head>
   <title>Badges | ion-badge: iOS & Android App Notification Badge Icons</title>

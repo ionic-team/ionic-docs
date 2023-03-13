@@ -1,17 +1,17 @@
 ---
-title: 'ion-breadcrumb'
+title: "ion-breadcrumb"
 ---
-
-import Props from '@ionic-internal/component-api/v6/breadcrumb/props.md';
-import Events from '@ionic-internal/component-api/v6/breadcrumb/events.md';
-import Methods from '@ionic-internal/component-api/v6/breadcrumb/methods.md';
-import Parts from '@ionic-internal/component-api/v6/breadcrumb/parts.md';
-import CustomProps from '@ionic-internal/component-api/v6/breadcrumb/custom-props.md';
-import Slots from '@ionic-internal/component-api/v6/breadcrumb/slots.md';
+import Props from '@site/static/auto-generated/breadcrumb/props.md';
+import Events from '@site/static/auto-generated/breadcrumb/events.md';
+import Methods from '@site/static/auto-generated/breadcrumb/methods.md';
+import Parts from '@site/static/auto-generated/breadcrumb/parts.md';
+import CustomProps from '@site/static/auto-generated/breadcrumb/custom-props.md';
+import Slots from '@site/static/auto-generated/breadcrumb/slots.md';
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="shadow" />
+
 
 A Breadcrumb is a single navigation item that is a child of the Breadcrumbs component. A breadcrumb can link elsewhere in an app or it can be plain text. Each breadcrumb has a separator between it and the next breadcrumb and can optionally contain an icon.
 
@@ -38,26 +38,23 @@ interface BreadcrumbCustomEvent extends CustomEvent {
 }
 ```
 
-## Properties
 
+
+
+## Properties
 <Props />
 
 ## Events
-
 <Events />
 
 ## Methods
-
 <Methods />
 
 ## CSS Shadow Parts
-
 <Parts />
 
 ## CSS Custom Properties
-
 <CustomProps />
 
 ## Slots
-
 <Slots />

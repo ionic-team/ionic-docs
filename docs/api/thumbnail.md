@@ -2,12 +2,12 @@
 title: "ion-thumbnail"
 ---
 
-import Props from '@ionic-internal/component-api/v7/thumbnail/props.md';
-import Events from '@ionic-internal/component-api/v7/thumbnail/events.md';
-import Methods from '@ionic-internal/component-api/v7/thumbnail/methods.md';
-import Parts from '@ionic-internal/component-api/v7/thumbnail/parts.md';
-import CustomProps from '@ionic-internal/component-api/v7/thumbnail/custom-props.md';
-import Slots from '@ionic-internal/component-api/v7/thumbnail/slots.md';
+import Props from '@site/static/auto-generated/thumbnail/props.md';
+import Events from '@site/static/auto-generated/thumbnail/events.md';
+import Methods from '@site/static/auto-generated/thumbnail/methods.md';
+import Parts from '@site/static/auto-generated/thumbnail/parts.md';
+import CustomProps from '@site/static/auto-generated/thumbnail/custom-props.md';
+import Slots from '@site/static/auto-generated/thumbnail/slots.md';
 
 <head>
   <title>ion-thumbnail | Thumbnail App Component to Wrap Images or Icons</title>

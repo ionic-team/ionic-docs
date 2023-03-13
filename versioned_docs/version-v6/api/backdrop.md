@@ -2,12 +2,12 @@
 title: 'ion-backdrop'
 ---
 
-import Props from '@ionic-internal/component-api/v6/backdrop/props.md';
-import Events from '@ionic-internal/component-api/v6/backdrop/events.md';
-import Methods from '@ionic-internal/component-api/v6/backdrop/methods.md';
-import Parts from '@ionic-internal/component-api/v6/backdrop/parts.md';
-import CustomProps from '@ionic-internal/component-api/v6/backdrop/custom-props.md';
-import Slots from '@ionic-internal/component-api/v6/backdrop/slots.md';
+import Props from '@site/static/auto-generated/backdrop/props.md';
+import Events from '@site/static/auto-generated/backdrop/events.md';
+import Methods from '@site/static/auto-generated/backdrop/methods.md';
+import Parts from '@site/static/auto-generated/backdrop/parts.md';
+import CustomProps from '@site/static/auto-generated/backdrop/custom-props.md';
+import Slots from '@site/static/auto-generated/backdrop/slots.md';
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
