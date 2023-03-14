@@ -29,28 +29,24 @@
   </ion-page>
 </template>
 
-<script lang="ts">
+<script setup lang="ts">
   import { IonButtons, IonButton, IonModal, IonHeader, IonContent, IonToolbar, IonTitle, IonPage } from '@ionic/vue';
-  import { defineComponent } from 'vue';
+  import { onMounted, ref } from 'vue';
 
-  export default defineComponent({
-    components: { IonButtons, IonButton, IonModal, IonHeader, IonContent, IonToolbar, IonTitle, IonPage },
-    data() {
-      return {
-        presentingElement: undefined,
-      };
-    },
-    methods: {
-      dismiss() {
-        this.$refs.modal.$el.dismiss();
-      },
-      async canDismiss(data?: any, role?: string) {
-        return role !== 'gesture';
-      },
-    },
-    mounted() {
-      this.presentingElement = this.$refs.page.$el;
-    },
+  const page = ref(null);
+  const modal = ref(null);
+  const presentingElement = ref(null);
+
+  function dismiss() {
+    modal.value.$el.dismiss();
+  }
+
+  async function canDismiss(data?: any, role?: string) {
+    return role !== 'gesture';
+  }
+
+  onMounted(() => {
+    presentingElement.value = page.value.$el;
   });
 </script>
 ```
