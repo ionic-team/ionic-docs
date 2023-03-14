@@ -14,7 +14,7 @@
           <ion-toolbar>
             <ion-title>Modal</ion-title>
             <ion-buttons slot="end">
-              <ion-button @click="dismiss()">Close</ion-button>
+              <ion-button @click="dismiss">Close</ion-button>
             </ion-buttons>
           </ion-toolbar>
         </ion-header>
