@@ -138,6 +138,7 @@ We can install the `IonicSlides` module by importing it from `@ionic/angular` an
 
 ```typescript
 // home.page.ts
+
 import { IonicSlides } from '@ionic/angular';
 
 @Component({
@@ -146,8 +147,11 @@ import { IonicSlides } from '@ionic/angular';
 export class HomePage {
   swiperModules = [IonicSlides];
 }
+```
 
-// home.page.html
+```html
+<!-- home.page.html -->
+
 <swiper-container [modules]="swiperModules">
   ...
 </swiper-container>
