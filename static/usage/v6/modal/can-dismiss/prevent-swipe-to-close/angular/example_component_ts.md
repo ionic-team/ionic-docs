@@ -1,19 +1,13 @@
 ```ts
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-example',
   templateUrl: 'example.component.html',
 })
-export class ExampleComponent implements OnInit {
-  presentingElement = undefined;
-
-  ngOnInit() {
-    this.presentingElement = document.querySelector('.ion-page');
-  }
-
+export class ExampleComponent {
   async canDismiss(data?: any, role?: string) {
     return role !== 'gesture';
-  };
+  }
 }
 ```

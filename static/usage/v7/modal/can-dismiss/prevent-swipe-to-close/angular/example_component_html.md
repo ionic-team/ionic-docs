@@ -1,5 +1,5 @@
 ```html
-<div class="ion-page">
+<div class="ion-page" #page>
   <ion-header>
     <ion-toolbar>
       <ion-title>App</ion-title>
@@ -7,7 +7,7 @@
   </ion-header>
   <ion-content class="ion-padding">
     <ion-button id="open-modal" expand="block">Open</ion-button>
-    <ion-modal #modal trigger="open-modal" [canDismiss]="canDismiss" [presentingElement]="presentingElement">
+    <ion-modal #modal trigger="open-modal" [canDismiss]="canDismiss" [presentingElement]="page">
       <ng-template>
         <ion-header>
           <ion-toolbar>
