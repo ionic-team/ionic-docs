@@ -53,15 +53,21 @@ import TabItem from '@theme/TabItem';
 </ion-item>
 
 <!-- After -->
-<ion-item>
-  <ion-input
-    label="Email:"
-    counter="true"
-    maxlength="100"
-    helper-text="Enter an email"
-    error-text="Please enter a valid email"
-  ></ion-input>
-</ion-item>
+
+<!--
+  Metadata such as counters and helper text should not 
+  be used when an input is in an item/list. If you need to 
+  provide more context on a input, consider using an ion-note
+  underneath the ion-list.
+-->
+
+<ion-input
+  label="Email:"
+  counter="true"
+  maxlength="100"
+  helper-text="Enter an email"
+  error-text="Please enter a valid email"
+></ion-input>
 ```
 </TabItem>
 <TabItem value="angular">
@@ -105,15 +111,21 @@ import TabItem from '@theme/TabItem';
 </ion-item>
 
 <!-- After -->
-<ion-item>
-  <ion-input
-    label="Email:"
-    [counter]="true"
-    maxlength="100"
-    helperText="Enter an email"
-    errorText="Please enter a valid email"
-  ></ion-input>
-</ion-item>
+
+<!--
+  Metadata such as counters and helper text should not 
+  be used when an input is in an item/list. If you need to 
+  provide more context on a input, consider using an ion-note
+  underneath the ion-list.
+-->
+
+<ion-input
+  label="Email:"
+  [counter]="true"
+  maxlength="100"
+  helperText="Enter an email"
+  errorText="Please enter a valid email"
+></ion-input>
 ```
 </TabItem>
 <TabItem value="react">
@@ -157,15 +169,21 @@ import TabItem from '@theme/TabItem';
 </IonItem>
 
 {/* After */}
-<IonItem>
-  <IonInput
-    label="Email:"
-    counter={true}
-    maxlength="100"
-    helperText="Enter an email"
-    errorText="Please enter a valid email"
-  ></IonInput>
-</IonItem>
+
+{/*
+  Metadata such as counters and helper text should not 
+  be used when an input is in an item/list. If you need to 
+  provide more context on a input, consider using an IonNote
+  underneath the IonList.
+*/}
+
+<IonInput
+  label="Email:"
+  counter={true}
+  maxlength="100"
+  helperText="Enter an email"
+  errorText="Please enter a valid email"
+></IonInput>
 ```
 </TabItem>
 <TabItem value="vue">
@@ -209,15 +227,21 @@ import TabItem from '@theme/TabItem';
 </ion-item>
 
 <!-- After -->
-<ion-item>
-  <ion-input
-    label="Email:"
-    :counter="true"
-    maxlength="100"
-    helper-text="Enter an email"
-    error-text="Please enter a valid email"
-  ></ion-input>
-</ion-item>
+
+<!--
+  Metadata such as counters and helper text should not 
+  be used when an input is in an item/list. If you need to 
+  provide more context on a input, consider using an ion-note
+  underneath the ion-list.
+-->
+
+<ion-input
+  label="Email:"
+  :counter="true"
+  maxlength="100"
+  helper-text="Enter an email"
+  error-text="Please enter a valid email"
+></ion-input>
 ```
 </TabItem>
 </Tabs>

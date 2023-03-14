@@ -53,15 +53,21 @@ import TabItem from '@theme/TabItem';
 </ion-item>
 
 <!-- After -->
-<ion-item>
-  <ion-textarea
-    label="Label:"
-    counter="true"
-    maxlength="100"
-    helper-text="Enter text"
-    error-text="Please enter text"
-  ></ion-textarea>
-</ion-item>
+
+<!--
+  Metadata such as counters and helper text should not 
+  be used when a textarea is in an item/list. If you need to 
+  provide more context on a textarea, consider using an ion-note
+  underneath the ion-list.
+-->
+
+<ion-textarea
+  label="Label:"
+  counter="true"
+  maxlength="100"
+  helper-text="Enter text"
+  error-text="Please enter text"
+></ion-textarea>
 ```
 </TabItem>
 <TabItem value="angular">
@@ -105,15 +111,21 @@ import TabItem from '@theme/TabItem';
 </ion-item>
 
 <!-- After -->
-<ion-item>
-  <ion-textarea
-    label="Label:"
-    [counter]="true"
-    maxlength="100"
-    helperText="Enter text"
-    errorText="Please enter text"
-  ></ion-textarea>
-</ion-item>
+
+<!--
+  Metadata such as counters and helper text should not 
+  be used when a textarea is in an item/list. If you need to 
+  provide more context on a textarea, consider using an ion-note
+  underneath the ion-list.
+-->
+
+<ion-textarea
+  label="Label:"
+  [counter]="true"
+  maxlength="100"
+  helperText="Enter text"
+  errorText="Please enter text"
+></ion-textarea>
 ```
 </TabItem>
 <TabItem value="react">
@@ -157,15 +169,21 @@ import TabItem from '@theme/TabItem';
 </IonItem>
 
 {/* After */}
-<IonItem>
-  <IonTextarea
-    label="Label:"
-    counter={true}
-    maxlength="100"
-    helperText="Enter text"
-    errorText="Please enter text"
-  ></IonTextarea>
-</IonItem>
+
+{/* 
+  Metadata such as counters and helper text should not 
+  be used when a textarea is in an item/list. If you need to 
+  provide more context on a textarea, consider using an IonNote
+  underneath the IonList.
+*/}
+
+<IonTextarea
+  label="Label:"
+  counter={true}
+  maxlength="100"
+  helperText="Enter text"
+  errorText="Please enter text"
+></IonTextarea>
 ```
 </TabItem>
 <TabItem value="vue">
@@ -209,15 +227,21 @@ import TabItem from '@theme/TabItem';
 </ion-item>
 
 <!-- After -->
-<ion-item>
-  <ion-textarea
-    label="Label:"
-    :counter="true"
-    maxlength="100"
-    helper-text="Enter text"
-    error-text="Please enter text"
-  ></ion-textarea>
-</ion-item>
+
+<!--
+  Metadata such as counters and helper text should not 
+  be used when a textarea is in an item/list. If you need to 
+  provide more context on a textarea, consider using an ion-note
+  underneath the ion-list.
+-->
+
+<ion-textarea
+  label="Label:"
+  :counter="true"
+  maxlength="100"
+  helper-text="Enter text"
+  error-text="Please enter text"
+></ion-textarea>
 ```
 </TabItem>
 </Tabs>
