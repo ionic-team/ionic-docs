@@ -1,13 +1,13 @@
 ---
-title: "ion-virtual-scroll"
+title: 'ion-virtual-scroll'
 ---
 
-import Props from '@site/static/auto-generated/virtual-scroll/props.md';
-import Events from '@site/static/auto-generated/virtual-scroll/events.md';
-import Methods from '@site/static/auto-generated/virtual-scroll/methods.md';
-import Parts from '@site/static/auto-generated/virtual-scroll/parts.md';
-import CustomProps from '@site/static/auto-generated/virtual-scroll/custom-props.md';
-import Slots from '@site/static/auto-generated/virtual-scroll/slots.md';
+import Props from '@ionic-internal/component-api/v6/virtual-scroll/props.md';
+import Events from '@ionic-internal/component-api/v6/virtual-scroll/events.md';
+import Methods from '@ionic-internal/component-api/v6/virtual-scroll/methods.md';
+import Parts from '@ionic-internal/component-api/v6/virtual-scroll/parts.md';
+import CustomProps from '@ionic-internal/component-api/v6/virtual-scroll/custom-props.md';
+import Slots from '@ionic-internal/component-api/v6/virtual-scroll/slots.md';
 
 <head>
   <title>ion-virtual-scroll | Angular Virtual Scroll List for Ionic Apps</title>
@@ -16,11 +16,9 @@ import Slots from '@site/static/auto-generated/virtual-scroll/slots.md';
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
-
 :::note
 This component has been deprecated in favor of using virtual scrolling libraries provided by each JavaScript Framework. See below for alternatives.
 :::
-
 
 Virtual Scroll displays a virtual, "infinite" list. An array of records
 is passed to the virtual scroll containing the data to create templates
@@ -43,7 +41,7 @@ Ionic Reactでの仮想スクロールのオプションについては、[React
 
 Ionic Vueでの仮想スクロールのオプションについては、[Vue仮想スクロールガイド](../vue/virtual-scroll.md)を参照してください。
 
-------
+---
 
 以下のドキュメントは `ion-virtual-scroll` コンポーネントに適用されます。
 
@@ -84,7 +82,6 @@ immediately makes a HTTP request for the image file. Additionally, `<img>`
 renders whenever it wants which could be while the user is scrolling. However,
 `<ion-img>` is governed by the containing `ion-content` and does not render
 images while scrolling quickly.
-
 
 ## Virtual Scroll Performance Tips
 
@@ -131,6 +128,7 @@ different identities, and Ionic will tear down the entire DOM and rebuild
 it. This is an expensive operation and should be avoided if possible.
 
 ### Efficient headers and footer functions
+
 Each virtual item must stay extremely efficient, but one way to really
 kill its performance is to perform any DOM operations within section header
 and footer functions. These functions are called for every record in the
@@ -147,10 +145,10 @@ dataset, so please make sure they're performant.
       <div>
         <ion-img [src]="item.imgSrc" [height]="item.imgHeight" [alt]="item.name"></ion-img>
       </div>
-    <ion-card-header>
-      <ion-card-title>{{ item.name }}</ion-card-title>
-    </ion-card-header>
-    <ion-card-content>{{ item.content }}</ion-card-content>
+      <ion-card-header>
+        <ion-card-title>{{ item.name }}</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>{{ item.content }}</ion-card-content>
     </ion-card>
   </ion-virtual-scroll>
 </ion-content>
@@ -167,7 +165,7 @@ export class VirtualScrollPageComponent {
         imgSrc: getImgSrc(),
         avatarSrc: getImgSrc(),
         imgHeight: Math.floor(Math.random() * 50 + 150),
-        content: lorem.substring(0, Math.random() * (lorem.length - 100) + 100)
+        content: lorem.substring(0, Math.random() * (lorem.length - 100) + 100),
       });
 
       rotateImg++;
@@ -178,7 +176,8 @@ export class VirtualScrollPageComponent {
   }
 }
 
-const lorem = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, seddo eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.';
+const lorem =
+  'Lorem ipsum dolor sit amet, consectetur adipiscing elit, seddo eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.';
 
 const images = [
   'bandit',
@@ -190,7 +189,7 @@ const images = [
   'general-lee',
   'ghostbusters',
   'knight-rider',
-  'mirth-mobile'
+  'mirth-mobile',
 ];
 
 function getImgSrc() {
@@ -212,9 +211,7 @@ The data given to the `items` property must be an array. An item template with t
 
 ```html
 <ion-virtual-scroll [items]="items">
-  <ion-item *virtualItem="let item">
-    {{ item }}
-  </ion-item>
+  <ion-item *virtualItem="let item"> {{ item }} </ion-item>
 </ion-virtual-scroll>
 ```
 
@@ -230,12 +227,8 @@ return `null` if a template shouldn't be created.
 
 ```html
 <ion-virtual-scroll [items]="items" [headerFn]="myHeaderFn">
-  <ion-item-divider *virtualHeader="let header">
-    {{ header }}
-  </ion-item-divider>
-  <ion-item *virtualItem="let item">
-    Item: {{ item }}
-  </ion-item>
+  <ion-item-divider *virtualHeader="let header"> {{ header }} </ion-item-divider>
+  <ion-item *virtualItem="let item"> Item: {{ item }} </ion-item>
 </ion-virtual-scroll>
 ```
 
@@ -256,7 +249,6 @@ myHeaderFn(record, recordIndex, records) {
 }
 ```
 
-
 ### Custom Components
 
 If a custom component is going to be used within Virtual Scroll, it's best
@@ -267,9 +259,7 @@ within a `<div>` is a safe way to make sure dimensions are measured correctly.
 ```html
 <ion-virtual-scroll [items]="items">
   <div *virtualItem="let item">
-    <my-custom-item [item]="item">
-      {{ item }}
-    </my-custom-item>
+    <my-custom-item [item]="item"> {{ item }} </my-custom-item>
   </div>
 </ion-virtual-scroll>
 ```
@@ -284,10 +274,12 @@ within a `<div>` is a safe way to make sure dimensions are measured correctly.
 <Methods />
 
 ## CSS Shadow Parts
+
 <Parts />
 
 ## CSSカスタムプロパティ
 <CustomProps />
 
 ## Slots
+
 <Slots />

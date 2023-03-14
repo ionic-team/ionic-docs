@@ -2,12 +2,12 @@
 title: "ion-router"
 ---
 
-import Props from '@site/static/auto-generated/router/props.md';
-import Events from '@site/static/auto-generated/router/events.md';
-import Methods from '@site/static/auto-generated/router/methods.md';
-import Parts from '@site/static/auto-generated/router/parts.md';
-import CustomProps from '@site/static/auto-generated/router/custom-props.md';
-import Slots from '@site/static/auto-generated/router/slots.md';
+import Props from '@ionic-internal/component-api/v7/router/props.md';
+import Events from '@ionic-internal/component-api/v7/router/events.md';
+import Methods from '@ionic-internal/component-api/v7/router/methods.md';
+import Parts from '@ionic-internal/component-api/v7/router/parts.md';
+import CustomProps from '@ionic-internal/component-api/v7/router/custom-props.md';
+import Slots from '@ionic-internal/component-api/v7/router/slots.md';
 
 <head>
   <title>ion-router: Router Component to Coordinate URL Navigation</title>
