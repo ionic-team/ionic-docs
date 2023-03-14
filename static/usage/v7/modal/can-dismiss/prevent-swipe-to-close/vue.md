@@ -9,7 +9,7 @@
     <ion-content class="ion-padding">
       <ion-button id="open-modal" expand="block">Open</ion-button>
 
-      <ion-modal ref="modal" trigger="open-modal" :can-dismiss="canDismiss" :presenting-element="presentingElement">
+      <ion-modal ref="modal" trigger="open-modal" :can-dismiss="canDismiss" :presenting-element="page?.$el">
         <ion-header>
           <ion-toolbar>
             <ion-title>Modal</ion-title>
@@ -31,11 +31,10 @@
 
 <script setup lang="ts">
   import { IonButtons, IonButton, IonModal, IonHeader, IonContent, IonToolbar, IonTitle, IonPage } from '@ionic/vue';
-  import { onMounted, ref } from 'vue';
+  import { ref } from 'vue';
 
   const page = ref(null);
   const modal = ref(null);
-  const presentingElement = ref(null);
 
   function dismiss() {
     modal.value.$el.dismiss();
@@ -44,9 +43,5 @@
   async function canDismiss(data?: any, role?: string) {
     return role !== 'gesture';
   }
-
-  onMounted(() => {
-    presentingElement.value = page.value.$el;
-  });
 </script>
 ```
