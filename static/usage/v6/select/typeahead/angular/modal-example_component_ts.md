@@ -60,7 +60,7 @@ export class TypeaheadComponent implements OnInit {
        */
       const normalizedQuery = searchQuery.toLowerCase(); 
       this.filteredItems = this.items.filter(item => {
-        return item.value.includes(normalizedQuery);
+        return item.text.includes(normalizedQuery);
       });
     }
   }
