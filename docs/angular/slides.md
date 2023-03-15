@@ -56,7 +56,7 @@ register();
 
 From there, we just have to replace `ion-slides` elements with `swiper-container` and `ion-slide` elements with `swiper-slide`. Note that these custom elements do not need to be imported, as calling `register` tells Angular about them on its own.
 
-```typescript
+```html
 <swiper-container>
   <swiper-slide>Slide 1</swiper-slide>
   <swiper-slide>Slide 2</swiper-slide>
