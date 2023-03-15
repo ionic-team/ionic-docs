@@ -1,10 +1,16 @@
 ```tsx
-import React, { useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { IonButtons, IonButton, IonModal, IonHeader, IonContent, IonToolbar, IonTitle, IonPage } from '@ionic/react';
 
 function Example() {
   const modal = useRef<HTMLIonModalElement>(null);
   const page = useRef(null);
+
+  const [presentingElement, setPresentingElement] = useState<HTMLElement | null>(null);
+
+  useEffect(() => {
+    setPresentingElement(page.current);
+  }, []);
 
   function dismiss() {
     modal.current?.dismiss();
@@ -25,7 +31,7 @@ function Example() {
         <IonButton id="open-modal" expand="block">
           Open
         </IonButton>
-        <IonModal ref={modal} trigger="open-modal" canDismiss={canDismiss} presentingElement={page?.current!}>
+        <IonModal ref={modal} trigger="open-modal" canDismiss={canDismiss} presentingElement={presentingElement!}>
           <IonHeader>
             <IonToolbar>
               <IonTitle>Modal</IonTitle>
