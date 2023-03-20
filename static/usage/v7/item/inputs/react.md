@@ -41,9 +41,7 @@ function Example() {
         <IonSelect label="Select" placeholder="Make a Selection">
           <IonSelectOption value="">No Game Console</IonSelectOption>
           <IonSelectOption value="nes">NES</IonSelectOption>
-          <IonSelectOption value="n64" selected={true}>
-            Nintendo64
-          </IonSelectOption>
+          <IonSelectOption value="n64">Nintendo64</IonSelectOption>
           <IonSelectOption value="ps">PlayStation</IonSelectOption>
           <IonSelectOption value="genesis">Sega Genesis</IonSelectOption>
           <IonSelectOption value="saturn">Sega Saturn</IonSelectOption>
