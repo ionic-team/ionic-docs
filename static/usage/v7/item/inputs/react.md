@@ -1,46 +1,49 @@
 ```tsx
 import React from 'react';
-import { IonCheckbox, IonInput, IonItem, IonLabel, IonRange, IonSelect, IonSelectOption, IonToggle } from '@ionic/react';
+import { IonCheckbox, IonInput, IonItem, IonRange, IonSelect, IonSelectOption, IonToggle } from '@ionic/react';
 
 function Example() {
   return (
     <>
       <IonItem>
-        <IonLabel>Default Input</IonLabel>
-        <IonInput placeholder="Enter text"></IonInput>
+        <IonInput label="Default Input" placeholder="Enter text"></IonInput>
       </IonItem>
 
       <IonItem>
-        <IonLabel position="fixed">Fixed Input</IonLabel>
-        <IonInput placeholder="Enter text"></IonInput>
+        <IonInput label="Fixed Input" label-placement="fixed" placeholder="Enter text"></IonInput>
       </IonItem>
 
       <IonItem>
-        <IonLabel position="stacked">Stacked Input</IonLabel>
-        <IonInput placeholder="Enter text"></IonInput>
+        <IonInput label="Stacked Input" label-placement="stacked" placeholder="Enter text"></IonInput>
       </IonItem>
 
       <IonItem>
-        <IonLabel position="floating">Floating Input</IonLabel>
-        <IonInput placeholder="Enter text"></IonInput>
+        <IonInput label="Floating Input" label-placement="floating" placeholder="Enter text"></IonInput>
       </IonItem>
 
       <IonItem fill="outline">
-        <IonLabel position="floating">Floating Input: Outline (MD only)</IonLabel>
-        <IonInput placeholder="Enter text"></IonInput>
+        <IonInput
+          label="Floating Input: Outline (MD only)"
+          label-placement="floating"
+          placeholder="Enter text"
+        ></IonInput>
       </IonItem>
 
       <IonItem fill="solid">
-        <IonLabel position="floating">Floating Input: Solid (MD only)</IonLabel>
-        <IonInput placeholder="Enter text"></IonInput>
+        <IonInput
+          label="Floating Input: Solid (MD only)"
+          label-placement="floating"
+          placeholder="Enter text"
+        ></IonInput>
       </IonItem>
 
       <IonItem>
-        <IonLabel>Select</IonLabel>
-        <IonSelect placeholder="Make a Selection">
+        <IonSelect label="Select" placeholder="Make a Selection">
           <IonSelectOption value="">No Game Console</IonSelectOption>
           <IonSelectOption value="nes">NES</IonSelectOption>
-          <IonSelectOption value="n64">Nintendo64</IonSelectOption>
+          <IonSelectOption value="n64" selected={true}>
+            Nintendo64
+          </IonSelectOption>
           <IonSelectOption value="ps">PlayStation</IonSelectOption>
           <IonSelectOption value="genesis">Sega Genesis</IonSelectOption>
           <IonSelectOption value="saturn">Sega Saturn</IonSelectOption>
@@ -49,18 +52,17 @@ function Example() {
       </IonItem>
 
       <IonItem>
-        <IonLabel>Toggle</IonLabel>
-        <IonToggle slot="end"></IonToggle>
+        <IonToggle>Toggle</IonToggle>
       </IonItem>
 
       <IonItem>
-        <IonLabel>Checkbox</IonLabel>
-        <IonCheckbox slot="end"></IonCheckbox>
+        <IonCheckbox>Checkbox</IonCheckbox>
       </IonItem>
 
       <IonItem>
-        <IonLabel position="stacked">Range</IonLabel>
-        <IonRange></IonRange>
+        <IonRange label-placement="start">
+          <div slot="label">Range</div>
+        </IonRange>
       </IonItem>
     </>
   );
