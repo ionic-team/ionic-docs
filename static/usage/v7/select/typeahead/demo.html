@@ -13,7 +13,7 @@
   <body>
     <ion-app>
       <ion-content color="light">
-        <div class="container">
+        <div class="container">
           <ion-list inset="true">
             <ion-item button="true" detail="false" id="select-fruits">
               <ion-label>Favorite Fruits</ion-label>
@@ -108,7 +108,7 @@
 
         const normalizedQuery = searchQuery.toLowerCase();
 
-        return fruits.filter(fruit => fruit.value.includes(normalizedQuery));
+        return fruits.filter(fruit => fruit.text.toLowerCase().includes(normalizedQuery));
       }
 
       /**
