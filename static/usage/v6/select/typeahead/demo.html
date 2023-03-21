@@ -121,7 +121,7 @@
         let template = '';
 
         data.forEach((item, index) => {
-          const checked = workingSelectedFruits.includes(item.text.toLowerCase());
+          const checked = workingSelectedFruits.includes(item.value);
           template += `
             <ion-item>
               <ion-label>${item.text}</ion-label>
