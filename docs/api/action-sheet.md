@@ -10,7 +10,7 @@ import Slots from '@site/static/auto-generated/action-sheet/slots.md';
 
 <head>
   <title>ion-action-sheet | Action Sheet Dialog for iOS and Android Apps</title>
-  <meta name="description" content="Action Sheetsはアプリのコンテンツの上に一連のオプションを表示するダイアログで、手動で解除する必要があります。iOSとAndroidのデバイスでの使用方法については、こちらをご覧ください。" />
+  <meta name="description" content="アクションシートはアプリのコンテンツの上に一連のオプションを表示するダイアログで、手動で解除する必要があります。iOSとAndroidのデバイスでの使用方法については、こちらをご覧ください。" />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
@@ -20,7 +20,7 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 Action Sheetは複数の選択肢を表示するダイアログです。アプリのコンテンツ上に表示され、ユーザが手動で破棄しないとアプリの利用を再開することはできません。`ios` modeでは、破壊的な選択肢は明示されます（コンテンツの削除などは赤字などでわかりやすく表示されます）。Action Sheetを破棄するには、背景をタップする、デスクトップのパソコンの場合はエスケープキーを押すなど、複数の選択肢があります。
 
-## インライン Action Sheets (推奨)
+## インラインアクションシート (推奨)
 
 `ion-action-sheet` は、テンプレートに直接コンポーネントを記述することで使用することができます。これにより、アクションシートを表示するために配線する必要があるハンドラの数を減らすことができます。
 
@@ -38,7 +38,7 @@ import IsOpen from '@site/static/usage/v7/action-sheet/inline/isOpen/index.md';
 
 <IsOpen />
 
-## Controller Action Sheets
+## Controller アクションシート
 
 アクションシートの表示・非表示をより細かく制御したい場合は、`actionSheetController`を使用することができます。
 
@@ -48,7 +48,7 @@ import Controller from '@site/static/usage/v7/action-sheet/controller/index.md';
 
 ## Buttons
 
-Buttonの `role` プロパティは、 `destructive` か `cancel` のどちらかを利用できます。 roleプロパティがない場合は、プラットフォームに応じたデフォルトの外観となります。`cancel` role を持つButtonは、配列 `buttons` のどこに配置してもAction Sheetの最下部に表示されます。 Note: `destructive` roleをつけるButtonは、一番上のButtonとして配置することをおすすめします。また、背景をタップしてAction Sheetを破棄した場合、cancel role に設定されているhandlerが実行されます。
+Buttonの `role` プロパティは、 `destructive` か `cancel` のどちらかを利用できます。 roleプロパティがない場合は、プラットフォームに応じたデフォルトの外観となります。`cancel` role を持つButtonは、配列 `buttons` のどこに配置してもアクションシートの最下部に表示されます。 Note: `destructive` roleをつけるButtonは、一番上のButtonとして配置することをおすすめします。また、背景をタップしてアクションシートを破棄した場合、cancel role に設定されているhandlerが実行されます。
 
 Buttonは `ActionSheetButton` の `data` プロパティを介してデータを渡すこともできます。これは `onDidDismiss` メソッドの戻り値にある `data` フィールドにデータを入力します。
 
@@ -62,7 +62,7 @@ import RoleInfo from '@site/static/usage/v7/action-sheet/role-info-on-dismiss/in
 
 ## テーマ
 
-Action Sheetはscopedによるカプセル化を採用しており、実行時に各スタイルにクラスを追加することで、自動的にCSSをスコープ化します。CSSでscopedセレクタをオーバーライドするには、[higher specificity](https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity) セレクタが必要です。
+アクションシートはscopedによるカプセル化を採用しており、実行時に各スタイルにクラスを追加することで、自動的にCSSをスコープ化します。CSSでscopedセレクタをオーバーライドするには、[higher specificity](https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity) セレクタが必要です。
 
 ### スタイリング
 

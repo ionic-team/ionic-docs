@@ -48,7 +48,7 @@ import LabelPlacement from '@site/static/usage/v7/input/label-placement/index.md
 
 ## Clear Options
 
-Inputsには、入力の操作方法に応じて、入力をクリアするための2つのオプションがあります。最初の方法は `clearInput` プロパティを追加することで、入力に `value` があるときにクリアボタンを表示します。2つ目の方法は `clearOnEdit` プロパティで、入力がぼかされた後、再度入力されるとクリアされます。 `type` が `"password"` に設定されている入力は、デフォルトで `clearOnEdit` が有効になっています。
+Inputsには、入力の操作方法に応じて、Inputをクリアするための2つのオプションがあります。最初の方法は `clearInput` プロパティを追加することで、Inputに `value` があるときにクリアボタンを表示します。2つ目の方法は `clearOnEdit` プロパティで、入力が編集削除された後、再度入力されるとクリアされます。 `type` が `"password"` に設定されているInputは、デフォルトで `clearOnEdit` が有効になっています。
 
 import Clear from '@site/static/usage/v7/input/clear/index.md';
 
@@ -57,9 +57,9 @@ import Clear from '@site/static/usage/v7/input/clear/index.md';
 
 ## Filled Inputs
 
-Material Design では、入力に塗りつぶしのスタイルが用意されています。入力の `fill` プロパティは `"solid"` または `"outline"` のいずれかに設定することができます。
+Material Design では、Inputに塗りつぶしのスタイルが用意されています。Inputの `fill` プロパティは `"solid"` または `"outline"` のいずれかに設定することができます。
 
-`fill` スタイルは入力コンテナを視覚的に定義するため、`fill` を使用する入力は `ion-item` で使用すべきではありません。
+`fill` スタイルはInputコンテナを視覚的に定義するため、`fill` を使用するInputは `ion-item` で使用すべきではありません。
 
 import Fill from '@site/static/usage/v7/input/fill/index.md';
 
@@ -68,7 +68,7 @@ import Fill from '@site/static/usage/v7/input/fill/index.md';
 
 ## Helper & Error Text
 
-ヘルパーテキストとエラーテキストは `helperText` と `errorText` プロパティを用いて入力の内部で使用することができます。エラーテキストは `ion-invalid` クラスが `ion-input` に追加されない限り表示されません。Angular では、これはフォームバリデーションによって自動的に行われます。JavaScript、React、Vueでは、独自のバリデーションに基づいて、このクラスを手動で追加する必要があります。
+ヘルパーテキストとエラーテキストは `helperText` と `errorText` プロパティを用いてInputの内部で使用することができます。エラーテキストは `ion-invalid` クラスが `ion-input` に追加されない限り表示されません。Angular では、これはフォームバリデーションによって自動的に行われます。JavaScript、React、Vueでは、独自のバリデーションに基づいて、このクラスを手動で追加する必要があります。
 
 import HelperError from '@site/static/usage/v7/input/helper-error/index.md';
 
@@ -76,7 +76,7 @@ import HelperError from '@site/static/usage/v7/input/helper-error/index.md';
 
 ## Input Counter
 
-Input Counterは、入力の下に表示されるテキストで、入力可能な文字数のうち、何文字が入力されたかをユーザーに通知するものです。カウンターを追加する場合、デフォルトの動作は、表示される値を `inputLength` / `maxLength` としてフォーマットすることです。この動作は、`counterFormatter`プロパティにフォーマッタ関数を渡すことでカスタマイズすることができます。
+Input Counterは、Inputの下に表示されるテキストで、入力可能な文字数のうち、何文字が入力されたかをユーザーに通知するものです。カウンターを追加する場合、デフォルトの動作は、表示される値を `inputLength` / `maxLength` としてフォーマットすることです。この動作は、`counterFormatter`プロパティにフォーマッタ関数を渡すことでカスタマイズすることができます。
 
 import Counter from '@site/static/usage/v7/input/counter/index.md';
 
@@ -96,7 +96,7 @@ import FilteringData from '@site/static/usage/v7/input/filtering/index.md';
 
 ### Colors
 
-`color`プロパティを設定すると、各入力のカラーパレットが変更されます。 `ios`モードでは、このプロパティはキャレットカラーを変更します。 `md`モードでは、このプロパティはキャレットカラーとハイライト/アンダーラインカラーを変更します。
+`color`プロパティを設定すると、各Inputのカラーパレットが変更されます。 `ios`モードでは、このプロパティはキャレットカラーを変更します。 `md`モードでは、このプロパティはキャレットカラーとハイライト/アンダーラインカラーを変更します。
 
 import Colors from '@site/static/usage/v7/input/theming/colors/index.md';
 
@@ -114,23 +114,23 @@ import CSSProps from '@site/static/usage/v7/input/theming/css-properties/index.m
 
 Ionic 7.0では、よりシンプルなInput構文が導入されました。この新しい構文は、Inputのセットアップに必要な定型文を減らし、アクセシビリティの問題を解決し、開発者のエクスペリエンスを向上させます。
 
-開発者は、この移行を一度に1つの入力で実行できます。開発者はレガシー構文を使い続けることができますが、できるだけ早く移行することをお勧めします。
+開発者は、この移行を一度に1つのInputで実行できます。開発者はレガシー構文を使い続けることができますが、できるだけ早く移行することをお勧めします。
 
-### モダンな構文の使い方
+### 最新の構文の使い方
 
-モダンシンタックスを使うには、3つのステップがあります。
+最新の構文を使うには、3つのステップがあります。
 
-1. `ion-label` を削除して、代わりに `ion-input` の `label` プロパティを使用する。ラベルの配置は `ion-input` の `labelPlacement` プロパティで設定することができる。
-2. 入力固有のプロパティを `ion-item` から `ion-input` に移動します。これには、`counter`、`counterFormatter`、`fill`、`shape`プロパティが含まれる。
+1. `ion-label` を削除して、代わりに `ion-input` の `label` プロパティを使用します。ラベルの配置は `ion-input` の `labelPlacement` プロパティで設定することができる。
+2. Input固有のプロパティを `ion-item` から `ion-input` に移動します。これには、`counter`、`counterFormatter`、`fill`、`shape`プロパティが含まれる。
 3. `ion-item` の `helper` と `error` スロットの使用を削除し、代わりに `ion-input` の `helperText` と `errorText` プロパティを使用します。
 
 import Migration from '@site/static/usage/v7/input/migration/index.md';
 
 <Migration />
 
-### レガシーシンタックスの使用
+### レガシー構文の使用
 
-Ionicは、アプリが最新の入力構文を使用しているかどうかをヒューリスティックに検出します。場合によっては、レガシーな構文を使い続けることが望ましいこともあります。開発者は、`ion-input`の`legacy`プロパティを`true`に設定することで、その入力のインスタンスにレガシー構文を使用するように強制できます。
+Ionicは、アプリが最新のInput構文を使用しているかどうかをヒューリスティックに検出します。場合によっては、レガシーな構文を使い続けることが望ましいこともあります。開発者は、`ion-input`の`legacy`プロパティを`true`に設定することで、そのInputのインスタンスにレガシー構文を使用するように強制できます。
 
 ## Interfaces
 

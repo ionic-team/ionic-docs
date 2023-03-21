@@ -73,24 +73,24 @@ import AutogrowPlayground from '@site/static/usage/v7/textarea/autogrow/index.md
 
 ## Clear on Edit
 
-`clearOnEdit`プロパティを`true`に設定すると、テキストエリアがぼかされた後、再度入力されるとクリアされます。
+`clearOnEdit`プロパティを`true`に設定すると、テキストエリアが編集削除された後、再度入力されるとクリアされます。
 
 import ClearOnEditPlayground from '@site/static/usage/v7/textarea/clear-on-edit/index.md';
 
 <ClearOnEditPlayground />
 
-## レガシーtextareaシンタックスからの移行
+## レガシーtextarea構文からの移行
 
 Ionic 7.0では、よりシンプルなtextareaの構文が導入されました。この新しい構文は、textareaを設定するために必要な定型文を減らし、アクセシビリティの問題を解決し、開発者の体験を向上させます。
 
 開発者はこの移行を一度に1つのtextareaで行うことができます。開発者は従来の構文を使い続けることができますが、できるだけ早く移行することをお勧めします。
 
 
-### モダンな構文の使い方
+### 最新の構文の使い方
 
-モダンシンタックスを使うには、3つのステップがあります。
+最新の構文を使うには、3つのステップがあります。
 
-1. `ion-label` を削除して、代わりに `ion-textarea` の `label` プロパティを使用する。ラベルの配置は `ion-textarea` の `labelPlacement` プロパティを使用して設定することができる。
+1. `ion-label` を削除して、代わりに `ion-textarea` の `label` プロパティを使用します。ラベルの配置は `ion-textarea` の `labelPlacement` プロパティを使用して設定することができる。
 2. テキストエリア固有のプロパティを `ion-item` から `ion-textarea` に移動します。これには、`counter`、`counterFormatter`、`fill`、`shape`プロパティが含まれます。
 3. `ion-item` の `helper` と `error` スロットの使用を削除し、代わりに `ion-textarea` の `helperText` と `errorText` プロパティを使用します。
 
@@ -98,7 +98,7 @@ import Migration from '@site/static/usage/v7/textarea/migration/index.md';
 
 <Migration />
 
-### レガシーシンタックスの使用
+### レガシー構文の使用
 
 Ionicは、アプリが最新のtextarea構文を使用しているかどうかをヒューリスティックで検出します。場合によっては、レガシーな構文を使い続けることが望ましいこともあります。開発者は、`ion-textarea`の`legacy`プロパティを`true`に設定することで、そのインスタンスのtextareaがレガシー構文を使用するように強制できます。
 

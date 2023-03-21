@@ -94,11 +94,11 @@ import CSSProps from '@site/static/usage/v7/searchbar/theming/css-properties/ind
 
 ### Android
 
-デフォルトでは、入力をタップするとキーボードが表示され、サブミットボタンに虫眼鏡のアイコンが表示されます。オプションで `inputmode` プロパティを `"search"` に設定すると、アイコンが虫眼鏡からarriage returnに変更されます。
+デフォルトでは、Inputをタップするとキーボードが表示され、サブミットボタンに虫眼鏡のアイコンが表示されます。オプションで `inputmode` プロパティを `"search"` に設定すると、アイコンが虫眼鏡からarriage returnに変更されます。
 
 ### iOS
 
-デフォルトでは、入力をタップするとキーボードが表示され、グレーのSubmitボタンに「return」のテキストが表示されます。オプションで `inputmode` プロパティを `"search"` に設定すると、テキストが "return" から "go" に変わり、ボタンの色もグレーから青に変わります。また、`ion-searchbar` を `form` 要素でラップして、 `action` プロパティを設定することもできます。これにより、キーボードが表示され、"search "という青いSubmitボタンが表示されるようになります。
+デフォルトでは、Inputをタップするとキーボードが表示され、グレーのSubmitボタンに「return」のテキストが表示されます。オプションで `inputmode` プロパティを `"search"` に設定すると、テキストが "return" から "go" に変わり、ボタンの色もグレーから青に変わります。また、`ion-searchbar` を `form` 要素でラップして、 `action` プロパティを設定することもできます。これにより、キーボードが表示され、"search "という青いSubmitボタンが表示されるようになります。
 
 ## Interfaces
 

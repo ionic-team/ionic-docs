@@ -13,16 +13,16 @@ import Slots from '@site/static/auto-generated/alert/slots.md';
 
 <head>
   <title>ion-alert: Ionic API Alert Buttons with Custom Message Prompts</title>
-  <meta name="description" content="ion-alertダイアログは、入力を使用して情報を提示または収集します。カスタムアラートボタンメッセージは、アプリのコンテンツの上に表示され、手動で解除する必要があります。" />
+  <meta name="description" content="ion-alertダイアログは、Inputを使用して情報を提示または収集します。カスタムアラートボタンメッセージは、アプリのコンテンツの上に表示され、手動で解除する必要があります。" />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="scoped" />
 
-アラートは、ユーザーに情報を提示したり、入力を使ってユーザーから情報を収集したりするダイアログである。アラートはアプリのコンテンツの上に表示され、アプリとの対話を再開する前に、ユーザーが手動で解除する必要があります。また、オプションで `header`、`subHeader`、`message` を持つことができます。
+アラートは、ユーザーに情報を提示したり、Inputを使ってユーザーから情報を収集したりするダイアログである。アラートはアプリのコンテンツの上に表示され、アプリとの対話を再開する前に、ユーザーが手動で解除する必要があります。また、オプションで `header`、`subHeader`、`message` を持つことができます。
 
-## インライン Alerts (推奨)
+## インラインアラート(推奨)
 
 `ion-alert` は、テンプレートに直接コンポーネントを記述して使用することができます。これにより、アラートを表示するために必要なハンドラの数を減らすことができます。
 
@@ -61,7 +61,7 @@ import Buttons from '@site/static/usage/v7/alert/buttons/index.md';
 
 ## Inputs
 
-Alertには、複数の異なるInputを含めることもでき、そのデータをアプリで受け取ることができます。 Inputはユーザーに情報の入力を促す簡単な方法として使用できます。Radios, checkboxes と text inputs textarea はすべて利用できますが、これらを混ぜて利用することはできません。例えば、Alertはすべてbutton Inputであったり、すべてcheckboxでのInputを持つことはできますが、同一のAlertにradioとcheckbox Inputを混ぜることはできません。ただし、"text" Inputでは、 `url`, `email`, `text` などの複数のtypeを混ぜて利用することはできます。 Alertのガイドラインに収まらない複雑なForm UIが必要な場合は、代わりにModal内でFormを構築することをお勧めします。
+Alertには、複数の異なるInputを含めることもでき、そのデータをアプリで受け取ることができます。 Inputはユーザーに情報の入力を促す簡単な方法として使用できます。Radios, checkboxes と text inputs textarea はすべて利用できますが、これらを混ぜて利用することはできません。例えば、Alertはすべてbutton Inputであったり、すべてcheckboxでのInputを持つことはできますが、同一のAlertにradioとcheckbox Inputを混ぜることはできません。ただし、"text" Inputでは、 `url`, `email`, `text` などの複数のtypeを混ぜて利用することはできます。アラートのガイドラインに収まらない複雑なForm UIが必要な場合は、代わりにModal内でFormを構築することをお勧めします。
 
 ### Text Inputs Example
 
@@ -111,7 +111,7 @@ IonicのAngularアプリを構築する場合、スタイルはグローバル�
 
 ## アクセシビリティ
 
-Ionicは、アラートの `role` を、入力やボタンがある場合は [`alertdialog`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/alertdialog_role) に、何もない場合は [`alert`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/alert_role) のいずれかに自動的に設定します。
+Ionicは、アラートの `role` を、Inputやボタンがある場合は [`alertdialog`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/alertdialog_role) に、何もない場合は [`alert`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/alert_role) のいずれかに自動的に設定します。
 
 アラートに対して `header` プロパティが定義されている場合、`aria-labelledby` 属性は自動的にヘッダの ID に設定されます。 `header`が定義されていない場合は、`subHeader`要素がフォールバックとして使用されます。同様に、`aria-describedby`属性は、`message`要素のIDが定義されていれば自動的に設定されます。
 

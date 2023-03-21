@@ -142,7 +142,7 @@ Ionic Frameworkでは、[Intl.DatetimeFormat](https://developer.mozilla.org/en-U
 
 ### 時間サイクル
 
-`ion-datetime` は、デフォルトで `locale` プロパティで指定された時間サイクルを使用します。例えば、 `locale` が `en-US` に設定されている場合、 `ion-datetime` は12時間のサイクルを使用する。
+`ion-datetime` は、デフォルトで `locale` プロパティで指定された時間サイクルを使用します。例えば、 `locale` が `en-US` に設定されている場合、 `ion-datetime` は12時間のサイクルを使用します。
 
 時間サイクルには4つのタイプがあります。
 
