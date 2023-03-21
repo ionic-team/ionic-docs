@@ -21,7 +21,7 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 Segment buttons are groups of related buttons inside of a [segment](segment.md). They are displayed in a horizontal row. A segment button can be selected by default by setting the `value` of the segment to the `value` of the segment button. Only one segment button can be selected at a time.
 
 
-## Basic Usage
+## 基本的な使い方
 
 import Basic from '@site/static/usage/v7/segment-button/basic/index.md';
 
@@ -37,7 +37,7 @@ import Layout from '@site/static/usage/v7/segment-button/layout/index.md';
 <Layout />
 
 
-## Theming
+## テーマ
 ### CSS Shadow Parts
 
 import CSSParts from '@site/static/usage/v7/segment-button/theming/css-shadow-parts/index.md';
@@ -45,7 +45,7 @@ import CSSParts from '@site/static/usage/v7/segment-button/theming/css-shadow-pa
 <CSSParts />
 
 
-### CSS Custom Properties
+## CSSカスタムプロパティ
 
 import CSSProps from '@site/static/usage/v7/segment-button/theming/css-properties/index.md';
 

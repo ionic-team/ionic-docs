@@ -11,9 +11,9 @@ import Slots from '@site/static/auto-generated/card-content/slots.md';
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 
-Card content is a child component of card that adds padding around its contents. It is recommended that any text content for a card should be placed inside of card content.
+カードコンテンツは、カードの子コンポーネントで、そのコンテンツの周りにパディングを追加します。カードのテキストコンテンツは、カードコンテンツの中に配置することが推奨されます。
 
-See the [Card](./card) documentation for more information.
+詳しくは、[Card](./card)のドキュメントを参照してください。
 
 
 ## プロパティ

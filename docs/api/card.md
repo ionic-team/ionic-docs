@@ -18,14 +18,14 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 <EncapsulationPill type="shadow" />
 
 
-Cards are containers that display content such as text, images, buttons, and lists.
-A card can be a single component, but is often made up of a header, title, subtitle,
-and content. Cards are broken up into several components to accommodate this structure:
-[card header](./card-header), [card title](./card-title), [card subtitle](./card-subtitle),
-and [card content](./card-content).
+カードは、テキスト、画像、ボタン、リストなどのコンテンツを表示するためのコンテナです。
+カードは1つのコンポーネントで構成することもできますが、
+多くの場合、ヘッダー、タイトル、サブタイトル、コンテンツで構成されます。
+カードはこの構造に対応するため、いくつかのコンポーネントに分割されます。
+[カードヘッダ](./card-header)、[カードタイトル](./card-title)、[カードサブタイトル](./card-subtitle)、[カードコンテンツ](./card-content)。
 
 
-## Basic Usage
+## 基本的な使い方
 
 import Basic from '@site/static/usage/v7/card/basic/index.md';
 
@@ -53,7 +53,7 @@ import List from '@site/static/usage/v7/card/list/index.md';
 <List />
 
 
-## Theming
+## テーマ
 
 ### Colors
 
@@ -61,7 +61,7 @@ import Colors from '@site/static/usage/v7/card/theming/colors/index.md';
 
 <Colors />
 
-### CSS Custom Properties
+## CSSカスタムプロパティ
 
 import CSSProps from '@site/static/usage/v7/card/theming/css-properties/index.md';
 

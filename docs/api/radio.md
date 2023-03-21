@@ -22,7 +22,7 @@ Radios should be used inside of a [radio group](./radio-group). Pressing a radio
 
 When radios are inside of a radio group, only one radio will be checked at any time. If more than one item should be selected, [checkboxes](./checkbox) should be used instead. Radios can be disabled within a group to prevent interaction with them.
 
-## Basic Usage
+## 基本的な使い方
 
 import Basic from '@site/static/usage/v7/radio/basic/index.md';
 
@@ -30,7 +30,7 @@ import Basic from '@site/static/usage/v7/radio/basic/index.md';
 
 ## Label Placement
 
-Developers can use the `labelPlacement` property to control how the label is placed relative to the control.
+開発者は `labelPlacement` プロパティを使用して、ラベルがどのように配置されるかを制御することができます。
 
 import LabelPlacement from '@site/static/usage/v7/radio/label-placement/index.md';
 
@@ -38,7 +38,7 @@ import LabelPlacement from '@site/static/usage/v7/radio/label-placement/index.md
 
 ## Justification
 
-Developers can use the `justify` property to control how the label and control are packed on a line.
+開発者は `justify` プロパティを使用して、ラベルとコントロールの行の詰め方を制御することができます。
 
 import Justify from '@site/static/usage/v7/radio/justify/index.md';
 
@@ -58,7 +58,7 @@ import EmptySelection from '@site/static/usage/v7/radio/empty-selection/index.md
 <EmptySelection />
 
 
-## Theming
+## テーマ
 
 ### Colors
 
@@ -66,7 +66,7 @@ import Colors from '@site/static/usage/v7/radio/theming/colors/index.md';
 
 <Colors />
 
-### CSS Custom Properties
+## CSSカスタムプロパティ
 
 import CSSProps from '@site/static/usage/v7/radio/theming/css-properties/index.md';
 
@@ -84,7 +84,7 @@ A simpler radio syntax was introduced in Ionic 7.0. This new syntax reduces the 
 
 Developers can perform this migration one radio at a time. While developers can continue using the legacy syntax, we recommend migrating as soon as possible.
 
-### Using the Modern Syntax
+### モダンな構文の使い方
 
 Using the modern syntax involves removing the `ion-label` and passing the label directly inside of `ion-radio`. The placement of the label can be configured using the `labelPlacement` property on `ion-radio`. The way the label and the control are packed on a line can be controlled using the `justify` property on `ion-radio`.
 

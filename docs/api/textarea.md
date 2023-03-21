@@ -23,7 +23,7 @@ The textarea component is used for multi-line text input. A native textarea elem
 
 textareaコンポーネントはIonicのプロパティに加えて [ネイティブのtextareaの属性](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/textarea) に対応します。
 
-## Basic Usage
+## 基本的な使い方
 
 import BasicPlayground from '@site/static/usage/v7/textarea/basic/index.md';
 
@@ -31,7 +31,7 @@ import BasicPlayground from '@site/static/usage/v7/textarea/basic/index.md';
 
 ## Label Placement
 
-Labels will take up the width of their content by default. Developers can use the `labelPlacement` property to control how the label is placed relative to the control.
+Labels will take up the width of their content by default. 開発者は `labelPlacement` プロパティを使用して、ラベルがどのように配置されるかを制御することができます。
 
 import Labels from '@site/static/usage/v7/textarea/label-placement/index.md';
 
@@ -86,7 +86,7 @@ A simpler textarea syntax was introduced in Ionic 7.0. This new syntax reduces t
 Developers can perform this migration one textarea at a time. While developers can continue using the legacy syntax, we recommend migrating as soon as possible.
 
 
-### Using the Modern Syntax
+### モダンな構文の使い方
 
 Using the modern syntax involves three steps:
 
@@ -102,7 +102,7 @@ import Migration from '@site/static/usage/v7/textarea/migration/index.md';
 
 Ionic uses heuristics to detect if an app is using the modern textarea syntax. In some instances, it may be preferable to continue using the legacy syntax. Developers can set the `legacy` property on `ion-textarea` to `true` to force that instance of the textarea to use the legacy syntax.
 
-## Theming
+## テーマ
 
 import ThemingPlayground from '@site/static/usage/v7/textarea/theming/index.md';
 
@@ -129,7 +129,7 @@ interface TextareaCustomEvent extends CustomEvent {
 }
 ```
 
-## Properties
+## プロパティ
 <Props />
 
 ## イベント

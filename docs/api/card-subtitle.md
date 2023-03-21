@@ -13,9 +13,9 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 <EncapsulationPill type="shadow" />
 
 
-Card subtitle is a child component of card that should be placed inside of a [card header](./card-header).
+カードサブタイトルは、[カードヘッダ](./card-header)の内側に配置されるべき、cardの子コンポーネントです。
 
-See the [Card](./card) documentation for more information.
+詳しくは、[Card](./card)のドキュメントを参照してください。
 
 
 ## プロパティ

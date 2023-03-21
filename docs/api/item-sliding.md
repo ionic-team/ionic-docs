@@ -19,7 +19,7 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 A sliding item contains an item that can be dragged to reveal option buttons. It requires an [item](./item) component as a child. All options to reveal should be placed in the [item options](./item-options) element.
 
 
-## Basic Usage
+## 基本的な使い方
 
 スライドアイテムのオプションは、デフォルトではアイテムの `"end"` 側に配置されます。つまり、LTRでは右から左へ、RTLでは左から右へスワイプすると、オプションが表示されます。反対側に配置し、反対方向にスワイプしたときに表示されるようにするには、 [item options](./item-options) 要素の side 属性を `"start"` に設定します。アイテムオプションは最大2つまで同時に使用することができ、スワイプの方向によって2つの異なるオプションを表示させることができます。
 
@@ -58,7 +58,7 @@ interface ItemSlidingCustomEvent extends CustomEvent {
 }
 ```
 
-## Properties
+## プロパティ
 <Props />
 
 ## イベント

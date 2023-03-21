@@ -19,7 +19,7 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 Header is a root component of a page that aligns itself to the top of the page. It is recommended to be used as a wrapper for one or more [toolbars](./toolbar), but it can be used to wrap any element. When a toolbar is used inside of a header, the content will be adjusted so it is sized correctly, and the header will account for any device safe areas.
 
 
-## Basic Usage
+## 基本的な使い方
 
 import Basic from '@site/static/usage/v7/header/basic/index.md';
 

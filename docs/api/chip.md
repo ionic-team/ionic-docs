@@ -19,7 +19,7 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 Chipは連絡先などを複数の小さなエンティティで表示します。 Chipにはavatars, text, や iconsなど、いくつかの異なる要素を含めることができます。
 
-## Basic Usage
+## 基本的な使い方
 
 import Basic from '@site/static/usage/v7/chip/basic/index.md';
 
@@ -31,7 +31,7 @@ import SlotExample from '@site/static/usage/v7/chip/slots/index.md';
 
 <SlotExample />
 
-## Theming
+## テーマ
 
 ### Colors
 
@@ -39,7 +39,7 @@ import Colors from '@site/static/usage/v7/chip/theming/colors/index.md';
 
 <Colors />
 
-### CSS Custom Properties
+## CSSカスタムプロパティ
 
 import CSSProps from '@site/static/usage/v7/chip/theming/css-properties/index.md';
 

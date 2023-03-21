@@ -22,7 +22,7 @@ Rangeスライダは、スライダノブを動かして、ユーザーが値の
 
 デフォルトでは、Rangeスライダーの最小値は`0`、最大値は`100`です。これは `min` と `max` プロパティで設定することができます。
 
-## Basic Usage
+## 基本的な使い方
 
 import Basic from '@site/static/usage/v7/range/basic/index.md';
 
@@ -72,7 +72,7 @@ import SnappingTicks from '@site/static/usage/v7/range/snapping-ticks/index.md';
 
 <SnappingTicks />
 
-## Event Handling
+## イベントハンドリング
 
 ### Using `ionChange`
 
@@ -90,9 +90,9 @@ import IonKnobMoveEvent from '@site/static/usage/v7/range/ion-knob-move-event/in
 
 <IonKnobMoveEvent />
 
-## Theming
+## テーマ
 
-### CSS Custom Properties
+## CSSカスタムプロパティ
 
 Rangeには、アプリケーションのデザインに合わせてRangeコンポーネントの外観を素早くテーマ化してカスタマイズするための[CSS Variables](#css-custom-properties)が含まれています。
 
@@ -114,7 +114,7 @@ A simpler range syntax was introduced in Ionic 7.0. This new syntax reduces the 
 
 Developers can perform this migration one range at a time. While developers can continue using the legacy syntax, we recommend migrating as soon as possible.
 
-### Using the Modern Syntax
+### モダンな構文の使い方
 
 Using the modern syntax involves removing the `ion-label` and passing the label directly inside of `ion-range` using `slot="label"`. The placement of the label can be configured using the `labelPlacement` property on `ion-range`.
 

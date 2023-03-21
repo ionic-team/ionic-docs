@@ -50,7 +50,7 @@ The default breakpoints for the grid and the corresponding properties are define
 | xl   | 1200px | `sizeXl`       | `offsetXl`      | `pushXl`      | `pullXl`      | Set columns when (min-width: 1200px) |
 
 
-## Basic Usage
+## 基本的な使い方
 
 By default, columns will take up equal width inside of a row for all devices and screen sizes.
 

@@ -45,7 +45,7 @@ interface ItemReorderCustomEvent extends CustomEvent {
 ```
 
 
-## Properties
+## プロパティ
 <Props />
 
 ## イベント

@@ -20,7 +20,7 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 Toggles are switches that change the state of a single option. They can be switched on or off by pressing or swiping them. Toggles can also be checked programmatically by setting the `checked` property.
 
-## Basic Usage
+## 基本的な使い方
 
 import Basic from '@site/static/usage/v7/toggle/basic/index.md';
 
@@ -47,7 +47,7 @@ import List from '@site/static/usage/v7/toggle/list/index.md';
 
 ## Label Placement
 
-Developers can use the `labelPlacement` property to control how the label is placed relative to the control.
+開発者は `labelPlacement` プロパティを使用して、ラベルがどのように配置されるかを制御することができます。
 
 import LabelPlacement from '@site/static/usage/v7/toggle/label-placement/index.md';
 
@@ -56,14 +56,14 @@ import LabelPlacement from '@site/static/usage/v7/toggle/label-placement/index.m
 
 ## Justification
 
-Developers can use the `justify` property to control how the label and control are packed on a line.
+開発者は `justify` プロパティを使用して、ラベルとコントロールの行の詰め方を制御することができます。
 
 import Justify from '@site/static/usage/v7/toggle/justify/index.md';
 
 <Justify />
 
 
-## Theming
+## テーマ
 
 ### Colors
 
@@ -71,7 +71,7 @@ import Colors from '@site/static/usage/v7/toggle/theming/colors/index.md';
 
 <Colors />
 
-### CSS Custom Properties
+## CSSカスタムプロパティ
 
 CSS custom properties can be combined with standard CSS to target different parts of a toggle. We can modify the `width` and `height` of the toggle directly to change the size of the track, while using the `--handle-width` and `--handle-height` custom properties to customize the handle size.
 
@@ -93,7 +93,7 @@ A simpler toggle syntax was introduced in Ionic 7.0. This new syntax reduces the
 
 While developers can continue using the legacy syntax, we recommend migrating as soon as possible.
 
-### Using the Modern Syntax
+### モダンな構文の使い方
 
 Using the modern syntax involves removing the `ion-label` and passing the label directly inside of `ion-toggle`. The placement of the label can be configured using the `labelPlacement` property on `ion-toggle`. The way the label and the control are packed on a line can be controlled using the `justify` property on `ion-toggle`.
 
@@ -133,7 +133,7 @@ interface ToggleCustomEvent<T = any> extends CustomEvent {
 ```
 
 
-## Properties
+## プロパティ
 <Props />
 
 ## イベント

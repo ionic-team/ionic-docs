@@ -25,7 +25,7 @@ Columnは、[Grid](./grid) システムのセルラーコンポーネントで�
 
 ## Column Alignment
 
-By default, columns will stretch to fill the entire height of the row. Columns are [flex items](https://developer.mozilla.org/en-US/docs/Glossary/Flex_Item), so there are several [CSS classes](/docs/layout/css-utilities#flex-item-properties) that can be applied to a column to customize this behavior.
+デフォルトでは、カラムは行の高さ全体を埋めるように引き伸ばされます。カラムは[フレックスアイテム](https://developer.mozilla.org/en-US/docs/Glossary/Flex_Item)なので、この動作をカスタマイズするために、カラムに適用できるいくつかの[CSSクラス](/docs/layout/css-utilities#flex-item-properties) があります。
 
 
 

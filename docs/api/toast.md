@@ -76,7 +76,7 @@ import IconPlayground from '@site/static/usage/v7/toast/icon/index.md';
 
 <IconPlayground />
 
-## Theming
+## テーマ
 
 import ThemingPlayground from '@site/static/usage/v7/toast/theming/index.md';
 
@@ -146,7 +146,7 @@ interface ToastOptions {
 
 * 長いメッセージのトーストの場合は、`duration`プロパティを調整して、ユーザーがトーストの内容を読むのに十分な時間を確保することを検討してください。
 
-## Properties
+## プロパティ
 <Props />
 
 ## イベント

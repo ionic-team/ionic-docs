@@ -22,7 +22,7 @@ Avatarは通常、写真やアイコンをラップする円形のコンポー�
 
 Avatarは、単独で使用することも、任意の要素の内部で使用することもできます。`ion-chip` または `ion-item` の内部に配置すると、Avatarは親コンポーネントに合わせてサイズ変更します。Avatarをitemの左側または右側に配置するには、`slot` を `start` か `end` に設定します。
 
-## Basic Usage
+## 基本的な使い方
 
 import Basic from '@site/static/usage/v7/avatar/basic/index.md';
 
@@ -40,9 +40,9 @@ import Item from '@site/static/usage/v7/avatar/item/index.md';
 
 <Item />
 
-## Theming
+## テーマ
 
-### CSS Custom Properties
+## CSSカスタムプロパティ
 
 import CSSProps from '@site/static/usage/v7/avatar/theming/css-properties/index.md';
 

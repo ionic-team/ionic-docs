@@ -25,7 +25,7 @@ menu要素は、root content要素と同じ深度である必要があります�
 コンテンツにつけるMenuの数に制限はありません。
 これらはテンプレートから、またはプログラムでMenuControllerを使用して制御できます。
 
-## Basic Usage
+## 基本的な使い方
 
 import BasicUsage from '@site/static/usage/v7/menu/basic/index.md';
 
@@ -47,7 +47,7 @@ import MenuType from '@site/static/usage/v7/menu/type/index.md';
 
 <MenuType />
 
-## Theming
+## テーマ
 
 ### CSS Shadow Parts
 

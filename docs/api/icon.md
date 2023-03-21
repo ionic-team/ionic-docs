@@ -14,14 +14,14 @@ Icon is a simple component made available through the <a href="https://ionic.io/
 
 For a list of all available icons, see <a href="https://ionic.io/ionicons">ionic.io/ionicons</a>. For more information including styling and custom SVG usage, see <a href="https://ionic.io/ionicons/usage">the Usage page</a>.
 
-## Basic Usage
+## 基本的な使い方
 
 import Basic from '@site/static/usage/v7/icon/basic/index.md';
 
 <Basic />
 
 
-## Accessibility
+## アクセシビリティ
 
 Icons that are purely decorative content should have <code>aria-hidden="true"</code>. This will not visually hide the icon, but it will hide the element from assistive technology.
 

@@ -18,9 +18,9 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 <EncapsulationPill type="scoped" />
 
 
-The Buttons component is a container element. It should be used inside of a [toolbar](./toolbar) and can contain several types of buttons, including standard [buttons](./button), [menu buttons](./menu-button), and [back buttons](./back-button).
+Buttonsコンポーネントは、コンテナ要素です。 [ツールバー](./toolbar) の内部で使用し、標準の[ボタン](./button)、[メニューボタン](./menu-button)、[戻るボタン](./back-button)を含むいくつかのタイプのボタンを含めることができる。
 
-## Basic Usage
+## 基本的な使い方
 
 import Basic from '@site/static/usage/v7/buttons/basic/index.md';
 
@@ -29,7 +29,7 @@ import Basic from '@site/static/usage/v7/buttons/basic/index.md';
 
 ## Buttons Placement
 
-Buttons can be positioned inside of the toolbar using a named slot. The below chart has a description of each slot.
+ツールバー内のボタンは、スロットという名前を使って配置することができます。下図は各スロットの説明です。
 
 | Slot         | Description                                                                                              |
 |--------------|----------------------------------------------------------------------------------------------------------|
@@ -43,9 +43,9 @@ import Placement from '@site/static/usage/v7/buttons/placement/index.md';
 <Placement />
 
 
-## Types of Buttons
+## Buttonsのタイプ
 
-A button in a toolbar is styled to be clear by default, but this can be changed using the [`fill`](./button#fill) property on the button. The properties included on [back button](./back-button) and [menu button](./menu-button) in this example are for display purposes; see their respective documentation for proper usage.
+ツールバーのボタンは、デフォルトでは透明ですが、ボタンの [`fill`](./button#fill) プロパティで変更することが可能です。この例で [バックボタン](./back-button) と [メニューボタン](./menu-button) に含まれるプロパティは表示目的であり、正しい使用方法はそれぞれのドキュメントをご覧ください。
 
 import Types from '@site/static/usage/v7/buttons/types/index.md';
 
@@ -54,11 +54,11 @@ import Types from '@site/static/usage/v7/buttons/types/index.md';
 
 ## Collapsible Buttons
 
-The `collapse` property can be set on the buttons to collapse them when the header collapses. This is typically used with [collapsible large titles](./title#collapsible-large-titles).
+ボタンに `collapse` プロパティを設定すると、ヘッダーが折りたたまれたときにボタンが折りたたまれます。これは通常、[collapsible large titles](./title#collapsible-large-titles) と共に使用します。
 
 :::info
 
-This feature is only available for iOS.
+この機能はiOS modeでのみ有効です。
 
 :::
 

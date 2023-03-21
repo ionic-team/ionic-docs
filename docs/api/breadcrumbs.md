@@ -70,7 +70,7 @@ import PopoverOnClick from '@site/static/usage/v7/breadcrumbs/collapsing-items/p
 
 <PopoverOnClick />
 
-## Theming
+## テーマ
 
 ### Colors
 
@@ -78,7 +78,7 @@ import Colors from '@site/static/usage/v7/breadcrumbs/theming/colors/index.md';
 
 <Colors />
 
-### CSS Custom Properties
+## CSSカスタムプロパティ
 
 import CSSProps from '@site/static/usage/v7/breadcrumbs/theming/css-properties/index.md';
 

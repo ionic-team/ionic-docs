@@ -23,7 +23,7 @@ Toolbars are generally positioned above or below content and provide content and
 Toolbars can contain several different components including titles, buttons, icons, back buttons, menu buttons, searchbars, segments, progress bars, and more.
 
 
-## Basic Usage
+## 基本的な使い方
 
 It is recommended to put a toolbar inside of a [header](./header) or [footer](./footer) for proper positioning. When a toolbar is placed in a header it will appear fixed at the top of the content. When it is placed in a footer it will appear fixed at the bottom. Fullscreen content will scroll behind a toolbar in a header or footer. A [title](./title) component can be used to display text inside of the toolbar.
 
@@ -70,7 +70,7 @@ import ProgressBars from '@site/static/usage/v7/toolbar/progress-bars/index.md';
 <ProgressBars />
 
 
-## Theming
+## テーマ
 
 ### Colors
 
@@ -78,7 +78,7 @@ import Colors from '@site/static/usage/v7/toolbar/theming/colors/index.md';
 
 <Colors />
 
-### CSS Custom Properties
+## CSSカスタムプロパティ
 
 import CSSProps from '@site/static/usage/v7/toolbar/theming/css-properties/index.md';
 
@@ -90,7 +90,7 @@ import CSSProps from '@site/static/usage/v7/toolbar/theming/css-properties/index
 `md` モードでは、`<ion-header>` は下部にボックスシャドウを、`<ion-footer>` は上部にボックスシャドウを表示します。 `ios` モードでは、`<ion-header>` の下部にボーダーが、`<ion-footer>` の上部にボーダーが表示されます。
 
 
-## Properties
+## プロパティ
 <Props />
 
 ## イベント

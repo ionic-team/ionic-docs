@@ -123,7 +123,7 @@ interface PickerOptions {
 }
 ```
 
-## Properties
+## プロパティ
 <Props />
 
 ## イベント

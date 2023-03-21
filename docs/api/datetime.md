@@ -310,7 +310,7 @@ A callback is better when the highlighted dates are recurring, such as birthdays
 
 <HighlightedDatesCallback />
 
-## Theming
+## テーマ
 
 Ionicの強力なテーマシステムを使用すると、特定のテーマに合わせてアプリ全体を簡単に変更することができます。この例では、[Color Creator](../theming/colors#new-color-creator) と [Stepped Color Generator](../theming/themes#stepped-color-generator) を使用して、 `ion-datetime` で使用できるローズ色のパレットを作成しました。
 

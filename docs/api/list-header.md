@@ -15,7 +15,7 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 List headers are block elements that are used to describe the contents of a [list](./list). Unlike [item dividers](./item-divider), list headers should only be used once at the top of a list of [items](./item).
 
-## Basic Usage
+## 基本的な使い方
 
 import Basic from '@site/static/usage/v7/list-header/basic/index.md';
 
@@ -39,7 +39,7 @@ import Lines from '@site/static/usage/v7/list-header/lines/index.md';
 
 <Lines />
 
-## Theming
+## テーマ
 
 ### Colors
 
@@ -47,7 +47,7 @@ import Colors from '@site/static/usage/v7/list-header/theming/colors/index.md';
 
 <Colors />
 
-### CSS Custom Properties
+## CSSカスタムプロパティ
 
 import CSSProps from '@site/static/usage/v7/list-header/theming/css-properties/index.md';
 

@@ -41,7 +41,7 @@ interface RadioGroupCustomEvent<T = any> extends CustomEvent {
 ```
 
 
-## Properties
+## プロパティ
 <Props />
 
 ## イベント

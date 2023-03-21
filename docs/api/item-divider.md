@@ -21,14 +21,14 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 Item dividers are block elements that can be used to separate [items](./item) in a list. They are similar to list headers, but instead of only being placed at the top of a list, they should go in between groups of items.
 
 
-## Basic Usage
+## 基本的な使い方
 
 import Basic from '@site/static/usage/v7/item-divider/basic/index.md';
 
 <Basic />
 
 
-## Theming
+## テーマ
 
 ### Colors
 
@@ -37,7 +37,7 @@ import Colors from '@site/static/usage/v7/item-divider/theming/colors/index.md';
 <Colors />
 
 
-### CSS Custom Properties
+## CSSカスタムプロパティ
 
 import CSSProps from '@site/static/usage/v7/item-divider/theming/css-properties/index.md';
 

@@ -19,7 +19,7 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 アイテムは、テキスト、アイコン、アバター、画像、入力、その他のネイティブまたはカスタム要素を含むことができる要素です。一般的には、他のアイテムと一緒に[list](./list)に配置されます。アイテムは、スワイプ、削除、並び替え、編集などが可能です。
 
-## Basic Usage
+## 基本的な使い方
 
 アイテムはテキストを左寄せにし、テキストがアイテムより幅が広い場合は省略記号を追加しています。この動作は、Ionic Framework が提供する CSS Utilities を使って変更することができます。例えば、以下の例では `.ion-text-wrap` を使っています。テキストを変換するためにアイテムに追加できる他のクラスについては、[CSS Utilities Documentation](/docs/layout/css-utilities) を参照してください。
 
@@ -101,7 +101,7 @@ import Inputs from '@site/static/usage/v7/item/inputs/index.md';
 
 <Inputs />
 
-## Theming
+## テーマ
 
 ### Colors
 
@@ -115,7 +115,7 @@ import CSSParts from '@site/static/usage/v7/item/theming/css-shadow-parts/index.
 
 <CSSParts />
 
-### CSS Custom Properties
+## CSSカスタムプロパティ
 
 import CSSProps from '@site/static/usage/v7/item/theming/css-properties/index.md';
 

@@ -21,7 +21,7 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 Checkboxを使用すると、一連のオプションから複数のオプションを選択できます。選択すると、チェックマークが付いた状態(checked)で表示されます。checkboxをクリックすると、 `checked` プロパティーが切り替わります。`checked` プロパティを設定して、プログラムで `checked` を切り替えることもできます。
 
-## Basic Usage
+## 基本的な使い方
 
 import Basic from '@site/static/usage/v7/checkbox/basic/index.md';
 
@@ -29,7 +29,7 @@ import Basic from '@site/static/usage/v7/checkbox/basic/index.md';
 
 ## Label Placement
 
-Developers can use the `labelPlacement` property to control how the label is placed relative to the control.
+開発者は `labelPlacement` プロパティを使用して、ラベルがどのように配置されるかを制御することができます。
 
 import LabelPlacement from '@site/static/usage/v7/checkbox/label-placement/index.md';
 
@@ -37,7 +37,7 @@ import LabelPlacement from '@site/static/usage/v7/checkbox/label-placement/index
 
 ## Justification
 
-Developers can use the `justify` property to control how the label and control are packed on a line.
+開発者は `justify` プロパティを使用して、ラベルとコントロールの行の詰め方を制御することができます。
 
 import Justify from '@site/static/usage/v7/checkbox/justify/index.md';
 
@@ -45,7 +45,7 @@ import Justify from '@site/static/usage/v7/checkbox/justify/index.md';
 
 
 :::note
-`ion-item` is only used in the demos to emphasize how `justify` works. It is not needed in order for `justify` to function correctly.
+`ion-item`は、 `justify` がどのように機能するかを強調するためにデモで使用されているだけです。 `justify` が正しく機能するために必須ではありません。
 :::
 
 ## Indeterminate Checkboxes
@@ -54,9 +54,9 @@ import Indeterminate from '@site/static/usage/v7/checkbox/indeterminate/index.md
 
 <Indeterminate />
 
-## Theming
+## テーマ
 
-### CSS Custom Properties
+## CSSカスタムプロパティ
 
 import CSSProps from '@site/static/usage/v7/checkbox/theming/css-properties/index.md';
 
@@ -84,15 +84,15 @@ interface CheckboxCustomEvent<T = any> extends CustomEvent {
 }
 ```
 
-## Migrating from Legacy Checkbox Syntax
+## レガシーなチェックボックス構文からのマイグレーション
 
-A simpler checkbox syntax was introduced in Ionic 7.0. This new syntax reduces the boilerplate required to setup a checkbox, resolves accessibility issues, and improves the developer experience.
+Ionic 7.0では、よりシンプルなチェックボックス構文が導入されました。この新しい構文は、チェックボックスの設定に必要な定型文を減らし、アクセシビリティの問題を解決し、開発者のエクスペリエンスを向上させます。
 
-Developers can perform this migration one checkbox at a time. While developers can continue using the legacy syntax, we recommend migrating as soon as possible.
+開発者は、この移行を一度に1つのチェックボックスずつ実行することができます。開発者はレガシー構文を使い続けることができますが、できるだけ早く移行することをお勧めします。
 
-### Using the Modern Syntax
+### モダンな構文の使い方
 
-Using the modern syntax involves removing the `ion-label` and passing the label directly inside of `ion-checkbox`. The placement of the label can be configured using the `labelPlacement` property on `ion-checkbox`. The way the label and the control are packed on a line can be controlled using the `justify` property on `ion-checkbox`.
+最新の構文を使用するには、`ion-label` を削除して、 `ion-checkbox` の中に直接ラベルを渡す必要があります。ラベルの配置は `ion-checkbox` の `labelPlacement` プロパティを使用して設定することができる。ラベルとコントロールの行の詰め方は、`ion-checkbox` の `justify` プロパティを使用して制御することができます。
 
 import Migration from '@site/static/usage/v7/checkbox/migration/index.md';
 
@@ -100,15 +100,15 @@ import Migration from '@site/static/usage/v7/checkbox/migration/index.md';
   
 
 :::note
-In past versions of Ionic, `ion-item` was required for `ion-checkbox` to function properly. Starting in Ionic 7.0, `ion-checkbox` should only be used in an `ion-item` when the item is placed in an `ion-list`. Additionally, `ion-item` is no longer required for `ion-checkbox` to function properly.
+Ionic の過去のバージョンでは、`ion-checkbox` が正しく機能するために `ion-item` が必要でした。Ionic 7.0 からは、`ion-checkbox` は `ion-item` の中で、そのアイテムが `ion-list` に配置される場合にのみ使用されます。また、`ion-checkbox`が正しく機能するためには、`ion-item`はもはや必須ではありません。
 :::
 
-### Using the Legacy Syntax
+### レガシーな構文の使い方
 
-Ionic uses heuristics to detect if an app is using the modern checkbox syntax. In some instances, it may be preferable to continue using the legacy syntax. Developers can set the `legacy` property on `ion-checkbox` to `true` to force that instance of the checkbox to use the legacy syntax.
+Ionicは、アプリが最新のチェックボックス構文を使用しているかどうかをヒューリスティックに検出します。場合によっては、レガシーな構文を使い続けることが望ましい場合もあります。開発者は `ion-checkbox` の `legacy` プロパティを `true` に設定することで、そのチェックボックスのインスタンスがレガシー構文を使用するように強制できます。
 
 
-## Properties
+## プロパティ
 <Props />
 
 ## イベント

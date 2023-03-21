@@ -18,7 +18,7 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 Item groups are containers that organize similar [items](./item) together. They can contain [item dividers](./item-divider) to divide the items into multiple sections. They can also be used to group [sliding items](./item-sliding).
 
-## Basic Usage
+## 基本的な使い方
 
 import Basic from '@site/static/usage/v7/item-group/basic/index.md';
 
@@ -31,7 +31,7 @@ import SlidingItems from '@site/static/usage/v7/item-group/sliding-items/index.m
 <SlidingItems />
 
 
-## Properties
+## プロパティ
 <Props />
 
 ## イベント
