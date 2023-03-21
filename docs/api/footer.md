@@ -25,9 +25,9 @@ import Basic from '@site/static/usage/v7/footer/basic/index.md';
 <Basic />
 
 
-## Translucent Footer
+## 半透明のフッター
 
-Footers can match the transparency found in native iOS applications by setting the `translucent` property. In order to see the content scrolling behind the footer, the `fullscreen` property needs to be set on the content. This effect will only apply when the mode is `"ios"` and the device supports [backdrop-filter](https://developer.mozilla.org/en-US/docs/Web/CSS/backdrop-filter#browser_compatibility).
+フッターは、`translucent`プロパティを設定することで、ネイティブのiOSアプリケーションに見られるような透明度に合わせることができます。フッターの後ろにスクロールするコンテンツを見るには、コンテンツに `fullscreen` プロパティを設定する必要があります。この効果は、モードが `"ios"` で、デバイスが [backdrop-filter](https://developer.mozilla.org/en-US/docs/Web/CSS/backdrop-filter#browser_compatibility) をサポートしている場合にのみ適用されます。
 
 import Translucent from '@site/static/usage/v7/footer/translucent/index.md';
 
@@ -36,7 +36,7 @@ import Translucent from '@site/static/usage/v7/footer/translucent/index.md';
 
 ## フェードフッター
 
-Many native iOS applications have a fade effect on the toolbar. This can be achieved by setting the `collapse` property on the footer to `"fade"`. When the content is scrolled to the end, the background and border on the footer will fade away. This effect will only apply when the mode is `"ios"`.
+多くのネイティブiOSアプリケーションは、ツールバーにフェード効果を持たせています。これは、フッターの `collapse` プロパティを `"fade"` に設定することで実現できます。コンテンツが最後までスクロールされると、フッターの背景とボーダーはフェードアウトします。この効果は、モードが `"ios"` のときだけ適用されます。
 
 import Fade from '@site/static/usage/v7/footer/fade/index.md';
 
@@ -45,15 +45,15 @@ import Fade from '@site/static/usage/v7/footer/fade/index.md';
 
 ### 仮想スクロールでの使用方法
 
-A fade footer requires a scroll container to work properly. When using a virtual scrolling solution, a custom scroll target needs to be provided. Scrolling on the content needs to be disabled and the `.ion-content-scroll-host` class needs to be added to the element responsible for scrolling.
+フェードフッターを正しく動作させるためには、スクロールコンテナが必要です。仮想スクロールソリューションを使用する場合は、カスタムスクロールターゲットを提供する必要があります。コンテンツのスクロールを無効にし、スクロールを担当する要素に `.ion-content-scroll-host` クラスを追加する必要があります。
 
 import CustomScrollTarget from '@site/static/usage/v7/footer/custom-scroll-target/index.md';
 
 <CustomScrollTarget />
 
-## Borders
+## ボーダー
 
-In `"md"` mode, the footer will have a `box-shadow` on the top. In `"ios"` mode, it will receive a `border` on the top. These can be removed by adding the `.ion-no-border` class to the footer.
+`"md"`モードでは、フッターは上部に `box-shadow` が表示されます。`"ios"`モードでは、上部に `border` が表示されます。これらは、フッターに `.ion-no-border` クラスを追加することで削除することができます。
 
 import NoBorder from '@site/static/usage/v7/footer/no-border/index.md';
 

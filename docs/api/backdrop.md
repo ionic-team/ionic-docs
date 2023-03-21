@@ -16,17 +16,17 @@ Backdropは、他のコンポーネントをオーバーレイするためフル
 
 ## 基本的な使い方
 
-The backdrop is transparent by default. The backdrop will prevent clicking or tapping on the content behind it.
+バックドロップは、デフォルトで透明です。バックドロップは、その背後にあるコンテンツのクリックやタップを防ぐことができます。
 
 import Basic from '@site/static/usage/v7/backdrop/basic/index.md';
 
 <Basic />
 
-## Styling
+## スタイリング
 
-The backdrop can be customized by assigning CSS properties directly to the backdrop element. Common properties include `background-color`, `background` and `opacity`. 
+バックドロップは、CSSプロパティをバックドロップ要素に直接割り当てることで、カスタマイズすることができます。一般的なプロパティには `background-color`, `background`, `opacity` があります。
 
-Content can be displayed above the backdrop by setting a `z-index` on the content, higher than the backdrop (defaults to `2`).
+コンテンツに `z-index` を設定し、背景よりも高い位置に表示させることができます（デフォルトは `2` です）。
 
 import Styling from '@site/static/usage/v7/backdrop/styling/index.md';
 

@@ -30,7 +30,7 @@ import Basic from '@site/static/usage/v7/radio/basic/index.md';
 
 ## Label Placement
 
-Developers can use the `labelPlacement` property to control how the label is placed relative to the control.
+開発者は `labelPlacement` プロパティを使用して、ラベルがどのように配置されるかを制御することができます。
 
 import LabelPlacement from '@site/static/usage/v7/radio/label-placement/index.md';
 
@@ -38,7 +38,7 @@ import LabelPlacement from '@site/static/usage/v7/radio/label-placement/index.md
 
 ## Justification
 
-Developers can use the `justify` property to control how the label and control are packed on a line.
+開発者は `justify` プロパティを使用して、ラベルとコントロールの行の詰め方を制御することができます。
 
 import Justify from '@site/static/usage/v7/radio/justify/index.md';
 
@@ -84,7 +84,7 @@ A simpler radio syntax was introduced in Ionic 7.0. This new syntax reduces the 
 
 Developers can perform this migration one radio at a time. While developers can continue using the legacy syntax, we recommend migrating as soon as possible.
 
-### Using the Modern Syntax
+### モダンな構文の使い方
 
 Using the modern syntax involves removing the `ion-label` and passing the label directly inside of `ion-radio`. The placement of the label can be configured using the `labelPlacement` property on `ion-radio`. The way the label and the control are packed on a line can be controlled using the `justify` property on `ion-radio`.
 

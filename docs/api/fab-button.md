@@ -18,11 +18,11 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 <EncapsulationPill type="shadow" />
 
 
-Floating Action Buttons (FABs) represent the primary action in an application. By default, they have a circular shape. When pressed, the button may open more related actions.
+フローティングアクションボタン（FAB）は、アプリケーションの主要なアクションを表します。デフォルトでは、円形の形をしています。ボタンが押されると、関連するアクションがさらに開かれることもあります。
 
-As the name suggests, FABs generally float over the content in a fixed position. This is achieved by wrapping the fab button in a [fab](./fab) component. If the button is not wrapped with a fab, it will scroll with the content.
+その名が示すように、FABは一般的に固定された位置でコンテンツの上に浮かんでいます。これは、FABボタンを[fab](./fab)コンポーネントで包むことで実現されます。もしボタンがfabで包まれていない場合は、コンテンツと一緒にスクロールします。
 
-For usage examples, see the [fab documentation](./fab).
+使用例については、[fab documentation](./fab)を参照してください。
 
 ## プロパティ
 <Props />

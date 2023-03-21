@@ -18,14 +18,14 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 AppはIonicアプリケーションのコンテナ要素です。プロジェクトごとに `<ion-app>` 要素は1つだけにしてください。アプリケーションには、menus, headers, content, footersなど、多くのIonicコンポーネントを含めることができます。オーバーレイコンポーネントは、表示されるときに `<ion-app>` に追加されます。
 
-Using `ion-app` enables the following behaviors:
+`ion-app`を使用すると、以下の動作が可能になります。
 
-* [Keyboard Lifecycle Events](../developing/keyboard#keyboard-lifecycle-events) without the need for any native plugins
-* [Hardware Back Button Listeners](../developing/hardware-back-button) for customizing the hardware back button behavior on Android devices
-* Status bar support in Capacitor or Cordova which allows users to scroll to the top of the view by tapping the status bar
-* Scroll assist utilities which scroll the content so focused text inputs are not covered by the on-screen keyboard
-* [Ripple effect](./ripple-effect) when activating buttons on Material Design mode
-* Other tap and focus utilities which make the experience of using an Ionic app feel more native
+* [キーボードライフサイクルイベント](../developing/keyboard#keyboard-lifecycle-events) は、ネイティブプラグインを必要なくなります。
+* Android 端末のハードウェアバックボタンの動作をカスタマイズするための [Hardware Back Button Listeners](../developing/hardware-back-button) を使えます
+* Capacitor や Cordova でステータスバーをサポートし、ステータスバーをタップすることでビューの最上部にスクロールできるようになります。
+* テキスト入力が画面上のキーボードにかからないように、コンテンツをスクロールさせるスクロールアシストユーティリティが使えます。
+* Material Design モードでのボタン操作時の[Ripple effect](./リップルエフェクト) が使えます。
+* Ionicアプリの使用感をよりネイティブなものにする、その他のタップやフォーカスのユーティリティが使えます。
 
 
 ## プロパティ

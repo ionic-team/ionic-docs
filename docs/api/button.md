@@ -27,7 +27,7 @@ import Basic from '@site/static/usage/v7/button/basic/index.md';
 
 ## Expand
 
-This property lets you specify how wide the button should be. By default, buttons have `display: inline-block`, but setting this property will change the button to a full-width element with `display: block`.
+このプロパティでは、ボタンの幅を指定することができます。デフォルトでは、ボタンは `display: inline-block` を持ちますが、このプロパティを設定すると、ボタンは `display: block` を持つ全角要素に変更されます。
 
 import Expand from '@site/static/usage/v7/button/expand/index.md';
 

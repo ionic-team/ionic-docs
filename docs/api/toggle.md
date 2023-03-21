@@ -47,7 +47,7 @@ import List from '@site/static/usage/v7/toggle/list/index.md';
 
 ## Label Placement
 
-Developers can use the `labelPlacement` property to control how the label is placed relative to the control.
+開発者は `labelPlacement` プロパティを使用して、ラベルがどのように配置されるかを制御することができます。
 
 import LabelPlacement from '@site/static/usage/v7/toggle/label-placement/index.md';
 
@@ -56,7 +56,7 @@ import LabelPlacement from '@site/static/usage/v7/toggle/label-placement/index.m
 
 ## Justification
 
-Developers can use the `justify` property to control how the label and control are packed on a line.
+開発者は `justify` プロパティを使用して、ラベルとコントロールの行の詰め方を制御することができます。
 
 import Justify from '@site/static/usage/v7/toggle/justify/index.md';
 
@@ -93,7 +93,7 @@ A simpler toggle syntax was introduced in Ionic 7.0. This new syntax reduces the
 
 While developers can continue using the legacy syntax, we recommend migrating as soon as possible.
 
-### Using the Modern Syntax
+### モダンな構文の使い方
 
 Using the modern syntax involves removing the `ion-label` and passing the label directly inside of `ion-toggle`. The placement of the label can be configured using the `labelPlacement` property on `ion-toggle`. The way the label and the control are packed on a line can be controlled using the `justify` property on `ion-toggle`.
 

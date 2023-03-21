@@ -33,7 +33,7 @@ import Basic from '@site/static/usage/v7/datetime-button/basic/index.md';
 
 ## ローカライゼーション
 
-The localized text on `ion-datetime-button` is determined by the `locale` property on the associated `ion-datetime` instance. See [Datetime Localization](./datetime#localization) for more details.
+`ion-datetime-button` のローカライズされたテキストは、関連する `ion-datetime` インスタンスの `locale` プロパティによって決まります。詳しくは、[Datetime Localization](./datetime#localization) を参照してください。
 
 ## モーダルやポップオーバーと使う
 

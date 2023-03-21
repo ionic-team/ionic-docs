@@ -24,17 +24,17 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 ## Inline Alerts (Recommended)
 
-`ion-alert` can be used by writing the component directly in your template. This reduces the number of handlers you need to wire up in order to present the Alert.
+`ion-alert` は、テンプレートに直接コンポーネントを記述して使用することができます。これにより、アラートを表示するために必要なハンドラの数を減らすことができます。
 
 import Trigger from '@site/static/usage/v7/alert/presenting/trigger/index.md';
 
 <Trigger />
 
-### Using `isOpen`
+### `isOpen` を使う
 
-The `isOpen` property on `ion-alert` allows developers to control the presentation state of the Alert from their application state. This means when `isOpen` is set to `true` the Alert will be presented, and when `isOpen` is set to `false` the Alert will be dismissed.
+`ion-alert` の `isOpen` プロパティは、開発者がアプリケーションの状態からアラートの表示状態を制御することを可能にします。つまり、`isOpen` を `true` に設定するとアラートが表示され、`isOpen` を `false` に設定するとアラートは解除されます。
 
-`isOpen` uses a one-way data binding, meaning it will not automatically be set to `false` when the Alert is dismissed. Developers should listen for the `ionAlertDidDismiss` or `didDismiss` event and set `isOpen` to `false`. The reason for this is it prevents the internals of `ion-alert` from being tightly coupled with the state of the application. With a one way data binding, the Alert only needs to concern itself with the boolean value that the reactive variable provides. With a two way data binding, the Alert needs to concern itself with both the boolean value as well as the existence of the reactive variable itself. This can lead to non-deterministic behaviors and make applications harder to debug.
+`isOpen` は一方通行のデータバインディングを使用しているため、アラートが解除されたときに自動的に `false` に設定されることはありません。開発者は `ionAlertDidDismiss` または `didDismiss` イベントを待ち、`isOpen` を `false` に設定する必要があります。この理由は、`ion-alert` の内部がアプリケーションの状態と密接に結合するのを防ぐためである。一方通行のデータバインディングでは、アラートはリアクティブ変数が提供するブーリアン値だけを気にすればよい。双方向のデータバインディングでは、アラートはブーリアン値とリアクティブ変数の存在の両方に関心を持つ必要があります。これは、非決定的な動作につながり、アプリケーションのデバッグを困難にする可能性があります。
 
 import IsOpen from '@site/static/usage/v7/alert/presenting/isOpen/index.md';
 
@@ -42,7 +42,7 @@ import IsOpen from '@site/static/usage/v7/alert/presenting/isOpen/index.md';
 
 ## Controller Alerts
 
-The `alertController` can be used in situations where more control is needed over when the Alert is presented and dismissed.
+`alertController`は、アラートを表示するタイミングや解除するタイミングをより細かく制御する必要がある場合に使用することができる。
 
 import Controller from '@site/static/usage/v7/alert/presenting/controller/index.md';
 
@@ -111,13 +111,13 @@ IonicのAngularアプリを構築する場合、スタイルはグローバル�
 
 ## アクセシビリティ
 
-Ionic automatically sets the Alert's `role` to either [`alertdialog`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/alertdialog_role) if there are any inputs or buttons included, or [`alert`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/alert_role) if there are none.
+Ionicは、アラートの `role` を、入力やボタンがある場合は [`alertdialog`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/alertdialog_role) に、何もない場合は [`alert`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/alert_role) のいずれかに自動的に設定します。
 
-If the `header` property is defined for the Alert, the `aria-labelledby` attribute will be automatically set to the header's ID. The `subHeader` element will be used as a fallback if `header` is not defined. Similarly, the `aria-describedby` attribute will be automatically set to the ID of the `message` element if that property is defined.
+アラートに対して `header` プロパティが定義されている場合、`aria-labelledby` 属性は自動的にヘッダの ID に設定されます。 `header`が定義されていない場合は、`subHeader`要素がフォールバックとして使用されます。同様に、`aria-describedby`属性は、`message`要素のIDが定義されていれば自動的に設定されます。
 
-It is strongly recommended that your Alert have a `message`, as well as either a `header` or `subHeader`, in order to align with the ARIA spec. If you choose not to include a `header` or `subHeader`, an alternative is to provide a descriptive `aria-label` using the `htmlAttributes` property.
+ARIAの仕様に合わせるために、アラートには `message` と `header` または `subHeader` を含めることを強くお勧めします。もし `header` や `subHeader` を含めない場合は、`htmlAttributes` プロパティを使用して、説明的な `aria-label` を指定することができます。
 
-All ARIA attributes can be manually overwritten by defining custom values in the `htmlAttributes` property of the Alert.
+すべてのARIA属性は、アラートの`htmlAttributes`プロパティにカスタム値を定義することにより、手動で上書きすることができます。
 
 
 ## Interfaces

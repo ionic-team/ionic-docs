@@ -39,7 +39,7 @@ import Types from '@site/static/usage/v7/input/types/index.md';
 
 ## Label Placement
 
-Labels will take up the width of their content by default. Developers can use the `labelPlacement` property to control how the label is placed relative to the control.
+Labels will take up the width of their content by default. 開発者は `labelPlacement` プロパティを使用して、ラベルがどのように配置されるかを制御することができます。
 
 import LabelPlacement from '@site/static/usage/v7/input/label-placement/index.md';
 
@@ -116,7 +116,7 @@ A simpler input syntax was introduced in Ionic 7.0. This new syntax reduces the 
 
 Developers can perform this migration one input at a time. While developers can continue using the legacy syntax, we recommend migrating as soon as possible.
 
-### Using the Modern Syntax
+### モダンな構文の使い方
 
 Using the modern syntax involves three steps:
 

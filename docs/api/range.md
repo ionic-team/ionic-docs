@@ -114,7 +114,7 @@ A simpler range syntax was introduced in Ionic 7.0. This new syntax reduces the 
 
 Developers can perform this migration one range at a time. While developers can continue using the legacy syntax, we recommend migrating as soon as possible.
 
-### Using the Modern Syntax
+### モダンな構文の使い方
 
 Using the modern syntax involves removing the `ion-label` and passing the label directly inside of `ion-range` using `slot="label"`. The placement of the label can be configured using the `labelPlacement` property on `ion-range`.
 
