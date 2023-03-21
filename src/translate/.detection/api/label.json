@@ -123,7 +123,7 @@
     {
       "name": "--color",
       "annotation": "prop",
-      "docs": "Color of the label"
+      "docs": "Color of the label. This property is only available when using `ion-label` inside of an `ion-item`."
     }
   ],
   "slots": [],

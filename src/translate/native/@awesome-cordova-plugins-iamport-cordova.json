@@ -1,7 +1,7 @@
 {
   "packageName": "@awesome-cordova-plugins/iamport-cordova",
   "displayName": "Iamport Cordova",
-  "description": "\nThis plugin does something\n",
+  "description": "\nCordova plugin that integrates with and handles multiple payment gateways.\n",
   "usage": "\n```typescript\nimport { IamportCordova } from '@awesome-cordova-plugins/iamport-cordova/ngx';\n\n\nconstructor(private iamportCordova: IamportCordova) { }\n\n...\n\n\nthis.iamportCordova.functionName('Hello', 123)\n  .then((res: any) => console.log(res))\n  .catch((error: any) => console.error(error));\n\n```\n",
   "platforms": [
     "ios",

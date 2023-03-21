@@ -37,7 +37,7 @@
         {
           "name": "configuration",
           "type": "string",
-          "summary": "Specify the configuration to use.",
+          "summary": "Specify the configuration to use",
           "groups": [
             "advanced",
             "cordova"
@@ -116,7 +116,7 @@
       "inputs": [
         {
           "name": "platform",
-          "summary": "The platform to add (e.g. `android`, `ios`)",
+          "summary": "The platform to add (e.g. `android`, `ios`)\n\n自動翻訳: 追加するプラットフォーム（例：`android`、`ios`）。",
           "required": true
         }
       ],
@@ -130,7 +130,7 @@
         "capacitor"
       ],
       "summary": "Build an Ionic project for a given platform",
-      "description": "`ionic capacitor build` will do the following:\n- Perform `ionic build`\n- Copy web assets into the specified native platform\n- Open the IDE for your native project (Xcode for iOS, Android Studio for Android)\n\nOnce the web assets and configuration are copied into your native project, you can build your app using the native IDE. Unfortunately, programmatically building the native project is not yet supported.\n\nTo configure your native project, see the common configuration [docs](https://capacitor.ionicframework.com/docs/basics/configuring-your-app) as well as low-level configuration for [iOS](https://capacitor.ionicframework.com/docs/ios/configuration) and [Android](https://capacitor.ionicframework.com/docs/android/configuration).",
+      "description": "`ionic capacitor build` will do the following:\n- Perform `ionic build`\n- Copy web assets into the specified native platform\n- Open the IDE for your native project (Xcode for iOS, Android Studio for Android)\n\nOnce the web assets and configuration are copied into your native project, you can build your app using the native IDE. Unfortunately, programmatically building the native project is not yet supported.\n\nTo configure your native project, see the common configuration [docs](https://capacitorjs.com/docs/basics/configuring-your-app) as well as low-level configuration for [iOS](https://capacitorjs.com/docs/ios/configuration) and [Android](https://capacitorjs.com/docs/android/configuration).",
       "footnotes": [],
       "groups": [
         "beta"
@@ -144,7 +144,7 @@
       "inputs": [
         {
           "name": "platform",
-          "summary": "The platform to build for (e.g. `android`, `ios`)",
+          "summary": "The platform to build for (e.g. `android`, `ios`)\n\n自動翻訳: ビルドするプラットフォーム（例：`android`、`ios`）を指定します。",
           "required": true
         }
       ],
@@ -186,7 +186,7 @@
         {
           "name": "configuration",
           "type": "string",
-          "summary": "Specify the configuration to use.",
+          "summary": "Specify the configuration to use",
           "groups": [
             "advanced",
             "cordova"
@@ -241,7 +241,7 @@
       "inputs": [
         {
           "name": "platform",
-          "summary": "The platform to copy (e.g. `android`, `ios`)",
+          "summary": "The platform to copy (e.g. `android`, `ios`)\n\n自動翻訳: コピーするプラットフォーム（例：`android`、`ios`）。",
           "required": false
         }
       ],
@@ -272,7 +272,7 @@
         {
           "name": "configuration",
           "type": "string",
-          "summary": "Specify the configuration to use.",
+          "summary": "Specify the configuration to use",
           "groups": [
             "advanced",
             "cordova"
@@ -327,7 +327,7 @@
       "inputs": [
         {
           "name": "platform",
-          "summary": "The platform to open (e.g. `android`, `ios`)",
+          "summary": "The platform to open (e.g. `android`, `ios`)\n\n自動翻訳: 開くプラットフォーム（例：`android`、`ios`）。",
           "required": true
         }
       ],
@@ -355,7 +355,7 @@
       "inputs": [
         {
           "name": "platform",
-          "summary": "The platform to run (e.g. `android`, `ios`)",
+          "summary": "The platform to run (e.g. `android`, `ios`)\n\n自動翻訳: 実行するプラットフォーム（例：`android`、`ios`）。",
           "required": true
         }
       ],
@@ -494,7 +494,7 @@
         {
           "name": "configuration",
           "type": "string",
-          "summary": "Specify the configuration to use.",
+          "summary": "Specify the configuration to use",
           "groups": [
             "advanced",
             "cordova"
@@ -549,7 +549,7 @@
       "inputs": [
         {
           "name": "platform",
-          "summary": "The platform to sync (e.g. `android`, `ios`)",
+          "summary": "The platform to sync (e.g. `android`, `ios`)\n\n自動翻訳: 同期するプラットフォーム（例：`android`、`ios`）。",
           "required": false
         }
       ],
@@ -580,7 +580,7 @@
         {
           "name": "configuration",
           "type": "string",
-          "summary": "Specify the configuration to use.",
+          "summary": "Specify the configuration to use",
           "groups": [
             "advanced",
             "cordova"
@@ -635,7 +635,7 @@
       "inputs": [
         {
           "name": "platform",
-          "summary": "The platform to update (e.g. `android`, `ios`)",
+          "summary": "The platform to update (e.g. `android`, `ios`)\n\n自動翻訳: アップデートするプラットフォーム（例：`android`、`ios`）。",
           "required": false
         }
       ],
@@ -682,7 +682,7 @@
       "inputs": [
         {
           "name": "property",
-          "summary": "The property name you wish to get",
+          "summary": "The property name you wish to get\n\n自動翻訳: 取得したいプロパティ名",
           "required": false
         }
       ],
@@ -745,12 +745,12 @@
       "inputs": [
         {
           "name": "property",
-          "summary": "The property name you wish to set",
+          "summary": "The property name you wish to set\n\n自動翻訳: 設定したいプロパティ名",
           "required": true
         },
         {
           "name": "value",
-          "summary": "The new value of the given property",
+          "summary": "The new value of the given property\n\n自動翻訳: 与えられたプロパティの新しい値",
           "required": true
         }
       ],
@@ -829,7 +829,7 @@
       "inputs": [
         {
           "name": "property",
-          "summary": "The property name you wish to delete",
+          "summary": "The property name you wish to delete\n\n自動翻訳: 削除したいプロパティ名",
           "required": true
         }
       ],
@@ -889,7 +889,7 @@
       "inputs": [
         {
           "name": "platform",
-          "summary": "The platform to build (e.g. `android`, `ios`)",
+          "summary": "The platform to build (e.g. `android`, `ios`)\n\n自動翻訳: ビルドするプラットフォーム（例：`android`、`ios`）。",
           "required": true
         }
       ],
@@ -988,7 +988,7 @@
         {
           "name": "configuration",
           "type": "string",
-          "summary": "Specify the configuration to use.",
+          "summary": "Specify the configuration to use",
           "groups": [
             "advanced",
             "cordova"
@@ -1035,7 +1035,7 @@
       "inputs": [
         {
           "name": "platform",
-          "summary": "The platform to compile (`android`, `ios`)",
+          "summary": "The platform to compile (`android`, `ios`)\n\n自動翻訳: コンパイルするプラットフォーム（`android`、`ios`）。",
           "required": true
         }
       ],
@@ -1142,7 +1142,7 @@
       "inputs": [
         {
           "name": "platform",
-          "summary": "The platform to run (e.g. `android`, `ios`)",
+          "summary": "The platform to run (e.g. `android`, `ios`)\n\n自動翻訳: 実行するプラットフォーム（例：`android`、`ios`）。",
           "required": true
         }
       ],
@@ -1298,7 +1298,7 @@
         {
           "name": "configuration",
           "type": "string",
-          "summary": "Specify the configuration to use.",
+          "summary": "Specify the configuration to use",
           "groups": [
             "advanced",
             "cordova"
@@ -1469,12 +1469,12 @@
       "inputs": [
         {
           "name": "action",
-          "summary": "`add`, `remove`, or `update` a platform; `ls`, `check`, or `save` all project platforms",
+          "summary": "`add`, `remove`, or `update` a platform; `ls`, `check`, or `save` all project platforms\n\n自動翻訳: プラットフォームの追加、削除、または更新; プロジェクトのプラットフォームをすべて保存する。",
           "required": false
         },
         {
           "name": "platform",
-          "summary": "The platform that you would like to add (`android`, `ios`)",
+          "summary": "The platform that you would like to add (`android`, `ios`)\n\n自動翻訳: 追加したいプラットフォーム（`android`、`ios`）を指定します。",
           "required": false
         }
       ],
@@ -1515,12 +1515,12 @@
       "inputs": [
         {
           "name": "action",
-          "summary": "`add` or `remove` a plugin; `ls` or `save` all project plugins",
+          "summary": "`add` or `remove` a plugin; `ls` or `save` all project plugins\n\n自動翻訳: プラグインを `add` または `remove`; プロジェクトのすべてのプラグインを `ls` または `save` する。",
           "required": false
         },
         {
           "name": "plugin",
-          "summary": "The name of the plugin (corresponds to `add` and `remove`)",
+          "summary": "The name of the plugin (corresponds to `add` and `remove`)\n\n自動翻訳: プラグインの名前 (`add` と `remove` に対応する)",
           "required": false
         }
       ],
@@ -1574,7 +1574,7 @@
       "inputs": [
         {
           "name": "platform",
-          "summary": "The platform you would like to prepare (e.g. `android`, `ios`)",
+          "summary": "The platform you would like to prepare (e.g. `android`, `ios`)\n\n自動翻訳: 用意したいプラットフォーム（例：`android`、`ios`）。",
           "required": false
         }
       ],
@@ -1605,7 +1605,7 @@
         {
           "name": "configuration",
           "type": "string",
-          "summary": "Specify the configuration to use.",
+          "summary": "Specify the configuration to use",
           "groups": [
             "advanced",
             "cordova"
@@ -1660,7 +1660,7 @@
       "inputs": [
         {
           "name": "platform",
-          "summary": "The platform for which you would like to gather requirements (`android`, `ios`)",
+          "summary": "The platform for which you would like to gather requirements (`android`, `ios`)\n\n自動翻訳: 要件を収集したいプラットフォーム（`android`、`ios`）。",
           "required": false
         }
       ],
@@ -1688,7 +1688,7 @@
       "inputs": [
         {
           "name": "platform",
-          "summary": "The platform for which you would like to generate resources (`ios`, `android`)",
+          "summary": "The platform for which you would like to generate resources (`ios`, `android`)\n\n自動翻訳: リソースを生成したいプラットフォーム（`ios`、`android`）を指定します。",
           "required": false
         }
       ],
@@ -1751,7 +1751,7 @@
       "inputs": [
         {
           "name": "platform",
-          "summary": "The platform to run (e.g. `android`, `ios`)",
+          "summary": "The platform to run (e.g. `android`, `ios`)\n\n自動翻訳: 実行するプラットフォーム（例：`android`、`ios`）。",
           "required": true
         }
       ],
@@ -1907,7 +1907,7 @@
         {
           "name": "configuration",
           "type": "string",
-          "summary": "Specify the configuration to use.",
+          "summary": "Specify the configuration to use",
           "groups": [
             "advanced",
             "cordova"
@@ -2230,7 +2230,7 @@
       "inputs": [
         {
           "name": "platform",
-          "summary": "The native platform (e.g. `ios`, `android`)",
+          "summary": "The native platform (e.g. `ios`, `android`)\n\n自動翻訳: ネイティブプラットフォーム（例：`ios`、`android`）。",
           "required": false
         }
       ],
@@ -2349,7 +2349,9 @@
       "summary": "Check the health of your Ionic project",
       "description": "This command detects and prints common issues and suggested steps to fix them.\n\nSome issues can be fixed automatically. See `ionic doctor treat --help`.\n\nOptionally supply the `id` argument to check a single issue. Use `ionic doctor list` to list all known issues.",
       "footnotes": [],
-      "groups": [],
+      "groups": [
+        "deprecated"
+      ],
       "exampleCommands": [
         "ionic doctor check ",
         "ionic doctor check git-not-used"
@@ -2361,7 +2363,7 @@
       "inputs": [
         {
           "name": "id",
-          "summary": "The issue identifier",
+          "summary": "The issue identifier\n\n自動翻訳: 課題識別子",
           "required": false
         }
       ],
@@ -2377,7 +2379,9 @@
       "summary": "List all issues and their identifiers",
       "description": "Issues can have various tags:\n- **treatable**: `ionic doctor treat` can attempt to fix the issue\n- **ignored**: configured not to be detected in `ionic doctor check` or `ionic doctor treat`\n- **explicit-detection**: issue is only detected explicitly with `ionic doctor check <issue-id>`\n\nYou can flip whether an issue is ignored or not by using `ionic config set -g doctor.issues.<issue-id>.ignored true/false`, where `<issue-id>` matches an ID listed with this command.",
       "footnotes": [],
-      "groups": [],
+      "groups": [
+        "deprecated"
+      ],
       "exampleCommands": [],
       "aliases": [
         "ionic doctor ls"
@@ -2395,7 +2399,9 @@
       "summary": "Attempt to fix issues in your Ionic project",
       "description": "This command detects and attempts to fix common issues. Before a fix is attempted, the steps are printed and a confirmation prompt is displayed.\n\nOptionally supply the `id` argument to attempt to fix a single issue. Use `ionic doctor list` to list all known issues.",
       "footnotes": [],
-      "groups": [],
+      "groups": [
+        "deprecated"
+      ],
       "exampleCommands": [
         "ionic doctor treat ",
         "ionic doctor treat git-not-used"
@@ -2406,7 +2412,7 @@
       "inputs": [
         {
           "name": "id",
-          "summary": "The issue identifier",
+          "summary": "The issue identifier\n\n自動翻訳: 課題識別子",
           "required": false
         }
       ],
@@ -2476,12 +2482,12 @@
       "inputs": [
         {
           "name": "type",
-          "summary": "The type of feature (e.g. `page`, `component`, `directive`, `service`)",
+          "summary": "The type of feature (e.g. `page`, `component`, `directive`, `service`)\n\n自動翻訳: 機能の種類（例：`page`、`component`、`directive`、`service`）を指定します。",
           "required": true
         },
         {
           "name": "name",
-          "summary": "The name/path of the feature being generated",
+          "summary": "The name/path of the feature being generated\n\n自動翻訳: 生成されるフィーチャの名前/パス",
           "required": true
         }
       ],
@@ -2553,7 +2559,7 @@
       "inputs": [
         {
           "name": "name",
-          "summary": "The name of your project (e.g. `myApp`, `\"My App\"`)",
+          "summary": "The name of your project (e.g. `myApp`, `\"My App\"`)\n\n自動翻訳: プロジェクト名（例：`myApp`、`\"My App\"`）を指定します。",
           "required": false
         }
       ],
@@ -2640,7 +2646,7 @@
       "inputs": [
         {
           "name": "name",
-          "summary": "The integration to disable (e.g. `capacitor`, `cordova`, `enterprise`)",
+          "summary": "The integration to disable (e.g. `capacitor`, `cordova`, `enterprise`)\n\n自動翻訳: 無効にするインテグレーション（例：`capacitor`、`cordova`、`enterprise`）を指定します。",
           "required": true
         }
       ],
@@ -2665,7 +2671,7 @@
       "inputs": [
         {
           "name": "name",
-          "summary": "The integration to enable (e.g. `capacitor`, `cordova`, `enterprise`)",
+          "summary": "The integration to enable (e.g. `capacitor`, `cordova`, `enterprise`)\n\n自動翻訳: 有効にするインテグレーション（例：`capacitor`、`cordova`、`enterprise`）を指定します。",
           "required": true
         }
       ],
@@ -2740,7 +2746,7 @@
       "inputs": [
         {
           "name": "id",
-          "summary": "The Appflow ID of the app to link (e.g. `a1b2c3d4`)",
+          "summary": "The Appflow ID of the app to link (e.g. `a1b2c3d4`)\n\n自動翻訳: リンクするアプリのAppflow ID (例: `a1b2c3d4`)",
           "required": false
         }
       ],
@@ -2763,12 +2769,12 @@
       "inputs": [
         {
           "name": "email",
-          "summary": "Your email address (deprecated)",
+          "summary": "Your email address (deprecated)\n\n自動翻訳: お客様のEメールアドレス（非推奨）",
           "required": false
         },
         {
           "name": "password",
-          "summary": "Your password (deprecated)",
+          "summary": "Your password (deprecated)\n\n自動翻訳: お客様のパスワード（非推奨）",
           "required": false
         }
       ],
@@ -2820,12 +2826,12 @@
       "inputs": [
         {
           "name": "platform",
-          "summary": "The platform to package (`android`, `ios`)",
+          "summary": "The platform to package (`android`, `ios`)\n\n自動翻訳: パッケージングするプラットフォーム（`android`、`ios`）。",
           "required": true
         },
         {
           "name": "type",
-          "summary": "The build type (`debug`, `release`, `development`, `ad-hoc`, `app-store`, `enterprise`)",
+          "summary": "The build type (`debug`, `release`, `development`, `ad-hoc`, `app-store`, `enterprise`)\n\n自動翻訳: ビルドタイプ（`debug`, `release`, `development`, `ad-hoc`, `app-store`, `enterprise` ）。",
           "required": true
         }
       ],
@@ -2998,12 +3004,12 @@
       "inputs": [
         {
           "name": "build-id",
-          "summary": "The build id of the desired successful package build",
+          "summary": "The build id of the desired successful package build\n\n自動翻訳: 成功したパッケージのビルドを示すビルドID",
           "required": true
         },
         {
           "name": "destination",
-          "summary": "The destination to deploy the build artifact to the app store",
+          "summary": "The destination to deploy the build artifact to the app store\n\n自動翻訳: ビルドアーティファクトをアプリストアにデプロイするための保存先",
           "required": true
         }
       ],
@@ -3048,7 +3054,6 @@
       "exampleCommands": [
         "ionic serve ",
         "ionic serve --external",
-        "ionic serve --lab",
         "ionic serve -- --proxy-config proxy.conf.json"
       ],
       "aliases": [
@@ -3197,32 +3202,6 @@
           }
         },
         {
-          "name": "lab-host",
-          "type": "string",
-          "summary": "Use specific host for Ionic Lab server",
-          "default": "localhost",
-          "groups": [
-            "advanced"
-          ],
-          "aliases": [],
-          "spec": {
-            "value": "host"
-          }
-        },
-        {
-          "name": "lab-port",
-          "type": "string",
-          "summary": "Use specific port for Ionic Lab server",
-          "default": "8200",
-          "groups": [
-            "advanced"
-          ],
-          "aliases": [],
-          "spec": {
-            "value": "port"
-          }
-        },
-        {
           "name": "open",
           "type": "boolean",
           "summary": "Do not open a browser window",
@@ -3260,18 +3239,6 @@
           "spec": {
             "value": "path"
           }
-        },
-        {
-          "name": "lab",
-          "type": "boolean",
-          "summary": "Test your apps on multiple platform types in the browser",
-          "groups": [],
-          "aliases": [
-            "l"
-          ],
-          "spec": {
-            "value": "true/false"
-          }
         }
       ],
       "type": "project"
@@ -3306,7 +3273,7 @@
       "inputs": [
         {
           "name": "pubkey-path",
-          "summary": "Location of public key file to add to Ionic",
+          "summary": "Location of public key file to add to Ionic\n\n自動翻訳: Ionicに追加する公開鍵ファイルの場所",
           "required": true
         }
       ],
@@ -3342,7 +3309,7 @@
       "inputs": [
         {
           "name": "key-id",
-          "summary": "The ID of the public key to delete",
+          "summary": "The ID of the public key to delete\n\n自動翻訳: 削除する公開鍵のID",
           "required": true
         }
       ],
@@ -3366,7 +3333,7 @@
       "inputs": [
         {
           "name": "key-path",
-          "summary": "Destination of private key file",
+          "summary": "Destination of private key file\n\n自動翻訳: 秘密鍵ファイルの保存先",
           "required": false
         }
       ],
@@ -3478,7 +3445,7 @@
       "inputs": [
         {
           "name": "key-path",
-          "summary": "Location of private key file to use",
+          "summary": "Location of private key file to use\n\n自動翻訳: 使用する秘密鍵のファイルの場所",
           "required": true
         }
       ],
@@ -3634,12 +3601,12 @@
       "inputs": [
         {
           "name": "name",
-          "summary": "The name of your new project (e.g. `myApp`, `\"My App\"`)",
+          "summary": "The name of your new project (e.g. `myApp`, `\"My App\"`)\n\n自動翻訳: 新しいプロジェクトの名前（例：`myApp`、`\"My App\"`）を指定します。",
           "required": true
         },
         {
           "name": "template",
-          "summary": "The starter template to use (e.g. `blank`, `tabs`; use `--list` to see all)",
+          "summary": "The starter template to use (e.g. `blank`, `tabs`; use `--list` to see all)\n\n自動翻訳: 使用するスターターテンプレート（例：`blank`, `tabs`; すべてを見るには `--list` を使用します。）",
           "required": true
         }
       ],
