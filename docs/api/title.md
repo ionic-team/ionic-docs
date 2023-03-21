@@ -49,7 +49,7 @@ import CollapsibleLargeTitleButtons from '@site/static/usage/v7/title/collapsibl
 
 <CollapsibleLargeTitleButtons />
 
-## Theming
+## テーマ
 
 The collapsible large title should appear seamless in relation to the rest of your content. This means that the background color of the toolbar containing the collapsible large title should always match the background color of the content.
 
@@ -59,7 +59,7 @@ You can change the background color of the toolbar with the standard title by se
 
 ラージタイトルのテキストカラーをスタイルする場合、特定のページやタブのコンテキスト内ではなく、グローバルにラージタイトルをターゲットにする必要があり、そうしないとナビゲーションアニメーションの間にそのスタイルが適用されません。
 
-### CSS Custom Properties
+## CSSカスタムプロパティ
 
 import CSSCustomProperties from '@site/static/usage/v7/title/theming/css-properties/index.md';
 

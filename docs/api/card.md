@@ -25,7 +25,7 @@ and content. Cards are broken up into several components to accommodate this str
 and [card content](./card-content).
 
 
-## Basic Usage
+## 基本的な使い方
 
 import Basic from '@site/static/usage/v7/card/basic/index.md';
 
@@ -53,7 +53,7 @@ import List from '@site/static/usage/v7/card/list/index.md';
 <List />
 
 
-## Theming
+## テーマ
 
 ### Colors
 
@@ -61,7 +61,7 @@ import Colors from '@site/static/usage/v7/card/theming/colors/index.md';
 
 <Colors />
 
-### CSS Custom Properties
+## CSSカスタムプロパティ
 
 import CSSProps from '@site/static/usage/v7/card/theming/css-properties/index.md';
 

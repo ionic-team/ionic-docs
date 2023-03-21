@@ -21,15 +21,15 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 Skeleton Textは、placeholderコンテンツをレンダリングするためのコンポーネントです。要素は、指定した幅でグレーのブロックをレンダリングします。
 
-## Basic Usage
+## 基本的な使い方
 
 import Basic from '@site/static/usage/v7/skeleton-text/basic/index.md';
 
 <Basic />
 
-## Theming
+## テーマ
 
-### CSS Custom Properties
+## CSSカスタムプロパティ
 
 import CSSProps from '@site/static/usage/v7/skeleton-text/theming/css-properties/index.md';
 

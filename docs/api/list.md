@@ -21,7 +21,7 @@ icons, thumbnails, and much more. Lists generally contain items with similar dat
 
 Lists support several interactions including swiping items to reveal options, dragging to [reorder](./reorder) items within the list, and deleting items.
 
-## Basic Usage
+## 基本的な使い方
 
 import Basic from '@site/static/usage/v7/list/basic/index.md';
 

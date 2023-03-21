@@ -56,7 +56,7 @@ Infinite scroll requires a scroll container to function. When using a virtual sc
 </ion-content>
 ```
 
-## Accessibility
+## アクセシビリティ
 
 Developers should assign the `role="feed"` attribute to the scrollable list of items that are added to or removed from as the user scrolls.
 
@@ -96,7 +96,7 @@ interface InfiniteScrollCustomEvent extends CustomEvent {
 }
 ```
 
-## Properties
+## プロパティ
 <Props />
 
 ## イベント

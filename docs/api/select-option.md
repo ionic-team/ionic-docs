@@ -23,7 +23,7 @@ Select Options are components that are child elements of a Select. Each option d
 For usage examples, see the [Select](./select) documentation.
 
 
-## Properties
+## プロパティ
 <Props />
 
 ## イベント

@@ -20,7 +20,7 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 The Buttons component is a container element. It should be used inside of a [toolbar](./toolbar) and can contain several types of buttons, including standard [buttons](./button), [menu buttons](./menu-button), and [back buttons](./back-button).
 
-## Basic Usage
+## 基本的な使い方
 
 import Basic from '@site/static/usage/v7/buttons/basic/index.md';
 

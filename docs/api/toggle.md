@@ -20,7 +20,7 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 Toggles are switches that change the state of a single option. They can be switched on or off by pressing or swiping them. Toggles can also be checked programmatically by setting the `checked` property.
 
-## Basic Usage
+## 基本的な使い方
 
 import Basic from '@site/static/usage/v7/toggle/basic/index.md';
 
@@ -63,7 +63,7 @@ import Justify from '@site/static/usage/v7/toggle/justify/index.md';
 <Justify />
 
 
-## Theming
+## テーマ
 
 ### Colors
 
@@ -71,7 +71,7 @@ import Colors from '@site/static/usage/v7/toggle/theming/colors/index.md';
 
 <Colors />
 
-### CSS Custom Properties
+## CSSカスタムプロパティ
 
 CSS custom properties can be combined with standard CSS to target different parts of a toggle. We can modify the `width` and `height` of the toggle directly to change the size of the track, while using the `--handle-width` and `--handle-height` custom properties to customize the handle size.
 
@@ -133,7 +133,7 @@ interface ToggleCustomEvent<T = any> extends CustomEvent {
 ```
 
 
-## Properties
+## プロパティ
 <Props />
 
 ## イベント

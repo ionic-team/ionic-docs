@@ -21,7 +21,7 @@ Refresher provides pull-to-refresh functionality on a content component. The pul
 Data should be modified during the refresher's output events. Once the async operation has completed and the refreshing should end, `complete()` needs to be called on the refresher.
 
 
-## Basic Usage
+## 基本的な使い方
 
 import Basic from '@site/static/usage/v7/refresher/basic/index.md';
 
@@ -102,7 +102,7 @@ interface RefresherCustomEvent extends CustomEvent {
 }
 ```
 
-## Properties
+## プロパティ
 <Props />
 
 ## イベント

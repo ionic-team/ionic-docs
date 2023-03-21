@@ -14,7 +14,7 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 Backdropは、他のコンポーネントをオーバーレイするためフルスクリーンのコンポーネントです。これらは、他のコンテンツの上に遷移するコンポーネントのバックグラウンドで役立ち、そのコンポーネントを削除するために使用できます。
 
-## Basic Usage
+## 基本的な使い方
 
 The backdrop is transparent by default. The backdrop will prevent clicking or tapping on the content behind it.
 

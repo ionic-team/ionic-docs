@@ -20,7 +20,7 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 Labelは `ion-item`、`ion-input`、`ion-toggle` 等と共に使用できるラッパー(wrapper)要素です。item内のlabelの位置はinline、fixed、stacked、またはfloatingにすることができます。
 
 
-## Basic Usage
+## 基本的な使い方
 
 import Basic from '@site/static/usage/v7/label/basic/index.md';
 
@@ -38,7 +38,7 @@ import Input from '@site/static/usage/v7/label/input/index.md';
 
 <Input />
 
-## Theming
+## テーマ
 
 ### Colors
 

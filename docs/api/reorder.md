@@ -23,7 +23,7 @@ Reorder is a component that allows an item to be dragged to change its order wit
 The reorder is the anchor used to drag and drop the items. Once the reorder is complete, the `ionItemReorder` event will be dispatched from the reorder group and the `complete` method needs to be called.
 
 
-## Basic Usage
+## 基本的な使い方
 
 The most basic example of a reorder is slotting it inside of an item. By default, the reorder functionality is disabled for a reorder group. It can be enabled by setting the `disabled` property on the reorder group to `false`. The reorder icon can then be used to drag and drop the items and reorder them.
 

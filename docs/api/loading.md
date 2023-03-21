@@ -62,7 +62,7 @@ import Theming from '@site/static/usage/v7/loading/theming/index.md';
  `ion-loading` is presented at the root of your application, so we recommend placing any `ion-loading` styles in a global stylesheet.
 :::
 
-## Accessibility
+## アクセシビリティ
   
 Ionic automatically sets Loading's `role` to [`dialog`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/dialog_role).
 

@@ -54,7 +54,7 @@ import Toolbar from '@site/static/usage/v7/toolbar/progress-bars/index.md';
 <Toolbar />
 
 
-## Theming
+## テーマ
 
 ### Colors
 
@@ -63,7 +63,7 @@ import Colors from '@site/static/usage/v7/progress-bar/theming/colors/index.md';
 <Colors />
 
 
-### CSS Custom Properties
+## CSSカスタムプロパティ
 
 import CSSProps from '@site/static/usage/v7/progress-bar/theming/css-properties/index.md';
 

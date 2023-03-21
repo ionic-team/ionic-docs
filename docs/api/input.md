@@ -21,7 +21,7 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 inputコンポーネントは、カスタム・スタイル設定と追加機能を持つHTMLのInput要素のラッパーです。HTML Inputとほとんど同じプロパティーを受け入れますが、デスクトップ・デバイスでは優れた動作をし、モバイル・デバイスではキーボードと統合されます。
 
 
-## Basic Usage
+## 基本的な使い方
 
 import Basic from '@site/static/usage/v7/input/basic/index.md';
 
@@ -92,7 +92,7 @@ import FilteringData from '@site/static/usage/v7/input/filtering/index.md';
 
 <FilteringData />
 
-## Theming
+## テーマ
 
 ### Colors
 
@@ -102,7 +102,7 @@ import Colors from '@site/static/usage/v7/input/theming/colors/index.md';
 
 <Colors />
 
-### CSS Custom Properties
+## CSSカスタムプロパティ
 
 Input uses scoped encapsulation, which means it will automatically scope its CSS by appending each of the styles with an additional class at runtime. Overriding scoped selectors in CSS requires a [higher specificity](https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity) selector. Targeting the `ion-input` for customization will not work; therefore we recommend adding a class and customizing it that way.
 
@@ -154,7 +154,7 @@ interface InputCustomEvent extends CustomEvent {
 ```
 
 
-## Properties
+## プロパティ
 <Props />
 
 ## イベント

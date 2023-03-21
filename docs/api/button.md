@@ -19,7 +19,7 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 Buttonはクリック可能な要素を提供し、Form内や、標準の単機能なButton機能を必要とする任意の場所で使用できます。text、icon、またはその両方を表示できます。Buttonは、いくつかの属性を利用して特定の外観になるようにスタイル設定できます。
 
-## Basic Usage
+## 基本的な使い方
 
 import Basic from '@site/static/usage/v7/button/basic/index.md';
 
@@ -64,7 +64,7 @@ import Icons from '@site/static/usage/v7/button/icons/index.md';
 
 <Icons />
 
-## Theming
+## テーマ
 
 ### Colors
 
@@ -72,7 +72,7 @@ import Colors from '@site/static/usage/v7/button/theming/colors/index.md';
 
 <Colors />
 
-### CSS Custom Properties
+## CSSカスタムプロパティ
 
 import CSSProps from '@site/static/usage/v7/button/theming/css-properties/index.md';
 

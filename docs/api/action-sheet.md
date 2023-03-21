@@ -60,7 +60,7 @@ import RoleInfo from '@site/static/usage/v7/action-sheet/role-info-on-dismiss/in
 
 <RoleInfo />
 
-## Theming
+## テーマ
 
 Action Sheetはscopedによるカプセル化を採用しており、実行時に各スタイルにクラスを追加することで、自動的にCSSをスコープ化します。CSSでscopedセレクタをオーバーライドするには、[higher specificity](https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity) セレクタが必要です。
 
@@ -84,7 +84,7 @@ import Styling from '@site/static/usage/v7/action-sheet/theming/styling/index.md
 
 <Styling />
 
-### CSS Custom Properties
+## CSSカスタムプロパティ
 
 Any of the defined [CSS Custom Properties](#css-custom-properties-1) can be used to style the Action Sheet without needing to target individual elements.
 
@@ -92,7 +92,7 @@ import CssCustomProperties from '@site/static/usage/v7/action-sheet/theming/css-
 
 <CssCustomProperties />
 
-## Accessibility
+## アクセシビリティ
 
 Action Sheets are given a `role` of [`dialog`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/dialog_role). In order to align with the ARIA spec, either the `aria-label` or `aria-labelledby` attribute must be set.
 
@@ -134,7 +134,7 @@ interface ActionSheetOptions {
 }
 ```
 
-## Properties
+## プロパティ
 <Props />
 
 ## イベント

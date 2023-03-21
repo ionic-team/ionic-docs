@@ -23,7 +23,7 @@ displayed as the viewport width increases.
 
 デバイスの画面幅が特定のサイズより小さい場合、分割ペインは縮小され、メニューは非表示になります。これは、ブラウザで提供され、アプリストアを通じてスマートフォンやタブレットにデプロイされるアプリを作成するのに理想的な動作です。
 
-## Basic Usage
+## 基本的な使い方
 
 :::note
 This demo sets the `when` property to `'xs'` so the split pane always shows up. Your Ionic application does not need this if you want the split pane to collapse on smaller viewports. See [Setting Breakpoints](#setting-breakpoints) for more information. 
@@ -54,9 +54,9 @@ import Basic from '@site/static/usage/v7/split-pane/basic/index.md';
  | `md` | `(min-width: 768px)`  | Show the split-pane when the min-width is 768px                       |
  | `lg` | `(min-width: 992px)`  | Show the split-pane when the min-width is 992px (default break point) |
  | `xl` | `(min-width: 1200px)` | Show the split-pane when the min-width is 1200px                      |
-## Theming
+## テーマ
 
-### CSS Custom Properties
+## CSSカスタムプロパティ
 
 import CSSProperties from '@site/static/usage/v7/split-pane/theming/css-properties/index.md';
 

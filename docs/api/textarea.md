@@ -23,7 +23,7 @@ The textarea component is used for multi-line text input. A native textarea elem
 
 textareaコンポーネントはIonicのプロパティに加えて [ネイティブのtextareaの属性](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/textarea) に対応します。
 
-## Basic Usage
+## 基本的な使い方
 
 import BasicPlayground from '@site/static/usage/v7/textarea/basic/index.md';
 
@@ -102,7 +102,7 @@ import Migration from '@site/static/usage/v7/textarea/migration/index.md';
 
 Ionic uses heuristics to detect if an app is using the modern textarea syntax. In some instances, it may be preferable to continue using the legacy syntax. Developers can set the `legacy` property on `ion-textarea` to `true` to force that instance of the textarea to use the legacy syntax.
 
-## Theming
+## テーマ
 
 import ThemingPlayground from '@site/static/usage/v7/textarea/theming/index.md';
 
@@ -129,7 +129,7 @@ interface TextareaCustomEvent extends CustomEvent {
 }
 ```
 
-## Properties
+## プロパティ
 <Props />
 
 ## イベント

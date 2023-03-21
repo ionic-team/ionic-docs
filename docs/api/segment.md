@@ -23,7 +23,7 @@ Segmentsは、関連するボタンのグループを水平方向の行に表示
 これらの機能は、1つを選択すると他のすべてが選択解除されるTabsと似ています。Segmentsは、コンテンツ内の異なるビューを切り替える場合に便利です。クリックしてページ間の遷移をコントロールする場合は、Segmentsの代わりにTabsを使用してください。
 
 
-## Basic Usage
+## 基本的な使い方
 
 Segments consist of [segment buttons](./segment-button) with a `value` property on each button. Set the `value` property on the segment to match the value of a button to select that button. Segments can also be disabled to prevent users from interacting with them.
 
@@ -49,7 +49,7 @@ import Toolbar from '@site/static/usage/v7/toolbar/segments/index.md';
 <Toolbar />
 
 
-## Theming
+## テーマ
 
 ### Colors
 
@@ -57,14 +57,14 @@ import Colors from '@site/static/usage/v7/segment/theming/colors/index.md';
 
 <Colors />
 
-### CSS Custom Properties
+## CSSカスタムプロパティ
 
 import CSSProps from '@site/static/usage/v7/segment/theming/css-properties/index.md';
 
 <CSSProps />
 
 
-## Accessibility
+## アクセシビリティ
 
 ### キーボードナビゲーション
 
@@ -100,7 +100,7 @@ interface SegmentCustomEvent extends CustomEvent {
 ```
 
 
-## Properties
+## プロパティ
 <Props />
 
 ## イベント

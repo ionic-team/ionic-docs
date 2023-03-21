@@ -208,7 +208,7 @@ import Migration from '@site/static/usage/v7/select/migration/index.md';
 
 Ionic uses heuristics to detect if an app is using the modern select syntax. In some instances, it may be preferable to continue using the legacy syntax. Developers can set the `legacy` property on `ion-select` to `true` to force that instance of the input to use the legacy syntax.
 
-## Properties
+## プロパティ
 <Props />
 
 ## イベント

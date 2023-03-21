@@ -20,7 +20,7 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 Searchbars represent a text field that can be used to search through a collection. They can be displayed inside of a toolbar or the main content. A searchbar should be used instead of an input to search lists.
 
 
-## Basic Usage
+## 基本的な使い方
 
 import Basic from '@site/static/usage/v7/searchbar/basic/index.md';
 
@@ -73,7 +73,7 @@ import Debounce from '@site/static/usage/v7/searchbar/debounce/index.md';
 <Debounce />
 
 
-## Theming
+## テーマ
 
 ### Colors
 
@@ -81,7 +81,7 @@ import Colors from '@site/static/usage/v7/searchbar/theming/colors/index.md';
 
 <Colors />
 
-### CSS Custom Properties
+## CSSカスタムプロパティ
 
 Searchbar uses scoped encapsulation, which means it will automatically scope its CSS by appending each of the styles with an additional class at runtime. Overriding scoped selectors in CSS requires a [higher specificity](https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity) selector. Targeting the `ion-searchbar` for customization will not work, therefore we recommend adding a class and customizing it that way.
 
@@ -122,7 +122,7 @@ interface SearchbarCustomEvent extends CustomEvent {
 ```
 
 
-## Properties
+## プロパティ
 <Props />
 
 ## イベント

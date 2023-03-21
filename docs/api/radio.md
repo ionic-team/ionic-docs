@@ -22,7 +22,7 @@ Radios should be used inside of a [radio group](./radio-group). Pressing a radio
 
 When radios are inside of a radio group, only one radio will be checked at any time. If more than one item should be selected, [checkboxes](./checkbox) should be used instead. Radios can be disabled within a group to prevent interaction with them.
 
-## Basic Usage
+## 基本的な使い方
 
 import Basic from '@site/static/usage/v7/radio/basic/index.md';
 
@@ -58,7 +58,7 @@ import EmptySelection from '@site/static/usage/v7/radio/empty-selection/index.md
 <EmptySelection />
 
 
-## Theming
+## テーマ
 
 ### Colors
 
@@ -66,7 +66,7 @@ import Colors from '@site/static/usage/v7/radio/theming/colors/index.md';
 
 <Colors />
 
-### CSS Custom Properties
+## CSSカスタムプロパティ
 
 import CSSProps from '@site/static/usage/v7/radio/theming/css-properties/index.md';
 

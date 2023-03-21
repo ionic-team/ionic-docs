@@ -19,13 +19,13 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 Badgeは、通常は別の要素の近くに表示されるinline-block要素です。通常は、数字またはその他の文字とともに利用します。これらは、要素に関連付けられた未読のアイテムがあることの通知として使用でき、アイテムの数を示します。
 
-## Basic Usage
+## 基本的な使い方
 
 import Basic from '@site/static/usage/v7/badge/basic/index.md';
 
 <Basic />
 
-## Theming
+## テーマ
 
 ### Colors
 

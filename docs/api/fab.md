@@ -19,7 +19,7 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 Fabs are container elements that contain one or more [fab buttons](./fab-button). They should be placed in a fixed position that does not scroll with the content. Fabs should have one main fab button. Fabs can also contain one or more [fab lists](./fab-list) which contain related buttons that show when the main fab button is clicked.
 
-## Basic Usage
+## 基本的な使い方
 
 import BasicUsage from '@site/static/usage/v7/fab/basic/index.md';
 
@@ -49,7 +49,7 @@ import ButtonSizing from '@site/static/usage/v7/fab/button-sizing/index.md';
 
 <ButtonSizing />
 
-## Theming
+## テーマ
 
 ### Colors
 
@@ -57,7 +57,7 @@ import Colors from '@site/static/usage/v7/fab/theming/colors/index.md';
 
 <Colors />
 
-### CSS Custom Properties
+## CSSカスタムプロパティ
 
 import CSSCustomProperties from '@site/static/usage/v7/fab/theming/css-custom-properties/index.md';
 
@@ -70,7 +70,7 @@ import CSSShadowParts from '@site/static/usage/v7/fab/theming/css-shadow-parts/i
 <CSSShadowParts />
  
 
-## Accessibility
+## アクセシビリティ
 
 ### Labels
 

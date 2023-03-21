@@ -21,7 +21,7 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 Checkboxを使用すると、一連のオプションから複数のオプションを選択できます。選択すると、チェックマークが付いた状態(checked)で表示されます。checkboxをクリックすると、 `checked` プロパティーが切り替わります。`checked` プロパティを設定して、プログラムで `checked` を切り替えることもできます。
 
-## Basic Usage
+## 基本的な使い方
 
 import Basic from '@site/static/usage/v7/checkbox/basic/index.md';
 
@@ -54,9 +54,9 @@ import Indeterminate from '@site/static/usage/v7/checkbox/indeterminate/index.md
 
 <Indeterminate />
 
-## Theming
+## テーマ
 
-### CSS Custom Properties
+## CSSカスタムプロパティ
 
 import CSSProps from '@site/static/usage/v7/checkbox/theming/css-properties/index.md';
 
@@ -108,7 +108,7 @@ In past versions of Ionic, `ion-item` was required for `ion-checkbox` to functio
 Ionic uses heuristics to detect if an app is using the modern checkbox syntax. In some instances, it may be preferable to continue using the legacy syntax. Developers can set the `legacy` property on `ion-checkbox` to `true` to force that instance of the checkbox to use the legacy syntax.
 
 
-## Properties
+## プロパティ
 <Props />
 
 ## イベント

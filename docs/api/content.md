@@ -25,7 +25,7 @@ Contentコンポーネントは、スクロール可能領域を制御するい�
 Contentは、他の多くのIonicコンポーネントと同様に、 [CSS Utilities](/docs/layout/css-utilities) で提供されるグローバルスタイルを使用するか、CSSおよび使用可能な [CSS Custom Properties](#css-custom-properties) を使用して個別にスタイル設定することによって、`padding` や `margin` などを変更するようにカスタマイズできます。
 
 
-## Basic Usage
+## 基本的な使い方
 
 import Basic from '@site/static/usage/v7/content/basic/index.md';
 
@@ -75,7 +75,7 @@ import ScrollEvents from '@site/static/usage/v7/content/scroll-events/index.md';
 <ScrollEvents />
 
 
-## Theming
+## テーマ
 
 ### Colors
 
@@ -89,7 +89,7 @@ import CSSParts from '@site/static/usage/v7/content/theming/css-shadow-parts/ind
 
 <CSSParts />
 
-### CSS Custom Properties
+## CSSカスタムプロパティ
 
 import CSSProps from '@site/static/usage/v7/content/theming/css-properties/index.md';
 
@@ -292,7 +292,7 @@ export default defineComponent({
 
 </Tabs>
 
-## Properties
+## プロパティ
 <Props />
 
 ## イベント

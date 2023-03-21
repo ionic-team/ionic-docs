@@ -48,15 +48,15 @@ TODO
 
 TODO
 
-### Theming
+### テーマ
 
 TODO
 -->
 
-## Properties
+## プロパティ
 <Props />
 
-## Events
+## イベント
 <Events />
 
 ## Methods

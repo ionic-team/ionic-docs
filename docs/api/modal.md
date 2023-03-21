@@ -211,7 +211,7 @@ interface ModalCustomEvent extends CustomEvent {
 }
 ```
 
-## Accessibility
+## アクセシビリティ
 
 ### Keyboard Navigation
 

@@ -19,14 +19,14 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 textコンポーネントは、任意の要素のテキストカラーのスタイル設定に使用できる単純なコンポーネントです。テキストカラーを変更するには、要素を `ion-text` 要素で囲む必要があります。
 
-## Basic Usage
+## 基本的な使い方
 
 import Basic from '@site/static/usage/v7/text/basic/index.md';
 
 <Basic />
 
 
-## Theming
+## テーマ
 
 The text component can be customized by changing any of the default [colors](../../docs/theming/colors) Ionic provides.
 

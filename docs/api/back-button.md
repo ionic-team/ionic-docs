@@ -20,7 +20,7 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 The back button navigates back in the app's history when clicked. It is only displayed when there is history in the navigation stack, unless [`defaultHref`](#default-back-history) is set. The back button displays different text and icon based on the mode, but this can be customized.
 
-## Basic Usage
+## 基本的な使い方
 
 import Basic from '@site/static/usage/v7/back-button/basic/index.md';
 

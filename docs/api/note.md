@@ -19,7 +19,7 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 Noteは、一般的に詳細情報を提供するサブタイトルとして使用されるテキスト要素です。デフォルトではグレーで表示されるように設計されています。Noteは、メタデータテキストとしてアイテム内で使用することができます。
 
-## Basic Usage
+## 基本的な使い方
 
 import Basic from '@site/static/usage/v7/note/basic/index.md';
 
@@ -31,7 +31,7 @@ import Item from '@site/static/usage/v7/note/item/index.md';
 
 <Item />
 
-## Theming
+## テーマ
 
 ### Colors
 
@@ -39,7 +39,7 @@ import Colors from '@site/static/usage/v7/note/theming/colors/index.md';
 
 <Colors />
 
-### CSS Custom Properties
+## CSSカスタムプロパティ
 
 import CSSProps from '@site/static/usage/v7/note/theming/css-properties/index.md';
 

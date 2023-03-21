@@ -34,7 +34,7 @@ The router is a component for handling routing inside vanilla and Stencil JavaSc
 
 コンポーネント(ロード/選択)とURLの間の関係を設定するために、`ion-router` はJSX/HTMLを使ってルートのツリーを定義する宣言的な構文を利用します。
 
-## Basic Usage
+## 基本的な使い方
 
 import BasicExample from '@site/static/usage/v7/router/basic/index.md';
 

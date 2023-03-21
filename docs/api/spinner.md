@@ -21,7 +21,7 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 Spinnerコンポーネントには、さまざまなアニメーションつきのSVG Spinnerが用意されています。Spinnerは、アプリがコンテンツを読み込んだり、ユーザーが待つ必要のある別のプロセスを実行していることを視覚的に示すものです。
 
 
-## Basic Usage
+## 基本的な使い方
 
 The default spinner is based on the mode. When the mode is `ios` the spinner will be `"lines"`, and when the mode is `md` the spinner will be `"circular"`. If the `name` property is set, then that spinner will be used instead of the mode specific spinner.
 
@@ -29,7 +29,7 @@ import Basic from '@site/static/usage/v7/spinner/basic/index.md';
 
 <Basic />
 
-## Theming
+## テーマ
 
 ### Colors
 
@@ -37,7 +37,7 @@ import Colors from '@site/static/usage/v7/spinner/theming/colors/index.md';
 
 <Colors />
 
-### CSS Custom Properties
+## CSSカスタムプロパティ
 
 import CSSProps from '@site/static/usage/v7/spinner/theming/css-properties/index.md';
 

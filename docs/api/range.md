@@ -22,7 +22,7 @@ Rangeスライダは、スライダノブを動かして、ユーザーが値の
 
 デフォルトでは、Rangeスライダーの最小値は`0`、最大値は`100`です。これは `min` と `max` プロパティで設定することができます。
 
-## Basic Usage
+## 基本的な使い方
 
 import Basic from '@site/static/usage/v7/range/basic/index.md';
 
@@ -72,7 +72,7 @@ import SnappingTicks from '@site/static/usage/v7/range/snapping-ticks/index.md';
 
 <SnappingTicks />
 
-## Event Handling
+## イベントハンドリング
 
 ### Using `ionChange`
 
@@ -90,9 +90,9 @@ import IonKnobMoveEvent from '@site/static/usage/v7/range/ion-knob-move-event/in
 
 <IonKnobMoveEvent />
 
-## Theming
+## テーマ
 
-### CSS Custom Properties
+## CSSカスタムプロパティ
 
 Rangeには、アプリケーションのデザインに合わせてRangeコンポーネントの外観を素早くテーマ化してカスタマイズするための[CSS Variables](#css-custom-properties)が含まれています。
 
