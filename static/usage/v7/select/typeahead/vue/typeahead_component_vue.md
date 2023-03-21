@@ -88,7 +88,7 @@
            */
           const normalizedQuery = searchQuery.toLowerCase(); 
           filteredItems.value = props.items.filter(item => {
-            return item.value.includes(normalizedQuery);
+            return item.text.toLowerCase().includes(normalizedQuery);
           });
         }
       }

@@ -108,7 +108,7 @@
 
         const normalizedQuery = searchQuery.toLowerCase();
 
-        return fruits.filter(fruit => fruit.value.includes(normalizedQuery));
+        return fruits.filter(fruit => fruit.text.toLowerCase().includes(normalizedQuery));
       }
 
       /**
@@ -121,7 +121,7 @@
         let template = '';
 
         data.forEach((item, index) => {
-          const checked = workingSelectedFruits.includes(item.value);
+          const checked = workingSelectedFruits.includes(item.text.toLowerCase());
           template += `
             <ion-item>
               <ion-label>${item.text}</ion-label>
