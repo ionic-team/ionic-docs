@@ -294,6 +294,12 @@
       "target": "window",
       "capture": false,
       "passive": false
+    },
+    {
+      "event": "resize",
+      "target": "window",
+      "capture": false,
+      "passive": true
     }
   ],
   "styles": [

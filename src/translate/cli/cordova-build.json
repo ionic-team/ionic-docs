@@ -125,7 +125,7 @@
     {
       "name": "configuration",
       "type": "string",
-      "summary": "Specify the configuration to use.",
+      "summary": "Specify the configuration to use",
       "groups": [
         "advanced",
         "cordova"

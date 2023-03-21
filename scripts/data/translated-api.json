@@ -606,7 +606,7 @@
             "type": "Promise<boolean>",
             "docs": ""
           },
-          "signature": "dismiss(data?: any, role?: string | undefined) => Promise<boolean>",
+          "signature": "dismiss(data?: any, role?: string) => Promise<boolean>",
           "parameters": [],
           "docs": "Dismiss the action sheet overlay after it has been presented.",
           "docsTags": [
@@ -1112,7 +1112,7 @@
             "type": "Promise<boolean>",
             "docs": ""
           },
-          "signature": "dismiss(data?: any, role?: string | undefined) => Promise<boolean>",
+          "signature": "dismiss(data?: any, role?: string) => Promise<boolean>",
           "parameters": [],
           "docs": "Dismiss the alert overlay after it has been presented.",
           "docsTags": [
@@ -2485,18 +2485,7 @@
           "passive": false
         }
       ],
-      "styles": [
-        {
-          "name": "--background",
-          "annotation": "prop",
-          "docs": "Background of the breadcrumbs"
-        },
-        {
-          "name": "--color",
-          "annotation": "prop",
-          "docs": "Text color of the breadcrumbs"
-        }
-      ],
+      "styles": [],
       "slots": [],
       "parts": [],
       "dependents": [],
@@ -2650,7 +2639,7 @@
           "mutable": false,
           "attr": "expand",
           "reflectToAttr": true,
-          "docs": "Set to `\"block\"` for a full-width button or to `\"full\"` for a full-width button\nwithout left and right borders.",
+          "docs": "Set to `\"block\"` for a full-width button or to `\"full\"` for a full-width button\nwith square corners and no left or right borders.",
           "docsTags": [],
           "values": [
             {
@@ -2674,7 +2663,7 @@
           "mutable": true,
           "attr": "fill",
           "reflectToAttr": true,
-          "docs": "Set to `\"clear\"` for a transparent button, to `\"outline\"` for a transparent\nbutton with a border, or to `\"solid\"`. The default style is `\"solid\"` except inside of\na toolbar, where the default is `\"clear\"`.",
+          "docs": "Set to `\"clear\"` for a transparent button that resembles a flat button, to `\"outline\"`\nfor a transparent button with a border, or to `\"solid\"` for a button with a filled background.\nThe default fill is `\"solid\"` except inside of a toolbar, where the default is `\"clear\"`.",
           "docsTags": [],
           "values": [
             {
@@ -2691,6 +2680,28 @@
             },
             {
               "value": "solid",
+              "type": "string"
+            },
+            {
+              "type": "undefined"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
+          "name": "form",
+          "type": "HTMLFormElement | string | undefined",
+          "mutable": false,
+          "attr": "form",
+          "reflectToAttr": false,
+          "docs": "The HTML form element or form element id. Used to submit a form when the button is not a child of the form.",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "HTMLFormElement"
+            },
+            {
               "type": "string"
             },
             {
@@ -2809,7 +2820,7 @@
           "mutable": false,
           "attr": "shape",
           "reflectToAttr": true,
-          "docs": "The button shape.",
+          "docs": "Set to `\"round\"` for a button with more rounded corners.",
           "docsTags": [],
           "values": [
             {
@@ -2829,7 +2840,7 @@
           "mutable": false,
           "attr": "size",
           "reflectToAttr": true,
-          "docs": "The button size.",
+          "docs": "Set to `\"small\"` for a button with less height and padding, to `\"default\"`\nfor a button with the default height and padding, or to `\"large\"` for a button\nwith more height and padding. By default the size is unset, unless the button\nis inside of an item, where the size is `\"small\"` by default. Set the size to\n`\"default\"` inside of an item to make it a standard size button.",
           "docsTags": [],
           "values": [
             {
@@ -5071,6 +5082,12 @@
           "target": "window",
           "capture": false,
           "passive": false
+        },
+        {
+          "event": "resize",
+          "target": "window",
+          "capture": false,
+          "passive": true
         }
       ],
       "styles": [
@@ -5505,6 +5522,30 @@
           "required": false
         },
         {
+          "name": "highlightedDates",
+          "type": "((dateIsoString: string) => DatetimeHighlightStyle | undefined) | DatetimeHighlight[] | undefined",
+          "mutable": false,
+          "reflectToAttr": false,
+          "docs": "Used to apply custom text and background colors to specific dates.\n\nCan be either an array of objects containing ISO strings and colors,\nor a callback that receives an ISO string and returns the colors.\n\nOnly applies to the `date`, `date-time`, and `time-date` presentations,\nwith `preferWheel=\"false\"`.",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "((dateIsoString: string) => DatetimeHighlightStyle"
+            },
+            {
+              "type": "undefined)"
+            },
+            {
+              "type": "DatetimeHighlight[]"
+            },
+            {
+              "type": "undefined"
+            }
+          ],
+          "optional": true,
+          "required": false
+        },
+        {
           "name": "hourCycle",
           "type": "\"h12\" | \"h23\" | undefined",
           "mutable": false,
@@ -5864,7 +5905,7 @@
           "mutable": false,
           "attr": "show-default-title",
           "reflectToAttr": false,
-          "docs": "If `true`, a header will be shown above the calendar\npicker. On `ios` mode this will include the\nslotted title, and on `md` mode this will include\nthe slotted title and the selected date.",
+          "docs": "If `true`, a header will be shown above the calendar\npicker. This will include both the slotted title, and\nthe selected date.",
           "docsTags": [],
           "default": "false",
           "values": [
@@ -5895,6 +5936,24 @@
             }
           ],
           "optional": false,
+          "required": false
+        },
+        {
+          "name": "titleSelectedDatesFormatter",
+          "type": "((selectedDates: string[]) => string) | undefined",
+          "mutable": false,
+          "reflectToAttr": false,
+          "docs": "A callback used to format the header text that shows how many\ndates are selected. Only used if there are 0 or more than 1\nselected (i.e. unused for exactly 1). By default, the header\ntext is set to \"numberOfDates days\".",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "((selectedDates: string[]) => string)"
+            },
+            {
+              "type": "undefined"
+            }
+          ],
+          "optional": true,
           "required": false
         },
         {
@@ -5977,7 +6036,7 @@
             "type": "Promise<void>",
             "docs": ""
           },
-          "signature": "reset(startDate?: string | undefined) => Promise<void>",
+          "signature": "reset(startDate?: string) => Promise<void>",
           "parameters": [],
           "docs": "Resets the internal state of the datetime but does not update the value.\nPassing a valid ISO-8601 string will reset the state of the component to the provided date.\nIf no value is provided, the internal state will be reset to the clamped value of the min, max and today.",
           "docsTags": []
@@ -7402,7 +7461,7 @@
         },
         {
           "name": "autocomplete",
-          "type": "\"off\" | \"on\" | \"name\" | \"honorific-prefix\" | \"given-name\" | \"additional-name\" | \"family-name\" | \"honorific-suffix\" | \"nickname\" | \"email\" | \"username\" | \"new-password\" | \"current-password\" | \"one-time-code\" | \"organization-title\" | \"organization\" | \"street-address\" | \"address-line1\" | \"address-line2\" | \"address-line3\" | \"address-level4\" | \"address-level3\" | \"address-level2\" | \"address-level1\" | \"country\" | \"country-name\" | \"postal-code\" | \"cc-name\" | \"cc-given-name\" | \"cc-additional-name\" | \"cc-family-name\" | \"cc-number\" | \"cc-exp\" | \"cc-exp-month\" | \"cc-exp-year\" | \"cc-csc\" | \"cc-type\" | \"transaction-currency\" | \"transaction-amount\" | \"language\" | \"bday\" | \"bday-day\" | \"bday-month\" | \"bday-year\" | \"sex\" | \"tel\" | \"tel-country-code\" | \"tel-national\" | \"tel-area-code\" | \"tel-local\" | \"tel-extension\" | \"impp\" | \"url\" | \"photo\"",
+          "type": "\"name\" | \"email\" | \"tel\" | \"url\" | \"on\" | \"off\" | \"honorific-prefix\" | \"given-name\" | \"additional-name\" | \"family-name\" | \"honorific-suffix\" | \"nickname\" | \"username\" | \"new-password\" | \"current-password\" | \"one-time-code\" | \"organization-title\" | \"organization\" | \"street-address\" | \"address-line1\" | \"address-line2\" | \"address-line3\" | \"address-level4\" | \"address-level3\" | \"address-level2\" | \"address-level1\" | \"country\" | \"country-name\" | \"postal-code\" | \"cc-name\" | \"cc-given-name\" | \"cc-additional-name\" | \"cc-family-name\" | \"cc-number\" | \"cc-exp\" | \"cc-exp-month\" | \"cc-exp-year\" | \"cc-csc\" | \"cc-type\" | \"transaction-currency\" | \"transaction-amount\" | \"language\" | \"bday\" | \"bday-day\" | \"bday-month\" | \"bday-year\" | \"sex\" | \"tel-country-code\" | \"tel-national\" | \"tel-area-code\" | \"tel-local\" | \"tel-extension\" | \"impp\" | \"photo\"",
           "mutable": false,
           "attr": "autocomplete",
           "reflectToAttr": false,
@@ -7411,7 +7470,19 @@
           "default": "'off'",
           "values": [
             {
-              "value": "off",
+              "value": "name",
+              "type": "string"
+            },
+            {
+              "value": "email",
+              "type": "string"
+            },
+            {
+              "value": "tel",
+              "type": "string"
+            },
+            {
+              "value": "url",
               "type": "string"
             },
             {
@@ -7419,7 +7490,7 @@
               "type": "string"
             },
             {
-              "value": "name",
+              "value": "off",
               "type": "string"
             },
             {
@@ -7444,10 +7515,6 @@
             },
             {
               "value": "nickname",
-              "type": "string"
-            },
-            {
-              "value": "email",
               "type": "string"
             },
             {
@@ -7591,10 +7658,6 @@
               "type": "string"
             },
             {
-              "value": "tel",
-              "type": "string"
-            },
-            {
               "value": "tel-country-code",
               "type": "string"
             },
@@ -7616,10 +7679,6 @@
             },
             {
               "value": "impp",
-              "type": "string"
-            },
-            {
-              "value": "url",
               "type": "string"
             },
             {
@@ -8261,7 +8320,7 @@
           },
           "signature": "setFocus() => Promise<void>",
           "parameters": [],
-          "docs": "Sets focus on the native `input` in `ion-input`. Use this method instead of the global\n`input.focus()`.",
+          "docs": "Sets focus on the native `input` in `ion-input`. Use this method instead of the global\n`input.focus()`.\n\nDevelopers who wish to focus an input when a page enters\nshould call `setFocus()` in the `ionViewDidEnter()` lifecycle method.",
           "docsTags": []
         }
       ],
@@ -8359,8 +8418,14 @@
       "slots": [],
       "parts": [],
       "dependents": [],
-      "dependencies": [],
-      "dependencyGraph": {}
+      "dependencies": [
+        "ion-icon"
+      ],
+      "dependencyGraph": {
+        "ion-input": [
+          "ion-icon"
+        ]
+      }
     },
     {
       "filePath": "./src/components/item-divider/item-divider.tsx",
@@ -9859,7 +9924,7 @@
         {
           "name": "--color",
           "annotation": "prop",
-          "docs": "Color of the label"
+          "docs": "Color of the label. This property is only available when using `ion-label` inside of an `ion-item`."
         }
       ],
       "slots": [],
@@ -10448,7 +10513,7 @@
             "type": "Promise<boolean>",
             "docs": ""
           },
-          "signature": "dismiss(data?: any, role?: string | undefined) => Promise<boolean>",
+          "signature": "dismiss(data?: any, role?: string) => Promise<boolean>",
           "parameters": [],
           "docs": "Dismiss the loading overlay after it has been presented.",
           "docsTags": [
@@ -11387,7 +11452,7 @@
         },
         {
           "name": "canDismiss",
-          "type": "(() => Promise<boolean>) | boolean | undefined",
+          "type": "((data?: any, role?: string | undefined) => Promise<boolean>) | boolean | undefined",
           "mutable": false,
           "attr": "can-dismiss",
           "reflectToAttr": false,
@@ -11395,7 +11460,10 @@
           "docsTags": [],
           "values": [
             {
-              "type": "(() => Promise<boolean>)"
+              "type": "((data?: any, role?: string"
+            },
+            {
+              "type": "undefined) => Promise<boolean>)"
             },
             {
               "type": "boolean"
@@ -11681,7 +11749,7 @@
             "type": "Promise<boolean>",
             "docs": ""
           },
-          "signature": "dismiss(data?: any, role?: string | undefined) => Promise<boolean>",
+          "signature": "dismiss(data?: any, role?: string) => Promise<boolean>",
           "parameters": [],
           "docs": "Dismiss the modal overlay after it has been presented.",
           "docsTags": [
@@ -11767,7 +11835,7 @@
           "bubbles": true,
           "cancelable": true,
           "composed": true,
-          "docs": "Emitted after the modal has presented.\nShorthand for ionModalWillDismiss.",
+          "docs": "Emitted after the modal has presented.\nShorthand for ionModalDidPresent.",
           "docsTags": []
         },
         {
@@ -12158,7 +12226,7 @@
             "type": "Promise<boolean>",
             "docs": ""
           },
-          "signature": "canGoBack(view?: ViewController | undefined) => Promise<boolean>",
+          "signature": "canGoBack(view?: ViewController) => Promise<boolean>",
           "parameters": [],
           "docs": "Returns `true` if the current view can go back.",
           "docsTags": [
@@ -12201,7 +12269,7 @@
             "type": "Promise<ViewController | undefined>",
             "docs": ""
           },
-          "signature": "getPrevious(view?: ViewController | undefined) => Promise<ViewController | undefined>",
+          "signature": "getPrevious(view?: ViewController) => Promise<ViewController | undefined>",
           "parameters": [],
           "docs": "Get the previous view.",
           "docsTags": [
@@ -12217,7 +12285,7 @@
             "type": "Promise<boolean>",
             "docs": ""
           },
-          "signature": "insert<T extends NavComponent>(insertIndex: number, component: T, componentProps?: ComponentProps<T> | null | undefined, opts?: NavOptions | null | undefined, done?: TransitionDoneFn | undefined) => Promise<boolean>",
+          "signature": "insert<T extends NavComponent>(insertIndex: number, component: T, componentProps?: ComponentProps<T> | null, opts?: NavOptions | null, done?: TransitionDoneFn) => Promise<boolean>",
           "parameters": [],
           "docs": "Inserts a component into the navigation stack at the specified index.\nThis is useful to add a component at any point in the navigation stack.",
           "docsTags": [
@@ -12249,7 +12317,7 @@
             "type": "Promise<boolean>",
             "docs": ""
           },
-          "signature": "insertPages(insertIndex: number, insertComponents: NavComponent[] | NavComponentWithProps[], opts?: NavOptions | null | undefined, done?: TransitionDoneFn | undefined) => Promise<boolean>",
+          "signature": "insertPages(insertIndex: number, insertComponents: NavComponent[] | NavComponentWithProps[], opts?: NavOptions | null, done?: TransitionDoneFn) => Promise<boolean>",
           "parameters": [],
           "docs": "Inserts an array of components into the navigation stack at the specified index.\nThe last component in the array will become instantiated as a view, and animate\nin to become the active view.",
           "docsTags": [
@@ -12277,7 +12345,7 @@
             "type": "Promise<boolean>",
             "docs": ""
           },
-          "signature": "pop(opts?: NavOptions | null | undefined, done?: TransitionDoneFn | undefined) => Promise<boolean>",
+          "signature": "pop(opts?: NavOptions | null, done?: TransitionDoneFn) => Promise<boolean>",
           "parameters": [],
           "docs": "Pop a component off of the navigation stack. Navigates back from the current\ncomponent.",
           "docsTags": [
@@ -12297,7 +12365,7 @@
             "type": "Promise<boolean>",
             "docs": ""
           },
-          "signature": "popTo(indexOrViewCtrl: number | ViewController, opts?: NavOptions | null | undefined, done?: TransitionDoneFn | undefined) => Promise<boolean>",
+          "signature": "popTo(indexOrViewCtrl: number | ViewController, opts?: NavOptions | null, done?: TransitionDoneFn) => Promise<boolean>",
           "parameters": [],
           "docs": "Pop to a specific index in the navigation stack.",
           "docsTags": [
@@ -12321,7 +12389,7 @@
             "type": "Promise<boolean>",
             "docs": ""
           },
-          "signature": "popToRoot(opts?: NavOptions | null | undefined, done?: TransitionDoneFn | undefined) => Promise<boolean>",
+          "signature": "popToRoot(opts?: NavOptions | null, done?: TransitionDoneFn) => Promise<boolean>",
           "parameters": [],
           "docs": "Navigate back to the root of the stack, no matter how far back that is.",
           "docsTags": [
@@ -12341,7 +12409,7 @@
             "type": "Promise<boolean>",
             "docs": ""
           },
-          "signature": "push<T extends NavComponent>(component: T, componentProps?: ComponentProps<T> | null | undefined, opts?: NavOptions | null | undefined, done?: TransitionDoneFn | undefined) => Promise<boolean>",
+          "signature": "push<T extends NavComponent>(component: T, componentProps?: ComponentProps<T> | null, opts?: NavOptions | null, done?: TransitionDoneFn) => Promise<boolean>",
           "parameters": [],
           "docs": "Push a new component onto the current navigation stack. Pass any additional\ninformation along as an object. This additional information is accessible\nthrough NavParams.",
           "docsTags": [
@@ -12369,7 +12437,7 @@
             "type": "Promise<boolean>",
             "docs": ""
           },
-          "signature": "removeIndex(startIndex: number, removeCount?: number, opts?: NavOptions | null | undefined, done?: TransitionDoneFn | undefined) => Promise<boolean>",
+          "signature": "removeIndex(startIndex: number, removeCount?: number, opts?: NavOptions | null, done?: TransitionDoneFn) => Promise<boolean>",
           "parameters": [],
           "docs": "Removes a component from the navigation stack at the specified index.",
           "docsTags": [
@@ -12397,7 +12465,7 @@
             "type": "Promise<boolean>",
             "docs": ""
           },
-          "signature": "setPages(views: NavComponent[] | NavComponentWithProps[], opts?: NavOptions | null | undefined, done?: TransitionDoneFn | undefined) => Promise<boolean>",
+          "signature": "setPages(views: NavComponent[] | NavComponentWithProps[], opts?: NavOptions | null, done?: TransitionDoneFn) => Promise<boolean>",
           "parameters": [],
           "docs": "Set the views of the current navigation stack and navigate to the last view.\nBy default animations are disabled, but they can be enabled by passing options\nto the navigation controller. Navigation parameters can also be passed to the\nindividual pages in the array.",
           "docsTags": [
@@ -12421,7 +12489,7 @@
             "type": "Promise<boolean>",
             "docs": ""
           },
-          "signature": "setRoot<T extends NavComponent>(component: T, componentProps?: ComponentProps<T> | null | undefined, opts?: NavOptions | null | undefined, done?: TransitionDoneFn | undefined) => Promise<boolean>",
+          "signature": "setRoot<T extends NavComponent>(component: T, componentProps?: ComponentProps<T> | null, opts?: NavOptions | null, done?: TransitionDoneFn) => Promise<boolean>",
           "parameters": [],
           "docs": "Set the root for the current navigation stack to a component.",
           "docsTags": [
@@ -12819,7 +12887,7 @@
             "type": "Promise<boolean>",
             "docs": ""
           },
-          "signature": "dismiss(data?: any, role?: string | undefined) => Promise<boolean>",
+          "signature": "dismiss(data?: any, role?: string) => Promise<boolean>",
           "parameters": [],
           "docs": "Dismiss the picker overlay after it has been presented.",
           "docsTags": [
@@ -13485,7 +13553,7 @@
             "type": "Promise<boolean>",
             "docs": ""
           },
-          "signature": "dismiss(data?: any, role?: string | undefined, dismissParentPopover?: boolean) => Promise<boolean>",
+          "signature": "dismiss(data?: any, role?: string, dismissParentPopover?: boolean) => Promise<boolean>",
           "parameters": [],
           "docs": "Dismiss the popover overlay after it has been presented.",
           "docsTags": [
@@ -13531,7 +13599,7 @@
             "type": "Promise<void>",
             "docs": ""
           },
-          "signature": "present(event?: MouseEvent | TouchEvent | PointerEvent | CustomEvent<any> | undefined) => Promise<void>",
+          "signature": "present(event?: MouseEvent | TouchEvent | PointerEvent | CustomEvent) => Promise<void>",
           "parameters": [],
           "docs": "Present the popover overlay after it has been created.\nDevelopers can pass a mouse, touch, or pointer event\nto position the popover relative to where that event\nwas dispatched.",
           "docsTags": []
@@ -15087,7 +15155,7 @@
             "type": "Promise<any>",
             "docs": ""
           },
-          "signature": "complete(listOrReorder?: boolean | any[] | undefined) => Promise<any>",
+          "signature": "complete(listOrReorder?: boolean | any[]) => Promise<any>",
           "parameters": [],
           "docs": "Completes the reorder operation. Must be called by the `ionItemReorder` event.\n\nIf a list of items is passed, the list will be reordered and returned in the\nproper order.\n\nIf no parameters are passed or if `true` is passed in, the reorder will complete\nand the item will remain in the position it was dragged to. If `false` is passed,\nthe reorder will complete and the item will bounce back to its original position.",
           "docsTags": [
@@ -15789,7 +15857,7 @@
             "type": "Promise<boolean>",
             "docs": ""
           },
-          "signature": "push(path: string, direction?: RouterDirection, animation?: AnimationBuilder | undefined) => Promise<boolean>",
+          "signature": "push(path: string, direction?: RouterDirection, animation?: AnimationBuilder) => Promise<boolean>",
           "parameters": [],
           "docs": "Navigate to the specified path.",
           "docsTags": [
@@ -15895,7 +15963,7 @@
         },
         {
           "name": "autocomplete",
-          "type": "\"off\" | \"on\" | \"name\" | \"honorific-prefix\" | \"given-name\" | \"additional-name\" | \"family-name\" | \"honorific-suffix\" | \"nickname\" | \"email\" | \"username\" | \"new-password\" | \"current-password\" | \"one-time-code\" | \"organization-title\" | \"organization\" | \"street-address\" | \"address-line1\" | \"address-line2\" | \"address-line3\" | \"address-level4\" | \"address-level3\" | \"address-level2\" | \"address-level1\" | \"country\" | \"country-name\" | \"postal-code\" | \"cc-name\" | \"cc-given-name\" | \"cc-additional-name\" | \"cc-family-name\" | \"cc-number\" | \"cc-exp\" | \"cc-exp-month\" | \"cc-exp-year\" | \"cc-csc\" | \"cc-type\" | \"transaction-currency\" | \"transaction-amount\" | \"language\" | \"bday\" | \"bday-day\" | \"bday-month\" | \"bday-year\" | \"sex\" | \"tel\" | \"tel-country-code\" | \"tel-national\" | \"tel-area-code\" | \"tel-local\" | \"tel-extension\" | \"impp\" | \"url\" | \"photo\"",
+          "type": "\"name\" | \"email\" | \"tel\" | \"url\" | \"on\" | \"off\" | \"honorific-prefix\" | \"given-name\" | \"additional-name\" | \"family-name\" | \"honorific-suffix\" | \"nickname\" | \"username\" | \"new-password\" | \"current-password\" | \"one-time-code\" | \"organization-title\" | \"organization\" | \"street-address\" | \"address-line1\" | \"address-line2\" | \"address-line3\" | \"address-level4\" | \"address-level3\" | \"address-level2\" | \"address-level1\" | \"country\" | \"country-name\" | \"postal-code\" | \"cc-name\" | \"cc-given-name\" | \"cc-additional-name\" | \"cc-family-name\" | \"cc-number\" | \"cc-exp\" | \"cc-exp-month\" | \"cc-exp-year\" | \"cc-csc\" | \"cc-type\" | \"transaction-currency\" | \"transaction-amount\" | \"language\" | \"bday\" | \"bday-day\" | \"bday-month\" | \"bday-year\" | \"sex\" | \"tel-country-code\" | \"tel-national\" | \"tel-area-code\" | \"tel-local\" | \"tel-extension\" | \"impp\" | \"photo\"",
           "mutable": false,
           "attr": "autocomplete",
           "reflectToAttr": false,
@@ -15904,7 +15972,19 @@
           "default": "'off'",
           "values": [
             {
-              "value": "off",
+              "value": "name",
+              "type": "string"
+            },
+            {
+              "value": "email",
+              "type": "string"
+            },
+            {
+              "value": "tel",
+              "type": "string"
+            },
+            {
+              "value": "url",
               "type": "string"
             },
             {
@@ -15912,7 +15992,7 @@
               "type": "string"
             },
             {
-              "value": "name",
+              "value": "off",
               "type": "string"
             },
             {
@@ -15937,10 +16017,6 @@
             },
             {
               "value": "nickname",
-              "type": "string"
-            },
-            {
-              "value": "email",
               "type": "string"
             },
             {
@@ -16084,10 +16160,6 @@
               "type": "string"
             },
             {
-              "value": "tel",
-              "type": "string"
-            },
-            {
               "value": "tel-country-code",
               "type": "string"
             },
@@ -16109,10 +16181,6 @@
             },
             {
               "value": "impp",
-              "type": "string"
-            },
-            {
-              "value": "url",
               "type": "string"
             },
             {
@@ -17567,7 +17635,7 @@
             "type": "Promise<any>",
             "docs": ""
           },
-          "signature": "open(event?: UIEvent | undefined) => Promise<any>",
+          "signature": "open(event?: UIEvent) => Promise<any>",
           "parameters": [],
           "docs": "Open the select overlay. The overlay is either an alert, action sheet, or popover,\ndepending on the `interface` property on the `ion-select`.",
           "docsTags": [
@@ -17992,7 +18060,7 @@
             "type": "Promise<void>",
             "docs": ""
           },
-          "signature": "slideNext(speed?: number | undefined, runCallbacks?: boolean | undefined) => Promise<void>",
+          "signature": "slideNext(speed?: number, runCallbacks?: boolean) => Promise<void>",
           "parameters": [],
           "docs": "Transition to the next slide.",
           "docsTags": [
@@ -18012,7 +18080,7 @@
             "type": "Promise<void>",
             "docs": ""
           },
-          "signature": "slidePrev(speed?: number | undefined, runCallbacks?: boolean | undefined) => Promise<void>",
+          "signature": "slidePrev(speed?: number, runCallbacks?: boolean) => Promise<void>",
           "parameters": [],
           "docs": "Transition to the previous slide.",
           "docsTags": [
@@ -18032,7 +18100,7 @@
             "type": "Promise<void>",
             "docs": ""
           },
-          "signature": "slideTo(index: number, speed?: number | undefined, runCallbacks?: boolean | undefined) => Promise<void>",
+          "signature": "slideTo(index: number, speed?: number, runCallbacks?: boolean) => Promise<void>",
           "parameters": [],
           "docs": "Transition to the specified slide.",
           "docsTags": [
@@ -18089,7 +18157,7 @@
             "type": "Promise<void>",
             "docs": ""
           },
-          "signature": "updateAutoHeight(speed?: number | undefined) => Promise<void>",
+          "signature": "updateAutoHeight(speed?: number) => Promise<void>",
           "parameters": [],
           "docs": "Force swiper to update its height (when autoHeight is enabled) for the duration\nequal to 'speed' parameter.",
           "docsTags": [
@@ -20212,7 +20280,7 @@
           "reflectToAttr": false,
           "docs": "How many milliseconds to wait before hiding the toast. By default, it will show\nuntil `dismiss()` is called.",
           "docsTags": [],
-          "default": "0",
+          "default": "config.getNumber('toastDuration', 0)",
           "values": [
             {
               "type": "number"
@@ -20307,6 +20375,28 @@
           "values": [
             {
               "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
+          "name": "layout",
+          "type": "\"baseline\" | \"stacked\"",
+          "mutable": false,
+          "attr": "layout",
+          "reflectToAttr": false,
+          "docs": "Defines how the message and buttons are laid out in the toast.\n'baseline': The message and the buttons will appear on the same line.\nMessage text may wrap within the message container.\n'stacked': The buttons containers and message will stack on top\nof each other. Use this if you have long text in your buttons.",
+          "docsTags": [],
+          "default": "'baseline'",
+          "values": [
+            {
+              "value": "baseline",
+              "type": "string"
+            },
+            {
+              "value": "stacked",
+              "type": "string"
             }
           ],
           "optional": false,
@@ -20424,7 +20514,7 @@
             "type": "Promise<boolean>",
             "docs": ""
           },
-          "signature": "dismiss(data?: any, role?: string | undefined) => Promise<boolean>",
+          "signature": "dismiss(data?: any, role?: string) => Promise<boolean>",
           "parameters": [],
           "docs": "Dismiss the toast overlay after it has been presented.",
           "docsTags": [
@@ -20751,7 +20841,7 @@
           "reflectToAttr": false,
           "docs": "Enables the on/off accessibility switch labels within the toggle.",
           "docsTags": [],
-          "default": "undefined",
+          "default": "config.get('toggleOnOffLabels')",
           "values": [
             {
               "type": "boolean"

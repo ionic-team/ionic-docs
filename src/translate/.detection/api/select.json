@@ -262,7 +262,7 @@
         "type": "Promise<any>",
         "docs": ""
       },
-      "signature": "open(event?: UIEvent | undefined) => Promise<any>",
+      "signature": "open(event?: UIEvent) => Promise<any>",
       "parameters": [],
       "docs": "Open the select overlay. The overlay is either an alert, action sheet, or popover,\ndepending on the `interface` property on the `ion-select`.",
       "docsTags": [
