@@ -38,7 +38,9 @@ export default defineConfig({
 
 This minimal configuration allows your application to generate the Web Application Manifest and Service Worker on build.
 
-For more information on configuring the Vite PWA Plugin as well as how to deploy your PWA, see the [Vite PWA "Getting Started" Guide](https://vite-pwa-org.netlify.app/guide/).
+For more information on configuring the Vite PWA Plugin, see the [Vite PWA "Getting Started" Guide](https://vite-pwa-org.netlify.app/guide/).
+
+See the [Vite PWA "Deploy" Guide](https://vite-pwa-org.netlify.app/deployment/) for information on how to deploy your PWA.
 
 ## Making your Vue app a PWA with Vue CLI
 
