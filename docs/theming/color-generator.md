@@ -10,10 +10,10 @@ import ColorGenerator from '@components/page/theming/ColorGenerator';
   <title>カラージェネレーター: Ionicアプリのカスタムカラーをつくる</title>
   <meta
     name="description"
-    content="Create custom color palettes for your Android and iOS app’s UI with the color generator. Learn to generate custom themes and shades using Ionic Framework."
+    content="カラージェネレーターでAndroidやiOSアプリのUIにカスタムカラーパレットを作成しましょう。Ionic Frameworkを使用してカスタムテーマとシェードを生成する方法を学びます。"
   />
 </head>
 
-Create custom color palettes for your app’s UI. Update a color’s hex values, check the demo app on the right to confirm, then copy and paste the generated code directly into your Ionic project.
+アプリのUIにカスタムカラーパレットを作成します。色の16進数値を更新し、右のデモアプリで確認した後、生成されたコードをIonicプロジェクトに直接コピー＆ペーストしてください。
 
 <ColorGenerator />

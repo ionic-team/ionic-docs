@@ -1,6 +1,6 @@
 ---
-title: 'Ionic Vue Overview'
-sidebar_label: Overview
+title: 'Ionic Vueの概要'
+sidebar_label: 概要
 ---
 
 <head>

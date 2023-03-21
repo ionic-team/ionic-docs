@@ -38,45 +38,45 @@ $ ionic serve
 
 `ionic serve` を起動したまま、アプリの開発を続けます。変更を保存すると、その変更が適用された状態でアプリがリロードされます。
 
-When implementing native functionality, use [Platform Detection](../core-concepts/cross-platform.md).
-When you're ready to test on a real device, see here for [iOS](ios.md) and [Android](android.md).
+ネイティブ機能を実装する場合は、[Platform Detection](../core-concepts/cross-platform.md) を使用します。
+実機でテストする場合は、[iOS](ios.md) と [Android](android.md) はこちらを参照してください。
 
-## Simulating a Mobile Viewport
+## モバイルビューポートのシミュレーション
 
-Each major browser vendor includes developer tools for mobile emulation. These tools offer the ability to change the emulated device type.
+各主要ブラウザベンダーは、モバイルエミュレーションのための開発者向けツールを提供しています。これらのツールは、エミュレートするデバイスの種類を変更する機能を備えています。
 
 ### Chrome
 
-Open your application at the local or remote address that it is being served from. For example, `http://localhost:4200`. Then, open the Chrome developer tools by pressing `Ctrl+Shift+I` on Windows/Linux or `Cmd+Opt+I` on Mac.
+アプリケーションを、サービスを受けるローカルまたはリモートのアドレスで開いてください。例えば、`http://localhost:4200`です。次に、Windows/Linuxでは`Ctrl+Shift+I`、Macでは`Cmd+Opt+I`を押して、Chrome開発者ツールを開きます。
 
 <img src="/docs/img/developing/previewing/chrome-dev-tools.png" alt="Chrome Dev Tools" />
 
-From here you can select different device types from the dropdown, change the orientation of the device and throttle the network speed.
+ここから、ドロップダウンから異なるデバイスタイプを選択し、デバイスの方向を変更し、ネットワーク速度をスロットルすることができます。
 
-For additional features and information visit: https://developer.chrome.com/docs/devtools/device-mode/.
+その他の機能および情報については、https://developer.chrome.com/docs/devtools/device-mode/ を参照してください。
 
 ### Safari
 
 :::note
 
-Prerequisites: Show Develop menu in menu bar option must be enabled in Safari Advanced options.
+前提条件：Safariの詳細オプションで「メニューバーに開発メニューを表示する」オプションが有効になっている必要があります。
 
 :::
 
-Open your application at the local or remote address that it is being served from. For example, `http://localhost:4200`. Select the **Develop** menu in Safari and select **Enter Responsive Design Mode** . Alternatively you can use the keyboard shortcut `Cmd+Opt+R`.
+アプリケーションを、サービスを受けるローカルまたはリモートのアドレスで開いてください。例えば、`http://localhost:4200`です。Safariの**Develop**メニューを選択し、**Enter Responsive Design Mode** を選択します。または、キーボードショートカット `Cmd+Opt+R` を使用することもできます。
 
 <img src="/docs/img/developing/previewing/safari-responsive-design-mode.png" alt="Safari Responsive Design Mode" />
 
-From here you can select different device types to emulate as well as change the orientation of the device.
+ここから、エミュレートするデバイスの種類を選択したり、デバイスの向きを変更したりすることができます。
 
-For additional features and information visit: https://developer.apple.com/safari/tools/.
+その他の機能および情報については、https://developer.apple.com/safari/tools/ を参照してください。
 
 ### Firefox
 
-Open your application at the local or remote address that it is being served from. For example, `http://localhost:4200`. Then, open the Firefox developer tools by pressing `Ctrl+Shift+M` on Windows/Linux or `Cmd+Opt+M` on Mac.
+アプリケーションを、サービスを受けるローカルまたはリモートのアドレスで開いてください。例えば、`http://localhost:4200`です。次に、Windows/LinuxではCtrl+Shift+M`、MacではCmd+Opt+M`を押して、Firefoxの開発者ツールを開きます。
 
 <img src="/docs/img/developing/previewing/firefox-responsive-design-mode.png" alt="Firefox Responsive Design Mode" />
 
-From here you can select different device types from the dropdown, change the orientation of the device and throttle the network speed.
+ここから、ドロップダウンから異なるデバイスタイプを選択し、デバイスの方向を変更し、ネットワーク速度をスロットルすることができます。
 
-For additional features and information visit: https://firefox-source-docs.mozilla.org/devtools-user/responsive_design_mode/.
+その他の機能および情報については、https://firefox-source-docs.mozilla.org/devtools-user/responsive_design_mode/ を参照してください。

@@ -27,15 +27,15 @@ Ionicの本来の目標は、HTML、CSS、JavaScriptといったWeb技術を使�
 最新のプラットフォームの情報については [latest Android stats](https://developer.android.com/about/dashboards/) と [latest iOS stats](https://developer.apple.com/support/app-store/) をご確認ください。
 :::
 
-### A Note on Android Support
+### Android Supportの注意点
 
-Starting with Android 5.0, the webview was moved to a separate application that can be updated independently of Android. This means that most Android 5.0+ devices are going to be running a modern version of Chromium. However, there are a still a subset of Android devices that are unable to have their webview updated. These webviews are typically stuck at the version that was available when the device initially shipped.
+Android 5.0から、WebviewはAndroidから独立して更新できる別のアプリケーションに移されました。これは、ほとんどのAndroid 5.0以上のデバイスがChromiumの最新バージョンを実行していることを意味します。しかし、ウェブビューを更新することができないAndroidデバイスがまだ存在しています。これらのウェブビューは、通常、デバイスが最初に出荷されたときに利用可能だったバージョンに留まっています。
 
-To figure out what version of the webview a device is running, log `window.navigator.userAgent` to the console when inspecting the application using Chrome Dev Tools.
+デバイスが実行しているWebViewのバージョンを調べるには、Chrome Dev Toolsを使用してアプリケーションを検査する際に、コンソールに`window.navigator.userAgent`を記録してください。
 
-## Desktop Browsers
+## デスクトップブラウザ
 
-Because Ionic is based on web technologies, it works just as well on desktop browsers as it does on mobile devices. For more information on desktop layouts, see [Cross Platform](../core-concepts/cross-platform.md#desktop).
+Ionicはウェブ技術をベースにしているため、モバイルデバイスと同じようにデスクトップブラウザーでも動作します。デスクトップのレイアウトについては、[クロスプラットフォーム](../core-concepts/cross-platform.md#desktop)を参照してください。
 
 |   Browser   | Ionic v7 | Ionic v6 | Ionic v5 | Ionic v4 |
 | :---------: | :------: | :------: | :------: | :------: |

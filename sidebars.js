@@ -8,7 +8,7 @@ module.exports = {
     },
     {
       type: 'category',
-      label: 'Upgrade Guides',
+      label: 'アップグレードガイド',
       collapsed: false,
       items: [
         'updating/7-0',

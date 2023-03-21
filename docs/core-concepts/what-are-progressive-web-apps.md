@@ -18,8 +18,8 @@ title: Progressive Web Apps
 Progressive Web App (PWA) は、最新の Web 機能を使用して、ユーザーにアプリのようなエクスペリエンスを提供する Web アプリです。
 これらのアプリは、特定の要件（下記参照）を満たし、サーバーに展開され、URLからアクセスでき、検索エンジンにインデックスされます。
 
-This can work in conjunction with [Capacitor](https://capacitorjs.com) to provide a multiple deploy targets for all your users.
-You can deploy your app as a PWA as well as Native app and take advantage of both channels.
+[Capacitor](https://capacitorjs.com)と連携して、すべてのユーザーに複数のデプロイ対象を提供することができます。
+アプリをPWAとしてデプロイするだけでなく、ネイティブアプリとしてデプロイし、両方のチャネルを活用することができます。
 
 Ionicでは、アプリストアへのリリースだけでなく、PWAとしてモバイルWebにデプロイすることも可能です。
 
