@@ -23,7 +23,7 @@ Spinnerコンポーネントには、さまざまなアニメーションつき�
 
 ## 基本的な使い方
 
-The default spinner is based on the mode. When the mode is `ios` the spinner will be `"lines"`, and when the mode is `md` the spinner will be `"circular"`. If the `name` property is set, then that spinner will be used instead of the mode specific spinner.
+デフォルトのスピナーは、モードに基づいて決定されます。モードが `ios` の場合、スピナーは `"lines"` となり、モードが `md` の場合、スピナーは `"circular"` となります。 `name` プロパティが設定されている場合は、モード固有のスピナーの代わりに、そのスピナーが使用されます。
 
 import Basic from '@site/static/usage/v7/spinner/basic/index.md';
 

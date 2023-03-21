@@ -22,9 +22,9 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 トーストは、最近のアプリケーションでよく使われる小さな通知です。操作に関するフィードバックを提供したり、システムメッセージを表示したりするために使用されます。トーストは、アプリケーションのコンテンツの上に表示され、アプリケーションによって解除されると、アプリケーションとの対話を再開することができます。
 
-## Inline Toasts (Recommended)
+## インラインToasts (推奨)
 
-`ion-toast` can be used by writing the component directly in your template. This reduces the number of handlers you need to wire up in order to present the toast.
+`ion-toast`は、テンプレートに直接コンポーネントを記述して使用することができます。これにより、トーストを表示するために配線する必要があるハンドラの数を減らすことができます。
 
 import InlineToastTriggerExample from '@site/static/usage/v7/toast/inline/basic/index.md';
 
@@ -32,9 +32,9 @@ import InlineToastTriggerExample from '@site/static/usage/v7/toast/inline/basic/
 
 ### Using `isOpen​`
 
-The `isOpen` property on `ion-toast` allows developers to control the presentation state of the toast from their application state. This means when `isOpen` is set to `true` the toast will be presented and when `isOpen` is set to `false` the toast will be dismissed.
+`ion-toast` の `isOpen` プロパティは、開発者がアプリケーションの状態からトーストの表示状態を制御できるようにするものです。つまり、`isOpen` を `true` に設定するとトーストが表示され、`isOpen` を `false` に設定するとトーストは破棄されます。
 
-`isOpen` uses a one-way data binding, meaning it will not automatically be set to `false` when the toast is dismissed. Developers should listen for the `ionToastDidDismiss` or `didDismiss` event and set `isOpen` to `false`. The reason for this is it prevents the internals of `ion-toast` from being tightly coupled with the state of the application. With a one way data binding, the toast only needs to concern itself with the boolean value that the reactive variable provides. With a two way data binding, the toast needs to concern itself with both the boolean value as well as the existence of the reactive variable itself. This can lead to non-deterministic behaviors and make applications harder to debug.
+`isOpen` は一方通行のデータバインディングを使用しているため、トーストが破棄されたときに自動的に `false` に設定されることはありません。開発者は `ionToastDidDismiss` または `didDismiss` イベントをリスニングして `isOpen` を `false` に設定する必要があります。この理由は、`ion-toast` の内部がアプリケーションの状態と密接に結合するのを防ぐためである。一方通行のデータバインディングでは、トーストはリアクティブ変数が提供するブーリアン値だけを気にすればよい。一方通行のデータバインディングでは、トーストはブーリアン値とリアクティブ変数の存在の両方に関心を持つ必要があります。これは、非決定的な動作につながり、アプリケーションのデバッグを困難にします。
 
 import InlineToastIsOpenExample from '@site/static/usage/v7/toast/inline/is-open/index.md';
 
@@ -56,13 +56,13 @@ import ButtonsPlayground from '@site/static/usage/v7/toast/buttons/index.md';
 
 <ButtonsPlayground />
 
-## Positioning
+## ポジショニング
 
-Toasts can be positioned at the top, bottom or middle of the viewport. The position can be passed upon creation. The possible values are `top`, `bottom` and `middle`. If the position is not specified, the toast will be displayed at the bottom of the viewport.
+トーストは、ビューポートの上部、下部、中部に配置することができます。位置は作成時に渡すことができます。指定できる値は `top`, `bottom`, `middle` です。位置が指定されない場合、トーストはビューポートの一番下に表示されます。
 
-## Layout
+## レイアウト
 
-Button containers within the toast can be displayed either on the same line as the message or stacked on separate lines using the `layout` property. The stacked layout should be used with buttons that have long text values. Additionally, buttons in a stacked toast layout can use a `side` value of either `start` or `end`, but not both.
+トースト内のボタンコンテナは、`layout`プロパティを使用して、メッセージと同じ行に表示するか、別々の行に積み重ねて表示することができます。スタックレイアウトは、長いテキスト値を持つボタンで使用する必要があります。さらに、スタックトーストレイアウトのボタンは `side` の値として `start` または `end` のどちらかを使用できますが、両方を使用することはできません。
 
 import StackedPlayground from '@site/static/usage/v7/toast/layout/index.md';
 

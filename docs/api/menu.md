@@ -33,7 +33,7 @@ import BasicUsage from '@site/static/usage/v7/menu/basic/index.md';
 
 ## Menu Toggle
 
-The [ion-menu-toggle](./menu-toggle) component can be used to create custom button that can open or close the menu.
+[ion-menu-toggle](./menu-toggle) コンポーネントを使用して、メニューを開いたり閉じたりするカスタムボタンを作成することができます。
 
 import MenuToggle from '@site/static/usage/v7/menu/toggle/index.md';
 
@@ -41,7 +41,7 @@ import MenuToggle from '@site/static/usage/v7/menu/toggle/index.md';
 
 ## Menu Types
 
-The `type` property can be used to customize how menus display in your application.
+`type`プロパティは、アプリケーションでのメニューの表示方法をカスタマイズするために使用することができます。
 
 import MenuType from '@site/static/usage/v7/menu/type/index.md';
 

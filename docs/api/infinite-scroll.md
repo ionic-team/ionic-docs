@@ -41,9 +41,9 @@ import CustomContent from '@site/static/usage/v7/infinite-scroll/custom-infinite
 
 <CustomContent />
 
-## Usage with Virtual Scroll
+## Virtual Scrollの使い方
 
-Infinite scroll requires a scroll container to function. When using a virtual scrolling solution, you will need to disable scrolling on the `ion-content` and indicate which element container is responsible for the scroll container with the `.ion-content-scroll-host` class target.
+無限スクロールを機能させるには、スクロールコンテナが必要です。仮想スクロールを使用する場合は、`ion-content`のスクロールを無効にし、`.ion-content-scroll-host`クラスのターゲットで、どの要素コンテナがスクロールコンテナを担当するのかを指定する必要があります。
 
 ```html
 <ion-content scroll-y="false">
@@ -58,11 +58,11 @@ Infinite scroll requires a scroll container to function. When using a virtual sc
 
 ## アクセシビリティ
 
-Developers should assign the `role="feed"` attribute to the scrollable list of items that are added to or removed from as the user scrolls.
+開発者は、ユーザーがスクロールすると追加されたり削除されたりするスクロール可能なリストアイテムに `role="feed"` 属性を割り当てる必要があります。
 
-Individual list items should either have `role="article"` or use the `<article>` element directly.
+個々のリストアイテムは `role="article"` を持つか、`<article>` 要素を直接使用しなければならない。
 
-For example, when rendering a collection of items in an `ion-list`:
+例えば、`ion-list`でアイテムのコレクションをレンダリングする場合。
 
 ```html
 <ion-content role="feed">
@@ -82,7 +82,7 @@ For example, when rendering a collection of items in an `ion-list`:
 </ion-content>
 ```
 
-Please refer to the [ARIA: feed role](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/feed_role) documentation for additional information.
+その他の情報については、[ARIA: feed role](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/feed_role) のドキュメントを参照してください。
 
 ## Interfaces
 

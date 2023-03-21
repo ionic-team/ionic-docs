@@ -26,7 +26,7 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 また、ロードオプションの `duration` に表示するミリ秒数を渡すことで、特定の時間が経過した後にロードインジケータを自動的に解除するよう設定することもできます。
 
-### Inline (Recommended)
+### インラインロード (推奨)
 
 import Inline from '@site/static/usage/v7/loading/inline/index.md';
 
@@ -63,12 +63,12 @@ import Theming from '@site/static/usage/v7/loading/theming/index.md';
 :::
 
 ## アクセシビリティ
-  
-Ionic automatically sets Loading's `role` to [`dialog`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/dialog_role).
 
-If the `message` property is defined for Loading, then the `aria-labelledby` attribute will be automatically set to the message element's ID. Otherwise, `aria-labelledby` will not be set, and developers must provide an `aria-label` using the `htmlAttributes` property.
-  
-All ARIA attributes can be manually overwritten by defining custom values in the `htmlAttributes` property of Loading.
+Ionicは自動的にLoadingの`role`を[`dialog`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/dialog_role)に設定します。
+
+Loadingに`message`プロパティが定義されている場合、`aria-labelledby`属性は自動的にmessage要素のIDに設定されます。そうでない場合、`aria-labelledby`は設定されず、開発者は `htmlAttributes` プロパティを使用して `aria-label` を提供する必要があります。
+
+すべてのARIA属性は、Loadingの`htmlAttributes`プロパティにカスタム値を定義することによって、手動で上書きすることができます。
 
 ## Interfaces
 

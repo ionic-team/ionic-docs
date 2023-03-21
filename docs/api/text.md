@@ -28,7 +28,7 @@ import Basic from '@site/static/usage/v7/text/basic/index.md';
 
 ## テーマ
 
-The text component can be customized by changing any of the default [colors](../../docs/theming/colors) Ionic provides.
+テキストコンポーネントは、Ionicが提供するデフォルトの[colors](../../docs/theming/colors)のいずれかを変更することでカスタマイズすることが可能です。
 
 ## プロパティ
 <Props />

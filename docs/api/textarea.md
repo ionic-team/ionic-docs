@@ -17,7 +17,7 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="scoped" />
 
-The textarea component is used for multi-line text input. A native textarea element is rendered inside of the component. The user experience and interactivity of the textarea component is improved by having control over the native textarea.
+textareaコンポーネントは、複数行のテキスト入力に使用されます。ネイティブの textarea 要素は、コンポーネントの内部でレンダリングされます。ネイティブのtextareaを制御することで、textareaコンポーネントのユーザーエクスペリエンスとインタラクティブ性を向上させることができます。
 
 ネイティブのtextarea要素とは異なり、Ionicのtextareaは要素内部のコンテンツからその値を読み込むことをサポートしていません。textareaの値は`value`属性で設定しなくてはなりません。
 
@@ -31,7 +31,7 @@ import BasicPlayground from '@site/static/usage/v7/textarea/basic/index.md';
 
 ## Label Placement
 
-Labels will take up the width of their content by default. 開発者は `labelPlacement` プロパティを使用して、ラベルがどのように配置されるかを制御することができます。
+ラベルは、デフォルトでそのコンテンツの幅を占めます。 開発者は `labelPlacement` プロパティを使用して、ラベルがどのように配置されるかを制御することができます。
 
 import Labels from '@site/static/usage/v7/textarea/label-placement/index.md';
 
@@ -39,9 +39,9 @@ import Labels from '@site/static/usage/v7/textarea/label-placement/index.md';
 
 ## Filled Textareas
 
-Material Design offers filled styles for a textarea. The `fill` property on the item can be set to either `"solid"` or `"outline"`.
+Material Designでは、テキストエリアの塗りつぶしスタイルが用意されています。アイテムの `fill` プロパティは `"solid"` または `"outline"` のいずれかに設定することができます。
 
-Since the `fill` styles visually defines the textarea container, textareas that use `fill` should not be used in `ion-item`.
+`fill` スタイルはテキストエリアのコンテナを視覚的に定義するため、`fill` を使用するテキストエリアは `ion-item` で使用すべきではありません。
 
 import Fill from '@site/static/usage/v7/textarea/fill/index.md';
 
@@ -49,7 +49,7 @@ import Fill from '@site/static/usage/v7/textarea/fill/index.md';
 
 ## Helper & Error Text
 
-Helper and error text can be used inside of a textarea with the `helperText` and `errorText` property. The error text will not be displayed unless the `ion-invalid` class is added to the `ion-textarea`. In Angular, this is done automatically through form validation. In JavaScript, React and Vue, the class needs to be manually added based on your own validation.
+ヘルパーテキストとエラーテキストは、`helperText`と`errorText`プロパティを使ってテキストエリア内で使用することができます。エラーテキストは `ion-textarea` に `ion-invalid` クラスが追加されない限り表示されません。Angular では、これはフォームバリデーションによって自動的に行われます。JavaScript、React、Vueでは、独自のバリデーションに基づいてこのクラスを手動で追加する必要があります。
 
 import HelperError from '@site/static/usage/v7/textarea/helper-error/index.md';
 
@@ -57,7 +57,7 @@ import HelperError from '@site/static/usage/v7/textarea/helper-error/index.md';
 
 ## Textarea Counter
 
-The textarea counter is text that displays under a textarea to notify the user of how many characters have been entered out of the total that the textarea will accept. When adding counter, the default behavior is to format the value that gets displayed as `inputLength` / `maxLength`. This behavior can be customized by passing in a formatter function to the `counterFormatter` property.
+textareaカウンターは、textareaの下に表示されるテキストで、textareaが受け付ける合計文字数のうち、何文字が入力されたかをユーザーに通知します。カウンターを追加する場合、デフォルトの動作は、表示される値を `inputLength` / `maxLength` としてフォーマットすることです。この動作は、`counterFormatter`プロパティにフォーマッタ関数を渡すことでカスタマイズすることができます。
 
 import Counter from '@site/static/usage/v7/textarea/counter/index.md';
 
@@ -65,7 +65,7 @@ import Counter from '@site/static/usage/v7/textarea/counter/index.md';
 
 ## Autogrow
 
-When the `autoGrow` property is set to `true`, the textarea will grow and shrink based on its contents.
+`autoGrow`プロパティが`true`に設定されている場合、テキストエリアはその内容に基づいて拡大・縮小します。
 
 import AutogrowPlayground from '@site/static/usage/v7/textarea/autogrow/index.md';
 
@@ -73,34 +73,34 @@ import AutogrowPlayground from '@site/static/usage/v7/textarea/autogrow/index.md
 
 ## Clear on Edit
 
-Setting the `clearOnEdit` property to `true` will clear the textarea after it has been blurred and then typed in again.
+`clearOnEdit`プロパティを`true`に設定すると、テキストエリアがぼかされた後、再度入力されるとクリアされます。
 
 import ClearOnEditPlayground from '@site/static/usage/v7/textarea/clear-on-edit/index.md';
 
 <ClearOnEditPlayground />
 
-## Migrating from Legacy Textarea Syntax
+## レガシーtextareaシンタックスからの移行
 
-A simpler textarea syntax was introduced in Ionic 7.0. This new syntax reduces the boilerplate required to setup an textarea, resolves accessibility issues, and improves the developer experience.
+Ionic 7.0では、よりシンプルなtextareaの構文が導入されました。この新しい構文は、textareaを設定するために必要な定型文を減らし、アクセシビリティの問題を解決し、開発者の体験を向上させます。
 
-Developers can perform this migration one textarea at a time. While developers can continue using the legacy syntax, we recommend migrating as soon as possible.
+開発者はこの移行を一度に1つのtextareaで行うことができます。開発者は従来の構文を使い続けることができますが、できるだけ早く移行することをお勧めします。
 
 
 ### モダンな構文の使い方
 
-Using the modern syntax involves three steps:
+モダンシンタックスを使うには、3つのステップがあります。
 
-1. Remove `ion-label` and use the `label` property on `ion-textarea` instead. The placement of the label can be configured using the `labelPlacement` property on `ion-textarea`.
-2. Move textarea-specific properties from `ion-item` on to `ion-textarea`. This includes the `counter`, `counterFormatter`, `fill`, and `shape` properties.
-3. Remove usages of the `helper` and `error` slots on `ion-item` and use the `helperText` and `errorText` properties on `ion-textarea` instead.
+1. `ion-label` を削除して、代わりに `ion-textarea` の `label` プロパティを使用する。ラベルの配置は `ion-textarea` の `labelPlacement` プロパティを使用して設定することができる。
+2. テキストエリア固有のプロパティを `ion-item` から `ion-textarea` に移動します。これには、`counter`、`counterFormatter`、`fill`、`shape`プロパティが含まれます。
+3. `ion-item` の `helper` と `error` スロットの使用を削除し、代わりに `ion-textarea` の `helperText` と `errorText` プロパティを使用します。
 
 import Migration from '@site/static/usage/v7/textarea/migration/index.md';
 
 <Migration />
 
-### Using the Legacy Syntax
+### レガシーシンタックスの使用
 
-Ionic uses heuristics to detect if an app is using the modern textarea syntax. In some instances, it may be preferable to continue using the legacy syntax. Developers can set the `legacy` property on `ion-textarea` to `true` to force that instance of the textarea to use the legacy syntax.
+Ionicは、アプリが最新のtextarea構文を使用しているかどうかをヒューリスティックで検出します。場合によっては、レガシーな構文を使い続けることが望ましいこともあります。開発者は、`ion-textarea`の`legacy`プロパティを`true`に設定することで、そのインスタンスのtextareaがレガシー構文を使用するように強制できます。
 
 ## テーマ
 

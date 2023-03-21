@@ -25,7 +25,7 @@ Segmentsは、関連するボタンのグループを水平方向の行に表示
 
 ## 基本的な使い方
 
-Segments consist of [segment buttons](./segment-button) with a `value` property on each button. Set the `value` property on the segment to match the value of a button to select that button. Segments can also be disabled to prevent users from interacting with them.
+セグメントは[セグメントボタン](./segment-button)からなり、各ボタンには`value`プロパティが設定されています。セグメントの `value` プロパティをボタンの値と一致させることで、そのボタンを選択することができます。また、セグメントを無効にすることで、ユーザがセグメントと対話できないようにすることができます。
 
 import Basic from '@site/static/usage/v7/segment/basic/index.md';
 

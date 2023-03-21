@@ -18,22 +18,22 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="shadow" />
 
-A split pane is useful when creating multi-view layouts. It allows UI elements, like menus, to be
-displayed as the viewport width increases.
+分割ペインは、マルチビューレイアウトを作成する際に便利です。
+メニューのようなUI要素は、分割されたペインで表示することができます。ビューポートの幅が大きくなるにつれて表示されます。
 
 デバイスの画面幅が特定のサイズより小さい場合、分割ペインは縮小され、メニューは非表示になります。これは、ブラウザで提供され、アプリストアを通じてスマートフォンやタブレットにデプロイされるアプリを作成するのに理想的な動作です。
 
 ## 基本的な使い方
 
 :::note
-This demo sets the `when` property to `'xs'` so the split pane always shows up. Your Ionic application does not need this if you want the split pane to collapse on smaller viewports. See [Setting Breakpoints](#setting-breakpoints) for more information. 
+このデモでは `when` プロパティを `'xs'` に設定し、分割ペインが常に表示されるようにしています。小さなビューポートで分割ペインを折りたたみたい場合は、Ionicアプリケーションにこの設定は必要ありません。詳しくは、[ブレークポイントの設定](#setting-breakpoints)を参照してください。
 :::
 
 import Basic from '@site/static/usage/v7/split-pane/basic/index.md';
 
 <Basic />
 
-## Setting Breakpoints
+## ブレイキング・ポイントを決める
 
 デフォルトでは、画面が992pxを超えると分割ペインが拡張表示されます。これをカスタマイズするには、 `when` プロパティにブレークポイントを渡します。`when` プロパティには、真偽値、有効なメディア・クエリー、またはIonicの事前定義サイズのいずれかを指定できます。
 

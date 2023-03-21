@@ -18,7 +18,7 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 <EncapsulationPill type="shadow" />
 
 
-Segment buttons are groups of related buttons inside of a [segment](segment.md). They are displayed in a horizontal row. A segment button can be selected by default by setting the `value` of the segment to the `value` of the segment button. Only one segment button can be selected at a time.
+セグメントボタンは、[segment](segment.md)の中にある、関連するボタンのグループです。それらは横一列に表示されます。セグメントの `value` をセグメントボタンの `value` に設定することで、デフォルトでセグメントボタンを選択することができます。一度に選択できるセグメントボタンは1つだけです。
 
 
 ## 基本的な使い方
@@ -30,7 +30,7 @@ import Basic from '@site/static/usage/v7/segment-button/basic/index.md';
 
 ## Layout
 
-The `layout` property is set to `"icon-top"` by default. When a segment button has both an icon and a label, it will display the icon on top of the label. This behavior can be changed by setting the `layout` property to `"icon-bottom"`, `"icon-start"`, or `"icon-end"` which will show the icon below the label, to the start of the label (left in LTR and right in RTL) or to the end of the label (right in LTR and left in RTL), respectively.
+`layout`プロパティは、デフォルトで `"icon-top"` に設定されています。セグメントボタンにアイコンとラベルの両方がある場合、アイコンはラベルの上に表示されます。この動作は `layout` プロパティを `"icon-bottom"`, `"icon-start"`, `"icon-end"` に設定することで変更可能で、それぞれアイコンをラベルの下、ラベルの先頭（LTRでは左、RTLでは右）、ラベルの末尾（LTRでは右、RTLでは左）に表示することができます。
 
 import Layout from '@site/static/usage/v7/segment-button/layout/index.md';
 

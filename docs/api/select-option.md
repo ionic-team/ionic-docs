@@ -18,9 +18,9 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 <EncapsulationPill type="shadow" />
 
 
-Select Options are components that are child elements of a Select. Each option defined is passed and displayed in the Select dialog.
+セレクトオプションは、セレクトの子要素となるコンポーネントです。定義された各オプションは、Selectダイアログに渡され表示されます。
 
-For usage examples, see the [Select](./select) documentation.
+使用例については、[Select](./select)のドキュメントを参照してください。
 
 
 ## プロパティ

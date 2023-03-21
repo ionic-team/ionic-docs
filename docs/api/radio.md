@@ -18,9 +18,9 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 <EncapsulationPill type="shadow" />
 
 
-Radios should be used inside of a [radio group](./radio-group). Pressing a radio will check it and uncheck the previously selected radio, if there is one. They can also be checked programmatically by setting the value property of the parent radio group to the value of the radio.
+ラジオは、[ラジオグループ](./radio-group)の中で使用する必要があります。ラジオを押すと、そのラジオがチェックされ、前に選択されていたラジオがある場合は、そのチェックが解除されます。また、親ラジオグループのvalueプロパティをラジオの値に設定することで、プログラム的にチェックすることもできます。
 
-When radios are inside of a radio group, only one radio will be checked at any time. If more than one item should be selected, [checkboxes](./checkbox) should be used instead. Radios can be disabled within a group to prevent interaction with them.
+ラジオがラジオグループの中にある場合、いつでもチェックされるのは1つのラジオだけです。複数の項目を選択する場合は、[checkboxes](./checkbox)を代わりに使用する必要があります。ラジオをグループ内で無効にすると、ラジオとの相互作用を防ぐことができます。
 
 ## 基本的な使い方
 
@@ -49,9 +49,9 @@ import Justify from '@site/static/usage/v7/radio/justify/index.md';
 `ion-item` is only used in the demos to emphasize how `justify` works. It is not needed in order for `justify` to function correctly.
 :::
 
-## Deselecting Radios
+## ラジオの選択を解除する
 
-By default, once a radio is selected it cannot be deselected; pressing it again will keep it selected. This behavior can be modified by using the `allowEmptySelection` property on the parent radio group, which enables the radios to be deselected.
+デフォルトでは、一度選択されたラジオは選択を解除することができず、もう一度押すと選択されたままになります。この動作は、親ラジオグループの `allowEmptySelection` プロパティを使用することで変更することができ、ラジオを非選択にすることができます。
 
 import EmptySelection from '@site/static/usage/v7/radio/empty-selection/index.md';
 
@@ -78,15 +78,15 @@ import CSSParts from '@site/static/usage/v7/radio/theming/css-shadow-parts/index
 
 <CSSParts />
 
-## Migrating from Legacy Radio Syntax
+## Legacy Radio Syntaxからの移行
 
-A simpler radio syntax was introduced in Ionic 7.0. This new syntax reduces the boilerplate required to setup an radio, resolves accessibility issues, and improves the developer experience.
+Ionic 7.0では、よりシンプルなラジオ構文が導入されました。この新しい構文は、ラジオを設定するために必要な定型文を減らし、アクセシビリティの問題を解決し、開発者のエクスペリエンスを向上させます。
 
-Developers can perform this migration one radio at a time. While developers can continue using the legacy syntax, we recommend migrating as soon as possible.
+開発者は、この移行を一度に1つのラジオで実行できます。開発者はレガシー構文を使い続けることができますが、できるだけ早く移行することをお勧めします。
 
 ### モダンな構文の使い方
 
-Using the modern syntax involves removing the `ion-label` and passing the label directly inside of `ion-radio`. The placement of the label can be configured using the `labelPlacement` property on `ion-radio`. The way the label and the control are packed on a line can be controlled using the `justify` property on `ion-radio`.
+最新の構文を使用するには、`ion-label`を削除して、`ion-radio`の内部にラベルを直接渡します。ラベルの配置は `ion-radio` の `labelPlacement` プロパティを使用して設定することができます。ラベルとコントロールの行の詰め方は、`ion-radio` の `justify` プロパティを使用して制御することができます。
 
 import Migration from '@site/static/usage/v7/radio/migration/index.md';
 
@@ -94,12 +94,12 @@ import Migration from '@site/static/usage/v7/radio/migration/index.md';
   
 
 :::note
-In past versions of Ionic, `ion-item` was required for `ion-radio` to function properly. Starting in Ionic 7.0, `ion-radio` should only be used in an `ion-item` when the item is placed in an `ion-list`. Additionally, `ion-item` is no longer required for `ion-radio` to function properly.
+Ionic の過去のバージョンでは、`ion-radio` が正しく機能するためには `ion-item` が必要でした。Ionic 7.0 からは、`ion-radio` は `ion-item` の中で、そのアイテムが `ion-list` に配置される場合にのみ使用されます。また、`ion-radio`が正しく機能するためには、`ion-item`はもはや必須ではありません。
 :::
 
-### Using the Legacy Syntax
+### レガシーシンタックスの使用
 
-Ionic uses heuristics to detect if an app is using the modern radio syntax. In some instances, it may be preferable to continue using the legacy syntax. Developers can set the `legacy` property on `ion-radio` to `true` to force that instance of the radio to use the legacy syntax.
+Ionicは、アプリが最新の無線構文を使用しているかどうかをヒューリスティックで検出します。場合によっては、レガシー構文を使い続けることが望ましい場合もあります。開発者は `ion-radio` の `legacy` プロパティを `true` に設定することで、その無線機のインスタンスがレガシー構文を使用するように強制できます。
 
 
 

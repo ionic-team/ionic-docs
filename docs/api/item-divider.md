@@ -18,7 +18,7 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 <EncapsulationPill type="shadow" />
 
 
-Item dividers are block elements that can be used to separate [items](./item) in a list. They are similar to list headers, but instead of only being placed at the top of a list, they should go in between groups of items.
+アイテムディバイダは、リスト内の [アイテム](./item) を区切るために使用できるブロック要素です。リストヘッダーと似ていますが、リストの一番上に置くだけでなく、アイテムのグループの間に置く必要があります。
 
 
 ## 基本的な使い方

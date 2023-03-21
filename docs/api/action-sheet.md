@@ -20,7 +20,7 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 Action Sheetは複数の選択肢を表示するダイアログです。アプリのコンテンツ上に表示され、ユーザが手動で破棄しないとアプリの利用を再開することはできません。`ios` modeでは、破壊的な選択肢は明示されます（コンテンツの削除などは赤字などでわかりやすく表示されます）。Action Sheetを破棄するには、背景をタップする、デスクトップのパソコンの場合はエスケープキーを押すなど、複数の選択肢があります。
 
-## Inline Action Sheets (Recommended)
+## インライン Action Sheets (推奨)
 
 `ion-action-sheet` は、テンプレートに直接コンポーネントを記述することで使用することができます。これにより、アクションシートを表示するために配線する必要があるハンドラの数を減らすことができます。
 

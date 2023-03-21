@@ -13,7 +13,7 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 <EncapsulationPill type="shadow" />
 
 
-List headers are block elements that are used to describe the contents of a [list](./list). Unlike [item dividers](./item-divider), list headers should only be used once at the top of a list of [items](./item).
+リストヘッダーは、[リスト](./list)の内容を記述するために使用されるブロック要素です。アイテムディバイダー](./item-divider)とは異なり、リストヘッダーは[アイテム](./item)のリストの先頭で一度だけ使用する必要があります。
 
 ## 基本的な使い方
 
@@ -22,18 +22,18 @@ import Basic from '@site/static/usage/v7/list-header/basic/index.md';
 <Basic />
 
 
-## Buttons in List Headers
+## リストヘッダーのボタン
 
-A [button](./button) placed in a list header can be useful for showing part of a list and redirecting to the full list with the button.
+リストのヘッダーに [button](./button) を配置すると、リストの一部を表示し、ボタンで全リストにリダイレクトするのに便利です。
 
 import Buttons from '@site/static/usage/v7/list-header/buttons/index.md';
 
 <Buttons />
 
 
-## List Header Lines
+## List Headerの下線
 
-List headers do not show a bottom border by default. The `lines` property can be modified to `"full"` or `"inset"` which will show a full width border or an inset border with left padding, respectively.
+リストヘッダーは、デフォルトでは下部のボーダーが表示されません。 `lines` プロパティを `"full"` または `"inset"` に変更すると、それぞれ全幅のボーダーまたは左paddingを伴う挿入ボーダーが表示されます。
 
 import Lines from '@site/static/usage/v7/list-header/lines/index.md';
 

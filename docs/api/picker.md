@@ -19,19 +19,19 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 Pickerは、画面下にボタンと列の行を表示するダイアログです。アプリケーションのコンテンツの上部とビューポートの下部に表示されます。
 
-## Inline Pickers (Recommended)
+## インラインピッカー（推奨）
 
-`ion-picker` can be used by writing the component directly in your template. This reduces the number of handlers you need to wire up in order to present the Picker.
+`ion-picker`は、テンプレートに直接コンポーネントを記述して使用することができます。これにより、ピッカーを表示するために必要なハンドラの数を減らすことができます。
 
 import Trigger from '@site/static/usage/v7/picker/inline/trigger/index.md';
 
 <Trigger />
 
-### Using `isOpen`
+### `isOpen` を使う
 
-The `isOpen` property on `ion-picker` allows developers to control the presentation state of the Picker from their application state. This means when `isOpen` is set to `true` the Picker will be presented, and when `isOpen` is set to `false` the Picker will be dismissed.
+`ion-picker` の `isOpen` プロパティにより、開発者はアプリケーションの状態からピッカーの表示状態を制御することができます。つまり、`isOpen` を `true` に設定するとピッカーが表示され、`isOpen` を `false` に設定するとピッカーは退場します。
 
-`isOpen` uses a one-way data binding, meaning it will not automatically be set to `false` when the Picker is dismissed. Developers should listen for the `ionPickerDidDismiss` or `didDismiss` event and set `isOpen` to `false`. The reason for this is it prevents the internals of `ion-picker` from being tightly coupled with the state of the application. With a one way data binding, the Picker only needs to concern itself with the boolean value that the reactive variable provides. With a two way data binding, the Picker needs to concern itself with both the boolean value as well as the existence of the reactive variable itself. This can lead to non-deterministic behaviors and make applications harder to debug.
+`isOpen` は一方通行のデータバインディングを使用しているため、ピッカーが終了したときに自動的に `false` に設定されることはありません。開発者は `ionPickerDidDismiss` または `didDismiss` イベントを待ち、 `isOpen` を `false` に設定する必要があります。この理由は、`ion-picker`の内部がアプリケーションの状態と密に結合するのを防ぐためです。一方通行のデータバインディングでは、ピッカーはリアクティブ変数が提供するブーリアン値のみに関心を持つ必要があります。一方通行のデータバインディングでは、ピッカーはリアクティブ変数のブール値だけでなく、リアクティブ変数の存在も気にする必要があります。このため、非決定的な動作が発生し、アプリケーションのデバッグが困難になる可能性があります。
 
 import IsOpen from '@site/static/usage/v7/picker/inline/isOpen/index.md';
 
@@ -39,7 +39,7 @@ import IsOpen from '@site/static/usage/v7/picker/inline/isOpen/index.md';
 
 ## Controller Pickers
 
-The `pickerController` can be used in situations where more control is needed over when the Picker is presented and dismissed.
+`pickerController`は、ピッカーの表示・非表示をより細かく制御する必要がある場合に使用することができます。
 
 import Controller from '@site/static/usage/v7/picker/controller/index.md';
 
@@ -47,7 +47,7 @@ import Controller from '@site/static/usage/v7/picker/controller/index.md';
 
 ## マルチカラム
 
-The `columns` property can be used to display a Picker with multiple columns of different options.
+`columns`プロパティは、異なる選択肢を複数の列で表示するピッカーを表示するために使用することができます。
 
 import MultipleColumn from '@site/static/usage/v7/picker/multiple-column/index.md';
 

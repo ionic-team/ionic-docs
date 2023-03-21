@@ -30,7 +30,7 @@ import Determinate from '@site/static/usage/v7/progress-bar/determinate/index.md
 
 ### Buffer
 
-If the `buffer` property is set, a buffer stream will show with animated circles to indicate activity. The value of the `buffer` property will also be represented by how much visible track there is. If the value of `buffer` is less than the `value` property, there will be no visible track. If `buffer` is equal to `1` then the buffer stream will be hidden.
+`buffer`プロパティが設定されている場合、バッファーストリームがアニメーションの円と共に表示され、アクティビティを示します。また、`buffer`プロパティの値は、目に見えるトラックの量によって表されます。もし `buffer` の値が `value` プロパティより小さければ、目に見えるトラックはありません。もし `buffer` が `1` に等しければ、バッファースリームは隠されます。
 
 import Buffer from '@site/static/usage/v7/progress-bar/buffer/index.md';
 

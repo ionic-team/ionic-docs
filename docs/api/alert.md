@@ -22,7 +22,7 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 アラートは、ユーザーに情報を提示したり、入力を使ってユーザーから情報を収集したりするダイアログである。アラートはアプリのコンテンツの上に表示され、アプリとの対話を再開する前に、ユーザーが手動で解除する必要があります。また、オプションで `header`、`subHeader`、`message` を持つことができます。
 
-## Inline Alerts (Recommended)
+## インライン Alerts (推奨)
 
 `ion-alert` は、テンプレートに直接コンポーネントを記述して使用することができます。これにより、アラートを表示するために必要なハンドラの数を減らすことができます。
 

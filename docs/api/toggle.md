@@ -18,7 +18,7 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 <EncapsulationPill type="shadow" />
 
 
-Toggles are switches that change the state of a single option. They can be switched on or off by pressing or swiping them. Toggles can also be checked programmatically by setting the `checked` property.
+トグルは、1つのオプションの状態を変更するスイッチです。押したり、スワイプしたりすることで、オン・オフを切り替えることができます。トグルは、`checked`プロパティを設定することで、プログラムによってチェックすることも可能です。
 
 ## 基本的な使い方
 
@@ -29,7 +29,7 @@ import Basic from '@site/static/usage/v7/toggle/basic/index.md';
 
 ## On / Off Labels
 
-Toggles can enable on/off labels by setting the `enableOnOffLabels` property. This is important for accessibility as it makes it easier to differentiate between a checked and unchecked toggle.
+トグルは、`enableOnOffLabels`プロパティを設定することで、オン/オフラベルを有効にすることができます。これはアクセシビリティ上重要なことで、チェックされたトグルとチェックされていないトグルの区別がつきやすくなります。
 
 import OnOff from '@site/static/usage/v7/toggle/on-off/index.md';
 
@@ -38,7 +38,7 @@ import OnOff from '@site/static/usage/v7/toggle/on-off/index.md';
 
 ## Toggles in a List
 
-Toggles can also be used in a list view by using the [Item](./item) and [List](./list) components.
+[アイテム](./item)と[リスト](./list)コンポーネントを使用すると、リストビューでトグルを使用することも可能です。
 
 import List from '@site/static/usage/v7/toggle/list/index.md';
 
@@ -73,7 +73,7 @@ import Colors from '@site/static/usage/v7/toggle/theming/colors/index.md';
 
 ## CSSカスタムプロパティ
 
-CSS custom properties can be combined with standard CSS to target different parts of a toggle. We can modify the `width` and `height` of the toggle directly to change the size of the track, while using the `--handle-width` and `--handle-height` custom properties to customize the handle size.
+CSSカスタムプロパティは、標準CSSと組み合わせてトグルの異なる部分をターゲットにすることができます。トグルの `width` と `height` を直接変更してトラックのサイズを変更し、`--handle-width` と `--handle-height` カスタムプロパティを使用して、ハンドルサイズをカスタマイズすることができます。
 
 import CSSProps from '@site/static/usage/v7/toggle/theming/css-properties/index.md';
 
@@ -81,21 +81,21 @@ import CSSProps from '@site/static/usage/v7/toggle/theming/css-properties/index.
 
 ### CSS Shadow Parts
 
-We can further customize toggle by targeting specific shadow parts that are exposed. Any CSS property on these parts can be styled and they can also be combined with CSS custom properties.
+トグルをさらにカスタマイズするには、公開されている特定のシャドウ部分をターゲットにすることができます。これらの部分には、どのようなCSSプロパティでもスタイルを設定でき、CSSカスタムプロパティと組み合わせることも可能です。
 
 import CSSParts from '@site/static/usage/v7/toggle/theming/css-shadow-parts/index.md';
 
 <CSSParts />
 
-## Migrating from Legacy Toggle Syntax
+## レガシーなトグル構文からの移行
 
-A simpler toggle syntax was introduced in Ionic 7.0. This new syntax reduces the boilerplate required to setup an toggle, resolves accessibility issues, and improves the developer experience.
+Ionic 7.0では、よりシンプルなトグル構文が導入されました。この新しい構文は、トグルの設定に必要な定型文を減らし、アクセシビリティの問題を解決し、開発者のエクスペリエンスを向上させます。
 
-While developers can continue using the legacy syntax, we recommend migrating as soon as possible.
+開発者は従来の構文を使い続けることができますが、できるだけ早く移行することをお勧めします。
 
 ### モダンな構文の使い方
 
-Using the modern syntax involves removing the `ion-label` and passing the label directly inside of `ion-toggle`. The placement of the label can be configured using the `labelPlacement` property on `ion-toggle`. The way the label and the control are packed on a line can be controlled using the `justify` property on `ion-toggle`.
+最新の構文を使用するには、`ion-label`を削除して、`ion-toggle`の内部にラベルを直接渡します。ラベルの配置は `ion-toggle` の `labelPlacement` プロパティを使用して設定することができる。ラベルとコントロールの行の詰め方は、`ion-toggle` の `justify` プロパティを使用して制御することができます。
 
 import Migration from '@site/static/usage/v7/toggle/migration/index.md';
 
@@ -103,12 +103,12 @@ import Migration from '@site/static/usage/v7/toggle/migration/index.md';
   
 
 :::note
-In past versions of Ionic, `ion-item` was required for `ion-toggle` to function properly. Starting in Ionic 7.0, `ion-toggle` should only be used in an `ion-item` when the item is placed in an `ion-list`. Additionally, `ion-item` is no longer required for `ion-toggle` to function properly.
+Ionic の過去のバージョンでは、`ion-toggle` が正しく機能するためには `ion-item` が必要でした。Ionic 7.0 からは、`ion-toggle` は `ion-item` の中で、そのアイテムが `ion-list` に配置される場合にのみ使用されます。また、`ion-toggle`が正しく機能するためには、`ion-item`はもはや必須ではありません。
 :::
 
-### Using the Legacy Syntax
+### レガシーシンタックスの使用
 
-Ionic uses heuristics to detect if an app is using the modern toggle syntax. In some instances, it may be preferable to continue using the legacy syntax. Developers can set the `legacy` property on `ion-toggle` to `true` to force that instance of the toggle to use the legacy syntax.
+Ionicは、アプリが最新のトグル構文を使用しているかどうかを検出するためにヒューリスティックを使用しています。場合によっては、レガシー構文を使い続けることが望ましいこともあります。開発者は、`ion-toggle`の`legacy`プロパティを`true`に設定することで、そのトグルのインスタンスがレガシー構文を使用するように強制できます。
 
 ## Interfaces
 

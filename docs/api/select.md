@@ -87,7 +87,7 @@ import ObjectValuesAndMultipleSelectionExample from '@site/static/usage/v7/selec
 
 ## Label Placement
 
-Labels will take up the width of their content by default. 開発者は `labelPlacement` プロパティを使用して、ラベルがどのように配置されるかを制御することができます。
+Labelsは、デフォルトでそのコンテンツの幅を占めます。 開発者は `labelPlacement` プロパティを使用して、ラベルがどのように配置されるかを制御することができます。
 
 import LabelPlacement from '@site/static/usage/v7/select/label-placement/index.md';
 
@@ -103,9 +103,9 @@ import JustifyExample from '@site/static/usage/v7/select/justify/index.md';
 
 ## Filled Selects
 
-Material Design offers filled styles for a select. The `fill` property on the select can be set to either `"solid"` or `"outline"`.
+Material Designでは、セレクトに塗りつぶしのスタイルが用意されています。セレクトの `fill` プロパティは `"solid"` または `"outline"` のいずれかに設定することができます。
 
-Since the `fill` styles visually defines the select container, selects that use `fill` should not be used in `ion-item`.
+`fill` スタイルはセレクトコンテナを視覚的に定義するため、`fill` を使用するセレクトは `ion-item` で使用すべきではありません。
 
 import FillExample from '@site/static/usage/v7/select/fill/index.md';
 
@@ -159,7 +159,7 @@ import StylingSelectExample from '@site/static/usage/v7/select/customization/sty
 
 ## Typeahead Component
 
-Typeahead or autocomplete functionality can be built using existing Ionic components. We recommend using an `ion-modal` to make the best use of the available screen space.
+Typeaheadやオートコンプリートの機能は、既存のIonicコンポーネントを使用して構築することができます。利用可能なスクリーンスペースを最大限に活用するために、`ion-modal`を使用することをお勧めします。
 
 import TypeaheadExample from '@site/static/usage/v7/select/typeahead/index.md';
 
@@ -186,27 +186,27 @@ interface SelectCustomEvent<T = any> extends CustomEvent {
 }
 ```
 
-## Migrating from Legacy Select Syntax
+## Legacy Select Syntaxからの移行
 
-A simpler select syntax was introduced in Ionic 7.0. This new syntax reduces the boilerplate required to setup an select, resolves accessibility issues, and improves the developer experience.
+Ionic 7.0では、よりシンプルなselect構文が導入されました。この新しい構文は、selectの設定に必要な定型文を減らし、アクセシビリティの問題を解決し、開発者のエクスペリエンスを向上させます。
 
-Developers can perform this migration one select at a time. While developers can continue using the legacy syntax, we recommend migrating as soon as possible.
+開発者は、この移行を一度に1つのセレクトで実行できます。開発者はレガシー構文を使い続けることができますが、できるだけ早く移行することをお勧めします。
 
 
 ### モダンな構文の使い方
 
-Using the modern syntax involves two steps:
+モダンシンタックスを使うには、2つのステップがあります。
 
-1. Remove `ion-label` and use the `label` property on `ion-select` instead. The placement of the label can be configured using the `labelPlacement` property on `ion-select`.
-2. Move any usage of `fill` and `shape` from `ion-item` on to `ion-select`.
+1. ion-label` を削除して、代わりに `ion-select` の `label` プロパティを使用する。ラベルの配置は `ion-select` の `labelPlacement` プロパティを使用して設定することができる。
+2. fill` と `shape` の使い方を `ion-item` から `ion-select` に移動する。
 
 import Migration from '@site/static/usage/v7/select/migration/index.md';
 
 <Migration />
 
-### Using the Legacy Syntax
+### レガシーシンタックスの使用
 
-Ionic uses heuristics to detect if an app is using the modern select syntax. In some instances, it may be preferable to continue using the legacy syntax. Developers can set the `legacy` property on `ion-select` to `true` to force that instance of the input to use the legacy syntax.
+Ionicは、アプリがモダンなセレクト構文を使用しているかどうかをヒューリスティックで検出します。場合によっては、レガシー構文を使い続けることが望ましい場合もあります。開発者は `ion-select` の `legacy` プロパティを `true` に設定することで、その入力インスタンスでレガシー構文を使用するように強制できます。
 
 ## プロパティ
 <Props />

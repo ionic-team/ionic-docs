@@ -18,11 +18,11 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 <EncapsulationPill type="shadow" />
 
 
-The Menu Toggle component can be used to toggle a menu open or closed.
+Menu Toggleコンポーネントは、メニューの開閉を切り替えるために使用することができます。
 
-Menu toggles are only visible when the selected menu is enabled. If the menu is disabled or it's being presented as a split pane, the menu toggle will be hidden. To always display the menu toggle, the `autoHide` property can be set to `false`.
+メニュートグルは、選択されたメニューが有効な場合にのみ表示されます。メニューが無効になっている場合や、分割ペインとして表示されている場合は、メニュートグルは非表示になります。常にメニュートグルを表示するには、`autoHide`プロパティを`false`に設定します。
 
-See the [menu](./menu#menu-toggle) documentation for more information.
+詳しくは、[menu](./menu#menu-toggle)のドキュメントを参照してください。
 
 
 ## プロパティ

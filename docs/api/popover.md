@@ -222,23 +222,23 @@ type PositionAlign = 'start' | 'center' | 'end';
 
 ## Performance
 
-### Mounting Inner Contents
+### Innerコンテンツのマウント
 
-The content of an inline `ion-popover` is unmounted when closed. If this content is expensive to render, developers can use the `keepContentsMounted` property to mount the content as soon as the popover is mounted. This can help optimize the responsiveness of your application as the inner contents will have already been mounted when the popover opens.
+インライン `ion-popover` のコンテンツは、閉じるとマウントされなくなります。このコンテンツのレンダリングにコストがかかる場合、開発者は `keepContentsMounted` プロパティを使用して、ポップオーバーがマウントされると同時にコンテンツをマウントすることができます。これにより、ポップオーバーが開いたときに内部コンテンツがすでにマウントされているため、アプリケーションの応答性を最適化することができます。
 
 import Mount from '@site/static/usage/v7/popover/performance/mount/index.md';
 
 <Mount />
 
-Developers should keep the following in mind when using `keepContentsMounted`:
+開発者は `keepContentsMounted` を使用する際に、以下の点に留意する必要があります。
 
-- This feature should be used as a last resort in order to deal with existing performance problems. Try to identify and resolve performance bottlenecks before using this feature. Additionally, do not use this to anticipate performance problems.
+- この機能は、既存のパフォーマンス問題に対処するための最後の手段として使用する必要があります。この機能は、既存のパフォーマンス問題に対処するための最後の手段として使用されるべきです。また、パフォーマンスの問題を予期してこの機能を使用しないでください。
 
-- This feature is only needed when using a JavaScript Framework. Developers not using a framework can  pass the contents to be rendered into the popover, and the contents will be rendered automatically.
+- この機能は、JavaScriptフレームワークを使用する場合にのみ必要です。フレームワークを使用していない開発者は、レンダリングするコンテンツをポップオーバーに渡すことができ、コンテンツは自動的にレンダリングされます。
 
-- This feature only works with inline popovers. Popovers created with the `popoverController` are not created ahead of time, so the inner contents are not created either.
+- この機能はインラインポップオーバーでのみ機能します。 `popoverController`で作成されたポップオーバーは先に作成されないので、内部のコンテンツも作成されません。
 
-- Any JavaScript Framework lifecycle hooks on the inner component will run as soon as the popover is mounted, not when the popover is presented.
+- 内部コンポーネントの JavaScript Framework ライフサイクルフックは、ポップオーバーが表示されたときではなく、ポップオーバーがマウントされたときにすぐに実行されます。
 
 ## プロパティ
 <Props />

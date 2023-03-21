@@ -101,7 +101,7 @@ import CardExample from '@site/static/usage/v7/modal/card/basic/index.md';
 
 マップアプリのドロワーコンポーネントに似たシートモーダルエフェクトを作成します。シートモーダルを作成するには、`ion-modal` に `breakpoints` と `initialBreakpoint` プロパティを設定する必要があります。
 
-The `breakpoints` property accepts an array which states each breakpoint that the sheet can snap to when swiped. A `breakpoints` property of `[0, 0.5, 1]` would indicate that the sheet can be swiped to show 0% of the modal, 50% of the modal, and 100% of the modal. When the modal is swiped to 0%, the modal will be automatically dismissed. Note that the modal cannot be dismissed on swipe if no `0` breakpoint is included, but it can still be dismissed by pressing `Esc` or the hardware back button.
+`breakpoints`プロパティには、スワイプしたときにシートがスナップすることができる各ブレークポイントを示す配列が渡されます。 `breakpoints` プロパティが `[0, 0.5, 1]` の場合、シートをスワイプすると、モーダルの 0%、50%、100%を表示することができることを示します。モーダルが0%にスワイプされると、モーダルは自動的にディスクローズされます。 `0` ブレークポイントが含まれていない場合、スワイプ時にモーダルを解除することはできませんが、`Esc` またはハードウェアの戻るボタンを押すことで解除することができることに注意してください。
 
 `initialBreakpoint` プロパティは、シート モーダルが表示されるときに、どのブレークポイントから開始するかを知るために必要なものです。 `initialBreakpoint` の値は、 `breakpoints` 配列にも存在する必要があります。例えば、 `breakpoints` の値が `[0, 0.5, 1]` である場合、 `initialBreakpoint` の値が `0.5` であれば、 `breakpoints` 配列に `0.5` が存在するため有効であると考えられます。 `0.25` は `breakpoints` 配列に存在しないので、 `initialBreakpoint` の値は無効になります。
 
@@ -159,16 +159,16 @@ import AnimationsExample from '@site/static/usage/v7/modal/styling/animations/in
 
 ## Custom Dialogs
 
-While `ion-modal` is most often used for full-page views, cards, or sheets, it is also possible to use it for custom dialogs. This is useful if developers need an interface that is more complex than what components such as [ion-alert](./alert) or [ion-loading](./loading) provide.
+`ion-modal`は、フルページビュー、カード、シートに使用されることが多いですが、カスタムダイアログに使用することも可能です。これは、[ion-alert](./alert)や[ion-loading](./loading)などのコンポーネントが提供するものより複雑なインターフェースを必要とする開発者に便利です。
 
 import CustomDialogs from '@site/static/usage/v7/modal/custom-dialogs/index.md';
 
 <CustomDialogs />
 
-A few things to keep in mind when creating custom dialogs:
+カスタムダイアログを作成する際に注意すべき点がいくつかあります。
 
-* `ion-content` is intended to be used in full-page modals, cards, and sheets. If your custom dialog has a dynamic or unknown size, `ion-content` should not be used.
-* Creating custom dialogs provides a way of ejecting from the default modal experience. As a result, custom dialogs should not be used with card or sheet modals.
+* `ion-content` は、フルページモダル、カード、シートで使用することを意図しています。カスタムダイアログのサイズが動的であったり、不明であったりする場合は、 `ion-content` を使用するべきではありません。
+* カスタムダイアログを作成することは、デフォルトのモーダルエクスペリエンスから逃れる方法を提供します。そのため、カスタムダイアログは、カードやシートのモーダルでは使用しないでください。
 
 ## Interfaces
 

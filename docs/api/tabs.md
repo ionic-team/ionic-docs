@@ -17,8 +17,8 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="shadow" />
 
-Tabs are a top level navigation component to implement a tab-based navigation.
-The component is a container of individual [Tab](tab.md) components.
+タブは、タブベースのナビゲーションを実装するためのトップレベルのナビゲーションコンポーネントです。
+このコンポーネントは、個々の[Tab](tab.md)コンポーネントのコンテナである。
 
 `ion-tabs` コンポーネントはスタイルを持たず、ナビゲーションを処理するためのルータアウトレットとして動作します。また、UI フィードバックやタブを切り替えるための機構は提供しない。タブを切り替えるには、`ion-tabs` の直接の子として `ion-tab-bar` を用意しなければなりません。
 
@@ -28,13 +28,13 @@ The component is a container of individual [Tab](tab.md) components.
 
 :::note Framework Support
 
-Using `ion-tabs` within Angular, React or Vue requires the use of the `ion-router-outlet` or `ion-nav` components.
+Angular、React、Vueで `ion-tabs` を使用するには、 `ion-router-outlet` または `ion-nav` コンポーネントを使用する必要があります。
 
 :::
 
-## Usage with Router
+## ルーターとの併用
 
-Tabs can be used with the Ionic router to implement tab-based navigation. The tab bar and active tab will automatically resolve based on the url. This is the most common pattern for tabs navigation.
+タブはIonicルーターと一緒に使うことで、タブベースのナビゲーションを実装することができます。タブバーとアクティブなタブは、urlに基づいて自動的に解決されます。これはタブナビゲーションで最も一般的なパターンです。
 
 import Router from '@site/static/usage/v7/tabs/router/index.md';
 
@@ -42,7 +42,7 @@ import Router from '@site/static/usage/v7/tabs/router/index.md';
 
 :::tip Best Practices
 
-Ionic has guides on best practices for routing patterns with tabs. Check out the guides for [Angular](/angular/navigation#working-with-tabs), [React](/react/navigation#working-with-tabs), and [Vue](/vue/navigation#working-with-tabs) for additional information.
+Ionicでは、タブを使ったルーティングパターンのベストプラクティスに関するガイドを用意しています。 Check out the guides for [Angular](/angular/navigation#working-with-tabs), [React](/react/navigation#working-with-tabs), and [Vue](/vue/navigation#working-with-tabs) for additional information.
 
 :::
 
