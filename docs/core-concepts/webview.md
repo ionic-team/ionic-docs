@@ -24,7 +24,7 @@ Ionicアプリは[Web技術](../reference/glossary.md#web-standards)をつかっ
 
 ![webview architecture](/img/building/webview-architecture.png)
 
-Ionic Web Viewプラグインは、最新のJavaScriptアプリケーションに特化しています。iOSとAndroidの両方で、アプリファイルは常に `http://` プロトコルを使ってデバイス上で動作する最適化されたHTTPサーバーしてホストされます。
+Ionic Web Viewプラグインは、最新のJavaScriptアプリケーションに特化しています。iOSとAndroidの両方で、アプリファイルは常に `http://` プロトコルを使ってデバイス上で動作する最適化されたHTTPサーバーにホストされます。
 
 ### CORS
 
@@ -32,7 +32,7 @@ Web Views enforce [CORS](../reference/glossary.md#cors), so it's important that 
 
 ### Fileプロトコル
 
-CordovaとCapacitorのアプリはローカルのHTTPサーバーでホストされており、`http://` プロトコルとして提供されます。ただし、一部のプラグインは `file://` プロトコルを利用してデバイスファイルにアクセスしようとします。`http://` と `file://` プロトコルの間にある問題を回避するためには、ファイルアクセスするパスをローカルのHTTPサーバに書き換える必要がありあす。例えば、 `file:///path/to/device/file` はアプリがレンダリングする前に `http://<host>:<port>/<prefix>/path/to/device/file` に書き換えなければなりません。
+CordovaとCapacitorのアプリはローカルのHTTPサーバーでホストされており、`http://` プロトコルとして提供されます。ただし、一部のプラグインは `file://` プロトコルを利用してデバイスファイルにアクセスしようとします。`http://` と `file://` プロトコルの間にある問題を回避するためには、ファイルアクセスするパスをローカルのHTTPサーバに書き換える必要があります。例えば、 `file:///path/to/device/file` はアプリがレンダリングする前に `http://<host>:<port>/<prefix>/path/to/device/file` に書き換えなければなりません。
 
 Capacitorアプリの場合、URIはこのように変換します。
 
