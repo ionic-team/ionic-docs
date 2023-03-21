@@ -18,9 +18,9 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 <EncapsulationPill type="shadow" />
 
 
-The Menu Button component contains an icon and automatically adds functionality to open a menu when clicked.
+Menu Buttonコンポーネントは、アイコンを含み、クリックされるとメニューを開く機能を自動的に追加します。
 
-See the [menu](./menu) documentation for more information.
+詳しくは、[menu](./menu)のドキュメントをご覧ください。
 
 
 ## プロパティ

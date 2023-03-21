@@ -16,7 +16,7 @@ import Slots from '@site/static/auto-generated/item-sliding/slots.md';
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 
-A sliding item contains an item that can be dragged to reveal option buttons. It requires an [item](./item) component as a child. All options to reveal should be placed in the [item options](./item-options) element.
+スライドアイテムには、ドラッグしてオプションボタンを表示させることができるアイテムが含まれています。子要素として [item](./item) コンポーネントが必要です。表示させるオプションはすべて [item options](./item-options) 要素に記述する必要があります。
 
 
 ## 基本的な使い方

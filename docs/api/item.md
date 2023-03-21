@@ -81,7 +81,7 @@ import Media from '@site/static/usage/v7/item/media/index.md';
 
 ## Buttons in Items
 
-Buttons are styled smaller inside of items than when they are outside of them. To make the button size match buttons outside of an item, set the `size` attribute to `"default"`.
+Buttonsは、アイテムの外側にあるときよりも、アイテムの内側にあるときの方が小さくスタイルされます。ボタンのサイズをアイテムの外側のボタンと同じにするには、`size`属性に`"default"`を設定します。
 
 import Buttons from '@site/static/usage/v7/item/buttons/index.md';
 
@@ -122,11 +122,11 @@ import CSSProps from '@site/static/usage/v7/item/theming/css-properties/index.md
 <CSSProps />
 
 
-### Input Highlight
+### Inputハイライト
 
-Items containing an input will highlight the bottom border of the input with a different color when focused, valid, or invalid. By default, `md` items have a highlight with a height set to `2px` and `ios` has no highlight (technically the height is set to `0`). The height can be changed using the `--highlight-height` CSS property. To turn off the highlight, set this variable to `0`.
+input を含むアイテムは、フォーカスされたとき、有効なとき、無効なときに、入力の下のボーダーを異なる色でハイライトします。デフォルトでは、`md`アイテムは高さが `2px` に設定されたハイライトを持ち、`ios`はハイライトを持ちません（技術的に高さは `0` に設定されています）。高さは `--highlight-height` CSS プロパティを使って変更することができます。ハイライトをオフにするには、この変数を `0` に設定します。
 
-The highlight color changes based on the item state, but all of the states use Ionic colors by default. When focused, the input highlight will use the `primary` color. If the input is valid it will use the `success` color, and invalid inputs will use the `danger` color. This can be customized using the provided CSS properties.
+ハイライトの色はアイテムの状態に応じて変化しますが、デフォルトではすべての状態でIonicカラーが使用されます。フォーカスされている場合、入力のハイライトは `primary` カラーを使用します。入力が有効な場合は `success` カラーが使用され、無効な入力は `danger` カラーが使用されます。これは提供されているCSSプロパティを使ってカスタマイズすることができます。
 
 import InputHighlight from '@site/static/usage/v7/item/theming/input-highlight/index.md';
 

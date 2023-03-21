@@ -16,7 +16,7 @@ import Slots from '@site/static/auto-generated/item-group/slots.md';
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 
-Item groups are containers that organize similar [items](./item) together. They can contain [item dividers](./item-divider) to divide the items into multiple sections. They can also be used to group [sliding items](./item-sliding).
+アイテムグループとは、類似の[アイテム](./item)をまとめて整理するためのコンテナです。アイテムグループには、アイテムを複数のセクションに分けるための[アイテムディバイダー](./item-divider)を含めることができます。また、[スライドアイテム](./item-sliding)をグループ化するために使用することができます。
 
 ## 基本的な使い方
 

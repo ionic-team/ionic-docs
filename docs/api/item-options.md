@@ -16,9 +16,9 @@ import Slots from '@site/static/auto-generated/item-options/slots.md';
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 
-The item options component is a container for the [item option](./item-option) buttons in a sliding item. These buttons can be placed either on the [start or end side](#side-description).
+アイテムオプションコンポーネントは、スライドアイテムの[アイテムオプション](./item-option)ボタンのためのコンテナです。これらのボタンは、[startまたはend](#side-description)のいずれかに配置することができます。
 
-See the [item sliding](./item-sliding) documentation for more information.
+詳しくは [item sliding](./item-sliding) のドキュメントを参照してください。
 
 
 ## Side Description

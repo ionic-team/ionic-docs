@@ -16,10 +16,10 @@ import Slots from '@site/static/auto-generated/list/slots.md';
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 
-Lists are made up of multiple rows of [items](./item) which can contain text, buttons, toggles,
-icons, thumbnails, and much more. Lists generally contain items with similar data content, such as images and text.
+リストは、Text、Buttons、Toggleを含むこと [アイテム](./item) の複数の行で構成されています。
+アイコンやサムネイルなど、さまざまな機能を備えています。リストには一般的に、画像やテキストなど、類似したデータ内容を持つアイテムが含まれます。
 
-Lists support several interactions including swiping items to reveal options, dragging to [reorder](./reorder) items within the list, and deleting items.
+リストは、アイテムをスワイプしてオプションを表示したり、ドラッグしてリスト内のアイテムを[並び替え](./reorder)したり、アイテムを削除したりするなどの操作をサポートしています。
 
 ## 基本的な使い方
 
@@ -30,7 +30,7 @@ import Basic from '@site/static/usage/v7/list/basic/index.md';
 
 ## Inset List
 
-Adding the `inset` property to a list will apply margin around the list. In `ios` mode it will also add rounded corners to the list.
+リストに `inset` プロパティを追加すると、リストの周囲にマージンが適用されます。また、`ios`モードでは、リストに角丸が追加されます。
 
 import Inset from '@site/static/usage/v7/list/inset/index.md';
 
@@ -39,7 +39,7 @@ import Inset from '@site/static/usage/v7/list/inset/index.md';
 
 ## List Lines
 
-Adding the `lines` property to a list will adjust the bottom borders of all of the items in the list. Setting it to `"full"` will display full width borders, `"inset"` will display borders adjusted with left padding, and `"none"` will show no borders. If the `lines` property is set on an item in a list, that will take priority over the property on the list.
+リストに `lines` プロパティを追加すると、リスト内のすべてのアイテムの下側のボーダーを調整することができます。 `"full"`に設定すると全幅のボーダーが表示され、`"inset"`に設定すると左paddingで調整されたボーダーが表示され、`none"`に設定するとボーダーが表示されません。リスト内のアイテムに `lines` プロパティが設定されている場合は、リスト上のプロパティよりもそちらが優先されます。
 
 import Lines from '@site/static/usage/v7/list/lines/index.md';
 
