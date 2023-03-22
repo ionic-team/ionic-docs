@@ -1469,7 +1469,7 @@
       "inputs": [
         {
           "name": "action",
-          "summary": "`add`, `remove`, or `update` a platform; `ls`, `check`, or `save` all project platforms\n\n自動翻訳: プラットフォームの追加、削除、または更新; プロジェクトのプラットフォームをすべて保存する。",
+          "summary": "`add`, `remove`, or `update` a platform; `ls`, `check`, or `save` all project platforms\n\n自動翻訳: プラットフォームの追加、削除、または更新; プロジェクトのプラットフォームをすべて保存します。",
           "required": false
         },
         {
@@ -1515,7 +1515,7 @@
       "inputs": [
         {
           "name": "action",
-          "summary": "`add` or `remove` a plugin; `ls` or `save` all project plugins\n\n自動翻訳: プラグインを `add` または `remove`; プロジェクトのすべてのプラグインを `ls` または `save` する。",
+          "summary": "`add` or `remove` a plugin; `ls` or `save` all project plugins\n\n自動翻訳: プラグインを `add` または `remove`; プロジェクトのすべてのプラグインを `ls` または `save` します。",
           "required": false
         },
         {
