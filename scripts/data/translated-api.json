@@ -1587,12 +1587,12 @@
         {
           "name": "--icon-font-size",
           "annotation": "prop",
-          "docs": "Font size of the button icon\n\n自動翻訳: ボタンアイコンのフォントサイズ"
+          "docs": "Font size of the button icon\n\n自動翻訳: ボタンアイコンのFont Size"
         },
         {
           "name": "--icon-font-weight",
           "annotation": "prop",
-          "docs": "Font weight of the button icon\n\n自動翻訳: ボタンアイコンのフォントの太さ"
+          "docs": "Font weight of the button icon\n\n自動翻訳: ボタンアイコンのFont Weight"
         },
         {
           "name": "--icon-margin-bottom",
@@ -1677,12 +1677,12 @@
         {
           "name": "--padding-end",
           "annotation": "prop",
-          "docs": "Right padding if direction is left-to-right, and left padding if direction is right-to-left of the button\n\n自動翻訳: ボタンの向きが左から右の場合はRight Padding、右から左の場合はLeft Paddingとなる"
+          "docs": "Right padding if direction is left-to-right, and left padding if direction is right-to-left of the button\n\n自動翻訳: ボタンの向きが左から右の場合はRight Padding、右から左の場合はLeft Paddingとなります。"
         },
         {
           "name": "--padding-start",
           "annotation": "prop",
-          "docs": "Left padding if direction is left-to-right, and right padding if direction is right-to-left of the button\n\n自動翻訳: ボタンの向きが左から右の場合はLeft Padding、右から左の場合はRight Paddingとなる"
+          "docs": "Left padding if direction is left-to-right, and right padding if direction is right-to-left of the button\n\n自動翻訳: ボタンの向きが左から右の場合はLeft Padding、右から左の場合はRight Paddingとなります。"
         },
         {
           "name": "--padding-top",
@@ -1955,12 +1955,12 @@
         {
           "name": "--padding-end",
           "annotation": "prop",
-          "docs": "Right padding if direction is left-to-right, and left padding if direction is right-to-left of the badge\n\n自動翻訳: バッジの向きが左から右の場合はRight Padding、右から左の場合はLeft Paddingとなる"
+          "docs": "Right padding if direction is left-to-right, and left padding if direction is right-to-left of the badge\n\n自動翻訳: バッジの向きが左から右の場合はRight Padding、右から左の場合はLeft Paddingとなります。"
         },
         {
           "name": "--padding-start",
           "annotation": "prop",
-          "docs": "Left padding if direction is left-to-right, and right padding if direction is right-to-left of the badge\n\n自動翻訳: バッジの向きが左から右の場合はLeft Padding、右から左の場合はRight Paddingとなる"
+          "docs": "Left padding if direction is left-to-right, and right padding if direction is right-to-left of the badge\n\n自動翻訳: バッジの向きが左から右の場合はLeft Padding、右から左の場合はRight Paddingとなります。"
         },
         {
           "name": "--padding-top",
@@ -2868,7 +2868,7 @@
           "mutable": false,
           "attr": "strong",
           "reflectToAttr": false,
-          "docs": "If `true`, activates a button with a heavier font weight.\n\n自動翻訳: `true`の場合、より重いフォントウェイトを持つボタンをアクティブにします。",
+          "docs": "If `true`, activates a button with a heavier font weight.\n\n自動翻訳: `true`の場合、より重いFont Weightを持つボタンをアクティブにします。",
           "docsTags": [],
           "default": "false",
           "values": [
@@ -3041,12 +3041,12 @@
         {
           "name": "--padding-end",
           "annotation": "prop",
-          "docs": "Right padding if direction is left-to-right, and left padding if direction is right-to-left of the button\n\n自動翻訳: ボタンの向きが左から右の場合はRight Padding、右から左の場合はLeft Paddingとなる"
+          "docs": "Right padding if direction is left-to-right, and left padding if direction is right-to-left of the button\n\n自動翻訳: ボタンの向きが左から右の場合はRight Padding、右から左の場合はLeft Paddingとなります。"
         },
         {
           "name": "--padding-start",
           "annotation": "prop",
-          "docs": "Left padding if direction is left-to-right, and right padding if direction is right-to-left of the button\n\n自動翻訳: ボタンの向きが左から右の場合はLeft Padding、右から左の場合はRight Paddingとなる"
+          "docs": "Left padding if direction is left-to-right, and right padding if direction is right-to-left of the button\n\n自動翻訳: ボタンの向きが左から右の場合はLeft Padding、右から左の場合はRight Paddingとなります。"
         },
         {
           "name": "--padding-top",
@@ -5124,12 +5124,12 @@
         {
           "name": "--padding-end",
           "annotation": "prop",
-          "docs": "Right padding if direction is left-to-right, and left padding if direction is right-to-left of the content\n\n自動翻訳: コンテンツの方向が左から右の場合はRight Padding、右から左の場合はLeft Paddingとなる"
+          "docs": "Right padding if direction is left-to-right, and left padding if direction is right-to-left of the content\n\n自動翻訳: コンテンツの方向が左から右の場合はRight Padding、右から左の場合はLeft Paddingとなります。"
         },
         {
           "name": "--padding-start",
           "annotation": "prop",
-          "docs": "Left padding if direction is left-to-right, and right padding if direction is right-to-left of the content\n\n自動翻訳: コンテンツの方向が左から右の場合はLeft Padding、右から左の場合はRight Paddingとなる"
+          "docs": "Left padding if direction is left-to-right, and right padding if direction is right-to-left of the content\n\n自動翻訳: コンテンツの方向が左から右の場合はLeft Padding、右から左の場合はRight Paddingとなります。"
         },
         {
           "name": "--padding-top",
@@ -5378,7 +5378,7 @@
           "mutable": false,
           "attr": "clear-text",
           "reflectToAttr": false,
-          "docs": "The text to display on the picker's \"Clear\" button.\n\n自動翻訳: ピッカーの「クリア」ボタンに表示するテキストです。",
+          "docs": "The text to display on the picker's \"Clear\" button.\n\n自動翻訳: ピッカーの\"Clear\"ボタンに表示するテキストです。",
           "docsTags": [],
           "default": "'Clear'",
           "values": [
@@ -5654,7 +5654,7 @@
           "mutable": true,
           "attr": "min",
           "reflectToAttr": false,
-          "docs": "The minimum datetime allowed. Value must be a date string\nfollowing the\n[ISO 8601 datetime format standard](https://www.w3.org/TR/NOTE-datetime),\nsuch as `1996-12-19`. The format does not have to be specific to an exact\ndatetime. For example, the minimum could just be the year, such as `1994`.\nDefaults to the beginning of the year, 100 years ago from today.\n\n自動翻訳: 許容される最小のdatetime。値は [ISO 8601 datetime format standard](https://www.w3.org/TR/NOTE-datetime) に従った日付文字列でなければならず、例えば `1996-12-19` のようなものです。このフォーマットは、正確な日付時刻を指定する必要はありません。例えば、最小値は`1994`のような年号だけでよい。デフォルトは、今日から100年前の年頭です。",
+          "docs": "The minimum datetime allowed. Value must be a date string\nfollowing the\n[ISO 8601 datetime format standard](https://www.w3.org/TR/NOTE-datetime),\nsuch as `1996-12-19`. The format does not have to be specific to an exact\ndatetime. For example, the minimum could just be the year, such as `1994`.\nDefaults to the beginning of the year, 100 years ago from today.\n\n自動翻訳: 許容される最小のdatetime。値は [ISO 8601 datetime format standard](https://www.w3.org/TR/NOTE-datetime) に従った日付文字列でなければならず、例えば `1996-12-19` のようなものです。このフォーマットは、正確な日付時刻を指定する必要はありません。例えば、最小値は`1994`のような年号だけでいいです。デフォルトは、今日から100年前の年頭です。",
           "docsTags": [],
           "values": [
             {
@@ -6583,7 +6583,7 @@
         {
           "name": "--close-icon-font-size",
           "annotation": "prop",
-          "docs": "Font size of the close icon\n\n自動翻訳: クローズアイコンのフォントサイズ"
+          "docs": "Font size of the close icon\n\n自動翻訳: クローズアイコンのFont Size"
         },
         {
           "name": "--color",
@@ -6613,12 +6613,12 @@
         {
           "name": "--padding-end",
           "annotation": "prop",
-          "docs": "Right padding if direction is left-to-right, and left padding if direction is right-to-left of the button\n\n自動翻訳: ボタンの向きが左から右の場合はRight Padding、右から左の場合はLeft Paddingとなる"
+          "docs": "Right padding if direction is left-to-right, and left padding if direction is right-to-left of the button\n\n自動翻訳: ボタンの向きが左から右の場合はRight Padding、右から左の場合はLeft Paddingとなります。"
         },
         {
           "name": "--padding-start",
           "annotation": "prop",
-          "docs": "Left padding if direction is left-to-right, and right padding if direction is right-to-left of the button\n\n自動翻訳: ボタンの向きが左から右の場合はLeft Padding、右から左の場合はRight Paddingとなる"
+          "docs": "Left padding if direction is left-to-right, and right padding if direction is right-to-left of the button\n\n自動翻訳: ボタンの向きが左から右の場合はLeft Padding、右から左の場合はRight Paddingとなります。"
         },
         {
           "name": "--padding-top",
@@ -7275,7 +7275,7 @@
           "mutable": false,
           "attr": "loading-text",
           "reflectToAttr": false,
-          "docs": "Optional text to display while loading.\n`loadingText` can accept either plaintext or HTML as a string.\nTo display characters normally reserved for HTML, they\nmust be escaped. For example `<Ionic>` would become\n`&lt;Ionic&gt;`\n\nFor more information: [Security Documentation](https://ionicframework.com/docs/faq/security)\n\n自動翻訳: ロード中に表示するオプションのテキスト。 `loadingText` には、文字列としてプレーンテキストまたはHTMLのいずれかを指定することができます。通常HTML用に予約されている文字を表示するには、エスケープする必要があります。例えば、`<Ionic>`は `&lt;Ionic&gt;` となります。詳細はこちら。[セキュリティ・ドキュメンテーション](https://ionicframework.com/docs/faq/security)",
+          "docs": "Optional text to display while loading.\n`loadingText` can accept either plaintext or HTML as a string.\nTo display characters normally reserved for HTML, they\nmust be escaped. For example `<Ionic>` would become\n`&lt;Ionic&gt;`\n\nFor more information: [Security Documentation](https://ionicframework.com/docs/faq/security)\n\n自動翻訳: ロード中に表示するオプションのテキスト。 `loadingText` には、文字列としてプレーンテキストまたはHTMLのいずれかを指定することができます。通常HTML用に予約されている文字を表示するには、エスケープする必要があります。例えば、`<Ionic>`は `&lt;Ionic&gt;` となります。詳細は [セキュリティ・ドキュメンテーション](https://ionicframework.com/docs/faq/security) をご覧ください。",
           "docsTags": [],
           "values": [
             {
@@ -8309,7 +8309,7 @@
           },
           "signature": "getInputElement() => Promise<HTMLInputElement>",
           "parameters": [],
-          "docs": "Returns the native `<input>` element used under the hood.\n\n自動翻訳: フードの下で使用されているネイティブの `<input>` 要素を返します。",
+          "docs": "Returns the native `<input>` element used under the hood.\n\n自動翻訳: 要素の内部で使用されているネイティブの `<input>` 要素を返します。",
           "docsTags": []
         },
         {
@@ -8382,12 +8382,12 @@
         {
           "name": "--padding-end",
           "annotation": "prop",
-          "docs": "Right padding if direction is left-to-right, and left padding if direction is right-to-left of the input\n\n自動翻訳: 入力の方向が左から右の場合はRight Padding、右から左の場合はLeft Paddingとなる"
+          "docs": "Right padding if direction is left-to-right, and left padding if direction is right-to-left of the input\n\n自動翻訳: 入力の方向が左から右の場合はRight Padding、右から左の場合はLeft Paddingとなります。"
         },
         {
           "name": "--padding-start",
           "annotation": "prop",
-          "docs": "Left padding if direction is left-to-right, and right padding if direction is right-to-left of the input\n\n自動翻訳: 入力の方向が左から右の場合はLeft Padding、右から左の場合はRight Paddingとなる"
+          "docs": "Left padding if direction is left-to-right, and right padding if direction is right-to-left of the input\n\n自動翻訳: 入力の方向が左から右の場合はLeft Padding、右から左の場合はRight Paddingとなります。"
         },
         {
           "name": "--padding-top",
@@ -8397,22 +8397,22 @@
         {
           "name": "--placeholder-color",
           "annotation": "prop",
-          "docs": "Color of the input placeholder text\n\n自動翻訳: Inputのplaceholderのテキストの色"
+          "docs": "Color of the input placeholder text\n\n自動翻訳: InputのPlaceholderテキストの色"
         },
         {
           "name": "--placeholder-font-style",
           "annotation": "prop",
-          "docs": "Font style of the input placeholder text\n\n自動翻訳: Inputのplaceholderのテキストのフォントスタイル"
+          "docs": "Font style of the input placeholder text\n\n自動翻訳: InputのPlaceholderテキストのFont Style"
         },
         {
           "name": "--placeholder-font-weight",
           "annotation": "prop",
-          "docs": "Font weight of the input placeholder text\n\n自動翻訳: Inputのplaceholderのテキストのフォントウェイト"
+          "docs": "Font weight of the input placeholder text\n\n自動翻訳: InputのPlaceholderテキストのFont Weight"
         },
         {
           "name": "--placeholder-opacity",
           "annotation": "prop",
-          "docs": "Opacity of the input placeholder text\n\n自動翻訳: Inputのプレースホルダーテキストの不透明度"
+          "docs": "Opacity of the input placeholder text\n\n自動翻訳: InputのPlaceholderテキストの不透明度"
         }
       ],
       "slots": [],
@@ -8593,7 +8593,7 @@
         {
           "name": "--padding-start",
           "annotation": "prop",
-          "docs": "Left padding if direction is left-to-right, and right padding if direction is right-to-left of the item divider\n\n自動翻訳: アイテムディバイダーの方向が左から右の場合はLeft Padding、右から左の場合はRight Paddingとなる"
+          "docs": "Left padding if direction is left-to-right, and right padding if direction is right-to-left of the item divider\n\n自動翻訳: アイテムディバイダーの方向が左から右の場合はLeft Padding、右から左の場合はRight Paddingとなります。"
         },
         {
           "name": "--padding-top",
@@ -9068,7 +9068,7 @@
           },
           "signature": "getSlidingRatio() => Promise<number>",
           "parameters": [],
-          "docs": "Get the ratio of the open amount of the item compared to the width of the options.\nIf the number returned is positive, then the options on the right side are open.\nIf the number returned is negative, then the options on the left side are open.\nIf the absolute value of the number is greater than 1, the item is open more than\nthe width of the options.\n\n自動翻訳: オプションの幅と比較した、アイテムのオープン量の比率を取得します。返された数値が正の場合、右側のオプションが開いていることになります。返された数値が負の場合、左側のオプションが開いている。数値の絶対値が1より大きい場合、その項目は選択肢の幅より多く開いていることになります。",
+          "docs": "Get the ratio of the open amount of the item compared to the width of the options.\nIf the number returned is positive, then the options on the right side are open.\nIf the number returned is negative, then the options on the left side are open.\nIf the absolute value of the number is greater than 1, the item is open more than\nthe width of the options.\n\n自動翻訳: オプションの幅と比較した、アイテムのオープン量の比率を取得します。返された数値が正の場合、右側のオプションが開いていることになります。返された数値が負の場合、左側のオプションが開いています。数値の絶対値が1より大きい場合、その項目は選択肢の幅より多く開いていることになります。",
           "docsTags": []
         },
         {
@@ -9242,7 +9242,7 @@
           "type": "((inputLength: number, maxLength: number) => string) | undefined",
           "mutable": false,
           "reflectToAttr": false,
-          "docs": "A callback used to format the counter text.\nBy default the counter text is set to \"itemLength / maxLength\".\n\n自動翻訳: カウンターのテキストをフォーマットするために使用されるコールバックです。デフォルトでは、カウンターのテキストは「itemLength / maxLength」に設定されています。",
+          "docs": "A callback used to format the counter text.\nBy default the counter text is set to \"itemLength / maxLength\".\n\n自動翻訳: カウンターのテキストをフォーマットするために使用されるコールバックです。デフォルトでは、カウンターのテキストは\"itemLength / maxLength\"に設定されています。",
           "docsTags": [],
           "values": [
             {
@@ -9280,7 +9280,7 @@
           "mutable": false,
           "attr": "detail-icon",
           "reflectToAttr": false,
-          "docs": "The icon to use when `detail` is set to `true`.\n\n自動翻訳: detail` が `true` に設定されているときに使用するアイコンです。",
+          "docs": "The icon to use when `detail` is set to `true`.\n\n自動翻訳: `detail` が `true` に設定されているときに使用するアイコンです。",
           "docsTags": [],
           "default": "chevronForward",
           "values": [
@@ -9651,7 +9651,7 @@
         {
           "name": "--detail-icon-font-size",
           "annotation": "prop",
-          "docs": "Font size of the item detail icon\n\n自動翻訳: アイテム詳細アイコンのフォントサイズ"
+          "docs": "Font size of the item detail icon\n\n自動翻訳: アイテム詳細アイコンのFont Size"
         },
         {
           "name": "--detail-icon-opacity",
@@ -9696,7 +9696,7 @@
         {
           "name": "--inner-padding-end",
           "annotation": "prop",
-          "docs": "Right padding if direction is left-to-right, and left padding if direction is right-to-left of the item inner\n\n自動翻訳: 方向が左から右の場合はRight Padding、方向がアイテムの内側の右から左の場合はLeft Paddingとなる"
+          "docs": "Right padding if direction is left-to-right, and left padding if direction is right-to-left of the item inner\n\n自動翻訳: 方向が左から右の場合はRight Padding、方向がアイテムの内側の右から左の場合はLeft Paddingとなります。"
         },
         {
           "name": "--inner-padding-start",
@@ -10908,12 +10908,12 @@
         {
           "name": "--padding-end",
           "annotation": "prop",
-          "docs": "Right padding if direction is left-to-right, and left padding if direction is right-to-left of the button\n\n自動翻訳: ボタンの向きが左から右の場合はRight Padding、右から左の場合はLeft Paddingとなる"
+          "docs": "Right padding if direction is left-to-right, and left padding if direction is right-to-left of the button\n\n自動翻訳: ボタンの向きが左から右の場合はRight Padding、右から左の場合はLeft Paddingとなります。"
         },
         {
           "name": "--padding-start",
           "annotation": "prop",
-          "docs": "Left padding if direction is left-to-right, and right padding if direction is right-to-left of the button\n\n自動翻訳: ボタンの向きが左から右の場合はLeft Padding、右から左の場合はRight Paddingとなる"
+          "docs": "Left padding if direction is left-to-right, and right padding if direction is right-to-left of the button\n\n自動翻訳: ボタンの向きが左から右の場合はLeft Padding、右から左の場合はRight Paddingとなります。"
         },
         {
           "name": "--padding-top",
@@ -11456,7 +11456,7 @@
           "mutable": false,
           "attr": "can-dismiss",
           "reflectToAttr": false,
-          "docs": "Determines whether or not a modal can dismiss\nwhen calling the `dismiss` method.\n\nIf the value is `true` or the value's function returns `true`, the modal will close when trying to dismiss.\nIf the value is `false` or the value's function returns `false`, the modal will not close when trying to dismiss.\n\n自動翻訳: モーダルが `dismiss` メソッドを呼び出したときに、退出できるかどうかを決定します。  値が `true` または値の関数が `true` を返す場合、モーダルは終了しようとするときに閉じます。値が `false` または値の関数が `false` を返す場合、モーダルは終了しようとしたときに閉じません。",
+          "docs": "Determines whether or not a modal can dismiss\nwhen calling the `dismiss` method.\n\nIf the value is `true` or the value's function returns `true`, the modal will close when trying to dismiss.\nIf the value is `false` or the value's function returns `false`, the modal will not close when trying to dismiss.\n\n自動翻訳: モーダルが `dismiss` メソッドを呼び出したときに、終了できるかどうかを決定します。  値が `true` または値の関数が `true` を返す場合、モーダルは終了しようとするときに閉じます。値が `false` または値の関数が `false` を返す場合、モーダルは終了しようとしたときに閉じません。",
           "docsTags": [],
           "values": [
             {
@@ -11499,7 +11499,7 @@
           "mutable": false,
           "attr": "handle",
           "reflectToAttr": false,
-          "docs": "The horizontal line that displays at the top of a sheet modal. It is `true` by default when\nsetting the `breakpoints` and `initialBreakpoint` properties.\n\n自動翻訳: シートモーダルの上部に表示される水平線です。breakpoints`と`initialBreakpoint`プロパティを設定すると、デフォルトで`true`になります。",
+          "docs": "The horizontal line that displays at the top of a sheet modal. It is `true` by default when\nsetting the `breakpoints` and `initialBreakpoint` properties.\n\n自動翻訳: シートモーダルの上部に表示される水平線です。 `breakpoints`と`initialBreakpoint`プロパティを設定すると、デフォルトで`true`になります。",
           "docsTags": [],
           "values": [
             {
@@ -11669,7 +11669,7 @@
           "type": "HTMLElement | undefined",
           "mutable": false,
           "reflectToAttr": false,
-          "docs": "The element that presented the modal. This is used for card presentation effects\nand for stacking multiple modals on top of each other. Only applies in iOS mode.\n\n自動翻訳: モーダルを提示した要素です。カード提示効果や、複数のモーダルを重ねる場合に使用します。iOSmodeでのみ適用されます。",
+          "docs": "The element that presented the modal. This is used for card presentation effects\nand for stacking multiple modals on top of each other. Only applies in iOS mode.\n\n自動翻訳: モーダルを提示した要素です。カード提示効果や、複数のモーダルを重ねる場合に使用します。iOS modeでのみ適用されます。",
           "docsTags": [],
           "values": [
             {
@@ -12009,7 +12009,7 @@
           "mutable": false,
           "attr": "component",
           "reflectToAttr": false,
-          "docs": "Component to navigate to. Only used if the `routerDirection` is `\"forward\"` or `\"root\"`.\n\n自動翻訳: ナビゲート先のコンポーネント。routerDirection`が `\"forward\"` または `\"root\"` である場合にのみ使用します。",
+          "docs": "Component to navigate to. Only used if the `routerDirection` is `\"forward\"` or `\"root\"`.\n\n自動翻訳: ナビゲート先のコンポーネント。 `routerDirection`が `\"forward\"` または `\"root\"` である場合にのみ使用します。",
           "docsTags": [],
           "values": [
             {
@@ -13185,7 +13185,7 @@
           "mutable": false,
           "attr": "component",
           "reflectToAttr": false,
-          "docs": "The component to display inside of the popover.\nYou only need to use this if you are not using\na JavaScript framework. Otherwise, you can just\nslot your component inside of `ion-popover`.\n\n自動翻訳: ポップオーバーの内側に表示するコンポーネントです。これを使う必要があるのは、JavaScriptフレームワークを使用していない場合だけです。そうでない場合は、`ion-popover`の中にコンポーネントを入れるだけでよい。",
+          "docs": "The component to display inside of the popover.\nYou only need to use this if you are not using\na JavaScript framework. Otherwise, you can just\nslot your component inside of `ion-popover`.\n\n自動翻訳: ポップオーバーの内側に表示するコンポーネントです。これを使う必要があるのは、JavaScriptフレームワークを使用していない場合だけです。そうでない場合は、`ion-popover`の中にコンポーネントを入れるだけでいいです。",
           "docsTags": [],
           "values": [
             {
@@ -14219,7 +14219,7 @@
           "mutable": false,
           "attr": "value",
           "reflectToAttr": false,
-          "docs": "the value of the radio.\n\n自動翻訳: は、無線機の値です。",
+          "docs": "the value of the radio.\n\n自動翻訳: ラジオの値です。",
           "docsTags": [],
           "values": [
             {
@@ -14256,7 +14256,7 @@
         {
           "name": "--border-radius",
           "annotation": "prop",
-          "docs": "Border radius of the radio\n\n自動翻訳: 無線機のボーダー半径"
+          "docs": "Border radius of the radio\n\n自動翻訳: ラジオのボーダー半径"
         },
         {
           "name": "--color",
@@ -15359,7 +15359,7 @@
           "mutable": false,
           "attr": "from",
           "reflectToAttr": false,
-          "docs": "A redirect route, redirects \"from\" a URL \"to\" another URL. This property is that \"from\" URL.\nIt needs to be an exact match of the navigated URL in order to apply.\n\nThe path specified in this value is always an absolute path, even if the initial `/` slash\nis not specified.\n\n自動翻訳: リダイレクトルートは、あるURLから別のURLへリダイレクトさせるルートです。このプロパティは、その「from」URLです。このプロパティを適用するには、ナビゲートされるURLと完全に一致する必要があります。  この値で指定されるパスは、最初の `/` スラッシュが指定されていない場合でも、常に絶対パスとなります。",
+          "docs": "A redirect route, redirects \"from\" a URL \"to\" another URL. This property is that \"from\" URL.\nIt needs to be an exact match of the navigated URL in order to apply.\n\nThe path specified in this value is always an absolute path, even if the initial `/` slash\nis not specified.\n\n自動翻訳: リダイレクトルートは、あるURLから別のURLへリダイレクトさせるルートです。このプロパティは、その \"from\" URLです。このプロパティを適用するには、ナビゲートされるURLと完全に一致する必要があります。  この値で指定されるパスは、最初の `/` スラッシュが指定されていない場合でも、常に絶対パスとなります。",
           "docsTags": [],
           "values": [
             {
@@ -15827,7 +15827,7 @@
           "mutable": false,
           "attr": "use-hash",
           "reflectToAttr": false,
-          "docs": "The router can work in two \"modes\":\n- With hash: `/index.html#/path/to/page`\n- Without hash: `/path/to/page`\n\nUsing one or another might depend in the requirements of your app and/or where it's deployed.\n\nUsually \"hash-less\" navigation works better for SEO and it's more user friendly too, but it might\nrequires additional server-side configuration in order to properly work.\n\nOn the other side hash-navigation is much easier to deploy, it even works over the file protocol.\n\nBy default, this property is `true`, change to `false` to allow hash-less URLs.\n\n自動翻訳: ルーターは2つの \"モード \"で動作します。- ハッシュを使用します。ハッシュあり： `/index.html#/path/to/page` - ハッシュなし。ハッシュなし： `/path/to/page` - ハッシュあり： `/index.html#/path/to/page` どちらを使うかは、アプリの要件や配置される場所によって異なるかもしれません。  通常、「ハッシュなし」ナビゲーションはSEOに有利で、よりユーザーフレンドリーですが、適切に動作させるためにサーバー側の追加設定が必要な場合があります。  一方、ハッシュ・ナビゲーションは、ファイル・プロトコルで動作するため、導入が非常に簡単です。  デフォルトでは、このプロパティは `true` です。ハッシュのない URL を許可するには `false` に変更します。",
+          "docs": "The router can work in two \"modes\":\n- With hash: `/index.html#/path/to/page`\n- Without hash: `/path/to/page`\n\nUsing one or another might depend in the requirements of your app and/or where it's deployed.\n\nUsually \"hash-less\" navigation works better for SEO and it's more user friendly too, but it might\nrequires additional server-side configuration in order to properly work.\n\nOn the other side hash-navigation is much easier to deploy, it even works over the file protocol.\n\nBy default, this property is `true`, change to `false` to allow hash-less URLs.\n\n自動翻訳: ルーターは2つの \"モード \"で動作します。- ハッシュを使用します。ハッシュあり： `/index.html#/path/to/page` - ハッシュなし。ハッシュなし： `/path/to/page` - ハッシュあり： `/index.html#/path/to/page` どちらを使うかは、アプリの要件や配置される場所によって異なるかもしれません。  通常、\"ハッシュなし\"ナビゲーションはSEOに有利で、よりユーザーフレンドリーですが、適切に動作させるためにサーバー側の追加設定が必要な場合があります。  一方、ハッシュ・ナビゲーションは、ファイル・プロトコルで動作するため、導入が非常に簡単です。  デフォルトでは、このプロパティは `true` です。ハッシュのない URL を許可するには `false` に変更します。",
           "docsTags": [],
           "default": "true",
           "values": [
@@ -15879,7 +15879,7 @@
           "bubbles": true,
           "cancelable": true,
           "composed": true,
-          "docs": "Emitted when the route had changed\n\n自動翻訳: ルートが変更されたときに発する",
+          "docs": "Emitted when the route had changed\n\n自動翻訳: ルートが変更されたときに発します。",
           "docsTags": []
         },
         {
@@ -16474,7 +16474,7 @@
           "mutable": false,
           "attr": "placeholder",
           "reflectToAttr": false,
-          "docs": "Set the input's placeholder.\n`placeholder` can accept either plaintext or HTML as a string.\nTo display characters normally reserved for HTML, they\nmust be escaped. For example `<Ionic>` would become\n`&lt;Ionic&gt;`\n\nFor more information: [Security Documentation](https://ionicframework.com/docs/faq/security)\n\n自動翻訳: Inputのplaceholderを設定します。 `placeholder` には、文字列としてプレーンテキストまたはHTMLのいずれかを指定することができます。通常HTML用に予約されている文字を表示するには、エスケープする必要があります。例えば `<Ionic>` は `&lt;Ionic&gt;` になります。詳細はこちら。[セキュリティ・ドキュメンテーション](https://ionicframework.com/docs/faq/security)",
+          "docs": "Set the input's placeholder.\n`placeholder` can accept either plaintext or HTML as a string.\nTo display characters normally reserved for HTML, they\nmust be escaped. For example `<Ionic>` would become\n`&lt;Ionic&gt;`\n\nFor more information: [Security Documentation](https://ionicframework.com/docs/faq/security)\n\n自動翻訳: Inputのplaceholderを設定します。 `placeholder` には、文字列としてプレーンテキストまたはHTMLのいずれかを指定することができます。通常HTML用に予約されている文字を表示するには、エスケープする必要があります。例えば `<Ionic>` は `&lt;Ionic&gt;` になります。詳細は [セキュリティ・ドキュメンテーション](https://ionicframework.com/docs/faq/security) をご覧ください。",
           "docsTags": [],
           "default": "'Search'",
           "values": [
@@ -16648,7 +16648,7 @@
           },
           "signature": "getInputElement() => Promise<HTMLInputElement>",
           "parameters": [],
-          "docs": "Returns the native `<input>` element used under the hood.\n\n自動翻訳: フードの下で使用されているネイティブの `<input>` 要素を返します。",
+          "docs": "Returns the native `<input>` element used under the hood.\n\n自動翻訳: 要素の内部で使用されているネイティブの `<input>` 要素を返します。",
           "docsTags": []
         },
         {
@@ -16759,22 +16759,22 @@
         {
           "name": "--placeholder-color",
           "annotation": "prop",
-          "docs": "Color of the searchbar placeholder\n\n自動翻訳: 検索バーのプレースホルダーの色"
+          "docs": "Color of the searchbar placeholder\n\n自動翻訳: 検索バーのPlaceholderの色"
         },
         {
           "name": "--placeholder-font-style",
           "annotation": "prop",
-          "docs": "Font style of the searchbar placeholder\n\n自動翻訳: 検索バーのプレースホルダーのフォントスタイル"
+          "docs": "Font style of the searchbar placeholder\n\n自動翻訳: 検索バーのPlaceholderのFont Style"
         },
         {
           "name": "--placeholder-font-weight",
           "annotation": "prop",
-          "docs": "Font weight of the searchbar placeholder\n\n自動翻訳: 検索バーのプレースホルダーのフォントの太さ"
+          "docs": "Font weight of the searchbar placeholder\n\n自動翻訳: 検索バーのPlaceholderのFont Weight"
         },
         {
           "name": "--placeholder-opacity",
           "annotation": "prop",
-          "docs": "Opacity of the searchbar placeholder\n\n自動翻訳: 検索バーのプレースホルダーの不透明度"
+          "docs": "Opacity of the searchbar placeholder\n\n自動翻訳: 検索バーのPlaceholderの不透明度"
         }
       ],
       "slots": [],
@@ -17718,12 +17718,12 @@
         {
           "name": "--placeholder-color",
           "annotation": "prop",
-          "docs": "Color of the select placeholder text\n\n自動翻訳: セレクトプレースホルダーテキストの色"
+          "docs": "Color of the select placeholder text\n\n自動翻訳: セレクトPlaceholderテキストの色"
         },
         {
           "name": "--placeholder-opacity",
           "annotation": "prop",
-          "docs": "Opacity of the select placeholder text\n\n自動翻訳: 選択プレースホルダーテキストの不透明度"
+          "docs": "Opacity of the select placeholder text\n\n自動翻訳: 選択Placeholderテキストの不透明度"
         }
       ],
       "slots": [],
@@ -19050,12 +19050,12 @@
         {
           "name": "--padding-end",
           "annotation": "prop",
-          "docs": "Right padding if direction is left-to-right, and left padding if direction is right-to-left of the tab button\n\n自動翻訳: タブボタンの向きが左から右の場合はRight Padding、右から左の場合はLeft Paddingとなる"
+          "docs": "Right padding if direction is left-to-right, and left padding if direction is right-to-left of the tab button\n\n自動翻訳: タブボタンの向きが左から右の場合はRight Padding、右から左の場合はLeft Paddingとなります。"
         },
         {
           "name": "--padding-start",
           "annotation": "prop",
-          "docs": "Left padding if direction is left-to-right, and right padding if direction is right-to-left of the tab button\n\n自動翻訳: タブボタンの向きが左から右の場合はLeft Padding、右から左の場合はRight Paddingとなる"
+          "docs": "Left padding if direction is left-to-right, and right padding if direction is right-to-left of the tab button\n\n自動翻訳: タブボタンの向きが左から右の場合はLeft Padding、右から左の場合はRight Paddingとなります。"
         },
         {
           "name": "--padding-top",
@@ -19147,7 +19147,7 @@
           },
           "signature": "setActive() => Promise<void>",
           "parameters": [],
-          "docs": "Set the active component for the tab\n\n自動翻訳: タブのアクティブコンポーネントを設定する",
+          "docs": "Set the active component for the tab\n\n自動翻訳: タブのアクティブコンポーネントを設定します。",
           "docsTags": []
         }
       ],
@@ -19874,7 +19874,7 @@
           },
           "signature": "getInputElement() => Promise<HTMLTextAreaElement>",
           "parameters": [],
-          "docs": "Returns the native `<textarea>` element used under the hood.\n\n自動翻訳: フードの下で使用されるネイティブの `<textarea>` 要素を返します。",
+          "docs": "Returns the native `<textarea>` element used under the hood.\n\n自動翻訳: 要素の内部で使用されるネイティブの `<textarea>` 要素を返します。",
           "docsTags": []
         },
         {
@@ -19967,22 +19967,22 @@
         {
           "name": "--placeholder-color",
           "annotation": "prop",
-          "docs": "Color of the placeholder text\n\n自動翻訳: プレースホルダーテキストの色"
+          "docs": "Color of the placeholder text\n\n自動翻訳: Placeholderテキストの色"
         },
         {
           "name": "--placeholder-font-style",
           "annotation": "prop",
-          "docs": "Style of the placeholder text\n\n自動翻訳: プレースホルダーテキストのスタイル"
+          "docs": "Style of the placeholder text\n\n自動翻訳: Placeholderテキストのスタイル"
         },
         {
           "name": "--placeholder-font-weight",
           "annotation": "prop",
-          "docs": "Weight of the placeholder text\n\n自動翻訳: プレースホルダーテキストの重さ"
+          "docs": "Weight of the placeholder text\n\n自動翻訳: Placeholderテキストの重さ"
         },
         {
           "name": "--placeholder-opacity",
           "annotation": "prop",
-          "docs": "Opacity of the placeholder text\n\n自動翻訳: プレースホルダーテキストの不透明度"
+          "docs": "Opacity of the placeholder text\n\n自動翻訳: Placeholderテキストの不透明度"
         }
       ],
       "slots": [],
