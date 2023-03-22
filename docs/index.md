@@ -58,7 +58,7 @@ Ionic FrameworkはオープンソースのUIツールキットで、HTML、CSS�
 
 ## 概要
 
-Ionicは、アプリのフロントエンドのUXとUIインタラクション（UIコントロール、インタラクション、ジェスチャー、アニメーション）に重点を置いています。学習が容易で、 [Angular](angular/overview.md) 、 [React](react.md) 、 [Vue](vue/overview.md) などのライブラリやフレームワークに統合することが可能です。また、シンプルな [script include](intro/cdn.md) を使って、フロントエンドフレームワークなしでスタンドアロンで使用することも可能です。If you’d like to learn more about Ionic before diving in, we <a href="https://youtu.be/p3AN3igqiRc" target="_blank">created a video</a> to walk you through the basics.
+Ionicは、アプリのフロントエンドのUXとUIインタラクション（UIコントロール、インタラクション、ジェスチャー、アニメーション）に重点を置いています。学習が容易で、 [Angular](angular/overview.md) 、 [React](react.md) 、 [Vue](vue/overview.md) などのライブラリやフレームワークに統合することが可能です。また、シンプルな [script include](intro/cdn.md) を使って、フロントエンドフレームワークなしでスタンドアロンで使用することも可能です。Ionicについてもっと知りたい方向けに、<a href="https://youtu.be/p3AN3igqiRc" target="_blank">私たちはビデオを作成しました</a>。ここから、基本的な使い方を学ぶことができます。
 
 ### どこでもひとつのコードで
 
