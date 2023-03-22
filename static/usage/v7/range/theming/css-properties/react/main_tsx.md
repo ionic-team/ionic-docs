@@ -5,7 +5,7 @@ import { IonRange } from '@ionic/react';
 import './main.css';
 
 function Example() {
-  return <IonRange value={50} pin={true}></IonRange>;
+  return <IonRange aria-label="Custom range" value={50} pin={true}></IonRange>;
 }
 export default Example;
 ```

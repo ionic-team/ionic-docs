@@ -1,5 +1,11 @@
 ```html
-<ion-button (click)="presentAlert()">Click Me</ion-button>
+<ion-button id="present-alert">Click Me</ion-button>
+<ion-alert
+  trigger="present-alert"
+  header="Alert!"
+  [buttons]="alertButtons"
+  (didDismiss)="setResult($event)"
+></ion-alert>
 <p>{{ handlerMessage }}</p>
 <p>{{ roleMessage }}</p>
 ```

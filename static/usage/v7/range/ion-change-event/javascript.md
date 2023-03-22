@@ -1,5 +1,5 @@
 ```html
-<ion-range></ion-range>
+<ion-range aria-label="Range with ionChange"></ion-range>
 <ion-label>ionChange emitted value: <span id="lastValue"></span></ion-label>
 
 <script>

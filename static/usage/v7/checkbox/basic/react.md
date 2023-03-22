@@ -1,17 +1,10 @@
 ```tsx
 import React from 'react';
-import {
-  IonCheckbox,
-  IonItem,
-  IonLabel
-} from '@ionic/react';
+import { IonCheckbox } from '@ionic/react';
 
 function Example() {
   return (
-    <IonItem>
-      <IonCheckbox slot="start"></IonCheckbox>
-      <IonLabel>I agree to the terms and conditions</IonLabel>
-    </IonItem>
+    <IonCheckbox>I agree to the terms and conditions</IonCheckbox>
   );
 }
 export default Example;

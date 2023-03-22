@@ -54,9 +54,9 @@ By adding the `multiple` attribute to select, users are able to select multiple 
 
 Note: the `action-sheet` and `popover` interfaces will not work with multiple selection.
 
-import MulipleSelectionExample from '@site/static/usage/v7/select/basic/multiple-selection/index.md';
+import MultipleSelectionExample from '@site/static/usage/v7/select/basic/multiple-selection/index.md';
 
-<MulipleSelectionExample />
+<MultipleSelectionExample />
 
 ## Responding to Interaction
 
@@ -85,14 +85,13 @@ import ObjectValuesAndMultipleSelectionExample from '@site/static/usage/v7/selec
 <ObjectValuesAndMultipleSelectionExample />
   
 
-## Label Positioning
+## Label Placement
 
-Labels will take up the width of their content by default. This positioning can be changed to be a fixed width, stacked, or floating label.
+Labels will take up the width of their content by default. Developers can use the `labelPlacement` property to control how the label is placed relative to the control.
 
-import LabelExample from '@site/static/usage/v7/select/labels/index.md';
+import LabelPlacement from '@site/static/usage/v7/select/label-placement/index.md';
 
-<LabelExample />
-  
+<LabelPlacement />
 
 ## Justification
   
@@ -158,6 +157,14 @@ Customizing the interface dialog should be done by following the Customization s
 
 However, the Select Option does set a class for easier styling and allows for the ability to pass a class to the overlay option, see the [Select Options documentation](select-option.md) for usage examples of customizing options.
 
+## Typeahead Component
+
+Typeahead or autocomplete functionality can be built using existing Ionic components. We recommend using an `ion-modal` to make the best use of the available screen space.
+
+import TypeaheadExample from '@site/static/usage/v7/select/typeahead/index.md';
+
+<TypeaheadExample />
+
 ## Interfaces
 
 ### SelectChangeEventDetail
@@ -183,7 +190,7 @@ interface SelectCustomEvent<T = any> extends CustomEvent {
 
 A simpler select syntax was introduced in Ionic 7.0. This new syntax reduces the boilerplate required to setup an select, resolves accessibility issues, and improves the developer experience.
 
-While developers can continue using the legacy syntax, we recommend migrating as soon as possible.
+Developers can perform this migration one select at a time. While developers can continue using the legacy syntax, we recommend migrating as soon as possible.
 
 
 ### Using the Modern Syntax

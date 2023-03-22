@@ -1,5 +1,5 @@
 ---
-title: Slides
+title: Migrating From IonSlides to Swiper.js
 ---
 
 <head>
@@ -10,13 +10,15 @@ title: Slides
   />
 </head>
 
-:::caution Looking for `IonSlides`?
+We recommend <a href="http://swiperjs.com/" target="_blank" rel="noopener noreferrer">Swiper.js</a> if you need a modern touch slider component. It powers our `IonSlides` component, but we now recommend that developers use Swiper for React directly.
 
-`IonSlides` was deprecated in v6.0.0 and removed in v7.0.0. We recommend using the Swiper.js library directly. The migration process is detailed below.
+This guide will go over how to get Swiper for React set up in your Ionic Framework application. It will also go over any migration information you may need to move from `IonSlides` to the official Swiper React integration.
 
+:::note
+Swiper's React component is set to be removed in a future release of Swiper, with <a href="https://swiperjs.com/element" target="_blank" rel="noopener noreferrer">Swiper Element</a> as the replacement. However, this guide shows how to migrate to the React component because it provides the most stable experience at the time of writing. Notably, React does not have strong support for Web Components yet.
+
+Using Swiper's React component is **not** required to use Swiper.js with Ionic Framework.
 :::
-
-We recommend <a href="http://swiperjs.com/" target="_blank" rel="noopener noreferrer">Swiper.js</a> if you need a modern touch slider component. This guide will go over how to get Swiper for React set up in your Ionic Framework application. It will also go over any migration information you may need to move from `IonSlides` to the official Swiper React integration.
 
 ## Getting Started
 
@@ -29,7 +31,7 @@ npm install @ionic/react@latest @ionic/react-router@latest
 Once that is done, install the Swiper dependency in your project:
 
 ```shell
-npm install swiper
+npm install swiper@latest
 ```
 
 :::note
@@ -38,7 +40,7 @@ Create React App does not support pure ESM packages yet. Developers can still us
 
 ## Swiping with Style
 
-Next, we need to import the base Swiper styles. We are also going to import the styles that Ionic provides which will let us customize the Swiper styles using the same CSS Variables that we used with `ion-slides`.
+Next, we need to import the base Swiper styles. We are also going to import the styles that Ionic provides which will let us customize the Swiper styles using the same CSS Variables that we used with `IonSlides`.
 
 We recommend importing the styles in the component in which Swiper is being used. This ensures that the styles are only loaded when needed:
 
@@ -59,9 +61,11 @@ export default Home;
 ```
 
 :::note
+Importing `@ionic/react/css/ionic-swiper.css` is **not** required to use Swiper.js with Ionic. This files is used for backward-compatibility with the `IonSlides` component and can be safely omitted if you prefer not to use the CSS Variables provided in the stylesheet.
+:::
 
+:::note
 Not using Create React App? You can import the Swiper CSS from `swiper/css` instead.
-
 :::
 
 ### Updating Selectors
@@ -144,16 +148,14 @@ export default Home;
 ```
 
 :::note
-
 Not using Create React App? You can import the Swiper components from `swiper/react` instead.
-
 :::
 
 ## Using Modules
 
 By default, Swiper for React does not import any additional modules. To use modules such as Navigation or Pagination, you need to import them first.
 
-`ion-slides` automatically included the Pagination, Scrollbar, Autoplay, Keyboard, and Zoom modules. This part of the guide will show you how to install these modules.
+`IonSlides` automatically included the Pagination, Scrollbar, Autoplay, Keyboard, and Zoom modules. This part of the guide will show you how to install these modules.
 
 To begin, we need to import the modules and their corresponding CSS files from the `swiper` package:
 
@@ -188,9 +190,7 @@ export default Home;
 ```
 
 :::note
-
 Not using Create React App? You can import these modules from `swiper/css/[MODULE NAME]` instead (i.e. `swiper/css/autoplay`).
-
 :::
 
 From here, we need to provide these modules to Swiper by using the `modules` property on the `Swiper` component:
@@ -270,7 +270,7 @@ See <a href="https://swiperjs.com/react#usage" target="_blank" rel="noopener nor
 
 ## The IonicSlides Module
 
-With `ion-slides`, Ionic automatically customized dozens of Swiper properties. This resulted in an experience that felt smooth when swiping on mobile devices. We recommend using the `IonicSlides` module to ensure that these properties are also set when using Swiper directly.
+With `IonSlides`, Ionic automatically customized dozens of Swiper properties. This resulted in an experience that felt smooth when swiping on mobile devices. We recommend using the `IonicSlides` module to ensure that these properties are also set when using Swiper directly. However, using this module is **not** required to use Swiper.js in Ionic.
 
 We can install the `IonicSlides` module by importing it from `@ionic/react` and passing it in as the last item in the `modules` array:
 
@@ -419,7 +419,7 @@ Below is a full list of event name changes when going from `IonSlides` to Swiper
 | onIonSlidesDidLoad        | onInit                       |
 
 :::note
-All events available in Swiper React can be found at <a href="https://swiperjs.com/react#swiper-events" target="_blank" rel="noopener noreferrer">https://swiperjs.com/react#swiper-events</a>.
+All events available in Swiper can be found at <a href="https://swiperjs.com/swiper-api#events" target="_blank" rel="noopener noreferrer">https://swiperjs.com/swiper-api#events</a>.
 :::
 
 ## Methods
@@ -451,7 +451,7 @@ From here, if you wanted to access a property on the Swiper instance you would a
 
 Below is a full list of method changes when going from `IonSlides` to Swiper React:
 
-| ion-slides Method  | Notes                                                                                |
+| IonSlides Method   | Notes                                                                                |
 | ------------------ | ------------------------------------------------------------------------------------ |
 | getActiveIndex()   | Use the `activeIndex` property instead.                                              |
 | getPreviousIndex() | Use the `previousIndex` property instead.                                            |
@@ -482,7 +482,7 @@ const Home: React.FC = () => {
   return (
     <IonPage>
       <IonContent>
-        <Swiper modules={[EffectFact, IonicSlides]}>
+        <Swiper modules={[EffectFade, IonicSlides]}>
           <SwiperSlide>Slide 1</SwiperSlide>
           <SwiperSlide>Slide 2</SwiperSlide>
           <SwiperSlide>Slide 3</SwiperSlide>
@@ -510,7 +510,7 @@ const Home: React.FC = () => {
   return (
     <IonPage>
       <IonContent>
-        <Swiper modules={[EffectFact, IonicSlides]}>
+        <Swiper modules={[EffectFade, IonicSlides]}>
           <SwiperSlide>Slide 1</SwiperSlide>
           <SwiperSlide>Slide 2</SwiperSlide>
           <SwiperSlide>Slide 3</SwiperSlide>
@@ -523,9 +523,7 @@ export default Home;
 ```
 
 :::note
-
 Not using Create React App? You can import these effects from `swiper/css/[EFFECT NAME]` instead (i.e. `swiper/css/effect-fade`).
-
 :::
 
 After that, we can activate it by setting the `effect` property on `swiper` to `"fade"`:
@@ -544,7 +542,7 @@ const Home: React.FC = () => {
   return (
     <IonPage>
       <IonContent>
-        <Swiper modules={[EffectFact, IonicSlides]} swiper="fade">
+        <Swiper modules={[EffectFade, IonicSlides]} effect="fade">
           <SwiperSlide>Slide 1</SwiperSlide>
           <SwiperSlide>Slide 2</SwiperSlide>
           <SwiperSlide>Slide 3</SwiperSlide>

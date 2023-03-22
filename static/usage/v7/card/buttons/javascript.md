@@ -12,12 +12,4 @@
   <ion-button fill="clear">Action 1</ion-button>
   <ion-button fill="clear">Action 2</ion-button>
 </ion-card>
-
-<style>
-  /* iOS places the subtitle above the title */
-  ion-card-header.ios {
-    display: flex;
-    flex-flow: column-reverse;
-  }
-</style>
 ```

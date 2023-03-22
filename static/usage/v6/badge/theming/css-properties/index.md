@@ -10,6 +10,7 @@ import angular_example_component_html from './angular/example_component_html.md'
 import angular_example_component_css from './angular/example_component_css.md';
 
 <Playground
+  version="6"
   size="300px"
   code={{
     javascript,

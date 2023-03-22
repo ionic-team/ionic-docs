@@ -37,13 +37,13 @@ import Types from '@site/static/usage/v7/input/types/index.md';
 <Types />
 
 
-## Label Positioning
+## Label Placement
 
-Labels will take up the width of their content by default. This positioning can be changed to be a fixed width, stacked, or floating label.
+Labels will take up the width of their content by default. Developers can use the `labelPlacement` property to control how the label is placed relative to the control.
 
-import Labels from '@site/static/usage/v7/input/labels/index.md';
+import LabelPlacement from '@site/static/usage/v7/input/label-placement/index.md';
 
-<Labels />
+<LabelPlacement />
 
 
 ## Clear Options
@@ -82,6 +82,15 @@ import Counter from '@site/static/usage/v7/input/counter/index.md';
 
 <Counter />
 
+## Filtering User Input
+
+Developers can use the `ionInput` event to update the input value in response to user input such as a keypress. This is useful for filtering out invalid or unwanted characters.
+
+When storing the value in a state variable, we recommend updating both the state variable and the `ion-input` component value. This ensures that the state variable and the `ion-input` component value remain in sync.
+
+import FilteringData from '@site/static/usage/v7/input/filtering/index.md';
+
+<FilteringData />
 
 ## Theming
 
@@ -105,8 +114,7 @@ import CSSProps from '@site/static/usage/v7/input/theming/css-properties/index.m
 
 A simpler input syntax was introduced in Ionic 7.0. This new syntax reduces the boilerplate required to setup an input, resolves accessibility issues, and improves the developer experience.
 
-While developers can continue using the legacy syntax, we recommend migrating as soon as possible.
-
+Developers can perform this migration one input at a time. While developers can continue using the legacy syntax, we recommend migrating as soon as possible.
 
 ### Using the Modern Syntax
 

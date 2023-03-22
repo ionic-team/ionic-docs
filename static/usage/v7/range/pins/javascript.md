@@ -1,5 +1,5 @@
 ```html
-<ion-range pin="true"></ion-range>
+<ion-range aria-label="Range with pin" pin="true"></ion-range>
 
 <script>
   const range = document.querySelector('ion-range');

@@ -99,6 +99,14 @@ import ButtonsPlayground from '@site/static/usage/v6/toast/buttons/index.md';
 
 <ButtonsPlayground />
 
+## Layout
+
+Button containers within the toast can be displayed either on the same line as the message or stacked on separate lines using the `layout` property. The stacked layout should be used with buttons that have long text values. Additionally, buttons in a stacked toast layout can use a `side` value of either `start` or `end`, but not both.
+
+import StackedPlayground from '@site/static/usage/v6/toast/layout/index.md';
+
+<StackedPlayground />
+
 ## Icons
 
 An icon can be added next to the content inside of the toast. In general, icons in toasts should be used to add additional style or context, not to grab the user's attention or elevate the priority of the toast. If you wish to convey a higher priority message to the user or guarantee a response, we recommend using an [Alert](alert.md) instead.

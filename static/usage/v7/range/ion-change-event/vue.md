@@ -1,6 +1,6 @@
 ```html
 <template>
-  <ion-range @ionChange="onIonChange"></ion-range>
+  <ion-range aria-label="Range with ionChange" @ionChange="onIonChange"></ion-range>
   <ion-label>ionChange emitted value: {{lastEmittedValue}}</ion-label>
 </template>
 

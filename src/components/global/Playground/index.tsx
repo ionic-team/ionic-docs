@@ -48,7 +48,7 @@ const ControlButton = ({
   return controlButton;
 };
 
-const CodeBlockButton = ({ language, usageTarget, setUsageTarget }) => {
+const CodeBlockButton = ({ language, usageTarget, setUsageTarget, disabled }) => {
   const langValue = UsageTarget[language];
   return (
     <ControlButton
@@ -58,6 +58,7 @@ const CodeBlockButton = ({ language, usageTarget, setUsageTarget }) => {
       }}
       title={`Show ${language} code`}
       label={language}
+      disabled={disabled}
     />
   );
 };
@@ -95,11 +96,6 @@ interface UsageTargetOptions {
      */
     declarations?: string[];
   };
-  /**
-   * The major version of Ionic to use in the generated Stackblitz examples.
-   * This will also load assets for Stackblitz from the specified version directory.
-   */
-  version?: number;
 }
 
 /**
@@ -119,7 +115,7 @@ export default function Playground({
   mode,
   devicePreview,
   includeIonContent = true,
-  version = 6,
+  version,
 }: {
   code: { [key in UsageTarget]?: MdxContent | UsageTargetOptions };
   title?: string;
@@ -134,6 +130,10 @@ export default function Playground({
   description?: string;
   devicePreview?: boolean;
   includeIonContent: boolean;
+  /**
+   * The major version of Ionic to use in the generated Stackblitz examples.
+   * This will also load assets for Stackblitz from the specified version directory.
+   */
   version: number;
 }) {
   if (!code || Object.keys(code).length === 0) {
@@ -142,6 +142,10 @@ export default function Playground({
   }
   if (typeof mode !== 'undefined' && mode !== 'ios' && mode !== 'md') {
     console.warn(`Invalid mode provided: ${mode}. Accepted values are: "ios" or "md".`);
+    return;
+  }
+  if (typeof version === 'undefined') {
+    console.warn('You must specify a `version` for the Playground example. For example: <Playground version="7" />');
     return;
   }
 
@@ -154,12 +158,22 @@ export default function Playground({
 
   const defaultMode = typeof mode !== 'undefined' ? mode : Mode.iOS;
 
+  const getDefaultUsageTarget = () => {
+    // If defined, Angular target should be the default
+    if (code[UsageTarget.Angular] !== undefined) {
+      return UsageTarget.Angular;
+    }
+
+    // Otherwise, default to the first target passed.
+    return Object.keys(code)[0];
+  }
+
   /**
    * Developers can set a predefined size
    * or an explicit pixel value.
    */
   const frameSize = FRAME_SIZES[size] || size;
-  const [usageTarget, setUsageTarget] = useState(UsageTarget.Angular);
+  const [usageTarget, setUsageTarget] = useState(getDefaultUsageTarget());
   const [ionicMode, setIonicMode] = useState(defaultMode);
   const [codeSnippets, setCodeSnippets] = useState({});
   const [renderIframes, setRenderIframes] = useState(false);
@@ -435,14 +449,24 @@ export default function Playground({
       <div className="playground__container">
         <div className="playground__control-toolbar">
           <div className="playground__control-group">
-            {sortedUsageTargets.map((lang) => (
-              <CodeBlockButton
-                key={`code-block-${lang}`}
-                language={lang}
-                usageTarget={usageTarget}
-                setUsageTarget={setUsageTarget}
-              />
-            ))}
+            {sortedUsageTargets.map((lang) => {
+
+              /**
+               * If code was not passed for this target
+               * then we should disable the button.
+               */
+              const langValue = UsageTarget[lang];
+              const hasCode = code[langValue] !== undefined;
+              return (
+                  <CodeBlockButton
+                  key={`code-block-${lang}`}
+                  language={lang}
+                  usageTarget={usageTarget}
+                  setUsageTarget={setUsageTarget}
+                  disabled={!hasCode}
+                />)
+              ;
+            })}
           </div>
           <div className="playground__control-group">
             <ControlButton
@@ -567,12 +591,12 @@ export default function Playground({
             */}
                 {devicePreview
                   ? [
-                      <div className={!isIOS ? 'frame-hidden' : 'frame-visible'}>
+                      <div className={!isIOS ? 'frame-hidden' : 'frame-visible'} aria-hidden={!isIOS ? 'true' : null}>
                         <device-preview mode="ios">
                           <iframe height={frameSize} ref={(ref) => handleFrameRef(ref, 'ios')} src={sourceiOS}></iframe>
                         </device-preview>
                       </div>,
-                      <div className={!isMD ? 'frame-hidden' : 'frame-visible'}>
+                      <div className={!isMD ? 'frame-hidden' : 'frame-visible'} aria-hidden={!isMD ? 'true' : null}>
                         <device-preview mode="md">
                           <iframe height={frameSize} ref={(ref) => handleFrameRef(ref, 'md')} src={sourceMD}></iframe>
                         </device-preview>
@@ -584,12 +608,14 @@ export default function Playground({
                         className={!isIOS ? 'frame-hidden' : ''}
                         ref={(ref) => handleFrameRef(ref, 'ios')}
                         src={sourceiOS}
+                        aria-hidden={!isIOS ? 'true' : null}
                       ></iframe>,
                       <iframe
                         height={frameSize}
                         className={!isMD ? 'frame-hidden' : ''}
                         ref={(ref) => handleFrameRef(ref, 'md')}
                         src={sourceMD}
+                        aria-hidden={!isMD ? 'true' : null}
                       ></iframe>,
                     ]}
               </div>,
