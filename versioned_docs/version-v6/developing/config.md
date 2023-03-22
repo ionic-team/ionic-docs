@@ -2,158 +2,57 @@
 title: Config
 ---
 
-<head>
-  <title>Config | Ionic Config to Change Component Properties Globally</title>
-  <meta
-    name="description"
-    content="Ionic Config provides a way to change the properties of components globally across an app. Config can set the app mode, tab button layout, animations, and more."
-  />
-</head>
-
 Ionic Config provides a way to change the properties of components globally across an app. It can set the app mode, tab button layout, animations, and more.
 
 ## Global Config
 
-To override the default Ionic configurations for your app, provide your own custom config to `IonicModule.forRoot(...)`. The available config keys can be found in the [`IonicConfig`](#ionicconfig) interface.
+The available config keys can be found in the [`IonicConfig`](#ionicconfig) interface.
 
-For example, to disable ripple effects and default the mode to Material Design:
+The following example disables ripple effects and default the mode to Material Design:
 
-```tsx title="app.module.ts"
-import { IonicModule } from '@ionic/angular';
+import GlobalExample from './config/global/index.md';
 
-@NgModule({
-  ...
-  imports: [
-    IonicModule.forRoot({
-      rippleEffect: false,
-      mode: 'md'
-    })
-  ],
-  ...
-})
-```
+<GlobalExample />
 
 ## Per-Component Config
 
 Ionic Config is not reactive. Updating the config's value after the component has rendered will result in the previous value. It is recommended to use a component's properties instead of updating the config, when you require reactive values.
 
-**Not recommended**
+import PerComponentExample from './config/per-component/index.md';
 
-```ts
-import { IonicModule } from '@ionic/angular';
-
-@NgModule({
-  ...
-  imports: [
-    IonicModule.forRoot({
-      // Not recommended when your app requires reactive values
-      backButtonText: 'Go Back'
-    })
-  ],
-  ...
-})
-```
-
-**Recommended**
-
-```html
-<ion-back-button [text]="backButtonText"></ion-back-button>
-```
-
-```ts
-@Component(...)
-class MyComponent {
-  backButtonText = this.config.get('backButtonText');
-
-  constructor(private config: Config) { }
-
-  localeChanged(locale: string) {
-    if (locale === 'es_ES') {
-      this.backButtonText = 'Devolver';
-    }
-  }
-
-}
-```
+<PerComponentExample />
+  
 
 ## Per-Platform Config
 
 Ionic Config can also be set on a per-platform basis. For example, this allows you to disable animations if the app is being run in a browser on a potentially slower device. Developers can take advantage of the Platform utilities to accomplish this.
 
-Since the config is set at runtime, you will not have access to the Platform Dependency Injection. Instead, you can use the underlying functions that the provider uses directly.
-
 In the following example, we are disabling all animations in our Ionic app only if the app is running in a mobile web browser.
-The `isPlatform()` call returns `true` or `false` based upon the platform that is passed in. See the [Platform Documentation](platform.md#platforms) for a list of possible values.
 
-```tsx
-import { isPlatform, IonicModule } from '@ionic/angular';
+import PerPlatformExample from './config/per-platform/index.md';
 
-@NgModule({
-  ...
-  imports: [
-    IonicModule.forRoot({
-      animated: !isPlatform('mobileweb')
-    })
-  ],
-  ...
-})
-```
+<PerPlatformExample />
 
-**Per-platform config with fallback for unmatched platforms:**
 
-```tsx
-import { isPlatform, IonicModule } from '@ionic/angular';
+### Fallbacks
 
-const getConfig = () => {
-  if (isPlatform('hybrid')) {
-    return {
-      backButtonText: 'Previous',
-      tabButtonLayout: 'label-hide'
-    }
-  }
+The next example allows you to set an entirely different configuration based upon the platform, falling back to a default config if no platforms match:
 
-  return {
-    menuIcon: 'ellipsis-vertical'
-  }
-}
-@NgModule({
-  ...
-  imports: [
-    IonicModule.forRoot(getConfig())
-  ],
-  ...
-})
-```
+import PerPlatformFallbackExample from './config/per-platform-overrides/index.md';
 
-**Per-platform config overrides:**
+<PerPlatformFallbackExample />
 
-```tsx
-import { isPlatform, IonicModule } from '@ionic/angular';
+### Overrides
 
-const getConfig = () => {
-  let config = {
-    animated: false
-  };
+This final example allows you to accumulate a config object based upon different platform requirements.
 
-  if (isPlatform('iphone')) {
-    config = {
-      ...config,
-      backButtonText: 'Previous'
-    }
-  }
+import PerPlatformOverridesExample from './config/per-platform-fallback/index.md';
 
-  return config;
-}
-@NgModule({
-  ...
-  imports: [
-    IonicModule.forRoot(getConfig())
-  ],
-  ...
-})
-```
+<PerPlatformOverridesExample />
 
-## Methods
+## Reading the Config (Angular)
+
+Ionic Angular provides a `Config` provider for accessing the Ionic Config.
 
 ### get
 
@@ -201,19 +100,6 @@ class AppComponent {
 | --------------- | ------------------------------------------------------------------------------- |
 | **Description** | Returns a config value as a `number`. Returns `0` if the config is not defined. |
 | **Signature**   | `getNumber(key: string, fallback?: number) => number`                             |
-
-#### Examples
-
-```ts
-import { Config } from '@ionic/angular';
-
-@Component(...)
-class AppComponent {
-  constructor(config: Config) {
-    const keyboardHeight = config.getNumber('keyboardHeight');
-  }
-}
-```
 
 ## Interfaces
 
