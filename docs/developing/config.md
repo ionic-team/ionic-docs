@@ -2,154 +2,110 @@
 title: Config
 ---
 
-<head>
-  <title>Config | Ionic Config to Change Component Properties Globally</title>
-  <meta
-    name="description"
-    content="Ionic Config provides a way to change the properties of components globally across an app. Config can set the app mode, tab button layout, animations, and more."
-  />
-</head>
-
-Ionic Config provides は、アプリケーション全体でコンポーネントのプロパティをグローバルに変更する方法を提供します。アプリのmode、タブボタンのレイアウト、アニメーションなどを設定できます。
+Ionic Config provides a way to change the properties of components globally across an app. It can set the app mode, tab button layout, animations, and more.
 
 ## Global Config
 
-アプリケーションの初期のIonic Configを上書きするには、`IonicModule` に設定を指定します。 `app.module.ts` にある `IonicModule.forRoot` を指定ください。
+The available config keys can be found in the [`IonicConfig`](#ionicconfig) interface.
 
-```tsx
-import { IonicModule } from '@ionic/angular';
+The following example disables ripple effects and default the mode to Material Design:
 
-@NgModule({
-  ...
-  imports: [
-    BrowserModule,
-    IonicModule.forRoot({
-      rippleEffect: false,
-      mode: 'md'
-    }),
-    AppRoutingModule
-  ],
-  ...
-})
-```
+import GlobalExample from './config/global/index.md';
 
-上記の例では、アプリ全体でマテリアルデザインのripple effectを無効にし、同時にmodeをマテリアルデザインに統一しています。
+<GlobalExample />
 
-## コンポーネント毎の設定
+## Per-Component Config
 
-Ionic Configはリアクティブではないため、構成をグローバルに設定するのではなく、デフォルトの動作を上書きする場合は、コンポーネントのプロパティを使用することをお勧めします。
+Ionic Config is not reactive. Updating the config's value after the component has rendered will result in the previous value. It is recommended to use a component's properties instead of updating the config, when you require reactive values.
 
-```tsx
-import { IonicModule } from '@ionic/angular';
+import PerComponentExample from './config/per-component/index.md';
 
-@NgModule({
-  ...
-  imports: [
-    BrowserModule,
-    IonicModule.forRoot({
-      backButtonText: 'Go Back'
-    }),
-    AppRoutingModule
-  ],
-  ...
-})
-```
+<PerComponentExample />
+  
 
-この設定は `ion-back-button` のデフォルトのテキストを `Go Back` に変更します。しかし、この設定を行っていると `backButtonText` を `Do Not Go Back` と変更しても、 `ion-back-button` のテキストは `Go Back` のままでレンダリングされます。ですので、 `ion-back-button` の `text` プロパティを使うことをおすすめします。
+## Per-Platform Config
 
-```html
-<ion-back-button [text]="getBackButtonText()"></ion-back-button>
-```
+Ionic Config can also be set on a per-platform basis. For example, this allows you to disable animations if the app is being run in a browser on a potentially slower device. Developers can take advantage of the Platform utilities to accomplish this.
 
-この例では、 `ion-back-button` を使用して、言語やロケールの変更など、それを保証する変更がある場合にテキストを動的に更新できるようにしています。 `getBackButtonText` メソッドは、正しいテキストを返す処理を行います。
+In the following example, we are disabling all animations in our Ionic app only if the app is running in a mobile web browser.
 
-## プラットフォームごとの設定Per-Platform Config
+import PerPlatformExample from './config/per-platform/index.md';
 
-Ionic Configは、プラットフォームごとに設定することもできます。例えば、遅い可能性のあるデバイス上のブラウザでアプリを実行している場合、アニメーションを無効にすることができる。開発者は、プラットフォーム・ユーティリティーを利用してこれを実現することができます。
-
-configは実行時に設定されるため、Platform Dependency Injectionにはアクセスできません。代わりに、プロバイダが直接使用する基本関数を使用できます。
-
-次の例では、アプリケーションがモバイルWebブラウザで実行されている場合にのみ、Ionicアプリケーションのすべてのアニメーションを無効にしています。
-`isPlatform ()` 呼び出しは、渡されたプラットフォームに基づいて `true` または `false` を返します。[Platform Documentation](platform.md#platforms) で利用可能な値をご覧ください。
+<PerPlatformExample />
 
 
-```tsx
-import { isPlatform, IonicModule } from '@ionic/angular';
+### Fallbacks
 
-@NgModule({
-  ...
-  imports: [
-    BrowserModule,
-    IonicModule.forRoot({
-      animated: !isPlatform('mobileweb')
-    }),
-    AppRoutingModule
-  ],
-  ...
-})
-```
+The next example allows you to set an entirely different configuration based upon the platform, falling back to a default config if no platforms match:
 
-次の例では、プラットフォームに基づいてまったく異なる構成を設定し、一致するプラットフォームがない場合はデフォルトの構成に戻すことができます:
+import PerPlatformFallbackExample from './config/per-platform-overrides/index.md';
 
-```tsx
-import { isPlatform, IonicModule } from '@ionic/angular';
+<PerPlatformFallbackExample />
 
-const getConfig = () => {
-  if (isPlatform('hybrid')) {
-    return {
-      backButtonText: 'Previous',
-      tabButtonLayout: 'label-hide'
-    }
-  }
+### Overrides
 
-  return {
-    menuIcon: 'ellipsis-vertical'
+This final example allows you to accumulate a config object based upon different platform requirements.
+
+import PerPlatformOverridesExample from './config/per-platform-fallback/index.md';
+
+<PerPlatformOverridesExample />
+
+## Reading the Config (Angular)
+
+Ionic Angular provides a `Config` provider for accessing the Ionic Config.
+
+### get
+
+|                 |                                                                                  |
+| --------------- | -------------------------------------------------------------------------------- |
+| **Description** | Returns a config value as an `any`. Returns `null` if the config is not defined. |
+| **Signature**   | `get(key: string, fallback?: any) => any`                                          |
+
+#### Examples
+
+```ts
+import { Config } from '@ionic/angular';
+
+@Component(...)
+class AppComponent {
+  constructor(config: Config) {
+    const mode = config.get('mode');
   }
 }
-@NgModule({
-  ...
-  imports: [
-    BrowserModule,
-    IonicModule.forRoot(getConfig()),
-    AppRoutingModule
-  ],
-  ...
-})
 ```
 
-最後に、この例では、異なるプラットフォーム要件に基づいて構成オブジェクトを設定できます:
+### getBoolean
 
-```tsx
-import { isPlatform, IonicModule } from '@ionic/angular';
+|                 |                                                                                      |
+| --------------- | ------------------------------------------------------------------------------------ |
+| **Description** | Returns a config value as a `boolean`. Returns `false` if the config is not defined. |
+| **Signature**   | `getBoolean(key: string, fallback?: boolean) => boolean`                               |
 
-const getConfig = () => {
-  let config = {
-    animated: false
-  };
+#### Examples
 
-  if (isPlatform('iphone')) {
-    config = {
-      ...config,
-      backButtonText: 'Previous'
-    }
+```ts
+import { Config } from '@ionic/angular';
+
+@Component(...)
+class AppComponent {
+  constructor(config: Config) {
+    const swipeBackEnabled = config.getBoolean('swipeBackEnabled');
   }
-
-  return config;
 }
-@NgModule({
-  ...
-  imports: [
-    BrowserModule,
-    IonicModule.forRoot(getConfig()),
-    AppRoutingModule
-  ],
-  ...
-})
 ```
 
-## Configオプション
+### getNumber
 
-以下はIonicが使用する設定オプションのリストです。
+|                 |                                                                                 |
+| --------------- | ------------------------------------------------------------------------------- |
+| **Description** | Returns a config value as a `number`. Returns `0` if the config is not defined. |
+| **Signature**   | `getNumber(key: string, fallback?: number) => number`                             |
+
+## Interfaces
+
+### IonicConfig
+
+Below are the config options that Ionic uses.
 
 | Config                   | Type                                                                              | Description                                                                                              |
 | ------------------------ | --------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
@@ -158,6 +114,7 @@ const getConfig = () => {
 | `alertEnter`             | `AnimationBuilder`                                                                | Provides a custom enter animation for all `ion-alert`, overriding the default "animation".               |
 | `alertLeave`             | `AnimationBuilder`                                                                | Provides a custom leave animation for all `ion-alert`, overriding the default "animation".               |
 | `animated`               | `boolean`                                                                         | If `true`, Ionic will enable all animations and transitions across the app.                              |
+| `backButtonDefaultHref`  | `string`                                                                          | Overrides the default value for the `defaultHref` property in all `<ion-back-button>` components.        |
 | `backButtonIcon`         | `string`                                                                          | Overrides the default icon in all `<ion-back-button>` components.                                        |
 | `backButtonText`         | `string`                                                                          | Overrides the default text in all `<ion-back-button>` components.                                        |
 | `hardwareBackButton`     | `boolean`                                                                         | If `true`, Ionic will respond to the hardware back button in an Android device.                          |
@@ -183,5 +140,7 @@ const getConfig = () => {
 | `statusTap`              | `boolean`                                                                         | If `true`, clicking or tapping the status bar will cause the content to scroll to the top.               |
 | `swipeBackEnabled`       | `boolean`                                                                         | If `true`, Ionic will enable the "swipe-to-go-back" gesture across the application.                      |
 | `tabButtonLayout`        | `TabButtonLayout`                                                                 | Overrides the default "layout" of all `ion-bar-button` across the whole application.                     |
+| `toastDuration`          | `number`                                                                          | Overrides the default `duration` for all `ion-toast` components.                                         |
 | `toastEnter`             | `AnimationBuilder`                                                                | Provides a custom enter animation for all `ion-toast`, overriding the default "animation".               |
 | `toastLeave`             | `AnimationBuilder`                                                                | Provides a custom leave animation for all `ion-toast`, overriding the default "animation".               |
+| `toggleOnOffLabels`      | `boolean`                                                                         | Overrides the default `enableOnOffLabels` in all `ion-toggle` components.                                |

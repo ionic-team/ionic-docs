@@ -19,7 +19,7 @@ Ionic Angular Serverを使用している場合は、それも必ず更新して
 npm install @ionic/angular@6 @ionic/angular-server@6
 ```
 
-3. `Config.set()` を削除します。そして代わりに `IonicModule.forRoot()` を使いましょう。くわしくは [Angular Config Documentation](../angular/config) をご覧ください。
+3. `Config.set()` を削除します。そして代わりに `IonicModule.forRoot()` を使いましょう。くわしくは [Angular Config Documentation](../developing/config) をご覧ください。
 4. 以前に `@ionic/angular` からエクスポートされた `setupConfig` 関数の使用をすべて削除します。代わりに `IonicModule.forRoot()` で設定を行います。
 
 ### React
@@ -73,7 +73,7 @@ setupIonicReact({
 開発者は、 `setupIonicReact` カスタム構成を設定していない場合でも、インポートして呼び出す必要があります。
 :::
 
-詳しくは [React Config Documentation](../react/config) をご覧ください。
+詳しくは [React Config Documentation](../developing/config) をご覧ください。
 
 5.すべてのコントローラのインポートを `@ionic/core` から `@ionic/core/components` に更新します。例として、`menuController` のマイグレーションを紹介します。
 
@@ -133,7 +133,7 @@ module.exports = {
 
 詳しくは [Testing section below](#testing) をご覧ください。
 
-5. `@ionic/vue` からエクスポートしていた `setupConfig` 関数を削除してください。そして、設定するときは `IonicVue` を代わりに利用してください。詳しくは [Vue Config Documentation](../vue/config) をご覧ください。
+5. `@ionic/vue` からエクスポートしていた `setupConfig` 関数を削除してください。そして、設定するときは `IonicVue` を代わりに利用してください。詳しくは [Vue Config Documentation](../developing/config) をご覧ください。
 
 6. `useIonRouter` で利用してる型 `IonRouter` を `UseIonRouterResult` に変更してください。
 
