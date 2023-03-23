@@ -374,7 +374,7 @@ Now that we have the pieces in place to navigate in our app, we need to create a
 ```tsx
 import { createRouter, createWebHistory } from '@ionic/vue-router';
 import { RouteRecordRaw } from 'vue-router';
-import HomePage from '../views/HomePage.vue';
+import HomePage from '@/views/HomePage.vue';
 import NewItem from '@/views/NewItem.vue';
 
 const routes: Array<RouteRecordRaw> = [
