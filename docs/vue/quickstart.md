@@ -56,7 +56,7 @@ npm uninstall --save typescript @types/jest @typescript-eslint/eslint-plugin @ty
 
 5. Delete the `shims-vue.d.ts` file.
 
-6. Remove `lang="ts"` from the `script` tags in any of your Vue components that have them. In a blank Ionic Vue app, this should only be `App.vue` and `views/Home.vue`.
+6. Remove `lang="ts"` from the `script` tags in any of your Vue components that have them. In a blank Ionic Vue app, this should only be `App.vue` and `views/HomePage.vue`.
 
 ## A look at a Vue Component
 
@@ -91,27 +91,22 @@ If we open `App.vue` we should see the following:
   </ion-app>
 </template>
 
-<script lang="ts">
-  import { IonApp, IonRouterOutlet } from '@ionic/vue';
-  import { defineComponent } from 'vue';
-
-  export default defineComponent({
-    name: 'App',
-    components: {
-      IonApp,
-      IonRouterOutlet,
-    },
-  });
+<script setup lang="ts">
+import { IonApp, IonRouterOutlet } from '@ionic/vue';
 </script>
 ```
 
-Let's break it down, starting with the first group of imports.
+Let's break it down, starting with the imports.
 
 ```tsx
+<script setup lang="ts">
 import { IonApp, IonRouterOutlet } from '@ionic/vue';
+</script>
 ```
 
-To use a component in Vue, you must first import it. So for Ionic Framework, this means anytime we want to use a Button or a Card, it must be added to our imports. In the case of our `App` component, we are using `IonApp` and `IonRouterOutlet`. You can also register components globally if you find yourself importing the same components repeatedly. This comes with performance tradeoffs that we cover in [Optimizing Your Build](#optimizing-your-build).
+To use a component in Vue, you must first import it. So for Ionic Framework, this means anytime we want to use a Button or a Card, it must be added to our imports. In the case of our `App` component, we are using `IonApp` and `IonRouterOutlet`. Vue's [`script setup` syntax](https://vuejs.org/api/sfc-script-setup.html) gives the template access to those components as `<ion-app>` and `<ion-router-outlet>`.
+
+You can also register components globally if you find yourself importing the same components repeatedly. This comes with performance tradeoffs that we cover in [Optimizing Your Build](#optimizing-your-build).
 
 From there, let's look at the template.
 
@@ -125,25 +120,6 @@ From there, let's look at the template.
 
 All Vue components must have a `<template>`. Inside of there, we place our `IonApp` and `IonRouterOutlet` components.
 
-Finally, let's look at the component definition:
-
-```tsx
-import { IonApp, IonRouterOutlet } from '@ionic/vue';
-import { defineComponent } from 'vue';
-
-export default defineComponent({
-  name: 'App',
-  components: {
-    IonApp,
-    IonRouterOutlet,
-  },
-});
-```
-
-Vue 3 offers a new `defineComponent` function when creating components for improved tooling support, and we are going to use that here. We first define the name of the component, and then we supply the components that we will use in our template.
-
-There are several arguments you can supply here such as `methods`, `setup` and more. This is explained as part of Vue's [Composition API Documentation](https://v3.vuejs.org/guide/composition-api-introduction.html#why-composition-api).
-
 ## Initializing the router
 
 Ionic Vue uses the [vue-router](https://router.vuejs.org/) dependency, so if you are already familiar with Vue Router, you will be able to apply what you know to navigation in Ionic Vue. Let's take a look at the router configuration we mentioned before. In `router/index.ts`, you should see something similar to the following:
@@ -151,7 +127,7 @@ Ionic Vue uses the [vue-router](https://router.vuejs.org/) dependency, so if you
 ```tsx
 import { createRouter, createWebHistory } from '@ionic/vue-router';
 import { RouteRecordRaw } from 'vue-router';
-import Home from '@/views/Home.vue';
+import HomePage from '@/views/HomePage.vue';
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -161,7 +137,7 @@ const routes: Array<RouteRecordRaw> = [
   {
     path: '/home',
     name: 'Home',
-    component: Home,
+    component: HomePage,
   },
 ];
 
@@ -192,12 +168,12 @@ const routes: Array<RouteRecordRaw> = [
   {
     path: '/home',
     name: 'Home',
-    component: () => import('@/views/Home.vue'),
+    component: () => import('@/views/HomePage.vue'),
   },
 ];
 ```
 
-Now, you might be wondering: Why do we use `@` when describing the path to our components? The `@` symbol is a shortcut we can use to describe paths relative to the `src` directory. This is useful if we are trying to reference a component while in a file several folders deep. Instead of doing `'../../../views/Home.vue'`, we could simply do `'@/views/Home.vue'`.
+Now, you might be wondering: Why do we use `@` when describing the path to our components? The `@` symbol is a shortcut we can use to describe paths relative to the `src` directory. This is useful if we are trying to reference a component while in a file several folders deep. Instead of doing `'../../../views/HomePage.vue'`, we could simply do `'@/views/HomePage.vue'`.
 
 ## A component with style
 
@@ -236,20 +212,8 @@ Currently, the `Home` component looks like so:
   </ion-page>
 </template>
 
-<script lang="ts">
+<script setup lang="ts">
   import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/vue';
-  import { defineComponent } from 'vue';
-
-  export default defineComponent({
-    name: 'Home',
-    components: {
-      IonContent,
-      IonHeader,
-      IonPage,
-      IonTitle,
-      IonToolbar,
-    },
-  });
 </script>
 
 <style scoped>
@@ -321,6 +285,10 @@ For brevity, we are excluding repeating parts of our component, like the functio
     </ion-content>
   </ion-page>
 </template>
+
+<script setup lang="ts">
+  import { IonBadge, IonCheckbox, IonContent, IonHeader, IonItem, IonLabel, IonList, IonNote, IonPage, IonTitle, IonToolbar } from '@ionic/vue';
+</script>
 ```
 
 Here in our `IonContent`, we are adding an `IonList` and a much more involved `IonItem` component. Let's look at `IonItem` as it is the centerpiece here.
@@ -355,20 +323,9 @@ Let's look at another component from Ionic Framework, FAB. Floating Action Butto
   </ion-page>
 </template>
 
-<script>
+<script setup>
+  import { IonBadge, IonCheckbox, IonContent, IonFab, IonFabButton, IonHeader, IonIcon, IonItem, IonLabel, IonList, IonNote, IonPage, IonTitle, IonToolbar } from '@ionic/vue';
   import { add } from 'ionicons/icons';
-
-  ...
-
-  export default defineComponent({
-    name: 'Home',
-    ...,
-    setup() {
-      return {
-        add
-      }
-    }
-  })
 </script>
 ```
 
@@ -391,31 +348,10 @@ Now let's wire up a click handler to this. When clicking the FAB button, we want
   </ion-page>
 </template>
 
-<script>
+<script setup>
   import { add } from 'ionicons/icons';
   import { useRouter } from 'vue-router';
-
-  ...
-
-  export default defineComponent({
-    name: 'Home',
-    components: {
-      IonContent,
-      IonFab,
-      IonFabButton,
-      IonHeader,
-      IonIcon,
-      IonPage,
-      IonTitle,
-      IonToolbar
-    },
-    setup() {
-      return {
-        router: useRouter(),
-        add
-      }
-    }
-  });
+  const router = useRouter();
 </script>
 ```
 
@@ -432,7 +368,7 @@ Now that we have the pieces in place to navigate in our app, we need to create a
 ```tsx
 import { createRouter, createWebHistory } from '@ionic/vue-router';
 import { RouteRecordRaw } from 'vue-router';
-import Home from '@/views/Home.vue';
+import HomePage from '@/views/HomePage.vue';
 import NewItem from '@/views/NewItem.vue';
 
 const routes: Array<RouteRecordRaw> = [
@@ -443,7 +379,7 @@ const routes: Array<RouteRecordRaw> = [
   {
     path: '/home',
     name: 'Home',
-    component: Home,
+    component: HomePage,
   },
   {
     path: '/new',
@@ -479,22 +415,8 @@ Let's fill the `NewItem.vue` file with some placeholder content for the moment.
   </ion-page>
 </template>
 
-<script lang="ts">
+<script setup lang="ts">
   import { IonBackButton, IonButtons, IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/vue';
-  import { defineComponent } from 'vue';
-
-  export default defineComponent({
-    name: 'NewItem',
-    components: {
-      IonBackButton,
-      IonButtons,
-      IonContent,
-      IonHeader,
-      IonPage,
-      IonTitle,
-      IonToolbar,
-    },
-  });
 </script>
 ```
 
@@ -527,21 +449,14 @@ In other framework integrations such as Ionic React, this is not needed as any `
   </ion-content>
 </template>
 
-<script lang="ts">
+<script setup lang="ts">
   import { IonButton, IonContent } from '@ionic/vue';
-  import { defineComponent, ref } from 'vue';
+  import { ref } from 'vue';
 
-  export default defineComponent({
-    components: { IonButton, IonContent },
-    setup() {
-      const content = ref();
-      const scrollToBottom = () => {
-        content.value.$el.scrollToBottom(300);
-      };
-
-      return { content, scrollToBottom };
-    },
-  });
+  const content = ref();
+  const scrollToBottom = () => {
+    content.value.$el.scrollToBottom(300);
+  };
 </script>
 ```
 
@@ -562,29 +477,15 @@ Per-Component Imports is the recommended approach to using Ionicons. This involv
   </ion-page>
 </template>
 
-<script>
+<script setup>
   import { heart } from 'ionicons/icons';
-  import { IonContent, IonPage } from '@ionic/vue';
-  import { defineComponent } from 'vue';
-
-  export default defineComponent({
-    name: 'Icon',
-    components: {
-      IonContent,
-      IonPage,
-    },
-    setup() {
-      return { heart };
-    },
-  });
+  import { IonContent, IonIcon, IonPage } from '@ionic/vue';
 </script>
 ```
 
 Let's break down what we are doing here. First, we are importing the `heart` icon from `ionicons/icons`. This will load the appropriate SVG data for our icon.
 
-Next, we pass the `heart` data to our template in the `setup` method.
-
-Finally, we pass the icon data into the `ion-icon` component via the `icon` property.
+Then we pass the icon data into the `ion-icon` component via the `icon` property.
 
 Developers also have the option of setting different icons based upon the mode:
 
@@ -597,21 +498,9 @@ Developers also have the option of setting different icons based upon the mode:
   </ion-page>
 </template>
 
-<script>
+<script setup>
   import { logoAndroid, logoApple } from 'ionicons/icons';
-  import { IonContent, IonPage } from '@ionic/vue';
-  import { defineComponent } from 'vue';
-
-  export default defineComponent({
-    name: 'Icon',
-    components: {
-      IonContent,
-      IonPage,
-    },
-    setup() {
-      return { logoAndroid, logoApple };
-    },
-  });
+  import { IonContent, IonIcon, IonPage } from '@ionic/vue';
 </script>
 ```
 
@@ -634,7 +523,7 @@ addIcons({
 });
 ```
 
-**Home.vue**
+**HomePage.vue**
 
 ```html
 <template>
@@ -645,17 +534,8 @@ addIcons({
   </ion-page>
 </template>
 
-<script>
-  import { IonContent, IonPage } from '@ionic/vue';
-  import { defineComponent } from 'vue';
-
-  export default defineComponent({
-    name: 'Home',
-    components: {
-      IonContent,
-      IonPage,
-    },
-  });
+<script setup>
+  import { IonContent, IonIcon, IonPage } from '@ionic/vue';
 </script>
 ```
 
@@ -679,25 +559,20 @@ Let's take a look at how local component registration works:
 <template>
   <ion-page>
     <ion-content>
-      <Subcomponent></Subcomponent>
+      <SubComponent></SubComponent>
     </ion-content>
   </ion-page>
 </template>
 
-<script lang="ts">
-  import { defineComponent } from 'vue';
+<script setup lang="ts">
   import { IonContent, IonPage } from '@ionic/vue';
-  import Subcomponent from '@/components/Subcomponent.vue';
-
-  export default defineComponent({
-    components: { IonContent, IonPage, Subcomponent },
-  });
+  import SubComponent from '@/components/SubComponent.vue';
 </script>
 ```
 
-In the example above, we are using the `IonPage` and `IonContent` components. To use them, we first import them from `@ionic/vue`. Then, we provide them to our Vue component in the `components` option. From there, we can use the components in our template.
+In the example above, we are using the `IonPage` and `IonContent` components. To use them, we import them from `@ionic/vue`. From there, we can use the components in our template.
 
-Note that since we are registering these components locally, neither `IonPage` nor `IonContent` will be available in `Subcomponent` unless we register them there as well.
+Note that since we are registering these components locally, neither `IonPage` nor `IonContent` will be available in `SubComponent` unless we register them there as well.
 
 For more information, see the <a href="https://v3.vuejs.org/guide/component-registration.html#local-registration" target="_blank" rel="noopener noreferrer">Local Registration Vue Documentation</a>.
 
@@ -726,18 +601,13 @@ app.component('ion-page', IonPage);
 <template>
   <ion-page>
     <ion-content>
-      <Subcomponent></Subcomponent>
+      <SubComponent></SubComponent>
     </ion-content>
   </ion-page>
 </template>
 
-<script lang="ts">
-  import { defineComponent } from 'vue';
-  import Subcomponent from '@/components/Subcomponent.vue';
-
-  export default defineComponent({
-    components: { Subcomponent },
-  });
+<script setup lang="ts">
+  import SubComponent from '@/components/SubComponent.vue';
 </script>
 ```
 
@@ -801,45 +671,27 @@ Next, check out [all the APIs](https://capacitorjs.com/docs/apis) that are avail
       </ion-toolbar>
     </ion-header>
     <ion-content class="ion-padding">
-      <img :src="photo" />
+      <img :src="imageSrc" />
       <ion-button @click="takePhoto()">Take Photo</ion-button>
     </ion-content>
   </ion-page>
 </template>
 
-<script lang="ts">
+<script setup lang="ts">
   import { IonButton, IonContent, IonHeader, IonPage, IonTitle } from '@ionic/vue';
-  import { defineComponent, ref } from 'vue';
-  import { Plugins, CameraResultType } from '@capacitor/core';
-  const { Camera } = Plugins;
+  import { ref } from 'vue';
+  import { Camera, CameraResultType } from '@capacitor/camera';
 
-  export default defineComponent({
-    name: 'Home',
-    components: {
-      IonButton,
-      IonContent,
-      IonHeader,
-      IonPage,
-      IonTitle,
-    },
-    setup() {
-      const imageSrc = ref('');
-      const takePhoto = async () => {
-        const image = await Camera.getPhoto({
-          quality: 90,
-          allowEditing: true,
-          resultType: CameraResultType.Uri,
-        });
+  const imageSrc = ref('');
+  const takePhoto = async () => {
+    const image = await Camera.getPhoto({
+      quality: 90,
+      allowEditing: true,
+      resultType: CameraResultType.Uri,
+    });
 
-        imageSrc.value = image.webPath;
-      };
-
-      return {
-        photo: imageSrc,
-        takePhoto,
-      };
-    },
-  });
+    imageSrc.value = image.webPath;
+  };
 </script>
 ```
 

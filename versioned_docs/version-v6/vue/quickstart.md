@@ -96,13 +96,17 @@ import { IonApp, IonRouterOutlet } from '@ionic/vue';
 </script>
 ```
 
-Let's break it down, starting with the first group of imports.
+Let's break it down, starting with the imports.
 
 ```tsx
+<script setup lang="ts">
 import { IonApp, IonRouterOutlet } from '@ionic/vue';
+</script>
 ```
 
-To use a component in Vue, you must first import it. So for Ionic Framework, this means anytime we want to use a Button or a Card, it must be added to our imports. In the case of our `App` component, we are using `IonApp` and `IonRouterOutlet`. You can also register components globally if you find yourself importing the same components repeatedly. This comes with performance tradeoffs that we cover in [Optimizing Your Build](#optimizing-your-build).
+To use a component in Vue, you must first import it. So for Ionic Framework, this means anytime we want to use a Button or a Card, it must be added to our imports. In the case of our `App` component, we are using `IonApp` and `IonRouterOutlet`. Vue's [`script setup` syntax](https://vuejs.org/api/sfc-script-setup.html) gives the template access to those components as `<ion-app>` and `<ion-router-outlet>`.
+
+You can also register components globally if you find yourself importing the same components repeatedly. This comes with performance tradeoffs that we cover in [Optimizing Your Build](#optimizing-your-build).
 
 From there, let's look at the template.
 
@@ -115,16 +119,6 @@ From there, let's look at the template.
 ```
 
 All Vue components must have a `<template>`. Inside of there, we place our `IonApp` and `IonRouterOutlet` components.
-
-Finally, let's look at the script:
-
-```tsx
-<script setup lang="ts">
-import { IonApp, IonRouterOutlet } from '@ionic/vue';
-</script>
-```
-
-Here we import the `IonApp` and `IonRouterOutlet` components that we will use in our template. Vue's [`script setup` syntax](https://vuejs.org/api/sfc-script-setup.html) gives the template access to those components as `<ion-app>` and `<ion-router-outlet>`.
 
 ## Initializing the router
 
@@ -293,7 +287,7 @@ For brevity, we are excluding repeating parts of our component, like the functio
 </template>
 
 <script setup lang="ts">
-import { IonBadge, IonCheckbox, IonContent, IonHeader, IonItem, IonLabel, IonList, IonNote, IonPage, IonTitle, IonToolbar } from '@ionic/vue';
+  import { IonBadge, IonCheckbox, IonContent, IonHeader, IonItem, IonLabel, IonList, IonNote, IonPage, IonTitle, IonToolbar } from '@ionic/vue';
 </script>
 ```
 
