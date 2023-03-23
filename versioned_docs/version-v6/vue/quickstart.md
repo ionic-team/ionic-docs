@@ -124,7 +124,7 @@ import { IonApp, IonRouterOutlet } from '@ionic/vue';
 </script>
 ```
 
-We are going to use Vue's [`script setup`](https://vuejs.org/api/sfc-script-setup.html) syntax when creating components.
+Here we import the `IonApp` and `IonRouterOutlet` components that we will use in our template. Vue's [`script setup` syntax](https://vuejs.org/api/sfc-script-setup.html) gives the template access to those components as `<ion-app>` and `<ion-router-outlet>`.
 
 ## Initializing the router
 
