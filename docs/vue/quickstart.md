@@ -92,7 +92,7 @@ If we open `App.vue` we should see the following:
 </template>
 
 <script setup lang="ts">
-import { IonApp, IonRouterOutlet } from '@ionic/vue';
+  import { IonApp, IonRouterOutlet } from '@ionic/vue';
 </script>
 ```
 
