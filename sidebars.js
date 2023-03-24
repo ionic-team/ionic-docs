@@ -30,6 +30,7 @@ module.exports = {
         'developing/tips',
         'developing/hardware-back-button',
         'developing/keyboard',
+        'developing/config'
       ],
     },
     {
@@ -87,7 +88,6 @@ module.exports = {
         'angular/navigation',
         'angular/virtual-scroll',
         'angular/slides',
-        'angular/config',
         'angular/platform',
         'angular/testing',
         'angular/storage',
@@ -121,7 +121,6 @@ module.exports = {
         'react/navigation',
         'react/virtual-scroll',
         'react/slides',
-        'react/config',
         'react/platform',
         'react/pwa',
         'react/overlays',
@@ -156,7 +155,6 @@ module.exports = {
         'vue/virtual-scroll',
         'vue/slides',
         'vue/utility-functions',
-        'vue/config',
         'vue/platform',
         'vue/pwa',
         'vue/storage',

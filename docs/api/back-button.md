@@ -28,7 +28,7 @@ import Basic from '@site/static/usage/v7/back-button/basic/index.md';
 
 ## カスタムのBack Button
 
-デフォルトでは、Back Buttonはテキスト `"Back"` と共に、`ios` では `"chevron-back"` アイコン、`md` では `"arrow-back-sharp"` アイコンを表示します。これは、`icon`または`text`プロパティを設定することで、戻るボタンコンポーネントごとにカスタマイズすることができます。また、グローバル設定の `backButtonIcon` または `backButtonText` プロパティを使用して、グローバルに設定することもできます。詳しくは、[Angular](/docs/angular/config), [React](/docs/react/config), または [Vue](/docs/vue/config) の Config docs を参照してください。
+デフォルトでは、Back Buttonはテキスト `"Back"` と共に、`ios` では `"chevron-back"` アイコン、`md` では `"arrow-back-sharp"` アイコンを表示します。これは、`icon`または`text`プロパティを設定することで、戻るボタンコンポーネントごとにカスタマイズすることができます。また、グローバル設定の `backButtonIcon` または `backButtonText` プロパティを使用して、グローバルに設定することもできます。詳しくは、[Config docs](../developing/config) を参照してください。
 
 import Custom from '@site/static/usage/v7/back-button/custom/index.md';
 

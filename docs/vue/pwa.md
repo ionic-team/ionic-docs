@@ -1,4 +1,5 @@
 ---
+title: Progressive Web Apps in Vue
 sidebar_label: Progressive Web Apps
 ---
 
@@ -10,11 +11,44 @@ sidebar_label: Progressive Web Apps
   />
 </head>
 
-# Progressive Web Apps in Vue
+## Making your Vue app a PWA with Vite
 
-## VueアプリをPWAにする
+The two main requirements of a PWA are a <a href="https://developers.google.com/web/fundamentals/primers/service-workers/" target="_blank">Service Worker</a> and a <a href="https://developers.google.com/web/fundamentals/web-app-manifest/" target="_blank">Web Application Manifest</a>. While it's possible to add both of these to an app manually, we recommend using the [Vite PWA Plugin](https://vite-pwa-org.netlify.app/) instead.
 
-PWAの主な要件は、 <a href="https://developers.google.com/web/fundamentals/primers/service-workers/" target="_blank">Service Worker</a> と <a href="https://developers.google.com/web/fundamentals/web-app-manifest/" target="_blank">Web Manifest</a> の2つです。これらの両方を手動でアプリに追加することは可能ですが、Vue CLIにはこれを追加するためのユーティリティがいくつか用意されています。
+To get started, install the `vite-plugin-pwa` package:
+
+```shell
+npm install -D vite-plugin-pwa
+```
+
+Next, update your `vite.config.js` or `vite.config.ts` file and add `vite-plugin-pwa`:
+
+```javascript
+import { defineConfig } from 'vite'
+import vue from '@vitejs/plugin-vue'
+import { VitePWA } from 'vite-plugin-pwa'
+
+export default defineConfig({
+  plugins: [
+    vue(),
+    VitePWA({ registerType: 'autoUpdate' })
+  ],
+})
+```
+
+This minimal configuration allows your application to generate the Web Application Manifest and Service Worker on build.
+
+For more information on configuring the Vite PWA Plugin, see the [Vite PWA "Getting Started" Guide](https://vite-pwa-org.netlify.app/guide/).
+
+See the [Vite PWA "Deploy" Guide](https://vite-pwa-org.netlify.app/deployment/) for information on how to deploy your PWA.
+
+## Making your Vue app a PWA with Vue CLI
+
+:::note
+As of Ionic CLI v7, Ionic Vue starter apps ship with Vite instead of Vue CLI. See [Making your Vue app a PWA with Vite](#making-your-vue-app-a-pwa-with-vite) for Vite instructions.
+:::
+
+The two main requirements of a PWA are a <a href="https://developers.google.com/web/fundamentals/primers/service-workers/" target="_blank">Service Worker</a> and a <a href="https://developers.google.com/web/fundamentals/web-app-manifest/" target="_blank">Web Application Manifest</a>. While it's possible to add both of these to an app manually, the Vue CLI has some utilities for adding this for you.
 
 既存のプロジェクトの場合は、 `vue add` コマンドを実行して、VueのPWAプラグインをインストールできます。
 
@@ -117,11 +151,11 @@ Service Workerに加えて、Vue PWAプラグインはアプリケーション�
 
 `public/img/icons` 内のアイコンは、必ずご使用のブランドに合わせて更新してください。テーマの色や名前をカスタマイズしたい場合は、GitHubにある [PWA plugin docs](https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-pwa#configuration) のドキュメントを必ず読んでください。
 
-## デプロイ
+### Deploying
 
 Firebase, Vercel, Netlify,さらにはAzure Static Web Appsなど、さまざまなホストを使用することができる。いずれの場合も、同様のセットアッププロセスを完了する必要があります。このガイドでは、ホストの例としてFirebaseを使用します。このガイドに加えて、 [Vue CLI docs](https://cli.vuejs.org/guide/deployment.html) のドキュメントには、さまざまなプロバイダーにデプロイするためのガイドも含まれています。
 
-### Firebase
+#### Firebase
 
 FirebaseホスティングはProgressive Web Appsに多くの利点を提供しており、CDNによる高速応答、デフォルトで有効になっているHTTPS、 [HTTP2 push](https://firebase.googleblog.com/2016/09/http2-comes-to-firebase-hosting.html) のサポートなどがある。
 

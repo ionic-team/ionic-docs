@@ -2,159 +2,57 @@
 title: Config
 ---
 
-<head>
-  <title>Config | Ionic Config to Change Component Properties Globally</title>
-  <meta
-    name="description"
-    content="Ionic Config provides a way to change the properties of components globally across an app. Config can set the app mode, tab button layout, animations, and more."
-  />
-</head>
-
-Ionic Config provides は、アプリケーション全体でコンポーネントのプロパティをグローバルに変更する方法を提供します。アプリのmode、タブボタンのレイアウト、アニメーションなどを設定できます。
+Ionic Config provides a way to change the properties of components globally across an app. It can set the app mode, tab button layout, animations, and more.
 
 ## Global Config
 
-アプリのデフォルトのIonicコンフィグをオーバーライドするには、独自のカスタム設定を `IonicModule.forRoot(...)` に指定します。利用可能な設定キーは [`IonicConfig`](#ionicconfig) インターフェースで確認することができます。
+The available config keys can be found in the [`IonicConfig`](#ionicconfig) interface.
 
-For example, to disable ripple effects and default the mode to Material Design:
+The following example disables ripple effects and default the mode to Material Design:
 
-```tsx title="app.module.ts"
-import { IonicModule } from '@ionic/angular';
+import GlobalExample from '@site/docs/developing/config/global/index.md';
 
-@NgModule({
-  ...
-  imports: [
-    IonicModule.forRoot({
-      rippleEffect: false,
-      mode: 'md'
-    })
-  ],
-  ...
-})
-```
+<GlobalExample />
 
-## コンポーネント単位のコンフィグ
+## Per-Component Config
 
-Ionic Configはリアクティブではありません。コンポーネントがレンダリングされた後にコンフィグの値を更新すると、以前の値が適用されます。リアクティブな値が必要な場合は、configを更新するのではなく、コンポーネントのプロパティを使用することが推奨されます。
+Ionic Config is not reactive. Updating the config's value after the component has rendered will result in the previous value. It is recommended to use a component's properties instead of updating the config, when you require reactive values.
 
-**Not recommended**
+import PerComponentExample from '@site/docs/developing/config/per-component/index.md';
 
-```ts
-import { IonicModule } from '@ionic/angular';
+<PerComponentExample />
+  
 
-@NgModule({
-  ...
-  imports: [
-    IonicModule.forRoot({
-      // Not recommended when your app requires reactive values
-      backButtonText: 'Go Back'
-    })
-  ],
-  ...
-})
-```
+## Per-Platform Config
 
-**Recommended**
+Ionic Config can also be set on a per-platform basis. For example, this allows you to disable animations if the app is being run in a browser on a potentially slower device. Developers can take advantage of the Platform utilities to accomplish this.
 
-```html
-<ion-back-button [text]="backButtonText"></ion-back-button>
-```
+In the following example, we are disabling all animations in our Ionic app only if the app is running in a mobile web browser.
 
-```ts
-@Component(...)
-class MyComponent {
-  backButtonText = this.config.get('backButtonText');
+import PerPlatformExample from '@site/docs/developing/config/per-platform/index.md';
 
-  constructor(private config: Config) { }
-
-  localeChanged(locale: string) {
-    if (locale === 'es_ES') {
-      this.backButtonText = 'Devolver';
-    }
-  }
-
-}
-```
-
-## プラットフォームごとの設定Per-Platform Config
-
-Ionic Configは、プラットフォームごとに設定することもできます。例えば、遅い可能性のあるデバイス上のブラウザでアプリを実行している場合、アニメーションを無効にすることができる。開発者は、プラットフォーム・ユーティリティーを利用してこれを実現することができます。
-
-configは実行時に設定されるため、Platform Dependency Injectionにはアクセスできません。代わりに、プロバイダが直接使用する基本関数を使用できます。
-
-次の例では、アプリケーションがモバイルWebブラウザで実行されている場合にのみ、Ionicアプリケーションのすべてのアニメーションを無効にしています。
-`isPlatform ()` 呼び出しは、渡されたプラットフォームに基づいて `true` または `false` を返します。[Platform Documentation](platform.md#platforms) で利用可能な値をご覧ください。
+<PerPlatformExample />
 
 
-```tsx
-import { isPlatform, IonicModule } from '@ionic/angular';
+### Fallbacks
 
-@NgModule({
-  ...
-  imports: [
-    IonicModule.forRoot({
-      animated: !isPlatform('mobileweb')
-    })
-  ],
-  ...
-})
-```
+The next example allows you to set an entirely different configuration based upon the platform, falling back to a default config if no platforms match:
 
-**プラットフォームごとの設定とフォールバック機能により、不一致のプラットフォームにも対応:**
+import PerPlatformFallbackExample from '@site/docs/developing/config/per-platform-overrides/index.md';
 
-```tsx
-import { isPlatform, IonicModule } from '@ionic/angular';
+<PerPlatformFallbackExample />
 
-const getConfig = () => {
-  if (isPlatform('hybrid')) {
-    return {
-      backButtonText: 'Previous',
-      tabButtonLayout: 'label-hide'
-    }
-  }
+### Overrides
 
-  return {
-    menuIcon: 'ellipsis-vertical'
-  }
-}
-@NgModule({
-  ...
-  imports: [
-    IonicModule.forRoot(getConfig())
-  ],
-  ...
-})
-```
+This final example allows you to accumulate a config object based upon different platform requirements.
 
-**プラットフォームごとの設定上書き:**
+import PerPlatformOverridesExample from '@site/docs/developing/config/per-platform-fallback/index.md';
 
-```tsx
-import { isPlatform, IonicModule } from '@ionic/angular';
+<PerPlatformOverridesExample />
 
-const getConfig = () => {
-  let config = {
-    animated: false
-  };
+## Reading the Config (Angular)
 
-  if (isPlatform('iphone')) {
-    config = {
-      ...config,
-      backButtonText: 'Previous'
-    }
-  }
-
-  return config;
-}
-@NgModule({
-  ...
-  imports: [
-    IonicModule.forRoot(getConfig())
-  ],
-  ...
-})
-```
-
-## Methods
+Ionic Angular provides a `Config` provider for accessing the Ionic Config.
 
 ### get
 
@@ -203,24 +101,11 @@ class AppComponent {
 | **Description** | Returns a config value as a `number`. Returns `0` if the config is not defined. |
 | **Signature**   | `getNumber(key: string, fallback?: number) => number`                             |
 
-#### Examples
-
-```ts
-import { Config } from '@ionic/angular';
-
-@Component(...)
-class AppComponent {
-  constructor(config: Config) {
-    const keyboardHeight = config.getNumber('keyboardHeight');
-  }
-}
-```
-
 ## Interfaces
 
-### Configオプション
+### IonicConfig
 
-以下はIonicが使用する設定オプションのリストです。
+Below are the config options that Ionic uses.
 
 | Config                   | Type                                                                              | Description                                                                                              |
 | ------------------------ | --------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------- |
@@ -232,6 +117,7 @@ class AppComponent {
 | `backButtonDefaultHref`  | `string`                                                                          | Overrides the default value for the `defaultHref` property in all `<ion-back-button>` components.        |
 | `backButtonIcon`         | `string`                                                                          | Overrides the default icon in all `<ion-back-button>` components.                                        |
 | `backButtonText`         | `string`                                                                          | Overrides the default text in all `<ion-back-button>` components.                                        |
+| `innerHTMLTemplatesEnabled`      | `boolean`                                                                         | Relevant Components: `ion-alert`, `ion-infinite-scroll-content`, `ion-loading`, `ion-refresher-content`, `ion-toast`. If `false`, custom HTML passed to the relevant components will be parsed as a string instead of HTML. Defaults to `true`. |
 | `hardwareBackButton`     | `boolean`                                                                         | If `true`, Ionic will respond to the hardware back button in an Android device.                          |
 | `infiniteLoadingSpinner` | `SpinnerTypes`                                                                    | Overrides the default spinner type in all `<ion-infinite-scroll-content>` components.                    |
 | `loadingEnter`           | `AnimationBuilder`                                                                | Provides a custom enter animation for all `ion-loading`, overriding the default "animation".             |
