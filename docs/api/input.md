@@ -68,7 +68,9 @@ import Fill from '@site/static/usage/v7/input/fill/index.md';
 
 ## Helper & Error Text
 
-ヘルパーテキストとエラーテキストは `helperText` と `errorText` プロパティを用いてInputの内部で使用することができます。エラーテキストは `ion-invalid` クラスが `ion-input` に追加されない限り表示されません。Angular では、これはフォームバリデーションによって自動的に行われます。JavaScript、React、Vueでは、独自のバリデーションに基づいて、このクラスを手動で追加する必要があります。
+ヘルパーテキストとエラーテキストは、`helperText` と `errorText` プロパティを使用して入力の内部で使用することができます。エラーテキストは、 `ion-invalid` クラスと `ion-touched` クラスが `ion-input` に追加されていない限り表示されない。これにより、ユーザがデータを入力する前にエラーが表示されることはありません。
+
+Angularでは、これはフォームバリデーションによって自動的に行われます。JavaScript、React、Vueでは、独自のバリデーションに基づいてクラスを手動で追加する必要があります。
 
 import HelperError from '@site/static/usage/v7/input/helper-error/index.md';
 

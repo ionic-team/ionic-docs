@@ -53,7 +53,7 @@ import ControllerExample from '@site/static/usage/v7/modal/controller/index.md';
 
 モーダルにデータを入力しているとき、誤ってデータが失われないようにする方法があると便利です。 `ion-modal` の `canDismiss` プロパティは、モーダルをいつ終了させるかを開発者がコントロールできるようにします。
 
-`canDismiss` プロパティの使用方法は2つあります。
+canDismiss`プロパティの使用方法には、boolean値の設定とコールバック関数の設定の2種類があります。
 
 :::note
  Note: シートモーダルでは、`0` ブレークポイントが設定されていない場合、スワイプ時に `canDismiss` はチェックされません。しかし、`Esc` やハードウェアのバックボタンを押すと、チェックされます。
@@ -81,7 +81,17 @@ import CanDismissFunctionExample from '@site/static/usage/v7/modal/can-dismiss/f
 
 <CanDismissFunctionExample />
 
+### スワイプで閉じないようにする
+
+開発者は、ユーザーがスワイプしてモーダルを閉じるのを防ぎたい場合があります。これは `canDismiss` のコールバック関数を設定し、`role` が `gesture` でないことをチェックすることで実現できます。
+
+import CanDismissPreventSwipeToCloseExample from '@site/static/usage/v7/modal/can-dismiss/prevent-swipe-to-close/index.md';
+
+<CanDismissPreventSwipeToCloseExample />
+
 ## モーダルの種類
+ 
+### Card Modal
 
 Developers can create a card modal effect where the modal appears as a card stacked on top of your app's main content. To create a card modal, developers need to set the `presentingElement` property on `ion-modal`.
 

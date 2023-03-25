@@ -49,7 +49,9 @@ import Fill from '@site/static/usage/v7/textarea/fill/index.md';
 
 ## Helper & Error Text
 
-ヘルパーテキストとエラーテキストは、`helperText`と`errorText`プロパティを使ってテキストエリア内で使用することができます。エラーテキストは `ion-textarea` に `ion-invalid` クラスが追加されない限り表示されません。Angular では、これはフォームバリデーションによって自動的に行われます。JavaScript、React、Vueでは、独自のバリデーションに基づいてこのクラスを手動で追加する必要があります。
+ヘルパーテキストとエラーテキストは、`helperText` と `errorText` プロパティを使って textarea 内で使用することができます。エラーテキストは、`ion-invalid` と `ion-touched` クラスが `ion-textarea` に追加されていない限り表示されません。これにより、ユーザがデータを入力する前にエラーが表示されることはありません。
+
+Angularでは、これはフォームバリデーションによって自動的に行われます。JavaScript、React、Vueでは、独自のバリデーションに基づいてクラスを手動で追加する必要があります。
 
 import HelperError from '@site/static/usage/v7/textarea/helper-error/index.md';
 
