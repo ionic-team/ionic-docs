@@ -48,9 +48,11 @@ import ControllerExample from '@site/static/usage/v7/toast/presenting/controller
 
 ## Dismissing
 
-Toasts are intended to be subtle notifications and are not intended to interrupt the user.
+Toasts are intended to be subtle notifications and should not interrupt the user. As a result, user interaction should not be required to dismiss the toast.
 
-The toast can be dismissed automatically after a specific amount of time by passing the number of milliseconds to display it in the `duration` of the toast options. If a button with a role of `"cancel"` is added, then that button will dismiss the toast. To dismiss the toast after creation, call the `dismiss()` method on the instance. A hardware back button will not dismiss the toast.
+The toast can be dismissed automatically after a specific amount of time by passing the number of milliseconds to display it in the `duration` of the toast options. If a button with a role of `"cancel"` is added, then that button will dismiss the toast. To dismiss the toast after creation, call the `dismiss()` method on the instance.
+
+Pressing the hardware back button does not dismiss toasts since they are not supposed to interrupt the user.
 
 The following example demonstrates how to use the `buttons` property to add a button that automatically dismisses the toast when clicked, as well as how to collect the `role` of the dismiss event.
 
