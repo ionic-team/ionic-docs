@@ -17,6 +17,8 @@ Ionic Framework provides a few lifecycle methods that you can use in your apps:
 | `ionViewWillLeave` | Fired when the component routing from is about to animate.         |
 | `ionViewDidLeave`  | Fired when the component routing to has finished animating.        |
 
+These lifecycles are only called on components directly mapped by a router. This means if `/pageOne` maps to `PageOneComponent`, then Ionic lifecycles will be called on `PageOneComponent` but will not be called on any child components that `PageOneComponent` may render.
+
 The lifecycles are defined the same way Vue lifecycle methods are - as functions at the root of your Vue component:
 
 ```tsx

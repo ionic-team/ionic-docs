@@ -41,6 +41,8 @@ In addition to the Angular life cycle events, Ionic Angular provides a few addit
 | `ionViewWillLeave` | Fired when the component routing from is about to animate.         |
 | `ionViewDidLeave`  | Fired when the component routing to has finished animating.        |
 
+These lifecycles are only called on components directly mapped by a router. This means if `/pageOne` maps to `PageOneComponent`, then Ionic lifecycles will be called on `PageOneComponent` but will not be called on any child components that `PageOneComponent` may render.
+
 The difference between `ionViewWillEnter` and `ionViewDidEnter` is when they fire. The former fires right after `ngOnInit` but before the page transition begins, and the latter directly after the transition ends.
 
 For `ionViewWillLeave` and `ionViewDidLeave`, `ionViewWillLeave` gets called directly before the transition away from the current page begins, and `ionViewDidLeave` does not get called until after the new page gets successfully transitioned into (after the new pages `ionViewDidEnter` fires).
