@@ -48,7 +48,7 @@ import ControllerExample from '@site/static/usage/v7/toast/presenting/controller
 
 ## Dismissing
 
-The toast can be dismissed automatically after a specific amount of time by passing the number of milliseconds to display it in the `duration` of the toast options. To dismiss the toast after creation, call the `dismiss()` method on the instance.
+The toast can be dismissed automatically after a specific amount of time by passing the number of milliseconds to display it in the `duration` of the toast options. If a button with a role of `"cancel"` is added, then that button will dismiss the toast. To dismiss the toast after creation, call the `dismiss()` method on the instance.
 
 The following example demonstrates how to use the `buttons` property to add a button that automatically dismisses the toast when clicked, as well as how to collect the `role` of the dismiss event.
 
