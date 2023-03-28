@@ -116,7 +116,7 @@
       "inputs": [
         {
           "name": "platform",
-          "summary": "The platform to add (e.g. `android`, `ios`)\n\n自動翻訳: 追加するプラットフォーム（例：`android`、`ios`）。",
+          "summary": "追加するプラットフォーム（例：`android`、`ios`）。",
           "required": true
         }
       ],
@@ -144,7 +144,7 @@
       "inputs": [
         {
           "name": "platform",
-          "summary": "The platform to build for (e.g. `android`, `ios`)\n\n自動翻訳: ビルドするプラットフォーム（例：`android`、`ios`）を指定します。",
+          "summary": "ビルドするプラットフォーム（例：`android`、`ios`）を指定します。",
           "required": true
         }
       ],
@@ -241,7 +241,7 @@
       "inputs": [
         {
           "name": "platform",
-          "summary": "The platform to copy (e.g. `android`, `ios`)\n\n自動翻訳: コピーするプラットフォーム（例：`android`、`ios`）。",
+          "summary": "コピーするプラットフォーム（例：`android`、`ios`）。",
           "required": false
         }
       ],
@@ -327,7 +327,7 @@
       "inputs": [
         {
           "name": "platform",
-          "summary": "The platform to open (e.g. `android`, `ios`)\n\n自動翻訳: 開くプラットフォーム（例：`android`、`ios`）。",
+          "summary": "開くプラットフォーム（例：`android`、`ios`）。",
           "required": true
         }
       ],
@@ -355,7 +355,7 @@
       "inputs": [
         {
           "name": "platform",
-          "summary": "The platform to run (e.g. `android`, `ios`)\n\n自動翻訳: 実行するプラットフォーム（例：`android`、`ios`）。",
+          "summary": "実行するプラットフォーム（例：`android`、`ios`）。",
           "required": true
         }
       ],
@@ -549,7 +549,7 @@
       "inputs": [
         {
           "name": "platform",
-          "summary": "The platform to sync (e.g. `android`, `ios`)\n\n自動翻訳: 同期するプラットフォーム（例：`android`、`ios`）。",
+          "summary": "同期するプラットフォーム（例：`android`、`ios`）。",
           "required": false
         }
       ],
@@ -635,7 +635,7 @@
       "inputs": [
         {
           "name": "platform",
-          "summary": "The platform to update (e.g. `android`, `ios`)\n\n自動翻訳: アップデートするプラットフォーム（例：`android`、`ios`）。",
+          "summary": "アップデートするプラットフォーム（例：`android`、`ios`）。",
           "required": false
         }
       ],
@@ -682,7 +682,7 @@
       "inputs": [
         {
           "name": "property",
-          "summary": "The property name you wish to get\n\n自動翻訳: 取得したいプロパティ名",
+          "summary": "取得したいプロパティ名",
           "required": false
         }
       ],
@@ -745,12 +745,12 @@
       "inputs": [
         {
           "name": "property",
-          "summary": "The property name you wish to set\n\n自動翻訳: 設定したいプロパティ名",
+          "summary": "設定したいプロパティ名",
           "required": true
         },
         {
           "name": "value",
-          "summary": "The new value of the given property\n\n自動翻訳: 与えられたプロパティの新しい値",
+          "summary": "与えられたプロパティの新しい値",
           "required": true
         }
       ],
@@ -829,7 +829,7 @@
       "inputs": [
         {
           "name": "property",
-          "summary": "The property name you wish to delete\n\n自動翻訳: 削除したいプロパティ名",
+          "summary": "削除したいプロパティ名",
           "required": true
         }
       ],
@@ -889,7 +889,7 @@
       "inputs": [
         {
           "name": "platform",
-          "summary": "The platform to build (e.g. `android`, `ios`)\n\n自動翻訳: ビルドするプラットフォーム（例：`android`、`ios`）。",
+          "summary": "ビルドするプラットフォーム（例：`android`、`ios`）。",
           "required": true
         }
       ],
@@ -1035,7 +1035,7 @@
       "inputs": [
         {
           "name": "platform",
-          "summary": "The platform to compile (`android`, `ios`)\n\n自動翻訳: コンパイルするプラットフォーム（`android`、`ios`）。",
+          "summary": "コンパイルするプラットフォーム（`android`、`ios`）。",
           "required": true
         }
       ],
@@ -1142,7 +1142,7 @@
       "inputs": [
         {
           "name": "platform",
-          "summary": "The platform to run (e.g. `android`, `ios`)\n\n自動翻訳: 実行するプラットフォーム（例：`android`、`ios`）。",
+          "summary": "実行するプラットフォーム（例：`android`、`ios`）。",
           "required": true
         }
       ],
@@ -1469,12 +1469,12 @@
       "inputs": [
         {
           "name": "action",
-          "summary": "`add`, `remove`, or `update` a platform; `ls`, `check`, or `save` all project platforms\n\n自動翻訳: プラットフォームの追加、削除、または更新; プロジェクトのプラットフォームをすべて保存します。",
+          "summary": "プラットフォームの追加、削除、または更新; プロジェクトのプラットフォームをすべて保存します。",
           "required": false
         },
         {
           "name": "platform",
-          "summary": "The platform that you would like to add (`android`, `ios`)\n\n自動翻訳: 追加したいプラットフォーム（`android`、`ios`）を指定します。",
+          "summary": "追加したいプラットフォーム（`android`、`ios`）を指定します。",
           "required": false
         }
       ],
@@ -1515,12 +1515,12 @@
       "inputs": [
         {
           "name": "action",
-          "summary": "`add` or `remove` a plugin; `ls` or `save` all project plugins\n\n自動翻訳: プラグインを `add` または `remove`; プロジェクトのすべてのプラグインを `ls` または `save` します。",
+          "summary": "プラグインを `add` または `remove`; プロジェクトのすべてのプラグインを `ls` または `save` します。",
           "required": false
         },
         {
           "name": "plugin",
-          "summary": "The name of the plugin (corresponds to `add` and `remove`)\n\n自動翻訳: プラグインの名前 (`add` と `remove` に対応する)",
+          "summary": "プラグインの名前 (`add` と `remove` に対応する)",
           "required": false
         }
       ],
@@ -1574,7 +1574,7 @@
       "inputs": [
         {
           "name": "platform",
-          "summary": "The platform you would like to prepare (e.g. `android`, `ios`)\n\n自動翻訳: 用意したいプラットフォーム（例：`android`、`ios`）。",
+          "summary": "用意したいプラットフォーム（例：`android`、`ios`）。",
           "required": false
         }
       ],
@@ -1660,7 +1660,7 @@
       "inputs": [
         {
           "name": "platform",
-          "summary": "The platform for which you would like to gather requirements (`android`, `ios`)\n\n自動翻訳: 要件を収集したいプラットフォーム（`android`、`ios`）。",
+          "summary": "要件を収集したいプラットフォーム（`android`、`ios`）。",
           "required": false
         }
       ],
@@ -1688,7 +1688,7 @@
       "inputs": [
         {
           "name": "platform",
-          "summary": "The platform for which you would like to generate resources (`ios`, `android`)\n\n自動翻訳: リソースを生成したいプラットフォーム（`ios`、`android`）を指定します。",
+          "summary": "リソースを生成したいプラットフォーム（`ios`、`android`）を指定します。",
           "required": false
         }
       ],
@@ -1751,7 +1751,7 @@
       "inputs": [
         {
           "name": "platform",
-          "summary": "The platform to run (e.g. `android`, `ios`)\n\n自動翻訳: 実行するプラットフォーム（例：`android`、`ios`）。",
+          "summary": "実行するプラットフォーム（例：`android`、`ios`）。",
           "required": true
         }
       ],
@@ -2230,7 +2230,7 @@
       "inputs": [
         {
           "name": "platform",
-          "summary": "The native platform (e.g. `ios`, `android`)\n\n自動翻訳: ネイティブプラットフォーム（例：`ios`、`android`）。",
+          "summary": "ネイティブプラットフォーム（例：`ios`、`android`）。",
           "required": false
         }
       ],
@@ -2363,7 +2363,7 @@
       "inputs": [
         {
           "name": "id",
-          "summary": "The issue identifier\n\n自動翻訳: 課題識別子",
+          "summary": "課題識別子",
           "required": false
         }
       ],
@@ -2412,7 +2412,7 @@
       "inputs": [
         {
           "name": "id",
-          "summary": "The issue identifier\n\n自動翻訳: 課題識別子",
+          "summary": "課題識別子",
           "required": false
         }
       ],
@@ -2482,12 +2482,12 @@
       "inputs": [
         {
           "name": "type",
-          "summary": "The type of feature (e.g. `page`, `component`, `directive`, `service`)\n\n自動翻訳: 機能の種類（例：`page`、`component`、`directive`、`service`）を指定します。",
+          "summary": "機能の種類（例：`page`、`component`、`directive`、`service`）を指定します。",
           "required": true
         },
         {
           "name": "name",
-          "summary": "The name/path of the feature being generated\n\n自動翻訳: 生成されるフィーチャの名前/パス",
+          "summary": "生成されるフィーチャの名前/パス",
           "required": true
         }
       ],
@@ -2559,7 +2559,7 @@
       "inputs": [
         {
           "name": "name",
-          "summary": "The name of your project (e.g. `myApp`, `\"My App\"`)\n\n自動翻訳: プロジェクト名（例：`myApp`、`\"My App\"`）を指定します。",
+          "summary": "プロジェクト名（例：`myApp`、`\"My App\"`）を指定します。",
           "required": false
         }
       ],
@@ -2646,7 +2646,7 @@
       "inputs": [
         {
           "name": "name",
-          "summary": "The integration to disable (e.g. `capacitor`, `cordova`, `enterprise`)\n\n自動翻訳: 無効にするインテグレーション（例：`capacitor`、`cordova`、`enterprise`）を指定します。",
+          "summary": "無効にするインテグレーション（例：`capacitor`、`cordova`、`enterprise`）を指定します。",
           "required": true
         }
       ],
@@ -2671,7 +2671,7 @@
       "inputs": [
         {
           "name": "name",
-          "summary": "The integration to enable (e.g. `capacitor`, `cordova`, `enterprise`)\n\n自動翻訳: 有効にするインテグレーション（例：`capacitor`、`cordova`、`enterprise`）を指定します。",
+          "summary": "有効にするインテグレーション（例：`capacitor`、`cordova`、`enterprise`）を指定します。",
           "required": true
         }
       ],
@@ -2746,7 +2746,7 @@
       "inputs": [
         {
           "name": "id",
-          "summary": "The Appflow ID of the app to link (e.g. `a1b2c3d4`)\n\n自動翻訳: リンクするアプリのAppflow ID (例: `a1b2c3d4`)",
+          "summary": "リンクするアプリのAppflow ID (例: `a1b2c3d4`)",
           "required": false
         }
       ],
@@ -2769,12 +2769,12 @@
       "inputs": [
         {
           "name": "email",
-          "summary": "Your email address (deprecated)\n\n自動翻訳: お客様のEメールアドレス（非推奨）",
+          "summary": "お客様のEメールアドレス（非推奨）",
           "required": false
         },
         {
           "name": "password",
-          "summary": "Your password (deprecated)\n\n自動翻訳: お客様のパスワード（非推奨）",
+          "summary": "お客様のパスワード（非推奨）",
           "required": false
         }
       ],
@@ -2826,12 +2826,12 @@
       "inputs": [
         {
           "name": "platform",
-          "summary": "The platform to package (`android`, `ios`)\n\n自動翻訳: パッケージングするプラットフォーム（`android`、`ios`）。",
+          "summary": "パッケージングするプラットフォーム（`android`、`ios`）。",
           "required": true
         },
         {
           "name": "type",
-          "summary": "The build type (`debug`, `release`, `development`, `ad-hoc`, `app-store`, `enterprise`)\n\n自動翻訳: ビルドタイプ（`debug`, `release`, `development`, `ad-hoc`, `app-store`, `enterprise` ）。",
+          "summary": "ビルドタイプ（`debug`, `release`, `development`, `ad-hoc`, `app-store`, `enterprise` ）。",
           "required": true
         }
       ],
@@ -3004,12 +3004,12 @@
       "inputs": [
         {
           "name": "build-id",
-          "summary": "The build id of the desired successful package build\n\n自動翻訳: 成功したパッケージのビルドを示すビルドID",
+          "summary": "成功したパッケージのビルドを示すビルドID",
           "required": true
         },
         {
           "name": "destination",
-          "summary": "The destination to deploy the build artifact to the app store\n\n自動翻訳: ビルドアーティファクトをアプリストアにデプロイするための保存先",
+          "summary": "ビルドアーティファクトをアプリストアにデプロイするための保存先",
           "required": true
         }
       ],
@@ -3273,7 +3273,7 @@
       "inputs": [
         {
           "name": "pubkey-path",
-          "summary": "Location of public key file to add to Ionic\n\n自動翻訳: Ionicに追加する公開鍵ファイルの場所",
+          "summary": "Ionicに追加する公開鍵ファイルの場所",
           "required": true
         }
       ],
@@ -3309,7 +3309,7 @@
       "inputs": [
         {
           "name": "key-id",
-          "summary": "The ID of the public key to delete\n\n自動翻訳: 削除する公開鍵のID",
+          "summary": "削除する公開鍵のID",
           "required": true
         }
       ],
@@ -3333,7 +3333,7 @@
       "inputs": [
         {
           "name": "key-path",
-          "summary": "Destination of private key file\n\n自動翻訳: 秘密鍵ファイルの保存先",
+          "summary": "秘密鍵ファイルの保存先",
           "required": false
         }
       ],
@@ -3445,7 +3445,7 @@
       "inputs": [
         {
           "name": "key-path",
-          "summary": "Location of private key file to use\n\n自動翻訳: 使用する秘密鍵のファイルの場所",
+          "summary": "使用する秘密鍵のファイルの場所",
           "required": true
         }
       ],
@@ -3601,12 +3601,12 @@
       "inputs": [
         {
           "name": "name",
-          "summary": "The name of your new project (e.g. `myApp`, `\"My App\"`)\n\n自動翻訳: 新しいプロジェクトの名前（例：`myApp`、`\"My App\"`）を指定します。",
+          "summary": "新しいプロジェクトの名前（例：`myApp`、`\"My App\"`）を指定します。",
           "required": true
         },
         {
           "name": "template",
-          "summary": "The starter template to use (e.g. `blank`, `tabs`; use `--list` to see all)\n\n自動翻訳: 使用するスターターテンプレート（例：`blank`, `tabs`; すべてを見るには `--list` を使用します。）",
+          "summary": "使用するスターターテンプレート（例：`blank`, `tabs`; すべてを見るには `--list` を使用します。）",
           "required": true
         }
       ],

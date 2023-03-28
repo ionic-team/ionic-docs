@@ -39,7 +39,7 @@ const apply = async () => {
 
               // キャッシュデータにあるか確認
               if (cacheTranslated.hasOwnProperty(translateText)) {
-                ob[translateType.translateTargetKey] = ob[translateType.translateTargetKey] + `\n\n自動翻訳: ${cacheTranslated[translateText]}`;
+                ob[translateType.translateTargetKey] = cacheTranslated[translateText];
                 return;
               }
 
