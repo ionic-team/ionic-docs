@@ -120,7 +120,15 @@ module.exports = {
         'react/pwa',
         'react/overlays',
         'react/storage',
-        'react/testing',
+        {
+          type: 'category',
+          label: 'Testing',
+          items: [
+            'react/testing/introduction', 
+            'react/testing/setup', 
+            'react/testing/examples'
+          ],
+        },
         'react/performance',
       ],
     },
