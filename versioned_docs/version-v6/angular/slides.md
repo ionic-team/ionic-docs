@@ -88,7 +88,7 @@ If you were using the CSS custom properties found on `ion-slides`, below is a li
 | `--scroll-bar-background`          | `--swiper-scrollbar-bg-color`               |
 | `--scroll-bar-background-active`   | `--swiper-scrollbar-drag-bg-color`          |
 
-For additional custom CSS, because Swiper Element uses Shadow DOM encapsulation, styles will need to be injected into the Shadow DOM scope. See see <a href="https://swiperjs.com/element#injecting-styles" target="_blank" rel="noopener noreferrer">https://swiperjs.com/element#injecting-styles</a> for instructions.
+For additional custom CSS, because Swiper Element uses Shadow DOM encapsulation, styles will need to be injected into the Shadow DOM scope. See <a href="https://swiperjs.com/element#injecting-styles" target="_blank" rel="noopener noreferrer">https://swiperjs.com/element#injecting-styles</a> for instructions.
 
 ### Additional `ion-slides` Styles
 
