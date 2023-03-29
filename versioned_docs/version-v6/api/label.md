@@ -2,12 +2,12 @@
 title: 'ion-label'
 ---
 
-import Props from '@site/static/auto-generated/label/props.md';
-import Events from '@site/static/auto-generated/label/events.md';
-import Methods from '@site/static/auto-generated/label/methods.md';
-import Parts from '@site/static/auto-generated/label/parts.md';
-import CustomProps from '@site/static/auto-generated/label/custom-props.md';
-import Slots from '@site/static/auto-generated/label/slots.md';
+import Props from '@ionic-internal/component-api/v6/label/props.md';
+import Events from '@ionic-internal/component-api/v6/label/events.md';
+import Methods from '@ionic-internal/component-api/v6/label/methods.md';
+import Parts from '@ionic-internal/component-api/v6/label/parts.md';
+import CustomProps from '@ionic-internal/component-api/v6/label/custom-props.md';
+import Slots from '@ionic-internal/component-api/v6/label/slots.md';
 
 <head>
   <title>Item Label Color and Properties for Applications | ion-label</title>
