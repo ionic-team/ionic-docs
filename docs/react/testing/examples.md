@@ -103,7 +103,7 @@ jest.mock('@ionic/react', () => {
   };
 });
 
-test('should present ModalContent when button is clicked', async () => {
+test('should present ModalContent when button is clicked', () => {
   render(<Example />);
 
   fireEvent.click(screen.getByText('Open'));
