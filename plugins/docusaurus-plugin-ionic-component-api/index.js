@@ -56,7 +56,7 @@ module.exports = function (context, options) {
         npmTag = currentVersion.path.slice(1);
       }
       // Latest version
-      await generateMarkdownForVersion(currentVersion.path, npmTag, true);
+      await generateMarkdownForVersion(currentVersion.path || currentVersion.label, npmTag, true);
 
       return data;
     },
