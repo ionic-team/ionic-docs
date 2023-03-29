@@ -49,7 +49,12 @@ module.exports = function (context, options) {
         await generateMarkdownForVersion(version, npmTag, false);
       }
 
-      const npmTag = currentVersion.banner === 'unreleased' ? 'next' : currentVersion.path.slice(1);
+      let npmTag = 'latest';
+      if (currentVersion.banner === 'unreleased') {
+        npmTag = 'next';
+      } else if (currentVersion.path !== undefined) {
+        npmTag = currentVersion.path.slice(1);
+      }
       // Latest version
       await generateMarkdownForVersion(currentVersion.path, npmTag, true);
 
