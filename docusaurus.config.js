@@ -279,7 +279,6 @@ module.exports = {
           return `https://github.com/ionic-team/ionic-docs/edit/main/${versionDocsDirPath}/${docPath}`;
         },
         exclude: ['README.md'],
-        lastVersion: 'v7',
         versions: {
           current: {
             label: 'v7',
