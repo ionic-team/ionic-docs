@@ -1,39 +1,38 @@
 ---
-title: "ion-slides"
+title: 'ion-slides'
 hide_table_of_contents: true
-demoUrl: "/docs/demos/api/slides/index.html"
-demoSourceUrl: "https://github.com/ionic-team/ionic-docs/tree/main/static/demos/api/slides/index.html"
+demoUrl: '/docs/demos/api/slides/index.html'
+demoSourceUrl: 'https://github.com/ionic-team/ionic-docs/tree/main/static/demos/api/slides/index.html'
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import TOCInline from '@theme/TOCInline';
 
-import Props from '@site/static/auto-generated/slides/props.md';
-import Events from '@site/static/auto-generated/slides/events.md';
-import Methods from '@site/static/auto-generated/slides/methods.md';
-import Parts from '@site/static/auto-generated/slides/parts.md';
-import CustomProps from '@site/static/auto-generated/slides/custom-props.md';
-import Slots from '@site/static/auto-generated/slides/slots.md';
+import Props from '@ionic-internal/component-api/v6/slides/props.md';
+import Events from '@ionic-internal/component-api/v6/slides/events.md';
+import Methods from '@ionic-internal/component-api/v6/slides/methods.md';
+import Parts from '@ionic-internal/component-api/v6/slides/parts.md';
+import CustomProps from '@ionic-internal/component-api/v6/slides/custom-props.md';
+import Slots from '@ionic-internal/component-api/v6/slides/slots.md';
 
 <head>
   <title>Ion-Slides: Mobile Touch Slider with Built-In & Custom Animation</title>
-  <meta name="description" content="Ion-Slidesは、カスタムおよびビルトインモバイルタッチスライダーアニメーション効果を提供するマルチセクションコンテナです。Ion-SlidesのiOSとAndroidでの動作をご覧ください。" />
+  <meta
+    name="description"
+    content="Ion-Slidesは、カスタムおよびビルトインモバイルタッチスライダーアニメーション効果を提供するマルチセクションコンテナです。Ion-SlidesのiOSとAndroidでの動作をご覧ください。"
+  />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
-
 <h2 className="table-of-contents__title">コンテンツ</h2>
 
-<TOCInline
-  toc={toc}
-  maxHeadingLevel={2}
-/>
+<TOCInline toc={toc} maxHeadingLevel={2} />
 
 :::note
 This component has been deprecated in favor of using Swiper.js directly. Please see the [migration guide](#migration) below.
 :::
-
 
 Slidesコンポーネントは複数セクションのコンテナです。
 各セクション間をスワイプまたはドラッグできます。これには任意の数の[Slide](slide.md)コンポーネントが含まれます。
@@ -85,14 +84,13 @@ Ionic Framework v7 で `ion-slides` と `ion-slide` を削除する予定です�
 
 [Migration for Ionic Vue users](../vue/slides)
 
-------
+---
 
 以上のドキュメントは `ion-slides` コンポーネントに適用されます。
 
 ## カスタムアニメーション
 
 デフォルトでは、Ionicのスライドはビルトインの `slide` アニメーションエフェクトを使用します。カスタムのアニメーションは `options` プロパティで指定できます。その他のアニメーションの例は以下をご参照ください。
-
 
 ### Coverflow
 
@@ -118,13 +116,11 @@ const slideOpts = {
     },
     setTranslate() {
       const swiper = this;
-      const {
-        width: swiperWidth, height: swiperHeight, slides, $wrapperEl, slidesSizesGrid, $
-      } = swiper;
+      const { width: swiperWidth, height: swiperHeight, slides, $wrapperEl, slidesSizesGrid, $ } = swiper;
       const params = swiper.params.coverflowEffect;
       const isHorizontal = swiper.isHorizontal();
       const transform$$1 = swiper.translate;
-      const center = isHorizontal ? -transform$$1 + (swiperWidth / 2) : -transform$$1 + (swiperHeight / 2);
+      const center = isHorizontal ? -transform$$1 + swiperWidth / 2 : -transform$$1 + swiperHeight / 2;
       const rotate = isHorizontal ? params.rotate : -params.rotate;
       const translate = params.depth;
       // Each slide offset from center
@@ -132,31 +128,35 @@ const slideOpts = {
         const $slideEl = slides.eq(i);
         const slideSize = slidesSizesGrid[i];
         const slideOffset = $slideEl[0].swiperSlideOffset;
-        const offsetMultiplier = ((center - slideOffset - (slideSize / 2)) / slideSize) * params.modifier;
+        const offsetMultiplier = ((center - slideOffset - slideSize / 2) / slideSize) * params.modifier;
 
-         let rotateY = isHorizontal ? rotate * offsetMultiplier : 0;
+        let rotateY = isHorizontal ? rotate * offsetMultiplier : 0;
         let rotateX = isHorizontal ? 0 : rotate * offsetMultiplier;
         // var rotateZ = 0
         let translateZ = -translate * Math.abs(offsetMultiplier);
 
-         let translateY = isHorizontal ? 0 : params.stretch * (offsetMultiplier);
-        let translateX = isHorizontal ? params.stretch * (offsetMultiplier) : 0;
+        let translateY = isHorizontal ? 0 : params.stretch * offsetMultiplier;
+        let translateX = isHorizontal ? params.stretch * offsetMultiplier : 0;
 
-         // Fix for ultra small values
+        // Fix for ultra small values
         if (Math.abs(translateX) < 0.001) translateX = 0;
         if (Math.abs(translateY) < 0.001) translateY = 0;
         if (Math.abs(translateZ) < 0.001) translateZ = 0;
         if (Math.abs(rotateY) < 0.001) rotateY = 0;
         if (Math.abs(rotateX) < 0.001) rotateX = 0;
 
-         const slideTransform = `translate3d(${translateX}px,${translateY}px,${translateZ}px)  rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+        const slideTransform = `translate3d(${translateX}px,${translateY}px,${translateZ}px)  rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
 
-         $slideEl.transform(slideTransform);
+        $slideEl.transform(slideTransform);
         $slideEl[0].style.zIndex = -Math.abs(Math.round(offsetMultiplier)) + 1;
         if (params.slideShadows) {
           // Set shadows
-          let $shadowBeforeEl = isHorizontal ? $slideEl.find('.swiper-slide-shadow-left') : $slideEl.find('.swiper-slide-shadow-top');
-          let $shadowAfterEl = isHorizontal ? $slideEl.find('.swiper-slide-shadow-right') : $slideEl.find('.swiper-slide-shadow-bottom');
+          let $shadowBeforeEl = isHorizontal
+            ? $slideEl.find('.swiper-slide-shadow-left')
+            : $slideEl.find('.swiper-slide-shadow-top');
+          let $shadowAfterEl = isHorizontal
+            ? $slideEl.find('.swiper-slide-shadow-right')
+            : $slideEl.find('.swiper-slide-shadow-bottom');
           if ($shadowBeforeEl.length === 0) {
             $shadowBeforeEl = swiper.$(`<div class="swiper-slide-shadow-${isHorizontal ? 'left' : 'top'}"></div>`);
             $slideEl.append($shadowBeforeEl);
@@ -166,11 +166,11 @@ const slideOpts = {
             $slideEl.append($shadowAfterEl);
           }
           if ($shadowBeforeEl.length) $shadowBeforeEl[0].style.opacity = offsetMultiplier > 0 ? offsetMultiplier : 0;
-          if ($shadowAfterEl.length) $shadowAfterEl[0].style.opacity = (-offsetMultiplier) > 0 ? -offsetMultiplier : 0;
+          if ($shadowAfterEl.length) $shadowAfterEl[0].style.opacity = -offsetMultiplier > 0 ? -offsetMultiplier : 0;
         }
       }
 
-       // Set correct perspective for IE10
+      // Set correct perspective for IE10
       if (swiper.support.pointerEvents || swiper.support.prefixedPointerEvents) {
         const ws = $wrapperEl[0].style;
         ws.perspectiveOrigin = `${center}px 50%`;
@@ -180,11 +180,13 @@ const slideOpts = {
       const swiper = this;
       swiper.slides
         .transition(duration)
-        .find('.swiper-slide-shadow-top, .swiper-slide-shadow-right, .swiper-slide-shadow-bottom, .swiper-slide-shadow-left')
+        .find(
+          '.swiper-slide-shadow-top, .swiper-slide-shadow-right, .swiper-slide-shadow-bottom, .swiper-slide-shadow-left'
+        )
         .transition(duration);
-    }
-  }
-}
+    },
+  },
+};
 ```
 
 ### Cube
@@ -199,7 +201,7 @@ const slideOpts = {
     shadowScale: 0.94,
   },
   on: {
-    beforeInit: function() {
+    beforeInit: function () {
       const swiper = this;
       swiper.classNames.push(`${swiper.params.containerModifierClass}cube`);
       swiper.classNames.push(`${swiper.params.containerModifierClass}3d`);
@@ -218,10 +220,16 @@ const slideOpts = {
       this.params = Object.assign(this.params, overwriteParams);
       this.originalParams = Object.assign(this.originalParams, overwriteParams);
     },
-    setTranslate: function() {
+    setTranslate: function () {
       const swiper = this;
       const {
-        $el, $wrapperEl, slides, width: swiperWidth, height: swiperHeight, rtlTranslate: rtl, size: swiperSize,
+        $el,
+        $wrapperEl,
+        slides,
+        width: swiperWidth,
+        height: swiperHeight,
+        rtlTranslate: rtl,
+        size: swiperSize,
       } = swiper;
       const params = swiper.params.cubeEffect;
       const isHorizontal = swiper.isHorizontal();
@@ -268,31 +276,37 @@ const slideOpts = {
           tx = 0;
           tz = -round * 4 * swiperSize;
         } else if ((slideIndex - 2) % 4 === 0) {
-          tx = swiperSize + (round * 4 * swiperSize);
+          tx = swiperSize + round * 4 * swiperSize;
           tz = swiperSize;
         } else if ((slideIndex - 3) % 4 === 0) {
           tx = -swiperSize;
-          tz = (3 * swiperSize) + (swiperSize * 4 * round);
+          tz = 3 * swiperSize + swiperSize * 4 * round;
         }
         if (rtl) {
           tx = -tx;
         }
 
-         if (!isHorizontal) {
+        if (!isHorizontal) {
           ty = tx;
           tx = 0;
         }
 
-         const transform$$1 = `rotateX(${isHorizontal ? 0 : -slideAngle}deg) rotateY(${isHorizontal ? slideAngle : 0}deg) translate3d(${tx}px, ${ty}px, ${tz}px)`;
+        const transform$$1 = `rotateX(${isHorizontal ? 0 : -slideAngle}deg) rotateY(${
+          isHorizontal ? slideAngle : 0
+        }deg) translate3d(${tx}px, ${ty}px, ${tz}px)`;
         if (progress <= 1 && progress > -1) {
-          wrapperRotate = (slideIndex * 90) + (progress * 90);
-          if (rtl) wrapperRotate = (-slideIndex * 90) - (progress * 90);
+          wrapperRotate = slideIndex * 90 + progress * 90;
+          if (rtl) wrapperRotate = -slideIndex * 90 - progress * 90;
         }
         $slideEl.transform(transform$$1);
         if (params.slideShadows) {
           // Set shadows
-          let shadowBefore = isHorizontal ? $slideEl.find('.swiper-slide-shadow-left') : $slideEl.find('.swiper-slide-shadow-top');
-          let shadowAfter = isHorizontal ? $slideEl.find('.swiper-slide-shadow-right') : $slideEl.find('.swiper-slide-shadow-bottom');
+          let shadowBefore = isHorizontal
+            ? $slideEl.find('.swiper-slide-shadow-left')
+            : $slideEl.find('.swiper-slide-shadow-top');
+          let shadowAfter = isHorizontal
+            ? $slideEl.find('.swiper-slide-shadow-right')
+            : $slideEl.find('.swiper-slide-shadow-bottom');
           if (shadowBefore.length === 0) {
             shadowBefore = swiper.$(`<div class="swiper-slide-shadow-${isHorizontal ? 'left' : 'top'}"></div>`);
             $slideEl.append(shadowBefore);
@@ -312,39 +326,50 @@ const slideOpts = {
         'transform-origin': `50% 50% -${swiperSize / 2}px`,
       });
 
-       if (params.shadow) {
+      if (params.shadow) {
         if (isHorizontal) {
-          $cubeShadowEl.transform(`translate3d(0px, ${(swiperWidth / 2) + params.shadowOffset}px, ${-swiperWidth / 2}px) rotateX(90deg) rotateZ(0deg) scale(${params.shadowScale})`);
-        } else {
-          const shadowAngle = Math.abs(wrapperRotate) - (Math.floor(Math.abs(wrapperRotate) / 90) * 90);
-          const multiplier = 1.5 - (
-            (Math.sin((shadowAngle * 2 * Math.PI) / 360) / 2)
-            + (Math.cos((shadowAngle * 2 * Math.PI) / 360) / 2)
+          $cubeShadowEl.transform(
+            `translate3d(0px, ${swiperWidth / 2 + params.shadowOffset}px, ${
+              -swiperWidth / 2
+            }px) rotateX(90deg) rotateZ(0deg) scale(${params.shadowScale})`
           );
+        } else {
+          const shadowAngle = Math.abs(wrapperRotate) - Math.floor(Math.abs(wrapperRotate) / 90) * 90;
+          const multiplier =
+            1.5 - (Math.sin((shadowAngle * 2 * Math.PI) / 360) / 2 + Math.cos((shadowAngle * 2 * Math.PI) / 360) / 2);
           const scale1 = params.shadowScale;
           const scale2 = params.shadowScale / multiplier;
           const offset$$1 = params.shadowOffset;
-          $cubeShadowEl.transform(`scale3d(${scale1}, 1, ${scale2}) translate3d(0px, ${(swiperHeight / 2) + offset$$1}px, ${-swiperHeight / 2 / scale2}px) rotateX(-90deg)`);
+          $cubeShadowEl.transform(
+            `scale3d(${scale1}, 1, ${scale2}) translate3d(0px, ${swiperHeight / 2 + offset$$1}px, ${
+              -swiperHeight / 2 / scale2
+            }px) rotateX(-90deg)`
+          );
         }
       }
 
-      const zFactor = (swiper.browser.isSafari || swiper.browser.isUiWebView) ? (-swiperSize / 2) : 0;
-      $wrapperEl
-        .transform(`translate3d(0px,0,${zFactor}px) rotateX(${swiper.isHorizontal() ? 0 : wrapperRotate}deg) rotateY(${swiper.isHorizontal() ? -wrapperRotate : 0}deg)`);
+      const zFactor = swiper.browser.isSafari || swiper.browser.isUiWebView ? -swiperSize / 2 : 0;
+      $wrapperEl.transform(
+        `translate3d(0px,0,${zFactor}px) rotateX(${swiper.isHorizontal() ? 0 : wrapperRotate}deg) rotateY(${
+          swiper.isHorizontal() ? -wrapperRotate : 0
+        }deg)`
+      );
     },
-    setTransition: function(duration) {
+    setTransition: function (duration) {
       const swiper = this;
       const { $el, slides } = swiper;
       slides
         .transition(duration)
-        .find('.swiper-slide-shadow-top, .swiper-slide-shadow-right, .swiper-slide-shadow-bottom, .swiper-slide-shadow-left')
+        .find(
+          '.swiper-slide-shadow-top, .swiper-slide-shadow-right, .swiper-slide-shadow-bottom, .swiper-slide-shadow-left'
+        )
         .transition(duration);
       if (swiper.params.cubeEffect.shadow && !swiper.isHorizontal()) {
         $el.find('.swiper-cube-shadow').transition(duration);
       }
     },
-  }
-}
+  },
+};
 ```
 
 ### Fade
@@ -407,8 +432,8 @@ const slideOpts = {
         });
       }
     },
-  }
-}
+  },
+};
 ```
 
 ### Flip
@@ -455,25 +480,32 @@ const slideOpts = {
           rotateY = -rotateY;
         }
 
-         $slideEl[0].style.zIndex = -Math.abs(Math.round(progress)) + slides.length;
+        $slideEl[0].style.zIndex = -Math.abs(Math.round(progress)) + slides.length;
 
-         if (swiper.params.flipEffect.slideShadows) {
+        if (swiper.params.flipEffect.slideShadows) {
           // Set shadows
-          let shadowBefore = swiper.isHorizontal() ? $slideEl.find('.swiper-slide-shadow-left') : $slideEl.find('.swiper-slide-shadow-top');
-          let shadowAfter = swiper.isHorizontal() ? $slideEl.find('.swiper-slide-shadow-right') : $slideEl.find('.swiper-slide-shadow-bottom');
+          let shadowBefore = swiper.isHorizontal()
+            ? $slideEl.find('.swiper-slide-shadow-left')
+            : $slideEl.find('.swiper-slide-shadow-top');
+          let shadowAfter = swiper.isHorizontal()
+            ? $slideEl.find('.swiper-slide-shadow-right')
+            : $slideEl.find('.swiper-slide-shadow-bottom');
           if (shadowBefore.length === 0) {
-            shadowBefore = swiper.$(`<div class="swiper-slide-shadow-${swiper.isHorizontal() ? 'left' : 'top'}"></div>`);
+            shadowBefore = swiper.$(
+              `<div class="swiper-slide-shadow-${swiper.isHorizontal() ? 'left' : 'top'}"></div>`
+            );
             $slideEl.append(shadowBefore);
           }
           if (shadowAfter.length === 0) {
-            shadowAfter = swiper.$(`<div class="swiper-slide-shadow-${swiper.isHorizontal() ? 'right' : 'bottom'}"></div>`);
+            shadowAfter = swiper.$(
+              `<div class="swiper-slide-shadow-${swiper.isHorizontal() ? 'right' : 'bottom'}"></div>`
+            );
             $slideEl.append(shadowAfter);
           }
           if (shadowBefore.length) shadowBefore[0].style.opacity = Math.max(-progress, 0);
           if (shadowAfter.length) shadowAfter[0].style.opacity = Math.max(progress, 0);
         }
-        $slideEl
-          .transform(`translate3d(${tx}px, ${ty}px, 0px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`);
+        $slideEl.transform(`translate3d(${tx}px, ${ty}px, 0px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`);
       }
     },
     setTransition(duration) {
@@ -481,7 +513,9 @@ const slideOpts = {
       const { slides, activeIndex, $wrapperEl } = swiper;
       slides
         .transition(duration)
-        .find('.swiper-slide-shadow-top, .swiper-slide-shadow-right, .swiper-slide-shadow-bottom, .swiper-slide-shadow-left')
+        .find(
+          '.swiper-slide-shadow-top, .swiper-slide-shadow-right, .swiper-slide-shadow-bottom, .swiper-slide-shadow-left'
+        )
         .transition(duration);
       if (swiper.params.virtualTranslate && duration !== 0) {
         let eventTriggered = false;
@@ -498,12 +532,10 @@ const slideOpts = {
           }
         });
       }
-    }
-  }
+    },
+  },
 };
 ```
-
-
 
 ## 使い方
 
@@ -530,14 +562,14 @@ import { Component } from '@angular/core';
         </ion-slide>
       </ion-slides>
     </ion-content>
-  `
+  `,
 })
 export class SlideExample {
   // Optional parameters to pass to the swiper instance.
   // See https://swiperjs.com/swiper-api for valid options.
   slideOpts = {
     initialSlide: 1,
-    speed: 400
+    speed: 400,
   };
   constructor() {}
 }
@@ -550,9 +582,7 @@ ion-slides {
 }
 ```
 
-
 </TabItem>
-
 
 <TabItem value="javascript">
 
@@ -581,8 +611,8 @@ var slides = document.querySelector('ion-slides');
 // See https://swiperjs.com/swiper-api for valid options.
 slides.options = {
   initialSlide: 1,
-  speed: 400
-}
+  speed: 400,
+};
 ```
 
 ```css
@@ -592,9 +622,7 @@ ion-slides {
 }
 ```
 
-
 </TabItem>
-
 
 <TabItem value="react">
 
@@ -606,7 +634,7 @@ import { IonSlides, IonSlide, IonContent } from '@ionic/react';
 // See https://swiperjs.com/swiper-api for valid options.
 const slideOpts = {
   initialSlide: 1,
-  speed: 400
+  speed: 400,
 };
 
 export const SlidesExample: React.FC = () => (
@@ -635,7 +663,6 @@ ion-slides {
 
 </TabItem>
 
-
 <TabItem value="stencil">
 
 ```tsx
@@ -643,14 +670,14 @@ import { Component, h } from '@stencil/core';
 
 @Component({
   tag: 'slides-example',
-  styleUrl: 'slides-example.css'
+  styleUrl: 'slides-example.css',
 })
 export class SlidesExample {
   // Optional parameters to pass to the swiper instance.
   // See https://swiperjs.com/swiper-api for valid options.
   private slideOpts = {
     initialSlide: 1,
-    speed: 400
+    speed: 400,
   };
 
   render() {
@@ -669,7 +696,7 @@ export class SlidesExample {
             <h1>Slide 3</h1>
           </ion-slide>
         </ion-slides>
-      </ion-content>
+      </ion-content>,
     ];
   }
 }
@@ -683,7 +710,6 @@ ion-slides {
 ```
 
 </TabItem>
-
 
 <TabItem value="vue">
 
@@ -702,44 +728,48 @@ ion-slides {
   </ion-slides>
 </template>
 
-
 <script>
-import { IonSlides, IonSlide } from '@ionic/vue';
-import { defineComponent } from 'vue';
+  import { IonSlides, IonSlide } from '@ionic/vue';
+  import { defineComponent } from 'vue';
 
-export default defineComponent({
-  components: { IonSlides, IonSlide },
-  setup() {
-    // Optional parameters to pass to the swiper instance. See https://swiperjs.com/swiper-api for valid options.
-    const slideOpts = {
-      initialSlide: 1,
-      speed: 400
-    };
-    return { slideOpts }
-  }
-});
+  export default defineComponent({
+    components: { IonSlides, IonSlide },
+    setup() {
+      // Optional parameters to pass to the swiper instance. See https://swiperjs.com/swiper-api for valid options.
+      const slideOpts = {
+        initialSlide: 1,
+        speed: 400,
+      };
+      return { slideOpts };
+    },
+  });
 </script>
 ```
-
 
 </TabItem>
 
 </Tabs>
 
 ## プロパティ
+
 <Props />
 
 ## イベント
+
 <Events />
 
 ## メソッド
+
 <Methods />
 
 ## CSS Shadow Parts
+
 <Parts />
 
 ## CSSカスタムプロパティ
+
 <CustomProps />
 
 ## Slots
+
 <Slots />

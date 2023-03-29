@@ -1,12 +1,12 @@
 ---
 title: "ion-row"
 ---
-import Props from '@site/static/auto-generated/row/props.md';
-import Events from '@site/static/auto-generated/row/events.md';
-import Methods from '@site/static/auto-generated/row/methods.md';
-import Parts from '@site/static/auto-generated/row/parts.md';
-import CustomProps from '@site/static/auto-generated/row/custom-props.md';
-import Slots from '@site/static/auto-generated/row/slots.md';
+import Props from '@ionic-internal/component-api/v7/row/props.md';
+import Events from '@ionic-internal/component-api/v7/row/events.md';
+import Methods from '@ionic-internal/component-api/v7/row/methods.md';
+import Parts from '@ionic-internal/component-api/v7/row/parts.md';
+import CustomProps from '@ionic-internal/component-api/v7/row/custom-props.md';
+import Slots from '@ionic-internal/component-api/v7/row/slots.md';
 
 <head>
   <title>ion-row: Horizontal Row Components and Alignment | Ionic API Docs</title>

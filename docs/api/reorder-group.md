@@ -1,12 +1,12 @@
 ---
 title: "ion-reorder-group"
 ---
-import Props from '@site/static/auto-generated/reorder-group/props.md';
-import Events from '@site/static/auto-generated/reorder-group/events.md';
-import Methods from '@site/static/auto-generated/reorder-group/methods.md';
-import Parts from '@site/static/auto-generated/reorder-group/parts.md';
-import CustomProps from '@site/static/auto-generated/reorder-group/custom-props.md';
-import Slots from '@site/static/auto-generated/reorder-group/slots.md';
+import Props from '@ionic-internal/component-api/v7/reorder-group/props.md';
+import Events from '@ionic-internal/component-api/v7/reorder-group/events.md';
+import Methods from '@ionic-internal/component-api/v7/reorder-group/methods.md';
+import Parts from '@ionic-internal/component-api/v7/reorder-group/parts.md';
+import CustomProps from '@ionic-internal/component-api/v7/reorder-group/custom-props.md';
+import Slots from '@ionic-internal/component-api/v7/reorder-group/slots.md';
 
 <head>
   <title>ion-reorder-group: Wrapper Component for Ionic Framework Apps</title>

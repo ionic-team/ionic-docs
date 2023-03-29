@@ -12,7 +12,7 @@
     "crowdin:sync": "docusaurus write-translations && crowdin upload && crowdin download",
     "deploy": "docusaurus deploy",
     "docusaurus": "docusaurus",
-    "generate-markdown": "node scripts/native && concurrently \"node scripts/api\" \"node scripts/cli\" \"node scripts/release-notes\"",
+    "generate-markdown": "node scripts/native && concurrently \"node scripts/cli\" \"node scripts/release-notes\"",
     "serve": "docusaurus serve",
     "prestart": "npm run generate-markdown",
     "start": "docusaurus start",
