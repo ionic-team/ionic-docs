@@ -44,10 +44,10 @@ const apply = async () => {
               }
 
               // 今回翻訳データにあるか確認
-              if (translatedNow.hasOwnProperty(ob[translateType.translateTargetKey])) {
-                ob[translateType.translateTargetKey] = ob[translateType.translateTargetKey] + `\n\n自動翻訳: ${translatedNow[translateText]}`;
-                return;
-              }
+              // if (translatedNow.hasOwnProperty(ob[translateType.translateTargetKey])) {
+              //   ob[translateType.translateTargetKey] = ob[translateType.translateTargetKey] + `\n\n自動翻訳: ${translatedNow[translateText]}`;
+              //   return;
+              // }
 
               const response = await translate({
                 free_api: true,
@@ -59,7 +59,7 @@ const apply = async () => {
               const translated = response.data.translations[0].text;
               translatedNow[translateText] = translated;
 
-              ob[translateType.translateTargetKey] = ob[translateType.translateTargetKey] + `\n\n自動翻訳: ${translated}`;
+              // ob[translateType.translateTargetKey] = ob[translateType.translateTargetKey] + `\n\n自動翻訳: ${translated}`;
             }
           }));
         }
