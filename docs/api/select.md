@@ -54,9 +54,9 @@ By adding the `multiple` attribute to select, users are able to select multiple 
 
 Note: the `action-sheet` and `popover` interfaces will not work with multiple selection.
 
-import MulipleSelectionExample from '@site/static/usage/v7/select/basic/multiple-selection/index.md';
+import MultipleSelectionExample from '@site/static/usage/v7/select/basic/multiple-selection/index.md';
 
-<MulipleSelectionExample />
+<MultipleSelectionExample />
 
 ## Responding to Interaction
 

@@ -108,7 +108,7 @@
 
         const normalizedQuery = searchQuery.toLowerCase();
 
-        return fruits.filter(fruit => fruit.value.includes(normalizedQuery));
+        return fruits.filter(fruit => fruit.text.toLowerCase().includes(normalizedQuery));
       }
 
       /**

@@ -192,6 +192,9 @@ interface AlertInput {
   name?: string;
   placeholder?: string;
   value?: any;
+  /**
+   * The label text to display next to the input, if the input type is `radio` or `checkbox`.
+   */
   label?: string;
   checked?: boolean;
   disabled?: boolean;

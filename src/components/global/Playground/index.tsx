@@ -96,11 +96,6 @@ interface UsageTargetOptions {
      */
     declarations?: string[];
   };
-  /**
-   * The major version of Ionic to use in the generated Stackblitz examples.
-   * This will also load assets for Stackblitz from the specified version directory.
-   */
-  version?: number;
 }
 
 /**
@@ -120,7 +115,7 @@ export default function Playground({
   mode,
   devicePreview,
   includeIonContent = true,
-  version = 6,
+  version,
 }: {
   code: { [key in UsageTarget]?: MdxContent | UsageTargetOptions };
   title?: string;
@@ -135,6 +130,10 @@ export default function Playground({
   description?: string;
   devicePreview?: boolean;
   includeIonContent: boolean;
+  /**
+   * The major version of Ionic to use in the generated Stackblitz examples.
+   * This will also load assets for Stackblitz from the specified version directory.
+   */
   version: number;
 }) {
   if (!code || Object.keys(code).length === 0) {
@@ -143,6 +142,10 @@ export default function Playground({
   }
   if (typeof mode !== 'undefined' && mode !== 'ios' && mode !== 'md') {
     console.warn(`Invalid mode provided: ${mode}. Accepted values are: "ios" or "md".`);
+    return;
+  }
+  if (typeof version === 'undefined') {
+    console.warn('You must specify a `version` for the Playground example. For example: <Playground version="7" />');
     return;
   }
 
@@ -588,12 +591,12 @@ export default function Playground({
             */}
                 {devicePreview
                   ? [
-                      <div className={!isIOS ? 'frame-hidden' : 'frame-visible'}>
+                      <div className={!isIOS ? 'frame-hidden' : 'frame-visible'} aria-hidden={!isIOS ? 'true' : null}>
                         <device-preview mode="ios">
                           <iframe height={frameSize} ref={(ref) => handleFrameRef(ref, 'ios')} src={sourceiOS}></iframe>
                         </device-preview>
                       </div>,
-                      <div className={!isMD ? 'frame-hidden' : 'frame-visible'}>
+                      <div className={!isMD ? 'frame-hidden' : 'frame-visible'} aria-hidden={!isMD ? 'true' : null}>
                         <device-preview mode="md">
                           <iframe height={frameSize} ref={(ref) => handleFrameRef(ref, 'md')} src={sourceMD}></iframe>
                         </device-preview>
@@ -605,12 +608,14 @@ export default function Playground({
                         className={!isIOS ? 'frame-hidden' : ''}
                         ref={(ref) => handleFrameRef(ref, 'ios')}
                         src={sourceiOS}
+                        aria-hidden={!isIOS ? 'true' : null}
                       ></iframe>,
                       <iframe
                         height={frameSize}
                         className={!isMD ? 'frame-hidden' : ''}
                         ref={(ref) => handleFrameRef(ref, 'md')}
                         src={sourceMD}
+                        aria-hidden={!isMD ? 'true' : null}
                       ></iframe>,
                     ]}
               </div>,

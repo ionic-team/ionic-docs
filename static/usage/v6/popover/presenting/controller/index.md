@@ -13,6 +13,7 @@ import angular_popover_component_ts from './angular/popover_component_ts.md';
 import angular_app_module from './angular/app_module_ts.md';
 
 <Playground
+  version="6"
   size="300px"
   code={{
     javascript,
