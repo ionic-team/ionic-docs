@@ -41,7 +41,9 @@ AngularのLife Cycle Eventsに加えて、Ionic Angularには、使用可能な�
 | `ionViewWillLeave` | コンポーネントを離脱するアニメーションがはじまる時に発火します。  |
 | `ionViewDidLeave`  | コンポーネントを離脱するアニメーションが終了した時に発火します。 |
 
-`ionViewWillEnter` と `ionViewDidEnter` の違いは発火するタイミングです。前者は、 `ngOnInit` の直後であり、ページの処理がはじまる前に発火しますが、後者は処理が終了してから発火します。
+これらのライフサイクルは、ルーターによって直接マッピングされたコンポーネントに対してのみ呼び出されます。つまり、`/pageOne`が`PageOneComponent`にマッピングされた場合、Ionicライフサイクルは`PageOneComponent`で呼び出されますが、`PageOneComponent`がレンダリングする子コンポーネントでは呼び出されません。
+
+`ionViewWillEnter`と`ionViewDidEnter`の違いは、いつ発火するかです。前者は `ngOnInit` の直後でページ遷移が始まる前に、後者は遷移が終わった後に直接呼び出されます。
 
 `ionViewWillLeave` と `ionViewDidLeave` についてですが、 `ionViewWillLeave` は現在のページから離脱する処理がはじまる前に呼び出されますが、 `ionViewDidLeave` は新しいページに遷移する処理が成功してから呼び出されます (新しいページの `ionViewDidEnter` が発火した後になります)。
 

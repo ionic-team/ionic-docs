@@ -1,17 +1,13 @@
 ---
 title: "ion-split-pane"
-hide_table_of_contents: true
 ---
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-import TOCInline from '@theme/TOCInline';
 
-import Props from '@site/static/auto-generated/split-pane/props.md';
-import Events from '@site/static/auto-generated/split-pane/events.md';
-import Methods from '@site/static/auto-generated/split-pane/methods.md';
-import Parts from '@site/static/auto-generated/split-pane/parts.md';
-import CustomProps from '@site/static/auto-generated/split-pane/custom-props.md';
-import Slots from '@site/static/auto-generated/split-pane/slots.md';
+import Props from '@ionic-internal/component-api/v7/split-pane/props.md';
+import Events from '@ionic-internal/component-api/v7/split-pane/events.md';
+import Methods from '@ionic-internal/component-api/v7/split-pane/methods.md';
+import Parts from '@ionic-internal/component-api/v7/split-pane/parts.md';
+import CustomProps from '@ionic-internal/component-api/v7/split-pane/custom-props.md';
+import Slots from '@ionic-internal/component-api/v7/split-pane/slots.md';
 
 <head>
   <title>ion-split-pane: Split Plane View for Menus and Multi-View Layouts</title>
@@ -22,22 +18,22 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="shadow" />
 
-<h2 className="table-of-contents__title">コンテンツ</h2>
-
-<TOCInline
-  toc={toc}
-  maxHeadingLevel={2}
-/>
-
-
-
-Split-Paneはマルチビューレイアウトを作成するときに便利です。
-ビューポートの幅を広げると、メニューのようなUI要素を表示できます。
+分割ペインは、マルチビューレイアウトを作成する際に便利です。
+メニューのようなUI要素は、分割されたペインで表示することができます。ビューポートの幅が大きくなるにつれて表示されます。
 
 デバイスの画面幅が特定のサイズより小さい場合、分割ペインは縮小され、メニューは非表示になります。これは、ブラウザで提供され、アプリストアを通じてスマートフォンやタブレットにデプロイされるアプリを作成するのに理想的な動作です。
 
+## 基本的な使い方
 
-## Setting Breakpoints
+:::note
+このデモでは `when` プロパティを `'xs'` に設定し、分割ペインが常に表示されるようにしています。小さなビューポートで分割ペインを折りたたみたい場合は、Ionicアプリケーションにこの設定は必要ありません。詳しくは、[ブレークポイントの設定](#setting-breakpoints)を参照してください。
+:::
+
+import Basic from '@site/static/usage/v7/split-pane/basic/index.md';
+
+<Basic />
+
+## ブレイキング・ポイントを決める
 
 デフォルトでは、画面が992pxを超えると分割ペインが拡張表示されます。これをカスタマイズするには、 `when` プロパティにブレークポイントを渡します。`when` プロパティには、真偽値、有効なメディア・クエリー、またはIonicの事前定義サイズのいずれかを指定できます。
 
@@ -58,179 +54,13 @@ Split-Paneはマルチビューレイアウトを作成するときに便利で�
  | `md` | `(min-width: 768px)`  | Show the split-pane when the min-width is 768px                       |
  | `lg` | `(min-width: 992px)`  | Show the split-pane when the min-width is 992px (default break point) |
  | `xl` | `(min-width: 1200px)` | Show the split-pane when the min-width is 1200px                      |
+## テーマ
 
+## CSSカスタムプロパティ
 
+import CSSProperties from '@site/static/usage/v7/split-pane/theming/css-properties/index.md';
 
-
-## 使い方
-
-<Tabs groupId="framework" defaultValue="angular" values={[{ value: 'angular', label: 'Angular' }, { value: 'javascript', label: 'Javascript' }, { value: 'react', label: 'React' }, { value: 'stencil', label: 'Stencil' }, { value: 'vue', label: 'Vue' }]}>
-
-<TabItem value="angular">
-
-```html
-<ion-split-pane contentId="main">
-  <!--  the side menu  -->
-  <ion-menu contentId="main">
-    <ion-header>
-      <ion-toolbar>
-        <ion-title>Menu</ion-title>
-      </ion-toolbar>
-    </ion-header>
-  </ion-menu>
-
-  <!-- the main content -->
-  <ion-router-outlet id="main"></ion-router-outlet>
-</ion-split-pane>
-```
-
-
-</TabItem>
-
-
-<TabItem value="javascript">
-
-```html
-<ion-split-pane content-id="main">
-  <!--  the side menu  -->
-  <ion-menu content-id="main">
-    <ion-header>
-      <ion-toolbar>
-        <ion-title>Menu</ion-title>
-      </ion-toolbar>
-    </ion-header>
-  </ion-menu>
-
-  <!-- the main content -->
-  <ion-content id="main">
-    <h1>Hello</h1>
-  </ion-content>
-</ion-split-pane>
-```
-
-
-</TabItem>
-
-
-<TabItem value="react">
-
-```tsx
-import React from 'react';
-import {
-  IonSplitPane,
-  IonMenu,
-  IonHeader,
-  IonToolbar,
-  IonTitle,
-  IonRouterOutlet,
-  IonContent,
-  IonPage
-} from '@ionic/react';
-
-export const SplitPlaneExample: React.SFC<{}> = () => (
-  <IonContent>
-    <IonSplitPane contentId="main">
-      {/*--  the side menu  --*/}
-      <IonMenu contentId="main">
-        <IonHeader>
-          <IonToolbar>
-            <IonTitle>Menu</IonTitle>
-          </IonToolbar>
-        </IonHeader>
-      </IonMenu>
-
-      {/*-- the main content --*/}
-      <IonPage id="main"/>
-    </IonSplitPane>
-  </IonContent>
-);
-```
-
-
-</TabItem>
-
-
-<TabItem value="stencil">
-
-```tsx
-import { Component, h } from '@stencil/core';
-
-@Component({
-  tag: 'split-pane-example',
-  styleUrl: 'split-pane-example.css'
-})
-export class SplitPaneExample {
-  render() {
-    return [
-      <ion-split-pane content-id="main">
-        {/*  the side menu */}
-        <ion-menu content-id="main">
-          <ion-header>
-            <ion-toolbar>
-              <ion-title>Menu</ion-title>
-            </ion-toolbar>
-          </ion-header>
-        </ion-menu>
-
-        {/* the main content */}
-        <ion-router-outlet id="main"></ion-router-outlet>
-      </ion-split-pane>
-    ];
-  }
-}
-```
-
-
-</TabItem>
-
-
-<TabItem value="vue">
-
-```html
-<template>
-  <ion-split-pane content-id="main">
-    <!--  the side menu  -->
-    <ion-menu content-id="main">
-      <ion-header>
-        <ion-toolbar>
-          <ion-title>Menu</ion-title>
-        </ion-toolbar>
-      </ion-header>
-    </ion-menu>
-
-    <!-- the main content -->
-    <ion-router-outlet id="main"></ion-router-outlet>
-  </ion-split-pane>
-</template>
-
-<script>
-import { 
-  IonHeader, 
-  IonMenu, 
-  IonRouterOutlet, 
-  IonSplitPane, 
-  IonTitle, 
-  IonToolbar
-} from '@ionic/vue';
-import { defineComponent } from 'vue';
-
-export default defineComponent({
-  components: {
-    IonHeader, 
-    IonMenu, 
-    IonRouterOutlet, 
-    IonSplitPane, 
-    IonTitle, 
-    IonToolbar
-  }
-});
-</script>
-```
-
-
-</TabItem>
-
-</Tabs>
+<CSSProperties />
 
 ## プロパティ
 <Props />

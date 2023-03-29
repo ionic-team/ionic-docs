@@ -1,12 +1,12 @@
 ---
 title: "ion-skeleton-text"
 ---
-import Props from '@site/static/auto-generated/skeleton-text/props.md';
-import Events from '@site/static/auto-generated/skeleton-text/events.md';
-import Methods from '@site/static/auto-generated/skeleton-text/methods.md';
-import Parts from '@site/static/auto-generated/skeleton-text/parts.md';
-import CustomProps from '@site/static/auto-generated/skeleton-text/custom-props.md';
-import Slots from '@site/static/auto-generated/skeleton-text/slots.md';
+import Props from '@ionic-internal/component-api/v7/skeleton-text/props.md';
+import Events from '@ionic-internal/component-api/v7/skeleton-text/events.md';
+import Methods from '@ionic-internal/component-api/v7/skeleton-text/methods.md';
+import Parts from '@ionic-internal/component-api/v7/skeleton-text/parts.md';
+import CustomProps from '@ionic-internal/component-api/v7/skeleton-text/custom-props.md';
+import Slots from '@ionic-internal/component-api/v7/skeleton-text/slots.md';
 
 <head>
   <title>Skeleton Text | Skeleton Loading Placeholder & Framework for Text</title>
@@ -21,17 +21,17 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 Skeleton Textは、placeholderコンテンツをレンダリングするためのコンポーネントです。要素は、指定した幅でグレーのブロックをレンダリングします。
 
-## Basic Usage
+## 基本的な使い方
 
-import Basic from '@site/static/usage/skeleton-text/basic/index.md';
+import Basic from '@site/static/usage/v7/skeleton-text/basic/index.md';
 
 <Basic />
 
-## Theming
+## テーマ
 
-### CSS Custom Properties
+## CSSカスタムプロパティ
 
-import CSSProps from '@site/static/usage/skeleton-text/theming/css-properties/index.md';
+import CSSProps from '@site/static/usage/v7/skeleton-text/theming/css-properties/index.md';
 
 <CSSProps />
 

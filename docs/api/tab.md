@@ -1,15 +1,13 @@
 ---
 title: "ion-tab"
-hide_table_of_contents: true
 ---
-import TOCInline from '@theme/TOCInline';
 
-import Props from '@site/static/auto-generated/tab/props.md';
-import Events from '@site/static/auto-generated/tab/events.md';
-import Methods from '@site/static/auto-generated/tab/methods.md';
-import Parts from '@site/static/auto-generated/tab/parts.md';
-import CustomProps from '@site/static/auto-generated/tab/custom-props.md';
-import Slots from '@site/static/auto-generated/tab/slots.md';
+import Props from '@ionic-internal/component-api/v7/tab/props.md';
+import Events from '@ionic-internal/component-api/v7/tab/events.md';
+import Methods from '@ionic-internal/component-api/v7/tab/methods.md';
+import Parts from '@ionic-internal/component-api/v7/tab/parts.md';
+import CustomProps from '@ionic-internal/component-api/v7/tab/custom-props.md';
+import Slots from '@ionic-internal/component-api/v7/tab/slots.md';
 
 <head>
   <title>ion-tab - Ionic Framework Application Component</title>
@@ -19,14 +17,6 @@ import Slots from '@site/static/auto-generated/tab/slots.md';
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="shadow" />
-
-<h2 className="table-of-contents__title">コンテンツ</h2>
-
-<TOCInline
-  toc={toc}
-  maxHeadingLevel={2}
-/>
-
 
 
 タブコンポーネントは、[tabs](tabs.md) の子コンポーネントです。各タブには、アプリまたは単一のビューのトップレベルのナビゲーション スタックを含めることができます。アプリには多くのタブがあり、それぞれが独立したナビゲーションを持つことができます。

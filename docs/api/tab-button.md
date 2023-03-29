@@ -1,31 +1,21 @@
 ---
 title: "ion-tab-button"
-hide_table_of_contents: true
 ---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
-import TOCInline from '@theme/TOCInline';
 
-import Props from '@site/static/auto-generated/tab-button/props.md';
-import Events from '@site/static/auto-generated/tab-button/events.md';
-import Methods from '@site/static/auto-generated/tab-button/methods.md';
-import Parts from '@site/static/auto-generated/tab-button/parts.md';
-import CustomProps from '@site/static/auto-generated/tab-button/custom-props.md';
-import Slots from '@site/static/auto-generated/tab-button/slots.md';
+import Props from '@ionic-internal/component-api/v7/tab-button/props.md';
+import Events from '@ionic-internal/component-api/v7/tab-button/events.md';
+import Methods from '@ionic-internal/component-api/v7/tab-button/methods.md';
+import Parts from '@ionic-internal/component-api/v7/tab-button/parts.md';
+import CustomProps from '@ionic-internal/component-api/v7/tab-button/custom-props.md';
+import Slots from '@ionic-internal/component-api/v7/tab-button/slots.md';
 
 
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="shadow" />
-
-<h2 className="table-of-contents__title">コンテンツ</h2>
-
-<TOCInline
-  toc={toc}
-  maxHeadingLevel={2}
-/>
-
 
 
 tab buttonは、[tab bar](tab-bar.md)の内部に配置されるUIコンポーネントです。tab buttonを使用すると、iconとlabelのレイアウトを指定し、[tab view](tab.md)に接続できます。
@@ -46,22 +36,22 @@ tab buttonは、[tab bar](tab-bar.md)の内部に配置されるUIコンポー�
   <!-- Tab bar -->
   <ion-tab-bar slot="bottom">
     <ion-tab-button tab="schedule">
-      <ion-icon name="calendar"></ion-icon>
+      <ion-icon name="calendar" aria-hidden="true"></ion-icon>
       <ion-label>Schedule</ion-label>
     </ion-tab-button>
 
     <ion-tab-button tab="speakers">
-      <ion-icon name="person-circle"></ion-icon>
+      <ion-icon name="person-circle" aria-hidden="true"></ion-icon>
       <ion-label>Speakers</ion-label>
     </ion-tab-button>
 
     <ion-tab-button tab="map">
-      <ion-icon name="map"></ion-icon>
+      <ion-icon name="map" aria-hidden="true"></ion-icon>
       <ion-label>Map</ion-label>
     </ion-tab-button>
 
     <ion-tab-button tab="about">
-      <ion-icon name="information-circle"></ion-icon>
+      <ion-icon name="information-circle" aria-hidden="true"></ion-icon>
       <ion-label>About</ion-label>
     </ion-tab-button>
   </ion-tab-bar>
@@ -96,22 +86,22 @@ tab buttonは、[tab bar](tab-bar.md)の内部に配置されるUIコンポー�
   <!-- Tab bar -->
   <ion-tab-bar slot="bottom">
     <ion-tab-button tab="schedule" href="/app/tabs/(schedule:schedule)">
-      <ion-icon name="calendar"></ion-icon>
+      <ion-icon name="calendar" aria-hidden="true"></ion-icon>
       <ion-label>Schedule</ion-label>
     </ion-tab-button>
 
     <ion-tab-button tab="speakers" href="/app/tabs/(speakers:speakers)">
-      <ion-icon name="person-circle"></ion-icon>
+      <ion-icon name="person-circle" aria-hidden="true"></ion-icon>
       <ion-label>Speakers</ion-label>
     </ion-tab-button>
 
     <ion-tab-button tab="map" href="/app/tabs/(map:map)">
-      <ion-icon name="map"></ion-icon>
+      <ion-icon name="map" aria-hidden="true"></ion-icon>
       <ion-label>Map</ion-label>
     </ion-tab-button>
 
     <ion-tab-button tab="about" href="/app/tabs/(about:about)">
-      <ion-icon name="information-circle"></ion-icon>
+      <ion-icon name="information-circle" aria-hidden="true"></ion-icon>
       <ion-label>About</ion-label>
     </ion-tab-button>
   </ion-tab-bar>
@@ -135,22 +125,22 @@ export const TabButtonExample: React.FC = () => (
       {/*-- Tab bar --*/}
       <IonTabBar slot="bottom">
         <IonTabButton tab="schedule">
-          <IonIcon icon={calendar} />
+          <IonIcon icon={calendar} aria-hidden="true" />
           <IonLabel>Schedule</IonLabel>
         </IonTabButton>
 
         <IonTabButton tab="speakers">
-          <IonIcon icon={personCircle} />
+          <IonIcon icon={personCircle} aria-hidden="true" />
           <IonLabel>Speakers</IonLabel>
         </IonTabButton>
 
         <IonTabButton tab="map">
-          <IonIcon icon={map} />
+          <IonIcon icon={map} aria-hidden="true" />
           <IonLabel>Map</IonLabel>
         </IonTabButton>
 
         <IonTabButton tab="about">
-          <IonIcon icon={informationCircle} />
+          <IonIcon icon={informationCircle} aria-hidden="true" />
           <IonLabel>About</IonLabel>
         </IonTabButton>
       </IonTabBar>
@@ -196,22 +186,22 @@ export class TabButtonExample {
         {/* Tab bar */}
         <ion-tab-bar slot="bottom">
           <ion-tab-button tab="schedule" href="/app/tabs/(schedule:schedule)">
-            <ion-icon name="calendar"></ion-icon>
+            <ion-icon name="calendar" aria-hidden="true"></ion-icon>
             <ion-label>Schedule</ion-label>
           </ion-tab-button>
 
           <ion-tab-button tab="speakers" href="/app/tabs/(speakers:speakers)">
-            <ion-icon name="person-circle"></ion-icon>
+            <ion-icon name="person-circle" aria-hidden="true"></ion-icon>
             <ion-label>Speakers</ion-label>
           </ion-tab-button>
 
           <ion-tab-button tab="map" href="/app/tabs/(map:map)">
-            <ion-icon name="map"></ion-icon>
+            <ion-icon name="map" aria-hidden="true"></ion-icon>
             <ion-label>Map</ion-label>
           </ion-tab-button>
 
           <ion-tab-button tab="about" href="/app/tabs/(about:about)">
-            <ion-icon name="information-circle"></ion-icon>
+            <ion-icon name="information-circle" aria-hidden="true"></ion-icon>
             <ion-label>About</ion-label>
           </ion-tab-button>
         </ion-tab-bar>
@@ -233,22 +223,22 @@ export class TabButtonExample {
     <!-- Tab bar -->
     <ion-tab-bar slot="bottom">
       <ion-tab-button tab="schedule" href="/tabs/schedule">
-        <ion-icon :icon="calendar"></ion-icon>
+        <ion-icon :icon="calendar" aria-hidden="true"></ion-icon>
         <ion-label>Schedule</ion-label>
       </ion-tab-button>
 
       <ion-tab-button tab="speakers" href="/tabs/speakers">
-        <ion-icon :icon="person-circle"></ion-icon>
+        <ion-icon :icon="person-circle" aria-hidden="true"></ion-icon>
         <ion-label>Speakers</ion-label>
       </ion-tab-button>
 
       <ion-tab-button tab="map" href="/tabs/map">
-        <ion-icon :icon="map"></ion-icon>
+        <ion-icon :icon="map" aria-hidden="true"></ion-icon>
         <ion-label>Map</ion-label>
       </ion-tab-button>
 
       <ion-tab-button tab="about" href="/tabs/about">
-        <ion-icon :icon="informationCircle"></ion-icon>
+        <ion-icon :icon="informationCircle" aria-hidden="true"></ion-icon>
         <ion-label>About</ion-label>
       </ion-tab-button>
     </ion-tab-bar>

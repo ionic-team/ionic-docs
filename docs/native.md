@@ -1,5 +1,5 @@
 ---
-title: Native APIs
+title: Capacitor
 hide_table_of_contents: true
 ---
 
@@ -21,33 +21,16 @@ import NativeEnterpriseCard from '@components/page/native/NativeEnterpriseCard';
   `}</style>
 </head>
 
-CapacitorやCordovaを使用したIonicアプリにネイティブデバイスの機能を簡単に追加できる、オープンソースおよびプレミアムプラグインと統合を使用して、ネイティブパワーによるアプリ体験を構築できます。
-
 <intro-end />
 
-:::note
 
-[Read about the changes](https://ionicframework.com/blog/a-new-chapter-for-ionic-native/) coming to the Ionic Native project.
+Add native functionality to your app with Capacitor, a native runtime built by the Ionic team. Install the core packages and easily add them to your project. Capacitor has a wide range of capabilities that developers can use to access features like the device file system, camera, and native location services. All of this is powered by a unified TypeScript API that automatically handles platform differences.
 
-:::
+While the core features of Capacitor are free and open source, some enterprises might find themselves needing more features or custom third-party integrations. If you need such additional features, check out the [Ionic Enterprise SDK](https://ionic.io/enterprise-sdk).
 
-<DocsCards>
-  <DocsCard header="Capacitor plugins" img="/img/native/capacitor@2x.png" href="https://capacitorjs.com/docs/plugins">
-    <p>
-      IonicチームとCapacitorコミュニティによって構築・維持されている、モダンでオープンソースのネイティブランタイムです。
-      推奨ネイティブソリューションです。
-    </p>
-  </DocsCard>
-  <DocsCard header="Cordova plugins" img="/img/native/cordova@2x.png" href="/native/community">
-    <p>
-      コミュニティによって構築、維持されている無料の Cordova プラグインのコレクションです。
-      一貫した API と命名規則があります。
-    </p>
-  </DocsCard>
-</DocsCards>
+
+
 
 <NativeEnterpriseCard />
 
-:::note
-These docs are for apps built with Ionic Framework 4.0.0 and greater. For older Ionic v3 projects, please [see here](https://ionicframework.com/docs/v3/native/).
-:::
+> Looking for older Cordova plugins? Visit their new home at [Awesome Cordova Plugins.](https://danielsogl.gitbook.io/awesome-cordova-plugins/)

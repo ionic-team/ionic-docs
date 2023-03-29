@@ -241,7 +241,7 @@
         "type": "Promise<boolean>",
         "docs": ""
       },
-      "signature": "dismiss(data?: any, role?: string | undefined) => Promise<boolean>",
+      "signature": "dismiss(data?: any, role?: string) => Promise<boolean>",
       "parameters": [],
       "docs": "Dismiss the action sheet overlay after it has been presented.",
       "docsTags": [

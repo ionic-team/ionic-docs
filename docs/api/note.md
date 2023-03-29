@@ -1,12 +1,12 @@
 ---
 title: "ion-note"
 ---
-import Props from '@site/static/auto-generated/note/props.md';
-import Events from '@site/static/auto-generated/note/events.md';
-import Methods from '@site/static/auto-generated/note/methods.md';
-import Parts from '@site/static/auto-generated/note/parts.md';
-import CustomProps from '@site/static/auto-generated/note/custom-props.md';
-import Slots from '@site/static/auto-generated/note/slots.md';
+import Props from '@ionic-internal/component-api/v7/note/props.md';
+import Events from '@ionic-internal/component-api/v7/note/events.md';
+import Methods from '@ionic-internal/component-api/v7/note/methods.md';
+import Parts from '@ionic-internal/component-api/v7/note/parts.md';
+import CustomProps from '@ionic-internal/component-api/v7/note/custom-props.md';
+import Slots from '@ionic-internal/component-api/v7/note/slots.md';
 
 <head>
   <title>ion-note: Note Text Elements for iOS and Android Ionic Apps</title>
@@ -19,29 +19,29 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 Noteは、一般的に詳細情報を提供するサブタイトルとして使用されるテキスト要素です。デフォルトではグレーで表示されるように設計されています。Noteは、メタデータテキストとしてアイテム内で使用することができます。
 
-## Basic Usage
+## 基本的な使い方
 
-import Basic from '@site/static/usage/note/basic/index.md';
+import Basic from '@site/static/usage/v7/note/basic/index.md';
 
 <Basic />
 
 ## Item Notes
 
-import Item from '@site/static/usage/note/item/index.md';
+import Item from '@site/static/usage/v7/note/item/index.md';
 
 <Item />
 
-## Theming
+## テーマ
 
 ### Colors
 
-import Colors from '@site/static/usage/note/theming/colors/index.md';
+import Colors from '@site/static/usage/v7/note/theming/colors/index.md';
 
 <Colors />
 
-### CSS Custom Properties
+## CSSカスタムプロパティ
 
-import CSSProps from '@site/static/usage/note/theming/css-properties/index.md';
+import CSSProps from '@site/static/usage/v7/note/theming/css-properties/index.md';
 
 <CSSProps />
 

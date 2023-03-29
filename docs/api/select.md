@@ -1,12 +1,12 @@
 ---
 title: "ion-select"
 ---
-import Props from '@site/static/auto-generated/select/props.md';
-import Events from '@site/static/auto-generated/select/events.md';
-import Methods from '@site/static/auto-generated/select/methods.md';
-import Parts from '@site/static/auto-generated/select/parts.md';
-import CustomProps from '@site/static/auto-generated/select/custom-props.md';
-import Slots from '@site/static/auto-generated/select/slots.md';
+import Props from '@ionic-internal/component-api/v7/select/props.md';
+import Events from '@ionic-internal/component-api/v7/select/events.md';
+import Methods from '@ionic-internal/component-api/v7/select/methods.md';
+import Parts from '@ionic-internal/component-api/v7/select/parts.md';
+import CustomProps from '@ionic-internal/component-api/v7/select/custom-props.md';
+import Slots from '@ionic-internal/component-api/v7/select/slots.md';
 
 <head>
   <title>ion-select: Select One or Multiple Value Boxes or Placeholders</title>
@@ -28,7 +28,7 @@ selectは、子要素 `<ion-select-option>` とともに使用する必要があ
 
 デフォルトでは、selectを使用すると、ユーザは1つのOptionだけを選択できます。Alertのインターフェースでは、Optionのリストがradio button形式で表示されます。action sheetインタフェースは、1つの値選択でのみ使用できます。selectコンポーネントの値は、選択したオプションの値の値を受け取ります。
 
-import SingleSelectionExample from '@site/static/usage/select/basic/single-selection/index.md';
+import SingleSelectionExample from '@site/static/usage/v7/select/basic/single-selection/index.md';
 
 <SingleSelectionExample />
 
@@ -38,13 +38,13 @@ import SingleSelectionExample from '@site/static/usage/select/basic/single-selec
 
 ### Action Sheet
 
-import ActionSheetExample from '@site/static/usage/select/interfaces/action-sheet/index.md';
+import ActionSheetExample from '@site/static/usage/v7/select/interfaces/action-sheet/index.md';
 
 <ActionSheetExample />
 
 ### Popover
 
-import PopoverExample from '@site/static/usage/select/interfaces/popover/index.md';
+import PopoverExample from '@site/static/usage/v7/select/interfaces/popover/index.md';
 
 <PopoverExample />
 
@@ -54,15 +54,15 @@ import PopoverExample from '@site/static/usage/select/interfaces/popover/index.m
 
 Note: `action-sheet` と `popover` インターフェイスでは、複数選択は動作しません
 
-import MulipleSelectionExample from '@site/static/usage/select/basic/multiple-selection/index.md';
+import MultipleSelectionExample from '@site/static/usage/v7/select/basic/multiple-selection/index.md';
 
-<MulipleSelectionExample />
+<MultipleSelectionExample />
 
 ## Responding to Interaction
 
 select とユーザーのインタラクションを処理する主な方法は、 `ionChange` イベント、 `ionDismiss` イベント、 `ionCancel` イベントです。これらのイベントと select が発生するその他のイベントの詳細については、[イベント](#events) を参照してください。
 
-import RespondingToInteractionExample from '@site/static/usage/select/basic/responding-to-interaction/index.md';
+import RespondingToInteractionExample from '@site/static/usage/v7/select/basic/responding-to-interaction/index.md';
 
 <RespondingToInteractionExample />
 
@@ -74,15 +74,42 @@ import RespondingToInteractionExample from '@site/static/usage/select/basic/resp
 
 ### Using compareWith
 
-import UsingCompareWithExample from '@site/static/usage/select/objects-as-values/using-comparewith/index.md';
+import UsingCompareWithExample from '@site/static/usage/v7/select/objects-as-values/using-comparewith/index.md';
 
 <UsingCompareWithExample />
 
 ### Object Values and Multiple Selection
 
-import ObjectValuesAndMultipleSelectionExample from '@site/static/usage/select/objects-as-values/multiple-selection/index.md';
+import ObjectValuesAndMultipleSelectionExample from '@site/static/usage/v7/select/objects-as-values/multiple-selection/index.md';
 
 <ObjectValuesAndMultipleSelectionExample />
+  
+
+## Label Placement
+
+Labelsは、デフォルトでそのコンテンツの幅を占めます。 開発者は `labelPlacement` プロパティを使用して、ラベルがどのように配置されるかを制御することができます。
+
+import LabelPlacement from '@site/static/usage/v7/select/label-placement/index.md';
+
+<LabelPlacement />
+
+## Justification
+  
+開発者は `justify` プロパティを使用して、ラベルとコントロールの行の詰め方を制御することができます。
+
+import JustifyExample from '@site/static/usage/v7/select/justify/index.md';
+
+<JustifyExample />
+
+## Filled Selects
+
+Material Designでは、セレクトに塗りつぶしのスタイルが用意されています。セレクトの `fill` プロパティは `"solid"` または `"outline"` のいずれかに設定することができます。
+
+`fill` スタイルはセレクトコンテナを視覚的に定義するため、`fill` を使用するセレクトは `ion-item` で使用すべきではありません。
+
+import FillExample from '@site/static/usage/v7/select/fill/index.md';
+
+<FillExample />
 
 ## SelectのButton
 
@@ -90,7 +117,7 @@ alertはふたつのボタンをサポートしています: `Cancel` と `OK` �
 
 `action-sheet` と `popover` インタフェースには `OK` ボタンがありません。いずれかのオプションをクリックすると、自動的にオーバーレイが閉じ、その値が選択されます。`popover` インターフェースには`Cancel`ボタンがないので、backdropをクリックするとオーバーレイが閉じます。
 
-import ButtonTextExample from '@site/static/usage/select/customization/button-text/index.md';
+import ButtonTextExample from '@site/static/usage/v7/select/customization/button-text/index.md';
 
 <ButtonTextExample />
 
@@ -102,7 +129,7 @@ select は alert、action sheet、popover インターフェースを使用す�
 
 Note: `alert` インターフェースでは、 `interfaceOptions` は `inputs` や `buttons` をオーバーライドしません。
 
-import InterfaceOptionsExample from '@site/static/usage/select/customization/interface-options/index.md';
+import InterfaceOptionsExample from '@site/static/usage/v7/select/customization/interface-options/index.md';
 
 <InterfaceOptionsExample />
 
@@ -116,7 +143,7 @@ Selectコンポーネントを構成する2つのユニットがあり、それ�
 
 また、必要な [ブラウザサポート](https://caniuse.com/#feat=mdn-css_selectors_part) に応じて、CSSのシャドウパーツを使用してセレクトのスタイルを設定することができます。part` を使用することで、要素上の任意のCSSプロパティをターゲットにすることができることに注意してください。
 
-import StylingSelectExample from '@site/static/usage/select/customization/styling-select/index.md';
+import StylingSelectExample from '@site/static/usage/v7/select/customization/styling-select/index.md';
 
 <StylingSelectExample />
 
@@ -129,6 +156,14 @@ import StylingSelectExample from '@site/static/usage/select/customization/stylin
 - [ポップオーバーのカスタマイズ](popover.md#customization)
 
 ただし、Selectオプションでは、スタイリングを容易にするためにクラスを設定し、オーバーレイオプションにクラスを渡す機能があります。オプションのカスタマイズの使用例については、[Selectオプションのドキュメント](select-option.md)を参照してください。
+
+## Typeahead Component
+
+Typeaheadやオートコンプリートの機能は、既存のIonicコンポーネントを使用して構築することができます。利用可能なスクリーンスペースを最大限に活用するために、`ion-modal`を使用することをお勧めします。
+
+import TypeaheadExample from '@site/static/usage/v7/select/typeahead/index.md';
+
+<TypeaheadExample />
 
 ## Interfaces
 
@@ -150,6 +185,28 @@ interface SelectCustomEvent<T = any> extends CustomEvent {
   target: HTMLIonSelectElement;
 }
 ```
+
+## Legacy Select Syntaxからの移行
+
+Ionic 7.0では、よりシンプルなselect構文が導入されました。この新しい構文は、selectの設定に必要な定型文を減らし、アクセシビリティの問題を解決し、開発者のエクスペリエンスを向上させます。
+
+開発者は、この移行を一度に1つのセレクトで実行できます。開発者はレガシー構文を使い続けることができますが、できるだけ早く移行することをお勧めします。
+
+
+### 最新の構文の使い方
+
+最新の構文を使うには、2つのステップがあります。
+
+1. ion-label` を削除して、代わりに `ion-select` の `label` プロパティを使用します。ラベルの配置は `ion-select` の `labelPlacement` プロパティを使用して設定することができる。
+2. fill` と `shape` の使い方を `ion-item` から `ion-select` に移動します。
+
+import Migration from '@site/static/usage/v7/select/migration/index.md';
+
+<Migration />
+
+### レガシー構文の使用
+
+Ionicは、アプリが最新のセレクト構文を使用しているかどうかをヒューリスティックで検出します。場合によっては、レガシー構文を使い続けることが望ましい場合もあります。開発者は `ion-select` の `legacy` プロパティを `true` に設定することで、そのInputインスタンスでレガシー構文を使用するように強制できます。
 
 ## プロパティ
 <Props />

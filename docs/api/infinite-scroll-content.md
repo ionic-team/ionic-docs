@@ -2,12 +2,12 @@
 title: "ion-infinite-scroll-content"
 ---
 
-import Props from '@site/static/auto-generated/infinite-scroll-content/props.md';
-import Events from '@site/static/auto-generated/infinite-scroll-content/events.md';
-import Methods from '@site/static/auto-generated/infinite-scroll-content/methods.md';
-import Parts from '@site/static/auto-generated/infinite-scroll-content/parts.md';
-import CustomProps from '@site/static/auto-generated/infinite-scroll-content/custom-props.md';
-import Slots from '@site/static/auto-generated/infinite-scroll-content/slots.md';
+import Props from '@ionic-internal/component-api/v7/infinite-scroll-content/props.md';
+import Events from '@ionic-internal/component-api/v7/infinite-scroll-content/events.md';
+import Methods from '@ionic-internal/component-api/v7/infinite-scroll-content/methods.md';
+import Parts from '@ionic-internal/component-api/v7/infinite-scroll-content/parts.md';
+import CustomProps from '@ionic-internal/component-api/v7/infinite-scroll-content/custom-props.md';
+import Slots from '@ionic-internal/component-api/v7/infinite-scroll-content/slots.md';
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 

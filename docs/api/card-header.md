@@ -1,21 +1,21 @@
 ---
 title: "ion-card-header"
 ---
-import Props from '@site/static/auto-generated/card-header/props.md';
-import Events from '@site/static/auto-generated/card-header/events.md';
-import Methods from '@site/static/auto-generated/card-header/methods.md';
-import Parts from '@site/static/auto-generated/card-header/parts.md';
-import CustomProps from '@site/static/auto-generated/card-header/custom-props.md';
-import Slots from '@site/static/auto-generated/card-header/slots.md';
+import Props from '@ionic-internal/component-api/v7/card-header/props.md';
+import Events from '@ionic-internal/component-api/v7/card-header/events.md';
+import Methods from '@ionic-internal/component-api/v7/card-header/methods.md';
+import Parts from '@ionic-internal/component-api/v7/card-header/parts.md';
+import CustomProps from '@ionic-internal/component-api/v7/card-header/custom-props.md';
+import Slots from '@ionic-internal/component-api/v7/card-header/slots.md';
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="shadow" />
 
 
-Card header is a child component of card that should be placed before the card content. It can contain a [card title](./card-title) and a [card subtitle](./card-subtitle).
+カードヘッダは、カードの子コンポーネントで、カードコンテンツの前に配置する必要があります。カードタイトル](./card-title)と[カードサブタイトル](./card-subtitle)を含むことができます。
 
-See the [Card](./card) documentation for more information.
+詳しくは、[Card](./card)のドキュメントを参照してください。
 
 
 ## プロパティ

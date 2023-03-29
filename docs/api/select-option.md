@@ -1,12 +1,12 @@
 ---
 title: "ion-select-option"
 ---
-import Props from '@site/static/auto-generated/select-option/props.md';
-import Events from '@site/static/auto-generated/select-option/events.md';
-import Methods from '@site/static/auto-generated/select-option/methods.md';
-import Parts from '@site/static/auto-generated/select-option/parts.md';
-import CustomProps from '@site/static/auto-generated/select-option/custom-props.md';
-import Slots from '@site/static/auto-generated/select-option/slots.md';
+import Props from '@ionic-internal/component-api/v7/select-option/props.md';
+import Events from '@ionic-internal/component-api/v7/select-option/events.md';
+import Methods from '@ionic-internal/component-api/v7/select-option/methods.md';
+import Parts from '@ionic-internal/component-api/v7/select-option/parts.md';
+import CustomProps from '@ionic-internal/component-api/v7/select-option/custom-props.md';
+import Slots from '@ionic-internal/component-api/v7/select-option/slots.md';
 
 <head>
   <title>Select Option | What Is An Option Select on Ionic Framework Apps</title>
@@ -18,12 +18,12 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 <EncapsulationPill type="shadow" />
 
 
-Select Options are components that are child elements of a Select. Each option defined is passed and displayed in the Select dialog.
+セレクトオプションは、セレクトの子要素となるコンポーネントです。定義された各オプションは、Selectダイアログに渡され表示されます。
 
-For usage examples, see the [Select](./select) documentation.
+使用例については、[Select](./select)のドキュメントを参照してください。
 
 
-## Properties
+## プロパティ
 <Props />
 
 ## イベント

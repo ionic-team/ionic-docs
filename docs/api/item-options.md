@@ -1,12 +1,12 @@
 ---
 title: "ion-item-options"
 ---
-import Props from '@site/static/auto-generated/item-options/props.md';
-import Events from '@site/static/auto-generated/item-options/events.md';
-import Methods from '@site/static/auto-generated/item-options/methods.md';
-import Parts from '@site/static/auto-generated/item-options/parts.md';
-import CustomProps from '@site/static/auto-generated/item-options/custom-props.md';
-import Slots from '@site/static/auto-generated/item-options/slots.md';
+import Props from '@ionic-internal/component-api/v7/item-options/props.md';
+import Events from '@ionic-internal/component-api/v7/item-options/events.md';
+import Methods from '@ionic-internal/component-api/v7/item-options/methods.md';
+import Parts from '@ionic-internal/component-api/v7/item-options/parts.md';
+import CustomProps from '@ionic-internal/component-api/v7/item-options/custom-props.md';
+import Slots from '@ionic-internal/component-api/v7/item-options/slots.md';
 
 <head>
   <title>ion-item-options: Option Button Components for Ionic Apps</title>
@@ -16,9 +16,9 @@ import Slots from '@site/static/auto-generated/item-options/slots.md';
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 
-The item options component is a container for the [item option](./item-option) buttons in a sliding item. These buttons can be placed either on the [start or end side](#side-description).
+アイテムオプションコンポーネントは、スライドアイテムの[アイテムオプション](./item-option)ボタンのためのコンテナです。これらのボタンは、[startまたはend](#side-description)のいずれかに配置することができます。
 
-See the [item sliding](./item-sliding) documentation for more information.
+詳しくは [item sliding](./item-sliding) のドキュメントを参照してください。
 
 
 ## Side Description

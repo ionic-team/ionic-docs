@@ -1,12 +1,12 @@
 ---
 title: "ion-buttons"
 ---
-import Props from '@site/static/auto-generated/buttons/props.md';
-import Events from '@site/static/auto-generated/buttons/events.md';
-import Methods from '@site/static/auto-generated/buttons/methods.md';
-import Parts from '@site/static/auto-generated/buttons/parts.md';
-import CustomProps from '@site/static/auto-generated/buttons/custom-props.md';
-import Slots from '@site/static/auto-generated/buttons/slots.md';
+import Props from '@ionic-internal/component-api/v7/buttons/props.md';
+import Events from '@ionic-internal/component-api/v7/buttons/events.md';
+import Methods from '@ionic-internal/component-api/v7/buttons/methods.md';
+import Parts from '@ionic-internal/component-api/v7/buttons/parts.md';
+import CustomProps from '@ionic-internal/component-api/v7/buttons/custom-props.md';
+import Slots from '@ionic-internal/component-api/v7/buttons/slots.md';
 
 <head>
   <title>ion-buttons: Toolbar Element with Named Slots for Buttons</title>
@@ -18,18 +18,18 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 <EncapsulationPill type="scoped" />
 
 
-The Buttons component is a container element. It should be used inside of a [toolbar](./toolbar) and can contain several types of buttons, including standard [buttons](./button), [menu buttons](./menu-button), and [back buttons](./back-button).
+Buttonsコンポーネントは、コンテナ要素です。 [ツールバー](./toolbar) の内部で使用し、標準の[ボタン](./button)、[メニューボタン](./menu-button)、[戻るボタン](./back-button)を含むいくつかのタイプのボタンを含めることができる。
 
-## Basic Usage
+## 基本的な使い方
 
-import Basic from '@site/static/usage/buttons/basic/index.md';
+import Basic from '@site/static/usage/v7/buttons/basic/index.md';
 
 <Basic />
 
 
 ## Buttons Placement
 
-Buttons can be positioned inside of the toolbar using a named slot. The below chart has a description of each slot.
+ツールバー内のボタンは、スロットという名前を使って配置することができます。下図は各スロットの説明です。
 
 | Slot         | Description                                                                                              |
 |--------------|----------------------------------------------------------------------------------------------------------|
@@ -38,32 +38,32 @@ Buttons can be positioned inside of the toolbar using a named slot. The below ch
 | `secondary`  | Positions element to the `left` of the content in `ios` mode, and directly to the `right` in `md` mode.  |
 | `primary`    | Positions element to the `right` of the content in `ios` mode, and to the far `right` in `md` mode.      |
 
-import Placement from '@site/static/usage/buttons/placement/index.md';
+import Placement from '@site/static/usage/v7/buttons/placement/index.md';
 
 <Placement />
 
 
-## Types of Buttons
+## Buttonsのタイプ
 
-A button in a toolbar is styled to be clear by default, but this can be changed using the [`fill`](./button#fill) property on the button. The properties included on [back button](./back-button) and [menu button](./menu-button) in this example are for display purposes; see their respective documentation for proper usage.
+ツールバーのボタンは、デフォルトでは透明ですが、ボタンの [`fill`](./button#fill) プロパティで変更することが可能です。この例で [バックボタン](./back-button) と [メニューボタン](./menu-button) に含まれるプロパティは表示目的であり、正しい使用方法はそれぞれのドキュメントをご覧ください。
 
-import Types from '@site/static/usage/buttons/types/index.md';
+import Types from '@site/static/usage/v7/buttons/types/index.md';
 
 <Types />
 
 
 ## Collapsible Buttons
 
-The `collapse` property can be set on the buttons to collapse them when the header collapses. This is typically used with [collapsible large titles](./title#collapsible-large-titles).
+ボタンに `collapse` プロパティを設定すると、ヘッダーが折りたたまれたときにボタンが折りたたまれます。これは通常、[collapsible large titles](./title#collapsible-large-titles) と共に使用します。
 
 :::info
 
-This feature is only available for iOS.
+この機能はiOS modeでのみ有効です。
 
 :::
 
 <!-- Reuse the playground from the Title directory -->
-import CollapsibleLargeTitleButtons from '@site/static/usage/title/collapsible-large-title/buttons/index.md';
+import CollapsibleLargeTitleButtons from '@site/static/usage/v7/title/collapsible-large-title/buttons/index.md';
 
 <CollapsibleLargeTitleButtons />
 

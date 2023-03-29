@@ -141,17 +141,17 @@ Cordovaがプログラムビルドをサポートするには、追加のセッ�
    $ ionic capacitor add android
    ```
 
-   For Cordova, run the following:
+   Cordovaでは以下のように実行します。
 
    ```shell
    $ ionic cordova prepare android
    ```
 
-2. **Set the [Package ID](../reference/glossary.md#package-id).**
+2. **[Package ID](../reference/glossary.md#package-id) を設定します。**
 
-   For Capacitor, open the `capacitor.config.json` file and modify the `appId` property.
+Capacitor の場合は、`capacitor.config.json` ファイルを開き、`appId` プロパティを修正します。
 
-   For Cordova, open the `config.xml` file and modify the `id` attribute of the root element, `<widget>`. See [the Cordova documentation](https://cordova.apache.org/docs/en/latest/config_ref/#widget) for more information.
+Cordovaの場合は、`config.xml`ファイルを開き、ルート要素である `<widget>` の `id` 属性を変更します。詳しくは、[Cordovaのドキュメント](https://cordova.apache.org/docs/en/latest/config_ref/#widget)を参照してください。
 
 ## Capacitorでの実行
 

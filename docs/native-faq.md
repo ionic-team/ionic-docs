@@ -3,83 +3,23 @@ sidebar_label: よくある質問
 slug: /native/faq
 ---
 
-# Ionic Native FAQ
+# Frequently Asked Question
 
-## Cordova の管理に関するヒント
+## What is Capacitor? 
 
-**1) プラグインの追加・更新・削除は[Ionic CLI](cli.md)を利用する**
+Capacitor a native runtime built by the Ionic team that offers web developers the ability to deploy their web apps to a native device. Capacitor also exposing native device capabilities through JavaScript so developers could access features like native location services, filesystem access, or notifications as if they are interacting with any other JavaScript library. 
 
-プラグインの追加・更新・削除には、[Ionic CLI](cli.md) を使用します。Cordovaコマンドの前に`ionic`を使用すると、より良い経験と追加機能が得られます（`cordova build ios`の代わりに`ionic cordova build ios`）。
+## Permission Issues
 
-**2) プラグインを削除し、再追加することによるアップグレード**
+If you're using a plugin, it may require adding additional permissions to your native project after you install the plugin. For instance, the Capacitor Camera plugin requires the following permission for iOS:
 
-```shell
-$ ionic cordova plugin remove cordova-plugin-camera
-$ ionic cordova plugin add cordova-plugin-camera
-```
+- `NSCameraUsageDescription` (`Privacy - Camera Usage Description`)
+- `NSPhotoLibraryAddUsageDescription` (`Privacy - Photo Library Additions Usage Description`)
+- `NSPhotoLibraryUsageDescription` (`Privacy - Photo Library Usage Description`)
 
-**3) 明示的なバージョンのインストール**
+You need to manually add those permissions to the `info.plist` in your native project. Otherwise, calls to the native camera API will fail. 
 
-`npm install`で常に同じバージョンのプラグインをインストールするようにするには、バージョン番号を指定します。
 
-```shell
-ionic cordova plugin add cordova-plugin-camera@4.3.2
-```
+## Unexpected behaviour
 
-**4) 既存のIonicプロジェクトでCordovaを復活させる**
-
-プロジェクトに新しい開発者を追加するときに便利です。`ionic cordova prepare` は `package.json` と `config.xml` からプラットフォームとプラグインをリストアします。インストールされるバージョンは、 `package.json` や `config.xml` に含まれていれば、そこから取得されます。競合する場合は、`package.json` が `config.xml` よりも優先されます。
-
-**5) Ionic CLIコマンドでCordovaの問題をトラブルシュートする**
-
-- `ionic doctor list`: [よくある問題](cli/commands/doctor-list.md) を検出し、修正するためのステップを提案します。
-- `ionic repair`: [すべての依存関係を削除し、再生成する](cli/commands/repair.md)
-
-## バージョン番号の理解
-
-あるIonic Nativeプラグインについて、Ionic Native（TypeScriptコード）とCordova（ネイティブコード）のバージョン番号は一致しません。Ionic Nativeのバージョン番号は `package.json` に記載されています。
-
-```json
-"@awesome-cordova-plugins/camera": "^5.3.0",
-```
-
-Cordovaプラグインのバージョン番号は `package.json` と `config.xml` の両方で確認することができます。
-
-```json
-"cordova-plugin-camera": "4.0.3",
-```
-
-```xml
-<plugin name="cordova-plugin-camera" spec="4.0.3" />
-```
-
-ネイティブの新機能やバグフィックスを確認する場合は、CordovaプラグインのGitHubページ自体で新バージョンを探します（例えばこちらは [Camera one](https://github.com/apache/cordova-plugin-camera) です）。
-
-Ionic Nativeの新しいリリース（Cordovaプラグインによって最近追加されたメソッドの公開などが含まれる場合があります）を確認するには、 [こちら](https://github.com/ionic-team/ionic-native/releases) を参照してください。
-
-## ビルドに失敗したときのトラブルシューティング
-
-ビルドエラーを調査するために、以下のリソースをチェックしてください。
-
-- Google と [StackOverflow](https://stackoverflow.com)。多くの問題がオンラインで文書化されています。
-- [Ionic Community Ionic Forum](https://forum.ionicframework.com) で質問する (Ionic Native カテゴリを参照)
-- Ionic Customer Success [ナレッジベース](https://ionic.zendesk.com) を参照してください。
-
-### Cordova プラグインのコンフリクト
-
-プラグインが同じネイティブ依存関係を共有するとき、あるいは複数のプラグインが一度に同じネイティブコードにアクセスしようとするとき、プラグイン同士が競合することがあります。たとえば、Google Play Services のバージョン (Google Maps は GPS v24.2 を使用していますが、Firebase は GPS v27.1 を必要としています) のような一般的なライブラリです。これらのプラグインを定期的に更新しておくと、この問題を解決できます。
-
-もうひとつのコツは、アプリが特定の機能ごとにひとつのプラグインしか使わないようにすることです（例：Push Notifications）。
-
-## 推奨されるアップグレード戦略
-
-最もIonicが安定しているアプリは、特にネイティブ層が定期的にアップデートされています。ネイティブプラグインを最新の状態に保つことで、プロジェクトに最新のセキュリティ修正、新機能、パフォーマンス向上がもたらされます。
-
-プロジェクトのプラグインは一度にひとつずつ、理想的には別々のコードブランチでアップデートしてください。これにより、問題が発生する可能性のある領域を減らすことができます。プロジェクトのすべてを一度にアップデートすると、問題がどこから発生しているのかがわからなくなることがあります。
-
-### いつアップデートすればよいですか？
-
-- 新しい機能/バグがリリースされたときです。npm outdated` を実行すると、利用可能なアップデートのリストが表示されます。
-- 新しいメジャーバージョンがリリースされたとき。Cordova blog](https://cordova.apache.org/blog/) や [Ionic blog](https://ionicframework.com/blog/) などの公式ブログでアナウンスやニュースが公開されます。
-- アップデートの内容: 新機能なのか、それとも重要なセキュリティ修正なのかを見極める。
-- タイミング。チームのプロジェクト目標に対して、どのような位置づけにあるか？
+If for some reason the plugin does not behave in a way that is unexpected, please [open an issue on our github repo](https://github.com/ionic-team/capacitor-plugins)! Providing a clear issue report along with a reproduction can help get your issue resolved.

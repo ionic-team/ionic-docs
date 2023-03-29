@@ -234,7 +234,6 @@ document.addEventListener('ionBackButton', (ev) => {
 上の例では、ハンドラAとBの両方の優先度は10です。ハンドラBは最後に登録されているため、Ionic FrameworkはハンドラAを呼び出す前にハンドラBを呼び出します。
 
 ## アプリの終了
->>>>>>> main
 
 場合によっては、ハードウェアの戻るボタンを押したときにアプリケーションを終了することをお勧めします。これは、Capacitor/Cordovaが提供するメソッドと組み合わせた `ionBackButton` イベントを使用することで実現できます。
 
@@ -341,6 +340,6 @@ export default {
 
 | Handler    | Priority | Propagates | Description                                                                                                                              |
 | ---------- | -------- | ---------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
-| Overlays   | 100      | No         | Applies to overlay components `ion-action-sheet`, `ion-alert`, `ion-loading`, `ion-modal`, `ion-popover`, `ion-picker`, and `ion-toast`. |
+| Overlays   | 100      | No         | Applies to overlay components `ion-action-sheet`, `ion-alert`, `ion-loading`, `ion-modal`, `ion-popover`, and `ion-picker`. |
 | Menu       | 99       | No         | Applies to `ion-menu`.                                                                                                                   |
 | Navigation | 0        | Yes        | Applies to routing navigation (i.e. Angular Routing).                                                                                    |

@@ -1,12 +1,12 @@
 ---
 title: "ion-popover"
 ---
-import Props from '@site/static/auto-generated/popover/props.md';
-import Events from '@site/static/auto-generated/popover/events.md';
-import Methods from '@site/static/auto-generated/popover/methods.md';
-import Parts from '@site/static/auto-generated/popover/parts.md';
-import CustomProps from '@site/static/auto-generated/popover/custom-props.md';
-import Slots from '@site/static/auto-generated/popover/slots.md';
+import Props from '@ionic-internal/component-api/v7/popover/props.md';
+import Events from '@ionic-internal/component-api/v7/popover/events.md';
+import Methods from '@ionic-internal/component-api/v7/popover/methods.md';
+import Parts from '@ionic-internal/component-api/v7/popover/parts.md';
+import CustomProps from '@ionic-internal/component-api/v7/popover/custom-props.md';
+import Slots from '@ionic-internal/component-api/v7/popover/slots.md';
 
 <head>
   <title>ion-popover: iOS / Android Popover UI Component & CSS Properties</title>
@@ -54,7 +54,7 @@ Angular、React、Vue で `ion-popover` を使用する場合、渡されたコ�
  `popoverController` を使用する場合、`ion-popover` は前もって作成されないので、トリガーは適用されません。
 :::
 
-import InlineTrigger from '@site/static/usage/popover/presenting/inline-trigger/index.md';
+import InlineTrigger from '@site/static/usage/v7/popover/presenting/inline-trigger/index.md';
 
 <InlineTrigger />
 
@@ -65,7 +65,7 @@ import InlineTrigger from '@site/static/usage/popover/presenting/inline-trigger/
 `isOpen` は一方向のデータバインディングを使用しています。つまり、ポップオーバーが閉じられたときに自動的に `false` に設定されることはありません。開発者は `ionPopoverDidDismiss` または `didDismiss` イベントをリッスンして `isOpen` を `false` にセットする必要があります。この理由は、`ion-popover` の内部がアプリケーションの状態と密に結合されるのを防ぐためである。一方通行のデータバインディングでは、ポップオーバーはリアクティブ変数が提供するブーリアン値だけを気にすればよいのです。双方向のデータバインディングでは、ポップオーバーはブール値とリアクティブ変数の存在の両方に関心を持つ必要があります。これは非決定的な動作につながり、アプリケーションのデバッグを難しくします。
 
 
-import IsOpenTrigger from '@site/static/usage/popover/presenting/inline-isopen/index.md';
+import IsOpenTrigger from '@site/static/usage/v7/popover/presenting/inline-isopen/index.md';
 
 <IsOpenTrigger />
 
@@ -83,7 +83,7 @@ Ionic Framework からインポートされた `popoverController` を使用す�
 
 ### 使い方
 
-import ControllerExample from '@site/static/usage/popover/presenting/controller/index.md';
+import ControllerExample from '@site/static/usage/v7/popover/presenting/controller/index.md';
 
 <ControllerExample />
 
@@ -96,7 +96,7 @@ import ControllerExample from '@site/static/usage/popover/presenting/controller/
  If you are building an Ionic Angular app, the styles need to be added to a global stylesheet file.
 :::
 
-import Styling from '@site/static/usage/popover/customization/styling/index.md';
+import Styling from '@site/static/usage/v7/popover/customization/styling/index.md';
 
 <Styling />
 
@@ -117,7 +117,7 @@ import Styling from '@site/static/usage/popover/customization/styling/index.md';
 
 ### Side and Alignment Demo
 
-import Positioning from '@site/static/usage/popover/customization/positioning/index.md';
+import Positioning from '@site/static/usage/v7/popover/customization/positioning/index.md';
 
 <Positioning />
 
@@ -131,7 +131,7 @@ import Positioning from '@site/static/usage/popover/customization/positioning/in
 
 `popoverController` を使用する場合は、`event` オプションでイベントを指定する必要があり、Ionic Framework は `event.target` を参照要素に使用します。このパターンの例は [controller demo](#controller-popovers) を参照してください。
 
-import Sizing from '@site/static/usage/popover/customization/sizing/index.md';
+import Sizing from '@site/static/usage/v7/popover/customization/sizing/index.md';
 
 <Sizing />
 
@@ -145,7 +145,7 @@ import Sizing from '@site/static/usage/popover/customization/sizing/index.md';
  `popoverController` を使用する場合、ネストしたポップオーバーは作成できません。なぜなら、ポップオーバーは `create` メソッドが呼ばれたときに、自動的にアプリケーションのルートに追加されるからです。
 :::
 
-import NestedPopover from '@site/static/usage/popover/nested/index.md';
+import NestedPopover from '@site/static/usage/v7/popover/nested/index.md';
 
 <NestedPopover />
 
@@ -222,23 +222,23 @@ type PositionAlign = 'start' | 'center' | 'end';
 
 ## Performance
 
-### Mounting Inner Contents
+### Innerコンテンツのマウント
 
-The content of an inline `ion-popover` is unmounted when closed. If this content is expensive to render, developers can use the `keepContentsMounted` property to mount the content as soon as the popover is mounted. This can help optimize the responsiveness of your application as the inner contents will have already been mounted when the popover opens.
+インライン `ion-popover` のコンテンツは、閉じるとマウントされなくなります。このコンテンツのレンダリングにコストがかかる場合、開発者は `keepContentsMounted` プロパティを使用して、ポップオーバーがマウントされると同時にコンテンツをマウントすることができます。これにより、ポップオーバーが開いたときに内部コンテンツがすでにマウントされているため、アプリケーションの応答性を最適化することができます。
 
-import Mount from '@site/static/usage/popover/performance/mount/index.md';
+import Mount from '@site/static/usage/v7/popover/performance/mount/index.md';
 
 <Mount />
 
-Developers should keep the following in mind when using `keepContentsMounted`:
+開発者は `keepContentsMounted` を使用する際に、以下の点に留意する必要があります。
 
-- This feature should be used as a last resort in order to deal with existing performance problems. Try to identify and resolve performance bottlenecks before using this feature. Additionally, do not use this to anticipate performance problems.
+- この機能は、既存のパフォーマンス問題に対処するための最後の手段として使用する必要があります。この機能は、既存のパフォーマンス問題に対処するための最後の手段として使用されるべきです。また、パフォーマンスの問題を予期してこの機能を使用しないでください。
 
-- This feature is only needed when using a JavaScript Framework. Developers not using a framework can  pass the contents to be rendered into the popover, and the contents will be rendered automatically.
+- この機能は、JavaScriptフレームワークを使用する場合にのみ必要です。フレームワークを使用していない開発者は、レンダリングするコンテンツをポップオーバーに渡すことができ、コンテンツは自動的にレンダリングされます。
 
-- This feature only works with inline popovers. Popovers created with the `popoverController` are not created ahead of time, so the inner contents are not created either.
+- この機能はインラインポップオーバーでのみ機能します。 `popoverController`で作成されたポップオーバーは先に作成されないので、内部のコンテンツも作成されません。
 
-- Any JavaScript Framework lifecycle hooks on the inner component will run as soon as the popover is mounted, not when the popover is presented.
+- 内部コンポーネントの JavaScript Framework ライフサイクルフックは、ポップオーバーが表示されたときではなく、ポップオーバーがマウントされたときにすぐに実行されます。
 
 ## プロパティ
 <Props />

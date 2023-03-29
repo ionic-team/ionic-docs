@@ -2,6 +2,8 @@ const path = require('path');
 const prismic = require('@prismicio/client');
 const fetch = require('node-fetch');
 
+const VERSIONS_JSON = require('./versions.json');
+
 const BASE_URL = '/docs';
 
 module.exports = {
@@ -274,7 +276,7 @@ module.exports = {
             )}.ts`;
           }
           if ((match = docPath.match(/native\/(.*)\.md/)) != null) {
-            return `https://github.com/ionic-team/ionic-native/edit/master/src/@awesome-cordova-plugins/plugins/${match[1]}/index.ts`;
+            return `https://github.com/ionic-team/capacitor-plugins/edit/main/${match[1]}/README.md`;
           }
           return `https://github.com/ionic-team/ionic-docs/edit/main/${versionDocsDirPath}/${docPath}`;
         },
@@ -282,8 +284,7 @@ module.exports = {
         lastVersion: 'current',
         versions: {
           current: {
-            label: 'v6',
-            banner: 'none',
+            label: 'v7',
           },
         },
       },
@@ -309,6 +310,12 @@ module.exports = {
         },
       };
     },
+    [
+      path.resolve(__dirname, 'plugins', 'docusaurus-plugin-ionic-component-api'),
+      {
+        versions: VERSIONS_JSON,
+      },
+    ],
   ],
   themes: [
     [

@@ -1,12 +1,12 @@
 ---
 title: "ion-title"
 ---
-import Props from '@site/static/auto-generated/title/props.md';
-import Events from '@site/static/auto-generated/title/events.md';
-import Methods from '@site/static/auto-generated/title/methods.md';
-import Parts from '@site/static/auto-generated/title/parts.md';
-import CustomProps from '@site/static/auto-generated/title/custom-props.md';
-import Slots from '@site/static/auto-generated/title/slots.md';
+import Props from '@ionic-internal/component-api/v7/title/props.md';
+import Events from '@ionic-internal/component-api/v7/title/events.md';
+import Methods from '@ionic-internal/component-api/v7/title/methods.md';
+import Parts from '@ionic-internal/component-api/v7/title/parts.md';
+import CustomProps from '@ionic-internal/component-api/v7/title/custom-props.md';
+import Slots from '@ionic-internal/component-api/v7/title/slots.md';
 
 <head>
   <title>ion-title: Ionic Framework App Title Component for Toolbars</title>
@@ -18,17 +18,17 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 <EncapsulationPill type="shadow" />
 
 
-Title is a text component that sets the title for a [toolbar](./toolbar). It can be used to describe the screen or section a user is currently on or the app being used.
+Titleは、[ツールバー](./toolbar)のタイトルを設定するテキストコンポーネントです。ユーザーが現在いる画面やセクション、使用中のアプリを説明するために使用することができます。
 
 ## Basic
 
-import Basic from '@site/static/usage/title/basic/index.md';
+import Basic from '@site/static/usage/v7/title/basic/index.md';
 
 <Basic />
 
-## Collapsible Large Titles
+## 折りたたみ式ラージタイトル
 
-The large title will display when the [content](./content) is scrolled to the start of the scroll container. When the title is scrolled behind the header, the condensed title will fade in.
+大きなタイトルは、[content](./content)がスクロールコンテナの開始位置までスクロールされたときに表示されます。タイトルがヘッダーの後ろにスクロールされると、縮小されたタイトルがフェードインします。
 
 :::info
 
@@ -36,32 +36,32 @@ This feature is only available for iOS.
 
 :::
 
-import CollapsibleLargeTitle from '@site/static/usage/title/collapsible-large-title/basic/index.md';
+import CollapsibleLargeTitle from '@site/static/usage/v7/title/collapsible-large-title/basic/index.md';
 
 <CollapsibleLargeTitle />
 
-### Collapsible Buttons
+### 折りたたみ式ボタン
 
-The [buttons](./buttons.md) component can be used with the [`collapse`](./buttons.md#collapse) property to additionally display in the header as the toolbar is collapsed.
+[buttons](./buttons.md)コンポーネントは、[`collapse`](./buttons.md#collapse)プロパティと共に使用すると、ツールバーが折りたたまれたときにヘッダーに追加表示することができます。
 
 
-import CollapsibleLargeTitleButtons from '@site/static/usage/title/collapsible-large-title/buttons/index.md';
+import CollapsibleLargeTitleButtons from '@site/static/usage/v7/title/collapsible-large-title/buttons/index.md';
 
 <CollapsibleLargeTitleButtons />
 
-## Theming
+## テーマ
 
-The collapsible large title should appear seamless in relation to the rest of your content. This means that the background color of the toolbar containing the collapsible large title should always match the background color of the content.
+折りたたみ式ラージタイトルは、コンテンツの他の部分との関係でシームレスに表示される必要があります。つまり、折りたたみ可能なラージタイトルを含むツールバーの背景色は、常にコンテンツの背景色と一致する必要があります。
 
-By default, the toolbar that contains the standard title is hidden using `opacity: 0` and is progressively shown as you collapse the large title by scrolling. As a result, the background color that you see behind the standard title is actually the background color of the content.
+デフォルトでは、標準タイトルを含むツールバーは `opacity: 0` を使って非表示にされ、スクロールによってラージタイトルを折りたたむと徐々に表示されるようになります。その結果、標準タイトルの後ろに見える背景色は、実際にはコンテンツの背景色となります。
 
-You can change the background color of the toolbar with the standard title by setting the `--background` CSS variable. This will give the effect of the header changing color as you collapse the large title.
+標準タイトルのあるツールバーの背景色は、CSS変数に `--background` を設定することで変更できます。これにより、大きなタイトルを折りたたむと、ヘッダーの色が変わるという効果が得られます。
 
 ラージタイトルのテキストカラーをスタイルする場合、特定のページやタブのコンテキスト内ではなく、グローバルにラージタイトルをターゲットにする必要があり、そうしないとナビゲーションアニメーションの間にそのスタイルが適用されません。
 
-### CSS Custom Properties
+## CSSカスタムプロパティ
 
-import CSSCustomProperties from '@site/static/usage/title/theming/css-properties/index.md';
+import CSSCustomProperties from '@site/static/usage/v7/title/theming/css-properties/index.md';
 
 <CSSCustomProperties />
 

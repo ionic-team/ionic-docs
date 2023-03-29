@@ -1,12 +1,12 @@
 ---
 title: "ion-refresher"
 ---
-import Props from '@site/static/auto-generated/refresher/props.md';
-import Events from '@site/static/auto-generated/refresher/events.md';
-import Methods from '@site/static/auto-generated/refresher/methods.md';
-import Parts from '@site/static/auto-generated/refresher/parts.md';
-import CustomProps from '@site/static/auto-generated/refresher/custom-props.md';
-import Slots from '@site/static/auto-generated/refresher/slots.md';
+import Props from '@ionic-internal/component-api/v7/refresher/props.md';
+import Events from '@ionic-internal/component-api/v7/refresher/events.md';
+import Methods from '@ionic-internal/component-api/v7/refresher/methods.md';
+import Parts from '@ionic-internal/component-api/v7/refresher/parts.md';
+import CustomProps from '@ionic-internal/component-api/v7/refresher/custom-props.md';
+import Slots from '@ionic-internal/component-api/v7/refresher/slots.md';
 
 <head>
   <title>ion-refresher: Pull-to-Refresh Page Content on Ionic Apps</title>
@@ -21,9 +21,9 @@ Refresher provides pull-to-refresh functionality on a content component. The pul
 Data should be modified during the refresher's output events. Once the async operation has completed and the refreshing should end, `complete()` needs to be called on the refresher.
 
 
-## Basic Usage
+## 基本的な使い方
 
-import Basic from '@site/static/usage/refresher/basic/index.md';
+import Basic from '@site/static/usage/v7/refresher/basic/index.md';
 
 <Basic />
 
@@ -34,7 +34,7 @@ The refresher has several properties for customizing the pull gesture. Set the `
 
 These properties do not apply when the [native refresher](#native-refreshers) is enabled.
 
-import PullProperties from '@site/static/usage/refresher/pull-properties/index.md';
+import PullProperties from '@site/static/usage/v7/refresher/pull-properties/index.md';
 
 <PullProperties />
 
@@ -45,7 +45,7 @@ The default icon, spinner, and text can be customized on the [refresher content]
 
 Setting `pullingIcon` will disable the [native refresher](#native-refreshers).
 
-import CustomContent from '@site/static/usage/refresher/custom-content/index.md';
+import CustomContent from '@site/static/usage/v7/refresher/custom-content/index.md';
 
 <CustomContent />
 
@@ -67,7 +67,7 @@ The native refreshers can be disabled by setting the `pullingIcon` on the [refre
 
 Refresher が機能するためには、スクロールコンテナが必要です。仮想スクロールを使用する場合は、`ion-content` のスクロールを無効にし、`.ion-content-scroll-host` クラスターゲットで、どの要素コンテナがスクロールコンテナを担当するかを指定する必要があります。
 
-import CustomScrollTarget from '@site/static/usage/refresher/custom-scroll-target/index.md';
+import CustomScrollTarget from '@site/static/usage/v7/refresher/custom-scroll-target/index.md';
 
 <CustomScrollTarget />
 
@@ -76,7 +76,7 @@ import CustomScrollTarget from '@site/static/usage/refresher/custom-scroll-targe
 
 While the refresher can be used with any type of content, a common use case in native apps is to display a list of data that gets updated on refresh. In the below example, the app generates a list of data and then appends data to the top of the list when the refresh is completed. In a real app, the data would be received and updated after sending a request via a network or database call.
 
-import Advanced from '@site/static/usage/refresher/advanced/index.md';
+import Advanced from '@site/static/usage/v7/refresher/advanced/index.md';
 
 <Advanced />
 
@@ -102,7 +102,7 @@ interface RefresherCustomEvent extends CustomEvent {
 }
 ```
 
-## Properties
+## プロパティ
 <Props />
 
 ## イベント

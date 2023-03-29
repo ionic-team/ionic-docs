@@ -1,12 +1,12 @@
 ---
 title: "ion-item-sliding"
 ---
-import Props from '@site/static/auto-generated/item-sliding/props.md';
-import Events from '@site/static/auto-generated/item-sliding/events.md';
-import Methods from '@site/static/auto-generated/item-sliding/methods.md';
-import Parts from '@site/static/auto-generated/item-sliding/parts.md';
-import CustomProps from '@site/static/auto-generated/item-sliding/custom-props.md';
-import Slots from '@site/static/auto-generated/item-sliding/slots.md';
+import Props from '@ionic-internal/component-api/v7/item-sliding/props.md';
+import Events from '@ionic-internal/component-api/v7/item-sliding/events.md';
+import Methods from '@ionic-internal/component-api/v7/item-sliding/methods.md';
+import Parts from '@ionic-internal/component-api/v7/item-sliding/parts.md';
+import CustomProps from '@ionic-internal/component-api/v7/item-sliding/custom-props.md';
+import Slots from '@ionic-internal/component-api/v7/item-sliding/slots.md';
 
 <head>
   <title>Slide Buttons | Slide Right to Left with ion-item-sliding</title>
@@ -16,14 +16,14 @@ import Slots from '@site/static/auto-generated/item-sliding/slots.md';
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 
-A sliding item contains an item that can be dragged to reveal option buttons. It requires an [item](./item) component as a child. All options to reveal should be placed in the [item options](./item-options) element.
+スライドアイテムには、ドラッグしてオプションボタンを表示させることができるアイテムが含まれています。子要素として [item](./item) コンポーネントが必要です。表示させるオプションはすべて [item options](./item-options) 要素に記述する必要があります。
 
 
-## Basic Usage
+## 基本的な使い方
 
 スライドアイテムのオプションは、デフォルトではアイテムの `"end"` 側に配置されます。つまり、LTRでは右から左へ、RTLでは左から右へスワイプすると、オプションが表示されます。反対側に配置し、反対方向にスワイプしたときに表示されるようにするには、 [item options](./item-options) 要素の side 属性を `"start"` に設定します。アイテムオプションは最大2つまで同時に使用することができ、スワイプの方向によって2つの異なるオプションを表示させることができます。
 
-import Basic from '@site/static/usage/item-sliding/basic/index.md';
+import Basic from '@site/static/usage/v7/item-sliding/basic/index.md';
 
 <Basic />
 
@@ -32,7 +32,7 @@ import Basic from '@site/static/usage/item-sliding/basic/index.md';
 
 [アイテムオプション](./item-option) でアイコンをテキストと一緒に配置すると、デフォルトでテキストの上にアイコンを表示します。アイコンのスロットは、利用可能な [アイテムオプションスロット](./item-option#slots) に変更することで位置を変更することが可能です。
 
-import Icons from '@site/static/usage/item-sliding/icons/index.md';
+import Icons from '@site/static/usage/v7/item-sliding/icons/index.md';
 
 <Icons />
 
@@ -41,7 +41,7 @@ import Icons from '@site/static/usage/item-sliding/icons/index.md';
 
 オプションは、あるポイントを超えてスワイプすると、アイテムの幅いっぱいに広がるように拡張することができます。これは、 [item options](./item-options) の `ionSwipe` イベントと組み合わせることで、アイテムが完全にスワイプされたときにメソッドを呼び出すことができるようになります。
 
-import Expandable from '@site/static/usage/item-sliding/expandable/index.md';
+import Expandable from '@site/static/usage/v7/item-sliding/expandable/index.md';
 
 <Expandable />
 
@@ -58,7 +58,7 @@ interface ItemSlidingCustomEvent extends CustomEvent {
 }
 ```
 
-## Properties
+## プロパティ
 <Props />
 
 ## イベント

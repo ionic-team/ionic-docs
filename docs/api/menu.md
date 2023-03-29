@@ -1,12 +1,12 @@
 ---
 title: "ion-menu"
 ---
-import Props from '@site/static/auto-generated/menu/props.md';
-import Events from '@site/static/auto-generated/menu/events.md';
-import Methods from '@site/static/auto-generated/menu/methods.md';
-import Parts from '@site/static/auto-generated/menu/parts.md';
-import CustomProps from '@site/static/auto-generated/menu/custom-props.md';
-import Slots from '@site/static/auto-generated/menu/slots.md';
+import Props from '@ionic-internal/component-api/v7/menu/props.md';
+import Events from '@ionic-internal/component-api/v7/menu/events.md';
+import Methods from '@ionic-internal/component-api/v7/menu/methods.md';
+import Parts from '@ionic-internal/component-api/v7/menu/parts.md';
+import CustomProps from '@ionic-internal/component-api/v7/menu/custom-props.md';
+import Slots from '@ionic-internal/component-api/v7/menu/slots.md';
 
 <head>
   <title>ion-menu: API Framework Docs for Types of Menu Components</title>
@@ -25,33 +25,33 @@ menu要素は、root content要素と同じ深度である必要があります�
 コンテンツにつけるMenuの数に制限はありません。
 これらはテンプレートから、またはプログラムでMenuControllerを使用して制御できます。
 
-## Basic Usage
+## 基本的な使い方
 
-import BasicUsage from '@site/static/usage/menu/basic/index.md';
+import BasicUsage from '@site/static/usage/v7/menu/basic/index.md';
 
 <BasicUsage />
 
 ## Menu Toggle
 
-The [ion-menu-toggle](./menu-toggle) component can be used to create custom button that can open or close the menu.
+[ion-menu-toggle](./menu-toggle) コンポーネントを使用して、メニューを開いたり閉じたりするカスタムボタンを作成することができます。
 
-import MenuToggle from '@site/static/usage/menu/toggle/index.md';
+import MenuToggle from '@site/static/usage/v7/menu/toggle/index.md';
 
 <MenuToggle />
 
 ## Menu Types
 
-The `type` property can be used to customize how menus display in your application.
+`type`プロパティは、アプリケーションでのメニューの表示方法をカスタマイズするために使用することができます。
 
-import MenuType from '@site/static/usage/menu/type/index.md';
+import MenuType from '@site/static/usage/v7/menu/type/index.md';
 
 <MenuType />
 
-## Theming
+## テーマ
 
 ### CSS Shadow Parts
 
-import Theming from '@site/static/usage/menu/theming/index.md';
+import Theming from '@site/static/usage/v7/menu/theming/index.md';
 
 <Theming />
 

@@ -116,7 +116,7 @@
       "reflectToAttr": false,
       "docs": "Enables the on/off accessibility switch labels within the toggle.",
       "docsTags": [],
-      "default": "undefined",
+      "default": "config.get('toggleOnOffLabels')",
       "values": [
         {
           "type": "boolean"

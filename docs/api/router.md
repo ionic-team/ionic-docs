@@ -1,15 +1,13 @@
 ---
 title: "ion-router"
-hide_table_of_contents: true
 ---
-import TOCInline from '@theme/TOCInline';
 
-import Props from '@site/static/auto-generated/router/props.md';
-import Events from '@site/static/auto-generated/router/events.md';
-import Methods from '@site/static/auto-generated/router/methods.md';
-import Parts from '@site/static/auto-generated/router/parts.md';
-import CustomProps from '@site/static/auto-generated/router/custom-props.md';
-import Slots from '@site/static/auto-generated/router/slots.md';
+import Props from '@ionic-internal/component-api/v7/router/props.md';
+import Events from '@ionic-internal/component-api/v7/router/events.md';
+import Methods from '@ionic-internal/component-api/v7/router/methods.md';
+import Parts from '@ionic-internal/component-api/v7/router/parts.md';
+import CustomProps from '@ionic-internal/component-api/v7/router/custom-props.md';
+import Slots from '@ionic-internal/component-api/v7/router/slots.md';
 
 <head>
   <title>ion-router: Router Component to Coordinate URL Navigation</title>
@@ -20,19 +18,10 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 
 
-<h2 className="table-of-contents__title">コンテンツ</h2>
-
-<TOCInline
-  toc={toc}
-  maxHeadingLevel={2}
-/>
-
-
-
-router バニラおよびステンシルJavaScriptプロジェクト内部でルーティングを処理するためのコンポーネントです。
+The router is a component for handling routing inside vanilla and Stencil JavaScript projects.
 
 :::note
- Note: このコンポーネントは、バニラおよびステンシルJavaScriptプロジェクトでのみ使用してください。Angularプロジェクトでは、[`ion-router-outlet`](router-outlet.md) と Angularルータを使用してください。
+ Note: This component should only be used with vanilla and Stencil JavaScript projects. See the routing guides for [Angular](../angular/navigation), [React](../react/navigation), and [Vue](../vue/navigation) for framework-specific routing solutions.
 :::
 
 
@@ -44,6 +33,12 @@ router バニラおよびステンシルJavaScriptプロジェクト内部でル
 つまり、 `ion-router` はDOMにアクセスすることはなく、コンポーネントを表示することも、何らかのライフサイクルイベントを発行することもなく、ブラウザのURLに基づいて、`ion-nav` と `ion-tabs` 、 `ion-router-outlet`  に何をいつ「show」すべきかを指示するだけです。
 
 コンポーネント(ロード/選択)とURLの間の関係を設定するために、`ion-router` はJSX/HTMLを使ってルートのツリーを定義する宣言的な構文を利用します。
+
+## 基本的な使い方
+
+import BasicExample from '@site/static/usage/v7/router/basic/index.md';
+
+<BasicExample />
 
 ## Interfaces
 

@@ -1,12 +1,12 @@
 ---
 title: "ion-text"
 ---
-import Props from '@site/static/auto-generated/text/props.md';
-import Events from '@site/static/auto-generated/text/events.md';
-import Methods from '@site/static/auto-generated/text/methods.md';
-import Parts from '@site/static/auto-generated/text/parts.md';
-import CustomProps from '@site/static/auto-generated/text/custom-props.md';
-import Slots from '@site/static/auto-generated/text/slots.md';
+import Props from '@ionic-internal/component-api/v7/text/props.md';
+import Events from '@ionic-internal/component-api/v7/text/events.md';
+import Methods from '@ionic-internal/component-api/v7/text/methods.md';
+import Parts from '@ionic-internal/component-api/v7/text/parts.md';
+import CustomProps from '@ionic-internal/component-api/v7/text/custom-props.md';
+import Slots from '@ionic-internal/component-api/v7/text/slots.md';
 
 <head>
   <title>ion-text: Ionic App Component to Style or Change Text Color</title>
@@ -19,16 +19,16 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 textコンポーネントは、任意の要素のテキストカラーのスタイル設定に使用できる単純なコンポーネントです。テキストカラーを変更するには、要素を `ion-text` 要素で囲む必要があります。
 
-## Basic Usage
+## 基本的な使い方
 
-import Basic from '@site/static/usage/text/basic/index.md';
+import Basic from '@site/static/usage/v7/text/basic/index.md';
 
 <Basic />
 
 
-## Theming
+## テーマ
 
-The text component can be customized by changing any of the default [colors](../../docs/theming/colors) Ionic provides.
+テキストコンポーネントは、Ionicが提供するデフォルトの[colors](../../docs/theming/colors)のいずれかを変更することでカスタマイズすることが可能です。
 
 ## プロパティ
 <Props />

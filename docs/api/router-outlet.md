@@ -1,29 +1,19 @@
 ---
 title: "ion-router-outlet"
-hide_table_of_contents: true
 ---
-import TOCInline from '@theme/TOCInline';
 
-import Props from '@site/static/auto-generated/router-outlet/props.md';
-import Events from '@site/static/auto-generated/router-outlet/events.md';
-import Methods from '@site/static/auto-generated/router-outlet/methods.md';
-import Parts from '@site/static/auto-generated/router-outlet/parts.md';
-import CustomProps from '@site/static/auto-generated/router-outlet/custom-props.md';
-import Slots from '@site/static/auto-generated/router-outlet/slots.md';
+import Props from '@ionic-internal/component-api/v7/router-outlet/props.md';
+import Events from '@ionic-internal/component-api/v7/router-outlet/events.md';
+import Methods from '@ionic-internal/component-api/v7/router-outlet/methods.md';
+import Parts from '@ionic-internal/component-api/v7/router-outlet/parts.md';
+import CustomProps from '@ionic-internal/component-api/v7/router-outlet/custom-props.md';
+import Slots from '@ionic-internal/component-api/v7/router-outlet/slots.md';
 
 
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="shadow" />
-
-<h2 className="table-of-contents__title">コンテンツ</h2>
-
-<TOCInline
-  toc={toc}
-  maxHeadingLevel={2}
-/>
-
 
 
 router outletはAngularの組み込みrouter outletコンポーネントやVueのルーター・ビューコンポーネントと同様の振る舞いをしますが、スタック式のナビゲーションを提供し、ビューをアニメーションで出し入れするためのロジックを含んでいます。

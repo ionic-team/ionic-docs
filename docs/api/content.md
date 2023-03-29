@@ -1,12 +1,12 @@
 ---
 title: "ion-content"
 ---
-import Props from '@site/static/auto-generated/content/props.md';
-import Events from '@site/static/auto-generated/content/events.md';
-import Methods from '@site/static/auto-generated/content/methods.md';
-import Parts from '@site/static/auto-generated/content/parts.md';
-import CustomProps from '@site/static/auto-generated/content/custom-props.md';
-import Slots from '@site/static/auto-generated/content/slots.md';
+import Props from '@ionic-internal/component-api/v7/content/props.md';
+import Events from '@ionic-internal/component-api/v7/content/events.md';
+import Methods from '@ionic-internal/component-api/v7/content/methods.md';
+import Parts from '@ionic-internal/component-api/v7/content/parts.md';
+import CustomProps from '@ionic-internal/component-api/v7/content/custom-props.md';
+import Slots from '@ionic-internal/component-api/v7/content/slots.md';
 
 <head>
   <title>ion-content: Scrollable CSS Component for Ionic App Content Areas</title>
@@ -25,80 +25,76 @@ Contentコンポーネントは、スクロール可能領域を制御するい�
 Contentは、他の多くのIonicコンポーネントと同様に、 [CSS Utilities](/docs/layout/css-utilities) で提供されるグローバルスタイルを使用するか、CSSおよび使用可能な [CSS Custom Properties](#css-custom-properties) を使用して個別にスタイル設定することによって、`padding` や `margin` などを変更するようにカスタマイズできます。
 
 
-## Basic Usage
+## 基本的な使い方
 
-import Basic from '@site/static/usage/content/basic/index.md';
+import Basic from '@site/static/usage/v7/content/basic/index.md';
 
 <Basic />
 
 
 ## Header & Footer
 
-Content can be the only top-level component in a page, or it can be used alongside a [header](./header), [footer](./footer), or both. When used with a header or footer, it will adjust its size to fill the remaining height.
+コンテンツは、ページ内の唯一のトップレベル・コンポーネントとすることも、[ヘッダー](./header)、[フッター](./footer)、またはその両方と一緒に使用することも可能です。ヘッダーやフッターと一緒に使用すると、残りの高さを埋めるようにサイズが調整されます。
 
-import HeaderFooter from '@site/static/usage/content/header-footer/index.md';
+import HeaderFooter from '@site/static/usage/v7/content/header-footer/index.md';
 
 <HeaderFooter />
 
 
 ## Fullscreen Content
 
-By default, content fills the space between a [header](./header) and [footer](./footer) but does not go behind them. In certain cases, it may be desired to have the content scroll behind the header and footer, such as when the `translucent` property is set on either of them, or `opacity` is set on the toolbar. This can be achieved by setting the `fullscreen` property on the content to `true`.
+デフォルトでは、コンテンツは [ヘッダー](./header)と [フッター](./footer)の間のスペースを埋めますが、それらの背景にまわることはありません。例えば、ヘッダーとフッターのどちらかに `translucent` プロパティを設定した場合や、ツールバーに `opacity` を設定した場合など、特定のケースでは、コンテンツをヘッダーとフッターの後ろにスクロールさせることが望まれるかもしれない。これは、コンテンツの `fullscreen` プロパティを `true` に設定することで実現することができます。
 
-import Fullscreen from '@site/static/usage/content/fullscreen/index.md';
+import Fullscreen from '@site/static/usage/v7/content/fullscreen/index.md';
 
 <Fullscreen />
 
 
-## Fixed Content
+## コンテンツの固定
 
-<<<<<<< HEAD
-スクロール可能な領域の外側に要素を配置するために、要素に `slot="fixed"` を追加することができます。これは、要素を左上に絶対配置します。それ以外の場所に配置するには、[top, right, bottom, left](https://developer.mozilla.org/en-US/docs/Web/CSS/position) でスタイルを指定します。
-=======
-To place elements outside of the scrollable area, assign them to the `fixed` slot. Doing so will [absolutely position](https://developer.mozilla.org/en-US/docs/Web/CSS/position#absolute_positioning) the element to the top left of the content. In order to change the position of the element, it can be styled using the [top, right, bottom, and left](https://developer.mozilla.org/en-US/docs/Web/CSS/position) CSS properties.
+スクロール可能な領域の外側に要素を配置するには、`fixed`スロットに割り当てます。そうすることで、その要素はコンテンツの左上に[絶対位置](https://developer.mozilla.org/en-US/docs/Web/CSS/position#absolute_positioning)されます。要素の位置を変えるには、CSSの[top, right, bottom, left](https://developer.mozilla.org/en-US/docs/Web/CSS/position)プロパティを使ってスタイルを設定することができます。
 
-import Fixed from '@site/static/usage/content/fixed/index.md';
+import Fixed from '@site/static/usage/v7/content/fixed/index.md';
 
 <Fixed />
 
-## Scroll Methods
+## スクロールメソッド
 
-Content provides [methods](#methods) that can be called to scroll the content to the bottom, top, or to a specific point. They can be passed a `duration` in order to smoothly transition instead of instantly changing the position.
+コンテンツには [メソッド](#methods) が用意されており、これを呼び出すことでコンテンツを下、上、または特定のポイントにスクロールさせることができます。これらのメソッドには `duration` を渡すことができ、瞬時に位置を変更するのではなく、スムーズに移行することができます。
 
-import ScrollMethods from '@site/static/usage/content/scroll-methods/index.md';
+import ScrollMethods from '@site/static/usage/v7/content/scroll-methods/index.md';
 
 <ScrollMethods />
 
 ## Scroll Events
 
-Scroll events are disabled by default for content due to performance. However, they can be enabled by setting `scrollEvents` to `true`. This is necessary before listening to any of the scroll [events](#events).
+スクロールイベントは、パフォーマンス上、コンテンツに対してデフォルトで無効化されています。しかし、`scrollEvents` を `true` に設定することで、有効にすることができます。これは、 スクロール [イベント](#events) を聞く前に必要です。
 
-import ScrollEvents from '@site/static/usage/content/scroll-events/index.md';
+import ScrollEvents from '@site/static/usage/v7/content/scroll-events/index.md';
 
 <ScrollEvents />
 
 
-## Theming
+## テーマ
 
 ### Colors
 
-import Colors from '@site/static/usage/content/theming/colors/index.md';
+import Colors from '@site/static/usage/v7/content/theming/colors/index.md';
 
 <Colors />
 
 ### CSS Shadow Parts
 
-import CSSParts from '@site/static/usage/content/theming/css-shadow-parts/index.md';
+import CSSParts from '@site/static/usage/v7/content/theming/css-shadow-parts/index.md';
 
 <CSSParts />
 
-### CSS Custom Properties
+## CSSカスタムプロパティ
 
-import CSSProps from '@site/static/usage/content/theming/css-properties/index.md';
+import CSSProps from '@site/static/usage/v7/content/theming/css-properties/index.md';
 
 <CSSProps />
 
->>>>>>> 99d3f5222ffbfc340f268bf630572d37e9d9586b
 
 ## Interfaces
 
@@ -141,165 +137,7 @@ interface ScrollCustomEvent extends ScrollBaseCustomEvent {
 ```
 
 
-<<<<<<< HEAD
-
-
-## 使い方
-
-<Tabs groupId="framework" defaultValue="angular" values={[{ value: 'angular', label: 'Angular' }, { value: 'javascript', label: 'Javascript' }, { value: 'react', label: 'React' }, { value: 'stencil', label: 'Stencil' }, { value: 'vue', label: 'Vue' }]}>
-
-<TabItem value="angular">
-
-```html
-<ion-content
-  [scrollEvents]="true"
-  (ionScrollStart)="logScrollStart()"
-  (ionScroll)="logScrolling($event)"
-  (ionScrollEnd)="logScrollEnd()">
-    <h1>Main Content</h1>
-
-    <div slot="fixed">
-      <h1>Fixed Content</h1>
-    </div>
-</ion-content>
-```
-
-
-
-</TabItem>
-
-
-<TabItem value="javascript">
-
-```html
-<ion-content>
-  <h1>Main Content</h1>
-
-  <div slot="fixed">
-    <h1>Fixed Content</h1>
-  </div>
-</ion-content>
-```
-
-```javascript
-var content = document.querySelector('ion-content');
-content.scrollEvents = true;
-content.addEventListener('ionScrollStart', () => console.log('scroll start'));
-content.addEventListener('ionScroll', (ev) => console.log('scroll', ev.detail));
-content.addEventListener('ionScrollEnd', () => console.log('scroll end'));
-```
-
-
-</TabItem>
-
-
-<TabItem value="react">
-
-```tsx
-import React from 'react';
-import { IonContent } from '@ionic/react';
-
-const ContentExample: React.FC = () => (
-  <IonContent
-    scrollEvents={true}
-    onIonScrollStart={() => {}}
-    onIonScroll={() => {}}
-    onIonScrollEnd={() => {}}>
-      <h1>Main Content</h1>
-
-      <div slot="fixed">
-        <h1>Fixed Content</h1>
-      </div>
-  </IonContent>
-);
-```
-
-
-</TabItem>
-
-
-<TabItem value="stencil">
-
-```tsx
-import { Component, h } from '@stencil/core';
-
-@Component({
-  tag: 'content-example',
-  styleUrl: 'content-example.css'
-})
-export class ContentExample {
-  logScrollStart() {
-    console.log('Scroll start');
-  }
-
-  logScrolling(ev) {
-    console.log('Scrolling', ev);
-  }
-
-  logScrollEnd() {
-    console.log('Scroll end');
-  }
-
-  render() {
-    return [
-      <ion-content
-        scrollEvents={true}
-        onIonScrollStart={() => this.logScrollStart()}
-        onIonScroll={(ev) => this.logScrolling(ev)}
-        onIonScrollEnd={() => this.logScrollEnd()}>
-          <h1>Main Content</h1>
-
-          <div slot="fixed">
-            <h1>Fixed Content</h1>
-          </div>
-      </ion-content>
-    ];
-  }
-}
-```
-
-
-</TabItem>
-
-
-<TabItem value="vue">
-
-```html
-<template>
-  <ion-content
-    :scroll-events="true"
-    @ionScrollStart="logScrollStart()"
-    @ionScroll="logScrolling($event)"
-    @ionScrollEnd="logScrollEnd()">
-      <h1>Main Content</h1>
-
-      <div slot="fixed">
-        <h1>Fixed Content</h1>
-      </div>
-  </ion-content>
-</template>
-
-<script>
-import { IonContent } from '@ionic/vue';
-import { defineComponent } from 'vue';
-
-export default defineComponent({
-  components: { IonContent }
-});
-</script>
-
-```
-
-
-
-</TabItem>
-
-</Tabs>
-
 ## プロパティ
-=======
-## Properties
->>>>>>> 99d3f5222ffbfc340f268bf630572d37e9d9586b
 <Props />
 
 ## イベント

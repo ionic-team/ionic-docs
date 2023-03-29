@@ -54,7 +54,7 @@
     },
     {
       "name": "autocomplete",
-      "type": "\"off\" | \"on\" | \"name\" | \"honorific-prefix\" | \"given-name\" | \"additional-name\" | \"family-name\" | \"honorific-suffix\" | \"nickname\" | \"email\" | \"username\" | \"new-password\" | \"current-password\" | \"one-time-code\" | \"organization-title\" | \"organization\" | \"street-address\" | \"address-line1\" | \"address-line2\" | \"address-line3\" | \"address-level4\" | \"address-level3\" | \"address-level2\" | \"address-level1\" | \"country\" | \"country-name\" | \"postal-code\" | \"cc-name\" | \"cc-given-name\" | \"cc-additional-name\" | \"cc-family-name\" | \"cc-number\" | \"cc-exp\" | \"cc-exp-month\" | \"cc-exp-year\" | \"cc-csc\" | \"cc-type\" | \"transaction-currency\" | \"transaction-amount\" | \"language\" | \"bday\" | \"bday-day\" | \"bday-month\" | \"bday-year\" | \"sex\" | \"tel\" | \"tel-country-code\" | \"tel-national\" | \"tel-area-code\" | \"tel-local\" | \"tel-extension\" | \"impp\" | \"url\" | \"photo\"",
+      "type": "\"name\" | \"email\" | \"tel\" | \"url\" | \"on\" | \"off\" | \"honorific-prefix\" | \"given-name\" | \"additional-name\" | \"family-name\" | \"honorific-suffix\" | \"nickname\" | \"username\" | \"new-password\" | \"current-password\" | \"one-time-code\" | \"organization-title\" | \"organization\" | \"street-address\" | \"address-line1\" | \"address-line2\" | \"address-line3\" | \"address-level4\" | \"address-level3\" | \"address-level2\" | \"address-level1\" | \"country\" | \"country-name\" | \"postal-code\" | \"cc-name\" | \"cc-given-name\" | \"cc-additional-name\" | \"cc-family-name\" | \"cc-number\" | \"cc-exp\" | \"cc-exp-month\" | \"cc-exp-year\" | \"cc-csc\" | \"cc-type\" | \"transaction-currency\" | \"transaction-amount\" | \"language\" | \"bday\" | \"bday-day\" | \"bday-month\" | \"bday-year\" | \"sex\" | \"tel-country-code\" | \"tel-national\" | \"tel-area-code\" | \"tel-local\" | \"tel-extension\" | \"impp\" | \"photo\"",
       "mutable": false,
       "attr": "autocomplete",
       "reflectToAttr": false,
@@ -63,7 +63,19 @@
       "default": "'off'",
       "values": [
         {
-          "value": "off",
+          "value": "name",
+          "type": "string"
+        },
+        {
+          "value": "email",
+          "type": "string"
+        },
+        {
+          "value": "tel",
+          "type": "string"
+        },
+        {
+          "value": "url",
           "type": "string"
         },
         {
@@ -71,7 +83,7 @@
           "type": "string"
         },
         {
-          "value": "name",
+          "value": "off",
           "type": "string"
         },
         {
@@ -96,10 +108,6 @@
         },
         {
           "value": "nickname",
-          "type": "string"
-        },
-        {
-          "value": "email",
           "type": "string"
         },
         {
@@ -243,10 +251,6 @@
           "type": "string"
         },
         {
-          "value": "tel",
-          "type": "string"
-        },
-        {
           "value": "tel-country-code",
           "type": "string"
         },
@@ -268,10 +272,6 @@
         },
         {
           "value": "impp",
-          "type": "string"
-        },
-        {
-          "value": "url",
           "type": "string"
         },
         {
@@ -913,7 +913,7 @@
       },
       "signature": "setFocus() => Promise<void>",
       "parameters": [],
-      "docs": "Sets focus on the native `input` in `ion-input`. Use this method instead of the global\n`input.focus()`.",
+      "docs": "Sets focus on the native `input` in `ion-input`. Use this method instead of the global\n`input.focus()`.\n\nDevelopers who wish to focus an input when a page enters\nshould call `setFocus()` in the `ionViewDidEnter()` lifecycle method.",
       "docsTags": []
     }
   ],
@@ -1011,6 +1011,12 @@
   "slots": [],
   "parts": [],
   "dependents": [],
-  "dependencies": [],
-  "dependencyGraph": {}
+  "dependencies": [
+    "ion-icon"
+  ],
+  "dependencyGraph": {
+    "ion-input": [
+      "ion-icon"
+    ]
+  }
 }

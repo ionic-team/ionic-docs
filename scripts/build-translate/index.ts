@@ -1,41 +1,14 @@
 import { existsSync, mkdirSync, readFileSync, readdirSync, writeFileSync } from 'fs';
-const fetch = require('node-fetch');
-import { commands } from '../data/cli.json';
-
-const getTranslateType = async () => {
-  const response = await fetch('https://unpkg.com/@ionic/docs/core.json');
-  const { components } = await response.json();
-
-  return [
-    {
-      type: 'api',
-      contents: components,
-      key: 'tag',
-      contentsKey: 'components',
-      markdown: 'docs',
-      resource: response,
-    },
-    {
-      type: 'cli',
-      contents: commands,
-      key: 'name',
-      contentsKey: 'commands',
-      markdown: 'description',
-      resource: require('../data/cli.json'),
-    },
-    {
-      type: 'native',
-      contents: require('../data/native.json'),
-      key: 'packageName',
-      contentsKey: '',
-      markdown: 'description',
-      resource: require('../data/native.json'),
-    }
-  ];
-}
+import { getTranslateType } from './translate-type';
+const translate = require('deepl');
+import DeeplConfig from './deepl.config.json';
+import TranslatedCache from '../data/translated-cache.json';
 
 const apply = async () => {
   const translateTypes = await getTranslateType();
+
+  const cacheTranslated = TranslatedCache.cache as { [key: string]: string };
+  const translatedNow = {} as { [key: string]: string };
 
   for (const translateType of translateTypes) {
     const directory = process.cwd() + '/src/translate/' + translateType.type;
@@ -58,6 +31,39 @@ const apply = async () => {
       if (existsSync(readmePath)) {
         componentObject[translateType.markdown] = readFileSync(readmePath, { encoding: 'utf8' });
       }
+      await Promise.all(translateType.translateTarget.map(async (target: string) => {
+        if (componentObject[target]) {
+          await Promise.all(componentObject[target].map(async (ob: any) => {
+            if (ob[translateType.translateTargetKey]) {
+              const translateText = ob[translateType.translateTargetKey].replace(/\n/g, ' ');
+
+              // キャッシュデータにあるか確認
+              if (cacheTranslated.hasOwnProperty(translateText)) {
+                ob[translateType.translateTargetKey] = cacheTranslated[translateText];
+                return;
+              }
+
+              // 今回翻訳データにあるか確認
+              // if (translatedNow.hasOwnProperty(ob[translateType.translateTargetKey])) {
+              //   ob[translateType.translateTargetKey] = ob[translateType.translateTargetKey] + `\n\n自動翻訳: ${translatedNow[translateText]}`;
+              //   return;
+              // }
+
+              const response = await translate({
+                free_api: true,
+                text: translateText,
+                source_lang: DeeplConfig.fromLanguage,
+                target_lang: DeeplConfig.toLanguage,
+                auth_key: process.env.DEEPLAUTHKEY,
+              });
+              const translated = response.data.translations[0].text;
+              translatedNow[translateText] = translated;
+
+              // ob[translateType.translateTargetKey] = ob[translateType.translateTargetKey] + `\n\n自動翻訳: ${translated}`;
+            }
+          }));
+        }
+      }));
       componentsObject.push(componentObject);
     }
     let resource = translateType.resource;
@@ -70,6 +76,12 @@ const apply = async () => {
 
     writeFileSync(process.cwd() + '/scripts/data/translated-' + translateType.type + '.json', JSON.stringify(resource, null, 2), { encoding: 'utf8' });
   }
+
+  // 翻訳データの結合
+  const writeTranslateCache = {
+    cache: Object.assign(cacheTranslated, translatedNow)
+  };
+  writeFileSync(process.cwd() + '/scripts/data/translated-cache.json', JSON.stringify(writeTranslateCache, null, 2), { encoding: 'utf8' });
 };
 
 const create = async () => {

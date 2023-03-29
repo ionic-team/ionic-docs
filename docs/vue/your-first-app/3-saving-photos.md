@@ -8,9 +8,9 @@ We’re now able to take multiple photos and display them in a photo gallery on 
 
 ## Filesystem API
 
-Fortunately, saving them to the filesystem only takes a few steps. Begin by opening the `usePhotoGallery` function (`src/composables/usePhotoGallery.ts`), and get access to the `writeFile` method from the `Filesystem` class:
+Fortunately, saving them to the filesystem only takes a few steps. Begin by opening the `usePhotoGallery` function (`src/composables/usePhotoGallery.ts`).
 
-Next, create a couple of new functions. The Filesystem API requires that files written to disk are passed in as base64 data, so this helper function will be used in a moment to assist with that:
+The Filesystem API requires that files written to disk are passed in as base64 data, so this helper function will be used in a moment to assist with that:
 
 ```tsx
 const convertBlobToBase64 = (blob: Blob) =>
@@ -30,12 +30,10 @@ Next we use the Capacitor [Filesystem API](https://capacitorjs.com/docs/apis/fil
 
 ```tsx
 const savePicture = async (photo: Photo, fileName: string): Promise<UserPhoto> => {
-  let base64Data: string;
-
   // Fetch the photo, read as a blob, then convert to base64 format
   const response = await fetch(photo.webPath!);
   const blob = await response.blob();
-  base64Data = (await convertBlobToBase64(blob)) as string;
+  const base64Data = (await convertBlobToBase64(blob)) as string;
 
   const savedFile = await Filesystem.writeFile({
     path: fileName,

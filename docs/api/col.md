@@ -1,12 +1,12 @@
 ---
 title: "ion-col"
 ---
-import Props from '@site/static/auto-generated/col/props.md';
-import Events from '@site/static/auto-generated/col/events.md';
-import Methods from '@site/static/auto-generated/col/methods.md';
-import Parts from '@site/static/auto-generated/col/parts.md';
-import CustomProps from '@site/static/auto-generated/col/custom-props.md';
-import Slots from '@site/static/auto-generated/col/slots.md';
+import Props from '@ionic-internal/component-api/v7/col/props.md';
+import Events from '@ionic-internal/component-api/v7/col/events.md';
+import Methods from '@ionic-internal/component-api/v7/col/methods.md';
+import Parts from '@ionic-internal/component-api/v7/col/parts.md';
+import CustomProps from '@ionic-internal/component-api/v7/col/custom-props.md';
+import Slots from '@ionic-internal/component-api/v7/col/slots.md';
 
 <head>
   <title>ion-col: Column Component Padding, Size and Other Properties</title>
@@ -25,7 +25,7 @@ Columnは、[Grid](./grid) システムのセルラーコンポーネントで�
 
 ## Column Alignment
 
-By default, columns will stretch to fill the entire height of the row. Columns are [flex items](https://developer.mozilla.org/en-US/docs/Glossary/Flex_Item), so there are several [CSS classes](/docs/layout/css-utilities#flex-item-properties) that can be applied to a column to customize this behavior.
+デフォルトでは、カラムは行の高さ全体を埋めるように引き伸ばされます。カラムは[フレックスアイテム](https://developer.mozilla.org/en-US/docs/Glossary/Flex_Item)なので、この動作をカスタマイズするために、カラムに適用できるいくつかの[CSSクラス](/docs/layout/css-utilities#flex-item-properties) があります。
 
 
 

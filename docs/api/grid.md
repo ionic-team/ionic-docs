@@ -1,12 +1,12 @@
 ---
 title: "ion-grid"
 ---
-import Props from '@site/static/auto-generated/grid/props.md';
-import Events from '@site/static/auto-generated/grid/events.md';
-import Methods from '@site/static/auto-generated/grid/methods.md';
-import Parts from '@site/static/auto-generated/grid/parts.md';
-import CustomProps from '@site/static/auto-generated/grid/custom-props.md';
-import Slots from '@site/static/auto-generated/grid/slots.md';
+import Props from '@ionic-internal/component-api/v7/grid/props.md';
+import Events from '@ionic-internal/component-api/v7/grid/events.md';
+import Methods from '@ionic-internal/component-api/v7/grid/methods.md';
+import Parts from '@ionic-internal/component-api/v7/grid/parts.md';
+import CustomProps from '@ionic-internal/component-api/v7/grid/custom-props.md';
+import Slots from '@ionic-internal/component-api/v7/grid/slots.md';
 
 <head>
   <title>Ion-Grid: Display Grids to Build Mobile-First Custom App Layout</title>
@@ -18,28 +18,28 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 <EncapsulationPill type="shadow" />
 
 
-The grid is a powerful mobile-first flexbox system for building custom layouts. It is composed of three units — a grid, [row(s)](row.md) and [column(s)](col.md). Columns will expand to fill the row, and will resize to fit additional columns. It is based on a 12 column layout with different breakpoints based on the screen size. The number of columns can be customized using CSS.
+グリッドは、カスタムレイアウトを構築するための強力なモバイルファーストのフレックスボックスシステムです。グリッド、[row(s)](row.md)、 [column(s)](col.md) の3つのユニットで構成されています。カラムは行を埋めるように展開され、追加のカラムに合うようにサイズを変更します。これは、画面サイズに応じて異なるブレークポイントを持つ12列のレイアウトをベースにしています。カラムの数は、CSSを使ってカスタマイズすることができます。
 
-## Overview
+## 概要
 
-- Grids act as a container for all rows and columns. Grids take up the full width of their container,
-  but adding the `fixed` property will set the width based on the screen size, see [Fixed Grid](#fixed-grid) below.
-- Rows are horizontal groups of columns that line the columns up properly.
-- Content should be placed within columns, and only columns may be immediate children of rows.
-- The `size` property indicates the number of columns to use out of the default 12 per row.
-  So, `size="4"` can be added to a column in order to take up 1/3 of the grid, or 4 of the 12 columns.
-- Columns without a value for size will automatically have equal widths. For example, four columns will each automatically be 25% wide.
-- Column widths are set as a percentage, so they’re always fluid and sized relative to their parent element.
-- There is padding between individual columns. However, the padding can be removed from the grid and
-  columns by adding the `ion-no-padding` class to the grid. See the [CSS Utilities](../layout/css-utilities) for more styles that can be applied to the grid.
-- There are five grid tiers, one for each responsive breakpoint: all breakpoints (extra small), small, medium, large, and extra large.
-- Grid tiers are based on minimum widths, meaning they apply to their tier and all those larger than them
-  (e.g., `size-sm="4"` applies to small, medium, large, and extra large devices).
-- Grids can be customized via CSS variables. See [Customizing the Grid](#customizing-the-grid).
+- グリッドは、すべての行と列のコンテナとして機能します。グリッドは、そのコンテナの幅を完全に占有します。
+  が、`fixed`プロパティを追加すると、画面サイズに応じた幅が設定されます。後述の[Fixed Grid](#fixed-grid)を参照してください。
+- 行は、列を適切に並べるための水平方向のグループです。
+- コンテンツは列の中に配置されるべきで、列だけが行の直属の子になることができる。
+- `size`プロパティは、1行あたりデフォルトの12列のうち、使用する列の数を示します。
+  つまり、`size="4"`をカラムに追加することで、グリッドの1/3、つまり12カラムのうち4カラムを占有することができます。
+- sizeに値を指定しないカラムは、自動的に等しい幅を持つようになります。例えば、4つのカラムは、それぞれ自動的に25％の幅になります。
+- カラムの幅はパーセンテージで設定されるため、常に流動的で親要素からの相対的なサイズになります。
+- 個々のカラムの間にはパディングがあります。しかし、パディングはグリッドから削除することができます。
+  カラムを表示するには、グリッドに `ion-no-padding` クラスを追加します。グリッドに適用できるその他のスタイルについては、[CSS Utilities](../layout/css-utilities) を参照してください。
+- グリッドの階層は5つあり、レスポンシブ・ブレークポイントごとに1つずつ、すべてのブレークポイント（特小）、小、中、大、特大が用意されています。
+- グリッドの階層は最小幅を基準としており、その階層とそれよりも大きい階層に適用されます。
+  (例: `size-sm="4"` は、小型、中型、大型、特大のデバイスに適用されます)。
+- グリッドはCSS変数でカスタマイズすることができます。 [グリッドのカスタマイズ](#customizing-the-grid) を参照してください。
 
-## Default Breakpoints
+## デフォルトのブレイキング・ポイント
 
-The default breakpoints for the grid and the corresponding properties are defined in the table below. Breakpoint values can not be customized at this time. For more information on why they can't be customized, see [Variables in Media Queries](../theming/advanced#variables-in-media-queries).
+グリッドのデフォルトのブレークポイントとそれに対応するプロパティは、以下の表で定義されています。ブレイクポイントの値は、現時点ではカスタマイズすることができません。カスタマイズできない理由については、 [メディアクエリの変数](../theming/advanced#variables-in-media-queries) を参照してください。
 
 | Name | Value  | Width Property | Offset Property | Push Property | Pull Property | Description                          |
 | ---- | ------ | -------------- | --------------- | ------------- | ------------- | ------------------------------------ |
@@ -50,18 +50,18 @@ The default breakpoints for the grid and the corresponding properties are define
 | xl   | 1200px | `sizeXl`       | `offsetXl`      | `pushXl`      | `pullXl`      | Set columns when (min-width: 1200px) |
 
 
-## Basic Usage
+## 基本的な使い方
 
-By default, columns will take up equal width inside of a row for all devices and screen sizes.
+デフォルトでは、すべてのデバイスと画面サイズにおいて、列は行の中で同じ幅を占めます。
 
-import Basic from '@site/static/usage/grid/basic/index.md';
+import Basic from '@site/static/usage/v7/grid/basic/index.md';
 
 <Basic />
 
 
-## Fixed Grid
+## グリッドの固定
 
-Grids take up 100% width of their container. By adding the `fixed` property to the grid, the width will be set based on the screen size. The width of the grid for each breakpoint is listed in the table below, but it can be customized. For more information, see [Customizing the Grid](#customizing-the-grid). Open the below example in StackBlitz and resize the screen to see the grid width change.
+グリッドはコンテナの幅を100%占有します。グリッドに `fixed` プロパティを追加することで、画面サイズに応じた幅を設定することができます。各ブレイクポイントのグリッドの幅は以下の表に記載されていますが、カスタマイズすることも可能です。詳しくは、[グリッドのカスタマイズ](#customizing-the-grid) を参照してください。以下の例をStackBlitzで開き、画面のサイズを変更すると、グリッドの幅が変化することを確認できます。
 
 | Name | Value  | Description                                       |
 | ---- | ------ | ------------------------------------------------- |
@@ -71,128 +71,128 @@ Grids take up 100% width of their container. By adding the `fixed` property to t
 | lg   | 960px  | Set grid width to 960px when (min-width: 992px)   |
 | xl   | 1140px | Set grid width to 1140px when (min-width: 1200px) |
 
-import Fixed from '@site/static/usage/grid/fixed/index.md';
+import Fixed from '@site/static/usage/v7/grid/fixed/index.md';
 
 <Fixed />
 
 
-## Column Size
+## カラムのサイズ
 
-Columns can be set to specific sizes to take up a certain number out of the total number of columns, or resize their width based on the content. The default number of columns is 12, but this can be customized. See the [Number of Columns](#number-of-columns) section below for more information.
+カラムは、全体のカラム数のうち特定の数を占めるように特定のサイズに設定したり、コンテンツに応じて幅を変更したりすることができます。デフォルトのカラム数は12ですが、これはカスタマイズ可能です。詳しくは、下記の [カラム数](#number-of-columns) の項を参照してください。
 
-### Content-based size
+### コンテンツベースサイズ
 
-By setting the `size` to `"auto"` the column can size itself based on the natural width of its content. This is necessary when setting a column to an absolute width, such as a specific number of pixels. The columns next to the auto-width column will resize to fill the row.
+`size`を`"auto"`に設定することで、カラムはコンテンツの自然な幅に基づいたサイズを設定することができます。これは、カラムを特定のピクセル数のような絶対的な幅に設定するときに必要です。自動幅のカラムの隣にあるカラムは、行を埋めるようにリサイズされます。
 
-import SizeAuto from '@site/static/usage/grid/size-auto/index.md';
+import SizeAuto from '@site/static/usage/v7/grid/size-auto/index.md';
 
 <SizeAuto />
 
 
-### Specified size
+### 指定されたサイズ
 
-Set the `size` of a column and the others will automatically resize around it. If a size is specified on all of the columns and it doesn't add up to the total number of columns, there will be empty space after the columns.
+カラムの `size` を設定すると、他のカラムは自動的にそのカラムの周りにリサイズされます。すべてのカラムにサイズが指定され、それがカラムの総数に満たない場合、カラムの後に空白ができます。
 
-import Size from '@site/static/usage/grid/size/index.md';
+import Size from '@site/static/usage/v7/grid/size/index.md';
 
 <Size />
 
-### Responsive size
+### レスポンシブサイズ
 
-The `size` property will change the column width for all [breakpoints](#default-breakpoints). Column also provides several size properties with the breakpoint name appended to the end of "size". These properties can be used to change the width of the column based on the screen size. Open the below example in StackBlitz and resize the screen to see the column widths change.
+`size`プロパティは、すべての [ブレークポイント](#default-breakpoints) の列幅を変更します。また、Columnでは、"size" の末尾にブレークポイント名を付加したいくつかのsizeプロパティが用意されています。これらのプロパティは、画面サイズに応じてカラムの幅を変更するために使用することができます。以下の例をStackBlitzで開き、画面のサイズを変更すると、カラムの幅が変化するのがわかります。
 
-import SizeResponsive from '@site/static/usage/grid/size-responsive/index.md';
+import SizeResponsive from '@site/static/usage/v7/grid/size-responsive/index.md';
 
 <SizeResponsive />
 
 
-## Column Offset
+## 列のオフセット
 
-Columns can be offset to shift to the right by a certain number of columns out of the total number of columns.
+カラムは、全カラム数のうち一定のカラム数だけ右にずらすオフセットが可能です。
 
-### Specified offset
+### 指定されたオフセット
 
-Columns can be moved to the right by using the `offset` property. This property increases the left margin of the column by the number of specified columns. It also shifts the columns to the right of it, if any exist.
+カラムは、`offset`プロパティを用いて右に移動させることができます。このプロパティは、カラムの左マージンを指定したカラムの数だけ増やします。また、その右側にカラムが存在する場合は、そのカラムを移動させます。
 
-import Offset from '@site/static/usage/grid/offset/index.md';
+import Offset from '@site/static/usage/v7/grid/offset/index.md';
 
 <Offset />
 
-### Responsive offset
+### レスポンシブオフセット
 
-The `offset` property will change the column's left margin for all [breakpoints](#default-breakpoints). Column also provides several offset properties with the breakpoint name appended to the end of "offset". These properties can be used to change the offset of the column based on the screen size. Open the below example in StackBlitz and resize the screen to see the column offsets change.
+`offset`プロパティは、すべての[ブレークポイント](#default-breakpoints)に対して、カラムの左マージンを変更します。また、カラムには、"offset"の末尾にブレークポイント名が付加されたいくつかのoffsetプロパティが用意されています。これらのプロパティは、画面サイズに応じてカラムのオフセットを変更するために使用することができます。以下の例をStackBlitzで開き、画面のサイズを変更すると、カラムのオフセットが変化するのを確認できます。
 
-import OffsetResponsive from '@site/static/usage/grid/offset-responsive/index.md';
+import OffsetResponsive from '@site/static/usage/v7/grid/offset-responsive/index.md';
 
 <OffsetResponsive />
 
 
-## Column Push & Pull
+## コラム プッシュ＆プル
 
-Columns can be pushed to to the right or pulled to the left by a certain number of columns out of the total number of columns.
+カラムの総数のうち、一定のカラム数だけ、カラムを右に押したり、左に引いたりすることができます。
 
-### Specified push & pull
+### 指定されたプッシュ＆プル
 
-Reorder the columns by adding the `push` and `pull` properties. These properties adjust the `left` and `right` of the columns by the specified number of columns making it easy to reorder columns. This will cause columns to overlap if they are shifted to where another column is positioned.
+`push`と`pull`のプロパティを追加することで、カラムの並び替えを行うことができます。これらのプロパティは、指定された列数だけ列の `left` と `right` を調整し、列の並び替えを簡単に行うことができます。この場合、他のカラムが配置されている場所にカラムを移動させると、カラムが重なることになります。
 
-import PushPull from '@site/static/usage/grid/push-pull/index.md';
+import PushPull from '@site/static/usage/v7/grid/push-pull/index.md';
 
 <PushPull />
 
-### Responsive push & pull
+### プッシュ＆プルのレスポンシブ対応
 
-The `push` and `pull` properties will change the column's position for all [breakpoints](#default-breakpoints). Column also provides several `push` and `pull` properties with the breakpoint name appended to the end of "push" / "pull". These properties can be used to change the position of the column based on the screen size. Open the below example in StackBlitz and resize the screen to see the column positions change.
+`push`と`pull`プロパティは、すべての[ブレークポイント](#default-breakpoints)に対して、カラムの位置を変更します。また、カラムには、"push" / "pull "の末尾にブレークポイント名を付加した `push` と `pull` プロパティがいくつかあります。これらのプロパティは、画面サイズに応じてカラムの位置を変更するために使用することができます。以下の例をStackBlitzで開き、画面のサイズを変更すると、列の位置が変化するのがわかります。
 
-import PushPullResponsive from '@site/static/usage/grid/push-pull-responsive/index.md';
+import PushPullResponsive from '@site/static/usage/v7/grid/push-pull-responsive/index.md';
 
 <PushPullResponsive />
 
 ## Alignment
 
-### Vertical Alignment
+### 垂直方向のアライメント
 
-All columns can be vertically aligned inside of a row by adding different classes to the row. For a list of available classes, see [css utilities](/layout/css-utilities#flex-container-properties).
+行に異なるクラスを追加することで、すべての列を行の内側に垂直に揃えることができます。利用可能なクラスの一覧は、[css utilities](/layout/css-utilities#flex-container-properties) を参照してください。
 
-import VerticalAlignment from '@site/static/usage/grid/vertical-alignment/index.md';
+import VerticalAlignment from '@site/static/usage/v7/grid/vertical-alignment/index.md';
 
 <VerticalAlignment />
 
 
-### Horizontal Alignment
+### 水平アライメント
 
-All columns can be horizontally aligned inside of a row by adding different classes to the row. For a list of available classes, see [css utilities](/layout/css-utilities.md#flex-container-properties).
+行に異なるクラスを追加することで、すべての列を行の内側に水平に揃えることができます。利用可能なクラスの一覧は、[css utilities](/layout/css-utilities.md#flex-container-properties) を参照してください。
 
-import HorizontalAlignment from '@site/static/usage/grid/horizontal-alignment/index.md';
+import HorizontalAlignment from '@site/static/usage/v7/grid/horizontal-alignment/index.md';
 
 <HorizontalAlignment />
 
-## Customizing the Grid
+## グリッドのカスタマイズ
 
-Using our built-in CSS variables, it’s possible to customize the predefined grid attributes. Change the values of the padding, the number of columns, and more.
+組み込みのCSS変数を使用することで、定義済みのグリッド属性をカスタマイズすることができます。パディングの値やカラム数などを変更することができます。
 
-### Fixed Width
+### 固定幅
 
-The width of a fixed grid can be set for all breakpoints with the `--ion-grid-width` CSS variable. To override individual breakpoints, use the `--ion-grid-width-{breakpoint}` CSS variables. The default value for each of the breakpoints can be found in the [Fixed Grid](#fixed-grid) section. Open the below example in StackBlitz and resize the screen to see the grid width change.
+固定グリッドの幅は、CSS変数 `--ion-grid-width` を用いてすべてのブレイクポイントに対して設定することができます。個々のブレイクポイントを上書きするには、`--ion-grid-width-{breakpoint}` CSS変数を使用します。各ブレークポイントのデフォルト値は、[固定グリッド](#fixed-grid)セクションに記載されています。以下の例をStackBlitzで開き、画面のサイズを変更すると、グリッドの幅が変化するのが確認できます。
 
-import Width from '@site/static/usage/grid/customizing/width/index.md';
+import Width from '@site/static/usage/v7/grid/customizing/width/index.md';
 
 <Width />
 
-### Number of Columns
+### 列数
 
-The number of grid columns can be modified with the `--ion-grid-columns` CSS variable. By default there are 12 grid columns, but this can be changed to any positive integer and be used to calculate the width of each individual column.
+グリッドのカラム数は `--ion-grid-columns` というCSS変数で変更することができます。デフォルトでは12列ですが、これを任意の正の整数に変更し、各列の幅を計算するために使用することができます。
 
-import ColumnNumber from '@site/static/usage/grid/customizing/column-number/index.md';
+import ColumnNumber from '@site/static/usage/v7/grid/customizing/column-number/index.md';
 
 <ColumnNumber />
 
 ### Padding
 
-The padding on the grid container can be set for all breakpoints with the `--ion-grid-padding` CSS variable. To override individual breakpoints, use the `--ion-grid-padding-{breakpoint}` CSS variables.
+グリッドコンテナのpaddingは、CSS変数 `--ion-grid-padding` を用いてすべてのブレイクポイントに対して設定することができます。個々のブレイクポイントを上書きするには、 `--ion-grid-padding-{breakpoint}` CSS変数を使用します。
 
-The padding on the columns can be set for all breakpoints with the `--ion-grid-column-padding` CSS variable. To override individual breakpoints, use the `--ion-grid-column-padding-{breakpoint}` CSS variables.
+列の padding は、CSS 変数 `--ion-grid-column-padding` ですべてのブレイクポイントに対して設定できます。個々のブレイクポイントを上書きするには、 `--ion-grid-column-padding-{breakpoint}` CSS変数を使用します。
 
-import Padding from '@site/static/usage/grid/customizing/padding/index.md';
+import Padding from '@site/static/usage/v7/grid/customizing/padding/index.md';
 
 <Padding />
 

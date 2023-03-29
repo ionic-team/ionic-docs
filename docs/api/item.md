@@ -1,12 +1,12 @@
 ---
 title: "ion-item"
 ---
-import Props from '@site/static/auto-generated/item/props.md';
-import Events from '@site/static/auto-generated/item/events.md';
-import Methods from '@site/static/auto-generated/item/methods.md';
-import Parts from '@site/static/auto-generated/item/parts.md';
-import CustomProps from '@site/static/auto-generated/item/custom-props.md';
-import Slots from '@site/static/auto-generated/item/slots.md';
+import Props from '@ionic-internal/component-api/v7/item/props.md';
+import Events from '@ionic-internal/component-api/v7/item/events.md';
+import Methods from '@ionic-internal/component-api/v7/item/methods.md';
+import Parts from '@ionic-internal/component-api/v7/item/parts.md';
+import CustomProps from '@ionic-internal/component-api/v7/item/custom-props.md';
+import Slots from '@ionic-internal/component-api/v7/item/slots.md';
 
 <head>
   <title>ion-item: Input, Edit, or Delete iOS and Android Item Elements</title>
@@ -17,13 +17,13 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="shadow" />
 
-アイテムは、テキスト、アイコン、アバター、画像、入力、その他のネイティブまたはカスタム要素を含むことができる要素です。一般的には、他のアイテムと一緒に[list](./list)に配置されます。アイテムは、スワイプ、削除、並び替え、編集などが可能です。
+アイテムは、テキスト、アイコン、アバター、画像、Input、その他のネイティブまたはカスタム要素を含むことができる要素です。一般的には、他のアイテムと一緒に[list](./list)に配置されます。アイテムは、スワイプ、削除、並び替え、編集などが可能です。
 
-## Basic Usage
+## 基本的な使い方
 
 アイテムはテキストを左寄せにし、テキストがアイテムより幅が広い場合は省略記号を追加しています。この動作は、Ionic Framework が提供する CSS Utilities を使って変更することができます。例えば、以下の例では `.ion-text-wrap` を使っています。テキストを変換するためにアイテムに追加できる他のクラスについては、[CSS Utilities Documentation](/docs/layout/css-utilities) を参照してください。
 
-import Basic from '@site/static/usage/item/basic/index.md';
+import Basic from '@site/static/usage/v7/item/basic/index.md';
 
 <Basic />
 
@@ -32,7 +32,7 @@ import Basic from '@site/static/usage/item/basic/index.md';
 
 `href` か `button` プロパティが設定されている場合、itemは "clickable（クリック可能）" と見なされます。clickableなitemsには、インタラクティブに操作できることを示す視覚的な違いがいくつかあります。たとえば、clickableなitemは、`md` modeではrippleエフェクトを持ち、`ios` modeではハイライト表示され、`ios` modeでの [detail arrow](/#detail-arrows) が表示されます。
 
-import Clickable from '@site/static/usage/item/clickable/index.md';
+import Clickable from '@site/static/usage/v7/item/clickable/index.md';
 
 <Clickable />
 
@@ -41,7 +41,7 @@ import Clickable from '@site/static/usage/item/clickable/index.md';
 
 デフォルトでは、[clickableなitems](/#clickable-items) は、`ios` modeで右矢印アイコンを表示します。clickableな要素の右矢印アイコンを非表示にするには、 `detail` プロパティを `false` に設定します。自動的に表示されない項目に右矢印アイコンを表示するには、`detail`プロパティを `true` に設定します。
 
-import DetailArrows from '@site/static/usage/item/detail-arrows/index.md';
+import DetailArrows from '@site/static/usage/v7/item/detail-arrows/index.md';
 
 <DetailArrows />
 
@@ -65,7 +65,7 @@ See the [theming documentation](/docs/theming/css-variables) for more informatio
 
 アイテムはデフォルトで下部のボーダーを挿入して表示します。ボーダーは左側にパディングを持ち、 `"start"` スロットにスロットされたコンテンツの下に表示されることはありません。 `lines` プロパティを `"full"` または `"none"` に変更すると、それぞれ全幅のボーダーが表示され、ボーダーを表示しないようになります。
 
-import Lines from '@site/static/usage/item/lines/index.md';
+import Lines from '@site/static/usage/v7/item/lines/index.md';
 
 <Lines />
 
@@ -74,79 +74,61 @@ import Lines from '@site/static/usage/item/lines/index.md';
 
 [Avatars](./avatar) and [Thumbnails](./thumbnail) can be slotted inside of an item. This is useful when making lists of images and text.
 
-import Media from '@site/static/usage/item/media/index.md';
+import Media from '@site/static/usage/v7/item/media/index.md';
 
 <Media />
 
 
 ## Buttons in Items
 
-Buttons are styled smaller inside of items than when they are outside of them. To make the button size match buttons outside of an item, set the `size` attribute to `"default"`.
+Buttonsは、アイテムの外側にあるときよりも、アイテムの内側にあるときの方が小さくスタイルされます。ボタンのサイズをアイテムの外側のボタンと同じにするには、`size`属性に`"default"`を設定します。
 
-import Buttons from '@site/static/usage/item/buttons/index.md';
+import Buttons from '@site/static/usage/v7/item/buttons/index.md';
 
 <Buttons />
 
 
 ## Icons in Items
 
-import Icons from '@site/static/usage/item/icons/index.md';
+import Icons from '@site/static/usage/v7/item/icons/index.md';
 
 <Icons />
 
 
 ## Item Inputs
 
-import Inputs from '@site/static/usage/item/inputs/index.md';
+import Inputs from '@site/static/usage/v7/item/inputs/index.md';
 
 <Inputs />
 
-
-## Helper & Error Text
-
-Helper & error text can be used inside of an item with an input by slotting a note in the `"helper"` and `"error"` slots. The error slot will not be displayed unless the `ion-invalid` class is added to the `ion-item`. In Angular, this is done automatically through form validation. In JavaScript, React and Vue, the class needs to be manually added based on your own validation.
-
-import HelperError from '@site/static/usage/item/helper-error/index.md';
-
-<HelperError />
-
-
-## Item Counter
-
-The item counter is helper text that displays under an input to notify the user of how many characters have been entered out of the total that the input will accept. When adding `counter`, the default behavior is to format the value that gets displayed as `inputLength / maxLength`. This behavior can be customized by passing in a formatter function to the `counterFormatter` property.
-
-import Counter from '@site/static/usage/item/counter/index.md';
-
-<Counter />
-
-## Theming
+## テーマ
 
 ### Colors
 
-import Colors from '@site/static/usage/item/theming/colors/index.md';
+import Colors from '@site/static/usage/v7/item/theming/colors/index.md';
 
 <Colors />
 
 ### CSS Shadow Parts
 
-import CSSParts from '@site/static/usage/item/theming/css-shadow-parts/index.md';
+import CSSParts from '@site/static/usage/v7/item/theming/css-shadow-parts/index.md';
 
 <CSSParts />
 
-### CSS Custom Properties
+## CSSカスタムプロパティ
 
-import CSSProps from '@site/static/usage/item/theming/css-properties/index.md';
+import CSSProps from '@site/static/usage/v7/item/theming/css-properties/index.md';
 
 <CSSProps />
 
 
-### Input Highlight
+### Inputハイライト
 
-Items containing an input will highlight the bottom border of the input with a different color when focused, valid, or invalid. By default, `md` items have a highlight with a height set to `2px` and `ios` has no highlight (technically the height is set to `0`). The height can be changed using the `--highlight-height` CSS property. To turn off the highlight, set this variable to `0`.
+input を含むアイテムは、フォーカスされたとき、有効なとき、無効なときに、Inputの下のボーダーを異なる色でハイライトします。デフォルトでは、`md`アイテムは高さが `2px` に設定されたハイライトを持ち、`ios`はハイライトを持ちません（技術的に高さは `0` に設定されています）。高さは `--highlight-height` CSS プロパティを使って変更することができます。ハイライトをオフにするには、この変数を `0` に設定します。
 
-The highlight color changes based on the item state, but all of the states use Ionic colors by default. When focused, the input highlight will use the `primary` color. If the input is valid it will use the `success` color, and invalid inputs will use the `danger` color. This can be customized using the provided CSS properties.
+ハイライトの色はアイテムの状態に応じて変化しますが、デフォルトではすべての状態でIonicカラーが使用されます。フォーカスされている場合、Inputのハイライトは `primary` カラーを使用します。Inputが有効な場合は `success` カラーが使用され、無効なInputは `danger` カラーが使用されます。これは提供されているCSSプロパティを使ってカスタマイズすることができます。
 
-import InputHighlight from '@site/static/usage/item/theming/input-highlight/index.md';
+import InputHighlight from '@site/static/usage/v7/item/theming/input-highlight/index.md';
 
 <InputHighlight />
 

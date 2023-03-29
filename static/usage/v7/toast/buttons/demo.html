@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Toast</title>
+  <link rel="stylesheet" href="../../../common.css" />
+  <script src="../../../common.js"></script>
+  <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core@7/dist/ionic/ionic.esm.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core@7/css/ionic.bundle.css" />
+
+  <style>
+    .container {
+      flex-direction: column;
+    }
+
+    .container p {
+      margin-bottom: 0;
+    }
+  </style>
+</head>
+
+<body>
+  <ion-app>
+    <ion-header>
+      <ion-toolbar>
+        <ion-title>Toast</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content>
+      <div class="container">
+        <ion-button id="open-toast">Open Toast</ion-button>
+        <ion-toast trigger="open-toast" duration="3000" message="Hello World!"></ion-toast>
+        <p id="handlerResult"></p>
+        <p id="roleResult"></p>
+      </div>
+    </ion-content>
+  </ion-app>
+
+  <script>
+    const toast = document.querySelector('ion-toast');
+    const handlerOutput = document.querySelector('#handlerResult');
+    const roleOutput = document.querySelector('#roleResult');
+
+    toast.buttons = [
+      {
+        text: 'More Info',
+        role: 'info',
+        handler: () => { handlerOutput.innerText = 'More Info clicked'; }
+      },
+      {
+        text: 'Dismiss',
+        role: 'cancel',
+        handler: () => { handlerOutput.innerText = 'Dismiss clicked'; }
+      }
+    ];
+
+    toast.addEventListener('ionToastDidDismiss', (ev) => {
+      const { role } = ev.detail;
+      roleOutput.innerText = `Dismissed with role: ${role}`;
+    });
+  </script>
+</body>
+
+</html>

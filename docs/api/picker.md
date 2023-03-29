@@ -1,15 +1,12 @@
 ---
 title: "ion-picker"
 ---
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-
-import Props from '@site/static/auto-generated/picker/props.md';
-import Events from '@site/static/auto-generated/picker/events.md';
-import Methods from '@site/static/auto-generated/picker/methods.md';
-import Parts from '@site/static/auto-generated/picker/parts.md';
-import CustomProps from '@site/static/auto-generated/picker/custom-props.md';
-import Slots from '@site/static/auto-generated/picker/slots.md';
+import Props from '@ionic-internal/component-api/v7/picker/props.md';
+import Events from '@ionic-internal/component-api/v7/picker/events.md';
+import Methods from '@ionic-internal/component-api/v7/picker/methods.md';
+import Parts from '@ionic-internal/component-api/v7/picker/parts.md';
+import CustomProps from '@ionic-internal/component-api/v7/picker/custom-props.md';
+import Slots from '@ionic-internal/component-api/v7/picker/slots.md';
 
 <head>
   <title>Picker | Display Buttons and Columns for ion-picker on Ionic Apps</title>
@@ -22,20 +19,37 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 Pickerは、画面下にボタンと列の行を表示するダイアログです。アプリケーションのコンテンツの上部とビューポートの下部に表示されます。
 
-## シングルカラム
+## インラインピッカー（推奨）
 
-オプションのリストをスクロール可能な1つのカラムに表示します。
+`ion-picker`は、テンプレートに直接コンポーネントを記述して使用することができます。これにより、ピッカーを表示するために必要なハンドラの数を減らすことができます。
 
-import SingleColumn from '@site/static/usage/picker/single-column/index.md';
+import Trigger from '@site/static/usage/v7/picker/inline/trigger/index.md';
 
-<SingleColumn />
+<Trigger />
 
+### `isOpen` を使う
+
+`ion-picker` の `isOpen` プロパティにより、開発者はアプリケーションの状態からピッカーの表示状態を制御することができます。つまり、`isOpen` を `true` に設定するとピッカーが表示され、`isOpen` を `false` に設定するとピッカーは退場します。
+
+`isOpen` は一方通行のデータバインディングを使用しているため、ピッカーが終了したときに自動的に `false` に設定されることはありません。開発者は `ionPickerDidDismiss` または `didDismiss` イベントを待ち、 `isOpen` を `false` に設定する必要があります。この理由は、`ion-picker`の内部がアプリケーションの状態と密に結合するのを防ぐためです。一方通行のデータバインディングでは、ピッカーはリアクティブ変数が提供するブーリアン値のみに関心を持つ必要があります。一方通行のデータバインディングでは、ピッカーはリアクティブ変数のブール値だけでなく、リアクティブ変数の存在も気にする必要があります。このため、非決定的な動作が発生し、アプリケーションのデバッグが困難になる可能性があります。
+
+import IsOpen from '@site/static/usage/v7/picker/inline/isOpen/index.md';
+
+<IsOpen />
+
+## Controller Pickers
+
+`pickerController`は、ピッカーの表示・非表示をより細かく制御する必要がある場合に使用することができます。
+
+import Controller from '@site/static/usage/v7/picker/controller/index.md';
+
+<Controller />
 
 ## マルチカラム
 
-異なるオプションの複数のカラムを表示します。
+`columns`プロパティは、異なる選択肢を複数の列で表示するピッカーを表示するために使用することができます。
 
-import MultipleColumn from '@site/static/usage/picker/multiple-column/index.md';
+import MultipleColumn from '@site/static/usage/v7/picker/multiple-column/index.md';
 
 <MultipleColumn />
 
@@ -81,6 +95,10 @@ interface PickerColumnOption {
   duration?: number;
   transform?: string;
   selected?: boolean;
+  /**
+   * The optional text to assign as the aria-label on the picker column option.
+   */
+  ariaLabel?: string;
 }
 ```
 
@@ -104,208 +122,6 @@ interface PickerOptions {
   leaveAnimation?: AnimationBuilder;
 }
 ```
-
-
-
-
-## 使い方
-
-<Tabs groupId="framework" defaultValue="angular" values={[{ value: 'angular', label: 'Angular' }, { value: 'react', label: 'React' }, { value: 'vue', label: 'Vue' }]}>
-
-
-<TabItem value="angular">
-
-```html
-<ion-button expand="block" (click)="presentPicker()">Show Picker</ion-button>
-```
-
-```ts
-import { Component } from '@angular/core';
-import { PickerController } from '@ionic/angular';
-@Component({
-  selector: 'app-picker-example',
-  template: 'picker-example.component.html'
-})
-export class PickerExample {
-  private selectedAnimal: string;
-  constructor(private pickerController: PickerController) { }
-  
-  async presentPicker() {
-    const picker = await this.pickerController.create({
-      buttons: [
-        {
-          text: 'Confirm',
-          handler: (selected) => {
-            this.selectedAnimal = selected.animal.value;
-          },
-        }
-      ],
-      columns: [
-        {
-          name: 'animal',
-          options: [
-            { text: 'Dog', value: 'dog' },
-            { text: 'Cat', value: 'cat' },
-            { text: 'Bird', value: 'bird' },
-          ]
-        }
-      ]
-    });
-    await picker.present();
-  }
-}
-```
-
-</TabItem>
-
-<TabItem value="react">
-
-```tsx
-/* Using with useIonPicker Hook */
-
-import React, { useState } from 'react';
-import { IonButton, IonContent, IonPage, useIonPicker } from '@ionic/react';
-
-const PickerExample: React.FC = () => {
-  const [present] = useIonPicker();
-  const [value, setValue] = useState('');
-  return (
-    <IonPage>
-      <IonContent>
-        <IonButton
-          expand="block"
-          onClick={() =>
-            present({
-              buttons: [
-                {
-                  text: 'Confirm',
-                  handler: (selected) => {
-                    setValue(selected.animal.value)
-                  },
-                },
-              ],
-              columns: [
-                {
-                  name: 'animal',
-                  options: [
-                    { text: 'Dog', value: 'dog' },
-                    { text: 'Cat', value: 'cat' },
-                    { text: 'Bird', value: 'bird' },
-                  ],
-                },
-              ],
-            })
-          }
-        >
-          Show Picker
-        </IonButton>
-        <IonButton
-          expand="block"
-          onClick={() =>
-            present(
-              [
-                {
-                  name: 'animal',
-                  options: [
-                    { text: 'Dog', value: 'dog' },
-                    { text: 'Cat', value: 'cat' },
-                    { text: 'Bird', value: 'bird' },
-                  ],
-                },
-                {
-                  name: 'vehicle',
-                  options: [
-                    { text: 'Car', value: 'car' },
-                    { text: 'Truck', value: 'truck' },
-                    { text: 'Bike', value: 'bike' },
-                  ],
-                },
-              ],
-              [
-                {
-                  text: 'Confirm',
-                  handler: (selected) => {
-                    setValue(`${selected.animal.value}, ${selected.vehicle.value}`)
-                  },
-                },
-              ]
-            )
-          }
-        >
-          Show Picker using params
-        </IonButton>
-        {value && (
-          <div>Selected Value: {value}</div>
-        )}
-      </IonContent>
-    </IonPage>
-  );
-};
-```
-
-</TabItem>
-
-
-<TabItem value="vue">
-
-```vue
-<template>
-  <div>
-    <ion-button @click="openPicker">SHOW PICKER</ion-button>
-    <p v-if="picked.animal">picked: {{ picked.animal.text }}</p>
-  </div>
-</template>
-
-<script>
-import { IonButton, pickerController } from "@ionic/vue";
-export default {
-  components: {
-    IonButton,
-  },
-  data() {
-    return {
-      pickingOptions: {
-        name: "animal",
-        options: [
-          { text: "Dog", value: "dog" },
-          { text: "Cat", value: "cat" },
-          { text: "Bird", value: "bird" },
-        ],
-      },
-      picked: {
-        animal: "",
-      },
-    };
-  },
-  methods: {
-    async openPicker() {
-      const picker = await pickerController.create({
-        columns: [this.pickingOptions],
-        buttons: [
-          {
-            text: "Cancel",
-            role: "cancel",
-          },
-          {
-            text: "Confirm",
-            handler: (value) => {
-              this.picked = value;
-              console.log(`Got Value ${value}`);
-            },
-          },
-        ],
-      });
-      await picker.present();
-    },
-  },
-};
-</script>
-```
-
-
-</TabItem>
-
-</Tabs>
 
 ## プロパティ
 <Props />

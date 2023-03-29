@@ -2,12 +2,12 @@
 title: "ion-avatar"
 ---
 
-import Props from '@site/static/auto-generated/avatar/props.md';
-import Events from '@site/static/auto-generated/avatar/events.md';
-import Methods from '@site/static/auto-generated/avatar/methods.md';
-import Parts from '@site/static/auto-generated/avatar/parts.md';
-import CustomProps from '@site/static/auto-generated/avatar/custom-props.md';
-import Slots from '@site/static/auto-generated/avatar/slots.md';
+import Props from '@ionic-internal/component-api/v7/avatar/props.md';
+import Events from '@ionic-internal/component-api/v7/avatar/events.md';
+import Methods from '@ionic-internal/component-api/v7/avatar/methods.md';
+import Parts from '@ionic-internal/component-api/v7/avatar/parts.md';
+import CustomProps from '@ionic-internal/component-api/v7/avatar/custom-props.md';
+import Slots from '@ionic-internal/component-api/v7/avatar/slots.md';
 
 <head>
   <title>ion-avatar: Circular Application Avatar Icon Component</title>
@@ -22,29 +22,29 @@ Avatarは通常、写真やアイコンをラップする円形のコンポー�
 
 Avatarは、単独で使用することも、任意の要素の内部で使用することもできます。`ion-chip` または `ion-item` の内部に配置すると、Avatarは親コンポーネントに合わせてサイズ変更します。Avatarをitemの左側または右側に配置するには、`slot` を `start` か `end` に設定します。
 
-## Basic Usage
+## 基本的な使い方
 
-import Basic from '@site/static/usage/avatar/basic/index.md';
+import Basic from '@site/static/usage/v7/avatar/basic/index.md';
 
 <Basic />
 
 ## Chip Avatar
 
-import Chip from '@site/static/usage/avatar/chip/index.md';
+import Chip from '@site/static/usage/v7/avatar/chip/index.md';
 
 <Chip />
 
 ## Item Avatar
 
-import Item from '@site/static/usage/avatar/item/index.md';
+import Item from '@site/static/usage/v7/avatar/item/index.md';
 
 <Item />
 
-## Theming
+## テーマ
 
-### CSS Custom Properties
+## CSSカスタムプロパティ
 
-import CSSProps from '@site/static/usage/avatar/theming/css-properties/index.md';
+import CSSProps from '@site/static/usage/v7/avatar/theming/css-properties/index.md';
 
 <CSSProps />
 
