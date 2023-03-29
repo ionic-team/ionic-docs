@@ -340,6 +340,6 @@ The table below lists all of the internal hardware back button event handlers th
 
 | Handler    | Priority | Propagates | Description                                                                                                                              |
 | ---------- | -------- | ---------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
-| Overlays   | 100      | No         | Applies to overlay components `ion-action-sheet`, `ion-alert`, `ion-loading`, `ion-modal`, `ion-popover`, `ion-picker`, and `ion-toast`. |
+| Overlays   | 100      | No         | Applies to overlay components `ion-action-sheet`, `ion-alert`, `ion-loading`, `ion-modal`, `ion-popover`, and `ion-picker`. |
 | Menu       | 99       | No         | Applies to `ion-menu`.                                                                                                                   |
 | Navigation | 0        | Yes        | Applies to routing navigation (i.e. Angular Routing).                                                                                    |
