@@ -24,6 +24,14 @@ Ionic recommends `react-scripts@5` and requires a minimum version of `jest@27`, 
 npm install react-scripts@latest
 ```
 
+## Install React Testing Library
+
+React Testing Library is a set of utilities that make it easier to test React components. It's used to interact with components and test their behavior.
+
+```bash
+npm install --save-dev @testing-library/react @testing-library/jest-dom @testing-library/user-event
+```
+
 ## Initialize Ionic React
 
 Ionic React requires the `setupIonicReact` function to be called before any tests are run. Failing to do so will result in mode-based classes and platform behaviors not being applied to your components.
