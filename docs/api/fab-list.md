@@ -6,12 +6,12 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import TOCInline from '@theme/TOCInline';
 
-import Props from '@site/static/auto-generated/fab-list/props.md';
-import Events from '@site/static/auto-generated/fab-list/events.md';
-import Methods from '@site/static/auto-generated/fab-list/methods.md';
-import Parts from '@site/static/auto-generated/fab-list/parts.md';
-import CustomProps from '@site/static/auto-generated/fab-list/custom-props.md';
-import Slots from '@site/static/auto-generated/fab-list/slots.md';
+import Props from '@ionic-internal/component-api/v6/fab-list/props.md';
+import Events from '@ionic-internal/component-api/v6/fab-list/events.md';
+import Methods from '@ionic-internal/component-api/v6/fab-list/methods.md';
+import Parts from '@ionic-internal/component-api/v6/fab-list/parts.md';
+import CustomProps from '@ionic-internal/component-api/v6/fab-list/custom-props.md';
+import Slots from '@ionic-internal/component-api/v6/fab-list/slots.md';
 
 
 

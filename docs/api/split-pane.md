@@ -5,12 +5,12 @@ hide_table_of_contents: true
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-import Props from '@site/static/auto-generated/split-pane/props.md';
-import Events from '@site/static/auto-generated/split-pane/events.md';
-import Methods from '@site/static/auto-generated/split-pane/methods.md';
-import Parts from '@site/static/auto-generated/split-pane/parts.md';
-import CustomProps from '@site/static/auto-generated/split-pane/custom-props.md';
-import Slots from '@site/static/auto-generated/split-pane/slots.md';
+import Props from '@ionic-internal/component-api/v6/split-pane/props.md';
+import Events from '@ionic-internal/component-api/v6/split-pane/events.md';
+import Methods from '@ionic-internal/component-api/v6/split-pane/methods.md';
+import Parts from '@ionic-internal/component-api/v6/split-pane/parts.md';
+import CustomProps from '@ionic-internal/component-api/v6/split-pane/custom-props.md';
+import Slots from '@ionic-internal/component-api/v6/split-pane/slots.md';
 
 <head>
   <title>ion-split-pane: Split Plane View for Menus and Multi-View Layouts</title>

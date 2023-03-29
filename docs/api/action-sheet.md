@@ -8,12 +8,12 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import TOCInline from '@theme/TOCInline';
 
-import Props from '@site/static/auto-generated/action-sheet/props.md';
-import Events from '@site/static/auto-generated/action-sheet/events.md';
-import Methods from '@site/static/auto-generated/action-sheet/methods.md';
-import Parts from '@site/static/auto-generated/action-sheet/parts.md';
-import CustomProps from '@site/static/auto-generated/action-sheet/custom-props.md';
-import Slots from '@site/static/auto-generated/action-sheet/slots.md';
+import Props from '@ionic-internal/component-api/v6/action-sheet/props.md';
+import Events from '@ionic-internal/component-api/v6/action-sheet/events.md';
+import Methods from '@ionic-internal/component-api/v6/action-sheet/methods.md';
+import Parts from '@ionic-internal/component-api/v6/action-sheet/parts.md';
+import CustomProps from '@ionic-internal/component-api/v6/action-sheet/custom-props.md';
+import Slots from '@ionic-internal/component-api/v6/action-sheet/slots.md';
 
 <head>
   <title>ion-action-sheet | Action Sheet Dialog for iOS and Android Apps</title>

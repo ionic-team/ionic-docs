@@ -6,12 +6,12 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import TOCInline from '@theme/TOCInline';
 
-import Props from '@site/static/auto-generated/card-title/props.md';
-import Events from '@site/static/auto-generated/card-title/events.md';
-import Methods from '@site/static/auto-generated/card-title/methods.md';
-import Parts from '@site/static/auto-generated/card-title/parts.md';
-import CustomProps from '@site/static/auto-generated/card-title/custom-props.md';
-import Slots from '@site/static/auto-generated/card-title/slots.md';
+import Props from '@ionic-internal/component-api/v6/card-title/props.md';
+import Events from '@ionic-internal/component-api/v6/card-title/events.md';
+import Methods from '@ionic-internal/component-api/v6/card-title/methods.md';
+import Parts from '@ionic-internal/component-api/v6/card-title/parts.md';
+import CustomProps from '@ionic-internal/component-api/v6/card-title/custom-props.md';
+import Slots from '@ionic-internal/component-api/v6/card-title/slots.md';
 
 <head>
   <title>ion-card-title | Ionic App Card Title Component and Properties</title>

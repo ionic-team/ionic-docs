@@ -5,12 +5,12 @@ hide_table_of_contents: true
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-import Props from '@site/static/auto-generated/textarea/props.md';
-import Events from '@site/static/auto-generated/textarea/events.md';
-import Methods from '@site/static/auto-generated/textarea/methods.md';
-import Parts from '@site/static/auto-generated/textarea/parts.md';
-import CustomProps from '@site/static/auto-generated/textarea/custom-props.md';
-import Slots from '@site/static/auto-generated/textarea/slots.md';
+import Props from '@ionic-internal/component-api/v6/textarea/props.md';
+import Events from '@ionic-internal/component-api/v6/textarea/events.md';
+import Methods from '@ionic-internal/component-api/v6/textarea/methods.md';
+import Parts from '@ionic-internal/component-api/v6/textarea/parts.md';
+import CustomProps from '@ionic-internal/component-api/v6/textarea/custom-props.md';
+import Slots from '@ionic-internal/component-api/v6/textarea/slots.md';
 
 <head>
   <title>Ionic Textarea Component and CSS Properties for Multi-Line Input</title>

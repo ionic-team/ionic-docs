@@ -8,12 +8,12 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import TOCInline from '@theme/TOCInline';
 
-import Props from '@site/static/auto-generated/avatar/props.md';
-import Events from '@site/static/auto-generated/avatar/events.md';
-import Methods from '@site/static/auto-generated/avatar/methods.md';
-import Parts from '@site/static/auto-generated/avatar/parts.md';
-import CustomProps from '@site/static/auto-generated/avatar/custom-props.md';
-import Slots from '@site/static/auto-generated/avatar/slots.md';
+import Props from '@ionic-internal/component-api/v6/avatar/props.md';
+import Events from '@ionic-internal/component-api/v6/avatar/events.md';
+import Methods from '@ionic-internal/component-api/v6/avatar/methods.md';
+import Parts from '@ionic-internal/component-api/v6/avatar/parts.md';
+import CustomProps from '@ionic-internal/component-api/v6/avatar/custom-props.md';
+import Slots from '@ionic-internal/component-api/v6/avatar/slots.md';
 
 <head>
   <title>ion-avatar: Circular Application Avatar Icon Component</title>

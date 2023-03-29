@@ -7,12 +7,12 @@ demoSourceUrl: "https://github.com/ionic-team/ionic-docs/tree/main/static/demos/
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-import Props from '@site/static/auto-generated/slides/props.md';
-import Events from '@site/static/auto-generated/slides/events.md';
-import Methods from '@site/static/auto-generated/slides/methods.md';
-import Parts from '@site/static/auto-generated/slides/parts.md';
-import CustomProps from '@site/static/auto-generated/slides/custom-props.md';
-import Slots from '@site/static/auto-generated/slides/slots.md';
+import Props from '@ionic-internal/component-api/v6/slides/props.md';
+import Events from '@ionic-internal/component-api/v6/slides/events.md';
+import Methods from '@ionic-internal/component-api/v6/slides/methods.md';
+import Parts from '@ionic-internal/component-api/v6/slides/parts.md';
+import CustomProps from '@ionic-internal/component-api/v6/slides/custom-props.md';
+import Slots from '@ionic-internal/component-api/v6/slides/slots.md';
 
 <head>
   <title>Ion-Slides: Mobile Touch Slider with Built-In & Custom Animation</title>

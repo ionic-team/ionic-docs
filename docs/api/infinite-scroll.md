@@ -7,12 +7,12 @@ demoSourceUrl: "https://github.com/ionic-team/ionic-docs/tree/main/static/demos/
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-import Props from '@site/static/auto-generated/infinite-scroll/props.md';
-import Events from '@site/static/auto-generated/infinite-scroll/events.md';
-import Methods from '@site/static/auto-generated/infinite-scroll/methods.md';
-import Parts from '@site/static/auto-generated/infinite-scroll/parts.md';
-import CustomProps from '@site/static/auto-generated/infinite-scroll/custom-props.md';
-import Slots from '@site/static/auto-generated/infinite-scroll/slots.md';
+import Props from '@ionic-internal/component-api/v6/infinite-scroll/props.md';
+import Events from '@ionic-internal/component-api/v6/infinite-scroll/events.md';
+import Methods from '@ionic-internal/component-api/v6/infinite-scroll/methods.md';
+import Parts from '@ionic-internal/component-api/v6/infinite-scroll/parts.md';
+import CustomProps from '@ionic-internal/component-api/v6/infinite-scroll/custom-props.md';
+import Slots from '@ionic-internal/component-api/v6/infinite-scroll/slots.md';
 
 <head>
   <title>Infinite Scroller | ion-infinite-scroll Action Component</title>

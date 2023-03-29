@@ -5,12 +5,12 @@ hide_table_of_contents: true
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-import Props from '@site/static/auto-generated/header/props.md';
-import Events from '@site/static/auto-generated/header/events.md';
-import Methods from '@site/static/auto-generated/header/methods.md';
-import Parts from '@site/static/auto-generated/header/parts.md';
-import CustomProps from '@site/static/auto-generated/header/custom-props.md';
-import Slots from '@site/static/auto-generated/header/slots.md';
+import Props from '@ionic-internal/component-api/v6/header/props.md';
+import Events from '@ionic-internal/component-api/v6/header/events.md';
+import Methods from '@ionic-internal/component-api/v6/header/methods.md';
+import Parts from '@ionic-internal/component-api/v6/header/parts.md';
+import CustomProps from '@ionic-internal/component-api/v6/header/custom-props.md';
+import Slots from '@ionic-internal/component-api/v6/header/slots.md';
 
 <head>
   <title>ion-header: Header Parent Component for Ionic Framework Apps</title>
