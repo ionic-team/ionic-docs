@@ -6,12 +6,12 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import TOCInline from '@theme/TOCInline';
 
-import Props from '@site/static/auto-generated/breadcrumb/props.md';
-import Events from '@site/static/auto-generated/breadcrumb/events.md';
-import Methods from '@site/static/auto-generated/breadcrumb/methods.md';
-import Parts from '@site/static/auto-generated/breadcrumb/parts.md';
-import CustomProps from '@site/static/auto-generated/breadcrumb/custom-props.md';
-import Slots from '@site/static/auto-generated/breadcrumb/slots.md';
+import Props from '@ionic-internal/component-api/v6/breadcrumb/props.md';
+import Events from '@ionic-internal/component-api/v6/breadcrumb/events.md';
+import Methods from '@ionic-internal/component-api/v6/breadcrumb/methods.md';
+import Parts from '@ionic-internal/component-api/v6/breadcrumb/parts.md';
+import CustomProps from '@ionic-internal/component-api/v6/breadcrumb/custom-props.md';
+import Slots from '@ionic-internal/component-api/v6/breadcrumb/slots.md';
 
 
 

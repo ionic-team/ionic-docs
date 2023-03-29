@@ -7,12 +7,12 @@ demoSourceUrl: "https://github.com/ionic-team/ionic-docs/tree/main/static/demos/
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-import Props from '@site/static/auto-generated/progress-bar/props.md';
-import Events from '@site/static/auto-generated/progress-bar/events.md';
-import Methods from '@site/static/auto-generated/progress-bar/methods.md';
-import Parts from '@site/static/auto-generated/progress-bar/parts.md';
-import CustomProps from '@site/static/auto-generated/progress-bar/custom-props.md';
-import Slots from '@site/static/auto-generated/progress-bar/slots.md';
+import Props from '@ionic-internal/component-api/v6/progress-bar/props.md';
+import Events from '@ionic-internal/component-api/v6/progress-bar/events.md';
+import Methods from '@ionic-internal/component-api/v6/progress-bar/methods.md';
+import Parts from '@ionic-internal/component-api/v6/progress-bar/parts.md';
+import CustomProps from '@ionic-internal/component-api/v6/progress-bar/custom-props.md';
+import Slots from '@ionic-internal/component-api/v6/progress-bar/slots.md';
 
 <head>
   <title>Progress Bar | Horizontal App Progress Bar for Loading Indicator</title>

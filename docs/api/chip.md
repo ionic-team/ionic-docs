@@ -8,12 +8,12 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import TOCInline from '@theme/TOCInline';
 
-import Props from '@site/static/auto-generated/chip/props.md';
-import Events from '@site/static/auto-generated/chip/events.md';
-import Methods from '@site/static/auto-generated/chip/methods.md';
-import Parts from '@site/static/auto-generated/chip/parts.md';
-import CustomProps from '@site/static/auto-generated/chip/custom-props.md';
-import Slots from '@site/static/auto-generated/chip/slots.md';
+import Props from '@ionic-internal/component-api/v6/chip/props.md';
+import Events from '@ionic-internal/component-api/v6/chip/events.md';
+import Methods from '@ionic-internal/component-api/v6/chip/methods.md';
+import Parts from '@ionic-internal/component-api/v6/chip/parts.md';
+import CustomProps from '@ionic-internal/component-api/v6/chip/custom-props.md';
+import Slots from '@ionic-internal/component-api/v6/chip/slots.md';
 
 <head>
   <title>ion-chip:  Name, Text, Icon and Avatar for Ionic Framework Apps</title>

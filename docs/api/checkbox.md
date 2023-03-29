@@ -8,12 +8,12 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import TOCInline from '@theme/TOCInline';
 
-import Props from '@site/static/auto-generated/checkbox/props.md';
-import Events from '@site/static/auto-generated/checkbox/events.md';
-import Methods from '@site/static/auto-generated/checkbox/methods.md';
-import Parts from '@site/static/auto-generated/checkbox/parts.md';
-import CustomProps from '@site/static/auto-generated/checkbox/custom-props.md';
-import Slots from '@site/static/auto-generated/checkbox/slots.md';
+import Props from '@ionic-internal/component-api/v6/checkbox/props.md';
+import Events from '@ionic-internal/component-api/v6/checkbox/events.md';
+import Methods from '@ionic-internal/component-api/v6/checkbox/methods.md';
+import Parts from '@ionic-internal/component-api/v6/checkbox/parts.md';
+import CustomProps from '@ionic-internal/component-api/v6/checkbox/custom-props.md';
+import Slots from '@ionic-internal/component-api/v6/checkbox/slots.md';
 
 <head>
   <title>ion-checkboxes: Ionic App Component to Select Multiple Options</title>

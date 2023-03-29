@@ -5,12 +5,12 @@ hide_table_of_contents: true
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-import Props from '@site/static/auto-generated/segment-button/props.md';
-import Events from '@site/static/auto-generated/segment-button/events.md';
-import Methods from '@site/static/auto-generated/segment-button/methods.md';
-import Parts from '@site/static/auto-generated/segment-button/parts.md';
-import CustomProps from '@site/static/auto-generated/segment-button/custom-props.md';
-import Slots from '@site/static/auto-generated/segment-button/slots.md';
+import Props from '@ionic-internal/component-api/v6/segment-button/props.md';
+import Events from '@ionic-internal/component-api/v6/segment-button/events.md';
+import Methods from '@ionic-internal/component-api/v6/segment-button/methods.md';
+import Parts from '@ionic-internal/component-api/v6/segment-button/parts.md';
+import CustomProps from '@ionic-internal/component-api/v6/segment-button/custom-props.md';
+import Slots from '@ionic-internal/component-api/v6/segment-button/slots.md';
 
 <head>
   <title>ion-segment-button | Segment Button Icon and Segment Value</title>

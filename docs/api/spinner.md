@@ -7,12 +7,12 @@ demoSourceUrl: "https://github.com/ionic-team/ionic-docs/tree/main/static/demos/
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-import Props from '@site/static/auto-generated/spinner/props.md';
-import Events from '@site/static/auto-generated/spinner/events.md';
-import Methods from '@site/static/auto-generated/spinner/methods.md';
-import Parts from '@site/static/auto-generated/spinner/parts.md';
-import CustomProps from '@site/static/auto-generated/spinner/custom-props.md';
-import Slots from '@site/static/auto-generated/spinner/slots.md';
+import Props from '@ionic-internal/component-api/v6/spinner/props.md';
+import Events from '@ionic-internal/component-api/v6/spinner/events.md';
+import Methods from '@ionic-internal/component-api/v6/spinner/methods.md';
+import Parts from '@ionic-internal/component-api/v6/spinner/parts.md';
+import CustomProps from '@ionic-internal/component-api/v6/spinner/custom-props.md';
+import Slots from '@ionic-internal/component-api/v6/spinner/slots.md';
 
 <head>
   <title>ion-spinner | Animated Spinner Icon Components and Properties</title>

@@ -5,12 +5,12 @@ hide_table_of_contents: true
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-import Props from '@site/static/auto-generated/menu-toggle/props.md';
-import Events from '@site/static/auto-generated/menu-toggle/events.md';
-import Methods from '@site/static/auto-generated/menu-toggle/methods.md';
-import Parts from '@site/static/auto-generated/menu-toggle/parts.md';
-import CustomProps from '@site/static/auto-generated/menu-toggle/custom-props.md';
-import Slots from '@site/static/auto-generated/menu-toggle/slots.md';
+import Props from '@ionic-internal/component-api/v6/menu-toggle/props.md';
+import Events from '@ionic-internal/component-api/v6/menu-toggle/events.md';
+import Methods from '@ionic-internal/component-api/v6/menu-toggle/methods.md';
+import Parts from '@ionic-internal/component-api/v6/menu-toggle/parts.md';
+import CustomProps from '@ionic-internal/component-api/v6/menu-toggle/custom-props.md';
+import Slots from '@ionic-internal/component-api/v6/menu-toggle/slots.md';
 
 <head>
   <title>ion-menu-toggle | MenuToggle Component to Open/Close Active Menus</title>

@@ -6,12 +6,12 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import TOCInline from '@theme/TOCInline';
 
-import Props from '@site/static/auto-generated/col/props.md';
-import Events from '@site/static/auto-generated/col/events.md';
-import Methods from '@site/static/auto-generated/col/methods.md';
-import Parts from '@site/static/auto-generated/col/parts.md';
-import CustomProps from '@site/static/auto-generated/col/custom-props.md';
-import Slots from '@site/static/auto-generated/col/slots.md';
+import Props from '@ionic-internal/component-api/v6/col/props.md';
+import Events from '@ionic-internal/component-api/v6/col/events.md';
+import Methods from '@ionic-internal/component-api/v6/col/methods.md';
+import Parts from '@ionic-internal/component-api/v6/col/parts.md';
+import CustomProps from '@ionic-internal/component-api/v6/col/custom-props.md';
+import Slots from '@ionic-internal/component-api/v6/col/slots.md';
 
 <head>
   <title>ion-col: Column Component Padding, Size and Other Properties</title>

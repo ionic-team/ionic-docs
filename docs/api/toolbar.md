@@ -7,12 +7,12 @@ demoSourceUrl: "https://github.com/ionic-team/ionic-docs/tree/main/static/demos/
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-import Props from '@site/static/auto-generated/toolbar/props.md';
-import Events from '@site/static/auto-generated/toolbar/events.md';
-import Methods from '@site/static/auto-generated/toolbar/methods.md';
-import Parts from '@site/static/auto-generated/toolbar/parts.md';
-import CustomProps from '@site/static/auto-generated/toolbar/custom-props.md';
-import Slots from '@site/static/auto-generated/toolbar/slots.md';
+import Props from '@ionic-internal/component-api/v6/toolbar/props.md';
+import Events from '@ionic-internal/component-api/v6/toolbar/events.md';
+import Methods from '@ionic-internal/component-api/v6/toolbar/methods.md';
+import Parts from '@ionic-internal/component-api/v6/toolbar/parts.md';
+import CustomProps from '@ionic-internal/component-api/v6/toolbar/custom-props.md';
+import Slots from '@ionic-internal/component-api/v6/toolbar/slots.md';
 
 <head>
   <title>Toolbar | Customize App Menu Toolbar Buttons and Icons</title>

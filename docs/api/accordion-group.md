@@ -6,12 +6,12 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 import TOCInline from '@theme/TOCInline';
 
-import Props from '@site/static/auto-generated/accordion-group/props.md';
-import Events from '@site/static/auto-generated/accordion-group/events.md';
-import Methods from '@site/static/auto-generated/accordion-group/methods.md';
-import Parts from '@site/static/auto-generated/accordion-group/parts.md';
-import CustomProps from '@site/static/auto-generated/accordion-group/custom-props.md';
-import Slots from '@site/static/auto-generated/accordion-group/slots.md';
+import Props from '@ionic-internal/component-api/v6/accordion-group/props.md';
+import Events from '@ionic-internal/component-api/v6/accordion-group/events.md';
+import Methods from '@ionic-internal/component-api/v6/accordion-group/methods.md';
+import Parts from '@ionic-internal/component-api/v6/accordion-group/parts.md';
+import CustomProps from '@ionic-internal/component-api/v6/accordion-group/custom-props.md';
+import Slots from '@ionic-internal/component-api/v6/accordion-group/slots.md';
 
 
 
