@@ -31,8 +31,8 @@ We'll create a Photo Gallery app that offers the ability to take photos with you
 Highlights include:
 
 - One Vue-based codebase that runs on the web, iOS, and Android using Ionic Framework [UI components](https://ionicframework.com/docs/components).
-- Deployed as a native iOS and Android mobile app using [Capacitor](https://capacitor.ionicframework.com), Ionic's official native app runtime.
-- Photo Gallery functionality powered by the Capacitor [Camera](https://capacitor.ionicframework.com/docs/apis/camera), [Filesystem](https://capacitor.ionicframework.com/docs/apis/filesystem), and [Storage](https://capacitor.ionicframework.com/docs/apis/storage) APIs.
+- Deployed as a native iOS and Android mobile app using [Capacitor](https://capacitorjs.com), Ionic's official native app runtime.
+- Photo Gallery functionality powered by the Capacitor [Camera](https://capacitorjs.com/docs/apis/camera), [Filesystem](https://capacitorjs.com/docs/apis/filesystem), and [Preferences](https://capacitorjs.com/docs/apis/preferences) APIs.
 
 Find the complete app code referenced in this guide [on GitHub](https://github.com/ionic-team/photo-gallery-capacitor-vue).
 
@@ -56,7 +56,7 @@ To open a terminal in Visual Studio Code, go to Terminal -> New Terminal.
 :::
 
 ```shell
-npm install -g @ionic/cli@latest native-run cordova-res
+npm install -g @ionic/cli@latest native-run
 ```
 
 :::note
@@ -70,7 +70,7 @@ Consider setting up npm to operate globally without elevated permissions. See [R
 Next, create an Ionic Vue app that uses the "Tabs" starter template and adds Capacitor for native functionality:
 
 ```shell
-ionic start photo-gallery tabs --type vue --capacitor
+ionic start photo-gallery tabs --type vue
 ```
 
 This starter project comes complete with three pre-built pages and best practices for Ionic development. With common building blocks already in place, we can add more features easily!
@@ -84,7 +84,7 @@ cd photo-gallery
 Next we'll need to install the necessary Capacitor plugins to make the app's native functionality work:
 
 ```shell
-npm install @capacitor/camera @capacitor/storage @capacitor/filesystem
+npm install @capacitor/camera @capacitor/preferences @capacitor/filesystem
 ```
 
 ### PWA Elements
@@ -162,13 +162,13 @@ We put the visual aspects of our app into `<ion-content>`. In this case, it’s 
 import ExploreContainer from '@/components/ExploreContainer.vue';
 ```
 
-Next, remove the component name (`ExploreContainer`) from the `components` list in the Default Export and the HTML:
+Next, remove the `ExploreContainer` node from the HTML markup in the `template`.
 
 ```html
 <ExploreContainer name="Tab 2 page" />
 ```
 
-We'll replace it with a [floating action button](https://ionicframework.com/docs/api/fab) (FAB). First, update the imports within the `<script>` tag to include the Camera icon as well as some of the Ionic components we'll use shortly:
+We'll replace it with a [floating action button](https://ionicframework.com/docs/api/fab) (FAB). First, update the imports within the `<script setup>`  tag to include the Camera icon as well as some of the Ionic components we'll use shortly:
 
 ```tsx
 import { camera, trash, close } from 'ionicons/icons';
@@ -188,36 +188,9 @@ import {
 } from '@ionic/vue';
 ```
 
-Next, add the new Ionic components we'll be using to the default export as well as returning the Ionicons in the `setup()` method (part of the [Composition API](https://v3.vuejs.org/api/composition-api.html#setup)):
+Since our pages are generated as [Vue Single File Components](https://vuejs.org/api/sfc-spec.html) using the [`<script setup>`](https://vuejs.org/api/sfc-script-setup.html#script-setup) syntax these items are now exposed for use in our template.
 
-```tsx
-export default {
-  name: 'Tab2',
-  components: {
-    IonPage,
-    IonHeader,
-    IonFab,
-    IonFabButton,
-    IonIcon,
-    IonToolbar,
-    IonTitle,
-    IonContent,
-    IonGrid,
-    IonRow,
-    IonCol,
-    IonImg,
-  },
-  setup() {
-    return {
-      camera,
-      trash,
-      close,
-    };
-  },
-};
-```
-
-Then, add the FAB to the bottom of the page. Use the camera image as the icon, and call the `takePhoto()` function when this button is clicked (to be implemented soon):
+Add the FAB to the bottom of the page. Use the camera image as the icon, and call the `takePhoto()` function when this button is clicked (to be implemented soon):
 
 ```html
 <ion-content :fullscreen="true">
@@ -244,18 +217,6 @@ Within the tab bar (`<ion-tab-bar>`), change the label to "Photos" and the `elli
   <ion-icon :icon="images" />
   <ion-label>Photos</ion-label>
 </ion-tab-button>
-```
-
-Finally replace `ellipse` with `images` in the `setup()` method.
-
-```typescript
-  setup() {
-    return {
-      images,
-      square,
-      triangle,
-    }
-  }
 ```
 
 That’s just the start of all the cool things we can do with Ionic. Up next, implementing camera taking functionality on the web, then building for iOS and Android.

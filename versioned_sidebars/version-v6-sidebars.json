@@ -1,0 +1,1369 @@
+{
+  "version-v6/docs": [
+    {
+      "type": "category",
+      "label": "Getting Started",
+      "collapsed": false,
+      "items": [
+        {
+          "type": "doc",
+          "id": "version-v6/index"
+        },
+        {
+          "type": "doc",
+          "id": "version-v6/intro/upgrading-to-ionic-6"
+        },
+        {
+          "type": "doc",
+          "id": "version-v6/intro/environment"
+        },
+        {
+          "type": "doc",
+          "id": "version-v6/intro/cli"
+        },
+        {
+          "type": "doc",
+          "id": "version-v6/intro/cdn"
+        },
+        {
+          "type": "doc",
+          "id": "version-v6/intro/vscode-extension"
+        },
+        {
+          "type": "doc",
+          "id": "version-v6/intro/next"
+        }
+      ],
+      "collapsible": true
+    },
+    {
+      "type": "category",
+      "label": "Developing",
+      "collapsed": false,
+      "items": [
+        {
+          "type": "doc",
+          "id": "version-v6/developing/starting"
+        },
+        {
+          "type": "doc",
+          "id": "version-v6/developing/previewing"
+        },
+        {
+          "type": "doc",
+          "id": "version-v6/developing/scaffolding"
+        },
+        {
+          "type": "doc",
+          "id": "version-v6/developing/ios"
+        },
+        {
+          "type": "doc",
+          "id": "version-v6/developing/android"
+        },
+        {
+          "type": "doc",
+          "id": "version-v6/developing/tips"
+        },
+        {
+          "type": "doc",
+          "id": "version-v6/developing/hardware-back-button"
+        },
+        {
+          "type": "doc",
+          "id": "version-v6/developing/keyboard"
+        },
+        {
+          "type": "doc",
+          "id": "version-v6/developing/config"
+        }
+      ],
+      "collapsible": true
+    },
+    {
+      "type": "category",
+      "label": "Layout",
+      "collapsed": false,
+      "items": [
+        {
+          "type": "doc",
+          "id": "version-v6/layout/structure"
+        },
+        {
+          "type": "link",
+          "label": "Responsive Grid",
+          "href": "/docs/api/grid"
+        },
+        {
+          "type": "doc",
+          "id": "version-v6/layout/global-stylesheets"
+        },
+        {
+          "type": "doc",
+          "id": "version-v6/layout/css-utilities"
+        }
+      ],
+      "collapsible": true
+    },
+    {
+      "type": "category",
+      "label": "Theming",
+      "collapsed": false,
+      "items": [
+        {
+          "type": "doc",
+          "id": "version-v6/theming/basics"
+        },
+        {
+          "type": "doc",
+          "id": "version-v6/theming/platform-styles"
+        },
+        {
+          "type": "doc",
+          "id": "version-v6/theming/css-variables"
+        },
+        {
+          "type": "doc",
+          "id": "version-v6/theming/css-shadow-parts"
+        },
+        {
+          "type": "doc",
+          "id": "version-v6/theming/colors"
+        },
+        {
+          "type": "doc",
+          "id": "version-v6/theming/themes"
+        },
+        {
+          "type": "doc",
+          "id": "version-v6/theming/dark-mode"
+        },
+        {
+          "type": "doc",
+          "id": "version-v6/theming/advanced"
+        },
+        {
+          "type": "doc",
+          "id": "version-v6/theming/color-generator"
+        }
+      ],
+      "collapsible": true
+    },
+    {
+      "type": "category",
+      "label": "Angular",
+      "collapsed": false,
+      "items": [
+        {
+          "type": "doc",
+          "id": "version-v6/angular/overview"
+        },
+        {
+          "type": "category",
+          "label": "Build Your First App",
+          "items": [
+            {
+              "type": "doc",
+              "id": "version-v6/angular/your-first-app"
+            },
+            {
+              "type": "doc",
+              "id": "version-v6/angular/your-first-app/taking-photos"
+            },
+            {
+              "type": "doc",
+              "id": "version-v6/angular/your-first-app/saving-photos"
+            },
+            {
+              "type": "doc",
+              "id": "version-v6/angular/your-first-app/loading-photos"
+            },
+            {
+              "type": "doc",
+              "id": "version-v6/angular/your-first-app/adding-mobile"
+            },
+            {
+              "type": "doc",
+              "id": "version-v6/angular/your-first-app/deploying-mobile"
+            },
+            {
+              "type": "doc",
+              "id": "version-v6/angular/your-first-app/live-reload"
+            },
+            {
+              "type": "doc",
+              "id": "version-v6/angular/your-first-app/distribute"
+            }
+          ],
+          "collapsible": true,
+          "collapsed": true
+        },
+        {
+          "type": "doc",
+          "id": "version-v6/angular/lifecycle"
+        },
+        {
+          "type": "doc",
+          "id": "version-v6/angular/navigation"
+        },
+        {
+          "type": "doc",
+          "id": "version-v6/angular/virtual-scroll"
+        },
+        {
+          "type": "doc",
+          "id": "version-v6/angular/slides"
+        },
+        {
+          "type": "doc",
+          "id": "version-v6/angular/platform"
+        },
+        {
+          "type": "doc",
+          "id": "version-v6/angular/testing"
+        },
+        {
+          "type": "doc",
+          "id": "version-v6/angular/storage"
+        },
+        {
+          "type": "doc",
+          "id": "version-v6/angular/performance"
+        },
+        {
+          "type": "doc",
+          "id": "version-v6/angular/pwa"
+        }
+      ],
+      "collapsible": true
+    },
+    {
+      "type": "category",
+      "label": "React",
+      "collapsed": false,
+      "items": [
+        {
+          "type": "doc",
+          "id": "version-v6/react"
+        },
+        {
+          "type": "doc",
+          "id": "version-v6/react/quickstart"
+        },
+        {
+          "type": "category",
+          "label": "Build Your First App",
+          "items": [
+            {
+              "type": "doc",
+              "id": "version-v6/react/your-first-app"
+            },
+            {
+              "type": "doc",
+              "id": "version-v6/react/your-first-app/taking-photos"
+            },
+            {
+              "type": "doc",
+              "id": "version-v6/react/your-first-app/saving-photos"
+            },
+            {
+              "type": "doc",
+              "id": "version-v6/react/your-first-app/loading-photos"
+            },
+            {
+              "type": "doc",
+              "id": "version-v6/react/your-first-app/adding-mobile"
+            },
+            {
+              "type": "doc",
+              "id": "version-v6/react/your-first-app/deploying-mobile"
+            },
+            {
+              "type": "doc",
+              "id": "version-v6/react/your-first-app/live-reload"
+            },
+            {
+              "type": "doc",
+              "id": "version-v6/react/your-first-app/distribute"
+            }
+          ],
+          "collapsible": true,
+          "collapsed": true
+        },
+        {
+          "type": "doc",
+          "id": "version-v6/react/lifecycle"
+        },
+        {
+          "type": "doc",
+          "id": "version-v6/react/navigation"
+        },
+        {
+          "type": "doc",
+          "id": "version-v6/react/virtual-scroll"
+        },
+        {
+          "type": "doc",
+          "id": "version-v6/react/slides"
+        },
+        {
+          "type": "doc",
+          "id": "version-v6/react/platform"
+        },
+        {
+          "type": "doc",
+          "id": "version-v6/react/pwa"
+        },
+        {
+          "type": "doc",
+          "id": "version-v6/react/overlays"
+        },
+        {
+          "type": "doc",
+          "id": "version-v6/react/storage"
+        },
+        {
+          "type": "doc",
+          "id": "version-v6/react/testing"
+        },
+        {
+          "type": "doc",
+          "id": "version-v6/react/performance"
+        }
+      ],
+      "collapsible": true
+    },
+    {
+      "type": "category",
+      "label": "Vue",
+      "collapsed": false,
+      "items": [
+        {
+          "type": "doc",
+          "id": "version-v6/vue/overview"
+        },
+        {
+          "type": "doc",
+          "id": "version-v6/vue/quickstart"
+        },
+        {
+          "type": "category",
+          "label": "Build Your First App",
+          "items": [
+            {
+              "type": "doc",
+              "id": "version-v6/vue/your-first-app"
+            },
+            {
+              "type": "doc",
+              "id": "version-v6/vue/your-first-app/taking-photos"
+            },
+            {
+              "type": "doc",
+              "id": "version-v6/vue/your-first-app/saving-photos"
+            },
+            {
+              "type": "doc",
+              "id": "version-v6/vue/your-first-app/loading-photos"
+            },
+            {
+              "type": "doc",
+              "id": "version-v6/vue/your-first-app/adding-mobile"
+            },
+            {
+              "type": "doc",
+              "id": "version-v6/vue/your-first-app/deploying-mobile"
+            },
+            {
+              "type": "doc",
+              "id": "version-v6/vue/your-first-app/live-reload"
+            },
+            {
+              "type": "doc",
+              "id": "version-v6/vue/your-first-app/distribute"
+            }
+          ],
+          "collapsible": true,
+          "collapsed": true
+        },
+        {
+          "type": "doc",
+          "id": "version-v6/vue/lifecycle"
+        },
+        {
+          "type": "doc",
+          "id": "version-v6/vue/navigation"
+        },
+        {
+          "type": "doc",
+          "id": "version-v6/vue/virtual-scroll"
+        },
+        {
+          "type": "doc",
+          "id": "version-v6/vue/slides"
+        },
+        {
+          "type": "doc",
+          "id": "version-v6/vue/utility-functions"
+        },
+        {
+          "type": "doc",
+          "id": "version-v6/vue/platform"
+        },
+        {
+          "type": "doc",
+          "id": "version-v6/vue/pwa"
+        },
+        {
+          "type": "doc",
+          "id": "version-v6/vue/storage"
+        },
+        {
+          "type": "doc",
+          "id": "version-v6/vue/testing"
+        },
+        {
+          "type": "doc",
+          "id": "version-v6/vue/troubleshooting"
+        },
+        {
+          "type": "doc",
+          "id": "version-v6/vue/performance"
+        }
+      ],
+      "collapsible": true
+    },
+    {
+      "type": "category",
+      "label": "Utilities",
+      "collapsed": false,
+      "items": [
+        {
+          "type": "doc",
+          "id": "version-v6/utilities/animations"
+        },
+        {
+          "type": "doc",
+          "id": "version-v6/utilities/gestures"
+        }
+      ],
+      "collapsible": true
+    },
+    {
+      "type": "category",
+      "label": "Deployment",
+      "collapsed": false,
+      "items": [
+        {
+          "type": "doc",
+          "id": "version-v6/deployment/app-store"
+        },
+        {
+          "type": "doc",
+          "id": "version-v6/deployment/play-store"
+        },
+        {
+          "type": "doc",
+          "id": "version-v6/deployment/progressive-web-app"
+        },
+        {
+          "type": "doc",
+          "id": "version-v6/deployment/desktop-app"
+        }
+      ],
+      "collapsible": true
+    },
+    {
+      "type": "category",
+      "label": "Techniques",
+      "collapsed": false,
+      "items": [
+        {
+          "type": "doc",
+          "id": "version-v6/techniques/security"
+        }
+      ],
+      "collapsible": true
+    },
+    {
+      "type": "category",
+      "label": "Troubleshooting",
+      "collapsed": false,
+      "items": [
+        {
+          "type": "doc",
+          "id": "version-v6/troubleshooting/debugging"
+        },
+        {
+          "type": "doc",
+          "id": "version-v6/troubleshooting/build"
+        },
+        {
+          "type": "doc",
+          "id": "version-v6/troubleshooting/runtime"
+        },
+        {
+          "type": "doc",
+          "id": "version-v6/troubleshooting/native"
+        },
+        {
+          "type": "doc",
+          "id": "version-v6/troubleshooting/cors"
+        }
+      ],
+      "collapsible": true
+    },
+    {
+      "type": "category",
+      "label": "Core Concepts",
+      "collapsed": false,
+      "items": [
+        {
+          "type": "doc",
+          "id": "version-v6/core-concepts/fundamentals"
+        },
+        {
+          "type": "doc",
+          "id": "version-v6/core-concepts/cross-platform"
+        },
+        {
+          "type": "doc",
+          "id": "version-v6/core-concepts/webview"
+        },
+        {
+          "type": "doc",
+          "id": "version-v6/core-concepts/what-are-progressive-web-apps"
+        }
+      ],
+      "collapsible": true
+    },
+    {
+      "type": "category",
+      "label": "Contributing",
+      "collapsed": false,
+      "items": [
+        {
+          "type": "doc",
+          "id": "version-v6/contributing/how-to-contribute"
+        },
+        {
+          "type": "doc",
+          "id": "version-v6/contributing/coc"
+        }
+      ],
+      "collapsible": true
+    },
+    {
+      "type": "category",
+      "label": "Reference",
+      "collapsed": false,
+      "items": [
+        {
+          "type": "doc",
+          "id": "version-v6/reference/glossary"
+        },
+        {
+          "type": "doc",
+          "id": "version-v6/reference/versioning"
+        },
+        {
+          "type": "doc",
+          "id": "version-v6/reference/release-notes"
+        },
+        {
+          "type": "link",
+          "label": "GitHub Changelog",
+          "href": "https://github.com/ionic-team/ionic/blob/master/CHANGELOG.md"
+        },
+        {
+          "type": "doc",
+          "id": "version-v6/reference/support"
+        },
+        {
+          "type": "doc",
+          "id": "version-v6/reference/browser-support"
+        },
+        {
+          "type": "doc",
+          "id": "version-v6/reference/migration"
+        }
+      ],
+      "collapsible": true
+    }
+  ],
+  "version-v6/api": [
+    {
+      "type": "category",
+      "label": "Getting Started",
+      "collapsed": false,
+      "items": [
+        {
+          "type": "doc",
+          "id": "version-v6/components"
+        }
+      ],
+      "collapsible": true
+    },
+    {
+      "type": "category",
+      "label": "Action Sheet",
+      "collapsed": false,
+      "items": [
+        {
+          "type": "doc",
+          "id": "version-v6/api/action-sheet"
+        }
+      ],
+      "collapsible": true
+    },
+    {
+      "type": "category",
+      "label": "Accordion",
+      "collapsed": false,
+      "items": [
+        {
+          "type": "doc",
+          "id": "version-v6/api/accordion"
+        },
+        {
+          "type": "doc",
+          "id": "version-v6/api/accordion-group"
+        }
+      ],
+      "collapsible": true
+    },
+    {
+      "type": "category",
+      "label": "Alert",
+      "collapsed": false,
+      "items": [
+        {
+          "type": "doc",
+          "id": "version-v6/api/alert"
+        }
+      ],
+      "collapsible": true
+    },
+    {
+      "type": "category",
+      "label": "Badge",
+      "collapsed": false,
+      "items": [
+        {
+          "type": "doc",
+          "id": "version-v6/api/badge"
+        }
+      ],
+      "collapsible": true
+    },
+    {
+      "type": "category",
+      "label": "Breadcrumb",
+      "collapsed": false,
+      "items": [
+        {
+          "type": "doc",
+          "id": "version-v6/api/breadcrumb"
+        },
+        {
+          "type": "doc",
+          "id": "version-v6/api/breadcrumbs"
+        }
+      ],
+      "collapsible": true
+    },
+    {
+      "type": "category",
+      "label": "Button",
+      "collapsed": false,
+      "items": [
+        {
+          "type": "doc",
+          "id": "version-v6/api/button"
+        },
+        {
+          "type": "doc",
+          "id": "version-v6/api/ripple-effect"
+        }
+      ],
+      "collapsible": true
+    },
+    {
+      "type": "category",
+      "label": "Card",
+      "collapsed": false,
+      "items": [
+        {
+          "type": "doc",
+          "id": "version-v6/api/card"
+        },
+        {
+          "type": "doc",
+          "id": "version-v6/api/card-content"
+        },
+        {
+          "type": "doc",
+          "id": "version-v6/api/card-header"
+        },
+        {
+          "type": "doc",
+          "id": "version-v6/api/card-subtitle"
+        },
+        {
+          "type": "doc",
+          "id": "version-v6/api/card-title"
+        }
+      ],
+      "collapsible": true
+    },
+    {
+      "type": "category",
+      "label": "Checkbox",
+      "collapsed": false,
+      "items": [
+        {
+          "type": "doc",
+          "id": "version-v6/api/checkbox"
+        }
+      ],
+      "collapsible": true
+    },
+    {
+      "type": "category",
+      "label": "Chip",
+      "collapsed": false,
+      "items": [
+        {
+          "type": "doc",
+          "id": "version-v6/api/chip"
+        }
+      ],
+      "collapsible": true
+    },
+    {
+      "type": "category",
+      "label": "Content",
+      "collapsed": false,
+      "items": [
+        {
+          "type": "doc",
+          "id": "version-v6/api/app"
+        },
+        {
+          "type": "doc",
+          "id": "version-v6/api/content"
+        }
+      ],
+      "collapsible": true
+    },
+    {
+      "type": "category",
+      "label": "Date & Time Pickers",
+      "collapsed": false,
+      "items": [
+        {
+          "type": "doc",
+          "id": "version-v6/api/datetime"
+        },
+        {
+          "type": "doc",
+          "id": "version-v6/api/datetime-button"
+        },
+        {
+          "type": "doc",
+          "id": "version-v6/api/picker"
+        }
+      ],
+      "collapsible": true
+    },
+    {
+      "type": "category",
+      "label": "Floating Action Button",
+      "collapsed": false,
+      "items": [
+        {
+          "type": "doc",
+          "id": "version-v6/api/fab"
+        },
+        {
+          "type": "doc",
+          "id": "version-v6/api/fab-button"
+        },
+        {
+          "type": "doc",
+          "id": "version-v6/api/fab-list"
+        }
+      ],
+      "collapsible": true
+    },
+    {
+      "type": "category",
+      "label": "Grid",
+      "collapsed": false,
+      "items": [
+        {
+          "type": "doc",
+          "id": "version-v6/api/grid"
+        },
+        {
+          "type": "doc",
+          "id": "version-v6/api/col"
+        },
+        {
+          "type": "doc",
+          "id": "version-v6/api/row"
+        }
+      ],
+      "collapsible": true
+    },
+    {
+      "type": "category",
+      "label": "Infinite Scroll",
+      "collapsed": false,
+      "items": [
+        {
+          "type": "doc",
+          "id": "version-v6/api/infinite-scroll"
+        },
+        {
+          "type": "doc",
+          "id": "version-v6/api/infinite-scroll-content"
+        }
+      ],
+      "collapsible": true
+    },
+    {
+      "type": "category",
+      "label": "Icons",
+      "collapsed": false,
+      "items": [
+        {
+          "type": "doc",
+          "id": "version-v6/api/icon"
+        }
+      ],
+      "collapsible": true
+    },
+    {
+      "type": "category",
+      "label": "Input",
+      "collapsed": false,
+      "items": [
+        {
+          "type": "doc",
+          "id": "version-v6/api/input"
+        },
+        {
+          "type": "doc",
+          "id": "version-v6/api/textarea"
+        }
+      ],
+      "collapsible": true
+    },
+    {
+      "type": "category",
+      "label": "Item",
+      "collapsed": false,
+      "items": [
+        {
+          "type": "doc",
+          "id": "version-v6/api/item"
+        },
+        {
+          "type": "doc",
+          "id": "version-v6/api/item-divider"
+        },
+        {
+          "type": "doc",
+          "id": "version-v6/api/item-group"
+        },
+        {
+          "type": "doc",
+          "id": "version-v6/api/item-sliding"
+        },
+        {
+          "type": "doc",
+          "id": "version-v6/api/item-options"
+        },
+        {
+          "type": "doc",
+          "id": "version-v6/api/item-option"
+        },
+        {
+          "type": "doc",
+          "id": "version-v6/api/label"
+        },
+        {
+          "type": "doc",
+          "id": "version-v6/api/note"
+        }
+      ],
+      "collapsible": true
+    },
+    {
+      "type": "category",
+      "label": "List",
+      "collapsed": false,
+      "items": [
+        {
+          "type": "doc",
+          "id": "version-v6/api/list"
+        },
+        {
+          "type": "doc",
+          "id": "version-v6/api/list-header"
+        },
+        {
+          "type": "doc",
+          "id": "version-v6/api/virtual-scroll"
+        }
+      ],
+      "collapsible": true
+    },
+    {
+      "type": "category",
+      "label": "Media",
+      "collapsed": false,
+      "items": [
+        {
+          "type": "doc",
+          "id": "version-v6/api/avatar"
+        },
+        {
+          "type": "doc",
+          "id": "version-v6/api/icon"
+        },
+        {
+          "type": "doc",
+          "id": "version-v6/api/img"
+        },
+        {
+          "type": "doc",
+          "id": "version-v6/api/thumbnail"
+        }
+      ],
+      "collapsible": true
+    },
+    {
+      "type": "category",
+      "label": "Menu",
+      "collapsed": false,
+      "items": [
+        {
+          "type": "doc",
+          "id": "version-v6/api/menu"
+        },
+        {
+          "type": "doc",
+          "id": "version-v6/api/menu-button"
+        },
+        {
+          "type": "doc",
+          "id": "version-v6/api/menu-toggle"
+        },
+        {
+          "type": "doc",
+          "id": "version-v6/api/split-pane"
+        }
+      ],
+      "collapsible": true
+    },
+    {
+      "type": "category",
+      "label": "Modal",
+      "collapsed": false,
+      "items": [
+        {
+          "type": "doc",
+          "id": "version-v6/api/modal"
+        },
+        {
+          "type": "doc",
+          "id": "version-v6/api/backdrop"
+        }
+      ],
+      "collapsible": true
+    },
+    {
+      "type": "category",
+      "label": "Navigation",
+      "collapsed": false,
+      "items": [
+        {
+          "type": "doc",
+          "id": "version-v6/api/nav"
+        },
+        {
+          "type": "doc",
+          "id": "version-v6/api/nav-link"
+        }
+      ],
+      "collapsible": true
+    },
+    {
+      "type": "category",
+      "label": "Popover",
+      "collapsed": false,
+      "items": [
+        {
+          "type": "doc",
+          "id": "version-v6/api/popover"
+        }
+      ],
+      "collapsible": true
+    },
+    {
+      "type": "category",
+      "label": "Progress Indicators",
+      "collapsed": false,
+      "items": [
+        {
+          "type": "doc",
+          "id": "version-v6/api/loading"
+        },
+        {
+          "type": "doc",
+          "id": "version-v6/api/progress-bar"
+        },
+        {
+          "type": "doc",
+          "id": "version-v6/api/skeleton-text"
+        },
+        {
+          "type": "doc",
+          "id": "version-v6/api/spinner"
+        }
+      ],
+      "collapsible": true
+    },
+    {
+      "type": "category",
+      "label": "Radio",
+      "collapsed": false,
+      "items": [
+        {
+          "type": "doc",
+          "id": "version-v6/api/radio"
+        },
+        {
+          "type": "doc",
+          "id": "version-v6/api/radio-group"
+        }
+      ],
+      "collapsible": true
+    },
+    {
+      "type": "category",
+      "label": "Range",
+      "collapsed": false,
+      "items": [
+        {
+          "type": "doc",
+          "id": "version-v6/api/range"
+        }
+      ],
+      "collapsible": true
+    },
+    {
+      "type": "category",
+      "label": "Refresher",
+      "collapsed": false,
+      "items": [
+        {
+          "type": "doc",
+          "id": "version-v6/api/refresher"
+        },
+        {
+          "type": "doc",
+          "id": "version-v6/api/refresher-content"
+        }
+      ],
+      "collapsible": true
+    },
+    {
+      "type": "category",
+      "label": "Reorder",
+      "collapsed": false,
+      "items": [
+        {
+          "type": "doc",
+          "id": "version-v6/api/reorder"
+        },
+        {
+          "type": "doc",
+          "id": "version-v6/api/reorder-group"
+        }
+      ],
+      "collapsible": true
+    },
+    {
+      "type": "category",
+      "label": "Routing",
+      "collapsed": false,
+      "items": [
+        {
+          "type": "doc",
+          "id": "version-v6/api/router"
+        },
+        {
+          "type": "doc",
+          "id": "version-v6/api/router-link"
+        },
+        {
+          "type": "doc",
+          "id": "version-v6/api/router-outlet"
+        },
+        {
+          "type": "doc",
+          "id": "version-v6/api/route"
+        },
+        {
+          "type": "doc",
+          "id": "version-v6/api/route-redirect"
+        }
+      ],
+      "collapsible": true
+    },
+    {
+      "type": "category",
+      "label": "Searchbar",
+      "collapsed": false,
+      "items": [
+        {
+          "type": "doc",
+          "id": "version-v6/api/searchbar"
+        }
+      ],
+      "collapsible": true
+    },
+    {
+      "type": "category",
+      "label": "Segment",
+      "collapsed": false,
+      "items": [
+        {
+          "type": "doc",
+          "id": "version-v6/api/segment"
+        },
+        {
+          "type": "doc",
+          "id": "version-v6/api/segment-button"
+        }
+      ],
+      "collapsible": true
+    },
+    {
+      "type": "category",
+      "label": "Select",
+      "collapsed": false,
+      "items": [
+        {
+          "type": "doc",
+          "id": "version-v6/api/select"
+        },
+        {
+          "type": "doc",
+          "id": "version-v6/api/select-option"
+        }
+      ],
+      "collapsible": true
+    },
+    {
+      "type": "category",
+      "label": "Slides",
+      "collapsed": false,
+      "items": [
+        {
+          "type": "doc",
+          "id": "version-v6/api/slides"
+        },
+        {
+          "type": "doc",
+          "id": "version-v6/api/slide"
+        }
+      ],
+      "collapsible": true
+    },
+    {
+      "type": "category",
+      "label": "Tabs",
+      "collapsed": false,
+      "items": [
+        {
+          "type": "doc",
+          "id": "version-v6/api/tabs"
+        },
+        {
+          "type": "doc",
+          "id": "version-v6/api/tab"
+        },
+        {
+          "type": "doc",
+          "id": "version-v6/api/tab-bar"
+        },
+        {
+          "type": "doc",
+          "id": "version-v6/api/tab-button"
+        }
+      ],
+      "collapsible": true
+    },
+    {
+      "type": "category",
+      "label": "Toast",
+      "collapsed": false,
+      "items": [
+        {
+          "type": "doc",
+          "id": "version-v6/api/toast"
+        }
+      ],
+      "collapsible": true
+    },
+    {
+      "type": "category",
+      "label": "Toggle",
+      "collapsed": false,
+      "items": [
+        {
+          "type": "doc",
+          "id": "version-v6/api/toggle"
+        }
+      ],
+      "collapsible": true
+    },
+    {
+      "type": "category",
+      "label": "Toolbar",
+      "collapsed": false,
+      "items": [
+        {
+          "type": "doc",
+          "id": "version-v6/api/toolbar"
+        },
+        {
+          "type": "doc",
+          "id": "version-v6/api/header"
+        },
+        {
+          "type": "doc",
+          "id": "version-v6/api/footer"
+        },
+        {
+          "type": "doc",
+          "id": "version-v6/api/title"
+        },
+        {
+          "type": "doc",
+          "id": "version-v6/api/buttons"
+        },
+        {
+          "type": "doc",
+          "id": "version-v6/api/back-button"
+        }
+      ],
+      "collapsible": true
+    },
+    {
+      "type": "category",
+      "label": "Typography",
+      "collapsed": false,
+      "items": [
+        {
+          "type": "doc",
+          "id": "version-v6/api/text"
+        }
+      ],
+      "collapsible": true
+    },
+    {
+      "type": "category",
+      "label": "Resources",
+      "collapsed": false,
+      "items": [
+        {
+          "type": "doc",
+          "id": "version-v6/api"
+        }
+      ],
+      "collapsible": true
+    }
+  ],
+  "version-v6/cli": [
+    {
+      "type": "category",
+      "label": "CLI Documentation",
+      "collapsed": false,
+      "items": [
+        {
+          "type": "doc",
+          "id": "version-v6/cli"
+        },
+        {
+          "type": "doc",
+          "id": "version-v6/cli/configuration"
+        },
+        {
+          "type": "doc",
+          "id": "version-v6/cli/livereload"
+        },
+        {
+          "type": "doc",
+          "id": "version-v6/cli/using-a-proxy"
+        },
+        {
+          "type": "link",
+          "label": "Changelog",
+          "href": "https://github.com/ionic-team/ionic-cli/blob/develop/packages/@ionic/cli/CHANGELOG.md"
+        }
+      ],
+      "collapsible": true
+    },
+    {
+      "type": "category",
+      "label": "Command Reference",
+      "collapsed": false,
+      "items": [
+        {
+          "type": "autogenerated",
+          "dirName": "cli/commands"
+        }
+      ],
+      "collapsible": true
+    }
+  ],
+  "version-v6/native": [
+    {
+      "type": "category",
+      "label": "Getting Started",
+      "collapsed": false,
+      "items": [
+        {
+          "type": "doc",
+          "id": "version-v6/native"
+        },
+        {
+          "type": "doc",
+          "id": "version-v6/native-setup"
+        },
+        {
+          "type": "doc",
+          "id": "version-v6/native-faq"
+        }
+      ],
+      "collapsible": true
+    },
+    {
+      "type": "category",
+      "label": "Plugins",
+      "collapsed": false,
+      "items": [
+        {
+          "type": "autogenerated",
+          "dirName": "native"
+        }
+      ],
+      "collapsible": true
+    }
+  ]
+}

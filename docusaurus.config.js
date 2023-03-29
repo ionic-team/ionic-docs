@@ -24,6 +24,38 @@ module.exports = {
   organizationName: 'ionic-team',
   projectName: 'ionic-docs',
   themeConfig: {
+    metadata: [
+      { name: 'og:image', content: 'https://ionicframework.com/docs/img/meta/open-graph.png' },
+      { name: 'twitter:image', content: 'https://ionicframework.com/docs/img/meta/open-graph.png' },
+      {
+        name: 'twitter:card',
+        content: 'summary_large_image',
+      },
+      {
+        name: 'twitter:domain',
+        content: 'ionicframework.com',
+      },
+      {
+        name: 'twitter:site',
+        content: '@ionicframework',
+      },
+      {
+        name: 'twitter:creator',
+        content: 'ionicframework',
+      },
+      {
+        name: 'fb:page_id',
+        content: '1321836767955949',
+      },
+      {
+        name: 'og:type',
+        content: 'website',
+      },
+      {
+        name: 'og:site_name',
+        content: 'Ionic Framework Docs',
+      },
+    ],
     colorMode: {
       defaultMode: 'light',
     },
@@ -242,14 +274,19 @@ module.exports = {
             )}.ts`;
           }
           if ((match = docPath.match(/native\/(.*)\.md/)) != null) {
-            return `https://github.com/ionic-team/ionic-native/edit/master/src/@awesome-cordova-plugins/plugins/${match[1]}/index.ts`;
+            return `https://github.com/ionic-team/capacitor-plugins/edit/main/${match[1]}/README.md`;
           }
           return `https://github.com/ionic-team/ionic-docs/edit/main/${versionDocsDirPath}/${docPath}`;
         },
         exclude: ['README.md'],
-        lastVersion: 'current',
+        lastVersion: 'v6',
         versions: {
           current: {
+            label: 'v7 (beta)',
+            banner: 'unreleased',
+            path: 'v7',
+          },
+          v6: {
             label: 'v6',
             banner: 'none',
           },

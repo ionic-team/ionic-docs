@@ -7,29 +7,69 @@ sidebar_label: Progressive Web Apps
   <title>Create Progressive Web Apps (PWA) in React - Ionic Framework</title>
   <meta
     name="description"
-    content="Create progressive web apps in React with Ionic. Read our React PWA documentation for information on how to make React PWAs using the Ionic CLI."
+    content="Create progressive web apps in React with Ionic. Read our React PWA documentation for information on how to make React PWAs."
   />
 </head>
 
-## Making your React app a PWA
+## Making your React app a PWA with Vite
 
-The two main requirements of a PWA are a <a href="https://developers.google.com/web/fundamentals/primers/service-workers/" target="_blank">Service Worker</a> and a <a href="https://developers.google.com/web/fundamentals/web-app-manifest/" target="_blank">Web Manifest</a>. While it's possible to add both of these to an app manually, a base project from Create React App (CRA) and the Ionic CLI provides this already.
+The two main requirements of a PWA are a <a href="https://developers.google.com/web/fundamentals/primers/service-workers/" target="_blank">Service Worker</a> and a <a href="https://developers.google.com/web/fundamentals/web-app-manifest/" target="_blank">Web Application Manifest</a>. While it's possible to add both of these to an app manually, we recommend using the [Vite PWA Plugin](https://vite-pwa-org.netlify.app/) instead.
+
+To get started, install the `vite-plugin-pwa` package:
+
+```shell
+npm install -D vite-plugin-pwa
+```
+
+Next, update your `vite.config.js` or `vite.config.ts` file and add `vite-plugin-pwa`:
+
+```javascript
+import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react'
+import { VitePWA } from 'vite-plugin-pwa'
+
+export default defineConfig({
+  plugins: [
+    react(),
+    VitePWA({ registerType: 'autoUpdate' })
+  ],
+})
+```
+
+This minimal configuration allows your application to generate the Web Application Manifest and Service Worker on build.
+
+For more information on configuring the Vite PWA Plugin, see the [Vite PWA "Getting Started" Guide](https://vite-pwa-org.netlify.app/guide/).
+
+See the [Vite PWA "Deploy" Guide](https://vite-pwa-org.netlify.app/deployment/) for information on how to deploy your PWA.
+
+## Making your React app a PWA with Create React App
+
+:::note
+As of Ionic CLI v7, Ionic React starter apps ship with Vite instead of Create React App. See [Making your React app a PWA with Vite](#making-your-react-app-a-pwa-with-vite) for Vite instructions.
+:::
+
+The two main requirements of a PWA are a <a href="https://developers.google.com/web/fundamentals/primers/service-workers/" target="_blank">Service Worker</a> and a <a href="https://developers.google.com/web/fundamentals/web-app-manifest/" target="_blank">Web Application Manifest</a>. While it's possible to add both of these to an app manually, a base project from Create React App (CRA) and the Ionic CLI provides this already.
 
 In the `index.ts` for your app, there is a call to a `serviceWorker.unregister()` function. The base that CRA provides has service workers as an opt-in feature, so it must be enabled. To enable, call `serviceWorker.register()`.
 
 ```ts
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { createRoot } from 'react-dom/client';
 import App from './App';
-import * as serviceWorker from './serviceWorker';
+import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+const container = document.getElementById('root');
+const root = createRoot(container!);
+root.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>
+);
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-// serviceWorker.unregister();
-serviceWorker.register();
+// Learn more about service workers: https://cra.link/PWA
+serviceWorkerRegistration.register();
 ```
 
 Once this package has been added, run `ionic build` and the `build` directory will be ready to deploy as a PWA.
@@ -42,15 +82,15 @@ By default, react apps package comes with the Ionic logo for the app icons. Be s
 Features like Service Workers and many JavaScript APIs (such as geolocation) require the app to be hosted in a secure context. When deploying an app through a hosting service, be aware that HTTPS will be required to take full advantage of Service Workers.
 :::
 
-## Service Worker configuration
+### Service Worker configuration
 
 By default, CRA/React Scripts come with a preconfigured Service Worker setup based on [Workbox's Webpack plugin](https://developers.google.com/web/tools/workbox/modules/workbox-webpack-plugin). This utilises a cache-first strategy, meaning that your app will load from a cache, even if the network returns a newer version of the app.
 
 Because of the nature of CRA/React Scripts, the configuration for this is internal to React Scripts, meaning that it cannot be customized without ejecting from React Scripts. Currently, the Ionic CLI does not support an ejected React App, so if this action is taken, you'll need to use npm/yarn scripts instead of the Ionic CLI.
 
-## Deploying
+### Deploying
 
-### Firebase
+#### Firebase
 
 Firebase hosting provides many benefits for Progressive Web Apps, including fast response times thanks to CDNs, HTTPS enabled by default, and support for [HTTP2 push](https://firebase.googleblog.com/2016/09/http2-comes-to-firebase-hosting.html).
 

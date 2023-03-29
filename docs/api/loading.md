@@ -1,9 +1,6 @@
 ---
 title: "ion-loading"
 ---
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-
 import Props from '@site/static/auto-generated/loading/props.md';
 import Events from '@site/static/auto-generated/loading/events.md';
 import Methods from '@site/static/auto-generated/loading/methods.md';
@@ -17,7 +14,6 @@ import Slots from '@site/static/auto-generated/loading/slots.md';
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
-import APITOCInline from '@components/page/api/APITOCInline';
 
 <EncapsulationPill type="scoped" />
 
@@ -30,77 +26,17 @@ Once presented, the loading indicator will display indefinitely by default. Deve
 
 Alternatively, developers can configure the loading indicator to dismiss automatically after a specific amount of time by passing the number of milliseconds to display it in the `duration` of the loading options.
 
+### Inline (Recommended)
+
+import Inline from '@site/static/usage/v7/loading/inline/index.md';
+
+<Inline />
+
 ### Controller
 
-import Controller from '@site/static/usage/loading/controller/index.md';
+import Controller from '@site/static/usage/v7/loading/controller/index.md';
 
 <Controller />
-
-### Inline
-
-Ionic React and Ionic Vue users also have the option to use the `ion-loading` component directly in their template.
-
-<Tabs defaultValue="react" values={[{ value: 'react', label: 'React' }, { value: 'vue', label: 'Vue' }]}>
-<TabItem value="react">
-
-```tsx
-import React, { useState } from 'react';
-import { IonLoading, IonButton, IonContent } from '@ionic/react';
-
-export const LoadingExample: React.FC = () => {
-  const [showLoading, setShowLoading] = useState(false);
-
-  return (
-    <IonContent>
-      <IonButton onClick={() => setShowLoading(true)}>Show Loading</IonButton>
-      <IonLoading
-        cssClass='my-custom-class'
-        isOpen={showLoading}
-        onDidDismiss={() => setShowLoading(false)}
-        message={'Please wait...'}
-        duration={5000}
-      />
-    </IonContent>
-  );
-};
-```
-</TabItem>
-<TabItem value="vue">
-
-```html
-<template>
-  <ion-content>
-    <ion-button @click="setOpen(true)">Show Loading</ion-button>
-    <ion-loading
-      :is-open="isOpenRef"
-      cssClass="my-custom-class"
-      message="Please wait..."
-      :duration="timeout"
-      @didDismiss="setOpen(false)"
-    >
-    </ion-loading>
-  </ion-content>
-</template>
-
-<script lang="ts">
-import { IonButton, IonContent, IonLoading } from '@ionic/vue';
-import { defineComponent, ref } from 'vue';
-export default defineComponent({
-  props: {
-    timeout: { type: Number, default: 1000 },
-  },
-  components: { IonButton, IonContent, IonLoading },
-  setup() {
-    const isOpenRef = ref(false);
-    const setOpen = (state: boolean) => isOpenRef.value = state;
-    
-    return { isOpenRef, setOpen }
-  }
-});
-</script>
-```
-</TabItem>
-</Tabs>
 
 ## Customization
 
@@ -108,7 +44,7 @@ export default defineComponent({
 
 The spinner that is used can be customized using the `spinner` property. See the [spinner property documentation](#spinner) for a full list of options.
 
-import Spinners from '@site/static/usage/loading/spinners/index.md';
+import Spinners from '@site/static/usage/v7/loading/spinners/index.md';
 
 <Spinners />
 
@@ -118,7 +54,7 @@ Loading uses scoped encapsulation, which means it will automatically scope its C
 
 We recommend passing a custom class and using that to add custom styles to the host and inner elements.
 
-import Theming from '@site/static/usage/loading/theming/index.md';
+import Theming from '@site/static/usage/v7/loading/theming/index.md';
 
 <Theming />
 
@@ -126,6 +62,13 @@ import Theming from '@site/static/usage/loading/theming/index.md';
  `ion-loading` is presented at the root of your application, so we recommend placing any `ion-loading` styles in a global stylesheet.
 :::
 
+## Accessibility
+  
+Ionic automatically sets Loading's `role` to [`dialog`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/dialog_role).
+
+If the `message` property is defined for Loading, then the `aria-labelledby` attribute will be automatically set to the message element's ID. Otherwise, `aria-labelledby` will not be set, and developers must provide an `aria-label` using the `htmlAttributes` property.
+  
+All ARIA attributes can be manually overwritten by defining custom values in the `htmlAttributes` property of Loading.
 
 ## Interfaces
 

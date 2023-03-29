@@ -1,9 +1,6 @@
 ---
 title: "ion-popover"
 ---
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-
 import Props from '@site/static/auto-generated/popover/props.md';
 import Events from '@site/static/auto-generated/popover/events.md';
 import Methods from '@site/static/auto-generated/popover/methods.md';
@@ -17,7 +14,6 @@ import Slots from '@site/static/auto-generated/popover/slots.md';
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
-import APITOCInline from '@components/page/api/APITOCInline';
 
 <EncapsulationPill type="shadow" />
 
@@ -58,7 +54,7 @@ A trigger for an inline `ion-popover` is the element that will open a popover wh
  Triggers are not applicable when using the `popoverController` because the `ion-popover` is not created ahead of time.
 :::
 
-import InlineTrigger from '@site/static/usage/popover/presenting/inline-trigger/index.md';
+import InlineTrigger from '@site/static/usage/v7/popover/presenting/inline-trigger/index.md';
 
 <InlineTrigger />
 
@@ -69,7 +65,7 @@ Inline popovers can also be opened by setting the `isOpen` property to `true`. T
 `isOpen` uses a one-way data binding, meaning it will not automatically be set to `false` when the popover is dismissed. Developers should listen for the `ionPopoverDidDismiss` or `didDismiss` event and set `isOpen` to `false`. The reason for this is it prevents the internals of `ion-popover` from being tightly coupled with the state of the application. With a one way data binding, the popover only needs to concern itself with the boolean value that the reactive variable provides. With a two way data binding, the popover needs to concern itself with both the boolean value as well as the existence of the reactive variable itself. This can lead to non-deterministic behaviors and make applications harder to debug.
 
 
-import IsOpenTrigger from '@site/static/usage/popover/presenting/inline-isopen/index.md';
+import IsOpenTrigger from '@site/static/usage/v7/popover/presenting/inline-isopen/index.md';
 
 <IsOpenTrigger />
 
@@ -87,7 +83,7 @@ Instead of a controller, React has a hook called `useIonPopover` which behaves i
 
 ### Usage
 
-import ControllerExample from '@site/static/usage/popover/presenting/controller/index.md';
+import ControllerExample from '@site/static/usage/v7/popover/presenting/controller/index.md';
 
 <ControllerExample />
 
@@ -100,7 +96,7 @@ Popovers are presented at the root of your application so they overlay your enti
  If you are building an Ionic Angular app, the styles need to be added to a global stylesheet file.
 :::
 
-import Styling from '@site/static/usage/popover/customization/styling/index.md';
+import Styling from '@site/static/usage/v7/popover/customization/styling/index.md';
 
 <Styling />
 
@@ -121,7 +117,7 @@ The `alignment` property allows you to line up an edge of your popover with a co
 
 ### Side and Alignment Demo
 
-import Positioning from '@site/static/usage/popover/customization/positioning/index.md';
+import Positioning from '@site/static/usage/v7/popover/customization/positioning/index.md';
 
 <Positioning />
 
@@ -135,7 +131,7 @@ When making dropdown menus, you may want to have the width of the popover match 
 
 If you are using the `popoverController`, you must provide an event via the `event` option and Ionic Framework will use `event.target` as the reference element. See the [controller demo](#controller-popovers) for an example of this pattern.
 
-import Sizing from '@site/static/usage/popover/customization/sizing/index.md';
+import Sizing from '@site/static/usage/v7/popover/customization/sizing/index.md';
 
 <Sizing />
 
@@ -149,7 +145,7 @@ You can use the `dismissOnSelect` property to automatically close the popover wh
  Nested popovers cannot be created when using the `popoverController` because the popover is automatically added to the root of your application when the `create` method is called.
 :::
 
-import NestedPopover from '@site/static/usage/popover/nested/index.md';
+import NestedPopover from '@site/static/usage/v7/popover/nested/index.md';
 
 <NestedPopover />
 
@@ -224,6 +220,25 @@ type PositionAlign = 'start' | 'center' | 'end';
 | `ArrowLeft`        | When used in a child popover, closes the popover and returns focus to the parent popover. |
 | `Space`, `Enter`, and `ArrowRight`       | When focusing a trigger element, opens the associated popover. |
 
+## Performance
+
+### Mounting Inner Contents
+
+The content of an inline `ion-popover` is unmounted when closed. If this content is expensive to render, developers can use the `keepContentsMounted` property to mount the content as soon as the popover is mounted. This can help optimize the responsiveness of your application as the inner contents will have already been mounted when the popover opens.
+
+import Mount from '@site/static/usage/v7/popover/performance/mount/index.md';
+
+<Mount />
+
+Developers should keep the following in mind when using `keepContentsMounted`:
+
+- This feature should be used as a last resort in order to deal with existing performance problems. Try to identify and resolve performance bottlenecks before using this feature. Additionally, do not use this to anticipate performance problems.
+
+- This feature is only needed when using a JavaScript Framework. Developers not using a framework can  pass the contents to be rendered into the popover, and the contents will be rendered automatically.
+
+- This feature only works with inline popovers. Popovers created with the `popoverController` are not created ahead of time, so the inner contents are not created either.
+
+- Any JavaScript Framework lifecycle hooks on the inner component will run as soon as the popover is mounted, not when the popover is presented.
 
 ## Properties
 <Props />

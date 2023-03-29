@@ -322,6 +322,10 @@
       "title": "Angular NG Build Configuration to Build Ionic Apps | ionic build",
       "description": "Build web assets and prepare your Ionic app for any platform targets. Ionic build uses the Angular CLI—see the ng build docs for how to use the configuration."
     },
+    "capacitor-build": {
+      "title": "Ionic Capacitor Build for Apps - Documentation",
+      "description": "Build an Ionic project for a given platform. Once Ionic Capacitor Build copies web assets into the native platform, you can build your app using the native IDE."
+    },
     "capacitor-copy": {
       "title": "Ionic Capacitor Copy - Options to Copy and Compile Web Assets",
       "description": "Perform an Ionic build, which compiles web assets and copies web assets to Capacitor native platform(s), with Ionic Capacitor Copy. Read to learn about options."
@@ -599,6 +603,10 @@
     "file-chooser": {
       "title": "File Chooser | Opens File Picker on Android and Returns File URI",
       "description": "File Chooser opens the file picker on Android for the user to select a file and returns a file URI. Read for more about File Chooser installation and usage."
+    },
+    "file-opener": {
+      "title": "File Opener - Plugin for Cordova | Ionic Documentation",
+      "description": "File opener2 plugin for Cordova opens files on your device file system with its default application. Learn more about installation and usage."
     },
     "file-transfer": {
       "title": "File Transfer | Cordova Docs File Transfer Download Plugin",

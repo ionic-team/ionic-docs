@@ -1,9 +1,6 @@
 ---
 title: "ion-select"
 ---
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-
 import Props from '@site/static/auto-generated/select/props.md';
 import Events from '@site/static/auto-generated/select/events.md';
 import Methods from '@site/static/auto-generated/select/methods.md';
@@ -17,7 +14,6 @@ import Slots from '@site/static/auto-generated/select/slots.md';
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
-import APITOCInline from '@components/page/api/APITOCInline';
 
 <EncapsulationPill type="shadow" />
 
@@ -32,7 +28,7 @@ If `value` is set on the `<ion-select>`, the selected option will be chosen base
 
 By default, the select allows the user to select only one option. The alert interface presents users with a radio button styled list of options. The select component's value receives the value of the selected option's value.
 
-import SingleSelectionExample from '@site/static/usage/select/basic/single-selection/index.md';
+import SingleSelectionExample from '@site/static/usage/v7/select/basic/single-selection/index.md';
 
 <SingleSelectionExample />
 
@@ -42,13 +38,13 @@ By default, select uses [ion-alert](alert.md) to open up the overlay of options 
 
 ### Action Sheet
 
-import ActionSheetExample from '@site/static/usage/select/interfaces/action-sheet/index.md';
+import ActionSheetExample from '@site/static/usage/v7/select/interfaces/action-sheet/index.md';
 
 <ActionSheetExample />
 
 ### Popover
 
-import PopoverExample from '@site/static/usage/select/interfaces/popover/index.md';
+import PopoverExample from '@site/static/usage/v7/select/interfaces/popover/index.md';
 
 <PopoverExample />
 
@@ -58,15 +54,15 @@ By adding the `multiple` attribute to select, users are able to select multiple 
 
 Note: the `action-sheet` and `popover` interfaces will not work with multiple selection.
 
-import MulipleSelectionExample from '@site/static/usage/select/basic/multiple-selection/index.md';
+import MultipleSelectionExample from '@site/static/usage/v7/select/basic/multiple-selection/index.md';
 
-<MulipleSelectionExample />
+<MultipleSelectionExample />
 
 ## Responding to Interaction
 
 The main ways of handling user interaction with the select are the `ionChange`, `ionDismiss`, and `ionCancel` events. See [Events](#events) for more details on these and other events that select fires.
 
-import RespondingToInteractionExample from '@site/static/usage/select/basic/responding-to-interaction/index.md';
+import RespondingToInteractionExample from '@site/static/usage/v7/select/basic/responding-to-interaction/index.md';
 
 <RespondingToInteractionExample />
 
@@ -78,15 +74,42 @@ By default, the select uses object equality (`===`) to determine if an option is
 
 ### Using compareWith
 
-import UsingCompareWithExample from '@site/static/usage/select/objects-as-values/using-comparewith/index.md';
+import UsingCompareWithExample from '@site/static/usage/v7/select/objects-as-values/using-comparewith/index.md';
 
 <UsingCompareWithExample />
 
 ### Object Values and Multiple Selection
 
-import ObjectValuesAndMultipleSelectionExample from '@site/static/usage/select/objects-as-values/multiple-selection/index.md';
+import ObjectValuesAndMultipleSelectionExample from '@site/static/usage/v7/select/objects-as-values/multiple-selection/index.md';
 
 <ObjectValuesAndMultipleSelectionExample />
+  
+
+## Label Placement
+
+Labels will take up the width of their content by default. Developers can use the `labelPlacement` property to control how the label is placed relative to the control.
+
+import LabelPlacement from '@site/static/usage/v7/select/label-placement/index.md';
+
+<LabelPlacement />
+
+## Justification
+  
+Developers can use the `justify` property to control how the label and control are packed on a line.
+
+import JustifyExample from '@site/static/usage/v7/select/justify/index.md';
+
+<JustifyExample />
+
+## Filled Selects
+
+Material Design offers filled styles for a select. The `fill` property on the select can be set to either `"solid"` or `"outline"`.
+
+Since the `fill` styles visually defines the select container, selects that use `fill` should not be used in `ion-item`.
+
+import FillExample from '@site/static/usage/v7/select/fill/index.md';
+
+<FillExample />
 
 ## Select Buttons
 
@@ -94,7 +117,7 @@ The alert supports two buttons: `Cancel` and `OK`. Each button's text can be cus
 
 The `action-sheet` and `popover` interfaces do not have an `OK` button, clicking on any of the options will automatically close the overlay and select that value. The `popover` interface does not have a `Cancel` button, clicking on the backdrop will close the overlay.
 
-import ButtonTextExample from '@site/static/usage/select/customization/button-text/index.md';
+import ButtonTextExample from '@site/static/usage/v7/select/customization/button-text/index.md';
 
 <ButtonTextExample />
 
@@ -106,7 +129,7 @@ See the [ion-alert docs](alert.md), [ion-action-sheet docs](action-sheet.md), an
 
 Note: `interfaceOptions` will not override `inputs` or `buttons` with the `alert` interface.
 
-import InterfaceOptionsExample from '@site/static/usage/select/customization/interface-options/index.md';
+import InterfaceOptionsExample from '@site/static/usage/v7/select/customization/interface-options/index.md';
 
 <InterfaceOptionsExample />
 
@@ -120,7 +143,7 @@ As mentioned, the `ion-select` element consists only of the value(s), or placeho
 
 Alternatively, depending on the [browser support](https://caniuse.com/#feat=mdn-css_selectors_part) needed, CSS shadow parts can be used to style the select. Notice that by using `::part`, any CSS property on the element can be targeted.
 
-import StylingSelectExample from '@site/static/usage/select/customization/styling-select/index.md';
+import StylingSelectExample from '@site/static/usage/v7/select/customization/styling-select/index.md';
 
 <StylingSelectExample />
 
@@ -133,6 +156,14 @@ Customizing the interface dialog should be done by following the Customization s
 - [Popover Customization](popover.md#customization)
 
 However, the Select Option does set a class for easier styling and allows for the ability to pass a class to the overlay option, see the [Select Options documentation](select-option.md) for usage examples of customizing options.
+
+## Typeahead Component
+
+Typeahead or autocomplete functionality can be built using existing Ionic components. We recommend using an `ion-modal` to make the best use of the available screen space.
+
+import TypeaheadExample from '@site/static/usage/v7/select/typeahead/index.md';
+
+<TypeaheadExample />
 
 ## Interfaces
 
@@ -154,6 +185,28 @@ interface SelectCustomEvent<T = any> extends CustomEvent {
   target: HTMLIonSelectElement;
 }
 ```
+
+## Migrating from Legacy Select Syntax
+
+A simpler select syntax was introduced in Ionic 7.0. This new syntax reduces the boilerplate required to setup an select, resolves accessibility issues, and improves the developer experience.
+
+Developers can perform this migration one select at a time. While developers can continue using the legacy syntax, we recommend migrating as soon as possible.
+
+
+### Using the Modern Syntax
+
+Using the modern syntax involves two steps:
+
+1. Remove `ion-label` and use the `label` property on `ion-select` instead. The placement of the label can be configured using the `labelPlacement` property on `ion-select`.
+2. Move any usage of `fill` and `shape` from `ion-item` on to `ion-select`.
+
+import Migration from '@site/static/usage/v7/select/migration/index.md';
+
+<Migration />
+
+### Using the Legacy Syntax
+
+Ionic uses heuristics to detect if an app is using the modern select syntax. In some instances, it may be preferable to continue using the legacy syntax. Developers can set the `legacy` property on `ion-select` to `true` to force that instance of the input to use the legacy syntax.
 
 ## Properties
 <Props />

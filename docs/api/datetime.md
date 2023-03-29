@@ -1,9 +1,6 @@
 ---
 title: "ion-datetime"
 ---
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-
 import Props from '@site/static/auto-generated/datetime/props.md';
 import Events from '@site/static/auto-generated/datetime/events.md';
 import Methods from '@site/static/auto-generated/datetime/methods.md';
@@ -11,30 +8,35 @@ import Parts from '@site/static/auto-generated/datetime/parts.md';
 import CustomProps from '@site/static/auto-generated/datetime/custom-props.md';
 import Slots from '@site/static/auto-generated/datetime/slots.md';
 
-import Basic from '@site/static/usage/datetime/basic/index.md';
+import Basic from '@site/static/usage/v7/datetime/basic/index.md';
 
-import MaxMin from '@site/static/usage/datetime/date-constraints/max-min/index.md';
-import Values from '@site/static/usage/datetime/date-constraints/values/index.md';
-import Advanced from '@site/static/usage/datetime/date-constraints/advanced/index.md';
+import MaxMin from '@site/static/usage/v7/datetime/date-constraints/max-min/index.md';
+import Values from '@site/static/usage/v7/datetime/date-constraints/values/index.md';
+import Advanced from '@site/static/usage/v7/datetime/date-constraints/advanced/index.md';
 
-import CustomLocale from '@site/static/usage/datetime/localization/custom-locale/index.md';
-import HourCycle from '@site/static/usage/datetime/localization/hour-cycle/index.md';
-import FirstDayOfWeek from '@site/static/usage/datetime/localization/first-day-of-week/index.md';
-import LocaleExtensionTags from '@site/static/usage/datetime/localization/locale-extension-tags/index.md';
-import TimeLabel from '@site/static/usage/datetime/localization/time-label/index.md';
+import CustomLocale from '@site/static/usage/v7/datetime/localization/custom-locale/index.md';
+import HourCycle from '@site/static/usage/v7/datetime/localization/hour-cycle/index.md';
+import FirstDayOfWeek from '@site/static/usage/v7/datetime/localization/first-day-of-week/index.md';
+import LocaleExtensionTags from '@site/static/usage/v7/datetime/localization/locale-extension-tags/index.md';
+import TimeLabel from '@site/static/usage/v7/datetime/localization/time-label/index.md';
 
-import MonthAndYear from '@site/static/usage/datetime/presentation/month-and-year/index.md';
-import Time from '@site/static/usage/datetime/presentation/time/index.md';
-import Date from '@site/static/usage/datetime/presentation/date/index.md';
+import MonthAndYear from '@site/static/usage/v7/datetime/presentation/month-and-year/index.md';
+import Time from '@site/static/usage/v7/datetime/presentation/time/index.md';
+import Date from '@site/static/usage/v7/datetime/presentation/date/index.md';
 
-import ShowingDefaultTitle from '@site/static/usage/datetime/title/showing-default-title/index.md';
-import CustomizingTitle from '@site/static/usage/datetime/title/customizing-title/index.md';
+import ShowingDefaultTitle from '@site/static/usage/v7/datetime/title/showing-default-title/index.md';
+import CustomizingTitle from '@site/static/usage/v7/datetime/title/customizing-title/index.md';
 
-import ShowingConfirmationButtons from '@site/static/usage/datetime/buttons/showing-confirmation-buttons/index.md';
-import CustomizingButtons from '@site/static/usage/datetime/buttons/customizing-buttons/index.md';
-import CustomizingButtonTexts from '@site/static/usage/datetime/buttons/customizing-button-texts/index.md';
+import ShowingConfirmationButtons from '@site/static/usage/v7/datetime/buttons/showing-confirmation-buttons/index.md';
+import CustomizingButtons from '@site/static/usage/v7/datetime/buttons/customizing-buttons/index.md';
+import CustomizingButtonTexts from '@site/static/usage/v7/datetime/buttons/customizing-button-texts/index.md';
 
-import Theming from '@site/static/usage/datetime/theming/index.md';
+import HighlightedDatesArray from '@site/static/usage/v7/datetime/highlightedDates/array/index.md';
+import HighlightedDatesCallback from '@site/static/usage/v7/datetime/highlightedDates/callback/index.md';
+
+import MultipleDateSelection from '@site/static/usage/v7/datetime/multiple/index.md';
+
+import Theming from '@site/static/usage/v7/datetime/theming/index.md';
 
 <head>
   <title>ion-datetime: Ionic API Input for Datetime Format Picker</title>
@@ -42,7 +44,6 @@ import Theming from '@site/static/usage/datetime/theming/index.md';
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
-import APITOCInline from '@components/page/api/APITOCInline';
 
 <EncapsulationPill type="shadow" />
 
@@ -85,12 +86,16 @@ always in the 24-hour format, so `00` is `12am` on a 12-hour clock, `13` means
 `1pm`, and `23` means `11pm`.
 
 :::note
-While seconds and milliseconds can be specified using the ISO 8601 datetime format, `ion-datetime` does not provide an interface for second and millisecond selection. Any second or millisecond values provided will be ignored.
+While seconds, milliseconds, and time zone can be specified using the ISO 8601 datetime format, `ion-datetime` does not provide an interface for second, millisecond, and time zone selection. Any second, millisecond, or time zone values provided will be ignored.
 :::
 
 ## Basic Usage
 
 <Basic />
+
+## Usage with Datetime Button
+
+If you need to present a datetime in an overlay such as a modal or a popover, we recommend using [ion-datetime-button](./datetime-button). `ion-datetime-button` should be used when space is constrained. This component displays buttons which show the current date and time values. When the buttons are tapped, the date or time pickers open in the overlay.
 
 ## Date Constraints
 
@@ -207,11 +212,43 @@ This example shows a datetime with the `time` configuration.
 
 ### Date Selection
 
-Time selection is available by passing `date-time`, `time-date`, or `date` to the `presentation` property.
+Date selection is available by passing `date-time`, `time-date`, or `date` to the `presentation` property.
 
 This example shows a datetime with the `date` configuration.
 
 <Date />
+
+### Wheel Style Pickers
+
+By default, Ionic will prefer to show a grid style layout when using `presentation`. However, it is possible to show a wheel style using the `preferWheel` property. When `preferWheel` is `true`, Ionic will prefer to show the wheel style layout when possible.
+
+Certain `presentation` options have both grid and wheel styles that developers can choose from with the `preferWheel` property. Other `presentation` values only have a wheel style and will never show a grid style. The table below shows which `presentation` values have grid or wheel styles.
+
+| `presentation` | Has Grid Style? | Has Wheel Style? |
+| -------------- | --------------- | ---------------- |
+| `date`         | Yes             | Yes              |
+| `date-time`    | Yes             | Yes              |
+| `month`        | No              | Yes              |
+| `month-year`   | No              | Yes              |
+| `time`         | No              | Yes              |
+| `time-date`    | Yes             | Yes              |
+| `year`         | No              | Yes              |
+
+The example below shows the wheel picker with `presentation="date-time"`.
+
+import Wheel from '@site/static/usage/v7/datetime/presentation/wheel/index.md';
+
+<Wheel />
+
+## Multiple Date Selection
+
+If the `multiple` property is set to `true`, multiple dates can be selected from the calendar picker. Clicking a selected date will deselect it.
+
+:::note
+This property is only supported when using `presentation="date"` and `preferWheel="false"`.
+:::
+
+<MultipleDateSelection />
 
 ## Titles
 
@@ -231,7 +268,7 @@ By default, `ionChange` is emitted with the new datetime value whenever a new da
 
 ### Showing Confirmation Buttons
 
-The default Done and Cancel buttons are already preconfigured to call the `done` and `cancel` methods, respectively.
+The default Done and Cancel buttons are already preconfigured to call the [`confirm`](#confirm) and [`cancel`](#cancel) methods, respectively.
 
 <ShowingConfirmationButtons />
 
@@ -248,6 +285,30 @@ Developers can provide their own buttons for advanced custom behavior.
 `ion-datetime` has `confirm`, `cancel`, and `reset` methods that developers can call when clicking on custom buttons. The `reset` method also allows developers to provide a date to reset the datetime to.
 
 <CustomizingButtons />
+
+## Highlighting Specific Dates
+
+Using the `highlightedDates` property, developers can style particular dates with custom text or background colors. This property can be defined as either an array of dates and their colors, or a callback that receives an ISO string and returns the colors to use.
+
+When specifying colors, any valid CSS color format can be used. This includes hex codes, rgba, [color variables](../theming/colors), etc.
+
+To maintain a consistent user experience, the style of selected date(s) will always override custom highlights.
+
+:::note
+This property is only supported when `preferWheel="false"`, and using a `presentation` of either `"date"`, `"date-time"`, or `"time-date"`.
+:::
+
+### Using Array
+
+An array is better when the highlights apply to fixed dates, such as due dates.
+
+<HighlightedDatesArray />
+
+### Using Callback
+
+A callback is better when the highlighted dates are recurring, such as birthdays or recurring meetings.
+
+<HighlightedDatesCallback />
 
 ## Theming
 

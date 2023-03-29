@@ -2,7 +2,6 @@
 title: Introduction to Ionic
 sidebar_label: Overview
 slug: /
-image: /img/meta/open-graph.png
 hide_table_of_contents: true
 demoUrl: https://docs-demo.ionic.io/
 demoSourceUrl: https://github.com/ionic-team/docs-demo
@@ -12,10 +11,10 @@ import DocsCard from '@components/global/DocsCard';
 import DocsCards from '@components/global/DocsCards';
 
 <head>
-  <title>Open-Source UI Toolkit to Create Your Own Mobile or Desktop Apps</title>
+  <title>Open-Source UI Toolkit to Create Your Own Mobile Apps</title>
   <meta
     name="description"
-    content="Ionic Framework is an open-source UI toolkit to create your own mobile and desktop apps using web technologies with integrations for popular frameworks."
+    content="Ionic Framework is an open-source UI toolkit to create your own mobile apps using web technologies with integrations for popular frameworks."
   />
   <link rel="canonical" href="https://ionicframework.com/docs" />
   <link rel="alternate" href="https://ionicframework.com/docs" hreflang="x-default" />
@@ -23,7 +22,7 @@ import DocsCards from '@components/global/DocsCards';
   <meta property="og:url" content="https://ionicframework.com/docs" />
 </head>
 
-Ionic is an open source UI toolkit for building performant, high-quality mobile and desktop apps using web technologies — HTML, CSS, and JavaScript — with integrations for popular frameworks like [Angular](angular/overview.md), [React](react.md), and [Vue](vue/overview.md).
+Ionic is an open source UI toolkit for building performant, high-quality mobile apps using web technologies — HTML, CSS, and JavaScript — with integrations for popular frameworks like [Angular](angular/overview.md), [React](react.md), and [Vue](vue/overview.md).
 
 Get started building by [installing Ionic](intro/cli.md) or following our [First App Tutorial](intro/next.md#build-your-first-app) to learn the main concepts.
 
@@ -59,7 +58,7 @@ Get started building by [installing Ionic](intro/cli.md) or following our [First
 
 ## Overview
 
-Ionic focuses on the frontend UX and UI interaction of an app — UI controls, interactions, gestures, animations. It's easy to learn, and integrates with other libraries or frameworks, such as [Angular](angular/overview.md), [React](react/overview.md), or [Vue](vue/overview.md). Alternatively, it can be used standalone without any frontend framework using a simple [script include](intro/cdn.md). If you’d like to learn more about Ionic before diving in, we <a href="https://youtu.be/p3AN3igqiRc" target="_blank">created a video</a> to walk you through the basics.
+Ionic focuses on the frontend UX and UI interaction of an app — UI controls, interactions, gestures, animations. It's easy to learn, and integrates with other libraries or frameworks, such as [Angular](angular/overview.md), [React](react.md), or [Vue](vue/overview.md). Alternatively, it can be used standalone without any frontend framework using a simple [script include](intro/cdn.md). If you’d like to learn more about Ionic before diving in, we <a href="https://youtu.be/p3AN3igqiRc" target="_blank">created a video</a> to walk you through the basics.
 
 ### One codebase, running everywhere
 
@@ -81,7 +80,7 @@ Ionic emulates native app UI guidelines and uses native SDKs, bringing the UI st
 
 ### Cross-platform
 
-Build and deploy apps that work across multiple platforms, such as native iOS, Android, desktop, and the web as a Progressive Web App - all with one code base. Write once, run anywhere.
+Build and deploy apps that work across multiple platforms, such as native iOS, Android, and the web as a Progressive Web App - all with one code base. Write once, run anywhere.
 
 ### Web Standards-based
 
@@ -110,11 +109,11 @@ Angular has always been at the center of what makes Ionic great. While the core 
 
 ### React
 
-Ionic now has official support for the popular React library. Ionic React lets React developers use their existing web skills to build apps that target iOS, Android, the web, and the desktop. With `@ionic/react`, you can use all the core Ionic components, but in a way that feels like using native React components.
+Ionic now has official support for the popular React library. Ionic React lets React developers use their existing web skills to build apps that target iOS, Android, and the web. With `@ionic/react`, you can use all the core Ionic components, but in a way that feels like using native React components.
 
 ### Vue
 
-Ionic now has official support for the popular Vue 3 library. Ionic Vue lets Vue developers use their existing web skills to build apps that target iOS, Android, the web, and the desktop. With `@ionic/vue`, you can use all the core Ionic components, but in a way that feels like using native Vue components.
+Ionic now has official support for the popular Vue 3 library. Ionic Vue lets Vue developers use their existing web skills to build apps that target iOS, Android, and the web. With `@ionic/vue`, you can use all the core Ionic components, but in a way that feels like using native Vue components.
 
 ### Future Support
 

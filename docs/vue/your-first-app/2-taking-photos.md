@@ -4,7 +4,7 @@ sidebar_label: Taking Photos
 
 # Taking Photos with the Camera
 
-Now for the fun part - adding the ability to take photos with the device’s camera using the Capacitor [Camera API](https://capacitor.ionicframework.com/docs/apis/camera). We’ll begin with building it for the web, then make some small tweaks to make it work on mobile (iOS and Android).
+Now for the fun part - adding the ability to take photos with the device’s camera using the Capacitor [Camera API](https://capacitorjs.com/docs/apis/camera). We’ll begin with building it for the web, then make some small tweaks to make it work on mobile (iOS and Android).
 
 To do so, we will create a standalone composition function paired with Vue's Composition API to manage the photos for the gallery.
 
@@ -16,17 +16,17 @@ Create a new file at `src/composables/usePhotoGallery.ts` and open it up.
 
 We will start by importing the various utilities we will use from Vue core and Capacitor:
 
-```tsx
+```typescript
 import { ref, onMounted, watch } from 'vue';
 import { Camera, CameraResultType, CameraSource, Photo } from '@capacitor/camera';
 import { Filesystem, Directory } from '@capacitor/filesystem';
-import { Storage } from '@capacitor/storage';
+import { Preferences } from '@capacitor/preferences';
 ```
 
 Next, create a function named usePhotoGallery:
 
-```tsx
-export function usePhotoGallery() {
+```typescript
+export const usePhotoGallery = () => {
   const takePhoto = async () => {
     const photo = await Camera.getPhoto({
       resultType: CameraResultType.Uri,
@@ -45,40 +45,38 @@ Our `usePhotoGallery` function exposes a method called takePhoto, which in turn 
 
 Notice the magic here: there's no platform-specific code (web, iOS, or Android)! The Capacitor Camera plugin abstracts that away for us, leaving just one method call - `getPhoto()` - that will open up the device's camera and allow us to take photos.
 
-The last step we need to take is to use the new function from the Tab2 page. Go back to Tab2.vue and import it:
+The last step we need to take is to use the new function from the Tab2 page. Go back to `Tab2Page.vue` and import it:
 
 ```tsx
 import { usePhotoGallery } from '@/composables/usePhotoGallery';
 ```
 
-Next, within the default export, add a setup method, part of the [Composition API](https://v3.vuejs.org/guide/composition-api-setup.html#setup). Destructure the `takePhoto` function from `usePhotoGallery`, then return it:
+Destructure the `takePhoto` function from `usePhotoGallery` so we can use it in our `template`:
 
 ```tsx
-<script lang="ts">
+<script setup lang="ts">
+import {
+  IonContent,
+  IonCol,
+  IonFab,
+  IonFabButton,
+  IonGrid,
+  IonPage,
+  IonHeader,
+  IonIcon,
+  IonImg,
+  IonRow,
+  IonTitle,
+  IonToolbar,
+} from '@ionic/vue';
 import { camera, trash, close } from 'ionicons/icons';
-import { IonPage, IonHeader, IonFab, IonFabButton, IonIcon,
-         IonToolbar, IonTitle, IonContent, IonGrid, IonRow,
-         IonCol, IonImg } from '@ionic/vue';
 import { usePhotoGallery } from '@/composables/usePhotoGallery';
 
-export default  {
-  name: 'Tab2',
-  components: { IonPage, IonHeader, IonFab, IonFabButton, IonIcon,
-         IonToolbar, IonTitle, IonContent, IonGrid, IonRow,
-         IonCol, IonImg },
-  setup() {
-    const { takePhoto } = usePhotoGallery();
-
-    return {
-      takePhoto,
-      camera, trash, close
-    }
-  }
-}
+const { takePhoto } = usePhotoGallery();
 </script>
 ```
 
-Save the file, and if you’re not already, restart the development server in your browser by running `ionic serve`. On the Photo Gallery tab, click the Camera button. If your computer has a webcam of any sort, a modal window appears. Take a selfie!
+Save the file. Start the development server via `ionic serve` if it is not already running. In your browser, on the Photo Gallery tab, click the Camera button. If your computer has a webcam of any sort, a modal window appears. Take a selfie!
 
 ![Camera API on the web](/img/guides/first-app-cap-ng/camera-web.png)
 
@@ -97,13 +95,13 @@ export interface UserPhoto {
 }
 ```
 
-Back at the top of the function (right after referencing the Capacitor Camera plugin), define an array so we can store each photo captured with the Camera. Make it a reactive variable using Vue's [ref function](https://v3.vuejs.org/guide/composition-api-introduction.html#reactive-variables-with-ref).
+At the top of the `usePhotoGallery` function, define an array so we can store each photo captured with the Camera. Make it a reactive variable using Vue's [ref function](https://v3.vuejs.org/guide/composition-api-introduction.html#reactive-variables-with-ref).
 
 ```tsx
 const photos = ref<UserPhoto[]>([]);
 ```
 
-When the camera is done taking a picture, the resulting `Photo` returned from Capacitor will be added to the `photos` array. Update the `takePhoto` method, adding this code after the `Camera.getPhoto` line:
+When the camera is done taking a picture, the resulting `Photo` returned from Capacitor will be added to the `photos` array. Update the `takePhoto` function, adding this code after the `Camera.getPhoto` line:
 
 ```tsx
 const fileName = new Date().getTime() + '.jpeg';
@@ -134,18 +132,6 @@ Then, get access to the photos array:
 
 ```tsx
 const { photos, takePhoto } = usePhotoGallery();
-```
-
-Last, add `photos` to `setup()` return:
-
-```tsx
-return {
-  photos,
-  takePhoto,
-  camera,
-  trash,
-  close,
-};
 ```
 
 With the photo(s) stored into the main array we can now display the images on the screen. Add a [Grid component](https://ionicframework.com/docs/api/grid) so that each photo will display nicely as they are added to the gallery, and loop through each photo in the Photos array, adding an Image component (`<ion-img>`) for each. Point the `src` (source) to the photo's path:

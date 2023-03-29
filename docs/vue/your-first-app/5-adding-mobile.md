@@ -6,10 +6,11 @@ Let’s start with making some small code changes - then our app will "just work
 
 ## Platform-specific Logic
 
-First, we’ll update the photo saving functionality to support mobile. We'll run slightly different code depending on the platform - mobile or web. Import the `Platform` API from Ionic Vue:
+First, we’ll update the photo saving functionality to support mobile. We'll run slightly different code depending on the platform - mobile or web. Import the `Platform` API from Ionic Vue and `Capacitor` from Capacitor's `core` package:
 
 ```tsx
 import { isPlatform } from '@ionic/vue';
+import { Capacitor } from '@capacitor/core';
 ```
 
 In the `savePicture` function, check which platform the app is running on. If it’s "hybrid" (Capacitor, the native runtime), then read the photo file into base64 format using the `readFile` method. Also, return the complete file path to the photo using the Filesystem API. When setting the `webviewPath`, use the special `Capacitor.convertFileSrc` method ([details here](https://capacitorjs.com/docs/basics/utilities#convertfilesrc)). Otherwise, use the same logic as before when running the app on the web.
@@ -57,12 +58,12 @@ Next, add a new bit of logic in the `loadSaved` function. On mobile, we can dire
 
 ```tsx
 const loadSaved = async () => {
-  const photoList = await Storage.get({ key: PHOTO_STORAGE });
-  const photosInStorage = photoList.value ? JSON.parse(photoList.value) : [];
+  const photoList = await Preferences.get({ key: PHOTO_STORAGE });
+  const photosInPreferences = photoList.value ? JSON.parse(photoList.value) : [];
 
   // If running on the web...
   if (!isPlatform('hybrid')) {
-    for (const photo of photosInStorage) {
+    for (const photo of photosInPreferences) {
       const file = await Filesystem.readFile({
         path: photo.filepath,
         directory: Directory.Data,
@@ -72,7 +73,7 @@ const loadSaved = async () => {
     }
   }
 
-  photos.value = photosInStorage;
+  photos.value = photosInPreferences;
 };
 ```
 

@@ -29,7 +29,7 @@
         {
           "name": "configuration",
           "type": "string",
-          "summary": "Specify the configuration to use.",
+          "summary": "Specify the configuration to use",
           "groups": ["advanced", "cordova"],
           "aliases": ["c"],
           "spec": {
@@ -102,7 +102,7 @@
       "name": "ionic capacitor build",
       "namespace": ["ionic", "capacitor"],
       "summary": "Build an Ionic project for a given platform",
-      "description": "`ionic capacitor build` will do the following:\n- Perform `ionic build`\n- Copy web assets into the specified native platform\n- Open the IDE for your native project (Xcode for iOS, Android Studio for Android)\n\nOnce the web assets and configuration are copied into your native project, you can build your app using the native IDE. Unfortunately, programmatically building the native project is not yet supported.\n\nTo configure your native project, see the common configuration [docs](https://capacitor.ionicframework.com/docs/basics/configuring-your-app) as well as low-level configuration for [iOS](https://capacitor.ionicframework.com/docs/ios/configuration) and [Android](https://capacitor.ionicframework.com/docs/android/configuration).",
+      "description": "`ionic capacitor build` will do the following:\n- Perform `ionic build`\n- Copy web assets into the specified native platform\n- Open the IDE for your native project (Xcode for iOS, Android Studio for Android)\n\nOnce the web assets and configuration are copied into your native project, you can build your app using the native IDE. Unfortunately, programmatically building the native project is not yet supported.\n\nTo configure your native project, see the common configuration [docs](https://capacitorjs.com/docs/basics/configuring-your-app) as well as low-level configuration for [iOS](https://capacitorjs.com/docs/ios/configuration) and [Android](https://capacitorjs.com/docs/android/configuration).",
       "footnotes": [],
       "groups": ["beta"],
       "exampleCommands": ["ionic capacitor build ", "ionic capacitor build android", "ionic capacitor build ios"],
@@ -150,7 +150,7 @@
         {
           "name": "configuration",
           "type": "string",
-          "summary": "Specify the configuration to use.",
+          "summary": "Specify the configuration to use",
           "groups": ["advanced", "cordova"],
           "aliases": ["c"],
           "spec": {
@@ -221,7 +221,7 @@
         {
           "name": "configuration",
           "type": "string",
-          "summary": "Specify the configuration to use.",
+          "summary": "Specify the configuration to use",
           "groups": ["advanced", "cordova"],
           "aliases": ["c"],
           "spec": {
@@ -409,7 +409,7 @@
         {
           "name": "configuration",
           "type": "string",
-          "summary": "Specify the configuration to use.",
+          "summary": "Specify the configuration to use",
           "groups": ["advanced", "cordova"],
           "aliases": ["c"],
           "spec": {
@@ -480,7 +480,7 @@
         {
           "name": "configuration",
           "type": "string",
-          "summary": "Specify the configuration to use.",
+          "summary": "Specify the configuration to use",
           "groups": ["advanced", "cordova"],
           "aliases": ["c"],
           "spec": {
@@ -815,7 +815,7 @@
         {
           "name": "configuration",
           "type": "string",
-          "summary": "Specify the configuration to use.",
+          "summary": "Specify the configuration to use",
           "groups": ["advanced", "cordova"],
           "aliases": ["c"],
           "spec": {
@@ -1068,7 +1068,7 @@
         {
           "name": "configuration",
           "type": "string",
-          "summary": "Specify the configuration to use.",
+          "summary": "Specify the configuration to use",
           "groups": ["advanced", "cordova"],
           "aliases": ["c"],
           "spec": {
@@ -1311,7 +1311,7 @@
         {
           "name": "configuration",
           "type": "string",
-          "summary": "Specify the configuration to use.",
+          "summary": "Specify the configuration to use",
           "groups": ["advanced", "cordova"],
           "aliases": ["c"],
           "spec": {
@@ -1559,7 +1559,7 @@
         {
           "name": "configuration",
           "type": "string",
-          "summary": "Specify the configuration to use.",
+          "summary": "Specify the configuration to use",
           "groups": ["advanced", "cordova"],
           "aliases": ["c"],
           "spec": {
@@ -1923,7 +1923,7 @@
       "summary": "Check the health of your Ionic project",
       "description": "This command detects and prints common issues and suggested steps to fix them.\n\nSome issues can be fixed automatically. See `ionic doctor treat --help`.\n\nOptionally supply the `id` argument to check a single issue. Use `ionic doctor list` to list all known issues.",
       "footnotes": [],
-      "groups": [],
+      "groups": ["deprecated"],
       "exampleCommands": ["ionic doctor check ", "ionic doctor check git-not-used"],
       "aliases": ["ionic doctor checkup", "ionic doctor validate"],
       "inputs": [
@@ -1942,7 +1942,7 @@
       "summary": "List all issues and their identifiers",
       "description": "Issues can have various tags:\n- **treatable**: `ionic doctor treat` can attempt to fix the issue\n- **ignored**: configured not to be detected in `ionic doctor check` or `ionic doctor treat`\n- **explicit-detection**: issue is only detected explicitly with `ionic doctor check <issue-id>`\n\nYou can flip whether an issue is ignored or not by using `ionic config set -g doctor.issues.<issue-id>.ignored true/false`, where `<issue-id>` matches an ID listed with this command.",
       "footnotes": [],
-      "groups": [],
+      "groups": ["deprecated"],
       "exampleCommands": [],
       "aliases": ["ionic doctor ls"],
       "inputs": [],
@@ -1955,7 +1955,7 @@
       "summary": "Attempt to fix issues in your Ionic project",
       "description": "This command detects and attempts to fix common issues. Before a fix is attempted, the steps are printed and a confirmation prompt is displayed.\n\nOptionally supply the `id` argument to attempt to fix a single issue. Use `ionic doctor list` to list all known issues.",
       "footnotes": [],
-      "groups": [],
+      "groups": ["deprecated"],
       "exampleCommands": ["ionic doctor treat ", "ionic doctor treat git-not-used"],
       "aliases": ["ionic doctor fix"],
       "inputs": [
@@ -2515,12 +2515,7 @@
       "description": "Easily spin up a development server which launches in your browser. It watches for changes in your source files and automatically reloads with the updated build.\n\nBy default, `ionic serve` boots up a development server on `localhost`. To serve to your LAN, specify the `--external` option, which will use all network interfaces and print the external address(es) on which your app is being served.\n\nTry the `--lab` option to see multiple platforms at once.\n\n`ionic serve` uses the Angular CLI. Use `ng serve --help` to list all Angular CLI options for serving your app. See the `ng serve` [docs](https://angular.io/cli/serve) for explanations. Options not listed below are considered advanced and can be passed to the Angular CLI using the `--` separator after the Ionic CLI arguments. See the examples.\n\nThe dev server can use HTTPS via the `--ssl` option **(experimental)**. There are several known issues with HTTPS. See issue [#3305](https://github.com/ionic-team/ionic-cli/issues/3305).",
       "footnotes": [],
       "groups": [],
-      "exampleCommands": [
-        "ionic serve ",
-        "ionic serve --external",
-        "ionic serve --lab",
-        "ionic serve -- --proxy-config proxy.conf.json"
-      ],
+      "exampleCommands": ["ionic serve ", "ionic serve --external", "ionic serve -- --proxy-config proxy.conf.json"],
       "aliases": ["ionic s"],
       "inputs": [],
       "options": [
@@ -2638,28 +2633,6 @@
           }
         },
         {
-          "name": "lab-host",
-          "type": "string",
-          "summary": "Use specific host for Ionic Lab server",
-          "default": "localhost",
-          "groups": ["advanced"],
-          "aliases": [],
-          "spec": {
-            "value": "host"
-          }
-        },
-        {
-          "name": "lab-port",
-          "type": "string",
-          "summary": "Use specific port for Ionic Lab server",
-          "default": "8200",
-          "groups": ["advanced"],
-          "aliases": [],
-          "spec": {
-            "value": "port"
-          }
-        },
-        {
           "name": "open",
           "type": "boolean",
           "summary": "Do not open a browser window",
@@ -2688,16 +2661,6 @@
           "aliases": ["o"],
           "spec": {
             "value": "path"
-          }
-        },
-        {
-          "name": "lab",
-          "type": "boolean",
-          "summary": "Test your apps on multiple platform types in the browser",
-          "groups": [],
-          "aliases": ["l"],
-          "spec": {
-            "value": "true/false"
           }
         }
       ],

@@ -3,7 +3,6 @@ title: Ionic React
 sidebar_label: Overview
 hide_title: true
 hide_table_of_contents: true
-image: /img/meta/open-graph.png
 ---
 
 import PageStyles from '@components/page/react/PageStyles';
@@ -85,7 +84,7 @@ Compatible with React version 16.8 and above.
 
 ## More than mobile
 
-Deploy your Ionic React projects to native iOS, Android, Electron, and the web as a Progressive Web App, using [Capacitor](https://capacitor.ionicframework.com), a modern native runtime. All with one shared codebase.
+Deploy your Ionic React projects to native iOS, Android, Electron, and the web as a Progressive Web App, using [Capacitor](https://capacitorjs.com), a modern native runtime. All with one shared codebase.
 
 </div>
 
@@ -129,7 +128,7 @@ $ ionic serve █
 
 <DocsCard
   header="Add Ionic to Existing React App"
-  href="https://dev.to/ionic/adding-ionic-react-to-an-existing-react-project-4kib"
+  href="/docs/react/adding-ionic-react-to-an-existing-react-project"
   icon="/icons/logo-react-icon.png"
 >
   <p>Use individual components or the complete app experience.</p>
