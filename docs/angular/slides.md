@@ -46,7 +46,10 @@ Finally, we need to call Swiper's `register` function to globally register Swipe
 ```typescript
 import { register } from 'swiper/element/bundle';
 
-register();
+ constructor() {
+    register();
+    ...
+  }
 
 @Component({
   ...
