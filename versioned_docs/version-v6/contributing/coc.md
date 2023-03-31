@@ -9,3 +9,5 @@ We promise to extend courtesy and respect to everyone involved in this project r
 If any member of the community violates this code of conduct, the maintainers of the Ionic project may take action, removing issues, comments, and PRs or blocking accounts as deemed appropriate.
 
 If you are subject to or witness unacceptable behavior, or have any other concerns, please email us at <a href="mailto:hi@ionicframework.com">hi@ionicframework.com</a>.
+
+Please click <a href="https://ionic.io/code-of-conduct">here</a>. to review to Ionic's full code of conduct.
