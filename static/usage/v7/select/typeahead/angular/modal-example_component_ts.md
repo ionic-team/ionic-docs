@@ -7,7 +7,7 @@ import { Item } from './types';
   selector: 'app-typeahead',
   templateUrl: 'typeahead.component.html',
 })
-export class TypeaheadComponentt implements OnInit {
+export class TypeaheadComponent implements OnInit {
   @Input() items: Item[] = [];
   @Input() selectedItems: string[] = [];
   @Input() title = 'Select Items';
@@ -60,7 +60,7 @@ export class TypeaheadComponentt implements OnInit {
        */
       const normalizedQuery = searchQuery.toLowerCase(); 
       this.filteredItems = this.items.filter(item => {
-        return item.value.includes(normalizedQuery);
+        return item.text.toLowerCase().includes(normalizedQuery);
       });
     }
   }

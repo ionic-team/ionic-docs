@@ -1,12 +1,12 @@
 ---
 title: "ion-input"
 ---
-import Props from '@site/static/auto-generated/input/props.md';
-import Events from '@site/static/auto-generated/input/events.md';
-import Methods from '@site/static/auto-generated/input/methods.md';
-import Parts from '@site/static/auto-generated/input/parts.md';
-import CustomProps from '@site/static/auto-generated/input/custom-props.md';
-import Slots from '@site/static/auto-generated/input/slots.md';
+import Props from '@ionic-internal/component-api/v7/input/props.md';
+import Events from '@ionic-internal/component-api/v7/input/events.md';
+import Methods from '@ionic-internal/component-api/v7/input/methods.md';
+import Parts from '@ionic-internal/component-api/v7/input/parts.md';
+import CustomProps from '@ionic-internal/component-api/v7/input/custom-props.md';
+import Slots from '@ionic-internal/component-api/v7/input/slots.md';
 
 <head>
   <title>ion-input: Custom Input Value Type Styling and CSS Properties</title>
@@ -68,7 +68,9 @@ import Fill from '@site/static/usage/v7/input/fill/index.md';
 
 ## Helper & Error Text
 
-Helper and error text can be used inside of an input with the `helperText` and `errorText` property. The error text will not be displayed unless the `ion-invalid` class is added to the `ion-input`. In Angular, this is done automatically through form validation. In JavaScript, React and Vue, the class needs to be manually added based on your own validation.
+Helper and error text can be used inside of an input with the `helperText` and `errorText` property. The error text will not be displayed unless the `ion-invalid` and `ion-touched` classes are added to the `ion-input`. This ensures errors are not shown before the user has a chance to enter data.
+
+In Angular, this is done automatically through form validation. In JavaScript, React and Vue, the class needs to be manually added based on your own validation.
 
 import HelperError from '@site/static/usage/v7/input/helper-error/index.md';
 

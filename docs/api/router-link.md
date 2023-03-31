@@ -6,12 +6,12 @@ demoSourceUrl: "https://github.com/ionic-team/ionic-docs/tree/main/static/demos/
 ---
 import TOCInline from '@theme/TOCInline';
 
-import Props from '@site/static/auto-generated/router-link/props.md';
-import Events from '@site/static/auto-generated/router-link/events.md';
-import Methods from '@site/static/auto-generated/router-link/methods.md';
-import Parts from '@site/static/auto-generated/router-link/parts.md';
-import CustomProps from '@site/static/auto-generated/router-link/custom-props.md';
-import Slots from '@site/static/auto-generated/router-link/slots.md';
+import Props from '@ionic-internal/component-api/v7/router-link/props.md';
+import Events from '@ionic-internal/component-api/v7/router-link/events.md';
+import Methods from '@ionic-internal/component-api/v7/router-link/methods.md';
+import Parts from '@ionic-internal/component-api/v7/router-link/parts.md';
+import CustomProps from '@ionic-internal/component-api/v7/router-link/custom-props.md';
+import Slots from '@ionic-internal/component-api/v7/router-link/slots.md';
 
 <head>
   <title>Router Link | Navigating The ion-router-link Component</title>

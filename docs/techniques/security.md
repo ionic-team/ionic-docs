@@ -62,6 +62,10 @@ Vue does not provide any type of sanitizing methods built in. It is recommended 
 
 To learn more about the security recommendations for binding to directives such as `v-html`, see the [Vue Syntax Guide](https://vuejs.org/v2/guide/syntax.html#Raw-HTML).
 
+## Enabling Custom HTML Parsing via `innerHTML`
+
+`ion-alert`, `ion-infinite-scroll-content`, `ion-loading`, `ion-refresher-content`, and `ion-toast` can accept custom HTML as strings for certain properties. These strings are added to the DOM using `innerHTML` and must be properly sanitized by the developer. This behavior is disabled by default which means values passed to the affected components will always be interpreted as plaintext. Developers can enable this custom HTML behavior by setting `innerHTMLTemplatesEnabled: true` in the [IonicConfig](../developing/config#ionicconfig).
+
 ## Ejecting from the built-in sanitizer
 
 For developers who wish to add complex HTML to components such as `ion-toast`, they will need to eject from the sanitizer that is built into Ionic Framework. Developers can either disable the sanitizer across their entire app or bypass it on a case-by-case basis.

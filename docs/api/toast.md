@@ -4,12 +4,12 @@ title: "ion-toast"
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-import Props from '@site/static/auto-generated/toast/props.md';
-import Events from '@site/static/auto-generated/toast/events.md';
-import Methods from '@site/static/auto-generated/toast/methods.md';
-import Parts from '@site/static/auto-generated/toast/parts.md';
-import CustomProps from '@site/static/auto-generated/toast/custom-props.md';
-import Slots from '@site/static/auto-generated/toast/slots.md';
+import Props from '@ionic-internal/component-api/v7/toast/props.md';
+import Events from '@ionic-internal/component-api/v7/toast/events.md';
+import Methods from '@ionic-internal/component-api/v7/toast/methods.md';
+import Parts from '@ionic-internal/component-api/v7/toast/parts.md';
+import CustomProps from '@ionic-internal/component-api/v7/toast/custom-props.md';
+import Slots from '@ionic-internal/component-api/v7/toast/slots.md';
 
 <head>
   <title>ion-toast Component: A Dismissible App Notification Alert</title>
@@ -48,7 +48,11 @@ import ControllerExample from '@site/static/usage/v7/toast/presenting/controller
 
 ## Dismissing
 
+Toasts are intended to be subtle notifications and should not interrupt the user. As a result, user interaction should not be required to dismiss the toast.
+
 The toast can be dismissed automatically after a specific amount of time by passing the number of milliseconds to display it in the `duration` of the toast options. If a button with a role of `"cancel"` is added, then that button will dismiss the toast. To dismiss the toast after creation, call the `dismiss()` method on the instance.
+
+Pressing the hardware back button does not dismiss toasts since they are not supposed to interrupt the user.
 
 The following example demonstrates how to use the `buttons` property to add a button that automatically dismisses the toast when clicked, as well as how to collect the `role` of the dismiss event.
 

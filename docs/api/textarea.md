@@ -1,12 +1,12 @@
 ---
 title: "ion-textarea"
 ---
-import Props from '@site/static/auto-generated/textarea/props.md';
-import Events from '@site/static/auto-generated/textarea/events.md';
-import Methods from '@site/static/auto-generated/textarea/methods.md';
-import Parts from '@site/static/auto-generated/textarea/parts.md';
-import CustomProps from '@site/static/auto-generated/textarea/custom-props.md';
-import Slots from '@site/static/auto-generated/textarea/slots.md';
+import Props from '@ionic-internal/component-api/v7/textarea/props.md';
+import Events from '@ionic-internal/component-api/v7/textarea/events.md';
+import Methods from '@ionic-internal/component-api/v7/textarea/methods.md';
+import Parts from '@ionic-internal/component-api/v7/textarea/parts.md';
+import CustomProps from '@ionic-internal/component-api/v7/textarea/custom-props.md';
+import Slots from '@ionic-internal/component-api/v7/textarea/slots.md';
 
 <head>
   <title>Ionic Textarea Component and CSS Properties for Multi-Line Input</title>
@@ -49,7 +49,9 @@ import Fill from '@site/static/usage/v7/textarea/fill/index.md';
 
 ## Helper & Error Text
 
-Helper and error text can be used inside of a textarea with the `helperText` and `errorText` property. The error text will not be displayed unless the `ion-invalid` class is added to the `ion-textarea`. In Angular, this is done automatically through form validation. In JavaScript, React and Vue, the class needs to be manually added based on your own validation.
+Helper and error text can be used inside of a textarea with the `helperText` and `errorText` property. The error text will not be displayed unless the `ion-invalid` and `ion-touched` classes are added to the `ion-textarea`. This ensures errors are not shown before the user has a chance to enter data.
+
+In Angular, this is done automatically through form validation. In JavaScript, React and Vue, the class needs to be manually added based on your own validation.
 
 import HelperError from '@site/static/usage/v7/textarea/helper-error/index.md';
 
