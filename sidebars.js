@@ -124,9 +124,13 @@ module.exports = {
           type: 'category',
           label: 'Testing',
           items: [
-            'react/testing/introduction', 
-            'react/testing/setup', 
-            'react/testing/examples'
+            'react/testing/introduction',
+            {
+              type: 'category',
+              label: 'Unit Testing',
+              collapsed: false,
+              items: ['react/testing/unit-testing/setup', 'react/testing/unit-testing/examples'],
+            },
           ],
         },
         'react/performance',

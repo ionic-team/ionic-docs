@@ -4,13 +4,11 @@ title: Ionic React Unit Testing Setup
 description: Learn how to set up unit tests for an Ionic React application.
 ---
 
-# Setup
+# Unit Testing Setup
 
 Ionic requires a few additional steps to set up unit tests.
 
-## Install Jest
-
-### React Scripts
+## Jest
 
 If your React project is using `react-scripts`, jest is already installed. You can confirm the version of Jest by running:
 
@@ -24,7 +22,7 @@ Ionic recommends `react-scripts@5` and requires a minimum version of `jest@27`, 
 npm install react-scripts@latest
 ```
 
-## Install React Testing Library
+### Install React Testing Library
 
 React Testing Library is a set of utilities that make it easier to test React components. It's used to interact with components and test their behavior.
 
@@ -32,7 +30,7 @@ React Testing Library is a set of utilities that make it easier to test React co
 npm install --save-dev @testing-library/react @testing-library/jest-dom @testing-library/user-event
 ```
 
-## Initialize Ionic React
+### Initialize Ionic React
 
 Ionic React requires the `setupIonicReact` function to be called before any tests are run. Failing to do so will result in mode-based classes and platform behaviors not being applied to your components.
 
@@ -44,11 +42,9 @@ import { setupIonicReact } from '@ionic/react';
 setupIonicReact();
 ```
 
-## Test Environment
+### Test Environment
 
 Ionic requires a DOM environment to be available in order to render components. This is typically provided by the `jsdom` test environment. In Jest 27 and later, the default environment is `node`.
-
-### React Scripts
 
 To configure this behavior, update your `test` command to include `--env=jsdom`:
 
