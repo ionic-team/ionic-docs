@@ -29,7 +29,7 @@ module.exports = function (context, options) {
         components.forEach((comp) => {
           const compTag = comp.tag.slice(4);
           const outDir = getDirectoryPath(compTag, version, isCurrentVersion);
-
+          comp = translateDocs(comp);
           data.push({
             outDir,
             componentTag: compTag,
@@ -222,4 +222,46 @@ function renderSlots({ slots }) {
 ${slots.map((slot) => `| \`${slot.name}\` | ${formatMultiline(slot.docs)} |`).join('\n')}
 
 `;
+}
+
+function translateDocs(comp) {
+  const { props, events, methods, parts, styles, slots } = comp;
+    return {
+      ...comp,
+      props: props.map((prop) => ({
+        ...prop,
+        docs: translate(prop.docs),
+      })),
+      events: events.map((event) => ({
+        ...event,
+        docs: translate(event.docs),
+      })),
+      methods: methods.map((method) => ({
+        ...method,
+        docs: translate(method.docs),
+      })),
+      parts: parts.map((part) => ({
+        ...part,
+        docs: translate(part.docs),
+      })),
+      styles: styles.map((styles) => ({
+        ...styles,
+        docs: translate(styles.docs),
+      })),
+      slots: slots.map((slot) => ({
+        ...slot,
+        docs: translate(slot.docs),
+      })),
+    };
+}
+
+function translate(docs) {
+  const TranslatedFile = require(process.cwd() + '/scripts/data/translated-cache.json');
+  const translated = TranslatedFile.cache;
+
+  if (translated.hasOwnProperty(docs)) {
+    return translated[docs];
+  }
+
+  return docs;
 }
