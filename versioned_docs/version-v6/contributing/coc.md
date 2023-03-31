@@ -10,4 +10,4 @@ If any member of the community violates this code of conduct, the maintainers of
 
 If you are subject to or witness unacceptable behavior, or have any other concerns, please email us at <a href="mailto:hi@ionicframework.com">hi@ionicframework.com</a>.
 
-Please click <a href="https://ionic.io/code-of-conduct">here</a>. to review to Ionic's full code of conduct.
+Please click <a href="https://ionic.io/code-of-conduct" target="_blank" rel="noopener noreferrer">here</a>. to review to Ionic's full code of conduct.
