@@ -109,6 +109,15 @@ import { defineCustomElements } from '@ionic/pwa-elements/loader';
 defineCustomElements(window);
 ```
 
+Since we're using Vite, you'll need to also add the following code to `vite.config.ts`.
+
+```tsx
+// Within the defineConfig block
+optimizeDeps: {
+  exclude: [`@ionic/pwa-elements/loader`],
+},
+```
+
 That’s it! Now for the fun part - let’s see the app in action.
 
 ## Run the App
