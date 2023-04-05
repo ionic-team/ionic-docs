@@ -35,7 +35,3 @@ There are two types of tests that can be written:
 [**Cypress**](https://www.cypress.io): Cypress is a modern testing tool that's used to run end-to-end tests. It allows developers to test the entire application, including the user interface, in a simulated environment.
 
 [**Playwright**](https://playwright.dev): Playwright is a browser automation library that's used to run end-to-end tests. It allows developers to test the entire application, including the user interface, in a simulated environment.
-
-## Additional Resources
-
-- [Testing Ionic React Apps with Jest and React Testing Library](https://ionicframework.com/blog/testing-ionic-react-apps-with-jest-and-react-testing-library/)
