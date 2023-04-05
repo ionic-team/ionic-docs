@@ -1,18 +1,12 @@
 ---
 title: "ion-radio"
-hide_table_of_contents: true
-demoUrl: "/docs/demos/api/radio/index.html"
-demoSourceUrl: "https://github.com/ionic-team/ionic-docs/tree/main/static/demos/api/radio/index.html"
 ---
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-
-import Props from '@ionic-internal/component-api/v6/radio/props.md';
-import Events from '@ionic-internal/component-api/v6/radio/events.md';
-import Methods from '@ionic-internal/component-api/v6/radio/methods.md';
-import Parts from '@ionic-internal/component-api/v6/radio/parts.md';
-import CustomProps from '@ionic-internal/component-api/v6/radio/custom-props.md';
-import Slots from '@ionic-internal/component-api/v6/radio/slots.md';
+import Props from '@ionic-internal/component-api/v7/radio/props.md';
+import Events from '@ionic-internal/component-api/v7/radio/events.md';
+import Methods from '@ionic-internal/component-api/v7/radio/methods.md';
+import Parts from '@ionic-internal/component-api/v7/radio/parts.md';
+import CustomProps from '@ionic-internal/component-api/v7/radio/custom-props.md';
+import Slots from '@ionic-internal/component-api/v7/radio/slots.md';
 
 <head>
   <title>ion-radio Component: Radio Property for iOS and Android</title>
@@ -20,242 +14,94 @@ import Slots from '@ionic-internal/component-api/v6/radio/slots.md';
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
-import TOCInline from '@theme/TOCInline';
 
 <EncapsulationPill type="shadow" />
 
-<h2 className="table-of-contents__title">コンテンツ</h2>
 
-<TOCInline
-  toc={toc}
-  maxHeadingLevel={2}
-/>
+ラジオは、[ラジオグループ](./radio-group)の中で使用する必要があります。ラジオを押すと、そのラジオがチェックされ、前に選択されていたラジオがある場合は、そのチェックが解除されます。また、親ラジオグループのvalueプロパティをラジオの値に設定することで、プログラム的にチェックすることもできます。
 
+ラジオがラジオグループの中にある場合、いつでもチェックされるのは1つのラジオだけです。複数の項目を選択する場合は、[checkboxes](./checkbox)を代わりに使用する必要があります。ラジオをグループ内で無効にすると、ラジオとの相互作用を防ぐことができます。
 
+## 基本的な使い方
 
-Radioは [`ion-radio-group`] (radio-group.md) 内で使用します。Radioを押すと、そのRadioがチェックされます。また、親である `ion-radio-group` の value プロパティをRadioの値に設定することで、プログラムによってチェックすることもできます。
+import Basic from '@site/static/usage/v7/radio/basic/index.md';
 
-RadioがRadioグループの中にある場合、グループ内の1つのRadioだけが常にチェックされる。Radioを押すと、そのRadioがチェックされ、前に選択されていたRadioがあれば、そのチェックが解除されます。Radioが他のRadioとグループ内にない場合、両方のRadioが同時にチェックされる機能を持ちます。
+<Basic />
 
+## Label Placement
 
+開発者は `labelPlacement` プロパティを使用して、ラベルがどのように配置されるかを制御することができます。
 
+import LabelPlacement from '@site/static/usage/v7/radio/label-placement/index.md';
 
+<LabelPlacement />
 
+## Justification
 
-## 使い方
+開発者は `justify` プロパティを使用して、ラベルとコントロールの行の詰め方を制御することができます。
 
-<Tabs groupId="framework" defaultValue="angular" values={[{ value: 'angular', label: 'Angular' }, { value: 'javascript', label: 'Javascript' }, { value: 'react', label: 'React' }, { value: 'stencil', label: 'Stencil' }, { value: 'vue', label: 'Vue' }]}>
+import Justify from '@site/static/usage/v7/radio/justify/index.md';
 
-<TabItem value="angular">
-
-```html
-<ion-list>
-  <ion-radio-group value="biff">
-    <ion-list-header>
-      <ion-label>Name</ion-label>
-    </ion-list-header>
-
-    <ion-item>
-      <ion-label>Biff</ion-label>
-      <ion-radio slot="start" value="biff"></ion-radio>
-    </ion-item>
-
-    <ion-item>
-      <ion-label>Griff</ion-label>
-      <ion-radio slot="start" value="griff"></ion-radio>
-    </ion-item>
-
-    <ion-item>
-      <ion-label>Buford</ion-label>
-      <ion-radio slot="start" value="buford"></ion-radio>
-    </ion-item>
-  </ion-radio-group>
-</ion-list>
-```
+<Justify />
 
 
-</TabItem>
+:::note
+`ion-item` is only used in the demos to emphasize how `justify` works. It is not needed in order for `justify` to function correctly.
+:::
+
+## ラジオの選択を解除する
+
+デフォルトでは、一度選択されたラジオは選択を解除することができず、もう一度押すと選択されたままになります。この動作は、親ラジオグループの `allowEmptySelection` プロパティを使用することで変更することができ、ラジオを非選択にすることができます。
+
+import EmptySelection from '@site/static/usage/v7/radio/empty-selection/index.md';
+
+<EmptySelection />
 
 
-<TabItem value="javascript">
+## テーマ
 
-```html
-<ion-list>
-  <ion-radio-group value="biff">
-    <ion-list-header>
-      <ion-label>Name</ion-label>
-    </ion-list-header>
+### Colors
 
-    <ion-item>
-      <ion-label>Biff</ion-label>
-      <ion-radio slot="start" value="biff"></ion-radio>
-    </ion-item>
+import Colors from '@site/static/usage/v7/radio/theming/colors/index.md';
 
-    <ion-item>
-      <ion-label>Griff</ion-label>
-      <ion-radio slot="start" value="griff"></ion-radio>
-    </ion-item>
+<Colors />
 
-    <ion-item>
-      <ion-label>Buford</ion-label>
-      <ion-radio slot="start" value="buford"></ion-radio>
-    </ion-item>
-  </ion-radio-group>
-</ion-list>
-```
+## CSSカスタムプロパティ
 
+import CSSProps from '@site/static/usage/v7/radio/theming/css-properties/index.md';
 
-</TabItem>
+<CSSProps />
 
+### CSS Shadow Parts
 
-<TabItem value="react">
+import CSSParts from '@site/static/usage/v7/radio/theming/css-shadow-parts/index.md';
 
-```tsx
-import React, { useState } from 'react';
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonList, IonRadioGroup, IonListHeader, IonLabel, IonItem, IonRadio, IonItemDivider } from '@ionic/react';
+<CSSParts />
 
-export const RadioExamples: React.FC = () => {
-  const [selected, setSelected] = useState<string>('biff');
-  return (
-    <IonPage>
-      <IonHeader>
-        <IonToolbar>
-          <IonTitle>Radio Examples</IonTitle>
-        </IonToolbar>
-      </IonHeader>
-      <IonContent>
-        <IonList>
-          <IonRadioGroup value={selected} onIonChange={e => setSelected(e.detail.value)}>
-            <IonListHeader>
-              <IonLabel>Name</IonLabel>
-            </IonListHeader>
+## Legacy Radio Syntaxからの移行
 
-            <IonItem>
-              <IonLabel>Biff</IonLabel>
-              <IonRadio slot="start" value="biff" />
-            </IonItem>
+Ionic 7.0では、よりシンプルなラジオ構文が導入されました。この新しい構文は、ラジオを設定するために必要な定型文を減らし、アクセシビリティの問題を解決し、開発者のエクスペリエンスを向上させます。
 
-            <IonItem>
-              <IonLabel>Griff</IonLabel>
-              <IonRadio slot="start" value="griff" />
-            </IonItem>
+開発者は、この移行を一度に1つのラジオで実行できます。開発者はレガシー構文を使い続けることができますが、できるだけ早く移行することをお勧めします。
 
-            <IonItem>
-              <IonLabel>Buford</IonLabel>
-              <IonRadio slot="start" value="buford" />
-            </IonItem>
-          </IonRadioGroup>
-          <IonItemDivider>Your Selection</IonItemDivider>
-          <IonItem>{selected ?? '(none selected'}</IonItem>
-        </IonList>
-      </IonContent>
-    </IonPage>
-  );
-};
-```
+### 最新の構文の使い方
 
-</TabItem>
+最新の構文を使用するには、`ion-label`を削除して、`ion-radio`の内部にラベルを直接渡します。ラベルの配置は `ion-radio` の `labelPlacement` プロパティを使用して設定することができます。ラベルとコントロールの行の詰め方は、`ion-radio` の `justify` プロパティを使用して制御することができます。
+
+import Migration from '@site/static/usage/v7/radio/migration/index.md';
+
+<Migration />
+  
+
+:::note
+Ionic の過去のバージョンでは、`ion-radio` が正しく機能するためには `ion-item` が必要でした。Ionic 7.0 からは、`ion-radio` は `ion-item` の中で、そのアイテムが `ion-list` に配置される場合にのみ使用されます。また、`ion-radio`が正しく機能するためには、`ion-item`はもはや必須ではありません。
+:::
+
+### レガシー構文の使用
+
+Ionicは、アプリが最新の無線構文を使用しているかどうかをヒューリスティックで検出します。場合によっては、レガシー構文を使い続けることが望ましい場合もあります。開発者は `ion-radio` の `legacy` プロパティを `true` に設定することで、その無線機のインスタンスがレガシー構文を使用するように強制できます。
 
 
-<TabItem value="stencil">
-
-```tsx
-import { Component, h } from '@stencil/core';
-
-@Component({
-  tag: 'radio-example',
-  styleUrl: 'radio-example.css'
-})
-export class RadioExample {
-  render() {
-    return [
-      <ion-list>
-        <ion-radio-group value="biff">
-          <ion-list-header>
-            <ion-label>Name</ion-label>
-          </ion-list-header>
-
-          <ion-item>
-            <ion-label>Biff</ion-label>
-            <ion-radio slot="start" value="biff"></ion-radio>
-          </ion-item>
-
-          <ion-item>
-            <ion-label>Griff</ion-label>
-            <ion-radio slot="start" value="griff"></ion-radio>
-          </ion-item>
-
-          <ion-item>
-            <ion-label>Buford</ion-label>
-            <ion-radio slot="start" value="buford"></ion-radio>
-          </ion-item>
-        </ion-radio-group>
-      </ion-list>
-    ];
-  }
-}
-```
-
-
-</TabItem>
-
-
-<TabItem value="vue">
-
-```html
-<template>
-  <ion-list>
-    <ion-radio-group value="biff">
-      <ion-list-header>
-        <ion-label>Name</ion-label>
-      </ion-list-header>
-
-      <ion-item>
-        <ion-label>Biff</ion-label>
-        <ion-radio slot="start" value="biff"></ion-radio>
-      </ion-item>
-
-      <ion-item>
-        <ion-label>Griff</ion-label>
-        <ion-radio slot="start" value="griff"></ion-radio>
-      </ion-item>
-
-      <ion-item>
-        <ion-label>Buford</ion-label>
-        <ion-radio slot="start" value="buford"></ion-radio>
-      </ion-item>
-    </ion-radio-group>
-  </ion-list>
-</template>
-
-<script>
-import { 
-  IonItem, 
-  IonLabel, 
-  IonList, 
-  IonListHeader,
-  IonRadio, 
-  IonRadioGroup
-} from '@ionic/vue';
-import { defineComponent } from 'vue';
-
-export default defineComponent({
-  components: { 
-    IonItem, 
-    IonLabel, 
-    IonList, 
-    IonListHeader,
-    IonRadio, 
-    IonRadioGroup
-  }
-});
-</script>
-```
-
-
-</TabItem>
-
-</Tabs>
 
 ## プロパティ
 <Props />

@@ -1,16 +1,12 @@
 ---
 title: "ion-menu-button"
-hide_table_of_contents: true
 ---
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-
-import Props from '@ionic-internal/component-api/v6/menu-button/props.md';
-import Events from '@ionic-internal/component-api/v6/menu-button/events.md';
-import Methods from '@ionic-internal/component-api/v6/menu-button/methods.md';
-import Parts from '@ionic-internal/component-api/v6/menu-button/parts.md';
-import CustomProps from '@ionic-internal/component-api/v6/menu-button/custom-props.md';
-import Slots from '@ionic-internal/component-api/v6/menu-button/slots.md';
+import Props from '@ionic-internal/component-api/v7/menu-button/props.md';
+import Events from '@ionic-internal/component-api/v7/menu-button/events.md';
+import Methods from '@ionic-internal/component-api/v7/menu-button/methods.md';
+import Parts from '@ionic-internal/component-api/v7/menu-button/parts.md';
+import CustomProps from '@ionic-internal/component-api/v7/menu-button/custom-props.md';
+import Slots from '@ionic-internal/component-api/v7/menu-button/slots.md';
 
 <head>
   <title>Menu Button | ion-menu-button to Open an App Menu on A Page</title>
@@ -18,22 +14,13 @@ import Slots from '@ionic-internal/component-api/v6/menu-button/slots.md';
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
-import TOCInline from '@theme/TOCInline';
 
 <EncapsulationPill type="shadow" />
 
-<h2 className="table-of-contents__title">コンテンツ</h2>
 
-<TOCInline
-  toc={toc}
-  maxHeadingLevel={2}
-/>
+Menu Buttonコンポーネントは、アイコンを含み、クリックされるとメニューを開く機能を自動的に追加します。
 
-
-
-Menu Buttonは、ページ上でMenuを開くためのアイコンおよび機能を自動的に作成するコンポーネントです。
-
-
+詳しくは、[menu](./menu)のドキュメントをご覧ください。
 
 
 ## プロパティ

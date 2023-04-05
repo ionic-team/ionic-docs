@@ -1,36 +1,21 @@
 ---
 title: "ion-breadcrumb"
-hide_table_of_contents: true
 ---
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-import TOCInline from '@theme/TOCInline';
-
-import Props from '@ionic-internal/component-api/v6/breadcrumb/props.md';
-import Events from '@ionic-internal/component-api/v6/breadcrumb/events.md';
-import Methods from '@ionic-internal/component-api/v6/breadcrumb/methods.md';
-import Parts from '@ionic-internal/component-api/v6/breadcrumb/parts.md';
-import CustomProps from '@ionic-internal/component-api/v6/breadcrumb/custom-props.md';
-import Slots from '@ionic-internal/component-api/v6/breadcrumb/slots.md';
-
-
+import Props from '@ionic-internal/component-api/v7/breadcrumb/props.md';
+import Events from '@ionic-internal/component-api/v7/breadcrumb/events.md';
+import Methods from '@ionic-internal/component-api/v7/breadcrumb/methods.md';
+import Parts from '@ionic-internal/component-api/v7/breadcrumb/parts.md';
+import CustomProps from '@ionic-internal/component-api/v7/breadcrumb/custom-props.md';
+import Slots from '@ionic-internal/component-api/v7/breadcrumb/slots.md';
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="shadow" />
 
-<h2 className="table-of-contents__title">コンテンツ</h2>
-
-<TOCInline
-  toc={toc}
-  maxHeadingLevel={2}
-/>
-
-
 
 Breadcrumbは、Breadcrumbsコンポーネントの子であり、単一のナビゲーションアイテムです。Breadcrumbは、アプリ内の他の場所にリンクすることも、プレーンテキストにすることもできます。Breadcrumbsは、次のBreadcrumbとの間にセパレータを持ち、オプションでアイコンを含むことができます。
 
-詳しい説明は [Breadcrumbs](/docs/api/breadcrumbs) を参照ください。
+詳しい説明は [Breadcrumbs](./breadcrumbs) を参照ください。
 
 ## Interfaces
 

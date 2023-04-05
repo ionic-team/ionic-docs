@@ -1,16 +1,15 @@
 ---
 title: "ion-route"
-hide_table_of_contents: true
 ---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-import Props from '@ionic-internal/component-api/v6/route/props.md';
-import Events from '@ionic-internal/component-api/v6/route/events.md';
-import Methods from '@ionic-internal/component-api/v6/route/methods.md';
-import Parts from '@ionic-internal/component-api/v6/route/parts.md';
-import CustomProps from '@ionic-internal/component-api/v6/route/custom-props.md';
-import Slots from '@ionic-internal/component-api/v6/route/slots.md';
+import Props from '@ionic-internal/component-api/v7/route/props.md';
+import Events from '@ionic-internal/component-api/v7/route/events.md';
+import Methods from '@ionic-internal/component-api/v7/route/methods.md';
+import Parts from '@ionic-internal/component-api/v7/route/parts.md';
+import CustomProps from '@ionic-internal/component-api/v7/route/custom-props.md';
+import Slots from '@ionic-internal/component-api/v7/route/slots.md';
 
 <head>
   <title>ion-route: API Route Component for Ionic Framework Apps</title>
@@ -18,20 +17,9 @@ import Slots from '@ionic-internal/component-api/v6/route/slots.md';
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
-import TOCInline from '@theme/TOCInline';
 
 
-
-<h2 className="table-of-contents__title">コンテンツ</h2>
-
-<TOCInline
-  toc={toc}
-  maxHeadingLevel={2}
-/>
-
-
-
-routeコンポーネントは、コンポーネントを受け取り、ブラウザのURLがurlプロパティと一致したときにそれをレンダリングします。
+The route component takes a component and renders it when the Browser URL matches the url property.
 
 :::note
  Note: このコンポーネントは、バニラおよびステンシルJavaScriptプロジェクトでのみ使用してください。Angularプロジェクトでは、[`ion-router-outlet`](router-outlet.md) と Angularルータを使用してください。

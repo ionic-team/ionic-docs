@@ -1,18 +1,12 @@
 ---
 title: "ion-spinner"
-hide_table_of_contents: true
-demoUrl: "/docs/demos/api/spinner/index.html"
-demoSourceUrl: "https://github.com/ionic-team/ionic-docs/tree/main/static/demos/api/spinner/index.html"
 ---
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-
-import Props from '@ionic-internal/component-api/v6/spinner/props.md';
-import Events from '@ionic-internal/component-api/v6/spinner/events.md';
-import Methods from '@ionic-internal/component-api/v6/spinner/methods.md';
-import Parts from '@ionic-internal/component-api/v6/spinner/parts.md';
-import CustomProps from '@ionic-internal/component-api/v6/spinner/custom-props.md';
-import Slots from '@ionic-internal/component-api/v6/spinner/slots.md';
+import Props from '@ionic-internal/component-api/v7/spinner/props.md';
+import Events from '@ionic-internal/component-api/v7/spinner/events.md';
+import Methods from '@ionic-internal/component-api/v7/spinner/methods.md';
+import Parts from '@ionic-internal/component-api/v7/spinner/parts.md';
+import CustomProps from '@ionic-internal/component-api/v7/spinner/custom-props.md';
+import Slots from '@ionic-internal/component-api/v7/spinner/slots.md';
 
 <head>
   <title>ion-spinner | Animated Spinner Icon Components and Properties</title>
@@ -20,221 +14,35 @@ import Slots from '@ionic-internal/component-api/v6/spinner/slots.md';
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
-import TOCInline from '@theme/TOCInline';
 
 <EncapsulationPill type="shadow" />
-
-<h2 className="table-of-contents__title">コンテンツ</h2>
-
-<TOCInline
-  toc={toc}
-  maxHeadingLevel={2}
-/>
-
 
 
 Spinnerコンポーネントには、さまざまなアニメーションつきのSVG Spinnerが用意されています。Spinnerは、アプリがコンテンツを読み込んだり、ユーザーが待つ必要のある別のプロセスを実行していることを視覚的に示すものです。
 
-デフォルトのSpinnerはプラットフォームに基づいて使用されます。`ios`のデフォルトのSpinnerは`"lines"`であり、`android`のデフォルトは`"crescent"`である。プラットフォームが `ios` または `android` でない場合、Spinnerはデフォルトで `crescent` に設定されます。`name` プロパティが設定されている場合、プラットフォーム固有のSpinnerの代わりに指定されたSpinnerが使用されます。
 
+## 基本的な使い方
 
+デフォルトのスピナーは、モードに基づいて決定されます。モードが `ios` の場合、スピナーは `"lines"` となり、モードが `md` の場合、スピナーは `"circular"` となります。 `name` プロパティが設定されている場合は、モード固有のスピナーの代わりに、そのスピナーが使用されます。
 
+import Basic from '@site/static/usage/v7/spinner/basic/index.md';
 
+<Basic />
 
-## 使い方
+## テーマ
 
-<Tabs groupId="framework" defaultValue="angular" values={[{ value: 'angular', label: 'Angular' }, { value: 'javascript', label: 'Javascript' }, { value: 'react', label: 'React' }, { value: 'stencil', label: 'Stencil' }, { value: 'vue', label: 'Vue' }]}>
+### Colors
 
-<TabItem value="angular">
+import Colors from '@site/static/usage/v7/spinner/theming/colors/index.md';
 
-```html
-<!-- Default Spinner -->
-<ion-spinner></ion-spinner>
+<Colors />
 
-<!-- Lines -->
-<ion-spinner name="lines"></ion-spinner>
+## CSSカスタムプロパティ
 
-<!-- Lines Small -->
-<ion-spinner name="lines-small"></ion-spinner>
+import CSSProps from '@site/static/usage/v7/spinner/theming/css-properties/index.md';
 
-<!-- Dots -->
-<ion-spinner name="dots"></ion-spinner>
+<CSSProps />
 
-<!-- Bubbles -->
-<ion-spinner name="bubbles"></ion-spinner>
-
-<!-- Circles -->
-<ion-spinner name="circles"></ion-spinner>
-
-<!-- Crescent -->
-<ion-spinner name="crescent"></ion-spinner>
-
-<!-- Paused Default Spinner -->
-<ion-spinner paused></ion-spinner>
-```
-
-
-</TabItem>
-
-
-<TabItem value="javascript">
-
-```html
-<!-- Default Spinner -->
-<ion-spinner></ion-spinner>
-
-<!-- Lines -->
-<ion-spinner name="lines"></ion-spinner>
-
-<!-- Lines Small -->
-<ion-spinner name="lines-small"></ion-spinner>
-
-<!-- Dots -->
-<ion-spinner name="dots"></ion-spinner>
-
-<!-- Bubbles -->
-<ion-spinner name="bubbles"></ion-spinner>
-
-<!-- Circles -->
-<ion-spinner name="circles"></ion-spinner>
-
-<!-- Crescent -->
-<ion-spinner name="crescent"></ion-spinner>
-
-<!-- Paused Default Spinner -->
-<ion-spinner paused></ion-spinner>
-```
-
-
-</TabItem>
-
-
-<TabItem value="react">
-
-```tsx
-import React from 'react';
-import { IonSpinner, IonContent } from '@ionic/react';
-
-export const SpinnerExample: React.FC = () => (
-  <IonContent>
-    {/*-- Default Spinner --*/}
-    <IonSpinner />
-
-    {/*-- Lines --*/}
-    <IonSpinner name="lines" />
-
-    {/*-- Lines Small --*/}
-    <IonSpinner name="lines-small" />
-
-    {/*-- Dots --*/}
-    <IonSpinner name="dots" />
-
-    {/*-- Bubbles --*/}
-    <IonSpinner name="bubbles" />
-
-    {/*-- Circles --*/}
-    <IonSpinner name="circles" />
-
-    {/*-- Crescent --*/}
-    <IonSpinner name="crescent" />
-
-    {/*-- Paused Default Spinner --*/}
-    <IonSpinner paused />
-  </IonContent>
-);
-```
-
-
-</TabItem>
-
-
-<TabItem value="stencil">
-
-```tsx
-import { Component, h } from '@stencil/core';
-
-@Component({
-  tag: 'spinner-example',
-  styleUrl: 'spinner-example.css'
-})
-export class SpinnerExample {
-  render() {
-    return [
-      // Default Spinner
-      <ion-spinner></ion-spinner>,
-
-      // Lines
-      <ion-spinner name="lines"></ion-spinner>,
-
-      // Lines Small
-      <ion-spinner name="lines-small"></ion-spinner>,
-
-      // Dots
-      <ion-spinner name="dots"></ion-spinner>,
-
-      // Bubbles
-      <ion-spinner name="bubbles"></ion-spinner>,
-
-      // Circles
-      <ion-spinner name="circles"></ion-spinner>,
-
-      // Crescent
-      <ion-spinner name="crescent"></ion-spinner>,
-
-      // Paused Default Spinner
-      <ion-spinner paused={true}></ion-spinner>
-    ];
-  }
-}
-```
-
-
-</TabItem>
-
-
-<TabItem value="vue">
-
-```html
-<template>
-  <!-- Default Spinner -->
-  <ion-spinner></ion-spinner>
-
-  <!-- Lines -->
-  <ion-spinner name="lines"></ion-spinner>
-
-  <!-- Lines Small -->
-  <ion-spinner name="lines-small"></ion-spinner>
-
-  <!-- Dots -->
-  <ion-spinner name="dots"></ion-spinner>
-
-  <!-- Bubbles -->
-  <ion-spinner name="bubbles"></ion-spinner>
-
-  <!-- Circles -->
-  <ion-spinner name="circles"></ion-spinner>
-
-  <!-- Crescent -->
-  <ion-spinner name="crescent"></ion-spinner>
-
-  <!-- Paused Default Spinner -->
-  <ion-spinner paused></ion-spinner>
-</template>
-
-<script>
-import { IonSpinner } from '@ionic/vue';
-import { defineComponent } from 'vue';
-
-export default defineComponent({
-  components: { IonSpinner }
-});
-</script>
-```
-
-
-</TabItem>
-
-</Tabs>
 
 ## プロパティ
 <Props />

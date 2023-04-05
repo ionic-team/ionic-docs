@@ -1,428 +1,59 @@
 ---
 title: "ion-list-header"
-hide_table_of_contents: true
 ---
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-
-import Props from '@ionic-internal/component-api/v6/list-header/props.md';
-import Events from '@ionic-internal/component-api/v6/list-header/events.md';
-import Methods from '@ionic-internal/component-api/v6/list-header/methods.md';
-import Parts from '@ionic-internal/component-api/v6/list-header/parts.md';
-import CustomProps from '@ionic-internal/component-api/v6/list-header/custom-props.md';
-import Slots from '@ionic-internal/component-api/v6/list-header/slots.md';
-
-
+import Props from '@ionic-internal/component-api/v7/list-header/props.md';
+import Events from '@ionic-internal/component-api/v7/list-header/events.md';
+import Methods from '@ionic-internal/component-api/v7/list-header/methods.md';
+import Parts from '@ionic-internal/component-api/v7/list-header/parts.md';
+import CustomProps from '@ionic-internal/component-api/v7/list-header/custom-props.md';
+import Slots from '@ionic-internal/component-api/v7/list-header/slots.md';
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
-import TOCInline from '@theme/TOCInline';
 
 <EncapsulationPill type="shadow" />
 
-<h2 className="table-of-contents__title">コンテンツ</h2>
-
-<TOCInline
-  toc={toc}
-  maxHeadingLevel={2}
-/>
-
-
-
-ListHeaderは、Listのヘッダーコンポーネントです。
-ItemDividerとは異なり、ListHeadersはListの他のItemから際立つようにスタイル設定されています。
-
-
-
-
-## 使い方
-
-<Tabs groupId="framework" defaultValue="angular" values={[{ value: 'angular', label: 'Angular' }, { value: 'javascript', label: 'Javascript' }, { value: 'react', label: 'React' }, { value: 'stencil', label: 'Stencil' }, { value: 'vue', label: 'Vue' }]}>
-
-<TabItem value="angular">
-
-```html
-<!-- Default List Header -->
-<ion-list-header>
-  <ion-label>List Header</ion-label>
-</ion-list-header>
-
-<!-- List Header with Button -->
-<ion-list-header>
-  <ion-label>New This Week</ion-label>
-  <ion-button>See All</ion-button>
-</ion-list-header>
-
-<!-- List Header with Outline Button -->
-<ion-list-header>
-  <ion-label>New This Week</ion-label>
-  <ion-button fill="outline">See All</ion-button>
-</ion-list-header>
-
-<!-- List Header Full Lines -->
-<ion-list-header lines="full">
-  <ion-label>New This Week</ion-label>
-  <ion-button>See All</ion-button>
-</ion-list-header>
-
-<!-- List Header Inset Lines -->
-<ion-list-header lines="inset">
-  <ion-label>New This Week</ion-label>
-  <ion-button>See All</ion-button>
-</ion-list-header>
-
-<!-- List Headers in Lists -->
-<ion-list>
-  <ion-list-header lines="inset">
-    <ion-label>Recent</ion-label>
-    <ion-button>Clear</ion-button>
-  </ion-list-header>
-  <ion-item lines="none">
-    <ion-label color="primary">
-      <h1>I got you babe</h1>
-    </ion-label>
-  </ion-item>
-</ion-list>
-
-<ion-list>
-  <ion-list-header lines="inset">
-    <ion-label>Trending</ion-label>
-  </ion-list-header>
-  <ion-item>
-    <ion-label color="primary">
-      <h1>harry styles</h1>
-    </ion-label>
-  </ion-item>
-  <ion-item>
-    <ion-label color="primary">
-      <h1>christmas</h1>
-    </ion-label>
-  </ion-item>
-  <ion-item lines="none">
-    <ion-label color="primary">
-      <h1>falling</h1>
-    </ion-label>
-  </ion-item>
-</ion-list>
-```
-
-
-</TabItem>
-
-
-<TabItem value="javascript">
-
-```html
-<!-- Default List Header -->
-<ion-list-header>
-  <ion-label>List Header</ion-label>
-</ion-list-header>
-
-<!-- List Header with Button -->
-<ion-list-header>
-  <ion-label>New This Week</ion-label>
-  <ion-button>See All</ion-button>
-</ion-list-header>
-
-<!-- List Header with Outline Button -->
-<ion-list-header>
-  <ion-label>New This Week</ion-label>
-  <ion-button fill="outline">See All</ion-button>
-</ion-list-header>
-
-<!-- List Header Full Lines -->
-<ion-list-header lines="full">
-  <ion-label>New This Week</ion-label>
-  <ion-button>See All</ion-button>
-</ion-list-header>
-
-<!-- List Header Inset Lines -->
-<ion-list-header lines="inset">
-  <ion-label>New This Week</ion-label>
-  <ion-button>See All</ion-button>
-</ion-list-header>
-
-<!-- List Headers in Lists -->
-<ion-list>
-  <ion-list-header lines="inset">
-    <ion-label>Recent</ion-label>
-    <ion-button>Clear</ion-button>
-  </ion-list-header>
-  <ion-item lines="none">
-    <ion-label color="primary">
-      <h1>I got you babe</h1>
-    </ion-label>
-  </ion-item>
-</ion-list>
-
-<ion-list>
-  <ion-list-header lines="inset">
-    <ion-label>Trending</ion-label>
-  </ion-list-header>
-  <ion-item>
-    <ion-label color="primary">
-      <h1>harry styles</h1>
-    </ion-label>
-  </ion-item>
-  <ion-item>
-    <ion-label color="primary">
-      <h1>christmas</h1>
-    </ion-label>
-  </ion-item>
-  <ion-item lines="none">
-    <ion-label color="primary">
-      <h1>falling</h1>
-    </ion-label>
-  </ion-item>
-</ion-list>
-```
-
-
-</TabItem>
-
-
-<TabItem value="react">
-
-```tsx
-import React from 'react';
-import { IonButton, IonContent, IonItem, IonLabel, IonList, IonListHeader } from '@ionic/react';
-
-export const ListHeaderExample: React.FC = () => (
-  <IonContent>
-    {/*-- Default List Header --*/}
-    <IonListHeader>
-      <IonLabel>List Header</IonLabel>
-    </IonListHeader>
-
-    {/*-- List Header with Button --*/}
-    <IonListHeader>
-      <IonLabel>New This Week</IonLabel>
-      <IonButton>See All</IonButton>
-    </IonListHeader>
-
-    {/*-- List Header with Outline Button --*/}
-    <IonListHeader>
-      <IonLabel>New This Week</IonLabel>
-      <IonButton fill="outline">See All</IonButton>
-    </IonListHeader>
-
-    {/*-- List Header Full Lines --*/}
-    <IonListHeader lines="full">
-      <IonLabel>New This Week</IonLabel>
-      <IonButton>See All</IonButton>
-    </IonListHeader>
-
-    {/*-- List Header Inset Lines --*/}
-    <IonListHeader lines="inset">
-      <IonLabel>New This Week</IonLabel>
-      <IonButton>See All</IonButton>
-    </IonListHeader>
-
-    {/*-- List Headers in Lists --*/}
-    <IonList>
-      <IonListHeader lines="inset">
-        <IonLabel>Recent</IonLabel>
-        <IonButton>Clear</IonButton>
-      </IonListHeader>
-      <IonItem lines="none">
-        <IonLabel color="primary">
-          <h1>I got you babe</h1>
-        </IonLabel>
-      </IonItem>
-    </IonList>
-
-    <IonList>
-      <IonListHeader lines="inset">
-        <IonLabel>Trending</IonLabel>
-      </IonListHeader>
-      <IonItem>
-        <IonLabel color="primary">
-          <h1>harry styles</h1>
-        </IonLabel>
-      </IonItem>
-      <IonItem>
-        <IonLabel color="primary">
-          <h1>christmas</h1>
-        </IonLabel>
-      </IonItem>
-      <IonItem lines="none">
-        <IonLabel color="primary">
-          <h1>falling</h1>
-        </IonLabel>
-      </IonItem>
-    </IonList>
-  </IonContent>
-);
-```
-
-
-</TabItem>
-
-
-<TabItem value="stencil">
-
-```tsx
-import { Component, h } from '@stencil/core';
-
-@Component({
-  tag: 'list-header-example',
-  styleUrl: 'list-header-example.css'
-})
-export class ListHeaderExample {
-  render() {
-    return [
-      // Default List Header
-      <ion-list-header>
-        <ion-label>List Header</ion-label>
-      </ion-list-header>,
-
-      // List Header with Button
-      <ion-list-header>
-        <ion-label>New This Week</ion-label>
-        <ion-button>See All</ion-button>
-      </ion-list-header>,
-
-      // List Header with Outline Button
-      <ion-list-header>
-        <ion-label>New This Week</ion-label>
-        <ion-button fill="outline">See All</ion-button>
-      </ion-list-header>,
-
-      // List Header Full Lines
-      <ion-list-header lines="full">
-        <ion-label>New This Week</ion-label>
-        <ion-button>See All</ion-button>
-      </ion-list-header>,
-
-      // List Header Inset Lines
-      <ion-list-header lines="inset">
-        <ion-label>New This Week</ion-label>
-        <ion-button>See All</ion-button>
-      </ion-list-header>,
-
-      // List Headers in Lists
-      <ion-list>
-        <ion-list-header lines="inset">
-          <ion-label>Recent</ion-label>
-          <ion-button>Clear</ion-button>
-        </ion-list-header>
-        <ion-item lines="none">
-          <ion-label color="primary">
-            <h1>I got you babe</h1>
-          </ion-label>
-        </ion-item>
-      </ion-list>,
-
-      <ion-list>
-        <ion-list-header lines="inset">
-          <ion-label>Trending</ion-label>
-        </ion-list-header>
-        <ion-item>
-          <ion-label color="primary">
-            <h1>harry styles</h1>
-          </ion-label>
-        </ion-item>
-        <ion-item>
-          <ion-label color="primary">
-            <h1>christmas</h1>
-          </ion-label>
-        </ion-item>
-        <ion-item lines="none">
-          <ion-label color="primary">
-            <h1>falling</h1>
-          </ion-label>
-        </ion-item>
-      </ion-list>
-    ];
-  }
-}
-```
-
-
-</TabItem>
-
-
-<TabItem value="vue">
-
-```html
-<template>
-  <!-- Default List Header -->
-  <ion-list-header>
-    <ion-label>List Header</ion-label>
-  </ion-list-header>
-
-  <!-- List Header with Button -->
-  <ion-list-header>
-    <ion-label>New This Week</ion-label>
-    <ion-button>See All</ion-button>
-  </ion-list-header>
-
-  <!-- List Header with Outline Button -->
-  <ion-list-header>
-    <ion-label>New This Week</ion-label>
-    <ion-button fill="outline">See All</ion-button>
-  </ion-list-header>
-
-  <!-- List Header Full Lines -->
-  <ion-list-header lines="full">
-    <ion-label>New This Week</ion-label>
-    <ion-button>See All</ion-button>
-  </ion-list-header>
-
-  <!-- List Header Inset Lines -->
-  <ion-list-header lines="inset">
-    <ion-label>New This Week</ion-label>
-    <ion-button>See All</ion-button>
-  </ion-list-header>
-
-  <!-- List Headers in Lists -->
-  <ion-list>
-    <ion-list-header lines="inset">
-      <ion-label>Recent</ion-label>
-      <ion-button>Clear</ion-button>
-    </ion-list-header>
-    <ion-item lines="none">
-      <ion-label color="primary">
-        <h1>I got you babe</h1>
-      </ion-label>
-    </ion-item>
-  </ion-list>
-
-  <ion-list>
-    <ion-list-header lines="inset">
-      <ion-label>Trending</ion-label>
-    </ion-list-header>
-    <ion-item>
-      <ion-label color="primary">
-        <h1>harry styles</h1>
-      </ion-label>
-    </ion-item>
-    <ion-item>
-      <ion-label color="primary">
-        <h1>christmas</h1>
-      </ion-label>
-    </ion-item>
-    <ion-item lines="none">
-      <ion-label color="primary">
-        <h1>falling</h1>
-      </ion-label>
-    </ion-item>
-  </ion-list>
-</template>
-
-<script>
-import { IonItem, IonLabel, IonList, IonListHeader } from '@ionic/vue';
-import { defineComponent } from 'vue';
-
-export default defineComponent({
-  components: { IonItem, IonLabel, IonList, IonListHeader }
-});
-</script>
-```
-
-
-</TabItem>
-
-</Tabs>
+
+リストヘッダーは、[リスト](./list)の内容を記述するために使用されるブロック要素です。アイテムディバイダー](./item-divider)とは異なり、リストヘッダーは[アイテム](./item)のリストの先頭で一度だけ使用する必要があります。
+
+## 基本的な使い方
+
+import Basic from '@site/static/usage/v7/list-header/basic/index.md';
+
+<Basic />
+
+
+## リストヘッダーのボタン
+
+リストのヘッダーに [button](./button) を配置すると、リストの一部を表示し、ボタンで全リストにリダイレクトするのに便利です。
+
+import Buttons from '@site/static/usage/v7/list-header/buttons/index.md';
+
+<Buttons />
+
+
+## List Headerの下線
+
+リストヘッダーは、デフォルトでは下部のボーダーが表示されません。 `lines` プロパティを `"full"` または `"inset"` に変更すると、それぞれ全幅のボーダーまたは左paddingを伴う挿入ボーダーが表示されます。
+
+import Lines from '@site/static/usage/v7/list-header/lines/index.md';
+
+<Lines />
+
+## テーマ
+
+### Colors
+
+import Colors from '@site/static/usage/v7/list-header/theming/colors/index.md';
+
+<Colors />
+
+## CSSカスタムプロパティ
+
+import CSSProps from '@site/static/usage/v7/list-header/theming/css-properties/index.md';
+
+<CSSProps />
+
+
 
 ## プロパティ
 <Props />

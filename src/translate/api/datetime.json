@@ -190,6 +190,30 @@
       "required": false
     },
     {
+      "name": "highlightedDates",
+      "type": "((dateIsoString: string) => DatetimeHighlightStyle | undefined) | DatetimeHighlight[] | undefined",
+      "mutable": false,
+      "reflectToAttr": false,
+      "docs": "Used to apply custom text and background colors to specific dates.\n\nCan be either an array of objects containing ISO strings and colors,\nor a callback that receives an ISO string and returns the colors.\n\nOnly applies to the `date`, `date-time`, and `time-date` presentations,\nwith `preferWheel=\"false\"`.",
+      "docsTags": [],
+      "values": [
+        {
+          "type": "((dateIsoString: string) => DatetimeHighlightStyle"
+        },
+        {
+          "type": "undefined)"
+        },
+        {
+          "type": "DatetimeHighlight[]"
+        },
+        {
+          "type": "undefined"
+        }
+      ],
+      "optional": true,
+      "required": false
+    },
+    {
       "name": "hourCycle",
       "type": "\"h12\" | \"h23\" | undefined",
       "mutable": false,
@@ -549,7 +573,7 @@
       "mutable": false,
       "attr": "show-default-title",
       "reflectToAttr": false,
-      "docs": "If `true`, a header will be shown above the calendar\npicker. On `ios` mode this will include the\nslotted title, and on `md` mode this will include\nthe slotted title and the selected date.",
+      "docs": "If `true`, a header will be shown above the calendar\npicker. This will include both the slotted title, and\nthe selected date.",
       "docsTags": [],
       "default": "false",
       "values": [
@@ -580,6 +604,24 @@
         }
       ],
       "optional": false,
+      "required": false
+    },
+    {
+      "name": "titleSelectedDatesFormatter",
+      "type": "((selectedDates: string[]) => string) | undefined",
+      "mutable": false,
+      "reflectToAttr": false,
+      "docs": "A callback used to format the header text that shows how many\ndates are selected. Only used if there are 0 or more than 1\nselected (i.e. unused for exactly 1). By default, the header\ntext is set to \"numberOfDates days\".",
+      "docsTags": [],
+      "values": [
+        {
+          "type": "((selectedDates: string[]) => string)"
+        },
+        {
+          "type": "undefined"
+        }
+      ],
+      "optional": true,
       "required": false
     },
     {
@@ -662,7 +704,7 @@
         "type": "Promise<void>",
         "docs": ""
       },
-      "signature": "reset(startDate?: string | undefined) => Promise<void>",
+      "signature": "reset(startDate?: string) => Promise<void>",
       "parameters": [],
       "docs": "Resets the internal state of the datetime but does not update the value.\nPassing a valid ISO-8601 string will reset the state of the component to the provided date.\nIf no value is provided, the internal state will be reset to the clamped value of the min, max and today.",
       "docsTags": []

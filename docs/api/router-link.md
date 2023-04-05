@@ -4,15 +4,14 @@ hide_table_of_contents: true
 demoUrl: "/docs/demos/api/router-link/index.html"
 demoSourceUrl: "https://github.com/ionic-team/ionic-docs/tree/main/static/demos/api/router-link/index.html"
 ---
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
+import TOCInline from '@theme/TOCInline';
 
-import Props from '@ionic-internal/component-api/v6/router-link/props.md';
-import Events from '@ionic-internal/component-api/v6/router-link/events.md';
-import Methods from '@ionic-internal/component-api/v6/router-link/methods.md';
-import Parts from '@ionic-internal/component-api/v6/router-link/parts.md';
-import CustomProps from '@ionic-internal/component-api/v6/router-link/custom-props.md';
-import Slots from '@ionic-internal/component-api/v6/router-link/slots.md';
+import Props from '@ionic-internal/component-api/v7/router-link/props.md';
+import Events from '@ionic-internal/component-api/v7/router-link/events.md';
+import Methods from '@ionic-internal/component-api/v7/router-link/methods.md';
+import Parts from '@ionic-internal/component-api/v7/router-link/parts.md';
+import CustomProps from '@ionic-internal/component-api/v7/router-link/custom-props.md';
+import Slots from '@ionic-internal/component-api/v7/router-link/slots.md';
 
 <head>
   <title>Router Link | Navigating The ion-router-link Component</title>
@@ -20,7 +19,6 @@ import Slots from '@ionic-internal/component-api/v6/router-link/slots.md';
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
-import TOCInline from '@theme/TOCInline';
 
 <EncapsulationPill type="shadow" />
 

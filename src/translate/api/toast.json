@@ -154,7 +154,7 @@
       "reflectToAttr": false,
       "docs": "How many milliseconds to wait before hiding the toast. By default, it will show\nuntil `dismiss()` is called.",
       "docsTags": [],
-      "default": "0",
+      "default": "config.getNumber('toastDuration', 0)",
       "values": [
         {
           "type": "number"
@@ -249,6 +249,28 @@
       "values": [
         {
           "type": "boolean"
+        }
+      ],
+      "optional": false,
+      "required": false
+    },
+    {
+      "name": "layout",
+      "type": "\"baseline\" | \"stacked\"",
+      "mutable": false,
+      "attr": "layout",
+      "reflectToAttr": false,
+      "docs": "Defines how the message and buttons are laid out in the toast.\n'baseline': The message and the buttons will appear on the same line.\nMessage text may wrap within the message container.\n'stacked': The buttons containers and message will stack on top\nof each other. Use this if you have long text in your buttons.",
+      "docsTags": [],
+      "default": "'baseline'",
+      "values": [
+        {
+          "value": "baseline",
+          "type": "string"
+        },
+        {
+          "value": "stacked",
+          "type": "string"
         }
       ],
       "optional": false,
@@ -366,7 +388,7 @@
         "type": "Promise<boolean>",
         "docs": ""
       },
-      "signature": "dismiss(data?: any, role?: string | undefined) => Promise<boolean>",
+      "signature": "dismiss(data?: any, role?: string) => Promise<boolean>",
       "parameters": [],
       "docs": "Dismiss the toast overlay after it has been presented.",
       "docsTags": [

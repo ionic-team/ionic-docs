@@ -2,7 +2,6 @@
 title: Ionicの紹介
 sidebar_label: 概要
 slug: /
-image: /img/meta/open-graph.png
 hide_table_of_contents: true
 demoUrl: https://docs-demo.ionic.io/
 demoSourceUrl: https://github.com/ionic-team/docs-demo
@@ -15,7 +14,7 @@ import DocsCards from '@components/global/DocsCards';
   <title>モバイルとディスクトップアプリをつくるためのオープンソースのUIキット</title>
   <meta
     name="description"
-    content="Ionic Framework is an open-source UI toolkit to create your own mobile and desktop apps using web technologies with integrations for popular frameworks."
+    content="Ionic Framework is an open-source UI toolkit to create your own mobile apps using web technologies with integrations for popular frameworks."
   />
   <link rel="canonical" href="https://ionicframework.com/docs" />
   <link rel="alternate" href="https://ionicframework.com/docs" hreflang="x-default" />
@@ -59,7 +58,7 @@ Ionic FrameworkはオープンソースのUIツールキットで、HTML、CSS�
 
 ## 概要
 
-Ionic Frameworkは、UIコントロール、インタラクション、ジェスチャ、アニメーションなど、アプリのフロントエンドUXとUIインタラクションに焦点を当てています。覚えるのは簡単で、 [Angular](angular/overview.md)、 [React](react/overview.md) や [Vue](vue/overview.md) 上で利用することができます。また、シンプルに [scriptタグにふくめて](intro/cdn.md) 、フレームワークなしでスタンドアロンで利用することもできます。Ionic Frameworkについて詳しく知りたい人のために、私たちは基本的な順を説明した<a href="https://youtu.be/p3AN3igqiRc" target="_blank">ビデオ</a>も提供しています。
+Ionicは、アプリのフロントエンドのUXとUIインタラクション（UIコントロール、インタラクション、ジェスチャー、アニメーション）に重点を置いています。学習が容易で、 [Angular](angular/overview.md) 、 [React](react.md) 、 [Vue](vue/overview.md) などのライブラリやフレームワークに統合することが可能です。また、シンプルな [script include](intro/cdn.md) を使って、フロントエンドフレームワークなしでスタンドアロンで使用することも可能です。Ionicについてもっと知りたい方向けに、<a href="https://youtu.be/p3AN3igqiRc" target="_blank">私たちはビデオを作成しました</a>。ここから、基本的な使い方を学ぶことができます。
 
 ### どこでもひとつのコードで
 

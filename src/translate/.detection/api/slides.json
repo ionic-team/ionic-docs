@@ -205,7 +205,7 @@
         "type": "Promise<void>",
         "docs": ""
       },
-      "signature": "slideNext(speed?: number | undefined, runCallbacks?: boolean | undefined) => Promise<void>",
+      "signature": "slideNext(speed?: number, runCallbacks?: boolean) => Promise<void>",
       "parameters": [],
       "docs": "Transition to the next slide.",
       "docsTags": [
@@ -225,7 +225,7 @@
         "type": "Promise<void>",
         "docs": ""
       },
-      "signature": "slidePrev(speed?: number | undefined, runCallbacks?: boolean | undefined) => Promise<void>",
+      "signature": "slidePrev(speed?: number, runCallbacks?: boolean) => Promise<void>",
       "parameters": [],
       "docs": "Transition to the previous slide.",
       "docsTags": [
@@ -245,7 +245,7 @@
         "type": "Promise<void>",
         "docs": ""
       },
-      "signature": "slideTo(index: number, speed?: number | undefined, runCallbacks?: boolean | undefined) => Promise<void>",
+      "signature": "slideTo(index: number, speed?: number, runCallbacks?: boolean) => Promise<void>",
       "parameters": [],
       "docs": "Transition to the specified slide.",
       "docsTags": [
@@ -302,7 +302,7 @@
         "type": "Promise<void>",
         "docs": ""
       },
-      "signature": "updateAutoHeight(speed?: number | undefined) => Promise<void>",
+      "signature": "updateAutoHeight(speed?: number) => Promise<void>",
       "parameters": [],
       "docs": "Force swiper to update its height (when autoHeight is enabled) for the duration\nequal to 'speed' parameter.",
       "docsTags": [

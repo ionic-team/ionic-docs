@@ -1,16 +1,13 @@
 ---
 title: "ion-route-redirect"
-hide_table_of_contents: true
 ---
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
 
-import Props from '@ionic-internal/component-api/v6/route-redirect/props.md';
-import Events from '@ionic-internal/component-api/v6/route-redirect/events.md';
-import Methods from '@ionic-internal/component-api/v6/route-redirect/methods.md';
-import Parts from '@ionic-internal/component-api/v6/route-redirect/parts.md';
-import CustomProps from '@ionic-internal/component-api/v6/route-redirect/custom-props.md';
-import Slots from '@ionic-internal/component-api/v6/route-redirect/slots.md';
+import Props from '@ionic-internal/component-api/v7/route-redirect/props.md';
+import Events from '@ionic-internal/component-api/v7/route-redirect/events.md';
+import Methods from '@ionic-internal/component-api/v7/route-redirect/methods.md';
+import Parts from '@ionic-internal/component-api/v7/route-redirect/parts.md';
+import CustomProps from '@ionic-internal/component-api/v7/route-redirect/custom-props.md';
+import Slots from '@ionic-internal/component-api/v7/route-redirect/slots.md';
 
 <head>
   <title>ion-route-redirect Plugin: Redirect 'from' a URL 'to' Another URL</title>
@@ -18,20 +15,9 @@ import Slots from '@ionic-internal/component-api/v6/route-redirect/slots.md';
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
-import TOCInline from '@theme/TOCInline';
 
 
-
-<h2 className="table-of-contents__title">コンテンツ</h2>
-
-<TOCInline
-  toc={toc}
-  maxHeadingLevel={2}
-/>
-
-
-
-route redirectは `ion-router` を直接の子としてのみ使用することができます。
+A route redirect can only be used with an `ion-router` as a direct child of it.
 
 :::note
  Note: このコンポーネントは、バニラおよびステンシルJavaScriptプロジェクトでのみ使用してください。Angularプロジェクトでは、[`ion-router-outlet`](router-outlet.md) と Angularルータを使用してください。

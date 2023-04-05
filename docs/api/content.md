@@ -1,19 +1,12 @@
 ---
 title: "ion-content"
-hide_table_of_contents: true
-demoUrl: "/docs/demos/api/content/index.html"
-demoSourceUrl: "https://github.com/ionic-team/ionic-docs/tree/main/static/demos/api/content/index.html"
 ---
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-import TOCInline from '@theme/TOCInline';
-
-import Props from '@ionic-internal/component-api/v6/content/props.md';
-import Events from '@ionic-internal/component-api/v6/content/events.md';
-import Methods from '@ionic-internal/component-api/v6/content/methods.md';
-import Parts from '@ionic-internal/component-api/v6/content/parts.md';
-import CustomProps from '@ionic-internal/component-api/v6/content/custom-props.md';
-import Slots from '@ionic-internal/component-api/v6/content/slots.md';
+import Props from '@ionic-internal/component-api/v7/content/props.md';
+import Events from '@ionic-internal/component-api/v7/content/events.md';
+import Methods from '@ionic-internal/component-api/v7/content/methods.md';
+import Parts from '@ionic-internal/component-api/v7/content/parts.md';
+import CustomProps from '@ionic-internal/component-api/v7/content/custom-props.md';
+import Slots from '@ionic-internal/component-api/v7/content/slots.md';
 
 <head>
   <title>ion-content: Scrollable CSS Component for Ionic App Content Areas</title>
@@ -24,14 +17,6 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="shadow" />
 
-<h2 className="table-of-contents__title">コンテンツ</h2>
-
-<TOCInline
-  toc={toc}
-  maxHeadingLevel={2}
-/>
-
-
 
 Contentコンポーネントは、スクロール可能領域を制御するいくつかの便利なメソッドを備えた、
 使いやすいコンテンツ領域を提供します。
@@ -40,9 +25,76 @@ Contentコンポーネントは、スクロール可能領域を制御するい�
 Contentは、他の多くのIonicコンポーネントと同様に、 [CSS Utilities](/docs/layout/css-utilities) で提供されるグローバルスタイルを使用するか、CSSおよび使用可能な [CSS Custom Properties](#css-custom-properties) を使用して個別にスタイル設定することによって、`padding` や `margin` などを変更するようにカスタマイズできます。
 
 
-## Fixed Content
+## 基本的な使い方
 
-スクロール可能な領域の外側に要素を配置するために、要素に `slot="fixed"` を追加することができます。これは、要素を左上に絶対配置します。それ以外の場所に配置するには、[top, right, bottom, left](https://developer.mozilla.org/en-US/docs/Web/CSS/position) でスタイルを指定します。
+import Basic from '@site/static/usage/v7/content/basic/index.md';
+
+<Basic />
+
+
+## Header & Footer
+
+コンテンツは、ページ内の唯一のトップレベル・コンポーネントとすることも、[ヘッダー](./header)、[フッター](./footer)、またはその両方と一緒に使用することも可能です。ヘッダーやフッターと一緒に使用すると、残りの高さを埋めるようにサイズが調整されます。
+
+import HeaderFooter from '@site/static/usage/v7/content/header-footer/index.md';
+
+<HeaderFooter />
+
+
+## Fullscreen Content
+
+デフォルトでは、コンテンツは [ヘッダー](./header)と [フッター](./footer)の間のスペースを埋めますが、それらの背景にまわることはありません。例えば、ヘッダーとフッターのどちらかに `translucent` プロパティを設定した場合や、ツールバーに `opacity` を設定した場合など、特定のケースでは、コンテンツをヘッダーとフッターの後ろにスクロールさせることが望まれるかもしれない。これは、コンテンツの `fullscreen` プロパティを `true` に設定することで実現することができます。
+
+import Fullscreen from '@site/static/usage/v7/content/fullscreen/index.md';
+
+<Fullscreen />
+
+
+## コンテンツの固定
+
+スクロール可能な領域の外側に要素を配置するには、`fixed`スロットに割り当てます。そうすることで、その要素はコンテンツの左上に[絶対位置](https://developer.mozilla.org/en-US/docs/Web/CSS/position#absolute_positioning)されます。要素の位置を変えるには、CSSの[top, right, bottom, left](https://developer.mozilla.org/en-US/docs/Web/CSS/position)プロパティを使ってスタイルを設定することができます。
+
+import Fixed from '@site/static/usage/v7/content/fixed/index.md';
+
+<Fixed />
+
+## スクロールメソッド
+
+コンテンツには [メソッド](#methods) が用意されており、これを呼び出すことでコンテンツを下、上、または特定のポイントにスクロールさせることができます。これらのメソッドには `duration` を渡すことができ、瞬時に位置を変更するのではなく、スムーズに移行することができます。
+
+import ScrollMethods from '@site/static/usage/v7/content/scroll-methods/index.md';
+
+<ScrollMethods />
+
+## Scroll Events
+
+スクロールイベントは、パフォーマンス上、コンテンツに対してデフォルトで無効化されています。しかし、`scrollEvents` を `true` に設定することで、有効にすることができます。これは、 スクロール [イベント](#events) を聞く前に必要です。
+
+import ScrollEvents from '@site/static/usage/v7/content/scroll-events/index.md';
+
+<ScrollEvents />
+
+
+## テーマ
+
+### Colors
+
+import Colors from '@site/static/usage/v7/content/theming/colors/index.md';
+
+<Colors />
+
+### CSS Shadow Parts
+
+import CSSParts from '@site/static/usage/v7/content/theming/css-shadow-parts/index.md';
+
+<CSSParts />
+
+## CSSカスタムプロパティ
+
+import CSSProps from '@site/static/usage/v7/content/theming/css-properties/index.md';
+
+<CSSProps />
+
 
 ## Interfaces
 
@@ -63,7 +115,7 @@ interface ScrollDetail extends GestureDetail, ScrollBaseDetail {
 }
 ```
 
-### ScrollBaseCustomEvent 
+### ScrollBaseCustomEvent
 
 必須ではありませんが、`ionScrollStart` と `ionScrollEnd` イベントをより強く型付けするために、`CustomEvent` インターフェースの代わりにこのインターフェースを利用することが可能です。
 
@@ -74,7 +126,7 @@ interface ScrollBaseCustomEvent extends CustomEvent {
 }
 ```
 
-### ScrollCustomEvent 
+### ScrollCustomEvent
 
 必須ではありませんが、`ionScroll` イベントをより強く型付けするために、`CustomEvent` インターフェースの代わりにこのインターフェースを利用することが可能です。
 
@@ -84,160 +136,6 @@ interface ScrollCustomEvent extends ScrollBaseCustomEvent {
 }
 ```
 
-
-
-
-## 使い方
-
-<Tabs groupId="framework" defaultValue="angular" values={[{ value: 'angular', label: 'Angular' }, { value: 'javascript', label: 'Javascript' }, { value: 'react', label: 'React' }, { value: 'stencil', label: 'Stencil' }, { value: 'vue', label: 'Vue' }]}>
-
-<TabItem value="angular">
-
-```html
-<ion-content
-  [scrollEvents]="true"
-  (ionScrollStart)="logScrollStart()"
-  (ionScroll)="logScrolling($event)"
-  (ionScrollEnd)="logScrollEnd()">
-    <h1>Main Content</h1>
-
-    <div slot="fixed">
-      <h1>Fixed Content</h1>
-    </div>
-</ion-content>
-```
-
-
-
-</TabItem>
-
-
-<TabItem value="javascript">
-
-```html
-<ion-content>
-  <h1>Main Content</h1>
-
-  <div slot="fixed">
-    <h1>Fixed Content</h1>
-  </div>
-</ion-content>
-```
-
-```javascript
-var content = document.querySelector('ion-content');
-content.scrollEvents = true;
-content.addEventListener('ionScrollStart', () => console.log('scroll start'));
-content.addEventListener('ionScroll', (ev) => console.log('scroll', ev.detail));
-content.addEventListener('ionScrollEnd', () => console.log('scroll end'));
-```
-
-
-</TabItem>
-
-
-<TabItem value="react">
-
-```tsx
-import React from 'react';
-import { IonContent } from '@ionic/react';
-
-const ContentExample: React.FC = () => (
-  <IonContent
-    scrollEvents={true}
-    onIonScrollStart={() => {}}
-    onIonScroll={() => {}}
-    onIonScrollEnd={() => {}}>
-      <h1>Main Content</h1>
-
-      <div slot="fixed">
-        <h1>Fixed Content</h1>
-      </div>
-  </IonContent>
-);
-```
-
-
-</TabItem>
-
-
-<TabItem value="stencil">
-
-```tsx
-import { Component, h } from '@stencil/core';
-
-@Component({
-  tag: 'content-example',
-  styleUrl: 'content-example.css'
-})
-export class ContentExample {
-  logScrollStart() {
-    console.log('Scroll start');
-  }
-
-  logScrolling(ev) {
-    console.log('Scrolling', ev);
-  }
-
-  logScrollEnd() {
-    console.log('Scroll end');
-  }
-
-  render() {
-    return [
-      <ion-content
-        scrollEvents={true}
-        onIonScrollStart={() => this.logScrollStart()}
-        onIonScroll={(ev) => this.logScrolling(ev)}
-        onIonScrollEnd={() => this.logScrollEnd()}>
-          <h1>Main Content</h1>
-
-          <div slot="fixed">
-            <h1>Fixed Content</h1>
-          </div>
-      </ion-content>
-    ];
-  }
-}
-```
-
-
-</TabItem>
-
-
-<TabItem value="vue">
-
-```html
-<template>
-  <ion-content
-    :scroll-events="true"
-    @ionScrollStart="logScrollStart()"
-    @ionScroll="logScrolling($event)"
-    @ionScrollEnd="logScrollEnd()">
-      <h1>Main Content</h1>
-
-      <div slot="fixed">
-        <h1>Fixed Content</h1>
-      </div>
-  </ion-content>
-</template>
-
-<script>
-import { IonContent } from '@ionic/vue';
-import { defineComponent } from 'vue';
-
-export default defineComponent({
-  components: { IonContent }
-});
-</script>
-
-```
-
-
-
-</TabItem>
-
-</Tabs>
 
 ## プロパティ
 <Props />

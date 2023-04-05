@@ -85,7 +85,7 @@ public async deletePicture(photo: UserPhoto, position: number) {
   this.photos.splice(position, 1);
 
   // Update photos array cache by overwriting the existing photo array
-  Storage.set({
+  Preferences.set({
     key: this.PHOTO_STORAGE,
     value: JSON.stringify(this.photos)
   });
@@ -101,12 +101,12 @@ public async deletePicture(photo: UserPhoto, position: number) {
 }
 ```
 
-The selected photo is removed from the Photos array first. Then, we use the Capacitor Storage API to update the cached version of the Photos array. Finally, we delete the actual photo file itself using the Filesystem API.
+The selected photo is removed from the Photos array first. Then, we use the Capacitor Preferences API to update the cached version of the Photos array. Finally, we delete the actual photo file itself using the Filesystem API.
 
 Save this file, then tap on a photo again and choose the “Delete” option. This time, the photo is deleted! Implemented much faster using Live Reload. 💪
 
 ## What’s Next?
 
-Congratulations! You built a complete cross-platform Photo Gallery app that runs on the web, iOS, and Android. There are many paths to follow from here. Try adding another [Ionic UI component](https://ionicframework.com/docs/components) to the app, or more [native functionality](https://capacitor.ionicframework.com/docs/apis). The sky’s the limit.
+Congratulations! You built a complete cross-platform Photo Gallery app that runs on the web, iOS, and Android. There are many paths to follow from here. Try adding another [Ionic UI component](https://ionicframework.com/docs/components) to the app, or more [native functionality](https://capacitorjs.com/docs/apis). The sky’s the limit.
 
 Happy app building! 💙

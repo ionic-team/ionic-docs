@@ -1,51 +1,72 @@
 ---
 title: "ion-action-sheet"
-hide_table_of_contents: true
-demoUrl: "/docs/demos/api/action-sheet/index.html"
-demoSourceUrl: "https://github.com/ionic-team/ionic-docs/tree/main/static/demos/api/action-sheet/index.html"
 ---
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-import TOCInline from '@theme/TOCInline';
-
-import Props from '@ionic-internal/component-api/v6/action-sheet/props.md';
-import Events from '@ionic-internal/component-api/v6/action-sheet/events.md';
-import Methods from '@ionic-internal/component-api/v6/action-sheet/methods.md';
-import Parts from '@ionic-internal/component-api/v6/action-sheet/parts.md';
-import CustomProps from '@ionic-internal/component-api/v6/action-sheet/custom-props.md';
-import Slots from '@ionic-internal/component-api/v6/action-sheet/slots.md';
+import Props from '@ionic-internal/component-api/v7/action-sheet/props.md';
+import Events from '@ionic-internal/component-api/v7/action-sheet/events.md';
+import Methods from '@ionic-internal/component-api/v7/action-sheet/methods.md';
+import Parts from '@ionic-internal/component-api/v7/action-sheet/parts.md';
+import CustomProps from '@ionic-internal/component-api/v7/action-sheet/custom-props.md';
+import Slots from '@ionic-internal/component-api/v7/action-sheet/slots.md';
 
 <head>
   <title>ion-action-sheet | Action Sheet Dialog for iOS and Android Apps</title>
-  <meta name="description" content="Action Sheetsはアプリのコンテンツの上に一連のオプションを表示するダイアログで、手動で解除する必要があります。iOSとAndroidのデバイスでの使用方法については、こちらをご覧ください。" />
+  <meta name="description" content="アクションシートはアプリのコンテンツの上に一連のオプションを表示するダイアログで、手動で解除する必要があります。iOSとAndroidのデバイスでの使用方法については、こちらをご覧ください。" />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="scoped" />
 
-<h2 className="table-of-contents__title">コンテンツ</h2>
-
-<TOCInline
-  toc={toc}
-  maxHeadingLevel={2}
-/>
-
-
 
 Action Sheetは複数の選択肢を表示するダイアログです。アプリのコンテンツ上に表示され、ユーザが手動で破棄しないとアプリの利用を再開することはできません。`ios` modeでは、破壊的な選択肢は明示されます（コンテンツの削除などは赤字などでわかりやすく表示されます）。Action Sheetを破棄するには、背景をタップする、デスクトップのパソコンの場合はエスケープキーを押すなど、複数の選択肢があります。
 
+## インラインアクションシート (推奨)
+
+`ion-action-sheet` は、テンプレートに直接コンポーネントを記述することで使用することができます。これにより、アクションシートを表示するために配線する必要があるハンドラの数を減らすことができます。
+
+import Trigger from '@site/static/usage/v7/action-sheet/inline/trigger/index.md';
+
+<Trigger />
+
+### `isOpen` を使う
+
+`ion-action-sheet` の `isOpen` プロパティは、開発者がアプリケーションの状態からアクションシートの表示状態を制御することを可能にします。つまり、`isOpen`が`true`に設定されるとアクションシートが表示され、`isOpen`が`false`に設定されるとアクションシートは解除されます。
+
+`isOpen` は一方通行のデータバインディングを使用しているため、アクションシートが終了したときに自動的に `false` に設定されることはありません。開発者は `ionActionSheetDidDismiss` または `didDismiss` イベントをリッスンして `isOpen` を `false` に設定する必要があります。この理由は、`ion-action-sheet` の内部がアプリケーションの状態と密接に結合するのを防ぐためです。一方通行のデータバインディングでは、アクションシートはリアクティブ変数が提供するブーリアン値だけを気にすればよい。一方通行のデータバインディングでは、アクションシートは、ブーリアン値とリアクティブ変数の存在の両方に関心を持つ必要があります。これは、非決定的な動作につながり、アプリケーションのデバッグを困難にします。
+
+import IsOpen from '@site/static/usage/v7/action-sheet/inline/isOpen/index.md';
+
+<IsOpen />
+
+## Controller アクションシート
+
+アクションシートの表示・非表示をより細かく制御したい場合は、`actionSheetController`を使用することができます。
+
+import Controller from '@site/static/usage/v7/action-sheet/controller/index.md';
+
+<Controller />
+
 ## Buttons
 
-Buttonの `role` プロパティは、 `destructive` か `cancel` のどちらかを利用できます。 roleプロパティがない場合は、プラットフォームに応じたデフォルトの外観となります。`cancel` role を持つButtonは、配列 `buttons` のどこに配置してもAction Sheetの最下部に表示されます。 Note: `destructive` roleをつけるButtonは、一番上のButtonとして配置することをおすすめします。また、背景をタップしてAction Sheetを破棄した場合、cancel role に設定されているhandlerが実行されます。
+Buttonの `role` プロパティは、 `destructive` か `cancel` のどちらかを利用できます。 roleプロパティがない場合は、プラットフォームに応じたデフォルトの外観となります。`cancel` role を持つButtonは、配列 `buttons` のどこに配置してもアクションシートの最下部に表示されます。 Note: `destructive` roleをつけるButtonは、一番上のButtonとして配置することをおすすめします。また、背景をタップしてアクションシートを破棄した場合、cancel role に設定されているhandlerが実行されます。
 
 Buttonは `ActionSheetButton` の `data` プロパティを介してデータを渡すこともできます。これは `onDidDismiss` メソッドの戻り値にある `data` フィールドにデータを入力します。
 
-## カスタマイズ
+## Collecting Role Information on Dismiss
 
-Action Sheetはscopedによるカプセル化を採用しており、実行時に各スタイルにクラスを追加することで、自動的にCSSをスコープ化します。CSSでscopedセレクタをオーバーライドするには、[higher specificity](https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity) セレクタが必要です。
+`didDismiss` イベントが発生すると、イベント詳細の `data` と `role` フィールドを使用して、アクションシートがどのように却下されたかについての情報を収集することができます。
 
-私たちは、 `create` メソッドで `cssClass` にカスタムクラスを渡し、それを使ってホストと内部要素にカスタムスタイルを追加することをお勧めします。このプロパティは、スペースで区切られた複数のクラスを受け付けることもできます。 `cssClass` を使用してクラスを渡す例については、[使い方](#usage) のセクションを参照してください。
+import RoleInfo from '@site/static/usage/v7/action-sheet/role-info-on-dismiss/index.md';
+
+<RoleInfo />
+
+## テーマ
+
+アクションシートはscopedによるカプセル化を採用しており、実行時に各スタイルにクラスを追加することで、自動的にCSSをスコープ化します。CSSでscopedセレクタをオーバーライドするには、[higher specificity](https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity) セレクタが必要です。
+
+### スタイリング
+
+私たちは、 `create` メソッドで `cssClass` にカスタムクラスを渡し、それを使ってホストと内部要素にカスタムスタイルを追加することをお勧めします。このプロパティは、スペースで区切られた複数のクラスを受け付けることもできます。
 
 ```css
 /* DOES NOT WORK - not specific enough */
@@ -59,18 +80,23 @@ Action Sheetはscopedによるカプセル化を採用しており、実行時�
 }
 ```
 
-CSSカスタムプロパティ](#css-custom-properties)は、個々の要素をターゲットにしなくても、アクションシートのスタイルに使用することができます。
+import Styling from '@site/static/usage/v7/action-sheet/theming/styling/index.md';
 
-```css
-.my-custom-class {
-  --background: #e5e5e5;
-}
-```
+<Styling />
 
-:::note
-IonicのAngularアプリを構築する場合、スタイルはグローバルなスタイルシートファイルに追加する必要があります。詳しくは、以下のAngularセクションの [Style Placement](#style-placement) をお読みください。
-:::
+## CSSカスタムプロパティ
 
+[CSSカスタムプロパティ](#css-custom-properties-1) は、個々の要素を対象とすることなく、アクションシートのスタイルに使用することができます。
+
+import CssCustomProperties from '@site/static/usage/v7/action-sheet/theming/css-properties/index.md';
+
+<CssCustomProperties />
+
+## アクセシビリティ
+
+アクションシートには `role` として [`dialog`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/dialog_role) が与えられます。ARIA仕様に合わせるため、`aria-label`属性または`aria-labelledby`属性のいずれかを設定する必要があります。
+
+Ionicは自動的にヘッダー要素を指すように `aria-labelledby` を設定するので、すべてのアクションシートには `header` プロパティを定義することが強く推奨されています。しかし、`header`を含めない場合は、`htmlAttributes`プロパティを使用して、説明的な`aria-label`を提供するか、カスタム`aria-labelledby`値を設定することも可能です。
 
 ## Interfaces
 
@@ -107,503 +133,6 @@ interface ActionSheetOptions {
   leaveAnimation?: AnimationBuilder;
 }
 ```
-
-
-
-## 使い方
-
-<Tabs groupId="framework" defaultValue="angular" values={[{ value: 'angular', label: 'Angular' }, { value: 'javascript', label: 'Javascript' }, { value: 'react', label: 'React' }, { value: 'stencil', label: 'Stencil' }, { value: 'vue', label: 'Vue' }]}>
-
-<TabItem value="angular">
-
-```typescript
-import { Component } from '@angular/core';
-import { ActionSheetController } from '@ionic/angular';
-
-@Component({
-  selector: 'action-sheet-example',
-  templateUrl: 'action-sheet-example.html',
-  styleUrls: ['./action-sheet-example.css'],
-})
-export class ActionSheetExample {
-
-  constructor(public actionSheetController: ActionSheetController) {}
-
-  async presentActionSheet() {
-    const actionSheet = await this.actionSheetController.create({
-      header: 'Albums',
-      cssClass: 'my-custom-class',
-      buttons: [{
-        text: 'Delete',
-        role: 'destructive',
-        icon: 'trash',
-        id: 'delete-button',
-        data: {
-          type: 'delete'
-        },
-        handler: () => {
-          console.log('Delete clicked');
-        }
-      }, {
-        text: 'Share',
-        icon: 'share',
-        data: 10,
-        handler: () => {
-          console.log('Share clicked');
-        }
-      }, {
-        text: 'Play (open modal)',
-        icon: 'caret-forward-circle',
-        data: 'Data value',
-        handler: () => {
-          console.log('Play clicked');
-        }
-      }, {
-        text: 'Favorite',
-        icon: 'heart',
-        handler: () => {
-          console.log('Favorite clicked');
-        }
-      }, {
-        text: 'Cancel',
-        icon: 'close',
-        role: 'cancel',
-        handler: () => {
-          console.log('Cancel clicked');
-        }
-      }]
-    });
-    await actionSheet.present();
-
-    const { role, data } = await actionSheet.onDidDismiss();
-    console.log('onDidDismiss resolved with role and data', role, data);
-  }
-
-}
-```
-
-
-### Style Placement
-
-Angularでは、特定のページのCSSは、そのページの要素にのみスコープされます。アクションシートはページ内から表示することができますが、`ion-action-sheet` 要素は現在のページの外側に追加されます。これは、カスタムスタイルはグローバルなスタイルシートファイルに記述する必要があることを意味します。Ionic Angular スターターでは、`src/global.scss` ファイルを使用するか、[`angular.json` の `styles` build オプションに追加して、新しいグローバルスタイルファイルを登録します](https://angular.io/guide/workspace-config#style-script-config).
-
-
-</TabItem>
-
-
-<TabItem value="javascript">
-
-```javascript
-async function presentActionSheet() {
-  const actionSheet = document.createElement('ion-action-sheet');
-
-  actionSheet.header = 'Albums';
-  actionSheet.cssClass = 'my-custom-class';
-  actionSheet.buttons = [{
-    text: 'Delete',
-    role: 'destructive',
-    icon: 'trash',
-    id: 'delete-button',
-    data: {
-      type: 'delete'
-    },
-    handler: () => {
-      console.log('Delete clicked');
-    }
-  }, {
-    text: 'Share',
-    icon: 'share',
-    data: 10,
-    handler: () => {
-      console.log('Share clicked');
-    }
-  }, {
-    text: 'Play (open modal)',
-    icon: 'caret-forward-circle',
-    data: 'Data value',
-    handler: () => {
-      console.log('Play clicked');
-    }
-  }, {
-    text: 'Favorite',
-    icon: 'heart',
-    handler: () => {
-      console.log('Favorite clicked');
-    }
-  }, {
-    text: 'Cancel',
-    icon: 'close',
-    role: 'cancel',
-    handler: () => {
-      console.log('Cancel clicked');
-    }
-  }];
-  document.body.appendChild(actionSheet);
-  await actionSheet.present();
-
-  const { role, data } = await actionSheet.onDidDismiss();
-  console.log('onDidDismiss resolved with role and data', role, data);
-}
-```
-
-
-</TabItem>
-
-
-<TabItem value="react">
-
-```tsx
-/* Using with useIonActionSheet Hook */
-
-import React from 'react';
-import {
-  IonButton,
-  IonContent,
-  IonPage,
-  useIonActionSheet,
-} from '@ionic/react';
-
-const ActionSheetExample: React.FC = () => {
-  const [present, dismiss] = useIonActionSheet();
-
-  return (
-    <IonPage>
-      <IonContent>
-        <IonButton
-          expand="block"
-          onClick={() =>
-            present({
-              buttons: [{ text: 'Ok' }, { text: 'Cancel' }],
-              header: 'Action Sheet'
-            })
-          }
-        >
-          Show ActionSheet
-        </IonButton>
-        <IonButton
-          expand="block"
-          onClick={() =>
-            present([{ text: 'Ok' }, { text: 'Cancel' }], 'Action Sheet')
-          }
-        >
-          Show ActionSheet using params
-        </IonButton>
-        <IonButton
-          expand="block"
-          onClick={() => {
-            present([{ text: 'Ok' }, { text: 'Cancel' }], 'Action Sheet');
-            setTimeout(dismiss, 3000);
-          }}
-        >
-          Show ActionSheet, hide after 3 seconds
-        </IonButton>
-      </IonContent>
-    </IonPage>
-  );
-};
-```
-
-```tsx
-/* Using with IonActionSheet Component */
-
-import React, { useState } from 'react';
-import { IonActionSheet, IonContent, IonButton } from '@ionic/react';
-import { trash, share, caretForwardCircle, heart, close } from 'ionicons/icons';
-
-export const ActionSheetExample: React.FC = () => {
-  const [showActionSheet, setShowActionSheet] = useState(false);
-
-  return (
-    <IonContent>
-      <IonButton onClick={() => setShowActionSheet(true)} expand="block">
-        Show Action Sheet
-      </IonButton>
-      <IonActionSheet
-        isOpen={showActionSheet}
-        onDidDismiss={() => setShowActionSheet(false)}
-        cssClass='my-custom-class'
-        buttons={[{
-          text: 'Delete',
-          role: 'destructive',
-          icon: trash,
-          id: 'delete-button',
-          data: {
-            type: 'delete'
-          },
-          handler: () => {
-            console.log('Delete clicked');
-          }
-        }, {
-          text: 'Share',
-          icon: share,
-          data: 10,
-          handler: () => {
-            console.log('Share clicked');
-          }
-        }, {
-          text: 'Play (open modal)',
-          icon: caretForwardCircle,
-          data: 'Data value',
-          handler: () => {
-            console.log('Play clicked');
-          }
-        }, {
-          text: 'Favorite',
-          icon: heart,
-          handler: () => {
-            console.log('Favorite clicked');
-          }
-        }, {
-          text: 'Cancel',
-          icon: close,
-          role: 'cancel',
-          handler: () => {
-            console.log('Cancel clicked');
-          }
-        }]}
-      >
-      </IonActionSheet>
-    </IonContent>
-  );
-}
-```
-
-
-</TabItem>
-
-
-<TabItem value="stencil">
-
-```tsx
-import { Component, h } from '@stencil/core';
-
-import { actionSheetController } from '@ionic/core';
-
-@Component({
-  tag: 'action-sheet-example',
-  styleUrl: 'action-sheet-example.css'
-})
-export class ActionSheetExample {
-  async presentActionSheet() {
-    const actionSheet = await actionSheetController.create({
-      header: 'Albums',
-      cssClass: 'my-custom-class',
-      buttons: [{
-        text: 'Delete',
-        role: 'destructive',
-        icon: 'trash',
-        id: 'delete-button',
-        data: {
-          type: 'delete'
-        },
-        handler: () => {
-          console.log('Delete clicked');
-        }
-      }, {
-        text: 'Share',
-        icon: 'share',
-        data: 10,
-        handler: () => {
-          console.log('Share clicked');
-        }
-      }, {
-        text: 'Play (open modal)',
-        icon: 'caret-forward-circle',
-        data: 'Data value',
-        handler: () => {
-          console.log('Play clicked');
-        }
-      }, {
-        text: 'Favorite',
-        icon: 'heart',
-        handler: () => {
-          console.log('Favorite clicked');
-        }
-      }, {
-        text: 'Cancel',
-        icon: 'close',
-        role: 'cancel',
-        handler: () => {
-          console.log('Cancel clicked');
-        }
-      }]
-    });
-    await actionSheet.present();
-
-    const { role, data } = await actionSheet.onDidDismiss();
-    console.log('onDidDismiss resolved with role and data', role, data);
-  }
-
-  render() {
-    return [
-      <ion-content>
-        <ion-button onClick={() => this.presentActionSheet()}>Present Action Sheet</ion-button>
-      </ion-content>
-    ];
-  }
-}
-```
-
-
-</TabItem>
-
-
-<TabItem value="vue">
-
-```html
-<template>
-  <ion-button @click="presentActionSheet">Show Action Sheet</ion-button>
-</template>
-
-<script>
-import { IonButton, actionSheetController } from '@ionic/vue';
-import { defineComponent } from 'vue';
-import { caretForwardCircle, close, heart, trash, share } from 'ionicons/icons';
-
-export default defineComponent({
-  components: { IonButton },
-  methods: {
-    async presentActionSheet() {
-      const actionSheet = await actionSheetController
-        .create({
-          header: 'Albums',
-          cssClass: 'my-custom-class',
-          buttons: [
-            {
-              text: 'Delete',
-              role: 'destructive',
-              icon: trash,
-              id: 'delete-button', 
-              data: {
-                type: 'delete'
-              },
-              handler: () => {
-                console.log('Delete clicked')
-              },
-            },
-            {
-              text: 'Share',
-              icon: share,
-              data: 10,  
-              handler: () => {
-                console.log('Share clicked')
-              },
-            },
-            {
-              text: 'Play (open modal)',
-              icon: caretForwardCircle,
-              data: 'Data value',
-              handler: () => {
-                console.log('Play clicked')
-              },
-            },
-            {
-              text: 'Favorite',
-              icon: heart,
-              handler: () => {
-                console.log('Favorite clicked')
-              },
-            },
-            {
-              text: 'Cancel',
-              icon: close,
-              role: 'cancel',
-              handler: () => {
-                console.log('Cancel clicked')
-              },
-            },
-          ],
-        });
-      await actionSheet.present();
-
-      const { role, data } = await actionSheet.onDidDismiss();
-      console.log('onDidDismiss resolved with role and data', role, data);
-    },
-  },
-});
-</script>
-```
-
-Developers can also use this component directly in their template:
-
-```html
-<template>
-  <ion-button @click="setOpen(true)">Show Action Sheet</ion-button>
-  <ion-action-sheet
-    :is-open="isOpenRef"
-    header="Albums"
-    css-class="my-custom-class"
-    :buttons="buttons"
-    @didDismiss="setOpen(false)"
-  >
-  </ion-action-sheet>
-</template>
-
-<script>
-import { IonActionSheet, IonButton } from '@ionic/vue';
-import { defineComponent, ref } from 'vue';
-import { caretForwardCircle, close, heart, trash, share } from 'ionicons/icons';
-
-export default defineComponent({
-  components: { IonActionSheet, IonButton },
-  setup() {
-    const isOpenRef = ref(false);
-    const setOpen = (state: boolean) => isOpenRef.value = state;
-    const buttons = [
-      {
-        text: 'Delete',
-        role: 'destructive',
-        icon: trash,
-        data: {
-          type: 'delete'
-        }
-        handler: () => {
-          console.log('Delete clicked')
-        },
-      },
-      {
-        text: 'Share',
-        icon: share,
-        data: 10,  
-        handler: () => {
-          console.log('Share clicked')
-        },
-      },
-      {
-        text: 'Play (open modal)',
-        icon: caretForwardCircle,
-        data: 'Data value',  
-        handler: () => {
-          console.log('Play clicked')
-        },
-      },
-      {
-        text: 'Favorite',
-        icon: heart,
-        handler: () => {
-          console.log('Favorite clicked')
-        },
-      },
-      {
-        text: 'Cancel',
-        icon: close,
-        role: 'cancel',
-        handler: () => {
-          console.log('Cancel clicked')
-        },
-      },
-    ];
-    
-    return { buttons, isOpenRef, setOpen }
-  }
-});
-</script>
-```
-
-
-</TabItem>
-
-</Tabs>
 
 ## プロパティ
 <Props />

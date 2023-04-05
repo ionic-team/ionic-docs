@@ -1,18 +1,12 @@
 ---
 title: "ion-fab"
-hide_table_of_contents: true
-demoUrl: "/docs/demos/api/fab/index.html"
-demoSourceUrl: "https://github.com/ionic-team/ionic-docs/tree/main/static/demos/api/fab/index.html"
 ---
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-
-import Props from '@ionic-internal/component-api/v6/fab/props.md';
-import Events from '@ionic-internal/component-api/v6/fab/events.md';
-import Methods from '@ionic-internal/component-api/v6/fab/methods.md';
-import Parts from '@ionic-internal/component-api/v6/fab/parts.md';
-import CustomProps from '@ionic-internal/component-api/v6/fab/custom-props.md';
-import Slots from '@ionic-internal/component-api/v6/fab/slots.md';
+import Props from '@ionic-internal/component-api/v7/fab/props.md';
+import Events from '@ionic-internal/component-api/v7/fab/events.md';
+import Methods from '@ionic-internal/component-api/v7/fab/methods.md';
+import Parts from '@ionic-internal/component-api/v7/fab/parts.md';
+import CustomProps from '@ionic-internal/component-api/v7/fab/custom-props.md';
+import Slots from '@ionic-internal/component-api/v7/fab/slots.md';
 
 <head>
   <title>ion-fab: Floating Action Button for Android and iOS Ionic Apps</title>
@@ -20,607 +14,67 @@ import Slots from '@ionic-internal/component-api/v6/fab/slots.md';
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
-import TOCInline from '@theme/TOCInline';
 
 <EncapsulationPill type="shadow" />
 
-<h2 className="table-of-contents__title">コンテンツ</h2>
+Fabは、1つ以上の[fabボタン](./fab-button)を含むコンテナ要素です。それらはコンテンツと一緒にスクロールしない固定位置に配置されるべきです。Fabは1つのメインFabボタンを持つべきです。また、メインファブボタンがクリックされたときに表示される関連ボタンを含む1つ以上の[fabリスト](./fab-list)を含むことができます。
 
-<TOCInline
-  toc={toc}
-  maxHeadingLevel={2}
-/>
+## 基本的な使い方
 
+import BasicUsage from '@site/static/usage/v7/fab/basic/index.md';
 
+<BasicUsage />
 
-Fabは、1つ以上のFabボタンを含むコンテナ要素です。コンテンツとともにスクロールしない固定位置に配置する必要があります。Fabにはメインのfabボタンが1つあるはずです。Fabには、メインのFabボタンがクリックされたときに表示される関連ボタン [fab-list](fab-list.md) によって含めることもできます。同じfabコンテナに、side 値が異なる複数のfabリスト要素を含めることができます。
+## List Side
 
+[fabリスト](./fab-list)コンポーネントの`side`プロパティは、メインfabボタンと相対的に表示される場所を制御します。一つのfabは、`side`の値が全て異なる限り、複数のfabリストを持つことができます。
 
+import ListSide from '@site/static/usage/v7/fab/list-side/index.md';
 
-## 使い方
+<ListSide />
 
-<Tabs groupId="framework" defaultValue="angular" values={[{ value: 'angular', label: 'Angular' }, { value: 'javascript', label: 'Javascript' }, { value: 'react', label: 'React' }, { value: 'stencil', label: 'Stencil' }, { value: 'vue', label: 'Vue' }]}>
+## ポジション
 
-<TabItem value="angular">
+fabを固定位置に配置するためには、外側の [content](./content) コンポーネントの `fixed` スロットに割り当てる必要があります。vertical`とhorizontal`のプロップを使用して、ビューポートでのfabの配置を制御します。edge`プロップは、アプリのヘッダーやフッターにfabボタンが重なるようにします。
 
-```html
-<ion-header>
-  <ion-toolbar>
-    <ion-title>Header</ion-title>
-  </ion-toolbar>
-</ion-header>
+import Positioning from '@site/static/usage/v7/fab/positioning/index.md';
 
-<ion-content>
-  <!-- fab placed to the top end -->
-  <ion-fab vertical="top" horizontal="end" slot="fixed">
-    <ion-fab-button>
-      <ion-icon name="add"></ion-icon>
-    </ion-fab-button>
-  </ion-fab>
+<Positioning />
 
-  <!-- fab placed to the bottom end -->
-  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
-    <ion-fab-button>
-      <ion-icon name="arrow-forward-circle"></ion-icon>
-    </ion-fab-button>
-  </ion-fab>
+## ボタンサイズ
 
-  <!-- fab placed to the top start -->
-  <ion-fab vertical="top" horizontal="start" slot="fixed">
-    <ion-fab-button>
-      <ion-icon name="arrow-back-circle"></ion-icon>
-    </ion-fab-button>
-  </ion-fab>
+メインファブボタンの `size` プロパティを `"small"` に設定すると、ミニサイズで描画されます。なお、このプロパティは内側のファブボタンで使用した場合は効果がありません。
 
-  <!-- fab placed to the bottom start -->
-  <ion-fab vertical="bottom" horizontal="start" slot="fixed">
-    <ion-fab-button>
-      <ion-icon name="arrow-up-circle"></ion-icon>
-    </ion-fab-button>
-  </ion-fab>
+import ButtonSizing from '@site/static/usage/v7/fab/button-sizing/index.md';
 
-  <!-- fab placed to the (vertical) center and start -->
-  <ion-fab vertical="center" horizontal="start" slot="fixed">
-    <ion-fab-button>
-      <ion-icon name="share"></ion-icon>
-    </ion-fab-button>
-  </ion-fab>
+<ButtonSizing />
 
-  <!-- fab placed to the (vertical) center and end -->
-  <ion-fab vertical="center" horizontal="end" slot="fixed">
-    <ion-fab-button>
-      <ion-icon name="add"></ion-icon>
-    </ion-fab-button>
-  </ion-fab>
+## テーマ
 
-  <!-- fab placed to the top and end and on the top edge of the content overlapping header -->
-  <ion-fab vertical="top" horizontal="end" edge slot="fixed">
-    <ion-fab-button>
-      <ion-icon name="person"></ion-icon>
-    </ion-fab-button>
-  </ion-fab>
+### Colors
 
-  <!-- fab placed to the bottom and start and on the bottom edge of the content overlapping footer with a list to the right -->
-  <ion-fab vertical="bottom" horizontal="start" edge slot="fixed">
-    <ion-fab-button>
-      <ion-icon name="settings"></ion-icon>
-    </ion-fab-button>
-    <ion-fab-list side="end">
-      <ion-fab-button><ion-icon name="logo-vimeo"></ion-icon></ion-fab-button>
-    </ion-fab-list>
-  </ion-fab>
+import Colors from '@site/static/usage/v7/fab/theming/colors/index.md';
 
-  <!-- fab placed in the center of the content with a list on each side -->
-  <ion-fab vertical="center" horizontal="center" slot="fixed">
-    <ion-fab-button>
-      <ion-icon name="share"></ion-icon>
-    </ion-fab-button>
-    <ion-fab-list side="top">
-      <ion-fab-button><ion-icon name="logo-vimeo"></ion-icon></ion-fab-button>
-    </ion-fab-list>
-    <ion-fab-list side="bottom">
-      <ion-fab-button><ion-icon name="logo-facebook"></ion-icon></ion-fab-button>
-    </ion-fab-list>
-    <ion-fab-list side="start">
-      <ion-fab-button><ion-icon name="logo-instagram"></ion-icon></ion-fab-button>
-    </ion-fab-list>
-    <ion-fab-list side="end">
-      <ion-fab-button><ion-icon name="logo-twitter"></ion-icon></ion-fab-button>
-    </ion-fab-list>
-  </ion-fab>
-</ion-content>
+<Colors />
 
-<ion-footer>
-  <ion-toolbar>
-    <ion-title>Footer</ion-title>
-  </ion-toolbar>
-</ion-footer>
-```
+## CSSカスタムプロパティ
 
+import CSSCustomProperties from '@site/static/usage/v7/fab/theming/css-custom-properties/index.md';
 
-</TabItem>
+<CSSCustomProperties />
 
+### CSS Shadow Parts
 
-<TabItem value="javascript">
+import CSSShadowParts from '@site/static/usage/v7/fab/theming/css-shadow-parts/index.md';
 
-```html
-<ion-header>
-  <ion-toolbar>
-    <ion-title>Header</ion-title>
-  </ion-toolbar>
-</ion-header>
+<CSSShadowParts />
+ 
 
-<ion-content>
-  <!-- fab placed to the top end -->
-  <ion-fab vertical="top" horizontal="end" slot="fixed">
-    <ion-fab-button>
-      <ion-icon name="add"></ion-icon>
-    </ion-fab-button>
-  </ion-fab>
+## アクセシビリティ
 
-  <!-- fab placed to the bottom end -->
-  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
-    <ion-fab-button>
-      <ion-icon name="arrow-forward-circle"></ion-icon>
-    </ion-fab-button>
-  </ion-fab>
+### ラベル
 
-  <!-- fab placed to the top start -->
-  <ion-fab vertical="top" horizontal="start" slot="fixed">
-    <ion-fab-button>
-      <ion-icon name="arrow-back-circle"></ion-icon>
-    </ion-fab-button>
-  </ion-fab>
-
-  <!-- fab placed to the bottom start -->
-  <ion-fab vertical="bottom" horizontal="start" slot="fixed">
-    <ion-fab-button>
-      <ion-icon name="arrow-up-circle"></ion-icon>
-    </ion-fab-button>
-  </ion-fab>
-
-  <!-- fab placed to the (vertical) center and start -->
-  <ion-fab vertical="center" horizontal="start" slot="fixed">
-    <ion-fab-button>
-      <ion-icon name="share"></ion-icon>
-    </ion-fab-button>
-  </ion-fab>
-
-  <!-- fab placed to the (vertical) center and end -->
-  <ion-fab vertical="center" horizontal="end" slot="fixed">
-    <ion-fab-button>
-      <ion-icon name="add"></ion-icon>
-    </ion-fab-button>
-  </ion-fab>
-
-  <!-- fab placed to the top and end and on the top edge of the content overlapping header -->
-  <ion-fab vertical="top" horizontal="end" edge slot="fixed">
-    <ion-fab-button>
-      <ion-icon name="person"></ion-icon>
-    </ion-fab-button>
-  </ion-fab>
-
-  <!-- fab placed to the bottom and start and on the bottom edge of the content overlapping footer with a list to the right -->
-  <ion-fab vertical="bottom" horizontal="start" edge slot="fixed">
-    <ion-fab-button>
-      <ion-icon name="settings"></ion-icon>
-    </ion-fab-button>
-    <ion-fab-list side="end">
-      <ion-fab-button><ion-icon name="logo-vimeo"></ion-icon></ion-fab-button>
-    </ion-fab-list>
-  </ion-fab>
-
-  <!-- fab placed in the center of the content with a list on each side -->
-  <ion-fab vertical="center" horizontal="center" slot="fixed">
-    <ion-fab-button>
-      <ion-icon name="share"></ion-icon>
-    </ion-fab-button>
-    <ion-fab-list side="top">
-      <ion-fab-button><ion-icon name="logo-vimeo"></ion-icon></ion-fab-button>
-    </ion-fab-list>
-    <ion-fab-list side="bottom">
-      <ion-fab-button><ion-icon name="logo-facebook"></ion-icon></ion-fab-button>
-    </ion-fab-list>
-    <ion-fab-list side="start">
-      <ion-fab-button><ion-icon name="logo-instagram"></ion-icon></ion-fab-button>
-    </ion-fab-list>
-    <ion-fab-list side="end">
-      <ion-fab-button><ion-icon name="logo-twitter"></ion-icon></ion-fab-button>
-    </ion-fab-list>
-  </ion-fab>
-</ion-content>
-
-<ion-footer>
-  <ion-toolbar>
-    <ion-title>Footer</ion-title>
-  </ion-toolbar>
-</ion-footer>
-```
-
-
-</TabItem>
-
-
-<TabItem value="react">
-
-```tsx
-import React from 'react';
-import { IonContent, IonHeader, IonFooter, IonPage, IonTitle, IonToolbar, IonFab, IonFabButton, IonIcon, IonFabList } from '@ionic/react';
-import { add, settings, share, person, arrowForwardCircle, arrowBackCircle, arrowUpCircle, logoVimeo, logoFacebook, logoInstagram, logoTwitter } from 'ionicons/icons';
-
-export const FabExamples: React.FC = () => {
-  return (
-    <IonPage>
-      <IonHeader>
-        <IonToolbar>
-          <IonTitle>Header</IonTitle>
-        </IonToolbar>
-      </IonHeader>
-      <IonContent>
-        {/*-- fab placed to the top end --*/}
-        <IonFab vertical="top" horizontal="end" slot="fixed">
-          <IonFabButton>
-            <IonIcon icon={add} />
-          </IonFabButton>
-        </IonFab>
-
-        {/*-- fab placed to the bottom end --*/}
-        <IonFab vertical="bottom" horizontal="end" slot="fixed">
-          <IonFabButton>
-            <IonIcon icon={arrowForwardCircle} />
-          </IonFabButton>
-        </IonFab>
-
-        {/*-- fab placed to the top start --*/}
-        <IonFab vertical="top" horizontal="start" slot="fixed">
-          <IonFabButton>
-            <IonIcon icon={arrowBackCircle} />
-          </IonFabButton>
-        </IonFab>
-
-        {/*-- fab placed to the bottom start --*/}
-        <IonFab vertical="bottom" horizontal="start" slot="fixed">
-          <IonFabButton>
-            <IonIcon icon={arrowUpCircle} />
-          </IonFabButton>
-        </IonFab>
-
-        {/*-- fab placed to the (vertical) center and start --*/}
-        <IonFab vertical="center" horizontal="start" slot="fixed">
-          <IonFabButton>
-            <IonIcon icon={share} />
-          </IonFabButton>
-        </IonFab>
-
-        {/*-- fab placed to the (vertical) center and end --*/}
-        <IonFab vertical="center" horizontal="end" slot="fixed">
-          <IonFabButton>
-            <IonIcon icon={add} />
-          </IonFabButton>
-        </IonFab>
-
-        {/*-- fab placed to the top and end and on the top edge of the content overlapping header --*/}
-        <IonFab vertical="top" horizontal="end" edge slot="fixed">
-          <IonFabButton>
-            <IonIcon icon={person} />
-          </IonFabButton>
-        </IonFab>
-
-        {/*-- fab placed to the bottom and start and on the bottom edge of the content overlapping footer with a list to the right --*/}
-        <IonFab vertical="bottom" horizontal="start" edge slot="fixed">
-          <IonFabButton>
-            <IonIcon icon={settings} />
-          </IonFabButton>
-          <IonFabList side="end">
-            <IonFabButton><IonIcon icon={logoVimeo} /></IonFabButton>
-          </IonFabList>
-        </IonFab>
-
-        {/*-- fab placed in the center of the content with a list on each side --*/}
-        <IonFab vertical="center" horizontal="center" slot="fixed">
-          <IonFabButton>
-            <IonIcon icon={share} />
-          </IonFabButton>
-          <IonFabList side="top">
-            <IonFabButton><IonIcon icon={logoVimeo} /></IonFabButton>
-          </IonFabList>
-          <IonFabList side="bottom">
-            <IonFabButton><IonIcon icon={logoFacebook} /></IonFabButton>
-          </IonFabList>
-          <IonFabList side="start">
-            <IonFabButton><IonIcon icon={logoInstagram} /></IonFabButton>
-          </IonFabList>
-          <IonFabList side="end">
-            <IonFabButton><IonIcon icon={logoTwitter} /></IonFabButton>
-          </IonFabList>
-        </IonFab>
-      </IonContent>
-      <IonFooter>
-        <IonToolbar>
-          <IonTitle>Footer</IonTitle>
-        </IonToolbar>
-      </IonFooter>
-    </IonPage>
-  );
-};
-```
-
-
-</TabItem>
-
-
-<TabItem value="stencil">
-
-```tsx
-import { Component, h } from '@stencil/core';
-
-@Component({
-  tag: 'fab-example',
-  styleUrl: 'fab-example.css'
-})
-export class FabExample {
-  render() {
-    return [
-      <ion-header>
-        <ion-toolbar>
-          <ion-title>Header</ion-title>
-        </ion-toolbar>
-      </ion-header>,
-
-      <ion-content>
-        {/* fab placed to the top end */}
-        <ion-fab vertical="top" horizontal="end" slot="fixed">
-          <ion-fab-button>
-            <ion-icon name="add"></ion-icon>
-          </ion-fab-button>
-        </ion-fab>
-
-        {/* fab placed to the bottom end */}
-        <ion-fab vertical="bottom" horizontal="end" slot="fixed">
-          <ion-fab-button>
-            <ion-icon name="arrow-forward-circle"></ion-icon>
-          </ion-fab-button>
-        </ion-fab>
-
-        {/* fab placed to the top start */}
-        <ion-fab vertical="top" horizontal="start" slot="fixed">
-          <ion-fab-button>
-            <ion-icon name="arrow-back-circle"></ion-icon>
-          </ion-fab-button>
-        </ion-fab>
-
-        {/* fab placed to the bottom start */}
-        <ion-fab vertical="bottom" horizontal="start" slot="fixed">
-          <ion-fab-button>
-            <ion-icon name="arrow-up-circle"></ion-icon>
-          </ion-fab-button>
-        </ion-fab>
-
-        {/* fab placed to the (vertical) center and start */}
-        <ion-fab vertical="center" horizontal="start" slot="fixed">
-          <ion-fab-button>
-            <ion-icon name="share"></ion-icon>
-          </ion-fab-button>
-        </ion-fab>
-
-        {/* fab placed to the (vertical) center and end */}
-        <ion-fab vertical="center" horizontal="end" slot="fixed">
-          <ion-fab-button>
-            <ion-icon name="add"></ion-icon>
-          </ion-fab-button>
-        </ion-fab>
-
-        {/* fab placed to the top and end and on the top edge of the  content overlapping header */}
-        <ion-fab vertical="top" horizontal="end" edge slot="fixed">
-          <ion-fab-button>
-            <ion-icon name="person"></ion-icon>
-          </ion-fab-button>
-        </ion-fab>
-
-        {/* fab placed to the bottom and start and on the bottom edge of content  overlapping footer with a list to the right */}
-        <ion-fab vertical="bottom" horizontal="start" edge slot="fixed">
-          <ion-fab-button>
-            <ion-icon name="settings"></ion-icon>
-          </ion-fab-button>
-          <ion-fab-list side="end">
-            <ion-fab-button><ion-icon name="logo-vimeo"></ion-icon></ion-fab-button>
-          </ion-fab-list>
-        </ion-fab>
-
-        {/* fab placed in the center of the content with a list on each side */}
-        <ion-fab vertical="center" horizontal="center" slot="fixed">
-          <ion-fab-button>
-            <ion-icon name="share"></ion-icon>
-          </ion-fab-button>
-          <ion-fab-list side="top">
-            <ion-fab-button><ion-icon name="logo-vimeo"></ion-icon></ion-fab-button>
-          </ion-fab-list>
-          <ion-fab-list side="bottom">
-            <ion-fab-button><ion-icon name="logo-facebook"></ion-icon></ion-fab-button>
-          </ion-fab-list>
-          <ion-fab-list side="start">
-            <ion-fab-button><ion-icon name="logo-instagram"></ion-icon></ion-fab-button>
-          </ion-fab-list>
-          <ion-fab-list side="end">
-            <ion-fab-button><ion-icon name="logo-twitter"></ion-icon></ion-fab-button>
-          </ion-fab-list>
-        </ion-fab>
-      </ion-content>,
-
-      <ion-footer>
-        <ion-toolbar>
-          <ion-title>
-            Footer
-          </ion-title>
-        </ion-toolbar>
-      </ion-footer>
-    ];
-  }
-}
-```
-
-</TabItem>
-
-
-<TabItem value="vue">
-
-```html
-<template>
-  <ion-header>
-    <ion-toolbar>
-      <ion-title>Header</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <ion-content>
-    <!-- fab placed to the top end -->
-    <ion-fab vertical="top" horizontal="end" slot="fixed">
-      <ion-fab-button>
-        <ion-icon :icon="add"></ion-icon>
-      </ion-fab-button>
-    </ion-fab>
-
-    <!-- fab placed to the bottom end -->
-    <ion-fab vertical="bottom" horizontal="end" slot="fixed">
-      <ion-fab-button>
-        <ion-icon :icon="arrowForwardCircle"></ion-icon>
-      </ion-fab-button>
-    </ion-fab>
-
-    <!-- fab placed to the top start -->
-    <ion-fab vertical="top" horizontal="start" slot="fixed">
-      <ion-fab-button>
-        <ion-icon :icon="arrowBackCircle"></ion-icon>
-      </ion-fab-button>
-    </ion-fab>
-
-    <!-- fab placed to the bottom start -->
-    <ion-fab vertical="bottom" horizontal="start" slot="fixed">
-      <ion-fab-button>
-        <ion-icon :icon="arrowUpCircle"></ion-icon>
-      </ion-fab-button>
-    </ion-fab>
-
-    <!-- fab placed to the (vertical) center and start -->
-    <ion-fab vertical="center" horizontal="start" slot="fixed">
-      <ion-fab-button>
-        <ion-icon :icon="share"></ion-icon>
-      </ion-fab-button>
-    </ion-fab>
-
-    <!-- fab placed to the (vertical) center and end -->
-    <ion-fab vertical="center" horizontal="end" slot="fixed">
-      <ion-fab-button>
-        <ion-icon :icon="add"></ion-icon>
-      </ion-fab-button>
-    </ion-fab>
-
-    <!-- fab placed to the top and end and on the top edge of the content overlapping header -->
-    <ion-fab vertical="top" horizontal="end" edge slot="fixed">
-      <ion-fab-button>
-        <ion-icon :icon="person"></ion-icon>
-      </ion-fab-button>
-    </ion-fab>
-
-    <!-- fab placed to the bottom and start and on the bottom edge of the content overlapping footer with a list to the right -->
-    <ion-fab vertical="bottom" horizontal="start" edge slot="fixed">
-      <ion-fab-button>
-        <ion-icon :icon="settings"></ion-icon>
-      </ion-fab-button>
-      <ion-fab-list side="end">
-        <ion-fab-button><ion-icon :icon="logoVimeo"></ion-icon></ion-fab-button>
-      </ion-fab-list>
-    </ion-fab>
-
-    <!-- fab placed in the center of the content with a list on each side -->
-    <ion-fab vertical="center" horizontal="center" slot="fixed">
-      <ion-fab-button>
-        <ion-icon :icon="share"></ion-icon>
-      </ion-fab-button>
-      <ion-fab-list side="top">
-        <ion-fab-button><ion-icon :icon="logoVimeo"></ion-icon></ion-fab-button>
-      </ion-fab-list>
-      <ion-fab-list side="bottom">
-        <ion-fab-button><ion-icon :icon="logoFacebook"></ion-icon></ion-fab-button>
-      </ion-fab-list>
-      <ion-fab-list side="start">
-        <ion-fab-button><ion-icon :icon="logoInstagram"></ion-icon></ion-fab-button>
-      </ion-fab-list>
-      <ion-fab-list side="end">
-        <ion-fab-button><ion-icon :icon="logoTwitter"></ion-icon></ion-fab-button>
-      </ion-fab-list>
-    </ion-fab>
-  </ion-content>
-
-  <ion-footer>
-    <ion-toolbar>
-      <ion-title>Footer</ion-title>
-    </ion-toolbar>
-  </ion-footer>
-</template>
-
-<script>
-import { 
-  IonContent, 
-  IonFab, 
-  IonFabButton, 
-  IonFabList, 
-  IonFooter, 
-  IonHeader, 
-  IonIcon, 
-  IonTitle, 
-  IonToolbar 
-} from '@ionic/vue';
-import { 
-  add, 
-  arrowBackCircle,
-  arrowForwardCircle, 
-  arrowUpCircle,
-  logoFacebook, 
-  logoInstagram, 
-  logoTwitter, 
-  logoVimeo, 
-  person, 
-  settings, 
-  share
-} from 'ionicons/icons';
-import { defineComponent } from 'vue';
-
-export default defineComponent({
-  components: { 
-    IonContent, 
-    IonFab, 
-    IonFabButton, 
-    IonFabList, 
-    IonFooter, 
-    IonHeader, 
-    IonIcon, 
-    IonTitle, 
-    IonToolbar
-  },
-  setup() {
-    return {
-      add, 
-      arrowBackCircle,
-      arrowForwardCircle, 
-      arrowUpCircle,
-      logoFacebook, 
-      logoInstagram, 
-      logoTwitter, 
-      logoVimeo, 
-      person, 
-      settings, 
-      share
-    }
-  }
-});
-</script>
-```
-
-
-</TabItem>
-
-</Tabs>
+FABはアイコンのみを含むことができるため、開発者は各`ion-fab-button`インスタンスに `aria-label` を提供しなければなりません。このラベルがなければ、支援技術は各ボタンの目的を告知することができません。
 
 ## プロパティ
 <Props />

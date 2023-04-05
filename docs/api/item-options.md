@@ -1,16 +1,12 @@
 ---
 title: "ion-item-options"
-hide_table_of_contents: true
 ---
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-
-import Props from '@ionic-internal/component-api/v6/item-options/props.md';
-import Events from '@ionic-internal/component-api/v6/item-options/events.md';
-import Methods from '@ionic-internal/component-api/v6/item-options/methods.md';
-import Parts from '@ionic-internal/component-api/v6/item-options/parts.md';
-import CustomProps from '@ionic-internal/component-api/v6/item-options/custom-props.md';
-import Slots from '@ionic-internal/component-api/v6/item-options/slots.md';
+import Props from '@ionic-internal/component-api/v7/item-options/props.md';
+import Events from '@ionic-internal/component-api/v7/item-options/events.md';
+import Methods from '@ionic-internal/component-api/v7/item-options/methods.md';
+import Parts from '@ionic-internal/component-api/v7/item-options/parts.md';
+import CustomProps from '@ionic-internal/component-api/v7/item-options/custom-props.md';
+import Slots from '@ionic-internal/component-api/v7/item-options/slots.md';
 
 <head>
   <title>ion-item-options: Option Button Components for Ionic Apps</title>
@@ -18,21 +14,11 @@ import Slots from '@ionic-internal/component-api/v6/item-options/slots.md';
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
-import TOCInline from '@theme/TOCInline';
 
 
+アイテムオプションコンポーネントは、スライドアイテムの[アイテムオプション](./item-option)ボタンのためのコンテナです。これらのボタンは、[startまたはend](#side-description)のいずれかに配置することができます。
 
-<h2 className="table-of-contents__title">コンテンツ</h2>
-
-<TOCInline
-  toc={toc}
-  maxHeadingLevel={2}
-/>
-
-
-
-`ion-item-sliding`で利用するButton要素のオプションです。これらのButtonは、[start or end side](#side-description)に配置できます。
-`ionSwipe` イベントと `expandable` ディレクティブを組み合わせて、Itemのすべてのスワイプアクションを作成できます。
+詳しくは [item sliding](./item-sliding) のドキュメントを参照してください。
 
 
 ## Side Description

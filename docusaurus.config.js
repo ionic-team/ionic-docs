@@ -2,6 +2,8 @@ const path = require('path');
 const prismic = require('@prismicio/client');
 const fetch = require('node-fetch');
 
+const VERSIONS_JSON = require('./versions.json');
+
 const BASE_URL = '/docs';
 
 module.exports = {
@@ -24,6 +26,38 @@ module.exports = {
   organizationName: 'ionic-team',
   projectName: 'ionic-docs',
   themeConfig: {
+    metadata: [
+      { name: 'og:image', content: 'https://ionicframework.com/docs/img/meta/open-graph.png' },
+      { name: 'twitter:image', content: 'https://ionicframework.com/docs/img/meta/open-graph.png' },
+      {
+        name: 'twitter:card',
+        content: 'summary_large_image',
+      },
+      {
+        name: 'twitter:domain',
+        content: 'ionicframework.com',
+      },
+      {
+        name: 'twitter:site',
+        content: '@ionicframework',
+      },
+      {
+        name: 'twitter:creator',
+        content: 'ionicframework',
+      },
+      {
+        name: 'fb:page_id',
+        content: '1321836767955949',
+      },
+      {
+        name: 'og:type',
+        content: 'website',
+      },
+      {
+        name: 'og:site_name',
+        content: 'Ionic Framework Docs',
+      },
+    ],
     colorMode: {
       defaultMode: 'light',
     },
@@ -242,7 +276,7 @@ module.exports = {
             )}.ts`;
           }
           if ((match = docPath.match(/native\/(.*)\.md/)) != null) {
-            return `https://github.com/ionic-team/ionic-native/edit/master/src/@awesome-cordova-plugins/plugins/${match[1]}/index.ts`;
+            return `https://github.com/ionic-team/capacitor-plugins/edit/main/${match[1]}/README.md`;
           }
           return `https://github.com/ionic-team/ionic-docs/edit/main/${versionDocsDirPath}/${docPath}`;
         },
@@ -250,8 +284,7 @@ module.exports = {
         lastVersion: 'current',
         versions: {
           current: {
-            label: 'v6',
-            banner: 'none',
+            label: 'v7',
           },
         },
       },
@@ -277,6 +310,12 @@ module.exports = {
         },
       };
     },
+    [
+      path.resolve(__dirname, 'plugins', 'docusaurus-plugin-ionic-component-api'),
+      {
+        versions: VERSIONS_JSON,
+      },
+    ],
   ],
   themes: [
     [

@@ -134,17 +134,37 @@ CSSプロパティのfloatは、テキストとインライン要素を囲んだ
 ```html
 <ion-grid>
   <ion-row>
-    <ion-col class="ion-float-left">
-      <div>
-        <h3>float-left</h3>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac vehicula lorem.
-      </div>
+    <ion-col>
+      <h3>no float</h3>
+      <img
+        alt="Silhouette of a person's head"
+        src="https://ionicframework.com/docs/img/demos/avatar.svg"
+        height="50px"
+      />
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac
+      vehicula lorem.
     </ion-col>
-    <ion-col class="ion-float-right">
-      <div>
-        <h3>float-right</h3>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac vehicula lorem.
-      </div>
+    <ion-col>
+      <h3>float-left</h3>
+      <img
+        alt="Silhouette of a person's head"
+        src="https://ionicframework.com/docs/img/demos/avatar.svg"
+        height="50px"
+        class="ion-float-left"
+      />
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac
+      vehicula lorem.
+    </ion-col>
+    <ion-col>
+      <h3>float-right</h3>
+      <img
+        alt="Silhouette of a person's head"
+        src="https://ionicframework.com/docs/img/demos/avatar.svg"
+        height="50px"
+        class="ion-float-right"
+      />
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac
+      vehicula lorem.
     </ion-col>
   </ion-row>
 </ion-grid>

@@ -125,7 +125,7 @@ Remember that removing the photo from the `photos` array triggers the `cachePhot
 
 ```tsx
 const cachePhotos = () => {
-  Storage.set({
+  Preferences.set({
     key: PHOTO_STORAGE,
     value: JSON.stringify(photos.value),
   });
@@ -150,6 +150,6 @@ Save this file, then tap on a photo again and choose the "Delete" option. This t
 
 Congratulations! You created a complete cross-platform Photo Gallery app that runs on the web, iOS, and Android.
 
-There are many paths to follow from here. Try adding another [Ionic UI component](https://ionicframework.com/docs/components) to the app, or more [native functionality](https://capacitor.ionicframework.com/docs/apis). The sky’s the limit.
+There are many paths to follow from here. Try adding another [Ionic UI component](https://ionicframework.com/docs/components) to the app, or more [native functionality](https://capacitorjs.com/docs/apis). The sky’s the limit.
 
 Happy app building! 💙

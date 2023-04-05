@@ -1,16 +1,15 @@
 ---
 title: "ion-tab-bar"
-hide_table_of_contents: true
 ---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-import Props from '@ionic-internal/component-api/v6/tab-bar/props.md';
-import Events from '@ionic-internal/component-api/v6/tab-bar/events.md';
-import Methods from '@ionic-internal/component-api/v6/tab-bar/methods.md';
-import Parts from '@ionic-internal/component-api/v6/tab-bar/parts.md';
-import CustomProps from '@ionic-internal/component-api/v6/tab-bar/custom-props.md';
-import Slots from '@ionic-internal/component-api/v6/tab-bar/slots.md';
+import Props from '@ionic-internal/component-api/v7/tab-bar/props.md';
+import Events from '@ionic-internal/component-api/v7/tab-bar/events.md';
+import Methods from '@ionic-internal/component-api/v7/tab-bar/methods.md';
+import Parts from '@ionic-internal/component-api/v7/tab-bar/parts.md';
+import CustomProps from '@ionic-internal/component-api/v7/tab-bar/custom-props.md';
+import Slots from '@ionic-internal/component-api/v7/tab-bar/slots.md';
 
 <head>
   <title>ion-tab-bar with CSS Custom Properties for Tab Bar Components</title>
@@ -18,17 +17,8 @@ import Slots from '@ionic-internal/component-api/v6/tab-bar/slots.md';
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
-import TOCInline from '@theme/TOCInline';
 
 <EncapsulationPill type="shadow" />
-
-<h2 className="table-of-contents__title">コンテンツ</h2>
-
-<TOCInline
-  toc={toc}
-  maxHeadingLevel={2}
-/>
-
 
 
 TabBarは、[tab buttons](tab-button.md)のセットを含むUIコンポーネントです。各[tab](tab.md)と通信するには、[tabs](tabs.md)の内部にTabBarを設定する必要があります。

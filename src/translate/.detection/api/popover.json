@@ -480,7 +480,7 @@
         "type": "Promise<boolean>",
         "docs": ""
       },
-      "signature": "dismiss(data?: any, role?: string | undefined, dismissParentPopover?: boolean) => Promise<boolean>",
+      "signature": "dismiss(data?: any, role?: string, dismissParentPopover?: boolean) => Promise<boolean>",
       "parameters": [],
       "docs": "Dismiss the popover overlay after it has been presented.",
       "docsTags": [
@@ -526,7 +526,7 @@
         "type": "Promise<void>",
         "docs": ""
       },
-      "signature": "present(event?: MouseEvent | TouchEvent | PointerEvent | CustomEvent<any> | undefined) => Promise<void>",
+      "signature": "present(event?: MouseEvent | TouchEvent | PointerEvent | CustomEvent) => Promise<void>",
       "parameters": [],
       "docs": "Present the popover overlay after it has been created.\nDevelopers can pass a mouse, touch, or pointer event\nto position the popover relative to where that event\nwas dispatched.",
       "docsTags": []

@@ -40,6 +40,6 @@ Ionic ReactプロジェクトはReactプロジェクトそのものようなも�
 
 ## ネイティブツール
 
-[Capacitor](https://capacitor.ionicframework.com) は `Ionic React` でつくられたWebアプリを、iOS、Android、ElectronとWebでネイティブに実行するために利用することができる公式のクロスプラットフォームアプリライブラリです。
+[Capacitor](https://capacitorjs.com) は `Ionic React` でつくられたWebアプリを、iOS、Android、ElectronとWebでネイティブに実行するために利用することができる公式のクロスプラットフォームアプリライブラリです。
 
-While there are no known technical limitations to using `Ionic React` with [Cordova](https://cordova.apache.org/) plugins, Capacitor is officially recommended. There are no plans to support a Cordova integration for `Ionic React` in the [Ionic CLI tooling](../cli.md) at this time. For more details, please [see here](https://capacitor.ionicframework.com/docs/cordova).
+While there are no known technical limitations to using `Ionic React` with [Cordova](https://cordova.apache.org/) plugins, Capacitor is officially recommended. There are no plans to support a Cordova integration for `Ionic React` in the [Ionic CLI tooling](../cli.md) at this time. For more details, please [see here](https://capacitorjs.com/docs/cordova).

@@ -1,42 +1,42 @@
 ---
 title: "ion-datetime"
 ---
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
+import Props from '@ionic-internal/component-api/v7/datetime/props.md';
+import Events from '@ionic-internal/component-api/v7/datetime/events.md';
+import Methods from '@ionic-internal/component-api/v7/datetime/methods.md';
+import Parts from '@ionic-internal/component-api/v7/datetime/parts.md';
+import CustomProps from '@ionic-internal/component-api/v7/datetime/custom-props.md';
+import Slots from '@ionic-internal/component-api/v7/datetime/slots.md';
 
-import Props from '@ionic-internal/component-api/v6/datetime/props.md';
-import Events from '@ionic-internal/component-api/v6/datetime/events.md';
-import Methods from '@ionic-internal/component-api/v6/datetime/methods.md';
-import Parts from '@ionic-internal/component-api/v6/datetime/parts.md';
-import CustomProps from '@ionic-internal/component-api/v6/datetime/custom-props.md';
-import Slots from '@ionic-internal/component-api/v6/datetime/slots.md';
+import Basic from '@site/static/usage/v7/datetime/basic/index.md';
 
-import Basic from '@site/static/usage/v6/datetime/basic/index.md';
+import MaxMin from '@site/static/usage/v7/datetime/date-constraints/max-min/index.md';
+import Values from '@site/static/usage/v7/datetime/date-constraints/values/index.md';
+import Advanced from '@site/static/usage/v7/datetime/date-constraints/advanced/index.md';
 
-import MaxMin from '@site/static/usage/v6/datetime/date-constraints/max-min/index.md';
-import Values from '@site/static/usage/v6/datetime/date-constraints/values/index.md';
-import Advanced from '@site/static/usage/v6/datetime/date-constraints/advanced/index.md';
+import CustomLocale from '@site/static/usage/v7/datetime/localization/custom-locale/index.md';
+import HourCycle from '@site/static/usage/v7/datetime/localization/hour-cycle/index.md';
+import FirstDayOfWeek from '@site/static/usage/v7/datetime/localization/first-day-of-week/index.md';
+import LocaleExtensionTags from '@site/static/usage/v7/datetime/localization/locale-extension-tags/index.md';
+import TimeLabel from '@site/static/usage/v7/datetime/localization/time-label/index.md';
 
-import CustomLocale from '@site/static/usage/v6/datetime/localization/custom-locale/index.md';
-import HourCycle from '@site/static/usage/v6/datetime/localization/hour-cycle/index.md';
-import FirstDayOfWeek from '@site/static/usage/v6/datetime/localization/first-day-of-week/index.md';
-import LocaleExtensionTags from '@site/static/usage/v6/datetime/localization/locale-extension-tags/index.md';
-import TimeLabel from '@site/static/usage/v6/datetime/localization/time-label/index.md';
+import MonthAndYear from '@site/static/usage/v7/datetime/presentation/month-and-year/index.md';
+import Time from '@site/static/usage/v7/datetime/presentation/time/index.md';
+import Date from '@site/static/usage/v7/datetime/presentation/date/index.md';
 
-import MonthAndYear from '@site/static/usage/v6/datetime/presentation/month-and-year/index.md';
-import Time from '@site/static/usage/v6/datetime/presentation/time/index.md';
-import Date from '@site/static/usage/v6/datetime/presentation/date/index.md';
+import ShowingDefaultTitle from '@site/static/usage/v7/datetime/title/showing-default-title/index.md';
+import CustomizingTitle from '@site/static/usage/v7/datetime/title/customizing-title/index.md';
 
-import ShowingDefaultTitle from '@site/static/usage/v6/datetime/title/showing-default-title/index.md';
-import CustomizingTitle from '@site/static/usage/v6/datetime/title/customizing-title/index.md';
+import ShowingConfirmationButtons from '@site/static/usage/v7/datetime/buttons/showing-confirmation-buttons/index.md';
+import CustomizingButtons from '@site/static/usage/v7/datetime/buttons/customizing-buttons/index.md';
+import CustomizingButtonTexts from '@site/static/usage/v7/datetime/buttons/customizing-button-texts/index.md';
 
-import ShowingConfirmationButtons from '@site/static/usage/v6/datetime/buttons/showing-confirmation-buttons/index.md';
-import CustomizingButtons from '@site/static/usage/v6/datetime/buttons/customizing-buttons/index.md';
-import CustomizingButtonTexts from '@site/static/usage/v6/datetime/buttons/customizing-button-texts/index.md';
+import HighlightedDatesArray from '@site/static/usage/v7/datetime/highlightedDates/array/index.md';
+import HighlightedDatesCallback from '@site/static/usage/v7/datetime/highlightedDates/callback/index.md';
 
-import MultipleDateSelection from '@site/static/usage/v6/datetime/multiple/index.md';
+import MultipleDateSelection from '@site/static/usage/v7/datetime/multiple/index.md';
 
-import Theming from '@site/static/usage/v6/datetime/theming/index.md';
+import Theming from '@site/static/usage/v7/datetime/theming/index.md';
 
 <head>
   <title>ion-datetime: Ionic API Input for Datetime Format Picker</title>
@@ -86,14 +86,18 @@ JSONオブジェクトやデータベース内でのシリアライズやパー�
 12時間表示の時計では「00」は「午前12時」、「13」は「午後1時」、「23」は「午後3時」を意味します。
 
 :::note
-ISO 8601 datetime フォーマットで秒とミリ秒を指定することができますが、 `ion-datetime` は秒とミリ秒を選択するためのインターフェースを提供しません。秒やミリ秒の値が指定されても無視されます。
+秒、ミリ秒、タイムゾーンは ISO 8601 datetime フォーマットで指定できますが、 `ion-datetime` は秒、ミリ秒、タイムゾーンを選択するためのインターフェイスを提供しません。秒、ミリ秒、タイムゾーンの値を指定しても無視されます。
 :::
 
 ## 基本的な使い方
 
 <Basic />
 
-## Dateコンテナ
+## 日付ボタンと使う
+
+モーダルやポップオーバーなどのオーバーレイで日付時刻を表示する必要がある場合は、 [ion-datetime-button](./datetime-button) を使用することをお勧めします。スペースに制約がある場合は、 `ion-datetime-button` を使用する必要があります。このコンポーネントは、現在の日付と時刻の値を表示するボタンを表示します。ボタンがタップされると、日付と時刻のピッカーがオーバーレイで表示されます。
+
+## 日付コンテナ
 
 ### 日付の最小値と最大値
 
@@ -138,7 +142,7 @@ Ionic Frameworkでは、[Intl.DatetimeFormat](https://developer.mozilla.org/en-U
 
 ### 時間サイクル
 
-`ion-datetime` は、デフォルトで `locale` プロパティで指定された時間サイクルを使用します。例えば、 `locale` が `en-US` に設定されている場合、 `ion-datetime` は12時間のサイクルを使用する。
+`ion-datetime` は、デフォルトで `locale` プロパティで指定された時間サイクルを使用します。例えば、 `locale` が `en-US` に設定されている場合、 `ion-datetime` は12時間のサイクルを使用します。
 
 時間サイクルには4つのタイプがあります。
 
@@ -232,7 +236,7 @@ Ionic Frameworkでは、[Intl.DatetimeFormat](https://developer.mozilla.org/en-U
 
 以下の例では、ホイールピッカーに `presentation="date-time"` を指定しています。
 
-import Wheel from '@site/static/usage/v6/datetime/presentation/wheel/index.md';
+import Wheel from '@site/static/usage/v7/datetime/presentation/wheel/index.md';
 
 <Wheel />
 
@@ -264,7 +268,7 @@ This property is only supported when using `presentation="date"` and `preferWhee
 
 ### 確認ボタンの表示
 
-デフォルトの Done ボタンと Cancel ボタンは、それぞれ `done` メソッドと `cancel` メソッドを呼び出すように、あらかじめ設定されています。
+デフォルトのDoneボタンとCancelボタンは、それぞれ [`confirm`](#confirm) と [`cancel`](#cancel) メソッドを呼び出すように予め設定されています。
 
 <ShowingConfirmationButtons />
 
@@ -282,7 +286,31 @@ This property is only supported when using `presentation="date"` and `preferWhee
 
 <CustomizingButtons />
 
-## テーマ設定
+## Highlighting Specific Dates
+
+Using the `highlightedDates` property, developers can style particular dates with custom text or background colors. This property can be defined as either an array of dates and their colors, or a callback that receives an ISO string and returns the colors to use.
+
+When specifying colors, any valid CSS color format can be used. This includes hex codes, rgba, [color variables](../theming/colors), etc.
+
+To maintain a consistent user experience, the style of selected date(s) will always override custom highlights.
+
+:::note
+This property is only supported when `preferWheel="false"`, and using a `presentation` of either `"date"`, `"date-time"`, or `"time-date"`.
+:::
+
+### Using Array
+
+An array is better when the highlights apply to fixed dates, such as due dates.
+
+<HighlightedDatesArray />
+
+### Using Callback
+
+A callback is better when the highlighted dates are recurring, such as birthdays or recurring meetings.
+
+<HighlightedDatesCallback />
+
+## テーマ
 
 Ionicの強力なテーマシステムを使用すると、特定のテーマに合わせてアプリ全体を簡単に変更することができます。この例では、[Color Creator](../theming/colors#new-color-creator) と [Stepped Color Generator](../theming/themes#stepped-color-generator) を使用して、 `ion-datetime` で使用できるローズ色のパレットを作成しました。
 

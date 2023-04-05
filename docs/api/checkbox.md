@@ -1,19 +1,13 @@
 ---
 title: "ion-checkbox"
-hide_table_of_contents: true
-demoUrl: "/docs/demos/api/checkbox/index.html"
-demoSourceUrl: "https://github.com/ionic-team/ionic-docs/tree/main/static/demos/api/checkbox/index.html"
 ---
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-import TOCInline from '@theme/TOCInline';
 
-import Props from '@ionic-internal/component-api/v6/checkbox/props.md';
-import Events from '@ionic-internal/component-api/v6/checkbox/events.md';
-import Methods from '@ionic-internal/component-api/v6/checkbox/methods.md';
-import Parts from '@ionic-internal/component-api/v6/checkbox/parts.md';
-import CustomProps from '@ionic-internal/component-api/v6/checkbox/custom-props.md';
-import Slots from '@ionic-internal/component-api/v6/checkbox/slots.md';
+import Props from '@ionic-internal/component-api/v7/checkbox/props.md';
+import Events from '@ionic-internal/component-api/v7/checkbox/events.md';
+import Methods from '@ionic-internal/component-api/v7/checkbox/methods.md';
+import Parts from '@ionic-internal/component-api/v7/checkbox/parts.md';
+import CustomProps from '@ionic-internal/component-api/v7/checkbox/custom-props.md';
+import Slots from '@ionic-internal/component-api/v7/checkbox/slots.md';
 
 <head>
   <title>ion-checkboxes: Ionic App Component to Select Multiple Options</title>
@@ -24,16 +18,49 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="shadow" />
 
-<h2 className="table-of-contents__title">コンテンツ</h2>
-
-<TOCInline
-  toc={toc}
-  maxHeadingLevel={2}
-/>
-
-
 
 Checkboxを使用すると、一連のオプションから複数のオプションを選択できます。選択すると、チェックマークが付いた状態(checked)で表示されます。checkboxをクリックすると、 `checked` プロパティーが切り替わります。`checked` プロパティを設定して、プログラムで `checked` を切り替えることもできます。
+
+## 基本的な使い方
+
+import Basic from '@site/static/usage/v7/checkbox/basic/index.md';
+
+<Basic />
+
+## Label Placement
+
+開発者は `labelPlacement` プロパティを使用して、ラベルがどのように配置されるかを制御することができます。
+
+import LabelPlacement from '@site/static/usage/v7/checkbox/label-placement/index.md';
+
+<LabelPlacement />
+
+## Justification
+
+開発者は `justify` プロパティを使用して、ラベルとコントロールの行の詰め方を制御することができます。
+
+import Justify from '@site/static/usage/v7/checkbox/justify/index.md';
+
+<Justify />
+
+
+:::note
+`ion-item`は、 `justify` がどのように機能するかを強調するためにデモで使用されているだけです。 `justify` が正しく機能するために必須ではありません。
+:::
+
+## Indeterminate Checkboxes
+
+import Indeterminate from '@site/static/usage/v7/checkbox/indeterminate/index.md';
+
+<Indeterminate />
+
+## テーマ
+
+## CSSカスタムプロパティ
+
+import CSSProps from '@site/static/usage/v7/checkbox/theming/css-properties/index.md';
+
+<CSSProps />
 
 ## Interfaces
 
@@ -57,271 +84,29 @@ interface CheckboxCustomEvent<T = any> extends CustomEvent {
 }
 ```
 
+## レガシーなチェックボックス構文からのマイグレーション
 
+Ionic 7.0では、よりシンプルなチェックボックス構文が導入されました。この新しい構文は、チェックボックスの設定に必要な定型文を減らし、アクセシビリティの問題を解決し、開発者のエクスペリエンスを向上させます。
 
+開発者は、この移行を一度に1つのチェックボックスずつ実行することができます。開発者はレガシー構文を使い続けることができますが、できるだけ早く移行することをお勧めします。
 
-## 使い方
+### 最新の構文の使い方
 
-<Tabs groupId="framework" defaultValue="angular" values={[{ value: 'angular', label: 'Angular' }, { value: 'javascript', label: 'Javascript' }, { value: 'react', label: 'React' }, { value: 'stencil', label: 'Stencil' }, { value: 'vue', label: 'Vue' }]}>
+最新の構文を使用するには、`ion-label` を削除して、 `ion-checkbox` の中に直接ラベルを渡す必要があります。ラベルの配置は `ion-checkbox` の `labelPlacement` プロパティを使用して設定することができる。ラベルとコントロールの行の詰め方は、`ion-checkbox` の `justify` プロパティを使用して制御することができます。
 
-<TabItem value="angular">
+import Migration from '@site/static/usage/v7/checkbox/migration/index.md';
 
-```html
-<!-- Default Checkbox -->
-<ion-checkbox></ion-checkbox>
+<Migration />
+  
 
-<!-- Disabled Checkbox -->
-<ion-checkbox disabled="true"></ion-checkbox>
+:::note
+Ionic の過去のバージョンでは、`ion-checkbox` が正しく機能するために `ion-item` が必要でした。Ionic 7.0 からは、`ion-checkbox` は `ion-item` の中で、そのアイテムが `ion-list` に配置される場合にのみ使用されます。また、`ion-checkbox`が正しく機能するためには、`ion-item`はもはや必須ではありません。
+:::
 
-<!-- Checked Checkbox -->
-<ion-checkbox checked="true"></ion-checkbox>
+### レガシーな構文の使い方
 
-<!-- Checkbox Colors -->
-<ion-checkbox color="primary"></ion-checkbox>
-<ion-checkbox color="secondary"></ion-checkbox>
-<ion-checkbox color="danger"></ion-checkbox>
-<ion-checkbox color="light"></ion-checkbox>
-<ion-checkbox color="dark"></ion-checkbox>
+Ionicは、アプリが最新のチェックボックス構文を使用しているかどうかをヒューリスティックに検出します。場合によっては、レガシーな構文を使い続けることが望ましい場合もあります。開発者は `ion-checkbox` の `legacy` プロパティを `true` に設定することで、そのチェックボックスのインスタンスがレガシー構文を使用するように強制できます。
 
-<!-- Checkboxes in a List -->
-<ion-list>
-  <ion-item *ngFor="let entry of form">
-    <ion-label>{{entry.val}}</ion-label>
-    <ion-checkbox slot="end" [(ngModel)]="entry.isChecked"></ion-checkbox>
-  </ion-item>
-</ion-list>
-```
-
-```typescript
-import { Component } from '@angular/core';
-
-@Component({
-  selector: 'app-page-home',
-  templateUrl: 'home.page.html',
-  styleUrls: ['home.page.scss']
-})
-export class HomePage {
-  public form = [
-      { val: 'Pepperoni', isChecked: true },
-      { val: 'Sausage', isChecked: false },
-      { val: 'Mushroom', isChecked: false }
-    ];
-}
-```
-
-
-</TabItem>
-
-
-<TabItem value="javascript">
-
-```html
-<!-- Default Checkbox -->
-<ion-checkbox></ion-checkbox>
-
-<!-- Disabled Checkbox -->
-<ion-checkbox disabled></ion-checkbox>
-
-<!-- Checked Checkbox -->
-<ion-checkbox checked></ion-checkbox>
-
-<!-- Checkbox Colors -->
-<ion-checkbox color="primary"></ion-checkbox>
-<ion-checkbox color="secondary"></ion-checkbox>
-<ion-checkbox color="danger"></ion-checkbox>
-<ion-checkbox color="light"></ion-checkbox>
-<ion-checkbox color="dark"></ion-checkbox>
-
-<!-- Checkboxes in a List -->
-<ion-list>
-  <ion-item>
-    <ion-label>Pepperoni</ion-label>
-    <ion-checkbox slot="end" value="pepperoni" checked></ion-checkbox>
-  </ion-item>
-
-  <ion-item>
-    <ion-label>Sausage</ion-label>
-    <ion-checkbox slot="end" value="sausage" disabled></ion-checkbox>
-  </ion-item>
-
-  <ion-item>
-    <ion-label>Mushrooms</ion-label>
-    <ion-checkbox slot="end" value="mushrooms"></ion-checkbox>
-  </ion-item>
-</ion-list>
-```
-
-
-</TabItem>
-
-
-<TabItem value="react">
-
-```tsx
-import React, { useState } from 'react';
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonCheckbox, IonList, IonItem, IonLabel, IonItemDivider } from '@ionic/react';
-
-const checkboxList = [
-  { val: 'Pepperoni', isChecked: true },
-  { val: 'Sausage', isChecked: false },
-  { val: 'Mushroom', isChecked: false }
-];
-
-export const CheckboxExamples: React.FC = () => {
-
-  const [checked, setChecked] = useState(false);
-
-  return (
-    <IonPage>
-      <IonHeader>
-        <IonToolbar>
-          <IonTitle>CheckboxExamples</IonTitle>
-        </IonToolbar>
-      </IonHeader>
-      <IonContent>
-        <IonList>
-          <IonItemDivider>Default Checkbox</IonItemDivider>
-          <IonItem>
-            <IonLabel>Checked: {JSON.stringify(checked)}</IonLabel>
-            <IonCheckbox checked={checked} onIonChange={e => setChecked(e.detail.checked)} />
-          </IonItem>
-
-          <IonItemDivider>Disabled Checkbox</IonItemDivider>
-          <IonItem><IonCheckbox slot="end" disabled={true} /></IonItem>
-
-          <IonItemDivider>Checkbox Colors</IonItemDivider>
-          <IonItem>
-            <IonCheckbox slot="end" color="primary" />
-            <IonCheckbox slot="end" color="secondary" />
-            <IonCheckbox slot="end" color="danger" />
-            <IonCheckbox slot="end" color="light" />
-            <IonCheckbox slot="end" color="dark" />
-          </IonItem>
-          <IonItemDivider>Checkboxes in a List</IonItemDivider>
-
-          {checkboxList.map(({ val, isChecked }, i) => (
-            <IonItem key={i}>
-              <IonLabel>{val}</IonLabel>
-              <IonCheckbox slot="end" value={val} checked={isChecked} />
-            </IonItem>
-          ))}
-        </IonList>
-      </IonContent>
-    </IonPage>
-  );
-};
-```
-
-</TabItem>
-
-
-<TabItem value="stencil">
-
-```tsx
-import { Component, h } from '@stencil/core';
-
-@Component({
-  tag: 'checkbox-example',
-  styleUrl: 'checkbox-example.css'
-})
-export class CheckboxExample {
-  private form = [
-    { val: 'Pepperoni', isChecked: true },
-    { val: 'Sausage', isChecked: false },
-    { val: 'Mushroom', isChecked: false }
-  ];
-
-  render() {
-    return [
-      // Default Checkbox
-      <ion-checkbox></ion-checkbox>,
-
-      // Disabled Checkbox
-      <ion-checkbox disabled={true}></ion-checkbox>,
-
-      // Checked Checkbox
-      <ion-checkbox checked={true}></ion-checkbox>,
-
-      // Checkbox Colors
-      <ion-checkbox color="primary"></ion-checkbox>,
-      <ion-checkbox color="secondary"></ion-checkbox>,
-      <ion-checkbox color="danger"></ion-checkbox>,
-      <ion-checkbox color="light"></ion-checkbox>,
-      <ion-checkbox color="dark"></ion-checkbox>,
-
-      // Checkboxes in a List
-      <ion-list>
-        {this.form.map(entry =>
-          <ion-item>
-            <ion-label>{entry.val}</ion-label>
-            <ion-checkbox slot="end" checked={entry.isChecked}></ion-checkbox>
-          </ion-item>
-        )}
-      </ion-list>
-    ];
-  }
-}
-```
-
-
-</TabItem>
-
-
-<TabItem value="vue">
-
-```html
-<template>
-  <!-- Default Checkbox -->
-  <ion-checkbox></ion-checkbox>
-
-  <!-- Disabled Checkbox -->
-  <ion-checkbox disabled="true"></ion-checkbox>
-
-  <!-- Checked Checkbox -->
-  <ion-checkbox checked="true"></ion-checkbox>
-
-  <!-- Checkbox Colors -->
-  <ion-checkbox color="primary"></ion-checkbox>
-  <ion-checkbox color="secondary"></ion-checkbox>
-  <ion-checkbox color="danger"></ion-checkbox>
-  <ion-checkbox color="light"></ion-checkbox>
-  <ion-checkbox color="dark"></ion-checkbox>
-
-  <!-- Checkboxes in a List -->
-  <ion-list>
-    <ion-item v-for="entry in form">
-      <ion-label>{{entry.val}}</ion-label>
-      <ion-checkbox
-        slot="end"
-        @update:modelValue="entry.isChecked = $event"
-        :modelValue="entry.isChecked">
-      </ion-checkbox>
-    </ion-item>
-  </ion-list>
-</template>
-
-<script>
-import { IonCheckbox, IonItem, IonLabel, IonList } from '@ionic/vue';
-import { defineComponent } from 'vue';
-
-export default defineComponent({
-  components: { IonCheckbox, IonItem, IonLabel, IonList },
-  setup() {
-    const form = [
-      { val: 'Pepperoni', isChecked: true },
-      { val: 'Sausage', isChecked: false },
-      { val: 'Mushroom', isChecked: false }
-    ];
-    
-    return { form };
-  }
-});
-</script>
-```
-
-</TabItem>
-
-</Tabs>
 
 ## プロパティ
 <Props />

@@ -44,7 +44,11 @@ src/
 
 ## 新しい機能を生成する
 
-Ionic CLIは、[`ionic generate`](../cli/commands/generate.md) コマンドを使用して新しいアプリ機能を生成することができます。コマンドラインで `ionic generate` を実行すると、生成可能な機能をリストアップする選択プロンプトが表示されます。
+:::note
+This command is only supported in Ionic Angular.
+:::
+
+The Ionic CLI can generate new app features with the [`ionic generate`](../cli/commands/generate.md) command. By running `ionic generate` in the command line, a selection prompt is displayed which lists the available features that can be generated.
 
 ```shell-session
 $ ionic generate

@@ -4,7 +4,15 @@ Ionic Vue ships with several utility functions that you can use in your applicat
 
 ## Router
 
-The `useIonRouter` function can be used to provide greater control over page navigation beyond what the Vue Router API provides. In particular, it can be used to programmatically navigate within your app while controlling the animations. It can also be used to determine whether or not users can navigate back which is useful when closing the app after the user presses the hardware back button when on the root page.
+### Functions
+
+#### useIonRouter
+
+▸ **useIonRouter**(): [`UseIonRouterResult`](#useionrouterresult)
+
+Returns the Ionic router instance, containing API methods for navigating, customizing page transitions and routing context for native features. This function can be used in combination with the [`useRouter`](https://router.vuejs.org/api/index.html#userouter) from Vue.
+
+**Customizing Page Transitions**
 
 ```js
 import { IonPage, useIonRouter } from '@ionic/vue';
@@ -27,7 +35,30 @@ export default defineComponent({
 });
 ```
 
+**Hardware back button on Android**
+
+You may want to know if you are at the root page of the application when a user presses the hardware back button on Android.
+
+```tsx
+import { useIonRouter } from '@ionic/vue';
+
+...
+
+export default {
+  setup() {
+    const ionRouter = useIonRouter();
+    if (ionRouter.canGoBack()) {
+      // Perform some action here
+    }
+  }
+}
+```
+
+For additional APIs with Vue routing, please refer to the [Vue Router documentation](https://router.vuejs.org/api/index.html).
+
 ### Interfaces
+
+#### UseIonRouterResult
 
 ```ts
 import { AnimationBuilder } from '@ionic/vue';
@@ -70,7 +101,7 @@ useBackButton(10, () => {
 });
 ```
 
-### Interface
+### Interfaces
 
 ```ts
 type Handler = (processNextHandler: () => void) => Promise<any> | void | null;
@@ -102,7 +133,7 @@ watch(keyboardHeight, () => {
 });
 ```
 
-### Interface
+### Interfaces
 
 ```ts
 interface UseKeyboardResult {

@@ -59,7 +59,7 @@
         "type": "Promise<boolean>",
         "docs": ""
       },
-      "signature": "push(path: string, direction?: RouterDirection, animation?: AnimationBuilder | undefined) => Promise<boolean>",
+      "signature": "push(path: string, direction?: RouterDirection, animation?: AnimationBuilder) => Promise<boolean>",
       "parameters": [],
       "docs": "Navigate to the specified path.",
       "docsTags": [

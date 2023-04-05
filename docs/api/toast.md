@@ -1,18 +1,15 @@
 ---
 title: "ion-toast"
-hide_table_of_contents: true
-demoUrl: "/docs/demos/api/toast/index.html"
-demoSourceUrl: "https://github.com/ionic-team/ionic-docs/tree/main/static/demos/api/toast/index.html"
 ---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-import Props from '@ionic-internal/component-api/v6/toast/props.md';
-import Events from '@ionic-internal/component-api/v6/toast/events.md';
-import Methods from '@ionic-internal/component-api/v6/toast/methods.md';
-import Parts from '@ionic-internal/component-api/v6/toast/parts.md';
-import CustomProps from '@ionic-internal/component-api/v6/toast/custom-props.md';
-import Slots from '@ionic-internal/component-api/v6/toast/slots.md';
+import Props from '@ionic-internal/component-api/v7/toast/props.md';
+import Events from '@ionic-internal/component-api/v7/toast/events.md';
+import Methods from '@ionic-internal/component-api/v7/toast/methods.md';
+import Parts from '@ionic-internal/component-api/v7/toast/parts.md';
+import CustomProps from '@ionic-internal/component-api/v7/toast/custom-props.md';
+import Slots from '@ionic-internal/component-api/v7/toast/slots.md';
 
 <head>
   <title>ion-toast Component: A Dismissible App Notification Alert</title>
@@ -20,32 +17,74 @@ import Slots from '@ionic-internal/component-api/v6/toast/slots.md';
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
-import TOCInline from '@theme/TOCInline';
 
 <EncapsulationPill type="shadow" />
 
-<h2 className="table-of-contents__title">コンテンツ</h2>
+トーストは、最近のアプリケーションでよく使われる小さな通知です。操作に関するフィードバックを提供したり、システムメッセージを表示したりするために使用されます。トーストは、アプリケーションのコンテンツの上に表示され、アプリケーションによって解除されると、アプリケーションとの対話を再開することができます。
 
-<TOCInline
-  toc={toc}
-  maxHeadingLevel={2}
-/>
+## インラインToasts (推奨)
 
+`ion-toast`は、テンプレートに直接コンポーネントを記述して使用することができます。これにより、トーストを表示するために配線する必要があるハンドラの数を減らすことができます。
 
+import InlineToastTriggerExample from '@site/static/usage/v7/toast/inline/basic/index.md';
 
-Toastは、現代のアプリケーションで一般的に使用される小さな通知です。操作に関するフィードバックを提供したり、システムメッセージを表示したりするために使用できます。Toastはアプリのコンテンツの上に表示され、終了するとアプリとの対話を再開することができます。
+<InlineToastTriggerExample />
 
-## ポジション
+### Using `isOpen​`
 
-Toastsは、ビューポートの上部、下部、または中央に配置できます。positionは作成時に値を渡すことができます。指定できる値は、`top`, `bottom` , `middle` です。位置を指定しない場合、Toastはビューポートの下部に表示されます。
+`ion-toast` の `isOpen` プロパティは、開発者がアプリケーションの状態からトーストの表示状態を制御できるようにするものです。つまり、`isOpen` を `true` に設定するとトーストが表示され、`isOpen` を `false` に設定するとトーストは破棄されます。
+
+`isOpen` は一方通行のデータバインディングを使用しているため、トーストが破棄されたときに自動的に `false` に設定されることはありません。開発者は `ionToastDidDismiss` または `didDismiss` イベントをリスニングして `isOpen` を `false` に設定する必要があります。この理由は、`ion-toast` の内部がアプリケーションの状態と密接に結合するのを防ぐためである。一方通行のデータバインディングでは、トーストはリアクティブ変数が提供するブーリアン値だけを気にすればよい。一方通行のデータバインディングでは、トーストはブーリアン値とリアクティブ変数の存在の両方に関心を持つ必要があります。これは、非決定的な動作につながり、アプリケーションのデバッグを困難にします。
+
+import InlineToastIsOpenExample from '@site/static/usage/v7/toast/inline/is-open/index.md';
+
+<InlineToastIsOpenExample />
+
+## Controller Toasts
+
+import ControllerExample from '@site/static/usage/v7/toast/presenting/controller/index.md';
+
+<ControllerExample />
 
 ## Dismissing
 
-トーストオプションの `duration` に表示するミリ秒数を渡すことで、特定の時間経過後に自動的にトーストを終了させることができます。もし、 `"cancel"` というロールを持つボタンが追加されていれば、そのボタンがトーストを終了させることになります。作成後にトーストを終了させるには、インスタンスの `dismiss()` メソッドを呼び出してください。
+トーストは静かな通知であり、ユーザーの邪魔をしないように意図されています。そのため、トーストを解除するためにユーザーの操作を必要とするべきではありません。
 
-## アイコン
+トーストは、トーストオプションの `duration` に表示するミリ秒数を渡すことで、特定の時間経過後に自動的に解除されるようにすることができます。もし `"cancel"` という役割を持つボタンが追加された場合、そのボタンがトーストを終了させます。作成後にトーストを破棄するには、インスタンスの `dismiss()` メソッドを呼び出してください。
+
+ハードウェアの戻るボタンを押しても、トーストはユーザーの邪魔をしないようになっているので、トーストは破棄されません。
+
+次の例では、`buttons` プロパティを使用して、クリックすると自動的にトーストを解散させるボタンを追加する方法と、解散イベントの `role` を収集する方法を示しています。
+
+import ButtonsPlayground from '@site/static/usage/v7/toast/buttons/index.md';
+
+<ButtonsPlayground />
+
+## ポジショニング
+
+トーストは、ビューポートの上部、下部、中部に配置することができます。位置は作成時に渡すことができます。指定できる値は `top`, `bottom`, `middle` です。位置が指定されない場合、トーストはビューポートの一番下に表示されます。
+
+## レイアウト
+
+トースト内のボタンコンテナは、`layout`プロパティを使用して、メッセージと同じ行に表示するか、別々の行に積み重ねて表示することができます。スタックレイアウトは、長いテキスト値を持つボタンで使用する必要があります。さらに、スタックトーストレイアウトのボタンは `side` の値として `start` または `end` のどちらかを使用できますが、両方を使用することはできません。
+
+import StackedPlayground from '@site/static/usage/v7/toast/layout/index.md';
+
+<StackedPlayground />
+
+## Icons
 
 トースト内のコンテンツの横にアイコンを追加することができます。一般的に、トーストのアイコンはスタイルやコンテキストを追加するために使用されるべきで、ユーザーの注意を引いたり、トーストの優先順位を上げたりするために使用すべきではありません。より優先順位の高いメッセージをユーザーに伝えたい場合や、応答を保証したい場合は、代わりに [Alert](alert.md) を使用することをお勧めします。
+
+import IconPlayground from '@site/static/usage/v7/toast/icon/index.md';
+
+<IconPlayground />
+
+## テーマ
+
+import ThemingPlayground from '@site/static/usage/v7/toast/theming/index.md';
+
+<ThemingPlayground />
 
 ## Interfaces
 
@@ -97,7 +136,7 @@ interface ToastOptions {
 
 `ion-toast` は、デフォルトで `aria-live="polite"` と `aria-atomic="true"` が設定されています。
 
-`aria-live`は、スクリーンリーダーがトーストを提示したときに、その内容をアナウンスするようにします。しかし、この属性は `'polite'` に設定されているため、スクリーン・リーダーは通常、現在のタスクを中断しません。開発者は `htmlAttributes` プロパティを使用して `aria-live` を `'assertive'` に設定することで、この動作をカスタマイズすることができます。これにより、スクリーンリーダーはトーストが表示されるとすぐにユーザーに通知し、それまでの更新を中断させる可能性があります。
+`aria-live` を指定すると、トーストの内容が更新されたときにスクリーンリーダがアナウンスするようになります。しかし、この属性は `'polite'` に設定されているため、スクリーン・リーダーは通常、現在のタスクを中断することはありません。開発者は `htmlAttributes` プロパティを使用して `aria-live` を `'assertive'` に設定することで、この動作をカスタマイズすることができます。これにより、トーストが更新されると、スクリーン・リーダーはすぐにユーザーに通知し、それまでの更新を中断させる可能性があります。
 
 また、`aria-atomic="true"`を設定すると、トースト全体を1つのユニットとしてアナウンスすることができます。これはトーストのコンテンツを動的に更新するときに便利で、スクリーン・リーダーが変更されたコンテンツのみをアナウンスすることを防ぎます。
 
@@ -110,375 +149,6 @@ interface ToastOptions {
 * 複数のトーストを連続して開くことは避けてください。もし `aria-live` が `'assertive'` に設定されている場合、スクリーンリーダーは新しいトーストをアナウンスするために現在のタスクの読み込みを中断し、前のトーストのコンテキストが失われる可能性があります。
 
 * 長いメッセージのトーストの場合は、`duration`プロパティを調整して、ユーザーがトーストの内容を読むのに十分な時間を確保することを検討してください。
-
-
-
-## 使い方
-
-<Tabs groupId="framework" defaultValue="angular" values={[{ value: 'angular', label: 'Angular' }, { value: 'javascript', label: 'Javascript' }, { value: 'react', label: 'React' }, { value: 'stencil', label: 'Stencil' }, { value: 'vue', label: 'Vue' }]}>
-
-<TabItem value="angular">
-
-```typescript
-import { Component } from '@angular/core';
-import { ToastController } from '@ionic/angular';
-
-@Component({
-  selector: 'toast-example',
-  templateUrl: 'toast-example.html',
-  styleUrls: ['./toast-example.css'],
-})
-export class ToastExample {
-
-  constructor(public toastController: ToastController) {}
-
-  async presentToast() {
-    const toast = await this.toastController.create({
-      message: 'Your settings have been saved.',
-      duration: 2000
-    });
-    toast.present();
-  }
-
-  async presentToastWithOptions() {
-    const toast = await this.toastController.create({
-      header: 'Toast header',
-      message: 'Click to Close',
-      icon: 'information-circle',
-      position: 'top',
-      buttons: [
-        {
-          side: 'start',
-          icon: 'star',
-          text: 'Favorite',
-          handler: () => {
-            console.log('Favorite clicked');
-          }
-        }, {
-          text: 'Done',
-          role: 'cancel',
-          handler: () => {
-            console.log('Cancel clicked');
-          }
-        }
-      ]
-    });
-    await toast.present();
-
-    const { role } = await toast.onDidDismiss();
-    console.log('onDidDismiss resolved with role', role);
-  }
-
-}
-```
-
-
-</TabItem>
-
-
-<TabItem value="javascript">
-
-```javascript
-async function presentToast() {
-  const toast = document.createElement('ion-toast');
-  toast.message = 'Your settings have been saved.';
-  toast.duration = 2000;
-
-  document.body.appendChild(toast);
-  return toast.present();
-}
-
-async function presentToastWithOptions() {
-  const toast = document.createElement('ion-toast');
-  toast.header = 'Toast header';
-  toast.message = 'Click to Close';
-  toast.icon = 'information-circle',
-  toast.position = 'top';
-  toast.buttons = [
-    {
-      side: 'start',
-      icon: 'star',
-      text: 'Favorite',
-      handler: () => {
-        console.log('Favorite clicked');
-      }
-    }, {
-      text: 'Done',
-      role: 'cancel',
-      handler: () => {
-        console.log('Cancel clicked');
-      }
-    }
-  ];
-
-  document.body.appendChild(toast);
-  await toast.present();
-
-  const { role } = await toast.onDidDismiss();
-  console.log('onDidDismiss resolved with role', role);
-}
-```
-
-
-</TabItem>
-
-
-<TabItem value="react">
-
-```tsx
-/* Using the useIonToast Hook */
-
-import React from 'react';
-import { IonButton, IonContent, IonPage, useIonToast } from '@ionic/react';
-
-const ToastExample: React.FC = () => {
-  const [present, dismiss] = useIonToast();
-
-  return (
-    <IonPage>
-      <IonContent>
-        <IonButton
-          expand="block"
-          onClick={() =>
-            present({
-              buttons: [{ text: 'hide', handler: () => dismiss() }],
-              message: 'toast from hook, click hide to dismiss',
-              onDidDismiss: () => console.log('dismissed'),
-              onWillDismiss: () => console.log('will dismiss'),
-            })
-          }
-        >
-          Show Toast
-        </IonButton>
-        <IonButton
-          expand="block"
-          onClick={() => present('hello from hook', 3000)}
-        >
-          Show Toast using params, closes in 3 secs
-        </IonButton>
-        <IonButton expand="block" onClick={dismiss}>
-          Hide Toast
-        </IonButton>
-      </IonContent>
-    </IonPage>
-  );
-};
-```
-
-```tsx
-/* Using the IonToast Component */
-
-import React, { useState } from 'react';
-import { IonToast, IonContent, IonButton } from '@ionic/react';
-import { informationCircle, star } from 'ionicons/icons';
-
-export const ToastExample: React.FC = () => {
-  const [showToast1, setShowToast1] = useState(false);
-  const [showToast2, setShowToast2] = useState(false);
-
-  return (
-    <IonContent>
-      <IonButton onClick={() => setShowToast1(true)} expand="block">Show Toast 1</IonButton>
-      <IonButton onClick={() => setShowToast2(true)} expand="block">Show Toast 2</IonButton>
-      <IonToast
-        isOpen={showToast1}
-        onDidDismiss={() => setShowToast1(false)}
-        message="Your settings have been saved."
-        duration={200}
-      />
-
-      <IonToast
-        isOpen={showToast2}
-        onDidDismiss={() => setShowToast2(false)}
-        message="Click to Close"
-        icon={informationCircle}
-        position="top"
-        buttons={[
-          {
-            side: 'start',
-            icon: star,
-            text: 'Favorite',
-            handler: () => {
-              console.log('Favorite clicked');
-            }
-          },
-          {
-            text: 'Done',
-            role: 'cancel',
-            handler: () => {
-              console.log('Cancel clicked');
-            }
-          }
-        ]}
-      />
-    </IonContent>
-  );
-};
-```
-
-
-</TabItem>
-
-
-<TabItem value="stencil">
-
-```tsx
-import { Component, h } from '@stencil/core';
-
-import { toastController } from '@ionic/core';
-
-@Component({
-  tag: 'toast-example',
-  styleUrl: 'toast-example.css'
-})
-export class ToastExample {
-  async presentToast() {
-    const toast = await toastController.create({
-      message: 'Your settings have been saved.',
-      duration: 2000
-    });
-    toast.present();
-  }
-
-  async presentToastWithOptions() {
-    const toast = await toastController.create({
-      header: 'Toast header',
-      message: 'Click to Close',
-      icon: 'information-circle',
-      position: 'top',
-      buttons: [
-        {
-          side: 'start',
-          icon: 'star',
-          text: 'Favorite',
-          handler: () => {
-            console.log('Favorite clicked');
-          }
-        }, {
-          text: 'Done',
-          role: 'cancel',
-          handler: () => {
-            console.log('Cancel clicked');
-          }
-        }
-      ]
-    });
-    await toast.present();
-
-    const { role } = await toast.onDidDismiss();
-    console.log('onDidDismiss resolved with role', role);
-  }
-
-  render() {
-    return [
-      <ion-content>
-        <ion-button onClick={() => this.presentToast()}>Present Toast</ion-button>
-        <ion-button onClick={() => this.presentToastWithOptions()}>Present Toast: Options</ion-button>
-      </ion-content>
-    ];
-  }
-}
-```
-
-
-</TabItem>
-
-
-<TabItem value="vue">
-
-```html
-<template>
-  <ion-page>
-    <ion-content class="ion-padding">
-      <ion-button @click="openToast">Open Toast</ion-button>
-      <ion-button @click="openToastOptions">Open Toast: Options</ion-button>
-    </ion-content>
-  </ion-page>
-</template>
-
-<script>
-import { IonButton, IonContent, IonPage, toastController } from '@ionic/vue';
-import { informationCircle } from 'ionicons/icons';
-
-export default {
-  components: { IonButton, IonContent, IonPage },
-  methods: {
-    async openToast() {
-      const toast = await toastController
-        .create({
-          message: 'Your settings have been saved.',
-          duration: 2000
-        })
-      return toast.present();
-    },
-    async openToastOptions() {
-      const toast = await toastController
-        .create({
-          header: 'Toast header',
-          message: 'Click to Close',
-          icon: informationCircle,
-          position: 'top',
-          buttons: [
-            {
-              side: 'start',
-              icon: 'star',
-              text: 'Favorite',
-              handler: () => {
-                console.log('Favorite clicked');
-              }
-            }, {
-              text: 'Done',
-              role: 'cancel',
-              handler: () => {
-                console.log('Cancel clicked');
-              }
-            }
-          ]
-        })
-      await toast.present();
-
-      const { role } = await toast.onDidDismiss();
-      console.log('onDidDismiss resolved with role', role);
-    },
-  },
-}
-</script>
-```
-
-Developers can also use this component directly in their template:
-
-```html
-<template>
-  <ion-button @click="setOpen(true)">Show Toast</ion-button>
-  <ion-toast
-    :is-open="isOpenRef"
-    message="Your settings have been saved."
-    :duration="2000"
-    @didDismiss="setOpen(false)"
-  >
-  </ion-toast>
-</template>
-
-<script>
-import { IonToast, IonButton } from '@ionic/vue';
-import { defineComponent, ref } from 'vue';
-
-export default defineComponent({
-  components: { IonToast, IonButton },
-  setup() {
-    const isOpenRef = ref(false);
-    const setOpen = (state: boolean) => isOpenRef.value = state;
-
-    return { isOpenRef, setOpen }
-  }
-});
-</script>
-```
-
-
-</TabItem>
-
-</Tabs>
 
 ## プロパティ
 <Props />

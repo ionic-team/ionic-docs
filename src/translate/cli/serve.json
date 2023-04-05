@@ -10,7 +10,6 @@
   "exampleCommands": [
     "ionic serve ",
     "ionic serve --external",
-    "ionic serve --lab",
     "ionic serve -- --proxy-config proxy.conf.json"
   ],
   "aliases": [
@@ -159,32 +158,6 @@
       }
     },
     {
-      "name": "lab-host",
-      "type": "string",
-      "summary": "Use specific host for Ionic Lab server",
-      "default": "localhost",
-      "groups": [
-        "advanced"
-      ],
-      "aliases": [],
-      "spec": {
-        "value": "host"
-      }
-    },
-    {
-      "name": "lab-port",
-      "type": "string",
-      "summary": "Use specific port for Ionic Lab server",
-      "default": "8200",
-      "groups": [
-        "advanced"
-      ],
-      "aliases": [],
-      "spec": {
-        "value": "port"
-      }
-    },
-    {
       "name": "open",
       "type": "boolean",
       "summary": "Do not open a browser window",
@@ -221,18 +194,6 @@
       ],
       "spec": {
         "value": "path"
-      }
-    },
-    {
-      "name": "lab",
-      "type": "boolean",
-      "summary": "Test your apps on multiple platform types in the browser",
-      "groups": [],
-      "aliases": [
-        "l"
-      ],
-      "spec": {
-        "value": "true/false"
       }
     }
   ],

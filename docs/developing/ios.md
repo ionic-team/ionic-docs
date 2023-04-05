@@ -114,6 +114,7 @@ $ brew install ios-deploy
 
    ```shell
    $ ionic capacitor copy ios
+   $ ionic capacitor update
    ```
 
    Cordovaの場合は、以下を実行します。

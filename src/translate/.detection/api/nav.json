@@ -117,7 +117,7 @@
         "type": "Promise<boolean>",
         "docs": ""
       },
-      "signature": "canGoBack(view?: ViewController | undefined) => Promise<boolean>",
+      "signature": "canGoBack(view?: ViewController) => Promise<boolean>",
       "parameters": [],
       "docs": "Returns `true` if the current view can go back.",
       "docsTags": [
@@ -160,7 +160,7 @@
         "type": "Promise<ViewController | undefined>",
         "docs": ""
       },
-      "signature": "getPrevious(view?: ViewController | undefined) => Promise<ViewController | undefined>",
+      "signature": "getPrevious(view?: ViewController) => Promise<ViewController | undefined>",
       "parameters": [],
       "docs": "Get the previous view.",
       "docsTags": [
@@ -176,7 +176,7 @@
         "type": "Promise<boolean>",
         "docs": ""
       },
-      "signature": "insert<T extends NavComponent>(insertIndex: number, component: T, componentProps?: ComponentProps<T> | null | undefined, opts?: NavOptions | null | undefined, done?: TransitionDoneFn | undefined) => Promise<boolean>",
+      "signature": "insert<T extends NavComponent>(insertIndex: number, component: T, componentProps?: ComponentProps<T> | null, opts?: NavOptions | null, done?: TransitionDoneFn) => Promise<boolean>",
       "parameters": [],
       "docs": "Inserts a component into the navigation stack at the specified index.\nThis is useful to add a component at any point in the navigation stack.",
       "docsTags": [
@@ -208,7 +208,7 @@
         "type": "Promise<boolean>",
         "docs": ""
       },
-      "signature": "insertPages(insertIndex: number, insertComponents: NavComponent[] | NavComponentWithProps[], opts?: NavOptions | null | undefined, done?: TransitionDoneFn | undefined) => Promise<boolean>",
+      "signature": "insertPages(insertIndex: number, insertComponents: NavComponent[] | NavComponentWithProps[], opts?: NavOptions | null, done?: TransitionDoneFn) => Promise<boolean>",
       "parameters": [],
       "docs": "Inserts an array of components into the navigation stack at the specified index.\nThe last component in the array will become instantiated as a view, and animate\nin to become the active view.",
       "docsTags": [
@@ -236,7 +236,7 @@
         "type": "Promise<boolean>",
         "docs": ""
       },
-      "signature": "pop(opts?: NavOptions | null | undefined, done?: TransitionDoneFn | undefined) => Promise<boolean>",
+      "signature": "pop(opts?: NavOptions | null, done?: TransitionDoneFn) => Promise<boolean>",
       "parameters": [],
       "docs": "Pop a component off of the navigation stack. Navigates back from the current\ncomponent.",
       "docsTags": [
@@ -256,7 +256,7 @@
         "type": "Promise<boolean>",
         "docs": ""
       },
-      "signature": "popTo(indexOrViewCtrl: number | ViewController, opts?: NavOptions | null | undefined, done?: TransitionDoneFn | undefined) => Promise<boolean>",
+      "signature": "popTo(indexOrViewCtrl: number | ViewController, opts?: NavOptions | null, done?: TransitionDoneFn) => Promise<boolean>",
       "parameters": [],
       "docs": "Pop to a specific index in the navigation stack.",
       "docsTags": [
@@ -280,7 +280,7 @@
         "type": "Promise<boolean>",
         "docs": ""
       },
-      "signature": "popToRoot(opts?: NavOptions | null | undefined, done?: TransitionDoneFn | undefined) => Promise<boolean>",
+      "signature": "popToRoot(opts?: NavOptions | null, done?: TransitionDoneFn) => Promise<boolean>",
       "parameters": [],
       "docs": "Navigate back to the root of the stack, no matter how far back that is.",
       "docsTags": [
@@ -300,7 +300,7 @@
         "type": "Promise<boolean>",
         "docs": ""
       },
-      "signature": "push<T extends NavComponent>(component: T, componentProps?: ComponentProps<T> | null | undefined, opts?: NavOptions | null | undefined, done?: TransitionDoneFn | undefined) => Promise<boolean>",
+      "signature": "push<T extends NavComponent>(component: T, componentProps?: ComponentProps<T> | null, opts?: NavOptions | null, done?: TransitionDoneFn) => Promise<boolean>",
       "parameters": [],
       "docs": "Push a new component onto the current navigation stack. Pass any additional\ninformation along as an object. This additional information is accessible\nthrough NavParams.",
       "docsTags": [
@@ -328,7 +328,7 @@
         "type": "Promise<boolean>",
         "docs": ""
       },
-      "signature": "removeIndex(startIndex: number, removeCount?: number, opts?: NavOptions | null | undefined, done?: TransitionDoneFn | undefined) => Promise<boolean>",
+      "signature": "removeIndex(startIndex: number, removeCount?: number, opts?: NavOptions | null, done?: TransitionDoneFn) => Promise<boolean>",
       "parameters": [],
       "docs": "Removes a component from the navigation stack at the specified index.",
       "docsTags": [
@@ -356,7 +356,7 @@
         "type": "Promise<boolean>",
         "docs": ""
       },
-      "signature": "setPages(views: NavComponent[] | NavComponentWithProps[], opts?: NavOptions | null | undefined, done?: TransitionDoneFn | undefined) => Promise<boolean>",
+      "signature": "setPages(views: NavComponent[] | NavComponentWithProps[], opts?: NavOptions | null, done?: TransitionDoneFn) => Promise<boolean>",
       "parameters": [],
       "docs": "Set the views of the current navigation stack and navigate to the last view.\nBy default animations are disabled, but they can be enabled by passing options\nto the navigation controller. Navigation parameters can also be passed to the\nindividual pages in the array.",
       "docsTags": [
@@ -380,7 +380,7 @@
         "type": "Promise<boolean>",
         "docs": ""
       },
-      "signature": "setRoot<T extends NavComponent>(component: T, componentProps?: ComponentProps<T> | null | undefined, opts?: NavOptions | null | undefined, done?: TransitionDoneFn | undefined) => Promise<boolean>",
+      "signature": "setRoot<T extends NavComponent>(component: T, componentProps?: ComponentProps<T> | null, opts?: NavOptions | null, done?: TransitionDoneFn) => Promise<boolean>",
       "parameters": [],
       "docs": "Set the root for the current navigation stack to a component.",
       "docsTags": [

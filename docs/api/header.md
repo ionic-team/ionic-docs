@@ -1,16 +1,12 @@
 ---
 title: "ion-header"
-hide_table_of_contents: true
 ---
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-
-import Props from '@ionic-internal/component-api/v6/header/props.md';
-import Events from '@ionic-internal/component-api/v6/header/events.md';
-import Methods from '@ionic-internal/component-api/v6/header/methods.md';
-import Parts from '@ionic-internal/component-api/v6/header/parts.md';
-import CustomProps from '@ionic-internal/component-api/v6/header/custom-props.md';
-import Slots from '@ionic-internal/component-api/v6/header/slots.md';
+import Props from '@ionic-internal/component-api/v7/header/props.md';
+import Events from '@ionic-internal/component-api/v7/header/events.md';
+import Methods from '@ionic-internal/component-api/v7/header/methods.md';
+import Parts from '@ionic-internal/component-api/v7/header/parts.md';
+import CustomProps from '@ionic-internal/component-api/v7/header/custom-props.md';
+import Slots from '@ionic-internal/component-api/v7/header/slots.md';
 
 <head>
   <title>ion-header: Header Parent Component for Ionic Framework Apps</title>
@@ -18,354 +14,64 @@ import Slots from '@ionic-internal/component-api/v6/header/slots.md';
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
-import TOCInline from '@theme/TOCInline';
 
 
-
-<h2 className="table-of-contents__title">コンテンツ</h2>
-
-<TOCInline
-  toc={toc}
-  maxHeadingLevel={2}
-/>
+ヘッダーは、ページの上部に配置されるページのルートコンポーネントです。1つ以上の[ツールバー](./toolbar)のラッパーとして使用することが推奨されていますが、あらゆる要素をラップするために使用することができます。ツールバーがヘッダー内で使用される場合、コンテンツは正しいサイズになるように調整され、ヘッダーはデバイスセーフ領域を考慮します。
 
 
+## 基本的な使い方
 
-Headerは、`toolbar`コンポーネントを保持する親コンポーネントです。
-`ion-header` はページの3つのルート要素のうちの1つでなければならないことに注意してください。
+import Basic from '@site/static/usage/v7/header/basic/index.md';
+
+<Basic />
+
+
+## 半透明のヘッダー
+
+ヘッダーは、`translucent`プロパティを設定することで、ネイティブのiOSアプリケーションに見られるような透明度に合わせることができます。ヘッダーの後ろにスクロールするコンテンツを見るには、コンテンツに `fullscreen` プロパティを設定する必要があります。この効果は、モードが `"ios"` で、デバイスが [backdrop-filter](https://developer.mozilla.org/en-US/docs/Web/CSS/backdrop-filter#browser_compatibility) をサポートしている場合にのみ適用されます。
+
+import Translucent from '@site/static/usage/v7/header/translucent/index.md';
+
+<Translucent />
+
+
+## 折りたたみのヘッダー
+
+Ionicでは、iOSネイティブアプリケーションで見られる、大きなツールバーのタイトルを表示し、スクロールすると小さなタイトルに折りたたむ機能を提供しています。これは、コンテンツの上に1つ、コンテンツの中に1つ、合計2つのヘッダーを追加し、コンテンツの中にあるヘッダーに `collapse` プロパティを `"condense"` に設定することで実現できます。この効果は、モードが "ios "のときのみ適用されます。
+
+import Condense from '@site/static/usage/v7/header/condense/index.md';
+
+<Condense />
+
 
 ## フェードヘッダー
 
-ページのメイン `ion-header` で `collapse` プロパティを `'fade'` に設定すると、ユーザがスクロールするたびにツールバーの背景色がフェードインするようになります。これは、多くのネイティブ iOS アプリケーションで見られるのと同じフェード効果を提供します。
+多くのネイティブiOSアプリケーションは、ツールバーにフェード効果を持たせています。これは、ヘッダーの `collapse` プロパティを `"fade"` に設定することで実現可能です。ページが最初に読み込まれたとき、ヘッダーの背景と境界線は非表示になります。コンテンツがスクロールされると、ヘッダーは再びフェードインします。この効果は、モードが「ios」のときだけ適用されます。
 
-この機能は、 [Collapsible Large Titles](https://ionicframework.com/docs/api/title#collapsible-large-titles) とも組み合わせることができます。 `collapse="condense"` 値は、`ion-content` 内の `ion-header` に設定する必要があります。 `collapse="fade"` 値は、`ion-content` の外側の `ion-header` に設定する必要があります。
+この機能は、[Condensed Header](#condensed-header)と組み合わせることができます。collapse`プロパティに`"fade"`を設定した場合は、コンテンツの外側にあるヘッダーに適用されるはずです。
+
+import Fade from '@site/static/usage/v7/header/fade/index.md';
+
+<Fade />
+
 
 ### 仮想スクロールの使用方法
 
-フェードや折りたたみ可能なラージタイトルは、機能するためにスクロールコンテナが必要です。仮想スクロールを使用する場合は、`ion-content` のスクロールを無効にして、`.ion-content-scroll-host` クラスターゲットでどの要素コンテナがスクロールコンテナを担当するかを指定する必要があります。
+フェードヘッダーが正しく動作するためには、スクロールコンテナが必要です。仮想スクロールソリューションを使用する場合は、カスタムスクロールターゲットを提供する必要があります。コンテンツのスクロールを無効にし、スクロールを担当する要素に `.ion-content-scroll-host` クラスを追加する必要があります。
 
-```html
-<ion-header collapse="fade">
-  <ion-toolbar>
-    <ion-title>Header</ion-title>
-  </ion-toolbar>
-</ion-header>
-<ion-content fullscreen="true" scroll-y="false">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Header</ion-title>
-    </ion-toolbar>
-  </ion-header>
-  <virtual-scroll-element class="ion-content-scroll-host">
-    <!-- Your virtual scroll content -->
-  </virtual-scroll-element>
-</ion-content>
-```
+import CustomScrollTarget from '@site/static/usage/v7/header/custom-scroll-target/index.md';
+
+<CustomScrollTarget />
 
 
+## Borders
 
-## 使い方
+`"md"`モードでは、ヘッダーの下部に `box-shadow` が表示されます。 `"ios"`モードでは、ヘッダの下部に `border` が表示されます。これらは、ヘッダーに `.ion-no-border` クラスを追加することで削除することができます。
 
-<Tabs groupId="framework" defaultValue="angular" values={[{ value: 'angular', label: 'Angular' }, { value: 'javascript', label: 'Javascript' }, { value: 'react', label: 'React' }, { value: 'stencil', label: 'Stencil' }, { value: 'vue', label: 'Vue' }]}>
+import NoBorder from '@site/static/usage/v7/header/no-border/index.md';
 
-<TabItem value="angular">
+<NoBorder />
 
-```html
-<ion-header>
-  <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-back-button></ion-back-button>
-    </ion-buttons>
-    <ion-title>My Navigation Bar</ion-title>
-  </ion-toolbar>
-
-  <ion-toolbar>
-    <ion-title>Subheader</ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<!-- Header without a border -->
-<ion-header class="ion-no-border">
-  <ion-toolbar>
-    <ion-title>Header - No Border</ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content>
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">My Navigation Bar</ion-title>
-    </ion-toolbar>
-  </ion-header>
-</ion-content>
-
-<!-- Fade Header with collapse header -->
-<ion-header collapse="fade" [translucent]="true">
-  <ion-toolbar>
-    <ion-title>Header</ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Header</ion-title>
-    </ion-toolbar>
-  </ion-header>
-</ion-content>
-```
-
-
-</TabItem>
-
-
-<TabItem value="javascript">
-
-```html
-<ion-header>
-  <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-back-button></ion-back-button>
-    </ion-buttons>
-    <ion-title>My Navigation Bar</ion-title>
-  </ion-toolbar>
-
-  <ion-toolbar>
-    <ion-title>Subheader</ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<!-- Header without a border -->
-<ion-header class="ion-no-border">
-  <ion-toolbar>
-    <ion-title>Header - No Border</ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content>
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">My Navigation Bar</ion-title>
-    </ion-toolbar>
-  </ion-header>
-</ion-content>
-
-<!-- Fade Header with collapse header -->
-<ion-header collapse="fade" translucent="true">
-  <ion-toolbar>
-    <ion-title>Header</ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content fullscreen="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Header</ion-title>
-    </ion-toolbar>
-  </ion-header>
-</ion-content>
-```
-
-
-</TabItem>
-
-
-<TabItem value="react">
-
-```tsx
-import React from 'react';
-import { IonHeader, IonContent, IonToolbar, IonButtons, IonBackButton, IonTitle } from '@ionic/react';
-
-export const HeaderExample: React.FC = () => (
-  <>
-    <IonHeader>
-      <IonToolbar>
-        <IonButtons slot="start">
-          <IonBackButton defaultHref="/" />
-        </IonButtons>
-        <IonTitle>My Navigation Bar</IonTitle>
-      </IonToolbar>
-    
-      <IonToolbar>
-        <IonTitle>Subheader</IonTitle>
-      </IonToolbar>
-    </IonHeader>
-    
-    {/*-- Header without a border --*/}
-    <IonHeader className="ion-no-border">
-     <IonToolbar>
-      <IonTitle>Header - No Border</IonTitle>
-     </IonToolbar>
-    </IonHeader>
-    
-    <IonContent>
-      <IonHeader collapse="condense">
-        <IonToolbar>
-          <IonTitle size="large">My Navigation Bar</IonTitle>
-        </IonToolbar>
-      </IonHeader>
-    </IonContent>
-    
-    {/*-- Fade Header with collapse header --*/}
-    <IonHeader collapse="fade" translucent={true}>
-      <IonToolbar>
-        <IonTitle>Header</IonTitle>
-      </IonToolbar>
-    </IonHeader>
-    
-    <IonContent fullscreen={true}>
-      <IonHeader collapse="condense">
-        <IonToolbar>
-          <IonTitle size="large">Header</IonTitle>
-        </IonToolbar>
-      </IonHeader>
-    </IonContent>
-  </>
-);
-```
-
-</TabItem>
-
-
-<TabItem value="stencil">
-
-```tsx
-import { Component, h } from '@stencil/core';
-
-@Component({
-  tag: 'header-example',
-  styleUrl: 'header-example.css'
-})
-export class HeaderExample {
-  render() {
-    return [
-      <ion-header>
-        <ion-toolbar>
-          <ion-buttons slot="start">
-            <ion-back-button></ion-back-button>
-          </ion-buttons>
-          <ion-title>My Navigation Bar</ion-title>
-        </ion-toolbar>
-
-        <ion-toolbar>
-          <ion-title>Subheader</ion-title>
-        </ion-toolbar>
-      </ion-header>,
-
-      {/*-- Header without a border --*/}
-      <ion-header class="ion-no-border">
-        <ion-toolbar>
-          <ion-title>Header - No Border</ion-title>
-        </ion-toolbar>
-      </ion-header>,
-
-      <ion-content>
-        <ion-header collapse="condense">
-          <ion-toolbar>
-            <ion-title size="large">My Navigation Bar</ion-title>
-          </ion-toolbar>
-        </ion-header>
-      </ion-content>,
-      
-      {/*-- Fade Header with collapse header --*/}
-      <ion-header collapse="fade" translucent={true}>
-        <ion-toolbar>
-          <ion-title>Header</ion-title>
-        </ion-toolbar>
-      </ion-header>
-      
-      <ion-content fullscreen={true}>
-        <ion-header collapse="condense">
-          <ion-toolbar>
-            <ion-title size="large">Header</ion-title>
-          </ion-toolbar>
-        </ion-header>
-      </ion-content>
-    ];
-  }
-}
-```
-
-
-</TabItem>
-
-
-<TabItem value="vue">
-
-```html
-<template>
-  <ion-header>
-    <ion-toolbar>
-      <ion-buttons slot="start">
-        <ion-back-button></ion-back-button>
-      </ion-buttons>
-      <ion-title>My Navigation Bar</ion-title>
-    </ion-toolbar>
-  
-    <ion-toolbar>
-      <ion-title>Subheader</ion-title>
-    </ion-toolbar>
-  </ion-header>
-  
-  <!-- Header without a border -->
-  <ion-header class="ion-no-border">
-    <ion-toolbar>
-      <ion-title>Header - No Border</ion-title>
-    </ion-toolbar>
-  </ion-header>
-  
-  <ion-content>
-    <ion-header collapse="condense">
-      <ion-toolbar>
-        <ion-title size="large">My Navigation Bar</ion-title>
-      </ion-toolbar>
-    </ion-header>
-  </ion-content>
-  
-  <!-- Fade Header with collapse header -->
-  <ion-header collapse="fade" :translucent="true">
-    <ion-toolbar>
-      <ion-title>Header</ion-title>
-    </ion-toolbar>
-  </ion-header>
-  
-  <ion-content :fullscreen="true">
-    <ion-header collapse="condense">
-      <ion-toolbar>
-        <ion-title size="large">Header</ion-title>
-      </ion-toolbar>
-    </ion-header>
-  </ion-content>
-</template>
-
-<script>
-import { 
-  IonBackButton, 
-  IonButtons, 
-  IonContent, 
-  IonHeader, 
-  IonTitle, 
-  IonToolbar
-} from '@ionic/vue';
-import { defineComponent } from 'vue';
-
-export default defineComponent({
-  components: { 
-    IonBackButton, 
-    IonButtons, 
-    IonContent, 
-    IonHeader, 
-    IonTitle, 
-    IonToolbar
-  }
-});
-</script>
-```
-
-
-</TabItem>
-
-</Tabs>
 
 ## プロパティ
 <Props />

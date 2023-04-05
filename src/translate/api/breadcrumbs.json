@@ -160,18 +160,7 @@
       "passive": false
     }
   ],
-  "styles": [
-    {
-      "name": "--background",
-      "annotation": "prop",
-      "docs": "Background of the breadcrumbs"
-    },
-    {
-      "name": "--color",
-      "annotation": "prop",
-      "docs": "Text color of the breadcrumbs"
-    }
-  ],
+  "styles": [],
   "slots": [],
   "parts": [],
   "dependents": [],
