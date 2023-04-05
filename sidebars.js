@@ -129,7 +129,7 @@ module.exports = {
               type: 'category',
               label: 'Unit Testing',
               collapsed: false,
-              items: ['react/testing/unit-testing/setup', 'react/testing/unit-testing/examples'],
+              items: ['react/testing/unit-testing/setup', 'react/testing/unit-testing/examples', 'react/testing/unit-testing/best-practices'],
             },
           ],
         },

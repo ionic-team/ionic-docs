@@ -29,11 +29,16 @@ export default function Example() {
 
 ```tsx title="src/Example.test.tsx"
 import { fireEvent, render, screen, waitFor } from '@testing-library/react';
+import { IonApp } from '@ionic/react';
 
 import Example from './Example';
 
 test('button presents a modal when clicked', async () => {
-  render(<Example />);
+  render(
+    <IonApp>
+      <Example />
+    </IonApp>
+  );
   // Simulate a click on the button
   fireEvent.click(screen.getByText('Open'));
   // Wait for the modal to be presented
@@ -48,12 +53,18 @@ test('button presents a modal when clicked', async () => {
 
 This example shows how to test a modal that is presented using the `useIonModal` hook. The modal is presented when the user clicks a button.
 
+:::warning
+
+You must mock `requestAnimationFrame` as described in the [setup section](./setup.md#mock-requestanimationframe).
+
+:::
+
 ### Example component
 
 ```tsx title="src/Example.tsx"
 import { IonContent, useIonModal, IonHeader, IonToolbar, IonTitle, IonButton, IonPage } from '@ionic/react';
 
-export const ModalContent: React.FC = () => {
+const ModalContent: React.FC = () => {
   return (
     <IonContent>
       <div>Modal Content</div>
@@ -85,30 +96,23 @@ export default Example;
 ### Testing the modal
 
 ```tsx title="src/Example.test.tsx"
-import { fireEvent, render, screen } from '@testing-library/react';
+import { fireEvent, render, screen, waitFor } from '@testing-library/react';
+import { IonApp } from '@ionic/react';
 
-import Example, { ModalContent } from './Example';
-
-const mockPresent = jest.fn();
-const mockUseIonModal = jest.fn();
-
-jest.mock('@ionic/react', () => {
-  const rest = jest.requireActual('@ionic/react');
-  return {
-    ...rest,
-    useIonModal: (component: any) => {
-      mockUseIonModal(component);
-      return [mockPresent];
-    },
-  };
-});
+import Example from './Example';
 
 test('should present ModalContent when button is clicked', () => {
-  render(<Example />);
-
+  render(
+    <IonApp>
+      <Example />
+    </IonApp>
+  );
+  // Simulate a click on the button
   fireEvent.click(screen.getByText('Open'));
-
-  expect(mockUseIonModal).toHaveBeenCalledWith(ModalContent);
-  expect(mockPresent).toHaveBeenCalled();
+  // Wait for the modal to be presented
+  await waitFor(() => {
+    // Assert that the modal is present
+    expect(screen.getByText('Modal content')).toBeInTheDocument();
+  });
 });
 ```
