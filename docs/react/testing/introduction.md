@@ -18,7 +18,7 @@ There are two types of tests that can be written:
 
 **Unit Tests**: Unit tests are used to test individual functions and components in isolation. They can be written using tools such as [Jest](https://jestjs.io) and [React Testing Library](https://testing-library.com) or [Vitest](https://vitest.dev).
 
-**Integration Tests**: Integration tests are used to test how different components work together. They are typically written using [Cypress](https://www.cypress.io) or [Playwright](https://playwright.dev).
+**Integration Tests**: Integration tests are used to test how different components work together. They can be written using tools such as [Cypress](https://www.cypress.io) or [Playwright](https://playwright.dev).
 
 ## Tools and Libraries
 
