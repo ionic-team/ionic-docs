@@ -10,7 +10,7 @@ Ionic requires a few additional steps to set up unit tests.
 
 ## Jest
 
-If your React project is using `react-scripts`, jest is already installed. You can confirm the version of Jest by running:
+If your React project uses `react-scripts`, then Jest is already installed. You can confirm the version of Jest by running:
 
 ```bash
 npm ls jest
