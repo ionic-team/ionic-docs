@@ -16,7 +16,7 @@ Testing is an important part of the development process, and it helps to ensure 
 
 There are two types of tests that can be written:
 
-**Unit Tests**: Unit tests are used to test individual functions and components in isolation. They are typically written using [Jest](https://jestjs.io) and [React Testing Library](https://testing-library.com) or [Vitest](https://vitest.dev).
+**Unit Tests**: Unit tests are used to test individual functions and components in isolation. They can be written using tools such as [Jest](https://jestjs.io) and [React Testing Library](https://testing-library.com) or [Vitest](https://vitest.dev).
 
 **Integration Tests**: Integration tests are used to test how different components work together. They are typically written using [Cypress](https://www.cypress.io) or [Playwright](https://playwright.dev).
 
