@@ -28,7 +28,7 @@ There are two types of tests that can be written:
 
 [**Vitest**](https://vitest.dev): Vitest is a modern testing framework powered by Vite. It is compatible with Jest and is used to run unit tests.
 
-[**React Testing Library**](https://testing-library.com): React Testing Library is a set of utilities that make it easier to test React components. It's used to interact with components and test their behavior.
+[**React Testing Library**](https://testing-library.com): React Testing Library is a set of utilities that make it easy to test React components. It's used to interact with components and test their behavior.
 
 ### Integration Testing
 
