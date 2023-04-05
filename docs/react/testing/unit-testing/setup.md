@@ -44,7 +44,7 @@ setupIonicReact();
 
 ### Mock `requestAnimationFrame`
 
-Either in `src/setupTest.ts` or in the individual test file, add the following code before any tests are run:
+Either in `src/setupTest.ts` or in the individual test file, add the following code before any tests run:
 
 ```tsx title="src/setupTest.ts"
 beforeEach(() => {
