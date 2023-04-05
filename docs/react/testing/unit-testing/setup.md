@@ -8,7 +8,9 @@ description: Learn how to set up unit tests for an Ionic React application.
 
 Ionic requires a few additional steps to set up unit tests.
 
-## Jest
+## React Scripts
+
+### Install Jest
 
 If your React project uses `react-scripts`, then Jest is already installed. You can confirm the version of Jest by running:
 
