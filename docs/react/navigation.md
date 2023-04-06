@@ -625,6 +625,10 @@ type UseIonRouterResult = {
    * Determines if there are any additional routes in the the Router's history. However, routing is not prevented if the browser's history has more entries. Returns true if more entries exist, false if not.
    */
   canGoBack(): boolean;
+  /**
+   * Information about the current route.
+   */
+  routeInfo: RouteInfo;
 };
 ```
 
