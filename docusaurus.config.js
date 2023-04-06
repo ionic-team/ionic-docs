@@ -13,9 +13,10 @@ module.exports = {
   url: 'https://ionicframework.jp',
   baseUrl: `${BASE_URL}/`,
   i18n: {
-    defaultLocale: 'ja',
-    locales: ['ja'],
+    defaultLocale: 'en',
+    locales: ['en', 'ja'],
     localeConfigs: {
+      en: { label: 'English' },
       ja: { label: '日本語' },
     },
   },
@@ -187,12 +188,6 @@ module.exports = {
           position: 'right',
           dropdownItemsBefore: [],
           dropdownItemsAfter: [
-            {
-              href: 'https://ionicframework.com/docs',
-              label: 'English',
-              target: '_self',
-              rel: null,
-            },
             {
               href: 'https://ionicframework.com/translate',
               label: 'Translate',
