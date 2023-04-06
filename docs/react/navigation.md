@@ -591,6 +591,50 @@ When a user navigates to a session detail page ("/sessions/1" for instance), the
 
 Since `IonRouterOutlet` takes over the job in determining which routes get rendered, using a `Switch` from React Router has no effect when used inside of an `IonRouterOutlet`. Switches still function as expected when used outside an `IonRouterOutlet`.
 
+## Utilities
+
+### useIonRouter
+
+The `useIonRouter` hook can be used for more direct control over routing in Ionic React. It allows you to pass additional metadata to Ionic, such as a custom animaton, before calling React router.
+
+The `useIonRouter` hook returns a `UseIonRouterResult` which has several convenience methods for routing.
+
+```typescript
+type UseIonRouterResult = {
+  /**
+   * Navigates to a new pathname
+   * @param pathname - The path to navigate to
+   * @param routerDirection - Optional - The RouterDirection to use for transition purposes, defaults to 'forward'
+   * @param routeAction - Optional - The RouteAction to use for history purposes, defaults to 'push'
+   * @param routerOptions - Optional - Any additional parameters to pass to the router
+   * @param animationBuilder - Optional - A custom transition animation to use
+   */
+  push(
+    pathname: string,
+    routerDirection?: RouterDirection,
+    routeAction?: RouteAction,
+    routerOptions?: RouterOptions,
+    animationBuilder?: AnimationBuilder
+  ): void;
+  /**
+   * Navigates backwards in history, using the IonRouter to determine history
+   * @param animationBuilder - Optional - A custom transition animation to use
+   */
+  goBack(animationBuilder?: AnimationBuilder): void;
+  /**
+   * Determines if there are any additional routes in the the Router's history. However, routing is not prevented if the browser's history has more entries. Returns true if more entries exist, false if not.
+   */
+  canGoBack(): boolean;
+  routeInfo: RouteInfo;
+};
+```
+
+```tsx
+const router = useIonRouter();
+
+router.push('/my-page', 'root', 'replace');
+```
+
 ## More Information
 
 For more info on routing in React using React Router, check out their docs at [https://reacttraining.com/react-router/web](https://reacttraining.com/react-router/web).
