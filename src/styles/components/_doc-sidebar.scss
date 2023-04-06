@@ -81,6 +81,10 @@ html[data-theme='dark'] {
     margin-block-start: 1.5rem;
   }
 
+  .theme-doc-sidebar-item-category-level-1:last-of-type {
+    margin-block-end: 1.5rem;
+  }
+
   .menu__list {
     display: block !important;
     transition: height 0.35s cubic-bezier(0.36, 0.66, 0.04, 1) 25ms !important;
