@@ -50,7 +50,7 @@ import PopoverExample from '@site/static/usage/v7/select/interfaces/popover/inde
 
 ## Multiple Selection
 
-By adding the `multiple` attribute to select, users are able to select multiple options. When multiple options can be selected, the alert overlay presents users with a checkbox styled list of options. The select component's value receives an array of all of the selected option values.
+By adding the `multiple` attribute to select, users are able to select multiple options. When multiple options can be selected, the alert or popover overlay presents users with a checkbox styled list of options. The select component's value receives an array of all of the selected option values.
 
 Note: the `action-sheet` interface will not work with multiple selection.
 
