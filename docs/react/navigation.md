@@ -597,7 +597,7 @@ Since `IonRouterOutlet` takes over the job in determining which routes get rende
 
 The `useIonRouter` hook can be used for more direct control over routing in Ionic React. It allows you to pass additional metadata to Ionic, such as a custom animaton, before calling React router.
 
-The `useIonRouter` hook returns a `UseIonRouterResult` which has several convenience methods for routing.
+The `useIonRouter` hook returns a `UseIonRouterResult` which has several convenience methods for routing:
 
 ```typescript
 type UseIonRouterResult = {
@@ -625,15 +625,26 @@ type UseIonRouterResult = {
    * Determines if there are any additional routes in the the Router's history. However, routing is not prevented if the browser's history has more entries. Returns true if more entries exist, false if not.
    */
   canGoBack(): boolean;
-  routeInfo: RouteInfo;
 };
 ```
 
-```tsx
-const router = useIonRouter();
+The following example shows how to use `useIonRouter`:
 
-router.push('/my-page', 'root', 'replace');
+
+```tsx
+import { useIonRouter } from '@ionic/react';
+
+const MyComponent: React.FC = () => {
+  const router = useIonRouter();
+  const goToPage = () => {
+    router.push('/my-page', 'root', 'replace');
+  };
+  
+  ...
+}
+
 ```
+
 
 ## More Information
 
