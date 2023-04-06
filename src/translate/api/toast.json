@@ -238,6 +238,23 @@
       "required": false
     },
     {
+      "name": "isOpen",
+      "type": "boolean",
+      "mutable": false,
+      "attr": "is-open",
+      "reflectToAttr": false,
+      "docs": "If `true`, the toast will open. If `false`, the toast will close.\nUse this if you need finer grained control over presentation, otherwise\njust use the toastController or the `trigger` property.\nNote: `isOpen` will not automatically be set back to `false` when\nthe toast dismisses. You will need to do that in your code.",
+      "docsTags": [],
+      "default": "false",
+      "values": [
+        {
+          "type": "boolean"
+        }
+      ],
+      "optional": false,
+      "required": false
+    },
+    {
       "name": "keyboardClose",
       "type": "boolean",
       "mutable": false,
@@ -300,7 +317,7 @@
       "mutable": false,
       "attr": "message",
       "reflectToAttr": false,
-      "docs": "Message to be shown in the toast.",
+      "docs": "Message to be shown in the toast.\nThis property accepts custom HTML as a string.\nContent is parsed as plaintext by default.\n`innerHTMLTemplatesEnabled` must be set to `true` in the Ionic config\nbefore custom HTML can be used.",
       "docsTags": [],
       "values": [
         {
@@ -379,6 +396,25 @@
       ],
       "optional": false,
       "required": false
+    },
+    {
+      "name": "trigger",
+      "type": "string | undefined",
+      "mutable": false,
+      "attr": "trigger",
+      "reflectToAttr": false,
+      "docs": "An ID corresponding to the trigger element that\ncauses the toast to open when clicked.",
+      "docsTags": [],
+      "values": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "undefined"
+        }
+      ],
+      "optional": false,
+      "required": false
     }
   ],
   "methods": [
@@ -438,6 +474,24 @@
   ],
   "events": [
     {
+      "event": "didDismiss",
+      "detail": "OverlayEventDetail<any>",
+      "bubbles": true,
+      "cancelable": true,
+      "composed": true,
+      "docs": "Emitted after the toast has dismissed.\nShorthand for ionToastDidDismiss.",
+      "docsTags": []
+    },
+    {
+      "event": "didPresent",
+      "detail": "void",
+      "bubbles": true,
+      "cancelable": true,
+      "composed": true,
+      "docs": "Emitted after the toast has presented.\nShorthand for ionToastWillDismiss.",
+      "docsTags": []
+    },
+    {
       "event": "ionToastDidDismiss",
       "detail": "OverlayEventDetail<any>",
       "bubbles": true,
@@ -471,6 +525,24 @@
       "cancelable": true,
       "composed": true,
       "docs": "Emitted before the toast has presented.",
+      "docsTags": []
+    },
+    {
+      "event": "willDismiss",
+      "detail": "OverlayEventDetail<any>",
+      "bubbles": true,
+      "cancelable": true,
+      "composed": true,
+      "docs": "Emitted before the toast has dismissed.\nShorthand for ionToastWillDismiss.",
+      "docsTags": []
+    },
+    {
+      "event": "willPresent",
+      "detail": "void",
+      "bubbles": true,
+      "cancelable": true,
+      "composed": true,
+      "docs": "Emitted before the toast has presented.\nShorthand for ionToastWillPresent.",
       "docsTags": []
     }
   ],

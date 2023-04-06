@@ -390,19 +390,21 @@
     },
     {
       "name": "debounce",
-      "type": "number",
+      "type": "number | undefined",
       "mutable": false,
       "attr": "debounce",
       "reflectToAttr": false,
-      "docs": "Set the amount of time, in milliseconds, to wait to trigger the `ionChange` event after each keystroke. This also impacts form bindings such as `ngModel` or `v-model`.",
+      "docs": "Set the amount of time, in milliseconds, to wait to trigger the `ionInput` event after each keystroke.",
       "docsTags": [],
-      "default": "250",
       "values": [
         {
           "type": "number"
+        },
+        {
+          "type": "undefined"
         }
       ],
-      "optional": false,
+      "optional": true,
       "required": false
     },
     {
@@ -755,7 +757,7 @@
       "bubbles": true,
       "cancelable": true,
       "composed": true,
-      "docs": "Emitted when the value has changed.",
+      "docs": "The `ionChange` event is fired for `<ion-searchbar>` elements when the user\nmodifies the element's value. Unlike the `ionInput` event, the `ionChange`\nevent is not necessarily fired for each alteration to an element's value.\n\nThe `ionChange` event is fired when the value has been committed\nby the user. This can happen when the element loses focus or\nwhen the \"Enter\" key is pressed. `ionChange` can also fire\nwhen clicking the clear or cancel buttons.",
       "docsTags": []
     },
     {
@@ -778,11 +780,11 @@
     },
     {
       "event": "ionInput",
-      "detail": "KeyboardEvent",
+      "detail": "SearchbarInputEventDetail",
       "bubbles": true,
       "cancelable": true,
       "composed": true,
-      "docs": "Emitted when a keyboard input occurred.",
+      "docs": "Emitted when the `value` of the `ion-searchbar` element has changed.",
       "docsTags": []
     }
   ],

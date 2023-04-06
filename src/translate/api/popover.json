@@ -33,7 +33,7 @@
       "mutable": true,
       "attr": "alignment",
       "reflectToAttr": false,
-      "docs": "Describes how to align the popover content with the `reference` point.\nDefaults to `'center'` for `ios` mode, and `'start'` for `md` mode.",
+      "docs": "Describes how to align the popover content with the `reference` point.\nDefaults to `\"center\"` for `ios` mode, and `\"start\"` for `md` mode.",
       "docsTags": [],
       "values": [
         {
@@ -317,7 +317,7 @@
       "mutable": false,
       "attr": "reference",
       "reflectToAttr": false,
-      "docs": "Describes what to position the popover relative to.\nIf `'trigger'`, the popover will be positioned relative\nto the trigger button. If passing in an event, this is\ndetermined via event.target.\nIf `'event'`, the popover will be positioned relative\nto the x/y coordinates of the trigger action. If passing\nin an event, this is determined via event.clientX and event.clientY.",
+      "docs": "Describes what to position the popover relative to.\nIf `\"trigger\"`, the popover will be positioned relative\nto the trigger button. If passing in an event, this is\ndetermined via event.target.\nIf `\"event\"`, the popover will be positioned relative\nto the x/y coordinates of the trigger action. If passing\nin an event, this is determined via event.clientX and event.clientY.",
       "docsTags": [],
       "default": "'trigger'",
       "values": [
@@ -356,7 +356,7 @@
       "mutable": false,
       "attr": "side",
       "reflectToAttr": false,
-      "docs": "Describes which side of the `reference` point to position\nthe popover on. The `'start'` and `'end'` values are RTL-aware,\nand the `'left'` and `'right'` values are not.",
+      "docs": "Describes which side of the `reference` point to position\nthe popover on. The `\"start\"` and `\"end\"` values are RTL-aware,\nand the `\"left\"` and `\"right\"` values are not.",
       "docsTags": [],
       "default": "'bottom'",
       "values": [
@@ -394,7 +394,7 @@
       "mutable": false,
       "attr": "size",
       "reflectToAttr": false,
-      "docs": "Describes how to calculate the popover width.\nIf `'cover'`, the popover width will match the width of the trigger.\nIf `'auto'`, the popover width will be determined by the content in\nthe popover.",
+      "docs": "Describes how to calculate the popover width.\nIf `\"cover\"`, the popover width will match the width of the trigger.\nIf `\"auto\"`, the popover width will be determined by the content in\nthe popover.",
       "docsTags": [],
       "default": "'auto'",
       "values": [
@@ -452,7 +452,7 @@
       "mutable": false,
       "attr": "trigger-action",
       "reflectToAttr": false,
-      "docs": "Describes what kind of interaction with the trigger that\nshould cause the popover to open. Does not apply when the `trigger`\nproperty is `undefined`.\nIf `'click'`, the popover will be presented when the trigger is left clicked.\nIf `'hover'`, the popover will be presented when a pointer hovers over the trigger.\nIf `'context-menu'`, the popover will be presented when the trigger is right\nclicked on desktop and long pressed on mobile. This will also prevent your\ndevice's normal context menu from appearing.",
+      "docs": "Describes what kind of interaction with the trigger that\nshould cause the popover to open. Does not apply when the `trigger`\nproperty is `undefined`.\nIf `\"click\"`, the popover will be presented when the trigger is left clicked.\nIf `\"hover\"`, the popover will be presented when a pointer hovers over the trigger.\nIf `\"context-menu\"`, the popover will be presented when the trigger is right\nclicked on desktop and long pressed on mobile. This will also prevent your\ndevice's normal context menu from appearing.",
       "docsTags": [],
       "default": "'click'",
       "values": [

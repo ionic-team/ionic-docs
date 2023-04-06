@@ -109,7 +109,7 @@
       "mutable": false,
       "attr": "toggle-icon-slot",
       "reflectToAttr": false,
-      "docs": "The slot inside of `ion-item` to\nplace the toggle icon. Defaults to `'end'`.",
+      "docs": "The slot inside of `ion-item` to\nplace the toggle icon. Defaults to `\"end\"`.",
       "docsTags": [],
       "default": "'end'",
       "values": [
