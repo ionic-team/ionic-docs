@@ -84,7 +84,7 @@
       "mutable": true,
       "attr": "force-overscroll",
       "reflectToAttr": false,
-      "docs": "If `true` and the content does not cause an overflow scroll, the scroll interaction will cause a bounce.\nIf the content exceeds the bounds of ionContent, nothing will change.\nNote, the does not disable the system bounce on iOS. That is an OS level setting.",
+      "docs": "If `true` and the content does not cause an overflow scroll, the scroll interaction will cause a bounce.\nIf the content exceeds the bounds of ionContent, nothing will change.\nNote, this does not disable the system bounce on iOS. That is an OS level setting.",
       "docsTags": [],
       "values": [
         {

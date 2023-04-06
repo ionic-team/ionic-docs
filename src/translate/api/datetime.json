@@ -286,7 +286,7 @@
       "mutable": false,
       "attr": "locale",
       "reflectToAttr": false,
-      "docs": "The locale to use for `ion-datetime`. This\nimpacts month and day name formatting.\nThe `'default'` value refers to the default\nlocale set by your device.",
+      "docs": "The locale to use for `ion-datetime`. This\nimpacts month and day name formatting.\nThe `\"default\"` value refers to the default\nlocale set by your device.",
       "docsTags": [],
       "default": "'default'",
       "values": [
@@ -446,7 +446,7 @@
       "mutable": false,
       "attr": "prefer-wheel",
       "reflectToAttr": false,
-      "docs": "If `true`, a wheel picker will be rendered instead of a calendar grid\nwhere possible. If `false`, a calendar grid will be rendered instead of\na wheel picker where possible.\n\nA wheel picker can be rendered instead of a grid when `presentation` is\none of the following values: `'date'`, `'date-time'`, or `'time-date'`.\n\nA wheel picker will always be rendered regardless of\nthe `preferWheel` value when `presentation` is one of the following values:\n`'time'`, `'month'`, `'month-year'`, or `'year'`.",
+      "docs": "If `true`, a wheel picker will be rendered instead of a calendar grid\nwhere possible. If `false`, a calendar grid will be rendered instead of\na wheel picker where possible.\n\nA wheel picker can be rendered instead of a grid when `presentation` is\none of the following values: `\"date\"`, `\"date-time\"`, or `\"time-date\"`.\n\nA wheel picker will always be rendered regardless of\nthe `preferWheel` value when `presentation` is one of the following values:\n`\"time\"`, `\"month\"`, `\"month-year\"`, or `\"year\"`.",
       "docsTags": [],
       "default": "false",
       "values": [
@@ -463,7 +463,7 @@
       "mutable": false,
       "attr": "presentation",
       "reflectToAttr": false,
-      "docs": "Which values you want to select. `'date'` will show\na calendar picker to select the month, day, and year. `'time'`\nwill show a time picker to select the hour, minute, and (optionally)\nAM/PM. `'date-time'` will show the date picker first and time picker second.\n`'time-date'` will show the time picker first and date picker second.",
+      "docs": "Which values you want to select. `\"date\"` will show\na calendar picker to select the month, day, and year. `\"time\"`\nwill show a time picker to select the hour, minute, and (optionally)\nAM/PM. `\"date-time\"` will show the date picker first and time picker second.\n`\"time-date\"` will show the time picker first and date picker second.",
       "docsTags": [],
       "default": "'date-time'",
       "values": [
@@ -630,7 +630,7 @@
       "mutable": true,
       "attr": "value",
       "reflectToAttr": false,
-      "docs": "The value of the datetime as a valid ISO 8601 datetime string.\nShould be an array of strings if `multiple=\"true\"`.",
+      "docs": "The value of the datetime as a valid ISO 8601 datetime string.\nThis should be an array of strings only when `multiple=\"true\"`.",
       "docsTags": [],
       "values": [
         {

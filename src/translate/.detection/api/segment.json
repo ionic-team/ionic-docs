@@ -157,16 +157,13 @@
     },
     {
       "name": "value",
-      "type": "null | string | undefined",
+      "type": "string | undefined",
       "mutable": true,
       "attr": "value",
       "reflectToAttr": false,
       "docs": "the value of the segment.",
       "docsTags": [],
       "values": [
-        {
-          "type": "null"
-        },
         {
           "type": "string"
         },

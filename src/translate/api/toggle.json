@@ -9,6 +9,10 @@
       "text": "{\"ios\" | \"md\"} mode - The mode determines which platform styles to use."
     },
     {
+      "name": "slot",
+      "text": "- The label text to associate with the toggle. Use the \"labelPlacement\" property to control where the label is placed relative to the toggle."
+    },
+    {
       "name": "part",
       "text": "track - The background track of the toggle."
     },
@@ -129,6 +133,77 @@
       "required": false
     },
     {
+      "name": "justify",
+      "type": "\"end\" | \"space-between\" | \"start\"",
+      "mutable": false,
+      "attr": "justify",
+      "reflectToAttr": false,
+      "docs": "How to pack the label and toggle within a line.\n`\"start\"`: The label and toggle will appear on the left in LTR and\non the right in RTL.\n`\"end\"`: The label and toggle will appear on the right in LTR and\non the left in RTL.\n`\"space-between\"`: The label and toggle will appear on opposite\nends of the line with space between the two elements.",
+      "docsTags": [],
+      "default": "'space-between'",
+      "values": [
+        {
+          "value": "end",
+          "type": "string"
+        },
+        {
+          "value": "space-between",
+          "type": "string"
+        },
+        {
+          "value": "start",
+          "type": "string"
+        }
+      ],
+      "optional": false,
+      "required": false
+    },
+    {
+      "name": "labelPlacement",
+      "type": "\"end\" | \"fixed\" | \"start\"",
+      "mutable": false,
+      "attr": "label-placement",
+      "reflectToAttr": false,
+      "docs": "Where to place the label relative to the input.\n`\"start\"`: The label will appear to the left of the toggle in LTR and to the right in RTL.\n`\"end\"`: The label will appear to the right of the toggle in LTR and to the left in RTL.\n`\"fixed\"`: The label has the same behavior as `\"start\"` except it also has a fixed width. Long text will be truncated with ellipses (\"...\").",
+      "docsTags": [],
+      "default": "'start'",
+      "values": [
+        {
+          "value": "end",
+          "type": "string"
+        },
+        {
+          "value": "fixed",
+          "type": "string"
+        },
+        {
+          "value": "start",
+          "type": "string"
+        }
+      ],
+      "optional": false,
+      "required": false
+    },
+    {
+      "name": "legacy",
+      "type": "boolean | undefined",
+      "mutable": false,
+      "attr": "legacy",
+      "reflectToAttr": false,
+      "docs": "Set the `legacy` property to `true` to forcibly use the legacy form control markup.\nIonic will only opt components in to the modern form markup when they are\nusing either the `aria-label` attribute or the default slot that contains\nthe label text. As a result, the `legacy` property should only be used as\nan escape hatch when you want to avoid this automatic opt-in behavior.\nNote that this property will be removed in an upcoming major release\nof Ionic, and all form components will be opted-in to using the modern form markup.",
+      "docsTags": [],
+      "values": [
+        {
+          "type": "boolean"
+        },
+        {
+          "type": "undefined"
+        }
+      ],
+      "optional": true,
+      "required": false
+    },
+    {
       "name": "mode",
       "type": "\"ios\" | \"md\"",
       "mutable": false,
@@ -207,7 +282,7 @@
       "bubbles": true,
       "cancelable": true,
       "composed": true,
-      "docs": "Emitted when the value property has changed.",
+      "docs": "Emitted when the user switches the toggle on or off. Does not emit\nwhen programmatically changing the value of the `checked` property.",
       "docsTags": []
     },
     {
@@ -222,16 +297,6 @@
   ],
   "listeners": [],
   "styles": [
-    {
-      "name": "--background",
-      "annotation": "prop",
-      "docs": "Background of the toggle"
-    },
-    {
-      "name": "--background-checked",
-      "annotation": "prop",
-      "docs": "Background of the toggle when checked"
-    },
     {
       "name": "--border-radius",
       "annotation": "prop",
@@ -281,9 +346,24 @@
       "name": "--handle-width",
       "annotation": "prop",
       "docs": "Width of the toggle handle"
+    },
+    {
+      "name": "--track-background",
+      "annotation": "prop",
+      "docs": "Background of the toggle track"
+    },
+    {
+      "name": "--track-background-checked",
+      "annotation": "prop",
+      "docs": "Background of the toggle track when checked"
     }
   ],
-  "slots": [],
+  "slots": [
+    {
+      "name": "",
+      "docs": "The label text to associate with the toggle. Use the \"labelPlacement\" property to control where the label is placed relative to the toggle."
+    }
+  ],
   "parts": [
     {
       "name": "handle",

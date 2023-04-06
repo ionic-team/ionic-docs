@@ -142,6 +142,23 @@
       "required": false
     },
     {
+      "name": "isOpen",
+      "type": "boolean",
+      "mutable": false,
+      "attr": "is-open",
+      "reflectToAttr": false,
+      "docs": "If `true`, the action sheet will open. If `false`, the action sheet will close.\nUse this if you need finer grained control over presentation, otherwise\njust use the actionSheetController or the `trigger` property.\nNote: `isOpen` will not automatically be set back to `false` when\nthe action sheet dismisses. You will need to do that in your code.",
+      "docsTags": [],
+      "default": "false",
+      "values": [
+        {
+          "type": "boolean"
+        }
+      ],
+      "optional": false,
+      "required": false
+    },
+    {
       "name": "keyboardClose",
       "type": "boolean",
       "mutable": false,
@@ -232,6 +249,25 @@
       ],
       "optional": false,
       "required": false
+    },
+    {
+      "name": "trigger",
+      "type": "string | undefined",
+      "mutable": false,
+      "attr": "trigger",
+      "reflectToAttr": false,
+      "docs": "An ID corresponding to the trigger element that\ncauses the action sheet to open when clicked.",
+      "docsTags": [],
+      "values": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "undefined"
+        }
+      ],
+      "optional": false,
+      "required": false
     }
   ],
   "methods": [
@@ -291,12 +327,30 @@
   ],
   "events": [
     {
+      "event": "didDismiss",
+      "detail": "OverlayEventDetail<any>",
+      "bubbles": true,
+      "cancelable": true,
+      "composed": true,
+      "docs": "Emitted after the action sheet has dismissed.\nShorthand for ionActionSheetDidDismiss.",
+      "docsTags": []
+    },
+    {
+      "event": "didPresent",
+      "detail": "void",
+      "bubbles": true,
+      "cancelable": true,
+      "composed": true,
+      "docs": "Emitted after the action sheet has presented.\nShorthand for ionActionSheetWillDismiss.",
+      "docsTags": []
+    },
+    {
       "event": "ionActionSheetDidDismiss",
       "detail": "OverlayEventDetail<any>",
       "bubbles": true,
       "cancelable": true,
       "composed": true,
-      "docs": "Emitted after the alert has dismissed.",
+      "docs": "Emitted after the action sheet has dismissed.",
       "docsTags": []
     },
     {
@@ -305,7 +359,7 @@
       "bubbles": true,
       "cancelable": true,
       "composed": true,
-      "docs": "Emitted after the alert has presented.",
+      "docs": "Emitted after the action sheet has presented.",
       "docsTags": []
     },
     {
@@ -314,7 +368,7 @@
       "bubbles": true,
       "cancelable": true,
       "composed": true,
-      "docs": "Emitted before the alert has dismissed.",
+      "docs": "Emitted before the action sheet has dismissed.",
       "docsTags": []
     },
     {
@@ -323,7 +377,25 @@
       "bubbles": true,
       "cancelable": true,
       "composed": true,
-      "docs": "Emitted before the alert has presented.",
+      "docs": "Emitted before the action sheet has presented.",
+      "docsTags": []
+    },
+    {
+      "event": "willDismiss",
+      "detail": "OverlayEventDetail<any>",
+      "bubbles": true,
+      "cancelable": true,
+      "composed": true,
+      "docs": "Emitted before the action sheet has dismissed.\nShorthand for ionActionSheetWillDismiss.",
+      "docsTags": []
+    },
+    {
+      "event": "willPresent",
+      "detail": "void",
+      "bubbles": true,
+      "cancelable": true,
+      "composed": true,
+      "docs": "Emitted before the action sheet has presented.\nShorthand for ionActionSheetWillPresent.",
       "docsTags": []
     }
   ],

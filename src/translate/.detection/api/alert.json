@@ -158,6 +158,23 @@
       "required": false
     },
     {
+      "name": "isOpen",
+      "type": "boolean",
+      "mutable": false,
+      "attr": "is-open",
+      "reflectToAttr": false,
+      "docs": "If `true`, the alert will open. If `false`, the alert will close.\nUse this if you need finer grained control over presentation, otherwise\njust use the alertController or the `trigger` property.\nNote: `isOpen` will not automatically be set back to `false` when\nthe alert dismisses. You will need to do that in your code.",
+      "docsTags": [],
+      "default": "false",
+      "values": [
+        {
+          "type": "boolean"
+        }
+      ],
+      "optional": false,
+      "required": false
+    },
+    {
       "name": "keyboardClose",
       "type": "boolean",
       "mutable": false,
@@ -198,7 +215,7 @@
       "mutable": false,
       "attr": "message",
       "reflectToAttr": false,
-      "docs": "The main message to be displayed in the alert.\n`message` can accept either plaintext or HTML as a string.\nTo display characters normally reserved for HTML, they\nmust be escaped. For example `<Ionic>` would become\n`&lt;Ionic&gt;`\n\nFor more information: [Security Documentation](https://ionicframework.com/docs/faq/security)",
+      "docs": "The main message to be displayed in the alert.\n`message` can accept either plaintext or HTML as a string.\nTo display characters normally reserved for HTML, they\nmust be escaped. For example `<Ionic>` would become\n`&lt;Ionic&gt;`\n\nFor more information: [Security Documentation](https://ionicframework.com/docs/faq/security)\n\nThis property accepts custom HTML as a string.\nContent is parsed as plaintext by default.\n`innerHTMLTemplatesEnabled` must be set to `true` in the Ionic config\nbefore custom HTML can be used.",
       "docsTags": [],
       "values": [
         {
@@ -270,6 +287,25 @@
       ],
       "optional": false,
       "required": false
+    },
+    {
+      "name": "trigger",
+      "type": "string | undefined",
+      "mutable": false,
+      "attr": "trigger",
+      "reflectToAttr": false,
+      "docs": "An ID corresponding to the trigger element that\ncauses the alert to open when clicked.",
+      "docsTags": [],
+      "values": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "undefined"
+        }
+      ],
+      "optional": false,
+      "required": false
     }
   ],
   "methods": [
@@ -329,6 +365,24 @@
   ],
   "events": [
     {
+      "event": "didDismiss",
+      "detail": "OverlayEventDetail<any>",
+      "bubbles": true,
+      "cancelable": true,
+      "composed": true,
+      "docs": "Emitted after the alert has dismissed.\nShorthand for ionAlertDidDismiss.",
+      "docsTags": []
+    },
+    {
+      "event": "didPresent",
+      "detail": "void",
+      "bubbles": true,
+      "cancelable": true,
+      "composed": true,
+      "docs": "Emitted after the alert has presented.\nShorthand for ionAlertWillDismiss.",
+      "docsTags": []
+    },
+    {
       "event": "ionAlertDidDismiss",
       "detail": "OverlayEventDetail<any>",
       "bubbles": true,
@@ -362,6 +416,24 @@
       "cancelable": true,
       "composed": true,
       "docs": "Emitted before the alert has presented.",
+      "docsTags": []
+    },
+    {
+      "event": "willDismiss",
+      "detail": "OverlayEventDetail<any>",
+      "bubbles": true,
+      "cancelable": true,
+      "composed": true,
+      "docs": "Emitted before the alert has dismissed.\nShorthand for ionAlertWillDismiss.",
+      "docsTags": []
+    },
+    {
+      "event": "willPresent",
+      "detail": "void",
+      "bubbles": true,
+      "cancelable": true,
+      "composed": true,
+      "docs": "Emitted before the alert has presented.\nShorthand for ionAlertWillPresent.",
       "docsTags": []
     }
   ],

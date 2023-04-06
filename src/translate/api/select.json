@@ -41,6 +41,61 @@
       "required": false
     },
     {
+      "name": "color",
+      "type": "\"danger\" | \"dark\" | \"light\" | \"medium\" | \"primary\" | \"secondary\" | \"success\" | \"tertiary\" | \"warning\" | string & Record<never, never> | undefined",
+      "mutable": false,
+      "attr": "color",
+      "reflectToAttr": true,
+      "docs": "The color to use from your application's color palette.\nDefault options are: `\"primary\"`, `\"secondary\"`, `\"tertiary\"`, `\"success\"`, `\"warning\"`, `\"danger\"`, `\"light\"`, `\"medium\"`, and `\"dark\"`.\nFor more information on colors, see [theming](/docs/theming/basics).\n\nThis property is only available when using the modern select syntax.",
+      "docsTags": [],
+      "values": [
+        {
+          "value": "danger",
+          "type": "string"
+        },
+        {
+          "value": "dark",
+          "type": "string"
+        },
+        {
+          "value": "light",
+          "type": "string"
+        },
+        {
+          "value": "medium",
+          "type": "string"
+        },
+        {
+          "value": "primary",
+          "type": "string"
+        },
+        {
+          "value": "secondary",
+          "type": "string"
+        },
+        {
+          "value": "success",
+          "type": "string"
+        },
+        {
+          "value": "tertiary",
+          "type": "string"
+        },
+        {
+          "value": "warning",
+          "type": "string"
+        },
+        {
+          "type": "string & Record<never, never>"
+        },
+        {
+          "type": "undefined"
+        }
+      ],
+      "optional": true,
+      "required": false
+    },
+    {
       "name": "compareWith",
       "type": "((currentValue: any, compareValue: any) => boolean) | null | string | undefined",
       "mutable": false,
@@ -80,6 +135,30 @@
         }
       ],
       "optional": false,
+      "required": false
+    },
+    {
+      "name": "fill",
+      "type": "\"outline\" | \"solid\" | undefined",
+      "mutable": false,
+      "attr": "fill",
+      "reflectToAttr": false,
+      "docs": "The fill for the item. If `\"solid\"` the item will have a background. If\n`\"outline\"` the item will be transparent with a border. Only available in `md` mode.",
+      "docsTags": [],
+      "values": [
+        {
+          "value": "outline",
+          "type": "string"
+        },
+        {
+          "value": "solid",
+          "type": "string"
+        },
+        {
+          "type": "undefined"
+        }
+      ],
+      "optional": true,
       "required": false
     },
     {
@@ -123,6 +202,107 @@
         }
       ],
       "optional": false,
+      "required": false
+    },
+    {
+      "name": "justify",
+      "type": "\"end\" | \"space-between\" | \"start\"",
+      "mutable": false,
+      "attr": "justify",
+      "reflectToAttr": false,
+      "docs": "How to pack the label and select within a line.\n`justify` does not apply when the label and select\nare on different lines when `labelPlacement` is set to\n`\"floating\"` or `\"stacked\"`.\n`\"start\"`: The label and select will appear on the left in LTR and\non the right in RTL.\n`\"end\"`: The label and select will appear on the right in LTR and\non the left in RTL.\n`\"space-between\"`: The label and select will appear on opposite\nends of the line with space between the two elements.",
+      "docsTags": [],
+      "default": "'space-between'",
+      "values": [
+        {
+          "value": "end",
+          "type": "string"
+        },
+        {
+          "value": "space-between",
+          "type": "string"
+        },
+        {
+          "value": "start",
+          "type": "string"
+        }
+      ],
+      "optional": false,
+      "required": false
+    },
+    {
+      "name": "label",
+      "type": "string | undefined",
+      "mutable": false,
+      "attr": "label",
+      "reflectToAttr": false,
+      "docs": "The visible label associated with the select.",
+      "docsTags": [],
+      "values": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "undefined"
+        }
+      ],
+      "optional": true,
+      "required": false
+    },
+    {
+      "name": "labelPlacement",
+      "type": "\"end\" | \"fixed\" | \"floating\" | \"stacked\" | \"start\" | undefined",
+      "mutable": false,
+      "attr": "label-placement",
+      "reflectToAttr": false,
+      "docs": "Where to place the label relative to the select.\n`\"start\"`: The label will appear to the left of the select in LTR and to the right in RTL.\n`\"end\"`: The label will appear to the right of the select in LTR and to the left in RTL.\n`\"floating\"`: The label will appear smaller and above the select when the select is focused or it has a value. Otherwise it will appear on top of the select.\n`\"stacked\"`: The label will appear smaller and above the select regardless even when the select is blurred or has no value.\n`\"fixed\"`: The label has the same behavior as `\"start\"` except it also has a fixed width. Long text will be truncated with ellipses (\"...\").\nWhen using `\"floating\"` or `\"stacked\"` we recommend initializing the select with either a `value` or a `placeholder`.",
+      "docsTags": [],
+      "default": "'start'",
+      "values": [
+        {
+          "value": "end",
+          "type": "string"
+        },
+        {
+          "value": "fixed",
+          "type": "string"
+        },
+        {
+          "value": "floating",
+          "type": "string"
+        },
+        {
+          "value": "stacked",
+          "type": "string"
+        },
+        {
+          "value": "start",
+          "type": "string"
+        },
+        {
+          "type": "undefined"
+        }
+      ],
+      "optional": true,
+      "required": false
+    },
+    {
+      "name": "legacy",
+      "type": "boolean | undefined",
+      "mutable": false,
+      "attr": "legacy",
+      "reflectToAttr": false,
+      "docs": "Set the `legacy` property to `true` to forcibly use the legacy form control markup.\nIonic will only opt components in to the modern form markup when they are\nusing either the `aria-label` attribute or the `label` property. As a result,\nthe `legacy` property should only be used as an escape hatch when you want to\navoid this automatic opt-in behavior.\nNote that this property will be removed in an upcoming major release\nof Ionic, and all form components will be opted-in to using the modern form markup.",
+      "docsTags": [],
+      "values": [
+        {
+          "type": "boolean"
+        },
+        {
+          "type": "undefined"
+        }
+      ],
+      "optional": true,
       "required": false
     },
     {
@@ -239,12 +419,32 @@
       "required": false
     },
     {
+      "name": "shape",
+      "type": "\"round\" | undefined",
+      "mutable": false,
+      "attr": "shape",
+      "reflectToAttr": false,
+      "docs": "The shape of the select. If \"round\" it will have an increased border radius.",
+      "docsTags": [],
+      "values": [
+        {
+          "value": "round",
+          "type": "string"
+        },
+        {
+          "type": "undefined"
+        }
+      ],
+      "optional": true,
+      "required": false
+    },
+    {
       "name": "value",
       "type": "any",
       "mutable": true,
       "attr": "value",
       "reflectToAttr": false,
-      "docs": "the value of the select.",
+      "docs": "The value of the select.",
       "docsTags": [],
       "values": [
         {
@@ -323,6 +523,46 @@
   "listeners": [],
   "styles": [
     {
+      "name": "--background",
+      "annotation": "prop",
+      "docs": "Background of the select"
+    },
+    {
+      "name": "--border-color Color of the select border",
+      "annotation": "prop",
+      "docs": ""
+    },
+    {
+      "name": "--border-radius Radius of the select border",
+      "annotation": "prop",
+      "docs": ""
+    },
+    {
+      "name": "--border-style Style of the select border",
+      "annotation": "prop",
+      "docs": ""
+    },
+    {
+      "name": "--border-width Width of the select border",
+      "annotation": "prop",
+      "docs": ""
+    },
+    {
+      "name": "--highlight-color-focused The color of the highlight on the select when focused",
+      "annotation": "prop",
+      "docs": ""
+    },
+    {
+      "name": "--highlight-color-invalid The color of the highlight on the select when invalid",
+      "annotation": "prop",
+      "docs": ""
+    },
+    {
+      "name": "--highlight-color-valid The color of the highlight on the select when valid",
+      "annotation": "prop",
+      "docs": ""
+    },
+    {
       "name": "--padding-bottom",
       "annotation": "prop",
       "docs": "Bottom padding of the select"
@@ -351,6 +591,11 @@
       "name": "--placeholder-opacity",
       "annotation": "prop",
       "docs": "Opacity of the select placeholder text"
+    },
+    {
+      "name": "--ripple-color",
+      "annotation": "prop",
+      "docs": "The color of the ripple effect on MD mode."
     }
   ],
   "slots": [],
@@ -373,14 +618,16 @@
     "ion-select-popover",
     "ion-popover",
     "ion-action-sheet",
-    "ion-alert"
+    "ion-alert",
+    "ion-icon"
   ],
   "dependencyGraph": {
     "ion-select": [
       "ion-select-popover",
       "ion-popover",
       "ion-action-sheet",
-      "ion-alert"
+      "ion-alert",
+      "ion-icon"
     ],
     "ion-select-popover": [
       "ion-item",
