@@ -13,10 +13,10 @@ module.exports = {
   url: 'https://ionicframework.jp',
   baseUrl: `${BASE_URL}/`,
   i18n: {
-    defaultLocale: 'ja',
-    locales: ['ja'],
+    defaultLocale: 'en',
+    locales: ['en'],
     localeConfigs: {
-      ja: { label: '日本語' },
+      en: { label: '日本語' },
     },
   },
   onBrokenLinks: 'warn',
