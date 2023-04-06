@@ -100,8 +100,8 @@ module.exports = {
         {
           type: 'cta',
           position: 'left',
-          text: 'Ionic採用事例をみよう',
-          href: `https://ionicframework.jp/case/`,
+          text: 'Ionic v7 アップグレードガイド',
+          href: `/updating/7-0`,
         },
         {
           type: 'docsVersionDropdown',
