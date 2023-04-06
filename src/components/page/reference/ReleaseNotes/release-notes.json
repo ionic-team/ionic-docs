@@ -1,5 +1,15 @@
 [
   {
+    "body": "<h2><a href=\"https://github.com/ionic-team/ionic-framework/compare/v7.0.0...v7.0.1\">7.0.1</a> (2023-04-05)</h2>\n<h3>Bug Fixes</h3>\n<ul>\n<li><strong>breadcrumbs:</strong> color attribute shows on DOM for Vue (<a href=\"https://github.com/ionic-team/ionic-framework/issues/27068\">#27068</a>) (<a href=\"https://github.com/ionic-team/ionic-framework/commit/141ced50103098fd711e0088ea8be4efdaadd0a9\">141ced5</a>)</li>\n<li><strong>item-divider:</strong> removal of unneeded margin unset (<a href=\"https://github.com/ionic-team/ionic-framework/issues/27042\">#27042</a>) (<a href=\"https://github.com/ionic-team/ionic-framework/commit/d925237082cd2f55a573ddb0301afcbd84f4fda0\">d925237</a>), closes <a href=\"https://github.com/ionic-team/ionic-framework/issues/17012\">#17012</a> <a href=\"https://github.com/ionic-team/ionic-framework/issues/27024\">ionic-team/ionic-framework#27024</a></li>\n<li><strong>item-divider:</strong> set padding-end for md (<a href=\"https://github.com/ionic-team/ionic-framework/issues/27019\">#27019</a>) (<a href=\"https://github.com/ionic-team/ionic-framework/commit/426913d0de50e65a76b029258daa09e6567c6515\">426913d</a>), closes <a href=\"https://github.com/ionic-team/ionic-framework/issues/23785\">#23785</a></li>\n<li><strong>menu:</strong> update location when dynamically changing side or doc dir (<a href=\"https://github.com/ionic-team/ionic-framework/issues/27079\">#27079</a>) (<a href=\"https://github.com/ionic-team/ionic-framework/commit/a35886e71c7c4b8abdd01ad33d92828c04249dc5\">a35886e</a>), closes <a href=\"https://github.com/ionic-team/ionic-framework/issues/25601\">#25601</a> <a href=\"https://github.com/ionic-team/ionic-framework/issues/19489\">#19489</a></li>\n<li><strong>picker-column-internal:</strong> hide empty picker items from screenreaders (<a href=\"https://github.com/ionic-team/ionic-framework/issues/27038\">#27038</a>) (<a href=\"https://github.com/ionic-team/ionic-framework/commit/4e7424de035888e324b03af321c90ebbb6402746\">4e7424d</a>), closes <a href=\"https://github.com/ionic-team/ionic-framework/issues/26809\">#26809</a></li>\n<li><strong>refresher:</strong> set overflow styles when using custom scroll target (<a href=\"https://github.com/ionic-team/ionic-framework/issues/27058\">#27058</a>) (<a href=\"https://github.com/ionic-team/ionic-framework/commit/adbb50ca5b92793ba002e4d704b2a643b92aabc7\">adbb50c</a>)</li>\n<li><strong>vue:</strong> v-model props have correct type (<a href=\"https://github.com/ionic-team/ionic-framework/issues/27067\">#27067</a>) (<a href=\"https://github.com/ionic-team/ionic-framework/commit/14145dcaebef4dde7654317597fdee6a0cdb4bfa\">14145dc</a>), closes <a href=\"https://github.com/ionic-team/ionic-framework/issues/27057\">#27057</a></li>\n</ul>\n",
+    "element": "Unobtainium",
+    "name": "v7.0.1",
+    "published_at": "April 5 2023",
+    "symbol": "Uo",
+    "tag_name": "v7.0.1",
+    "type": "patch",
+    "version": "7.0.1"
+  },
+  {
     "body": "<h1><a href=\"https://github.com/ionic-team/ionic-framework/compare/v7.0.0-rc.5...v7.0.0\">7.0.0</a> (2023-03-29)</h1>\n<p>Enjoy! See <a href=\"https://ionicframework.com/docs/updating/7-0\">https://ionicframework.com/docs/updating/7-0</a> for a migration guide.</p>\n",
     "element": "Unobtainium",
     "name": "v7.0.0",
@@ -8,6 +18,16 @@
     "tag_name": "v7.0.0",
     "type": "major",
     "version": "7.0.0"
+  },
+  {
+    "body": "<h2><a href=\"https://github.com/ionic-team/ionic-framework/compare/v6.7.1...v6.7.2\">6.7.2</a> (2023-04-05)</h2>\n<h3>Bug Fixes</h3>\n<ul>\n<li><strong>item-divider:</strong> set padding-end for md (<a href=\"https://github.com/ionic-team/ionic-framework/issues/27070\">#27070</a>) (<a href=\"https://github.com/ionic-team/ionic-framework/commit/214e83529f7115852c27a37869c8231330fdb8ac\">214e835</a>)</li>\n<li><strong>picker-column-internal:</strong> hide empty picker items from screenreaders (<a href=\"https://github.com/ionic-team/ionic-framework/issues/27114\">#27114</a>) (<a href=\"https://github.com/ionic-team/ionic-framework/commit/3ecfb9ce43d9d5cf93f1f2be26a0922a16894362\">3ecfb9c</a>), closes <a href=\"https://github.com/ionic-team/ionic-framework/issues/26809\">#26809</a></li>\n</ul>\n",
+    "element": "Unobtainium",
+    "name": "v6.7.2",
+    "published_at": "April 5 2023",
+    "symbol": "Uo",
+    "tag_name": "v6.7.2",
+    "type": "patch",
+    "version": "6.7.2"
   },
   {
     "body": "<h2><a href=\"https://github.com/ionic-team/ionic-framework/compare/v6.7.0...v6.7.1\">6.7.1</a> (2023-03-29)</h2>\n<h3>Bug Fixes</h3>\n<ul>\n<li><strong>item-sliding:</strong> open method works with items added async (<a href=\"https://github.com/ionic-team/ionic-framework/issues/27035\">#27035</a>) (<a href=\"https://github.com/ionic-team/ionic-framework/commit/521063bf241dc2c55bcd02a92ed8a418cfec6b1e\">521063b</a>), closes <a href=\"https://github.com/ionic-team/ionic-framework/issues/26991\">#26991</a></li>\n<li><strong>item:</strong> use thumbnail's size when present (<a href=\"https://github.com/ionic-team/ionic-framework/issues/27014\">#27014</a>) (<a href=\"https://github.com/ionic-team/ionic-framework/commit/6cecdf41451a5c7aa908494dfad9fab1496a0c6c\">6cecdf4</a>), closes <a href=\"https://github.com/ionic-team/ionic-framework/issues/22935\">#22935</a></li>\n<li><strong>radio-group:</strong> radios participate in form submission (<a href=\"https://github.com/ionic-team/ionic-framework/issues/27018\">#27018</a>) (<a href=\"https://github.com/ionic-team/ionic-framework/commit/3b99c31bab41bf7fcec340ac7159d3e8fce126c1\">3b99c31</a>), closes <a href=\"https://github.com/ionic-team/ionic-framework/issues/27016\">#27016</a></li>\n<li><strong>select:</strong> inherit white-space in select-text to allow text wrapping (<a href=\"https://github.com/ionic-team/ionic-framework/issues/26973\">#26973</a>) (<a href=\"https://github.com/ionic-team/ionic-framework/commit/19c1e25399ca18c8e6a8dd39c0131979c0bb01e9\">19c1e25</a>), closes <a href=\"https://github.com/ionic-team/ionic-framework/issues/19949\">#19949</a></li>\n</ul>\n",
@@ -48,15 +68,5 @@
     "tag_name": "v6.6.2",
     "type": "patch",
     "version": "6.6.2"
-  },
-  {
-    "body": "<h2><a href=\"https://github.com/ionic-team/ionic-framework/compare/v6.6.0...v6.6.1\">6.6.1</a> (2023-03-08)</h2>\n<h3>Bug Fixes</h3>\n<ul>\n<li><strong>angular:</strong> keepContentsMounted modal is sized correctly (<a href=\"https://github.com/ionic-team/ionic-framework/issues/26917\">#26917</a>) (<a href=\"https://github.com/ionic-team/ionic-framework/commit/8d184c8c1b91dba9d6d5bbaf1b4a8480b75a3572\">8d184c8</a>), closes <a href=\"https://github.com/ionic-team/ionic-framework/issues/26916\">#26916</a></li>\n<li><strong>button:</strong> show correct activated state for ios (<a href=\"https://github.com/ionic-team/ionic-framework/issues/26900\">#26900</a>) (<a href=\"https://github.com/ionic-team/ionic-framework/commit/67815ccbf4650ecbbc6c79d5063ab5ba50cb358c\">67815cc</a>), closes <a href=\"https://github.com/ionic-team/ionic-framework/issues/22468\">#22468</a></li>\n<li><strong>datetime-button:</strong> time-only values are parsed (<a href=\"https://github.com/ionic-team/ionic-framework/issues/26852\">#26852</a>) (<a href=\"https://github.com/ionic-team/ionic-framework/commit/f54fc188843af52e723e06402e01ef92717e541f\">f54fc18</a>), closes <a href=\"https://github.com/ionic-team/ionic-framework/issues/26851\">#26851</a></li>\n<li><strong>datetime:</strong> resolve import error in stencil apps (<a href=\"https://github.com/ionic-team/ionic-framework/issues/26909\">#26909</a>) (<a href=\"https://github.com/ionic-team/ionic-framework/commit/48c45afdb6ca7dad0a1f2a6d3ece6df8ba23eb69\">48c45af</a>), closes <a href=\"https://github.com/ionic-team/ionic-framework/issues/26908\">#26908</a></li>\n<li><strong>menu, split-pane:</strong> ssr does not fail on null customElements check (<a href=\"https://github.com/ionic-team/ionic-framework/issues/26854\">#26854</a>) (<a href=\"https://github.com/ionic-team/ionic-framework/commit/451d2204e79a4a10c1eb829ab0bd75c137b02475\">451d220</a>), closes <a href=\"https://github.com/ionic-team/ionic-framework/issues/24714\">#24714</a></li>\n<li><strong>modal:</strong> avoid chrome memory leak bug (<a href=\"https://github.com/ionic-team/ionic-framework/issues/26911\">#26911</a>) (<a href=\"https://github.com/ionic-team/ionic-framework/commit/a3f8e281721f6ef8c9479f5870198b7a009daabd\">a3f8e28</a>)</li>\n<li><strong>react:</strong> inline overlays dismiss when parent component unmounts (<a href=\"https://github.com/ionic-team/ionic-framework/issues/26245\">#26245</a>) (<a href=\"https://github.com/ionic-team/ionic-framework/commit/c0e1bf92c4487c2ec8a117957cf84a2ce00f5fd8\">c0e1bf9</a>), closes <a href=\"https://github.com/ionic-team/ionic-framework/issues/25775\">#25775</a> <a href=\"https://github.com/ionic-team/ionic-framework/issues/26185\">#26185</a></li>\n</ul>\n",
-    "element": "Nickel",
-    "name": "v6.6.1",
-    "published_at": "March 8 2023",
-    "symbol": "Ni",
-    "tag_name": "v6.6.1",
-    "type": "patch",
-    "version": "6.6.1"
   }
 ]
