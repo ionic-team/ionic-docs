@@ -27,7 +27,6 @@
     IonButtons,
     IonButton,
     IonItem,
-    IonLabel,
     IonInput,
     modalController,
   } from '@ionic/vue';
@@ -35,7 +34,7 @@
 
   export default defineComponent({
     name: 'Modal',
-    components: { IonContent, IonHeader, IonTitle, IonToolbar, IonButtons, IonButton, IonItem, IonLabel, IonInput },
+    components: { IonContent, IonHeader, IonTitle, IonToolbar, IonButtons, IonButton, IonItem, IonInput },
     methods: {
       cancel() {
         return modalController.dismiss(null, 'cancel');

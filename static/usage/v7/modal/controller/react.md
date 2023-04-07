@@ -9,7 +9,6 @@ import {
   IonTitle,
   IonPage,
   IonItem,
-  IonLabel,
   IonInput,
   useIonModal,
 } from '@ionic/react';
