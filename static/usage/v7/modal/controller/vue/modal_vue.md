@@ -13,8 +13,7 @@
   </ion-header>
   <ion-content class="ion-padding">
     <ion-item>
-      <ion-label position="stacked">Your name</ion-label>
-      <ion-input v-model="name" placeholder="Your name"></ion-input>
+      <ion-input label-placement="stacked" label="Enter your name" v-model="name" placeholder="Your name"></ion-input>
     </ion-item>
   </ion-content>
 </template>

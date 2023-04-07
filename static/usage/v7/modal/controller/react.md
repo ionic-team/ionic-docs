@@ -38,8 +38,7 @@ const ModalExample = ({
       </IonHeader>
       <IonContent className="ion-padding">
         <IonItem>
-          <IonLabel position="stacked">Enter your name</IonLabel>
-          <IonInput ref={inputRef} placeholder="Your name" />
+          <IonInput ref={inputRef} labelPlacement="stacked" label="Enter your name" placeholder="Your name" />
         </IonItem>
       </IonContent>
     </IonPage>
