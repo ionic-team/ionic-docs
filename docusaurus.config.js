@@ -86,10 +86,9 @@ module.exports = {
           position: 'left',
         },
         {
-          type: 'doc',
-          docId: 'cli',
+          to: 'cli',
           label: 'CLI',
-          position: 'left',
+          position: 'left'
         },
         {
           type: 'doc',
@@ -288,6 +287,15 @@ module.exports = {
           },
         },
       },
+    ],
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'cli',
+        path: '/',
+        routeBasePath: 'cli',
+        sidebarPath: require.resolve('./sidebars-cli.js'),
+      }
     ],
     '@docusaurus/plugin-content-pages',
     '@docusaurus/plugin-debug',
