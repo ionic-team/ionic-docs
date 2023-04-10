@@ -145,3 +145,9 @@ Below are some tips on use cases for each of the life cycle events.
 - `ionViewDidEnter` - If you see performance problems from using `ionViewWillEnter` when loading data, you can do your data calls in `ionViewDidEnter` instead. This event won't fire until after the page is visible to the user, however, so you might want to use either a loading indicator or a skeleton screen, so content doesn't flash in un-naturally after the transition is complete.
 - `ionViewWillLeave` - Can be used for cleanup, like unsubscribing from data sources. Since `componentWillUnmount` might not fire when you navigate from the current page, put your cleanup code here if you don't want it active while the screen is not in view.
 - `ionViewDidLeave` - When this event fires, you know the new page has fully transitioned in, so any logic you might not normally do when the view is visible can go here.
+
+## Passing state between pages
+You can pass state between pages like normal with `history.push()` but need to be **aware** that ionic keep the pages mounted and with that if you navigate from a page A with `stateA` to a page B with `stateB`, the page A will be hidden and the state of that page will no longer be `stateA` instead will be `stateB` and it may crash your app, for that you need to add an undefined check `?` whenever you want to access to the properties of an `state`
+
+If you want to avoid forgetting to add undefined check you could do something like 
+`useCustomLocation<T> = useLocation<Partial<T>>`
