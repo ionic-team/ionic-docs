@@ -1,15 +1,12 @@
 ---
 title: "ion-item-options"
-hide_table_of_contents: true
 ---
-import TOCInline from '@theme/TOCInline';
-
-import Props from '@site/static/auto-generated/item-options/props.md';
-import Events from '@site/static/auto-generated/item-options/events.md';
-import Methods from '@site/static/auto-generated/item-options/methods.md';
-import Parts from '@site/static/auto-generated/item-options/parts.md';
-import CustomProps from '@site/static/auto-generated/item-options/custom-props.md';
-import Slots from '@site/static/auto-generated/item-options/slots.md';
+import Props from '@ionic-internal/component-api/v7/item-options/props.md';
+import Events from '@ionic-internal/component-api/v7/item-options/events.md';
+import Methods from '@ionic-internal/component-api/v7/item-options/methods.md';
+import Parts from '@ionic-internal/component-api/v7/item-options/parts.md';
+import CustomProps from '@ionic-internal/component-api/v7/item-options/custom-props.md';
+import Slots from '@ionic-internal/component-api/v7/item-options/slots.md';
 
 <head>
   <title>ion-item-options: Option Button Components for Ionic Apps</title>
@@ -19,17 +16,9 @@ import Slots from '@site/static/auto-generated/item-options/slots.md';
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 
-<h2 className="table-of-contents__title">Contents</h2>
+The item options component is a container for the [item option](./item-option) buttons in a sliding item. These buttons can be placed either on the [start or end side](#side-description).
 
-<TOCInline
-  toc={toc}
-  maxHeadingLevel={2}
-/>
-
-
-
-The option buttons for an `ion-item-sliding`. These buttons can be placed either on the [start or end side](#side-description).
-You can combine the `ionSwipe` event plus the `expandable` directive to create a full swipe action for the item.
+See the [item sliding](./item-sliding) documentation for more information.
 
 
 ## Side Description

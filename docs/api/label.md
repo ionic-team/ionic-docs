@@ -1,12 +1,12 @@
 ---
 title: "ion-label"
 ---
-import Props from '@site/static/auto-generated/label/props.md';
-import Events from '@site/static/auto-generated/label/events.md';
-import Methods from '@site/static/auto-generated/label/methods.md';
-import Parts from '@site/static/auto-generated/label/parts.md';
-import CustomProps from '@site/static/auto-generated/label/custom-props.md';
-import Slots from '@site/static/auto-generated/label/slots.md';
+import Props from '@ionic-internal/component-api/v7/label/props.md';
+import Events from '@ionic-internal/component-api/v7/label/events.md';
+import Methods from '@ionic-internal/component-api/v7/label/methods.md';
+import Parts from '@ionic-internal/component-api/v7/label/parts.md';
+import CustomProps from '@ionic-internal/component-api/v7/label/custom-props.md';
+import Slots from '@ionic-internal/component-api/v7/label/slots.md';
 
 <head>
   <title>Item Label Color and Properties for Applications | ion-label</title>
@@ -22,19 +22,19 @@ Label is a wrapper element that can be used in combination with `ion-item`, `ion
 
 ## Basic Usage
 
-import Basic from '@site/static/usage/label/basic/index.md';
+import Basic from '@site/static/usage/v7/label/basic/index.md';
 
 <Basic />
 
 ## Item Labels
 
-import Item from '@site/static/usage/label/item/index.md';
+import Item from '@site/static/usage/v7/label/item/index.md';
 
 <Item />
 
 ## Input Labels
 
-import Input from '@site/static/usage/label/input/index.md';
+import Input from '@site/static/usage/v7/label/input/index.md';
 
 <Input />
 
@@ -42,7 +42,7 @@ import Input from '@site/static/usage/label/input/index.md';
 
 ### Colors
 
-import Colors from '@site/static/usage/label/theming/colors/index.md';
+import Colors from '@site/static/usage/v7/label/theming/colors/index.md';
 
 <Colors />
 

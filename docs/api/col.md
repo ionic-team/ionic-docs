@@ -1,15 +1,12 @@
 ---
 title: "ion-col"
-hide_table_of_contents: true
 ---
-import TOCInline from '@theme/TOCInline';
-
-import Props from '@site/static/auto-generated/col/props.md';
-import Events from '@site/static/auto-generated/col/events.md';
-import Methods from '@site/static/auto-generated/col/methods.md';
-import Parts from '@site/static/auto-generated/col/parts.md';
-import CustomProps from '@site/static/auto-generated/col/custom-props.md';
-import Slots from '@site/static/auto-generated/col/slots.md';
+import Props from '@ionic-internal/component-api/v7/col/props.md';
+import Events from '@ionic-internal/component-api/v7/col/events.md';
+import Methods from '@ionic-internal/component-api/v7/col/methods.md';
+import Parts from '@ionic-internal/component-api/v7/col/parts.md';
+import CustomProps from '@ionic-internal/component-api/v7/col/custom-props.md';
+import Slots from '@ionic-internal/component-api/v7/col/slots.md';
 
 <head>
   <title>ion-col: Column Component Padding, Size and Other Properties</title>
@@ -20,19 +17,10 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="shadow" />
 
-<h2 className="table-of-contents__title">Contents</h2>
 
-<TOCInline
-  toc={toc}
-  maxHeadingLevel={2}
-/>
+Columns are cellular components of the [grid](./grid) system and go inside of a [row](./row). They will expand to fill the row. All content within a grid should go inside of a column.
 
-
-
-Columns are cellular components of the [grid](grid.md) system and go inside of a [row](row.md).
-They will expand to fill their row. All content within a grid should go inside of a column.
-
-See [Grid Layout](/docs/layout/grid) for more information.
+See the [grid](./grid) documentation for more information.
 
 
 ## Column Alignment

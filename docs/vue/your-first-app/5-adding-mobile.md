@@ -6,10 +6,11 @@ Let’s start with making some small code changes - then our app will "just work
 
 ## Platform-specific Logic
 
-First, we’ll update the photo saving functionality to support mobile. We'll run slightly different code depending on the platform - mobile or web. Import the `Platform` API from Ionic Vue:
+First, we’ll update the photo saving functionality to support mobile. We'll run slightly different code depending on the platform - mobile or web. Import the `Platform` API from Ionic Vue and `Capacitor` from Capacitor's `core` package:
 
 ```tsx
 import { isPlatform } from '@ionic/vue';
+import { Capacitor } from '@capacitor/core';
 ```
 
 In the `savePicture` function, check which platform the app is running on. If it’s "hybrid" (Capacitor, the native runtime), then read the photo file into base64 format using the `readFile` method. Also, return the complete file path to the photo using the Filesystem API. When setting the `webviewPath`, use the special `Capacitor.convertFileSrc` method ([details here](https://capacitorjs.com/docs/basics/utilities#convertfilesrc)). Otherwise, use the same logic as before when running the app on the web.

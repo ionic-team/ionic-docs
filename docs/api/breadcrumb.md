@@ -1,32 +1,21 @@
 ---
 title: "ion-breadcrumb"
-hide_table_of_contents: true
 ---
-import TOCInline from '@theme/TOCInline';
-
-import Props from '@site/static/auto-generated/breadcrumb/props.md';
-import Events from '@site/static/auto-generated/breadcrumb/events.md';
-import Methods from '@site/static/auto-generated/breadcrumb/methods.md';
-import Parts from '@site/static/auto-generated/breadcrumb/parts.md';
-import CustomProps from '@site/static/auto-generated/breadcrumb/custom-props.md';
-import Slots from '@site/static/auto-generated/breadcrumb/slots.md';
+import Props from '@ionic-internal/component-api/v7/breadcrumb/props.md';
+import Events from '@ionic-internal/component-api/v7/breadcrumb/events.md';
+import Methods from '@ionic-internal/component-api/v7/breadcrumb/methods.md';
+import Parts from '@ionic-internal/component-api/v7/breadcrumb/parts.md';
+import CustomProps from '@ionic-internal/component-api/v7/breadcrumb/custom-props.md';
+import Slots from '@ionic-internal/component-api/v7/breadcrumb/slots.md';
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="shadow" />
 
-<h2 className="table-of-contents__title">Contents</h2>
-
-<TOCInline
-  toc={toc}
-  maxHeadingLevel={2}
-/>
-
-
 
 A Breadcrumb is a single navigation item that is a child of the Breadcrumbs component. A breadcrumb can link elsewhere in an app or it can be plain text. Each breadcrumb has a separator between it and the next breadcrumb and can optionally contain an icon.
 
-For usage examples, see the [Breadcrumbs](/docs/api/breadcrumbs) documentation.
+See the [Breadcrumbs](./breadcrumbs) documentation for more information.
 
 ## Interfaces
 
