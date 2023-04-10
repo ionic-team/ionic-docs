@@ -147,7 +147,7 @@ Below are some tips on use cases for each of the life cycle events.
 - `ionViewDidLeave` - When this event fires, you know the new page has fully transitioned in, so any logic you might not normally do when the view is visible can go here.
 
 ## Passing state between pages
-You can pass state between pages like normal with `history.push()` but need to be **aware** that ionic keep the pages mounted and with that if you navigate from a page A with `stateA` to a page B with `stateB`, the page A will be hidden and the state of that page will no longer be `stateA` instead will be `stateB` and it may crash your app, for that you need to add an undefined check `?` whenever you want to access to the properties of an `state`
+You can pass states between pages like normal with `history.push()` but need to be **aware** that ionic keep the pages mounted and with that if you navigate from a page A with `stateA` to a page B with `stateB`, the page A will be hidden and the state of that page will no longer be `stateA` instead will be `stateB` and it may crash your app, for that you need to add an undefined check `?` whenever you want to access to the properties of an `state`
 
 If you want to avoid forgetting to add undefined check you could do something like 
 `useCustomLocation<T> = useLocation<Partial<T>>`
