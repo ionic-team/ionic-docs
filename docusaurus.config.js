@@ -292,7 +292,7 @@ module.exports = {
       '@docusaurus/plugin-content-docs',
       {
         id: 'cli',
-        path: '/',
+        path: 'cli',
         routeBasePath: 'cli',
         sidebarPath: require.resolve('./sidebars-cli.js'),
       }
