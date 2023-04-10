@@ -74,8 +74,7 @@ module.exports = {
       },
       items: [
         {
-          type: 'doc',
-          docId: 'index',
+          to: 'guide',
           label: 'Guide',
           position: 'left',
         },
@@ -288,6 +287,15 @@ module.exports = {
           },
         },
       },
+    ],
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'guide',
+        path: 'guide',
+        routeBasePath: 'guide',
+        sidebarPath: require.resolve('./sidebars-guide.js'),
+      }
     ],
     '@docusaurus/plugin-content-pages',
     '@docusaurus/plugin-debug',

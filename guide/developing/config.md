@@ -10,7 +10,7 @@ The available config keys can be found in the [`IonicConfig`](#ionicconfig) inte
 
 The following example disables ripple effects and default the mode to Material Design:
 
-import GlobalExample from '@site/docs/developing/config/global/index.md';
+import GlobalExample from './config/global/index.md';
 
 <GlobalExample />
 
@@ -18,7 +18,7 @@ import GlobalExample from '@site/docs/developing/config/global/index.md';
 
 Ionic Config is not reactive. Updating the config's value after the component has rendered will result in the previous value. It is recommended to use a component's properties instead of updating the config, when you require reactive values.
 
-import PerComponentExample from '@site/docs/developing/config/per-component/index.md';
+import PerComponentExample from './config/per-component/index.md';
 
 <PerComponentExample />
   
@@ -29,7 +29,7 @@ Ionic Config can also be set on a per-platform basis. For example, this allows y
 
 In the following example, we are disabling all animations in our Ionic app only if the app is running in a mobile web browser.
 
-import PerPlatformExample from '@site/docs/developing/config/per-platform/index.md';
+import PerPlatformExample from './config/per-platform/index.md';
 
 <PerPlatformExample />
 
@@ -38,7 +38,7 @@ import PerPlatformExample from '@site/docs/developing/config/per-platform/index.
 
 The next example allows you to set an entirely different configuration based upon the platform, falling back to a default config if no platforms match:
 
-import PerPlatformFallbackExample from '@site/docs/developing/config/per-platform-overrides/index.md';
+import PerPlatformFallbackExample from './config/per-platform-overrides/index.md';
 
 <PerPlatformFallbackExample />
 
@@ -46,7 +46,7 @@ import PerPlatformFallbackExample from '@site/docs/developing/config/per-platfor
 
 This final example allows you to accumulate a config object based upon different platform requirements.
 
-import PerPlatformOverridesExample from '@site/docs/developing/config/per-platform-fallback/index.md';
+import PerPlatformOverridesExample from './config/per-platform-fallback/index.md';
 
 <PerPlatformOverridesExample />
 
