@@ -60,8 +60,8 @@ A [split pane](../api/split-pane.md) layout has a more complex structure because
 
 By default, the split pane view will show when the screen is larger than `768px`, or the `md` breakpoint, but this can be customized to use different breakpoints by setting the `when` property. Below is an example where the split pane contains a menu that is visible for `xs` screens and up, or when the viewport is larger than `0px`. This will show the split pane for all screen sizes.
 
+It's important to note that the element with the `id` matching the `contentId` specified by the split pane will be the main content that is always visible. This can be any element, including a [nav](../api/nav.md), [router outlet](../api/router-outlet.md), or [tabs](../api/tabs.md).
+
 import SplitPane from '@site/static/usage/v7/split-pane/basic/index.md';
 
 <SplitPane />
-
-It's important to note that the element with the `id` matching the `contentId` specified by the split pane will be the main content that is always visible. This can be any element, including a [nav](../api/nav.md), [router outlet](../api/router-outlet.md), or [tabs](../api/tabs.md).
