@@ -11,3 +11,7 @@ files:
       - /docs/api/**/*
       - /docs/cli/commands/**/*
       - /docs/native/**/*
+  - source: /cli/**/*
+    translation: /i18n/%two_letters_code%/docusaurus-plugin-content-docs/current/**/%original_file_name%
+    ignore:
+      - /cli/commands/**/*
