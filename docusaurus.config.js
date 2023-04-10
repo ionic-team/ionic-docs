@@ -92,8 +92,7 @@ module.exports = {
           position: 'left',
         },
         {
-          type: 'doc',
-          docId: 'native',
+          to: 'native',
           label: 'Native',
           position: 'left',
         },
@@ -288,6 +287,15 @@ module.exports = {
           },
         },
       },
+    ],
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'native',
+        path: 'native',
+        routeBasePath: 'native',
+        sidebarPath: require.resolve('./sidebars-native.js'),
+      }
     ],
     '@docusaurus/plugin-content-pages',
     '@docusaurus/plugin-debug',

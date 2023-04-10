@@ -2,7 +2,6 @@
 title: Capacitor Plugins
 sidebar_label: Setup
 hide_table_of_contents: true
-slug: /native/setup
 ---
 
 import Tabs from '@theme/Tabs';

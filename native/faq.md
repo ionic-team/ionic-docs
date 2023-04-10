@@ -1,6 +1,5 @@
 ---
 sidebar_label: FAQ
-slug: /native/faq
 ---
 
 # Frequently Asked Question

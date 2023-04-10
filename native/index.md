@@ -1,6 +1,7 @@
 ---
 title: Capacitor
 hide_table_of_contents: true
+slug: /
 ---
 
 import DocsCard from '@components/global/DocsCard';
