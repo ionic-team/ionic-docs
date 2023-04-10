@@ -268,12 +268,6 @@ module.exports = {
           if ((match = docPath.match(/api\/(.*)\.md/)) != null) {
             return `https://github.com/ionic-team/ionic-docs/tree/main/docs/api/${match[1]}.md`;
           }
-          if ((match = docPath.match(/cli\/commands\/(.*)\.md/)) != null) {
-            return `https://github.com/ionic-team/ionic-cli/edit/develop/packages/@ionic/cli/src/commands/${match[1].replace(
-              '-',
-              '/'
-            )}.ts`;
-          }
           if ((match = docPath.match(/native\/(.*)\.md/)) != null) {
             return `https://github.com/ionic-team/capacitor-plugins/edit/main/${match[1]}/README.md`;
           }
@@ -295,6 +289,18 @@ module.exports = {
         path: 'cli',
         routeBasePath: 'cli',
         sidebarPath: require.resolve('./sidebars-cli.js'),
+        editUrl: ({ versionDocsDirPath, docPath, locale }) => {
+          if (locale != 'en') {
+            return 'https://crowdin.com/project/ionic-docs';
+          }
+          if ((match = docPath.match(/cli\/commands\/(.*)\.md/)) != null) {
+            return `https://github.com/ionic-team/ionic-cli/edit/develop/packages/@ionic/cli/src/commands/${match[1].replace(
+              '-',
+              '/'
+            )}.ts`;
+          }
+          return `https://github.com/ionic-team/ionic-docs/edit/main/${versionDocsDirPath}/${docPath}`;
+        },
       }
     ],
     '@docusaurus/plugin-content-pages',
