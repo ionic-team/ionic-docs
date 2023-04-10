@@ -1,11 +1,6 @@
 ---
 title: 'ion-router-link'
-hide_table_of_contents: true
-demoUrl: '/docs/demos/api/router-link/index.html'
-demoSourceUrl: 'https://github.com/ionic-team/ionic-docs/tree/main/static/demos/api/router-link/index.html'
 ---
-
-import TOCInline from '@theme/TOCInline';
 
 import Props from '@ionic-internal/component-api/v6/router-link/props.md';
 import Events from '@ionic-internal/component-api/v6/router-link/events.md';
@@ -26,15 +21,13 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="shadow" />
 
-<h2 className="table-of-contents__title">Contents</h2>
-
-<TOCInline toc={toc} maxHeadingLevel={2} />
-
 The router link component is used for navigating to a specified link. Similar to the browser's anchor tag, it can accept a href for the location, and a direction for the transition animation.
 
 :::note
 Note: this component should only be used with vanilla and Stencil JavaScript projects. For Angular projects, use an `<a>` and `routerLink` with the Angular router.
 :::
+
+See the [Router](./router) documentation for more information.
 
 ## Properties
 
