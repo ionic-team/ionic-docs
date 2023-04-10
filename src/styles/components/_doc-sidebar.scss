@@ -103,9 +103,8 @@ html[data-theme='dark'] {
     }
   }
 
-  .theme-doc-sidebar-item-category-level-1 + .theme-doc-sidebar-item-category-level-1 {
-    /* adds margin between first level categories */
-    margin-block-start: 1.5rem;
+  .theme-doc-sidebar-item-category-level-1 > .menu__list > .menu__list-item:last-of-type {
+    padding-block-end: 1.5rem;
   }
 
   .theme-doc-sidebar-item-category-level-1:last-of-type {
