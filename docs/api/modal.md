@@ -125,6 +125,12 @@ import SheetBackgroundContentExample from '@site/static/usage/v7/modal/sheet/bac
 
 <SheetBackgroundContentExample />
 
+#### Auto Height Sheet
+
+import SheetAutoHeightExample from '@site/static/usage/v7/modal/sheet/auto-height/index.md';
+
+<SheetAutoHeightExample />
+
 #### Handle Behavior
 
 Sheet modals can optionally render a handle indicator used for dragging the sheet between breakpoints. The `handleBehavior` property can be used to configure the behavior of when the handle is activated by the user.
