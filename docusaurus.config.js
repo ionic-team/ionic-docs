@@ -91,8 +91,7 @@ module.exports = {
           position: 'left'
         },
         {
-          type: 'doc',
-          docId: 'native',
+          to: 'native',
           label: 'Native',
           position: 'left',
         },
@@ -268,9 +267,6 @@ module.exports = {
           if ((match = docPath.match(/api\/(.*)\.md/)) != null) {
             return `https://github.com/ionic-team/ionic-docs/tree/main/docs/api/${match[1]}.md`;
           }
-          if ((match = docPath.match(/native\/(.*)\.md/)) != null) {
-            return `https://github.com/ionic-team/capacitor-plugins/edit/main/${match[1]}/README.md`;
-          }
           return `https://github.com/ionic-team/ionic-docs/edit/main/${versionDocsDirPath}/${docPath}`;
         },
         exclude: ['README.md'],
@@ -281,6 +277,24 @@ module.exports = {
           },
         },
       },
+    ],
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'native',
+        path: 'native',
+        routeBasePath: 'native',
+        sidebarPath: require.resolve('./sidebars-native.js'),
+        editUrl: ({ versionDocsDirPath, docPath, locale }) => {
+          if (locale != 'en') {
+            return 'https://crowdin.com/project/ionic-docs';
+          }
+          if ((match = docPath.match(/native\/(.*)\.md/)) != null) {
+            return `https://github.com/ionic-team/capacitor-plugins/edit/main/${match[1]}/README.md`;
+          }
+          return `https://github.com/ionic-team/ionic-docs/edit/main/${versionDocsDirPath}/${docPath}`;
+        },
+      }
     ],
     [
       '@docusaurus/plugin-content-docs',

@@ -10,7 +10,10 @@ files:
     ignore:
       - /docs/api/**/*
       - /docs/cli/commands/**/*
-      - /docs/native/**/*
+  - source: /native/**/*
+    translation: /i18n/%two_letters_code%/docusaurus-plugin-content-docs/current/**/%original_file_name%
+    ignore:
+      - /docs/native/plugins/**/*
   - source: /cli/**/*
     translation: /i18n/%two_letters_code%/docusaurus-plugin-content-docs/current/**/%original_file_name%
     ignore:
