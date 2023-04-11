@@ -1,6 +1,7 @@
 ---
 title: Ionic CLI
 sidebar_label: Overview
+slug: /
 ---
 
 <head>
