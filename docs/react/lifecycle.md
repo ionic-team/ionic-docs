@@ -147,7 +147,10 @@ Below are some tips on use cases for each of the life cycle events.
 - `ionViewDidLeave` - When this event fires, you know the new page has fully transitioned in, so any logic you might not normally do when the view is visible can go here.
 
 ## Passing state between pages
-You can pass states between pages like normal with `history.push()` but need to be **aware** that ionic keep the pages mounted and with that if you navigate from a page A with `stateA` to a page B with `stateB`, the page A will be hidden and the state of that page will no longer be `stateA` instead will be `stateB` and it may crash your app, for that you need to add an undefined check `?` whenever you want to access to the properties of an `state`
+Since Ionic React manages the lifetime of a page, state on previous pages may update as users navigate your application. This can impact state that is determined using `useEffect` from React or `useLocation` from React Router. For example, if `PageA` calls `useLocation`, the state of `useLocation` will change when the user navigates from `PageA` to `PageB`.
 
-If you want to avoid forgetting to add undefined check you could do something like 
-`useCustomLocation<T> = useLocation<Partial<T>>`
+Developers should include the appropriate checks to ensure that previous pages only access defined states.
+
+For example, the following code will error if `testObject` is not defined: `{ state.testObject.childKey }`
+
+Instead, developers should access `childKey` only if `testObject` is defined: `{ state.testObject?.childKey }`
