@@ -9,7 +9,8 @@ files:
     translation: /i18n/%two_letters_code%/docusaurus-plugin-content-docs/current/**/%original_file_name%
     ignore:
       - /docs/api/**/*
-      - /docs/cli/commands/**/*
+  - source: /guide/**/*
+    translation: /i18n/%two_letters_code%/docusaurus-plugin-content-docs/current/**/%original_file_name%
   - source: /native/**/*
     translation: /i18n/%two_letters_code%/docusaurus-plugin-content-docs/current/**/%original_file_name%
     ignore:

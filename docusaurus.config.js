@@ -74,8 +74,7 @@ module.exports = {
       },
       items: [
         {
-          type: 'doc',
-          docId: 'index',
+          to: 'guide',
           label: 'Guide',
           position: 'left',
         },
@@ -277,6 +276,21 @@ module.exports = {
           },
         },
       },
+    ],
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'guide',
+        path: 'guide',
+        routeBasePath: 'guide',
+        sidebarPath: require.resolve('./sidebars-guide.js'),
+        editUrl: ({ versionDocsDirPath, docPath, locale }) => {
+          if (locale != 'en') {
+            return 'https://crowdin.com/project/ionic-docs';
+          }
+          return `https://github.com/ionic-team/ionic-docs/edit/main/${versionDocsDirPath}/${docPath}`;
+        },
+      }
     ],
     [
       '@docusaurus/plugin-content-docs',
