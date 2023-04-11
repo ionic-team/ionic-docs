@@ -35,17 +35,8 @@ async function buildPluginApiDocs(pluginId) {
   const [readme, pkgJson] = await Promise.all([getReadme(pluginId), getPkgJsonData(pluginId)]);
 
   const apiContent = createApiPage(pluginId, readme, pkgJson);
-  const fileName = `${pluginId}.md`;
 
-  // Delete all existing generated markdown files in docs/native
-  fs.readdirSync('docs/native').forEach((file) => {
-    if (file.endsWith('.md')) {
-      fs.rmSync(`docs/native/${file}`);
-    }
-  });
-
-  fs.writeFileSync(`docs/native/${fileName}`, apiContent);
-  fs.writeFileSync(`versioned_docs/version-v6/native/${fileName}`, apiContent);
+  fs.writeFileSync(`native/plugins/${pluginId}.md`, apiContent);
 }
 
 function createApiPage(pluginId, readme, pkgJson) {
@@ -65,6 +56,7 @@ description: ${desc}
 editUrl: ${editUrl}
 editApiUrl: ${editApiUrl}
 sidebar_label: ${sidebarLabel}
+slug: /${pluginId}
 ---
 ${readme}`.trim();
 }
