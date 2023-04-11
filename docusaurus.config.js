@@ -74,7 +74,7 @@ module.exports = {
       },
       items: [
         {
-          to: 'guide',
+          to: '/',
           label: 'Guide',
           position: 'left',
         },
@@ -282,7 +282,7 @@ module.exports = {
       {
         id: 'guide',
         path: 'guide',
-        routeBasePath: 'guide',
+        routeBasePath: '/',
         sidebarPath: require.resolve('./sidebars-guide.js'),
         editUrl: ({ versionDocsDirPath, docPath, locale }) => {
           if (locale != 'en') {
@@ -358,6 +358,7 @@ module.exports = {
         versions: VERSIONS_JSON,
       },
     ],
+    [path.resolve(__dirname, 'plugins', 'docusaurus-plugin-route-fix'), {}]
   ],
   themes: [
     [
