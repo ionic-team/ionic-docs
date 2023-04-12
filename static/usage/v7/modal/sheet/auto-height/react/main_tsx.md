@@ -10,6 +10,8 @@ import {
   IonPage,
 } from '@ionic/react';
 
+import './main.css';
+
 function Example() {
   const modal = useRef<HTMLIonModalElement>(null);
 
@@ -29,21 +31,8 @@ function Example() {
           trigger="open-modal"
           initialBreakpoint={1}
           breakpoints={[0, 1]}
-          style={{
-            '--height': 'auto',
-          }}
         >
-          <div
-            style={{
-              'width': '100%',
-              'height': '300px',
-              'display': 'flex',
-              'alignItems': 'center',
-              'justifyContent': 'center',
-            }}
-          >
-            Block of Content
-          </div> 
+          <div className="block">Block of Content</div> 
         </IonModal>
       </IonContent>
     </IonPage>

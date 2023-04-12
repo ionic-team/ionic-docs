@@ -22,7 +22,7 @@
   <ion-content class="ion-padding">
     <ion-button id="open-modal" expand="block">Open Sheet Modal</ion-button>
 
-    <ion-modal ref="modal" trigger="open-modal" :initial-breakpoint="1" :breakpoints="[0, 1]">
+    <ion-modal trigger="open-modal" :initial-breakpoint="1" :breakpoints="[0, 1]">
       <div class="block">Block of Content</div> 
     </ion-modal>
   </ion-content>

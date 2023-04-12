@@ -7,7 +7,7 @@
 <ion-content class="ion-padding">
   <ion-button id="open-modal" expand="block">Open Sheet Modal</ion-button>
 
-  <ion-modal #modal trigger="open-modal" [initialBreakpoint]="1" [breakpoints]="[0, 1]">
+  <ion-modal trigger="open-modal" [initialBreakpoint]="1" [breakpoints]="[0, 1]">
     <ng-template>
       <div class="block">Block of Content</div>
     </ng-template>
