@@ -48,15 +48,15 @@ So, if you’d prefer to use JavaScript instead of TypeScript, you can. After ge
 npm uninstall --save typescript @types/jest @typescript-eslint/eslint-plugin @typescript-eslint/parser @vue/cli-plugin-typescript @vue/eslint-config-typescript
 ```
 
-2. Change all `.ts` files to `.js`. In a blank Ionic Vue app, this should only be `router/index.ts` and `main.ts`.
+2. Change all `.ts` files to `.js`. In a blank Ionic Vue app, this should only be `src/router/index.ts` and `src/main.ts`.
 
 3. Remove `@vue/typescript/recommended` and `@typescript-eslint/no-explicit-any: ‘off’, `from `.eslintrc.js`.
 
-4. Remove `Array<RouteRecordRaw>` from `router/index.js`.
+4. Remove `Array<RouteRecordRaw>` from `src/router/index.js`.
 
-5. Delete the `shims-vue.d.ts` file.
+5. Delete the `src/shims-vue.d.ts` file.
 
-6. Remove `lang="ts"` from the `script` tags in any of your Vue components that have them. In a blank Ionic Vue app, this should only be `App.vue` and `views/HomePage.vue`.
+6. Remove `lang="ts"` from the `script` tags in any of your Vue components that have them. In a blank Ionic Vue app, this should only be `src/App.vue` and `src/views/HomePage.vue`.
 
 7. Delete the `tsconfig.json` file.
 
@@ -326,7 +326,7 @@ Let's look at another component from Ionic Framework, FAB. Floating Action Butto
 </template>
 
 <script setup>
-  import { IonBadge, IonCheckbox, IonContent, IonFab, IonFabButton, IonHeader, IonItem, IonLabel, IonList, IonNote, IonPage, IonTitle, IonToolbar } from '@ionic/vue';
+  import { IonBadge, IonCheckbox, IonContent, IonFab, IonFabButton, IonHeader, IonIcon, IonItem, IonLabel, IonList, IonNote, IonPage, IonTitle, IonToolbar } from '@ionic/vue';
   import { add } from 'ionicons/icons';
 </script>
 ```
@@ -524,6 +524,7 @@ addIcons({
   heart: heart,
 });
 ```
+
 **HomePage.vue**
 
 ```html
