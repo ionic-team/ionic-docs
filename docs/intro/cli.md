@@ -3,7 +3,7 @@ title: Installing Ionic
 sidebar_label: CLI Installation
 ---
 
-import AppWizard from '@components/page/intro/AppWizard';
+import AppWizard from '@components/page/intro/cli/AppWizard';
 
 <head>
   <title>How to Install The Ionic Framework CLI to Build Mobile Apps</title>
