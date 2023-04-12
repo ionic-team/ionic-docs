@@ -6,11 +6,11 @@ import TabItem from '@theme/TabItem';
 
 ## Overview
 
-Ionic Animations is a utility that allows developers to build complex animations in a platform agnostic manner. Developers do not need to be using a particular framework such as React or Angular, nor do they even need to be building an Ionic app. As long as developers have access to v5.0 or greater of Ionic Framework, they will have access to all of Ionic Animations.
+Ionic Animations is a tool that enables developers to create complex animations in a platform-agnostic manner, without requiring a specific framework or an Ionic app.
 
-Building efficient animations can be tricky. Developers are often limited by the libraries available to them as well as the hardware that their apps run on. On top of that, many animation libraries use a JavaScript-driven approach to running animations where they handle the calculation of your animation's values at every step in a `requestAnimationFrame` loop. This reduces the scalability of your animations as the library is constantly computing values and using up CPU time.
+Creating efficient animations can be challenging, as developers are limited by the available libraries and hardware resources of the device. Moreover, many animation libraries use a JavaScript-driven approach, which can reduce the scalability of animations and use up CPU time.
 
-Ionic Animations uses the [Web Animations API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Animations_API) to build and run your animations. In doing this, we offload all work required to compute and run your animations to the browser. As a result, this allows the browser to make any optimizations it needs and ensures your animations run as smoothly as possible. While most browsers support a basic implementation of Web Animations, we fallback to [CSS Animations](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Animations/Using_CSS_animations) for browsers that do not support Web Animations. The performance difference in switching between these two should typically be negligible.
+Ionic Animations, on the other hand, uses the [Web Animations API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Animations_API), which offloads all the computation and running of animations to the browser. This approach allows the browser to optimize the animations and ensure their smooth execution. In cases where Web Animations are not supported, Ionic Animations will fall back to [CSS Animations](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Animations/Using_CSS_animations), which should have a negligible difference in performance.
 
 ## Installation
 
@@ -1517,30 +1517,37 @@ const animation = createAnimation('my-animation-identifier')
   .fromTo('opacity', '1', '0');
 ```
 
-## Browser Support
+## API
 
-| Browser/Platform | Supported Versions |
-| ---------------- | ------------------ |
-| **Chrome**       | 43+                |
-| **Safari**       | 9+                 |
-| **Firefox**      | 32+                |
-| **IE/Edge**      | 11+                |
-| **Opera**        | 30+                |
-| **iOS**          | 9+                 |
-| **Android**      | 5+                 |
+This section provides a list of all the methods and properties available on the `Animation` class.
+
+### Interfaces
+
+#### AnimationDirection
+
+```tsx
+type AnimationDirection = 'normal' | 'reverse' | 'alternate' | 'alternate-reverse';
+```
+
+#### AnimationFill
+
+```tsx
+type AnimationFill = 'auto' | 'none' | 'forwards' | 'backwards' | 'both';
+```
+
+#### AnimationBuilder
+
+```tsx
+type AnimationBuilder = (baseEl: any, opts?: any) => Animation;
+```
 
 :::note
-Due to a bug in Safari versions 9-11, stepping through animations via `progressStep` is not supported. This is supported on Safari 12+.
+
+`opts` are additional options that are specific to the custom animation. For example, the sheet modal enter animation includes information for the current breakpoint.
+
 :::
 
-## Types
-
-| Name                 | Value                                                         |
-| -------------------- | ------------------------------------------------------------- |
-| `AnimationDirection` | `'normal' \| 'reverse' \| 'alternate' \| 'alternate-reverse'` |
-| `AnimationFill`      | `'auto' \| 'none' \| 'forwards' \| 'backwards' \| 'both'`     |
-
-## Interfaces
+#### AnimationCallbackOptions
 
 ```tsx
 interface AnimationCallbackOptions {
@@ -1549,7 +1556,11 @@ interface AnimationCallbackOptions {
    */
   oneTimeCallback: boolean;
 }
+```
 
+#### AnimationPlayOptions
+
+```tsx
 interface AnimationPlayOptions {
   /**
    * If true, the animation will play synchronously.
@@ -1560,7 +1571,7 @@ interface AnimationPlayOptions {
 }
 ```
 
-## Properties
+### Properties
 
 | Name                           | Description                                       |
 | ------------------------------ | ------------------------------------------------- |
@@ -1568,7 +1579,7 @@ interface AnimationPlayOptions {
 | `elements: HTMLElement[]`      | All elements attached to an animation.            |
 | `parentAnimation?: Animation`  | The parent animation of a given animation object. |
 
-## Methods
+### Methods
 
 | Name                                                                                                                 | Description                                                                                                                                                                             |
 | -------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |

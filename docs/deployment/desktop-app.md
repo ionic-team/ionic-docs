@@ -30,7 +30,7 @@ The Electron team has a detailed guide on how to publish an app for macOS. Pleas
 
 ### Requirements
 
-There are two hard requirements for publishing an app on the Windows app store
+There are four hard requirements for publishing an app on the Windows app store
 
 - Windows 10 with Anniversary Update (released August 2nd, 2016)
 - The Windows 10 SDK, [download here](https://developer.microsoft.com/en-us/windows/downloads/windows-10-sdk)
