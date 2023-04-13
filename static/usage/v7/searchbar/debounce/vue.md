@@ -1,6 +1,6 @@
 ```html
 <template>
-  <ion-searchbar :debounce="1000" @ionChange="handleChange($event)"></ion-searchbar>
+  <ion-searchbar :debounce="1000" @ionInput="handleInput($event)"></ion-searchbar>
 
   <ion-list>
     <ion-item v-for="result in results">
@@ -22,7 +22,7 @@
       return { data, results };
     },
     methods: {
-      handleChange(event) {
+      handleInput(event) {
         const query = event.target.value.toLowerCase();
         this.results = this.data.filter(d => d.toLowerCase().indexOf(query) > -1);
       },

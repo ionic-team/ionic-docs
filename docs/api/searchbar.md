@@ -66,7 +66,7 @@ import Toolbar from '@site/static/usage/v7/toolbar/searchbars/index.md';
 
 ## Debounce
 
-A debounce can be set on the searchbar in order to delay triggering the `ionChange` event. This is useful when querying data, as it can be used to wait to make a request instead of requesting the data each time a character is entered in the input.
+A debounce can be set on the searchbar in order to delay triggering the `ionInput` event. This is useful when querying data, as it can be used to wait to make a request instead of requesting the data each time a character is entered in the input.
 
 import Debounce from '@site/static/usage/v7/searchbar/debounce/index.md';
 
