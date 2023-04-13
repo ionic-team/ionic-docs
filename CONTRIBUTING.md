@@ -23,11 +23,11 @@ Thanks for your interest in contributing to Ionic's documentation! :tada: Check 
 In order to run the documentation locally, install the dependencies and run the development server:
 
 ```sh
-$ npm install
+$ npm install --legacy-peer-deps
 $ npm start
 ```
 
-> **Note**: recent versions of npm (5+) and Node.js (10+) are required to run certain scripts.
+> **Note**: certain versions of npm (5-8) and Node.js (10-16) are required to run certain scripts.
 
 ---
 
@@ -55,7 +55,7 @@ Ionic's documentation is built using [Docusaurus](https://docusaurus.io/). The c
 - `static/`
   - `demos/` - self-contained demos, optionally presented by pages via `demoUrl` YAML frontmatter
 - `versioned_docs/` - versions of the docs created by the docusaurus versioning command
-- `versioned_sitebars/` - versions of the docs sidebars created by the docusaurus versioning command
+- `versioned_sidebars/` - versions of the docs sidebars created by the docusaurus versioning command
 
 ## Authoring Content
 
@@ -84,7 +84,7 @@ The Ionic docs have been translated into Japanese and are in the process of bein
 
 We use Crowdin for our translation service. You can participate in the translation effort on the [Ionic Crowdin page](https://crowdin.com/project/ionic-docs).
 
-_Please submit translation issues to the Crowdin page and not the Ionic Docs GitHub repo_
+_Please submit translation issues to the Crowdin page and not the Ionic Docs GitHub repo._
 
 The Japanese translation of the docs were built by an independent team, lead by [rdlabo](https://github.com/rdlabo) and can be found and contributed to on the [ionic-jp group's `ionic-docs` project page](https://github.com/ionic-jp/ionic-docs).
 

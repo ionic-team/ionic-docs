@@ -9,7 +9,7 @@ sidebar_label: 'build'
 Build web assets and prepare your app for any platform targets
 
 ```shell
-$ ionic build [options]
+ionic build [options]
 ```
 
 `ionic build` will perform an Ionic build, which compiles web assets and prepares them for deployment.

@@ -236,6 +236,31 @@ var versions = [
     symbol: 'V',
     element: 'Vanadium',
   },
+  {
+    minor: '6.2',
+    symbol: 'Cr',
+    element: 'Chromium'
+  },
+  {
+    minor: '6.3',
+    symbol: 'Mn',
+    element: 'Manganese'
+  },
+  {
+    minor: '6.4',
+    symbol: 'Fe',
+    element: 'Iron'
+  },
+  {
+    minor: '6.5',
+    symbol: 'Co',
+    element: 'Cobalt'
+  },
+  {
+    minor: '6.6',
+    symbol: 'Ni',
+    element: 'Nickel'
+  }
 ];
 
 var fallbackVersion = { minor: '9201', symbol: 'Uo', element: 'Unobtainium' };

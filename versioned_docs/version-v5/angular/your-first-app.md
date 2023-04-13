@@ -28,8 +28,8 @@ We'll create a Photo Gallery app that offers the ability to take photos with you
 Highlights include:
 
 - One Angular-based codebase that runs on the web, iOS, and Android using Ionic Framework [UI components](https://ionicframework.com/docs/components).
-- Deployed as a native iOS and Android mobile app using [Capacitor](https://capacitor.ionicframework.com), Ionic's official native app runtime.
-- Photo Gallery functionality powered by the Capacitor [Camera](https://capacitor.ionicframework.com/docs/apis/camera), [Filesystem](https://capacitor.ionicframework.com/docs/apis/filesystem), and [Storage](https://capacitor.ionicframework.com/docs/apis/storage) APIs.
+- Deployed as a native iOS and Android mobile app using [Capacitor](https://capacitorjs.com), Ionic's official native app runtime.
+- Photo Gallery functionality powered by the Capacitor [Camera](https://capacitorjs.com/docs/apis/camera), [Filesystem](https://capacitorjs.com/docs/apis/filesystem), and [Preferences](https://capacitorjs.com/docs/apis/preferences) APIs.
 
 Find the complete app code referenced in this guide [on GitHub](https://github.com/ionic-team/photo-gallery-capacitor-ng).
 
@@ -53,7 +53,7 @@ To open a terminal in Visual Studio Code, go to Terminal -> New Terminal.
 :::
 
 ```shell
-$ npm install -g @ionic/cli native-run cordova-res
+npm install -g @ionic/cli native-run cordova-res
 ```
 
 :::note
@@ -67,7 +67,7 @@ Consider setting up npm to operate globally without elevated permissions. See [R
 Next, create an Ionic Angular app that uses the “Tabs” starter template and adds Capacitor for native functionality:
 
 ```shell
-$ ionic start photo-gallery tabs --type=angular --capacitor
+ionic start photo-gallery tabs --type=angular --capacitor
 ```
 
 This starter project comes complete with three pre-built pages and best practices for Ionic development. With common building blocks already in place, we can add more features easily!
@@ -75,13 +75,13 @@ This starter project comes complete with three pre-built pages and best practice
 Next, change into the app folder:
 
 ```shell
-$ cd photo-gallery
+cd photo-gallery
 ```
 
 Next we'll need to install the necessary Capacitor plugins to make the app's native functionality work:
 
 ```shell
-npm install @capacitor/camera @capacitor/storage @capacitor/filesystem
+npm install @capacitor/camera @capacitor/preferences @capacitor/filesystem
 ```
 
 ### PWA Elements
@@ -91,7 +91,7 @@ Some Capacitor plugins, including the Camera API, provide the web-based function
 It's a separate dependency, so install it next:
 
 ```shell
-$ npm install @ionic/pwa-elements
+npm install @ionic/pwa-elements
 ```
 
 Next, import `@ionic/pwa-elements` by editing `src/main.ts`.
@@ -110,7 +110,7 @@ That’s it! Now for the fun part - let’s see the app in action.
 Run this command next:
 
 ```shell
-$ ionic serve
+ionic serve
 ```
 
 And voilà! Your Ionic app is now running in a web browser. Most of your app can be built and tested right in the browser, greatly increasing development and testing speed.

@@ -77,6 +77,8 @@
 
   transition: transform 150ms ease, box-shadow 150ms ease;
 
+  height: 150px;
+
   @media (max-width: 767px) {
     flex-direction: column;
 
@@ -100,7 +102,7 @@
 
   :global {
     .heading-group {
-      padding: 2rem;
+      padding-right: 2rem;
       padding-left: 3rem;
     }
 

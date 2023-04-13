@@ -9,13 +9,13 @@ The first official version of Ionic React is v4.11.
 First, install the Ionic CLI:
 
 ```shell
-$ npm install -g @ionic/cli
+npm install -g @ionic/cli
 ```
 
 then run:
 
 ```shell
-$ ionic start myAppName
+ionic start myAppName
 ```
 
 The CLI will guide you through the setup process by asking a couple of questions, including the framework to use (React, of course!) and the starter code template.
@@ -40,6 +40,6 @@ One difference is the usage of [TypeScript](http://www.typescriptlang.org/), whi
 
 ## Native Tooling
 
-[Capacitor](https://capacitor.ionicframework.com) is the official cross-platform app runtime used to make your `Ionic React` web app run natively on iOS, Android, Electron, and the web.
+[Capacitor](https://capacitorjs.com) is the official cross-platform app runtime used to make your `Ionic React` web app run natively on iOS, Android, Electron, and the web.
 
-While there are no known technical limitations to using `Ionic React` with [Cordova](https://cordova.apache.org/) plugins, Capacitor is officially recommended. There are no plans to support a Cordova integration for `Ionic React` in the [Ionic CLI tooling](../cli.md) at this time. For more details, please [see here](https://capacitor.ionicframework.com/docs/cordova).
+While there are no known technical limitations to using `Ionic React` with [Cordova](https://cordova.apache.org/) plugins, Capacitor is officially recommended. There are no plans to support a Cordova integration for `Ionic React` in the [Ionic CLI tooling](../cli.md) at this time. For more details, please [see here](https://capacitorjs.com/docs/cordova).

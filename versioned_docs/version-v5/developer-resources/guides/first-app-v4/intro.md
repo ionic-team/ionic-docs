@@ -24,7 +24,7 @@ Download/install these right away to ensure an optimal Ionic development experie
 Run the following in the command line:
 
 ```shell
-$ npm install -g @ionic/cli cordova
+npm install -g @ionic/cli cordova
 ```
 
 :::note
@@ -38,7 +38,7 @@ Consider setting up npm to operate globally without elevated permissions. See [R
 Next, create an Ionic Angular app using our “Tabs” app template:
 
 ```shell
-$ ionic start photo-gallery tabs
+ionic start photo-gallery tabs
 ```
 
 This starter project comes complete with three pre-built pages and best practices for Ionic development. With common building blocks already in place, we can add more features easily!
@@ -46,7 +46,7 @@ This starter project comes complete with three pre-built pages and best practice
 Next, change into the app folder:
 
 ```shell
-$ cd photo-gallery
+cd photo-gallery
 ```
 
 That’s it! Now for the fun part - let’s see the app in action.

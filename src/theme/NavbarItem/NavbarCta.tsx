@@ -11,9 +11,9 @@ export default function NavbarCta({ text, href, ...props }) {
         <path
           fill="none"
           stroke="currentColor"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="48"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth="48"
           d="M268 112l144 144-144 144M392 256H100"
         />
       </svg>

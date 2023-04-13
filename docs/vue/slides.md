@@ -1,5 +1,5 @@
 ---
-title: Slides
+title: Migrating From ion-slides to Swiper.js
 ---
 
 <head>
@@ -10,9 +10,17 @@ title: Slides
   />
 </head>
 
-We recommend <a href="http://swiperjs.com/" target="_blank" rel="noopener noreferrer">Swiper.js</a> if you need a modern touch slider component. It powers our `ion-slides` component, but we now recommend that developers use Swiper for Vue directly.
+:::caution Looking for `ion-slides`?
+`ion-slides` was deprecated in v6.0.0 and removed in v7.0.0. We recommend using the Swiper.js library directly. The migration process is detailed below.
+:::
 
-This guide will go over how to get Swiper for Vue set up in your Ionic Framework application. It will also go over any migration information you may need to move from `ion-slides` to the official Swiper Vue integration.
+We recommend <a href="http://swiperjs.com/" target="_blank" rel="noopener noreferrer">Swiper.js</a> if you need a modern touch slider component. This guide will go over how to get Swiper for Vue set up in your Ionic Framework application. It will also go over any migration information you may need to move from `ion-slides` to the official Swiper Vue integration.
+
+:::note
+Swiper's Vue component is set to be removed in a future release of Swiper, with <a href="https://swiperjs.com/element" target="_blank" rel="noopener noreferrer">Swiper Element</a> as the replacement. However, this guide shows how to migrate to the Vue component because it provides the most stable experience at the time of writing.
+
+Using Swiper's Vue component is **not** required to use Swiper.js with Ionic Framework.
+:::
 
 ## Getting Started
 
@@ -31,7 +39,7 @@ vue upgrade --next
 Once that is done, install the Swiper dependency in your project:
 
 ```shell
-npm install swiper
+npm install swiper@latest
 ```
 
 ## Swiping with Style
@@ -52,6 +60,10 @@ We recommend importing the styles in the component in which Swiper is being used
   });
 </script>
 ```
+
+:::note
+Importing `@ionic/vue/css/ionic-swiper.css` is **not** required to use Swiper.js with Ionic. This files is used for backward-compatibility with the `ion-slides` component and can be safely omitted if you prefer not to use the CSS Variables provided in the stylesheet.
+:::
 
 ### Updating Selectors
 
@@ -92,7 +104,7 @@ These components are imported from `swiper/vue` and provided to your Vue compone
     <ion-content>
       <swiper>
         <swiper-slide>Slide 1</swiper-slide>
-        <swiper-slide>Slide 3</swiper-slide>
+        <swiper-slide>Slide 2</swiper-slide>
         <swiper-slide>Slide 3</swiper-slide>
       </swiper>
     </ion-content>
@@ -132,7 +144,7 @@ To begin, we need to import the modules and their corresponding CSS files from t
     <ion-content>
       <swiper>
         <swiper-slide>Slide 1</swiper-slide>
-        <swiper-slide>Slide 3</swiper-slide>
+        <swiper-slide>Slide 2</swiper-slide>
         <swiper-slide>Slide 3</swiper-slide>
       </swiper>
     </ion-content>
@@ -166,7 +178,7 @@ From here, we need to provide these modules to Swiper by using the `modules` pro
     <ion-content>
       <swiper :modules="modules">
         <swiper-slide>Slide 1</swiper-slide>
-        <swiper-slide>Slide 3</swiper-slide>
+        <swiper-slide>Slide 2</swiper-slide>
         <swiper-slide>Slide 3</swiper-slide>
       </swiper>
     </ion-content>
@@ -205,7 +217,7 @@ Finally, we can turn these features on by using the appropriate properties:
     <ion-content>
       <swiper :modules="modules" :autoplay="true" :keyboard="true" :pagination="true" :scrollbar="true" :zoom="true">
         <swiper-slide>Slide 1</swiper-slide>
-        <swiper-slide>Slide 3</swiper-slide>
+        <swiper-slide>Slide 2</swiper-slide>
         <swiper-slide>Slide 3</swiper-slide>
       </swiper>
     </ion-content>
@@ -242,7 +254,7 @@ See <a href="https://swiperjs.com/vue#usage" target="_blank" rel="noopener noref
 
 ## The IonicSlides Module
 
-With `ion-slides`, Ionic automatically customized dozens of Swiper properties. This resulted in an experience that felt smooth when swiping on mobile devices. We recommend using the `IonicSlides` module to ensure that these properties are also set when using Swiper directly.
+With `ion-slides`, Ionic automatically customized dozens of Swiper properties. This resulted in an experience that felt smooth when swiping on mobile devices. We recommend using the `IonicSlides` module to ensure that these properties are also set when using Swiper directly. However, using this module is **not** required to use Swiper.js in Ionic.
 
 We can install the `IonicSlides` module by importing it from `@ionic/vue` and passing it in as the last item in the `modules` array:
 
@@ -252,7 +264,7 @@ We can install the `IonicSlides` module by importing it from `@ionic/vue` and pa
     <ion-content>
       <swiper :modules="modules" :autoplay="true" :keyboard="true" :pagination="true" :scrollbar="true" :zoom="true">
         <swiper-slide>Slide 1</swiper-slide>
-        <swiper-slide>Slide 3</swiper-slide>
+        <swiper-slide>Slide 2</swiper-slide>
         <swiper-slide>Slide 3</swiper-slide>
       </swiper>
     </ion-content>
@@ -297,7 +309,7 @@ Let's say in an app with `ion-slides` we had the `slidesPerView` and `loop` opti
 <template>
   <ion-slides :options="{ slidesPerView: true, loop: true }">
     <ion-slide>Slide 1</ion-slide>
-    <ion-slide>Slide 3</ion-slide>
+    <ion-slide>Slide 2</ion-slide>
     <ion-slide>Slide 3</ion-slide>
   </ion-slides>
 </template>
@@ -309,7 +321,7 @@ To migrate, we would move these options out of the `options` object and onto the
 <template>
   <swiper :slides-per-view="3" :loop="true">
     <swiper-slide>Slide 1</swiper-slide>
-    <swiper-slide>Slide 3</swiper-slide>
+    <swiper-slide>Slide 2</swiper-slide>
     <swiper-slide>Slide 3</swiper-slide>
   </swiper>
 </template>
@@ -338,7 +350,7 @@ Let's say in an app with `ion-slides` we used the `ionSlideDidChange` event:
 <template>
   <ion-slides @ionSlideDidChange="onSlideChange">
     <ion-slide>Slide 1</ion-slide>
-    <ion-slide>Slide 3</ion-slide>
+    <ion-slide>Slide 2</ion-slide>
     <ion-slide>Slide 3</ion-slide>
   </ion-slides>
 </template>
@@ -350,7 +362,7 @@ To migrate, we would change the name of the event to `slideChange`:
 <template>
   <swiper @slideChange="onSlideChange">
     <swiper-slide>Slide 1</swiper-slide>
-    <swiper-slide>Slide 3</swiper-slide>
+    <swiper-slide>Slide 2</swiper-slide>
     <swiper-slide>Slide 3</swiper-slide>
   </swiper>
 </template>
@@ -419,7 +431,7 @@ Below is a full list of method changes when going from `ion-slides` to Swiper Vu
 | isBeginning()      | Use the `isBeginning` property instead.                                              |
 | isEnd()            | Use the `isEnd` property instead.                                                    |
 | length()           | Use the `slides` property instead. (i.e swiperRef.slides.length)                     |
-| lockSwipeToNext()  | Use the `allowSlidesNext` property instead.                                          |
+| lockSwipeToNext()  | Use the `allowSlideNext` property instead.                                          |
 | lockSwipeToPrev()  | Use the `allowSlidePrev` property instead.                                           |
 | lockSwipes()       | Use the `allowSlideNext`, `allowSlidePrev`, and `allowTouchMove` properties instead. |
 | startAutoplay()    | Use the `autoplay` property instead.                                                 |
@@ -435,7 +447,7 @@ If you are using effects such as Cube or Fade, you can install them just like we
     <ion-content>
       <swiper :modules="modules">
         <swiper-slide>Slide 1</swiper-slide>
-        <swiper-slide>Slide 3</swiper-slide>
+        <swiper-slide>Slide 2</swiper-slide>
         <swiper-slide>Slide 3</swiper-slide>
       </swiper>
     </ion-content>
@@ -469,7 +481,7 @@ Next, we need to import the stylesheet associated with the effect:
     <ion-content>
       <swiper :modules="modules">
         <swiper-slide>Slide 1</swiper-slide>
-        <swiper-slide>Slide 3</swiper-slide>
+        <swiper-slide>Slide 2</swiper-slide>
         <swiper-slide>Slide 3</swiper-slide>
       </swiper>
     </ion-content>
@@ -504,7 +516,7 @@ After that, we can activate it by setting the `effect` property on `swiper` to `
     <ion-content>
       <swiper :modules="modules" effect="fade">
         <swiper-slide>Slide 1</swiper-slide>
-        <swiper-slide>Slide 3</swiper-slide>
+        <swiper-slide>Slide 2</swiper-slide>
         <swiper-slide>Slide 3</swiper-slide>
       </swiper>
     </ion-content>

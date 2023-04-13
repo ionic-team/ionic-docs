@@ -58,7 +58,7 @@
     <h3>Capacitor</h3>
   </a>
   <p>
-    <a href="https://capacitor.ionicframework.com/" target="_blank">
+    <a href="https://capacitorjs.com/" target="_blank">
       Capacitor
     </a>{' '}
     is an open source cross-platform app runtime that allows web-based apps to run natively on iOS, Android, Electron,
@@ -396,11 +396,9 @@
     <a href="http://sass-lang.com/documentation/file.SASS_REFERENCE.html#variables_" target="_blank">
       variables
     </a>
-    ,{' '}
-    <a href="http://sass-lang.com/documentation/file.SASS_REFERENCE.html#mixins" target="_blank">
+    , <a href="http://sass-lang.com/documentation/file.SASS_REFERENCE.html#mixins" target="_blank">
       mixins
-    </a>
-    , and{' '}
+    </a>, and{' '}
     <a href="http://sass-lang.com/documentation/file.SASS_REFERENCE.html#_10" target="_blank">
       loops
     </a>
