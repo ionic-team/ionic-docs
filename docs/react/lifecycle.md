@@ -147,6 +147,7 @@ Below are some tips on use cases for each of the life cycle events.
 - `ionViewDidLeave` - When this event fires, you know the new page has fully transitioned in, so any logic you might not normally do when the view is visible can go here.
 
 ## Passing state between pages
+
 Since Ionic React manages the lifetime of a page, state on previous pages may update as users navigate your application. This can impact state that is determined using `useEffect` from React or `useLocation` from React Router. For example, if `PageA` calls `useLocation`, the state of `useLocation` will change when the user navigates from `PageA` to `PageB`.
 
 Developers should include the appropriate checks to ensure that previous pages only access defined states.
