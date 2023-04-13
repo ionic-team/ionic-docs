@@ -7,7 +7,7 @@ sidebar_label: Quickstart
   <title>Intro to Ionic React Quickstart Using Ionic CLI: React Basics</title>
   <meta
     name="description"
-    content="Intro to React Native Quickstart covers the basics of React and Ionic, including any Ionic-specific features. Learn how to build React apps using the Ionic CLI."
+    content="Intro to React Quickstart covers the basics of React and Ionic, including any Ionic-specific features. Learn how to build React apps using the Ionic CLI."
   />
 </head>
 
