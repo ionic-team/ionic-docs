@@ -127,7 +127,7 @@ Answering this next question will ensure that routing, hard reload, and deep lin
 
 **Set up automatic deployment to your sites live channel when a PR is merged?** Enter "Yes".
 
-**What is the name of the get hooked branch associated with your sites live channel?** Enter your project's main brainch name.
+**What is the name of the get hooked branch associated with your sites live channel?** Enter your project's main branch name.
 
 A `firebase.json` config file is generated, configuring the app for deployment.
 
