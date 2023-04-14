@@ -136,7 +136,7 @@ Toasts are intended to be subtle notifications and are not intended to interrupt
 
 `ion-toast` has `role="status"` and `aria-live="polite"` set on the inner `.toast-content` element. This causes screen readers to only announce the toast message and header. Buttons and icons will not be announced.
 
-`aria-live` causes screen readers to announce the content of the toast when it is updated. However, since the attribute is set to `'polite'`, screen readers generally do not interrupt the current task.
+`aria-live` causes screen readers to announce the content of the toast when it is updated. However, since the attribute is set to `'polite'`, screen readers should not interrupt the current task.
 
 Since toasts are intended to be subtle notification, `aria-live` should never be set to `"assertive"`. If developers need to interrupt the user with an important message, we recommend using an [alert](./alert).
 
