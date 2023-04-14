@@ -76,6 +76,10 @@ Next, in a Terminal, install the Firebase CLI:
 npm install -g firebase-tools
 ```
 
+:::note
+If it's the first time you use firebase-tools, login to your Google account with `firebase login` command.
+:::
+
 With the Firebase CLI installed, run `firebase init` within your Ionic project. The CLI prompts:
 
 **"Which Firebase CLI features do you want to set up for this folder?"** Choose "Hosting: Configure files for Firebase Hosting and (optionally) set up GitHub Action deploys".
