@@ -98,7 +98,7 @@ Answering this next question will ensure that routing, hard reload, and deep lin
 
 **"File build/index.html already exists. Overwrite?"** Enter "No".
 
-**Set up automatic builds and deploys with github?** Enter "Yes".
+**Set up automatic builds and deploys with Github?** Enter "Yes".
 
 **For which GitHub repository would you like to set up a Github Workflow?** Enter your project name.
 
