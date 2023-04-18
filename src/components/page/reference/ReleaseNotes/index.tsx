@@ -6,10 +6,8 @@ import styles from './styles.module.css';
 
 interface Release {
   body: string;
-  element: string;
   name: string;
   published_at: string;
-  symbol: string;
   tag_name: string;
   type: string;
   version: string;
@@ -17,6 +15,12 @@ interface Release {
 
 export default function ReleaseNotes(props: { [key: string]: any }) {
   if (releases.length === 0) {
+    console.warn('Could not load release notes data. Make sure that you have a valid GITHUB_TOKEN. ');
+    console.warn('Create a personal access token by following the below guide:');
+    console.warn('https://docs.github.com/en/enterprise-cloud@latest/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token');
+    console.warn('and then authorize it to work with SSO:');
+    console.warn('https://docs.github.com/en/enterprise-cloud@latest/authentication/authenticating-with-saml-single-sign-on/authorizing-a-personal-access-token-for-use-with-saml-single-sign-on');
+
     return [
       <p>
         Unable to load Releases. Please see all releases{' '}
@@ -45,21 +49,13 @@ export default function ReleaseNotes(props: { [key: string]: any }) {
       <div className={styles['release-notes']}>
         {releases.map((release: Release, index) => (
           <section className={clsx(styles['release-note'], styles[`release-note-${release.type}`])}>
-            <div className={styles['release-tag-wrapper']}>
-              <h2 id={release.version}>
-                <a href={`#${release.version}`} className={styles['release-tag']}>
-                  <span className={styles['release-symbol']}>{release.symbol}</span>
-                  <span className={styles['release-version']}>{release.version}</span>
-                </a>
-              </h2>
-            </div>
-
             <div className={styles['release-info']}>
               <div className={styles['release-header']}>
-                <h2>
-                  <span className={styles['release-version']}>{release.version}</span>
-                  {release.type !== 'patch' ? ' ' + release.element : null}
-                </h2>
+                <a href={`https://github.com/ionic-team/ionic/releases/v${release.version}`}>
+                  <h2>
+                    <span className={styles['release-version']}>{release.version}</span>
+                  </h2>
+                </a>
                 <span className={styles['release-badge']}>{release.type}</span>
                 {index === 0 ? (
                   <span className={clsx(styles['release-badge'], styles['release-badge-latest'])}>
@@ -89,10 +85,3 @@ export default function ReleaseNotes(props: { [key: string]: any }) {
     </article>
   );
 }
-
-const getReleaseClasses = (release: any) => {
-  return {
-    'release-note': true,
-    [`release-note-${release.type}`]: true,
-  };
-};
