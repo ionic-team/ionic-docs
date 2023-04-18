@@ -50,7 +50,7 @@ private async savePicture(photo: Photo) {
   // already loaded into memory
   return {
     filepath: fileName,
-    webviewPath: photo.webPath
+    webviewpath: photo.webPath
   };
 }
 ```
