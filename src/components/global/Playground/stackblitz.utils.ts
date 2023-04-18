@@ -79,7 +79,7 @@ const openHtmlEditor = async (code: string, options?: EditorOptions) => {
 }
 
 const openAngularEditor = async (code: string, options?: EditorOptions) => {
-  let [main_ts, app_module_ts, app_component_ts, app_component_css, app_component_html, example_component_ts, styles_css, global_css, variables_css, angular_json, tsconfig_json, package_json] = await loadSourceFiles([
+  const defaultFiles = await loadSourceFiles([
     'angular/main.ts',
     'angular/app.module.ts',
     'angular/app.component.ts',
@@ -92,18 +92,40 @@ const openAngularEditor = async (code: string, options?: EditorOptions) => {
     'angular/angular.json',
     'angular/tsconfig.json',
     'angular/package.json'
-  ], options.version)
+  ], options.version);
+
+  const appModule = 'src/app/app.module.ts';
+  const files = {
+    'src/main.ts': defaultFiles[0],
+    'src/polyfills.ts': `import 'zone.js/dist/zone';`,
+    [appModule]: defaultFiles[1],
+    'src/app/app.component.ts': defaultFiles[2],
+    'src/app/app.component.css': defaultFiles[3],
+    'src/app/app.component.html': defaultFiles[4],
+    'src/app/example.component.ts': defaultFiles[5],
+    'src/app/example.component.html': code,
+    'src/app/example.component.css': '',
+    'src/index.html': '<app-root></app-root>',
+    'src/styles.css': defaultFiles[6],
+    'src/global.css': defaultFiles[7],
+    'src/theme/variables.css': defaultFiles[8],
+    'angular.json': defaultFiles[9],
+    'tsconfig.json': defaultFiles[10],
+    ...options?.files
+  };
+
+  const package_json = defaultFiles[11];
 
   if (options.angularModuleOptions) {
     if (options.angularModuleOptions.imports) {
-      app_module_ts = `${options.angularModuleOptions.imports.join('\n')}\n${app_module_ts}`;
+      files[appModule] = `${options.angularModuleOptions.imports.join('\n')}\n${files[appModule]}`;
     }
     if (options.angularModuleOptions.declarations) {
-      app_module_ts = app_module_ts.replace('/* CUSTOM_DECLARATIONS */', options.angularModuleOptions.declarations.map(d => `\n  ${d}`).join(','));
+      files[appModule] = files[appModule].replace('/* CUSTOM_DECLARATIONS */', options.angularModuleOptions.declarations.map(d => `\n  ${d}`).join(','));
     }
   }
 
-  app_module_ts = app_module_ts.replace('{{ MODE }}', options?.mode);
+  files[appModule] = files[appModule].replace('IonicModule.forRoot({})', `IonicModule.forRoot({ mode: '${options?.mode}' })`);
 
   let dependencies = {};
   try {
@@ -119,24 +141,7 @@ const openAngularEditor = async (code: string, options?: EditorOptions) => {
     template: 'angular-cli',
     title: options?.title ?? DEFAULT_EDITOR_TITLE,
     description: options?.description ?? DEFAULT_EDITOR_DESCRIPTION,
-    files: {
-      'src/main.ts': main_ts,
-      'src/polyfills.ts': `import 'zone.js/dist/zone';`,
-      'src/app/app.module.ts': app_module_ts,
-      'src/app/app.component.ts': app_component_ts,
-      'src/app/app.component.html': app_component_html,
-      'src/app/example.component.ts': example_component_ts,
-      'src/app/example.component.html': code,
-      'src/app/example.component.css': '',
-      'src/app/app.component.css': app_component_css,
-      'src/index.html': '<app-root></app-root>',
-      'src/styles.css': styles_css,
-      'src/global.css': global_css,
-      'src/theme/variables.css': variables_css,
-      'angular.json': angular_json,
-      'tsconfig.json': tsconfig_json,
-      ...options?.files
-    },
+    files,
     dependencies
   });
 }
