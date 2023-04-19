@@ -47,12 +47,33 @@ const loadSourceFiles = async (files: string[], version: number) => {
 }
 
 const openHtmlEditor = async (code: string, options?: EditorOptions) => {
-  const [index_ts, index_html, variables_css, package_json] = await loadSourceFiles([
+  const defaultFiles = await loadSourceFiles([
     'html/index.ts',
     options?.includeIonContent ? 'html/index.withContent.html' : 'html/index.html',
     'html/variables.css',
     'html/package.json'
   ], options.version);
+
+  const indexHtml = 'index.html';
+  const files = {
+    'index.ts': defaultFiles[0],
+    [indexHtml]: defaultFiles[1],
+    'theme/variables.css': defaultFiles[2],
+    ...options?.files
+  };
+
+  const package_json = defaultFiles[3];
+
+  files[indexHtml] = files[indexHtml].replace(/{{ TEMPLATE }}/g, code).replace('</head>', `
+  <script>
+    window.Ionic = {
+      config: {
+        mode: '${options?.mode}'
+      }
+    }
+  </script>
+</head>
+`);
 
   let dependencies = {};
   try {
@@ -68,12 +89,7 @@ const openHtmlEditor = async (code: string, options?: EditorOptions) => {
     template: 'typescript',
     title: options?.title ?? DEFAULT_EDITOR_TITLE,
     description: options?.description ?? DEFAULT_EDITOR_DESCRIPTION,
-    files: {
-      'index.html': index_html.replace(/{{ TEMPLATE }}/g, code).replace(/{{ MODE }}/g, options?.mode),
-      'index.ts': index_ts,
-      'theme/variables.css': variables_css,
-      ...options?.files
-    },
+    files,
     dependencies
   })
 }
