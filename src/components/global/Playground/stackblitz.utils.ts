@@ -200,7 +200,7 @@ const openReactEditor = async (code: string, options?: EditorOptions) => {
 }
 
 const openVueEditor = async (code: string, options?: EditorOptions) => {
-  let [package_json, package_lock_json, index_html, variables_css, vite_config_ts, main_ts, app_vue, tsconfig_json, tsconfig_node_json, env_d_ts] = await loadSourceFiles([
+  const defaultFiles = await loadSourceFiles([
     'vue/package.json',
     'vue/package-lock.json',
     'vue/index.html',
@@ -213,7 +213,28 @@ const openVueEditor = async (code: string, options?: EditorOptions) => {
     'vue/env.d.ts'
   ], options.version);
 
-  main_ts = main_ts.replace('{{ MODE }}', options?.mode);
+  const mainTs = 'src/main.ts';
+  const files = {
+    'src/App.vue': defaultFiles[6],
+    'src/components/Example.vue': code,
+    [mainTs]: defaultFiles[5],
+    'src/env.d.ts': defaultFiles[9],
+    'src/theme/variables.css': defaultFiles[3],
+    'index.html': defaultFiles[2],
+    'vite.config.ts': defaultFiles[4],
+    'package.json': defaultFiles[0],
+    'package-lock.json': defaultFiles[1],
+    'tsconfig.json': defaultFiles[7],
+    'tsconfig.node.json': defaultFiles[8],
+    ...options?.files,
+    '.stackblitzrc': `{
+  "startCommand": "yarn run dev"
+}`
+  };
+
+  files[mainTs] = files[mainTs].replace('.use(IonicVue)', `.use(IonicVue, {
+  mode: '${options?.mode}'
+})`);
 
   /**
    * We have to use Stackblitz web containers here (node template), due
@@ -225,23 +246,7 @@ const openVueEditor = async (code: string, options?: EditorOptions) => {
     template: 'node',
     title: options?.title ?? DEFAULT_EDITOR_TITLE,
     description: options?.description ?? DEFAULT_EDITOR_DESCRIPTION,
-    files: {
-      'src/App.vue': app_vue,
-      'src/components/Example.vue': code,
-      'src/main.ts': main_ts,
-      'src/env.d.ts': env_d_ts,
-      'src/theme/variables.css': variables_css,
-      'index.html': index_html,
-      'vite.config.ts': vite_config_ts,
-      'package.json': package_json,
-      'package-lock.json': package_lock_json,
-      'tsconfig.json': tsconfig_json,
-      'tsconfig.node.json': tsconfig_node_json,
-      ...options?.files,
-      '.stackblitzrc': `{
-        "startCommand": "yarn run dev"
-      }`
-    }
+    files
   });
 }
 
