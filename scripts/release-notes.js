@@ -2,7 +2,7 @@ const { outputJson } = require('fs-extra');
 const fetch = require('node-fetch');
 const { resolve } = require('path');
 const semver = require('semver');
-const url = require('url');
+const { URL } = require('url');
 
 const { renderMarkdown } = require('./utils.js');
 
@@ -15,7 +15,7 @@ const OUTPUT_PATH = resolve(__dirname, '../src/components/page/reference/Release
 
 // Get the GitHub Releases from Ionic
 // -------------------------------------------------------------------------------
-// This requires an environment GITHUB_TOKEN otherwise it may fail silently
+// This requires an environment GITHUB_TOKEN otherwise it may fail
 //
 // To add a GITHUB_TOKEN, follow the steps to create a personal access token:
 // https://docs.github.com/en/enterprise-cloud@latest/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token
@@ -24,11 +24,7 @@ const OUTPUT_PATH = resolve(__dirname, '../src/components/page/reference/Release
 const getReleases = async () => {
   try {
     const request = await fetch(
-      url.format({
-        protocol: 'https',
-        hostname: 'api.github.com',
-        pathname: 'repos/ionic-team/ionic/releases',
-      }),
+      new URL('repos/ionic-team/ionic/releases', 'https://api.github.com'),
       {
         headers: {
           Authorization: process.env.GITHUB_TOKEN !== undefined ? `token ${process.env.GITHUB_TOKEN}` : '',
@@ -68,6 +64,7 @@ const getReleases = async () => {
           return -semver.compare(a.tag_name, b.tag_name);
         });
     } else {
+      console.error("There was an issue getting releases:", releases);
       return [];
     }
   } catch (error) {
