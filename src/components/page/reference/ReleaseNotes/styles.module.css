@@ -13,6 +13,7 @@
   --accent-color-800: #e3edff;
   --accent-color-900: #f0f6ff;
   --background: var(--token-primary-bg-c);
+  --color: var(--ifm-font-color-base);
   --code-font-family: 'SFMono-Regular', 'Roboto Mono', Consolas, 'Liberation Mono', Menlo, Courier, monospace;
 }
 
@@ -92,7 +93,7 @@
 
   margin-top: 4px;
   margin-bottom: 32px;
-  color: #4e5b6a;
+  color: var(--ifm-secondary-heading-color, #4e5b6a);
 }
 
 .release-badge {
@@ -118,15 +119,15 @@
 }
 
 .release-note-major .release-badge {
-  background: var(--text-color--dark, #04060b);
-  border-color: var(--text-color--dark, #04060b);
-  color: white;
+  background: var(--color, #04060b);
+  border-color: var(--color, #04060b);
+  color: var(--background, #fff);
 }
 
 .release-note-minor .release-badge {
   background: #b2becd;
   border-color: #b2becd;
-  color: white;
+  color: var(--background, #fff);
 }
 
 .release-badge.release-badge-latest {
