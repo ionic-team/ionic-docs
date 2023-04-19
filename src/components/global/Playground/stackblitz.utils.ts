@@ -163,7 +163,7 @@ const openAngularEditor = async (code: string, options?: EditorOptions) => {
 }
 
 const openReactEditor = async (code: string, options?: EditorOptions) => {
-  let [index_tsx, app_tsx, variables_css, ts_config_json, package_json, package_lock_json, index_html] = await loadSourceFiles([
+  const defaultFiles = await loadSourceFiles([
     'react/index.tsx',
     options?.includeIonContent ? 'react/app.withContent.tsx' : 'react/app.tsx',
     'react/variables.css',
@@ -173,27 +173,30 @@ const openReactEditor = async (code: string, options?: EditorOptions) => {
     'react/index.html',
   ], options.version);
 
-  app_tsx = app_tsx.replace('{{ MODE }}', options?.mode);
+  const appTsx = 'src/App.tsx';
+  const files = {
+    'public/index.html': defaultFiles[6],
+    'src/index.tsx': defaultFiles[0],
+    [appTsx]: defaultFiles[1],
+    'src/main.tsx': code,
+    'src/theme/variables.css': defaultFiles[2],
+    'tsconfig.json': defaultFiles[3],
+    'package.json': defaultFiles[4],
+    'package-lock.json': defaultFiles[5],
+    ...options?.files,
+    '.stackblitzrc': `{
+  "startCommand": "yarn run start"
+}`
+  };
+
+  files[appTsx] = files[appTsx].replace('setupIonicReact()', `setupIonicReact({ mode: '${options?.mode}' })`);
 
   sdk.openProject({
     template: 'node',
     title: options?.title ?? DEFAULT_EDITOR_TITLE,
     description: options?.description ?? DEFAULT_EDITOR_DESCRIPTION,
-    files: {
-      'public/index.html': index_html,
-      'src/index.tsx': index_tsx,
-      'src/App.tsx': app_tsx,
-      'src/main.tsx': code,
-      'src/theme/variables.css': variables_css,
-      'tsconfig.json': ts_config_json,
-      'package.json': package_json,
-      'package-lock.json': package_lock_json,
-      ...options?.files,
-      '.stackblitzrc': `{
-        "startCommand": "yarn run start"
-      }`
-    }
-  })
+    files
+  });
 }
 
 const openVueEditor = async (code: string, options?: EditorOptions) => {
