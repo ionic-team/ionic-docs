@@ -15,11 +15,13 @@ interface Release {
 
 export default function ReleaseNotes(props: { [key: string]: any }) {
   if (releases.length === 0) {
-    console.warn('Could not load release notes data. Make sure that you have a valid GITHUB_TOKEN. ');
-    console.warn('Create a personal access token by following the below guide:');
-    console.warn('https://docs.github.com/en/enterprise-cloud@latest/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token');
-    console.warn('and then authorize it to work with SSO:');
-    console.warn('https://docs.github.com/en/enterprise-cloud@latest/authentication/authenticating-with-saml-single-sign-on/authorizing-a-personal-access-token-for-use-with-saml-single-sign-on');
+    console.warn(`Could not load release notes data. Make sure that you have a valid GITHUB_TOKEN.
+
+Create a personal access token by following the below guide:
+https://docs.github.com/en/enterprise-cloud@latest/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token
+
+and then authorize it to work with SSO:
+https://docs.github.com/en/enterprise-cloud@latest/authentication/authenticating-with-saml-single-sign-on/authorizing-a-personal-access-token-for-use-with-saml-single-sign-on`);
 
     return [
       <p>
