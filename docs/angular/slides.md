@@ -1,5 +1,5 @@
 ---
-title: Slides
+title: Migrating from ion-slides to Swiper.js
 ---
 
 <head>
@@ -10,9 +10,11 @@ title: Slides
   />
 </head>
 
-We recommend <a href="http://swiperjs.com/" target="_blank" rel="noopener noreferrer">Swiper.js</a> if you need a modern touch slider component. It powers our `ion-slides` component, but we now recommend that developers use Swiper for Angular directly.
+:::caution Looking for `ion-slides`?
+`ion-slides` was deprecated in v6.0.0 and removed in v7.0.0. We recommend using the Swiper.js library directly. The migration process is detailed below.
+:::
 
-This guide will go over how to get Swiper for Angular set up in your Ionic Framework application. It will also go over any migration information you may need to move from `ion-slides` to the official Swiper Angular integration.
+We recommend <a href="http://swiperjs.com/" target="_blank" rel="noopener noreferrer">Swiper.js</a> if you need a modern touch slider component. Swiper 9 introduced <a href="https://swiperjs.com/element" target="_blank" rel="noopener noreferrer">Swiper Element</a> as a replacement for its Angular component, so this guide will go over how to get Swiper Element set up in your Ionic Framework application. It will also go over any migration information you may need to move from `ion-slides` to Swiper Element.
 
 ## Getting Started
 
@@ -25,176 +27,143 @@ npm install @ionic/angular@latest
 Once that is done, install the Swiper dependency in your project:
 
 ```shell
-npm install swiper
+npm install swiper@latest
 ```
 
-Once that is done, we need to import the `SwiperModule` module. This should be done in your component's module file:
+Next, we need to add the `CUSTOM_ELEMENTS_SCHEMA`, which tells Angular that we will be using custom elements. This can be done in either `app.module.ts`, or the module file for the component where you will be using Swiper.
 
 ```typescript
-// home.module.ts
-import { SwiperModule } from 'swiper/angular';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
 @NgModule({
-  imports: [..., SwiperModule]
+  schemas: [..., CUSTOM_ELEMENTS_SCHEMA]
 });
 ...
 ```
 
+Finally, we need to call Swiper's `register` function to globally register Swiper's custom elements. This should only be done once, so place it in `app.component.ts`.
+
+```typescript
+import { register } from 'swiper/element/bundle';
+
+register();
+
+@Component({
+  ...
+})
+...
+```
+
+From there, we just have to replace `ion-slides` elements with `swiper-container` and `ion-slide` elements with `swiper-slide`. Note that these custom elements do not need to be imported, as calling `register` tells Angular about them on its own.
+
+```html
+<swiper-container>
+  <swiper-slide>Slide 1</swiper-slide>
+  <swiper-slide>Slide 2</swiper-slide>
+  <swiper-slide>Slide 3</swiper-slide>
+</swiper-container>
+```
+
+## Bundled vs. Core Versions
+
+By default, make sure you import the `register` function from `swiper/element/bundle`. This uses the bundled version of Swiper, which automatically includes all modules and stylesheets needed to run Swiper's various features.
+
+If you would like to use the Core version instead, which does not include additional modules automatically, see <a href="https://swiperjs.com/element#core-version-and-modules" target="_blank" rel="noopener noreferrer">https://swiperjs.com/element#core-version-and-modules</a>. The rest of this migration guide will assume you are using the bundled version.
+
 ## Swiping with Style
 
-Next, we need to import the base Swiper styles. We are also going to import the styles that Ionic provides which will let us customize the Swiper styles using the same CSS Variables that we used with `ion-slides`.
+To migrate over your CSS, first update your selectors to target the new custom elements instead:
 
-You can import these files in `global.scss`:
+| ion-slides Selector | Swiper Selector    |
+| ------------------- | ------------------ | 
+| `ion-slides`        | `swiper-container` |
+| `ion-slide`         | `swiper-slide`     |
 
-```scss
-// global.scss
-@import '~swiper/scss';
-@import '~@ionic/angular/css/ionic-swiper';
-```
+If you were using the CSS custom properties found on `ion-slides`, below is a list of corresponding properties used in Swiper.
 
-If you prefer to import these in the CSS file for your slides component, you will need to disable [ViewEncapsulation in Angular](https://angular.io/api/core/ViewEncapsulation), otherwise the styles will not apply:
+| `ion-slides` CSS property          | `swiper-container` CSS property             |
+| ---------------------------------- | ------------------------------------------- |
+| `--bullet-background`              | `--swiper-pagination-bullet-inactive-color` |
+| `--bullet-background-active`       | `--swiper-pagination-color`                 |
+| `--progress-bar-background`        | `--swiper-pagination-progressbar-bg-color`  |
+| `--progress-bar-background-active` | `--swiper-pagination-color`                 |
+| `--scroll-bar-background`          | `--swiper-scrollbar-bg-color`               |
+| `--scroll-bar-background-active`   | `--swiper-scrollbar-drag-bg-color`          |
 
-```typescript
-// home.page.ts
-import { Component, ViewEncapsulation } from '@angular/core';
+For additional custom CSS, because Swiper Element uses Shadow DOM encapsulation, styles will need to be injected into the Shadow DOM scope. See <a href="https://swiperjs.com/element#injecting-styles" target="_blank" rel="noopener noreferrer">https://swiperjs.com/element#injecting-styles</a> for instructions.
 
-@Component({
-  selector: 'app-home',
-  templateUrl: 'home.page.html',
-  styleUrls: ['home.page.scss'],
-  encapsulation: ViewEncapsulation.None
-})
-export class HomePage {
-  ...
+### Additional `ion-slides` Styles
+
+The `ion-slides` component had additional styling that helped create a native look and feel. These styles are **not** required to use Swiper.js with Ionic, but if you would like to maintain the look of `ion-slides` as closely as possible, add the following CSS to your `global.scss`:
+
+```css
+swiper-container {
+  --swiper-pagination-bullet-inactive-color: var(--ion-color-step-200, #cccccc);
+  --swiper-pagination-color: var(--ion-color-primary, #3880ff);
+  --swiper-pagination-progressbar-bg-color: rgba(var(--ion-text-color-rgb, 0, 0, 0), 0.25);
+  --swiper-scrollbar-bg-color: rgba(var(--ion-text-color-rgb, 0, 0, 0), 0.1);
+  --swiper-scrollbar-drag-bg-color: rgba(var(--ion-text-color-rgb, 0, 0, 0), 0.5);
+}
+
+swiper-slide {
+  display: flex;
+  position: relative;
+
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  height: 100%;
+
+  font-size: 18px;
+
+  text-align: center;
+  box-sizing: border-box;
+}
+
+swiper-slide img {
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  max-height: 100%;
 }
 ```
-
-```scss
-// home.page.scss
-@import '~swiper/scss';
-@import '~@ionic/angular/css/ionic-swiper';
-```
-
-### Updating Selectors
-
-Previously, we were able to target `ion-slides` and `ion-slide` to apply any custom styling. The contents of those style blocks remain the same, but we need to update the selectors. Below is a list of selector changes when going from `ion-slides` to Swiper Angular:
-
-| ion-slides Selector | Swiper Selector |
-| ------------------- | --------------- |
-| `ion-slides`        | `.swiper`       |
-| `ion-slide`         | `.swiper-slide` |
-
-### Vanilla CSS (Optional)
-
-For developers not using a CSS pre-processor, Swiper also provides the styles bundled together. It is important to note that this will import styles for all modules as well.
-
-```javascript
-// slides.component.css
-@import 'swiper/css';
-@import '@ionic/angular/css/ionic-swiper';
-```
-
-## Using Components
-
-Swiper Angular exports a `Swiper` component which is the equivalent of `ion-slides`. It also exports a `swiperSlide` directive which can be used on an `<ng-template>` for each slide:
-
-```html
-<!-- home.page.html -->
-<ion-content>
-  <swiper>
-    <ng-template swiperSlide>Slide 1</ng-template>
-    <ng-template swiperSlide>Slide 2</ng-template>
-    <ng-template swiperSlide>Slide 3</ng-template>
-  </swiper>
-</ion-content>
-```
-
-## Using Modules
-
-By default, Swiper for Angular does not import any additional modules. To use modules such as Navigation or Pagination, you need to import them first.
-
-`ion-slides` automatically included the Pagination, Scrollbar, Autoplay, Keyboard, and Zoom modules. This part of the guide will show you how to install these modules.
-
-To begin, we need to import the modules and provide them to Swiper:
-
-```typescript
-// home.page.ts
-import { Component } from '@angular/core';
-import SwiperCore, { Autoplay, Keyboard, Pagination, Scrollbar, Zoom } from 'swiper';
-
-SwiperCore.use([Autoplay, Keyboard, Pagination, Scrollbar, Zoom]);
-
-@Component({
-  selector: 'app-home',
-  templateUrl: 'home.page.html',
-  styleUrls: ['home.page.scss']
-})
-export class HomePage {
-  ...
-}
-```
-
-Next, we need to import the stylesheets for each module:
-
-```scss
-// global.scss
-@import '~swiper/scss';
-@import '~swiper/scss/autoplay';
-@import '~swiper/scss/keyboard';
-@import '~swiper/scss/pagination';
-@import '~swiper/scss/scrollbar';
-@import '~swiper/scss/zoom';
-@import '~@ionic/angular/css/ionic-swiper';
-```
-
-Finally, we can turn these features on by using the appropriate properties:
-
-```html
-<!-- home.page.html -->
-<ion-content>
-  <swiper [autoplay]="true" [keyboard]="true" [pagination]="true" [scrollbar]="true" [zoom]="true">
-    <ng-template swiperSlide>Slide 1</ng-template>
-    <ng-template swiperSlide>Slide 2</ng-template>
-    <ng-template swiperSlide>Slide 3</ng-template>
-  </swiper>
-</ion-content>
-```
-
-:::note
-See <a href="https://swiperjs.com/angular#usage" target="_blank" rel="noopener noreferrer">https://swiperjs.com/angular#usage</a> for a full list of modules.
-:::
 
 ## The IonicSlides Module
 
-With `ion-slides`, Ionic automatically customized dozens of Swiper properties. This resulted in an experience that felt smooth when swiping on mobile devices. We recommend using the `IonicSlides` module to ensure that these properties are also set when using Swiper directly.
+With `ion-slides`, Ionic automatically customized dozens of Swiper properties. This resulted in an experience that felt smooth when swiping on mobile devices. We recommend using the `IonicSlides` module to ensure that these properties are also set when using Swiper directly. However, using this module is **not** required to use Swiper.js in Ionic.
 
-We can install the `IonicSlides` module by importing it from `@ionic/angular` and passing it in as the last item in the array provided in `SwiperCore.use`:
+We can install the `IonicSlides` module by importing it from `@ionic/angular` and passing it to the `modules` property of `swiper-container` as an array:
 
-```javascript
+```typescript
 // home.page.ts
-import { Component } from '@angular/core';
-import SwiperCore, { Autoplay, Keyboard, Pagination, Scrollbar, Zoom } from 'swiper';
+
 import { IonicSlides } from '@ionic/angular';
 
-SwiperCore.use([Autoplay, Keyboard, Pagination, Scrollbar, Zoom, IonicSlides]);
-
 @Component({
-  selector: 'app-home',
-  templateUrl: 'home.page.html',
-  styleUrls: ['home.page.scss']
+  ...
 })
 export class HomePage {
-  ...
+  swiperModules = [IonicSlides];
 }
 ```
 
+```html
+<!-- home.page.html -->
+
+<swiper-container [modules]="swiperModules">
+  ...
+</swiper-container>
+```
+
 :::note
-The `IonicSlides` module must be the last module in the array. This will let it automatically customize the settings of modules such as Pagination, Scrollbar, Zoom, and more.
+If you are using the Core version of Swiper and have installed additional modules, ensure that `IonicSlides` is the last module in the array. This will let it automatically customize the settings of modules such as Pagination, Scrollbar, Zoom, and more.
 :::
 
 ## Properties
 
-Swiper options can be provided as individual properties directly on the `<swiper>` component or via the `config` property.
+Swiper options should be provided as individual properties directly on the `<swiper-container>` component.
 
 Let's say in an app with `ion-slides` we had the `slidesPerView` and `loop` options set:
 
@@ -206,42 +175,31 @@ Let's say in an app with `ion-slides` we had the `slidesPerView` and `loop` opti
 </ion-slides>
 ```
 
-To set these options as properties directly on `<swiper>` we would do the following:
+To set these options as properties directly on `<swiper-container>` we would do the following:
 
 ```html
-<swiper [slidesPerView]="3" [loop]="true">
-  <ng-template swiperSlide>Slide 1</ng-template>
-  <ng-template swiperSlide>Slide 2</ng-template>
-  <ng-template swiperSlide>Slide 3</ng-template>
-</swiper>
+<swiper-container [slidesPerView]="3" [loop]="true">
+  <swiper-slide>Slide 1</swiper-slide>
+  <swiper-slide>Slide 2</swiper-slide>
+  <swiper-slide>Slide 3</swiper-slide>
+</swiper-container>
 ```
 
-To set these options using the `config` object, we would do:
+Below is a full list of property changes when going from `ion-slides` to Swiper Element:
 
-```html
-<swiper [config]="{ slidesPerView: true, loop: true }">
-  <ng-template swiperSlide>Slide 1</ng-template>
-  <ng-template swiperSlide>Slide 3</ng-template>
-  <ng-template swiperSlide>Slide 3</ng-template>
-</swiper>
-```
-
-Below is a full list of property changes when going from `ion-slides` to Swiper Angular:
-
-| Name      | Notes                                                                                                                 |
-| --------- | --------------------------------------------------------------------------------------------------------------------- |
-| options   | Use the `config` property instead or set each option as a property directly on the `<swiper>` component.              |
-| mode      | For different styles based upon the mode, you can target the slides with `.ios .swiper` or `.md .swiper` in your CSS. |
-| pager     | Use the `pagination` property instead. Requires installation of the Pagination module.                                |
-| scrollbar | You can continue to use the `scrollbar` property, just be sure to install the Scrollbar module first.                 |
+| Name      | Notes                                                                                                                                   |
+| --------- | --------------------------------------------------------------------------------------------------------------------------------------- |
+| options   | Set each option as a property directly on the `<swiper-container>` component.                                                           |
+| mode      | For different styles based upon the mode, you can target the slides with `.ios swiper-container` or `.md swiper-container` in your CSS. |
+| pager     | Use the `pagination` property instead.                                                                                                  |
 
 :::note
-All properties available in Swiper Angular can be found at <a href="https://swiperjs.com/angular#swiper-component-props" target="_blank" rel="noopener noreferrer">https://swiperjs.com/angular#swiper-component-props</a>.
+All properties available in Swiper Element can be found at <a href="https://swiperjs.com/swiper-api#parameters" target="_blank" rel="noopener noreferrer">https://swiperjs.com/swiper-api#parameters</a>.
 :::
 
 ## Events
 
-Since the `Swiper` component is not provided by Ionic Framework, event names will not have an `ionSlide` prefix to them.
+Since the `swiper-container` component is not provided by Ionic Framework, event names will not have an `ionSlide` prefix to them. Additionally, all event names should be lowercase instead of camelCase.
 
 Let's say in an app with `ion-slides` we used the `ionSlideDidChange` event:
 
@@ -253,170 +211,110 @@ Let's say in an app with `ion-slides` we used the `ionSlideDidChange` event:
 </ion-slides>
 ```
 
-To migrate, we would change the name of the event to `slideChange`:
+To migrate, we would change the name of the event to `slidechange`:
 
 ```html
-<swiper (slideChange)="onSlideChange()">
-  <ng-template swiperSlide>Slide 1</ng-template>
-  <ng-template swiperSlide>Slide 2</ng-template>
-  <ng-template swiperSlide>Slide 3</ng-template>
-</swiper>
+<swiper-container (slidechange)="onSlideChange()">
+  <swiper-slide>Slide 1</swiper-slide>
+  <swiper-slide>Slide 2</swiper-slide>
+  <swiper-slide>Slide 3</swiper-slide>
+</swiper-container>
 ```
 
 Below is a full list of event name changes when going from `ion-slides` to Swiper Angular:
 
 | ion-slides Event        | Swiper Event               |
 | ----------------------- | -------------------------- |
-| ionSlideWillChange      | slideChangeTransitionStart |
-| ionSlideDidChange       | slideChangeTransitionEnd   |
-| ionSlideDoubleTap       | doubleTap                  |
-| ionSlideDrag            | sliderMove                 |
-| ionSlideNextStart       | slideNextTransitionStart   |
-| ionSlideNextEnd         | slideNextTransitionEnd     |
-| ionSlidePrevStart       | slidePrevTransitionStart   |
-| ionSlidePrevEnd         | slidePrevTransitionEnd     |
-| ionSlideReachStart      | reachBeginning             |
-| ionSlideReachEnd        | reachEnd                   |
+| ionSlideWillChange      | slidechangetransitionstart |
+| ionSlideDidChange       | slidechangetransitionend   |
+| ionSlideDoubleTap       | doubletap                  |
+| ionSlideDrag            | slidermove                 |
+| ionSlideNextStart       | slidenexttransitionstart   |
+| ionSlideNextEnd         | slidenexttransitionend     |
+| ionSlidePrevStart       | slideprevtransitionstart   |
+| ionSlidePrevEnd         | slideprevtransitionend     |
+| ionSlideReachStart      | reachbeginning             |
+| ionSlideReachEnd        | reachend                   |
 | ionSlideTap             | tap                        |
-| ionSlideTouchStart      | touchStart                 |
-| ionSlideTouchEnd        | touchEnd                   |
-| ionSlideTransitionStart | transitionStart            |
-| ionSlideTransitionEnd   | transitionEnd              |
+| ionSlideTouchStart      | touchstart                 |
+| ionSlideTouchEnd        | touchend                   |
+| ionSlideTransitionStart | transitionstart            |
+| ionSlideTransitionEnd   | transitionend              |
 | ionSlidesDidLoad        | init                       |
 
 :::note
-All events available in Swiper Angular can be found at <a href="https://swiperjs.com/angular#swiper-component-events" target="_blank" rel="noopener noreferrer">https://swiperjs.com/angular#swiper-component-events</a>.
+All events available in Swiper Element can be found at <a href="https://swiperjs.com/swiper-api#events" target="_blank" rel="noopener noreferrer">https://swiperjs.com/swiper-api#events</a>.
 :::
 
 ## Methods
 
-Most methods have been removed in favor of accessing the `<swiper>` props directly.
-
-Accessing these properties can be tricky as you want to access the properties on the Swiper instance itself, not your Angular component. To do this, we recommend getting a reference to the `Swiper` instance via `(swiper)`:
+Most methods have been removed in favor of directly accessing the properties of the Swiper instance. To access the Swiper instance, first get a reference to the `<swiper-container>` element (such as through `ViewChild`), then access its `swiper` prop:
 
 ```html
 <!-- slides.component.html -->
 
-<swiper (swiper)="setSwiperInstance($event)">
-  <ng-template swiperSlide>Slide 1</ng-template>
-  <ng-template swiperSlide>Slide 2</ng-template>
-  <ng-template swiperSlide>Slide 3</ng-template>
-</swiper>
+<swiper-container #swiper>
+  <swiper-slide>Slide 1</swiper-slide>
+  <swiper-slide>Slide 2</swiper-slide>
+  <swiper-slide>Slide 3</swiper-slide>
+</swiper-container>
 ```
 
-```javascript
+```typescript
 // slides.component.ts
-import { Component } from '@angular/core';
+
+import { ..., ElementRef, ViewChild } from '@angular/core';
 
 @Component({
-  selector: 'app-slides-example',
-  templateUrl: 'slides.component.html',
-  styleUrls: ['slides.component.scss']
+  ...
 })
 export class SlidesExample {
-  private slides: any;
+  @ViewChild('swiper')
+  swiperRef: ElementRef | undefined;
 
-  constructor() {}
-  setSwiperInstance(swiper: any) {
-    this.slides = swiper;
+  logActiveIndex() {
+    console.log(this.swiperRef?.nativeElement.swiper.activeIndex);
   }
 }
 ```
 
-From here, if you wanted to access a property on the Swiper instance you would access `this.slides`. For example, if you wanted to check the `isBeginning` property, you could do: `this.slides.isBeginning`. Make sure `this.slides` is defined first though!
-
-Below is a full list of method changes when going from `ion-slides` to Swiper Angular:
+Below is a full list of method changes when going from `ion-slides` to Swiper Element:
 
 | ion-slides Method  | Notes                                                                                |
 | ------------------ | ------------------------------------------------------------------------------------ |
 | getActiveIndex()   | Use the `activeIndex` property instead.                                              |
 | getPreviousIndex() | Use the `previousIndex` property instead.                                            |
-| getSwiper()        | Get a reference to the Swiper instance using `(swiper)`. See example above.          |
+| getSwiper()        | Get a reference to the Swiper instance using the `swiper` prop. See example above.   |
 | isBeginning()      | Use the `isBeginning` property instead.                                              |
 | isEnd()            | Use the `isEnd` property instead.                                                    |
-| length()           | Use the `slides` property instead. (i.e swiperRef.slides.length)                     |
+| length()           | Use the `slides` property instead. (i.e swiper.slides.length)                        |
 | lockSwipeToNext()  | Use the `allowSlidesNext` property instead.                                          |
 | lockSwipeToPrev()  | Use the `allowSlidePrev` property instead.                                           |
 | lockSwipes()       | Use the `allowSlideNext`, `allowSlidePrev`, and `allowTouchMove` properties instead. |
 | startAutoplay()    | Use the `autoplay` property instead.                                                 |
 | stopAutoplay()     | Use the `autoplay` property instead.                                                 |
 
+:::note
+All methods and properties available on the Swiper instance can be found at <a href="https://swiperjs.com/swiper-api#methods-and-properties" target="_blank" rel="noopener noreferrer">https://swiperjs.com/swiper-api#methods-and-properties</a>.
+:::
+
 ## Effects
 
-If you are using effects such as Cube or Fade, you can install them just like we did with the other modules. In this example, we will use the fade effect. To start, we will import the `EffectFade` module and register it using `SwiperCore.use`:
+Effects such as Cube or Fade can be used in Swiper Element with no additional imports, as long as you are using the bundled version of Swiper. For example, the below code will cause the slides to have a flip transition effect:
 
 ```html
-<!-- slides.component.html -->
-
-<swiper>
-  <ng-template swiperSlide>Slide 1</ng-template>
-  <ng-template swiperSlide>Slide 2</ng-template>
-  <ng-template swiperSlide>Slide 3</ng-template>
-</swiper>
-```
-
-```javascript
-// slides.component.ts
-import { Component } from '@angular/core';
-import SwiperCore, { EffectFade } from 'swiper';
-import { IonicSlides } from '@ionic/angular';
-
-SwiperCore.use([EffectFade, IonicSlides]);
-
-@Component({
-  selector: 'app-slides-example',
-  templateUrl: 'slides.component.html',
-  styleUrls: ['slides.component.scss'],
-})
-export class SlidesExample {
-  constructor() {}
-}
-```
-
-Next, we need to import the stylesheet associated with the effect:
-
-```scss
-// global.scss
-@import '~swiper/scss/effect-fade';
-```
-
-After that, we can activate it by setting the `effect` property on `swiper` to `"fade"`:
-
-```html
-<!-- slides.component.html -->
-
-<swiper effect="fade">
-  <ng-template swiperSlide>Slide 1</ng-template>
-  <ng-template swiperSlide>Slide 2</ng-template>
-  <ng-template swiperSlide>Slide 3</ng-template>
-</swiper>
-```
-
-```javascript
-// slides.component.ts
-import { Component } from '@angular/core';
-import SwiperCore, { EffectFade } from 'swiper';
-import { IonicSlides } from '@ionic/angular';
-
-SwiperCore.use([EffectFade, IonicSlides]);
-
-@Component({
-  selector: 'app-slides-example',
-  templateUrl: 'slides.component.html',
-  styleUrls: ['slides.component.scss'],
-})
-export class SlidesExample {
-  constructor() {}
-}
+<swiper-container effect="flip">
+  ...
+</swiper-container>
 ```
 
 :::note
-For more information on effects in Swiper, please see <a href="https://swiperjs.com/angular#effects" target="_blank" rel="noopener noreferrer">https://swiperjs.com/angular#effects</a>.
+For more information on effects in Swiper, please see <a href="https://swiperjs.com/swiper-api#fade-effect" target="_blank" rel="noopener noreferrer">https://swiperjs.com/swiper-api#fade-effect</a>.
 :::
 
 ## Wrap Up
 
-Now that you have Swiper installed, there is a whole set of new Swiper features for you to enjoy. We recommend starting with the <a href="https://swiperjs.com/angular" target="_blank" rel="noopener noreferrer">Swiper Angular Introduction</a> and then referencing <a href="https://swiperjs.com/swiper-api" target="_blank" rel="noopener noreferrer">the Swiper API docs</a>.
+Now that you have Swiper installed, there is a whole set of new Swiper features for you to enjoy. We recommend starting with the <a href="https://swiperjs.com/element" target="_blank" rel="noopener noreferrer">Swiper Element documentation</a> and then referencing <a href="https://swiperjs.com/swiper-api" target="_blank" rel="noopener noreferrer">the Swiper API docs</a>.
 
 ## FAQ
 
