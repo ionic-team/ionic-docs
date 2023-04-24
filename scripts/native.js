@@ -1,9 +1,6 @@
 const fs = require('fs');
 const fetch = require('node-fetch');
 
-const API_DIR = './docs/native/';
-
-
 // replace with latest once it's relased
 const tag = 'latest';
 
@@ -39,8 +36,9 @@ async function buildPluginApiDocs(pluginId) {
 
   const apiContent = createApiPage(pluginId, readme, pkgJson);
   const fileName = `${pluginId}.md`;
-  const filePath = `${API_DIR}${fileName}`
-  fs.writeFileSync(filePath, apiContent);
+
+  fs.writeFileSync(`docs/native/${fileName}`, apiContent);
+  fs.writeFileSync(`versioned_docs/version-v6/native/${fileName}`, apiContent);
 }
 
 function createApiPage(pluginId, readme, pkgJson) {
@@ -88,18 +86,15 @@ function toTitleCase(str) {
 }
 
 if (!String.prototype.replaceAll) {
-	String.prototype.replaceAll = function(str, newStr){
+  String.prototype.replaceAll = function (str, newStr) {
+    // If a regex pattern
+    if (Object.prototype.toString.call(str).toLowerCase() === '[object regexp]') {
+      return this.replace(str, newStr);
+    }
 
-		// If a regex pattern
-		if (Object.prototype.toString.call(str).toLowerCase() === '[object regexp]') {
-			return this.replace(str, newStr);
-		}
-
-		// If a string
-		return this.replace(new RegExp(str, 'g'), newStr);
-
-	};
+    // If a string
+    return this.replace(new RegExp(str, 'g'), newStr);
+  };
 }
 
 main();
-

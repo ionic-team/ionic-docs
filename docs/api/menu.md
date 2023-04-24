@@ -1,12 +1,12 @@
 ---
 title: "ion-menu"
 ---
-import Props from '@site/static/auto-generated/menu/props.md';
-import Events from '@site/static/auto-generated/menu/events.md';
-import Methods from '@site/static/auto-generated/menu/methods.md';
-import Parts from '@site/static/auto-generated/menu/parts.md';
-import CustomProps from '@site/static/auto-generated/menu/custom-props.md';
-import Slots from '@site/static/auto-generated/menu/slots.md';
+import Props from '@ionic-internal/component-api/v7/menu/props.md';
+import Events from '@ionic-internal/component-api/v7/menu/events.md';
+import Methods from '@ionic-internal/component-api/v7/menu/methods.md';
+import Parts from '@ionic-internal/component-api/v7/menu/parts.md';
+import CustomProps from '@ionic-internal/component-api/v7/menu/custom-props.md';
+import Slots from '@ionic-internal/component-api/v7/menu/slots.md';
 
 <head>
   <title>ion-menu: API Framework Docs for Types of Menu Components</title>
@@ -27,7 +27,7 @@ These can be controlled from the templates, or programmatically using the MenuCo
 
 ## Basic Usage
 
-import BasicUsage from '@site/static/usage/menu/basic/index.md';
+import BasicUsage from '@site/static/usage/v7/menu/basic/index.md';
 
 <BasicUsage />
 
@@ -35,7 +35,7 @@ import BasicUsage from '@site/static/usage/menu/basic/index.md';
 
 The [ion-menu-toggle](./menu-toggle) component can be used to create custom button that can open or close the menu.
 
-import MenuToggle from '@site/static/usage/menu/toggle/index.md';
+import MenuToggle from '@site/static/usage/v7/menu/toggle/index.md';
 
 <MenuToggle />
 
@@ -43,7 +43,7 @@ import MenuToggle from '@site/static/usage/menu/toggle/index.md';
 
 The `type` property can be used to customize how menus display in your application.
 
-import MenuType from '@site/static/usage/menu/type/index.md';
+import MenuType from '@site/static/usage/v7/menu/type/index.md';
 
 <MenuType />
 
@@ -51,7 +51,7 @@ import MenuType from '@site/static/usage/menu/type/index.md';
 
 ### CSS Shadow Parts
 
-import Theming from '@site/static/usage/menu/theming/index.md';
+import Theming from '@site/static/usage/v7/menu/theming/index.md';
 
 <Theming />
 

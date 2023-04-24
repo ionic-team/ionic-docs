@@ -71,16 +71,15 @@ html[data-theme='dark'] {
     display: none !important;
   }
 
+  .theme-doc-sidebar-item-category-level-1 > .menu__list {
+    /* removes indentation from first level categories */
+    margin: 0;
+  }
+
   .menu__list {
     display: block !important;
     transition: height 0.35s cubic-bezier(0.36, 0.66, 0.04, 1) 25ms !important;
     will-change: initial !important;
-
-    margin: 0;
-
-    li:last-of-type {
-      padding-block-end: 1.5rem;
-    }
 
     .menu__list {
       .menu__link--sublist {
@@ -102,6 +101,14 @@ html[data-theme='dark'] {
         }
       }
     }
+  }
+
+  .theme-doc-sidebar-item-category-level-1 > .menu__list > .menu__list-item:last-of-type {
+    padding-block-end: 1.5rem;
+  }
+
+  .theme-doc-sidebar-item-category-level-1:last-of-type {
+    margin-block-end: 1.5rem;
   }
 
   .menu__link {
