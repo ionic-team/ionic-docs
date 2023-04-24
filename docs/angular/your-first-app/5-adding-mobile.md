@@ -94,7 +94,7 @@ Next, head back over to the `loadSaved()` function we implemented for the web ea
 public async loadSaved() {
   // Retrieve cached photo array data
   const { value } = await Preferences.get({ key: this.PHOTO_STORAGE });
-  this.photos = (value ? JSON.parse(value) : []);
+  this.photos = (value ? JSON.parse(value) : []) as UserPhoto[];
 
   // Easiest way to detect when running on the web:
   // “when the platform is NOT hybrid, do this”

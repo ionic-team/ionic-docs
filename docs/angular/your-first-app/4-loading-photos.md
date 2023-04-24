@@ -36,7 +36,7 @@ With the photo array data saved, create a function called `loadSaved()` that can
 public async loadSaved() {
   // Retrieve cached photo array data
   const { value } = await Preferences.get({ key: this.PHOTO_STORAGE });
-  this.photos = (value ? JSON.parse(value) : []);
+  this.photos = (value ? JSON.parse(value) : []) as UserPhoto[];
 
   // more to come...
 }
