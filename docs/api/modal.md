@@ -127,6 +127,12 @@ import SheetBackgroundContentExample from '@site/static/usage/v7/modal/sheet/bac
 
 <SheetBackgroundContentExample />
 
+#### 自動の高さのシート
+
+import SheetAutoHeightExample from '@site/static/usage/v7/modal/sheet/auto-height/index.md';
+
+<SheetAutoHeightExample />
+
 #### ハンドルの動作
 
 シートモーダルでは、ブレークポイント間でシートをドラッグするために使用されるハンドルインジケータをオプションでレンダリングすることができます。 `handleBehavior` プロパティは、ハンドルがユーザーによってアクティブにされたときの振る舞いを設定するために使用されます。

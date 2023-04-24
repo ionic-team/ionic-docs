@@ -13,7 +13,9 @@ title: 次のステップ
 import DocsCard from '@components/global/DocsCard';
 import DocsCards from '@components/global/DocsCards';
 
-## 最初のアプリを作る
+import DeveloperExperts from '@components/page/intro/next/DeveloperExperts';
+
+## 最初のアプリをつくる
 
 Ionicアプリを構築する際に使用する予定のJavaScriptフレームワークを選択します。
 
@@ -30,3 +32,5 @@ Ionicアプリを構築する際に使用する予定のJavaScriptフレーム�
     <p>VueでIonicアプリを作るための基本を押さえた完全ガイドです</p>
   </DocsCard>
 </DocsCards>
+
+<DeveloperExperts />

@@ -7,14 +7,13 @@
       </ion-buttons>
       <ion-title>Modal</ion-title>
       <ion-buttons slot="end">
-        <ion-button @click="confirm">Confirm</ion-button>
+        <ion-button @click="confirm" :strong="true">Confirm</ion-button>
       </ion-buttons>
     </ion-toolbar>
   </ion-header>
   <ion-content class="ion-padding">
     <ion-item>
-      <ion-label position="stacked">Your name</ion-label>
-      <ion-input v-model="name" placeholder="Your name"></ion-input>
+      <ion-input label-placement="stacked" label="Enter your name" v-model="name" placeholder="Your name"></ion-input>
     </ion-item>
   </ion-content>
 </template>
@@ -28,7 +27,6 @@
     IonButtons,
     IonButton,
     IonItem,
-    IonLabel,
     IonInput,
     modalController,
   } from '@ionic/vue';
@@ -36,7 +34,7 @@
 
   export default defineComponent({
     name: 'Modal',
-    components: { IonContent, IonHeader, IonTitle, IonToolbar, IonButtons, IonButton, IonItem, IonLabel, IonInput },
+    components: { IonContent, IonHeader, IonTitle, IonToolbar, IonButtons, IonButton, IonItem, IonInput },
     methods: {
       cancel() {
         return modalController.dismiss(null, 'cancel');

@@ -24,16 +24,13 @@ npm install -D vite-plugin-pwa
 Next, update your `vite.config.js` or `vite.config.ts` file and add `vite-plugin-pwa`:
 
 ```javascript
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
-import { VitePWA } from 'vite-plugin-pwa'
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
+import { VitePWA } from 'vite-plugin-pwa';
 
 export default defineConfig({
-  plugins: [
-    react(),
-    VitePWA({ registerType: 'autoUpdate' })
-  ],
-})
+  plugins: [react(), VitePWA({ registerType: 'autoUpdate' })],
+});
 ```
 
 This minimal configuration allows your application to generate the Web Application Manifest and Service Worker on build.
@@ -85,21 +82,13 @@ serviceWorkerRegistration.register();
 Service Workersや多くのJavaScript API (位置情報など)のような機能は、セキュアなコンテキストでアプリをホストする必要があります。ホスティングサービスを介してアプリケーションを配備する場合は、Service Workersを最大限に活用するためにHTTPSが必要になることに注意してください。
 :::
 
-<<<<<<< HEAD
-## Service Workerの設定
-=======
-### Service Worker configuration
->>>>>>> 407f6697f8d56598ab081d99c5dbfd4bd1c3250c
+###  Service Workerの設定
 
 デフォルトでは、CRA/React Scriptには [WorkboxのWebpackプラグイン](https://developers.google.com/web/tools/workbox/modules/workbox-webpack-plugin) に基づいて事前設定されたService Workerセットアップが付属しています。これはキャッシュファースト戦略を利用しており、ネットワークが新しいバージョンのアプリを返しても、アプリはキャッシュからロードされます。
 
 CRA/React Scriptsの性質上、この設定はReact Scriptsの内部で行われるため、React Scriptsから抽出しない限りはカスタマイズできません。現在、Ionic CLIはReact Appのイジェクトをサポートしていないため、このアクションを実行する場合は、Ionic CLIの代わりにnpm/yearスクリプトを使用する必要があります。
 
-<<<<<<< HEAD
-## デプロイ
-=======
-### Deploying
->>>>>>> 407f6697f8d56598ab081d99c5dbfd4bd1c3250c
+### デプロイ
 
 #### Firebase
 
@@ -113,23 +102,41 @@ FirebaseホスティングはProgressive Web Appsに多くの利点を提供し�
 npm install -g firebase-tools
 ```
 
-Firebase CLIをインストールした状態で、Ionicプロジェクト内で `firebase init` を実行します。CLI上で様々な確認を行っていきます:
+:::note
+If it's the first time you use firebase-tools, login to your Google account with `firebase login` command.
+:::
 
-**"Which Firebase CLI features do you want to set up for this folder?"** "Hosting: Configure and deploy Firebase Hosting sites." を選択します。
+With the Firebase CLI installed, run `firebase init` within your Ionic project. The CLI prompts:
+
+**"Which Firebase CLI features do you want to set up for this folder?"** Choose "Hosting: Configure files for Firebase Hosting and (optionally) set up GitHub Action deploys".
+
+Create a new Firebase project or select an existing one.
 
 **"Select a default Firebase project for this directory:"** FirebaseのWebサイト上で作成したプロジェクトを選択します。
 
 **"What do you want to use as your public directory?"** "dist" を選択ください。
 
 :::note
-次の2つの質問に答えることで、ルーティング、ハードリロード、ディープリンクがアプリ内で動作することが保証されます:
+Answering this next question will ensure that routing, hard reload, and deep linking work in the app:
 :::
 
 **Configure as a single-page app (rewrite all urls to /index.html)?"** "Yes" を選択します.
 
 **"File dist/index.html already exists. Overwrite?"** "No" を選択します。
 
-`firebase.json` という設定ファイルが生成されるので、アプリの設定にあわせて変更します。
+**Set up automatic builds and deploys with Github?** Enter "Yes".
+
+**For which GitHub repository would you like to set up a Github Workflow?** Enter your project name.
+
+**Set up the workflow to run a build script before every deploy?** Enter "Yes".
+
+**What script should be run before every deploy?** Enter `npm ci && npm run build`.
+
+**Set up automatic deployment to your sites live channel when a PR is merged?** Enter "Yes".
+
+**What is the name of the get hooked branch associated with your sites live channel?** Enter your project's main branch name.
+
+A `firebase.json` config file is generated, configuring the app for deployment.
 
 最後に、キャッシング・ヘッダーが正しく設定されていることを確認する必要があります。これを行うには、 `headers` スニペットを `firebase.json` に追加します。完全な`firebase。json`は次のようになります:
 

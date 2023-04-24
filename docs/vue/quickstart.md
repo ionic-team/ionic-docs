@@ -48,15 +48,17 @@ cd myApp
 npm uninstall --save typescript @types/jest @typescript-eslint/eslint-plugin @typescript-eslint/parser @vue/cli-plugin-typescript @vue/eslint-config-typescript
 ```
 
-2. すべての `.ts` ファイルの拡張子を `.js` にします。blank Ionic Vueアプリでは、 `router/index.ts` と `main.ts` が該当します。
+2. すべての `.ts` ファイルの拡張子を `.js` にします。blank Ionic Vueアプリでは、 `src/router/index.ts` と `src/main.ts` が該当します。
 
 3. `@vue/typescript/recommended` と `@typescript-eslint/no-explicit-any: ‘off’, ` を `.eslintrc.js` から削除します。
 
-4. `router/index.js` から `Array<RouteRecordRaw>` を削除します。
+4. `src/router/index.js` から `Array<RouteRecordRaw>` を削除します。
 
-5. `shims-vue.d.ts`ファイルを削除します。
+5. `src/shims-vue.d.ts`ファイルを削除します。
 
-6. Vueコンポーネントにある `script` タグから `lang="ts"` を削除します。blank Ionic Vueアプリの場合、 `App.vue` と `views/HomePage.vue` が該当します。
+6. Vueコンポーネントにある `script` タグから `lang="ts"` を削除します。blank Ionic Vueアプリの場合、 `src/App.vue` と `src/views/HomePage.vue` が該当します。
+
+7. `tsconfig.json` ファイルを削除します
 
 
 ## Vueコンポーネントの確認

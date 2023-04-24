@@ -50,9 +50,9 @@ import PopoverExample from '@site/static/usage/v7/select/interfaces/popover/inde
 
 ## 複数選択
 
-`multiple` 属性を追加して選択すると、複数のOptionを選択できます。複数のOptionを選択できる場合は、checkbox形式のオプションのリストがAlertオーバーレイで表示されます。selectコンポーネントの値は、選択されたすべてのオプション値の配列を受け取ります。
+select に `multiple` 属性を追加することで、ユーザーは複数のオプションを選択することができるようになります。複数のオプションを選択できる場合、アラートまたはポップオーバーのオーバーレイは、チェックボックススタイルのオプションのリストをユーザーに提示します。select コンポーネントの値には、選択されたすべてのオプションの値の配列が格納されます。
 
-Note: `action-sheet` と `popover` インターフェイスでは、複数選択は動作しません
+注意： `action-sheet` インターフェースは、複数選択では動作しません。
 
 import MultipleSelectionExample from '@site/static/usage/v7/select/basic/multiple-selection/index.md';
 
