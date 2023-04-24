@@ -2,7 +2,7 @@
 sidebar_label: CLI Installation
 ---
 
-import AppWizard from '@components/page/intro/AppWizard';
+import AppWizard from '@components/page/intro/cli/AppWizard';
 
 # Installing Ionic
 
