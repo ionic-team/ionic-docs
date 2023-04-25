@@ -133,13 +133,16 @@ ${properties
     const isDeprecated = prop.deprecation !== undefined;
 
     const docs = isDeprecated ? `${prop.docs}\n_Deprecated_ ${prop.deprecation}` : prop.docs;
+    const description = formatMultiline(docs)
+    const formattedDescription = description
+      .replace('/docs/theming/basics', '/guide/theming/basics.md');
 
     return `
 ### ${prop.name} ${isDeprecated ? '(deprecated)' : ''}
 
 | | |
 | --- | --- |
-| **Description** | ${formatMultiline(docs)} |
+| **Description** | ${formattedDescription} |
 | **Attribute** | \`${prop.attr}\` |
 | **Type** | \`${prop.type.replace(/\|/g, '\uff5c')}\` |
 | **Default** | \`${prop.default}\` |
