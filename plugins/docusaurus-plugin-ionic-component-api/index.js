@@ -139,8 +139,7 @@ ${properties
       .replace('../alert', 'alert')
       .replace('../action-sheet', 'action-sheet')
       .replace('../popover', 'popover')
-      .replace('../picker', 'picker')
-      .replace('../list', 'list');
+      .replace('../picker', 'picker');
 
     return `
 ### ${prop.name} ${isDeprecated ? '(deprecated)' : ''}
@@ -175,6 +174,9 @@ function renderMethods({ methods }) {
     return 'No public methods available for this component.';
   }
 
+  const description = formatMultiline(method.docs)
+  const formattedDescription = description.replace('../list', 'list');
+
   // NOTE: replaces | with U+FF5C since MDX renders \| in tables incorrectly
   return `
 ${methods
@@ -184,7 +186,7 @@ ${methods
 
 | | |
 | --- | --- |
-| **Description** | ${formatMultiline(method.docs)} |
+| **Description** | ${formattedDescription} |
 | **Signature** | \`${method.signature.replace(/\|/g, '\uff5c')}\` |
 `
   )
