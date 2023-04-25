@@ -67,7 +67,7 @@ module.exports = {
         alt: 'Site Logo',
         src: `/logos/ionic-text-docs-dark.svg`,
         srcDark: `/logos/ionic-text-docs-light.svg`,
-        href: '/',
+        href: '/docs/guide',
         target: '_self',
         width: 139,
         height: 28,
