@@ -6,7 +6,7 @@ title: CSS Variables
   <title>CSS Variables | CSS Custom Properties for Variables & Components</title>
   <meta
     name="description"
-    content="Ionic components are built with CSS Variables for easy custom app properties. They allow a value to be stored in one place, then referenced in multiple places."
+    content="Ionic components are built with CSS Variables for easy custom app properties. They allow a value to be stored in one place, then referenced in multiple places."
   />
 </head>
 
@@ -91,7 +91,7 @@ const color = el.style.getPropertyValue('--charcoal');
 
 ### Component Variables
 
-Ionic provides variables that exist at the component level, such as `--background` and `--color`. For a list of the custom properties a component accepts, view the `CSS Custom Properties` section of its [API reference](../api.md). For example, see the [Button CSS Custom Properties](../api/button.md#css-custom-properties).
+Ionic provides variables that exist at the component level, such as `--background` and `--color`. For a list of the custom properties a component accepts, view the `CSS Custom Properties` section of its [API reference](/docs/api). For example, see the [Button CSS Custom Properties](/docs/api/button#css-custom-properties).
 
 ### Global Variables
 

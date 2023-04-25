@@ -67,7 +67,7 @@ Choose from over 100 beautiful, mobile-ready UI components, animations, and gest
 
 ## Familiar tooling
 
-Ionic React projects are just like React projects, leveraging [react-dom](https://reactjs.org/docs/react-dom.html) and with setup normally found in a [Create React App (CRA)](https://github.com/facebook/create-react-app) app. For [routing and navigation](/docs/react/navigation), React Router is used under the hood.
+Ionic React projects are just like React projects, leveraging [react-dom](https://reactjs.org/docs/react-dom.html) and with setup normally found in a [Create React App (CRA)](https://github.com/facebook/create-react-app) app. For [routing and navigation](./react/navigation.md), React Router is used under the hood.
 Compatible with React version 16.8 and above.
 
 </div>
@@ -128,7 +128,7 @@ $ ionic serve █
 
 <DocsCard
   header="Add Ionic to Existing React App"
-  href="/docs/react/adding-ionic-react-to-an-existing-react-project"
+  href="/docs/guide/react/adding-ionic-react-to-an-existing-react-project"
   icon="/icons/logo-react-icon.png"
 >
   <p>Use individual components or the complete app experience.</p>
