@@ -49,7 +49,7 @@ It is composed of three units — a grid, [row(s)](row.md) and [column(s)](col.m
 - Columns without a value for size will automatically have equal widths. For example, four instances of `size-sm` will each automatically be 25% wide for the small breakpoint and up.
 - Column widths are set as a percentage, so they’re always fluid and sized relative to their parent element.
 - Columns have padding between individual columns, however, the padding can be removed from the grid and
-  columns by adding the `ion-no-padding` class to the grid. See the [CSS Utilities](/docs/guide/theming/css-utilities) for more styles that can be applied to the grid.
+  columns by adding the `ion-no-padding` class to the grid. See the [CSS Utilities](/docs/guide/layout/css-utilities) for more styles that can be applied to the grid.
 - There are five grid tiers, one for each responsive breakpoint: all breakpoints (extra small), small, medium, large, and extra large.
 - Grid tiers are based on minimum widths, meaning they apply to their tier and all those larger than them
   (e.g., `size-sm="4"` applies to small, medium, large, and extra large devices).
@@ -336,7 +336,7 @@ You can view a live example of this in Angular [here](https://stackblitz.com/edi
 
 ### Vertical alignment
 
-All columns can be vertically aligned inside of a row by adding different classes to the row. For a list of available classes, see [css utilities](/docs/guide/theming/css-utilities#flex-container-properties).
+All columns can be vertically aligned inside of a row by adding different classes to the row. For a list of available classes, see [css utilities](/docs/guide/layout/css-utilities#flex-container-properties).
 
 ```html
 <ion-grid>
@@ -387,7 +387,7 @@ All columns can be vertically aligned inside of a row by adding different classe
 </ion-grid>
 ```
 
-Columns can also align themselves differently than other columns by adding the alignment class directly to the column. For a list of available classes, see [css utilities](/docs/guide/theming/css-utilities#flex-item-properties).
+Columns can also align themselves differently than other columns by adding the alignment class directly to the column. For a list of available classes, see [css utilities](/docs/guide/layout/css-utilities#flex-item-properties).
 
 ```html
 <ion-grid>
@@ -414,7 +414,7 @@ You can view a live example of this in Angular [here](https://stackblitz.com/edi
 
 ### Horizontal alignment
 
-All columns can be horizontally aligned inside of a row by adding different classes to the row. For a list of available classes, see [css utilities](/docs/guide/theming/css-utilities#flex-container-properties).
+All columns can be horizontally aligned inside of a row by adding different classes to the row. For a list of available classes, see [css utilities](/docs/guide/layout/css-utilities#flex-container-properties).
 
 ```html
 <ion-grid>
