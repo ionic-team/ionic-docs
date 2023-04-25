@@ -54,13 +54,13 @@ The below chart details the item slots and where it will place the element insid
 
 ### Text Alignment
 
-Items left align text and add an ellipsis when the text is wider than the item. See the [CSS Utilities Documentation](../layout/css-utilities.md) for classes that can be added to `<ion-item>` to transform the text.
+Items left align text and add an ellipsis when the text is wider than the item. See the [CSS Utilities Documentation](/docs/guide/layout/css-utilities) for classes that can be added to `<ion-item>` to transform the text.
 
 ## Input Highlight
 
 ### Highlight Height
 
-Items containing an input will highlight the bottom border of the input with a different color when focused, valid, or invalid. By default, `md` items have a highlight with a height set to `2px` and `ios` has no highlight (technically the height is set to `0`). The height can be changed using the `--highlight-height` CSS property. To turn off the highlight, set this variable to `0`. For more information on setting CSS properties, see the [theming documentation](/docs/guide/theming/css-variables.md).
+Items containing an input will highlight the bottom border of the input with a different color when focused, valid, or invalid. By default, `md` items have a highlight with a height set to `2px` and `ios` has no highlight (technically the height is set to `0`). The height can be changed using the `--highlight-height` CSS property. To turn off the highlight, set this variable to `0`. For more information on setting CSS properties, see the [theming documentation](/docs/guide/theming/css-variables).
 
 ### Highlight Color
 

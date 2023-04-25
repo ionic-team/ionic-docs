@@ -49,7 +49,7 @@ setupIonicReact({
 <TabItem value="vue">
 
 :::note
-See the [Vue Platform Documentation](/docs/guide/platform) for the types of platforms you can detect.
+See the [Vue Platform Documentation](/docs/guide/vue/platform) for the types of platforms you can detect.
 :::
 
 ```ts title="main.ts"
