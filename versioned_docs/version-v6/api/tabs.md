@@ -46,7 +46,7 @@ import Router from '@site/static/usage/v6/tabs/router/index.md';
 
 :::tip Best Practices
 
-Ionic has guides on best practices for routing patterns with tabs. Check out the guides for [Angular](/angular/navigation#working-with-tabs), [React](/react/navigation#working-with-tabs), and [Vue](/vue/navigation#working-with-tabs) for additional information.
+Ionic has guides on best practices for routing patterns with tabs. Check out the guides for [Angular](/docs/guide/angular/navigation#working-with-tabs), [React](/docs/guide/react/navigation#working-with-tabs), and [Vue](/docs/guide/vue/navigation#working-with-tabs) for additional information.
 
 :::
 
