@@ -36,7 +36,7 @@ This feature is not enabled by default on clickable items for the `md` mode, but
 --item-detail-push-show: true;
 ```
 
-See the [theming documentation](../theming/css-variables.md) for more information.
+See the [theming documentation](/docs/guide/theming/css-variables.md) for more information.
 
 -->
 
@@ -60,7 +60,7 @@ Items left align text and add an ellipsis when the text is wider than the item. 
 
 ### Highlight Height
 
-Items containing an input will highlight the bottom border of the input with a different color when focused, valid, or invalid. By default, `md` items have a highlight with a height set to `2px` and `ios` has no highlight (technically the height is set to `0`). The height can be changed using the `--highlight-height` CSS property. To turn off the highlight, set this variable to `0`. For more information on setting CSS properties, see the [theming documentation](../theming/css-variables.md).
+Items containing an input will highlight the bottom border of the input with a different color when focused, valid, or invalid. By default, `md` items have a highlight with a height set to `2px` and `ios` has no highlight (technically the height is set to `0`). The height can be changed using the `--highlight-height` CSS property. To turn off the highlight, set this variable to `0`. For more information on setting CSS properties, see the [theming documentation](/docs/guide/theming/css-variables.md).
 
 ### Highlight Color
 

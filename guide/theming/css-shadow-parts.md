@@ -119,7 +119,7 @@ We welcome recommendations for additional parts. Please create a <a href="https:
 
 ### Browser Support
 
-CSS Shadow Parts are supported in the recent versions of all of the major browsers. However, some of the older versions do not support shadow parts. Verify the <a href="https://caniuse.com/#feat=mdn-css_selectors_part" target="_blank" rel="noopener noreferrer">browser support</a> meets the requirements before implementing parts in an app. If browser support for older versions is required, we recommend continuing to use [CSS Variables](../theming/css-variables.md) for styling.
+CSS Shadow Parts are supported in the recent versions of all of the major browsers. However, some of the older versions do not support shadow parts. Verify the <a href="https://caniuse.com/#feat=mdn-css_selectors_part" target="_blank" rel="noopener noreferrer">browser support</a> meets the requirements before implementing parts in an app. If browser support for older versions is required, we recommend continuing to use [CSS Variables](/docs/guide/theming/css-variables.md) for styling.
 
 ### Vendor Prefixed Pseudo-Elements
 

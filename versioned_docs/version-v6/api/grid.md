@@ -42,7 +42,7 @@ The grid is a powerful mobile-first flexbox system for building custom layouts. 
 
 ## Default Breakpoints
 
-The default breakpoints for the grid and the corresponding properties are defined in the table below. Breakpoint values can not be customized at this time. For more information on why they can't be customized, see [Variables in Media Queries](../theming/advanced#variables-in-media-queries).
+The default breakpoints for the grid and the corresponding properties are defined in the table below. Breakpoint values can not be customized at this time. For more information on why they can't be customized, see [Variables in Media Queries](/docs/guide/theming/advanced#variables-in-media-queries).
 
 | Name | Value  | Width Property | Offset Property | Push Property | Pull Property | Description                          |
 | ---- | ------ | -------------- | --------------- | ------------- | ------------- | ------------------------------------ |
