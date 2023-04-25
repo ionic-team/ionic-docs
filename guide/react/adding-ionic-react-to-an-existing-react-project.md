@@ -131,7 +131,7 @@ Now you can setup Ionic pages like so:
 
 :::
 
-For more information on routing and navigation in Ionic React, see [here](/docs/react/navigation).
+For more information on routing and navigation in Ionic React, see [here](navigation.md).
 
 ### Customize the Theme
 
