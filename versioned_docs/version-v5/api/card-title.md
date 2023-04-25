@@ -5,32 +5,37 @@ sidebar_label: 'ion-card-title'
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
+import Props from '@site/static/auto-generated/v5/card-title/props.md';
+import Events from '@site/static/auto-generated/v5/card-title/events.md';
+import Methods from '@site/static/auto-generated/v5/card-title/methods.md';
+import Parts from '@site/static/auto-generated/v5/card-title/parts.md';
+import CustomProps from '@site/static/auto-generated/v5/card-title/custom-props.md';
+import Slots from '@site/static/auto-generated/v5/card-title/slots.md';
+
 # ion-card-title
 
 `ion-card-title` is a child component of `ion-card`
 
 ## Properties
 
-### color
+<Props />
 
-|                 |                                                                                                                                                                                                                                                                                  |
-| --------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Description** | The color to use from your application's color palette.<br />Default options are: `"primary"`, `"secondary"`, `"tertiary"`, `"success"`, `"warning"`, `"danger"`, `"light"`, `"medium"`, and `"dark"`.<br />For more information on colors, see [theming](../theming/basics.md). |
-| **Attribute**   | `color`                                                                                                                                                                                                                                                                          |
-| **Type**        | `string \| undefined`                                                                                                                                                                                                                                                            |
-| **Default**     | `undefined`                                                                                                                                                                                                                                                                      |
+## Events
 
-### mode
+<Events />
 
-|                 |                                                   |
-| --------------- | ------------------------------------------------- |
-| **Description** | The mode determines which platform styles to use. |
-| **Attribute**   | `mode`                                            |
-| **Type**        | `"ios" \| "md"`                                   |
-| **Default**     | `undefined`                                       |
+## Methods
+
+<Methods />
+
+## CSS Shadow Parts
+
+<Parts />
 
 ## CSS Custom Properties
 
-| Name      | Description             |
-| --------- | ----------------------- |
-| `--color` | Color of the card title |
+<CustomProps />
+
+## Slots
+
+<Slots />

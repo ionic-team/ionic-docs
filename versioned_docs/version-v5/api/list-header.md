@@ -5,6 +5,13 @@ sidebar_label: 'ion-list-header'
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
+import Props from '@site/static/auto-generated/v5/list-header/props.md';
+import Events from '@site/static/auto-generated/v5/list-header/events.md';
+import Methods from '@site/static/auto-generated/v5/list-header/methods.md';
+import Parts from '@site/static/auto-generated/v5/list-header/parts.md';
+import CustomProps from '@site/static/auto-generated/v5/list-header/custom-props.md';
+import Slots from '@site/static/auto-generated/v5/list-header/slots.md';
+
 # ion-list-header
 
 ListHeader a header component for a list.
@@ -393,40 +400,24 @@ export class ListHeaderExample {
 
 ## Properties
 
-### color
+<Props />
 
-|                 |                                                                                                                                                                                                                                                                                  |
-| --------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Description** | The color to use from your application's color palette.<br />Default options are: `"primary"`, `"secondary"`, `"tertiary"`, `"success"`, `"warning"`, `"danger"`, `"light"`, `"medium"`, and `"dark"`.<br />For more information on colors, see [theming](../theming/basics.md). |
-| **Attribute**   | `color`                                                                                                                                                                                                                                                                          |
-| **Type**        | `string \| undefined`                                                                                                                                                                                                                                                            |
-| **Default**     | `undefined`                                                                                                                                                                                                                                                                      |
+## Events
 
-### lines
+<Events />
 
-|                 |                                                               |
-| --------------- | ------------------------------------------------------------- |
-| **Description** | How the bottom border should be displayed on the list header. |
-| **Attribute**   | `lines`                                                       |
-| **Type**        | `"full" \| "inset" \| "none" \| undefined`                    |
-| **Default**     | `undefined`                                                   |
+## Methods
 
-### mode
+<Methods />
 
-|                 |                                                   |
-| --------------- | ------------------------------------------------- |
-| **Description** | The mode determines which platform styles to use. |
-| **Attribute**   | `mode`                                            |
-| **Type**        | `"ios" \| "md"`                                   |
-| **Default**     | `undefined`                                       |
+## CSS Shadow Parts
+
+<Parts />
 
 ## CSS Custom Properties
 
-| Name                   | Description                           |
-| ---------------------- | ------------------------------------- |
-| `--background`         | Background of the list header         |
-| `--border-color`       | Color of the list header border       |
-| `--border-style`       | Style of the list header border       |
-| `--border-width`       | Width of the list header border       |
-| `--color`              | Color of the list header text         |
-| `--inner-border-width` | Width of the inner list header border |
+<CustomProps />
+
+## Slots
+
+<Slots />

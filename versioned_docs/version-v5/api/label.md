@@ -7,6 +7,13 @@ sidebar_label: 'ion-label'
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
+import Props from '@site/static/auto-generated/v5/label/props.md';
+import Events from '@site/static/auto-generated/v5/label/events.md';
+import Methods from '@site/static/auto-generated/v5/label/methods.md';
+import Parts from '@site/static/auto-generated/v5/label/parts.md';
+import CustomProps from '@site/static/auto-generated/v5/label/custom-props.md';
+import Slots from '@site/static/auto-generated/v5/label/slots.md';
+
 # ion-label
 
 Label is a wrapper element that can be used in combination with `ion-item`, `ion-input`, `ion-toggle`, and more. The position of the label inside of an item can be inline, fixed, stacked, or floating.
@@ -351,35 +358,24 @@ export class LabelExample {
 
 ## Properties
 
-### color
+<Props />
 
-|                 |                                                                                                                                                                                                                                                                                  |
-| --------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Description** | The color to use from your application's color palette.<br />Default options are: `"primary"`, `"secondary"`, `"tertiary"`, `"success"`, `"warning"`, `"danger"`, `"light"`, `"medium"`, and `"dark"`.<br />For more information on colors, see [theming](../theming/basics.md). |
-| **Attribute**   | `color`                                                                                                                                                                                                                                                                          |
-| **Type**        | `string \| undefined`                                                                                                                                                                                                                                                            |
-| **Default**     | `undefined`                                                                                                                                                                                                                                                                      |
+## Events
 
-### mode
+<Events />
 
-|                 |                                                   |
-| --------------- | ------------------------------------------------- |
-| **Description** | The mode determines which platform styles to use. |
-| **Attribute**   | `mode`                                            |
-| **Type**        | `"ios" \| "md"`                                   |
-| **Default**     | `undefined`                                       |
+## Methods
 
-### position
+<Methods />
 
-|                 |                                                                         |
-| --------------- | ----------------------------------------------------------------------- |
-| **Description** | The position determines where and how the label behaves inside an item. |
-| **Attribute**   | `position`                                                              |
-| **Type**        | `"fixed" \| "floating" \| "stacked" \| undefined`                       |
-| **Default**     | `undefined`                                                             |
+## CSS Shadow Parts
+
+<Parts />
 
 ## CSS Custom Properties
 
-| Name      | Description        |
-| --------- | ------------------ |
-| `--color` | Color of the label |
+<CustomProps />
+
+## Slots
+
+<Slots />

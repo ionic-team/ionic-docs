@@ -9,6 +9,13 @@ demoSourceUrl: 'https://github.com/ionic-team/ionic-docs/tree/main/static/demos/
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
+import Props from '@site/static/auto-generated/v5/chip/props.md';
+import Events from '@site/static/auto-generated/v5/chip/events.md';
+import Methods from '@site/static/auto-generated/v5/chip/methods.md';
+import Parts from '@site/static/auto-generated/v5/chip/parts.md';
+import CustomProps from '@site/static/auto-generated/v5/chip/custom-props.md';
+import Slots from '@site/static/auto-generated/v5/chip/slots.md';
+
 # ion-chip
 
 Chips represent complex entities in small blocks, such as a contact. A chip can contain several different elements such as avatars, text, and icons.
@@ -327,45 +334,24 @@ export class ChipExample {
 
 ## Properties
 
-### color
+<Props />
 
-|                 |                                                                                                                                                                                                                                                                                  |
-| --------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Description** | The color to use from your application's color palette.<br />Default options are: `"primary"`, `"secondary"`, `"tertiary"`, `"success"`, `"warning"`, `"danger"`, `"light"`, `"medium"`, and `"dark"`.<br />For more information on colors, see [theming](../theming/basics.md). |
-| **Attribute**   | `color`                                                                                                                                                                                                                                                                          |
-| **Type**        | `string \| undefined`                                                                                                                                                                                                                                                            |
-| **Default**     | `undefined`                                                                                                                                                                                                                                                                      |
+## Events
 
-### disabled
+<Events />
 
-|                 |                                                    |
-| --------------- | -------------------------------------------------- |
-| **Description** | If `true`, the user cannot interact with the chip. |
-| **Attribute**   | `disabled`                                         |
-| **Type**        | `boolean`                                          |
-| **Default**     | `false`                                            |
+## Methods
 
-### mode
+<Methods />
 
-|                 |                                                   |
-| --------------- | ------------------------------------------------- |
-| **Description** | The mode determines which platform styles to use. |
-| **Attribute**   | `mode`                                            |
-| **Type**        | `"ios" \| "md"`                                   |
-| **Default**     | `undefined`                                       |
+## CSS Shadow Parts
 
-### outline
-
-|                 |                                  |
-| --------------- | -------------------------------- |
-| **Description** | Display an outline style button. |
-| **Attribute**   | `outline`                        |
-| **Type**        | `boolean`                        |
-| **Default**     | `false`                          |
+<Parts />
 
 ## CSS Custom Properties
 
-| Name           | Description            |
-| -------------- | ---------------------- |
-| `--background` | Background of the chip |
-| `--color`      | Color of the chip      |
+<CustomProps />
+
+## Slots
+
+<Slots />

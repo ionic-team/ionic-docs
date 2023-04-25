@@ -7,6 +7,13 @@ demoSourceUrl: 'https://github.com/ionic-team/ionic-docs/tree/main/static/demos/
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
+import Props from '@site/static/auto-generated/v5/radio/props.md';
+import Events from '@site/static/auto-generated/v5/radio/events.md';
+import Methods from '@site/static/auto-generated/v5/radio/methods.md';
+import Parts from '@site/static/auto-generated/v5/radio/parts.md';
+import CustomProps from '@site/static/auto-generated/v5/radio/custom-props.md';
+import Slots from '@site/static/auto-generated/v5/radio/slots.md';
+
 # ion-radio
 
 Radios should be used inside of an [`ion-radio-group`](radio-group.md). Pressing on a radio will check it. They can also be checked programmatically by setting the value property of the parent `ion-radio-group` to the value of the radio.
@@ -228,70 +235,24 @@ export class RadioExample {
 
 ## Properties
 
-### color
-
-|                 |                                                                                                                                                                                                                                                                                  |
-| --------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Description** | The color to use from your application's color palette.<br />Default options are: `"primary"`, `"secondary"`, `"tertiary"`, `"success"`, `"warning"`, `"danger"`, `"light"`, `"medium"`, and `"dark"`.<br />For more information on colors, see [theming](../theming/basics.md). |
-| **Attribute**   | `color`                                                                                                                                                                                                                                                                          |
-| **Type**        | `string \| undefined`                                                                                                                                                                                                                                                            |
-| **Default**     | `undefined`                                                                                                                                                                                                                                                                      |
-
-### disabled
-
-|                 |                                                     |
-| --------------- | --------------------------------------------------- |
-| **Description** | If `true`, the user cannot interact with the radio. |
-| **Attribute**   | `disabled`                                          |
-| **Type**        | `boolean`                                           |
-| **Default**     | `false`                                             |
-
-### mode
-
-|                 |                                                   |
-| --------------- | ------------------------------------------------- |
-| **Description** | The mode determines which platform styles to use. |
-| **Attribute**   | `mode`                                            |
-| **Type**        | `"ios" \| "md"`                                   |
-| **Default**     | `undefined`                                       |
-
-### name
-
-|                 |                                                                 |
-| --------------- | --------------------------------------------------------------- |
-| **Description** | The name of the control, which is submitted with the form data. |
-| **Attribute**   | `name`                                                          |
-| **Type**        | `string`                                                        |
-| **Default**     | `this.inputId`                                                  |
-
-### value
-
-|                 |                         |
-| --------------- | ----------------------- |
-| **Description** | the value of the radio. |
-| **Attribute**   | `value`                 |
-| **Type**        | `any`                   |
-| **Default**     | `undefined`             |
+<Props />
 
 ## Events
 
-| Name       | Description                                |
-| ---------- | ------------------------------------------ |
-| `ionBlur`  | Emitted when the radio button loses focus. |
-| `ionFocus` | Emitted when the radio button has focus.   |
+<Events />
+
+## Methods
+
+<Methods />
 
 ## CSS Shadow Parts
 
-| Name        | Description                                              |
-| ----------- | -------------------------------------------------------- |
-| `container` | The container for the radio mark.                        |
-| `mark`      | The checkmark or dot used to indicate the checked state. |
+<Parts />
 
 ## CSS Custom Properties
 
-| Name                    | Description                              |
-| ----------------------- | ---------------------------------------- |
-| `--border-radius`       | Border radius of the radio               |
-| `--color`               | Color of the radio                       |
-| `--color-checked`       | Color of the checked radio               |
-| `--inner-border-radius` | Border radius of the inner checked radio |
+<CustomProps />
+
+## Slots
+
+<Slots />

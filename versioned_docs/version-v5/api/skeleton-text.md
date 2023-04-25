@@ -9,6 +9,13 @@ demoSourceUrl: 'https://github.com/ionic-team/ionic-docs/tree/main/static/demos/
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
+import Props from '@site/static/auto-generated/v5/skeleton-text/props.md';
+import Events from '@site/static/auto-generated/v5/skeleton-text/events.md';
+import Methods from '@site/static/auto-generated/v5/skeleton-text/methods.md';
+import Parts from '@site/static/auto-generated/v5/skeleton-text/parts.md';
+import CustomProps from '@site/static/auto-generated/v5/skeleton-text/custom-props.md';
+import Slots from '@site/static/auto-generated/v5/skeleton-text/slots.md';
+
 # ion-skeleton-text
 
 Skeleton Text is a component for rendering placeholder content. The element will render a gray block at the specified width.
@@ -794,19 +801,24 @@ export class SkeletonTextExample {
 
 ## Properties
 
-### animated
+<Props />
 
-|                 |                                            |
-| --------------- | ------------------------------------------ |
-| **Description** | If `true`, the skeleton text will animate. |
-| **Attribute**   | `animated`                                 |
-| **Type**        | `boolean`                                  |
-| **Default**     | `false`                                    |
+## Events
+
+<Events />
+
+## Methods
+
+<Methods />
+
+## CSS Shadow Parts
+
+<Parts />
 
 ## CSS Custom Properties
 
-| Name               | Description                                   |
-| ------------------ | --------------------------------------------- |
-| `--background`     | Background of the skeleton text               |
-| `--background-rgb` | Background of the skeleton text in rgb format |
-| `--border-radius`  | Border radius of the skeleton text            |
+<CustomProps />
+
+## Slots
+
+<Slots />

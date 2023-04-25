@@ -7,6 +7,13 @@ demoSourceUrl: 'https://github.com/ionic-team/ionic-docs/tree/main/static/demos/
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
+import Props from '@site/static/auto-generated/v5/list/props.md';
+import Events from '@site/static/auto-generated/v5/list/events.md';
+import Methods from '@site/static/auto-generated/v5/list/methods.md';
+import Parts from '@site/static/auto-generated/v5/list/parts.md';
+import CustomProps from '@site/static/auto-generated/v5/list/custom-props.md';
+import Slots from '@site/static/auto-generated/v5/list/slots.md';
+
 # ion-list
 
 Lists are made up of multiple rows of items which can contain text, buttons, toggles,
@@ -420,38 +427,24 @@ export class ListExample {
 
 ## Properties
 
-### inset
+<Props />
 
-|                 |                                                                     |
-| --------------- | ------------------------------------------------------------------- |
-| **Description** | If `true`, the list will have margin around it and rounded corners. |
-| **Attribute**   | `inset`                                                             |
-| **Type**        | `boolean`                                                           |
-| **Default**     | `false`                                                             |
+## Events
 
-### lines
-
-|                 |                                                         |
-| --------------- | ------------------------------------------------------- |
-| **Description** | How the bottom border should be displayed on all items. |
-| **Attribute**   | `lines`                                                 |
-| **Type**        | `"full" \| "inset" \| "none" \| undefined`              |
-| **Default**     | `undefined`                                             |
-
-### mode
-
-|                 |                                                   |
-| --------------- | ------------------------------------------------- |
-| **Description** | The mode determines which platform styles to use. |
-| **Attribute**   | `mode`                                            |
-| **Type**        | `"ios" \| "md"`                                   |
-| **Default**     | `undefined`                                       |
+<Events />
 
 ## Methods
 
-### closeSlidingItems
+<Methods />
 
-|                 |                                                                                                                                                                     |
-| --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Description** | If `ion-item-sliding` are used inside the list, this method closes<br />any open sliding item.<br /><br />Returns `true` if an actual `ion-item-sliding` is closed. |
-| **Signature**   | `closeSlidingItems() => Promise<boolean>`                                                                                                                           |
+## CSS Shadow Parts
+
+<Parts />
+
+## CSS Custom Properties
+
+<CustomProps />
+
+## Slots
+
+<Slots />

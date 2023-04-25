@@ -7,6 +7,13 @@ demoSourceUrl: 'https://github.com/ionic-team/ionic-docs/tree/main/static/demos/
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
+import Props from '@site/static/auto-generated/v5/menu/props.md';
+import Events from '@site/static/auto-generated/v5/menu/events.md';
+import Methods from '@site/static/auto-generated/v5/menu/methods.md';
+import Parts from '@site/static/auto-generated/v5/menu/parts.md';
+import CustomProps from '@site/static/auto-generated/v5/menu/custom-props.md';
+import Slots from '@site/static/auto-generated/v5/menu/slots.md';
+
 # ion-menu
 
 The Menu component is a navigation drawer that slides in from the side of the current view.
@@ -494,137 +501,24 @@ export class MenuExample {
 
 ## Properties
 
-### contentId
-
-|                 |                                                                                                                                                                                                                                                            |
-| --------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Description** | The `id` of the main content. When using<br />a router this is typically `ion-router-outlet`.<br />When not using a router, this is typically<br />your main view's `ion-content`. This is not the<br />id of the `ion-content` inside of your `ion-menu`. |
-| **Attribute**   | `content-id`                                                                                                                                                                                                                                               |
-| **Type**        | `string \| undefined`                                                                                                                                                                                                                                      |
-| **Default**     | `undefined`                                                                                                                                                                                                                                                |
-
-### disabled
-
-|                 |                                  |
-| --------------- | -------------------------------- |
-| **Description** | If `true`, the menu is disabled. |
-| **Attribute**   | `disabled`                       |
-| **Type**        | `boolean`                        |
-| **Default**     | `false`                          |
-
-### maxEdgeStart
-
-|                 |                                                                                                                         |
-| --------------- | ----------------------------------------------------------------------------------------------------------------------- |
-| **Description** | The edge threshold for dragging the menu open.<br />If a drag/swipe happens over this value, the menu is not triggered. |
-| **Attribute**   | `max-edge-start`                                                                                                        |
-| **Type**        | `number`                                                                                                                |
-| **Default**     | `50`                                                                                                                    |
-
-### menuId
-
-|                 |                       |
-| --------------- | --------------------- |
-| **Description** | An id for the menu.   |
-| **Attribute**   | `menu-id`             |
-| **Type**        | `string \| undefined` |
-| **Default**     | `undefined`           |
-
-### side
-
-|                 |                                                   |
-| --------------- | ------------------------------------------------- |
-| **Description** | Which side of the view the menu should be placed. |
-| **Attribute**   | `side`                                            |
-| **Type**        | `"end" \| "start"`                                |
-| **Default**     | `'start'`                                         |
-
-### swipeGesture
-
-|                 |                                         |
-| --------------- | --------------------------------------- |
-| **Description** | If `true`, swiping the menu is enabled. |
-| **Attribute**   | `swipe-gesture`                         |
-| **Type**        | `boolean`                               |
-| **Default**     | `true`                                  |
-
-### type
-
-|                 |                                                                                          |
-| --------------- | ---------------------------------------------------------------------------------------- |
-| **Description** | The display type of the menu.<br />Available options: `"overlay"`, `"reveal"`, `"push"`. |
-| **Attribute**   | `type`                                                                                   |
-| **Type**        | `string \| undefined`                                                                    |
-| **Default**     | `undefined`                                                                              |
+<Props />
 
 ## Events
 
-| Name           | Description                                  |
-| -------------- | -------------------------------------------- |
-| `ionDidClose`  | Emitted when the menu is closed.             |
-| `ionDidOpen`   | Emitted when the menu is open.               |
-| `ionWillClose` | Emitted when the menu is about to be closed. |
-| `ionWillOpen`  | Emitted when the menu is about to be opened. |
+<Events />
 
 ## Methods
 
-### close
-
-|                 |                                                                                                |
-| --------------- | ---------------------------------------------------------------------------------------------- |
-| **Description** | Closes the menu. If the menu is already closed or it can't be closed,<br />it returns `false`. |
-| **Signature**   | `close(animated?: boolean) => Promise<boolean>`                                                |
-
-### isActive
-
-|                 |                                                                                                                                                                       |
-| --------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Description** | Returns `true` is the menu is active.<br /><br />A menu is active when it can be opened or closed, meaning it's enabled<br />and it's not part of a `ion-split-pane`. |
-| **Signature**   | `isActive() => Promise<boolean>`                                                                                                                                      |
-
-### isOpen
-
-|                 |                                     |
-| --------------- | ----------------------------------- |
-| **Description** | Returns `true` is the menu is open. |
-| **Signature**   | `isOpen() => Promise<boolean>`      |
-
-### open
-
-|                 |                                                                                             |
-| --------------- | ------------------------------------------------------------------------------------------- |
-| **Description** | Opens the menu. If the menu is already open or it can't be opened,<br />it returns `false`. |
-| **Signature**   | `open(animated?: boolean) => Promise<boolean>`                                              |
-
-### setOpen
-
-|                 |                                                                                                        |
-| --------------- | ------------------------------------------------------------------------------------------------------ |
-| **Description** | Opens or closes the button.<br />If the operation can't be completed successfully, it returns `false`. |
-| **Signature**   | `setOpen(shouldOpen: boolean, animated?: boolean) => Promise<boolean>`                                 |
-
-### toggle
-
-|                 |                                                                                                                                                                                   |
-| --------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Description** | Toggles the menu. If the menu is already open, it will try to close, otherwise it will try to open it.<br />If the operation can't be completed successfully, it returns `false`. |
-| **Signature**   | `toggle(animated?: boolean) => Promise<boolean>`                                                                                                                                  |
+<Methods />
 
 ## CSS Shadow Parts
 
-| Name        | Description                                                            |
-| ----------- | ---------------------------------------------------------------------- |
-| `backdrop`  | The backdrop that appears over the main content when the menu is open. |
-| `container` | The container for the menu content.                                    |
+<Parts />
 
 ## CSS Custom Properties
 
-| Name           | Description                |
-| -------------- | -------------------------- |
-| `--background` | Background of the menu     |
-| `--height`     | Height of the menu         |
-| `--max-height` | Maximum height of the menu |
-| `--max-width`  | Maximum width of the menu  |
-| `--min-height` | Minimum height of the menu |
-| `--min-width`  | Minimum width of the menu  |
-| `--width`      | Width of the menu          |
+<CustomProps />
+
+## Slots
+
+<Slots />

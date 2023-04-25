@@ -7,6 +7,13 @@ sidebar_label: 'ion-header'
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
+import Props from '@site/static/auto-generated/v5/header/props.md';
+import Events from '@site/static/auto-generated/v5/header/events.md';
+import Methods from '@site/static/auto-generated/v5/header/methods.md';
+import Parts from '@site/static/auto-generated/v5/header/parts.md';
+import CustomProps from '@site/static/auto-generated/v5/header/custom-props.md';
+import Slots from '@site/static/auto-generated/v5/header/slots.md';
+
 # ion-header
 
 Header is a parent component that holds the toolbar component.
@@ -227,29 +234,24 @@ export class HeaderExample {
 
 ## Properties
 
-### collapse
+<Props />
 
-|                 |                                                                                                                                                                                                                                       |
-| --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Description** | Describes the scroll effect that will be applied to the header<br />`condense` only applies in iOS mode.<br /><br />Typically used for [Collapsible Large Titles](https://ionicframework.com/docs/api/title#collapsible-large-titles) |
-| **Attribute**   | `collapse`                                                                                                                                                                                                                            |
-| **Type**        | `"condense" \| undefined`                                                                                                                                                                                                             |
-| **Default**     | `undefined`                                                                                                                                                                                                                           |
+## Events
 
-### mode
+<Events />
 
-|                 |                                                   |
-| --------------- | ------------------------------------------------- |
-| **Description** | The mode determines which platform styles to use. |
-| **Attribute**   | `mode`                                            |
-| **Type**        | `"ios" \| "md"`                                   |
-| **Default**     | `undefined`                                       |
+## Methods
 
-### translucent
+<Methods />
 
-|                 |                                                                                                                                                                                                                                                                                                                                                                |
-| --------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Description** | If `true`, the header will be translucent.<br />Only applies when the mode is `"ios"` and the device supports<br />[`backdrop-filter`](https://developer.mozilla.org/en-US/docs/Web/CSS/backdrop-filter#Browser_compatibility).<br /><br />Note: In order to scroll content behind the header, the `fullscreen`<br />attribute needs to be set on the content. |
-| **Attribute**   | `translucent`                                                                                                                                                                                                                                                                                                                                                  |
-| **Type**        | `boolean`                                                                                                                                                                                                                                                                                                                                                      |
-| **Default**     | `false`                                                                                                                                                                                                                                                                                                                                                        |
+## CSS Shadow Parts
+
+<Parts />
+
+## CSS Custom Properties
+
+<CustomProps />
+
+## Slots
+
+<Slots />

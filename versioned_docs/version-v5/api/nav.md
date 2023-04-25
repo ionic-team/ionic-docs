@@ -9,6 +9,13 @@ demoSourceUrl: 'https://github.com/ionic-team/ionic-docs/tree/main/static/demos/
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
+import Props from '@site/static/auto-generated/v5/nav/props.md';
+import Events from '@site/static/auto-generated/v5/nav/events.md';
+import Methods from '@site/static/auto-generated/v5/nav/methods.md';
+import Parts from '@site/static/auto-generated/v5/nav/parts.md';
+import CustomProps from '@site/static/auto-generated/v5/nav/custom-props.md';
+import Slots from '@site/static/auto-generated/v5/nav/slots.md';
+
 # ion-nav
 
 Nav is a standalone component for loading arbitrary components and pushing new components on to the stack.
@@ -17,147 +24,24 @@ Unlike Router Outlet, Nav is not tied to a particular router. This means that if
 
 ## Properties
 
-### animated
-
-|                 |                                                                 |
-| --------------- | --------------------------------------------------------------- |
-| **Description** | If `true`, the nav should animate the transition of components. |
-| **Attribute**   | `animated`                                                      |
-| **Type**        | `boolean`                                                       |
-| **Default**     | `true`                                                          |
-
-### animation
-
-|                 |                                                                                                                                                                                                     |
-| --------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Description** | By default `ion-nav` animates transition between pages based in the mode (ios or material design).<br />However, this property allows to create custom transition using `AnimateBuilder` functions. |
-| **Attribute**   | `undefined`                                                                                                                                                                                         |
-| **Type**        | `((baseEl: any, opts?: any) => Animation) \| undefined`                                                                                                                                             |
-| **Default**     | `undefined`                                                                                                                                                                                         |
-
-### root
-
-|                 |                                                                            |
-| --------------- | -------------------------------------------------------------------------- |
-| **Description** | Root NavComponent to load                                                  |
-| **Attribute**   | `root`                                                                     |
-| **Type**        | `Function \| HTMLElement \| ViewController \| null \| string \| undefined` |
-| **Default**     | `undefined`                                                                |
-
-### rootParams
-
-|                 |                                        |
-| --------------- | -------------------------------------- |
-| **Description** | Any parameters for the root component  |
-| **Attribute**   | `undefined`                            |
-| **Type**        | `undefined \| { [key: string]: any; }` |
-| **Default**     | `undefined`                            |
-
-### swipeGesture
-
-|                 |                                                         |
-| --------------- | ------------------------------------------------------- |
-| **Description** | If the nav component should allow for swipe-to-go-back. |
-| **Attribute**   | `swipe-gesture`                                         |
-| **Type**        | `boolean \| undefined`                                  |
-| **Default**     | `undefined`                                             |
+<Props />
 
 ## Events
 
-| Name               | Description                                     |
-| ------------------ | ----------------------------------------------- |
-| `ionNavDidChange`  | Event fired when the nav has changed components |
-| `ionNavWillChange` | Event fired when the nav will change components |
+<Events />
 
 ## Methods
 
-### canGoBack
+<Methods />
 
-|                 |                                                                     |
-| --------------- | ------------------------------------------------------------------- |
-| **Description** | Returns `true` if the current view can go back.                     |
-| **Signature**   | `canGoBack(view?: ViewController \| undefined) => Promise<boolean>` |
+## CSS Shadow Parts
 
-### getActive
+<Parts />
 
-|                 |                                                       |
-| --------------- | ----------------------------------------------------- |
-| **Description** | Get the active view.                                  |
-| **Signature**   | `getActive() => Promise<ViewController \| undefined>` |
+## CSS Custom Properties
 
-### getByIndex
+<CustomProps />
 
-|                 |                                                                     |
-| --------------- | ------------------------------------------------------------------- |
-| **Description** | Get the view at the specified index.                                |
-| **Signature**   | `getByIndex(index: number) => Promise<ViewController \| undefined>` |
+## Slots
 
-### getPrevious
-
-|                 |                                                                                           |
-| --------------- | ----------------------------------------------------------------------------------------- |
-| **Description** | Get the previous view.                                                                    |
-| **Signature**   | `getPrevious(view?: ViewController \| undefined) => Promise<ViewController \| undefined>` |
-
-### insert
-
-|                 |                                                                                                                                                                                                                                |
-| --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **Description** | Inserts a component into the navigation stack at the specified index.<br />This is useful to add a component at any point in the navigation stack.                                                                             |
-| **Signature**   | `insert<T extends NavComponent>(insertIndex: number, component: T, componentProps?: ComponentProps<T> \| null \| undefined, opts?: NavOptions \| null \| undefined, done?: TransitionDoneFn \| undefined) => Promise<boolean>` |
-
-### insertPages
-
-|                 |                                                                                                                                                                                                          |
-| --------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Description** | Inserts an array of components into the navigation stack at the specified index.<br />The last component in the array will become instantiated as a view, and animate<br />in to become the active view. |
-| **Signature**   | `insertPages(insertIndex: number, insertComponents: NavComponent[] \| NavComponentWithProps[], opts?: NavOptions \| null \| undefined, done?: TransitionDoneFn \| undefined) => Promise<boolean>`        |
-
-### pop
-
-|                 |                                                                                                         |
-| --------------- | ------------------------------------------------------------------------------------------------------- |
-| **Description** | Pop a component off of the navigation stack. Navigates back from the current<br />component.            |
-| **Signature**   | `pop(opts?: NavOptions \| null \| undefined, done?: TransitionDoneFn \| undefined) => Promise<boolean>` |
-
-### popTo
-
-|                 |                                                                                                                                                      |
-| --------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Description** | Pop to a specific index in the navigation stack.                                                                                                     |
-| **Signature**   | `popTo(indexOrViewCtrl: number \| ViewController, opts?: NavOptions \| null \| undefined, done?: TransitionDoneFn \| undefined) => Promise<boolean>` |
-
-### popToRoot
-
-|                 |                                                                                                               |
-| --------------- | ------------------------------------------------------------------------------------------------------------- |
-| **Description** | Navigate back to the root of the stack, no matter how far back that is.                                       |
-| **Signature**   | `popToRoot(opts?: NavOptions \| null \| undefined, done?: TransitionDoneFn \| undefined) => Promise<boolean>` |
-
-### push
-
-|                 |                                                                                                                                                                                                         |
-| --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Description** | Push a new component onto the current navigation stack. Pass any additional<br />information along as an object. This additional information is accessible<br />through NavParams.                      |
-| **Signature**   | `push<T extends NavComponent>(component: T, componentProps?: ComponentProps<T> \| null \| undefined, opts?: NavOptions \| null \| undefined, done?: TransitionDoneFn \| undefined) => Promise<boolean>` |
-
-### removeIndex
-
-|                 |                                                                                                                                                           |
-| --------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Description** | Removes a component from the navigation stack at the specified index.                                                                                     |
-| **Signature**   | `removeIndex(startIndex: number, removeCount?: number, opts?: NavOptions \| null \| undefined, done?: TransitionDoneFn \| undefined) => Promise<boolean>` |
-
-### setPages
-
-|                 |                                                                                                                                                                                                                                                                                         |
-| --------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Description** | Set the views of the current navigation stack and navigate to the last view.<br />By default animations are disabled, but they can be enabled by passing options<br />to the navigation controller. Navigation parameters can also be passed to the<br />individual pages in the array. |
-| **Signature**   | `setPages(views: NavComponent[] \| NavComponentWithProps[], opts?: NavOptions \| null \| undefined, done?: TransitionDoneFn \| undefined) => Promise<boolean>`                                                                                                                          |
-
-### setRoot
-
-|                 |                                                                                                                                                                                                            |
-| --------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Description** | Set the root for the current navigation stack to a component.                                                                                                                                              |
-| **Signature**   | `setRoot<T extends NavComponent>(component: T, componentProps?: ComponentProps<T> \| null \| undefined, opts?: NavOptions \| null \| undefined, done?: TransitionDoneFn \| undefined) => Promise<boolean>` |
+<Slots />

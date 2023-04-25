@@ -7,6 +7,13 @@ demoSourceUrl: 'https://github.com/ionic-team/ionic-docs/tree/main/static/demos/
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
+import Props from '@site/static/auto-generated/v5/item/props.md';
+import Events from '@site/static/auto-generated/v5/item/events.md';
+import Methods from '@site/static/auto-generated/v5/item/methods.md';
+import Parts from '@site/static/auto-generated/v5/item/parts.md';
+import CustomProps from '@site/static/auto-generated/v5/item/custom-props.md';
+import Slots from '@site/static/auto-generated/v5/item/slots.md';
+
 # ion-item
 
 Items are elements that can contain text, icons, avatars, images, inputs, and any other native or custom elements. Generally they are placed in a list with other items. Items can be swiped, deleted, reordered, edited, and more.
@@ -1686,183 +1693,24 @@ export class ItemExample {
 
 ## Properties
 
-### button
+<Props />
 
-|                 |                                                                         |
-| --------------- | ----------------------------------------------------------------------- |
-| **Description** | If `true`, a button tag will be rendered and the item will be tappable. |
-| **Attribute**   | `button`                                                                |
-| **Type**        | `boolean`                                                               |
-| **Default**     | `false`                                                                 |
+## Events
 
-### color
+<Events />
 
-|                 |                                                                                                                                                                                                                                                                                  |
-| --------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Description** | The color to use from your application's color palette.<br />Default options are: `"primary"`, `"secondary"`, `"tertiary"`, `"success"`, `"warning"`, `"danger"`, `"light"`, `"medium"`, and `"dark"`.<br />For more information on colors, see [theming](../theming/basics.md). |
-| **Attribute**   | `color`                                                                                                                                                                                                                                                                          |
-| **Type**        | `string \| undefined`                                                                                                                                                                                                                                                            |
-| **Default**     | `undefined`                                                                                                                                                                                                                                                                      |
+## Methods
 
-### detail
-
-|                 |                                                                                                                                                       |
-| --------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Description** | If `true`, a detail arrow will appear on the item. Defaults to `false` unless the `mode`<br />is `ios` and an `href` or `button` property is present. |
-| **Attribute**   | `detail`                                                                                                                                              |
-| **Type**        | `boolean \| undefined`                                                                                                                                |
-| **Default**     | `undefined`                                                                                                                                           |
-
-### detailIcon
-
-|                 |                                                 |
-| --------------- | ----------------------------------------------- |
-| **Description** | The icon to use when `detail` is set to `true`. |
-| **Attribute**   | `detail-icon`                                   |
-| **Type**        | `string`                                        |
-| **Default**     | `'chevron-forward'`                             |
-
-### disabled
-
-|                 |                                                    |
-| --------------- | -------------------------------------------------- |
-| **Description** | If `true`, the user cannot interact with the item. |
-| **Attribute**   | `disabled`                                         |
-| **Type**        | `boolean`                                          |
-| **Default**     | `false`                                            |
-
-### download
-
-|                 |                                                                                                                                                                                                                                                                                                          |
-| --------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Description** | This attribute instructs browsers to download a URL instead of navigating to<br />it, so the user will be prompted to save it as a local file. If the attribute<br />has a value, it is used as the pre-filled file name in the Save prompt<br />(the user can still change the file name if they want). |
-| **Attribute**   | `download`                                                                                                                                                                                                                                                                                               |
-| **Type**        | `string \| undefined`                                                                                                                                                                                                                                                                                    |
-| **Default**     | `undefined`                                                                                                                                                                                                                                                                                              |
-
-### href
-
-|                 |                                                                                                                              |
-| --------------- | ---------------------------------------------------------------------------------------------------------------------------- |
-| **Description** | Contains a URL or a URL fragment that the hyperlink points to.<br />If this property is set, an anchor tag will be rendered. |
-| **Attribute**   | `href`                                                                                                                       |
-| **Type**        | `string \| undefined`                                                                                                        |
-| **Default**     | `undefined`                                                                                                                  |
-
-### lines
-
-|                 |                                                        |
-| --------------- | ------------------------------------------------------ |
-| **Description** | How the bottom border should be displayed on the item. |
-| **Attribute**   | `lines`                                                |
-| **Type**        | `"full" \| "inset" \| "none" \| undefined`             |
-| **Default**     | `undefined`                                            |
-
-### mode
-
-|                 |                                                   |
-| --------------- | ------------------------------------------------- |
-| **Description** | The mode determines which platform styles to use. |
-| **Attribute**   | `mode`                                            |
-| **Type**        | `"ios" \| "md"`                                   |
-| **Default**     | `undefined`                                       |
-
-### rel
-
-|                 |                                                                                                                                                                                             |
-| --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Description** | Specifies the relationship of the target object to the link object.<br />The value is a space-separated list of [link types](https://developer.mozilla.org/en-US/docs/Web/HTML/Link_types). |
-| **Attribute**   | `rel`                                                                                                                                                                                       |
-| **Type**        | `string \| undefined`                                                                                                                                                                       |
-| **Default**     | `undefined`                                                                                                                                                                                 |
-
-### routerAnimation
-
-|                 |                                                                                                               |
-| --------------- | ------------------------------------------------------------------------------------------------------------- |
-| **Description** | When using a router, it specifies the transition animation when navigating to<br />another page using `href`. |
-| **Attribute**   | `undefined`                                                                                                   |
-| **Type**        | `((baseEl: any, opts?: any) => Animation) \| undefined`                                                       |
-| **Default**     | `undefined`                                                                                                   |
-
-### routerDirection
-
-|                 |                                                                                                               |
-| --------------- | ------------------------------------------------------------------------------------------------------------- |
-| **Description** | When using a router, it specifies the transition direction when navigating to<br />another page using `href`. |
-| **Attribute**   | `router-direction`                                                                                            |
-| **Type**        | `"back" \| "forward" \| "root"`                                                                               |
-| **Default**     | `'forward'`                                                                                                   |
-
-### target
-
-|                 |                                                                                                                                                               |
-| --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Description** | Specifies where to display the linked URL.<br />Only applies when an `href` is provided.<br />Special keywords: `"_blank"`, `"_self"`, `"_parent"`, `"_top"`. |
-| **Attribute**   | `target`                                                                                                                                                      |
-| **Type**        | `string \| undefined`                                                                                                                                         |
-| **Default**     | `undefined`                                                                                                                                                   |
-
-### type
-
-|                 |                                                                                      |
-| --------------- | ------------------------------------------------------------------------------------ |
-| **Description** | The type of the button. Only used when an `onclick` or `button` property is present. |
-| **Attribute**   | `type`                                                                               |
-| **Type**        | `"button" \| "reset" \| "submit"`                                                    |
-| **Default**     | `'button'`                                                                           |
+<Methods />
 
 ## CSS Shadow Parts
 
-| Name          | Description                                                                  |
-| ------------- | ---------------------------------------------------------------------------- |
-| `detail-icon` | The chevron icon for the item. Only applies when `detail="true"`.            |
-| `native`      | The native HTML button, anchor or div element that wraps all child elements. |
+<Parts />
 
 ## CSS Custom Properties
 
-| Name                             | Description                                                                                                   |
-| -------------------------------- | ------------------------------------------------------------------------------------------------------------- |
-| `--background`                   | Background of the item                                                                                        |
-| `--background-activated`         | Background of the item when pressed. Note: setting this will interfere with the Material Design ripple.       |
-| `--background-activated-opacity` | Opacity of the item background when pressed                                                                   |
-| `--background-focused`           | Background of the item when focused with the tab key                                                          |
-| `--background-focused-opacity`   | Opacity of the item background when focused with the tab key                                                  |
-| `--background-hover`             | Background of the item on hover                                                                               |
-| `--background-hover-opacity`     | Opacity of the background of the item on hover                                                                |
-| `--border-color`                 | Color of the item border                                                                                      |
-| `--border-radius`                | Radius of the item border                                                                                     |
-| `--border-style`                 | Style of the item border                                                                                      |
-| `--border-width`                 | Width of the item border                                                                                      |
-| `--color`                        | Color of the item                                                                                             |
-| `--color-activated`              | Color of the item when pressed                                                                                |
-| `--color-focused`                | Color of the item when focused with the tab key                                                               |
-| `--color-hover`                  | Color of the item on hover                                                                                    |
-| `--detail-icon-color`            | Color of the item detail icon                                                                                 |
-| `--detail-icon-font-size`        | Font size of the item detail icon                                                                             |
-| `--detail-icon-opacity`          | Opacity of the item detail icon                                                                               |
-| `--highlight-color-focused`      | The color of the highlight on the item when focused                                                           |
-| `--highlight-color-invalid`      | The color of the highlight on the item when invalid                                                           |
-| `--highlight-color-valid`        | The color of the highlight on the item when valid                                                             |
-| `--highlight-height`             | The height of the highlight on the item                                                                       |
-| `--inner-border-width`           | Width of the item inner border                                                                                |
-| `--inner-box-shadow`             | Box shadow of the item inner                                                                                  |
-| `--inner-padding-bottom`         | Bottom padding of the item inner                                                                              |
-| `--inner-padding-end`            | Right padding if direction is left-to-right, and left padding if direction is right-to-left of the item inner |
-| `--inner-padding-start`          | Left padding if direction is left-to-right, and right padding if direction is right-to-left of the item inner |
-| `--inner-padding-top`            | Top padding of the item inner                                                                                 |
-| `--min-height`                   | Minimum height of the item                                                                                    |
-| `--padding-bottom`               | Bottom padding of the item                                                                                    |
-| `--padding-end`                  | Right padding if direction is left-to-right, and left padding if direction is right-to-left of the item       |
-| `--padding-start`                | Left padding if direction is left-to-right, and right padding if direction is right-to-left of the item       |
-| `--padding-top`                  | Top padding of the item                                                                                       |
-| `--ripple-color`                 | Color of the item ripple effect                                                                               |
-| `--transition`                   | Transition of the item                                                                                        |
+<CustomProps />
 
 ## Slots
 
-| Name    | Description                                                                     |
-| ------- | ------------------------------------------------------------------------------- |
-| ``      | Content is placed between the named slots if provided without a slot.           |
-| `end`   | Content is placed to the right of the item text in LTR, and to the left in RTL. |
-| `start` | Content is placed to the left of the item text in LTR, and to the right in RTL. |
+<Slots />

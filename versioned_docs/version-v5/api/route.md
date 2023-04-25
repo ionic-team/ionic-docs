@@ -5,6 +5,13 @@ sidebar_label: 'ion-route'
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
+import Props from '@site/static/auto-generated/v5/route/props.md';
+import Events from '@site/static/auto-generated/v5/route/events.md';
+import Methods from '@site/static/auto-generated/v5/route/methods.md';
+import Parts from '@site/static/auto-generated/v5/route/parts.md';
+import CustomProps from '@site/static/auto-generated/v5/route/custom-props.md';
+import Slots from '@site/static/auto-generated/v5/route/slots.md';
+
 # ion-route
 
 The route component takes a component and renders it when the Browser URL matches the url property.
@@ -69,10 +76,10 @@ const hasUnsavedDataGuard = async () => {
 };
 
 const confirmDiscardChanges = async () => {
-  const alert = document.createElement('ion-alert');
-  alert.header = 'Discard Unsaved Changes?';
-  alert.message = 'Are you sure you want to leave? Any unsaved changed will be lost.';
-  alert.buttons = [
+  const route = document.createElement('ion-route');
+  route.header = 'Discard Unsaved Changes?';
+  route.message = 'Are you sure you want to leave? Any unsaved changed will be lost.';
+  route.buttons = [
     {
       text: 'Cancel',
       role: 'Cancel',
@@ -83,11 +90,11 @@ const confirmDiscardChanges = async () => {
     },
   ];
 
-  document.body.appendChild(alert);
+  document.body.appendChild(route);
 
-  await alert.present();
+  await route.present();
 
-  const { role } = await alert.onDidDismiss();
+  const { role } = await route.onDidDismiss();
 
   return role === 'Cancel' ? false : true;
 };
@@ -99,7 +106,7 @@ const confirmDiscardChanges = async () => {
 
 ```tsx
 import { Component, h } from '@stencil/core';
-import { alertController } from '@ionic/core';
+import { routeController } from '@ionic/core';
 
 @Component({
   tag: 'router-example',
@@ -139,7 +146,7 @@ const hasUnsavedDataGuard = async () => {
 };
 
 const confirmDiscardChanges = async () => {
-  const alert = await alertController.create({
+  const route = await routeController.create({
     header: 'Discard Unsaved Changes?',
     message: 'Are you sure you want to leave? Any unsaved changed will be lost.',
     buttons: [
@@ -154,9 +161,9 @@ const confirmDiscardChanges = async () => {
     ],
   });
 
-  await alert.present();
+  await route.present();
 
-  const { role } = await alert.onDidDismiss();
+  const { role } = await route.onDidDismiss();
 
   return role === 'Cancel' ? false : true;
 };
@@ -177,7 +184,7 @@ const confirmDiscardChanges = async () => {
 </template>
 
 <script>
-  import { alertController } from '@ionic/vue';
+  import { routeController } from '@ionic/vue';
 
   const isLoggedInGuard = async () => {
     const isLoggedIn = await UserData.isLoggedIn(); // Replace this with actual login validation
@@ -200,7 +207,7 @@ const confirmDiscardChanges = async () => {
   };
 
   const confirmDiscardChanges = async () => {
-    const alert = await alertController.create({
+    const route = await routeController.create({
       header: 'Discard Unsaved Changes?',
       message: 'Are you sure you want to leave? Any unsaved changed will be lost.',
       buttons: [
@@ -215,9 +222,9 @@ const confirmDiscardChanges = async () => {
       ],
     });
 
-    await alert.present();
+    await route.present();
 
-    const { role } = await alert.onDidDismiss();
+    const { role } = await route.onDidDismiss();
 
     return role === 'Cancel' ? false : true;
   };
@@ -230,53 +237,24 @@ const confirmDiscardChanges = async () => {
 
 ## Properties
 
-### beforeEnter
-
-|                 |                                                                                                                                                                                                                                                                                     |
-| --------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Description** | A navigation hook that is fired when the route tries to enter.<br />Returning `true` allows the navigation to proceed, while returning<br />`false` causes it to be cancelled. Returning a `NavigationHookOptions`<br />object causes the router to redirect to the path specified. |
-| **Attribute**   | `undefined`                                                                                                                                                                                                                                                                         |
-| **Type**        | `(() => NavigationHookResult \| Promise<NavigationHookResult>) \| undefined`                                                                                                                                                                                                        |
-| **Default**     | `undefined`                                                                                                                                                                                                                                                                         |
-
-### beforeLeave
-
-|                 |                                                                                                                                                                                                                                                                                     |
-| --------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Description** | A navigation hook that is fired when the route tries to leave.<br />Returning `true` allows the navigation to proceed, while returning<br />`false` causes it to be cancelled. Returning a `NavigationHookOptions`<br />object causes the router to redirect to the path specified. |
-| **Attribute**   | `undefined`                                                                                                                                                                                                                                                                         |
-| **Type**        | `(() => NavigationHookResult \| Promise<NavigationHookResult>) \| undefined`                                                                                                                                                                                                        |
-| **Default**     | `undefined`                                                                                                                                                                                                                                                                         |
-
-### component
-
-|                 |                                                                                                                                                                                                                                                                                            |
-| --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **Description** | Name of the component to load/select in the navigation outlet (`ion-tabs`, `ion-nav`)<br />when the route matches.<br /><br />The value of this property is not always the tagname of the component to load,<br />in `ion-tabs` it actually refers to the name of the `ion-tab` to select. |
-| **Attribute**   | `component`                                                                                                                                                                                                                                                                                |
-| **Type**        | `string`                                                                                                                                                                                                                                                                                   |
-| **Default**     | `undefined`                                                                                                                                                                                                                                                                                |
-
-### componentProps
-
-|                 |                                                                                                                                   |
-| --------------- | --------------------------------------------------------------------------------------------------------------------------------- |
-| **Description** | A key value `{ 'red': true, 'blue': 'white'}` containing props that should be passed<br />to the defined component when rendered. |
-| **Attribute**   | `undefined`                                                                                                                       |
-| **Type**        | `undefined \| { [key: string]: any; }`                                                                                            |
-| **Default**     | `undefined`                                                                                                                       |
-
-### url
-
-|                 |                                                                                                                                                                                                                               |
-| --------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Description** | Relative path that needs to match in order for this route to apply.<br /><br />Accepts paths similar to expressjs so that you can define parameters<br />in the url /foo/:bar where bar would be available in incoming props. |
-| **Attribute**   | `url`                                                                                                                                                                                                                         |
-| **Type**        | `string`                                                                                                                                                                                                                      |
-| **Default**     | `''`                                                                                                                                                                                                                          |
+<Props />
 
 ## Events
 
-| Name                  | Description                                                         |
-| --------------------- | ------------------------------------------------------------------- |
-| `ionRouteDataChanged` | Used internally by `ion-router` to know when this route did change. |
+<Events />
+
+## Methods
+
+<Methods />
+
+## CSS Shadow Parts
+
+<Parts />
+
+## CSS Custom Properties
+
+<CustomProps />
+
+## Slots
+
+<Slots />

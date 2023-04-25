@@ -5,6 +5,13 @@ sidebar_label: 'ion-tab'
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
+import Props from '@site/static/auto-generated/v5/tab/props.md';
+import Events from '@site/static/auto-generated/v5/tab/events.md';
+import Methods from '@site/static/auto-generated/v5/tab/methods.md';
+import Parts from '@site/static/auto-generated/v5/tab/parts.md';
+import CustomProps from '@site/static/auto-generated/v5/tab/custom-props.md';
+import Slots from '@site/static/auto-generated/v5/tab/slots.md';
+
 # ion-tab
 
 The tab component is a child component of [tabs](tabs.md). Each tab can contain a top level navigation stack for an app or a single view. An app can have many tabs, all with their own independent navigation.
@@ -15,29 +22,24 @@ See the [tabs documentation](tabs.md) for more details on configuring tabs.
 
 ## Properties
 
-### component
+<Props />
 
-|                 |                                                          |
-| --------------- | -------------------------------------------------------- |
-| **Description** | The component to display inside of the tab.              |
-| **Attribute**   | `component`                                              |
-| **Type**        | `Function \| HTMLElement \| null \| string \| undefined` |
-| **Default**     | `undefined`                                              |
+## Events
 
-### tab
-
-|                 |                                                                                                                                                |
-| --------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Description** | A tab id must be provided for each `ion-tab`. It's used internally to reference<br />the selected tab or by the router to switch between them. |
-| **Attribute**   | `tab`                                                                                                                                          |
-| **Type**        | `string`                                                                                                                                       |
-| **Default**     | `undefined`                                                                                                                                    |
+<Events />
 
 ## Methods
 
-### setActive
+<Methods />
 
-|                 |                                      |
-| --------------- | ------------------------------------ |
-| **Description** | Set the active component for the tab |
-| **Signature**   | `setActive() => Promise<void>`       |
+## CSS Shadow Parts
+
+<Parts />
+
+## CSS Custom Properties
+
+<CustomProps />
+
+## Slots
+
+<Slots />

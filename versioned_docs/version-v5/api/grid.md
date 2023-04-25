@@ -9,6 +9,13 @@ demoSourceUrl: 'https://github.com/ionic-team/ionic-docs/tree/main/static/demos/
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
+import Props from '@site/static/auto-generated/v5/grid/props.md';
+import Events from '@site/static/auto-generated/v5/grid/events.md';
+import Methods from '@site/static/auto-generated/v5/grid/methods.md';
+import Parts from '@site/static/auto-generated/v5/grid/parts.md';
+import CustomProps from '@site/static/auto-generated/v5/grid/custom-props.md';
+import Slots from '@site/static/auto-generated/v5/grid/slots.md';
+
 # ion-grid
 
 The grid is a powerful mobile-first flexbox system for building custom layouts.
@@ -648,28 +655,24 @@ export class GridExample {
 
 ## Properties
 
-### fixed
+<Props />
 
-|                 |                                                                       |
-| --------------- | --------------------------------------------------------------------- |
-| **Description** | If `true`, the grid will have a fixed width based on the screen size. |
-| **Attribute**   | `fixed`                                                               |
-| **Type**        | `boolean`                                                             |
-| **Default**     | `false`                                                               |
+## Events
+
+<Events />
+
+## Methods
+
+<Methods />
+
+## CSS Shadow Parts
+
+<Parts />
 
 ## CSS Custom Properties
 
-| Name                    | Description                           |
-| ----------------------- | ------------------------------------- |
-| `--ion-grid-padding`    | Padding for the Grid                  |
-| `--ion-grid-padding-lg` | Padding for the Grid on lg screens    |
-| `--ion-grid-padding-md` | Padding for the Grid on md screens    |
-| `--ion-grid-padding-sm` | Padding for the Grid on sm screens    |
-| `--ion-grid-padding-xl` | Padding for the Grid on xl screens    |
-| `--ion-grid-padding-xs` | Padding for the Grid on xs screens    |
-| `--ion-grid-width`      | Width of the fixed Grid               |
-| `--ion-grid-width-lg`   | Width of the fixed Grid on lg screens |
-| `--ion-grid-width-md`   | Width of the fixed Grid on md screens |
-| `--ion-grid-width-sm`   | Width of the fixed Grid on sm screens |
-| `--ion-grid-width-xl`   | Width of the fixed Grid on xl screens |
-| `--ion-grid-width-xs`   | Width of the fixed Grid on xs screens |
+<CustomProps />
+
+## Slots
+
+<Slots />

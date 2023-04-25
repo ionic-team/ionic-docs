@@ -7,6 +7,13 @@ demoSourceUrl: 'https://github.com/ionic-team/ionic-docs/tree/main/static/demos/
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
+import Props from '@site/static/auto-generated/v5/reorder/props.md';
+import Events from '@site/static/auto-generated/v5/reorder/events.md';
+import Methods from '@site/static/auto-generated/v5/reorder/methods.md';
+import Parts from '@site/static/auto-generated/v5/reorder/parts.md';
+import CustomProps from '@site/static/auto-generated/v5/reorder/custom-props.md';
+import Slots from '@site/static/auto-generated/v5/reorder/slots.md';
+
 # ion-reorder
 
 Reorder is a component that allows an item in a group of items to be dragged to change its order within that group. It must be used within an `ion-reorder-group` to provide a visual drag and drop interface.
@@ -355,8 +362,26 @@ export class ReorderExample {
 
 </Tabs>
 
+## Properties
+
+<Props />
+
+## Events
+
+<Events />
+
+## Methods
+
+<Methods />
+
 ## CSS Shadow Parts
 
-| Name   | Description                                     |
-| ------ | ----------------------------------------------- |
-| `icon` | The icon of the reorder handle (uses ion-icon). |
+<Parts />
+
+## CSS Custom Properties
+
+<CustomProps />
+
+## Slots
+
+<Slots />

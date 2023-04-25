@@ -7,6 +7,13 @@ sidebar_label: 'ion-router'
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
+import Props from '@site/static/auto-generated/v5/router/props.md';
+import Events from '@site/static/auto-generated/v5/router/events.md';
+import Methods from '@site/static/auto-generated/v5/router/methods.md';
+import Parts from '@site/static/auto-generated/v5/router/parts.md';
+import CustomProps from '@site/static/auto-generated/v5/router/custom-props.md';
+import Slots from '@site/static/auto-generated/v5/router/slots.md';
+
 # ion-router
 
 The router is a component for handling routing inside vanilla and Stencil JavaScript projects.
@@ -52,43 +59,24 @@ In order to configure this relationship between components (to load/select) and 
 
 ## Properties
 
-### root
-
-|                 |                                                                                                     |
-| --------------- | --------------------------------------------------------------------------------------------------- |
-| **Description** | By default `ion-router` will match the routes at the root path ("/").<br />That can be changed when |
-| **Attribute**   | `root`                                                                                              |
-| **Type**        | `string`                                                                                            |
-| **Default**     | `'/'`                                                                                               |
-
-### useHash
-
-|                 |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
-| --------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Description** | The router can work in two "modes":<br />- With hash: `/index.html#/path/to/page`<br />- Without hash: `/path/to/page`<br /><br />Using one or another might depend in the requirements of your app and/or where it's deployed.<br /><br />Usually "hash-less" navigation works better for SEO and it's more user friendly too, but it might<br />requires additional server-side configuration in order to properly work.<br /><br />On the other side hash-navigation is much easier to deploy, it even works over the file protocol.<br /><br />By default, this property is `true`, change to `false` to allow hash-less URLs. |
-| **Attribute**   | `use-hash`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
-| **Type**        | `boolean`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
-| **Default**     | `true`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
+<Props />
 
 ## Events
 
-| Name                 | Description                                     |
-| -------------------- | ----------------------------------------------- |
-| `ionRouteDidChange`  | Emitted when the route had changed              |
-| `ionRouteWillChange` | Event emitted when the route is about to change |
+<Events />
 
 ## Methods
 
-### back
+<Methods />
 
-|                 |                                                 |
-| --------------- | ----------------------------------------------- |
-| **Description** | Go back to previous page in the window.history. |
-| **Signature**   | `back() => Promise<void>`                       |
+## CSS Shadow Parts
 
-### push
+<Parts />
 
-|                 |                                                                                                                 |
-| --------------- | --------------------------------------------------------------------------------------------------------------- |
-| **Description** | Navigate to the specified URL.                                                                                  |
-| **Signature**   | `push(url: string, direction?: RouterDirection, animation?: AnimationBuilder \| undefined) => Promise<boolean>` |
+## CSS Custom Properties
+
+<CustomProps />
+
+## Slots
+
+<Slots />

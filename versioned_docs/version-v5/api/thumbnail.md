@@ -7,6 +7,13 @@ demoSourceUrl: 'https://github.com/ionic-team/ionic-docs/tree/main/static/demos/
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
+import Props from '@site/static/auto-generated/v5/thumbnail/props.md';
+import Events from '@site/static/auto-generated/v5/thumbnail/events.md';
+import Methods from '@site/static/auto-generated/v5/thumbnail/methods.md';
+import Parts from '@site/static/auto-generated/v5/thumbnail/parts.md';
+import CustomProps from '@site/static/auto-generated/v5/thumbnail/custom-props.md';
+import Slots from '@site/static/auto-generated/v5/thumbnail/slots.md';
+
 # ion-thumbnail
 
 Thumbnails are square components that usually wrap an image or icon. They can be used to make it easier to display a group of larger images or provide a preview of the full-size image.
@@ -134,9 +141,26 @@ export class ThumbnailExample {
 
 </Tabs>
 
+## Properties
+
+<Props />
+
+## Events
+
+<Events />
+
+## Methods
+
+<Methods />
+
+## CSS Shadow Parts
+
+<Parts />
+
 ## CSS Custom Properties
 
-| Name              | Description                    |
-| ----------------- | ------------------------------ |
-| `--border-radius` | Border radius of the thumbnail |
-| `--size`          | Size of the thumbnail          |
+<CustomProps />
+
+## Slots
+
+<Slots />

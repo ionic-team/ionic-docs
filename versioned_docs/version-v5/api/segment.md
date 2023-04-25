@@ -7,6 +7,13 @@ demoSourceUrl: 'https://github.com/ionic-team/ionic-docs/tree/main/static/demos/
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
+import Props from '@site/static/auto-generated/v5/segment/props.md';
+import Events from '@site/static/auto-generated/v5/segment/events.md';
+import Methods from '@site/static/auto-generated/v5/segment/methods.md';
+import Parts from '@site/static/auto-generated/v5/segment/parts.md';
+import CustomProps from '@site/static/auto-generated/v5/segment/custom-props.md';
+import Slots from '@site/static/auto-generated/v5/segment/slots.md';
+
 # ion-segment
 
 Segments display a group of related buttons, sometimes known as segmented controls, in a horizontal row. They can be displayed inside of a toolbar or the main content.
@@ -589,69 +596,24 @@ export class SegmentExample {
 
 ## Properties
 
-### color
-
-|                 |                                                                                                                                                                                                                                                                                  |
-| --------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Description** | The color to use from your application's color palette.<br />Default options are: `"primary"`, `"secondary"`, `"tertiary"`, `"success"`, `"warning"`, `"danger"`, `"light"`, `"medium"`, and `"dark"`.<br />For more information on colors, see [theming](../theming/basics.md). |
-| **Attribute**   | `color`                                                                                                                                                                                                                                                                          |
-| **Type**        | `string \| undefined`                                                                                                                                                                                                                                                            |
-| **Default**     | `undefined`                                                                                                                                                                                                                                                                      |
-
-### disabled
-
-|                 |                                                       |
-| --------------- | ----------------------------------------------------- |
-| **Description** | If `true`, the user cannot interact with the segment. |
-| **Attribute**   | `disabled`                                            |
-| **Type**        | `boolean`                                             |
-| **Default**     | `false`                                               |
-
-### mode
-
-|                 |                                                   |
-| --------------- | ------------------------------------------------- |
-| **Description** | The mode determines which platform styles to use. |
-| **Attribute**   | `mode`                                            |
-| **Type**        | `"ios" \| "md"`                                   |
-| **Default**     | `undefined`                                       |
-
-### scrollable
-
-|                 |                                                                                                                                                                                                                          |
-| --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **Description** | If `true`, the segment buttons will overflow and the user can swipe to see them.<br />In addition, this will disable the gesture to drag the indicator between the buttons<br />in order to swipe to see hidden buttons. |
-| **Attribute**   | `scrollable`                                                                                                                                                                                                             |
-| **Type**        | `boolean`                                                                                                                                                                                                                |
-| **Default**     | `false`                                                                                                                                                                                                                  |
-
-### swipeGesture
-
-|                 |                                                                                  |
-| --------------- | -------------------------------------------------------------------------------- |
-| **Description** | If `true`, users will be able to swipe between segment buttons to activate them. |
-| **Attribute**   | `swipe-gesture`                                                                  |
-| **Type**        | `boolean`                                                                        |
-| **Default**     | `true`                                                                           |
-
-### value
-
-|                 |                               |
-| --------------- | ----------------------------- |
-| **Description** | the value of the segment.     |
-| **Attribute**   | `value`                       |
-| **Type**        | `null \| string \| undefined` |
-| **Default**     | `undefined`                   |
+<Props />
 
 ## Events
 
-| Name                                                   | Description                                         |
-| ------------------------------------------------------ | --------------------------------------------------- |
-| `ionChange`                                            | Emitted when the value property has changed and any |
-| dragging pointer has been released from `ion-segment`. |
+<Events />
+
+## Methods
+
+<Methods />
+
+## CSS Shadow Parts
+
+<Parts />
 
 ## CSS Custom Properties
 
-| Name           | Description                      |
-| -------------- | -------------------------------- |
-| `--background` | Background of the segment button |
+<CustomProps />
+
+## Slots
+
+<Slots />

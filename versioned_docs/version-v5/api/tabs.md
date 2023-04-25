@@ -9,6 +9,13 @@ demoSourceUrl: 'https://github.com/ionic-team/ionic-docs/tree/main/static/demos/
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
+import Props from '@site/static/auto-generated/v5/tabs/props.md';
+import Events from '@site/static/auto-generated/v5/tabs/events.md';
+import Methods from '@site/static/auto-generated/v5/tabs/methods.md';
+import Parts from '@site/static/auto-generated/v5/tabs/parts.md';
+import CustomProps from '@site/static/auto-generated/v5/tabs/custom-props.md';
+import Slots from '@site/static/auto-generated/v5/tabs/slots.md';
+
 # ion-tabs
 
 Tabs are a top level navigation component to implement a tab-based navigation.
@@ -415,40 +422,26 @@ will match the following tab:
 
 </Tabs>
 
+## Properties
+
+<Props />
+
 ## Events
 
-| Name                | Description                                                                |
-| ------------------- | -------------------------------------------------------------------------- |
-| `ionTabsDidChange`  | Emitted when the navigation has finished transitioning to a new component. |
-| `ionTabsWillChange` | Emitted when the navigation is about to transition to a new component.     |
+<Events />
 
 ## Methods
 
-### getSelected
+<Methods />
 
-|                 |                                                 |
-| --------------- | ----------------------------------------------- |
-| **Description** | Get the currently selected tab.                 |
-| **Signature**   | `getSelected() => Promise<string \| undefined>` |
+## CSS Shadow Parts
 
-### getTab
+<Parts />
 
-|                 |                                                                                       |
-| --------------- | ------------------------------------------------------------------------------------- |
-| **Description** | Get a specific tab by the value of its `tab` property or an element reference.        |
-| **Signature**   | `getTab(tab: string \| HTMLIonTabElement) => Promise<HTMLIonTabElement \| undefined>` |
+## CSS Custom Properties
 
-### select
-
-|                 |                                                                          |
-| --------------- | ------------------------------------------------------------------------ |
-| **Description** | Select a tab by the value of its `tab` property or an element reference. |
-| **Signature**   | `select(tab: string \| HTMLIonTabElement) => Promise<boolean>`           |
+<CustomProps />
 
 ## Slots
 
-| Name     | Description                                                           |
-| -------- | --------------------------------------------------------------------- |
-| ``       | Content is placed between the named slots if provided without a slot. |
-| `bottom` | Content is placed at the bottom of the screen.                        |
-| `top`    | Content is placed at the top of the screen.                           |
+<Slots />
