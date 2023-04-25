@@ -139,7 +139,8 @@ ${properties
       .replace('../alert', 'alert')
       .replace('../action-sheet', 'action-sheet')
       .replace('../popover', 'popover')
-      .replace('../picker', 'picker');
+      .replace('../picker', 'picker')
+      .replace('../list', 'list');
 
     return `
 ### ${prop.name} ${isDeprecated ? '(deprecated)' : ''}
