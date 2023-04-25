@@ -6,7 +6,7 @@ function Example() {
   const data = ['Amsterdam', 'Buenos Aires', 'Cairo', 'Geneva', 'Hong Kong', 'Istanbul', 'London', 'Madrid', 'New York', 'Panama City'];
   let [results, setResults] = useState([...data]);
 
-  const handleChange = (ev: Event) => {
+  const handleInput = (ev: Event) => {
     let query = "";
     const target = ev.target as HTMLIonSearchbarElement;
     if (target) query = target.value!.toLowerCase();
@@ -16,7 +16,7 @@ function Example() {
 
   return (
     <>
-      <IonSearchbar debounce={1000} onIonChange={(ev) => handleChange(ev)}></IonSearchbar>
+      <IonSearchbar debounce={1000} onIonInput={(ev) => handleInput(ev)}></IonSearchbar>
 
       <IonList>
         { results.map(result => (

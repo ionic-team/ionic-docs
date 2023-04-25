@@ -1,0 +1,51 @@
+:global {
+  html[data-theme='dark'] {
+    --c-bg-dev-experts: var(--token-secondary-bg-c);
+  }
+
+  :root {
+    --c-bg-dev-experts: var(--c-indigo-10);
+  }
+}
+
+.developerExperts {
+  background-color: var(--c-bg-dev-experts);
+
+  padding: 2.5rem;
+
+  border-radius: 16px;
+
+  margin-block-start: 1.35rem;
+
+  header {
+    max-width: 29rem;
+  }
+
+  &Title {
+    margin-block-end: 0.5rem;
+
+    color: var(--token-heading-color-dark);
+  }
+
+  &Description {
+    margin-block-end: 2.5rem;
+
+    line-height: 1.6 !important;
+
+    // color: var(--c-indigo-90);
+  }
+
+  &Links {
+    max-width: 38.313rem;
+
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+
+    a {
+      font-weight: 600;
+    }
+  }
+}

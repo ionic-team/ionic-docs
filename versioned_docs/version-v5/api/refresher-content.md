@@ -5,44 +5,37 @@ sidebar_label: 'ion-refresher-content'
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
+import Props from '@ionic-internal/component-api/v5/refresher-content/props.md';
+import Events from '@ionic-internal/component-api/v5/refresher-content/events.md';
+import Methods from '@ionic-internal/component-api/v5/refresher-content/methods.md';
+import Parts from '@ionic-internal/component-api/v5/refresher-content/parts.md';
+import CustomProps from '@ionic-internal/component-api/v5/refresher-content/custom-props.md';
+import Slots from '@ionic-internal/component-api/v5/refresher-content/slots.md';
+
 # ion-refresher-content
 
 The refresher content contains the text, icon and spinner to display during a pull-to-refresh. Ionic provides the pulling icon and refreshing spinner based on the platform. However, the default icon, spinner, and text can be customized based on the state of the refresher.
 
 ## Properties
 
-### pullingIcon
+<Props />
 
-|                 |                                                                                                                                                                            |
-| --------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Description** | A static icon or a spinner to display when you begin to pull down.<br />A spinner name can be provided to gradually show tick marks<br />when pulling down on iOS devices. |
-| **Attribute**   | `pulling-icon`                                                                                                                                                             |
-| **Type**        | `null \| string \| undefined`                                                                                                                                              |
-| **Default**     | `undefined`                                                                                                                                                                |
+## Events
 
-### pullingText
+<Events />
 
-|                 |                                                                                                                                                                                                                                                                                                                                                                                 |
-| --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Description** | The text you want to display when you begin to pull down.<br />`pullingText` can accept either plaintext or HTML as a string.<br />To display characters normally reserved for HTML, they<br />must be escaped. For example `<Ionic>` would become<br />`&lt;Ionic&gt;`<br /><br />For more information: [Security Documentation](https://ionicframework.com/docs/faq/security) |
-| **Attribute**   | `pulling-text`                                                                                                                                                                                                                                                                                                                                                                  |
-| **Type**        | `IonicSafeString \| string \| undefined`                                                                                                                                                                                                                                                                                                                                        |
-| **Default**     | `undefined`                                                                                                                                                                                                                                                                                                                                                                     |
+## Methods
 
-### refreshingSpinner
+<Methods />
 
-|                 |                                                                                                                 |
-| --------------- | --------------------------------------------------------------------------------------------------------------- |
-| **Description** | An animated SVG spinner that shows when refreshing begins                                                       |
-| **Attribute**   | `refreshing-spinner`                                                                                            |
-| **Type**        | `"bubbles" \| "circles" \| "circular" \| "crescent" \| "dots" \| "lines" \| "lines-small" \| null \| undefined` |
-| **Default**     | `undefined`                                                                                                     |
+## CSS Shadow Parts
 
-### refreshingText
+<Parts />
 
-|                 |                                                                                                                                                                                                                                                                                                                                                                                  |
-| --------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Description** | The text you want to display when performing a refresh.<br />`refreshingText` can accept either plaintext or HTML as a string.<br />To display characters normally reserved for HTML, they<br />must be escaped. For example `<Ionic>` would become<br />`&lt;Ionic&gt;`<br /><br />For more information: [Security Documentation](https://ionicframework.com/docs/faq/security) |
-| **Attribute**   | `refreshing-text`                                                                                                                                                                                                                                                                                                                                                                |
-| **Type**        | `IonicSafeString \| string \| undefined`                                                                                                                                                                                                                                                                                                                                         |
-| **Default**     | `undefined`                                                                                                                                                                                                                                                                                                                                                                      |
+## CSS Custom Properties
+
+<CustomProps />
+
+## Slots
+
+<Slots />

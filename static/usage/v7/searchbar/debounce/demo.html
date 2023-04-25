@@ -36,9 +36,9 @@
   let results = [...data];
   filterItems(results);
 
-  searchbar.addEventListener('ionChange', handleChange);
+  searchbar.addEventListener('ionInput', handleInput);
 
-  function handleChange(event) {
+  function handleInput(event) {
     const query = event.target.value.toLowerCase();
     results = data.filter(d => d.toLowerCase().indexOf(query) > -1);
     filterItems(results);

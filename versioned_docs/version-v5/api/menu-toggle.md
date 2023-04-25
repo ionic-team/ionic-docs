@@ -5,6 +5,13 @@ sidebar_label: 'ion-menu-toggle'
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
+import Props from '@ionic-internal/component-api/v5/menu-toggle/props.md';
+import Events from '@ionic-internal/component-api/v5/menu-toggle/events.md';
+import Methods from '@ionic-internal/component-api/v5/menu-toggle/methods.md';
+import Parts from '@ionic-internal/component-api/v5/menu-toggle/parts.md';
+import CustomProps from '@ionic-internal/component-api/v5/menu-toggle/custom-props.md';
+import Slots from '@ionic-internal/component-api/v5/menu-toggle/slots.md';
+
 # ion-menu-toggle
 
 The MenuToggle component can be used to toggle a menu open or closed.
@@ -15,20 +22,24 @@ In case it's desired to keep `ion-menu-toggle` always visible, the `autoHide` pr
 
 ## Properties
 
-### autoHide
+<Props />
 
-|                 |                                                                                                                                                                                                                              |
-| --------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Description** | Automatically hides the content when the corresponding menu is not active.<br /><br />By default, it's `true`. Change it to `false` in order to<br />keep `ion-menu-toggle` always visible regardless the state of the menu. |
-| **Attribute**   | `auto-hide`                                                                                                                                                                                                                  |
-| **Type**        | `boolean`                                                                                                                                                                                                                    |
-| **Default**     | `true`                                                                                                                                                                                                                       |
+## Events
 
-### menu
+<Events />
 
-|                 |                                                                                                                                                                                                                                                                              |
-| --------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Description** | Optional property that maps to a Menu's `menuId` prop.<br />Can also be `start` or `end` for the menu side.<br />This is used to find the correct menu to toggle.<br /><br />If this property is not used, `ion-menu-toggle` will toggle the<br />first menu that is active. |
-| **Attribute**   | `menu`                                                                                                                                                                                                                                                                       |
-| **Type**        | `string \| undefined`                                                                                                                                                                                                                                                        |
-| **Default**     | `undefined`                                                                                                                                                                                                                                                                  |
+## Methods
+
+<Methods />
+
+## CSS Shadow Parts
+
+<Parts />
+
+## CSS Custom Properties
+
+<CustomProps />
+
+## Slots
+
+<Slots />

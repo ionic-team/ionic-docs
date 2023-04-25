@@ -9,6 +9,13 @@ demoSourceUrl: 'https://github.com/ionic-team/ionic-docs/tree/main/static/demos/
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
+import Props from '@ionic-internal/component-api/v5/back-button/props.md';
+import Events from '@ionic-internal/component-api/v5/back-button/events.md';
+import Methods from '@ionic-internal/component-api/v5/back-button/methods.md';
+import Parts from '@ionic-internal/component-api/v5/back-button/parts.md';
+import CustomProps from '@ionic-internal/component-api/v5/back-button/custom-props.md';
+import Slots from '@ionic-internal/component-api/v5/back-button/slots.md';
+
 # ion-back-button
 
 The back button navigates back in the app's history upon click. It is smart enough to know what to render based on the mode and when to show based on the navigation stack.
@@ -316,119 +323,24 @@ export class BackButtonExample {
 
 ## Properties
 
-### color
+<Props />
 
-|                 |                                                                                                                                                                                                                                                                                  |
-| --------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Description** | The color to use from your application's color palette.<br />Default options are: `"primary"`, `"secondary"`, `"tertiary"`, `"success"`, `"warning"`, `"danger"`, `"light"`, `"medium"`, and `"dark"`.<br />For more information on colors, see [theming](../theming/basics.md). |
-| **Attribute**   | `color`                                                                                                                                                                                                                                                                          |
-| **Type**        | `string \| undefined`                                                                                                                                                                                                                                                            |
-| **Default**     | `undefined`                                                                                                                                                                                                                                                                      |
+## Events
 
-### defaultHref
+<Events />
 
-|                 |                                                                  |
-| --------------- | ---------------------------------------------------------------- |
-| **Description** | The url to navigate back to by default when there is no history. |
-| **Attribute**   | `default-href`                                                   |
-| **Type**        | `string \| undefined`                                            |
-| **Default**     | `undefined`                                                      |
+## Methods
 
-### disabled
-
-|                 |                                                      |
-| --------------- | ---------------------------------------------------- |
-| **Description** | If `true`, the user cannot interact with the button. |
-| **Attribute**   | `disabled`                                           |
-| **Type**        | `boolean`                                            |
-| **Default**     | `false`                                              |
-
-### icon
-
-|                 |                                           |
-| --------------- | ----------------------------------------- |
-| **Description** | The icon name to use for the back button. |
-| **Attribute**   | `icon`                                    |
-| **Type**        | `null \| string \| undefined`             |
-| **Default**     | `undefined`                               |
-
-### mode
-
-|                 |                                                   |
-| --------------- | ------------------------------------------------- |
-| **Description** | The mode determines which platform styles to use. |
-| **Attribute**   | `mode`                                            |
-| **Type**        | `"ios" \| "md"`                                   |
-| **Default**     | `undefined`                                       |
-
-### routerAnimation
-
-|                 |                                                                                                  |
-| --------------- | ------------------------------------------------------------------------------------------------ |
-| **Description** | When using a router, it specifies the transition animation when navigating to<br />another page. |
-| **Attribute**   | `undefined`                                                                                      |
-| **Type**        | `((baseEl: any, opts?: any) => Animation) \| undefined`                                          |
-| **Default**     | `undefined`                                                                                      |
-
-### text
-
-|                 |                                         |
-| --------------- | --------------------------------------- |
-| **Description** | The text to display in the back button. |
-| **Attribute**   | `text`                                  |
-| **Type**        | `null \| string \| undefined`           |
-| **Default**     | `undefined`                             |
-
-### type
-
-|                 |                                   |
-| --------------- | --------------------------------- |
-| **Description** | The type of the button.           |
-| **Attribute**   | `type`                            |
-| **Type**        | `"button" \| "reset" \| "submit"` |
-| **Default**     | `'button'`                        |
+<Methods />
 
 ## CSS Shadow Parts
 
-| Name     | Description                                                   |
-| -------- | ------------------------------------------------------------- |
-| `icon`   | The back button icon (uses ion-icon).                         |
-| `native` | The native HTML button element that wraps all child elements. |
-| `text`   | The back button text.                                         |
+<Parts />
 
 ## CSS Custom Properties
 
-| Name                           | Description                                                                                                    |
-| ------------------------------ | -------------------------------------------------------------------------------------------------------------- |
-| `--background`                 | Background of the button                                                                                       |
-| `--background-focused`         | Background of the button when focused with the tab key                                                         |
-| `--background-focused-opacity` | Opacity of the button background when focused with the tab key                                                 |
-| `--background-hover`           | Background of the button on hover                                                                              |
-| `--background-hover-opacity`   | Opacity of the background on hover                                                                             |
-| `--border-radius`              | Border radius of the button                                                                                    |
-| `--color`                      | Text color of the button                                                                                       |
-| `--color-focused`              | Text color of the button when focused with the tab key                                                         |
-| `--color-hover`                | Text color of the button on hover                                                                              |
-| `--icon-font-size`             | Font size of the button icon                                                                                   |
-| `--icon-font-weight`           | Font weight of the button icon                                                                                 |
-| `--icon-margin-bottom`         | Bottom margin of the button icon                                                                               |
-| `--icon-margin-end`            | Right margin if direction is left-to-right, and left margin if direction is right-to-left of the button icon   |
-| `--icon-margin-start`          | Left margin if direction is left-to-right, and right margin if direction is right-to-left of the button icon   |
-| `--icon-margin-top`            | Top margin of the button icon                                                                                  |
-| `--icon-padding-bottom`        | Bottom padding of the button icon                                                                              |
-| `--icon-padding-end`           | Right padding if direction is left-to-right, and left padding if direction is right-to-left of the button icon |
-| `--icon-padding-start`         | Left padding if direction is left-to-right, and right padding if direction is right-to-left of the button icon |
-| `--icon-padding-top`           | Top padding of the button icon                                                                                 |
-| `--margin-bottom`              | Bottom margin of the button                                                                                    |
-| `--margin-end`                 | Right margin if direction is left-to-right, and left margin if direction is right-to-left of the button        |
-| `--margin-start`               | Left margin if direction is left-to-right, and right margin if direction is right-to-left of the button        |
-| `--margin-top`                 | Top margin of the button                                                                                       |
-| `--min-height`                 | Minimum height of the button                                                                                   |
-| `--min-width`                  | Minimum width of the button                                                                                    |
-| `--opacity`                    | Opacity of the button                                                                                          |
-| `--padding-bottom`             | Bottom padding of the button                                                                                   |
-| `--padding-end`                | Right padding if direction is left-to-right, and left padding if direction is right-to-left of the button      |
-| `--padding-start`              | Left padding if direction is left-to-right, and right padding if direction is right-to-left of the button      |
-| `--padding-top`                | Top padding of the button                                                                                      |
-| `--ripple-color`               | Color of the button ripple effect                                                                              |
-| `--transition`                 | Transition of the button                                                                                       |
+<CustomProps />
+
+## Slots
+
+<Slots />

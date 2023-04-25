@@ -7,6 +7,13 @@ demoSourceUrl: 'https://github.com/ionic-team/ionic-docs/tree/main/static/demos/
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
+import Props from '@ionic-internal/component-api/v5/card/props.md';
+import Events from '@ionic-internal/component-api/v5/card/events.md';
+import Methods from '@ionic-internal/component-api/v5/card/methods.md';
+import Parts from '@ionic-internal/component-api/v5/card/parts.md';
+import CustomProps from '@ionic-internal/component-api/v5/card/custom-props.md';
+import Slots from '@ionic-internal/component-api/v5/card/slots.md';
+
 # ion-card
 
 Cards are a standard piece of UI that serves as an entry point to more detailed
@@ -346,114 +353,24 @@ export class CardExample {
 
 ## Properties
 
-### button
+<Props />
 
-|                 |                                                                         |
-| --------------- | ----------------------------------------------------------------------- |
-| **Description** | If `true`, a button tag will be rendered and the card will be tappable. |
-| **Attribute**   | `button`                                                                |
-| **Type**        | `boolean`                                                               |
-| **Default**     | `false`                                                                 |
+## Events
 
-### color
+<Events />
 
-|                 |                                                                                                                                                                                                                                                                                  |
-| --------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Description** | The color to use from your application's color palette.<br />Default options are: `"primary"`, `"secondary"`, `"tertiary"`, `"success"`, `"warning"`, `"danger"`, `"light"`, `"medium"`, and `"dark"`.<br />For more information on colors, see [theming](../theming/basics.md). |
-| **Attribute**   | `color`                                                                                                                                                                                                                                                                          |
-| **Type**        | `string \| undefined`                                                                                                                                                                                                                                                            |
-| **Default**     | `undefined`                                                                                                                                                                                                                                                                      |
+## Methods
 
-### disabled
-
-|                 |                                                    |
-| --------------- | -------------------------------------------------- |
-| **Description** | If `true`, the user cannot interact with the card. |
-| **Attribute**   | `disabled`                                         |
-| **Type**        | `boolean`                                          |
-| **Default**     | `false`                                            |
-
-### download
-
-|                 |                                                                                                                                                                                                                                                                                                          |
-| --------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Description** | This attribute instructs browsers to download a URL instead of navigating to<br />it, so the user will be prompted to save it as a local file. If the attribute<br />has a value, it is used as the pre-filled file name in the Save prompt<br />(the user can still change the file name if they want). |
-| **Attribute**   | `download`                                                                                                                                                                                                                                                                                               |
-| **Type**        | `string \| undefined`                                                                                                                                                                                                                                                                                    |
-| **Default**     | `undefined`                                                                                                                                                                                                                                                                                              |
-
-### href
-
-|                 |                                                                                                                              |
-| --------------- | ---------------------------------------------------------------------------------------------------------------------------- |
-| **Description** | Contains a URL or a URL fragment that the hyperlink points to.<br />If this property is set, an anchor tag will be rendered. |
-| **Attribute**   | `href`                                                                                                                       |
-| **Type**        | `string \| undefined`                                                                                                        |
-| **Default**     | `undefined`                                                                                                                  |
-
-### mode
-
-|                 |                                                   |
-| --------------- | ------------------------------------------------- |
-| **Description** | The mode determines which platform styles to use. |
-| **Attribute**   | `mode`                                            |
-| **Type**        | `"ios" \| "md"`                                   |
-| **Default**     | `undefined`                                       |
-
-### rel
-
-|                 |                                                                                                                                                                                             |
-| --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Description** | Specifies the relationship of the target object to the link object.<br />The value is a space-separated list of [link types](https://developer.mozilla.org/en-US/docs/Web/HTML/Link_types). |
-| **Attribute**   | `rel`                                                                                                                                                                                       |
-| **Type**        | `string \| undefined`                                                                                                                                                                       |
-| **Default**     | `undefined`                                                                                                                                                                                 |
-
-### routerAnimation
-
-|                 |                                                                                                               |
-| --------------- | ------------------------------------------------------------------------------------------------------------- |
-| **Description** | When using a router, it specifies the transition animation when navigating to<br />another page using `href`. |
-| **Attribute**   | `undefined`                                                                                                   |
-| **Type**        | `((baseEl: any, opts?: any) => Animation) \| undefined`                                                       |
-| **Default**     | `undefined`                                                                                                   |
-
-### routerDirection
-
-|                 |                                                                                                               |
-| --------------- | ------------------------------------------------------------------------------------------------------------- |
-| **Description** | When using a router, it specifies the transition direction when navigating to<br />another page using `href`. |
-| **Attribute**   | `router-direction`                                                                                            |
-| **Type**        | `"back" \| "forward" \| "root"`                                                                               |
-| **Default**     | `'forward'`                                                                                                   |
-
-### target
-
-|                 |                                                                                                                                                               |
-| --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Description** | Specifies where to display the linked URL.<br />Only applies when an `href` is provided.<br />Special keywords: `"_blank"`, `"_self"`, `"_parent"`, `"_top"`. |
-| **Attribute**   | `target`                                                                                                                                                      |
-| **Type**        | `string \| undefined`                                                                                                                                         |
-| **Default**     | `undefined`                                                                                                                                                   |
-
-### type
-
-|                 |                                                                                      |
-| --------------- | ------------------------------------------------------------------------------------ |
-| **Description** | The type of the button. Only used when an `onclick` or `button` property is present. |
-| **Attribute**   | `type`                                                                               |
-| **Type**        | `"button" \| "reset" \| "submit"`                                                    |
-| **Default**     | `'button'`                                                                           |
+<Methods />
 
 ## CSS Shadow Parts
 
-| Name     | Description                                                                   |
-| -------- | ----------------------------------------------------------------------------- |
-| `native` | The native HTML button, anchor, or div element that wraps all child elements. |
+<Parts />
 
 ## CSS Custom Properties
 
-| Name           | Description            |
-| -------------- | ---------------------- |
-| `--background` | Background of the card |
-| `--color`      | Color of the card      |
+<CustomProps />
+
+## Slots
+
+<Slots />
