@@ -34,15 +34,15 @@ This guide will go over the recommended virtual scrolling packages for each fram
 
 ## Angular
 
-For virtual scrolling options in Ionic Angular, please see [Angular Virtual Scroll Guide](../angular/virtual-scroll.md).
+For virtual scrolling options in Ionic Angular, please see [Angular Virtual Scroll Guide](/docs/guide/angular/virtual-scroll.md).
 
 ## React
 
-For virtual scrolling options in Ionic React, please see [React Virtual Scroll Guide](../react/virtual-scroll.md).
+For virtual scrolling options in Ionic React, please see [React Virtual Scroll Guide](/docs/guide/react/virtual-scroll.md).
 
 ## Vue
 
-For virtual scrolling options in Ionic Vue, please see [Vue Virtual Scroll Guide](../vue/virtual-scroll.md).
+For virtual scrolling options in Ionic Vue, please see [Vue Virtual Scroll Guide](/docs/guide/vue/virtual-scroll.md).
 
 ---
 
