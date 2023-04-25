@@ -135,7 +135,7 @@ ${properties
     const docs = isDeprecated ? `${prop.docs}\n_Deprecated_ ${prop.deprecation}` : prop.docs;
     const description = formatMultiline(docs)
     const formattedDescription = description
-      .replace('/docs/theming/basics', '/guide/theming/basics.md');
+      .replace('/docs/theming/basics', '../guide/theming/basics.md');
 
     return `
 ### ${prop.name} ${isDeprecated ? '(deprecated)' : ''}
