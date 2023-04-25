@@ -11,7 +11,7 @@ sidebar_label: Electron Desktop App
   />
 </head>
 
-Building a desktop app with Ionic allows developers to reuse 100% of their code and ship a traditional desktop app while still having access to all the native device features, like push notifications. This guide assumes familiarity with Electron, and does not go into "how" to build an electron app. For that, check out the official <a href="https://electronjs.org/docs/tutorial/first-app" target="_blank">Electron guide</a>.
+Building a desktop app with Ionic allows developers to reuse 100% of their code and ship a traditional desktop app while still having access to all the native device features, like push notifications. This guide assumes familiarity with Electron, and does not go into "how" to build an electron app. For that, check out the official <a href="https://www.electronjs.org/docs/latest/tutorial/tutorial-first-app" target="_blank">Electron guide</a>.
 
 ## macOS App
 
@@ -30,7 +30,7 @@ The Electron team has a detailed guide on how to publish an app for macOS. Pleas
 
 ### Requirements
 
-There are two hard requirements for publishing an app on the Windows app store
+There are four hard requirements for publishing an app on the Windows app store
 
 - Windows 10 with Anniversary Update (released August 2nd, 2016)
 - The Windows 10 SDK, [download here](https://developer.microsoft.com/en-us/windows/downloads/windows-10-sdk)

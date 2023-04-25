@@ -26,7 +26,7 @@ The Live Reload server will start up, and the native IDE of choice will open if 
 
 ## Deleting Photos
 
-With Live Reload running and the app is open on your device, let’s implement photo deletion functionality. Open `Tab2.vue` then import the `actionSheetController`. We'll display an [IonActionSheet](https://ionicframework.com/docs/api/action-sheet) with the option to delete a photo:
+With Live Reload running and the app is open on your device, let’s implement photo deletion functionality. Open `Tab2Page.vue` then import the `actionSheetController`. We'll display an [IonActionSheet](https://ionicframework.com/docs/api/action-sheet) with the option to delete a photo:
 
 ```tsx
 import {
@@ -50,9 +50,7 @@ import {
 Next, reference the `deletePhoto` function, which we'll create soon:
 
 ```tsx
-setup() {}
-  const { photos, takePhoto, deletePhoto } = usePhotoGallery();
-}
+const { photos, takePhoto, deletePhoto } = usePhotoGallery();
 ```
 
 When a user clicks/taps on an image, we will show the action sheet. Add a click handler to the `<ion-img>` element:
@@ -61,7 +59,7 @@ When a user clicks/taps on an image, we will show the action sheet. Add a click 
 <ion-img :src="photo.webviewPath" @click="showActionSheet(photo)"></ion-img>
 ```
 
-Next, within `setup()`, call the `create` function to open a dialog with the option to either delete the selected photo or cancel (close) the dialog:
+Next, within `script setup`, call the `create` function to open a dialog with the option to either delete the selected photo or cancel (close) the dialog:
 
 ```tsx
 const showActionSheet = async (photo: UserPhoto) => {
@@ -90,19 +88,6 @@ const showActionSheet = async (photo: UserPhoto) => {
 };
 ```
 
-Next, return the `showActionSheet` function:
-
-```tsx
-return {
-  photos,
-  takePhoto,
-  showActionSheet,
-  camera,
-  trash,
-  close,
-};
-```
-
 Next, we need to implement the `deletePhoto` method in the `usePhotoGallery` function. Open the file then add:
 
 ```tsx
@@ -125,7 +110,7 @@ Remember that removing the photo from the `photos` array triggers the `cachePhot
 
 ```tsx
 const cachePhotos = () => {
-  Storage.set({
+  Preferences.set({
     key: PHOTO_STORAGE,
     value: JSON.stringify(photos.value),
   });
