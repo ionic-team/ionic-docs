@@ -5,12 +5,12 @@ sidebar_label: 'ion-reorder-group'
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-import Props from '@site/static/auto-generated/v5/reorder-group/props.md';
-import Events from '@site/static/auto-generated/v5/reorder-group/events.md';
-import Methods from '@site/static/auto-generated/v5/reorder-group/methods.md';
-import Parts from '@site/static/auto-generated/v5/reorder-group/parts.md';
-import CustomProps from '@site/static/auto-generated/v5/reorder-group/custom-props.md';
-import Slots from '@site/static/auto-generated/v5/reorder-group/slots.md';
+import Props from '@ionic-internal/component-api/v5/reorder-group/props.md';
+import Events from '@ionic-internal/component-api/v5/reorder-group/events.md';
+import Methods from '@ionic-internal/component-api/v5/reorder-group/methods.md';
+import Parts from '@ionic-internal/component-api/v5/reorder-group/parts.md';
+import CustomProps from '@ionic-internal/component-api/v5/reorder-group/custom-props.md';
+import Slots from '@ionic-internal/component-api/v5/reorder-group/slots.md';
 
 # ion-reorder-group
 

@@ -5,12 +5,12 @@ sidebar_label: 'ion-slide'
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-import Props from '@site/static/auto-generated/v5/slide/props.md';
-import Events from '@site/static/auto-generated/v5/slide/events.md';
-import Methods from '@site/static/auto-generated/v5/slide/methods.md';
-import Parts from '@site/static/auto-generated/v5/slide/parts.md';
-import CustomProps from '@site/static/auto-generated/v5/slide/custom-props.md';
-import Slots from '@site/static/auto-generated/v5/slide/slots.md';
+import Props from '@ionic-internal/component-api/v5/slide/props.md';
+import Events from '@ionic-internal/component-api/v5/slide/events.md';
+import Methods from '@ionic-internal/component-api/v5/slide/methods.md';
+import Parts from '@ionic-internal/component-api/v5/slide/parts.md';
+import CustomProps from '@ionic-internal/component-api/v5/slide/custom-props.md';
+import Slots from '@ionic-internal/component-api/v5/slide/slots.md';
 
 # ion-slide
 

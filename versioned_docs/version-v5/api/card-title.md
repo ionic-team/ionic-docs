@@ -5,12 +5,12 @@ sidebar_label: 'ion-card-title'
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-import Props from '@site/static/auto-generated/v5/card-title/props.md';
-import Events from '@site/static/auto-generated/v5/card-title/events.md';
-import Methods from '@site/static/auto-generated/v5/card-title/methods.md';
-import Parts from '@site/static/auto-generated/v5/card-title/parts.md';
-import CustomProps from '@site/static/auto-generated/v5/card-title/custom-props.md';
-import Slots from '@site/static/auto-generated/v5/card-title/slots.md';
+import Props from '@ionic-internal/component-api/v5/card-title/props.md';
+import Events from '@ionic-internal/component-api/v5/card-title/events.md';
+import Methods from '@ionic-internal/component-api/v5/card-title/methods.md';
+import Parts from '@ionic-internal/component-api/v5/card-title/parts.md';
+import CustomProps from '@ionic-internal/component-api/v5/card-title/custom-props.md';
+import Slots from '@ionic-internal/component-api/v5/card-title/slots.md';
 
 # ion-card-title
 

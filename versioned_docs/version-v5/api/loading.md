@@ -9,12 +9,12 @@ demoSourceUrl: 'https://github.com/ionic-team/ionic-docs/tree/main/static/demos/
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-import Props from '@site/static/auto-generated/v5/loading/props.md';
-import Events from '@site/static/auto-generated/v5/loading/events.md';
-import Methods from '@site/static/auto-generated/v5/loading/methods.md';
-import Parts from '@site/static/auto-generated/v5/loading/parts.md';
-import CustomProps from '@site/static/auto-generated/v5/loading/custom-props.md';
-import Slots from '@site/static/auto-generated/v5/loading/slots.md';
+import Props from '@ionic-internal/component-api/v5/loading/props.md';
+import Events from '@ionic-internal/component-api/v5/loading/events.md';
+import Methods from '@ionic-internal/component-api/v5/loading/methods.md';
+import Parts from '@ionic-internal/component-api/v5/loading/parts.md';
+import CustomProps from '@ionic-internal/component-api/v5/loading/custom-props.md';
+import Slots from '@ionic-internal/component-api/v5/loading/slots.md';
 
 # ion-loading
 

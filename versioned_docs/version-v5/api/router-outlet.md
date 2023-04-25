@@ -5,12 +5,12 @@ sidebar_label: 'ion-router-outlet'
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-import Props from '@site/static/auto-generated/v5/router-outlet/props.md';
-import Events from '@site/static/auto-generated/v5/router-outlet/events.md';
-import Methods from '@site/static/auto-generated/v5/router-outlet/methods.md';
-import Parts from '@site/static/auto-generated/v5/router-outlet/parts.md';
-import CustomProps from '@site/static/auto-generated/v5/router-outlet/custom-props.md';
-import Slots from '@site/static/auto-generated/v5/router-outlet/slots.md';
+import Props from '@ionic-internal/component-api/v5/router-outlet/props.md';
+import Events from '@ionic-internal/component-api/v5/router-outlet/events.md';
+import Methods from '@ionic-internal/component-api/v5/router-outlet/methods.md';
+import Parts from '@ionic-internal/component-api/v5/router-outlet/parts.md';
+import CustomProps from '@ionic-internal/component-api/v5/router-outlet/custom-props.md';
+import Slots from '@ionic-internal/component-api/v5/router-outlet/slots.md';
 
 # ion-router-outlet
 

@@ -7,12 +7,12 @@ sidebar_label: 'ion-item-sliding'
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-import Props from '@site/static/auto-generated/v5/item-sliding/props.md';
-import Events from '@site/static/auto-generated/v5/item-sliding/events.md';
-import Methods from '@site/static/auto-generated/v5/item-sliding/methods.md';
-import Parts from '@site/static/auto-generated/v5/item-sliding/parts.md';
-import CustomProps from '@site/static/auto-generated/v5/item-sliding/custom-props.md';
-import Slots from '@site/static/auto-generated/v5/item-sliding/slots.md';
+import Props from '@ionic-internal/component-api/v5/item-sliding/props.md';
+import Events from '@ionic-internal/component-api/v5/item-sliding/events.md';
+import Methods from '@ionic-internal/component-api/v5/item-sliding/methods.md';
+import Parts from '@ionic-internal/component-api/v5/item-sliding/parts.md';
+import CustomProps from '@ionic-internal/component-api/v5/item-sliding/custom-props.md';
+import Slots from '@ionic-internal/component-api/v5/item-sliding/slots.md';
 
 # ion-item-sliding
 

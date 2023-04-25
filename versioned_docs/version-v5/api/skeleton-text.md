@@ -9,12 +9,12 @@ demoSourceUrl: 'https://github.com/ionic-team/ionic-docs/tree/main/static/demos/
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-import Props from '@site/static/auto-generated/v5/skeleton-text/props.md';
-import Events from '@site/static/auto-generated/v5/skeleton-text/events.md';
-import Methods from '@site/static/auto-generated/v5/skeleton-text/methods.md';
-import Parts from '@site/static/auto-generated/v5/skeleton-text/parts.md';
-import CustomProps from '@site/static/auto-generated/v5/skeleton-text/custom-props.md';
-import Slots from '@site/static/auto-generated/v5/skeleton-text/slots.md';
+import Props from '@ionic-internal/component-api/v5/skeleton-text/props.md';
+import Events from '@ionic-internal/component-api/v5/skeleton-text/events.md';
+import Methods from '@ionic-internal/component-api/v5/skeleton-text/methods.md';
+import Parts from '@ionic-internal/component-api/v5/skeleton-text/parts.md';
+import CustomProps from '@ionic-internal/component-api/v5/skeleton-text/custom-props.md';
+import Slots from '@ionic-internal/component-api/v5/skeleton-text/slots.md';
 
 # ion-skeleton-text
 

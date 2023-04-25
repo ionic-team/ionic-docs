@@ -7,12 +7,12 @@ demoSourceUrl: 'https://github.com/ionic-team/ionic-docs/tree/main/static/demos/
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-import Props from '@site/static/auto-generated/v5/datetime/props.md';
-import Events from '@site/static/auto-generated/v5/datetime/events.md';
-import Methods from '@site/static/auto-generated/v5/datetime/methods.md';
-import Parts from '@site/static/auto-generated/v5/datetime/parts.md';
-import CustomProps from '@site/static/auto-generated/v5/datetime/custom-props.md';
-import Slots from '@site/static/auto-generated/v5/datetime/slots.md';
+import Props from '@ionic-internal/component-api/v5/datetime/props.md';
+import Events from '@ionic-internal/component-api/v5/datetime/events.md';
+import Methods from '@ionic-internal/component-api/v5/datetime/methods.md';
+import Parts from '@ionic-internal/component-api/v5/datetime/parts.md';
+import CustomProps from '@ionic-internal/component-api/v5/datetime/custom-props.md';
+import Slots from '@ionic-internal/component-api/v5/datetime/slots.md';
 
 # ion-datetime
 

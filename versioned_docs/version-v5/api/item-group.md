@@ -5,12 +5,12 @@ sidebar_label: 'ion-item-group'
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-import Props from '@site/static/auto-generated/v5/item-group/props.md';
-import Events from '@site/static/auto-generated/v5/item-group/events.md';
-import Methods from '@site/static/auto-generated/v5/item-group/methods.md';
-import Parts from '@site/static/auto-generated/v5/item-group/parts.md';
-import CustomProps from '@site/static/auto-generated/v5/item-group/custom-props.md';
-import Slots from '@site/static/auto-generated/v5/item-group/slots.md';
+import Props from '@ionic-internal/component-api/v5/item-group/props.md';
+import Events from '@ionic-internal/component-api/v5/item-group/events.md';
+import Methods from '@ionic-internal/component-api/v5/item-group/methods.md';
+import Parts from '@ionic-internal/component-api/v5/item-group/parts.md';
+import CustomProps from '@ionic-internal/component-api/v5/item-group/custom-props.md';
+import Slots from '@ionic-internal/component-api/v5/item-group/slots.md';
 
 # ion-item-group
 

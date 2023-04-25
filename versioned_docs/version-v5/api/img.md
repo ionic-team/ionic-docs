@@ -7,12 +7,12 @@ sidebar_label: 'ion-img'
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-import Props from '@site/static/auto-generated/v5/img/props.md';
-import Events from '@site/static/auto-generated/v5/img/events.md';
-import Methods from '@site/static/auto-generated/v5/img/methods.md';
-import Parts from '@site/static/auto-generated/v5/img/parts.md';
-import CustomProps from '@site/static/auto-generated/v5/img/custom-props.md';
-import Slots from '@site/static/auto-generated/v5/img/slots.md';
+import Props from '@ionic-internal/component-api/v5/img/props.md';
+import Events from '@ionic-internal/component-api/v5/img/events.md';
+import Methods from '@ionic-internal/component-api/v5/img/methods.md';
+import Parts from '@ionic-internal/component-api/v5/img/parts.md';
+import CustomProps from '@ionic-internal/component-api/v5/img/custom-props.md';
+import Slots from '@ionic-internal/component-api/v5/img/slots.md';
 
 # ion-img
 

@@ -9,12 +9,12 @@ demoSourceUrl: 'https://github.com/ionic-team/ionic-docs/tree/main/static/demos/
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-import Props from '@site/static/auto-generated/v5/badge/props.md';
-import Events from '@site/static/auto-generated/v5/badge/events.md';
-import Methods from '@site/static/auto-generated/v5/badge/methods.md';
-import Parts from '@site/static/auto-generated/v5/badge/parts.md';
-import CustomProps from '@site/static/auto-generated/v5/badge/custom-props.md';
-import Slots from '@site/static/auto-generated/v5/badge/slots.md';
+import Props from '@ionic-internal/component-api/v5/badge/props.md';
+import Events from '@ionic-internal/component-api/v5/badge/events.md';
+import Methods from '@ionic-internal/component-api/v5/badge/methods.md';
+import Parts from '@ionic-internal/component-api/v5/badge/parts.md';
+import CustomProps from '@ionic-internal/component-api/v5/badge/custom-props.md';
+import Slots from '@ionic-internal/component-api/v5/badge/slots.md';
 
 # ion-badge
 

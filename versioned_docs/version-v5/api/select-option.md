@@ -7,12 +7,12 @@ sidebar_label: 'ion-select-option'
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-import Props from '@site/static/auto-generated/v5/select-option/props.md';
-import Events from '@site/static/auto-generated/v5/select-option/events.md';
-import Methods from '@site/static/auto-generated/v5/select-option/methods.md';
-import Parts from '@site/static/auto-generated/v5/select-option/parts.md';
-import CustomProps from '@site/static/auto-generated/v5/select-option/custom-props.md';
-import Slots from '@site/static/auto-generated/v5/select-option/slots.md';
+import Props from '@ionic-internal/component-api/v5/select-option/props.md';
+import Events from '@ionic-internal/component-api/v5/select-option/events.md';
+import Methods from '@ionic-internal/component-api/v5/select-option/methods.md';
+import Parts from '@ionic-internal/component-api/v5/select-option/parts.md';
+import CustomProps from '@ionic-internal/component-api/v5/select-option/custom-props.md';
+import Slots from '@ionic-internal/component-api/v5/select-option/slots.md';
 
 # ion-select-option
 

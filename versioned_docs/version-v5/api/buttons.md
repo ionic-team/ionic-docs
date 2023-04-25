@@ -7,12 +7,12 @@ sidebar_label: 'ion-buttons'
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-import Props from '@site/static/auto-generated/v5/buttons/props.md';
-import Events from '@site/static/auto-generated/v5/buttons/events.md';
-import Methods from '@site/static/auto-generated/v5/buttons/methods.md';
-import Parts from '@site/static/auto-generated/v5/buttons/parts.md';
-import CustomProps from '@site/static/auto-generated/v5/buttons/custom-props.md';
-import Slots from '@site/static/auto-generated/v5/buttons/slots.md';
+import Props from '@ionic-internal/component-api/v5/buttons/props.md';
+import Events from '@ionic-internal/component-api/v5/buttons/events.md';
+import Methods from '@ionic-internal/component-api/v5/buttons/methods.md';
+import Parts from '@ionic-internal/component-api/v5/buttons/parts.md';
+import CustomProps from '@ionic-internal/component-api/v5/buttons/custom-props.md';
+import Slots from '@ionic-internal/component-api/v5/buttons/slots.md';
 
 # ion-buttons
 
