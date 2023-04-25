@@ -187,11 +187,8 @@ ${methods
 | | |
 | --- | --- |
 | **Description** | ${formattedDescription} |
-| **Signature** | \`${method.signature.replace(/\|/g, '\uff5c')}\` |
-`
-  )
-  .join('\n')}
-
+| **Signature** | \`${method.signature.replace(/\|/g, '\uff5c')}\` |`
+  }).join('\n')}
 `;
 }
 
