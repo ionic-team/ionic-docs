@@ -174,14 +174,14 @@ function renderMethods({ methods }) {
     return 'No public methods available for this component.';
   }
 
-  const description = formatMultiline(method.docs)
-  const formattedDescription = description.replace('../list', 'list');
-
   // NOTE: replaces | with U+FF5C since MDX renders \| in tables incorrectly
   return `
 ${methods
-  .map(
-    (method) => `
+  .map((method) => {
+    const description = formatMultiline(method.docs)
+    const formattedDescription = description.replace('../list', 'list');
+
+    return `
 ### ${method.name}
 
 | | |
