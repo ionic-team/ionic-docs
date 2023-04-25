@@ -36,7 +36,7 @@ $ npm install @capacitor/camera
 
 Once installed, plugins can be imported into a component and you can call the native functionality directly from your code.
 
-Using the [Camera plugin](native/camera.md) as an example, first install it:
+Using the [Camera plugin](plugins/camera.md) as an example, first install it:
 
 ````mdx-code-block
 <Tabs
