@@ -132,14 +132,31 @@ ${properties
   .map((prop) => {
     const isDeprecated = prop.deprecation !== undefined;
 
+    /**
+     * Several components link to /docs/theming/basics
+     * in the generated core.json file from @ionic/core.
+     * This script updates those references to point to
+     * the new URL.
+     * The docs for v5 of `ion-select` and `ion-datetime`
+     * have incorrect links when linking to other
+     * components. This is also adjusted when processing the
+     * properties description.
+     */
     const docs = isDeprecated ? `${prop.docs}\n_Deprecated_ ${prop.deprecation}` : prop.docs;
+    const description = formatMultiline(docs)
+    const formattedDescription = description
+      .replace('/docs/theming/basics', '/docs/guide/theming/basics')
+      .replace('../alert', 'alert')
+      .replace('../action-sheet', 'action-sheet')
+      .replace('../popover', 'popover')
+      .replace('../picker', 'picker');
 
     return `
 ### ${prop.name} ${isDeprecated ? '(deprecated)' : ''}
 
 | | |
 | --- | --- |
-| **Description** | ${formatMultiline(docs)} |
+| **Description** | ${formattedDescription} |
 | **Attribute** | \`${prop.attr}\` |
 | **Type** | \`${prop.type.replace(/\|/g, '\uff5c')}\` |
 | **Default** | \`${prop.default}\` |
@@ -170,18 +187,22 @@ function renderMethods({ methods }) {
   // NOTE: replaces | with U+FF5C since MDX renders \| in tables incorrectly
   return `
 ${methods
-  .map(
-    (method) => `
+  .map((method) => {
+    /**
+     * v5 of item-sliding has a bad link for the list
+     * component. This is fixed here.
+     */
+    const description = formatMultiline(method.docs)
+    const formattedDescription = description.replace('../list', 'list');
+
+    return `
 ### ${method.name}
 
 | | |
 | --- | --- |
-| **Description** | ${formatMultiline(method.docs)} |
-| **Signature** | \`${method.signature.replace(/\|/g, '\uff5c')}\` |
-`
-  )
-  .join('\n')}
-
+| **Description** | ${formattedDescription} |
+| **Signature** | \`${method.signature.replace(/\|/g, '\uff5c')}\` |`
+  }).join('\n')}
 `;
 }
 
