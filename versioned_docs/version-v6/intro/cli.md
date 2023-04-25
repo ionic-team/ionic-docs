@@ -24,14 +24,14 @@ Before proceeding, make sure your computer has [Node.js](../reference/glossary.m
 Install the Ionic CLI with npm:
 
 ```shell
-npm install -g @ionic/cli
+npm install -g @ionic/cli@6
 ```
 
 If there was a previous installation of the Ionic CLI, it will need to be uninstalled due to a change in package name.
 
 ```shell
 $ npm uninstall -g ionic
-$ npm install -g @ionic/cli
+$ npm install -g @ionic/cli@6
 
 ```
 
