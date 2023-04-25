@@ -204,7 +204,7 @@ To customize the look and feel of the components, Ionic has CSS variables you ca
 }
 ```
 
-For more info on theming your Ionic app, see the guide [here](/docs/theming/themes).
+For more info on theming your Ionic app, see the guide [here](/docs/guide/theming/themes).
 
 ### Wrapping up
 
