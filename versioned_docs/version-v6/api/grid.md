@@ -34,7 +34,7 @@ The grid is a powerful mobile-first flexbox system for building custom layouts. 
 - Columns without a value for size will automatically have equal widths. For example, four columns will each automatically be 25% wide.
 - Column widths are set as a percentage, so they’re always fluid and sized relative to their parent element.
 - There is padding between individual columns. However, the padding can be removed from the grid and
-  columns by adding the `ion-no-padding` class to the grid. See the [CSS Utilities](../layout/css-utilities) for more styles that can be applied to the grid.
+  columns by adding the `ion-no-padding` class to the grid. See the [CSS Utilities](/docs/guide/layout/css-utilities) for more styles that can be applied to the grid.
 - There are five grid tiers, one for each responsive breakpoint: all breakpoints (extra small), small, medium, large, and extra large.
 - Grid tiers are based on minimum widths, meaning they apply to their tier and all those larger than them
   (e.g., `size-sm="4"` applies to small, medium, large, and extra large devices).
@@ -148,7 +148,7 @@ import PushPullResponsive from '@site/static/usage/v6/grid/push-pull-responsive/
 
 ### Vertical Alignment
 
-All columns can be vertically aligned inside of a row by adding different classes to the row. For a list of available classes, see [css utilities](/layout/css-utilities#flex-container-properties).
+All columns can be vertically aligned inside of a row by adding different classes to the row. For a list of available classes, see [css utilities](/docs/guide/layout/css-utilities#flex-container-properties).
 
 import VerticalAlignment from '@site/static/usage/v6/grid/vertical-alignment/index.md';
 
@@ -156,7 +156,7 @@ import VerticalAlignment from '@site/static/usage/v6/grid/vertical-alignment/ind
 
 ### Horizontal Alignment
 
-All columns can be horizontally aligned inside of a row by adding different classes to the row. For a list of available classes, see [css utilities](/layout/css-utilities.md#flex-container-properties).
+All columns can be horizontally aligned inside of a row by adding different classes to the row. For a list of available classes, see [css utilities](/docs/guide/layout/css-utilities.md#flex-container-properties).
 
 import HorizontalAlignment from '@site/static/usage/v6/grid/horizontal-alignment/index.md';
 
