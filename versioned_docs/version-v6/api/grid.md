@@ -156,7 +156,7 @@ import VerticalAlignment from '@site/static/usage/v6/grid/vertical-alignment/ind
 
 ### Horizontal Alignment
 
-All columns can be horizontally aligned inside of a row by adding different classes to the row. For a list of available classes, see [css utilities](/docs/guide/layout/css-utilities.md#flex-container-properties).
+All columns can be horizontally aligned inside of a row by adding different classes to the row. For a list of available classes, see [css utilities](/docs/guide/layout/css-utilities#flex-container-properties).
 
 import HorizontalAlignment from '@site/static/usage/v6/grid/horizontal-alignment/index.md';
 
