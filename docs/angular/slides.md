@@ -109,6 +109,7 @@ swiper-slide {
   display: flex;
   position: relative;
 
+  flex-direction: column;
   flex-shrink: 0;
   align-items: center;
   justify-content: center;
