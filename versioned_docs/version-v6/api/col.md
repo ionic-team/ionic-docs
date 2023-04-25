@@ -13,7 +13,7 @@ import Slots from '@ionic-internal/component-api/v6/col/slots.md';
   <title>ion-col: Column Component Padding, Size and Other Properties</title>
   <meta
     name="description"
-    content="ion-col is a column component that goes inside a row. Content within a grid goes inside of a column. Read more on column padding, size, and other properties."
+    content="ion-col is a column component that goes inside a row. Content within a grid goes inside of a column. Read more on column padding, size, and other properties."
   />
 </head>
 
@@ -27,7 +27,7 @@ See the [grid](./grid) documentation for more information.
 
 ## Column Alignment
 
-By default, columns will stretch to fill the entire height of the row. Columns are [flex items](https://developer.mozilla.org/en-US/docs/Glossary/Flex_Item), so there are several [CSS classes](/docs/layout/css-utilities#flex-item-properties) that can be applied to a column to customize this behavior.
+By default, columns will stretch to fill the entire height of the row. Columns are [flex items](https://developer.mozilla.org/en-US/docs/Glossary/Flex_Item), so there are several [CSS classes](/docs/guide/layout/css-utilities#flex-item-properties) that can be applied to a column to customize this behavior.
 
 ## Properties
 
