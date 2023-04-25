@@ -31,13 +31,7 @@ export interface EditorOptions {
    */
   mode?: string;
 
-  angularModuleOptions?: {
-    imports: string[];
-    declarations?: string[];
-  };
-
   version?: number;
-
 }
 
 const loadSourceFiles = async (files: string[], version: number) => {
@@ -131,15 +125,6 @@ const openAngularEditor = async (code: string, options?: EditorOptions) => {
   };
 
   const package_json = defaultFiles[11];
-
-  if (options.angularModuleOptions) {
-    if (options.angularModuleOptions.imports) {
-      files[appModule] = `${options.angularModuleOptions.imports.join('\n')}\n${files[appModule]}`;
-    }
-    if (options.angularModuleOptions.declarations) {
-      files[appModule] = files[appModule].replace('/* CUSTOM_DECLARATIONS */', options.angularModuleOptions.declarations.map(d => `\n  ${d}`).join(','));
-    }
-  }
 
   files[appModule] = files[appModule].replace('IonicModule.forRoot({})', `IonicModule.forRoot({ mode: '${options?.mode}' })`);
 

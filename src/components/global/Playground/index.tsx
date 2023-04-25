@@ -85,17 +85,6 @@ interface UsageTargetOptions {
   files: {
     [key: string]: MdxContent;
   };
-  angularModuleOptions?: {
-    /**
-     * The list of import declarations to add to the `AppModule`.
-     * Accepts value formatted as: `'import { FooComponent } from './foo.component';'`.
-     */
-    imports: string[];
-    /**
-     * The list of class name declarations to add to the `AppModule`.
-     */
-    declarations?: string[];
-  };
 }
 
 /**
@@ -331,9 +320,6 @@ export default function Playground({
       // using outerText will preserve line breaks for formatting in Stackblitz editor
       codeBlock = codeRef.current.querySelector('code').outerText;
     } else {
-      const codeUsageTarget = code[usageTarget] as UsageTargetOptions;
-      editorOptions.angularModuleOptions = codeUsageTarget.angularModuleOptions;
-
       editorOptions.files = Object.keys(codeSnippets[usageTarget])
         .map((fileName) => ({
           [fileName]: hostRef.current!.querySelector<HTMLElement>(`#${getCodeSnippetId(usageTarget, fileName)} code`)
