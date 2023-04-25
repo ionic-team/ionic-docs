@@ -135,7 +135,7 @@ swiper-slide img {
 
 With `ion-slides`, Ionic automatically customized dozens of Swiper properties. This resulted in an experience that felt smooth when swiping on mobile devices. We recommend using the `IonicSlides` module to ensure that these properties are also set when using Swiper directly. However, using this module is **not** required to use Swiper.js in Ionic.
 
-It is recommended to review the [properties](https://github.com/ionic-team/ionic-framework/blob/9f51bdc14556aed0047627f147defc3d0043046c/core/src/components/slides/IonicSlides.ts#L3) set by `IonicSlides` and determine which ones you would like to customize.
+It is recommended to review the [properties](https://github.com/ionic-team/ionic-framework/blob/main/core/src/components/slides/IonicSlides.ts) set by `IonicSlides` and determine which ones you would like to customize.
 
 We can install the `IonicSlides` module by importing it from `@ionic/angular` and passing it to the `modules` property of `swiper-container` as an array:
 
