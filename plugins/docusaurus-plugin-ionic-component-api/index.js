@@ -136,9 +136,10 @@ ${properties
     const description = formatMultiline(docs)
     const formattedDescription = description
       .replace('/docs/theming/basics', '/docs/guide/theming/basics')
-      .replace('../alert', 'alert.md')
-      .replace('../action-sheet', 'action-sheet.md')
-      .replace('../popover', 'popover.md');
+      .replace('../alert', 'alert')
+      .replace('../action-sheet', 'action-sheet')
+      .replace('../popover', 'popover')
+      .replace('../picker', 'picker');
 
     return `
 ### ${prop.name} ${isDeprecated ? '(deprecated)' : ''}
