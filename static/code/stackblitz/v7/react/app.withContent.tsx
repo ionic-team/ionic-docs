@@ -22,9 +22,7 @@ import './theme/variables.css';
 
 import Example from './main';
 
-setupIonicReact({
-  mode: '{{ MODE }}',
-});
+setupIonicReact();
 
 export default function App() {
   return (
