@@ -1,6 +1,7 @@
 {
   "redirects": [
-    { "source": "/", "destination": "/docs" },
+    { "source": "/", "destination": "/docs/guide" },
+    { "source": "/docs", "destination": "/docs/guide" },
     {
       "source": "/docs/angular/your-first-app/2-taking-photos",
       "destination": "/docs/angular/your-first-app/taking-photos"
