@@ -567,22 +567,22 @@ export default function Playground({
         </div>
         {renderIframes
           ? [
-              <div className="playground__preview">
+              <div className="playground__preview" key="preview">
                 {!iframesLoaded && renderLoadingScreen()}
                 {/*
-              We render two iframes, one for each mode.
-              When the set mode changes, we hide one frame and
-              show the other. This is done to avoid flickering
-              and doing unnecessary reloads when switching modes.
-            */}
+                  We render two iframes, one for each mode.
+                  When the set mode changes, we hide one frame and
+                  show the other. This is done to avoid flickering
+                  and doing unnecessary reloads when switching modes.
+                */}
                 {devicePreview
                   ? [
-                      <div className={!isIOS ? 'frame-hidden' : 'frame-visible'} aria-hidden={!isIOS ? 'true' : null}>
+                      <div key="ios-iframe" className={!isIOS ? 'frame-hidden' : 'frame-visible'} aria-hidden={!isIOS ? 'true' : null}>
                         <device-preview mode="ios">
                           <iframe height={frameSize} ref={(ref) => handleFrameRef(ref, 'ios')} src={sourceiOS}></iframe>
                         </device-preview>
                       </div>,
-                      <div className={!isMD ? 'frame-hidden' : 'frame-visible'} aria-hidden={!isMD ? 'true' : null}>
+                      <div key="md-iframe" className={!isMD ? 'frame-hidden' : 'frame-visible'} aria-hidden={!isMD ? 'true' : null}>
                         <device-preview mode="md">
                           <iframe height={frameSize} ref={(ref) => handleFrameRef(ref, 'md')} src={sourceMD}></iframe>
                         </device-preview>
@@ -590,6 +590,7 @@ export default function Playground({
                     ]
                   : [
                       <iframe
+                        key="ios-iframe"
                         height={frameSize}
                         className={!isIOS ? 'frame-hidden' : ''}
                         ref={(ref) => handleFrameRef(ref, 'ios')}
@@ -597,6 +598,7 @@ export default function Playground({
                         aria-hidden={!isIOS ? 'true' : null}
                       ></iframe>,
                       <iframe
+                        key="md-iframe"
                         height={frameSize}
                         className={!isMD ? 'frame-hidden' : ''}
                         ref={(ref) => handleFrameRef(ref, 'md')}
