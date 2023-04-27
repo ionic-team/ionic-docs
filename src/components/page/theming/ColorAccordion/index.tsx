@@ -38,6 +38,7 @@ export default function ColorAccordion({ ...props }) {
 
         return (
           <li
+            key={color}
             className={clsx({
               [styles.colorMenuItem]: true,
               [styles.colorMenuItemActive]: color === activeColor,
