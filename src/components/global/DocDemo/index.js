@@ -48,6 +48,7 @@ const DocDemo = (props) => {
           })}
           title={`Toggle ${mode === 'ios' ? 'iOS' : 'Android'} mode`}
           onClick={() => setIonicMode(mode)}
+          key={mode}
         >
           {mode === 'ios' ? 'iOS' : 'Android'}
         </button>
