@@ -45,7 +45,7 @@ export default function ColorAccordion({ ...props }) {
             })}
             style={
               {
-                'background-color': `var(--ion-color-${color})`,
+                'backgroundColor': `var(--ion-color-${color})`,
                 color: `var(--ion-color-${color}-contrast)`,
               } as any
             }
@@ -59,17 +59,17 @@ export default function ColorAccordion({ ...props }) {
               <g
                 id="Welcome"
                 stroke="none"
-                stroke-width="1"
+                strokeWidth="1"
                 fill="none"
-                fill-rule="evenodd"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                fillRule="evenodd"
+                strokeLinecap="round"
+                strokeLinejoin="round"
               >
                 <g
                   id="Desktop-HD"
                   transform="translate(-1025.000000, -335.000000)"
                   stroke="currentColor"
-                  stroke-width="2"
+                  strokeWidth="2"
                 >
                   <polyline
                     id="arrow"
@@ -85,7 +85,7 @@ export default function ColorAccordion({ ...props }) {
                 className={styles.colorSubmenuItem}
                 style={
                   {
-                    'background-color': `var(--ion-color-${color}-shade)`,
+                    'backgroundColor': `var(--ion-color-${color}-shade)`,
                     color: `var(--ion-color-${color}-contrast)`,
                   } as any
                 }
@@ -99,7 +99,7 @@ export default function ColorAccordion({ ...props }) {
                 className={styles.colorSubmenuItem}
                 style={
                   {
-                    'background-color': `var(--ion-color-${color}-tint)`,
+                    'backgroundColor': `var(--ion-color-${color}-tint)`,
                     color: `var(--ion-color-${color}-contrast)`,
                   } as any
                 }
