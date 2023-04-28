@@ -12,6 +12,8 @@ In your test template when rendering with React Testing Library, you must wrap y
 import { IonApp } from '@ionic/react';
 import { render } from "@testing-library/react";
 
+import Example from './Example';
+
 test('example', () => {
   render(
     <IonApp>
@@ -27,8 +29,11 @@ test('example', () => {
 React Testing Library recommends using the `user-event` library for simulating user interactions. This library provides a more realistic simulation of user interactions than the `fireEvent` function provided by React Testing Library.
 
 ```tsx title="Example.test.tsx"
+import { IonApp } from '@ionic/react';
 import { render } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
+
+import Example from './Example';
 
 test('example', async () => {
   const user = userEvent.setup();
