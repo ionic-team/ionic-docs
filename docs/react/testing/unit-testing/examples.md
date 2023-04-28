@@ -28,8 +28,8 @@ export default function Example() {
 ### Testing the modal
 
 ```tsx title="src/Example.test.tsx"
-import { fireEvent, render, screen, waitFor } from '@testing-library/react';
 import { IonApp } from '@ionic/react';
+import { fireEvent, render, screen, waitFor } from '@testing-library/react';
 
 import Example from './Example';
 
@@ -81,7 +81,7 @@ const Example: React.FC = () => {
           <IonTitle>Blank</IonTitle>
         </IonToolbar>
       </IonHeader>
-      <IonContent fullscreen>
+      <IonContent fullscreen={true}>
         <IonButton expand="block" className="ion-margin" onClick={() => present()}>
           Open
         </IonButton>
@@ -96,8 +96,8 @@ export default Example;
 ### Testing the modal
 
 ```tsx title="src/Example.test.tsx"
-import { fireEvent, render, screen, waitFor } from '@testing-library/react';
 import { IonApp } from '@ionic/react';
+import { fireEvent, render, screen, waitFor } from '@testing-library/react';
 
 import Example from './Example';
 
