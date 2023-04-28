@@ -6,7 +6,7 @@ description: Learn how to test an Ionic React application. This document provide
 
 # Testing Ionic React
 
-This document provides an overview of how to test an application built with `@ionic/react`. It covers the basics of testing with React, as well as the specific tools and libraries used in `@ionic/react`.
+This document provides an overview of how to test an application built with `@ionic/react`. It covers the basics of testing with React, as well as the specific tools and libraries developers can use to test their applications.
 
 ## Introduction
 
