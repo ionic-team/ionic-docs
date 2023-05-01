@@ -309,7 +309,7 @@ Let's say in an app with `ion-slides` we had the `slidesPerView` and `loop` opti
 
 ```html
 <template>
-  <ion-slides :options="{ slidesPerView: true, loop: true }">
+  <ion-slides :options="{ slidesPerView: 3, loop: true }">
     <ion-slide>Slide 1</ion-slide>
     <ion-slide>Slide 2</ion-slide>
     <ion-slide>Slide 3</ion-slide>
