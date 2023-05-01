@@ -25,7 +25,7 @@ jobs:
       run: npm ci --legacy-peer-deps
     - name: Lint
       run: npm run lint
-    - name: Prebuild
-      run: npm run prebuild
+    - name: Generate Markdown
+      run: npm run generate-markdown
     - name: Build Production
       run: npm run build:production
