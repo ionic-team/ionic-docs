@@ -8,8 +8,8 @@ import angular_example_component_html from './angular/example_component_html.md'
 import angular_example_component_ts from './angular/example_component_ts.md';
 
 <Playground
-  version="7"
-  code={{
+version="7"
+code={{
     javascript,
     react,
     vue,
@@ -20,7 +20,7 @@ import angular_example_component_ts from './angular/example_component_ts.md';
       },
     },
   }}
-  src="usage/v7/refresher/basic/demo.html"
-  devicePreview
-  includeIonContent={false}
+src="usage/v7/refresher/basic/demo.html"
+devicePreview
+includeIonContent={false}
 />

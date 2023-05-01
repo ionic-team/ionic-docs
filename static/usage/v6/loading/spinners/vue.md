@@ -14,14 +14,14 @@
         const loading = await loadingController.create({
           message: 'Loading...',
           duration: 3000,
-          spinner: 'circles'
+          spinner: 'circles',
         });
-        
+
         loading.present();
-      }
-      
-      return { showLoading }
-    }
+      };
+
+      return { showLoading };
+    },
   });
 </script>
 ```

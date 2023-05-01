@@ -16,7 +16,7 @@ Download/install these right away to ensure an optimal Ionic development experie
 - <strong>A code editor</strong> for... writing code! We are fans of [Visual Studio Code](https://code.visualstudio.com/).
 - <strong>Command-line terminal (CLI)</strong>: FYI <strong>Windows</strong> users, for the best Ionic experience, we
   recommend the built-in command line (cmd) or the Powershell CLI, running in Administrator mode. For <strong>
-    Mac/Linux
+  Mac/Linux
   </strong> users, virtually any terminal will work.
 
 ## Install Ionic and Cordova

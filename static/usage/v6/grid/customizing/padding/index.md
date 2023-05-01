@@ -11,8 +11,8 @@ import angular_example_component_html from './angular/example_component_html.md'
 import angular_example_component_css from './angular/example_component_css.md';
 
 <Playground
-  version="6"
-  code={{
+version="6"
+code={{
     javascript,
     react: {
       files: {
@@ -28,6 +28,6 @@ import angular_example_component_css from './angular/example_component_css.md';
       },
     },
   }}
-  src="usage/v6/grid/customizing/padding/demo.html"
-  size="150px"
+src="usage/v6/grid/customizing/padding/demo.html"
+size="150px"
 />

@@ -18,16 +18,16 @@ import angular_modal_example_component_html from './angular/modal-example_compon
 import angular_types_ts from './angular/angular_types_ts.md';
 
 <Playground
-  version="7"
-  code={{ 
-    javascript, 
+version="7"
+code={{
+    javascript,
     react: {
       files: {
         'src/main.tsx': react_main_tsx,
         'src/types.ts': react_types_ts,
         'src/AppTypeahead.tsx': typeahead_component_tsx
       }
-    }, 
+    },
     vue: {
       files: {
         'src/components/Example.vue': vue_example,
@@ -44,9 +44,9 @@ import angular_types_ts from './angular/angular_types_ts.md';
         'src/app/app.module.ts': angular_app_module_ts,
         'src/app/types.ts': angular_types_ts
       },
-    }, 
+    },
   }}
-  src="usage/v7/select/typeahead/demo.html"
-  devicePreview
-  includeIonContent={false}
+src="usage/v7/select/typeahead/demo.html"
+devicePreview
+includeIonContent={false}
 />

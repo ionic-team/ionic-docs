@@ -25,20 +25,24 @@ Get started building by [installing Ionic](intro/cli.md) or following our [First
   </DocsCard>
 
 <DocsCard
-  header="UI Components"
-  href="/components"
-  icon="/icons/guide-components-icon.svg"
-  hover-icon="/icons/guide-components-icon-hover.svg"
+header="UI Components"
+href="/components"
+icon="/icons/guide-components-icon.svg"
+hover-icon="/icons/guide-components-icon-hover.svg"
+
 >
+
   <p>Dive into Ionic Framework's beautifully designed UI component library.</p>
 </DocsCard>
 
 <DocsCard
-  header="Native Functionality"
-  href="/native"
-  icon="/icons/guide-native-icon.svg"
-  hover-icon="/icons/guide-native-icon-hover.svg"
+header="Native Functionality"
+href="/native"
+icon="/icons/guide-native-icon.svg"
+hover-icon="/icons/guide-native-icon-hover.svg"
+
 >
+
   <p>Integrate native device plugins, like Bluetooth, Maps, HealthKit, and more.</p>
 </DocsCard>
 

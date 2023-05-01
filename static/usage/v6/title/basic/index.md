@@ -6,9 +6,9 @@ import vue from './vue.md';
 import angular from './angular.md';
 
 <Playground
-  version="6"
-  code={{ javascript, react, vue, angular }}
-  src="usage/v6/title/basic/demo.html"
-  devicePreview={true}
-  includeIonContent={false}
+version="6"
+code={{ javascript, react, vue, angular }}
+src="usage/v6/title/basic/demo.html"
+devicePreview={true}
+includeIonContent={false}
 />

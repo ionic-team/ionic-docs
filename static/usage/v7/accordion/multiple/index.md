@@ -6,13 +6,13 @@ import vue from './vue.md';
 import angular from './angular.md';
 
 <Playground
-  version="7"
-  code={{
+version="7"
+code={{
     javascript,
     react,
     vue,
     angular,
   }}
-  size="320px"
-  src="usage/v7/accordion/multiple/demo.html"
+size="320px"
+src="usage/v7/accordion/multiple/demo.html"
 />

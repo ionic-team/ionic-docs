@@ -1,8 +1,6 @@
 ```html
 <ion-item>
-  <ion-label>
-    Default Item Lines
-  </ion-label>
+  <ion-label> Default Item Lines </ion-label>
 </ion-item>
 
 <ion-item lines="inset">

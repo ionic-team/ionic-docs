@@ -12,8 +12,8 @@ import angular_example_component_css from './angular/example_component_css.md';
 import angular_example_component_ts from './angular/example_component_ts.md';
 
 <Playground
-  version="7"
-  code={{
+version="7"
+code={{
     javascript,
     react: {
       files: {
@@ -30,7 +30,7 @@ import angular_example_component_ts from './angular/example_component_ts.md';
       },
     },
   }}
-  src="usage/v7/reorder/custom-scroll-target/demo.html"
-  size="300px"
-  includeIonContent={false}
+src="usage/v7/reorder/custom-scroll-target/demo.html"
+size="300px"
+includeIonContent={false}
 />

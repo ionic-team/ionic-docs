@@ -6,14 +6,14 @@ import vue from './vue.md';
 import angular from './angular.md';
 
 <Playground
-  version="7"
-  code={{
+version="7"
+code={{
     javascript,
     react,
     vue,
     angular,
   }}
-  src="usage/v7/modal/performance/mount/demo.html"
-  devicePreview
-  includeIonContent={false}
+src="usage/v7/modal/performance/mount/demo.html"
+devicePreview
+includeIonContent={false}
 />

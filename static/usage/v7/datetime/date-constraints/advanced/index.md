@@ -8,9 +8,9 @@ import angular_example_component_html from './angular/example_component_html.md'
 import angular_example_component_ts from './angular/example_component_ts.md';
 
 <Playground
-  version="7"
-  size="medium"
-  code={{
+version="7"
+size="medium"
+code={{
     javascript,
     react,
     vue,
@@ -21,5 +21,5 @@ import angular_example_component_ts from './angular/example_component_ts.md';
       },
     },
   }}
-  src="usage/v7/datetime/date-constraints/advanced/demo.html"
+src="usage/v7/datetime/date-constraints/advanced/demo.html"
 />

@@ -20,8 +20,8 @@ import vue_page_two from './vue/page_two_vue.md';
 import vue_page_three from './vue/page_three_vue.md';
 
 <Playground
-  version="6"
-  code={{
+version="6"
+code={{
     javascript,
     angular: {
       files: {
@@ -50,6 +50,6 @@ import vue_page_three from './vue/page_three_vue.md';
       },
     },
   }}
-  src="usage/v6/nav/nav-link/demo.html"
-  devicePreview
+src="usage/v6/nav/nav-link/demo.html"
+devicePreview
 />

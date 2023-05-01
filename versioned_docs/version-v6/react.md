@@ -127,10 +127,12 @@ $ ionic serve █
   </DocsCard>
 
 <DocsCard
-  header="Add Ionic to Existing React App"
-  href="https://dev.to/ionic/adding-ionic-react-to-an-existing-react-project-4kib"
-  icon="/icons/logo-react-icon.png"
+header="Add Ionic to Existing React App"
+href="https://dev.to/ionic/adding-ionic-react-to-an-existing-react-project-4kib"
+icon="/icons/logo-react-icon.png"
+
 >
+
   <p>Use individual components or the complete app experience.</p>
 </DocsCard>
 

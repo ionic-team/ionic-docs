@@ -10,9 +10,9 @@ import angular_example_component_html from './angular/example_component_html.md'
 import angular_example_component_css from './angular/example_component_css.md';
 
 <Playground
-  version="6"
-  size="300px"
-  code={{
+version="6"
+size="300px"
+code={{
     javascript,
     react: {
       files: {
@@ -28,5 +28,5 @@ import angular_example_component_css from './angular/example_component_css.md';
       },
     },
   }}
-  src="usage/v6/badge/theming/css-properties/demo.html"
+src="usage/v6/badge/theming/css-properties/demo.html"
 />

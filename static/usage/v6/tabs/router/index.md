@@ -42,8 +42,8 @@ import react_library_page_tsx from './react/library_page_tsx.md';
 import react_search_page_tsx from './react/search_page_tsx.md';
 
 <Playground
-  version={6}
-  code={{
+version={6}
+code={{
     javascript,
     angular: {
       files: {
@@ -88,6 +88,6 @@ import react_search_page_tsx from './react/search_page_tsx.md';
       },
     },
   }}
-  src="usage/v6/tabs/router/demo.html"
-  devicePreview
+src="usage/v6/tabs/router/demo.html"
+devicePreview
 />

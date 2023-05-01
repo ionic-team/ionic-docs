@@ -11,9 +11,9 @@ import angular_example_component_css from './angular/example_component_css.md';
 import angular_example_component_ts from './angular/example_component_ts.md';
 
 <Playground
-  version="6"
-  size="300px"
-  code={{
+version="6"
+size="300px"
+code={{
     javascript,
     react: {
       files: {
@@ -30,5 +30,5 @@ import angular_example_component_ts from './angular/example_component_ts.md';
       },
     },
   }}
-  src="usage/v6/select/customization/styling-select/demo.html"
+src="usage/v6/select/customization/styling-select/demo.html"
 />

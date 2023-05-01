@@ -1,7 +1,14 @@
 ```tsx
 import React from 'react';
 import { IonContent, IonFab, IonFabButton, IonFabList, IonHeader, IonIcon, IonTitle, IonToolbar } from '@ionic/react';
-import { chevronDownCircle, chevronForwardCircle, chevronUpCircle, colorPalette, document, globe } from 'ionicons/icons';
+import {
+  chevronDownCircle,
+  chevronForwardCircle,
+  chevronUpCircle,
+  colorPalette,
+  document,
+  globe,
+} from 'ionicons/icons';
 
 function Example() {
   return (
@@ -45,7 +52,7 @@ function Example() {
             </IonFabButton>
           </IonFabList>
         </IonFab>
-      
+
         <IonFab slot="fixed" vertical="bottom" horizontal="end">
           <IonFabButton>
             <IonIcon icon={chevronUpCircle}></IonIcon>

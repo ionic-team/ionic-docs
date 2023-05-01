@@ -11,9 +11,9 @@ import angular_example_component_ts from './angular/example_component_ts.md';
 import angular_global_css from './angular/global_css.md';
 
 <Playground
-  version="7"
-  size="300px"
-  code={{
+version="7"
+size="300px"
+code={{
     javascript,
     react: {
       files: {
@@ -30,5 +30,5 @@ import angular_global_css from './angular/global_css.md';
       },
     },
   }}
-  src="usage/v7/alert/customization/demo.html"
+src="usage/v7/alert/customization/demo.html"
 />

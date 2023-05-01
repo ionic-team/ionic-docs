@@ -16,23 +16,13 @@
           <ion-title>Modal</ion-title>
         </ion-toolbar>
       </ion-header>
-      <ion-content class="ion-padding">
-        This content was mounted as soon as the modal was created.
-      </ion-content>
+      <ion-content class="ion-padding"> This content was mounted as soon as the modal was created. </ion-content>
     </ion-modal>
   </ion-content>
 </template>
 
 <script lang="ts">
-  import {
-    IonButtons,
-    IonButton,
-    IonModal,
-    IonHeader,
-    IonContent,
-    IonToolbar,
-    IonTitle,
-  } from '@ionic/vue';
+  import { IonButtons, IonButton, IonModal, IonHeader, IonContent, IonToolbar, IonTitle } from '@ionic/vue';
   import { defineComponent, ref } from 'vue';
 
   export default defineComponent({

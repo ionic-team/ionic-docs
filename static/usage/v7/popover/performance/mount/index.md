@@ -6,13 +6,13 @@ import vue from './vue.md';
 import angular from './angular.md';
 
 <Playground
-  version="7"
-  code={{
+version="7"
+code={{
     javascript,
     react,
     vue,
     angular,
   }}
-  size="medium"
-  src="usage/v7/popover/performance/mount/demo.html"
+size="medium"
+src="usage/v7/popover/performance/mount/demo.html"
 />

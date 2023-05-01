@@ -10,9 +10,9 @@ function Example() {
         <IonSelectOption value="banana">Banana</IonSelectOption>
         <IonSelectOption value="orange">Orange</IonSelectOption>
       </IonSelect>
-      
+
       <br />
-      
+
       <IonSelect label="Outline select" labelPlacement="floating" fill="outline">
         <IonSelectOption value="apple">Apple</IonSelectOption>
         <IonSelectOption value="banana">Banana</IonSelectOption>

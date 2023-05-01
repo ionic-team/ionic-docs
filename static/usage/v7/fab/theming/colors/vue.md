@@ -41,8 +41,8 @@
   export default defineComponent({
     components: { IonFab, IonFabButton, IonFabList, IonIcon },
     setup() {
-      return { add, chevronBack, chevronDown, chevronForward, chevronUp }
-    }
+      return { add, chevronBack, chevronDown, chevronForward, chevronUp };
+    },
   });
 </script>
 ```

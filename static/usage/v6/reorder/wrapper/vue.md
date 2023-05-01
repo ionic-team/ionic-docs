@@ -5,41 +5,31 @@
     <ion-reorder-group :disabled="false" @ionItemReorder="handleReorder($event)">
       <ion-reorder>
         <ion-item>
-          <ion-label>
-            Item 1
-          </ion-label>
+          <ion-label> Item 1 </ion-label>
         </ion-item>
       </ion-reorder>
 
       <ion-reorder>
         <ion-item>
-          <ion-label>
-            Item 2
-          </ion-label>
+          <ion-label> Item 2 </ion-label>
         </ion-item>
       </ion-reorder>
 
       <ion-reorder>
         <ion-item>
-          <ion-label>
-            Item 3
-          </ion-label>
+          <ion-label> Item 3 </ion-label>
         </ion-item>
       </ion-reorder>
 
       <ion-reorder>
         <ion-item>
-          <ion-label>
-            Item 4
-          </ion-label>
+          <ion-label> Item 4 </ion-label>
         </ion-item>
       </ion-reorder>
 
       <ion-reorder>
         <ion-item>
-          <ion-label>
-            Item 5
-          </ion-label>
+          <ion-label> Item 5 </ion-label>
         </ion-item>
       </ion-reorder>
     </ion-reorder-group>
@@ -62,10 +52,10 @@
         // where the gesture ended. This method can also be called directly
         // by the reorder group
         event.detail.complete();
-      }
+      };
 
-      return { handleReorder }
-    }
+      return { handleReorder };
+    },
   });
 </script>
 ```

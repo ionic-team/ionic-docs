@@ -8,8 +8,8 @@ import angular_example_component_ts from './angular/example_component_ts.md';
 import angular_example_component_html from './angular/example_component_html.md';
 
 <Playground
-  version="6"
-  code={{
+version="6"
+code={{
     javascript,
     react,
     vue,
@@ -20,5 +20,5 @@ import angular_example_component_html from './angular/example_component_html.md'
       },
     },
   }}
-  src="usage/v6/range/pins/demo.html"
+src="usage/v6/range/pins/demo.html"
 />

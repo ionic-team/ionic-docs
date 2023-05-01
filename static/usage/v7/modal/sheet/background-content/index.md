@@ -9,8 +9,8 @@ import angular_example_component_ts from './angular/example_component_ts.md';
 import angular_example_component_css from './angular/example_component_css.md';
 
 <Playground
-  version="7"
-  code={{
+version="7"
+code={{
     javascript,
     react,
     vue,
@@ -22,7 +22,7 @@ import angular_example_component_css from './angular/example_component_css.md';
       },
     },
   }}
-  src="usage/v7/modal/sheet/background-content/demo.html"
-  devicePreview
-  includeIonContent={false}
+src="usage/v7/modal/sheet/background-content/demo.html"
+devicePreview
+includeIonContent={false}
 />

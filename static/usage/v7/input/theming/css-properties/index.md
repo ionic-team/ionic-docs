@@ -11,8 +11,8 @@ import angular_example_component_html from './angular/example_component_html.md'
 import angular_example_component_css from './angular/example_component_css.md';
 
 <Playground
-  version="7"
-  code={{
+version="7"
+code={{
     javascript,
     react: {
       files: {
@@ -28,6 +28,6 @@ import angular_example_component_css from './angular/example_component_css.md';
       },
     },
   }}
-  src="usage/v7/input/theming/css-properties/demo.html"
-  size="100px"
+src="usage/v7/input/theming/css-properties/demo.html"
+size="100px"
 />

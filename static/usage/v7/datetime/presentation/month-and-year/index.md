@@ -6,8 +6,8 @@ import vue from './vue.md';
 import angular from './angular.md';
 
 <Playground
-  version="7"
-  size="240px"
-  code={{ javascript, react, vue, angular }}
-  src="usage/v7/datetime/presentation/month-and-year/demo.html"
+version="7"
+size="240px"
+code={{ javascript, react, vue, angular }}
+src="usage/v7/datetime/presentation/month-and-year/demo.html"
 />

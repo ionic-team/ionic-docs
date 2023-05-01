@@ -38,7 +38,7 @@ function Example() {
         <IonModal id="example-modal" ref={modal} trigger="open-custom-dialog">
           <div className="wrapper">
             <h1>Dialog header</h1>
-        
+
             <IonList lines="none">
               <IonItem button={true} detail={false} onClick={dismiss}>
                 <IonIcon icon={personCircle}></IonIcon>

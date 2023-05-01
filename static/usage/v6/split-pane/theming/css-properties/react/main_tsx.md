@@ -13,20 +13,16 @@ function Example() {
             <IonTitle>Menu</IonTitle>
           </IonToolbar>
         </IonHeader>
-        <IonContent className="ion-padding">
-          Menu Content is 350px wide and has a blue dashed border
-        </IonContent>
+        <IonContent className="ion-padding">Menu Content is 350px wide and has a blue dashed border</IonContent>
       </IonMenu>
-    
+
       <div className="ion-page" id="main">
         <IonHeader>
           <IonToolbar>
             <IonTitle>Main View</IonTitle>
           </IonToolbar>
         </IonHeader>
-        <IonContent className="ion-padding">
-          Main View Content
-        </IonContent>
+        <IonContent className="ion-padding">Main View Content</IonContent>
       </div>
     </IonSplitPane>
   );

@@ -6,12 +6,12 @@ import vue from './vue.md';
 import angular from './angular.md';
 
 <Playground
-  version="7"
-  code={{
+version="7"
+code={{
     javascript,
     react,
     vue,
     angular,
   }}
-  src="usage/v7/accordion/readonly/individual/demo.html"
+src="usage/v7/accordion/readonly/individual/demo.html"
 />

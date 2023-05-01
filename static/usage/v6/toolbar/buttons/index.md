@@ -6,8 +6,8 @@ import vue from './vue.md';
 import angular from './angular.md';
 
 <Playground
-  version="6"
-  code={{ javascript, react, vue, angular }}
-  src="usage/v6/toolbar/buttons/demo.html"
-  size="500px"
+version="6"
+code={{ javascript, react, vue, angular }}
+src="usage/v6/toolbar/buttons/demo.html"
+size="500px"
 />

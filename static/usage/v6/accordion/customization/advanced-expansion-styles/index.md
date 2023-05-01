@@ -12,8 +12,8 @@ import angular_example_component_css from './angular/example_component_css.md';
 import angular_example_component_ts from './angular/example_component_ts.md';
 
 <Playground
-  version="6"
-  code={{
+version="6"
+code={{
     javascript,
     react: {
       files: {
@@ -30,6 +30,6 @@ import angular_example_component_ts from './angular/example_component_ts.md';
       },
     },
   }}
-  size="250px"
-  src="usage/v6/accordion/customization/advanced-expansion-styles/demo.html"
+size="250px"
+src="usage/v6/accordion/customization/advanced-expansion-styles/demo.html"
 />

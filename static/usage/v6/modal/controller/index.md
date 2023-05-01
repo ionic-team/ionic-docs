@@ -13,8 +13,8 @@ import angular_modal_example_component_ts from './angular/modal-example_componen
 import angular_modal_example_component_html from './angular/modal-example_component_html.md';
 
 <Playground
-  version="6"
-  code={{
+version="6"
+code={{
     javascript,
     react,
     vue: {
@@ -33,7 +33,7 @@ import angular_modal_example_component_html from './angular/modal-example_compon
       },
     },
   }}
-  src="usage/v6/modal/controller/demo.html"
-  devicePreview
-  includeIonContent={false}
+src="usage/v6/modal/controller/demo.html"
+devicePreview
+includeIonContent={false}
 />

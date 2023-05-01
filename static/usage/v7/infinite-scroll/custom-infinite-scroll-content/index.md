@@ -12,8 +12,8 @@ import angular_example_component_ts from './angular/example_component_ts.md';
 import angular_example_component_css from './angular/example_component_css.md';
 
 <Playground
-  version="7"
-  code={{
+version="7"
+code={{
     javascript,
     react: {
       files: {
@@ -30,5 +30,5 @@ import angular_example_component_css from './angular/example_component_css.md';
       },
     },
   }}
-  src="usage/v7/infinite-scroll/custom-infinite-scroll-content/demo.html"
+src="usage/v7/infinite-scroll/custom-infinite-scroll-content/demo.html"
 />
