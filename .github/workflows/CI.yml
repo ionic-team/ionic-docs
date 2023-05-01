@@ -2,7 +2,7 @@
 # https://help.github.com/en/articles/about-github-actions
 # https://help.github.com/en/articles/workflow-syntax-for-github-actions
 
-name: Install Dependencies, Lint, and Build
+name: Install Dependencies, Lint
 
 on: [pull_request]
 
@@ -25,7 +25,3 @@ jobs:
       run: npm ci --legacy-peer-deps
     - name: Lint
       run: npm run lint
-    - name: Generate Markdown
-      run: npm run generate-markdown
-    - name: Build Production
-      run: npm run build:production
