@@ -100,9 +100,9 @@ If we open `App.vue` we should see the following:
 
 Let's break it down, starting with the imports.
 
-```tsx
+```html
 <script setup lang="ts">
-  import {(IonApp, IonRouterOutlet)} from '@ionic/vue';
+  import { IonApp, IonRouterOutlet } from '@ionic/vue';
 </script>
 ```
 
