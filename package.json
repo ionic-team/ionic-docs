@@ -12,9 +12,10 @@
     "deploy": "docusaurus deploy",
     "docusaurus": "docusaurus",
     "generate-markdown": "node scripts/native && concurrently \"node scripts/cli\" \"node scripts/release-notes\"",
-    "lint": "true",
+    "lint": "npm run prettier -- --write --cache",
     "serve": "docusaurus serve",
     "prestart": "npm run generate-markdown",
+    "prettier": "prettier \"./**/*.{html,ts,tsx,js,jsx}\"",
     "start": "docusaurus start",
     "swizzle": "docusaurus swizzle --danger"
   },
@@ -70,7 +71,8 @@
     "@tsconfig/docusaurus": "^1.0.4",
     "@types/react": "^17.0.37",
     "html-loader": "^3.1.0",
-    "prettier": "^2.5.0",
+    "prettier": "^2.8.8",
     "typescript": "^4.5.2"
-  }
+  },
+  "prettier": "@ionic/prettier-config"
 }

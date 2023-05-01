@@ -1,11 +1,11 @@
 module.exports = {
-  ...require("@ionic/prettier-config"),
+  ...require('@ionic/prettier-config'),
   overrides: [
     {
-      files: "*.md",
+      files: '*.md',
       options: {
-        "parser": "mdx"
-      }
-    }
-  ]
+        parser: 'mdx',
+      },
+    },
+  ],
 };
