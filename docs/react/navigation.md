@@ -339,7 +339,7 @@ A common point of confusion when setting up routing is deciding between shared U
 Shared URLs is a route configuration where routes have pieces of the URL in common. The following is an example of a shared URL configuration:
 
 ```tsx
-const App: React.FC = () => {
+const App: React.FC = () => (
   <IonApp>
     <IonReactRouter>
       <IonRouterOutlet>
@@ -351,8 +351,8 @@ const App: React.FC = () => {
         </Route>
       </IonRouterOutlet>
     </IonReactRouter>
-  </IonApp>;
-};
+  </IonApp>
+);
 ```
 
 The above routes are considered "shared" because they reuse the `dashboard` piece of the URL.
