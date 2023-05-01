@@ -21,8 +21,8 @@
   export default {
     components: { IonHeader, IonTitle, IonToolbar, IonContent, IonButtons, IonBackButton },
     setup() {
-      return { caretBack };
-    },
+      return { caretBack }
+    }
   };
 </script>
 ```

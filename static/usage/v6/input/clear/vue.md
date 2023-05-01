@@ -8,10 +8,7 @@
 
     <ion-item>
       <ion-label position="stacked">Input with clear on edit</ion-label>
-      <ion-input
-        :clear-on-edit="true"
-        placeholder="Enter text, leave the input, come back and type to clear"
-      ></ion-input>
+      <ion-input :clear-on-edit="true" placeholder="Enter text, leave the input, come back and type to clear"></ion-input>
     </ion-item>
 
     <ion-item>

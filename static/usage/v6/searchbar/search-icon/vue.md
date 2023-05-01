@@ -13,7 +13,7 @@
     components: { IonSearchbar },
     setup() {
       return { searchCircle };
-    },
+    }
   });
 </script>
 ```

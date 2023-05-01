@@ -27,14 +27,14 @@
     components: { IonItem, IonList, IonSelect, IonSelectOption },
     data() {
       return {
-        logs: [],
-      };
+        logs: []
+      }
     },
     methods: {
       pushLog(msg) {
         this.logs.unshift(msg);
-      },
-    },
+      }
+    }
   });
 </script>
 ```

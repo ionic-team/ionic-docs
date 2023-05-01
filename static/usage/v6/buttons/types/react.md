@@ -8,11 +8,15 @@ function Example() {
     <>
       <IonToolbar>
         <IonButtons slot="secondary">
-          <IonButton size="large">Favorite</IonButton>
+          <IonButton size="large">
+            Favorite
+          </IonButton>
         </IonButtons>
         <IonTitle>Default Buttons</IonTitle>
         <IonButtons slot="primary">
-          <IonButton>Delete</IonButton>
+          <IonButton>
+            Delete
+          </IonButton>
         </IonButtons>
       </IonToolbar>
 
@@ -82,4 +86,5 @@ function Example() {
   );
 }
 export default Example;
+
 ```

@@ -10,18 +10,10 @@ function Example() {
       <b>Stacked for xs breakpoint, equal width for sm and up</b>
       <IonGrid>
         <IonRow>
-          <IonCol size="12" size-sm="3">
-            1
-          </IonCol>
-          <IonCol size="12" size-sm="3">
-            2
-          </IonCol>
-          <IonCol size="12" size-sm="3">
-            3
-          </IonCol>
-          <IonCol size="12" size-sm="3">
-            4
-          </IonCol>
+          <IonCol size="12" size-sm="3">1</IonCol>
+          <IonCol size="12" size-sm="3">2</IonCol>
+          <IonCol size="12" size-sm="3">3</IonCol>
+          <IonCol size="12" size-sm="3">4</IonCol>
         </IonRow>
       </IonGrid>
 
@@ -37,24 +29,12 @@ function Example() {
       <b>2 per row until md breakpoint, 3 per row for md, equal width for lg and up</b>
       <IonGrid>
         <IonRow>
-          <IonCol size="6" size-md="4" size-lg="2">
-            1
-          </IonCol>
-          <IonCol size="6" size-md="4" size-lg="2">
-            2
-          </IonCol>
-          <IonCol size="6" size-md="4" size-lg="2">
-            3
-          </IonCol>
-          <IonCol size="6" size-md="4" size-lg="2">
-            4
-          </IonCol>
-          <IonCol size="6" size-md="4" size-lg="2">
-            5
-          </IonCol>
-          <IonCol size="6" size-md="4" size-lg="2">
-            6
-          </IonCol>
+          <IonCol size="6" size-md="4" size-lg="2">1</IonCol>
+          <IonCol size="6" size-md="4" size-lg="2">2</IonCol>
+          <IonCol size="6" size-md="4" size-lg="2">3</IonCol>
+          <IonCol size="6" size-md="4" size-lg="2">4</IonCol>
+          <IonCol size="6" size-md="4" size-lg="2">5</IonCol>
+          <IonCol size="6" size-md="4" size-lg="2">6</IonCol>
         </IonRow>
       </IonGrid>
     </>

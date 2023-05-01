@@ -1,6 +1,6 @@
 ```tsx
 import React, { useState } from 'react';
-import {
+import { 
   IonButton,
   IonIcon,
   IonItem,
@@ -15,12 +15,12 @@ function Example() {
   const [loaded, setLoaded] = useState(false);
   return (
     <>
-      {loaded && (
+      {loaded && 
         <IonList>
           <IonListHeader>Albums</IonListHeader>
           <IonItem>
             <IonThumbnail slot="start">
-              <IonIcon style={{ width: '100%', height: '100%' }} icon={musicalNotes}></IonIcon>
+              <IonIcon style={{ 'width': '100%', 'height': '100%' }} icon={musicalNotes}></IonIcon>
             </IonThumbnail>
             <IonLabel>
               <h3>Abbey Road</h3>
@@ -29,11 +29,11 @@ function Example() {
             </IonLabel>
           </IonItem>
         </IonList>
-      )}
-      {!loaded && (
+      }
+      {!loaded &&
         <IonList>
           <IonListHeader>
-            <IonSkeletonText animated={true} style={{ width: '80px' }}></IonSkeletonText>
+            <IonSkeletonText animated={true} style={{ 'width': '80px' }}></IonSkeletonText>
           </IonListHeader>
           <IonItem>
             <IonThumbnail slot="start">
@@ -41,18 +41,18 @@ function Example() {
             </IonThumbnail>
             <IonLabel>
               <h3>
-                <IonSkeletonText animated={true} style={{ width: '80%' }}></IonSkeletonText>
+                <IonSkeletonText animated={true} style={{ 'width': '80%' }}></IonSkeletonText>
               </h3>
               <p>
-                <IonSkeletonText animated={true} style={{ width: '60%' }}></IonSkeletonText>
+                <IonSkeletonText animated={true} style={{ 'width': '60%' }}></IonSkeletonText>
               </p>
               <p>
-                <IonSkeletonText animated={true} style={{ width: '30%' }}></IonSkeletonText>
+                <IonSkeletonText animated={true} style={{ 'width': '30%' }}></IonSkeletonText>
               </p>
             </IonLabel>
           </IonItem>
         </IonList>
-      )}
+      }
       <IonButton onClick={() => setLoaded(!loaded)}>Toggle</IonButton>
     </>
   );

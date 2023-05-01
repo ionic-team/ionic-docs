@@ -26,7 +26,8 @@
     </ion-toolbar>
   </ion-header>
   <ion-content color="light" class="ion-padding">
-    <ion-list id="modal-list" inset="true"> </ion-list>
+    <ion-list id="modal-list" inset="true">
+    </ion-list>
   </ion-content>
 </ion-modal>
 
@@ -60,7 +61,7 @@
     { text: 'Pineapple', value: 'pineapple' },
     { text: 'Pomegranate', value: 'pomegranate' },
     { text: 'Raspberry', value: 'raspberry' },
-    { text: 'Strawberry', value: 'strawberry' },
+    { text: 'Strawberry', value: 'strawberry' }
   ];
 
   /**
@@ -93,7 +94,7 @@
 
     const normalizedQuery = searchQuery.toLowerCase();
 
-    return fruits.filter((fruit) => fruit.text.toLowerCase().includes(normalizedQuery));
+    return fruits.filter(fruit => fruit.text.toLowerCase().includes(normalizedQuery));
   }
 
   /**
@@ -111,7 +112,7 @@
         <ion-item>
           <ion-checkbox value="${item.value}" checked="${checked}">${item.text}</ion-checkbox>
         </ion-item>
-      `;
+      `
     });
 
     list.innerHTML = template;
@@ -127,7 +128,7 @@
    */
   function formatData(data) {
     if (data.length === 1) {
-      const fruit = fruits.find((fruit) => fruit.value === data[0]);
+      const fruit = fruits.find(fruit => fruit.value === data[0])
       return fruit.text;
     }
 
@@ -149,21 +150,22 @@
    */
   function confirmChanges() {
     selectedFruits = [...workingSelectedFruits];
-    modal.dismiss(selectedFruits);
-  }
+    modal.dismiss(selectedFruits)
+  };
 
   // Listen for all ionChange events from the checkbox
   modal.addEventListener('ionChange', (ev) => {
-    if (ev.target.tagName !== 'ION-CHECKBOX') {
-      return;
-    }
+    if (ev.target.tagName !== 'ION-CHECKBOX') { return; }
 
     const { checked, value } = ev.detail;
 
     if (checked) {
-      workingSelectedFruits = [...workingSelectedFruits, value];
+      workingSelectedFruits = [
+        ...workingSelectedFruits,
+        value
+      ]
     } else {
-      workingSelectedFruits = workingSelectedFruits.filter((fruit) => fruit !== value);
+      workingSelectedFruits = workingSelectedFruits.filter(fruit => fruit !== value);
     }
   });
 

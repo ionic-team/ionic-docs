@@ -11,8 +11,8 @@ import angular_example_component_html from './angular/example_component_html.md'
 import angular_example_component_css from './angular/example_component_css.md';
 
 <Playground
-version="6"
-code={{
+  version="6"
+  code={{
     javascript,
     react: {
       files: {
@@ -28,7 +28,7 @@ code={{
       },
     },
   }}
-src="usage/v6/content/fixed/demo.html"
-includeIonContent={false}
-devicePreview={true}
+  src="usage/v6/content/fixed/demo.html"
+  includeIonContent={false}
+  devicePreview={true}
 />

@@ -7,14 +7,14 @@
 <script lang="ts">
   import { IonButton, IonToast } from '@ionic/vue';
   import { globe } from 'ionicons/icons';
-
+  
   import { defineComponent } from 'vue';
 
   export default defineComponent({
     components: { IonButton, IonToast },
     setup() {
       return { globe };
-    },
+    }
   });
 </script>
 ```

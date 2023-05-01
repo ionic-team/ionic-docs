@@ -8,7 +8,7 @@
   import { defineComponent } from 'vue';
 
   export default defineComponent({
-    components: { IonCheckbox },
+    components: { IonCheckbox }
   });
 </script>
 ```

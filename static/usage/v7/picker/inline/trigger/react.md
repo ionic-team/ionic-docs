@@ -8,40 +8,37 @@ function Example() {
       <IonButton id="open-picker">Open</IonButton>
       <IonPicker
         trigger="open-picker"
-        columns={[
-          {
+        columns={
+          [{
             name: 'languages',
             options: [
               {
                 text: 'JavaScript',
-                value: 'javascript',
-              },
-              {
+                value: 'javascript'
+              }, {
                 text: 'TypeScript',
-                value: 'typescript',
-              },
-              {
+                value: 'typescript'
+              }, {
                 text: 'Rust',
-                value: 'rust',
-              },
-              {
+                value: 'rust'
+              }, {
                 text: 'C#',
-                value: 'c#',
-              },
-            ],
-          },
-        ]}
+                value: 'c#'
+              }
+            ]
+          }]
+        }
         buttons={[
           {
             text: 'Cancel',
-            role: 'cancel',
+            role: 'cancel'
           },
           {
             text: 'Confirm',
             handler: (value) => {
               window.alert(`You selected: ${value.languages.value}`);
-            },
-          },
+            }
+          }
         ]}
       ></IonPicker>
     </>

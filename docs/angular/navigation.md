@@ -238,15 +238,14 @@ If you have built a web app that uses routing, you likely have used linear routi
 The following is an example of linear routing in a mobile app:
 
 <video
-style={{
+  style={{
     margin: '40px auto',
     display: 'flex',
   }}
-width="400"
-src={useBaseUrl('video/linear-routing-demo.mp4')}
-controls
-
-> </video>
+  width="400"
+  src={useBaseUrl('video/linear-routing-demo.mp4')}
+  controls
+></video>
 
 The application history in this example has the following path:
 
@@ -265,15 +264,14 @@ Non-linear routing means that the view that the user should go back to is not ne
 The following is an example of non-linear routing:
 
 <video
-style={{
+  style={{
     margin: '40px auto',
     display: 'flex',
   }}
-width="400"
-src={useBaseUrl('video/non-linear-routing-demo.mp4')}
-controls
-
-> </video>
+  width="400"
+  src={useBaseUrl('video/non-linear-routing-demo.mp4')}
+  controls
+></video>
 
 In the example above, we start on the `Originals` tab. Tapping a card brings us to the `Ted Lasso` view within the `Originals` tab.
 
@@ -481,15 +479,14 @@ If you find that your tabs need to reference the Settings tab, we recommend maki
 The example below shows how the iOS App Store app handles presenting an "Account" view from multiple tabs. By presenting the "Account" view in a modal, the app can work within the mobile tabs best practices to show the same view across multiple tabs.
 
 <video
-style={{
+  style={{
     margin: '40px auto',
     display: 'flex',
   }}
-width="400"
-src={useBaseUrl('video/tabs-account-demo.mp4')}
-controls
-
-> </video>
+  width="400"
+  src={useBaseUrl('video/tabs-account-demo.mp4')}
+  controls
+></video>
 
 **Reusing Views Across Tabs**
 

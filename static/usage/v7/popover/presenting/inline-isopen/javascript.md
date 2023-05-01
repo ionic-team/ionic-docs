@@ -8,11 +8,11 @@
   const button = document.querySelector('ion-button');
   const popover = document.querySelector('ion-popover');
 
-  button.addEventListener('click', (e) => {
+  button.addEventListener('click', e => {
     popover.event = e;
     popover.isOpen = true;
   });
 
-  popover.addEventListener('didDismiss', () => (popover.isOpen = false));
+  popover.addEventListener('didDismiss', () => popover.isOpen = false);
 </script>
 ```

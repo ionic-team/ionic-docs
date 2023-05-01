@@ -1,6 +1,11 @@
 ```tsx
 import React from 'react';
-import { IonAccordion, IonAccordionGroup, IonItem, IonLabel } from '@ionic/react';
+import { 
+  IonAccordion, 
+  IonAccordionGroup,
+  IonItem, 
+  IonLabel
+} from '@ionic/react';
 function Example() {
   return (
     <IonAccordionGroup readonly={true}>

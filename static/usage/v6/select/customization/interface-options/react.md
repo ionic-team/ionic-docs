@@ -6,22 +6,22 @@ function Example() {
     header: 'Pizza Toppings',
     subHeader: 'Select your favorite topping',
     message: 'Choose only one',
-    translucent: true,
+    translucent: true
   };
 
   const customPopoverOptions = {
     header: 'Hair Color',
     subHeader: 'Select your hair color',
-    message: 'Only select your dominant hair color',
+    message: 'Only select your dominant hair color'
   };
 
   const customActionSheetOptions = {
     header: 'Colors',
-    subHeader: 'Select your favorite color',
+    subHeader: 'Select your favorite color'
   };
 
   return (
-    <IonList>
+    <IonList>        
       <IonItem>
         <IonLabel>Alert</IonLabel>
         <IonSelect interfaceOptions={customAlertOptions} interface="alert" placeholder="Select One">
@@ -30,7 +30,7 @@ function Example() {
           <IonSelectOption value="pepperoni">Pepperoni</IonSelectOption>
         </IonSelect>
       </IonItem>
-
+          
       <IonItem>
         <IonLabel>Popover</IonLabel>
         <IonSelect interfaceOptions={customPopoverOptions} interface="popover" placeholder="Select One">
@@ -39,7 +39,7 @@ function Example() {
           <IonSelectOption value="red">Red</IonSelectOption>
         </IonSelect>
       </IonItem>
-
+          
       <IonItem>
         <IonLabel>Action Sheet</IonLabel>
         <IonSelect interfaceOptions={customActionSheetOptions} interface="action-sheet" placeholder="Select One">

@@ -22,7 +22,7 @@
   <ion-button id="open-modal" expand="block">Open Sheet Modal</ion-button>
 
   <ion-modal trigger="open-modal">
-    <div class="block">Block of Content</div>
+    <div class="block">Block of Content</div> 
   </ion-modal>
 </ion-content>
 

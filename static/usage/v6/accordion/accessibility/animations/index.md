@@ -6,12 +6,12 @@ import vue from './vue.md';
 import angular from './angular.md';
 
 <Playground
-version="6"
-code={{
+  version="6"
+  code={{
     javascript,
     react,
     vue,
     angular,
   }}
-src="usage/v6/accordion/accessibility/animations/demo.html"
+  src="usage/v6/accordion/accessibility/animations/demo.html"
 />

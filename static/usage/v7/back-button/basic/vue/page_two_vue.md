@@ -18,7 +18,7 @@
   import { IonBackButton, IonButtons, IonContent, IonHeader, IonTitle, IonToolbar } from '@ionic/vue';
 
   export default {
-    components: { IonBackButton, IonButtons, IonContent, IonHeader, IonTitle, IonToolbar },
+    components: { IonBackButton, IonButtons, IonContent, IonHeader, IonTitle, IonToolbar }
   };
 </script>
 ```

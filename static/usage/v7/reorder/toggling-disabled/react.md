@@ -1,14 +1,6 @@
 ```tsx
 import React, { useState } from 'react';
-import {
-  IonButton,
-  IonItem,
-  IonLabel,
-  IonList,
-  IonReorder,
-  IonReorderGroup,
-  ItemReorderEventDetail,
-} from '@ionic/react';
+import { IonButton, IonItem, IonLabel, IonList, IonReorder, IonReorderGroup, ItemReorderEventDetail } from '@ionic/react';
 
 function Example() {
   const [isDisabled, setIsDisabled] = useState(true);
@@ -25,7 +17,7 @@ function Example() {
   }
 
   function toggleReorder() {
-    setIsDisabled((current) => !current);
+    setIsDisabled(current => !current);
   }
 
   return (
@@ -33,34 +25,46 @@ function Example() {
       <IonList>
         <IonReorderGroup disabled={isDisabled} onIonItemReorder={handleReorder}>
           <IonItem>
-            <IonLabel>Item 1</IonLabel>
+            <IonLabel>
+              Item 1
+            </IonLabel>
             <IonReorder slot="end"></IonReorder>
           </IonItem>
 
           <IonItem>
-            <IonLabel>Item 2</IonLabel>
+            <IonLabel>
+              Item 2
+            </IonLabel>
             <IonReorder slot="end"></IonReorder>
           </IonItem>
 
           <IonItem>
-            <IonLabel>Item 3</IonLabel>
+            <IonLabel>
+              Item 3
+            </IonLabel>
             <IonReorder slot="end"></IonReorder>
           </IonItem>
 
           <IonItem>
-            <IonLabel>Item 4</IonLabel>
+            <IonLabel>
+              Item 4
+            </IonLabel>
             <IonReorder slot="end"></IonReorder>
           </IonItem>
 
           <IonItem>
-            <IonLabel>Item 5</IonLabel>
+            <IonLabel>
+              Item 5
+            </IonLabel>
             <IonReorder slot="end"></IonReorder>
           </IonItem>
         </IonReorderGroup>
       </IonList>
 
       {/* The reorder gesture is disabled by default, enable it to drag and drop items */}
-      <IonButton onClick={toggleReorder}>Toggle Reorder</IonButton>
+      <IonButton onClick={toggleReorder}>
+        Toggle Reorder
+      </IonButton>
     </>
   );
 }

@@ -7,7 +7,9 @@ function Example() {
     <>
       <IonHeader>
         <IonToolbar>
-          <IonTitle>Header</IonTitle>
+          <IonTitle>
+            Header
+          </IonTitle>
         </IonToolbar>
       </IonHeader>
       <IonContent className="ion-padding">
@@ -22,7 +24,9 @@ function Example() {
       </IonContent>
       <IonFooter>
         <IonToolbar>
-          <IonTitle>Footer</IonTitle>
+          <IonTitle>
+            Footer
+          </IonTitle>
         </IonToolbar>
       </IonFooter>
     </>

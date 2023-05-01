@@ -19,7 +19,7 @@
     <ion-item *ngFor="let item of filteredItems; trackBy: trackItems">
       <ion-label>{{ item.text }}</ion-label>
       <ion-checkbox
-        [value]="item.value"
+        [value]="item.value" 
         [checked]="isChecked(item.value)"
         (ionChange)="checkboxChange($event)"
       ></ion-checkbox>

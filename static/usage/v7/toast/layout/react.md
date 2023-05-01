@@ -14,7 +14,7 @@ function Example() {
         buttons={[
           {
             text: 'Action With Long Text',
-          },
+          }
         ]}
       ></IonToast>
       <IonToast
@@ -24,7 +24,7 @@ function Example() {
         buttons={[
           {
             text: 'Action With Long Text',
-          },
+          }
         ]}
         layout="stacked"
       ></IonToast>

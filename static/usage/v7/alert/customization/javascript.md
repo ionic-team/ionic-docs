@@ -8,12 +8,12 @@
   alert.buttons = [
     {
       text: 'No',
-      cssClass: 'alert-button-cancel',
+      cssClass: 'alert-button-cancel'
     },
     {
       text: 'Yes',
-      cssClass: 'alert-button-confirm',
-    },
+      cssClass: 'alert-button-confirm'
+    }
   ];
 </script>
 
@@ -36,7 +36,7 @@
   }
 
   .ios .custom-alert button.alert-button {
-    border: 0.55px solid rgba(var(--ion-text-color-rgb, 0, 0, 0), 0.2);
+    border: 0.55px solid rgba(var(--ion-text-color-rgb, 0, 0, 0), 0.2)
   }
 
   .ios button.alert-button.alert-button-cancel {

@@ -1,7 +1,9 @@
 ```html
 <template>
   <ion-item-divider>
-    <ion-label> Item Divider </ion-label>
+    <ion-label>
+      Item Divider
+    </ion-label>
   </ion-item-divider>
 </template>
 
@@ -10,7 +12,7 @@
   import { defineComponent } from 'vue';
 
   export default defineComponent({
-    components: { IonItemDivider },
+    components: { IonItemDivider }
   });
 </script>
 

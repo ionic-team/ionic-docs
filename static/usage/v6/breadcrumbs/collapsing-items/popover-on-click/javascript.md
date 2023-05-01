@@ -18,12 +18,12 @@
   const popover = document.querySelector('ion-popover');
   const popoverList = document.querySelector('ion-popover ion-list');
 
-  breadcrumbs.addEventListener('ionCollapsedClick', (e) => {
+  breadcrumbs.addEventListener('ionCollapsedClick', e => {
     let listHTML = ``;
     e.detail.collapsedBreadcrumbs.forEach((breadcrumb, i) => {
       listHTML += `
         <ion-item
-          ${i === e.detail.collapsedBreadcrumbs.length - 1 ? `lines="none"` : ''}
+          ${i === e.detail.collapsedBreadcrumbs.length - 1 ? `lines="none"` : ""}
           href="${breadcrumb.href}"
         >
           <ion-label>${breadcrumb.textContent}</ion-label>
@@ -36,6 +36,6 @@
     popover.isOpen = true;
   });
 
-  popover.addEventListener('didDismiss', () => (popover.isOpen = false));
+  popover.addEventListener('didDismiss', () => popover.isOpen = false);
 </script>
 ```

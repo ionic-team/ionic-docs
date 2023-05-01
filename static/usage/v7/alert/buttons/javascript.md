@@ -13,17 +13,13 @@
     {
       text: 'Cancel',
       role: 'cancel',
-      handler: () => {
-        handlerOutput.innerText = 'Alert canceled';
-      },
+      handler: () => { handlerOutput.innerText = 'Alert canceled'; }
     },
     {
       text: 'OK',
       role: 'confirm',
-      handler: () => {
-        handlerOutput.innerText = 'Alert confirmed';
-      },
-    },
+      handler: () => { handlerOutput.innerText = 'Alert confirmed'; }
+    }
   ];
 
   alert.addEventListener('ionAlertDidDismiss', (ev) => {

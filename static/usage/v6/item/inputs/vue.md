@@ -60,16 +60,7 @@
 </template>
 
 <script lang="ts">
-  import {
-    IonCheckbox,
-    IonInput,
-    IonItem,
-    IonLabel,
-    IonRange,
-    IonSelect,
-    IonSelectOption,
-    IonToggle,
-  } from '@ionic/vue';
+  import { IonCheckbox, IonInput, IonItem, IonLabel, IonRange, IonSelect, IonSelectOption, IonToggle } from '@ionic/vue';
   import { defineComponent } from 'vue';
 
   export default defineComponent({

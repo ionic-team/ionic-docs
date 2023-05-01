@@ -56,5 +56,6 @@
   }
 
   setSkeletonText();
+
 </script>
 ```

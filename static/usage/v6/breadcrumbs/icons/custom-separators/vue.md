@@ -29,7 +29,7 @@
     components: { IonBreadcrumb, IonBreadcrumbs, IonIcon },
     setup() {
       return { arrowForwardCircle };
-    },
+    }
   });
 </script>
 ```

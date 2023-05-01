@@ -27,7 +27,16 @@
 </template>
 
 <script lang="ts">
-  import { IonButton, IonContent, IonHeader, IonMenu, IonMenuToggle, IonPage, IonTitle, IonToolbar } from '@ionic/vue';
+  import {
+    IonButton,
+    IonContent,
+    IonHeader,
+    IonMenu,
+    IonMenuToggle,
+    IonPage,
+    IonTitle,
+    IonToolbar
+  } from '@ionic/vue';
   import { defineComponent } from 'vue';
 
   export default defineComponent({
@@ -39,7 +48,7 @@
       IonMenuToggle,
       IonPage,
       IonTitle,
-      IonToolbar,
+      IonToolbar
     },
   });
 </script>

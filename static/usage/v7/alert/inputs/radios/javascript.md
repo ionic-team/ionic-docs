@@ -10,18 +10,18 @@
     {
       label: 'Red',
       type: 'radio',
-      value: 'red',
+      value: 'red'
     },
     {
       label: 'Blue',
       type: 'radio',
-      value: 'blue',
+      value: 'blue'
     },
     {
       label: 'Green',
       type: 'radio',
-      value: 'green',
-    },
+      value: 'green'
+    }
   ];
 </script>
 ```

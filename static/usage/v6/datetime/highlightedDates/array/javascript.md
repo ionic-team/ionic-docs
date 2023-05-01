@@ -22,8 +22,8 @@
     {
       date: '2023-01-23',
       textColor: 'rgb(68, 10, 184)',
-      backgroundColor: 'rgb(211, 200, 229)',
-    },
+      backgroundColor: 'rgb(211, 200, 229)'
+    }
   ];
 </script>
 ```

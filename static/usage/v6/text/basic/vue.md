@@ -14,10 +14,10 @@
 
   <p>
     <ion-text color="warning"><ion-icon :icon="warning"></ion-icon></ion-text>
-    I saw a werewolf with a Chinese menu in his hand. Walking through the
-    <ion-text color="success"><sub>streets</sub></ion-text> of Soho in the rain. He
-    <ion-text color="medium"><i>was</i></ion-text> looking for a place called Lee Ho Fook's. Gonna get a
-    <ion-text color="danger">big dish of beef chow mein.</ion-text>
+    I saw a werewolf with a Chinese menu in his hand.
+    Walking through the <ion-text color="success"><sub>streets</sub></ion-text> of Soho in the rain.
+    He <ion-text color="medium"><i>was</i></ion-text> looking for a place called Lee Ho Fook's.
+    Gonna get a <ion-text color="danger">big dish of beef chow mein.</ion-text>
   </p>
 </template>
 

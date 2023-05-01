@@ -6,13 +6,13 @@ import vue from './vue.md';
 import angular from './angular.md';
 
 <Playground
-version="7"
-devicePreview
-code={{
+  version="7"
+  devicePreview
+  code={{
     javascript,
     react,
     vue,
     angular
   }}
-src="usage/v7/toast/icon/demo.html"
+  src="usage/v7/toast/icon/demo.html"
 />

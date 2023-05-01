@@ -8,8 +8,8 @@ import angular_example_component_html from './angular/example_component_html.md'
 import angular_example_component_ts from './angular/example_component_ts.md';
 
 <Playground
-version="7"
-code={{
+  version="7"
+  code={{
     javascript,
     react,
     vue,
@@ -20,7 +20,7 @@ code={{
       },
     },
   }}
-src="usage/v7/content/scroll-methods/demo.html"
-includeIonContent={false}
-devicePreview={true}
+  src="usage/v7/content/scroll-methods/demo.html"
+  includeIonContent={false}
+  devicePreview={true}
 />

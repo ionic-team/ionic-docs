@@ -22,7 +22,9 @@ function Example() {
     }, 1000);
   }
 
-  return <IonProgressBar buffer={buffer} value={progress}></IonProgressBar>;
+  return (
+    <IonProgressBar buffer={buffer} value={progress}></IonProgressBar>
+  );
 }
 export default Example;
 ```

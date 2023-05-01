@@ -15,8 +15,8 @@
   export default defineComponent({
     components: { IonFab, IonFabButton, IonFabList, IonIcon },
     setup() {
-      return { add };
-    },
+      return { add }
+    }
   });
 </script>
 ```

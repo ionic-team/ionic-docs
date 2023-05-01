@@ -20,8 +20,8 @@
       const reset = () => datetime.value.$el.reset();
       const cancel = () => datetime.value.$el.cancel();
       const confirm = () => datetime.value.$el.confirm();
-      return { datetime, reset, cancel, confirm };
-    },
+      return { datetime, reset, cancel, confirm }
+    }
   });
 </script>
 ```

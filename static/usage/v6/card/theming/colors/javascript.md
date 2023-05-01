@@ -5,7 +5,9 @@
     <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
   </ion-card-header>
 
-  <ion-card-content> Card Content </ion-card-content>
+  <ion-card-content>
+    Card Content
+  </ion-card-content>
 </ion-card>
 
 <ion-card color="secondary">
@@ -14,7 +16,9 @@
     <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
   </ion-card-header>
 
-  <ion-card-content> Card Content </ion-card-content>
+  <ion-card-content>
+    Card Content
+  </ion-card-content>
 </ion-card>
 
 <ion-card color="tertiary">
@@ -23,7 +27,9 @@
     <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
   </ion-card-header>
 
-  <ion-card-content> Card Content </ion-card-content>
+  <ion-card-content>
+    Card Content
+  </ion-card-content>
 </ion-card>
 
 <ion-card color="success">
@@ -32,7 +38,9 @@
     <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
   </ion-card-header>
 
-  <ion-card-content> Card Content </ion-card-content>
+  <ion-card-content>
+    Card Content
+  </ion-card-content>
 </ion-card>
 
 <ion-card color="warning">
@@ -41,7 +49,9 @@
     <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
   </ion-card-header>
 
-  <ion-card-content> Card Content </ion-card-content>
+  <ion-card-content>
+    Card Content
+  </ion-card-content>
 </ion-card>
 
 <ion-card color="danger">
@@ -50,7 +60,9 @@
     <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
   </ion-card-header>
 
-  <ion-card-content> Card Content </ion-card-content>
+  <ion-card-content>
+    Card Content
+  </ion-card-content>
 </ion-card>
 
 <ion-card color="light">
@@ -59,7 +71,9 @@
     <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
   </ion-card-header>
 
-  <ion-card-content> Card Content </ion-card-content>
+  <ion-card-content>
+    Card Content
+  </ion-card-content>
 </ion-card>
 
 <ion-card color="medium">
@@ -68,7 +82,9 @@
     <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
   </ion-card-header>
 
-  <ion-card-content> Card Content </ion-card-content>
+  <ion-card-content>
+    Card Content
+  </ion-card-content>
 </ion-card>
 
 <ion-card color="dark">
@@ -77,7 +93,9 @@
     <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
   </ion-card-header>
 
-  <ion-card-content> Card Content </ion-card-content>
+  <ion-card-content>
+    Card Content
+  </ion-card-content>
 </ion-card>
 
 <style>

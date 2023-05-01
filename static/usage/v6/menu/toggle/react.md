@@ -1,6 +1,15 @@
 ```tsx
 import React from 'react';
-import { IonButton, IonContent, IonHeader, IonMenu, IonMenuToggle, IonPage, IonTitle, IonToolbar } from '@ionic/react';
+import { 
+  IonButton,
+  IonContent,
+  IonHeader,
+  IonMenu,
+  IonMenuToggle,
+  IonPage,
+  IonTitle,
+  IonToolbar
+} from '@ionic/react';
 function Example() {
   return (
     <>
@@ -13,7 +22,7 @@ function Example() {
         <IonContent className="ion-padding">
           <IonMenuToggle>
             <IonButton>Click to close the menu</IonButton>
-          </IonMenuToggle>
+          </IonMenuToggle>  
         </IonContent>
       </IonMenu>
       <IonPage id="main-content">

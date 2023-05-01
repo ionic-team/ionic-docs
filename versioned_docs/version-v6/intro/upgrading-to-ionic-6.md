@@ -48,7 +48,6 @@ npm install @ionic/react@6 @ionic/react-router@6
 4. Import and call `setupIonicReact` in your `App` component file. If you are also using `setupConfig`, pass your config to `setupIonicReact` instead:
 
 **Before**
-
 ```tsx title="App.tsx"
 import { setupConfig } from '@ionic/react';
 
@@ -60,7 +59,6 @@ setupConfig({
 ```
 
 **After**
-
 ```tsx title="App.tsx"
 import { setupIonicReact } from '@ionic/react';
 
@@ -80,13 +78,11 @@ See the [Config Documentation](../developing/config) for more examples.
 5. Update all controller imports from `@ionic/core` to `@ionic/core/components`. As an example, here is a migration for `menuController`:
 
 **Before**
-
 ```tsx
 import { menuController } from '@ionic/core';
 ```
 
 **After**
-
 ```tsx
 import { menuController } from '@ionic/core/components';
 ```
@@ -146,7 +142,6 @@ See the [Testing section below](#testing) for more information.
 8. Rename any overlay event listeners to use the new format:
 
 **Before**
-
 ```html
 <ion-modal
   :is-open="modalOpenRef"
@@ -160,7 +155,6 @@ See the [Testing section below](#testing) for more information.
 ```
 
 **After**
-
 ```html
 <ion-modal
   :is-open="modalOpenRef"
@@ -180,36 +174,38 @@ This applies to `ion-action-sheet`, `ion-alert`, `ion-loading`, `ion-modal`, `io
 9. Pass in an `ion-router-outlet` into any `ion-tabs` that are being used:
 
 **Before**
-
 ```html
 <ion-tabs>
-  <ion-tab-bar slot="bottom"> ... </ion-tab-bar>
+  <ion-tab-bar slot="bottom">
+    ...
+  </ion-tab-bar>
 </ion-tabs>
 
 <script>
   import { IonTabs, IonTabBar } from '@ionic/vue';
   import { defineComponent } from 'vue';
-
+  
   export default defineComponent({
-    components: { IonTabs, IonTabBar },
+    components: { IonTabs, IonTabBar }
   });
 </script>
 ```
 
 **After**
-
 ```html
 <ion-tabs>
   <ion-router-outlet></ion-router-outlet>
-  <ion-tab-bar slot="bottom"> ... </ion-tab-bar>
+  <ion-tab-bar slot="bottom">
+    ...
+  </ion-tab-bar>
 </ion-tabs>
 
 <script>
   import { IonTabs, IonTabBar, IonRouterOutlet } from '@ionic/vue';
   import { defineComponent } from 'vue';
-
+  
   export default defineComponent({
-    components: { IonTabs, IonTabBar, IonRouterOutlet },
+    components: { IonTabs, IonTabBar, IonRouterOutlet }
   });
 </script>
 ```
@@ -217,7 +213,6 @@ This applies to `ion-action-sheet`, `ion-alert`, `ion-loading`, `ion-modal`, `io
 10. Additional routes inside of tabs should be re-written as sibling routes instead of child routes:
 
 **Before**
-
 ```ts
 const routes: Array<RouteRecordRaw> = [
   {
@@ -256,12 +251,11 @@ const routes: Array<RouteRecordRaw> = [
 ```
 
 **After**
-
 ```ts
 const routes: Array<RouteRecordRaw> = [
   {
     path: '/',
-    redirect: '/tabs/tab1',
+    redirect: '/tabs/tab1'
   },
   {
     path: '/tabs/',
@@ -269,27 +263,27 @@ const routes: Array<RouteRecordRaw> = [
     children: [
       {
         path: '',
-        redirect: 'tab1',
+        redirect: 'tab1'
       },
       {
         path: 'tab1',
-        component: () => import('@/views/Tab1.vue'),
+        component: () => import('@/views/Tab1.vue')
       },
       {
         path: 'tab1/view',
-        component: () => import('@/views/Tab1View.vue'),
+        component: () => import('@/views/Tab1View.vue')
       },
       {
         path: 'tab2',
-        component: () => import('@/views/Tab2.vue'),
+        component: () => import('@/views/Tab2.vue')
       },
       {
         path: 'tab3',
-        component: () => import('@/views/Tab3.vue'),
-      },
-    ],
-  },
-];
+        component: () => import('@/views/Tab3.vue')
+      }
+    ]
+  }
+]
 ```
 
 ### Core
@@ -331,26 +325,24 @@ Ensure `null` is not passed in as a value to the `placeholder` property. We reco
 `ion-modal` now uses the Shadow DOM. Update any styles targeting the internals of `ion-modal` to use either the [ion-modal CSS Variables](../api/modal#css-custom-properties) or the [ion-modal CSS Shadow Parts](../api/modal#css-shadow-parts):
 
 **Before**
-
 ```css
 ion-modal .modal-wrapper {
-  ...;
+  ...
 }
 
 ion-modal ion-backdrop {
-  ...;
+  ...
 }
 ```
 
 **After**
-
 ```css
 ion-modal::part(content) {
-  ...;
+  ...
 }
 
 ion-modal::part(backdrop) {
-  ...;
+  ...
 }
 ```
 
@@ -358,35 +350,34 @@ ion-modal::part(backdrop) {
 
 `ion-popover` now uses the Shadow DOM. Update any styles targeting the internals of `ion-popover` to use either [ion-popover CSS Variables](../api/popover#css-custom-properties) or the [ion-popover CSS Shadow Parts](../api/popover#css-shadow-parts):
 
-**Before**
 
+**Before**
 ```css
 ion-popover .popover-arrow {
-  ...;
+  ...
 }
 
 ion-popover ion-backdrop {
-  ...;
+  ...
 }
 
 ion-popover .popover-content {
-  ...;
+  ...
 }
 ```
 
 **After**
-
 ```css
 ion-popover::part(arrow) {
-  ...;
+  ...
 }
 
 ion-popover::part(backdrop) {
-  ...;
+  ...
 }
 
 ion-popover::part(content) {
-  ...;
+  ...
 }
 ```
 
@@ -415,6 +406,7 @@ Edge >=79
 Safari >=13
 iOS >=13
 ```
+
 
 ### Testing
 
@@ -466,3 +458,4 @@ If you are still running into issues, here are a couple things to try:
 Be sure to look at the [Ionic 6 Breaking Changes Guide](https://github.com/ionic-team/ionic-framework/blob/main/BREAKING.md). There were several changes to default property and CSS Variable values that developers may need to be aware of. Only the breaking changes that required user action are listed on this page.
 
 If you need help upgrading, please post a thread on the [Ionic Forum](https://forum.ionicframework.com/).
+

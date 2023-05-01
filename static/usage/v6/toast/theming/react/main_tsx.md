@@ -17,8 +17,8 @@ function Example() {
           buttons: [
             {
               text: 'Dismiss',
-              role: 'cancel',
-            },
+              role: 'cancel'
+            }
           ],
         })
       }

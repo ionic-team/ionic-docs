@@ -47,7 +47,7 @@
       return {
         actionSheetButtons,
         isOpen,
-        setOpen,
+        setOpen
       };
     },
   };

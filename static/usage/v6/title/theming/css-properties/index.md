@@ -11,8 +11,8 @@ import angular_example_component_html from './angular/example_component_html.md'
 import angular_global_css from './angular/global_css.md';
 
 <Playground
-version="6"
-code={{
+  version="6"
+  code={{
     javascript,
     react: {
       files: {
@@ -28,7 +28,7 @@ code={{
       },
     },
   }}
-src="usage/v6/title/theming/css-properties/demo.html"
-devicePreview={true}
-includeIonContent={false}
+  src="usage/v6/title/theming/css-properties/demo.html"
+  devicePreview={true}
+  includeIonContent={false}
 />

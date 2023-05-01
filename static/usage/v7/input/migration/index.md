@@ -55,8 +55,8 @@ import TabItem from '@theme/TabItem';
 <!-- After -->
 
 <!--
-  Metadata such as counters and helper text should not
-  be used when an input is in an item/list. If you need to
+  Metadata such as counters and helper text should not 
+  be used when an input is in an item/list. If you need to 
   provide more context on a input, consider using an ion-note
   underneath the ion-list.
 -->
@@ -113,8 +113,8 @@ import TabItem from '@theme/TabItem';
 <!-- After -->
 
 <!--
-  Metadata such as counters and helper text should not
-  be used when an input is in an item/list. If you need to
+  Metadata such as counters and helper text should not 
+  be used when an input is in an item/list. If you need to 
   provide more context on a input, consider using an ion-note
   underneath the ion-list.
 -->
@@ -171,8 +171,8 @@ import TabItem from '@theme/TabItem';
 {/* After */}
 
 {/*
-  Metadata such as counters and helper text should not
-  be used when an input is in an item/list. If you need to
+  Metadata such as counters and helper text should not 
+  be used when an input is in an item/list. If you need to 
   provide more context on a input, consider using an IonNote
   underneath the IonList.
 */}
@@ -229,8 +229,8 @@ import TabItem from '@theme/TabItem';
 <!-- After -->
 
 <!--
-  Metadata such as counters and helper text should not
-  be used when an input is in an item/list. If you need to
+  Metadata such as counters and helper text should not 
+  be used when an input is in an item/list. If you need to 
   provide more context on a input, consider using an ion-note
   underneath the ion-list.
 -->

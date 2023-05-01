@@ -6,25 +6,19 @@ function Example() {
   return (
     <>
       <IonRadioGroup value="start">
-        <IonRadio value="start" labelPlacement="start">
-          Label at the Start
-        </IonRadio>
+        <IonRadio value="start" labelPlacement="start">Label at the Start</IonRadio>
       </IonRadioGroup>
-
+      
       <br />
-
+      
       <IonRadioGroup value="end">
-        <IonRadio value="end" labelPlacement="end">
-          Label at the End
-        </IonRadio>
+        <IonRadio value="end" labelPlacement="end">Label at the End</IonRadio>
       </IonRadioGroup>
-
+      
       <br />
-
+      
       <IonRadioGroup value="fixed">
-        <IonRadio value="fixed" labelPlacement="fixed">
-          Fixed Width Label
-        </IonRadio>
+        <IonRadio value="fixed" labelPlacement="fixed">Fixed Width Label</IonRadio>
       </IonRadioGroup>
     </>
   );

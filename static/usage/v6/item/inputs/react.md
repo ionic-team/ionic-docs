@@ -1,15 +1,6 @@
 ```tsx
 import React from 'react';
-import {
-  IonCheckbox,
-  IonInput,
-  IonItem,
-  IonLabel,
-  IonRange,
-  IonSelect,
-  IonSelectOption,
-  IonToggle,
-} from '@ionic/react';
+import { IonCheckbox, IonInput, IonItem, IonLabel, IonRange, IonSelect, IonSelectOption, IonToggle } from '@ionic/react';
 
 function Example() {
   return (

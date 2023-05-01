@@ -15,19 +15,19 @@
   const foods = [
     {
       id: 1,
-      name: 'Apples',
-      type: 'fruit',
+      name: "Apples",
+      type: "fruit"
     },
     {
       id: 2,
-      name: 'Carrots',
-      type: 'vegetable',
+      name: "Carrots",
+      type: "vegetable"
     },
     {
       id: 3,
-      name: 'Cupcakes',
-      type: 'dessert',
-    },
+      name: "Cupcakes",
+      type: "dessert"
+    }
   ];
 
   const compareWithFn = (o1, o2) => {

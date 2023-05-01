@@ -11,9 +11,9 @@ import angular_example_component_ts from './angular/example_component_ts.md';
 import angular_global_css from './angular/global_css.md';
 
 <Playground
-version="6"
-devicePreview
-code={{
+  version="6"
+  devicePreview
+  code={{
     javascript,
     react: {
       files: {
@@ -30,5 +30,5 @@ code={{
       },
     },
   }}
-src="usage/v6/toast/theming/demo.html"
+  src="usage/v6/toast/theming/demo.html"
 />

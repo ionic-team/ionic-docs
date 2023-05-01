@@ -2,16 +2,16 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
 <Tabs
-groupId="per-component-config"
-defaultValue="javascript"
-values={[
-{ value: 'javascript', label: 'JavaScript' },
-{ value: 'angular', label: 'Angular' },
-{ value: 'react', label: 'React' },
-{ value: 'vue', label: 'Vue' },
-]}
-
-> <TabItem value="javascript">
+  groupId="per-component-config"
+  defaultValue="javascript"
+  values={[
+    { value: 'javascript', label: 'JavaScript' },
+    { value: 'angular', label: 'Angular' },
+    { value: 'react', label: 'React' },
+    { value: 'vue', label: 'Vue' },
+  ]}
+>
+<TabItem value="javascript">
 
 **Not recommended**
 
@@ -19,9 +19,9 @@ values={[
 window.Ionic = {
   config: {
     // Not recommended when your app requires reactive values
-    backButtonText: 'Go Back',
-  },
-};
+    backButtonText: 'Go Back'
+  }
+}
 ```
 
 **Recommended**
@@ -31,7 +31,7 @@ window.Ionic = {
 
 <script>
   const backButton = document.querySelector('ion-back-button');
-
+  
   /**
    * The back button text can be updated
    * anytime the locale changes.
@@ -39,7 +39,6 @@ window.Ionic = {
   backButton.text = 'Go Back';
 </script>
 ```
-
 </TabItem>
 <TabItem value="angular">
 
@@ -76,7 +75,6 @@ class MyComponent {
   backButtonText = 'Go Back';
 }
 ```
-
 </TabItem>
 <TabItem value="react">
 
@@ -87,7 +85,7 @@ import { setupIonicReact } from '@ionic/react';
 
 setupIonicReact({
   // Not recommended when your app requires reactive values
-  backButtonText: 'Go Back',
+  backButtonText: 'Go Back'
 });
 ```
 
@@ -108,7 +106,6 @@ const ExampleComponent = () => {
   )
 }
 ```
-
 </TabItem>
 <TabItem value="vue">
 
@@ -117,10 +114,10 @@ const ExampleComponent = () => {
 ```ts
 import { IonicVue } from '@ionic/vue';
 import { createApp } from 'vue';
-
-// Not recommended when your app requires reactive values
+ 
+ // Not recommended when your app requires reactive values
 createApp(App).use(IonicVue, {
-  backButtonText: 'Go Back',
+  backButtonText: 'Go Back'
 });
 ```
 
@@ -142,6 +139,5 @@ createApp(App).use(IonicVue, {
   const backButtonText = ref('Go Back');
 </script>
 ```
-
 </TabItem>
 </Tabs>

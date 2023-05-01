@@ -17,7 +17,9 @@
         <ion-title>Menu</ion-title>
       </ion-toolbar>
     </ion-header>
-    <ion-content class="ion-padding"> Tap the button in the toolbar to open the menu. </ion-content>
+    <ion-content class="ion-padding">
+      Tap the button in the toolbar to open the menu.
+    </ion-content>
   </div>
 </ion-app>
 

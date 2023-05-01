@@ -6,18 +6,7 @@
   const searchbar = document.querySelector('ion-searchbar');
   const list = document.querySelector('ion-list');
 
-  const data = [
-    'Amsterdam',
-    'Buenos Aires',
-    'Cairo',
-    'Geneva',
-    'Hong Kong',
-    'Istanbul',
-    'London',
-    'Madrid',
-    'New York',
-    'Panama City',
-  ];
+  const data = ['Amsterdam', 'Buenos Aires', 'Cairo', 'Geneva', 'Hong Kong', 'Istanbul', 'London', 'Madrid', 'New York', 'Panama City'];
   let results = [...data];
   filterItems(results);
 
@@ -25,7 +14,7 @@
 
   function handleInput(event) {
     const query = event.target.value.toLowerCase();
-    results = data.filter((d) => d.toLowerCase().indexOf(query) > -1);
+    results = data.filter(d => d.toLowerCase().indexOf(query) > -1);
     filterItems(results);
   }
 

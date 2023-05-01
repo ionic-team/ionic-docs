@@ -26,6 +26,6 @@
         <ion-skeleton-text animated="true" style="width: 30%;"></ion-skeleton-text>
       </p>
     </ion-label>
-  </ion-item>
+    </ion-item>
 </ion-list>
 ```

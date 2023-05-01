@@ -13,17 +13,13 @@ export class ExampleComponent {
     {
       text: 'Cancel',
       role: 'cancel',
-      handler: () => {
-        this.handlerMessage = 'Alert canceled';
-      },
+      handler: () => { this.handlerMessage = 'Alert canceled'; }
     },
     {
       text: 'OK',
       role: 'confirm',
-      handler: () => {
-        this.handlerMessage = 'Alert confirmed';
-      },
-    },
+      handler: () => { this.handlerMessage = 'Alert confirmed'; }
+    }
   ];
 
   setResult(ev) {

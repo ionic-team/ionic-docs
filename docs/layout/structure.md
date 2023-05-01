@@ -34,13 +34,16 @@ import Footer from '@site/static/usage/v7/footer/basic/index.md';
 
 <Footer />
 
+
 ## Tabs Layout
 
 A layout consisting of horizontal [tabs](../api/tabs.md) can be used to let the user quickly change between content views. Each tab can contain static content or a navigation stack by using a [router outlet](../api/router-outlet.md) or [nav](../api/nav.md).
 
+
 import Tabs from '@site/static/usage/v7/tabs/router/index.md';
 
 <Tabs />
+
 
 ## Menu Layout
 
@@ -49,6 +52,7 @@ A standard layout among mobile apps includes the ability to toggle a side [menu]
 import Menu from '@site/static/usage/v7/menu/basic/index.md';
 
 <Menu />
+
 
 ## Split Pane Layout
 

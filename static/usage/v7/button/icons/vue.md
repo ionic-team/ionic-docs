@@ -23,8 +23,8 @@
   export default defineComponent({
     components: { IonButton, IonIcon },
     setup() {
-      return { star };
-    },
+      return { star }
+    }
   });
 </script>
 ```

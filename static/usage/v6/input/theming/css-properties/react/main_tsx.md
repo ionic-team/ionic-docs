@@ -5,7 +5,9 @@ import { IonInput } from '@ionic/react';
 import './main.css';
 
 function Example() {
-  return <IonInput placeholder="Custom input" class="custom"></IonInput>;
+  return (
+    <IonInput placeholder="Custom input" class="custom"></IonInput>
+  );
 }
 export default Example;
 ```

@@ -12,24 +12,24 @@ export class ExampleComponent {
       text: 'Delete',
       role: 'destructive',
       data: {
-        action: 'delete',
-      },
+        action: 'delete'
+      }
     },
     {
       text: 'Share',
       data: {
-        action: 'share',
-      },
+        action: 'share'
+      }
     },
     {
       text: 'Cancel',
       role: 'cancel',
       data: {
-        action: 'cancel',
-      },
-    },
+        action: 'cancel'
+      }
+    }
   ];
-
+  
   setOpen(isOpen: boolean) {
     this.isActionSheetOpen = isOpen;
   }

@@ -6,11 +6,11 @@ import vue from './vue.md';
 import angular from './angular.md';
 
 <Playground
-version="7"
-mode="ios"
-code={{ javascript, react, vue, angular }}
-src="usage/v7/title/collapsible-large-title/basic/demo.html"
-devicePreview={true}
-includeIonContent={false}
-mode="ios"
+  version="7"
+  mode="ios"
+  code={{ javascript, react, vue, angular }}
+  src="usage/v7/title/collapsible-large-title/basic/demo.html"
+  devicePreview={true}
+  includeIonContent={false}
+  mode="ios"
 />

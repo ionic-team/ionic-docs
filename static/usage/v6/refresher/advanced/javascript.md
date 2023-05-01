@@ -15,21 +15,7 @@
 
 <script>
   const refresher = document.getElementById('refresher');
-  const names = [
-    'Burt Bear',
-    'Charlie Cheetah',
-    'Donald Duck',
-    'Eva Eagle',
-    'Ellie Elephant',
-    'Gino Giraffe',
-    'Isabella Iguana',
-    'Karl Kitten',
-    'Lionel Lion',
-    'Molly Mouse',
-    'Paul Puppy',
-    'Rachel Rabbit',
-    'Ted Turtle',
-  ];
+  const names = ['Burt Bear', 'Charlie Cheetah', 'Donald Duck', 'Eva Eagle', 'Ellie Elephant', 'Gino Giraffe', 'Isabella Iguana', 'Karl Kitten', 'Lionel Lion', 'Molly Mouse', 'Paul Puppy', 'Rachel Rabbit', 'Ted Turtle'];
 
   refresher.addEventListener('ionRefresh', () => {
     setTimeout(() => {

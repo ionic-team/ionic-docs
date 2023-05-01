@@ -16,7 +16,7 @@
 
   <ion-button id="left-start">Side=Left, Alignment=Start</ion-button>
   <ion-popover trigger="left-start" side="left" alignment="start">
-    <ng-template>
+    <ng-template>  
       <ion-content class="ion-padding">Hello World!</ion-content>
     </ng-template>
   </ion-popover>

@@ -15,27 +15,27 @@
   const foods = [
     {
       id: 1,
-      name: 'Apples',
-      type: 'fruit',
+      name: "Apples",
+      type: "fruit"
     },
     {
       id: 2,
-      name: 'Carrots',
-      type: 'vegetable',
+      name: "Carrots",
+      type: "vegetable"
     },
     {
       id: 3,
-      name: 'Cupcakes',
-      type: 'dessert',
-    },
+      name: "Cupcakes",
+      type: "dessert"
+    }
   ];
 
   const compareWithFn = (o1, o2) => {
-    if (!o1 || !o2) {
+    if(!o1 || !o2) {
       return o1 === o2;
     }
 
-    if (Array.isArray(o2)) {
+    if(Array.isArray(o2)) {
       return o2.some((o) => o.id === o1.id);
     }
 

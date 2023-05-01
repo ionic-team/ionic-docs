@@ -9,17 +9,17 @@ function Example() {
     <>
       <IonButton id="open-toast">Open Toast</IonButton>
       <IonToast
-        trigger="open-toast"
+        trigger="open-toast" 
         duration={3000}
         message="Hello Styled World!"
         class="custom-toast"
         buttons={[
           {
             text: 'Dismiss',
-            role: 'cancel',
-          },
-        ]}
-      ></IonToast>
+            role: 'cancel'
+          }
+        ]}>
+      </IonToast>
     </>
   );
 }

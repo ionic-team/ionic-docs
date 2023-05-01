@@ -6,8 +6,8 @@ import vue from './vue.md';
 import angular from './angular.md';
 
 <Playground
-version="7"
-size="500px"
-code={{ javascript, react, vue, angular }}
-src="usage/v7/datetime/buttons/showing-confirmation-buttons/demo.html"
+  version="7"
+  size="500px"
+  code={{ javascript, react, vue, angular }}
+  src="usage/v7/datetime/buttons/showing-confirmation-buttons/demo.html"
 />

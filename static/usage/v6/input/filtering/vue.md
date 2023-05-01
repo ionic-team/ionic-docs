@@ -3,7 +3,11 @@
   <ion-list>
     <ion-item>
       <ion-label>Alphanumeric Characters</ion-label>
-      <ion-input :value="inputModel" @ionInput="onInput($event)" ref="ionInputEl"></ion-input>
+      <ion-input
+        :value="inputModel"
+        @ionInput="onInput($event)"
+        ref="ionInputEl"
+      ></ion-input>
     </ion-item>
   </ion-list>
 </template>
@@ -19,24 +23,24 @@
       const inputModel = ref('');
       const onInput = (ev) => {
         const value = ev.target!.value;
-
+        
         // Removes non alphanumeric characters
-        const filteredValue = value.replace(/[^a-zA-Z0-9]+/g, '');
-
+        const filteredValue = value.replace(/[^a-zA-Z0-9]+/g,'');
+        
         /**
          * Update both the state variable and
          * the component to keep them in sync.
          */
         inputModel.value = filteredValue;
-
+        
         const inputCmp = ionInputEl.value;
         if (inputCmp !== undefined) {
           inputCmp.$el.value = filteredValue;
         }
-      };
-
+      }
+      
       return { ionInputEl, inputModel, onInput };
-    },
+    }
   });
 </script>
 ```

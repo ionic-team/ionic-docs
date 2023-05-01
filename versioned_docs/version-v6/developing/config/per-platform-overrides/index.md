@@ -2,15 +2,15 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
 <Tabs
-groupId="per-platform-fallback-config"
-defaultValue="angular"
-values={[
-{ value: 'angular', label: 'Angular' },
-{ value: 'react', label: 'React' },
-{ value: 'vue', label: 'Vue' },
-]}
-
-> <TabItem value="angular">
+  groupId="per-platform-fallback-config"
+  defaultValue="angular"
+  values={[
+    { value: 'angular', label: 'Angular' },
+    { value: 'react', label: 'React' },
+    { value: 'vue', label: 'Vue' },
+  ]}
+>
+<TabItem value="angular">
 
 ```ts title="app.module.ts"
 import { isPlatform, IonicModule } from '@ionic/angular';
@@ -37,7 +37,6 @@ const getConfig = () => {
   ...
 });
 ```
-
 </TabItem>
 <TabItem value="react">
 
@@ -60,8 +59,8 @@ const getConfig = () => {
 };
 
 setupIonicReact(getConfig());
-```
 
+```
 </TabItem>
 <TabItem value="vue">
 
@@ -84,7 +83,6 @@ const getConfig = () => {
 };
 
 createApp(App).use(IonicVue, getConfig());
-```
-
+````
 </TabItem>
 </Tabs>

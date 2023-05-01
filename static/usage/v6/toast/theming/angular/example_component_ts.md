@@ -17,8 +17,8 @@ export class ExampleComponent {
       buttons: [
         {
           text: 'Dismiss',
-          role: 'cancel',
-        },
+          role: 'cancel'
+        }
       ],
     });
 

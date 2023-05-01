@@ -2,7 +2,9 @@
 <template>
   <ion-header>
     <ion-toolbar>
-      <ion-title> Header </ion-title>
+      <ion-title>
+        Header
+      </ion-title>
     </ion-toolbar>
   </ion-header>
   <ion-content class="ion-padding">
@@ -17,7 +19,9 @@
   </ion-content>
   <ion-footer>
     <ion-toolbar>
-      <ion-title> Footer </ion-title>
+      <ion-title>
+        Footer
+      </ion-title>
     </ion-toolbar>
   </ion-footer>
 </template>

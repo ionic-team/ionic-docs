@@ -1,7 +1,9 @@
 ```html
 <template>
   <ion-item>
-    <ion-label> Default Item Lines </ion-label>
+    <ion-label>
+      Default Item Lines
+    </ion-label>
   </ion-item>
 
   <ion-item lines="inset">
@@ -50,7 +52,7 @@
     components: { IonIcon, IonItem, IonLabel },
     setup() {
       return { informationCircle, star };
-    },
+    }
   });
 </script>
 ```

@@ -7,9 +7,7 @@ import './main.css';
 function Example() {
   return (
     <>
-      <b>
-        Column 2 has <code>offset</code> set to <code>"3"</code>
-      </b>
+      <b>Column 2 has <code>offset</code> set to <code>"3"</code></b>
       <IonGrid>
         <IonRow>
           <IonCol>1</IonCol>
@@ -18,9 +16,7 @@ function Example() {
         </IonRow>
       </IonGrid>
 
-      <b>
-        Column 5 has <code>offset</code> set to <code>"2"</code>
-      </b>
+      <b>Column 5 has <code>offset</code> set to <code>"2"</code></b>
       <IonGrid>
         <IonRow>
           <IonCol>1</IonCol>
@@ -31,14 +27,10 @@ function Example() {
         </IonRow>
       </IonGrid>
 
-      <b>
-        Column 1 has <code>offset</code> set to <code>"4"</code>
-      </b>
+      <b>Column 1 has <code>offset</code> set to <code>"4"</code></b>
       <IonGrid>
         <IonRow>
-          <IonCol size="2" offset="4">
-            1
-          </IonCol>
+          <IonCol size="2" offset="4">1</IonCol>
           <IonCol size="2">2</IonCol>
         </IonRow>
       </IonGrid>

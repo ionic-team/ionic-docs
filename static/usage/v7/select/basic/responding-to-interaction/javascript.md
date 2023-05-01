@@ -14,7 +14,7 @@
   const select = document.querySelector('ion-select');
   const log = document.querySelector('#log');
 
-  select.addEventListener('ionChange', (e) => {
+  select.addEventListener('ionChange', e => {
     log.insertAdjacentHTML('afterbegin', `<p>ionChange fired with value: ${e.detail.value}</p>`);
   });
 

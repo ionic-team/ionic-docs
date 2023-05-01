@@ -1,6 +1,11 @@
 ```tsx
 import React from 'react';
-import { IonAccordion, IonAccordionGroup, IonItem, IonLabel } from '@ionic/react';
+import { 
+  IonAccordion, 
+  IonAccordionGroup,
+  IonItem, 
+  IonLabel
+} from '@ionic/react';
 import { caretDownCircle } from 'ionicons/icons';
 
 function Example() {

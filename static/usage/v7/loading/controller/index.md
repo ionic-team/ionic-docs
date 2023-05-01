@@ -8,8 +8,8 @@ import angular_example_component_html from './angular/example_component_html.md'
 import angular_example_component_ts from './angular/example_component_ts.md';
 
 <Playground
-version="7"
-code={{
+  version="7"
+  code={{
     javascript,
     react,
     vue,
@@ -20,5 +20,5 @@ code={{
       },
     },
   }}
-src="usage/v7/loading/controller/demo.html"
+  src="usage/v7/loading/controller/demo.html"
 />

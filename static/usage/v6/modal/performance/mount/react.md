@@ -1,6 +1,15 @@
 ```tsx
 import React, { useRef } from 'react';
-import { IonButtons, IonButton, IonModal, IonHeader, IonContent, IonToolbar, IonTitle, IonPage } from '@ionic/react';
+import {
+  IonButtons,
+  IonButton,
+  IonModal,
+  IonHeader,
+  IonContent,
+  IonToolbar,
+  IonTitle,
+  IonPage,
+} from '@ionic/react';
 
 function Example() {
   const modal = useRef<HTMLIonModalElement>(null);
@@ -25,7 +34,9 @@ function Example() {
               <IonTitle>Modal</IonTitle>
             </IonToolbar>
           </IonHeader>
-          <IonContent className="ion-padding">This content was mounted as soon as the modal was created.</IonContent>
+          <IonContent className="ion-padding">
+            This content was mounted as soon as the modal was created.
+          </IonContent>
         </IonModal>
       </IonContent>
     </IonPage>

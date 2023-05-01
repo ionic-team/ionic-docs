@@ -1,5 +1,5 @@
 ```html
-<template>
+<template>  
   <ion-list>
     <ion-list-header>
       <ion-skeleton-text :animated="true" style="width: 80px"></ion-skeleton-text>
@@ -24,7 +24,14 @@
 </template>
 
 <script lang="ts">
-  import { IonItem, IonLabel, IonList, IonListHeader, IonSkeletonText, IonThumbnail } from '@ionic/vue';
+  import {
+    IonItem,
+    IonLabel,
+    IonList,
+    IonListHeader,
+    IonSkeletonText,
+    IonThumbnail,
+  } from '@ionic/vue';
   import { defineComponent } from 'vue';
 
   export default defineComponent({
@@ -35,7 +42,7 @@
       IonListHeader,
       IonSkeletonText,
       IonThumbnail,
-    },
+    }
   });
 </script>
 

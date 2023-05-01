@@ -8,9 +8,9 @@ import angular_example_component_html from './angular/example_component_html.md'
 import angular_example_component_ts from './angular/example_component_ts.md';
 
 <Playground
-version="6"
-size="300px"
-code={{
+  version="6"
+  size="300px"
+  code={{
     javascript,
     react,
     vue,
@@ -21,5 +21,5 @@ code={{
       },
     },
   }}
-src="usage/v6/popover/presenting/inline-isopen/demo.html"
+  src="usage/v6/popover/presenting/inline-isopen/demo.html"
 />

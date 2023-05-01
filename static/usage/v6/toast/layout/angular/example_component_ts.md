@@ -8,28 +8,33 @@ import type { ToastOptions } from '@ionic/angular';
   templateUrl: 'example.component.html',
 })
 export class ExampleComponent {
-  constructor(private toastController: ToastController) {}
 
+  constructor(private toastController: ToastController) {}
+  
   async presentToast(opts: ToastOptions) {
     const toast = await this.toastController.create(opts);
-
+  
     await toast.present();
   }
-
+  
   async presentBaselineToast() {
     await this.presentToast({
       duration: 3000,
-      message: 'This is a toast with a long message and a button that appears on the same line.',
-      buttons: [{ text: 'Action With Long Text' }],
+      message: "This is a toast with a long message and a button that appears on the same line.",
+      buttons: [
+        { text: 'Action With Long Text'}
+      ]
     });
   }
-
+  
   async presentStackedToast() {
     await this.presentToast({
       duration: 3000,
-      message: 'This is a toast with a long message and a button that appears on the next line.',
-      buttons: [{ text: 'Action With Long Text' }],
-      layout: 'stacked',
+      message: "This is a toast with a long message and a button that appears on the next line.",
+      buttons: [
+        { text: 'Action With Long Text'}
+      ],
+      layout: "stacked"
     });
   }
 }

@@ -1,5 +1,5 @@
 ```css
 ion-toolbar {
-  --opacity: 0.5;
+  --opacity: .5
 }
 ```

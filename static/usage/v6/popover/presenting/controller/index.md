@@ -13,9 +13,9 @@ import angular_popover_component_ts from './angular/popover_component_ts.md';
 import angular_app_module from './angular/app_module_ts.md';
 
 <Playground
-version="6"
-size="300px"
-code={{
+  version="6"
+  size="300px"
+  code={{
     javascript,
     react,
     vue: {
@@ -34,5 +34,5 @@ code={{
       },
     },
   }}
-src="usage/v6/popover/presenting/controller/demo.html"
+  src="usage/v6/popover/presenting/controller/demo.html"
 />

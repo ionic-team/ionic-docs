@@ -1,6 +1,9 @@
 ```html
 <ion-button id="open-action-sheet">Open</ion-button>
-<ion-action-sheet trigger="open-action-sheet" header="Actions"></ion-action-sheet>
+<ion-action-sheet
+  trigger="open-action-sheet"
+  header="Actions"
+></ion-action-sheet>
 
 <script>
   var actionSheet = document.querySelector('ion-action-sheet');
@@ -10,22 +13,22 @@
       text: 'Delete',
       role: 'destructive',
       data: {
-        action: 'delete',
-      },
+        action: 'delete'
+      }
     },
     {
       text: 'Share',
       data: {
-        action: 'share',
-      },
+        action: 'share'
+      }
     },
     {
       text: 'Cancel',
       role: 'cancel',
       data: {
-        action: 'cancel',
-      },
-    },
+        action: 'cancel'
+      }
+    }
   ];
 </script>
 ```

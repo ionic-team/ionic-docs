@@ -6,7 +6,7 @@
   labelPlacement="floating"
   helperText="Enter a valid email"
   errorText="Invalid email"
-  ngModel
+  ngModel 
   email
 ></ion-input>
 ```

@@ -43,18 +43,9 @@
     components: { IonIcon, IonSegment, IonSegmentButton },
     setup() {
       return {
-        home,
-        heart,
-        pin,
-        star,
-        call,
-        globe,
-        basket,
-        barbell,
-        trash,
-        person,
-      };
-    },
+        home, heart, pin, star, call, globe, basket, barbell, trash, person
+      }
+    }
   });
 </script>
 ```

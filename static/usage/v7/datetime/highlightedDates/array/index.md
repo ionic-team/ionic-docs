@@ -8,9 +8,9 @@ import angular_example_component_html from './angular/example_component_html.md'
 import angular_example_component_ts from './angular/example_component_ts.md';
 
 <Playground
-size="medium"
-version={7}
-code={{
+  size="medium"
+  version={7}
+  code={{
     javascript,
     react,
     vue,
@@ -21,5 +21,5 @@ code={{
       },
     },
   }}
-src="usage/v7/datetime/highlightedDates/array/demo.html"
+  src="usage/v7/datetime/highlightedDates/array/demo.html"
 />

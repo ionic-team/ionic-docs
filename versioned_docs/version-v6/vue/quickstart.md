@@ -102,7 +102,7 @@ Let's break it down, starting with the imports.
 
 ```tsx
 <script setup lang="ts">
-  import {(IonApp, IonRouterOutlet)} from '@ionic/vue';
+  import { IonApp, IonRouterOutlet } from '@ionic/vue';
 </script>
 ```
 
@@ -289,19 +289,7 @@ For brevity, we are excluding repeating parts of our component, like the functio
 </template>
 
 <script setup lang="ts">
-  import {
-    IonBadge,
-    IonCheckbox,
-    IonContent,
-    IonHeader,
-    IonItem,
-    IonLabel,
-    IonList,
-    IonNote,
-    IonPage,
-    IonTitle,
-    IonToolbar,
-  } from '@ionic/vue';
+  import { IonBadge, IonCheckbox, IonContent, IonHeader, IonItem, IonLabel, IonList, IonNote, IonPage, IonTitle, IonToolbar } from '@ionic/vue';
 </script>
 ```
 
@@ -338,22 +326,7 @@ Let's look at another component from Ionic Framework, FAB. Floating Action Butto
 </template>
 
 <script setup>
-  import {
-    IonBadge,
-    IonCheckbox,
-    IonContent,
-    IonFab,
-    IonFabButton,
-    IonHeader,
-    IonIcon,
-    IonItem,
-    IonLabel,
-    IonList,
-    IonNote,
-    IonPage,
-    IonTitle,
-    IonToolbar,
-  } from '@ionic/vue';
+  import { IonBadge, IonCheckbox, IonContent, IonFab, IonFabButton, IonHeader, IonIcon, IonItem, IonLabel, IonList, IonNote, IonPage, IonTitle, IonToolbar } from '@ionic/vue';
   import { add } from 'ionicons/icons';
 </script>
 ```

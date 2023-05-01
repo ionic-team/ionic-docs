@@ -19,19 +19,15 @@ function Example() {
               {
                 text: 'More Info',
                 role: 'info',
-                handler: () => {
-                  setHandlerMessage('More Info clicked');
-                },
+                handler: () => { setHandlerMessage('More Info clicked'); }
               },
               {
                 text: 'Dismiss',
                 role: 'cancel',
-                handler: () => {
-                  setHandlerMessage('Dismiss clicked');
-                },
-              },
-            ],
-          });
+                handler: () => { setHandlerMessage('Dismiss clicked'); }
+              }
+            ]
+          })
         }}
       >
         Click Me

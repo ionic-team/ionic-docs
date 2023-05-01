@@ -7,9 +7,7 @@ import './main.css';
 function Example() {
   return (
     <>
-      <b>
-        Column 1 has <code>size</code> set to <code>"auto"</code>
-      </b>
+      <b>Column 1 has <code>size</code> set to <code>"auto"</code></b>
       <IonGrid>
         <IonRow>
           <IonCol size="auto">1</IonCol>
@@ -18,9 +16,7 @@ function Example() {
         </IonRow>
       </IonGrid>
 
-      <b>
-        Column 3 contains an input and has <code>size</code> set to <code>"auto"</code>
-      </b>
+      <b>Column 3 contains an input and has <code>size</code> set to <code>"auto"</code></b>
       <IonGrid>
         <IonRow>
           <IonCol>1</IonCol>
@@ -34,14 +30,12 @@ function Example() {
         </IonRow>
       </IonGrid>
 
-      <b>
-        Column 2 has <code>size</code> set to <code>"auto"</code> and a defined width
-      </b>
+      <b>Column 2 has <code>size</code> set to <code>"auto"</code> and a defined width</b>
       <IonGrid>
         <IonRow>
           <IonCol>1</IonCol>
           <IonCol size="auto">
-            <div style={{ width: '150px' }}>2</div>
+            <div style={{width: "150px"}}>2</div>
           </IonCol>
         </IonRow>
       </IonGrid>

@@ -2,20 +2,28 @@
 <template>
   <ion-toolbar>
     <ion-buttons slot="start">
-      <ion-button> Start </ion-button>
+      <ion-button>
+        Start
+      </ion-button>
     </ion-buttons>
     <ion-title>Start / End Buttons</ion-title>
     <ion-buttons slot="end">
-      <ion-button> End </ion-button>
+      <ion-button>
+        End
+      </ion-button>
     </ion-buttons>
   </ion-toolbar>
 
   <ion-toolbar>
     <ion-buttons slot="secondary">
-      <ion-button> Secondary </ion-button>
+      <ion-button>
+        Secondary
+      </ion-button>
     </ion-buttons>
     <ion-buttons slot="primary">
-      <ion-button> Primary </ion-button>
+      <ion-button>
+        Primary
+      </ion-button>
     </ion-buttons>
     <ion-title>Primary / Secondary Buttons</ion-title>
   </ion-toolbar>

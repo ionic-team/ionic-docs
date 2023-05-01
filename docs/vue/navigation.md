@@ -240,15 +240,14 @@ If you have built a web app that uses routing, you likely have used linear routi
 The following is an example of linear routing in a mobile app:
 
 <video
-style={{
+  style={{
     'margin': '40px auto',
     'display': 'flex'
   }}
-width="400"
-src={useBaseUrl('video/linear-routing-demo.mp4')}
-controls
-
-> </video>
+  width="400"
+  src={useBaseUrl('video/linear-routing-demo.mp4')} 
+  controls
+></video>
 
 The application history in this example has the following path:
 
@@ -267,15 +266,14 @@ Non-linear routing means that the view that the user should go back to is not ne
 The following is an example of non-linear routing:
 
 <video
-style={{
+  style={{
     'margin': '40px auto',
     'display': 'flex'
   }}
-width="400"
-src={useBaseUrl('video/non-linear-routing-demo.mp4')}
-controls
-
-> </video>
+  width="400"
+  src={useBaseUrl('video/non-linear-routing-demo.mp4')} 
+  controls
+></video>
 
 In the example above, we start on the `Originals` tab. Tapping a card brings us to the `Ted Lasso` view within the `Originals` tab.
 
@@ -462,7 +460,7 @@ If you have worked with Ionic Framework before, this should feel familiar. We cr
 Each tab in Ionic is treated as an individual navigation stack. This means if you have three tabs in your application, each tab has its own navigation stack. Within each stack you can navigate forwards (push a view) and backwards (pop a view).
 
 This behavior is important to note as it is different than most tab implementations that are found in other web based UI libraries. Other libraries typically manage tabs as one single history stack.
-
+ 
 Since Ionic is focused on helping developers build mobile apps, the tabs in Ionic are designed to match native mobile tabs as closely as possible. As a result, there may be certain behaviors in Ionic's tabs that differ from tabs implementations you have seen in other UI libraries. Read on to learn more about some of these differences.
 
 ### Child Routes within Tabs
@@ -521,15 +519,14 @@ If you find that your tabs need to reference the Settings tab, we recommend maki
 The example below shows how the iOS App Store app handles presenting an "Account" view from multiple tabs. By presenting the "Account" view in a modal, the app can work within the mobile tabs best practices to show the same view across multiple tabs.
 
 <video
-style={{
+  style={{
     'margin': '40px auto',
     'display': 'flex'
   }}
-width="400"
-src={useBaseUrl('video/tabs-account-demo.mp4')}
-controls
-
-> </video>
+  width="400"
+  src={useBaseUrl('video/tabs-account-demo.mp4')} 
+  controls
+></video>
 
 **Reusing Views Across Tabs**
 
@@ -539,8 +536,8 @@ Instead, we recommend having routes in each tab that reference the same componen
 
 The example below shows how the Spotify app reuses the same album component to show content in multiple tabs. Notice that each screenshot shows the same album but from a different tab.
 
-|                      Home Tab                       |                      Search Tab                       |
-| :-------------------------------------------------: | :---------------------------------------------------: |
+| Home Tab | Search Tab |
+| :------: | :--------: |
 | <img src={useBaseUrl('img/usage/tabs-home.jpg')} /> | <img src={useBaseUrl('img/usage/tabs-search.jpg')} /> |
 
 ## Components

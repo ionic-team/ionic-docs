@@ -8,20 +8,28 @@ function Example() {
     <>
       <IonToolbar>
         <IonButtons slot="start">
-          <IonButton>Start</IonButton>
+          <IonButton>
+            Start
+          </IonButton>
         </IonButtons>
         <IonTitle>Start / End Buttons</IonTitle>
         <IonButtons slot="end">
-          <IonButton>End</IonButton>
+          <IonButton>
+            End
+          </IonButton>
         </IonButtons>
       </IonToolbar>
 
       <IonToolbar>
         <IonButtons slot="secondary">
-          <IonButton>Secondary</IonButton>
+          <IonButton>
+            Secondary
+          </IonButton>
         </IonButtons>
         <IonButtons slot="primary">
-          <IonButton>Primary</IonButton>
+          <IonButton>
+            Primary
+          </IonButton>
         </IonButtons>
         <IonTitle>Primary / Secondary Buttons</IonTitle>
       </IonToolbar>

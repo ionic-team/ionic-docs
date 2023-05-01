@@ -27,7 +27,10 @@ function Example() {
         <IonContent>
           <IonList>
             {collapsedBreadcrumbs.map((breadcrumb, i) => (
-              <IonItem href={breadcrumb.href} lines={i === collapsedBreadcrumbs.length - 1 ? 'none' : undefined}>
+              <IonItem
+                href={breadcrumb.href}
+                lines={i === collapsedBreadcrumbs.length - 1 ? "none" : undefined}
+              >
                 <IonLabel>{breadcrumb.textContent}</IonLabel>
               </IonItem>
             ))}

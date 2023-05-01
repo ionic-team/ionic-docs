@@ -23,12 +23,14 @@ function Example() {
     <IonList>
       {/* The reorder gesture is disabled by default, enable it to drag and drop items */}
       <IonReorderGroup disabled={false} onIonItemReorder={handleReorder}>
-        {items.map((item) => (
+        {items.map(item =>
           <IonItem>
-            <IonLabel>Item {item}</IonLabel>
+            <IonLabel>
+              Item { item }
+            </IonLabel>
             <IonReorder slot="end"></IonReorder>
           </IonItem>
-        ))}
+        )}
       </IonReorderGroup>
     </IonList>
   );

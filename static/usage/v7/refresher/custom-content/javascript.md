@@ -11,8 +11,7 @@
       pulling-icon="chevron-down-circle-outline"
       pulling-text="Pull to refresh"
       refreshing-spinner="circles"
-      refreshing-text="Refreshing..."
-    >
+      refreshing-text="Refreshing...">
     </ion-refresher-content>
   </ion-refresher>
 

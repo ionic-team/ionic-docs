@@ -1,7 +1,11 @@
 ```html
 <ion-list>
   <ion-item>
-    <ion-select [compareWith]="compareWith" placeholder="Select food" (ionChange)="handleChange($event)">
+    <ion-select
+      [compareWith]="compareWith"
+      placeholder="Select food"
+      (ionChange)="handleChange($event)"
+    >
       <ion-select-option *ngFor="let food of foods" [value]="food">{{ food.name }}</ion-select-option>
     </ion-select>
   </ion-item>

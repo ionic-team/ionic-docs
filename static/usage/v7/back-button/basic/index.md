@@ -17,8 +17,8 @@ import vue_page_one from './vue/page_one_vue.md';
 import vue_page_two from './vue/page_two_vue.md';
 
 <Playground
-version="7"
-code={{
+  version="7"
+  code={{
     javascript,
     angular: {
       files: {
@@ -44,7 +44,7 @@ code={{
       },
     },
   }}
-src="usage/v7/back-button/basic/demo.html"
-devicePreview
-includeIonContent={false}
+  src="usage/v7/back-button/basic/demo.html"
+  devicePreview
+  includeIonContent={false}
 />

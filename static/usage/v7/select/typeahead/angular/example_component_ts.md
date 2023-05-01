@@ -1,7 +1,7 @@
 ```ts
 import { Component, ViewChild } from '@angular/core';
 import { IonModal } from '@ionic/angular';
-import { Item } from './types';
+import { Item } from './types'; 
 
 @Component({
   selector: 'app-example',
@@ -9,10 +9,10 @@ import { Item } from './types';
 })
 export class ExampleComponent {
   @ViewChild('modal', { static: true }) modal!: IonModal;
-
+  
   selectedFruitsText = '0 Items';
   selectedFruits: string[] = [];
-
+  
   fruits: Item[] = [
     { text: 'Apple', value: 'apple' },
     { text: 'Apricot', value: 'apricot' },
@@ -38,18 +38,18 @@ export class ExampleComponent {
     { text: 'Pineapple', value: 'pineapple' },
     { text: 'Pomegranate', value: 'pomegranate' },
     { text: 'Raspberry', value: 'raspberry' },
-    { text: 'Strawberry', value: 'strawberry' },
+    { text: 'Strawberry', value: 'strawberry' }
   ];
-
+  
   private formatData(data: string[]) {
     if (data.length === 1) {
-      const fruit = this.fruits.find((fruit) => fruit.value === data[0]);
+      const fruit = this.fruits.find(fruit => fruit.value === data[0])
       return fruit.text;
     }
-
+  
     return `${data.length} items`;
   }
-
+  
   fruitSelectionChanged(fruits: string[]) {
     this.selectedFruits = fruits;
     this.selectedFruitsText = this.formatData(this.selectedFruits);

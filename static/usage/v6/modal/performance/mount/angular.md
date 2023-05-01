@@ -16,7 +16,9 @@
           <ion-title>Modal</ion-title>
         </ion-toolbar>
       </ion-header>
-      <ion-content class="ion-padding"> This content was mounted as soon as the modal was created. </ion-content>
+      <ion-content class="ion-padding">
+        This content was mounted as soon as the modal was created.
+      </ion-content>
     </ng-template>
   </ion-modal>
 </ion-content>

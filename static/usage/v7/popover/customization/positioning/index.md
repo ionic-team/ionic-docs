@@ -11,9 +11,9 @@ import angular_example_component_css from './angular/example_component_css.md';
 import angular_example_component_ts from './angular/example_component_ts.md';
 
 <Playground
-version="7"
-size="400px"
-code={{
+  version="7"
+  size="400px"
+  code={{
     javascript,
     react: {
       files: {
@@ -30,5 +30,5 @@ code={{
       },
     },
   }}
-src="usage/v7/popover/customization/positioning/demo.html"
+  src="usage/v7/popover/customization/positioning/demo.html"
 />

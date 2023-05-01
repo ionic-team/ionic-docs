@@ -66,7 +66,7 @@
       return {
         result,
         actionSheetButtons,
-        setResult,
+        setResult
       };
     },
   };

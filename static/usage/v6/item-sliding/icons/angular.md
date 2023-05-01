@@ -30,7 +30,9 @@
     </ion-item-options>
 
     <ion-item>
-      <ion-label> Sliding Item with Start Icons </ion-label>
+      <ion-label>
+        Sliding Item with Start Icons
+      </ion-label>
     </ion-item>
 
     <ion-item-options side="end">
@@ -54,7 +56,9 @@
     </ion-item-options>
 
     <ion-item>
-      <ion-label> Sliding Item with End Icons </ion-label>
+      <ion-label>
+        Sliding Item with End Icons
+      </ion-label>
     </ion-item>
 
     <ion-item-options>
@@ -78,7 +82,9 @@
     </ion-item-options>
 
     <ion-item>
-      <ion-label> Sliding Item with Top Icons </ion-label>
+      <ion-label>
+        Sliding Item with Top Icons
+      </ion-label>
     </ion-item>
 
     <ion-item-options>
@@ -102,7 +108,9 @@
     </ion-item-options>
 
     <ion-item>
-      <ion-label> Sliding Item with Bottom Icons </ion-label>
+      <ion-label>
+        Sliding Item with Bottom Icons
+      </ion-label>
     </ion-item>
 
     <ion-item-options>

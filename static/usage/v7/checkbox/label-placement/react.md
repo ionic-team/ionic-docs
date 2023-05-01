@@ -6,13 +6,13 @@ function Example() {
   return (
     <>
       <IonCheckbox labelPlacement="start">Label at the Start</IonCheckbox>
-
+      
       <br />
-
+      
       <IonCheckbox labelPlacement="end">Label at the End</IonCheckbox>
-
+      
       <br />
-
+      
       <IonCheckbox labelPlacement="fixed">Fixed Width Label</IonCheckbox>
     </>
   );
