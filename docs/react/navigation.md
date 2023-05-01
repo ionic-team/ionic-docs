@@ -276,11 +276,11 @@ The following is an example of linear routing in a mobile app:
 
 <video
   style={{
-    'margin': '40px auto',
-    'display': 'flex'
+    margin: '40px auto',
+    display: 'flex',
   }}
   width="400"
-  src={useBaseUrl('video/linear-routing-demo.mp4')} 
+  src={useBaseUrl('video/linear-routing-demo.mp4')}
   controls
 ></video>
 
@@ -302,11 +302,11 @@ The following is an example of non-linear routing:
 
 <video
   style={{
-    'margin': '40px auto',
-    'display': 'flex'
+    margin: '40px auto',
+    display: 'flex',
   }}
   width="400"
-  src={useBaseUrl('video/non-linear-routing-demo.mp4')} 
+  src={useBaseUrl('video/non-linear-routing-demo.mp4')}
   controls
 ></video>
 
@@ -351,8 +351,8 @@ const App: React.FC = () => {
         </Route>
       </IonRouterOutlet>
     </IonReactRouter>
-  </IonApp>
-}
+  </IonApp>;
+};
 ```
 
 The above routes are considered "shared" because they reuse the `dashboard` piece of the URL.
@@ -372,7 +372,7 @@ const App: React.FC = () => (
       </IonRouterOutlet>
     </IonReactRouter>
   </IonApp>
-)
+);
 
 const DashboardRouterOutlet: React.FC = () => (
   <IonRouterOutlet>
@@ -383,7 +383,7 @@ const DashboardRouterOutlet: React.FC = () => (
       <DashboardStatsPage />
     </Route>
   </IonRouterOutlet>
-)
+);
 ```
 
 The above routes are nested because they are in the `children` array of the parent route. Notice that the parent route renders the `DashboardRouterOutlet` component. When you nest routes, you need to render another instance of `IonRouterOutlet`.
@@ -420,15 +420,7 @@ Let's start by taking a look at our `Tabs` component:
 
 ```tsx
 import { Redirect, Route } from 'react-router-dom';
-import {
-  IonContent,
-  IonIcon,
-  IonLabel,
-  IonRouterOutlet,
-  IonTabBar,
-  IonTabButton,
-  IonTabs
-} from '@ionic/react';
+import { IonContent, IonIcon, IonLabel, IonRouterOutlet, IonTabBar, IonTabButton, IonTabs } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
 import { ellipse, square, triangle } from 'ionicons/icons';
 import Tab1 from './pages/Tab1';
@@ -481,7 +473,7 @@ If you have worked with Ionic Framework before, this should feel familiar. We cr
 Each tab in Ionic is treated as an individual navigation stack. This means if you have three tabs in your application, each tab has its own navigation stack. Within each stack you can navigate forwards (push a view) and backwards (pop a view).
 
 This behavior is important to note as it is different than most tab implementations that are found in other web based UI libraries. Other libraries typically manage tabs as one single history stack.
- 
+
 Since Ionic is focused on helping developers build mobile apps, the tabs in Ionic are designed to match native mobile tabs as closely as possible. As a result, there may be certain behaviors in Ionic's tabs that differ from tabs implementations you have seen in other UI libraries. Read on to learn more about some of these differences.
 
 ### Child Routes within Tabs
@@ -543,11 +535,11 @@ The example below shows how the iOS App Store app handles presenting an "Account
 
 <video
   style={{
-    'margin': '40px auto',
-    'display': 'flex'
+    margin: '40px auto',
+    display: 'flex',
   }}
   width="400"
-  src={useBaseUrl('video/tabs-account-demo.mp4')} 
+  src={useBaseUrl('video/tabs-account-demo.mp4')}
   controls
 ></video>
 
@@ -559,8 +551,8 @@ Instead, we recommend having routes in each tab that reference the same componen
 
 The example below shows how the Spotify app reuses the same album component to show content in multiple tabs. Notice that each screenshot shows the same album but from a different tab.
 
-| Home Tab | Search Tab |
-| :------: | :--------: |
+|                      Home Tab                       |                      Search Tab                       |
+| :-------------------------------------------------: | :---------------------------------------------------: |
 | <img src={useBaseUrl('img/usage/tabs-home.jpg')} /> | <img src={useBaseUrl('img/usage/tabs-search.jpg')} /> |
 
 ## Live Example
@@ -634,7 +626,6 @@ type UseIonRouterResult = {
 
 The following example shows how to use `useIonRouter`:
 
-
 ```tsx
 import { useIonRouter } from '@ionic/react';
 
@@ -643,12 +634,11 @@ const MyComponent: React.FC = () => {
   const goToPage = () => {
     router.push('/my-page', 'root', 'replace');
   };
-  
+
   ...
 }
 
 ```
-
 
 ## More Information
 

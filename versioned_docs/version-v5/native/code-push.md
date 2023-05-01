@@ -53,7 +53,8 @@ For more info, please see https://github.com/Dellos7/example-cordova-code-push-p
 >
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
-      $ npm install cordova-plugin-code-push {'\n'}$ npm install @awesome-cordova-plugins/code-push {'\n'}$ ionic cap sync
+      $ npm install cordova-plugin-code-push {'\n'}$ npm install @awesome-cordova-plugins/code-push {'\n'}$ ionic cap
+      sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">

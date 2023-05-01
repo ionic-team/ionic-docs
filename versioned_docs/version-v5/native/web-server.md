@@ -51,7 +51,8 @@ This plugin allows you to start a local dynamic content web server for android a
 >
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
-      $ npm install cordova-plugin-webserver {'\n'}$ npm install @awesome-cordova-plugins/web-server {'\n'}$ ionic cap sync
+      $ npm install cordova-plugin-webserver {'\n'}$ npm install @awesome-cordova-plugins/web-server {'\n'}$ ionic cap
+      sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">

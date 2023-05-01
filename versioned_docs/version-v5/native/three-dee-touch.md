@@ -58,12 +58,14 @@ Requires Cordova plugin: `cordova-plugin-3dtouch`. For more info, please see the
 >
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
-      $ npm install cordova-plugin-3dtouch {'\n'}$ npm install @awesome-cordova-plugins/three-dee-touch {'\n'}$ ionic cap sync
+      $ npm install cordova-plugin-3dtouch {'\n'}$ npm install @awesome-cordova-plugins/three-dee-touch {'\n'}$ ionic
+      cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
-      $ ionic cordova plugin add cordova-plugin-3dtouch {'\n'}$ npm install @awesome-cordova-plugins/three-dee-touch {'\n'}
+      $ ionic cordova plugin add cordova-plugin-3dtouch {'\n'}$ npm install @awesome-cordova-plugins/three-dee-touch{' '}
+      {'\n'}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">

@@ -58,14 +58,14 @@ This plugin allows you to display local notifications on the device
 >
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
-      $ npm install cordova-plugin-local-notification {'\n'}$ npm install @awesome-cordova-plugins/local-notifications {'\n'}$
-      ionic cap sync
+      $ npm install cordova-plugin-local-notification {'\n'}$ npm install @awesome-cordova-plugins/local-notifications{' '}
+      {'\n'}$ ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
-      $ ionic cordova plugin add cordova-plugin-local-notification {'\n'}$ npm install @awesome-cordova-plugins/local-notifications{' '}
-      {'\n'}
+      $ ionic cordova plugin add cordova-plugin-local-notification {'\n'}$ npm install
+      @awesome-cordova-plugins/local-notifications {'\n'}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">

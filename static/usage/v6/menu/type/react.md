@@ -1,6 +1,6 @@
 ```tsx
 import React, { useState } from 'react';
-import { 
+import {
   IonButton,
   IonContent,
   IonHeader,
@@ -12,7 +12,7 @@ import {
   IonRadio,
   IonRadioGroup,
   IonTitle,
-  IonToolbar
+  IonToolbar,
 } from '@ionic/react';
 import type { RadioGroupCustomEvent } from '@ionic/react';
 
@@ -30,7 +30,7 @@ function Example() {
         <IonContent className="ion-padding">
           <IonMenuToggle>
             <IonButton>Click to close the menu</IonButton>
-          </IonMenuToggle>  
+          </IonMenuToggle>
         </IonContent>
       </IonMenu>
       <IonPage id="main-content">

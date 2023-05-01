@@ -38,7 +38,7 @@ export const usePhotoGallery = () => {
   return {
     takePhoto,
   };
-}
+};
 ```
 
 Our `usePhotoGallery` function exposes a method called takePhoto, which in turn calls the Capacitor Camera API's `getPhoto` method.

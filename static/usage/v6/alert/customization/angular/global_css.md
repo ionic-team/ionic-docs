@@ -17,7 +17,7 @@ button.alert-button.alert-button-confirm {
 }
 
 .ios .custom-alert button.alert-button {
-  border: 0.55px solid rgba(var(--ion-text-color-rgb, 0, 0, 0), 0.2)
+  border: 0.55px solid rgba(var(--ion-text-color-rgb, 0, 0, 0), 0.2);
 }
 
 .ios button.alert-button.alert-button-cancel {

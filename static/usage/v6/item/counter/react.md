@@ -10,7 +10,10 @@ function Example() {
         <IonInput maxlength={20}></IonInput>
       </IonItem>
 
-      <IonItem counter={true} counterFormatter={(inputLength, maxLength) => `${maxLength - inputLength} characters remaining`}>
+      <IonItem
+        counter={true}
+        counterFormatter={(inputLength, maxLength) => `${maxLength - inputLength} characters remaining`}
+      >
         <IonLabel position="floating">Custom Counter Format</IonLabel>
         <IonInput maxlength={20}></IonInput>
       </IonItem>

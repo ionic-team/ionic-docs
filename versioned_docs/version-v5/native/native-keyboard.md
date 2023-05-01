@@ -56,13 +56,14 @@ A cross platform WhatsApp / Messenger / Slack -style keyboard even. For your Cor
 >
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
-      $ npm install cordova-plugin-native-keyboard {'\n'}$ npm install @awesome-cordova-plugins/native-keyboard {'\n'}$ ionic cap
-      sync
+      $ npm install cordova-plugin-native-keyboard {'\n'}$ npm install @awesome-cordova-plugins/native-keyboard {'\n'}$
+      ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
-      $ ionic cordova plugin add cordova-plugin-native-keyboard {'\n'}$ npm install @awesome-cordova-plugins/native-keyboard {'\n'}
+      $ ionic cordova plugin add cordova-plugin-native-keyboard {'\n'}$ npm install
+      @awesome-cordova-plugins/native-keyboard {'\n'}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">

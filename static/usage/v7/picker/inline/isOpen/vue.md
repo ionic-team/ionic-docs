@@ -18,44 +18,49 @@
     setup() {
       const isOpen = ref(false);
 
-      const pickerColumns = [{
-        name: 'languages',
-        options: [
-          {
-            text: 'JavaScript',
-            value: 'javascript'
-          }, {
-            text: 'TypeScript',
-            value: 'typescript'
-          }, {
-            text: 'Rust',
-            value: 'rust'
-          }, {
-            text: 'C#',
-            value: 'c#'
-          }
-        ]
-      }];
+      const pickerColumns = [
+        {
+          name: 'languages',
+          options: [
+            {
+              text: 'JavaScript',
+              value: 'javascript',
+            },
+            {
+              text: 'TypeScript',
+              value: 'typescript',
+            },
+            {
+              text: 'Rust',
+              value: 'rust',
+            },
+            {
+              text: 'C#',
+              value: 'c#',
+            },
+          ],
+        },
+      ];
 
       const pickerButtons = [
         {
           text: 'Cancel',
-          role: 'cancel'
+          role: 'cancel',
         },
         {
           text: 'Confirm',
           handler: (value) => {
             window.alert(`You selected: ${value.languages.value}`);
-          }
-        }
+          },
+        },
       ];
 
       const setOpen = (state: boolean) => {
         isOpen.value = state;
-      }
+      };
 
       return { pickerColumns, pickerButtons, isOpen, setOpen };
-    }
+    },
   });
 </script>
 ```
