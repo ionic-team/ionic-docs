@@ -3,7 +3,6 @@ title: Ionic React
 sidebar_label: Overview
 hide_title: true
 hide_table_of_contents: true
-image: /img/meta/open-graph.png
 description: Ionic is the app platform for web developers. Build amazing mobile, web, and desktop apps all with one shared code base and open web standards
 ---
 
@@ -78,7 +77,7 @@ Compatible with React version 16.8 and above.
 
 ## More than mobile
 
-Deploy your Ionic React projects to native iOS, Android, Electron, and the web as a Progressive Web App, using [Capacitor](https://capacitor.ionicframework.com), a modern native runtime. All with one shared codebase.
+Deploy your Ionic React projects to native iOS, Android, Electron, and the web as a Progressive Web App, using [Capacitor](https://capacitorjs.com), a modern native runtime. All with one shared codebase.
 
 </div>
 

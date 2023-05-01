@@ -7,7 +7,7 @@ sidebar_label: 'cordova compile'
 Compile native platform code
 
 ```shell
-$ ionic cordova compile [options]
+ionic cordova compile [options]
 ```
 
 Like running `cordova compile` directly, but provides friendly checks.

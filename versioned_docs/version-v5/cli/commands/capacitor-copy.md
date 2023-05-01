@@ -7,7 +7,7 @@ sidebar_label: 'capacitor copy'
 Copy web assets to native platforms
 
 ```shell
-$ ionic capacitor copy [options]
+ionic capacitor copy [options]
 ```
 
 `ionic capacitor copy` will do the following:

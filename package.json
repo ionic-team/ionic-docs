@@ -11,7 +11,7 @@
     "crowdin:sync": "docusaurus write-translations && crowdin upload && crowdin download",
     "deploy": "docusaurus deploy",
     "docusaurus": "docusaurus",
-    "generate-markdown": "node scripts/native && concurrently \"node scripts/api\" \"node scripts/cli\" \"node scripts/release-notes\"",
+    "generate-markdown": "node scripts/native && concurrently \"node scripts/cli\" \"node scripts/release-notes\"",
     "serve": "docusaurus serve",
     "prestart": "npm run generate-markdown",
     "start": "docusaurus start",
@@ -32,9 +32,9 @@
   "dependencies": {
     "@docusaurus/core": "0.0.0-4192",
     "@docusaurus/mdx-loader": "0.0.0-4192",
+    "@docusaurus/plugin-client-redirects": "0.0.0-4192",
     "@docusaurus/plugin-content-docs": "0.0.0-4192",
     "@docusaurus/plugin-content-pages": "0.0.0-4192",
-    "@docusaurus/plugin-client-redirects": "0.0.0-4192",
     "@docusaurus/plugin-debug": "0.0.0-4192",
     "@docusaurus/plugin-google-analytics": "0.0.0-4192",
     "@docusaurus/plugin-google-gtag": "0.0.0-4192",
@@ -45,6 +45,10 @@
     "@ionic-internal/docusaurus-plugin-tag-manager": "^2.0.0",
     "@ionic-internal/ionic-ds": "^7.0.0",
     "@mdx-js/react": "^1.6.22",
+    "@prismicio/client": "^6.4.2",
+    "@prismicio/react": "^2.2.0",
+    "@stackblitz/sdk": "^1.6.0",
+    "@tippyjs/react": "^4.2.6",
     "clsx": "^1.1.1",
     "concurrently": "^6.2.0",
     "crowdin": "^3.5.0",
@@ -64,6 +68,7 @@
     "@ionic/prettier-config": "^2.0.0",
     "@tsconfig/docusaurus": "^1.0.4",
     "@types/react": "^17.0.37",
+    "html-loader": "^3.1.0",
     "prettier": "^2.5.0",
     "typescript": "^4.5.2"
   }

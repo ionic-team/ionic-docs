@@ -64,13 +64,13 @@ Last, we need to need to create a Source Map for your app. This file makes it ea
 Sync the current version of the app by running the following:
 
 ```shell
-$ ionic monitoring syncmaps
+ionic monitoring syncmaps
 ```
 
 With our intentional error in place, let’s try it out to see what happens. Run your app locally:
 
 ```shell
-$ ionic serve
+ionic serve
 ```
 
 Tap on the Gallery tab, then the camera button. A runtime error should occur. In a browser, head over to the [Appflow dashboard](https://dashboard.ionicframework.com), then Monitor -> Monitoring. After a few minutes, the error should appear:

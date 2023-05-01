@@ -9,7 +9,7 @@ sidebar_label: 'cordova emulate'
 Emulate an Ionic project on a simulator/emulator
 
 ```shell
-$ ionic cordova emulate [options]
+ionic cordova emulate [options]
 ```
 
 Build your app and deploy it to devices and emulators using this command. Optionally specify the `--livereload` option to use the dev server from `ionic serve` for livereload functionality.

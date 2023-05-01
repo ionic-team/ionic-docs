@@ -7,7 +7,7 @@ sidebar_label: 'cordova prepare'
 Copies assets to Cordova platforms, preparing them for native builds
 
 ```shell
-$ ionic cordova prepare [options]
+ionic cordova prepare [options]
 ```
 
 `ionic cordova prepare` will do the following:

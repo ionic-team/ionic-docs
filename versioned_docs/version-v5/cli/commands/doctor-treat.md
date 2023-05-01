@@ -7,7 +7,7 @@ sidebar_label: 'doctor treat'
 Attempt to fix issues in your Ionic project
 
 ```shell
-$ ionic doctor treat [options]
+ionic doctor treat [options]
 ```
 
 This command detects and attempts to fix common issues. Before a fix is attempted, the steps are printed and a confirmation prompt is displayed.

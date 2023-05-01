@@ -7,7 +7,7 @@ sidebar_label: 'deploy configure'
 Overrides Appflow Deploy configuration
 
 ```shell
-$ ionic deploy configure [options]
+ionic deploy configure [options]
 ```
 
 This command overrides configuration for the Appflow Deploy plugin (`cordova-plugin-ionic`) in Capacitor projects.

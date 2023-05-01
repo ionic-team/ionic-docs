@@ -36,7 +36,7 @@ For Android devices, the Ionic CLI will automatically forward the dev server por
 The following all-in-one command will start a live-reload server on `localhost` and deploy the app to an Android device using Cordova:
 
 ```shell
-$ ionic cordova run android -l
+ionic cordova run android -l
 ```
 
 #### iOS
@@ -52,7 +52,7 @@ In some cases, the Ionic CLI won't know the address with which to configure the 
 The following all-in-one command will start a live-reload server on **all addresses** and deploy the app to an iOS device using Cordova:
 
 ```shell
-$ ionic cordova run ios -l --external
+ionic cordova run ios -l --external
 ```
 
 :::note

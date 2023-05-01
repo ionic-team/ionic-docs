@@ -2,7 +2,7 @@ const { outputJson } = require('fs-extra');
 const fetch = require('node-fetch');
 const { resolve } = require('path');
 const semver = require('semver');
-const url = require('url');
+const { URL } = require('url');
 
 const { renderMarkdown } = require('./utils.js');
 
@@ -14,16 +14,17 @@ const OUTPUT_PATH = resolve(__dirname, '../src/components/page/reference/Release
 // };
 
 // Get the GitHub Releases from Ionic
-// This requires an environment GITHUB_TOKEN
-// otherwise it may fail silently
+// -------------------------------------------------------------------------------
+// This requires an environment GITHUB_TOKEN otherwise it may fail
+//
+// To add a GITHUB_TOKEN, follow the steps to create a personal access token:
+// https://docs.github.com/en/enterprise-cloud@latest/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token
+// and then authorize it to work with SSO:
+// https://docs.github.com/en/enterprise-cloud@latest/authentication/authenticating-with-saml-single-sign-on/authorizing-a-personal-access-token-for-use-with-saml-single-sign-on
 const getReleases = async () => {
   try {
     const request = await fetch(
-      url.format({
-        protocol: 'https',
-        hostname: 'api.github.com',
-        pathname: 'repos/ionic-team/ionic/releases',
-      }),
+      new URL('repos/ionic-team/ionic/releases', 'https://api.github.com'),
       {
         headers: {
           Authorization: process.env.GITHUB_TOKEN !== undefined ? `token ${process.env.GITHUB_TOKEN}` : '',
@@ -44,20 +45,16 @@ const getReleases = async () => {
           return releasePattern.test(release.tag_name);
         })
         .map((release) => {
-          const body = renderMarkdown(release.body).contents;
+          const body = renderMarkdown(release.body.replace(/^#.*/, '')).contents;
           const published_at = parseDate(release.published_at);
           const version = release.tag_name.replace('v', '');
           const type = getVersionType(version);
-          const symbol = getVersionSymbol(version);
-          const element = getVersionElement(version);
           const { name, tag_name } = release;
 
           return {
             body,
-            element,
             name,
             published_at,
-            symbol,
             tag_name,
             type,
             version,
@@ -67,6 +64,7 @@ const getReleases = async () => {
           return -semver.compare(a.tag_name, b.tag_name);
         });
     } else {
+      console.error("There was an issue getting releases:", releases);
       return [];
     }
   } catch (error) {
@@ -98,177 +96,6 @@ function getVersionType(version) {
 
   return type;
 }
-
-// Given a version, return its element symbol
-function getVersionSymbol(version) {
-  const filteredVersions = versions.filter((v) => version.startsWith(`${v.minor}.`));
-  filteredVersions.unshift(fallbackVersion);
-
-  return filteredVersions[filteredVersions.length - 1].symbol;
-}
-
-// Given a version, return its element name
-function getVersionElement(version) {
-  const filteredVersions = versions.filter((v) => version.startsWith(`${v.minor}.`));
-  filteredVersions.unshift(fallbackVersion);
-
-  return filteredVersions[filteredVersions.length - 1].element;
-}
-
-var versions = [
-  {
-    minor: '4.0',
-    symbol: 'N',
-    element: 'Neutronium',
-  },
-  {
-    minor: '4.1',
-    symbol: 'H',
-    element: 'Hydrogen',
-  },
-  {
-    minor: '4.2',
-    symbol: 'He',
-    element: 'Helium',
-  },
-  {
-    minor: '4.3',
-    symbol: 'Li',
-    element: 'Lithium',
-  },
-  {
-    minor: '4.4',
-    symbol: 'Be',
-    element: 'Beryllium',
-  },
-  {
-    minor: '4.5',
-    symbol: 'B',
-    element: 'Boron',
-  },
-  {
-    minor: '4.6',
-    symbol: 'C',
-    element: 'Carbon',
-  },
-  {
-    minor: '4.7',
-    symbol: 'N',
-    element: 'Nitrogen',
-  },
-  {
-    minor: '4.8',
-    symbol: 'O',
-    element: 'Oxygen',
-  },
-  {
-    minor: '4.9',
-    symbol: 'F',
-    element: 'Fluorine',
-  },
-  {
-    minor: '4.10',
-    symbol: 'Ne',
-    element: 'Neon',
-  },
-  {
-    minor: '4.11',
-    symbol: 'Na',
-    element: 'Sodium',
-  },
-  {
-    minor: '5.0',
-    symbol: 'Mg',
-    element: 'Magnesium',
-  },
-  {
-    minor: '5.1',
-    symbol: 'Al',
-    element: 'Aluminium',
-  },
-  {
-    minor: '5.2',
-    symbol: 'Si',
-    element: 'Silicon',
-  },
-  {
-    minor: '5.3',
-    symbol: 'P',
-    element: 'Phosphorus',
-  },
-  {
-    minor: '5.4',
-    symbol: 'S',
-    element: 'Sulfur',
-  },
-  {
-    minor: '5.5',
-    symbol: 'Cl',
-    element: 'Chlorine',
-  },
-  {
-    minor: '5.6',
-    symbol: 'Ar',
-    element: 'Argon',
-  },
-  {
-    minor: '5.7',
-    symbol: 'K',
-    element: 'Potassium',
-  },
-  {
-    minor: '5.8',
-    symbol: 'Ca',
-    element: 'Calcium',
-  },
-  {
-    minor: '5.9',
-    symbol: 'Sc',
-    element: 'Scandium',
-  },
-  {
-    minor: '5.10',
-    symbol: 'Ti',
-    element: 'Titanium',
-  },
-  {
-    minor: '5.11',
-    symbol: 'V',
-    element: 'Vanadium',
-  },
-  {
-    minor: '5.12',
-    symbol: 'Cr',
-    element: 'Chromium',
-  },
-  {
-    minor: '5.13',
-    symbol: 'Mn',
-    element: 'Manganese',
-  },
-  {
-    minor: '5.14',
-    symbol: 'Fe',
-    element: 'Iron',
-  },
-  {
-    minor: '5.15',
-    symbol: 'Co',
-    element: 'Cobalt',
-  },
-  {
-    minor: '5.16',
-    symbol: 'Ni',
-    element: 'Nickel',
-  },
-  {
-    minor: '5.17',
-    symbol: 'Cu',
-    element: 'Copper',
-  },
-];
-
-var fallbackVersion = { minor: '9201', symbol: 'Uo', element: 'Unobtainium' };
 
 async function run() {
   outputJson(OUTPUT_PATH, await getReleases(), { spaces: 2 });

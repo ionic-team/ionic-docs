@@ -7,7 +7,7 @@ sidebar_label: 'config get'
 Print config values
 
 ```shell
-$ ionic config get [options]
+ionic config get [options]
 ```
 
 This command reads and prints configuration values from the project's **./ionic.config.json** file. It can also operate on the global CLI configuration (**~/.ionic/config.json**) using the `--global` option.

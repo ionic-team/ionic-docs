@@ -49,7 +49,7 @@ Otherwise, follow the [official installation instructions](https://git-scm.com/b
 To verify the installation, open a new terminal window and run:
 
 ```shell
-$ git --version
+git --version
 ```
 
 ### Git GUI

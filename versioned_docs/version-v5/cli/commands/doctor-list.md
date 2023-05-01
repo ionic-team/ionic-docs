@@ -7,7 +7,7 @@ sidebar_label: 'doctor list'
 List all issues and their identifiers
 
 ```shell
-$ ionic doctor list [options]
+ionic doctor list [options]
 ```
 
 Issues can have various tags:

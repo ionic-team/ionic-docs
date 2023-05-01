@@ -7,7 +7,7 @@ sidebar_label: 'ssh generate'
 Generates a private and public SSH key pair
 
 ```shell
-$ ionic ssh generate [options]
+ionic ssh generate [options]
 ```
 
 ## Inputs
