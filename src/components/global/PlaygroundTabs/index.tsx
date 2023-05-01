@@ -113,13 +113,13 @@ function TabsComponent(props: Props): JSX.Element {
   /**
    * If the selected value is not in the available tabs, fall back to the first tab.
    * This can happen if the tab children are changed after the initial render.
-   * 
+   *
    * Note that actually updating selectedValue (for example, when defaultValue or the
    * children are changed) would defer the fallback selection to the next render cycle,
    * adding flicker.
    */
-  const useFallback = values.find(item => item.value === selectedValue) === undefined;
-  const isTabSelected = (value: string) => useFallback ? value === values[0].value : value === selectedValue;
+  const useFallback = values.find((item) => item.value === selectedValue) === undefined;
+  const isTabSelected = (value: string) => (useFallback ? value === values[0].value : value === selectedValue);
 
   return (
     <div className={clsx('tabs-container', styles.tabList)}>
@@ -185,7 +185,7 @@ function TabsComponent(props: Props): JSX.Element {
                 {icon && <span className={clsx('tabs__icon', styles.tabIcon)}>{icon}</span>}
                 {label ?? value}
               </li>
-            )
+            );
           })}
           {rightNavVisible && (
             <div className={clsx('tabs__nav-item', styles.tabNavItem)}>
