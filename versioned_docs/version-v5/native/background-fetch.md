@@ -58,8 +58,8 @@ For more detail, please see https://github.com/transistorsoft/cordova-plugin-bac
 >
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
-      $ npm install cordova-plugin-background-fetch {'\n'}$ npm install @awesome-cordova-plugins/background-fetch {'\n'}
-      $ ionic cap sync
+      $ npm install cordova-plugin-background-fetch {'\n'}$ npm install @awesome-cordova-plugins/background-fetch {'\n'}$
+      ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">

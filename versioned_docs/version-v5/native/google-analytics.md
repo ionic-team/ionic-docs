@@ -56,8 +56,8 @@ Prerequisites:
 >
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
-      $ npm install cordova-plugin-google-analytics {'\n'}$ npm install @awesome-cordova-plugins/google-analytics {'\n'}
-      $ ionic cap sync
+      $ npm install cordova-plugin-google-analytics {'\n'}$ npm install @awesome-cordova-plugins/google-analytics {'\n'}$
+      ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
