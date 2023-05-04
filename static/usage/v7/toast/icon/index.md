@@ -12,7 +12,7 @@ import angular from './angular.md';
     javascript,
     react,
     vue,
-    angular
+    angular,
   }}
   src="usage/v7/toast/icon/demo.html"
 />

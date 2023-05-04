@@ -56,14 +56,14 @@ Cordova plugin to show bodymovin/Lottie animations as the splash screen with Air
 >
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
-      $ npm install cordova-plugin-lottie-splashscreen {'\n'}$ npm install @awesome-cordova-plugins/lottie-splash-screen {'\n'}$
-      ionic cap sync
+      $ npm install cordova-plugin-lottie-splashscreen {'\n'}$ npm install @awesome-cordova-plugins/lottie-splash-screen{' '}
+      {'\n'}$ ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
-      $ ionic cordova plugin add cordova-plugin-lottie-splashscreen {'\n'}$ npm install @awesome-cordova-plugins/lottie-splash-screen{' '}
-      {'\n'}
+      $ ionic cordova plugin add cordova-plugin-lottie-splashscreen {'\n'}$ npm install
+      @awesome-cordova-plugins/lottie-splash-screen {'\n'}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">

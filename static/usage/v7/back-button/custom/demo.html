@@ -1,26 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Back Button</title>
+    <link rel="stylesheet" href="../../../common.css" />
+    <script src="../../../common.js"></script>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core@7/dist/ionic/ionic.esm.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core@7/css/ionic.bundle.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Back Button</title>
-  <link rel="stylesheet" href="../../../common.css" />
-  <script src="../../../common.js"></script>
-  <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core@7/dist/ionic/ionic.esm.js"></script>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core@7/css/ionic.bundle.css" />
+  <body>
+    <ion-app>
+      <ion-nav root="page-one"></ion-nav>
+    </ion-app>
 
-</head>
-
-<body>
-  <ion-app>
-    <ion-nav root="page-one"></ion-nav>
-  </ion-app>
-
-  <script>
-    class PageOne extends HTMLElement {
-      connectedCallback() {
-        this.innerHTML = `
+    <script>
+      class PageOne extends HTMLElement {
+        connectedCallback() {
+          this.innerHTML = `
         <ion-header>
           <ion-toolbar>
             <ion-title>Back Button</ion-title>
@@ -34,12 +32,12 @@
           </ion-nav-link>
         </ion-content>
       `;
+        }
       }
-    }
 
-    class PageTwo extends HTMLElement {
-      connectedCallback() {
-        this.innerHTML = `
+      class PageTwo extends HTMLElement {
+        connectedCallback() {
+          this.innerHTML = `
         <ion-header>
           <ion-toolbar>
             <ion-buttons slot="start">
@@ -53,12 +51,11 @@
           <p>Use the back button to navigate to the previous page.</p>
         </ion-content>
       `;
+        }
       }
-    }
 
-    customElements.define('page-one', PageOne);
-    customElements.define('page-two', PageTwo);
-  </script>
-</body>
-
+      customElements.define('page-one', PageOne);
+      customElements.define('page-two', PageTwo);
+    </script>
+  </body>
 </html>

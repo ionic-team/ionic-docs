@@ -51,7 +51,8 @@ This plugin allows you to resolve the native filesystem path for Android content
 >
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
-      $ npm install cordova-plugin-filepath {'\n'}$ npm install @awesome-cordova-plugins/file-path {'\n'}$ ionic cap sync
+      $ npm install cordova-plugin-filepath {'\n'}$ npm install @awesome-cordova-plugins/file-path {'\n'}$ ionic cap
+      sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">

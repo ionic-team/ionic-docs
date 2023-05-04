@@ -23,14 +23,11 @@ const OUTPUT_PATH = resolve(__dirname, '../src/components/page/reference/Release
 // https://docs.github.com/en/enterprise-cloud@latest/authentication/authenticating-with-saml-single-sign-on/authorizing-a-personal-access-token-for-use-with-saml-single-sign-on
 const getReleases = async () => {
   try {
-    const request = await fetch(
-      new URL('repos/ionic-team/ionic/releases', 'https://api.github.com'),
-      {
-        headers: {
-          Authorization: process.env.GITHUB_TOKEN !== undefined ? `token ${process.env.GITHUB_TOKEN}` : '',
-        },
-      }
-    );
+    const request = await fetch(new URL('repos/ionic-team/ionic/releases', 'https://api.github.com'), {
+      headers: {
+        Authorization: process.env.GITHUB_TOKEN !== undefined ? `token ${process.env.GITHUB_TOKEN}` : '',
+      },
+    });
 
     const releases = await request.json();
 
@@ -64,7 +61,7 @@ const getReleases = async () => {
           return -semver.compare(a.tag_name, b.tag_name);
         });
     } else {
-      console.error("There was an issue getting releases:", releases);
+      console.error('There was an issue getting releases:', releases);
       return [];
     }
   } catch (error) {

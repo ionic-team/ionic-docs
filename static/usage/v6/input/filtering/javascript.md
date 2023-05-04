@@ -11,7 +11,7 @@
   input.addEventListener('ionInput', (ev) => {
     const value = ev.target.value;
     // Removes non alphanumeric characters
-    input.value = value.replace(/[^a-zA-Z0-9]+/g,'');
+    input.value = value.replace(/[^a-zA-Z0-9]+/g, '');
   });
 </script>
 ```

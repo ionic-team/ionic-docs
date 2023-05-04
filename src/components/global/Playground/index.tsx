@@ -155,7 +155,7 @@ export default function Playground({
 
     // Otherwise, default to the first target passed.
     return Object.keys(code)[0];
-  }
+  };
 
   /**
    * Developers can set a predefined size
@@ -436,7 +436,6 @@ export default function Playground({
         <div className="playground__control-toolbar">
           <div className="playground__control-group">
             {sortedUsageTargets.map((lang) => {
-
               /**
                * If code was not passed for this target
                * then we should disable the button.
@@ -444,14 +443,14 @@ export default function Playground({
               const langValue = UsageTarget[lang];
               const hasCode = code[langValue] !== undefined;
               return (
-                  <CodeBlockButton
+                <CodeBlockButton
                   key={`code-block-${lang}`}
                   language={lang}
                   usageTarget={usageTarget}
                   setUsageTarget={setUsageTarget}
                   disabled={!hasCode}
-                />)
-              ;
+                />
+              );
             })}
           </div>
           <div className="playground__control-group">
@@ -577,12 +576,20 @@ export default function Playground({
                 */}
                 {devicePreview
                   ? [
-                      <div key="ios-iframe" className={!isIOS ? 'frame-hidden' : 'frame-visible'} aria-hidden={!isIOS ? 'true' : null}>
+                      <div
+                        key="ios-iframe"
+                        className={!isIOS ? 'frame-hidden' : 'frame-visible'}
+                        aria-hidden={!isIOS ? 'true' : null}
+                      >
                         <device-preview mode="ios">
                           <iframe height={frameSize} ref={(ref) => handleFrameRef(ref, 'ios')} src={sourceiOS}></iframe>
                         </device-preview>
                       </div>,
-                      <div key="md-iframe" className={!isMD ? 'frame-hidden' : 'frame-visible'} aria-hidden={!isMD ? 'true' : null}>
+                      <div
+                        key="md-iframe"
+                        className={!isMD ? 'frame-hidden' : 'frame-visible'}
+                        aria-hidden={!isMD ? 'true' : null}
+                      >
                         <device-preview mode="md">
                           <iframe height={frameSize} ref={(ref) => handleFrameRef(ref, 'md')} src={sourceMD}></iframe>
                         </device-preview>

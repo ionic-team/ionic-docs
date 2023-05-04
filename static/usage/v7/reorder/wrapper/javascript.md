@@ -4,41 +4,31 @@
   <ion-reorder-group disabled="false">
     <ion-reorder>
       <ion-item>
-        <ion-label>
-          Item 1
-        </ion-label>
+        <ion-label> Item 1 </ion-label>
       </ion-item>
     </ion-reorder>
 
     <ion-reorder>
       <ion-item>
-        <ion-label>
-          Item 2
-        </ion-label>
+        <ion-label> Item 2 </ion-label>
       </ion-item>
     </ion-reorder>
 
     <ion-reorder>
       <ion-item>
-        <ion-label>
-          Item 3
-        </ion-label>
+        <ion-label> Item 3 </ion-label>
       </ion-item>
     </ion-reorder>
 
     <ion-reorder>
       <ion-item>
-        <ion-label>
-          Item 4
-        </ion-label>
+        <ion-label> Item 4 </ion-label>
       </ion-item>
     </ion-reorder>
 
     <ion-reorder>
       <ion-item>
-        <ion-label>
-          Item 5
-        </ion-label>
+        <ion-label> Item 5 </ion-label>
       </ion-item>
     </ion-reorder>
   </ion-reorder-group>
@@ -47,7 +37,7 @@
 <script>
   const reorderGroup = document.querySelector('ion-reorder-group');
 
-  reorderGroup.addEventListener('ionItemReorder', ({detail}) => {
+  reorderGroup.addEventListener('ionItemReorder', ({ detail }) => {
     // The `from` and `to` properties contain the index of the item
     // when the drag started and ended, respectively
     console.log('Dragged from index', detail.from, 'to', detail.to);

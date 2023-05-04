@@ -26,8 +26,8 @@
   export default defineComponent({
     components: { IonFab, IonFabButton, IonFabList, IonIcon },
     setup() {
-      return { add, colorPalette, document, globe }
-    }
+      return { add, colorPalette, document, globe };
+    },
   });
 </script>
 ```

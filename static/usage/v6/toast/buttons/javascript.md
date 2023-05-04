@@ -15,14 +15,18 @@
         {
           text: 'More Info',
           role: 'info',
-          handler: () => { handlerOutput.innerText = 'More Info clicked'; }
+          handler: () => {
+            handlerOutput.innerText = 'More Info clicked';
+          },
         },
         {
           text: 'Dismiss',
           role: 'cancel',
-          handler: () => { handlerOutput.innerText = 'Dismiss clicked'; }
-        }
-      ]
+          handler: () => {
+            handlerOutput.innerText = 'Dismiss clicked';
+          },
+        },
+      ],
     });
 
     await toast.present();

@@ -9,7 +9,7 @@
   import { defineComponent } from 'vue';
 
   export default defineComponent({
-    components: { IonProgressBar }
+    components: { IonProgressBar },
   });
 </script>
 

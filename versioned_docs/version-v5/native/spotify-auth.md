@@ -53,7 +53,8 @@ Cordova plugin for authenticating with Spotify
 >
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
-      $ npm install cordova-spotify-oauth {'\n'}$ npm install @awesome-cordova-plugins/spotify-auth {'\n'}$ ionic cap sync
+      $ npm install cordova-spotify-oauth {'\n'}$ npm install @awesome-cordova-plugins/spotify-auth {'\n'}$ ionic cap
+      sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">

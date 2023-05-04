@@ -1,10 +1,6 @@
 ```tsx
 import React from 'react';
-import {
-  IonCheckbox,
-  IonItem,
-  IonLabel
-} from '@ionic/react';
+import { IonCheckbox, IonItem, IonLabel } from '@ionic/react';
 
 function Example() {
   return (

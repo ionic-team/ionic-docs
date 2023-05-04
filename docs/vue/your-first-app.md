@@ -168,7 +168,7 @@ Next, remove the `ExploreContainer` node from the HTML markup in the `template`.
 <ExploreContainer name="Tab 2 page" />
 ```
 
-We'll replace it with a [floating action button](https://ionicframework.com/docs/api/fab) (FAB). First, update the imports within the `<script setup>`  tag to include the Camera icon as well as some of the Ionic components we'll use shortly:
+We'll replace it with a [floating action button](https://ionicframework.com/docs/api/fab) (FAB). First, update the imports within the `<script setup>` tag to include the Camera icon as well as some of the Ionic components we'll use shortly:
 
 ```tsx
 import { camera, trash, close } from 'ionicons/icons';
