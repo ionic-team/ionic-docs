@@ -130,7 +130,7 @@ CSS Shadow Parts are supported in the recent versions of all of the major browse
   pseudo-elements are not supported at this time. An example of this would be any of the `::-webkit-scrollbar`
   pseudo-elements:
 </p>
- 
+
 ```css
 /* Does NOT work */
 my-component::part(scroll)::-webkit-scrollbar {
