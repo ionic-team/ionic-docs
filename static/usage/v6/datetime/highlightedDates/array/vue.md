@@ -1,10 +1,6 @@
 ```html
 <template>
-  <ion-datetime
-    presentation="date"
-    value="2023-01-01"
-    :highlighted-dates="highlightedDates"
-  ></ion-datetime>
+  <ion-datetime presentation="date" value="2023-01-01" :highlighted-dates="highlightedDates"></ion-datetime>
 </template>
 
 <script lang="ts">
@@ -33,12 +29,12 @@
         {
           date: '2023-01-23',
           textColor: 'rgb(68, 10, 184)',
-          backgroundColor: 'rgb(211, 200, 229)'
-        }
+          backgroundColor: 'rgb(211, 200, 229)',
+        },
       ];
-      
-      return { highlightedDates }
-    }
+
+      return { highlightedDates };
+    },
   });
 </script>
 ```

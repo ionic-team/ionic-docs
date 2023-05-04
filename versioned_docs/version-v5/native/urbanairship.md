@@ -51,7 +51,8 @@ This plugin does something
 >
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
-      $ npm install urbanairship-cordova {'\n'}$ npm install @awesome-cordova-plugins/urbanairship {'\n'}$ ionic cap sync
+      $ npm install urbanairship-cordova {'\n'}$ npm install @awesome-cordova-plugins/urbanairship {'\n'}$ ionic cap
+      sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">

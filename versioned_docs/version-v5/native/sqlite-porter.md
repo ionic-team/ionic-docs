@@ -51,14 +51,14 @@ This Cordova/Phonegap plugin can be used to import/export to/from a SQLite datab
 >
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
-      $ npm install uk.co.workingedge.cordova.plugin.sqliteporter {'\n'}$ npm install @awesome-cordova-plugins/sqlite-porter {'\n'}
-      $ ionic cap sync
+      $ npm install uk.co.workingedge.cordova.plugin.sqliteporter {'\n'}$ npm install
+      @awesome-cordova-plugins/sqlite-porter {'\n'}$ ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
-      $ ionic cordova plugin add uk.co.workingedge.cordova.plugin.sqliteporter {'\n'}$ npm install @awesome-cordova-plugins/sqlite-porter{' '}
-      {'\n'}
+      $ ionic cordova plugin add uk.co.workingedge.cordova.plugin.sqliteporter {'\n'}$ npm install
+      @awesome-cordova-plugins/sqlite-porter {'\n'}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">

@@ -769,7 +769,7 @@ const users = [
   },
 ];
 
-type User = typeof users[number];
+type User = (typeof users)[number];
 
 const compareWith = (o1: User, o2: User) => {
   return o1 && o2 ? o1.id === o2.id : o1 === o2;

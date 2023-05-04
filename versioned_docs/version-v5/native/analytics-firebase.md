@@ -51,12 +51,14 @@ Google Analytics Firebase plugin for Ionic Native apps.
 >
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
-      $ npm install cordova-plugin-analytics {'\n'}$ npm install @awesome-cordova-plugins/analytics-firebase {'\n'}$ ionic cap sync
+      $ npm install cordova-plugin-analytics {'\n'}$ npm install @awesome-cordova-plugins/analytics-firebase {'\n'}$
+      ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
-      $ ionic cordova plugin add cordova-plugin-analytics {'\n'}$ npm install @awesome-cordova-plugins/analytics-firebase {'\n'}
+      $ ionic cordova plugin add cordova-plugin-analytics {'\n'}$ npm install
+      @awesome-cordova-plugins/analytics-firebase {'\n'}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">

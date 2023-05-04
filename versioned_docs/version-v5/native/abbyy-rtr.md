@@ -52,12 +52,14 @@ ABBYY Real-Time Recognition SDK (RTR SDK) in apps.
 >
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
-      $ npm install cordova-plugin-abbyy-rtr-sdk {'\n'}$ npm install @awesome-cordova-plugins/abbyy-rtr {'\n'}$ ionic cap sync
+      $ npm install cordova-plugin-abbyy-rtr-sdk {'\n'}$ npm install @awesome-cordova-plugins/abbyy-rtr {'\n'}$ ionic
+      cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
-      $ ionic cordova plugin add cordova-plugin-abbyy-rtr-sdk {'\n'}$ npm install @awesome-cordova-plugins/abbyy-rtr {'\n'}
+      $ ionic cordova plugin add cordova-plugin-abbyy-rtr-sdk {'\n'}$ npm install @awesome-cordova-plugins/abbyy-rtr{' '}
+      {'\n'}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">

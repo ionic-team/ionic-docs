@@ -4,38 +4,32 @@
     <ion-item slot="header" color="rose">
       <ion-label>First Accordion</ion-label>
     </ion-item>
-    <div class="ion-padding" slot="content">
-      First Content
-    </div>
+    <div class="ion-padding" slot="content">First Content</div>
   </ion-accordion>
   <ion-accordion value="second">
     <ion-item slot="header" color="rose">
       <ion-label>Second Accordion</ion-label>
     </ion-item>
-    <div class="ion-padding" slot="content">
-      Second Content
-    </div>
+    <div class="ion-padding" slot="content">Second Content</div>
   </ion-accordion>
   <ion-accordion value="third">
     <ion-item slot="header" color="rose">
       <ion-label>Third Accordion</ion-label>
     </ion-item>
-    <div class="ion-padding" slot="content">
-      Third Content
-    </div>
+    <div class="ion-padding" slot="content">Third Content</div>
   </ion-accordion>
 </ion-accordion-group>
 
 <style>
   :root {
     --ion-color-rose: #fecdd3;
-    --ion-color-rose-rgb: 254,205,211;
+    --ion-color-rose-rgb: 254, 205, 211;
     --ion-color-rose-contrast: #000000;
-    --ion-color-rose-contrast-rgb: 0,0,0;
+    --ion-color-rose-contrast-rgb: 0, 0, 0;
     --ion-color-rose-shade: #e0b4ba;
     --ion-color-rose-tint: #fed2d7;
   }
-  
+
   .ion-color-rose {
     --ion-color-base: var(--ion-color-rose);
     --ion-color-base-rgb: var(--ion-color-rose-rgb);
@@ -44,9 +38,9 @@
     --ion-color-shade: var(--ion-color-rose-shade);
     --ion-color-tint: var(--ion-color-rose-tint);
   }
-  
-  div[slot="content"] {
-    background: rgba(var(--ion-color-rose-rgb), 0.25)
+
+  div[slot='content'] {
+    background: rgba(var(--ion-color-rose-rgb), 0.25);
   }
 </style>
 ```

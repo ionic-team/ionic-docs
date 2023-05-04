@@ -1,4 +1,3 @@
-
 ```css
 ion-thumbnail {
   --size: 140px;

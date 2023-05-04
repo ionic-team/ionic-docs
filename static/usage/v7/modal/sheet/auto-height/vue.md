@@ -23,20 +23,13 @@
     <ion-button id="open-modal" expand="block">Open Sheet Modal</ion-button>
 
     <ion-modal trigger="open-modal" :initial-breakpoint="1" :breakpoints="[0, 1]">
-      <div class="block">Block of Content</div> 
+      <div class="block">Block of Content</div>
     </ion-modal>
   </ion-content>
 </template>
 
 <script lang="ts">
-  import {
-    IonButton,
-    IonModal,
-    IonHeader,
-    IonContent,
-    IonToolbar,
-    IonTitle,
-  } from '@ionic/vue';
+  import { IonButton, IonModal, IonHeader, IonContent, IonToolbar, IonTitle } from '@ionic/vue';
   import { defineComponent } from 'vue';
 
   export default defineComponent({

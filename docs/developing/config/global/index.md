@@ -17,10 +17,11 @@ import TabItem from '@theme/TabItem';
 window.Ionic = {
   config: {
     rippleEffect: false,
-    mode: 'md'
-  }
-}
+    mode: 'md',
+  },
+};
 ```
+
 </TabItem>
 <TabItem value="angular">
 
@@ -38,10 +39,12 @@ import { IonicModule } from '@ionic/angular';
   ...
 })
 ```
+
 </TabItem>
 <TabItem value="react">
 
 The `setupIonicReact` function must be called before rendering any Ionic components (including `IonApp`).
+
 ```tsx title="App.tsx"
 import { setupIonicReact } from '@ionic/react';
 
@@ -50,18 +53,19 @@ setupIonicReact({
   mode: 'md',
 });
 ```
+
 </TabItem>
 <TabItem value="vue">
 
 ```tsx title="main.ts"
-
 import { IonicVue } from '@ionic/vue';
 import { createApp } from 'vue';
- 
+
 createApp(App).use(IonicVue, {
   rippleEffect: false,
   mode: 'md',
 });
 ```
+
 </TabItem>
 </Tabs>

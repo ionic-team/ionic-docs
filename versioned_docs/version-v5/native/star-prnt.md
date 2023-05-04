@@ -51,7 +51,8 @@ import CodeBlock from '@theme/CodeBlock';
 >
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
-      $ npm install cordova-plugin-starprnt {'\n'}$ npm install @awesome-cordova-plugins/star-prnt {'\n'}$ ionic cap sync
+      $ npm install cordova-plugin-starprnt {'\n'}$ npm install @awesome-cordova-plugins/star-prnt {'\n'}$ ionic cap
+      sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">

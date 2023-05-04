@@ -1033,17 +1033,13 @@ export class ItemExample {
         <ion-item>
           <ion-label>Item</ion-label>
         </ion-item>
-        ,
-        <ion-item lines="none">
+        ,<ion-item lines="none">
           <ion-label>No Lines Item</ion-label>
-        </ion-item>
-        ,
-        <ion-item>
+        </ion-item>,<ion-item>
           <ion-label class="ion-text-wrap">
             Multiline text that should wrap when it is too long to fit on one line in the item.
           </ion-label>
-        </ion-item>
-        ,
+        </ion-item>,
         <ion-item>
           <ion-label class="ion-text-wrap">
             <ion-text color="primary">

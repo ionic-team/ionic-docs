@@ -121,7 +121,8 @@ module.exports = function(context) {
 >
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
-      $ npm install onesignal-cordova-plugin {'\n'}$ npm install @awesome-cordova-plugins/onesignal {'\n'}$ ionic cap sync
+      $ npm install onesignal-cordova-plugin {'\n'}$ npm install @awesome-cordova-plugins/onesignal {'\n'}$ ionic cap
+      sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
