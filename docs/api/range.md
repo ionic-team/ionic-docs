@@ -116,7 +116,9 @@ Developers can perform this migration one range at a time. While developers can 
 
 ### Using the Modern Syntax
 
-Using the modern syntax involves removing the `ion-label` and passing the label directly inside of `ion-range` using `slot="label"`. The placement of the label can be configured using the `labelPlacement` property on `ion-range`.
+Using the modern syntax involves removing the `ion-label` and passing the label to `ion-range` using the `label` property. The placement of the label can be configured using the `labelPlacement` property.
+
+If custom HTML is needed for the label, it can be passed directly inside the `ion-range` using the `label` slot instead.
 
 import Migration from '@site/static/usage/v7/range/migration/index.md';
 
