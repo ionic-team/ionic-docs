@@ -34,6 +34,14 @@ import LabelsPlayground from '@site/static/usage/v7/range/labels/index.md';
 
 <LabelsPlayground />
 
+## Label Slot
+
+While plaintext labels should be passed in via the `label` property, if custom HTML is needed, it can be passed through the `label` slot instead.
+
+import LabelSlotPlayground from '@site/static/usage/v7/range/label-slot/index.md';
+
+<LabelSlotPlayground />
+
 ## Decorations
 
 Decorative elements can be passed into the `start` or `end` slots of the range. This is useful for adding icons such as low volume or high volume icons. Since these elements are decorative, they should not be announced by assistive technology such as screen readers.
