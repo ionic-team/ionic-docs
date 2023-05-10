@@ -22,25 +22,36 @@ The Range slider lets users select from a range of values by moving the slider k
 
 By default the Range slider has a minimum value of `0` and a maximum value of `100`. This can be configured with the `min` and `max` properties.
 
-## Basic Usage
+## Labels
 
-import Basic from '@site/static/usage/v7/range/basic/index.md';
+Range has several options for supplying a label for the component:
+- `label` property: used for plaintext labels
+- `label` slot: used for custom HTML labels
+- `aria-label`: used for ranges with no visible label
 
-<Basic />
+### Label Placement
 
-## Label Placement
+The below demo shows how to use the `labelPlacement` property to change the position of the label relative to the range. While the `label` property is used here, `labelPlacement` can also be used with the `label` slot.
 
 import LabelsPlayground from '@site/static/usage/v7/range/labels/index.md';
 
 <LabelsPlayground />
 
-## Label Slot
+### Label Slot
 
 While plaintext labels should be passed in via the `label` property, if custom HTML is needed, it can be passed through the `label` slot instead.
 
 import LabelSlotPlayground from '@site/static/usage/v7/range/label-slot/index.md';
 
 <LabelSlotPlayground />
+
+### No Visible Label
+
+If no visible label is needed, devs should still supply an `aria-label` so the range is accessible to screen readers.
+
+import Basic from '@site/static/usage/v7/range/basic/index.md';
+
+<Basic />
 
 ## Decorations
 
