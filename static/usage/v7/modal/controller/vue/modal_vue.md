@@ -18,7 +18,7 @@
   </ion-content>
 </template>
 
-<script lang="ts">
+<script lang="ts" setup>
   import {
     IonContent,
     IonHeader,
@@ -31,18 +31,8 @@
     modalController,
   } from '@ionic/vue';
   import { defineComponent } from 'vue';
-
-  export default defineComponent({
-    name: 'Modal',
-    components: { IonContent, IonHeader, IonTitle, IonToolbar, IonButtons, IonButton, IonItem, IonInput },
-    methods: {
-      cancel() {
-        return modalController.dismiss(null, 'cancel');
-      },
-      confirm() {
-        return modalController.dismiss(this.name, 'confirm');
-      },
-    },
-  });
+  
+  const cancel = () => modalController.dismiss(null, 'cancel');
+  const confirm = () => modalController.dismiss(this.name, 'confirm');
 </script>
 ```
