@@ -91,36 +91,12 @@
     IonLabel,
     IonSearchbar,
   } from '@ionic/vue';
-  import { defineComponent } from 'vue';
-
-  export default defineComponent({
-    components: {
-      IonButton,
-      IonModal,
-      IonHeader,
-      IonContent,
-      IonToolbar,
-      IonTitle,
-      IonItem,
-      IonList,
-      IonAvatar,
-      IonImg,
-      IonLabel,
-      IonSearchbar,
-    },
-    data() {
-      return {
-        count: 0,
-      };
-    },
-    methods: {
-      increment() {
-        this.count++;
-      },
-      decrement() {
-        this.count--;
-      },
-    },
-  });
+  import { ref } from 'vue';
+  
+  const count = ref(0);
+  
+  const increment = count.value++;
+  
+  const decrement = count.value--:
 </script>
 ```
