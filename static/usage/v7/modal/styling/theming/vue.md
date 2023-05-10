@@ -77,7 +77,7 @@
   </ion-content>
 </template>
 
-<script lang="ts">
+<script lang="ts" setup>
   import {
     IonButtons,
     IonButton,
@@ -92,28 +92,10 @@
     IonImg,
     IonLabel,
   } from '@ionic/vue';
-  import { defineComponent } from 'vue';
-
-  export default defineComponent({
-    components: {
-      IonButtons,
-      IonButton,
-      IonModal,
-      IonHeader,
-      IonContent,
-      IonToolbar,
-      IonTitle,
-      IonItem,
-      IonList,
-      IonAvatar,
-      IonImg,
-      IonLabel,
-    },
-    methods: {
-      dismiss() {
-        this.$refs.modal.$el.dismiss();
-      },
-    },
-  });
+  import { ref } from 'vue';
+  
+  const modal = ref();
+  
+  const dismiss = () => modal.value.$el.dismiss();
 </script>
 ```
