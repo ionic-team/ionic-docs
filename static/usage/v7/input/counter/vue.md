@@ -12,17 +12,11 @@
   ></ion-input>
 </template>
 
-<script lang="ts">
-  import { IonInput } from '@ionic/vue';
-  import { defineComponent } from 'vue';
-
-  export default defineComponent({
-    components: { IonInput },
-    methods: {
-      customFormatter(inputLength, maxLength) {
-        return `${maxLength - inputLength} characters remaining`;
-      },
-    },
-  });
+<script lang="ts" setup>
+  import { IonInput } from '@ionic/vue'; 
+  
+  const customFormatter = (inputLength, maxLength) => {
+    return `${maxLength - inputLength} characters remaining`;
+  }
 </script>
 ```
