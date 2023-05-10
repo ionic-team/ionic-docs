@@ -22,17 +22,36 @@ The Range slider lets users select from a range of values by moving the slider k
 
 By default the Range slider has a minimum value of `0` and a maximum value of `100`. This can be configured with the `min` and `max` properties.
 
-## Basic Usage
+## Labels
 
-import Basic from '@site/static/usage/v7/range/basic/index.md';
+Range has several options for supplying a label for the component:
+- `label` property: used for plaintext labels
+- `label` slot: used for custom HTML labels
+- `aria-label`: used for ranges with no visible label
 
-<Basic />
+### Label Placement
 
-## Label Placement
+The below demo shows how to use the `labelPlacement` property to change the position of the label relative to the range. While the `label` property is used here, `labelPlacement` can also be used with the `label` slot.
 
 import LabelsPlayground from '@site/static/usage/v7/range/labels/index.md';
 
 <LabelsPlayground />
+
+### Label Slot
+
+While plaintext labels should be passed in via the `label` property, if custom HTML is needed, it can be passed through the `label` slot instead.
+
+import LabelSlotPlayground from '@site/static/usage/v7/range/label-slot/index.md';
+
+<LabelSlotPlayground />
+
+### No Visible Label
+
+If no visible label is needed, devs should still supply an `aria-label` so the range is accessible to screen readers.
+
+import NoVisibleLabel from '@site/static/usage/v7/range/no-visible-label/index.md';
+
+<NoVisibleLabel />
 
 ## Decorations
 
@@ -116,7 +135,9 @@ Developers can perform this migration one range at a time. While developers can 
 
 ### Using the Modern Syntax
 
-Using the modern syntax involves removing the `ion-label` and passing the label directly inside of `ion-range` using `slot="label"`. The placement of the label can be configured using the `labelPlacement` property on `ion-range`.
+Using the modern syntax involves removing the `ion-label` and passing the label to `ion-range` using the `label` property. The placement of the label can be configured using the `labelPlacement` property.
+
+If custom HTML is needed for the label, it can be passed directly inside the `ion-range` using the `label` slot instead.
 
 import Migration from '@site/static/usage/v7/range/migration/index.md';
 
