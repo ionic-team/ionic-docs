@@ -30,7 +30,7 @@
     const { data, role } = await modal.onWillDismiss();
 
     if (role === 'confirm') {
-      this.message = `Hello, ${data}!`;
+      message.value = `Hello, ${data}!`;
     }    
   }
 </script>
