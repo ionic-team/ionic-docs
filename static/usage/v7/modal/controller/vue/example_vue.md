@@ -13,31 +13,25 @@
   </ion-page>
 </template>
 
-<script lang="ts">
+<script lang="ts" setup>
   import { IonButton, IonContent, IonPage, IonHeader, IonToolbar, IonTitle, modalController } from '@ionic/vue';
   import Modal from './Modal.vue';
+  import { ref } from 'vue';
+  
+  const message = ref('This modal example uses the modalController to present and dismiss modals.');
+  
+  const openModal = async () => {
+    const modal = await modalController.create({
+      component: Modal,
+    });
+    
+    modal.present();
 
-  export default {
-    components: { IonButton, IonContent, IonPage, IonHeader, IonToolbar, IonTitle },
-    data() {
-      return {
-        message: 'This modal example uses the modalController to present and dismiss modals.',
-      };
-    },
-    methods: {
-      async openModal() {
-        const modal = await modalController.create({
-          component: Modal,
-        });
-        modal.present();
+    const { data, role } = await modal.onWillDismiss();
 
-        const { data, role } = await modal.onWillDismiss();
-
-        if (role === 'confirm') {
-          this.message = `Hello, ${data}!`;
-        }
-      },
-    },
-  };
+    if (role === 'confirm') {
+      this.message = `Hello, ${data}!`;
+    }    
+  }
 </script>
 ```
