@@ -49,9 +49,9 @@ import LabelSlotPlayground from '@site/static/usage/v7/range/label-slot/index.md
 
 If no visible label is needed, devs should still supply an `aria-label` so the range is accessible to screen readers.
 
-import Basic from '@site/static/usage/v7/range/basic/index.md';
+import NoVisibleLabel from '@site/static/usage/v7/range/no-visible-label/index.md';
 
-<Basic />
+<NoVisibleLabel />
 
 ## Decorations
 
