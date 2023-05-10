@@ -1,33 +1,4 @@
 ```html
-<style>
-  ion-modal#example-modal {
-    --width: fit-content;
-    --min-width: 250px;
-    --height: fit-content;
-    --border-radius: 6px;
-    --box-shadow: 0 28px 48px rgba(0, 0, 0, 0.4);
-  }
-
-  ion-modal#example-modal h1 {
-    margin: 20px 20px 10px 20px;
-  }
-
-  ion-modal#example-modal ion-icon {
-    margin-right: 6px;
-
-    width: 48px;
-    height: 48px;
-
-    padding: 4px 0;
-
-    color: #aaaaaa;
-  }
-
-  ion-modal#example-modal .wrapper {
-    margin-bottom: 10px;
-  }
-</style>
-
 <template>
   <ion-header>
     <ion-toolbar>
@@ -60,7 +31,7 @@
   </ion-content>
 </template>
 
-<script lang="ts">
+<script lang="ts" setup>
   import {
     IonButton,
     IonModal,
@@ -74,29 +45,38 @@
     IonIcon,
   } from '@ionic/vue';
   import { personCircle } from 'ionicons/icons';
-  import { defineComponent } from 'vue';
-
-  export default defineComponent({
-    components: {
-      IonButton,
-      IonModal,
-      IonHeader,
-      IonContent,
-      IonToolbar,
-      IonTitle,
-      IonItem,
-      IonList,
-      IonLabel,
-      IonIcon,
-    },
-    methods: {
-      dismiss() {
-        this.$refs.modal.$el.dismiss();
-      },
-    },
-    setup() {
-      return { personCircle };
-    },
-  });
+  import { ref } from 'vue';
+  
+  const modal = ref();
+  
+  const dismiss = () => modal.value.$el.dismiss();
 </script>
+<style>
+  ion-modal#example-modal {
+    --width: fit-content;
+    --min-width: 250px;
+    --height: fit-content;
+    --border-radius: 6px;
+    --box-shadow: 0 28px 48px rgba(0, 0, 0, 0.4);
+  }
+
+  ion-modal#example-modal h1 {
+    margin: 20px 20px 10px 20px;
+  }
+
+  ion-modal#example-modal ion-icon {
+    margin-right: 6px;
+
+    width: 48px;
+    height: 48px;
+
+    padding: 4px 0;
+
+    color: #aaaaaa;
+  }
+
+  ion-modal#example-modal .wrapper {
+    margin-bottom: 10px;
+  }
+</style>
 ```
