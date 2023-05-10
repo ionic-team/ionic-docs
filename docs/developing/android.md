@@ -38,7 +38,7 @@ By default, the latest stable SDK Platform is installed, which includes a collec
 To install system images and other minor SDK platform packages, you may need to ensure **Show Package Details** is checked at the bottom of the SDK Manager.
 ![Android Studio SDK Manager](/img/installation/android-studio-sdk.png)
 
-For future reference, the Android SDK can be managed with Android Studio in the **Configure** &raquo; **SDK Manager** menu of the Android Studio welcome screen or **Tools** &raquo; **SDK Manager** inside Android projects.
+For future reference, the Android SDK can be managed with Android Studio from the context menu at the top right of the Android Studio welcome screen (select **SDK Manager**) or **Tools** &raquo; **SDK Manager** inside Android projects.
 
 ### Configuring Command Line Tools
 
@@ -48,11 +48,19 @@ In `~/.bashrc`, `~/.bash_profile`, or similar shell startup scripts, make the fo
 
 1. Set the `ANDROID_SDK_ROOT` environment variable. This path should be the **Android SDK Location** used in the previous section.
 
+   For Mac:
+
    ```shell
-   $ export ANDROID_SDK_ROOT=$HOME/Library/Android/sdk
+   $ export ANDROID_SDK_ROOT=$HOME/Android/sdk
    ```
 
-1. Add the Android SDK command-line directories to `PATH`. Each directory corresponds to the category of <a href="https://developer.android.com/studio/command-line/" target="_blank">command-line tool</a>.
+   For Linux/Windows:
+
+   ```shell
+   $ export ANDROID_SDK_ROOT=$HOME/Android/Sdk
+   ```
+
+2. Add the Android SDK command-line directories to `PATH`. Each directory corresponds to the category of <a href="https://developer.android.com/studio/command-line/" target="_blank">command-line tool</a>.
 
    ```shell-session
    $ # avdmanager, sdkmanager
@@ -71,7 +79,7 @@ In `~/.bashrc`, `~/.bash_profile`, or similar shell startup scripts, make the fo
 
 Android Virtual Devices (AVDs) are blueprints that the Android emulator uses to run the Android OS. The following documentation is a quick way to get the Android emulator set up. For more detailed instructions and information, see <a href="https://developer.android.com/studio/run/managing-avds" target="_blank">the Android documentation</a>.
 
-AVDs are managed with the AVD Manager. In the Android Studio welcome screen, click **Configure** &raquo; **AVD Manager**. The AVD Manager can also be opened inside Android projects in the **Tools** &raquo; **AVD Manager** menu.
+AVDs are managed with the Virtual Device Manager. In the Android Studio welcome screen, the context menu at the top right, then **Virtual Device Manager**. The Virtual Device Manager can also be opened inside Android projects in the **Tools** &raquo; **Device Manager** menu.
 
 ![AVD Setup](/img/installation/android-studio-avd-setup.png)
 
@@ -79,8 +87,8 @@ Click **Create Virtual Device** and select a suitable device definition. If unsu
 
 Once the AVD is created, launch the AVD into the Android emulator. Keeping the emulator running is the best way to ensure detection while developing Ionic apps for Android.
 
-<figure class="device">
-  <img alt="Android Emulator Booting" src="/img/installation/android-emulator-booting.png" />
+<figure className="device">
+  <img alt="Android Emulator Booting" src="/docs/img/installation/android-emulator-booting.png" />
 </figure>
 
 ### Set up an Android Device
@@ -93,7 +101,7 @@ Actual Android hardware can also be used for Ionic app development. But first, t
 Verify the connection works by connecting the device to the computer with a USB cable and using the following command:
 
 ```shell
-$ adb devices
+adb devices
 ```
 
 The device should be listed. See the full <a href="https://developer.android.com/studio/command-line/adb" target="_blank">`adb` documentation</a> for troubleshooting and detailed information.
@@ -166,7 +174,7 @@ Capacitor uses Android Studio to build and run apps to simulators and devices.
 To start a live-reload server run the following command.
 
 ```shell
-$ ionic capacitor run android -l --host=YOUR_IP_ADDRESS
+ionic capacitor run android -l --external
 ```
 
 When running on a device make sure the device and your development machine are connected to the same network.
@@ -178,7 +186,7 @@ The Ionic CLI can build, copy, and deploy Ionic apps to Android simulators and d
 Run the following to start a long-running CLI process that boots up a live-reload server:
 
 ```shell
-$ ionic cordova run android -l
+ionic cordova run android -l
 ```
 
 Now, when changes are made to the app's source files, web assets are rebuilt and the changes are reflected on the simulator or device without having to deploy again.
@@ -210,5 +218,5 @@ If the **Logcat** window is hidden, you can enable it in **View** &raquo; **Tool
 You can also access **Logcat** with [ADB](https://developer.android.com/studio/command-line/adb).
 
 ```shell
-$ adb logcat
+adb logcat
 ```

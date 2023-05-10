@@ -58,13 +58,14 @@ Handle also headset event (plug, unplug, headset button).
 >
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
-      $ npm install cordova-plugin-music-controls2 {'\n'}$ npm install @awesome-cordova-plugins/music-controls {'\n'}$ ionic cap
-      sync
+      $ npm install cordova-plugin-music-controls2 {'\n'}$ npm install @awesome-cordova-plugins/music-controls {'\n'}$
+      ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
-      $ ionic cordova plugin add cordova-plugin-music-controls2 {'\n'}$ npm install @awesome-cordova-plugins/music-controls {'\n'}
+      $ ionic cordova plugin add cordova-plugin-music-controls2 {'\n'}$ npm install
+      @awesome-cordova-plugins/music-controls {'\n'}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">

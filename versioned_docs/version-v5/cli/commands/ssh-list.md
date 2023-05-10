@@ -7,7 +7,7 @@ sidebar_label: 'ssh list'
 List your SSH public keys on Ionic
 
 ```shell
-$ ionic ssh list [options]
+ionic ssh list [options]
 ```
 
 ## Options

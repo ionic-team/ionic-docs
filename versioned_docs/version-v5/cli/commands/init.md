@@ -7,7 +7,7 @@ sidebar_label: 'init'
 Initialize existing projects with Ionic
 
 ```shell
-$ ionic init [options]
+ionic init [options]
 ```
 
 This command will initialize an Ionic app within the current directory. Usually, this means an `ionic.config.json` file is created. If used within a multi-app project, the app is initialized in the root `ionic.config.json`.

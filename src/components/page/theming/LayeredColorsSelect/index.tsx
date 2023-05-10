@@ -93,7 +93,7 @@ export default function LayeredColorsSelect({ ...props }) {
           const codeColor = variation.rgb ? `rgb(${variation.value})` : `${variation.value}`;
 
           return (
-            <tr>
+            <tr key={variation.name}>
               <td className={styles.colorName}>{variation.name}</td>
               <td className={styles.colorProperty}>
                 <code>{variation.property}</code>

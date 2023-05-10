@@ -7,7 +7,7 @@ sidebar_label: 'config set'
 Set config values
 
 ```shell
-$ ionic config set [options]
+ionic config set [options]
 ```
 
 This command writes configuration values to the project's **./ionic.config.json** file. It can also operate on the global CLI configuration (**~/.ionic/config.json**) using the `--global` option.

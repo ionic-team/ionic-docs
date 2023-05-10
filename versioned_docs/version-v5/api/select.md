@@ -7,6 +7,13 @@ demoSourceUrl: 'https://github.com/ionic-team/ionic-docs/tree/main/static/demos/
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
+import Props from '@ionic-internal/component-api/v5/select/props.md';
+import Events from '@ionic-internal/component-api/v5/select/events.md';
+import Methods from '@ionic-internal/component-api/v5/select/methods.md';
+import Parts from '@ionic-internal/component-api/v5/select/parts.md';
+import CustomProps from '@ionic-internal/component-api/v5/select/custom-props.md';
+import Slots from '@ionic-internal/component-api/v5/select/slots.md';
+
 # ion-select
 
 Selects are form controls to select an option, or options, from a set of options, similar to a native `<select>` element. When a user taps the select, a dialog appears with all of the options in a large, easy to select list.
@@ -762,7 +769,7 @@ const users = [
   },
 ];
 
-type User = typeof users[number];
+type User = (typeof users)[number];
 
 const compareWith = (o1: User, o2: User) => {
   return o1 && o2 ? o1.id === o2.id : o1 === o2;
@@ -1366,147 +1373,24 @@ export default defineComponent({
 
 ## Properties
 
-### cancelText
-
-|                 |                                           |
-| --------------- | ----------------------------------------- |
-| **Description** | The text to display on the cancel button. |
-| **Attribute**   | `cancel-text`                             |
-| **Type**        | `string`                                  |
-| **Default**     | `'Cancel'`                                |
-
-### compareWith
-
-|                 |                                                                                      |
-| --------------- | ------------------------------------------------------------------------------------ |
-| **Description** | A property name or function used to compare object values                            |
-| **Attribute**   | `compare-with`                                                                       |
-| **Type**        | `((currentValue: any, compareValue: any) => boolean) \| null \| string \| undefined` |
-| **Default**     | `undefined`                                                                          |
-
-### disabled
-
-|                 |                                                      |
-| --------------- | ---------------------------------------------------- |
-| **Description** | If `true`, the user cannot interact with the select. |
-| **Attribute**   | `disabled`                                           |
-| **Type**        | `boolean`                                            |
-| **Default**     | `false`                                              |
-
-### interface
-
-|                 |                                                                            |
-| --------------- | -------------------------------------------------------------------------- |
-| **Description** | The interface the select should use: `action-sheet`, `popover` or `alert`. |
-| **Attribute**   | `interface`                                                                |
-| **Type**        | `"action-sheet" \| "alert" \| "popover"`                                   |
-| **Default**     | `'alert'`                                                                  |
-
-### interfaceOptions
-
-|                 |                                                                                                                                                                                                                                                                                                                                                                                         |
-| --------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Description** | Any additional options that the `alert`, `action-sheet` or `popover` interface<br />can take. See the [ion-alert docs](alert.md), the<br />[ion-action-sheet docs](action-sheet.md) and the<br />[ion-popover docs](popover.md) for the<br />create options for each interface.<br /><br />Note: `interfaceOptions` will not override `inputs` or `buttons` with the `alert` interface. |
-| **Attribute**   | `interface-options`                                                                                                                                                                                                                                                                                                                                                                     |
-| **Type**        | `any`                                                                                                                                                                                                                                                                                                                                                                                   |
-| **Default**     | `{}`                                                                                                                                                                                                                                                                                                                                                                                    |
-
-### mode
-
-|                 |                                                   |
-| --------------- | ------------------------------------------------- |
-| **Description** | The mode determines which platform styles to use. |
-| **Attribute**   | `mode`                                            |
-| **Type**        | `"ios" \| "md"`                                   |
-| **Default**     | `undefined`                                       |
-
-### multiple
-
-|                 |                                                   |
-| --------------- | ------------------------------------------------- |
-| **Description** | If `true`, the select can accept multiple values. |
-| **Attribute**   | `multiple`                                        |
-| **Type**        | `boolean`                                         |
-| **Default**     | `false`                                           |
-
-### name
-
-|                 |                                                                 |
-| --------------- | --------------------------------------------------------------- |
-| **Description** | The name of the control, which is submitted with the form data. |
-| **Attribute**   | `name`                                                          |
-| **Type**        | `string`                                                        |
-| **Default**     | `this.inputId`                                                  |
-
-### okText
-
-|                 |                                       |
-| --------------- | ------------------------------------- |
-| **Description** | The text to display on the ok button. |
-| **Attribute**   | `ok-text`                             |
-| **Type**        | `string`                              |
-| **Default**     | `'OK'`                                |
-
-### placeholder
-
-|                 |                                               |
-| --------------- | --------------------------------------------- |
-| **Description** | The text to display when the select is empty. |
-| **Attribute**   | `placeholder`                                 |
-| **Type**        | `null \| string \| undefined`                 |
-| **Default**     | `undefined`                                   |
-
-### selectedText
-
-|                 |                                                             |
-| --------------- | ----------------------------------------------------------- |
-| **Description** | The text to display instead of the selected option's value. |
-| **Attribute**   | `selected-text`                                             |
-| **Type**        | `null \| string \| undefined`                               |
-| **Default**     | `undefined`                                                 |
-
-### value
-
-|                 |                          |
-| --------------- | ------------------------ |
-| **Description** | the value of the select. |
-| **Attribute**   | `value`                  |
-| **Type**        | `any`                    |
-| **Default**     | `undefined`              |
+<Props />
 
 ## Events
 
-| Name        | Description                              |
-| ----------- | ---------------------------------------- |
-| `ionBlur`   | Emitted when the select loses focus.     |
-| `ionCancel` | Emitted when the selection is cancelled. |
-| `ionChange` | Emitted when the value has changed.      |
-| `ionFocus`  | Emitted when the select has focus.       |
+<Events />
 
 ## Methods
 
-### open
-
-|                 |                                                                                                                                                    |
-| --------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Description** | Open the select overlay. The overlay is either an alert, action sheet, or popover,<br />depending on the `interface` property on the `ion-select`. |
-| **Signature**   | `open(event?: UIEvent \| undefined) => Promise<any>`                                                                                               |
+<Methods />
 
 ## CSS Shadow Parts
 
-| Name          | Description                                              |
-| ------------- | -------------------------------------------------------- |
-| `icon`        | The select icon container.                               |
-| `placeholder` | The text displayed in the select when there is no value. |
-| `text`        | The displayed value of the select.                       |
+<Parts />
 
 ## CSS Custom Properties
 
-| Name                    | Description                                                                                               |
-| ----------------------- | --------------------------------------------------------------------------------------------------------- |
-| `--padding-bottom`      | Bottom padding of the select                                                                              |
-| `--padding-end`         | Right padding if direction is left-to-right, and left padding if direction is right-to-left of the select |
-| `--padding-start`       | Left padding if direction is left-to-right, and right padding if direction is right-to-left of the select |
-| `--padding-top`         | Top padding of the select                                                                                 |
-| `--placeholder-color`   | Color of the select placeholder text                                                                      |
-| `--placeholder-opacity` | Opacity of the select placeholder text                                                                    |
+<CustomProps />
+
+## Slots
+
+<Slots />

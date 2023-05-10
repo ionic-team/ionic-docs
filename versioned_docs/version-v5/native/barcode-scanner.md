@@ -60,13 +60,14 @@ Requires Cordova plugin: `phonegap-plugin-barcodescanner`. For more info, please
 >
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
-      $ npm install phonegap-plugin-barcodescanner {'\n'}$ npm install @awesome-cordova-plugins/barcode-scanner {'\n'}$ ionic cap
-      sync
+      $ npm install phonegap-plugin-barcodescanner {'\n'}$ npm install @awesome-cordova-plugins/barcode-scanner {'\n'}$
+      ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
-      $ ionic cordova plugin add phonegap-plugin-barcodescanner {'\n'}$ npm install @awesome-cordova-plugins/barcode-scanner {'\n'}
+      $ ionic cordova plugin add phonegap-plugin-barcodescanner {'\n'}$ npm install
+      @awesome-cordova-plugins/barcode-scanner {'\n'}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">

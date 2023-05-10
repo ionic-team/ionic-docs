@@ -7,7 +7,7 @@ sidebar_label: 'capacitor sync'
 Sync (copy + update) an Ionic project
 
 ```shell
-$ ionic capacitor sync [options]
+ionic capacitor sync [options]
 ```
 
 `ionic capacitor sync` will do the following:

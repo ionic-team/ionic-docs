@@ -122,12 +122,14 @@ For tracking events, see `logEvent` and `logPurchase`.
 >
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
-      $ npm install cordova-plugin-facebook-connect {'\n'}$ npm install @awesome-cordova-plugins/facebook {'\n'}$ ionic cap sync
+      $ npm install cordova-plugin-facebook-connect {'\n'}$ npm install @awesome-cordova-plugins/facebook {'\n'}$ ionic
+      cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
-      $ ionic cordova plugin add cordova-plugin-facebook-connect {'\n'}$ npm install @awesome-cordova-plugins/facebook {'\n'}
+      $ ionic cordova plugin add cordova-plugin-facebook-connect {'\n'}$ npm install @awesome-cordova-plugins/facebook{' '}
+      {'\n'}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">
