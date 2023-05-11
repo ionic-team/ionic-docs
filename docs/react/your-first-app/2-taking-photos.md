@@ -1,10 +1,17 @@
 ---
+title: Taking Photos with the Camera
 sidebar_label: Taking Photos
 ---
 
-# Taking Photos with the Camera
+<head>
+  <title>Take Photos From The Camera on React Apps - Ionic Documentation</title>
+  <meta
+    name="description"
+    content="To take photos from the device's camera on a React app, begin by building it for the web, then make some small tweaks for mobile use on iOS and Android devices."
+  />
+</head>
 
-Now for the fun part - adding the ability to take photos with the device’s camera using the Capacitor [Camera API](https://capacitor.ionicframework.com/docs/apis/camera). We’ll begin with building it for the web, then make some small tweaks to make it work on mobile (iOS and Android).
+Now for the fun part - adding the ability to take photos with the device’s camera using the Capacitor [Camera API](https://capacitorjs.com/docs/apis/camera). We’ll begin with building it for the web, then make some small tweaks to make it work on mobile (iOS and Android).
 
 To do so, we will create our own custom React hook that will manage the photos for the gallery.
 
@@ -22,7 +29,7 @@ import { isPlatform } from '@ionic/react';
 
 import { Camera, CameraResultType, CameraSource, Photo } from '@capacitor/camera';
 import { Filesystem, Directory } from '@capacitor/filesystem';
-import { Storage } from '@capacitor/storage';
+import { Preferences } from '@capacitor/preferences';
 import { Capacitor } from '@capacitor/core';
 ```
 
@@ -124,7 +131,7 @@ With the photo(s) stored into the main array we can display the images on the sc
   <IonGrid>
     <IonRow>
       {photos.map((photo, index) => (
-        <IonCol size="6" key={index}>
+        <IonCol size="6" key={photo.filepath}>
           <IonImg src={photo.webviewPath} />
         </IonCol>
       ))}

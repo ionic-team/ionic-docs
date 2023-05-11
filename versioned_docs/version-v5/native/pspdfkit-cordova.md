@@ -51,7 +51,8 @@ The official plugin to use PSPDFKit with Cordova and Ionic.
 >
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
-      $ npm install pspdfkit-cordova {'\n'}$ npm install @awesome-cordova-plugins/pspdfkit-cordova {'\n'}$ ionic cap sync
+      $ npm install pspdfkit-cordova {'\n'}$ npm install @awesome-cordova-plugins/pspdfkit-cordova {'\n'}$ ionic cap
+      sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">

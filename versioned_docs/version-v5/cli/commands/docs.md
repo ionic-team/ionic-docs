@@ -7,7 +7,7 @@ sidebar_label: 'docs'
 Open the Ionic documentation website
 
 ```shell
-$ ionic docs [options]
+ionic docs [options]
 ```
 
 ## Advanced Options

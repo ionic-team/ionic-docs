@@ -7,7 +7,7 @@ sidebar_label: 'ssh add'
 Add an SSH public key to Ionic
 
 ```shell
-$ ionic ssh add [options]
+ionic ssh add [options]
 ```
 
 ## Inputs

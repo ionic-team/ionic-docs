@@ -73,6 +73,24 @@ html[data-theme='dark'] {
     }
   }
 
+  .internal-ad {
+    cursor: pointer;
+
+    max-width: 148px;
+    display: block;
+    margin: 48px 0 0;
+
+    p {
+      font-size: 13px;
+      line-height: 19px;
+      font-weight: 400;
+      letter-spacing: 0.02em;
+
+      color: var(--ifm-font-color-base);
+      transition: 0.2s color;
+    }
+  }
+
   [class^='tocCollapsible_'] {
     @media (max-width: 996px) {
       display: none;

@@ -51,13 +51,14 @@ Requires Cordova plugin: cordova-plugin-batterystatus. For more info, please see
 >
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
-      $ npm install cordova-plugin-battery-status {'\n'}$ npm install @awesome-cordova-plugins/battery-status {'\n'}$ ionic cap
-      sync
+      $ npm install cordova-plugin-battery-status {'\n'}$ npm install @awesome-cordova-plugins/battery-status {'\n'}$
+      ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
-      $ ionic cordova plugin add cordova-plugin-battery-status {'\n'}$ npm install @awesome-cordova-plugins/battery-status {'\n'}
+      $ ionic cordova plugin add cordova-plugin-battery-status {'\n'}$ npm install
+      @awesome-cordova-plugins/battery-status {'\n'}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">

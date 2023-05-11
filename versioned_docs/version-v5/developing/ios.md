@@ -21,7 +21,7 @@ The Xcode approach is generally more stable, but the Ionic CLI approach offers [
 Once Xcode is installed, make sure the command-line tools are selected for use:
 
 ```shell
-$ xcode-select --install
+xcode-select --install
 ```
 
 ### Setting up a Development Team
@@ -145,7 +145,7 @@ Capacitor does not yet have a way to build native projects. It relies on Xcode t
 Run the following, then select a target simulator or device and click the play button in Xcode:
 
 ```shell
-$ ionic capacitor run ios -l --external
+ionic capacitor run ios -l --external
 ```
 
 ### Live-reload with Cordova
@@ -155,7 +155,7 @@ Cordova can build and deploy native projects programmatically.
 To boot up a live-reload server, build, and deploy the app, run the following:
 
 ```shell
-$ ionic cordova run ios -l --external
+ionic cordova run ios -l --external
 ```
 
 ## Debugging iOS Apps

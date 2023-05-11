@@ -7,7 +7,7 @@ sidebar_label: 'package deploy'
 Deploys a binary to a destination, such as an app store using Appflow
 
 ```shell
-$ ionic package deploy [options]
+ionic package deploy [options]
 ```
 
 This command deploys a binary to a destination using Appflow. While running, the remote log is printed to the terminal.
@@ -18,7 +18,7 @@ Both can be retrieved from the [Dashboard](https://dashboard.ionicframework.com)
 ## Examples
 
 ```shell
-$ ionic package deploy 123456789 "My app store destination"
+ionic package deploy 123456789 "My app store destination"
 ```
 
 ## Inputs

@@ -54,13 +54,14 @@ For more info, please see the https://github.com/Telerik-Verified-Plugins/ImageP
 >
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
-      $ npm install cordova-plugin-telerik-imagepicker {'\n'}$ npm install @awesome-cordova-plugins/image-picker {'\n'}$ ionic cap
-      sync
+      $ npm install cordova-plugin-telerik-imagepicker {'\n'}$ npm install @awesome-cordova-plugins/image-picker {'\n'}$
+      ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
-      $ ionic cordova plugin add cordova-plugin-telerik-imagepicker {'\n'}$ npm install @awesome-cordova-plugins/image-picker {'\n'}
+      $ ionic cordova plugin add cordova-plugin-telerik-imagepicker {'\n'}$ npm install
+      @awesome-cordova-plugins/image-picker {'\n'}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">
@@ -100,7 +101,7 @@ constructor(private imagePicker: ImagePicker) { }
 ...
 
 this.imagePicker.getPictures(options).then((results) => {
-  for (var i = 0; i &lt; results.length; i++) {
+  for (var i = 0; i < results.length; i++) {
       console.log('Image URI: ' + results[i]);
   }
 }, (err) => { });

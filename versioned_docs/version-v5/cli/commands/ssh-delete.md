@@ -7,7 +7,7 @@ sidebar_label: 'ssh delete'
 Delete an SSH public key from Ionic
 
 ```shell
-$ ionic ssh delete [options]
+ionic ssh delete [options]
 ```
 
 ## Inputs

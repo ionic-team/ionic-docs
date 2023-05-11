@@ -1,17 +1,24 @@
 ---
+title: Taking Photos with the Camera
 sidebar_label: Taking Photos
 ---
 
-# Taking Photos with the Camera
+<head>
+  <title>Build Camera API for iOS, Android & Web | Ionic Capacitor Camera</title>
+  <meta
+    name="description"
+    content="Add the ability to take photos with your device's camera using the Ionic Capacitor Camera API for mobile iOS, Android, and the web. Learn how here."
+  />
+</head>
 
-Now for the fun part - adding the ability to take photos with the device’s camera using the Capacitor [Camera API](https://capacitor.ionicframework.com/docs/apis/camera). We’ll begin with building it for the web, then make some small tweaks to make it work on mobile (iOS and Android).
+Now for the fun part - adding the ability to take photos with the device’s camera using the Capacitor [Camera API](https://capacitorjs.com/docs/apis/camera). We’ll begin with building it for the web, then make some small tweaks to make it work on mobile (iOS and Android).
 
 ## Photo Service
 
 All Capacitor logic (Camera usage and other native features) will be encapsulated in a service class. Create `PhotoService` using the `ionic generate` command:
 
-```bash
-$ ionic g service services/photo
+```shell
+ionic g service services/photo
 ```
 
 Open the new `services/photo.service.ts` file, and let’s add the logic that will power the camera functionality. First, import Capacitor dependencies and get references to the Camera, Filesystem, and Storage plugins:
@@ -19,7 +26,7 @@ Open the new `services/photo.service.ts` file, and let’s add the logic that wi
 ```tsx
 import { Camera, CameraResultType, CameraSource, Photo } from '@capacitor/camera';
 import { Filesystem, Directory } from '@capacitor/filesystem';
-import { Storage } from '@capacitor/storage';
+import { Preferences } from '@capacitor/preferences';
 ```
 
 Next, define a new class method, `addNewToGallery`, that will contain the core logic to take a device photo and save it to the filesystem. Let’s start by opening the device camera:
@@ -76,7 +83,7 @@ Outside of the `PhotoService` class definition (the very bottom of the file), cr
 ```tsx
 export interface UserPhoto {
   filepath: string;
-  webviewPath: string;
+  webviewPath?: string;
 }
 ```
 

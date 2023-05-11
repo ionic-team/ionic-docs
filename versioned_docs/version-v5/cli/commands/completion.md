@@ -7,7 +7,7 @@ sidebar_label: 'completion'
 Enables tab-completion for Ionic CLI commands.
 
 ```shell
-$ ionic completion [options]
+ionic completion [options]
 ```
 
 This command is experimental and only works for Z shell (zsh) and non-Windows platforms.

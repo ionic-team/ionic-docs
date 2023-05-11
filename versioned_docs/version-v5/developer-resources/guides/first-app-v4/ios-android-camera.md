@@ -38,7 +38,7 @@ Save the file and watch - a camera button appears! Tap on it and notice that it 
 In order to use the Camera, we need to bring in its JavaScript and native library dependencies. Back over in your Terminal window, run the following command, which adds the JavaScript library to the project, thus exposing the Camera API in TypeScript code:
 
 ```shell
-$ npm install @awesome-cordova-plugins/camera
+npm install @awesome-cordova-plugins/camera
 ```
 
 In `package.json`, you’ll notice a new JavaScript dependency has been added, with a version number similar to the following:
@@ -48,7 +48,7 @@ In `package.json`, you’ll notice a new JavaScript dependency has been added, w
 Next, run this command to add the native iOS and Android code, effectively allowing the Camera to work on a mobile device. For more info on how this works, read up on [Cordova](https://cordova.apache.org/docs/en/latest/guide/overview/) and [Ionic Native](https://ionicframework.com/docs/native).
 
 ```shell
-$ ionic cordova plugin add cordova-plugin-camera
+ionic cordova plugin add cordova-plugin-camera
 ```
 
 The `config.xml` file is now updated with an entry similar to the following for the native camera code:

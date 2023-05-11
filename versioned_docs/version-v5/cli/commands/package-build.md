@@ -7,7 +7,7 @@ sidebar_label: 'package build'
 Create a package build on Appflow
 
 ```shell
-$ ionic package build [options]
+ionic package build [options]
 ```
 
 This command creates a package build on Appflow. While the build is running, it prints the remote build log to the terminal. If the build is successful, it downloads the created app package file in the current directory.
