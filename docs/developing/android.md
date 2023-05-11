@@ -112,10 +112,10 @@ Additional setup is required for Cordova to support programmatic builds. This se
 
 ### Java
 
-Native Android apps are compiled with the <a href="https://java.com/en/" target="_blank">Java</a> programming language. Download JDK11 from the <a href="https://www.oracle.com/java/technologies/javase-jdk11-downloads.html" target="_blank">download page</a>.
+Native Android apps are compiled with the <a href="https://java.com/en/" target="_blank">Java</a> programming language. Download the <a href="https://www.oracle.com/java/technologies/javase-jdk11-downloads.html" target="_blank">Java Development Kit (JDK) 11</a> if you are using **`cordova-android`** `10.0.0` or greater.
 
 :::note
-Install <a href="https://www.oracle.com/java/technologies/javase/javase-jdk8-downloads.html" target="_blank">Java Development Kit (JDK) 8</a> if using **cordova-android** version lower than 10
+If you are using any version of **`cordova-android`** below `10.0.0`, install the <a href="https://www.oracle.com/java/technologies/javase/javase-jdk8-downloads.html" target="_blank">Java Development Kit (JDK) 8</a>.
 :::
 
 ### Gradle
