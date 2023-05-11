@@ -43,17 +43,16 @@ There are two types of certificates that matter here, Development, and Distribut
 
 Distribution certs are meant for distributing an app to the store. When an app is signed with a Distribution cert, it can be installed on any device.
 
-## Signing the App in Xcode.
+## Signing the App in Xcode
 
 After generating the correct certificates, there are options to either have Xcode automatically manage certificates or manually manage them. It's suggested to let Xcode automatically manage certificates. This will make sure that the correct Development and Distribution certs are used, based on the build type selected.
 
 With this option selected, select `Archive` from the `Product > Archive` menu. This will build a version of the app that is ready for distribution in the app stores. After archive has been created, Xcode Organizer is opened.
 
 Xcode Organizer displays a list with builds of the current app. Pick the last build and click 'Upload to App Store'.
-There should be a place to select the team followed by some more information on the app and a "Upload" button to click.
+There should be a place to select the team followed by some more information on the app and an 'Upload' button to click.
 
-If the upload successfully, the app should be listed on [iTunes Connect](https://itunesconnect.apple.com) and listed in 'Activities'.
-From there, TestFlight can be enabled for beta testing, or the App can be sent for approval from Apple.
+If the upload is successful the app should be listed under 'Activities' on [iTunes Connect](https://itunesconnect.apple.com) or listed under 'Apps' on [App Store Connect](https://appstoreconnect.apple.com/). From there, the app can be published to TestFlight, or it can be sent to Apple for approval for the App Store.
 
 ## Updating an app
 
