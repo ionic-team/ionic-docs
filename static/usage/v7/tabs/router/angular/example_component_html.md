@@ -1,7 +1,6 @@
 ```html
+<ion-router-outlet></ion-router-outlet>
 <ion-tabs>
-  <ion-router-outlet></ion-router-outlet>
-
   <ion-tab-bar slot="bottom">
     <ion-tab-button tab="home">
       <ion-icon name="play-circle"></ion-icon>
