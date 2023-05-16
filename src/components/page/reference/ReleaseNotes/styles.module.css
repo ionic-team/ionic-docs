@@ -1,0 +1,153 @@
+.release-notes {
+  margin-block-start: 4rem;
+
+  --accent-color: #3880ff;
+  --accent-color-rgb: 56, 128, 255;
+  --accent-color-100: #4d8dff;
+  --accent-color-200: #639cff;
+  --accent-color-300: #4d8dff;
+  --accent-color-400: #7cabff;
+  --accent-color-500: #97bdff;
+  --accent-color-600: #b2ceff;
+  --accent-color-700: #cddfff;
+  --accent-color-800: #e3edff;
+  --accent-color-900: #f0f6ff;
+  --background: var(--token-primary-bg-c);
+  --color: var(--ifm-font-color-base);
+  --code-font-family: 'SFMono-Regular', 'Roboto Mono', Consolas, 'Liberation Mono', Menlo, Courier, monospace;
+}
+
+.intro {
+  margin-bottom: 2.2em;
+}
+
+.release-note {
+  position: relative;
+
+  display: flex;
+
+  padding-bottom: 80px;
+}
+
+/* Turn off the # on anchor hover */
+.release-notes h2 a[href^='#']:hover:before,
+.release-notes h3 a[href^='#']:hover:before,
+.release-notes h4 a[href^='#']:hover:before,
+.release-notes h5 a[href^='#']:hover:before,
+.release-notes h6 a[href^='#']:hover:before {
+  opacity: 0;
+}
+
+.release-notes h2 {
+  margin: 0;
+
+  font-size: 32px;
+}
+
+.release-notes h3 {
+  margin-top: 32px;
+  margin-bottom: 0;
+
+  font-size: 20px;
+}
+
+.release-notes h2,
+.release-notes h3 {
+  padding-top: 0;
+}
+
+.release-notes ul {
+  margin-top: 0.8em;
+}
+
+.release-notes ul li {
+  line-height: 1.5;
+  margin-bottom: 8px;
+}
+
+/*
+   * Release Note Header
+   * --------------------------------------------------------
+   */
+
+.release-header {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.release-header h2 {
+  font-family: var(--font-family);
+
+  margin-right: 8px;
+}
+
+.release-header .release-version {
+  font-weight: 700;
+}
+
+.release-published h3 {
+  font-family: var(--font-family);
+
+  font-weight: 300;
+
+  margin-top: 4px;
+  margin-bottom: 32px;
+  color: var(--ifm-secondary-heading-color, #4e5b6a);
+}
+
+.release-badge {
+  margin-right: 8px;
+  margin-top: 5px;
+  margin-bottom: 4px;
+
+  text-transform: uppercase;
+
+  background: transparent;
+  color: #b2becd;
+  border: 1px solid #b2becd;
+  border-radius: 14px;
+  height: 24px;
+  padding: 2px 8px;
+
+  font-weight: 600;
+  font-size: 10px;
+  line-height: 14px;
+  display: flex;
+  align-items: center;
+  letter-spacing: 0.08em;
+}
+
+.release-note-major .release-badge {
+  background: var(--color, #04060b);
+  border-color: var(--color, #04060b);
+  color: var(--background, #fff);
+}
+
+.release-note-minor .release-badge {
+  background: #b2becd;
+  border-color: #b2becd;
+  color: var(--background, #fff);
+}
+
+.release-badge.release-badge-latest {
+  background: transparent;
+  color: #43c465;
+  border-color: #43c465;
+}
+
+/*
+   * Release Note Blockquote
+   * --------------------------------------------------------
+   */
+
+.release-notes blockquote {
+  margin-left: 0;
+
+  background: rgba(var(--accent-color-rgb), 0.05);
+  border-color: var(--accent-color);
+}
+
+.release-notes a {
+  color: var(--accent-color);
+}
