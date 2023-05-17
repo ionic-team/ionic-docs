@@ -5,9 +5,7 @@ import { IonSearchbar } from '@ionic/react';
 import './main.css';
 
 function Example() {
-  return (
-    <IonSearchbar showCancelButton="focus" class="custom"></IonSearchbar>
-  );
+  return <IonSearchbar showCancelButton="focus" class="custom"></IonSearchbar>;
 }
 export default Example;
 ```

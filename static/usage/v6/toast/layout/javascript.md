@@ -5,28 +5,24 @@
 <script>
   async function presentToast(opts) {
     const toast = await toastController.create(opts);
-  
+
     await toast.present();
   }
-  
+
   async function presentBaselineToast() {
     await presentToast({
       duration: 3000,
-      message: "This is a toast with a long message and a button that appears on the same line.",
-      buttons: [
-        { text: 'Action With Long Text'}
-      ]
+      message: 'This is a toast with a long message and a button that appears on the same line.',
+      buttons: [{ text: 'Action With Long Text' }],
     });
   }
-  
+
   async function presentStackedToast() {
     await presentToast({
       duration: 3000,
-      message: "This is a toast with a long message and a button that appears on the next line.",
-      buttons: [
-        { text: 'Action With Long Text'}
-      ],
-      layout: "stacked"
+      message: 'This is a toast with a long message and a button that appears on the next line.',
+      buttons: [{ text: 'Action With Long Text' }],
+      layout: 'stacked',
     });
   }
 </script>

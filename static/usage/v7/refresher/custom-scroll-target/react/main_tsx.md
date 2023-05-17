@@ -1,11 +1,18 @@
 ```tsx
 import React from 'react';
-import { IonContent, IonHeader, IonRefresher, IonRefresherContent, IonTitle, IonToolbar, RefresherEventDetail } from '@ionic/react';
+import {
+  IonContent,
+  IonHeader,
+  IonRefresher,
+  IonRefresherContent,
+  IonTitle,
+  IonToolbar,
+  RefresherEventDetail,
+} from '@ionic/react';
 
 import './main.css';
 
 function Example() {
-
   function handleRefresh(event: CustomEvent<RefresherEventDetail>) {
     setTimeout(() => {
       // Any calls to load data go here

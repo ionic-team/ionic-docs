@@ -45,7 +45,7 @@ export default function ColorAccordion({ ...props }) {
             })}
             style={
               {
-                'backgroundColor': `var(--ion-color-${color})`,
+                backgroundColor: `var(--ion-color-${color})`,
                 color: `var(--ion-color-${color}-contrast)`,
               } as any
             }
@@ -85,7 +85,7 @@ export default function ColorAccordion({ ...props }) {
                 className={styles.colorSubmenuItem}
                 style={
                   {
-                    'backgroundColor': `var(--ion-color-${color}-shade)`,
+                    backgroundColor: `var(--ion-color-${color}-shade)`,
                     color: `var(--ion-color-${color}-contrast)`,
                   } as any
                 }
@@ -99,7 +99,7 @@ export default function ColorAccordion({ ...props }) {
                 className={styles.colorSubmenuItem}
                 style={
                   {
-                    'backgroundColor': `var(--ion-color-${color}-tint)`,
+                    backgroundColor: `var(--ion-color-${color}-tint)`,
                     color: `var(--ion-color-${color}-contrast)`,
                   } as any
                 }

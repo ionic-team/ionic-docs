@@ -56,13 +56,14 @@ Cordova plugin for Firebase Messaging
 >
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
-      $ npm install cordova-plugin-firebase-messaging {'\n'}$ npm install @awesome-cordova-plugins/firebase-messaging {'\n'}$ ionic
-      cap sync
+      $ npm install cordova-plugin-firebase-messaging {'\n'}$ npm install @awesome-cordova-plugins/firebase-messaging{' '}
+      {'\n'}$ ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
-      $ ionic cordova plugin add cordova-plugin-firebase-messaging {'\n'}$ npm install @awesome-cordova-plugins/firebase-messaging {'\n'}
+      $ ionic cordova plugin add cordova-plugin-firebase-messaging {'\n'}$ npm install
+      @awesome-cordova-plugins/firebase-messaging {'\n'}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">

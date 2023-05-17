@@ -34,6 +34,7 @@ const getConfig = () => {
   ...
 });
 ```
+
 </TabItem>
 <TabItem value="react">
 
@@ -43,18 +44,18 @@ import { isPlatform, setupIonicReact } from '@ionic/react';
 const getConfig = () => {
   if (isPlatform('hybrid')) {
     return {
-      tabButtonLayout: 'label-hide'
-    }
+      tabButtonLayout: 'label-hide',
+    };
   }
-  
+
   return {
-    tabButtonLayout: 'icon-top'
+    tabButtonLayout: 'icon-top',
   };
 };
 
 setupIonicReact(getConfig());
-
 ```
+
 </TabItem>
 <TabItem value="vue">
 
@@ -64,16 +65,17 @@ import { IonicVue, isPlatform } from '@ionic/vue';
 const getConfig = () => {
   if (isPlatform('hybrid')) {
     return {
-      tabButtonLayout: 'label-hide'
-    }
+      tabButtonLayout: 'label-hide',
+    };
   }
-  
+
   return {
-    tabButtonLayout: 'icon-top'
+    tabButtonLayout: 'icon-top',
   };
 };
 
 createApp(App).use(IonicVue, getConfig());
-````
+```
+
 </TabItem>
 </Tabs>

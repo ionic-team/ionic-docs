@@ -12,7 +12,7 @@ function Example() {
           <IonSelectOption value="orange">Orange</IonSelectOption>
         </IonSelect>
       </IonItem>
-    
+
       <IonItem>
         <IonSelect label="Fixed label" labelPlacement="fixed" placeholder="Favorite fruit">
           <IonSelectOption value="apple">Apple</IonSelectOption>
@@ -20,7 +20,7 @@ function Example() {
           <IonSelectOption value="orange">Orange</IonSelectOption>
         </IonSelect>
       </IonItem>
-    
+
       <IonItem>
         <IonSelect label="Stacked label" labelPlacement="stacked">
           <IonSelectOption value="apple">Apple</IonSelectOption>
@@ -28,7 +28,7 @@ function Example() {
           <IonSelectOption value="orange">Orange</IonSelectOption>
         </IonSelect>
       </IonItem>
-    
+
       <IonItem>
         <IonSelect label="Floating label" labelPlacement="floating">
           <IonSelectOption value="apple">Apple</IonSelectOption>

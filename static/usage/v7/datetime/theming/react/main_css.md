@@ -1,14 +1,14 @@
 ```css
 :root {
   --ion-color-rose: #831843;
-  --ion-color-rose-rgb: 131,24,67;
+  --ion-color-rose-rgb: 131, 24, 67;
   --ion-color-rose-contrast: #ffffff;
-  --ion-color-rose-contrast-rgb: 255,255,255;
+  --ion-color-rose-contrast-rgb: 255, 255, 255;
   --ion-color-rose-shade: #73153b;
   --ion-color-rose-tint: #8f2f56;
 
   --ion-text-color: #881337;
-  --ion-text-color-rgb: 136,19,55;
+  --ion-text-color-rgb: 136, 19, 55;
 
   --ion-color-step-50: #f9e6e9;
   --ion-color-step-100: #f3dbdf;
@@ -42,8 +42,8 @@
 
 ion-datetime {
   --background: #fff1f2;
-  --background-rgb: 255,241,242;
-  
+  --background-rgb: 255, 241, 242;
+
   border-radius: 16px;
   box-shadow: rgba(var(--ion-color-rose-rgb), 0.3) 0px 10px 15px -3px;
 }

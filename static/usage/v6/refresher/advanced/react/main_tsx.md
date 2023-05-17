@@ -1,13 +1,39 @@
 ```tsx
 import React, { useEffect, useState } from 'react';
-import { IonContent, IonHeader, IonIcon, IonItem, IonLabel, IonList, IonRefresher, IonRefresherContent, IonTitle, IonToolbar, RefresherEventDetail } from '@ionic/react';
+import {
+  IonContent,
+  IonHeader,
+  IonIcon,
+  IonItem,
+  IonLabel,
+  IonList,
+  IonRefresher,
+  IonRefresherContent,
+  IonTitle,
+  IonToolbar,
+  RefresherEventDetail,
+} from '@ionic/react';
 import { ellipse } from 'ionicons/icons';
 
 import './main.css';
 
 function Example() {
-  const names = ['Burt Bear', 'Charlie Cheetah', 'Donald Duck', 'Eva Eagle', 'Ellie Elephant', 'Gino Giraffe', 'Isabella Iguana', 'Karl Kitten', 'Lionel Lion', 'Molly Mouse', 'Paul Puppy', 'Rachel Rabbit', 'Ted Turtle'];
-  const [items, setItems] = useState<{name: string, unread: boolean}[]>([]);
+  const names = [
+    'Burt Bear',
+    'Charlie Cheetah',
+    'Donald Duck',
+    'Eva Eagle',
+    'Ellie Elephant',
+    'Gino Giraffe',
+    'Isabella Iguana',
+    'Karl Kitten',
+    'Lionel Lion',
+    'Molly Mouse',
+    'Paul Puppy',
+    'Rachel Rabbit',
+    'Ted Turtle',
+  ];
+  const [items, setItems] = useState<{ name: string; unread: boolean }[]>([]);
 
   let didInit = false;
 
@@ -49,12 +75,12 @@ function Example() {
         </IonRefresher>
 
         <IonList>
-          { items.map((item) => (
+          {items.map((item) => (
             <IonItem button={true}>
-              <IonIcon slot="start" color="primary" icon={ item.unread ? ellipse : '' }></IonIcon>
+              <IonIcon slot="start" color="primary" icon={item.unread ? ellipse : ''}></IonIcon>
               <IonLabel>
-                <h2>{ item.name }</h2>
-                <p>New message from { item.name }</p>
+                <h2>{item.name}</h2>
+                <p>New message from {item.name}</p>
               </IonLabel>
             </IonItem>
           ))}
