@@ -403,13 +403,12 @@ When working with tabs, Ionic needs a way to know which view belongs to which ta
 ```tsx
 <IonApp>
   <IonReactRouter>
-      <IonRouterOutlet>
-        <Route path="/tabs" render={() => <Tabs />} />
-        <Route exact path="/">
-          <Redirect to="/tabs" />
-        </Route>
-      </IonRouterOutlet>
-    </IonSplitPane>
+    <IonRouterOutlet>
+      <Route path="/tabs" render={() => <Tabs />} />
+      <Route exact path="/">
+        <Redirect to="/tabs" />
+      </Route>
+    </IonRouterOutlet>
   </IonReactRouter>
 </IonApp>
 ```
