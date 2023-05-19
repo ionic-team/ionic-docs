@@ -43,6 +43,14 @@ import CSSProps from '@site/static/usage/v7/spinner/theming/css-properties/index
 
 <CSSProps />
 
+## Styling
+
+### Resizing
+
+import Resizing from '@site/static/usage/v7/spinner/theming/resizing/index.md';
+
+<Resizing />
+
 
 ## Properties
 <Props />
