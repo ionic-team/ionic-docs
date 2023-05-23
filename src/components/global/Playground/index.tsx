@@ -85,6 +85,21 @@ interface UsageTargetOptions {
   files: {
     [key: string]: MdxContent;
   };
+  /**
+   * The list of dependencies to use in the Stackblitz example.
+   * The key is the package name and the value is the version.
+   * The version must be a valid semver range.
+   *
+   * For example:
+   * ```ts
+   * dependencies: {
+   *  '@maskito/core': '^0.11.0',
+   * }
+   * ```
+   */
+  dependencies?: {
+    [key: string]: string;
+  };
 }
 
 /**
@@ -326,6 +341,7 @@ export default function Playground({
             .outerText,
         }))
         .reduce((acc, curr) => ({ ...acc, ...curr }), {});
+      editorOptions.dependencies = (code[usageTarget] as UsageTargetOptions).dependencies;
     }
 
     switch (usageTarget) {
