@@ -21,7 +21,7 @@ export interface EditorOptions {
 
   /**
    * List of dependencies to add to the Stackblitz example.
-   * The key is the name of the dependency, the value is the version.
+   * The key is the name of the dependency and the value is the version.
    */
   dependencies?: {
     [key: string]: string;

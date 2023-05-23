@@ -95,6 +95,7 @@ interface UsageTargetOptions {
    * dependencies: {
    *  '@maskito/core': '^0.11.0',
    * }
+   * ```
    */
   dependencies?: {
     [key: string]: string;
