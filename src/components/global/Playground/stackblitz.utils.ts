@@ -20,6 +20,14 @@ export interface EditorOptions {
   };
 
   /**
+   * List of dependencies to add to the Stackblitz example.
+   * The key is the name of the dependency, the value is the version.
+   */
+  dependencies?: {
+    [key: string]: string;
+  }
+
+  /**
    * `true` if `ion-app` and `ion-content` should automatically be injected into the
    * Stackblitz example.
    */
@@ -79,6 +87,7 @@ const openHtmlEditor = async (code: string, options?: EditorOptions) => {
     dependencies = {
       ...dependencies,
       ...JSON.parse(package_json).dependencies,
+      ...options?.dependencies,
     };
   } catch (e) {
     console.error('Failed to parse package.json contents', e);
@@ -130,6 +139,7 @@ const openAngularEditor = async (code: string, options?: EditorOptions) => {
     'angular.json': defaultFiles[9],
     'tsconfig.json': defaultFiles[10],
     ...options?.files,
+    ...options?.dependencies,
   };
 
   const package_json = defaultFiles[11];
@@ -144,6 +154,7 @@ const openAngularEditor = async (code: string, options?: EditorOptions) => {
     dependencies = {
       ...dependencies,
       ...JSON.parse(package_json).dependencies,
+      ...options?.dependencies,
     };
   } catch (e) {
     console.error('Failed to parse package.json contents', e);
@@ -183,6 +194,7 @@ const openReactEditor = async (code: string, options?: EditorOptions) => {
     'package.json': defaultFiles[4],
     'package-lock.json': defaultFiles[5],
     ...options?.files,
+    ...options?.dependencies,
     '.stackblitzrc': `{
   "startCommand": "yarn run start"
 }`,
