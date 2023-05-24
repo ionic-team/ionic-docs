@@ -83,15 +83,36 @@ import UsingCompareWithExample from '@site/static/usage/v7/select/objects-as-val
 import ObjectValuesAndMultipleSelectionExample from '@site/static/usage/v7/select/objects-as-values/multiple-selection/index.md';
 
 <ObjectValuesAndMultipleSelectionExample />
-  
 
-## Label Placement
+## Labels
 
-Labels will take up the width of their content by default. Developers can use the `labelPlacement` property to control how the label is placed relative to the control.
+Select has several options for supplying a label for the component:
+
+- `label` property: used for plaintext labels
+- `label` slot: used for custom HTML labels
+- `aria-label`: used for ranges with no visible label
+
+### Label Placement
+
+Labels will take up the width of their content by default. Developers can use the `labelPlacement` property to control how the label is placed relative to the control. While the `label` property is used here, `labelPlacement` can also be used with the `label` slot.
 
 import LabelPlacement from '@site/static/usage/v7/select/label-placement/index.md';
 
 <LabelPlacement />
+
+### Label Slot
+
+While plaintext labels should be passed in via the `label` property, if custom HTML is needed, it can be passed through the `label` slot instead.
+
+import LabelSlot from '@site/static/usage/v7/select/label-slot/index.md';
+
+<LabelSlot />
+
+### No Visible Label
+
+If no visible label is needed, devs should still supply an `aria-label` so the range is accessible to screen readers.
+
+TODO Playground
 
 ## Justification
   
