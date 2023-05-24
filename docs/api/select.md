@@ -90,7 +90,7 @@ Select has several options for supplying a label for the component:
 
 - `label` property: used for plaintext labels
 - `label` slot: used for custom HTML labels
-- `aria-label`: used for ranges with no visible label
+- `aria-label`: used for selects with no visible label
 
 ### Label Placement
 
@@ -110,7 +110,7 @@ import LabelSlot from '@site/static/usage/v7/select/label-slot/index.md';
 
 ### No Visible Label
 
-If no visible label is needed, devs should still supply an `aria-label` so the range is accessible to screen readers.
+If no visible label is needed, devs should still supply an `aria-label` so the select is accessible to screen readers.
 
 TODO Playground
 
