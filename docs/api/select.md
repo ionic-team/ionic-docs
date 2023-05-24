@@ -112,7 +112,9 @@ import LabelSlot from '@site/static/usage/v7/select/label-slot/index.md';
 
 If no visible label is needed, devs should still supply an `aria-label` so the select is accessible to screen readers.
 
-TODO Playground
+import NoVisibleLabel from '@site/static/usage/v7/select/no-visible-label/index.md';
+
+<NoVisibleLabel />
 
 ## Justification
   
