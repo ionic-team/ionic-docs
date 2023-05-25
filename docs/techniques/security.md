@@ -160,3 +160,53 @@ export const ToastExample: React.FC = () => {
 </TabItem>
 </Tabs>
 ````
+
+## Content Security Policies (CSP)
+
+A Content Security Policy (CSP) is a security mechanism that helps protect web applications against certain types of attacks, such as cross-site scripting (XSS) and data injection. It is implemented through an HTTP header that instructs the browser on which sources of content, such as scripts, stylesheets, and images, are allowed to be loaded and executed on a web page.
+
+The main purpose of a CSP is to mitigate the risks associated with code injection attacks. By defining a policy, web developers can specify from which domains or sources the browser should allow the loading and execution of various types of content. This effectively limits the potential damage that can be caused by malicious scripts or unauthorized content.
+
+### Enabling CSPs
+
+Developers can assign a CSP to their application by setting a meta tag with the policy details and the expected nonce value on script and style tags.
+
+```html
+<meta
+  http-equiv="Content-Security-Policy"
+  content="default-src 'self'; script-src 'self' 'nonce-randomNonceGoesHere'; style-src 'self' 'nonce-randomNonceGoesHere';"
+/>
+```
+
+### Ionic and CSP
+
+Ionic Framework provides a function to help developers set the nonce value used when constructing the web component stylesheets. This function should be called before any Ionic components are loaded. This is required to pass the nonce value to the web components so that they can be used in a CSP environment.
+
+```ts
+import { setNonce } from '@ionic/core/loader';
+
+setNonce('randomNonceGoesHere');
+```
+
+:::tip
+
+In Angular this can be called in the `main.ts` file, before the application is bootstrapped.
+
+:::
+
+For more information on how to use CSPs with Stencil web components, see the [Stencil documentation](https://stenciljs.com/docs/csp-nonce).
+
+### Angular
+
+Starting in Angular 16, Angular provides two options for setting the nonce value.
+
+1. Set the `ngCspNonce` attribute on the root application element as `<app ngCspNonce="randomNonceGoesHere"></app>`. Use this approach if you have access to server-side templating that can add the nonce both to the header and the `index.html` when constructing the response.
+2. Provide the nonce using the [`CSP_NONCE`](https://angular.io/api/core/CSP_NONCE) injection token. Use this approach if you have access to the nonce at runtime and you want to be able to cache the `index.html`.
+
+:::tip
+
+If providing the `CSP_NONCE` injection token, set the provider in your `AppModule` for module projects or within the `bootstrapApplication` for standalone projects.
+
+:::
+
+For more information on how to use CSPs with Angular, see the [Angular documentation](https://angular.io/guide/security#content-security-policy).
