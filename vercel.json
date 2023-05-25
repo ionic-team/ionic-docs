@@ -1,0 +1,72 @@
+{
+  "redirects": [
+    { "source": "/", "destination": "/docs" },
+    {
+      "source": "/docs/angular/your-first-app/2-taking-photos",
+      "destination": "/docs/angular/your-first-app/taking-photos"
+    },
+    {
+      "source": "/docs/angular/your-first-app/3-saving-photos",
+      "destination": "/docs/angular/your-first-app/saving-photos"
+    },
+    {
+      "source": "/docs/angular/your-first-app/4-loading-photos",
+      "destination": "/docs/angular/your-first-app/loading-photos"
+    },
+    {
+      "source": "/docs/angular/your-first-app/5-adding-mobile",
+      "destination": "/docs/angular/your-first-app/adding-mobile"
+    },
+    {
+      "source": "/docs/angular/your-first-app/6-deploying-mobile",
+      "destination": "/docs/angular/your-first-app/deploying-mobile"
+    },
+    {
+      "source": "/docs/angular/your-first-app/7-live-reload",
+      "destination": "/docs/angular/your-first-app/live-reload"
+    },
+    {
+      "source": "/docs/ja/",
+      "destination": "/docs/ja"
+    },
+    {
+      "source": "/docs/(v5|next)?/developer-resources/:path*",
+      "destination": "https://ionic.io/resources"
+    },
+    { "source": "/docs/next/:match*", "destination": "/docs/:match*" },
+    {
+      "source": "/docs/react/your-first-app/2-taking-photos",
+      "destination": "/docs/react/your-first-app/taking-photos"
+    },
+    {
+      "source": "/docs/react/your-first-app/3-saving-photos",
+      "destination": "/docs/react/your-first-app/saving-photos"
+    },
+    {
+      "source": "/docs/react/your-first-app/4-loading-photos",
+      "destination": "/docs/react/your-first-app/loading-photos"
+    },
+    {
+      "source": "/docs/react/your-first-app/5-adding-mobile",
+      "destination": "/docs/react/your-first-app/adding-mobile"
+    },
+    {
+      "source": "/docs/react/your-first-app/6-deploying-mobile",
+      "destination": "/docs/react/your-first-app/deploying-mobile"
+    },
+    { "source": "/docs/react/your-first-app/7-live-reload", "destination": "/docs/react/your-first-app/live-reload" },
+    { "source": "/docs/vue/your-first-app/2-taking-photos", "destination": "/docs/vue/your-first-app/taking-photos" },
+    { "source": "/docs/vue/your-first-app/3-saving-photos", "destination": "/docs/vue/your-first-app/saving-photos" },
+    { "source": "/docs/vue/your-first-app/4-loading-photos", "destination": "/docs/vue/your-first-app/loading-photos" },
+    { "source": "/docs/vue/your-first-app/5-adding-mobile", "destination": "/docs/vue/your-first-app/adding-mobile" },
+    {
+      "source": "/docs/vue/your-first-app/6-deploying-mobile",
+      "destination": "/docs/vue/your-first-app/deploying-mobile"
+    },
+    { "source": "/docs/vue/your-first-app/7-live-reload", "destination": "/docs/vue/your-first-app/live-reload" }
+  ],
+  "rewrites": [
+    { "source": "/docs", "destination": "/" },
+    { "source": "/docs/:match*", "destination": "/:match*" }
+  ]
+}

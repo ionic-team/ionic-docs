@@ -1,0 +1,71 @@
+.appWizard {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 0;
+  float: none;
+
+  border-radius: 16px;
+  padding: 32px;
+
+  max-width: initial;
+
+  margin-inline-start: -32px;
+  margin-inline-end: -32px;
+
+  background: #486fff
+    url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iOTYiIGhlaWdodD0iMTc2IiBmaWxsPSJub25lIiB2aWV3Qm94PSIxNyAwIDk2IDE3NiIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICAgIDxjaXJjbGUgY3g9IjMyIiBjeT0iODgiIHI9IjY0IiBmaWxsPSIjNkM5REZGIiBvcGFjaXR5PSIuMyIvPgogICAgPGNpcmNsZSBjeD0iMzIiIGN5PSI4OCIgcj0iNTIiIGZpbGw9IiM2QzlERkYiIG9wYWNpdHk9Ii4zIi8+CiAgICA8Y2lyY2xlIGN4PSIzMiIgY3k9Ijg4IiByPSIzOCIgZmlsbD0iIzZDOURGRiIvPgogICAgPHBhdGggZD0iTTQ5LjUgODIuNzVoNS4yNWExLjc1IDEuNzUgMCAwMDAtMy41SDQ5LjVhMS43NSAxLjc1IDAgMDAwIDMuNXpNNDYuNDIgNzUuMzNhMS43NCAxLjc0IDAgMDAxLjIzLS41bDMuNzItMy43MmExLjc1IDEuNzUgMCAwMC0yLjQ4LTIuNDhsLTMuNzEgMy43MmExLjc1IDEuNzUgMCAwMDEuMjQgMi45OHpNMzkgNzIuMjVhMS43NSAxLjc1IDAgMDAxLjc1LTEuNzV2LTUuMjVhMS43NSAxLjc1IDAgMDAtMy41IDB2NS4yNUExLjc1IDEuNzUgMCAwMDM5IDcyLjI1ek0zMS41NiA3NS4zM2ExLjc1IDEuNzUgMCAwMDEuMjQtMi45OGwtMy43MS0zLjcyYTEuNzUgMS43NSAwIDEwLTIuNDggMi40OGwzLjcyIDMuNzFhMS43NCAxLjc0IDAgMDAxLjIzLjUxek01MC4xMyA5My45YTEuNzUgMS43NSAwIDAwMS4yNC0zbC0zLjcyLTMuN2ExLjc1IDEuNzUgMCAwMC0yLjQ3IDIuNDdsMy43MSAzLjcxYy4zMy4zMy43Ny41MSAxLjI0LjUxek0zNi4wNSA3Ni42YTIuODQgMi44NCAwIDAxNC4wMiAwbDMuMzMgMy4zM2EyLjg0IDIuODQgMCAwMTAgNC4wM2wtNi4yMyA2LjIzYS40NC40NCAwIDAxLS42MiAwbC02Ljc0LTYuNzRhLjQ0LjQ0IDAgMDEwLS42Mmw2LjI0LTYuMjJ6TTguMzQgMTA0LjNsMTguMzgtMTguMzhhLjQ0LjQ0IDAgMDEuNjIgMGw2Ljc0IDYuNzRhLjQ0LjQ0IDAgMDEwIC42MmwtMTguMzkgMTguMzhhMi44NCAyLjg0IDAgMDEtNC4wMiAwbC0zLjMzLTMuMzNhMi44NSAyLjg1IDAgMDEwLTQuMDJ6IiBmaWxsPSIjRDlGMUZGIi8+Cjwvc3ZnPgo=')
+    left center no-repeat;
+
+  :global {
+    .heading-group {
+      flex-basis: 420px;
+    }
+
+    .heading-group header {
+      font-weight: bold;
+      padding: 0;
+      margin: 0;
+      font-size: 1.5rem;
+      color: #fff;
+    }
+    .heading-group p {
+      color: #fff;
+      max-width: 620px;
+      opacity: 0.8;
+      margin-block-start: 0.5rem;
+      line-height: 160%;
+    }
+
+    .wizard-button {
+      display: inline-flex;
+      align-items: center;
+      border-radius: 8px;
+      padding: 8px 12px;
+      border: none;
+      background: #6c9dff;
+
+      transition: all 0.3s ease-out;
+
+      font-size: 14px;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      white-space: nowrap;
+      color: #fff;
+    }
+
+    .wizard-button:hover,
+    .wizard-button:focus {
+      background: #80aaff;
+      transition: all 0.3s;
+      text-decoration: none;
+    }
+
+    .wizard-button ion-icon {
+      font-size: 16px;
+      margin-left: 4px;
+    }
+  }
+}

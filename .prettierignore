@@ -1,0 +1,15 @@
+src/theme/DocItem
+src/theme/DocPage
+legacy-stencil-components
+scripts/bak
+
+docs/api
+docs/native
+docs/cli/commands
+
+static/code/stackblitz
+
+.docusaurus
+.github
+build
+node_modules

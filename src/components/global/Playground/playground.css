@@ -1,0 +1,307 @@
+/* Dark theme overrides */
+[data-theme="dark"] .playground {
+  --playground-btn-color: var(--c-carbon-20);
+  --playground-btn-selected-color: #fff;
+  --playground-btn-selected-background: var(--c-carbon-70);
+
+  --playground-btn-icon-color: var(--c-carbon-20);
+  --playground-btn-icon-hover-background: rgba(67, 79, 93, 0.5);
+
+  --playground-separator-color: var(--c-carbon-70);
+
+  --playground-code-background: rgb(22, 29, 37);
+
+  --playground-tabs-background: var(--c-carbon-90);
+  --playground-tab-btn-color: var(--c-carbon-20);
+  --playground-tab-btn-border-color: transparent;
+}
+
+.playground {
+  /**
+   * @prop --playground-btn-color The text color of the button in the toolbar.
+   * @prop --playground-btn-selected-color The text color of the button in the toolbar when selected.
+   * @prop --playground-btn-selected-background The background color of the button in the toolbar when selected.
+   * @prop --playground-btn-icon-color The text color of the button icon in the toolbar.
+   * @prop --playground-btn-icon-hover-background The background color of the button icon in the toolbar when hovered.
+   * @prop --playground-separator-color The color of the separator/border in the toolbar.
+   * @prop --playground-code-background The background color of the code block.
+   * @prop --playground-tabs-background: The background color of the tabs bar not including the active tab button.
+   * @prop --playground-tab-btn-color: The text color of the tab buttons.
+   * @prop --playground-tab-btn-border-color: The border color of the tab buttons.
+   */
+  --playground-btn-color: var(--c-indigo-90);
+  --playground-btn-selected-color: var(--c-blue-90);
+  --playground-btn-selected-background: var(--c-blue-10);
+  --playground-btn-icon-hover-background: var(--c-indigo-20);
+  --playground-btn-icon-color: var(--c-indigo-80);
+  --playground-separator-color: var(--c-indigo-30);
+  --playground-code-background: var(--c-indigo-10);
+
+  --playground-tabs-background: var(--c-indigo-20);
+  --playground-tab-btn-color: var(--c-carbon-100);
+  --playground-tab-btn-border-color: var(--c-indigo-30);
+
+  overflow: hidden;
+
+  margin-bottom: var(--ifm-leading);
+}
+
+/* Playground container includes the toolbar and preview container */
+.playground__container {
+  border: 1px solid var(--playground-separator-color);
+  border-radius: var(--ifm-code-border-radius);
+}
+
+/* Playground preview contains the demo example*/
+.playground__preview {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin: 18px 0;
+  padding: 16px 0;
+
+  overflow: auto;
+
+  position: relative;
+}
+
+.playground__control-toolbar {
+  display: flex;
+  align-items: center;
+
+  padding: 8px 12px;
+
+  border-bottom: 1px solid var(--playground-separator-color);
+
+  overflow-x: auto;
+}
+
+/* Playground control group contains a section of buttons in the toolbar */
+.playground__control-group {
+  display: flex;
+  min-height: 24px;
+}
+
+.playground__control-group + .playground__control-group {
+  padding-left: 12px;
+}
+
+/** Vertical divider between control groups */
+.playground__control-group + .playground__control-group:not(.playground__control-group--end) {
+  /* Only show the vertical divider when there is a control group after it */
+  border-left: 1px solid var(--playground-separator-color);
+}
+
+.playground__control-group .playground__control-button:last-child {
+  margin-right: 12px;
+}
+
+.playground__control-group--end {
+  margin-left: auto;
+  display: flex;
+  gap: 4px;
+}
+
+.playground__control-button {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 6px 10px;
+
+  color: var(--playground-btn-color);
+  background-color: transparent;
+  border: none;
+  border-radius: 100px;
+
+  font-size: 12px;
+
+  appearance: none;
+  cursor: pointer;
+  transition: background-color .2s, color .2s;
+}
+
+.playground__control-button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* fix layout shifting when button is bolded on select */
+/* has the same text as the button, but bolded in advance to nudge the width */
+.playground__control-button::after {
+  content: attr(data-text);
+  font-weight: 500;
+  overflow: hidden;
+  pointer-events: none;
+  user-select: none;
+  visibility: hidden;
+
+  height: 0;
+}
+
+@media speech {
+  .playground__control-button::after {
+    display: none;
+  }
+}
+
+.playground__control-button--selected {
+  background-color: var(--playground-btn-selected-background);
+  color: var(--playground-btn-selected-color);
+  font-weight: 500;
+}
+
+/* Icon buttons at the end of the toolbar */
+
+.playground__icon-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: transparent;
+
+  width: 24px;
+  height: 24px;
+  padding: 8px 5px;
+
+  border: 0;
+  border-radius: 100px;
+
+  cursor: pointer;
+  appearance: none;
+  transition: background .2s;
+}
+
+.playground__icon-button--disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.playground__icon-button--primary {
+  stroke: var(--playground-btn-icon-color);
+}
+
+.playground__icon-button:not(.playground__icon-button--disabled):hover {
+  background: var(--playground-btn-icon-hover-background);
+}
+
+/* The code block example that users can copy to clipboard */
+.playground__code-block {
+  margin-top: 16px;
+}
+
+/* overwrite existing Docusaurus style */
+.playground__code-block pre[class*='language-'] {
+  background-color: var(--playground-code-background);
+}
+
+.playground iframe {
+  box-shadow: none;
+  background: transparent;
+
+  width: 100%;
+}
+
+.playground .frame-hidden {
+  display: none;
+}
+
+@media only screen and (max-width: 600px) {
+  .playground .frame-visible {
+    width: 100%;
+  }
+}
+
+/** Tabs **/
+.playground .tabs-container {
+  background: var(--playground-code-background);
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.playground .tabs {
+  background: var(--playground-tabs-background);
+
+  --ifm-tabs-spacing: 0;
+
+  /**
+   * This fixes an issue in WebKit that causes the
+   * border radius to not be respected when hovering
+   * over a tab item. Note: This fix can be applied
+   * to .tabs-container too, but applying the fix
+   * here reduces the additional memory required to
+   * promote the element to its own layer.
+   */
+  border-radius: 16px 16px 0px 0px;
+  transform: translateZ(0);
+}
+
+.playground .tabs-nav {
+  margin-block-start: 0px !important;
+}
+
+.playground .tabs__item {
+  color: var(--playground-tab-btn-color);
+  font-size: 12px;
+  display: inline-flex;
+  align-items: center;
+  border-radius: 0;
+  white-space: nowrap;
+  height: 40px;
+}
+
+.playground .tabs__item:last-child {
+  margin-right: 40px;
+}
+
+.playground__tab-item.hidden {
+  height: 0px;
+  overflow: hidden;
+}
+
+.playground .tabs__item:not(.tabs__item--active) {
+  border-left: 1px solid var(--playground-tab-btn-border-color);
+  border-bottom: 1px solid var(--playground-tab-btn-border-color);
+}
+
+.playground .tabs__item--active {
+  border-color: transparent;
+  background: var(--playground-code-background);
+  font-weight: 400;
+}
+
+.playground .tabs__item--active:hover {
+  background: var(--playground-code-background);
+}
+
+/* Tooltip styling */
+.tippy-box[data-theme="playground"] {
+  background-color: var(--c-carbon-90);
+  border-radius: 8px;
+  line-height: initial;
+  font-size: 12px;
+}
+
+.tippy-box[data-theme="playground"] .tippy-content {
+  padding: 6px 10px;
+}
+
+
+/* Loading Screen */
+.playground .playground__loading {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+
+  font-size: 1.4rem;
+
+  background: var(--ifm-background-color);
+}
