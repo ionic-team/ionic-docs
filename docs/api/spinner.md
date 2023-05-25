@@ -37,19 +37,19 @@ import Colors from '@site/static/usage/v7/spinner/theming/colors/index.md';
 
 <Colors />
 
+### Styling
+
+You may use custom CSS to style the spinner. For example, you can resize the spinner by setting the width and height.
+
+import Resizing from '@site/static/usage/v7/spinner/theming/resizing/index.md';
+
+<Resizing />
+
 ### CSS Custom Properties
 
 import CSSProps from '@site/static/usage/v7/spinner/theming/css-properties/index.md';
 
 <CSSProps />
-
-## Styling
-
-### Resizing
-
-import Resizing from '@site/static/usage/v7/spinner/theming/resizing/index.md';
-
-<Resizing />
 
 
 ## Properties
