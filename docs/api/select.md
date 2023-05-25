@@ -24,6 +24,38 @@ A select should be used with child `<ion-select-option>` elements. If the child 
 
 If `value` is set on the `<ion-select>`, the selected option will be chosen based on that value.
 
+## Labels
+
+Select has several options for supplying a label for the component:
+
+- `label` property: used for plaintext labels
+- `label` slot: used for custom HTML labels
+- `aria-label`: used for selects with no visible label
+
+### Label Placement
+
+Labels will take up the width of their content by default. Developers can use the `labelPlacement` property to control how the label is placed relative to the control. While the `label` property is used here, `labelPlacement` can also be used with the `label` slot.
+
+import LabelPlacement from '@site/static/usage/v7/select/label-placement/index.md';
+
+<LabelPlacement />
+
+### Label Slot
+
+While plaintext labels should be passed in via the `label` property, if custom HTML is needed, it can be passed through the `label` slot instead.
+
+import LabelSlot from '@site/static/usage/v7/select/label-slot/index.md';
+
+<LabelSlot />
+
+### No Visible Label
+
+If no visible label is needed, devs should still supply an `aria-label` so the select is accessible to screen readers.
+
+import NoVisibleLabel from '@site/static/usage/v7/select/no-visible-label/index.md';
+
+<NoVisibleLabel />
+
 ## Single Selection
 
 By default, the select allows the user to select only one option. The alert interface presents users with a radio button styled list of options. The select component's value receives the value of the selected option's value.
@@ -83,15 +115,6 @@ import UsingCompareWithExample from '@site/static/usage/v7/select/objects-as-val
 import ObjectValuesAndMultipleSelectionExample from '@site/static/usage/v7/select/objects-as-values/multiple-selection/index.md';
 
 <ObjectValuesAndMultipleSelectionExample />
-  
-
-## Label Placement
-
-Labels will take up the width of their content by default. Developers can use the `labelPlacement` property to control how the label is placed relative to the control.
-
-import LabelPlacement from '@site/static/usage/v7/select/label-placement/index.md';
-
-<LabelPlacement />
 
 ## Justification
   
