@@ -12,6 +12,7 @@ import angular_example_component_css from './angular/example_component_css.md';
 import angular_example_component_ts from './angular/example_component_ts.md';
 
 <Playground
+  version="6"
   code={{
     javascript,
     react: {

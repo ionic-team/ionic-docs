@@ -1,12 +1,12 @@
 ---
 title: "ion-back-button"
 ---
-import Props from '@site/static/auto-generated/back-button/props.md';
-import Events from '@site/static/auto-generated/back-button/events.md';
-import Methods from '@site/static/auto-generated/back-button/methods.md';
-import Parts from '@site/static/auto-generated/back-button/parts.md';
-import CustomProps from '@site/static/auto-generated/back-button/custom-props.md';
-import Slots from '@site/static/auto-generated/back-button/slots.md';
+import Props from '@ionic-internal/component-api/v7/back-button/props.md';
+import Events from '@ionic-internal/component-api/v7/back-button/events.md';
+import Methods from '@ionic-internal/component-api/v7/back-button/methods.md';
+import Parts from '@ionic-internal/component-api/v7/back-button/parts.md';
+import CustomProps from '@ionic-internal/component-api/v7/back-button/custom-props.md';
+import Slots from '@ionic-internal/component-api/v7/back-button/slots.md';
 
 <head>
   <title>Back Button | ion-back-button: Custom Menu Icon for Applications</title>
@@ -28,7 +28,7 @@ import Basic from '@site/static/usage/v7/back-button/basic/index.md';
 
 ## Custom Back Button
 
-By default, the back button will display the text `"Back"` with a `"chevron-back"` icon on `ios`, and an `"arrow-back-sharp"` icon on `md`. This can be customized per back button component by setting the `icon` or `text` properties. Alternatively, it can be set globally using the `backButtonIcon` or `backButtonText` properties in the global config. See the Config docs for [Angular](/docs/angular/config), [React](/docs/react/config), or [Vue](/docs/vue/config) for more information.
+By default, the back button will display the text `"Back"` with a `"chevron-back"` icon on `ios`, and an `"arrow-back-sharp"` icon on `md`. This can be customized per back button component by setting the `icon` or `text` properties. Alternatively, it can be set globally using the `backButtonIcon` or `backButtonText` properties in the global config. See the [Config docs](../developing/config) for more information.
 
 import Custom from '@site/static/usage/v7/back-button/custom/index.md';
 

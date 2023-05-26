@@ -18,7 +18,7 @@ import TabItem from '@theme/TabItem';
 
 For components such as `ion-alert` developers can allow for custom or user-provided content. This content can be plain text or HTML and should be considered untrusted. As with any untrusted input, it is important to sanitize it before doing anything else with it. In particular, using things like `innerHTML` without sanitization provides an attack vector for bad actors to input malicious content and potentially launch a [Cross Site Scripting attack (XSS)](https://en.wikipedia.org/wiki/Cross-site_scripting).
 
-Ionic comes built in with basic sanitization methods for the components it provides, but for user-created components it is up to the developer to make sure all data is sanitized. Different frameworks have different solutions for sanitizing user input, so developers should familiarize themselves with what their specific framework offers.
+Ionic comes built in with a basic sanitization implementation for the components it provides. However, it is not a comprehensive solution. It is up to the developer to make sure all data that is passed is sanitized. Different frameworks have different solutions for sanitizing user input, so developers should familiarize themselves with what their specific framework offers.
 
 For developers who are not using a framework, or for developers whose framework does not provide the sanitization methods they need, we recommend using [sanitize-html](https://www.npmjs.com/package/sanitize-html). This package provides a simple HTML sanitizer that allows the developer to specify the exact tags and attributes that they want to allow in their application.
 
@@ -61,6 +61,10 @@ To learn more about the built-in protections that React and JSX provide, see the
 Vue does not provide any type of sanitizing methods built in. It is recommended that developers use a package such as [sanitize-html](https://www.npmjs.com/package/sanitize-html).
 
 To learn more about the security recommendations for binding to directives such as `v-html`, see the [Vue Syntax Guide](https://vuejs.org/v2/guide/syntax.html#Raw-HTML).
+
+## Disabling Custom HTML Parsing via `innerHTML`
+
+`ion-alert`, `ion-infinite-scroll-content`, `ion-loading`, `ion-refresher-content`, and `ion-toast` accept custom HTML as strings for certain properties. These strings are added to the DOM using `innerHTML` and must be properly sanitized by the developer. Developers can disable this functionality by setting `innerHTMLTemplatesEnabled: false` in the [IonicConfig](../developing/config#ionicconfig). When `innerHTMLTemplatesEnabled` is `false`, the values passed to the affected components will always be interpreted as strings.
 
 ## Ejecting from the built-in sanitizer
 

@@ -63,7 +63,7 @@ Below is a table listing all the possible platform values along with correspondi
 
 #### Customizing Platform Detection Functions
 
-The function used to detect a specific platform can be overridden by providing an alternative function in the global [Ionic config](./config). Each function takes `window` as a parameter and returns a boolean.
+The function used to detect a specific platform can be overridden by providing an alternative function in the global [Ionic config](../developing/config). Each function takes `window` as a parameter and returns a boolean.
 
 ```tsx
 import { IonicModule } from '@ionic/angular';

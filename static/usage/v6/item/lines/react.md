@@ -7,9 +7,7 @@ function Example() {
   return (
     <>
       <IonItem>
-        <IonLabel>
-          Default Item Lines
-        </IonLabel>
+        <IonLabel>Default Item Lines</IonLabel>
       </IonItem>
 
       <IonItem lines="inset">

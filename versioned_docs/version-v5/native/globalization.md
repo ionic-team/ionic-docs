@@ -51,12 +51,14 @@ This plugin obtains information and performs operations specific to the user's l
 >
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
-      $ npm install cordova-plugin-globalization {'\n'}$ npm install @awesome-cordova-plugins/globalization {'\n'}$ ionic cap sync
+      $ npm install cordova-plugin-globalization {'\n'}$ npm install @awesome-cordova-plugins/globalization {'\n'}$
+      ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
-      $ ionic cordova plugin add cordova-plugin-globalization {'\n'}$ npm install @awesome-cordova-plugins/globalization {'\n'}
+      $ ionic cordova plugin add cordova-plugin-globalization {'\n'}$ npm install @awesome-cordova-plugins/globalization{' '}
+      {'\n'}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">

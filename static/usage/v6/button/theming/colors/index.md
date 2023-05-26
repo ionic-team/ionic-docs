@@ -5,4 +5,4 @@ import react from './react.md';
 import vue from './vue.md';
 import angular from './angular.md';
 
-<Playground code={{ javascript, react, vue, angular }} src="usage/v6/button/theming/colors/demo.html" />
+<Playground version="6" code={{ javascript, react, vue, angular }} src="usage/v6/button/theming/colors/demo.html" />

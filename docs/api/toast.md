@@ -4,12 +4,12 @@ title: "ion-toast"
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-import Props from '@site/static/auto-generated/toast/props.md';
-import Events from '@site/static/auto-generated/toast/events.md';
-import Methods from '@site/static/auto-generated/toast/methods.md';
-import Parts from '@site/static/auto-generated/toast/parts.md';
-import CustomProps from '@site/static/auto-generated/toast/custom-props.md';
-import Slots from '@site/static/auto-generated/toast/slots.md';
+import Props from '@ionic-internal/component-api/v7/toast/props.md';
+import Events from '@ionic-internal/component-api/v7/toast/events.md';
+import Methods from '@ionic-internal/component-api/v7/toast/methods.md';
+import Parts from '@ionic-internal/component-api/v7/toast/parts.md';
+import CustomProps from '@ionic-internal/component-api/v7/toast/custom-props.md';
+import Slots from '@ionic-internal/component-api/v7/toast/slots.md';
 
 <head>
   <title>ion-toast Component: A Dismissible App Notification Alert</title>
@@ -48,18 +48,29 @@ import ControllerExample from '@site/static/usage/v7/toast/presenting/controller
 
 ## Dismissing
 
+Toasts are intended to be subtle notifications and should not interrupt the user. As a result, user interaction should not be required to dismiss the toast.
+
 The toast can be dismissed automatically after a specific amount of time by passing the number of milliseconds to display it in the `duration` of the toast options. If a button with a role of `"cancel"` is added, then that button will dismiss the toast. To dismiss the toast after creation, call the `dismiss()` method on the instance.
+
+Pressing the hardware back button does not dismiss toasts since they are not supposed to interrupt the user.
 
 The following example demonstrates how to use the `buttons` property to add a button that automatically dismisses the toast when clicked, as well as how to collect the `role` of the dismiss event.
 
 import ButtonsPlayground from '@site/static/usage/v7/toast/buttons/index.md';
 
 <ButtonsPlayground />
-  
 
 ## Positioning
 
 Toasts can be positioned at the top, bottom or middle of the viewport. The position can be passed upon creation. The possible values are `top`, `bottom` and `middle`. If the position is not specified, the toast will be displayed at the bottom of the viewport.
+
+## Layout
+
+Button containers within the toast can be displayed either on the same line as the message or stacked on separate lines using the `layout` property. The stacked layout should be used with buttons that have long text values. Additionally, buttons in a stacked toast layout can use a `side` value of either `start` or `end`, but not both.
+
+import StackedPlayground from '@site/static/usage/v7/toast/layout/index.md';
+
+<StackedPlayground />
 
 ## Icons
 
@@ -123,19 +134,17 @@ Toasts are intended to be subtle notifications and are not intended to interrupt
 
 ### Screen Readers
 
-`ion-toast` has `aria-live="polite"` and `aria-atomic="true"` set by default.
+`ion-toast` has `role="status"` and `aria-live="polite"` set on the inner `.toast-content` element. This causes screen readers to only announce the toast message and header. Buttons and icons will not be announced.
 
-`aria-live` causes screen readers to announce the content of the toast when it is updated. However, since the attribute is set to `'polite'`, screen readers generally do not interrupt the current task. Developers can customize this behavior by using the `htmlAttributes` property to set `aria-live` to `'assertive'`. This will cause screen readers to immediately notify the user when a toast is updated, potentially interrupting any previous updates.
+`aria-live` causes screen readers to announce the content of the toast when it is updated. However, since the attribute is set to `'polite'`, screen readers should not interrupt the current task.
 
-`aria-atomic="true"` is set to ensure that the entire toast is announced as a single unit. This is useful when dynamically updating the content of the toast as it prevents screen readers from announcing only the content that has changed. 
+Since toasts are intended to be subtle notification, `aria-live` should never be set to `"assertive"`. If developers need to interrupt the user with an important message, we recommend using an [alert](./alert).
 
 ### Tips
 
 While this is not a complete list, here are some guidelines to follow when using toasts.
 
-* Do not require user interaction to dismiss toasts. For example, having a "Dismiss" button in the toast is fine, but the toast should also automatically dismiss on its own after a timeout period. If you need user interaction for a notification, consider using [ion-alert](./alert) instead.
-
-* Avoid opening multiple toasts in quick succession. If `aria-live` is set to `'assertive'`, screen readers may interrupt the reading of the current task to announce the new toast, causing the context of the previous toast to be lost.
+* Do not require user interaction to dismiss toasts. For example, having a "Dismiss" button in the toast is fine, but the toast should also automatically dismiss on its own after a timeout period. If you need user interaction for a notification, consider using an [alert](./alert) instead.
 
 * For toasts with long messages, consider adjusting the `duration` property to allow users enough time to read the content of the toast.
 

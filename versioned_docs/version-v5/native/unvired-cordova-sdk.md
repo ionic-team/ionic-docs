@@ -60,14 +60,14 @@ pod repo update
 >
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
-      $ npm install https://github.com/unvired/cordova-plugin-unvired-sdk {'\n'}$ npm install @awesome-cordova-plugins/unvired-cordova-sdk{' '}
-      {'\n'}$ ionic cap sync
+      $ npm install https://github.com/unvired/cordova-plugin-unvired-sdk {'\n'}$ npm install
+      @awesome-cordova-plugins/unvired-cordova-sdk {'\n'}$ ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
-      $ ionic cordova plugin add https://github.com/unvired/cordova-plugin-unvired-sdk {'\n'}$ npm install @awesome-cordova-plugins/unvired-cordova-sdk{' '}
-      {'\n'}
+      $ ionic cordova plugin add https://github.com/unvired/cordova-plugin-unvired-sdk {'\n'}$ npm install
+      @awesome-cordova-plugins/unvired-cordova-sdk {'\n'}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">

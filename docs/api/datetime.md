@@ -1,12 +1,12 @@
 ---
 title: "ion-datetime"
 ---
-import Props from '@site/static/auto-generated/datetime/props.md';
-import Events from '@site/static/auto-generated/datetime/events.md';
-import Methods from '@site/static/auto-generated/datetime/methods.md';
-import Parts from '@site/static/auto-generated/datetime/parts.md';
-import CustomProps from '@site/static/auto-generated/datetime/custom-props.md';
-import Slots from '@site/static/auto-generated/datetime/slots.md';
+import Props from '@ionic-internal/component-api/v7/datetime/props.md';
+import Events from '@ionic-internal/component-api/v7/datetime/events.md';
+import Methods from '@ionic-internal/component-api/v7/datetime/methods.md';
+import Parts from '@ionic-internal/component-api/v7/datetime/parts.md';
+import CustomProps from '@ionic-internal/component-api/v7/datetime/custom-props.md';
+import Slots from '@ionic-internal/component-api/v7/datetime/slots.md';
 
 import Basic from '@site/static/usage/v7/datetime/basic/index.md';
 
@@ -30,6 +30,9 @@ import CustomizingTitle from '@site/static/usage/v7/datetime/title/customizing-t
 import ShowingConfirmationButtons from '@site/static/usage/v7/datetime/buttons/showing-confirmation-buttons/index.md';
 import CustomizingButtons from '@site/static/usage/v7/datetime/buttons/customizing-buttons/index.md';
 import CustomizingButtonTexts from '@site/static/usage/v7/datetime/buttons/customizing-button-texts/index.md';
+
+import HighlightedDatesArray from '@site/static/usage/v7/datetime/highlightedDates/array/index.md';
+import HighlightedDatesCallback from '@site/static/usage/v7/datetime/highlightedDates/callback/index.md';
 
 import MultipleDateSelection from '@site/static/usage/v7/datetime/multiple/index.md';
 
@@ -83,7 +86,7 @@ always in the 24-hour format, so `00` is `12am` on a 12-hour clock, `13` means
 `1pm`, and `23` means `11pm`.
 
 :::note
-While seconds and milliseconds can be specified using the ISO 8601 datetime format, `ion-datetime` does not provide an interface for second and millisecond selection. Any second or millisecond values provided will be ignored.
+While seconds, milliseconds, and time zone can be specified using the ISO 8601 datetime format, `ion-datetime` does not provide an interface for second, millisecond, and time zone selection. Any second, millisecond, or time zone values provided will be ignored.
 :::
 
 ## Basic Usage
@@ -283,6 +286,30 @@ Developers can provide their own buttons for advanced custom behavior.
 
 <CustomizingButtons />
 
+## Highlighting Specific Dates
+
+Using the `highlightedDates` property, developers can style particular dates with custom text or background colors. This property can be defined as either an array of dates and their colors, or a callback that receives an ISO string and returns the colors to use.
+
+When specifying colors, any valid CSS color format can be used. This includes hex codes, rgba, [color variables](../theming/colors), etc.
+
+To maintain a consistent user experience, the style of selected date(s) will always override custom highlights.
+
+:::note
+This property is only supported when `preferWheel="false"`, and using a `presentation` of either `"date"`, `"date-time"`, or `"time-date"`.
+:::
+
+### Using Array
+
+An array is better when the highlights apply to fixed dates, such as due dates.
+
+<HighlightedDatesArray />
+
+### Using Callback
+
+A callback is better when the highlighted dates are recurring, such as birthdays or recurring meetings.
+
+<HighlightedDatesCallback />
+
 ## Theming
 
 Ionic's powerful theming system can be used to easily change your entire app to match a certain theme. In this example, we used the [Color Creator](../theming/colors#new-color-creator) and the [Stepped Color Generator](../theming/themes#stepped-color-generator) to create a rose color palette that we can use for `ion-datetime`.
@@ -309,7 +336,7 @@ const userTimeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
 const date = new Date('2014-10-25T10:46:20Z');
 
 // Use date-fns-tz to convert from UTC to a zoned time
-const zonedTime = dateFnsTz.utcToZonedTime(date, userTimeZone);
+const zonedTime = utcToZonedTime(date, userTimeZone);
 
 // Create a formatted string from the zoned time
 format(zonedTime, 'yyyy-MM-dd HH:mm:ssXXX', { timeZone: userTimeZone });

@@ -17,6 +17,7 @@ import vue_page_one from './vue/page_one_vue.md';
 import vue_page_two from './vue/page_two_vue.md';
 
 <Playground
+  version="6"
   code={{
     javascript,
     angular: {

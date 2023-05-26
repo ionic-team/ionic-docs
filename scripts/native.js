@@ -36,6 +36,7 @@ async function buildPluginApiDocs(pluginId) {
 
   const apiContent = createApiPage(pluginId, readme, pkgJson);
   const fileName = `${pluginId}.md`;
+
   fs.writeFileSync(`docs/native/${fileName}`, apiContent);
   fs.writeFileSync(`versioned_docs/version-v6/native/${fileName}`, apiContent);
 }
@@ -85,18 +86,15 @@ function toTitleCase(str) {
 }
 
 if (!String.prototype.replaceAll) {
-	String.prototype.replaceAll = function(str, newStr){
+  String.prototype.replaceAll = function (str, newStr) {
+    // If a regex pattern
+    if (Object.prototype.toString.call(str).toLowerCase() === '[object regexp]') {
+      return this.replace(str, newStr);
+    }
 
-		// If a regex pattern
-		if (Object.prototype.toString.call(str).toLowerCase() === '[object regexp]') {
-			return this.replace(str, newStr);
-		}
-
-		// If a string
-		return this.replace(new RegExp(str, 'g'), newStr);
-
-	};
+    // If a string
+    return this.replace(new RegExp(str, 'g'), newStr);
+  };
 }
 
 main();
-

@@ -38,7 +38,7 @@ By default, the latest stable SDK Platform is installed, which includes a collec
 To install system images and other minor SDK platform packages, you may need to ensure **Show Package Details** is checked at the bottom of the SDK Manager.
 ![Android Studio SDK Manager](/img/installation/android-studio-sdk.png)
 
-For future reference, the Android SDK can be managed with Android Studio in the **Configure** &raquo; **SDK Manager** menu of the Android Studio welcome screen or **Tools** &raquo; **SDK Manager** inside Android projects.
+For future reference, the Android SDK can be managed with Android Studio from the context menu at the top right of the Android Studio welcome screen (select **SDK Manager**) or **Tools** &raquo; **SDK Manager** inside Android projects.
 
 ### Configuring Command Line Tools
 
@@ -79,7 +79,7 @@ In `~/.bashrc`, `~/.bash_profile`, or similar shell startup scripts, make the fo
 
 Android Virtual Devices (AVDs) are blueprints that the Android emulator uses to run the Android OS. The following documentation is a quick way to get the Android emulator set up. For more detailed instructions and information, see <a href="https://developer.android.com/studio/run/managing-avds" target="_blank">the Android documentation</a>.
 
-AVDs are managed with the AVD Manager. In the Android Studio welcome screen, click **Configure** &raquo; **AVD Manager**. The AVD Manager can also be opened inside Android projects in the **Tools** &raquo; **AVD Manager** menu.
+AVDs are managed with the Virtual Device Manager. In the Android Studio welcome screen, the context menu at the top right, then **Virtual Device Manager**. The Virtual Device Manager can also be opened inside Android projects in the **Tools** &raquo; **Device Manager** menu.
 
 ![AVD Setup](/img/installation/android-studio-avd-setup.png)
 
@@ -112,10 +112,10 @@ Additional setup is required for Cordova to support programmatic builds. This se
 
 ### Java
 
-Native Android apps are compiled with the <a href="https://java.com/en/" target="_blank">Java</a> programming language. Download JDK8 from the <a href="https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html" target="_blank">download page</a>.
+Native Android apps are compiled with the <a href="https://java.com/en/" target="_blank">Java</a> programming language. Download the <a href="https://www.oracle.com/java/technologies/javase-jdk11-downloads.html" target="_blank">Java Development Kit (JDK) 11</a> if you are using **`cordova-android`** `10.0.0` or greater.
 
 :::note
-Unfortunately, Cordova is not compatible with the latest version of Java.
+If you are using any version of **`cordova-android`** below `10.0.0`, install the <a href="https://www.oracle.com/java/technologies/javase/javase-jdk8-downloads.html" target="_blank">Java Development Kit (JDK) 8</a>.
 :::
 
 ### Gradle

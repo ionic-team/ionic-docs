@@ -51,7 +51,8 @@ Vibrates the device
 >
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
-      $ npm install cordova-plugin-vibration {'\n'}$ npm install @awesome-cordova-plugins/vibration {'\n'}$ ionic cap sync
+      $ npm install cordova-plugin-vibration {'\n'}$ npm install @awesome-cordova-plugins/vibration {'\n'}$ ionic cap
+      sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">

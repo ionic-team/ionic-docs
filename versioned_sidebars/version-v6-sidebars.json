@@ -72,6 +72,10 @@
         {
           "type": "doc",
           "id": "version-v6/developing/keyboard"
+        },
+        {
+          "type": "doc",
+          "id": "version-v6/developing/config"
         }
       ],
       "collapsible": true
@@ -212,10 +216,6 @@
         },
         {
           "type": "doc",
-          "id": "version-v6/angular/config"
-        },
-        {
-          "type": "doc",
           "id": "version-v6/angular/platform"
         },
         {
@@ -305,10 +305,6 @@
         {
           "type": "doc",
           "id": "version-v6/react/slides"
-        },
-        {
-          "type": "doc",
-          "id": "version-v6/react/config"
         },
         {
           "type": "doc",
@@ -409,10 +405,6 @@
         {
           "type": "doc",
           "id": "version-v6/vue/utility-functions"
-        },
-        {
-          "type": "doc",
-          "id": "version-v6/vue/config"
         },
         {
           "type": "doc",

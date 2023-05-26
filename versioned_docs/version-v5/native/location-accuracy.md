@@ -56,14 +56,14 @@ This Cordova/Phonegap plugin for Android and iOS to request enabling/changing of
 >
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
-      $ npm install cordova-plugin-request-location-accuracy {'\n'}$ npm install @awesome-cordova-plugins/location-accuracy {'\n'}$
-      ionic cap sync
+      $ npm install cordova-plugin-request-location-accuracy {'\n'}$ npm install
+      @awesome-cordova-plugins/location-accuracy {'\n'}$ ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
-      $ ionic cordova plugin add cordova-plugin-request-location-accuracy {'\n'}$ npm install @awesome-cordova-plugins/location-accuracy{' '}
-      {'\n'}
+      $ ionic cordova plugin add cordova-plugin-request-location-accuracy {'\n'}$ npm install
+      @awesome-cordova-plugins/location-accuracy {'\n'}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">

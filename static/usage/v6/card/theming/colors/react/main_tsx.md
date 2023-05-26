@@ -13,9 +13,7 @@ function Example() {
           <IonCardSubtitle>Card Subtitle</IonCardSubtitle>
         </IonCardHeader>
 
-        <IonCardContent>
-          Card Content
-        </IonCardContent>
+        <IonCardContent>Card Content</IonCardContent>
       </IonCard>
 
       <IonCard color="secondary">
@@ -24,9 +22,7 @@ function Example() {
           <IonCardSubtitle>Card Subtitle</IonCardSubtitle>
         </IonCardHeader>
 
-        <IonCardContent>
-          Card Content
-        </IonCardContent>
+        <IonCardContent>Card Content</IonCardContent>
       </IonCard>
 
       <IonCard color="tertiary">
@@ -35,9 +31,7 @@ function Example() {
           <IonCardSubtitle>Card Subtitle</IonCardSubtitle>
         </IonCardHeader>
 
-        <IonCardContent>
-          Card Content
-        </IonCardContent>
+        <IonCardContent>Card Content</IonCardContent>
       </IonCard>
 
       <IonCard color="success">
@@ -46,9 +40,7 @@ function Example() {
           <IonCardSubtitle>Card Subtitle</IonCardSubtitle>
         </IonCardHeader>
 
-        <IonCardContent>
-          Card Content
-        </IonCardContent>
+        <IonCardContent>Card Content</IonCardContent>
       </IonCard>
 
       <IonCard color="warning">
@@ -57,9 +49,7 @@ function Example() {
           <IonCardSubtitle>Card Subtitle</IonCardSubtitle>
         </IonCardHeader>
 
-        <IonCardContent>
-          Card Content
-        </IonCardContent>
+        <IonCardContent>Card Content</IonCardContent>
       </IonCard>
 
       <IonCard color="danger">
@@ -68,9 +58,7 @@ function Example() {
           <IonCardSubtitle>Card Subtitle</IonCardSubtitle>
         </IonCardHeader>
 
-        <IonCardContent>
-          Card Content
-        </IonCardContent>
+        <IonCardContent>Card Content</IonCardContent>
       </IonCard>
 
       <IonCard color="light">
@@ -79,9 +67,7 @@ function Example() {
           <IonCardSubtitle>Card Subtitle</IonCardSubtitle>
         </IonCardHeader>
 
-        <IonCardContent>
-          Card Content
-        </IonCardContent>
+        <IonCardContent>Card Content</IonCardContent>
       </IonCard>
 
       <IonCard color="medium">
@@ -90,9 +76,7 @@ function Example() {
           <IonCardSubtitle>Card Subtitle</IonCardSubtitle>
         </IonCardHeader>
 
-        <IonCardContent>
-          Card Content
-        </IonCardContent>
+        <IonCardContent>Card Content</IonCardContent>
       </IonCard>
 
       <IonCard color="dark">
@@ -101,9 +85,7 @@ function Example() {
           <IonCardSubtitle>Card Subtitle</IonCardSubtitle>
         </IonCardHeader>
 
-        <IonCardContent>
-          Card Content
-        </IonCardContent>
+        <IonCardContent>Card Content</IonCardContent>
       </IonCard>
     </>
   );

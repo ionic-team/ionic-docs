@@ -51,12 +51,14 @@ This plugin is used to access Paytm's native CustomUISDK framework's apis.
 >
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
-      $ npm install cordova-paytm-customuisdk {'\n'}$ npm install @awesome-cordova-plugins/custom-uisdk {'\n'}$ ionic cap sync
+      $ npm install cordova-paytm-customuisdk {'\n'}$ npm install @awesome-cordova-plugins/custom-uisdk {'\n'}$ ionic
+      cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
-      $ ionic cordova plugin add cordova-paytm-customuisdk {'\n'}$ npm install @awesome-cordova-plugins/custom-uisdk {'\n'}
+      $ ionic cordova plugin add cordova-paytm-customuisdk {'\n'}$ npm install @awesome-cordova-plugins/custom-uisdk{' '}
+      {'\n'}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">

@@ -5,4 +5,9 @@ import react from './react.md';
 import vue from './vue.md';
 import angular from './angular.md';
 
-<Playground size="250px" code={{ javascript, react, vue, angular }} src="usage/v6/textarea/basic/demo.html" />
+<Playground
+  version="6"
+  size="250px"
+  code={{ javascript, react, vue, angular }}
+  src="usage/v6/textarea/basic/demo.html"
+/>

@@ -18,7 +18,5 @@ import { Component } from '@angular/core';
     </ion-content>
   `,
 })
-export class PageTwoComponent {
-
-}
+export class PageTwoComponent {}
 ```

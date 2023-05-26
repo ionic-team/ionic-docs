@@ -2,6 +2,8 @@ const path = require('path');
 const prismic = require('@prismicio/client');
 const fetch = require('node-fetch');
 
+const VERSIONS_JSON = require('./versions.json');
+
 const BASE_URL = '/docs';
 
 module.exports = {
@@ -98,8 +100,8 @@ module.exports = {
         {
           type: 'cta',
           position: 'left',
-          text: 'Ionic v6.0.0 Upgrade Guide',
-          href: `/intro/upgrading-to-ionic-6`,
+          text: 'Ionic v7.0.0 Upgrade Guide',
+          href: `/updating/7-0`,
         },
         {
           type: 'docsVersionDropdown',
@@ -279,16 +281,10 @@ module.exports = {
           return `https://github.com/ionic-team/ionic-docs/edit/main/${versionDocsDirPath}/${docPath}`;
         },
         exclude: ['README.md'],
-        lastVersion: 'v6',
+        lastVersion: 'current',
         versions: {
           current: {
-            label: 'v7 (beta)',
-            banner: 'unreleased',
-            path: 'v7',
-          },
-          v6: {
-            label: 'v6',
-            banner: 'none',
+            label: 'v7',
           },
         },
       },
@@ -314,6 +310,12 @@ module.exports = {
         },
       };
     },
+    [
+      path.resolve(__dirname, 'plugins', 'docusaurus-plugin-ionic-component-api'),
+      {
+        versions: VERSIONS_JSON,
+      },
+    ],
   ],
   themes: [
     [

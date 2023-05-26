@@ -62,7 +62,8 @@ Advantages over Javascript requests:
 >
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
-      $ npm install cordova-plugin-advanced-http {'\n'}$ npm install @awesome-cordova-plugins/http {'\n'}$ ionic cap sync
+      $ npm install cordova-plugin-advanced-http {'\n'}$ npm install @awesome-cordova-plugins/http {'\n'}$ ionic cap
+      sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">

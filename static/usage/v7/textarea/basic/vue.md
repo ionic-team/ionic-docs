@@ -2,26 +2,23 @@
 <template>
   <ion-list>
     <ion-item>
-      <ion-label>Regular textarea</ion-label>
-      <ion-textarea placeholder="Type something here"></ion-textarea>
+      <ion-textarea label="Regular textarea" placeholder="Type something here"></ion-textarea>
     </ion-item>
     <ion-item>
-      <ion-label>Readonly textarea</ion-label>
-      <ion-textarea :readonly="true" placeholder="Can't edit this"></ion-textarea>
+      <ion-textarea :readonly="true" label="Readonly textarea" placeholder="Can't edit this"></ion-textarea>
     </ion-item>
     <ion-item>
-      <ion-label>Disabled textarea</ion-label>
-      <ion-textarea :disabled="true" placeholder="Can't type here"></ion-textarea>
+      <ion-textarea :disabled="true" label="Disabled textarea" placeholder="Can't type here"></ion-textarea>
     </ion-item>
   </ion-list>
 </template>
 
 <script>
-  import { IonItem, IonLabel, IonList, IonTextarea } from '@ionic/vue';
+  import { IonItem, IonList, IonTextarea } from '@ionic/vue';
   import { defineComponent } from 'vue';
 
   export default defineComponent({
-    components: { IonItem, IonLabel, IonList, IonTextarea },
+    components: { IonItem, IonList, IonTextarea },
   });
 </script>
 ```

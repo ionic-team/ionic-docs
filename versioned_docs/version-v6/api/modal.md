@@ -2,12 +2,12 @@
 title: 'ion-modal'
 ---
 
-import Props from '@site/static/auto-generated/modal/props.md';
-import Events from '@site/static/auto-generated/modal/events.md';
-import Methods from '@site/static/auto-generated/modal/methods.md';
-import Parts from '@site/static/auto-generated/modal/parts.md';
-import CustomProps from '@site/static/auto-generated/modal/custom-props.md';
-import Slots from '@site/static/auto-generated/modal/slots.md';
+import Props from '@ionic-internal/component-api/v6/modal/props.md';
+import Events from '@ionic-internal/component-api/v6/modal/events.md';
+import Methods from '@ionic-internal/component-api/v6/modal/methods.md';
+import Parts from '@ionic-internal/component-api/v6/modal/parts.md';
+import CustomProps from '@ionic-internal/component-api/v6/modal/custom-props.md';
+import Slots from '@ionic-internal/component-api/v6/modal/slots.md';
 
 <head>
   <title>ion-modal: Ionic Mobile App Custom Modal API Component</title>
@@ -55,7 +55,7 @@ import ControllerExample from '@site/static/usage/v6/modal/controller/index.md';
 
 When entering data into a modal, it is often desirable to have a way of preventing accidental data loss. The `canDismiss` property on `ion-modal` gives developers control over when a modal is allowed to dismiss.
 
-There are two different ways of using the `canDismiss` property.
+There are two different ways of using the `canDismiss` property: setting a boolean value or setting a callback function.
 
 :::note
 Note: When using a sheet modal, `canDismiss` will not be checked on swipe if there is no `0` breakpoint set. However, it will still be checked when pressing `Esc` or the hardware back button.
@@ -82,6 +82,14 @@ Note that setting a callback function will cause the swipe gesture to be interru
 import CanDismissFunctionExample from '@site/static/usage/v6/modal/can-dismiss/function/index.md';
 
 <CanDismissFunctionExample />
+
+### Prevent swipe to close
+
+Developers may want to prevent users from swiping to close a modal. This can be done by setting a callback function for `canDismiss` and checking if the `role` is not `gesture`.
+
+import CanDismissPreventSwipeToCloseExample from '@site/static/usage/v6/modal/can-dismiss/prevent-swipe-to-close/index.md';
+
+<CanDismissPreventSwipeToCloseExample />
 
 ## Types of modals
 

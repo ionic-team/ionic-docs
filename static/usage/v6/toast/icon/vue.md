@@ -14,7 +14,7 @@
         const toast = await toastController.create({
           message: 'Hello World!',
           duration: 1500,
-          icon: globe
+          icon: globe,
         });
 
         await toast.present();

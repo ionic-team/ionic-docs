@@ -7,6 +7,13 @@ sidebar_label: 'ion-select-option'
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
+import Props from '@ionic-internal/component-api/v5/select-option/props.md';
+import Events from '@ionic-internal/component-api/v5/select-option/events.md';
+import Methods from '@ionic-internal/component-api/v5/select-option/methods.md';
+import Parts from '@ionic-internal/component-api/v5/select-option/parts.md';
+import CustomProps from '@ionic-internal/component-api/v5/select-option/custom-props.md';
+import Slots from '@ionic-internal/component-api/v5/select-option/slots.md';
+
 # ion-select-option
 
 Select Options are components that are child elements of a Select. Each option defined is passed and displayed in the Select dialog. For more information, see the [Select docs](select.md).
@@ -686,20 +693,24 @@ To customize an individual option, set a class on the `ion-select-option`:
 
 ## Properties
 
-### disabled
+<Props />
 
-|                 |                                                                                                                                                                                     |
-| --------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Description** | If `true`, the user cannot interact with the select option. This property does not apply when `interface="action-sheet"` as `ion-action-sheet` does not allow for disabled buttons. |
-| **Attribute**   | `disabled`                                                                                                                                                                          |
-| **Type**        | `boolean`                                                                                                                                                                           |
-| **Default**     | `false`                                                                                                                                                                             |
+## Events
 
-### value
+<Events />
 
-|                 |                               |
-| --------------- | ----------------------------- |
-| **Description** | The text value of the option. |
-| **Attribute**   | `value`                       |
-| **Type**        | `any`                         |
-| **Default**     | `undefined`                   |
+## Methods
+
+<Methods />
+
+## CSS Shadow Parts
+
+<Parts />
+
+## CSS Custom Properties
+
+<CustomProps />
+
+## Slots
+
+<Slots />

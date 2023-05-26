@@ -1,12 +1,12 @@
 ---
 title: "ion-menu-button"
 ---
-import Props from '@site/static/auto-generated/menu-button/props.md';
-import Events from '@site/static/auto-generated/menu-button/events.md';
-import Methods from '@site/static/auto-generated/menu-button/methods.md';
-import Parts from '@site/static/auto-generated/menu-button/parts.md';
-import CustomProps from '@site/static/auto-generated/menu-button/custom-props.md';
-import Slots from '@site/static/auto-generated/menu-button/slots.md';
+import Props from '@ionic-internal/component-api/v7/menu-button/props.md';
+import Events from '@ionic-internal/component-api/v7/menu-button/events.md';
+import Methods from '@ionic-internal/component-api/v7/menu-button/methods.md';
+import Parts from '@ionic-internal/component-api/v7/menu-button/parts.md';
+import CustomProps from '@ionic-internal/component-api/v7/menu-button/custom-props.md';
+import Slots from '@ionic-internal/component-api/v7/menu-button/slots.md';
 
 <head>
   <title>Menu Button | ion-menu-button to Open an App Menu on A Page</title>

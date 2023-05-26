@@ -1,34 +1,34 @@
 ---
-title: "ion-tab-bar"
+title: 'ion-tab-bar'
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-import Props from '@site/static/auto-generated/tab-bar/props.md';
-import Events from '@site/static/auto-generated/tab-bar/events.md';
-import Methods from '@site/static/auto-generated/tab-bar/methods.md';
-import Parts from '@site/static/auto-generated/tab-bar/parts.md';
-import CustomProps from '@site/static/auto-generated/tab-bar/custom-props.md';
-import Slots from '@site/static/auto-generated/tab-bar/slots.md';
+import Props from '@ionic-internal/component-api/v6/tab-bar/props.md';
+import Events from '@ionic-internal/component-api/v6/tab-bar/events.md';
+import Methods from '@ionic-internal/component-api/v6/tab-bar/methods.md';
+import Parts from '@ionic-internal/component-api/v6/tab-bar/parts.md';
+import CustomProps from '@ionic-internal/component-api/v6/tab-bar/custom-props.md';
+import Slots from '@ionic-internal/component-api/v6/tab-bar/slots.md';
 
 <head>
   <title>ion-tab-bar with CSS Custom Properties for Tab Bar Components</title>
-  <meta name="description" content="The tab bar component contains a set of tab buttons and a tab bar must be provided inside of tabs to communicate. Read more about use and CSS custom properties." />
+  <meta
+    name="description"
+    content="The tab bar component contains a set of tab buttons and a tab bar must be provided inside of tabs to communicate. Read more about use and CSS custom properties."
+  />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="shadow" />
 
-
 The tab bar is a UI component that contains a set of [tab buttons](tab-button.md). A tab bar must be provided inside of [tabs](tabs.md) to communicate with each [tab](tab.md).
-
-
-
 
 ## Usage
 
-<Tabs groupId="framework" defaultValue="angular" values={[{ value: 'angular', label: 'Angular' }, { value: 'javascript', label: 'Javascript' }, { value: 'react', label: 'React' }, { value: 'stencil', label: 'Stencil' }, { value: 'vue', label: 'Vue' }]}>
+<Tabs groupId="framework" defaultValue="angular" values={[{ value: 'angular', label: 'Angular' }, { value: 'javascript', label: 'Javascript' }, { value: 'react', label: 'React' }, { value: 'vue', label: 'Vue' }]}>
 
 <TabItem value="angular">
 
@@ -50,7 +50,6 @@ The tab bar is a UI component that contains a set of [tab buttons](tab-button.md
 ```
 
 </TabItem>
-
 
 <TabItem value="javascript">
 
@@ -77,7 +76,6 @@ The tab bar is a UI component that contains a set of [tab buttons](tab-button.md
 ```
 
 </TabItem>
-
 
 <TabItem value="react">
 
@@ -106,49 +104,7 @@ export const TabBarExample: React.FC = () => (
 );
 ```
 
-
 </TabItem>
-
-
-<TabItem value="stencil">
-
-```tsx
-import { Component, h } from '@stencil/core';
-
-@Component({
-  tag: 'tab-bar-example',
-  styleUrl: 'tab-bar-example.css'
-})
-export class TabBarExample {
-  render() {
-    return [
-      <ion-tabs>
-        {/* Tab views */}
-        <ion-tab tab="account" component="page-account"></ion-tab>
-        <ion-tab tab="contact" component="page-contact"></ion-tab>
-        <ion-tab tab="settings" component="page-settings"></ion-tab>
-
-        {/* Tab bar */}
-        <ion-tab-bar slot="bottom">
-          <ion-tab-button tab="account">
-            <ion-icon name="person"></ion-icon>
-          </ion-tab-button>
-          <ion-tab-button tab="contact">
-            <ion-icon name="call"></ion-icon>
-          </ion-tab-button>
-          <ion-tab-button tab="settings">
-            <ion-icon name="settings"></ion-icon>
-          </ion-tab-button>
-        </ion-tab-bar>
-      </ion-tabs>
-    ];
-  }
-}
-```
-
-
-</TabItem>
-
 
 <TabItem value="vue">
 
@@ -171,16 +127,16 @@ export class TabBarExample {
 </template>
 
 <script>
-import { IonIcon, IonTabBar, IonTabButton, IonTabs } from '@ionic/vue';
-import { call, person, settings } from 'ionicons/icons';
-import { defineComponent } from 'vue';
+  import { IonIcon, IonTabBar, IonTabButton, IonTabs } from '@ionic/vue';
+  import { call, person, settings } from 'ionicons/icons';
+  import { defineComponent } from 'vue';
 
-export default defineComponent({
-  components: { IonIcon, IonTabBar, IonTabButton, IonTabs },
-  setup() {
-    return { call, person, settings }
-  }
-});
+  export default defineComponent({
+    components: { IonIcon, IonTabBar, IonTabButton, IonTabs },
+    setup() {
+      return { call, person, settings };
+    },
+  });
 </script>
 ```
 
@@ -189,19 +145,25 @@ export default defineComponent({
 </Tabs>
 
 ## Properties
+
 <Props />
 
 ## Events
+
 <Events />
 
 ## Methods
+
 <Methods />
 
 ## CSS Shadow Parts
+
 <Parts />
 
 ## CSS Custom Properties
+
 <CustomProps />
 
 ## Slots
+
 <Slots />

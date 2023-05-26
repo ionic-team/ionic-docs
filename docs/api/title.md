@@ -1,12 +1,12 @@
 ---
 title: "ion-title"
 ---
-import Props from '@site/static/auto-generated/title/props.md';
-import Events from '@site/static/auto-generated/title/events.md';
-import Methods from '@site/static/auto-generated/title/methods.md';
-import Parts from '@site/static/auto-generated/title/parts.md';
-import CustomProps from '@site/static/auto-generated/title/custom-props.md';
-import Slots from '@site/static/auto-generated/title/slots.md';
+import Props from '@ionic-internal/component-api/v7/title/props.md';
+import Events from '@ionic-internal/component-api/v7/title/events.md';
+import Methods from '@ionic-internal/component-api/v7/title/methods.md';
+import Parts from '@ionic-internal/component-api/v7/title/parts.md';
+import CustomProps from '@ionic-internal/component-api/v7/title/custom-props.md';
+import Slots from '@ionic-internal/component-api/v7/title/slots.md';
 
 <head>
   <title>ion-title: Ionic Framework App Title Component for Toolbars</title>

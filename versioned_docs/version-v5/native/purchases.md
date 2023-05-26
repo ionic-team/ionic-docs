@@ -69,12 +69,14 @@ For more detailed information, you can view our complete documentation at [docs.
 >
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
-      $ npm install cordova-plugin-purchases@2.0.0 {'\n'}$ npm install @awesome-cordova-plugins/purchases {'\n'}$ ionic cap sync
+      $ npm install cordova-plugin-purchases@2.0.0 {'\n'}$ npm install @awesome-cordova-plugins/purchases {'\n'}$ ionic
+      cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
-      $ ionic cordova plugin add cordova-plugin-purchases@2.0.0 {'\n'}$ npm install @awesome-cordova-plugins/purchases {'\n'}
+      $ ionic cordova plugin add cordova-plugin-purchases@2.0.0 {'\n'}$ npm install @awesome-cordova-plugins/purchases{' '}
+      {'\n'}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">

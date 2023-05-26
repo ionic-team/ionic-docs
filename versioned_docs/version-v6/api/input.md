@@ -2,12 +2,12 @@
 title: 'ion-input'
 ---
 
-import Props from '@site/static/auto-generated/input/props.md';
-import Events from '@site/static/auto-generated/input/events.md';
-import Methods from '@site/static/auto-generated/input/methods.md';
-import Parts from '@site/static/auto-generated/input/parts.md';
-import CustomProps from '@site/static/auto-generated/input/custom-props.md';
-import Slots from '@site/static/auto-generated/input/slots.md';
+import Props from '@ionic-internal/component-api/v6/input/props.md';
+import Events from '@ionic-internal/component-api/v6/input/events.md';
+import Methods from '@ionic-internal/component-api/v6/input/methods.md';
+import Parts from '@ionic-internal/component-api/v6/input/parts.md';
+import CustomProps from '@ionic-internal/component-api/v6/input/custom-props.md';
+import Slots from '@ionic-internal/component-api/v6/input/slots.md';
 
 <head>
   <title>ion-input: Custom Input Value Type Styling and CSS Properties</title>
@@ -80,6 +80,16 @@ The item counter is helper text that displays under an input to notify the user 
 import Counter from '@site/static/usage/v6/item/counter/index.md';
 
 <Counter />
+
+## Filtering User Input
+
+Developers can use the `ionInput` event to update the input value in response to user input such as a keypress. This is useful for filtering out invalid or unwanted characters.
+
+When storing the value in a state variable, we recommend updating both the state variable and the `ion-input` component value. This ensures that the state variable and the `ion-input` component value remain in sync.
+
+import FilteringData from '@site/static/usage/v6/input/filtering/index.md';
+
+<FilteringData />
 
 ## Theming
 

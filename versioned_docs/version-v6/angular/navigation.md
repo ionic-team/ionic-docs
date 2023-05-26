@@ -191,8 +191,8 @@ The following is an example of linear routing in a mobile app:
 
 <video
   style={{
-    'margin': '40px auto',
-    'display': 'flex'
+    margin: '40px auto',
+    display: 'flex',
   }}
   width="400"
   src={useBaseUrl('video/linear-routing-demo.mp4')}
@@ -217,8 +217,8 @@ The following is an example of non-linear routing:
 
 <video
   style={{
-    'margin': '40px auto',
-    'display': 'flex'
+    margin: '40px auto',
+    display: 'flex',
   }}
   width="400"
   src={useBaseUrl('video/non-linear-routing-demo.mp4')}
@@ -432,8 +432,8 @@ The example below shows how the iOS App Store app handles presenting an "Account
 
 <video
   style={{
-    'margin': '40px auto',
-    'display': 'flex'
+    margin: '40px auto',
+    display: 'flex',
   }}
   width="400"
   src={useBaseUrl('video/tabs-account-demo.mp4')}
@@ -448,6 +448,6 @@ Instead, we recommend having routes in each tab that reference the same componen
 
 The example below shows how the Spotify app reuses the same album component to show content in multiple tabs. Notice that each screenshot shows the same album but from a different tab.
 
-| Home Tab | Search Tab |
-| :------: | :--------: |
+|                      Home Tab                       |                      Search Tab                       |
+| :-------------------------------------------------: | :---------------------------------------------------: |
 | <img src={useBaseUrl('img/usage/tabs-home.jpg')} /> | <img src={useBaseUrl('img/usage/tabs-search.jpg')} /> |

@@ -14,8 +14,6 @@ As with regular device deploys, you will need a cable to connect your device to 
 
 ### Capacitor
 
-Capacitor does not yet have a programmatic build for development (track [this issue](https://github.com/ionic-team/capacitor/issues/324) for progress), so the Ionic CLI does **not** automatically forward ports for iOS and Android.
-
 To use Live Reload with Capacitor, make sure you're either using a virtual device or a hardware device connected to the same Wi-Fi network as your computer. Then, you'll need to specify that you want to use an external address for the dev server using the `--external` flag.
 
 ```shell

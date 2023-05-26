@@ -39,7 +39,7 @@
         </ion-fab-button>
       </ion-fab-list>
     </ion-fab>
-      
+
     <ion-fab slot="fixed" vertical="bottom" horizontal="end">
       <ion-fab-button>
         <ion-icon :icon="chevronUpCircle"></ion-icon>
@@ -61,14 +61,21 @@
 
 <script lang="ts">
   import { IonContent, IonFab, IonFabButton, IonFabList, IonHeader, IonIcon, IonTitle, IonToolbar } from '@ionic/vue';
-  import { chevronDownCircle, chevronForwardCircle, chevronUpCircle, colorPalette, document, globe } from 'ionicons/icons';
+  import {
+    chevronDownCircle,
+    chevronForwardCircle,
+    chevronUpCircle,
+    colorPalette,
+    document,
+    globe,
+  } from 'ionicons/icons';
   import { defineComponent } from 'vue';
 
   export default defineComponent({
     components: { IonContent, IonFab, IonFabButton, IonFabList, IonHeader, IonIcon, IonTitle, IonToolbar },
     setup() {
-      return { chevronDownCircle, chevronForwardCircle, chevronUpCircle, colorPalette, document, globe }
-    }
+      return { chevronDownCircle, chevronForwardCircle, chevronUpCircle, colorPalette, document, globe };
+    },
   });
 </script>
 ```

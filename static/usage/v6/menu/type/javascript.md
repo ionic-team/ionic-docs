@@ -39,7 +39,8 @@
         </ion-label>
         <ion-radio value="push"></ion-radio>
       </ion-item>
-    </ion-radio-group> <br />
+    </ion-radio-group>
+    <br />
     <ion-menu-toggle>
       <ion-button>Click to open the menu</ion-button>
     </ion-menu-toggle>

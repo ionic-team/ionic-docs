@@ -39,12 +39,8 @@ Because Ionic is based on web technologies, it works just as well on desktop bro
 
 |   Browser   | Ionic v7 | Ionic v6 | Ionic v5 | Ionic v4 |
 | :---------: | :------: | :------: | :------: | :------: |
-| **Chrome**  | 79+      | 60+      | ✔        | ✔        |
-| **Safari**  | 14+      | 13+      | ✔        | ✔        |
-|  **Edge**   | 79+      | 79+      | 79+      | ✔        |
-| **Firefox** | 70+      | 63+      | ✔        | ✔        |
-|  **IE 11**  | **X**    | **X**    | **X**    | **X**    |
-
-:::note
-Check the docs for [Ionic Animations](../utilities/animations.md#browser-support) and [Ionic Gestures](../utilities/gestures.md#browser-support) for specific browser support related to those utilities.
-:::
+| **Chrome**  |   79+    |   60+    |    ✔     |    ✔     |
+| **Safari**  |   14+    |   13+    |    ✔     |    ✔     |
+|  **Edge**   |   79+    |   79+    |   79+    |    ✔     |
+| **Firefox** |   70+    |   63+    |    ✔     |    ✔     |
+|  **IE 11**  |  **X**   |  **X**   |  **X**   |  **X**   |
