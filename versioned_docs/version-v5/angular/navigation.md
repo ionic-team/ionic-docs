@@ -109,10 +109,6 @@ export class LoginComponent {
 
 Both options provide the same navigation mechanism, just fitting different use cases.
 
-:::note
-A note on navigation with relative URLs: Currently, to support multiple navigation stacks, relative URLs are something not supported
-:::
-
 ## Lazy loading routes
 
 Now the current way our routes are setup makes it so they are included in the same chunk as the root app.module, which is not ideal. Instead, the router has a setup that allows the components to be isolated to their own chunks.
