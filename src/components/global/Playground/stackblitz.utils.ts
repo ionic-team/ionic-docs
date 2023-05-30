@@ -25,7 +25,7 @@ export interface EditorOptions {
    */
   dependencies?: {
     [key: string]: string;
-  }
+  };
 
   /**
    * `true` if `ion-app` and `ion-content` should automatically be injected into the

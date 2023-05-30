@@ -51,8 +51,8 @@ This plugin enables serial communication over Bluetooth. It was written for comm
 >
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
-      $ npm install cordova-plugin-bluetooth-serial {'\n'}$ npm install @awesome-cordova-plugins/bluetooth-serial {'\n'}$
-      ionic cap sync
+      $ npm install cordova-plugin-bluetooth-serial {'\n'}$ npm install @awesome-cordova-plugins/bluetooth-serial {'\n'}
+      $ ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
