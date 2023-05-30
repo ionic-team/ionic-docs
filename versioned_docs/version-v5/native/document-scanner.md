@@ -56,8 +56,8 @@ This plugin processes images of documents, compensating for perspective.
 >
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
-      $ npm install cordova-plugin-document-scanner {'\n'}$ npm install @awesome-cordova-plugins/document-scanner {'\n'}$
-      ionic cap sync
+      $ npm install cordova-plugin-document-scanner {'\n'}$ npm install @awesome-cordova-plugins/document-scanner {'\n'}
+      $ ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">

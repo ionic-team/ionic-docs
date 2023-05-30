@@ -46,7 +46,7 @@ The Android SDK ships with <a href="https://developer.android.com/studio/command
 
 In `~/.bashrc`, `~/.bash_profile`, or similar shell startup scripts, make the following modifications:
 
-1. Set the `ANDROID_SDK_ROOT` environment variable.  This path should be the **Android SDK Location** used in the previous section. To find the SDK Location in Android Studio, click **File** > **Project Structure**. Select **SDK Location** in the left pane. The path is shown under **Android SDK location**.
+1. Set the `ANDROID_SDK_ROOT` environment variable. This path should be the **Android SDK Location** used in the previous section. To find the SDK Location in Android Studio, click **File** > **Project Structure**. Select **SDK Location** in the left pane. The path is shown under **Android SDK location**.
 
    ```shell
    $ export ANDROID_SDK_ROOT=$HOME/Library/Android/sdk

@@ -56,8 +56,8 @@ Cordova plugin for Firebase MLKit Vision
 >
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
-      $ npm install cordova-plugin-firebase-mlvision {'\n'}$ npm install @awesome-cordova-plugins/firebase-vision {'\n'}$
-      ionic cap sync
+      $ npm install cordova-plugin-firebase-mlvision {'\n'}$ npm install @awesome-cordova-plugins/firebase-vision {'\n'}
+      $ ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">

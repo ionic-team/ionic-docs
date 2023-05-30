@@ -416,15 +416,7 @@ Let's start by taking a look at our `Tabs` component:
 </template>
 
 <script lang="ts">
-  import {
-    IonTabBar,
-    IonTabButton,
-    IonTabs,
-    IonLabel,
-    IonIcon,
-    IonPage,
-    IonRouterOutlet,
-  } from '@ionic/vue';
+  import { IonTabBar, IonTabButton, IonTabs, IonLabel, IonIcon, IonPage, IonRouterOutlet } from '@ionic/vue';
   import { ellipse, square, triangle } from 'ionicons/icons';
 
   export default {
