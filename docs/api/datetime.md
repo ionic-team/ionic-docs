@@ -37,6 +37,7 @@ import HighlightedDatesCallback from '@site/static/usage/v7/datetime/highlighted
 import MultipleDateSelection from '@site/static/usage/v7/datetime/multiple/index.md';
 
 import GlobalTheming from '@site/static/usage/v7/datetime/styling/global-theming/index.md';
+import WheelStyling from '@site/static/usage/v7/datetime/styling/wheel-styling/index.md';
 
 <head>
   <title>ion-datetime: Ionic API Input for Datetime Format Picker</title>
@@ -319,6 +320,12 @@ Ionic's powerful theming system can be used to easily change your entire app to 
 The benefit of this approach is that every component, not just `ion-datetime`, can automatically take advantage of this theme.
 
 <GlobalTheming />
+
+### Wheel Pickers
+
+The wheels used in `ion-datetime` can be styled through a combination of shadow parts and CSS variables. This applies to both the columns in wheel-style datetimes, and the month/year picker in grid-style datetimes.
+
+<WheelStyling />
 
 ## Time Zones
 
