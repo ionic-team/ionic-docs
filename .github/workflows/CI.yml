@@ -25,3 +25,9 @@ jobs:
       run: npm ci --legacy-peer-deps
     - name: Lint
       run: npm run lint
+    # Lint changes should be pushed
+    # to the branch before the branch
+    # is merge eligible.
+    - name: Check Diff
+      run: git diff --exit-code
+      shell: bash
