@@ -36,7 +36,7 @@ import HighlightedDatesCallback from '@site/static/usage/v7/datetime/highlighted
 
 import MultipleDateSelection from '@site/static/usage/v7/datetime/multiple/index.md';
 
-import Theming from '@site/static/usage/v7/datetime/theming/index.md';
+import GlobalTheming from '@site/static/usage/v7/datetime/styling/global-theming/index.md';
 
 <head>
   <title>ion-datetime: Ionic API Input for Datetime Format Picker</title>
@@ -310,13 +310,15 @@ A callback is better when the highlighted dates are recurring, such as birthdays
 
 <HighlightedDatesCallback />
 
-## Theming
+## Styling
+
+### Global Theming
 
 Ionic's powerful theming system can be used to easily change your entire app to match a certain theme. In this example, we used the [Color Creator](../theming/colors#new-color-creator) and the [Stepped Color Generator](../theming/themes#stepped-color-generator) to create a rose color palette that we can use for `ion-datetime`.
 
 The benefit of this approach is that every component, not just `ion-datetime`, can automatically take advantage of this theme.
 
-<Theming />
+<GlobalTheming />
 
 ## Time Zones
 
