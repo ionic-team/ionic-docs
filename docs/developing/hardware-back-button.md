@@ -22,7 +22,26 @@ The hardware back button refers to the physical back button on an Android device
 ## Hardware Back Button in Capacitor and Cordova
 
 :::note
-The `@capacitor/app` package must be installed in Capacitor apps to use the hardware back button.
+The [`@capacitor/app`](https://capacitorjs.com/docs/apis/app) package must be installed in Capacitor apps to use the hardware back button.
+
+Registering `ionBackButton` does not work in Capacitor apps.
+
+Instead, a `backButton` event listener must be registered in the capacitor app plugin thus:
+```
+App.addListener('backButton', data => {
+  console.log('Android back button pressed', data);
+  if (data.canGoBack) {
+      // history.back in your framework syntax
+      // when using react router, it is:
+      // navigate(-1);
+  } else {
+      // nothing left on the history stack, exit the app
+      App.exitApp();
+      // or if you want optionally show a confirmation dialog
+  }
+});
+
+```
 :::
 
 When running in a Capacitor or Cordova application, Ionic Framework will emit an `ionBackButton` event when a user presses the hardware back button.
@@ -39,6 +58,10 @@ For complete hardware back button support, we recommend using Capacitor or Cordo
 
 :::note
 The `ionBackButton` event will not be emitted when running an app in a browser or as a PWA.
+:::
+
+:::note
+See note above for Capacitor apps: use the `backButton` event listener of the capacitor app plugin instead of the `ionBackButton`.
 :::
 
 ## Basic Usage
