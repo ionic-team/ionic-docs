@@ -25,5 +25,7 @@ export class ExampleComponent {
       ...Array(4).fill(/\d/),
     ],
   };
+
+  readonly maskPredicate: MaskitoElementPredicate = async (el) => (el as HTMLIonInputElement).getInputElement();
 }
 ```
