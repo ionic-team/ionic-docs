@@ -35,12 +35,11 @@ First, we’ll update the photo saving functionality to support mobile. In the `
 ```tsx
 private async readAsBase64(photo: Photo) {
   // "hybrid" will detect Cordova or Capacitor
-  const fileName = new Date().getTime() + '.jpeg';
 
   if (this.platform.is('hybrid')) {
     // Read the file into base64 format
     const file = await Filesystem.readFile({
-      path: fileName
+      path: photo.path!
     });
 
     return file.data;
