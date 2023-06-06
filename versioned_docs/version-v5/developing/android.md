@@ -123,7 +123,7 @@ If you are using any version of **`cordova-android`** below `10.0.0`, install th
 
 ## Project Setup
 
-Before apps can be deployed to Android simulators and devices, the native project must be configured. You also need to run `ionic build` if you haven't already.
+Before apps can be deployed to Android simulators and devices, the native project must be configured.
 
 1. **Generate the native project, if it does not already exist.**
 
