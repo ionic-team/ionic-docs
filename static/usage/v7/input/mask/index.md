@@ -18,7 +18,7 @@ import angular_example_component_ts from './angular/example_component_ts.md';
         'index.ts': javascript_index_ts,
       },
       dependencies: {
-        '@maskito/core': '^0.12.0',
+        '@maskito/core': '^0.13.0',
       },
     },
     react,
@@ -30,8 +30,8 @@ import angular_example_component_ts from './angular/example_component_ts.md';
         'src/app/example.component.ts': angular_example_component_ts,
       },
       dependencies: {
-        '@maskito/angular': '^0.12.0',
-        '@maskito/core': '^0.12.0',
+        '@maskito/angular': '^0.13.0',
+        '@maskito/core': '^0.13.0',
       },
     },
   }}

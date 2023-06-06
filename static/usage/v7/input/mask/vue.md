@@ -2,33 +2,40 @@
 <template>
   <ion-list>
     <ion-item>
-      <ion-input label="Default input"></ion-input>
+      <ion-input
+        label="Card number"
+        placeholder="0000 0000 0000 0000"
+        v-maskito="cardOptions
+      ></ion-input>
     </ion-item>
-
     <ion-item>
-      <ion-input label="Input with placeholder" placeholder="Enter company name"></ion-input>
-    </ion-item>
-
-    <ion-item>
-      <ion-input label="Input with value" value="121 S Pinckney St #300"></ion-input>
-    </ion-item>
-
-    <ion-item>
-      <ion-input label="Readonly input" value="Madison" :readonly="true"></ion-input>
-    </ion-item>
-
-    <ion-item>
-      <ion-input label="Disabled input" value="53703" :disabled="true"></ion-input>
+      <ion-input
+        label="US Phone number"
+        placeholder="+1 (xxx) xxx-xxxx"
+        v-maskito="phoneOptions"
+      ></ion-input>
     </ion-item>
   </ion-list>
 </template>
 
-<script lang="ts">
+<script setup lang="ts">
   import { IonInput, IonItem, IonList } from '@ionic/vue';
-  import { defineComponent } from 'vue';
+  import { maskito as vMaskito } from "@maskito/vue";
 
-  export default defineComponent({
-    components: { IonInput, IonItem, IonList },
-  });
+  const cardOptions = {
+    mask: [
+      ...Array(4).fill(/\d/),
+      " ",
+      ...Array(4).fill(/\d/),
+      " ",
+      ...Array(4).fill(/\d/),
+      " ",
+      ...Array(4).fill(/\d/),
+    ],
+  };
+
+  const phoneOptions = {
+    mask: ['+', '1', ' ', '(', /\d/, /\d/, /\d/, ')', ' ', /\d/, /\d/, /\d/, '-', /\d/, /\d/, /\d/, /\d/],
+  };
 </script>
 ```
