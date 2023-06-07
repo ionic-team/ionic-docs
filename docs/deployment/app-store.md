@@ -41,7 +41,7 @@ This will generate the minified code for the web portion of an app and copy it o
 From here, open the `.xcworkspace` file in `./platforms/ios/` to start Xcode.
 
 :::tip
-Add the `--source-map` flag if you want source maps to included in the final build.
+Add the `--source-map` flag if you want to include source maps in the final build.
 :::
 
 ## Generating Signing Certs
