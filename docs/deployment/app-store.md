@@ -30,10 +30,10 @@ If the iOS platform is not already added, be sure to add it:
 ionic cordova platform add ios
 ```
 
-With the platform added, run the build command with the `--prod` and `--release` flags:
+With the platform added, run the build command with the `--prod` flag:
 
 ```shell
-ionic cordova build ios --prod --release
+ionic cordova build ios --prod
 ```
 
 This will generate the minified code for the web portion of an app and copy it over the iOS code base.
@@ -41,7 +41,7 @@ This will generate the minified code for the web portion of an app and copy it o
 From here, open the `.xcworkspace` file in `./platforms/ios/` to start Xcode.
 
 :::tip
-Add the `--source-map` flag if you want to include source maps in the final build.
+You can also have a release build generated automatically by using the `--release` flag.
 :::
 
 ## Generating Signing Certs
