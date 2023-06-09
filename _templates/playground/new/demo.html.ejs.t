@@ -11,7 +11,11 @@ to: "<%= `static/usage/v${version}/${nameWithoutIon}/${path}/demo.html` %>"
     <link rel="stylesheet" href="../../../common.css" />
     <script src="../../../common.js"></script>
     <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core@<%= version %>/dist/ionic/ionic.esm.js"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core@<%= version %>/css/ionic.bundle.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core@<%= version %>/css/ionic.bundle.css" /><% if (css){ %>
+
+    <style>
+      /* styles go here */
+    </style><% } %>
   </head>
 
   <body>
