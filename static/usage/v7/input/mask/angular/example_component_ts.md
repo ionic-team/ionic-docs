@@ -1,7 +1,7 @@
 ```ts
 import { Component } from '@angular/core';
 
-import { MaskitoOptions, MaskitoElementPredicate } from '@maskito/core';
+import { MaskitoOptions, MaskitoElementPredicateAsync } from '@maskito/core';
 
 @Component({
   selector: 'app-example',
@@ -26,6 +26,6 @@ export class ExampleComponent {
     ],
   };
 
-  readonly maskPredicate: MaskitoElementPredicate = async (el) => (el as HTMLIonInputElement).getInputElement();
+  readonly maskPredicate: MaskitoElementPredicateAsync = async (el) => (el as HTMLIonInputElement).getInputElement();
 }
 ```

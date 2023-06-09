@@ -2,8 +2,10 @@ import Playground from '@site/src/components/global/Playground';
 
 import javascript_index_html from './javascript/index_html.md';
 import javascript_index_ts from './javascript/index_ts.md';
-import react from './react.md';
-import vue from './vue.md';
+
+import react_main_tsx from './react.md';
+
+import vue_example_vue from './vue.md';
 
 import angular_app_module_ts from './angular/app_module_ts.md';
 import angular_example_component_html from './angular/example_component_html.md';
@@ -18,11 +20,27 @@ import angular_example_component_ts from './angular/example_component_ts.md';
         'index.ts': javascript_index_ts,
       },
       dependencies: {
-        '@maskito/core': '^0.13.0',
+        '@maskito/core': '^0.14.0',
       },
     },
-    react,
-    vue,
+    react: {
+      files: {
+        'src/main.tsx': react_main_tsx,
+      },
+      dependencies: {
+        '@maskito/react': '^0.14.0',
+        '@maskito/core': '^0.14.0',
+      },
+    },
+    vue: {
+      files: {
+        'src/components/Example.vue': vue_example_vue,
+      },
+      dependencies: {
+        '@maskito/vue': '^0.14.0',
+        '@maskito/core': '^0.14.0',
+      },
+    },
     angular: {
       files: {
         'src/app/app.module.ts': angular_app_module_ts,
@@ -30,8 +48,8 @@ import angular_example_component_ts from './angular/example_component_ts.md';
         'src/app/example.component.ts': angular_example_component_ts,
       },
       dependencies: {
-        '@maskito/angular': '^0.13.0',
-        '@maskito/core': '^0.13.0',
+        '@maskito/angular': '^0.14.0',
+        '@maskito/core': '^0.14.0',
       },
     },
   }}

@@ -37,9 +37,9 @@
     });
   }
 
-  setTimeout(() => {
+  window.addEventListener('appload', () => {
     initCardMask();
     initPhoneMask();
-  }, 300);
+  });
 </script>
 ```

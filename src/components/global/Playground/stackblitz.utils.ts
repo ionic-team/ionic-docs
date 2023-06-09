@@ -183,6 +183,15 @@ const openReactEditor = async (code: string, options?: EditorOptions) => {
     options.version
   );
 
+  const package_json = JSON.parse(defaultFiles[4]);
+
+  if (options?.dependencies) {
+    package_json.dependencies = {
+      ...package_json.dependencies,
+      ...options.dependencies,
+    };
+  }
+
   const appTsx = 'src/App.tsx';
   const files = {
     'public/index.html': defaultFiles[6],
@@ -191,10 +200,9 @@ const openReactEditor = async (code: string, options?: EditorOptions) => {
     'src/main.tsx': code,
     'src/theme/variables.css': defaultFiles[2],
     'tsconfig.json': defaultFiles[3],
-    'package.json': defaultFiles[4],
+    'package.json': JSON.stringify(package_json, null, 2),
     'package-lock.json': defaultFiles[5],
     ...options?.files,
-    ...options?.dependencies,
     '.stackblitzrc': `{
   "startCommand": "yarn run start"
 }`,
@@ -227,6 +235,15 @@ const openVueEditor = async (code: string, options?: EditorOptions) => {
     options.version
   );
 
+  const package_json = JSON.parse(defaultFiles[0]);
+
+  if (options?.dependencies) {
+    package_json.dependencies = {
+      ...package_json.dependencies,
+      ...options.dependencies,
+    };
+  }
+
   const mainTs = 'src/main.ts';
   const files = {
     'src/App.vue': defaultFiles[6],
@@ -236,7 +253,7 @@ const openVueEditor = async (code: string, options?: EditorOptions) => {
     'src/theme/variables.css': defaultFiles[3],
     'index.html': defaultFiles[2],
     'vite.config.ts': defaultFiles[4],
-    'package.json': defaultFiles[0],
+    'package.json': JSON.stringify(package_json, null, 2),
     'package-lock.json': defaultFiles[1],
     'tsconfig.json': defaultFiles[7],
     'tsconfig.node.json': defaultFiles[8],
