@@ -9,9 +9,7 @@ import { <%= pascalName %> } from '@ionic/react';
 
 function Example() {
   return (
-    <>
-      <<%= pascalName %>></<%= pascalName %>>
-    </>
+    <<%= pascalName %>></<%= pascalName %>>
   );
 }
 export default Example;
