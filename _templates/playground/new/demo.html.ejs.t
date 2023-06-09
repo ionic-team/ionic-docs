@@ -1,6 +1,6 @@
 ---
 arbitrary: <% nameWithoutIon = name.replace('ion-', '') %>
-to: static/usage/v<%= version %>/<%= nameWithoutIon %>/<%= path %>/demo.html
+to: "<%= `static/usage/v${version}/${nameWithoutIon}/${path}/demo.html` %>"
 ---
 <!DOCTYPE html>
 <html lang="en">
