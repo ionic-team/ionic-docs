@@ -15,17 +15,13 @@ module.exports = [
     hint: 'e.g. `theming/colors`',
     initial: 'basic',
   },
-  // {
-  //   type: 'multiselect',
-  //   name: 'versions',
-  //   hint: '(Use <space> to select, <return> to submit)',
-  //   message: 'Select versions to generate playgrounds for',
-  //   initial: [1],
-  //   choices: [
-  //     { name: 'v6', value: 'v6' },
-  //     { name: 'v7', value: 'v7' },
-  //   ],
-  // },
+  {
+    type: 'select',
+    name: 'version',
+    message: 'Select the Ionic Framework version for the playground',
+    initial: '7',
+    choices: ['6', '7'],
+  },
   {
     type: 'toggle',
     name: 'css',

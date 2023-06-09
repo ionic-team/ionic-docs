@@ -1,6 +1,6 @@
 ---
 arbitrary: <% nameWithoutIon = name.replace('ion-', '') %>
-to: static/usage/v7/<%= nameWithoutIon %>/<%= path %>/demo.html
+to: static/usage/v<%= version %>/<%= nameWithoutIon %>/<%= path %>/demo.html
 ---
 <!DOCTYPE html>
 <html lang="en">
@@ -10,8 +10,8 @@ to: static/usage/v7/<%= nameWithoutIon %>/<%= path %>/demo.html
     <title><%= h.changeCase.titleCase(nameWithoutIon) %></title>
     <link rel="stylesheet" href="../../../common.css" />
     <script src="../../../common.js"></script>
-    <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core@7/dist/ionic/ionic.esm.js"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core@7/css/ionic.bundle.css" />
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core@<%= version %>/dist/ionic/ionic.esm.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core@<%= version %>/css/ionic.bundle.css" />
   </head>
 
   <body>

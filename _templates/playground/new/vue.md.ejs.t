@@ -1,6 +1,6 @@
 ---
 arbitrary: <% pascalName = h.changeCase.pascal(name) %>
-to: static/usage/v7/<%= name.replace('ion-', '') %>/<%= path %>/vue.md
+to: static/usage/v<%= version %>/<%= name.replace('ion-', '') %>/<%= path %>/vue.md
 ---
 ```html
 <template>
