@@ -125,7 +125,13 @@ If you are using any version of **`cordova-android`** below `10.0.0`, install th
 
 Before apps can be deployed to Android simulators and devices, the native project must be configured.
 
-1. **Generate the native project, if it does not already exist.**
+1. **Perform an Ionic build, if you haven't already.**
+
+   ```
+   $ ionic build
+   ```
+
+2. **Generate the native project, if it does not already exist.**
 
    For Capacitor, run the following:
 
@@ -139,7 +145,7 @@ Before apps can be deployed to Android simulators and devices, the native projec
    $ ionic cordova prepare android
    ```
 
-2. **Set the [Package ID](../reference/glossary.md#package-id).**
+3. **Set the [Package ID](../reference/glossary.md#package-id).**
 
    For Capacitor, open the `capacitor.config.json` file and modify the `appId` property.
 
@@ -157,9 +163,17 @@ Capacitor uses Android Studio to build and run apps to simulators and devices.
    $ ionic capacitor copy android
    ```
 
-2. **In Android Studio, click the Run button and then select the target simulator or device.**
+2. **Run the app on a simulator or device.**
 
-![Android Studio Run Button Area](/img/running/android-studio-run-button-area.png)
+   You can open the Android Studio Project using:
+
+   ```shell
+   $ ionic capacitor open android
+   ```
+
+   In Android Studio, click the Run button and then select the target simulator or device.
+
+   ![Android Studio Run Button Area](/img/running/android-studio-run-button-area.png)
 
 ### Live reload
 
