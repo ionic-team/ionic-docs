@@ -8,12 +8,12 @@ to: static/usage/v7/<%= name.replace('ion-', '') %>/<%= path %>/vue.md
 </template>
 
 <script lang="ts">
-  import { <%= h.inflection.camelize(name.replace(/-/g, '_'), false) %> } from '@ionic/vue';
+  import { <%= h.changeCase.pascal(name) %> } from '@ionic/vue';
   import { defineComponent } from 'vue';
 
   export default defineComponent({
     components: {
-      <%= h.inflection.camelize(name.replace(/-/g, '_'), false) %>,
+      <%= h.changeCase.pascal(name) %>,
     },
   });
 </script>
