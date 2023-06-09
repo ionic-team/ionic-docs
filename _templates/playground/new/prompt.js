@@ -26,11 +26,11 @@ module.exports = [
   //     { name: 'v7', value: 'v7' },
   //   ],
   // },
-  // {
-  //   type: 'toggle',
-  //   name: 'css',
-  //   message: 'Do you want CSS scaffolded?',
-  //   enabled: 'Yes',
-  //   disabled: 'No',
-  // },
+  {
+    type: 'toggle',
+    name: 'css',
+    message: 'Do you want CSS scaffolded?',
+    enabled: 'Yes',
+    disabled: 'No',
+  },
 ];
