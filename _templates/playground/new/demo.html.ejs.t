@@ -14,7 +14,9 @@ to: "<%= `static/usage/v${version}/${nameWithoutIon}/${path}/demo.html` %>"
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core@<%= version %>/css/ionic.bundle.css" /><% if (css){ %>
 
     <style>
-      /* styles go here */
+      <%= name %> {
+        /* styles go here */
+      }
     </style><% } %>
   </head>
 
