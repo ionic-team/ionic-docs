@@ -1,14 +1,15 @@
 ---
+arbitrary: <% pascalName = h.changeCase.pascal(name) %>
 to: static/usage/v7/<%= name.replace('ion-', '') %>/<%= path %>/react.md
 ---
 ```tsx
 import React from 'react';
-import { <%= h.changeCase.pascal(name) %> } from '@ionic/react';
+import { <%= pascalName %> } from '@ionic/react';
 
 function Example() {
   return (
     <>
-      <<%= h.changeCase.pascal(name) %>></<%= h.changeCase.pascal(name) %>>
+      <<%= pascalName %>></<%= pascalName %>>
     </>
   );
 }

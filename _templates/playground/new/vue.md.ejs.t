@@ -1,4 +1,5 @@
 ---
+arbitrary: <% pascalName = h.changeCase.pascal(name) %>
 to: static/usage/v7/<%= name.replace('ion-', '') %>/<%= path %>/vue.md
 ---
 ```html
@@ -8,12 +9,12 @@ to: static/usage/v7/<%= name.replace('ion-', '') %>/<%= path %>/vue.md
 </template>
 
 <script lang="ts">
-  import { <%= h.changeCase.pascal(name) %> } from '@ionic/vue';
+  import { <%= pascalName %> } from '@ionic/vue';
   import { defineComponent } from 'vue';
 
   export default defineComponent({
     components: {
-      <%= h.changeCase.pascal(name) %>,
+      <%= pascalName %>,
     },
   });
 </script>

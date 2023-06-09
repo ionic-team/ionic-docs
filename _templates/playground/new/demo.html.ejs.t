@@ -1,13 +1,13 @@
 ---
-# can i make a variable here?
-to: static/usage/v7/<%= name.replace('ion-', '') %>/<%= path %>/demo.html
+arbitrary: <% nameWithoutIon = name.replace('ion-', '') %>
+to: static/usage/v7/<%= nameWithoutIon %>/<%= path %>/demo.html
 ---
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>TODO: <%= name %></title>
+    <title><%= h.changeCase.titleCase(nameWithoutIon) %></title>
     <link rel="stylesheet" href="../../../common.css" />
     <script src="../../../common.js"></script>
     <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core@7/dist/ionic/ionic.esm.js"></script>
