@@ -15,9 +15,6 @@ import Slots from '@ionic-internal/component-api/v7/input/slots.md';
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-
 <EncapsulationPill type="scoped" />
 
 
@@ -140,12 +137,6 @@ Ionic uses heuristics to detect if an app is using the modern input syntax. In s
 ## Input Masking
 
 Ionic recommends using [Maskito](https://tinkoff.github.io/maskito/getting-started/what-is-maskito) for input masking. Maskito is a lightweight, dependency-free library for masking input fields. It supports a wide range of masks, including phone numbers, credit cards, dates, and more.
-
-To install Maskito, run the following command:
-
-```bash
-npm install @maskito/core
-```
 
 import Masking from '@site/static/usage/v7/input/mask/index.md';
 
