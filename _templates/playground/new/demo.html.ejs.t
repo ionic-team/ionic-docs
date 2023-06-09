@@ -1,5 +1,5 @@
 ---
-arbitrary: <% nameWithoutIon = name.replace('ion-', '') %>
+arbitrary: <% nameWithoutIon = name.replace('ion-', ''); numberOfAncestors = (path.match(/\//g) || []).length; directoryChanges = '../'.repeat(numberOfAncestors) %>
 to: "<%= `static/usage/v${version}/${nameWithoutIon}/${path}/demo.html` %>"
 ---
 <!DOCTYPE html>
@@ -8,8 +8,8 @@ to: "<%= `static/usage/v${version}/${nameWithoutIon}/${path}/demo.html` %>"
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title><%= h.changeCase.titleCase(nameWithoutIon) %></title>
-    <link rel="stylesheet" href="../../../common.css" />
-    <script src="../../../common.js"></script>
+    <link rel="stylesheet" href="<%= directoryChanges %>../../../common.css" />
+    <script src="<%= directoryChanges %>../../../common.js"></script>
     <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core@<%= version %>/dist/ionic/ionic.esm.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core@<%= version %>/css/ionic.bundle.css" /><% if (css){ %>
 
