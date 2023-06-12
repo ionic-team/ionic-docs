@@ -12,7 +12,7 @@ A major release will be published when there is a breaking change introduced in 
 
 ### Minor Release
 
-A minor release will be published when a new feature is added or API changes that are non-breaking are introduced. We will heavily test any changes so that we are confident with the release, but with new code comes the potential for new issues. We are scheduled to release a minor version **every 6 weeks**, if any features or API changes were made.
+A minor release will be published when a new feature is added or API changes that are non-breaking are introduced. We will heavily test any changes so that we are confident with the release, but with new code comes the potential for new issues. We are scheduled to release a minor version **every 4 weeks**, if any features or API changes were made.
 
 ### Patch Release
 

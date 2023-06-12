@@ -40,6 +40,10 @@ This will generate the minified code for the web portion of an app and copy it o
 
 From here, open the `.xcworkspace` file in `./platforms/ios/` to start Xcode.
 
+:::tip
+You can also have a release build generated automatically by using the `--release` flag.
+:::
+
 ## Generating Signing Certs
 
 Generating certificates for iOS is a bit of an involved process, so be sure to check [Apple's official documentation](https://help.apple.com/xcode/mac/current/#/dev3a05256b8) on what certificates are and how to generate them.

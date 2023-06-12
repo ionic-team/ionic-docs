@@ -38,7 +38,7 @@ private async readAsBase64(photo: Photo) {
   if (this.platform.is('hybrid')) {
     // Read the file into base64 format
     const file = await Filesystem.readFile({
-      path: photo.path
+      path: photo.path!
     });
 
     return file.data;
