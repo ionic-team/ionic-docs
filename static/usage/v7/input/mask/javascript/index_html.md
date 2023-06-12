@@ -12,7 +12,7 @@
           <ion-input id="card" label="Card number" placeholder="0000 0000 0000 0000"></ion-input>
         </ion-item>
         <ion-item>
-          <ion-input id="phone" label="US Phone number" placeholder="+1 (xxx) xxx-xxxx"></ion-input>
+          <ion-input id="phone" label="US phone number" placeholder="+1 (xxx) xxx-xxxx"></ion-input>
         </ion-item>
       </ion-list>
 

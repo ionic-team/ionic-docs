@@ -30,7 +30,7 @@ function Example() {
         <IonInput ref={cardRef} label="Card number" placeholder="0000 0000 0000 0000"></IonInput>
       </IonItem>
       <IonItem>
-        <IonInput ref={phoneRef} label="US Phone number" placeholder="+1 (xxx) xxx-xxxx"></IonInput>
+        <IonInput ref={phoneRef} label="US phone number" placeholder="+1 (xxx) xxx-xxxx"></IonInput>
       </IonItem>
     </IonList>
   );
