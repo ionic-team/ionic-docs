@@ -10,7 +10,7 @@
   </ion-item>
   <ion-item>
     <ion-input
-      label="US Phone number"
+      label="US phone number"
       placeholder="+1 (xxx) xxx-xxxx"
       [maskito]="phoneMask"
       [maskitoElement]="maskPredicate"
