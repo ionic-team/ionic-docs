@@ -9,6 +9,7 @@ This guide discusses how to use the Ionic Framework Lifecycle events in an Ionic
 ## Ionic Framework Lifecycle Methods
 
 Ionic Framework provides a few lifecycle methods that you can use in your apps:
+
 | Event Name | Description |
 | ------------------ | ------------------------------------------------------------------ |
 | `ionViewWillEnter` | Fired when the component routing to is about to animate into view. |
