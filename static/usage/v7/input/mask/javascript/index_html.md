@@ -1,45 +1,56 @@
 ```html
-<ion-list>
-  <ion-item>
-    <ion-input id="card" label="Card number" placeholder="0000 0000 0000 0000"></ion-input>
-  </ion-item>
-  <ion-item>
-    <ion-input id="phone" label="US Phone number" placeholder="+1 (xxx) xxx-xxxx"></ion-input>
-  </ion-item>
-</ion-list>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="https://cdn.skypack.dev/@ionic/core@7/css/core.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.skypack.dev/@ionic/core@7/css/ionic.bundle.css" />
+  </head>
 
-<script>
-  async function initPhoneMask() {
-    const ionInput = document.querySelector('#phone');
-    const nativeEl = await ionInput.getInputElement();
+  <body>
+    <ion-app>
+      <ion-list>
+        <ion-item>
+          <ion-input id="card" label="Card number" placeholder="0000 0000 0000 0000"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-input id="phone" label="US Phone number" placeholder="+1 (xxx) xxx-xxxx"></ion-input>
+        </ion-item>
+      </ion-list>
 
-    new window.Maskito(nativeEl, {
-      mask: ['+', '1', ' ', '(', /\d/, /\d/, /\d/, ')', ' ', /\d/, /\d/, /\d/, '-', /\d/, /\d/, /\d/, /\d/],
-    });
-  }
+      <script>
+        async function initPhoneMask() {
+          const ionInput = document.querySelector('#phone');
+          const nativeEl = await ionInput.getInputElement();
 
-  async function initCardMask() {
-    const ionInput = document.querySelector('#card');
-    const nativeEl = await ionInput.getInputElement();
+          new window.Maskito(nativeEl, {
+            mask: ['+', '1', ' ', '(', /\d/, /\d/, /\d/, ')', ' ', /\d/, /\d/, /\d/, '-', /\d/, /\d/, /\d/, /\d/],
+          });
+        }
 
-    new window.Maskito(nativeEl, {
-      mask: [
-        ...Array(4).fill(/\d/),
-        ' ',
-        ...Array(4).fill(/\d/),
-        ' ',
-        ...Array(4).fill(/\d/),
-        ' ',
-        ...Array(4).fill(/\d/),
-        ' ',
-        ...Array(4).fill(/\d/),
-      ],
-    });
-  }
+        async function initCardMask() {
+          const ionInput = document.querySelector('#card');
+          const nativeEl = await ionInput.getInputElement();
 
-  window.addEventListener('appload', () => {
-    initCardMask();
-    initPhoneMask();
-  });
-</script>
+          new window.Maskito(nativeEl, {
+            mask: [
+              ...Array(4).fill(/\d/),
+              ' ',
+              ...Array(4).fill(/\d/),
+              ' ',
+              ...Array(4).fill(/\d/),
+              ' ',
+              ...Array(4).fill(/\d/),
+              ' ',
+              ...Array(4).fill(/\d/),
+            ],
+          });
+        }
+
+        window.addEventListener('appload', () => {
+          initCardMask();
+          initPhoneMask();
+        });
+      </script>
+    </ion-app>
+  </body>
+</html>
 ```
