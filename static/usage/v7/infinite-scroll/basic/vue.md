@@ -25,7 +25,7 @@
     IonAvatar,
     IonImg,
     IonLabel,
-    IonInfiniteCustomEvent,
+    InfiniteScrollCustomEvent,
   } from '@ionic/vue';
   import { defineComponent, reactive } from 'vue';
 
@@ -51,7 +51,7 @@
         }
       };
 
-      const ionInfinite = (ev: IonInfiniteCustomEvent) => {
+      const ionInfinite = (ev: InfiniteScrollCustomEvent) => {
         generateItems();
         setTimeout(() => ev.target.complete(), 500);
       };
