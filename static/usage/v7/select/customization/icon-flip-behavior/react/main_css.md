@@ -1,6 +1,6 @@
 ```css
 ion-select.always-flip::part(icon) {
-  transition: transform .15s cubic-bezier(.4, 0, .2, 1);
+  transition: transform 0.15s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 ion-select.always-flip.select-expanded::part(icon) {
