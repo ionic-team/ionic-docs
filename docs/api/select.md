@@ -180,6 +180,24 @@ Customizing the interface dialog should be done by following the Customization s
 
 However, the Select Option does set a class for easier styling and allows for the ability to pass a class to the overlay option, see the [Select Options documentation](select-option.md) for usage examples of customizing options.
 
+### Custom Toggle Icons
+
+The icon that displays next to the select text can be set to any [Ionicon](https://ionic.io/ionicons) using the `toggleIcon` and/or `toggleIconWhenOpen` properties.
+
+import CustomToggleIconsExample from '@site/static/usage/v7/select/customization/custom-toggle-icons/index.md';
+
+<CustomToggleIconsExample />
+
+### Icon Flip Behavior
+
+By default, when the select is open, the toggle icon will automatically rotate on `md` mode and remain static on `ios` mode. This behavior can be customized using CSS.
+
+The below example also uses a [custom `toggleIcon`](#custom-toggle-icons) to better demonstrate the flip behavior on `ios`, since the default icon is vertically symmetrical.
+
+import IconFlipBehaviorExample from '@site/static/usage/v7/select/customization/icon-flip-behavior/index.md';
+
+<IconFlipBehaviorExample />
+
 ## Typeahead Component
 
 Typeahead or autocomplete functionality can be built using existing Ionic components. We recommend using an `ion-modal` to make the best use of the available screen space.
