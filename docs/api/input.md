@@ -36,14 +36,40 @@ import Types from '@site/static/usage/v7/input/types/index.md';
 
 <Types />
 
+## Labels
 
-## Label Placement
+Input has several options for supplying a label for the component:
+
+- `label` property: used for plaintext labels
+- `label` slot: used for custom HTML labels (experimental)
+- `aria-label`: used for selects with no visible label
+
+### Label Placement
 
 Labels will take up the width of their content by default. Developers can use the `labelPlacement` property to control how the label is placed relative to the control.
 
 import LabelPlacement from '@site/static/usage/v7/input/label-placement/index.md';
 
 <LabelPlacement />
+
+### Label Slot (experimental)
+
+While plaintext labels should be passed in via the `label` property, if custom HTML is needed, it can be passed through the `label` slot instead.
+
+Note that this feature is considered experimental because it relies on a simulated version of [Web Component slots](https://developer.mozilla.org/en-US/docs/Web/API/Web_components/Using_templates_and_slots). As a result, the simulated behavior may not exactly match the native slot behavior.
+
+import LabelSlot from '@site/static/usage/v7/input/label-slot/index.md';
+
+<LabelSlot />
+
+### No Visible Label
+
+If no visible label is needed, devs should still supply an `aria-label` so the input is accessible to screen readers.
+
+import NoVisibleLabel from '@site/static/usage/v7/input/no-visible-label/index.md';
+
+<NoVisibleLabel />
+
 
 
 ## Clear Options
