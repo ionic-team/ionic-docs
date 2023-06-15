@@ -26,6 +26,8 @@ If `value` is set on the `<ion-select>`, the selected option will be chosen base
 
 ## Labels
 
+Labels should be used to describe the select. They can be used visually, and they will also be read out by screen readers when the user is focused on the select. This makes it easy for the user to understand the intent of the select. Select has several ways to assign a label:
+
 Select has several options for supplying a label for the component:
 
 - `label` property: used for plaintext labels

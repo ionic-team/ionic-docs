@@ -38,7 +38,7 @@ import Types from '@site/static/usage/v7/input/types/index.md';
 
 ## Labels
 
-Input has several options for supplying a label for the component:
+Labels should be used to describe the input. They can be used visually, and they will also be read out by screen readers when the user is focused on the input. This makes it easy for the user to understand the intent of the input. Input has several ways to assign a label:
 
 - `label` property: used for plaintext labels
 - `label` slot: used for custom HTML labels (experimental)
