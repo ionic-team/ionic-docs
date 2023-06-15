@@ -7,6 +7,13 @@ sidebar_label: 'ion-item-sliding'
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
+import Props from '@ionic-internal/component-api/v5/item-sliding/props.md';
+import Events from '@ionic-internal/component-api/v5/item-sliding/events.md';
+import Methods from '@ionic-internal/component-api/v5/item-sliding/methods.md';
+import Parts from '@ionic-internal/component-api/v5/item-sliding/parts.md';
+import CustomProps from '@ionic-internal/component-api/v5/item-sliding/custom-props.md';
+import Slots from '@ionic-internal/component-api/v5/item-sliding/slots.md';
+
 # ion-item-sliding
 
 A sliding item contains an item that can be dragged to reveal buttons. It requires an [item](item.md) component as a child. All options to reveal should be placed in the [item options](item-options.md) element.
@@ -791,54 +798,24 @@ export class ItemSlidingExample {
 
 ## Properties
 
-### disabled
-
-|                 |                                                            |
-| --------------- | ---------------------------------------------------------- |
-| **Description** | If `true`, the user cannot interact with the sliding item. |
-| **Attribute**   | `disabled`                                                 |
-| **Type**        | `boolean`                                                  |
-| **Default**     | `false`                                                    |
+<Props />
 
 ## Events
 
-| Name      | Description                                |
-| --------- | ------------------------------------------ |
-| `ionDrag` | Emitted when the sliding position changes. |
+<Events />
 
 ## Methods
 
-### close
+<Methods />
 
-|                 |                                                                            |
-| --------------- | -------------------------------------------------------------------------- |
-| **Description** | Close the sliding item. Items can also be closed from the [List](list.md). |
-| **Signature**   | `close() => Promise<void>`                                                 |
+## CSS Shadow Parts
 
-### closeOpened
+<Parts />
 
-|                 |                                                                                                |
-| --------------- | ---------------------------------------------------------------------------------------------- |
-| **Description** | Close all of the sliding items in the list. Items can also be closed from the [List](list.md). |
-| **Signature**   | `closeOpened() => Promise<boolean>`                                                            |
+## CSS Custom Properties
 
-### getOpenAmount
+<CustomProps />
 
-|                 |                                            |
-| --------------- | ------------------------------------------ |
-| **Description** | Get the amount the item is open in pixels. |
-| **Signature**   | `getOpenAmount() => Promise<number>`       |
+## Slots
 
-### getSlidingRatio
-
-|                 |                                                                                                                                                                                                                                                                                                                                                                                     |
-| --------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Description** | Get the ratio of the open amount of the item compared to the width of the options.<br />If the number returned is positive, then the options on the right side are open.<br />If the number returned is negative, then the options on the left side are open.<br />If the absolute value of the number is greater than 1, the item is open more than<br />the width of the options. |
-| **Signature**   | `getSlidingRatio() => Promise<number>`                                                                                                                                                                                                                                                                                                                                              |
-
-### open
-
-|                 |                                                  |
-| --------------- | ------------------------------------------------ |
-| **Description** | Open the sliding item.                           |
-| **Signature**   | `open(side: Side \| undefined) => Promise<void>` |
+<Slots />

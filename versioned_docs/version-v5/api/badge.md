@@ -9,6 +9,13 @@ demoSourceUrl: 'https://github.com/ionic-team/ionic-docs/tree/main/static/demos/
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
+import Props from '@ionic-internal/component-api/v5/badge/props.md';
+import Events from '@ionic-internal/component-api/v5/badge/events.md';
+import Methods from '@ionic-internal/component-api/v5/badge/methods.md';
+import Parts from '@ionic-internal/component-api/v5/badge/parts.md';
+import CustomProps from '@ionic-internal/component-api/v5/badge/custom-props.md';
+import Slots from '@ionic-internal/component-api/v5/badge/slots.md';
+
 # ion-badge
 
 Badges are inline block elements that usually appear near another element. Typically they contain a number or other characters. They can be used as a notification that there are additional items associated with an element and indicate how many items there are.
@@ -186,31 +193,24 @@ export class BadgeExample {
 
 ## Properties
 
-### color
+<Props />
 
-|                 |                                                                                                                                                                                                                                                                                  |
-| --------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Description** | The color to use from your application's color palette.<br />Default options are: `"primary"`, `"secondary"`, `"tertiary"`, `"success"`, `"warning"`, `"danger"`, `"light"`, `"medium"`, and `"dark"`.<br />For more information on colors, see [theming](../theming/basics.md). |
-| **Attribute**   | `color`                                                                                                                                                                                                                                                                          |
-| **Type**        | `string \| undefined`                                                                                                                                                                                                                                                            |
-| **Default**     | `undefined`                                                                                                                                                                                                                                                                      |
+## Events
 
-### mode
+<Events />
 
-|                 |                                                   |
-| --------------- | ------------------------------------------------- |
-| **Description** | The mode determines which platform styles to use. |
-| **Attribute**   | `mode`                                            |
-| **Type**        | `"ios" \| "md"`                                   |
-| **Default**     | `undefined`                                       |
+## Methods
+
+<Methods />
+
+## CSS Shadow Parts
+
+<Parts />
 
 ## CSS Custom Properties
 
-| Name               | Description                                                                                              |
-| ------------------ | -------------------------------------------------------------------------------------------------------- |
-| `--background`     | Background of the badge                                                                                  |
-| `--color`          | Text color of the badge                                                                                  |
-| `--padding-bottom` | Bottom padding of the badge                                                                              |
-| `--padding-end`    | Right padding if direction is left-to-right, and left padding if direction is right-to-left of the badge |
-| `--padding-start`  | Left padding if direction is left-to-right, and right padding if direction is right-to-left of the badge |
-| `--padding-top`    | Top padding of the badge                                                                                 |
+<CustomProps />
+
+## Slots
+
+<Slots />

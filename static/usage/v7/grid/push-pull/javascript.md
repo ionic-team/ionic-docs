@@ -8,7 +8,10 @@
   </ion-row>
 </ion-grid>
 
-<b>Column 2 has <code>push</code> set to <code>"4"</code> and column 3 & 4 have <code>pull</code> set to <code>"2"</code></b>
+<b
+  >Column 2 has <code>push</code> set to <code>"4"</code> and column 3 & 4 have <code>pull</code> set to
+  <code>"2"</code></b
+>
 <ion-grid>
   <ion-row>
     <ion-col>1</ion-col>

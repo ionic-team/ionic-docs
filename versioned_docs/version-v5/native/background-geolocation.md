@@ -59,14 +59,14 @@ more detail, please see https://github.com/mauron85/cordova-plugin-background-ge
 >
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
-      $ npm install @mauron85/cordova-plugin-background-geolocation {'\n'}$ npm install @awesome-cordova-plugins/background-geolocation{' '}
-      {'\n'}$ ionic cap sync
+      $ npm install @mauron85/cordova-plugin-background-geolocation {'\n'}$ npm install
+      @awesome-cordova-plugins/background-geolocation {'\n'}$ ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
-      $ ionic cordova plugin add @mauron85/cordova-plugin-background-geolocation {'\n'}$ npm install @awesome-cordova-plugins/background-geolocation{' '}
-      {'\n'}
+      $ ionic cordova plugin add @mauron85/cordova-plugin-background-geolocation {'\n'}$ npm install
+      @awesome-cordova-plugins/background-geolocation {'\n'}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">

@@ -1,12 +1,12 @@
 ---
 title: "ion-searchbar"
 ---
-import Props from '@site/static/auto-generated/searchbar/props.md';
-import Events from '@site/static/auto-generated/searchbar/events.md';
-import Methods from '@site/static/auto-generated/searchbar/methods.md';
-import Parts from '@site/static/auto-generated/searchbar/parts.md';
-import CustomProps from '@site/static/auto-generated/searchbar/custom-props.md';
-import Slots from '@site/static/auto-generated/searchbar/slots.md';
+import Props from '@ionic-internal/component-api/v7/searchbar/props.md';
+import Events from '@ionic-internal/component-api/v7/searchbar/events.md';
+import Methods from '@ionic-internal/component-api/v7/searchbar/methods.md';
+import Parts from '@ionic-internal/component-api/v7/searchbar/parts.md';
+import CustomProps from '@ionic-internal/component-api/v7/searchbar/custom-props.md';
+import Slots from '@ionic-internal/component-api/v7/searchbar/slots.md';
 
 <head>
   <title>Search Bar Icon for Keyboard Text Display | Ion-Search Bar</title>
@@ -66,7 +66,7 @@ import Toolbar from '@site/static/usage/v7/toolbar/searchbars/index.md';
 
 ## Debounce
 
-A debounce can be set on the searchbar in order to delay triggering the `ionChange` event. This is useful when querying data, as it can be used to wait to make a request instead of requesting the data each time a character is entered in the input.
+A debounce can be set on the searchbar in order to delay triggering the `ionInput` event. This is useful when querying data, as it can be used to wait to make a request instead of requesting the data each time a character is entered in the input.
 
 import Debounce from '@site/static/usage/v7/searchbar/debounce/index.md';
 

@@ -2,12 +2,12 @@
 title: 'ion-input'
 ---
 
-import Props from '@site/static/auto-generated/input/props.md';
-import Events from '@site/static/auto-generated/input/events.md';
-import Methods from '@site/static/auto-generated/input/methods.md';
-import Parts from '@site/static/auto-generated/input/parts.md';
-import CustomProps from '@site/static/auto-generated/input/custom-props.md';
-import Slots from '@site/static/auto-generated/input/slots.md';
+import Props from '@ionic-internal/component-api/v6/input/props.md';
+import Events from '@ionic-internal/component-api/v6/input/events.md';
+import Methods from '@ionic-internal/component-api/v6/input/methods.md';
+import Parts from '@ionic-internal/component-api/v6/input/parts.md';
+import CustomProps from '@ionic-internal/component-api/v6/input/custom-props.md';
+import Slots from '@ionic-internal/component-api/v6/input/slots.md';
 
 <head>
   <title>ion-input: Custom Input Value Type Styling and CSS Properties</title>

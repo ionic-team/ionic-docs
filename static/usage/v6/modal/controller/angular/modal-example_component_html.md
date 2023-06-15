@@ -6,7 +6,7 @@
     </ion-buttons>
     <ion-title>Welcome</ion-title>
     <ion-buttons slot="end">
-      <ion-button (click)="confirm()">Confirm</ion-button>
+      <ion-button (click)="confirm()" [strong]="true">Confirm</ion-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>

@@ -56,13 +56,14 @@ This plugin does something
 >
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
-      $ npm install cordova-plugin-background-upload {'\n'}$ npm install @awesome-cordova-plugins/background-upload {'\n'}$ ionic
-      cap sync
+      $ npm install cordova-plugin-background-upload {'\n'}$ npm install @awesome-cordova-plugins/background-upload{' '}
+      {'\n'}$ ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
-      $ ionic cordova plugin add cordova-plugin-background-upload {'\n'}$ npm install @awesome-cordova-plugins/background-upload {'\n'}
+      $ ionic cordova plugin add cordova-plugin-background-upload {'\n'}$ npm install
+      @awesome-cordova-plugins/background-upload {'\n'}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">

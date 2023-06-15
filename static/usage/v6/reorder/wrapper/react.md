@@ -20,41 +20,31 @@ function Example() {
       <IonReorderGroup disabled={false} onIonItemReorder={handleReorder}>
         <IonReorder>
           <IonItem>
-            <IonLabel>
-              Item 1
-            </IonLabel>
+            <IonLabel>Item 1</IonLabel>
           </IonItem>
         </IonReorder>
 
         <IonReorder>
           <IonItem>
-            <IonLabel>
-              Item 2
-            </IonLabel>
+            <IonLabel>Item 2</IonLabel>
           </IonItem>
         </IonReorder>
 
         <IonReorder>
           <IonItem>
-            <IonLabel>
-              Item 3
-            </IonLabel>
+            <IonLabel>Item 3</IonLabel>
           </IonItem>
         </IonReorder>
 
         <IonReorder>
           <IonItem>
-            <IonLabel>
-              Item 4
-            </IonLabel>
+            <IonLabel>Item 4</IonLabel>
           </IonItem>
         </IonReorder>
 
         <IonReorder>
           <IonItem>
-            <IonLabel>
-              Item 5
-            </IonLabel>
+            <IonLabel>Item 5</IonLabel>
           </IonItem>
         </IonReorder>
       </IonReorderGroup>

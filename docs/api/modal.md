@@ -1,12 +1,12 @@
 ---
 title: "ion-modal"
 ---
-import Props from '@site/static/auto-generated/modal/props.md';
-import Events from '@site/static/auto-generated/modal/events.md';
-import Methods from '@site/static/auto-generated/modal/methods.md';
-import Parts from '@site/static/auto-generated/modal/parts.md';
-import CustomProps from '@site/static/auto-generated/modal/custom-props.md';
-import Slots from '@site/static/auto-generated/modal/slots.md';
+import Props from '@ionic-internal/component-api/v7/modal/props.md';
+import Events from '@ionic-internal/component-api/v7/modal/events.md';
+import Methods from '@ionic-internal/component-api/v7/modal/methods.md';
+import Parts from '@ionic-internal/component-api/v7/modal/parts.md';
+import CustomProps from '@ionic-internal/component-api/v7/modal/custom-props.md';
+import Slots from '@ionic-internal/component-api/v7/modal/slots.md';
 
 <head>
   <title>ion-modal: Ionic Mobile App Custom Modal API Component</title>
@@ -124,6 +124,12 @@ import SheetExample from '@site/static/usage/v7/modal/sheet/basic/index.md';
 import SheetBackgroundContentExample from '@site/static/usage/v7/modal/sheet/background-content/index.md';
 
 <SheetBackgroundContentExample />
+
+#### Auto Height Sheet
+
+import SheetAutoHeightExample from '@site/static/usage/v7/modal/sheet/auto-height/index.md';
+
+<SheetAutoHeightExample />
 
 #### Handle Behavior
 

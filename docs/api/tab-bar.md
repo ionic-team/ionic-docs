@@ -4,12 +4,12 @@ title: "ion-tab-bar"
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-import Props from '@site/static/auto-generated/tab-bar/props.md';
-import Events from '@site/static/auto-generated/tab-bar/events.md';
-import Methods from '@site/static/auto-generated/tab-bar/methods.md';
-import Parts from '@site/static/auto-generated/tab-bar/parts.md';
-import CustomProps from '@site/static/auto-generated/tab-bar/custom-props.md';
-import Slots from '@site/static/auto-generated/tab-bar/slots.md';
+import Props from '@ionic-internal/component-api/v7/tab-bar/props.md';
+import Events from '@ionic-internal/component-api/v7/tab-bar/events.md';
+import Methods from '@ionic-internal/component-api/v7/tab-bar/methods.md';
+import Parts from '@ionic-internal/component-api/v7/tab-bar/parts.md';
+import CustomProps from '@ionic-internal/component-api/v7/tab-bar/custom-props.md';
+import Slots from '@ionic-internal/component-api/v7/tab-bar/slots.md';
 
 <head>
   <title>ion-tab-bar with CSS Custom Properties for Tab Bar Components</title>
@@ -28,7 +28,7 @@ The tab bar is a UI component that contains a set of [tab buttons](tab-button.md
 
 ## Usage
 
-<Tabs groupId="framework" defaultValue="angular" values={[{ value: 'angular', label: 'Angular' }, { value: 'javascript', label: 'Javascript' }, { value: 'react', label: 'React' }, { value: 'stencil', label: 'Stencil' }, { value: 'vue', label: 'Vue' }]}>
+<Tabs groupId="framework" defaultValue="angular" values={[{ value: 'angular', label: 'Angular' }, { value: 'javascript', label: 'Javascript' }, { value: 'react', label: 'React' }, { value: 'vue', label: 'Vue' }]}>
 
 <TabItem value="angular">
 
@@ -104,46 +104,6 @@ export const TabBarExample: React.FC = () => (
     </IonTabs>
   </IonContent>
 );
-```
-
-
-</TabItem>
-
-
-<TabItem value="stencil">
-
-```tsx
-import { Component, h } from '@stencil/core';
-
-@Component({
-  tag: 'tab-bar-example',
-  styleUrl: 'tab-bar-example.css'
-})
-export class TabBarExample {
-  render() {
-    return [
-      <ion-tabs>
-        {/* Tab views */}
-        <ion-tab tab="account" component="page-account"></ion-tab>
-        <ion-tab tab="contact" component="page-contact"></ion-tab>
-        <ion-tab tab="settings" component="page-settings"></ion-tab>
-
-        {/* Tab bar */}
-        <ion-tab-bar slot="bottom">
-          <ion-tab-button tab="account">
-            <ion-icon name="person"></ion-icon>
-          </ion-tab-button>
-          <ion-tab-button tab="contact">
-            <ion-icon name="call"></ion-icon>
-          </ion-tab-button>
-          <ion-tab-button tab="settings">
-            <ion-icon name="settings"></ion-icon>
-          </ion-tab-button>
-        </ion-tab-bar>
-      </ion-tabs>
-    ];
-  }
-}
 ```
 
 

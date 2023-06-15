@@ -16,19 +16,19 @@ The Ionic Framework has been 100% open source (MIT) since the very beginning, an
 
 ## Framework Maintenance and Support Status
 
-Given the reality of time and resource constraints as well as the desire to keep innovating in the frontend development space, over time it becomes necessary for the Ionic team to shift focus to newer versions of the Framework. However, Ionic will do everything it can to make the transition to newer versions as smooth as possible. The Ionic team recommends updating to the newest version of the Ionic Framework for the latest features, improvements and stability updates. For more details, consult [the Migration page](migration.md).
+Given the reality of time and resource constraints as well as the desire to keep innovating in the frontend development space, over time it becomes necessary for the Ionic team to shift focus to newer versions of the Framework. However, Ionic will do everything it can to make the transition to newer versions as smooth as possible. The Ionic team recommends updating to the newest version of the Ionic Framework for the latest features, improvements and stability updates.
 
 The current status of each Ionic Framework version is:
 
-| Version |        Status         |   Released   | Maintenance Ends | Ext. Support Ends |
-| :-----: | :-------------------: | :----------: | :--------------: | :---------------: |
-| V7      | Beta                  | TBD          | TBD              | TBD               |
-| V6      | **Active**            | Dec 8, 2021  | TBD              | TBD               |
-| V5      | End of Support        | Feb 11, 2020 | June 8, 2022     | Dec 8, 2022       |
-| V4      | End of Support        | Jan 23, 2019 | Aug 11, 2020     | Sept 30, 2022     |
-| V3      | End of Support        | Apr 5, 2017  | Oct 30, 2019     | Aug 11, 2020      |
-| V2      | End of Support        | Jan 25, 2017 | Apr 5, 2017      | Apr 5, 2017       |
-| V1      | End of Support        | May 12, 2015 | Jan 25, 2017     | Jan 25, 2017      |
+| Version |     Status     |   Released   | Maintenance Ends | Ext. Support Ends |
+| :-----: | :------------: | :----------: | :--------------: | :---------------: |
+|   V7    |   **Active**   | Mar 29, 2023 |       TBD        |        TBD        |
+|   V6    |  Maintenance   | Dec 8, 2021  |   Sep 29, 2023   |   Mar 29, 2024    |
+|   V5    | End of Support | Feb 11, 2020 |   June 8, 2022   |    Dec 8, 2022    |
+|   V4    | End of Support | Jan 23, 2019 |   Aug 11, 2020   |   Sept 30, 2022   |
+|   V3    | End of Support | Apr 5, 2017  |   Oct 30, 2019   |   Aug 11, 2020    |
+|   V2    | End of Support | Jan 25, 2017 |   Apr 5, 2017    |    Apr 5, 2017    |
+|   V1    | End of Support | May 12, 2015 |   Jan 25, 2017   |   Jan 25, 2017    |
 
 - **Maintenance**: Only critical bug and security fixes. No major feature improvements.
 - **Extended Support**: For teams and organizations that require additional long term support, Ionic has extended support options available. To learn more, see our [Enterprise offerings](https://ionicframework.com/enterprise).
@@ -43,11 +43,11 @@ The Ionic team has compiled a set of recommendations for using the Ionic Framewo
 
 | Framework | Minimum Angular Version | Maximum Angular Version | TypeScript |
 | :-------: | :---------------------: | :---------------------: | :--------: |
-| v7        | v14                     | v15.x^                  | 4.6+       |   
-| v6        | v12                     | v15.x^                  | 4.0+       |
-| v5        | v8.2                    | v12.x                   | 3.5+       |
-| v4        | v8.2                    | v11.x                   | 3.5+       |
-| v3        | v5.2.11                 | v5.2.11                 | 2.6.2      |
+|    v7     |           v14           |         v16.x^          |    4.6+    |
+|    v6     |           v12           |         v15.x^          |    4.0+    |
+|    v5     |          v8.2           |          v12.x          |    3.5+    |
+|    v4     |          v8.2           |          v11.x          |    3.5+    |
+|    v3     |         v5.2.11         |         v5.2.11         |   2.6.2    |
 
 > ^ Angular 14.x supported starting in Ionic v6.1.9. Angular 15.x supported starting in Ionic v6.3.6.
 
@@ -61,18 +61,18 @@ Note that later versions of Ionic do not support iOS 13; see [mobile support tab
 
 | Framework | Required React Version | TypeScript |
 | :-------: | :--------------------: | :--------: |
-| v7        | v17+                   | 3.7+       |
-| v6        | v17+                   | 3.7+       |
-| v5        | v16.8+                 | 3.7+       |
-| v4        | v16.8+                 | 3.7+       |
+|    v7     |          v17+          |    3.7+    |
+|    v6     |          v17+          |    3.7+    |
+|    v5     |         v16.8+         |    3.7+    |
+|    v4     |         v16.8+         |    3.7+    |
 
 #### Ionic Vue
 
 | Framework | Required Vue Version | TypeScript |
 | :-------: | :------------------: | :--------: |
-| v7        | v3.0.6+              | 3.9+       |
-| v6        | v3.0.6+              | 3.9+       |
-| v5        | v3.0+                | 3.9+       |
+|    v7     |       v3.0.6+        |    3.9+    |
+|    v6     |       v3.0.6+        |    3.9+    |
+|    v5     |        v3.0+         |    3.9+    |
 
 ### Native Bridges
 

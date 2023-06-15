@@ -58,13 +58,14 @@ Requires Cordova plugin: `cordova-plugin-native-spinner`. For more info, please 
 >
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
-      $ npm install cordova-plugin-native-spinner {'\n'}$ npm install @awesome-cordova-plugins/spinner-dialog {'\n'}$ ionic cap
-      sync
+      $ npm install cordova-plugin-native-spinner {'\n'}$ npm install @awesome-cordova-plugins/spinner-dialog {'\n'}$
+      ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
-      $ ionic cordova plugin add cordova-plugin-native-spinner {'\n'}$ npm install @awesome-cordova-plugins/spinner-dialog {'\n'}
+      $ ionic cordova plugin add cordova-plugin-native-spinner {'\n'}$ npm install
+      @awesome-cordova-plugins/spinner-dialog {'\n'}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">

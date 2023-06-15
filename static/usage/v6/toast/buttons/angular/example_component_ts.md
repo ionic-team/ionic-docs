@@ -20,14 +20,18 @@ export class ExampleComponent {
         {
           text: 'More Info',
           role: 'info',
-          handler: () => { this.handlerMessage = 'More Info clicked'; }
+          handler: () => {
+            this.handlerMessage = 'More Info clicked';
+          },
         },
         {
           text: 'Dismiss',
           role: 'cancel',
-          handler: () => { this.handlerMessage = 'Dismiss clicked'; }
-        }
-      ]
+          handler: () => {
+            this.handlerMessage = 'Dismiss clicked';
+          },
+        },
+      ],
     });
 
     await toast.present();

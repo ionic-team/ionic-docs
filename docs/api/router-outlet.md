@@ -2,12 +2,12 @@
 title: "ion-router-outlet"
 ---
 
-import Props from '@site/static/auto-generated/router-outlet/props.md';
-import Events from '@site/static/auto-generated/router-outlet/events.md';
-import Methods from '@site/static/auto-generated/router-outlet/methods.md';
-import Parts from '@site/static/auto-generated/router-outlet/parts.md';
-import CustomProps from '@site/static/auto-generated/router-outlet/custom-props.md';
-import Slots from '@site/static/auto-generated/router-outlet/slots.md';
+import Props from '@ionic-internal/component-api/v7/router-outlet/props.md';
+import Events from '@ionic-internal/component-api/v7/router-outlet/events.md';
+import Methods from '@ionic-internal/component-api/v7/router-outlet/methods.md';
+import Parts from '@ionic-internal/component-api/v7/router-outlet/parts.md';
+import CustomProps from '@ionic-internal/component-api/v7/router-outlet/custom-props.md';
+import Slots from '@ionic-internal/component-api/v7/router-outlet/slots.md';
 
 
 

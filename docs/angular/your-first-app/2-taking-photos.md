@@ -83,7 +83,7 @@ Outside of the `PhotoService` class definition (the very bottom of the file), cr
 ```tsx
 export interface UserPhoto {
   filepath: string;
-  webviewPath: string;
+  webviewPath?: string;
 }
 ```
 

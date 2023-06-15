@@ -1,4 +1,3 @@
-
 ```tsx
 import React from 'react';
 import { IonThumbnail } from '@ionic/react';

@@ -51,7 +51,8 @@ This plugin provides build information.
 >
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
-      $ npm install cordova-plugin-buildinfo {'\n'}$ npm install @awesome-cordova-plugins/build-info {'\n'}$ ionic cap sync
+      $ npm install cordova-plugin-buildinfo {'\n'}$ npm install @awesome-cordova-plugins/build-info {'\n'}$ ionic cap
+      sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">

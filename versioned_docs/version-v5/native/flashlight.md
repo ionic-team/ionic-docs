@@ -58,12 +58,14 @@ Requires Cordova plugin: `cordova-plugin-flashlight`. For more info, please see 
 >
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
-      $ npm install cordova-plugin-flashlight {'\n'}$ npm install @awesome-cordova-plugins/flashlight {'\n'}$ ionic cap sync
+      $ npm install cordova-plugin-flashlight {'\n'}$ npm install @awesome-cordova-plugins/flashlight {'\n'}$ ionic cap
+      sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
-      $ ionic cordova plugin add cordova-plugin-flashlight {'\n'}$ npm install @awesome-cordova-plugins/flashlight {'\n'}
+      $ ionic cordova plugin add cordova-plugin-flashlight {'\n'}$ npm install @awesome-cordova-plugins/flashlight{' '}
+      {'\n'}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">

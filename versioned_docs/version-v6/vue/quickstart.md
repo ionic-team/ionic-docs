@@ -48,15 +48,19 @@ So, if you’d prefer to use JavaScript instead of TypeScript, you can. After ge
 npm uninstall --save typescript @types/jest @typescript-eslint/eslint-plugin @typescript-eslint/parser @vue/cli-plugin-typescript @vue/eslint-config-typescript
 ```
 
-2. Change all `.ts` files to `.js`. In a blank Ionic Vue app, this should only be `router/index.ts` and `main.ts`.
+2. Change all `.ts` files to `.js`. In a blank Ionic Vue app, this should only be `src/router/index.ts` and `src/main.ts`. If you're using tests, also change the extension of files in the `tests` directory.
 
-3. Remove `@vue/typescript/recommended` and `@typescript-eslint/no-explicit-any: ‘off’, `from `.eslintrc.js`.
+3. In `index.html`, change the imported `<script>` file from `/src/main.ts` to `/src/main.js`.
 
-4. Remove `Array<RouteRecordRaw>` from `router/index.js`.
+4. Remove `@vue/typescript/recommended` and `@typescript-eslint/no-explicit-any: ‘off’, `from `.eslintrc.js`.
 
-5. Delete the `shims-vue.d.ts` file.
+5. Remove `Array<RouteRecordRaw>` and the import of `RouteRecordRaw` from `src/router/index.js`.
 
-6. Remove `lang="ts"` from the `script` tags in any of your Vue components that have them. In a blank Ionic Vue app, this should only be `App.vue` and `views/HomePage.vue`.
+6. Delete the `src/shims-vue.d.ts` file if it exists. This is only needed when using the Vue CLI.
+
+7. Remove `lang="ts"` from the `script` tags in any of your Vue components that have them. In a blank Ionic Vue app, this should only be `src/App.vue` and `src/views/HomePage.vue`.
+
+8. Delete the `tsconfig.json` file.
 
 ## A look at a Vue Component
 
@@ -100,7 +104,7 @@ Let's break it down, starting with the imports.
 
 ```tsx
 <script setup lang="ts">
-  import { IonApp, IonRouterOutlet } from '@ionic/vue';
+  import {(IonApp, IonRouterOutlet)} from '@ionic/vue';
 </script>
 ```
 
@@ -287,7 +291,19 @@ For brevity, we are excluding repeating parts of our component, like the functio
 </template>
 
 <script setup lang="ts">
-  import { IonBadge, IonCheckbox, IonContent, IonHeader, IonItem, IonLabel, IonList, IonNote, IonPage, IonTitle, IonToolbar } from '@ionic/vue';
+  import {
+    IonBadge,
+    IonCheckbox,
+    IonContent,
+    IonHeader,
+    IonItem,
+    IonLabel,
+    IonList,
+    IonNote,
+    IonPage,
+    IonTitle,
+    IonToolbar,
+  } from '@ionic/vue';
 </script>
 ```
 
@@ -324,7 +340,22 @@ Let's look at another component from Ionic Framework, FAB. Floating Action Butto
 </template>
 
 <script setup>
-  import { IonBadge, IonCheckbox, IonContent, IonFab, IonFabButton, IonHeader, IonItem, IonLabel, IonList, IonNote, IonPage, IonTitle, IonToolbar } from '@ionic/vue';
+  import {
+    IonBadge,
+    IonCheckbox,
+    IonContent,
+    IonFab,
+    IonFabButton,
+    IonHeader,
+    IonIcon,
+    IonItem,
+    IonLabel,
+    IonList,
+    IonNote,
+    IonPage,
+    IonTitle,
+    IonToolbar,
+  } from '@ionic/vue';
   import { add } from 'ionicons/icons';
 </script>
 ```
@@ -522,6 +553,7 @@ addIcons({
   heart: heart,
 });
 ```
+
 **HomePage.vue**
 
 ```html

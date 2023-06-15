@@ -56,12 +56,14 @@ Appsflyer Cordova SDK support for Attribution
 >
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
-      $ npm install cordova-plugin-appsflyer-sdk {'\n'}$ npm install @awesome-cordova-plugins/appsflyer {'\n'}$ ionic cap sync
+      $ npm install cordova-plugin-appsflyer-sdk {'\n'}$ npm install @awesome-cordova-plugins/appsflyer {'\n'}$ ionic
+      cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
-      $ ionic cordova plugin add cordova-plugin-appsflyer-sdk {'\n'}$ npm install @awesome-cordova-plugins/appsflyer {'\n'}
+      $ ionic cordova plugin add cordova-plugin-appsflyer-sdk {'\n'}$ npm install @awesome-cordova-plugins/appsflyer{' '}
+      {'\n'}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">

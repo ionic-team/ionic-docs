@@ -338,8 +338,8 @@ It is recommended to check whether or not the user is on the root page prior to 
 
 The table below lists all of the internal hardware back button event handlers that Ionic Framework uses. The `Propagates` column notes whether or not that particular handler tells Ionic Framework to call the next back button handler.
 
-| Handler    | Priority | Propagates | Description                                                                                                                              |
-| ---------- | -------- | ---------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
-| Overlays   | 100      | No         | Applies to overlay components `ion-action-sheet`, `ion-alert`, `ion-loading`, `ion-modal`, `ion-popover`, `ion-picker`, and `ion-toast`. |
-| Menu       | 99       | No         | Applies to `ion-menu`.                                                                                                                   |
-| Navigation | 0        | Yes        | Applies to routing navigation (i.e. Angular Routing).                                                                                    |
+| Handler    | Priority | Propagates | Description                                                                                                                 |
+| ---------- | -------- | ---------- | --------------------------------------------------------------------------------------------------------------------------- |
+| Overlays   | 100      | No         | Applies to overlay components `ion-action-sheet`, `ion-alert`, `ion-loading`, `ion-modal`, `ion-popover`, and `ion-picker`. |
+| Menu       | 99       | No         | Applies to `ion-menu`.                                                                                                      |
+| Navigation | 0        | Yes        | Applies to routing navigation (i.e. Angular Routing).                                                                       |

@@ -30,7 +30,7 @@ const fruits: Item[] = [
   { text: 'Pineapple', value: 'pineapple' },
   { text: 'Pomegranate', value: 'pomegranate' },
   { text: 'Raspberry', value: 'raspberry' },
-  { text: 'Strawberry', value: 'strawberry' }
+  { text: 'Strawberry', value: 'strawberry' },
 ];
 
 function Example() {
@@ -38,21 +38,21 @@ function Example() {
   const [selectedFruits, setSelectedFruits] = useState<string[]>([]);
 
   const modal = useRef<HTMLIonModalElement>(null);
-  
+
   const formatData = (data: string[]) => {
     if (data.length === 1) {
-      const fruit = fruits.find(fruit => fruit.value === data[0])!;
+      const fruit = fruits.find((fruit) => fruit.value === data[0])!;
       return fruit.text;
     }
-  
+
     return `${data.length} items`;
-  }
-  
+  };
+
   const fruitSelectionChanged = (fruits: string[]) => {
     setSelectedFruits(fruits);
     setSelectedFruitsText(formatData(fruits));
     modal.current?.dismiss();
-  }
+  };
 
   return (
     <>
@@ -60,11 +60,13 @@ function Example() {
         <IonList inset={true}>
           <IonItem button={true} detail={false} id="select-fruits">
             <IonLabel>Favorite Fruits</IonLabel>
-            <div slot="end" id="selected-fruits">{ selectedFruitsText }</div>
+            <div slot="end" id="selected-fruits">
+              {selectedFruitsText}
+            </div>
           </IonItem>
         </IonList>
       </IonContent>
-      
+
       <IonModal trigger="select-fruits" ref={modal}>
         <AppTypeahead
           title="Favorite Fruits"

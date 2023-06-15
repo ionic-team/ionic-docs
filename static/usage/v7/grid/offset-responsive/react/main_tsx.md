@@ -31,8 +31,12 @@ function Example() {
       <b>Offset all columns by 6 for xs breakpoint, offset by 4 for md, offset by 2 for lg and up</b>
       <IonGrid>
         <IonRow>
-          <IonCol offset="6" offset-md="4" offset-lg="2">1</IonCol>
-          <IonCol offset="6" offset-md="4" offset-lg="2">2</IonCol>
+          <IonCol offset="6" offset-md="4" offset-lg="2">
+            1
+          </IonCol>
+          <IonCol offset="6" offset-md="4" offset-lg="2">
+            2
+          </IonCol>
         </IonRow>
       </IonGrid>
     </>

@@ -13,7 +13,7 @@
       </ion-label>
     </ion-item>
   </ion-list>
-  
+
   <ion-list v-if="!loaded">
     <ion-list-header>
       <ion-skeleton-text :animated="true" style="width: 80px"></ion-skeleton-text>
@@ -35,7 +35,7 @@
       </ion-label>
     </ion-item>
   </ion-list>
-  
+
   <ion-button @click="setLoaded(!loaded)">Toggle</ion-button>
 </template>
 
@@ -50,7 +50,7 @@
     IonSkeletonText,
     IonThumbnail,
   } from '@ionic/vue';
-  import { musicalNotes } from 'ionicons/icons'
+  import { musicalNotes } from 'ionicons/icons';
   import { defineComponent, ref } from 'vue';
 
   export default defineComponent({
@@ -66,13 +66,13 @@
     },
     setup() {
       const loaded = ref(false);
-      const setLoaded = (state: boolean) => loaded.value = state;
+      const setLoaded = (state: boolean) => (loaded.value = state);
       return {
         loaded,
         musicalNotes,
-        setLoaded
-      }
-    }
+        setLoaded,
+      };
+    },
   });
 </script>
 ```

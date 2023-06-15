@@ -45,7 +45,7 @@ private async readAsBase64(photo: Photo) {
   }
   else {
     // Fetch the photo, read as a blob, then convert to base64 format
-    const response = await fetch(photo.webPath);
+    const response = await fetch(photo.webPath!);
     const blob = await response.blob();
 
     return await this.convertBlobToBase64(blob) as string;
@@ -94,7 +94,7 @@ Next, head back over to the `loadSaved()` function we implemented for the web ea
 public async loadSaved() {
   // Retrieve cached photo array data
   const photoList = await Preferences.get({ key: this.PHOTO_STORAGE });
-  this.photos = JSON.parse(photoList.value) || [];
+  this.photos = (value ? JSON.parse(value) : []) as UserPhoto[];
 
   // Easiest way to detect when running on the web:
   // “when the platform is NOT hybrid, do this”

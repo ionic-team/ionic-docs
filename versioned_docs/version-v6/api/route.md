@@ -1,31 +1,32 @@
 ---
-title: "ion-route"
+title: 'ion-route'
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-import Props from '@site/static/auto-generated/route/props.md';
-import Events from '@site/static/auto-generated/route/events.md';
-import Methods from '@site/static/auto-generated/route/methods.md';
-import Parts from '@site/static/auto-generated/route/parts.md';
-import CustomProps from '@site/static/auto-generated/route/custom-props.md';
-import Slots from '@site/static/auto-generated/route/slots.md';
+import Props from '@ionic-internal/component-api/v6/route/props.md';
+import Events from '@ionic-internal/component-api/v6/route/events.md';
+import Methods from '@ionic-internal/component-api/v6/route/methods.md';
+import Parts from '@ionic-internal/component-api/v6/route/parts.md';
+import CustomProps from '@ionic-internal/component-api/v6/route/custom-props.md';
+import Slots from '@ionic-internal/component-api/v6/route/slots.md';
 
 <head>
   <title>ion-route: API Route Component for Ionic Framework Apps</title>
-  <meta name="description" content="The ion-route component takes a component and renders it when the Browser URL matches the URL property. Learn more about the API route component for Ionic Apps." />
+  <meta
+    name="description"
+    content="The ion-route component takes a component and renders it when the Browser URL matches the URL property. Learn more about the API route component for Ionic Apps."
+  />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
-
-
 The route component takes a component and renders it when the Browser URL matches the url property.
 
 :::note
- Note: this component should only be used with vanilla and Stencil JavaScript projects. For Angular projects, use [`ion-router-outlet`](router-outlet.md) and the Angular router.
+Note: this component should only be used with vanilla and Stencil JavaScript projects. For Angular projects, use [`ion-router-outlet`](router-outlet.md) and the Angular router.
 :::
-
 
 ## Navigation Hooks
 
@@ -41,9 +42,6 @@ interface NavigationHookOptions {
   redirect: string;
 }
 ```
-
-
-
 
 ## Usage
 
@@ -69,23 +67,23 @@ newMessagePage.beforeLeave = hasUnsavedDataGuard;
 
 const isLoggedInGuard = async () => {
   const isLoggedIn = await UserData.isLoggedIn(); // Replace this with actual login validation
-  
+
   if (isLoggedIn) {
     return true;
   } else {
     return { redirect: '/login' }; // If a user is not logged in, they will be redirected to the /login page
   }
-}
+};
 
 const hasUnsavedDataGuard = async () => {
   const hasUnsavedData = await checkData(); // Replace this with actual validation
-  
+
   if (hasUnsavedData) {
     return await confirmDiscardChanges();
   } else {
     return true;
   }
-}
+};
 
 const confirmDiscardChanges = async () => {
   const alert = document.createElement('ion-alert');
@@ -99,22 +97,20 @@ const confirmDiscardChanges = async () => {
     {
       text: 'Discard',
       role: 'destructive',
-    }
+    },
   ];
-  
+
   document.body.appendChild(alert);
-  
+
   await alert.present();
-  
+
   const { role } = await alert.onDidDismiss();
-  
-  return (role === 'Cancel') ? false : true;
-}
+
+  return role === 'Cancel' ? false : true;
+};
 ```
 
-
 </TabItem>
-
 
 <TabItem value="stencil">
 
@@ -124,7 +120,7 @@ import { alertController } from '@ionic/core';
 
 @Component({
   tag: 'router-example',
-  styleUrl: 'router-example.css'
+  styleUrl: 'router-example.css',
 })
 export class RouterExample {
   render() {
@@ -135,29 +131,29 @@ export class RouterExample {
         <ion-route url="/new-message" component="page-new-message" beforeLeave={hasUnsavedDataGuard}></ion-route>
         <ion-route url="/login" component="page-login"></ion-route>
       </ion-router>
-    )
+    );
   }
 }
 
 const isLoggedInGuard = async () => {
   const isLoggedIn = await UserData.isLoggedIn(); // Replace this with actual login validation
-  
+
   if (isLoggedIn) {
     return true;
   } else {
     return { redirect: '/login' }; // If a user is not logged in, they will be redirected to the /login page
   }
-}
+};
 
 const hasUnsavedDataGuard = async () => {
   const hasUnsavedData = await checkData(); // Replace this with actual validation
-  
+
   if (hasUnsavedData) {
     return await confirmDiscardChanges();
   } else {
     return true;
   }
-}
+};
 
 const confirmDiscardChanges = async () => {
   const alert = await alertController.create({
@@ -171,21 +167,19 @@ const confirmDiscardChanges = async () => {
       {
         text: 'Discard',
         role: 'destructive',
-      }
-    ]
+      },
+    ],
   });
-  
+
   await alert.present();
-  
+
   const { role } = await alert.onDidDismiss();
-  
-  return (role === 'Cancel') ? false : true;
-}
+
+  return role === 'Cancel' ? false : true;
+};
 ```
 
-
 </TabItem>
-
 
 <TabItem value="vue">
 
@@ -204,24 +198,24 @@ const confirmDiscardChanges = async () => {
 
   const isLoggedInGuard = async () => {
     const isLoggedIn = await UserData.isLoggedIn(); // Replace this with actual login validation
-    
+
     if (isLoggedIn) {
       return true;
     } else {
       return { redirect: '/login' }; // If a user is not logged in, they will be redirected to the /login page
     }
-  }
-  
+  };
+
   const hasUnsavedDataGuard = async () => {
     const hasUnsavedData = await checkData(); // Replace this with actual validation
-    
+
     if (hasUnsavedData) {
       return await confirmDiscardChanges();
     } else {
       return true;
     }
-  }
-  
+  };
+
   const confirmDiscardChanges = async () => {
     const alert = await alertController.create({
       header: 'Discard Unsaved Changes?',
@@ -234,16 +228,16 @@ const confirmDiscardChanges = async () => {
         {
           text: 'Discard',
           role: 'destructive',
-        }
-      ]
+        },
+      ],
     });
-    
+
     await alert.present();
-    
+
     const { role } = await alert.onDidDismiss();
-    
-    return (role === 'Cancel') ? false : true;
-  }
+
+    return role === 'Cancel' ? false : true;
+  };
 </script>
 ```
 
@@ -252,19 +246,25 @@ const confirmDiscardChanges = async () => {
 </Tabs>
 
 ## Properties
+
 <Props />
 
 ## Events
+
 <Events />
 
 ## Methods
+
 <Methods />
 
 ## CSS Shadow Parts
+
 <Parts />
 
 ## CSS Custom Properties
+
 <CustomProps />
 
 ## Slots
+
 <Slots />

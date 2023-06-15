@@ -20,8 +20,8 @@
     methods: {
       customFormatter(inputLength, maxLength) {
         return `${maxLength - inputLength} characters remaining`;
-      }
-    }
+      },
+    },
   });
 </script>
 ```
