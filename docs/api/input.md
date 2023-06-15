@@ -42,7 +42,7 @@ Input has several options for supplying a label for the component:
 
 - `label` property: used for plaintext labels
 - `label` slot: used for custom HTML labels (experimental)
-- `aria-label`: used for selects with no visible label
+- `aria-label`: used to provide a label for screen readers but adds no visible label
 
 ### Label Placement
 
