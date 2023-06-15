@@ -64,7 +64,7 @@ import LabelSlot from '@site/static/usage/v7/input/label-slot/index.md';
 
 ### No Visible Label
 
-If no visible label is needed, devs should still supply an `aria-label` so the input is accessible to screen readers.
+If no visible label is needed, developers should still supply an `aria-label` so the input is accessible to screen readers.
 
 import NoVisibleLabel from '@site/static/usage/v7/input/no-visible-label/index.md';
 
