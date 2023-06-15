@@ -1,10 +1,6 @@
 ```html
 <template>
-  <ion-datetime
-    :show-default-buttons="true"
-    done-text="All set"
-    cancel-text="Never mind"
-  ></ion-datetime>
+  <ion-datetime :show-default-buttons="true" done-text="All set" cancel-text="Never mind"></ion-datetime>
 </template>
 
 <script lang="ts">
@@ -12,7 +8,7 @@
   import { defineComponent } from 'vue';
 
   export default defineComponent({
-    components: { IonDatetime }
+    components: { IonDatetime },
   });
 </script>
 ```

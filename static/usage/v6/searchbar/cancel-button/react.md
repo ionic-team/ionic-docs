@@ -9,7 +9,12 @@ function Example() {
       <IonSearchbar showCancelButton="focus" placeholder="Show on Focus"></IonSearchbar>
       <IonSearchbar showCancelButton="always" placeholder="Always Show"></IonSearchbar>
       <IonSearchbar showCancelButton="never" placeholder="Never Show"></IonSearchbar>
-      <IonSearchbar showCancelButton="always" cancelButtonText="Custom Cancel" cancelButtonIcon={trash} placeholder="Custom Cancel Button"></IonSearchbar>
+      <IonSearchbar
+        showCancelButton="always"
+        cancelButtonText="Custom Cancel"
+        cancelButtonIcon={trash}
+        placeholder="Custom Cancel Button"
+      ></IonSearchbar>
     </>
   );
 }

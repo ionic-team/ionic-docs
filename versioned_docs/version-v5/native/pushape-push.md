@@ -58,7 +58,8 @@ For TypeScript users, see the [Pushape plugin docs about using TypeScript for cu
 >
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
-      $ npm install pushape-cordova-push {'\n'}$ npm install @awesome-cordova-plugins/pushape-push {'\n'}$ ionic cap sync
+      $ npm install pushape-cordova-push {'\n'}$ npm install @awesome-cordova-plugins/pushape-push {'\n'}$ ionic cap
+      sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">

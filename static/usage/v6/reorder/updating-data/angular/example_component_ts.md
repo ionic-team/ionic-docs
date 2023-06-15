@@ -5,7 +5,7 @@ import { ItemReorderEventDetail } from '@ionic/angular';
 
 @Component({
   selector: 'app-example',
-  templateUrl: 'example.component.html'
+  templateUrl: 'example.component.html',
 })
 export class ExampleComponent {
   items = [1, 2, 3, 4, 5];

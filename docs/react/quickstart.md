@@ -4,10 +4,10 @@ sidebar_label: Quickstart
 ---
 
 <head>
-  <title>Intro to React Native Quickstart Using Ionic CLI: React Basics</title>
+  <title>Intro to Ionic React Quickstart Using Ionic CLI: React Basics</title>
   <meta
     name="description"
-    content="Intro to React Native Quickstart covers the basics of React and Ionic, including any Ionic-specific features. Learn how to build React apps using the Ionic CLI."
+    content="Intro to React Quickstart covers the basics of React and Ionic, including any Ionic-specific features. Learn how to build React apps using the Ionic CLI."
   />
 </head>
 
@@ -235,7 +235,7 @@ import { add } from ‘ionicons/icons’;
 
 On our main `IonFab`, we're setting its positioning with the vertical and horizontal attributes. We're also setting the render location to "fixed" with the slot attribute. This will tell `IonFab` to render outside of the scrollable content in `IonContent`.
 
-Now let's wire up a click handler to this. What we want to do is when we click the button, we'll navigate to a new page (which we'll create in a moment). To do this, we'll need to get access to React Router's `useHistory` hook API. Thankfully the `useHistory` hook makes this easy since it can be imported from the react-router package. 
+Now let's wire up a click handler to this. What we want to do is when we click the button, we'll navigate to a new page (which we'll create in a moment). To do this, we'll need to get access to React Router's `useHistory` hook API. Thankfully the `useHistory` hook makes this easy since it can be imported from the react-router package.
 
 ```tsx
 import { add } from 'ionicons/icons';

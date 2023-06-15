@@ -6,8 +6,15 @@ function Example() {
   return (
     <>
       <IonInput label="Default counter" labelPlacement="floating" counter={true} maxlength={20}></IonInput>
-      
-      <IonInput id="custom-input" label="Custom Counter Format" labelPlacement="floating" counter={true} maxlength={20} counterFormatter={(inputLength, maxLength) => `${maxLength - inputLength} characters remaining`}></IonInput>
+
+      <IonInput
+        id="custom-input"
+        label="Custom Counter Format"
+        labelPlacement="floating"
+        counter={true}
+        maxlength={20}
+        counterFormatter={(inputLength, maxLength) => `${maxLength - inputLength} characters remaining`}
+      ></IonInput>
     </>
   );
 }

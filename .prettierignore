@@ -1,13 +1,15 @@
 src/theme/DocItem
 src/theme/DocPage
 legacy-stencil-components
-node_modules
 scripts/bak
-src/styles.bak
-src/pages
+
 docs/api
 docs/native
 docs/cli/commands
 
+static/code/stackblitz
+
 .docusaurus
 .github
+build
+node_modules

@@ -9,7 +9,6 @@ import {
   IonTitle,
   IonPage,
   IonItem,
-  IonLabel,
   IonInput,
   useIonModal,
 } from '@ionic/react';
@@ -32,14 +31,15 @@ const ModalExample = ({
           </IonButtons>
           <IonTitle>Welcome</IonTitle>
           <IonButtons slot="end">
-            <IonButton onClick={() => onDismiss(inputRef.current?.value, 'confirm')}>Confirm</IonButton>
+            <IonButton onClick={() => onDismiss(inputRef.current?.value, 'confirm')} strong={true}>
+              Confirm
+            </IonButton>
           </IonButtons>
         </IonToolbar>
       </IonHeader>
       <IonContent className="ion-padding">
         <IonItem>
-          <IonLabel position="stacked">Enter your name</IonLabel>
-          <IonInput ref={inputRef} placeholder="Your name" />
+          <IonInput ref={inputRef} labelPlacement="stacked" label="Enter your name" placeholder="Your name" />
         </IonItem>
       </IonContent>
     </IonPage>

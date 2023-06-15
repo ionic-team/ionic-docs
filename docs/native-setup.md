@@ -126,7 +126,7 @@ import { Camera, CameraResultType } from '@capacitor/camera';
 import { useState } from 'react';
 
 export function CameraComponent() {
-  const [imageSrc, setImageSrc] = usetState('');
+  const [imageSrc, setImageSrc] = useState('');
 
   const takePicture = async () => {
     const image = await Camera.getPhoto({

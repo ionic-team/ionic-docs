@@ -8,11 +8,11 @@ function Example() {
       <IonItem>
         <IonCheckbox justify="start">Packed at the Start of Line</IonCheckbox>
       </IonItem>
-      
+
       <IonItem>
         <IonCheckbox justify="end">Packed at the End of Line</IonCheckbox>
       </IonItem>
-      
+
       <IonItem>
         <IonCheckbox justify="space-between">Space Between Label and Control</IonCheckbox>
       </IonItem>

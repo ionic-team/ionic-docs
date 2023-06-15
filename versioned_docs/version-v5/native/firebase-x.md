@@ -52,7 +52,8 @@ It is a maintained fork from unmaintained ionic-navite plugin called Firebase.
 >
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
-      $ npm install cordova-plugin-firebasex {'\n'}$ npm install @awesome-cordova-plugins/firebase-x {'\n'}$ ionic cap sync
+      $ npm install cordova-plugin-firebasex {'\n'}$ npm install @awesome-cordova-plugins/firebase-x {'\n'}$ ionic cap
+      sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">

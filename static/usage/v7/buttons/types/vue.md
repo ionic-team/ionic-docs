@@ -2,15 +2,11 @@
 <template>
   <ion-toolbar>
     <ion-buttons slot="secondary">
-      <ion-button size="large">
-        Favorite
-      </ion-button>
+      <ion-button size="large"> Favorite </ion-button>
     </ion-buttons>
     <ion-title>Default Buttons</ion-title>
     <ion-buttons slot="primary">
-      <ion-button>
-        Delete
-      </ion-button>
+      <ion-button> Delete </ion-button>
     </ion-buttons>
   </ion-toolbar>
 
@@ -87,7 +83,7 @@
     components: { IonBackButton, IonButton, IonButtons, IonIcon, IonMenuButton, IonTitle, IonToolbar },
     setup() {
       return { create, ellipsisHorizontal, ellipsisVertical, helpCircle, personCircle, search, star };
-    }
+    },
   });
 </script>
 ```
