@@ -94,6 +94,14 @@ import FilteringData from '@site/static/usage/v7/input/filtering/index.md';
 
 <FilteringData />
 
+## Input Masking
+
+Input masks are expressions that constrain input to support valid input values. Ionic recommends using [Maskito](https://tinkoff.github.io/maskito/getting-started/what-is-maskito) for input masking. Maskito is a lightweight, dependency-free library for masking input fields. It supports a wide range of masks, including phone numbers, credit cards, dates, and more.
+
+import Masking from '@site/static/usage/v7/input/mask/index.md';
+
+<Masking />
+
 ## Theming
 
 ### Colors
@@ -133,14 +141,6 @@ import Migration from '@site/static/usage/v7/input/migration/index.md';
 ### Using the Legacy Syntax
 
 Ionic uses heuristics to detect if an app is using the modern input syntax. In some instances, it may be preferable to continue using the legacy syntax. Developers can set the `legacy` property on `ion-input` to `true` to force that instance of the input to use the legacy syntax.
-
-## Input Masking
-
-Input masks are expressions that constrain input to support valid input values. Ionic recommends using [Maskito](https://tinkoff.github.io/maskito/getting-started/what-is-maskito) for input masking. Maskito is a lightweight, dependency-free library for masking input fields. It supports a wide range of masks, including phone numbers, credit cards, dates, and more.
-
-import Masking from '@site/static/usage/v7/input/mask/index.md';
-
-<Masking />
 
 ## Interfaces
 
