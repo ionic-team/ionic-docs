@@ -24,10 +24,11 @@ By default the Range slider has a minimum value of `0` and a maximum value of `1
 
 ## Labels
 
-Range has several options for supplying a label for the component:
+Labels should be used to describe the range. They can be used visually, and they will also be read out by screen readers when the user is focused on the range. This makes it easy for the user to understand the intent of the range. Range has several ways to assign a label:
+
 - `label` property: used for plaintext labels
 - `label` slot: used for custom HTML labels
-- `aria-label`: used for ranges with no visible label
+- `aria-label`: used to provide a label for screen readers but adds no visible label
 
 ### Label Placement
 
@@ -47,7 +48,7 @@ import LabelSlotPlayground from '@site/static/usage/v7/range/label-slot/index.md
 
 ### No Visible Label
 
-If no visible label is needed, devs should still supply an `aria-label` so the range is accessible to screen readers.
+If no visible label is needed, developers should still supply an `aria-label` so the range is accessible to screen readers.
 
 import NoVisibleLabel from '@site/static/usage/v7/range/no-visible-label/index.md';
 

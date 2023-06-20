@@ -25,7 +25,7 @@ export interface EditorOptions {
    */
   dependencies?: {
     [key: string]: string;
-  }
+  };
 
   /**
    * `true` if `ion-app` and `ion-content` should automatically be injected into the
@@ -203,6 +203,7 @@ const openReactEditor = async (code: string, options?: EditorOptions) => {
     'package.json': JSON.stringify(package_json, null, 2),
     'package-lock.json': defaultFiles[5],
     ...options?.files,
+    ...options?.dependencies,
     '.stackblitzrc': `{
   "startCommand": "yarn run start"
 }`,

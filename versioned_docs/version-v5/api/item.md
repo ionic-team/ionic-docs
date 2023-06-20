@@ -1039,8 +1039,7 @@ export class ItemExample {
           <ion-label class="ion-text-wrap">
             Multiline text that should wrap when it is too long to fit on one line in the item.
           </ion-label>
-        </ion-item>,
-        <ion-item>
+        </ion-item>,<ion-item>
           <ion-label class="ion-text-wrap">
             <ion-text color="primary">
               <h3>H3 Primary Title</h3>
@@ -1050,8 +1049,7 @@ export class ItemExample {
               <p>Paragraph line 2 secondary</p>
             </ion-text>
           </ion-label>
-        </ion-item>
-        ,
+        </ion-item>,
         <ion-item lines="full">
           <ion-label>Item with Full Lines</ion-label>
         </ion-item>

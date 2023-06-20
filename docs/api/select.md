@@ -26,11 +26,13 @@ If `value` is set on the `<ion-select>`, the selected option will be chosen base
 
 ## Labels
 
+Labels should be used to describe the select. They can be used visually, and they will also be read out by screen readers when the user is focused on the select. This makes it easy for the user to understand the intent of the select. Select has several ways to assign a label:
+
 Select has several options for supplying a label for the component:
 
 - `label` property: used for plaintext labels
 - `label` slot: used for custom HTML labels
-- `aria-label`: used for selects with no visible label
+- `aria-label`: used to provide a label for screen readers but adds no visible label
 
 ### Label Placement
 
@@ -50,7 +52,7 @@ import LabelSlot from '@site/static/usage/v7/select/label-slot/index.md';
 
 ### No Visible Label
 
-If no visible label is needed, devs should still supply an `aria-label` so the select is accessible to screen readers.
+If no visible label is needed, developers should still supply an `aria-label` so the select is accessible to screen readers.
 
 import NoVisibleLabel from '@site/static/usage/v7/select/no-visible-label/index.md';
 
