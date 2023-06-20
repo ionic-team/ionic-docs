@@ -120,6 +120,26 @@ import FilteringData from '@site/static/usage/v7/input/filtering/index.md';
 
 <FilteringData />
 
+## Input Masking
+
+Input masks are expressions that constrain input to support valid input values. Ionic recommends using [Maskito](https://tinkoff.github.io/maskito/getting-started/what-is-maskito) for input masking. Maskito is a lightweight, dependency-free library for masking input fields. It supports a wide range of masks, including phone numbers, credit cards, dates, and more.
+
+To get started with Maskito, install the library:
+
+```bash
+npm install @maskito/core @maskito/{angular,react,vue}
+```
+
+import Masking from '@site/static/usage/v7/input/mask/index.md';
+
+<Masking />
+
+:::note
+
+Please submit bug reports with Maskito to the [Maskito Github repository](https://github.com/Tinkoff/maskito/issues). For technical support, please use the [Ionic Forum](https://forum.ionicframework.com/) or [Ionic Discord](http://chat.ionicframework.com/).
+
+:::
+
 ## Theming
 
 ### Colors
