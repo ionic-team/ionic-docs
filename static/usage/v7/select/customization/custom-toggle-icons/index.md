@@ -7,7 +7,7 @@ import angular from './angular.md';
 
 <Playground
   version="7"
-  size="350px"
+  size="400px"
   code={{ javascript, react, vue, angular }}
   src="usage/v7/select/customization/custom-toggle-icons/demo.html"
 />
