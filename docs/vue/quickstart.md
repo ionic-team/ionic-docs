@@ -45,7 +45,7 @@ So, if you’d prefer to use JavaScript instead of TypeScript, you can. After ge
 1. Remove TypeScript dependencies:
 
 ```shell
-npm uninstall --save typescript @types/jest @typescript-eslint/eslint-plugin @typescript-eslint/parser @vue/cli-plugin-typescript @vue/eslint-config-typescript
+npm uninstall --save typescript @types/jest @typescript-eslint/eslint-plugin @typescript-eslint/parser @vue/cli-plugin-typescript @vue/eslint-config-typescript vue-tsc
 ```
 
 2. Change all `.ts` files to `.js`. In a blank Ionic Vue app, this should only be `src/router/index.ts` and `src/main.ts`. If you're using tests, also change the extension of files in the `tests` directory.
@@ -61,6 +61,10 @@ npm uninstall --save typescript @types/jest @typescript-eslint/eslint-plugin @ty
 7. Remove `lang="ts"` from the `script` tags in any of your Vue components that have them. In a blank Ionic Vue app, this should only be `src/App.vue` and `src/views/HomePage.vue`.
 
 8. Delete the `tsconfig.json` file.
+
+9. In package.json, change the build script from `"build": "vue-tsc && vite build"` to `"build": "vite build"`
+
+10. Install terser `npm i -D terser`.
 
 ## A look at a Vue Component
 
