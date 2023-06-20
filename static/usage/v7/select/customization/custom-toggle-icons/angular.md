@@ -4,7 +4,7 @@
     <ion-select
       interface="popover"
       toggleIcon="add"
-      toggleIconWhenOpen="remove"
+      expandedIcon="remove"
       aria-label="fruit"
       placeholder="Select fruit"
     >

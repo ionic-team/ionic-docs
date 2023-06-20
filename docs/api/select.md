@@ -182,7 +182,7 @@ However, the Select Option does set a class for easier styling and allows for th
 
 ### Custom Toggle Icons
 
-The icon that displays next to the select text can be set to any [Ionicon](https://ionic.io/ionicons) using the `toggleIcon` and/or `toggleIconWhenOpen` properties.
+The icon that displays next to the select text can be set to any [Ionicon](https://ionic.io/ionicons) using the `toggleIcon` and/or `expandedIcon` properties.
 
 import CustomToggleIconsExample from '@site/static/usage/v7/select/customization/custom-toggle-icons/index.md';
 

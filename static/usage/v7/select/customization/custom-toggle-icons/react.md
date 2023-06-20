@@ -10,7 +10,7 @@ function Example() {
         <IonSelect
           interface="popover"
           toggleIcon={add}
-          toggleIconWhenOpen={remove}
+          expandedIcon={remove}
           aria-label="fruit"
           placeholder="Select fruit"
         >
