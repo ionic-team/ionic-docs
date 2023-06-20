@@ -51,7 +51,7 @@ While plaintext labels should be passed in via the `label` property, if custom H
 
 Note that this feature is considered experimental because it relies on a simulated version of [Web Component slots](https://developer.mozilla.org/en-US/docs/Web/API/Web_components/Using_templates_and_slots). As a result, the simulated behavior may not exactly match the native slot behavior.
 
-import LabelSlot from '@site/static/usage/v7/input/label-slot/index.md';
+import LabelSlot from '@site/static/usage/v7/textarea/label-slot/index.md';
 
 <LabelSlot />
 
@@ -59,7 +59,7 @@ import LabelSlot from '@site/static/usage/v7/input/label-slot/index.md';
 
 If no visible label is needed, developers should still supply an `aria-label` so the textarea is accessible to screen readers.
 
-import NoVisibleLabel from '@site/static/usage/v7/input/no-visible-label/index.md';
+import NoVisibleLabel from '@site/static/usage/v7/textarea/no-visible-label/index.md';
 
 <NoVisibleLabel />
 
