@@ -24,10 +24,26 @@
       ' ',
       ...Array(4).fill(/\d/),
     ],
+    elementPredicate: (el: HTMLIonInputElement) => {
+      return new Promise((resolve) => {
+        requestAnimationFrame(async () => {
+          const input = await el.getInputElement();
+          resolve(input);
+        });
+      });
+    },
   };
 
   const phoneOptions = {
     mask: ['+', '1', ' ', '(', /\d/, /\d/, /\d/, ')', ' ', /\d/, /\d/, /\d/, '-', /\d/, /\d/, /\d/, /\d/],
+    elementPredicate: (el: HTMLIonInputElement) => {
+      return new Promise((resolve) => {
+        requestAnimationFrame(async () => {
+          const input = await el.getInputElement();
+          resolve(input);
+        });
+      });
+    },
   };
 </script>
 ```
