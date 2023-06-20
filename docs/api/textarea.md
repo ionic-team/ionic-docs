@@ -28,7 +28,7 @@ The textarea component accepts the [native textarea attributes](https://develope
 import BasicPlayground from '@site/static/usage/v7/textarea/basic/index.md';
 
 <BasicPlayground />
-  
+
 ## Labels
 
 Labels should be used to describe the textarea. They can be used visually, and they will also be read out by screen readers when the user is focused on the textarea. This makes it easy for the user to understand the intent of the textarea. Textarea has several ways to assign a label:

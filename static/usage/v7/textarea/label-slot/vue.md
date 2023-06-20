@@ -2,19 +2,19 @@
 <template>
   <ion-list>
     <ion-item>
-      <ion-input label-placement="floating" value="hi@ionic.io">
-        <div slot="label">Email <ion-text color="danger">(Required)</ion-text></div>
-      </ion-input>
+      <ion-textarea label-placement="floating" value="Lorem Ipsum">
+        <div slot="label">Comments <ion-text color="danger">(Required)</ion-text></div>
+      </ion-textarea>
     </ion-item>
   </ion-list>
 </template>
 
 <script lang="ts">
-  import { IonInput, IonItem, IonList, IonText } from '@ionic/vue';
+  import { IonTextarea, IonItem, IonList, IonText } from '@ionic/vue';
   import { defineComponent } from 'vue';
 
   export default defineComponent({
-    components: { IonInput, IonItem, IonList, IonText },
+    components: { IonTextarea, IonItem, IonList, IonText },
   });
 </script>
 ```

@@ -1,14 +1,14 @@
 ```tsx
 import React from 'react';
-import { IonInput, IonItem, IonList, IonText } from '@ionic/react';
+import { IonTextarea, IonItem, IonList, IonText } from '@ionic/react';
 
 function Example() {
   return (
     <IonList>
       <IonItem>
-        <IonInput labelPlacement="floating" value="hi@ionic.io">
-          <div slot="label">Email <IonText color="danger">(Required)</IonText></div>
-        </IonInput>
+        <IonTextarea labelPlacement="floating" value="Lorem Ipsum">
+          <div slot="label">Comments <IonText color="danger">(Required)</IonText></div>
+        </IonTextarea>
       </IonItem>
     </IonList>
   );

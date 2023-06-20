@@ -2,17 +2,17 @@
 <template>
   <ion-list>
     <ion-item>
-      <ion-input aria-label="Email" value="hi@ionic.io"></ion-input>
+      <ion-textarea aria-label="Comments" value="Lorem Ipsum"></ion-textarea>
     </ion-item>
   </ion-list>
 </template>
 
 <script lang="ts">
-  import { IonInput, IonItem, IonList } from '@ionic/vue';
+  import { IonTextarea, IonItem, IonList } from '@ionic/vue';
   import { defineComponent } from 'vue';
 
   export default defineComponent({
-    components: { IonInput, IonItem, IonList },
+    components: { IonTextarea, IonItem, IonList },
   });
 </script>
 ```

@@ -1,9 +1,9 @@
 ```html
 <ion-list>
   <ion-item>
-    <ion-input labelPlacement="floating" value="hi@ionic.io">
-      <div slot="label">Email <ion-text color="danger">(Required)</ion-text></div>
-    </ion-input>
+    <ion-textarea labelPlacement="floating" value="Lorem Ipsum">
+      <div slot="label">Comments <ion-text color="danger">(Required)</ion-text></div>
+    </ion-textarea>
   </ion-item>
 </ion-list>
 ```

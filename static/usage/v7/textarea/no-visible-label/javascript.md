@@ -1,7 +1,7 @@
 ```html
 <ion-list>
   <ion-item>
-    <ion-input aria-label="Email" value="hi@ionic.io"></ion-input>
+    <ion-textarea aria-label="Comments" value="Lorem Ipsum"></ion-textarea>
   </ion-item>
 </ion-list>
 ```

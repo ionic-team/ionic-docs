@@ -1,12 +1,12 @@
 ```tsx
 import React from 'react';
-import { IonInput, IonItem, IonList } from '@ionic/react';
+import { IonTextarea, IonItem, IonList } from '@ionic/react';
 
 function Example() {
   return (
     <IonList>
       <IonItem>
-        <IonInput aria-label="Email" value="hi@ionic.io"></IonInput>
+        <IonTextarea aria-label="Comments" value="Lorem Ipsum"></IonTextarea>
       </IonItem>
     </IonList>
   );
