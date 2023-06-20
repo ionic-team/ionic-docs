@@ -403,13 +403,12 @@ When working with tabs, Ionic needs a way to know which view belongs to which ta
 ```tsx
 <IonApp>
   <IonReactRouter>
-      <IonRouterOutlet>
-        <Route path="/tabs" render={() => <Tabs />} />
-        <Route exact path="/">
-          <Redirect to="/tabs" />
-        </Route>
-      </IonRouterOutlet>
-    </IonSplitPane>
+    <IonRouterOutlet>
+      <Route path="/tabs" render={() => <Tabs />} />
+      <Route exact path="/">
+        <Redirect to="/tabs" />
+      </Route>
+    </IonRouterOutlet>
   </IonReactRouter>
 </IonApp>
 ```
@@ -420,7 +419,7 @@ Let's start by taking a look at our `Tabs` component:
 
 ```tsx
 import { Redirect, Route } from 'react-router-dom';
-import { IonContent, IonIcon, IonLabel, IonRouterOutlet, IonTabBar, IonTabButton, IonTabs } from '@ionic/react';
+import { IonPage, IonIcon, IonLabel, IonRouterOutlet, IonTabBar, IonTabButton, IonTabs } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
 import { ellipse, square, triangle } from 'ionicons/icons';
 import Tab1 from './pages/Tab1';
@@ -428,7 +427,7 @@ import Tab2 from './pages/Tab2';
 import Tab3 from './pages/Tab3';
 
 const Tabs: React.FC = () => (
-  <IonContent>
+  <IonPage>
     <IonTabs>
       <IonRouterOutlet>
         <Redirect exact path="/tabs" to="/tabs/tab1" />
@@ -460,7 +459,7 @@ const Tabs: React.FC = () => (
         </IonTabButton>
       </IonTabBar>
     </IonTabs>
-  </IonContent>
+  </IonPage>
 );
 
 export default Tabs;

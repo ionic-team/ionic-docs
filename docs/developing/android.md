@@ -46,18 +46,10 @@ The Android SDK ships with <a href="https://developer.android.com/studio/command
 
 In `~/.bashrc`, `~/.bash_profile`, or similar shell startup scripts, make the following modifications:
 
-1. Set the `ANDROID_SDK_ROOT` environment variable. This path should be the **Android SDK Location** used in the previous section.
-
-   For Mac:
+1. Set the `ANDROID_SDK_ROOT` environment variable. This path should be the **Android SDK Location** used in the previous section. To find the SDK Location in Android Studio, click **File** > **Project Structure**. Select **SDK Location** in the left pane. The path is shown under **Android SDK location**.
 
    ```shell
-   $ export ANDROID_SDK_ROOT=$HOME/Android/sdk
-   ```
-
-   For Linux/Windows:
-
-   ```shell
-   $ export ANDROID_SDK_ROOT=$HOME/Android/Sdk
+   $ export ANDROID_SDK_ROOT=$HOME/Library/Android/sdk
    ```
 
 2. Add the Android SDK command-line directories to `PATH`. Each directory corresponds to the category of <a href="https://developer.android.com/studio/command-line/" target="_blank">command-line tool</a>.
@@ -72,7 +64,7 @@ In `~/.bashrc`, `~/.bash_profile`, or similar shell startup scripts, make the fo
    ```
 
    :::note
-   For `apksigner` and `zipalign`, `$ANDROID_SDK_ROOT/build-tools&lt;version>` must also be added to `PATH`.
+   For `apksigner` and `zipalign`, `$ANDROID_SDK_ROOT/build-tools<version>` must also be added to `PATH`.
    :::
 
 ### Creating an Android Virtual Device
@@ -112,10 +104,10 @@ Additional setup is required for Cordova to support programmatic builds. This se
 
 ### Java
 
-Native Android apps are compiled with the <a href="https://java.com/en/" target="_blank">Java</a> programming language. Download JDK8 from the <a href="https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html" target="_blank">download page</a>.
+Native Android apps are compiled with the <a href="https://java.com/en/" target="_blank">Java</a> programming language. Download the <a href="https://www.oracle.com/java/technologies/javase-jdk11-downloads.html" target="_blank">Java Development Kit (JDK) 11</a> if you are using **`cordova-android`** `10.0.0` or greater.
 
 :::note
-Unfortunately, Cordova is not compatible with the latest version of Java.
+If you are using any version of **`cordova-android`** below `10.0.0`, install the <a href="https://www.oracle.com/java/technologies/javase/javase-jdk8-downloads.html" target="_blank">Java Development Kit (JDK) 8</a>.
 :::
 
 ### Gradle
@@ -133,7 +125,13 @@ Unfortunately, Cordova is not compatible with the latest version of Java.
 
 Before apps can be deployed to Android simulators and devices, the native project must be configured.
 
-1. **Generate the native project, if it does not already exist.**
+1. **Perform an Ionic build, if you haven't already.**
+
+   ```
+   $ ionic build
+   ```
+
+2. **Generate the native project, if it does not already exist.**
 
    For Capacitor, run the following:
 
@@ -147,7 +145,7 @@ Before apps can be deployed to Android simulators and devices, the native projec
    $ ionic cordova prepare android
    ```
 
-2. **Set the [Package ID](../reference/glossary.md#package-id).**
+3. **Set the [Package ID](../reference/glossary.md#package-id).**
 
    For Capacitor, open the `capacitor.config.json` file and modify the `appId` property.
 
@@ -165,9 +163,17 @@ Capacitor uses Android Studio to build and run apps to simulators and devices.
    $ ionic capacitor copy android
    ```
 
-2. **In Android Studio, click the Run button and then select the target simulator or device.**
+2. **Run the app on a simulator or device.**
 
-![Android Studio Run Button Area](/img/running/android-studio-run-button-area.png)
+   You can open the Android Studio Project using:
+
+   ```shell
+   $ ionic capacitor open android
+   ```
+
+   In Android Studio, click the Run button and then select the target simulator or device.
+
+   ![Android Studio Run Button Area](/img/running/android-studio-run-button-area.png)
 
 ### Live reload
 
