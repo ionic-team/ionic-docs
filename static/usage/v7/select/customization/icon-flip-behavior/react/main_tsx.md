@@ -1,6 +1,7 @@
 ```tsx
 import React from 'react';
 import { IonItem, IonList, IonSelect, IonSelectOption } from '@ionic/react';
+import { caretDownSharp } from 'ionicons/icons';
 
 import './main.css';
 
@@ -10,7 +11,7 @@ function Example() {
       <IonItem>
         <IonSelect
           className="always-flip"
-          toggleIcon="caret-down-sharp"
+          toggleIcon={caretDownSharp}
           interface="popover"
           label="Icon flips on both modes"
           placeholder="Select fruit"
@@ -23,7 +24,7 @@ function Example() {
       <IonItem>
         <IonSelect
           className="never-flip"
-          toggleIcon="caret-down-sharp"
+          toggleIcon={caretDownSharp}
           interface="popover"
           label="Icon never flips"
           placeholder="Select fruit"

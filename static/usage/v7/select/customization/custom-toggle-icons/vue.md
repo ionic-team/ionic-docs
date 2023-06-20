@@ -4,8 +4,8 @@
     <ion-item>
       <ion-select
         interface="popover"
-        toggle-icon="add"
-        toggle-icon-when-open="remove"
+        :toggle-icon="add"
+        :toggle-icon-when-open="remove"
         aria-label="fruit"
         placeholder="Select fruit"
       >
@@ -19,10 +19,14 @@
 
 <script>
   import { IonItem, IonList, IonSelect, IonSelectOption } from '@ionic/vue';
+  import { add, remove } from 'ionicons/icons';
   import { defineComponent } from 'vue';
 
   export default defineComponent({
     components: { IonItem, IonList, IonSelect, IonSelectOption },
+    setup() {
+      return { add, remove };
+    },
   });
 </script>
 ```

@@ -4,7 +4,7 @@
     <ion-item>
       <ion-select
         class="always-flip"
-        toggle-icon="caret-down-sharp"
+        :toggle-icon="caretDownSharp"
         interface="popover"
         label="Icon flips on both modes"
         placeholder="Select fruit"
@@ -17,7 +17,7 @@
     <ion-item>
       <ion-select
         class="never-flip"
-        toggle-icon="caret-down-sharp"
+        :toggle-icon="caretDownSharp"
         interface="popover"
         label="Icon never flips"
         placeholder="Select fruit"
@@ -32,10 +32,14 @@
 
 <script>
   import { IonItem, IonList, IonSelect, IonSelectOption } from '@ionic/vue';
+  import { caretDownSharp } from 'ionicons/icons';
   import { defineComponent } from 'vue';
 
   export default defineComponent({
     components: { IonItem, IonList, IonSelect, IonSelectOption },
+    setup() {
+      return { caretDownSharp };
+    },
   });
 </script>
 

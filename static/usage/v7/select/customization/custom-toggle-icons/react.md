@@ -1,14 +1,16 @@
 ```tsx
 import React from 'react';
 import { IonItem, IonList, IonSelect, IonSelectOption } from '@ionic/react';
+import { add, remove } from 'ionicons/icons';
+
 function Example() {
   return (
     <IonList>
       <IonItem>
         <IonSelect
           interface="popover"
-          toggleIcon="add"
-          toggleIconWhenOpen="remove"
+          toggleIcon={add}
+          toggleIconWhenOpen={remove}
           aria-label="fruit"
           placeholder="Select fruit"
         >
