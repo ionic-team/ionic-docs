@@ -20,7 +20,7 @@ import angular_example_component_ts from './angular/example_component_ts.md';
         'index.ts': javascript_index_ts,
       },
       dependencies: {
-        '@maskito/core': '^0.16.0',
+        '@maskito/core': '^1.0.0',
       },
     },
     react: {
@@ -28,8 +28,8 @@ import angular_example_component_ts from './angular/example_component_ts.md';
         'src/main.tsx': react_main_tsx,
       },
       dependencies: {
-        '@maskito/react': '^0.16.0',
-        '@maskito/core': '^0.16.0',
+        '@maskito/react': '^1.0.0',
+        '@maskito/core': '^1.0.0',
       },
     },
     vue: {
@@ -37,8 +37,8 @@ import angular_example_component_ts from './angular/example_component_ts.md';
         'src/components/Example.vue': vue_example_vue,
       },
       dependencies: {
-        '@maskito/vue': '^0.16.0',
-        '@maskito/core': '^0.16.0',
+        '@maskito/vue': '^1.0.0',
+        '@maskito/core': '^1.0.0',
       },
     },
     angular: {
@@ -48,8 +48,8 @@ import angular_example_component_ts from './angular/example_component_ts.md';
         'src/app/example.component.ts': angular_example_component_ts,
       },
       dependencies: {
-        '@maskito/angular': '^0.16.0',
-        '@maskito/core': '^0.16.0',
+        '@maskito/angular': '^1.0.0',
+        '@maskito/core': '^1.0.0',
       },
     },
   }}

@@ -30,7 +30,8 @@ function Example() {
         <IonInput
           ref={async (cardRef) => {
             if (cardRef) {
-              cardMask(await cardRef.getInputElement());
+              const input = await cardRef.getInputElement();
+              cardMask(input);
             }
           }}
           label="Card number"
@@ -41,7 +42,8 @@ function Example() {
         <IonInput
           ref={async (phoneInput) => {
             if (phoneInput) {
-              phoneMask(await phoneInput.getInputElement());
+              const input = await phoneInput.getInputElement();
+              phoneMask(input);
             }
           }}
           label="US phone number"
