@@ -1,18 +1,18 @@
 import Playground from '@site/src/components/global/Playground';
 
 import javascript from './javascript.md';
+import vue from './vue.md';
 
 import react_main_tsx from './react/main_tsx.md';
 import react_main_css from './react/main_css.md';
 
-import vue from './vue.md';
-
 import angular_example_component_html from './angular/example_component_html.md';
-import angular_global_css from './angular/global_css.md';
+import angular_example_component_css from './angular/example_component_css.md';
+import angular_example_component_ts from './angular/example_component_ts.md';
 
 <Playground
   version="7"
-  size="450px"
+  size="400px"
   code={{
     javascript,
     react: {
@@ -25,9 +25,10 @@ import angular_global_css from './angular/global_css.md';
     angular: {
       files: {
         'src/app/example.component.html': angular_example_component_html,
-        'src/global.css': angular_global_css,
+        'src/app/example.component.css': angular_example_component_css,
+        'src/app/example.component.ts': angular_example_component_ts,
       },
     },
   }}
-  src="usage/v7/datetime/theming/demo.html"
+  src="usage/v7/select/customization/icon-flip-behavior/demo.html"
 />

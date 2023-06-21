@@ -5,4 +5,9 @@ import react from './react.md';
 import vue from './vue.md';
 import angular from './angular.md';
 
-<Playground version="7" code={{ javascript, react, vue, angular }} src="usage/v7/range/basic/demo.html" />
+<Playground
+  version="7"
+  size="400px"
+  code={{ javascript, react, vue, angular }}
+  src="usage/v7/select/customization/custom-toggle-icons/demo.html"
+/>
