@@ -108,7 +108,7 @@ function TabsComponent(props: Props): JSX.Element {
   useEffect(() => {
     setLeftNavVisible(tabsNavEl.current?.scrollLeft > 40);
     setRightNavVisible(tabsNavEl.current?.scrollWidth > tabsNavEl.current?.offsetWidth);
-  }, []);
+  }, [groupId]);
 
   /**
    * If the selected value is not in the available tabs, fall back to the first tab.
