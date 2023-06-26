@@ -15,7 +15,7 @@ To create a new playground, run `npm run playground:new`. This will walk you thr
 
 The path defaults to `basic`. If there is already a basic playground, you'll want to input a different path for the playground.
 
-The CSS option will add extra files if you need to include custom CSS in your playground. This is often not needed.
+The CSS option will add extra files if you need to include custom CSS in your playground.
 
 If you need a component for multiple versions of Ionic Framework, you (currently) need to run the generator once for each version.
 

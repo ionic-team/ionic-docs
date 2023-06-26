@@ -4,8 +4,7 @@ to: "<%= `static/usage/v${version}/${name.replace('ion-', '')}/${path}/vue.md` %
 ---
 ```html
 <template>
-  <<%= name %>>
-  </<%= name %>>
+  <<%= name %>></<%= name %>>
 </template>
 
 <script lang="ts">
