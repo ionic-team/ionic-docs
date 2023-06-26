@@ -11,7 +11,7 @@ Some helpful docs links for updating/creating templates:
 
 ## Generation
 
-To create a new playground, run `npm run playground:new`. This will walk you through some prompts to decide what files for the generator to scaffold for the playground, and what their paths should be.
+To create a new playground, run `npm run playground:new`. This will walk you through some prompts to decide what files for the generator to create for the playground, and what their paths should be.
 
 The path defaults to `basic`. If there is already a basic playground, you'll want to input a different path for the playground.
 

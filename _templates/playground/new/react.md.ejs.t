@@ -5,7 +5,9 @@ to: "<%= `static/usage/v${version}/${name.replace('ion-', '')}/${path}/${css ? '
 ---
 ```tsx
 import React from 'react';
-import { <%= pascalName %> } from '@ionic/react';
+import { <%= pascalName %> } from '@ionic/react';<% if (css){ %>
+
+import './main.css';<% } %>
 
 function Example() {
   return (
