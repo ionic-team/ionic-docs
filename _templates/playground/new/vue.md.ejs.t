@@ -1,6 +1,7 @@
 ---
-arbitrary: <% pascalName = h.changeCase.pascal(name) %>
+arbitrary: <% pascalName = h.changeCase.pascal(name); componentName = h.changeCase.pascal(path.split('/').pop()) %>
 to: "<%= `static/usage/v${version}/${name.replace('ion-', '')}/${path}/vue.md` %>"
+sh: "echo `\nGeneration complete! To use this new component in a docs markdown file, include\nthe following:\n\n## <%= componentName %>\n\nimport <%= componentName %> from '@site/static/usage/v7/<%=name.replace('ion-', '') %>/<%= path %>/index.md';\n\n<<%= componentName %> />\n`"
 ---
 ```html
 <template>
