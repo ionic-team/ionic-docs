@@ -107,7 +107,6 @@ When the camera is done taking a picture, the resulting `Photo` returned from Ca
 
 ```tsx
 const fileName = Date.now() + '.jpeg';
-
 const savedFileImage = {
   filepath: fileName,
   webviewPath: photo.webPath,
