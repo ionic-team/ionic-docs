@@ -36,9 +36,7 @@ function Example() {
         </IonItemOptions>
 
         <IonItem>
-          <IonLabel>
-            Sliding Item with Start Icons
-          </IonLabel>
+          <IonLabel>Sliding Item with Start Icons</IonLabel>
         </IonItem>
 
         <IonItemOptions side="end">
@@ -62,9 +60,7 @@ function Example() {
         </IonItemOptions>
 
         <IonItem>
-          <IonLabel>
-            Sliding Item with End Icons
-          </IonLabel>
+          <IonLabel>Sliding Item with End Icons</IonLabel>
         </IonItem>
 
         <IonItemOptions>
@@ -88,9 +84,7 @@ function Example() {
         </IonItemOptions>
 
         <IonItem>
-          <IonLabel>
-            Sliding Item with Top Icons
-          </IonLabel>
+          <IonLabel>Sliding Item with Top Icons</IonLabel>
         </IonItem>
 
         <IonItemOptions>
@@ -114,9 +108,7 @@ function Example() {
         </IonItemOptions>
 
         <IonItem>
-          <IonLabel>
-            Sliding Item with Bottom Icons
-          </IonLabel>
+          <IonLabel>Sliding Item with Bottom Icons</IonLabel>
         </IonItem>
 
         <IonItemOptions>

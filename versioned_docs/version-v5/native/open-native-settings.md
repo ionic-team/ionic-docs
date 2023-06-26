@@ -51,13 +51,14 @@ Plugin to open native screens of iOS/android settings
 >
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
-      $ npm install cordova-open-native-settings {'\n'}$ npm install @awesome-cordova-plugins/open-native-settings {'\n'}$ ionic
-      cap sync
+      $ npm install cordova-open-native-settings {'\n'}$ npm install @awesome-cordova-plugins/open-native-settings{' '}
+      {'\n'}$ ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
-      $ ionic cordova plugin add cordova-open-native-settings {'\n'}$ npm install @awesome-cordova-plugins/open-native-settings {'\n'}
+      $ ionic cordova plugin add cordova-open-native-settings {'\n'}$ npm install
+      @awesome-cordova-plugins/open-native-settings {'\n'}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">

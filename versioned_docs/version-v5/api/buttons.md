@@ -7,6 +7,13 @@ sidebar_label: 'ion-buttons'
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
+import Props from '@ionic-internal/component-api/v5/buttons/props.md';
+import Events from '@ionic-internal/component-api/v5/buttons/events.md';
+import Methods from '@ionic-internal/component-api/v5/buttons/methods.md';
+import Parts from '@ionic-internal/component-api/v5/buttons/parts.md';
+import CustomProps from '@ionic-internal/component-api/v5/buttons/custom-props.md';
+import Slots from '@ionic-internal/component-api/v5/buttons/slots.md';
+
 # ion-buttons
 
 The Buttons component is a container element. Buttons placed in a toolbar should be placed inside of the `<ion-buttons>` element.
@@ -338,11 +345,24 @@ export class ButtonsExample {
 
 ## Properties
 
-### collapse
+<Props />
 
-|                 |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
-| --------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Description** | If true, buttons will disappear when its<br />parent toolbar has fully collapsed if the toolbar<br />is not the first toolbar. If the toolbar is the<br />first toolbar, the buttons will be hidden and will<br />only be shown once all toolbars have fully collapsed.<br /><br />Only applies in `ios` mode with `collapse` set to<br />`true` on `ion-header`.<br /><br />Typically used for [Collapsible Large Titles](https://ionicframework.com/docs/api/title#collapsible-large-titles) |
-| **Attribute**   | `collapse`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
-| **Type**        | `boolean`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
-| **Default**     | `false`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
+## Events
+
+<Events />
+
+## Methods
+
+<Methods />
+
+## CSS Shadow Parts
+
+<Parts />
+
+## CSS Custom Properties
+
+<CustomProps />
+
+## Slots
+
+<Slots />

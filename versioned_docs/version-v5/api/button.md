@@ -7,6 +7,13 @@ demoSourceUrl: 'https://github.com/ionic-team/ionic-docs/tree/main/static/demos/
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
+import Props from '@ionic-internal/component-api/v5/button/props.md';
+import Events from '@ionic-internal/component-api/v5/button/events.md';
+import Methods from '@ionic-internal/component-api/v5/button/methods.md';
+import Parts from '@ionic-internal/component-api/v5/button/parts.md';
+import CustomProps from '@ionic-internal/component-api/v5/button/custom-props.md';
+import Slots from '@ionic-internal/component-api/v5/button/slots.md';
+
 # ion-button
 
 Buttons provide a clickable element, which can be used in forms, or anywhere that needs simple, standard button functionality. They may display text, icons, or both. Buttons can be styled with several attributes to look a specific way.
@@ -367,196 +374,24 @@ export class ButtonExample {
 
 ## Properties
 
-### buttonType
-
-|                 |                     |
-| --------------- | ------------------- |
-| **Description** | The type of button. |
-| **Attribute**   | `button-type`       |
-| **Type**        | `string`            |
-| **Default**     | `'button'`          |
-
-### color
-
-|                 |                                                                                                                                                                                                                                                                                  |
-| --------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Description** | The color to use from your application's color palette.<br />Default options are: `"primary"`, `"secondary"`, `"tertiary"`, `"success"`, `"warning"`, `"danger"`, `"light"`, `"medium"`, and `"dark"`.<br />For more information on colors, see [theming](../theming/basics.md). |
-| **Attribute**   | `color`                                                                                                                                                                                                                                                                          |
-| **Type**        | `string \| undefined`                                                                                                                                                                                                                                                            |
-| **Default**     | `undefined`                                                                                                                                                                                                                                                                      |
-
-### disabled
-
-|                 |                                                      |
-| --------------- | ---------------------------------------------------- |
-| **Description** | If `true`, the user cannot interact with the button. |
-| **Attribute**   | `disabled`                                           |
-| **Type**        | `boolean`                                            |
-| **Default**     | `false`                                              |
-
-### download
-
-|                 |                                                                                                                                                                                                                                                                                                          |
-| --------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Description** | This attribute instructs browsers to download a URL instead of navigating to<br />it, so the user will be prompted to save it as a local file. If the attribute<br />has a value, it is used as the pre-filled file name in the Save prompt<br />(the user can still change the file name if they want). |
-| **Attribute**   | `download`                                                                                                                                                                                                                                                                                               |
-| **Type**        | `string \| undefined`                                                                                                                                                                                                                                                                                    |
-| **Default**     | `undefined`                                                                                                                                                                                                                                                                                              |
-
-### expand
-
-|                 |                                                                                                                      |
-| --------------- | -------------------------------------------------------------------------------------------------------------------- |
-| **Description** | Set to `"block"` for a full-width button or to `"full"` for a full-width button<br />without left and right borders. |
-| **Attribute**   | `expand`                                                                                                             |
-| **Type**        | `"block" \| "full" \| undefined`                                                                                     |
-| **Default**     | `undefined`                                                                                                          |
-
-### fill
-
-|                 |                                                                                                                                                                                                                         |
-| --------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Description** | Set to `"clear"` for a transparent button, to `"outline"` for a transparent<br />button with a border, or to `"solid"`. The default style is `"solid"` except inside of<br />a toolbar, where the default is `"clear"`. |
-| **Attribute**   | `fill`                                                                                                                                                                                                                  |
-| **Type**        | `"clear" \| "default" \| "outline" \| "solid" \| undefined`                                                                                                                                                             |
-| **Default**     | `undefined`                                                                                                                                                                                                             |
-
-### href
-
-|                 |                                                                                                                              |
-| --------------- | ---------------------------------------------------------------------------------------------------------------------------- |
-| **Description** | Contains a URL or a URL fragment that the hyperlink points to.<br />If this property is set, an anchor tag will be rendered. |
-| **Attribute**   | `href`                                                                                                                       |
-| **Type**        | `string \| undefined`                                                                                                        |
-| **Default**     | `undefined`                                                                                                                  |
-
-### mode
-
-|                 |                                                   |
-| --------------- | ------------------------------------------------- |
-| **Description** | The mode determines which platform styles to use. |
-| **Attribute**   | `mode`                                            |
-| **Type**        | `"ios" \| "md"`                                   |
-| **Default**     | `undefined`                                       |
-
-### rel
-
-|                 |                                                                                                                                                                                             |
-| --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Description** | Specifies the relationship of the target object to the link object.<br />The value is a space-separated list of [link types](https://developer.mozilla.org/en-US/docs/Web/HTML/Link_types). |
-| **Attribute**   | `rel`                                                                                                                                                                                       |
-| **Type**        | `string \| undefined`                                                                                                                                                                       |
-| **Default**     | `undefined`                                                                                                                                                                                 |
-
-### routerAnimation
-
-|                 |                                                                                                               |
-| --------------- | ------------------------------------------------------------------------------------------------------------- |
-| **Description** | When using a router, it specifies the transition animation when navigating to<br />another page using `href`. |
-| **Attribute**   | `undefined`                                                                                                   |
-| **Type**        | `((baseEl: any, opts?: any) => Animation) \| undefined`                                                       |
-| **Default**     | `undefined`                                                                                                   |
-
-### routerDirection
-
-|                 |                                                                                                               |
-| --------------- | ------------------------------------------------------------------------------------------------------------- |
-| **Description** | When using a router, it specifies the transition direction when navigating to<br />another page using `href`. |
-| **Attribute**   | `router-direction`                                                                                            |
-| **Type**        | `"back" \| "forward" \| "root"`                                                                               |
-| **Default**     | `'forward'`                                                                                                   |
-
-### shape
-
-|                 |                        |
-| --------------- | ---------------------- |
-| **Description** | The button shape.      |
-| **Attribute**   | `shape`                |
-| **Type**        | `"round" \| undefined` |
-| **Default**     | `undefined`            |
-
-### size
-
-|                 |                                                |
-| --------------- | ---------------------------------------------- |
-| **Description** | The button size.                               |
-| **Attribute**   | `size`                                         |
-| **Type**        | `"default" \| "large" \| "small" \| undefined` |
-| **Default**     | `undefined`                                    |
-
-### strong
-
-|                 |                                                           |
-| --------------- | --------------------------------------------------------- |
-| **Description** | If `true`, activates a button with a heavier font weight. |
-| **Attribute**   | `strong`                                                  |
-| **Type**        | `boolean`                                                 |
-| **Default**     | `false`                                                   |
-
-### target
-
-|                 |                                                                                                                                                               |
-| --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Description** | Specifies where to display the linked URL.<br />Only applies when an `href` is provided.<br />Special keywords: `"_blank"`, `"_self"`, `"_parent"`, `"_top"`. |
-| **Attribute**   | `target`                                                                                                                                                      |
-| **Type**        | `string \| undefined`                                                                                                                                         |
-| **Default**     | `undefined`                                                                                                                                                   |
-
-### type
-
-|                 |                                   |
-| --------------- | --------------------------------- |
-| **Description** | The type of the button.           |
-| **Attribute**   | `type`                            |
-| **Type**        | `"button" \| "reset" \| "submit"` |
-| **Default**     | `'button'`                        |
+<Props />
 
 ## Events
 
-| Name       | Description                          |
-| ---------- | ------------------------------------ |
-| `ionBlur`  | Emitted when the button loses focus. |
-| `ionFocus` | Emitted when the button has focus.   |
+<Events />
+
+## Methods
+
+<Methods />
 
 ## CSS Shadow Parts
 
-| Name     | Description                                                             |
-| -------- | ----------------------------------------------------------------------- |
-| `native` | The native HTML button or anchor element that wraps all child elements. |
+<Parts />
 
 ## CSS Custom Properties
 
-| Name                             | Description                                                                                               |
-| -------------------------------- | --------------------------------------------------------------------------------------------------------- |
-| `--background`                   | Background of the button                                                                                  |
-| `--background-activated`         | Background of the button when pressed. Note: setting this will interfere with the Material Design ripple. |
-| `--background-activated-opacity` | Opacity of the button when pressed                                                                        |
-| `--background-focused`           | Background of the button when focused with the tab key                                                    |
-| `--background-focused-opacity`   | Opacity of the button when focused with the tab key                                                       |
-| `--background-hover`             | Background of the button on hover                                                                         |
-| `--background-hover-opacity`     | Opacity of the background on hover                                                                        |
-| `--border-color`                 | Border color of the button                                                                                |
-| `--border-radius`                | Border radius of the button                                                                               |
-| `--border-style`                 | Border style of the button                                                                                |
-| `--border-width`                 | Border width of the button                                                                                |
-| `--box-shadow`                   | Box shadow of the button                                                                                  |
-| `--color`                        | Text color of the button                                                                                  |
-| `--color-activated`              | Text color of the button when pressed                                                                     |
-| `--color-focused`                | Text color of the button when focused with the tab key                                                    |
-| `--color-hover`                  | Text color of the button when hover                                                                       |
-| `--opacity`                      | Opacity of the button                                                                                     |
-| `--padding-bottom`               | Bottom padding of the button                                                                              |
-| `--padding-end`                  | Right padding if direction is left-to-right, and left padding if direction is right-to-left of the button |
-| `--padding-start`                | Left padding if direction is left-to-right, and right padding if direction is right-to-left of the button |
-| `--padding-top`                  | Top padding of the button                                                                                 |
-| `--ripple-color`                 | Color of the button ripple effect                                                                         |
-| `--transition`                   | Transition of the button                                                                                  |
+<CustomProps />
 
 ## Slots
 
-| Name        | Description                                                                       |
-| ----------- | --------------------------------------------------------------------------------- |
-| ``          | Content is placed between the named slots if provided without a slot.             |
-| `end`       | Content is placed to the right of the button text in LTR, and to the left in RTL. |
-| `icon-only` | Should be used on an icon in a button that has no text.                           |
-| `start`     | Content is placed to the left of the button text in LTR, and to the right in RTL. |
+<Slots />

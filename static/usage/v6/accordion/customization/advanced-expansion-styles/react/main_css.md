@@ -10,14 +10,14 @@ ion-accordion.accordion-expanded {
   margin: 16px auto;
 }
 
-ion-accordion.accordion-collapsing ion-item[slot="header"],
-ion-accordion.accordion-collapsed ion-item[slot="header"] {
+ion-accordion.accordion-collapsing ion-item[slot='header'],
+ion-accordion.accordion-collapsed ion-item[slot='header'] {
   --background: var(--ion-color-light);
   --color: var(--ion-color-light-contrast);
 }
 
-ion-accordion.accordion-expanding ion-item[slot="header"],
-ion-accordion.accordion-expanded ion-item[slot="header"] {
+ion-accordion.accordion-expanding ion-item[slot='header'],
+ion-accordion.accordion-expanded ion-item[slot='header'] {
   --background: var(--ion-color-primary);
   --color: var(--ion-color-primary-contrast);
 }

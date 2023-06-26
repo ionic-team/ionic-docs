@@ -51,13 +51,14 @@ Requires Cordova plugin: cordova-plugin-email-composer. For more info, please se
 >
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
-      $ npm install cordova-plugin-email-composer {'\n'}$ npm install @awesome-cordova-plugins/email-composer {'\n'}$ ionic cap
-      sync
+      $ npm install cordova-plugin-email-composer {'\n'}$ npm install @awesome-cordova-plugins/email-composer {'\n'}$
+      ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
-      $ ionic cordova plugin add cordova-plugin-email-composer {'\n'}$ npm install @awesome-cordova-plugins/email-composer {'\n'}
+      $ ionic cordova plugin add cordova-plugin-email-composer {'\n'}$ npm install
+      @awesome-cordova-plugins/email-composer {'\n'}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">

@@ -56,13 +56,14 @@ For more info, please see https://docs.microsoft.com/en-us/appcenter/sdk/push/co
 >
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
-      $ npm install cordova-plugin-appcenter-push {'\n'}$ npm install @awesome-cordova-plugins/app-center-push {'\n'}$ ionic cap
-      sync
+      $ npm install cordova-plugin-appcenter-push {'\n'}$ npm install @awesome-cordova-plugins/app-center-push {'\n'}$
+      ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
-      $ ionic cordova plugin add cordova-plugin-appcenter-push {'\n'}$ npm install @awesome-cordova-plugins/app-center-push {'\n'}
+      $ ionic cordova plugin add cordova-plugin-appcenter-push {'\n'}$ npm install
+      @awesome-cordova-plugins/app-center-push {'\n'}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">

@@ -53,14 +53,14 @@ Requires Cordova plugin: `com.moust.cordova.videoplayer`. For more info, please 
 >
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
-      $ npm install https://github.com/moust/cordova-plugin-videoplayer.git {'\n'}$ npm install @awesome-cordova-plugins/video-player{' '}
-      {'\n'}$ ionic cap sync
+      $ npm install https://github.com/moust/cordova-plugin-videoplayer.git {'\n'}$ npm install
+      @awesome-cordova-plugins/video-player {'\n'}$ ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
-      $ ionic cordova plugin add https://github.com/moust/cordova-plugin-videoplayer.git {'\n'}$ npm install @awesome-cordova-plugins/video-player{' '}
-      {'\n'}
+      $ ionic cordova plugin add https://github.com/moust/cordova-plugin-videoplayer.git {'\n'}$ npm install
+      @awesome-cordova-plugins/video-player {'\n'}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">

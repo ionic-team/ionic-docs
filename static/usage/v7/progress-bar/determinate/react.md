@@ -19,9 +19,7 @@ function Example() {
     }, 1000);
   }
 
-  return (
-    <IonProgressBar value={progress}></IonProgressBar>
-  );
+  return <IonProgressBar value={progress}></IonProgressBar>;
 }
 export default Example;
 ```

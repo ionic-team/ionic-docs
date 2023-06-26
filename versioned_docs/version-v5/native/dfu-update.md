@@ -56,12 +56,14 @@ This plugin is a Wrapper to use Nordic Semiconductor's Device Firmware Update (D
 >
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
-      $ npm install cordova-plugin-dfu-update {'\n'}$ npm install @awesome-cordova-plugins/dfu-update {'\n'}$ ionic cap sync
+      $ npm install cordova-plugin-dfu-update {'\n'}$ npm install @awesome-cordova-plugins/dfu-update {'\n'}$ ionic cap
+      sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
-      $ ionic cordova plugin add cordova-plugin-dfu-update {'\n'}$ npm install @awesome-cordova-plugins/dfu-update {'\n'}
+      $ ionic cordova plugin add cordova-plugin-dfu-update {'\n'}$ npm install @awesome-cordova-plugins/dfu-update{' '}
+      {'\n'}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">

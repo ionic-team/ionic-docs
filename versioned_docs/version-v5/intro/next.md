@@ -1,6 +1,8 @@
 import DocsCard from '@components/global/DocsCard';
 import DocsCards from '@components/global/DocsCards';
 
+import DeveloperExperts from '@components/page/intro/next/DeveloperExperts';
+
 # Next Steps
 
 ## Build Your First App
@@ -20,3 +22,5 @@ Pick the JavaScript framework you plan to use while building your Ionic app:
     <p>A complete guide to get you up to speed with the basics of building Ionic apps with Vue.</p>
   </DocsCard>
 </DocsCards>
+
+<DeveloperExperts />

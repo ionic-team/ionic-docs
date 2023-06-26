@@ -7,6 +7,13 @@ demoSourceUrl: 'https://github.com/ionic-team/ionic-docs/tree/main/static/demos/
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
+import Props from '@ionic-internal/component-api/v5/datetime/props.md';
+import Events from '@ionic-internal/component-api/v5/datetime/events.md';
+import Methods from '@ionic-internal/component-api/v5/datetime/methods.md';
+import Parts from '@ionic-internal/component-api/v5/datetime/parts.md';
+import CustomProps from '@ionic-internal/component-api/v5/datetime/custom-props.md';
+import Slots from '@ionic-internal/component-api/v5/datetime/slots.md';
+
 # ion-datetime
 
 Datetimes present a picker interface from the bottom of a page, making it easy for
@@ -987,244 +994,24 @@ export class DatetimeExample {
 
 ## Properties
 
-### cancelText
-
-|                 |                                                    |
-| --------------- | -------------------------------------------------- |
-| **Description** | The text to display on the picker's cancel button. |
-| **Attribute**   | `cancel-text`                                      |
-| **Type**        | `string`                                           |
-| **Default**     | `'Cancel'`                                         |
-
-### dayNames
-
-|                 |                                                                                                                          |
-| --------------- | ------------------------------------------------------------------------------------------------------------------------ |
-| **Description** | Full day of the week names. This can be used to provide<br />locale names for each day in the week. Defaults to English. |
-| **Attribute**   | `day-names`                                                                                                              |
-| **Type**        | `string \| string[] \| undefined`                                                                                        |
-| **Default**     | `undefined`                                                                                                              |
-
-### dayShortNames
-
-|                 |                                                                                                                                                                                                             |
-| --------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Description** | Short abbreviated day of the week names. This can be used to provide<br />locale names for each day in the week. Defaults to English.<br />Defaults to: `['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']` |
-| **Attribute**   | `day-short-names`                                                                                                                                                                                           |
-| **Type**        | `string \| string[] \| undefined`                                                                                                                                                                           |
-| **Default**     | `undefined`                                                                                                                                                                                                 |
-
-### dayValues
-
-|                 |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
-| --------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Description** | Values used to create the list of selectable days. By default<br />every day is shown for the given month. However, to control exactly which days of<br />the month to display, the `dayValues` input can take a number, an array of numbers, or<br />a string of comma separated numbers. Note that even if the array days have an invalid<br />number for the selected month, like `31` in February, it will correctly not show<br />days which are not valid for the selected month. |
-| **Attribute**   | `day-values`                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
-| **Type**        | `number \| number[] \| string \| undefined`                                                                                                                                                                                                                                                                                                                                                                                                                                             |
-| **Default**     | `undefined`                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
-
-### disabled
-
-|                 |                                                        |
-| --------------- | ------------------------------------------------------ |
-| **Description** | If `true`, the user cannot interact with the datetime. |
-| **Attribute**   | `disabled`                                             |
-| **Type**        | `boolean`                                              |
-| **Default**     | `false`                                                |
-
-### displayFormat
-
-|                 |                                                                                                                                                                                                                                                                                                                                                    |
-| --------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Description** | The display format of the date and time as text that shows<br />within the item. When the `pickerFormat` input is not used, then the<br />`displayFormat` is used for both display the formatted text, and determining<br />the datetime picker's columns. See the `pickerFormat` input description for<br />more info. Defaults to `MMM D, YYYY`. |
-| **Attribute**   | `display-format`                                                                                                                                                                                                                                                                                                                                   |
-| **Type**        | `string`                                                                                                                                                                                                                                                                                                                                           |
-| **Default**     | `'MMM D, YYYY'`                                                                                                                                                                                                                                                                                                                                    |
-
-### displayTimezone
-
-|                 |                                                                                                                                                                                                                                                                                                                                                    |
-| --------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Description** | The timezone to use for display purposes only. See<br />[Date.prototype.toLocaleString()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toLocaleString)<br />for a list of supported timezones. If no value is provided, the<br />component will default to displaying times in the user's local timezone. |
-| **Attribute**   | `display-timezone`                                                                                                                                                                                                                                                                                                                                 |
-| **Type**        | `string \| undefined`                                                                                                                                                                                                                                                                                                                              |
-| **Default**     | `undefined`                                                                                                                                                                                                                                                                                                                                        |
-
-### doneText
-
-|                 |                                                    |
-| --------------- | -------------------------------------------------- |
-| **Description** | The text to display on the picker's "Done" button. |
-| **Attribute**   | `done-text`                                        |
-| **Type**        | `string`                                           |
-| **Default**     | `'Done'`                                           |
-
-### hourValues
-
-|                 |                                                                                                                                                                                                                                                                                                                          |
-| --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **Description** | Values used to create the list of selectable hours. By default<br />the hour values range from `0` to `23` for 24-hour, or `1` to `12` for 12-hour. However,<br />to control exactly which hours to display, the `hourValues` input can take a number, an<br />array of numbers, or a string of comma separated numbers. |
-| **Attribute**   | `hour-values`                                                                                                                                                                                                                                                                                                            |
-| **Type**        | `number \| number[] \| string \| undefined`                                                                                                                                                                                                                                                                              |
-| **Default**     | `undefined`                                                                                                                                                                                                                                                                                                              |
-
-### max
-
-|                 |                                                                                                                                                                                                                                                                                                                                                           |
-| --------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Description** | The maximum datetime allowed. Value must be a date string<br />following the<br />[ISO 8601 datetime format standard](https://www.w3.org/TR/NOTE-datetime),<br />`1996-12-19`. The format does not have to be specific to an exact<br />datetime. For example, the maximum could just be the year, such as `1994`.<br />Defaults to the end of this year. |
-| **Attribute**   | `max`                                                                                                                                                                                                                                                                                                                                                     |
-| **Type**        | `string \| undefined`                                                                                                                                                                                                                                                                                                                                     |
-| **Default**     | `undefined`                                                                                                                                                                                                                                                                                                                                               |
-
-### min
-
-|                 |                                                                                                                                                                                                                                                                                                                                                                                                  |
-| --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **Description** | The minimum datetime allowed. Value must be a date string<br />following the<br />[ISO 8601 datetime format standard](https://www.w3.org/TR/NOTE-datetime),<br />such as `1996-12-19`. The format does not have to be specific to an exact<br />datetime. For example, the minimum could just be the year, such as `1994`.<br />Defaults to the beginning of the year, 100 years ago from today. |
-| **Attribute**   | `min`                                                                                                                                                                                                                                                                                                                                                                                            |
-| **Type**        | `string \| undefined`                                                                                                                                                                                                                                                                                                                                                                            |
-| **Default**     | `undefined`                                                                                                                                                                                                                                                                                                                                                                                      |
-
-### minuteValues
-
-|                 |                                                                                                                                                                                                                                                                                                                                                                                                                            |
-| --------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Description** | Values used to create the list of selectable minutes. By default<br />the minutes range from `0` to `59`. However, to control exactly which minutes to display,<br />the `minuteValues` input can take a number, an array of numbers, or a string of comma<br />separated numbers. For example, if the minute selections should only be every 15 minutes,<br />then this input value would be `minuteValues="0,15,30,45"`. |
-| **Attribute**   | `minute-values`                                                                                                                                                                                                                                                                                                                                                                                                            |
-| **Type**        | `number \| number[] \| string \| undefined`                                                                                                                                                                                                                                                                                                                                                                                |
-| **Default**     | `undefined`                                                                                                                                                                                                                                                                                                                                                                                                                |
-
-### mode
-
-|                 |                                                   |
-| --------------- | ------------------------------------------------- |
-| **Description** | The mode determines which platform styles to use. |
-| **Attribute**   | `mode`                                            |
-| **Type**        | `"ios" \| "md"`                                   |
-| **Default**     | `undefined`                                       |
-
-### monthNames
-
-|                 |                                                                                                           |
-| --------------- | --------------------------------------------------------------------------------------------------------- |
-| **Description** | Full names for each month name. This can be used to provide<br />locale month names. Defaults to English. |
-| **Attribute**   | `month-names`                                                                                             |
-| **Type**        | `string \| string[] \| undefined`                                                                         |
-| **Default**     | `undefined`                                                                                               |
-
-### monthShortNames
-
-|                 |                                                                                                                        |
-| --------------- | ---------------------------------------------------------------------------------------------------------------------- |
-| **Description** | Short abbreviated names for each month name. This can be used to provide<br />locale month names. Defaults to English. |
-| **Attribute**   | `month-short-names`                                                                                                    |
-| **Type**        | `string \| string[] \| undefined`                                                                                      |
-| **Default**     | `undefined`                                                                                                            |
-
-### monthValues
-
-|                 |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
-| --------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Description** | Values used to create the list of selectable months. By default<br />the month values range from `1` to `12`. However, to control exactly which months to<br />display, the `monthValues` input can take a number, an array of numbers, or a string of<br />comma separated numbers. For example, if only summer months should be shown, then this<br />input value would be `monthValues="6,7,8"`. Note that month numbers do _not_ have a<br />zero-based index, meaning January's value is `1`, and December's is `12`. |
-| **Attribute**   | `month-values`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
-| **Type**        | `number \| number[] \| string \| undefined`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
-| **Default**     | `undefined`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
-
-### name
-
-|                 |                                                                 |
-| --------------- | --------------------------------------------------------------- |
-| **Description** | The name of the control, which is submitted with the form data. |
-| **Attribute**   | `name`                                                          |
-| **Type**        | `string`                                                        |
-| **Default**     | `this.inputId`                                                  |
-
-### pickerFormat
-
-|                 |                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
-| --------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Description** | The format of the date and time picker columns the user selects.<br />A datetime input can have one or many datetime parts, each getting their<br />own column which allow individual selection of that particular datetime part. For<br />example, year and month columns are two individually selectable columns which help<br />choose an exact date from the datetime picker. Each column follows the string<br />parse format. Defaults to use `displayFormat`. |
-| **Attribute**   | `picker-format`                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
-| **Type**        | `string \| undefined`                                                                                                                                                                                                                                                                                                                                                                                                                                                |
-| **Default**     | `undefined`                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
-
-### pickerOptions
-
-|                 |                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
-| --------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Description** | Any additional options that the picker interface can accept.<br />See the [Picker API docs](picker.md) for the picker options.                                                                                                                                                                                                                                                                                                                       |
-| **Attribute**   | `undefined`                                                                                                                                                                                                                                                                                                                                                                                                                                          |
-| **Type**        | `undefined \| { columns?: PickerColumn[] \| undefined; buttons?: PickerButton[] \| undefined; cssClass?: string \| string[] \| undefined; showBackdrop?: boolean \| undefined; backdropDismiss?: boolean \| undefined; animated?: boolean \| undefined; mode?: Mode \| undefined; keyboardClose?: boolean \| undefined; id?: string \| undefined; enterAnimation?: AnimationBuilder \| undefined; leaveAnimation?: AnimationBuilder \| undefined; }` |
-| **Default**     | `undefined`                                                                                                                                                                                                                                                                                                                                                                                                                                          |
-
-### placeholder
-
-|                 |                                                                                                          |
-| --------------- | -------------------------------------------------------------------------------------------------------- |
-| **Description** | The text to display when there's no date selected yet.<br />Using lowercase to match the input attribute |
-| **Attribute**   | `placeholder`                                                                                            |
-| **Type**        | `null \| string \| undefined`                                                                            |
-| **Default**     | `undefined`                                                                                              |
-
-### readonly
-
-|                 |                                                                |
-| --------------- | -------------------------------------------------------------- |
-| **Description** | If `true`, the datetime appears normal but is not interactive. |
-| **Attribute**   | `readonly`                                                     |
-| **Type**        | `boolean`                                                      |
-| **Default**     | `false`                                                        |
-
-### value
-
-|                 |                                                                |
-| --------------- | -------------------------------------------------------------- |
-| **Description** | The value of the datetime as a valid ISO 8601 datetime string. |
-| **Attribute**   | `value`                                                        |
-| **Type**        | `null \| string \| undefined`                                  |
-| **Default**     | `undefined`                                                    |
-
-### yearValues
-
-|                 |                                                                                                                                                                                                                                                                                                                                                                                                                                               |
-| --------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Description** | Values used to create the list of selectable years. By default<br />the year values range between the `min` and `max` datetime inputs. However, to<br />control exactly which years to display, the `yearValues` input can take a number, an array<br />of numbers, or string of comma separated numbers. For example, to show upcoming and<br />recent leap years, then this input's value would be `yearValues="2024,2020,2016,2012,2008"`. |
-| **Attribute**   | `year-values`                                                                                                                                                                                                                                                                                                                                                                                                                                 |
-| **Type**        | `number \| number[] \| string \| undefined`                                                                                                                                                                                                                                                                                                                                                                                                   |
-| **Default**     | `undefined`                                                                                                                                                                                                                                                                                                                                                                                                                                   |
+<Props />
 
 ## Events
 
-| Name        | Description                                         |
-| ----------- | --------------------------------------------------- |
-| `ionBlur`   | Emitted when the datetime loses focus.              |
-| `ionCancel` | Emitted when the datetime selection was cancelled.  |
-| `ionChange` | Emitted when the value (selected date) has changed. |
-| `ionFocus`  | Emitted when the datetime has focus.                |
+<Events />
 
 ## Methods
 
-### open
-
-|                 |                             |
-| --------------- | --------------------------- |
-| **Description** | Opens the datetime overlay. |
-| **Signature**   | `open() => Promise<void>`   |
+<Methods />
 
 ## CSS Shadow Parts
 
-| Name          | Description                      |
-| ------------- | -------------------------------- |
-| `placeholder` | The placeholder of the datetime. |
-| `text`        | The value of the datetime.       |
+<Parts />
 
 ## CSS Custom Properties
 
-| Name                  | Description                                                                                                 |
-| --------------------- | ----------------------------------------------------------------------------------------------------------- |
-| `--padding-bottom`    | Bottom padding of the datetime                                                                              |
-| `--padding-end`       | Right padding if direction is left-to-right, and left padding if direction is right-to-left of the datetime |
-| `--padding-start`     | Left padding if direction is left-to-right, and right padding if direction is right-to-left of the datetime |
-| `--padding-top`       | Top padding of the datetime                                                                                 |
-| `--placeholder-color` | Color of the datetime placeholder                                                                           |
+<CustomProps />
+
+## Slots
+
+<Slots />

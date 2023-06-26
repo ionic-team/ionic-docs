@@ -25,9 +25,7 @@ import TabItem from '@theme/TabItem';
 
 <!-- After -->
 <ion-item>
-  <ion-range>
-    <div slot="label">Notifications</div>
-  </ion-range>
+  <ion-range label="Notifications"></ion-range>
 </ion-item>
 
 <!-- Fixed Labels -->
@@ -40,9 +38,7 @@ import TabItem from '@theme/TabItem';
 
 <!-- After -->
 <ion-item>
-  <ion-range label-placement="fixed">
-    <div slot="label">Notifications</div>
-  </ion-range>
+  <ion-range label-placement="fixed" label="Notifications"></ion-range>
 </ion-item>
 
 <!-- Range at the start of line, Label at the end of line -->
@@ -55,8 +51,23 @@ import TabItem from '@theme/TabItem';
 
 <!-- After -->
 <ion-item>
-  <ion-range label-placement="end">
-    <div slot="label">Notifications</div>
+  <ion-range label-placement="end" label="Notifications"></ion-range>
+</ion-item>
+
+<!-- Custom HTML label -->
+
+<!-- Before -->
+<ion-item>
+  <ion-label>
+    <div class="custom-label">Notifications</div>
+  </ion-label>
+  <ion-range></ion-range>
+</ion-item>
+
+<!-- After -->
+<ion-item>
+  <ion-range>
+    <div slot="label" class="custom-label">Notifications</div>
   </ion-range>
 </ion-item>
 ```
@@ -74,9 +85,7 @@ import TabItem from '@theme/TabItem';
 
 <!-- After -->
 <ion-item>
-  <ion-range>
-    <div slot="label">Notifications</div>
-  </ion-range>
+  <ion-range label="Notifications"></ion-range>
 </ion-item>
 
 <!-- Fixed Labels -->
@@ -89,9 +98,7 @@ import TabItem from '@theme/TabItem';
 
 <!-- After -->
 <ion-item>
-  <ion-range labelPlacement="fixed">
-    <div slot="label">Notifications</div>
-  </ion-range>
+  <ion-range labelPlacement="fixed" label="Notifications"></ion-range>
 </ion-item>
 
 <!-- Range at the start of line, Label at the end of line -->
@@ -104,8 +111,23 @@ import TabItem from '@theme/TabItem';
 
 <!-- After -->
 <ion-item>
-  <ion-range labelPlacement="end">
-    <div slot="label">Notifications</div>
+  <ion-range labelPlacement="end" label="Notifications"></ion-range>
+</ion-item>
+
+<!-- Custom HTML label -->
+
+<!-- Before -->
+<ion-item>
+  <ion-label>
+    <div class="custom-label">Notifications</div>
+  </ion-label>
+  <ion-range></ion-range>
+</ion-item>
+
+<!-- After -->
+<ion-item>
+  <ion-range>
+    <div slot="label" class="custom-label">Notifications</div>
   </ion-range>
 </ion-item>
 ```
@@ -123,9 +145,7 @@ import TabItem from '@theme/TabItem';
 
 {/* After */}
 <IonItem>
-  <IonRange>
-    <div slot="label">Notifications</div>
-  </IonRange>
+  <IonRange label="Notifications"></IonRange>
 </IonItem>
 
 {/* Fixed Labels */}
@@ -138,9 +158,7 @@ import TabItem from '@theme/TabItem';
 
 {/* After */}
 <IonItem>
-  <IonRange labelPlacement="fixed">
-    <div slot="label">Notifications</div>
-  </IonRange>
+  <IonRange labelPlacement="fixed" label="Notifications"></IonRange>
 </IonItem>
 
 {/* Range at the start of line, Label at the end of line */}
@@ -153,8 +171,23 @@ import TabItem from '@theme/TabItem';
 
 {/* After */}
 <IonItem>
-  <IonRange labelPlacement="end">
-    <div slot="label">Notifications</div>
+  <IonRange labelPlacement="end" label="Notifications"></IonRange>
+</IonItem>
+
+{/* Custom HTML label */}
+
+{/* Before */}
+<IonItem>
+  <IonLabel>
+    <div className="custom-label">Notifications</div>
+  </IonLabel>
+  <IonRange></IonRange>
+</IonItem>
+
+<!-- After -->
+<IonItem>
+  <IonRange>
+    <div slot="label" className="custom-label">Notifications</div>
   </IonRange>
 </IonItem>
 ```
@@ -172,9 +205,7 @@ import TabItem from '@theme/TabItem';
 
 <!-- After -->
 <ion-item>
-  <ion-range>
-    <div slot="label">Notifications</div>
-  </ion-range>
+  <ion-range label="Notifications"></ion-range>
 </ion-item>
 
 <!-- Fixed Labels -->
@@ -187,9 +218,7 @@ import TabItem from '@theme/TabItem';
 
 <!-- After -->
 <ion-item>
-  <ion-range label-placement="fixed">
-    <div slot="label">Notifications</div>
-  </ion-range>
+  <ion-range label-placement="fixed" label="Notifications"></ion-range>
 </ion-item>
 
 <!-- Range at the start of line, Label at the end of line -->
@@ -202,8 +231,23 @@ import TabItem from '@theme/TabItem';
 
 <!-- After -->
 <ion-item>
-  <ion-range label-placement="end">
-    <div slot="label">Notifications</div>
+  <ion-range label-placement="end" label="Notifications"></ion-range>
+</ion-item>
+
+<!-- Custom HTML label -->
+
+<!-- Before -->
+<ion-item>
+  <ion-label>
+    <div class="custom-label">Notifications</div>
+  </ion-label>
+  <ion-range></ion-range>
+</ion-item>
+
+<!-- After -->
+<ion-item>
+  <ion-range>
+    <div slot="label" class="custom-label">Notifications</div>
   </ion-range>
 </ion-item>
 ```

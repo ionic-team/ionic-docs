@@ -20,9 +20,9 @@ Ionic provides a few lifecycle methods that you can use in your apps:
 | Event Name         | Description                                                        |
 | ------------------ | ------------------------------------------------------------------ |
 | `ionViewWillEnter` | Fired when the component routing to is about to animate into view. |
-| `ionViewDidEnter`  | Fired when the component routing to has finished animating.        |
-| `ionViewWillLeave` | Fired when the component routing from is about to animate.         |
-| `ionViewDidLeave`  | Fired when the component routing to has finished animating.        |
+| `ionViewDidEnter`  | Fired when the component routing to has _finished_ animating.      |
+| `ionViewWillLeave` | Fired when the component routing _from_ is about to animate.       |
+| `ionViewDidLeave`  | Fired when the component routing _from_ has _finished_ animating.  |
 
 These lifecycles are only called on components directly mapped by a router. This means if `/pageOne` maps to `PageOneComponent`, then Ionic lifecycles will be called on `PageOneComponent` but will not be called on any child components that `PageOneComponent` may render.
 

@@ -58,12 +58,14 @@ This plugin works on all android versions, but we can only detect notches starti
 >
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
-      $ npm install cordova-plugin-android-notch {'\n'}$ npm install @awesome-cordova-plugins/android-notch {'\n'}$ ionic cap sync
+      $ npm install cordova-plugin-android-notch {'\n'}$ npm install @awesome-cordova-plugins/android-notch {'\n'}$
+      ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
-      $ ionic cordova plugin add cordova-plugin-android-notch {'\n'}$ npm install @awesome-cordova-plugins/android-notch {'\n'}
+      $ ionic cordova plugin add cordova-plugin-android-notch {'\n'}$ npm install @awesome-cordova-plugins/android-notch{' '}
+      {'\n'}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">

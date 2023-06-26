@@ -13,7 +13,7 @@
   import { defineComponent } from 'vue';
 
   export default defineComponent({
-    components: { IonAvatar, IonChip, IonLabel }
+    components: { IonAvatar, IonChip, IonLabel },
   });
 </script>
 ```

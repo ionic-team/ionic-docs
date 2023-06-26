@@ -19,20 +19,20 @@ import angular_types_ts from './angular/angular_types_ts.md';
 
 <Playground
   version="6"
-  code={{ 
-    javascript, 
+  code={{
+    javascript,
     react: {
       files: {
         'src/main.tsx': react_main_tsx,
         'src/types.ts': react_types_ts,
-        'src/AppTypeahead.tsx': typeahead_component_tsx
-      }
-    }, 
+        'src/AppTypeahead.tsx': typeahead_component_tsx,
+      },
+    },
     vue: {
       files: {
         'src/components/Example.vue': vue_example,
         'src/types.ts': vue_types_ts,
-        'src/components/AppTypeahead.vue': vue_typeahead_component
+        'src/components/AppTypeahead.vue': vue_typeahead_component,
       },
     },
     angular: {
@@ -42,9 +42,9 @@ import angular_types_ts from './angular/angular_types_ts.md';
         'src/app/typeahead.component.html': angular_modal_example_component_html,
         'src/app/typeahead.component.ts': angular_modal_example_component_ts,
         'src/app/app.module.ts': angular_app_module_ts,
-        'src/app/types.ts': angular_types_ts
+        'src/app/types.ts': angular_types_ts,
       },
-    }, 
+    },
   }}
   src="usage/v6/select/typeahead/demo.html"
   devicePreview

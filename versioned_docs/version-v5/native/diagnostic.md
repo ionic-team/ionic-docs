@@ -51,12 +51,14 @@ Checks whether device hardware features are enabled or available to the app, e.g
 >
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
-      $ npm install cordova.plugins.diagnostic {'\n'}$ npm install @awesome-cordova-plugins/diagnostic {'\n'}$ ionic cap sync
+      $ npm install cordova.plugins.diagnostic {'\n'}$ npm install @awesome-cordova-plugins/diagnostic {'\n'}$ ionic cap
+      sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
-      $ ionic cordova plugin add cordova.plugins.diagnostic {'\n'}$ npm install @awesome-cordova-plugins/diagnostic {'\n'}
+      $ ionic cordova plugin add cordova.plugins.diagnostic {'\n'}$ npm install @awesome-cordova-plugins/diagnostic{' '}
+      {'\n'}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">

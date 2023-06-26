@@ -20,7 +20,7 @@
   async function presentPopover(e) {
     const popover = Object.assign(document.createElement('ion-popover'), {
       component: 'popover-page',
-      event: e
+      event: e,
     });
 
     document.body.appendChild(popover);

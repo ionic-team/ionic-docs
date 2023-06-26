@@ -10,12 +10,7 @@ module.exports = {
       type: 'category',
       label: 'Upgrade Guides',
       collapsed: false,
-      items: [
-        'updating/7-0',
-        'updating/6-0',
-        'updating/5-0',
-        'updating/4-0'
-      ]
+      items: ['updating/7-0', 'updating/6-0', 'updating/5-0', 'updating/4-0'],
     },
     {
       type: 'category',
@@ -30,7 +25,7 @@ module.exports = {
         'developing/tips',
         'developing/hardware-back-button',
         'developing/keyboard',
-        'developing/config'
+        'developing/config',
       ],
     },
     {
@@ -45,7 +40,7 @@ module.exports = {
           href: '/docs/api/grid',
         },
         'layout/global-stylesheets',
-        'layout/css-utilities'
+        'layout/css-utilities',
       ],
     },
     {
@@ -229,7 +224,7 @@ module.exports = {
           href: 'https://github.com/ionic-team/ionic/blob/master/CHANGELOG.md',
         },
         'reference/support',
-        'reference/browser-support'
+        'reference/browser-support',
       ],
     },
   ],
@@ -362,12 +357,7 @@ module.exports = {
       type: 'category',
       label: 'Media',
       collapsed: false,
-      items: [
-        'api/avatar',
-        'api/icon',
-        'api/img',
-        'api/thumbnail',
-      ],
+      items: ['api/avatar', 'api/icon', 'api/img', 'api/thumbnail'],
     },
     {
       type: 'category',
@@ -520,11 +510,7 @@ module.exports = {
       type: 'category',
       label: 'Getting Started',
       collapsed: false,
-      items: [
-        'native',
-        'native-setup',
-        'native-faq',
-      ],
+      items: ['native', 'native-setup', 'native-faq'],
     },
     {
       type: 'category',

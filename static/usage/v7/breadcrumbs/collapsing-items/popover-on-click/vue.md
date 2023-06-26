@@ -24,25 +24,25 @@
 </template>
 
 <script lang="ts">
-import { IonBreadcrumb, IonBreadcrumbs, IonContent, IonItem, IonLabel, IonList, IonPopover } from '@ionic/vue';
-import Popover from './Popover.vue';
+  import { IonBreadcrumb, IonBreadcrumbs, IonContent, IonItem, IonLabel, IonList, IonPopover } from '@ionic/vue';
+  import Popover from './Popover.vue';
 
-export default {
-  components: { IonBreadcrumb, IonBreadcrumbs, IonContent, IonItem, IonLabel, IonList, IonPopover },
-  data() {
-    return {
-      popoverOpen: false,
-      collapsedBreadcrumbs: [],
-      event: null
-    }
-  },
-  methods: {
-    presentPopover(e: Event) {
-      this.collapsedBreadcrumbs = (e as CustomEvent).detail.collapsedBreadcrumbs;
-      this.event = e;
-      this.popoverOpen = true;
-    }
-  },
-}
+  export default {
+    components: { IonBreadcrumb, IonBreadcrumbs, IonContent, IonItem, IonLabel, IonList, IonPopover },
+    data() {
+      return {
+        popoverOpen: false,
+        collapsedBreadcrumbs: [],
+        event: null,
+      };
+    },
+    methods: {
+      presentPopover(e: Event) {
+        this.collapsedBreadcrumbs = (e as CustomEvent).detail.collapsedBreadcrumbs;
+        this.event = e;
+        this.popoverOpen = true;
+      },
+    },
+  };
 </script>
 ```
