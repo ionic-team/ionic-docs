@@ -6,6 +6,7 @@ module.exports = [
     type: 'input',
     name: 'name',
     message: 'Which component is this playground for?',
+    hint: 'Component name must be kebab-case',
     initial: 'ion-button',
   },
   {
@@ -25,7 +26,7 @@ module.exports = [
   {
     type: 'toggle',
     name: 'css',
-    message: 'Do you want CSS scaffolded?',
+    message: 'Generate custom CSS files?',
     enabled: 'Yes',
     disabled: 'No',
   },
