@@ -10,8 +10,10 @@ module.exports = {
         type: 'input',
         name: 'name',
         message: 'Which component is this playground for?',
-        hint: 'kebab-case',
         initial: 'ion-button',
+        validate(value) {
+          return value.match(/^ion-[a-z/-]*[a-z]+$/) ? true : "Component name must be kebab-case and begin with 'ion-'";
+        },
       },
       {
         type: 'input',
