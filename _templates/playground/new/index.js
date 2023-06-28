@@ -1,3 +1,5 @@
+const changeCase = require('change-case');
+
 // see types of prompts:
 // https://github.com/enquirer/enquirer/tree/master/examples
 //
@@ -41,6 +43,19 @@ module.exports = {
       },
     ];
 
-    return inquirer.prompt(questions);
+    return inquirer.prompt(questions).then((answers) => {
+      const componentName = changeCase.pascal(answers.path.split('/').pop());
+      console.log(
+        `\nTo use this new component in a docs markdown file, include\nthe following:\n\n## ${componentName}\n\nimport ${componentName} from '@site/static/usage/v7/${answers.name.replace(
+          'ion-',
+          ''
+        )}/${answers.path}/index.md';\n\n<${componentName} />\n`
+      );
+
+      // // both set of answers must be returned as a merged object, else the previous set of answers won't be available to the templates
+      // return inquirer.prompt(questions).then((nextAnswers) => Object.assign({}, answers, nextAnswers));
+
+      return answers;
+    });
   },
 };
