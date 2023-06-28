@@ -52,9 +52,6 @@ module.exports = {
         )}/${answers.path}/index.md';\n\n<${componentName} />\n`
       );
 
-      // // both set of answers must be returned as a merged object, else the previous set of answers won't be available to the templates
-      // return inquirer.prompt(questions).then((nextAnswers) => Object.assign({}, answers, nextAnswers));
-
       return answers;
     });
   },
