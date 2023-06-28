@@ -19,7 +19,9 @@ module.exports = {
         message: 'What should the playground path be?',
         hint: 'e.g. `basic` or `theming/colors`',
         validate(value) {
-          return value.length > 0;
+          return value.match(/^[a-z]+[a-z/-]*[a-z]+$/)
+            ? true
+            : "Path should begin and end with a letter and only contain lowercase letters, '-', or '/'";
         },
       },
       {
