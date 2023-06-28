@@ -10,15 +10,17 @@ module.exports = {
         type: 'input',
         name: 'name',
         message: 'Which component is this playground for?',
-        hint: 'Component name must be kebab-case',
+        hint: 'kebab-case',
         initial: 'ion-button',
       },
       {
         type: 'input',
         name: 'path',
         message: 'What should the playground path be?',
-        hint: 'e.g. `theming/colors`',
-        initial: 'basic',
+        hint: 'e.g. `basic` or `theming/colors`',
+        validate(value) {
+          return value.length > 0;
+        },
       },
       {
         type: 'select',
