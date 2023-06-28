@@ -48,7 +48,7 @@ module.exports = {
     return inquirer.prompt(questions).then((answers) => {
       const componentName = changeCase.pascal(answers.path.split('/').pop());
       console.log(
-        `\nTo use this new component in a docs markdown file, include\nthe following:\n\n## ${componentName}\n\nimport ${componentName} from '@site/static/usage/v7/${answers.name.replace(
+        `\nTo use this component in a docs markdown file, include\nthe following:\n\n## ${componentName}\n\nimport ${componentName} from '@site/static/usage/v7/${answers.name.replace(
           'ion-',
           ''
         )}/${answers.path}/index.md';\n\n<${componentName} />\n`
