@@ -52,7 +52,7 @@ register();
 ...
 ```
 
-From there, we just have to replace `ion-slides` elements with `swiper-container` and `ion-slide` elements with `swiper-slide`. Note that these custom elements do not need to be imported, as calling `register` tells Angular about them on its own.
+From there, we need to replace `ion-slides` elements with `swiper-container` and `ion-slide` elements with `swiper-slide`. Note that these custom elements do not need to be imported, as calling `register` tells Angular about them on its own.
 
 ```html
 <swiper-container>

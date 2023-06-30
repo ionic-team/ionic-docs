@@ -66,7 +66,7 @@ The outer `describe` call states that the `Calculation` service is being tested,
 
 ### Pages and Components
 
-Pages are just Angular components. Thus, pages and components are both tested using <a href="https://angular.io/guide/testing#component-test-basics">Angular's Component Testing</a> guidelines.
+Simply said, pages are Angular components. Thus, pages and components are both tested using <a href="https://angular.io/guide/testing#component-test-basics">Angular's Component Testing</a> guidelines.
 
 Since pages and components contain both TypeScript code and HTML template markup it is possible to perform both component class testing and component DOM testing. When a page is created, the template test that is generated looks like this:
 
@@ -134,7 +134,7 @@ describe('PayrollService', () => {
 });
 ```
 
-This allows the test to control the values returned by the various tax calculations via mock setup such as `taxServiceSpy.federalIncomeTax.and.returnValue(73.24)`. This allows the "net pay" tests to be independent of the tax calculation logic. When the tax codes change, only the tax service related code and tests need to change. The tests for the net pay can continue to operate as they are since these tests do not care how the tax is calculated, just that the value is applied properly.
+This allows the test to control the values returned by the various tax calculations via mock setup such as `taxServiceSpy.federalIncomeTax.and.returnValue(73.24)`. This allows the "net pay" tests to be independent of the tax calculation logic. When the tax codes change, only the tax service related code and tests need to change. The tests for the net pay can continue to operate as they are since these tests do not care how the tax is calculated, only that the value is applied properly.
 
 The scaffolding that is used when a service is generated via `ionic g service name` uses Angular's testing utilities and sets up a testing module. Doing so is not strictly necessary. That code may be left in, however, allowing the service to be built manually or injected as such:
 

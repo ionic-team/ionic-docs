@@ -11,7 +11,7 @@ sidebar_label: Build Your First App
   />
 </head>
 
-The great thing about Ionic is that with one codebase, you can build for any platform using just HTML, CSS, and JavaScript. Follow along as we learn the fundamentals of Ionic app development by creating a realistic app step by step.
+With Ionic, you can create applications for any platform using only HTML, CSS, and JavaScript while maintaining a single codebase. Follow along as we build a realistic app step by step while learning the foundations of Ionic app development.
 
 Here’s the finished app running on all 3 platforms:
 
@@ -219,4 +219,4 @@ Within the tab bar (`<ion-tab-bar>`), change the label to "Photos" and the `elli
 </ion-tab-button>
 ```
 
-That’s just the start of all the cool things we can do with Ionic. Up next, implementing camera taking functionality on the web, then building for iOS and Android.
+The cool things we can do with Ionic don't end there. The next step is to include camera capabilities on the web, after which iOS and Android versions will be developed.

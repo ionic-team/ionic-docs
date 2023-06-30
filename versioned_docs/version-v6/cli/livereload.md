@@ -4,11 +4,11 @@ One option that can boost productivity when building Ionic apps is **Live Reload
 
 ## Terms
 
-Live Reload is a conflated term. With `ionic serve`, Live Reload just refers to reloading the browser when changes are made. Live Reload can also be used with Capacitor and Cordova to provide the same experience on virtual and hardware devices, which eliminates the need for re-deploying a native binary.
+Live Reload is a conflated term. With `ionic serve`, Live Reload refers to reloading the browser when changes are made. Live Reload can also be used with Capacitor and Cordova to provide the same experience on virtual and hardware devices, which eliminates the need for re-deploying a native binary.
 
 ## Usage
 
-Since live-reload requires the Web View to load your app from a URL hosted by your computer instead of just reading files on the device, setting up live-reload for hardware devices can be tricky.
+Setting up Live Reload for hardware devices can be challenging since it requires the Web View to load your app from a URL hosted by your computer rather than reading files on the device.
 
 As with regular device deploys, you will need a cable to connect your device to your computer. The difference is the Ionic CLI configures the Web View to load your app from the dev server on your computer.
 

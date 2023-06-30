@@ -45,7 +45,7 @@ On the app's initial load, the app will render the `HomePage` component as that 
 
 ## Handling Redirects
 
-What if we wanted to land a different path on our initial load? For this, we can use router redirects. Redirects work the same way that a typical route object does, but just includes some different keys:
+What if we wanted to land a different path on our initial load? For this, we can use router redirects. Redirects work the same way that a typical route object does, but includes different keys:
 
 ```tsx
 const routes: Array<RouteRecordRaw> = [
@@ -123,7 +123,7 @@ We can also programmatically navigate in our app by using the router API:
 </script>
 ```
 
-Both options provide the same navigation mechanism, just fitting different use cases.
+Both options provide the same navigation mechanism, but fit different use cases.
 
 ## Lazy Loading Routes
 

@@ -94,4 +94,4 @@ Next, open `src/app/tabs/tabs.page.html`. Change the label to “Gallery” and 
 </ion-tab-button>
 ```
 
-That’s just the start of all the cool things we can do with Ionic. Up next, we’ll deploy the app to your iOS or Android device, then continue building the photo gallery.
+That’s only the beginning of all of the cool things we can do with Ionic. Up next, we’ll deploy the app to your iOS or Android device, then continue building the photo gallery.

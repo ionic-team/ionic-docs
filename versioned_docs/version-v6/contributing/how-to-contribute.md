@@ -189,7 +189,7 @@ The subject contains succinct description of the change:
 
 ### Body
 
-Just as in the **subject**, use the imperative, present tense: "change" not "changed" nor "changes".
+Same as in the **subject**, use the imperative, present tense: "change" not "changed" nor "changes".
 The body should include the motivation for the change and contrast this with previous behavior.
 
 ### Footer

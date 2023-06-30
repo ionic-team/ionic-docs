@@ -93,7 +93,7 @@ Start with pre-designed components, typography, interactive paradigms, and a gor
 
 ### Simplicity
 
-Ionic is built with simplicity in mind, so that creating apps is enjoyable, easy to learn, and accessible to just about anyone with web development skills.
+Ionic is built with simplicity in mind, so that creating apps is enjoyable and easy to learn, and it is also accessible to anyone with web development skills.
 
 ## Framework Compatibility
 
@@ -101,7 +101,7 @@ While past releases of Ionic were tightly coupled to Angular, version 4.x of the
 
 ### JavaScript
 
-One of the main goals with moving Ionic to <a href="https://developer.mozilla.org/en-US/docs/Web/Web_Components" target="_blank">Web Components</a> was to remove any hard requirement on a single framework to host the components. This made it possible for the core components to work standalone in a web page with just a script tag. While working with frameworks can be great for larger teams and larger apps, it is now possible to use Ionic as a standalone library in a single page even in a context like WordPress.
+One of the main goals with moving Ionic to <a href="https://developer.mozilla.org/en-US/docs/Web/Web_Components" target="_blank">Web Components</a> was to remove any hard requirement on a single framework to host the components. This made it possible for the core components to work standalone in a web page with only a script tag. While working with frameworks can be great for larger teams and larger apps, it is now possible to use Ionic as a standalone library in a single page even in a context like WordPress.
 
 ### Angular
 

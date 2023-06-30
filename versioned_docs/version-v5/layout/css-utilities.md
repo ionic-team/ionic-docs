@@ -193,7 +193,7 @@ The display CSS property determines if an element should be visible or not. The 
 
 ### Responsive Display Attributes
 
-There are also additional classes to modify the visibility based on the screen size. Instead of just `.ion-hide` for all screen sizes, use `.ion-hide-{breakpoint}-{dir}` to only use the class on specific screen sizes, where `{breakpoint}` is one of the breakpoint names listed in [Ionic Breakpoints](#ionic-breakpoints), and `{dir}` is whether the element should be hidden on all screen sizes above (`up`) or below (`down`) the specified breakpoint.
+There are also additional classes to modify the visibility based on the screen size. Instead of using `.ion-hide` for all screen sizes, use `.ion-hide-{breakpoint}-{dir}` to only use the class on specific screen sizes, where `{breakpoint}` is one of the breakpoint names listed in [Ionic Breakpoints](#ionic-breakpoints), and `{dir}` is whether the element should be hidden on all screen sizes above (`up`) or below (`down`) the specified breakpoint.
 
 | Class                | Description                                                                                          |
 | -------------------- | ---------------------------------------------------------------------------------------------------- |

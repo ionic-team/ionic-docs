@@ -10,6 +10,7 @@ import PageStyles from '@components/page/react/PageStyles';
 import DocsCard from '@components/global/DocsCard';
 import DocsCards from '@components/global/DocsCards';
 
+<!--alex disable just-->
 <head>
   <title>Create an Ionic React App: Framework and Documentation</title>
   <meta
@@ -17,11 +18,13 @@ import DocsCards from '@components/global/DocsCards';
     content="One codebase, any platform, just React. View our documentation for creating apps with Ionic React—the native React version of Ionic Framework's open-source SDK."
   />
 </head>
+<!--alex enable just-->
 
 <PageStyles>
 
 <div class='flex main-flex'>
   <div class="pull-left">
+  <!--alex ignore just-->
   <h1>One Codebase <br/> Any Platform <br/> <strong>Just React</strong></h1>
 
 - ✓ 100+ mobile optimized React UI components
@@ -67,7 +70,7 @@ Choose from over 100 beautiful, mobile-ready UI components, animations, and gest
 
 ## Familiar tooling
 
-Ionic React projects are just like React projects, leveraging [react-dom](https://reactjs.org/docs/react-dom.html) and with setup normally found in a [Create React App (CRA)](https://github.com/facebook/create-react-app) app. For [routing and navigation](/docs/react/navigation), React Router is used under the hood.
+Ionic React projects are the same as React projects, leveraging [react-dom](https://reactjs.org/docs/react-dom.html) and with setup normally found in a [Create React App (CRA)](https://github.com/facebook/create-react-app) app. For [routing and navigation](/docs/react/navigation), React Router is used under the hood.
 Compatible with React version 16.8 and above.
 
 </div>
@@ -98,9 +101,11 @@ Deploy your Ionic React projects to native iOS, Android, Electron, and the web a
 
   <div class="pull-left">
 
+<!--alex disable just-->
 ## Just React
 
 At the end of the day, it's just React. Ionic React uses open web standards and built-in browser capabilities, so it's compatible with any of the millions of web libraries out there.
+<!--alex enable just-->
 
   </div>
 

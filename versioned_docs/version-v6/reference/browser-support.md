@@ -40,7 +40,7 @@ Angular's support policy for iOS is the two most recent major versions. At the t
 
 ## Desktop Browsers
 
-Because Ionic is based on web technologies, it works just as well on desktop browsers as it does on mobile devices. For more information on desktop layouts, see [Cross Platform](../core-concepts/cross-platform.md#desktop).
+Ionic works as well on desktop browsers as it does on mobile devices since it is built using web technologies. For more information on desktop layouts, see [Cross Platform](../core-concepts/cross-platform.md#desktop).
 
 |   Browser   | Ionic v6 | Ionic v5 | Ionic v4 |
 | :---------: | :------: | :------: | :------: |

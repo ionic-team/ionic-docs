@@ -114,4 +114,4 @@ $ git commit -m “converting about page to photo gallery”
 $ git push ionic master
 ```
 
-That’s just the start of all the cool things we can do with Ionic. Up next, we’ll deploy the app to iOS and Android, then continue building the photo gallery.
+That’s only the beginning of all of the cool things we can do with Ionic. Up next, we’ll deploy the app to iOS and Android, then continue building the photo gallery.

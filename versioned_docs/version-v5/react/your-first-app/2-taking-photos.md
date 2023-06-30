@@ -14,7 +14,7 @@ If you are not familiar with React Hooks, [Introducing React Hooks](https://reac
 
 Create a new file at `src/hooks/usePhotoGallery.ts` and open it up.
 
-A custom hook is just a function that uses other React hooks. And that's what we will be doing! We will start by importing the various hooks and utilities we will be using from React core, the Ionic React Hooks project, and Capacitor:
+A custom hook is simply a function that uses other React hooks. And that's what we will be doing! We will start by importing the various hooks and utilities we will be using from React core, the Ionic React Hooks project, and Capacitor:
 
 ```tsx
 import { useState, useEffect } from 'react';
@@ -46,7 +46,7 @@ export function usePhotoGallery() {
 
 Our `usePhotoGallery` hook exposes a method called takePhoto, which in turn calls into Capacitor's getPhoto method.
 
-Notice the magic here: there's no platform-specific code (web, iOS, or Android)! The Capacitor Camera plugin abstracts that away for us, leaving just one method call - `getPhoto()` - that will open up the device's camera and allow us to take photos.
+Notice the magic here: there's no platform-specific code (web, iOS, or Android)! One method call, "Camera.getPhoto()," is all that is necessary to activate the device's camera and capture photos thanks to the Capacitor Camera plugin, which abstracts that away for us.
 
 The last step we need to take is to use the new hook from the Tab2 page. Go back to Tab2.tsx and import the hook:
 

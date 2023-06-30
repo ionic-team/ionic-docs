@@ -80,7 +80,7 @@ Ionic Framework provides an application config option called `sanitizerEnabled` 
 
 ### Bypassing the sanitizer on a case-by-case basis
 
-Developers can also choose to eject from the sanitizer in certain scenarios. Ionic Framework provides the `IonicSafeString` class that allows developers to do just that.
+Developers can also choose to eject from the sanitizer in certain scenarios. Ionic Framework provides the `IonicSafeString` class that allows developers to do precisely that.
 
 #### Usage
 

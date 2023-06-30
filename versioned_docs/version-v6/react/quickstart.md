@@ -209,7 +209,7 @@ Here in our `IonContent`, we're adding an `IonList` and a much more involved `Io
 </IonItem>
 ```
 
-Item is important as it clearly shows the mix of React concepts and Web Component concepts. The first clear example of a React concept is self-closing tags for React Components in `IonCheckbox`. This is just a simpler way of writing components that do not contain any child content.
+Item is important as it clearly shows the mix of React concepts and Web Component concepts. The first clear example of a React concept is self-closing tags for React Components in `IonCheckbox`. This is a simpler way of writing components that do not contain any child content.
 
 From the Web Components side, we have a special attribute called `slot`. This is key for letting the `IonItem` know where to place the `IonCheckbox` when it renders. This is not a React API, but a web standards API.
 
@@ -258,7 +258,7 @@ const Home: React.FC<RouteComponentProps> = (props) => {
 export default Home;
 ```
 
-In our component declaration, we're passing in `props` which is of type `RouteComponentProps` (imported from `react-router`). This `props` object gives us access to the history API from React Router, allowing us to push a new route onto the navigation stack. On our `IonFabButton`, we can add a click handler, and just call `props.history.push` and pass in the new route. In this case, we'll navigate to `new`.
+In our component declaration, we're passing in `props` which is of type `RouteComponentProps` (imported from `react-router`). This `props` object gives us access to the history API from React Router, allowing us to push a new route onto the navigation stack. On our `IonFabButton`, we can add a click handler, call `props.history.push` with it, and pass in the new route. In this case, we'll navigate to `new`.
 
 ```tsx
 <IonFabButton onClick={() => props.history.push('/new')} >
@@ -407,7 +407,7 @@ ionic cap open android
 
 Additional details can be found [here](https://capacitorjs.com/docs/getting-started/with-ionic).
 
-Next, check out [all the APIs](https://capacitorjs.com/docs/apis) that are available. There’s some great stuff, including the [Camera API](https://capacitorjs.com/docs/apis/camera). We can implement photo capture functionality in just a few lines of code:
+Next, check out [all the APIs](https://capacitorjs.com/docs/apis) that are available. There’s some great stuff, including the [Camera API](https://capacitorjs.com/docs/apis/camera). With only a few lines of code, we can add photo capture capabilities:
 
 ```tsx
 import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonButton } from '@ionic/react';

@@ -50,7 +50,7 @@ Generating certificates for iOS is a bit of an involved process, so be sure to c
 
 To create the certificates and profiles needed, visit [Apple's member center](https://developer.apple.com/membercenter) and follow the links described in Apple's documentation.
 
-There are two types of certificates that matter here, Development, and Distribution. Development Certificates are just that, meant for development time. They are meant to sign an app and deploy it to devices that the certificate has access to.
+There are two types of certificates that matter here, Development, and Distribution. Development Certificates are intended for exactly that, development time. They are meant to sign an app and deploy it to devices that the certificate has access to.
 
 Distribution certs are meant for distributing an app to the store. When an app is signed with a Distribution cert, it can be installed on any device.
 

@@ -8,6 +8,7 @@ Our photo gallery app won’t be complete until it runs on iOS, Android, and the
 
 ## Import Platform API
 
+<!--alex ignore just-->
 Let’s start with making some small code changes - then our app will “just work” when we deploy it to a device.
 
 Import the Ionic [Platform API](https://ionicframework.com/docs/angular/platform) into `photo.service.ts`, which is used to retrieve information about the current device. In this case, it’s useful for selecting which code to execute based on the platform the app is running on (web or mobile):

@@ -19,7 +19,7 @@ There are two unique values to provide: your app id and channel name. Sign into 
 
 ![app id location](/img/guides/first-app-v3/app-id-location.png)
 
-And we’ll just use “Master” as the channel name. Putting this together looks like:
+And we’ll use “Master” as the channel name. Putting this together looks like:
 
 ```shell
 $ ionic cordova plugin add cordova-plugin-ionic@latest --save
@@ -176,13 +176,13 @@ Each time a user launches our Photo Gallery app, it will poll for updates from A
 
 When the latest Build has been successful, close your local copy of Photo Gallery app or put it in the background for 30 seconds (the [MIN_BACKGROUND_DURATION default](https://ionic.io/docs/appflow/deploy/api#min_background_duration)), then reopen it. The title of the Photo Gallery page should change from “Photo Gallery” to “Photo Viewer.”
 
-What if you deploy a change, then realize that there is a bug? Or perhaps you’re just not happy with the name “Photo Viewer?” No problem: Appflow Deploy makes it easy to roll back changes as well!
+What if you deploy a change, then realize that there is a bug? Or perhaps you’re not happy with the name “Photo Viewer?” No problem: Appflow Deploy makes it easy to roll back changes as well!
 
 On the Deploy Builds page, click the “Assign to Channel” button on the previous commit, then click “Deploy.” App users will be reverted to the previous version, and our “Photo Gallery” name has been restored.
 
 ![deploy channel](/img/guides/first-app-v3/deploy-revertChange.png)
 
-This was just a taste of what you can do with Appflow Live Updates! You can also set up multiple deployment channels to send targeted updates to specific groups of users. Use it to run A/B tests, or target the distribution of updates by audience, geography, or test group.
+This was only a taste of what you can do with Appflow Live Updates! You can also set up multiple deployment channels to send targeted updates to specific groups of users. Use it to run A/B tests, or target the distribution of updates by audience, geography, or test group.
 
 ## Stuck on creating local native builds?
 

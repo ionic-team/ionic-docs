@@ -148,4 +148,4 @@ The `::part()` pseudo-element can not match additional `::part()`s.
 
 For example, `my-component::part(button)::part(label)` does not match anything. This is because doing so would expose more structural information than is intended.
 
-If the `<my-component>`’s internal button uses something like `part="label => button-label"` to forward the button’s internal parts up into the panel’s own part element map, then a selector like `my-component::part(button-label)` would select just the one button’s label, ignoring any other labels.
+If the `<my-component>`’s internal button uses something like `part="label => button-label"` to forward the button’s internal parts up into the panel’s own part element map, then a selector like `my-component::part(button-label)` would select only the one button’s label, ignoring any other labels.

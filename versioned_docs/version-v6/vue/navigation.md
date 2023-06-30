@@ -54,7 +54,7 @@ On the app's initial load, the app will render the `HomePage` component as that 
 
 ## Handling Redirects
 
-What if we wanted to land a different path on our initial load? For this, we can use router redirects. Redirects work the same way that a typical route object does, but just includes some different keys:
+What if we wanted to land a different path on our initial load? For this, we can use router redirects. Redirects work the same way that a typical route object does, but includes different keys:
 
 ```tsx
 const routes: Array<RouteRecordRaw> = [
@@ -132,11 +132,11 @@ We can also programmatically navigate in our app by using the router API:
 </script>
 ```
 
-Both options provide the same navigation mechanism, just fitting different use cases.
+Both options provide the same navigation mechanism, but fit different use cases.
 
 ### Navigating using `router-link`
 
-The `router-link` attribute can be set on any Ionic Vue component, and the router will navigate to the route specified when the component is clicked. The `router-link` attribute accepts string values as well as named routes, just like `router.push` from Vue Router. For additional control, the `router-direction` and `router-animation` attributes can be set as well.
+The `router-link` attribute can be set on any Ionic Vue component, and the router will navigate to the route specified when the component is clicked. Like `router.push` from Vue Router, the `router-link` attribute accepts string values as well as named routes. For additional control, the `router-direction` and `router-animation` attributes can be set as well.
 
 The `router-direction` attribute accepts values of `forward`, `back`, or `none` and is used to control the direction of the page transition.
 

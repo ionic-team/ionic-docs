@@ -9,7 +9,7 @@ import ColorAccordion from '@components/page/theming/ColorAccordion';
   <title>Theming | Ionic Apps: Color and Theming Basics Definition</title>
   <meta
     name="description"
-    content="The definition of theming apps just got simplified. Ionic Framework is built with pre-baked styles and colors which are extremely easy to change and modify."
+    content="The definition of theming apps has been simplified. Ionic Framework is built with pre-baked styles and colors which are extremely easy to change and modify."
   />
 </head>
 

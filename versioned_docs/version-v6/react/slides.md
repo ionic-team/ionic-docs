@@ -349,7 +349,7 @@ Below is a full list of property changes when going from `IonSlides` to Swiper R
 | options   | Set each option as a property directly on the `<Swiper>` component.                                                   |
 | mode      | For different styles based upon the mode, you can target the slides with `.ios .swiper` or `.md .swiper` in your CSS. |
 | pager     | Use the `pagination` property instead. Requires installation of the Pagination module.                                |
-| scrollbar | You can continue to use the `scrollbar` property, just be sure to install the Scrollbar module first.                 |
+| scrollbar | You can continue to use the `scrollbar` property, but be sure to install the Scrollbar module first.                  |
 
 :::note
 All properties available in Swiper React can be found at <a href="https://swiperjs.com/react#swiper-props" target="_blank" rel="noopener noreferrer">https://swiperjs.com/react#swiper-props</a>.
@@ -457,7 +457,7 @@ Below is a full list of method changes when going from `IonSlides` to Swiper Rea
 
 ## Effects
 
-If you are using effects such as Cube or Fade, you can install them just like we did with the other modules. In this example, we will use the fade effect. To start, we will import `EffectFade` from `swiper` and provide it in the `modules` array:
+If you are using effects such as Cube or Fade, you can install them the same way we did with the other modules. In this example, we will use the fade effect. To start, we will import `EffectFade` from `swiper` and provide it in the `modules` array:
 
 ```tsx
 import React from 'react';

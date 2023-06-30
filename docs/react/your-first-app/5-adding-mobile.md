@@ -6,6 +6,7 @@ sidebar_label: Adding Mobile
 
 Our photo gallery app won’t be complete until it runs on iOS, Android, and the web - all using one codebase. All it takes is some small logic changes to support mobile platforms, installing some native tooling, then running the app on a device. Let’s go!
 
+<!--alex ignore just-->
 Let’s start with making some small code changes - then our app will “just work” when we deploy it to a device.
 
 ## Platform-specific Logic

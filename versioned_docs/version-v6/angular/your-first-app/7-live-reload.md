@@ -81,7 +81,7 @@ public async showActionSheet(photo: UserPhoto, position: number) {
 }
 ```
 
-Save both of the files we just edited. The Photo Gallery app will reload automatically, and now when we tap on one of the photos in the gallery, the action sheet displays. Tapping “Delete” doesn’t do anything yet, so head back into your code editor.
+Save both of the files we edited. The Photo Gallery app will reload automatically, and now when we tap on one of the photos in the gallery, the action sheet displays. Tapping “Delete” doesn’t do anything yet, so head back into your code editor.
 
 In `src/app/services/photo.service.ts`, add the `deletePicture()` function:
 

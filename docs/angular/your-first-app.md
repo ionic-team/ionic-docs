@@ -7,11 +7,11 @@ sidebar_label: Build Your First App
   <title>Build Your First Ionic Mobile App: Angular Development Tutorial</title>
   <meta
     name="description"
-    content="Ionic's single codebase builds for any platform using just HTML, CSS, & JavaScript. Develop your first mobile app with our step-by-step Angular tutorial."
+    content="Ionic's single codebase builds for any platform using only HTML, CSS, & JavaScript. Develop your first mobile app with our step-by-step Angular tutorial."
   />
 </head>
 
-The great thing about Ionic is that with one codebase, you can build for any platform using just HTML, CSS, and JavaScript. Follow along as we learn the fundamentals of Ionic app development by creating a realistic app step by step.
+With Ionic, you can create applications for any platform using only HTML, CSS, and JavaScript while maintaining a single codebase. Follow along as we build a realistic app step by step while learning the foundations of Ionic app development.
 
 Here’s the finished app running on all 3 platforms:
 
@@ -173,4 +173,4 @@ Next, open `src/app/tabs/tabs.page.html`. Change the label to “Photos” and t
 </ion-tab-button>
 ```
 
-Save all changes to see them automatically applied in the browser. That’s just the start of all the cool things we can do with Ionic. Up next, implement camera taking functionality on the web, then build it for iOS and Android.
+Save all changes to see them automatically applied in the browser. That’s only the beginning of all of the cool things we can do with Ionic. Up next, implement camera taking functionality on the web, then build it for iOS and Android.

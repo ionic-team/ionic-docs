@@ -106,6 +106,6 @@ Once again, upon tapping the Camera button on the Photo Gallery tab, the permiss
 
 ![Android Camera permissions](/img/guides/first-app-cap-ng/android-permissions-photo.png)
 
-Our Photo Gallery app has just been deployed to Android and iOS devices. 🎉
+Our Photo Gallery app has now been deployed to Android and iOS devices. 🎉
 
 In the final portion of this tutorial, we’ll use the Ionic CLI’s Live Reload functionality to quickly implement photo deletion - thus completing our Photo Gallery feature.

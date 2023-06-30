@@ -386,7 +386,7 @@ Now let's wire up a click handler to this. When clicking the FAB button, we want
 </script>
 ```
 
-In our component file, we are importing the `useRouter` function. When called, this function injects the router dependency into the component. It gives us access to the history API from Vue Router, allowing us to push a new route onto the navigation stack. On our `IonFabButton`, we can add a click handler, and just call `router.push` and pass in the new route. In this case, we will navigate to `new`.
+In our component file, we are importing the `useRouter` function. When called, this function injects the router dependency into the component. It gives us access to the history API from Vue Router, allowing us to push a new route onto the navigation stack. On our `IonFabButton`, we can add a click handler, call `router.push` with it, and pass in the new route. In this case, we will navigate to `new`.
 
 ```html
 <ion-fab-button @click="() => router.push('/new')"> ... </ion-fab-button>
@@ -691,7 +691,7 @@ ionic cap open android
 
 Additional details can be found [here](https://capacitorjs.com/docs/getting-started/with-ionic).
 
-Next, check out [all the APIs](https://capacitorjs.com/docs/apis) that are available. There is some great features, including the [Camera API](https://capacitorjs.com/docs/apis/camera). We can implement photo capture functionality in just a few lines of code:
+Next, check out [all the APIs](https://capacitorjs.com/docs/apis) that are available. There is some great features, including the [Camera API](https://capacitorjs.com/docs/apis/camera). With only a few lines of code, we can add photo capture capabilities:
 
 ```html
 <template>

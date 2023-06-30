@@ -10,11 +10,11 @@ import DocsCards from '@components/global/DocsCards';
   <title>Deploying A Progressive Web Application (PWA) | PWA Deployment</title>
   <meta
     name="description"
-    content="Ionic Applications are built with web technologies that run just as well as a Progressive Web App as they do a native app. Learn how to deploy a PWA with Ionic."
+    content="Ionic Applications are built with web technologies that run as well as a Progressive Web App as they do a native app. Learn how to deploy a PWA with Ionic."
   />
 </head>
 
-Because Ionic Apps are built with web technologies, they can run just as well as a Progressive Web App as they can a native app. Not sure what PWAs are? Check out Ionic's <a href="https://ionicframework.com/pwa" target="_blank">PWA Overview</a> or the [What are Progressive Web Apps](../core-concepts/what-are-progressive-web-apps.md) page for more info.
+Because Ionic Apps are built with web technologies, they can run as well as a Progressive Web App as they can a native app. Not sure what PWAs are? Check out Ionic's <a href="https://ionicframework.com/pwa" target="_blank">PWA Overview</a> or the [What are Progressive Web Apps](../core-concepts/what-are-progressive-web-apps.md) page for more info.
 
 For the frameworks Ionic supports, we've created dedicated guides that go into more detail. Below are links for Angular, React, and Vue.
 

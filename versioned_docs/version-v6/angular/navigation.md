@@ -40,7 +40,7 @@ The simplest breakdown for what we have here is a path/component lookup. When ou
 
 ## Handling Redirects
 
-For this we can use router redirects. Redirects work the same way that a typical route object does, but just includes a few different keys.
+For this we can use router redirects. Redirects work the same way that a typical route object does, but include a few different keys.
 
 ```tsx
 [
@@ -116,7 +116,7 @@ export class LoginComponent {
 }
 ```
 
-Both options provide the same navigation mechanism, just fitting different use cases.
+Both options provide the same navigation mechanism, but fit different use cases.
 
 ### Navigating using LocationStrategy.historyGo
 
@@ -331,7 +331,7 @@ const routes: Routes = [
 ];
 ```
 
-Here we have a "tabs" path that we load. In this example we call the path "tabs", but the name of the paths can be changed. They can be called whatever fits your app. In that route object, we can define a child route as well. In this example, the top level child route "tab1" acts as our "outlet", and can load additional child routes. For this example, we have a single sub-child-route, which just loads a new component. The markup for the tab is as follows:
+Here we have a "tabs" path that we load. In this example we call the path "tabs", but the name of the paths can be changed. They can be called whatever fits your app. In that route object, we can define a child route as well. In this example, the top level child route "tab1" acts as our "outlet", and can load additional child routes. For this example, we have a single sub-child-route that loads a new component. The markup for the tab is as follows:
 
 ```html
 <ion-tabs>

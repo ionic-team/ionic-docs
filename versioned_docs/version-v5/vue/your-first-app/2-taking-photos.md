@@ -43,7 +43,7 @@ export function usePhotoGallery() {
 
 Our `usePhotoGallery` function exposes a method called takePhoto, which in turn calls the Capacitor Camera API's `getPhoto` method.
 
-Notice the magic here: there's no platform-specific code (web, iOS, or Android)! The Capacitor Camera plugin abstracts that away for us, leaving just one method call - `getPhoto()` - that will open up the device's camera and allow us to take photos.
+Notice the magic here: there's no platform-specific code (web, iOS, or Android)! One method call, "Camera.getPhoto()," is all that is necessary to activate the device's camera and capture photos thanks to the Capacitor Camera plugin, which abstracts that away for us.
 
 The last step we need to take is to use the new function from the Tab2 page. Go back to Tab2.vue and import it:
 

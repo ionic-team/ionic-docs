@@ -35,7 +35,7 @@ public async addNewToGallery() {
 }
 ```
 
-Notice the magic here: there's no platform-specific code (web, iOS, or Android)! The Capacitor Camera plugin abstracts that away for us, leaving just one method call - `Camera.getPhoto()` - that will open up the device's camera and allow us to take photos.
+Notice the magic here: there's no platform-specific code (web, iOS, or Android)! One method call, "Camera.getPhoto()," is all that is necessary to activate the device's camera and capture photos thanks to the Capacitor Camera plugin, which abstracts that away for us.
 
 Next, open up `tab2.page.ts` and import the PhotoService class and add a method that calls the `addNewToGallery` method on the imported service:
 
