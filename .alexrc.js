@@ -1,9 +1,9 @@
 exports.allow = [
-  'disabled', // `disabled` is used a technical term
-  'invalid', // `invalid` is used a technical term
-  'host-hostess', // `host` is used a technical term
-  'hostesses-hosts', // `hosts` is used a technical term
-  'dad-mom', // `pop` is used a technical term
+  'disabled', // `disabled` is used as a technical term
+  'invalid', // `invalid` is used as a technical term
+  'host-hostess', // `host` is used as a technical term
+  'hostesses-hosts', // `hosts` is used as a technical term
+  'dad-mom', // `pop` is used as a technical term
   'white', // `white` is used as a technical term
   'whitespace', // `whitespace` is used as a technical term
 ];
