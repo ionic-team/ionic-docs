@@ -1,0 +1,7 @@
+# The Code of Conduct includes descriptions of harassment so it's not linted
+docs/contributing/coc.md
+
+# The following directories are auto-generated from other repositories
+docs/api/
+docs/cli/commands/
+docs/native/
