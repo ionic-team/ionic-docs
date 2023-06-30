@@ -5,3 +5,11 @@ docs/contributing/coc.md
 docs/api/
 docs/cli/commands/
 docs/native/
+
+versioned_docs/version-v6/api/
+versioned_docs/version-v6/cli/commands/
+versioned_docs/version-v6/native/
+
+versioned_docs/version-v5/api/
+versioned_docs/version-v5/cli/commands/
+versioned_docs/version-v5/native/
