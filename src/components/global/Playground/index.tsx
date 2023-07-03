@@ -152,7 +152,7 @@ export default function Playground({
     return;
   }
 
-  const { isDarkTheme } = useColorMode();
+  const { colorMode } = useColorMode();
 
   const hostRef = useRef<HTMLDivElement | null>(null);
   const codeRef = useRef(null);
@@ -181,6 +181,7 @@ export default function Playground({
   const [codeSnippets, setCodeSnippets] = useState({});
   const [renderIframes, setRenderIframes] = useState(false);
   const [iframesLoaded, setIframesLoaded] = useState(false);
+  const [isDarkTheme, setIsDarkTheme] = useState(colorMode === 'dark');
 
   /**
    * Rather than encode isDarkTheme into the frame source
@@ -229,6 +230,10 @@ export default function Playground({
       postDarkThemeMessage();
     }
   };
+
+  useEffect(() => {
+    setIsDarkTheme(colorMode === 'dark');
+  }, [colorMode]);
 
   useEffect(() => {
     /**

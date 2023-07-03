@@ -10,7 +10,7 @@ import { useColorMode } from '@docusaurus/theme-common';
 import clsx from 'clsx';
 
 export default function LayeredColorsSelect({ ...props }) {
-  const { isDarkTheme } = useColorMode();
+  const { colorMode } = useColorMode();
 
   const [color, setColor] = useState('primary');
   const el = useRef<HTMLDivElement>(null);
@@ -64,7 +64,7 @@ export default function LayeredColorsSelect({ ...props }) {
     <div
       {...props}
       ref={el}
-      className={clsx(styles.layeredColorsSelect, styles[`layeredColorsSelect${isDarkTheme ? 'Dark' : 'Light'}`])}
+      className={clsx(styles.layeredColorsSelect, styles[`layeredColorsSelect${colorMode === 'dark' ? 'Dark' : 'Light'}`])}
     >
       <div className={styles.selectRow}>
         <ColorDot color={`var(--ion-color-${color})`} />
