@@ -1,29 +1,53 @@
+import React, { useEffect, useState } from 'react';
+import clsx from 'clsx';
+import TOCItems from '@theme/TOCItems';
+import type {Props} from '@theme/TOC';
+import styles from '@docusaurus/theme-classic/src/theme/TOC/styles.module.css';
+
+// CUSTOM CODE
+import EditThisPage from '@theme/EditThisPage';
 import { useLocation } from '@docusaurus/router';
 import { usePluginData } from '@docusaurus/useGlobalData';
-import OriginalTOC from '@theme-original/TOC';
-import EditThisPage from '@theme/EditThisPage';
-import React, { useEffect, useState } from 'react';
 import { PrismicRichText } from '@prismicio/react';
 
-export default function TOC({ toc, editUrl, ...props }) {
-  const { prismicAds } = usePluginData('ionic-docs-ads');
+interface TOCProps extends Props {
+  editUrl: string;
+}
+// CUSTOM CODE END
+
+// Using a custom className
+// This prevents TOCInline/TOCCollapsible getting highlighted by mistake
+const LINK_CLASS_NAME = 'table-of-contents__link toc-highlight';
+const LINK_ACTIVE_CLASS_NAME = 'table-of-contents__link--active';
+
+export default function TOC({className, editUrl, ...props}: TOCProps): JSX.Element {
+  // CUSTOM CODE
+  const { prismicAds } = usePluginData('ionic-docs-ads') as any;
   const [activeAd, setActiveAd] = useState<typeof prismicAds.data>();
   const location = useLocation();
 
-  const isEmpty = toc.length <= 0;
+  const isEmpty = props.toc.length <= 0;
 
   useEffect(() => {
     setActiveAd(prismicAds[Math.floor(Math.random() * prismicAds.length)].data);
   }, [location]);
 
   if (isEmpty) return null;
+  // CUSTOM CODE END
 
   return (
+    // CUSTOM CODE - toc wrapper
     <div className="toc-wrapper">
       <h2>Contents</h2>
-      <OriginalTOC toc={toc} {...props} />
+      <div className={clsx(styles.tableOfContents, 'thin-scrollbar', className)}>
+        <TOCItems
+          {...props}
+          linkClassName={LINK_CLASS_NAME}
+          linkActiveClassName={LINK_ACTIVE_CLASS_NAME}
+        />
+      </div>
+      {/* CUSTOM CODE  */}
       <EditThisPage editUrl={editUrl} />
-
       {activeAd && (
         <div className="internal-ad">
           <a
@@ -47,6 +71,7 @@ export default function TOC({ toc, editUrl, ...props }) {
           </a>
         </div>
       )}
+      {/* CUSTOM CODE END */}
     </div>
   );
 }
