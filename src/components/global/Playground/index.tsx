@@ -4,8 +4,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import './playground.css';
 import { EditorOptions, openAngularEditor, openHtmlEditor, openReactEditor, openVueEditor } from './stackblitz.utils';
 import { Mode, UsageTarget } from './playground.types';
-import useThemeContext from '@theme/hooks/useThemeContext';
-
+import { useColorMode } from '@docusaurus/theme-common';
 import Tippy from '@tippyjs/react';
 import 'tippy.js/dist/tippy.css';
 import PlaygroundTabs from '../PlaygroundTabs';
@@ -153,7 +152,7 @@ export default function Playground({
     return;
   }
 
-  const { isDarkTheme } = useThemeContext();
+  const { isDarkTheme } = useColorMode();
 
   const hostRef = useRef<HTMLDivElement | null>(null);
   const codeRef = useRef(null);

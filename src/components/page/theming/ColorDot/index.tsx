@@ -1,12 +1,12 @@
 import clsx from 'clsx';
 import React from 'react';
 
-import useThemeContext from '@theme/hooks/useThemeContext';
+import { useColorMode } from '@docusaurus/theme-common';
 
 import styles from './index.module.scss';
 
 export default function ColorDot({ color, ...props }) {
-  const { isDarkTheme } = useThemeContext();
+  const { isDarkTheme } = useColorMode();
 
   return (
     <div

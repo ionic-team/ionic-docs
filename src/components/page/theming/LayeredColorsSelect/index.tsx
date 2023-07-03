@@ -6,11 +6,11 @@ import ColorDot from '../ColorDot';
 
 import InputWrapper from '../InputWrapper';
 
-import useThemeContext from '@theme/hooks/useThemeContext';
+import { useColorMode } from '@docusaurus/theme-common';
 import clsx from 'clsx';
 
 export default function LayeredColorsSelect({ ...props }) {
-  const { isDarkTheme } = useThemeContext();
+  const { isDarkTheme } = useColorMode();
 
   const [color, setColor] = useState('primary');
   const el = useRef<HTMLDivElement>(null);
