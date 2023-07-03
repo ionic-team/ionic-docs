@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import clsx from 'clsx';
 import TOCItems from '@theme/TOCItems';
-import type {Props} from '@theme/TOC';
+import type { Props } from '@theme/TOC';
 import styles from '@docusaurus/theme-classic/src/theme/TOC/styles.module.css';
 
 // CUSTOM CODE
@@ -20,7 +20,7 @@ interface TOCProps extends Props {
 const LINK_CLASS_NAME = 'table-of-contents__link toc-highlight';
 const LINK_ACTIVE_CLASS_NAME = 'table-of-contents__link--active';
 
-export default function TOC({className, editUrl, ...props}: TOCProps): JSX.Element {
+export default function TOC({ className, editUrl, ...props }: TOCProps): JSX.Element {
   // CUSTOM CODE
   const { prismicAds } = usePluginData('ionic-docs-ads') as any;
   const [activeAd, setActiveAd] = useState<typeof prismicAds.data>();
@@ -40,11 +40,7 @@ export default function TOC({className, editUrl, ...props}: TOCProps): JSX.Eleme
     <div className="toc-wrapper">
       <h2>Contents</h2>
       <div className={clsx(styles.tableOfContents, 'thin-scrollbar', className)}>
-        <TOCItems
-          {...props}
-          linkClassName={LINK_CLASS_NAME}
-          linkActiveClassName={LINK_ACTIVE_CLASS_NAME}
-        />
+        <TOCItems {...props} linkClassName={LINK_CLASS_NAME} linkActiveClassName={LINK_ACTIVE_CLASS_NAME} />
       </div>
       {/* CUSTOM CODE  */}
       <EditThisPage editUrl={editUrl} />

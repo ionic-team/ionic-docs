@@ -66,15 +66,13 @@ module.exports = {
             require.resolve('./node_modules/modern-normalize/modern-normalize.css'),
             require.resolve('./node_modules/@ionic-internal/ionic-ds/dist/tokens/tokens.css'),
             require.resolve('./src/styles/custom.scss'),
-
           ],
         },
       },
     ],
-    
   ],
   themeConfig: {
-     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
+    /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     metadata: [
       { name: 'og:image', content: 'https://ionicframework.com/docs/img/meta/open-graph.png' },
       { name: 'twitter:image', content: 'https://ionicframework.com/docs/img/meta/open-graph.png' },

@@ -12,7 +12,7 @@ import Mermaid from '@theme/Mermaid';
 // CUSTOM CODE
 import MDXTable from './Table';
 // CUSTOM CODE END
-import type {MDXComponentsObject} from '@theme/MDXComponents';
+import type { MDXComponentsObject } from '@theme/MDXComponents';
 
 const MDXComponents: MDXComponentsObject = {
   head: MDXHead,
