@@ -25,7 +25,55 @@ module.exports = {
   favicon: 'img/meta/favicon-96x96.png',
   organizationName: 'ionic-team',
   projectName: 'ionic-docs',
+  presets: [
+    [
+      '@docusaurus/preset-classic',
+      /** @type {import('@docusaurus/preset-classic').Options} */
+      {
+        // Will be passed to @docusaurus/plugin-content-docs (false to disable)
+        docs: {
+          routeBasePath: '/',
+          sidebarPath: require.resolve('./sidebars.js'),
+          editUrl: ({ versionDocsDirPath, docPath, locale }) => {
+            if (locale != 'en') {
+              return 'https://crowdin.com/project/ionic-docs';
+            }
+            if ((match = docPath.match(/api\/(.*)\.md/)) != null) {
+              return `https://github.com/ionic-team/ionic-docs/tree/main/docs/api/${match[1]}.md`;
+            }
+            if ((match = docPath.match(/cli\/commands\/(.*)\.md/)) != null) {
+              return `https://github.com/ionic-team/ionic-cli/edit/develop/packages/@ionic/cli/src/commands/${match[1].replace(
+                '-',
+                '/'
+              )}.ts`;
+            }
+            if ((match = docPath.match(/native\/(.*)\.md/)) != null) {
+              return `https://github.com/ionic-team/capacitor-plugins/edit/main/${match[1]}/README.md`;
+            }
+            return `https://github.com/ionic-team/ionic-docs/edit/main/${versionDocsDirPath}/${docPath}`;
+          },
+          exclude: ['README.md'],
+          lastVersion: 'current',
+          versions: {
+            current: {
+              label: 'v7',
+            },
+          },
+        },
+        // Will be passed to @docusaurus/theme-classic.
+        theme: {
+          customCss: [
+            require.resolve('./node_modules/modern-normalize/modern-normalize.css'),
+            require.resolve('./src/styles/ionic-ds-tokens.scss'),
+            require.resolve('./src/styles/custom.scss'),
+          ],
+        },
+      },
+    ],
+    
+  ],
   themeConfig: {
+     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     metadata: [
       { name: 'og:image', content: 'https://ionicframework.com/docs/img/meta/open-graph.png' },
       { name: 'twitter:image', content: 'https://ionicframework.com/docs/img/meta/open-graph.png' },
@@ -97,12 +145,12 @@ module.exports = {
           label: 'Native',
           position: 'left',
         },
-        {
-          type: 'cta',
-          position: 'left',
-          text: 'Ionic v7.0.0 Upgrade Guide',
-          href: `/updating/7-0`,
-        },
+        // {
+        //   type: 'cta',
+        //   position: 'left',
+        //   text: 'Ionic v7.0.0 Upgrade ∂Guide',
+        //   href: `/updating/7-0`,
+        // },
         {
           type: 'docsVersionDropdown',
           position: 'right',
@@ -179,9 +227,14 @@ module.exports = {
           ],
           className: 'navbar__link--support',
         },
+        // {
+        //   type: 'separator',
+        //   position: 'right',
+        // },
         {
-          type: 'separator',
+          type: 'html',
           position: 'right',
+          value: '<div class="separator" />',
         },
         {
           type: 'localeDropdown',
@@ -197,36 +250,49 @@ module.exports = {
           ],
           className: 'icon-link language navbar__item',
         },
-        {
-          type: 'iconLink',
-          position: 'right',
-          icon: {
-            alt: 'twitter logo',
-            src: `/logos/twitter.svg`,
-            href: 'https://twitter.com/Ionicframework',
-            target: '_blank',
-          },
-        },
-        {
-          type: 'iconLink',
-          position: 'right',
-          icon: {
-            alt: 'github logo',
-            src: `/logos/github.svg`,
-            href: 'https://github.com/ionic-team/ionic-framework',
-            target: '_blank',
-          },
-        },
-        {
-          type: 'iconLink',
-          position: 'right',
-          icon: {
-            alt: 'discord logo',
-            src: `/logos/discord.svg`,
-            href: 'https://ionic.link/discord',
-            target: '_blank',
-          },
-        },
+        // {
+        //   href: 'https://github.com/ionic-team/ionic-framework',
+        //   position: 'right',
+        //   className: 'icon-link',
+        //   'aria-label': 'GitHub repository',
+        // },
+        // {
+        //   type: 'html',
+        //   href: 'https://github.com/ionic-team/ionic-framework',
+        //   position: 'right',
+        //   className: 'icon-link',
+        //   'aria-label': 'GitHub repository',
+        // },
+        // {
+        //   type: 'iconLink',
+        //   position: 'right',
+        //   icon: {
+        //     alt: 'twitter logo',
+        //     src: `/logos/twitter.svg`,
+        //     href: 'https://twitter.com/Ionicframework',
+        //     target: '_blank',
+        //   },
+        // },
+        // {
+        //   type: 'iconLink',
+        //   position: 'right',
+        //   icon: {
+        //     alt: 'github logo',
+        //     src: `/logos/github.svg`,
+        //     href: 'https://github.com/ionic-team/ionic-framework',
+        //     target: '_blank',
+        //   },
+        // },
+        // {
+        //   type: 'iconLink',
+        //   position: 'right',
+        //   icon: {
+        //     alt: 'discord logo',
+        //     src: `/logos/discord.svg`,
+        //     href: 'https://ionic.link/discord',
+        //     target: '_blank',
+        //   },
+        // },
       ],
     },
     tagManager: {
@@ -234,7 +300,7 @@ module.exports = {
     },
     prism: {
       theme: { plain: {}, styles: [] },
-      // https://github.com/FormidableLabs/prism-react-renderer/blob/master/src/vendor/prism/includeLangs.js
+      // https://github.com/FormidableLabs/prism-react-renderer/blob/5a1c93592c6475fb230bfcb8a9666b72b331638b/packages/generate-prism-languages/index.ts#L9-L24
       additionalLanguages: ['shell-session', 'http'],
     },
     algolia: {
@@ -257,40 +323,6 @@ module.exports = {
         },
       },
     ],
-    [
-      '@docusaurus/plugin-content-docs',
-      {
-        routeBasePath: '/',
-        sidebarPath: require.resolve('./sidebars.js'),
-        editUrl: ({ versionDocsDirPath, docPath, locale }) => {
-          if (locale != 'en') {
-            return 'https://crowdin.com/project/ionic-docs';
-          }
-          if ((match = docPath.match(/api\/(.*)\.md/)) != null) {
-            return `https://github.com/ionic-team/ionic-docs/tree/main/docs/api/${match[1]}.md`;
-          }
-          if ((match = docPath.match(/cli\/commands\/(.*)\.md/)) != null) {
-            return `https://github.com/ionic-team/ionic-cli/edit/develop/packages/@ionic/cli/src/commands/${match[1].replace(
-              '-',
-              '/'
-            )}.ts`;
-          }
-          if ((match = docPath.match(/native\/(.*)\.md/)) != null) {
-            return `https://github.com/ionic-team/capacitor-plugins/edit/main/${match[1]}/README.md`;
-          }
-          return `https://github.com/ionic-team/ionic-docs/edit/main/${versionDocsDirPath}/${docPath}`;
-        },
-        exclude: ['README.md'],
-        lastVersion: 'current',
-        versions: {
-          current: {
-            label: 'v7',
-          },
-        },
-      },
-    ],
-    '@docusaurus/plugin-content-pages',
-    '@docusaurus/plugin-debug',
     '@docusaurus/plugin-sitemap',
     '@ionic-internal/docusaurus-plugin-tag-manager',
     function (context, options) {
@@ -317,19 +349,15 @@ module.exports = {
       },
     ],
   ],
-  themes: [
-    [
-      //overriding the standard docusaurus-theme-classic to provide custom schema
-      path.resolve(__dirname, 'docusaurus-theme-classic'),
-      {
-        customCss: [
-          require.resolve('./node_modules/modern-normalize/modern-normalize.css'),
-          require.resolve('./node_modules/@ionic-internal/ionic-ds/dist/tokens/tokens.css'),
-          require.resolve('./src/styles/custom.scss'),
-        ],
-      },
-    ],
-    path.resolve(__dirname, './node_modules/@docusaurus/theme-search-algolia'),
-  ],
   customFields: {},
+  themes: [
+    // path.resolve(__dirname, 'docusaurus-theme-ionic'),
+    // path.resolve(__dirname, './node_modules/@docusaurus/theme-classic'),
+    // 'docusaurus-theme-ionic',
+    // [
+    //   //overriding the standard docusaurus-theme-classic to provide custom schema
+    //   path.resolve(__dirname, 'docusaurus-theme-classic'),
+    // ],
+    // path.resolve(__dirname, './node_modules/@docusaurus/theme-search-algolia'),
+  ],
 };
