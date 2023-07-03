@@ -297,7 +297,6 @@ module.exports = {
         },
       },
     ],
-    '@docusaurus/plugin-sitemap',
     '@ionic-internal/docusaurus-plugin-tag-manager',
     function (context, options) {
       return {
