@@ -146,12 +146,13 @@ module.exports = {
           label: 'Native',
           position: 'left',
         },
-        // {
-        //   type: 'cta',
-        //   position: 'left',
-        //   text: 'Ionic v7.0.0 Upgrade ∂Guide',
-        //   href: `/updating/7-0`,
-        // },
+        {
+          type: 'doc',
+          docId: 'updating/7-0',
+          label: 'Ionic v7.0.0 Upgrade Guide',
+          position: 'left',
+          className: 'cta',
+        },
         {
           type: 'docsVersionDropdown',
           position: 'right',
