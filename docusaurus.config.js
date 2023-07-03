@@ -64,8 +64,9 @@ module.exports = {
         theme: {
           customCss: [
             require.resolve('./node_modules/modern-normalize/modern-normalize.css'),
-            require.resolve('./src/styles/ionic-ds-tokens.scss'),
+            require.resolve('./node_modules/@ionic-internal/ionic-ds/dist/tokens/tokens.css'),
             require.resolve('./src/styles/custom.scss'),
+
           ],
         },
       },
@@ -350,14 +351,5 @@ module.exports = {
     ],
   ],
   customFields: {},
-  themes: [
-    // path.resolve(__dirname, 'docusaurus-theme-ionic'),
-    // path.resolve(__dirname, './node_modules/@docusaurus/theme-classic'),
-    // 'docusaurus-theme-ionic',
-    // [
-    //   //overriding the standard docusaurus-theme-classic to provide custom schema
-    //   path.resolve(__dirname, 'docusaurus-theme-classic'),
-    // ],
-    // path.resolve(__dirname, './node_modules/@docusaurus/theme-search-algolia'),
-  ],
+  themes: [],
 };
