@@ -4,6 +4,8 @@ html[data-theme='light'] {
   --navbar-separator-bg-c: var(--c-indigo-40);
 
   --ifm-dropdown-background-color: var(--token-secondary-bg-c);
+
+  --navbar-icon-link-c: var(--c-indigo-60);
 }
 
 html[data-theme='dark'] {
@@ -11,17 +13,7 @@ html[data-theme='dark'] {
 
   --navbar-separator-bg-c: var(--c-carbon-80);
 
-  .navbar {
-    .dropdown {
-      .navbar__link {
-        filter: brightness(0) invert(1);
-      }
-    }
-
-    .icon-link {
-      filter: brightness(0) invert(1);
-    }
-  }
+  --navbar-icon-link-c: var(--c-white);
 }
 
 :root {
@@ -106,7 +98,7 @@ html[data-theme='dark'] {
         display: flex;
 
         transition: opacity 0.2s ease-out;
-        color: var(--navbar-link-c);
+        color: var(--navbar-icon-link-c);
 
         &:hover,
         &:focus,
@@ -119,8 +111,8 @@ html[data-theme='dark'] {
         &-mask {
           &::before {
             content: '';
-            width: 24px;
-            height: 24px;
+            width: 20px;
+            height: 20px;
             display: flex;
             background-color: currentColor;
             -webkit-mask-repeat: no-repeat;
@@ -293,7 +285,7 @@ html[data-theme='dark'] {
 
     .language {
       padding: 0;
-      margin-inline-start: -0.25rem;
+      margin-inline-start: calc(-1 * var(--ifm-navbar-item-padding-horizontal));
       margin-inline-end: -0.25rem;
 
       > span,
