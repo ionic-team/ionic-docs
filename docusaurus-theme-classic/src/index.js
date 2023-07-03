@@ -7,7 +7,7 @@ const tsThemePath = path.resolve(__dirname, '../../node_modules/@docusaurus/them
 
 let { ThemeConfigSchema } = require(path.resolve(
   __dirname,
-  '../../node_modules/@docusaurus/theme-classic/lib/validateThemeConfig.js'
+  '../../node_modules/@docusaurus/theme-classic/lib/options.js'
 ));
 
 const NavbarCtaSchema = Joi.object({
