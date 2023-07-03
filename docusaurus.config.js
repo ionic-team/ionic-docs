@@ -228,10 +228,6 @@ module.exports = {
           ],
           className: 'navbar__link--support',
         },
-        // {
-        //   type: 'separator',
-        //   position: 'right',
-        // },
         {
           type: 'html',
           position: 'right',
@@ -251,49 +247,27 @@ module.exports = {
           ],
           className: 'icon-link language navbar__item',
         },
-        // {
-        //   href: 'https://github.com/ionic-team/ionic-framework',
-        //   position: 'right',
-        //   className: 'icon-link',
-        //   'aria-label': 'GitHub repository',
-        // },
-        // {
-        //   type: 'html',
-        //   href: 'https://github.com/ionic-team/ionic-framework',
-        //   position: 'right',
-        //   className: 'icon-link',
-        //   'aria-label': 'GitHub repository',
-        // },
-        // {
-        //   type: 'iconLink',
-        //   position: 'right',
-        //   icon: {
-        //     alt: 'twitter logo',
-        //     src: `/logos/twitter.svg`,
-        //     href: 'https://twitter.com/Ionicframework',
-        //     target: '_blank',
-        //   },
-        // },
-        // {
-        //   type: 'iconLink',
-        //   position: 'right',
-        //   icon: {
-        //     alt: 'github logo',
-        //     src: `/logos/github.svg`,
-        //     href: 'https://github.com/ionic-team/ionic-framework',
-        //     target: '_blank',
-        //   },
-        // },
-        // {
-        //   type: 'iconLink',
-        //   position: 'right',
-        //   icon: {
-        //     alt: 'discord logo',
-        //     src: `/logos/discord.svg`,
-        //     href: 'https://ionic.link/discord',
-        //     target: '_blank',
-        //   },
-        // },
+        {
+          href: 'https://twitter.com/Ionicframework',
+          position: 'right',
+          className: 'icon-link icon-link-mask icon-link-twitter',
+          'aria-label': 'Twitter',
+          target: '_blank',
+        },
+        {
+          href: 'https://github.com/ionic-team/ionic-framework',
+          position: 'right',
+          className: 'icon-link icon-link-mask icon-link-github',
+          'aria-label': 'GitHub repository',
+          target: '_blank',
+        },
+        {
+          href: 'https://ionic.link/discord',
+          position: 'right',
+          className: 'icon-link icon-link-mask icon-link-discord',
+          'aria-label': 'Discord',
+          target: '_blank',
+        },
       ],
     },
     tagManager: {

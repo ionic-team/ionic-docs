@@ -30,9 +30,6 @@ html[data-theme='dark'] {
 
 //overrides
 #__docusaurus {
-  > .navbar {
-    display: none;
-  }
 
   .navbar {
     &__inner {
@@ -98,11 +95,50 @@ html[data-theme='dark'] {
         display: flex;
 
         transition: opacity 0.2s ease-out;
+        color: var(--navbar-link-c);
 
         &:hover,
         &:focus,
         &:active {
           opacity: 0.7;
+        }
+      }
+
+      .icon-link {
+        &-mask {
+          &::before {
+            content: '';
+            width: 24px;
+            height: 24px;
+            display: flex;
+            background-color: currentColor;
+            -webkit-mask-repeat: no-repeat;
+            mask-repeat: no-repeat;
+            -webkit-mask-position: center;
+            mask-position: center;
+            mask-size: 100% 100%;
+          }
+        }
+
+        &-github {
+          &::before {
+            -webkit-mask-image: url("../../static/logos/github.svg");
+            mask-image: url("../../static/logos/github.svg");
+          }
+        }
+  
+        &-twitter {
+          &::before {
+            -webkit-mask-image: url("../../static/logos/twitter.svg");
+            mask-image: url("../../static/logos/twitter.svg");
+          }
+        }
+
+        &-discord {
+          &::before {
+            -webkit-mask-image: url("../../static/logos/discord.svg");
+            mask-image: url("../../static/logos/discord.svg");
+          }
         }
       }
 
@@ -252,10 +288,6 @@ html[data-theme='dark'] {
       > span,
       &::after {
         display: none;
-      }
-
-      &::before {
-        content: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMTgiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTEgM2gxMi4xMk03LjA2IDF2Mk0xMC40MiAxN2w0LjA0LTkuMzNMMTguNSAxN00xMS42NiAxNC4zM2g1LjZNMTAuODEgM1M5LjggNi45MiA3LjM1IDkuODhjLTIuNDQgMi45NS01IDQuNDUtNSA0LjQ1IiBzdHJva2U9IiM5MkEwQjMiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+PHBhdGggZD0iTTkuNzUgMTIuMzNzLTEuNDctMS4xMi0zLjAzLTMuMTJjLTEuNTYtMi0yLjM1LTMuNTQtMi4zNS0zLjU0IiBzdHJva2U9IiM5MkEwQjMiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+PC9zdmc+');
       }
     }
   }
