@@ -5,7 +5,7 @@ import type { Props } from '@theme/TOC';
 import styles from '@docusaurus/theme-classic/src/theme/TOC/styles.module.css';
 
 // CUSTOM CODE
-import EditThisPage from '@theme/EditThisPage';
+import EditThisPage from '@theme-original/EditThisPage';
 import { useLocation } from '@docusaurus/router';
 import { usePluginData } from '@docusaurus/useGlobalData';
 import { PrismicRichText } from '@prismicio/react';
