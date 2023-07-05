@@ -1,0 +1,24 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": ["config:base", ":github>ionic-team/ionic-docs>"],
+  "packageRules": [
+    {
+      "packageNames": ["*"],
+      "directoryNames": [
+        "static/code/stackblitz/v6/angular",
+        "static/code/stackblitz/v7/angular",
+        "static/code/stackblitz/v6/html",
+        "static/code/stackblitz/v7/html",
+        "static/code/stackblitz/v6/vue",
+        "static/code/stackblitz/v7/vue",
+        "static/code/stackblitz/v6/react",
+        "static/code/stackblitz/v7/react"
+      ],
+      "enabled": true
+    }
+  ],
+  "minimumReleaseAge": "3 days",
+  "rebaseWhen": "never",
+  "schedule": ["every weekday before 11am"],
+  "semanticCommits": "enabled"
+}
