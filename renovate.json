@@ -5,14 +5,10 @@
     {
       "packageNames": ["*"],
       "directoryNames": [
-        "static/code/stackblitz/v6/angular",
-        "static/code/stackblitz/v7/angular",
-        "static/code/stackblitz/v6/html",
-        "static/code/stackblitz/v7/html",
-        "static/code/stackblitz/v6/vue",
-        "static/code/stackblitz/v7/vue",
-        "static/code/stackblitz/v6/react",
-        "static/code/stackblitz/v7/react"
+        "static/code/stackblitz/*/angular",
+        "static/code/stackblitz/*/html",
+        "static/code/stackblitz/*/vue",
+        "static/code/stackblitz/*/react"
       ],
       "enabled": true
     }
