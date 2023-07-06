@@ -15,9 +15,7 @@
         </ion-buttons>
       </ion-toolbar>
     </ion-header>
-    <ion-content class="ion-padding">
-      Modal Content
-    </ion-content>
+    <ion-content class="ion-padding"> Modal Content </ion-content>
   </ion-modal>
 </ion-content>
 
@@ -26,7 +24,7 @@
 
   var closeModal = () => {
     modal.dismiss();
-  }
+  };
 
   const enterAnimation = (baseEl) => {
     const root = baseEl.shadowRoot;
@@ -39,7 +37,7 @@
       .addElement(root.querySelector('.modal-wrapper'))
       .keyframes([
         { offset: 0, opacity: '0', transform: 'scale(0)' },
-        { offset: 1, opacity: '0.99', transform: 'scale(1)' }
+        { offset: 1, opacity: '0.99', transform: 'scale(1)' },
       ]);
 
     return createAnimation()
@@ -47,11 +45,11 @@
       .easing('ease-out')
       .duration(500)
       .addAnimation([backdropAnimation, wrapperAnimation]);
-  }
+  };
 
   const leaveAnimation = (baseEl) => {
     return enterAnimation(baseEl).direction('reverse');
-  }
+  };
 
   modal.enterAnimation = enterAnimation;
   modal.leaveAnimation = leaveAnimation;
