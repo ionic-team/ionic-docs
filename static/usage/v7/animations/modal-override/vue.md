@@ -1,38 +1,92 @@
 ```html
 <template>
-  <ion-accordion-group>
-    <ion-accordion value="first">
-      <ion-item slot="header" color="light">
-        <ion-label>First Accordion</ion-label>
-      </ion-item>
-      <div class="ion-padding" slot="content">First Content</div>
-    </ion-accordion>
-    <ion-accordion value="second">
-      <ion-item slot="header" color="light">
-        <ion-label>Second Accordion</ion-label>
-      </ion-item>
-      <div class="ion-padding" slot="content">Second Content</div>
-    </ion-accordion>
-    <ion-accordion value="third">
-      <ion-item slot="header" color="light">
-        <ion-label>Third Accordion</ion-label>
-      </ion-item>
-      <div class="ion-padding" slot="content">Third Content</div>
-    </ion-accordion>
-  </ion-accordion-group>
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>Page</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content class="ion-padding">
+    <ion-button id="modal-trigger">Present Modal</ion-button>
+    <ion-modal
+      trigger="modal-trigger" 
+      ref="modalEl"
+      :enterAnimation="enterAnimation"
+      :leaveAnimation="leaveAnimation"
+    >
+      <ion-header>
+        <ion-toolbar>
+          <ion-title>Modal</ion-title>
+          <ion-buttons slot="end">
+            <ion-button @click="closeModal()">
+              <ion-icon :icon="close" slot="icon-only"></ion-icon>
+            </ion-button>
+          </ion-buttons>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content class="ion-padding">
+        Modal Content
+      </ion-content>
+    </ion-modal>
+  </ion-content>
 </template>
 
 <script lang="ts">
-  import { IonAccordion, IonAccordionGroup, IonItem, IonLabel } from '@ionic/vue';
-  import { defineComponent } from 'vue';
+  import { IonButton, IonButtons, IonContent, IonHeader, IonIcon, IonModal, IonToolbar, IonTitle, createAnimation } from '@ionic/vue';
+  import { close } from 'ionicons/icons';
+
+  import { defineComponent, ref } from 'vue';
 
   export default defineComponent({
     components: {
-      IonAccordion,
-      IonAccordionGroup,
-      IonItem,
-      IonLabel,
+      IonButton, 
+      IonButtons, 
+      IonContent,
+      IonHeader, 
+      IonIcon, 
+      IonModal, 
+      IonToolbar, 
+      IonTitle
     },
+    setup() {
+      const modalEl = ref(null);
+      
+      const enterAnimation = (baseEl: HTMLElement) => {
+        const root = baseEl.shadowRoot;
+        
+        const backdropAnimation = createAnimation()
+          .addElement(root!.querySelector('ion-backdrop')!)
+          .fromTo('opacity', '0.01', 'var(--backdrop-opacity)');
+        
+        const wrapperAnimation = createAnimation()
+          .addElement(root!.querySelector('.modal-wrapper')!)
+          .keyframes([
+            { offset: 0, opacity: '0', transform: 'scale(0)' },
+            { offset: 1, opacity: '0.99', transform: 'scale(1)' }
+          ]);
+        
+        return createAnimation()
+          .addElement(baseEl)
+          .easing('ease-out')
+          .duration(500)
+          .addAnimation([backdropAnimation, wrapperAnimation]);
+      }
+      
+      const leaveAnimation = (baseEl: HTMLElement) => {
+        return enterAnimation(baseEl).direction('reverse');
+      }
+      
+      const closeModal = () => {
+        modalEl.value?.$el.dismiss();
+      }
+      
+      return {
+        close, 
+        modalEl, 
+        closeModal,
+        enterAnimation,
+        leaveAnimation
+      }
+    }
   });
 </script>
 ```
