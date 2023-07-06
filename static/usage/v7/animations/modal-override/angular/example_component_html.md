@@ -12,9 +12,7 @@
         <ion-toolbar>
           <ion-title>Modal</ion-title>
           <ion-buttons slot="end">
-            <ion-button (click)="closeModal()">
-              <ion-icon name="close" slot="icon-only"></ion-icon>
-            </ion-button>
+            <ion-button (click)="closeModal()">Close</ion-button>
           </ion-buttons>
         </ion-toolbar>
       </ion-header>

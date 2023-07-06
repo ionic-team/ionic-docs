@@ -1,7 +1,6 @@
 ```tsx
 import React, { useRef } from 'react';
-import { IonButton, IonButtons, IonContent, IonHeader, IonIcon, IonModal, IonToolbar, IonTitle, createAnimation } from '@ionic/react';
-import { close } from 'ionicons/icons';
+import { IonButton, IonButtons, IonContent, IonHeader, IonModal, IonToolbar, IonTitle, createAnimation } from '@ionic/react';
 
 function Example() {
   const modalEl = useRef<HTMLIonModalElement>(null);
@@ -54,9 +53,7 @@ function Example() {
             <IonToolbar>
               <IonTitle>Modal</IonTitle>
               <IonButtons slot="end">
-                <IonButton onClick={closeModal}>
-                  <IonIcon icon={close} slot="icon-only"></IonIcon>
-                </IonButton>
+                <IonButton onClick={closeModal}>Close</IonButton>
               </IonButtons>
             </IonToolbar>
           </IonHeader>

@@ -17,9 +17,7 @@
         <ion-toolbar>
           <ion-title>Modal</ion-title>
           <ion-buttons slot="end">
-            <ion-button @click="closeModal()">
-              <ion-icon :icon="close" slot="icon-only"></ion-icon>
-            </ion-button>
+            <ion-button @click="closeModal()">Close</ion-button>
           </ion-buttons>
         </ion-toolbar>
       </ion-header>
@@ -31,8 +29,7 @@
 </template>
 
 <script lang="ts">
-  import { IonButton, IonButtons, IonContent, IonHeader, IonIcon, IonModal, IonToolbar, IonTitle, createAnimation } from '@ionic/vue';
-  import { close } from 'ionicons/icons';
+  import { IonButton, IonButtons, IonContent, IonHeader, IonModal, IonToolbar, IonTitle, createAnimation } from '@ionic/vue';
 
   import { defineComponent, ref } from 'vue';
 
@@ -42,7 +39,6 @@
       IonButtons, 
       IonContent,
       IonHeader, 
-      IonIcon, 
       IonModal, 
       IonToolbar, 
       IonTitle
