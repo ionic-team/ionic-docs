@@ -1,88 +1,89 @@
 ```html
 <template>
-  <ion-header>
-    <ion-toolbar>
-      <ion-title>Page</ion-title>
-    </ion-toolbar>
-  </ion-header>
-  <ion-content class="ion-padding">
-    <ion-button id="modal-trigger">Present Modal</ion-button>
-    <ion-modal trigger="modal-trigger" ref="modalEl" :enterAnimation="enterAnimation" :leaveAnimation="leaveAnimation">
-      <ion-header>
-        <ion-toolbar>
-          <ion-title>Modal</ion-title>
-          <ion-buttons slot="end">
-            <ion-button @click="closeModal()">Close</ion-button>
-          </ion-buttons>
-        </ion-toolbar>
-      </ion-header>
-      <ion-content class="ion-padding"> Modal Content </ion-content>
-    </ion-modal>
-  </ion-content>
+  <ion-card ref="cardAEl">
+    <ion-card-content>Card 1</ion-card-content>
+  </ion-card>
+  
+  <ion-card ref="cardBEl">
+    <ion-card-content>Card 2</ion-card-content>
+  </ion-card>
+  
+  <ion-card ref="cardCEl">
+    <ion-card-content>Card 3</ion-card-content>
+  </ion-card>
+  
+  <ion-button id="play" @click="play()">Play</ion-button>
+  <ion-button id="pause" @click="pause()">Pause</ion-button>
+  <ion-button id="stop" @click="stop()">Stop</ion-button>
 </template>
 
 <script lang="ts">
   import {
     IonButton,
-    IonButtons,
-    IonContent,
-    IonHeader,
-    IonModal,
-    IonToolbar,
-    IonTitle,
+    IonCard,
+    IonCardContent,
     createAnimation,
   } from '@ionic/vue';
+  import type { Animation } from '@ionic/vue';
 
-  import { defineComponent, ref } from 'vue';
+  import { defineComponent, ref, onMounted } from 'vue';
 
   export default defineComponent({
     components: {
       IonButton,
-      IonButtons,
-      IonContent,
-      IonHeader,
-      IonModal,
-      IonToolbar,
-      IonTitle,
+    IonCard,
+    IonCardContent,
     },
     setup() {
-      const modalEl = ref(null);
+      const cardAEl = ref(null);
+      const cardBEl = ref(null);
+      const cardCEl = ref(null);
 
-      const enterAnimation = (baseEl: HTMLElement) => {
-        const root = baseEl.shadowRoot;
+      let animation: Animation;
 
-        const backdropAnimation = createAnimation()
-          .addElement(root!.querySelector('ion-backdrop')!)
-          .fromTo('opacity', '0.01', 'var(--backdrop-opacity)');
-
-        const wrapperAnimation = createAnimation()
-          .addElement(root!.querySelector('.modal-wrapper')!)
+      onMounted(() => {
+        const cardA = createAnimation()
+          .addElement(cardAEl.value.$el)
           .keyframes([
-            { offset: 0, opacity: '0', transform: 'scale(0)' },
-            { offset: 1, opacity: '0.99', transform: 'scale(1)' },
+            { offset: 0, transform: 'scale(1) rotate(0)' },
+            { offset: 0.5, transform: 'scale(1.5) rotate(45deg)' },
+            { offset: 1, transform: 'scale(1) rotate(0) '}
           ]);
+      
+        const cardB = createAnimation()
+          .addElement(cardBEl.value.$el)
+          .keyframes([
+            { offset: 0, transform: 'scale(1)', opacity: '1' },
+            { offset: 0.5, transform: 'scale(1.5)', opacity: '0.3' },
+            { offset: 1, transform: 'scale(1)', opacity: '1' }
+          ]);
+        
+        const cardC = createAnimation()
+          .addElement(cardCEl.value.$el)
+          .duration(5000)
+          .keyframes([
+            { offset: 0, transform: 'scale(1)', opacity: '0.5' },
+            { offset: 0.5, transform: 'scale(0.5)', opacity: '1' },
+            { offset: 1, transform: 'scale(1)', opacity: '0.5' }
+          ]);
+        
+        animation = createAnimation()
+          .duration(2000)
+          .iterations(Infinity)
+          .addAnimation([cardA, cardB, cardC])
+      });
 
-        return createAnimation()
-          .addElement(baseEl)
-          .easing('ease-out')
-          .duration(500)
-          .addAnimation([backdropAnimation, wrapperAnimation]);
-      };
-
-      const leaveAnimation = (baseEl: HTMLElement) => {
-        return enterAnimation(baseEl).direction('reverse');
-      };
-
-      const closeModal = () => {
-        modalEl.value?.$el.dismiss();
-      };
+      const play = () => animation.play();
+      const pause = () => animation.pause();
+      const stop = () => animation.stop();
 
       return {
-        close,
-        modalEl,
-        closeModal,
-        enterAnimation,
-        leaveAnimation,
+        play,
+        pause,
+        stop,
+        cardAEl,
+        cardBEl,
+        cardCEl
       };
     },
   });
