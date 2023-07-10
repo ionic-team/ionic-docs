@@ -1,5 +1,5 @@
 ```ts
-import { Component, ViewChildren } from '@angular/core';
+import { Component, ElementRef, ViewChildren } from '@angular/core';
 import type { QueryList } from '@angular/core';
 import type { Animation } from '@ionic/angular';
 import { AnimationController, IonCard } from '@ionic/angular';
@@ -9,7 +9,7 @@ import { AnimationController, IonCard } from '@ionic/angular';
   templateUrl: 'example.component.html',
 })
 export class ExampleComponent {
-  @ViewChildren(IonCard) cardElements: QueryList<any>;
+  @ViewChildren(IonCard, { read: ElementRef }) cardElements: QueryList<ElementRef<HTMLIonCardElement>>;
   
   private animation: Animation;
 
@@ -17,7 +17,7 @@ export class ExampleComponent {
 
   ngAfterViewInit() {
     const cardA = this.animationCtrl.create()
-      .addElement(this.cardElements.get(0).el)
+      .addElement(this.cardElements.get(0).nativeElement)
       .keyframes([
         { offset: 0, transform: 'scale(1) rotate(0)' },
         { offset: 0.5, transform: 'scale(1.5) rotate(45deg)' },
@@ -25,7 +25,7 @@ export class ExampleComponent {
       ]);
     
     const cardB = this.animationCtrl.create()
-      .addElement(this.cardElements.get(1).el)
+      .addElement(this.cardElements.get(1).nativeElement)
       .keyframes([
         { offset: 0, transform: 'scale(1)', opacity: '1' },
         { offset: 0.5, transform: 'scale(1.5)', opacity: '0.3' },
@@ -33,7 +33,7 @@ export class ExampleComponent {
       ]);
     
     const cardC = this.animationCtrl.create()
-      .addElement(this.cardElements.get(2).el)
+      .addElement(this.cardElements.get(2).nativeElement)
       .duration(5000)
       .keyframes([
         { offset: 0, transform: 'scale(1)', opacity: '0.5' },
