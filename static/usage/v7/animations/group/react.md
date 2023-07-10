@@ -1,69 +1,75 @@
 ```tsx
-import React, { useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 import {
   IonButton,
-  IonButtons,
-  IonContent,
-  IonHeader,
-  IonModal,
-  IonToolbar,
-  IonTitle,
+  IonCard,
+  IonCardContent,
   createAnimation,
 } from '@ionic/react';
+import type { Animation } from '@ionic/react';
 
 function Example() {
-  const modalEl = useRef<HTMLIonModalElement>(null);
+  const cardAEl = useRef<HTMLIonCardElement | null>(null);
+  const cardBEl = useRef<HTMLIonCardElement | null>(null);
+  const cardCEl = useRef<HTMLIonCardElement | null>(null);
 
-  const enterAnimation = (baseEl: HTMLElement) => {
-    const root = baseEl.shadowRoot!;
-
-    const backdropAnimation = createAnimation()
-      .addElement(root.querySelector('ion-backdrop')!)
-      .fromTo('opacity', '0.01', 'var(--backdrop-opacity)');
-
-    const wrapperAnimation = createAnimation()
-      .addElement(root.querySelector('.modal-wrapper')!)
-      .keyframes([
-        { offset: 0, opacity: '0', transform: 'scale(0)' },
-        { offset: 1, opacity: '0.99', transform: 'scale(1)' },
-      ]);
-
-    return createAnimation()
-      .addElement(baseEl)
-      .easing('ease-out')
-      .duration(500)
-      .addAnimation([backdropAnimation, wrapperAnimation]);
-  };
-
-  const leaveAnimation = (baseEl: HTMLElement) => {
-    return enterAnimation(baseEl).direction('reverse');
-  };
-
-  const closeModal = () => {
-    modalEl.current?.dismiss();
-  };
+  const animation = useRef<Animation | null>(null);
+  
+  useEffect(() => {
+    if (animation.current === null) {
+      const cardA = createAnimation()
+        .addElement(cardAEl.current!)
+        .keyframes([
+          { offset: 0, transform: 'scale(1) rotate(0)' },
+          { offset: 0.5, transform: 'scale(1.5) rotate(45deg)' },
+          { offset: 1, transform: 'scale(1) rotate(0) '}
+        ]);
+      
+      const cardB = createAnimation()
+        .addElement(cardBEl.current!)
+        .keyframes([
+          { offset: 0, transform: 'scale(1)', opacity: '1' },
+          { offset: 0.5, transform: 'scale(1.5)', opacity: '0.3' },
+          { offset: 1, transform: 'scale(1)', opacity: '1' }
+        ]);
+      
+      const cardC = createAnimation()
+        .addElement(cardCEl.current!)
+        .duration(5000)
+        .keyframes([
+          { offset: 0, transform: 'scale(1)', opacity: '0.5' },
+          { offset: 0.5, transform: 'scale(0.5)', opacity: '1' },
+          { offset: 1, transform: 'scale(1)', opacity: '0.5' }
+        ]);
+      
+      animation.current = createAnimation()
+        .duration(2000)
+        .iterations(Infinity)
+        .addAnimation([cardA, cardB, cardC])
+    }
+  }, [cardAEl, cardBEl, cardCEl]);
+  
+  const play = () => { animation.current?.play(); };
+  const pause = () => { animation.current?.pause(); };
+  const stop = () => { animation.current?.stop(); };
 
   return (
     <>
-      <IonHeader>
-        <IonToolbar>
-          <IonTitle>Page</IonTitle>
-        </IonToolbar>
-      </IonHeader>
-      <IonContent className="ion-padding">
-        <IonButton id="modal-trigger">Present Modal</IonButton>
-        <IonModal trigger="modal-trigger" ref={modalEl} enterAnimation={enterAnimation} leaveAnimation={leaveAnimation}>
-          <IonHeader>
-            <IonToolbar>
-              <IonTitle>Modal</IonTitle>
-              <IonButtons slot="end">
-                <IonButton onClick={closeModal}>Close</IonButton>
-              </IonButtons>
-            </IonToolbar>
-          </IonHeader>
-          <IonContent className="ion-padding">Modal Content</IonContent>
-        </IonModal>
-      </IonContent>
+      <IonCard ref={cardAEl}>
+        <IonCardContent>Card 1</IonCardContent>
+      </IonCard>
+      
+      <IonCard ref={cardBEl}>
+        <IonCardContent>Card 2</IonCardContent>
+      </IonCard>
+      
+      <IonCard ref={cardCEl}>
+        <IonCardContent>Card 3</IonCardContent>
+      </IonCard>
+      
+      <IonButton id="play" onClick={play}>Play</IonButton>
+      <IonButton id="pause" onClick={pause}>Pause</IonButton>
+      <IonButton id="stop" onClick={stop}>Stop</IonButton>
     </>
   );
 }
