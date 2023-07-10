@@ -4,8 +4,7 @@
   "packageRules": [
     {
       "matchPackagePatterns": ["^@ionic/"],
-      "groupName": "ionic",
-      "schedule": ["every thursday before 11am"]
+      "groupName": "ionic"
     },
     {
       "matchPackagePatterns": ["^@angular/"],
