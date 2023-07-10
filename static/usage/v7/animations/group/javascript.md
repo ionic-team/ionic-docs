@@ -1,13 +1,13 @@
 ```html
-<ion-card class="card-a">
+<ion-card id="card-a">
   <ion-card-content>Card 1</ion-card-content>
 </ion-card>
 
-<ion-card class="card-b">
+<ion-card id="card-b">
   <ion-card-content>Card 2</ion-card-content>
 </ion-card>
 
-<ion-card class="card-c">
+<ion-card id="card-c">
   <ion-card-content>Card 2</ion-card-content>
 </ion-card>
 
@@ -17,7 +17,7 @@
 
 <script>
   const squareA = createAnimation()
-    .addElement(document.querySelector('.card-a'))
+    .addElement(document.querySelector('#card-a'))
     .keyframes([
       { offset: 0, transform: 'scale(1) rotate(0)' },
       { offset: 0.5, transform: 'scale(1.5) rotate(45deg)' },
@@ -25,7 +25,7 @@
     ]);
   
   const squareB = createAnimation()
-    .addElement(document.querySelector('.card-b'))
+    .addElement(document.querySelector('#card-b'))
     .keyframes([
       { offset: 0, transform: 'scale(1)', opacity: '1' },
       { offset: 0.5, transform: 'scale(1.5)', opacity: '0.3' },
@@ -33,7 +33,7 @@
     ]);
   
   const squareC = createAnimation()
-    .addElement(document.querySelector('.card-c'))
+    .addElement(document.querySelector('#card-c'))
     .duration(5000)
     .keyframes([
       { offset: 0, transform: 'scale(1)', opacity: '0.5' },
