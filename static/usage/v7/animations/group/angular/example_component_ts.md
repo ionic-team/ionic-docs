@@ -1,52 +1,62 @@
 ```ts
 import { Component, ViewChild } from '@angular/core';
-import type { IonModal } from '@ionic/angular';
-import { AnimationController } from '@ionic/angular';
+import type { QueryList } from '@angular/core';
+import type { Animation } from '@ionic/angular';
+import { AnimationController, IonCard } from '@ionic/angular';
 
 @Component({
   selector: 'app-example',
   templateUrl: 'example.component.html',
 })
 export class ExampleComponent {
-  @ViewChild('modal', { static: true }) modal: IonModal;
+  @ViewChildren(IonCard) cardElements: QueryList<any>;
+  
+  private animation: Animation;
 
   constructor(private animationCtrl: AnimationController) {}
 
-  ngOnInit() {
-    const enterAnimation = (baseEl: HTMLElement) => {
-      const root = baseEl.shadowRoot;
-
-      const backdropAnimation = this.animationCtrl
-        .create()
-        .addElement(root.querySelector('ion-backdrop'))
-        .fromTo('opacity', '0.01', 'var(--backdrop-opacity)');
-
-      const wrapperAnimation = this.animationCtrl
-        .create()
-        .addElement(root.querySelector('.modal-wrapper'))
-        .keyframes([
-          { offset: 0, opacity: '0', transform: 'scale(0)' },
-          { offset: 1, opacity: '0.99', transform: 'scale(1)' },
-        ]);
-
-      return this.animationCtrl
-        .create()
-        .addElement(baseEl)
-        .easing('ease-out')
-        .duration(500)
-        .addAnimation([backdropAnimation, wrapperAnimation]);
-    };
-
-    const leaveAnimation = (baseEl: HTMLElement) => {
-      return enterAnimation(baseEl).direction('reverse');
-    };
-
-    this.modal.enterAnimation = enterAnimation;
-    this.modal.leaveAnimation = leaveAnimation;
+  ngAfterViewInit() {
+    const cardA = this.animationCtrl.create()
+      .addElement(this.cardElements.get(0).el)
+      .keyframes([
+        { offset: 0, transform: 'scale(1) rotate(0)' },
+        { offset: 0.5, transform: 'scale(1.5) rotate(45deg)' },
+        { offset: 1, transform: 'scale(1) rotate(0) '}
+      ]);
+    
+    const cardB = this.animationCtrl.create()
+      .addElement(this.cardElements.get(1).el)
+      .keyframes([
+        { offset: 0, transform: 'scale(1)', opacity: '1' },
+        { offset: 0.5, transform: 'scale(1.5)', opacity: '0.3' },
+        { offset: 1, transform: 'scale(1)', opacity: '1' }
+      ]);
+    
+    const cardC = this.animationCtrl.create()
+      .addElement(this.cardElements.get(2).el)
+      .duration(5000)
+      .keyframes([
+        { offset: 0, transform: 'scale(1)', opacity: '0.5' },
+        { offset: 0.5, transform: 'scale(0.5)', opacity: '1' },
+        { offset: 1, transform: 'scale(1)', opacity: '0.5' }
+      ]);
+    
+    this.animation = this.animationCtrl.create()
+      .duration(2000)
+      .iterations(Infinity)
+      .addAnimation([cardA, cardB, cardC]);
   }
-
-  closeModal() {
-    this.modal.dismiss();
+  
+  play() {
+    this.animation.play();
+  }
+  
+  pause() {
+    this.animation.pause();
+  }
+  
+  stop() {
+    this.animation.stop();
   }
 }
 ```
