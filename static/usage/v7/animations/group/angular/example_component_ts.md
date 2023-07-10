@@ -1,5 +1,5 @@
 ```ts
-import { Component, ViewChild } from '@angular/core';
+import { Component, ViewChildren } from '@angular/core';
 import type { QueryList } from '@angular/core';
 import type { Animation } from '@ionic/angular';
 import { AnimationController, IonCard } from '@ionic/angular';
