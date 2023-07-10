@@ -31,8 +31,8 @@
   export default defineComponent({
     components: {
       IonButton,
-    IonCard,
-    IonCardContent,
+      IonCard,
+      IonCardContent,
     },
     setup() {
       const cardAEl = ref(null);
