@@ -54,6 +54,7 @@ Ionic's documentation is built using [Docusaurus](https://docusaurus.io/). The c
     - `components/` - styles split out into the components they target
 - `static/`
   - `demos/` - self-contained demos, optionally presented by pages via `demoUrl` YAML frontmatter
+  - `usage/` - playgrounds that can be created by running `npm run playground:new` [(docs)](_templates/README.md#new-playground-template)
 - `versioned_docs/` - versions of the docs created by the docusaurus versioning command
 - `versioned_sidebars/` - versions of the docs sidebars created by the docusaurus versioning command
 
