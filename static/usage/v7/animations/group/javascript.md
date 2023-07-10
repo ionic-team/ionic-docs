@@ -16,7 +16,7 @@
 <ion-button id="stop" onclick="animation.stop()">Stop</ion-button>
 
 <script>
-  const squareA = createAnimation()
+  const cardA = createAnimation()
     .addElement(document.querySelector('#card-a'))
     .keyframes([
       { offset: 0, transform: 'scale(1) rotate(0)' },
@@ -24,7 +24,7 @@
       { offset: 1, transform: 'scale(1) rotate(0) '}
     ]);
   
-  const squareB = createAnimation()
+  const cardB = createAnimation()
     .addElement(document.querySelector('#card-b'))
     .keyframes([
       { offset: 0, transform: 'scale(1)', opacity: '1' },
@@ -32,7 +32,7 @@
       { offset: 1, transform: 'scale(1)', opacity: '1' }
     ]);
   
-  const squareC = createAnimation()
+  const cardC = createAnimation()
     .addElement(document.querySelector('#card-c'))
     .duration(5000)
     .keyframes([
@@ -44,6 +44,6 @@
   var animation = createAnimation()
     .duration(2000)
     .iterations(Infinity)
-    .addAnimation([squareA, squareB, squareC])
+    .addAnimation([cardA, cardB, cardC])
 </script>
 ```
