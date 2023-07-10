@@ -8,7 +8,7 @@
 </ion-card>
 
 <ion-card id="card-c">
-  <ion-card-content>Card 2</ion-card-content>
+  <ion-card-content>Card 3</ion-card-content>
 </ion-card>
 
 <ion-button id="play" onclick="animation.play()">Play</ion-button>
