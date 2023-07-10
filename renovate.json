@@ -1,6 +1,21 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": [
-    "config:base"
-  ]
+  "extends": ["config:base", ":github>ionic-team/ionic-docs>"],
+  "packageRules": [
+    {
+      "matchPackagePatterns": ["^@ionic/"],
+      "groupName": "ionic",
+      "schedule": ["every thursday before 11am"]
+    },
+    {
+      "matchPackagePatterns": ["^@angular/"],
+      "groupName": "angular"
+    }
+  ],
+  "dependencyDashboard": true,
+  "minimumReleaseAge": "3 days",
+  "rebaseWhen": "never",
+  "schedule": ["every weekday before 11am"],
+  "semanticCommits": "enabled",
+  "ignorePaths": ["./package.json", "./package-lock.json", "./docusaurus-theme-classic"]
 }

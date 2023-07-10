@@ -48,6 +48,10 @@ import javascript from './javascript.md';
 
 The file location is respective to the Stackblitz demo project. If you are unsure of the exact path, refer to the `stackblitz.utils.ts` method for each respective target. The path specified in `sdk.openProject` will coincide with the value used in the `files` configuration.
 
+## Creating a New Playground
+
+You can [generate a new playground](../../../../_templates/README.md#new-playground-template) by running `npm run playground:new`.
+
 ## Ejecting from IonApp/IonContent Boilerplate
 
 By default, Playground examples will automatically include the following template wrapper for each component example when opened in Stackblitz.
