@@ -316,7 +316,7 @@ Each keyframe object contains an `offset` property. `offset` is a value between 
 
 Multiple elements can be animated at the same time and controlled via a single parent animation object. Child animations inherit properties such as duration, easing, and iterations unless otherwise specified. A parent animation's `onFinish` callback will not be called until all child animations have completed.
 
-This example shows 3 child animations controlled by a single parent animation. Animations `squareA` and `squareB` inherit the parent animation's duration of 2000ms, but animation `squareC` has a duration of 5000ms since it was explicitly set.
+This example shows 3 child animations controlled by a single parent animation. Animations `cardA` and `cardB` inherit the parent animation's duration of 2000ms, but animation `cardC` has a duration of 5000ms since it was explicitly set.
 
 import Group from '@site/static/usage/v7/animations/group/index.md';
 
