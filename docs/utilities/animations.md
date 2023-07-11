@@ -138,84 +138,9 @@ const animation = createAnimation()
 
 ## Basic Animations
 
-### Usage
+import Basic from '@site/static/usage/v7/animations/basic/index.md';
 
-````mdx-code-block
-<Tabs
-  groupId="framework"
-  defaultValue="javascript"
-  values={[
-    { value: 'javascript', label: 'JavaScript' },
-    { value: 'angular', label: 'Angular' },
-    { value: 'react', label: 'React' },
-    { value: 'vue', label: 'Vue' },
-  ]
-}>
-<TabItem value="javascript">
-
-```javascript
-createAnimation()
-  .addElement(document.querySelector('.square'))
-  .duration(1500)
-  .iterations(Infinity)
-  .fromTo('transform', 'translateX(0px)', 'translateX(100px)')
-  .fromTo('opacity', '1', '0.2');
-```
-</TabItem>
-<TabItem value="angular">
-
-```javascript
-this.animationCtrl.create()
-  .addElement(document.querySelector('.square'))
-  .duration(1500)
-  .iterations(Infinity)
-  .fromTo('transform', 'translateX(0px)', 'translateX(100px)')
-  .fromTo('opacity', '1', '0.2');
-```
-</TabItem>
-<TabItem value="react">
-
-```tsx
-<CreateAnimation
-  duration={1500}
-  iterations={Infinity}
-  fromTo={[
-    { property: 'transform', fromValue: 'translateX(0px)', toValue: 'translateX(100px)' },
-    { property: 'opacity', fromValue: '1', toValue: '0.2' }
-  ]}
->
-  ...
-</CreateAnimation>
-```
-</TabItem>
-<TabItem value="vue">
-
-```javascript
-import { createAnimation } from '@ionic/vue';
-import { ref } from 'vue';
-
-...
-
-const elementRef = ref();
-
-...
-
-createAnimation()
-  .addElement(elementRef.value)
-  .duration(1500)
-  .iterations(Infinity)
-  .fromTo('transform', 'translateX(0px)', 'translateX(100px)')
-  .fromTo('opacity', '1', '0.2');
-```
-</TabItem>
-</Tabs>
-````
-
-In the example above, an animation that changes the opacity on the `.square` element and moves it from left to right along the X axis has been created. This animation will run an infinite number of times, and each iteration of the animation will last 1500ms.
-
-By default, all Ionic Animations are paused until the `play` method is called.
-
-<Codepen user="ionic" slug="bGbMojP" />
+<Basic />
 
 ## Keyframe Animations
 
