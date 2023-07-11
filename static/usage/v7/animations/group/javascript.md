@@ -21,29 +21,26 @@
     .keyframes([
       { offset: 0, transform: 'scale(1) rotate(0)' },
       { offset: 0.5, transform: 'scale(1.5) rotate(45deg)' },
-      { offset: 1, transform: 'scale(1) rotate(0) '}
+      { offset: 1, transform: 'scale(1) rotate(0) ' },
     ]);
-  
+
   const cardB = createAnimation()
     .addElement(document.querySelector('#card-b'))
     .keyframes([
       { offset: 0, transform: 'scale(1)', opacity: '1' },
       { offset: 0.5, transform: 'scale(1.5)', opacity: '0.3' },
-      { offset: 1, transform: 'scale(1)', opacity: '1' }
+      { offset: 1, transform: 'scale(1)', opacity: '1' },
     ]);
-  
+
   const cardC = createAnimation()
     .addElement(document.querySelector('#card-c'))
     .duration(5000)
     .keyframes([
       { offset: 0, transform: 'scale(1)', opacity: '0.5' },
       { offset: 0.5, transform: 'scale(0.5)', opacity: '1' },
-      { offset: 1, transform: 'scale(1)', opacity: '0.5' }
+      { offset: 1, transform: 'scale(1)', opacity: '0.5' },
     ]);
-  
-  var animation = createAnimation()
-    .duration(2000)
-    .iterations(Infinity)
-    .addAnimation([cardA, cardB, cardC])
+
+  var animation = createAnimation().duration(2000).iterations(Infinity).addAnimation([cardA, cardB, cardC]);
 </script>
 ```

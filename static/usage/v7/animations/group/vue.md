@@ -3,27 +3,22 @@
   <ion-card ref="cardAEl">
     <ion-card-content>Card 1</ion-card-content>
   </ion-card>
-  
+
   <ion-card ref="cardBEl">
     <ion-card-content>Card 2</ion-card-content>
   </ion-card>
-  
+
   <ion-card ref="cardCEl">
     <ion-card-content>Card 3</ion-card-content>
   </ion-card>
-  
+
   <ion-button id="play" @click="play()">Play</ion-button>
   <ion-button id="pause" @click="pause()">Pause</ion-button>
   <ion-button id="stop" @click="stop()">Stop</ion-button>
 </template>
 
 <script lang="ts">
-  import {
-    IonButton,
-    IonCard,
-    IonCardContent,
-    createAnimation,
-  } from '@ionic/vue';
+  import { IonButton, IonCard, IonCardContent, createAnimation } from '@ionic/vue';
   import type { Animation } from '@ionic/vue';
 
   import { defineComponent, ref, onMounted } from 'vue';
@@ -47,30 +42,27 @@
           .keyframes([
             { offset: 0, transform: 'scale(1) rotate(0)' },
             { offset: 0.5, transform: 'scale(1.5) rotate(45deg)' },
-            { offset: 1, transform: 'scale(1) rotate(0) '}
+            { offset: 1, transform: 'scale(1) rotate(0) ' },
           ]);
-      
+
         const cardB = createAnimation()
           .addElement(cardBEl.value.$el)
           .keyframes([
             { offset: 0, transform: 'scale(1)', opacity: '1' },
             { offset: 0.5, transform: 'scale(1.5)', opacity: '0.3' },
-            { offset: 1, transform: 'scale(1)', opacity: '1' }
+            { offset: 1, transform: 'scale(1)', opacity: '1' },
           ]);
-        
+
         const cardC = createAnimation()
           .addElement(cardCEl.value.$el)
           .duration(5000)
           .keyframes([
             { offset: 0, transform: 'scale(1)', opacity: '0.5' },
             { offset: 0.5, transform: 'scale(0.5)', opacity: '1' },
-            { offset: 1, transform: 'scale(1)', opacity: '0.5' }
+            { offset: 1, transform: 'scale(1)', opacity: '0.5' },
           ]);
-        
-        animation = createAnimation()
-          .duration(2000)
-          .iterations(Infinity)
-          .addAnimation([cardA, cardB, cardC])
+
+        animation = createAnimation().duration(2000).iterations(Infinity).addAnimation([cardA, cardB, cardC]);
       });
 
       const play = () => animation.play();
@@ -83,7 +75,7 @@
         stop,
         cardAEl,
         cardBEl,
-        cardCEl
+        cardCEl,
       };
     },
   });
