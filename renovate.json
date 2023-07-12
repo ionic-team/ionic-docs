@@ -11,7 +11,7 @@
       "groupName": "angular"
     },
     {
-      "matchPackageNames": ["^@ionic/"],
+      "matchPackagePatterns": ["^@ionic/"],
       "allowedVersions": "^6.0.0",
       "matchFileNames": ["static/code/stackblitz/v6/**/package.json"]
     }
