@@ -11,9 +11,9 @@
   <ion-card-content>Card 3</ion-card-content>
 </ion-card>
 
-<ion-button id="play" onclick="play()">Play</ion-button>
-<ion-button id="pause" onclick="pause()">Pause</ion-button>
-<ion-button id="stop" onclick="stop()">Stop</ion-button>
+<ion-button onclick="play()">Play</ion-button>
+<ion-button onclick="pause()">Pause</ion-button>
+<ion-button onclick="stop()">Stop</ion-button>
 
 <script>
   const cardA = createAnimation()
