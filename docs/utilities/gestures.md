@@ -137,7 +137,9 @@ const gesture = createGesture({
 
 ## Basic Gestures
 
-### Usage
+import Basic from '@site/static/usage/v7/gestures/basic/index.md';
+
+<Basic />
 
 ````mdx-code-block
 <Tabs
