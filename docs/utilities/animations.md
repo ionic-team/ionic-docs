@@ -154,92 +154,13 @@ Hyphenated CSS properties should be written using camel case when writing keyfra
 
 ### Usage
 
-````mdx-code-block
-<Tabs
-  groupId="framework"
-  defaultValue="javascript"
-  values={[
-    { value: 'javascript', label: 'JavaScript' },
-    { value: 'angular', label: 'Angular' },
-    { value: 'react', label: 'React' },
-    { value: 'vue', label: 'Vue' },
-  ]
-}>
-<TabItem value="javascript">
+import Keyframes from '@site/static/usage/v7/animations/keyframes/index.md';
 
-```javascript
-createAnimation()
-  .addElement(document.querySelector('.square'))
-  .duration(3000)
-  .iterations(Infinity)
-  .keyframes([
-    { offset: 0, background: 'red' },
-    { offset: 0.72, background: 'var(--background)' },
-    { offset: 1, background: 'green' }
-  ]);
-```
-</TabItem>
-<TabItem value="angular">
-
-```javascript
-this.animationCtrl.create()
-  .addElement(this.square.nativeElement)
-  .duration(3000)
-  .iterations(Infinity)
-  .keyframes([
-    { offset: 0, background: 'red' },
-    { offset: 0.72, background: 'var(--background)' },
-    { offset: 1, background: 'green' }
-  ]);
-```
-</TabItem>
-<TabItem value="react">
-
-```tsx
-<CreateAnimation
-  duration={3000}
-  iterations={Infinity}
-  keyframes={[
-    { offset: 0, background: 'red' },
-    { offset: 0.72, background: 'var(--background)' },
-    { offset: 1, background: 'green' }
-  ]}
->
-...
-</CreateAnimation>
-```
-</TabItem>
-<TabItem value="vue">
-
-```javascript
-import { createAnimation } from '@ionic/vue';
-import { ref } from 'vue';
-
-...
-
-const squareRef = ref();
-
-...
-
-createAnimation()
-  .addElement(squareRef.value)
-  .duration(3000)
-  .iterations(Infinity)
-  .keyframes([
-    { offset: 0, background: 'red' },
-    { offset: 0.72, background: 'var(--background)' },
-    { offset: 1, background: 'green' }
-  ]);
-```
-</TabItem>
-</Tabs>
-````
+<Keyframes />
 
 In the example above, the `.square` element will transition from a red background color, to a background color defined by the `--background` variable, and then transition on to a green background color.
 
 Each keyframe object contains an `offset` property. `offset` is a value between 0 and 1 that defines the keyframe step. Offset values must go in ascending order and cannot repeat.
-
-<Codepen user="ionic" slug="YzKLEzR" />
 
 ## Grouped Animations
 
