@@ -138,6 +138,10 @@ const animation = createAnimation()
 
 ## Basic Animations
 
+In the example below, an animation that changes the opacity on the `ion-card` element and moves it from left to right along the X axis has been created. This animation will run an infinite number of times, and each iteration of the animation will last 1500ms.
+
+By default, all Ionic Animations are paused until the `play` method is called.
+
 import Basic from '@site/static/usage/v7/animations/basic/index.md';
 
 <Basic />
