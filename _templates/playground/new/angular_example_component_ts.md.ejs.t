@@ -7,8 +7,10 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-example',
-  templateUrl: 'example.component.html',<% if (css){ %>
-  styleUrls: ['./example.component.css'],<% } %>
+  templateUrl: 'example.component.html',
+<% if (css){ -%>
+  styleUrls: ['./example.component.css'],
+<% } -%>
 })
 export class ExampleComponent {
 }

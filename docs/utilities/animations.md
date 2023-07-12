@@ -138,84 +138,13 @@ const animation = createAnimation()
 
 ## Basic Animations
 
-### Usage
-
-````mdx-code-block
-<Tabs
-  groupId="framework"
-  defaultValue="javascript"
-  values={[
-    { value: 'javascript', label: 'JavaScript' },
-    { value: 'angular', label: 'Angular' },
-    { value: 'react', label: 'React' },
-    { value: 'vue', label: 'Vue' },
-  ]
-}>
-<TabItem value="javascript">
-
-```javascript
-createAnimation()
-  .addElement(document.querySelector('.square'))
-  .duration(1500)
-  .iterations(Infinity)
-  .fromTo('transform', 'translateX(0px)', 'translateX(100px)')
-  .fromTo('opacity', '1', '0.2');
-```
-</TabItem>
-<TabItem value="angular">
-
-```javascript
-this.animationCtrl.create()
-  .addElement(document.querySelector('.square'))
-  .duration(1500)
-  .iterations(Infinity)
-  .fromTo('transform', 'translateX(0px)', 'translateX(100px)')
-  .fromTo('opacity', '1', '0.2');
-```
-</TabItem>
-<TabItem value="react">
-
-```tsx
-<CreateAnimation
-  duration={1500}
-  iterations={Infinity}
-  fromTo={[
-    { property: 'transform', fromValue: 'translateX(0px)', toValue: 'translateX(100px)' },
-    { property: 'opacity', fromValue: '1', toValue: '0.2' }
-  ]}
->
-  ...
-</CreateAnimation>
-```
-</TabItem>
-<TabItem value="vue">
-
-```javascript
-import { createAnimation } from '@ionic/vue';
-import { ref } from 'vue';
-
-...
-
-const elementRef = ref();
-
-...
-
-createAnimation()
-  .addElement(elementRef.value)
-  .duration(1500)
-  .iterations(Infinity)
-  .fromTo('transform', 'translateX(0px)', 'translateX(100px)')
-  .fromTo('opacity', '1', '0.2');
-```
-</TabItem>
-</Tabs>
-````
-
-In the example above, an animation that changes the opacity on the `.square` element and moves it from left to right along the X axis has been created. This animation will run an infinite number of times, and each iteration of the animation will last 1500ms.
+In the example below, an animation that changes the opacity on the `ion-card` element and moves it from left to right along the X axis has been created. This animation will run an infinite number of times, and each iteration of the animation will last 1500ms.
 
 By default, all Ionic Animations are paused until the `play` method is called.
 
-<Codepen user="ionic" slug="bGbMojP" />
+import Basic from '@site/static/usage/v7/animations/basic/index.md';
+
+<Basic />
 
 ## Keyframe Animations
 
@@ -326,118 +255,13 @@ import Group from '@site/static/usage/v7/animations/group/index.md';
 
 Ionic Animations provides hooks that let you alter an element before an animation runs and after an animation completes. These hooks can be used to perform DOM reads and writes as well as add or remove classes and inline styles.
 
-### Usage
-
-````mdx-code-block
-<Tabs
-  groupId="framework"
-  defaultValue="javascript"
-  values={[
-    { value: 'javascript', label: 'JavaScript' },
-    { value: 'angular', label: 'Angular' },
-    { value: 'react', label: 'React' },
-    { value: 'vue', label: 'Vue' },
-  ]
-}>
-<TabItem value="javascript">
-
-```javascript
-createAnimation()
-  .addElement(document.querySelector('.square'))
-  .duration(2000)
-  .beforeStyles({
-    opacity: 0.2
-  })
-  .afterStyles({
-    background: 'rgba(0, 255, 0, 0.5)'
-  })
-  .afterClearStyles(['opacity'])
-  .keyframes([
-    { offset: 0, transform: 'scale(1)' },
-    { offset: 0.5, transform: 'scale(1.5)' },
-    { offset: 1, transform: 'scale(1)' }
-  ])
-```
-</TabItem>
-<TabItem value="angular">
-
-```javascript
-this.animationCtrl.create()
-  .addElement(this.square.nativeElement)
-  .duration(2000)
-  .beforeStyles({
-    opacity: 0.2
-  })
-  .afterStyles({
-    background: 'rgba(0, 255, 0, 0.5)'
-  })
-  .afterClearStyles(['opacity'])
-  .keyframes([
-    { offset: 0, transform: 'scale(1)' },
-    { offset: 0.5, transform: 'scale(1.5)' },
-    { offset: 1, transform: 'scale(1)' }
-  ])
-```
-</TabItem>
-<TabItem value="react">
-
-```tsx
-<CreateAnimation
-  duration={2000}
-  beforeStyles={{
-    opacity: 0.2
-  }}
-  afterStyles={{
-    background: 'rgba(0, 255, 0, 0.5)'
-  }}
-  afterClearStyles={['opacity']}
-  keyframes={[
-    { offset: 0, transform: 'scale(1)' },
-    { offset: 0.5, transform: 'scale(1.5)' },
-    { offset: 1, transform: 'scale(1)' }
-  ]}
->
-  ...
-</CreateAnimation>
-```
-</TabItem>
-<TabItem value="vue">
-
-```javascript
-import { createAnimation } from '@ionic/vue';
-import { ref } from 'vue';
-
-...
-
-const squareRef = ref();
-
-...
-
-createAnimation()
-  .addElement(squareRef.value)
-  .duration(2000)
-  .beforeStyles({
-    opacity: 0.2
-  })
-  .afterStyles({
-    background: 'rgba(0, 255, 0, 0.5)'
-  })
-  .afterClearStyles(['opacity'])
-  .keyframes([
-    { offset: 0, transform: 'scale(1)' },
-    { offset: 0.5, transform: 'scale(1.5)' },
-    { offset: 1, transform: 'scale(1)' }
-  ])
-```
-</TabItem>
-</Tabs>
-````
-
-In this example, an inline opacity of 0.2 is set on the `.square` element prior to the animation starting. Once the animation finishes, the background color of the element is set to `rgba(0, 255, 0, 0.5)`, and the inline opacity is cleared.
+This example sets an inline filter which inverts the background color of the card by `75%` prior to the animation starting. Once the animation finishes, the box shadow on the element is set to `rgba(255, 0, 50, 0.4) 0px 4px 16px 6px`, a red glow, and the inline filter is cleared. The animation must be stopped in order to remove the box shadow and play it with the filter again.
 
 See [Methods](#methods) for a complete list of hooks.
 
-<Codepen user="ionic" slug="BaBxmwo" />
+import BeforeAndAfterHooks from '@site/static/usage/v7/animations/before-and-after-hooks/index.md';
+
+<BeforeAndAfterHooks />
 
 ## Chained Animations
 
