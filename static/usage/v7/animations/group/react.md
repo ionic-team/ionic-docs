@@ -65,13 +65,13 @@ function Example() {
         <IonCardContent>Card 3</IonCardContent>
       </IonCard>
 
-      <IonButton id="play" onClick={play}>
+      <IonButton onClick={play}>
         Play
       </IonButton>
-      <IonButton id="pause" onClick={pause}>
+      <IonButton onClick={pause}>
         Pause
       </IonButton>
-      <IonButton id="stop" onClick={stop}>
+      <IonButton onClick={stop}>
         Stop
       </IonButton>
     </>
