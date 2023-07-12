@@ -21,13 +21,13 @@ export class ExampleComponent {
       .addElement(this.cardElements.get(0).nativeElement)
       .duration(2000)
       .beforeStyles({
-        opacity: 0.2,
+        filter: 'invert(75%)',
       })
-      .beforeClearStyles(['background'])
+      .beforeClearStyles(['box-shadow'])
       .afterStyles({
-        background: 'rgba(0, 255, 0, 0.5)',
+        'box-shadow': 'rgba(255, 0, 50, 0.4) 0px 4px 16px 6px',
       })
-      .afterClearStyles(['opacity'])
+      .afterClearStyles(['filter'])
       .keyframes([
         { offset: 0, transform: 'scale(1)' },
         { offset: 0.5, transform: 'scale(1.5)' },

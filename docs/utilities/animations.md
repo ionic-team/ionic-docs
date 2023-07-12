@@ -255,7 +255,7 @@ import Group from '@site/static/usage/v7/animations/group/index.md';
 
 Ionic Animations provides hooks that let you alter an element before an animation runs and after an animation completes. These hooks can be used to perform DOM reads and writes as well as add or remove classes and inline styles.
 
-This example sets an inline opacity of `0.2` on the card prior to the animation starting. Once the animation finishes, the background color of the element is set to `rgba(0, 255, 0, 0.5)`, and the inline opacity is cleared. The animation must be stopped in order to remove the background and play it with the opacity again.
+This example sets an inline filter which inverts the background color of the card by `75%` prior to the animation starting. Once the animation finishes, the box shadow on the element is set to `rgba(255, 0, 50, 0.4) 0px 4px 16px 6px`, a red glow, and the inline filter is cleared. The animation must be stopped in order to remove the box shadow and play it with the filter again.
 
 See [Methods](#methods) for a complete list of hooks.
 
