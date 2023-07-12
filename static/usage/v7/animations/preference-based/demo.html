@@ -49,9 +49,14 @@
       }
 
       @media (prefers-color-scheme: dark) {
-        ion-card {
+        body ion-card {
           --background: green;
         }
+      }
+
+      /* Fallback for when the theme is changed through Docusaurus */
+      body.dark ion-card {
+        --background: green;
       }
     </style>
   </head>
