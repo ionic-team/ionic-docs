@@ -16,11 +16,13 @@ to: "<%= `static/usage/v${version}/${name.replace('ion-', '')}/${path}/vue.md` %
       <%= pascalName %>,
     },
   });
-</script><% if (css){ %>
+</script>
+<% if (css){ -%>
 
 <style scoped>
   <%= name %> {
     /* styles go here */
   }
-</style><% } %>
+</style>
+<% } -%>
 ```
