@@ -3,12 +3,12 @@
   <ion-card-content>Card</ion-card-content>
 </ion-card>
 
-<ion-button id="play">Play</ion-button>
-<ion-button id="pause">Pause</ion-button>
-<ion-button id="stop">Stop</ion-button>
+<ion-button onclick="animation.play()">Play</ion-button>
+<ion-button onclick="animation.pause()">Pause</ion-button>
+<ion-button onclick="animation.stop()">Stop</ion-button>
 
 <script>
-  const card = createAnimation()
+  var animation = createAnimation()
     .addElement(document.querySelector('#card'))
     .duration(2000)
     .beforeStyles({
@@ -24,17 +24,5 @@
       { offset: 0.5, transform: 'scale(1.5)' },
       { offset: 1, transform: 'scale(1)' },
     ]);
-
-  document.querySelector('#play').addEventListener('click', async () => {
-    await card.play();
-  });
-
-  document.querySelector('#pause').addEventListener('click', async () => {
-    await card.pause();
-  });
-
-  document.querySelector('#stop').addEventListener('click', async () => {
-    await card.stop();
-  });
 </script>
 ```
