@@ -35,15 +35,9 @@ function Example() {
         <IonCardContent>Card</IonCardContent>
       </IonCard>
 
-      <IonButton onClick={play}>
-        Play
-      </IonButton>
-      <IonButton onClick={pause}>
-        Pause
-      </IonButton>
-      <IonButton onClick={stop}>
-        Stop
-      </IonButton>
+      <IonButton onClick={play}>Play</IonButton>
+      <IonButton onClick={pause}>Pause</IonButton>
+      <IonButton onClick={stop}>Stop</IonButton>
     </>
   );
 }
