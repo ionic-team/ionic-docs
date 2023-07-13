@@ -23,7 +23,7 @@ export class ExampleComponent {
       .keyframes([
         { offset: 0, background: 'red' },
         { offset: 0.72, background: 'var(--background)' },
-        { offset: 1, background: 'green' },
+        { offset: 1, background: 'aqua' },
       ]);
   }
 

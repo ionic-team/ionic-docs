@@ -158,7 +158,7 @@ import Keyframes from '@site/static/usage/v7/animations/keyframes/index.md';
 
 <Keyframes />
 
-In the example above, the `.square` element will transition from a red background color, to a background color defined by the `--background` variable, and then transition on to a green background color.
+In the example above, the `.square` element will transition from a red background color, to a background color defined by the `--background` variable, and then transition on to an aqua background color.
 
 Each keyframe object contains an `offset` property. `offset` is a value between 0 and 1 that defines the keyframe step. Offset values must go in ascending order and cannot repeat.
 
