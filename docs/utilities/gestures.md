@@ -272,7 +272,9 @@ In this example, our app listens for gestures on the `.rectangle` element. When 
 
 ## Double Click Gesture
 
-### Usage
+import DoubleClick from '@site/static/usage/v7/gestures/double-click/index.md';
+
+<DoubleClick />
 
 ````mdx-code-block
 <Tabs
