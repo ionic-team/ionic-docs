@@ -152,8 +152,6 @@ Ionic Animations allows you to control the intermediate steps in an animation us
 
 Hyphenated CSS properties should be written using camel case when writing keyframes. For example, `border-radius` should be written as `borderRadius`. This also applies to the `fromTo()`, `from(),` and `to()` methods.
 
-### Usage
-
 import Keyframes from '@site/static/usage/v7/animations/keyframes/index.md';
 
 <Keyframes />
