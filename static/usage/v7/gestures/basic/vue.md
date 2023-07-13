@@ -46,7 +46,7 @@
           onStart: () => onStart(),
           onMove: (detail) => onMove(detail),
           onEnd: () => onEnd(),
-          name: 'example',
+          gestureName: 'example',
         });
 
         gesture.enable();

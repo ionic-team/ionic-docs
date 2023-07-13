@@ -50,6 +50,7 @@
     onStart,
     onMove,
     onEnd,
+    gestureName: 'example',
   });
 
   gesture.enable();
