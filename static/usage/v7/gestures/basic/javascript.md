@@ -31,7 +31,7 @@
   const onMove = (detail) => {
     const { type, currentX, deltaX, velocityX } = detail;
     p.innerHTML = `
-          <div>Type: ${type}</div>
+    <div>Type: ${type}</div>
     <div>Current X: ${currentX}</div>
     <div>Delta X: ${deltaX}</div>
     <div>Velocity X: ${velocityX}</div>`;
