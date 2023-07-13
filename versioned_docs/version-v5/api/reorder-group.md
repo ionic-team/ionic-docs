@@ -5,6 +5,13 @@ sidebar_label: 'ion-reorder-group'
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
+import Props from '@ionic-internal/component-api/v5/reorder-group/props.md';
+import Events from '@ionic-internal/component-api/v5/reorder-group/events.md';
+import Methods from '@ionic-internal/component-api/v5/reorder-group/methods.md';
+import Parts from '@ionic-internal/component-api/v5/reorder-group/parts.md';
+import CustomProps from '@ionic-internal/component-api/v5/reorder-group/custom-props.md';
+import Slots from '@ionic-internal/component-api/v5/reorder-group/slots.md';
+
 # ion-reorder-group
 
 The reorder group is a wrapper component for items using the `ion-reorder` component. See the [Reorder documentation](reorder.md) for further information about the anchor component that is used to drag items within the `ion-reorder-group`.
@@ -586,29 +593,24 @@ export class ReorderGroupExample {
 
 ## Properties
 
-### disabled
-
-|                 |                                        |
-| --------------- | -------------------------------------- |
-| **Description** | If `true`, the reorder will be hidden. |
-| **Attribute**   | `disabled`                             |
-| **Type**        | `boolean`                              |
-| **Default**     | `true`                                 |
+<Props />
 
 ## Events
 
-| Name             | Description                                                                 |
-| ---------------- | --------------------------------------------------------------------------- |
-| `ionItemReorder` | Event that needs to be listened to in order to complete the reorder action. |
-
-Once the event has been emitted, the `complete()` method then needs
-to be called in order to finalize the reorder action. |
+<Events />
 
 ## Methods
 
-### complete
+<Methods />
 
-|                 |                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
-| --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Description** | Completes the reorder operation. Must be called by the `ionItemReorder` event.<br /><br />If a list of items is passed, the list will be reordered and returned in the<br />proper order.<br /><br />If no parameters are passed or if `true` is passed in, the reorder will complete<br />and the item will remain in the position it was dragged to. If `false` is passed,<br />the reorder will complete and the item will bounce back to its original position. |
-| **Signature**   | `complete(listOrReorder?: boolean \| any[] \| undefined) => Promise<any>`                                                                                                                                                                                                                                                                                                                                                                                           |
+## CSS Shadow Parts
+
+<Parts />
+
+## CSS Custom Properties
+
+<CustomProps />
+
+## Slots
+
+<Slots />

@@ -40,13 +40,13 @@
 
       const setResult = (ev: CustomEvent) => {
         roleMessage.value = `Dismissed with role: ${ev.detail.role}`;
-      }
+      };
 
       return {
         handlerMessage,
         roleMessage,
         alertButtons,
-        setResult
+        setResult,
       };
     },
   };

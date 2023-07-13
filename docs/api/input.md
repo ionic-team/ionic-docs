@@ -36,8 +36,15 @@ import Types from '@site/static/usage/v7/input/types/index.md';
 
 <Types />
 
+## Labels
 
-## Label Placement
+Labels should be used to describe the input. They can be used visually, and they will also be read out by screen readers when the user is focused on the input. This makes it easy for the user to understand the intent of the input. Input has several ways to assign a label:
+
+- `label` property: used for plaintext labels
+- `label` slot: used for custom HTML labels (experimental)
+- `aria-label`: used to provide a label for screen readers but adds no visible label
+
+### Label Placement
 
 Labels will take up the width of their content by default. Developers can use the `labelPlacement` property to control how the label is placed relative to the control.
 
@@ -45,6 +52,23 @@ import LabelPlacement from '@site/static/usage/v7/input/label-placement/index.md
 
 <LabelPlacement />
 
+### Label Slot (experimental)
+
+While plaintext labels should be passed in via the `label` property, if custom HTML is needed, it can be passed through the `label` slot instead.
+
+Note that this feature is considered experimental because it relies on a simulated version of [Web Component slots](https://developer.mozilla.org/en-US/docs/Web/API/Web_components/Using_templates_and_slots). As a result, the simulated behavior may not exactly match the native slot behavior.
+
+import LabelSlot from '@site/static/usage/v7/input/label-slot/index.md';
+
+<LabelSlot />
+
+### No Visible Label
+
+If no visible label is needed, developers should still supply an `aria-label` so the input is accessible to screen readers.
+
+import NoVisibleLabel from '@site/static/usage/v7/input/no-visible-label/index.md';
+
+<NoVisibleLabel />
 
 ## Clear Options
 
@@ -93,6 +117,26 @@ When storing the value in a state variable, we recommend updating both the state
 import FilteringData from '@site/static/usage/v7/input/filtering/index.md';
 
 <FilteringData />
+
+## Input Masking
+
+Input masks are expressions that constrain input to support valid input values. Ionic recommends using [Maskito](https://tinkoff.github.io/maskito/getting-started/what-is-maskito) for input masking. Maskito is a lightweight, dependency-free library for masking input fields. It supports a wide range of masks, including phone numbers, credit cards, dates, and more.
+
+To get started with Maskito, install the library:
+
+```bash
+npm install @maskito/core @maskito/{angular,react,vue}
+```
+
+import Masking from '@site/static/usage/v7/input/mask/index.md';
+
+<Masking />
+
+:::note
+
+Please submit bug reports with Maskito to the [Maskito Github repository](https://github.com/Tinkoff/maskito/issues). For technical support, please use the [Ionic Forum](https://forum.ionicframework.com/) or [Ionic Discord](http://chat.ionicframework.com/).
+
+:::
 
 ## Theming
 

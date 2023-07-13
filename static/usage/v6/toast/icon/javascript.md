@@ -6,9 +6,9 @@
     const toast = await this.toastController.create({
       message: 'Hello World!',
       duration: 1500,
-      icon: 'globe'
+      icon: 'globe',
     });
-      
+
     await toast.present();
   }
 </script>

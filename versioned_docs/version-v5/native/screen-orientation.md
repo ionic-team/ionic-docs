@@ -58,13 +58,14 @@ Requires Cordova plugin: `cordova-plugin-screen-orientation`. For more info, ple
 >
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
-      $ npm install cordova-plugin-screen-orientation {'\n'}$ npm install @awesome-cordova-plugins/screen-orientation {'\n'}$ ionic
-      cap sync
+      $ npm install cordova-plugin-screen-orientation {'\n'}$ npm install @awesome-cordova-plugins/screen-orientation{' '}
+      {'\n'}$ ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
-      $ ionic cordova plugin add cordova-plugin-screen-orientation {'\n'}$ npm install @awesome-cordova-plugins/screen-orientation {'\n'}
+      $ ionic cordova plugin add cordova-plugin-screen-orientation {'\n'}$ npm install
+      @awesome-cordova-plugins/screen-orientation {'\n'}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">

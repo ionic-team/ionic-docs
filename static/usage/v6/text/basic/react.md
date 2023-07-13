@@ -19,11 +19,14 @@ function Example() {
       </IonText>
 
       <p>
-        <IonText color="warning"><IonIcon icon={warning}></IonIcon></IonText>
-        I saw a werewolf with a Chinese menu in his hand.
-        Walking through the <IonText color="success"><sub>streets</sub></IonText> of Soho in the rain.
-        He <IonText color="medium"><i>was</i></IonText> looking for a place called Lee Ho Fook's.
-        Gonna get a <IonText color="danger">big dish of beef chow mein.</IonText>
+        <IonText color="warning">
+          <IonIcon icon={warning}></IonIcon>
+        </IonText>
+        I saw a werewolf with a Chinese menu in his hand. Walking through the <IonText color="success">
+          <sub>streets</sub>
+        </IonText> of Soho in the rain. He <IonText color="medium">
+          <i>was</i>
+        </IonText> looking for a place called Lee Ho Fook's. Gonna get a <IonText color="danger">big dish of beef chow mein.</IonText>
       </p>
     </>
   );

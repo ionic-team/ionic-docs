@@ -118,10 +118,6 @@ export class LoginComponent {
 
 Both options provide the same navigation mechanism, just fitting different use cases.
 
-:::note
-A note on navigation with relative URLs: Currently, to support multiple navigation stacks, relative URLs are something not supported
-:::
-
 ### Navigating using LocationStrategy.historyGo
 
 Angular Router has a [LocationStrategy.historyGo](https://angular.io/api/common/LocationStrategy#historyGo) method that allows developers to move forward or backward through the application history. Let's take a look at an example.

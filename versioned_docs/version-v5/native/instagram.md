@@ -51,7 +51,8 @@ Share a photo with the instagram app
 >
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
-      $ npm install cordova-instagram-plugin {'\n'}$ npm install @awesome-cordova-plugins/instagram {'\n'}$ ionic cap sync
+      $ npm install cordova-instagram-plugin {'\n'}$ npm install @awesome-cordova-plugins/instagram {'\n'}$ ionic cap
+      sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">

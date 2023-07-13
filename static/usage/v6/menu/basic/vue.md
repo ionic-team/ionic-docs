@@ -17,23 +17,12 @@
         <ion-title>Menu</ion-title>
       </ion-toolbar>
     </ion-header>
-    <ion-content class="ion-padding">
-      Tap the button in the toolbar to open the menu.
-    </ion-content>
+    <ion-content class="ion-padding"> Tap the button in the toolbar to open the menu. </ion-content>
   </ion-page>
 </template>
 
 <script lang="ts">
-  import {
-    IonButtons,
-    IonContent,
-    IonHeader,
-    IonMenu,
-    IonMenuButton,
-    IonPage,
-    IonTitle,
-    IonToolbar
-  } from '@ionic/vue';
+  import { IonButtons, IonContent, IonHeader, IonMenu, IonMenuButton, IonPage, IonTitle, IonToolbar } from '@ionic/vue';
   import { defineComponent } from 'vue';
 
   export default defineComponent({
@@ -45,7 +34,7 @@
       IonMenuButton,
       IonPage,
       IonTitle,
-      IonToolbar
+      IonToolbar,
     },
   });
 </script>

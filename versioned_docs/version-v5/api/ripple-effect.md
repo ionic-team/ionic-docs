@@ -5,6 +5,13 @@ sidebar_label: 'ion-ripple-effect'
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
+import Props from '@ionic-internal/component-api/v5/ripple-effect/props.md';
+import Events from '@ionic-internal/component-api/v5/ripple-effect/events.md';
+import Methods from '@ionic-internal/component-api/v5/ripple-effect/methods.md';
+import Parts from '@ionic-internal/component-api/v5/ripple-effect/parts.md';
+import CustomProps from '@ionic-internal/component-api/v5/ripple-effect/custom-props.md';
+import Slots from '@ionic-internal/component-api/v5/ripple-effect/slots.md';
+
 # ion-ripple-effect
 
 The ripple effect component adds the [Material Design ink ripple interaction effect](https://material.io/develop/web/components/ripples/). This component can only be used inside of an `<ion-app>` and can be added to any component.
@@ -235,20 +242,24 @@ export class RippleEffectExample {
 
 ## Properties
 
-### type
+<Props />
 
-|                 |                                                                                                                                                                                                                                                                                                                                                                                                   |
-| --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Description** | Sets the type of ripple-effect:<br /><br />- `bounded`: the ripple effect expands from the user's click position<br />- `unbounded`: the ripple effect expands from the center of the button and overflows the container.<br /><br />NOTE: Surfaces for bounded ripples should have the overflow property set to hidden,<br />while surfaces for unbounded ripples should have it set to visible. |
-| **Attribute**   | `type`                                                                                                                                                                                                                                                                                                                                                                                            |
-| **Type**        | `"bounded" \| "unbounded"`                                                                                                                                                                                                                                                                                                                                                                        |
-| **Default**     | `'bounded'`                                                                                                                                                                                                                                                                                                                                                                                       |
+## Events
+
+<Events />
 
 ## Methods
 
-### addRipple
+<Methods />
 
-|                 |                                                          |
-| --------------- | -------------------------------------------------------- |
-| **Description** | Adds the ripple effect to the parent element.            |
-| **Signature**   | `addRipple(x: number, y: number) => Promise<() => void>` |
+## CSS Shadow Parts
+
+<Parts />
+
+## CSS Custom Properties
+
+<CustomProps />
+
+## Slots
+
+<Slots />

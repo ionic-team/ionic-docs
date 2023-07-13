@@ -56,13 +56,14 @@ This plugin does speech recognition using cloud services
 >
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
-      $ npm install cordova-plugin-speechrecognition {'\n'}$ npm install @awesome-cordova-plugins/speech-recognition {'\n'}$ ionic
-      cap sync
+      $ npm install cordova-plugin-speechrecognition {'\n'}$ npm install @awesome-cordova-plugins/speech-recognition{' '}
+      {'\n'}$ ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
-      $ ionic cordova plugin add cordova-plugin-speechrecognition {'\n'}$ npm install @awesome-cordova-plugins/speech-recognition {'\n'}
+      $ ionic cordova plugin add cordova-plugin-speechrecognition {'\n'}$ npm install
+      @awesome-cordova-plugins/speech-recognition {'\n'}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">

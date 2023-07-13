@@ -13,9 +13,7 @@ function Example() {
         <IonCardSubtitle>Card Subtitle</IonCardSubtitle>
       </IonCardHeader>
 
-      <IonCardContent>
-        Here's a small text description for the card content. Nothing more, nothing less.
-      </IonCardContent>
+      <IonCardContent>Here's a small text description for the card content. Nothing more, nothing less.</IonCardContent>
     </IonCard>
   );
 }

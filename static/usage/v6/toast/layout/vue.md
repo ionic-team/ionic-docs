@@ -14,33 +14,29 @@
     setup() {
       const presentToast = async (opts: ToastOptions) => {
         const toast = await toastController.create(opts);
-      
+
         await toast.present();
-      }
-      
+      };
+
       const presentBaselineToast = async () => {
         await presentToast({
           duration: 3000,
-          message: "This is a toast with a long message and a button that appears on the same line.",
-          buttons: [
-            { text: 'Action With Long Text'}
-          ]
+          message: 'This is a toast with a long message and a button that appears on the same line.',
+          buttons: [{ text: 'Action With Long Text' }],
         });
-      }
-      
+      };
+
       const presentStackedToast = async () => {
         await presentToast({
           duration: 3000,
-          message: "This is a toast with a long message and a button that appears on the next line.",
-          buttons: [
-            { text: 'Action With Long Text'}
-          ],
-          layout: "stacked"
+          message: 'This is a toast with a long message and a button that appears on the next line.',
+          buttons: [{ text: 'Action With Long Text' }],
+          layout: 'stacked',
         });
-      }
-      
-      return { presentBaselineToast, presentStackedToast }
-    }
+      };
+
+      return { presentBaselineToast, presentStackedToast };
+    },
   });
 </script>
 ```

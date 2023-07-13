@@ -73,7 +73,7 @@ If you would like to use the Core version instead, which does not include additi
 To migrate over your CSS, first update your selectors to target the new custom elements instead:
 
 | ion-slides Selector | Swiper Selector    |
-| ------------------- | ------------------ | 
+| ------------------- | ------------------ |
 | `ion-slides`        | `swiper-container` |
 | `ion-slide`         | `swiper-slide`     |
 
@@ -107,6 +107,7 @@ swiper-slide {
   display: flex;
   position: relative;
 
+  flex-direction: column;
   flex-shrink: 0;
   align-items: center;
   justify-content: center;
@@ -132,6 +133,8 @@ swiper-slide img {
 
 With `ion-slides`, Ionic automatically customized dozens of Swiper properties. This resulted in an experience that felt smooth when swiping on mobile devices. We recommend using the `IonicSlides` module to ensure that these properties are also set when using Swiper directly. However, using this module is **not** required to use Swiper.js in Ionic.
 
+It is recommended to review the [properties](https://github.com/ionic-team/ionic-framework/blob/main/core/src/components/slides/IonicSlides.ts) set by `IonicSlides` and determine which ones you would like to customize.
+
 We can install the `IonicSlides` module by importing it from `@ionic/angular` and passing it to the `modules` property of `swiper-container` as an array:
 
 ```typescript
@@ -150,9 +153,7 @@ export class HomePage {
 ```html
 <!-- home.page.html -->
 
-<swiper-container [modules]="swiperModules">
-  ...
-</swiper-container>
+<swiper-container [modules]="swiperModules"> ... </swiper-container>
 ```
 
 :::note
@@ -166,7 +167,7 @@ Swiper options should be provided as individual properties directly on the `<swi
 Let's say in an app with `ion-slides` we had the `slidesPerView` and `loop` options set:
 
 ```html
-<ion-slides [options]="{ slidesPerView: true, loop: true }">
+<ion-slides [options]="{ slidesPerView: 3, loop: true }">
   <ion-slide>Slide 1</ion-slide>
   <ion-slide>Slide 3</ion-slide>
   <ion-slide>Slide 3</ion-slide>
@@ -185,11 +186,11 @@ To set these options as properties directly on `<swiper-container>` we would do 
 
 Below is a full list of property changes when going from `ion-slides` to Swiper Element:
 
-| Name      | Notes                                                                                                                                   |
-| --------- | --------------------------------------------------------------------------------------------------------------------------------------- |
-| options   | Set each option as a property directly on the `<swiper-container>` component.                                                           |
-| mode      | For different styles based upon the mode, you can target the slides with `.ios swiper-container` or `.md swiper-container` in your CSS. |
-| pager     | Use the `pagination` property instead.                                                                                                  |
+| Name    | Notes                                                                                                                                   |
+| ------- | --------------------------------------------------------------------------------------------------------------------------------------- |
+| options | Set each option as a property directly on the `<swiper-container>` component.                                                           |
+| mode    | For different styles based upon the mode, you can target the slides with `.ios swiper-container` or `.md swiper-container` in your CSS. |
+| pager   | Use the `pagination` property instead.                                                                                                  |
 
 :::note
 All properties available in Swiper Element can be found at <a href="https://swiperjs.com/swiper-api#parameters" target="_blank" rel="noopener noreferrer">https://swiperjs.com/swiper-api#parameters</a>.
@@ -301,9 +302,7 @@ All methods and properties available on the Swiper instance can be found at <a h
 Effects such as Cube or Fade can be used in Swiper Element with no additional imports, as long as you are using the bundled version of Swiper. For example, the below code will cause the slides to have a flip transition effect:
 
 ```html
-<swiper-container effect="flip">
-  ...
-</swiper-container>
+<swiper-container effect="flip"> ... </swiper-container>
 ```
 
 :::note

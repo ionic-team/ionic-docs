@@ -51,7 +51,8 @@ Ionic-Native wrapper that wraps Webengage Cordova plugin for Android and iOS
 >
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
-      $ npm install cordova-plugin-webengage {'\n'}$ npm install @awesome-cordova-plugins/webengage {'\n'}$ ionic cap sync
+      $ npm install cordova-plugin-webengage {'\n'}$ npm install @awesome-cordova-plugins/webengage {'\n'}$ ionic cap
+      sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">

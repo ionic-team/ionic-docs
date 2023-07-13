@@ -7,7 +7,9 @@ function Example() {
     <IonList>
       <IonItemSliding>
         <IonItemOptions side="start">
-          <IonItemOption color="success" expandable>Archive</IonItemOption>
+          <IonItemOption color="success" expandable>
+            Archive
+          </IonItemOption>
         </IonItemOptions>
 
         <IonItem>
@@ -16,7 +18,9 @@ function Example() {
 
         <IonItemOptions side="end">
           <IonItemOption>Favorite</IonItemOption>
-          <IonItemOption color="danger" expandable>Delete</IonItemOption>
+          <IonItemOption color="danger" expandable>
+            Delete
+          </IonItemOption>
         </IonItemOptions>
       </IonItemSliding>
     </IonList>

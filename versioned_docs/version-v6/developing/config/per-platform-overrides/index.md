@@ -37,6 +37,7 @@ const getConfig = () => {
   ...
 });
 ```
+
 </TabItem>
 <TabItem value="react">
 
@@ -59,8 +60,8 @@ const getConfig = () => {
 };
 
 setupIonicReact(getConfig());
-
 ```
+
 </TabItem>
 <TabItem value="vue">
 
@@ -83,6 +84,7 @@ const getConfig = () => {
 };
 
 createApp(App).use(IonicVue, getConfig());
-````
+```
+
 </TabItem>
 </Tabs>

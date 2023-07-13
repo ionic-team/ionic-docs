@@ -14,14 +14,14 @@
         const loading = await loadingController.create({
           message: 'Loading...',
           duration: 3000,
-          cssClass: 'custom-loading'
+          cssClass: 'custom-loading',
         });
-        
+
         loading.present();
-      }
-      
-      return { showLoading }
-    }
+      };
+
+      return { showLoading };
+    },
   });
 </script>
 <style>

@@ -7,13 +7,9 @@ function Example() {
   return (
     <>
       <IonItem>
-        <IonButton slot="start">
-          Start
-        </IonButton>
+        <IonButton slot="start">Start</IonButton>
         <IonLabel>Default Buttons</IonLabel>
-        <IonButton slot="end">
-          End
-        </IonButton>
+        <IonButton slot="end">End</IonButton>
       </IonItem>
 
       <IonItem>

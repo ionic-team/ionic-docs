@@ -82,7 +82,7 @@
     components: { IonIcon, IonLabel, IonSegment, IonSegmentButton },
     setup() {
       return { call, heart, pin };
-    }
+    },
   });
 </script>
 ```

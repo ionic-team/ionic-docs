@@ -6,7 +6,6 @@ import DocsCard from '@components/global/DocsCard';
 import DocsButton from '@components/page/native/DocsButton';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
-import CodeBlock from '@theme/CodeBlock';
 
 # Firebase Vision
 
@@ -55,15 +54,17 @@ Cordova plugin for Firebase MLKit Vision
   ]}
 >
   <TabItem value="Capacitor">
-    <CodeBlock className="language-shell">
-      $ npm install cordova-plugin-firebase-mlvision {'\n'}$ npm install @awesome-cordova-plugins/firebase-vision {'\n'}$ ionic cap
-      sync
-    </CodeBlock>
+
+    $ npm install cordova-plugin-firebase-mlvision
+    $ npm install @awesome-cordova-plugins/firebase-vision
+    $ ionic cap sync
+
   </TabItem>
   <TabItem value="Cordova">
-    <CodeBlock className="language-shell">
-      $ ionic cordova plugin add cordova-plugin-firebase-mlvision {'\n'}$ npm install @awesome-cordova-plugins/firebase-vision {'\n'}
-    </CodeBlock>
+
+    $ ionic cordova plugin add cordova-plugin-firebase-mlvision
+    $ npm install @awesome-cordova-plugins/firebase-vision
+
   </TabItem>
   <TabItem value="Enterprise">
     <blockquote>

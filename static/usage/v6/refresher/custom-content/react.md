@@ -1,10 +1,17 @@
 ```tsx
 import React from 'react';
-import { IonContent, IonHeader, IonRefresher, IonRefresherContent, IonTitle, IonToolbar, RefresherEventDetail } from '@ionic/react';
+import {
+  IonContent,
+  IonHeader,
+  IonRefresher,
+  IonRefresherContent,
+  IonTitle,
+  IonToolbar,
+  RefresherEventDetail,
+} from '@ionic/react';
 import { chevronDownCircleOutline } from 'ionicons/icons';
 
 function Example() {
-
   function handleRefresh(event: CustomEvent<RefresherEventDetail>) {
     setTimeout(() => {
       // Any calls to load data go here
@@ -26,8 +33,8 @@ function Example() {
             pullingIcon={chevronDownCircleOutline}
             pullingText="Pull to refresh"
             refreshingSpinner="circles"
-            refreshingText="Refreshing...">
-          </IonRefresherContent>
+            refreshingText="Refreshing..."
+          ></IonRefresherContent>
         </IonRefresher>
 
         <p>Pull this content down to trigger the refresh.</p>

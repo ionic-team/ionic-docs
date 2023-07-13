@@ -15,7 +15,7 @@
     components: { IonSearchbar },
     setup() {
       return { trashBin };
-    }
+    },
   });
 </script>
 ```
