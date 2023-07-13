@@ -597,104 +597,13 @@ In this example we are creating a track along which we can drag the `.square` el
 
 Developers can also tailor their animations to user preferences such as `prefers-reduced-motion` and `prefers-color-scheme` using CSS Variables.
 
-### Usage
-
-```css
-.square {
-  width: 100px;
-  height: 100px;
-  opacity: 0.5;
-  background: blue;
-  margin: 10px;
-
-  --background: red;
-}
-
-@media (prefers-color-scheme: dark) {
-  .square {
-    --background: green;
-  }
-}
-```
-
-````mdx-code-block
-<Tabs
-  groupId="framework"
-  defaultValue="javascript"
-  values={[
-    { value: 'javascript', label: 'JavaScript' },
-    { value: 'angular', label: 'Angular' },
-    { value: 'react', label: 'React' },
-    { value: 'vue', label: 'Vue' },
-  ]
-}>
-<TabItem value="javascript">
-
-```javascript
-createAnimation()
-   .addElement(document.querySelector('.square'))
-   .duration(1500)
-   .iterations(Infinity)
-   .direction('alternate')
-   .fromTo('background', 'blue', 'var(--background)');
-```
-</TabItem>
-<TabItem value="angular">
-
-```javascript
-this.animationCtrl.create()
-   .addElement(this.square.nativeElement)
-   .duration(1500)
-   .iterations(Infinity)
-   .direction('alternate')
-   .fromTo('background', 'blue', 'var(--background)');
-```
-</TabItem>
-<TabItem value="react">
-
-```tsx
-<CreateAnimation
-  duration={1500}
-  iterations={Infinity}
-  direction='alternate'
-  fromTo={{
-    property: 'background',
-    fromValue: 'blue',
-    toValue: 'var(--background)'
-  }}
->
-  <div className="square"></div>
-</CreateAnimation>
-```
-</TabItem>
-<TabItem value="vue">
-
-```javascript
-import { createAnimation } from '@ionic/vue';
-import { ref } from 'vue';
-
-...
-
-const squareRef = ref();
-
-...
-
-createAnimation()
-   .addElement(squareRef.value)
-   .duration(1500)
-   .iterations(Infinity)
-   .direction('alternate')
-   .fromTo('background', 'blue', 'var(--background)');
-```
-</TabItem>
-</Tabs>
-````
-
 This method works in all supported browsers when creating animations for the first time. Most browsers are also capable of dynamically updating keyframe animations as the CSS Variables change.
 
 Safari does not currently support dynamically updating keyframe animations. For developers who need this kind of support in Safari, they can use [MediaQueryList.addListener()](https://developer.mozilla.org/en-US/docs/Web/API/MediaQueryList/addListener).
 
-<Codepen user="ionic" slug="JjjYVKj" />
+import PreferenceBased from '@site/static/usage/v7/animations/preference-based/index.md';
+
+<PreferenceBased />
 
 ## Overriding Ionic Component Animations
 
