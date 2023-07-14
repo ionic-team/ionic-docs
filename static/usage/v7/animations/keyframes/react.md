@@ -1,26 +1,26 @@
 ```tsx
 import React, { useEffect, useRef } from 'react';
-import { IonButton, createAnimation } from '@ionic/react';
+import { IonButton, IonCard, IonCardContent, createAnimation } from '@ionic/react';
 import type { Animation } from '@ionic/react';
 
 function Example() {
-  const squareEl = useRef<HTMLDivElement | null>(null);
+  const cardEl = useRef<HTMLIonCardElement | null>(null);
 
   const animation = useRef<Animation | null>(null);
 
   useEffect(() => {
     if (animation.current === null) {
       animation.current = createAnimation()
-        .addElement(squareEl.current!)
+        .addElement(cardEl.current!)
         .duration(3000)
         .iterations(Infinity)
         .keyframes([
-          { offset: 0, background: 'red' },
-          { offset: 0.72, background: 'var(--background)' },
-          { offset: 1, background: 'aqua' },
+          { offset: 0, width: '80px' },
+          { offset: 0.72, width: '160px' },
+          { offset: 1, width: '240px' },
         ]);
     }
-  }, [squareEl]);
+  }, [cardEl]);
 
   const play = () => {
     animation.current?.play();
@@ -34,17 +34,9 @@ function Example() {
 
   return (
     <>
-      <div
-        ref={squareEl}
-        style={
-          {
-            width: '100px',
-            height: '100px',
-            background: 'red',
-            '--background': 'yellow',
-          } as React.CSSProperties
-        }
-      ></div>
+      <IonCard ref={cardEl} style={{ width: '80px' }}>
+        <IonCardContent>Card</IonCardContent>
+      </IonCard>
       <IonButton onClick={play}>Play</IonButton>
       <IonButton onClick={pause}>Pause</IonButton>
       <IonButton onClick={stop}>Stop</IonButton>

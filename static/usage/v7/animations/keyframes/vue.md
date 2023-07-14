@@ -1,13 +1,15 @@
 ```html
 <template>
-  <div ref="squareRef" class="square"></div>
+  <ion-card ref="cardEl">
+    <ion-card-content>Card</ion-card-content>
+  </ion-card>
   <ion-button @click="play()">Play</ion-button>
   <ion-button @click="pause()">Pause</ion-button>
   <ion-button @click="stop()">Stop</ion-button>
 </template>
 
 <script lang="ts">
-  import { IonButton, createAnimation } from '@ionic/vue';
+  import { IonButton, IonCard, IonCardContent, createAnimation } from '@ionic/vue';
   import type { Animation } from '@ionic/vue';
 
   import { defineComponent, ref, onMounted } from 'vue';
@@ -15,51 +17,43 @@
   export default defineComponent({
     components: {
       IonButton,
+      IonCard,
+      IonCardContent,
     },
     setup() {
-      const squareRef = ref(null);
+      const cardEl = ref(null);
 
-      let animation: Animation | undefined;
+      let animation: Animation;
 
       onMounted(() => {
-        console.log(squareRef);
         animation = createAnimation()
-          .addElement(squareRef.value)
+          .addElement(cardEl.value.$el)
           .duration(3000)
           .iterations(Infinity)
           .keyframes([
-            { offset: 0, background: 'red' },
-            { offset: 0.72, background: 'var(--background)' },
-            { offset: 1, background: 'aqua' },
+            { offset: 0, width: '80px' },
+            { offset: 0.72, width: '160px' },
+            { offset: 1, width: '240px' },
           ]);
       });
 
-      const play = async () => {
-        await animation.play();
-      };
-      const pause = () => {
-        animation?.pause();
-      };
-      const stop = () => {
-        animation?.stop();
-      };
+      const play = () => animation.play();
+      const pause = () => animation.pause();
+      const stop = () => animation.stop();
 
       return {
         play,
         pause,
         stop,
-        squareRef,
+        cardEl,
       };
     },
   });
 </script>
 
 <style>
-  .square {
-    width: 100px;
-    height: 100px;
-    background: red;
-    --background: yellow;
+  ion-card {
+    width: 80px;
   }
 </style>
 ```

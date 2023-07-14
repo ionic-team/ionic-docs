@@ -12,13 +12,13 @@
       import { createAnimation } from 'https://cdn.jsdelivr.net/npm/@ionic/core@7/dist/ionic/index.esm.js';
 
       const animation = createAnimation()
-        .addElement(document.querySelector('.square'))
+        .addElement(document.querySelector('#card'))
         .duration(3000)
         .iterations(Infinity)
         .keyframes([
-          { offset: 0, background: 'red' },
-          { offset: 0.72, background: 'var(--background)' },
-          { offset: 1, background: 'aqua' },
+          { offset: 0, width: '80px' },
+          { offset: 0.72, width: '160px' },
+          { offset: 1, width: '240px' },
         ]);
 
       document.querySelector('#play').addEventListener('click', () => {
@@ -39,18 +39,17 @@
         flex-direction: column;
       }
 
-      .square {
-        width: 100px;
-        height: 100px;
-        background: red;
-        --background: yellow;
+      ion-card {
+        width: 80px;
       }
     </style>
   </head>
 
   <body>
     <div class="container">
-      <div class="square"></div>
+      <ion-card id="card">
+        <ion-card-content>Card</ion-card-content>
+      </ion-card>
       <div>
         <ion-button id="play">Play</ion-button>
         <ion-button id="pause">Pause</ion-button>

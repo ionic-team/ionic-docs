@@ -1,14 +1,14 @@
 ```ts
 import { Component, ElementRef, ViewChild } from '@angular/core';
 import type { Animation } from '@ionic/angular';
-import { AnimationController } from '@ionic/angular';
+import { AnimationController, IonCard, IonCardContent } from '@ionic/angular';
 
 @Component({
   selector: 'app-example',
   templateUrl: 'example.component.html',
 })
 export class ExampleComponent {
-  @ViewChild('square', { static: true }) square: ElementRef;
+  @ViewChild(IonCard, { read: ElementRef }) card: ElementRef<HTMLIonCardElement>;
 
   private animation: Animation;
 
@@ -17,13 +17,13 @@ export class ExampleComponent {
   ngAfterViewInit() {
     this.animation = this.animationCtrl
       .create()
-      .addElement(this.square.nativeElement)
+      .addElement(this.card.nativeElement)
       .duration(3000)
       .iterations(Infinity)
       .keyframes([
-        { offset: 0, background: 'red' },
-        { offset: 0.72, background: 'var(--background)' },
-        { offset: 1, background: 'aqua' },
+        { offset: 0, width: '80px' },
+        { offset: 0.72, width: '160px' },
+        { offset: 1, width: '240px' },
       ]);
   }
 
