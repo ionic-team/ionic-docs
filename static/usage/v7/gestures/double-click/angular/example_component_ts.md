@@ -20,9 +20,7 @@ export class ExampleComponent {
     const gesture = this.gestureCtrl.create({
       el: this.card.nativeElement,
       threshold: 0,
-      onStart: () => {
-        this.onStart();
-      },
+      onStart: () => this.onStart(),
       gestureName: 'double-click',
     });
 

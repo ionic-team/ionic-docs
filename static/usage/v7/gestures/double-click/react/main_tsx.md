@@ -39,9 +39,7 @@ function Example() {
       const gesture = createGesture({
         el: card.current,
         threshold: 0,
-        onStart: () => {
-          onStart();
-        },
+        onStart,
         gestureName: 'double-click',
       });
 
