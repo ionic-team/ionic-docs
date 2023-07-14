@@ -1,5 +1,5 @@
 ```html
-<ion-card #card style="width: 80px">
+<ion-card #card style="width: 80px; --width: 160px;">
   <ion-card-content>Card</ion-card-content>
 </ion-card>
 <ion-button (click)="play()">Play</ion-button>

@@ -32,7 +32,7 @@
           .iterations(Infinity)
           .keyframes([
             { offset: 0, width: '80px' },
-            { offset: 0.72, width: '160px' },
+            { offset: 0.72, width: 'var(--width)' },
             { offset: 1, width: '240px' },
           ]);
       });
@@ -54,6 +54,7 @@
 <style>
   ion-card {
     width: 80px;
+    --width: 160px;
   }
 </style>
 ```

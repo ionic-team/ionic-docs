@@ -1,5 +1,5 @@
 ```html
-<ion-card id="card" style="width: 80px">
+<ion-card id="card" style="width: 80px; --width: 160px;">
   <ion-card-content>Card</ion-card-content>
 </ion-card>
 <ion-button onclick="animation.play()">Play</ion-button>
@@ -13,7 +13,7 @@
     .iterations(Infinity)
     .keyframes([
       { offset: 0, width: '80px' },
-      { offset: 0.72, width: '160px' },
+      { offset: 0.72, width: 'var(--width)' },
       { offset: 1, width: '240px' },
     ]);
 </script>
