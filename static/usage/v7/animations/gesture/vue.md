@@ -28,8 +28,6 @@
         let initialStep = 0;
         let started = false;
         
-        const card = document.querySelector('ion-card');
-        
         /**
          * The track is 344px wide.
          * The card is 100px wide.
@@ -38,7 +36,7 @@
         const MAX_TRANSLATE = 344 - 100 - 32;
         
         const animation = createAnimation()
-          .addElement(card)
+          .addElement(cardEl.value.$el)
           .duration(1000)
           .fromTo('transform', 'translateX(0)', `translateX(${MAX_TRANSLATE}px)`);
         
