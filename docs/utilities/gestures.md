@@ -278,8 +278,6 @@ import DoubleClick from '@site/static/usage/v7/gestures/double-click/index.md';
 
 In the example above, we want to be able to detect double clicks on an element. By setting our `threshold` to `0`, we can ensure our gesture object can detect clicks. Additionally, we define a click threshold so that only 2 clicks that occur in quick succession count as a double click.
 
-<Codepen user="ionic" slug="oNvVEwE" />
-
 ## Gesture Animations
 
 See our guide on implementing gesture animations: [Gesture Animations with Ionic Animations](animations.md#gesture-animations)
