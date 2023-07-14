@@ -13,7 +13,7 @@
 
 <script lang="ts">
   import { IonCard, IonCardContent, createAnimation, createGesture } from '@ionic/vue';
-
+  import type { GestureDetail } from '@ionic/vue';
   import { defineComponent, ref, onMounted } from 'vue';
 
   export default defineComponent({
@@ -50,7 +50,7 @@
         
         gesture.enable(true);
         
-        const onMove = (ev) => {
+        const onMove = (ev: GestureDetail) => {
           if (!started) {
             animation.progressStart();
             started = true;
@@ -59,7 +59,7 @@
           animation.progressStep(getStep(ev));
         }
         
-        const onEnd = (ev) => {
+        const onEnd = (ev: GestureDetail) => {
           if (!started) { return; }
         
           gesture.enable(false);
@@ -75,11 +75,11 @@
           started = false;
         }
         
-        const clamp = (min, n, max) => {
+        const clamp = (min: number, n: number, max: number) => {
           return Math.max(min, Math.min(n, max));
         };
         
-        const getStep = (ev) => {
+        const getStep = (ev: GestureDetail) => {
           const delta = initialStep + ev.deltaX;
           return clamp(0, delta / MAX_TRANSLATE, 1);
         }

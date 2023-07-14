@@ -1,8 +1,7 @@
 ```ts
 import { Component, ElementRef, ViewChildren, ViewChild } from '@angular/core';
-import type { QueryList } from '@angular/core';
 import { AnimationController, GestureController, IonCard } from '@ionic/angular';
-import type { Animation, Gesture } from '@ionic/angular';
+import type { Animation, Gesture, GestureDetail } from '@ionic/angular';
 
 @Component({
   selector: 'app-example',
@@ -29,7 +28,7 @@ export class ExampleComponent {
     private gestureCtrl: GestureController
   ) {}
   
-  private onMove(ev) {
+  private onMove(ev: GestureDetail) {
     if (!this.started) {
       this.animation.progressStart();
       this.started = true;
@@ -38,7 +37,7 @@ export class ExampleComponent {
     this.animation.progressStep(this.getStep(ev));
   }
   
-  private onEnd(ev) {
+  private onEnd(ev: GestureDetail) {
     if (!this.started) { return; }
   
     this.gesture.enable(false);
@@ -54,11 +53,11 @@ export class ExampleComponent {
     this.started = false;
   }
   
-  private clamp(min, n, max) {
+  private clamp(min: number, n: number, max: number) {
     return Math.max(min, Math.min(n, max));
   }
   
-  private getStep(ev) {
+  private getStep(ev: GestureDetail) {
     const delta = this.initialStep + ev.deltaX;
     return this.clamp(0, delta / this.MAX_TRANSLATE, 1);
   }
