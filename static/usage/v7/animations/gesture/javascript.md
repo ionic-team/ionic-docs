@@ -36,7 +36,6 @@
   let started = false;
   
   const card = document.querySelector('ion-card');
-  const track = document.querySelector('.track');
   
   /**
    * The track is 344px wide.
