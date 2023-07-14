@@ -117,6 +117,26 @@ const App: React.FC = () => (
 
 This React component sets up the initial routing for our app, as well as include some core Ionic components for animations and layout (IonRouterOutlet and IonApp). One thing that stands out is that in React, to do data-binding, the value is passed in curly braces (`{}`). So in the `Route` component, we can set the value of `component` to the `Home` component from earlier. This is how React will know that that value is not a string, but a reference to a component.
 
+It is also possible to conditionally render components
+```tsx
+const App: React.FC = () => (
+  <IonApp>
+    <IonReactRouter>
+      <IonRouterOutlet>
+            <Route exact path="/">
+              {LoggedIn ? (
+                <Redirect to="/userprofile" />
+              ) : (
+                <Redirect to="/register" />
+              )}
+            </Route>
+      </IonRouterOutlet>
+    </IonReactRouter>
+  </IonApp>
+);
+```
+
+
 :::note
 What's important to note here is that these are all standard React DOM libraries, meaning there's no custom integration layer or transpilation step.
 :::
