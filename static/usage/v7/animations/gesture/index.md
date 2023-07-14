@@ -26,7 +26,7 @@ import angular_example_component_css from './angular/example_component_css.md';
       files: {
         'src/app/example.component.html': angular_example_component_html,
         'src/app/example.component.ts': angular_example_component_ts,
-        'src/app/example.component.css': angular_example_component_css
+        'src/app/example.component.css': angular_example_component_css,
       },
     },
   }}

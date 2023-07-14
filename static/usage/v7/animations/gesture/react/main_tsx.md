@@ -13,64 +13,66 @@ function Example() {
   const started = useRef<boolean>(false);
 
   useEffect(() => {
-    if (animation.current === null) {    
+    if (animation.current === null) {
       /**
        * The track is 344px wide.
        * The card is 100px wide.
        * We want 16px of margin on each end of the track.
        */
       const MAX_TRANSLATE = 344 - 100 - 32;
-        
+
       animation.current = createAnimation()
         .addElement(cardEl.current!)
         .duration(1000)
         .fromTo('transform', 'translateX(0)', `translateX(${MAX_TRANSLATE}px)`);
-      
+
       gesture.current = createGesture({
         el: cardEl.current!,
         threshold: 0,
         gestureName: 'card-drag',
-        onMove: ev => onMove(ev),
-        onEnd: ev => onEnd(ev)
+        onMove: (ev) => onMove(ev),
+        onEnd: (ev) => onEnd(ev),
       });
-      
+
       gesture.current.enable(true);
-      
+
       const onMove = (ev: GestureDetail) => {
         if (!started.current) {
           animation.current!.progressStart();
           started.current = true;
         }
-      
+
         animation.current!.progressStep(getStep(ev));
-      }
-      
+      };
+
       const onEnd = (ev: GestureDetail) => {
-        if (!started.current) { return; }
-      
+        if (!started.current) {
+          return;
+        }
+
         gesture.current!.enable(false);
-      
+
         const step = getStep(ev);
         const shouldComplete = step > 0.5;
-      
-        animation.current!
-          .progressEnd((shouldComplete) ? 1 : 0, step)
-          .onFinish(() => { gesture.current!.enable(true); });
-      
-        initialStep.current = (shouldComplete) ? MAX_TRANSLATE : 0;
+
+        animation.current!.progressEnd(shouldComplete ? 1 : 0, step).onFinish(() => {
+          gesture.current!.enable(true);
+        });
+
+        initialStep.current = shouldComplete ? MAX_TRANSLATE : 0;
         started.current = false;
-      }
-      
+      };
+
       const clamp = (min: number, n: number, max: number) => {
         return Math.max(min, Math.min(n, max));
       };
-      
+
       const getStep = (ev: GestureDetail) => {
         const delta = initialStep.current + ev.deltaX;
         return clamp(0, delta / MAX_TRANSLATE, 1);
-      }
+      };
     }
-  }, [cardEl]); 
+  }, [cardEl]);
 
   return (
     <>
@@ -80,7 +82,7 @@ function Example() {
             <IonCardContent>Card</IonCardContent>
           </IonCard>
         </div>
-      
+
         <p>Drag the square along the track.</p>
       </div>
     </>

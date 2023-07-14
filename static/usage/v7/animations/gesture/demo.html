@@ -9,7 +9,10 @@
     <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core@7/dist/ionic/ionic.esm.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core@7/css/ionic.bundle.css" />
     <script type="module">
-      import { createAnimation, createGesture } from 'https://cdn.jsdelivr.net/npm/@ionic/core@7/dist/ionic/index.esm.js';
+      import {
+        createAnimation,
+        createGesture,
+      } from 'https://cdn.jsdelivr.net/npm/@ionic/core@7/dist/ionic/index.esm.js';
       window.createAnimation = createAnimation;
       window.createGesture = createGesture;
 
@@ -34,8 +37,8 @@
         el: card,
         threshold: 0,
         gestureName: 'card-drag',
-        onMove: ev => onMove(ev),
-        onEnd: ev => onEnd(ev)
+        onMove: (ev) => onMove(ev),
+        onEnd: (ev) => onEnd(ev),
       });
 
       gesture.enable(true);
@@ -47,23 +50,25 @@
         }
 
         animation.progressStep(getStep(ev));
-      }
+      };
 
       const onEnd = (ev) => {
-        if (!started) { return; }
+        if (!started) {
+          return;
+        }
 
         gesture.enable(false);
 
         const step = getStep(ev);
         const shouldComplete = step > 0.5;
 
-        animation
-          .progressEnd((shouldComplete) ? 1 : 0, step)
-          .onFinish(() => { gesture.enable(true); });
+        animation.progressEnd(shouldComplete ? 1 : 0, step).onFinish(() => {
+          gesture.enable(true);
+        });
 
-        initialStep = (shouldComplete) ? MAX_TRANSLATE : 0;
+        initialStep = shouldComplete ? MAX_TRANSLATE : 0;
         started = false;
-      }
+      };
 
       const clamp = (min, n, max) => {
         return Math.max(min, Math.min(n, max));
@@ -72,7 +77,7 @@
       const getStep = (ev) => {
         const delta = initialStep + ev.deltaX;
         return clamp(0, delta / MAX_TRANSLATE, 1);
-      }
+      };
     </script>
 
     <style>
