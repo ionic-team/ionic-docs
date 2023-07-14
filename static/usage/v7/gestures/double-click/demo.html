@@ -18,14 +18,13 @@
       const gesture = createGesture({
         el: card,
         threshold: 0,
-        onStart,
+        onStart: () => onStart(),
         gestureName: 'double-click',
       });
 
       gesture.enable();
 
       let lastOnStart = 0;
-      // TODO: change to not random in angular & javascript
       let currentOffset = 0;
 
       const onStart = () => {
