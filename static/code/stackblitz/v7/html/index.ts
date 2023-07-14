@@ -1,6 +1,6 @@
 import { defineCustomElements } from '@ionic/core/loader';
 
-import { createAnimation, loadingController, modalController, pickerController, toastController } from '@ionic/core';
+import { createAnimation, createGesture, loadingController, modalController, pickerController, toastController } from '@ionic/core';
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/core/css/core.css';
@@ -28,3 +28,4 @@ defineCustomElements();
 (window as any).pickerController = pickerController;
 (window as any).toastController = toastController;
 (window as any).createAnimation = createAnimation;
+(window as any).createGesture = createGesture;
