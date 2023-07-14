@@ -6,6 +6,7 @@ import vue from './vue.md';
 
 import angular_example_component_html from './angular/example_component_html.md';
 import angular_example_component_ts from './angular/example_component_ts.md';
+import angular_example_component_css from './angular/example_component_css.md';
 
 <Playground
   version="7"
@@ -17,6 +18,7 @@ import angular_example_component_ts from './angular/example_component_ts.md';
       files: {
         'src/app/example.component.html': angular_example_component_html,
         'src/app/example.component.ts': angular_example_component_ts,
+        'src/app/example.component.css': angular_example_component_css
       },
     },
   }}

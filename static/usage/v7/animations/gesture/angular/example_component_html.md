@@ -1,9 +1,11 @@
 ```html
-<ion-card #card>
-  <ion-card-content>Card</ion-card-content>
-</ion-card>
+<div class="container">
+  <div class="track">
+    <ion-card id="card" button="true">
+      <ion-card-content>Card</ion-card-content>
+    </ion-card>
+  </div>
 
-<ion-button (click)="play()">Play</ion-button>
-<ion-button (click)="pause()">Pause</ion-button>
-<ion-button (click)="stop()">Stop</ion-button>
+  <p>Drag the square along the track.</p>
+</div>
 ```
