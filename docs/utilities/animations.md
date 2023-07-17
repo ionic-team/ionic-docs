@@ -152,94 +152,13 @@ Ionic Animations allows you to control the intermediate steps in an animation us
 
 Hyphenated CSS properties should be written using camel case when writing keyframes. For example, `border-radius` should be written as `borderRadius`. This also applies to the `fromTo()`, `from(),` and `to()` methods.
 
-### Usage
+import Keyframes from '@site/static/usage/v7/animations/keyframes/index.md';
 
-````mdx-code-block
-<Tabs
-  groupId="framework"
-  defaultValue="javascript"
-  values={[
-    { value: 'javascript', label: 'JavaScript' },
-    { value: 'angular', label: 'Angular' },
-    { value: 'react', label: 'React' },
-    { value: 'vue', label: 'Vue' },
-  ]
-}>
-<TabItem value="javascript">
+<Keyframes />
 
-```javascript
-createAnimation()
-  .addElement(document.querySelector('.square'))
-  .duration(3000)
-  .iterations(Infinity)
-  .keyframes([
-    { offset: 0, background: 'red' },
-    { offset: 0.72, background: 'var(--background)' },
-    { offset: 1, background: 'green' }
-  ]);
-```
-</TabItem>
-<TabItem value="angular">
-
-```javascript
-this.animationCtrl.create()
-  .addElement(this.square.nativeElement)
-  .duration(3000)
-  .iterations(Infinity)
-  .keyframes([
-    { offset: 0, background: 'red' },
-    { offset: 0.72, background: 'var(--background)' },
-    { offset: 1, background: 'green' }
-  ]);
-```
-</TabItem>
-<TabItem value="react">
-
-```tsx
-<CreateAnimation
-  duration={3000}
-  iterations={Infinity}
-  keyframes={[
-    { offset: 0, background: 'red' },
-    { offset: 0.72, background: 'var(--background)' },
-    { offset: 1, background: 'green' }
-  ]}
->
-...
-</CreateAnimation>
-```
-</TabItem>
-<TabItem value="vue">
-
-```javascript
-import { createAnimation } from '@ionic/vue';
-import { ref } from 'vue';
-
-...
-
-const squareRef = ref();
-
-...
-
-createAnimation()
-  .addElement(squareRef.value)
-  .duration(3000)
-  .iterations(Infinity)
-  .keyframes([
-    { offset: 0, background: 'red' },
-    { offset: 0.72, background: 'var(--background)' },
-    { offset: 1, background: 'green' }
-  ]);
-```
-</TabItem>
-</Tabs>
-````
-
-In the example above, the `.square` element will transition from a red background color, to a background color defined by the `--background` variable, and then transition on to a green background color.
+In the example above, the card element will transition from its initial width, to a width defined by the `--width` variable, and then transition on to the final width.
 
 Each keyframe object contains an `offset` property. `offset` is a value between 0 and 1 that defines the keyframe step. Offset values must go in ascending order and cannot repeat.
-
-<Codepen user="ionic" slug="YzKLEzR" />
 
 ## Grouped Animations
 
