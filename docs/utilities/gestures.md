@@ -139,7 +139,7 @@ const gesture = createGesture({
 
 import Basic from '@site/static/usage/v7/gestures/basic/index.md';
 
-In this example, our app listens for gestures on the `ion-content` element. When a gesture movement is started, the `onStart` function is called and a class is added to our `ion-card` to add a colored box shadow. When a gesture movement is detected, the `onMove` function is called and our app prints the current gesture information within the `ion-card`. Finally, when a gesture movement is ended, the `onEnd` function is called and the custom class is removed from our `ion-card`.
+In this example, our app listens for gestures on the `ion-content` element. When a gesture movement has started, the `onStart` function is called and a class is added to our `ion-card` to add a colored box shadow. When a gesture movement was detected, the `onMove` function is called and our app prints the current gesture information within the `ion-card`. Finally, when a gesture movement has ended, the `onEnd` function is called and the custom class is removed from our `ion-card`.
 
 <Basic />
 
