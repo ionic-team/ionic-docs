@@ -59,9 +59,15 @@ function Example() {
         <IonContent className="ion-padding">
           <p>Tap a button below to open a specific menu.</p>
 
-          <IonButton expand="block" onClick={openFirstMenu}>Open First Menu</IonButton>
-          <IonButton expand="block" onClick={openSecondMenu}>Open Second Menu</IonButton>
-          <IonButton expand="block" onClick={openEndMenu}>Open End Menu</IonButton>
+          <IonButton expand="block" onClick={openFirstMenu}>
+            Open First Menu
+          </IonButton>
+          <IonButton expand="block" onClick={openSecondMenu}>
+            Open Second Menu
+          </IonButton>
+          <IonButton expand="block" onClick={openEndMenu}>
+            Open End Menu
+          </IonButton>
         </IonContent>
       </IonPage>
     </>

@@ -54,21 +54,21 @@
         // Open the menu by menu-id
         await menuController.enable(true, 'first-menu');
         await menuController.open('first-menu');
-      }
+      };
 
       const openSecondMenu = async () => {
         // Open the menu by menu-id
         await menuController.enable(true, 'second-menu');
         await menuController.open('second-menu');
-      }
+      };
 
       const openEndMenu = async () => {
         // Open the menu by side
         await menuController.open('end');
-      }
+      };
 
-      return { openFirstMenu, openSecondMenu, openEndMenu }
-    }
+      return { openFirstMenu, openSecondMenu, openEndMenu };
+    },
   });
 </script>
 ```
