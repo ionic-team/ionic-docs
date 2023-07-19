@@ -473,9 +473,9 @@ title: 用語集
   <p>
     トランスパイル
     は、実行前にコードをある言語から別の言語に変換するプロセスです。一般的に、トランスパイルは高級言語を別の高級言語に変換します。
-    Ionic Framework の最も一般的な <em>トランスパイル</em>は、<a href="#es2015-es6">ES2015/ES6</a>(<a href="#typescript">
-      TypeScript
-    </a>) から <a href="#es5">ES5</a>(従来のJavaScript)への変換です。
+    Ionic Framework の最も一般的な <em>トランスパイル</em>は、<a href="#es2015-es6">ES2015/ES6</a>(
+    <a href="#typescript">TypeScript</a>) から
+    <a href="#es5">ES5</a>(従来のJavaScript)への変換です。
   </p>
 </section>
 

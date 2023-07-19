@@ -14,7 +14,6 @@ Ionic アプリの構築に使用する予定の JavaScript フレームワー�
     <p>AngularでIonicアプリを作るための基本を押さえた完全ガイドです</p>
   </DocsCard>
 
-{' '}
 <DocsCard header="Reactではじめる" href="../react/your-first-app" icon="/icons/logo-react-icon.png">
   <p>ReactでIonicアプリを作るための基本を押さえた完全ガイドです</p>
 </DocsCard>
