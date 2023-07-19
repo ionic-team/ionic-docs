@@ -45,7 +45,7 @@ See the [Slides API Docs](./slides) for more usage information.
 
 <Parts />
 
-## CSSカスタムプロパティ
+## CSS カスタムプロパティ
 
 <CustomProps />
 

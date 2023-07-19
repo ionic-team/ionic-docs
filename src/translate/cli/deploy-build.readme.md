@@ -3,4 +3,5 @@ This command creates a deploy build on Appflow. While the build is running, it p
 Apart from `--commit`, every option can be specified using the full name setup within the Appflow [Dashboard](https://dashboard.ionicframework.com).
 
 Customizing the build:
+
 - The `--environment` and `--channel` options can be used to customize the groups of values exposed to the build.

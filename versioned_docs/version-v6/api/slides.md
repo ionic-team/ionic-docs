@@ -34,12 +34,12 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 This component has been deprecated in favor of using Swiper.js directly. Please see the [migration guide](#migration) below.
 :::
 
-Slidesコンポーネントは複数セクションのコンテナです。
+Slides コンポーネントは複数セクションのコンテナです。
 各セクション間をスワイプまたはドラッグできます。これには任意の数の[Slide](slide.md)コンポーネントが含まれます。
 
-このガイドでは、廃止予定の `ion-slides` コンポーネントから、Swiper.jsが提供するフレームワーク固有のソリューションへの移行、および、まだそのコンポーネントを使用している開発者向けの既存の `ion-slides` API について説明します。
+このガイドでは、廃止予定の `ion-slides` コンポーネントから、Swiper.js が提供するフレームワーク固有のソリューションへの移行、および、まだそのコンポーネントを使用している開発者向けの既存の `ion-slides` API について説明します。
 
-Swiper.jsを採用しています:
+Swiper.js を採用しています:
 ハードウェアアクセラレートされたトランジションを備えた最新のモバイルタッチスライダとフレームワークです。
 
 http://www.idangero.us/swiper/
@@ -52,22 +52,22 @@ Licensed under MIT
 
 ## 移行
 
-Ionic Framework v6のリリースに伴い、Ionicチームは `ion-slides` と `ion-slide` コンポーネントを非推奨とし、Swiperが提供する公式フレームワーク統合を使用することを決定しました。心配はご無用です。Ionicチームは `ion-slides` と `ion-slide` コンポーネントを廃止しましたが、Swiperを使用しているため、slidesコンポーネントの機能は全く変わりません。
+Ionic Framework v6 のリリースに伴い、Ionic チームは `ion-slides` と `ion-slide` コンポーネントを非推奨とし、Swiper が提供する公式フレームワーク統合を使用することを決定しました。心配はご無用です。Ionic チームは `ion-slides` と `ion-slide` コンポーネントを廃止しましたが、Swiper を使用しているため、slides コンポーネントの機能は全く変わりません。
 
-### Swiper.jsとは？
+### Swiper.js とは？
 
-Swiper.jsは `ion-slides` を駆動するカルーセル/スライダーライブラリです。このライブラリは、Ionic Frameworkのすべてのバージョンに自動的にバンドルされています。Ionic Framework v4.がリリースされた当初、Swiperにはフレームワーク固有のライブラリ統合機能がなかったため、SwiperのコアライブラリとAngular、React、Vueなどのフレームワークのギャップを埋める手段として `ion-slides` が作成されました。
+Swiper.js は `ion-slides` を駆動するカルーセル/スライダーライブラリです。このライブラリは、Ionic Framework のすべてのバージョンに自動的にバンドルされています。Ionic Framework v4.がリリースされた当初、Swiper にはフレームワーク固有のライブラリ統合機能がなかったため、Swiper のコアライブラリと Angular、React、Vue などのフレームワークのギャップを埋める手段として `ion-slides` が作成されました。
 
-それ以来、Swiperチームは、Angular、React、Vueなどのフレームワークに特化したSwiper.jsの統合をリリースしています。
+それ以来、Swiper チームは、Angular、React、Vue などのフレームワークに特化した Swiper.js の統合をリリースしています。
 
 ### この変更の利点は何ですか？
 
-Ionic Frameworkコミュニティのメンバーにとって、いくつかの利点があります。公式のSwiper.jsフレームワーク統合を使用することで、。
+Ionic Framework コミュニティのメンバーにとって、いくつかの利点があります。公式の Swiper.js フレームワーク統合を使用することで、。
 
-- 開発者は、使用したいSwiper.jsのバージョンを正確にコントロールできるようになりました。これまで開発者は、Ionicチームが内部でバージョンを更新し、Ionic Frameworkの新バージョンをリリースすることに依存する必要がありました。
-- Ionicチームは、スライド以外の問題のトリアージと修正により多くの時間を費やし、開発プロセスをスピードアップして、コミュニティのためにフレームワークをより良く機能させることができます。
+- 開発者は、使用したい Swiper.js のバージョンを正確にコントロールできるようになりました。これまで開発者は、Ionic チームが内部でバージョンを更新し、Ionic Framework の新バージョンをリリースすることに依存する必要がありました。
+- Ionic チームは、スライド以外の問題のトリアージと修正により多くの時間を費やし、開発プロセスをスピードアップして、コミュニティのためにフレームワークをより良く機能させることができます。
 - 開発者はより少ないバグを経験することができます。
-- アプリケーションのバンドルサイズを縮小できる場合があります。Swiper.jsをサードパーティの依存関係としてアプリケーションにインストールすることで、WebpackやRollupなどのバンドルは、コードをよりよくトレースすることができるようになるはずです。
+- アプリケーションのバンドルサイズを縮小できる場合があります。Swiper.js をサードパーティの依存関係としてアプリケーションにインストールすることで、Webpack や Rollup などのバンドルは、コードをよりよくトレースすることができるようになるはずです。
 - 開発者は、`ion-slides`を使用する場合、以前はなかった新しい機能にアクセスすることができます。
 
 ### いつまでに移行しなければならないのですか？
@@ -90,7 +90,7 @@ Ionic Framework v7 で `ion-slides` と `ion-slide` を削除する予定です�
 
 ## カスタムアニメーション
 
-デフォルトでは、Ionicのスライドはビルトインの `slide` アニメーションエフェクトを使用します。カスタムのアニメーションは `options` プロパティで指定できます。その他のアニメーションの例は以下をご参照ください。
+デフォルトでは、Ionic のスライドはビルトインの `slide` アニメーションエフェクトを使用します。カスタムのアニメーションは `options` プロパティで指定できます。その他のアニメーションの例は以下をご参照ください。
 
 ### Coverflow
 
@@ -766,7 +766,7 @@ ion-slides {
 
 <Parts />
 
-## CSSカスタムプロパティ
+## CSS カスタムプロパティ
 
 <CustomProps />
 

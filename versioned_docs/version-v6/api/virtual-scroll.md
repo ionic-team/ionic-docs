@@ -30,19 +30,19 @@ consist of items, headers, and footers. For performance reasons, not every recor
 in the list is rendered at once; instead a small subset of records (enough to fill the viewport)
 are rendered and reused as the user scrolls.
 
-このガイドでは、各フレームワークの統合に推奨される仮想スクロールパッケージと、Ionic Angularの非推奨コンポーネントである `ion-virtual-scroll` のドキュメントについて説明します。フレームワーク固有のソリューションの利用をお勧めしますが、まだそのコンポーネントを使用している開発者のために `ion-virtual-scroll` のドキュメントを以下に掲載します。
+このガイドでは、各フレームワークの統合に推奨される仮想スクロールパッケージと、Ionic Angular の非推奨コンポーネントである `ion-virtual-scroll` のドキュメントについて説明します。フレームワーク固有のソリューションの利用をお勧めしますが、まだそのコンポーネントを使用している開発者のために `ion-virtual-scroll` のドキュメントを以下に掲載します。
 
 ## Angular
 
-Ionic Angularの仮想スクロールのオプションについては、[Angular仮想スクロールガイド](../angular/virtual-scroll.md)を参照してください。
+Ionic Angular の仮想スクロールのオプションについては、[Angular 仮想スクロールガイド](../angular/virtual-scroll.md)を参照してください。
 
 ## React
 
-Ionic Reactでの仮想スクロールのオプションについては、[React仮想スクロールガイド](../react/virtual-scroll.md)を参照してください。
+Ionic React での仮想スクロールのオプションについては、[React 仮想スクロールガイド](../react/virtual-scroll.md)を参照してください。
 
 ## Vue
 
-Ionic Vueでの仮想スクロールのオプションについては、[Vue仮想スクロールガイド](../vue/virtual-scroll.md)を参照してください。
+Ionic Vue での仮想スクロールのオプションについては、[Vue 仮想スクロールガイド](../vue/virtual-scroll.md)を参照してください。
 
 ---
 
@@ -281,7 +281,7 @@ within a `<div>` is a safe way to make sure dimensions are measured correctly.
 
 <Parts />
 
-## CSSカスタムプロパティ
+## CSS カスタムプロパティ
 
 <CustomProps />
 

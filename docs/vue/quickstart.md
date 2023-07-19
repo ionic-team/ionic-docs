@@ -11,23 +11,23 @@ sidebar_label: クイックスタート
   />
 </head>
 
-## Ionic Frameworkとは
+## Ionic Framework とは
 
-まず、ここに来たばかりの人を歓迎します！Ionic Frameworkは、 iOS, Android, Electron, Web上で動作するアプリを構築するための、無償でオープンソースのコンポーネントライブラリです。使い慣れたテクノロジ(HTML、CSS、JavaScript)を使用してアプリケーションを一度作成したら、任意のプラットフォームに展開することができます。
+まず、ここに来たばかりの人を歓迎します！Ionic Framework は、 iOS, Android, Electron, Web 上で動作するアプリを構築するための、無償でオープンソースのコンポーネントライブラリです。使い慣れたテクノロジ(HTML、CSS、JavaScript)を使用してアプリケーションを一度作成したら、任意のプラットフォームに展開することができます。
 
-UIコンポーネントに加えて、Ionic Frameworkは新しいアプリを作るためのコマンドラインツールを提供し、サポートしている様々なプラットフォームにデプロイすることができます。
+UI コンポーネントに加えて、Ionic Framework は新しいアプリを作るためのコマンドラインツールを提供し、サポートしている様々なプラットフォームにデプロイすることができます。
 
-このガイドでは、Ionic Framework特有の機能を含め、VueとIonic Frameworkの基本について説明します。Vueに精通している方は、ガイドを楽しみ、Ionic Frameworkについて新しいことを学んでください。どちらにも詳しくない方はご安心ください!このガイドでは、基本的なことを説明し、アプリケーションを起動して実行するのに十分な情報を提供します。
+このガイドでは、Ionic Framework 特有の機能を含め、Vue と Ionic Framework の基本について説明します。Vue に精通している方は、ガイドを楽しみ、Ionic Framework について新しいことを学んでください。どちらにも詳しくない方はご安心ください!このガイドでは、基本的なことを説明し、アプリケーションを起動して実行するのに十分な情報を提供します。
 
-## Ionic CLIを使ったプロジェクト新規作成
+## Ionic CLI を使ったプロジェクト新規作成
 
-はじめに、Ionic CLIの最新版をインストールしましょう。
+はじめに、Ionic CLI の最新版をインストールしましょう。
 
 ```shell
 npm install -g @ionic/cli@latest
 ```
 
-これによって使えるようになった、グローバルコマンド `ionic` によって、Ionic Frameworkと他の依存関係を持つVueプロジェクトを作成することができます。新しいプロジェクトを作成するには、次のコマンドを実行します。
+これによって使えるようになった、グローバルコマンド `ionic` によって、Ionic Framework と他の依存関係を持つ Vue プロジェクトを作成することができます。新しいプロジェクトを作成するには、次のコマンドを実行します。
 
 ```shell
 ionic start myApp blank --type vue
@@ -38,11 +38,11 @@ cd myApp
 
 ## TypeScript と JavaScript のどちらで構築するかを選べます
 
-私たちはTypeScriptが大好きで、スケールさせるアプリを構築するための素晴らしいツールだと確信しています。とはいえ、Vueコミュニティがいかにシンプルさを重視しているかは、ツールや言語などでわかっています。実際、そもそもVueに興味を持ったのはそのおかげかもしれません。シンプルに開始し、必要に応じてスケールアップします。
+私たちは TypeScript が大好きで、スケールさせるアプリを構築するための素晴らしいツールだと確信しています。とはいえ、Vue コミュニティがいかにシンプルさを重視しているかは、ツールや言語などでわかっています。実際、そもそも Vue に興味を持ったのはそのおかげかもしれません。シンプルに開始し、必要に応じてスケールアップします。
 
-したがって、TypeScriptの代わりにJavaScriptを使うことができます。Ionic Vueアプリケーションを生成したら、次の手順を実行してください。
+したがって、TypeScript の代わりに JavaScript を使うことができます。Ionic Vue アプリケーションを生成したら、次の手順を実行してください。
 
-1. TypeScriptの依存を削除:
+1. TypeScript の依存を削除:
 
 ```shell
 npm uninstall --save typescript @types/jest @typescript-eslint/eslint-plugin @typescript-eslint/parser @vue/cli-plugin-typescript @vue/eslint-config-typescript vue-tsc
@@ -66,8 +66,7 @@ npm uninstall --save typescript @types/jest @typescript-eslint/eslint-plugin @ty
 
 10. Install terser `npm i -D terser`.
 
-
-## Vueコンポーネントの確認
+## Vue コンポーネントの確認
 
 アプリケーションのベースは `src` ディレクトリにあり、メインのエントリポイントは `main.ts` になります。エディタでプロジェクトを開き、`main.ts` を確認すると、次のように表示されます:
 
@@ -105,7 +104,7 @@ The fourth import gets our routing configuration. We will look at this more in d
 </script>
 ```
 
-scriptに書かれているimportのグループを分解してみていきましょう。
+script に書かれている import のグループを分解してみていきましょう。
 
 ```html
 <script setup lang="ts">
@@ -127,13 +126,13 @@ You can also register components globally if you find yourself importing the sam
 </template>
 ```
 
-すべてのVueコンポーネントには `<template>` が必要です。その中に `IonApp` と `IonRouterOutlet` のコンポーネントを配置します。
+すべての Vue コンポーネントには `<template>` が必要です。その中に `IonApp` と `IonRouterOutlet` のコンポーネントを配置します。
 
 ## Initializing the router
 
 ## ルーターのインストール
 
-Ionic Vueは内部的に [vue-router](https://router.vuejs.org/) を使用しているため、Vue Routerにすでに慣れている場合は、これまでの知識をIonic Vueのナビゲーションに適用できます。先ほど述べたルータの設定を見てみましょう。`router/index.ts` で次のように表示されます。
+Ionic Vue は内部的に [vue-router](https://router.vuejs.org/) を使用しているため、Vue Router にすでに慣れている場合は、これまでの知識を Ionic Vue のナビゲーションに適用できます。先ほど述べたルータの設定を見てみましょう。`router/index.ts` で次のように表示されます。
 
 ```tsx
 import { createRouter, createWebHistory } from '@ionic/vue-router';
@@ -161,14 +160,14 @@ export default router;
 ```
 
 :::note
-この例では、Ionic VueのBlank starterを使っているので、実際にみるrouteは少し違うかもしれません
+この例では、Ionic Vue の Blank starter を使っているので、実際にみる route は少し違うかもしれません
 :::
 
 ここでの設定は `vue-router` を直接使用する場合と同じですが、代わりに `@ionic/vue-router` パッケージから `createRouter` や `createWebHistory` などの依存関係をインポートする必要があります。
 
-依存関係をインポートした後、 `routes` 配列に route を宣言できます。そこから、 routerインスタンスを作成し、routeと使用するhistoryのタイプを提供できます。
+依存関係をインポートした後、 `routes` 配列に route を宣言できます。そこから、 router インスタンスを作成し、route と使用する history のタイプを提供できます。
 
-Ionic Vueでは、遅延ローディングはすぐに使うことができます。 `Home` コンポーネントをインポートする代わりに、次の操作を実行することもできます:
+Ionic Vue では、遅延ローディングはすぐに使うことができます。 `Home` コンポーネントをインポートする代わりに、次の操作を実行することもできます:
 
 ```tsx
 const routes: Array<RouteRecordRaw> = [
@@ -188,7 +187,7 @@ Now, you might be wondering: Why do we use `@` when describing the path to our c
 
 ## コンポーネントのスタイル
 
-ここでは、 `App` コンポーネントを変更する必要はあまりありません。コンテナコンポーネントの基本的な例です。ルータロジックを設定すると、指定されたURLルートに一致するコンポーネントをレンダリングするだけで済みます。すでに1つのコンポーネント/ルータが設定されているので、 `Home` コンポーネントを変更しましょう。
+ここでは、 `App` コンポーネントを変更する必要はあまりありません。コンテナコンポーネントの基本的な例です。ルータロジックを設定すると、指定された URL ルートに一致するコンポーネントをレンダリングするだけで済みます。すでに 1 つのコンポーネント/ルータが設定されているので、 `Home` コンポーネントを変更しましょう。
 
 現在、 `Home` コンポーネントはこうなっています:
 
@@ -258,14 +257,14 @@ Now, you might be wondering: Why do we use `@` when describing the path to our c
 </style>
 ```
 
-最初に確認した `App` コンポーネントと同様に、特定のIonic Frameworkコンポーネントのインポート、Vueからのインポート、Vueコンポーネント、そして私たちのコンポーネントに合わせたスタイルがあります。
+最初に確認した `App` コンポーネントと同様に、特定の Ionic Framework コンポーネントのインポート、Vue からのインポート、Vue コンポーネント、そして私たちのコンポーネントに合わせたスタイルがあります。
 
-スタイルに `scoped` を指定していることに注目してください。つまり、ここで記述するスタイルは、このコンポーネントにのみ適用されます。これは、スタイルがコンポーネントから漏れてアプリケーションの他の部分に影響するのを防ぐのに役立ちます。Ionic Vueアプリケーションでは、 `scoped` のついたスタイルを使用することを強くお勧めします。
+スタイルに `scoped` を指定していることに注目してください。つまり、ここで記述するスタイルは、このコンポーネントにのみ適用されます。これは、スタイルがコンポーネントから漏れてアプリケーションの他の部分に影響するのを防ぐのに役立ちます。Ionic Vue アプリケーションでは、 `scoped` のついたスタイルを使用することを強くお勧めします。
 
-`IonPage` はすべてのページ(route/URLを持つコンポーネント)の基本コンポーネントであり、header, title, contentコンポーネントなど、フルスクリーンコンポーネントの一般的な構成要素がいくつか含まれています。
+`IonPage` はすべてのページ(route/URL を持つコンポーネント)の基本コンポーネントであり、header, title, content コンポーネントなど、フルスクリーンコンポーネントの一般的な構成要素がいくつか含まれています。
 
 :::note
-独自のページを作成する場合は、 `IonPage` をそのルート・コンポーネントにすることを忘れないでください。 `IonPage` をルートコンポーネントにすることは、Ionic Frameworkコンポーネントが依存するベースCSSを提供するだけでなく、トランジションが適切に動作することを保証するために重要です。
+独自のページを作成する場合は、 `IonPage` をそのルート・コンポーネントにすることを忘れないでください。 `IonPage` をルートコンポーネントにすることは、Ionic Framework コンポーネントが依存するベース CSS を提供するだけでなく、トランジションが適切に動作することを保証するために重要です。
 :::
 
 `IonHeader` は、ページの先頭に配置されるコンポーネントです。これは、フレックスボックスベースのレイアウトを処理する以外には、単独ではあまり機能しません。これは、`IonToolbar` や `IonSearchbar`などのコンポーネントを保持するためのものです。
@@ -327,9 +326,9 @@ Now, you might be wondering: Why do we use `@` when describing the path to our c
 </ion-item>
 ```
 
-コードを見ると、 `slot` という特殊な属性があります。これは、レンダリング時に `IonCheckbox` を配置する場所を `IonItem` に知らせるためのキーです。これはVue APIではなく、Web標準APIです。また、Vue 2のslot APIとは異なります。
+コードを見ると、 `slot` という特殊な属性があります。これは、レンダリング時に `IonCheckbox` を配置する場所を `IonItem` に知らせるためのキーです。これは Vue API ではなく、Web 標準 API です。また、Vue 2 の slot API とは異なります。
 
-Ionic Frameworkの別のコンポーネントであるFAB（フローティング・アクション・ボタン）を見てみましょう。FABは、アプリケーションの他の部分よりも上位のメイン・アクションを提供する優れた方法です。このFABには、FAB、FABボタンおよびアイコンの3つのコンポーネントが必要です。
+Ionic Framework の別のコンポーネントである FAB（フローティング・アクション・ボタン）を見てみましょう。FAB は、アプリケーションの他の部分よりも上位のメイン・アクションを提供する優れた方法です。この FAB には、FAB、FAB ボタンおよびアイコンの 3 つのコンポーネントが必要です。
 
 ```html
 <template>
@@ -367,9 +366,9 @@ Ionic Frameworkの別のコンポーネントであるFAB（フローティン�
 </script>
 ```
 
-メインの `IonFab` では、縦方向と横方向の属性（vertical/horizontal）で表示位置を設定しています。また、slot属性を使用して、レンダー位置を"fixed"に設定します。これにより、 `IonContent` 内のスクロール可能なコンテンツの外側でレンダリングするよう `IonFab` に指示します。
+メインの `IonFab` では、縦方向と横方向の属性（vertical/horizontal）で表示位置を設定しています。また、slot 属性を使用して、レンダー位置を"fixed"に設定します。これにより、 `IonContent` 内のスクロール可能なコンテンツの外側でレンダリングするよう `IonFab` に指示します。
 
-次に、これにクリックハンドラを設定します。FABボタンをクリックすると、新しいページ(この後、すぐに作成します)に移動します。これを行うには、Vue RouterのナビゲーションAPIにアクセスする必要があります。これは `useRouter` パッケージから `vue-router` をインポートすることで実現できます。
+次に、これにクリックハンドラを設定します。FAB ボタンをクリックすると、新しいページ(この後、すぐに作成します)に移動します。これを行うには、Vue Router のナビゲーション API にアクセスする必要があります。これは `useRouter` パッケージから `vue-router` をインポートすることで実現できます。
 
 ```html
 <template>
@@ -393,15 +392,15 @@ Ionic Frameworkの別のコンポーネントであるFAB（フローティン�
 </script>
 ```
 
-このコンポーネントファイルでは、 `useRouter` 関数をインポートしています。この関数を呼び出すと、コンポーネントからルーティングを操作することができます。つまり、Vue Routerから履歴APIにアクセスし、新しいrouteをナビゲーションスタックにプッシュすることができます。利用方法は `IonFabButton` にクリックイベントを追加し、`router.push` を呼び出すだけです。この場合、私たちは `/new` というrouteにナビゲーションします。
+このコンポーネントファイルでは、 `useRouter` 関数をインポートしています。この関数を呼び出すと、コンポーネントからルーティングを操作することができます。つまり、Vue Router から履歴 API にアクセスし、新しい route をナビゲーションスタックにプッシュすることができます。利用方法は `IonFabButton` にクリックイベントを追加し、`router.push` を呼び出すだけです。この場合、私たちは `/new` という route にナビゲーションします。
 
 ```html
 <ion-fab-button @click="() => router.push('/new')"> ... </ion-fab-button>
 ```
 
-## 新しいrouteを作成する
+## 新しい route を作成する
 
-これで、アプリケーション内をナビゲートするための環境が整ったので、新しいコンポーネントを作成し、新しいrouteをルーターの宣言に追加する必要があります。 `router/index.ts` を開いて、 `new` のrouteを追加します。
+これで、アプリケーション内をナビゲートするための環境が整ったので、新しいコンポーネントを作成し、新しい route をルーターの宣言に追加する必要があります。 `router/index.ts` を開いて、 `new` の route を追加します。
 
 ```tsx
 import { createRouter, createWebHistory } from '@ionic/vue-router';
@@ -434,7 +433,7 @@ const router = createRouter({
 export default router;
 ```
 
-routeに `/new` を追加したので、該当するコンポーネントとなる `NewItem` を作成します。これは `views/NewItem.vue` に作成します。
+route に `/new` を追加したので、該当するコンポーネントとなる `NewItem` を作成します。これは `views/NewItem.vue` に作成します。
 
 新しく `NewItem.vue` ファイルを作成します。
 
@@ -462,15 +461,15 @@ routeに `/new` を追加したので、該当するコンポーネントとな�
 Each view must contain an `IonPage` component. Page transitions will not work correctly without it. See the [IonPage Documentation](navigation.md#ionpage) for more information.
 :::
 
-ここでの内容は、 `Home` コンポーネントに似ています。異なるのは、 `IonBackButton` コンポーネントです。これは、前のrouteに戻るために使用されます。簡単でしょ?わかりました、でもページをリロードしたらどうなりますか?
+ここでの内容は、 `Home` コンポーネントに似ています。異なるのは、 `IonBackButton` コンポーネントです。これは、前の route に戻るために使用されます。簡単でしょ?わかりました、でもページをリロードしたらどうなりますか?
 
-この場合、インメモリ内から履歴は失われるため、 戻るボタンは表示されません。この問題を解決するには、 `default-href` 属性値を、履歴がない場合にナビゲートするURLに設定します。
+この場合、インメモリ内から履歴は失われるため、 戻るボタンは表示されません。この問題を解決するには、 `default-href` 属性値を、履歴がない場合にナビゲートする URL に設定します。
 
 ```html
 <ion-back-button default-href="/home"></ion-back-button>
 ```
 
-これで、アプリの履歴がない場合も、home routeに戻るための戻るボタンを表示することができます。
+これで、アプリの履歴がない場合も、home route に戻るための戻るボタンを表示することができます。
 
 ## Calling Methods on Components
 
@@ -500,7 +499,7 @@ In other framework integrations such as Ionic React, this is not needed as any `
 
 ## Adding Icons
 
-Ionic Vueには [Ionicons](https://ionic.io/ionicons/) がプリインストールされています。開発者がアプリケーションで使用できるオプションはいくつかあります。
+Ionic Vue には [Ionicons](https://ionic.io/ionicons/) がプリインストールされています。開発者がアプリケーションで使用できるオプションはいくつかあります。
 
 ### Per-Component Imports
 
@@ -521,7 +520,7 @@ Per-Component Imports is the recommended approach to using Ionicons. This involv
 </script>
 ```
 
-ここでやっていることを詳しく説明しましょう。まず、 `heart` のアイコンを `ionicons/icons` からインポートします。これにより、アイコンの適切なSVGデータがロードされます。
+ここでやっていることを詳しく説明しましょう。まず、 `heart` のアイコンを `ionicons/icons` からインポートします。これにより、アイコンの適切な SVG データがロードされます。
 
 Then we pass the icon data into the `ion-icon` component via the `icon` property.
 
@@ -546,7 +545,7 @@ Then we pass the icon data into the `ion-icon` component via the `icon` property
 
 ### グローバルインポート
 
-もう1つのオプションは、特定のアイコンをグローバルにインポートすることです。アプリケーションを起動するたびにアイコンが強制的にロードされ、アプリケーションの初期チャンク・サイズが大きくなる可能性があるため、通常は推奨しません。
+もう 1 つのオプションは、特定のアイコンをグローバルにインポートすることです。アプリケーションを起動するたびにアイコンが強制的にロードされ、アプリケーションの初期チャンク・サイズが大きくなる可能性があるため、通常は推奨しません。
 
 とはいえ、特定のアイコンをグローバルにロードすることに意味があるユースケースがあるかもしれません:
 
@@ -581,15 +580,15 @@ addIcons({
 
 ## ビルドの最適化
 
-Vueには、アプリケーションを調整するためのツールがいくつか用意されています。このセクションでは、Ionic Frameworkに最も関連するオプションについて説明します。
+Vue には、アプリケーションを調整するためのツールがいくつか用意されています。このセクションでは、Ionic Framework に最も関連するオプションについて説明します。
 
 ### ローカルコンポーネント登録 (推奨)
 
-デフォルトでは、Ionic Frameworkコンポーネントはローカルに登録されます。ローカルでの登録では、これらのコンポーネントはそれぞれのVueコンポーネントにインポートされ、提供されます。これは、遅延読み込みとツリーの共有がIonic Frameworkコンポーネントで正しく動作するため、推奨される方法です。
+デフォルトでは、Ionic Framework コンポーネントはローカルに登録されます。ローカルでの登録では、これらのコンポーネントはそれぞれの Vue コンポーネントにインポートされ、提供されます。これは、遅延読み込みとツリーの共有が Ionic Framework コンポーネントで正しく動作するため、推奨される方法です。
 
-この方法の1つの欠点は、Ionic Frameworkコンポーネントを何度もインポートし直すのが面倒なことです。しかし、その見返りとして得られるパフォーマンス上のメリットには価値があると考えています。
+この方法の 1 つの欠点は、Ionic Framework コンポーネントを何度もインポートし直すのが面倒なことです。しかし、その見返りとして得られるパフォーマンス上のメリットには価値があると考えています。
 
-また、ローカルに登録されたコンポーネントはサブコンポーネントでは使用できません。サブコンポーネントで使用するためには、Ionic Frameworkコンポーネントを再インポートする必要があります。
+また、ローカルに登録されたコンポーネントはサブコンポーネントでは使用できません。サブコンポーネントで使用するためには、Ionic Framework コンポーネントを再インポートする必要があります。
 
 ローカルコンポーネント登録の仕組みを見てみましょう:
 
@@ -616,9 +615,9 @@ Note that since we are registering these components locally, neither `IonPage` n
 
 ### グローバルコンポーネント登録
 
-コンポーネントを登録するためのもう1つのオプションは、グローバル登録を使用することです。グローバル登録には、 `main.ts` で使用するコンポーネントをインポートし、Vueアプリインスタンスで`component` メソッドを呼び出すことが含まれます。
+コンポーネントを登録するためのもう 1 つのオプションは、グローバル登録を使用することです。グローバル登録には、 `main.ts` で使用するコンポーネントをインポートし、Vue アプリインスタンスで`component` メソッドを呼び出すことが含まれます。
 
-これにより、VueアプリにIonic Frameworkコンポーネントを追加するのは簡単になりますが、グローバル登録は理想的ではありません。Vueのドキュメントを引用すると、「Webpackなどのビルドシステムを使用している場合、すべてのコンポーネントをグローバルに登録すると、コンポーネントの使用を停止しても、最終ビルドに含めることができます。これにより、ユーザーがダウンロードしなければならないJavaScriptの量が不必要に増加します」とあります。
+これにより、Vue アプリに Ionic Framework コンポーネントを追加するのは簡単になりますが、グローバル登録は理想的ではありません。Vue のドキュメントを引用すると、「Webpack などのビルドシステムを使用している場合、すべてのコンポーネントをグローバルに登録すると、コンポーネントの使用を停止しても、最終ビルドに含めることができます。これにより、ユーザーがダウンロードしなければならない JavaScript の量が不必要に増加します」とあります。
 
 グローバルコンポーネント登録の仕組みを見てみましょう:
 
@@ -649,13 +648,13 @@ app.component('ion-page', IonPage);
 </script>
 ```
 
-上の例では、 `IonPage` コンポーネントと `IonPage` コンポーネントを使用しています。これらを使用するには、まず `main.ts` の `@ionic/vue` からインポートします。次に、appインスタンスで `component` メソッドを呼び出し、タグ名とコンポーネント定義を渡します。これを行うと、各Vueコンポーネントにコンポーネントをインポートしなくても、アプリケーションの残りの部分でコンポーネントを使用できます。
+上の例では、 `IonPage` コンポーネントと `IonPage` コンポーネントを使用しています。これらを使用するには、まず `main.ts` の `@ionic/vue` からインポートします。次に、app インスタンスで `component` メソッドを呼び出し、タグ名とコンポーネント定義を渡します。これを行うと、各 Vue コンポーネントにコンポーネントをインポートしなくても、アプリケーションの残りの部分でコンポーネントを使用できます。
 
 詳細については、<a href="https://v3.vuejs.org/guide/component-registration.html#global-registration" target="_blank" rel="noopener noreferrer">Global Registration Vue Documentation</a> のドキュメントを参照してください。
 
-### JavaScriptのプリフェッチ
+### JavaScript のプリフェッチ
 
-デフォルトでは、Vue CLIはアプリケーション内のJavaScriptのプリフェッチ・ヒントを自動的に生成します。プリフェッチでは、ブラウザのアイドル時間を利用して、ユーザーが近い将来にアクセスする可能性のある文書をダウンロードします。ユーザーがプリフェッチされたドキュメントを必要とするページにアクセスすると、ブラウザのキャッシュからすぐに提供できます。
+デフォルトでは、Vue CLI はアプリケーション内の JavaScript のプリフェッチ・ヒントを自動的に生成します。プリフェッチでは、ブラウザのアイドル時間を利用して、ユーザーが近い将来にアクセスする可能性のある文書をダウンロードします。ユーザーがプリフェッチされたドキュメントを必要とするページにアクセスすると、ブラウザのキャッシュからすぐに提供できます。
 
 プリフェッチは帯域幅を消費するため、大規模なアプリケーションを使用している場合は無効にすることをお勧めします。これを行うには、`vue.config.js`ファイルを変更または作成します:
 
@@ -689,7 +688,7 @@ ionic cap add ios
 ionic cap add android
 ```
 
-iOSとAndroidのプロジェクトを開いたり、ビルド、実行するのに、ネイティブのIDE(Xcode と Android Studio)を使います:
+iOS と Android のプロジェクトを開いたり、ビルド、実行するのに、ネイティブの IDE(Xcode と Android Studio)を使います:
 
 ```shell
 ionic cap open ios
@@ -698,7 +697,7 @@ ionic cap open android
 
 詳細は [こちら](https://capacitorjs.com/docs/getting-started/with-ionic) をご覧ください。
 
-次に、 [すべての利用可能なAPIs](https://capacitorjs.com/docs/apis) を確認します。[Camera API](https://capacitorjs.com/docs/apis/camera) を含むすばらしい機能があります。以下の数行のコードでカメラ機能を実装することができます￥:
+次に、 [すべての利用可能な APIs](https://capacitorjs.com/docs/apis) を確認します。[Camera API](https://capacitorjs.com/docs/apis/camera) を含むすばらしい機能があります。以下の数行のコードでカメラ機能を実装することができます￥:
 
 ```html
 <template>
@@ -735,8 +734,8 @@ ionic cap open android
 
 ## 次にすること
 
-このガイドでは、Ionic Vueアプリの作成の基本、基本的なナビゲーションの追加、ネイティブアプリを構築する方法としてのCapacitorの紹介について説明した。VueとCapacitorを使って完全なIonic Frameworkアプリを構築するには、我々の [First App guide](your-first-app.md) をご覧ください。
+このガイドでは、Ionic Vue アプリの作成の基本、基本的なナビゲーションの追加、ネイティブアプリを構築する方法としての Capacitor の紹介について説明した。Vue と Capacitor を使って完全な Ionic Framework アプリを構築するには、我々の [First App guide](your-first-app.md) をご覧ください。
 
-Ionic Frameworksのコンポーネントの詳細については、 [component API pages](https://ionicframework.com/docs/components) を参照してください。Vueの詳細については、 [Vue Docs](https://v3.vuejs.org/) を参照のこと。ネイティブ機能の構築を続けるには、[Capacitor docs](https://capacitorjs.com/docs/) を参照してください。
+Ionic Frameworks のコンポーネントの詳細については、 [component API pages](https://ionicframework.com/docs/components) を参照してください。Vue の詳細については、 [Vue Docs](https://v3.vuejs.org/) を参照のこと。ネイティブ機能の構築を続けるには、[Capacitor docs](https://capacitorjs.com/docs/) を参照してください。
 
 アプリ構築をお楽しみください! 🎉

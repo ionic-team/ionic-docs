@@ -10,7 +10,7 @@ title: レスポンシブグリッド
   />
 </head>
 
-グリッドは、カスタムレイアウトを構築するための強力なモバイルファーストのフレックスボックスシステムです。グリッドは、[grid](../api/grid.md), [row(s)](../api/row.md), [column(s)](../api/col.md) という三つの単位で構成されています。列はその行を埋めるように拡張され、追加の列に合うようにサイズが変更されます。これは、画面サイズに応じて異なるブレイクポイントを持つ12列のレイアウトに基づいています。カラムの数はCSSを使ってカスタマイズすることができます。
+グリッドは、カスタムレイアウトを構築するための強力なモバイルファーストのフレックスボックスシステムです。グリッドは、[grid](../api/grid.md), [row(s)](../api/row.md), [column(s)](../api/col.md) という三つの単位で構成されています。列はその行を埋めるように拡張され、追加の列に合うようにサイズが変更されます。これは、画面サイズに応じて異なるブレイクポイントを持つ 12 列のレイアウトに基づいています。カラムの数は CSS を使ってカスタマイズすることができます。
 
 ## How it works
 
@@ -34,24 +34,24 @@ title: レスポンシブグリッド
   しかし、`fixed`属性を追加すると、スクリーンサイズごとの幅を指定することができます。
 - 行は、列を適切に並べるための水平方向のグループです。
 - コンテンツは列の中に配置されるべきで、列のみが行の直接の子となることができます。
-- `size-{breakpoint}` 属性は、1行あたりデフォルトの12列のうち、使用する列の数を指定します。
-  つまり、`size="4"` を指定すると、グリッドの1/3、つまり12列のうち4列を占有することができます。
-- sizeに値を指定しないカラムは、自動的に同じ幅になります。例えば、`size-sm`を4つ指定すると、スモールブレイクポイント以上の幅は、それぞれ自動的に25%になります。
+- `size-{breakpoint}` 属性は、1 行あたりデフォルトの 12 列のうち、使用する列の数を指定します。
+  つまり、`size="4"` を指定すると、グリッドの 1/3、つまり 12 列のうち 4 列を占有することができます。
+- size に値を指定しないカラムは、自動的に同じ幅になります。例えば、`size-sm`を 4 つ指定すると、スモールブレイクポイント以上の幅は、それぞれ自動的に 25%になります。
 - カラムの幅はパーセンテージで設定されるため、常に流動的で、親要素からの相対的な大きさになります。
 - カラムは個々のカラムの間にパディングを持ちますが、パディングはグリッドとカラムから削除することができます。
   しかし、グリッドに `ion-no-padding` クラスを追加することで、グリッドとカラムからパディングを取り除くことができます。グリッドに適用できるその他のスタイルについては、[CSS ユーティリティ](css-utilities.md) を参照してください。
-- グリッドの階層は、レスポンシブ・ブレークポイントごとに、すべてのブレークポイント（特小）、小、中、大、特大の5段階あります。
+- グリッドの階層は、レスポンシブ・ブレークポイントごとに、すべてのブレークポイント（特小）、小、中、大、特大の 5 段階あります。
 - グリッドの階層は最小幅を基準にしており、その階層とそれより大きな階層に適用されます。
   (例: `size-sm="4"` は、小型、中型、大型、特大のデバイスに適用されます)。
 - グリッドは CSS 変数で簡単にカスタマイズすることができます。グリッドのカスタマイズ](#customizing-the-grid)を参照してください。
 
 ### ライブでの実装例
 
-Angularの場合は [こちら](https://stackblitz.com/edit/ionic-ng-basic-grid) 、Reactの場合は [こちら](https://stackblitz.com/edit/ionic-react-basic-grid) で、ライブでの実装例を見ることができます。
+Angular の場合は [こちら](https://stackblitz.com/edit/ionic-ng-basic-grid) 、React の場合は [こちら](https://stackblitz.com/edit/ionic-react-basic-grid) で、ライブでの実装例を見ることができます。
 
 ## グリッドの大きさ
 
-デフォルトでは、グリッドは100%の幅を占めます。画面サイズに応じた幅を設定するには、 `fixed` 属性を追加します。各ブレークポイントにおけるグリッドの幅は、CSS変数 `--ion-grid-width-{breakpoint}` で定義される。詳しくは、[グリッドのカスタマイズ](#customizing-the-grid) を参照してください。
+デフォルトでは、グリッドは 100%の幅を占めます。画面サイズに応じた幅を設定するには、 `fixed` 属性を追加します。各ブレークポイントにおけるグリッドの幅は、CSS 変数 `--ion-grid-width-{breakpoint}` で定義される。詳しくは、[グリッドのカスタマイズ](#customizing-the-grid) を参照してください。
 
 | Name | Value  | Description                                       |
 | ---- | ------ | ------------------------------------------------- |
@@ -63,7 +63,7 @@ Angularの場合は [こちら](https://stackblitz.com/edit/ionic-ng-basic-grid)
 
 ### ライブでの実装例
 
-Angularの場合は [こちら](https://stackblitz.com/edit/ionic-ng-fixed-width-grid) 、Reactの場合は [こちら](https://stackblitz.com/edit/ionic-react-fixed-width-grid) で、ライブの例を見ることができます。
+Angular の場合は [こちら](https://stackblitz.com/edit/ionic-ng-fixed-width-grid) 、React の場合は [こちら](https://stackblitz.com/edit/ionic-react-fixed-width-grid) で、ライブの例を見ることができます。
 
 ## グリッドの属性
 
@@ -115,9 +115,9 @@ Angularの場合は [こちら](https://stackblitz.com/edit/ionic-ng-fixed-width
 </ion-grid>
 ```
 
-### 1列の幅を設定する
+### 1 列の幅を設定する
 
-1つのカラムの幅を設定すると、他のカラムは自動的にその幅にリサイズされます。これは、あらかじめ定義されたグリッド属性を使って行うことができます。以下の例では、中央のカラムの幅に関係なく、他のカラムがリサイズされます。
+1 つのカラムの幅を設定すると、他のカラムは自動的にその幅にリサイズされます。これは、あらかじめ定義されたグリッド属性を使って行うことができます。以下の例では、中央のカラムの幅に関係なく、他のカラムがリサイズされます。
 
 ```html
 <ion-grid>
@@ -148,7 +148,7 @@ Angularの場合は [こちら](https://stackblitz.com/edit/ionic-ng-fixed-width
 
 #### ライブでの実装例
 
-Angularでは [こちら](https://stackblitz.com/edit/ionic-ng-set-width-col) 、Reactでは [こちら](https://stackblitz.com/edit/ionic-react-set-width-col) で、実例を見ることができます。
+Angular では [こちら](https://stackblitz.com/edit/ionic-ng-set-width-col) 、React では [こちら](https://stackblitz.com/edit/ionic-react-set-width-col) で、実例を見ることができます。
 
 ### 可変幅
 
@@ -188,7 +188,7 @@ Angularでは [こちら](https://stackblitz.com/edit/ionic-ng-set-width-col) �
 
 #### ライブでの実装例
 
-Angularでは [こちら](https://stackblitz.com/edit/ionic-ng-var-width-col) 、Reactでは [こちら](https://stackblitz.com/edit/ionic-react-var-width-col) で、実例を見ることができます。
+Angular では [こちら](https://stackblitz.com/edit/ionic-ng-var-width-col) 、React では [こちら](https://stackblitz.com/edit/ionic-react-var-width-col) で、実例を見ることができます。
 
 ## レスポンシブ属性
 
@@ -217,7 +217,7 @@ Angularでは [こちら](https://stackblitz.com/edit/ionic-ng-var-width-col) �
 
 ### 積み上げから水平へ
 
-width属性とbreakpoint属性の組み合わせで、超小型画面では積み上げ型、小型画面では水平型になるようなグリッドを作成することができます。
+width 属性と breakpoint 属性の組み合わせで、超小型画面では積み上げ型、小型画面では水平型になるようなグリッドを作成することができます。
 
 ```html
 <ion-grid>
@@ -240,13 +240,13 @@ width属性とbreakpoint属性の組み合わせで、超小型画面では積�
 
 #### ライブでの実装例
 
-Angularでは [こちら](https://stackblitz.com/edit/ionic-ng-stacked-horizontal-grid) 、Reactでは [こちら](https://stackblitz.com/edit/ionic-react-stacked-horizontal-grid) で実例を見ることができます。
+Angular では [こちら](https://stackblitz.com/edit/ionic-ng-stacked-horizontal-grid) 、React では [こちら](https://stackblitz.com/edit/ionic-react-stacked-horizontal-grid) で実例を見ることができます。
 
 ##並び替え
 
 ### カラムのオフセット
 
-offset` プロパティを追加することで、カラムを右に移動させることができます。このプロパティは、カラムの左側のマージンを指定したカラム数だけ増加させる。例えば、以下のグリッドでは、最後のカラムは3カラム分オフセットされ、3カラムを占めることになります。
+offset` プロパティを追加することで、カラムを右に移動させることができます。このプロパティは、カラムの左側のマージンを指定したカラム数だけ増加させる。例えば、以下のグリッドでは、最後のカラムは 3 カラム分オフセットされ、3 カラムを占めることになります。
 
 ```html
 <ion-grid>
@@ -261,7 +261,7 @@ offset` プロパティを追加することで、カラムを右に移動させ
 </ion-grid>
 ```
 
-また、スクリーンのブレークポイントに基づいてオフセットを追加することもできます。以下は、`md`スクリーン以上では最後のカラムが3カラム分オフセットされるグリッドの例です。
+また、スクリーンのブレークポイントに基づいてオフセットを追加することもできます。以下は、`md`スクリーン以上では最後のカラムが 3 カラム分オフセットされるグリッドの例です。
 
 ```html
 <ion-grid>
@@ -281,7 +281,7 @@ offset` プロパティを追加することで、カラムを右に移動させ
 
 #### ライブでの実装例
 
-Angularでは [こちら](https://stackblitz.com/edit/ionic-ng-offset-grid-cols) 、Reactでは [こちら](https://stackblitz.com/edit/ionic-react-offset-grid-cols) で、実例を見ることができます。
+Angular では [こちら](https://stackblitz.com/edit/ionic-ng-offset-grid-cols) 、React では [こちら](https://stackblitz.com/edit/ionic-react-offset-grid-cols) で、実例を見ることができます。
 
 ### プッシュとプル
 
@@ -300,7 +300,7 @@ Angularでは [こちら](https://stackblitz.com/edit/ionic-ng-offset-grid-cols)
 </ion-grid>
 ```
 
-また、画面のブレークポイントに基づいてPushとPullを追加することができます。以下の例では、`3 of 3`のカラムの記述があるカラムは、実際には`md`画面以上の最初のカラムになります。
+また、画面のブレークポイントに基づいて Push と Pull を追加することができます。以下の例では、`3 of 3`のカラムの記述があるカラムは、実際には`md`画面以上の最初のカラムになります。
 
 ```html
 <ion-grid>
@@ -320,7 +320,7 @@ Angularでは [こちら](https://stackblitz.com/edit/ionic-ng-offset-grid-cols)
 
 #### ライブでの実装例
 
-Angularでは [こちら](https://stackblitz.com/edit/ionic-ng-grid-push-pull) 、Reactでは [こちら](https://stackblitz.com/edit/ionic-react-grid-push-pull) で実例を見ることができます。
+Angular では [こちら](https://stackblitz.com/edit/ionic-ng-grid-push-pull) 、React では [こちら](https://stackblitz.com/edit/ionic-react-grid-push-pull) で実例を見ることができます。
 
 ## アライメント
 
@@ -377,7 +377,7 @@ Angularでは [こちら](https://stackblitz.com/edit/ionic-ng-grid-push-pull) �
 </ion-grid>
 ```
 
-カラムはまた、カラムに直接alignmentクラスを追加することによって、他のカラムと異なるように自分自身を配置することができます。利用可能なクラスの一覧は、[css utilities](css-utilities.md#flex-item-properties) を参照してください。
+カラムはまた、カラムに直接 alignment クラスを追加することによって、他のカラムと異なるように自分自身を配置することができます。利用可能なクラスの一覧は、[css utilities](css-utilities.md#flex-item-properties) を参照してください。
 
 ```html
 <ion-grid>
@@ -400,11 +400,11 @@ Angularでは [こちら](https://stackblitz.com/edit/ionic-ng-grid-push-pull) �
 
 #### ライブでの実装例
 
-Angularでは [こちら](https://stackblitz.com/edit/ionic-ng-grid-vertical-align) 、Reactでは [こちら](https://stackblitz.com/edit/ionic-react-grid-vertical-align) で、実例を見ることができます。
+Angular では [こちら](https://stackblitz.com/edit/ionic-ng-grid-vertical-align) 、React では [こちら](https://stackblitz.com/edit/ionic-react-grid-vertical-align) で、実例を見ることができます。
 
 ### 水平方向の整列
 
-行に異なるクラスを追加することで、すべての列を行の内側に水平に揃えることができます。利用可能なクラスの一覧は、[cssユーティリティ](css-utilities.md#flex-container-properties) を参照してください。
+行に異なるクラスを追加することで、すべての列を行の内側に水平に揃えることができます。利用可能なクラスの一覧は、[css ユーティリティ](css-utilities.md#flex-container-properties) を参照してください。
 
 ```html
 <ion-grid>
@@ -457,7 +457,7 @@ Angularでは [こちら](https://stackblitz.com/edit/ionic-ng-grid-vertical-ali
 
 #### ライブでの実装例
 
-Angularでは [こちら](https://stackblitz.com/edit/ionic-ng-grid-horizontal-align) 、Reactでは [こちら](https://stackblitz.com/edit/ionic-react-grid-horizontal-align) で実例を見ることができます。
+Angular では [こちら](https://stackblitz.com/edit/ionic-ng-grid-horizontal-align) 、React では [こちら](https://stackblitz.com/edit/ionic-react-grid-horizontal-align) で実例を見ることができます。
 
 ## グリッドのカスタマイズ
 
@@ -465,15 +465,15 @@ Angularでは [こちら](https://stackblitz.com/edit/ionic-ng-grid-horizontal-a
 
 ### 列の数
 
-グリッドのカラム数は、CSS変数 `--ion-grid-columns` で変更することができます。デフォルトでは12列ですが、これを任意の正の整数に変更し、個々の列の幅を計算するために使用することができます。
+グリッドのカラム数は、CSS 変数 `--ion-grid-columns` で変更することができます。デフォルトでは 12 列ですが、これを任意の正の整数に変更し、個々の列の幅を計算するために使用することができます。
 
 ```css
 --ion-grid-columns: 12;
 ```
 
-### グリッドのPadding
+### グリッドの Padding
 
-グリッドコンテナのPaddingは、CSS変数 `--ion-grid-padding` を使ってすべてのブレークポイントに対して設定することができます。個々のブレイクポイントを上書きするには、CSS変数 `--ion-grid-padding-{breakpoint}` を使用します。
+グリッドコンテナの Padding は、CSS 変数 `--ion-grid-padding` を使ってすべてのブレークポイントに対して設定することができます。個々のブレイクポイントを上書きするには、CSS 変数 `--ion-grid-padding-{breakpoint}` を使用します。
 
 ```css
 --ion-grid-padding: 5px;
@@ -499,7 +499,7 @@ Angularでは [こちら](https://stackblitz.com/edit/ionic-ng-grid-horizontal-a
 
 ### Column Padding
 
-列のpaddingは `--ion-grid-column-padding` CSS 変数で全てのブレークポイントに対して設定することができます。個々のブレークポイントを上書きするには、CSS変数 `--ion-grid-column-padding-{breakpoint}` を使用します。
+列の padding は `--ion-grid-column-padding` CSS 変数で全てのブレークポイントに対して設定することができます。個々のブレークポイントを上書きするには、CSS 変数 `--ion-grid-column-padding-{breakpoint}` を使用します。
 
 ```css
 --ion-grid-column-padding: 5px;

@@ -11,7 +11,7 @@ sidebar_label: はじめてのアプリ
   />
 </head>
 
-Ionic の素晴らしいところは、1つのコードベースで、使い慣れた Web ツールと言語を使用して任意のプラットフォーム用にビルドできることです。 Follow along as we learn the fundamentals of Ionic app development by creating a realistic app step by step.
+Ionic の素晴らしいところは、1 つのコードベースで、使い慣れた Web ツールと言語を使用して任意のプラットフォーム用にビルドできることです。 Follow along as we learn the fundamentals of Ionic app development by creating a realistic app step by step.
 
 Here’s the finished app running on all 3 platforms:
 
@@ -71,13 +71,13 @@ Consider setting up npm to operate globally without elevated permissions. See [R
 
 ## アプリの作成
 
-次に、"Tabs" というアプリテンプレートを使用して Ionic Angular アプリを生成し、Native機能を使うためにCapacitorを追加します。
+次に、"Tabs" というアプリテンプレートを使用して Ionic Angular アプリを生成し、Native 機能を使うために Capacitor を追加します。
 
 ```shell
 ionic start photo-gallery tabs --type=angular --capacitor
 ```
 
-このスタータープロジェクトには、Ionic 開発のために事前に構成された3つのページとベストプラクティスが用意されています。共通の構成要素がすでに配置されているため、機能を簡単に追加できます！
+このスタータープロジェクトには、Ionic 開発のために事前に構成された 3 つのページとベストプラクティスが用意されています。共通の構成要素がすでに配置されているため、機能を簡単に追加できます！
 
 次に、アプリのフォルダに移動します:
 

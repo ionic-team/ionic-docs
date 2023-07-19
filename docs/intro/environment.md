@@ -10,29 +10,29 @@ title: 環境設定
   />
 </head>
 
-Ionic Frameworkをはじめるためには、[Node と npm](#node--npm)がインストールされている環境が必要です。
+Ionic Framework をはじめるためには、[Node と npm](#node--npm)がインストールされている環境が必要です。
 
-もちろん、エディタも必要でしょう。[Visual Studio Code](https://code.visualstudio.com/) をおすすめします。Visual Studio Codeは
-Microsoft製の無料でとてもパワフルなテキストエディタです。
+もちろん、エディタも必要でしょう。[Visual Studio Code](https://code.visualstudio.com/) をおすすめします。Visual Studio Code は
+Microsoft 製の無料でとてもパワフルなテキストエディタです。
 
 ## ターミナル
 
 :::note
-Ionic開発の多くは、コマンドラインを利用する必要があります。コマンドラインに慣れていない場合は、[このブログ](https://ionicframework.com/blog/new-to-the-command-line/)で簡単な概要を確認してください。
+Ionic 開発の多くは、コマンドラインを利用する必要があります。コマンドラインに慣れていない場合は、[このブログ](https://ionicframework.com/blog/new-to-the-command-line/)で簡単な概要を確認してください。
 :::
 
-一般的に、OSに最初からついているターミナルの使用をお勧めします。多くのサードパーティ端末はIonicで正常に動作しますが、サポートされていない場合があります。
+一般的に、OS に最初からついているターミナルの使用をお勧めします。多くのサードパーティ端末は Ionic で正常に動作しますが、サポートされていない場合があります。
 
-- Windowsでは、 **コマンドプロンプト** と **PowerShell** がサポートされています。<a href="https://docs.microsoft.com/en-us/windows/wsl/faq" target="_blank">WSL</a>はIonicで動作することがわかっていますが、サポートされていない可能性があります。
-- macOSでは、組み込みの **ターミナル** アプリがサポートされています。
+- Windows では、 **コマンドプロンプト** と **PowerShell** がサポートされています。<a href="https://docs.microsoft.com/en-us/windows/wsl/faq" target="_blank">WSL</a>は Ionic で動作することがわかっていますが、サポートされていない可能性があります。
+- macOS では、組み込みの **ターミナル** アプリがサポートされています。
 
-Git Bash（<a href="https://git-scm.com" target="_blank">git-scm.com</a>）はTTY対話機能をサポートしておらず、Ionicはサポートしていません。
+Git Bash（<a href="https://git-scm.com" target="_blank">git-scm.com</a>）は TTY 対話機能をサポートしておらず、Ionic はサポートしていません。
 
 ## Node と npm
 
-モダンなJavaScriptプロジェクトのほとんどのツールは[Node.js](../reference/glossary.md#node)で作られています。[ダウンロードページ](https://nodejs.org/en/download/)には、すべてのプラットフォームのインストールパッケージが事前に用意されています。互換性を確保するためにLTSバージョンを選択することをお勧めします。
+モダンな JavaScript プロジェクトのほとんどのツールは[Node.js](../reference/glossary.md#node)で作られています。[ダウンロードページ](https://nodejs.org/en/download/)には、すべてのプラットフォームのインストールパッケージが事前に用意されています。互換性を確保するために LTS バージョンを選択することをお勧めします。
 
-NodeにはJavaScriptパッケージマネージャーである [npm](../reference/glossary.md#npm) がバンドルされています。
+Node には JavaScript パッケージマネージャーである [npm](../reference/glossary.md#npm) がバンドルされています。
 
 インストールできているかを確認するためには、新しいターミナルウィンドウを開いて以下を実行します。
 
@@ -49,7 +49,7 @@ $ npm --version
 
 必須ではありませんが、バージョン管理システムの[Git](../reference/glossary.md#git)の利用を強くお勧めします。
 
-Gitは [GitHub](https://github.com/) のようなGitホスティングサービスを利用することが多いですが、これらのサービスは最初にサインアップが必要となります。これらのGitホスティングサービスのチュートリアルをご確認ください:
+Git は [GitHub](https://github.com/) のような Git ホスティングサービスを利用することが多いですが、これらのサービスは最初にサインアップが必要となります。これらの Git ホスティングサービスのチュートリアルをご確認ください:
 
 - GitHub: [Set up Git](https://help.github.com/en/articles/set-up-git)
 - GitLab: [Installing Git](https://docs.gitlab.com/ee/topics/git/how_to_install_git)
@@ -65,4 +65,4 @@ git --version
 
 ### Git GUI
 
-Gitはコマンドラインユーティリティですが、利用可能な [GUIクライアント](https://git-scm.com/downloads/guis/) は多数あります。[GitHub Desktop](https://desktop.github.com/)を推奨しており、GitHubとうまく連携します。
+Git はコマンドラインユーティリティですが、利用可能な [GUI クライアント](https://git-scm.com/downloads/guis/) は多数あります。[GitHub Desktop](https://desktop.github.com/)を推奨しており、GitHub とうまく連携します。
