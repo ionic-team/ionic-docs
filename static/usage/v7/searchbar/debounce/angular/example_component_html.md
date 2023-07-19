@@ -1,5 +1,5 @@
 ```html
-<ion-searchbar [debounce]="1000" (ionChange)="handleChange($event)"></ion-searchbar>
+<ion-searchbar [debounce]="1000" (ionInput)="handleInput($event)"></ion-searchbar>
 
 <ion-list>
   <ion-item *ngFor="let result of results">

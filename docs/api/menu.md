@@ -18,26 +18,29 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 <EncapsulationPill type="shadow" />
 
 
-Menuコンポーネントは、現在のビューの横からスライドするナビゲーションパネルです。
-デフォルトでは左からスライドしますが、サイドはオーバーライドできます。
-Menuの表示はmodeによって異なりますが、表示するtypeはmenuのtypeによって変更することができます。
-menu要素は、root content要素と同じ深度である必要があります。
-コンテンツにつけるMenuの数に制限はありません。
-これらはテンプレートから、またはプログラムでMenuControllerを使用して制御できます。
+メニューコンポーネントは、現在のビューの横からスライドしてくるナビゲーションドロワーです。デフォルトでは、開始側を使用し、LTRの場合は左から、RTLの場合は右からスライドさせますが、サイドをオーバーライドすることができます。メニューの表示はモードによって異なりますが、表示タイプは利用可能なメニュータイプのいずれかに変更することができます。
+
+メニュー要素はルートコンテンツ要素の兄弟要素でなければなりません。コンテンツにはいくつでもメニューを付けることができる。これらのメニューはテンプレートから制御するか、`MenuController`を使用してプログラムで制御することができます。
 
 ## 基本的な使い方
 
-import BasicUsage from '@site/static/usage/v7/menu/basic/index.md';
+import Basic from '@site/static/usage/v7/menu/basic/index.md';
 
-<BasicUsage />
+<Basic />
+
 
 ## Menu Toggle
 
+<<<<<<< HEAD
 [ion-menu-toggle](./menu-toggle) コンポーネントを使用して、メニューを開いたり閉じたりするカスタムボタンを作成することができます。
+=======
+The [menu toggle](./menu-toggle) component can be used to create custom button that can open or close the menu.
+>>>>>>> d57ab7ec755642f79e3d277c81f0306469ee806f
 
 import MenuToggle from '@site/static/usage/v7/menu/toggle/index.md';
 
 <MenuToggle />
+
 
 ## Menu Types
 
@@ -47,7 +50,32 @@ import MenuType from '@site/static/usage/v7/menu/type/index.md';
 
 <MenuType />
 
+<<<<<<< HEAD
 ## テーマ
+=======
+
+## Menu Sides
+
+Menus are displayed on the `"start"` side by default. In apps that use left-to-right direction, this is the left side, and in right-to-left apps, this will be the right side. Menus can also be set to display on the `"end"` side, which is the opposite of `"start"`.
+
+If menus on both sides are needed in an app, the menu can be opened by passing the `side` value to the `open` method on `MenuController`. If a side is not provided, the menu on the `"start"` side will be opened. See the [multiple menus](#multiple-menus) section below for an example using `MenuController`.
+
+import Sides from '@site/static/usage/v7/menu/sides/index.md';
+
+<Sides />
+
+
+## Multiple Menus
+
+When multiple menus exist on the same side, we need to enable the menu that we want to open before it can be opened. This can be done by calling the `enable` method on the `MenuController`. We can then call `open` on a menu based on its `menuId` or `side`.
+
+import Multiple from '@site/static/usage/v7/menu/multiple/index.md';
+
+<Multiple />
+
+
+## Theming
+>>>>>>> d57ab7ec755642f79e3d277c81f0306469ee806f
 
 ### CSS Shadow Parts
 

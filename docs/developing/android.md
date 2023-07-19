@@ -46,18 +46,10 @@ Android SDKには<a href="https://developer.android.com/studio/command-line/" ta
 
 `~/.bashrc`もしくは`~/.bash_profile`、または同様のシェル起動スクリプトを、次のように変更します。s:
 
-1. `ANDROID_SDK_ROOT`環境変数を設定します。このパスは、前のセクションでメモした**Android SDKのパス**です。
-
-   For Mac:
+1. Set the `ANDROID_SDK_ROOT` environment variable. This path should be the **Android SDK Location** used in the previous section. To find the SDK Location in Android Studio, click **File** > **Project Structure**. Select **SDK Location** in the left pane. The path is shown under **Android SDK location**.
 
    ```shell
-   $ export ANDROID_SDK_ROOT=$HOME/Android/sdk
-   ```
-
-   For Linux/Windows:
-
-   ```shell
-   $ export ANDROID_SDK_ROOT=$HOME/Android/Sdk
+   $ export ANDROID_SDK_ROOT=$HOME/Library/Android/sdk
    ```
 
 2. Add the Android SDK command-line directories to `PATH`. Each directory corresponds to the category of <a href="https://developer.android.com/studio/command-line/" target="_blank">command-line tool</a>.
@@ -72,14 +64,14 @@ Android SDKには<a href="https://developer.android.com/studio/command-line/" ta
    ```
 
    :::note
-   For `apksigner` and `zipalign`, `$ANDROID_SDK_ROOT/build-tools&lt;version>` must also be added to `PATH`.
+   For `apksigner` and `zipalign`, `$ANDROID_SDK_ROOT/build-tools<version>` must also be added to `PATH`.
    :::
 
 ### Android仮想デバイスの作成
 
 Android仮想デバイス（AVD）は、AndroidエミュレータがAndroid OSを実行するために利用する設計図です。以下のドキュメントはAndroidエミュレータをセットアップするための簡単な方法です。詳細な手順と情報は、<a href="https://developer.android.com/studio/run/managing-avds" target="_blank">Android のドキュメント</a>を参照ください。
 
-AVDはAVD Managerで管理します。Android Studioの初期画面で、 **Configure** &raquo; **AVD Manager** をクリックします。AVD Managerは、Androidプロジェクト内で、-**Tools** &raquo; **AVD Manager** メニューから開くこともできます。
+AVDs are managed with the Virtual Device Manager. In the Android Studio welcome screen, the context menu at the top right, then **Virtual Device Manager**. The Virtual Device Manager can also be opened inside Android projects in the **Tools** &raquo; **Device Manager** menu.
 
 ![AVD Setup](/img/installation/android-studio-avd-setup.png)
 
@@ -112,10 +104,10 @@ Cordovaがプログラムビルドをサポートするには、追加のセッ�
 
 ### Java
 
-ネイティブのAndroidアプリは <a href="https://java.com/en/" target="_blank">Java</a> プログラミング言語でコンパイルされている。ダウンロードページからJDK 8を<a href="https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html" target="_blank">download page</a>します。
+Native Android apps are compiled with the <a href="https://java.com/en/" target="_blank">Java</a> programming language. Download the <a href="https://www.oracle.com/java/technologies/javase-jdk11-downloads.html" target="_blank">Java Development Kit (JDK) 11</a> if you are using **`cordova-android`** `10.0.0` or greater.
 
 :::note
-残念ながら、Cordovaは最新バージョンのJavaと互換性がありません。
+If you are using any version of **`cordova-android`** below `10.0.0`, install the <a href="https://www.oracle.com/java/technologies/javase/javase-jdk8-downloads.html" target="_blank">Java Development Kit (JDK) 8</a>.
 :::
 
 ### Gradle
@@ -133,7 +125,13 @@ Cordovaがプログラムビルドをサポートするには、追加のセッ�
 
 アプリをAndroidシミュレータやデバイスにデプロイする前に、ネイティブプロジェクトを設定する必要があります。
 
-1. **ネイティブプロジェクトが存在しない場合は、生成します。**
+1. **Perform an Ionic build, if you haven't already.**
+
+   ```
+   $ ionic build
+   ```
+
+2. **Generate the native project, if it does not already exist.**
 
    Capacitorでは以下の実行をサポートしています:
 
@@ -147,7 +145,7 @@ Cordovaがプログラムビルドをサポートするには、追加のセッ�
    $ ionic cordova prepare android
    ```
 
-2. **[Package ID](../reference/glossary.md#package-id) を設定します。**
+3. **Set the [Package ID](../reference/glossary.md#package-id).**
 
 Capacitor の場合は、`capacitor.config.json` ファイルを開き、`appId` プロパティを修正します。
 
@@ -165,9 +163,17 @@ CapacitorはAndroid Studioを使って、シミュレータやデバイスへの
    $ ionic capacitor copy android
    ```
 
-2. **Android StudioでRunボタンをクリックして、シュミレーターかデバイスを選択ください。**
+2. **Run the app on a simulator or device.**
 
-![Android Studio Run Button Area](/img/running/android-studio-run-button-area.png)
+   You can open the Android Studio Project using:
+
+   ```shell
+   $ ionic capacitor open android
+   ```
+
+   In Android Studio, click the Run button and then select the target simulator or device.
+
+   ![Android Studio Run Button Area](/img/running/android-studio-run-button-area.png)
 
 ### ライブリロード
 

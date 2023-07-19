@@ -8,7 +8,7 @@
       </ion-item>
     </ion-list>
   </ion-content>
-  
+
   <ion-modal trigger="select-fruits" ref="modal">
     <app-typeahead
       class="ion-page"
@@ -55,29 +55,29 @@
         { text: 'Pineapple', value: 'pineapple' },
         { text: 'Pomegranate', value: 'pomegranate' },
         { text: 'Raspberry', value: 'raspberry' },
-        { text: 'Strawberry', value: 'strawberry' }
+        { text: 'Strawberry', value: 'strawberry' },
       ];
       const modal = ref();
       const selectedFruitsText = ref('0 Items');
       const selectedFruits = ref([]);
-      
+
       const formatData = (data: string[]) => {
         if (data.length === 1) {
-          const fruit = fruits.find(fruit => fruit.value === data[0])
+          const fruit = fruits.find((fruit) => fruit.value === data[0]);
           return fruit.text;
         }
-      
+
         return `${data.length} items`;
-      }
-      
+      };
+
       const fruitSelectionChanged = (fruits: string[]) => {
         selectedFruits.value = fruits;
         selectedFruitsText.value = formatData(selectedFruits.value);
         modal.value.$el.dismiss();
-      }
-      
-      return { modal, fruits, selectedFruitsText, selectedFruits, fruitSelectionChanged }; 
-    }
+      };
+
+      return { modal, fruits, selectedFruitsText, selectedFruits, fruitSelectionChanged };
+    },
   });
 </script>
 ```

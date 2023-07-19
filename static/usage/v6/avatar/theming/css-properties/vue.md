@@ -10,7 +10,7 @@
   import { defineComponent } from 'vue';
 
   export default defineComponent({
-    components: { IonAvatar }
+    components: { IonAvatar },
   });
 </script>
 

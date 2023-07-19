@@ -66,7 +66,7 @@ import Toolbar from '@site/static/usage/v7/toolbar/searchbars/index.md';
 
 ## Debounce
 
-検索バーにDebounceを設定して、`ionChange`イベントのトリガーを遅延させることができます。これは、入力に文字が入力されるたびにデータを要求するのではなく、要求を出すのを待つために使うことができるので、データを問い合わせるときに便利です。
+検索バーにDebounceを設定して、`ionInput`イベントのトリガーを遅延させることができます。これは、入力に文字が入力されるたびにデータを要求するのではなく、要求を出すのを待つために使うことができるので、データを問い合わせるときに便利です。
 
 import Debounce from '@site/static/usage/v7/searchbar/debounce/index.md';
 

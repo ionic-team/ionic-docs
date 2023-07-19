@@ -48,6 +48,7 @@ npm install @ionic/react@6 @ionic/react-router@6
 4. あなたの `App` コンポーネントで `setupIonicReact` を呼び出して下さい。もう `setupConfig` を利用している場合は、 `setupIonicReact` に置き換えてください:
 
 **Before**
+
 ```tsx title="App.tsx"
 import { setupConfig } from '@ionic/react';
 
@@ -59,6 +60,7 @@ setupConfig({
 ```
 
 **After**
+
 ```tsx title="App.tsx"
 import { setupIonicReact } from '@ionic/react';
 
@@ -78,11 +80,13 @@ See the [Config Documentation](../developing/config) for more examples.
 5.すべてのコントローラのインポートを `@ionic/core` から `@ionic/core/components` に更新します。例として、`menuController` のマイグレーションを紹介します。
 
 **Before**
+
 ```tsx
 import { menuController } from '@ionic/core';
 ```
 
 **After**
+
 ```tsx
 import { menuController } from '@ionic/core/components';
 ```
@@ -142,6 +146,7 @@ module.exports = {
 8. すべてのオーバーレイイベントリスナーの名前を変更し、新しいフォーマットを使用するようにします。
 
 **Before**
+
 ```html
 <ion-modal
   :is-open="modalOpenRef"
@@ -155,6 +160,7 @@ module.exports = {
 ```
 
 **After**
+
 ```html
 <ion-modal
   :is-open="modalOpenRef"
@@ -174,38 +180,36 @@ module.exports = {
 9.  `ion-router-outlet` を `ion-tabs` の中にいれて利用します。
 
 **Before**
+
 ```html
 <ion-tabs>
-  <ion-tab-bar slot="bottom">
-    ...
-  </ion-tab-bar>
+  <ion-tab-bar slot="bottom"> ... </ion-tab-bar>
 </ion-tabs>
 
 <script>
   import { IonTabs, IonTabBar } from '@ionic/vue';
   import { defineComponent } from 'vue';
-  
+
   export default defineComponent({
-    components: { IonTabs, IonTabBar }
+    components: { IonTabs, IonTabBar },
   });
 </script>
 ```
 
 **After**
+
 ```html
 <ion-tabs>
   <ion-router-outlet></ion-router-outlet>
-  <ion-tab-bar slot="bottom">
-    ...
-  </ion-tab-bar>
+  <ion-tab-bar slot="bottom"> ... </ion-tab-bar>
 </ion-tabs>
 
 <script>
   import { IonTabs, IonTabBar, IonRouterOutlet } from '@ionic/vue';
   import { defineComponent } from 'vue';
-  
+
   export default defineComponent({
-    components: { IonTabs, IonTabBar, IonRouterOutlet }
+    components: { IonTabs, IonTabBar, IonRouterOutlet },
   });
 </script>
 ```
@@ -213,6 +217,7 @@ module.exports = {
 10. タブ内の追加ルートは、子ルートではなく兄弟ルートとして書き直す必要があります。
 
 **Before**
+
 ```ts
 const routes: Array<RouteRecordRaw> = [
   {
@@ -251,11 +256,12 @@ const routes: Array<RouteRecordRaw> = [
 ```
 
 **After**
+
 ```ts
 const routes: Array<RouteRecordRaw> = [
   {
     path: '/',
-    redirect: '/tabs/tab1'
+    redirect: '/tabs/tab1',
   },
   {
     path: '/tabs/',
@@ -263,27 +269,27 @@ const routes: Array<RouteRecordRaw> = [
     children: [
       {
         path: '',
-        redirect: 'tab1'
+        redirect: 'tab1',
       },
       {
         path: 'tab1',
-        component: () => import('@/views/Tab1.vue')
+        component: () => import('@/views/Tab1.vue'),
       },
       {
         path: 'tab1/view',
-        component: () => import('@/views/Tab1View.vue')
+        component: () => import('@/views/Tab1View.vue'),
       },
       {
         path: 'tab2',
-        component: () => import('@/views/Tab2.vue')
+        component: () => import('@/views/Tab2.vue'),
       },
       {
         path: 'tab3',
-        component: () => import('@/views/Tab3.vue')
-      }
-    ]
-  }
-]
+        component: () => import('@/views/Tab3.vue'),
+      },
+    ],
+  },
+];
 ```
 
 ### Core
@@ -325,24 +331,26 @@ Ionic 6には、Ionicons 6が同梱されるようになりました。[Ionicons
 `ion-modal` は Shadow DOM を使用するようになりました。 `ion-modal` の内部をターゲットとするスタイルは、[ion-modal CSS Variables](../api/modal#css-custom-properties) または [ion-modal CSS Shadow Parts](../api/modal#css-shadow-parts) を使用して更新してください。
 
 **Before**
+
 ```css
 ion-modal .modal-wrapper {
-  ...
+  ...;
 }
 
 ion-modal ion-backdrop {
-  ...
+  ...;
 }
 ```
 
 **After**
+
 ```css
 ion-modal::part(content) {
-  ...
+  ...;
 }
 
 ion-modal::part(backdrop) {
-  ...
+  ...;
 }
 ```
 
@@ -350,34 +358,35 @@ ion-modal::part(backdrop) {
 
 `ion-popover` は Shadow DOM を使用するようになりました。 `ion-popover` の内部をターゲットとするスタイルは、[ion-popover CSS Variables](../api/popover#css-custom-properties) または [ion-popover CSS Shadow Parts](../api/popover#css-shadow-parts) を使用するように更新してください。
 
-
 **Before**
+
 ```css
 ion-popover .popover-arrow {
-  ...
+  ...;
 }
 
 ion-popover ion-backdrop {
-  ...
+  ...;
 }
 
 ion-popover .popover-content {
-  ...
+  ...;
 }
 ```
 
 **After**
+
 ```css
 ion-popover::part(arrow) {
-  ...
+  ...;
 }
 
 ion-popover::part(backdrop) {
-  ...
+  ...;
 }
 
 ion-popover::part(content) {
-  ...
+  ...;
 }
 ```
 

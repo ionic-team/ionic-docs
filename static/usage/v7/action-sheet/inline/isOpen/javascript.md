@@ -10,22 +10,22 @@
       text: 'Delete',
       role: 'destructive',
       data: {
-        action: 'delete'
-      }
+        action: 'delete',
+      },
     },
     {
       text: 'Share',
       data: {
-        action: 'share'
-      }
+        action: 'share',
+      },
     },
     {
       text: 'Cancel',
       role: 'cancel',
       data: {
-        action: 'cancel'
-      }
-    }
+        action: 'cancel',
+      },
+    },
   ];
 
   actionSheet.addEventListener('ionActionSheetDidDismiss', (ev) => {

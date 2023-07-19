@@ -83,7 +83,7 @@ Outside of the `PhotoService` class definition (the very bottom of the file), cr
 ```tsx
 export interface UserPhoto {
   filepath: string;
-  webviewPath: string;
+  webviewPath?: string;
 }
 ```
 
@@ -108,7 +108,7 @@ Over in the `addNewToGallery` function, add the newly captured photo to the begi
 
   this.photos.unshift({
     filepath: "soon...",
-    webviewPath: capturedPhoto.webPath
+    webviewPath: capturedPhoto.webPath!
   });
 }
 ```

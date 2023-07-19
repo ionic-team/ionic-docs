@@ -9,8 +9,8 @@ export class ExampleComponent {
   public toastButtons = [
     {
       text: 'Dismiss',
-      role: 'cancel'
-    }
+      role: 'cancel',
+    },
   ];
 
   constructor() {}

@@ -141,8 +141,7 @@ CSSプロパティのfloatは、テキストとインライン要素を囲んだ
         src="https://ionicframework.com/docs/img/demos/avatar.svg"
         height="50px"
       />
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac
-      vehicula lorem.
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac vehicula lorem.
     </ion-col>
     <ion-col>
       <h3>float-left</h3>
@@ -152,8 +151,7 @@ CSSプロパティのfloatは、テキストとインライン要素を囲んだ
         height="50px"
         class="ion-float-left"
       />
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac
-      vehicula lorem.
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac vehicula lorem.
     </ion-col>
     <ion-col>
       <h3>float-right</h3>
@@ -163,8 +161,7 @@ CSSプロパティのfloatは、テキストとインライン要素を囲んだ
         height="50px"
         class="ion-float-right"
       />
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac
-      vehicula lorem.
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac vehicula lorem.
     </ion-col>
   </ion-row>
 </ion-grid>

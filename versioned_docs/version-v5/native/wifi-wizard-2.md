@@ -53,12 +53,14 @@ This project is a fork of the WifiWizard plugin with fixes and updates, as well 
 >
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
-      $ npm install cordova-plugin-wifiwizard2 {'\n'}$ npm install @awesome-cordova-plugins/wifi-wizard-2 {'\n'}$ ionic cap sync
+      $ npm install cordova-plugin-wifiwizard2 {'\n'}$ npm install @awesome-cordova-plugins/wifi-wizard-2 {'\n'}$ ionic
+      cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
-      $ ionic cordova plugin add cordova-plugin-wifiwizard2 {'\n'}$ npm install @awesome-cordova-plugins/wifi-wizard-2 {'\n'}
+      $ ionic cordova plugin add cordova-plugin-wifiwizard2 {'\n'}$ npm install @awesome-cordova-plugins/wifi-wizard-2{' '}
+      {'\n'}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">

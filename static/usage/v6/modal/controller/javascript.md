@@ -20,7 +20,7 @@
           </ion-buttons>
           <ion-title>Welcome</ion-title>
           <ion-buttons slot="end">
-            <ion-button onclick="confirm()">Confirm</ion-button>
+            <ion-button onclick="confirm()" strong>Confirm</ion-button>
           </ion-buttons>
         </ion-toolbar>
       </ion-header>

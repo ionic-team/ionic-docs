@@ -40,6 +40,10 @@ ionic cordova build ios --prod
 
 ここから、`.xcworkspace` ファイルを `./platforms/ios/` に開き、Xcode を起動します。
 
+:::tip
+`release`フラグを使えば、リリースビルドを自動的に生成させることもできます。
+:::
+
 ## 署名証明書の生成
 
 iOS 用の証明書の生成は少し複雑なので、証明書とは何か、どのように生成するかについては、[Apple の公式ドキュメント](https://help.apple.com/xcode/mac/current/#/dev3a05256b8) を必ず確認してください。
@@ -56,11 +60,10 @@ iOS 用の証明書の生成は少し複雑なので、証明書とは何か、�
 
 このオプションを選択した状態で、`Product > Archive`メニューから`Archive`を選択します。これにより、アプリストアで配布するためのアプリのバージョンが構築されます。アーカイブが作成された後、Xcode Organizerが開かれます。
 
-Xcode Organizerは、現在のアプリのビルドを含むリストを表示します。最後のビルドを選び、「Upload to App Store」をクリックします。
-チームを選択する場所と、アプリの詳細情報、そして「Upload」ボタンがあるはずなので、それをクリックします。
+Xcode Organizerは、現在のアプリのビルドを含むリストを表示します。最後のビルドを選び、'Upload to App Store'をクリックします。
+チームを選択する場所があり、アプリの詳細情報と'Upload'ボタンをクリックします。
 
-アップロードに成功すると、アプリは [iTunes Connect](https://itunesconnect.apple.com) にリストされ、 "Activity" にリストされるはずです。
-ここから、TestFlightをベータテスト用に有効にしたり、アプリをAppleの承認用に送信したりすることができます。
+アップロードに成功すると、アプリは[iTunes Connect](https://itunesconnect.apple.com)の「アクティビティ」に表示されるか、[App Store Connect](https://appstoreconnect.apple.com/)の「Apps」に表示されます。ここから、アプリをTestFlightに公開したり、Appleに送信してApp Storeの承認を得ることができます。
 
 ## アプリのアップデート
 

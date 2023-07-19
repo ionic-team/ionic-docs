@@ -19,7 +19,11 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 Navは、任意のコンポーネントをロードし、スタックに新しいコンポーネントを追加するためのスタンドアロンコンポーネントです。
 
-RouterOutletとは異なり、Navは特定のルーターに関連付けられていません。つまり、Navコンポーネントをロードして他のコンポーネントをスタックに追加しても、ルーター全体のアプリケーションには影響しません。これは、独自のサブナビゲーションを必要とするが、アプリのURLに縛られないモーダルを持つことができるユースケースに適しています。
+Router Outletとは異なり、Navは特定のルーターに縛られることはありません。つまり、Navコンポーネントをロードし、他のコンポーネントをスタックにプッシュしても、アプリ全体のルーターには影響しない。例えば、新しいコンポーネントを`ion-nav`にプッシュして、URLが更新されることを期待するべきではありません。これは、アプリのURLに関連付けずに、独自のサブナビゲーションが必要なモーダルがあるような使用例に適しています。
+
+:::note
+`ion-nav` is not meant to be used for routing.  Instead, see the routing guides for [Angular](../angular/navigation), [React](../react/navigation), and [Vue](../vue/navigation), or [`ion-router`](./router) for vanilla JavaScript projects.
+:::
 
 ## NavLinkを利用する
 

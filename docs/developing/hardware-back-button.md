@@ -338,8 +338,8 @@ export default {
 
 次の表は、Ionic Frameworkが使用するすべての内部ハードウェアバックボタンイベントハンドラの一覧です。 `Propagates` 列は、その特定のハンドラがIonic Frameworkに次の戻るボタンハンドラを呼び出すように指示するかどうかを示します。
 
-| Handler    | Priority | Propagates | Description                                                                                                                              |
-| ---------- | -------- | ---------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
+| Handler    | Priority | Propagates | Description                                                                                                                 |
+| ---------- | -------- | ---------- | --------------------------------------------------------------------------------------------------------------------------- |
 | Overlays   | 100      | No         | Applies to overlay components `ion-action-sheet`, `ion-alert`, `ion-loading`, `ion-modal`, `ion-popover`, and `ion-picker`. |
-| Menu       | 99       | No         | Applies to `ion-menu`.                                                                                                                   |
-| Navigation | 0        | Yes        | Applies to routing navigation (i.e. Angular Routing).                                                                                    |
+| Menu       | 99       | No         | Applies to `ion-menu`.                                                                                                      |
+| Navigation | 0        | Yes        | Applies to routing navigation (i.e. Angular Routing).                                                                       |

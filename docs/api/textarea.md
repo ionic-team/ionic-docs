@@ -29,13 +29,39 @@ import BasicPlayground from '@site/static/usage/v7/textarea/basic/index.md';
 
 <BasicPlayground />
 
-## Label Placement
+## Labels
+
+Labels should be used to describe the textarea. They can be used visually, and they will also be read out by screen readers when the user is focused on the textarea. This makes it easy for the user to understand the intent of the textarea. Textarea has several ways to assign a label:
+
+- `label` property: used for plaintext labels
+- `label` slot: used for custom HTML labels (experimental)
+- `aria-label`: used to provide a label for screen readers but adds no visible label
+
+### Label Placement
 
 ラベルは、デフォルトでそのコンテンツの幅を占めます。 開発者は `labelPlacement` プロパティを使用して、ラベルがどのように配置されるかを制御することができます。
 
-import Labels from '@site/static/usage/v7/textarea/label-placement/index.md';
+import LabelPlacement from '@site/static/usage/v7/textarea/label-placement/index.md';
 
 <LabelPlacement />
+
+### Label Slot (experimental)
+
+While plaintext labels should be passed in via the `label` property, if custom HTML is needed, it can be passed through the `label` slot instead.
+
+Note that this feature is considered experimental because it relies on a simulated version of [Web Component slots](https://developer.mozilla.org/en-US/docs/Web/API/Web_components/Using_templates_and_slots). As a result, the simulated behavior may not exactly match the native slot behavior.
+
+import LabelSlot from '@site/static/usage/v7/textarea/label-slot/index.md';
+
+<LabelSlot />
+
+### No Visible Label
+
+If no visible label is needed, developers should still supply an `aria-label` so the textarea is accessible to screen readers.
+
+import NoVisibleLabel from '@site/static/usage/v7/textarea/no-visible-label/index.md';
+
+<NoVisibleLabel />
 
 ## Filled Textareas
 

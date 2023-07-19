@@ -276,8 +276,8 @@ The following is an example of linear routing in a mobile app:
 
 <video
   style={{
-    'margin': '40px auto',
-    'display': 'flex'
+    margin: '40px auto',
+    display: 'flex',
   }}
   width="400"
   src={useBaseUrl('video/linear-routing-demo.mp4')}
@@ -302,8 +302,8 @@ The following is an example of non-linear routing:
 
 <video
   style={{
-    'margin': '40px auto',
-    'display': 'flex'
+    margin: '40px auto',
+    display: 'flex',
   }}
   width="400"
   src={useBaseUrl('video/non-linear-routing-demo.mp4')}
@@ -339,7 +339,7 @@ A common point of confusion when setting up routing is deciding between shared U
 Shared URLs is a route configuration where routes have pieces of the URL in common. The following is an example of a shared URL configuration:
 
 ```tsx
-const App: React.FC = () => {
+const App: React.FC = () => (
   <IonApp>
     <IonReactRouter>
       <IonRouterOutlet>
@@ -352,7 +352,7 @@ const App: React.FC = () => {
       </IonRouterOutlet>
     </IonReactRouter>
   </IonApp>
-}
+);
 ```
 
 The above routes are considered "shared" because they reuse the `dashboard` piece of the URL.
@@ -372,7 +372,7 @@ const App: React.FC = () => (
       </IonRouterOutlet>
     </IonReactRouter>
   </IonApp>
-)
+);
 
 const DashboardRouterOutlet: React.FC = () => (
   <IonRouterOutlet>
@@ -383,7 +383,7 @@ const DashboardRouterOutlet: React.FC = () => (
       <DashboardStatsPage />
     </Route>
   </IonRouterOutlet>
-)
+);
 ```
 
 The above routes are nested because they are in the `children` array of the parent route. Notice that the parent route renders the `DashboardRouterOutlet` component. When you nest routes, you need to render another instance of `IonRouterOutlet`.
@@ -403,13 +403,12 @@ When working with tabs, Ionic needs a way to know which view belongs to which ta
 ```tsx
 <IonApp>
   <IonReactRouter>
-      <IonRouterOutlet>
-        <Route path="/tabs" render={() => <Tabs />} />
-        <Route exact path="/">
-          <Redirect to="/tabs" />
-        </Route>
-      </IonRouterOutlet>
-    </IonSplitPane>
+    <IonRouterOutlet>
+      <Route path="/tabs" render={() => <Tabs />} />
+      <Route exact path="/">
+        <Redirect to="/tabs" />
+      </Route>
+    </IonRouterOutlet>
   </IonReactRouter>
 </IonApp>
 ```
@@ -420,15 +419,7 @@ Let's start by taking a look at our `Tabs` component:
 
 ```tsx
 import { Redirect, Route } from 'react-router-dom';
-import {
-  IonContent,
-  IonIcon,
-  IonLabel,
-  IonRouterOutlet,
-  IonTabBar,
-  IonTabButton,
-  IonTabs
-} from '@ionic/react';
+import { IonIcon, IonLabel, IonRouterOutlet, IonTabBar, IonTabButton, IonTabs } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
 import { ellipse, square, triangle } from 'ionicons/icons';
 import Tab1 from './pages/Tab1';
@@ -436,45 +427,47 @@ import Tab2 from './pages/Tab2';
 import Tab3 from './pages/Tab3';
 
 const Tabs: React.FC = () => (
-  <IonContent>
-    <IonTabs>
-      <IonRouterOutlet>
-        <Redirect exact path="/tabs" to="/tabs/tab1" />
-        <Route exact path="/tabs/tab1">
-          <Tab1 />
-        </Route>
-        <Route exact path="/tabs/tab2">
-          <Tab2 />
-        </Route>
-        <Route path="/tabs/tab3">
-          <Tab3 />
-        </Route>
-        <Route exact path="/tabs">
-          <Redirect to="/tabs/tab1" />
-        </Route>
-      </IonRouterOutlet>
-      <IonTabBar slot="bottom">
-        <IonTabButton tab="tab1" href="/tabs/tab1">
-          <IonIcon icon={triangle} />
-          <IonLabel>Tab 1</IonLabel>
-        </IonTabButton>
-        <IonTabButton tab="tab2" href="/tabs/tab2">
-          <IonIcon icon={ellipse} />
-          <IonLabel>Tab 2</IonLabel>
-        </IonTabButton>
-        <IonTabButton tab="tab3" href="/tabs/tab3">
-          <IonIcon icon={square} />
-          <IonLabel>Tab 3</IonLabel>
-        </IonTabButton>
-      </IonTabBar>
-    </IonTabs>
-  </IonContent>
+  <IonTabs>
+    <IonRouterOutlet>
+      <Redirect exact path="/tabs" to="/tabs/tab1" />
+      <Route exact path="/tabs/tab1">
+        <Tab1 />
+      </Route>
+      <Route exact path="/tabs/tab2">
+        <Tab2 />
+      </Route>
+      <Route path="/tabs/tab3">
+        <Tab3 />
+      </Route>
+      <Route exact path="/tabs">
+        <Redirect to="/tabs/tab1" />
+      </Route>
+    </IonRouterOutlet>
+    <IonTabBar slot="bottom">
+      <IonTabButton tab="tab1" href="/tabs/tab1">
+        <IonIcon icon={triangle} />
+        <IonLabel>Tab 1</IonLabel>
+      </IonTabButton>
+      <IonTabButton tab="tab2" href="/tabs/tab2">
+        <IonIcon icon={ellipse} />
+        <IonLabel>Tab 2</IonLabel>
+      </IonTabButton>
+      <IonTabButton tab="tab3" href="/tabs/tab3">
+        <IonIcon icon={square} />
+        <IonLabel>Tab 3</IonLabel>
+      </IonTabButton>
+    </IonTabBar>
+  </IonTabs>
 );
 
 export default Tabs;
 ```
 
 If you have worked with Ionic Framework before, this should feel familiar. We create an `IonTabs` component and provide an `IonTabBar`. The `IonTabBar` provides `IonTabButton` components, each with a `tab` property that is associated with its corresponding tab in the router config. We also provide an `IonRouterOutlet` to give `IonTabs` an outlet to render the different tab views in.
+
+:::tip
+`IonTabs` renders an `IonPage` for you, so you do not need to add `IonPage` manually here.
+:::
 
 ### How Tabs in Ionic Work
 
@@ -543,8 +536,8 @@ The example below shows how the iOS App Store app handles presenting an "Account
 
 <video
   style={{
-    'margin': '40px auto',
-    'display': 'flex'
+    margin: '40px auto',
+    display: 'flex',
   }}
   width="400"
   src={useBaseUrl('video/tabs-account-demo.mp4')}
@@ -559,8 +552,8 @@ Instead, we recommend having routes in each tab that reference the same componen
 
 The example below shows how the Spotify app reuses the same album component to show content in multiple tabs. Notice that each screenshot shows the same album but from a different tab.
 
-| Home Tab | Search Tab |
-| :------: | :--------: |
+|                      Home Tab                       |                      Search Tab                       |
+| :-------------------------------------------------: | :---------------------------------------------------: |
 | <img src={useBaseUrl('img/usage/tabs-home.jpg')} /> | <img src={useBaseUrl('img/usage/tabs-search.jpg')} /> |
 
 ## Live Example
@@ -589,9 +582,66 @@ Tabビューで作業する場合、Ionic Reactには、どのビューがどの
 
 ### IonRouterOutletの `Switch`
 
-Since `IonRouterOutlet` takes over the job in determining which routes get rendered, using a `Switch` from React Router has no effect when used inside of an `IonRouterOutlet`. Switches still function as expected when used outside an `IonRouterOutlet`.
+`IonRouterOutlet` は、どのルートをレンダリングするかを決定する仕事を引き継ぐので、React Router の `Switch` を `IonRouterOutlet` の内部で使用しても効果はない。スイッチは `IonRouterOutlet` の外部で使用されても、期待通りに機能します。
 
-## 更に知りたい場合
+## Utilities
+
+### useIonRouter
+
+The `useIonRouter` hook can be used for more direct control over routing in Ionic React. It allows you to pass additional metadata to Ionic, such as a custom animaton, before calling React router.
+
+The `useIonRouter` hook returns a `UseIonRouterResult` which has several convenience methods for routing:
+
+```typescript
+type UseIonRouterResult = {
+  /**
+   * Navigates to a new pathname
+   * @param pathname - The path to navigate to
+   * @param routerDirection - Optional - The RouterDirection to use for transition purposes, defaults to 'forward'
+   * @param routeAction - Optional - The RouteAction to use for history purposes, defaults to 'push'
+   * @param routerOptions - Optional - Any additional parameters to pass to the router
+   * @param animationBuilder - Optional - A custom transition animation to use
+   */
+  push(
+    pathname: string,
+    routerDirection?: RouterDirection,
+    routeAction?: RouteAction,
+    routerOptions?: RouterOptions,
+    animationBuilder?: AnimationBuilder
+  ): void;
+  /**
+   * Navigates backwards in history, using the IonRouter to determine history
+   * @param animationBuilder - Optional - A custom transition animation to use
+   */
+  goBack(animationBuilder?: AnimationBuilder): void;
+  /**
+   * Determines if there are any additional routes in the the Router's history. However, routing is not prevented if the browser's history has more entries. Returns true if more entries exist, false if not.
+   */
+  canGoBack(): boolean;
+  /**
+   * Information about the current route.
+   */
+  routeInfo: RouteInfo;
+};
+```
+
+The following example shows how to use `useIonRouter`:
+
+```tsx
+import { useIonRouter } from '@ionic/react';
+
+const MyComponent: React.FC = () => {
+  const router = useIonRouter();
+  const goToPage = () => {
+    router.push('/my-page', 'root', 'replace');
+  };
+
+  ...
+}
+
+```
+
+## More Information
 
 React Routerを使用したReactでのルーティングの詳細については、次の [https://reacttraining.com/react-router/web](https://reacttraining.com/react-router/web) でドキュメントをご覧ください。
 

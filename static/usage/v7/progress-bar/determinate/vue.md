@@ -13,7 +13,7 @@
       let progress = ref(0);
 
       return {
-        progress
+        progress,
       };
     },
     mounted() {
@@ -28,7 +28,7 @@
           }, 1000);
         }
       }, 50);
-    }
+    },
   });
 </script>
 ```

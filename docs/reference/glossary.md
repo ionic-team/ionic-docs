@@ -87,7 +87,7 @@ title: 用語集
     テキストベースのインターフェースです。Mac ユーザの共通のコマンドラインアプリケーションは
     Terminal アプリケーションであり、Windows ユーザによく使われるものはコマンドプロンプトです。
     Ionic コミュニティでよく使われるものは、次に示すこの{' '}
-    <a href="https://ionicframework.com/docs/v1/cli/">Ionic's CLI</a> というターミナルです。Ionic's CLI は、
+    <a href="https://ionicframework.com/docs/cli">Ionic's CLI</a> というターミナルです。Ionic's CLI は、
     アプリケーションのプロダクションビルドの生成や、開発用のサーバーの起動、
     <a href="https://ionic.io/appflow" target="_blank">Ionic の商用サービス</a>
     へのアクセス{' '}など、様々なことに使われています

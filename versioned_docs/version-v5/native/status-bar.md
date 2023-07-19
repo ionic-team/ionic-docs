@@ -55,7 +55,8 @@ Requires Cordova plugin: `cordova-plugin-statusbar`. For more info, please see t
 >
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
-      $ npm install cordova-plugin-statusbar {'\n'}$ npm install @awesome-cordova-plugins/status-bar {'\n'}$ ionic cap sync
+      $ npm install cordova-plugin-statusbar {'\n'}$ npm install @awesome-cordova-plugins/status-bar {'\n'}$ ionic cap
+      sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">

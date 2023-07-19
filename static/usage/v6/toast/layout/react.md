@@ -11,11 +11,9 @@ function Example() {
         onClick={() => {
           presentToast({
             duration: 3000,
-            message: "This is a toast with a long message and a button that appears on the next line.",
-            buttons: [
-              { text: 'Action With Long Text'}
-            ]
-          })
+            message: 'This is a toast with a long message and a button that appears on the next line.',
+            buttons: [{ text: 'Action With Long Text' }],
+          });
         }}
       >
         Open Baseline Layout Toast
@@ -24,12 +22,10 @@ function Example() {
         onClick={() => {
           presentToast({
             duration: 3000,
-            message: "This is a toast with a long message and a button that appears on the next line.",
-            buttons: [
-              { text: 'Action With Long Text'}
-            ],
-            layout: "stacked"
-          })
+            message: 'This is a toast with a long message and a button that appears on the next line.',
+            buttons: [{ text: 'Action With Long Text' }],
+            layout: 'stacked',
+          });
         }}
       >
         Open Stacked Layout Toast

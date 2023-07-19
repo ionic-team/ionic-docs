@@ -24,16 +24,13 @@ npm install -D vite-plugin-pwa
 Next, update your `vite.config.js` or `vite.config.ts` file and add `vite-plugin-pwa`:
 
 ```javascript
-import { defineConfig } from 'vite'
-import vue from '@vitejs/plugin-vue'
-import { VitePWA } from 'vite-plugin-pwa'
+import { defineConfig } from 'vite';
+import vue from '@vitejs/plugin-vue';
+import { VitePWA } from 'vite-plugin-pwa';
 
 export default defineConfig({
-  plugins: [
-    vue(),
-    VitePWA({ registerType: 'autoUpdate' })
-  ],
-})
+  plugins: [vue(), VitePWA({ registerType: 'autoUpdate' })],
+});
 ```
 
 This minimal configuration allows your application to generate the Web Application Manifest and Service Worker on build.
@@ -167,21 +164,39 @@ FirebaseホスティングはProgressive Web Appsに多くの利点を提供し�
 npm install -g firebase-tools
 ```
 
-Firebase CLIをインストールした状態で、Ionicプロジェクト内で `firebase init` を実行します。CLI上で様々な確認を行っていきます:
+:::note
+If it's the first time you use firebase-tools, login to your Google account with `firebase login` command.
+:::
 
-**"Which Firebase CLI features do you want to set up for this folder?"**  "Hosting: Configure and deploy Firebase Hosting sites." を選択します。
+With the Firebase CLI installed, run `firebase init` within your Ionic project. The CLI prompts:
+
+**"Which Firebase CLI features do you want to set up for this folder?"** Choose "Hosting: Configure files for Firebase Hosting and (optionally) set up GitHub Action deploys".
+
+Create a new Firebase project or select an existing one.
 
 **"Select a default Firebase project for this directory:"** FirebaseのWebサイト上で作成したプロジェクトを選択します。
 
 **"What do you want to use as your public directory?"** "dist" を選択ください。
 
 :::note
-次の2つの質問に答えることで、ルーティング、ハードリロード、ディープリンクがアプリ内で動作することが保証されます:
+Answering this next question will ensure that routing, hard reload, and deep linking work in the app:
 :::
 
 **Configure as a single-page app (rewrite all urls to /index.html)?"** "Yes" を選択します.
 
-**"File dist/index.html already exists. Overwrite?"** "No" を選択します。
+**"File build/index.html already exists. Overwrite?"** Enter "No".
+
+**Set up automatic builds and deploys with Github?** Enter "Yes".
+
+**For which GitHub repository would you like to set up a Github Workflow?** Enter your project name.
+
+**Set up the workflow to run a build script before every deploy?** Enter "Yes".
+
+**What script should be run before every deploy?** Enter `npm ci && npm run build`.
+
+**Set up automatic deployment to your sites live channel when a PR is merged?** Enter "Yes".
+
+**What is the name of the get hooked branch associated with your sites live channel?** Enter your project's main branch name.
 
 `firebase.json` という設定ファイルが生成されるので、アプリの設定にあわせて変更します。
 

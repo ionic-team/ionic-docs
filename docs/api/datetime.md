@@ -36,7 +36,8 @@ import HighlightedDatesCallback from '@site/static/usage/v7/datetime/highlighted
 
 import MultipleDateSelection from '@site/static/usage/v7/datetime/multiple/index.md';
 
-import Theming from '@site/static/usage/v7/datetime/theming/index.md';
+import GlobalTheming from '@site/static/usage/v7/datetime/styling/global-theming/index.md';
+import WheelStyling from '@site/static/usage/v7/datetime/styling/wheel-styling/index.md';
 
 <head>
   <title>ion-datetime: Ionic API Input for Datetime Format Picker</title>
@@ -310,13 +311,21 @@ A callback is better when the highlighted dates are recurring, such as birthdays
 
 <HighlightedDatesCallback />
 
-## テーマ
+## Styling
+
+### グローバルテーマ
 
 Ionicの強力なテーマシステムを使用すると、特定のテーマに合わせてアプリ全体を簡単に変更することができます。この例では、[Color Creator](../theming/colors#new-color-creator) と [Stepped Color Generator](../theming/themes#stepped-color-generator) を使用して、 `ion-datetime` で使用できるローズ色のパレットを作成しました。
 
 この方法の利点は、`ion-datetime`だけでなく、すべてのコンポーネントが自動的にこのテーマを利用できることです。
 
-<Theming />
+<GlobalTheming />
+
+### Wheel Pickers
+
+The wheels used in `ion-datetime` can be styled through a combination of shadow parts and CSS variables. This applies to both the columns in wheel-style datetimes, and the month/year picker in grid-style datetimes.
+
+<WheelStyling />
 
 ## タイムゾーン
 

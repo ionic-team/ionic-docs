@@ -12,8 +12,8 @@ function Example() {
         presentToast({
           message: 'Hello World!',
           duration: 1500,
-          icon: globe
-        })
+          icon: globe,
+        });
       }}
     >
       Click Me

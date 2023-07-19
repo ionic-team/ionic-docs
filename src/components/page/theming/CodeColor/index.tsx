@@ -5,7 +5,7 @@ import styles from './index.module.scss';
 
 function CodeColor({ color, ...props }): JSX.Element {
   return (
-    <div className={clsx(styles.codeColor, props.className, 'code-color')}>
+    <span className={clsx(styles.codeColor, props.className, 'code-color')}>
       <span
         className={styles.codeColorBlock}
         style={{
@@ -14,7 +14,7 @@ function CodeColor({ color, ...props }): JSX.Element {
         }}
       />
       {props.children && <code className={styles.codeColorValue}>{props.children}</code>}
-    </div>
+    </span>
   );
 }
 

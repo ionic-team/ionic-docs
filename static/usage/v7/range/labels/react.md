@@ -4,22 +4,16 @@ import { IonRange } from '@ionic/react';
 function Example() {
   return (
     <>
-      <IonRange labelPlacement="start">
-        <div slot="label">Label at the Start</div>
-      </IonRange>
-    
+      <IonRange labelPlacement="start" label="Label at the Start"></IonRange>
+
       <br />
-    
-      <IonRange labelPlacement="end">
-        <div slot="label">Label at the End</div>
-      </IonRange>
-    
+
+      <IonRange labelPlacement="end" label="Label at the End"></IonRange>
+
       <br />
-    
-      <IonRange labelPlacement="fixed">
-        <div slot="label">Fixed Width Label</div>
-      </IonRange>
-   </>
+
+      <IonRange labelPlacement="fixed" label="Fixed Width Label"></IonRange>
+    </>
   );
 }
 export default Example;

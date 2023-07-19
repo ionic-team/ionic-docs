@@ -123,9 +123,13 @@ CSS Shadow Partsは最近のすべてのメジャーブラウザでサポート�
 
 ### ベンダープレフィックス擬似要素
 
-<a href="https://developer.mozilla.org/en-US/docs/Glossary/Vendor_Prefix" target="_blank" rel="noopener noreferrer">
-  Vendor prefixed
-</a> 擬似要素は、現時点ではサポートされていません。例えば、`::-webkit-scrollbar`擬似要素のようなものです。
+<p>
+  <a href="https://developer.mozilla.org/en-US/docs/Glossary/Vendor_Prefix" target="_blank" rel="noopener noreferrer">
+    Vendor prefixed
+  </a>
+  擬似要素は現時点ではサポートされていません。この例としては、 `::-webkit-scrollbar` 擬似要素があります：
+  pseudo-elements:
+</p>
 
 ```css
 /* Does NOT work */

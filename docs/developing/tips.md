@@ -69,6 +69,7 @@ npmのディレクトリの所有者を現在のユーザに変更します:
 
 ```shell
 $ sudo chown -R $(whoami) /usr/local/{lib/node_modules,bin,share}
+$ sudo chown -R $(whoami) /usr/lib/node_modules
 $ sudo chown -R $(whoami) ~/.npm ~/.npmrc
 ```
 

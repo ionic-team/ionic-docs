@@ -63,12 +63,14 @@ For iOS you have to add this configuration to your configuration.xml file
 >
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
-      $ npm install cordova-plugin-geolocation {'\n'}$ npm install @awesome-cordova-plugins/geolocation {'\n'}$ ionic cap sync
+      $ npm install cordova-plugin-geolocation {'\n'}$ npm install @awesome-cordova-plugins/geolocation {'\n'}$ ionic
+      cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
-      $ ionic cordova plugin add cordova-plugin-geolocation {'\n'}$ npm install @awesome-cordova-plugins/geolocation {'\n'}
+      $ ionic cordova plugin add cordova-plugin-geolocation {'\n'}$ npm install @awesome-cordova-plugins/geolocation{' '}
+      {'\n'}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">

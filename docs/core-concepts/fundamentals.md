@@ -44,4 +44,10 @@ Ionicの最も一般的な使用例の1つは、 <a href="https://www.apple.com/
 
 ## テーマ
 
-基本的に、Ionic Frameworkは<a href="https://developer.mozilla.org/en-US/docs/Web/CSS" target="_blank">CSS</a>を使用して構築されているので、<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_variables" target="_blank">CSSプロパティ (variables)</a>の柔軟性を利用することができます。これにより、Web標準に準拠しながら見栄えのするアプリを設計することがとても簡単になります。デフォルトでもすばらしいものがつくれるように、私たちはテーマカラーのデフォルトセットを提供しますが、ブランド、会社、または希望のカラーパレットに合うデザインにするためにそれらを上書きすることをお勧めします。アプリケーションの背景色からテキストの色まで、すべてカスタマイズ可能です。アプリのテーマに関する詳細は[Theming](../theming/basics.md)をご覧ください。
+Ionic Frameworkは<a href="https://developer.mozilla.org/en-US/docs/Web/CSS" target="_blank">CSS</a>を使って構築されており、<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_variables" target="_blank">CSSプロパティ（変数）</a>が提供する柔軟性を活用できます。これにより、ウェブ標準に従いつつ、見栄えのするアプリを驚くほど簡単にデザインできます。私たちは、開発者がいくつかの素晴らしいデフォルトを持つことができるように色のセットを提供しますが、ブランド、企業、または希望のカラーパレットに一致するデザインを作成するためにそれらを上書きすることをお勧めします。アプリケーションの背景色からテキストの色まで、すべてカスタマイズ可能です。アプリのテーマ設定の詳細については、 [Theming](../theming/basics.md) を参照してください。
+
+## イベント
+
+多くのIonicコンポーネントは [CustomEvent](https://developer.mozilla.org/en-US/docs/Web/API/CustomEvent) を使用して、コンポーネントの重要な状態変化を開発者に通知します。例えば、 `ion-datetime` コンポーネントは、選択された日付が変更されると `ionChange` を発行します。
+
+開発者は通常通り `click` などの標準的なイベントを使用することができる。しかし、コンポーネントの [shadow root](../reference/glossary.md#shadow) 内で発生した多くのイベントは、ホスト要素に [retargeted](https://dom.spec.whatwg.org/#retarget) されます。この結果、ユーザーが1回しかクリックしなくても、複数の `click` ハンドラが実行される可能性があります。そのため、開発者はIonicコンポーネントの状態変化を適切に通知するために、Ionicのイベントに頼る必要があります。Ionicのイベントには、標準的なイベントとの衝突を避けるために`ion`というプレフィックスが付けられています。各コンポーネントのドキュメントページには、開発者がアプリケーションでリッスンできる利用可能なイベントのリストがあります。

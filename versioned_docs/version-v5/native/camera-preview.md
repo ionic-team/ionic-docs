@@ -58,13 +58,14 @@ Requires Cordova plugin: `https://github.com/cordova-plugin-camera-preview/cordo
 >
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
-      $ npm install cordova-plugin-camera-preview {'\n'}$ npm install @awesome-cordova-plugins/camera-preview {'\n'}$ ionic cap
-      sync
+      $ npm install cordova-plugin-camera-preview {'\n'}$ npm install @awesome-cordova-plugins/camera-preview {'\n'}$
+      ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
-      $ ionic cordova plugin add cordova-plugin-camera-preview {'\n'}$ npm install @awesome-cordova-plugins/camera-preview {'\n'}
+      $ ionic cordova plugin add cordova-plugin-camera-preview {'\n'}$ npm install
+      @awesome-cordova-plugins/camera-preview {'\n'}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">

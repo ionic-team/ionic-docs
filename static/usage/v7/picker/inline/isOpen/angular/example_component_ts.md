@@ -8,36 +8,41 @@ import { Component } from '@angular/core';
 export class ExampleComponent {
   isPickerOpen = false;
 
-  public pickerColumns = [{
-    name: 'languages',
-    options: [
-      {
-        text: 'JavaScript',
-        value: 'javascript'
-      }, {
-        text: 'TypeScript',
-        value: 'typescript'
-      }, {
-        text: 'Rust',
-        value: 'rust'
-      }, {
-        text: 'C#',
-        value: 'c#'
-      }
-    ]
-  }];
+  public pickerColumns = [
+    {
+      name: 'languages',
+      options: [
+        {
+          text: 'JavaScript',
+          value: 'javascript',
+        },
+        {
+          text: 'TypeScript',
+          value: 'typescript',
+        },
+        {
+          text: 'Rust',
+          value: 'rust',
+        },
+        {
+          text: 'C#',
+          value: 'c#',
+        },
+      ],
+    },
+  ];
 
   public pickerButtons = [
     {
       text: 'Cancel',
-      role: 'cancel'
+      role: 'cancel',
     },
     {
       text: 'Confirm',
       handler: (value) => {
         window.alert(`You selected: ${value.languages.value}`);
-      }
-    }
+      },
+    },
   ];
 
   setOpen(isOpen: boolean) {

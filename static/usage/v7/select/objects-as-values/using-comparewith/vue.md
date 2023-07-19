@@ -25,31 +25,31 @@
     components: { IonLabel, IonSelect, IonSelectOption },
     data() {
       return {
-        currentFood: "",
+        currentFood: '',
         foods: [
           {
             id: 1,
-            name: "Apples",
-            type: "fruit"
+            name: 'Apples',
+            type: 'fruit',
           },
           {
             id: 2,
-            name: "Carrots",
-            type: "vegetable"
+            name: 'Carrots',
+            type: 'vegetable',
           },
           {
             id: 3,
-            name: "Cupcakes",
-            type: "dessert"
-          }
-        ]
-      }
+            name: 'Cupcakes',
+            type: 'dessert',
+          },
+        ],
+      };
     },
     methods: {
       compareWith(o1, o2) {
         return o1 && o2 ? o1.id === o2.id : o1 === o2;
-      }
-    }
+      },
+    },
   });
 </script>
 ```

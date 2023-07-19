@@ -45,18 +45,26 @@ cd myApp
 1. TypeScriptの依存を削除:
 
 ```shell
-npm uninstall --save typescript @types/jest @typescript-eslint/eslint-plugin @typescript-eslint/parser @vue/cli-plugin-typescript @vue/eslint-config-typescript
+npm uninstall --save typescript @types/jest @typescript-eslint/eslint-plugin @typescript-eslint/parser @vue/cli-plugin-typescript @vue/eslint-config-typescript vue-tsc
 ```
 
-2. すべての `.ts` ファイルの拡張子を `.js` にします。blank Ionic Vueアプリでは、 `router/index.ts` と `main.ts` が該当します。
+2. Change all `.ts` files to `.js`. In a blank Ionic Vue app, this should only be `src/router/index.ts` and `src/main.ts`. If you're using tests, also change the extension of files in the `tests` directory.
 
-3. `@vue/typescript/recommended` と `@typescript-eslint/no-explicit-any: ‘off’, ` を `.eslintrc.js` から削除します。
+3. In `index.html`, change the imported `<script>` file from `/src/main.ts` to `/src/main.js`.
 
-4. `router/index.js` から `Array<RouteRecordRaw>` を削除します。
+4. Remove `@vue/typescript/recommended` and `@typescript-eslint/no-explicit-any: ‘off’, `from `.eslintrc.js`.
 
-5. `shims-vue.d.ts`ファイルを削除します。
+5. Remove `Array<RouteRecordRaw>` and the import of `RouteRecordRaw` from `src/router/index.js`.
 
-6. Vueコンポーネントにある `script` タグから `lang="ts"` を削除します。blank Ionic Vueアプリの場合、 `App.vue` と `views/HomePage.vue` が該当します。
+6. Delete the `src/shims-vue.d.ts` file if it exists. This is only needed when using the Vue CLI.
+
+7. Remove `lang="ts"` from the `script` tags in any of your Vue components that have them. In a blank Ionic Vue app, this should only be `src/App.vue` and `src/views/HomePage.vue`.
+
+8. Delete the `tsconfig.json` file.
+
+9. In package.json, change the build script from `"build": "vue-tsc && vite build"` to `"build": "vite build"`
+
+10. Install terser `npm i -D terser`.
 
 
 ## Vueコンポーネントの確認
@@ -99,7 +107,7 @@ The fourth import gets our routing configuration. We will look at this more in d
 
 scriptに書かれているimportのグループを分解してみていきましょう。
 
-```tsx
+```html
 <script setup lang="ts">
   import { IonApp, IonRouterOutlet } from '@ionic/vue';
 </script>
@@ -290,7 +298,19 @@ Now, you might be wondering: Why do we use `@` when describing the path to our c
 </template>
 
 <script setup lang="ts">
-  import { IonBadge, IonCheckbox, IonContent, IonHeader, IonItem, IonLabel, IonList, IonNote, IonPage, IonTitle, IonToolbar } from '@ionic/vue';
+  import {
+    IonBadge,
+    IonCheckbox,
+    IonContent,
+    IonHeader,
+    IonItem,
+    IonLabel,
+    IonList,
+    IonNote,
+    IonPage,
+    IonTitle,
+    IonToolbar,
+  } from '@ionic/vue';
 </script>
 ```
 
@@ -327,7 +347,22 @@ Ionic Frameworkの別のコンポーネントであるFAB（フローティン�
 </template>
 
 <script setup>
-  import { IonBadge, IonCheckbox, IonContent, IonFab, IonFabButton, IonHeader, IonIcon, IonItem, IonLabel, IonList, IonNote, IonPage, IonTitle, IonToolbar } from '@ionic/vue';
+  import {
+    IonBadge,
+    IonCheckbox,
+    IonContent,
+    IonFab,
+    IonFabButton,
+    IonHeader,
+    IonIcon,
+    IonItem,
+    IonLabel,
+    IonList,
+    IonNote,
+    IonPage,
+    IonTitle,
+    IonToolbar,
+  } from '@ionic/vue';
   import { add } from 'ionicons/icons';
 </script>
 ```

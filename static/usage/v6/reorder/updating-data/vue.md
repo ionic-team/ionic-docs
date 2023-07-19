@@ -4,9 +4,7 @@
     <!-- The reorder gesture is disabled by default, enable it to drag and drop items -->
     <ion-reorder-group :disabled="false" @ionItemReorder="handleReorder($event)">
       <ion-item v-for="item in items">
-        <ion-label>
-          Item {{ item }}
-        </ion-label>
+        <ion-label> Item {{ item }} </ion-label>
         <ion-reorder slot="end"></ion-reorder>
       </ion-item>
     </ion-reorder-group>
@@ -34,9 +32,9 @@
 
         // After complete is called the items will be in the new order
         console.log('After complete', items.value);
-      }
-      return { handleReorder, items }
-    }
+      };
+      return { handleReorder, items };
+    },
   });
 </script>
 ```

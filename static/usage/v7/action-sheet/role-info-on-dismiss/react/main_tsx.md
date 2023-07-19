@@ -20,22 +20,22 @@ function Example() {
             text: 'Delete',
             role: 'destructive',
             data: {
-              action: 'delete'
-            }
+              action: 'delete',
+            },
           },
           {
             text: 'Share',
             data: {
-              action: 'share'
-            }
+              action: 'share',
+            },
           },
           {
             text: 'Cancel',
             role: 'cancel',
             data: {
-              action: 'cancel'
-            }
-          }
+              action: 'cancel',
+            },
+          },
         ]}
         onDidDismiss={({ detail }) => setResult(detail)}
       ></IonActionSheet>
