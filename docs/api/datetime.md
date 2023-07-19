@@ -98,6 +98,10 @@ While seconds, milliseconds, and time zone can be specified using the ISO 8601 d
 
 If you need to present a datetime in an overlay such as a modal or a popover, we recommend using [ion-datetime-button](./datetime-button). `ion-datetime-button` should be used when space is constrained. This component displays buttons which show the current date and time values. When the buttons are tapped, the date or time pickers open in the overlay.
 
+## Setting Values Asynchronously
+
+If its `value` is updated programmatically after a datetime has already been created, the datetime will automatically jump to the new date. However, it is recommended to avoid updating the `value` in this way when users are able to interact with the datetime, as this could be disorienting for those currently trying to select a date. For example, if a datetime's `value` is loaded by an asyncronous process, it is recommended to hide the datetime with CSS until the value has finished updating.
+
 ## Date Constraints
 
 ### Max and Min Dates
