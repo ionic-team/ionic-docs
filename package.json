@@ -14,6 +14,7 @@
     "generate-markdown": "node scripts/native && concurrently \"node scripts/cli\" \"node scripts/release-notes\"",
     "lint": "npm run prettier -- --write --cache",
     "serve": "docusaurus serve",
+    "playground:new": "hygen playground new",
     "prestart": "npm run generate-markdown",
     "prettier": "prettier \"./**/*.{html,ts,tsx,js,jsx,md}\"",
     "start": "docusaurus start",
@@ -71,6 +72,7 @@
     "@tsconfig/docusaurus": "^1.0.4",
     "@types/react": "^17.0.37",
     "html-loader": "^3.1.0",
+    "hygen": "^6.2.11",
     "prettier": "^2.8.8",
     "typescript": "^4.5.2"
   },

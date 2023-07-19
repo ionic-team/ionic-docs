@@ -24,6 +24,40 @@ A select should be used with child `<ion-select-option>` elements. If the child 
 
 If `value` is set on the `<ion-select>`, the selected option will be chosen based on that value.
 
+## Labels
+
+Labels should be used to describe the select. They can be used visually, and they will also be read out by screen readers when the user is focused on the select. This makes it easy for the user to understand the intent of the select. Select has several ways to assign a label:
+
+Select has several options for supplying a label for the component:
+
+- `label` property: used for plaintext labels
+- `label` slot: used for custom HTML labels
+- `aria-label`: used to provide a label for screen readers but adds no visible label
+
+### Label Placement
+
+Labels will take up the width of their content by default. Developers can use the `labelPlacement` property to control how the label is placed relative to the control. While the `label` property is used here, `labelPlacement` can also be used with the `label` slot.
+
+import LabelPlacement from '@site/static/usage/v7/select/label-placement/index.md';
+
+<LabelPlacement />
+
+### Label Slot
+
+While plaintext labels should be passed in via the `label` property, if custom HTML is needed, it can be passed through the `label` slot instead.
+
+import LabelSlot from '@site/static/usage/v7/select/label-slot/index.md';
+
+<LabelSlot />
+
+### No Visible Label
+
+If no visible label is needed, developers should still supply an `aria-label` so the select is accessible to screen readers.
+
+import NoVisibleLabel from '@site/static/usage/v7/select/no-visible-label/index.md';
+
+<NoVisibleLabel />
+
 ## Single Selection
 
 By default, the select allows the user to select only one option. The alert interface presents users with a radio button styled list of options. The select component's value receives the value of the selected option's value.
@@ -83,15 +117,6 @@ import UsingCompareWithExample from '@site/static/usage/v7/select/objects-as-val
 import ObjectValuesAndMultipleSelectionExample from '@site/static/usage/v7/select/objects-as-values/multiple-selection/index.md';
 
 <ObjectValuesAndMultipleSelectionExample />
-  
-
-## Label Placement
-
-Labels will take up the width of their content by default. Developers can use the `labelPlacement` property to control how the label is placed relative to the control.
-
-import LabelPlacement from '@site/static/usage/v7/select/label-placement/index.md';
-
-<LabelPlacement />
 
 ## Justification
   
@@ -156,6 +181,24 @@ Customizing the interface dialog should be done by following the Customization s
 - [Popover Customization](popover.md#customization)
 
 However, the Select Option does set a class for easier styling and allows for the ability to pass a class to the overlay option, see the [Select Options documentation](select-option.md) for usage examples of customizing options.
+
+### Custom Toggle Icons
+
+The icon that displays next to the select text can be set to any [Ionicon](https://ionic.io/ionicons) using the `toggleIcon` and/or `expandedIcon` properties.
+
+import CustomToggleIconsExample from '@site/static/usage/v7/select/customization/custom-toggle-icons/index.md';
+
+<CustomToggleIconsExample />
+
+### Icon Flip Behavior
+
+By default, when the select is open, the toggle icon will automatically rotate on `md` mode and remain static on `ios` mode. This behavior can be customized using CSS.
+
+The below example also uses a [custom `toggleIcon`](#custom-toggle-icons) to better demonstrate the flip behavior on `ios`, since the default icon is vertically symmetrical.
+
+import IconFlipBehaviorExample from '@site/static/usage/v7/select/customization/icon-flip-behavior/index.md';
+
+<IconFlipBehaviorExample />
 
 ## Typeahead Component
 

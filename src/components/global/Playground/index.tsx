@@ -417,7 +417,7 @@ export default function Playground({
         return null;
       }
       return (
-        <PlaygroundTabs className="playground__tabs">
+        <PlaygroundTabs groupId={usageTarget} className="playground__tabs">
           {Object.keys(codeSnippets[usageTarget]).map((fileName) => (
             <TabItem
               className="playground__tab-item"
