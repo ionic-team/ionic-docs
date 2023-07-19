@@ -101,8 +101,8 @@ function renderMethods({ methods }) {
   // NOTE: replaces | with U+FF5C since MDX renders \| in tables incorrectly
   return `
 ${methods
-    .map(
-      (method) => `
+  .map(
+    (method) => `
 ### ${method.name}
 
 | | |
@@ -110,8 +110,8 @@ ${methods
 | **Description** | ${formatMultiline(method.docs)} |
 | **Signature** | \`${method.signature.replace(/\|/g, '\uff5c')}\` |
 `
-    )
-    .join('\n')}
+  )
+  .join('\n')}
 
 `;
 }

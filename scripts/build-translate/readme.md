@@ -2,7 +2,7 @@
 
 ## What is?
 
-This script using for translate api, cli, and native document. 
+This script using for translate api, cli, and native document.
 This can do this.
 
 - Create editable file for translate.
@@ -13,27 +13,29 @@ This can do this.
 
 Some Ionic document is created by resource of JSON file.
 
-|  Type  |  Document URL  | Resource |
-| ---- | ---- | ---- |
-|  API  | [Components](https://ionicframework.com/docs/components) | `@ionic/docs/core.json` |
-|  CLI  |  [Command Reference](https://ionicframework.com/docs/cli)  | [cli.json](https://github.com/ionic-team/ionic-docs/blob/master/scripts/data/cli.json) |
-|  Native  | [Ionic Native](https://ionicframework.com/docs/native) | [native.json](https://github.com/ionic-team/ionic-docs/blob/master/scripts/data/native.json) |
+| Type   | Document URL                                             | Resource                                                                                     |
+| ------ | -------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
+| API    | [Components](https://ionicframework.com/docs/components) | `@ionic/docs/core.json`                                                                      |
+| CLI    | [Command Reference](https://ionicframework.com/docs/cli) | [cli.json](https://github.com/ionic-team/ionic-docs/blob/master/scripts/data/cli.json)       |
+| Native | [Ionic Native](https://ionicframework.com/docs/native)   | [native.json](https://github.com/ionic-team/ionic-docs/blob/master/scripts/data/native.json) |
 
-And these JSON file include Markdown language for document. 
+And these JSON file include Markdown language for document.
 It is very difficult to translate as it is.
 
 ## Installation
+
 1. Move this folder to your project into scripts.
 2. create folder `src/translate` and `src/translate/.detection`;
 
 ## Usage
+
 ### Create editable file
 
 ```shell
 $ ts-node -P scripts/tsconfig.json scripts/build-translate create
 ```
 
-Then generate editable file under `src/translate/*`. 
+Then generate editable file under `src/translate/*`.
 
 And `src/translate/.detection/*` is use for get diff from original. **don't use or add .gitignore**.
 
@@ -49,12 +51,14 @@ This is resource file instead of original file.
 #### require change file
 
 ##### scripts/build-data/api-reference.ts
+
 ```diff
 -import { components } from '@ionic/docs/core.json';
 +import { components } from '../data/translated-api.json';
 ```
 
 ##### scripts/build-menus/index.ts
+
 ```diff
 -import { commands } from '../data/cli.json';
 +import { commands } from '../data/translated-cli.json';
@@ -63,24 +67,28 @@ This is resource file instead of original file.
 ```
 
 ##### scripts/build-pages/page-types/api.ts
+
 ```diff
 -import { components } from '@ionic/docs/core.json';
 +import { components } from '../../data/translated-api.json';
 ```
 
 ##### scripts/build-pages/page-types/cli.ts
+
 ```diff
 -import { commands } from '../../data/cli.json';
 +import { commands } from '../../data/translated-cli.json';
 ```
 
 ##### scripts/build-pages/page-types/native.ts
+
 ```diff
 -import plugins from '../../data/native.json';
 +import plugins from '../../data/translated-native.json';
 ```
 
 ##### .gitignore
+
 ```diff
 +scripts/data/translated-*
 ```
@@ -92,7 +100,9 @@ $ ts-node -P scripts/tsconfig.json scripts/build-translate diff
 ```
 
 ## Sample
+
 ### Japanese Docs
+
 [ionicframework.jp](https://ionicframework.jp)
 
 ### diff package.json

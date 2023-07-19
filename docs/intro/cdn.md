@@ -11,13 +11,13 @@ sidebar_label: パッケージ & CDN
   />
 </head>
 
-Ionicは、テスト環境、Angular、その他のフレームワーク、またはVanilla JSといったすべての状況で、Ionic Frameworkを使い始めるために使用できるさまざまなパッケージを提供しています。
+Ionic は、テスト環境、Angular、その他のフレームワーク、または Vanilla JS といったすべての状況で、Ionic Framework を使い始めるために使用できるさまざまなパッケージを提供しています。
 
 ## Ionic Framework CDN
 
-Ionicフレームワークは、[Plunker](https://plnkr.co/)、[Codepen](https://codepen.io)、またはその他のオンラインコードエディタですばやくテストするために、CDNから組み込むことができます。。
+Ionic フレームワークは、[Plunker](https://plnkr.co/)、[Codepen](https://codepen.io)、またはその他のオンラインコードエディタですばやくテストするために、CDN から組み込むことができます。。
 
-CDNからフレームワークにアクセスするには、 [jsdelivr](https://www.jsdelivr.com/) を使用することをお勧めします。最新バージョンを入手するためには HTMLファイルの `<head>`  要素、もしくはオンラインコードエディタの呼び出しコードに、次のコードを追加します。
+CDN からフレームワークにアクセスするには、 [jsdelivr](https://www.jsdelivr.com/) を使用することをお勧めします。最新バージョンを入手するためには HTML ファイルの `<head>` 要素、もしくはオンラインコードエディタの呼び出しコードに、次のコードを追加します。
 
 ```html
 <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.esm.js"></script>
@@ -25,23 +25,23 @@ CDNからフレームワークにアクセスするには、 [jsdelivr](https://
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core/css/ionic.bundle.css" />
 ```
 
-これにより、フレームワークをインストールしなくても、すべてのIonic Frameworkのコアコンポーネントを使用することができます。CSSバンドルには、すべてのIonic [Global Stylesheets](../layout/global-stylesheets) が含まれます。
+これにより、フレームワークをインストールしなくても、すべての Ionic Framework のコアコンポーネントを使用することができます。CSS バンドルには、すべての Ionic [Global Stylesheets](../layout/global-stylesheets) が含まれます。
 
 :::note
-これはAngularや他のフレームワークをインストールしません。これにより、フレームワークなしでIonic Frameworkのコアコンポーネントを使用できます。
+これは Angular や他のフレームワークをインストールしません。これにより、フレームワークなしで Ionic Framework のコアコンポーネントを使用できます。
 :::
 
 ## Ionic + Angular
 
-AngularプロジェクトでIonic Frameworkを使用する場合は、 [npm](../reference/glossary.md#npm) から最新の `@ionic/angular` をインストールしてください。これによって、すべてのIonic Frameworkコンポーネントと、Angularのサービスおよび機能を使うことができます。
+Angular プロジェクトで Ionic Framework を使用する場合は、 [npm](../reference/glossary.md#npm) から最新の `@ionic/angular` をインストールしてください。これによって、すべての Ionic Framework コンポーネントと、Angular のサービスおよび機能を使うことができます。
 
 ```shell
 npm install @ionic/angular@latest --save
 ```
 
-新しいIonic Frameworkのリリースがあるたびに、最新バージョンの機能と修正を入手するために [バージョン](../reference/versioning.md) を更新する必要があります。最新のバージョンは [npmを使ったアップデート](../developing/tips.md#updating-dependencies) から取得することができます。
+新しい Ionic Framework のリリースがあるたびに、最新バージョンの機能と修正を入手するために [バージョン](../reference/versioning.md) を更新する必要があります。最新のバージョンは [npm を使ったアップデート](../developing/tips.md#updating-dependencies) から取得することができます。
 
-Ionicを既存のAngularプロジェクトに追加するには、Angular CLIの `ng add` 機能を使用します。
+Ionic を既存の Angular プロジェクトに追加するには、Angular CLI の `ng add` 機能を使用します。
 
 ```shell
 ng add @ionic/angular
@@ -51,7 +51,7 @@ ng add @ionic/angular
 
 ## Ionic + React
 
-Ionicを既存のReactプロジェクトに追加するには、 `@ionic/react` および `@ionic/react-router` パッケージをインストールします。
+Ionic を既存の React プロジェクトに追加するには、 `@ionic/react` および `@ionic/react-router` パッケージをインストールします。
 
 ```shell
 $ npm install @ionic/react
@@ -60,7 +60,7 @@ $ npm install @ionic/react-router
 
 ### CSS
 
-必要なCSSをReactプロジェクトに含めるには、ルートアプリコンポーネントに以下を追加します。
+必要な CSS を React プロジェクトに含めるには、ルートアプリコンポーネントに以下を追加します。
 
 ```javascript
 /* Core CSS required for Ionic components to work properly */
@@ -82,13 +82,13 @@ import '@ionic/react/css/display.css';
 
 ## Ionic + Vue
 
-既存のVueプロジェクトにIonic Frameworkを追加するには、 `@ionic/vue` と `@ionic/vue-router` パッケージをインストールします。
+既存の Vue プロジェクトに Ionic Framework を追加するには、 `@ionic/vue` と `@ionic/vue-router` パッケージをインストールします。
 
 ```shell
 npm install @ionic/vue @ionic/vue-router
 ```
 
-その後、Vueアプリに`IonicVue`プラグインをインストールする必要があります。
+その後、Vue アプリに`IonicVue`プラグインをインストールする必要があります。
 
 **main.js**
 
@@ -109,7 +109,7 @@ router.isReady().then(() => {
 
 ### ルーティング
 
-Vueアプリでルーティングを設定する場合、`vue-router`ではなく、`@ionic/vue-router`から依存関係をインポートする必要があります。
+Vue アプリでルーティングを設定する場合、`vue-router`ではなく、`@ionic/vue-router`から依存関係をインポートする必要があります。
 
 **router/index.js**
 
@@ -130,7 +130,7 @@ export default router;
 
 ### CSS
 
-Vueプロジェクトで必要なCSSをimportするには、`main.js` ファイルに以下を追加します。
+Vue プロジェクトで必要な CSS を import するには、`main.js` ファイルに以下を追加します。
 
 ```javascript
 /* Core CSS required for Ionic components to work properly */
@@ -150,11 +150,11 @@ import '@ionic/vue/css/flex-utils.css';
 import '@ionic/vue/css/display.css';
 ```
 
-ここからは、Ionic Frameworkでの開発方法について、 [Ionic Vue Quickstart Guide](https://ionicframework.com/docs/vue/quickstart) でご紹介しています。
+ここからは、Ionic Framework での開発方法について、 [Ionic Vue Quickstart Guide](https://ionicframework.com/docs/vue/quickstart) でご紹介しています。
 
 ## Ionicons CDN
 
-IoniconsはデフォルトでIonic Frameworkに同梱されているので、Ionicを使用している場合はインストールは不要です。Ionic Frameworkを使用せずにIoniconsを使用するためには、ページの終わりの近くにある `</body>` の閉じタグの直前に以下の `<script>` タグを配置します。
+Ionicons はデフォルトで Ionic Framework に同梱されているので、Ionic を使用している場合はインストールは不要です。Ionic Framework を使用せずに Ionicons を使用するためには、ページの終わりの近くにある `</body>` の閉じタグの直前に以下の `<script>` タグを配置します。
 
 ```html
 <script type="module" src="https://cdn.jsdelivr.net/npm/ionicons/dist/ionicons/ionicons.esm.js"></script>

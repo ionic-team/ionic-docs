@@ -47,9 +47,9 @@ As of Ionic CLI v7, Ionic React starter apps ship with Vite instead of Create Re
 
 The two main requirements of a PWA are a <a href="https://developers.google.com/web/fundamentals/primers/service-workers/" target="_blank">Service Worker</a> and a <a href="https://developers.google.com/web/fundamentals/web-app-manifest/" target="_blank">Web Application Manifest</a>. While it's possible to add both of these to an app manually, a base project from Create React App (CRA) and the Ionic CLI provides this already.
 
-PWAの主な要件は、 <a href="https://developers.google.com/web/fundamentals/primers/service-workers/" target="_blank">Service Worker</a> と <a href="https://developers.google.com/web/fundamentals/web-app-manifest/" target="_blank">Web Manifest</a> の2つです。これらの両方を手動でアプリに追加することは可能ですが、Create React App (CRA)とIonic CLIのベースプロジェクトがこれらをすでに提供しています。
+PWA の主な要件は、 <a href="https://developers.google.com/web/fundamentals/primers/service-workers/" target="_blank">Service Worker</a> と <a href="https://developers.google.com/web/fundamentals/web-app-manifest/" target="_blank">Web Manifest</a> の 2 つです。これらの両方を手動でアプリに追加することは可能ですが、Create React App (CRA)と Ionic CLI のベースプロジェクトがこれらをすでに提供しています。
 
-アプリケーションの  `index.ts` には、`serviceWorker.unregister()` 関数の呼び出しがあります。基本CRAが提供するservice workersはオプトイン機能なので、有効にする必要があります。
+アプリケーションの `index.ts` には、`serviceWorker.unregister()` 関数の呼び出しがあります。基本 CRA が提供する service workers はオプトイン機能なので、有効にする必要があります。
 有効にするには、`serviceWorker.register ()`を呼び出します。
 
 ```ts
@@ -72,31 +72,31 @@ root.render(
 serviceWorkerRegistration.register();
 ```
 
-このパッケージを追加したら、 `ionic build` を実行し、 `build` ディレクトリをPWAとしてデプロイする準備ができます。
+このパッケージを追加したら、 `ionic build` を実行し、 `build` ディレクトリを PWA としてデプロイする準備ができます。
 
 :::note
-デフォルトでは、Reactアプリのパッケージには、アプリアイコン用のIonicロゴが付属しています。正しいアプリケーション名を使用するようにmanifestを更新し、アイコンを置き換えてください。
+デフォルトでは、React アプリのパッケージには、アプリアイコン用の Ionic ロゴが付属しています。正しいアプリケーション名を使用するように manifest を更新し、アイコンを置き換えてください。
 :::
 
 :::note
-Service Workersや多くのJavaScript API (位置情報など)のような機能は、セキュアなコンテキストでアプリをホストする必要があります。ホスティングサービスを介してアプリケーションを配備する場合は、Service Workersを最大限に活用するためにHTTPSが必要になることに注意してください。
+Service Workers や多くの JavaScript API (位置情報など)のような機能は、セキュアなコンテキストでアプリをホストする必要があります。ホスティングサービスを介してアプリケーションを配備する場合は、Service Workers を最大限に活用するために HTTPS が必要になることに注意してください。
 :::
 
-###  Service Workerの設定
+### Service Worker の設定
 
-デフォルトでは、CRA/React Scriptには [WorkboxのWebpackプラグイン](https://developers.google.com/web/tools/workbox/modules/workbox-webpack-plugin) に基づいて事前設定されたService Workerセットアップが付属しています。これはキャッシュファースト戦略を利用しており、ネットワークが新しいバージョンのアプリを返しても、アプリはキャッシュからロードされます。
+デフォルトでは、CRA/React Script には [Workbox の Webpack プラグイン](https://developers.google.com/web/tools/workbox/modules/workbox-webpack-plugin) に基づいて事前設定された Service Worker セットアップが付属しています。これはキャッシュファースト戦略を利用しており、ネットワークが新しいバージョンのアプリを返しても、アプリはキャッシュからロードされます。
 
-CRA/React Scriptsの性質上、この設定はReact Scriptsの内部で行われるため、React Scriptsから抽出しない限りはカスタマイズできません。現在、Ionic CLIはReact Appのイジェクトをサポートしていないため、このアクションを実行する場合は、Ionic CLIの代わりにnpm/yearスクリプトを使用する必要があります。
+CRA/React Scripts の性質上、この設定は React Scripts の内部で行われるため、React Scripts から抽出しない限りはカスタマイズできません。現在、Ionic CLI は React App のイジェクトをサポートしていないため、このアクションを実行する場合は、Ionic CLI の代わりに npm/year スクリプトを使用する必要があります。
 
 ### デプロイ
 
 #### Firebase
 
-FirebaseホスティングはProgressive Web Appsに多くの利点を提供しており、CDNによる高速応答、デフォルトで有効になっているHTTPS、 [HTTP2 push](https://firebase.googleblog.com/2016/09/http2-comes-to-firebase-hosting.html) のサポートなどがある。
+Firebase ホスティングは Progressive Web Apps に多くの利点を提供しており、CDN による高速応答、デフォルトで有効になっている HTTPS、 [HTTP2 push](https://firebase.googleblog.com/2016/09/http2-comes-to-firebase-hosting.html) のサポートなどがある。
 
-まず、まだ使用していない場合は、Firebaseで [プロジェクトを作成](https://console.firebase.google.com) します。
+まず、まだ使用していない場合は、Firebase で [プロジェクトを作成](https://console.firebase.google.com) します。
 
-次にターミナルでFirebase CLIをインストールします:
+次にターミナルで Firebase CLI をインストールします:
 
 ```shell
 npm install -g firebase-tools
@@ -112,7 +112,7 @@ With the Firebase CLI installed, run `firebase init` within your Ionic project. 
 
 Create a new Firebase project or select an existing one.
 
-**"Select a default Firebase project for this directory:"** FirebaseのWebサイト上で作成したプロジェクトを選択します。
+**"Select a default Firebase project for this directory:"** Firebase の Web サイト上で作成したプロジェクトを選択します。
 
 **"What do you want to use as your public directory?"** "dist" を選択ください。
 

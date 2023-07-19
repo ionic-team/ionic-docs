@@ -18,7 +18,7 @@ const apply = async () => {
     let directoryFiles: string[] | any = readdirSync(directory, { encoding: 'utf8' });
     directoryFiles = directoryFiles
       .filter((file: string) => {
-        return (/.*\.json$/.test(file) && !file.match(/readme/));
+        return /.*\.json$/.test(file) && !file.match(/readme/);
       })
       .map((file: string) => {
         return directory + '/' + file;
@@ -31,39 +31,43 @@ const apply = async () => {
       if (existsSync(readmePath)) {
         componentObject[translateType.markdown] = readFileSync(readmePath, { encoding: 'utf8' });
       }
-      await Promise.all(translateType.translateTarget.map(async (target: string) => {
-        if (componentObject[target]) {
-          await Promise.all(componentObject[target].map(async (ob: any) => {
-            if (ob[translateType.translateTargetKey]) {
-              const translateText = ob[translateType.translateTargetKey].replace(/\n/g, ' ');
+      await Promise.all(
+        translateType.translateTarget.map(async (target: string) => {
+          if (componentObject[target]) {
+            await Promise.all(
+              componentObject[target].map(async (ob: any) => {
+                if (ob[translateType.translateTargetKey]) {
+                  const translateText = ob[translateType.translateTargetKey].replace(/\n/g, ' ');
 
-              // キャッシュデータにあるか確認
-              if (cacheTranslated.hasOwnProperty(translateText)) {
-                ob[translateType.translateTargetKey] = cacheTranslated[translateText];
-                return;
-              }
+                  // キャッシュデータにあるか確認
+                  if (cacheTranslated.hasOwnProperty(translateText)) {
+                    ob[translateType.translateTargetKey] = cacheTranslated[translateText];
+                    return;
+                  }
 
-              // 今回翻訳データにあるか確認
-              // if (translatedNow.hasOwnProperty(ob[translateType.translateTargetKey])) {
-              //   ob[translateType.translateTargetKey] = ob[translateType.translateTargetKey] + `\n\n自動翻訳: ${translatedNow[translateText]}`;
-              //   return;
-              // }
+                  // 今回翻訳データにあるか確認
+                  // if (translatedNow.hasOwnProperty(ob[translateType.translateTargetKey])) {
+                  //   ob[translateType.translateTargetKey] = ob[translateType.translateTargetKey] + `\n\n自動翻訳: ${translatedNow[translateText]}`;
+                  //   return;
+                  // }
 
-              const response = await translate({
-                free_api: true,
-                text: translateText,
-                source_lang: DeeplConfig.fromLanguage,
-                target_lang: DeeplConfig.toLanguage,
-                auth_key: process.env.DEEPLAUTHKEY,
-              });
-              const translated = response.data.translations[0].text;
-              translatedNow[translateText] = translated;
+                  const response = await translate({
+                    free_api: true,
+                    text: translateText,
+                    source_lang: DeeplConfig.fromLanguage,
+                    target_lang: DeeplConfig.toLanguage,
+                    auth_key: process.env.DEEPLAUTHKEY,
+                  });
+                  const translated = response.data.translations[0].text;
+                  translatedNow[translateText] = translated;
 
-              // ob[translateType.translateTargetKey] = ob[translateType.translateTargetKey] + `\n\n自動翻訳: ${translated}`;
-            }
-          }));
-        }
-      }));
+                  // ob[translateType.translateTargetKey] = ob[translateType.translateTargetKey] + `\n\n自動翻訳: ${translated}`;
+                }
+              })
+            );
+          }
+        })
+      );
       componentsObject.push(componentObject);
     }
     let resource = translateType.resource;
@@ -74,14 +78,20 @@ const apply = async () => {
       resource = componentsObject;
     }
 
-    writeFileSync(process.cwd() + '/scripts/data/translated-' + translateType.type + '.json', JSON.stringify(resource, null, 2), { encoding: 'utf8' });
+    writeFileSync(
+      process.cwd() + '/scripts/data/translated-' + translateType.type + '.json',
+      JSON.stringify(resource, null, 2),
+      { encoding: 'utf8' }
+    );
   }
 
   // 翻訳データの結合
   const writeTranslateCache = {
-    cache: Object.assign(cacheTranslated, translatedNow)
+    cache: Object.assign(cacheTranslated, translatedNow),
   };
-  writeFileSync(process.cwd() + '/scripts/data/translated-cache.json', JSON.stringify(writeTranslateCache, null, 2), { encoding: 'utf8' });
+  writeFileSync(process.cwd() + '/scripts/data/translated-cache.json', JSON.stringify(writeTranslateCache, null, 2), {
+    encoding: 'utf8',
+  });
 };
 
 const create = async () => {
@@ -98,7 +108,7 @@ const create = async () => {
         real: folder.real + key + '.json',
         realReadme: folder.real + key + '.readme.md',
         shadow: folder.shadow + key + '.json',
-        shadowReadme: folder.shadow + key + '.readme.md'
+        shadowReadme: folder.shadow + key + '.readme.md',
       };
 
       if (!existsSync(folder.real)) {
@@ -128,14 +138,16 @@ const diff = async () => {
   const translateTypes = await getTranslateType();
 
   for (const translateType of translateTypes) {
-    execSync('git diff src/translate/.detection/' + translateType.type + '/*  > structure_' + translateType.type + '.patch');
+    execSync(
+      'git diff src/translate/.detection/' + translateType.type + '/*  > structure_' + translateType.type + '.patch'
+    );
 
     const patchPath = process.cwd() + '/structure_' + translateType.type + '.patch';
     const patchTxt = readFileSync(patchPath, { encoding: 'utf8' });
     writeFileSync(patchPath, patchTxt.replace(/\/\.detection/g, ''), { encoding: 'utf8' });
 
     try {
-      execSync('patch -p1 < \'structure_' + translateType.type + '.patch\'');
+      execSync("patch -p1 < 'structure_" + translateType.type + ".patch'");
     } catch (e) {
       console.log('▲ this patch request contains merge conflicts!');
     }
