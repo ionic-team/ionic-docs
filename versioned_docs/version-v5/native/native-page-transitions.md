@@ -56,15 +56,14 @@ The Native Page Transitions plugin uses native hardware acceleration to animate 
 >
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
-      $ npm install com.telerik.plugins.nativepagetransitions {'\n'}$ npm install @awesome-cordova-plugins/native-page-transitions {
-        '\n'
-      }$ ionic cap sync
+      $ npm install com.telerik.plugins.nativepagetransitions {'\n'}$ npm install
+      @awesome-cordova-plugins/native-page-transitions {'\n'}$ ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
-      $ ionic cordova plugin add com.telerik.plugins.nativepagetransitions {'\n'}$ npm install @awesome-cordova-plugins/native-page-transitions{' '}
-      {'\n'}
+      $ ionic cordova plugin add com.telerik.plugins.nativepagetransitions {'\n'}$ npm install
+      @awesome-cordova-plugins/native-page-transitions {'\n'}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">

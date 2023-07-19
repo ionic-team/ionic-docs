@@ -39,7 +39,6 @@ import Footer from '@site/static/usage/v7/footer/basic/index.md';
 
 水平な [タブ](../api/tabs.md) からなるレイアウトを使用すると、ユーザーはコンテンツビューをすばやく切り替えることができます。各タブには、[router outlet](../api/router-outlet.md) や [nav](../api/nav.md) を使用して、静的コンテンツやナビゲーション・スタックを含めることができます。
 
-
 import Tabs from '@site/static/usage/v7/tabs/router/index.md';
 
 <Tabs />

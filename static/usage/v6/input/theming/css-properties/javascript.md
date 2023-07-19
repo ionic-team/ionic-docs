@@ -6,7 +6,7 @@
     --background: #373737;
     --color: #fff;
     --placeholder-color: #ddd;
-    --placeholder-opacity: .8;
+    --placeholder-opacity: 0.8;
 
     --padding-bottom: 10px;
     --padding-end: 10px;

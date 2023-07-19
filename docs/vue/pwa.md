@@ -24,16 +24,13 @@ npm install -D vite-plugin-pwa
 Next, update your `vite.config.js` or `vite.config.ts` file and add `vite-plugin-pwa`:
 
 ```javascript
-import { defineConfig } from 'vite'
-import vue from '@vitejs/plugin-vue'
-import { VitePWA } from 'vite-plugin-pwa'
+import { defineConfig } from 'vite';
+import vue from '@vitejs/plugin-vue';
+import { VitePWA } from 'vite-plugin-pwa';
 
 export default defineConfig({
-  plugins: [
-    vue(),
-    VitePWA({ registerType: 'autoUpdate' })
-  ],
-})
+  plugins: [vue(), VitePWA({ registerType: 'autoUpdate' })],
+});
 ```
 
 This minimal configuration allows your application to generate the Web Application Manifest and Service Worker on build.

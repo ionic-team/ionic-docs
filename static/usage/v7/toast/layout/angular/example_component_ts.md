@@ -9,7 +9,7 @@ export class ExampleComponent {
   toastButtons = [
     {
       text: 'Action With Long Text',
-    }
+    },
   ];
 }
 ```

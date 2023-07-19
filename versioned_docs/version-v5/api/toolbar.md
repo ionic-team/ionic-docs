@@ -9,6 +9,13 @@ demoSourceUrl: 'https://github.com/ionic-team/ionic-docs/tree/main/static/demos/
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
+import Props from '@ionic-internal/component-api/v5/toolbar/props.md';
+import Events from '@ionic-internal/component-api/v5/toolbar/events.md';
+import Methods from '@ionic-internal/component-api/v5/toolbar/methods.md';
+import Parts from '@ionic-internal/component-api/v5/toolbar/parts.md';
+import CustomProps from '@ionic-internal/component-api/v5/toolbar/custom-props.md';
+import Slots from '@ionic-internal/component-api/v5/toolbar/slots.md';
+
 # ion-toolbar
 
 Toolbars are positioned above or below content. When a toolbar is placed in an `<ion-header>` it will appear fixed at the top of the content, and when it is in an `<ion-footer>` it will appear fixed at the bottom. Fullscreen content will scroll behind a toolbar in a header or footer. When placed within an `<ion-content>`, toolbars will scroll with the content.
@@ -877,46 +884,24 @@ export class ToolbarExample {
 
 ## Properties
 
-### color
+<Props />
 
-|                 |                                                                                                                                                                                                                                                                                  |
-| --------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Description** | The color to use from your application's color palette.<br />Default options are: `"primary"`, `"secondary"`, `"tertiary"`, `"success"`, `"warning"`, `"danger"`, `"light"`, `"medium"`, and `"dark"`.<br />For more information on colors, see [theming](../theming/basics.md). |
-| **Attribute**   | `color`                                                                                                                                                                                                                                                                          |
-| **Type**        | `string \| undefined`                                                                                                                                                                                                                                                            |
-| **Default**     | `undefined`                                                                                                                                                                                                                                                                      |
+## Events
 
-### mode
+<Events />
 
-|                 |                                                   |
-| --------------- | ------------------------------------------------- |
-| **Description** | The mode determines which platform styles to use. |
-| **Attribute**   | `mode`                                            |
-| **Type**        | `"ios" \| "md"`                                   |
-| **Default**     | `undefined`                                       |
+## Methods
+
+<Methods />
+
+## CSS Shadow Parts
+
+<Parts />
 
 ## CSS Custom Properties
 
-| Name               | Description                                                                                                |
-| ------------------ | ---------------------------------------------------------------------------------------------------------- |
-| `--background`     | Background of the toolbar                                                                                  |
-| `--border-color`   | Color of the toolbar border                                                                                |
-| `--border-style`   | Style of the toolbar border                                                                                |
-| `--border-width`   | Width of the toolbar border                                                                                |
-| `--color`          | Color of the toolbar text                                                                                  |
-| `--min-height`     | Minimum height of the toolbar                                                                              |
-| `--opacity`        | Opacity of the toolbar background                                                                          |
-| `--padding-bottom` | Bottom padding of the toolbar                                                                              |
-| `--padding-end`    | Right padding if direction is left-to-right, and left padding if direction is right-to-left of the toolbar |
-| `--padding-start`  | Left padding if direction is left-to-right, and right padding if direction is right-to-left of the toolbar |
-| `--padding-top`    | Top padding of the toolbar                                                                                 |
+<CustomProps />
 
 ## Slots
 
-| Name        | Description                                                                                              |
-| ----------- | -------------------------------------------------------------------------------------------------------- |
-| ``          | Content is placed between the named slots if provided without a slot.                                    |
-| `end`       | Content is placed to the right of the toolbar text in LTR, and to the left in RTL.                       |
-| `primary`   | Content is placed to the right of the toolbar text in `ios` mode, and to the far right in `md` mode.     |
-| `secondary` | Content is placed to the left of the toolbar text in `ios` mode, and directly to the right in `md` mode. |
-| `start`     | Content is placed to the left of the toolbar text in LTR, and to the right in RTL.                       |
+<Slots />

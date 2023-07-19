@@ -1,6 +1,17 @@
 ```tsx
 import React, { useState } from 'react';
-import { IonButton, IonButtons, IonCheckbox, IonContent, IonHeader, IonItem, IonList, IonTitle, IonSearchbar, IonToolbar } from '@ionic/react';
+import {
+  IonButton,
+  IonButtons,
+  IonCheckbox,
+  IonContent,
+  IonHeader,
+  IonItem,
+  IonList,
+  IonTitle,
+  IonSearchbar,
+  IonToolbar,
+} from '@ionic/react';
 import type { CheckboxCustomEvent } from '@ionic/react';
 import type { Item } from './types';
 
@@ -15,29 +26,29 @@ interface TypeaheadProps {
 function AppTypeahead(props: TypeaheadProps) {
   const [filteredItems, setFilteredItems] = useState<Item[]>([...props.items]);
   const [workingSelectedValues, setWorkingSelectedValues] = useState<string[]>([...props.selectedItems]);
-  
+
   const isChecked = (value: string) => {
-    return workingSelectedValues.find(item => item === value) !== undefined;
-  }
-  
+    return workingSelectedValues.find((item) => item === value) !== undefined;
+  };
+
   const cancelChanges = () => {
     const { onSelectionCancel } = props;
     if (onSelectionCancel !== undefined) {
       onSelectionCancel();
     }
-  }
-  
+  };
+
   const confirmChanges = () => {
     const { onSelectionChange } = props;
     if (onSelectionChange !== undefined) {
       onSelectionChange(workingSelectedValues);
     }
-  }
-  
+  };
+
   const searchbarInput = (ev: any) => {
     filterList(ev.target.value);
-  }
-  
+  };
+
   /**
    * Update the rendered view with
    * the provided search query. If no
@@ -58,22 +69,24 @@ function AppTypeahead(props: TypeaheadProps) {
        * contain the search query as a substring.
        */
       const normalizedQuery = searchQuery.toLowerCase();
-      setFilteredItems(props.items.filter(item => {
-        return item.text.toLowerCase().includes(normalizedQuery);
-      }));
+      setFilteredItems(
+        props.items.filter((item) => {
+          return item.text.toLowerCase().includes(normalizedQuery);
+        })
+      );
     }
-  }
-  
+  };
+
   const checkboxChange = (ev: CheckboxCustomEvent) => {
     const { checked, value } = ev.detail;
-    
+
     if (checked) {
       setWorkingSelectedValues([...workingSelectedValues, value]);
     } else {
-      setWorkingSelectedValues(workingSelectedValues.filter(item => item !== value));
+      setWorkingSelectedValues(workingSelectedValues.filter((item) => item !== value));
     }
-  }
-  
+  };
+
   return (
     <>
       <IonHeader>
@@ -90,16 +103,14 @@ function AppTypeahead(props: TypeaheadProps) {
           <IonSearchbar onIonInput={searchbarInput}></IonSearchbar>
         </IonToolbar>
       </IonHeader>
-      
+
       <IonContent color="light" class="ion-padding">
         <IonList id="modal-list" inset={true}>
-          {filteredItems.map(item => (
+          {filteredItems.map((item) => (
             <IonItem key={item.value}>
-              <IonCheckbox
-                value={item.value}
-                checked={isChecked(item.value)}
-                onIonChange={checkboxChange}
-              >{item.text}</IonCheckbox>
+              <IonCheckbox value={item.value} checked={isChecked(item.value)} onIonChange={checkboxChange}>
+                {item.text}
+              </IonCheckbox>
             </IonItem>
           ))}
         </IonList>

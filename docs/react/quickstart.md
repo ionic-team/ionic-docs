@@ -235,7 +235,7 @@ import { add } from ‘ionicons/icons’;
 
 メインの `IonFab` では、縦方向と横方向の属性（vertical/horizontal）で表示位置を設定しています。また、slot属性を使用して、レンダー位置を"fixed"に設定します。これにより、 `IonContent` 内のスクロール可能なコンテンツの外側でレンダリングするよう `IonFab` に指示します。
 
-Now let's wire up a click handler to this. What we want to do is when we click the button, we'll navigate to a new page (which we'll create in a moment). To do this, we'll need to get access to React Router's `useHistory` hook API. Thankfully the `useHistory` hook makes this easy since it can be imported from the react-router package. 
+Now let's wire up a click handler to this. What we want to do is when we click the button, we'll navigate to a new page (which we'll create in a moment). To do this, we'll need to get access to React Router's `useHistory` hook API. Thankfully the `useHistory` hook makes this easy since it can be imported from the react-router package.
 
 ```tsx
 import { add } from 'ionicons/icons';

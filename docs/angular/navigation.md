@@ -119,21 +119,17 @@ export class LoginComponent {
 
 どちらのオプションも同様のナビゲーションメカニズムを提供し、異なるユースケースで利用することができます。
 
-:::note
-相対URLを使用したナビゲーションに関するメモ：現在、複数のナビゲーションスタックをサポートするために、相対URLはサポートされていません。
-:::
+### LocationStrategy.historyGoを使ったナビゲーション
 
-### Navigating using LocationStrategy.historyGo
+Angular Routerには [LocationStrategy.historyGo](https://angular.io/api/common/LocationStrategy#historyGo) メソッドがあり、アプリケーションの履歴を進んだり戻ったりすることができます。例を見てみましょう。
 
-Angular Router has a [LocationStrategy.historyGo](https://angular.io/api/common/LocationStrategy#historyGo) method that allows developers to move forward or backward through the application history. Let's take a look at an example.
+次のようなアプリケーションの履歴があるとします：
 
-Say you have the following application history:
+`/ページA` --> `/ページB` --> `/ページC`。
 
-`/pageA` --> `/pageB` --> `/pageC`
+もし `/pageC` で `LocationStrategy.historyGo(-2)` を呼び出すと、 `/pageA` に戻る。その後、 `LocationStrategy.historyGo(2)` を呼び出すと、 `/pageC` に戻る。
 
-If you were to call `LocationStrategy.historyGo(-2)` on `/pageC`, you would be brought back to `/pageA`. If you then called `LocationStrategy.historyGo(2)`, you would be brought to `/pageC`.
-
-An key characteristic of `LocationStrategy.historyGo()` is that it expects your application history to be linear. This means that `LocationStrategy.historyGo()` should not be used in applications that make use of non-linear routing. See [Linear Routing versus Non-Linear Routing](#linear-routing-versus-non-linear-routing) for more information.
+`LocationStrategy.historyGo()` の主な特徴は、アプリケーションの履歴が線形であることを想定していることです。つまり、`LocationStrategy.historyGo()` は非線形のルーティングを使用するアプリケーションでは使用すべきではありません。詳しくは [リニアルーティング対非リニアルーティング](#linear-routing-versus-non-linear-routing) を参照してください。
 
 ## Lazy loading routes
 

@@ -51,12 +51,14 @@ This plugin can display your image in full screen with the ability to pan, zoom,
 >
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
-      $ npm install com-sarriaroman-photoviewer {'\n'}$ npm install @awesome-cordova-plugins/photo-viewer {'\n'}$ ionic cap sync
+      $ npm install com-sarriaroman-photoviewer {'\n'}$ npm install @awesome-cordova-plugins/photo-viewer {'\n'}$ ionic
+      cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
-      $ ionic cordova plugin add com-sarriaroman-photoviewer {'\n'}$ npm install @awesome-cordova-plugins/photo-viewer {'\n'}
+      $ ionic cordova plugin add com-sarriaroman-photoviewer {'\n'}$ npm install @awesome-cordova-plugins/photo-viewer{' '}
+      {'\n'}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">

@@ -64,6 +64,7 @@ Remember, with the `--external` option, others on your Wi-Fi network will be abl
 Live reload will use HTTP by default which will cause web APIs that require a secure context (like [web crypto](https://developer.mozilla.org/en-US/docs/Web/API/Web_Crypto_API)) to fail. To establish a secure context you can use the `--ssl` argument to use HTTPS.
 
 For example, with an Angular application you can run the following to pass a certificate and private key and serve your app with HTTPS:
+
 ```shell
 ionic capacitor run android --livereload --external --ssl -- --ssl-cert='server.crt' --ssl-key='server.key'
 ```

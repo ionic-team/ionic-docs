@@ -52,15 +52,14 @@ Full documentation can be found here: https://smartlook.github.io/docs/sdk/ionic
 >
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
-      $ npm install https://github.com/smartlook/cordova-smartlook.git {'\n'}$ npm install @awesome-cordova-plugins/smartlook {
-        '\n'
-      }$ ionic cap sync
+      $ npm install https://github.com/smartlook/cordova-smartlook.git {'\n'}$ npm install
+      @awesome-cordova-plugins/smartlook {'\n'}$ ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
-      $ ionic cordova plugin add https://github.com/smartlook/cordova-smartlook.git {'\n'}$ npm install @awesome-cordova-plugins/smartlook{' '}
-      {'\n'}
+      $ ionic cordova plugin add https://github.com/smartlook/cordova-smartlook.git {'\n'}$ npm install
+      @awesome-cordova-plugins/smartlook {'\n'}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">

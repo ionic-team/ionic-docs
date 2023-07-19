@@ -83,7 +83,7 @@ import CanDismissFunctionExample from '@site/static/usage/v7/modal/can-dismiss/f
 
 ### スワイプで閉じないようにする
 
-開発者は、ユーザーがスワイプしてモーダルを閉じるのを防ぎたい場合があります。これは `canDismiss` のコールバック関数を設定し、`role` が `gesture` でないことをチェックすることで実現できます。
+開発者は、ユーザがスワイプしてカードやシートのモーダルを閉じないようにしたい場合があります。これは `canDismiss` にコールバック関数を設定し、`role` が `gesture` でないかチェックすることで実現できます。
 
 import CanDismissPreventSwipeToCloseExample from '@site/static/usage/v7/modal/can-dismiss/prevent-swipe-to-close/index.md';
 

@@ -9,6 +9,13 @@ demoSourceUrl: 'https://github.com/ionic-team/ionic-docs/tree/main/static/demos/
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
+import Props from '@ionic-internal/component-api/v5/progress-bar/props.md';
+import Events from '@ionic-internal/component-api/v5/progress-bar/events.md';
+import Methods from '@ionic-internal/component-api/v5/progress-bar/methods.md';
+import Parts from '@ionic-internal/component-api/v5/progress-bar/parts.md';
+import CustomProps from '@ionic-internal/component-api/v5/progress-bar/custom-props.md';
+import Slots from '@ionic-internal/component-api/v5/progress-bar/slots.md';
+
 # ion-progress-bar
 
 Progress bars inform users about the status of ongoing processes, such as loading an app, submitting a form, or saving updates. There are two types of progress bars: `determinate` and `indeterminate`.
@@ -175,73 +182,24 @@ export class ProgressBarExample {
 
 ## Properties
 
-### buffer
+<Props />
 
-|                 |                                                                                                                     |
-| --------------- | ------------------------------------------------------------------------------------------------------------------- |
-| **Description** | If the buffer and value are smaller than 1, the buffer circles will show.<br />The buffer should be between [0, 1]. |
-| **Attribute**   | `buffer`                                                                                                            |
-| **Type**        | `number`                                                                                                            |
-| **Default**     | `1`                                                                                                                 |
+## Events
 
-### color
+<Events />
 
-|                 |                                                                                                                                                                                                                                                                                  |
-| --------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Description** | The color to use from your application's color palette.<br />Default options are: `"primary"`, `"secondary"`, `"tertiary"`, `"success"`, `"warning"`, `"danger"`, `"light"`, `"medium"`, and `"dark"`.<br />For more information on colors, see [theming](../theming/basics.md). |
-| **Attribute**   | `color`                                                                                                                                                                                                                                                                          |
-| **Type**        | `string \| undefined`                                                                                                                                                                                                                                                            |
-| **Default**     | `undefined`                                                                                                                                                                                                                                                                      |
+## Methods
 
-### mode
-
-|                 |                                                   |
-| --------------- | ------------------------------------------------- |
-| **Description** | The mode determines which platform styles to use. |
-| **Attribute**   | `mode`                                            |
-| **Type**        | `"ios" \| "md"`                                   |
-| **Default**     | `undefined`                                       |
-
-### reversed
-
-|                 |                                              |
-| --------------- | -------------------------------------------- |
-| **Description** | If true, reverse the progress bar direction. |
-| **Attribute**   | `reversed`                                   |
-| **Type**        | `boolean`                                    |
-| **Default**     | `false`                                      |
-
-### type
-
-|                 |                                                                                                                                                                                                  |
-| --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **Description** | The state of the progress bar, based on if the time the process takes is known or not.<br />Default options are: `"determinate"` (no animation), `"indeterminate"` (animate from left to right). |
-| **Attribute**   | `type`                                                                                                                                                                                           |
-| **Type**        | `"determinate" \| "indeterminate"`                                                                                                                                                               |
-| **Default**     | `'determinate'`                                                                                                                                                                                  |
-
-### value
-
-|                 |                                                                                                                                                  |
-| --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **Description** | The value determines how much of the active bar should display when the<br />`type` is `"determinate"`.<br />The value should be between [0, 1]. |
-| **Attribute**   | `value`                                                                                                                                          |
-| **Type**        | `number`                                                                                                                                         |
-| **Default**     | `0`                                                                                                                                              |
+<Methods />
 
 ## CSS Shadow Parts
 
-| Name                         | Description                                                                                                                              |
-| ---------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
-| `progress`                   | The progress bar that shows the current value when `type` is `"determinate"` and slides back and forth when `type` is `"indeterminate"`. |
-| `stream`                     | The animated circles that appear while buffering. This only shows when `buffer` is set and `type` is `"determinate"`.                    |
-| `track`                      | The track bar behind the progress bar. If the `buffer` property is set and `type` is `"determinate"` the track will be the               |
-| width of the `buffer` value. |
+<Parts />
 
 ## CSS Custom Properties
 
-| Name                    | Description                                                            |
-| ----------------------- | ---------------------------------------------------------------------- |
-| `--background`          | Background of the progress track, or the buffer bar if `buffer` is set |
-| `--buffer-background`   | DEPRECATED, use `--background` instead                                 |
-| `--progress-background` | Background of the progress bar representing the current value          |
+<CustomProps />
+
+## Slots
+
+<Slots />

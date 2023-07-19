@@ -24,7 +24,41 @@ selectは、子要素 `<ion-select-option>` とともに使用する必要があ
 
 `value` が `<ion-select>` にセットされている場合、オプションはその値に基づいて選択済みになります。
 
-## 単一選択
+## Labels
+
+Labels should be used to describe the select. They can be used visually, and they will also be read out by screen readers when the user is focused on the select. This makes it easy for the user to understand the intent of the select. Select has several ways to assign a label:
+
+Select has several options for supplying a label for the component:
+
+- `label` property: used for plaintext labels
+- `label` slot: used for custom HTML labels
+- `aria-label`: used to provide a label for screen readers but adds no visible label
+
+### Label Placement
+
+Labels will take up the width of their content by default. Developers can use the `labelPlacement` property to control how the label is placed relative to the control. While the `label` property is used here, `labelPlacement` can also be used with the `label` slot.
+
+import LabelPlacement from '@site/static/usage/v7/select/label-placement/index.md';
+
+<LabelPlacement />
+
+### Label Slot
+
+While plaintext labels should be passed in via the `label` property, if custom HTML is needed, it can be passed through the `label` slot instead.
+
+import LabelSlot from '@site/static/usage/v7/select/label-slot/index.md';
+
+<LabelSlot />
+
+### No Visible Label
+
+If no visible label is needed, developers should still supply an `aria-label` so the select is accessible to screen readers.
+
+import NoVisibleLabel from '@site/static/usage/v7/select/no-visible-label/index.md';
+
+<NoVisibleLabel />
+
+## Single Selection
 
 デフォルトでは、selectを使用すると、ユーザは1つのOptionだけを選択できます。Alertのインターフェースでは、Optionのリストがradio button形式で表示されます。action sheetインタフェースは、1つの値選択でのみ使用できます。selectコンポーネントの値は、選択したオプションの値の値を受け取ります。
 
@@ -83,6 +117,7 @@ import UsingCompareWithExample from '@site/static/usage/v7/select/objects-as-val
 import ObjectValuesAndMultipleSelectionExample from '@site/static/usage/v7/select/objects-as-values/multiple-selection/index.md';
 
 <ObjectValuesAndMultipleSelectionExample />
+<<<<<<< HEAD
   
 
 ## Label Placement
@@ -92,6 +127,8 @@ Labelsは、デフォルトでそのコンテンツの幅を占めます。 開�
 import LabelPlacement from '@site/static/usage/v7/select/label-placement/index.md';
 
 <LabelPlacement />
+=======
+>>>>>>> d57ab7ec755642f79e3d277c81f0306469ee806f
 
 ## Justification
   
@@ -156,6 +193,24 @@ import StylingSelectExample from '@site/static/usage/v7/select/customization/sty
 - [ポップオーバーのカスタマイズ](popover.md#customization)
 
 ただし、Selectオプションでは、スタイリングを容易にするためにクラスを設定し、オーバーレイオプションにクラスを渡す機能があります。オプションのカスタマイズの使用例については、[Selectオプションのドキュメント](select-option.md)を参照してください。
+
+### Custom Toggle Icons
+
+The icon that displays next to the select text can be set to any [Ionicon](https://ionic.io/ionicons) using the `toggleIcon` and/or `expandedIcon` properties.
+
+import CustomToggleIconsExample from '@site/static/usage/v7/select/customization/custom-toggle-icons/index.md';
+
+<CustomToggleIconsExample />
+
+### Icon Flip Behavior
+
+By default, when the select is open, the toggle icon will automatically rotate on `md` mode and remain static on `ios` mode. This behavior can be customized using CSS.
+
+The below example also uses a [custom `toggleIcon`](#custom-toggle-icons) to better demonstrate the flip behavior on `ios`, since the default icon is vertically symmetrical.
+
+import IconFlipBehaviorExample from '@site/static/usage/v7/select/customization/icon-flip-behavior/index.md';
+
+<IconFlipBehaviorExample />
 
 ## Typeahead Component
 

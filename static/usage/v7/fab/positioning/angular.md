@@ -38,7 +38,7 @@
       </ion-fab-button>
     </ion-fab-list>
   </ion-fab>
-      
+
   <ion-fab slot="fixed" vertical="bottom" horizontal="end">
     <ion-fab-button>
       <ion-icon name="chevron-up-circle"></ion-icon>

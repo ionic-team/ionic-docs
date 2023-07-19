@@ -56,13 +56,14 @@ Requires Cordova plugin: `cordova-plugin-device-orientation`. For more info, ple
 >
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
-      $ npm install cordova-plugin-device-orientation {'\n'}$ npm install @awesome-cordova-plugins/device-orientation {'\n'}$ ionic
-      cap sync
+      $ npm install cordova-plugin-device-orientation {'\n'}$ npm install @awesome-cordova-plugins/device-orientation{' '}
+      {'\n'}$ ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
-      $ ionic cordova plugin add cordova-plugin-device-orientation {'\n'}$ npm install @awesome-cordova-plugins/device-orientation {'\n'}
+      $ ionic cordova plugin add cordova-plugin-device-orientation {'\n'}$ npm install
+      @awesome-cordova-plugins/device-orientation {'\n'}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">

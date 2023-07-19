@@ -16,7 +16,18 @@
   export default defineComponent({
     components: { IonItem, IonList, IonSearchbar },
     setup() {
-      const data = ['Amsterdam', 'Buenos Aires', 'Cairo', 'Geneva', 'Hong Kong', 'Istanbul', 'London', 'Madrid', 'New York', 'Panama City'];
+      const data = [
+        'Amsterdam',
+        'Buenos Aires',
+        'Cairo',
+        'Geneva',
+        'Hong Kong',
+        'Istanbul',
+        'London',
+        'Madrid',
+        'New York',
+        'Panama City',
+      ];
       const results = ref(data);
 
       return { data, results };
@@ -24,7 +35,7 @@
     methods: {
       handleInput(event) {
         const query = event.target.value.toLowerCase();
-        this.results = this.data.filter(d => d.toLowerCase().indexOf(query) > -1);
+        this.results = this.data.filter((d) => d.toLowerCase().indexOf(query) > -1);
       },
     },
   });

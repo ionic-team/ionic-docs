@@ -51,12 +51,14 @@ Gets the Google accounts associated with the Android device
 >
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
-      $ npm install cordova-device-accounts-v2 {'\n'}$ npm install @awesome-cordova-plugins/device-accounts {'\n'}$ ionic cap sync
+      $ npm install cordova-device-accounts-v2 {'\n'}$ npm install @awesome-cordova-plugins/device-accounts {'\n'}$
+      ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
-      $ ionic cordova plugin add cordova-device-accounts-v2 {'\n'}$ npm install @awesome-cordova-plugins/device-accounts {'\n'}
+      $ ionic cordova plugin add cordova-device-accounts-v2 {'\n'}$ npm install @awesome-cordova-plugins/device-accounts{' '}
+      {'\n'}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">

@@ -14,8 +14,8 @@ export default function DeveloperExperts() {
         <a href="https://ionicacademy.com" target="_blank" rel="noopener noreferrer">
           Ionic Academy →
         </a>
-        <a href="https://www.joshmorony.com/elite" target="_blank" rel="noopener noreferrer">
-          Elite Ionic →
+        <a href="https://ionicstart.com" target="_blank" rel="noopener noreferrer">
+          Ionic Start →
         </a>
         <a href="https://ionicthemes.com" target="_blank" rel="noopener noreferrer">
           Ionic Themes →
