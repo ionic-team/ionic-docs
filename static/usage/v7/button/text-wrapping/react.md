@@ -7,8 +7,7 @@ function Example() {
     <>
       <IonButton>Default</IonButton>
       <IonButton className="ion-text-wrap" style={{ maxWidth: '400px' }}>
-        This is the button that never ends it just goes on and on and on and on
-        and on and on and on and on my friends
+        This is the button that never ends it just goes on and on and on and on and on and on and on and on my friends
       </IonButton>
     </>
   );
