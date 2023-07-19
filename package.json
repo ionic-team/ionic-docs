@@ -78,13 +78,9 @@
     "@types/react": "^17.0.37",
     "deepl": "^1.0.13",
     "html-loader": "^3.1.0",
-<<<<<<< HEAD
-    "prettier": "^2.5.0",
-    "ts-node": "^10.4.0",
-=======
     "hygen": "^6.2.11",
     "prettier": "^2.8.8",
->>>>>>> d57ab7ec755642f79e3d277c81f0306469ee806f
+    "ts-node": "^10.4.0",
     "typescript": "^4.5.2"
   },
   "prettier": "@ionic/prettier-config"
