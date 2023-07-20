@@ -1,3 +1,0 @@
-# テスト
-
-Coming Soon!
