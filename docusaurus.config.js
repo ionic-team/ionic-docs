@@ -71,8 +71,8 @@ module.exports = {
       },
     ],
   ],
+  /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
   themeConfig: {
-    /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     metadata: [
       { name: 'og:image', content: 'https://ionicframework.com/docs/img/meta/open-graph.png' },
       { name: 'twitter:image', content: 'https://ionicframework.com/docs/img/meta/open-graph.png' },
