@@ -85,6 +85,10 @@ html[data-theme='dark'] {
 
         svg {
           margin-inline-start: 0.125rem;
+
+          &[class^='iconExternalLink'] {
+            display: none;
+          }
         }
       }
     }
