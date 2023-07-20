@@ -31,11 +31,7 @@ import Basic from '@site/static/usage/v7/menu/basic/index.md';
 
 ## Menu Toggle
 
-<<<<<<< HEAD
-[ion-menu-toggle](./menu-toggle) コンポーネントを使用して、メニューを開いたり閉じたりするカスタムボタンを作成することができます。
-=======
-The [menu toggle](./menu-toggle) component can be used to create custom button that can open or close the menu.
->>>>>>> d57ab7ec755642f79e3d277c81f0306469ee806f
+[menu toggle](./menu-toggle) コンポーネントを使用して、メニューを開いたり閉じたりするカスタムボタンを作成することができます。
 
 import MenuToggle from '@site/static/usage/v7/menu/toggle/index.md';
 
@@ -50,9 +46,6 @@ import MenuType from '@site/static/usage/v7/menu/type/index.md';
 
 <MenuType />
 
-<<<<<<< HEAD
-## テーマ
-=======
 
 ## Menu Sides
 
@@ -75,7 +68,6 @@ import Multiple from '@site/static/usage/v7/menu/multiple/index.md';
 
 
 ## Theming
->>>>>>> d57ab7ec755642f79e3d277c81f0306469ee806f
 
 ### CSS Shadow Parts
 

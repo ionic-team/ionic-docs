@@ -117,18 +117,6 @@ import UsingCompareWithExample from '@site/static/usage/v7/select/objects-as-val
 import ObjectValuesAndMultipleSelectionExample from '@site/static/usage/v7/select/objects-as-values/multiple-selection/index.md';
 
 <ObjectValuesAndMultipleSelectionExample />
-<<<<<<< HEAD
-  
-
-## Label Placement
-
-Labelsは、デフォルトでそのコンテンツの幅を占めます。 開発者は `labelPlacement` プロパティを使用して、ラベルがどのように配置されるかを制御することができます。
-
-import LabelPlacement from '@site/static/usage/v7/select/label-placement/index.md';
-
-<LabelPlacement />
-=======
->>>>>>> d57ab7ec755642f79e3d277c81f0306469ee806f
 
 ## Justification
   
