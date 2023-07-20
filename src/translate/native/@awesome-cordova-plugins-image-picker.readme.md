@@ -1,3 +1,4 @@
+
 Cordova Plugin For Multiple Image Selection
 
 Requires Cordova plugin: `cordova-plugin-image-picker`.

@@ -134,7 +134,7 @@
           "mutable": true,
           "attr": "value",
           "reflectToAttr": false,
-          "docs": "The value of the accordion group. This controls which\naccordions are expanded.\nThis should be an array of strings only when `multiple=\"true\"`",
+          "docs": "アコーディオングループの値です。これは、どのアコーディオンを展開するかを制御します。これは、`multiple=\"true\"`のときだけ、文字列の配列でなければなりません。",
           "docsTags": [],
           "values": [
             {
@@ -162,7 +162,7 @@
           "bubbles": true,
           "cancelable": true,
           "composed": true,
-          "docs": "Emitted when the value property has changed\nas a result of a user action such as a click.\nThis event will not emit when programmatically setting\nthe value property.",
+          "docs": "クリックなどのユーザー操作により、valueプロパティが変化したときに発生します。プログラムによってvalueプロパティを設定した場合は、このイベントは発生しません。",
           "docsTags": []
         }
       ],
@@ -291,7 +291,7 @@
           "mutable": false,
           "attr": "toggle-icon-slot",
           "reflectToAttr": false,
-          "docs": "The slot inside of `ion-item` to\nplace the toggle icon. Defaults to `\"end\"`.",
+          "docs": "トグルアイコンを配置する `ion-item` の内側のスロット。デフォルトは `\"end\"` です。",
           "docsTags": [],
           "default": "'end'",
           "values": [
@@ -512,7 +512,7 @@
           "mutable": false,
           "attr": "is-open",
           "reflectToAttr": false,
-          "docs": "If `true`, the action sheet will open. If `false`, the action sheet will close.\nUse this if you need finer grained control over presentation, otherwise\njust use the actionSheetController or the `trigger` property.\nNote: `isOpen` will not automatically be set back to `false` when\nthe action sheet dismisses. You will need to do that in your code.",
+          "docs": "`true`の場合、アクションシートは開かれます。`false`の場合、アクションシートは閉じます。プレゼンテーションの細かな制御が必要な場合はこれを使用し、そうでない場合は actionSheetController または `trigger` プロパティを使用します。注意: アクションシートが終了しても、`isOpen`は自動的に`false`に戻されません。あなたのコードでそれを行う必要があります。",
           "docsTags": [],
           "default": "false",
           "values": [
@@ -621,7 +621,7 @@
           "mutable": false,
           "attr": "trigger",
           "reflectToAttr": false,
-          "docs": "An ID corresponding to the trigger element that\ncauses the action sheet to open when clicked.",
+          "docs": "クリックするとアクションシートが開くトリガー要素に対応するID。",
           "docsTags": [],
           "values": [
             {
@@ -697,7 +697,7 @@
           "bubbles": true,
           "cancelable": true,
           "composed": true,
-          "docs": "Emitted after the action sheet has dismissed.\nShorthand for ionActionSheetDidDismiss.",
+          "docs": "アクションシートが解散した後に発行されます。ionActionSheetDidDismissの略記。",
           "docsTags": []
         },
         {
@@ -706,7 +706,7 @@
           "bubbles": true,
           "cancelable": true,
           "composed": true,
-          "docs": "Emitted after the action sheet has presented.\nShorthand for ionActionSheetWillDismiss.",
+          "docs": "アクションシートが提示された後に発行されます。ionActionSheetWillDismissの略語。",
           "docsTags": []
         },
         {
@@ -715,7 +715,7 @@
           "bubbles": true,
           "cancelable": true,
           "composed": true,
-          "docs": "Emitted after the action sheet has dismissed.",
+          "docs": "アクションシートが解散した後に発行されます。",
           "docsTags": []
         },
         {
@@ -724,7 +724,7 @@
           "bubbles": true,
           "cancelable": true,
           "composed": true,
-          "docs": "Emitted after the action sheet has presented.",
+          "docs": "アクションシートが提示された後に発行されます。",
           "docsTags": []
         },
         {
@@ -733,7 +733,7 @@
           "bubbles": true,
           "cancelable": true,
           "composed": true,
-          "docs": "Emitted before the action sheet has dismissed.",
+          "docs": "アクションシートが解散する前に発行されます。",
           "docsTags": []
         },
         {
@@ -742,7 +742,7 @@
           "bubbles": true,
           "cancelable": true,
           "composed": true,
-          "docs": "Emitted before the action sheet has presented.",
+          "docs": "アクションシートが提示される前に発行されます。",
           "docsTags": []
         },
         {
@@ -751,7 +751,7 @@
           "bubbles": true,
           "cancelable": true,
           "composed": true,
-          "docs": "Emitted before the action sheet has dismissed.\nShorthand for ionActionSheetWillDismiss.",
+          "docs": "アクションシートが解散する前に発行されます。ionActionSheetWillDismissの略記。",
           "docsTags": []
         },
         {
@@ -760,7 +760,7 @@
           "bubbles": true,
           "cancelable": true,
           "composed": true,
-          "docs": "Emitted before the action sheet has presented.\nShorthand for ionActionSheetWillPresent.",
+          "docs": "アクションシートが提示される前に発行されます。ionActionSheetWillPresentの略記。",
           "docsTags": []
         }
       ],
@@ -1068,7 +1068,7 @@
           "mutable": false,
           "attr": "is-open",
           "reflectToAttr": false,
-          "docs": "If `true`, the alert will open. If `false`, the alert will close.\nUse this if you need finer grained control over presentation, otherwise\njust use the alertController or the `trigger` property.\nNote: `isOpen` will not automatically be set back to `false` when\nthe alert dismisses. You will need to do that in your code.",
+          "docs": "`true`の場合、アラートは開く。もし `false` ならば、アラートは閉じます。alertControllerや`trigger`プロパティを使用してください。注意: アラートが終了しても `isOpen` は自動的に `false` に戻りません。あなたのコードでそれを行う必要があります。",
           "docsTags": [],
           "default": "false",
           "values": [
@@ -1120,7 +1120,7 @@
           "mutable": false,
           "attr": "message",
           "reflectToAttr": false,
-          "docs": "The main message to be displayed in the alert.\n`message` can accept either plaintext or HTML as a string.\nTo display characters normally reserved for HTML, they\nmust be escaped. For example `<Ionic>` would become\n`&lt;Ionic&gt;`\n\nFor more information: [Security Documentation](https://ionicframework.com/docs/faq/security)\n\nThis property accepts custom HTML as a string.\nContent is parsed as plaintext by default.\n`innerHTMLTemplatesEnabled` must be set to `true` in the Ionic config\nbefore custom HTML can be used.",
+          "docs": "アラートに表示されるメインメッセージ。`message`には、文字列としてプレーンテキストまたはHTMLのいずれかを指定することができます。通常HTML用に予約されている文字を表示するには、エスケープする必要があります。例えば、`<Ionic>`は `&lt;Ionic&gt;` になります：[セキュリティ・ドキュメント](https://ionicframework.com/docs/faq/security) このプロパティは、カスタムHTMLを文字列として受け付けます。デフォルトでは、コンテンツはプレーンテキストとしてパースされます。カスタムHTMLを使用するには、Ionicの設定で `innerHTMLTemplatesEnabled` を `true` に設定する必要があります。",
           "docsTags": [],
           "values": [
             {
@@ -1199,7 +1199,7 @@
           "mutable": false,
           "attr": "trigger",
           "reflectToAttr": false,
-          "docs": "An ID corresponding to the trigger element that\ncauses the alert to open when clicked.",
+          "docs": "クリックされるとアラートが開くトリガー要素に対応するID。",
           "docsTags": [],
           "values": [
             {
@@ -1275,7 +1275,7 @@
           "bubbles": true,
           "cancelable": true,
           "composed": true,
-          "docs": "Emitted after the alert has dismissed.\nShorthand for ionAlertDidDismiss.",
+          "docs": "アラートが解除された後に発行されます。ionAlertDidDismissの略記。",
           "docsTags": []
         },
         {
@@ -1284,7 +1284,7 @@
           "bubbles": true,
           "cancelable": true,
           "composed": true,
-          "docs": "Emitted after the alert has presented.\nShorthand for ionAlertWillDismiss.",
+          "docs": "アラートが提示された後に発行されます。ionAlertWillDismissの略記。",
           "docsTags": []
         },
         {
@@ -1329,7 +1329,7 @@
           "bubbles": true,
           "cancelable": true,
           "composed": true,
-          "docs": "Emitted before the alert has dismissed.\nShorthand for ionAlertWillDismiss.",
+          "docs": "アラートが解除される前に発行されます。ionAlertWillDismissの略記。",
           "docsTags": []
         },
         {
@@ -1338,7 +1338,7 @@
           "bubbles": true,
           "cancelable": true,
           "composed": true,
-          "docs": "Emitted before the alert has presented.\nShorthand for ionAlertWillPresent.",
+          "docs": "アラートが提示される前に発行されます。ionAlertWillPresentの略記。",
           "docsTags": []
         }
       ],
@@ -2618,7 +2618,7 @@
           "bubbles": true,
           "cancelable": true,
           "composed": true,
-          "docs": "折りたたみインジケータがクリックされたときに発します。",
+          "docs": "折りたたみインジケータがクリックされたときに発行されます。",
           "docsTags": []
         }
       ],
@@ -4106,7 +4106,7 @@
           "mutable": false,
           "attr": "justify",
           "reflectToAttr": false,
-          "docs": "How to pack the label and checkbox within a line.\n`\"start\"`: The label and checkbox will appear on the left in LTR and\non the right in RTL.\n`\"end\"`: The label and checkbox will appear on the right in LTR and\non the left in RTL.\n`\"space-between\"`: The label and checkbox will appear on opposite\nends of the line with space between the two elements.",
+          "docs": "ラベルとチェックボックスを1行にまとめる方法。`\"start\"`：ラベルとチェックボックスは、LTRでは左に、RTLでは右に表示されます。`\"end\"`：ラベルとチェックボックスは、LTRでは右に、RTLでは左に表示されます。`\"space-between\"`：ラベルとチェックボックスは、2つの要素の間にスペースがある状態で、行の反対側の端に表示されます。",
           "docsTags": [],
           "default": "'space-between'",
           "values": [
@@ -4132,7 +4132,7 @@
           "mutable": false,
           "attr": "label-placement",
           "reflectToAttr": false,
-          "docs": "Where to place the label relative to the checkbox.\n`\"start\"`: The label will appear to the left of the checkbox in LTR and to the right in RTL.\n`\"end\"`: The label will appear to the right of the checkbox in LTR and to the left in RTL.\n`\"fixed\"`: The label has the same behavior as `\"start\"` except it also has a fixed width. Long text will be truncated with ellipses (\"...\").",
+          "docs": "チェックボックスに対して相対的にラベルを配置する場所。`\"start\"`：ラベルはLTRではチェックボックスの左側に、RTLでは右側に表示されます。`\"end\"`：ラベルはLTRではチェックボックスの右側に、RTLでは左側に表示されます。`\"fixed\"`：ラベルの幅が固定される以外は、`\"start\"`と同じ動作になります。長いテキストは省略記号(\"...\")で切り捨てられます。",
           "docsTags": [],
           "default": "'start'",
           "values": [
@@ -4158,7 +4158,7 @@
           "mutable": false,
           "attr": "legacy",
           "reflectToAttr": false,
-          "docs": "Set the `legacy` property to `true` to forcibly use the legacy form control markup.\nIonic will only opt checkboxes in to the modern form markup when they are\nusing either the `aria-label` attribute or have text in the default slot. As a result,\nthe `legacy` property should only be used as an escape hatch when you want to\navoid this automatic opt-in behavior.\n\nNote that this property will be removed in an upcoming major release\nof Ionic, and all form components will be opted-in to using the modern form markup.",
+          "docs": "`legacy`プロパティを`true`に設定すると、強制的にレガシーフォームコントロールのマークアップを使用することができます。Ionicは、チェックボックスが`aria-label`属性を使用しているか、デフォルトスロットにテキストがある場合にのみ、モダンなフォームマークアップを選択します。そのため、`legacy`プロパティは、この自動オプトイン動作を回避したい場合にのみ、エスケープハッチとして使用する必要があります。なお、このプロパティはIonicの今後のメジャーリリースで削除され、すべてのフォームコンポーネントは最新のフォームマークアップを使用するようオプトインされる予定です。",
           "docsTags": [],
           "values": [
             {
@@ -4244,7 +4244,7 @@
           "bubbles": true,
           "cancelable": true,
           "composed": true,
-          "docs": "Emitted when the checked property has changed\nas a result of a user action such as a click.\nThis event will not emit when programmatically\nsetting the checked property.",
+          "docs": "クリックなどのユーザー操作によりcheckedプロパティが変更された場合に発生します。プログラムによってcheckedプロパティを設定した場合は、このイベントは発生しません。",
           "docsTags": []
         },
         {
@@ -4318,7 +4318,7 @@
       "slots": [
         {
           "name": "",
-          "docs": "The label text to associate with the checkbox. Use the \"labelPlacement\" property to control where the label is placed relative to the checkbox."
+          "docs": "チェックボックスと関連付けるラベルテキスト。\"labelPlacement\"プロパティを使用して、チェックボックスに対するラベルの配置を制御します。"
         }
       ],
       "parts": [
@@ -5096,7 +5096,7 @@
           "mutable": true,
           "attr": "force-overscroll",
           "reflectToAttr": false,
-          "docs": "If `true` and the content does not cause an overflow scroll, the scroll interaction will cause a bounce.\nIf the content exceeds the bounds of ionContent, nothing will change.\nNote, this does not disable the system bounce on iOS. That is an OS level setting.",
+          "docs": "`true`で、コンテンツがオーバーフロースクロールを引き起こさない場合、スクロールインタラクションはバウンスを引き起こします。コンテンツがionContentの境界を超えた場合、何も変化しません。なお、これはiOSのシステムバウンスを無効にするものではありません。これはOSレベルの設定です。",
           "docsTags": [],
           "values": [
             {
@@ -5842,7 +5842,7 @@
           "mutable": false,
           "attr": "locale",
           "reflectToAttr": false,
-          "docs": "The locale to use for `ion-datetime`. This\nimpacts month and day name formatting.\nThe `\"default\"` value refers to the default\nlocale set by your device.",
+          "docs": "ion-datetime`に使用するロケールを指定します。これは月と日の名前のフォーマットに影響します。`\"default\"`の値は、あなたのデバイスが設定するデフォルトのロケールを指します。",
           "docsTags": [],
           "default": "'default'",
           "values": [
@@ -6002,7 +6002,7 @@
           "mutable": false,
           "attr": "prefer-wheel",
           "reflectToAttr": false,
-          "docs": "If `true`, a wheel picker will be rendered instead of a calendar grid\nwhere possible. If `false`, a calendar grid will be rendered instead of\na wheel picker where possible.\n\nA wheel picker can be rendered instead of a grid when `presentation` is\none of the following values: `\"date\"`, `\"date-time\"`, or `\"time-date\"`.\n\nA wheel picker will always be rendered regardless of\nthe `preferWheel` value when `presentation` is one of the following values:\n`\"time\"`, `\"month\"`, `\"month-year\"`, or `\"year\"`.",
+          "docs": "`true`の場合、可能な限りカレンダーグリッドの代わりにホイールピッカーが表示されます。もし `false` ならば、可能な限りホイールピッカーの代わりにカレンダーグリッドがレンダリングされます。  ホイールピッカーは、`presentation`が以下の値の場合、グリッドの代わりにレンダリングすることができます：`presentation`が `\"date\"`, `\"date-time\"`, または `\"time-date\"`.  ホイールピッカーは、`preferWheel`の値に関係なく、`presentation`が次の値のいずれかである場合に常にレンダリングされます：`\"time\"`, `\"month\"`, `\"month-year\"`, または `\"year\"`.",
           "docsTags": [],
           "default": "false",
           "values": [
@@ -6019,7 +6019,7 @@
           "mutable": false,
           "attr": "presentation",
           "reflectToAttr": false,
-          "docs": "Which values you want to select. `\"date\"` will show\na calendar picker to select the month, day, and year. `\"time\"`\nwill show a time picker to select the hour, minute, and (optionally)\nAM/PM. `\"date-time\"` will show the date picker first and time picker second.\n`\"time-date\"` will show the time picker first and date picker second.",
+          "docs": "どの値を選択するか。`\"date\"`はカレンダーピッカーを表示し、月、日、年を選択します。`\"time\"`は時間ピッカーを表示し、時、分、そして（オプションで）AM/PMを選択します。`\"date-time\"`は、日付ピッカーを最初に、時間ピッカーを次に表示します。\"time-date\"`は、最初に時間ピッカー、2番目に日付ピッカーを表示します。",
           "docsTags": [],
           "default": "'date-time'",
           "values": [
@@ -6186,7 +6186,7 @@
           "mutable": true,
           "attr": "value",
           "reflectToAttr": false,
-          "docs": "The value of the datetime as a valid ISO 8601 datetime string.\nThis should be an array of strings only when `multiple=\"true\"`.",
+          "docs": "datetimeの値を有効なISO 8601 datetime文字列として指定します。これは、`multiple=\"true\"`の場合のみ、文字列の配列です。",
           "docsTags": [],
           "values": [
             {
@@ -6262,7 +6262,7 @@
           },
           "signature": "reset(startDate?: string) => Promise<void>",
           "parameters": [],
-          "docs": "datetimeの内部状態をリセットするが、値は更新しない。有効なISO-8601文字列を渡すと、コンポーネントの状態は指定した日付にリセットされます。値が提供されない場合、内部状態はmin、max、todayのクランプされた値にリセットされます。",
+          "docs": "datetimeの内部状態をリセットするが、値は更新しません。有効なISO-8601文字列を渡すと、コンポーネントの状態は指定した日付にリセットされます。値が提供されない場合、内部状態はmin、max、todayのクランプされた値にリセットされます。",
           "docsTags": []
         }
       ],
@@ -7499,7 +7499,7 @@
           "mutable": false,
           "attr": "loading-text",
           "reflectToAttr": false,
-          "docs": "Optional text to display while loading.\n`loadingText` can accept either plaintext or HTML as a string.\nTo display characters normally reserved for HTML, they\nmust be escaped. For example `<Ionic>` would become\n`&lt;Ionic&gt;`\n\nFor more information: [Security Documentation](https://ionicframework.com/docs/faq/security)\n\nThis property accepts custom HTML as a string.\nContent is parsed as plaintext by default.\n`innerHTMLTemplatesEnabled` must be set to `true` in the Ionic config\nbefore custom HTML can be used.",
+          "docs": "ロード中に表示するオプションのテキスト。`loadingText`には、文字列としてプレーンテキストまたはHTMLのいずれかを指定することができます。通常HTML用に予約されている文字を表示するには、エスケープする必要があります。例えば、`<Ionic>`は `&lt;Ionic&gt;` になります。詳しくはこちら：[セキュリティ・ドキュメント](https://ionicframework.com/docs/faq/security) このプロパティは、カスタムHTMLを文字列として受け付けます。デフォルトでは、コンテンツはプレーンテキストとしてパースされます。カスタムHTMLを使用するには、Ionicの設定で `innerHTMLTemplatesEnabled` を `true` に設定する必要があります。",
           "docsTags": [],
           "values": [
             {
@@ -8049,7 +8049,7 @@
           "mutable": false,
           "attr": "counter",
           "reflectToAttr": false,
-          "docs": "If `true`, a character counter will display the ratio of characters used and the total character limit. Developers must also set the `maxlength` property for the counter to be calculated correctly.",
+          "docs": "`true`の場合、文字カウンタが使用された文字の比率と総文字数制限を表示します。カウンターを正しく計算するために、開発者は `maxlength` プロパティも設定する必要があります。",
           "docsTags": [],
           "default": "false",
           "values": [
@@ -8084,7 +8084,7 @@
           "mutable": false,
           "attr": "debounce",
           "reflectToAttr": false,
-          "docs": "Set the amount of time, in milliseconds, to wait to trigger the `ionInput` event after each keystroke.",
+          "docs": "キーを押すたびに `ionInput` イベントが発生するまでの待ち時間をミリ秒単位で設定します。",
           "docsTags": [],
           "values": [
             {
@@ -8164,7 +8164,7 @@
           "mutable": false,
           "attr": "error-text",
           "reflectToAttr": false,
-          "docs": "Text that is placed under the input and displayed when an error is detected.",
+          "docs": "Inputの下に配置され、エラーが検出されたときに表示されるテキストです。",
           "docsTags": [],
           "values": [
             {
@@ -8183,7 +8183,7 @@
           "mutable": false,
           "attr": "fill",
           "reflectToAttr": false,
-          "docs": "The fill for the item. If `\"solid\"` the item will have a background. If\n`\"outline\"` the item will be transparent with a border. Only available in `md` mode.",
+          "docs": "アイテムの塗りつぶし。もし `\"solid\"` ならば、アイテムは背景を持つようになります。もし `\"outline\"` ならば、アイテムはボーダー付きの透明なものになります。md`モードでのみ使用可能です。",
           "docsTags": [],
           "values": [
             {
@@ -8207,7 +8207,7 @@
           "mutable": false,
           "attr": "helper-text",
           "reflectToAttr": false,
-          "docs": "Text that is placed under the input and displayed when no error is detected.",
+          "docs": "Inputの下に配置され、エラーが検出されなかった場合に表示されるテキストです。",
           "docsTags": [],
           "values": [
             {
@@ -8274,7 +8274,7 @@
           "mutable": false,
           "attr": "label",
           "reflectToAttr": false,
-          "docs": "The visible label associated with the input.",
+          "docs": "Inputに関連する可視ラベル。",
           "docsTags": [],
           "values": [
             {
@@ -8293,7 +8293,7 @@
           "mutable": false,
           "attr": "label-placement",
           "reflectToAttr": false,
-          "docs": "Where to place the label relative to the input.\n`\"start\"`: The label will appear to the left of the input in LTR and to the right in RTL.\n`\"end\"`: The label will appear to the right of the input in LTR and to the left in RTL.\n`\"floating\"`: The label will appear smaller and above the input when the input is focused or it has a value. Otherwise it will appear on top of the input.\n`\"stacked\"`: The label will appear smaller and above the input regardless even when the input is blurred or has no value.\n`\"fixed\"`: The label has the same behavior as `\"start\"` except it also has a fixed width. Long text will be truncated with ellipses (\"...\").",
+          "docs": "入力に対してラベルを配置する位置。`\"start\"`：ラベルはLTRでは入力の左側に、RTLでは右側に表示されます。`\"end\"`：ラベルはLTRでは入力の右側、RTLでは左側に表示されます。\"floating\"`：`\"floating\"`：ラベルは、入力にフォーカスが当たっているときや、入力に値があるときは小さく表示され、入力の上に表示されます。それ以外の場合は、入力の上に表示されます。`\"スタック(stacked)\"`：入力がぼやけた状態や値がない場合でも、ラベルは小さく表示され、入力の上に表示されます。`\"fixed\"`：ラベルの幅が固定される以外は、`\"start\"`と同じ動作になります。長いテキストは省略記号（\"...\"）で切り捨てられます。",
           "docsTags": [],
           "default": "'start'",
           "values": [
@@ -8327,7 +8327,7 @@
           "mutable": false,
           "attr": "legacy",
           "reflectToAttr": false,
-          "docs": "Set the `legacy` property to `true` to forcibly use the legacy form control markup.\nIonic will only opt components in to the modern form markup when they are\nusing either the `aria-label` attribute or the `label` property. As a result,\nthe `legacy` property should only be used as an escape hatch when you want to\navoid this automatic opt-in behavior.\nNote that this property will be removed in an upcoming major release\nof Ionic, and all form components will be opted-in to using the modern form markup.",
+          "docs": "`legacy`プロパティを`true`に設定すると、レガシーフォームコントロールのマークアップを強制的に使用することができます。Ionicは、コンポーネントが`aria-label`属性または`label`プロパティを使用している場合にのみ、最新のフォームマークアップを選択します。そのため、`legacy`プロパティは、この自動オプトイン動作を回避したい場合にのみ、エスケープハッチとして使用する必要があります。なお、このプロパティはIonicの今後のメジャーリリースで削除され、すべてのフォームコンポーネントはモダンフォームマークアップを使用するようオプトインされる予定です。",
           "docsTags": [],
           "values": [
             {
@@ -8557,7 +8557,7 @@
           "mutable": false,
           "attr": "shape",
           "reflectToAttr": false,
-          "docs": "The shape of the input. If \"round\" it will have an increased border radius.",
+          "docs": "入力の形状を指定します。\"round\"の場合、境界線の半径が大きくなります。",
           "docsTags": [],
           "values": [
             {
@@ -8755,7 +8755,7 @@
           "bubbles": true,
           "cancelable": true,
           "composed": true,
-          "docs": "The `ionChange` event is fired for `<ion-input>` elements when the user\nmodifies the element's value. Unlike the `ionInput` event, the `ionChange`\nevent is not necessarily fired for each alteration to an element's value.\n\nDepending on the way the users interacts with the element, the `ionChange`\nevent fires at a different moment:\n- When the user commits the change explicitly (e.g. by selecting a date\nfrom a date picker for `<ion-input type=\"date\">`, pressing the \"Enter\" key, etc.).\n- When the element loses focus after its value has changed: for elements\nwhere the user's interaction is typing.",
+          "docs": "`ionChange` イベントは、ユーザーが要素の値を変更したときに `<ion-input>` 要素に対して発生します。 `ionInput` イベントとは異なり、`ionChange` イベントは必ずしも要素の値が変更されるたびに発生するわけではない。  ユーザーが要素と対話する方法に応じて、`ionChange` イベントは次のような異なるタイミングで発生します。 - ユーザーが明示的に変更をコミットしたとき (例えば、`<ion-input type=\"date\">` の日付ピッカーから日付を選択し、「Enter」キーを押すなど)。- 値が変更された後、要素がフォーカスを失ったとき：ユーザーの対話がタイピングである要素について。",
           "docsTags": []
         },
         {
@@ -8773,7 +8773,7 @@
           "bubbles": true,
           "cancelable": true,
           "composed": true,
-          "docs": "The `ionInput` event fires when the `value` of an `<ion-input>` element\nhas been changed.\n\nFor elements that accept text input (`type=text`, `type=tel`, etc.), the interface\nis [`InputEvent`](https://developer.mozilla.org/en-US/docs/Web/API/InputEvent); for others,\nthe interface is [`Event`](https://developer.mozilla.org/en-US/docs/Web/API/Event). If\nthe input is cleared on edit, the type is `null`.",
+          "docs": "`ionInput`イベントは `<ion-input>` 要素の `value` が変更されたときに発生するイベントです。  テキスト入力を受け付ける要素 (`type=text`, `type=tel` など) のインタフェースは [`InputEvent`](https://developer.mozilla.org/en-US/docs/Web/API/InputEvent) である。その他の要素のインタフェースは [`Event`](https://developer.mozilla.org/en-US/docs/Web/API/Event) です。編集時に入力がクリアされる場合、型は `null` となります。",
           "docsTags": []
         }
       ],
@@ -8787,22 +8787,22 @@
         {
           "name": "--border-color",
           "annotation": "prop",
-          "docs": "Color of the border below the input when using helper text, error text, or counter"
+          "docs": "ヘルパーテキスト、エラーテキスト、カウンターを使用する場合のInput下のボーダーの色"
         },
         {
           "name": "--border-radius",
           "annotation": "prop",
-          "docs": "Radius of the input"
+          "docs": "Inputの半径"
         },
         {
           "name": "--border-style",
           "annotation": "prop",
-          "docs": "Style of the border below the input when using helper text, error text, or counter"
+          "docs": "ヘルパーテキスト、エラーテキスト、カウンターを使用する場合の入力下のボーダーのスタイル"
         },
         {
           "name": "--border-width",
           "annotation": "prop",
-          "docs": "Width of the border below the input when using helper text, error text, or counter"
+          "docs": "ヘルパーテキスト、エラーテキスト、カウンターを使用する場合の入力下のボーダーの幅"
         },
         {
           "name": "--color",
@@ -8812,17 +8812,17 @@
         {
           "name": "--highlight-color-focused",
           "annotation": "prop",
-          "docs": "The color of the highlight on the input when focused"
+          "docs": "フォーカスされたときの入力のハイライトの色"
         },
         {
           "name": "--highlight-color-invalid",
           "annotation": "prop",
-          "docs": "The color of the highlight on the input when invalid"
+          "docs": "入力が無効な場合のハイライトの色"
         },
         {
           "name": "--highlight-color-valid",
           "annotation": "prop",
-          "docs": "The color of the highlight on the input when valid"
+          "docs": "有効時の入力のハイライトの色"
         },
         {
           "name": "--padding-bottom",
@@ -9795,7 +9795,7 @@
           "mutable": false,
           "attr": "fill",
           "reflectToAttr": false,
-          "docs": "The fill for the item. If `\"solid\"` the item will have a background. If\n`\"outline\"` the item will be transparent with a border. Only available in `md` mode.",
+          "docs": "アイテムの塗りつぶし。もし `\"solid\"` ならば、アイテムは背景を持つようになります。もし `\"outline\"` ならば、アイテムはボーダー付きの透明なものになります。md`モードでのみ使用可能です。",
           "docsTags": [],
           "values": [
             {
@@ -10217,11 +10217,11 @@
         },
         {
           "name": "error",
-          "docs": "Content is placed under the item and displayed when an error is detected. **DEPRECATED** Use the \"errorText\" property on ion-input or ion-textarea instead."
+          "docs": "コンテンツはアイテムの下に配置され、エラーが検出されたときに表示されます。**DEPRECATED** 代わりに ion-input または ion-textarea の \"errorText\" プロパティを使用してください。"
         },
         {
           "name": "helper",
-          "docs": "Content is placed under the item and displayed when no error is detected. **DEPRECATED** Use the \"helperText\" property on ion-input or ion-textarea instead."
+          "docs": "コンテンツはアイテムの下に配置され、エラーが検出されない場合に表示されます。**DEPRECATED** 代わりに ion-input または ion-textarea の \"helperText\" プロパティを使用してください。"
         },
         {
           "name": "start",
@@ -10806,7 +10806,7 @@
           "mutable": false,
           "attr": "is-open",
           "reflectToAttr": false,
-          "docs": "If `true`, the loading indicator will open. If `false`, the loading indicator will close.\nUse this if you need finer grained control over presentation, otherwise\njust use the loadingController or the `trigger` property.\nNote: `isOpen` will not automatically be set back to `false` when\nthe loading indicator dismisses. You will need to do that in your code.",
+          "docs": "`true`の場合、ローディングインジケータは開きます。`false`の場合、ローディングインジケータは閉じます。より細かく表示を制御したい場合に使用します。そうでない場合は、loadingController または `trigger` プロパティを使用してください。注意: ローディングインジケータが終了しても、`isOpen`は自動的に `false`に戻されません。あなたのコードでそれを行う必要があります。",
           "docsTags": [],
           "default": "false",
           "values": [
@@ -10858,7 +10858,7 @@
           "mutable": false,
           "attr": "message",
           "reflectToAttr": false,
-          "docs": "Optional text content to display in the loading indicator.\n\nThis property accepts custom HTML as a string.\nContent is parsed as plaintext by default.\n`innerHTMLTemplatesEnabled` must be set to `true` in the Ionic config\nbefore custom HTML can be used.",
+          "docs": "ローディングインジケータに表示するテキストコンテンツを任意で指定します。  このプロパティは、文字列としてカスタムHTMLを受け入れます。コンテンツはデフォルトでプレーンテキストとしてパースされます。カスタムHTMLを使用するには、Ionicの設定で `innerHTMLTemplatesEnabled` を `true` に設定する必要があります。",
           "docsTags": [],
           "values": [
             {
@@ -10990,7 +10990,7 @@
           "mutable": false,
           "attr": "trigger",
           "reflectToAttr": false,
-          "docs": "An ID corresponding to the trigger element that\ncauses the loading indicator to open when clicked.",
+          "docs": "クリックするとローディングインジケータが開くトリガー要素に対応するIDです。",
           "docsTags": [],
           "values": [
             {
@@ -11066,7 +11066,7 @@
           "bubbles": true,
           "cancelable": true,
           "composed": true,
-          "docs": "Emitted after the loading indicator has dismissed.\nShorthand for ionLoadingDidDismiss.",
+          "docs": "ローディングインジケータが解除された後に発行されます。ionLoadingDidDismissの略記。",
           "docsTags": []
         },
         {
@@ -11075,7 +11075,7 @@
           "bubbles": true,
           "cancelable": true,
           "composed": true,
-          "docs": "Emitted after the loading indicator has presented.\nShorthand for ionLoadingWillDismiss.",
+          "docs": "ローディングインジケータが提示された後に放出される。ionLoadingWillDismissの略記。",
           "docsTags": []
         },
         {
@@ -11120,7 +11120,7 @@
           "bubbles": true,
           "cancelable": true,
           "composed": true,
-          "docs": "Emitted before the loading indicator has dismissed.\nShorthand for ionLoadingWillDismiss.",
+          "docs": "ローディングインジケータが解散する前に発行されます。ionLoadingWillDismissの略記です。",
           "docsTags": []
         },
         {
@@ -11129,7 +11129,7 @@
           "bubbles": true,
           "cancelable": true,
           "composed": true,
-          "docs": "Emitted before the loading indicator has presented.\nShorthand for ionLoadingWillPresent.",
+          "docs": "ローディングインジケータが提示される前に発行されます。ionLoadingWillPresentの略記。",
           "docsTags": []
         }
       ],
@@ -11779,7 +11779,7 @@
           "bubbles": true,
           "cancelable": true,
           "composed": true,
-          "docs": "メニューが閉じられたときに発します。",
+          "docs": "メニューが閉じられたときに発行されます。",
           "docsTags": []
         },
         {
@@ -11797,7 +11797,7 @@
           "bubbles": true,
           "cancelable": true,
           "composed": true,
-          "docs": "メニューが閉じられようとするときに発します。",
+          "docs": "メニューが閉じられようとするときに発行されます。",
           "docsTags": []
         },
         {
@@ -11806,7 +11806,7 @@
           "bubbles": true,
           "cancelable": true,
           "composed": true,
-          "docs": "メニューが開かれようとするときに発します。",
+          "docs": "メニューが開かれようとするときに発行されます。",
           "docsTags": []
         }
       ],
@@ -13321,7 +13321,7 @@
           "mutable": false,
           "attr": "is-open",
           "reflectToAttr": false,
-          "docs": "If `true`, the picker will open. If `false`, the picker will close.\nUse this if you need finer grained control over presentation, otherwise\njust use the pickerController or the `trigger` property.\nNote: `isOpen` will not automatically be set back to `false` when\nthe picker dismisses. You will need to do that in your code.",
+          "docs": "`true`の場合、ピッカーは開きます。`false`の場合、ピッカーは閉じます。ピッカーの表示をより細かく制御したい場合に使用します。それ以外の場合は pickerController や `trigger` プロパティを使用します。注意: ピッカーが終了しても `isOpen` は自動的に `false` に戻りません。あなたのコードでそれを行う必要があります。",
           "docsTags": [],
           "default": "false",
           "values": [
@@ -13411,7 +13411,7 @@
           "mutable": false,
           "attr": "trigger",
           "reflectToAttr": false,
-          "docs": "An ID corresponding to the trigger element that\ncauses the picker to open when clicked.",
+          "docs": "クリックするとピッカーが開くトリガー要素に対応するID。",
           "docsTags": [],
           "values": [
             {
@@ -13503,7 +13503,7 @@
           "bubbles": true,
           "cancelable": true,
           "composed": true,
-          "docs": "Emitted after the picker has dismissed.\nShorthand for ionPickerDidDismiss.",
+          "docs": "ピッカーが解散した後に発行されます。ionPickerDidDismissの略記です。",
           "docsTags": []
         },
         {
@@ -13512,7 +13512,7 @@
           "bubbles": true,
           "cancelable": true,
           "composed": true,
-          "docs": "Emitted after the picker has presented.\nShorthand for ionPickerWillDismiss.",
+          "docs": "ピッカーが提示された後に発行されます。ionPickerWillDismissの略記です。",
           "docsTags": []
         },
         {
@@ -13557,7 +13557,7 @@
           "bubbles": true,
           "cancelable": true,
           "composed": true,
-          "docs": "Emitted before the picker has dismissed.\nShorthand for ionPickerWillDismiss.",
+          "docs": "ピッカーが解散する前に発行されます。ionPickerWillDismissの略記です。",
           "docsTags": []
         },
         {
@@ -13566,7 +13566,7 @@
           "bubbles": true,
           "cancelable": true,
           "composed": true,
-          "docs": "Emitted before the picker has presented.\nShorthand for ionPickerWillPresent.",
+          "docs": "ピッカーが提示される前に発行されます。ionPickerWillPresentの略記です。",
           "docsTags": []
         }
       ],
@@ -13687,7 +13687,7 @@
           "mutable": true,
           "attr": "alignment",
           "reflectToAttr": false,
-          "docs": "Describes how to align the popover content with the `reference` point.\nDefaults to `\"center\"` for `ios` mode, and `\"start\"` for `md` mode.",
+          "docs": "ポップオーバーのコンテンツを `reference` ポイントに揃える方法を記述します。デフォルトは `ios` モードでは `\"center\"` で、`md` モードでは `\"start\"` です。",
           "docsTags": [],
           "values": [
             {
@@ -13971,7 +13971,7 @@
           "mutable": false,
           "attr": "reference",
           "reflectToAttr": false,
-          "docs": "Describes what to position the popover relative to.\nIf `\"trigger\"`, the popover will be positioned relative\nto the trigger button. If passing in an event, this is\ndetermined via event.target.\nIf `\"event\"`, the popover will be positioned relative\nto the x/y coordinates of the trigger action. If passing\nin an event, this is determined via event.clientX and event.clientY.",
+          "docs": "ポップオーバーを何に対して相対的に配置するかを記述します。もし `\"trigger\"` ならば、ポップオーバーはトリガーボタンに相対して配置されます。イベントを渡すと、event.targetによって決定されます。もし `\"event\"` ならば、ポップオーバーはトリガーアクションのx/y座標に相対的に配置されます。イベントを渡す場合、これはevent.clientXとevent.clientYを介して決定されます。",
           "docsTags": [],
           "default": "'trigger'",
           "values": [
@@ -14010,7 +14010,7 @@
           "mutable": false,
           "attr": "side",
           "reflectToAttr": false,
-          "docs": "Describes which side of the `reference` point to position\nthe popover on. The `\"start\"` and `\"end\"` values are RTL-aware,\nand the `\"left\"` and `\"right\"` values are not.",
+          "docs": "ポップオーバーを `reference` ポイントのどちら側に配置するかを記述します。`\"start\"` と `\"end\"` の値はRTLを意識しており、`\"left\"` と `\"right\"` の値はそうではない。",
           "docsTags": [],
           "default": "'bottom'",
           "values": [
@@ -14048,7 +14048,7 @@
           "mutable": false,
           "attr": "size",
           "reflectToAttr": false,
-          "docs": "Describes how to calculate the popover width.\nIf `\"cover\"`, the popover width will match the width of the trigger.\nIf `\"auto\"`, the popover width will be determined by the content in\nthe popover.",
+          "docs": "ポップオーバーの幅を計算する方法を記述します。もし `\"cover\"` ならば、ポップオーバーの幅はトリガーの幅と一致します。auto\"` の場合、ポップオーバーの幅はポップオーバー内のコンテンツによって決定される。",
           "docsTags": [],
           "default": "'auto'",
           "values": [
@@ -14106,7 +14106,7 @@
           "mutable": false,
           "attr": "trigger-action",
           "reflectToAttr": false,
-          "docs": "Describes what kind of interaction with the trigger that\nshould cause the popover to open. Does not apply when the `trigger`\nproperty is `undefined`.\nIf `\"click\"`, the popover will be presented when the trigger is left clicked.\nIf `\"hover\"`, the popover will be presented when a pointer hovers over the trigger.\nIf `\"context-menu\"`, the popover will be presented when the trigger is right\nclicked on desktop and long pressed on mobile. This will also prevent your\ndevice's normal context menu from appearing.",
+          "docs": "どのようなトリガーとの相互作用でポップオーバーを開くべきかを記述します。 `trigger`プロパティが `undefined` の場合は適用されません。`\"click\"` の場合、トリガーが左クリックされたときにポップオーバーが表示されます。`\"hover\"` の場合、ポインタがトリガーの上に乗ったときにポップオーバーが表示されます。コンテキストメニューの場合、デスクトップでは右クリック、モバイルでは長押しでポップオーバーが表示されます。これは、デバイスの通常のコンテキストメニューが表示されるのを防ぐことにもなります。",
           "docsTags": [],
           "default": "'click'",
           "values": [
@@ -14766,7 +14766,7 @@
           "mutable": false,
           "attr": "justify",
           "reflectToAttr": false,
-          "docs": "How to pack the label and radio within a line.\n`\"start\"`: The label and radio will appear on the left in LTR and\non the right in RTL.\n`\"end\"`: The label and radio will appear on the right in LTR and\non the left in RTL.\n`\"space-between\"`: The label and radio will appear on opposite\nends of the line with space between the two elements.",
+          "docs": "ラベルとラジオを1行にまとめる方法。`\"start\"` とします：ラベルとラジオは、LTRでは左側に、RTLでは右側に表示されます。`\"end\"`：ラベルとラジオは、LTRでは右に、RTLでは左に表示されます。`\"space-between\"`：ラベルとラジオは、2つの要素の間にスペースがある状態で、行の反対側の端に表示されます。",
           "docsTags": [],
           "default": "'space-between'",
           "values": [
@@ -14792,7 +14792,7 @@
           "mutable": false,
           "attr": "label-placement",
           "reflectToAttr": false,
-          "docs": "Where to place the label relative to the radio.\n`\"start\"`: The label will appear to the left of the radio in LTR and to the right in RTL.\n`\"end\"`: The label will appear to the right of the radio in LTR and to the left in RTL.\n`\"fixed\"`: The label has the same behavior as `\"start\"` except it also has a fixed width. Long text will be truncated with ellipses (\"...\").",
+          "docs": "ラジオから相対的にラベルを配置する場所。`\"start\"`：ラベルはLTRではラジオの左側に、RTLでは右側に表示されます。`\"end\"`：ラベルはLTRではラジオの右、RTLでは左に表示されます。`\"fixed\"`：ラベルの幅が固定される以外は、`\"start\"`と同じ動作になります。長いテキストは省略記号(\"...\")で切り捨てられます。",
           "docsTags": [],
           "default": "'start'",
           "values": [
@@ -14818,7 +14818,7 @@
           "mutable": false,
           "attr": "legacy",
           "reflectToAttr": false,
-          "docs": "Set the `legacy` property to `true` to forcibly use the legacy form control markup.\nIonic will only opt components in to the modern form markup when they are\nusing either the `aria-label` attribute or the default slot that contains\nthe label text. As a result, the `legacy` property should only be used as\nan escape hatch when you want to avoid this automatic opt-in behavior.\nNote that this property will be removed in an upcoming major release\nof Ionic, and all form components will be opted-in to using the modern form markup.",
+          "docs": "`legacy`プロパティを`true`に設定すると、レガシーフォームコントロールのマークアップを強制的に使用することができます。Ionicは、コンポーネントが`aria-label`属性またはラベルテキストを含むデフォルトスロットのいずれかを使用している場合にのみ、モダンフォームマークアップを選択するようになっています。そのため、`legacy`プロパティは、この自動オプトイン動作を回避したい場合にのみ、エスケープハッチとして使用する必要があります。なお、このプロパティはIonicの今後のメジャーリリースで削除され、すべてのフォームコンポーネントはモダンフォームマークアップを使用するようにオプトインされる予定です。",
           "docsTags": [],
           "values": [
             {
@@ -14933,7 +14933,7 @@
       "slots": [
         {
           "name": "",
-          "docs": "The label text to associate with the radio. Use the \"labelPlacement\" property to control where the label is placed relative to the radio."
+          "docs": "ラジオに関連付けるラベルテキストです。\"labelPlacement\"プロパティを使用して、ラジオに対するラベルの相対的な配置を制御します。"
         }
       ],
       "parts": [
@@ -15085,7 +15085,7 @@
           "mutable": false,
           "attr": "debounce",
           "reflectToAttr": false,
-          "docs": "How long, in milliseconds, to wait to trigger the\n`ionInput` event after each change in the range value.",
+          "docs": "レンジの値が変化するたびに `ionInput` イベントをトリガーするまでの待ち時間（ミリ秒単位）。",
           "docsTags": [],
           "values": [
             {
@@ -15138,7 +15138,7 @@
           "mutable": false,
           "attr": "label-placement",
           "reflectToAttr": false,
-          "docs": "Where to place the label relative to the range.\n`\"start\"`: The label will appear to the left of the range in LTR and to the right in RTL.\n`\"end\"`: The label will appear to the right of the range in LTR and to the left in RTL.\n`\"fixed\"`: The label has the same behavior as `\"start\"` except it also has a fixed width. Long text will be truncated with ellipses (\"...\").",
+          "docs": "範囲に対してラベルを配置する場所。`\"start\"`：ラベルはLTRでは範囲の左側に、RTLでは右側に表示されます。`\"end\"`：ラベルはLTRでは範囲の右側、RTLでは左側に表示されます。`\"fixed\"`：ラベルの幅が固定される以外は、`\"start\"`と同じ動作をします。長いテキストは省略記号(\"...\")で切り捨てられます。",
           "docsTags": [],
           "default": "'start'",
           "values": [
@@ -15164,7 +15164,7 @@
           "mutable": false,
           "attr": "legacy",
           "reflectToAttr": false,
-          "docs": "Set the `legacy` property to `true` to forcibly use the legacy form control markup.\nIonic will only opt components in to the modern form markup when they are\nusing either the `aria-label` attribute or the `label` property. As a result,\nthe `legacy` property should only be used as an escape hatch when you want to\navoid this automatic opt-in behavior.\nNote that this property will be removed in an upcoming major release\nof Ionic, and all form components will be opted-in to using the modern form markup.",
+          "docs": "`legacy`プロパティを`true`に設定すると、レガシーフォームコントロールのマークアップを強制的に使用することができます。Ionicは、コンポーネントが`aria-label`属性または`label`プロパティを使用している場合にのみ、最新のフォームマークアップを選択します。そのため、`legacy`プロパティは、この自動オプトイン動作を回避したい場合にのみ、エスケープハッチとして使用する必要があります。なお、このプロパティはIonicの今後のメジャーリリースで削除され、すべてのフォームコンポーネントはモダンフォームマークアップを使用するようオプトインされる予定です。",
           "docsTags": [],
           "values": [
             {
@@ -15365,7 +15365,7 @@
           "bubbles": true,
           "cancelable": true,
           "composed": true,
-          "docs": "レンジの焦点が合わなくなったときに発します。",
+          "docs": "レンジの焦点が合わなくなったときに発行されます。",
           "docsTags": []
         },
         {
@@ -15374,7 +15374,7 @@
           "bubbles": true,
           "cancelable": true,
           "composed": true,
-          "docs": "The `ionChange` event is fired for `<ion-range>` elements when the user\nmodifies the element's value:\n- When the user releases the knob after dragging;\n- When the user moves the knob with keyboard arrows\n\n`ionChange` is not fired when the value is changed programmatically.",
+          "docs": "`ionChange`イベントは、`<ion-range>`要素に対して、ユーザーがその要素の値を変更したときに発生します： - ドラッグした後にノブを離したとき - キーボードの矢印でノブを動かしたとき プログラムで値を変更したときは、`ionChange`イベントは発生しません。",
           "docsTags": []
         },
         {
@@ -15383,7 +15383,7 @@
           "bubbles": true,
           "cancelable": true,
           "composed": true,
-          "docs": "レンジのフォーカスが合ったときに発します。",
+          "docs": "レンジのフォーカスが合ったときに発行されます。",
           "docsTags": []
         },
         {
@@ -15392,7 +15392,7 @@
           "bubbles": true,
           "cancelable": true,
           "composed": true,
-          "docs": "The `ionInput` event is fired for `<ion-range>` elements when the value\nis modified. Unlike `ionChange`, `ionInput` is fired continuously\nwhile the user is dragging the knob.",
+          "docs": "`ionInput`イベントは、`<ion-range>`要素に対して、値が変更されたときに発生するイベントです。`ionChange`とは異なり、`ionInput`はユーザがノブをドラッグしている間、継続して発生します。",
           "docsTags": []
         },
         {
@@ -15479,7 +15479,7 @@
         },
         {
           "name": "label",
-          "docs": "The label text to associate with the range. Use the \"labelPlacement\" property to control where the label is placed relative to the range."
+          "docs": "範囲に関連付けるラベルテキスト。`\"labelPlacement`\"プロパティを使用して、ラベルが範囲に対してどの位置に配置されるかを制御します。"
         },
         {
           "name": "start",
@@ -15552,7 +15552,7 @@
           "mutable": false,
           "attr": "pulling-text",
           "reflectToAttr": false,
-          "docs": "The text you want to display when you begin to pull down.\n`pullingText` can accept either plaintext or HTML as a string.\nTo display characters normally reserved for HTML, they\nmust be escaped. For example `<Ionic>` would become\n`&lt;Ionic&gt;`\n\nFor more information: [Security Documentation](https://ionicframework.com/docs/faq/security)\n\nContent is parsed as plaintext by default.\n`innerHTMLTemplatesEnabled` must be set to `true` in the Ionic config\nbefore custom HTML can be used.",
+          "docs": "プルダウン開始時に表示したいテキストです。 `pullingText` は、文字列としてプレーンテキストまたはHTMLのいずれかを受け取ることができます。通常HTML用に予約されている文字を表示するには、エスケープする必要があります。例えば、`<Ionic>`は `&lt;Ionic&gt;` になります：[セキュリティ・ドキュメント](https://ionicframework.com/docs/faq/security) デフォルトでは、コンテンツはプレーンテキストとして解析されます。カスタムHTMLを使用するには、Ionicの設定で `innerHTMLTemplatesEnabled` を `true` に設定する必要があります。",
           "docsTags": [],
           "values": [
             {
@@ -15629,7 +15629,7 @@
           "mutable": false,
           "attr": "refreshing-text",
           "reflectToAttr": false,
-          "docs": "The text you want to display when performing a refresh.\n`refreshingText` can accept either plaintext or HTML as a string.\nTo display characters normally reserved for HTML, they\nmust be escaped. For example `<Ionic>` would become\n`&lt;Ionic&gt;`\n\nFor more information: [Security Documentation](https://ionicframework.com/docs/faq/security)\n\nContent is parsed as plaintext by default.\n`innerHTMLTemplatesEnabled` must be set to `true` in the Ionic config\nbefore custom HTML can be used.",
+          "docs": "リフレッシュを行う際に表示したいテキストです。 `refreshingText` には、文字列としてプレーンテキストまたはHTMLのいずれかを指定することができます。通常HTML用に予約されている文字を表示するには、エスケープする必要があります。例えば、`<Ionic>`は `&lt;Ionic&gt;` となります：[セキュリティ・ドキュメント](https://ionicframework.com/docs/faq/security) デフォルトでは、コンテンツはプレーンテキストとして解析されます。カスタムHTMLを使用するには、Ionicの設定で `innerHTMLTemplatesEnabled` を `true` に設定する必要があります。",
           "docsTags": [],
           "values": [
             {
@@ -15817,7 +15817,7 @@
           "bubbles": true,
           "cancelable": true,
           "composed": true,
-          "docs": "ユーザーがコンテンツを引き下げ、リフレッシャーを露出している間に発します。",
+          "docs": "ユーザーがコンテンツを引き下げ、リフレッシャーを露出している間に発行されます。",
           "docsTags": []
         },
         {
@@ -15835,7 +15835,7 @@
           "bubbles": true,
           "cancelable": true,
           "composed": true,
-          "docs": "ユーザーが引き下げを開始するときに発します。",
+          "docs": "ユーザーが引き下げを開始するときに発行されます。",
           "docsTags": []
         }
       ],
@@ -16604,7 +16604,7 @@
           "bubbles": true,
           "cancelable": true,
           "composed": true,
-          "docs": "ルートが変更されたときに発します。",
+          "docs": "ルートが変更されたときに発行されます。",
           "docsTags": []
         },
         {
@@ -17052,7 +17052,7 @@
           "mutable": false,
           "attr": "debounce",
           "reflectToAttr": false,
-          "docs": "Set the amount of time, in milliseconds, to wait to trigger the `ionInput` event after each keystroke.",
+          "docs": "キーを押すたびに `ionInput` イベントが発生するまでの待ち時間をミリ秒単位で設定します。",
           "docsTags": [],
           "values": [
             {
@@ -17415,7 +17415,7 @@
           "bubbles": true,
           "cancelable": true,
           "composed": true,
-          "docs": "The `ionChange` event is fired for `<ion-searchbar>` elements when the user\nmodifies the element's value. Unlike the `ionInput` event, the `ionChange`\nevent is not necessarily fired for each alteration to an element's value.\n\nThe `ionChange` event is fired when the value has been committed\nby the user. This can happen when the element loses focus or\nwhen the \"Enter\" key is pressed. `ionChange` can also fire\nwhen clicking the clear or cancel buttons.",
+          "docs": "`ionChange` イベントは、`<ion-searchbar>` 要素に対して、ユーザがその要素の値を変更したときに発生します。ionInput` イベントとは異なり、要素の値が変更されるたびに `ionChange` イベントが発生する必要はない。`ionChange`イベントは、ユーザーによって値がコミットされたときに発生します。これは、要素のフォーカスが外れたときや、\"Enter \"キーが押されたときに発生します。また、クリアボタンやキャンセルボタンをクリックしたときにも `ionChange` イベントが発生することがあります。",
           "docsTags": []
         },
         {
@@ -17442,7 +17442,7 @@
           "bubbles": true,
           "cancelable": true,
           "composed": true,
-          "docs": "Emitted when the `value` of the `ion-searchbar` element has changed.",
+          "docs": "ion-searchbar`要素の `value` が変更されたときに発行されます。",
           "docsTags": []
         }
       ],
@@ -18143,7 +18143,7 @@
           "mutable": false,
           "attr": "color",
           "reflectToAttr": true,
-          "docs": "The color to use from your application's color palette.\nDefault options are: `\"primary\"`, `\"secondary\"`, `\"tertiary\"`, `\"success\"`, `\"warning\"`, `\"danger\"`, `\"light\"`, `\"medium\"`, and `\"dark\"`.\nFor more information on colors, see [theming](/docs/theming/basics).\n\nThis property is only available when using the modern select syntax.",
+          "docs": "アプリケーションのカラーパレットから使用する色を指定します。デフォルトのオプションは以下の通りです：`\"primary\"`, `\"secondary\"`, `\"tertiary\"`, `\"success\"`, `\"warning\"`, `\"danger\"`, `\"light\"`, `\"medium\"`, と `\"dark\"` です．色についての詳細は [theming](/docs/theming/basics) を参照してください。  このプロパティは、modern select構文を使用する場合にのみ利用可能です。",
           "docsTags": [],
           "values": [
             {
@@ -18240,7 +18240,7 @@
           "mutable": false,
           "attr": "fill",
           "reflectToAttr": false,
-          "docs": "The fill for the item. If `\"solid\"` the item will have a background. If\n`\"outline\"` the item will be transparent with a border. Only available in `md` mode.",
+          "docs": "アイテムの塗りつぶし。もし `\"solid\"` ならば、アイテムは背景を持つようになります。もし `\"outline\"` ならば、アイテムはボーダー付きの透明なものになります。md`モードでのみ使用可能です。",
           "docsTags": [],
           "values": [
             {
@@ -18307,7 +18307,7 @@
           "mutable": false,
           "attr": "justify",
           "reflectToAttr": false,
-          "docs": "How to pack the label and select within a line.\n`justify` does not apply when the label and select\nare on different lines when `labelPlacement` is set to\n`\"floating\"` or `\"stacked\"`.\n`\"start\"`: The label and select will appear on the left in LTR and\non the right in RTL.\n`\"end\"`: The label and select will appear on the right in LTR and\non the left in RTL.\n`\"space-between\"`: The label and select will appear on opposite\nends of the line with space between the two elements.",
+          "docs": "ラベルとセレクトを1行にまとめる方法。`labelPlacement`が `\"floating\"` または `\"stacked\"` に設定されている場合、ラベルとセレクトが異なる行にあるときは `justify` は適用されません。`\"start\"`：ラベルとセレクトはLTRでは左側に、RTLでは右側に表示されます。`\"end\"`：ラベルとセレクトはLTRでは右に、RTLでは左に表示されます。\"space-between\"`：ラベルとセレクトは行の反対側の端に表示され、2つの要素の間にはスペースがあります。",
           "docsTags": [],
           "default": "'space-between'",
           "values": [
@@ -18333,7 +18333,7 @@
           "mutable": false,
           "attr": "label",
           "reflectToAttr": false,
-          "docs": "The visible label associated with the select.",
+          "docs": "セレクトに関連する可視ラベル。",
           "docsTags": [],
           "values": [
             {
@@ -18352,7 +18352,7 @@
           "mutable": false,
           "attr": "label-placement",
           "reflectToAttr": false,
-          "docs": "Where to place the label relative to the select.\n`\"start\"`: The label will appear to the left of the select in LTR and to the right in RTL.\n`\"end\"`: The label will appear to the right of the select in LTR and to the left in RTL.\n`\"floating\"`: The label will appear smaller and above the select when the select is focused or it has a value. Otherwise it will appear on top of the select.\n`\"stacked\"`: The label will appear smaller and above the select regardless even when the select is blurred or has no value.\n`\"fixed\"`: The label has the same behavior as `\"start\"` except it also has a fixed width. Long text will be truncated with ellipses (\"...\").\nWhen using `\"floating\"` or `\"stacked\"` we recommend initializing the select with either a `value` or a `placeholder`.",
+          "docs": "セレクトに対してラベルを配置する位置。`\"start\"`：ラベルはLTRではセレクトの左側に、RTLでは右側に表示されます。`\"end\"`：ラベルはLTRではセレクトの右側に、RTLでは左側に表示されます。\"floating\"`：ラベルは、セレクトがフォーカスされているか、セレクトに値がある場合、小さく表示され、セレクトの上に表示されます。それ以外の場合は、セレクトの上に表示されます。\"stacked\"`：ラベルは、セレクトがぼやけた状態や値がない状態でも、小さく表示され、セレクトの上に表示されます。`\"fixed\"`：ラベルの幅が固定される以外は、`\"start\"`と同じ動作になります。長いテキストは省略記号（\"...\"）で切り捨てられます。`\"floating\"`や \"stacked\"`を使用する場合は、selectに `value` か `placeholder` のどちらかを指定して初期化することをお勧めします。",
           "docsTags": [],
           "default": "'start'",
           "values": [
@@ -18389,7 +18389,7 @@
           "mutable": false,
           "attr": "legacy",
           "reflectToAttr": false,
-          "docs": "Set the `legacy` property to `true` to forcibly use the legacy form control markup.\nIonic will only opt components in to the modern form markup when they are\nusing either the `aria-label` attribute or the `label` property. As a result,\nthe `legacy` property should only be used as an escape hatch when you want to\navoid this automatic opt-in behavior.\nNote that this property will be removed in an upcoming major release\nof Ionic, and all form components will be opted-in to using the modern form markup.",
+          "docs": "`legacy`プロパティを`true`に設定すると、レガシーフォームコントロールのマークアップを強制的に使用することができます。Ionicは、コンポーネントが`aria-label`属性または`label`プロパティを使用している場合にのみ、最新のフォームマークアップを選択します。そのため、`legacy`プロパティは、この自動オプトイン動作を回避したい場合にのみ、エスケープハッチとして使用する必要があります。なお、このプロパティはIonicの今後のメジャーリリースで削除され、すべてのフォームコンポーネントはモダンフォームマークアップを使用するようオプトインされる予定です。",
           "docsTags": [],
           "values": [
             {
@@ -18521,7 +18521,7 @@
           "mutable": false,
           "attr": "shape",
           "reflectToAttr": false,
-          "docs": "The shape of the select. If \"round\" it will have an increased border radius.",
+          "docs": "セレクトの形状を指定します。`round`の場合、境界線の半径が大きくなります。",
           "docsTags": [],
           "values": [
             {
@@ -18541,7 +18541,7 @@
           "mutable": true,
           "attr": "value",
           "reflectToAttr": false,
-          "docs": "The value of the select.",
+          "docs": "セレクトの値です。",
           "docsTags": [],
           "values": [
             {
@@ -18586,7 +18586,7 @@
           "bubbles": true,
           "cancelable": true,
           "composed": true,
-          "docs": "選択がキャンセルされたときに発します。",
+          "docs": "選択がキャンセルされたときに発行されます。",
           "docsTags": []
         },
         {
@@ -18613,7 +18613,7 @@
           "bubbles": true,
           "cancelable": true,
           "composed": true,
-          "docs": "セレクトにフォーカスが当たったときに発します。",
+          "docs": "セレクトにフォーカスが当たったときに発行されます。",
           "docsTags": []
         }
       ],
@@ -18622,7 +18622,7 @@
         {
           "name": "--background",
           "annotation": "prop",
-          "docs": "Background of the select"
+          "docs": "セレクトの背景"
         },
         {
           "name": "--border-color Color of the select border",
@@ -18692,7 +18692,7 @@
         {
           "name": "--ripple-color",
           "annotation": "prop",
-          "docs": "The color of the ripple effect on MD mode."
+          "docs": "MDモード時のリップルエフェクトの色です。"
         }
       ],
       "slots": [],
@@ -19842,7 +19842,7 @@
           "mutable": true,
           "attr": "layout",
           "reflectToAttr": false,
-          "docs": "Set the layout of the text and icon in the tab bar.\nIt defaults to `\"icon-top\"`.",
+          "docs": "タブバーのテキストとアイコンのレイアウトを設定します。デフォルトは`\"icon-top\"`です。",
           "docsTags": [],
           "values": [
             {
@@ -20408,7 +20408,7 @@
           "mutable": false,
           "attr": "clear-on-edit",
           "reflectToAttr": false,
-          "docs": "If `true`, the value will be cleared after focus upon edit.",
+          "docs": "true`の場合、編集時にフォーカスが当たった後、値がクリアされる。",
           "docsTags": [],
           "default": "false",
           "values": [
@@ -20499,7 +20499,7 @@
           "mutable": false,
           "attr": "counter",
           "reflectToAttr": false,
-          "docs": "If `true`, a character counter will display the ratio of characters used and the total character limit.\nDevelopers must also set the `maxlength` property for the counter to be calculated correctly.",
+          "docs": "`true`の場合、文字カウンタが使用された文字の比率と総文字数制限を表示します。カウンターを正しく計算するために、開発者は `maxlength` プロパティも設定する必要があります。",
           "docsTags": [],
           "default": "false",
           "values": [
@@ -20534,7 +20534,7 @@
           "mutable": false,
           "attr": "debounce",
           "reflectToAttr": false,
-          "docs": "Set the amount of time, in milliseconds, to wait to trigger the `ionInput` event after each keystroke.",
+          "docs": "キーを押すたびに `ionInput` イベントが発生するまでの待ち時間をミリ秒単位で設定します。",
           "docsTags": [],
           "values": [
             {
@@ -20614,7 +20614,7 @@
           "mutable": false,
           "attr": "error-text",
           "reflectToAttr": false,
-          "docs": "Text that is placed under the textarea and displayed when an error is detected.",
+          "docs": "テキストエリアの下に配置され、エラーが検出されたときに表示されるテキストです。",
           "docsTags": [],
           "values": [
             {
@@ -20633,7 +20633,7 @@
           "mutable": false,
           "attr": "fill",
           "reflectToAttr": false,
-          "docs": "The fill for the item. If `\"solid\"` the item will have a background. If\n`\"outline\"` the item will be transparent with a border. Only available in `md` mode.",
+          "docs": "アイテムの塗りつぶし。もし `\"solid\"` ならば、アイテムは背景を持つようになります。もし `\"outline\"` ならば、アイテムはボーダー付きの透明なものになります。md`モードでのみ使用可能です。",
           "docsTags": [],
           "values": [
             {
@@ -20657,7 +20657,7 @@
           "mutable": false,
           "attr": "helper-text",
           "reflectToAttr": false,
-          "docs": "Text that is placed under the textarea and displayed when no error is detected.",
+          "docs": "textareaの下に配置され、エラーが検出されなかった場合に表示されるテキストです。",
           "docsTags": [],
           "values": [
             {
@@ -20724,7 +20724,7 @@
           "mutable": false,
           "attr": "label",
           "reflectToAttr": false,
-          "docs": "The visible label associated with the textarea.",
+          "docs": "テキストエリアに関連する可視ラベル。",
           "docsTags": [],
           "values": [
             {
@@ -20743,7 +20743,7 @@
           "mutable": false,
           "attr": "label-placement",
           "reflectToAttr": false,
-          "docs": "Where to place the label relative to the textarea.\n`\"start\"`: The label will appear to the left of the textarea in LTR and to the right in RTL.\n`\"end\"`: The label will appear to the right of the textarea in LTR and to the left in RTL.\n`\"floating\"`: The label will appear smaller and above the textarea when the textarea is focused or it has a value. Otherwise it will appear on top of the textarea.\n`\"stacked\"`: The label will appear smaller and above the textarea regardless even when the textarea is blurred or has no value.\n`\"fixed\"`: The label has the same behavior as `\"start\"` except it also has a fixed width. Long text will be truncated with ellipses (\"...\").",
+          "docs": "テキストエリアと相対的にラベルを配置する場所。\"start\"`：ラベルはLTRではテキストエリアの左側に、RTLでは右側に表示されます。`\"end\"`：ラベルはLTRではテキストエリアの右側に、RTLでは左側に表示されます。\"floating\"`：ラベルは、テキストエリアにフォーカスが当たっているか、値がある場合、小さく表示され、テキストエリアの上に表示されます。それ以外の場合はtextareaの上に表示されます。`\"stacked\"`：テキストエリアがぼやけた状態や値がない場合でも、ラベルは小さく表示され、テキストエリアの上に表示されます。固定\"`：ラベルの幅が固定される以外は、`\"start\"`と同じ動作になります。長いテキストは省略記号（\"...\"）で切り捨てられます。",
           "docsTags": [],
           "default": "'start'",
           "values": [
@@ -20777,7 +20777,7 @@
           "mutable": false,
           "attr": "legacy",
           "reflectToAttr": false,
-          "docs": "Set the `legacy` property to `true` to forcibly use the legacy form control markup.\nIonic will only opt components in to the modern form markup when they are\nusing either the `aria-label` attribute or the default slot that contains\nthe label text. As a result, the `legacy` property should only be used as\nan escape hatch when you want to avoid this automatic opt-in behavior.\nNote that this property will be removed in an upcoming major release\nof Ionic, and all form components will be opted-in to using the modern form markup.",
+          "docs": "`legacy`プロパティを`true`に設定すると、レガシーフォームコントロールのマークアップを強制的に使用することができます。Ionicは、コンポーネントが`aria-label`属性またはラベルテキストを含むデフォルトスロットのいずれかを使用している場合にのみ、モダンフォームマークアップを選択するようになっています。そのため、`legacy`プロパティは、この自動オプトイン動作を回避したい場合にのみ、エスケープハッチとして使用する必要があります。なお、このプロパティはIonicの今後のメジャーリリースで削除され、すべてのフォームコンポーネントはモダンフォームマークアップを使用するようにオプトインされる予定です。",
           "docsTags": [],
           "values": [
             {
@@ -20796,7 +20796,7 @@
           "mutable": false,
           "attr": "maxlength",
           "reflectToAttr": false,
-          "docs": "This attribute specifies the maximum number of characters that the user can enter.",
+          "docs": "この属性は、ユーザが入力できる最大文字数を指定します。",
           "docsTags": [],
           "values": [
             {
@@ -20815,7 +20815,7 @@
           "mutable": false,
           "attr": "minlength",
           "reflectToAttr": false,
-          "docs": "This attribute specifies the minimum number of characters that the user can enter.",
+          "docs": "この属性は、ユーザーが入力できる最小の文字数を指定します。",
           "docsTags": [],
           "values": [
             {
@@ -20944,7 +20944,7 @@
           "mutable": false,
           "attr": "shape",
           "reflectToAttr": false,
-          "docs": "The shape of the textarea. If \"round\" it will have an increased border radius.",
+          "docs": "テキストエリアの形状を指定します。round \"の場合、ボーダーの半径が大きくなります。",
           "docsTags": [],
           "values": [
             {
@@ -21067,7 +21067,7 @@
           "bubbles": true,
           "cancelable": true,
           "composed": true,
-          "docs": "The `ionChange` event is fired for `<ion-textarea>` elements when the user\nmodifies the element's value. Unlike the `ionInput` event, the `ionChange`\nevent is not necessarily fired for each alteration to an element's value.\n\nThe `ionChange` event is fired when the element loses focus after its value\nhas been modified.",
+          "docs": "`ionChange` イベントは `<ion-textarea>` 要素に対して、ユーザがその要素の値を変更したときに発生します。 `ionInput` イベントとは異なり、`ionChange` イベントは要素の値が変更されるたびに発生する必要はない。  値が変更された後、要素のフォーカスが外れると `ionChange` イベントが発生します。",
           "docsTags": []
         },
         {
@@ -21085,7 +21085,7 @@
           "bubbles": true,
           "cancelable": true,
           "composed": true,
-          "docs": "The `ionInput` event fires when the `value` of an `<ion-textarea>` element\nhas been changed.\n\nWhen `clearOnEdit` is enabled, the `ionInput` event will be fired when\nthe user clears the textarea by performing a keydown event.",
+          "docs": "`ionInput` イベントは、`<ion-textarea>` 要素の `value` が変更されたときに発生します。 `clearOnEdit` が有効な場合、ユーザがキーダウンイベントを実行してテキストエリアをクリアしたときに `ionInput` イベントが発生します。",
           "docsTags": []
         }
       ],
@@ -21099,7 +21099,7 @@
         {
           "name": "--border-color",
           "annotation": "prop",
-          "docs": "Color of the border below the textarea when using helper text, error text, or counter"
+          "docs": "ヘルパーテキスト、エラーテキスト、カウンターを使用する場合のテキストエリア下のボーダーの色"
         },
         {
           "name": "--border-radius",
@@ -21109,12 +21109,12 @@
         {
           "name": "--border-style",
           "annotation": "prop",
-          "docs": "Style of the border below the textarea when using helper text, error text, or counter"
+          "docs": "ヘルパーテキスト、エラーテキスト、カウンター使用時のテキストエリア下のボーダーのスタイル"
         },
         {
           "name": "--border-width",
           "annotation": "prop",
-          "docs": "Width of the border below the textarea when using helper text, error text, or counter"
+          "docs": "ヘルパーテキスト、エラーテキスト、カウンターを使用する場合のテキストエリア下のボーダーの幅"
         },
         {
           "name": "--color",
@@ -21124,17 +21124,17 @@
         {
           "name": "--highlight-color-focused",
           "annotation": "prop",
-          "docs": "The color of the highlight on the textarea when focused"
+          "docs": "フォーカスされたときのテキストエリアのハイライトの色"
         },
         {
           "name": "--highlight-color-invalid",
           "annotation": "prop",
-          "docs": "The color of the highlight on the textarea when invalid"
+          "docs": "無効時のテキストエリア上のハイライトの色"
         },
         {
           "name": "--highlight-color-valid",
           "annotation": "prop",
-          "docs": "The color of the highlight on the textarea when valid"
+          "docs": "有効時のテキストエリアのハイライトの色"
         },
         {
           "name": "--padding-bottom",
@@ -21561,7 +21561,7 @@
           "mutable": false,
           "attr": "is-open",
           "reflectToAttr": false,
-          "docs": "If `true`, the toast will open. If `false`, the toast will close.\nUse this if you need finer grained control over presentation, otherwise\njust use the toastController or the `trigger` property.\nNote: `isOpen` will not automatically be set back to `false` when\nthe toast dismisses. You will need to do that in your code.",
+          "docs": "もし `true` ならば、トーストは表示されます。もし `false` ならば、トーストは閉じます。プレゼンテーションの細かい制御が必要な場合はこれを使用し、そうでない場合は toastController または `trigger` プロパティを使用してください。注意: トーストが終了しても `isOpen` は自動的に `false` に戻りません。あなたのコードでそれを行う必要があります。",
           "docsTags": [],
           "default": "false",
           "values": [
@@ -21635,7 +21635,7 @@
           "mutable": false,
           "attr": "message",
           "reflectToAttr": false,
-          "docs": "Message to be shown in the toast.\nThis property accepts custom HTML as a string.\nContent is parsed as plaintext by default.\n`innerHTMLTemplatesEnabled` must be set to `true` in the Ionic config\nbefore custom HTML can be used.",
+          "docs": "トーストに表示するメッセージ。このプロパティは、文字列としてカスタムHTMLを受け入れます。デフォルトではコンテンツはプレーンテキストとしてパースされます。カスタムHTMLを使用するには、Ionicの設定で `innerHTMLTemplatesEnabled` を `true` に設定する必要があります。",
           "docsTags": [],
           "values": [
             {
@@ -21721,7 +21721,7 @@
           "mutable": false,
           "attr": "trigger",
           "reflectToAttr": false,
-          "docs": "An ID corresponding to the trigger element that\ncauses the toast to open when clicked.",
+          "docs": "クリックされたときにトーストを開かせるトリガー要素に対応するID。",
           "docsTags": [],
           "values": [
             {
@@ -21797,7 +21797,7 @@
           "bubbles": true,
           "cancelable": true,
           "composed": true,
-          "docs": "Emitted after the toast has dismissed.\nShorthand for ionToastDidDismiss.",
+          "docs": "トーストが終了した後に発行されます。ionToastDidDismissの略記。",
           "docsTags": []
         },
         {
@@ -21806,7 +21806,7 @@
           "bubbles": true,
           "cancelable": true,
           "composed": true,
-          "docs": "Emitted after the toast has presented.\nShorthand for ionToastWillDismiss.",
+          "docs": "トーストがはじまった後に発行されます。ionToastWillDismissの略語。",
           "docsTags": []
         },
         {
@@ -21824,7 +21824,7 @@
           "bubbles": true,
           "cancelable": true,
           "composed": true,
-          "docs": "トーストが提示された後に発します。",
+          "docs": "トーストが提示された後に発行されます。",
           "docsTags": []
         },
         {
@@ -21833,7 +21833,7 @@
           "bubbles": true,
           "cancelable": true,
           "composed": true,
-          "docs": "乾杯が解散する前に発します。",
+          "docs": "乾杯が解散する前に発行されます。",
           "docsTags": []
         },
         {
@@ -21851,7 +21851,7 @@
           "bubbles": true,
           "cancelable": true,
           "composed": true,
-          "docs": "Emitted before the toast has dismissed.\nShorthand for ionToastWillDismiss.",
+          "docs": "トーストが終了する前に発行されます。ionToastWillDismissの略語です。",
           "docsTags": []
         },
         {
@@ -21860,7 +21860,7 @@
           "bubbles": true,
           "cancelable": true,
           "composed": true,
-          "docs": "Emitted before the toast has presented.\nShorthand for ionToastWillPresent.",
+          "docs": "トーストが表示される前に発行されます。ionToastWillPresentの略記。",
           "docsTags": []
         }
       ],
@@ -22127,7 +22127,7 @@
           "mutable": false,
           "attr": "justify",
           "reflectToAttr": false,
-          "docs": "How to pack the label and toggle within a line.\n`\"start\"`: The label and toggle will appear on the left in LTR and\non the right in RTL.\n`\"end\"`: The label and toggle will appear on the right in LTR and\non the left in RTL.\n`\"space-between\"`: The label and toggle will appear on opposite\nends of the line with space between the two elements.",
+          "docs": "ラベルとトグルを1行にまとめる方法。`\"start\"`：ラベルとトグルは、LTRでは左に、RTLでは右に表示されます。`\"end\"`：ラベルとトグルは、LTRでは右に、RTLでは左に表示されます。`\"space-between\"`：ラベルとトグルは、2つの要素の間にスペースがある状態で、行の反対側の端に表示されます。",
           "docsTags": [],
           "default": "'space-between'",
           "values": [
@@ -22153,7 +22153,7 @@
           "mutable": false,
           "attr": "label-placement",
           "reflectToAttr": false,
-          "docs": "Where to place the label relative to the input.\n`\"start\"`: The label will appear to the left of the toggle in LTR and to the right in RTL.\n`\"end\"`: The label will appear to the right of the toggle in LTR and to the left in RTL.\n`\"fixed\"`: The label has the same behavior as `\"start\"` except it also has a fixed width. Long text will be truncated with ellipses (\"...\").",
+          "docs": "Inputに対してラベルを配置する場所。\"start\"`とする：ラベルはLTRではトグルの左側に、RTLでは右側に表示されます。`\"end\"`：ラベルはLTRではトグルの右側に、RTLでは左側に表示されます。`\"fixed\"`：ラベルの幅が固定される以外は、`\"start\"`と同じ動作になります。長いテキストは省略記号(\"...\")で切り捨てられます。",
           "docsTags": [],
           "default": "'start'",
           "values": [
@@ -22179,7 +22179,7 @@
           "mutable": false,
           "attr": "legacy",
           "reflectToAttr": false,
-          "docs": "Set the `legacy` property to `true` to forcibly use the legacy form control markup.\nIonic will only opt components in to the modern form markup when they are\nusing either the `aria-label` attribute or the default slot that contains\nthe label text. As a result, the `legacy` property should only be used as\nan escape hatch when you want to avoid this automatic opt-in behavior.\nNote that this property will be removed in an upcoming major release\nof Ionic, and all form components will be opted-in to using the modern form markup.",
+          "docs": "`legacy`プロパティを`true`に設定すると、レガシーフォームコントロールのマークアップを強制的に使用することができます。Ionicは、コンポーネントが`aria-label`属性またはラベルテキストを含むデフォルトスロットのいずれかを使用している場合にのみ、モダンフォームマークアップを選択するようになっています。そのため、`legacy`プロパティは、この自動オプトイン動作を回避したい場合にのみ、エスケープハッチとして使用する必要があります。なお、このプロパティはIonicの今後のメジャーリリースで削除され、すべてのフォームコンポーネントはモダンフォームマークアップを使用するようにオプトインされる予定です。",
           "docsTags": [],
           "values": [
             {
@@ -22271,7 +22271,7 @@
           "bubbles": true,
           "cancelable": true,
           "composed": true,
-          "docs": "Emitted when the user switches the toggle on or off. Does not emit\nwhen programmatically changing the value of the `checked` property.",
+          "docs": "ユーザがトグルのオン/オフを切り替えたときに発行されます。プログラムによって `checked` プロパティの値が変更された場合は発生しません。",
           "docsTags": []
         },
         {
@@ -22339,18 +22339,18 @@
         {
           "name": "--track-background",
           "annotation": "prop",
-          "docs": "Background of the toggle track"
+          "docs": "トグルトラックの背景"
         },
         {
           "name": "--track-background-checked",
           "annotation": "prop",
-          "docs": "Background of the toggle track when checked"
+          "docs": "チェックしたときのトグルトラックの背景"
         }
       ],
       "slots": [
         {
           "name": "",
-          "docs": "The label text to associate with the toggle. Use the \"labelPlacement\" property to control where the label is placed relative to the toggle."
+          "docs": "トグルに関連付けるラベルテキストです。`\"labelPlacement`\"プロパティを使用して、トグルに対してラベルを配置する位置を制御します。"
         }
       ],
       "parts": [

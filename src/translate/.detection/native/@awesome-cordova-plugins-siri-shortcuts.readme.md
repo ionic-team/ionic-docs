@@ -1,3 +1,4 @@
+
 This plugin only works when your app is built with XCode 10. Shortcuts will only appear on iOS-versions >= 12.0
 
 This plugin enables the use of Siri shortcuts in Cordova. Siri Shortcuts enable the user to perform certain actions by adding them to Siri.

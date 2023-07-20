@@ -7,6 +7,10 @@
     {
       "name": "virtualProp",
       "text": "{\"ios\" | \"md\"} mode - The mode determines which platform styles to use."
+    },
+    {
+      "name": "slot",
+      "text": "label - The label text to associate with the input. Use the `labelPlacement` property to control where the label is placed relative to the input. Use this if you need to render a label with custom HTML. (EXPERIMENTAL)"
     }
   ],
   "usage": {},
@@ -643,7 +647,7 @@
       "mutable": false,
       "attr": "label",
       "reflectToAttr": false,
-      "docs": "The visible label associated with the input.",
+      "docs": "The visible label associated with the input.\n\nUse this if you need to render a plaintext label.\n\nThe `label` property will take priority over the `label` slot if both are used.",
       "docsTags": [],
       "values": [
         {
@@ -1104,7 +1108,7 @@
       },
       "signature": "setFocus() => Promise<void>",
       "parameters": [],
-      "docs": "Sets focus on the native `input` in `ion-input`. Use this method instead of the global\n`input.focus()`.\n\nDevelopers who wish to focus an input when a page enters\nshould call `setFocus()` in the `ionViewDidEnter()` lifecycle method.",
+      "docs": "Sets focus on the native `input` in `ion-input`. Use this method instead of the global\n`input.focus()`.\n\nDevelopers who wish to focus an input when a page enters\nshould call `setFocus()` in the `ionViewDidEnter()` lifecycle method.\n\nDevelopers who wish to focus an input when an overlay is presented\nshould call `setFocus` after `didPresent` has resolved.",
       "docsTags": []
     }
   ],
@@ -1124,7 +1128,7 @@
       "bubbles": true,
       "cancelable": true,
       "composed": true,
-      "docs": "The `ionChange` event is fired for `<ion-input>` elements when the user\nmodifies the element's value. Unlike the `ionInput` event, the `ionChange`\nevent is not necessarily fired for each alteration to an element's value.\n\nDepending on the way the users interacts with the element, the `ionChange`\nevent fires at a different moment:\n- When the user commits the change explicitly (e.g. by selecting a date\nfrom a date picker for `<ion-input type=\"date\">`, pressing the \"Enter\" key, etc.).\n- When the element loses focus after its value has changed: for elements\nwhere the user's interaction is typing.",
+      "docs": "The `ionChange` event is fired when the user modifies the input's value.\nUnlike the `ionInput` event, the `ionChange` event is only fired when changes\nare committed, not as the user types.\n\nDepending on the way the users interacts with the element, the `ionChange`\nevent fires at a different moment:\n- When the user commits the change explicitly (e.g. by selecting a date\nfrom a date picker for `<ion-input type=\"date\">`, pressing the \"Enter\" key, etc.).\n- When the element loses focus after its value has changed: for elements\nwhere the user's interaction is typing.",
       "docsTags": []
     },
     {
@@ -1142,7 +1146,7 @@
       "bubbles": true,
       "cancelable": true,
       "composed": true,
-      "docs": "The `ionInput` event fires when the `value` of an `<ion-input>` element\nhas been changed.\n\nFor elements that accept text input (`type=text`, `type=tel`, etc.), the interface\nis [`InputEvent`](https://developer.mozilla.org/en-US/docs/Web/API/InputEvent); for others,\nthe interface is [`Event`](https://developer.mozilla.org/en-US/docs/Web/API/Event). If\nthe input is cleared on edit, the type is `null`.",
+      "docs": "The `ionInput` event is fired each time the user modifies the input's value.\nUnlike the `ionChange` event, the `ionInput` event is fired for each alteration\nto the input's value. This typically happens for each keystroke as the user types.\n\nFor elements that accept text input (`type=text`, `type=tel`, etc.), the interface\nis [`InputEvent`](https://developer.mozilla.org/en-US/docs/Web/API/InputEvent); for others,\nthe interface is [`Event`](https://developer.mozilla.org/en-US/docs/Web/API/Event). If\nthe input is cleared on edit, the type is `null`.",
       "docsTags": []
     }
   ],
@@ -1161,7 +1165,7 @@
     {
       "name": "--border-radius",
       "annotation": "prop",
-      "docs": "Radius of the input"
+      "docs": "Radius of the input. A large radius may display unevenly when using fill=\"outline\"; if needed, use shape=\"round\" instead or increase --padding-start."
     },
     {
       "name": "--border-style",
@@ -1234,7 +1238,12 @@
       "docs": "Opacity of the input placeholder text"
     }
   ],
-  "slots": [],
+  "slots": [
+    {
+      "name": "label",
+      "docs": "The label text to associate with the input. Use the `labelPlacement` property to control where the label is placed relative to the input. Use this if you need to render a label with custom HTML. (EXPERIMENTAL)"
+    }
+  ],
   "parts": [],
   "dependents": [],
   "dependencies": [

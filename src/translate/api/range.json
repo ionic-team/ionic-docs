@@ -175,6 +175,25 @@
       "required": false
     },
     {
+      "name": "label",
+      "type": "string | undefined",
+      "mutable": false,
+      "attr": "label",
+      "reflectToAttr": false,
+      "docs": "The text to display as the control's label. Use this over the `label` slot if\nyou only need plain text. The `label` property will take priority over the\n`label` slot if both are used.",
+      "docsTags": [],
+      "values": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "undefined"
+        }
+      ],
+      "optional": true,
+      "required": false
+    },
+    {
       "name": "labelPlacement",
       "type": "\"end\" | \"fixed\" | \"start\"",
       "mutable": false,
