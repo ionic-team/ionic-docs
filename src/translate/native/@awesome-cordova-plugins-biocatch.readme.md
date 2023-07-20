@@ -1,2 +1,1 @@
-
 BioCatch SDK Cordova support

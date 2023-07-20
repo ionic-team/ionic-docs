@@ -1,6 +1,7 @@
 ---
-title: "ion-radio"
+title: 'ion-radio'
 ---
+
 import Props from '@ionic-internal/component-api/v7/radio/props.md';
 import Events from '@ionic-internal/component-api/v7/radio/events.md';
 import Methods from '@ionic-internal/component-api/v7/radio/methods.md';
@@ -10,17 +11,19 @@ import Slots from '@ionic-internal/component-api/v7/radio/slots.md';
 
 <head>
   <title>ion-radio Component: Radio Property for iOS and Android</title>
-  <meta name="description" content="Radioコンポーネントは、iOSおよびAndroidデバイスのion-radio-groupsの内部で使用する必要があります。Radioコンポーネントの使用方法とインストール方法については、こちらをご覧ください。" />
+  <meta
+    name="description"
+    content="Radioコンポーネントは、iOSおよびAndroidデバイスのion-radio-groupsの内部で使用する必要があります。Radioコンポーネントの使用方法とインストール方法については、こちらをご覧ください。"
+  />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="shadow" />
 
+ラジオは、[ラジオグループ](./radio-group)の中で使用する必要があります。ラジオを押すと、そのラジオがチェックされ、前に選択されていたラジオがある場合は、そのチェックが解除されます。また、親ラジオグループの value プロパティをラジオの値に設定することで、プログラム的にチェックすることもできます。
 
-ラジオは、[ラジオグループ](./radio-group)の中で使用する必要があります。ラジオを押すと、そのラジオがチェックされ、前に選択されていたラジオがある場合は、そのチェックが解除されます。また、親ラジオグループのvalueプロパティをラジオの値に設定することで、プログラム的にチェックすることもできます。
-
-ラジオがラジオグループの中にある場合、いつでもチェックされるのは1つのラジオだけです。複数の項目を選択する場合は、[checkboxes](./checkbox)を代わりに使用する必要があります。ラジオをグループ内で無効にすると、ラジオとの相互作用を防ぐことができます。
+ラジオがラジオグループの中にある場合、いつでもチェックされるのは 1 つのラジオだけです。複数の項目を選択する場合は、[checkboxes](./checkbox)を代わりに使用する必要があります。ラジオをグループ内で無効にすると、ラジオとの相互作用を防ぐことができます。
 
 ## 基本的な使い方
 
@@ -44,7 +47,6 @@ import Justify from '@site/static/usage/v7/radio/justify/index.md';
 
 <Justify />
 
-
 :::note
 `ion-item` is only used in the demos to emphasize how `justify` works. It is not needed in order for `justify` to function correctly.
 :::
@@ -57,7 +59,6 @@ import EmptySelection from '@site/static/usage/v7/radio/empty-selection/index.md
 
 <EmptySelection />
 
-
 ## テーマ
 
 ### Colors
@@ -66,7 +67,7 @@ import Colors from '@site/static/usage/v7/radio/theming/colors/index.md';
 
 <Colors />
 
-## CSSカスタムプロパティ
+## CSS カスタムプロパティ
 
 import CSSProps from '@site/static/usage/v7/radio/theming/css-properties/index.md';
 
@@ -78,11 +79,11 @@ import CSSParts from '@site/static/usage/v7/radio/theming/css-shadow-parts/index
 
 <CSSParts />
 
-## Legacy Radio Syntaxからの移行
+## Legacy Radio Syntax からの移行
 
-Ionic 7.0では、よりシンプルなラジオ構文が導入されました。この新しい構文は、ラジオを設定するために必要な定型文を減らし、アクセシビリティの問題を解決し、開発者のエクスペリエンスを向上させます。
+Ionic 7.0 では、よりシンプルなラジオ構文が導入されました。この新しい構文は、ラジオを設定するために必要な定型文を減らし、アクセシビリティの問題を解決し、開発者のエクスペリエンスを向上させます。
 
-開発者は、この移行を一度に1つのラジオで実行できます。開発者はレガシー構文を使い続けることができますが、できるだけ早く移行することをお勧めします。
+開発者は、この移行を一度に 1 つのラジオで実行できます。開発者はレガシー構文を使い続けることができますが、できるだけ早く移行することをお勧めします。
 
 ### 最新の構文の使い方
 
@@ -91,7 +92,6 @@ Ionic 7.0では、よりシンプルなラジオ構文が導入されました�
 import Migration from '@site/static/usage/v7/radio/migration/index.md';
 
 <Migration />
-  
 
 :::note
 Ionic の過去のバージョンでは、`ion-radio` が正しく機能するためには `ion-item` が必要でした。Ionic 7.0 からは、`ion-radio` は `ion-item` の中で、そのアイテムが `ion-list` に配置される場合にのみ使用されます。また、`ion-radio`が正しく機能するためには、`ion-item`はもはや必須ではありません。
@@ -99,24 +99,28 @@ Ionic の過去のバージョンでは、`ion-radio` が正しく機能する�
 
 ### レガシー構文の使用
 
-Ionicは、アプリが最新の無線構文を使用しているかどうかをヒューリスティックで検出します。場合によっては、レガシー構文を使い続けることが望ましい場合もあります。開発者は `ion-radio` の `legacy` プロパティを `true` に設定することで、その無線機のインスタンスがレガシー構文を使用するように強制できます。
-
-
+Ionic は、アプリが最新の無線構文を使用しているかどうかをヒューリスティックで検出します。場合によっては、レガシー構文を使い続けることが望ましい場合もあります。開発者は `ion-radio` の `legacy` プロパティを `true` に設定することで、その無線機のインスタンスがレガシー構文を使用するように強制できます。
 
 ## プロパティ
+
 <Props />
 
 ## イベント
+
 <Events />
 
 ## メソッド
+
 <Methods />
 
 ## CSS Shadow Parts
+
 <Parts />
 
-## CSSカスタムプロパティ
+## CSS カスタムプロパティ
+
 <CustomProps />
 
 ## Slots
+
 <Slots />

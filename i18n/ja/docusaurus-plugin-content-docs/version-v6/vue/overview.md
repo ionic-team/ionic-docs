@@ -14,21 +14,21 @@ sidebar_label: 概要
 import DocsCard from '@components/global/DocsCard';
 import DocsCards from '@components/global/DocsCards';
 
-Ionic Frameworkのコアな経験と、Vue開発者向けにカスタマイズされたツールやAPIを組み合わせたものが `@ionic/vue` です。
+Ionic Framework のコアな経験と、Vue 開発者向けにカスタマイズされたツールや API を組み合わせたものが `@ionic/vue` です。
 
-## Vueバージョンサポート
+## Vue バージョンサポート
 
-Ionic VueはVue 3.0.0上に構築されています。Ionic Vueの初期バージョンでアプリを構築している場合は、最新のリリースにアップグレードして、Vueの依存関係をアップグレードしてください。
+Ionic Vue は Vue 3.0.0 上に構築されています。Ionic Vue の初期バージョンでアプリを構築している場合は、最新のリリースにアップグレードして、Vue の依存関係をアップグレードしてください。
 
-## Vueツール
+## Vue ツール
 
-Ionic Vueプロジェクトには通常のVue CLIプロジェクトと同じツールが付属しています。つまり、Vue CLIとそのすべての機能を使って構築することになります。VueのデフォルトテンプレートにはルーティングやTypeScriptのサポートなど、デフォルトで有効になっている機能がほとんどありませんが、Ionic Vueはそれらをデフォルトで有効にしています。
+Ionic Vue プロジェクトには通常の Vue CLI プロジェクトと同じツールが付属しています。つまり、Vue CLI とそのすべての機能を使って構築することになります。Vue のデフォルトテンプレートにはルーティングや TypeScript のサポートなど、デフォルトで有効になっている機能がほとんどありませんが、Ionic Vue はそれらをデフォルトで有効にしています。
 
 ## Native Tooling
 
-[Capacitor](https://capacitorjs.com) は、Ionic VueウェブアプリをiOS、Android、ウェブ上でネイティブに動作させるための公式クロスプラットフォームアプリライブラリです。
+[Capacitor](https://capacitorjs.com) は、Ionic Vue ウェブアプリを iOS、Android、ウェブ上でネイティブに動作させるための公式クロスプラットフォームアプリライブラリです。
 
-[Cordova](https://cordova.apache.org/) とCordovaプラグインでIonic Vueを使用する際の技術的な制限はありませんが、Capacitorが公式に推奨されています。現時点では、[Ionic CLIツール](/docs/cli) ツールでIonic VueのCordova統合をサポートする計画はない。詳細は [こちら](https://capacitorjs.com/docs/cordova) をご覧ください。
+[Cordova](https://cordova.apache.org/) と Cordova プラグインで Ionic Vue を使用する際の技術的な制限はありませんが、Capacitor が公式に推奨されています。現時点では、[Ionic CLI ツール](/docs/cli) ツールで Ionic Vue の Cordova 統合をサポートする計画はない。詳細は [こちら](https://capacitorjs.com/docs/cordova) をご覧ください。
 
 ## コミュニティからの情報
 

@@ -1,6 +1,7 @@
 ---
-title: "ion-badge"
+title: 'ion-badge'
 ---
+
 import Props from '@ionic-internal/component-api/v7/badge/props.md';
 import Events from '@ionic-internal/component-api/v7/badge/events.md';
 import Methods from '@ionic-internal/component-api/v7/badge/methods.md';
@@ -10,7 +11,10 @@ import Slots from '@ionic-internal/component-api/v7/badge/slots.md';
 
 <head>
   <title>Badges | ion-badge: iOS & Android App Notification Badge Icons</title>
-  <meta name="description" content="BadgesはiOS/Androidアプリで他の要素の近くに表示されるインラインブロック要素で、アイテムの数を示す通知として使用します。" />
+  <meta
+    name="description"
+    content="BadgesはiOS/Androidアプリで他の要素の近くに表示されるインラインブロック要素で、アイテムの数を示す通知として使用します。"
+  />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
@@ -40,19 +44,25 @@ import CSSProps from '@site/static/usage/v7/badge/theming/css-properties/index.m
 <CSSProps />
 
 ## プロパティ
+
 <Props />
 
 ## イベント
+
 <Events />
 
 ## メソッド
+
 <Methods />
 
 ## CSS Shadow Parts
+
 <Parts />
 
-## CSSカスタムプロパティ
+## CSS カスタムプロパティ
+
 <CustomProps />
 
 ## Slots
+
 <Slots />

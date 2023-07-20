@@ -1,6 +1,7 @@
 ---
-title: "ion-route"
+title: 'ion-route'
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
@@ -13,18 +14,19 @@ import Slots from '@ionic-internal/component-api/v7/route/slots.md';
 
 <head>
   <title>ion-route: API Route Component for Ionic Framework Apps</title>
-  <meta name="description" content="ion-routeコンポーネントは、コンポーネントを受け取り、Browser URLがURLプロパティに一致したときにレンダリングします。Ionic AppsのAPIルートコンポーネントの詳細はこちら。" />
+  <meta
+    name="description"
+    content="ion-routeコンポーネントは、コンポーネントを受け取り、Browser URLがURLプロパティに一致したときにレンダリングします。Ionic AppsのAPIルートコンポーネントの詳細はこちら。"
+  />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
-
 The route component takes a component and renders it when the Browser URL matches the url property.
 
 :::note
- Note: このコンポーネントは、バニラおよびステンシルJavaScriptプロジェクトでのみ使用してください。Angularプロジェクトでは、[`ion-router-outlet`](router-outlet.md) と Angularルータを使用してください。
+Note: このコンポーネントは、バニラおよびステンシル JavaScript プロジェクトでのみ使用してください。Angular プロジェクトでは、[`ion-router-outlet`](router-outlet.md) と Angular ルータを使用してください。
 :::
-
 
 ## ナビゲーションフック
 
@@ -40,9 +42,6 @@ interface NavigationHookOptions {
   redirect: string;
 }
 ```
-
-
-
 
 ## 使い方
 
@@ -68,23 +67,23 @@ newMessagePage.beforeLeave = hasUnsavedDataGuard;
 
 const isLoggedInGuard = async () => {
   const isLoggedIn = await UserData.isLoggedIn(); // Replace this with actual login validation
-  
+
   if (isLoggedIn) {
     return true;
   } else {
     return { redirect: '/login' }; // If a user is not logged in, they will be redirected to the /login page
   }
-}
+};
 
 const hasUnsavedDataGuard = async () => {
   const hasUnsavedData = await checkData(); // Replace this with actual validation
-  
+
   if (hasUnsavedData) {
     return await confirmDiscardChanges();
   } else {
     return true;
   }
-}
+};
 
 const confirmDiscardChanges = async () => {
   const alert = document.createElement('ion-alert');
@@ -98,22 +97,20 @@ const confirmDiscardChanges = async () => {
     {
       text: 'Discard',
       role: 'destructive',
-    }
+    },
   ];
-  
+
   document.body.appendChild(alert);
-  
+
   await alert.present();
-  
+
   const { role } = await alert.onDidDismiss();
-  
-  return (role === 'Cancel') ? false : true;
-}
+
+  return role === 'Cancel' ? false : true;
+};
 ```
 
-
 </TabItem>
-
 
 <TabItem value="stencil">
 
@@ -123,7 +120,7 @@ import { alertController } from '@ionic/core';
 
 @Component({
   tag: 'router-example',
-  styleUrl: 'router-example.css'
+  styleUrl: 'router-example.css',
 })
 export class RouterExample {
   render() {
@@ -134,29 +131,29 @@ export class RouterExample {
         <ion-route url="/new-message" component="page-new-message" beforeLeave={hasUnsavedDataGuard}></ion-route>
         <ion-route url="/login" component="page-login"></ion-route>
       </ion-router>
-    )
+    );
   }
 }
 
 const isLoggedInGuard = async () => {
   const isLoggedIn = await UserData.isLoggedIn(); // Replace this with actual login validation
-  
+
   if (isLoggedIn) {
     return true;
   } else {
     return { redirect: '/login' }; // If a user is not logged in, they will be redirected to the /login page
   }
-}
+};
 
 const hasUnsavedDataGuard = async () => {
   const hasUnsavedData = await checkData(); // Replace this with actual validation
-  
+
   if (hasUnsavedData) {
     return await confirmDiscardChanges();
   } else {
     return true;
   }
-}
+};
 
 const confirmDiscardChanges = async () => {
   const alert = await alertController.create({
@@ -170,21 +167,19 @@ const confirmDiscardChanges = async () => {
       {
         text: 'Discard',
         role: 'destructive',
-      }
-    ]
+      },
+    ],
   });
-  
+
   await alert.present();
-  
+
   const { role } = await alert.onDidDismiss();
-  
-  return (role === 'Cancel') ? false : true;
-}
+
+  return role === 'Cancel' ? false : true;
+};
 ```
 
-
 </TabItem>
-
 
 <TabItem value="vue">
 
@@ -203,24 +198,24 @@ const confirmDiscardChanges = async () => {
 
   const isLoggedInGuard = async () => {
     const isLoggedIn = await UserData.isLoggedIn(); // Replace this with actual login validation
-    
+
     if (isLoggedIn) {
       return true;
     } else {
       return { redirect: '/login' }; // If a user is not logged in, they will be redirected to the /login page
     }
-  }
-  
+  };
+
   const hasUnsavedDataGuard = async () => {
     const hasUnsavedData = await checkData(); // Replace this with actual validation
-    
+
     if (hasUnsavedData) {
       return await confirmDiscardChanges();
     } else {
       return true;
     }
-  }
-  
+  };
+
   const confirmDiscardChanges = async () => {
     const alert = await alertController.create({
       header: 'Discard Unsaved Changes?',
@@ -233,16 +228,16 @@ const confirmDiscardChanges = async () => {
         {
           text: 'Discard',
           role: 'destructive',
-        }
-      ]
+        },
+      ],
     });
-    
+
     await alert.present();
-    
+
     const { role } = await alert.onDidDismiss();
-    
-    return (role === 'Cancel') ? false : true;
-  }
+
+    return role === 'Cancel' ? false : true;
+  };
 </script>
 ```
 
@@ -251,19 +246,25 @@ const confirmDiscardChanges = async () => {
 </Tabs>
 
 ## プロパティ
+
 <Props />
 
 ## イベント
+
 <Events />
 
 ## メソッド
+
 <Methods />
 
 ## CSS Shadow Parts
+
 <Parts />
 
-## CSSカスタムプロパティ
+## CSS カスタムプロパティ
+
 <CustomProps />
 
 ## Slots
+
 <Slots />

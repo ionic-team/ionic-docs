@@ -1,5 +1,5 @@
 ---
-title: "ion-infinite-scroll"
+title: 'ion-infinite-scroll'
 ---
 
 import Props from '@ionic-internal/component-api/v7/infinite-scroll/props.md';
@@ -11,13 +11,15 @@ import Slots from '@ionic-internal/component-api/v7/infinite-scroll/slots.md';
 
 <head>
   <title>Infinite Scroller | ion-infinite-scroll Action Component</title>
-  <meta name="description" content="ion-infinite-scrollコンポーネントは、ユーザーがページの下部または上部から指定された距離だけスクロールしたときに実行されるアクションを呼び出します。" />
+  <meta
+    name="description"
+    content="ion-infinite-scrollコンポーネントは、ユーザーがページの下部または上部から指定された距離だけスクロールしたときに実行されるアクションを呼び出します。"
+  />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
-
-Infinite Scrollコンポーネントは、ユーザーがページの下部または上部から指定された距離をスクロールしたときに実行されるアクションを呼び出します。
+Infinite Scroll コンポーネントは、ユーザーがページの下部または上部から指定された距離をスクロールしたときに実行されるアクションを呼び出します。
 
 ユーザが定義された距離に達したときに、`ionInfinite` イベントに割り当てられた関数が呼び出されます。この関数がすべてのタスクを完了したら、無限スクロールインスタンスに対して `complete()` メソッドを呼び出す必要があります。
 
@@ -27,7 +29,7 @@ import Basic from '@site/static/usage/v7/infinite-scroll/basic/index.md';
 
 ## 無限スクロールのコンテンツ
 
-`ion-infinite-scroll`コンポーネントは、無限スクロールのロジックを持っています。コンテンツを表示するには、子コンポーネントが必要です。Ionicは、デフォルトでその `ion-infinite-scroll-content` コンポーネントを使用します。このコンポーネントは、無限スクロールを表示し、無限スクロールの状態に応じて外観を変更します。ユーザが使用しているプラットフォームに応じて最適なスピナーが表示されます。ただし、`ion-infinite-scroll-content` コンポーネントのプロパティを設定することにより、デフォルトのスピナーを変更したり、テキストを追加することができます。
+`ion-infinite-scroll`コンポーネントは、無限スクロールのロジックを持っています。コンテンツを表示するには、子コンポーネントが必要です。Ionic は、デフォルトでその `ion-infinite-scroll-content` コンポーネントを使用します。このコンポーネントは、無限スクロールを表示し、無限スクロールの状態に応じて外観を変更します。ユーザが使用しているプラットフォームに応じて最適なスピナーが表示されます。ただし、`ion-infinite-scroll-content` コンポーネントのプロパティを設定することにより、デフォルトのスピナーを変更したり、テキストを追加することができます。
 
 import InfiniteScrollContent from '@site/static/usage/v7/infinite-scroll/infinite-scroll-content/index.md';
 
@@ -35,13 +37,13 @@ import InfiniteScrollContent from '@site/static/usage/v7/infinite-scroll/infinit
 
 ## Custom Content
 
-`ion-infinite-scroll` と `ion-infinite-scroll-content` コンポーネントを分離することで、開発者は必要に応じて独自のコンテンツコンポーネントを作成できます。このコンテンツには、SVG要素から固有のCSSアニメーションを持つ要素まで、あらゆるものを含めることができます。
+`ion-infinite-scroll` と `ion-infinite-scroll-content` コンポーネントを分離することで、開発者は必要に応じて独自のコンテンツコンポーネントを作成できます。このコンテンツには、SVG 要素から固有の CSS アニメーションを持つ要素まで、あらゆるものを含めることができます。
 
 import CustomContent from '@site/static/usage/v7/infinite-scroll/custom-infinite-scroll-content/index.md';
 
 <CustomContent />
 
-## Virtual Scrollの使い方
+## Virtual Scroll の使い方
 
 無限スクロールを機能させるには、スクロールコンテナが必要です。仮想スクロールを使用する場合は、`ion-content`のスクロールを無効にし、`.ion-content-scroll-host`クラスのターゲットで、どの要素コンテナがスクロールコンテナを担当するのかを指定する必要があります。
 
@@ -67,12 +69,8 @@ import CustomContent from '@site/static/usage/v7/infinite-scroll/custom-infinite
 ```html
 <ion-content role="feed">
   <ion-list>
-    <ion-item role="article">
-      First item
-    </ion-item>
-    <ion-item role="article">
-      Second item
-    </ion-item>
+    <ion-item role="article"> First item </ion-item>
+    <ion-item role="article"> Second item </ion-item>
     ...
   </ion-list>
 
@@ -97,19 +95,25 @@ interface InfiniteScrollCustomEvent extends CustomEvent {
 ```
 
 ## プロパティ
+
 <Props />
 
 ## イベント
+
 <Events />
 
 ## メソッド
+
 <Methods />
 
 ## CSS Shadow Parts
+
 <Parts />
 
-## CSSカスタムプロパティ
+## CSS カスタムプロパティ
+
 <CustomProps />
 
 ## Slots
+
 <Slots />

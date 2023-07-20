@@ -1,6 +1,7 @@
 ---
-title: "ion-modal"
+title: 'ion-modal'
 ---
+
 import Props from '@ionic-internal/component-api/v7/modal/props.md';
 import Events from '@ionic-internal/component-api/v7/modal/events.md';
 import Methods from '@ionic-internal/component-api/v7/modal/methods.md';
@@ -10,16 +11,17 @@ import Slots from '@ionic-internal/component-api/v7/modal/slots.md';
 
 <head>
   <title>ion-modal: Ionic Mobile App Custom Modal API Component</title>
-  <meta name="description" content="ion-modal は、モバイルアプリケーションのコンテンツの上に表示されるダイアログで、インタラクションを再開する前に解除する必要があります。カスタムモーダルコンポーネントについて詳しくはこちら" />
+  <meta
+    name="description"
+    content="ion-modal は、モバイルアプリケーションのコンテンツの上に表示されるダイアログで、インタラクションを再開する前に解除する必要があります。カスタムモーダルコンポーネントについて詳しくはこちら"
+  />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="shadow" />
 
-
-Modalは、アプリのコンテンツの上に表示されるダイアログであり、インタラクションを再開する前にはアプリによって消されなければならない。選択できるオプションが多い場合や、リスト内の項目をフィルタする場合、およびその他の多くのユースケースで、Selectコンポーネントとして役立ちます。
-
+Modal は、アプリのコンテンツの上に表示されるダイアログであり、インタラクションを再開する前にはアプリによって消されなければならない。選択できるオプションが多い場合や、リスト内の項目をフィルタする場合、およびその他の多くのユースケースで、Select コンポーネントとして役立ちます。
 
 ## インラインモーダル(推奨)
 
@@ -35,7 +37,7 @@ import InlineModalTriggerExample from '@site/static/usage/v7/modal/inline/basic/
 
 `ion-modal` の `isOpen` プロパティを使用すると、開発者がアプリケーションの状態からモーダルの表示状態を制御することができます。つまり、 `isOpen` を `true` に設定するとモーダルが表示され、 `isOpen` を `false` に設定するとモーダルが解除されます。
 
-`isOpen` は一方向のデータバインディングを使用します。つまり、モーダルが解除されたときに自動的に `false` にセットされることはありません。開発者は `ionModalDidDismiss` または `didDismiss` イベントを監視して、 `isOpen` を `false` に設定する必要があります。この理由は、`ion-modal` の内部がアプリケーションの状態と密に結合するのを防ぐためである。一方通行のデータバインディングでは、モーダルはリアクティブ変数が提供するboolean値だけを気にすればいいです。双方向のデータバインディングでは、モーダルはboolean値とリアクティブ変数の存在の両方を考慮する必要があります。これは、非決定的な動作につながり、アプリケーションのデバッグを困難にします。
+`isOpen` は一方向のデータバインディングを使用します。つまり、モーダルが解除されたときに自動的に `false` にセットされることはありません。開発者は `ionModalDidDismiss` または `didDismiss` イベントを監視して、 `isOpen` を `false` に設定する必要があります。この理由は、`ion-modal` の内部がアプリケーションの状態と密に結合するのを防ぐためである。一方通行のデータバインディングでは、モーダルはリアクティブ変数が提供する boolean 値だけを気にすればいいです。双方向のデータバインディングでは、モーダルは boolean 値とリアクティブ変数の存在の両方を考慮する必要があります。これは、非決定的な動作につながり、アプリケーションのデバッグを困難にします。
 
 import InlineModalIsOpenExample from '@site/static/usage/v7/modal/inline/is-open/index.md';
 
@@ -53,17 +55,17 @@ import ControllerExample from '@site/static/usage/v7/modal/controller/index.md';
 
 モーダルにデータを入力しているとき、誤ってデータが失われないようにする方法があると便利です。 `ion-modal` の `canDismiss` プロパティは、モーダルをいつ終了させるかを開発者がコントロールできるようにします。
 
-canDismiss`プロパティの使用方法には、boolean値の設定とコールバック関数の設定の2種類があります。
+canDismiss`プロパティの使用方法には、boolean 値の設定とコールバック関数の設定の 2 種類があります。
 
 :::note
- Note: シートモーダルでは、`0` ブレークポイントが設定されていない場合、スワイプ時に `canDismiss` はチェックされません。しかし、`Esc` やハードウェアのバックボタンを押すと、チェックされます。
+Note: シートモーダルでは、`0` ブレークポイントが設定されていない場合、スワイプ時に `canDismiss` はチェックされません。しかし、`Esc` やハードウェアのバックボタンを押すと、チェックされます。
 :::
 
-### boolean値の設定
+### boolean 値の設定
 
-開発者は `canDismiss` にboolean値を設定することができます。 `canDismiss` が `true` の場合、ユーザーがモーダルを閉じようとすると、モーダルは閉じます。 `canDismiss` が `false` の場合、ユーザーがモーダルを閉じようとしても、モーダルは閉じません。
+開発者は `canDismiss` に boolean 値を設定することができます。 `canDismiss` が `true` の場合、ユーザーがモーダルを閉じようとすると、モーダルは閉じます。 `canDismiss` が `false` の場合、ユーザーがモーダルを閉じようとしても、モーダルは閉じません。
 
-boolean値を設定するのは、モーダルが終了する前に特定のアクションを実行する必要がある場合に使用する必要があります。たとえば、開発者がモーダルを閉じる前に "利用規約" チェックボックスをチェックすることを要求したい場合、最初は `canDismiss` を `false` に設定し、チェックボックスがチェックされたら `true` に更新することが可能です。
+boolean 値を設定するのは、モーダルが終了する前に特定のアクションを実行する必要がある場合に使用する必要があります。たとえば、開発者がモーダルを閉じる前に "利用規約" チェックボックスをチェックすることを要求したい場合、最初は `canDismiss` を `false` に設定し、チェックボックスがチェックされたら `true` に更新することが可能です。
 
 import CanDismissBooleanExample from '@site/static/usage/v7/modal/can-dismiss/boolean/index.md';
 
@@ -75,7 +77,7 @@ import CanDismissBooleanExample from '@site/static/usage/v7/modal/can-dismiss/bo
 
 コールバック関数を設定するのは、モーダルを終了する前に確認ダイアログを表示するなど、終了条件が複雑な場合に使用する必要があります。ユーザーがこのダイアログで選択したオプションは、モーダルの終了を続行するかどうかの判断に使用されます。
 
-コールバック関数を設定すると、カードまたはシートモーダルの使用時にスワイプジェスチャが中断されることに注意してください。これは、Ionicが、あなたのコールバック関数が何を解決するか事前に知らないためです。
+コールバック関数を設定すると、カードまたはシートモーダルの使用時にスワイプジェスチャが中断されることに注意してください。これは、Ionic が、あなたのコールバック関数が何を解決するか事前に知らないためです。
 
 import CanDismissFunctionExample from '@site/static/usage/v7/modal/can-dismiss/function/index.md';
 
@@ -90,7 +92,7 @@ import CanDismissPreventSwipeToCloseExample from '@site/static/usage/v7/modal/ca
 <CanDismissPreventSwipeToCloseExample />
 
 ## モーダルの種類
- 
+
 ### Card Modal
 
 Developers can create a card modal effect where the modal appears as a card stacked on top of your app's main content. To create a card modal, developers need to set the `presentingElement` property on `ion-modal`.
@@ -111,7 +113,7 @@ import CardExample from '@site/static/usage/v7/modal/card/basic/index.md';
 
 マップアプリのドロワーコンポーネントに似たシートモーダルエフェクトを作成します。シートモーダルを作成するには、`ion-modal` に `breakpoints` と `initialBreakpoint` プロパティを設定する必要があります。
 
-`breakpoints`プロパティには、スワイプしたときにシートがスナップすることができる各ブレークポイントを示す配列が渡されます。 `breakpoints` プロパティが `[0, 0.5, 1]` の場合、シートをスワイプすると、モーダルの 0%、50%、100%を表示することができることを示します。モーダルが0%にスワイプされると、モーダルは自動的にディスクローズされます。 `0` ブレークポイントが含まれていない場合、スワイプ時にモーダルを解除することはできませんが、`Esc` またはハードウェアの戻るボタンを押すことで解除することができることに注意してください。
+`breakpoints`プロパティには、スワイプしたときにシートがスナップすることができる各ブレークポイントを示す配列が渡されます。 `breakpoints` プロパティが `[0, 0.5, 1]` の場合、シートをスワイプすると、モーダルの 0%、50%、100%を表示することができることを示します。モーダルが 0%にスワイプされると、モーダルは自動的にディスクローズされます。 `0` ブレークポイントが含まれていない場合、スワイプ時にモーダルを解除することはできませんが、`Esc` またはハードウェアの戻るボタンを押すことで解除することができることに注意してください。
 
 `initialBreakpoint` プロパティは、シート モーダルが表示されるときに、どのブレークポイントから開始するかを知るために必要なものです。 `initialBreakpoint` の値は、 `breakpoints` 配列にも存在する必要があります。例えば、 `breakpoints` の値が `[0, 0.5, 1]` である場合、 `initialBreakpoint` の値が `0.5` であれば、 `breakpoints` 配列に `0.5` が存在するため有効であると考えられます。 `0.25` は `breakpoints` 配列に存在しないので、 `initialBreakpoint` の値は無効になります。
 
@@ -140,15 +142,14 @@ import SheetHandleBehaviorExample from '@site/static/usage/v7/modal/sheet/handle
 モーダルはアプリケーションのルートで表示されるので、アプリ全体を覆うように表示されます。この動作は、インライン モーダルおよびコントローラから表示されるモーダルの両方に適用されます。その結果、カスタムのモーダルスタイルを特定のコンポーネントにスコープすることはできず、モーダルには適用されません。代わりに、スタイルはグローバルに適用する必要があります。ほとんどの開発者は、カスタムスタイルを `global.css` に配置すれば十分です。
 
 :::note
-IonicのAngularアプリを構築する場合、スタイルはグローバルなスタイルシートファイルに追加する必要があります。詳しくは、以下のAngularセクションの [Style Placement](#style-placement) をお読みください。
+Ionic の Angular アプリを構築する場合、スタイルはグローバルなスタイルシートファイルに追加する必要があります。詳しくは、以下の Angular セクションの [Style Placement](#style-placement) をお読みください。
 :::
-
 
 :::note
 `ion-modal` は、積み重ねられたモーダルは同じサイズであるという前提で動作します。その結果、後続の各モーダルはボックスシャドウを持たず、背景の不透明度は `0` になります。これは、モーダルが追加されるたびに影や背景が濃くなるのを避けるためです。これは、CSS 変数 `--box-shadow` と `--backdrop-opacity` を設定することで変更することができます。
 :::
 
-``` 
+```
 ion-modal.stack-modal {
   --box-shadow: 0 28px 48px rgba(0, 0, 0, 0.4);
   --backdrop-opacity: var(--ion-backdrop-opacity, 0.32);
@@ -177,8 +178,8 @@ import CustomDialogs from '@site/static/usage/v7/modal/custom-dialogs/index.md';
 
 カスタムダイアログを作成する際に注意すべき点がいくつかあります。
 
-* `ion-content` は、フルページモダル、カード、シートで使用することを意図しています。カスタムダイアログのサイズが動的であったり、不明であったりする場合は、 `ion-content` を使用するべきではありません。
-* カスタムダイアログを作成することは、デフォルトのモーダルエクスペリエンスから逃れる方法を提供します。そのため、カスタムダイアログは、カードやシートのモーダルでは使用しないでください。
+- `ion-content` は、フルページモダル、カード、シートで使用することを意図しています。カスタムダイアログのサイズが動的であったり、不明であったりする場合は、 `ion-content` を使用するべきではありません。
+- カスタムダイアログを作成することは、デフォルトのモーダルエクスペリエンスから逃れる方法を提供します。そのため、カスタムダイアログは、カードやシートのモーダルでは使用しないでください。
 
 ## Interfaces
 
@@ -211,6 +212,7 @@ interface ModalOptions {
   handle?: boolean;
 }
 ```
+
 ### ModalCustomEvent
 
 必須ではありませんが、このコンポーネントから発行される Ionic イベントでより強く型付けを行うために、`CustomEvent` インターフェースの代わりにこのインターフェースを使用することが可能です。
@@ -228,7 +230,6 @@ interface ModalCustomEvent extends CustomEvent {
 | Key   | Function            |
 | ----- | ------------------- |
 | `Esc` | Dismisses the modal |
-
 
 ### ラベル
 
@@ -252,7 +253,7 @@ See https://w3c.github.io/aria/#aria-modal for more information.
 
 シートモーダルでは、`backdropBreakpoint` プロパティが使用されているとき、ユーザがモーダルの後ろのコンテンツとインタラクトできるようにします。バックドロップは、指定された `backdropBreakpoint` までは無効になり、それ以降は有効になります。
 
-バックドロップが無効になると、ユーザーはポインタやキーボードを使用して、シートモーダルの外側の要素を操作することができるようになります。入力支援は、`aria-modal` の使用により、デフォルトではシートモーダルの外側にフォーカスを当てないかもしれません。オートフォーカスなどの機能は、ユーザーに警告することなく、支援技術が 2つのインタラクティブなコンテキスト間をジャンプする原因となるため、ここでは避けることをお勧めします。
+バックドロップが無効になると、ユーザーはポインタやキーボードを使用して、シートモーダルの外側の要素を操作することができるようになります。入力支援は、`aria-modal` の使用により、デフォルトではシートモーダルの外側にフォーカスを当てないかもしれません。オートフォーカスなどの機能は、ユーザーに警告することなく、支援技術が 2 つのインタラクティブなコンテキスト間をジャンプする原因となるため、ここでは避けることをお勧めします。
 
 ## パフォーマンス
 
@@ -268,26 +269,32 @@ import Mount from '@site/static/usage/v7/modal/performance/mount/index.md';
 
 - この機能は、既存のパフォーマンスの問題に対処するための最後の手段として使用すべきです。この機能を使用する前に、パフォーマンスのボトルネックを特定し、解決するように努めてください。さらに、パフォーマンスの問題を予測するためにこの機能を使用しないでください。
 
-- この機能は、JavaScriptフレームワークを使用している場合にのみ必要です。フレームワークを使用していない開発者は、レンダリングするコンテンツをモーダルに渡すことができ、コンテンツは自動的にレンダリングされます。
+- この機能は、JavaScript フレームワークを使用している場合にのみ必要です。フレームワークを使用していない開発者は、レンダリングするコンテンツをモーダルに渡すことができ、コンテンツは自動的にレンダリングされます。
 
 - この機能はインラインモーダルでのみ動作します。 `modalController` で作成されたモーダルは先に作成されないので、インナーコンテンツも作成されません。
 
 - インナー コンポーネントの JavaScript Framework ライフサイクル フックはすべて、モーダルが表示されたときではなく、モーダルがマウントされたときに実行されます。
 
 ## プロパティ
+
 <Props />
 
 ## イベント
+
 <Events />
 
 ## メソッド
+
 <Methods />
 
 ## CSS Shadow Parts
+
 <Parts />
 
-## CSSカスタムプロパティ
+## CSS カスタムプロパティ
+
 <CustomProps />
 
 ## Slots
+
 <Slots />

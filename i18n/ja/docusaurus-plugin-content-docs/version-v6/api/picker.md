@@ -1,6 +1,7 @@
 ---
-title: "ion-picker"
+title: 'ion-picker'
 ---
+
 import Props from '@ionic-internal/component-api/v7/picker/props.md';
 import Events from '@ionic-internal/component-api/v7/picker/events.md';
 import Methods from '@ionic-internal/component-api/v7/picker/methods.md';
@@ -10,14 +11,17 @@ import Slots from '@ionic-internal/component-api/v7/picker/slots.md';
 
 <head>
   <title>Picker | Display Buttons and Columns for ion-picker on Ionic Apps</title>
-  <meta name="description" content="Pickerは、ボタンの列とその下にコラムを表示するダイアログです。イオンピッカーは、アプリのコンテンツの上、そしてビューポートの下に表示されます。" />
+  <meta
+    name="description"
+    content="Pickerは、ボタンの列とその下にコラムを表示するダイアログです。イオンピッカーは、アプリのコンテンツの上、そしてビューポートの下に表示されます。"
+  />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="scoped" />
 
-Pickerは、画面下にボタンと列の行を表示するダイアログです。アプリケーションのコンテンツの上部とビューポートの下部に表示されます。
+Picker は、画面下にボタンと列の行を表示するダイアログです。アプリケーションのコンテンツの上部とビューポートの下部に表示されます。
 
 ## インラインピッカー（推奨）
 
@@ -124,19 +128,25 @@ interface PickerOptions {
 ```
 
 ## プロパティ
+
 <Props />
 
 ## イベント
+
 <Events />
 
 ## メソッド
+
 <Methods />
 
 ## CSS Shadow Parts
+
 <Parts />
 
-## CSSカスタムプロパティ
+## CSS カスタムプロパティ
+
 <CustomProps />
 
 ## Slots
+
 <Slots />

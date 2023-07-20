@@ -1,6 +1,7 @@
 ---
-title: "ion-breadcrumbs"
+title: 'ion-breadcrumbs'
 ---
+
 import Props from '@ionic-internal/component-api/v7/breadcrumbs/props.md';
 import Events from '@ionic-internal/component-api/v7/breadcrumbs/events.md';
 import Methods from '@ionic-internal/component-api/v7/breadcrumbs/methods.md';
@@ -8,13 +9,11 @@ import Parts from '@ionic-internal/component-api/v7/breadcrumbs/parts.md';
 import CustomProps from '@ionic-internal/component-api/v7/breadcrumbs/custom-props.md';
 import Slots from '@ionic-internal/component-api/v7/breadcrumbs/slots.md';
 
-
-
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="shadow" />
 
-Breadcrumbsは、ユーザーがアプリやサイトのどこにいるのかを示すために使用されるナビゲーションアイテムです。大規模なサイトや、階層的に配置されたページを持つアプリで使用する必要があります。Breadcrumbsは、表示可能な最大数に応じて折りたたむことができ、折りたたんだインジケータをクリックすると、詳細情報を示すポップオーバーが表示され、折りたたんだBreadcrumbを展開することができます。
+Breadcrumbs は、ユーザーがアプリやサイトのどこにいるのかを示すために使用されるナビゲーションアイテムです。大規模なサイトや、階層的に配置されたページを持つアプリで使用する必要があります。Breadcrumbs は、表示可能な最大数に応じて折りたたむことができ、折りたたんだインジケータをクリックすると、詳細情報を示すポップオーバーが表示され、折りたたんだ Breadcrumb を展開することができます。
 
 ## 基本的な使い方
 
@@ -40,7 +39,7 @@ import CustomSeparators from '@site/static/usage/v7/breadcrumbs/icons/custom-sep
 
 ### Max Items
 
-`maxItems` の値よりも多くのアイテムがある場合、breadcrumbsは折りたたまれます。デフォルトでは、最初と最後のアイテムのみが表示されます。
+`maxItems` の値よりも多くのアイテムがある場合、breadcrumbs は折りたたまれます。デフォルトでは、最初と最後のアイテムのみが表示されます。
 
 import MaxItems from '@site/static/usage/v7/breadcrumbs/collapsing-items/max-items/index.md';
 
@@ -56,7 +55,7 @@ import ItemsBeforeAfter from '@site/static/usage/v7/breadcrumbs/collapsing-items
 
 ### Collapsed Indicator Click -- Expand Breadcrumbs
 
-インジケータをクリックすると、`ionCollapsedClick` イベントが発生します。これは、例えば、breadcrumbsを展開するために使うことができます。
+インジケータをクリックすると、`ionCollapsedClick` イベントが発生します。これは、例えば、breadcrumbs を展開するために使うことができます。
 
 import ExpandOnClick from '@site/static/usage/v7/breadcrumbs/collapsing-items/expand-on-click/index.md';
 
@@ -78,27 +77,32 @@ import Colors from '@site/static/usage/v7/breadcrumbs/theming/colors/index.md';
 
 <Colors />
 
-## CSSカスタムプロパティ
+## CSS カスタムプロパティ
 
 import CSSProps from '@site/static/usage/v7/breadcrumbs/theming/css-properties/index.md';
 
 <CSSProps />
 
-
 ## プロパティ
+
 <Props />
 
 ## イベント
+
 <Events />
 
 ## メソッド
+
 <Methods />
 
 ## CSS Shadow Parts
+
 <Parts />
 
-## CSSカスタムプロパティ
+## CSS カスタムプロパティ
+
 <CustomProps />
 
 ## Slots
+
 <Slots />

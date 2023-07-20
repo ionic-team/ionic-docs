@@ -1,5 +1,5 @@
 ---
-title: "ion-route-redirect"
+title: 'ion-route-redirect'
 ---
 
 import Props from '@ionic-internal/component-api/v7/route-redirect/props.md';
@@ -11,33 +11,34 @@ import Slots from '@ionic-internal/component-api/v7/route-redirect/slots.md';
 
 <head>
   <title>ion-route-redirect Plugin: Redirect 'from' a URL 'to' Another URL</title>
-  <meta name="description" content="ion-route-redirectは、ion-routerの直接の子として使用され、URLから他のURLへのリダイレクトを行います。ルートリダイレクトプラグインについては、こちらをご覧ください。" />
+  <meta
+    name="description"
+    content="ion-route-redirectは、ion-routerの直接の子として使用され、URLから他のURLへのリダイレクトを行います。ルートリダイレクトプラグインについては、こちらをご覧ください。"
+  />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
-
 A route redirect can only be used with an `ion-router` as a direct child of it.
 
 :::note
- Note: このコンポーネントは、バニラおよびステンシルJavaScriptプロジェクトでのみ使用してください。Angularプロジェクトでは、[`ion-router-outlet`](router-outlet.md) と Angularルータを使用してください。
+Note: このコンポーネントは、バニラおよびステンシル JavaScript プロジェクトでのみ使用してください。Angular プロジェクトでは、[`ion-router-outlet`](router-outlet.md) と Angular ルータを使用してください。
 :::
 
+ルートリダイレクトには、2 つの設定可能なプロパティがあります。
 
-ルートリダイレクトには、2つの設定可能なプロパティがあります。
 - `from`
 - `to`
 
 これは、ある URL から別の URL へとリダイレクトします。定義された `ion-route-redirect` ルールがマッチすると、ルータは `from` プロパティで指定されたパスから `to` プロパティで指定されたパスへリダイレクトします。リダイレクトを行うには、`from` のパスがナビゲートされる URL と完全に一致する必要があります。
 
-
 ## 複数ルートのリダイレクト
 
-任意の数のリダイレクトルートを `ion-router` の内部で定義することができますが、合致するのは1つだけです。
+任意の数のリダイレクトルートを `ion-router` の内部で定義することができますが、合致するのは 1 つだけです。
 
 ルートリダイレクトは、それ自身のリダイレクトの後に別のリダイレクトを呼び出すことはありません。
 
-次の2つのリダイレクトを考えてみましょう。
+次の 2 つのリダイレクトを考えてみましょう。
 
 ```html
 <ion-router>
@@ -47,9 +48,6 @@ A route redirect can only be used with an `ion-router` as a direct child of it.
 ```
 
 ユーザーが `/admin` に移動した場合、ルーターは `/login` にリダイレクトし、そこで停止します。複数のリダイレクトを評価することはありません。
-
-
-
 
 ## 使い方
 
@@ -96,19 +94,25 @@ routeRedirect.setAttribute('to', isLoggedIn ? undefined : '/login');
 ```
 
 ## プロパティ
+
 <Props />
 
 ## イベント
+
 <Events />
 
 ## メソッド
+
 <Methods />
 
 ## CSS Shadow Parts
+
 <Parts />
 
-## CSSカスタムプロパティ
+## CSS カスタムプロパティ
+
 <CustomProps />
 
 ## Slots
+
 <Slots />

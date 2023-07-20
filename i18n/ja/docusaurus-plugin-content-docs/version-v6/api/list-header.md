@@ -1,6 +1,7 @@
 ---
-title: "ion-list-header"
+title: 'ion-list-header'
 ---
+
 import Props from '@ionic-internal/component-api/v7/list-header/props.md';
 import Events from '@ionic-internal/component-api/v7/list-header/events.md';
 import Methods from '@ionic-internal/component-api/v7/list-header/methods.md';
@@ -12,7 +13,6 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="shadow" />
 
-
 リストヘッダーは、[リスト](./list)の内容を記述するために使用されるブロック要素です。アイテムディバイダー](./item-divider)とは異なり、リストヘッダーは[アイテム](./item)のリストの先頭で一度だけ使用する必要があります。
 
 ## 基本的な使い方
@@ -20,7 +20,6 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 import Basic from '@site/static/usage/v7/list-header/basic/index.md';
 
 <Basic />
-
 
 ## リストヘッダーのボタン
 
@@ -30,10 +29,9 @@ import Buttons from '@site/static/usage/v7/list-header/buttons/index.md';
 
 <Buttons />
 
+## List Header の下線
 
-## List Headerの下線
-
-リストヘッダーは、デフォルトでは下部のボーダーが表示されません。 `lines` プロパティを `"full"` または `"inset"` に変更すると、それぞれ全幅のボーダーまたは左paddingを伴う挿入ボーダーが表示されます。
+リストヘッダーは、デフォルトでは下部のボーダーが表示されません。 `lines` プロパティを `"full"` または `"inset"` に変更すると、それぞれ全幅のボーダーまたは左 padding を伴う挿入ボーダーが表示されます。
 
 import Lines from '@site/static/usage/v7/list-header/lines/index.md';
 
@@ -47,28 +45,32 @@ import Colors from '@site/static/usage/v7/list-header/theming/colors/index.md';
 
 <Colors />
 
-## CSSカスタムプロパティ
+## CSS カスタムプロパティ
 
 import CSSProps from '@site/static/usage/v7/list-header/theming/css-properties/index.md';
 
 <CSSProps />
 
-
-
 ## プロパティ
+
 <Props />
 
 ## イベント
+
 <Events />
 
 ## メソッド
+
 <Methods />
 
 ## CSS Shadow Parts
+
 <Parts />
 
-## CSSカスタムプロパティ
+## CSS カスタムプロパティ
+
 <CustomProps />
 
 ## Slots
+
 <Slots />

@@ -1,6 +1,7 @@
 ---
-title: "ion-label"
+title: 'ion-label'
 ---
+
 import Props from '@ionic-internal/component-api/v7/label/props.md';
 import Events from '@ionic-internal/component-api/v7/label/events.md';
 import Methods from '@ionic-internal/component-api/v7/label/methods.md';
@@ -10,15 +11,17 @@ import Slots from '@ionic-internal/component-api/v7/label/slots.md';
 
 <head>
   <title>Item Label Color and Properties for Applications | ion-label</title>
-  <meta name="description" content="Labelは、他のIonicコンポーネントと組み合わせて使用できるラッパー要素です。ion-labelでアイテムラベルの色やその他のプロパティを簡単にデザインできます。" />
+  <meta
+    name="description"
+    content="Labelは、他のIonicコンポーネントと組み合わせて使用できるラッパー要素です。ion-labelでアイテムラベルの色やその他のプロパティを簡単にデザインできます。"
+  />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="scoped" />
 
-Labelは `ion-item`、`ion-input`、`ion-toggle` 等と共に使用できるラッパー(wrapper)要素です。item内のlabelの位置はinline、fixed、stacked、またはfloatingにすることができます。
-
+Label は `ion-item`、`ion-input`、`ion-toggle` 等と共に使用できるラッパー(wrapper)要素です。item 内の label の位置は inline、fixed、stacked、または floating にすることができます。
 
 ## 基本的な使い方
 
@@ -46,21 +49,26 @@ import Colors from '@site/static/usage/v7/label/theming/colors/index.md';
 
 <Colors />
 
-
 ## プロパティ
+
 <Props />
 
 ## イベント
+
 <Events />
 
 ## メソッド
+
 <Methods />
 
 ## CSS Shadow Parts
+
 <Parts />
 
-## CSSカスタムプロパティ
+## CSS カスタムプロパティ
+
 <CustomProps />
 
 ## Slots
+
 <Slots />

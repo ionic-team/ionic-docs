@@ -1,6 +1,7 @@
 ---
-title: "ion-breadcrumb"
+title: 'ion-breadcrumb'
 ---
+
 import Props from '@ionic-internal/component-api/v7/breadcrumb/props.md';
 import Events from '@ionic-internal/component-api/v7/breadcrumb/events.md';
 import Methods from '@ionic-internal/component-api/v7/breadcrumb/methods.md';
@@ -12,8 +13,7 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="shadow" />
 
-
-Breadcrumbは、Breadcrumbsコンポーネントの子であり、単一のナビゲーションアイテムです。Breadcrumbは、アプリ内の他の場所にリンクすることも、プレーンテキストにすることもできます。Breadcrumbsは、次のBreadcrumbとの間にセパレータを持ち、オプションでアイコンを含むことができます。
+Breadcrumb は、Breadcrumbs コンポーネントの子であり、単一のナビゲーションアイテムです。Breadcrumb は、アプリ内の他の場所にリンクすることも、プレーンテキストにすることもできます。Breadcrumbs は、次の Breadcrumb との間にセパレータを持ち、オプションでアイコンを含むことができます。
 
 詳しい説明は [Breadcrumbs](./breadcrumbs) を参照ください。
 
@@ -38,23 +38,26 @@ interface BreadcrumbCustomEvent extends CustomEvent {
 }
 ```
 
-
-
-
 ## プロパティ
+
 <Props />
 
 ## イベント
+
 <Events />
 
 ## メソッド
+
 <Methods />
 
 ## CSS Shadow Parts
+
 <Parts />
 
-## CSSカスタムプロパティ
+## CSS カスタムプロパティ
+
 <CustomProps />
 
 ## Slots
+
 <Slots />

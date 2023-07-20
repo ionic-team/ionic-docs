@@ -10,11 +10,11 @@ title: Ionic VS Code Extension
   />
 </head>
 
-Ionic Visual Studio Code 拡張は、Ionicアプリの開発に共通するさまざまな機能を、VS Codeのウィンドウを開いたまま実行できるようにします。 [Visual Studio Marketplace上の拡張機能](https://marketplace.visualstudio.com/items?itemName=ionic.ionic) をインストールすることができます。エクステンションをインストールすると、アクティビティバーにIonicのロゴが表示されるようになります。
+Ionic Visual Studio Code 拡張は、Ionic アプリの開発に共通するさまざまな機能を、VS Code のウィンドウを開いたまま実行できるようにします。 [Visual Studio Marketplace 上の拡張機能](https://marketplace.visualstudio.com/items?itemName=ionic.ionic) をインストールすることができます。エクステンションをインストールすると、アクティビティバーに Ionic のロゴが表示されるようになります。
 
 ## 新規プロジェクトの作成
 
-空のディレクトリから、テンプレートオプションの1つをクリックし、アプリ名を指定することで、新しいAngular、React、またはVueプロジェクトを作成することができます。
+空のディレクトリから、テンプレートオプションの 1 つをクリックし、アプリ名を指定することで、新しい Angular、React、または Vue プロジェクトを作成することができます。
 
 <img
   src="https://user-images.githubusercontent.com/84595830/159510276-6766a5b8-132d-4284-a3fa-cd6374d64891.gif"
@@ -32,7 +32,7 @@ Ionic Visual Studio Code 拡張は、Ionicアプリの開発に共通するさ�
   alt="Capacitor追加のビデオ"
 />
 
-Capacitorが統合され、"Run On Web", "Run On Android", "Run On iOS "のオプションで、Web, Android, iOS上でアプリを実行することができるようになりました。
+Capacitor が統合され、"Run On Web", "Run On Android", "Run On iOS "のオプションで、Web, Android, iOS 上でアプリを実行することができるようになりました。
 
 ## Doing More
 

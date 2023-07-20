@@ -31,6 +31,7 @@ import { isPlatform, IonicModule } from '@ionic/angular';
   ...
 })
 ```
+
 </TabItem>
 <TabItem value="react">
 
@@ -45,6 +46,7 @@ setupIonicReact({
   animated: !isPlatform('mobileweb'),
 });
 ```
+
 </TabItem>
 <TabItem value="vue">
 
@@ -58,6 +60,7 @@ import { IonicVue, isPlatform } from '@ionic/vue';
 createApp(App).use(IonicVue, {
   animated: !isPlatform('mobileweb'),
 });
-````
+```
+
 </TabItem>
 </Tabs>

@@ -11,7 +11,7 @@ sidebar_label: ストレージ
   />
 </head>
 
-Ionicアプリ内にデータを保存するためのさまざまなオプションを用意しています。
+Ionic アプリ内にデータを保存するためのさまざまなオプションを用意しています。
 
 Here are two official Ionic options:
 

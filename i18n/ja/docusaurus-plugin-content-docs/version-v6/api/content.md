@@ -1,6 +1,7 @@
 ---
-title: "ion-content"
+title: 'ion-content'
 ---
+
 import Props from '@ionic-internal/component-api/v7/content/props.md';
 import Events from '@ionic-internal/component-api/v7/content/events.md';
 import Methods from '@ionic-internal/component-api/v7/content/methods.md';
@@ -10,27 +11,27 @@ import Slots from '@ionic-internal/component-api/v7/content/slots.md';
 
 <head>
   <title>ion-content: Scrollable CSS Component for Ionic App Content Areas</title>
-  <meta name="description" content="ion-contentは、スクロール可能な領域を制御する便利なメソッドを備えた、使いやすいコンテンツ領域を提供します。このIonicアプリ用CSSコンポーネントの詳細については、こちらをご覧ください。" />
+  <meta
+    name="description"
+    content="ion-contentは、スクロール可能な領域を制御する便利なメソッドを備えた、使いやすいコンテンツ領域を提供します。このIonicアプリ用CSSコンポーネントの詳細については、こちらをご覧ください。"
+  />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="shadow" />
 
-
-Contentコンポーネントは、スクロール可能領域を制御するいくつかの便利なメソッドを備えた、
+Content コンポーネントは、スクロール可能領域を制御するいくつかの便利なメソッドを備えた、
 使いやすいコンテンツ領域を提供します。
-1つのビューに表示できるコンテンツは1つだけです。
+1 つのビューに表示できるコンテンツは 1 つだけです。
 
-Contentは、他の多くのIonicコンポーネントと同様に、 [CSS Utilities](/docs/layout/css-utilities) で提供されるグローバルスタイルを使用するか、CSSおよび使用可能な [CSS Custom Properties](#css-custom-properties) を使用して個別にスタイル設定することによって、`padding` や `margin` などを変更するようにカスタマイズできます。
-
+Content は、他の多くの Ionic コンポーネントと同様に、 [CSS Utilities](/docs/layout/css-utilities) で提供されるグローバルスタイルを使用するか、CSS および使用可能な [CSS Custom Properties](#css-custom-properties) を使用して個別にスタイル設定することによって、`padding` や `margin` などを変更するようにカスタマイズできます。
 
 ## 基本的な使い方
 
 import Basic from '@site/static/usage/v7/content/basic/index.md';
 
 <Basic />
-
 
 ## Header & Footer
 
@@ -40,7 +41,6 @@ import HeaderFooter from '@site/static/usage/v7/content/header-footer/index.md';
 
 <HeaderFooter />
 
-
 ## Fullscreen Content
 
 デフォルトでは、コンテンツは [ヘッダー](./header)と [フッター](./footer)の間のスペースを埋めますが、それらの背景にまわることはありません。例えば、ヘッダーとフッターのどちらかに `translucent` プロパティを設定した場合や、ツールバーに `opacity` を設定した場合など、特定のケースでは、コンテンツをヘッダーとフッターの後ろにスクロールさせることが望まれるかもしれない。これは、コンテンツの `fullscreen` プロパティを `true` に設定することで実現することができます。
@@ -49,10 +49,9 @@ import Fullscreen from '@site/static/usage/v7/content/fullscreen/index.md';
 
 <Fullscreen />
 
-
 ## コンテンツの固定
 
-スクロール可能な領域の外側に要素を配置するには、`fixed`スロットに割り当てます。そうすることで、その要素はコンテンツの左上に[絶対位置](https://developer.mozilla.org/en-US/docs/Web/CSS/position#absolute_positioning)されます。要素の位置を変えるには、CSSの[top, right, bottom, left](https://developer.mozilla.org/en-US/docs/Web/CSS/position)プロパティを使ってスタイルを設定することができます。
+スクロール可能な領域の外側に要素を配置するには、`fixed`スロットに割り当てます。そうすることで、その要素はコンテンツの左上に[絶対位置](https://developer.mozilla.org/en-US/docs/Web/CSS/position#absolute_positioning)されます。要素の位置を変えるには、CSS の[top, right, bottom, left](https://developer.mozilla.org/en-US/docs/Web/CSS/position)プロパティを使ってスタイルを設定することができます。
 
 import Fixed from '@site/static/usage/v7/content/fixed/index.md';
 
@@ -74,7 +73,6 @@ import ScrollEvents from '@site/static/usage/v7/content/scroll-events/index.md';
 
 <ScrollEvents />
 
-
 ## テーマ
 
 ### Colors
@@ -89,12 +87,11 @@ import CSSParts from '@site/static/usage/v7/content/theming/css-shadow-parts/ind
 
 <CSSParts />
 
-## CSSカスタムプロパティ
+## CSS カスタムプロパティ
 
 import CSSProps from '@site/static/usage/v7/content/theming/css-properties/index.md';
 
 <CSSProps />
-
 
 ## Interfaces
 
@@ -136,21 +133,26 @@ interface ScrollCustomEvent extends ScrollBaseCustomEvent {
 }
 ```
 
-
 ## プロパティ
+
 <Props />
 
 ## イベント
+
 <Events />
 
 ## メソッド
+
 <Methods />
 
 ## CSS Shadow Parts
+
 <Parts />
 
-## CSSカスタムプロパティ
+## CSS カスタムプロパティ
+
 <CustomProps />
 
 ## Slots
+
 <Slots />

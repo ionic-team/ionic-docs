@@ -1,2 +1,1 @@
-
 This plugin does something

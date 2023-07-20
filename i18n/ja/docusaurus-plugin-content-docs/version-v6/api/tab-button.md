@@ -1,6 +1,7 @@
 ---
-title: "ion-tab-button"
+title: 'ion-tab-button'
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
@@ -11,19 +12,13 @@ import Parts from '@ionic-internal/component-api/v7/tab-button/parts.md';
 import CustomProps from '@ionic-internal/component-api/v7/tab-button/custom-props.md';
 import Slots from '@ionic-internal/component-api/v7/tab-button/slots.md';
 
-
-
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="shadow" />
 
-
-tab buttonは、[tab bar](tab-bar.md)の内部に配置されるUIコンポーネントです。tab buttonを使用すると、iconとlabelのレイアウトを指定し、[tab view](tab.md)に接続できます。
+tab button は、[tab bar](tab-bar.md)の内部に配置される UI コンポーネントです。tab button を使用すると、icon と label のレイアウトを指定し、[tab view](tab.md)に接続できます。
 
 タブの設定の詳細については、[tabs documentation](tabs.md)を参照してください。
-
-
-
 
 ## 使い方
 
@@ -58,9 +53,7 @@ tab buttonは、[tab bar](tab-bar.md)の内部に配置されるUIコンポー�
 </ion-tabs>
 ```
 
-
 </TabItem>
-
 
 <TabItem value="javascript">
 
@@ -108,9 +101,7 @@ tab buttonは、[tab bar](tab-bar.md)の内部に配置されるUIコンポー�
 </ion-tabs>
 ```
 
-
 </TabItem>
-
 
 <TabItem value="react">
 
@@ -149,9 +140,7 @@ export const TabButtonExample: React.FC = () => (
 );
 ```
 
-
 </TabItem>
-
 
 <TabItem value="stencil">
 
@@ -160,7 +149,7 @@ import { Component, h } from '@stencil/core';
 
 @Component({
   tag: 'tab-button-example',
-  styleUrl: 'tab-button-example.css'
+  styleUrl: 'tab-button-example.css',
 })
 export class TabButtonExample {
   render() {
@@ -205,15 +194,13 @@ export class TabButtonExample {
             <ion-label>About</ion-label>
           </ion-tab-button>
         </ion-tab-bar>
-      </ion-tabs>
+      </ion-tabs>,
     ];
   }
 }
 ```
 
-
 </TabItem>
-
 
 <TabItem value="vue">
 
@@ -246,50 +233,49 @@ export class TabButtonExample {
 </template>
 
 <script>
-import { 
-  IonIcon, 
-  IonLabel, 
-  IonTabBar, 
-  IonTabButton, 
-  IonTabs
-} from '@ionic/vue';
-import { calendar, informationCircle, map, personCircle } from 'ionicons/icons';
-import { defineComponent } from 'vue';
+  import { IonIcon, IonLabel, IonTabBar, IonTabButton, IonTabs } from '@ionic/vue';
+  import { calendar, informationCircle, map, personCircle } from 'ionicons/icons';
+  import { defineComponent } from 'vue';
 
-export default defineComponent({
-  components: {
-    IonIcon, 
-    IonLabel, 
-    IonTabBar, 
-    IonTabButton, 
-    IonTabs
-  },
-  setup() {
-    return { calendar, informationCircle, map, personCircle }
-  }
-});
+  export default defineComponent({
+    components: {
+      IonIcon,
+      IonLabel,
+      IonTabBar,
+      IonTabButton,
+      IonTabs,
+    },
+    setup() {
+      return { calendar, informationCircle, map, personCircle };
+    },
+  });
 </script>
 ```
-
 
 </TabItem>
 
 </Tabs>
 
 ## プロパティ
+
 <Props />
 
 ## イベント
+
 <Events />
 
 ## メソッド
+
 <Methods />
 
 ## CSS Shadow Parts
+
 <Parts />
 
-## CSSカスタムプロパティ
+## CSS カスタムプロパティ
+
 <CustomProps />
 
 ## Slots
+
 <Slots />

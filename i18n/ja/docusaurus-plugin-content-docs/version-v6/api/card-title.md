@@ -1,6 +1,7 @@
 ---
-title: "ion-card-title"
+title: 'ion-card-title'
 ---
+
 import Props from '@ionic-internal/component-api/v7/card-title/props.md';
 import Events from '@ionic-internal/component-api/v7/card-title/events.md';
 import Methods from '@ionic-internal/component-api/v7/card-title/methods.md';
@@ -12,31 +13,38 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <head>
   <title>ion-card-title | Ionic App Card Title Component and Properties</title>
-  <meta name="description" content="ion-card-titleは、ion-cardの子コンポーネントです。カードタイトルのプロパティの詳細と、このコンポーネントがIonic Frameworkアプリでどのように使用されるかについては、こちらをご覧ください。" />
+  <meta
+    name="description"
+    content="ion-card-titleは、ion-cardの子コンポーネントです。カードタイトルのプロパティの詳細と、このコンポーネントがIonic Frameworkアプリでどのように使用されるかについては、こちらをご覧ください。"
+  />
 </head>
 
 <EncapsulationPill type="shadow" />
 
-
-Card titleはcardの子コンポーネントで、[card header](./card-header)の内側に配置する必要があります。
+Card title は card の子コンポーネントで、[card header](./card-header)の内側に配置する必要があります。
 
 詳しくは、[Card](./card)のドキュメントを参照してください。
 
-
 ## プロパティ
+
 <Props />
 
 ## イベント
+
 <Events />
 
 ## メソッド
+
 <Methods />
 
 ## CSS Shadow Parts
+
 <Parts />
 
-## CSSカスタムプロパティ
+## CSS カスタムプロパティ
+
 <CustomProps />
 
 ## Slots
+
 <Slots />
