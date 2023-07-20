@@ -7,7 +7,8 @@
 
 import React, { useState, cloneElement, isValidElement, type ReactElement, useRef, createRef, useEffect } from 'react';
 import useIsBrowser from '@docusaurus/useIsBrowser';
-import { useScrollPositionBlocker, duplicates } from '@docusaurus/theme-common';
+import { duplicates } from '@docusaurus/theme-common';
+import { useScrollPositionBlocker } from '@docusaurus/theme-common/internal';
 import type { Props } from '@theme/Tabs';
 import type { Props as TabItemProps } from '@theme/TabItem';
 

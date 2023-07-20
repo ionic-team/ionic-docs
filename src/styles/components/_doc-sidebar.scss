@@ -28,7 +28,7 @@ html[data-theme='dark'] {
 
 //overrides
 #__docusaurus {
-  [class^='docSidebarContainer'] {
+  aside > div {
     background: var(--token-primary-bg-c);
 
     position: sticky;
@@ -140,6 +140,8 @@ html[data-theme='dark'] {
     flex-direction: row-reverse;
     justify-content: flex-end;
 
+    flex: initial;
+
     &::after {
       background: var(--ifm-menu-link-sublist-icon) center / var(--dropdown-icon-width) var(--dropdown-icon-height);
       background-repeat: no-repeat;
@@ -155,12 +157,14 @@ html[data-theme='dark'] {
   }
 
   .theme-doc-sidebar-item-category-level-1 {
-    > .menu__link {
-      color: var(--sidebar-category-c);
+    .menu__list-item-collapsible {
+      .menu__link {
+        color: var(--sidebar-category-c);
 
-      font-weight: 600;
-      font-size: 0.938rem;
-      line-height: 100%;
+        font-weight: 600;
+        font-size: 0.938rem;
+        line-height: 100%;
+      }
     }
   }
 }

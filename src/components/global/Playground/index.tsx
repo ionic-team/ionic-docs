@@ -4,7 +4,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import './playground.css';
 import { EditorOptions, openAngularEditor, openHtmlEditor, openReactEditor, openVueEditor } from './stackblitz.utils';
 import { Mode, UsageTarget } from './playground.types';
-import useThemeContext from '@theme/hooks/useThemeContext';
+import { useColorMode } from '@docusaurus/theme-common';
 
 import Tippy from '@tippyjs/react';
 import 'tippy.js/dist/tippy.css';
@@ -149,7 +149,7 @@ export default function Playground({
     return;
   }
 
-  const { isDarkTheme } = useThemeContext();
+  const { colorMode } = useColorMode();
 
   const hostRef = useRef<HTMLDivElement | null>(null);
   const codeRef = useRef(null);
@@ -178,6 +178,7 @@ export default function Playground({
   const [codeSnippets, setCodeSnippets] = useState({});
   const [renderIframes, setRenderIframes] = useState(false);
   const [iframesLoaded, setIframesLoaded] = useState(false);
+  const [isDarkTheme, setIsDarkTheme] = useState(colorMode === 'dark');
 
   /**
    * Rather than encode isDarkTheme into the frame source
@@ -226,6 +227,10 @@ export default function Playground({
       postDarkThemeMessage();
     }
   };
+
+  useEffect(() => {
+    setIsDarkTheme(colorMode === 'dark');
+  }, [colorMode]);
 
   useEffect(() => {
     /**

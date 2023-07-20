@@ -1,14 +1,14 @@
-import OriginalSidebar from '@theme-original/DocSidebar';
+import DocSidebar from '@theme-original/DocSidebar';
 import React from 'react';
-import FrameworkSelector from '@theme/FrameworkSelector';
-import Logo from '@theme/Logo';
+import type { Props } from '@theme/DocSidebar';
 
-export default function DocSidebar(props) {
+import Logo from '@theme-original/Logo';
+
+export default function DocSidebarWrapper(props: Props): JSX.Element {
   return (
     <>
       <Logo />
-      {/* <FrameworkSelector /> */}
-      <OriginalSidebar {...props} />
+      <DocSidebar {...props} />
     </>
   );
 }
