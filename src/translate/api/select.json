@@ -9,6 +9,10 @@
       "text": "{\"ios\" | \"md\"} mode - The mode determines which platform styles to use."
     },
     {
+      "name": "slot",
+      "text": "label - The label text to associate with the select. Use the `labelPlacement` property to control where the label is placed relative to the select. Use this if you need to render a label with custom HTML."
+    },
+    {
       "name": "part",
       "text": "placeholder - The text displayed in the select when there is no value."
     },
@@ -19,6 +23,14 @@
     {
       "name": "part",
       "text": "icon - The select icon container."
+    },
+    {
+      "name": "part",
+      "text": "container - The container for the selected text or placeholder."
+    },
+    {
+      "name": "part",
+      "text": "label - The label text describing the select."
     }
   ],
   "usage": {},
@@ -138,6 +150,25 @@
       "required": false
     },
     {
+      "name": "expandedIcon",
+      "type": "string | undefined",
+      "mutable": false,
+      "attr": "expanded-icon",
+      "reflectToAttr": false,
+      "docs": "The toggle icon to show when the select is open. If defined, the icon\nrotation behavior in `md` mode will be disabled. If undefined, `toggleIcon`\nwill be used for when the select is both open and closed.",
+      "docsTags": [],
+      "values": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "undefined"
+        }
+      ],
+      "optional": true,
+      "required": false
+    },
+    {
       "name": "fill",
       "type": "\"outline\" | \"solid\" | undefined",
       "mutable": false,
@@ -236,7 +267,7 @@
       "mutable": false,
       "attr": "label",
       "reflectToAttr": false,
-      "docs": "The visible label associated with the select.",
+      "docs": "The visible label associated with the select.\n\nUse this if you need to render a plaintext label.\n\nThe `label` property will take priority over the `label` slot if both are used.",
       "docsTags": [],
       "values": [
         {
@@ -439,6 +470,25 @@
       "required": false
     },
     {
+      "name": "toggleIcon",
+      "type": "string | undefined",
+      "mutable": false,
+      "attr": "toggle-icon",
+      "reflectToAttr": false,
+      "docs": "The toggle icon to use. Defaults to `chevronExpand` for `ios` mode,\nor `caretDownSharp` for `md` mode.",
+      "docsTags": [],
+      "values": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "undefined"
+        }
+      ],
+      "optional": true,
+      "required": false
+    },
+    {
       "name": "value",
       "type": "any",
       "mutable": true,
@@ -528,39 +578,39 @@
       "docs": "Background of the select"
     },
     {
-      "name": "--border-color Color of the select border",
+      "name": "--border-color",
       "annotation": "prop",
-      "docs": ""
+      "docs": "Color of the select border"
     },
     {
-      "name": "--border-radius Radius of the select border",
+      "name": "--border-radius",
       "annotation": "prop",
-      "docs": ""
+      "docs": "Radius of the select border. A large radius may display unevenly when using fill=\"outline\"; if needed, use shape=\"round\" instead or increase --padding-start."
     },
     {
-      "name": "--border-style Style of the select border",
+      "name": "--border-style",
       "annotation": "prop",
-      "docs": ""
+      "docs": "Style of the select border"
     },
     {
-      "name": "--border-width Width of the select border",
+      "name": "--border-width",
       "annotation": "prop",
-      "docs": ""
+      "docs": "Width of the select border"
     },
     {
-      "name": "--highlight-color-focused The color of the highlight on the select when focused",
+      "name": "--highlight-color-focused",
       "annotation": "prop",
-      "docs": ""
+      "docs": "The color of the highlight on the select when focused"
     },
     {
-      "name": "--highlight-color-invalid The color of the highlight on the select when invalid",
+      "name": "--highlight-color-invalid",
       "annotation": "prop",
-      "docs": ""
+      "docs": "The color of the highlight on the select when invalid"
     },
     {
-      "name": "--highlight-color-valid The color of the highlight on the select when valid",
+      "name": "--highlight-color-valid",
       "annotation": "prop",
-      "docs": ""
+      "docs": "The color of the highlight on the select when valid"
     },
     {
       "name": "--padding-bottom",
@@ -598,11 +648,24 @@
       "docs": "The color of the ripple effect on MD mode."
     }
   ],
-  "slots": [],
+  "slots": [
+    {
+      "name": "label",
+      "docs": "The label text to associate with the select. Use the `labelPlacement` property to control where the label is placed relative to the select. Use this if you need to render a label with custom HTML."
+    }
+  ],
   "parts": [
+    {
+      "name": "container",
+      "docs": "The container for the selected text or placeholder."
+    },
     {
       "name": "icon",
       "docs": "The select icon container."
+    },
+    {
+      "name": "label",
+      "docs": "The label text describing the select."
     },
     {
       "name": "placeholder",

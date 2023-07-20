@@ -7,6 +7,10 @@
     {
       "name": "virtualProp",
       "text": "{\"ios\" | \"md\"} mode - The mode determines which platform styles to use."
+    },
+    {
+      "name": "slot",
+      "text": "label - The label text to associate with the textarea. Use the `labelPlacement` property to control where the label is placed relative to the textarea. Use this if you need to render a label with custom HTML. (EXPERIMENTAL)"
     }
   ],
   "usage": {},
@@ -384,7 +388,7 @@
       "mutable": false,
       "attr": "label",
       "reflectToAttr": false,
-      "docs": "The visible label associated with the textarea.",
+      "docs": "The visible label associated with the textarea.\n\nUse this if you need to render a plaintext label.\n\nThe `label` property will take priority over the `label` slot if both are used.",
       "docsTags": [],
       "values": [
         {
@@ -727,7 +731,7 @@
       "bubbles": true,
       "cancelable": true,
       "composed": true,
-      "docs": "The `ionChange` event is fired for `<ion-textarea>` elements when the user\nmodifies the element's value. Unlike the `ionInput` event, the `ionChange`\nevent is not necessarily fired for each alteration to an element's value.\n\nThe `ionChange` event is fired when the element loses focus after its value\nhas been modified.",
+      "docs": "The `ionChange` event is fired when the user modifies the textarea's value.\nUnlike the `ionInput` event, the `ionChange` event is fired when\nthe element loses focus after its value has been modified.",
       "docsTags": []
     },
     {
@@ -745,7 +749,7 @@
       "bubbles": true,
       "cancelable": true,
       "composed": true,
-      "docs": "The `ionInput` event fires when the `value` of an `<ion-textarea>` element\nhas been changed.\n\nWhen `clearOnEdit` is enabled, the `ionInput` event will be fired when\nthe user clears the textarea by performing a keydown event.",
+      "docs": "The `ionInput` event is fired each time the user modifies the textarea's value.\nUnlike the `ionChange` event, the `ionInput` event is fired for each alteration\nto the textarea's value. This typically happens for each keystroke as the user types.\n\nWhen `clearOnEdit` is enabled, the `ionInput` event will be fired when\nthe user clears the textarea by performing a keydown event.",
       "docsTags": []
     }
   ],
@@ -837,7 +841,12 @@
       "docs": "Opacity of the placeholder text"
     }
   ],
-  "slots": [],
+  "slots": [
+    {
+      "name": "label",
+      "docs": "The label text to associate with the textarea. Use the `labelPlacement` property to control where the label is placed relative to the textarea. Use this if you need to render a label with custom HTML. (EXPERIMENTAL)"
+    }
+  ],
   "parts": [],
   "dependents": [],
   "dependencies": [],

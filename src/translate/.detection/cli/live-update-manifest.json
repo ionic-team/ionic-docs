@@ -1,0 +1,18 @@
+{
+  "name": "ionic live-update manifest",
+  "namespace": [
+    "ionic",
+    "live-update"
+  ],
+  "summary": "Generates a manifest file for the Live Update service from a built app directory",
+  "description": "",
+  "footnotes": [],
+  "groups": [
+    "paid"
+  ],
+  "exampleCommands": [],
+  "aliases": [],
+  "inputs": [],
+  "options": [],
+  "type": "global"
+}

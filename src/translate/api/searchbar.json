@@ -538,6 +538,23 @@
       "required": false
     },
     {
+      "name": "name",
+      "type": "string",
+      "mutable": false,
+      "attr": "name",
+      "reflectToAttr": false,
+      "docs": "If used in a form, set the name of the control, which is submitted with the form data.",
+      "docsTags": [],
+      "default": "this.inputId",
+      "values": [
+        {
+          "type": "string"
+        }
+      ],
+      "optional": false,
+      "required": false
+    },
+    {
       "name": "placeholder",
       "type": "string",
       "mutable": false,
@@ -728,7 +745,7 @@
       },
       "signature": "setFocus() => Promise<void>",
       "parameters": [],
-      "docs": "Sets focus on the specified `ion-searchbar`. Use this method instead of the global\n`input.focus()`.",
+      "docs": "Sets focus on the native `input` in `ion-searchbar`. Use this method instead of the global\n`input.focus()`.\n\nDevelopers who wish to focus an input when a page enters\nshould call `setFocus()` in the `ionViewDidEnter()` lifecycle method.\n\nDevelopers who wish to focus an input when an overlay is presented\nshould call `setFocus` after `didPresent` has resolved.",
       "docsTags": []
     }
   ],
