@@ -14,11 +14,11 @@ import Codepen from '@components/global/Codepen';
   />
 </head>
 
-Ionicを使えば、ダークカラーのスキームのサポートなど、アプリのテーマを簡単に変更できます。ネイティブアプリでのダークモードのサポートが拡大していることから、開発者はユーザーの好みをサポートするためにアプリにダークモードを追加する流れがあります。
+Ionic を使えば、ダークカラーのスキームのサポートなど、アプリのテーマを簡単に変更できます。ネイティブアプリでのダークモードのサポートが拡大していることから、開発者はユーザーの好みをサポートするためにアプリにダークモードを追加する流れがあります。
 
 ## Media Query の利用
 
-ダークモードを有効にするためにはまず、 [ユーザの設定してるカラースキーマを利用するmedia query](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-color-scheme) を使用します。このメディアクエリは、ユーザーのデバイスのシステム設定に接続され、ダークモードが有効になっている場合はテーマを適用します。
+ダークモードを有効にするためにはまず、 [ユーザの設定してるカラースキーマを利用する media query](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-color-scheme) を使用します。このメディアクエリは、ユーザーのデバイスのシステム設定に接続され、ダークモードが有効になっている場合はテーマを適用します。
 
 ```css
 @media (prefers-color-scheme: dark) {
@@ -32,7 +32,7 @@ Ionicを使えば、ダークカラーのスキームのサポートなど、ア
 
 ## CSS Class Fallback
 
-メディアクエリをサポートしていないデバイスの代替メソッドとして、CSSセレクタをスタイル設定し、クラスをドキュメントのbodyに適用することで、ダークモードを適用できます。
+メディアクエリをサポートしていないデバイスの代替メソッドとして、CSS セレクタをスタイル設定し、クラスをドキュメントの body に適用することで、ダークモードを適用できます。
 
 ```css
 @media (prefers-color-scheme: dark) {
@@ -49,11 +49,11 @@ body.dark {
 
 `body.dark` セレクタをターゲットとする変数を使用する場合は、アプリケーション内の `<body>` にクラスを追加するだけです。これはアプリケーションが構築されているフレームワークによってさまざまな方法で行うことができます。
 
-この例では、変数は両方の場所にある必要があります。2つの場所に変数を設定しないようにするために、[JavaScriptを使用](#combining-with-javascript) することができます。
+この例では、変数は両方の場所にある必要があります。2 つの場所に変数を設定しないようにするために、[JavaScript を使用](#combining-with-javascript) することができます。
 
-## JavaScriptとの統合
+## JavaScript との統合
 
-CSS変数を一度だけ記述して、複数の場所で更新する必要がないようにするために、フォールバックとクラスをJavaScriptを使用して `prefers-color-scheme`  メディアクエリーの値をチェックし、プリファレンスが `dark` の場合は `dark` クラスを追加することで統合できます。CSSは次のようなものになるでしょう:
+CSS 変数を一度だけ記述して、複数の場所で更新する必要がないようにするために、フォールバックとクラスを JavaScript を使用して `prefers-color-scheme` メディアクエリーの値をチェックし、プリファレンスが `dark` の場合は `dark` クラスを追加することで統合できます。CSS は次のようなものになるでしょう:
 
 ```css
 body.dark {
@@ -65,7 +65,7 @@ body.dark {
 
 ### 自動的にダークモードを有効にする
 
-JavaScriptでは、ドキュメントが [matchMedia()](https://developer.mozilla.org/en-US/docs/Web/API/Window/matchMedia) を使用してメディアクエリと一致するかどうかをチェックすることによって、 `dark` クラスを `<body>` に追加できます。これにより、ユーザの設定に基づいてダークモードが動作するようになります。
+JavaScript では、ドキュメントが [matchMedia()](https://developer.mozilla.org/en-US/docs/Web/API/Window/matchMedia) を使用してメディアクエリと一致するかどうかをチェックすることによって、 `dark` クラスを `<body>` に追加できます。これにより、ユーザの設定に基づいてダークモードが動作するようになります。
 
 ```javascript
 // Use matchMedia to check the user preference
@@ -123,17 +123,17 @@ function checkToggle(shouldCheck) {
 
 <Codepen preview="false" user="ionic" slug="zYOpQLj" height="600px" default-tab="js,result" />
 
-## システムUIコンポーネントを調整する
+## システム UI コンポーネントを調整する
 
-ダークテーマを開発するときに、特定のシステムUIコンポーネントがダークモードに正しく調整されていないことがあります。これを修正するには、 `color-scheme` を指定する必要があります。クロスブラウザのサポートの詳細については、 <a href="https://caniuse.com/#feat=mdn-html_elements_meta_name_color-scheme" target="_blank">ブラウザのカラースキーマの設定</a> を参照してください。
+ダークテーマを開発するときに、特定のシステム UI コンポーネントがダークモードに正しく調整されていないことがあります。これを修正するには、 `color-scheme` を指定する必要があります。クロスブラウザのサポートの詳細については、 <a href="https://caniuse.com/#feat=mdn-html_elements_meta_name_color-scheme" target="_blank">ブラウザのカラースキーマの設定</a> を参照してください。
 
-ネイティブコンポーネントだけではなく、主にIonicコンポーネントを使用している場合に、 `color-scheme` はスクロールバーなどのアプリケーションの側面にも影響します。 `color-scheme` を使用するには、次のHTMLをアプリケーションの`head`に追加する必要があります:
+ネイティブコンポーネントだけではなく、主に Ionic コンポーネントを使用している場合に、 `color-scheme` はスクロールバーなどのアプリケーションの側面にも影響します。 `color-scheme` を使用するには、次の HTML をアプリケーションの`head`に追加する必要があります:
 
 ```html
 <meta name="color-scheme" content="light dark" />
 ```
 
-これにより、ページは、どのカラースキームでレンダリングするのが快適かを示すことができます。また、次のCSSを追加して、要素ごとに設定することもできます。
+これにより、ページは、どのカラースキームでレンダリングするのが快適かを示すことができます。また、次の CSS を追加して、要素ごとに設定することもできます。
 
 ```css
 color-scheme: light dark;
@@ -153,15 +153,15 @@ color-scheme: light dark;
 For developers looking to customize the theme color under the status bar in Safari on iOS 15 or the toolbar in Safari on macOS, see [`theme-color` Meta](./advanced.md#theme-color-meta).
 :::
 
-## Ionicダークモード
+## Ionic ダークモード
 
-Ionicには、アプリを実行しているデバイスに基づいてダークモードを取得するために使用する変数の推奨テーマがあります。次の部分に分けることができます:
+Ionic には、アプリを実行しているデバイスに基づいてダークモードを取得するために使用する変数の推奨テーマがあります。次の部分に分けることができます:
 
 1. すべてのデフォルトの [modes](platform-styles.md#ionic-modes) のデフォルトの [Ionic colors](colors.md) を変更して `body.dark` セレクタのダークモードの背景色に対応します。
 1. `ios` デバイスでダークテーマの変数を設定します。
 1. `md` デバイスでダークテーマの変数を設定します。
 
-次のコードをコピーしてアプリに貼り付けると、Ionicのダークテーマを取得できます。 [JavaScriptとの統合](#combining-with-javascript) セクションで説明したように、JavaScriptを使用して `dark` クラスをドキュメント bodyに追加します。 `dark` クラスがドキュメント本文に追加されるまで、ダークモードは有効になりません。
+次のコードをコピーしてアプリに貼り付けると、Ionic のダークテーマを取得できます。 [JavaScript との統合](#combining-with-javascript) セクションで説明したように、JavaScript を使用して `dark` クラスをドキュメント body に追加します。 `dark` クラスがドキュメント本文に追加されるまで、ダークモードは有効になりません。
 
 :::note
 さらにカスタマイズするために追加できるその他の変数など、変更する変数の詳細については [Themes](themes.md) をご覧ください。

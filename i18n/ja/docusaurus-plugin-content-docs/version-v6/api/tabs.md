@@ -1,6 +1,7 @@
 ---
-title: "ion-tabs"
+title: 'ion-tabs'
 ---
+
 import Props from '@ionic-internal/component-api/v7/tabs/props.md';
 import Events from '@ionic-internal/component-api/v7/tabs/events.md';
 import Methods from '@ionic-internal/component-api/v7/tabs/methods.md';
@@ -10,7 +11,10 @@ import Slots from '@ionic-internal/component-api/v7/tabs/slots.md';
 
 <head>
   <title>Ion-Tabs: Tab-Based Component for App Top-Level Navigation</title>
-  <meta name="description" content="Tabsは、タブベースのナビゲーションを実装するためのトップレベルのコンポーネントです。イオンタブはスタイリングを持たず、ネイティブアプリのように動作するナビゲーションのルーター出口として機能します。" />
+  <meta
+    name="description"
+    content="Tabsは、タブベースのナビゲーションを実装するためのトップレベルのコンポーネントです。イオンタブはスタイリングを持たず、ネイティブアプリのように動作するナビゲーションのルーター出口として機能します。"
+  />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
@@ -28,13 +32,13 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 :::note Framework Support
 
-Angular、React、Vueで `ion-tabs` を使用するには、 `ion-router-outlet` または `ion-nav` コンポーネントを使用する必要があります。
+Angular、React、Vue で `ion-tabs` を使用するには、 `ion-router-outlet` または `ion-nav` コンポーネントを使用する必要があります。
 
 :::
 
 ## ルーターとの併用
 
-タブはIonicルーターと一緒に使うことで、タブベースのナビゲーションを実装することができます。タブバーとアクティブなタブは、urlに基づいて自動的に解決されます。これはタブナビゲーションで最も一般的なパターンです。
+タブは Ionic ルーターと一緒に使うことで、タブベースのナビゲーションを実装することができます。タブバーとアクティブなタブは、url に基づいて自動的に解決されます。これはタブナビゲーションで最も一般的なパターンです。
 
 import Router from '@site/static/usage/v7/tabs/router/index.md';
 
@@ -42,10 +46,9 @@ import Router from '@site/static/usage/v7/tabs/router/index.md';
 
 :::tip Best Practices
 
-Ionicでは、タブを使ったルーティングパターンのベストプラクティスに関するガイドを用意しています。 Check out the guides for [Angular](/angular/navigation#working-with-tabs), [React](/react/navigation#working-with-tabs), and [Vue](/vue/navigation#working-with-tabs) for additional information.
+Ionic では、タブを使ったルーティングパターンのベストプラクティスに関するガイドを用意しています。 Check out the guides for [Angular](/angular/navigation#working-with-tabs), [React](/react/navigation#working-with-tabs), and [Vue](/vue/navigation#working-with-tabs) for additional information.
 
 :::
-
 
 ## Interfaces
 
@@ -61,19 +64,25 @@ interface TabsCustomEvent extends CustomEvent {
 ```
 
 ## プロパティ
+
 <Props />
 
 ## イベント
+
 <Events />
 
 ## メソッド
+
 <Methods />
 
 ## CSS Shadow Parts
+
 <Parts />
 
-## CSSカスタムプロパティ
+## CSS カスタムプロパティ
+
 <CustomProps />
 
 ## Slots
+
 <Slots />

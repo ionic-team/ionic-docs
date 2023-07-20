@@ -1,6 +1,6 @@
-
 Plugin to use Twitter Single Sign On
 Uses Twitter's Fabric SDK
+
 ```typescript
 import { TwitterConnect } from '@awesome-cordova-plugins/twitter-connect/ngx';
 

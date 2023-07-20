@@ -1,5 +1,5 @@
 ---
-title: "ion-thumbnail"
+title: 'ion-thumbnail'
 ---
 
 import Props from '@ionic-internal/component-api/v7/thumbnail/props.md';
@@ -11,16 +11,19 @@ import Slots from '@ionic-internal/component-api/v7/thumbnail/slots.md';
 
 <head>
   <title>ion-thumbnail | Thumbnail App Component to Wrap Images or Icons</title>
-  <meta name="description" content="ion-thumbnailコンポーネントは、画像やアイコンを包み込み、画像のレイアウト表示や原寸大のプレビューに使用することができます。" />
+  <meta
+    name="description"
+    content="ion-thumbnailコンポーネントは、画像やアイコンを包み込み、画像のレイアウト表示や原寸大のプレビューに使用することができます。"
+  />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="shadow" />
 
-Thumbnailsは、通常、画像またはアイコンをラップする四角形のコンポーネントです。これを使用すると、大きな画像のグループを簡単に表示したり、フルサイズのイメージのプレビューを表示したりできます。
+Thumbnails は、通常、画像またはアイコンをラップする四角形のコンポーネントです。これを使用すると、大きな画像のグループを簡単に表示したり、フルサイズのイメージのプレビューを表示したりできます。
 
-Thumbnailsは、単独で使用することも、任意の要素の内部で使用することもできます。`ion-item` の内部に配置すると、Thumbnailsのサイズが親コンポーネントに合わせて変更されます。Thumbnailsをアイテムの左側または右側に配置するには、slotをそれぞれ `start` または `end` に設定します。
+Thumbnails は、単独で使用することも、任意の要素の内部で使用することもできます。`ion-item` の内部に配置すると、Thumbnails のサイズが親コンポーネントに合わせて変更されます。Thumbnails をアイテムの左側または右側に配置するには、slot をそれぞれ `start` または `end` に設定します。
 
 ## 基本的な使い方
 
@@ -36,26 +39,32 @@ import Item from '@site/static/usage/v7/thumbnail/item/index.md';
 
 ## テーマ
 
-## CSSカスタムプロパティ
+## CSS カスタムプロパティ
 
 import CSSProps from '@site/static/usage/v7/thumbnail/theming/css-properties/index.md';
 
 <CSSProps />
 
 ## プロパティ
+
 <Props />
 
 ## イベント
+
 <Events />
 
 ## メソッド
+
 <Methods />
 
 ## CSS Shadow Parts
+
 <Parts />
 
-## CSSカスタムプロパティ
+## CSS カスタムプロパティ
+
 <CustomProps />
 
 ## Slots
+
 <Slots />

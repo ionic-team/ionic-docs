@@ -1,6 +1,7 @@
 ---
-title: "ion-alert"
+title: 'ion-alert'
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
@@ -13,14 +14,17 @@ import Slots from '@ionic-internal/component-api/v7/alert/slots.md';
 
 <head>
   <title>ion-alert: Ionic API Alert Buttons with Custom Message Prompts</title>
-  <meta name="description" content="ion-alertダイアログは、Inputを使用して情報を提示または収集します。カスタムアラートボタンメッセージは、アプリのコンテンツの上に表示され、手動で解除する必要があります。" />
+  <meta
+    name="description"
+    content="ion-alertダイアログは、Inputを使用して情報を提示または収集します。カスタムアラートボタンメッセージは、アプリのコンテンツの上に表示され、手動で解除する必要があります。"
+  />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="scoped" />
 
-アラートは、ユーザーに情報を提示したり、Inputを使ってユーザーから情報を収集したりするダイアログである。アラートはアプリのコンテンツの上に表示され、アプリとの対話を再開する前に、ユーザーが手動で解除する必要があります。また、オプションで `header`、`subHeader`、`message` を持つことができます。
+アラートは、ユーザーに情報を提示したり、Input を使ってユーザーから情報を収集したりするダイアログである。アラートはアプリのコンテンツの上に表示され、アプリとの対話を再開する前に、ユーザーが手動で解除する必要があります。また、オプションで `header`、`subHeader`、`message` を持つことができます。
 
 ## インラインアラート(推奨)
 
@@ -50,7 +54,7 @@ import Controller from '@site/static/usage/v7/alert/presenting/controller/index.
 
 ## Buttons
 
-`buttons` の配列には、各buttonの `text` のプロパティと、オプションで `handler` を利用することができます。 `handler` が `false` を返した場合、buttonがクリックされてもAlertは自動的に解除されません。すべての `buttons` は、左から右にボタン配列に追加された順序で表示されます。 Note: 一番右のボタン(配列の最後の1つ)がメインボタンです。
+`buttons` の配列には、各 button の `text` のプロパティと、オプションで `handler` を利用することができます。 `handler` が `false` を返した場合、button がクリックされても Alert は自動的に解除されません。すべての `buttons` は、左から右にボタン配列に追加された順序で表示されます。 Note: 一番右のボタン(配列の最後の 1 つ)がメインボタンです。
 
 オプションで、`cancel`のような `role` プロパティをボタンに追加することができます。もし `cancel` ロールがボタンのいずれかに設定されている場合、バックドロップをタップしてアラートが解除されると、キャンセルロールを持つボタンから handler が起動されます。
 
@@ -58,10 +62,9 @@ import Buttons from '@site/static/usage/v7/alert/buttons/index.md';
 
 <Buttons />
 
-
 ## Inputs
 
-Alertには、複数の異なるInputを含めることもでき、そのデータをアプリで受け取ることができます。 Inputはユーザーに情報の入力を促す簡単な方法として使用できます。Radios, checkboxes と text inputs textarea はすべて利用できますが、これらを混ぜて利用することはできません。例えば、Alertはすべてbutton Inputであったり、すべてcheckboxでのInputを持つことはできますが、同一のAlertにradioとcheckbox Inputを混ぜることはできません。ただし、"text" Inputでは、 `url`, `email`, `text` などの複数のtypeを混ぜて利用することはできます。アラートのガイドラインに収まらない複雑なForm UIが必要な場合は、代わりにModal内でFormを構築することをお勧めします。
+Alert には、複数の異なる Input を含めることもでき、そのデータをアプリで受け取ることができます。 Input はユーザーに情報の入力を促す簡単な方法として使用できます。Radios, checkboxes と text inputs textarea はすべて利用できますが、これらを混ぜて利用することはできません。例えば、Alert はすべて button Input であったり、すべて checkbox での Input を持つことはできますが、同一の Alert に radio と checkbox Input を混ぜることはできません。ただし、"text" Input では、 `url`, `email`, `text` などの複数の type を混ぜて利用することはできます。アラートのガイドラインに収まらない複雑な Form UI が必要な場合は、代わりに Modal 内で Form を構築することをお勧めします。
 
 ### Text Inputs Example
 
@@ -77,7 +80,7 @@ import Radios from '@site/static/usage/v7/alert/inputs/radios/index.md';
 
 ## カスタマイズ
 
-Alertはscopedによるカプセル化を使用しており、実行時に各スタイルにクラスを追加することで自動的にCSSをスコープします。CSSでscopedセレクタをオーバーライドするには、[higher specificity](https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity) セレクタが必要です。
+Alert は scoped によるカプセル化を使用しており、実行時に各スタイルにクラスを追加することで自動的に CSS をスコープします。CSS で scoped セレクタをオーバーライドするには、[higher specificity](https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity) セレクタが必要です。
 
 `create` メソッドで `cssClass` にカスタムクラスを渡し、それを使ってホストと内部要素にカスタムスタイルを追加することをお勧めします。このプロパティは、スペースで区切られた複数のクラスを受け付けることもできます。
 
@@ -93,7 +96,7 @@ Alertはscopedによるカプセル化を使用しており、実行時に各ス
 }
 ```
 
-[CSSカスタムプロパティ](#css-custom-properties) は、個々の要素をターゲットにすることなく、アラートのスタイルに使用することができます。
+[CSS カスタムプロパティ](#css-custom-properties) は、個々の要素をターゲットにすることなく、アラートのスタイルに使用することができます。
 
 ```css
 .my-custom-class {
@@ -106,19 +109,18 @@ import Customization from '@site/static/usage/v7/alert/customization/index.md';
 <Customization />
 
 :::note
-IonicのAngularアプリを構築する場合、スタイルはグローバルなスタイルシートファイルに追加する必要があります。
+Ionic の Angular アプリを構築する場合、スタイルはグローバルなスタイルシートファイルに追加する必要があります。
 :::
 
 ## アクセシビリティ
 
-Ionicは、アラートの `role` を、Inputやボタンがある場合は [`alertdialog`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/alertdialog_role) に、何もない場合は [`alert`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/alert_role) のいずれかに自動的に設定します。
+Ionic は、アラートの `role` を、Input やボタンがある場合は [`alertdialog`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/alertdialog_role) に、何もない場合は [`alert`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/alert_role) のいずれかに自動的に設定します。
 
-アラートに対して `header` プロパティが定義されている場合、`aria-labelledby` 属性は自動的にヘッダの ID に設定されます。 `header`が定義されていない場合は、`subHeader`要素がフォールバックとして使用されます。同様に、`aria-describedby`属性は、`message`要素のIDが定義されていれば自動的に設定されます。
+アラートに対して `header` プロパティが定義されている場合、`aria-labelledby` 属性は自動的にヘッダの ID に設定されます。 `header`が定義されていない場合は、`subHeader`要素がフォールバックとして使用されます。同様に、`aria-describedby`属性は、`message`要素の ID が定義されていれば自動的に設定されます。
 
-ARIAの仕様に合わせるために、アラートには `message` と `header` または `subHeader` を含めることを強くお勧めします。もし `header` や `subHeader` を含めない場合は、`htmlAttributes` プロパティを使用して、説明的な `aria-label` を指定することができます。
+ARIA の仕様に合わせるために、アラートには `message` と `header` または `subHeader` を含めることを強くお勧めします。もし `header` や `subHeader` を含めない場合は、`htmlAttributes` プロパティを使用して、説明的な `aria-label` を指定することができます。
 
-すべてのARIA属性は、アラートの`htmlAttributes`プロパティにカスタム値を定義することにより、手動で上書きすることができます。
-
+すべての ARIA 属性は、アラートの`htmlAttributes`プロパティにカスタム値を定義することにより、手動で上書きすることができます。
 
 ## Interfaces
 
@@ -129,10 +131,9 @@ interface AlertButton {
   text: string;
   role?: 'cancel' | 'destructive' | string;
   cssClass?: string | string[];
-  handler?: (value: any) => boolean | void | {[key: string]: any};
+  handler?: (value: any) => boolean | void | { [key: string]: any };
 }
 ```
-
 
 ### AlertInput
 
@@ -157,7 +158,6 @@ interface AlertInput {
   tabindex?: number;
 }
 ```
-
 
 ### AlertOptions
 
@@ -184,19 +184,25 @@ interface AlertOptions {
 ```
 
 ## プロパティ
+
 <Props />
 
 ## イベント
+
 <Events />
 
 ## メソッド
+
 <Methods />
 
 ## CSS Shadow Parts
+
 <Parts />
 
-## CSSカスタムプロパティ
+## CSS カスタムプロパティ
+
 <CustomProps />
 
 ## Slots
+
 <Slots />

@@ -1,5 +1,5 @@
 ---
-title: "ion-router"
+title: 'ion-router'
 ---
 
 import Props from '@ionic-internal/component-api/v7/router/props.md';
@@ -11,28 +11,28 @@ import Slots from '@ionic-internal/component-api/v7/router/slots.md';
 
 <head>
   <title>ion-router: Router Component to Coordinate URL Navigation</title>
-  <meta name="description" content="ion-routerは、ionicのナビゲーションアウトレットであるion-navとion-tabsのためのURLコーディネータです。ルーターコンポーネントは vanilla と Stencil JavaScript 内のルーティングを処理します。" />
+  <meta
+    name="description"
+    content="ion-routerは、ionicのナビゲーションアウトレットであるion-navとion-tabsのためのURLコーディネータです。ルーターコンポーネントは vanilla と Stencil JavaScript 内のルーティングを処理します。"
+  />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
-
-
 The router is a component for handling routing inside vanilla and Stencil JavaScript projects.
 
 :::note
- Note: This component should only be used with vanilla and Stencil JavaScript projects. See the routing guides for [Angular](../angular/navigation), [React](../react/navigation), and [Vue](../vue/navigation) for framework-specific routing solutions.
+Note: This component should only be used with vanilla and Stencil JavaScript projects. See the routing guides for [Angular](../angular/navigation), [React](../react/navigation), and [Vue](../vue/navigation) for framework-specific routing solutions.
 :::
-
 
 アプリケーションはコードベースに単一の `ion-router` コンポーネントを持たなければなりません。
 このコンポーネントは、ブラウザの履歴とのすべての対話を制御し、イベント・システムを介して更新を集約します。
 
-`ion-router` は、`ion-nav` と `ion-tabs` 、 `ion-router-outlet` というIonicのナビゲーション機能のURL調整機能に過ぎません。
+`ion-router` は、`ion-nav` と `ion-tabs` 、 `ion-router-outlet` という Ionic のナビゲーション機能の URL 調整機能に過ぎません。
 
-つまり、 `ion-router` はDOMにアクセスすることはなく、コンポーネントを表示することも、何らかのライフサイクルイベントを発行することもなく、ブラウザのURLに基づいて、`ion-nav` と `ion-tabs` 、 `ion-router-outlet`  に何をいつ「show」すべきかを指示するだけです。
+つまり、 `ion-router` は DOM にアクセスすることはなく、コンポーネントを表示することも、何らかのライフサイクルイベントを発行することもなく、ブラウザの URL に基づいて、`ion-nav` と `ion-tabs` 、 `ion-router-outlet` に何をいつ「show」すべきかを指示するだけです。
 
-コンポーネント(ロード/選択)とURLの間の関係を設定するために、`ion-router` はJSX/HTMLを使ってルートのツリーを定義する宣言的な構文を利用します。
+コンポーネント(ロード/選択)と URL の間の関係を設定するために、`ion-router` は JSX/HTML を使ってルートのツリーを定義する宣言的な構文を利用します。
 
 ## 基本的な使い方
 
@@ -63,8 +63,6 @@ interface RouterCustomEvent extends CustomEvent {
 }
 ```
 
-
-
 ## 使い方
 
 ```html
@@ -91,24 +89,28 @@ interface RouterCustomEvent extends CustomEvent {
   <ion-route url="/signup" component="page-signup"></ion-route>
   <ion-route url="/support" component="page-support"></ion-route>
 </ion-router>
-
 ```
 
-
 ## プロパティ
+
 <Props />
 
 ## イベント
+
 <Events />
 
 ## メソッド
+
 <Methods />
 
 ## CSS Shadow Parts
+
 <Parts />
 
-## CSSカスタムプロパティ
+## CSS カスタムプロパティ
+
 <CustomProps />
 
 ## Slots
+
 <Slots />

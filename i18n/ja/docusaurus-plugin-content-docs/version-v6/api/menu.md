@@ -1,6 +1,7 @@
 ---
-title: "ion-menu"
+title: 'ion-menu'
 ---
+
 import Props from '@ionic-internal/component-api/v7/menu/props.md';
 import Events from '@ionic-internal/component-api/v7/menu/events.md';
 import Methods from '@ionic-internal/component-api/v7/menu/methods.md';
@@ -10,20 +11,22 @@ import Slots from '@ionic-internal/component-api/v7/menu/slots.md';
 
 <head>
   <title>ion-menu: API Framework Docs for Types of Menu Components</title>
-  <meta name="description" content="ion-menuコンポーネントは、現在のビューの横からスライドして入ってくるナビゲーションドロワーです。Ionic APIで利用可能なメニューの種類については、フレームワークのドキュメントをご覧ください。" />
+  <meta
+    name="description"
+    content="ion-menuコンポーネントは、現在のビューの横からスライドして入ってくるナビゲーションドロワーです。Ionic APIで利用可能なメニューの種類については、フレームワークのドキュメントをご覧ください。"
+  />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="shadow" />
 
-
-Menuコンポーネントは、現在のビューの横からスライドするナビゲーションパネルです。
+Menu コンポーネントは、現在のビューの横からスライドするナビゲーションパネルです。
 デフォルトでは左からスライドしますが、サイドはオーバーライドできます。
-Menuの表示はmodeによって異なりますが、表示するtypeはmenuのtypeによって変更することができます。
-menu要素は、root content要素と同じ深度である必要があります。
-コンテンツにつけるMenuの数に制限はありません。
-これらはテンプレートから、またはプログラムでMenuControllerを使用して制御できます。
+Menu の表示は mode によって異なりますが、表示する type は menu の type によって変更することができます。
+menu 要素は、root content 要素と同じ深度である必要があります。
+コンテンツにつける Menu の数に制限はありません。
+これらはテンプレートから、またはプログラムで MenuController を使用して制御できます。
 
 ## 基本的な使い方
 
@@ -68,23 +71,26 @@ interface MenuCustomEvent<T = any> extends CustomEvent {
 }
 ```
 
-
-
-
 ## プロパティ
+
 <Props />
 
 ## イベント
+
 <Events />
 
 ## メソッド
+
 <Methods />
 
 ## CSS Shadow Parts
+
 <Parts />
 
-## CSSカスタムプロパティ
+## CSS カスタムプロパティ
+
 <CustomProps />
 
 ## Slots
+
 <Slots />

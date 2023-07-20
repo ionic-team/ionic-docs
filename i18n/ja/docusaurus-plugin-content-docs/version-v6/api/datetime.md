@@ -1,6 +1,7 @@
 ---
-title: "ion-datetime"
+title: 'ion-datetime'
 ---
+
 import Props from '@ionic-internal/component-api/v7/datetime/props.md';
 import Events from '@ionic-internal/component-api/v7/datetime/events.md';
 import Methods from '@ionic-internal/component-api/v7/datetime/methods.md';
@@ -40,50 +41,53 @@ import Theming from '@site/static/usage/v7/datetime/theming/index.md';
 
 <head>
   <title>ion-datetime: Ionic API Input for Datetime Format Picker</title>
-  <meta name="description" content="Datetimeは、日付や時刻を選択するためのピッカーインターフェイスを提供します。IonicのAPI Datetime入力コンポーネントは、好みの形式を簡単に表示し、値を管理します。" />
+  <meta
+    name="description"
+    content="Datetimeは、日付や時刻を選択するためのピッカーインターフェイスを提供します。IonicのAPI Datetime入力コンポーネントは、好みの形式を簡単に表示し、値を管理します。"
+  />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="shadow" />
 
-Datetimeはカレンダーとタイムホイールのインターフェイスを表示し、ユーザーが簡単に日付と時刻を選択できるようにします。Datetimeはネイティブの `datetime-local` の `input` 要素と似ていますが、Ionic FrameworkのDatetimeコンポーネントを使用すると、好みのフォーマットで日付と時刻を表示したり、datetimeの値を管理することが簡単にできます。
+Datetime はカレンダーとタイムホイールのインターフェイスを表示し、ユーザーが簡単に日付と時刻を選択できるようにします。Datetime はネイティブの `datetime-local` の `input` 要素と似ていますが、Ionic Framework の Datetime コンポーネントを使用すると、好みのフォーマットで日付と時刻を表示したり、datetime の値を管理することが簡単にできます。
 
-## 概要 
+## 概要
 
-これまで、JavaScriptやHTMLの入力でdatetimeの値を扱うことは、常に困難でした。
+これまで、JavaScript や HTML の入力で datetime の値を扱うことは、常に困難でした。
 入力でさえも、常に課題でした。
-特に、JavaScriptの `Date` オブジェクトは、datetime文字列を正しく解析したり、datetime値をフォーマットしたりするのが難しいことで有名です。
-さらに悪いことに、ブラウザやJavaScriptのバージョンによって、
-特にロケールごとに様々なdatetime文字列の解析が異なるのです。
+特に、JavaScript の `Date` オブジェクトは、datetime 文字列を正しく解析したり、datetime 値をフォーマットしたりするのが難しいことで有名です。
+さらに悪いことに、ブラウザや JavaScript のバージョンによって、
+特にロケールごとに様々な datetime 文字列の解析が異なるのです。
 
-Ionic Frameworkのdatetimeは、開発者が一般的な落とし穴を回避できるように設計されており、
-開発者は簡単にdatetime値を操作し、ユーザーにシンプルなdatetimeピッカーを提供し、素晴らしいユーザーエクスペリエンスを提供することができます。
+Ionic Framework の datetime は、開発者が一般的な落とし穴を回避できるように設計されており、
+開発者は簡単に datetime 値を操作し、ユーザーにシンプルな datetime ピッカーを提供し、素晴らしいユーザーエクスペリエンスを提供することができます。
 
 ### ISO 8601 Datetime Format: YYYY-MM-DDTHH:mmZ
 
-Ionic Frameworkでは、[ISO 8601 datetime format](https://www.w3.org/TR/NOTE-datetime) を値として使用します。
-この値は、JavaScriptの `Date` オブジェクトを使用するのではなく、単純に文字列として使用されます。
-ISO datetimeフォーマットを使用することで、
-JSONオブジェクトやデータベース内でのシリアライズやパースが容易になります。
+Ionic Framework では、[ISO 8601 datetime format](https://www.w3.org/TR/NOTE-datetime) を値として使用します。
+この値は、JavaScript の `Date` オブジェクトを使用するのではなく、単純に文字列として使用されます。
+ISO datetime フォーマットを使用することで、
+JSON オブジェクトやデータベース内でのシリアライズやパースが容易になります。
 
 以下は、 `ion-datetime` で使用できる ISO 8601 フォーマットの例です:
 
-| Description          | Format                 | Datetime Value Example        |
-| -------------------- | ---------------------- | ----------------------------  |
-| Year                 | YYYY                   | 1994                          |
-| Year and Month       | YYYY-MM                | 1994-12                       |
-| Complete Date        | YYYY-MM-DD             | 1994-12-15                    |
-| Date and Time        | YYYY-MM-DDTHH:mm       | 1994-12-15T13:47              |
-| UTC Timezone         | YYYY-MM-DDTHH:mm:ssZ   | 1994-12-15T13:47:20Z          |
-| Timezone Offset      | YYYY-MM-DDTHH:mm:ssTZD | 1994-12-15T13:47:20+05:00     |
-| Hour and Minute      | HH:mm                  | 13:47                         |
+| Description     | Format                 | Datetime Value Example    |
+| --------------- | ---------------------- | ------------------------- |
+| Year            | YYYY                   | 1994                      |
+| Year and Month  | YYYY-MM                | 1994-12                   |
+| Complete Date   | YYYY-MM-DD             | 1994-12-15                |
+| Date and Time   | YYYY-MM-DDTHH:mm       | 1994-12-15T13:47          |
+| UTC Timezone    | YYYY-MM-DDTHH:mm:ssZ   | 1994-12-15T13:47:20Z      |
+| Timezone Offset | YYYY-MM-DDTHH:mm:ssTZD | 1994-12-15T13:47:20+05:00 |
+| Hour and Minute | HH:mm                  | 13:47                     |
 
-年号は常に4桁、ミリ秒は（加算される場合は）常に3桁、その他は常に2桁であることに注意してください。
-ミリ秒は3桁、その他は2桁である。
-ですから、1月を表す数字には 1月を表す数字には常に先頭のゼロ、例えば`01`が付きます。
-また、時刻は常に24時間表示で、
-12時間表示の時計では「00」は「午前12時」、「13」は「午後1時」、「23」は「午後3時」を意味します。
+年号は常に 4 桁、ミリ秒は（加算される場合は）常に 3 桁、その他は常に 2 桁であることに注意してください。
+ミリ秒は 3 桁、その他は 2 桁である。
+ですから、1 月を表す数字には 1 月を表す数字には常に先頭のゼロ、例えば`01`が付きます。
+また、時刻は常に 24 時間表示で、
+12 時間表示の時計では「00」は「午前 12 時」、「13」は「午後 1 時」、「23」は「午後 3 時」を意味します。
 
 :::note
 秒、ミリ秒、タイムゾーンは ISO 8601 datetime フォーマットで指定できますが、 `ion-datetime` は秒、ミリ秒、タイムゾーンを選択するためのインターフェイスを提供しません。秒、ミリ秒、タイムゾーンの値を指定しても無視されます。
@@ -111,7 +115,7 @@ JSONオブジェクトやデータベース内でのシリアライズやパー�
 
 `min` と `max` プロパティでは、日付の選択をある範囲に制限することができますが、 `monthValues`, `dayValues`, `yearValues`, `hourValues`, `minuteValues` プロパティでは、ユーザーが選択できる特定の日や時刻を選択することが可能です。
 
-次の例では、15分単位で分を選択することができます。また、日付を5刻みで選択することができます。
+次の例では、15 分単位で分を選択することができます。また、日付を 5 刻みで選択することができます。
 
 <Values />
 
@@ -126,7 +130,7 @@ JSONオブジェクトやデータベース内でのシリアライズやパー�
 
 ## ローカライゼーション
 
-Ionic Frameworkでは、[Intl.DatetimeFormat](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DatetimeFormat) Web APIを利用して、ユーザーの端末に設定されている言語や地域に応じて、月名と曜日名を自動的にローカライズすることが可能です。
+Ionic Framework では、[Intl.DatetimeFormat](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DatetimeFormat) Web API を利用して、ユーザーの端末に設定されている言語や地域に応じて、月名と曜日名を自動的にローカライズすることが可能です。
 
 ### カスタムロケール
 
@@ -142,37 +146,36 @@ Ionic Frameworkでは、[Intl.DatetimeFormat](https://developer.mozilla.org/en-U
 
 ### 時間サイクル
 
-`ion-datetime` は、デフォルトで `locale` プロパティで指定された時間サイクルを使用します。例えば、 `locale` が `en-US` に設定されている場合、 `ion-datetime` は12時間のサイクルを使用します。
+`ion-datetime` は、デフォルトで `locale` プロパティで指定された時間サイクルを使用します。例えば、 `locale` が `en-US` に設定されている場合、 `ion-datetime` は 12 時間のサイクルを使用します。
 
-時間サイクルには4つのタイプがあります。
+時間サイクルには 4 つのタイプがあります。
 
-| Hour cycle type | Description                                                  |
-| --------------- | ------------------------------------------------------------ |
-| `'h12'`          | Hour system using 1–12; corresponds to 'h' in patterns. The 12 hour clock, with midnight starting at 12:00 am. |
-| `'h23'`         | Hour system using 0–23; corresponds to 'H' in patterns. The 24 hour clock, with midnight starting at 0:00. |
-| `'h11'`         | Hour system using 0–11; corresponds to 'K' in patterns. The 12 hour clock, with midnight starting at 0:00 am. |
-| `'h24'`         | Hour system using 1–24; corresponds to 'k' in pattern. The 24 hour clock, with midnight starting at 24:00. |
+| Hour cycle type | Description                                                                                                    |
+| --------------- | -------------------------------------------------------------------------------------------------------------- |
+| `'h12'`         | Hour system using 1–12; corresponds to 'h' in patterns. The 12 hour clock, with midnight starting at 12:00 am. |
+| `'h23'`         | Hour system using 0–23; corresponds to 'H' in patterns. The 24 hour clock, with midnight starting at 0:00.     |
+| `'h11'`         | Hour system using 0–11; corresponds to 'K' in patterns. The 12 hour clock, with midnight starting at 0:00 am.  |
+| `'h24'`         | Hour system using 1–24; corresponds to 'k' in pattern. The 24 hour clock, with midnight starting at 24:00.     |
 
 :::note
-  ソース: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/Locale/hourCycle
+ソース: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/Locale/hourCycle
 :::
-
 
 どの時間のサイクルを使用するか、もっとコントロールする必要があるシナリオがあるかもしれません。このような場合には、 `hourCycle` プロパティが役に立ちます。
 
-次の例では、 `hourCycle` プロパティを使用して、ロケールが `en-GB` であるにもかかわらず、 `ion-datetime` に12時間周期を使用するように強制することができます。
+次の例では、 `hourCycle` プロパティを使用して、ロケールが `en-GB` であるにもかかわらず、 `ion-datetime` に 12 時間周期を使用するように強制することができます。
 
 <HourCycle />
 
 ### 週初めの日
 
-`ion-datetime`の場合、週初めの曜日はデフォルトで日曜日です。2022年現在、Ionicがデバイスのロケールに基づいて自動的に週の最初の曜日を決定するためのブラウザAPIはありませんが、これに関する作業は進行中です（参照: [TC39 GitHub](https://github.com/tc39/ecma402/issues/6) )．
+`ion-datetime`の場合、週初めの曜日はデフォルトで日曜日です。2022 年現在、Ionic がデバイスのロケールに基づいて自動的に週の最初の曜日を決定するためのブラウザ API はありませんが、これに関する作業は進行中です（参照: [TC39 GitHub](https://github.com/tc39/ecma402/issues/6) )．
 
 <FirstDayOfWeek />
 
 ### 時刻表記
 
-時刻表記は自動的にローカライズされるわけではありません。幸いなことに、Ionicでは `time-label` スロットで簡単にカスタムのローカライズを提供することができます。
+時刻表記は自動的にローカライズされるわけではありません。幸いなことに、Ionic では `time-label` スロットで簡単にカスタムのローカライズを提供することができます。
 
 <TimeLabel />
 
@@ -192,11 +195,11 @@ Ionic Frameworkでは、[Intl.DatetimeFormat](https://developer.mozilla.org/en-U
 
 デフォルトでは、 `ion-datetime` は日付と時刻の両方を選択することができる。さらに、ユーザは特定の月、年、時間、分を選択することができます。
 
-ユースケースによっては、日付だけを選択したり、時間だけを選択したりすることもできます。 `presentation` プロパティでは、表示するピッカーとその順番を指定することができます。例えば、 `date-time` を設定すると、カレンダーピッカーがタイムピッカーよりも先に表示されます。 `time-date` を設定すると、カレンダーピッカーはtimeピッカーの後に表示されます。
+ユースケースによっては、日付だけを選択したり、時間だけを選択したりすることもできます。 `presentation` プロパティでは、表示するピッカーとその順番を指定することができます。例えば、 `date-time` を設定すると、カレンダーピッカーがタイムピッカーよりも先に表示されます。 `time-date` を設定すると、カレンダーピッカーは time ピッカーの後に表示されます。
 
 ### 月と年の選択
 
-月と年の選択は、  `presentation` プロパティに `month-year` , `year-month` , `month` , または `year` を渡すことで行うことができます。
+月と年の選択は、 `presentation` プロパティに `month-year` , `year-month` , `month` , または `year` を渡すことで行うことができます。
 
 この例では、 `month-year` を設定した datetime を示しています。
 
@@ -214,25 +217,25 @@ Ionic Frameworkでは、[Intl.DatetimeFormat](https://developer.mozilla.org/en-U
 
 時刻の選択は、 `presentation` プロパティに `date-time`, `time-date`, または `date` を渡すことで行うことで有効になります。
 
-この例では、`date`の設定でdatetimeを指定しています。
+この例では、`date`の設定で datetime を指定しています。
 
 <Date />
 
 ### ピッカーのホイールスタイル
 
-デフォルトでは、Ionicは `presentation` を使用する場合、グリッドスタイルのレイアウトを優先して表示します。しかし、`preferWheel` プロパティを使用すると、ホイールスタイルを表示することができます。preferWheel` が `true` の場合、Ionic は可能な限りホイールスタイルのレイアウトを優先して表示します。
+デフォルトでは、Ionic は `presentation` を使用する場合、グリッドスタイルのレイアウトを優先して表示します。しかし、`preferWheel` プロパティを使用すると、ホイールスタイルを表示することができます。preferWheel`が`true` の場合、Ionic は可能な限りホイールスタイルのレイアウトを優先して表示します。
 
 特定の `presentation` オプションには、グリッドとホイールの両方のスタイルがあり、開発者は `preferWheel` プロパティで選択することができます。その他の `presentation` の値はホイールスタイルのみを持ち、グリッドスタイルは決して表示されません。下の表は、どの `presentation` の値がグリッドスタイルとホイールスタイルを持つかを示しています。
 
-| `presentation` | グリッドシステム   | ホイールシステム   |
-| -------------- | --------------- | ---------------- |
-| `date`         | Yes             | Yes              |
-| `date-time`    | Yes             | Yes              |
-| `month`        | No              | Yes              |
-| `month-year`   | No              | Yes              |
-| `time`         | No              | Yes              |
-| `time-date`    | Yes             | Yes              |
-| `year`         | No              | Yes              |
+| `presentation` | グリッドシステム | ホイールシステム |
+| -------------- | ---------------- | ---------------- |
+| `date`         | Yes              | Yes              |
+| `date-time`    | Yes              | Yes              |
+| `month`        | No               | Yes              |
+| `month-year`   | No               | Yes              |
+| `time`         | No               | Yes              |
+| `time-date`    | Yes              | Yes              |
+| `year`         | No               | Yes              |
 
 以下の例では、ホイールピッカーに `presentation="date-time"` を指定しています。
 
@@ -264,11 +267,11 @@ This property is only supported when using `presentation="date"` and `preferWhee
 
 ## ボタン
 
-デフォルトでは、新しい日付が選択されると、新しいdatetimeの値で `ionChange` が発行されます。 `ionChange` を発行する前にユーザの確認を必要とする場合は、 `showDefaultButtons` プロパティを `true` に設定するか、 `buttons` スロットでカスタム確認ボタンを渡すことができます。カスタムボタンを渡す場合、 `ionChange` を発生させるために、確認ボタンは `ion-datetime` の `confirm` メソッドを呼び出す必要があります。
+デフォルトでは、新しい日付が選択されると、新しい datetime の値で `ionChange` が発行されます。 `ionChange` を発行する前にユーザの確認を必要とする場合は、 `showDefaultButtons` プロパティを `true` に設定するか、 `buttons` スロットでカスタム確認ボタンを渡すことができます。カスタムボタンを渡す場合、 `ionChange` を発生させるために、確認ボタンは `ion-datetime` の `confirm` メソッドを呼び出す必要があります。
 
 ### 確認ボタンの表示
 
-デフォルトのDoneボタンとCancelボタンは、それぞれ [`confirm`](#confirm) と [`cancel`](#cancel) メソッドを呼び出すように予め設定されています。
+デフォルトの Done ボタンと Cancel ボタンは、それぞれ [`confirm`](#confirm) と [`cancel`](#cancel) メソッドを呼び出すように予め設定されています。
 
 <ShowingConfirmationButtons />
 
@@ -312,7 +315,7 @@ A callback is better when the highlighted dates are recurring, such as birthdays
 
 ## テーマ
 
-Ionicの強力なテーマシステムを使用すると、特定のテーマに合わせてアプリ全体を簡単に変更することができます。この例では、[Color Creator](../theming/colors#new-color-creator) と [Stepped Color Generator](../theming/themes#stepped-color-generator) を使用して、 `ion-datetime` で使用できるローズ色のパレットを作成しました。
+Ionic の強力なテーマシステムを使用すると、特定のテーマに合わせてアプリ全体を簡単に変更することができます。この例では、[Color Creator](../theming/colors#new-color-creator) と [Stepped Color Generator](../theming/themes#stepped-color-generator) を使用して、 `ion-datetime` で使用できるローズ色のパレットを作成しました。
 
 この方法の利点は、`ion-datetime`だけでなく、すべてのコンポーネントが自動的にこのテーマを利用できることです。
 
@@ -320,11 +323,11 @@ Ionicの強力なテーマシステムを使用すると、特定のテーマに
 
 ## タイムゾーン
 
-Ionicの `ion-datetime` は、[datetime-local](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/datetime-local) の動作に従い、datetimeコントロールの内部でタイムゾーンを操作・設定することはありません。つまり、「07:00」という時刻の値は、異なるタイムゾーンに応じて調整されることはありません。
+Ionic の `ion-datetime` は、[datetime-local](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/datetime-local) の動作に従い、datetime コントロールの内部でタイムゾーンを操作・設定することはありません。つまり、「07:00」という時刻の値は、異なるタイムゾーンに応じて調整されることはありません。
 
-[date-fns-tz](https://github.com/marnusw/date-fns-tz) のようなライブラリを使用して、datetimeの値を希望するタイムゾーンに変換することをお勧めします。
+[date-fns-tz](https://github.com/marnusw/date-fns-tz) のようなライブラリを使用して、datetime の値を希望するタイムゾーンに変換することをお勧めします。
 
-以下は、ISO-8601文字列をユーザーのデバイスに設定されたタイムゾーンで表示するためのフォーマット例です。
+以下は、ISO-8601 文字列をユーザーのデバイスに設定されたタイムゾーンで表示するためのフォーマット例です。
 
 ```typescript
 import { format, utcToZonedTime } from 'date-fns-tz';
@@ -354,7 +357,7 @@ import { format, parseISO } from 'date-fns';
 /**
  * This is provided in the event
  * payload from the `ionChange` event.
- * 
+ *
  * The value is an ISO-8601 date string.
  */
 const dateFromIonDatetime = '2021-06-04T14:23:00-04:00';
@@ -365,18 +368,17 @@ console.log(formattedString); // Jun 4, 2021
 
 See https://date-fns.org/docs/format for a list of all the valid format tokens.
 
-
 ## 高度な日時の検証および操作
 
 datetime ピッカーは、正確なフォーマットを選択するシンプルさを提供し、
 標準化された [ISO 8601 datetime format](https://www.w3.org/TR/NOTE-datetime) を使用して、
 datetime 値を文字列として持続させることができます。
-しかし、 `ion-datetime` は、datetimeの値を検証したり操作したりするときに、
+しかし、 `ion-datetime` は、datetime の値を検証したり操作したりするときに、
 すべての状況を解決しようとするわけではないことに注意することが重要です。
-もし、datetimeの値を特定のフォーマットからパースしたり、
-操作したり(例えば、日付に5日足したり、30分を引いたり)、
+もし、datetime の値を特定のフォーマットからパースしたり、
+操作したり(例えば、日付に 5 日足したり、30 分を引いたり)、
 あるいは、特定のロケールにデータをフォーマットする必要があるなら、
-JavaScriptで日付を扱うために [date-fns](https://date-fns.org) を使うことを強くお勧めします。
+JavaScript で日付を扱うために [date-fns](https://date-fns.org) を使うことを強くお勧めします。
 
 ## アクセシビリティ
 
@@ -384,37 +386,37 @@ JavaScriptで日付を扱うために [date-fns](https://date-fns.org) を使う
 
 `ion-datetime` は、コンポーネント内のフォーカス可能な要素間を移動するためのフルキーボードサポートを備えています。次の表は、それぞれのキーが何をするのかの詳細です。
 
-| Key                | Function                                                     |
-| ------------------ | ------------------------------------------------------------ |
-| `Tab`              | Moves focus to the next focusable element.                   |
-| `Shift` + `Tab`    | Moves focus to the previous focusable element.               |
-| `Space` or `Enter` | Clicks the focusable element.                                |
+| Key                | Function                                       |
+| ------------------ | ---------------------------------------------- |
+| `Tab`              | Moves focus to the next focusable element.     |
+| `Shift` + `Tab`    | Moves focus to the previous focusable element. |
+| `Space` or `Enter` | Clicks the focusable element.                  |
 
 #### 日付の表示
 
-| Key                | Function                                                     |
-| ------------------ | ------------------------------------------------------------ |
-| `ArrowUp` | Moves focus to the same day of the previous week. |
-| `ArrowDown` | Moves focus to the same day of the next week. |
-| `ArrowRight` | Moves focus to the next day. |
-| `ArrowLeft` | Moves focus to the previous day. |
-| `Home` | Moves focus to the first day of the current week. |
-| `End` | Moves focus to the last day of the current week. |
-| `PageUp` | Changes the grid of dates to the previous month. |
-| `PageDown` | Changes the grid of dates to the next month. |
-| `Shift` + `PageUp` | Changes the grid of dates to the previous year. |
-| `Shift` + `PageDown` | Changes the grid of dates to the next year. |
+| Key                  | Function                                          |
+| -------------------- | ------------------------------------------------- |
+| `ArrowUp`            | Moves focus to the same day of the previous week. |
+| `ArrowDown`          | Moves focus to the same day of the next week.     |
+| `ArrowRight`         | Moves focus to the next day.                      |
+| `ArrowLeft`          | Moves focus to the previous day.                  |
+| `Home`               | Moves focus to the first day of the current week. |
+| `End`                | Moves focus to the last day of the current week.  |
+| `PageUp`             | Changes the grid of dates to the previous month.  |
+| `PageDown`           | Changes the grid of dates to the next month.      |
+| `Shift` + `PageUp`   | Changes the grid of dates to the previous year.   |
+| `Shift` + `PageDown` | Changes the grid of dates to the next year.       |
 
 #### 時刻、月、年のホイール
 
 タイムホイールピッカーを使用する場合、列がフォーカスされているときに、数字キーで時、分の値を選択することができます。
 
-| Key                | Function                                                     |
-| ------------------ | ------------------------------------------------------------ |
-| `ArrowUp` | Scroll to the previous item. |
-| `ArrowDown` | Scroll to the next item. |
-| `Home` | Scroll to the first item. |
-| `End` | Scroll to the last item. |
+| Key         | Function                     |
+| ----------- | ---------------------------- |
+| `ArrowUp`   | Scroll to the previous item. |
+| `ArrowDown` | Scroll to the next item.     |
+| `Home`      | Scroll to the first item.    |
+| `End`       | Scroll to the last item.     |
 
 ## Interfaces
 
@@ -438,19 +440,25 @@ interface DatetimeCustomEvent extends CustomEvent {
 ```
 
 ## プロパティ
+
 <Props />
 
 ## イベント
+
 <Events />
 
 ## メソッド
+
 <Methods />
 
 ## CSS Shadow Parts
+
 <Parts />
 
-## CSSカスタムプロパティ
+## CSS カスタムプロパティ
+
 <CustomProps />
 
 ## Slots
+
 <Slots />

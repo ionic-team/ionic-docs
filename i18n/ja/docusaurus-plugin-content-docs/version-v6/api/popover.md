@@ -1,6 +1,7 @@
 ---
-title: "ion-popover"
+title: 'ion-popover'
 ---
+
 import Props from '@ionic-internal/component-api/v7/popover/props.md';
 import Events from '@ionic-internal/component-api/v7/popover/events.md';
 import Methods from '@ionic-internal/component-api/v7/popover/methods.md';
@@ -10,15 +11,17 @@ import Slots from '@ionic-internal/component-api/v7/popover/slots.md';
 
 <head>
   <title>ion-popover: iOS / Android Popover UI Component & CSS Properties</title>
-  <meta name="description" content="ion-popoverは、現在のページの上に表示されるダイアログです。iOSとAndroidデバイス用のpopover UIコンポーネントとCSSカスタムプロパティについて説明します。" />
+  <meta
+    name="description"
+    content="ion-popoverは、現在のページの上に表示されるダイアログです。iOSとAndroidデバイス用のpopover UIコンポーネントとCSSカスタムプロパティについて説明します。"
+  />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="shadow" />
 
-
-Popoverは、現在のページの上部に表示されるダイアログです。これは何にでも使用できますが、通常はナビゲーションバーに収まらないオーバーフローアクションに使用されます。
+Popover は、現在のページの上部に表示されるダイアログです。これは何にでも使用できますが、通常はナビゲーションバーに収まらないオーバーフローアクションに使用されます。
 
 `ion-popover` を使用するには、インラインで使用する方法と `popoverController` を使用する方法がります。それぞれの方法には異なる考慮点があるので、あなたのユースケースに最も適した方法を使用するようにしましょう。
 
@@ -34,7 +37,7 @@ Angular、React、Vue で `ion-popover` を使用する場合、渡されたコ�
 
 もし、ポップオーバーの表示と非表示を細かく制御したい場合は、 `popoverController` を使用することをお勧めします。
 
-### Angular 
+### Angular
 
 渡されたコンポーネントは、ポップオーバーが表示されたときに作成され、ポップオーバーが解除されたときに破棄される必要があるため、内部で `<ng-content>` を使用してコンテンツを投影することはできません。代わりに、`<ng-container>` を使用します。これは、`<ng-template>` が渡されることを想定しています。そのため、コンポーネントを渡す際には、`<ng-template>`でラップする必要があります。
 
@@ -51,7 +54,7 @@ Angular、React、Vue で `ion-popover` を使用する場合、渡されたコ�
 インラインの `ion-popover` のトリガーは、インタラクションされたときにポップオーバーを開く要素です。インタラクションの動作は `trigger-action` プロパティを設定することでカスタマイズすることができます。なお、`trigger-action="context-menu"` はシステムのデフォルトのコンテキストメニューを開かせないようにします。
 
 :::note
- `popoverController` を使用する場合、`ion-popover` は前もって作成されないので、トリガーは適用されません。
+`popoverController` を使用する場合、`ion-popover` は前もって作成されないので、トリガーは適用されません。
 :::
 
 import InlineTrigger from '@site/static/usage/v7/popover/presenting/inline-trigger/index.md';
@@ -63,7 +66,6 @@ import InlineTrigger from '@site/static/usage/v7/popover/presenting/inline-trigg
 インラインポップオーバーは `isOpen` プロパティを `true` に設定することによっても開くことができます。この方法はトリガーよりも細かくポップオーバーをコントロールする必要がある場合に使用されます。
 
 `isOpen` は一方向のデータバインディングを使用しています。つまり、ポップオーバーが閉じられたときに自動的に `false` に設定されることはありません。開発者は `ionPopoverDidDismiss` または `didDismiss` イベントをリッスンして `isOpen` を `false` にセットする必要があります。この理由は、`ion-popover` の内部がアプリケーションの状態と密に結合されるのを防ぐためである。一方通行のデータバインディングでは、ポップオーバーはリアクティブ変数が提供するブーリアン値だけを気にすればよいのです。双方向のデータバインディングでは、ポップオーバーはブール値とリアクティブ変数の存在の両方に関心を持つ必要があります。これは非決定的な動作につながり、アプリケーションのデバッグを難しくします。
-
 
 import IsOpenTrigger from '@site/static/usage/v7/popover/presenting/inline-isopen/index.md';
 
@@ -79,7 +81,7 @@ Ionic Framework からインポートされた `popoverController` を使用す�
 
 ### React
 
-コントローラの代わりに、React には `useIonPopover` というHookがあり、同じような振る舞いをします。なお、 `useIonPopover` は `<IonApp>` の子孫であることが必要です。もし、 `<IonApp>` の外側でポップオーバーを使用する必要がある場合は、代わりにインラインポップオーバーを使用することを検討してください。
+コントローラの代わりに、React には `useIonPopover` という Hook があり、同じような振る舞いをします。なお、 `useIonPopover` は `<IonApp>` の子孫であることが必要です。もし、 `<IonApp>` の外側でポップオーバーを使用する必要がある場合は、代わりにインラインポップオーバーを使用することを検討してください。
 
 ### 使い方
 
@@ -87,29 +89,27 @@ import ControllerExample from '@site/static/usage/v7/popover/presenting/controll
 
 <ControllerExample />
 
-
 ## スタイリング
 
 ポップオーバーはアプリケーションのルートで表示されるので、アプリケーション全体を覆うように表示されます。この動作はインラインポップオーバーとコントローラから表示されるポップオーバーの両方に適用されます。そのため、カスタムポップオーバースタイリングは特定のコンポーネントにスコープすることができません。代わりに、スタイルはグローバルに適用されなければなりません。ほとんどの開発者は、カスタムスタイルを `global.css` に配置すれば十分です。
 
 :::note
- If you are building an Ionic Angular app, the styles need to be added to a global stylesheet file.
+If you are building an Ionic Angular app, the styles need to be added to a global stylesheet file.
 :::
 
 import Styling from '@site/static/usage/v7/popover/customization/styling/index.md';
 
 <Styling />
 
-
 ## 配置
 
 ### リファレンス
 
-ポップオーバーを表示するとき、Ionic Framework はポップオーバーを相対的に表示するための参照点を必要とします。`reference="event"` を指定すると、ポップオーバーはトリガー要素で dispatch されたポインターイベントのx-y座標に相対的に表示されます。 `reference="trigger"` を指定すると、ポップオーバーはトリガー要素のバウンディングボックスに対して相対的に表示されます。
+ポップオーバーを表示するとき、Ionic Framework はポップオーバーを相対的に表示するための参照点を必要とします。`reference="event"` を指定すると、ポップオーバーはトリガー要素で dispatch されたポインターイベントの x-y 座標に相対的に表示されます。 `reference="trigger"` を指定すると、ポップオーバーはトリガー要素のバウンディングボックスに対して相対的に表示されます。
 
 ### Side
 
-`side` プロパティを使用することで、基準点の上、右、左、下のいずれかにポップオーバーを配置することができます。また、LTRやRTLのモードに応じてサイドを切り替えたい場合は、 `start` や `end` を使用することができます。
+`side` プロパティを使用することで、基準点の上、右、左、下のいずれかにポップオーバーを配置することができます。また、LTR や RTL のモードに応じてサイドを切り替えたい場合は、 `start` や `end` を使用することができます。
 
 ### Alignment
 
@@ -142,13 +142,12 @@ import Sizing from '@site/static/usage/v7/popover/customization/sizing/index.md'
 `dismissOnSelect` プロパティを使用すると、ポップオーバーのコンテンツがクリックされたときに自動的にポップオーバーを閉じることができます。この動作は、他のポップオーバーのトリガー要素をクリックしたときには適用されません。
 
 :::note
- `popoverController` を使用する場合、ネストしたポップオーバーは作成できません。なぜなら、ポップオーバーは `create` メソッドが呼ばれたときに、自動的にアプリケーションのルートに追加されるからです。
+`popoverController` を使用する場合、ネストしたポップオーバーは作成できません。なぜなら、ポップオーバーは `create` メソッドが呼ばれたときに、自動的にアプリケーションのルートに追加されるからです。
 :::
 
 import NestedPopover from '@site/static/usage/v7/popover/nested/index.md';
 
 <NestedPopover />
-
 
 ## Interfaces
 
@@ -172,7 +171,7 @@ interface PopoverOptions {
 
   enterAnimation?: AnimationBuilder;
   leaveAnimation?: AnimationBuilder;
-  
+
   size?: PopoverSize;
   dismissOnSelect?: boolean;
   reference?: PositionReference;
@@ -182,10 +181,9 @@ interface PopoverOptions {
 }
 ```
 
-
 ## Types
 
-以下に、`ion-popover` のすべてのカスタムTypeを紹介します。
+以下に、`ion-popover` のすべてのカスタム Type を紹介します。
 
 ```typescript
 type PopoverSize = 'cover' | 'auto';
@@ -201,28 +199,27 @@ type PositionAlign = 'start' | 'center' | 'end';
 
 `ion-popover` は、ポップオーバー内のフォーカス可能な要素間を移動するための基本的なキーボードをサポートしています。次の表は、それぞれのキーが何をするのかの詳細です:
 
-| Key                | Function                                                     |
-| ------------------ | ------------------------------------------------------------ |
-| `Tab`              | Moves focus to the next focusable element.                   |
-| `Shift` + `Tab`    | Moves focus to the previous focusable element.               |
-| `Esc`              | Closes the popover. |
-| `Space` or `Enter` | Clicks the focusable element. |
-
+| Key                | Function                                       |
+| ------------------ | ---------------------------------------------- |
+| `Tab`              | Moves focus to the next focusable element.     |
+| `Shift` + `Tab`    | Moves focus to the previous focusable element. |
+| `Esc`              | Closes the popover.                            |
+| `Space` or `Enter` | Clicks the focusable element.                  |
 
 `ion-popover` は、 `button` プロパティを持つ `ion-item` 要素間を移動するための矢印キーを完全にサポートしています。最も一般的な使用例としては、デスクトップにフォーカスしたアプリケーションにおけるドロップダウンメニューとして使用することができます。基本的なキーボードのサポートに加え、次の表ではドロップダウンメニューの矢印キーのサポートについて詳しく説明します。
 
-| Key                | Function                                                       |
-| ------------------ | -------------------------------------------------------------- |
-| `ArrowUp`          | Moves focus to the previous focusable element.                 |
-| `ArrowDown`        | Moves focus to the next focusable element.                     |
-| `Home`             | Moves focus to the first focusable element.                    |
-| `End`              | Moves focus to the last focusable element.                     |
-| `ArrowLeft`        | When used in a child popover, closes the popover and returns focus to the parent popover. |
-| `Space`, `Enter`, and `ArrowRight`       | When focusing a trigger element, opens the associated popover. |
+| Key                                | Function                                                                                  |
+| ---------------------------------- | ----------------------------------------------------------------------------------------- |
+| `ArrowUp`                          | Moves focus to the previous focusable element.                                            |
+| `ArrowDown`                        | Moves focus to the next focusable element.                                                |
+| `Home`                             | Moves focus to the first focusable element.                                               |
+| `End`                              | Moves focus to the last focusable element.                                                |
+| `ArrowLeft`                        | When used in a child popover, closes the popover and returns focus to the parent popover. |
+| `Space`, `Enter`, and `ArrowRight` | When focusing a trigger element, opens the associated popover.                            |
 
 ## Performance
 
-### Innerコンテンツのマウント
+### Inner コンテンツのマウント
 
 インライン `ion-popover` のコンテンツは、閉じるとマウントされなくなります。このコンテンツのレンダリングにコストがかかる場合、開発者は `keepContentsMounted` プロパティを使用して、ポップオーバーがマウントされると同時にコンテンツをマウントすることができます。これにより、ポップオーバーが開いたときに内部コンテンツがすでにマウントされているため、アプリケーションの応答性を最適化することができます。
 
@@ -234,26 +231,32 @@ import Mount from '@site/static/usage/v7/popover/performance/mount/index.md';
 
 - この機能は、既存のパフォーマンス問題に対処するための最後の手段として使用する必要があります。この機能は、既存のパフォーマンス問題に対処するための最後の手段として使用されるべきです。また、パフォーマンスの問題を予期してこの機能を使用しないでください。
 
-- この機能は、JavaScriptフレームワークを使用する場合にのみ必要です。フレームワークを使用していない開発者は、レンダリングするコンテンツをポップオーバーに渡すことができ、コンテンツは自動的にレンダリングされます。
+- この機能は、JavaScript フレームワークを使用する場合にのみ必要です。フレームワークを使用していない開発者は、レンダリングするコンテンツをポップオーバーに渡すことができ、コンテンツは自動的にレンダリングされます。
 
 - この機能はインラインポップオーバーでのみ機能します。 `popoverController`で作成されたポップオーバーは先に作成されないので、内部のコンテンツも作成されません。
 
 - 内部コンポーネントの JavaScript Framework ライフサイクルフックは、ポップオーバーが表示されたときではなく、ポップオーバーがマウントされたときにすぐに実行されます。
 
 ## プロパティ
+
 <Props />
 
 ## イベント
+
 <Events />
 
 ## メソッド
+
 <Methods />
 
 ## CSS Shadow Parts
+
 <Parts />
 
-## CSSカスタムプロパティ
+## CSS カスタムプロパティ
+
 <CustomProps />
 
 ## Slots
+
 <Slots />

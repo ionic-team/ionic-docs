@@ -57,7 +57,7 @@ ionic cordova plugin add cordova-plugin-camera
 <plugin name="cordova-plugin-camera" spec="^4.0.3" />
 ```
 
-次のステップは iOS ユーザーのみ必要です。iOS10では、開発者はなぜアプリがデバイスカメラにアクセスしたいのか理由を示さなければなりません。これを section (<platform name="ios"></platform>) の `config.xml` の最後に追加します:
+次のステップは iOS ユーザーのみ必要です。iOS10 では、開発者はなぜアプリがデバイスカメラにアクセスしたいのか理由を示さなければなりません。これを section (<platform name="ios"></platform>) の `config.xml` の最後に追加します:
 
 ```xml
 <!-- iOS 10 で必須: Camera 許可プロンプト -->

@@ -19,7 +19,9 @@ module.exports = function (context, options) {
        * @param {*} isCurrentVersion Whether or not this is the current version of the docs
        */
       const generateMarkdownForVersion = async (version, npmTag, isCurrentVersion) => {
-        const response = isCurrentVersion ? await fetch(`https://raw.githubusercontent.com/ionic-jp/ionic-docs/main/scripts/data/translated-api.json`) : await fetch(`https://unpkg.com/@ionic/docs@${npmTag}/core.json`);
+        const response = isCurrentVersion
+          ? await fetch(`https://raw.githubusercontent.com/ionic-jp/ionic-docs/main/scripts/data/translated-api.json`)
+          : await fetch(`https://unpkg.com/@ionic/docs@${npmTag}/core.json`);
         const { components } = await response.json();
 
         const names = components.map((component) => component.tag.slice(4));

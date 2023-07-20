@@ -1,6 +1,7 @@
 ---
-title: "ion-card-subtitle"
+title: 'ion-card-subtitle'
 ---
+
 import Props from '@ionic-internal/component-api/v7/card-subtitle/props.md';
 import Events from '@ionic-internal/component-api/v7/card-subtitle/events.md';
 import Methods from '@ionic-internal/component-api/v7/card-subtitle/methods.md';
@@ -12,26 +13,30 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="shadow" />
 
-
-カードサブタイトルは、[カードヘッダ](./card-header)の内側に配置されるべき、cardの子コンポーネントです。
+カードサブタイトルは、[カードヘッダ](./card-header)の内側に配置されるべき、card の子コンポーネントです。
 
 詳しくは、[Card](./card)のドキュメントを参照してください。
 
-
 ## プロパティ
+
 <Props />
 
 ## イベント
+
 <Events />
 
 ## メソッド
+
 <Methods />
 
 ## CSS Shadow Parts
+
 <Parts />
 
-## CSSカスタムプロパティ
+## CSS カスタムプロパティ
+
 <CustomProps />
 
 ## Slots
+
 <Slots />

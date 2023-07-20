@@ -14,9 +14,9 @@ import DocsCards from '@components/global/DocsCards';
   />
 </head>
 
-Ionic Frameworkは、アプリを構成するために使用できるいくつかの異なるレイアウトを提供します。シングルページレイアウトから、スプリットペインビューやモーダルまで、さまざまなレイアウトがあります。
+Ionic Framework は、アプリを構成するために使用できるいくつかの異なるレイアウトを提供します。シングルページレイアウトから、スプリットペインビューやモーダルまで、さまざまなレイアウトがあります。
 
-## HeaderとFooterのレイアウト
+## Header と Footer のレイアウト
 
 ### Header
 
@@ -26,7 +26,7 @@ Ionic Frameworkは、アプリを構成するために使用できるいくつ�
   </DocsCard>
 </aside>
 
-最もシンプルなレイアウトは、[header](../api/header.md) と [content](../api/content.md) で構成されています。アプリのほとんどのページは、一般にこの両方を持ちますが、contentを使用するためにheaderは必要ありません。
+最もシンプルなレイアウトは、[header](../api/header.md) と [content](../api/content.md) で構成されています。アプリのほとんどのページは、一般にこの両方を持ちますが、content を使用するために header は必要ありません。
 
 ```html
 <ion-app>
@@ -50,7 +50,7 @@ Ionic Frameworkは、アプリを構成するために使用できるいくつ�
   </DocsCard>
 </aside>
 
-ご覧のように、footerのツールバーはコンテンツの上に表示されます。アプリでは、コンテンツの下にツールバーを表示する必要がある場合があり、そのような場合にfooterが使用されます。
+ご覧のように、footer のツールバーはコンテンツの上に表示されます。アプリでは、コンテンツの下にツールバーを表示する必要がある場合があり、そのような場合に footer が使用されます。
 
 ```html
 <ion-app>
@@ -68,7 +68,7 @@ Ionic Frameworkは、アプリを構成するために使用できるいくつ�
 
 ### Header と Footer
 
-また、これらを1つのページにまとめて、コンテンツの上と下にツールバーを表示させることも可能です。
+また、これらを 1 つのページにまとめて、コンテンツの上と下にツールバーを表示させることも可能です。
 
 ```html
 <ion-app>
@@ -92,7 +92,7 @@ Ionic Frameworkは、アプリを構成するために使用できるいくつ�
 
 ### ライブでの実装例
 
-この設定のライブ例を、Angularでは [こちら](https://stackblitz.com/edit/ionic-ng-header-footer) 、Reactでは [こちら](https://stackblitz.com/edit/ionic-react-head-foot) で見ることができます。
+この設定のライブ例を、Angular では [こちら](https://stackblitz.com/edit/ionic-ng-header-footer) 、React では [こちら](https://stackblitz.com/edit/ionic-react-head-foot) で見ることができます。
 
 ## タブレイアウト
 
@@ -124,7 +124,7 @@ Ionic Frameworkは、アプリを構成するために使用できるいくつ�
 
 ### ライブでの実装例
 
-この設定は、Angularでは [こちら](https://stackblitz.com/edit/ionic-ng-tabs) 、Reactでは [こちら](https://stackblitz.com/edit/ionic-react-tab-layout) で実例を見ることができます。
+この設定は、Angular では [こちら](https://stackblitz.com/edit/ionic-ng-tabs) 、React では [こちら](https://stackblitz.com/edit/ionic-react-tab-layout) で実例を見ることができます。
 
 ## メニューレイアウト
 
@@ -177,7 +177,7 @@ Ionic Frameworkは、アプリを構成するために使用できるいくつ�
 
 ### ライブでの実装例
 
-この設定は、Angularでは [こちら](https://stackblitz.com/edit/ionic-ng-menu-layout) 、Reactでは [こちら](https://stackblitz.com/edit/ionic-react-menu)で 実例を見ることができます。
+この設定は、Angular では [こちら](https://stackblitz.com/edit/ionic-ng-menu-layout) 、React では [こちら](https://stackblitz.com/edit/ionic-react-menu)で 実例を見ることができます。
 
 ## 分割ペインレイアウト
 
@@ -233,4 +233,4 @@ Ionic Frameworkは、アプリを構成するために使用できるいくつ�
 
 ### ライブでの実装例
 
-Angularでの実装例は [こちら](https://stackblitz.com/edit/ionic-ng-split-pane) 、Reactでの実装例は [こちら](https://stackblitz.com/edit/ionic-react-split-pane) をご覧ください。
+Angular での実装例は [こちら](https://stackblitz.com/edit/ionic-ng-split-pane) 、React での実装例は [こちら](https://stackblitz.com/edit/ionic-react-split-pane) をご覧ください。

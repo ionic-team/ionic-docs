@@ -16,9 +16,9 @@ import CodeColor from '@components/page/theming/CodeColor';
   />
 </head>
 
-Ionicには、多くのコンポーネントの配色を変更するために使用できる9つのデフォルトカラーがあります。 それぞれの配色は、 `shade` と `tint` を含む複数のプロパティを持つコレクションであり、Ionic全体で利用されます。
+Ionic には、多くのコンポーネントの配色を変更するために使用できる 9 つのデフォルトカラーがあります。 それぞれの配色は、 `shade` と `tint` を含む複数のプロパティを持つコレクションであり、Ionic 全体で利用されます。
 
-デフォルトの配色を変更するために、 `color` 属性を使って任意の色をIonicのコンポーネントに適用できます。以下の buttons はテキストと背景が `color` 属性に基づいて変更されていることに注目してください。button に `color` 属性がない時は、デフォルト値として `primary` の配色が適用されます。
+デフォルトの配色を変更するために、 `color` 属性を使って任意の色を Ionic のコンポーネントに適用できます。以下の buttons はテキストと背景が `color` 属性に基づいて変更されていることに注目してください。button に `color` 属性がない時は、デフォルト値として `primary` の配色が適用されます。
 
 ```html
 <ion-button>Default</ion-button>
@@ -35,13 +35,13 @@ Ionicには、多くのコンポーネントの配色を変更するために使
 
 ### 配色のレイヤードスタイル
 
-それぞれの配色は、これらのプロパティで構成されています: `base`, `contrast`, `shade`, と `tint` です。`base` と `contrast` の配色は `rgb` プロパティと同一の配色が求められます。 <a href="https://developer.mozilla.org/en-US/docs/Glossary/RGB" target="_blank">rgb format</a> をご覧ください。この `rgb` の変数が必要な理由は [The Alpha Problem](advanced.md#the-alpha-problem) をご覧ください。下のドロップダウンから選択することで、Ionicが提供するデフォルトの配色とそのバリエーションを確認することができます。
+それぞれの配色は、これらのプロパティで構成されています: `base`, `contrast`, `shade`, と `tint` です。`base` と `contrast` の配色は `rgb` プロパティと同一の配色が求められます。 <a href="https://developer.mozilla.org/en-US/docs/Glossary/RGB" target="_blank">rgb format</a> をご覧ください。この `rgb` の変数が必要な理由は [The Alpha Problem](advanced.md#the-alpha-problem) をご覧ください。下のドロップダウンから選択することで、Ionic が提供するデフォルトの配色とそのバリエーションを確認することができます。
 
 <LayeredColorsSelect />
 
 ## Modifying Colors
 
-配色を変更するときは、その色についてリストされているすべてのバリエーションを変更する必要があります。例えば、`secondary color` を <code-color mode="md" value="#006600"></code-color> に変更する時、以下のCSSプロパティが必要です。
+配色を変更するときは、その色についてリストされているすべてのバリエーションを変更する必要があります。例えば、`secondary color` を <code-color mode="md" value="#006600"></code-color> に変更する時、以下の CSS プロパティが必要です。
 
 ```css
 :root {
@@ -60,13 +60,13 @@ Ionicには、多くのコンポーネントの配色を変更するために使
 ベースカラーからバリエーションカラーを取得する方法がわからない？その場合、 [Color Generator](color-generator.md) をお試しください。これはすべてのバリエーションを計算し、アプリにコピー&ペーストできるコードを提供します！
 :::
 
-CSS変数についてもっと詳しく知りたい時は [CSS Variables documentation](css-variables.md) をご覧ください。
+CSS 変数についてもっと詳しく知りたい時は [CSS Variables documentation](css-variables.md) をご覧ください。
 
 ### 配色の追加
 
-カラーは、Ionicコンポーネントの 「color」 プロパティを設定するか、CSSを使用してスタイル設定することで、アプリケーション全体で使用できるように追加できます。新しいカラーを手動で追加する方法については、この後の 「New Color Creator」 を参照してください。コピーしてアプリケーションに貼り付ける新しいカラーのコードを簡単に生成する方法については、次の 「New Color Creator」 を参照してください。
+カラーは、Ionic コンポーネントの 「color」 プロパティを設定するか、CSS を使用してスタイル設定することで、アプリケーション全体で使用できるように追加できます。新しいカラーを手動で追加する方法については、この後の 「New Color Creator」 を参照してください。コピーしてアプリケーションに貼り付ける新しいカラーのコードを簡単に生成する方法については、次の 「New Color Creator」 を参照してください。
 
-新しいカラーを追加するには、最初にルートのカラーのすべてのバリエーションのCSS変数を定義します。たとえば、`favorite`という新しいカラーを追加するには、次の変数を定義します:
+新しいカラーを追加するには、最初にルートのカラーのすべてのバリエーションの CSS 変数を定義します。たとえば、`favorite`という新しいカラーを追加するには、次の変数を定義します:
 
 ```css
 :root {
@@ -79,7 +79,7 @@ CSS変数についてもっと詳しく知りたい時は [CSS Variables documen
 }
 ```
 
-次に、これらのCSS変数を使用する新しいクラスを作成します。クラスは、`.ion-color-{COLOR}` の形式で記述する**必要があります**。 `{COLOR}` は追加するカラーの名前です:
+次に、これらの CSS 変数を使用する新しいクラスを作成します。クラスは、`.ion-color-{COLOR}` の形式で記述する**必要があります**。 `{COLOR}` は追加するカラーの名前です:
 
 ```css
 .ion-color-favorite {
@@ -92,13 +92,13 @@ CSS変数についてもっと詳しく知りたい時は [CSS Variables documen
 }
 ```
 
-クラスを追加すると、colorプロパティーをサポートする任意のIonicコンポーネントでカラーを使用できるようになります。Ionicボタンに`favorite`の色を使用する例を以下に示します。
+クラスを追加すると、color プロパティーをサポートする任意の Ionic コンポーネントでカラーを使用できるようになります。Ionic ボタンに`favorite`の色を使用する例を以下に示します。
 
 ```html
 <ion-button color="favorite">Favorite</ion-button>
 ```
 
-ルートで定義されたCSS変数は、CSSを使用して任意のエレメントのスタイル設定にも使用できます:
+ルートで定義された CSS 変数は、CSS を使用して任意のエレメントのスタイル設定にも使用できます:
 
 ```css
 div {
@@ -107,10 +107,10 @@ div {
 }
 ```
 
-CSS変数の設定方法と使い方についての詳しい情報は [CSS Variables documentation](css-variables.md) をご覧ください。
+CSS 変数の設定方法と使い方についての詳しい情報は [CSS Variables documentation](css-variables.md) をご覧ください。
 
 ## New Color Creator
 
-名前と値を変更して以下で新しい色を作成し、以下のコードをコピーしてプロジェクトに貼り付けることで、その配色をIonicプロジェクトで利用できます。
+名前と値を変更して以下で新しい色を作成し、以下のコードをコピーしてプロジェクトに貼り付けることで、その配色を Ionic プロジェクトで利用できます。
 
 <NewColorGenerator />

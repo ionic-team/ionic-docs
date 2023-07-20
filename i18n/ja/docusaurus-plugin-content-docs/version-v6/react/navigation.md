@@ -13,15 +13,15 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
   />
 </head>
 
-このガイドでは、IonicとReactで構築されたアプリでのルーティングの仕組みについて説明します。
+このガイドでは、Ionic と React で構築されたアプリでのルーティングの仕組みについて説明します。
 
 `IonReactRouter` は一般的な [React Router](https://github.com/ReactTraining/react-router) ライブラリを内部で使用しています。Ionic と React Router を使うことで、ページ遷移がリッチなマルチページアプリをつくることができます。
 
-React Routerを使用したルーティングについて知っていることはすべて、Ionic Reactで利用することができます。Ionic Reactアプリの基本と、ルーティングがどのように機能するかを見てみましょう。
+React Router を使用したルーティングについて知っていることはすべて、Ionic React で利用することができます。Ionic React アプリの基本と、ルーティングがどのように機能するかを見てみましょう。
 
-## Ionic Reactにおけるルーティング
+## Ionic React におけるルーティング
 
-これは `App` コンポーネントのサンプルで、 "/dashboard" URLへの単一ルートを定義しています。"/dashboard"にアクセスすると、 `DashboardPage` コンポーネントをレンダリングします。
+これは `App` コンポーネントのサンプルで、 "/dashboard" URL への単一ルートを定義しています。"/dashboard"にアクセスすると、 `DashboardPage` コンポーネントをレンダリングします。
 
 **App.tsx**
 
@@ -38,11 +38,11 @@ const App: React.FC = () => (
 );
 ```
 
-`Route` の直後に、デフォルトの `Redirect` を定義します。これは、ユーザーがアプリのルートURL（"/"）にアクセスすると、"/dashboard" URLにリダイレクトします。
+`Route` の直後に、デフォルトの `Redirect` を定義します。これは、ユーザーがアプリのルート URL（"/"）にアクセスすると、"/dashboard" URL にリダイレクトします。
 
-リダイレクトには `exact` という prop もあります。つまり、このルートが一致するためには、URLが `from` prop（もしくは `Route` で `exact` が使われている場合の `path` prop）と正確に一致する必要があります。すべてのルートは"/"で始まるため、これがないと、このリダイレクトはすべてのルートに対してレンダリングされます。
+リダイレクトには `exact` という prop もあります。つまり、このルートが一致するためには、URL が `from` prop（もしくは `Route` で `exact` が使われている場合の `path` prop）と正確に一致する必要があります。すべてのルートは"/"で始まるため、これがないと、このリダイレクトはすべてのルートに対してレンダリングされます。
 
-ユーザーが認証されているかどうかを確認するなど、条件に基づいてルートのrenderメソッドからプログラムでリダイレクトすることもできます:
+ユーザーが認証されているかどうかを確認するなど、条件に基づいてルートの render メソッドからプログラムでリダイレクトすることもできます:
 
 ```tsx
 <Route
@@ -56,7 +56,7 @@ const App: React.FC = () => (
 
 ## IonReactRouter
 
-`IonReactRouter` コンポーネントは、React Routerの従来の [`BrowserRouter`](https://reacttraining.com/react-router/web/api/BrowserRouter) コンポーネントをラップし、アプリケーションをルーティング用にセットアップします。したがって、 `BrowserRouter` の代わりに `IonReactRouter` を使用します。任意のpropを `IonReactRouter` に渡すことができ、それらはベースとなる `BrowserRouter` に渡されます。
+`IonReactRouter` コンポーネントは、React Router の従来の [`BrowserRouter`](https://reacttraining.com/react-router/web/api/BrowserRouter) コンポーネントをラップし、アプリケーションをルーティング用にセットアップします。したがって、 `BrowserRouter` の代わりに `IonReactRouter` を使用します。任意の prop を `IonReactRouter` に渡すことができ、それらはベースとなる `BrowserRouter` に渡されます。
 
 ## ルーターのネスト
 
@@ -77,9 +77,9 @@ const DashboardPage: React.FC = () => {
 };
 ```
 
-ここでは、アプリの DashboardPage から更にコンポーネントが定義された2つのルートがあります。pathにはルートの全体を定義する必要があり、そのURLからこのページに到達した場合でも、 "/dashboard" を省略できないことに注意してください。 React Routerは絶対パスを必要とし、相対パスはサポートされていません。
+ここでは、アプリの DashboardPage から更にコンポーネントが定義された 2 つのルートがあります。path にはルートの全体を定義する必要があり、その URL からこのページに到達した場合でも、 "/dashboard" を省略できないことに注意してください。 React Router は絶対パスを必要とし、相対パスはサポートされていません。
 
-ただし、 [`match`](https://reacttraining.com/react-router/web/api/match) オブジェクトの `url` プロパティを使用して、コンポーネントをレンダリングするために match したURLを提供できます。これは、ネストされたルートを操作するときに役立ちます。
+ただし、 [`match`](https://reacttraining.com/react-router/web/api/match) オブジェクトの `url` プロパティを使用して、コンポーネントをレンダリングするために match した URL を提供できます。これは、ネストされたルートを操作するときに役立ちます。
 
 ```tsx
 const DashboardPage: React.FC<RouteComponentProps> = ({ match }) => {
@@ -94,15 +94,15 @@ const DashboardPage: React.FC<RouteComponentProps> = ({ match }) => {
 };
 ```
 
-ここでは、 `match.url` には "/dashboard" の値が含まれています。これは、 `DashboardPage` のレンダリングに使用されるURLであるためです。
+ここでは、 `match.url` には "/dashboard" の値が含まれています。これは、 `DashboardPage` のレンダリングに使用される URL であるためです。
 
 これらのルートは `IonRouterOutlet` にグループ化されています。次に説明します。
 
 ## IonRouterOutlet
 
-`IonRouterOutlet` コンポーネントは、Ionicの "ページ" をレンダリングするルートコンテナを提供します。 ページが `IonRouterOutlet` にある場合、コンテナはページ間の遷移アニメーションを制御し、ページが作成および破棄されるタイミングを制御します。これにより、ビューを切り替える際にビュー間の状態を維持できます。
+`IonRouterOutlet` コンポーネントは、Ionic の "ページ" をレンダリングするルートコンテナを提供します。 ページが `IonRouterOutlet` にある場合、コンテナはページ間の遷移アニメーションを制御し、ページが作成および破棄されるタイミングを制御します。これにより、ビューを切り替える際にビュー間の状態を維持できます。
 
-上記の `DashboardPage` には、ユーザーリストページと詳細ページが表示されます。 2つのページ間を移動するとき、 `IonRouterOutlet` は適切なプラットフォームページの遷移を提供し、前のページの状態をそのまま保持するため、ユーザーがリストページに戻ると、前のページと同じ状態で表示されます。
+上記の `DashboardPage` には、ユーザーリストページと詳細ページが表示されます。 2 つのページ間を移動するとき、 `IonRouterOutlet` は適切なプラットフォームページの遷移を提供し、前のページの状態をそのまま保持するため、ユーザーがリストページに戻ると、前のページと同じ状態で表示されます。
 
 `IonRouterOutlet` には、 `Route` と `Redirect` のみを含める必要があります。 他のコンポーネントは、 `Route` の結果、または `IonRouterOutlet` の外部でレンダリングする必要があります。
 
@@ -167,7 +167,7 @@ export default Home;
 
 ## Navigation
 
-Ionic Reactアプリでさまざまなビューにルーティングする場合、いくつかのオプションを使用できます。 ここで、 `UsersListPageはIonItem` は `IonItem` の `routerLink` prop を使用して、タップ/クリックされたときに移動するルートを指定します:
+Ionic React アプリでさまざまなビューにルーティングする場合、いくつかのオプションを使用できます。 ここで、 `UsersListPageはIonItem` は `IonItem` の `routerLink` prop を使用して、タップ/クリックされたときに移動するルートを指定します:
 
 **UsersListPage.tsx**
 
@@ -207,7 +207,7 @@ Outside of these components that have the `routerLink` prop, you can also use Re
 
 ルーティングは可能な限り、上記の方法のいずれかを使用することをお勧めします。 これらのアプローチの利点は、両方ともアンカー（ `<a>` ）タグをレンダリングすることです。これはアプリ全体のアクセシビリティに適しています。
 
-ナビゲーションのためのプログラムオプションとして、React Routerがルート経由でレンダリングするコンポーネントに提供する [`history`](https://reacttraining.com/react-router/web/api/history) prop を使用することもできます。
+ナビゲーションのためのプログラムオプションとして、React Router がルート経由でレンダリングするコンポーネントに提供する [`history`](https://reacttraining.com/react-router/web/api/history) prop を使用することもできます。
 
 ```tsx
 <IonButton
@@ -238,7 +238,7 @@ Using `history.go()` in Ionic React is not supported at the moment. Interested i
 
 ## URL Parameters
 
-Dashboard Pageで定義された2番目のルートには、URLパラメーターが定義されています（パスの ":id" 部分）。 URLパラメーターは `path` の動的な部分であり、ユーザーが "/dashboard/users/1" などのURLに移動すると、"1" はルートがレンダリングするコンポーネント上で "id" という名前のパラメーターに保存されます。それがどのように行われるかを見てみましょう。
+Dashboard Page で定義された 2 番目のルートには、URL パラメーターが定義されています（パスの ":id" 部分）。 URL パラメーターは `path` の動的な部分であり、ユーザーが "/dashboard/users/1" などの URL に移動すると、"1" はルートがレンダリングするコンポーネント上で "id" という名前のパラメーターに保存されます。それがどのように行われるかを見てみましょう。
 
 **UserDetailPage.tsx**
 
@@ -262,9 +262,9 @@ const UserDetailPage: React.FC<UserDetailPageProps> = ({ match }) => {
 };
 ```
 
-[`match`](https://reacttraining.com/react-router/web/api/match) prop には、URLパラメーターなど、一致したルートに関する情報が含まれます。 ここで `id` パラメータを取得し、画面に表示します。
+[`match`](https://reacttraining.com/react-router/web/api/match) prop には、URL パラメーターなど、一致したルートに関する情報が含まれます。 ここで `id` パラメータを取得し、画面に表示します。
 
-> Note: TypeScriptインターフェイスを使用して props オブジェクトを厳密に入力する方法に注意してください。 このインターフェースにより、コンポーネント内部でタイプセーフティとコード補完が可能になります。
+> Note: TypeScript インターフェイスを使用して props オブジェクトを厳密に入力する方法に注意してください。 このインターフェースにより、コンポーネント内部でタイプセーフティとコード補完が可能になります。
 
 ## Linear Routing versus Non-Linear Routing
 
@@ -276,8 +276,8 @@ The following is an example of linear routing in a mobile app:
 
 <video
   style={{
-    'margin': '40px auto',
-    'display': 'flex'
+    margin: '40px auto',
+    display: 'flex',
   }}
   width="400"
   src={useBaseUrl('video/linear-routing-demo.mp4')}
@@ -302,8 +302,8 @@ The following is an example of non-linear routing:
 
 <video
   style={{
-    'margin': '40px auto',
-    'display': 'flex'
+    margin: '40px auto',
+    display: 'flex',
   }}
   width="400"
   src={useBaseUrl('video/non-linear-routing-demo.mp4')}
@@ -351,8 +351,8 @@ const App: React.FC = () => {
         </Route>
       </IonRouterOutlet>
     </IonReactRouter>
-  </IonApp>
-}
+  </IonApp>;
+};
 ```
 
 The above routes are considered "shared" because they reuse the `dashboard` piece of the URL.
@@ -372,7 +372,7 @@ const App: React.FC = () => (
       </IonRouterOutlet>
     </IonReactRouter>
   </IonApp>
-)
+);
 
 const DashboardRouterOutlet: React.FC = () => (
   <IonRouterOutlet>
@@ -383,7 +383,7 @@ const DashboardRouterOutlet: React.FC = () => (
       <DashboardStatsPage />
     </Route>
   </IonRouterOutlet>
-)
+);
 ```
 
 The above routes are nested because they are in the `children` array of the parent route. Notice that the parent route renders the `DashboardRouterOutlet` component. When you nest routes, you need to render another instance of `IonRouterOutlet`.
@@ -420,15 +420,7 @@ Let's start by taking a look at our `Tabs` component:
 
 ```tsx
 import { Redirect, Route } from 'react-router-dom';
-import {
-  IonContent,
-  IonIcon,
-  IonLabel,
-  IonRouterOutlet,
-  IonTabBar,
-  IonTabButton,
-  IonTabs
-} from '@ionic/react';
+import { IonContent, IonIcon, IonLabel, IonRouterOutlet, IonTabBar, IonTabButton, IonTabs } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
 import { ellipse, square, triangle } from 'ionicons/icons';
 import Tab1 from './pages/Tab1';
@@ -543,8 +535,8 @@ The example below shows how the iOS App Store app handles presenting an "Account
 
 <video
   style={{
-    'margin': '40px auto',
-    'display': 'flex'
+    margin: '40px auto',
+    display: 'flex',
   }}
   width="400"
   src={useBaseUrl('video/tabs-account-demo.mp4')}
@@ -559,8 +551,8 @@ Instead, we recommend having routes in each tab that reference the same componen
 
 The example below shows how the Spotify app reuses the same album component to show content in multiple tabs. Notice that each screenshot shows the same album but from a different tab.
 
-| Home Tab | Search Tab |
-| :------: | :--------: |
+|                      Home Tab                       |                      Search Tab                       |
+| :-------------------------------------------------: | :---------------------------------------------------: |
 | <img src={useBaseUrl('img/usage/tabs-home.jpg')} /> | <img src={useBaseUrl('img/usage/tabs-search.jpg')} /> |
 
 ## Live Example
@@ -569,11 +561,11 @@ If you would prefer to get hands on with the concepts and code described above, 
 
 ### IonRouterOutlet in a Tabs View
 
-Tabビューで作業する場合、Ionic Reactには、どのビューがどのTabに属しているかを判断する方法が必要です。これは、 `Route` に提供されるパスが正規表現であるという事実を利用することにより実現します。
+Tab ビューで作業する場合、Ionic React には、どのビューがどの Tab に属しているかを判断する方法が必要です。これは、 `Route` に提供されるパスが正規表現であるという事実を利用することにより実現します。
 
 この構文は少し不思議に見えますが、理解すればかなり簡単です。
 
-例えば、2つのタブ (sessions と speakers) をもつビューのルートは次のように設定できます:
+例えば、2 つのタブ (sessions と speakers) をもつビューのルートは次のように設定できます:
 
 ```tsx
 <IonRouterOutlet>
@@ -583,17 +575,17 @@ Tabビューで作業する場合、Ionic Reactには、どのビューがどの
 </IonRouterOutlet>
 ```
 
-ナビゲートされたURLが "/sessions" の場合、最初のルートと一致します。 "tab" というURLパラメーターに "sessions" の値を格納して、 `match` オブジェクトに `SessionsPage` として追加します。
+ナビゲートされた URL が "/sessions" の場合、最初のルートと一致します。 "tab" という URL パラメーターに "sessions" の値を格納して、 `match` オブジェクトに `SessionsPage` として追加します。
 
-ユーザーがセッションの詳細ページ（たとえば "/sessions/1" ）に移動すると、2番目のルートは "tabs" というURLパラメーターに "sessions" という値を追加します。 `IonRouterOutlet` は、両方のページが同じ "sessions" タブにあることを認識すると、新しいビューへのアニメーションページ遷移を提供します。 ユーザーが新しいタブ（この場合は "speakers" ）に移動すると、 `IonRouterOutlet` はアニメーションを提供しないことを認識します。
+ユーザーがセッションの詳細ページ（たとえば "/sessions/1" ）に移動すると、2 番目のルートは "tabs" という URL パラメーターに "sessions" という値を追加します。 `IonRouterOutlet` は、両方のページが同じ "sessions" タブにあることを認識すると、新しいビューへのアニメーションページ遷移を提供します。 ユーザーが新しいタブ（この場合は "speakers" ）に移動すると、 `IonRouterOutlet` はアニメーションを提供しないことを認識します。
 
-### IonRouterOutletの `Switch`
+### IonRouterOutlet の `Switch`
 
 Since `IonRouterOutlet` takes over the job in determining which routes get rendered, using a `Switch` from React Router has no effect when used inside of an `IonRouterOutlet`. Switches still function as expected when used outside an `IonRouterOutlet`.
 
 ## 更に知りたい場合
 
-React Routerを使用したReactでのルーティングの詳細については、次の [https://reacttraining.com/react-router/web](https://reacttraining.com/react-router/web) でドキュメントをご覧ください。
+React Router を使用した React でのルーティングの詳細については、次の [https://reacttraining.com/react-router/web](https://reacttraining.com/react-router/web) でドキュメントをご覧ください。
 
 ## From the Community
 

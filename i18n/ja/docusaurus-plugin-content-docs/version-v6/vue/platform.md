@@ -10,7 +10,7 @@ import { isPlatform } from '@ionic/vue';
 isPlatform('ios'); // returns true when running on a iOS device
 ```
 
-ユーザー実行しているプラットフォームに応じて、isPlatform（platformName）は true または false を返します。 同じアプリが複数のプラットフォーム名に対して true を返す場合があることに注意してください。 たとえば、iPadから実行するアプリは、mobile、ios、ipad、およびtabletのプラットフォーム名に対して true を返します。 さらに、アプリが Cordova から実行されている場合、cordovaもtrueになります。
+ユーザー実行しているプラットフォームに応じて、isPlatform（platformName）は true または false を返します。 同じアプリが複数のプラットフォーム名に対して true を返す場合があることに注意してください。 たとえば、iPad から実行するアプリは、mobile、ios、ipad、および tablet のプラットフォーム名に対して true を返します。 さらに、アプリが Cordova から実行されている場合、cordova も true になります。
 
 ## getPlatforms
 
@@ -22,7 +22,7 @@ import { getPlatforms } from '@ionic/vue';
 getPlatforms(); // returns ["iphone", "ios", "mobile", "mobileweb"] from an iPhone
 ```
 
-使用しているデバイスに応じて、 `getPlatforms` は複数の値を返すことができます。 それぞれの値はプラットフォームに応じて配列で返却されます。たとえば、iPhoneでは、mobile、ios、およびiphoneが返されます。
+使用しているデバイスに応じて、 `getPlatforms` は複数の値を返すことができます。 それぞれの値はプラットフォームに応じて配列で返却されます。たとえば、iPhone では、mobile、ios、および iphone が返されます。
 
 ## Platforms
 

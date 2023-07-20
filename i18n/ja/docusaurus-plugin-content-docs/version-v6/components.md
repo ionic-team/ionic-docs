@@ -19,7 +19,7 @@ import DocsCards from '@components/global/DocsCards';
   `}</style>
 </head>
 
-Ionicアプリは、コンポーネントと呼ばれる高レイヤーの構成要素で構成されています。コンポーネントを使用すると、アプリのインターフェイスをすばやく構築することができます。Ionicには、modals、popups、cardsなど、さまざまなコンポーネントが用意されています。以下の例を確認して、各コンポーネントの外観と各コンポーネントの使用方法を確認してください。基本に慣れたら、各コンポーネントをカスタマイズする方法についてのアイデアを得るために [API Index](api.md) をご覧ください。
+Ionic アプリは、コンポーネントと呼ばれる高レイヤーの構成要素で構成されています。コンポーネントを使用すると、アプリのインターフェイスをすばやく構築することができます。Ionic には、modals、popups、cards など、さまざまなコンポーネントが用意されています。以下の例を確認して、各コンポーネントの外観と各コンポーネントの使用方法を確認してください。基本に慣れたら、各コンポーネントをカスタマイズする方法についてのアイデアを得るために [API Index](api.md) をご覧ください。
 
 <intro-end />
 
@@ -37,13 +37,13 @@ Ionicアプリは、コンポーネントと呼ばれる高レイヤーの構成
 </DocsCard>
 
 <DocsCard header="Button" href="api/button" icon="/icons/component-button-icon.png">
-  <p>Buttonを使ってユーザが行動を起こすことができます。これはアプリと対話したり、移動したりするのに不可欠な方法です。</p>
+  <p>
+    Buttonを使ってユーザが行動を起こすことができます。これはアプリと対話したり、移動したりするのに不可欠な方法です。
+  </p>
 </DocsCard>
 
 <DocsCard header="Card" href="api/card" icon="/icons/component-card-icon.png">
-  <p>
-    Cardは重要なコンテンツを表示するのに最適な方法で、画像、ボタン、テキストなどを含めることができます。
-  </p>
+  <p>Cardは重要なコンテンツを表示するのに最適な方法で、画像、ボタン、テキストなどを含めることができます。</p>
 </DocsCard>
 
 <DocsCard header="Checkbox" href="api/checkbox" icon="/icons/component-checkbox-icon.png">
@@ -59,11 +59,15 @@ Ionicアプリは、コンポーネントと呼ばれる高レイヤーの構成
 </DocsCard>
 
 <DocsCard header="Date & Time Pickers" href="api/datetime" icon="/icons/component-datetimepicker-icon.png">
-  <p>日付と時刻のピッカーは、ユーザーが日付と時刻を簡単に選択できるようにするためのインターフェースを提示することができます。</p>
+  <p>
+    日付と時刻のピッカーは、ユーザーが日付と時刻を簡単に選択できるようにするためのインターフェースを提示することができます。
+  </p>
 </DocsCard>
 
 <DocsCard header="Floating Action Button" href="api/fab" icon="/icons/component-fab-icon.png">
-  <p>フローティングアクションボタン（FAB）は、画面上で主要な、または最も一般的なアクションを実行する円形のボタンです。</p>
+  <p>
+    フローティングアクションボタン（FAB）は、画面上で主要な、または最も一般的なアクションを実行する円形のボタンです。
+  </p>
 </DocsCard>
 
 <DocsCard header="Icons" href="api/icon" img="/icons/feature-component-icons-icon.png">
@@ -95,11 +99,15 @@ Ionicアプリは、コンポーネントと呼ばれる高レイヤーの構成
 </DocsCard>
 
 <DocsCard header="Menu" href="api/menu" icon="/icons/component-menu-icon.png">
-  <p>Menuは一般的なナビゲーションパターンです。それらは常時画面上に表示することも、必要に応じて表示することもできます。</p>
+  <p>
+    Menuは一般的なナビゲーションパターンです。それらは常時画面上に表示することも、必要に応じて表示することもできます。
+  </p>
 </DocsCard>
 
 <DocsCard header="Modal" href="api/modal" icon="/icons/component-modal-icon.png">
-  <p>Modalはは、一時的なUIを表示するために画面内および画面外にスライドするため、ログインページまたはサインアップページによく使用されます。</p>
+  <p>
+    Modalはは、一時的なUIを表示するために画面内および画面外にスライドするため、ログインページまたはサインアップページによく使用されます。
+  </p>
 </DocsCard>
 
 <DocsCard header="Popover" href="api/popover" icon="/icons/component-popover-icon.png">
@@ -139,7 +147,9 @@ Ionicアプリは、コンポーネントと呼ばれる高レイヤーの構成
 </DocsCard>
 
 <DocsCard header="Tabs" href="api/tabs" img="/icons/feature-component-tabs-icon.png">
-  <p>Tabsを使用すると、タブ付きナビゲーション、つまり現代のアプリケーションの標準的なナビゲーションパターンが有効になります。</p>
+  <p>
+    Tabsを使用すると、タブ付きナビゲーション、つまり現代のアプリケーションの標準的なナビゲーションパターンが有効になります。
+  </p>
 </DocsCard>
 
 <DocsCard header="Toast" href="api/toast" icon="/icons/component-toast-icon.png">

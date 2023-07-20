@@ -1,5 +1,5 @@
 ---
-title: "ion-infinite-scroll-content"
+title: 'ion-infinite-scroll-content'
 ---
 
 import Props from '@ionic-internal/component-api/v7/infinite-scroll-content/props.md';
@@ -16,19 +16,25 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 For more information as well as usage, see the [Infinite Scroll Documentation](./infinite-scroll.md#infinite-scroll-content).
 
 ## プロパティ
+
 <Props />
 
 ## イベント
+
 <Events />
 
 ## メソッド
+
 <Methods />
 
 ## CSS Shadow Parts
+
 <Parts />
 
-## CSSカスタムプロパティ
+## CSS カスタムプロパティ
+
 <CustomProps />
 
 ## Slots
+
 <Slots />

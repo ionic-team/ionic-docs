@@ -1,6 +1,7 @@
 ---
-title: "ion-button"
+title: 'ion-button'
 ---
+
 import Props from '@ionic-internal/component-api/v7/button/props.md';
 import Events from '@ionic-internal/component-api/v7/button/events.md';
 import Methods from '@ionic-internal/component-api/v7/button/methods.md';
@@ -10,14 +11,17 @@ import Slots from '@ionic-internal/component-api/v7/button/slots.md';
 
 <head>
   <title>ion-button: Design and Style Buttons with Custom CSS Properties</title>
-  <meta name="description" content="ion-button は、標準的なボタン機能が必要な場所で使用するためのクリック可能な要素を提供します。カスタム CSS プロパティを使用して、ボタン要素をデザインし、スタイルを設定します。" />
+  <meta
+    name="description"
+    content="ion-button は、標準的なボタン機能が必要な場所で使用するためのクリック可能な要素を提供します。カスタム CSS プロパティを使用して、ボタン要素をデザインし、スタイルを設定します。"
+  />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="shadow" />
 
-Buttonはクリック可能な要素を提供し、Form内や、標準の単機能なButton機能を必要とする任意の場所で使用できます。text、icon、またはその両方を表示できます。Buttonは、いくつかの属性を利用して特定の外観になるようにスタイル設定できます。
+Button はクリック可能な要素を提供し、Form 内や、標準の単機能な Button 機能を必要とする任意の場所で使用できます。text、icon、またはその両方を表示できます。Button は、いくつかの属性を利用して特定の外観になるようにスタイル設定できます。
 
 ## 基本的な使い方
 
@@ -41,10 +45,9 @@ import Shape from '@site/static/usage/v7/button/shape/index.md';
 
 <Shape />
 
-
 ## Fill
 
-この属性は、Buttonのbackgroundとborder-colorを設定します。デフォルトでは、Buttonはtoolbar内にない限り、backgroundは塗りつぶされます。toolbar内にある場合は、backgroundは透明になります。
+この属性は、Button の background と border-color を設定します。デフォルトでは、Button は toolbar 内にない限り、background は塗りつぶされます。toolbar 内にある場合は、background は透明になります。
 
 import Fill from '@site/static/usage/v7/button/fill/index.md';
 
@@ -52,7 +55,7 @@ import Fill from '@site/static/usage/v7/button/fill/index.md';
 
 ## Size
 
-この属性は、Buttonのサイズを指定します。この属性を設定すると、Buttonの高さとpaddingが変更されます
+この属性は、Button のサイズを指定します。この属性を設定すると、Button の高さと padding が変更されます
 
 import Size from '@site/static/usage/v7/button/size/index.md';
 
@@ -72,26 +75,32 @@ import Colors from '@site/static/usage/v7/button/theming/colors/index.md';
 
 <Colors />
 
-## CSSカスタムプロパティ
+## CSS カスタムプロパティ
 
 import CSSProps from '@site/static/usage/v7/button/theming/css-properties/index.md';
 
 <CSSProps />
 
 ## プロパティ
+
 <Props />
 
 ## イベント
+
 <Events />
 
 ## メソッド
+
 <Methods />
 
 ## CSS Shadow Parts
+
 <Parts />
 
-## CSSカスタムプロパティ
+## CSS カスタムプロパティ
+
 <CustomProps />
 
 ## Slots
+
 <Slots />

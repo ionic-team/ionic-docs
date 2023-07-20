@@ -1,6 +1,7 @@
 ---
-title: "ion-radio-group"
+title: 'ion-radio-group'
 ---
+
 import Props from '@ionic-internal/component-api/v7/radio-group/props.md';
 import Events from '@ionic-internal/component-api/v7/radio-group/events.md';
 import Methods from '@ionic-internal/component-api/v7/radio-group/methods.md';
@@ -10,14 +11,15 @@ import Slots from '@ionic-internal/component-api/v7/radio-group/slots.md';
 
 <head>
   <title>ion-radio-group | Radio Button Group Usage for Ionic Apps</title>
-  <meta name="description" content="radio groupとは、radioボタンのグループです。radio groupは、ユーザーがセットから最大1つのradioボタンを選択できるようにします。 ion-radio-groupの使用方法について、詳しくはこちらをご覧ください。" />
+  <meta
+    name="description"
+    content="radio groupとは、radioボタンのグループです。radio groupは、ユーザーがセットから最大1つのradioボタンを選択できるようにします。 ion-radio-groupの使用方法について、詳しくはこちらをご覧ください。"
+  />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
-
 A radio group is a container for a group of [radios](./radio). It allows a user to select at most one radio button from a set. Checking one radio button that belongs to a radio group unchecks any previous checked radio button within the same group. For example usage of the radio group, see the [radio](./radio) documentation.
-
 
 ## Interfaces
 
@@ -40,21 +42,26 @@ interface RadioGroupCustomEvent<T = any> extends CustomEvent {
 }
 ```
 
-
 ## プロパティ
+
 <Props />
 
 ## イベント
+
 <Events />
 
 ## メソッド
+
 <Methods />
 
 ## CSS Shadow Parts
+
 <Parts />
 
-## CSSカスタムプロパティ
+## CSS カスタムプロパティ
+
 <CustomProps />
 
 ## Slots
+
 <Slots />

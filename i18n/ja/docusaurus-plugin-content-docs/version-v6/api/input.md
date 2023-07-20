@@ -1,6 +1,7 @@
 ---
-title: "ion-input"
+title: 'ion-input'
 ---
+
 import Props from '@ionic-internal/component-api/v7/input/props.md';
 import Events from '@ionic-internal/component-api/v7/input/events.md';
 import Methods from '@ionic-internal/component-api/v7/input/methods.md';
@@ -10,16 +11,17 @@ import Slots from '@ionic-internal/component-api/v7/input/slots.md';
 
 <head>
   <title>ion-input: Custom Input Value Type Styling and CSS Properties</title>
-  <meta name="description" content="ion-inputは、HTMLのinput要素のラッパーで、カスタムな値型のスタイルと機能を備えています。デスクトップでも動作し、モバイルではキーボードと統合されます。" />
+  <meta
+    name="description"
+    content="ion-inputは、HTMLのinput要素のラッパーで、カスタムな値型のスタイルと機能を備えています。デスクトップでも動作し、モバイルではキーボードと統合されます。"
+  />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="scoped" />
 
-
-inputコンポーネントは、カスタム・スタイル設定と追加機能を持つHTMLのInput要素のラッパーです。HTML Inputとほとんど同じプロパティーを受け入れますが、デスクトップ・デバイスでは優れた動作をし、モバイル・デバイスではキーボードと統合されます。
-
+input コンポーネントは、カスタム・スタイル設定と追加機能を持つ HTML の Input 要素のラッパーです。HTML Input とほとんど同じプロパティーを受け入れますが、デスクトップ・デバイスでは優れた動作をし、モバイル・デバイスではキーボードと統合されます。
 
 ## 基本的な使い方
 
@@ -27,15 +29,13 @@ import Basic from '@site/static/usage/v7/input/basic/index.md';
 
 <Basic />
 
-
 ## Types
 
-input コンポーネントは、`"text"`, `"password"`, `"email"`, `"number"`, `"search"`, `"tel"`, `"url"` などのテキストタイプの入力のみを対象としています。また、keyup、keydown、keypressなどの標準的なテキスト入力イベントをすべてサポートしています。デフォルトの `type` は `"text"` です。
+input コンポーネントは、`"text"`, `"password"`, `"email"`, `"number"`, `"search"`, `"tel"`, `"url"` などのテキストタイプの入力のみを対象としています。また、keyup、keydown、keypress などの標準的なテキスト入力イベントをすべてサポートしています。デフォルトの `type` は `"text"` です。
 
 import Types from '@site/static/usage/v7/input/types/index.md';
 
 <Types />
-
 
 ## Label Placement
 
@@ -45,32 +45,29 @@ import LabelPlacement from '@site/static/usage/v7/input/label-placement/index.md
 
 <LabelPlacement />
 
-
 ## Clear Options
 
-Inputsには、入力の操作方法に応じて、Inputをクリアするための2つのオプションがあります。最初の方法は `clearInput` プロパティを追加することで、Inputに `value` があるときにクリアボタンを表示します。2つ目の方法は `clearOnEdit` プロパティで、入力が編集削除された後、再度入力されるとクリアされます。 `type` が `"password"` に設定されているInputは、デフォルトで `clearOnEdit` が有効になっています。
+Inputs には、入力の操作方法に応じて、Input をクリアするための 2 つのオプションがあります。最初の方法は `clearInput` プロパティを追加することで、Input に `value` があるときにクリアボタンを表示します。2 つ目の方法は `clearOnEdit` プロパティで、入力が編集削除された後、再度入力されるとクリアされます。 `type` が `"password"` に設定されている Input は、デフォルトで `clearOnEdit` が有効になっています。
 
 import Clear from '@site/static/usage/v7/input/clear/index.md';
 
 <Clear />
 
-
 ## Filled Inputs
 
-Material Design では、Inputに塗りつぶしのスタイルが用意されています。Inputの `fill` プロパティは `"solid"` または `"outline"` のいずれかに設定することができます。
+Material Design では、Input に塗りつぶしのスタイルが用意されています。Input の `fill` プロパティは `"solid"` または `"outline"` のいずれかに設定することができます。
 
-`fill` スタイルはInputコンテナを視覚的に定義するため、`fill` を使用するInputは `ion-item` で使用すべきではありません。
+`fill` スタイルは Input コンテナを視覚的に定義するため、`fill` を使用する Input は `ion-item` で使用すべきではありません。
 
 import Fill from '@site/static/usage/v7/input/fill/index.md';
 
 <Fill />
 
-
 ## Helper & Error Text
 
 ヘルパーテキストとエラーテキストは、`helperText` と `errorText` プロパティを使用して入力の内部で使用することができます。エラーテキストは、 `ion-invalid` クラスと `ion-touched` クラスが `ion-input` に追加されていない限り表示されない。これにより、ユーザがデータを入力する前にエラーが表示されることはありません。
 
-Angularでは、これはフォームバリデーションによって自動的に行われます。JavaScript、React、Vueでは、独自のバリデーションに基づいてクラスを手動で追加する必要があります。
+Angular では、これはフォームバリデーションによって自動的に行われます。JavaScript、React、Vue では、独自のバリデーションに基づいてクラスを手動で追加する必要があります。
 
 import HelperError from '@site/static/usage/v7/input/helper-error/index.md';
 
@@ -78,7 +75,7 @@ import HelperError from '@site/static/usage/v7/input/helper-error/index.md';
 
 ## Input Counter
 
-Input Counterは、Inputの下に表示されるテキストで、入力可能な文字数のうち、何文字が入力されたかをユーザーに通知するものです。カウンターを追加する場合、デフォルトの動作は、表示される値を `inputLength` / `maxLength` としてフォーマットすることです。この動作は、`counterFormatter`プロパティにフォーマッタ関数を渡すことでカスタマイズすることができます。
+Input Counter は、Input の下に表示されるテキストで、入力可能な文字数のうち、何文字が入力されたかをユーザーに通知するものです。カウンターを追加する場合、デフォルトの動作は、表示される値を `inputLength` / `maxLength` としてフォーマットすることです。この動作は、`counterFormatter`プロパティにフォーマッタ関数を渡すことでカスタマイズすることができます。
 
 import Counter from '@site/static/usage/v7/input/counter/index.md';
 
@@ -98,15 +95,15 @@ import FilteringData from '@site/static/usage/v7/input/filtering/index.md';
 
 ### Colors
 
-`color`プロパティを設定すると、各Inputのカラーパレットが変更されます。 `ios`モードでは、このプロパティはキャレットカラーを変更します。 `md`モードでは、このプロパティはキャレットカラーとハイライト/アンダーラインカラーを変更します。
+`color`プロパティを設定すると、各 Input のカラーパレットが変更されます。 `ios`モードでは、このプロパティはキャレットカラーを変更します。 `md`モードでは、このプロパティはキャレットカラーとハイライト/アンダーラインカラーを変更します。
 
 import Colors from '@site/static/usage/v7/input/theming/colors/index.md';
 
 <Colors />
 
-## CSSカスタムプロパティ
+## CSS カスタムプロパティ
 
-Inputはscoped encapsulationを採用しており、実行時に各スタイルに追加のクラスを付加することで、CSSを自動的にスコープ化します。CSSでscopedセレクタを上書きするには、[higher specificity](https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity) セレクタが必要です。そのため、クラスを追加してカスタマイズすることをお勧めします。
+Input は scoped encapsulation を採用しており、実行時に各スタイルに追加のクラスを付加することで、CSS を自動的にスコープ化します。CSS で scoped セレクタを上書きするには、[higher specificity](https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity) セレクタが必要です。そのため、クラスを追加してカスタマイズすることをお勧めします。
 
 import CSSProps from '@site/static/usage/v7/input/theming/css-properties/index.md';
 
@@ -114,16 +111,16 @@ import CSSProps from '@site/static/usage/v7/input/theming/css-properties/index.m
 
 ## レガシーな Input 構文からの移行
 
-Ionic 7.0では、よりシンプルなInput構文が導入されました。この新しい構文は、Inputのセットアップに必要な定型文を減らし、アクセシビリティの問題を解決し、開発者のエクスペリエンスを向上させます。
+Ionic 7.0 では、よりシンプルな Input 構文が導入されました。この新しい構文は、Input のセットアップに必要な定型文を減らし、アクセシビリティの問題を解決し、開発者のエクスペリエンスを向上させます。
 
-開発者は、この移行を一度に1つのInputで実行できます。開発者はレガシー構文を使い続けることができますが、できるだけ早く移行することをお勧めします。
+開発者は、この移行を一度に 1 つの Input で実行できます。開発者はレガシー構文を使い続けることができますが、できるだけ早く移行することをお勧めします。
 
 ### 最新の構文の使い方
 
-最新の構文を使うには、3つのステップがあります。
+最新の構文を使うには、3 つのステップがあります。
 
 1. `ion-label` を削除して、代わりに `ion-input` の `label` プロパティを使用します。ラベルの配置は `ion-input` の `labelPlacement` プロパティで設定することができる。
-2. Input固有のプロパティを `ion-item` から `ion-input` に移動します。これには、`counter`、`counterFormatter`、`fill`、`shape`プロパティが含まれる。
+2. Input 固有のプロパティを `ion-item` から `ion-input` に移動します。これには、`counter`、`counterFormatter`、`fill`、`shape`プロパティが含まれる。
 3. `ion-item` の `helper` と `error` スロットの使用を削除し、代わりに `ion-input` の `helperText` と `errorText` プロパティを使用します。
 
 import Migration from '@site/static/usage/v7/input/migration/index.md';
@@ -132,7 +129,7 @@ import Migration from '@site/static/usage/v7/input/migration/index.md';
 
 ### レガシー構文の使用
 
-Ionicは、アプリが最新のInput構文を使用しているかどうかをヒューリスティックに検出します。場合によっては、レガシーな構文を使い続けることが望ましいこともあります。開発者は、`ion-input`の`legacy`プロパティを`true`に設定することで、そのInputのインスタンスにレガシー構文を使用するように強制できます。
+Ionic は、アプリが最新の Input 構文を使用しているかどうかをヒューリスティックに検出します。場合によっては、レガシーな構文を使い続けることが望ましいこともあります。開発者は、`ion-input`の`legacy`プロパティを`true`に設定することで、その Input のインスタンスにレガシー構文を使用するように強制できます。
 
 ## Interfaces
 
@@ -155,21 +152,26 @@ interface InputCustomEvent extends CustomEvent {
 }
 ```
 
-
 ## プロパティ
+
 <Props />
 
 ## イベント
+
 <Events />
 
 ## メソッド
+
 <Methods />
 
 ## CSS Shadow Parts
+
 <Parts />
 
-## CSSカスタムプロパティ
+## CSS カスタムプロパティ
+
 <CustomProps />
 
 ## Slots
+
 <Slots />

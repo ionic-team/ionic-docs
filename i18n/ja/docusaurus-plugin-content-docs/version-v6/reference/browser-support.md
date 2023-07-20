@@ -10,11 +10,11 @@ title: ブラウザサポート
   />
 </head>
 
-Ionicの本来の目標は、HTML、CSS、JavaScriptといったWeb技術を使用してモバイルアプリを開発することを簡単にすることでした。Ionicはこのウェブテクノロジーの基盤により、ウェブ、iOS、Android、ブラウザ、PWAなど、どこでも実行できます。
+Ionic の本来の目標は、HTML、CSS、JavaScript といった Web 技術を使用してモバイルアプリを開発することを簡単にすることでした。Ionic はこのウェブテクノロジーの基盤により、ウェブ、iOS、Android、ブラウザ、PWA など、どこでも実行できます。
 
 ## モバイルブラウザ
 
-[スタイルの適用](../core-concepts/fundamentals.md#adaptive-styling)を追求するために, Ionicは以下のモバイルプラットフォームを完全にサポート、テストしています。:
+[スタイルの適用](../core-concepts/fundamentals.md#adaptive-styling)を追求するために, Ionic は以下のモバイルプラットフォームを完全にサポート、テストしています。:
 
 | Framework |        Android         |  iOS  |
 | :-------: | :--------------------: | :---: |
@@ -27,21 +27,20 @@ Ionicの本来の目標は、HTML、CSS、JavaScriptといったWeb技術を使�
 最新のプラットフォームの情報については [latest Android stats](https://developer.android.com/about/dashboards/) と [latest iOS stats](https://developer.apple.com/support/app-store/) をご確認ください。
 :::
 
-### Android Supportの注意点
+### Android Support の注意点
 
-Android 5.0から、WebviewはAndroidから独立して更新できる別のアプリケーションに移されました。これは、ほとんどのAndroid 5.0以上のデバイスがChromiumの最新バージョンを実行していることを意味します。しかし、ウェブビューを更新することができないAndroidデバイスがまだ存在しています。これらのウェブビューは、通常、デバイスが最初に出荷されたときに利用可能だったバージョンに留まっています。
+Android 5.0 から、Webview は Android から独立して更新できる別のアプリケーションに移されました。これは、ほとんどの Android 5.0 以上のデバイスが Chromium の最新バージョンを実行していることを意味します。しかし、ウェブビューを更新することができない Android デバイスがまだ存在しています。これらのウェブビューは、通常、デバイスが最初に出荷されたときに利用可能だったバージョンに留まっています。
 
-デバイスが実行しているWebViewのバージョンを調べるには、Chrome Dev Toolsを使用してアプリケーションを検査する際に、コンソールに`window.navigator.userAgent`を記録してください。
+デバイスが実行している WebView のバージョンを調べるには、Chrome Dev Tools を使用してアプリケーションを検査する際に、コンソールに`window.navigator.userAgent`を記録してください。
 
 ## デスクトップブラウザ
 
-Ionicはウェブ技術をベースにしているため、モバイルデバイスと同じようにデスクトップブラウザーでも動作します。デスクトップのレイアウトについては、[クロスプラットフォーム](../core-concepts/cross-platform.md#desktop)を参照してください。
+Ionic はウェブ技術をベースにしているため、モバイルデバイスと同じようにデスクトップブラウザーでも動作します。デスクトップのレイアウトについては、[クロスプラットフォーム](../core-concepts/cross-platform.md#desktop)を参照してください。
 
 |   Browser   | Ionic v7 | Ionic v6 | Ionic v5 | Ionic v4 |
 | :---------: | :------: | :------: | :------: | :------: |
-| **Chrome**  | 79+      | 60+      | ✔        | ✔        |
-| **Safari**  | 14+      | 13+      | ✔        | ✔        |
-|  **Edge**   | 79+      | 79+      | 79+      | ✔        |
-| **Firefox** | 70+      | 63+      | ✔        | ✔        |
-|  **IE 11**  | **X**    | **X**    | **X**    | **X**    |
-
+| **Chrome**  |   79+    |   60+    |    ✔     |    ✔     |
+| **Safari**  |   14+    |   13+    |    ✔     |    ✔     |
+|  **Edge**   |   79+    |   79+    |   79+    |    ✔     |
+| **Firefox** |   70+    |   63+    |    ✔     |    ✔     |
+|  **IE 11**  |  **X**   |  **X**   |  **X**   |  **X**   |

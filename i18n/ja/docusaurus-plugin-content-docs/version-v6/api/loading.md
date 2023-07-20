@@ -1,6 +1,7 @@
 ---
-title: "ion-loading"
+title: 'ion-loading'
 ---
+
 import Props from '@ionic-internal/component-api/v7/loading/props.md';
 import Events from '@ionic-internal/component-api/v7/loading/events.md';
 import Methods from '@ionic-internal/component-api/v7/loading/methods.md';
@@ -10,15 +11,17 @@ import Slots from '@ionic-internal/component-api/v7/loading/slots.md';
 
 <head>
   <title>Loading | Application Loading Indicator Overlay | ion-loading</title>
-  <meta name="description" content="ion-loadingは、ユーザーのインタラクションをブロックしながら、アクティビティを表示します。ローディングインジケータは、アプリのコンテンツの上に表示され、解除することができます。" />
+  <meta
+    name="description"
+    content="ion-loadingは、ユーザーのインタラクションをブロックしながら、アクティビティを表示します。ローディングインジケータは、アプリのコンテンツの上に表示され、解除することができます。"
+  />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="scoped" />
 
-
-ユーザインタラクションをブロックしながらアクティビティを示すためのオーバーレイです。ローディング・インジケータはアプリのコンテンツの上に表示され、ユーザーの操作を再開するために消すことができます。オプションでbackdropが含まれており、`showBackdrop: false` で無効にすることができます。
+ユーザインタラクションをブロックしながらアクティビティを示すためのオーバーレイです。ローディング・インジケータはアプリのコンテンツの上に表示され、ユーザーの操作を再開するために消すことができます。オプションで backdrop が含まれており、`showBackdrop: false` で無効にすることができます。
 
 ## 基本的な使い方
 
@@ -50,7 +53,7 @@ import Spinners from '@site/static/usage/v7/loading/spinners/index.md';
 
 ### テーマ
 
-Loading は scoped encapsulation を使用しています。これは、実行時に各スタイルに追加のクラスを付加することで、自動的に CSS をスコープ化することを意味します。CSSでscopedセレクタをオーバーライドするには、[higher specificity](https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity) セレクタが必要です。
+Loading は scoped encapsulation を使用しています。これは、実行時に各スタイルに追加のクラスを付加することで、自動的に CSS をスコープ化することを意味します。CSS で scoped セレクタをオーバーライドするには、[higher specificity](https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity) セレクタが必要です。
 
 カスタムクラスを渡して、それを使ってホストと内部要素にカスタムスタイルを追加することをお勧めします。
 
@@ -59,16 +62,16 @@ import Theming from '@site/static/usage/v7/loading/theming/index.md';
 <Theming />
 
 :::note
- `ion-loading` is presented at the root of your application, so we recommend placing any `ion-loading` styles in a global stylesheet.
+`ion-loading` is presented at the root of your application, so we recommend placing any `ion-loading` styles in a global stylesheet.
 :::
 
 ## アクセシビリティ
 
-Ionicは自動的にLoadingの`role`を[`dialog`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/dialog_role)に設定します。
+Ionic は自動的に Loading の`role`を[`dialog`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/dialog_role)に設定します。
 
-Loadingに`message`プロパティが定義されている場合、`aria-labelledby`属性は自動的にmessage要素のIDに設定されます。そうでない場合、`aria-labelledby`は設定されず、開発者は `htmlAttributes` プロパティを使用して `aria-label` を提供する必要があります。
+Loading に`message`プロパティが定義されている場合、`aria-labelledby`属性は自動的に message 要素の ID に設定されます。そうでない場合、`aria-labelledby`は設定されず、開発者は `htmlAttributes` プロパティを使用して `aria-label` を提供する必要があります。
 
-すべてのARIA属性は、Loadingの`htmlAttributes`プロパティにカスタム値を定義することによって、手動で上書きすることができます。
+すべての ARIA 属性は、Loading の`htmlAttributes`プロパティにカスタム値を定義することによって、手動で上書きすることができます。
 
 ## Interfaces
 
@@ -94,21 +97,26 @@ interface LoadingOptions {
 }
 ```
 
-
 ## プロパティ
+
 <Props />
 
 ## イベント
+
 <Events />
 
 ## メソッド
+
 <Methods />
 
 ## CSS Shadow Parts
+
 <Parts />
 
-## CSSカスタムプロパティ
+## CSS カスタムプロパティ
+
 <CustomProps />
 
 ## Slots
+
 <Slots />

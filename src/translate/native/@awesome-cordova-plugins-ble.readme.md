@@ -1,4 +1,3 @@
-
 This plugin enables communication between a phone and Bluetooth Low Energy (BLE) peripherals.
 
 The plugin provides a simple JavaScript API for iOS and Android.

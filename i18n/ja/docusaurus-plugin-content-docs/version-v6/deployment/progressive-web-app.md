@@ -14,9 +14,9 @@ import DocsCards from '@components/global/DocsCards';
   />
 </head>
 
-Ionic Apps は Web 技術で構築されているため、ネイティブアプリと同様に Progressive Web App として動作させることができます。PWAとは何かよくわからない？Ionic の [PWA Overview](https://ionicframework.com/pwa) または [What are Progressive Web Apps](../core-concepts/what-are-progressive-web-apps.md) ページで詳細を確認できます。
+Ionic Apps は Web 技術で構築されているため、ネイティブアプリと同様に Progressive Web App として動作させることができます。PWA とは何かよくわからない？Ionic の [PWA Overview](https://ionicframework.com/pwa) または [What are Progressive Web Apps](../core-concepts/what-are-progressive-web-apps.md) ページで詳細を確認できます。
 
-Ionicが対応しているフレームワークについては、専用のガイドを作成し、より詳しく解説しています。以下は、AngularとReactのリンクです。
+Ionic が対応しているフレームワークについては、専用のガイドを作成し、より詳しく解説しています。以下は、Angular と React のリンクです。
 
 <DocsCards>
   <DocsCard header="Angular" href="../angular/pwa" img="/img/frameworks/angular.svg"></DocsCard>
