@@ -238,9 +238,13 @@ If you are trying to connect to a 3rd-party API, first check in its documentatio
 
 #### 1. Native-only apps (iOS/Android)
 
-Use the [HTTP plugin from Ionic Native](../native/http.md) to make the requests natively from outside the webview. Please note that this plugin doesn't work in the browser, so the development and testing of the app must always be done in a device or simulator going forward.
+##### Capacitor Applications (Recommended)
 
-##### Usage in Ionic Angular 4
+For Capacitor applications, use the [Capacitor HTTP API](https://capacitorjs.com/docs/apis/http). This API patches `fetch` and `XMLHttpRequest` to use native libraries. Please note that if you also deploy the application to a web-based context such as PWA or the local development server (via `ionic serve` for example) you still need to implement CORS for those scenarios.
+
+##### Legacy Cordova Applications
+
+For legacy Cordova applications, use the [HTTP plugin with the Awesome Cordova Plugins wrapper](https://danielsogl.gitbook.io/awesome-cordova-plugins/http). Please note that this plugin doesn't work in the browser, so the development and testing of the app must always be done in a device or simulator going forward.
 
 ```tsx
 import { Component } from '@angular/core';

@@ -54,7 +54,8 @@ Assists in leaving user reviews/ratings in the App Stores.
 >
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
-      $ npm install cordova-launch-review {'\n'}$ npm install @awesome-cordova-plugins/launch-review {'\n'}$ ionic cap sync
+      $ npm install cordova-launch-review {'\n'}$ npm install @awesome-cordova-plugins/launch-review {'\n'}$ ionic cap
+      sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">

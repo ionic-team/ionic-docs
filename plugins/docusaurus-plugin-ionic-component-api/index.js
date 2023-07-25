@@ -19,7 +19,9 @@ module.exports = function (context, options) {
        * @param {*} isCurrentVersion Whether or not this is the current version of the docs
        */
       const generateMarkdownForVersion = async (version, npmTag, isCurrentVersion) => {
-        const response = await fetch(`https://unpkg.com/@ionic/docs@${npmTag}/core.json`);
+        const response = isCurrentVersion
+          ? await fetch(`https://raw.githubusercontent.com/ionic-jp/ionic-docs/main/scripts/data/translated-api.json`)
+          : await fetch(`https://unpkg.com/@ionic/docs@${npmTag}/core.json`);
         const { components } = await response.json();
 
         const names = components.map((component) => component.tag.slice(4));
@@ -226,33 +228,33 @@ ${slots.map((slot) => `| \`${slot.name}\` | ${formatMultiline(slot.docs)} |`).jo
 
 function translateDocs(comp) {
   const { props, events, methods, parts, styles, slots } = comp;
-    return {
-      ...comp,
-      props: props.map((prop) => ({
-        ...prop,
-        docs: translate(prop.docs),
-      })),
-      events: events.map((event) => ({
-        ...event,
-        docs: translate(event.docs),
-      })),
-      methods: methods.map((method) => ({
-        ...method,
-        docs: translate(method.docs),
-      })),
-      parts: parts.map((part) => ({
-        ...part,
-        docs: translate(part.docs),
-      })),
-      styles: styles.map((styles) => ({
-        ...styles,
-        docs: translate(styles.docs),
-      })),
-      slots: slots.map((slot) => ({
-        ...slot,
-        docs: translate(slot.docs),
-      })),
-    };
+  return {
+    ...comp,
+    props: props.map((prop) => ({
+      ...prop,
+      docs: translate(prop.docs),
+    })),
+    events: events.map((event) => ({
+      ...event,
+      docs: translate(event.docs),
+    })),
+    methods: methods.map((method) => ({
+      ...method,
+      docs: translate(method.docs),
+    })),
+    parts: parts.map((part) => ({
+      ...part,
+      docs: translate(part.docs),
+    })),
+    styles: styles.map((styles) => ({
+      ...styles,
+      docs: translate(styles.docs),
+    })),
+    slots: slots.map((slot) => ({
+      ...slot,
+      docs: translate(slot.docs),
+    })),
+  };
 }
 
 function translate(docs) {

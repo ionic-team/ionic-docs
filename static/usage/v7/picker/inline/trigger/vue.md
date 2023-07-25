@@ -1,11 +1,7 @@
 ```html
 <template>
   <ion-button id="open-picker">Open</ion-button>
-  <ion-picker
-    trigger="open-picker"
-    :columns="pickerColumns"
-    :buttons="pickerButtons"
-  ></ion-picker>
+  <ion-picker trigger="open-picker" :columns="pickerColumns" :buttons="pickerButtons"></ion-picker>
 </template>
 
 <script>
@@ -15,40 +11,45 @@
   export default defineComponent({
     components: { IonButton, IonPicker },
     setup() {
-      const pickerColumns = [{
-        name: 'languages',
-        options: [
-          {
-            text: 'JavaScript',
-            value: 'javascript'
-          }, {
-            text: 'TypeScript',
-            value: 'typescript'
-          }, {
-            text: 'Rust',
-            value: 'rust'
-          }, {
-            text: 'C#',
-            value: 'c#'
-          }
-        ]
-      }];
+      const pickerColumns = [
+        {
+          name: 'languages',
+          options: [
+            {
+              text: 'JavaScript',
+              value: 'javascript',
+            },
+            {
+              text: 'TypeScript',
+              value: 'typescript',
+            },
+            {
+              text: 'Rust',
+              value: 'rust',
+            },
+            {
+              text: 'C#',
+              value: 'c#',
+            },
+          ],
+        },
+      ];
 
       const pickerButtons = [
         {
           text: 'Cancel',
-          role: 'cancel'
+          role: 'cancel',
         },
         {
           text: 'Confirm',
           handler: (value) => {
             window.alert(`You selected: ${value.languages.value}`);
-          }
-        }
+          },
+        },
       ];
 
       return { pickerColumns, pickerButtons };
-    }
+    },
   });
 </script>
 ```

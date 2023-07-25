@@ -18,14 +18,14 @@
     components: { IonBreadcrumb, IonBreadcrumbs },
     data() {
       return {
-        maxBreadcrumbs: 4
-      }
+        maxBreadcrumbs: 4,
+      };
     },
     methods: {
       expandBreadcrumbs() {
         this.maxBreadcrumbs = undefined;
-      }
-    }
+      },
+    },
   });
 </script>
 ```

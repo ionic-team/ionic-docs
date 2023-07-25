@@ -157,7 +157,7 @@
     },
     {
       "name": "value",
-      "type": "null | string | undefined",
+      "type": "number | string | undefined",
       "mutable": true,
       "attr": "value",
       "reflectToAttr": false,
@@ -165,7 +165,7 @@
       "docsTags": [],
       "values": [
         {
-          "type": "null"
+          "type": "number"
         },
         {
           "type": "string"

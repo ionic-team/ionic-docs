@@ -1,4 +1,3 @@
-
 Cordova plugin for Firebase Dynamic Links
 
 Variables APP_DOMAIN and APP_PATH specify web URL where your app will start an activity to handle the link. They also used to setup support for App Indexing.
@@ -10,6 +9,7 @@ Preferences GoogleIOSClientId and GoogleAndroidClientId are used to setup dynami
 You can find values at your GoogleService-Info.plist (key ANDROID_CLIENT_ID) and google-services.json (key client[0].oauth_client[0].client_id).
 
 config.xml:
+
 ```xml
 <platform name="ios">
     <preference name="GoogleIOSClientId" value="..." />

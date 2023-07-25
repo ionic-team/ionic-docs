@@ -56,13 +56,14 @@ Network interface information plugin for Cordova/PhoneGap that supports Android,
 >
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
-      $ npm install cordova-plugin-networkinterface {'\n'}$ npm install @awesome-cordova-plugins/network-interface {'\n'}$ ionic
-      cap sync
+      $ npm install cordova-plugin-networkinterface {'\n'}$ npm install @awesome-cordova-plugins/network-interface{' '}
+      {'\n'}$ ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
-      $ ionic cordova plugin add cordova-plugin-networkinterface {'\n'}$ npm install @awesome-cordova-plugins/network-interface {'\n'}
+      $ ionic cordova plugin add cordova-plugin-networkinterface {'\n'}$ npm install
+      @awesome-cordova-plugins/network-interface {'\n'}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">

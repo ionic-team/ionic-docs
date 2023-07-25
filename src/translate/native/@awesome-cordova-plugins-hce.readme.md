@@ -1,2 +1,1 @@
-
 HCE Cordova Wrapper

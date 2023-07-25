@@ -62,7 +62,7 @@ const takePhoto = async () => {
     quality: 100,
   });
 
-  const fileName = new Date().getTime() + '.jpeg';
+  const fileName = Date.now() + '.jpeg';
   const savedFileImage = await savePicture(photo, fileName);
 
   photos.value = [savedFileImage, ...photos.value];

@@ -60,7 +60,8 @@ to retain your users and grow your audience while remaining fully GDPR compliant
 >
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
-      $ npm install wonderpush-cordova-sdk {'\n'}$ npm install @awesome-cordova-plugins/wonderpush {'\n'}$ ionic cap sync
+      $ npm install wonderpush-cordova-sdk {'\n'}$ npm install @awesome-cordova-plugins/wonderpush {'\n'}$ ionic cap
+      sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">

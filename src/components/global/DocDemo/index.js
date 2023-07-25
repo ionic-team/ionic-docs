@@ -48,6 +48,7 @@ const DocDemo = (props) => {
           })}
           title={`Toggle ${mode === 'ios' ? 'iOS' : 'Android'} mode`}
           onClick={() => setIonicMode(mode)}
+          key={mode}
         >
           {mode === 'ios' ? 'iOS' : 'Android'}
         </button>
@@ -78,7 +79,7 @@ const DocDemo = (props) => {
         <svg className="docs-demo-device__ios-notch" viewBox="0 0 219 31">
           <path
             d="M0 1V0h219v1a5 5 0 0 0-5 5v3c0 12.15-9.85 22-22 22H27C14.85 31 5 21.15 5 9V6a5 5 0 0 0-5-5z"
-            fill-rule="evenodd"
+            fillRule="evenodd"
           />
         </svg>
         <iframe

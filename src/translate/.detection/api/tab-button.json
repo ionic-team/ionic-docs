@@ -76,7 +76,7 @@
       "mutable": true,
       "attr": "layout",
       "reflectToAttr": false,
-      "docs": "Set the layout of the text and icon in the tab bar.\nIt defaults to `'icon-top'`.",
+      "docs": "Set the layout of the text and icon in the tab bar.\nIt defaults to `\"icon-top\"`.",
       "docsTags": [],
       "values": [
         {

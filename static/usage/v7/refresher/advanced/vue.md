@@ -24,14 +24,50 @@
 </template>
 
 <script lang="ts">
-  import { IonContent, IonHeader, IonIcon, IonItem, IonLabel, IonList, IonRefresher, IonRefresherContent, IonTitle, IonToolbar } from '@ionic/vue';
+  import {
+    IonContent,
+    IonHeader,
+    IonIcon,
+    IonItem,
+    IonLabel,
+    IonList,
+    IonRefresher,
+    IonRefresherContent,
+    IonTitle,
+    IonToolbar,
+  } from '@ionic/vue';
   import { defineComponent, ref } from 'vue';
   import { ellipse } from 'ionicons/icons';
 
   export default defineComponent({
-    components: { IonContent, IonHeader, IonIcon, IonItem, IonLabel, IonList, IonRefresher, IonRefresherContent, IonTitle, IonToolbar },
+    components: {
+      IonContent,
+      IonHeader,
+      IonIcon,
+      IonItem,
+      IonLabel,
+      IonList,
+      IonRefresher,
+      IonRefresherContent,
+      IonTitle,
+      IonToolbar,
+    },
     setup() {
-      const names = ['Burt Bear', 'Charlie Cheetah', 'Donald Duck', 'Eva Eagle', 'Ellie Elephant', 'Gino Giraffe', 'Isabella Iguana', 'Karl Kitten', 'Lionel Lion', 'Molly Mouse', 'Paul Puppy', 'Rachel Rabbit', 'Ted Turtle'];
+      const names = [
+        'Burt Bear',
+        'Charlie Cheetah',
+        'Donald Duck',
+        'Eva Eagle',
+        'Ellie Elephant',
+        'Gino Giraffe',
+        'Isabella Iguana',
+        'Karl Kitten',
+        'Lionel Lion',
+        'Molly Mouse',
+        'Paul Puppy',
+        'Rachel Rabbit',
+        'Ted Turtle',
+      ];
       let items = ref([]);
 
       const chooseRandomName = () => {
@@ -40,7 +76,7 @@
 
       const addItems = (count, unread = false) => {
         for (let i = 0; i < count; i++) {
-          items.value.unshift({name: chooseRandomName(), unread});
+          items.value.unshift({ name: chooseRandomName(), unread });
         }
       };
 

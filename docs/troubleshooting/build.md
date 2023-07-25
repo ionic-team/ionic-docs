@@ -24,7 +24,7 @@ title: Build Errors
 class MyDirective {
   // 誤り、@Optional() とすべき
   // @Optional はここでは何もしないため、MyDirective は parent が undefined の場合にエラーになる
-  constructor( @Optional parent: ParentComponent) { }
+  constructor(@Optional parent: ParentComponent) {}
 }
 ```
 
@@ -36,7 +36,7 @@ class MyDirective {
 Cannot resolve all parameters for 'YourClass'(?). Make sure that all the parameters are decorated with Inject or have valid type annotations and that 'YourClass' is decorated with Injectable.
 ```
 
-この例外は Angular が `YourClass` のコンストラクタの 1つ以上のパラメータについて困惑していることを意味します。[依存性を注入](https://angular.jp/docs/ts/latest/guide/dependency-injection.html) するため、Angular は 注入するパラメータの型を知る必要があります。パラメータのクラスを指定することで Angular にこのこと（タイプ）を知らせます。次の点を確認してください:
+この例外は Angular が `YourClass` のコンストラクタの 1 つ以上のパラメータについて困惑していることを意味します。[依存性を注入](https://angular.jp/docs/ts/latest/guide/dependency-injection.html) するため、Angular は 注入するパラメータの型を知る必要があります。パラメータのクラスを指定することで Angular にこのこと（タイプ）を知らせます。次の点を確認してください:
 
 - パラメータのクラスをインポートします。
 - パラメータに適切な注釈をつけるか、パラメータの型を指定します。
@@ -49,13 +49,12 @@ import { MyService } from 'my-service'; // 私をインポートすることを�
 })
 export class MyClass {
   // service は MyService のタイプです
-  constructor(service: MyService) {
-
-  }
+  constructor(service: MyService) {}
 }
 ```
 
-コード内の循環参照がこのエラーの原因になることがあります。循環参照は、2つのオブジェクトが相互に依存していることを意味するため、両方を相互の前に宣言する方法はありません。この問題を回避するには、Angular に組み込まれている[`forwardRef`](https://angular.jp/docs/ts/latest/api/core/index/forwardRef-function.html) 関数を使用します。
+コード内の循環参照がこのエラーの原因になることがあります。循環参照は、2 つのオブジェクトが相互に依存していることを意味するため、両方を相互の前に宣言する方法はありません。この問題を回避するには、Angular に組み込まれている[`forwardRef`](https://angular.jp/docs/ts/latest/api/core/index/forwardRef-function.html) 関数を使用します。
+
 ```ts
 import { forwardRef } from '@angular/core';
 
@@ -99,7 +98,7 @@ import { MyService } from 'my-service';
 class MyApp {}
 ```
 
-パラメータが別のコンポーネントまたはDirective（たとえば、親コンポーネント）である場合、パラメータを providers のリストに追加するとエラーはなくなりますが、これは前述の [provider の複数のインスタンス](/docs/faq/runtime#provider-) と同じ効果を持ちます。ここでは、コンポーネントクラスの新しいインスタンスを作成しますが、必要なコンポーネントインスタンスへの参照は取得しません。かわりに、注入されるであろうDirectiveまたはコンポーネントがコンポーネントで使用可能であることを確認します（たとえば、親であることを期待している場合は、実際に親であること）。これはおそらく、例を使用すると最も簡単に理解できます:
+パラメータが別のコンポーネントまたは Directive（たとえば、親コンポーネント）である場合、パラメータを providers のリストに追加するとエラーはなくなりますが、これは前述の [provider の複数のインスタンス](/docs/faq/runtime#provider-) と同じ効果を持ちます。ここでは、コンポーネントクラスの新しいインスタンスを作成しますが、必要なコンポーネントインスタンスへの参照は取得しません。かわりに、注入されるであろう Directive またはコンポーネントがコンポーネントで使用可能であることを確認します（たとえば、親であることを期待している場合は、実際に親であること）。これはおそらく、例を使用すると最も簡単に理解できます:
 
 ```tsx
 @Component({
@@ -154,7 +153,7 @@ MyComp の注入なし            +------+------+
                            +-------------+
 ```
 
-前の例を拡張するために、コンポーネント/Directiveの参照を常に期待しているわけではない場合には、Angular の `@Option` アノテーションを使うことができます:
+前の例を拡張するために、コンポーネント/Directive の参照を常に期待しているわけではない場合には、Angular の `@Option` アノテーションを使うことができます:
 
 ```tsx
 @Directive({
@@ -176,7 +175,7 @@ class MyDir {
 Can't bind to 'propertyName' since it isn't a known property of the 'elementName' element and there are no matching directives with a corresponding property
 ```
 
-これは、そのプロパティを持たない要素にプロパティをバインドしようとしたときに発生します。要素がコンポーネントの場合、または要素に1つ以上のDirectiveがある場合、コンポーネントもDirectiveもそのプロパティを持ちません。
+これは、そのプロパティを持たない要素にプロパティをバインドしようとしたときに発生します。要素がコンポーネントの場合、または要素に 1 つ以上の Directive がある場合、コンポーネントも Directive もそのプロパティを持ちません。
 
 ```html
 <!-- div には 'foo' というプロパティがない -->
@@ -189,7 +188,7 @@ Can't bind to 'propertyName' since it isn't a known property of the 'elementName
 No provider for ControlContainer! (NgControlName -> ControlContainer)
 ```
 
-このエラーは、上記の `No provider` エラーのより具体的なバージョンです。これは、親の [NgForm](https://angular.jp/docs/ts/latest/api/forms/index/NgForm-directive.html) または NgFormModel を指定せずに NgControlName などのフォームコントロールを使用した場合に発生します。ほとんどの場合、これはフォームコントロールが実際のフォーム要素内にあることを確認することで解決できます。NgForm はセレクタとして `form` を使用するので、これは新しいNgFormをインスタンス化します:
+このエラーは、上記の `No provider` エラーのより具体的なバージョンです。これは、親の [NgForm](https://angular.jp/docs/ts/latest/api/forms/index/NgForm-directive.html) または NgFormModel を指定せずに NgControlName などのフォームコントロールを使用した場合に発生します。ほとんどの場合、これはフォームコントロールが実際のフォーム要素内にあることを確認することで解決できます。NgForm はセレクタとして `form` を使用するので、これは新しい NgForm をインスタンス化します:
 
 ```tsx
 @Component({
@@ -206,4 +205,4 @@ No provider for ControlContainer! (NgControlName -> ControlContainer)
 No component factory found for <component name>
 ```
 
-このエラーは、ngModule にインポートおよび追加されていない Component、Provider Pipe、Directiveを使用しようとしたときに発生します。新しい Component、Provider、Pipe、Directiveをアプリケーションに追加する場合は必ず、Angularがそれを使えるようにするために、`src/app/app.module.ts` ファイル内の `ngModule` に追加する必要があります。このエラーを修正するには、問題の Component、Provider、Pipe、Directiveを app.module ファイルにインポートし、Provider の場合は `providers` 配列に追加、Component、Pipe、Directiveの場合は宣言配列と `entryComponents` 配列の両方に追加します。
+このエラーは、ngModule にインポートおよび追加されていない Component、Provider Pipe、Directive を使用しようとしたときに発生します。新しい Component、Provider、Pipe、Directive をアプリケーションに追加する場合は必ず、Angular がそれを使えるようにするために、`src/app/app.module.ts` ファイル内の `ngModule` に追加する必要があります。このエラーを修正するには、問題の Component、Provider、Pipe、Directive を app.module ファイルにインポートし、Provider の場合は `providers` 配列に追加、Component、Pipe、Directive の場合は宣言配列と `entryComponents` 配列の両方に追加します。

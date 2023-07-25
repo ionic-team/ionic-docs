@@ -11,26 +11,26 @@ sidebar_label: Electronデスクトップアプリ
   />
 </head>
 
-Ionicでデスクトップアプリケーションを構築すると、開発者はコードを100%再利用し、従来のデスクトップアプリケーションをリリースしながら、プッシュ通知などのすべてのネイティブデバイスの機能を利用することができます。このガイドでは、Electronに精通していることを前提としており、Electronアプリの「作り方」については触れません。 詳しくは <a href="https://www.electronjs.org/docs/latest/tutorial/tutorial-first-app" target="_blank">Electron guide</a>. をご覧ください。
+Ionic でデスクトップアプリケーションを構築すると、開発者はコードを 100%再利用し、従来のデスクトップアプリケーションをリリースしながら、プッシュ通知などのすべてのネイティブデバイスの機能を利用することができます。このガイドでは、Electron に精通していることを前提としており、Electron アプリの「作り方」については触れません。 詳しくは <a href="https://www.electronjs.org/docs/latest/tutorial/tutorial-first-app" target="_blank">Electron guide</a>. をご覧ください。
 
-## macOSアプリ
+## macOS アプリ
 
 ### 要件
 
-macOSアプリをストアでアプリを公開するには、難しい要件が2つあります。
+macOS アプリをストアでアプリを公開するには、難しい要件が 2 つあります。
 
-* [Xcode](https://itunes.apple.com/us/app/xcode/id497799835?mt=12) が最新版であること
-* 開発者アカウント ($100 through Apple's developer portal) が有効であること
+- [Xcode](https://itunes.apple.com/us/app/xcode/id497799835?mt=12) が最新版であること
+- 開発者アカウント ($100 through Apple's developer portal) が有効であること
 
 ### リリース
 
-Electronチームは、macOS用のアプリを公開する方法についての詳細なガイドを持っています。[the docs](https://electronjs.org/docs/tutorial/mac-app-store-submission-guide) をご覧ください。
+Electron チームは、macOS 用のアプリを公開する方法についての詳細なガイドを持っています。[the docs](https://electronjs.org/docs/tutorial/mac-app-store-submission-guide) をご覧ください。
 
-## Windowsアプリ
+## Windows アプリ
 
 ### 要件
 
-Windowsアプリをストアでアプリを公開するには、2つの厳しい要件があります。
+Windows アプリをストアでアプリを公開するには、2 つの厳しい要件があります。
 
 - Windows 10 with Anniversary Update (released August 2nd, 2016)
 - The Windows 10 SDK, [download here](https://developer.microsoft.com/en-us/windows/downloads/windows-10-sdk)
@@ -45,4 +45,4 @@ npm install -g electron-windows-store
 
 ### リリース作業
 
-macOSと同様、ElectronはWindows用のアプリを公開する方法についても詳細なガイドを提供している。 [the docs](https://electronjs.org/docs/tutorial/windows-store-guide) を確認してください
+macOS と同様、Electron は Windows 用のアプリを公開する方法についても詳細なガイドを提供している。 [the docs](https://electronjs.org/docs/tutorial/windows-store-guide) を確認してください

@@ -14,15 +14,15 @@ sidebar_label: 概要
 import DocsCard from '@components/global/DocsCard';
 import DocsCards from '@components/global/DocsCards';
 
-`@ionic/angular` はcore Ionic experienceに、Angular開発者向けにカスタマイズされたツールとAPIを組み合わせたものです。
+`@ionic/angular` は core Ionic experience に、Angular 開発者向けにカスタマイズされたツールと API を組み合わせたものです。
 
-## Angularバージョンサポート
+## Angular バージョンサポート
 
-Ionic v7はAngular v14+をサポートしています。アップグレード戦略の一環として、Angularにはアップグレードを自動化するためのツールが組み込まれており、APIに変更があった際には開発者にフィードバックを提供します。これにより、アップデートの手間を減らし、エコシステムを最新の状態に保つことができます。
+Ionic v7 は Angular v14+をサポートしています。アップグレード戦略の一環として、Angular にはアップグレードを自動化するためのツールが組み込まれており、API に変更があった際には開発者にフィードバックを提供します。これにより、アップデートの手間を減らし、エコシステムを最新の状態に保つことができます。
 
 ## Angular Tooling
 
-Ionic4以降では、アプリケーション構築とルーティングのために公式のAngularスタックが使用されているため、あなたのアプリケーションはAngularエコシステムと同じように利用できます。更に独自の機能が必要な場合には、Ionicは`@ionic/angular-toolkit`を提供します。、これは [official Angular CLI](https://angular.jp/cli) を構築して統合し、`@ionic/angular` アプリ固有の機能を提供します。
+Ionic4 以降では、アプリケーション構築とルーティングのために公式の Angular スタックが使用されているため、あなたのアプリケーションは Angular エコシステムと同じように利用できます。更に独自の機能が必要な場合には、Ionic は`@ionic/angular-toolkit`を提供します。、これは [official Angular CLI](https://angular.jp/cli) を構築して統合し、`@ionic/angular` アプリ固有の機能を提供します。
 
 ## Resources
 

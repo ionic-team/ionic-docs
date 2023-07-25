@@ -1,7 +1,7 @@
 Automatically create framework features with Ionic Generate. This command uses the Angular CLI to generate features such as `pages`, `components`, `directives`, `services`, and more.
 
- - For a full list of available types, use `npx ng g --help`
- - For a list of options for a types, use `npx ng g <type> --help`
+- For a full list of available types, use `npx ng g --help`
+- For a list of options for a types, use `npx ng g <type> --help`
 
 You can specify a path to nest your feature within any number of subdirectories. For example, specify a name of `"pages/New Page"` to generate page files at **src/app/pages/new-page/**.
 

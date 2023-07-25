@@ -13,19 +13,19 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
   />
 </head>
 
-このガイドでは、IonicとVueで構築されたアプリでルーティングがどのように機能するかについて説明します。
+このガイドでは、Ionic と Vue で構築されたアプリでルーティングがどのように機能するかについて説明します。
 
-`IonRouterOutlet` コンポーネントは、内部で一般的な [Vue Router](https://router.vuejs.org/) ライブラリを使用します。IonicとVue Routerを使えば、リッチなページ遷移を持つマルチページアプリを作ることができます。
+`IonRouterOutlet` コンポーネントは、内部で一般的な [Vue Router](https://router.vuejs.org/) ライブラリを使用します。Ionic と Vue Router を使えば、リッチなページ遷移を持つマルチページアプリを作ることができます。
 
-Vue Routerを使ったルーティングについて知っていることはすべてIonic Vueに引き継がれます。Ionic Vueアプリの基本とルーティングの仕組みを見てみましょう。
+Vue Router を使ったルーティングについて知っていることはすべて Ionic Vue に引き継がれます。Ionic Vue アプリの基本とルーティングの仕組みを見てみましょう。
 
 ## 簡単なメモ
 
-このガイドを読んでいると、これらのコンセプトのほとんどが、Ionic Frameworkを使わずにVue Routerで見られるコンセプトと非常に似ていることに気がつくかもしれません。あなたの観察は正しいでしょう! Ionic Vueは、Ionic Frameworkでアプリを構築するための移行をできるだけシームレスにするために、Vue Routerの最良の部分を活用しています。そのため、独自のルーティングソリューションを構築しようとするよりも、できるだけVue Routerの機能に依存することをお勧めします。
+このガイドを読んでいると、これらのコンセプトのほとんどが、Ionic Framework を使わずに Vue Router で見られるコンセプトと非常に似ていることに気がつくかもしれません。あなたの観察は正しいでしょう! Ionic Vue は、Ionic Framework でアプリを構築するための移行をできるだけシームレスにするために、Vue Router の最良の部分を活用しています。そのため、独自のルーティングソリューションを構築しようとするよりも、できるだけ Vue Router の機能に依存することをお勧めします。
 
-## 簡単なRoute
+## 簡単な Route
 
-次に示すのは、 "/home" URLへの単一のルートを定義するルーティング設定の例です。 "/home" にアクセスすると、ルートによって `HomePage`  コンポーネントがレンダリングされます。
+次に示すのは、 "/home" URL への単一のルートを定義するルーティング設定の例です。 "/home" にアクセスすると、ルートによって `HomePage` コンポーネントがレンダリングされます。
 
 **router/index.ts**
 
@@ -70,9 +70,9 @@ const routes: Array<RouteRecordRaw> = [
 ];
 ```
 
-このリダイレクトでは、最初にインデックスのパスが参照されます。そして、 `home` routeにリダイレクトしてロードを行います。
+このリダイレクトでは、最初にインデックスのパスが参照されます。そして、 `home` route にリダイレクトしてロードを行います。
 
-## 異なるRoutesへのナビゲーション
+## 異なる Routes へのナビゲーション
 
 これは素晴らしいことですが、実際にルートにナビゲートするにはどうすればよいのでしょうか。これには、 `router-link` プロパティを使用できます。新しいルーティング設定を作成します:
 
@@ -95,13 +95,13 @@ const routes: Array<RouteRecordRaw> = [
 ];
 ```
 
-`home` routeで開始し、`detail` routeに移動するボタンを追加するとします。`detail` routeに移動するには、次のHTMLを使用します:
+`home` route で開始し、`detail` route に移動するボタンを追加するとします。`detail` route に移動するには、次の HTML を使用します:
 
 ```html
 <ion-button router-link="/detail">Go to detail</ion-button>
 ```
 
-また、ルーターAPIを使用して、プログラムでアプリケーション内を移動することもできます:
+また、ルーター API を使用して、プログラムでアプリケーション内を移動することもできます:
 
 ```html
 <template>
@@ -208,7 +208,7 @@ A key characteristic of `router.go()` is that it expects your application histor
 
 ## Lazy Loading Routes
 
-現在のrouteの設定方法では、アプリをロードするときに同じ初期チャンクに含まれるようになっているが、これは必ずしも理想的ではありません。代わりに、必要に応じてコンポーネントがロードされるようにrouteを設定できます。
+現在の route の設定方法では、アプリをロードするときに同じ初期チャンクに含まれるようになっているが、これは必ずしも理想的ではありません。代わりに、必要に応じてコンポーネントがロードされるように route を設定できます。
 
 ```tsx
 const routes: Array<RouteRecordRaw> = [
@@ -241,8 +241,8 @@ The following is an example of linear routing in a mobile app:
 
 <video
   style={{
-    'margin': '40px auto',
-    'display': 'flex'
+    margin: '40px auto',
+    display: 'flex',
   }}
   width="400"
   src={useBaseUrl('video/linear-routing-demo.mp4')}
@@ -267,8 +267,8 @@ The following is an example of non-linear routing:
 
 <video
   style={{
-    'margin': '40px auto',
-    'display': 'flex'
+    margin: '40px auto',
+    display: 'flex',
   }}
   width="400"
   src={useBaseUrl('video/non-linear-routing-demo.mp4')}
@@ -299,9 +299,9 @@ For more on nested router outlets, please see [Nested Routes](#nested-routes).
 
 A common point of confusion when setting up routing is deciding between shared URLs or nested routes. This part of the guide will explain both and help you decide which one to use.
 
-### 共有URL
+### 共有 URL
 
-共有URLは、ルートが共通のURLの一部を持つルート設定です。共有URL設定の例を次に示します:
+共有 URL は、ルートが共通の URL の一部を持つルート設定です。共有 URL 設定の例を次に示します:
 
 ```tsx
 const routes: Array<RouteRecordRaw> = [
@@ -316,11 +316,11 @@ const routes: Array<RouteRecordRaw> = [
 ];
 ```
 
-上記のルートは、URLの `dashboard` 部分を再利用するため、 "shared" と見なされます。
+上記のルートは、URL の `dashboard` 部分を再利用するため、 "shared" と見なされます。
 
-### ネストされたRoute
+### ネストされた Route
 
-Nested Routesは、ルートが他のルートの子としてリストされるルート設定です。ネストされたルート設定の例を次に示します:
+Nested Routes は、ルートが他のルートの子としてリストされるルート設定です。ネストされたルート設定の例を次に示します:
 
 ```tsx
 const routes: Array<RouteRecordRaw> = [
@@ -345,16 +345,15 @@ const routes: Array<RouteRecordRaw> = [
 
 ### どちらを選ぶべきか
 
-共有URLは、URLの2つのページ間の関係を維持しながら、ページAからページBに遷移する場合に便利です。前述の例では、 `/dashboard` ページのボタンで `/dashboard/stats` ページに移行できます。2つのページ間の関係は、a) ページの遷移とb) URLによって維持されます。
+共有 URL は、URL の 2 つのページ間の関係を維持しながら、ページ A からページ B に遷移する場合に便利です。前述の例では、 `/dashboard` ページのボタンで `/dashboard/stats` ページに移行できます。2 つのページ間の関係は、a) ページの遷移と b) URL によって維持されます。
 
-ネストされたルートは、コンセントAのコンテンツをレンダリングする必要がある場合、およびネストされたコンセントBの内部のサブコンテンツをレンダリングする必要がある場合に便利です。最も一般的な使用例は、タブです。Ionicスターターアプリのタブをロードすると、最初の `ion-router-outlet` で `ion-tab-bar`  および `ion-tabs` コンポーネントがレンダリングされます。`ion-tabs` コンポーネントは、各タブの内容をレンダリングする別の 「イオンルータ出力」 をレンダリングします。
+ネストされたルートは、コンセント A のコンテンツをレンダリングする必要がある場合、およびネストされたコンセント B の内部のサブコンテンツをレンダリングする必要がある場合に便利です。最も一般的な使用例は、タブです。Ionic スターターアプリのタブをロードすると、最初の `ion-router-outlet` で `ion-tab-bar` および `ion-tabs` コンポーネントがレンダリングされます。`ion-tabs` コンポーネントは、各タブの内容をレンダリングする別の 「イオンルータ出力」 をレンダリングします。
 
-モバイルアプリケーションでネストされたルートが意味をなすユースケースはほとんどありません。疑わしい場合は、共有URLルート設定を使用します。ネストされたルーティングをタブ以外のコンテキストで使用すると、アプリのナビゲーションが混乱する可能性があるため、使用しないように強く注意しています。
-
+モバイルアプリケーションでネストされたルートが意味をなすユースケースはほとんどありません。疑わしい場合は、共有 URL ルート設定を使用します。ネストされたルーティングをタブ以外のコンテキストで使用すると、アプリのナビゲーションが混乱する可能性があるため、使用しないように強く注意しています。
 
 ## タブの操作
 
-タブを操作する場合、Ionic Vueはどのビューがどのタブに属しているかを知る方法を必要とします。ここでは `IonTabs` コンポーネントが便利ですが、この場合のルーティング設定を見てみましょう:
+タブを操作する場合、Ionic Vue はどのビューがどのタブに属しているかを知る方法を必要とします。ここでは `IonTabs` コンポーネントが便利ですが、この場合のルーティング設定を見てみましょう:
 
 ```tsx
 const routes: Array<RouteRecordRaw> = [
@@ -394,47 +393,35 @@ const routes: Array<RouteRecordRaw> = [
 ```html
 <template>
   <ion-page>
-    <ion-content>
-      <ion-tabs>
-        <ion-router-outlet></ion-router-outlet>
-        <ion-tab-bar slot="bottom">
-          <ion-tab-button tab="tab1" href="/tabs/tab1">
-            <ion-icon :icon="triangle" />
-            <ion-label>Tab 1</ion-label>
-          </ion-tab-button>
+    <ion-tabs>
+      <ion-router-outlet></ion-router-outlet>
+      <ion-tab-bar slot="bottom">
+        <ion-tab-button tab="tab1" href="/tabs/tab1">
+          <ion-icon :icon="triangle" />
+          <ion-label>Tab 1</ion-label>
+        </ion-tab-button>
 
-          <ion-tab-button tab="tab2" href="/tabs/tab2">
-            <ion-icon :icon="ellipse" />
-            <ion-label>Tab 2</ion-label>
-          </ion-tab-button>
+        <ion-tab-button tab="tab2" href="/tabs/tab2">
+          <ion-icon :icon="ellipse" />
+          <ion-label>Tab 2</ion-label>
+        </ion-tab-button>
 
-          <ion-tab-button tab="tab3" href="/tabs/tab3">
-            <ion-icon :icon="square" />
-            <ion-label>Tab 3</ion-label>
-          </ion-tab-button>
-        </ion-tab-bar>
-      </ion-tabs>
-    </ion-content>
+        <ion-tab-button tab="tab3" href="/tabs/tab3">
+          <ion-icon :icon="square" />
+          <ion-label>Tab 3</ion-label>
+        </ion-tab-button>
+      </ion-tab-bar>
+    </ion-tabs>
   </ion-page>
 </template>
 
 <script lang="ts">
-  import {
-    IonTabBar,
-    IonTabButton,
-    IonTabs,
-    IonContent,
-    IonLabel,
-    IonIcon,
-    IonPage,
-    IonRouterOutlet,
-  } from '@ionic/vue';
+  import { IonTabBar, IonTabButton, IonTabs, IonLabel, IonIcon, IonPage, IonRouterOutlet } from '@ionic/vue';
   import { ellipse, square, triangle } from 'ionicons/icons';
 
   export default {
     name: 'Tabs',
     components: {
-      IonContent,
       IonLabel,
       IonTabs,
       IonTabBar,
@@ -454,7 +441,7 @@ const routes: Array<RouteRecordRaw> = [
 </script>
 ```
 
-以前にIonic Frameworkを使ったことがある人なら、このことをよく知っているはずです。`ion-tabs` コンポーネントを作成し、 `ion-tab-bar` を提供します。`ion-tab-bar` は `ion-tab-button` コンポーネントを提供し、それぞれにルータの設定の対応するタブに関連付けられた `tab` プロパティがあります。
+以前に Ionic Framework を使ったことがある人なら、このことをよく知っているはずです。`ion-tabs` コンポーネントを作成し、 `ion-tab-bar` を提供します。`ion-tab-bar` は `ion-tab-button` コンポーネントを提供し、それぞれにルータの設定の対応するタブに関連付けられた `tab` プロパティがあります。
 
 ### タブ内の子ルート
 
@@ -521,8 +508,8 @@ The example below shows how the iOS App Store app handles presenting an "Account
 
 <video
   style={{
-    'margin': '40px auto',
-    'display': 'flex'
+    margin: '40px auto',
+    display: 'flex',
   }}
   width="400"
   src={useBaseUrl('video/tabs-account-demo.mp4')}
@@ -537,15 +524,15 @@ Instead, we recommend having routes in each tab that reference the same componen
 
 The example below shows how the Spotify app reuses the same album component to show content in multiple tabs. Notice that each screenshot shows the same album but from a different tab.
 
-| Home Tab | Search Tab |
-| :------: | :--------: |
+|                      Home Tab                       |                      Search Tab                       |
+| :-------------------------------------------------: | :---------------------------------------------------: |
 | <img src={useBaseUrl('img/usage/tabs-home.jpg')} /> | <img src={useBaseUrl('img/usage/tabs-search.jpg')} /> |
 
 ## Components
 
 ### IonRouterOutlet
 
-`IonRouterOutlet` コンポーネントは、ビューをレンダリングするためのコンテナを提供します。これは他のVueアプリケーションに見られる `RouterView` コンポーネントに似ていますが、 `IonRouterOutlet` は同じアウトレット内のDOMで複数のページをレンダリングできるという点が異なります。コンポーネントが `IonRouterOutlet` でレンダリングされる場合、これはIonic Framework "Page"と見なされます。ルーター・アウトレット・コンテナーは、ページ間の遷移アニメーションを制御するだけでなく、ページがいつ作成および破棄されるかを制御します。これにより、ビューを切り替えるときにビュー間の状態を維持することができます。
+`IonRouterOutlet` コンポーネントは、ビューをレンダリングするためのコンテナを提供します。これは他の Vue アプリケーションに見られる `RouterView` コンポーネントに似ていますが、 `IonRouterOutlet` は同じアウトレット内の DOM で複数のページをレンダリングできるという点が異なります。コンポーネントが `IonRouterOutlet` でレンダリングされる場合、これは Ionic Framework "Page"と見なされます。ルーター・アウトレット・コンテナーは、ページ間の遷移アニメーションを制御するだけでなく、ページがいつ作成および破棄されるかを制御します。これにより、ビューを切り替えるときにビュー間の状態を維持することができます。
 
 テンプレートで設定する際に、 `IonRouterOutlet` の内部には何も指定しないでください。`IonRouterOutlet` は子コンポーネントにネストすることができますが、通常はアプリケーション内のナビゲーションが混乱するため注意が必要です。詳細については、[Shared URLs versus Nested Routes](#shared-urls-versus-nested-routes) を参照してください。
 
@@ -593,9 +580,9 @@ Returns the Ionic router instance, containing API methods for navigating, custom
 
 For example usages, please refer to our [Utility Functions](utility-functions#useionrouter).
 
-## URLパラメーター
+## URL パラメーター
 
-元のルーティング例を拡張して、URLパラメータの使用方法を示します:
+元のルーティング例を拡張して、URL パラメータの使用方法を示します:
 
 ```tsx
 const routes: Array<RouteRecordRaw> = [
@@ -616,7 +603,7 @@ const routes: Array<RouteRecordRaw> = [
 ];
 ```
 
-ここで、 `detail` パス文字列の最後に `:id` を追加したことに注意してください。URLパラメータは、ルートパスの動的な部分です。ユーザーが `/details/1` などのURLに移動すると、 "1" が "id" という名前のパラメータに保存され、ルートのレンダリング時にコンポーネントでアクセスできるようになります。
+ここで、 `detail` パス文字列の最後に `:id` を追加したことに注意してください。URL パラメータは、ルートパスの動的な部分です。ユーザーが `/details/1` などの URL に移動すると、 "1" が "id" という名前のパラメータに保存され、ルートのレンダリング時にコンポーネントでアクセスできるようになります。
 
 コンポーネントでの使用方法を見てみましょう。
 

@@ -32,7 +32,9 @@ const ModalExample = ({
           </IonButtons>
           <IonTitle>Welcome</IonTitle>
           <IonButtons slot="end">
-            <IonButton onClick={() => onDismiss(inputRef.current?.value, 'confirm')}>Confirm</IonButton>
+            <IonButton onClick={() => onDismiss(inputRef.current?.value, 'confirm')} strong={true}>
+              Confirm
+            </IonButton>
           </IonButtons>
         </IonToolbar>
       </IonHeader>

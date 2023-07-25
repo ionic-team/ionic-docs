@@ -13,14 +13,14 @@
       const showLoading = async () => {
         const loading = await loadingController.create({
           message: 'Dismissing after 3 seconds...',
-          duration: 3000
+          duration: 3000,
         });
-        
+
         loading.present();
-      }
-      
-      return { showLoading }
-    }
+      };
+
+      return { showLoading };
+    },
   });
 </script>
 ```

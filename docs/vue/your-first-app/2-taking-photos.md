@@ -38,7 +38,7 @@ export const usePhotoGallery = () => {
   return {
     takePhoto,
   };
-}
+};
 ```
 
 Our `usePhotoGallery` function exposes a method called takePhoto, which in turn calls the Capacitor Camera API's `getPhoto` method.
@@ -104,7 +104,7 @@ const photos = ref<UserPhoto[]>([]);
 When the camera is done taking a picture, the resulting `Photo` returned from Capacitor will be added to the `photos` array. Update the `takePhoto` function, adding this code after the `Camera.getPhoto` line:
 
 ```tsx
-const fileName = new Date().getTime() + '.jpeg';
+const fileName = Date.now() + '.jpeg';
 const savedFileImage = {
   filepath: fileName,
   webviewPath: photo.webPath,

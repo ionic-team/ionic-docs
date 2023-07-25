@@ -61,13 +61,14 @@ _Source:_ https://developer.apple.com/sign-in-with-apple/
 >
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
-      $ npm install cordova-plugin-sign-in-with-apple {'\n'}$ npm install @awesome-cordova-plugins/sign-in-with-apple {'\n'}$ ionic
-      cap sync
+      $ npm install cordova-plugin-sign-in-with-apple {'\n'}$ npm install @awesome-cordova-plugins/sign-in-with-apple{' '}
+      {'\n'}$ ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
-      $ ionic cordova plugin add cordova-plugin-sign-in-with-apple {'\n'}$ npm install @awesome-cordova-plugins/sign-in-with-apple {'\n'}
+      $ ionic cordova plugin add cordova-plugin-sign-in-with-apple {'\n'}$ npm install
+      @awesome-cordova-plugins/sign-in-with-apple {'\n'}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">

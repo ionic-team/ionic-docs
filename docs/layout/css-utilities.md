@@ -12,10 +12,10 @@ inlineHtmlPreviews: true
   />
 </head>
 
-Ionic Frameworは、テキストの順番を入れ替えたり、要素の配置やpaddingやmarginを修正する一連のユーティリティ属性を提供します。これは要素で使うことができます。
+Ionic Framewor は、テキストの順番を入れ替えたり、要素の配置や padding や margin を修正する一連のユーティリティ属性を提供します。これは要素で使うことができます。
 
 :::note
-使用可能なIonic Frameworkスターターを使用してアプリケーションを起動していない場合、これらのスタイルを機能させるには、 [グローバルスタイルシートのオプションセクション](global-stylesheets.md#optional) にリストされているスタイルシートを含める必要があります。
+使用可能な Ionic Framework スターターを使用してアプリケーションを起動していない場合、これらのスタイルを機能させるには、 [グローバルスタイルシートのオプションセクション](global-stylesheets.md#optional) にリストされているスタイルシートを含める必要があります。
 :::
 
 ## テキストの修正
@@ -113,7 +113,7 @@ Ionic Frameworは、テキストの順番を入れ替えたり、要素の配置
 
 ### Responsive Text Classes
 
-上に挙げたすべてのテキストクラスには、スクリーンサイズに応じてテキストを変更するための追加のクラスがあります。各クラスで `text-` の代わりに `text-{breakpoint}-` を使用すると、特定のスクリーンサイズでのみそのクラスを使用できます。ここで `{breakpoint}` は [Ionic Breakpoints](#ionic-breakpoints) にリストされているブレークポイント名のうちの1つです。
+上に挙げたすべてのテキストクラスには、スクリーンサイズに応じてテキストを変更するための追加のクラスがあります。各クラスで `text-` の代わりに `text-{breakpoint}-` を使用すると、特定のスクリーンサイズでのみそのクラスを使用できます。ここで `{breakpoint}` は [Ionic Breakpoints](#ionic-breakpoints) にリストされているブレークポイント名のうちの 1 つです。
 
 以下の表は、 `{modifier}` のデフォルトの挙動です。 `left`, `right`, `start`, `end`, `center`, `justify`, `wrap`, `nowrap`, `uppercase`, `lowercase`, `capitalize` は上記の通りです。
 
@@ -127,9 +127,9 @@ Ionic Frameworは、テキストの順番を入れ替えたり、要素の配置
 
 ## 要素の配置
 
-### Float要素
+### Float 要素
 
-CSSプロパティのfloatは、テキストとインライン要素を囲んだ要素がそのコンテナの左側または右側に沿って配置することを指定します。 以下のように要素はウェブページのコードと異なった順に表示されます。
+CSS プロパティの float は、テキストとインライン要素を囲んだ要素がそのコンテナの左側または右側に沿って配置することを指定します。 以下のように要素はウェブページのコードと異なった順に表示されます。
 
 ```html
 <ion-grid>
@@ -141,8 +141,7 @@ CSSプロパティのfloatは、テキストとインライン要素を囲んだ
         src="https://ionicframework.com/docs/img/demos/avatar.svg"
         height="50px"
       />
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac
-      vehicula lorem.
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac vehicula lorem.
     </ion-col>
     <ion-col>
       <h3>float-left</h3>
@@ -152,8 +151,7 @@ CSSプロパティのfloatは、テキストとインライン要素を囲んだ
         height="50px"
         class="ion-float-left"
       />
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac
-      vehicula lorem.
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac vehicula lorem.
     </ion-col>
     <ion-col>
       <h3>float-right</h3>
@@ -163,8 +161,7 @@ CSSプロパティのfloatは、テキストとインライン要素を囲んだ
         height="50px"
         class="ion-float-right"
       />
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac
-      vehicula lorem.
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac vehicula lorem.
     </ion-col>
   </ion-row>
 </ion-grid>
@@ -177,9 +174,9 @@ CSSプロパティのfloatは、テキストとインライン要素を囲んだ
 | `.ion-float-start` | `float: left` / `float: right` | The same as `float-left` if direction is left-to-right and `float-right` if direction is right-to-left. |
 | `.ion-float-end`   | `float: left` / `float: right` | The same as `float-right` if direction is left-to-right and `float-left` if direction is right-to-left. |
 
-### レスポンシブなFloatクラス
+### レスポンシブな Float クラス
 
-上記のすべてのfloatクラスには、画面サイズに基づいて `float` を変更するための追加クラスがあります。特定の画面サイズでのみクラスを使用する場合は、各クラスで `float-` の代わりに`float-{breakpoint}-` を使用します。 `{breakpoint}` は、[Ionic Breakpoints](#ionic-breakpoints)にリストされているブレークポイント名の1つです。
+上記のすべての float クラスには、画面サイズに基づいて `float` を変更するための追加クラスがあります。特定の画面サイズでのみクラスを使用する場合は、各クラスで `float-` の代わりに`float-{breakpoint}-` を使用します。 `{breakpoint}` は、[Ionic Breakpoints](#ionic-breakpoints)にリストされているブレークポイント名の 1 つです。
 
 次の表に、デフォルトの動作を示します。 `{modifier}` は、前述のように `left`, `right`, `start`, `end` のいずれかです。
 
@@ -193,7 +190,7 @@ CSSプロパティのfloatは、テキストとインライン要素を囲んだ
 
 ## 要素の表示
 
-display CSSプロパティは、要素を表示するかどうかを決定します。要素はDOM内に残りますが、非表示の場合はレンダリングされません。
+display CSS プロパティは、要素を表示するかどうかを決定します。要素は DOM 内に残りますが、非表示の場合はレンダリングされません。
 
 ```html
 <ion-grid>
@@ -218,9 +215,9 @@ display CSSプロパティは、要素を表示するかどうかを決定しま
 | ----------- | --------------- | --------------------------- |
 | `.ion-hide` | `display: none` | The element will be hidden. |
 
-### ResponsiveなDisplay属性
+### Responsive な Display 属性
 
-画面サイズに基づいて表示を変更するクラスもあります。ただ `.ion-hide` ではなく `.ion-hide-{breakpoint}-{dir}` という特定の画面サイズでのみクラスを使用します。{breakpoint}は、[Ionic Breakpoints](#ionic-breakpoints)にリストされているブレークポイント名の1つです。 `{dir}` は、指定されたブレークポイントの上 (`up`) または下 (`down`) のすべての画面サイズで要素を非表示にするかどうかです。
+画面サイズに基づいて表示を変更するクラスもあります。ただ `.ion-hide` ではなく `.ion-hide-{breakpoint}-{dir}` という特定の画面サイズでのみクラスを使用します。{breakpoint}は、[Ionic Breakpoints](#ionic-breakpoints)にリストされているブレークポイント名の 1 つです。 `{dir}` は、指定されたブレークポイントの上 (`up`) または下 (`down`) のすべての画面サイズで要素を非表示にするかどうかです。
 
 | Class                | Description                                                                                          |
 | -------------------- | ---------------------------------------------------------------------------------------------------- |
@@ -231,9 +228,9 @@ display CSSプロパティは、要素を表示するかどうかを決定しま
 
 ## コンテンツのスペース
 
-### 要素のPadding
+### 要素の Padding
 
-padding属性は、要素のpaddingエリアを設定します。paddingエリアは、要素のコンテンツとその境界線のスペースです。
+padding 属性は、要素の padding エリアを設定します。padding エリアは、要素のコンテンツとその境界線のスペースです。
 
 `padding` で適用されるデフォルトの数値は `16px` で、これは `--ion-padding`　変数で設定することができます。これらの値を変更する方法については [CSS Variables](../theming/css-variables.md) をご覧ください。
 
@@ -281,9 +278,9 @@ padding属性は、要素のpaddingエリアを設定します。paddingエリ�
 | `.ion-padding-horizontal` | `padding: 0 16px`      | Applies padding to the left and right. |
 | `.ion-no-padding`         | `padding: 0`           | Applies no padding to all sides.       |
 
-### 要素のMargin
+### 要素の Margin
 
-Marginエリアは、隣り合う要素とのスペースを広げるために境界線の外に空のエリアをつくるためのものです。
+Margin エリアは、隣り合う要素とのスペースを広げるために境界線の外に空のエリアをつくるためのものです。
 
 `margin`　はデフォルトで `16px` が設定されており、 `--ion-margin` 変数で設定されています。 これらの値を変更する方法については [CSS Variables](../theming/css-variables.md) をご覧ください。
 
@@ -519,9 +516,9 @@ Marginエリアは、隣り合う要素とのスペースを広げるために�
 | `.ion-align-self-stretch`  | `align-self: stretch`    | Item is stretched to fill the container.                               |
 | `.ion-align-self-auto`     | `align-self: auto`       | Item is positioned according to the parent's `align-items` value.      |
 
-## Borderの表示
+## Border の表示
 
-border display CSSプロパティは、borderを表示するかどうかを指定します。このプロパティは、 `ion-header` と` ion-footer` に適用できます。
+border display CSS プロパティは、border を表示するかどうかを指定します。このプロパティは、 `ion-header` と` ion-footer` に適用できます。
 
 ```html
 <ion-header class="ion-no-border">
@@ -541,9 +538,9 @@ border display CSSプロパティは、borderを表示するかどうかを指�
 | ---------------- | -------------------------------- |
 | `.ion-no-border` | The element will have no border. |
 
-## Ionicのブレイクポイント
+## Ionic のブレイクポイント
 
-Ionicは、画面サイズに基づいてアプリケーションのスタイルを変えるために、メディアクエリでブレークポイントを使用します。次のブレークポイント名は、上記のユーティリティークラスで使用され、幅が一致したときにクラスが適用されます。
+Ionic は、画面サイズに基づいてアプリケーションのスタイルを変えるために、メディアクエリでブレークポイントを使用します。次のブレークポイント名は、上記のユーティリティークラスで使用され、幅が一致したときにクラスが適用されます。
 
 | Breakpoint Name | Width    |
 | --------------- | -------- |

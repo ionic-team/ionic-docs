@@ -130,7 +130,7 @@
       "mutable": true,
       "attr": "value",
       "reflectToAttr": false,
-      "docs": "The value of the accordion group.",
+      "docs": "The value of the accordion group. This controls which\naccordions are expanded.\nThis should be an array of strings only when `multiple=\"true\"`",
       "docsTags": [],
       "values": [
         {
@@ -158,7 +158,7 @@
       "bubbles": true,
       "cancelable": true,
       "composed": true,
-      "docs": "Emitted when the value property has changed.",
+      "docs": "Emitted when the value property has changed\nas a result of a user action such as a click.\nThis event will not emit when programmatically setting\nthe value property.",
       "docsTags": []
     }
   ],

@@ -19,6 +19,26 @@
     {
       "name": "slot",
       "text": "time-label - The label for the time selector in the datetime."
+    },
+    {
+      "name": "part",
+      "text": "wheel-item - The individual items when using a wheel style layout, or in the\nmonth/year picker when using a grid style layout."
+    },
+    {
+      "name": "part",
+      "text": "wheel-item active - The currently selected wheel-item."
+    },
+    {
+      "name": "part",
+      "text": "time-button - The button that opens the time picker when using a grid style\nlayout with `presentation=\"date-time\"` or `\"time-date\"`."
+    },
+    {
+      "name": "part",
+      "text": "time-button active - The time picker button when the picker is open."
+    },
+    {
+      "name": "part",
+      "text": "month-year-button - The button that opens the month/year picker when\nusing a grid style layout."
     }
   ],
   "usage": {},
@@ -286,7 +306,7 @@
       "mutable": false,
       "attr": "locale",
       "reflectToAttr": false,
-      "docs": "The locale to use for `ion-datetime`. This\nimpacts month and day name formatting.\nThe `'default'` value refers to the default\nlocale set by your device.",
+      "docs": "The locale to use for `ion-datetime`. This\nimpacts month and day name formatting.\nThe `\"default\"` value refers to the default\nlocale set by your device.",
       "docsTags": [],
       "default": "'default'",
       "values": [
@@ -446,7 +466,7 @@
       "mutable": false,
       "attr": "prefer-wheel",
       "reflectToAttr": false,
-      "docs": "If `true`, a wheel picker will be rendered instead of a calendar grid\nwhere possible. If `false`, a calendar grid will be rendered instead of\na wheel picker where possible.\n\nA wheel picker can be rendered instead of a grid when `presentation` is\none of the following values: `'date'`, `'date-time'`, or `'time-date'`.\n\nA wheel picker will always be rendered regardless of\nthe `preferWheel` value when `presentation` is one of the following values:\n`'time'`, `'month'`, `'month-year'`, or `'year'`.",
+      "docs": "If `true`, a wheel picker will be rendered instead of a calendar grid\nwhere possible. If `false`, a calendar grid will be rendered instead of\na wheel picker where possible.\n\nA wheel picker can be rendered instead of a grid when `presentation` is\none of the following values: `\"date\"`, `\"date-time\"`, or `\"time-date\"`.\n\nA wheel picker will always be rendered regardless of\nthe `preferWheel` value when `presentation` is one of the following values:\n`\"time\"`, `\"month\"`, `\"month-year\"`, or `\"year\"`.",
       "docsTags": [],
       "default": "false",
       "values": [
@@ -463,7 +483,7 @@
       "mutable": false,
       "attr": "presentation",
       "reflectToAttr": false,
-      "docs": "Which values you want to select. `'date'` will show\na calendar picker to select the month, day, and year. `'time'`\nwill show a time picker to select the hour, minute, and (optionally)\nAM/PM. `'date-time'` will show the date picker first and time picker second.\n`'time-date'` will show the time picker first and date picker second.",
+      "docs": "Which values you want to select. `\"date\"` will show\na calendar picker to select the month, day, and year. `\"time\"`\nwill show a time picker to select the hour, minute, and (optionally)\nAM/PM. `\"date-time\"` will show the date picker first and time picker second.\n`\"time-date\"` will show the time picker first and date picker second.",
       "docsTags": [],
       "default": "'date-time'",
       "values": [
@@ -630,7 +650,7 @@
       "mutable": true,
       "attr": "value",
       "reflectToAttr": false,
-      "docs": "The value of the datetime as a valid ISO 8601 datetime string.\nShould be an array of strings if `multiple=\"true\"`.",
+      "docs": "The value of the datetime as a valid ISO 8601 datetime string.\nThis should be an array of strings only when `multiple=\"true\"`.",
       "docsTags": [],
       "values": [
         {
@@ -655,7 +675,7 @@
       "mutable": false,
       "attr": "year-values",
       "reflectToAttr": false,
-      "docs": "Values used to create the list of selectable years. By default\nthe year values range between the `min` and `max` datetime inputs. However, to\ncontrol exactly which years to display, the `yearValues` input can take a number, an array\nof numbers, or string of comma separated numbers. For example, to show upcoming and\nrecent leap years, then this input's value would be `yearValues=\"2024,2020,2016,2012,2008\"`.",
+      "docs": "Values used to create the list of selectable years. By default\nthe year values range between the `min` and `max` datetime inputs. However, to\ncontrol exactly which years to display, the `yearValues` input can take a number, an array\nof numbers, or string of comma separated numbers. For example, to show upcoming and\nrecent leap years, then this input's value would be `yearValues=\"2008,2012,2016,2020,2024\"`.",
       "docsTags": [],
       "values": [
         {
@@ -764,6 +784,16 @@
       "name": "--title-color",
       "annotation": "prop",
       "docs": "The text color of the title."
+    },
+    {
+      "name": "--wheel-fade-background-rgb",
+      "annotation": "prop",
+      "docs": "The color of the gradient covering non-selected items when using a wheel style layout, or in the month/year picker for grid style layouts. Must be in RGB format, e.g. `255, 255, 255`."
+    },
+    {
+      "name": "--wheel-highlight-background",
+      "annotation": "prop",
+      "docs": "The background of the highlight under the selected item when using a wheel style layout, or in the month/year picker for grid style layouts."
     }
   ],
   "slots": [
@@ -780,7 +810,28 @@
       "docs": "The title of the datetime."
     }
   ],
-  "parts": [],
+  "parts": [
+    {
+      "name": "month-year-button",
+      "docs": "The button that opens the month/year picker when\nusing a grid style layout."
+    },
+    {
+      "name": "time-button",
+      "docs": "The button that opens the time picker when using a grid style\nlayout with `presentation=\"date-time\"` or `\"time-date\"`."
+    },
+    {
+      "name": "time-button active",
+      "docs": "The time picker button when the picker is open."
+    },
+    {
+      "name": "wheel-item",
+      "docs": "The individual items when using a wheel style layout, or in the\nmonth/year picker when using a grid style layout."
+    },
+    {
+      "name": "wheel-item active",
+      "docs": "The currently selected wheel-item."
+    }
+  ],
   "dependents": [],
   "dependencies": [
     "ion-buttons",

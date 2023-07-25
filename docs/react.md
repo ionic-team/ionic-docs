@@ -25,8 +25,8 @@ import DocsCards from '@components/global/DocsCards';
   <h1>コードひとつで <br/> あらゆるプラットフォーム <br/> <strong>まさにReact</strong></h1>
 
 - ✓ 100 以上のモバイルに最適化された React UI コンポーネント
-- ✓ Reactの標準的なツールであるreact-dom
-- ✓ iOS / Android / Electron / PWAに対応
+- ✓ React の標準的なツールである react-dom
+- ✓ iOS / Android / Electron / PWA に対応
 
 [Get Started](#installation)
 
@@ -37,11 +37,11 @@ import DocsCards from '@components/global/DocsCards';
   </div>
 </div>
 
-### モバイル、デスクトップ、ウェブにまたがる素晴らしいアプリを、あなたが知っている、そして愛するReactで構築してください。
+### モバイル、デスクトップ、ウェブにまたがる素晴らしいアプリを、あなたが知っている、そして愛する React で構築してください。
 
-Ionic Reactは、Ionic FrameworkのネイティブReactバージョンで、世界中の何百万ものミッションクリティカルなアプリを動かしている、無料のオープンソースSDKです。
+Ionic React は、Ionic Framework のネイティブ React バージョンで、世界中の何百万ものミッションクリティカルなアプリを動かしている、無料のオープンソース SDK です。
 
-Reactを使用して、あらゆるプラットフォーム向けに受賞歴のあるアプリを出荷するために必要なすべてが揃っています。
+React を使用して、あらゆるプラットフォーム向けに受賞歴のあるアプリを出荷するために必要なすべてが揃っています。
 
 <div class="flex" >
 
@@ -49,7 +49,7 @@ Reactを使用して、あらゆるプラットフォーム向けに受賞歴の
 
 ## すばらしいデザイン
 
-100種類以上の美しいモバイル対応のUIコンポーネント、アニメーション、ジェスチャーから選択でき、軽量であなたのブランドに合うようにカスタマイズできます。
+100 種類以上の美しいモバイル対応の UI コンポーネント、アニメーション、ジェスチャーから選択でき、軽量であなたのブランドに合うようにカスタマイズできます。
 
 [Explore UI components](/docs/components)
 
@@ -67,7 +67,7 @@ Reactを使用して、あらゆるプラットフォーム向けに受賞歴の
 
 ## 使い慣れたツール
 
-IonicのReactプロジェクトはReactプロジェクトと同じように、[react-dom](https://reactjs.org/docs/react-dom.html) を活用し、[Create React App (CRA)](https://github.com/facebook/create-react-app) アプリで見られるようなセットアップが可能です。ルーティングとナビゲーション](/docs/react/navigation)では、React Routerが使用されています。
+Ionic の React プロジェクトは React プロジェクトと同じように、[react-dom](https://reactjs.org/docs/react-dom.html) を活用し、[Create React App (CRA)](https://github.com/facebook/create-react-app) アプリで見られるようなセットアップが可能です。ルーティングとナビゲーション](/docs/react/navigation)では、React Router が使用されています。
 React バージョン 16.8 以降に対応しています。
 
 </div>
@@ -84,7 +84,7 @@ React バージョン 16.8 以降に対応しています。
 
 ## More than mobile
 
-最新のネイティブランタイムである [Capacitor](https://capacitorjs.com) を使用して、Ionic ReactプロジェクトをネイティブのiOS、Android、Electron、WebにProgressive Web Appとしてデプロイできます。すべて1つの共有コードベースで。
+最新のネイティブランタイムである [Capacitor](https://capacitorjs.com) を使用して、Ionic React プロジェクトをネイティブの iOS、Android、Electron、Web に Progressive Web App としてデプロイできます。すべて 1 つの共有コードベースで。
 
 </div>
 
@@ -98,9 +98,9 @@ React バージョン 16.8 以降に対応しています。
 
   <div class="pull-left">
 
-## まさにReact
+## まさに React
 
-結局のところ、ただのReactなのです。Ionic ReactはオープンなWeb標準とビルトインのブラウザ機能を使用しているため、何百万とあるWebライブラリのどれとも互換性があります。
+結局のところ、ただの React なのです。Ionic React はオープンな Web 標準とビルトインのブラウザ機能を使用しているため、何百万とある Web ライブラリのどれとも互換性があります。
 
   </div>
 

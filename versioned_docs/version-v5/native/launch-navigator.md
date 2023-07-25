@@ -51,14 +51,14 @@ Requires Cordova plugin: uk.co.workingedge.phonegap.plugin.launchnavigator. For 
 >
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
-      $ npm install uk.co.workingedge.phonegap.plugin.launchnavigator {'\n'}$ npm install @awesome-cordova-plugins/launch-navigator{' '}
-      {'\n'}$ ionic cap sync
+      $ npm install uk.co.workingedge.phonegap.plugin.launchnavigator {'\n'}$ npm install
+      @awesome-cordova-plugins/launch-navigator {'\n'}$ ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
-      $ ionic cordova plugin add uk.co.workingedge.phonegap.plugin.launchnavigator {'\n'}$ npm install @awesome-cordova-plugins/launch-navigator{' '}
-      {'\n'}
+      $ ionic cordova plugin add uk.co.workingedge.phonegap.plugin.launchnavigator {'\n'}$ npm install
+      @awesome-cordova-plugins/launch-navigator {'\n'}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">
