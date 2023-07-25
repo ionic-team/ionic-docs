@@ -643,7 +643,7 @@ const MyComponent: React.FC = () => {
 
 ## More Information
 
-For more info on routing in React using React Router, check out their docs at [https://reacttraining.com/react-router/web](https://reacttraining.com/react-router/web).
+For more info on routing in React using React Router, check out their docs at [https://reactrouter.com/](https://reactrouter.com/).
 
 ## From the Community
 
