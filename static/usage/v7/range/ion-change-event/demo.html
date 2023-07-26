@@ -32,7 +32,8 @@
       const lastValue = document.querySelector('#lastValue');
 
       range.addEventListener('ionChange', ({ detail }) => {
-        lastValue.innerHTML = detail.value;
+        // lastValue.innerHTML = detail.value;
+        console.log('ionChange emitted value: ' + detail.value);
       });
     </script>
   </body>

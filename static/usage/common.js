@@ -23,6 +23,39 @@ window.addEventListener('DOMContentLoaded', () => {
   });
 
   /**
+   * Monkey-patch the console methods so we can dispatch
+   * events when they're called, allowing the data to be
+   * captured by the playground's console UI.
+   */
+  const _log = console.log,
+    _warn = console.warn,
+    _error = console.error;
+
+  const dispatchConsoleEvent = (type, message) => {
+    window.dispatchEvent(new CustomEvent('console', {
+      detail: {
+        type,
+        message
+      }
+    }));
+  }
+
+  console.log = function() {
+    dispatchConsoleEvent('log', arguments[0]);
+    return _log.apply(console, arguments);
+  };
+
+  console.warn = function() {
+    dispatchConsoleEvent('warning', arguments[0]);
+    return _warn.apply(console, arguments);
+  };
+
+  console.error = function() {
+    dispatchConsoleEvent('error', arguments[0]);
+    return _error.apply(console, arguments);
+  };
+
+  /**
    * The Playground needs to wait for the message listener
    * to be created before sending any messages, otherwise
    * they will be lost. Once the listener is done, fire

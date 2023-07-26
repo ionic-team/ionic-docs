@@ -185,36 +185,7 @@ export default function Playground({
   const [codeSnippets, setCodeSnippets] = useState({});
   const [renderIframes, setRenderIframes] = useState(false);
   const [iframesLoaded, setIframesLoaded] = useState(false);
-  const [consoleItems, setConsoleItems] = useState<ConsoleItem[]>([
-    {
-      type: 'log',
-      message: 'this is a log'
-    },
-    {
-      type: 'warning',
-      message: 'this is a warning'
-    },
-    {
-      type: 'error',
-      message: 'this is an error'
-    },
-    {
-      type: 'log',
-      message: 'log 1'
-    },
-    {
-      type: 'log',
-      message: 'log 2'
-    },
-    {
-      type: 'error',
-      message: 'error!'
-    },
-    {
-      type: 'log',
-      message: 'really long log really long log really long log really long log really long log really long log really long log'
-    }
-  ]);
+  const [consoleItems, setConsoleItems] = useState<ConsoleItem[]>([]);
 
   /**
    * Rather than encode isDarkTheme into the frame source
@@ -290,6 +261,20 @@ export default function Playground({
 
     setFramesLoaded();
   }, [renderIframes]);
+
+  useEffect(() => {
+    if (frameiOS.current) {
+      frameiOS.current.contentWindow.addEventListener('console', (ev: CustomEvent) => {
+        setConsoleItems((oldConsoleItems) => [...oldConsoleItems, ev.detail]);
+      });
+    }
+
+    if (frameMD.current) {
+      frameMD.current.contentWindow.addEventListener('console', (ev: CustomEvent) => {
+        setConsoleItems((oldConsoleItems) => [...oldConsoleItems, ev.detail]);
+      });
+    }
+  }, [iframesLoaded]);
 
   useEffect(() => {
     /**
