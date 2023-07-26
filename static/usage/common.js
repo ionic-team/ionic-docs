@@ -32,25 +32,27 @@ window.addEventListener('DOMContentLoaded', () => {
     _error = console.error;
 
   const dispatchConsoleEvent = (type, arguments) => {
-    window.dispatchEvent(new CustomEvent('console', {
-      detail: {
-        type,
-        message: Object.values(arguments).join(' ')
-      }
-    }));
-  }
+    window.dispatchEvent(
+      new CustomEvent('console', {
+        detail: {
+          type,
+          message: Object.values(arguments).join(' '),
+        },
+      })
+    );
+  };
 
-  console.log = function() {
+  console.log = function () {
     dispatchConsoleEvent('log', arguments);
     return _log.apply(console, arguments);
   };
 
-  console.warn = function() {
+  console.warn = function () {
     dispatchConsoleEvent('warning', arguments);
     return _warn.apply(console, arguments);
   };
 
-  console.error = function() {
+  console.error = function () {
     dispatchConsoleEvent('error', arguments);
     return _error.apply(console, arguments);
   };

@@ -11,6 +11,6 @@ export enum Mode {
 }
 
 export interface ConsoleItem {
-  type: 'log' | 'warning' | 'error',
-  message: string
+  type: 'log' | 'warning' | 'error';
+  message: string;
 }

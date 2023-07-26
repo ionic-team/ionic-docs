@@ -473,14 +473,14 @@ export default function Playground({
       <div className="playground__console" ref={consoleRef}>
         {(ionicMode === Mode.iOS ? iosConsoleItems : mdConsoleItems).map((consoleItem, i) => (
           <div key={i} className={`playground__console-item playground__console-item--${consoleItem.type}`}>
-            {consoleItem.type !== 'log' && <div className="playground__console-icon">
-              {consoleItem.type === 'warning' ? '⚠' : '❌'}
-            </div>}
+            {consoleItem.type !== 'log' && (
+              <div className="playground__console-icon">{consoleItem.type === 'warning' ? '⚠' : '❌'}</div>
+            )}
             <code>{consoleItem.message}</code>
           </div>
         ))}
       </div>
-    )
+    );
   }
 
   const sortedUsageTargets = useMemo(() => Object.keys(UsageTarget).sort(), []);
