@@ -162,6 +162,7 @@ export default function Playground({
   const codeRef = useRef(null);
   const frameiOS = useRef<HTMLIFrameElement | null>(null);
   const frameMD = useRef<HTMLIFrameElement | null>(null);
+  const consoleRef = useRef<HTMLDivElement | null>(null);
 
   const defaultMode = typeof mode !== 'undefined' ? mode : Mode.iOS;
 
@@ -263,17 +264,18 @@ export default function Playground({
     setFramesLoaded();
   }, [renderIframes]);
 
-  // TODO: scroll to bottom of console
   useEffect(() => {
     if (frameiOS.current) {
       frameiOS.current.contentWindow.addEventListener('console', (ev: CustomEvent) => {
         setiOSConsoleItems((oldConsoleItems) => [...oldConsoleItems, ev.detail]);
+        consoleRef.current.scrollTo(0, consoleRef.current.scrollHeight);
       });
     }
 
     if (frameMD.current) {
       frameMD.current.contentWindow.addEventListener('console', (ev: CustomEvent) => {
         setMDConsoleItems((oldConsoleItems) => [...oldConsoleItems, ev.detail]);
+        consoleRef.current.scrollTo(0, consoleRef.current.scrollHeight);
       });
     }
   }, [iframesLoaded]);
@@ -466,7 +468,7 @@ export default function Playground({
 
   function renderConsole() {
     return (
-      <div className="playground__console">
+      <div className="playground__console" ref={consoleRef}>
         {(ionicMode === Mode.iOS ? iosConsoleItems : mdConsoleItems).map((consoleItem, i) => (
           <div key={i} className={`playground__console-item playground__console-item--${consoleItem.type}`}>
             {consoleItem.type !== 'log' && <div className="playground__console-icon">
