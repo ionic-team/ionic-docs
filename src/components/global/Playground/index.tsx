@@ -185,7 +185,8 @@ export default function Playground({
   const [codeSnippets, setCodeSnippets] = useState({});
   const [renderIframes, setRenderIframes] = useState(false);
   const [iframesLoaded, setIframesLoaded] = useState(false);
-  const [consoleItems, setConsoleItems] = useState<ConsoleItem[]>([]);
+  const [mdConsoleItems, setMDConsoleItems] = useState<ConsoleItem[]>([]);
+  const [iosConsoleItems, setiOSConsoleItems] = useState<ConsoleItem[]>([]);
 
   /**
    * Rather than encode isDarkTheme into the frame source
@@ -262,16 +263,17 @@ export default function Playground({
     setFramesLoaded();
   }, [renderIframes]);
 
+  // TODO: scroll to bottom of console
   useEffect(() => {
     if (frameiOS.current) {
       frameiOS.current.contentWindow.addEventListener('console', (ev: CustomEvent) => {
-        setConsoleItems((oldConsoleItems) => [...oldConsoleItems, ev.detail]);
+        setiOSConsoleItems((oldConsoleItems) => [...oldConsoleItems, ev.detail]);
       });
     }
 
     if (frameMD.current) {
       frameMD.current.contentWindow.addEventListener('console', (ev: CustomEvent) => {
-        setConsoleItems((oldConsoleItems) => [...oldConsoleItems, ev.detail]);
+        setMDConsoleItems((oldConsoleItems) => [...oldConsoleItems, ev.detail]);
       });
     }
   }, [iframesLoaded]);
@@ -465,7 +467,7 @@ export default function Playground({
   function renderConsole() {
     return (
       <div className="playground__console">
-        {consoleItems.map((consoleItem, i) => (
+        {(ionicMode === Mode.iOS ? iosConsoleItems : mdConsoleItems).map((consoleItem, i) => (
           <div key={i} className={`playground__console-item playground__console-item--${consoleItem.type}`}>
             {consoleItem.type !== 'log' && <div className="playground__console-icon">
               {consoleItem.type === 'warning' ? '⚠' : '❌'}

@@ -40,6 +40,8 @@ window.addEventListener('DOMContentLoaded', () => {
     }));
   }
 
+  // TODO: is there an easy way to capture all args?
+  // maybe turn vals into array, then do .join(' ')?
   console.log = function() {
     dispatchConsoleEvent('log', arguments[0]);
     return _log.apply(console, arguments);
