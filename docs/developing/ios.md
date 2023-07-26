@@ -17,7 +17,7 @@ import DocsCards from '@components/global/DocsCards';
 
 :::info Looking for the legacy iOS guide?
 
-The Developing for iOS guide has officially migrated to the [Capacitor documentation for iOS](https://capacitorjs.com/docs/ios). If you need to access the legacy documentation, you can find it at the [legacy developing for iOS guide](/docs/v6/developing/ios).
+The Developing for iOS guide has officially migrated to the [Capacitor documentation for iOS](https://capacitorjs.com/docs/ios). If you need to access the legacy documentation, you can find it under the [legacy developing for iOS guide](/docs/v6/developing/ios).
 
 :::
 
