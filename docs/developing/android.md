@@ -16,7 +16,7 @@ import DocsCards from '@components/global/DocsCards';
 
 :::info Looking for the legacy Android guide?
 
-The Developing for Android guide has officially migrated to the Capacitor docs: https://capacitorjs.com/docs/android. Looking for the legacy docs? [Click here](/docs/v6/developing/android).
+The Developing for Android guide has officially migrated to the [Capacitor docs](https://capacitorjs.com/docs/android). You can still [access the legacy docs](/docs/v6/developing/android).
 
 :::
 
