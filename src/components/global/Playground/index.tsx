@@ -265,18 +265,20 @@ export default function Playground({
   }, [renderIframes]);
 
   useEffect(() => {
-    if (frameiOS.current) {
-      frameiOS.current.contentWindow.addEventListener('console', (ev: CustomEvent) => {
-        setiOSConsoleItems((oldConsoleItems) => [...oldConsoleItems, ev.detail]);
-        consoleRef.current.scrollTo(0, consoleRef.current.scrollHeight);
-      });
-    }
+    if (showConsole) {
+      if (frameiOS.current) {
+        frameiOS.current.contentWindow.addEventListener('console', (ev: CustomEvent) => {
+          setiOSConsoleItems((oldConsoleItems) => [...oldConsoleItems, ev.detail]);
+          consoleRef.current.scrollTo(0, consoleRef.current.scrollHeight);
+        });
+      }
 
-    if (frameMD.current) {
-      frameMD.current.contentWindow.addEventListener('console', (ev: CustomEvent) => {
-        setMDConsoleItems((oldConsoleItems) => [...oldConsoleItems, ev.detail]);
-        consoleRef.current.scrollTo(0, consoleRef.current.scrollHeight);
-      });
+      if (frameMD.current) {
+        frameMD.current.contentWindow.addEventListener('console', (ev: CustomEvent) => {
+          setMDConsoleItems((oldConsoleItems) => [...oldConsoleItems, ev.detail]);
+          consoleRef.current.scrollTo(0, consoleRef.current.scrollHeight);
+        });
+      }
     }
   }, [iframesLoaded]);
 
