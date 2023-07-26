@@ -31,29 +31,27 @@ window.addEventListener('DOMContentLoaded', () => {
     _warn = console.warn,
     _error = console.error;
 
-  const dispatchConsoleEvent = (type, message) => {
+  const dispatchConsoleEvent = (type, arguments) => {
     window.dispatchEvent(new CustomEvent('console', {
       detail: {
         type,
-        message
+        message: Object.values(arguments).join(' ')
       }
     }));
   }
 
-  // TODO: is there an easy way to capture all args?
-  // maybe turn vals into array, then do .join(' ')?
   console.log = function() {
-    dispatchConsoleEvent('log', arguments[0]);
+    dispatchConsoleEvent('log', arguments);
     return _log.apply(console, arguments);
   };
 
   console.warn = function() {
-    dispatchConsoleEvent('warning', arguments[0]);
+    dispatchConsoleEvent('warning', arguments);
     return _warn.apply(console, arguments);
   };
 
   console.error = function() {
-    dispatchConsoleEvent('error', arguments[0]);
+    dispatchConsoleEvent('error', arguments);
     return _error.apply(console, arguments);
   };
 
