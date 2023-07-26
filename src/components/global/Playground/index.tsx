@@ -3,7 +3,7 @@ import React, { useEffect, useMemo, useRef, useState } from 'react';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import './playground.css';
 import { EditorOptions, openAngularEditor, openHtmlEditor, openReactEditor, openVueEditor } from './stackblitz.utils';
-import { Mode, UsageTarget } from './playground.types';
+import { ConsoleItem, Mode, UsageTarget } from './playground.types';
 import useThemeContext from '@theme/hooks/useThemeContext';
 
 import Tippy from '@tippyjs/react';
@@ -109,6 +109,7 @@ interface UsageTargetOptions {
  * @param src The absolute path to the playground demo. For example: `/usage/button/basic/demo.html`
  * @param size The height of the playground. Supports `xsmall`, `small`, `medium`, `large`, 'xlarge' or any string value.
  * @param devicePreview `true` if the playground example should render in a device frame (iOS/MD).
+ * @param showConsole `true` if the playground should render a console UI that reflects console logs, warnings, and errors.
  */
 export default function Playground({
   code,
@@ -118,6 +119,7 @@ export default function Playground({
   size = 'small',
   mode,
   devicePreview,
+  showConsole,
   includeIonContent = true,
   version,
 }: {
@@ -133,6 +135,7 @@ export default function Playground({
   mode?: 'ios' | 'md';
   description?: string;
   devicePreview?: boolean;
+  showConsole?: boolean;
   includeIonContent: boolean;
   /**
    * The major version of Ionic to use in the generated Stackblitz examples.
@@ -182,6 +185,36 @@ export default function Playground({
   const [codeSnippets, setCodeSnippets] = useState({});
   const [renderIframes, setRenderIframes] = useState(false);
   const [iframesLoaded, setIframesLoaded] = useState(false);
+  const [consoleItems, setConsoleItems] = useState<ConsoleItem[]>([
+    {
+      type: 'log',
+      message: 'this is a log'
+    },
+    {
+      type: 'warning',
+      message: 'this is a warning'
+    },
+    {
+      type: 'error',
+      message: 'this is an error'
+    },
+    {
+      type: 'log',
+      message: 'log 1'
+    },
+    {
+      type: 'log',
+      message: 'log 2'
+    },
+    {
+      type: 'error',
+      message: 'error!'
+    },
+    {
+      type: 'log',
+      message: 'really long log really long log really long log really long log really long log really long log really long log'
+    }
+  ]);
 
   /**
    * Rather than encode isDarkTheme into the frame source
@@ -444,11 +477,26 @@ export default function Playground({
     );
   }
 
+  function renderConsole() {
+    return (
+      <div className="playground__console">
+        {consoleItems.map((consoleItem, i) => (
+          <div key={i} className={`playground__console-item playground__console-item--${consoleItem.type}`}>
+            {consoleItem.type !== 'log' && <div className="playground__console-icon">
+              {consoleItem.type === 'warning' ? '⚠' : '❌'}
+            </div>}
+            <code>{consoleItem.message}</code>
+          </div>
+        ))}
+      </div>
+    )
+  }
+
   const sortedUsageTargets = useMemo(() => Object.keys(UsageTarget).sort(), []);
 
   return (
     <div className="playground" ref={hostRef}>
-      <div className="playground__container">
+      <div className={`playground__container ${showConsole ? 'playground__container--has-console' : ''}`}>
         <div className="playground__control-toolbar">
           <div className="playground__control-group">
             {sortedUsageTargets.map((lang) => {
@@ -633,6 +681,7 @@ export default function Playground({
             ]
           : []}
       </div>
+      {showConsole && renderConsole()}
       <div ref={codeRef} className="playground__code-block">
         {renderCodeSnippets()}
       </div>
