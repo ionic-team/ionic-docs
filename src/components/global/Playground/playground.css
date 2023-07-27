@@ -247,6 +247,16 @@
   border-top: 0;
   border-bottom-left-radius: var(--ifm-code-border-radius);
   border-bottom-right-radius: var(--ifm-code-border-radius);
+}
+
+.playground__console-header {
+  background-color: var(--playground-separator-color);
+  font-weight: bold;
+  padding: 3px 3px 3px 28px;
+  text-transform: uppercase;
+}
+
+.playground__console-body {
   overflow-y: auto;
 
   height: 120px;
@@ -297,7 +307,7 @@
   left: 3px;
 }
 
-.playground__console-item code {
+.playground__console code {
   background-color: transparent;
   padding: 0;
   padding-block-start: 0; /* prevents text getting cut off vertically */

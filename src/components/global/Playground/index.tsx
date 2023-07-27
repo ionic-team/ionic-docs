@@ -162,7 +162,7 @@ export default function Playground({
   const codeRef = useRef(null);
   const frameiOS = useRef<HTMLIFrameElement | null>(null);
   const frameMD = useRef<HTMLIFrameElement | null>(null);
-  const consoleRef = useRef<HTMLDivElement | null>(null);
+  const consoleBodyRef = useRef<HTMLDivElement | null>(null);
 
   const defaultMode = typeof mode !== 'undefined' ? mode : Mode.iOS;
 
@@ -269,14 +269,14 @@ export default function Playground({
       if (frameiOS.current) {
         frameiOS.current.contentWindow.addEventListener('console', (ev: CustomEvent) => {
           setiOSConsoleItems((oldConsoleItems) => [...oldConsoleItems, ev.detail]);
-          consoleRef.current.scrollTo(0, consoleRef.current.scrollHeight);
+          consoleBodyRef.current.scrollTo(0, consoleBodyRef.current.scrollHeight);
         });
       }
 
       if (frameMD.current) {
         frameMD.current.contentWindow.addEventListener('console', (ev: CustomEvent) => {
           setMDConsoleItems((oldConsoleItems) => [...oldConsoleItems, ev.detail]);
-          consoleRef.current.scrollTo(0, consoleRef.current.scrollHeight);
+          consoleBodyRef.current.scrollTo(0, consoleBodyRef.current.scrollHeight);
         });
       }
     }
@@ -470,15 +470,20 @@ export default function Playground({
 
   function renderConsole() {
     return (
-      <div className="playground__console" ref={consoleRef}>
-        {(ionicMode === Mode.iOS ? iosConsoleItems : mdConsoleItems).map((consoleItem, i) => (
-          <div key={i} className={`playground__console-item playground__console-item--${consoleItem.type}`}>
-            {consoleItem.type !== 'log' && (
-              <div className="playground__console-icon">{consoleItem.type === 'warning' ? '⚠' : '❌'}</div>
-            )}
-            <code>{consoleItem.message}</code>
-          </div>
-        ))}
+      <div className="playground__console">
+        <div className="playground__console-header">
+          <code>Console</code>
+        </div>
+        <div className="playground__console-body" ref={consoleBodyRef}>
+          {(ionicMode === Mode.iOS ? iosConsoleItems : mdConsoleItems).map((consoleItem, i) => (
+            <div key={i} className={`playground__console-item playground__console-item--${consoleItem.type}`}>
+              {consoleItem.type !== 'log' && (
+                <div className="playground__console-icon">{consoleItem.type === 'warning' ? '⚠' : '❌'}</div>
+              )}
+              <code>{consoleItem.message}</code>
+            </div>
+          ))}
+        </div>
       </div>
     );
   }
