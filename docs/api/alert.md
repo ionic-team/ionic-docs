@@ -111,6 +111,8 @@ import Customization from '@site/static/usage/v7/alert/customization/index.md';
 
 ## Accessibility
 
+### Screen Readers
+
 Ionic automatically sets the Alert's `role` to either [`alertdialog`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/alertdialog_role) if there are any inputs or buttons included, or [`alert`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/alert_role) if there are none.
 
 If the `header` property is defined for the Alert, the `aria-labelledby` attribute will be automatically set to the header's ID. The `subHeader` element will be used as a fallback if `header` is not defined. Similarly, the `aria-describedby` attribute will be automatically set to the ID of the `message` element if that property is defined.
@@ -119,17 +121,22 @@ It is strongly recommended that your Alert have a `message`, as well as either a
 
 All ARIA attributes can be manually overwritten by defining custom values in the `htmlAttributes` property of the Alert.
 
+Buttons containing text will be read by a screen reader. If a description other than the existing text is desired, a label can be assigned to the button by passing `aria-label` or `aria-labelledby` to the `htmlAttributes` property. The `aria-label` property accepts a text description and `aria-labelledby` accepts an element that contains the description of the button.
 
 ## Interfaces
 
 ### AlertButton
 
 ```typescript
+type AlertButtonOverlayHandler = boolean | void | { [key: string]: any };
+
 interface AlertButton {
   text: string;
   role?: 'cancel' | 'destructive' | string;
   cssClass?: string | string[];
-  handler?: (value: any) => boolean | void | {[key: string]: any};
+  id?: string;
+  htmlAttributes?: { [key: string]: any };
+  handler?: (value: any) => AlertButtonOverlayHandler | Promise<AlertButtonOverlayHandler>;
 }
 ```
 

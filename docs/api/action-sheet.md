@@ -94,9 +94,13 @@ import CssCustomProperties from '@site/static/usage/v7/action-sheet/theming/css-
 
 ## Accessibility
 
+### Screen Readers
+
 Action Sheets are given a `role` of [`dialog`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/dialog_role). In order to align with the ARIA spec, either the `aria-label` or `aria-labelledby` attribute must be set.
 
 It is strongly recommended that every Action Sheet have the `header` property defined, as Ionic will automatically set `aria-labelledby` to point to the header element. However, if you choose not to include a `header`, an alternative is to use the `htmlAttributes` property to provide a descriptive `aria-label` or set a custom `aria-labelledby` value.
+
+Buttons containing text will be read by a screen reader. If a button contains only an icon, a label should be assigned to the button by passing `aria-label` or `aria-labelledby` to the `htmlAttributes` property. The `aria-label` property accepts a text description and `aria-labelledby` accepts an element that contains the description of the button.
 
 ## Interfaces
 
@@ -108,6 +112,8 @@ interface ActionSheetButton<T = any> {
   role?: 'cancel' | 'destructive' | 'selected' | string;
   icon?: string;
   cssClass?: string | string[];
+  id?: string;
+  htmlAttributes?: { [key: string]: any };
   handler?: () => boolean | void | Promise<boolean | void>;
   data?: T;
 }
