@@ -4,13 +4,20 @@ This post has been forked from [Ely Lucas' blog post](https://dev.to/ionic/addin
 
 ### Using Individual Ionic Components
 
-Ionic React has around 100 components that you can begin using in your app immediately to help make it more mobile-friendly.
+Ionic React has around 100 components you can use in your app immediately to help make it more mobile-friendly.
 
 To get started with using components install the `@ionic/react` package:
 
 ```bash
 npm i @ionic/react
 ```
+or
+```bash
+yarn add @ionic/react
+```
+
+<br/>
+<br/>
 
 Import the stylesheets from Ionic in your main app file:
 
@@ -42,7 +49,7 @@ export default App;
 
 You can import any of the components and begin to use them right away. Here we are importing the `IonButton` and `IonDatetime` components and using them anywhere in our app:
 
-```tsx
+```tsx title="YourComponent.tsx"
 import React from 'react';
 import { IonButton, IonDatetime } from '@ionic/react';
 
@@ -62,7 +69,7 @@ If you want to convert part of your app and give it the whole Ionic experience, 
 
 First, import some additional CSS files that help set up the overall structure of the page and some utility helpers:
 
-```js
+```tsx title="App.tsx"
 /* Basic CSS for apps built with Ionic */
 import '@ionic/react/css/normalize.css';
 import '@ionic/react/css/structure.css';
@@ -84,6 +91,10 @@ Next, install the `@ionic/react-router` library:
 ```bash
 npm i @ionic/react-router
 ```
+or
+```bash
+yarn add @ionic/react-router
+```
 
 The Ionic React Router library is a small wrapper around the popular React Router library and helps provide the functionality we need for native-like page transitions. The Ionic React Router library is compatible with v5 of React Router.
 
@@ -93,7 +104,7 @@ The main Ionic page will need a couple of base components. First, use a `IonApp`
 
 Then, wrap all your routes in an `IonRouterOutlet`, which is what manages our Ionic pages.
 
-```tsx
+```tsx title="App.tsx"
 import { IonApp, IonRouterOutlet } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
 
@@ -111,7 +122,7 @@ import { IonReactRouter } from '@ionic/react-router';
 
 Now you can setup Ionic pages like so:
 
-```tsx
+```tsx title="YourComponent.tsx"
 <IonPage>
   <IonHeader>
     <IonToolbar>
