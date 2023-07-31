@@ -191,7 +191,7 @@ For example, below are screenshots of an iPhone 14 Pro Max. The red section is t
 | ------------------------------------------------------------------------------ | -------------------------------------------------------------------------------- |
 | <img src={require('@site/static/img/theming/ios-portrait-top.png').default} /> | <img src={require('@site/static/img/theming/ios-landscape-left.png').default} /> |
 
-To accommodate this, Ionic automatically adds padding to certain components. For example, an `ion-header` component placed in an `ion-modal` will receive padding according to the top edge of the device's safe area. This avoids the device's notch covering up the header text.
+To accommodate this, Ionic automatically adds padding to certain components. For example, the first `ion-toolbar` component placed in an `ion-modal` will receive padding according to the top edge of the device's safe area. This avoids the device's notch covering up the header text.
 
 <img src={require('@site/static/img/theming/modal-header-padding.png').default} />
 
