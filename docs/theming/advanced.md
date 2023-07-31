@@ -187,8 +187,8 @@ The safe area of a display is the section that is not covered by the device's no
 
 For example, below are screenshots of an iPhone 14 Pro Max. The red section is the safe area, and the white sections are places where the app's content would be covered up.
 
-| Portrait | Landscape |
-| ----------- | ----------- |
+| Portrait                                                                       | Landscape                                                                        |
+| ------------------------------------------------------------------------------ | -------------------------------------------------------------------------------- |
 | <img src={require('@site/static/img/theming/ios-portrait-top.png').default} /> | <img src={require('@site/static/img/theming/ios-landscape-left.png').default} /> |
 
 To accommodate this, Ionic automatically adds padding to certain components. For example, an `ion-header` component placed in an `ion-modal` will receive padding according to the top edge of the device's safe area. This avoids the device's notch covering up the header text.
