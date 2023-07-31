@@ -125,8 +125,12 @@ If the `header` property is defined for the Alert, the `aria-labelledby` attribu
 
 It is strongly recommended that your Alert have a `message`, as well as either a `header` or `subHeader`, in order to align with the ARIA spec. If you choose not to include a `header` or `subHeader`, an alternative is to provide a descriptive `aria-label` using the `htmlAttributes` property.
 
+<Tabs groupId="framework" defaultValue="angular" values={[{ value: 'angular', label: 'Angular' }, { value: 'javascript', label: 'Javascript' }, { value: 'react', label: 'React' }, { value: 'vue', label: 'Vue' }]}>
+
+<TabItem value="angular">
+
 ```javascript
-alertController.create({
+const alert = await this.alertController.create({
   message: 'This is an alert with custom aria attributes.',
   htmlAttributes: {
     'aria-label': 'alert dialog',
@@ -134,14 +138,62 @@ alertController.create({
 });
 ```
 
+</TabItem>
+
+<TabItem value="javascript">
+
+```javascript
+const alert = await this.alertController.create({
+  message: 'This is an alert with custom aria attributes.',
+  htmlAttributes: {
+    'aria-label': 'alert dialog',
+  },
+});
+```
+
+</TabItem>
+
+<TabItem value="react">
+
+```javascript
+useIonAlert({
+  message: 'This is an alert with custom aria attributes.',
+  htmlAttributes: {
+    'aria-label': 'alert dialog',
+  },
+});
+```
+
+</TabItem>
+
+<TabItem value="vue">
+
+```javascript
+const alert = await alertController.create({
+  message: 'This is an alert with custom aria attributes.',
+  htmlAttributes: {
+    'aria-label': 'alert dialog',
+  },
+});
+```
+
+</TabItem>
+
+</Tabs>
+
+
 All ARIA attributes can be manually overwritten by defining custom values in the `htmlAttributes` property of the Alert.
 
 #### Alert Buttons Description
 
 Buttons containing text will be read by a screen reader. If a description other than the existing text is desired, a label can be set on the button by passing `aria-label` to the `htmlAttributes` property on the button.
 
+<Tabs groupId="framework" defaultValue="angular" values={[{ value: 'angular', label: 'Angular' }, { value: 'javascript', label: 'Javascript' }, { value: 'react', label: 'React' }, { value: 'vue', label: 'Vue' }]}>
+
+<TabItem value="angular">
+
 ```javascript
-alertController.create({
+const alert = await this.alertController.create({
   header: 'Header',
   buttons: [
     {
@@ -153,6 +205,64 @@ alertController.create({
   ],
 });
 ```
+
+</TabItem>
+
+<TabItem value="javascript">
+
+```javascript
+const alert = await this.alertController.create({
+  header: 'Header',
+  buttons: [
+    {
+      text: 'Exit',
+      htmlAttributes: {
+        'aria-label': 'close',
+      },
+    },
+  ],
+});
+```
+
+</TabItem>
+
+<TabItem value="react">
+
+```javascript
+useIonAlert({
+  header: 'Header',
+  buttons: [
+    {
+      text: 'Exit',
+      htmlAttributes: {
+        'aria-label': 'close',
+      },
+    },
+  ],
+});
+```
+
+</TabItem>
+
+<TabItem value="vue">
+
+```javascript
+const alert = await alertController.create({
+  header: 'Header',
+  buttons: [
+    {
+      text: 'Exit',
+      htmlAttributes: {
+        'aria-label': 'close',
+      },
+    },
+  ],
+});
+```
+
+</TabItem>
+
+</Tabs>
 
 ## Interfaces
 
