@@ -94,13 +94,33 @@ Toasts are intended to be subtle notifications and are not intended to interrupt
 
 ### Screen Readers
 
+Toasts set aria properties in order to be [accessible](../reference/glossary#a11y) to screen readers, but these properties can be overridden if they aren't descriptive enough or don't align with how the toast is being used in an app.
+
+#### Role
+
 `ion-toast` has `role="status"` and `aria-live="polite"` set on the inner `.toast-content` element. This causes screen readers to only announce the toast message and header. Buttons and icons will not be announced.
 
 `aria-live` causes screen readers to announce the content of the toast when it is updated. However, since the attribute is set to `'polite'`, screen readers should not interrupt the current task.
 
 Since toasts are intended to be subtle notification, `aria-live` should never be set to `"assertive"`. If developers need to interrupt the user with an important message, we recommend using an [alert](./alert).
 
-Buttons containing text will be read by a screen reader. If a button contains only an icon, a label should be assigned to the button by passing `aria-label` or `aria-labelledby` to the `htmlAttributes` property. The `aria-label` property accepts a text description and `aria-labelledby` accepts an element that contains the description of the button.
+#### Toast Buttons Description
+
+Buttons containing text will be read by a screen reader. If a button contains only an icon, or a description other than the existing text is desired, a label should be assigned to the button by passing `aria-label` to the `htmlAttributes` property on the button.
+
+```javascript
+toastController.create({
+  header: 'Header',
+  buttons: [
+    {
+      icon: 'close',
+      htmlAttributes: {
+        'aria-label': 'close',
+      },
+    },
+  ],
+});
+```
 
 ### Tips
 

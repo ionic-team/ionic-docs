@@ -113,15 +113,46 @@ import Customization from '@site/static/usage/v7/alert/customization/index.md';
 
 ### Screen Readers
 
+Alerts set aria properties in order to be [accessible](../reference/glossary#a11y) to screen readers, but these properties can be overridden if they aren't descriptive enough or don't align with how the alert is being used in an app.
+
+#### Role
+
 Ionic automatically sets the Alert's `role` to either [`alertdialog`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/alertdialog_role) if there are any inputs or buttons included, or [`alert`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/alert_role) if there are none.
+
+#### Alert Description
 
 If the `header` property is defined for the Alert, the `aria-labelledby` attribute will be automatically set to the header's ID. The `subHeader` element will be used as a fallback if `header` is not defined. Similarly, the `aria-describedby` attribute will be automatically set to the ID of the `message` element if that property is defined.
 
 It is strongly recommended that your Alert have a `message`, as well as either a `header` or `subHeader`, in order to align with the ARIA spec. If you choose not to include a `header` or `subHeader`, an alternative is to provide a descriptive `aria-label` using the `htmlAttributes` property.
 
+```javascript
+alertController.create({
+  message: 'This is an alert with custom aria attributes.',
+  htmlAttributes: {
+    'aria-label': 'alert dialog',
+  },
+});
+```
+
 All ARIA attributes can be manually overwritten by defining custom values in the `htmlAttributes` property of the Alert.
 
-Buttons containing text will be read by a screen reader. If a description other than the existing text is desired, a label can be assigned to the button by passing `aria-label` or `aria-labelledby` to the `htmlAttributes` property. The `aria-label` property accepts a text description and `aria-labelledby` accepts an element that contains the description of the button.
+#### Alert Buttons Description
+
+Buttons containing text will be read by a screen reader. If a description other than the existing text is desired, a label can be set on the button by passing `aria-label` to the `htmlAttributes` property on the button.
+
+```javascript
+alertController.create({
+  header: 'Header',
+  buttons: [
+    {
+      text: 'Exit',
+      htmlAttributes: {
+        'aria-label': 'close',
+      },
+    },
+  ],
+});
+```
 
 ## Interfaces
 
