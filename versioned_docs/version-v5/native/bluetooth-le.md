@@ -58,12 +58,14 @@ It supports peripheral **and** central modes and covers most of the API methods 
 >
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
-      $ npm install cordova-plugin-bluetoothle {'\n'}$ npm install @awesome-cordova-plugins/bluetooth-le {'\n'}$ ionic cap sync
+      $ npm install cordova-plugin-bluetoothle {'\n'}$ npm install @awesome-cordova-plugins/bluetooth-le {'\n'}$ ionic
+      cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
-      $ ionic cordova plugin add cordova-plugin-bluetoothle {'\n'}$ npm install @awesome-cordova-plugins/bluetooth-le {'\n'}
+      $ ionic cordova plugin add cordova-plugin-bluetoothle {'\n'}$ npm install @awesome-cordova-plugins/bluetooth-le{' '}
+      {'\n'}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">

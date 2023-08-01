@@ -9,6 +9,10 @@
       "text": "{\"ios\" | \"md\"} mode - The mode determines which platform styles to use."
     },
     {
+      "name": "slot",
+      "text": "- The label text to associate with the checkbox. Use the \"labelPlacement\" property to control where the label is placed relative to the checkbox."
+    },
+    {
       "name": "part",
       "text": "container - The container for the checkbox mark."
     },
@@ -126,6 +130,77 @@
       "required": false
     },
     {
+      "name": "justify",
+      "type": "\"end\" | \"space-between\" | \"start\"",
+      "mutable": false,
+      "attr": "justify",
+      "reflectToAttr": false,
+      "docs": "How to pack the label and checkbox within a line.\n`\"start\"`: The label and checkbox will appear on the left in LTR and\non the right in RTL.\n`\"end\"`: The label and checkbox will appear on the right in LTR and\non the left in RTL.\n`\"space-between\"`: The label and checkbox will appear on opposite\nends of the line with space between the two elements.",
+      "docsTags": [],
+      "default": "'space-between'",
+      "values": [
+        {
+          "value": "end",
+          "type": "string"
+        },
+        {
+          "value": "space-between",
+          "type": "string"
+        },
+        {
+          "value": "start",
+          "type": "string"
+        }
+      ],
+      "optional": false,
+      "required": false
+    },
+    {
+      "name": "labelPlacement",
+      "type": "\"end\" | \"fixed\" | \"start\"",
+      "mutable": false,
+      "attr": "label-placement",
+      "reflectToAttr": false,
+      "docs": "Where to place the label relative to the checkbox.\n`\"start\"`: The label will appear to the left of the checkbox in LTR and to the right in RTL.\n`\"end\"`: The label will appear to the right of the checkbox in LTR and to the left in RTL.\n`\"fixed\"`: The label has the same behavior as `\"start\"` except it also has a fixed width. Long text will be truncated with ellipses (\"...\").",
+      "docsTags": [],
+      "default": "'start'",
+      "values": [
+        {
+          "value": "end",
+          "type": "string"
+        },
+        {
+          "value": "fixed",
+          "type": "string"
+        },
+        {
+          "value": "start",
+          "type": "string"
+        }
+      ],
+      "optional": false,
+      "required": false
+    },
+    {
+      "name": "legacy",
+      "type": "boolean | undefined",
+      "mutable": false,
+      "attr": "legacy",
+      "reflectToAttr": false,
+      "docs": "Set the `legacy` property to `true` to forcibly use the legacy form control markup.\nIonic will only opt checkboxes in to the modern form markup when they are\nusing either the `aria-label` attribute or have text in the default slot. As a result,\nthe `legacy` property should only be used as an escape hatch when you want to\navoid this automatic opt-in behavior.\n\nNote that this property will be removed in an upcoming major release\nof Ionic, and all form components will be opted-in to using the modern form markup.",
+      "docsTags": [],
+      "values": [
+        {
+          "type": "boolean"
+        },
+        {
+          "type": "undefined"
+        }
+      ],
+      "optional": true,
+      "required": false
+    },
+    {
       "name": "mode",
       "type": "\"ios\" | \"md\"",
       "mutable": false,
@@ -198,7 +273,7 @@
       "bubbles": true,
       "cancelable": true,
       "composed": true,
-      "docs": "Emitted when the checked property has changed.",
+      "docs": "Emitted when the checked property has changed\nas a result of a user action such as a click.\nThis event will not emit when programmatically\nsetting the checked property.",
       "docsTags": []
     },
     {
@@ -213,16 +288,6 @@
   ],
   "listeners": [],
   "styles": [
-    {
-      "name": "--background",
-      "annotation": "prop",
-      "docs": "Background of the checkbox icon"
-    },
-    {
-      "name": "--background-checked",
-      "annotation": "prop",
-      "docs": "Background of the checkbox icon when checked"
-    },
     {
       "name": "--border-color",
       "annotation": "prop",
@@ -249,6 +314,16 @@
       "docs": "Border width of the checkbox icon"
     },
     {
+      "name": "--checkbox-background",
+      "annotation": "prop",
+      "docs": "Background of the checkbox icon"
+    },
+    {
+      "name": "--checkbox-background-checked",
+      "annotation": "prop",
+      "docs": "Background of the checkbox icon when checked"
+    },
+    {
       "name": "--checkmark-color",
       "annotation": "prop",
       "docs": "Color of the checkbox checkmark when checked"
@@ -269,7 +344,12 @@
       "docs": "Transition of the checkbox icon"
     }
   ],
-  "slots": [],
+  "slots": [
+    {
+      "name": "",
+      "docs": "The label text to associate with the checkbox. Use the \"labelPlacement\" property to control where the label is placed relative to the checkbox."
+    }
+  ],
   "parts": [
     {
       "name": "container",

@@ -39,7 +39,7 @@ import Icons from '@site/static/usage/v7/item-sliding/icons/index.md';
 
 ## 拡張可能なオプション
 
-オプションは、あるポイントを超えてスワイプすると、アイテムの幅いっぱいに広がるように拡張することができます。これは、 [item options](./item-options) の `ionSwipe` イベントと組み合わせることで、アイテムが完全にスワイプされたときにメソッドを呼び出すことができるようになります。
+オプションは、スワイプがあるポイントを超えると、親となる `ion-item` の幅いっぱいに展開されます。これは、[item options](./item-options) の `ionSwipe` イベントと組み合わせることで、アイテムが完全にスワイプされたときにメソッドを呼び出すことができます。
 
 import Expandable from '@site/static/usage/v7/item-sliding/expandable/index.md';
 

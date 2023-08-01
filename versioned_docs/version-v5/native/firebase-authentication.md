@@ -56,15 +56,14 @@ Cordova plugin for Firebase Authentication
 >
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
-      $ npm install cordova-plugin-firebase-authentication {'\n'}$ npm install @awesome-cordova-plugins/firebase-authentication {
-        '\n'
-      }$ ionic cap sync
+      $ npm install cordova-plugin-firebase-authentication {'\n'}$ npm install
+      @awesome-cordova-plugins/firebase-authentication {'\n'}$ ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
-      $ ionic cordova plugin add cordova-plugin-firebase-authentication {'\n'}$ npm install @awesome-cordova-plugins/firebase-authentication{' '}
-      {'\n'}
+      $ ionic cordova plugin add cordova-plugin-firebase-authentication {'\n'}$ npm install
+      @awesome-cordova-plugins/firebase-authentication {'\n'}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">

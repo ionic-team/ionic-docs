@@ -26,7 +26,7 @@
     {
       "name": "disabled",
       "type": "boolean",
-      "mutable": false,
+      "mutable": true,
       "attr": "disabled",
       "reflectToAttr": false,
       "docs": "If `true`, the user cannot interact with the segment button.",
@@ -130,7 +130,7 @@
     },
     {
       "name": "value",
-      "type": "string",
+      "type": "number | string",
       "mutable": false,
       "attr": "value",
       "reflectToAttr": false,
@@ -138,6 +138,9 @@
       "docsTags": [],
       "default": "'ion-sb-' + ids++",
       "values": [
+        {
+          "type": "number"
+        },
         {
           "type": "string"
         }

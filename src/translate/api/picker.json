@@ -153,6 +153,23 @@
       "required": false
     },
     {
+      "name": "isOpen",
+      "type": "boolean",
+      "mutable": false,
+      "attr": "is-open",
+      "reflectToAttr": false,
+      "docs": "If `true`, the picker will open. If `false`, the picker will close.\nUse this if you need finer grained control over presentation, otherwise\njust use the pickerController or the `trigger` property.\nNote: `isOpen` will not automatically be set back to `false` when\nthe picker dismisses. You will need to do that in your code.",
+      "docsTags": [],
+      "default": "false",
+      "values": [
+        {
+          "type": "boolean"
+        }
+      ],
+      "optional": false,
+      "required": false
+    },
+    {
       "name": "keyboardClose",
       "type": "boolean",
       "mutable": false,
@@ -220,6 +237,25 @@
       "values": [
         {
           "type": "boolean"
+        }
+      ],
+      "optional": false,
+      "required": false
+    },
+    {
+      "name": "trigger",
+      "type": "string | undefined",
+      "mutable": false,
+      "attr": "trigger",
+      "reflectToAttr": false,
+      "docs": "An ID corresponding to the trigger element that\ncauses the picker to open when clicked.",
+      "docsTags": [],
+      "values": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "undefined"
         }
       ],
       "optional": false,
@@ -299,6 +335,24 @@
   ],
   "events": [
     {
+      "event": "didDismiss",
+      "detail": "OverlayEventDetail<any>",
+      "bubbles": true,
+      "cancelable": true,
+      "composed": true,
+      "docs": "Emitted after the picker has dismissed.\nShorthand for ionPickerDidDismiss.",
+      "docsTags": []
+    },
+    {
+      "event": "didPresent",
+      "detail": "void",
+      "bubbles": true,
+      "cancelable": true,
+      "composed": true,
+      "docs": "Emitted after the picker has presented.\nShorthand for ionPickerWillDismiss.",
+      "docsTags": []
+    },
+    {
       "event": "ionPickerDidDismiss",
       "detail": "OverlayEventDetail<any>",
       "bubbles": true,
@@ -332,6 +386,24 @@
       "cancelable": true,
       "composed": true,
       "docs": "Emitted before the picker has presented.",
+      "docsTags": []
+    },
+    {
+      "event": "willDismiss",
+      "detail": "OverlayEventDetail<any>",
+      "bubbles": true,
+      "cancelable": true,
+      "composed": true,
+      "docs": "Emitted before the picker has dismissed.\nShorthand for ionPickerWillDismiss.",
+      "docsTags": []
+    },
+    {
+      "event": "willPresent",
+      "detail": "void",
+      "bubbles": true,
+      "cancelable": true,
+      "composed": true,
+      "docs": "Emitted before the picker has presented.\nShorthand for ionPickerWillPresent.",
       "docsTags": []
     }
   ],

@@ -6,7 +6,6 @@ import DocsCard from '@components/global/DocsCard';
 import DocsButton from '@components/page/native/DocsButton';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
-import CodeBlock from '@theme/CodeBlock';
 
 # Bluetooth Serial
 
@@ -50,15 +49,17 @@ This plugin enables serial communication over Bluetooth. It was written for comm
   ]}
 >
   <TabItem value="Capacitor">
-    <CodeBlock className="language-shell">
-      $ npm install cordova-plugin-bluetooth-serial {'\n'}$ npm install @awesome-cordova-plugins/bluetooth-serial {'\n'}$ ionic cap
-      sync
-    </CodeBlock>
+
+    $ npm install cordova-plugin-bluetooth-serial
+    $ npm install @awesome-cordova-plugins/bluetooth-serial
+    $ ionic cap sync
+
   </TabItem>
   <TabItem value="Cordova">
-    <CodeBlock className="language-shell">
-      $ ionic cordova plugin add cordova-plugin-bluetooth-serial {'\n'}$ npm install @awesome-cordova-plugins/bluetooth-serial {'\n'}
-    </CodeBlock>
+
+    $ ionic cordova plugin add cordova-plugin-bluetooth-serial
+    $ npm install @awesome-cordova-plugins/bluetooth-serial
+
   </TabItem>
   <TabItem value="Enterprise">
     <blockquote>

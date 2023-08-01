@@ -1,8 +1,8 @@
 # Books
 
-### [Ionicで作る モバイルアプリ制作入門〈Web/iPhone/Android対応〉](https://amzn.to/2Ygk5bA)
+### [Ionic で作る モバイルアプリ制作入門〈Web/iPhone/Android 対応〉](https://amzn.to/2Ygk5bA)
 
-WEBサイトがつくれれば、モバイルアプリをつくることができる時代がやってきました。本書では、HTMLでモバイルアプリをつくるフレームワーク「Ionic」の紹介と、チュートリアルで作り方を解説しています。
+WEB サイトがつくれれば、モバイルアプリをつくることができる時代がやってきました。本書では、HTML でモバイルアプリをつくるフレームワーク「Ionic」の紹介と、チュートリアルで作り方を解説しています。
 
 by [rdlabo](https://twitter.com/rdlabo)
 

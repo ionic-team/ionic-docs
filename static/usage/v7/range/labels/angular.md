@@ -1,17 +1,11 @@
 ```html
-<ion-range labelPlacement="start">
-  <div slot="label">Label at the Start</div>
-</ion-range>
+<ion-range labelPlacement="start" label="Label at the Start"></ion-range>
 
 <br />
 
-<ion-range labelPlacement="end">
-  <div slot="label">Label at the End</div>
-</ion-range>
+<ion-range labelPlacement="end" label="Label at the End"></ion-range>
 
 <br />
 
-<ion-range labelPlacement="fixed">
-  <div slot="label">Fixed Width Label</div>
-</ion-range>
+<ion-range labelPlacement="fixed" label="Fixed Width Label"></ion-range>
 ```

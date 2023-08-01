@@ -12,13 +12,13 @@ title: 設定
 
 ## ファイル
 
-設定された値はJSONファイルに格納されます。Ionic CLIは、通常`~/.ionic/config.json`にグローバル設定ファイルを設定します。通常はプロジェクトのルートディレクトリに `ionic.config.json` という名前で保存されます。
+設定された値は JSON ファイルに格納されます。Ionic CLI は、通常`~/.ionic/config.json`にグローバル設定ファイルを設定します。通常はプロジェクトのルートディレクトリに `ionic.config.json` という名前で保存されます。
 
-CLIには、プロジェクト設定ファイルおよびグローバルCLI設定ファイルから設定値を設定およびprintfするためのコマンドが用意されています。[`ionic config get`](commands/config-get.md) と [`ionic config set`](commands/config-set.md) の使い方については、`ionic config--help`を参照してください。
+CLI には、プロジェクト設定ファイルおよびグローバル CLI 設定ファイルから設定値を設定および printf するためのコマンドが用意されています。[`ionic config get`](commands/config-get.md) と [`ionic config set`](commands/config-set.md) の使い方については、`ionic config--help`を参照してください。
 
 ### プロジェクト設定ファイル
 
-各Ionicプロジェクトには、通常はプロジェクトのルートディレクトリに、プロジェクト設定ファイルがあります。以下は注釈付きの `ionic.config.json` です。
+各 Ionic プロジェクトには、通常はプロジェクトのルートディレクトリに、プロジェクト設定ファイルがあります。以下は注釈付きの `ionic.config.json` です。
 
 ```json
 {
@@ -49,7 +49,7 @@ CLIには、プロジェクト設定ファイルおよびグローバルCLI設�
 
 ## 環境変数
 
-CLIは、次の環境変数を検索します:
+CLI は、次の環境変数を検索します:
 
 - `IONIC_CONFIG_DIRECTORY`: The directory of the global CLI config. Defaults to `~/.ionic`.
 - `IONIC_HTTP_PROXY`: Set a URL for proxying all CLI requests through. See [Using a Proxy](using-a-proxy.md).
@@ -57,7 +57,7 @@ CLIは、次の環境変数を検索します:
 
 ## Flags
 
-CLI flagsは、CLIコマンドの動作を変更するグローバルオプションです。
+CLI flags は、CLI コマンドの動作を変更するグローバルオプションです。
 
 - `--help`: Instead of running the command, view its help page.
 - `--verbose`: Show all log messages for debugging purposes.
@@ -67,15 +67,15 @@ CLI flagsは、CLIコマンドの動作を変更するグローバルオプシ�
 
 ## Hooks
 
-CLIは、ビルドの前後など、特定のイベント中にスクリプトを実行できます。CLIにフックするために、以下の [npm scripts](https://docs.npmjs.com/misc/scripts) を `package.json`: ファイルで使用できます。:
+CLI は、ビルドの前後など、特定のイベント中にスクリプトを実行できます。CLI にフックするために、以下の [npm scripts](https://docs.npmjs.com/misc/scripts) を `package.json`: ファイルで使用できます。:
 
-* `ionic:serve:before`: dev server が start される前に実行されます
-* `ionic:serve:after`: dev server が終了される前に実行されます
-* `ionic:build:before`: web assetの構築がはじまる前に実行されます
-* `ionic:build:after`: web assetの構築が終了して実行されます。
-* `ionic:capacitor:run:before` : executed on capacitor run before capacitor open is executed
-* `ionic:capacitor:build:before` : executed on capacitor build before capacitor open is executed
-* `ionic:capacitor:sync:after`: executed during `ionic capacitor sync` after a sync
+- `ionic:serve:before`: dev server が start される前に実行されます
+- `ionic:serve:after`: dev server が終了される前に実行されます
+- `ionic:build:before`: web asset の構築がはじまる前に実行されます
+- `ionic:build:after`: web asset の構築が終了して実行されます。
+- `ionic:capacitor:run:before` : executed on capacitor run before capacitor open is executed
+- `ionic:capacitor:build:before` : executed on capacitor build before capacitor open is executed
+- `ionic:capacitor:sync:after`: executed during `ionic capacitor sync` after a sync
 
 When using a shell script for any of the hooks, hook context is defined in environment variables prefixed with `IONIC_CLI_HOOK_CTX_`.
 
@@ -93,7 +93,7 @@ IONIC_CLI_HOOK_CTX_CAPACITOR_APP_NAME=ionic-starter-app
 IONIC_CLI_HOOK_CTX_CAPACITOR_VERBOSE=false
 ```
 
-Hooksは `ionic.config.json` で定義することもできます。プロジェクト内でHooksオブジェクトを定義します。各キーはフックの名前(先頭に`ionic:`を付けない)で、値はJavaScriptファイルへのパスまたはパスの配列です。
+Hooks は `ionic.config.json` で定義することもできます。プロジェクト内で Hooks オブジェクトを定義します。各キーはフックの名前(先頭に`ionic:`を付けない)で、値は JavaScript ファイルへのパスまたはパスの配列です。
 
 次の例では、ファイルは `ionic:build:before` フックでインポートされ、実行されます。
 
@@ -124,7 +124,7 @@ module.exports = function (ctx) {
 The Ionic CLI supports a multi-app configuration setup, which involves multiple Ionic apps and shared code within a single repository, or [monorepo](../reference/glossary.md#monorepo).
 
 :::note
-Ionic CLIは multi-app 構成セットアップをサポートしており、複数のIonicアプリケーションと共有コードが単一のリポジトリ [monorepo](/docs/reference/glossary#monorepo) 内に存在することができます。
+Ionic CLI は multi-app 構成セットアップをサポートしており、複数の Ionic アプリケーションと共有コードが単一のリポジトリ [monorepo](/docs/reference/glossary#monorepo) 内に存在することができます。
 
 If you're using Angular, please see [this article](https://github.com/ionic-team/ionic-cli/wiki/Angular-Monorepo) for examples.
 :::
@@ -217,7 +217,7 @@ $ ionic init
 
 ## 詳細設定
 
-### Buildの上書き
+### Build の上書き
 
 Normally, the CLI runs a hard-coded set of commands based on the project type. For example, the standard web asset build for Angular projects is `ng run app:build`. The web asset build can be overridden and `ionic build` can continue to be used by utilizing the `ionic:build` [npm script](https://docs.npmjs.com/misc/scripts). Similarly, the dev server can be overridden by using the `ionic:serve` npm script.
 
@@ -240,4 +240,4 @@ If these variables are set in the environment, `ionic cordova build ios` will us
 
 ### 遠隔計測について
 
-CLIからIonicに使用状況データが送信されるため、操作性が向上します。この機能を無効にするには、`ionic config set-g telemetry false`を実行してください。
+CLI から Ionic に使用状況データが送信されるため、操作性が向上します。この機能を無効にするには、`ionic config set-g telemetry false`を実行してください。

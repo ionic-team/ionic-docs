@@ -22,7 +22,7 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 タブコンポーネントは、[tabs](tabs.md) の子コンポーネントです。各タブには、アプリまたは単一のビューのトップレベルのナビゲーション スタックを含めることができます。アプリには多くのタブがあり、それぞれが独立したナビゲーションを持つことができます。
 
 :::note
- Note: このコンポーネントは、バニラまたはステンシルJavaScriptプロジェクトでのみ使用する必要があります。Angular、React、Vue のアプリでは、タブコンポーネントを宣言するために `ion-tab` を使用する必要はありません。
+ Note: このコンポーネントは、Vanilla JavaScriptプロジェクトでのみ使用してください。Angular、React、Vueアプリでは、`ion-tab`を使ってタブコンポーネントを宣言する必要はありません。
 :::
 
 

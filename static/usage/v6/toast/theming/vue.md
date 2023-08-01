@@ -17,8 +17,8 @@
           buttons: [
             {
               text: 'Dismiss',
-              role: 'cancel'
-            }
+              role: 'cancel',
+            },
           ],
         });
 
@@ -30,11 +30,11 @@
 
 <style>
   ion-toast.custom-toast {
-    --background: #F4F4FA;
+    --background: #f4f4fa;
     --box-shadow: 3px 3px 10px 0 rgba(0, 0, 0, 0.2);
     --color: #4b4a50;
   }
-    
+
   ion-toast.custom-toast::part(message) {
     font-style: italic;
   }

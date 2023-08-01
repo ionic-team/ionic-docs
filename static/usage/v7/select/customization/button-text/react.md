@@ -12,7 +12,12 @@ function Example() {
         </IonSelect>
       </IonItem>
       <IonItem>
-        <IonSelect label="Action Sheet Interface" interface="action-sheet" placeholder="Select fruit" cancelText="Cancel Choice">
+        <IonSelect
+          label="Action Sheet Interface"
+          interface="action-sheet"
+          placeholder="Select fruit"
+          cancelText="Cancel Choice"
+        >
           <IonSelectOption value="apples">Apples</IonSelectOption>
           <IonSelectOption value="oranges">Oranges</IonSelectOption>
           <IonSelectOption value="bananas">Bananas</IonSelectOption>

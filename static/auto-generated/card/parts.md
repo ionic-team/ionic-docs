@@ -1,5 +1,3 @@
-
-| Name | Description |
-| --- | --- |
-| `native` | The native HTML button, anchor, or div element that wraps all child elements.<br /><br />自動翻訳: すべての子要素をラップするネイティブHTMLのボタン、アンカー、またはdiv要素です。 |
-
+| Name     | Description                                                                                                                                                                            |
+| -------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `native` | The native HTML button, anchor, or div element that wraps all child elements.<br /><br />自動翻訳: すべての子要素をラップするネイティブ HTML のボタン、アンカー、または div 要素です。 |

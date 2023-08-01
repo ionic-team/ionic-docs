@@ -1,19 +1,19 @@
-# Ionic 6へのアップデート
+# Ionic 6 へのアップデート
 
-あなたのIonic5でつくったアプリをIonic6にアップデートする方法を案内します。
+あなたの Ionic5 でつくったアプリを Ionic6 にアップデートする方法を案内します。
 
 ## はじめ方
 
 ### Angular
 
-1. Ionic 6 は Angular 12+ をサポートしています。 [Angular Update Guide](https://update.angular.io/) に沿って、最新バージョンのAngularに更新します。.
-2. Ionic6の最新バージョンに更新します。
+1. Ionic 6 は Angular 12+ をサポートしています。 [Angular Update Guide](https://update.angular.io/) に沿って、最新バージョンの Angular に更新します。.
+2. Ionic6 の最新バージョンに更新します。
 
 ```shell
 npm install @ionic/angular@6
 ```
 
-Ionic Angular Serverを使用している場合は、それも必ず更新してください:
+Ionic Angular Server を使用している場合は、それも必ず更新してください:
 
 ```shell
 npm install @ionic/angular@6 @ionic/angular-server@6
@@ -24,7 +24,7 @@ npm install @ionic/angular@6 @ionic/angular-server@6
 
 ### React
 
-1. Ionic 6 は React 17+ をサポートしています。Reactの最新バージョンに更新します:
+1. Ionic 6 は React 17+ をサポートしています。React の最新バージョンに更新します:
 
 ```shell
 npm install react@latest react-dom@latest
@@ -48,6 +48,7 @@ npm install @ionic/react@6 @ionic/react-router@6
 4. あなたの `App` コンポーネントで `setupIonicReact` を呼び出して下さい。もう `setupConfig` を利用している場合は、 `setupIonicReact` に置き換えてください:
 
 **Before**
+
 ```tsx title="App.tsx"
 import { setupConfig } from '@ionic/react';
 
@@ -59,6 +60,7 @@ setupConfig({
 ```
 
 **After**
+
 ```tsx title="App.tsx"
 import { setupIonicReact } from '@ionic/react';
 
@@ -78,36 +80,38 @@ See the [Config Documentation](../developing/config) for more examples.
 5.すべてのコントローラのインポートを `@ionic/core` から `@ionic/core/components` に更新します。例として、`menuController` のマイグレーションを紹介します。
 
 **Before**
+
 ```tsx
 import { menuController } from '@ionic/core';
 ```
 
 **After**
+
 ```tsx
 import { menuController } from '@ionic/core/components';
 ```
 
 ### Vue
 
-1. Ionic 6 は Vue 3.0.6+ をサポートしています。Vueの最新バージョンに更新ください。
+1. Ionic 6 は Vue 3.0.6+ をサポートしています。Vue の最新バージョンに更新ください。
 
 ```shell
 npm install vue@3 vue-router@4
 ```
 
-2. Vue CLIを使用するアプリの場合は、Vue CLI 5をインストールします。
+2. Vue CLI を使用するアプリの場合は、Vue CLI 5 をインストールします。
 
 ```shell
 npm install -g @vue/cli@next
 ```
 
-次に、すべてのVue CLIプラグインをアップグレードします。
+次に、すべての Vue CLI プラグインをアップグレードします。
 
 ```shell
 vue upgrade --next
 ```
 
-3. Ionic 6の最新バージョンに更新します。
+3. Ionic 6 の最新バージョンに更新します。
 
 ```shell
 npm install @ionic/vue@6 @ionic/vue-router@6
@@ -142,6 +146,7 @@ module.exports = {
 8. すべてのオーバーレイイベントリスナーの名前を変更し、新しいフォーマットを使用するようにします。
 
 **Before**
+
 ```html
 <ion-modal
   :is-open="modalOpenRef"
@@ -155,6 +160,7 @@ module.exports = {
 ```
 
 **After**
+
 ```html
 <ion-modal
   :is-open="modalOpenRef"
@@ -174,38 +180,36 @@ module.exports = {
 9.  `ion-router-outlet` を `ion-tabs` の中にいれて利用します。
 
 **Before**
+
 ```html
 <ion-tabs>
-  <ion-tab-bar slot="bottom">
-    ...
-  </ion-tab-bar>
+  <ion-tab-bar slot="bottom"> ... </ion-tab-bar>
 </ion-tabs>
 
 <script>
   import { IonTabs, IonTabBar } from '@ionic/vue';
   import { defineComponent } from 'vue';
-  
+
   export default defineComponent({
-    components: { IonTabs, IonTabBar }
+    components: { IonTabs, IonTabBar },
   });
 </script>
 ```
 
 **After**
+
 ```html
 <ion-tabs>
   <ion-router-outlet></ion-router-outlet>
-  <ion-tab-bar slot="bottom">
-    ...
-  </ion-tab-bar>
+  <ion-tab-bar slot="bottom"> ... </ion-tab-bar>
 </ion-tabs>
 
 <script>
   import { IonTabs, IonTabBar, IonRouterOutlet } from '@ionic/vue';
   import { defineComponent } from 'vue';
-  
+
   export default defineComponent({
-    components: { IonTabs, IonTabBar, IonRouterOutlet }
+    components: { IonTabs, IonTabBar, IonRouterOutlet },
   });
 </script>
 ```
@@ -213,6 +217,7 @@ module.exports = {
 10. タブ内の追加ルートは、子ルートではなく兄弟ルートとして書き直す必要があります。
 
 **Before**
+
 ```ts
 const routes: Array<RouteRecordRaw> = [
   {
@@ -251,11 +256,12 @@ const routes: Array<RouteRecordRaw> = [
 ```
 
 **After**
+
 ```ts
 const routes: Array<RouteRecordRaw> = [
   {
     path: '/',
-    redirect: '/tabs/tab1'
+    redirect: '/tabs/tab1',
   },
   {
     path: '/tabs/',
@@ -263,27 +269,27 @@ const routes: Array<RouteRecordRaw> = [
     children: [
       {
         path: '',
-        redirect: 'tab1'
+        redirect: 'tab1',
       },
       {
         path: 'tab1',
-        component: () => import('@/views/Tab1.vue')
+        component: () => import('@/views/Tab1.vue'),
       },
       {
         path: 'tab1/view',
-        component: () => import('@/views/Tab1View.vue')
+        component: () => import('@/views/Tab1View.vue'),
       },
       {
         path: 'tab2',
-        component: () => import('@/views/Tab2.vue')
+        component: () => import('@/views/Tab2.vue'),
       },
       {
         path: 'tab3',
-        component: () => import('@/views/Tab3.vue')
-      }
-    ]
-  }
-]
+        component: () => import('@/views/Tab3.vue'),
+      },
+    ],
+  },
+];
 ```
 
 ### Core
@@ -302,7 +308,7 @@ npm install @ionic/core@6
 
 2. `text` と `placeholder` の CSS シャドウパーツの使用をすべて削除します。
 
-3. CSS変数 `--padding-bottom`, `--padding-end`, `--padding-start`, `--padding-top`, `--placeholder-color` のすべての使用を削除します。 `ion-datetime` のパディングをカスタマイズするには、 `padding` CSSプロパティのいずれかを使用することができます。
+3. CSS 変数 `--padding-bottom`, `--padding-end`, `--padding-start`, `--padding-top`, `--placeholder-color` のすべての使用を削除します。 `ion-datetime` のパディングをカスタマイズするには、 `padding` CSS プロパティのいずれかを使用することができます。
 
 4. `open` メソッドの使用はすべて削除します。datetime をオーバーレイで表示するには、 `ion-modal` または `ion-popover` コンポーネントの中に配置する。詳細は、[ion-datetime Usage Examples](../api/datetime#usage) を参照してください。
 
@@ -314,7 +320,7 @@ npm install @ionic/core@6
 
 ### Icon
 
-Ionic 6には、Ionicons 6が同梱されるようになりました。[Ionicons 6 Breaking Changes Guide](https://github.com/ionic-team/ionicons/releases/tag/v6.0.0) をご確認の上、必要な変更を行なってください。
+Ionic 6 には、Ionicons 6 が同梱されるようになりました。[Ionicons 6 Breaking Changes Guide](https://github.com/ionic-team/ionicons/releases/tag/v6.0.0) をご確認の上、必要な変更を行なってください。
 
 ### Input
 
@@ -325,24 +331,26 @@ Ionic 6には、Ionicons 6が同梱されるようになりました。[Ionicons
 `ion-modal` は Shadow DOM を使用するようになりました。 `ion-modal` の内部をターゲットとするスタイルは、[ion-modal CSS Variables](../api/modal#css-custom-properties) または [ion-modal CSS Shadow Parts](../api/modal#css-shadow-parts) を使用して更新してください。
 
 **Before**
+
 ```css
 ion-modal .modal-wrapper {
-  ...
+  ...;
 }
 
 ion-modal ion-backdrop {
-  ...
+  ...;
 }
 ```
 
 **After**
+
 ```css
 ion-modal::part(content) {
-  ...
+  ...;
 }
 
 ion-modal::part(backdrop) {
-  ...
+  ...;
 }
 ```
 
@@ -350,34 +358,35 @@ ion-modal::part(backdrop) {
 
 `ion-popover` は Shadow DOM を使用するようになりました。 `ion-popover` の内部をターゲットとするスタイルは、[ion-popover CSS Variables](../api/popover#css-custom-properties) または [ion-popover CSS Shadow Parts](../api/popover#css-shadow-parts) を使用するように更新してください。
 
-
 **Before**
+
 ```css
 ion-popover .popover-arrow {
-  ...
+  ...;
 }
 
 ion-popover ion-backdrop {
-  ...
+  ...;
 }
 
 ion-popover .popover-content {
-  ...
+  ...;
 }
 ```
 
 **After**
+
 ```css
 ion-popover::part(arrow) {
-  ...
+  ...;
 }
 
 ion-popover::part(backdrop) {
-  ...
+  ...;
 }
 
 ion-popover::part(content) {
-  ...
+  ...;
 }
 ```
 
@@ -395,7 +404,7 @@ ion-popover::part(content) {
 
 ### ブラウザサポート
 
-Ionicがサポートしているブラウザのリストが変更されました。 [ブラウザサポートガイド](../reference/browser-support) を確認し、サポートされているブラウザにアプリをデプロイするようにしましょう。
+Ionic がサポートしているブラウザのリストが変更されました。 [ブラウザサポートガイド](../reference/browser-support) を確認し、サポートされているブラウザにアプリをデプロイするようにしましょう。
 
 If you have a `browserslist` or `.browserslistrc` file, update it with the following content:
 
@@ -407,14 +416,13 @@ Safari >=13
 iOS >=13
 ```
 
-
 ### テスト
 
-Ionic 6は、ESモジュールとして出荷されるようになりました。ESモジュールは、すべての主要なブラウザでサポートされており、開発者のエクスペリエンスとコードのメンテナンス性を向上させることができます。Jestでテストする開発者は、Jest 27の時点でJestがES Modulesを完全にサポートしていないため、Jestの設定を更新する必要があります。
+Ionic 6 は、ES モジュールとして出荷されるようになりました。ES モジュールは、すべての主要なブラウザでサポートされており、開発者のエクスペリエンスとコードのメンテナンス性を向上させることができます。Jest でテストする開発者は、Jest 27 の時点で Jest が ES Modules を完全にサポートしていないため、Jest の設定を更新する必要があります。
 
-このアップデートでは、Babelを使用してIonicのESモジュールをJestが理解できるCommonJS (CJS) 形式にコンパイルする必要があります。JestがESモジュールをサポートするようになれば、この変更は必要なくなります。JestのESモジュールサポートに関する最新情報は、https://github.com/facebook/jest/issues/9430 を参照してください。
+このアップデートでは、Babel を使用して Ionic の ES モジュールを Jest が理解できる CommonJS (CJS) 形式にコンパイルする必要があります。Jest が ES モジュールをサポートするようになれば、この変更は必要なくなります。Jest の ES モジュールサポートに関する最新情報は、https://github.com/facebook/jest/issues/9430 を参照してください。
 
-新しいIonicアプリを新しく始める場合、この設定はスターターアプリケーションで行われます。既存のIonicアプリをお持ちの方は、以下の手順でJestをIonic 6で動作させることができます。
+新しい Ionic アプリを新しく始める場合、この設定はスターターアプリケーションで行われます。既存の Ionic アプリをお持ちの方は、以下の手順で Jest を Ionic 6 で動作させることができます。
 
 1. Jest の設定に、関連する Ionic パッケージを含む `transformIgnorePatterns` フィールドを追加します。これは通常 `jest.config.js` または `package.json` の `jest` フィールドに含まれています。
 
@@ -435,10 +443,10 @@ module.exports = {
 ```
 
 :::note
-Ionic ReactまたはIonic Vueを使用している場合、適切なパッケージを `transformIgnorePatterns` 配列に追加してください。Ionic Reactの場合は、 `@ionic/react` と `@ionic/react-router` がこれにあたります。Ionic Vueの場合は、 `@ionic/vue` と `@ionic/vue-router` が含まれます。
+Ionic React または Ionic Vue を使用している場合、適切なパッケージを `transformIgnorePatterns` 配列に追加してください。Ionic React の場合は、 `@ionic/react` と `@ionic/react-router` がこれにあたります。Ionic Vue の場合は、 `@ionic/vue` と `@ionic/vue-router` が含まれます。
 :::
 
-Create React App (CRA) を使用している開発者にとっては、現在のところ Jest 設定ファイルの `transformIgnorePatterns` を更新する方法がありません。これはCRAの制限であり、Ionicがコントロールできることではありません。しかし、`react-scripts test` コマンドに直接 `transformIgnorePatterns` を渡すことはできます。
+Create React App (CRA) を使用している開発者にとっては、現在のところ Jest 設定ファイルの `transformIgnorePatterns` を更新する方法がありません。これは CRA の制限であり、Ionic がコントロールできることではありません。しかし、`react-scripts test` コマンドに直接 `transformIgnorePatterns` を渡すことはできます。
 
 ```json title="package.json"
 "scripts": {
@@ -455,6 +463,6 @@ Create React App (CRA) を使用している開発者にとっては、現在の
 
 ## アップグレートへの助けが必要？
 
-[Ionic 6 Breaking Changes Guide](https://github.com/ionic-team/ionic-framework/blob/main/BREAKING.md) を必ずご覧ください。デフォルトのプロパティとCSS変数の値について、開発者が知っておくべき変更がいくつかありました。このページでは、ユーザーによる操作が必要な変更点のみを掲載しています。 
+[Ionic 6 Breaking Changes Guide](https://github.com/ionic-team/ionic-framework/blob/main/BREAKING.md) を必ずご覧ください。デフォルトのプロパティと CSS 変数の値について、開発者が知っておくべき変更がいくつかありました。このページでは、ユーザーによる操作が必要な変更点のみを掲載しています。
 
 アップグレードに助けが必要な場合、 [Ionic Forum](https://forum.ionicframework.com/) にスレッドを立ててください。

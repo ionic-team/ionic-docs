@@ -145,8 +145,9 @@ module.exports = {
           position: 'left',
         },
         {
-          href: `https://ionicframework.jp/case/`,
-          label: 'Ionic採用事例をみよう',
+          type: 'doc',
+          docId: 'updating/7-0',
+          text: 'Ionic v7 アップグレードガイド',
           position: 'left',
           className: 'cta',
         },

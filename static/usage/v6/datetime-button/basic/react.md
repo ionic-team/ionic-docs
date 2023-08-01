@@ -5,7 +5,7 @@ function Example() {
   return (
     <>
       <IonDatetimeButton datetime="datetime"></IonDatetimeButton>
-      
+
       <IonModal keepContentsMounted={true}>
         <IonDatetime id="datetime"></IonDatetime>
       </IonModal>

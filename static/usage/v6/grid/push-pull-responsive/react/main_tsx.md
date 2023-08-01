@@ -28,12 +28,24 @@ function Example() {
       <b>Switch first and last 3 columns for xs breakpoints, reverse columns for lg and up</b>
       <IonGrid>
         <IonRow>
-          <IonCol push="6" push-lg="10">1</IonCol>
-          <IonCol push="6" push-lg="6">2</IonCol>
-          <IonCol push="6" push-lg="2">3</IonCol>
-          <IonCol pull="6" pull-lg="2">4</IonCol>
-          <IonCol pull="6" pull-lg="6">5</IonCol>
-          <IonCol pull="6" pull-lg="10">6</IonCol>
+          <IonCol push="6" push-lg="10">
+            1
+          </IonCol>
+          <IonCol push="6" push-lg="6">
+            2
+          </IonCol>
+          <IonCol push="6" push-lg="2">
+            3
+          </IonCol>
+          <IonCol pull="6" pull-lg="2">
+            4
+          </IonCol>
+          <IonCol pull="6" pull-lg="6">
+            5
+          </IonCol>
+          <IonCol pull="6" pull-lg="10">
+            6
+          </IonCol>
         </IonRow>
       </IonGrid>
     </>

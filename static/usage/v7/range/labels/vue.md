@@ -1,20 +1,14 @@
 ```html
 <template>
-  <ion-range label-placement="start">
-    <div slot="label">Label at the Start</div>
-  </ion-range>
-  
+  <ion-range label-placement="start" label="Label at the Start"></ion-range>
+
   <br />
-  
-  <ion-range label-placement="end">
-    <div slot="label">Label at the End</div>
-  </ion-range>
-  
+
+  <ion-range label-placement="end" label="Label at the End"></ion-range>
+
   <br />
-  
-  <ion-range label-placement="fixed">
-    <div slot="label">Fixed Width Label</div>
-  </ion-range>
+
+  <ion-range label-placement="fixed" label="Fixed Width Label"></ion-range>
 </template>
 
 <script lang="ts">

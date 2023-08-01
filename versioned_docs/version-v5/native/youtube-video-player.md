@@ -51,14 +51,14 @@ Plays YouTube videos in Native YouTube App
 >
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
-      $ npm install cordova-plugin-youtube-video-player {'\n'}$ npm install @awesome-cordova-plugins/youtube-video-player {'\n'}$
-      ionic cap sync
+      $ npm install cordova-plugin-youtube-video-player {'\n'}$ npm install
+      @awesome-cordova-plugins/youtube-video-player {'\n'}$ ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
-      $ ionic cordova plugin add cordova-plugin-youtube-video-player {'\n'}$ npm install @awesome-cordova-plugins/youtube-video-player{' '}
-      {'\n'}
+      $ ionic cordova plugin add cordova-plugin-youtube-video-player {'\n'}$ npm install
+      @awesome-cordova-plugins/youtube-video-player {'\n'}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">

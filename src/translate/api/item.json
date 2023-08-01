@@ -22,11 +22,11 @@
     },
     {
       "name": "slot",
-      "text": "helper - Content is placed under the item and displayed when no error is detected."
+      "text": "helper - Content is placed under the item and displayed when no error is detected. **DEPRECATED** Use the \"helperText\" property on ion-input or ion-textarea instead."
     },
     {
       "name": "slot",
-      "text": "error - Content is placed under the item and displayed when an error is detected."
+      "text": "error - Content is placed under the item and displayed when an error is detected. **DEPRECATED** Use the \"errorText\" property on ion-input or ion-textarea instead."
     },
     {
       "name": "part",
@@ -118,8 +118,14 @@
       "attr": "counter",
       "reflectToAttr": false,
       "docs": "If `true`, a character counter will display the ratio of characters used and the total character limit. Only applies when the `maxlength` property is set on the inner `ion-input` or `ion-textarea`.",
-      "docsTags": [],
+      "docsTags": [
+        {
+          "name": "deprecated",
+          "text": "Use the `counter` property on `ion-input` or `ion-textarea` instead."
+        }
+      ],
       "default": "false",
+      "deprecation": "Use the `counter` property on `ion-input` or `ion-textarea` instead.",
       "values": [
         {
           "type": "boolean"
@@ -134,7 +140,13 @@
       "mutable": false,
       "reflectToAttr": false,
       "docs": "A callback used to format the counter text.\nBy default the counter text is set to \"itemLength / maxLength\".",
-      "docsTags": [],
+      "docsTags": [
+        {
+          "name": "deprecated",
+          "text": "Use the `counterFormatter` property on `ion-input` or `ion-textarea` instead."
+        }
+      ],
+      "deprecation": "Use the `counterFormatter` property on `ion-input` or `ion-textarea` instead.",
       "values": [
         {
           "type": "((inputLength: number, maxLength: number) => string)"
@@ -224,7 +236,7 @@
       "mutable": false,
       "attr": "fill",
       "reflectToAttr": false,
-      "docs": "The fill for the item. If `'solid'` the item will have a background. If\n`'outline'` the item will be transparent with a border. Only available in `md` mode.",
+      "docs": "The fill for the item. If `\"solid\"` the item will have a background. If\n`\"outline\"` the item will be transparent with a border. Only available in `md` mode.",
       "docsTags": [],
       "values": [
         {
@@ -443,7 +455,7 @@
   "events": [],
   "listeners": [
     {
-      "event": "ionChange",
+      "event": "ionInput",
       "capture": false,
       "passive": false
     },
@@ -646,11 +658,11 @@
     },
     {
       "name": "error",
-      "docs": "Content is placed under the item and displayed when an error is detected."
+      "docs": "Content is placed under the item and displayed when an error is detected. **DEPRECATED** Use the \"errorText\" property on ion-input or ion-textarea instead."
     },
     {
       "name": "helper",
-      "docs": "Content is placed under the item and displayed when no error is detected."
+      "docs": "Content is placed under the item and displayed when no error is detected. **DEPRECATED** Use the \"helperText\" property on ion-input or ion-textarea instead."
     },
     {
       "name": "start",

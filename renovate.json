@@ -1,0 +1,25 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": ["config:base"],
+  "packageRules": [
+    {
+      "matchPackagePatterns": ["^@ionic/"],
+      "groupName": "ionic"
+    },
+    {
+      "matchPackagePatterns": ["^@angular/"],
+      "groupName": "angular"
+    },
+    {
+      "matchPackagePatterns": ["^@ionic/"],
+      "allowedVersions": "^6.0.0",
+      "matchFileNames": ["static/code/stackblitz/v6/**/package.json"]
+    }
+  ],
+  "dependencyDashboard": true,
+  "minimumReleaseAge": "3 days",
+  "rebaseWhen": "never",
+  "schedule": ["every weekday before 11am"],
+  "semanticCommits": "enabled",
+  "includePaths": ["static/code/stackblitz"]
+}

@@ -10,6 +10,10 @@
     },
     {
       "name": "slot",
+      "text": "label - The label text to associate with the range. Use the \"labelPlacement\" property to control where the label is placed relative to the range."
+    },
+    {
+      "name": "slot",
       "text": "start - Content is placed to the left of the range slider in LTR, and to the right in RTL."
     },
     {
@@ -119,19 +123,21 @@
     },
     {
       "name": "debounce",
-      "type": "number",
+      "type": "number | undefined",
       "mutable": false,
       "attr": "debounce",
       "reflectToAttr": false,
-      "docs": "How long, in milliseconds, to wait to trigger the\n`ionChange` event after each change in the range value.\nThis also impacts form bindings such as `ngModel` or `v-model`.",
+      "docs": "How long, in milliseconds, to wait to trigger the\n`ionInput` event after each change in the range value.",
       "docsTags": [],
-      "default": "0",
       "values": [
         {
           "type": "number"
+        },
+        {
+          "type": "undefined"
         }
       ],
-      "optional": false,
+      "optional": true,
       "required": false
     },
     {
@@ -166,6 +172,70 @@
         }
       ],
       "optional": false,
+      "required": false
+    },
+    {
+      "name": "label",
+      "type": "string | undefined",
+      "mutable": false,
+      "attr": "label",
+      "reflectToAttr": false,
+      "docs": "The text to display as the control's label. Use this over the `label` slot if\nyou only need plain text. The `label` property will take priority over the\n`label` slot if both are used.",
+      "docsTags": [],
+      "values": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "undefined"
+        }
+      ],
+      "optional": true,
+      "required": false
+    },
+    {
+      "name": "labelPlacement",
+      "type": "\"end\" | \"fixed\" | \"start\"",
+      "mutable": false,
+      "attr": "label-placement",
+      "reflectToAttr": false,
+      "docs": "Where to place the label relative to the range.\n`\"start\"`: The label will appear to the left of the range in LTR and to the right in RTL.\n`\"end\"`: The label will appear to the right of the range in LTR and to the left in RTL.\n`\"fixed\"`: The label has the same behavior as `\"start\"` except it also has a fixed width. Long text will be truncated with ellipses (\"...\").",
+      "docsTags": [],
+      "default": "'start'",
+      "values": [
+        {
+          "value": "end",
+          "type": "string"
+        },
+        {
+          "value": "fixed",
+          "type": "string"
+        },
+        {
+          "value": "start",
+          "type": "string"
+        }
+      ],
+      "optional": false,
+      "required": false
+    },
+    {
+      "name": "legacy",
+      "type": "boolean | undefined",
+      "mutable": false,
+      "attr": "legacy",
+      "reflectToAttr": false,
+      "docs": "Set the `legacy` property to `true` to forcibly use the legacy form control markup.\nIonic will only opt components in to the modern form markup when they are\nusing either the `aria-label` attribute or the `label` property. As a result,\nthe `legacy` property should only be used as an escape hatch when you want to\navoid this automatic opt-in behavior.\nNote that this property will be removed in an upcoming major release\nof Ionic, and all form components will be opted-in to using the modern form markup.",
+      "docsTags": [],
+      "values": [
+        {
+          "type": "boolean"
+        },
+        {
+          "type": "undefined"
+        }
+      ],
+      "optional": true,
       "required": false
     },
     {
@@ -231,7 +301,7 @@
       "reflectToAttr": false,
       "docs": "The name of the control, which is submitted with the form data.",
       "docsTags": [],
-      "default": "''",
+      "default": "this.rangeId",
       "values": [
         {
           "type": "string"
@@ -365,7 +435,7 @@
       "bubbles": true,
       "cancelable": true,
       "composed": true,
-      "docs": "Emitted when the value property has changed.",
+      "docs": "The `ionChange` event is fired for `<ion-range>` elements when the user\nmodifies the element's value:\n- When the user releases the knob after dragging;\n- When the user moves the knob with keyboard arrows\n\n`ionChange` is not fired when the value is changed programmatically.",
       "docsTags": []
     },
     {
@@ -375,6 +445,15 @@
       "cancelable": true,
       "composed": true,
       "docs": "Emitted when the range has focus.",
+      "docsTags": []
+    },
+    {
+      "event": "ionInput",
+      "detail": "RangeChangeEventDetail",
+      "bubbles": true,
+      "cancelable": true,
+      "composed": true,
+      "docs": "The `ionInput` event is fired for `<ion-range>` elements when the value\nis modified. Unlike `ionChange`, `ionInput` is fired continuously\nwhile the user is dragging the knob.",
       "docsTags": []
     },
     {
@@ -458,6 +537,10 @@
     {
       "name": "end",
       "docs": "Content is placed to the right of the range slider in LTR, and to the left in RTL."
+    },
+    {
+      "name": "label",
+      "docs": "The label text to associate with the range. Use the \"labelPlacement\" property to control where the label is placed relative to the range."
     },
     {
       "name": "start",

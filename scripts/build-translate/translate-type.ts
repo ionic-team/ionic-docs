@@ -22,7 +22,7 @@ export const getTranslateType = async () => {
       key: 'name',
       contentsKey: 'commands',
       markdown: 'description',
-      translateTarget: ["inputs"],
+      translateTarget: ['inputs'],
       translateTargetKey: 'summary',
       resource: require('../data/cli.json'),
     },
@@ -35,6 +35,6 @@ export const getTranslateType = async () => {
       translateTarget: [],
       translateTargetKey: 'undefined',
       resource: require('../data/native.json'),
-    }
+    },
   ];
-}
+};

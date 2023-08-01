@@ -5,6 +5,13 @@ sidebar_label: 'ion-radio-group'
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
+import Props from '@ionic-internal/component-api/v5/radio-group/props.md';
+import Events from '@ionic-internal/component-api/v5/radio-group/events.md';
+import Methods from '@ionic-internal/component-api/v5/radio-group/methods.md';
+import Parts from '@ionic-internal/component-api/v5/radio-group/parts.md';
+import CustomProps from '@ionic-internal/component-api/v5/radio-group/custom-props.md';
+import Slots from '@ionic-internal/component-api/v5/radio-group/slots.md';
+
 # ion-radio-group
 
 A radio group is a group of [radio buttons](radio.md). It allows
@@ -252,35 +259,24 @@ export class RadioGroupExample {
 
 ## Properties
 
-### allowEmptySelection
-
-|                 |                                          |
-| --------------- | ---------------------------------------- |
-| **Description** | If `true`, the radios can be deselected. |
-| **Attribute**   | `allow-empty-selection`                  |
-| **Type**        | `boolean`                                |
-| **Default**     | `false`                                  |
-
-### name
-
-|                 |                                                                 |
-| --------------- | --------------------------------------------------------------- |
-| **Description** | The name of the control, which is submitted with the form data. |
-| **Attribute**   | `name`                                                          |
-| **Type**        | `string`                                                        |
-| **Default**     | `this.inputId`                                                  |
-
-### value
-
-|                 |                               |
-| --------------- | ----------------------------- |
-| **Description** | the value of the radio group. |
-| **Attribute**   | `value`                       |
-| **Type**        | `any`                         |
-| **Default**     | `undefined`                   |
+<Props />
 
 ## Events
 
-| Name        | Description                         |
-| ----------- | ----------------------------------- |
-| `ionChange` | Emitted when the value has changed. |
+<Events />
+
+## Methods
+
+<Methods />
+
+## CSS Shadow Parts
+
+<Parts />
+
+## CSS Custom Properties
+
+<CustomProps />
+
+## Slots
+
+<Slots />

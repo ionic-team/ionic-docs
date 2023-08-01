@@ -9,6 +9,10 @@
       "text": "{\"ios\" | \"md\"} mode - The mode determines which platform styles to use."
     },
     {
+      "name": "slot",
+      "text": "label - The label text to associate with the select. Use the `labelPlacement` property to control where the label is placed relative to the select. Use this if you need to render a label with custom HTML."
+    },
+    {
       "name": "part",
       "text": "placeholder - The text displayed in the select when there is no value."
     },
@@ -19,6 +23,14 @@
     {
       "name": "part",
       "text": "icon - The select icon container."
+    },
+    {
+      "name": "part",
+      "text": "container - The container for the selected text or placeholder."
+    },
+    {
+      "name": "part",
+      "text": "label - The label text describing the select."
     }
   ],
   "usage": {},
@@ -38,6 +50,61 @@
         }
       ],
       "optional": false,
+      "required": false
+    },
+    {
+      "name": "color",
+      "type": "\"danger\" | \"dark\" | \"light\" | \"medium\" | \"primary\" | \"secondary\" | \"success\" | \"tertiary\" | \"warning\" | string & Record<never, never> | undefined",
+      "mutable": false,
+      "attr": "color",
+      "reflectToAttr": true,
+      "docs": "The color to use from your application's color palette.\nDefault options are: `\"primary\"`, `\"secondary\"`, `\"tertiary\"`, `\"success\"`, `\"warning\"`, `\"danger\"`, `\"light\"`, `\"medium\"`, and `\"dark\"`.\nFor more information on colors, see [theming](/docs/theming/basics).\n\nThis property is only available when using the modern select syntax.",
+      "docsTags": [],
+      "values": [
+        {
+          "value": "danger",
+          "type": "string"
+        },
+        {
+          "value": "dark",
+          "type": "string"
+        },
+        {
+          "value": "light",
+          "type": "string"
+        },
+        {
+          "value": "medium",
+          "type": "string"
+        },
+        {
+          "value": "primary",
+          "type": "string"
+        },
+        {
+          "value": "secondary",
+          "type": "string"
+        },
+        {
+          "value": "success",
+          "type": "string"
+        },
+        {
+          "value": "tertiary",
+          "type": "string"
+        },
+        {
+          "value": "warning",
+          "type": "string"
+        },
+        {
+          "type": "string & Record<never, never>"
+        },
+        {
+          "type": "undefined"
+        }
+      ],
+      "optional": true,
       "required": false
     },
     {
@@ -83,6 +150,49 @@
       "required": false
     },
     {
+      "name": "expandedIcon",
+      "type": "string | undefined",
+      "mutable": false,
+      "attr": "expanded-icon",
+      "reflectToAttr": false,
+      "docs": "The toggle icon to show when the select is open. If defined, the icon\nrotation behavior in `md` mode will be disabled. If undefined, `toggleIcon`\nwill be used for when the select is both open and closed.",
+      "docsTags": [],
+      "values": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "undefined"
+        }
+      ],
+      "optional": true,
+      "required": false
+    },
+    {
+      "name": "fill",
+      "type": "\"outline\" | \"solid\" | undefined",
+      "mutable": false,
+      "attr": "fill",
+      "reflectToAttr": false,
+      "docs": "The fill for the item. If `\"solid\"` the item will have a background. If\n`\"outline\"` the item will be transparent with a border. Only available in `md` mode.",
+      "docsTags": [],
+      "values": [
+        {
+          "value": "outline",
+          "type": "string"
+        },
+        {
+          "value": "solid",
+          "type": "string"
+        },
+        {
+          "type": "undefined"
+        }
+      ],
+      "optional": true,
+      "required": false
+    },
+    {
       "name": "interface",
       "type": "\"action-sheet\" | \"alert\" | \"popover\"",
       "mutable": false,
@@ -123,6 +233,107 @@
         }
       ],
       "optional": false,
+      "required": false
+    },
+    {
+      "name": "justify",
+      "type": "\"end\" | \"space-between\" | \"start\"",
+      "mutable": false,
+      "attr": "justify",
+      "reflectToAttr": false,
+      "docs": "How to pack the label and select within a line.\n`justify` does not apply when the label and select\nare on different lines when `labelPlacement` is set to\n`\"floating\"` or `\"stacked\"`.\n`\"start\"`: The label and select will appear on the left in LTR and\non the right in RTL.\n`\"end\"`: The label and select will appear on the right in LTR and\non the left in RTL.\n`\"space-between\"`: The label and select will appear on opposite\nends of the line with space between the two elements.",
+      "docsTags": [],
+      "default": "'space-between'",
+      "values": [
+        {
+          "value": "end",
+          "type": "string"
+        },
+        {
+          "value": "space-between",
+          "type": "string"
+        },
+        {
+          "value": "start",
+          "type": "string"
+        }
+      ],
+      "optional": false,
+      "required": false
+    },
+    {
+      "name": "label",
+      "type": "string | undefined",
+      "mutable": false,
+      "attr": "label",
+      "reflectToAttr": false,
+      "docs": "The visible label associated with the select.\n\nUse this if you need to render a plaintext label.\n\nThe `label` property will take priority over the `label` slot if both are used.",
+      "docsTags": [],
+      "values": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "undefined"
+        }
+      ],
+      "optional": true,
+      "required": false
+    },
+    {
+      "name": "labelPlacement",
+      "type": "\"end\" | \"fixed\" | \"floating\" | \"stacked\" | \"start\" | undefined",
+      "mutable": false,
+      "attr": "label-placement",
+      "reflectToAttr": false,
+      "docs": "Where to place the label relative to the select.\n`\"start\"`: The label will appear to the left of the select in LTR and to the right in RTL.\n`\"end\"`: The label will appear to the right of the select in LTR and to the left in RTL.\n`\"floating\"`: The label will appear smaller and above the select when the select is focused or it has a value. Otherwise it will appear on top of the select.\n`\"stacked\"`: The label will appear smaller and above the select regardless even when the select is blurred or has no value.\n`\"fixed\"`: The label has the same behavior as `\"start\"` except it also has a fixed width. Long text will be truncated with ellipses (\"...\").\nWhen using `\"floating\"` or `\"stacked\"` we recommend initializing the select with either a `value` or a `placeholder`.",
+      "docsTags": [],
+      "default": "'start'",
+      "values": [
+        {
+          "value": "end",
+          "type": "string"
+        },
+        {
+          "value": "fixed",
+          "type": "string"
+        },
+        {
+          "value": "floating",
+          "type": "string"
+        },
+        {
+          "value": "stacked",
+          "type": "string"
+        },
+        {
+          "value": "start",
+          "type": "string"
+        },
+        {
+          "type": "undefined"
+        }
+      ],
+      "optional": true,
+      "required": false
+    },
+    {
+      "name": "legacy",
+      "type": "boolean | undefined",
+      "mutable": false,
+      "attr": "legacy",
+      "reflectToAttr": false,
+      "docs": "Set the `legacy` property to `true` to forcibly use the legacy form control markup.\nIonic will only opt components in to the modern form markup when they are\nusing either the `aria-label` attribute or the `label` property. As a result,\nthe `legacy` property should only be used as an escape hatch when you want to\navoid this automatic opt-in behavior.\nNote that this property will be removed in an upcoming major release\nof Ionic, and all form components will be opted-in to using the modern form markup.",
+      "docsTags": [],
+      "values": [
+        {
+          "type": "boolean"
+        },
+        {
+          "type": "undefined"
+        }
+      ],
+      "optional": true,
       "required": false
     },
     {
@@ -239,12 +450,51 @@
       "required": false
     },
     {
+      "name": "shape",
+      "type": "\"round\" | undefined",
+      "mutable": false,
+      "attr": "shape",
+      "reflectToAttr": false,
+      "docs": "The shape of the select. If \"round\" it will have an increased border radius.",
+      "docsTags": [],
+      "values": [
+        {
+          "value": "round",
+          "type": "string"
+        },
+        {
+          "type": "undefined"
+        }
+      ],
+      "optional": true,
+      "required": false
+    },
+    {
+      "name": "toggleIcon",
+      "type": "string | undefined",
+      "mutable": false,
+      "attr": "toggle-icon",
+      "reflectToAttr": false,
+      "docs": "The toggle icon to use. Defaults to `chevronExpand` for `ios` mode,\nor `caretDownSharp` for `md` mode.",
+      "docsTags": [],
+      "values": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "undefined"
+        }
+      ],
+      "optional": true,
+      "required": false
+    },
+    {
       "name": "value",
       "type": "any",
       "mutable": true,
       "attr": "value",
       "reflectToAttr": false,
-      "docs": "the value of the select.",
+      "docs": "The value of the select.",
       "docsTags": [],
       "values": [
         {
@@ -323,6 +573,46 @@
   "listeners": [],
   "styles": [
     {
+      "name": "--background",
+      "annotation": "prop",
+      "docs": "Background of the select"
+    },
+    {
+      "name": "--border-color",
+      "annotation": "prop",
+      "docs": "Color of the select border"
+    },
+    {
+      "name": "--border-radius",
+      "annotation": "prop",
+      "docs": "Radius of the select border. A large radius may display unevenly when using fill=\"outline\"; if needed, use shape=\"round\" instead or increase --padding-start."
+    },
+    {
+      "name": "--border-style",
+      "annotation": "prop",
+      "docs": "Style of the select border"
+    },
+    {
+      "name": "--border-width",
+      "annotation": "prop",
+      "docs": "Width of the select border"
+    },
+    {
+      "name": "--highlight-color-focused",
+      "annotation": "prop",
+      "docs": "The color of the highlight on the select when focused"
+    },
+    {
+      "name": "--highlight-color-invalid",
+      "annotation": "prop",
+      "docs": "The color of the highlight on the select when invalid"
+    },
+    {
+      "name": "--highlight-color-valid",
+      "annotation": "prop",
+      "docs": "The color of the highlight on the select when valid"
+    },
+    {
       "name": "--padding-bottom",
       "annotation": "prop",
       "docs": "Bottom padding of the select"
@@ -351,13 +641,31 @@
       "name": "--placeholder-opacity",
       "annotation": "prop",
       "docs": "Opacity of the select placeholder text"
+    },
+    {
+      "name": "--ripple-color",
+      "annotation": "prop",
+      "docs": "The color of the ripple effect on MD mode."
     }
   ],
-  "slots": [],
+  "slots": [
+    {
+      "name": "label",
+      "docs": "The label text to associate with the select. Use the `labelPlacement` property to control where the label is placed relative to the select. Use this if you need to render a label with custom HTML."
+    }
+  ],
   "parts": [
+    {
+      "name": "container",
+      "docs": "The container for the selected text or placeholder."
+    },
     {
       "name": "icon",
       "docs": "The select icon container."
+    },
+    {
+      "name": "label",
+      "docs": "The label text describing the select."
     },
     {
       "name": "placeholder",
@@ -373,14 +681,16 @@
     "ion-select-popover",
     "ion-popover",
     "ion-action-sheet",
-    "ion-alert"
+    "ion-alert",
+    "ion-icon"
   ],
   "dependencyGraph": {
     "ion-select": [
       "ion-select-popover",
       "ion-popover",
       "ion-action-sheet",
-      "ion-alert"
+      "ion-alert",
+      "ion-icon"
     ],
     "ion-select-popover": [
       "ion-item",

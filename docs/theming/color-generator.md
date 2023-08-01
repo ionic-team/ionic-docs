@@ -14,6 +14,6 @@ import ColorGenerator from '@components/page/theming/ColorGenerator';
   />
 </head>
 
-アプリのUIにカスタムカラーパレットを作成します。色の16進数値を更新し、右のデモアプリで確認した後、生成されたコードをIonicプロジェクトに直接コピー＆ペーストしてください。
+アプリの UI にカスタムカラーパレットを作成します。色の 16 進数値を更新し、右のデモアプリで確認した後、生成されたコードを Ionic プロジェクトに直接コピー＆ペーストしてください。
 
 <ColorGenerator />

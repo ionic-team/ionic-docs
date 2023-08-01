@@ -15,7 +15,7 @@
 
       return {
         buffer,
-        progress
+        progress,
       };
     },
     mounted() {
@@ -32,7 +32,7 @@
           }, 1000);
         }
       }, 1000);
-    }
+    },
   });
 </script>
 ```

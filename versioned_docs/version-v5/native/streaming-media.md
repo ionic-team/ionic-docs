@@ -56,13 +56,14 @@ This plugin allows you to stream audio and video in a fullscreen, native player 
 >
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
-      $ npm install cordova-plugin-streaming-media {'\n'}$ npm install @awesome-cordova-plugins/streaming-media {'\n'}$ ionic cap
-      sync
+      $ npm install cordova-plugin-streaming-media {'\n'}$ npm install @awesome-cordova-plugins/streaming-media {'\n'}$
+      ionic cap sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">
     <CodeBlock className="language-shell">
-      $ ionic cordova plugin add cordova-plugin-streaming-media {'\n'}$ npm install @awesome-cordova-plugins/streaming-media {'\n'}
+      $ ionic cordova plugin add cordova-plugin-streaming-media {'\n'}$ npm install
+      @awesome-cordova-plugins/streaming-media {'\n'}
     </CodeBlock>
   </TabItem>
   <TabItem value="Enterprise">

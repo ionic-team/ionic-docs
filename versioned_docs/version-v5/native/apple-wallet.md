@@ -51,7 +51,8 @@ A Cordova plugin that enables users from Add Payment Cards to their Apple Wallet
 >
   <TabItem value="Capacitor">
     <CodeBlock className="language-shell">
-      $ npm install cordova-apple-wallet {'\n'}$ npm install @awesome-cordova-plugins/apple-wallet {'\n'}$ ionic cap sync
+      $ npm install cordova-apple-wallet {'\n'}$ npm install @awesome-cordova-plugins/apple-wallet {'\n'}$ ionic cap
+      sync
     </CodeBlock>
   </TabItem>
   <TabItem value="Cordova">

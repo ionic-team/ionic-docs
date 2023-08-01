@@ -28,7 +28,7 @@
       },
       "signature": "getSelected() => Promise<string | undefined>",
       "parameters": [],
-      "docs": "Get the currently selected tab.",
+      "docs": "Get the currently selected tab. This method is only available for vanilla JavaScript projects. The Angular, React, and Vue implementations of tabs are coupled to each framework's router.",
       "docsTags": []
     },
     {
@@ -39,7 +39,7 @@
       },
       "signature": "getTab(tab: string | HTMLIonTabElement) => Promise<HTMLIonTabElement | undefined>",
       "parameters": [],
-      "docs": "Get a specific tab by the value of its `tab` property or an element reference.",
+      "docs": "Get a specific tab by the value of its `tab` property or an element reference. This method is only available for vanilla JavaScript projects. The Angular, React, and Vue implementations of tabs are coupled to each framework's router.",
       "docsTags": [
         {
           "name": "param",
@@ -55,7 +55,7 @@
       },
       "signature": "select(tab: string | HTMLIonTabElement) => Promise<boolean>",
       "parameters": [],
-      "docs": "Select a tab by the value of its `tab` property or an element reference.",
+      "docs": "Select a tab by the value of its `tab` property or an element reference. This method is only available for vanilla JavaScript projects. The Angular, React, and Vue implementations of tabs are coupled to each framework's router.",
       "docsTags": [
         {
           "name": "param",

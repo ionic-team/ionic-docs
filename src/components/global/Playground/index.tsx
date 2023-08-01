@@ -85,16 +85,20 @@ interface UsageTargetOptions {
   files: {
     [key: string]: MdxContent;
   };
-  angularModuleOptions?: {
-    /**
-     * The list of import declarations to add to the `AppModule`.
-     * Accepts value formatted as: `'import { FooComponent } from './foo.component';'`.
-     */
-    imports: string[];
-    /**
-     * The list of class name declarations to add to the `AppModule`.
-     */
-    declarations?: string[];
+  /**
+   * The list of dependencies to use in the Stackblitz example.
+   * The key is the package name and the value is the version.
+   * The version must be a valid semver range.
+   *
+   * For example:
+   * ```ts
+   * dependencies: {
+   *  '@maskito/core': '^0.11.0',
+   * }
+   * ```
+   */
+  dependencies?: {
+    [key: string]: string;
   };
 }
 
@@ -166,7 +170,7 @@ export default function Playground({
 
     // Otherwise, default to the first target passed.
     return Object.keys(code)[0];
-  }
+  };
 
   /**
    * Developers can set a predefined size
@@ -336,15 +340,13 @@ export default function Playground({
       // using outerText will preserve line breaks for formatting in Stackblitz editor
       codeBlock = codeRef.current.querySelector('code').outerText;
     } else {
-      const codeUsageTarget = code[usageTarget] as UsageTargetOptions;
-      editorOptions.angularModuleOptions = codeUsageTarget.angularModuleOptions;
-
       editorOptions.files = Object.keys(codeSnippets[usageTarget])
         .map((fileName) => ({
           [fileName]: hostRef.current!.querySelector<HTMLElement>(`#${getCodeSnippetId(usageTarget, fileName)} code`)
             .outerText,
         }))
         .reduce((acc, curr) => ({ ...acc, ...curr }), {});
+      editorOptions.dependencies = (code[usageTarget] as UsageTargetOptions).dependencies;
     }
 
     switch (usageTarget) {
@@ -420,7 +422,7 @@ export default function Playground({
         return null;
       }
       return (
-        <PlaygroundTabs className="playground__tabs">
+        <PlaygroundTabs groupId={usageTarget} className="playground__tabs">
           {Object.keys(codeSnippets[usageTarget]).map((fileName) => (
             <TabItem
               className="playground__tab-item"
@@ -455,7 +457,6 @@ export default function Playground({
         <div className="playground__control-toolbar">
           <div className="playground__control-group">
             {sortedUsageTargets.map((lang) => {
-
               /**
                * If code was not passed for this target
                * then we should disable the button.
@@ -463,14 +464,14 @@ export default function Playground({
               const langValue = UsageTarget[lang];
               const hasCode = code[langValue] !== undefined;
               return (
-                  <CodeBlockButton
+                <CodeBlockButton
                   key={`code-block-${lang}`}
                   language={lang}
                   usageTarget={usageTarget}
                   setUsageTarget={setUsageTarget}
                   disabled={!hasCode}
-                />)
-              ;
+                />
+              );
             })}
           </div>
           <div className="playground__control-group">
@@ -586,22 +587,30 @@ export default function Playground({
         </div>
         {renderIframes
           ? [
-              <div className="playground__preview">
+              <div className="playground__preview" key="preview">
                 {!iframesLoaded && renderLoadingScreen()}
                 {/*
-              We render two iframes, one for each mode.
-              When the set mode changes, we hide one frame and
-              show the other. This is done to avoid flickering
-              and doing unnecessary reloads when switching modes.
-            */}
+                  We render two iframes, one for each mode.
+                  When the set mode changes, we hide one frame and
+                  show the other. This is done to avoid flickering
+                  and doing unnecessary reloads when switching modes.
+                */}
                 {devicePreview
                   ? [
-                      <div className={!isIOS ? 'frame-hidden' : 'frame-visible'} aria-hidden={!isIOS ? 'true' : null}>
+                      <div
+                        key="ios-iframe"
+                        className={!isIOS ? 'frame-hidden' : 'frame-visible'}
+                        aria-hidden={!isIOS ? 'true' : null}
+                      >
                         <device-preview mode="ios">
                           <iframe height={frameSize} ref={(ref) => handleFrameRef(ref, 'ios')} src={sourceiOS}></iframe>
                         </device-preview>
                       </div>,
-                      <div className={!isMD ? 'frame-hidden' : 'frame-visible'} aria-hidden={!isMD ? 'true' : null}>
+                      <div
+                        key="md-iframe"
+                        className={!isMD ? 'frame-hidden' : 'frame-visible'}
+                        aria-hidden={!isMD ? 'true' : null}
+                      >
                         <device-preview mode="md">
                           <iframe height={frameSize} ref={(ref) => handleFrameRef(ref, 'md')} src={sourceMD}></iframe>
                         </device-preview>
@@ -609,6 +618,7 @@ export default function Playground({
                     ]
                   : [
                       <iframe
+                        key="ios-iframe"
                         height={frameSize}
                         className={!isIOS ? 'frame-hidden' : ''}
                         ref={(ref) => handleFrameRef(ref, 'ios')}
@@ -616,6 +626,7 @@ export default function Playground({
                         aria-hidden={!isIOS ? 'true' : null}
                       ></iframe>,
                       <iframe
+                        key="md-iframe"
                         height={frameSize}
                         className={!isMD ? 'frame-hidden' : ''}
                         ref={(ref) => handleFrameRef(ref, 'md')}

@@ -1,5 +1,5 @@
 ```html
-<ion-list>        
+<ion-list>
   <ion-item>
     <ion-label>Alert</ion-label>
     <ion-select id="customAlertSelect" interface="alert" placeholder="Select One">
@@ -8,7 +8,7 @@
       <ion-select-option value="pepperoni">Pepperoni</ion-select-option>
     </ion-select>
   </ion-item>
-        
+
   <ion-item>
     <ion-label>Popover</ion-label>
     <ion-select id="customPopoverSelect" interface="popover" placeholder="Select One">
@@ -17,7 +17,7 @@
       <ion-select-option value="red">Red</ion-select-option>
     </ion-select>
   </ion-item>
-        
+
   <ion-item>
     <ion-label>Action Sheet</ion-label>
     <ion-select id="customActionSheetSelect" interface="action-sheet" placeholder="Select One">
@@ -34,7 +34,7 @@
     header: 'Pizza Toppings',
     subHeader: 'Select your favorite topping',
     message: 'Choose only one',
-    translucent: true
+    translucent: true,
   };
   customAlertSelect.interfaceOptions = customAlertOptions;
 
@@ -42,14 +42,14 @@
   const customPopoverOptions = {
     header: 'Hair Color',
     subHeader: 'Select your hair color',
-    message: 'Only select your dominant hair color'
+    message: 'Only select your dominant hair color',
   };
   customPopoverSelect.interfaceOptions = customPopoverOptions;
 
   const customActionSheetSelect = document.getElementById('customActionSheetSelect');
   const customActionSheetOptions = {
     header: 'Colors',
-    subHeader: 'Select your favorite color'
+    subHeader: 'Select your favorite color',
   };
   customActionSheetSelect.interfaceOptions = customActionSheetOptions;
 </script>

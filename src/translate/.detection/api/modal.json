@@ -98,12 +98,13 @@
     },
     {
       "name": "canDismiss",
-      "type": "((data?: any, role?: string | undefined) => Promise<boolean>) | boolean | undefined",
+      "type": "((data?: any, role?: string | undefined) => Promise<boolean>) | boolean",
       "mutable": false,
       "attr": "can-dismiss",
       "reflectToAttr": false,
       "docs": "Determines whether or not a modal can dismiss\nwhen calling the `dismiss` method.\n\nIf the value is `true` or the value's function returns `true`, the modal will close when trying to dismiss.\nIf the value is `false` or the value's function returns `false`, the modal will not close when trying to dismiss.",
       "docsTags": [],
+      "default": "true",
       "values": [
         {
           "type": "((data?: any, role?: string"
@@ -113,12 +114,9 @@
         },
         {
           "type": "boolean"
-        },
-        {
-          "type": "undefined"
         }
       ],
-      "optional": true,
+      "optional": false,
       "required": false
     },
     {
@@ -337,29 +335,6 @@
       "docs": "If `true`, a backdrop will be displayed behind the modal.\nThis property controls whether or not the backdrop\ndarkens the screen when the modal is presented.\nIt does not control whether or not the backdrop\nis active or present in the DOM.",
       "docsTags": [],
       "default": "true",
-      "values": [
-        {
-          "type": "boolean"
-        }
-      ],
-      "optional": false,
-      "required": false
-    },
-    {
-      "name": "swipeToClose",
-      "type": "boolean",
-      "mutable": false,
-      "attr": "swipe-to-close",
-      "reflectToAttr": false,
-      "docs": "If `true`, the modal can be swiped to dismiss. Only applies in iOS mode.",
-      "docsTags": [
-        {
-          "name": "deprecated",
-          "text": "- To prevent modals from dismissing, use canDismiss instead."
-        }
-      ],
-      "default": "false",
-      "deprecation": "- To prevent modals from dismissing, use canDismiss instead.",
       "values": [
         {
           "type": "boolean"
