@@ -73,7 +73,7 @@ html[data-theme='dark'] {
 
   .theme-doc-sidebar-item-category-level-1 > .menu__list {
     /* removes indentation from first level categories */
-    margin: 0;
+    padding: 0;
   }
 
   .menu__list {
@@ -164,7 +164,7 @@ html[data-theme='dark'] {
   }
 
   .theme-doc-sidebar-item-category-level-1 {
-    .menu__list-item-collapsible {
+    & > .menu__list-item-collapsible {
       .menu__link {
         color: var(--sidebar-category-c);
   

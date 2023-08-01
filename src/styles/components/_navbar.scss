@@ -116,7 +116,7 @@ html[data-theme='dark'] {
           &::before {
             content: '';
             width: 20px;
-            height: 20px;
+            height: 16px;
             display: flex;
             background-color: currentColor;
             -webkit-mask-repeat: no-repeat;
@@ -189,7 +189,7 @@ html[data-theme='dark'] {
       }
     }
 
-    &__item:not(.dropdown):not(.cta) {
+    &__item:not(.dropdown):not(.cta):not(.icon-link-mask) {
       &.navbar__link {
         align-self: stretch;
         display: flex;
