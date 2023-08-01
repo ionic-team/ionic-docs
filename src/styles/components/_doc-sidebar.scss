@@ -71,6 +71,11 @@ html[data-theme='dark'] {
     display: none !important;
   }
 
+  .theme-doc-sidebar-item-category-level-1 > .menu__list {
+    /* removes indentation from first level categories */
+    padding: 0;
+  }
+
   .menu__list {
     display: block !important;
     transition: height 0.35s cubic-bezier(0.36, 0.66, 0.04, 1) 25ms !important;
@@ -157,7 +162,7 @@ html[data-theme='dark'] {
   }
 
   .theme-doc-sidebar-item-category-level-1 {
-    .menu__list-item-collapsible {
+    & > .menu__list-item-collapsible {
       .menu__link {
         color: var(--sidebar-category-c);
 

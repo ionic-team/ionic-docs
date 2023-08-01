@@ -78,8 +78,8 @@ html[data-theme='dark'] {
           height: 12px;
           mask-size: 100% 100%;
           background-color: currentColor;
-          -webkit-mask-image: url("../../static/icons/arrow-forward-outline.svg");
-            mask-image: url("../../static/icons/arrow-forward-outline.svg");
+          mask-image: url("../../static/icons/arrow-forward-outline.svg");
+          margin-inline-start: 0.125rem;
         }
 
         svg {
@@ -115,12 +115,10 @@ html[data-theme='dark'] {
           &::before {
             content: '';
             width: 20px;
-            height: 20px;
+            height: 16px;
             display: flex;
             background-color: currentColor;
-            -webkit-mask-repeat: no-repeat;
             mask-repeat: no-repeat;
-            -webkit-mask-position: center;
             mask-position: center;
             mask-size: 100% 100%;
           }
@@ -128,21 +126,18 @@ html[data-theme='dark'] {
 
         &-github {
           &::before {
-            -webkit-mask-image: url("../../static/logos/github.svg");
             mask-image: url("../../static/logos/github.svg");
           }
         }
 
         &-twitter {
           &::before {
-            -webkit-mask-image: url("../../static/logos/twitter.svg");
             mask-image: url("../../static/logos/twitter.svg");
           }
         }
 
         &-discord {
           &::before {
-            -webkit-mask-image: url("../../static/logos/discord.svg");
             mask-image: url("../../static/logos/discord.svg");
           }
         }
@@ -188,7 +183,7 @@ html[data-theme='dark'] {
       }
     }
 
-    &__item:not(.dropdown):not(.cta) {
+    &__item:not(.dropdown):not(.cta):not(.icon-link-mask) {
       &.navbar__link {
         align-self: stretch;
         display: flex;
@@ -282,8 +277,8 @@ html[data-theme='dark'] {
       height: 1.75rem;
       background: var(--navbar-separator-bg-c);
 
-      margin-inline-start: 1rem;
-      margin-inline-end: 1rem;
+      margin-inline-start: 0.5rem;
+      margin-inline-end: 0.5rem;
     }
 
     .language {
