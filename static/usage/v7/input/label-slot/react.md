@@ -7,7 +7,9 @@ function Example() {
     <IonList>
       <IonItem>
         <IonInput labelPlacement="floating" value="hi@ionic.io">
-          <div slot="label">Email <IonText color="danger">(Required)</IonText></div>
+          <div slot="label">
+            Email <IonText color="danger">(Required)</IonText>
+          </div>
         </IonInput>
       </IonItem>
     </IonList>

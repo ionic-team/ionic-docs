@@ -39,7 +39,7 @@ import Icons from '@site/static/usage/v7/item-sliding/icons/index.md';
 
 ## Expandable Options
 
-Options can be expanded to take up the full width of the item if you swipe past a certain point. This can be combined with the `ionSwipe` event on the [item options](./item-options) to call a method when the item is fully swiped.
+Options can be expanded to take up the full width of the parent `ion-item` if you swipe past a certain point. This can be combined with the `ionSwipe` event on the [item options](./item-options) to call a method when the item is fully swiped.
 
 import Expandable from '@site/static/usage/v7/item-sliding/expandable/index.md';
 
