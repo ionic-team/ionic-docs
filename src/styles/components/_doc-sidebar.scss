@@ -81,6 +81,8 @@ html[data-theme='dark'] {
     transition: height 0.35s cubic-bezier(0.36, 0.66, 0.04, 1) 25ms !important;
     will-change: initial !important;
 
+    margin-top: 0;
+
     .menu__list {
       .menu__link--sublist {
         margin-inline-start: calc(-1 * (var(--dropdown-icon-width) + var(--dropdown-icon-gap)));
