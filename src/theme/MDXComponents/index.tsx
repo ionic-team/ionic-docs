@@ -13,4 +13,3 @@ const MDXComponents: MDXComponentsObject = {
 };
 
 export default MDXComponents;
-
