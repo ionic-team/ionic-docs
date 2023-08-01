@@ -79,7 +79,8 @@ html[data-theme='dark'] {
           height: 12px;
           mask-size: 100% 100%;
           background-color: currentColor;
-            mask-image: url("../../static/icons/arrow-forward-outline.svg");
+          mask-image: url("../../static/icons/arrow-forward-outline.svg");
+          margin-inline-start: 0.125rem;
         }
 
         svg {
@@ -277,8 +278,8 @@ html[data-theme='dark'] {
       height: 1.75rem;
       background: var(--navbar-separator-bg-c);
 
-      margin-inline-start: 1rem;
-      margin-inline-end: 1rem;
+      margin-inline-start: 0.5rem;
+      margin-inline-end: 0.5rem;
     }
 
     .language {
