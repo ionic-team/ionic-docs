@@ -21,7 +21,7 @@ In this guide, we'll go over the basics of both React and Ionic, including any I
 
 ## Creating a project with the Ionic CLI
 
-To begin, let's install the latest version of the Ionic CLI.
+To get started, let's install the latest version of the Ionic CLI.
 
 ```shell
 npm install -g @ionic/cli
