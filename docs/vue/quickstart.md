@@ -21,7 +21,7 @@ In this guide, we will go over the basics of both Vue and Ionic Framework, inclu
 
 ## Creating a project with the Ionic CLI
 
-To begin, let's install the latest version of the Ionic CLI.
+To get started, let's install the latest version of the Ionic CLI.
 
 ```shell
 npm install -g @ionic/cli@latest
