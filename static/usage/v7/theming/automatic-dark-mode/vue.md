@@ -17,12 +17,6 @@
   <ion-content>
     <ion-list-header>Appearance</ion-list-header>
     <ion-list inset>
-      <ion-item>
-        <ion-toggle :checked="themeToggle" @ionChange="toggleChange($event)" justify="space-between">Dark Mode</ion-toggle>
-      </ion-item>
-    </ion-list>
-
-    <ion-list inset>
       <ion-item button>
         Text Size
       </ion-item>
@@ -57,18 +51,14 @@
 
 <script lang="ts">
   import { IonBackButton, IonButton, IonButtons, IonContent, IonHeader, IonIcon, IonItem, IonLabel, IonList, IonListHeader, IonRange, IonText, IonToggle, IonToolbar } from '@ionic/vue';
-  import type { ToggleCustomEvent } from '@ionic/vue';
   import { personCircle, personCircleOutline, sunnyOutline, sunny } from 'ionicons/icons';
   import { defineComponent, ref } from 'vue';
-
 
   export default defineComponent({
     components: {
       IonBackButton, IonButton, IonButtons, IonContent, IonHeader, IonIcon, IonItem, IonLabel, IonList, IonListHeader, IonRange, IonText, IonToggle, IonToolbar
     },
     setup() {
-      const themeToggle = ref(false);
-
       // Use matchMedia to check the user preference
       const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
 
@@ -77,23 +67,12 @@
         document.body.classList.toggle('dark', shouldAdd);
       }
 
-      const prefersDarkCheck = (matches) => {
-        themeToggle.value = matches;
-        toggleDarkTheme(matches);
-      }
-
-      prefersDarkCheck(prefersDark.matches);
+      toggleDarkTheme(prefersDark.matches);
 
       // Listen for changes to the prefers-color-scheme media query
-      prefersDark.addEventListener('change', (mediaQuery) => prefersDarkCheck(mediaQuery.matches));
+      prefersDark.addEventListener('change', (mediaQuery) => toggleDarkTheme(mediaQuery.matches));
 
-      const toggleChange = (ev: ToggleCustomEvent) => {
-        const { checked } = ev.detail;
-
-        toggleDarkTheme(ev.detail.checked);
-      };
-
-      return { personCircle, personCircleOutline, sunnyOutline, sunny, prefersDarkCheck, toggleChange, toggleDarkTheme, themeToggle };
+      return { personCircle, personCircleOutline, sunnyOutline, sunny, toggleDarkTheme };
     },
   });
 </script>

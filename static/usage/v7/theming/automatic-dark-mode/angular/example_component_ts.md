@@ -6,26 +6,15 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: 'example.component.html',
 })
 export class ExampleComponent implements OnInit {
-  themeToggle = false;
-
   // Called when the app loads
   ngOnInit() {
     // Use matchMedia to check the user preference
     const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
 
-    this.prefersDarkCheck(prefersDark.matches);
+    this.toggleDarkTheme(prefersDark.matches);
 
     // Listen for changes to the prefers-color-scheme media query
-    prefersDark.addEventListener('change', (mediaQuery) => this.prefersDarkCheck(mediaQuery.matches));
-  }
-
-  prefersDarkCheck(matches) {
-    this.themeToggle = matches;
-    this.toggleDarkTheme(matches);
-  }
-
-  toggleChange(ev) {
-    this.toggleDarkTheme(ev.detail.checked);
+    prefersDark.addEventListener('change', (mediaQuery) => this.toggleDarkTheme(mediaQuery.matches));
   }
 
   // Add or remove the "dark" class on the document body

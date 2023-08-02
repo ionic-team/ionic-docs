@@ -32,12 +32,6 @@
     <ion-content>
       <ion-list-header>Appearance</ion-list-header>
       <ion-list inset>
-        <ion-item>
-          <ion-toggle id="themeToggle" justify="space-between">Dark Mode</ion-toggle>
-        </ion-item>
-      </ion-list>
-
-      <ion-list inset>
         <ion-item button>
           Text Size
         </ion-item>
@@ -70,29 +64,11 @@
     </ion-content>
 
     <script>
-      // Query for the toggle that is used to change between themes
-      const toggle = document.querySelector('#themeToggle');
-
-      // Listen for the toggle check/uncheck to toggle the dark class on the <body>
-      toggle.addEventListener('ionChange', (ev) => {
-        toggleDarkTheme(ev.detail.checked);
-      });
-
       const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
-      prefersDarkCheck(prefersDark.matches);
+      toggleDarkTheme(prefersDark.matches);
 
       // Listen for changes to the prefers-color-scheme media query
-      prefersDark.addEventListener('change', (mediaQuery) => prefersDarkCheck(mediaQuery.matches));
-
-      function prefersDarkCheck(matches) {
-        toggle.checked = matches;
-        toggleDarkTheme(matches);
-      }
-
-      // Called by the media query to check/uncheck the toggle
-      function checkToggle(shouldCheck) {
-        toggle.checked = shouldCheck;
-      }
+      prefersDark.addEventListener('change', (mediaQuery) => toggleDarkTheme(mediaQuery.matches));
 
       // Add or remove the "dark" class on the document body
       function toggleDarkTheme(shouldAdd) {

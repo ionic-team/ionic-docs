@@ -1,34 +1,22 @@
 ```tsx
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { IonBackButton, IonButton, IonButtons, IonContent, IonHeader, IonIcon, IonItem, IonLabel, IonList, IonListHeader, IonRange, IonText, IonTitle, IonToggle, IonToolbar } from '@ionic/react';
-import type { ToggleCustomEvent } from '@ionic/react';
 import { personCircle, personCircleOutline, sunny, sunnyOutline } from 'ionicons/icons';
 
 import './main.css';
 
 function Example() {
-  const [themeToggle, setThemeToggle] = useState(false);
-
-  const toggleChange = (ev: ToggleCustomEvent) => {
-    toggleDarkTheme(ev.detail.checked);
-  }
-
   // Add or remove the "dark" class on the document body
   const toggleDarkTheme = (shouldAdd: boolean) => {
     document.body.classList.toggle('dark', shouldAdd);
   }
 
-  const prefersDarkCheck = (matches: boolean) => {
-    setThemeToggle(matches);
-    toggleDarkTheme(matches);
-  }
-
   useEffect(() => {
     const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
-    prefersDarkCheck(prefersDark.matches);
+    toggleDarkTheme(prefersDark.matches);
 
     // Listen for changes to the prefers-color-scheme media query
-    prefersDark.addEventListener('change', (mediaQuery) => prefersDarkCheck(mediaQuery.matches));
+    prefersDark.addEventListener('change', (mediaQuery) => toggleDarkTheme(mediaQuery.matches));
   }, []);
 
   return (
@@ -49,12 +37,6 @@ function Example() {
 
       <IonContent>
         <IonListHeader>Appearance</IonListHeader>
-        <IonList inset>
-          <IonItem>
-            <IonToggle checked={themeToggle} onIonChange={toggleChange} justify="space-between">Dark Mode</IonToggle>
-          </IonItem>
-        </IonList>
-
         <IonList inset>
           <IonItem button>
             Text Size

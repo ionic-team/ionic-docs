@@ -65,24 +65,13 @@ Notice that the variables above are only in the `body.dark` selector now, and th
 
 In the JavaScript, the `dark` class can be added to the `<body>` by checking if the document matches the media query using [matchMedia()](https://developer.mozilla.org/en-US/docs/Web/API/Window/matchMedia). This will enable dark mode to still work based on the user preference.
 
-```javascript
-// Use matchMedia to check the user preference
-const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
-
-toggleDarkTheme(prefersDark.matches);
-
-// Listen for changes to the prefers-color-scheme media query
-prefersDark.addEventListener('change', (mediaQuery) => toggleDarkTheme(mediaQuery.matches));
-
-// Add or remove the "dark" class based on if the media query matches
-function toggleDarkTheme(shouldAdd) {
-  document.body.classList.toggle('dark', shouldAdd);
-}
-```
-
 :::note
 Tip: make sure to open the StackBlitz below in a [supported browser](https://caniuse.com/#feat=prefers-color-scheme) and then try changing the system preferences on your device between light & dark mode. Here's [how to enable dark mode on Windows 10](https://blogs.windows.com/windowsexperience/2016/08/08/windows-10-tip-personalize-your-pc-by-enabling-the-dark-theme/) and [how to enable it on a Mac](https://support.apple.com/en-us/HT208976).
 :::
+
+import AutomaticDarkMode from '@site/static/usage/v7/theming/automatic-dark-mode/index.md';
+
+<AutomaticDarkMode />
 
 ### Manually Toggle Dark Mode
 
