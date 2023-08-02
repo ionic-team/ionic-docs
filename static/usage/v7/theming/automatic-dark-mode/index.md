@@ -19,20 +19,20 @@ import variables_css from './theme/variables_css.md';
     javascript: {
       files: {
         'index.html': javascript_index_html,
-        'theme/variables.css': variables_css
+        'theme/variables.css': variables_css,
       },
     },
     react: {
       files: {
         'src/main.tsx': react_main_tsx,
         'src/main.css': react_main_css,
-        'src/theme/variables.css': variables_css
+        'src/theme/variables.css': variables_css,
       },
     },
     vue: {
       files: {
         'src/components/Example.vue': vue,
-        'src/theme/variables.css': variables_css
+        'src/theme/variables.css': variables_css,
       },
     },
     angular: {
@@ -40,7 +40,7 @@ import variables_css from './theme/variables_css.md';
         'src/app/example.component.html': angular_example_component_html,
         'src/app/example.component.ts': angular_example_component_ts,
         'src/global.css': angular_global_css,
-        'src/theme/variables.css': variables_css
+        'src/theme/variables.css': variables_css,
       },
     },
   }}

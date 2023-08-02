@@ -1,6 +1,22 @@
 ```tsx
 import React, { useEffect } from 'react';
-import { IonBackButton, IonButton, IonButtons, IonContent, IonHeader, IonIcon, IonItem, IonLabel, IonList, IonListHeader, IonRange, IonText, IonTitle, IonToggle, IonToolbar } from '@ionic/react';
+import {
+  IonBackButton,
+  IonButton,
+  IonButtons,
+  IonContent,
+  IonHeader,
+  IonIcon,
+  IonItem,
+  IonLabel,
+  IonList,
+  IonListHeader,
+  IonRange,
+  IonText,
+  IonTitle,
+  IonToggle,
+  IonToolbar,
+} from '@ionic/react';
 import { personCircle, personCircleOutline, sunny, sunnyOutline } from 'ionicons/icons';
 
 import './main.css';
@@ -9,7 +25,7 @@ function Example() {
   // Add or remove the "dark" class on the document body
   const toggleDarkTheme = (shouldAdd: boolean) => {
     document.body.classList.toggle('dark', shouldAdd);
-  }
+  };
 
   useEffect(() => {
     const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
@@ -38,17 +54,13 @@ function Example() {
       <IonContent>
         <IonListHeader>Appearance</IonListHeader>
         <IonList inset>
-          <IonItem button>
-            Text Size
-          </IonItem>
+          <IonItem button>Text Size</IonItem>
           <IonItem>
             <IonToggle justify="space-between">Bold Text</IonToggle>
           </IonItem>
         </IonList>
 
-        <IonListHeader>
-          Brightness
-        </IonListHeader>
+        <IonListHeader>Brightness</IonListHeader>
         <IonList inset>
           <IonItem>
             <IonRange value={40}>
@@ -57,14 +69,18 @@ function Example() {
             </IonRange>
           </IonItem>
           <IonItem>
-            <IonToggle justify="space-between" checked>True Tone</IonToggle>
+            <IonToggle justify="space-between" checked>
+              True Tone
+            </IonToggle>
           </IonItem>
         </IonList>
 
         <IonList inset>
           <IonItem button>
             <IonLabel>Night Shift</IonLabel>
-            <IonText slot="end" color="medium">9:00 PM to 8:00 AM</IonText>
+            <IonText slot="end" color="medium">
+              9:00 PM to 8:00 AM
+            </IonText>
           </IonItem>
         </IonList>
       </IonContent>

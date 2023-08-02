@@ -17,17 +17,13 @@
   <ion-content>
     <ion-list-header>Appearance</ion-list-header>
     <ion-list inset>
-      <ion-item button>
-        Text Size
-      </ion-item>
+      <ion-item button> Text Size </ion-item>
       <ion-item>
         <ion-toggle justify="space-between">Bold Text</ion-toggle>
       </ion-item>
     </ion-list>
 
-    <ion-list-header>
-      Brightness
-    </ion-list-header>
+    <ion-list-header> Brightness </ion-list-header>
     <ion-list inset>
       <ion-item>
         <ion-range value="40">
@@ -50,13 +46,41 @@
 </template>
 
 <script lang="ts">
-  import { IonBackButton, IonButton, IonButtons, IonContent, IonHeader, IonIcon, IonItem, IonLabel, IonList, IonListHeader, IonRange, IonText, IonToggle, IonToolbar } from '@ionic/vue';
+  import {
+    IonBackButton,
+    IonButton,
+    IonButtons,
+    IonContent,
+    IonHeader,
+    IonIcon,
+    IonItem,
+    IonLabel,
+    IonList,
+    IonListHeader,
+    IonRange,
+    IonText,
+    IonToggle,
+    IonToolbar,
+  } from '@ionic/vue';
   import { personCircle, personCircleOutline, sunnyOutline, sunny } from 'ionicons/icons';
   import { defineComponent, ref } from 'vue';
 
   export default defineComponent({
     components: {
-      IonBackButton, IonButton, IonButtons, IonContent, IonHeader, IonIcon, IonItem, IonLabel, IonList, IonListHeader, IonRange, IonText, IonToggle, IonToolbar
+      IonBackButton,
+      IonButton,
+      IonButtons,
+      IonContent,
+      IonHeader,
+      IonIcon,
+      IonItem,
+      IonLabel,
+      IonList,
+      IonListHeader,
+      IonRange,
+      IonText,
+      IonToggle,
+      IonToolbar,
     },
     setup() {
       // Use matchMedia to check the user preference
@@ -65,7 +89,7 @@
       // Add or remove the "dark" class on the document body
       const toggleDarkTheme = (shouldAdd) => {
         document.body.classList.toggle('dark', shouldAdd);
-      }
+      };
 
       toggleDarkTheme(prefersDark.matches);
 

@@ -17,22 +17,20 @@
   <ion-list-header>Appearance</ion-list-header>
   <ion-list inset>
     <ion-item>
-      <ion-toggle [(ngModel)]="themeToggle" (ionChange)="toggleChange($event)" justify="space-between">Dark Mode</ion-toggle>
+      <ion-toggle [(ngModel)]="themeToggle" (ionChange)="toggleChange($event)" justify="space-between"
+        >Dark Mode</ion-toggle
+      >
     </ion-item>
   </ion-list>
 
   <ion-list inset>
-    <ion-item button>
-      Text Size
-    </ion-item>
+    <ion-item button> Text Size </ion-item>
     <ion-item>
       <ion-toggle justify="space-between">Bold Text</ion-toggle>
     </ion-item>
   </ion-list>
 
-  <ion-list-header>
-    Brightness
-  </ion-list-header>
+  <ion-list-header> Brightness </ion-list-header>
   <ion-list inset>
     <ion-item>
       <ion-range value="40">
@@ -52,5 +50,4 @@
     </ion-item>
   </ion-list>
 </ion-content>
-
 ```
