@@ -40,7 +40,7 @@ With `ionic serve` running, continue developing your app. As you save changes, t
 
 :::note
 
-If the external link isn't listed, then run `ionic serve --external` to generate it.
+If the external link isn't listed on the terminal, then run `ionic serve --external` to generate it.
 
 :::
 
