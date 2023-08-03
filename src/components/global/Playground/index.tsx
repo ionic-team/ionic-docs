@@ -342,6 +342,9 @@ export default function Playground({
     if (frameMD.current) {
       frameMD.current.contentWindow.location.reload();
     }
+
+    setiOSConsoleItems([]);
+    setMDConsoleItems([]);
   }
 
   function openEditor(event) {
