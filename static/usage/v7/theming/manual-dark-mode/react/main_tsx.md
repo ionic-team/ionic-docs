@@ -71,7 +71,7 @@ function Example() {
 
       <IonContent>
         <IonListHeader>Appearance</IonListHeader>
-        <IonList inset>
+        <IonList inset={true}>
           <IonItem>
             <IonToggle checked={themeToggle} onIonChange={toggleChange} justify="space-between">
               Dark Mode
@@ -79,15 +79,15 @@ function Example() {
           </IonItem>
         </IonList>
 
-        <IonList inset>
-          <IonItem button>Text Size</IonItem>
+        <IonList inset={true}>
+          <IonItem button={true}>Text Size</IonItem>
           <IonItem>
             <IonToggle justify="space-between">Bold Text</IonToggle>
           </IonItem>
         </IonList>
 
         <IonListHeader>Brightness</IonListHeader>
-        <IonList inset>
+        <IonList inset={true}>
           <IonItem>
             <IonRange value={40}>
               <IonIcon icon={sunnyOutline} slot="start"></IonIcon>
@@ -101,8 +101,8 @@ function Example() {
           </IonItem>
         </IonList>
 
-        <IonList inset>
-          <IonItem button>
+        <IonList inset={true}>
+          <IonItem button={true}>
             <IonLabel>Night Shift</IonLabel>
             <IonText slot="end" color="medium">
               9:00 PM to 8:00 AM

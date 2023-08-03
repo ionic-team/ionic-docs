@@ -15,7 +15,7 @@
 
 <ion-content>
   <ion-list-header>Appearance</ion-list-header>
-  <ion-list inset>
+  <ion-list [inset]="true">
     <ion-item>
       <ion-toggle [(ngModel)]="themeToggle" (ionChange)="toggleChange($event)" justify="space-between"
         >Dark Mode</ion-toggle
@@ -23,15 +23,15 @@
     </ion-item>
   </ion-list>
 
-  <ion-list inset>
-    <ion-item button> Text Size </ion-item>
+  <ion-list [inset]="true">
+    <ion-item [button]="true">Text Size</ion-item>
     <ion-item>
       <ion-toggle justify="space-between">Bold Text</ion-toggle>
     </ion-item>
   </ion-list>
 
-  <ion-list-header> Brightness </ion-list-header>
-  <ion-list inset>
+  <ion-list-header>Brightness</ion-list-header>
+  <ion-list [inset]="true">
     <ion-item>
       <ion-range value="40">
         <ion-icon name="sunny-outline" slot="start"></ion-icon>
@@ -43,8 +43,8 @@
     </ion-item>
   </ion-list>
 
-  <ion-list inset>
-    <ion-item button>
+  <ion-list [inset]="true">
+    <ion-item [button]="true">
       <ion-label>Night Shift</ion-label>
       <ion-text slot="end" color="medium">9:00 PM to 8:00 AM</ion-text>
     </ion-item>
