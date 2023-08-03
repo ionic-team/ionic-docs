@@ -67,15 +67,8 @@
       // Query for the toggle that is used to change between themes
       const toggle = document.querySelector('#themeToggle');
 
-      console.log('toggle checked', toggle.checked);
       // Listen for the toggle check/uncheck to toggle the dark theme
       toggle.addEventListener('ionChange', (ev) => toggleDarkTheme(ev.detail.checked));
-
-      // Use matchMedia to check the user preference
-      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
-
-      // Listen for changes to the prefers-color-scheme media query
-      prefersDark.addEventListener('change', (mediaQuery) => checkToggle(mediaQuery.matches));
 
       // Called by the media query to check/uncheck the toggle
       function checkToggle(shouldCheck) {
@@ -86,6 +79,27 @@
       function toggleDarkTheme(shouldAdd) {
         document.body.classList.toggle('dark', shouldAdd);
       }
+
+      // Check/uncheck the toggle and update the theme based on isDark
+      function initializeDarkTheme(isDark) {
+        toggle.checked = isDark;
+        toggleDarkTheme(isDark);
+      }
+
+      // Demo only code below
+      // ----------------------------------------------------
+      window.addEventListener('demoReady', (ev) => {
+        const theme = ev.target.localStorage.getItem('theme');
+        const isDark = theme === 'dark' ? true : false;
+
+        // Initialize the dark theme based on the initial
+        // value of the theme stored in localStorage
+        initializeDarkTheme(isDark);
+      });
+
+      window.addEventListener('message', (ev) => {
+        toggle.checked = ev.data.darkMode;
+      });
     </script>
 
     <style>

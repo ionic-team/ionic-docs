@@ -77,16 +77,17 @@
         // Use matchMedia to check the user preference
         const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
 
+        // Initialize the dark theme based on the initial
+        // value of the prefers-color-scheme media query
         initializeDarkTheme(prefersDark.matches);
 
         // Listen for changes to the prefers-color-scheme media query
         prefersDark.addEventListener('change', (mediaQuery) => initializeDarkTheme(mediaQuery.matches));
 
-        // Check/uncheck the toggle and update the theme based on the initial
-        // value of the prefers-color-scheme media query
-        function initializeDarkTheme(matches) {
-          toggle.checked = matches;
-          toggleDarkTheme(matches);
+        // Check/uncheck the toggle and update the theme based on isDark
+        function initializeDarkTheme(isDark) {
+          toggle.checked = isDark;
+          toggleDarkTheme(isDark);
         }
 
         // Called by the media query to check/uncheck the toggle

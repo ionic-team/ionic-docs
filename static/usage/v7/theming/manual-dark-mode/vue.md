@@ -102,13 +102,14 @@
         document.body.classList.toggle('dark', shouldAdd);
       };
 
-      // Check/uncheck the toggle and update the theme based on the initial
-      // value of the prefers-color-scheme media query
-      const initializeDarkTheme = (matches) => {
-        themeToggle.value = matches;
-        toggleDarkTheme(matches);
+      // Check/uncheck the toggle and update the theme based on isDark
+      const initializeDarkTheme = (isDark) => {
+        themeToggle.value = isDark;
+        toggleDarkTheme(isDark);
       };
 
+      // Initialize the dark theme based on the initial
+      // value of the prefers-color-scheme media query
       initializeDarkTheme(prefersDark.matches);
 
       // Listen for changes to the prefers-color-scheme media query

@@ -35,17 +35,18 @@ function Example() {
     document.body.classList.toggle('dark', shouldAdd);
   };
 
-  // Check/uncheck the toggle and update the theme based on the initial
-  // value of the prefers-color-scheme media query
-  const initializeDarkTheme = (matches: boolean) => {
-    setThemeToggle(matches);
-    toggleDarkTheme(matches);
+  // Check/uncheck the toggle and update the theme based on isDark
+  const initializeDarkTheme = (isDark: boolean) => {
+    setThemeToggle(isDark);
+    toggleDarkTheme(isDark);
   };
 
   useEffect(() => {
     // Use matchMedia to check the user preference
     const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
 
+    // Initialize the dark theme based on the initial
+    // value of the prefers-color-scheme media query
     initializeDarkTheme(prefersDark.matches);
 
     // Listen for changes to the prefers-color-scheme media query
