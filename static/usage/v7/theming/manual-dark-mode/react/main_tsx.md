@@ -25,6 +25,7 @@ import './main.css';
 function Example() {
   const [themeToggle, setThemeToggle] = useState(false);
 
+  // Listen for the toggle check/uncheck to toggle the dark theme
   const toggleChange = (ev: ToggleCustomEvent) => {
     toggleDarkTheme(ev.detail.checked);
   };
@@ -34,17 +35,21 @@ function Example() {
     document.body.classList.toggle('dark', shouldAdd);
   };
 
-  const prefersDarkCheck = (matches: boolean) => {
+  // Check/uncheck the toggle and update the theme based on the initial
+  // value of the prefers-color-scheme media query
+  const initializeDarkTheme = (matches: boolean) => {
     setThemeToggle(matches);
     toggleDarkTheme(matches);
   };
 
   useEffect(() => {
+    // Use matchMedia to check the user preference
     const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
-    prefersDarkCheck(prefersDark.matches);
+
+    initializeDarkTheme(prefersDark.matches);
 
     // Listen for changes to the prefers-color-scheme media query
-    prefersDark.addEventListener('change', (mediaQuery) => prefersDarkCheck(mediaQuery.matches));
+    prefersDark.addEventListener('change', (mediaQuery) => initializeDarkTheme(mediaQuery.matches));
   }, []);
 
   return (

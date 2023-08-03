@@ -12,8 +12,7 @@ inlineHtmlPreviews: true
   />
 </head>
 
-Ionic makes it easy to change the themes of your app, including supporting dark color schemes. Dark mode is a
-display setting that changes all of an app's views to a dark theme. It has system-wide support on iOS and Android, making it highly desirable for developers to add to their apps.
+Ionic makes it easy to change the themes of your app, including supporting dark color schemes. Dark mode is a display setting that changes all of an app's views to a dark theme. It has system-wide support on iOS and Android, making it highly desirable for developers to add to their apps.
 
 ## Using Media Queries
 

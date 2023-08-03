@@ -58,10 +58,11 @@
     </ion-app>
 
     <script>
+      // Use matchMedia to check the user preference
       const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
 
       // Listen for changes to the prefers-color-scheme media query
-      prefersDark.addEventListener((e) => checkToggle(e.matches));
+      prefersDark.addEventListener('change', (mediaQuery) => toggleDarkTheme(mediaQuery.matches));
 
       // Add or remove the "dark" class on the document body
       function toggleDarkTheme(shouldAdd) {
@@ -75,18 +76,23 @@
       * -----------------------------------
       */
 
-      /* This sets a different background and item color in light mode on ios */
+      /* This sets a different background and item background in light mode on ios */
       .ios body {
         --ion-background-color: #f2f2f6;
         --ion-toolbar-background: var(--ion-background-color);
         --ion-item-background: #fff;
       }
 
-      /* This sets a different background and item color in light mode on md */
+      /* This sets a different background and item background in light mode on md */
       .md body {
         --ion-background-color: #f9f9f9;
         --ion-toolbar-background: var(--ion-background-color);
         --ion-item-background: #fff;
+      }
+
+      /* This sets a different item background in dark mode on ios */
+      .ios body.dark {
+        --ion-item-background: #1c1c1d;
       }
 
       /* This is added for the flashing that happens when toggling between themes */

@@ -6,7 +6,6 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: 'example.component.html',
 })
 export class ExampleComponent implements OnInit {
-  // Called when the app loads
   ngOnInit() {
     // Use matchMedia to check the user preference
     const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');

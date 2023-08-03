@@ -8,22 +8,24 @@ import { Component, OnInit } from '@angular/core';
 export class ExampleComponent implements OnInit {
   themeToggle = false;
 
-  // Called when the app loads
   ngOnInit() {
     // Use matchMedia to check the user preference
     const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
 
-    this.prefersDarkCheck(prefersDark.matches);
+    this.initializeDarkTheme(prefersDark.matches);
 
     // Listen for changes to the prefers-color-scheme media query
-    prefersDark.addEventListener('change', (mediaQuery) => this.prefersDarkCheck(mediaQuery.matches));
+    prefersDark.addEventListener('change', (mediaQuery) => this.initializeDarkTheme(mediaQuery.matches));
   }
 
-  prefersDarkCheck(matches) {
+  // Check/uncheck the toggle and update the theme based on the initial
+  // value of the prefers-color-scheme media query
+  initializeDarkTheme(matches) {
     this.themeToggle = matches;
     this.toggleDarkTheme(matches);
   }
 
+  // Listen for the toggle check/uncheck to toggle the dark theme
   toggleChange(ev) {
     this.toggleDarkTheme(ev.detail.checked);
   }

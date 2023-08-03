@@ -102,19 +102,20 @@
         document.body.classList.toggle('dark', shouldAdd);
       };
 
-      const prefersDarkCheck = (matches) => {
+      // Check/uncheck the toggle and update the theme based on the initial
+      // value of the prefers-color-scheme media query
+      const initializeDarkTheme = (matches) => {
         themeToggle.value = matches;
         toggleDarkTheme(matches);
       };
 
-      prefersDarkCheck(prefersDark.matches);
+      initializeDarkTheme(prefersDark.matches);
 
       // Listen for changes to the prefers-color-scheme media query
-      prefersDark.addEventListener('change', (mediaQuery) => prefersDarkCheck(mediaQuery.matches));
+      prefersDark.addEventListener('change', (mediaQuery) => initializeDarkTheme(mediaQuery.matches));
 
+      // Listen for the toggle check/uncheck to toggle the dark theme
       const toggleChange = (ev: ToggleCustomEvent) => {
-        const { checked } = ev.detail;
-
         toggleDarkTheme(ev.detail.checked);
       };
 
@@ -123,7 +124,7 @@
         personCircleOutline,
         sunnyOutline,
         sunny,
-        prefersDarkCheck,
+        initializeDarkTheme,
         toggleChange,
         toggleDarkTheme,
         themeToggle,
@@ -138,14 +139,14 @@
   * -----------------------------------
   */
 
-  /* This sets a different background and item color in light mode on ios */
+  /* This sets a different background and item background in light mode on ios */
   .ios body {
     --ion-background-color: #f2f2f6;
     --ion-toolbar-background: var(--ion-background-color);
     --ion-item-background: #fff;
   }
 
-  /* This sets a different background and item color in light mode on md */
+  /* This sets a different background and item background in light mode on md */
   .md body {
     --ion-background-color: #f9f9f9;
     --ion-toolbar-background: var(--ion-background-color);
