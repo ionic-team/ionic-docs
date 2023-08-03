@@ -279,6 +279,10 @@
   border-bottom: 1px solid var(--separator-color);
 }
 
+.playground__console-item--placeholder {
+  font-style: italic;
+}
+
 .playground__console-item--log {
   --separator-color: var(--playground-console-item-separator-color);
 }

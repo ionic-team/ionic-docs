@@ -469,20 +469,28 @@ export default function Playground({
   }
 
   function renderConsole() {
+    const consoleItems = ionicMode === Mode.iOS ? iosConsoleItems : mdConsoleItems;
+
     return (
       <div className="playground__console">
         <div className="playground__console-header">
           <code>Console</code>
         </div>
         <div className="playground__console-body" ref={consoleBodyRef}>
-          {(ionicMode === Mode.iOS ? iosConsoleItems : mdConsoleItems).map((consoleItem, i) => (
-            <div key={i} className={`playground__console-item playground__console-item--${consoleItem.type}`}>
-              {consoleItem.type !== 'log' && (
-                <div className="playground__console-icon">{consoleItem.type === 'warning' ? '⚠' : '❌'}</div>
-              )}
-              <code>{consoleItem.message}</code>
+          {consoleItems.length === 0 ? (
+            <div className="playground__console-item playground__console-item--placeholder">
+              <code>Console messages will appear here when logged from the example above.</code>
             </div>
-          ))}
+          ) : (
+            consoleItems.map((consoleItem, i) => (
+              <div key={i} className={`playground__console-item playground__console-item--${consoleItem.type}`}>
+                {consoleItem.type !== 'log' && (
+                  <div className="playground__console-icon">{consoleItem.type === 'warning' ? '⚠' : '❌'}</div>
+                )}
+                <code>{consoleItem.message}</code>
+              </div>
+            ))
+          )}
         </div>
       </div>
     );
