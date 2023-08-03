@@ -66,7 +66,11 @@ Notice that the variables above are only in the `body.dark` selector now, and th
 The `dark` class can be added to the `<body>` by checking if the document matches the media query using [matchMedia()](https://developer.mozilla.org/en-US/docs/Web/API/Window/matchMedia). This will allow dark mode to still work based on the user's preference.
 
 :::note
-Tip: make sure to view the demo below in a [supported browser](https://caniuse.com/#feat=prefers-color-scheme) and then try changing the system preferences on your device between light & dark mode. Here's [how to enable dark mode on Windows 10](https://blogs.windows.com/windowsexperience/2016/08/08/windows-10-tip-personalize-your-pc-by-enabling-the-dark-theme/) and [how to enable it on a Mac](https://support.apple.com/en-us/HT208976).
+The demo below prioritizes the site's theme over the system settings. If your system settings are set to something other than the site's theme when the demo loads, it will match the site's theme. Try changing the system preferences on your device between light & dark mode to see it change.
+:::
+
+:::info
+Not sure how to change the system settings? Here's [how to enable dark mode on Windows 11](https://support.microsoft.com/en-us/windows/change-colors-in-windows-d26ef4d6-819a-581c-1581-493cfcc005fe) and [how to enable it on a Mac](https://support.apple.com/en-us/HT208976).
 :::
 
 import AutomaticDarkMode from '@site/static/usage/v7/theming/automatic-dark-mode/index.md';
@@ -121,7 +125,7 @@ Ionic has a recommended theme for variables to use in order to get a dark mode b
 
 The following code can be copied and pasted into an app's global CSS file to get Ionic's dark theme. We are [using the CSS media query](#using-media-queries) to enable dark mode. If older browser support is required, use the method described in the [combining with JavaScript](#combining-with-javascript) section.
 
-:::note
+:::info
 For more information on the variables that are being changed, including other variables that can be added to further customize, see [Themes](themes.md).
 :::
 
