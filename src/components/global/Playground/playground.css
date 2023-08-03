@@ -252,7 +252,6 @@
 .playground__console-header {
   background-color: var(--playground-separator-color);
   font-weight: bold;
-  padding: 3px 3px 3px 28px;
   text-transform: uppercase;
 }
 
@@ -264,9 +263,12 @@
 
 .playground__console-item {
   border-top: 1px solid var(--separator-color);
-  padding: 3px 3px 3px 28px;
 
   position: relative;
+}
+
+.playground__console-header, .playground__console-item {
+  padding: 3px 3px 3px 28px;
 }
 
 .playground__console-item:first-child {
@@ -309,6 +311,7 @@
 
 .playground__console code {
   background-color: transparent;
+  font-size: 0.813rem;
   padding: 0;
   padding-block-start: 0; /* prevents text getting cut off vertically */
   padding-block-end: 0; /* prevents border from item below getting covered up */
