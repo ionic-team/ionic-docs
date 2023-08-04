@@ -1,0 +1,14 @@
+{
+  "dictionaries": ["custom-words"],
+  "dictionaryDefinitions": [
+    {
+      "name": "custom-words",
+      "path": "./cspell-wordlist.txt",
+      "addWords": true
+    }
+  ],
+  "ignoreRegExpList": [
+    "/(```+)[\\s\\S]+?\\1/g",
+    "/`[a-zA-Z-_]+`/g"
+  ]
+}
