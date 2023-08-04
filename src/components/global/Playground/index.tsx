@@ -188,6 +188,13 @@ export default function Playground({
   const [iframesLoaded, setIframesLoaded] = useState(false);
   const [mdConsoleItems, setMDConsoleItems] = useState<ConsoleItem[]>([]);
   const [iosConsoleItems, setiOSConsoleItems] = useState<ConsoleItem[]>([]);
+  
+  /**
+   * We don't actually care about the count, but this lets us
+   * re-trigger useEffect hooks when the demo is reset and the
+   * iframes are refreshed.
+   */
+  const [resetCount, setResetCount] = useState(0);
 
   /**
    * Rather than encode isDarkTheme into the frame source
@@ -280,7 +287,7 @@ export default function Playground({
         });
       }
     }
-  }, [iframesLoaded]);
+  }, [iframesLoaded, resetCount]); // including resetCount re-runs this when iframes are reloaded
 
   useEffect(() => {
     /**
@@ -335,7 +342,7 @@ export default function Playground({
   /**
    * Reloads the iOS and MD iframe sources back to their original state.
    */
-  function resetDemo() {
+  async function resetDemo() {
     if (frameiOS.current) {
       frameiOS.current.contentWindow.location.reload();
     }
@@ -345,6 +352,9 @@ export default function Playground({
 
     setiOSConsoleItems([]);
     setMDConsoleItems([]);
+
+    await Promise.all([waitForNextFrameLoadEvent(frameiOS.current), waitForNextFrameLoadEvent(frameMD.current)]);
+    setResetCount(oldCount => oldCount + 1);
   }
 
   function openEditor(event) {
@@ -712,6 +722,26 @@ const waitForFrame = (frame: HTMLIFrameElement) => {
       frame.contentWindow.addEventListener('demoReady', () => {
         resolve();
       });
+    }
+  });
+};
+
+/**
+ * Returns a promise that resolves on the *next* load event of the
+ * given iframe. We intentionally don't check if it's already loaded
+ * because this is used when the demo is reset and the iframe is
+ * refreshed, so we don't want to return too early and catch the
+ * pre-reset version of the window.
+ */
+const waitForNextFrameLoadEvent = (frame: HTMLIFrameElement) => {
+  return new Promise<void>((resolve) => {
+    const handleLoad = () => {
+      frame.removeEventListener('load', handleLoad);
+      resolve();
+    };
+
+    if (frame) {
+      frame.addEventListener('load', handleLoad);
     }
   });
 };
