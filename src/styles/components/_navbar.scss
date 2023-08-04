@@ -115,7 +115,6 @@ html[data-theme='dark'] {
         &-mask {
           &::before {
             content: '';
-            width: 20px;
             height: 16px;
             display: flex;
             background-color: currentColor;
@@ -128,18 +127,21 @@ html[data-theme='dark'] {
         &-github {
           &::before {
             mask-image: url("../../static/logos/github.svg");
+            width: 17px;
           }
         }
   
         &-twitter {
           &::before {
             mask-image: url("../../static/logos/twitter.svg");
+            width: 19px;
           }
         }
 
         &-discord {
           &::before {
             mask-image: url("../../static/logos/discord.svg");
+            width: 20px;
           }
         }
       }
