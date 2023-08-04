@@ -30,9 +30,10 @@
     IonInput,
     modalController,
   } from '@ionic/vue';
-  import { defineComponent } from 'vue';
-  
+  import { defineComponent, ref } from 'vue';
+  const name = ref();
+
   const cancel = () => modalController.dismiss(null, 'cancel');
-  const confirm = () => modalController.dismiss(this.name, 'confirm');
+  const confirm = () => modalController.dismiss(name.value, 'confirm');
 </script>
 ```

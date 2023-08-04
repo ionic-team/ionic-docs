@@ -17,9 +17,9 @@
     <p>You can interact with the +/- buttons until the sheet is fully expanded.</p>
 
     <div class="counter__section">
-      <ion-button id="decrement" @click="decrement()">-</ion-button>
+      <ion-button id="decrement" @click="count--">-</ion-button>
       <p>{{count}}</p>
-      <ion-button id="increment" @click="increment()">+</ion-button>
+      <ion-button id="increment" @click="count++">+</ion-button>
     </div>
 
     <ion-modal
@@ -92,11 +92,7 @@
     IonSearchbar,
   } from '@ionic/vue';
   import { ref } from 'vue';
-  
+
   const count = ref(0);
-  
-  const increment = count.value++;
-  
-  const decrement = count.value--:
 </script>
 ```
