@@ -13,10 +13,10 @@
 </template>
 
 <script lang="ts" setup>
-  import { IonInput } from '@ionic/vue'; 
-  
+  import { IonInput } from '@ionic/vue';
+
   const customFormatter = (inputLength, maxLength) => {
     return `${maxLength - inputLength} characters remaining`;
-  }
+  };
 </script>
 ```

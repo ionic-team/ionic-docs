@@ -45,23 +45,23 @@
   } from '@ionic/vue';
   import { OverlayEventDetail } from '@ionic/core/components';
   import { ref } from 'vue';
-  
+
   const message = ref('This modal example uses triggers to automatically open a modal when the button is clicked.');
-  
+
   const modal = ref();
-  const input = ref(); 
-  
+  const input = ref();
+
   const cancel = () => modal.value.$el.dismiss(null, 'cancel');
-  
+
   const confirm = () => {
     const name = input.value.$el.value;
     modal.value.$el.dismiss(name, 'confirm');
-  }
-  
+  };
+
   const onWillDismiss = (ev: CustomEvent<OverlayEventDetail>) => {
     if (ev.detail.role === 'confirm') {
       message.value = `Hello, ${ev.detail.data}!`;
     }
-  }
+  };
 </script>
 ```

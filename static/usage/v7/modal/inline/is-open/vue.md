@@ -31,9 +31,9 @@
 <script lang="ts" setup>
   import { IonButtons, IonButton, IonModal, IonHeader, IonToolbar, IonContent, IonTitle } from '@ionic/vue';
   import { ref } from 'vue';
-  
+
   const isOpen = ref(false);
-  
-  const setOpen = (open: boolean) => isOpen.value = open;
+
+  const setOpen = (open: boolean) => (isOpen.value = open);
 </script>
 ```

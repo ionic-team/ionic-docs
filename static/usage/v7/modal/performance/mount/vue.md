@@ -24,9 +24,9 @@
 <script lang="ts" setup>
   import { IonButtons, IonButton, IonModal, IonHeader, IonContent, IonToolbar, IonTitle } from '@ionic/vue';
   import { defineComponent, ref } from 'vue';
-  
+
   const modal = ref();
-  
+
   const close = () => modal.value.$el.dismiss();
 </script>
 ```

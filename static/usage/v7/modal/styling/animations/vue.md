@@ -76,11 +76,11 @@
     IonLabel,
   } from '@ionic/vue';
   import { ref } from 'vue';
-  
+
   const modal = ref();
-  
+
   const dismiss = () => modal.value.$el.dismiss();
-  
+
   const enterAnimation = (baseEl: HTMLElement) => {
     const root = baseEl.shadowRoot;
 
@@ -104,6 +104,6 @@
 
   const leaveAnimation = (baseEl) => {
     return enterAnimation(baseEl).direction('reverse');
-  };  
+  };
 </script>
 ```

@@ -46,9 +46,9 @@
   } from '@ionic/vue';
   import { personCircle } from 'ionicons/icons';
   import { ref } from 'vue';
-  
+
   const modal = ref();
-  
+
   const dismiss = () => modal.value.$el.dismiss();
 </script>
 <style>
