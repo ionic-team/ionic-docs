@@ -98,7 +98,7 @@ Toasts set aria properties in order to be [accessible](../reference/glossary#a11
 
 #### Role
 
-`ion-toast` has `role="status"` and `aria-live="polite"` set on the inner `.toast-content` element. This causes screen readers to only announce the toast message and header. Buttons and icons will not be announced.
+`ion-toast` has `role="status"` and `aria-live="polite"` set on the inner `.toast-content` element. This causes screen readers to only announce the toast message and header. Buttons and icons will not be announced when the toast is presented.
 
 `aria-live` causes screen readers to announce the content of the toast when it is updated. However, since the attribute is set to `'polite'`, screen readers should not interrupt the current task.
 
@@ -106,7 +106,7 @@ Since toasts are intended to be subtle notification, `aria-live` should never be
 
 #### Toast Buttons Description
 
-Buttons containing text will be read by a screen reader. If a button contains only an icon, or a description other than the existing text is desired, a label should be assigned to the button by passing `aria-label` to the `htmlAttributes` property on the button.
+Buttons containing text will be read by a screen reader when they are interacted with. If a button contains only an icon, or a description other than the existing text is desired, a label should be assigned to the button by passing `aria-label` to the `htmlAttributes` property on the button.
 
 <Tabs groupId="framework" defaultValue="angular" values={[{ value: 'angular', label: 'Angular' }, { value: 'javascript', label: 'Javascript' }, { value: 'react', label: 'React' }, { value: 'vue', label: 'Vue' }]}>
 
