@@ -188,7 +188,7 @@ export default function Playground({
   const [iframesLoaded, setIframesLoaded] = useState(false);
   const [mdConsoleItems, setMDConsoleItems] = useState<ConsoleItem[]>([]);
   const [iosConsoleItems, setiOSConsoleItems] = useState<ConsoleItem[]>([]);
-  
+
   /**
    * We don't actually care about the count, but this lets us
    * re-trigger useEffect hooks when the demo is reset and the
@@ -354,7 +354,7 @@ export default function Playground({
     setMDConsoleItems([]);
 
     await Promise.all([waitForNextFrameLoadEvent(frameiOS.current), waitForNextFrameLoadEvent(frameMD.current)]);
-    setResetCount(oldCount => oldCount + 1);
+    setResetCount((oldCount) => oldCount + 1);
   }
 
   function openEditor(event) {
