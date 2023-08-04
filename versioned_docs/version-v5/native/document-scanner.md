@@ -6,7 +6,6 @@ import DocsCard from '@components/global/DocsCard';
 import DocsButton from '@components/page/native/DocsButton';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
-import CodeBlock from '@theme/CodeBlock';
 
 # Document Scanner
 
@@ -55,16 +54,17 @@ This plugin processes images of documents, compensating for perspective.
   ]}
 >
   <TabItem value="Capacitor">
-    <CodeBlock className="language-shell">
-      $ npm install cordova-plugin-document-scanner {'\n'}$ npm install @awesome-cordova-plugins/document-scanner {'\n'}$
-      ionic cap sync
-    </CodeBlock>
+
+    $ npm install cordova-plugin-document-scanner
+    $ npm install @awesome-cordova-plugins/document-scanner
+    $ ionic cap sync
+
   </TabItem>
   <TabItem value="Cordova">
-    <CodeBlock className="language-shell">
-      $ ionic cordova plugin add cordova-plugin-document-scanner {'\n'}$ npm install
-      @awesome-cordova-plugins/document-scanner {'\n'}
-    </CodeBlock>
+
+    $ ionic cordova plugin add cordova-plugin-document-scanner
+    $ npm install @awesome-cordova-plugins/document-scanner
+
   </TabItem>
   <TabItem value="Enterprise">
     <blockquote>

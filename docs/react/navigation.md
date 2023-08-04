@@ -403,13 +403,12 @@ When working with tabs, Ionic needs a way to know which view belongs to which ta
 ```tsx
 <IonApp>
   <IonReactRouter>
-      <IonRouterOutlet>
-        <Route path="/tabs" render={() => <Tabs />} />
-        <Route exact path="/">
-          <Redirect to="/tabs" />
-        </Route>
-      </IonRouterOutlet>
-    </IonSplitPane>
+    <IonRouterOutlet>
+      <Route path="/tabs" render={() => <Tabs />} />
+      <Route exact path="/">
+        <Redirect to="/tabs" />
+      </Route>
+    </IonRouterOutlet>
   </IonReactRouter>
 </IonApp>
 ```
@@ -420,7 +419,7 @@ Let's start by taking a look at our `Tabs` component:
 
 ```tsx
 import { Redirect, Route } from 'react-router-dom';
-import { IonContent, IonIcon, IonLabel, IonRouterOutlet, IonTabBar, IonTabButton, IonTabs } from '@ionic/react';
+import { IonIcon, IonLabel, IonRouterOutlet, IonTabBar, IonTabButton, IonTabs } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
 import { ellipse, square, triangle } from 'ionicons/icons';
 import Tab1 from './pages/Tab1';
@@ -428,45 +427,47 @@ import Tab2 from './pages/Tab2';
 import Tab3 from './pages/Tab3';
 
 const Tabs: React.FC = () => (
-  <IonContent>
-    <IonTabs>
-      <IonRouterOutlet>
-        <Redirect exact path="/tabs" to="/tabs/tab1" />
-        <Route exact path="/tabs/tab1">
-          <Tab1 />
-        </Route>
-        <Route exact path="/tabs/tab2">
-          <Tab2 />
-        </Route>
-        <Route path="/tabs/tab3">
-          <Tab3 />
-        </Route>
-        <Route exact path="/tabs">
-          <Redirect to="/tabs/tab1" />
-        </Route>
-      </IonRouterOutlet>
-      <IonTabBar slot="bottom">
-        <IonTabButton tab="tab1" href="/tabs/tab1">
-          <IonIcon icon={triangle} />
-          <IonLabel>Tab 1</IonLabel>
-        </IonTabButton>
-        <IonTabButton tab="tab2" href="/tabs/tab2">
-          <IonIcon icon={ellipse} />
-          <IonLabel>Tab 2</IonLabel>
-        </IonTabButton>
-        <IonTabButton tab="tab3" href="/tabs/tab3">
-          <IonIcon icon={square} />
-          <IonLabel>Tab 3</IonLabel>
-        </IonTabButton>
-      </IonTabBar>
-    </IonTabs>
-  </IonContent>
+  <IonTabs>
+    <IonRouterOutlet>
+      <Redirect exact path="/tabs" to="/tabs/tab1" />
+      <Route exact path="/tabs/tab1">
+        <Tab1 />
+      </Route>
+      <Route exact path="/tabs/tab2">
+        <Tab2 />
+      </Route>
+      <Route path="/tabs/tab3">
+        <Tab3 />
+      </Route>
+      <Route exact path="/tabs">
+        <Redirect to="/tabs/tab1" />
+      </Route>
+    </IonRouterOutlet>
+    <IonTabBar slot="bottom">
+      <IonTabButton tab="tab1" href="/tabs/tab1">
+        <IonIcon icon={triangle} />
+        <IonLabel>Tab 1</IonLabel>
+      </IonTabButton>
+      <IonTabButton tab="tab2" href="/tabs/tab2">
+        <IonIcon icon={ellipse} />
+        <IonLabel>Tab 2</IonLabel>
+      </IonTabButton>
+      <IonTabButton tab="tab3" href="/tabs/tab3">
+        <IonIcon icon={square} />
+        <IonLabel>Tab 3</IonLabel>
+      </IonTabButton>
+    </IonTabBar>
+  </IonTabs>
 );
 
 export default Tabs;
 ```
 
 If you have worked with Ionic Framework before, this should feel familiar. We create an `IonTabs` component and provide an `IonTabBar`. The `IonTabBar` provides `IonTabButton` components, each with a `tab` property that is associated with its corresponding tab in the router config. We also provide an `IonRouterOutlet` to give `IonTabs` an outlet to render the different tab views in.
+
+:::tip
+`IonTabs` renders an `IonPage` for you, so you do not need to add `IonPage` manually here.
+:::
 
 ### How Tabs in Ionic Work
 

@@ -57,35 +57,35 @@ Next, update the `savePicture()` method. When running on mobile, set `filepath` 
 
 ```tsx
 // Save picture to file on device
-  private async savePicture(photo: Photo) {
-    // Convert photo to base64 format, required by Filesystem API to save
-    const base64Data = await this.readAsBase64(photo);
+private async savePicture(photo: Photo) {
+  // Convert photo to base64 format, required by Filesystem API to save
+  const base64Data = await this.readAsBase64(photo);
 
-    // Write the file to the data directory
-    const fileName = new Date().getTime() + '.jpeg';
-    const savedFile = await Filesystem.writeFile({
-      path: fileName,
-      data: base64Data,
-      directory: Directory.Data
-    });
+  // Write the file to the data directory
+  const fileName = Date.now() + '.jpeg';
+  const savedFile = await Filesystem.writeFile({
+    path: fileName,
+    data: base64Data,
+    directory: Directory.Data
+  });
 
-    if (this.platform.is('hybrid')) {
-      // Display the new image by rewriting the 'file://' path to HTTP
-      // Details: https://ionicframework.com/docs/building/webview#file-protocol
-      return {
-        filepath: savedFile.uri,
-        webviewPath: Capacitor.convertFileSrc(savedFile.uri),
-      };
-    }
-    else {
-      // Use webPath to display the new image instead of base64 since it's
-      // already loaded into memory
-      return {
-        filepath: fileName,
-        webviewPath: photo.webPath
-      };
-    }
+  if (this.platform.is('hybrid')) {
+    // Display the new image by rewriting the 'file://' path to HTTP
+    // Details: https://ionicframework.com/docs/building/webview#file-protocol
+    return {
+      filepath: savedFile.uri,
+      webviewPath: Capacitor.convertFileSrc(savedFile.uri),
+    };
   }
+  else {
+    // Use webPath to display the new image instead of base64 since it's
+    // already loaded into memory
+    return {
+      filepath: fileName,
+      webviewPath: photo.webPath
+    };
+  }
+}
 ```
 
 Next, head back over to the `loadSaved()` function we implemented for the web earlier. On mobile, we can directly set the source of an image tag - `<img src="x" />` - to each photo file on the Filesystem, displaying them automatically. Thus, only the web requires reading each image from the Filesystem into base64 format. Update this function to add an _if statement_ around the Filesystem code:

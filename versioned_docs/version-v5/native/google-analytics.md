@@ -6,7 +6,6 @@ import DocsCard from '@components/global/DocsCard';
 import DocsButton from '@components/page/native/DocsButton';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
-import CodeBlock from '@theme/CodeBlock';
 
 # Google Analytics
 
@@ -55,16 +54,17 @@ Prerequisites:
   ]}
 >
   <TabItem value="Capacitor">
-    <CodeBlock className="language-shell">
-      $ npm install cordova-plugin-google-analytics {'\n'}$ npm install @awesome-cordova-plugins/google-analytics {'\n'}$
-      ionic cap sync
-    </CodeBlock>
+
+    $ npm install cordova-plugin-google-analytics
+    $ npm install @awesome-cordova-plugins/google-analytics
+    $ ionic cap sync
+
   </TabItem>
   <TabItem value="Cordova">
-    <CodeBlock className="language-shell">
-      $ ionic cordova plugin add cordova-plugin-google-analytics {'\n'}$ npm install
-      @awesome-cordova-plugins/google-analytics {'\n'}
-    </CodeBlock>
+
+    $ ionic cordova plugin add cordova-plugin-google-analytics
+    $ npm install @awesome-cordova-plugins/google-analytics
+
   </TabItem>
   <TabItem value="Enterprise">
     <blockquote>

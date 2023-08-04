@@ -6,7 +6,6 @@ import DocsCard from '@components/global/DocsCard';
 import DocsButton from '@components/page/native/DocsButton';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
-import CodeBlock from '@theme/CodeBlock';
 
 # Background Fetch
 
@@ -57,16 +56,17 @@ For more detail, please see https://github.com/transistorsoft/cordova-plugin-bac
   ]}
 >
   <TabItem value="Capacitor">
-    <CodeBlock className="language-shell">
-      $ npm install cordova-plugin-background-fetch {'\n'}$ npm install @awesome-cordova-plugins/background-fetch {'\n'}$
-      ionic cap sync
-    </CodeBlock>
+
+    $ npm install cordova-plugin-background-fetch
+    $ npm install @awesome-cordova-plugins/background-fetch
+    $ ionic cap sync
+
   </TabItem>
   <TabItem value="Cordova">
-    <CodeBlock className="language-shell">
-      $ ionic cordova plugin add cordova-plugin-background-fetch {'\n'}$ npm install
-      @awesome-cordova-plugins/background-fetch {'\n'}
-    </CodeBlock>
+
+    $ ionic cordova plugin add cordova-plugin-background-fetch
+    $ npm install @awesome-cordova-plugins/background-fetch
+
   </TabItem>
   <TabItem value="Enterprise">
     <blockquote>
