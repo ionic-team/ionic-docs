@@ -23,11 +23,9 @@ Thanks for your interest in contributing to Ionic's documentation! :tada: Check 
 In order to run the documentation locally, install the dependencies and run the development server:
 
 ```sh
-$ npm install --legacy-peer-deps
-$ npm start
+npm install
+npm start
 ```
-
-> **Note**: certain versions of npm (5-8) and Node.js (10-16) are required to run certain scripts.
 
 ---
 
