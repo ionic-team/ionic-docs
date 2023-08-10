@@ -1,3 +1,8 @@
+/**
+ * Original source:
+ * @link https://github.com/facebook/docusaurus/blob/main/packages/docusaurus-theme-classic/src/theme/DocRoot/Layout/index.tsx
+ */
+
 import React, {useState} from 'react';
 import {useDocsSidebar} from '@docusaurus/theme-common/internal';
 import Layout from '@theme/Layout';

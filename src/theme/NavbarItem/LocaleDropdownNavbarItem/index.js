@@ -1,3 +1,8 @@
+/**
+ * Original source:
+ * @link https://github.com/facebook/docusaurus/blob/main/packages/docusaurus-theme-classic/src/theme/NavbarItem/LocaleDropdownNavbarItem/index.tsx
+ */
+
 import React from 'react';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import { useAlternatePageUtils } from '@docusaurus/theme-common/internal';

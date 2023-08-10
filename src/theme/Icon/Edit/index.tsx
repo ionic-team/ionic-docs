@@ -1,3 +1,8 @@
+/**
+ * Original source:
+ * @link https://github.com/facebook/docusaurus/blob/main/packages/docusaurus-theme-classic/src/theme/Icon/Edit/index.tsx
+ */
+
 import React from 'react';
 import clsx from 'clsx';
 import type { Props } from '@theme/Icon/Edit';
