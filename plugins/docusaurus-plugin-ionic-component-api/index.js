@@ -121,6 +121,18 @@ function formatMultiline(str) {
   return str.split('\n\n').join('<br /><br />').split('\n').join(' ');
 }
 
+function formatType(attr, type) {
+  if (attr === 'color') {
+    /**
+     * The `color` attribute has an additional type that we don't want to display.
+     * The union type is used to allow intellisense to recommend the color names,
+     * while still accepting any string value.
+     */
+    type = type.replace('string & Record<never, never>', 'string');
+  }
+  return type.replace(/\|/g, '\uff5c');
+}
+
 function renderProperties({ props: properties }) {
   if (properties.length === 0) {
     return 'No properties available for this component.';
@@ -141,7 +153,7 @@ ${properties
 | --- | --- |
 | **Description** | ${formatMultiline(docs)} |
 | **Attribute** | \`${prop.attr}\` |
-| **Type** | \`${prop.type.replace(/\|/g, '\uff5c')}\` |
+| **Type** | \`${formatType(prop.attr, prop.type)}\` |
 | **Default** | \`${prop.default}\` |
 
 `;
