@@ -238,15 +238,15 @@ module.exports = {
     },
     {
       type: 'category',
-      label: 'Action Sheet',
-      collapsed: false,
-      items: ['api/action-sheet'],
-    },
-    {
-      type: 'category',
       label: 'Accordion',
       collapsed: false,
       items: ['api/accordion', 'api/accordion-group'],
+    },
+    {
+      type: 'category',
+      label: 'Action Sheet',
+      collapsed: false,
+      items: ['api/action-sheet'],
     },
     {
       type: 'category',
@@ -316,15 +316,15 @@ module.exports = {
     },
     {
       type: 'category',
-      label: 'Infinite Scroll',
-      collapsed: false,
-      items: ['api/infinite-scroll', 'api/infinite-scroll-content'],
-    },
-    {
-      type: 'category',
       label: 'Icons',
       collapsed: false,
       items: ['api/icon'],
+    },
+    {
+      type: 'category',
+      label: 'Infinite Scroll',
+      collapsed: false,
+      items: ['api/infinite-scroll', 'api/infinite-scroll-content'],
     },
     {
       type: 'category',
