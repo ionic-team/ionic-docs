@@ -134,7 +134,7 @@ import Masking from '@site/static/usage/v7/input/mask/index.md';
 
 :::note
 
-Please submit bug reports with Maskito to the [Maskito Github repository](https://github.com/Tinkoff/maskito/issues). For technical support, please use the [Ionic Forum](https://forum.ionicframework.com/) or [Ionic Discord](http://chat.ionicframework.com/).
+Please submit bug reports with Maskito to the [Maskito Github repository](https://github.com/taiga-family/maskito/issues). For technical support, please use the [Ionic Forum](https://forum.ionicframework.com/) or [Ionic Discord](http://chat.ionicframework.com/).
 
 :::
 
