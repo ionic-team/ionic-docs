@@ -1,3 +1,8 @@
+/**
+ * Original source:
+ * @link https://github.com/facebook/docusaurus/blob/main/packages/docusaurus-theme-classic/src/theme/TOC/index.tsx
+ */
+
 import React, { useEffect, useState } from 'react';
 import clsx from 'clsx';
 import TOCItems from '@theme/TOCItems';
