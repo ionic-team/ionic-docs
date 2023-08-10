@@ -51,8 +51,8 @@ export default function LocaleDropdownNavbarItem({ mobile, dropdownItemsBefore, 
         description: 'The label for the mobile language switcher dropdown',
       })
     : localeConfigs[currentLocale].label;
-  console.log('props', props);
-  return (
+
+    return (
     <DropdownNavbarItem
       {...props}
       mobile={mobile}
