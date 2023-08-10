@@ -52,7 +52,7 @@ export default function LocaleDropdownNavbarItem({ mobile, dropdownItemsBefore, 
       })
     : localeConfigs[currentLocale].label;
 
-    return (
+  return (
     <DropdownNavbarItem
       {...props}
       mobile={mobile}
