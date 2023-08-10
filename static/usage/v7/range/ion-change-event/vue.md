@@ -1,23 +1,17 @@
 ```html
 <template>
   <ion-range aria-label="Range with ionChange" @ionChange="onIonChange"></ion-range>
-  <ion-label>ionChange emitted value: {{lastEmittedValue}}</ion-label>
 </template>
 
 <script lang="ts">
-  import { IonLabel, IonRange } from '@ionic/vue';
+  import { IonRange } from '@ionic/vue';
   import { defineComponent } from 'vue';
 
   export default defineComponent({
-    components: { IonLabel, IonRange },
-    data() {
-      return {
-        lastEmittedValue: '',
-      };
-    },
+    components: { IonRange },
     methods: {
       onIonChange({ detail }) {
-        this.lastEmittedValue = detail.value;
+        console.log('ionChange emitted value: ' + detail.value);
       },
     },
   });

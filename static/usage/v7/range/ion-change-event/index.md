@@ -9,6 +9,7 @@ import angular_example_component_ts from './angular/example_component_ts.md';
 
 <Playground
   version="7"
+  showConsole={true}
   code={{
     javascript,
     react,

@@ -1,17 +1,13 @@
 ```tsx
-import React, { useState } from 'react';
-import { IonLabel, IonRange } from '@ionic/react';
-import { RangeValue } from '@ionic/core';
+import React from 'react';
+import { IonRange } from '@ionic/react';
+
 function Example() {
-  const [lastEmittedValue, setLastEmittedValue] = useState<RangeValue>();
   return (
-    <>
-      <IonRange
-        aria-label="Range with ionChange"
-        onIonChange={({ detail }) => setLastEmittedValue(detail.value)}
-      ></IonRange>
-      <IonLabel>ionChange emitted value: {lastEmittedValue as number}</IonLabel>
-    </>
+    <IonRange
+      aria-label="Range with ionChange"
+      onIonChange={({ detail }) => console.log('ionChange emitted value: ' + detail.value)}
+    ></IonRange>
   );
 }
 export default Example;

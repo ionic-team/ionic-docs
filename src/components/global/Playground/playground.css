@@ -14,6 +14,14 @@
   --playground-tabs-background: var(--c-carbon-90);
   --playground-tab-btn-color: var(--c-carbon-20);
   --playground-tab-btn-border-color: transparent;
+
+  --playground-console-item-separator-color: var(--c-carbon-80);
+  --playground-console-warning-background: #332B00;
+  --playground-console-warning-color: var(--c-yellow-80);
+  --playground-console-warning-separator-color: #665500;
+  --playground-console-error-background: #290000;
+  --playground-console-error-color: var(--c-red-40);
+  --playground-console-error-separator-color: #5C0000;
 }
 
 .playground {
@@ -28,6 +36,13 @@
    * @prop --playground-tabs-background: The background color of the tabs bar not including the active tab button.
    * @prop --playground-tab-btn-color: The text color of the tab buttons.
    * @prop --playground-tab-btn-border-color: The border color of the tab buttons.
+   * @prop --playground-console-item-separator-color The color of the separator/border between console UI items.
+   * @prop --playground-console-warning-background The background color of warning items in the console UI.
+   * @prop --playground-console-warning-color The text color of warning items in the console UI.
+   * @prop --playground-console-warning-separator-color The color of the top and bottom separator/border for warning items in the console UI.
+   * @prop --playground-console-error-background The background color of error items in the console UI.
+   * @prop --playground-console-error-color The text color of error items in the console UI.
+   * @prop --playground-console-error-separator-color The color of the top and bottom separator/border for error items in the console UI.
    */
   --playground-btn-color: var(--c-indigo-90);
   --playground-btn-selected-color: var(--c-blue-90);
@@ -41,6 +56,14 @@
   --playground-tab-btn-color: var(--c-carbon-100);
   --playground-tab-btn-border-color: var(--c-indigo-30);
 
+  --playground-console-item-separator-color: var(--c-indigo-20);
+  --playground-console-warning-background: var(--c-yellow-10);
+  --playground-console-warning-color: #5C3C00;
+  --playground-console-warning-separator-color: var(--c-yellow-30);
+  --playground-console-error-background: var(--c-red-10);
+  --playground-console-error-color: var(--c-red-90);
+  --playground-console-error-separator-color: var(--c-red-30);
+
   overflow: hidden;
 
   margin-bottom: var(--ifm-leading);
@@ -50,6 +73,11 @@
 .playground__container {
   border: 1px solid var(--playground-separator-color);
   border-radius: var(--ifm-code-border-radius);
+}
+
+.playground__container--has-console {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
 }
 
 /* Playground preview contains the demo example*/
@@ -211,6 +239,86 @@
   .playground .frame-visible {
     width: 100%;
   }
+}
+
+.playground__console {
+  background-color: var(--code-block-bg-c);
+  border: 1px solid var(--playground-separator-color);
+  border-top: 0;
+  border-bottom-left-radius: var(--ifm-code-border-radius);
+  border-bottom-right-radius: var(--ifm-code-border-radius);
+}
+
+.playground__console-header {
+  background-color: var(--playground-separator-color);
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.playground__console-body {
+  overflow-y: auto;
+
+  height: 120px;
+}
+
+.playground__console-item {
+  border-top: 1px solid var(--separator-color);
+
+  position: relative;
+}
+
+.playground__console-header, .playground__console-item {
+  padding: 3px 3px 3px 28px;
+}
+
+.playground__console-item:first-child {
+  border-top: none;
+}
+
+.playground__console-item:last-child {
+  border-bottom: 1px solid var(--separator-color);
+}
+
+.playground__console-item--placeholder {
+  font-style: italic;
+}
+
+.playground__console-item--log {
+  --separator-color: var(--playground-console-item-separator-color);
+}
+
+.playground__console-item--warning {
+  --separator-color: var(--playground-console-warning-separator-color);
+  background-color: var(--playground-console-warning-background);
+  border-bottom: 1px solid var(--separator-color);
+  color: var(--playground-console-warning-color);
+}
+
+.playground__console-item--error {
+  --separator-color: var(--playground-console-error-separator-color);
+  background-color: var(--playground-console-error-background);
+  border-bottom: 1px solid var(--separator-color);
+  color: var(--playground-console-error-color);
+}
+
+/* warnings and errors have both borders colored, so hide the extra from the neighboring item */
+.playground__console-item--warning + .playground__console-item,
+.playground__console-item--error + .playground__console-item {
+  border-top: none;
+}
+
+.playground__console-icon {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+}
+
+.playground__console code {
+  background-color: transparent;
+  font-size: 0.813rem;
+  padding: 0;
+  padding-block-start: 0; /* prevents text getting cut off vertically */
+  padding-block-end: 0; /* prevents border from item below getting covered up */
 }
 
 /** Tabs **/
