@@ -27,7 +27,7 @@
     IonButtons,
     IonBackButton,
   } from '@ionic/vue';
-  import PageThree from './PageThree.vue';
+  import { markRaw, defineAsyncComponent } from "vue";
 
   export default {
     components: {
@@ -42,7 +42,7 @@
     },
     data() {
       return {
-        component: PageThree,
+        component: markRaw(defineAsyncComponent(() => import('./PageThree.vue') )),
       };
     },
   };
