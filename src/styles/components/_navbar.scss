@@ -288,7 +288,6 @@ html[data-theme='dark'] {
       margin-inline-start: calc(-1 * var(--ifm-navbar-item-padding-horizontal));
       margin-inline-end: -0.25rem;
 
-      > span,
       &::after {
         display: none;
       }
