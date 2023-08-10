@@ -2,7 +2,7 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
 <Tabs
-  groupId="per-platform-config"
+  groupId="framework"
   defaultValue="angular"
   values={[
     { value: 'angular', label: 'Angular' },
