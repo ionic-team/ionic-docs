@@ -10,16 +10,9 @@
   ></ion-alert>
 </template>
 
-<script lang="ts">
+<script lang="ts" setup>
   import { IonAlert, IonButton } from '@ionic/vue';
 
-  export default {
-    components: { IonAlert, IonButton },
-    setup() {
-      const alertButtons = ['OK'];
-
-      return { alertButtons };
-    },
-  };
+  const alertButtons = ['OK'];
 </script>
 ```

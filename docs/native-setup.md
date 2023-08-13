@@ -41,7 +41,7 @@ Using the [Camera plugin](native/camera.md) as an example, first install it:
 
 ````mdx-code-block
 <Tabs
-  groupId="runtime"
+  groupId="framework"
   defaultValue="javascript"
   values={[
     { value: 'javascript', label: 'JavaScript' },

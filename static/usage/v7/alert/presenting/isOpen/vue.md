@@ -11,22 +11,15 @@
   ></ion-alert>
 </template>
 
-<script lang="ts">
+<script lang="ts" setup>
   import { ref } from 'vue';
   import { IonAlert, IonButton } from '@ionic/vue';
 
-  export default {
-    components: { IonAlert, IonButton },
-    setup() {
-      const isOpen = ref(false);
-      const alertButtons = ['OK'];
+  const isOpen = ref(false);
+  const alertButtons = ['OK'];
 
-      const setOpen = (state: boolean) => {
-        isOpen.value = state;
-      };
-
-      return { isOpen, alertButtons, setOpen };
-    },
+  const setOpen = (state: boolean) => {
+    isOpen.value = state;
   };
 </script>
 ```

@@ -38,8 +38,14 @@ $ ionic serve
 
 `ionic serve` を起動したまま、アプリの開発を続けます。変更を保存すると、その変更が適用された状態でアプリがリロードされます。
 
-ネイティブ機能を実装する場合は、[Platform Detection](../core-concepts/cross-platform.md) を使用します。
-実機でテストする場合は、[iOS](ios.md) と [Android](android.md) はこちらを参照してください。
+:::note
+
+If the external link isn't listed on the terminal, then run `ionic serve --external` to generate it.
+
+:::
+
+When implementing native functionality, use [Platform Detection](../core-concepts/cross-platform.md).
+When you're ready to test on a real device, see here for [iOS](ios.md) and [Android](android.md).
 
 ## モバイルビューポートのシミュレーション
 

@@ -21,25 +21,12 @@
   </ion-content>
 </template>
 
-<script lang="ts">
+<script lang="ts" setup>
   import { IonButtons, IonButton, IonModal, IonHeader, IonContent, IonToolbar, IonTitle } from '@ionic/vue';
   import { defineComponent, ref } from 'vue';
 
-  export default defineComponent({
-    components: {
-      IonButtons,
-      IonButton,
-      IonModal,
-      IonHeader,
-      IonContent,
-      IonToolbar,
-      IonTitle,
-    },
-    methods: {
-      close() {
-        this.$refs.modal.$el.dismiss();
-      },
-    },
-  });
+  const modal = ref();
+
+  const close = () => modal.value.$el.dismiss();
 </script>
 ```

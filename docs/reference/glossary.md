@@ -12,6 +12,20 @@ title: 用語集
 
 <div id="what-is">
 
+<section id="a11y">
+  <a href="#a11y">
+    <h3>Accessibility</h3>
+  </a>
+  <p>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/Accessibility" target="_blank">
+      Accessibility
+    </a>{' '}
+    (a11y) is the practice of enabling as many people as possible to use the content, even if people have limited
+    abilities. This includes people with disabilities, those using mobile devices, and those with slow network
+    connections. Content should be developed to be as accessible as technology allows.
+  </p>
+</section>
+
 <section id="android-sdk">
   <a href="#android-sdk">
     <h3>Android SDK</h3>

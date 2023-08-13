@@ -78,7 +78,25 @@ import CSSProps from '@site/static/usage/v7/button/theming/css-properties/index.
 
 <CSSProps />
 
-## プロパティ
+## Accessibility
+
+Buttons are built to be accessible, but may need some adjustments depending on their content. The button component renders a native [button element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button) which allows it to take advantage of the functionality that a native button provides.
+
+### Overflowing Text Content
+
+There are many cases where a button's text content may overflow the container. It is recommended to wrap the text inside of the button when this happens so that all of the text can still be read. The button component will automatically adjust its height to accommodate the extra lines of text.
+
+The button text does not automatically wrap to the next line when the text is too long to fit. In order to make the text wrap, the `ion-text-wrap` class can be added, which will set the `white-space` property to `"normal"`. This will become the default in a future major release.
+
+:::info
+The `max-width` style is set on the button below for demo purposes only. Text wrapping will work with a dynamic button width.
+:::
+
+import TextWrapping from '@site/static/usage/v7/button/text-wrapping/index.md';
+
+<TextWrapping />
+
+## Properties
 <Props />
 
 ## イベント
