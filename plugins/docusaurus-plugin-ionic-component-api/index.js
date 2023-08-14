@@ -157,7 +157,9 @@ function renderEvents({ events }) {
   return `
 | Name | Description | [Bubbles](../reference/glossary#event-bubbling) |
 | --- | --- | -- |
-${events.map((event) => `| \`${event.event}\` | ${formatMultiline(event.docs)} | ${event.bubbles ? 'Yes' : 'No'} |`).join('\n')}
+${events
+  .map((event) => `| \`${event.event}\` | ${formatMultiline(event.docs)} | ${event.bubbles ? 'Yes' : 'No'} |`)
+  .join('\n')}
 
 `;
 }
