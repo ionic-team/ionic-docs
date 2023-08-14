@@ -72,13 +72,23 @@ title: Glossary
     <h3>Event Bubbling</h3>
   </a>
   <p>
-    Bubbling is a way of propagating events in the DOM. With bubbling, the event is first captured by the innermost element and then propagated upwards.
+    Bubbling is a way of propagating events in the DOM. With bubbling, the event is first captured by the innermost
+    element and then propagated upwards.
   </p>
   <p>
-    Many Ionic components emit events of the same name that also bubble. For example, <code>ionChange</code> is an event emitted by several components such as <code>ion-radio-group</code>, <code>ion-input</code>, and more. Developers can check the <code>target</code> property on the event to see the component that the event originated from.
+    Many Ionic components emit events of the same name that also bubble. For example, <code>ionChange</code> is an event
+    emitted by several components such as <code>ion-radio-group</code>, <code>ion-input</code>, and more. Developers can
+    check the <code>target</code> property on the event to see the component that the event originated from.
   </p>
   <p>
-    See <a href="https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/Events#event_bubbling" target="_blank">MDN's Introduction to events guide</a> for more information on bubbling.
+    See{' '}
+    <a
+      href="https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/Events#event_bubbling"
+      target="_blank"
+    >
+      MDN's Introduction to events guide
+    </a>{' '}
+    for more information on bubbling.
   </p>
 </section>
 
