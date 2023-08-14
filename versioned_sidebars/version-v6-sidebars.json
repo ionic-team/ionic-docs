@@ -606,18 +606,6 @@
     },
     {
       "type": "category",
-      "label": "Action Sheet",
-      "collapsed": false,
-      "items": [
-        {
-          "type": "doc",
-          "id": "version-v6/api/action-sheet"
-        }
-      ],
-      "collapsible": true
-    },
-    {
-      "type": "category",
       "label": "Accordion",
       "collapsed": false,
       "items": [
@@ -628,6 +616,18 @@
         {
           "type": "doc",
           "id": "version-v6/api/accordion-group"
+        }
+      ],
+      "collapsible": true
+    },
+    {
+      "type": "category",
+      "label": "Action Sheet",
+      "collapsed": false,
+      "items": [
+        {
+          "type": "doc",
+          "id": "version-v6/api/action-sheet"
         }
       ],
       "collapsible": true
@@ -818,6 +818,18 @@
     },
     {
       "type": "category",
+      "label": "Icons",
+      "collapsed": false,
+      "items": [
+        {
+          "type": "doc",
+          "id": "version-v6/api/icon"
+        }
+      ],
+      "collapsible": true
+    },
+    {
+      "type": "category",
       "label": "Infinite Scroll",
       "collapsed": false,
       "items": [
@@ -828,18 +840,6 @@
         {
           "type": "doc",
           "id": "version-v6/api/infinite-scroll-content"
-        }
-      ],
-      "collapsible": true
-    },
-    {
-      "type": "category",
-      "label": "Icons",
-      "collapsed": false,
-      "items": [
-        {
-          "type": "doc",
-          "id": "version-v6/api/icon"
         }
       ],
       "collapsible": true
