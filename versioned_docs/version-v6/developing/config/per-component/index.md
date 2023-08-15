@@ -2,7 +2,7 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
 <Tabs
-  groupId="per-component-config"
+  groupId="framework"
   defaultValue="javascript"
   values={[
     { value: 'javascript', label: 'JavaScript' },
