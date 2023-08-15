@@ -706,18 +706,6 @@
     {
       "collapsed": false,
       "type": "category",
-      "label": "Icons",
-      "items": [
-        {
-          "type": "link",
-          "label": "ion-icon",
-          "href": "https://ionicons.com"
-        }
-      ]
-    },
-    {
-      "collapsed": false,
-      "type": "category",
       "label": "Infinite Scroll",
       "items": [
         {
@@ -727,6 +715,18 @@
         {
           "type": "doc",
           "id": "version-v5/api/infinite-scroll-content"
+        }
+      ]
+    },
+    {
+      "collapsed": false,
+      "type": "category",
+      "label": "Icons",
+      "items": [
+        {
+          "type": "link",
+          "label": "ion-icon",
+          "href": "https://ionicons.com"
         }
       ]
     },
