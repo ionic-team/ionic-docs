@@ -9,7 +9,7 @@ import CustomProps from '@ionic-internal/component-api/v7/reorder-group/custom-p
 import Slots from '@ionic-internal/component-api/v7/reorder-group/slots.md';
 
 <head>
-  <title>ion-reorder-group: Wrapper Component for Ionic Framework Apps</title>
+  <title>ion-reorder-group: Wrapper Component for Reorder Items</title>
   <meta name="description" content="ion-reorder-group is a wrapper component for items using the ion-reorder component on Ionic apps. Read to learn more about ion-reorder-group usage." />
 </head>
 

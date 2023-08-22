@@ -12,7 +12,7 @@ import CustomProps from '@ionic-internal/component-api/v7/toast/custom-props.md'
 import Slots from '@ionic-internal/component-api/v7/toast/slots.md';
 
 <head>
-  <title>ion-toast Component: A Dismissible App Notification Alert</title>
+  <title>ion-toast: A Dismissible App Notification Alert Component</title>
   <meta name="description" content="ion-toast component is an app notification displaying system messages or feedback. Toast alerts appear above content and are dismissed to resume interaction." />
 </head>
 

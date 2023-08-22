@@ -12,7 +12,7 @@ import CustomProps from '@ionic-internal/component-api/v7/action-sheet/custom-pr
 import Slots from '@ionic-internal/component-api/v7/action-sheet/slots.md';
 
 <head>
-  <title>ion-action-sheet | Action Sheet Dialog for iOS and Android Apps</title>
+  <title>ion-action-sheet: Action Sheet Dialog for iOS and Android</title>
   <meta name="description" content="Action Sheets are dialogs that display a set of options above app content and must be manually dismissed. Read to learn about use on iOS and Android devices." />
 </head>
 

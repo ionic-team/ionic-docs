@@ -9,7 +9,7 @@ import CustomProps from '@ionic-internal/component-api/v7/content/custom-props.m
 import Slots from '@ionic-internal/component-api/v7/content/slots.md';
 
 <head>
-  <title>ion-content: Scrollable CSS Component for Ionic App Content Areas</title>
+  <title>ion-content: Scrollable Component for Ionic App Content</title>
   <meta name="description" content="ion-content provides an easy to use content area with useful methods to control the scrollable area. Learn more about this CSS component for Ionic apps." />
 </head>
 
