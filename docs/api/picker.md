@@ -72,6 +72,9 @@ interface PickerButton {
 interface PickerColumn {
   name: string;
   align?: string;
+  /**
+   * Changing this value allows the initial value of a picker column to be set.
+   */
   selectedIndex?: number;
   prevSelected?: number;
   prefix?: string;
