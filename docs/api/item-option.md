@@ -9,7 +9,7 @@ import CustomProps from '@ionic-internal/component-api/v7/item-option/custom-pro
 import Slots from '@ionic-internal/component-api/v7/item-option/slots.md';
 
 <head>
-  <title>ion-item-options: Option Button Components for Ionic Apps</title>
+  <title>ion-item-option: Option Button for Sliding Item in Ionic</title>
   <meta name="description" content="ion-item-option is the option button for an ion-item-sliding and must be placed inside of an <ion-item-options>. Read to learn more about properties." />
 </head>
 

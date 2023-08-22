@@ -12,7 +12,7 @@ import CustomProps from '@ionic-internal/component-api/v7/tab-bar/custom-props.m
 import Slots from '@ionic-internal/component-api/v7/tab-bar/slots.md';
 
 <head>
-  <title>ion-tab-bar with CSS Custom Properties for Tab Bar Components</title>
+  <title>ion-tab-bar: Tab Bar Component with CSS Custom Properties</title>
   <meta name="description" content="The tab bar component contains a set of tab buttons and a tab bar must be provided inside of tabs to communicate. Read more about use and CSS custom properties." />
 </head>
 

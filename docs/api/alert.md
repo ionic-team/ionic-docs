@@ -12,7 +12,7 @@ import CustomProps from '@ionic-internal/component-api/v7/alert/custom-props.md'
 import Slots from '@ionic-internal/component-api/v7/alert/slots.md';
 
 <head>
-  <title>ion-alert: Ionic API Alert Buttons with Custom Message Prompts</title>
+  <title>ion-alert: Ionic Alert Buttons with Custom Message Prompts</title>
   <meta name="description" content="ion-alert dialog presents or collects information using inputs. Custom alert button messages appear above the app's content and must be manually dismissed." />
 </head>
 
