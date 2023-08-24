@@ -1,7 +1,7 @@
-
 Purchases is a cross platform solution for managing in-app subscriptions. A backend is also provided via [RevenueCat](https://www.revenuecat.com)
 
 ## Features
+
 |     | RevenueCat                                                                                                                                                   |
 | --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | ✅  | Server-side receipt validation                                                                                                                               |
@@ -10,8 +10,8 @@ Purchases is a cross platform solution for managing in-app subscriptions. A back
 | 📊  | Analytics - automatic calculation of metrics like conversion, mrr, and churn                                                                                 |
 | 📝  | [Online documentation](https://docs.revenuecat.com/docs) up to date                                                                                          |
 | 🔀  | [Integrations](https://www.revenuecat.com/integrations) - over a dozen integrations to easily send purchase data where you need it                           |
-| 💯  | Well maintained - [frequent releases](https://github.com/RevenueCat/cordova-plugin-purchases/releases)                                                                  |
-| 📮  | Great support - [Help Center](https://revenuecat.zendesk.com)                                                                                           |
+| 💯  | Well maintained - [frequent releases](https://github.com/RevenueCat/cordova-plugin-purchases/releases)                                                       |
+| 📮  | Great support - [Help Center](https://revenuecat.zendesk.com)                                                                                                |
 | 🤩  | Awesome [new features](https://trello.com/b/RZRnWRbI/revenuecat-product-roadmap)                                                                             |
 
 ## Getting Started

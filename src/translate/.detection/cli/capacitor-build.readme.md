@@ -1,4 +1,5 @@
 `ionic capacitor build` will do the following:
+
 - Perform `ionic build`
 - Copy web assets into the specified native platform
 - Open the IDE for your native project (Xcode for iOS, Android Studio for Android)

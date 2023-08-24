@@ -11,5 +11,6 @@ For best results, the splash screen's artwork should roughly fit within a square
 This command uses the `cordova-res` [utility](https://github.com/ionic-team/cordova-res) to generate resources locally.
 
 Cordova reference documentation:
+
 - Icons: **[https://cordova.apache.org/docs/en/latest/config_ref/images.html](https://cordova.apache.org/docs/en/latest/config_ref/images.html)**
 - Splash Screens: **[https://cordova.apache.org/docs/en/latest/reference/cordova-plugin-splashscreen/](https://cordova.apache.org/docs/en/latest/reference/cordova-plugin-splashscreen/)**
