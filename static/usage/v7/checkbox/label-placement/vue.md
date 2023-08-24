@@ -9,6 +9,10 @@
   <br />
 
   <ion-checkbox label-placement="fixed">Fixed Width Label</ion-checkbox>
+
+  <br />
+
+  <ion-checkbox label-placement="stacked">Stacked Label</ion-checkbox>
 </template>
 
 <script lang="ts">
