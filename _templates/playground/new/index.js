@@ -69,12 +69,12 @@ module.exports = {
             },
           ])
           .then((answers) => {
-            const componentName = changeCase.pascal(answers.path.split('/').pop());
+            const playgroundName = changeCase.pascal(answers.path.split('/').pop());
             console.log(
-              `\nTo use this component in a docs markdown file, include\nthe following:\n\n## ${componentName}\n\nimport ${componentName} from '@site/static/usage/v7/${answers.name.replace(
+              `\nTo use this playground in a docs markdown file, include\nthe following:\n\n## ${playgroundName}\n\nimport ${playgroundName} from '@site/static/usage/v7/${answers.name.replace(
                 'ion-',
                 ''
-              )}/${answers.path}/index.md';\n\n<${componentName} />\n`
+              )}/${answers.path}/index.md';\n\n<${playgroundName} />\n`
             );
 
             return answers;
