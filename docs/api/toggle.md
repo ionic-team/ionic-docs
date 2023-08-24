@@ -53,6 +53,13 @@ import LabelPlacement from '@site/static/usage/v7/toggle/label-placement/index.m
 
 <LabelPlacement />
 
+## Align
+
+Developers can use the `align` property to control how the label and control are aligned on the cross axis. This property mirrors the flexbox `align-items` property. It only has an effect when the `labelPlacement` property is set to `stacked`.
+
+import Align from '@site/static/usage/v7/toggle/align/index.md';
+
+<Align />
 
 ## Justification
 
