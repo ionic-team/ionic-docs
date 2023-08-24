@@ -1,5 +1,5 @@
 {
-  "filePath": "./src/components/skeleton-text/skeleton-text.tsx",
+  "filePath": "src/components/skeleton-text/skeleton-text.tsx",
   "encapsulation": "shadow",
   "tag": "ion-skeleton-text",
   "docs": "",
@@ -9,6 +9,11 @@
     {
       "name": "animated",
       "type": "boolean",
+      "complexType": {
+        "original": "boolean",
+        "resolved": "boolean",
+        "references": {}
+      },
       "mutable": false,
       "attr": "animated",
       "reflectToAttr": false,

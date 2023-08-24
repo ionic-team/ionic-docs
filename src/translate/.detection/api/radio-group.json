@@ -1,5 +1,5 @@
 {
-  "filePath": "./src/components/radio-group/radio-group.tsx",
+  "filePath": "src/components/radio-group/radio-group.tsx",
   "encapsulation": "none",
   "tag": "ion-radio-group",
   "docs": "",
@@ -9,6 +9,11 @@
     {
       "name": "allowEmptySelection",
       "type": "boolean",
+      "complexType": {
+        "original": "boolean",
+        "resolved": "boolean",
+        "references": {}
+      },
       "mutable": false,
       "attr": "allow-empty-selection",
       "reflectToAttr": false,
@@ -26,6 +31,11 @@
     {
       "name": "name",
       "type": "string",
+      "complexType": {
+        "original": "string",
+        "resolved": "string",
+        "references": {}
+      },
       "mutable": false,
       "attr": "name",
       "reflectToAttr": false,
@@ -43,6 +53,11 @@
     {
       "name": "value",
       "type": "any",
+      "complexType": {
+        "original": "any | null",
+        "resolved": "any",
+        "references": {}
+      },
       "mutable": true,
       "attr": "value",
       "reflectToAttr": false,
@@ -63,6 +78,17 @@
       "event": "ionChange",
       "detail": "RadioGroupChangeEventDetail<any>",
       "bubbles": true,
+      "complexType": {
+        "original": "RadioGroupChangeEventDetail",
+        "resolved": "RadioGroupChangeEventDetail<any>",
+        "references": {
+          "RadioGroupChangeEventDetail": {
+            "location": "import",
+            "path": "./radio-group-interface",
+            "id": "src/components/radio-group/radio-group-interface.ts::RadioGroupChangeEventDetail"
+          }
+        }
+      },
       "cancelable": true,
       "composed": true,
       "docs": "Emitted when the value has changed.",

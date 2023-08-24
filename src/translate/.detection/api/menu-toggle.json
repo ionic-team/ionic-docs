@@ -1,5 +1,5 @@
 {
-  "filePath": "./src/components/menu-toggle/menu-toggle.tsx",
+  "filePath": "src/components/menu-toggle/menu-toggle.tsx",
   "encapsulation": "shadow",
   "tag": "ion-menu-toggle",
   "docs": "",
@@ -14,6 +14,11 @@
     {
       "name": "autoHide",
       "type": "boolean",
+      "complexType": {
+        "original": "boolean",
+        "resolved": "boolean",
+        "references": {}
+      },
       "mutable": false,
       "attr": "auto-hide",
       "reflectToAttr": false,
@@ -31,6 +36,11 @@
     {
       "name": "menu",
       "type": "string | undefined",
+      "complexType": {
+        "original": "string",
+        "resolved": "string | undefined",
+        "references": {}
+      },
       "mutable": false,
       "attr": "menu",
       "reflectToAttr": false,

@@ -1,5 +1,5 @@
 {
-  "filePath": "./src/components/breadcrumb/breadcrumb.tsx",
+  "filePath": "src/components/breadcrumb/breadcrumb.tsx",
   "encapsulation": "shadow",
   "tag": "ion-breadcrumb",
   "docs": "",
@@ -26,6 +26,11 @@
     {
       "name": "active",
       "type": "boolean",
+      "complexType": {
+        "original": "boolean",
+        "resolved": "boolean",
+        "references": {}
+      },
       "mutable": false,
       "attr": "active",
       "reflectToAttr": false,
@@ -43,6 +48,17 @@
     {
       "name": "color",
       "type": "\"danger\" | \"dark\" | \"light\" | \"medium\" | \"primary\" | \"secondary\" | \"success\" | \"tertiary\" | \"warning\" | string & Record<never, never> | undefined",
+      "complexType": {
+        "original": "Color",
+        "resolved": "\"danger\" | \"dark\" | \"light\" | \"medium\" | \"primary\" | \"secondary\" | \"success\" | \"tertiary\" | \"warning\" | string & Record<never, never> | undefined",
+        "references": {
+          "Color": {
+            "location": "import",
+            "path": "../../interface",
+            "id": "src/interface.d.ts::Color"
+          }
+        }
+      },
       "mutable": false,
       "attr": "color",
       "reflectToAttr": false,
@@ -98,6 +114,11 @@
     {
       "name": "disabled",
       "type": "boolean",
+      "complexType": {
+        "original": "boolean",
+        "resolved": "boolean",
+        "references": {}
+      },
       "mutable": false,
       "attr": "disabled",
       "reflectToAttr": false,
@@ -115,6 +136,11 @@
     {
       "name": "download",
       "type": "string | undefined",
+      "complexType": {
+        "original": "string | undefined",
+        "resolved": "string | undefined",
+        "references": {}
+      },
       "mutable": false,
       "attr": "download",
       "reflectToAttr": false,
@@ -134,6 +160,11 @@
     {
       "name": "href",
       "type": "string | undefined",
+      "complexType": {
+        "original": "string | undefined",
+        "resolved": "string | undefined",
+        "references": {}
+      },
       "mutable": false,
       "attr": "href",
       "reflectToAttr": false,
@@ -174,6 +205,11 @@
     {
       "name": "rel",
       "type": "string | undefined",
+      "complexType": {
+        "original": "string | undefined",
+        "resolved": "string | undefined",
+        "references": {}
+      },
       "mutable": false,
       "attr": "rel",
       "reflectToAttr": false,
@@ -193,6 +229,17 @@
     {
       "name": "routerAnimation",
       "type": "((baseEl: any, opts?: any) => Animation) | undefined",
+      "complexType": {
+        "original": "AnimationBuilder | undefined",
+        "resolved": "((baseEl: any, opts?: any) => Animation) | undefined",
+        "references": {
+          "AnimationBuilder": {
+            "location": "import",
+            "path": "../../interface",
+            "id": "src/interface.d.ts::AnimationBuilder"
+          }
+        }
+      },
       "mutable": false,
       "reflectToAttr": false,
       "docs": "When using a router, it specifies the transition animation when navigating to\nanother page using `href`.",
@@ -211,6 +258,17 @@
     {
       "name": "routerDirection",
       "type": "\"back\" | \"forward\" | \"root\"",
+      "complexType": {
+        "original": "RouterDirection",
+        "resolved": "\"back\" | \"forward\" | \"root\"",
+        "references": {
+          "RouterDirection": {
+            "location": "import",
+            "path": "../router/utils/interface",
+            "id": "src/components/router/utils/interface.ts::RouterDirection"
+          }
+        }
+      },
       "mutable": false,
       "attr": "router-direction",
       "reflectToAttr": false,
@@ -237,6 +295,11 @@
     {
       "name": "separator",
       "type": "boolean | undefined",
+      "complexType": {
+        "original": "boolean | undefined",
+        "resolved": "boolean | undefined",
+        "references": {}
+      },
       "mutable": false,
       "attr": "separator",
       "reflectToAttr": false,
@@ -256,6 +319,11 @@
     {
       "name": "target",
       "type": "string | undefined",
+      "complexType": {
+        "original": "string | undefined",
+        "resolved": "string | undefined",
+        "references": {}
+      },
       "mutable": false,
       "attr": "target",
       "reflectToAttr": false,
@@ -279,6 +347,11 @@
       "event": "ionBlur",
       "detail": "void",
       "bubbles": true,
+      "complexType": {
+        "original": "void",
+        "resolved": "void",
+        "references": {}
+      },
       "cancelable": true,
       "composed": true,
       "docs": "Emitted when the breadcrumb loses focus.",
@@ -288,6 +361,11 @@
       "event": "ionFocus",
       "detail": "void",
       "bubbles": true,
+      "complexType": {
+        "original": "void",
+        "resolved": "void",
+        "references": {}
+      },
       "cancelable": true,
       "composed": true,
       "docs": "Emitted when the breadcrumb has focus.",

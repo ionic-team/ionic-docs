@@ -1,5 +1,5 @@
 {
-  "filePath": "./src/components/route-redirect/route-redirect.tsx",
+  "filePath": "src/components/route-redirect/route-redirect.tsx",
   "encapsulation": "none",
   "tag": "ion-route-redirect",
   "docs": "",
@@ -9,6 +9,11 @@
     {
       "name": "from",
       "type": "string",
+      "complexType": {
+        "original": "string",
+        "resolved": "string",
+        "references": {}
+      },
       "mutable": false,
       "attr": "from",
       "reflectToAttr": false,
@@ -25,6 +30,11 @@
     {
       "name": "to",
       "type": "null | string | undefined",
+      "complexType": {
+        "original": "string | undefined | null",
+        "resolved": "null | string | undefined",
+        "references": {}
+      },
       "mutable": false,
       "attr": "to",
       "reflectToAttr": false,
@@ -51,6 +61,11 @@
       "event": "ionRouteRedirectChanged",
       "detail": "any",
       "bubbles": true,
+      "complexType": {
+        "original": "any",
+        "resolved": "any",
+        "references": {}
+      },
       "cancelable": true,
       "composed": true,
       "docs": "Internal event that fires when any value of this rule is added/removed from the DOM,\nor any of his public properties changes.\n\n`ion-router` captures this event in order to update his internal registry of router rules.",

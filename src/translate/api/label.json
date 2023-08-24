@@ -1,5 +1,5 @@
 {
-  "filePath": "./src/components/label/label.tsx",
+  "filePath": "src/components/label/label.tsx",
   "encapsulation": "scoped",
   "tag": "ion-label",
   "docs": "",
@@ -14,6 +14,17 @@
     {
       "name": "color",
       "type": "\"danger\" | \"dark\" | \"light\" | \"medium\" | \"primary\" | \"secondary\" | \"success\" | \"tertiary\" | \"warning\" | string & Record<never, never> | undefined",
+      "complexType": {
+        "original": "Color",
+        "resolved": "\"danger\" | \"dark\" | \"light\" | \"medium\" | \"primary\" | \"secondary\" | \"success\" | \"tertiary\" | \"warning\" | string & Record<never, never> | undefined",
+        "references": {
+          "Color": {
+            "location": "import",
+            "path": "../../interface",
+            "id": "src/interface.d.ts::Color"
+          }
+        }
+      },
       "mutable": false,
       "attr": "color",
       "reflectToAttr": true,
@@ -90,6 +101,11 @@
     {
       "name": "position",
       "type": "\"fixed\" | \"floating\" | \"stacked\" | undefined",
+      "complexType": {
+        "original": "'fixed' | 'stacked' | 'floating'",
+        "resolved": "\"fixed\" | \"floating\" | \"stacked\" | undefined",
+        "references": {}
+      },
       "mutable": false,
       "attr": "position",
       "reflectToAttr": false,

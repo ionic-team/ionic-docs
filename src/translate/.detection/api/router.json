@@ -1,5 +1,5 @@
 {
-  "filePath": "./src/components/router/router.tsx",
+  "filePath": "src/components/router/router.tsx",
   "encapsulation": "none",
   "tag": "ion-router",
   "docs": "",
@@ -9,6 +9,11 @@
     {
       "name": "root",
       "type": "string",
+      "complexType": {
+        "original": "string",
+        "resolved": "string",
+        "references": {}
+      },
       "mutable": false,
       "attr": "root",
       "reflectToAttr": false,
@@ -26,6 +31,11 @@
     {
       "name": "useHash",
       "type": "boolean",
+      "complexType": {
+        "original": "boolean",
+        "resolved": "boolean",
+        "references": {}
+      },
       "mutable": false,
       "attr": "use-hash",
       "reflectToAttr": false,
@@ -48,6 +58,17 @@
         "type": "Promise<void>",
         "docs": ""
       },
+      "complexType": {
+        "signature": "() => Promise<void>",
+        "parameters": [],
+        "references": {
+          "Promise": {
+            "location": "global",
+            "id": "global::Promise"
+          }
+        },
+        "return": "Promise<void>"
+      },
       "signature": "back() => Promise<void>",
       "parameters": [],
       "docs": "Go back to previous page in the window.history.",
@@ -58,6 +79,50 @@
       "returns": {
         "type": "Promise<boolean>",
         "docs": ""
+      },
+      "complexType": {
+        "signature": "(path: string, direction?: RouterDirection, animation?: AnimationBuilder) => Promise<boolean>",
+        "parameters": [
+          {
+            "tags": [
+              {
+                "name": "param",
+                "text": "path The path to navigate to."
+              }
+            ],
+            "text": "The path to navigate to."
+          },
+          {
+            "tags": [
+              {
+                "name": "param",
+                "text": "direction The direction of the animation. Defaults to `\"forward\"`."
+              }
+            ],
+            "text": "The direction of the animation. Defaults to `\"forward\"`."
+          },
+          {
+            "tags": [],
+            "text": ""
+          }
+        ],
+        "references": {
+          "Promise": {
+            "location": "global",
+            "id": "global::Promise"
+          },
+          "RouterDirection": {
+            "location": "import",
+            "path": "./utils/interface",
+            "id": "src/components/router/utils/interface.ts::RouterDirection"
+          },
+          "AnimationBuilder": {
+            "location": "import",
+            "path": "../../interface",
+            "id": "src/interface.d.ts::AnimationBuilder"
+          }
+        },
+        "return": "Promise<boolean>"
       },
       "signature": "push(path: string, direction?: RouterDirection, animation?: AnimationBuilder) => Promise<boolean>",
       "parameters": [],
@@ -79,6 +144,17 @@
       "event": "ionRouteDidChange",
       "detail": "RouterEventDetail",
       "bubbles": true,
+      "complexType": {
+        "original": "RouterEventDetail",
+        "resolved": "RouterEventDetail",
+        "references": {
+          "RouterEventDetail": {
+            "location": "import",
+            "path": "./utils/interface",
+            "id": "src/components/router/utils/interface.ts::RouterEventDetail"
+          }
+        }
+      },
       "cancelable": true,
       "composed": true,
       "docs": "Emitted when the route had changed",
@@ -88,6 +164,17 @@
       "event": "ionRouteWillChange",
       "detail": "RouterEventDetail",
       "bubbles": true,
+      "complexType": {
+        "original": "RouterEventDetail",
+        "resolved": "RouterEventDetail",
+        "references": {
+          "RouterEventDetail": {
+            "location": "import",
+            "path": "./utils/interface",
+            "id": "src/components/router/utils/interface.ts::RouterEventDetail"
+          }
+        }
+      },
       "cancelable": true,
       "composed": true,
       "docs": "Event emitted when the route is about to change",

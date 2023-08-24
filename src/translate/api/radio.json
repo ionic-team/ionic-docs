@@ -1,5 +1,5 @@
 {
-  "filePath": "./src/components/radio/radio.tsx",
+  "filePath": "src/components/radio/radio.tsx",
   "encapsulation": "shadow",
   "tag": "ion-radio",
   "docs": "",
@@ -26,6 +26,17 @@
     {
       "name": "color",
       "type": "\"danger\" | \"dark\" | \"light\" | \"medium\" | \"primary\" | \"secondary\" | \"success\" | \"tertiary\" | \"warning\" | string & Record<never, never> | undefined",
+      "complexType": {
+        "original": "Color",
+        "resolved": "\"danger\" | \"dark\" | \"light\" | \"medium\" | \"primary\" | \"secondary\" | \"success\" | \"tertiary\" | \"warning\" | string & Record<never, never> | undefined",
+        "references": {
+          "Color": {
+            "location": "import",
+            "path": "../../interface",
+            "id": "src/interface.d.ts::Color"
+          }
+        }
+      },
       "mutable": false,
       "attr": "color",
       "reflectToAttr": true,
@@ -81,6 +92,11 @@
     {
       "name": "disabled",
       "type": "boolean",
+      "complexType": {
+        "original": "boolean",
+        "resolved": "boolean",
+        "references": {}
+      },
       "mutable": false,
       "attr": "disabled",
       "reflectToAttr": false,
@@ -98,6 +114,11 @@
     {
       "name": "justify",
       "type": "\"end\" | \"space-between\" | \"start\"",
+      "complexType": {
+        "original": "'start' | 'end' | 'space-between'",
+        "resolved": "\"end\" | \"space-between\" | \"start\"",
+        "references": {}
+      },
       "mutable": false,
       "attr": "justify",
       "reflectToAttr": false,
@@ -124,6 +145,11 @@
     {
       "name": "labelPlacement",
       "type": "\"end\" | \"fixed\" | \"start\"",
+      "complexType": {
+        "original": "'start' | 'end' | 'fixed'",
+        "resolved": "\"end\" | \"fixed\" | \"start\"",
+        "references": {}
+      },
       "mutable": false,
       "attr": "label-placement",
       "reflectToAttr": false,
@@ -150,6 +176,11 @@
     {
       "name": "legacy",
       "type": "boolean | undefined",
+      "complexType": {
+        "original": "boolean",
+        "resolved": "boolean | undefined",
+        "references": {}
+      },
       "mutable": false,
       "attr": "legacy",
       "reflectToAttr": false,
@@ -190,6 +221,11 @@
     {
       "name": "name",
       "type": "string",
+      "complexType": {
+        "original": "string",
+        "resolved": "string",
+        "references": {}
+      },
       "mutable": false,
       "attr": "name",
       "reflectToAttr": false,
@@ -207,6 +243,11 @@
     {
       "name": "value",
       "type": "any",
+      "complexType": {
+        "original": "any | null",
+        "resolved": "any",
+        "references": {}
+      },
       "mutable": false,
       "attr": "value",
       "reflectToAttr": false,
@@ -227,6 +268,11 @@
       "event": "ionBlur",
       "detail": "void",
       "bubbles": true,
+      "complexType": {
+        "original": "void",
+        "resolved": "void",
+        "references": {}
+      },
       "cancelable": true,
       "composed": true,
       "docs": "Emitted when the radio button loses focus.",
@@ -236,6 +282,11 @@
       "event": "ionFocus",
       "detail": "void",
       "bubbles": true,
+      "complexType": {
+        "original": "void",
+        "resolved": "void",
+        "references": {}
+      },
       "cancelable": true,
       "composed": true,
       "docs": "Emitted when the radio button has focus.",

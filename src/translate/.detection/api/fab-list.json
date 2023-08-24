@@ -1,5 +1,5 @@
 {
-  "filePath": "./src/components/fab-list/fab-list.tsx",
+  "filePath": "src/components/fab-list/fab-list.tsx",
   "encapsulation": "shadow",
   "tag": "ion-fab-list",
   "docs": "",
@@ -9,6 +9,11 @@
     {
       "name": "activated",
       "type": "boolean",
+      "complexType": {
+        "original": "boolean",
+        "resolved": "boolean",
+        "references": {}
+      },
       "mutable": false,
       "attr": "activated",
       "reflectToAttr": false,
@@ -26,6 +31,11 @@
     {
       "name": "side",
       "type": "\"bottom\" | \"end\" | \"start\" | \"top\"",
+      "complexType": {
+        "original": "'start' | 'end' | 'top' | 'bottom'",
+        "resolved": "\"bottom\" | \"end\" | \"start\" | \"top\"",
+        "references": {}
+      },
       "mutable": false,
       "attr": "side",
       "reflectToAttr": false,

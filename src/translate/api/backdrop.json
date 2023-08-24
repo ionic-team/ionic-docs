@@ -1,5 +1,5 @@
 {
-  "filePath": "./src/components/backdrop/backdrop.tsx",
+  "filePath": "src/components/backdrop/backdrop.tsx",
   "encapsulation": "shadow",
   "tag": "ion-backdrop",
   "docs": "",
@@ -9,6 +9,11 @@
     {
       "name": "stopPropagation",
       "type": "boolean",
+      "complexType": {
+        "original": "boolean",
+        "resolved": "boolean",
+        "references": {}
+      },
       "mutable": false,
       "attr": "stop-propagation",
       "reflectToAttr": false,
@@ -26,6 +31,11 @@
     {
       "name": "tappable",
       "type": "boolean",
+      "complexType": {
+        "original": "boolean",
+        "resolved": "boolean",
+        "references": {}
+      },
       "mutable": false,
       "attr": "tappable",
       "reflectToAttr": false,
@@ -43,6 +53,11 @@
     {
       "name": "visible",
       "type": "boolean",
+      "complexType": {
+        "original": "boolean",
+        "resolved": "boolean",
+        "references": {}
+      },
       "mutable": false,
       "attr": "visible",
       "reflectToAttr": false,
@@ -64,6 +79,11 @@
       "event": "ionBackdropTap",
       "detail": "void",
       "bubbles": true,
+      "complexType": {
+        "original": "void",
+        "resolved": "void",
+        "references": {}
+      },
       "cancelable": true,
       "composed": true,
       "docs": "Emitted when the backdrop is tapped.",

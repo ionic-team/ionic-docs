@@ -1,5 +1,5 @@
 {
-  "filePath": "./src/components/toolbar/toolbar.tsx",
+  "filePath": "src/components/toolbar/toolbar.tsx",
   "encapsulation": "shadow",
   "tag": "ion-toolbar",
   "docs": "",
@@ -34,6 +34,17 @@
     {
       "name": "color",
       "type": "\"danger\" | \"dark\" | \"light\" | \"medium\" | \"primary\" | \"secondary\" | \"success\" | \"tertiary\" | \"warning\" | string & Record<never, never> | undefined",
+      "complexType": {
+        "original": "Color",
+        "resolved": "\"danger\" | \"dark\" | \"light\" | \"medium\" | \"primary\" | \"secondary\" | \"success\" | \"tertiary\" | \"warning\" | string & Record<never, never> | undefined",
+        "references": {
+          "Color": {
+            "location": "import",
+            "path": "../../interface",
+            "id": "src/interface.d.ts::Color"
+          }
+        }
+      },
       "mutable": false,
       "attr": "color",
       "reflectToAttr": true,

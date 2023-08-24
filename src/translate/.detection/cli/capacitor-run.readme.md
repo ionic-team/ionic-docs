@@ -1,5 +1,4 @@
 `ionic capacitor run` will do the following:
-
 - Perform `ionic build` (or run the dev server from `ionic serve` with the `--livereload` option)
 - Run `capacitor run` (or open IDE for your native project with the `--open` option)
 

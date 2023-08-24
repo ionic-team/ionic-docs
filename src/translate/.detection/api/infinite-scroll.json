@@ -1,5 +1,5 @@
 {
-  "filePath": "./src/components/infinite-scroll/infinite-scroll.tsx",
+  "filePath": "src/components/infinite-scroll/infinite-scroll.tsx",
   "encapsulation": "none",
   "tag": "ion-infinite-scroll",
   "docs": "",
@@ -9,6 +9,11 @@
     {
       "name": "disabled",
       "type": "boolean",
+      "complexType": {
+        "original": "boolean",
+        "resolved": "boolean",
+        "references": {}
+      },
       "mutable": false,
       "attr": "disabled",
       "reflectToAttr": false,
@@ -26,6 +31,11 @@
     {
       "name": "position",
       "type": "\"bottom\" | \"top\"",
+      "complexType": {
+        "original": "'top' | 'bottom'",
+        "resolved": "\"bottom\" | \"top\"",
+        "references": {}
+      },
       "mutable": false,
       "attr": "position",
       "reflectToAttr": false,
@@ -48,6 +58,11 @@
     {
       "name": "threshold",
       "type": "string",
+      "complexType": {
+        "original": "string",
+        "resolved": "string",
+        "references": {}
+      },
       "mutable": false,
       "attr": "threshold",
       "reflectToAttr": false,
@@ -70,6 +85,17 @@
         "type": "Promise<void>",
         "docs": ""
       },
+      "complexType": {
+        "signature": "() => Promise<void>",
+        "parameters": [],
+        "references": {
+          "Promise": {
+            "location": "global",
+            "id": "global::Promise"
+          }
+        },
+        "return": "Promise<void>"
+      },
       "signature": "complete() => Promise<void>",
       "parameters": [],
       "docs": "Call `complete()` within the `ionInfinite` output event handler when\nyour async operation has completed. For example, the `loading`\nstate is while the app is performing an asynchronous operation,\nsuch as receiving more data from an AJAX request to add more items\nto a data list. Once the data has been received and UI updated, you\nthen call this method to signify that the loading has completed.\nThis method will change the infinite scroll's state from `loading`\nto `enabled`.",
@@ -81,6 +107,11 @@
       "event": "ionInfinite",
       "detail": "void",
       "bubbles": true,
+      "complexType": {
+        "original": "void",
+        "resolved": "void",
+        "references": {}
+      },
       "cancelable": true,
       "composed": true,
       "docs": "Emitted when the scroll reaches\nthe threshold distance. From within your infinite handler,\nyou must call the infinite scroll's `complete()` method when\nyour async operation has completed.",

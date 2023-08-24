@@ -1,5 +1,5 @@
 {
-  "filePath": "./src/components/avatar/avatar.tsx",
+  "filePath": "src/components/avatar/avatar.tsx",
   "encapsulation": "shadow",
   "tag": "ion-avatar",
   "docs": "",

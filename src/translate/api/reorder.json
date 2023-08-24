@@ -1,5 +1,5 @@
 {
-  "filePath": "./src/components/reorder/reorder.tsx",
+  "filePath": "src/components/reorder/reorder.tsx",
   "encapsulation": "shadow",
   "tag": "ion-reorder",
   "docs": "",

@@ -1,5 +1,5 @@
 {
-  "filePath": "./src/components/toggle/toggle.tsx",
+  "filePath": "src/components/toggle/toggle.tsx",
   "encapsulation": "shadow",
   "tag": "ion-toggle",
   "docs": "",
@@ -26,6 +26,11 @@
     {
       "name": "checked",
       "type": "boolean",
+      "complexType": {
+        "original": "boolean",
+        "resolved": "boolean",
+        "references": {}
+      },
       "mutable": true,
       "attr": "checked",
       "reflectToAttr": false,
@@ -43,6 +48,17 @@
     {
       "name": "color",
       "type": "\"danger\" | \"dark\" | \"light\" | \"medium\" | \"primary\" | \"secondary\" | \"success\" | \"tertiary\" | \"warning\" | string & Record<never, never> | undefined",
+      "complexType": {
+        "original": "Color",
+        "resolved": "\"danger\" | \"dark\" | \"light\" | \"medium\" | \"primary\" | \"secondary\" | \"success\" | \"tertiary\" | \"warning\" | string & Record<never, never> | undefined",
+        "references": {
+          "Color": {
+            "location": "import",
+            "path": "../../interface",
+            "id": "src/interface.d.ts::Color"
+          }
+        }
+      },
       "mutable": false,
       "attr": "color",
       "reflectToAttr": true,
@@ -98,6 +114,11 @@
     {
       "name": "disabled",
       "type": "boolean",
+      "complexType": {
+        "original": "boolean",
+        "resolved": "boolean",
+        "references": {}
+      },
       "mutable": false,
       "attr": "disabled",
       "reflectToAttr": false,
@@ -115,6 +136,11 @@
     {
       "name": "enableOnOffLabels",
       "type": "boolean | undefined",
+      "complexType": {
+        "original": "boolean | undefined",
+        "resolved": "boolean | undefined",
+        "references": {}
+      },
       "mutable": false,
       "attr": "enable-on-off-labels",
       "reflectToAttr": false,
@@ -135,6 +161,11 @@
     {
       "name": "justify",
       "type": "\"end\" | \"space-between\" | \"start\"",
+      "complexType": {
+        "original": "'start' | 'end' | 'space-between'",
+        "resolved": "\"end\" | \"space-between\" | \"start\"",
+        "references": {}
+      },
       "mutable": false,
       "attr": "justify",
       "reflectToAttr": false,
@@ -161,6 +192,11 @@
     {
       "name": "labelPlacement",
       "type": "\"end\" | \"fixed\" | \"start\"",
+      "complexType": {
+        "original": "'start' | 'end' | 'fixed'",
+        "resolved": "\"end\" | \"fixed\" | \"start\"",
+        "references": {}
+      },
       "mutable": false,
       "attr": "label-placement",
       "reflectToAttr": false,
@@ -187,6 +223,11 @@
     {
       "name": "legacy",
       "type": "boolean | undefined",
+      "complexType": {
+        "original": "boolean",
+        "resolved": "boolean | undefined",
+        "references": {}
+      },
       "mutable": false,
       "attr": "legacy",
       "reflectToAttr": false,
@@ -227,6 +268,11 @@
     {
       "name": "name",
       "type": "string",
+      "complexType": {
+        "original": "string",
+        "resolved": "string",
+        "references": {}
+      },
       "mutable": false,
       "attr": "name",
       "reflectToAttr": false,
@@ -244,6 +290,11 @@
     {
       "name": "value",
       "type": "null | string | undefined",
+      "complexType": {
+        "original": "string | null",
+        "resolved": "null | string | undefined",
+        "references": {}
+      },
       "mutable": false,
       "attr": "value",
       "reflectToAttr": false,
@@ -271,6 +322,11 @@
       "event": "ionBlur",
       "detail": "void",
       "bubbles": true,
+      "complexType": {
+        "original": "void",
+        "resolved": "void",
+        "references": {}
+      },
       "cancelable": true,
       "composed": true,
       "docs": "Emitted when the toggle loses focus.",
@@ -280,6 +336,17 @@
       "event": "ionChange",
       "detail": "ToggleChangeEventDetail<any>",
       "bubbles": true,
+      "complexType": {
+        "original": "ToggleChangeEventDetail",
+        "resolved": "ToggleChangeEventDetail<any>",
+        "references": {
+          "ToggleChangeEventDetail": {
+            "location": "import",
+            "path": "./toggle-interface",
+            "id": "src/components/toggle/toggle-interface.ts::ToggleChangeEventDetail"
+          }
+        }
+      },
       "cancelable": true,
       "composed": true,
       "docs": "Emitted when the user switches the toggle on or off. Does not emit\nwhen programmatically changing the value of the `checked` property.",
@@ -289,6 +356,11 @@
       "event": "ionFocus",
       "detail": "void",
       "bubbles": true,
+      "complexType": {
+        "original": "void",
+        "resolved": "void",
+        "references": {}
+      },
       "cancelable": true,
       "composed": true,
       "docs": "Emitted when the toggle has focus.",

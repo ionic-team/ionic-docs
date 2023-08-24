@@ -1,5 +1,5 @@
 {
-  "filePath": "./src/components/item-group/item-group.tsx",
+  "filePath": "src/components/item-group/item-group.tsx",
   "encapsulation": "none",
   "tag": "ion-item-group",
   "docs": "",

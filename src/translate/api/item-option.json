@@ -1,5 +1,5 @@
 {
-  "filePath": "./src/components/item-option/item-option.tsx",
+  "filePath": "src/components/item-option/item-option.tsx",
   "encapsulation": "shadow",
   "tag": "ion-item-option",
   "docs": "",
@@ -42,6 +42,17 @@
     {
       "name": "color",
       "type": "\"danger\" | \"dark\" | \"light\" | \"medium\" | \"primary\" | \"secondary\" | \"success\" | \"tertiary\" | \"warning\" | string & Record<never, never> | undefined",
+      "complexType": {
+        "original": "Color",
+        "resolved": "\"danger\" | \"dark\" | \"light\" | \"medium\" | \"primary\" | \"secondary\" | \"success\" | \"tertiary\" | \"warning\" | string & Record<never, never> | undefined",
+        "references": {
+          "Color": {
+            "location": "import",
+            "path": "../../interface",
+            "id": "src/interface.d.ts::Color"
+          }
+        }
+      },
       "mutable": false,
       "attr": "color",
       "reflectToAttr": true,
@@ -97,6 +108,11 @@
     {
       "name": "disabled",
       "type": "boolean",
+      "complexType": {
+        "original": "boolean",
+        "resolved": "boolean",
+        "references": {}
+      },
       "mutable": false,
       "attr": "disabled",
       "reflectToAttr": false,
@@ -114,6 +130,11 @@
     {
       "name": "download",
       "type": "string | undefined",
+      "complexType": {
+        "original": "string | undefined",
+        "resolved": "string | undefined",
+        "references": {}
+      },
       "mutable": false,
       "attr": "download",
       "reflectToAttr": false,
@@ -133,6 +154,11 @@
     {
       "name": "expandable",
       "type": "boolean",
+      "complexType": {
+        "original": "boolean",
+        "resolved": "boolean",
+        "references": {}
+      },
       "mutable": false,
       "attr": "expandable",
       "reflectToAttr": false,
@@ -150,6 +176,11 @@
     {
       "name": "href",
       "type": "string | undefined",
+      "complexType": {
+        "original": "string | undefined",
+        "resolved": "string | undefined",
+        "references": {}
+      },
       "mutable": false,
       "attr": "href",
       "reflectToAttr": false,
@@ -190,6 +221,11 @@
     {
       "name": "rel",
       "type": "string | undefined",
+      "complexType": {
+        "original": "string | undefined",
+        "resolved": "string | undefined",
+        "references": {}
+      },
       "mutable": false,
       "attr": "rel",
       "reflectToAttr": false,
@@ -209,6 +245,11 @@
     {
       "name": "target",
       "type": "string | undefined",
+      "complexType": {
+        "original": "string | undefined",
+        "resolved": "string | undefined",
+        "references": {}
+      },
       "mutable": false,
       "attr": "target",
       "reflectToAttr": false,
@@ -228,6 +269,11 @@
     {
       "name": "type",
       "type": "\"button\" | \"reset\" | \"submit\"",
+      "complexType": {
+        "original": "'submit' | 'reset' | 'button'",
+        "resolved": "\"button\" | \"reset\" | \"submit\"",
+        "references": {}
+      },
       "mutable": false,
       "attr": "type",
       "reflectToAttr": false,

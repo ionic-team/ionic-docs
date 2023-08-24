@@ -1,5 +1,5 @@
 {
-  "filePath": "./src/components/button/button.tsx",
+  "filePath": "src/components/button/button.tsx",
   "encapsulation": "shadow",
   "tag": "ion-button",
   "docs": "",
@@ -34,6 +34,11 @@
     {
       "name": "buttonType",
       "type": "string",
+      "complexType": {
+        "original": "string",
+        "resolved": "string",
+        "references": {}
+      },
       "mutable": true,
       "attr": "button-type",
       "reflectToAttr": false,
@@ -51,6 +56,17 @@
     {
       "name": "color",
       "type": "\"danger\" | \"dark\" | \"light\" | \"medium\" | \"primary\" | \"secondary\" | \"success\" | \"tertiary\" | \"warning\" | string & Record<never, never> | undefined",
+      "complexType": {
+        "original": "Color",
+        "resolved": "\"danger\" | \"dark\" | \"light\" | \"medium\" | \"primary\" | \"secondary\" | \"success\" | \"tertiary\" | \"warning\" | string & Record<never, never> | undefined",
+        "references": {
+          "Color": {
+            "location": "import",
+            "path": "../../interface",
+            "id": "src/interface.d.ts::Color"
+          }
+        }
+      },
       "mutable": false,
       "attr": "color",
       "reflectToAttr": true,
@@ -106,6 +122,11 @@
     {
       "name": "disabled",
       "type": "boolean",
+      "complexType": {
+        "original": "boolean",
+        "resolved": "boolean",
+        "references": {}
+      },
       "mutable": false,
       "attr": "disabled",
       "reflectToAttr": true,
@@ -123,6 +144,11 @@
     {
       "name": "download",
       "type": "string | undefined",
+      "complexType": {
+        "original": "string | undefined",
+        "resolved": "string | undefined",
+        "references": {}
+      },
       "mutable": false,
       "attr": "download",
       "reflectToAttr": false,
@@ -142,6 +168,11 @@
     {
       "name": "expand",
       "type": "\"block\" | \"full\" | undefined",
+      "complexType": {
+        "original": "'full' | 'block'",
+        "resolved": "\"block\" | \"full\" | undefined",
+        "references": {}
+      },
       "mutable": false,
       "attr": "expand",
       "reflectToAttr": true,
@@ -166,6 +197,11 @@
     {
       "name": "fill",
       "type": "\"clear\" | \"default\" | \"outline\" | \"solid\" | undefined",
+      "complexType": {
+        "original": "'clear' | 'outline' | 'solid' | 'default'",
+        "resolved": "\"clear\" | \"default\" | \"outline\" | \"solid\" | undefined",
+        "references": {}
+      },
       "mutable": true,
       "attr": "fill",
       "reflectToAttr": true,
@@ -198,6 +234,16 @@
     {
       "name": "form",
       "type": "HTMLFormElement | string | undefined",
+      "complexType": {
+        "original": "string | HTMLFormElement",
+        "resolved": "HTMLFormElement | string | undefined",
+        "references": {
+          "HTMLFormElement": {
+            "location": "global",
+            "id": "global::HTMLFormElement"
+          }
+        }
+      },
       "mutable": false,
       "attr": "form",
       "reflectToAttr": false,
@@ -220,6 +266,11 @@
     {
       "name": "href",
       "type": "string | undefined",
+      "complexType": {
+        "original": "string | undefined",
+        "resolved": "string | undefined",
+        "references": {}
+      },
       "mutable": false,
       "attr": "href",
       "reflectToAttr": false,
@@ -260,6 +311,11 @@
     {
       "name": "rel",
       "type": "string | undefined",
+      "complexType": {
+        "original": "string | undefined",
+        "resolved": "string | undefined",
+        "references": {}
+      },
       "mutable": false,
       "attr": "rel",
       "reflectToAttr": false,
@@ -279,6 +335,17 @@
     {
       "name": "routerAnimation",
       "type": "((baseEl: any, opts?: any) => Animation) | undefined",
+      "complexType": {
+        "original": "AnimationBuilder | undefined",
+        "resolved": "((baseEl: any, opts?: any) => Animation) | undefined",
+        "references": {
+          "AnimationBuilder": {
+            "location": "import",
+            "path": "../../interface",
+            "id": "src/interface.d.ts::AnimationBuilder"
+          }
+        }
+      },
       "mutable": false,
       "reflectToAttr": false,
       "docs": "When using a router, it specifies the transition animation when navigating to\nanother page using `href`.",
@@ -297,6 +364,17 @@
     {
       "name": "routerDirection",
       "type": "\"back\" | \"forward\" | \"root\"",
+      "complexType": {
+        "original": "RouterDirection",
+        "resolved": "\"back\" | \"forward\" | \"root\"",
+        "references": {
+          "RouterDirection": {
+            "location": "import",
+            "path": "../router/utils/interface",
+            "id": "src/components/router/utils/interface.ts::RouterDirection"
+          }
+        }
+      },
       "mutable": false,
       "attr": "router-direction",
       "reflectToAttr": false,
@@ -323,6 +401,11 @@
     {
       "name": "shape",
       "type": "\"round\" | undefined",
+      "complexType": {
+        "original": "'round'",
+        "resolved": "\"round\" | undefined",
+        "references": {}
+      },
       "mutable": false,
       "attr": "shape",
       "reflectToAttr": true,
@@ -343,6 +426,11 @@
     {
       "name": "size",
       "type": "\"default\" | \"large\" | \"small\" | undefined",
+      "complexType": {
+        "original": "'small' | 'default' | 'large'",
+        "resolved": "\"default\" | \"large\" | \"small\" | undefined",
+        "references": {}
+      },
       "mutable": false,
       "attr": "size",
       "reflectToAttr": true,
@@ -371,6 +459,11 @@
     {
       "name": "strong",
       "type": "boolean",
+      "complexType": {
+        "original": "boolean",
+        "resolved": "boolean",
+        "references": {}
+      },
       "mutable": false,
       "attr": "strong",
       "reflectToAttr": false,
@@ -388,6 +481,11 @@
     {
       "name": "target",
       "type": "string | undefined",
+      "complexType": {
+        "original": "string | undefined",
+        "resolved": "string | undefined",
+        "references": {}
+      },
       "mutable": false,
       "attr": "target",
       "reflectToAttr": false,
@@ -407,6 +505,11 @@
     {
       "name": "type",
       "type": "\"button\" | \"reset\" | \"submit\"",
+      "complexType": {
+        "original": "'submit' | 'reset' | 'button'",
+        "resolved": "\"button\" | \"reset\" | \"submit\"",
+        "references": {}
+      },
       "mutable": false,
       "attr": "type",
       "reflectToAttr": false,
@@ -437,6 +540,11 @@
       "event": "ionBlur",
       "detail": "void",
       "bubbles": true,
+      "complexType": {
+        "original": "void",
+        "resolved": "void",
+        "references": {}
+      },
       "cancelable": true,
       "composed": true,
       "docs": "Emitted when the button loses focus.",
@@ -446,6 +554,11 @@
       "event": "ionFocus",
       "detail": "void",
       "bubbles": true,
+      "complexType": {
+        "original": "void",
+        "resolved": "void",
+        "references": {}
+      },
       "cancelable": true,
       "composed": true,
       "docs": "Emitted when the button has focus.",

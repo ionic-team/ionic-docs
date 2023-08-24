@@ -1,5 +1,5 @@
 {
-  "filePath": "./src/components/refresher/refresher.tsx",
+  "filePath": "src/components/refresher/refresher.tsx",
   "encapsulation": "none",
   "tag": "ion-refresher",
   "docs": "",
@@ -9,6 +9,11 @@
     {
       "name": "closeDuration",
       "type": "string",
+      "complexType": {
+        "original": "string",
+        "resolved": "string",
+        "references": {}
+      },
       "mutable": false,
       "attr": "close-duration",
       "reflectToAttr": false,
@@ -26,6 +31,11 @@
     {
       "name": "disabled",
       "type": "boolean",
+      "complexType": {
+        "original": "boolean",
+        "resolved": "boolean",
+        "references": {}
+      },
       "mutable": false,
       "attr": "disabled",
       "reflectToAttr": false,
@@ -43,6 +53,11 @@
     {
       "name": "pullFactor",
       "type": "number",
+      "complexType": {
+        "original": "number",
+        "resolved": "number",
+        "references": {}
+      },
       "mutable": false,
       "attr": "pull-factor",
       "reflectToAttr": false,
@@ -60,6 +75,11 @@
     {
       "name": "pullMax",
       "type": "number",
+      "complexType": {
+        "original": "number",
+        "resolved": "number",
+        "references": {}
+      },
       "mutable": false,
       "attr": "pull-max",
       "reflectToAttr": false,
@@ -77,6 +97,11 @@
     {
       "name": "pullMin",
       "type": "number",
+      "complexType": {
+        "original": "number",
+        "resolved": "number",
+        "references": {}
+      },
       "mutable": false,
       "attr": "pull-min",
       "reflectToAttr": false,
@@ -94,6 +119,11 @@
     {
       "name": "snapbackDuration",
       "type": "string",
+      "complexType": {
+        "original": "string",
+        "resolved": "string",
+        "references": {}
+      },
       "mutable": false,
       "attr": "snapback-duration",
       "reflectToAttr": false,
@@ -116,6 +146,17 @@
         "type": "Promise<void>",
         "docs": ""
       },
+      "complexType": {
+        "signature": "() => Promise<void>",
+        "parameters": [],
+        "references": {
+          "Promise": {
+            "location": "global",
+            "id": "global::Promise"
+          }
+        },
+        "return": "Promise<void>"
+      },
       "signature": "cancel() => Promise<void>",
       "parameters": [],
       "docs": "Changes the refresher's state from `refreshing` to `cancelling`.",
@@ -126,6 +167,17 @@
       "returns": {
         "type": "Promise<void>",
         "docs": ""
+      },
+      "complexType": {
+        "signature": "() => Promise<void>",
+        "parameters": [],
+        "references": {
+          "Promise": {
+            "location": "global",
+            "id": "global::Promise"
+          }
+        },
+        "return": "Promise<void>"
       },
       "signature": "complete() => Promise<void>",
       "parameters": [],
@@ -138,6 +190,17 @@
         "type": "Promise<number>",
         "docs": ""
       },
+      "complexType": {
+        "signature": "() => Promise<number>",
+        "parameters": [],
+        "references": {
+          "Promise": {
+            "location": "global",
+            "id": "global::Promise"
+          }
+        },
+        "return": "Promise<number>"
+      },
       "signature": "getProgress() => Promise<number>",
       "parameters": [],
       "docs": "A number representing how far down the user has pulled.\nThe number `0` represents the user hasn't pulled down at all. The\nnumber `1`, and anything greater than `1`, represents that the user\nhas pulled far enough down that when they let go then the refresh will\nhappen. If they let go and the number is less than `1`, then the\nrefresh will not happen, and the content will return to it's original\nposition.",
@@ -149,6 +212,11 @@
       "event": "ionPull",
       "detail": "void",
       "bubbles": true,
+      "complexType": {
+        "original": "void",
+        "resolved": "void",
+        "references": {}
+      },
       "cancelable": true,
       "composed": true,
       "docs": "Emitted while the user is pulling down the content and exposing the refresher.",
@@ -158,6 +226,17 @@
       "event": "ionRefresh",
       "detail": "RefresherEventDetail",
       "bubbles": true,
+      "complexType": {
+        "original": "RefresherEventDetail",
+        "resolved": "RefresherEventDetail",
+        "references": {
+          "RefresherEventDetail": {
+            "location": "import",
+            "path": "./refresher-interface",
+            "id": "src/components/refresher/refresher-interface.ts::RefresherEventDetail"
+          }
+        }
+      },
       "cancelable": true,
       "composed": true,
       "docs": "Emitted when the user lets go of the content and has pulled down\nfurther than the `pullMin` or pulls the content down and exceeds the pullMax.\nUpdates the refresher state to `refreshing`. The `complete()` method should be\ncalled when the async operation has completed.",
@@ -167,6 +246,11 @@
       "event": "ionStart",
       "detail": "void",
       "bubbles": true,
+      "complexType": {
+        "original": "void",
+        "resolved": "void",
+        "references": {}
+      },
       "cancelable": true,
       "composed": true,
       "docs": "Emitted when the user begins to start pulling down.",

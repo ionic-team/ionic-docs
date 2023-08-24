@@ -1,5 +1,5 @@
 {
-  "filePath": "./src/components/grid/grid.tsx",
+  "filePath": "src/components/grid/grid.tsx",
   "encapsulation": "shadow",
   "tag": "ion-grid",
   "docs": "",
@@ -9,6 +9,11 @@
     {
       "name": "fixed",
       "type": "boolean",
+      "complexType": {
+        "original": "boolean",
+        "resolved": "boolean",
+        "references": {}
+      },
       "mutable": false,
       "attr": "fixed",
       "reflectToAttr": false,

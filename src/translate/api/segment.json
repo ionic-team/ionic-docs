@@ -1,5 +1,5 @@
 {
-  "filePath": "./src/components/segment/segment.tsx",
+  "filePath": "src/components/segment/segment.tsx",
   "encapsulation": "shadow",
   "tag": "ion-segment",
   "docs": "",
@@ -14,6 +14,17 @@
     {
       "name": "color",
       "type": "\"danger\" | \"dark\" | \"light\" | \"medium\" | \"primary\" | \"secondary\" | \"success\" | \"tertiary\" | \"warning\" | string & Record<never, never> | undefined",
+      "complexType": {
+        "original": "Color",
+        "resolved": "\"danger\" | \"dark\" | \"light\" | \"medium\" | \"primary\" | \"secondary\" | \"success\" | \"tertiary\" | \"warning\" | string & Record<never, never> | undefined",
+        "references": {
+          "Color": {
+            "location": "import",
+            "path": "../../interface",
+            "id": "src/interface.d.ts::Color"
+          }
+        }
+      },
       "mutable": false,
       "attr": "color",
       "reflectToAttr": true,
@@ -69,6 +80,11 @@
     {
       "name": "disabled",
       "type": "boolean",
+      "complexType": {
+        "original": "boolean",
+        "resolved": "boolean",
+        "references": {}
+      },
       "mutable": false,
       "attr": "disabled",
       "reflectToAttr": false,
@@ -107,6 +123,11 @@
     {
       "name": "scrollable",
       "type": "boolean",
+      "complexType": {
+        "original": "boolean",
+        "resolved": "boolean",
+        "references": {}
+      },
       "mutable": false,
       "attr": "scrollable",
       "reflectToAttr": false,
@@ -124,6 +145,11 @@
     {
       "name": "selectOnFocus",
       "type": "boolean",
+      "complexType": {
+        "original": "boolean",
+        "resolved": "boolean",
+        "references": {}
+      },
       "mutable": false,
       "attr": "select-on-focus",
       "reflectToAttr": false,
@@ -141,6 +167,11 @@
     {
       "name": "swipeGesture",
       "type": "boolean",
+      "complexType": {
+        "original": "boolean",
+        "resolved": "boolean",
+        "references": {}
+      },
       "mutable": false,
       "attr": "swipe-gesture",
       "reflectToAttr": false,
@@ -158,6 +189,17 @@
     {
       "name": "value",
       "type": "number | string | undefined",
+      "complexType": {
+        "original": "SegmentValue",
+        "resolved": "number | string | undefined",
+        "references": {
+          "SegmentValue": {
+            "location": "import",
+            "path": "./segment-interface",
+            "id": "src/components/segment/segment-interface.ts::SegmentValue"
+          }
+        }
+      },
       "mutable": true,
       "attr": "value",
       "reflectToAttr": false,
@@ -184,6 +226,17 @@
       "event": "ionChange",
       "detail": "SegmentChangeEventDetail",
       "bubbles": true,
+      "complexType": {
+        "original": "SegmentChangeEventDetail",
+        "resolved": "SegmentChangeEventDetail",
+        "references": {
+          "SegmentChangeEventDetail": {
+            "location": "import",
+            "path": "./segment-interface",
+            "id": "src/components/segment/segment-interface.ts::SegmentChangeEventDetail"
+          }
+        }
+      },
       "cancelable": true,
       "composed": true,
       "docs": "Emitted when the value property has changed and any\ndragging pointer has been released from `ion-segment`.",

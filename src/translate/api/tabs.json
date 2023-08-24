@@ -1,5 +1,5 @@
 {
-  "filePath": "./src/components/tabs/tabs.tsx",
+  "filePath": "src/components/tabs/tabs.tsx",
   "encapsulation": "shadow",
   "tag": "ion-tabs",
   "docs": "",
@@ -26,6 +26,17 @@
         "type": "Promise<string | undefined>",
         "docs": ""
       },
+      "complexType": {
+        "signature": "() => Promise<string | undefined>",
+        "parameters": [],
+        "references": {
+          "Promise": {
+            "location": "global",
+            "id": "global::Promise"
+          }
+        },
+        "return": "Promise<string | undefined>"
+      },
       "signature": "getSelected() => Promise<string | undefined>",
       "parameters": [],
       "docs": "Get the currently selected tab. This method is only available for vanilla JavaScript projects. The Angular, React, and Vue implementations of tabs are coupled to each framework's router.",
@@ -36,6 +47,31 @@
       "returns": {
         "type": "Promise<HTMLIonTabElement | undefined>",
         "docs": ""
+      },
+      "complexType": {
+        "signature": "(tab: string | HTMLIonTabElement) => Promise<HTMLIonTabElement | undefined>",
+        "parameters": [
+          {
+            "tags": [
+              {
+                "name": "param",
+                "text": "tab The tab instance to select. If passed a string, it should be the value of the tab's `tab` property."
+              }
+            ],
+            "text": "The tab instance to select. If passed a string, it should be the value of the tab's `tab` property."
+          }
+        ],
+        "references": {
+          "Promise": {
+            "location": "global",
+            "id": "global::Promise"
+          },
+          "HTMLIonTabElement": {
+            "location": "global",
+            "id": "global::HTMLIonTabElement"
+          }
+        },
+        "return": "Promise<HTMLIonTabElement | undefined>"
       },
       "signature": "getTab(tab: string | HTMLIonTabElement) => Promise<HTMLIonTabElement | undefined>",
       "parameters": [],
@@ -53,6 +89,31 @@
         "type": "Promise<boolean>",
         "docs": ""
       },
+      "complexType": {
+        "signature": "(tab: string | HTMLIonTabElement) => Promise<boolean>",
+        "parameters": [
+          {
+            "tags": [
+              {
+                "name": "param",
+                "text": "tab The tab instance to select. If passed a string, it should be the value of the tab's `tab` property."
+              }
+            ],
+            "text": "The tab instance to select. If passed a string, it should be the value of the tab's `tab` property."
+          }
+        ],
+        "references": {
+          "Promise": {
+            "location": "global",
+            "id": "global::Promise"
+          },
+          "HTMLIonTabElement": {
+            "location": "global",
+            "id": "global::HTMLIonTabElement"
+          }
+        },
+        "return": "Promise<boolean>"
+      },
       "signature": "select(tab: string | HTMLIonTabElement) => Promise<boolean>",
       "parameters": [],
       "docs": "Select a tab by the value of its `tab` property or an element reference. This method is only available for vanilla JavaScript projects. The Angular, React, and Vue implementations of tabs are coupled to each framework's router.",
@@ -69,6 +130,11 @@
       "event": "ionTabsDidChange",
       "detail": "{ tab: string; }",
       "bubbles": false,
+      "complexType": {
+        "original": "{ tab: string }",
+        "resolved": "{ tab: string; }",
+        "references": {}
+      },
       "cancelable": true,
       "composed": true,
       "docs": "Emitted when the navigation has finished transitioning to a new component.",
@@ -78,6 +144,11 @@
       "event": "ionTabsWillChange",
       "detail": "{ tab: string; }",
       "bubbles": false,
+      "complexType": {
+        "original": "{ tab: string }",
+        "resolved": "{ tab: string; }",
+        "references": {}
+      },
       "cancelable": true,
       "composed": true,
       "docs": "Emitted when the navigation is about to transition to a new component.",

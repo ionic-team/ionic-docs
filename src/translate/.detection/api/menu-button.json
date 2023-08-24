@@ -1,5 +1,5 @@
 {
-  "filePath": "./src/components/menu-button/menu-button.tsx",
+  "filePath": "src/components/menu-button/menu-button.tsx",
   "encapsulation": "shadow",
   "tag": "ion-menu-button",
   "docs": "",
@@ -22,6 +22,11 @@
     {
       "name": "autoHide",
       "type": "boolean",
+      "complexType": {
+        "original": "boolean",
+        "resolved": "boolean",
+        "references": {}
+      },
       "mutable": false,
       "attr": "auto-hide",
       "reflectToAttr": false,
@@ -39,6 +44,17 @@
     {
       "name": "color",
       "type": "\"danger\" | \"dark\" | \"light\" | \"medium\" | \"primary\" | \"secondary\" | \"success\" | \"tertiary\" | \"warning\" | string & Record<never, never> | undefined",
+      "complexType": {
+        "original": "Color",
+        "resolved": "\"danger\" | \"dark\" | \"light\" | \"medium\" | \"primary\" | \"secondary\" | \"success\" | \"tertiary\" | \"warning\" | string & Record<never, never> | undefined",
+        "references": {
+          "Color": {
+            "location": "import",
+            "path": "../../interface",
+            "id": "src/interface.d.ts::Color"
+          }
+        }
+      },
       "mutable": false,
       "attr": "color",
       "reflectToAttr": true,
@@ -94,6 +110,11 @@
     {
       "name": "disabled",
       "type": "boolean",
+      "complexType": {
+        "original": "boolean",
+        "resolved": "boolean",
+        "references": {}
+      },
       "mutable": false,
       "attr": "disabled",
       "reflectToAttr": false,
@@ -111,6 +132,11 @@
     {
       "name": "menu",
       "type": "string | undefined",
+      "complexType": {
+        "original": "string",
+        "resolved": "string | undefined",
+        "references": {}
+      },
       "mutable": false,
       "attr": "menu",
       "reflectToAttr": false,
@@ -151,6 +177,11 @@
     {
       "name": "type",
       "type": "\"button\" | \"reset\" | \"submit\"",
+      "complexType": {
+        "original": "'submit' | 'reset' | 'button'",
+        "resolved": "\"button\" | \"reset\" | \"submit\"",
+        "references": {}
+      },
       "mutable": false,
       "attr": "type",
       "reflectToAttr": false,

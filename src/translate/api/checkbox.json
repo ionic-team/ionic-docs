@@ -1,5 +1,5 @@
 {
-  "filePath": "./src/components/checkbox/checkbox.tsx",
+  "filePath": "src/components/checkbox/checkbox.tsx",
   "encapsulation": "shadow",
   "tag": "ion-checkbox",
   "docs": "",
@@ -26,6 +26,11 @@
     {
       "name": "checked",
       "type": "boolean",
+      "complexType": {
+        "original": "boolean",
+        "resolved": "boolean",
+        "references": {}
+      },
       "mutable": true,
       "attr": "checked",
       "reflectToAttr": false,
@@ -43,6 +48,17 @@
     {
       "name": "color",
       "type": "\"danger\" | \"dark\" | \"light\" | \"medium\" | \"primary\" | \"secondary\" | \"success\" | \"tertiary\" | \"warning\" | string & Record<never, never> | undefined",
+      "complexType": {
+        "original": "Color",
+        "resolved": "\"danger\" | \"dark\" | \"light\" | \"medium\" | \"primary\" | \"secondary\" | \"success\" | \"tertiary\" | \"warning\" | string & Record<never, never> | undefined",
+        "references": {
+          "Color": {
+            "location": "import",
+            "path": "../../interface",
+            "id": "src/interface.d.ts::Color"
+          }
+        }
+      },
       "mutable": false,
       "attr": "color",
       "reflectToAttr": true,
@@ -98,6 +114,11 @@
     {
       "name": "disabled",
       "type": "boolean",
+      "complexType": {
+        "original": "boolean",
+        "resolved": "boolean",
+        "references": {}
+      },
       "mutable": false,
       "attr": "disabled",
       "reflectToAttr": false,
@@ -115,6 +136,11 @@
     {
       "name": "indeterminate",
       "type": "boolean",
+      "complexType": {
+        "original": "boolean",
+        "resolved": "boolean",
+        "references": {}
+      },
       "mutable": true,
       "attr": "indeterminate",
       "reflectToAttr": false,
@@ -132,6 +158,11 @@
     {
       "name": "justify",
       "type": "\"end\" | \"space-between\" | \"start\"",
+      "complexType": {
+        "original": "'start' | 'end' | 'space-between'",
+        "resolved": "\"end\" | \"space-between\" | \"start\"",
+        "references": {}
+      },
       "mutable": false,
       "attr": "justify",
       "reflectToAttr": false,
@@ -158,6 +189,11 @@
     {
       "name": "labelPlacement",
       "type": "\"end\" | \"fixed\" | \"start\"",
+      "complexType": {
+        "original": "'start' | 'end' | 'fixed'",
+        "resolved": "\"end\" | \"fixed\" | \"start\"",
+        "references": {}
+      },
       "mutable": false,
       "attr": "label-placement",
       "reflectToAttr": false,
@@ -184,6 +220,11 @@
     {
       "name": "legacy",
       "type": "boolean | undefined",
+      "complexType": {
+        "original": "boolean",
+        "resolved": "boolean | undefined",
+        "references": {}
+      },
       "mutable": false,
       "attr": "legacy",
       "reflectToAttr": false,
@@ -224,6 +265,11 @@
     {
       "name": "name",
       "type": "string",
+      "complexType": {
+        "original": "string",
+        "resolved": "string",
+        "references": {}
+      },
       "mutable": false,
       "attr": "name",
       "reflectToAttr": false,
@@ -241,6 +287,11 @@
     {
       "name": "value",
       "type": "any",
+      "complexType": {
+        "original": "any | null",
+        "resolved": "any",
+        "references": {}
+      },
       "mutable": false,
       "attr": "value",
       "reflectToAttr": false,
@@ -262,6 +313,11 @@
       "event": "ionBlur",
       "detail": "void",
       "bubbles": true,
+      "complexType": {
+        "original": "void",
+        "resolved": "void",
+        "references": {}
+      },
       "cancelable": true,
       "composed": true,
       "docs": "Emitted when the checkbox loses focus.",
@@ -271,6 +327,17 @@
       "event": "ionChange",
       "detail": "CheckboxChangeEventDetail<any>",
       "bubbles": true,
+      "complexType": {
+        "original": "CheckboxChangeEventDetail",
+        "resolved": "CheckboxChangeEventDetail<any>",
+        "references": {
+          "CheckboxChangeEventDetail": {
+            "location": "import",
+            "path": "./checkbox-interface",
+            "id": "src/components/checkbox/checkbox-interface.ts::CheckboxChangeEventDetail"
+          }
+        }
+      },
       "cancelable": true,
       "composed": true,
       "docs": "Emitted when the checked property has changed\nas a result of a user action such as a click.\nThis event will not emit when programmatically\nsetting the checked property.",
@@ -280,6 +347,11 @@
       "event": "ionFocus",
       "detail": "void",
       "bubbles": true,
+      "complexType": {
+        "original": "void",
+        "resolved": "void",
+        "references": {}
+      },
       "cancelable": true,
       "composed": true,
       "docs": "Emitted when the checkbox has focus.",

@@ -1,5 +1,5 @@
 {
-  "filePath": "./src/components/popover/popover.tsx",
+  "filePath": "src/components/popover/popover.tsx",
   "encapsulation": "shadow",
   "tag": "ion-popover",
   "docs": "",
@@ -30,6 +30,17 @@
     {
       "name": "alignment",
       "type": "\"center\" | \"end\" | \"start\" | undefined",
+      "complexType": {
+        "original": "PositionAlign",
+        "resolved": "\"center\" | \"end\" | \"start\" | undefined",
+        "references": {
+          "PositionAlign": {
+            "location": "import",
+            "path": "./popover-interface",
+            "id": "src/components/popover/popover-interface.ts::PositionAlign"
+          }
+        }
+      },
       "mutable": true,
       "attr": "alignment",
       "reflectToAttr": false,
@@ -58,6 +69,11 @@
     {
       "name": "animated",
       "type": "boolean",
+      "complexType": {
+        "original": "boolean",
+        "resolved": "boolean",
+        "references": {}
+      },
       "mutable": false,
       "attr": "animated",
       "reflectToAttr": false,
@@ -75,6 +91,11 @@
     {
       "name": "arrow",
       "type": "boolean",
+      "complexType": {
+        "original": "boolean",
+        "resolved": "boolean",
+        "references": {}
+      },
       "mutable": false,
       "attr": "arrow",
       "reflectToAttr": false,
@@ -92,6 +113,11 @@
     {
       "name": "backdropDismiss",
       "type": "boolean",
+      "complexType": {
+        "original": "boolean",
+        "resolved": "boolean",
+        "references": {}
+      },
       "mutable": false,
       "attr": "backdrop-dismiss",
       "reflectToAttr": false,
@@ -109,6 +135,17 @@
     {
       "name": "component",
       "type": "Function | HTMLElement | null | string | undefined",
+      "complexType": {
+        "original": "ComponentRef",
+        "resolved": "Function | HTMLElement | null | string | undefined",
+        "references": {
+          "ComponentRef": {
+            "location": "import",
+            "path": "../../interface",
+            "id": "src/interface.d.ts::ComponentRef"
+          }
+        }
+      },
       "mutable": false,
       "attr": "component",
       "reflectToAttr": false,
@@ -137,6 +174,17 @@
     {
       "name": "componentProps",
       "type": "undefined | { [key: string]: any; }",
+      "complexType": {
+        "original": "ComponentProps",
+        "resolved": "undefined | { [key: string]: any; }",
+        "references": {
+          "ComponentProps": {
+            "location": "import",
+            "path": "../../interface",
+            "id": "src/interface.d.ts::ComponentProps"
+          }
+        }
+      },
       "mutable": false,
       "reflectToAttr": false,
       "docs": "The data to pass to the popover component.\nYou only need to use this if you are not using\na JavaScript framework. Otherwise, you can just\nset the props directly on your component.",
@@ -155,6 +203,11 @@
     {
       "name": "dismissOnSelect",
       "type": "boolean",
+      "complexType": {
+        "original": "boolean",
+        "resolved": "boolean",
+        "references": {}
+      },
       "mutable": false,
       "attr": "dismiss-on-select",
       "reflectToAttr": false,
@@ -172,6 +225,17 @@
     {
       "name": "enterAnimation",
       "type": "((baseEl: any, opts?: any) => Animation) | undefined",
+      "complexType": {
+        "original": "AnimationBuilder",
+        "resolved": "((baseEl: any, opts?: any) => Animation) | undefined",
+        "references": {
+          "AnimationBuilder": {
+            "location": "import",
+            "path": "../../interface",
+            "id": "src/interface.d.ts::AnimationBuilder"
+          }
+        }
+      },
       "mutable": false,
       "reflectToAttr": false,
       "docs": "Animation to use when the popover is presented.",
@@ -190,6 +254,11 @@
     {
       "name": "event",
       "type": "any",
+      "complexType": {
+        "original": "any",
+        "resolved": "any",
+        "references": {}
+      },
       "mutable": false,
       "attr": "event",
       "reflectToAttr": false,
@@ -206,6 +275,11 @@
     {
       "name": "htmlAttributes",
       "type": "undefined | { [key: string]: any; }",
+      "complexType": {
+        "original": "{ [key: string]: any }",
+        "resolved": "undefined | { [key: string]: any; }",
+        "references": {}
+      },
       "mutable": false,
       "reflectToAttr": false,
       "docs": "Additional attributes to pass to the popover.",
@@ -224,6 +298,11 @@
     {
       "name": "isOpen",
       "type": "boolean",
+      "complexType": {
+        "original": "boolean",
+        "resolved": "boolean",
+        "references": {}
+      },
       "mutable": false,
       "attr": "is-open",
       "reflectToAttr": false,
@@ -241,6 +320,11 @@
     {
       "name": "keepContentsMounted",
       "type": "boolean",
+      "complexType": {
+        "original": "boolean",
+        "resolved": "boolean",
+        "references": {}
+      },
       "mutable": false,
       "attr": "keep-contents-mounted",
       "reflectToAttr": false,
@@ -258,6 +342,11 @@
     {
       "name": "keyboardClose",
       "type": "boolean",
+      "complexType": {
+        "original": "boolean",
+        "resolved": "boolean",
+        "references": {}
+      },
       "mutable": false,
       "attr": "keyboard-close",
       "reflectToAttr": false,
@@ -275,6 +364,17 @@
     {
       "name": "leaveAnimation",
       "type": "((baseEl: any, opts?: any) => Animation) | undefined",
+      "complexType": {
+        "original": "AnimationBuilder",
+        "resolved": "((baseEl: any, opts?: any) => Animation) | undefined",
+        "references": {
+          "AnimationBuilder": {
+            "location": "import",
+            "path": "../../interface",
+            "id": "src/interface.d.ts::AnimationBuilder"
+          }
+        }
+      },
       "mutable": false,
       "reflectToAttr": false,
       "docs": "Animation to use when the popover is dismissed.",
@@ -314,6 +414,17 @@
     {
       "name": "reference",
       "type": "\"event\" | \"trigger\"",
+      "complexType": {
+        "original": "PositionReference",
+        "resolved": "\"event\" | \"trigger\"",
+        "references": {
+          "PositionReference": {
+            "location": "import",
+            "path": "./popover-interface",
+            "id": "src/components/popover/popover-interface.ts::PositionReference"
+          }
+        }
+      },
       "mutable": false,
       "attr": "reference",
       "reflectToAttr": false,
@@ -336,6 +447,11 @@
     {
       "name": "showBackdrop",
       "type": "boolean",
+      "complexType": {
+        "original": "boolean",
+        "resolved": "boolean",
+        "references": {}
+      },
       "mutable": false,
       "attr": "show-backdrop",
       "reflectToAttr": false,
@@ -353,6 +469,17 @@
     {
       "name": "side",
       "type": "\"bottom\" | \"end\" | \"left\" | \"right\" | \"start\" | \"top\"",
+      "complexType": {
+        "original": "PositionSide",
+        "resolved": "\"bottom\" | \"end\" | \"left\" | \"right\" | \"start\" | \"top\"",
+        "references": {
+          "PositionSide": {
+            "location": "import",
+            "path": "./popover-interface",
+            "id": "src/components/popover/popover-interface.ts::PositionSide"
+          }
+        }
+      },
       "mutable": false,
       "attr": "side",
       "reflectToAttr": false,
@@ -391,10 +518,21 @@
     {
       "name": "size",
       "type": "\"auto\" | \"cover\"",
+      "complexType": {
+        "original": "PopoverSize",
+        "resolved": "\"auto\" | \"cover\"",
+        "references": {
+          "PopoverSize": {
+            "location": "import",
+            "path": "./popover-interface",
+            "id": "src/components/popover/popover-interface.ts::PopoverSize"
+          }
+        }
+      },
       "mutable": false,
       "attr": "size",
       "reflectToAttr": false,
-      "docs": "Describes how to calculate the popover width.\nIf `\"cover\"`, the popover width will match the width of the trigger.\nIf `\"auto\"`, the popover width will be determined by the content in\nthe popover.",
+      "docs": "Describes how to calculate the popover width.\nIf `\"cover\"`, the popover width will match the width of the trigger.\nIf `\"auto\"`, the popover width will be set to a static default value.",
       "docsTags": [],
       "default": "'auto'",
       "values": [
@@ -413,6 +551,11 @@
     {
       "name": "translucent",
       "type": "boolean",
+      "complexType": {
+        "original": "boolean",
+        "resolved": "boolean",
+        "references": {}
+      },
       "mutable": false,
       "attr": "translucent",
       "reflectToAttr": false,
@@ -430,6 +573,11 @@
     {
       "name": "trigger",
       "type": "string | undefined",
+      "complexType": {
+        "original": "string | undefined",
+        "resolved": "string | undefined",
+        "references": {}
+      },
       "mutable": false,
       "attr": "trigger",
       "reflectToAttr": false,
@@ -449,6 +597,17 @@
     {
       "name": "triggerAction",
       "type": "\"click\" | \"context-menu\" | \"hover\"",
+      "complexType": {
+        "original": "TriggerAction",
+        "resolved": "\"click\" | \"context-menu\" | \"hover\"",
+        "references": {
+          "TriggerAction": {
+            "location": "import",
+            "path": "./popover-interface",
+            "id": "src/components/popover/popover-interface.ts::TriggerAction"
+          }
+        }
+      },
       "mutable": false,
       "attr": "trigger-action",
       "reflectToAttr": false,
@@ -480,6 +639,49 @@
         "type": "Promise<boolean>",
         "docs": ""
       },
+      "complexType": {
+        "signature": "(data?: any, role?: string, dismissParentPopover?: boolean) => Promise<boolean>",
+        "parameters": [
+          {
+            "tags": [
+              {
+                "name": "param",
+                "text": "data Any data to emit in the dismiss events."
+              }
+            ],
+            "text": "Any data to emit in the dismiss events."
+          },
+          {
+            "tags": [
+              {
+                "name": "param",
+                "text": "role The role of the element that is dismissing the popover. For example, 'cancel' or 'backdrop'."
+              }
+            ],
+            "text": "The role of the element that is dismissing the popover. For example, 'cancel' or 'backdrop'."
+          },
+          {
+            "tags": [
+              {
+                "name": "param",
+                "text": "dismissParentPopover If `true`, dismissing this popover will also dismiss\na parent popover if this popover is nested. Defaults to `true`."
+              }
+            ],
+            "text": "If `true`, dismissing this popover will also dismiss\na parent popover if this popover is nested. Defaults to `true`."
+          }
+        ],
+        "references": {
+          "Promise": {
+            "location": "global",
+            "id": "global::Promise"
+          },
+          "PopoverDismissOptions": {
+            "location": "global",
+            "id": "global::PopoverDismissOptions"
+          }
+        },
+        "return": "Promise<boolean>"
+      },
       "signature": "dismiss(data?: any, role?: string, dismissParentPopover?: boolean) => Promise<boolean>",
       "parameters": [],
       "docs": "Dismiss the popover overlay after it has been presented.",
@@ -504,6 +706,26 @@
         "type": "Promise<OverlayEventDetail<T>>",
         "docs": ""
       },
+      "complexType": {
+        "signature": "<T = any>() => Promise<OverlayEventDetail<T>>",
+        "parameters": [],
+        "references": {
+          "Promise": {
+            "location": "global",
+            "id": "global::Promise"
+          },
+          "OverlayEventDetail": {
+            "location": "import",
+            "path": "../../utils/overlays-interface",
+            "id": "src/utils/overlays-interface.ts::OverlayEventDetail"
+          },
+          "T": {
+            "location": "global",
+            "id": "global::T"
+          }
+        },
+        "return": "Promise<OverlayEventDetail<T>>"
+      },
       "signature": "onDidDismiss<T = any>() => Promise<OverlayEventDetail<T>>",
       "parameters": [],
       "docs": "Returns a promise that resolves when the popover did dismiss.",
@@ -514,6 +736,26 @@
       "returns": {
         "type": "Promise<OverlayEventDetail<T>>",
         "docs": ""
+      },
+      "complexType": {
+        "signature": "<T = any>() => Promise<OverlayEventDetail<T>>",
+        "parameters": [],
+        "references": {
+          "Promise": {
+            "location": "global",
+            "id": "global::Promise"
+          },
+          "OverlayEventDetail": {
+            "location": "import",
+            "path": "../../utils/overlays-interface",
+            "id": "src/utils/overlays-interface.ts::OverlayEventDetail"
+          },
+          "T": {
+            "location": "global",
+            "id": "global::T"
+          }
+        },
+        "return": "Promise<OverlayEventDetail<T>>"
       },
       "signature": "onWillDismiss<T = any>() => Promise<OverlayEventDetail<T>>",
       "parameters": [],
@@ -526,6 +768,42 @@
         "type": "Promise<void>",
         "docs": ""
       },
+      "complexType": {
+        "signature": "(event?: MouseEvent | TouchEvent | PointerEvent | CustomEvent) => Promise<void>",
+        "parameters": [
+          {
+            "tags": [],
+            "text": ""
+          }
+        ],
+        "references": {
+          "Promise": {
+            "location": "global",
+            "id": "global::Promise"
+          },
+          "MouseEvent": {
+            "location": "global",
+            "id": "global::MouseEvent"
+          },
+          "TouchEvent": {
+            "location": "global",
+            "id": "global::TouchEvent"
+          },
+          "PointerEvent": {
+            "location": "global",
+            "id": "global::PointerEvent"
+          },
+          "CustomEvent": {
+            "location": "global",
+            "id": "global::CustomEvent"
+          },
+          "PopoverPresentOptions": {
+            "location": "global",
+            "id": "global::PopoverPresentOptions"
+          }
+        },
+        "return": "Promise<void>"
+      },
       "signature": "present(event?: MouseEvent | TouchEvent | PointerEvent | CustomEvent) => Promise<void>",
       "parameters": [],
       "docs": "Present the popover overlay after it has been created.\nDevelopers can pass a mouse, touch, or pointer event\nto position the popover relative to where that event\nwas dispatched.",
@@ -537,6 +815,17 @@
       "event": "didDismiss",
       "detail": "OverlayEventDetail<any>",
       "bubbles": true,
+      "complexType": {
+        "original": "OverlayEventDetail",
+        "resolved": "OverlayEventDetail<any>",
+        "references": {
+          "OverlayEventDetail": {
+            "location": "import",
+            "path": "../../utils/overlays-interface",
+            "id": "src/utils/overlays-interface.ts::OverlayEventDetail"
+          }
+        }
+      },
       "cancelable": true,
       "composed": true,
       "docs": "Emitted after the popover has dismissed.\nShorthand for ionPopoverDidDismiss.",
@@ -546,6 +835,11 @@
       "event": "didPresent",
       "detail": "void",
       "bubbles": true,
+      "complexType": {
+        "original": "void",
+        "resolved": "void",
+        "references": {}
+      },
       "cancelable": true,
       "composed": true,
       "docs": "Emitted after the popover has presented.\nShorthand for ionPopoverWillDismiss.",
@@ -555,6 +849,17 @@
       "event": "ionPopoverDidDismiss",
       "detail": "OverlayEventDetail<any>",
       "bubbles": true,
+      "complexType": {
+        "original": "OverlayEventDetail",
+        "resolved": "OverlayEventDetail<any>",
+        "references": {
+          "OverlayEventDetail": {
+            "location": "import",
+            "path": "../../utils/overlays-interface",
+            "id": "src/utils/overlays-interface.ts::OverlayEventDetail"
+          }
+        }
+      },
       "cancelable": true,
       "composed": true,
       "docs": "Emitted after the popover has dismissed.",
@@ -564,6 +869,11 @@
       "event": "ionPopoverDidPresent",
       "detail": "void",
       "bubbles": true,
+      "complexType": {
+        "original": "void",
+        "resolved": "void",
+        "references": {}
+      },
       "cancelable": true,
       "composed": true,
       "docs": "Emitted after the popover has presented.",
@@ -573,6 +883,17 @@
       "event": "ionPopoverWillDismiss",
       "detail": "OverlayEventDetail<any>",
       "bubbles": true,
+      "complexType": {
+        "original": "OverlayEventDetail",
+        "resolved": "OverlayEventDetail<any>",
+        "references": {
+          "OverlayEventDetail": {
+            "location": "import",
+            "path": "../../utils/overlays-interface",
+            "id": "src/utils/overlays-interface.ts::OverlayEventDetail"
+          }
+        }
+      },
       "cancelable": true,
       "composed": true,
       "docs": "Emitted before the popover has dismissed.",
@@ -582,6 +903,11 @@
       "event": "ionPopoverWillPresent",
       "detail": "void",
       "bubbles": true,
+      "complexType": {
+        "original": "void",
+        "resolved": "void",
+        "references": {}
+      },
       "cancelable": true,
       "composed": true,
       "docs": "Emitted before the popover has presented.",
@@ -591,6 +917,17 @@
       "event": "willDismiss",
       "detail": "OverlayEventDetail<any>",
       "bubbles": true,
+      "complexType": {
+        "original": "OverlayEventDetail",
+        "resolved": "OverlayEventDetail<any>",
+        "references": {
+          "OverlayEventDetail": {
+            "location": "import",
+            "path": "../../utils/overlays-interface",
+            "id": "src/utils/overlays-interface.ts::OverlayEventDetail"
+          }
+        }
+      },
       "cancelable": true,
       "composed": true,
       "docs": "Emitted before the popover has dismissed.\nShorthand for ionPopoverWillDismiss.",
@@ -600,6 +937,11 @@
       "event": "willPresent",
       "detail": "void",
       "bubbles": true,
+      "complexType": {
+        "original": "void",
+        "resolved": "void",
+        "references": {}
+      },
       "cancelable": true,
       "composed": true,
       "docs": "Emitted before the popover has presented.\nShorthand for ionPopoverWillPresent.",

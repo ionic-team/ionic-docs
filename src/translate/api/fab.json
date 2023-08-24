@@ -1,5 +1,5 @@
 {
-  "filePath": "./src/components/fab/fab.tsx",
+  "filePath": "src/components/fab/fab.tsx",
   "encapsulation": "shadow",
   "tag": "ion-fab",
   "docs": "",
@@ -9,6 +9,11 @@
     {
       "name": "activated",
       "type": "boolean",
+      "complexType": {
+        "original": "boolean",
+        "resolved": "boolean",
+        "references": {}
+      },
       "mutable": true,
       "attr": "activated",
       "reflectToAttr": false,
@@ -26,6 +31,11 @@
     {
       "name": "edge",
       "type": "boolean",
+      "complexType": {
+        "original": "boolean",
+        "resolved": "boolean",
+        "references": {}
+      },
       "mutable": false,
       "attr": "edge",
       "reflectToAttr": false,
@@ -43,6 +53,11 @@
     {
       "name": "horizontal",
       "type": "\"center\" | \"end\" | \"start\" | undefined",
+      "complexType": {
+        "original": "'start' | 'end' | 'center'",
+        "resolved": "\"center\" | \"end\" | \"start\" | undefined",
+        "references": {}
+      },
       "mutable": false,
       "attr": "horizontal",
       "reflectToAttr": false,
@@ -71,6 +86,11 @@
     {
       "name": "vertical",
       "type": "\"bottom\" | \"center\" | \"top\" | undefined",
+      "complexType": {
+        "original": "'top' | 'bottom' | 'center'",
+        "resolved": "\"bottom\" | \"center\" | \"top\" | undefined",
+        "references": {}
+      },
       "mutable": false,
       "attr": "vertical",
       "reflectToAttr": false,
@@ -103,6 +123,17 @@
       "returns": {
         "type": "Promise<void>",
         "docs": ""
+      },
+      "complexType": {
+        "signature": "() => Promise<void>",
+        "parameters": [],
+        "references": {
+          "Promise": {
+            "location": "global",
+            "id": "global::Promise"
+          }
+        },
+        "return": "Promise<void>"
       },
       "signature": "close() => Promise<void>",
       "parameters": [],

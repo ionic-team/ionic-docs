@@ -1,5 +1,5 @@
 {
-  "filePath": "./src/components/fab-button/fab-button.tsx",
+  "filePath": "src/components/fab-button/fab-button.tsx",
   "encapsulation": "shadow",
   "tag": "ion-fab-button",
   "docs": "",
@@ -22,6 +22,11 @@
     {
       "name": "activated",
       "type": "boolean",
+      "complexType": {
+        "original": "boolean",
+        "resolved": "boolean",
+        "references": {}
+      },
       "mutable": false,
       "attr": "activated",
       "reflectToAttr": false,
@@ -39,6 +44,11 @@
     {
       "name": "closeIcon",
       "type": "string",
+      "complexType": {
+        "original": "string",
+        "resolved": "string",
+        "references": {}
+      },
       "mutable": false,
       "attr": "close-icon",
       "reflectToAttr": false,
@@ -56,6 +66,17 @@
     {
       "name": "color",
       "type": "\"danger\" | \"dark\" | \"light\" | \"medium\" | \"primary\" | \"secondary\" | \"success\" | \"tertiary\" | \"warning\" | string & Record<never, never> | undefined",
+      "complexType": {
+        "original": "Color",
+        "resolved": "\"danger\" | \"dark\" | \"light\" | \"medium\" | \"primary\" | \"secondary\" | \"success\" | \"tertiary\" | \"warning\" | string & Record<never, never> | undefined",
+        "references": {
+          "Color": {
+            "location": "import",
+            "path": "../../interface",
+            "id": "src/interface.d.ts::Color"
+          }
+        }
+      },
       "mutable": false,
       "attr": "color",
       "reflectToAttr": true,
@@ -111,6 +132,11 @@
     {
       "name": "disabled",
       "type": "boolean",
+      "complexType": {
+        "original": "boolean",
+        "resolved": "boolean",
+        "references": {}
+      },
       "mutable": false,
       "attr": "disabled",
       "reflectToAttr": false,
@@ -128,6 +154,11 @@
     {
       "name": "download",
       "type": "string | undefined",
+      "complexType": {
+        "original": "string | undefined",
+        "resolved": "string | undefined",
+        "references": {}
+      },
       "mutable": false,
       "attr": "download",
       "reflectToAttr": false,
@@ -147,6 +178,11 @@
     {
       "name": "href",
       "type": "string | undefined",
+      "complexType": {
+        "original": "string | undefined",
+        "resolved": "string | undefined",
+        "references": {}
+      },
       "mutable": false,
       "attr": "href",
       "reflectToAttr": false,
@@ -187,6 +223,11 @@
     {
       "name": "rel",
       "type": "string | undefined",
+      "complexType": {
+        "original": "string | undefined",
+        "resolved": "string | undefined",
+        "references": {}
+      },
       "mutable": false,
       "attr": "rel",
       "reflectToAttr": false,
@@ -206,6 +247,17 @@
     {
       "name": "routerAnimation",
       "type": "((baseEl: any, opts?: any) => Animation) | undefined",
+      "complexType": {
+        "original": "AnimationBuilder | undefined",
+        "resolved": "((baseEl: any, opts?: any) => Animation) | undefined",
+        "references": {
+          "AnimationBuilder": {
+            "location": "import",
+            "path": "../../interface",
+            "id": "src/interface.d.ts::AnimationBuilder"
+          }
+        }
+      },
       "mutable": false,
       "reflectToAttr": false,
       "docs": "When using a router, it specifies the transition animation when navigating to\nanother page using `href`.",
@@ -224,6 +276,17 @@
     {
       "name": "routerDirection",
       "type": "\"back\" | \"forward\" | \"root\"",
+      "complexType": {
+        "original": "RouterDirection",
+        "resolved": "\"back\" | \"forward\" | \"root\"",
+        "references": {
+          "RouterDirection": {
+            "location": "import",
+            "path": "../router/utils/interface",
+            "id": "src/components/router/utils/interface.ts::RouterDirection"
+          }
+        }
+      },
       "mutable": false,
       "attr": "router-direction",
       "reflectToAttr": false,
@@ -250,6 +313,11 @@
     {
       "name": "show",
       "type": "boolean",
+      "complexType": {
+        "original": "boolean",
+        "resolved": "boolean",
+        "references": {}
+      },
       "mutable": false,
       "attr": "show",
       "reflectToAttr": false,
@@ -267,6 +335,11 @@
     {
       "name": "size",
       "type": "\"small\" | undefined",
+      "complexType": {
+        "original": "'small'",
+        "resolved": "\"small\" | undefined",
+        "references": {}
+      },
       "mutable": false,
       "attr": "size",
       "reflectToAttr": false,
@@ -287,6 +360,11 @@
     {
       "name": "target",
       "type": "string | undefined",
+      "complexType": {
+        "original": "string | undefined",
+        "resolved": "string | undefined",
+        "references": {}
+      },
       "mutable": false,
       "attr": "target",
       "reflectToAttr": false,
@@ -306,6 +384,11 @@
     {
       "name": "translucent",
       "type": "boolean",
+      "complexType": {
+        "original": "boolean",
+        "resolved": "boolean",
+        "references": {}
+      },
       "mutable": false,
       "attr": "translucent",
       "reflectToAttr": false,
@@ -323,6 +406,11 @@
     {
       "name": "type",
       "type": "\"button\" | \"reset\" | \"submit\"",
+      "complexType": {
+        "original": "'submit' | 'reset' | 'button'",
+        "resolved": "\"button\" | \"reset\" | \"submit\"",
+        "references": {}
+      },
       "mutable": false,
       "attr": "type",
       "reflectToAttr": false,
@@ -353,6 +441,11 @@
       "event": "ionBlur",
       "detail": "void",
       "bubbles": true,
+      "complexType": {
+        "original": "void",
+        "resolved": "void",
+        "references": {}
+      },
       "cancelable": true,
       "composed": true,
       "docs": "Emitted when the button loses focus.",
@@ -362,6 +455,11 @@
       "event": "ionFocus",
       "detail": "void",
       "bubbles": true,
+      "complexType": {
+        "original": "void",
+        "resolved": "void",
+        "references": {}
+      },
       "cancelable": true,
       "composed": true,
       "docs": "Emitted when the button has focus.",

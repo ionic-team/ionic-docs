@@ -1,5 +1,5 @@
 {
-  "filePath": "./src/components/accordion-group/accordion-group.tsx",
+  "filePath": "src/components/accordion-group/accordion-group.tsx",
   "encapsulation": "shadow",
   "tag": "ion-accordion-group",
   "docs": "",
@@ -14,6 +14,11 @@
     {
       "name": "animated",
       "type": "boolean",
+      "complexType": {
+        "original": "boolean",
+        "resolved": "boolean",
+        "references": {}
+      },
       "mutable": false,
       "attr": "animated",
       "reflectToAttr": false,
@@ -31,6 +36,11 @@
     {
       "name": "disabled",
       "type": "boolean",
+      "complexType": {
+        "original": "boolean",
+        "resolved": "boolean",
+        "references": {}
+      },
       "mutable": false,
       "attr": "disabled",
       "reflectToAttr": false,
@@ -48,6 +58,11 @@
     {
       "name": "expand",
       "type": "\"compact\" | \"inset\"",
+      "complexType": {
+        "original": "'compact' | 'inset'",
+        "resolved": "\"compact\" | \"inset\"",
+        "references": {}
+      },
       "mutable": false,
       "attr": "expand",
       "reflectToAttr": false,
@@ -91,6 +106,11 @@
     {
       "name": "multiple",
       "type": "boolean | undefined",
+      "complexType": {
+        "original": "boolean",
+        "resolved": "boolean | undefined",
+        "references": {}
+      },
       "mutable": false,
       "attr": "multiple",
       "reflectToAttr": false,
@@ -110,6 +130,11 @@
     {
       "name": "readonly",
       "type": "boolean",
+      "complexType": {
+        "original": "boolean",
+        "resolved": "boolean",
+        "references": {}
+      },
       "mutable": false,
       "attr": "readonly",
       "reflectToAttr": false,
@@ -127,6 +152,11 @@
     {
       "name": "value",
       "type": "null | string | string[] | undefined",
+      "complexType": {
+        "original": "string | string[] | null",
+        "resolved": "null | string | string[] | undefined",
+        "references": {}
+      },
       "mutable": true,
       "attr": "value",
       "reflectToAttr": false,
@@ -156,6 +186,17 @@
       "event": "ionChange",
       "detail": "AccordionGroupChangeEventDetail<any>",
       "bubbles": true,
+      "complexType": {
+        "original": "AccordionGroupChangeEventDetail",
+        "resolved": "AccordionGroupChangeEventDetail<any>",
+        "references": {
+          "AccordionGroupChangeEventDetail": {
+            "location": "import",
+            "path": "./accordion-group-interface",
+            "id": "src/components/accordion-group/accordion-group-interface.ts::AccordionGroupChangeEventDetail"
+          }
+        }
+      },
       "cancelable": true,
       "composed": true,
       "docs": "Emitted when the value property has changed\nas a result of a user action such as a click.\nThis event will not emit when programmatically setting\nthe value property.",

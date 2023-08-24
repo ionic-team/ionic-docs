@@ -1,5 +1,5 @@
 {
-  "filePath": "./src/components/thumbnail/thumbnail.tsx",
+  "filePath": "src/components/thumbnail/thumbnail.tsx",
   "encapsulation": "shadow",
   "tag": "ion-thumbnail",
   "docs": "",
