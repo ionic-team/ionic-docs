@@ -6,12 +6,12 @@ function Example() {
   return (
     <>
       <IonToggle labelPlacement="stacked" align="start">
-        Aligned at the Start
+        Aligned to the Start
       </IonToggle>
       <br />
       <br />
       <IonToggle labelPlacement="stacked" align="center">
-        Aligned at the Center
+        Aligned to the Center
       </IonToggle>
     </>
   );
