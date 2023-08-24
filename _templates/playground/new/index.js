@@ -58,15 +58,11 @@ module.exports = {
               type: 'toggle',
               name: 'css',
               message: 'Generate custom CSS files?',
-              enabled: 'Yes',
-              disabled: 'No',
             },
             {
               type: 'toggle',
               name: 'angular_ts',
               message: 'Generate an Angular TypeScript file?',
-              enabled: 'Yes',
-              disabled: 'No',
             },
           ])
           .then((answers) => {
