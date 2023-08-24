@@ -17,6 +17,7 @@ module.exports = {
       .then((answers) => {
         return inquirer
           .prompt([
+            // ask a different question for components vs. other playgrounds
             answers.is_component
               ? {
                   type: 'input',
