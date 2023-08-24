@@ -18,8 +18,6 @@ Code Signing Error: Failed to create provisioning profile. The app ID "com.csfor
 
 iOS デバイスでアプリケーションを実行するには、プロビジョニングプロファイルが必要です。プロビジョニングプロファイルが作成されていない場合は、次の手順に従います:
 
-<<<<<<< HEAD
-
 1. <strong>[Package ID](../reference/glossary.md#package-id) を設定する。</strong>
 
    Capacitor の場合、`capacitor.config.json` ファイルを開き `appId` プロパティを修正します。
