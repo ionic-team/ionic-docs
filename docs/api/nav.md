@@ -22,7 +22,7 @@ Navは、任意のコンポーネントをロードし、スタックに新し�
 Router Outletとは異なり、Navは特定のルーターに縛られることはありません。つまり、Navコンポーネントをロードし、他のコンポーネントをスタックにプッシュしても、アプリ全体のルーターには影響しない。例えば、新しいコンポーネントを`ion-nav`にプッシュして、URLが更新されることを期待するべきではありません。これは、アプリのURLに関連付けずに、独自のサブナビゲーションが必要なモーダルがあるような使用例に適しています。
 
 :::note
-`ion-nav` is not meant to be used for routing.  Instead, see the routing guides for [Angular](../angular/navigation), [React](../react/navigation), and [Vue](../vue/navigation), or [`ion-router`](./router) for vanilla JavaScript projects.
+`ion-nav`はルーティングに使用するものではありません。 代わりに、[Angular](../angular/navigation)、[React](../react/navigation)、[Vue](../vue/navigation)、またはバニラJavaScriptプロジェクト用の[`ion-router`](./router)のルーティングガイドを参照してください。
 :::
 
 ## NavLinkを利用する

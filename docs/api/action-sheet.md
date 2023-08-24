@@ -99,15 +99,15 @@ import CssCustomProperties from '@site/static/usage/v7/action-sheet/theming/css-
 
 ### Screen Readers
 
-Action Sheets set aria properties in order to be [accessible](../reference/glossary#a11y) to screen readers, but these properties can be overridden if they aren't descriptive enough or don't align with how the action sheet is being used in an app.
+アクションシートは、スクリーンリーダーにとって [アクセシブル](../reference/glossary#a11y) であるためにariaプロパティを設定しますが、これらのプロパティは、十分な説明になっていなかったり、アクションシートがアプリでどのように使用されているかに合っていなかったりする場合、オーバーライドすることができます。
 
 #### Role
 
-Action Sheets are given a `role` of [`dialog`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/dialog_role). In order to align with the ARIA spec, either the `aria-label` or `aria-labelledby` attribute must be set.
+アクションシートには `role` として [`dialog`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/dialog_role) が設定されます。ARIA仕様に合わせるためには、`aria-label`属性か`aria-labelledby`属性のどちらかを設定しなければなりません。
 
-#### Action Sheet Description
+#### Action Sheet の概要
 
-It is strongly recommended that every Action Sheet have the `header` property defined, as Ionic will automatically set `aria-labelledby` to point to the header element. However, if you choose not to include a `header`, an alternative is to use the `htmlAttributes` property to provide a descriptive `aria-label` or set a custom `aria-labelledby` value.
+Ionicは自動的にヘッダー要素を指すように `aria-labelledby` を設定するので、すべてのアクションシートには `header` プロパティを定義することを強く推奨します。しかし、`header`を含めない場合は、`htmlAttributes`プロパティを使って、説明的な`aria-label`を指定するか、カスタムの`aria-labelledby`値を設定することもできます。
 
 <Tabs groupId="framework" defaultValue="angular" values={[{ value: 'angular', label: 'Angular' }, { value: 'javascript', label: 'Javascript' }, { value: 'react', label: 'React' }, { value: 'vue', label: 'Vue' }]}>
 
@@ -161,9 +161,9 @@ const actionSheet = await actionSheetController.create({
 
 </Tabs>
 
-#### Action Sheet Buttons Description
+#### Action Sheet Buttons の概要
 
-Buttons containing text will be read by a screen reader. If a button contains only an icon, or a description other than the existing text is desired, a label should be assigned to the button by passing `aria-label` to the `htmlAttributes` property on the button.
+テキストを含むボタンはスクリーンリーダーによって読み取られる。ボタンがアイコンのみを含んでいる場合や、既存のテキスト以外の説明が必要な場合は、ボタンの `htmlAttributes` プロパティに `aria-label` を渡して、ラベルをボタンに割り当てる必要があります。
 
 <Tabs groupId="framework" defaultValue="angular" values={[{ value: 'angular', label: 'Angular' }, { value: 'javascript', label: 'Javascript' }, { value: 'react', label: 'React' }, { value: 'vue', label: 'Vue' }]}>
 

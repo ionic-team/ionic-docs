@@ -78,25 +78,25 @@ import CSSProps from '@site/static/usage/v7/button/theming/css-properties/index.
 
 <CSSProps />
 
-## Accessibility
+## アクセシビリティ
 
-Buttons are built to be accessible, but may need some adjustments depending on their content. The button component renders a native [button element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button) which allows it to take advantage of the functionality that a native button provides.
+ボタンはアクセスしやすいように作られていますが、その内容によっては調整が必要な場合があります。ボタンコンポーネントは、ネイティブの[button element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button)をレンダリングし、ネイティブのボタンが提供する機能を利用できるようにします。
 
 ### Overflowing Text Content
 
-There are many cases where a button's text content may overflow the container. It is recommended to wrap the text inside of the button when this happens so that all of the text can still be read. The button component will automatically adjust its height to accommodate the extra lines of text.
+ボタンのテキスト・コンテンツがコンテナからはみ出す場合が多々あります。このような場合、すべてのテキストがまだ読めるように、ボタンの内側にテキストを折り返すことをお勧めします。ボタンコンポーネントは、テキストの余分な行を収容するために、その高さを自動的に調整します。
 
-The button text does not automatically wrap to the next line when the text is too long to fit. In order to make the text wrap, the `ion-text-wrap` class can be added, which will set the `white-space` property to `"normal"`. This will become the default in a future major release.
+テキストが長すぎて収まらない場合、ボタンテキストは自動的に次の行に折り返されません。テキストを折り返すには、`ion-text-wrap`クラスを追加して、`white-space`プロパティを`"normal"`に設定します。これは将来のメジャーリリースでデフォルトになる予定である。
 
 :::info
-The `max-width` style is set on the button below for demo purposes only. Text wrapping will work with a dynamic button width.
+max-width`スタイルは、デモのためだけに下のボタンに設定されています。テキストラッピングは動的なボタン幅で動作します。
 :::
 
 import TextWrapping from '@site/static/usage/v7/button/text-wrapping/index.md';
 
 <TextWrapping />
 
-## Properties
+## プロパティ
 <Props />
 
 ## イベント

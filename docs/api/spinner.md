@@ -45,7 +45,7 @@ import Resizing from '@site/static/usage/v7/spinner/theming/resizing/index.md';
 
 <Resizing />
 
-### CSS Custom Properties
+### CSS カスタムプロパティ
 
 import CSSProps from '@site/static/usage/v7/spinner/theming/css-properties/index.md';
 

@@ -38,11 +38,11 @@ import Types from '@site/static/usage/v7/input/types/index.md';
 
 ## Labels
 
-Labels should be used to describe the input. They can be used visually, and they will also be read out by screen readers when the user is focused on the input. This makes it easy for the user to understand the intent of the input. Input has several ways to assign a label:
+ラベルは、入力を説明するために使用されるべきです。これらは視覚的に使用することができ、また、ユーザーが入力に集中しているときには、スクリーンリーダーによって読み上げられます。これにより、ユーザーは入力の意図を理解しやすくなる。Inputにはラベルを割り当てる方法がいくつかあります：
 
-- `label` property: used for plaintext labels
-- `label` slot: used for custom HTML labels (experimental)
-- `aria-label`: used to provide a label for screen readers but adds no visible label
+- `label`プロパティ：プレーンテキストのラベルに使用する。
+- `label`スロット: カスタム HTML ラベルに使用する（実験的）。
+- `aria-label`: スクリーンリーダー用のラベルとして使用されるが、ラベルは表示されない。
 
 ### Label Placement
 
@@ -52,11 +52,11 @@ import LabelPlacement from '@site/static/usage/v7/input/label-placement/index.md
 
 <LabelPlacement />
 
-### Label Slot (experimental)
+### Label Slot （実験的）
 
-While plaintext labels should be passed in via the `label` property, if custom HTML is needed, it can be passed through the `label` slot instead.
+プレーンテキストのラベルは `label` プロパティを通して渡されるべきですが、カスタム HTML が必要な場合は、代わりに `label` スロットを通して渡すことができます。
 
-Note that this feature is considered experimental because it relies on a simulated version of [Web Component slots](https://developer.mozilla.org/en-US/docs/Web/API/Web_components/Using_templates_and_slots). As a result, the simulated behavior may not exactly match the native slot behavior.
+この機能は、[Web Component slots](https://developer.mozilla.org/en-US/docs/Web/API/Web_components/Using_templates_and_slots) のシミュレート版に依存しているため、実験的なものとみなされていることに注意してください。その結果、シミュレートされた動作はネイティブのスロットの動作と完全に一致するとは限りません。
 
 import LabelSlot from '@site/static/usage/v7/input/label-slot/index.md';
 
@@ -64,7 +64,7 @@ import LabelSlot from '@site/static/usage/v7/input/label-slot/index.md';
 
 ### No Visible Label
 
-If no visible label is needed, developers should still supply an `aria-label` so the input is accessible to screen readers.
+表示するラベルが必要ない場合でも、開発者は `aria-label` を指定する必要があります。
 
 import NoVisibleLabel from '@site/static/usage/v7/input/no-visible-label/index.md';
 
@@ -118,11 +118,11 @@ import FilteringData from '@site/static/usage/v7/input/filtering/index.md';
 
 <FilteringData />
 
-## Input Masking
+## 入力マスキング
 
-Input masks are expressions that constrain input to support valid input values. Ionic recommends using [Maskito](https://maskito.dev) for input masking. Maskito is a lightweight, dependency-free library for masking input fields. It supports a wide range of masks, including phone numbers, credit cards, dates, and more.
+入力マスキングは、有効な入力値をサポートするように入力を制約する式です。Ionicでは、入力マスキングに[Maskito](https://maskito.dev)を使うことを推奨しています。Maskitoは、入力フィールドをマスクするための軽量で依存関係のないライブラリです。電話番号、クレジットカード、日付など、幅広いマスクをサポートしています。
 
-To get started with Maskito, install the library:
+Maskitoを使い始めるには、ライブラリをインストールしてください：
 
 ```bash
 npm install @maskito/core @maskito/{angular,react,vue}
@@ -138,7 +138,7 @@ Please submit bug reports with Maskito to the [Maskito Github repository](https:
 
 :::
 
-## Theming
+## テーマ
 
 ### Colors
 

@@ -19,10 +19,10 @@ import Slots from '@ionic-internal/component-api/v7/route/slots.md';
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 
-The route component takes a component and renders it when the Browser URL matches the url property.
+ルートコンポーネントはコンポーネントを受け取り、ブラウザの URL が url プロパティと一致したときに、そのコンポーネントをレンダリングします。
 
 :::note
- Note: このコンポーネントは、バニラおよびステンシルJavaScriptプロジェクトでのみ使用してください。Angularプロジェクトでは、[`ion-router-outlet`](router-outlet.md) と Angularルータを使用してください。
+ Note: このコンポーネントは、vanilla と Stencil での JavaScriptプロジェクトでのみ使用してください。Angularプロジェクトでは、[`ion-router-outlet`](router-outlet.md) と Angularルータを使用してください。
 :::
 
 

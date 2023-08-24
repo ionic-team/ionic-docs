@@ -86,27 +86,27 @@ import ThemingPlayground from '@site/static/usage/v7/toast/theming/index.md';
 
 <ThemingPlayground />
 
-## Accessibility
+## アクセシビリティ
 
-### Focus Management
+### フォーカスの管理
 
-Toasts are intended to be subtle notifications and are not intended to interrupt the user. User interaction should not be required to dismiss the toast. As a result, focus is not automatically moved to a toast when one is presented.
+トーストはさりげない通知であり、ユーザーを中断させるものではありません。トーストを解除するためにユーザが操作する必要はありません。そのため、トーストが表示されたときにフォーカスが自動的にトーストに移動することはありません。
 
-### Screen Readers
+### スクリーンリーダー
 
-Toasts set aria properties in order to be [accessible](../reference/glossary#a11y) to screen readers, but these properties can be overridden if they aren't descriptive enough or don't align with how the toast is being used in an app.
+トーストは、スクリーンリーダーから[accessible](../reference/glossary#a11y)であるためにariaプロパティを設定しますが、これらのプロパティは、十分な説明がない場合や、トーストがアプリでどのように使用されているかに合っていない場合は、上書きすることができます。
 
-#### Role
+#### 役割
 
-`ion-toast` has `role="status"` and `aria-live="polite"` set on the inner `.toast-content` element. This causes screen readers to only announce the toast message and header. Buttons and icons will not be announced when the toast is presented.
+`ion-toast`は、内側の `.toast-content` 要素に `role="status"` と `aria-live="polite"` を設定している。これにより、スクリーンリーダーはトーストメッセージとヘッダーのみをアナウンスします。ボタンとアイコンは、トーストが表示されてもアナウンスされません。
 
-`aria-live` causes screen readers to announce the content of the toast when it is updated. However, since the attribute is set to `'polite'`, screen readers should not interrupt the current task.
+`aria-live`は、トーストの内容が更新されたときに、スクリーンリーダーにトーストの内容をアナウンスさせます。しかし、この属性は `'polite'` に設定されているので、スクリーンリーダーは現在のタスクを中断すべきではありません。
 
-Since toasts are intended to be subtle notification, `aria-live` should never be set to `"assertive"`. If developers need to interrupt the user with an important message, we recommend using an [alert](./alert).
+トーストはさりげなく通知することを意図しているので、`aria-live`を`"assertive"`に設定すべきではありません。開発者が重要なメッセージでユーザーを中断させる必要がある場合は、[alert](./alert)を使用することをお勧めします。
 
-#### Toast Buttons Description
+#### トーストボタンの説明
 
-Buttons containing text will be read by a screen reader when they are interacted with. If a button contains only an icon, or a description other than the existing text is desired, a label should be assigned to the button by passing `aria-label` to the `htmlAttributes` property on the button.
+テキストを含むボタンは、スクリーンリーダーによって読み取られます。ボタンがアイコンのみを含んでいる場合、または既存のテキスト以外の説明が必要な場合は、ボタンの `htmlAttributes` プロパティに `aria-label` を渡すことで、ボタンにラベルを割り当てる必要があります。
 
 <Tabs groupId="framework" defaultValue="angular" values={[{ value: 'angular', label: 'Angular' }, { value: 'javascript', label: 'Javascript' }, { value: 'react', label: 'React' }, { value: 'vue', label: 'Vue' }]}>
 
@@ -233,7 +233,7 @@ interface ToastOptions {
 }
 ```
 
-## Properties
+## プロパティ
 <Props />
 
 ## イベント

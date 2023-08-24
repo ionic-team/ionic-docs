@@ -46,7 +46,7 @@ import Justify from '@site/static/usage/v7/radio/justify/index.md';
 
 
 :::note
-`ion-item` is only used in the demos to emphasize how `justify` works. It is not needed in order for `justify` to function correctly.
+`ion-item`は、`justify`がどのように機能するかを強調するためにデモで使用されているだけです。 `justify` が正しく機能するために必須ではありません。
 :::
 
 ## ラジオの選択を解除する

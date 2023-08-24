@@ -93,11 +93,11 @@ import CanDismissPreventSwipeToCloseExample from '@site/static/usage/v7/modal/ca
  
 ### Card Modal
 
-Developers can create a card modal effect where the modal appears as a card stacked on top of your app's main content. To create a card modal, developers need to set the `presentingElement` property on `ion-modal`.
+開発者は、アプリのメインコンテンツの上にカードが積み重なったようにモーダルが表示されるカードモーダルエフェクトを作成できます。カードモーダルを作成するには、開発者は `ion-modal` に `presentingElement` プロパティを設定する必要があります。
 
 開発者は、アプリのメインコンテンツの上にカードが積み重なったように表示されるカードモーダル効果を作成することができます。カードモーダルを作成するには、開発者は `ion-modal` に `presentingElement` プロパティと `swipeToClose` プロパティを設定する必要があります。
 
-The `canDismiss` property can be used to control whether or not the card modal can be swiped to close.
+`canDismiss` プロパティを使用して、カードモーダルをスワイプして閉じることができるかどうかを制御することができます。
 
 :::note
 The card display style is only available on iOS.

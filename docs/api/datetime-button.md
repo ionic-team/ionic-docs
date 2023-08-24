@@ -59,13 +59,13 @@ TODO
 ## イベント
 <Events />
 
-## Methods
+## メソッド
 <Methods />
 
 ## CSS Shadow Parts
 <Parts />
 
-## CSS Custom Properties
+## CSS カスタムプロパティ
 <CustomProps />
 
 ## Slots

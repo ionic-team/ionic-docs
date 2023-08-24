@@ -113,15 +113,15 @@ IonicのAngularアプリを構築する場合、スタイルはグローバル�
 
 ### Screen Readers
 
-Alerts set aria properties in order to be [accessible](../reference/glossary#a11y) to screen readers, but these properties can be overridden if they aren't descriptive enough or don't align with how the alert is being used in an app.
+アラートは、スクリーンリーダーにとって[アクセシブル](../reference/glossary#a11y)であるために、ariaプロパティを設定しますが、これらのプロパティは、十分な説明がない場合、またはアラートがアプリでどのように使用されているかと一致しない場合は、オーバーライドすることができます。
 
 #### Role
 
-Ionic automatically sets the Alert's `role` to either [`alertdialog`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/alertdialog_role) if there are any inputs or buttons included, or [`alert`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/alert_role) if there are none.
+Ionicは自動的にアラートの`role`を、入力やボタンがある場合は[`alertdialog`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/alertdialog_role)に、何もない場合は[`alert`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/alert_role)に設定します。
 
-#### Alert Description
+#### Alert の概要
 
-If the `header` property is defined for the Alert, the `aria-labelledby` attribute will be automatically set to the header's ID. The `subHeader` element will be used as a fallback if `header` is not defined. Similarly, the `aria-describedby` attribute will be automatically set to the ID of the `message` element if that property is defined.
+アラートに `header` プロパティが定義されている場合、`aria-labelledby` 属性は自動的にヘッダの ID に設定されます。 `header` が定義されていない場合、`subHeader` 要素がフォールバックとして使用されます。同様に、 `aria-describedby` 属性が定義されている場合は、自動的に `message` 要素の ID が設定されます。
 
 ARIAの仕様に合わせるために、アラートには `message` と `header` または `subHeader` を含めることを強くお勧めします。もし `header` や `subHeader` を含めない場合は、`htmlAttributes` プロパティを使用して、説明的な `aria-label` を指定することができます。
 
@@ -182,9 +182,9 @@ const alert = await alertController.create({
 </Tabs>
 
 
-All ARIA attributes can be manually overwritten by defining custom values in the `htmlAttributes` property of the Alert.
+すべてのARIA属性は、アラートの`htmlAttributes`プロパティにカスタム値を定義することで、手動で上書きすることができます。
 
-#### Alert Buttons Description
+#### Alert Buttons の概要
 
 Buttons containing text will be read by a screen reader. If a description other than the existing text is desired, a label can be set on the button by passing `aria-label` to the `htmlAttributes` property on the button.
 
