@@ -20,7 +20,7 @@ module.exports = {
             answers.is_component
               ? {
                   type: 'input',
-                  name: 'name',
+                  name: 'component',
                   message: 'Which component is this playground for?',
                   initial: 'ion-button',
                   validate(value) {
@@ -69,12 +69,15 @@ module.exports = {
             },
           ])
           .then((answers) => {
+            answers.name = answers.name || answers.component.replace('ion-', '');
+
+            // if the playground is not for a component,
+            // include an ion-card in the playground
+            answers.component = answers.component || 'ion-card';
+
             const playgroundName = changeCase.pascal(answers.path.split('/').pop());
             console.log(
-              `\nTo use this playground in a docs markdown file, include\nthe following:\n\n## ${playgroundName}\n\nimport ${playgroundName} from '@site/static/usage/v7/${answers.name.replace(
-                'ion-',
-                ''
-              )}/${answers.path}/index.md';\n\n<${playgroundName} />\n`
+              `\nTo use this playground in a docs markdown file, include\nthe following:\n\n## ${playgroundName}\n\nimport ${playgroundName} from '@site/static/usage/v7/${answers.name}/${answers.path}/index.md';\n\n<${playgroundName} />\n`
             );
 
             return answers;
