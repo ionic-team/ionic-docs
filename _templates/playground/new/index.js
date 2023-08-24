@@ -1,22 +1,5 @@
 const changeCase = require('change-case');
 
-const componentPrompt = {
-  type: 'input',
-  name: 'name',
-  message: 'Which component is this playground for?',
-  initial: 'ion-button',
-  validate(value) {
-    return value.match(/^ion-[a-z/-]*[a-z]+$/) ? true : "Component name must be kebab-case and begin with 'ion-'";
-  },
-};
-
-const nonComponentPrompt = {
-  type: 'input',
-  name: 'name',
-  message: 'What is this playground for?',
-  initial: 'animations',
-};
-
 // see types of prompts:
 // https://github.com/enquirer/enquirer/tree/master/examples
 //
@@ -34,7 +17,24 @@ module.exports = {
       .then((answers) => {
         return inquirer
           .prompt([
-            answers.is_component ? componentPrompt : nonComponentPrompt,
+            answers.is_component
+              ? {
+                  type: 'input',
+                  name: 'name',
+                  message: 'Which component is this playground for?',
+                  initial: 'ion-button',
+                  validate(value) {
+                    return value.match(/^ion-[a-z/-]*[a-z]+$/)
+                      ? true
+                      : "Component name must be kebab-case and begin with 'ion-'";
+                  },
+                }
+              : {
+                  type: 'input',
+                  name: 'name',
+                  message: 'What is this playground for?',
+                  initial: 'animations',
+                },
             {
               type: 'input',
               name: 'path',
