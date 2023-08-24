@@ -9,7 +9,7 @@ import CustomProps from '@ionic-internal/component-api/v7/toggle/custom-props.md
 import Slots from '@ionic-internal/component-api/v7/toggle/slots.md';
 
 <head>
-  <title>Toggle | ion-toggle: Custom Toggle Button for Ionic Applications</title>
+  <title>ion-toggle: Custom Toggle Button for Ionic Applications</title>
   <meta name="description" content="Toggleは、1つのオプションの状態を変更します。ion-toggleを使用して、アプリケーションのオン/オフを切り替えることができるカスタマイズ可能なトグルボタンを作成します。" />
 </head>
 

@@ -11,7 +11,7 @@ import Slots from '@ionic-internal/component-api/v7/ripple-effect/slots.md';
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <head>
-  <title>ion-ripple-effect | Ripple Effect Button Component for Ionic Apps</title>
+  <title>ion-ripple-effect: Ripple Effect Component for Ionic Apps</title>
   <meta name="description" content="ripple effect buttonコンポーネントは、Material Designインクのリップルインタラクション効果を追加します。ion-appでのみ使用可能で、任意のコンポーネントに追加することができます。" />
 </head>
 

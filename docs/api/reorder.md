@@ -9,7 +9,7 @@ import CustomProps from '@ionic-internal/component-api/v7/reorder/custom-props.m
 import Slots from '@ionic-internal/component-api/v7/reorder/slots.md';
 
 <head>
-  <title>Reorder | ion-reorder: Drag and Drop Icon to Reorder Items</title>
+  <title>ion-reorder: Drag and Drop Icon to Reorder Items</title>
   <meta name="description" content="ion-reorderは、ion-reorder-groupの中のアイテムをドラッグ＆ドロップするために使用されるアンカーです。カスタム並び替えアイコンとアイテムの詳細については、こちらをご覧ください。" />
 </head>
 

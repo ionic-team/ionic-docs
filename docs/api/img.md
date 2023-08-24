@@ -10,7 +10,7 @@ import CustomProps from '@ionic-internal/component-api/v7/img/custom-props.md';
 import Slots from '@ionic-internal/component-api/v7/img/slots.md';
 
 <head>
-  <title>Img Tag to Lazy Load Images in Viewport | ion-img Tag</title>
+  <title>ion-img: Img Tag to Lazy Load Images in Viewport</title>
   <meta name="description" content="Imgタグは、タグがビューポートにあるときに、画像を遅延して読み込みます。大きなリストを作成する際にこのコンポーネントを利用すると、画像が表示されているときだけ読み込まれます。" />
 </head>
 

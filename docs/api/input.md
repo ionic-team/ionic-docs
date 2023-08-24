@@ -9,7 +9,7 @@ import CustomProps from '@ionic-internal/component-api/v7/input/custom-props.md'
 import Slots from '@ionic-internal/component-api/v7/input/slots.md';
 
 <head>
-  <title>ion-input: Custom Input Value Type Styling and CSS Properties</title>
+  <title>ion-input: Custom Input With Styling and CSS Properties</title>
   <meta name="description" content="ion-inputは、HTMLのinput要素のラッパーで、カスタムな値型のスタイルと機能を備えています。デスクトップでも動作し、モバイルではキーボードと統合されます。" />
 </head>
 

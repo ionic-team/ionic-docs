@@ -9,7 +9,7 @@ import CustomProps from '@ionic-internal/component-api/v7/chip/custom-props.md';
 import Slots from '@ionic-internal/component-api/v7/chip/slots.md';
 
 <head>
-  <title>ion-chip:  Name, Text, Icon and Avatar for Ionic Framework Apps</title>
+  <title>ion-chip: Text, Icon and Avatar for Ionic Framework Apps</title>
   <meta name="description" content="ion-chipは、複雑な実体をコンタクトのような小さなブロックに表現します。1つのチップには、名前、アバター、テキスト、アイコンなど、複数の異なる要素を含めることができます。" />
 </head>
 

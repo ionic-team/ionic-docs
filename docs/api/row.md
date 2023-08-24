@@ -9,7 +9,7 @@ import CustomProps from '@ionic-internal/component-api/v7/row/custom-props.md';
 import Slots from '@ionic-internal/component-api/v7/row/slots.md';
 
 <head>
-  <title>ion-row: Horizontal Row Components and Alignment | Ionic API Docs</title>
+  <title>ion-row: Horizontal Row Components of the Grid System</title>
   <meta name="description" content="Rowsはグリッドシステムの水平方向のコンポーネントで、さまざまな数のカラムを含んでいます。行の配置や使用方法については、ion-row API Docs を参照してください。" />
 </head>
 

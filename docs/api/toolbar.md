@@ -9,7 +9,7 @@ import CustomProps from '@ionic-internal/component-api/v7/toolbar/custom-props.m
 import Slots from '@ionic-internal/component-api/v7/toolbar/slots.md';
 
 <head>
-  <title>Toolbar | Customize App Menu Toolbar Buttons and Icons</title>
+  <title>ion-toolbar: Customize App Menu Toolbar Buttons and Icons</title>
   <meta name="description" content="Ion-toolbar コンポーネントは、アプリのメニューにあるツールバーボタンをカスタマイズすることができます。コンテンツの上下に固定ツールバーを追加したり、コンテンツと一緒にスクロールするフルスクリーンを使用することができます。" />
 </head>
 

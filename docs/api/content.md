@@ -9,8 +9,13 @@ import CustomProps from '@ionic-internal/component-api/v7/content/custom-props.m
 import Slots from '@ionic-internal/component-api/v7/content/slots.md';
 
 <head>
-  <title>ion-content: Scrollable CSS Component for Ionic App Content Areas</title>
+<<<<<<< HEAD
+  <title>ion-content: Scrollable Component for Ionic App Content</title>
   <meta name="description" content="ion-contentは、スクロール可能な領域を制御する便利なメソッドを備えた、使いやすいコンテンツ領域を提供します。このIonicアプリ用CSSコンポーネントの詳細については、こちらをご覧ください。" />
+=======
+  <title>ion-content: Scrollable Component for Ionic App Content</title>
+  <meta name="description" content="ion-content provides an easy to use content area with useful methods to control the scrollable area. Learn more about this CSS component for Ionic apps." />
+>>>>>>> dedf7688c828c18b737ffb67db236853ed6977b9
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';

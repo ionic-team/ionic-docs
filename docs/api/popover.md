@@ -9,7 +9,7 @@ import CustomProps from '@ionic-internal/component-api/v7/popover/custom-props.m
 import Slots from '@ionic-internal/component-api/v7/popover/slots.md';
 
 <head>
-  <title>ion-popover: iOS / Android Popover UI Component & CSS Properties</title>
+  <title>ion-popover: iOS / Android Popover UI Dialog Component</title>
   <meta name="description" content="ion-popoverは、現在のページの上に表示されるダイアログです。iOSとAndroidデバイス用のpopover UIコンポーネントとCSSカスタムプロパティについて説明します。" />
 </head>
 

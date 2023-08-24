@@ -9,7 +9,7 @@ import CustomProps from '@ionic-internal/component-api/v7/nav/custom-props.md';
 import Slots from '@ionic-internal/component-api/v7/nav/slots.md';
 
 <head>
-  <title>ion-nav | Nav View Component for Ionic Framework Apps</title>
+  <title>ion-nav: Nav View Component for Ionic Framework Apps</title>
   <meta name="description" content="ion-navは、任意のコンポーネントをロードしたり、新しいコンポーネントをスタックにPushするために単独で利用できます。ナビビューをロードしたり、他をプッシュしても、ルータ全体に影響を与えることはありません。" />
 </head>
 

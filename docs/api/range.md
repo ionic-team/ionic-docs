@@ -9,7 +9,7 @@ import CustomProps from '@ionic-internal/component-api/v7/range/custom-props.md'
 import Slots from '@ionic-internal/component-api/v7/range/slots.md';
 
 <head>
-  <title>Range Slider | ion-range: Slider Knob Controls with Labels</title>
+  <title>ion-range: Range Slider Knob Controls with Labels</title>
   <meta name="description" content="ion-rangeは、スライダーを動かして値の範囲を選択することができます。2つのノブを使用できますが、1つは値を制御し、ラベルはどちらか一方に置くことができます。" />
 </head>
 

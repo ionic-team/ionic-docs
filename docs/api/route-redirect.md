@@ -10,7 +10,7 @@ import CustomProps from '@ionic-internal/component-api/v7/route-redirect/custom-
 import Slots from '@ionic-internal/component-api/v7/route-redirect/slots.md';
 
 <head>
-  <title>ion-route-redirect Plugin: Redirect 'from' a URL 'to' Another URL</title>
+  <title>ion-route-redirect: Redirect 'from' a URL 'to' Another URL</title>
   <meta name="description" content="ion-route-redirectは、ion-routerの直接の子として使用され、URLから他のURLへのリダイレクトを行います。ルートリダイレクトプラグインについては、こちらをご覧ください。" />
 </head>
 

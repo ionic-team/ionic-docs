@@ -9,7 +9,7 @@ import CustomProps from '@ionic-internal/component-api/v7/fab-button/custom-prop
 import Slots from '@ionic-internal/component-api/v7/fab-button/slots.md';
 
 <head>
-  <title>Floating Action Button | Ionic FAB Button Icon for Primary Action</title>
+  <title>ion-fab-button: Ionic FAB Button Icon for Primary Action</title>
   <meta name="description" content="フローティング・アクション・ボタン（FAB）は、アプリ内の主要なアクションを表します。アイコンは円形で、ボタンを押すと、関連するアクションを開くことができます。" />
 </head>
 

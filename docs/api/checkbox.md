@@ -10,7 +10,7 @@ import CustomProps from '@ionic-internal/component-api/v7/checkbox/custom-props.
 import Slots from '@ionic-internal/component-api/v7/checkbox/slots.md';
 
 <head>
-  <title>ion-checkboxes: Ionic App Component to Select Multiple Options</title>
+  <title>ion-checkbox: Ionic App Checkbox to Select Multiple Options</title>
   <meta name="description" content="ion-checkboxは、セットから複数の選択肢を選択でき、アクティブにするとチェックされた（ticked）ように表示されます。Ionicアプリのチェックボックスコンポーネントについて説明します。" />
 </head>
 

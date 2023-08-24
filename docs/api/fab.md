@@ -9,7 +9,7 @@ import CustomProps from '@ionic-internal/component-api/v7/fab/custom-props.md';
 import Slots from '@ionic-internal/component-api/v7/fab/slots.md';
 
 <head>
-  <title>ion-fab: Floating Action Button for Android and iOS Ionic Apps</title>
+  <title>ion-fab: Ionic Floating Action Button for Android and iOS</title>
   <meta name="description" content="Fabs（フローティングアクションボタン）は、1つまたは複数のFabボタンを含むコンテナ要素です。Ionic FrameworkでAndroidおよびiOSアプリを作成する際にion-fabを使用します。" />
 </head>
 

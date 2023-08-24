@@ -10,7 +10,7 @@ import CustomProps from '@ionic-internal/component-api/v7/infinite-scroll/custom
 import Slots from '@ionic-internal/component-api/v7/infinite-scroll/slots.md';
 
 <head>
-  <title>Infinite Scroller | ion-infinite-scroll Action Component</title>
+  <title>ion-infinite-scroll: Infinite Scroller Action Component</title>
   <meta name="description" content="ion-infinite-scrollコンポーネントは、ユーザーがページの下部または上部から指定された距離だけスクロールしたときに実行されるアクションを呼び出します。" />
 </head>
 

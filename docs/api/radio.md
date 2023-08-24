@@ -9,7 +9,7 @@ import CustomProps from '@ionic-internal/component-api/v7/radio/custom-props.md'
 import Slots from '@ionic-internal/component-api/v7/radio/slots.md';
 
 <head>
-  <title>ion-radio Component: Radio Property for iOS and Android</title>
+  <title>ion-radio: Radio Component for iOS and Android</title>
   <meta name="description" content="Radioコンポーネントは、iOSおよびAndroidデバイスのion-radio-groupsの内部で使用する必要があります。Radioコンポーネントの使用方法とインストール方法については、こちらをご覧ください。" />
 </head>
 

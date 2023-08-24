@@ -9,7 +9,7 @@ import CustomProps from '@ionic-internal/component-api/v7/radio-group/custom-pro
 import Slots from '@ionic-internal/component-api/v7/radio-group/slots.md';
 
 <head>
-  <title>ion-radio-group | Radio Button Group Usage for Ionic Apps</title>
+  <title>ion-radio-group: Radio Button Group Usage for Ionic Apps</title>
   <meta name="description" content="radio groupとは、radioボタンのグループです。radio groupは、ユーザーがセットから最大1つのradioボタンを選択できるようにします。 ion-radio-groupの使用方法について、詳しくはこちらをご覧ください。" />
 </head>
 

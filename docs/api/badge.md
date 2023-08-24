@@ -9,7 +9,7 @@ import CustomProps from '@ionic-internal/component-api/v7/badge/custom-props.md'
 import Slots from '@ionic-internal/component-api/v7/badge/slots.md';
 
 <head>
-  <title>Badges | ion-badge: iOS & Android App Notification Badge Icons</title>
+  <title>ion-badge: iOS & Android App Notification Badge Icons</title>
   <meta name="description" content="BadgesはiOS/Androidアプリで他の要素の近くに表示されるインラインブロック要素で、アイテムの数を示す通知として使用します。" />
 </head>
 
