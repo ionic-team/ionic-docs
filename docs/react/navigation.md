@@ -56,7 +56,7 @@ You can also programmatically redirect from a Route's render method based on a c
 
 ## IonReactRouter
 
-The `IonReactRouter` component wraps the traditional [`BrowserRouter`](https://reacttraining.com/react-router/web/api/BrowserRouter) component from React Router, and sets the app up for routing. Therefore, use `IonReactRouter` in place of `BrowserRouter`. You can pass in any props to `IonReactRouter` and they will be passed down to the underlying `BrowserRouter`.
+The `IonReactRouter` component wraps the traditional [`BrowserRouter`](https://v5.reactrouter.com/web/api/BrowserRouter) component from React Router, and sets the app up for routing. Therefore, use `IonReactRouter` in place of `BrowserRouter`. You can pass in any props to `IonReactRouter` and they will be passed down to the underlying `BrowserRouter`.
 
 ## Nested Routes
 
@@ -79,7 +79,7 @@ const DashboardPage: React.FC = () => {
 
 Here, there are a couple more routes defined to point to pages from within the dashboard portion of the app. Note, that we need to define the whole route in the path, and we can't leave off "/dashboard" even though we arrived to this page from that URL. React Router requires full paths, and relative paths are not supported.
 
-However, we can use the [`match`](https://reacttraining.com/react-router/web/api/match) objects `url` property to provide the URL that was matched to render a component, which helps when working with nested routes:
+However, we can use the [`match`](https://v5.reactrouter.com/web/api/match) objects `url` property to provide the URL that was matched to render a component, which helps when working with nested routes:
 
 ```tsx
 const DashboardPage: React.FC<RouteComponentProps> = ({ match }) => {
@@ -199,7 +199,7 @@ Other components that have the `routerLink` prop are `IonButton`, `IonCard`, `Io
 
 Each of these components also have a `routerDirection` prop to explicitly set the type of page transition to use ("back", "forward", or "none").
 
-Outside of these components that have the `routerLink` prop, you can also use React Routers [`Link`](https://reacttraining.com/react-router/web/api/Link) component to navigate between views:
+Outside of these components that have the `routerLink` prop, you can also use React Routers [`Link`](https://v5.reactrouter.com/web/api/Link) component to navigate between views:
 
 ```html
 <Link to="/dashboard/users/1">User 1</Link>
@@ -207,7 +207,7 @@ Outside of these components that have the `routerLink` prop, you can also use Re
 
 We recommend using one of the above methods whenever possible for routing. The advantage to these approaches is that they both render an anchor (`<a>`)tag, which is suitable for overall app accessibility.
 
-A programmatic option for navigation is using the [`history`](https://reacttraining.com/react-router/web/api/history) prop that React Router provides to the components it renders via routes.
+A programmatic option for navigation is using the [`history`](https://v5.reactrouter.com/web/api/history) prop that React Router provides to the components it renders via routes.
 
 ```tsx
 <IonButton
@@ -262,7 +262,7 @@ const UserDetailPage: React.FC<UserDetailPageProps> = ({ match }) => {
 };
 ```
 
-The [`match`](https://reacttraining.com/react-router/web/api/match) prop contains information about the matched route, including the URL params. We obtain the `id` param here and display it on the screen.
+The [`match`](https://v5.reactrouter.com/web/api/match) prop contains information about the matched route, including the URL params. We obtain the `id` param here and display it on the screen.
 
 Note how we use a TypeScript interface to strongly type the props object. The interface gives us type safety and code completion inside of the component.
 
@@ -643,7 +643,7 @@ const MyComponent: React.FC = () => {
 
 ## More Information
 
-For more info on routing in React using React Router, check out their docs at [https://reacttraining.com/react-router/web](https://reacttraining.com/react-router/web).
+For more info on routing in React using the React Router implementation that Ionic uses under the hood, check out their docs at [https://v5.reactrouter.com/web](https://v5.reactrouter.com/web).
 
 ## From the Community
 
