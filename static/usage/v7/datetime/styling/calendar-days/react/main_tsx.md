@@ -27,10 +27,7 @@ function Example() {
     setDatetime(date.toISOString().substr(0, 19));
   }, []);
 
-  return (
-    <IonDatetime presentation="date" value={datetime}></IonDatetime>
-  );
+  return <IonDatetime presentation="date" value={datetime}></IonDatetime>;
 }
 export default Example;
 ```
-
