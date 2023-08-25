@@ -588,7 +588,7 @@ Since `IonRouterOutlet` takes over the job in determining which routes get rende
 
 ### useIonRouter
 
-The `useIonRouter` hook can be used for more direct control over routing in Ionic React. It allows you to pass additional metadata to Ionic, such as a custom animaton, before calling React router.
+The `useIonRouter` hook can be used for more direct control over routing in Ionic React. It allows you to pass additional metadata to Ionic, such as a custom animation, before calling React Router.
 
 The `useIonRouter` hook returns a `UseIonRouterResult` which has several convenience methods for routing:
 
