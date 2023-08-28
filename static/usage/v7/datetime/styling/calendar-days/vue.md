@@ -30,7 +30,7 @@
       // Set the value of the datetime to the day
       // calculated above
       date.setDate(date.getDate() + dayChange);
-      datetime = date.toISOString().substr(0, 19);
+      datetime = date.toISOString();
 
       return {
         datetime,

@@ -20,7 +20,7 @@
   // Set the value of the datetime to the day
   // calculated above
   date.setDate(date.getDate() + dayChange);
-  datetime.value = date.toISOString().substr(0, 19);
+  datetime.value = date.toISOString();
 </script>
 
 <style>

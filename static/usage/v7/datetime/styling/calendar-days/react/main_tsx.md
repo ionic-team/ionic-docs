@@ -24,7 +24,7 @@ function Example() {
     // Set the value of the datetime to the day
     // calculated above
     date.setDate(date.getDate() + dayChange);
-    setDatetime(date.toISOString().substr(0, 19));
+    setDatetime(date.toISOString());
   }, []);
 
   return <IonDatetime presentation="date" value={datetime}></IonDatetime>;

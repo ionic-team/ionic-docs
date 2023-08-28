@@ -26,7 +26,7 @@ export class ExampleComponent implements OnInit {
     // Set the value of the datetime to the day
     // calculated above
     date.setDate(date.getDate() + dayChange);
-    this.datetime = date.toISOString().substr(0, 19);
+    this.datetime = date.toISOString();
   }
 }
 ```
