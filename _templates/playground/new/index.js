@@ -33,7 +33,7 @@ module.exports = {
               : {
                   type: 'input',
                   name: 'name',
-                  message: 'What is this playground for?',
+                  message: 'Which guide section is this playground for?',
                   initial: 'animations',
                 },
             {
