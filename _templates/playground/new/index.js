@@ -35,6 +35,9 @@ module.exports = {
                   name: 'name',
                   message: 'Which guide section is this playground for?',
                   initial: 'animations',
+                  validate(value) {
+                    return value.match(/^[a-z/-]+$/) ? true : 'Section must be kebab-case';
+                  },
                 },
             {
               type: 'input',
