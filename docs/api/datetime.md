@@ -328,7 +328,7 @@ The benefit of this approach is that every component, not just `ion-datetime`, c
 
 ### Calendar Days
 
-The calendar days in the grid-style of an `ion-datetime` can be styled using CSS shadow parts.
+The calendar days in a grid-style `ion-datetime` can be styled using CSS shadow parts.
 
 :::note
 The example below selects the day 2 days ago, unless that day is in the previous month, then it selects a day 2 days in the future. This is done for demo purposes in order to show how to apply custom styling to all days, the current day, and the selected day.
