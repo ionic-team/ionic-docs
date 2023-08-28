@@ -1,12 +1,12 @@
 ---
-to: "<%= `static/usage/v${version}/${name.replace('ion-', '')}/${path}/javascript.md` %>"
+to: "<%= `static/usage/v${version}/${name}/${path}/javascript.md` %>"
 ---
 ```html
-<<%= name %>></<%= name %>>
+<<%= component %>></<%= component %>>
 <% if (css){ -%>
 
 <style>
-  <%= name %> {
+  <%= component %> {
     /* styles go here */
   }
 </style>
