@@ -95,6 +95,29 @@ import CSSProps from '@site/static/usage/v7/content/theming/css-properties/index
 
 <CSSProps />
 
+### Safe Area Padding
+
+The content component will not automatically apply padding to any of its sides to account for the [safe area](/docs/layout/safe-area). This is because the content component is often used in conjunction with other components that apply their own padding, such as [headers](./header) and [footers](./footer). However, if the content component is being used on its own, it may be desired to apply padding to the safe area. This can be done through CSS by using the `--ion-safe-area-(dir)` variables described in [Application Variables](../theming/advanced.md#application-variables).
+
+import SafeArea from '@site/static/usage/v7/content/theming/safe-area/index.md';
+
+<SafeArea />
+
+The most common use case for this is to apply padding to the top of the content to account for the status bar. This can be done by setting the `padding-top` property to the value of the `--ion-safe-area-top` variable.
+
+```css
+ion-content::part(scroll) {
+  padding-top: var(--ion-safe-area-top, 0);
+}
+```
+
+Another common use case is to apply padding to the left side of the content to account for the [notch](/docs/layout/notch) when the device is in landscape mode and the notch is on the left side. This can be done by setting the `padding-left` property to the value of the `--ion-safe-area-left` variable.
+
+```css
+ion-content::part(scroll) {
+  padding-left: var(--ion-safe-area-left, 0);
+}
+```
 
 ## Interfaces
 
