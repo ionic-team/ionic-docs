@@ -41,6 +41,26 @@ import Positioning from '@site/static/usage/v7/fab/positioning/index.md';
 
 <Positioning />
 
+### Safe Area
+
+If there is no `ion-header` or `ion-footer` component, the fab may be covered by a device's notch, status bar, or other device UI. In these cases, the [safe area](/docs/layout/safe-area) on the top and bottom is not taken into account. This can be adjusted by using the [`--ion-safe-area-(dir)` variables](#application-variables).
+
+When using a fab with `vertical` set to `"top"` without an `ion-header`, the top margin needs to be set:
+
+import SafeArea from '@site/static/usage/v7/fab/safe-area/index.md';
+
+<SafeArea />
+
+And when using a fab with `vertical` set to `"bottom"` without an `ion-footer`, the bottom margin needs to be set:
+
+```css
+ion-fab {
+  margin-bottom: var(--ion-safe-area-bottom, 0);
+}
+```
+
+If there is an `ion-header` (for a fab with `vertical` set to `"top"`) or `ion-footer` (for a fab with `vertical` set to `"bottom"`), no CSS adjustment is needed because the fab gets positioned relative to the header or footer.
+
 ## Button Sizing
 
 Setting the `size` property of the main fab button to `"small"` will render it at a mini size. Note that this property will not have an effect when used with the inner fab buttons.
@@ -68,7 +88,6 @@ import CSSCustomProperties from '@site/static/usage/v7/fab/theming/css-custom-pr
 import CSSShadowParts from '@site/static/usage/v7/fab/theming/css-shadow-parts/index.md';
 
 <CSSShadowParts />
- 
 
 ## Accessibility
 
