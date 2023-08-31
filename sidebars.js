@@ -238,15 +238,15 @@ module.exports = {
     },
     {
       type: 'category',
-      label: 'アクションシート',
-      collapsed: false,
-      items: ['api/action-sheet'],
-    },
-    {
-      type: 'category',
       label: 'アコーディオン',
       collapsed: false,
       items: ['api/accordion', 'api/accordion-group'],
+    },
+    {
+      type: 'category',
+      label: 'アクションシート',
+      collapsed: false,
+      items: ['api/action-sheet'],
     },
     {
       type: 'category',
@@ -316,15 +316,15 @@ module.exports = {
     },
     {
       type: 'category',
-      label: '無限スクロール',
-      collapsed: false,
-      items: ['api/infinite-scroll', 'api/infinite-scroll-content'],
-    },
-    {
-      type: 'category',
       label: 'アイコン',
       collapsed: false,
       items: ['api/icon'],
+    },
+    {
+      type: 'category',
+      label: '無限スクロール',
+      collapsed: false,
+      items: ['api/infinite-scroll', 'api/infinite-scroll-content'],
     },
     {
       type: 'category',
