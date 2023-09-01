@@ -99,10 +99,6 @@ import CSSProps from '@site/static/usage/v7/content/theming/css-properties/index
 
 The content component will not automatically apply padding to any of its sides to account for the [safe area](/docs/theming/advanced#safe-area-padding). This is because the content component is often used in conjunction with other components that apply their own padding, such as [headers](./header) and [footers](./footer). However, if the content component is being used on its own, it may be desired to apply padding to the safe area. This can be done through CSS by using the `--ion-safe-area-(dir)` variables described in [Application Variables](../theming/advanced.md#application-variables).
 
-import SafeArea from '@site/static/usage/v7/content/theming/safe-area/index.md';
-
-<SafeArea />
-
 The most common use case for this is to apply padding to the top of the content to account for the status bar. This can be done by setting the `padding-top` property to the value of the `--ion-safe-area-top` variable.
 
 ```css
@@ -118,6 +114,10 @@ ion-content::part(scroll) {
   padding-left: var(--ion-safe-area-left, 0);
 }
 ```
+
+import SafeArea from '@site/static/usage/v7/content/theming/safe-area/index.md';
+
+<SafeArea />
 
 ## Interfaces
 
