@@ -4,7 +4,7 @@
 </ion-content>
 
 <style>
-  ion-content {
+  :root {
     /**
      * Setting the variables for DEMO purposes only.
      * Values will be set automatically when building an iOS or Android app.
