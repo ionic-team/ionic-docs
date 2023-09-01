@@ -47,9 +47,11 @@ If there is no `ion-header` or `ion-footer` component, the fab may be covered by
 
 When using a fab with `vertical` set to `"top"` without an `ion-header`, the top margin needs to be set:
 
-import SafeArea from '@site/static/usage/v7/fab/safe-area/index.md';
-
-<SafeArea />
+```css
+ion-fab {
+  margin-top: var(--ion-safe-area-top, 0);
+}
+```
 
 And when using a fab with `vertical` set to `"bottom"` without an `ion-footer`, the bottom margin needs to be set:
 
@@ -58,6 +60,10 @@ ion-fab {
   margin-bottom: var(--ion-safe-area-bottom, 0);
 }
 ```
+
+import SafeArea from '@site/static/usage/v7/fab/safe-area/index.md';
+
+<SafeArea />
 
 If there is an `ion-header` (for a fab with `vertical` set to `"top"`) or `ion-footer` (for a fab with `vertical` set to `"bottom"`), no CSS adjustment is needed because the fab gets positioned relative to the header or footer.
 

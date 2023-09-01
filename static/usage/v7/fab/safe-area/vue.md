@@ -32,14 +32,13 @@
    */
     --ion-safe-area-top: 20px;
     --ion-safe-area-bottom: 20px;
-    --ion-safe-area-left: 20px;
-    --ion-safe-area-right: 20px;
   }
 </style>
 
 <style scoped>
   ion-fab {
     margin-top: var(--ion-safe-area-top, 0);
+    margin-bottom: var(--ion-safe-area-bottom, 0);
   }
 </style>
 ```

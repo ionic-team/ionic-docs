@@ -6,7 +6,5 @@
    */
   --ion-safe-area-top: 20px;
   --ion-safe-area-bottom: 20px;
-  --ion-safe-area-left: 20px;
-  --ion-safe-area-right: 20px;
 }
 ```
