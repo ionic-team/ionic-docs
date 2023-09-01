@@ -22,44 +22,34 @@
   </div>
 </template>
 
-<script lang="ts">
+<script lang="ts" setup>
   import { IonActionSheet, IonButton } from '@ionic/vue';
 
-  export default {
-    components: { IonActionSheet, IonButton },
-    setup() {
-      const actionSheetButtons = [
-        {
-          text: 'Delete',
-          role: 'destructive',
-          data: {
-            action: 'delete',
-          },
-        },
-        {
-          text: 'Share',
-          data: {
-            action: 'share',
-          },
-        },
-        {
-          text: 'Cancel',
-          role: 'cancel',
-          data: {
-            action: 'cancel',
-          },
-        },
-      ];
-
-      const logResult = (ev: CustomEvent) => {
-        console.log(JSON.stringify(ev.detail, null, 2));
-      };
-
-      return {
-        actionSheetButtons,
-        logResult,
-      };
+  const actionSheetButtons = [
+    {
+      text: 'Delete',
+      role: 'destructive',
+      data: {
+        action: 'delete',
+      },
     },
+    {
+      text: 'Share',
+      data: {
+        action: 'share',
+      },
+    },
+    {
+      text: 'Cancel',
+      role: 'cancel',
+      data: {
+        action: 'cancel',
+      },
+    },
+  ];
+
+  const logResult = (ev: CustomEvent) => {
+    console.log(JSON.stringify(ev.detail, null, 2));
   };
 </script>
 ```
