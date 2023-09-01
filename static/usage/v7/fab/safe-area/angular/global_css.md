@@ -9,8 +9,4 @@
   --ion-safe-area-left: 20px;
   --ion-safe-area-right: 20px;
 }
-
-ion-fab {
-  margin-top: var(--ion-safe-area-top, 0);
-}
 ```
