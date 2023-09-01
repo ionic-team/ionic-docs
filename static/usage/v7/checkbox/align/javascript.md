@@ -1,7 +1,11 @@
 ```html
-<ion-checkbox label-placement="stacked" align="start">Aligned to the Start</ion-checkbox>
+<ion-list>
+  <ion-item>
+    <ion-checkbox label-placement="stacked" alignment="start">Aligned to the Start</ion-checkbox>
+  </ion-item>
 
-<br />
-
-<ion-checkbox label-placement="stacked" align="center">Aligned to the Center</ion-checkbox>
+  <ion-item>
+    <ion-checkbox label-placement="stacked" alignment="center">Aligned to the Center</ion-checkbox>
+  </ion-item>
+</ion-list>
 ```

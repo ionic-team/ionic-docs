@@ -7,7 +7,7 @@ function Example() {
     <IonList>
       <IonRadioGroup value="start">
         <IonItem>
-          <IonRadio value="start" labelPlacement="stacked" align="start">
+          <IonRadio value="start" labelPlacement="stacked" alignment="start">
             Aligned to the Start
           </IonRadio>
         </IonItem>
@@ -15,7 +15,7 @@ function Example() {
 
       <IonRadioGroup value="center">
         <IonItem>
-          <IonRadio value="center" labelPlacement="stacked" align="center">
+          <IonRadio value="center" labelPlacement="stacked" alignment="center">
             Aligned to the Center
           </IonRadio>
         </IonItem>

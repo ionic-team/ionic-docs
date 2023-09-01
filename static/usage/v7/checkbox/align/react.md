@@ -1,19 +1,23 @@
 ```tsx
 import React from 'react';
-import { IonCheckbox } from '@ionic/react';
+import { IonCheckbox, IonItem, IonList } from '@ionic/react';
 
 function Example() {
   return (
     <>
-      <IonCheckbox labelPlacement="stacked" align="start">
-        Aligned to the Start
-      </IonCheckbox>
+      <IonList>
+        <IonItem>
+          <IonCheckbox labelPlacement="stacked" alignment="start">
+            Aligned to the Start
+          </IonCheckbox>
+        </IonItem>
 
-      <br />
-
-      <IonCheckbox labelPlacement="stacked" align="center">
-        Aligned to the Center
-      </IonCheckbox>
+        <IonItem>
+          <IonCheckbox labelPlacement="stacked" alignment="center">
+            Aligned to the Center
+          </IonCheckbox>
+        </IonItem>
+      </IonList>
     </>
   );
 }
