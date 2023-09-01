@@ -24,6 +24,9 @@ html[data-theme='dark'] {
   --ifm-menu-color-active: var(--ifm-link-color);
 
   --sidebar-spacing-horizontal: 1.5rem;
+
+  // The variable aims to style the collapsible menu items on the sidebar.
+  --ifm-menu-color-background-hover: transparent;
 }
 
 //overrides
