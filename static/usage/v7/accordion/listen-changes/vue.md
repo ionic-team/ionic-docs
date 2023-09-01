@@ -24,35 +24,24 @@
   <p ref="listenerOut"></p>
 </template>
 
-<script lang="ts">
+<script lang="ts" setup>
   import { IonAccordion, IonAccordionGroup, IonItem, IonLabel, AccordionGroupCustomEvent } from '@ionic/vue';
-  import { defineComponent, ref } from 'vue';
+  import { ref } from 'vue';
 
-  export default defineComponent({
-    components: {
-      IonAccordion,
-      IonAccordionGroup,
-      IonItem,
-      IonLabel,
-    },
-    setup() {
-      const listenerOut = ref(null);
-      const values = ['first', 'second', 'third'];
-      const accordionGroupChange = (ev: AccordionGroupCustomEvent) => {
-        if (!listenerOut.value) {
-          return;
-        }
+  const listenerOut = ref(null);
+  const values = ['first', 'second', 'third'];
+  const accordionGroupChange = (ev: AccordionGroupCustomEvent) => {
+    if (!listenerOut.value) {
+      return;
+    }
 
-        const collapsedItems = values.filter((value) => value !== ev.detail.value);
-        const selectedValue = ev.detail.value;
+    const collapsedItems = values.filter((value) => value !== ev.detail.value);
+    const selectedValue = ev.detail.value;
 
-        listenerOut.value.innerText = `
-          Expanded: ${selectedValue === undefined ? 'None' : ev.detail.value}
-          Collapsed: ${collapsedItems.join(', ')}
-        `;
-      };
-      return { listenerOut, accordionGroupChange };
-    },
-  });
+    listenerOut.value.innerText = `
+      Expanded: ${selectedValue === undefined ? 'None' : ev.detail.value}
+      Collapsed: ${collapsedItems.join(', ')}
+    `;
+  };
 </script>
 ```
