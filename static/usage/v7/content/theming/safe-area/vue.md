@@ -16,7 +16,7 @@
   });
 </script>
 
-<style scoped>
+<style>
   :root {
     /**
      * Setting the variables for DEMO purposes only.

@@ -97,7 +97,7 @@ import CSSProps from '@site/static/usage/v7/content/theming/css-properties/index
 
 ### Safe Area Padding
 
-The content component will not automatically apply padding to any of its sides to account for the [safe area](/docs/layout/safe-area). This is because the content component is often used in conjunction with other components that apply their own padding, such as [headers](./header) and [footers](./footer). However, if the content component is being used on its own, it may be desired to apply padding to the safe area. This can be done through CSS by using the `--ion-safe-area-(dir)` variables described in [Application Variables](../theming/advanced.md#application-variables).
+The content component will not automatically apply padding to any of its sides to account for the [safe area](/docs/theming/advanced#safe-area-padding). This is because the content component is often used in conjunction with other components that apply their own padding, such as [headers](./header) and [footers](./footer). However, if the content component is being used on its own, it may be desired to apply padding to the safe area. This can be done through CSS by using the `--ion-safe-area-(dir)` variables described in [Application Variables](../theming/advanced.md#application-variables).
 
 import SafeArea from '@site/static/usage/v7/content/theming/safe-area/index.md';
 
@@ -111,7 +111,7 @@ ion-content::part(scroll) {
 }
 ```
 
-Another common use case is to apply padding to the left side of the content to account for the [notch](/docs/layout/notch) when the device is in landscape mode and the notch is on the left side. This can be done by setting the `padding-left` property to the value of the `--ion-safe-area-left` variable.
+Another common use case is to apply padding to the left side of the content to account for the notch when the device is in landscape mode and the notch is on the left side. This can be done by setting the `padding-left` property to the value of the `--ion-safe-area-left` variable.
 
 ```css
 ion-content::part(scroll) {
