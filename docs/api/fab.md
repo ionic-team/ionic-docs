@@ -61,11 +61,11 @@ ion-fab {
 }
 ```
 
+If there is an `ion-header` (for a fab with `vertical` set to `"top"`) or `ion-footer` (for a fab with `vertical` set to `"bottom"`), no CSS adjustment is needed because the fab gets positioned relative to the header or footer.
+
 import SafeArea from '@site/static/usage/v7/fab/safe-area/index.md';
 
 <SafeArea />
-
-If there is an `ion-header` (for a fab with `vertical` set to `"top"`) or `ion-footer` (for a fab with `vertical` set to `"bottom"`), no CSS adjustment is needed because the fab gets positioned relative to the header or footer.
 
 ## Button Sizing
 
