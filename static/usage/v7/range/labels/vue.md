@@ -9,6 +9,10 @@
   <br />
 
   <ion-range label-placement="fixed" label="Fixed Width Label"></ion-range>
+
+  <br />
+
+  <ion-range label-placement="stacked" label="Stacked Label"></ion-range>
 </template>
 
 <script lang="ts">

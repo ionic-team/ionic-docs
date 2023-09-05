@@ -29,15 +29,27 @@ import Basic from '@site/static/usage/v7/checkbox/basic/index.md';
 
 ## Label Placement
 
-Developers can use the `labelPlacement` property to control how the label is placed relative to the control.
+Developers can use the `labelPlacement` property to control how the label is placed relative to the control. This property mirrors the flexbox `flex-direction` property.
 
 import LabelPlacement from '@site/static/usage/v7/checkbox/label-placement/index.md';
 
 <LabelPlacement />
 
+## Alignment
+
+Developers can use the `alignment` property to control how the label and control are aligned on the cross axis. This property mirrors the flexbox `align-items` property.
+
+:::note
+Stacked checkboxes can be aligned using the `alignment` property. This can be useful when the label and control need to be centered horizontally.
+:::
+
+import Alignment from '@site/static/usage/v7/checkbox/alignment/index.md';
+
+<Alignment />
+
 ## Justification
 
-Developers can use the `justify` property to control how the label and control are packed on a line.
+Developers can use the `justify` property to control how the label and control are packed on a line. This property mirrors the flexbox `justify-content` property.
 
 import Justify from '@site/static/usage/v7/checkbox/justify/index.md';
 
