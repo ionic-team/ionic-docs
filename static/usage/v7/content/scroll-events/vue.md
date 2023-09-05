@@ -69,7 +69,7 @@
         console.log('scroll start');
       },
       handleScroll(ev: CustomEvent) {
-        console.log('scroll', ev.detail);
+        console.log('scroll', JSON.stringify(ev.detail));
       },
       handleScrollEnd() {
         console.log('scroll end');
