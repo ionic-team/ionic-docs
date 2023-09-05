@@ -43,9 +43,9 @@ Developers can use the `alignment` property to control how the label and control
 Stacked checkboxes can be aligned using the `alignment` property. This can be useful when the label and control need to be centered horizontally.
 :::
 
-import Align from '@site/static/usage/v7/checkbox/alignment/index.md';
+import Alignment from '@site/static/usage/v7/checkbox/alignment/index.md';
 
-<Align />
+<Alignment />
 
 ## Justification
 
