@@ -40,7 +40,7 @@ import LabelPlacement from '@site/static/usage/v7/checkbox/label-placement/index
 Developers can use the `alignment` property to control how the label and control are aligned on the cross axis. This property mirrors the flexbox `align-items` property.
 
 :::note
-Stacked checkboxes can be aligned using the `alignment` property. This can be useful when the label and control need to be centered vertically.
+Stacked checkboxes can be aligned using the `alignment` property. This can be useful when the label and control need to be centered horizontally.
 :::
 
 import Align from '@site/static/usage/v7/checkbox/align/index.md';
