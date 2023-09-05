@@ -13,5 +13,5 @@ import angular from './angular.md';
     vue,
     angular,
   }}
-  src="usage/v7/toggle/align/demo.html"
+  src="usage/v7/toggle/alignment/demo.html"
 />

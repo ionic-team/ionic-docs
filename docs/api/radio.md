@@ -44,7 +44,7 @@ Developers can use the `alignment` property to control how the label and control
 Stacked radios can be aligned using the `alignment` property. This can be useful when the label and control need to be centered horizontally.
 :::
 
-import Align from '@site/static/usage/v7/radio/align/index.md';
+import Align from '@site/static/usage/v7/radio/alignment/index.md';
 
 <Align />
 

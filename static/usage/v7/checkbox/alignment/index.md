@@ -13,5 +13,5 @@ import angular from './angular.md';
     vue,
     angular,
   }}
-  src="usage/v7/radio/align/demo.html"
+  src="usage/v7/checkbox/alignment/demo.html"
 />
