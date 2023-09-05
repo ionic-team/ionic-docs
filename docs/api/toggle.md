@@ -53,7 +53,7 @@ import LabelPlacement from '@site/static/usage/v7/toggle/label-placement/index.m
 
 <LabelPlacement />
 
-## Align
+## Alignment
 
 Developers can use the `alignment` property to control how the label and control are aligned on the cross axis. This property mirrors the flexbox `align-items` property.
 
