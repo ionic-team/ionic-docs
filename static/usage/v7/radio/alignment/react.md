@@ -1,6 +1,6 @@
 ```tsx
 import React from 'react';
-import { IonRadio } from '@ionic/react';
+import { IonItem, IonList, IonRadio, IonRadioGroup } from '@ionic/react';
 
 function Example() {
   return (
