@@ -69,7 +69,7 @@ function Example() {
           {
             text: 'Confirm',
             handler: (value) => {
-              window.alert(
+              console.log(
                 `You selected a ${value.crust.text} pizza with ${value.meat.text} and ${value.veggies.text}`
               );
             },
