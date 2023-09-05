@@ -6,7 +6,6 @@
 </ion-header>
 <ion-content class="ion-padding">
   <ion-button id="open-modal" expand="block">Open</ion-button>
-  <p id="message">This modal example uses triggers to automatically open a modal when the button is clicked.</p>
   <ion-modal trigger="open-modal">
     <ion-header>
       <ion-toolbar>
@@ -21,8 +20,7 @@
     </ion-header>
     <ion-content class="ion-padding">
       <ion-item>
-        <ion-label position="stacked">Enter your name</ion-label>
-        <ion-input type="text" placeholder="Your name"></ion-input>
+        <ion-input label="Enter your name" label-placement="stacked" type="text" placeholder="Your name"></ion-input>
       </ion-item>
     </ion-content>
   </ion-modal>
@@ -42,8 +40,7 @@
 
   modal.addEventListener('willDismiss', (ev) => {
     if (ev.detail.role === 'confirm') {
-      const message = document.querySelector('#message');
-      message.textContent = `Hello ${ev.detail.data}!`;
+      console.log(`Hello ${ev.detail.data}!`);
     }
   });
 </script>
