@@ -41,7 +41,7 @@ import LabelPlacement from '@site/static/usage/v7/radio/label-placement/index.md
 Developers can use the `alignment` property to control how the label and control are aligned on the cross axis. This property mirrors the flexbox `align-items` property.
 
 :::note
-Stacked radios can be aligned using the `alignment` property. This can be useful when the label and control need to be centered vertically.
+Stacked radios can be aligned using the `alignment` property. This can be useful when the label and control need to be centered horizontally.
 :::
 
 import Align from '@site/static/usage/v7/radio/align/index.md';
