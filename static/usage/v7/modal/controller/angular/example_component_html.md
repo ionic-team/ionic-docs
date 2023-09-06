@@ -6,6 +6,5 @@
 </ion-header>
 <ion-content class="ion-padding">
   <ion-button expand="block" (click)="openModal()">Open</ion-button>
-  <p>{{ message }}</p>
 </ion-content>
 ```

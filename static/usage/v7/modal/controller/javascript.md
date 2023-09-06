@@ -6,7 +6,6 @@
 </ion-header>
 <ion-content class="ion-padding">
   <ion-button expand="block" onclick="openModal()">Open</ion-button>
-  <p id="message">This modal example uses the modalController to present and dismiss modals.</p>
 </ion-content>
 
 <script>
@@ -29,7 +28,7 @@
           <ion-input type="text" label-placement="stacked" label="Enter your name" placeholder="Your name"></ion-input>
         </ion-item>
       </ion-content>
-      `;
+    `;
 
     const modal = await modalController.create({
       component: div,
@@ -40,7 +39,7 @@
     const { data, role } = await modal.onWillDismiss();
 
     if (role === 'confirm') {
-      document.querySelector('#message').innerHTML = `Hello, ${data}!`;
+      console.log(`Hello, ${data}!`);
     }
   };
 
