@@ -5,9 +5,9 @@
       <ion-select
         aria-label="Fruit"
         placeholder="Select fruit"
-        @ionChange="pushLog('ionChange fired with value: ' + $event.detail.value)"
-        @ionCancel="pushLog('ionCancel fired')"
-        @ionDismiss="pushLog('ionDismiss fired')"
+        @ionChange="handleChange($event)"
+        @ionCancel="handleCancel()"
+        @ionDismiss="handleDismiss()"
       >
         <ion-select-option value="apples">Apples</ion-select-option>
         <ion-select-option value="oranges">Oranges</ion-select-option>
@@ -15,9 +15,6 @@
       </ion-select>
     </ion-item>
   </ion-list>
-  <div class="ion-padding">
-    <p v-for="log in logs">{{ log }}</p>
-  </div>
 </template>
 
 <script>
@@ -26,14 +23,15 @@
 
   export default defineComponent({
     components: { IonItem, IonList, IonSelect, IonSelectOption },
-    data() {
-      return {
-        logs: [],
-      };
-    },
     methods: {
-      pushLog(msg) {
-        this.logs.unshift(msg);
+      handleChange(ev) {
+        console.log('ionChange fired with value: ' + ev.detail.value)
+      },
+      handleCancel() {
+        console.log('ionCancel fired')
+      },
+      handleDismiss() {
+        console.log('ionDismiss fired')
       },
     },
   });
