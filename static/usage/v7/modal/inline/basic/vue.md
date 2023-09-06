@@ -21,7 +21,13 @@
       </ion-header>
       <ion-content class="ion-padding">
         <ion-item>
-          <ion-input label="Enter your name" label-placement="stacked" ref="input" type="text" placeholder="Your name"></ion-input>
+          <ion-input
+            label="Enter your name"
+            label-placement="stacked"
+            ref="input"
+            type="text"
+            placeholder="Your name"
+          ></ion-input>
         </ion-item>
       </ion-content>
     </ion-modal>

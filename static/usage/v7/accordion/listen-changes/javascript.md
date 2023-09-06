@@ -28,7 +28,9 @@
     const collapsedItems = values.filter((value) => value !== ev.detail.value);
     const selectedValue = ev.detail.value;
 
-    console.log(`Expanded: ${selectedValue === undefined ? 'None' : ev.detail.value} | Collapsed: ${collapsedItems.join(', ')}`);
+    console.log(
+      `Expanded: ${selectedValue === undefined ? 'None' : ev.detail.value} | Collapsed: ${collapsedItems.join(', ')}`
+    );
   });
 </script>
 ```

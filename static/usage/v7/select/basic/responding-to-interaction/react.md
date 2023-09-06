@@ -3,7 +3,6 @@ import React from 'react';
 import { IonItem, IonList, IonSelect, IonSelectOption } from '@ionic/react';
 
 function Example() {
-
   return (
     <IonList>
       <IonItem>

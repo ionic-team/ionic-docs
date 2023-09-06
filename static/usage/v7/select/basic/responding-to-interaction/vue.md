@@ -25,13 +25,13 @@
     components: { IonItem, IonList, IonSelect, IonSelectOption },
     methods: {
       handleChange(ev) {
-        console.log('ionChange fired with value: ' + ev.detail.value)
+        console.log('ionChange fired with value: ' + ev.detail.value);
       },
       handleCancel() {
-        console.log('ionCancel fired')
+        console.log('ionCancel fired');
       },
       handleDismiss() {
-        console.log('ionDismiss fired')
+        console.log('ionDismiss fired');
       },
     },
   });
