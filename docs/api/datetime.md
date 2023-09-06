@@ -37,6 +37,7 @@ import HighlightedDatesCallback from '@site/static/usage/v7/datetime/highlighted
 import MultipleDateSelection from '@site/static/usage/v7/datetime/multiple/index.md';
 
 import GlobalTheming from '@site/static/usage/v7/datetime/styling/global-theming/index.md';
+import CalendarDaysStyling from '@site/static/usage/v7/datetime/styling/calendar-days/index.md';
 import WheelStyling from '@site/static/usage/v7/datetime/styling/wheel-styling/index.md';
 
 <head>
@@ -50,7 +51,7 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 Datetimes present a calendar interface and time wheel, making it easy for users to select dates and times. Datetimes are similar to the native `input` elements of `datetime-local`, however, Ionic Framework's Datetime component makes it easy to display the date and time in the preferred format, and manage the datetime values.
 
-## Overview 
+## Overview
 
 Historically, handling datetime values within JavaScript, or even within HTML
 inputs, has always been a challenge. Specifically, JavaScript's `Date` object is
@@ -100,7 +101,7 @@ If you need to present a datetime in an overlay such as a modal or a popover, we
 
 ## Setting Values Asynchronously
 
-If its `value` is updated programmatically after a datetime has already been created, the datetime will automatically jump to the new date. However, it is recommended to avoid updating the `value` in this way when users are able to interact with the datetime, as this could be disorienting for those currently trying to select a date. For example, if a datetime's `value` is loaded by an asyncronous process, it is recommended to hide the datetime with CSS until the value has finished updating.
+If its `value` is updated programmatically after a datetime has already been created, the datetime will automatically jump to the new date. However, it is recommended to avoid updating the `value` in this way when users are able to interact with the datetime, as this could be disorienting for those currently trying to select a date. For example, if a datetime's `value` is loaded by an asynchronous process, it is recommended to hide the datetime with CSS until the value has finished updating.
 
 ## Date Constraints
 
@@ -108,7 +109,7 @@ If its `value` is updated programmatically after a datetime has already been cre
 
 To customize the minimum and maximum datetime values, the `min` and `max` component properties can be provided which may make more sense for the app's use-case. Following the same IS0 8601 format listed in the table above, each component can restrict which dates can be selected by the user.
 
-The following example restricts date selection to March 2022 through May 2022 only. 
+The following example restricts date selection to March 2022 through May 2022 only.
 
 <MaxMin />
 
@@ -122,7 +123,7 @@ The following example allows minutes to be selected in increments of 15. It also
 
 ### Advanced Date Constraints
 
-With the `isDateEnabled` property, developers can customize the `ion-datetime` to disable a specific day, range of dates, weekends or any custom rule using an ISO 8601 date string. 
+With the `isDateEnabled` property, developers can customize the `ion-datetime` to disable a specific day, range of dates, weekends or any custom rule using an ISO 8601 date string.
 The `isDateEnabled` property accepts a function returning a boolean, indicating if a date is enabled. The function is called for each rendered calendar day, for the previous, current and next month. Custom implementations should be optimized for performance to avoid jank.
 
 The following example shows how to disable all weekend dates. For more advanced date manipulation, we recommend using a date utility such as `date-fns`.
@@ -325,6 +326,16 @@ The benefit of this approach is that every component, not just `ion-datetime`, c
 
 <GlobalTheming />
 
+### Calendar Days
+
+The calendar days in a grid-style `ion-datetime` can be styled using CSS shadow parts.
+
+:::note
+The example below selects the day 2 days ago, unless that day is in the previous month, then it selects a day 2 days in the future. This is done for demo purposes in order to show how to apply custom styling to all days, the current day, and the selected day.
+:::
+
+<CalendarDaysStyling />
+
 ### Wheel Pickers
 
 The wheels used in `ion-datetime` can be styled through a combination of shadow parts and CSS variables. This applies to both the columns in wheel-style datetimes, and the month/year picker in grid-style datetimes.
@@ -367,7 +378,7 @@ import { format, parseISO } from 'date-fns';
 /**
  * This is provided in the event
  * payload from the `ionChange` event.
- * 
+ *
  * The value is an ISO-8601 date string.
  */
 const dateFromIonDatetime = '2021-06-04T14:23:00-04:00';
