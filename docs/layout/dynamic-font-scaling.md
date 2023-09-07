@@ -61,7 +61,7 @@ Ionic follows [Apple's Human Interface Guidelines for Typography](https://develo
 
 1. Content in an `ion-header` or an `ion-footer` will have maximum font sizes to prioritize text in `ion-content` which is deemed more important than text in `ion-header` or `ion-footer`. 
 2. Components such as `ion-badge` and `ion-back-button` will have minimum font sizes so they remain readable.
-3. Components such as `ion-tab-bar` and `ion-picker` do not scale according to Apple's Human Interface Guidelines.
+3. Text in components such as `ion-tab-bar` and `ion-picker` do not scale according to Apple's Human Interface Guidelines.
 
 ### Android
 
