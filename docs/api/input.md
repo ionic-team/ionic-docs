@@ -104,9 +104,17 @@ import HelperError from '@site/static/usage/v7/input/helper-error/index.md';
 
 The input counter is text that displays under an input to notify the user of how many characters have been entered out of the total that the input will accept. When adding counter, the default behavior is to format the value that gets displayed as `inputLength` / `maxLength`. This behavior can be customized by passing in a formatter function to the `counterFormatter` property.
 
+The `counter` and `counterFormatter` properties on `ion-item` were [deprecated in Ionic 7](/docs/api/input#using-the-modern-syntax) and should be used directly on `ion-input` instead.
+
 import Counter from '@site/static/usage/v7/input/counter/index.md';
 
 <Counter />
+
+Because inputs with counters already have a bottom border, it is recommended to not put them inside an `ion-item`. You can use the `"ion-padding-start"` class to align the borders of the counter inputs with the borders of another form element that is inside an `ion-item`.
+
+import CounterAlignment from '@site/static/usage/v7/input/counter-alignment/index.md';
+
+<CounterAlignment />
 
 ## Filtering User Input
 
