@@ -1,5 +1,5 @@
 ```tsx
-import React, { useRef } from 'react';
+import React, { useState, useRef } from 'react';
 import {
   IonButtons,
   IonButton,
@@ -50,12 +50,13 @@ function Example() {
   const [present, dismiss] = useIonModal(ModalExample, {
     onDismiss: (data: string, role: string) => dismiss(data, role),
   });
+  const [message, setMessage] = useState('This modal example uses the modalController to present and dismiss modals.');
 
   function openModal() {
     present({
       onWillDismiss: (ev: CustomEvent<OverlayEventDetail>) => {
         if (ev.detail.role === 'confirm') {
-          console.log(`Hello, ${ev.detail.data}!`);
+          setMessage(`Hello, ${ev.detail.data}!`);
         }
       },
     });
@@ -72,6 +73,7 @@ function Example() {
         <IonButton expand="block" onClick={() => openModal()}>
           Open
         </IonButton>
+        <p>{message}</p>
       </IonContent>
     </IonPage>
   );

@@ -9,6 +9,8 @@ import { ModalExampleComponent } from './modal-example.component';
   templateUrl: 'example.component.html',
 })
 export class ExampleComponent {
+  message = 'This modal example uses the modalController to present and dismiss modals.';
+
   constructor(private modalCtrl: ModalController) {}
 
   async openModal() {
@@ -20,7 +22,7 @@ export class ExampleComponent {
     const { data, role } = await modal.onWillDismiss();
 
     if (role === 'confirm') {
-      console.log(`Hello, ${data}!`);
+      this.message = `Hello, ${data}!`;
     }
   }
 }
