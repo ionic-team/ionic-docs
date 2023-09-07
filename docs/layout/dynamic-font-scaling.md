@@ -57,7 +57,11 @@ Dynamic Font Scaling in Ionic builds on top of an iOS feature called [Dynamic Ty
 
 Using the Apple-defined text style enables Dynamic Type, allowing all text in Ionic components to scale according to the system-level preference. Note that these Apple-defined fonts only work on Apple devices. As a result, these fonts will not work on Android devices even if your app is using `'ios'` mode.
 
-Ionic follows [Apple's Human Interface Guidelines for Typography](https://developer.apple.com/design/human-interface-guidelines/typography) when an app is in `'ios'` mode. As a result, important content is prioritized when the text size changes. For example, content in an `ion-header` or an `ion-footer` will have maximum font sizes to prioritize text in `ion-content` which is deemed more important than text in `ion-header` or `ion-footer`. Additionally, certain components will have minimum font sizes so they remain readable.
+Ionic follows [Apple's Human Interface Guidelines for Typography](https://developer.apple.com/design/human-interface-guidelines/typography) when an app is in `'ios'` mode. As a result, important content is prioritized when the text size changes. This means a few things:
+
+1. Content in an `ion-header` or an `ion-footer` will have maximum font sizes to prioritize text in `ion-content` which is deemed more important than text in `ion-header` or `ion-footer`. 
+2. Components such as `ion-badge` and `ion-back-button` will have minimum font sizes so they remain readable.
+3. Components such as `ion-tab-bar` and `ion-picker` do not scale according to Apple's Human Interface Guidelines.
 
 ### Android
 
