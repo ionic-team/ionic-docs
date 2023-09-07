@@ -12,7 +12,7 @@ To do so, we will create a standalone composition function paired with Vue's Com
 If you are not familiar with Vue's Composition API, [Why Composition API?](https://v3.vuejs.org/guide/composition-api-introduction.html#why-composition-api) from the official Vue docs is a good resource to start with.
 :::
 
-Create a new file at `src/composables/usePhotoGallery.ts` and open it up.
+Create a new file at `src/components/usePhotoGallery.ts` and open it up.
 
 We will start by importing the various utilities we will use from Vue core and Capacitor:
 
