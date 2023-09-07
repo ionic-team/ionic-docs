@@ -7,6 +7,7 @@
   </ion-header>
   <ion-content class="ion-padding">
     <ion-button id="open-modal" expand="block">Open</ion-button>
+    <p>{{ message }}</p>
     <ion-modal ref="modal" trigger="open-modal" @willDismiss="onWillDismiss">
       <ion-header>
         <ion-toolbar>
@@ -21,13 +22,8 @@
       </ion-header>
       <ion-content class="ion-padding">
         <ion-item>
-          <ion-input
-            label="Enter your name"
-            label-placement="stacked"
-            ref="input"
-            type="text"
-            placeholder="Your name"
-          ></ion-input>
+          <ion-label position="stacked">Enter your name</ion-label>
+          <ion-input ref="input" type="text" placeholder="Your name"></ion-input>
         </ion-item>
       </ion-content>
     </ion-modal>
@@ -45,9 +41,12 @@
     IonTitle,
     IonItem,
     IonInput,
+    IonLabel,
   } from '@ionic/vue';
   import { OverlayEventDetail } from '@ionic/core/components';
   import { ref } from 'vue';
+
+  const message = ref('This modal example uses triggers to automatically open a modal when the button is clicked.');
 
   const modal = ref();
   const input = ref();
@@ -61,7 +60,7 @@
 
   const onWillDismiss = (ev: CustomEvent<OverlayEventDetail>) => {
     if (ev.detail.role === 'confirm') {
-      console.log(`Hello, ${ev.detail.data}!`);
+      message.value = `Hello, ${ev.detail.data}!`;
     }
   };
 </script>

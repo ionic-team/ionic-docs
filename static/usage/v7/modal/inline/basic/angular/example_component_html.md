@@ -6,6 +6,7 @@
 </ion-header>
 <ion-content class="ion-padding">
   <ion-button id="open-modal" expand="block">Open</ion-button>
+  <p>{{ message }}</p>
   <ion-modal trigger="open-modal" (willDismiss)="onWillDismiss($event)">
     <ng-template>
       <ion-header>
@@ -21,13 +22,8 @@
       </ion-header>
       <ion-content class="ion-padding">
         <ion-item>
-          <ion-input
-            label="Enter your name"
-            labelPlacement="stacked"
-            type="text"
-            placeholder="Your name"
-            [(ngModel)]="name"
-          ></ion-input>
+          <ion-label position="stacked">Enter your name</ion-label>
+          <ion-input type="text" placeholder="Your name" [(ngModel)]="name"></ion-input>
         </ion-item>
       </ion-content>
     </ng-template>
