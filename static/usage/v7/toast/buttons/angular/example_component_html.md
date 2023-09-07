@@ -7,6 +7,4 @@
   [buttons]="toastButtons"
   (didDismiss)="setRoleMessage($event)"
 ></ion-toast>
-<p>{{ handlerMessage }}</p>
-<p>{{ roleMessage }}</p>
 ```

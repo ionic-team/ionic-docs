@@ -5,38 +5,32 @@
     trigger="present-alert"
     header="Alert!"
     :buttons="alertButtons"
-    @didDismiss="setResult($event)"
+    @didDismiss="logResult($event)"
   ></ion-alert>
-  <p>{{ handlerMessage }}</p>
-  <p>{{ roleMessage }}</p>
 </template>
 
 <script lang="ts" setup>
-  import { ref } from 'vue';
   import { IonAlert, IonButton } from '@ionic/vue';
-
-  const handlerMessage = ref('');
-  const roleMessage = ref('');
 
   const alertButtons = [
     {
       text: 'Cancel',
       role: 'cancel',
       handler: () => {
-        handlerMessage.value = 'Alert canceled';
+        console.log('Alert canceled');
       },
     },
     {
       text: 'OK',
       role: 'confirm',
       handler: () => {
-        handlerMessage.value = 'Alert confirmed';
+        console.log('Alert confirmed');
       },
     },
   ];
 
-  const setResult = (ev: CustomEvent) => {
-    roleMessage.value = `Dismissed with role: ${ev.detail.role}`;
+  const logResult = (ev: CustomEvent) => {
+    console.log(`Dismissed with role: ${ev.detail.role}`);
   };
 </script>
 ```

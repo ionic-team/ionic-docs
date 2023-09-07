@@ -8,22 +8,20 @@
     </ion-select>
   </ion-item>
 </ion-list>
-<div id="log" class="ion-padding"></div>
 
 <script>
   const select = document.querySelector('ion-select');
-  const log = document.querySelector('#log');
 
   select.addEventListener('ionChange', (e) => {
-    log.insertAdjacentHTML('afterbegin', `<p>ionChange fired with value: ${e.detail.value}</p>`);
+    console.log(`ionChange fired with value: ${e.detail.value}`);
   });
 
   select.addEventListener('ionCancel', () => {
-    log.insertAdjacentHTML('afterbegin', '<p>ionCancel fired</p>');
+    console.log('ionCancel fired');
   });
 
   select.addEventListener('ionDismiss', () => {
-    log.insertAdjacentHTML('afterbegin', '<p>ionDismiss fired</p>');
+    console.log('ionDismiss fired');
   });
 </script>
 ```

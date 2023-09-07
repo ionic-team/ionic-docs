@@ -20,13 +20,11 @@
       <div class="ion-padding" slot="content">Third Content</div>
     </ion-accordion>
   </ion-accordion-group>
-
-  <p ref="listenerOut"></p>
 </template>
 
 <script lang="ts">
   import { IonAccordion, IonAccordionGroup, IonItem, IonLabel, AccordionGroupCustomEvent } from '@ionic/vue';
-  import { defineComponent, ref } from 'vue';
+  import { defineComponent } from 'vue';
 
   export default defineComponent({
     components: {
@@ -36,22 +34,19 @@
       IonLabel,
     },
     setup() {
-      const listenerOut = ref(null);
       const values = ['first', 'second', 'third'];
       const accordionGroupChange = (ev: AccordionGroupCustomEvent) => {
-        if (!listenerOut.value) {
-          return;
-        }
-
         const collapsedItems = values.filter((value) => value !== ev.detail.value);
         const selectedValue = ev.detail.value;
 
-        listenerOut.value.innerText = `
-          Expanded: ${selectedValue === undefined ? 'None' : ev.detail.value}
-          Collapsed: ${collapsedItems.join(', ')}
-        `;
+        console.log(
+          `Expanded: ${selectedValue === undefined ? 'None' : ev.detail.value} | Collapsed: ${collapsedItems.join(
+            ', '
+          )}`
+        );
       };
-      return { listenerOut, accordionGroupChange };
+
+      return { accordionGroupChange };
     },
   });
 </script>

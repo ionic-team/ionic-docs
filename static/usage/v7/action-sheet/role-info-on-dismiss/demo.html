@@ -13,10 +13,6 @@
       .container {
         flex-direction: column;
       }
-
-      code {
-        white-space: pre-wrap;
-      }
     </style>
   </head>
 
@@ -30,14 +26,11 @@
             header="Example header"
             sub-header="Example subheader"
           ></ion-action-sheet>
-
-          <code id="action"></code>
         </div>
       </ion-content>
     </ion-app>
     <script>
       const actionSheet = document.querySelector('ion-action-sheet');
-      const action = document.getElementById('action');
 
       actionSheet.buttons = [
         {
@@ -63,7 +56,7 @@
       ];
 
       actionSheet.addEventListener('ionActionSheetDidDismiss', (ev) => {
-        action.innerText = JSON.stringify(ev.detail, null, 2);
+        console.log(JSON.stringify(ev.detail, null, 2));
       });
     </script>
   </body>

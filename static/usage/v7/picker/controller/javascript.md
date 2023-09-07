@@ -35,7 +35,7 @@
         {
           text: 'Confirm',
           handler: (value) => {
-            window.alert(`You selected: ${value.languages.value}`);
+            console.log(`You selected: ${value.languages.value}`);
           },
         },
       ],

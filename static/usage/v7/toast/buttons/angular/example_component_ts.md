@@ -11,23 +11,21 @@ export class ExampleComponent {
       text: 'More Info',
       role: 'info',
       handler: () => {
-        this.handlerMessage = 'More Info clicked';
+        console.log('More Info clicked');
       },
     },
     {
       text: 'Dismiss',
       role: 'cancel',
       handler: () => {
-        this.handlerMessage = 'Dismiss clicked';
+        console.log('Dismiss clicked');
       },
     },
   ];
-  handlerMessage = '';
-  roleMessage = '';
 
   setRoleMessage(ev) {
     const { role } = ev.detail;
-    this.roleMessage = `Dismissed with role: ${role}`;
+    console.log(`Dismissed with role: ${role}`);
   }
 }
 ```

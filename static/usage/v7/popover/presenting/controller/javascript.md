@@ -1,10 +1,7 @@
 ```html
 <ion-button>Click Me</ion-button>
-<p></p>
 
 <script>
-  const output = document.querySelector('p');
-
   class PopoverPage extends HTMLElement {
     constructor() {
       super();
@@ -27,7 +24,7 @@
     await popover.present();
 
     const { role } = await popover.onDidDismiss();
-    output.innerText = `Popover dismissed with role: ${role}`;
+    console.log(`Popover dismissed with role: ${role}`);
   }
 
   const button = document.querySelector('ion-button');

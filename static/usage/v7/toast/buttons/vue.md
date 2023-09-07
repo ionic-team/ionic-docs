@@ -6,10 +6,8 @@
     message="Hello World!"
     :duration="3000"
     :buttons="toastButtons"
-    @didDismiss="setRoleMessage($event)"
+    @didDismiss="handleDismiss($event)"
   ></ion-toast>
-  <p>{{ handlerMessage }}</p>
-  <p>{{ roleMessage }}</p>
 </template>
 
 <script lang="ts">
@@ -26,28 +24,25 @@
           text: 'More Info',
           role: 'info',
           handler: () => {
-            handlerMessage.value = 'More Info clicked';
+            console.log('More Info clicked');
           },
         },
         {
           text: 'Dismiss',
           role: 'cancel',
           handler: () => {
-            handlerMessage.value = 'Dismiss clicked';
+            console.log('Dismiss clicked');
           },
         },
       ];
-      const setRoleMessage = (ev: CustomEvent) => {
+      const handleDismiss = (ev: CustomEvent) => {
         const { role } = ev.detail;
-        console.log('hi there');
-        roleMessage.value = `Dismissed with role: ${role}`;
+        console.log(`Dismissed with role: ${role}`);
       };
 
       return {
-        handlerMessage,
-        roleMessage,
         toastButtons,
-        setRoleMessage,
+        handleDismiss,
       };
     },
   });
