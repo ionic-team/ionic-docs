@@ -50,7 +50,7 @@ For example, if a component has a font size of `14px`, then this could be conver
 
 Developers should also audit their applications and make any other changes necessary to support larger font sizes. One thing to keep in mind is that the dimensions of your components may need to change to accommodate the larger font sizes. As a result, it may be necessary to change properties such as `width` and `height` to `min-width` and `min-height`. We also recommend having long text wrap to the next line instead of truncating to keep large text readable.
 
-Also note that any Ionic components that have had their font sizes overridden should also be audited to use `rem` units.
+Also note that any Ionic components that have had their font sizes overridden should also be updated to use `rem` units.
 
 ### Custom Font Family
 
@@ -58,7 +58,7 @@ We recommend using the default fonts in Ionic as they are designed to look good 
 
 ```css
 html {
-  --ion-dynamic-type: var(--ion-default-dynamic-font);
+  --ion-dynamic-font: var(--ion-default-dynamic-font);
   --ion-font-family: "Comic Sans";
 }
 ```
@@ -81,7 +81,7 @@ In the following example, the computed font size of `.child` is `40px` because i
 }
 ```
 
-However, this unit can have a compounding effect which can cause issues. In the following example, the second `.child` element has a computed font size of `80px` since the font sizes compound.
+However, the `em` unit has a compounding effect which can cause issues. In the following example, the second `.child` element has a computed font size of `80px` since the font sizes compound.
 
 ```html
 <div class="parent">
@@ -131,9 +131,9 @@ Using the Apple-defined text style enables Dynamic Type, allowing all text in Io
 
 Ionic follows [Apple's Human Interface Guidelines for Typography](https://developer.apple.com/design/human-interface-guidelines/typography) when an app is in `'ios'` mode. As a result, important content is prioritized when the text size changes. This means a few things:
 
-1. Content in an `ion-header` or an `ion-footer` will have maximum font sizes to prioritize text in `ion-content` which is deemed more important than text in `ion-header` or `ion-footer`. 
+1. Content in an `ion-header` or an `ion-footer` will have maximum font sizes to prioritize text in `ion-content` which is deemed more important than text in `ion-header` and `ion-footer`. 
 2. Components such as `ion-badge` and `ion-back-button` will have minimum font sizes so they remain readable.
-3. Text in components such as `ion-tab-bar` and `ion-picker` do not scale according to Apple's Human Interface Guidelines.
+3. Text in components such as `ion-tab-bar` and `ion-picker` do not participate in Dynamic Font Scaling according to Apple's Human Interface Guidelines.
 
 ### Android
 
@@ -149,15 +149,15 @@ In the following example we are using the [min()](https://developer.mozilla.org/
 
 If the root element's default font size is `16px`, and the system-level font scale is 1.5 (i.e text sizes should be increased by 50%), then `1rem` will evaluate to `24px` because `16 * 1.5 = 24`. 
 
-This is larger than our defined maximum of `14px`, so one might assume that the evaluated font size of `.foo` is `14px`. However, since the Android Web View scales any font sizes defined using the `px` unit, then the `14px` used in our `min()` function will also be scaled by 1.5.
+This is larger than our defined maximum of `14px`, so one might assume that the evaluated font size of `.foo` is `14px`. However, since the Android Web View scales any font sizes defined using the `px` unit, this means the `14px` used in our `min()` function will also be scaled by 1.5.
 
-As a result, this means that maximum computed font size is actually `21px` since `14 * 1.5 = 21` and therefore the overall computed font size of `.foo` is `21px`.
+As a result, this means that the maximum computed font size is actually `21px` since `14 * 1.5 = 21` and therefore the overall computed font size of `.foo` is `21px`.
 
 ### Using Modes on Different Platforms
 
-Each platform has slightly different font scaling behaviors, and the `'ios'` and `'md'` modes have been implemented to take advantage of the scaling behaviors on their respective devices.
+Each platform has slightly different font scaling behaviors, and the `'ios'` and `'md'` modes have been implemented to take advantage of the scaling behaviors on their respective platforms.
 
-For example, `'ios'` mode makes use of maximum and minimum font sizes to follow [Apple's Human Interface Guidelines for Typography](https://developer.apple.com/design/human-interface-guidelines/typography). `'md'` mode does not implement this same behavior because Material Design does not have that same guidance. Using `'md'` mode on an iOS device may allow for very large font sizes in headers and footers.
+For example, `'ios'` mode makes use of maximum and minimum font sizes to follow [Apple's Human Interface Guidelines for Typography](https://developer.apple.com/design/human-interface-guidelines/typography). `'md'` mode does not implement this same behavior because Material Design does not have that same guidance. This means that using `'md'` mode on an iOS device may allow for very large font sizes in headers and footers.
 
 As a result, we strongly recommend using `'ios'` mode on iOS devices and `'md'` mode on Android devices when using Dynamic Font Scaling.
 
@@ -182,9 +182,9 @@ Font scaling on Android can be configured in Settings > Accessibility > Display 
 There are a number of reasons why Dynamic Font Scaling may not have any effect on an app . The following list, while not exhaustive, provides some things to check to debug why Dynamic Font Scaling is not working.
 
 1. Verify that your version of Ionic supports Dynamic Font Scaling. Dynamic Font Scaling was added starting in Ionic v7.5.
-2. Dynamic Font Scaling is opt-in on iOS on Ionic 7. Verify that the proper CSS has been set. See [Enabling Dynamic Font Scaling in Ionic](#enabling-dynamic-font-scaling-in-ionic) for more information.
+2. Dynamic Font Scaling is opt-in on iOS in Ionic 7. Verify that the proper CSS has been set. See [Enabling Dynamic Font Scaling in Ionic](#enabling-dynamic-font-scaling-in-ionic) for more information.
 3. Verify that your code does not override the root element's default font size. Manually setting a font size on the root element will prevent Dynamic Font Scaling from working as intended.
-4. Verify that your code does not override font sizes on Ionic components. Ionic components that set `font-size` rules will use `rem` units. However, if your app overrides that to use `px`, then that custom rule will need to be converted to use `rem`. See [Integrating Custom Components with Dynamic Font Scaling](#integrating-custom-components-with-dynamic-font-scaling) for more information.
+4. Verify that your code does not override font sizes on Ionic components. Ionic components that set `font-size` rules will use `rem` units. However, if your app overrides that to use `px`, then that custom rule will need to be converted to use `rem`. See [Integrating Custom Components](#integrating-custom-components) for more information.
 
 ### Maximum and minimum font sizes are not being respected on Android
 
@@ -202,7 +202,7 @@ Certain native iOS components such as the Action Sheet make use of private font 
 
 ### The text size in my Ionic app on iOS changed when enabling Dynamic Font Scaling
 
-The root element's default font size is typically 16px. However, Dynamic Font Scaling on iOS devices make use of the ["Body" text style which has a default font size 17px](https://developer.apple.com/design/human-interface-guidelines/typography#Specifications). Since the text in Ionic components is scaled relative to the root element's font size, some text may get larger or smaller when Dynamic Font Scaling is enabled, even if the system-level text scale did not change.
+The root element's default font size is typically 16px. However, Dynamic Font Scaling on iOS devices make use of the ["Body" text style](https://developer.apple.com/design/human-interface-guidelines/typography#Specifications) which has a default font size of 17px. Since the text in Ionic components is scaled relative to the root element's font size, some text may get larger or smaller when Dynamic Font Scaling is enabled, even if the system-level text scale did not change.
 
 :::info
 iOS provides a "Callout" text style which has a default font size of 16px. However, this font style is currently not exposed to web content. See [the supported text styles in WebKit](https://webkit.org/blog/3709/using-the-system-font-in-web-content/) for more information.
