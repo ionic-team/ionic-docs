@@ -175,7 +175,7 @@ Font scaling on Android can be configured in Settings > Accessibility > Display 
 
 ### Dynamic Font Scaling is not working
 
-There are a number of reasons why Dynamic Font Scaling may not have any effect on an app . The following list, while not exhaustive, provides some things to check to debug why Dynamic Font Scaling is not working.
+There are a number of reasons why Dynamic Font Scaling may not have any effect on an app. The following list, while not exhaustive, provides some things to check to debug why Dynamic Font Scaling is not working.
 
 1. Verify that your version of Ionic supports Dynamic Font Scaling. Dynamic Font Scaling was added starting in Ionic v7.5.
 2. Dynamic Font Scaling is opt-in on iOS in Ionic 7. Verify that the proper CSS has been set. See [Enabling Dynamic Font Scaling in Ionic](#enabling-dynamic-font-scaling-in-ionic) for more information.
