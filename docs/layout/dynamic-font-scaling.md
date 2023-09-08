@@ -123,8 +123,6 @@ In the following example, the computed font size of `.child` is `32px` because t
 
 All Ionic components that define font sizes use [rem units](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Values_and_units#lengths). This sizes the text in each component relative to the font size of the root element, which is usually the `html` element. This means that as the root element's font size changes, the text in all Ionic components scale in a consistent manner. This avoids the need to manually override each component's font size.
 
-Each platform has slightly different font scaling behaviors, and the `'ios'` and `'md'` modes have been implemented to take advantage of the scaling behaviors on their respective devices. As a result, we strongly recommend using `'ios'` mode on iOS devices and `'md'` mode on Android devices when using Dynamic Font Scaling.
-
 ### iOS
 
 Dynamic Font Scaling in Ionic builds on top of an iOS feature called [Dynamic Type](https://developer.apple.com/documentation/uikit/uifont/scaling_fonts_automatically#overview). To do this, Ionic sets the [font](https://developer.mozilla.org/en-US/docs/Web/CSS/font) of the root element to an Apple-defined text style. For consistency, Ionic uses the [body](https://developer.apple.com/documentation/uikit/uifont/textstyle/1616682-body) text style.
@@ -154,6 +152,14 @@ If the root element's default font size is `16px`, and the system-level font sca
 This is larger than our defined maximum of `14px`, so one might assume that the evaluated font size of `.foo` is `14px`. However, since the Android Web View scales any font sizes defined using the `px` unit, then the `14px` used in our `min()` function will also be scaled by 1.5.
 
 As a result, this means that maximum computed font size is actually `21px` since `14 * 1.5 = 21` and therefore the overall computed font size of `.foo` is `21px`.
+
+### Using Modes on Different Platforms
+
+Each platform has slightly different font scaling behaviors, and the `'ios'` and `'md'` modes have been implemented to take advantage of the scaling behaviors on their respective devices.
+
+For example, `'ios'` mode makes use of maximum and minimum font sizes to follow [Apple's Human Interface Guidelines for Typography](https://developer.apple.com/design/human-interface-guidelines/typography). `'md'` mode does not implement this same behavior because Material Design does not have that same guidance. Using `'md'` mode on an iOS device may allow for very large font sizes in headers and footers.
+
+As a result, we strongly recommend using `'ios'` mode on iOS devices and `'md'` mode on Android devices when using Dynamic Font Scaling.
 
 ## Changing the Font Size on a Device
 
