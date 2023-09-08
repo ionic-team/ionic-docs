@@ -169,7 +169,7 @@ Users can also tap the "Large Accessibility Sizes" switch to access more font sc
 
 ### Android
 
-Font scaling on Android can be configured in Settings > Accessibility > Display size and text. The "Font size" slider on that page allows users to make the text larger or smaller across all apps that support font scaling.
+Where users access the font scaling configuration varies across devices, but it is typically found in the "Accessibility" page in the Settings app.
 
 ## Troubleshooting
 
