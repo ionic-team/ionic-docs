@@ -179,6 +179,7 @@ There are a number of reasons why Dynamic Font Scaling may not have any effect o
 2. Dynamic Font Scaling is opt-in on iOS in Ionic 7. Verify that the proper CSS has been set. See [Enabling Dynamic Font Scaling in Ionic](#enabling-dynamic-font-scaling-in-ionic) for more information.
 3. Verify that your code does not override the root element's default font size. Manually setting a font size on the root element will prevent Dynamic Font Scaling from working as intended.
 4. Verify that your code does not override font sizes on Ionic components. Ionic components that set `font-size` rules will use `rem` units. However, if your app overrides that to use `px`, then that custom rule will need to be converted to use `rem`. See [Integrating Custom Components](#integrating-custom-components) for more information.
+5. Verify that Ionic is not being loaded inside of an `iframe`. Some variants of Android do not apply font scaling across `iframe` boundaries.
 
 ### Maximum and minimum font sizes are not being respected on Android
 
