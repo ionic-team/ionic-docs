@@ -161,9 +161,9 @@ Font scaling preferences are configured on a per-device basis by the user. This 
 
 ### iOS
 
-Font scaling on iOS can be configured in Settings > Accessibility > Display & Text Size > Larger Text. The slider on that page allows users to make the text larger or smaller across all apps that support font scaling.
+Font scaling on iOS can be configured in the Settings app.
 
-Users can also tap the "Large Accessibility Sizes" switch to access more font scale options.
+See [Apple Support](https://support.apple.com/en-us/102453) for more information.
 
 ### Android
 
