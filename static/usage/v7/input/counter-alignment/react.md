@@ -11,7 +11,7 @@ function Example() {
         </IonItem>
 
         <div className="ion-padding-start">
-          <IonInput label="Counter input" labelPlacement="floating" counter={true} maxlength={20}></IonInput>
+          <IonInput label="Counter input" counter={true} maxlength={20}></IonInput>
         </div>
       </IonList>
     </>

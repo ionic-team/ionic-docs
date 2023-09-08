@@ -6,7 +6,7 @@
     </ion-item>
 
     <div class="ion-padding-start">
-      <ion-input label="Counter input" labelPlacement="floating" :counter="true" maxlength="20"></ion-input>
+      <ion-input label="Counter input" :counter="true" maxlength="20"></ion-input>
     </div>
   </ion-list>
 </template>

@@ -110,7 +110,7 @@ import Counter from '@site/static/usage/v7/input/counter/index.md';
 
 <Counter />
 
-Because inputs with counters already have a bottom border, it is recommended to not put them inside an `ion-item`. You can use the `"ion-padding-start"` class to align the borders of the counter inputs with the borders of another form element that is inside an `ion-item`.
+Inputs with a counter add a border between the input and the counter, therefore they should not be placed inside of an `ion-item` which adds an additional border under the item. The `ion-padding-start` class can be added to align the counter inputs with inputs inside of items.
 
 import CounterAlignment from '@site/static/usage/v7/input/counter-alignment/index.md';
 
