@@ -41,7 +41,7 @@ module.exports = {
         },
         'layout/global-stylesheets',
         'layout/css-utilities',
-        'layout/dynamic-font-scaling'
+        'layout/dynamic-font-scaling',
       ],
     },
     {

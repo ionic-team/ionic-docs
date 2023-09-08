@@ -25,7 +25,7 @@
         <ion-toggle>Enable Notifications</ion-toggle>
       </ion-item>
     </ion-list>
-  
+
     <ion-list :inset="true">
       <ion-item>
         <ion-label>Item 1</ion-label>
@@ -46,31 +46,47 @@
 </template>
 
 <script lang="ts">
-  import { IonBackButton, IonButton, IonButtons, IonCheckbox, IonContent, IonFooter, IonHeader, IonIcon, IonInput, IonItem, IonLabel, IonList, IonTitle, IonToggle, IonToolbar } from '@ionic/vue';
+  import {
+    IonBackButton,
+    IonButton,
+    IonButtons,
+    IonCheckbox,
+    IonContent,
+    IonFooter,
+    IonHeader,
+    IonIcon,
+    IonInput,
+    IonItem,
+    IonLabel,
+    IonList,
+    IonTitle,
+    IonToggle,
+    IonToolbar,
+  } from '@ionic/vue';
   import { create } from 'ionicons/icons';
   import { defineComponent } from 'vue';
 
   export default defineComponent({
     components: {
-      IonBackButton, 
-      IonButton, 
-      IonButtons, 
-      IonCheckbox, 
-      IonContent, 
-      IonFooter, 
-      IonHeader, 
-      IonIcon, 
-      IonInput, 
-      IonItem, 
-      IonLabel, 
-      IonList, 
-      IonTitle, 
-      IonToggle, 
-      IonToolbar
+      IonBackButton,
+      IonButton,
+      IonButtons,
+      IonCheckbox,
+      IonContent,
+      IonFooter,
+      IonHeader,
+      IonIcon,
+      IonInput,
+      IonItem,
+      IonLabel,
+      IonList,
+      IonTitle,
+      IonToggle,
+      IonToolbar,
     },
     setup() {
-      return { create }
-    }
+      return { create };
+    },
   });
 </script>
 

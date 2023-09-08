@@ -1,6 +1,22 @@
 ```tsx
 import React from 'react';
-import { IonBackButton, IonButton, IonButtons, IonCheckbox, IonContent, IonFooter, IonHeader, IonIcon, IonInput, IonItem, IonLabel, IonList, IonTitle, IonToggle, IonToolbar } from '@ionic/react';
+import {
+  IonBackButton,
+  IonButton,
+  IonButtons,
+  IonCheckbox,
+  IonContent,
+  IonFooter,
+  IonHeader,
+  IonIcon,
+  IonInput,
+  IonItem,
+  IonLabel,
+  IonList,
+  IonTitle,
+  IonToggle,
+  IonToolbar,
+} from '@ionic/react';
 import { create } from 'ionicons/icons';
 
 import './main.css';
@@ -33,7 +49,7 @@ function Example() {
             <IonToggle>Enable Notifications</IonToggle>
           </IonItem>
         </IonList>
-      
+
         <IonList inset={true}>
           <IonItem>
             <IonLabel>Item 1</IonLabel>
@@ -56,4 +72,3 @@ function Example() {
 }
 export default Example;
 ```
-

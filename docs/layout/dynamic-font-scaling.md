@@ -59,7 +59,7 @@ We recommend using the default fonts in Ionic as they are designed to look good 
 ```css
 html {
   --ion-dynamic-font: var(--ion-default-dynamic-font);
-  --ion-font-family: "Comic Sans";
+  --ion-font-family: 'Comic Sans';
 }
 ```
 
@@ -69,8 +69,8 @@ Developers have two options for relative font sizes: `em` and `rem`.
 
 `em` units set the font size of an element relative to the font size of its parent.
 
-In the following example, the computed font size of `.child` is `40px` because it is a child of `.parent` (2em * 20px = 40px).
- 
+In the following example, the computed font size of `.child` is `40px` because it is a child of `.parent` (2em \* 20px = 40px).
+
 ```css
 .parent {
   font-size: 20px;
@@ -88,9 +88,7 @@ However, the `em` unit has a compounding effect which can cause issues. In the f
   Parent element with 20px
   <div class="child">
     Child element with 40px
-    <div class="child">
-      Child element with 80px
-    </div>
+    <div class="child">Child element with 80px</div>
   </div>
 </div>
 ```
@@ -99,9 +97,7 @@ However, the `em` unit has a compounding effect which can cause issues. In the f
   Parent element with 20px
   <div style={{ fontSize: '2em' }}>
     Child element with 40px
-    <div style={{ fontSize: '2em' }}>
-      Child element with 80px
-    </div>
+    <div style={{ fontSize: '2em' }}>Child element with 80px</div>
   </div>
 </div>
 
@@ -131,7 +127,7 @@ Using the Apple-defined text style enables Dynamic Type, allowing all text in Io
 
 Ionic follows [Apple's Human Interface Guidelines for Typography](https://developer.apple.com/design/human-interface-guidelines/typography) when an app is in `'ios'` mode. As a result, important content is prioritized when the text size changes. This means a few things:
 
-1. Content in an `ion-header` or an `ion-footer` will have maximum font sizes to prioritize text in `ion-content` which is deemed more important than text in `ion-header` and `ion-footer`. 
+1. Content in an `ion-header` or an `ion-footer` will have maximum font sizes to prioritize text in `ion-content` which is deemed more important than text in `ion-header` and `ion-footer`.
 2. Components such as `ion-badge` and `ion-back-button` will have minimum font sizes so they remain readable.
 3. Text in components such as `ion-tab-bar` and `ion-picker` do not participate in Dynamic Font Scaling according to Apple's Human Interface Guidelines.
 
@@ -147,7 +143,7 @@ In the following example we are using the [min()](https://developer.mozilla.org/
 }
 ```
 
-If the root element's default font size is `16px`, and the system-level font scale is 1.5 (i.e text sizes should be increased by 50%), then `1rem` will evaluate to `24px` because `16 * 1.5 = 24`. 
+If the root element's default font size is `16px`, and the system-level font scale is 1.5 (i.e text sizes should be increased by 50%), then `1rem` will evaluate to `24px` because `16 * 1.5 = 24`.
 
 This is larger than our defined maximum of `14px`, so one might assume that the evaluated font size of `.foo` is `14px`. However, since the Android Web View scales any font sizes defined using the `px` unit, this means the `14px` used in our `min()` function will also be scaled by 1.5.
 
