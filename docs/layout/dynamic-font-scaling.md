@@ -123,6 +123,8 @@ In the following example, the computed font size of `.child` is `32px` because t
 
 All Ionic components that define font sizes use [rem units](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Values_and_units#lengths). This sizes the text in each component relative to the font size of the root element, which is usually the `html` element. This means that as the root element's font size changes, the text in all Ionic components scale in a consistent manner. This avoids the need to manually override each component's font size.
 
+Each platform has slightly different font scaling behaviors, and the `'ios'` and `'md'` modes have been implemented to take advantage of the scaling behaviors on their respective devices. As a result, we strongly recommend using `'ios'` mode on iOS devices and `'md'` mode on Android devices when using Dynamic Font Scaling.
+
 ### iOS
 
 Dynamic Font Scaling in Ionic builds on top of an iOS feature called [Dynamic Type](https://developer.apple.com/documentation/uikit/uifont/scaling_fonts_automatically#overview). To do this, Ionic sets the [font](https://developer.mozilla.org/en-US/docs/Web/CSS/font) of the root element to an Apple-defined text style. For consistency, Ionic uses the [body](https://developer.apple.com/documentation/uikit/uifont/textstyle/1616682-body) text style.
@@ -137,9 +139,21 @@ Ionic follows [Apple's Human Interface Guidelines for Typography](https://develo
 
 ### Android
 
-The Android Web View's font scaling mechanism is always enabled in web content and will automatically scale the computed font sizes. This means that any maximum or minimum font sizes specified will still be scaled even if the final font size does not align with the maximum or minimum font sizes specified.
+The Android Web View's font scaling mechanism is always enabled in web content and will automatically scale font sizes defined using the `px` unit. This means that any maximum or minimum font sizes specified using `px` will still be scaled even if the final font size does not align with the maximum or minimum font sizes specified.
 
-For example, if Android has a font scale of 1.3 (i.e. The font size should be increased 30%) and the maximum font size for an element is `20px`, the computed font size for the element will actually be `26px` because Android will account for the system-level font scale since `20px * 1.3 = 26px`.
+In the following example we are using the [min()](https://developer.mozilla.org/en-US/docs/Web/CSS/min) function to indicate that the font size of `.foo` should be no larger than `14px`.
+
+```css
+.foo {
+  font-size: min(1rem, 14px);
+}
+```
+
+If the root element's default font size is `16px`, and the system-level font scale is 1.5 (i.e text sizes should be increased by 50%), then `1rem` will evaluate to `24px` because `16 * 1.5 = 24`. 
+
+This is larger than our defined maximum of `14px`, so one might assume that the evaluated font size of `.foo` is `14px`. However, since the Android Web View scales any font sizes defined using the `px` unit, then the `14px` used in our `min()` function will also be scaled by 1.5.
+
+As a result, this means that maximum computed font size is actually `21px` since `14 * 1.5 = 21` and therefore the overall computed font size of `.foo` is `21px`.
 
 ## Changing the Font Size on a Device
 
@@ -166,27 +180,11 @@ There are a number of reasons why Dynamic Font Scaling may not have any effect o
 3. Verify that your code does not override the root element's default font size. Manually setting a font size on the root element will prevent Dynamic Font Scaling from working as intended.
 4. Verify that your code does not override font sizes on Ionic components. Ionic components that set `font-size` rules will use `rem` units. However, if your app overrides that to use `px`, then that custom rule will need to be converted to use `rem`. See [Integrating Custom Components with Dynamic Font Scaling](#integrating-custom-components-with-dynamic-font-scaling) for more information.
 
-
-
 ### Maximum and minimum font sizes are not being respected on Android
 
 The Android Web View scales any font sizes defined using the `px` unit by the system-level font scale preference. This means that actual font sizes may be larger or smaller than the font sizes defined in [min()](https://developer.mozilla.org/en-US/docs/Web/CSS/min), [max()](https://developer.mozilla.org/en-US/docs/Web/CSS/max), or [clamp()](https://developer.mozilla.org/en-US/docs/Web/CSS/clamp).
 
-Example:
-
-In the following example we are using the `min()` function to indicate that the font size of `.foo` should be no larger than `14px`.
-
-```css
-.foo {
-  font-size: min(1rem, 14px);
-}
-```
-
-If the root element's default font size is `16px`, and the system-level font scale is 1.5 (i.e text sizes should be increased by 50%), then `1rem` will evaluate to `24px` because `16 * 1.5 = 24`. 
-
-This is larger than our defined maximum of `14px`, so one might assume that the evaluated font size of `.foo` is `14px`. However, since the Android Web View scales any font sizes defined using the `px` unit, then the `14px` used in our `min()` function will also be scaled by 1.5.
-
-As a result, this means that maximum computed font size is actually `21px` since `14 * 1.5 = 21` and therefore the overall computed font size of `.foo` is `21px`.
+See [how font scaling works on Android](#android) for more information.
 
 ### Font sizes are larger/smaller even with Dynamic Font Scaling disabled
 
