@@ -43,6 +43,7 @@ html {
   font: var(--ion-dynamic-font);
 }
 ```
+
 :::
 
 ## Using Dynamic Font Scaling
