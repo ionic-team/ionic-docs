@@ -22,7 +22,10 @@ Follow the [Changing the Font Size on a Device](#changing-the-font-size-on-a-dev
 This feature is currently opt-in on iOS. However, it will be enabled by default starting in Ionic 8 at which point the following CSS will no longer be necessary.
 :::
 
-Dynamic Font Scaling is already enabled by default on Android. Developers can enable it on iOS by setting the following CSS globally:
+Dynamic Font Scaling is already enabled by default on Android. Developers can enable it on iOS using the following steps:
+
+1. Ensure that the [typography.css](./global-stylesheets#typographycss) file is imported.
+2. Add the following CSS to a global stylesheet:
 
 ```css
 html {
@@ -37,8 +40,6 @@ html {
   font: var(--ion-dynamic-font);
 }
 ```
-
-Developers should ensure that the [typography.css](./global-stylesheets#typographycss) file is imported.
 
 ## Using Dynamic Font Scaling
 
