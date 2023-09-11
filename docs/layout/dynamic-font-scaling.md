@@ -35,6 +35,7 @@ html {
 }
 ```
 
+:::note
 Under the hood, Ionic sets the following CSS on iOS devices to enable Dynamic Font Scaling:
 
 ```css
@@ -42,6 +43,7 @@ html {
   font: var(--ion-dynamic-font);
 }
 ```
+:::
 
 ## Using Dynamic Font Scaling
 
