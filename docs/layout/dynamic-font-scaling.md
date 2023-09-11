@@ -44,7 +44,7 @@ Developers should ensure that the [typography.css](./global-stylesheets#typograp
 
 ### Integrating Custom Components
 
-Developers can configure their custom components to take advantage of Dynamic Font Scaling by converting any pixel font sizes to use [rem units](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Values_and_units#lengths). An easy way to convert from `px` to `rem` is to divide the pixel font size by the default browser font size, which is typically 16px.
+Developers can configure their custom components to take advantage of Dynamic Font Scaling by converting any pixel font sizes to use [rem units](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Values_and_units#lengths). An easy way to convert from `px` to `rem` is to divide the pixel font size by the default browser font size, which is typically `16px`.
 
 For example, if a component has a font size of `14px`, then this could be converted to `rem` by doing `14px / 16px = 0.875rem`.
 
