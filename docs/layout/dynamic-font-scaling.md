@@ -65,7 +65,7 @@ html {
 
 ### `em` units versus `rem` units
 
-Developers have two options for relative font sizes: `em` and `rem`.
+Developers have two options for relative font sizes: [`em` and `rem`](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Values_and_units#ems_and_rems).
 
 `em` units set the font size of an element relative to the font size of its parent.
 
