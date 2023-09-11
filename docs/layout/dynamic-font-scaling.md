@@ -127,7 +127,7 @@ Using the Apple-defined text style enables Dynamic Type, allowing all text in Io
 
 Ionic follows [Apple's Human Interface Guidelines for Typography](https://developer.apple.com/design/human-interface-guidelines/typography) when an app is in `ios` mode. As a result, important content is prioritized when the text size changes. This means a few things:
 
-1. Content in an `ion-header` or an `ion-footer` will have maximum font sizes to prioritize text in `ion-content` which is deemed more important than text in `ion-header` and `ion-footer`.
+1. Content in an `ion-header` or an `ion-footer` will have maximum font sizes to prioritize content in `ion-content` which is deemed more important than content in the `ion-header` and `ion-footer`.
 2. Components such as `ion-badge` and `ion-back-button` will have minimum font sizes so they remain readable.
 3. Text in components such as `ion-tab-bar` and `ion-picker` do not participate in Dynamic Font Scaling according to Apple's Human Interface Guidelines.
 
