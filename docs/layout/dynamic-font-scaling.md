@@ -151,7 +151,7 @@ As a result, this means that the maximum computed font size is actually `21px` s
 
 ### Using Modes on Different Platforms
 
-Each platform has slightly different font scaling behaviors, and the `'ios'` and `'md'` modes have been implemented to take advantage of the scaling behaviors on their respective platforms.
+Each platform has slightly different font scaling behaviors, and the `ios` and `md` modes have been implemented to take advantage of the scaling behaviors on their respective platforms.
 
 For example, `ios` mode makes use of maximum and minimum font sizes to follow [Apple's Human Interface Guidelines for Typography](https://developer.apple.com/design/human-interface-guidelines/typography). `md` mode does not implement this same behavior because Material Design does not have that same guidance. This means that using `md` mode on an iOS device may allow for very large font sizes in headers and footers.
 
