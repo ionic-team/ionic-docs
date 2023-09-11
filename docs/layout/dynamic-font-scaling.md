@@ -8,6 +8,8 @@ Dynamic Font Scaling is supported on Android, iOS, and iPadOS starting in Ionic 
 
 :::tip
 Be sure to try this on an Android, iOS, or iPadOS device.
+
+If you are testing on Chrome for Android, make sure ["Accessibility Page Zoom"](#chrome-for-android) is enabled.
 :::
 
 Follow the [Changing the Font Size on a Device](#changing-the-font-size-on-a-device) guide to set your preferred font size, and watch the text in the demo below grow or shrink according to your preferences.
@@ -132,7 +134,7 @@ Ionic follows [Apple's Human Interface Guidelines for Typography](https://develo
 2. Components such as `ion-badge` and `ion-back-button` will have minimum font sizes so they remain readable.
 3. Text in components such as `ion-tab-bar` and `ion-picker` do not participate in Dynamic Font Scaling according to Apple's Human Interface Guidelines.
 
-### Android
+### Android Web View
 
 The Android Web View's font scaling mechanism is always enabled in web content and will automatically scale font sizes defined using the `px` unit. This means that any maximum or minimum font sizes specified using `px` will still be scaled even if the final font size does not align with the maximum or minimum font sizes specified.
 
@@ -149,6 +151,14 @@ If the root element's default font size is `16px`, and the system-level font sca
 This is larger than our defined maximum of `14px`, so one might assume that the evaluated font size of `.foo` is `14px`. However, since the Android Web View scales any font sizes defined using the `px` unit, this means the `14px` used in our `min()` function will also be scaled by 1.5.
 
 As a result, this means that the maximum computed font size is actually `21px` since `14 * 1.5 = 21` and therefore the overall computed font size of `.foo` is `21px`.
+
+### Chrome for Android
+
+The Chrome Web Browser on Android behaves differently than the Android Web View. By default, Chrome for Android does not respect the system-level font scale setting. However, the Chromium team is working on a new feature to allow for this. When enabled, this feature will change the `zoom` level of the `html` element which will cause the layout to increase in size in addition to the text.
+
+Developers can test this behavior by enabling the experimental "Accessibility Page Zoom" feature in `chrome://flags`.
+
+See https://bugs.chromium.org/p/chromium/issues/detail?id=645717 for more information.
 
 ### Using Modes on Different Platforms
 
@@ -171,6 +181,10 @@ See [Apple Support](https://support.apple.com/en-us/102453) for more information
 ### Android
 
 Where users access the font scaling configuration varies across devices, but it is typically found in the "Accessibility" page in the Settings app.
+
+:::info
+The Chrome Web Browser on Android has some limitations with respecting system-level font scales. See [Chrome for Android](#chrome-for-android) for more information.
+:::
 
 ## Troubleshooting
 
