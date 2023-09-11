@@ -70,7 +70,7 @@ Developers have two options for relative font sizes: [`em` and `rem`](https://de
 
 `em` units set the font size of an element relative to the font size of its parent.
 
-In the following example, the computed font size of `.child` is `40px` because it is a child of `.parent` (`2em \* 20px = 40px`).
+In the following example, the computed font size of `.child` is `40px` because it is a child of `.parent` (`2em * 20px = 40px`).
 
 ```css
 .parent {
