@@ -117,7 +117,7 @@ In the following example, the computed font size of `.child` is `32px` because t
 
 ## How Dynamic Font Scaling works in Ionic
 
-All Ionic components that define font sizes use [rem units](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Values_and_units#lengths). This sizes the text in each component relative to the font size of the root element, which is usually the `html` element. This means that as the root element's font size changes, the text in all Ionic components scale in a consistent manner. This avoids the need to manually override each component's font size.
+Ionic components that define font sizes and participate in Dynamic Font Scaling typically use [rem units](https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Values_and_units#lengths). This sizes the text in each component relative to the font size of the root element, which is usually the `html` element. This means that as the root element's font size changes, the text in all Ionic components scale in a consistent manner. This avoids the need to manually override each component's font size. Some elements inside of these components, such as icons, use `em` units instead so the elements are sized relative to the text, though the text itself is sized using `rem` units.
 
 ### iOS
 
