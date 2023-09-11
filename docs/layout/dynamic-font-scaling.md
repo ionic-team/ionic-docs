@@ -10,11 +10,11 @@ Dynamic Font Scaling is supported on Android, iOS, and iPadOS starting in Ionic 
 Be sure to try this on an Android, iOS, or iPadOS device.
 :::
 
-Follow the [Changing the Font Size on a Device](#changing-the-font-size-on-a-device) guide to set your preferred font size, and watch the text in the demo linked below grow or shrink according to your preferences.
+Follow the [Changing the Font Size on a Device](#changing-the-font-size-on-a-device) guide to set your preferred font size, and watch the text in the demo below grow or shrink according to your preferences.
 
-<a href="/docs/usage/v7/layout/dynamic-font-scaling/demo.html" target="_blank">
-  Launch Dynamic Font Scaling Demo
-</a> (opens in a new tab)
+import DynamicFontScaling from '@site/static/usage/v7/layout/dynamic-font-scaling/index.md';
+
+<DynamicFontScaling />
 
 ## Enabling Dynamic Font Scaling in Ionic
 
