@@ -53,7 +53,7 @@ Developers can configure their custom components to take advantage of Dynamic Fo
 
 For example, if a component has a font size of `14px`, then this could be converted to `rem` by doing `14px / 16px = 0.875rem`.
 
-Developers should also audit their applications and make any other changes necessary to support larger font sizes. One thing to keep in mind is that the dimensions of your components may need to change to accommodate the larger font sizes. As a result, it may be necessary to change properties such as `width` and `height` to `min-width` and `min-height`. We also recommend having long text wrap to the next line instead of truncating to keep large text readable.
+One thing to keep in mind is that the dimensions of your components may need to change to accommodate the larger font sizes. Developers should audit their applications for any CSS properties that use [length values](https://developer.mozilla.org/en-US/docs/Web/CSS/length) and make any applicable conversions from `px` to `rem`. We also recommend having long text wrap to the next line instead of truncating to keep large text readable.
 
 Also note that any Ionic components that have had their font sizes overridden should also be updated to use `rem` units.
 
