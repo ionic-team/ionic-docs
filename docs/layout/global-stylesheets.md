@@ -34,7 +34,7 @@ Applies styles to `<html>` and defaults `box-sizing` to `border-box`. It ensures
 
 #### typography.css
 
-Typography changes the font-family of the entire document and modifies the font styles for heading elements. It also applies positioning styles to some native text elements.
+Typography changes the font-family of the entire document and modifies the font styles for heading elements. It also applies positioning styles to some native text elements. This file is necessary for [Dynamic Font Scaling](./dynamic-font-scaling) to work.
 
 #### normalize.css
 
