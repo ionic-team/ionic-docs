@@ -143,7 +143,7 @@ In the following example we are using the [min()](https://developer.mozilla.org/
 }
 ```
 
-If the root element's default font size is `16px`, and the system-level font scale is 1.5 (i.e text sizes should be increased by 50%), then `1rem` will evaluate to `24px` because `16 * 1.5 = 24`.
+If the root element's default font size is `16px`, and the system-level font scale is `1.5` (i.e text sizes should be increased by 50%), then `1rem` will evaluate to `24px` because `16 * 1.5 = 24`.
 
 This is larger than our defined maximum of `14px`, so one might assume that the evaluated font size of `.foo` is `14px`. However, since the Android Web View scales any font sizes defined using the `px` unit, this means the `14px` used in our `min()` function will also be scaled by 1.5.
 
