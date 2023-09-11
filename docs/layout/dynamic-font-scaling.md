@@ -199,7 +199,7 @@ Certain native iOS components such as the Action Sheet make use of private font 
 
 ### The text size in my Ionic app on iOS changed when enabling Dynamic Font Scaling
 
-The root element's default font size is typically 16px. However, Dynamic Font Scaling on iOS devices make use of the ["Body" text style](https://developer.apple.com/design/human-interface-guidelines/typography#Specifications) which has a default font size of 17px. Since the text in Ionic components is scaled relative to the root element's font size, some text may get larger or smaller when Dynamic Font Scaling is enabled, even if the system-level text scale did not change.
+The root element's default font size is typically `16px`. However, Dynamic Font Scaling on iOS devices make use of the ["Body" text style](https://developer.apple.com/design/human-interface-guidelines/typography#Specifications) which has a default font size of `17px`. Since the text in Ionic components is scaled relative to the root element's font size, some text may get larger or smaller when Dynamic Font Scaling is enabled, even if the system-level text scale did not change.
 
 :::info
 iOS provides a "Callout" text style which has a default font size of 16px. However, this font style is currently not exposed to web content. See [the supported text styles in WebKit](https://webkit.org/blog/3709/using-the-system-font-in-web-content/) for more information.
