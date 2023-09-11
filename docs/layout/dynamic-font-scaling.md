@@ -123,7 +123,7 @@ Ionic components that define font sizes and participate in Dynamic Font Scaling 
 
 Dynamic Font Scaling in Ionic builds on top of an iOS feature called [Dynamic Type](https://developer.apple.com/documentation/uikit/uifont/scaling_fonts_automatically#overview). To do this, Ionic sets the [font](https://developer.mozilla.org/en-US/docs/Web/CSS/font) of the root element to an Apple-defined text style. For consistency, Ionic uses the [body](https://developer.apple.com/documentation/uikit/uifont/textstyle/1616682-body) text style.
 
-Using the Apple-defined text style enables Dynamic Type, allowing all text in Ionic components to scale according to the system-level preference. Note that these Apple-defined fonts only work on Apple devices. As a result, these fonts will not work on Android devices even if your app is using `'ios'` mode.
+Using the Apple-defined text style enables Dynamic Type, allowing all text in Ionic components to scale according to the system-level preference. Note that these Apple-defined fonts only work on Apple devices. As a result, these fonts will not work on Android devices even if your app is using `ios` mode.
 
 Ionic follows [Apple's Human Interface Guidelines for Typography](https://developer.apple.com/design/human-interface-guidelines/typography) when an app is in `'ios'` mode. As a result, important content is prioritized when the text size changes. This means a few things:
 
