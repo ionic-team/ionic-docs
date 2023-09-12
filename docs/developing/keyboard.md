@@ -199,6 +199,7 @@ Detecting the presence of an on-screen keyboard is useful for adjusting the posi
   values={[
     { value: 'javascript', label: 'JavaScript' },
     { value: 'angular', label: 'Angular' },
+    { value: 'angular-standalone', label: 'Angular (Standalone)' },
     { value: 'react', label: 'React' },
     { value: 'vue', label: 'Vue' },
   ]
@@ -220,6 +221,25 @@ window.addEventListener('ionKeyboardDidHide', () => {
 
 ```tsx
 import { Platform } from '@ionic/angular';
+
+...
+
+constructor(private platform: Platform) {
+  this.platform.keyboardDidShow.subscribe(ev => {
+    const { keyboardHeight } = ev;
+    // Do something with the keyboard height such as translating an input above the keyboard.
+  });
+
+  this.platform.keyboardDidHide.subscribe(() => {
+    // Move input back to original location
+  });
+}
+```
+</TabItem>
+<TabItem value="angular-standalone">
+
+```tsx
+import { Platform } from '@ionic/angular/standalone';
 
 ...
 
