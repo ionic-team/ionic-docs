@@ -12,9 +12,12 @@ import {
   useIonActionSheet,
 } from '@ionic/react';
 
+import Child from './Child';
+
 function Example() {
   const modal = useRef<HTMLIonModalElement>(null);
   const page = useRef(null);
+  const [canDismissOverride, setCanDismissOverride] = useState(false);
 
   const [presentingElement, setPresentingElement] = useState<HTMLElement | null>(null);
   const [present] = useIonActionSheet();
@@ -27,7 +30,16 @@ function Example() {
     modal.current?.dismiss();
   }
 
-  function canDismiss() {
+  function onWillPresent() {
+    // Resets the override when the modal is presented
+    setCanDismissOverride(false);
+  }
+
+  async function canDismiss() {
+    if (canDismissOverride) {
+      // Checks for the override flag to return early if we can dismiss the overlay immediately
+      return true;
+    }
     return new Promise<boolean>((resolve, reject) => {
       present({
         header: 'Are you sure?',
@@ -63,18 +75,19 @@ function Example() {
         <IonButton id="open-modal" expand="block">
           Open
         </IonButton>
-        <IonModal ref={modal} trigger="open-modal" canDismiss={canDismiss} presentingElement={presentingElement!}>
-          <IonHeader>
-            <IonToolbar>
-              <IonTitle>Modal</IonTitle>
-              <IonButtons slot="end">
-                <IonButton onClick={() => dismiss()}>Close</IonButton>
-              </IonButtons>
-            </IonToolbar>
-          </IonHeader>
-          <IonContent className="ion-padding">
-            <p>You will be prompted when closing this modal.</p>
-          </IonContent>
+        <IonModal
+          ref={modal}
+          trigger="open-modal"
+          canDismiss={canDismiss}
+          presentingElement={presentingElement!}
+          onWillPresent={onWillPresent}
+        >
+          <Child
+            dismiss={dismiss}
+            dismissChange={(checked) => {
+              setCanDismissOverride(checked);
+            }}
+          />
         </IonModal>
       </IonContent>
     </IonPage>
