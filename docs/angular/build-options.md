@@ -8,13 +8,11 @@ While the Standalone approach is newer and makes use of more modern Angular APIs
 
 :::info
 Ionic UI components as Angular standalone components is supported starting in Ionic v7.5.
-
-Additionally, using Ionic components as standalone components is supported in Angular applications that already make use of the standalone component APIs. See [Standalone Migration](https://angular.io/guide/standalone-migration) for more information.
 :::
 
 ### Overview
 
-Developers with Angular applications that use [standalone components](https://angular.io/guide/standalone-components) can use Ionic components as standalone components which provides a simplified way to build Angular applications. This option involves importing specific Ionic components in the Angular components you want to use them in.
+Developers with Angular applications that use [standalone components](https://angular.io/guide/standalone-components) can also use Ionic components as standalone components to provide a simplified way to build Angular applications. This option involves importing specific Ionic components in the Angular components you want to use them in.
 
 **Benefits**
 
@@ -29,7 +27,7 @@ Developers with Angular applications that use [standalone components](https://an
 ### Usage
 
 :::caution
-All Ionic standalone imports should be imported from the `@ionic/angular/standalone` package. Importing from the `@ionic/angular` package may pull in lazy loaded Ionic code which can interfere with treeshaking.
+All Ionic imports should be imported from the `@ionic/angular/standalone` submodule. This includes imports such as components, directives, providers, and types. Importing from `@ionic/angular` may pull in lazy loaded Ionic code which can interfere with treeshaking.
 :::
 
 **Components**
@@ -151,7 +149,7 @@ export class AppModule {}
 ## Migrating from Modules to Standalone
 
 :::note
-This migration guide assumes the Angular components in your application are already standalone components. See [Migrating to Standalone](https://angular.io/guide/standalone-migration) if you are Angular application is not already using standalone components.
+This migration guide assumes the Angular components in your application are already standalone components. See [Migrating to Standalone](https://angular.io/guide/standalone-migration) if your Angular application is not already using standalone components.
 :::
 
 The Standalone option is newer than the Modules option, so developers may wish to switch during the development of their application. This guide details the steps needed to migrate as well as limitations to be aware of.
@@ -238,7 +236,7 @@ export class TestComponent {
 }
 ```
 
-8. Remove the following code from your `angular.json` file if present. Note that it may appear multiple times in your `angular.json` file.
+8. Remove the following code from your `angular.json` file if present. Note that it may appear multiple times.
 
 ```diff
 - {
