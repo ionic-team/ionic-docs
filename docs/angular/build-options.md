@@ -239,7 +239,7 @@ export class TestComponent {
 }
 ```
 
-8. Remove the following code from your `angular.json` file is present. Note that it may appear multiple times in your `angular.json` file.
+8. Remove the following code from your `angular.json` file if present. Note that it may appear multiple times in your `angular.json` file.
 
 ```diff
 - {
