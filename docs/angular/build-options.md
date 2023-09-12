@@ -160,7 +160,7 @@ The Standalone option is newer than the Modules option, so developers may wish t
 
 1. Run `npm install @ionic/angular@latest` to ensure you are running the latest version of Ionic. Ionic UI Standalone Components is supported in Ionic v7.5 or newer.
 
-2.  Run `npm install ionicons@latest` to ensure you are running the latest version of Ionicons. Ionicons v7.2 brings usability improvements that reduce the code boilerplate needed to use icons with standalone components.
+2. Run `npm install ionicons@latest` to ensure you are running the latest version of Ionicons. Ionicons v7.2 brings usability improvements that reduce the code boilerplate needed to use icons with standalone components.
 
 3. Remove the `IonicModule` call in `main.ts` in favor of `provideIonicAngular` imported from `@ionic/angular/standalone`. Any config passed to `IonicModule.forRoot` can be passed as an object to this new function.
 
@@ -199,7 +199,6 @@ bootstrapApplication(AppComponent, {
 ```
 
 6. Add imports for each Ionic component in the Angular component where they are used. Be sure to pass the imports to the `imports` array on your Angular component.
-
 
 ```diff
 import { Component } from '@angular/core';
