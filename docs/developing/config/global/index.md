@@ -57,6 +57,7 @@ bootstrapApplication(AppComponent, {
   ]
 })
 ```
+
 </TabItem>
 <TabItem value="react">
 

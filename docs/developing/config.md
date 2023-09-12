@@ -84,6 +84,7 @@ class AppComponent {
   }
 }
 ```
+
 </TabItem>
 <TabItem value="angular-standalone">
 
@@ -97,10 +98,9 @@ class AppComponent {
   }
 }
 ```
+
 </TabItem>
 </Tabs>
-
-
 
 ### getBoolean
 
@@ -131,6 +131,7 @@ class AppComponent {
   }
 }
 ```
+
 </TabItem>
 <TabItem value="angular-standalone">
 
@@ -144,6 +145,7 @@ class AppComponent {
   }
 }
 ```
+
 </TabItem>
 </Tabs>
 

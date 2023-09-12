@@ -164,6 +164,7 @@ export class HomePage {
   swiperModules = [IonicSlides];
 }
 ```
+
 </TabItem>
 <TabItem value="angular-standalone">
 
@@ -179,6 +180,7 @@ export class HomePage {
   swiperModules = [IonicSlides];
 }
 ```
+
 </TabItem>
 </Tabs>
 

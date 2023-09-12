@@ -37,6 +37,7 @@ export class MyPage {
   }
 }
 ```
+
 </TabItem>
 <TabItem value="angular-standalone">
 
@@ -50,6 +51,7 @@ export class MyPage {
   }
 }
 ```
+
 </TabItem>
 </Tabs>
 
