@@ -150,13 +150,13 @@ export class AppModule {}
 
 ## Migrating from Modules to Standalone
 
-:::note
-This migration guide assumes the Angular components in your application are already standalone components. See [Migrating to Standalone](https://angular.io/guide/standalone-migration) if your Angular application is not already using standalone components.
-:::
+The Standalone option is newer than the Modules option, so developers may wish to switch during the development of their application. This guide details the steps needed to migrate.
 
-The Standalone option is newer than the Modules option, so developers may wish to switch during the development of their application. This guide details the steps needed to migrate as well as limitations to be aware of.
+Note that migrating to Ionic standalone components must be done all at the same time and cannot be done gradually. The Modules and Standalone approaches use two different build systems of Ionic that cannot be used at the same time.
 
-### Steps to Migrate
+### Using Ionic Standalone Components in Standalone-based Applications
+
+Follow these steps if your Angular application is already using the standalone architecture, and you want to use Ionic UI components as standalone components too.
 
 1. Run `npm install @ionic/angular@latest` to ensure you are running the latest version of Ionic. Ionic UI Standalone Components is supported in Ionic v7.5 or newer.
 
@@ -164,7 +164,7 @@ The Standalone option is newer than the Modules option, so developers may wish t
 
 3. Remove the `IonicModule` call in `main.ts` in favor of `provideIonicAngular` imported from `@ionic/angular/standalone`. Any config passed to `IonicModule.forRoot` can be passed as an object to this new function.
 
-```diff
+```diff title="main.ts"
 import { enableProdMode, importProvidersFrom } from '@angular/core';
 import { bootstrapApplication } from '@angular/platform-browser';
 import { RouteReuseStrategy, provideRouter } from '@angular/router';
@@ -200,7 +200,7 @@ bootstrapApplication(AppComponent, {
 
 6. Add imports for each Ionic component in the Angular component where they are used. Be sure to pass the imports to the `imports` array on your Angular component.
 
-```diff
+```diff title="app.component.ts"
 import { Component } from '@angular/core';
 + import { IonApp, IonRouterOutlet } from '@ionic/angular/standalone';
 
@@ -218,7 +218,7 @@ export class AppComponent {
 
 7. If you are using Ionicons, define the icon SVG data used in each Angular component using `addIcons`. This allows you to continue referencing icons by string name in your component template. Note that you will need to do this for any additional icons added.
 
-```diff
+```diff title="test.component.ts"
 import { Component } from '@angular/core';
 + import { IonIcon } from '@ionic/angular/standalone';
 + import { addIcons } from 'ionicons';
@@ -233,14 +233,14 @@ import { Component } from '@angular/core';
 })
 export class TestComponent {
   constructor() {
-    addIcons({ alarm, logoIonic });
++   addIcons({ alarm, logoIonic });
   }
 }
 ```
 
 8. Remove the following code from your `angular.json` file if present. Note that it may appear multiple times.
 
-```diff
+```diff title="angular.json"
 - {
 -   "glob": "**/*.svg",
 -   "input": "node_modules/ionicons/dist/ionicons/svg",
@@ -248,7 +248,122 @@ export class TestComponent {
 - }
 ```
 
-### Limitations
+### Using Ionic Standalone Components in NgModule-based Applications
 
-1. Your application must already make use of standalone APIs. Using Ionic UI components as standalone components in an application that uses `NgModule` is not supported.
-2. Migrating to Ionic standalone components must be done all at the same time and cannot be done gradually. The Modules and Standalone approaches use two different build systems of Ionic that cannot be used at the same time.
+Follow these steps if your Angular application is still using the NgModule architecture, but you want to adopt Ionic UI components as standalone components now.
+
+1. Run `npm install @ionic/angular@latest` to ensure you are running the latest version of Ionic. Ionic UI Standalone Components is supported in Ionic v7.5 or newer.
+
+2. Run `npm install ionicons@latest` to ensure you are running the latest version of Ionicons. Ionicons v7.2 brings usability improvements that reduce the code boilerplate needed to use icons with standalone components.
+
+3. Remove the `IonicModule` call in `app.module.ts` in favor of `provideIonicAngular` imported from `@ionic/angular/standalone`. Any config passed to `IonicModule.forRoot` can be passed as an object to this new function.
+
+```diff title="app.module.ts"
+import { enableProdMode, importProvidersFrom } from '@angular/core';
+import { bootstrapApplication } from '@angular/platform-browser';
+import { RouteReuseStrategy, provideRouter } from '@angular/router';
+- import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
++ import { provideIonicAngular, IonicRouteStrategy } from '@ionic/angular/standalone';
+
+import { routes } from './app/app.routes';
+import { AppComponent } from './app/app.component';
+import { environment } from './environments/environment';
+
+if (environment.production) {
+  enableProdMode();
+}
+
+@NgModule({
+  declarations: [AppComponent],
+- imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule],
++ imports: [BrowserModule, AppRoutingModule],
+  providers: [
+    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }, 
++   provideIonicAngular({ mode: 'ios' }),
+  ],
+  bootstrap: [AppComponent],
+})
+export class AppModule {}
+```
+
+4. Remove any references to `IonicModule` found elsewhere in your application.
+
+5. Update any existing imports from `@ionic/angular` to import from `@ionic/angular/standalone` instead.
+
+```diff
+- import { Platform } from '@ionic/angular';
++ import { Platform } from '@ionic/angular/standalone';
+```
+
+6. Add imports for each Ionic component in the NgModule for the Angular component where they are used. Be sure to pass the components to the `imports` array on the module.
+
+```diff title="app.module.ts"
+import { enableProdMode, importProvidersFrom } from '@angular/core';
+import { bootstrapApplication } from '@angular/platform-browser';
+import { RouteReuseStrategy, provideRouter } from '@angular/router';
+- import { provideIonicAngular, IonicRouteStrategy } from '@ionic/angular/standalone';
++ import { provideIonicAngular, IonicRouteStrategy, IonApp, IonRouterOutlet } from '@ionic/angular/standalone';
+
+import { routes } from './app/app.routes';
+import { AppComponent } from './app/app.component';
+import { environment } from './environments/environment';
+
+if (environment.production) {
+  enableProdMode();
+}
+
+@NgModule({
+  declarations: [AppComponent],
+- imports: [BrowserModule, AppRoutingModule],
++ imports: [BrowserModule, AppRoutingModule, IonApp, IonRouterOutlet],
+  providers: [
+    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }, 
+    provideIonicAngular({ mode: 'ios' })
+  ],
+  bootstrap: [AppComponent],
+})
+export class AppModule {}
+```
+
+7. If you are using Ionicons, define the icon SVG data used in each Angular component using `addIcons`. This allows you to continue referencing icons by string name in your component template. Note that you will need to do this for any additional icons added. The `IonIcon` component should still be provided in the NgModule.
+
+```diff title="test.component.ts"
+import { Component } from '@angular/core';
++ import { addIcons } from 'ionicons';
++ import { alarm, logoIonic } from 'ionicons/icons';
+
+@Component({
+  selector: 'app-root',
+  templateUrl: 'app.component.html',
+  styleUrls: ['app.component.scss'],
+})
+export class TestComponent {
+  constructor() {
+    addIcons({ alarm, logoIonic });
+  }
+}
+```
+
+```diff title="test.module.ts"
+import { NgModule } from '@angular/core';
+import { TestComponent } from './test.component';
++ import { IonIcon } from '@ionic/angular/standalone';
+
+@NgModule({
+  imports: [
++   IonIcon,
+  ],
+  declarations: [TestComponent]
+})
+export class TestComponentModule {}
+```
+
+8. Remove the following code from your `angular.json` file if present. Note that it may appear multiple times.
+
+```diff title="angular.json"
+- {
+-   "glob": "**/*.svg",
+-   "input": "node_modules/ionicons/dist/ionicons/svg",
+-   "output": "./svg"
+- }
+```
