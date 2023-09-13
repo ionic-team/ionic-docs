@@ -278,7 +278,7 @@ if (environment.production) {
 - imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule],
 + imports: [BrowserModule, AppRoutingModule],
   providers: [
-    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }, 
+    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
 +   provideIonicAngular({ mode: 'ios' }),
   ],
   bootstrap: [AppComponent],
@@ -317,7 +317,7 @@ if (environment.production) {
 - imports: [BrowserModule, AppRoutingModule],
 + imports: [BrowserModule, AppRoutingModule, IonApp, IonRouterOutlet],
   providers: [
-    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }, 
+    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     provideIonicAngular({ mode: 'ios' })
   ],
   bootstrap: [AppComponent],
