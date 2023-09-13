@@ -12,7 +12,7 @@
       trigger="open-modal"
       [canDismiss]="canDismiss"
       [presentingElement]="presentingElement"
-      (willPresent)="onWilPresent()"
+      (willPresent)="onWillPresent()"
     >
       <ng-template>
         <app-child [modal]="modal" (dismissChange)="onDismissChange($event)"></app-child>
