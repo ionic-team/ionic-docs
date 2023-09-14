@@ -8,6 +8,8 @@ import Parts from '@ionic-internal/component-api/v7/item/parts.md';
 import CustomProps from '@ionic-internal/component-api/v7/item/custom-props.md';
 import Slots from '@ionic-internal/component-api/v7/item/slots.md';
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 <head>
   <title>ion-item: Input, Edit, or Delete iOS and Android Item Elements</title>
   <meta name="description" content="ion-item elements for iOS/Android contain text, icons, images, and other custom elements. They're placed in a list and can be input, deleted, edited, and more." />
@@ -25,9 +27,17 @@ Items in a list can support 5 different content types:
 
 ### Supporting Visuals
 
-These are decorative icons or other adornments for an item. Since this content is not required to understand the intent of the row, they are typically hidden from screen readers using `aria-hidden="true"`
+These are decorative icons or other adornments for an item. Since this content is not required to understand the intent of the row, it is typically hidden from screen readers using `aria-hidden="true"`.
 
-TODO Demo
+In the example below, we are creating a list with several decorative icons. Since the icons are decorative, they all have `aria-hidden="true"`. Additionally, they are presented consistently in the `start` slot.
+
+import SupportingVisuals from '@site/static/usage/v7/item/content-types/supporting-visuals/index.md';
+
+<SupportingVisuals />
+
+The following example shows **incorrect usage** because the icons are not presented in a consistent way.
+
+<img width="300" style={{ margin: '0 auto' }} src={useBaseUrl('img/item/incorrect-usage-visuals.jpg')} />
 
 ### Text
 
