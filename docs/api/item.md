@@ -19,6 +19,46 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 Items are elements that can contain text, icons, avatars, images, inputs, and any other native or custom elements. Items should only be used as rows in a [list](./list) with other items. Items can be swiped, deleted, reordered, edited, and more.
 
+## Content Types
+
+Items in a list can support 5 different content types:
+
+### Supporting Visuals
+
+These are decorative icons or other adornments for an item. Since this content is not required to understand the intent of the row, they are typically hidden from screen readers using `aria-hidden="true"`
+
+TODO Demo
+
+### Text
+
+The text content type includes form control labels or other visible text. This text serves to indicate the intent of the row. Try to keep the text short and to the point. If you find that you need more than a few sentences, consider moving the item to its own list and adding a [note](./note) at the bottom of the list.
+
+TODO Demo
+
+### Metadata
+
+Metadata provides additional context for a row. Metadata can include information such as counts, badges, and more. Try to limit the amount of metadata you include to only the most relevant information. Adding too much metadata to a single item can overwhelm or confuse the user.
+
+TODO Demo 
+
+### Actions
+
+Actions are interactive elements that do something when you active them. An item can have primary and secondary actions displayed on a line. However, developers should ensure that each action's tap target is large enough to be usable.
+
+Developers should be mindful when using actions and avoid creating [nested interactive](https://dequeuniversity.com/rules/axe/4.4/nested-interactive) which can break the user experience with screen readers. For example, developers should avoid adding a button inside the main content of `ion-item` if the `button` property is set to `true`.
+
+If an item needs more than two actions, consider using the [item-sliding](./item-sliding) component with options.
+
+TODO Demo
+
+### Controls
+
+Controls are form components such as checkboxes, inputs, radios, and more. Each item in a list should have at most two controls due to screen space constraints.
+
+Metadata such as helper text or character counts should not be used on form controls in list views. If such metadata is needed, the form control should be placed outside of a list. If a form control needs additional context, consider adding a [note](./note) at the bottom of the list.
+
+TODO Demo
+
 ## Basic Usage
 
 Items left align text and add an ellipsis when the text is wider than the item. We can modify this behavior using the CSS Utilities provided by Ionic Framework, such as using `.ion-text-wrap` in the below example. See the [CSS Utilities Documentation](/docs/layout/css-utilities) for more classes that can be added to an item to transform the text.
@@ -132,6 +172,14 @@ import InputHighlight from '@site/static/usage/v7/item/theming/input-highlight/i
 
 <InputHighlight />
 
+## Usage Guidelines
+
+The following guidelines will help ensure your list items are easy to understand and use.
+
+1. Items should only be used inside of [lists](./list).
+2. Items inside of a list should be presented in a consistent format. For example, if your items present decorative icons, the icons should be positioned in the same way between items.
+3. Items should never render [nested interactives](https://dequeuniversity.com/rules/axe/4.4/nested-interactive). Screen readers are unable to select the correct interactive element when nested interactives are used. For example, avoid placing a button inside of an `ion-item` that has `button="true"`.
+4. Use [content types](#content-types) correctly. The item component is designed to be a row in a [list](./list) and should not be used as a general purpose container.
 
 ## Properties
 <Props />
