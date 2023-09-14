@@ -27,9 +27,9 @@ Items in a list can support 5 different content types:
 
 ### Supporting Visuals
 
-These are decorative icons or other adornments for an item. Since this content is not required to understand the intent of the row, it is typically hidden from screen readers using `aria-hidden="true"`.
+These are decorative icons or other adornments for an item. Common examples of supporting visuals are [Avatars](./avatar), [Icons](./icon), and [Thumbnails](./thumbnail). Since this content is not required to understand the intent of the row, it is typically hidden from screen readers using `aria-hidden="true"`.
 
-In the example below, we are creating a list with several decorative icons. Since the icons are decorative, they all have `aria-hidden="true"`. Additionally, they are presented consistently in the `start` slot.
+In the example below, we are creating two lists with supporting visuals. The first list uses icons, and the second list uses avatars. The visuals are decorative, so they all have `aria-hidden="true"`. Additionally, they are presented consistently in the `start` slot.
 
 import SupportingVisuals from '@site/static/usage/v7/item/content-types/supporting-visuals/index.md';
 
@@ -119,16 +119,6 @@ import Lines from '@site/static/usage/v7/item/lines/index.md';
 
 <Lines />
 
-
-## Media Items
-
-[Avatars](./avatar) and [Thumbnails](./thumbnail) can be slotted inside of an item. This is useful when making lists of images and text.
-
-import Media from '@site/static/usage/v7/item/media/index.md';
-
-<Media />
-
-
 ## Buttons in Items
 
 Buttons are styled smaller inside of items than when they are outside of them. To make the button size match buttons outside of an item, set the `size` attribute to `"default"`.
@@ -136,14 +126,6 @@ Buttons are styled smaller inside of items than when they are outside of them. T
 import Buttons from '@site/static/usage/v7/item/buttons/index.md';
 
 <Buttons />
-
-
-## Icons in Items
-
-import Icons from '@site/static/usage/v7/item/icons/index.md';
-
-<Icons />
-
 
 ## Item Inputs
 

@@ -18,15 +18,43 @@
       <ion-label>Cellular</ion-label>
     </ion-item>
   </ion-list>
+  
+  <ion-list>
+    <ion-item>
+      <ion-avatar aria-hidden="true" slot="start">
+        <img src="https://ionicframework.com/docs/img/demos/avatar.svg" />
+      </ion-avatar>
+      <ion-label>Huey</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-avatar aria-hidden="true" slot="start">
+        <img src="https://ionicframework.com/docs/img/demos/avatar.svg" />
+      </ion-avatar>
+      <ion-label>Dewey</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-avatar aria-hidden="true" slot="start">
+        <img src="https://ionicframework.com/docs/img/demos/avatar.svg" />
+      </ion-avatar>
+      <ion-label>Louie</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-avatar aria-hidden="true" slot="start">
+        <img src="https://ionicframework.com/docs/img/demos/avatar.svg" />
+      </ion-avatar>
+      <ion-label>Fooie</ion-label>
+    </ion-item>
+  </ion-list>
 </template>
 
 <script lang="ts">
-  import { IonItem, IonLabel, IonList, IonIcon } from '@ionic/vue';
+  import { IonAvatar, IonItem, IonLabel, IonList, IonIcon } from '@ionic/vue';
   import { defineComponent } from 'vue';
   import { airplane, bluetooth, call, wifi } from 'ionicons/icons';
 
   export default defineComponent({
     components: {
+      IonAvatar,
       IonItem,
       IonLabel,
       IonList,
