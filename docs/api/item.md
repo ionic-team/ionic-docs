@@ -17,7 +17,7 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="shadow" />
 
-Items are elements that can contain text, icons, avatars, images, inputs, and any other native or custom elements. Generally they are placed in a [list](./list) with other items. Items can be swiped, deleted, reordered, edited, and more.
+Items are elements that can contain text, icons, avatars, images, inputs, and any other native or custom elements. Items should only be used as rows in a [list](./list) with other items. Items can be swiped, deleted, reordered, edited, and more.
 
 ## Basic Usage
 
