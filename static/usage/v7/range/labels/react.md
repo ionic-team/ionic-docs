@@ -13,6 +13,10 @@ function Example() {
       <br />
 
       <IonRange labelPlacement="fixed" label="Fixed Width Label"></IonRange>
+
+      <br />
+
+      <IonRange labelPlacement="stacked" label="Stacked Label"></IonRange>
     </>
   );
 }
