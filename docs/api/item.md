@@ -9,6 +9,7 @@ import CustomProps from '@ionic-internal/component-api/v7/item/custom-props.md';
 import Slots from '@ionic-internal/component-api/v7/item/slots.md';
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import BestPracticeFigure from '@components/global/BestPracticeFigure';
 
 <head>
   <title>ion-item: Input, Edit, or Delete iOS and Android Item Elements</title>
@@ -27,7 +28,15 @@ Items in a list can support 5 different content types:
 
 ### Supporting Visuals
 
-These are decorative icons or other adornments for an item. Common examples of supporting visuals are [Avatars](./avatar), [Icons](./icon), and [Thumbnails](./thumbnail). Since this content is not required to understand the intent of the row, it is typically hidden from screen readers using `aria-hidden="true"`.
+Supporting visuals are decorative icons or other adornments for an item. Common examples of supporting visuals are [Avatars](./avatar), [Icons](./icon), and [Thumbnails](./thumbnail). Since this content is not required to understand the intent of the row, it is typically hidden from screen readers using `aria-hidden="true"`.
+
+<BestPracticeFigure 
+  text={<>Supporting visuals should be rendered in a consistent manner. This makes the information in each item easier to parse.</>}
+  doText={<>Render visuals in consistent slots</>}
+  dontText={<>Don't render visuals in different slots</>}
+  doImage={<img alt="A list with several items. Each item has an icon and visible text describing the item. The icon in each item is rendered at the start of the line." src={useBaseUrl('img/item/visuals-do.jpg')} />}
+  dontImage={<img alt="A list with several items. Each item has an icon and visible text describing the item. Some icons are rendered at the start of the line, and some icons are rendered at the end of the line" src={useBaseUrl('img/item/visuals-dont.jpg')} />}
+/>
 
 In the example below, we are creating two lists with supporting visuals. The first list uses icons, and the second list uses avatars. The visuals are decorative, so they all have `aria-hidden="true"`. Additionally, they are presented consistently in the `start` slot.
 
@@ -35,15 +44,21 @@ import SupportingVisuals from '@site/static/usage/v7/item/content-types/supporti
 
 <SupportingVisuals />
 
-The following example shows **incorrect usage** because the icons are not presented in a consistent way.
-
-<img width="300" style={{ margin: '0 auto' }} src={useBaseUrl('img/item/incorrect-usage-visuals.jpg')} />
-
 ### Text
 
-The text content type includes form control labels or other visible text. This text serves to indicate the intent of the row. Try to keep the text short and to the point. If you find that you need more than a few sentences, consider moving the item to its own list and adding a [note](./note) at the bottom of the list.
+The text content type includes form control labels or other visible text. This text serves to indicate the intent of the row. Try to keep the text short and to the point. This makes the item easy to read.
 
-TODO Demo
+<BestPracticeFigure 
+  text={<>If you find that you need more than a few sentences, consider moving the item to its own list and adding a <a href={useBaseUrl('api/note')}>note</a> at the bottom of the list.</>}
+  doText={<>Move long text outside of the list</>}
+  dontText={<>Don't try to fit long text in an item</>}
+  doImage={<img alt="A list with an item that contains a checked checkbox indicating the user wants to receive emails. Text describing how often the user will receive emails as well as how to unsubscribe from emails is placed underneath the list." src={useBaseUrl('img/item/long-text-do.jpg')} />}
+  dontImage={<img alt="A list with an item that contains a checked checkbox indicating the user wants to receive emails. Text describing how often the user will receive emails as well as how to unsubscribe from emails is placed as a single paragraph inline with the checkbox, making the text hard to read and increasing the height of the item." src={useBaseUrl('img/item/long-text-dont.jpg')} />}
+/>
+
+import Text from '@site/static/usage/v7/item/content-types/text/index.md';
+
+<Text />
 
 ### Metadata
 
