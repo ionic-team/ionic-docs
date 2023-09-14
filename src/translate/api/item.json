@@ -1,5 +1,5 @@
 {
-  "filePath": "./src/components/item/item.tsx",
+  "filePath": "src/components/item/item.tsx",
   "encapsulation": "shadow",
   "tag": "ion-item",
   "docs": "",
@@ -42,6 +42,11 @@
     {
       "name": "button",
       "type": "boolean",
+      "complexType": {
+        "original": "boolean",
+        "resolved": "boolean",
+        "references": {}
+      },
       "mutable": false,
       "attr": "button",
       "reflectToAttr": false,
@@ -59,6 +64,17 @@
     {
       "name": "color",
       "type": "\"danger\" | \"dark\" | \"light\" | \"medium\" | \"primary\" | \"secondary\" | \"success\" | \"tertiary\" | \"warning\" | string & Record<never, never> | undefined",
+      "complexType": {
+        "original": "Color",
+        "resolved": "\"danger\" | \"dark\" | \"light\" | \"medium\" | \"primary\" | \"secondary\" | \"success\" | \"tertiary\" | \"warning\" | string & Record<never, never> | undefined",
+        "references": {
+          "Color": {
+            "location": "import",
+            "path": "../../interface",
+            "id": "src/interface.d.ts::Color"
+          }
+        }
+      },
       "mutable": false,
       "attr": "color",
       "reflectToAttr": true,
@@ -114,6 +130,11 @@
     {
       "name": "counter",
       "type": "boolean",
+      "complexType": {
+        "original": "boolean",
+        "resolved": "boolean",
+        "references": {}
+      },
       "mutable": false,
       "attr": "counter",
       "reflectToAttr": false,
@@ -137,6 +158,17 @@
     {
       "name": "counterFormatter",
       "type": "((inputLength: number, maxLength: number) => string) | undefined",
+      "complexType": {
+        "original": "CounterFormatter",
+        "resolved": "((inputLength: number, maxLength: number) => string) | undefined",
+        "references": {
+          "CounterFormatter": {
+            "location": "import",
+            "path": "./item-interface",
+            "id": "src/components/item/item-interface.ts::CounterFormatter"
+          }
+        }
+      },
       "mutable": false,
       "reflectToAttr": false,
       "docs": "A callback used to format the counter text.\nBy default the counter text is set to \"itemLength / maxLength\".",
@@ -161,6 +193,11 @@
     {
       "name": "detail",
       "type": "boolean | undefined",
+      "complexType": {
+        "original": "boolean",
+        "resolved": "boolean | undefined",
+        "references": {}
+      },
       "mutable": false,
       "attr": "detail",
       "reflectToAttr": false,
@@ -180,6 +217,11 @@
     {
       "name": "detailIcon",
       "type": "string",
+      "complexType": {
+        "original": "string",
+        "resolved": "string",
+        "references": {}
+      },
       "mutable": false,
       "attr": "detail-icon",
       "reflectToAttr": false,
@@ -197,6 +239,11 @@
     {
       "name": "disabled",
       "type": "boolean",
+      "complexType": {
+        "original": "boolean",
+        "resolved": "boolean",
+        "references": {}
+      },
       "mutable": false,
       "attr": "disabled",
       "reflectToAttr": false,
@@ -214,6 +261,11 @@
     {
       "name": "download",
       "type": "string | undefined",
+      "complexType": {
+        "original": "string | undefined",
+        "resolved": "string | undefined",
+        "references": {}
+      },
       "mutable": false,
       "attr": "download",
       "reflectToAttr": false,
@@ -233,6 +285,11 @@
     {
       "name": "fill",
       "type": "\"outline\" | \"solid\" | undefined",
+      "complexType": {
+        "original": "'outline' | 'solid'",
+        "resolved": "\"outline\" | \"solid\" | undefined",
+        "references": {}
+      },
       "mutable": false,
       "attr": "fill",
       "reflectToAttr": false,
@@ -257,6 +314,11 @@
     {
       "name": "href",
       "type": "string | undefined",
+      "complexType": {
+        "original": "string | undefined",
+        "resolved": "string | undefined",
+        "references": {}
+      },
       "mutable": false,
       "attr": "href",
       "reflectToAttr": false,
@@ -276,6 +338,11 @@
     {
       "name": "lines",
       "type": "\"full\" | \"inset\" | \"none\" | undefined",
+      "complexType": {
+        "original": "'full' | 'inset' | 'none'",
+        "resolved": "\"full\" | \"inset\" | \"none\" | undefined",
+        "references": {}
+      },
       "mutable": false,
       "attr": "lines",
       "reflectToAttr": false,
@@ -325,6 +392,11 @@
     {
       "name": "rel",
       "type": "string | undefined",
+      "complexType": {
+        "original": "string | undefined",
+        "resolved": "string | undefined",
+        "references": {}
+      },
       "mutable": false,
       "attr": "rel",
       "reflectToAttr": false,
@@ -344,6 +416,17 @@
     {
       "name": "routerAnimation",
       "type": "((baseEl: any, opts?: any) => Animation) | undefined",
+      "complexType": {
+        "original": "AnimationBuilder | undefined",
+        "resolved": "((baseEl: any, opts?: any) => Animation) | undefined",
+        "references": {
+          "AnimationBuilder": {
+            "location": "import",
+            "path": "../../interface",
+            "id": "src/interface.d.ts::AnimationBuilder"
+          }
+        }
+      },
       "mutable": false,
       "reflectToAttr": false,
       "docs": "When using a router, it specifies the transition animation when navigating to\nanother page using `href`.",
@@ -362,6 +445,17 @@
     {
       "name": "routerDirection",
       "type": "\"back\" | \"forward\" | \"root\"",
+      "complexType": {
+        "original": "RouterDirection",
+        "resolved": "\"back\" | \"forward\" | \"root\"",
+        "references": {
+          "RouterDirection": {
+            "location": "import",
+            "path": "../router/utils/interface",
+            "id": "src/components/router/utils/interface.ts::RouterDirection"
+          }
+        }
+      },
       "mutable": false,
       "attr": "router-direction",
       "reflectToAttr": false,
@@ -388,6 +482,11 @@
     {
       "name": "shape",
       "type": "\"round\" | undefined",
+      "complexType": {
+        "original": "'round'",
+        "resolved": "\"round\" | undefined",
+        "references": {}
+      },
       "mutable": false,
       "attr": "shape",
       "reflectToAttr": false,
@@ -408,6 +507,11 @@
     {
       "name": "target",
       "type": "string | undefined",
+      "complexType": {
+        "original": "string | undefined",
+        "resolved": "string | undefined",
+        "references": {}
+      },
       "mutable": false,
       "attr": "target",
       "reflectToAttr": false,
@@ -427,6 +531,11 @@
     {
       "name": "type",
       "type": "\"button\" | \"reset\" | \"submit\"",
+      "complexType": {
+        "original": "'submit' | 'reset' | 'button'",
+        "resolved": "\"button\" | \"reset\" | \"submit\"",
+        "references": {}
+      },
       "mutable": false,
       "attr": "type",
       "reflectToAttr": false,
@@ -564,22 +673,22 @@
     {
       "name": "--highlight-color-focused",
       "annotation": "prop",
-      "docs": "The color of the highlight on the item when focused"
+      "docs": "The color of the highlight on the item when focused. Only applies to inputs and textareas using the legacy form syntax. DEPRECATED: Highlights can be styled on `ion-input` or `ion-textarea` when using the modern form syntax."
     },
     {
       "name": "--highlight-color-invalid",
       "annotation": "prop",
-      "docs": "The color of the highlight on the item when invalid"
+      "docs": "The color of the highlight on the item when invalid. Only applies to inputs and textareas using the legacy form syntax. DEPRECATED: Highlights can be styled on `ion-input` or `ion-textarea` when using the modern form syntax."
     },
     {
       "name": "--highlight-color-valid",
       "annotation": "prop",
-      "docs": "The color of the highlight on the item when valid"
+      "docs": "The color of the highlight on the item when valid. Only applies to inputs and textareas using the legacy form syntax. DEPRECATED: Highlights can be styled on `ion-input` or `ion-textarea` when using the modern form syntax."
     },
     {
       "name": "--highlight-height",
       "annotation": "prop",
-      "docs": "The height of the highlight on the item"
+      "docs": "The height of the highlight on the item. Only applies to inputs and textareas using the legacy form syntax. DEPRECATED: Highlights can be styled on `ion-input` or `ion-textarea` when using the modern form syntax."
     },
     {
       "name": "--inner-border-width",

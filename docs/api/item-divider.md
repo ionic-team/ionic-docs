@@ -9,7 +9,7 @@ import CustomProps from '@ionic-internal/component-api/v7/item-divider/custom-pr
 import Slots from '@ionic-internal/component-api/v7/item-divider/slots.md';
 
 <head>
-  <title>Item Divider | List Item Divider Block Element for Ionic Apps</title>
+  <title>ion-item-divider: Item Divider Block Element for Ionic Apps</title>
   <meta name="description" content="Item Dividersは、リスト内のアイテムを区切るために使用するブロック要素です。リストヘッダーに似ていますが、項目のグループの間に挟みます。" />
 </head>
 

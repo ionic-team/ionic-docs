@@ -9,7 +9,7 @@ import CustomProps from '@ionic-internal/component-api/v7/picker/custom-props.md
 import Slots from '@ionic-internal/component-api/v7/picker/slots.md';
 
 <head>
-  <title>Picker | Display Buttons and Columns for ion-picker on Ionic Apps</title>
+  <title>ion-picker: A Dialog That Displays Buttons and Columns</title>
   <meta name="description" content="Pickerは、ボタンの列とその下にコラムを表示するダイアログです。イオンピッカーは、アプリのコンテンツの上、そしてビューポートの下に表示されます。" />
 </head>
 
@@ -72,6 +72,9 @@ interface PickerButton {
 interface PickerColumn {
   name: string;
   align?: string;
+  /**
+   * Changing this value allows the initial value of a picker column to be set.
+   */
   selectedIndex?: number;
   prevSelected?: number;
   prefix?: string;

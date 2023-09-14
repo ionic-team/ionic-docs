@@ -12,7 +12,7 @@ import CustomProps from '@ionic-internal/component-api/v7/toast/custom-props.md'
 import Slots from '@ionic-internal/component-api/v7/toast/slots.md';
 
 <head>
-  <title>ion-toast Component: A Dismissible App Notification Alert</title>
+  <title>ion-toast: A Dismissible App Notification Alert Component</title>
   <meta name="description" content="ion-toast コンポーネントは、システムメッセージやフィードバックを表示するアプリの通知です。トーストのアラートはコンテンツの上に表示され、インタラクションを再開するには解除されます。" />
 </head>
 
@@ -86,6 +86,112 @@ import ThemingPlayground from '@site/static/usage/v7/toast/theming/index.md';
 
 <ThemingPlayground />
 
+## アクセシビリティ
+
+### フォーカスの管理
+
+トーストはさりげない通知であり、ユーザーを中断させるものではありません。トーストを解除するためにユーザが操作する必要はありません。そのため、トーストが表示されたときにフォーカスが自動的にトーストに移動することはありません。
+
+### スクリーンリーダー
+
+トーストは、スクリーンリーダーから[accessible](../reference/glossary#a11y)であるためにariaプロパティを設定しますが、これらのプロパティは、十分な説明がない場合や、トーストがアプリでどのように使用されているかに合っていない場合は、上書きすることができます。
+
+#### 役割
+
+`ion-toast`は、内側の `.toast-content` 要素に `role="status"` と `aria-live="polite"` を設定している。これにより、スクリーンリーダーはトーストメッセージとヘッダーのみをアナウンスします。ボタンとアイコンは、トーストが表示されてもアナウンスされません。
+
+`aria-live`は、トーストの内容が更新されたときに、スクリーンリーダーにトーストの内容をアナウンスさせます。しかし、この属性は `'polite'` に設定されているので、スクリーンリーダーは現在のタスクを中断すべきではありません。
+
+トーストはさりげなく通知することを意図しているので、`aria-live`を`"assertive"`に設定すべきではありません。開発者が重要なメッセージでユーザーを中断させる必要がある場合は、[alert](./alert)を使用することをお勧めします。
+
+#### トーストボタンの説明
+
+テキストを含むボタンは、スクリーンリーダーによって読み取られます。ボタンがアイコンのみを含んでいる場合、または既存のテキスト以外の説明が必要な場合は、ボタンの `htmlAttributes` プロパティに `aria-label` を渡すことで、ボタンにラベルを割り当てる必要があります。
+
+<Tabs groupId="framework" defaultValue="angular" values={[{ value: 'angular', label: 'Angular' }, { value: 'javascript', label: 'Javascript' }, { value: 'react', label: 'React' }, { value: 'vue', label: 'Vue' }]}>
+
+<TabItem value="angular">
+
+```javascript
+const toast = await this.toastController.create({
+  header: 'Header',
+  buttons: [
+    {
+      icon: 'close',
+      htmlAttributes: {
+        'aria-label': 'close',
+      },
+    },
+  ],
+});
+```
+
+</TabItem>
+
+<TabItem value="javascript">
+
+```javascript
+const toast = await this.toastController.create({
+  header: 'Header',
+  buttons: [
+    {
+      icon: 'close',
+      htmlAttributes: {
+        'aria-label': 'close',
+      },
+    },
+  ],
+});
+```
+
+</TabItem>
+
+<TabItem value="react">
+
+```javascript
+useIonToast({
+  header: 'Header',
+  buttons: [
+    {
+      icon: 'close',
+      htmlAttributes: {
+        'aria-label': 'close',
+      },
+    },
+  ],
+});
+```
+
+</TabItem>
+
+<TabItem value="vue">
+
+```javascript
+const toast = await toastController.create({
+  header: 'Header',
+  buttons: [
+    {
+      icon: 'close',
+      htmlAttributes: {
+        'aria-label': 'close',
+      },
+    },
+  ],
+});
+```
+
+</TabItem>
+
+</Tabs>
+
+### Tips
+
+While this is not a complete list, here are some guidelines to follow when using toasts.
+
+* Do not require user interaction to dismiss toasts. For example, having a "Dismiss" button in the toast is fine, but the toast should also automatically dismiss on its own after a timeout period. If you need user interaction for a notification, consider using an [alert](./alert) instead.
+
+* For toasts with long messages, consider adjusting the `duration` property to allow users enough time to read the content of the toast.
+
 ## Interfaces
 
 ### ToastButton
@@ -97,6 +203,7 @@ interface ToastButton {
   side?: 'start' | 'end';
   role?: 'cancel' | string;
   cssClass?: string | string[];
+  htmlAttributes?: { [key: string]: any };
   handler?: () => boolean | void | Promise<boolean | void>;
 }
 ```
@@ -125,28 +232,6 @@ interface ToastOptions {
   leaveAnimation?: AnimationBuilder;
 }
 ```
-
-## アクセシビリティ
-
-### フォーカスの管理
-
-トーストはさりげなく通知するものであり、ユーザーの邪魔をするものではありません。トーストを消すためにユーザーの操作が必要であってはなりません。そのため、トーストが表示されても、フォーカスが自動的に移動することはありません。
-
-### スクリーンリーダー
-
-`ion-toast` は、内側の `.toast-content` 要素に `role="status"` と `aria-live="polite"` を設定しています。これにより、スクリーンリーダーはトーストのメッセージとヘッダーのみをアナウンスするようになります。ボタンとアイコンはアナウンスされません。
-
-`aria-live`は、トーストの内容が更新されたときに、スクリーン・リーダーがその内容をアナウンスするようにします。しかし、属性が `'polite'` に設定されているため、スクリーン・リーダーは現在のタスクを中断してはいけません。
-
-トーストは微妙な通知であることを意図しているので、`aria-live`は決して`"assertive"`に設定されるべきではありません。もし開発者が重要なメッセージでユーザーを中断させる必要がある場合は、[alert](./alert)を使用することをお勧めします。
-
-### ヒント
-
-これは完全なリストではありませんが、トーストを使用する際に従うべきガイドラインをいくつか紹介します。
-
-* トーストの解除にユーザーの操作を必要としないようにします。例えば、トーストに "Dismiss"ボタンがあるのは良いのですが、タイムアウト時間が経過すると自動的にトーストが消えるようにすべきです。通知のためにユーザーの操作が必要な場合は、代わりに[alert](./alert)を使用することを検討してください。
-
-* 長いメッセージのトーストの場合は、`duration`プロパティを調整して、ユーザーがトーストの内容を読むのに十分な時間を確保することを検討してください。
 
 ## プロパティ
 <Props />

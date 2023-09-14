@@ -1,5 +1,5 @@
 {
-  "filePath": "./src/components/infinite-scroll-content/infinite-scroll-content.tsx",
+  "filePath": "src/components/infinite-scroll-content/infinite-scroll-content.tsx",
   "encapsulation": "none",
   "tag": "ion-infinite-scroll-content",
   "docs": "",
@@ -9,6 +9,17 @@
     {
       "name": "loadingSpinner",
       "type": "\"bubbles\" | \"circles\" | \"circular\" | \"crescent\" | \"dots\" | \"lines\" | \"lines-sharp\" | \"lines-sharp-small\" | \"lines-small\" | null | undefined",
+      "complexType": {
+        "original": "SpinnerTypes | null",
+        "resolved": "\"bubbles\" | \"circles\" | \"circular\" | \"crescent\" | \"dots\" | \"lines\" | \"lines-sharp\" | \"lines-sharp-small\" | \"lines-small\" | null | undefined",
+        "references": {
+          "SpinnerTypes": {
+            "location": "import",
+            "path": "../spinner/spinner-configs",
+            "id": "src/components/spinner/spinner-configs.ts::SpinnerTypes"
+          }
+        }
+      },
       "mutable": true,
       "attr": "loading-spinner",
       "reflectToAttr": false,
@@ -64,6 +75,17 @@
     {
       "name": "loadingText",
       "type": "IonicSafeString | string | undefined",
+      "complexType": {
+        "original": "string | IonicSafeString",
+        "resolved": "IonicSafeString | string | undefined",
+        "references": {
+          "IonicSafeString": {
+            "location": "import",
+            "path": "../../utils/sanitization",
+            "id": "src/utils/sanitization/index.ts::IonicSafeString"
+          }
+        }
+      },
       "mutable": false,
       "attr": "loading-text",
       "reflectToAttr": false,

@@ -9,7 +9,7 @@ import CustomProps from '@ionic-internal/component-api/v7/range/custom-props.md'
 import Slots from '@ionic-internal/component-api/v7/range/slots.md';
 
 <head>
-  <title>Range Slider | ion-range: Slider Knob Controls with Labels</title>
+  <title>ion-range: Range Slider Knob Controls with Labels</title>
   <meta name="description" content="ion-rangeは、スライダーを動かして値の範囲を選択することができます。2つのノブを使用できますが、1つは値を制御し、ラベルはどちらか一方に置くことができます。" />
 </head>
 
@@ -24,15 +24,15 @@ Rangeスライダは、スライダノブを動かして、ユーザーが値の
 
 ## Labels
 
-Labels should be used to describe the range. They can be used visually, and they will also be read out by screen readers when the user is focused on the range. This makes it easy for the user to understand the intent of the range. Range has several ways to assign a label:
+ラベルは、範囲を説明するために使用されるべきです。それらは視覚的に使用することができ、また、ユーザーがRangeをフォーカスしてるときに、スクリーンリーダーによって読み上げられます。これにより、ユーザーは範囲の意図を理解しやすくなります。範囲にはラベルを割り当てるいくつかの方法があります：
 
-- `label` property: used for plaintext labels
-- `label` slot: used for custom HTML labels
-- `aria-label`: used to provide a label for screen readers but adds no visible label
+- `label`プロパティ：プレーンテキストのラベルに使用する。
+- `label`スロット：カスタム HTML ラベルに使用する。
+- `aria-label`: スクリーンリーダー用のラベルとして使用されるが、ラベルは表示されない。
 
 ### Label Placement
 
-The below demo shows how to use the `labelPlacement` property to change the position of the label relative to the range. While the `label` property is used here, `labelPlacement` can also be used with the `label` slot.
+以下のデモでは、`labelPlacement` プロパティを使用して、範囲に対するラベルの位置を変更しています。ここでは `label` プロパティを使用しているが、`labelPlacement` は `label` スロットでも使用できます。
 
 import LabelsPlayground from '@site/static/usage/v7/range/labels/index.md';
 
@@ -40,7 +40,7 @@ import LabelsPlayground from '@site/static/usage/v7/range/labels/index.md';
 
 ### Label Slot
 
-While plaintext labels should be passed in via the `label` property, if custom HTML is needed, it can be passed through the `label` slot instead.
+プレーンテキストのラベルは `label` プロパティで渡すべきであるが、カスタムHTMLが必要な場合は、代わりに `label` スロットで渡すことができます。
 
 import LabelSlotPlayground from '@site/static/usage/v7/range/label-slot/index.md';
 
@@ -48,7 +48,7 @@ import LabelSlotPlayground from '@site/static/usage/v7/range/label-slot/index.md
 
 ### No Visible Label
 
-If no visible label is needed, developers should still supply an `aria-label` so the range is accessible to screen readers.
+もし表示するラベルが必要ない場合でも、開発者は`aria-label`を与えるべきです。
 
 import NoVisibleLabel from '@site/static/usage/v7/range/no-visible-label/index.md';
 
@@ -56,9 +56,9 @@ import NoVisibleLabel from '@site/static/usage/v7/range/no-visible-label/index.m
 
 ## Decorations
 
-Decorative elements can be passed into the `start` or `end` slots of the range. This is useful for adding icons such as low volume or high volume icons. Since these elements are decorative, they should not be announced by assistive technology such as screen readers.
+装飾的な要素は、範囲の `start` または `end` スロットに渡すことができます。これは、音量の小さいアイコンや大きいアイコンのようなアイコンを追加するのに便利です。これらの要素は装飾的なものなので、スクリーンリーダーのような支援技術によってアナウンスされるべきではありません。
 
-If the directionality of the document is set to left to right, the contents slotted to the `start` position will display to the left of the range, where as contents slotted to the `end` position will display to the right of the range. In right to left (rtl) directionality, the contents slotted to the `start` position will display to the right of the range, where as contents slotted to the `end` position will display to the left of the range.
+ドキュメントの方向性が左から右に設定されている場合、`start`位置にスロットされたコンテンツは範囲の左に表示され、`end`位置にスロットされたコンテンツは範囲の右に表示されます。右から左(rtl)の方向性の場合、`start`位置にスロットされたコンテンツは範囲の右側に表示され、`end`位置にスロットされたコンテンツは範囲の左側に表示されます。
 
 import DecorationsPlayground from '@site/static/usage/v7/range/slots/index.md';
 
@@ -128,17 +128,17 @@ import CSSParts from '@site/static/usage/v7/range/theming/css-shadow-parts/index
 
 <CSSParts />
 
-## Migrating from Legacy Range Syntax
+## レガシーな範囲構文からの移行
 
-A simpler range syntax was introduced in Ionic 7.0. This new syntax reduces the boilerplate required to setup an range, resolves accessibility issues, and improves the developer experience.
+Ionic 7.0では、よりシンプルな範囲構文が導入されました。この新しい構文は、範囲を設定するために必要な定型文を減らし、アクセシビリティの問題を解決し、開発者のエクスペリエンスを向上させます。
 
-Developers can perform this migration one range at a time. While developers can continue using the legacy syntax, we recommend migrating as soon as possible.
+開発者はこの移行を範囲ごとに実行できます。開発者は従来の構文を使い続けることもできますが、できるだけ早く移行することをお勧めします。
 
 ### 最新の構文の使い方
 
-Using the modern syntax involves removing the `ion-label` and passing the label to `ion-range` using the `label` property. The placement of the label can be configured using the `labelPlacement` property.
+最新の構文を使用するには、`ion-label` を削除し、`label` プロパティを使用して `ion-range` にラベルを渡します。ラベルの配置は `labelPlacement` プロパティを使用して設定することができます。
 
-If custom HTML is needed for the label, it can be passed directly inside the `ion-range` using the `label` slot instead.
+ラベルにカスタム HTML が必要な場合は、代わりに `label` スロットを使用して `ion-range` 内に直接渡すことができる。
 
 import Migration from '@site/static/usage/v7/range/migration/index.md';
 
@@ -146,12 +146,12 @@ import Migration from '@site/static/usage/v7/range/migration/index.md';
 
 
 :::note
-In past versions of Ionic, `ion-item` was required for `ion-range` to function properly. Starting in Ionic 7.0, `ion-range` should only be used in an `ion-item` when the item is placed in an `ion-list`. Additionally, `ion-item` is no longer required for `ion-range` to function properly.
+Ionic の過去のバージョンでは、`ion-range` が正しく機能するためには `ion-item` が必要でした。Ionic 7.0 以降では、`ion-range` は `ion-item` 内でアイテムを `ion-list` に配置する場合にのみ使用します。また、`ion-range` が正しく機能するためには、`ion-item` は不要になりました。
 :::
 
-### Using the Legacy Syntax
+### レガシー構文の使用
 
-Ionic uses heuristics to detect if an app is using the modern range syntax. In some instances, it may be preferable to continue using the legacy syntax. Developers can set the `legacy` property on `ion-range` to `true` to force that instance of the range to use the legacy syntax.
+Ionicは、アプリが最新の範囲構文を使用しているかどうかをヒューリスティックで検出します。場合によっては、レガシー構文を使い続けた方が望ましいこともあります。開発者は `ion-range` の `legacy` プロパティを `true` に設定することで、そのインスタンスにレガシー構文を使用させることができます。
 
 
 ## Interfaces

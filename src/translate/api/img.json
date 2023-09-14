@@ -1,5 +1,5 @@
 {
-  "filePath": "./src/components/img/img.tsx",
+  "filePath": "src/components/img/img.tsx",
   "encapsulation": "shadow",
   "tag": "ion-img",
   "docs": "",
@@ -14,6 +14,11 @@
     {
       "name": "alt",
       "type": "string | undefined",
+      "complexType": {
+        "original": "string",
+        "resolved": "string | undefined",
+        "references": {}
+      },
       "mutable": false,
       "attr": "alt",
       "reflectToAttr": false,
@@ -33,6 +38,11 @@
     {
       "name": "src",
       "type": "string | undefined",
+      "complexType": {
+        "original": "string",
+        "resolved": "string | undefined",
+        "references": {}
+      },
       "mutable": false,
       "attr": "src",
       "reflectToAttr": false,
@@ -56,6 +66,11 @@
       "event": "ionError",
       "detail": "void",
       "bubbles": true,
+      "complexType": {
+        "original": "void",
+        "resolved": "void",
+        "references": {}
+      },
       "cancelable": true,
       "composed": true,
       "docs": "Emitted when the img fails to load",
@@ -65,6 +80,11 @@
       "event": "ionImgDidLoad",
       "detail": "void",
       "bubbles": true,
+      "complexType": {
+        "original": "void",
+        "resolved": "void",
+        "references": {}
+      },
       "cancelable": true,
       "composed": true,
       "docs": "Emitted when the image has finished loading",
@@ -74,6 +94,11 @@
       "event": "ionImgWillLoad",
       "detail": "void",
       "bubbles": true,
+      "complexType": {
+        "original": "void",
+        "resolved": "void",
+        "references": {}
+      },
       "cancelable": true,
       "composed": true,
       "docs": "Emitted when the img src has been set",

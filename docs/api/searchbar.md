@@ -9,7 +9,7 @@ import CustomProps from '@ionic-internal/component-api/v7/searchbar/custom-props
 import Slots from '@ionic-internal/component-api/v7/searchbar/slots.md';
 
 <head>
-  <title>Search Bar Icon for Keyboard Text Display | Ion-Search Bar</title>
+  <title>ion-searchbar: Search Bar for Searching a Collection</title>
   <meta name="description" content="Search barsは、コレクションを検索するために使用できるテキストフィールドを表します。AndroidとiOSのキーボード表示で、Ion-Search Barをアイコンとして入力する方法をご紹介します。" />
 </head>
 

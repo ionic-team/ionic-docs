@@ -1,5 +1,5 @@
 {
-  "filePath": "./src/components/reorder-group/reorder-group.tsx",
+  "filePath": "src/components/reorder-group/reorder-group.tsx",
   "encapsulation": "none",
   "tag": "ion-reorder-group",
   "docs": "",
@@ -9,6 +9,11 @@
     {
       "name": "disabled",
       "type": "boolean",
+      "complexType": {
+        "original": "boolean",
+        "resolved": "boolean",
+        "references": {}
+      },
       "mutable": false,
       "attr": "disabled",
       "reflectToAttr": false,
@@ -31,6 +36,27 @@
         "type": "Promise<any>",
         "docs": ""
       },
+      "complexType": {
+        "signature": "(listOrReorder?: boolean | any[]) => Promise<any>",
+        "parameters": [
+          {
+            "tags": [
+              {
+                "name": "param",
+                "text": "listOrReorder A list of items to be sorted and returned in the new order or a\nboolean of whether or not the reorder should reposition the item."
+              }
+            ],
+            "text": "A list of items to be sorted and returned in the new order or a\nboolean of whether or not the reorder should reposition the item."
+          }
+        ],
+        "references": {
+          "Promise": {
+            "location": "global",
+            "id": "global::Promise"
+          }
+        },
+        "return": "Promise<any>"
+      },
       "signature": "complete(listOrReorder?: boolean | any[]) => Promise<any>",
       "parameters": [],
       "docs": "Completes the reorder operation. Must be called by the `ionItemReorder` event.\n\nIf a list of items is passed, the list will be reordered and returned in the\nproper order.\n\nIf no parameters are passed or if `true` is passed in, the reorder will complete\nand the item will remain in the position it was dragged to. If `false` is passed,\nthe reorder will complete and the item will bounce back to its original position.",
@@ -47,6 +73,17 @@
       "event": "ionItemReorder",
       "detail": "ItemReorderEventDetail",
       "bubbles": true,
+      "complexType": {
+        "original": "ItemReorderEventDetail",
+        "resolved": "ItemReorderEventDetail",
+        "references": {
+          "ItemReorderEventDetail": {
+            "location": "import",
+            "path": "./reorder-group-interface",
+            "id": "src/components/reorder-group/reorder-group-interface.ts::ItemReorderEventDetail"
+          }
+        }
+      },
       "cancelable": true,
       "composed": true,
       "docs": "Event that needs to be listened to in order to complete the reorder action.\nOnce the event has been emitted, the `complete()` method then needs\nto be called in order to finalize the reorder action.",

@@ -9,14 +9,14 @@ import CustomProps from '@ionic-internal/component-api/v7/radio-group/custom-pro
 import Slots from '@ionic-internal/component-api/v7/radio-group/slots.md';
 
 <head>
-  <title>ion-radio-group | Radio Button Group Usage for Ionic Apps</title>
+  <title>ion-radio-group: Radio Button Group Usage for Ionic Apps</title>
   <meta name="description" content="radio groupとは、radioボタンのグループです。radio groupは、ユーザーがセットから最大1つのradioボタンを選択できるようにします。 ion-radio-groupの使用方法について、詳しくはこちらをご覧ください。" />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 
-A radio group is a container for a group of [radios](./radio). It allows a user to select at most one radio button from a set. Checking one radio button that belongs to a radio group unchecks any previous checked radio button within the same group. For example usage of the radio group, see the [radio](./radio) documentation.
+ラジオ・グループは、[ラジオ](./radio)のグループのためのコンテナです。ラジオグループは、ユーザーがラジオボタンを1つだけ選択できるようにします。ラジオ・グループに属するラジオ・ボタンを1つチェックすると、同じグループ内で以前にチェックされたラジオ・ボタンのチェックは解除されます。ラジオ・グループの使用例については、[radio](./radio)のドキュメントを参照してください。
 
 
 ## Interfaces

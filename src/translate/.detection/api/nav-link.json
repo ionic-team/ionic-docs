@@ -1,5 +1,5 @@
 {
-  "filePath": "./src/components/nav-link/nav-link.tsx",
+  "filePath": "src/components/nav-link/nav-link.tsx",
   "encapsulation": "none",
   "tag": "ion-nav-link",
   "docs": "",
@@ -9,6 +9,17 @@
     {
       "name": "component",
       "type": "Function | HTMLElement | ViewController | null | string | undefined",
+      "complexType": {
+        "original": "NavComponent",
+        "resolved": "Function | HTMLElement | ViewController | null | string | undefined",
+        "references": {
+          "NavComponent": {
+            "location": "import",
+            "path": "../nav/nav-interface",
+            "id": "src/components/nav/nav-interface.ts::NavComponent"
+          }
+        }
+      },
       "mutable": false,
       "attr": "component",
       "reflectToAttr": false,
@@ -40,6 +51,17 @@
     {
       "name": "componentProps",
       "type": "undefined | { [key: string]: any; }",
+      "complexType": {
+        "original": "ComponentProps",
+        "resolved": "undefined | { [key: string]: any; }",
+        "references": {
+          "ComponentProps": {
+            "location": "import",
+            "path": "../../interface",
+            "id": "src/interface.d.ts::ComponentProps"
+          }
+        }
+      },
       "mutable": false,
       "reflectToAttr": false,
       "docs": "Data you want to pass to the component as props. Only used if the `\"routerDirection\"` is `\"forward\"` or `\"root\"`.",
@@ -58,6 +80,17 @@
     {
       "name": "routerAnimation",
       "type": "((baseEl: any, opts?: any) => Animation) | undefined",
+      "complexType": {
+        "original": "AnimationBuilder",
+        "resolved": "((baseEl: any, opts?: any) => Animation) | undefined",
+        "references": {
+          "AnimationBuilder": {
+            "location": "import",
+            "path": "../../interface",
+            "id": "src/interface.d.ts::AnimationBuilder"
+          }
+        }
+      },
       "mutable": false,
       "reflectToAttr": false,
       "docs": "The transition animation when navigating to another page.",
@@ -76,6 +109,17 @@
     {
       "name": "routerDirection",
       "type": "\"back\" | \"forward\" | \"root\"",
+      "complexType": {
+        "original": "RouterDirection",
+        "resolved": "\"back\" | \"forward\" | \"root\"",
+        "references": {
+          "RouterDirection": {
+            "location": "import",
+            "path": "../router/utils/interface",
+            "id": "src/components/router/utils/interface.ts::RouterDirection"
+          }
+        }
+      },
       "mutable": false,
       "attr": "router-direction",
       "reflectToAttr": false,

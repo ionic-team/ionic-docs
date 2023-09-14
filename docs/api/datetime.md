@@ -241,9 +241,9 @@ import Wheel from '@site/static/usage/v7/datetime/presentation/wheel/index.md';
 
 <Wheel />
 
-## Multiple Date Selection
+## 複数の日付の選択
 
-If the `multiple` property is set to `true`, multiple dates can be selected from the calendar picker. Clicking a selected date will deselect it.
+`multiple`プロパティが`true`に設定されている場合、カレンダーピッカーから複数の日付を選択することができます。選択した日付をクリックすると選択が解除されます。
 
 :::note
 This property is only supported when using `presentation="date"` and `preferWheel="false"`.
@@ -287,31 +287,31 @@ This property is only supported when using `presentation="date"` and `preferWhee
 
 <CustomizingButtons />
 
-## Highlighting Specific Dates
+## 特定の日付をハイライトする
 
-Using the `highlightedDates` property, developers can style particular dates with custom text or background colors. This property can be defined as either an array of dates and their colors, or a callback that receives an ISO string and returns the colors to use.
+`highlightedDates`プロパティを使用すると、開発者は特定の日付をカスタムテキストや背景色でスタイル設定することができます。このプロパティは、日付とその色の配列として定義するか、ISO 文字列を受け取って使用する色を返すコールバックとして定義することができます。
 
-When specifying colors, any valid CSS color format can be used. This includes hex codes, rgba, [color variables](../theming/colors), etc.
+色を指定する場合は、有効な CSS カラーフォーマットを使用できます。これには、16進コード、rgba、[color variables](../theming/colors) などが含まれます。
 
-To maintain a consistent user experience, the style of selected date(s) will always override custom highlights.
+一貫したユーザーエクスペリエンスを維持するため、選択された日付のスタイルは常にカスタムハイライトよりも優先されます。
 
 :::note
 This property is only supported when `preferWheel="false"`, and using a `presentation` of either `"date"`, `"date-time"`, or `"time-date"`.
 :::
 
-### Using Array
+### 配列を利用
 
-An array is better when the highlights apply to fixed dates, such as due dates.
+ハイライトが期日などの固定された日付に適用される場合は、配列の方が適しています。
 
 <HighlightedDatesArray />
 
-### Using Callback
+### Callbackを利用
 
-A callback is better when the highlighted dates are recurring, such as birthdays or recurring meetings.
+誕生日や定期的なミーティングなど、ハイライトされた日付が繰り返される場合は、コールバックを使用した方がよいでしょう。
 
 <HighlightedDatesCallback />
 
-## Styling
+## スタイリング
 
 ### グローバルテーマ
 
@@ -323,7 +323,7 @@ Ionicの強力なテーマシステムを使用すると、特定のテーマに
 
 ### Wheel Pickers
 
-The wheels used in `ion-datetime` can be styled through a combination of shadow parts and CSS variables. This applies to both the columns in wheel-style datetimes, and the month/year picker in grid-style datetimes.
+`ion-datetime`で使用するホイールは、シャドウパーツとCSS変数を組み合わせてスタイルを設定することができます。これは、ホイールスタイルのdatetimeのカラムにも、グリッドスタイルのdatetimeの月/年のピッカーにも適用されます。
 
 <WheelStyling />
 

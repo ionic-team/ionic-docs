@@ -1,5 +1,5 @@
 {
-  "filePath": "./src/components/list-header/list-header.tsx",
+  "filePath": "src/components/list-header/list-header.tsx",
   "encapsulation": "shadow",
   "tag": "ion-list-header",
   "docs": "",
@@ -14,6 +14,17 @@
     {
       "name": "color",
       "type": "\"danger\" | \"dark\" | \"light\" | \"medium\" | \"primary\" | \"secondary\" | \"success\" | \"tertiary\" | \"warning\" | string & Record<never, never> | undefined",
+      "complexType": {
+        "original": "Color",
+        "resolved": "\"danger\" | \"dark\" | \"light\" | \"medium\" | \"primary\" | \"secondary\" | \"success\" | \"tertiary\" | \"warning\" | string & Record<never, never> | undefined",
+        "references": {
+          "Color": {
+            "location": "import",
+            "path": "../../interface",
+            "id": "src/interface.d.ts::Color"
+          }
+        }
+      },
       "mutable": false,
       "attr": "color",
       "reflectToAttr": true,
@@ -69,6 +80,11 @@
     {
       "name": "lines",
       "type": "\"full\" | \"inset\" | \"none\" | undefined",
+      "complexType": {
+        "original": "'full' | 'inset' | 'none'",
+        "resolved": "\"full\" | \"inset\" | \"none\" | undefined",
+        "references": {}
+      },
       "mutable": false,
       "attr": "lines",
       "reflectToAttr": false,

@@ -1,5 +1,5 @@
 {
-  "filePath": "./src/components/nav/nav.tsx",
+  "filePath": "src/components/nav/nav.tsx",
   "encapsulation": "shadow",
   "tag": "ion-nav",
   "docs": "",
@@ -9,6 +9,11 @@
     {
       "name": "animated",
       "type": "boolean",
+      "complexType": {
+        "original": "boolean",
+        "resolved": "boolean",
+        "references": {}
+      },
       "mutable": false,
       "attr": "animated",
       "reflectToAttr": false,
@@ -26,6 +31,17 @@
     {
       "name": "animation",
       "type": "((baseEl: any, opts?: any) => Animation) | undefined",
+      "complexType": {
+        "original": "AnimationBuilder",
+        "resolved": "((baseEl: any, opts?: any) => Animation) | undefined",
+        "references": {
+          "AnimationBuilder": {
+            "location": "import",
+            "path": "../../interface",
+            "id": "src/interface.d.ts::AnimationBuilder"
+          }
+        }
+      },
       "mutable": false,
       "reflectToAttr": false,
       "docs": "By default `ion-nav` animates transition between pages based in the mode (ios or material design).\nHowever, this property allows to create custom transition using `AnimationBuilder` functions.",
@@ -44,6 +60,17 @@
     {
       "name": "root",
       "type": "Function | HTMLElement | ViewController | null | string | undefined",
+      "complexType": {
+        "original": "NavComponent",
+        "resolved": "Function | HTMLElement | ViewController | null | string | undefined",
+        "references": {
+          "NavComponent": {
+            "location": "import",
+            "path": "./nav-interface",
+            "id": "src/components/nav/nav-interface.ts::NavComponent"
+          }
+        }
+      },
       "mutable": false,
       "attr": "root",
       "reflectToAttr": false,
@@ -75,6 +102,17 @@
     {
       "name": "rootParams",
       "type": "undefined | { [key: string]: any; }",
+      "complexType": {
+        "original": "ComponentProps",
+        "resolved": "undefined | { [key: string]: any; }",
+        "references": {
+          "ComponentProps": {
+            "location": "import",
+            "path": "../../interface",
+            "id": "src/interface.d.ts::ComponentProps"
+          }
+        }
+      },
       "mutable": false,
       "reflectToAttr": false,
       "docs": "Any parameters for the root component",
@@ -93,6 +131,11 @@
     {
       "name": "swipeGesture",
       "type": "boolean | undefined",
+      "complexType": {
+        "original": "boolean",
+        "resolved": "boolean | undefined",
+        "references": {}
+      },
       "mutable": true,
       "attr": "swipe-gesture",
       "reflectToAttr": false,
@@ -117,6 +160,32 @@
         "type": "Promise<boolean>",
         "docs": ""
       },
+      "complexType": {
+        "signature": "(view?: ViewController) => Promise<boolean>",
+        "parameters": [
+          {
+            "tags": [
+              {
+                "name": "param",
+                "text": "view The view to check."
+              }
+            ],
+            "text": "The view to check."
+          }
+        ],
+        "references": {
+          "Promise": {
+            "location": "global",
+            "id": "global::Promise"
+          },
+          "ViewController": {
+            "location": "import",
+            "path": "./view-controller",
+            "id": "src/components/nav/view-controller.ts::ViewController"
+          }
+        },
+        "return": "Promise<boolean>"
+      },
       "signature": "canGoBack(view?: ViewController) => Promise<boolean>",
       "parameters": [],
       "docs": "Returns `true` if the current view can go back.",
@@ -133,6 +202,22 @@
         "type": "Promise<ViewController | undefined>",
         "docs": ""
       },
+      "complexType": {
+        "signature": "() => Promise<ViewController | undefined>",
+        "parameters": [],
+        "references": {
+          "Promise": {
+            "location": "global",
+            "id": "global::Promise"
+          },
+          "ViewController": {
+            "location": "import",
+            "path": "./view-controller",
+            "id": "src/components/nav/view-controller.ts::ViewController"
+          }
+        },
+        "return": "Promise<ViewController | undefined>"
+      },
       "signature": "getActive() => Promise<ViewController | undefined>",
       "parameters": [],
       "docs": "Get the active view.",
@@ -143,6 +228,32 @@
       "returns": {
         "type": "Promise<ViewController | undefined>",
         "docs": ""
+      },
+      "complexType": {
+        "signature": "(index: number) => Promise<ViewController | undefined>",
+        "parameters": [
+          {
+            "tags": [
+              {
+                "name": "param",
+                "text": "index The index of the view."
+              }
+            ],
+            "text": "The index of the view."
+          }
+        ],
+        "references": {
+          "Promise": {
+            "location": "global",
+            "id": "global::Promise"
+          },
+          "ViewController": {
+            "location": "import",
+            "path": "./view-controller",
+            "id": "src/components/nav/view-controller.ts::ViewController"
+          }
+        },
+        "return": "Promise<ViewController | undefined>"
       },
       "signature": "getByIndex(index: number) => Promise<ViewController | undefined>",
       "parameters": [],
@@ -160,6 +271,32 @@
         "type": "Promise<ViewController | undefined>",
         "docs": ""
       },
+      "complexType": {
+        "signature": "(view?: ViewController) => Promise<ViewController | undefined>",
+        "parameters": [
+          {
+            "tags": [
+              {
+                "name": "param",
+                "text": "view The view to get."
+              }
+            ],
+            "text": "The view to get."
+          }
+        ],
+        "references": {
+          "Promise": {
+            "location": "global",
+            "id": "global::Promise"
+          },
+          "ViewController": {
+            "location": "import",
+            "path": "./view-controller",
+            "id": "src/components/nav/view-controller.ts::ViewController"
+          }
+        },
+        "return": "Promise<ViewController | undefined>"
+      },
       "signature": "getPrevious(view?: ViewController) => Promise<ViewController | undefined>",
       "parameters": [],
       "docs": "Get the previous view.",
@@ -175,6 +312,87 @@
       "returns": {
         "type": "Promise<boolean>",
         "docs": ""
+      },
+      "complexType": {
+        "signature": "<T extends NavComponent>(insertIndex: number, component: T, componentProps?: ComponentProps<T> | null, opts?: NavOptions | null, done?: TransitionDoneFn) => Promise<boolean>",
+        "parameters": [
+          {
+            "tags": [
+              {
+                "name": "param",
+                "text": "insertIndex The index to insert the component at in the stack."
+              }
+            ],
+            "text": "The index to insert the component at in the stack."
+          },
+          {
+            "tags": [
+              {
+                "name": "param",
+                "text": "component The component to insert into the navigation stack."
+              }
+            ],
+            "text": "The component to insert into the navigation stack."
+          },
+          {
+            "tags": [
+              {
+                "name": "param",
+                "text": "componentProps Any properties of the component."
+              }
+            ],
+            "text": "Any properties of the component."
+          },
+          {
+            "tags": [
+              {
+                "name": "param",
+                "text": "opts The navigation options."
+              }
+            ],
+            "text": "The navigation options."
+          },
+          {
+            "tags": [
+              {
+                "name": "param",
+                "text": "done The transition complete function."
+              }
+            ],
+            "text": "The transition complete function."
+          }
+        ],
+        "references": {
+          "Promise": {
+            "location": "global",
+            "id": "global::Promise"
+          },
+          "NavComponent": {
+            "location": "import",
+            "path": "./nav-interface",
+            "id": "src/components/nav/nav-interface.ts::NavComponent"
+          },
+          "T": {
+            "location": "global",
+            "id": "global::T"
+          },
+          "ComponentProps": {
+            "location": "import",
+            "path": "../../interface",
+            "id": "src/interface.d.ts::ComponentProps"
+          },
+          "NavOptions": {
+            "location": "import",
+            "path": "./nav-interface",
+            "id": "src/components/nav/nav-interface.ts::NavOptions"
+          },
+          "TransitionDoneFn": {
+            "location": "import",
+            "path": "./nav-interface",
+            "id": "src/components/nav/nav-interface.ts::TransitionDoneFn"
+          }
+        },
+        "return": "Promise<boolean>"
       },
       "signature": "insert<T extends NavComponent>(insertIndex: number, component: T, componentProps?: ComponentProps<T> | null, opts?: NavOptions | null, done?: TransitionDoneFn) => Promise<boolean>",
       "parameters": [],
@@ -208,6 +426,74 @@
         "type": "Promise<boolean>",
         "docs": ""
       },
+      "complexType": {
+        "signature": "(insertIndex: number, insertComponents: NavComponent[] | NavComponentWithProps[], opts?: NavOptions | null, done?: TransitionDoneFn) => Promise<boolean>",
+        "parameters": [
+          {
+            "tags": [
+              {
+                "name": "param",
+                "text": "insertIndex The index to insert the components at in the stack."
+              }
+            ],
+            "text": "The index to insert the components at in the stack."
+          },
+          {
+            "tags": [
+              {
+                "name": "param",
+                "text": "insertComponents The components to insert into the navigation stack."
+              }
+            ],
+            "text": "The components to insert into the navigation stack."
+          },
+          {
+            "tags": [
+              {
+                "name": "param",
+                "text": "opts The navigation options."
+              }
+            ],
+            "text": "The navigation options."
+          },
+          {
+            "tags": [
+              {
+                "name": "param",
+                "text": "done The transition complete function."
+              }
+            ],
+            "text": "The transition complete function."
+          }
+        ],
+        "references": {
+          "Promise": {
+            "location": "global",
+            "id": "global::Promise"
+          },
+          "NavComponent": {
+            "location": "import",
+            "path": "./nav-interface",
+            "id": "src/components/nav/nav-interface.ts::NavComponent"
+          },
+          "NavComponentWithProps": {
+            "location": "import",
+            "path": "./nav-interface",
+            "id": "src/components/nav/nav-interface.ts::NavComponentWithProps"
+          },
+          "NavOptions": {
+            "location": "import",
+            "path": "./nav-interface",
+            "id": "src/components/nav/nav-interface.ts::NavOptions"
+          },
+          "TransitionDoneFn": {
+            "location": "import",
+            "path": "./nav-interface",
+            "id": "src/components/nav/nav-interface.ts::TransitionDoneFn"
+          }
+        },
+        "return": "Promise<boolean>"
+      },
       "signature": "insertPages(insertIndex: number, insertComponents: NavComponent[] | NavComponentWithProps[], opts?: NavOptions | null, done?: TransitionDoneFn) => Promise<boolean>",
       "parameters": [],
       "docs": "Inserts an array of components into the navigation stack at the specified index.\nThe last component in the array will become instantiated as a view, and animate\nin to become the active view.",
@@ -236,6 +522,46 @@
         "type": "Promise<boolean>",
         "docs": ""
       },
+      "complexType": {
+        "signature": "(opts?: NavOptions | null, done?: TransitionDoneFn) => Promise<boolean>",
+        "parameters": [
+          {
+            "tags": [
+              {
+                "name": "param",
+                "text": "opts The navigation options."
+              }
+            ],
+            "text": "The navigation options."
+          },
+          {
+            "tags": [
+              {
+                "name": "param",
+                "text": "done The transition complete function."
+              }
+            ],
+            "text": "The transition complete function."
+          }
+        ],
+        "references": {
+          "Promise": {
+            "location": "global",
+            "id": "global::Promise"
+          },
+          "NavOptions": {
+            "location": "import",
+            "path": "./nav-interface",
+            "id": "src/components/nav/nav-interface.ts::NavOptions"
+          },
+          "TransitionDoneFn": {
+            "location": "import",
+            "path": "./nav-interface",
+            "id": "src/components/nav/nav-interface.ts::TransitionDoneFn"
+          }
+        },
+        "return": "Promise<boolean>"
+      },
       "signature": "pop(opts?: NavOptions | null, done?: TransitionDoneFn) => Promise<boolean>",
       "parameters": [],
       "docs": "Pop a component off of the navigation stack. Navigates back from the current\ncomponent.",
@@ -255,6 +581,65 @@
       "returns": {
         "type": "Promise<boolean>",
         "docs": ""
+      },
+      "complexType": {
+        "signature": "(indexOrViewCtrl: number | ViewController, opts?: NavOptions | null, done?: TransitionDoneFn) => Promise<boolean>",
+        "parameters": [
+          {
+            "tags": [
+              {
+                "name": "param",
+                "text": "indexOrViewCtrl The index or view controller to pop to."
+              }
+            ],
+            "text": "The index or view controller to pop to."
+          },
+          {
+            "tags": [
+              {
+                "name": "param",
+                "text": "opts The navigation options."
+              }
+            ],
+            "text": "The navigation options."
+          },
+          {
+            "tags": [
+              {
+                "name": "param",
+                "text": "done The transition complete function."
+              }
+            ],
+            "text": "The transition complete function."
+          }
+        ],
+        "references": {
+          "Promise": {
+            "location": "global",
+            "id": "global::Promise"
+          },
+          "ViewController": {
+            "location": "import",
+            "path": "./view-controller",
+            "id": "src/components/nav/view-controller.ts::ViewController"
+          },
+          "NavOptions": {
+            "location": "import",
+            "path": "./nav-interface",
+            "id": "src/components/nav/nav-interface.ts::NavOptions"
+          },
+          "TransitionDoneFn": {
+            "location": "import",
+            "path": "./nav-interface",
+            "id": "src/components/nav/nav-interface.ts::TransitionDoneFn"
+          },
+          "TransitionInstruction": {
+            "location": "import",
+            "path": "./nav-interface",
+            "id": "src/components/nav/nav-interface.ts::TransitionInstruction"
+          }
+        },
+        "return": "Promise<boolean>"
       },
       "signature": "popTo(indexOrViewCtrl: number | ViewController, opts?: NavOptions | null, done?: TransitionDoneFn) => Promise<boolean>",
       "parameters": [],
@@ -280,6 +665,46 @@
         "type": "Promise<boolean>",
         "docs": ""
       },
+      "complexType": {
+        "signature": "(opts?: NavOptions | null, done?: TransitionDoneFn) => Promise<boolean>",
+        "parameters": [
+          {
+            "tags": [
+              {
+                "name": "param",
+                "text": "opts The navigation options."
+              }
+            ],
+            "text": "The navigation options."
+          },
+          {
+            "tags": [
+              {
+                "name": "param",
+                "text": "done The transition complete function."
+              }
+            ],
+            "text": "The transition complete function."
+          }
+        ],
+        "references": {
+          "Promise": {
+            "location": "global",
+            "id": "global::Promise"
+          },
+          "NavOptions": {
+            "location": "import",
+            "path": "./nav-interface",
+            "id": "src/components/nav/nav-interface.ts::NavOptions"
+          },
+          "TransitionDoneFn": {
+            "location": "import",
+            "path": "./nav-interface",
+            "id": "src/components/nav/nav-interface.ts::TransitionDoneFn"
+          }
+        },
+        "return": "Promise<boolean>"
+      },
       "signature": "popToRoot(opts?: NavOptions | null, done?: TransitionDoneFn) => Promise<boolean>",
       "parameters": [],
       "docs": "Navigate back to the root of the stack, no matter how far back that is.",
@@ -299,6 +724,78 @@
       "returns": {
         "type": "Promise<boolean>",
         "docs": ""
+      },
+      "complexType": {
+        "signature": "<T extends NavComponent>(component: T, componentProps?: ComponentProps<T> | null, opts?: NavOptions | null, done?: TransitionDoneFn) => Promise<boolean>",
+        "parameters": [
+          {
+            "tags": [
+              {
+                "name": "param",
+                "text": "component The component to push onto the navigation stack."
+              }
+            ],
+            "text": "The component to push onto the navigation stack."
+          },
+          {
+            "tags": [
+              {
+                "name": "param",
+                "text": "componentProps Any properties of the component."
+              }
+            ],
+            "text": "Any properties of the component."
+          },
+          {
+            "tags": [
+              {
+                "name": "param",
+                "text": "opts The navigation options."
+              }
+            ],
+            "text": "The navigation options."
+          },
+          {
+            "tags": [
+              {
+                "name": "param",
+                "text": "done The transition complete function."
+              }
+            ],
+            "text": "The transition complete function."
+          }
+        ],
+        "references": {
+          "Promise": {
+            "location": "global",
+            "id": "global::Promise"
+          },
+          "NavComponent": {
+            "location": "import",
+            "path": "./nav-interface",
+            "id": "src/components/nav/nav-interface.ts::NavComponent"
+          },
+          "T": {
+            "location": "global",
+            "id": "global::T"
+          },
+          "ComponentProps": {
+            "location": "import",
+            "path": "../../interface",
+            "id": "src/interface.d.ts::ComponentProps"
+          },
+          "NavOptions": {
+            "location": "import",
+            "path": "./nav-interface",
+            "id": "src/components/nav/nav-interface.ts::NavOptions"
+          },
+          "TransitionDoneFn": {
+            "location": "import",
+            "path": "./nav-interface",
+            "id": "src/components/nav/nav-interface.ts::TransitionDoneFn"
+          }
+        },
+        "return": "Promise<boolean>"
       },
       "signature": "push<T extends NavComponent>(component: T, componentProps?: ComponentProps<T> | null, opts?: NavOptions | null, done?: TransitionDoneFn) => Promise<boolean>",
       "parameters": [],
@@ -328,6 +825,64 @@
         "type": "Promise<boolean>",
         "docs": ""
       },
+      "complexType": {
+        "signature": "(startIndex: number, removeCount?: number, opts?: NavOptions | null, done?: TransitionDoneFn) => Promise<boolean>",
+        "parameters": [
+          {
+            "tags": [
+              {
+                "name": "param",
+                "text": "startIndex The number to begin removal at."
+              }
+            ],
+            "text": "The number to begin removal at."
+          },
+          {
+            "tags": [
+              {
+                "name": "param",
+                "text": "removeCount The number of components to remove."
+              }
+            ],
+            "text": "The number of components to remove."
+          },
+          {
+            "tags": [
+              {
+                "name": "param",
+                "text": "opts The navigation options."
+              }
+            ],
+            "text": "The navigation options."
+          },
+          {
+            "tags": [
+              {
+                "name": "param",
+                "text": "done The transition complete function."
+              }
+            ],
+            "text": "The transition complete function."
+          }
+        ],
+        "references": {
+          "Promise": {
+            "location": "global",
+            "id": "global::Promise"
+          },
+          "NavOptions": {
+            "location": "import",
+            "path": "./nav-interface",
+            "id": "src/components/nav/nav-interface.ts::NavOptions"
+          },
+          "TransitionDoneFn": {
+            "location": "import",
+            "path": "./nav-interface",
+            "id": "src/components/nav/nav-interface.ts::TransitionDoneFn"
+          }
+        },
+        "return": "Promise<boolean>"
+      },
       "signature": "removeIndex(startIndex: number, removeCount?: number, opts?: NavOptions | null, done?: TransitionDoneFn) => Promise<boolean>",
       "parameters": [],
       "docs": "Removes a component from the navigation stack at the specified index.",
@@ -356,6 +911,65 @@
         "type": "Promise<boolean>",
         "docs": ""
       },
+      "complexType": {
+        "signature": "(views: NavComponent[] | NavComponentWithProps[], opts?: NavOptions | null, done?: TransitionDoneFn) => Promise<boolean>",
+        "parameters": [
+          {
+            "tags": [
+              {
+                "name": "param",
+                "text": "views The list of views to set as the navigation stack."
+              }
+            ],
+            "text": "The list of views to set as the navigation stack."
+          },
+          {
+            "tags": [
+              {
+                "name": "param",
+                "text": "opts The navigation options."
+              }
+            ],
+            "text": "The navigation options."
+          },
+          {
+            "tags": [
+              {
+                "name": "param",
+                "text": "done The transition complete function."
+              }
+            ],
+            "text": "The transition complete function."
+          }
+        ],
+        "references": {
+          "Promise": {
+            "location": "global",
+            "id": "global::Promise"
+          },
+          "NavComponent": {
+            "location": "import",
+            "path": "./nav-interface",
+            "id": "src/components/nav/nav-interface.ts::NavComponent"
+          },
+          "NavComponentWithProps": {
+            "location": "import",
+            "path": "./nav-interface",
+            "id": "src/components/nav/nav-interface.ts::NavComponentWithProps"
+          },
+          "NavOptions": {
+            "location": "import",
+            "path": "./nav-interface",
+            "id": "src/components/nav/nav-interface.ts::NavOptions"
+          },
+          "TransitionDoneFn": {
+            "location": "import",
+            "path": "./nav-interface",
+            "id": "src/components/nav/nav-interface.ts::TransitionDoneFn"
+          }
+        },
+        "return": "Promise<boolean>"
+      },
       "signature": "setPages(views: NavComponent[] | NavComponentWithProps[], opts?: NavOptions | null, done?: TransitionDoneFn) => Promise<boolean>",
       "parameters": [],
       "docs": "Set the views of the current navigation stack and navigate to the last view.\nBy default animations are disabled, but they can be enabled by passing options\nto the navigation controller. Navigation parameters can also be passed to the\nindividual pages in the array.",
@@ -379,6 +993,78 @@
       "returns": {
         "type": "Promise<boolean>",
         "docs": ""
+      },
+      "complexType": {
+        "signature": "<T extends NavComponent>(component: T, componentProps?: ComponentProps<T> | null, opts?: NavOptions | null, done?: TransitionDoneFn) => Promise<boolean>",
+        "parameters": [
+          {
+            "tags": [
+              {
+                "name": "param",
+                "text": "component The component to set as the root of the navigation stack."
+              }
+            ],
+            "text": "The component to set as the root of the navigation stack."
+          },
+          {
+            "tags": [
+              {
+                "name": "param",
+                "text": "componentProps Any properties of the component."
+              }
+            ],
+            "text": "Any properties of the component."
+          },
+          {
+            "tags": [
+              {
+                "name": "param",
+                "text": "opts The navigation options."
+              }
+            ],
+            "text": "The navigation options."
+          },
+          {
+            "tags": [
+              {
+                "name": "param",
+                "text": "done The transition complete function."
+              }
+            ],
+            "text": "The transition complete function."
+          }
+        ],
+        "references": {
+          "Promise": {
+            "location": "global",
+            "id": "global::Promise"
+          },
+          "NavComponent": {
+            "location": "import",
+            "path": "./nav-interface",
+            "id": "src/components/nav/nav-interface.ts::NavComponent"
+          },
+          "T": {
+            "location": "global",
+            "id": "global::T"
+          },
+          "ComponentProps": {
+            "location": "import",
+            "path": "../../interface",
+            "id": "src/interface.d.ts::ComponentProps"
+          },
+          "NavOptions": {
+            "location": "import",
+            "path": "./nav-interface",
+            "id": "src/components/nav/nav-interface.ts::NavOptions"
+          },
+          "TransitionDoneFn": {
+            "location": "import",
+            "path": "./nav-interface",
+            "id": "src/components/nav/nav-interface.ts::TransitionDoneFn"
+          }
+        },
+        "return": "Promise<boolean>"
       },
       "signature": "setRoot<T extends NavComponent>(component: T, componentProps?: ComponentProps<T> | null, opts?: NavOptions | null, done?: TransitionDoneFn) => Promise<boolean>",
       "parameters": [],
@@ -408,6 +1094,11 @@
       "event": "ionNavDidChange",
       "detail": "void",
       "bubbles": false,
+      "complexType": {
+        "original": "void",
+        "resolved": "void",
+        "references": {}
+      },
       "cancelable": true,
       "composed": true,
       "docs": "Event fired when the nav has changed components",
@@ -417,6 +1108,11 @@
       "event": "ionNavWillChange",
       "detail": "void",
       "bubbles": false,
+      "complexType": {
+        "original": "void",
+        "resolved": "void",
+        "references": {}
+      },
       "cancelable": true,
       "composed": true,
       "docs": "Event fired when the nav will change components",

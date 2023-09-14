@@ -9,7 +9,7 @@ import CustomProps from '@ionic-internal/component-api/v7/row/custom-props.md';
 import Slots from '@ionic-internal/component-api/v7/row/slots.md';
 
 <head>
-  <title>ion-row: Horizontal Row Components and Alignment | Ionic API Docs</title>
+  <title>ion-row: Horizontal Row Components of the Grid System</title>
   <meta name="description" content="Rowsはグリッドシステムの水平方向のコンポーネントで、さまざまな数のカラムを含んでいます。行の配置や使用方法については、ion-row API Docs を参照してください。" />
 </head>
 
@@ -17,10 +17,10 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="shadow" />
 
-Rows are horizontal components of the [grid](./grid) system and contain varying numbers of
-[columns](./col). They ensure the columns are positioned properly.
+Rowは[Grid](./grid)システムの水平方向の構成要素で、さまざまな数の
+[columns](./col)を含む。列が適切に配置されるようにします。
 
-See the [grid](./grid) documentation for more information.
+詳しくは[grid](./grid)のドキュメントを参照してください。
 
 
 ## Row Alignment

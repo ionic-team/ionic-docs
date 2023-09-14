@@ -4,8 +4,6 @@ initialTab: 'preview'
 inlineHtmlPreviews: true
 ---
 
-import Codepen from '@components/global/Codepen';
-
 <head>
   <title>ダークモード to Change Color Schemes and CSS Properties</title>
   <meta
@@ -14,21 +12,21 @@ import Codepen from '@components/global/Codepen';
   />
 </head>
 
-Ionic を使えば、ダークカラーのスキームのサポートなど、アプリのテーマを簡単に変更できます。ネイティブアプリでのダークモードのサポートが拡大していることから、開発者はユーザーの好みをサポートするためにアプリにダークモードを追加する流れがあります。
+Ionic では、ダークな配色をサポートするなど、アプリのテーマを簡単に変更できます。ダークモードは、アプリのすべてのビューをダークテーマに変更する表示設定です。iOS と Android ではシステム全体でサポートされているため、開発者にとってアプリに追加することが非常に望ましいです。
 
 ## Media Query の利用
 
-ダークモードを有効にするためにはまず、 [ユーザの設定してるカラースキーマを利用する media query](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-color-scheme) を使用します。このメディアクエリは、ユーザーのデバイスのシステム設定に接続され、ダークモードが有効になっている場合はテーマを適用します。
+ダークモードを有効にする現代的な方法は、[ユーザーの好みの配色を指定する CSS メディアクエリー](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-color-scheme)を使うことです。このメディアクエリは、ユーザーのデバイスのシステム設定にフックし、ダークモードが有効な場合にテーマを適用します。Ionic Framework のスターターは、ダークテーマを含めるためにこのメソッドを使用します。
 
 ```css
 @media (prefers-color-scheme: dark) {
   :root {
-    /* dark mode variables go here */
+    /* Dark mode variables go here */
   }
 }
 ```
 
-現在、media query `prefers-color-scheme` は[限られたブラウザサポート](https://caniuse.com/#feat=prefers-color-scheme) であるため、一部のブラウザでは、このメディアクエリを使用してダークモードを適用することはできません。ただし、ダークモードは、 [CSS class fallback](#css-class-fallback) を使用して適用することもできます。
+prefers-color-scheme`メディアクエリは[すべてのモダンブラウザ](https://caniuse.com/#feat=prefers-color-scheme)でサポートされています。しかし、古いブラウザのサポートが必要な場合は、[CSS class fallback](#css-class-fallback)を使用することでダークテーマを適用することができます。
 
 ## CSS Class Fallback
 
@@ -53,7 +51,7 @@ body.dark {
 
 ## JavaScript との統合
 
-CSS 変数を一度だけ記述して、複数の場所で更新する必要がないようにするために、フォールバックとクラスを JavaScript を使用して `prefers-color-scheme` メディアクエリーの値をチェックし、プリファレンスが `dark` の場合は `dark` クラスを追加することで統合できます。CSS は次のようなものになるでしょう:
+In order to keep the CSS variables written once and avoid having to update them in multiple places, the `dark` class can be added when the value of the `prefers-color-scheme` media query is `dark`. Here's what the CSS would look like:
 
 ```css
 body.dark {
@@ -65,63 +63,27 @@ body.dark {
 
 ### 自動的にダークモードを有効にする
 
-JavaScript では、ドキュメントが [matchMedia()](https://developer.mozilla.org/en-US/docs/Web/API/Window/matchMedia) を使用してメディアクエリと一致するかどうかをチェックすることによって、 `dark` クラスを `<body>` に追加できます。これにより、ユーザの設定に基づいてダークモードが動作するようになります。
-
-```javascript
-// Use matchMedia to check the user preference
-const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
-
-toggleDarkTheme(prefersDark.matches);
-
-// Listen for changes to the prefers-color-scheme media query
-prefersDark.addEventListener('change', (mediaQuery) => toggleDarkTheme(mediaQuery.matches));
-
-// Add or remove the "dark" class based on if the media query matches
-function toggleDarkTheme(shouldAdd) {
-  document.body.classList.toggle('dark', shouldAdd);
-}
-```
+The `dark` class can be added to the `<body>` by checking if the document matches the media query using [matchMedia()](https://developer.mozilla.org/en-US/docs/Web/API/Window/matchMedia). This will allow dark mode to still work based on the user's preference.
 
 :::note
-Tip: make sure to view the Codepen below in a [supported browser](https://caniuse.com/#feat=prefers-color-scheme) and then try changing the system preferences on your device between light & dark mode. Here's [how to enable dark mode on Windows 10](https://blogs.windows.com/windowsexperience/2016/08/08/windows-10-tip-personalize-your-pc-by-enabling-the-dark-theme/) and [how to enable it on a Mac](https://support.apple.com/en-us/HT208976).
+The demo below prioritizes the site's theme over the system settings. If your system settings are set to something other than the site's theme when the demo loads, it will match the site's theme. Try changing the system preferences on your device between light & dark mode to see it change.
 :::
 
-<!-- Codepen https://codepen.io/ionic/pen/jONzJpG -->
+:::info
+Not sure how to change the system settings? Here's [how to enable dark mode on Windows 11](https://support.microsoft.com/en-us/windows/change-colors-in-windows-d26ef4d6-819a-581c-1581-493cfcc005fe) and [how to enable it on a Mac](https://support.apple.com/en-us/HT208976).
+:::
 
-<Codepen preview="false" user="ionic" slug="jONzJpG" height="550px" default-tab="js,result" />
+import AutomaticDarkMode from '@site/static/usage/v7/theming/automatic-dark-mode/index.md';
+
+<AutomaticDarkMode />
 
 ### 手動でダークモードをトグルする
 
-アプリケーションがロードされたとき、およびメディアのクエリが変更されたときに、 `toggleDarkTheme()` を呼び出すことに加えて、 `toggleDarkTheme()` 関数は、ユーザーがトグルを変更し、ライトテーマとダークテーマを切り替えるときなどに、アプリケーションによって呼び出すことができます:
+In addition to adding the `dark` class to the `<body>` when the media query changes, the class can be added by the app, such as when a user changes a toggle, to switch between the light and dark themes:
 
-```javascript
-// Query for the toggle that is used to change between themes
-const toggle = document.querySelector('#themeToggle');
+import ManualDarkMode from '@site/static/usage/v7/theming/manual-dark-mode/index.md';
 
-// Listen for the toggle check/uncheck to toggle the dark class on the <body>
-toggle.addEventListener('ionChange', (ev) => {
-  document.body.classList.toggle('dark', ev.detail.checked);
-});
-
-const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
-
-// Listen for changes to the prefers-color-scheme media query
-prefersDark.addEventListener('change', (e) => checkToggle(e.matches));
-
-// Called when the app loads
-function loadApp() {
-  checkToggle(prefersDark.matches);
-}
-
-// Called by the media query to check/uncheck the toggle
-function checkToggle(shouldCheck) {
-  toggle.checked = shouldCheck;
-}
-```
-
-<!-- Codepen https://codepen.io/ionic/pen/zYOpQLj -->
-
-<Codepen preview="false" user="ionic" slug="zYOpQLj" height="600px" default-tab="js,result" />
+<ManualDarkMode />
 
 ## システム UI コンポーネントを調整する
 
@@ -157,171 +119,172 @@ For developers looking to customize the theme color under the status bar in Safa
 
 Ionic には、アプリを実行しているデバイスに基づいてダークモードを取得するために使用する変数の推奨テーマがあります。次の部分に分けることができます:
 
-1. すべてのデフォルトの [modes](platform-styles.md#ionic-modes) のデフォルトの [Ionic colors](colors.md) を変更して `body.dark` セレクタのダークモードの背景色に対応します。
-1. `ios` デバイスでダークテーマの変数を設定します。
-1. `md` デバイスでダークテーマの変数を設定します。
+1. Changing the default [Ionic colors](colors.md) for all [modes](platform-styles.md#ionic-modes) to complement the dark background in the `body.dark` selector.
+2. Setting variables for the dark theme on `ios` devices.
+3. Setting variables for the dark theme on `md` devices.
 
-次のコードをコピーしてアプリに貼り付けると、Ionic のダークテーマを取得できます。 [JavaScript との統合](#combining-with-javascript) セクションで説明したように、JavaScript を使用して `dark` クラスをドキュメント body に追加します。 `dark` クラスがドキュメント本文に追加されるまで、ダークモードは有効になりません。
+The following code can be copied and pasted into an app's global CSS file to get Ionic's dark theme. We are [using the CSS media query](#using-media-queries) to enable dark mode. If older browser support is required, use the method described in the [combining with JavaScript](#combining-with-javascript) section.
 
-:::note
-さらにカスタマイズするために追加できるその他の変数など、変更する変数の詳細については [Themes](themes.md) をご覧ください。
+:::info
+For more information on the variables that are being changed, including other variables that can be added to further customize, see [Themes](themes.md).
 :::
 
 ```css
-/*
- * Dark Colors
- * -------------------------------------------
- */
+@media (prefers-color-scheme: dark) {
+  /*
+   * Dark Colors
+   * -------------------------------------------
+   */
 
-body.dark {
-  --ion-color-primary: #428cff;
-  --ion-color-primary-rgb: 66, 140, 255;
-  --ion-color-primary-contrast: #ffffff;
-  --ion-color-primary-contrast-rgb: 255, 255, 255;
-  --ion-color-primary-shade: #3a7be0;
-  --ion-color-primary-tint: #5598ff;
+  body {
+    --ion-color-primary: #428cff;
+    --ion-color-primary-rgb: 66, 140, 255;
+    --ion-color-primary-contrast: #ffffff;
+    --ion-color-primary-contrast-rgb: 255, 255, 255;
+    --ion-color-primary-shade: #3a7be0;
+    --ion-color-primary-tint: #5598ff;
 
-  --ion-color-secondary: #50c8ff;
-  --ion-color-secondary-rgb: 80, 200, 255;
-  --ion-color-secondary-contrast: #ffffff;
-  --ion-color-secondary-contrast-rgb: 255, 255, 255;
-  --ion-color-secondary-shade: #46b0e0;
-  --ion-color-secondary-tint: #62ceff;
+    --ion-color-secondary: #50c8ff;
+    --ion-color-secondary-rgb: 80, 200, 255;
+    --ion-color-secondary-contrast: #ffffff;
+    --ion-color-secondary-contrast-rgb: 255, 255, 255;
+    --ion-color-secondary-shade: #46b0e0;
+    --ion-color-secondary-tint: #62ceff;
 
-  --ion-color-tertiary: #6a64ff;
-  --ion-color-tertiary-rgb: 106, 100, 255;
-  --ion-color-tertiary-contrast: #ffffff;
-  --ion-color-tertiary-contrast-rgb: 255, 255, 255;
-  --ion-color-tertiary-shade: #5d58e0;
-  --ion-color-tertiary-tint: #7974ff;
+    --ion-color-tertiary: #6a64ff;
+    --ion-color-tertiary-rgb: 106, 100, 255;
+    --ion-color-tertiary-contrast: #ffffff;
+    --ion-color-tertiary-contrast-rgb: 255, 255, 255;
+    --ion-color-tertiary-shade: #5d58e0;
+    --ion-color-tertiary-tint: #7974ff;
 
-  --ion-color-success: #2fdf75;
-  --ion-color-success-rgb: 47, 223, 117;
-  --ion-color-success-contrast: #000000;
-  --ion-color-success-contrast-rgb: 0, 0, 0;
-  --ion-color-success-shade: #29c467;
-  --ion-color-success-tint: #44e283;
+    --ion-color-success: #2fdf75;
+    --ion-color-success-rgb: 47, 223, 117;
+    --ion-color-success-contrast: #000000;
+    --ion-color-success-contrast-rgb: 0, 0, 0;
+    --ion-color-success-shade: #29c467;
+    --ion-color-success-tint: #44e283;
 
-  --ion-color-warning: #ffd534;
-  --ion-color-warning-rgb: 255, 213, 52;
-  --ion-color-warning-contrast: #000000;
-  --ion-color-warning-contrast-rgb: 0, 0, 0;
-  --ion-color-warning-shade: #e0bb2e;
-  --ion-color-warning-tint: #ffd948;
+    --ion-color-warning: #ffd534;
+    --ion-color-warning-rgb: 255, 213, 52;
+    --ion-color-warning-contrast: #000000;
+    --ion-color-warning-contrast-rgb: 0, 0, 0;
+    --ion-color-warning-shade: #e0bb2e;
+    --ion-color-warning-tint: #ffd948;
 
-  --ion-color-danger: #ff4961;
-  --ion-color-danger-rgb: 255, 73, 97;
-  --ion-color-danger-contrast: #ffffff;
-  --ion-color-danger-contrast-rgb: 255, 255, 255;
-  --ion-color-danger-shade: #e04055;
-  --ion-color-danger-tint: #ff5b71;
+    --ion-color-danger: #ff4961;
+    --ion-color-danger-rgb: 255, 73, 97;
+    --ion-color-danger-contrast: #ffffff;
+    --ion-color-danger-contrast-rgb: 255, 255, 255;
+    --ion-color-danger-shade: #e04055;
+    --ion-color-danger-tint: #ff5b71;
 
-  --ion-color-dark: #f4f5f8;
-  --ion-color-dark-rgb: 244, 245, 248;
-  --ion-color-dark-contrast: #000000;
-  --ion-color-dark-contrast-rgb: 0, 0, 0;
-  --ion-color-dark-shade: #d7d8da;
-  --ion-color-dark-tint: #f5f6f9;
+    --ion-color-dark: #f4f5f8;
+    --ion-color-dark-rgb: 244, 245, 248;
+    --ion-color-dark-contrast: #000000;
+    --ion-color-dark-contrast-rgb: 0, 0, 0;
+    --ion-color-dark-shade: #d7d8da;
+    --ion-color-dark-tint: #f5f6f9;
 
-  --ion-color-medium: #989aa2;
-  --ion-color-medium-rgb: 152, 154, 162;
-  --ion-color-medium-contrast: #000000;
-  --ion-color-medium-contrast-rgb: 0, 0, 0;
-  --ion-color-medium-shade: #86888f;
-  --ion-color-medium-tint: #a2a4ab;
+    --ion-color-medium: #989aa2;
+    --ion-color-medium-rgb: 152, 154, 162;
+    --ion-color-medium-contrast: #000000;
+    --ion-color-medium-contrast-rgb: 0, 0, 0;
+    --ion-color-medium-shade: #86888f;
+    --ion-color-medium-tint: #a2a4ab;
 
-  --ion-color-light: #222428;
-  --ion-color-light-rgb: 34, 36, 40;
-  --ion-color-light-contrast: #ffffff;
-  --ion-color-light-contrast-rgb: 255, 255, 255;
-  --ion-color-light-shade: #1e2023;
-  --ion-color-light-tint: #383a3e;
-}
+    --ion-color-light: #222428;
+    --ion-color-light-rgb: 34, 36, 40;
+    --ion-color-light-contrast: #ffffff;
+    --ion-color-light-contrast-rgb: 255, 255, 255;
+    --ion-color-light-shade: #1e2023;
+    --ion-color-light-tint: #383a3e;
+  }
 
-/*
- * iOS Dark Theme
- * -------------------------------------------
- */
+  /*
+   * iOS Dark Theme
+   * -------------------------------------------
+   */
 
-.ios body.dark {
-  --ion-background-color: #000000;
-  --ion-background-color-rgb: 0, 0, 0;
+  .ios body {
+    --ion-background-color: #000000;
+    --ion-background-color-rgb: 0, 0, 0;
 
-  --ion-text-color: #ffffff;
-  --ion-text-color-rgb: 255, 255, 255;
+    --ion-text-color: #ffffff;
+    --ion-text-color-rgb: 255, 255, 255;
 
-  --ion-color-step-50: #0d0d0d;
-  --ion-color-step-100: #1a1a1a;
-  --ion-color-step-150: #262626;
-  --ion-color-step-200: #333333;
-  --ion-color-step-250: #404040;
-  --ion-color-step-300: #4d4d4d;
-  --ion-color-step-350: #595959;
-  --ion-color-step-400: #666666;
-  --ion-color-step-450: #737373;
-  --ion-color-step-500: #808080;
-  --ion-color-step-550: #8c8c8c;
-  --ion-color-step-600: #999999;
-  --ion-color-step-650: #a6a6a6;
-  --ion-color-step-700: #b3b3b3;
-  --ion-color-step-750: #bfbfbf;
-  --ion-color-step-800: #cccccc;
-  --ion-color-step-850: #d9d9d9;
-  --ion-color-step-900: #e6e6e6;
-  --ion-color-step-950: #f2f2f2;
+    --ion-color-step-50: #0d0d0d;
+    --ion-color-step-100: #1a1a1a;
+    --ion-color-step-150: #262626;
+    --ion-color-step-200: #333333;
+    --ion-color-step-250: #404040;
+    --ion-color-step-300: #4d4d4d;
+    --ion-color-step-350: #595959;
+    --ion-color-step-400: #666666;
+    --ion-color-step-450: #737373;
+    --ion-color-step-500: #808080;
+    --ion-color-step-550: #8c8c8c;
+    --ion-color-step-600: #999999;
+    --ion-color-step-650: #a6a6a6;
+    --ion-color-step-700: #b3b3b3;
+    --ion-color-step-750: #bfbfbf;
+    --ion-color-step-800: #cccccc;
+    --ion-color-step-850: #d9d9d9;
+    --ion-color-step-900: #e6e6e6;
+    --ion-color-step-950: #f2f2f2;
 
-  --ion-item-background: #000000;
+    --ion-item-background: #000000;
 
-  --ion-card-background: #1c1c1d;
-}
+    --ion-card-background: #1c1c1d;
+  }
 
-.ios body.dark ion-modal {
-  --ion-background-color: var(--ion-color-step-100);
-  --ion-toolbar-background: var(--ion-color-step-150);
-  --ion-toolbar-border-color: var(--ion-color-step-250);
-  --ion-item-background: var(--ion-color-step-150);
-}
+  .ios ion-modal {
+    --ion-background-color: var(--ion-color-step-100);
+    --ion-toolbar-background: var(--ion-color-step-150);
+    --ion-toolbar-border-color: var(--ion-color-step-250);
+  }
 
-/*
- * Material Design Dark Theme
- * -------------------------------------------
- */
+  /*
+   * Material Design Dark Theme
+   * -------------------------------------------
+   */
 
-.md body.dark {
-  --ion-background-color: #121212;
-  --ion-background-color-rgb: 18, 18, 18;
+  .md body {
+    --ion-background-color: #121212;
+    --ion-background-color-rgb: 18, 18, 18;
 
-  --ion-text-color: #ffffff;
-  --ion-text-color-rgb: 255, 255, 255;
+    --ion-text-color: #ffffff;
+    --ion-text-color-rgb: 255, 255, 255;
 
-  --ion-border-color: #222222;
+    --ion-border-color: #222222;
 
-  --ion-color-step-50: #1e1e1e;
-  --ion-color-step-100: #2a2a2a;
-  --ion-color-step-150: #363636;
-  --ion-color-step-200: #414141;
-  --ion-color-step-250: #4d4d4d;
-  --ion-color-step-300: #595959;
-  --ion-color-step-350: #656565;
-  --ion-color-step-400: #717171;
-  --ion-color-step-450: #7d7d7d;
-  --ion-color-step-500: #898989;
-  --ion-color-step-550: #949494;
-  --ion-color-step-600: #a0a0a0;
-  --ion-color-step-650: #acacac;
-  --ion-color-step-700: #b8b8b8;
-  --ion-color-step-750: #c4c4c4;
-  --ion-color-step-800: #d0d0d0;
-  --ion-color-step-850: #dbdbdb;
-  --ion-color-step-900: #e7e7e7;
-  --ion-color-step-950: #f3f3f3;
+    --ion-color-step-50: #1e1e1e;
+    --ion-color-step-100: #2a2a2a;
+    --ion-color-step-150: #363636;
+    --ion-color-step-200: #414141;
+    --ion-color-step-250: #4d4d4d;
+    --ion-color-step-300: #595959;
+    --ion-color-step-350: #656565;
+    --ion-color-step-400: #717171;
+    --ion-color-step-450: #7d7d7d;
+    --ion-color-step-500: #898989;
+    --ion-color-step-550: #949494;
+    --ion-color-step-600: #a0a0a0;
+    --ion-color-step-650: #acacac;
+    --ion-color-step-700: #b8b8b8;
+    --ion-color-step-750: #c4c4c4;
+    --ion-color-step-800: #d0d0d0;
+    --ion-color-step-850: #dbdbdb;
+    --ion-color-step-900: #e7e7e7;
+    --ion-color-step-950: #f3f3f3;
 
-  --ion-item-background: #1e1e1e;
+    --ion-item-background: #1e1e1e;
 
-  --ion-toolbar-background: #1f1f1f;
+    --ion-toolbar-background: #1f1f1f;
 
-  --ion-tab-bar-background: #1f1f1f;
+    --ion-tab-bar-background: #1f1f1f;
 
-  --ion-card-background: #1e1e1e;
+    --ion-card-background: #1e1e1e;
+  }
 }
 ```

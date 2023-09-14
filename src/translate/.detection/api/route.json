@@ -1,5 +1,5 @@
 {
-  "filePath": "./src/components/route/route.tsx",
+  "filePath": "src/components/route/route.tsx",
   "encapsulation": "none",
   "tag": "ion-route",
   "docs": "",
@@ -9,6 +9,17 @@
     {
       "name": "beforeEnter",
       "type": "(() => NavigationHookResult | Promise<NavigationHookResult>) | undefined",
+      "complexType": {
+        "original": "NavigationHookCallback",
+        "resolved": "(() => NavigationHookResult | Promise<NavigationHookResult>) | undefined",
+        "references": {
+          "NavigationHookCallback": {
+            "location": "import",
+            "path": "./route-interface",
+            "id": "src/components/route/route-interface.ts::NavigationHookCallback"
+          }
+        }
+      },
       "mutable": false,
       "reflectToAttr": false,
       "docs": "A navigation hook that is fired when the route tries to enter.\nReturning `true` allows the navigation to proceed, while returning\n`false` causes it to be cancelled. Returning a `NavigationHookOptions`\nobject causes the router to redirect to the path specified.",
@@ -30,6 +41,17 @@
     {
       "name": "beforeLeave",
       "type": "(() => NavigationHookResult | Promise<NavigationHookResult>) | undefined",
+      "complexType": {
+        "original": "NavigationHookCallback",
+        "resolved": "(() => NavigationHookResult | Promise<NavigationHookResult>) | undefined",
+        "references": {
+          "NavigationHookCallback": {
+            "location": "import",
+            "path": "./route-interface",
+            "id": "src/components/route/route-interface.ts::NavigationHookCallback"
+          }
+        }
+      },
       "mutable": false,
       "reflectToAttr": false,
       "docs": "A navigation hook that is fired when the route tries to leave.\nReturning `true` allows the navigation to proceed, while returning\n`false` causes it to be cancelled. Returning a `NavigationHookOptions`\nobject causes the router to redirect to the path specified.",
@@ -51,6 +73,11 @@
     {
       "name": "component",
       "type": "string",
+      "complexType": {
+        "original": "string",
+        "resolved": "string",
+        "references": {}
+      },
       "mutable": false,
       "attr": "component",
       "reflectToAttr": false,
@@ -67,6 +94,11 @@
     {
       "name": "componentProps",
       "type": "undefined | { [key: string]: any; }",
+      "complexType": {
+        "original": "{ [key: string]: any }",
+        "resolved": "undefined | { [key: string]: any; }",
+        "references": {}
+      },
       "mutable": false,
       "reflectToAttr": false,
       "docs": "A key value `{ 'red': true, 'blue': 'white'}` containing props that should be passed\nto the defined component when rendered.",
@@ -85,6 +117,11 @@
     {
       "name": "url",
       "type": "string",
+      "complexType": {
+        "original": "string",
+        "resolved": "string",
+        "references": {}
+      },
       "mutable": false,
       "attr": "url",
       "reflectToAttr": false,
@@ -106,6 +143,11 @@
       "event": "ionRouteDataChanged",
       "detail": "any",
       "bubbles": true,
+      "complexType": {
+        "original": "any",
+        "resolved": "any",
+        "references": {}
+      },
       "cancelable": true,
       "composed": true,
       "docs": "Used internally by `ion-router` to know when this route did change.",

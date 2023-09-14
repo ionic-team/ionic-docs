@@ -9,7 +9,7 @@ import CustomProps from '@ionic-internal/component-api/v7/tabs/custom-props.md';
 import Slots from '@ionic-internal/component-api/v7/tabs/slots.md';
 
 <head>
-  <title>Ion-Tabs: Tab-Based Component for App Top-Level Navigation</title>
+  <title>ion-tabs: Tab-Based Component for App Top-Level Navigation</title>
   <meta name="description" content="Tabsは、タブベースのナビゲーションを実装するためのトップレベルのコンポーネントです。イオンタブはスタイリングを持たず、ネイティブアプリのように動作するナビゲーションのルーター出口として機能します。" />
 </head>
 

@@ -1,5 +1,5 @@
 {
-  "filePath": "./src/components/title/title.tsx",
+  "filePath": "src/components/title/title.tsx",
   "encapsulation": "shadow",
   "tag": "ion-title",
   "docs": "",
@@ -9,6 +9,17 @@
     {
       "name": "color",
       "type": "\"danger\" | \"dark\" | \"light\" | \"medium\" | \"primary\" | \"secondary\" | \"success\" | \"tertiary\" | \"warning\" | string & Record<never, never> | undefined",
+      "complexType": {
+        "original": "Color",
+        "resolved": "\"danger\" | \"dark\" | \"light\" | \"medium\" | \"primary\" | \"secondary\" | \"success\" | \"tertiary\" | \"warning\" | string & Record<never, never> | undefined",
+        "references": {
+          "Color": {
+            "location": "import",
+            "path": "../../interface",
+            "id": "src/interface.d.ts::Color"
+          }
+        }
+      },
       "mutable": false,
       "attr": "color",
       "reflectToAttr": true,
@@ -64,6 +75,11 @@
     {
       "name": "size",
       "type": "\"large\" | \"small\" | undefined",
+      "complexType": {
+        "original": "'large' | 'small'",
+        "resolved": "\"large\" | \"small\" | undefined",
+        "references": {}
+      },
       "mutable": false,
       "attr": "size",
       "reflectToAttr": false,

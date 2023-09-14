@@ -9,7 +9,7 @@ import CustomProps from '@ionic-internal/component-api/v7/radio/custom-props.md'
 import Slots from '@ionic-internal/component-api/v7/radio/slots.md';
 
 <head>
-  <title>ion-radio Component: Radio Property for iOS and Android</title>
+  <title>ion-radio: Radio Component for iOS and Android</title>
   <meta name="description" content="Radioコンポーネントは、iOSおよびAndroidデバイスのion-radio-groupsの内部で使用する必要があります。Radioコンポーネントの使用方法とインストール方法については、こちらをご覧ください。" />
 </head>
 
@@ -46,7 +46,7 @@ import Justify from '@site/static/usage/v7/radio/justify/index.md';
 
 
 :::note
-`ion-item` is only used in the demos to emphasize how `justify` works. It is not needed in order for `justify` to function correctly.
+`ion-item`は、`justify`がどのように機能するかを強調するためにデモで使用されているだけです。 `justify` が正しく機能するために必須ではありません。
 :::
 
 ## ラジオの選択を解除する

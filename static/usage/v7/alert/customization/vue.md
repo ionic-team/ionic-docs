@@ -4,26 +4,19 @@
   <ion-alert trigger="present-alert" class="custom-alert" header="Are you sure?" :buttons="alertButtons"></ion-alert>
 </template>
 
-<script lang="ts">
+<script lang="ts" setup>
   import { IonAlert, IonButton } from '@ionic/vue';
 
-  export default {
-    components: { IonAlert, IonButton },
-    setup() {
-      const alertButtons = [
-        {
-          text: 'No',
-          cssClass: 'alert-button-cancel',
-        },
-        {
-          text: 'Yes',
-          cssClass: 'alert-button-confirm',
-        },
-      ];
-
-      return { alertButtons };
+  const alertButtons = [
+    {
+      text: 'No',
+      cssClass: 'alert-button-cancel',
     },
-  };
+    {
+      text: 'Yes',
+      cssClass: 'alert-button-confirm',
+    },
+  ];
 </script>
 
 <style>

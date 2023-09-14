@@ -1,5 +1,5 @@
 {
-  "filePath": "./src/components/router-outlet/route-outlet.tsx",
+  "filePath": "src/components/router-outlet/route-outlet.tsx",
   "encapsulation": "shadow",
   "tag": "ion-router-outlet",
   "docs": "",
@@ -9,6 +9,11 @@
     {
       "name": "animated",
       "type": "boolean",
+      "complexType": {
+        "original": "boolean",
+        "resolved": "boolean",
+        "references": {}
+      },
       "mutable": false,
       "attr": "animated",
       "reflectToAttr": false,
@@ -26,6 +31,17 @@
     {
       "name": "animation",
       "type": "((baseEl: any, opts?: any) => Animation) | undefined",
+      "complexType": {
+        "original": "AnimationBuilder",
+        "resolved": "((baseEl: any, opts?: any) => Animation) | undefined",
+        "references": {
+          "AnimationBuilder": {
+            "location": "import",
+            "path": "../../interface",
+            "id": "src/interface.d.ts::AnimationBuilder"
+          }
+        }
+      },
       "mutable": false,
       "reflectToAttr": false,
       "docs": "This property allows to create custom transition using AnimationBuilder functions.",
@@ -44,6 +60,11 @@
     {
       "name": "mode",
       "type": "\"ios\" | \"md\"",
+      "complexType": {
+        "original": "\"ios\" | \"md\"",
+        "resolved": "\"ios\" | \"md\"",
+        "references": {}
+      },
       "mutable": true,
       "attr": "mode",
       "reflectToAttr": false,

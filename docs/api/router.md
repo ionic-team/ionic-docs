@@ -18,10 +18,10 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 
 
-The router is a component for handling routing inside vanilla and Stencil JavaScript projects.
+ルーターは、vanilla と Stencil での JavaScriptプロジェクト内でルーティングを処理するためのコンポーネントです。
 
 :::note
- Note: This component should only be used with vanilla and Stencil JavaScript projects. See the routing guides for [Angular](../angular/navigation), [React](../react/navigation), and [Vue](../vue/navigation) for framework-specific routing solutions.
+注意: このコンポーネントは、vanilla と Stencil での JavaScriptプロジェクトでのみ使用してください。フレームワーク固有のルーティングソリューションについては、[Angular](../angular/navigation)、[React](../react/navigation)、[Vue](../vue/navigation)のルーティングガイドを参照してください。
 :::
 
 

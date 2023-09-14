@@ -1,5 +1,5 @@
 {
-  "filePath": "./src/components/input/input.tsx",
+  "filePath": "src/components/input/input.tsx",
   "encapsulation": "scoped",
   "tag": "ion-input",
   "docs": "",
@@ -18,6 +18,11 @@
     {
       "name": "accept",
       "type": "string | undefined",
+      "complexType": {
+        "original": "string",
+        "resolved": "string | undefined",
+        "references": {}
+      },
       "mutable": false,
       "attr": "accept",
       "reflectToAttr": false,
@@ -42,6 +47,11 @@
     {
       "name": "autocapitalize",
       "type": "string",
+      "complexType": {
+        "original": "string",
+        "resolved": "string",
+        "references": {}
+      },
       "mutable": false,
       "attr": "autocapitalize",
       "reflectToAttr": false,
@@ -59,6 +69,17 @@
     {
       "name": "autocomplete",
       "type": "\"name\" | \"email\" | \"tel\" | \"url\" | \"on\" | \"off\" | \"honorific-prefix\" | \"given-name\" | \"additional-name\" | \"family-name\" | \"honorific-suffix\" | \"nickname\" | \"username\" | \"new-password\" | \"current-password\" | \"one-time-code\" | \"organization-title\" | \"organization\" | \"street-address\" | \"address-line1\" | \"address-line2\" | \"address-line3\" | \"address-level4\" | \"address-level3\" | \"address-level2\" | \"address-level1\" | \"country\" | \"country-name\" | \"postal-code\" | \"cc-name\" | \"cc-given-name\" | \"cc-additional-name\" | \"cc-family-name\" | \"cc-number\" | \"cc-exp\" | \"cc-exp-month\" | \"cc-exp-year\" | \"cc-csc\" | \"cc-type\" | \"transaction-currency\" | \"transaction-amount\" | \"language\" | \"bday\" | \"bday-day\" | \"bday-month\" | \"bday-year\" | \"sex\" | \"tel-country-code\" | \"tel-national\" | \"tel-area-code\" | \"tel-local\" | \"tel-extension\" | \"impp\" | \"photo\"",
+      "complexType": {
+        "original": "AutocompleteTypes",
+        "resolved": "\"name\" | \"email\" | \"tel\" | \"url\" | \"on\" | \"off\" | \"honorific-prefix\" | \"given-name\" | \"additional-name\" | \"family-name\" | \"honorific-suffix\" | \"nickname\" | \"username\" | \"new-password\" | \"current-password\" | \"one-time-code\" | \"organization-title\" | \"organization\" | \"street-address\" | \"address-line1\" | \"address-line2\" | \"address-line3\" | \"address-level4\" | \"address-level3\" | \"address-level2\" | \"address-level1\" | \"country\" | \"country-name\" | \"postal-code\" | \"cc-name\" | \"cc-given-name\" | \"cc-additional-name\" | \"cc-family-name\" | \"cc-number\" | \"cc-exp\" | \"cc-exp-month\" | \"cc-exp-year\" | \"cc-csc\" | \"cc-type\" | \"transaction-currency\" | \"transaction-amount\" | \"language\" | \"bday\" | \"bday-day\" | \"bday-month\" | \"bday-year\" | \"sex\" | \"tel-country-code\" | \"tel-national\" | \"tel-area-code\" | \"tel-local\" | \"tel-extension\" | \"impp\" | \"photo\"",
+        "references": {
+          "AutocompleteTypes": {
+            "location": "import",
+            "path": "../../interface",
+            "id": "src/interface.d.ts::AutocompleteTypes"
+          }
+        }
+      },
       "mutable": false,
       "attr": "autocomplete",
       "reflectToAttr": false,
@@ -289,6 +310,11 @@
     {
       "name": "autocorrect",
       "type": "\"off\" | \"on\"",
+      "complexType": {
+        "original": "'on' | 'off'",
+        "resolved": "\"off\" | \"on\"",
+        "references": {}
+      },
       "mutable": false,
       "attr": "autocorrect",
       "reflectToAttr": false,
@@ -311,6 +337,11 @@
     {
       "name": "autofocus",
       "type": "boolean",
+      "complexType": {
+        "original": "boolean",
+        "resolved": "boolean",
+        "references": {}
+      },
       "mutable": false,
       "attr": "autofocus",
       "reflectToAttr": false,
@@ -328,6 +359,11 @@
     {
       "name": "clearInput",
       "type": "boolean",
+      "complexType": {
+        "original": "boolean",
+        "resolved": "boolean",
+        "references": {}
+      },
       "mutable": false,
       "attr": "clear-input",
       "reflectToAttr": false,
@@ -345,6 +381,11 @@
     {
       "name": "clearOnEdit",
       "type": "boolean | undefined",
+      "complexType": {
+        "original": "boolean",
+        "resolved": "boolean | undefined",
+        "references": {}
+      },
       "mutable": false,
       "attr": "clear-on-edit",
       "reflectToAttr": false,
@@ -364,6 +405,17 @@
     {
       "name": "color",
       "type": "\"danger\" | \"dark\" | \"light\" | \"medium\" | \"primary\" | \"secondary\" | \"success\" | \"tertiary\" | \"warning\" | string & Record<never, never> | undefined",
+      "complexType": {
+        "original": "Color",
+        "resolved": "\"danger\" | \"dark\" | \"light\" | \"medium\" | \"primary\" | \"secondary\" | \"success\" | \"tertiary\" | \"warning\" | string & Record<never, never> | undefined",
+        "references": {
+          "Color": {
+            "location": "import",
+            "path": "../../interface",
+            "id": "src/interface.d.ts::Color"
+          }
+        }
+      },
       "mutable": false,
       "attr": "color",
       "reflectToAttr": true,
@@ -419,6 +471,11 @@
     {
       "name": "counter",
       "type": "boolean",
+      "complexType": {
+        "original": "boolean",
+        "resolved": "boolean",
+        "references": {}
+      },
       "mutable": false,
       "attr": "counter",
       "reflectToAttr": false,
@@ -436,6 +493,11 @@
     {
       "name": "counterFormatter",
       "type": "((inputLength: number, maxLength: number) => string) | undefined",
+      "complexType": {
+        "original": "(inputLength: number, maxLength: number) => string",
+        "resolved": "((inputLength: number, maxLength: number) => string) | undefined",
+        "references": {}
+      },
       "mutable": false,
       "reflectToAttr": false,
       "docs": "A callback used to format the counter text.\nBy default the counter text is set to \"itemLength / maxLength\".",
@@ -454,6 +516,11 @@
     {
       "name": "debounce",
       "type": "number | undefined",
+      "complexType": {
+        "original": "number",
+        "resolved": "number | undefined",
+        "references": {}
+      },
       "mutable": false,
       "attr": "debounce",
       "reflectToAttr": false,
@@ -473,6 +540,11 @@
     {
       "name": "disabled",
       "type": "boolean",
+      "complexType": {
+        "original": "boolean",
+        "resolved": "boolean",
+        "references": {}
+      },
       "mutable": false,
       "attr": "disabled",
       "reflectToAttr": false,
@@ -490,6 +562,11 @@
     {
       "name": "enterkeyhint",
       "type": "\"done\" | \"enter\" | \"go\" | \"next\" | \"previous\" | \"search\" | \"send\" | undefined",
+      "complexType": {
+        "original": "'enter' | 'done' | 'go' | 'next' | 'previous' | 'search' | 'send'",
+        "resolved": "\"done\" | \"enter\" | \"go\" | \"next\" | \"previous\" | \"search\" | \"send\" | undefined",
+        "references": {}
+      },
       "mutable": false,
       "attr": "enterkeyhint",
       "reflectToAttr": false,
@@ -534,6 +611,11 @@
     {
       "name": "errorText",
       "type": "string | undefined",
+      "complexType": {
+        "original": "string",
+        "resolved": "string | undefined",
+        "references": {}
+      },
       "mutable": false,
       "attr": "error-text",
       "reflectToAttr": false,
@@ -553,6 +635,11 @@
     {
       "name": "fill",
       "type": "\"outline\" | \"solid\" | undefined",
+      "complexType": {
+        "original": "'outline' | 'solid'",
+        "resolved": "\"outline\" | \"solid\" | undefined",
+        "references": {}
+      },
       "mutable": false,
       "attr": "fill",
       "reflectToAttr": false,
@@ -577,6 +664,11 @@
     {
       "name": "helperText",
       "type": "string | undefined",
+      "complexType": {
+        "original": "string",
+        "resolved": "string | undefined",
+        "references": {}
+      },
       "mutable": false,
       "attr": "helper-text",
       "reflectToAttr": false,
@@ -596,6 +688,11 @@
     {
       "name": "inputmode",
       "type": "\"decimal\" | \"email\" | \"none\" | \"numeric\" | \"search\" | \"tel\" | \"text\" | \"url\" | undefined",
+      "complexType": {
+        "original": "'none' | 'text' | 'tel' | 'url' | 'email' | 'numeric' | 'decimal' | 'search'",
+        "resolved": "\"decimal\" | \"email\" | \"none\" | \"numeric\" | \"search\" | \"tel\" | \"text\" | \"url\" | undefined",
+        "references": {}
+      },
       "mutable": false,
       "attr": "inputmode",
       "reflectToAttr": false,
@@ -644,6 +741,11 @@
     {
       "name": "label",
       "type": "string | undefined",
+      "complexType": {
+        "original": "string",
+        "resolved": "string | undefined",
+        "references": {}
+      },
       "mutable": false,
       "attr": "label",
       "reflectToAttr": false,
@@ -663,6 +765,11 @@
     {
       "name": "labelPlacement",
       "type": "\"end\" | \"fixed\" | \"floating\" | \"stacked\" | \"start\"",
+      "complexType": {
+        "original": "'start' | 'end' | 'floating' | 'stacked' | 'fixed'",
+        "resolved": "\"end\" | \"fixed\" | \"floating\" | \"stacked\" | \"start\"",
+        "references": {}
+      },
       "mutable": false,
       "attr": "label-placement",
       "reflectToAttr": false,
@@ -697,6 +804,11 @@
     {
       "name": "legacy",
       "type": "boolean | undefined",
+      "complexType": {
+        "original": "boolean",
+        "resolved": "boolean | undefined",
+        "references": {}
+      },
       "mutable": false,
       "attr": "legacy",
       "reflectToAttr": false,
@@ -716,6 +828,11 @@
     {
       "name": "max",
       "type": "number | string | undefined",
+      "complexType": {
+        "original": "string | number",
+        "resolved": "number | string | undefined",
+        "references": {}
+      },
       "mutable": false,
       "attr": "max",
       "reflectToAttr": false,
@@ -738,6 +855,11 @@
     {
       "name": "maxlength",
       "type": "number | undefined",
+      "complexType": {
+        "original": "number",
+        "resolved": "number | undefined",
+        "references": {}
+      },
       "mutable": false,
       "attr": "maxlength",
       "reflectToAttr": false,
@@ -757,6 +879,11 @@
     {
       "name": "min",
       "type": "number | string | undefined",
+      "complexType": {
+        "original": "string | number",
+        "resolved": "number | string | undefined",
+        "references": {}
+      },
       "mutable": false,
       "attr": "min",
       "reflectToAttr": false,
@@ -779,6 +906,11 @@
     {
       "name": "minlength",
       "type": "number | undefined",
+      "complexType": {
+        "original": "number",
+        "resolved": "number | undefined",
+        "references": {}
+      },
       "mutable": false,
       "attr": "minlength",
       "reflectToAttr": false,
@@ -819,6 +951,11 @@
     {
       "name": "multiple",
       "type": "boolean | undefined",
+      "complexType": {
+        "original": "boolean",
+        "resolved": "boolean | undefined",
+        "references": {}
+      },
       "mutable": false,
       "attr": "multiple",
       "reflectToAttr": false,
@@ -838,6 +975,11 @@
     {
       "name": "name",
       "type": "string",
+      "complexType": {
+        "original": "string",
+        "resolved": "string",
+        "references": {}
+      },
       "mutable": false,
       "attr": "name",
       "reflectToAttr": false,
@@ -855,6 +997,11 @@
     {
       "name": "pattern",
       "type": "string | undefined",
+      "complexType": {
+        "original": "string",
+        "resolved": "string | undefined",
+        "references": {}
+      },
       "mutable": false,
       "attr": "pattern",
       "reflectToAttr": false,
@@ -874,6 +1021,11 @@
     {
       "name": "placeholder",
       "type": "string | undefined",
+      "complexType": {
+        "original": "string",
+        "resolved": "string | undefined",
+        "references": {}
+      },
       "mutable": false,
       "attr": "placeholder",
       "reflectToAttr": false,
@@ -893,6 +1045,11 @@
     {
       "name": "readonly",
       "type": "boolean",
+      "complexType": {
+        "original": "boolean",
+        "resolved": "boolean",
+        "references": {}
+      },
       "mutable": false,
       "attr": "readonly",
       "reflectToAttr": false,
@@ -910,6 +1067,11 @@
     {
       "name": "required",
       "type": "boolean",
+      "complexType": {
+        "original": "boolean",
+        "resolved": "boolean",
+        "references": {}
+      },
       "mutable": false,
       "attr": "required",
       "reflectToAttr": false,
@@ -927,6 +1089,11 @@
     {
       "name": "shape",
       "type": "\"round\" | undefined",
+      "complexType": {
+        "original": "'round'",
+        "resolved": "\"round\" | undefined",
+        "references": {}
+      },
       "mutable": false,
       "attr": "shape",
       "reflectToAttr": false,
@@ -947,10 +1114,15 @@
     {
       "name": "size",
       "type": "number | undefined",
+      "complexType": {
+        "original": "number",
+        "resolved": "number | undefined",
+        "references": {}
+      },
       "mutable": false,
       "attr": "size",
       "reflectToAttr": false,
-      "docs": "The initial size of the control. This value is in pixels unless the value of the type attribute is `\"text\"` or `\"password\"`, in which case it is an integer number of characters. This attribute applies only when the `type` attribute is set to `\"text\"`, `\"search\"`, `\"tel\"`, `\"url\"`, `\"email\"`, or `\"password\"`, otherwise it is ignored.",
+      "docs": "",
       "docsTags": [],
       "values": [
         {
@@ -966,6 +1138,11 @@
     {
       "name": "spellcheck",
       "type": "boolean",
+      "complexType": {
+        "original": "boolean",
+        "resolved": "boolean",
+        "references": {}
+      },
       "mutable": false,
       "attr": "spellcheck",
       "reflectToAttr": false,
@@ -983,6 +1160,11 @@
     {
       "name": "step",
       "type": "string | undefined",
+      "complexType": {
+        "original": "string",
+        "resolved": "string | undefined",
+        "references": {}
+      },
       "mutable": false,
       "attr": "step",
       "reflectToAttr": false,
@@ -1002,6 +1184,17 @@
     {
       "name": "type",
       "type": "\"date\" | \"datetime-local\" | \"email\" | \"month\" | \"number\" | \"password\" | \"search\" | \"tel\" | \"text\" | \"time\" | \"url\" | \"week\"",
+      "complexType": {
+        "original": "TextFieldTypes",
+        "resolved": "\"date\" | \"datetime-local\" | \"email\" | \"month\" | \"number\" | \"password\" | \"search\" | \"tel\" | \"text\" | \"time\" | \"url\" | \"week\"",
+        "references": {
+          "TextFieldTypes": {
+            "location": "import",
+            "path": "../../interface",
+            "id": "src/interface.d.ts::TextFieldTypes"
+          }
+        }
+      },
       "mutable": false,
       "attr": "type",
       "reflectToAttr": false,
@@ -1064,6 +1257,11 @@
     {
       "name": "value",
       "type": "null | number | string | undefined",
+      "complexType": {
+        "original": "string | number | null",
+        "resolved": "null | number | string | undefined",
+        "references": {}
+      },
       "mutable": true,
       "attr": "value",
       "reflectToAttr": false,
@@ -1095,6 +1293,21 @@
         "type": "Promise<HTMLInputElement>",
         "docs": ""
       },
+      "complexType": {
+        "signature": "() => Promise<HTMLInputElement>",
+        "parameters": [],
+        "references": {
+          "Promise": {
+            "location": "global",
+            "id": "global::Promise"
+          },
+          "HTMLInputElement": {
+            "location": "global",
+            "id": "global::HTMLInputElement"
+          }
+        },
+        "return": "Promise<HTMLInputElement>"
+      },
       "signature": "getInputElement() => Promise<HTMLInputElement>",
       "parameters": [],
       "docs": "Returns the native `<input>` element used under the hood.",
@@ -1105,6 +1318,17 @@
       "returns": {
         "type": "Promise<void>",
         "docs": ""
+      },
+      "complexType": {
+        "signature": "() => Promise<void>",
+        "parameters": [],
+        "references": {
+          "Promise": {
+            "location": "global",
+            "id": "global::Promise"
+          }
+        },
+        "return": "Promise<void>"
       },
       "signature": "setFocus() => Promise<void>",
       "parameters": [],
@@ -1117,6 +1341,16 @@
       "event": "ionBlur",
       "detail": "FocusEvent",
       "bubbles": true,
+      "complexType": {
+        "original": "FocusEvent",
+        "resolved": "FocusEvent",
+        "references": {
+          "FocusEvent": {
+            "location": "global",
+            "id": "global::FocusEvent"
+          }
+        }
+      },
       "cancelable": true,
       "composed": true,
       "docs": "Emitted when the input loses focus.",
@@ -1126,6 +1360,17 @@
       "event": "ionChange",
       "detail": "InputChangeEventDetail",
       "bubbles": true,
+      "complexType": {
+        "original": "InputChangeEventDetail",
+        "resolved": "InputChangeEventDetail",
+        "references": {
+          "InputChangeEventDetail": {
+            "location": "import",
+            "path": "./input-interface",
+            "id": "src/components/input/input-interface.ts::InputChangeEventDetail"
+          }
+        }
+      },
       "cancelable": true,
       "composed": true,
       "docs": "The `ionChange` event is fired when the user modifies the input's value.\nUnlike the `ionInput` event, the `ionChange` event is only fired when changes\nare committed, not as the user types.\n\nDepending on the way the users interacts with the element, the `ionChange`\nevent fires at a different moment:\n- When the user commits the change explicitly (e.g. by selecting a date\nfrom a date picker for `<ion-input type=\"date\">`, pressing the \"Enter\" key, etc.).\n- When the element loses focus after its value has changed: for elements\nwhere the user's interaction is typing.",
@@ -1135,6 +1380,16 @@
       "event": "ionFocus",
       "detail": "FocusEvent",
       "bubbles": true,
+      "complexType": {
+        "original": "FocusEvent",
+        "resolved": "FocusEvent",
+        "references": {
+          "FocusEvent": {
+            "location": "global",
+            "id": "global::FocusEvent"
+          }
+        }
+      },
       "cancelable": true,
       "composed": true,
       "docs": "Emitted when the input has focus.",
@@ -1144,6 +1399,17 @@
       "event": "ionInput",
       "detail": "InputInputEventDetail",
       "bubbles": true,
+      "complexType": {
+        "original": "InputInputEventDetail",
+        "resolved": "InputInputEventDetail",
+        "references": {
+          "InputInputEventDetail": {
+            "location": "import",
+            "path": "./input-interface",
+            "id": "src/components/input/input-interface.ts::InputInputEventDetail"
+          }
+        }
+      },
       "cancelable": true,
       "composed": true,
       "docs": "The `ionInput` event is fired each time the user modifies the input's value.\nUnlike the `ionChange` event, the `ionInput` event is fired for each alteration\nto the input's value. This typically happens for each keystroke as the user types.\n\nFor elements that accept text input (`type=text`, `type=tel`, etc.), the interface\nis [`InputEvent`](https://developer.mozilla.org/en-US/docs/Web/API/InputEvent); for others,\nthe interface is [`Event`](https://developer.mozilla.org/en-US/docs/Web/API/Event). If\nthe input is cleared on edit, the type is `null`.",

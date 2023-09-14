@@ -45,11 +45,11 @@ import LabelPlacement from '@site/static/usage/v7/textarea/label-placement/index
 
 <LabelPlacement />
 
-### Label Slot (experimental)
+### Label Slot (実験的)
 
-While plaintext labels should be passed in via the `label` property, if custom HTML is needed, it can be passed through the `label` slot instead.
+プレーンテキストのラベルは `label` プロパティを通して渡されるべきですが、カスタム HTML が必要な場合は、代わりに `label` スロットを通して渡すことができます。
 
-Note that this feature is considered experimental because it relies on a simulated version of [Web Component slots](https://developer.mozilla.org/en-US/docs/Web/API/Web_components/Using_templates_and_slots). As a result, the simulated behavior may not exactly match the native slot behavior.
+この機能は、[Web Component slots](https://developer.mozilla.org/en-US/docs/Web/API/Web_components/Using_templates_and_slots)のシミュレート版に依存しているため、実験的なものとみなされていることに注意してください。その結果、シミュレートされた動作はネイティブのスロットの動作と完全に一致するとは限りません。
 
 import LabelSlot from '@site/static/usage/v7/textarea/label-slot/index.md';
 
@@ -57,7 +57,7 @@ import LabelSlot from '@site/static/usage/v7/textarea/label-slot/index.md';
 
 ### No Visible Label
 
-If no visible label is needed, developers should still supply an `aria-label` so the textarea is accessible to screen readers.
+ラベルの表示が必要ない場合でも、開発者は`aria-label`を指定して、textareaがスクリーンリーダーにアクセスできるようにすべきです。
 
 import NoVisibleLabel from '@site/static/usage/v7/textarea/no-visible-label/index.md';
 

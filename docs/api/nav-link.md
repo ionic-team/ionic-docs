@@ -9,7 +9,7 @@ import CustomProps from '@ionic-internal/component-api/v7/nav-link/custom-props.
 import Slots from '@ionic-internal/component-api/v7/nav-link/slots.md';
 
 <head>
-  <title>ion-nav-link: The Element for Navigation to a Specified Component</title>
+  <title>ion-nav-link: Navigation Links to a Specified Component</title>
   <meta name="description" content="ナビゲーションリンクは、指定されたコンポーネントにナビゲートします。これは、push(), pop(), setRoot() メソッドを呼び出すための要素形式です。ion-nav-linkの詳細については、こちらをご覧ください。" />
 </head>
 
@@ -20,7 +20,7 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 これは、ナビゲーションコントローラの `push()`, `pop()`, `setRoot()` メソッドを呼び出すための要素形式となります。
 
-See the [nav](./nav#using-navlink) documentation for more information.
+詳しくは[nav](./nav#using-navlink)のドキュメントを参照ください。
 
 
 ## プロパティ

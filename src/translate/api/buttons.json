@@ -1,5 +1,5 @@
 {
-  "filePath": "./src/components/buttons/buttons.tsx",
+  "filePath": "src/components/buttons/buttons.tsx",
   "encapsulation": "scoped",
   "tag": "ion-buttons",
   "docs": "",
@@ -9,6 +9,11 @@
     {
       "name": "collapse",
       "type": "boolean",
+      "complexType": {
+        "original": "boolean",
+        "resolved": "boolean",
+        "references": {}
+      },
       "mutable": false,
       "attr": "collapse",
       "reflectToAttr": false,

@@ -1,5 +1,5 @@
 {
-  "filePath": "./src/components/toast/toast.tsx",
+  "filePath": "src/components/toast/toast.tsx",
   "encapsulation": "shadow",
   "tag": "ion-toast",
   "docs": "",
@@ -11,6 +11,10 @@
     {
       "name": "part",
       "text": "button - Any button element that is displayed inside of the toast."
+    },
+    {
+      "name": "part",
+      "text": "button cancel - Any button element with role \"cancel\" that is displayed inside of the toast."
     },
     {
       "name": "part",
@@ -34,6 +38,11 @@
     {
       "name": "animated",
       "type": "boolean",
+      "complexType": {
+        "original": "boolean",
+        "resolved": "boolean",
+        "references": {}
+      },
       "mutable": false,
       "attr": "animated",
       "reflectToAttr": false,
@@ -51,6 +60,17 @@
     {
       "name": "buttons",
       "type": "(string | ToastButton)[] | undefined",
+      "complexType": {
+        "original": "(ToastButton | string)[]",
+        "resolved": "(string | ToastButton)[] | undefined",
+        "references": {
+          "ToastButton": {
+            "location": "import",
+            "path": "./toast-interface",
+            "id": "src/components/toast/toast-interface.ts::ToastButton"
+          }
+        }
+      },
       "mutable": false,
       "reflectToAttr": false,
       "docs": "An array of buttons for the toast.",
@@ -72,6 +92,17 @@
     {
       "name": "color",
       "type": "\"danger\" | \"dark\" | \"light\" | \"medium\" | \"primary\" | \"secondary\" | \"success\" | \"tertiary\" | \"warning\" | string & Record<never, never> | undefined",
+      "complexType": {
+        "original": "Color",
+        "resolved": "\"danger\" | \"dark\" | \"light\" | \"medium\" | \"primary\" | \"secondary\" | \"success\" | \"tertiary\" | \"warning\" | string & Record<never, never> | undefined",
+        "references": {
+          "Color": {
+            "location": "import",
+            "path": "../../interface",
+            "id": "src/interface.d.ts::Color"
+          }
+        }
+      },
       "mutable": false,
       "attr": "color",
       "reflectToAttr": true,
@@ -127,6 +158,11 @@
     {
       "name": "cssClass",
       "type": "string | string[] | undefined",
+      "complexType": {
+        "original": "string | string[]",
+        "resolved": "string | string[] | undefined",
+        "references": {}
+      },
       "mutable": false,
       "attr": "css-class",
       "reflectToAttr": false,
@@ -149,6 +185,11 @@
     {
       "name": "duration",
       "type": "number",
+      "complexType": {
+        "original": "number",
+        "resolved": "number",
+        "references": {}
+      },
       "mutable": false,
       "attr": "duration",
       "reflectToAttr": false,
@@ -166,6 +207,17 @@
     {
       "name": "enterAnimation",
       "type": "((baseEl: any, opts?: any) => Animation) | undefined",
+      "complexType": {
+        "original": "AnimationBuilder",
+        "resolved": "((baseEl: any, opts?: any) => Animation) | undefined",
+        "references": {
+          "AnimationBuilder": {
+            "location": "import",
+            "path": "../../interface",
+            "id": "src/interface.d.ts::AnimationBuilder"
+          }
+        }
+      },
       "mutable": false,
       "reflectToAttr": false,
       "docs": "Animation to use when the toast is presented.",
@@ -184,6 +236,11 @@
     {
       "name": "header",
       "type": "string | undefined",
+      "complexType": {
+        "original": "string",
+        "resolved": "string | undefined",
+        "references": {}
+      },
       "mutable": false,
       "attr": "header",
       "reflectToAttr": false,
@@ -203,6 +260,11 @@
     {
       "name": "htmlAttributes",
       "type": "undefined | { [key: string]: any; }",
+      "complexType": {
+        "original": "{ [key: string]: any }",
+        "resolved": "undefined | { [key: string]: any; }",
+        "references": {}
+      },
       "mutable": false,
       "reflectToAttr": false,
       "docs": "Additional attributes to pass to the toast.",
@@ -221,6 +283,11 @@
     {
       "name": "icon",
       "type": "string | undefined",
+      "complexType": {
+        "original": "string",
+        "resolved": "string | undefined",
+        "references": {}
+      },
       "mutable": false,
       "attr": "icon",
       "reflectToAttr": false,
@@ -240,6 +307,11 @@
     {
       "name": "isOpen",
       "type": "boolean",
+      "complexType": {
+        "original": "boolean",
+        "resolved": "boolean",
+        "references": {}
+      },
       "mutable": false,
       "attr": "is-open",
       "reflectToAttr": false,
@@ -257,6 +329,11 @@
     {
       "name": "keyboardClose",
       "type": "boolean",
+      "complexType": {
+        "original": "boolean",
+        "resolved": "boolean",
+        "references": {}
+      },
       "mutable": false,
       "attr": "keyboard-close",
       "reflectToAttr": false,
@@ -274,6 +351,17 @@
     {
       "name": "layout",
       "type": "\"baseline\" | \"stacked\"",
+      "complexType": {
+        "original": "ToastLayout",
+        "resolved": "\"baseline\" | \"stacked\"",
+        "references": {
+          "ToastLayout": {
+            "location": "import",
+            "path": "./toast-interface",
+            "id": "src/components/toast/toast-interface.ts::ToastLayout"
+          }
+        }
+      },
       "mutable": false,
       "attr": "layout",
       "reflectToAttr": false,
@@ -296,6 +384,17 @@
     {
       "name": "leaveAnimation",
       "type": "((baseEl: any, opts?: any) => Animation) | undefined",
+      "complexType": {
+        "original": "AnimationBuilder",
+        "resolved": "((baseEl: any, opts?: any) => Animation) | undefined",
+        "references": {
+          "AnimationBuilder": {
+            "location": "import",
+            "path": "../../interface",
+            "id": "src/interface.d.ts::AnimationBuilder"
+          }
+        }
+      },
       "mutable": false,
       "reflectToAttr": false,
       "docs": "Animation to use when the toast is dismissed.",
@@ -314,6 +413,17 @@
     {
       "name": "message",
       "type": "IonicSafeString | string | undefined",
+      "complexType": {
+        "original": "string | IonicSafeString",
+        "resolved": "IonicSafeString | string | undefined",
+        "references": {
+          "IonicSafeString": {
+            "location": "import",
+            "path": "../../utils/sanitization",
+            "id": "src/utils/sanitization/index.ts::IonicSafeString"
+          }
+        }
+      },
       "mutable": false,
       "attr": "message",
       "reflectToAttr": false,
@@ -357,6 +467,17 @@
     {
       "name": "position",
       "type": "\"bottom\" | \"middle\" | \"top\"",
+      "complexType": {
+        "original": "ToastPosition",
+        "resolved": "\"bottom\" | \"middle\" | \"top\"",
+        "references": {
+          "ToastPosition": {
+            "location": "import",
+            "path": "./toast-interface",
+            "id": "src/components/toast/toast-interface.ts::ToastPosition"
+          }
+        }
+      },
       "mutable": false,
       "attr": "position",
       "reflectToAttr": false,
@@ -383,6 +504,11 @@
     {
       "name": "translucent",
       "type": "boolean",
+      "complexType": {
+        "original": "boolean",
+        "resolved": "boolean",
+        "references": {}
+      },
       "mutable": false,
       "attr": "translucent",
       "reflectToAttr": false,
@@ -400,6 +526,11 @@
     {
       "name": "trigger",
       "type": "string | undefined",
+      "complexType": {
+        "original": "string | undefined",
+        "resolved": "string | undefined",
+        "references": {}
+      },
       "mutable": false,
       "attr": "trigger",
       "reflectToAttr": false,
@@ -424,6 +555,40 @@
         "type": "Promise<boolean>",
         "docs": ""
       },
+      "complexType": {
+        "signature": "(data?: any, role?: string) => Promise<boolean>",
+        "parameters": [
+          {
+            "tags": [
+              {
+                "name": "param",
+                "text": "data Any data to emit in the dismiss events."
+              }
+            ],
+            "text": "Any data to emit in the dismiss events."
+          },
+          {
+            "tags": [
+              {
+                "name": "param",
+                "text": "role The role of the element that is dismissing the toast.\nThis can be useful in a button handler for determining which button was\nclicked to dismiss the toast.\nSome examples include: ``\"cancel\"`, `\"destructive\"`, \"selected\"`, and `\"backdrop\"`."
+              }
+            ],
+            "text": "The role of the element that is dismissing the toast.\nThis can be useful in a button handler for determining which button was\nclicked to dismiss the toast.\nSome examples include: ``\"cancel\"`, `\"destructive\"`, \"selected\"`, and `\"backdrop\"`."
+          }
+        ],
+        "references": {
+          "Promise": {
+            "location": "global",
+            "id": "global::Promise"
+          },
+          "ToastDismissOptions": {
+            "location": "global",
+            "id": "global::ToastDismissOptions"
+          }
+        },
+        "return": "Promise<boolean>"
+      },
       "signature": "dismiss(data?: any, role?: string) => Promise<boolean>",
       "parameters": [],
       "docs": "Dismiss the toast overlay after it has been presented.",
@@ -444,6 +609,26 @@
         "type": "Promise<OverlayEventDetail<T>>",
         "docs": ""
       },
+      "complexType": {
+        "signature": "<T = any>() => Promise<OverlayEventDetail<T>>",
+        "parameters": [],
+        "references": {
+          "Promise": {
+            "location": "global",
+            "id": "global::Promise"
+          },
+          "OverlayEventDetail": {
+            "location": "import",
+            "path": "../../utils/overlays-interface",
+            "id": "src/utils/overlays-interface.ts::OverlayEventDetail"
+          },
+          "T": {
+            "location": "global",
+            "id": "global::T"
+          }
+        },
+        "return": "Promise<OverlayEventDetail<T>>"
+      },
       "signature": "onDidDismiss<T = any>() => Promise<OverlayEventDetail<T>>",
       "parameters": [],
       "docs": "Returns a promise that resolves when the toast did dismiss.",
@@ -454,6 +639,26 @@
       "returns": {
         "type": "Promise<OverlayEventDetail<T>>",
         "docs": ""
+      },
+      "complexType": {
+        "signature": "<T = any>() => Promise<OverlayEventDetail<T>>",
+        "parameters": [],
+        "references": {
+          "Promise": {
+            "location": "global",
+            "id": "global::Promise"
+          },
+          "OverlayEventDetail": {
+            "location": "import",
+            "path": "../../utils/overlays-interface",
+            "id": "src/utils/overlays-interface.ts::OverlayEventDetail"
+          },
+          "T": {
+            "location": "global",
+            "id": "global::T"
+          }
+        },
+        "return": "Promise<OverlayEventDetail<T>>"
       },
       "signature": "onWillDismiss<T = any>() => Promise<OverlayEventDetail<T>>",
       "parameters": [],
@@ -466,6 +671,21 @@
         "type": "Promise<void>",
         "docs": ""
       },
+      "complexType": {
+        "signature": "() => Promise<void>",
+        "parameters": [],
+        "references": {
+          "Promise": {
+            "location": "global",
+            "id": "global::Promise"
+          },
+          "ToastPresentOptions": {
+            "location": "global",
+            "id": "global::ToastPresentOptions"
+          }
+        },
+        "return": "Promise<void>"
+      },
       "signature": "present() => Promise<void>",
       "parameters": [],
       "docs": "Present the toast overlay after it has been created.",
@@ -477,6 +697,17 @@
       "event": "didDismiss",
       "detail": "OverlayEventDetail<any>",
       "bubbles": true,
+      "complexType": {
+        "original": "OverlayEventDetail",
+        "resolved": "OverlayEventDetail<any>",
+        "references": {
+          "OverlayEventDetail": {
+            "location": "import",
+            "path": "../../utils/overlays-interface",
+            "id": "src/utils/overlays-interface.ts::OverlayEventDetail"
+          }
+        }
+      },
       "cancelable": true,
       "composed": true,
       "docs": "Emitted after the toast has dismissed.\nShorthand for ionToastDidDismiss.",
@@ -486,6 +717,11 @@
       "event": "didPresent",
       "detail": "void",
       "bubbles": true,
+      "complexType": {
+        "original": "void",
+        "resolved": "void",
+        "references": {}
+      },
       "cancelable": true,
       "composed": true,
       "docs": "Emitted after the toast has presented.\nShorthand for ionToastWillDismiss.",
@@ -495,6 +731,17 @@
       "event": "ionToastDidDismiss",
       "detail": "OverlayEventDetail<any>",
       "bubbles": true,
+      "complexType": {
+        "original": "OverlayEventDetail",
+        "resolved": "OverlayEventDetail<any>",
+        "references": {
+          "OverlayEventDetail": {
+            "location": "import",
+            "path": "../../utils/overlays-interface",
+            "id": "src/utils/overlays-interface.ts::OverlayEventDetail"
+          }
+        }
+      },
       "cancelable": true,
       "composed": true,
       "docs": "Emitted after the toast has dismissed.",
@@ -504,6 +751,11 @@
       "event": "ionToastDidPresent",
       "detail": "void",
       "bubbles": true,
+      "complexType": {
+        "original": "void",
+        "resolved": "void",
+        "references": {}
+      },
       "cancelable": true,
       "composed": true,
       "docs": "Emitted after the toast has presented.",
@@ -513,6 +765,17 @@
       "event": "ionToastWillDismiss",
       "detail": "OverlayEventDetail<any>",
       "bubbles": true,
+      "complexType": {
+        "original": "OverlayEventDetail",
+        "resolved": "OverlayEventDetail<any>",
+        "references": {
+          "OverlayEventDetail": {
+            "location": "import",
+            "path": "../../utils/overlays-interface",
+            "id": "src/utils/overlays-interface.ts::OverlayEventDetail"
+          }
+        }
+      },
       "cancelable": true,
       "composed": true,
       "docs": "Emitted before the toast has dismissed.",
@@ -522,6 +785,11 @@
       "event": "ionToastWillPresent",
       "detail": "void",
       "bubbles": true,
+      "complexType": {
+        "original": "void",
+        "resolved": "void",
+        "references": {}
+      },
       "cancelable": true,
       "composed": true,
       "docs": "Emitted before the toast has presented.",
@@ -531,6 +799,17 @@
       "event": "willDismiss",
       "detail": "OverlayEventDetail<any>",
       "bubbles": true,
+      "complexType": {
+        "original": "OverlayEventDetail",
+        "resolved": "OverlayEventDetail<any>",
+        "references": {
+          "OverlayEventDetail": {
+            "location": "import",
+            "path": "../../utils/overlays-interface",
+            "id": "src/utils/overlays-interface.ts::OverlayEventDetail"
+          }
+        }
+      },
       "cancelable": true,
       "composed": true,
       "docs": "Emitted before the toast has dismissed.\nShorthand for ionToastWillDismiss.",
@@ -540,6 +819,11 @@
       "event": "willPresent",
       "detail": "void",
       "bubbles": true,
+      "complexType": {
+        "original": "void",
+        "resolved": "void",
+        "references": {}
+      },
       "cancelable": true,
       "composed": true,
       "docs": "Emitted before the toast has presented.\nShorthand for ionToastWillPresent.",
@@ -639,6 +923,10 @@
     {
       "name": "button",
       "docs": "Any button element that is displayed inside of the toast."
+    },
+    {
+      "name": "button cancel",
+      "docs": "Any button element with role \"cancel\" that is displayed inside of the toast."
     },
     {
       "name": "container",

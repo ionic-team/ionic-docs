@@ -9,7 +9,7 @@ import CustomProps from '@ionic-internal/component-api/v7/loading/custom-props.m
 import Slots from '@ionic-internal/component-api/v7/loading/slots.md';
 
 <head>
-  <title>Loading | Application Loading Indicator Overlay | ion-loading</title>
+  <title>ion-loading: Loading | Application Loading Indicator Overlay</title>
   <meta name="description" content="ion-loadingは、ユーザーのインタラクションをブロックしながら、アクティビティを表示します。ローディングインジケータは、アプリのコンテンツの上に表示され、解除することができます。" />
 </head>
 

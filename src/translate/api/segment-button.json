@@ -1,5 +1,5 @@
 {
-  "filePath": "./src/components/segment-button/segment-button.tsx",
+  "filePath": "src/components/segment-button/segment-button.tsx",
   "encapsulation": "shadow",
   "tag": "ion-segment-button",
   "docs": "",
@@ -26,6 +26,11 @@
     {
       "name": "disabled",
       "type": "boolean",
+      "complexType": {
+        "original": "boolean",
+        "resolved": "boolean",
+        "references": {}
+      },
       "mutable": true,
       "attr": "disabled",
       "reflectToAttr": false,
@@ -43,6 +48,17 @@
     {
       "name": "layout",
       "type": "\"icon-bottom\" | \"icon-end\" | \"icon-hide\" | \"icon-start\" | \"icon-top\" | \"label-hide\" | undefined",
+      "complexType": {
+        "original": "SegmentButtonLayout",
+        "resolved": "\"icon-bottom\" | \"icon-end\" | \"icon-hide\" | \"icon-start\" | \"icon-top\" | \"label-hide\" | undefined",
+        "references": {
+          "SegmentButtonLayout": {
+            "location": "import",
+            "path": "./segment-button-interface",
+            "id": "src/components/segment-button/segment-button-interface.ts::SegmentButtonLayout"
+          }
+        }
+      },
       "mutable": false,
       "attr": "layout",
       "reflectToAttr": false,
@@ -105,6 +121,11 @@
     {
       "name": "type",
       "type": "\"button\" | \"reset\" | \"submit\"",
+      "complexType": {
+        "original": "'submit' | 'reset' | 'button'",
+        "resolved": "\"button\" | \"reset\" | \"submit\"",
+        "references": {}
+      },
       "mutable": false,
       "attr": "type",
       "reflectToAttr": false,
@@ -131,6 +152,17 @@
     {
       "name": "value",
       "type": "number | string",
+      "complexType": {
+        "original": "SegmentValue",
+        "resolved": "number | string",
+        "references": {
+          "SegmentValue": {
+            "location": "import",
+            "path": "../segment/segment-interface",
+            "id": "src/components/segment/segment-interface.ts::SegmentValue"
+          }
+        }
+      },
       "mutable": false,
       "attr": "value",
       "reflectToAttr": false,

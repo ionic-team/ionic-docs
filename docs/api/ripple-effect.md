@@ -11,16 +11,16 @@ import Slots from '@ionic-internal/component-api/v7/ripple-effect/slots.md';
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <head>
-  <title>ion-ripple-effect | Ripple Effect Button Component for Ionic Apps</title>
+  <title>ion-ripple-effect: Ripple Effect Component for Ionic Apps</title>
   <meta name="description" content="ripple effect buttonコンポーネントは、Material Designインクのリップルインタラクション効果を追加します。ion-appでのみ使用可能で、任意のコンポーネントに追加することができます。" />
 </head>
 
 <EncapsulationPill type="shadow" />
 
 
-The ripple effect component adds the [Material Design ink ripple interaction effect](https://material.io/develop/web/supporting/ripple). This component can only be used inside of an `<ion-app>` and can be added inside of any element.
+ripple effectコンポーネントは、[Material Design ink ripple interaction effect](https://material.io/develop/web/supporting/ripple)を追加します。このコンポーネントは `<ion-app>` の内部でのみ使用でき、任意の要素の内部に追加できます。
 
-It's important to set [relative positioning](https://developer.mozilla.org/en-US/docs/Web/CSS/position) on the parent element because the ripple effect is absolutely positioned and will cover its closest parent that has relative positioning. The parent element should also be given the `ion-activatable` class, which tells the ripple effect that the element is clickable. It's recommended to add `overflow: hidden` to the parent element if the ripple is overflowing its container.
+親要素に [relative position](https://developer.mozilla.org/en-US/docs/Web/CSS/position) を設定することが重要です。波紋エフェクトはabsolute positionであり、相対位置決めされた最も近い親要素をカバーするからです。また、親要素には `ion-activatable` クラスを設定します。これは、波及効果にその要素がクリック可能であることを伝えるものです。波紋がコンテナからはみ出す場合は、親要素に `overflow: hidden` を追加することを推奨します。
 
 
 ## 基本的な使い方
@@ -30,18 +30,18 @@ import Basic from '@site/static/usage/v7/ripple-effect/basic/index.md';
 <Basic />
 
 
-## Type
+## タイプ
 
-There are two types of ripple effects: `"bounded"` and `"unbounded"`. The default type, `"bounded"`, will expand the ripple effect from the click position outwards. To add a ripple effect that always starts in the center of the element and expands in a circle, set the type to `"unbounded"`.
+リップル効果には2つのタイプがある： `"bounded"` と `"unbounded"` です。デフォルトのタイプである `"bounded"` は、クリック位置から外側に波及効果を広げます。常に要素の中心から始まり、円形に広がる波及効果を追加するには、タイプを `"unbounded"` に設定します。
 
 import Type from '@site/static/usage/v7/ripple-effect/type/index.md';
 
 <Type />
 
 
-## Customizing
+## カスタマイズ
 
-The ripple can be customized to a different color through CSS. By default the ripple color is set to inherit the text color, which is generally the body color. This can be changed by setting the CSS `color` on the parent or the ripple effect itself.
+リップルはCSSで別の色にカスタマイズできます。デフォルトでは、波紋の色はテキストの色を継承するように設定されています。これはCSSの `color` を親または波紋エフェクト自体に設定することで変更できます。
 
 import Customizing from '@site/static/usage/v7/ripple-effect/customizing/index.md';
 

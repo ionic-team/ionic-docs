@@ -9,7 +9,7 @@ import CustomProps from '@ionic-internal/component-api/v7/select-option/custom-p
 import Slots from '@ionic-internal/component-api/v7/select-option/slots.md';
 
 <head>
-  <title>Select Option | What Is An Option Select on Ionic Framework Apps</title>
+  <title>ion-select-option: Option For a Select Dialog</title>
   <meta name="description" content="Select Optionとは？Select OptionはSelectの子要素で、定義された各オプションはSelectダイアログに渡され表示されます。" />
 </head>
 

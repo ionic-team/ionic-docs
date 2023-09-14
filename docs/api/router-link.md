@@ -10,7 +10,7 @@ import CustomProps from '@ionic-internal/component-api/v7/router-link/custom-pro
 import Slots from '@ionic-internal/component-api/v7/router-link/slots.md';
 
 <head>
-  <title>Router Link | Navigating The ion-router-link Component</title>
+  <title>ion-router-link: Navigate To a Specified Link</title>
   <meta name="description" content="ion-router-linkコンポーネントを使用すると、指定したリンクに移動することができます。ルーターリンクは、hrefで場所を、directionで遷移のアニメーションを指定することができます。" />
 </head>
 
@@ -21,7 +21,7 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 router linkコンポーネントは、指定されたリンクに移動するために使用します。ブラウザのアンカータグと同様に、hrefで場所を、directionで遷移のアニメーションを指定することができます。
 
 :::note
- Note: このコンポーネントは、バニラおよびステンシルJavaScriptプロジェクトでのみ使用してください。Angularプロジェクトでは、[`ion-router-outlet`](router-outlet.md) と Angularルータを使用してください。
+ Note: このコンポーネントは、vanilla と Stencil での JavaScriptプロジェクトでのみ使用してください。Angularプロジェクトでは、[`ion-router-outlet`](router-outlet.md) と Angularルータを使用してください。
 :::
 
 See the [Router](./router) documentation for more information.

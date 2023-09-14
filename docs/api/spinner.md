@@ -9,7 +9,7 @@ import CustomProps from '@ionic-internal/component-api/v7/spinner/custom-props.m
 import Slots from '@ionic-internal/component-api/v7/spinner/slots.md';
 
 <head>
-  <title>ion-spinner | Animated Spinner Icon Components and Properties</title>
+  <title>ion-spinner: Animated Spinner Icon Components and Properties</title>
   <meta name="description" content="ion-spinner コンポーネントは、アニメーションするさまざまな SVG スピナーを提供します。これらのアイコンは、アプリがロード中であることや、別の処理を実行していることを示し、待機させることができます。" />
 </head>
 
@@ -45,7 +45,7 @@ import Resizing from '@site/static/usage/v7/spinner/theming/resizing/index.md';
 
 <Resizing />
 
-### CSS Custom Properties
+### CSS カスタムプロパティ
 
 import CSSProps from '@site/static/usage/v7/spinner/theming/css-properties/index.md';
 

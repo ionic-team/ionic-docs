@@ -1,5 +1,5 @@
 {
-  "filePath": "./src/components/card-content/card-content.tsx",
+  "filePath": "src/components/card-content/card-content.tsx",
   "encapsulation": "none",
   "tag": "ion-card-content",
   "docs": "",

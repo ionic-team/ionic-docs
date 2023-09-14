@@ -16,9 +16,9 @@ import Slots from '@ionic-internal/component-api/v7/refresher/slots.md';
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 
-Refresher provides pull-to-refresh functionality on a content component. The pull-to-refresh pattern lets a user pull down on a list of data in order to retrieve more data.
+リフレッシャーは、コンテンツコンポーネントにプルトゥリフレッシュ機能を提供します。pull-to-refreshパターンは、ユーザがより多くのデータを取得するために、データのリストをプルダウンすることを可能にします。
 
-Data should be modified during the refresher's output events. Once the async operation has completed and the refreshing should end, `complete()` needs to be called on the refresher.
+データは、リフレッシャーの出力イベント中に変更する必要があります。非同期処理が完了し、リフレッシュが終了したら、リフレッシュに対して `complete()` を呼び出す必要があります。
 
 
 ## 基本的な使い方
@@ -28,22 +28,22 @@ import Basic from '@site/static/usage/v7/refresher/basic/index.md';
 <Basic />
 
 
-## Pull Properties
+## Pull プロパティ
 
-The refresher has several properties for customizing the pull gesture. Set the `pullFactor` to change the speed of the pull, the `pullMin` property to change the minimum distance the user must pull down, and the `pullMax` property to change the maximum distance the user must pull down before the refresher enters the `refreshing` state.
+リフレッシャーには、引くジェスチャーをカスタマイズするためのプロパティがいくつかあります。 `pullFactor` プロパティを設定すると引っ張るスピードを、`pullMin` プロパティを設定するとユーザが引っ張る最小距離を、`pullMax` プロパティを設定するとリフレッシャーが `refreshing` 状態になる前にユーザが引っ張る最大距離を変更することができます。
 
-These properties do not apply when the [native refresher](#native-refreshers) is enabled.
+これらのプロパティは、[native refresher](#native-refreshers)が有効な場合には適用されません。
 
 import PullProperties from '@site/static/usage/v7/refresher/pull-properties/index.md';
 
 <PullProperties />
 
 
-## Custom Refresher Content
+## カスタムリフレッシャーコンテンツ
 
-The default icon, spinner, and text can be customized on the [refresher content](./refresher-content) based on whether the state of the refresher is `pulling` or `refreshing`.
+デフォルトのアイコン、スピナー、テキストは、リフレッシャーの状態が `pulling` か `refreshing` かによって、[リフレッシャーコンテンツ](./refresher-content) 上でカスタマイズすることができます。
 
-Setting `pullingIcon` will disable the [native refresher](#native-refreshers).
+`pullingIcon`を設定すると、[native refresher](#native-refreshers)が無効になります。
 
 import CustomContent from '@site/static/usage/v7/refresher/custom-content/index.md';
 
@@ -52,15 +52,15 @@ import CustomContent from '@site/static/usage/v7/refresher/custom-content/index.
 
 ## Native Refreshers
 
-Both iOS and Android platforms provide refreshers that use properties exposed by their respective devices in order to give pull-to-refresh a fluid, native-like feel.
+iOSとAndroidの両プラットフォームは、pull-to-refreshにネイティブのような流動的な感覚を与えるために、それぞれのデバイスが公開するプロパティを使用するリフレッシュ機能を提供します。
 
-The iOS and Material Design native refreshers are enabled by default in Ionic. However, the native iOS refresher relies on rubber band scrolling in order to work properly and is only compatible with iOS devices as a result. We provide a fallback refresher for apps running in iOS mode on devices that do not support rubber band scrolling.
+iOSとMaterial Designのネイティブリフレッシュ機能は、Ionicのデフォルトで有効になっています。ただし、iOSネイティブのリフレッシュ機能は、正しく動作するためにラバーバンドスクロールに依存しており、結果としてiOSデバイスとのみ互換性があります。ラバーバンドスクロールをサポートしていないデバイスでiOSモードで動作するアプリのために、フォールバックリフレッシャーを提供しています。
 
-The native refresher uses a `circular` spinner for Material Design, while iOS uses the `lines` spinner. On iOS, the tick marks will progressively show as the page is pulled down.
+ネイティブのリフレッシャーでは、マテリアルデザイン用の `circular` スピナーを使用しますが、iOS では `lines` スピナーを使用します。iOSでは、ティックマークはページが下に引っ張られるにつれて徐々に表示されます。
 
-Certain refresher properties such as the [Pull Properties](#pull-properties), `closeDuration` and `snapbackDuration` are not compatible because much of the native refreshers are scroll-based. See [Properties](#properties) for more information on unsupported properties.
+[Pullプロパティ](#pull-properties)、`closeDuration`、`snapbackDuration`のような特定のリフレッシャープロパティは、ネイティブリフレッシャーの多くがスクロールベースであるため、互換性がありません。サポートされていないプロパティの詳細については、[Properties](#properties)を参照してください。
 
-The native refreshers can be disabled by setting the `pullingIcon` on the [refresher content](#custom-refresher-content) to any icon or spinner. See the [Ionicons](https://ionic.io/ionicons) and [Spinner](./spinner) documentation for accepted values.
+[リフレッシュコンテンツ](#custom-refresher-content)の `pullingIcon` を任意のアイコンまたはスピナーに設定することで、ネイティブリフレッシュモードを無効にすることができます。使用可能な値については、[Ionicons](https://ionic.io/ionicons) および [Spinner](./spinner) のドキュメントを参照してください。
 
 
 ## Usage with Virtual Scroll
@@ -72,9 +72,9 @@ import CustomScrollTarget from '@site/static/usage/v7/refresher/custom-scroll-ta
 <CustomScrollTarget />
 
 
-## Advanced Usage
+## 高度な使用法
 
-While the refresher can be used with any type of content, a common use case in native apps is to display a list of data that gets updated on refresh. In the below example, the app generates a list of data and then appends data to the top of the list when the refresh is completed. In a real app, the data would be received and updated after sending a request via a network or database call.
+リフレッシャーはどのようなタイプのコンテンツでも使用できますが、ネイティブアプリでよくある使用例は、更新時に更新されるデータのリストを表示することです。以下の例では、アプリはデータのリストを生成し、更新が完了したときにリストの先頭にデータを追加します。実際のアプリでは、ネットワークまたはデータベース呼び出しによってリクエストを送信した後に、データを受信して更新します。
 
 import Advanced from '@site/static/usage/v7/refresher/advanced/index.md';
 

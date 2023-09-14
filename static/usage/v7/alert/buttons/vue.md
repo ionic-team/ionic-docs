@@ -11,44 +11,32 @@
   <p>{{ roleMessage }}</p>
 </template>
 
-<script lang="ts">
+<script lang="ts" setup>
   import { ref } from 'vue';
   import { IonAlert, IonButton } from '@ionic/vue';
 
-  export default {
-    components: { IonAlert, IonButton },
-    setup() {
-      const handlerMessage = ref('');
-      const roleMessage = ref('');
+  const handlerMessage = ref('');
+  const roleMessage = ref('');
 
-      const alertButtons = [
-        {
-          text: 'Cancel',
-          role: 'cancel',
-          handler: () => {
-            handlerMessage.value = 'Alert canceled';
-          },
-        },
-        {
-          text: 'OK',
-          role: 'confirm',
-          handler: () => {
-            handlerMessage.value = 'Alert confirmed';
-          },
-        },
-      ];
-
-      const setResult = (ev: CustomEvent) => {
-        roleMessage.value = `Dismissed with role: ${ev.detail.role}`;
-      };
-
-      return {
-        handlerMessage,
-        roleMessage,
-        alertButtons,
-        setResult,
-      };
+  const alertButtons = [
+    {
+      text: 'Cancel',
+      role: 'cancel',
+      handler: () => {
+        handlerMessage.value = 'Alert canceled';
+      },
     },
+    {
+      text: 'OK',
+      role: 'confirm',
+      handler: () => {
+        handlerMessage.value = 'Alert confirmed';
+      },
+    },
+  ];
+
+  const setResult = (ev: CustomEvent) => {
+    roleMessage.value = `Dismissed with role: ${ev.detail.role}`;
   };
 </script>
 ```

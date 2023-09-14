@@ -1,5 +1,5 @@
 {
-  "filePath": "./src/components/menu/menu.tsx",
+  "filePath": "src/components/menu/menu.tsx",
   "encapsulation": "shadow",
   "tag": "ion-menu",
   "docs": "",
@@ -18,6 +18,11 @@
     {
       "name": "contentId",
       "type": "string | undefined",
+      "complexType": {
+        "original": "string",
+        "resolved": "string | undefined",
+        "references": {}
+      },
       "mutable": false,
       "attr": "content-id",
       "reflectToAttr": true,
@@ -37,6 +42,11 @@
     {
       "name": "disabled",
       "type": "boolean",
+      "complexType": {
+        "original": "boolean",
+        "resolved": "boolean",
+        "references": {}
+      },
       "mutable": true,
       "attr": "disabled",
       "reflectToAttr": false,
@@ -54,6 +64,11 @@
     {
       "name": "maxEdgeStart",
       "type": "number",
+      "complexType": {
+        "original": "number",
+        "resolved": "number",
+        "references": {}
+      },
       "mutable": false,
       "attr": "max-edge-start",
       "reflectToAttr": false,
@@ -71,6 +86,11 @@
     {
       "name": "menuId",
       "type": "string | undefined",
+      "complexType": {
+        "original": "string",
+        "resolved": "string | undefined",
+        "references": {}
+      },
       "mutable": false,
       "attr": "menu-id",
       "reflectToAttr": true,
@@ -90,6 +110,17 @@
     {
       "name": "side",
       "type": "\"end\" | \"start\"",
+      "complexType": {
+        "original": "Side",
+        "resolved": "\"end\" | \"start\"",
+        "references": {
+          "Side": {
+            "location": "import",
+            "path": "./menu-interface",
+            "id": "src/components/menu/menu-interface.ts::Side"
+          }
+        }
+      },
       "mutable": false,
       "attr": "side",
       "reflectToAttr": true,
@@ -112,6 +143,11 @@
     {
       "name": "swipeGesture",
       "type": "boolean",
+      "complexType": {
+        "original": "boolean",
+        "resolved": "boolean",
+        "references": {}
+      },
       "mutable": false,
       "attr": "swipe-gesture",
       "reflectToAttr": false,
@@ -129,6 +165,11 @@
     {
       "name": "type",
       "type": "string | undefined",
+      "complexType": {
+        "original": "string",
+        "resolved": "string | undefined",
+        "references": {}
+      },
       "mutable": true,
       "attr": "type",
       "reflectToAttr": false,
@@ -153,6 +194,22 @@
         "type": "Promise<boolean>",
         "docs": ""
       },
+      "complexType": {
+        "signature": "(animated?: boolean) => Promise<boolean>",
+        "parameters": [
+          {
+            "tags": [],
+            "text": ""
+          }
+        ],
+        "references": {
+          "Promise": {
+            "location": "global",
+            "id": "global::Promise"
+          }
+        },
+        "return": "Promise<boolean>"
+      },
       "signature": "close(animated?: boolean) => Promise<boolean>",
       "parameters": [],
       "docs": "Closes the menu. If the menu is already closed or it can't be closed,\nit returns `false`.",
@@ -163,6 +220,17 @@
       "returns": {
         "type": "Promise<boolean>",
         "docs": ""
+      },
+      "complexType": {
+        "signature": "() => Promise<boolean>",
+        "parameters": [],
+        "references": {
+          "Promise": {
+            "location": "global",
+            "id": "global::Promise"
+          }
+        },
+        "return": "Promise<boolean>"
       },
       "signature": "isActive() => Promise<boolean>",
       "parameters": [],
@@ -175,6 +243,17 @@
         "type": "Promise<boolean>",
         "docs": ""
       },
+      "complexType": {
+        "signature": "() => Promise<boolean>",
+        "parameters": [],
+        "references": {
+          "Promise": {
+            "location": "global",
+            "id": "global::Promise"
+          }
+        },
+        "return": "Promise<boolean>"
+      },
       "signature": "isOpen() => Promise<boolean>",
       "parameters": [],
       "docs": "Returns `true` is the menu is open.",
@@ -185,6 +264,22 @@
       "returns": {
         "type": "Promise<boolean>",
         "docs": ""
+      },
+      "complexType": {
+        "signature": "(animated?: boolean) => Promise<boolean>",
+        "parameters": [
+          {
+            "tags": [],
+            "text": ""
+          }
+        ],
+        "references": {
+          "Promise": {
+            "location": "global",
+            "id": "global::Promise"
+          }
+        },
+        "return": "Promise<boolean>"
       },
       "signature": "open(animated?: boolean) => Promise<boolean>",
       "parameters": [],
@@ -197,6 +292,26 @@
         "type": "Promise<boolean>",
         "docs": ""
       },
+      "complexType": {
+        "signature": "(shouldOpen: boolean, animated?: boolean) => Promise<boolean>",
+        "parameters": [
+          {
+            "tags": [],
+            "text": ""
+          },
+          {
+            "tags": [],
+            "text": ""
+          }
+        ],
+        "references": {
+          "Promise": {
+            "location": "global",
+            "id": "global::Promise"
+          }
+        },
+        "return": "Promise<boolean>"
+      },
       "signature": "setOpen(shouldOpen: boolean, animated?: boolean) => Promise<boolean>",
       "parameters": [],
       "docs": "Opens or closes the button.\nIf the operation can't be completed successfully, it returns `false`.",
@@ -207,6 +322,22 @@
       "returns": {
         "type": "Promise<boolean>",
         "docs": ""
+      },
+      "complexType": {
+        "signature": "(animated?: boolean) => Promise<boolean>",
+        "parameters": [
+          {
+            "tags": [],
+            "text": ""
+          }
+        ],
+        "references": {
+          "Promise": {
+            "location": "global",
+            "id": "global::Promise"
+          }
+        },
+        "return": "Promise<boolean>"
       },
       "signature": "toggle(animated?: boolean) => Promise<boolean>",
       "parameters": [],
@@ -219,6 +350,11 @@
       "event": "ionDidClose",
       "detail": "void",
       "bubbles": true,
+      "complexType": {
+        "original": "void",
+        "resolved": "void",
+        "references": {}
+      },
       "cancelable": true,
       "composed": true,
       "docs": "Emitted when the menu is closed.",
@@ -228,6 +364,11 @@
       "event": "ionDidOpen",
       "detail": "void",
       "bubbles": true,
+      "complexType": {
+        "original": "void",
+        "resolved": "void",
+        "references": {}
+      },
       "cancelable": true,
       "composed": true,
       "docs": "Emitted when the menu is open.",
@@ -237,6 +378,11 @@
       "event": "ionWillClose",
       "detail": "void",
       "bubbles": true,
+      "complexType": {
+        "original": "void",
+        "resolved": "void",
+        "references": {}
+      },
       "cancelable": true,
       "composed": true,
       "docs": "Emitted when the menu is about to be closed.",
@@ -246,6 +392,11 @@
       "event": "ionWillOpen",
       "detail": "void",
       "bubbles": true,
+      "complexType": {
+        "original": "void",
+        "resolved": "void",
+        "references": {}
+      },
       "cancelable": true,
       "composed": true,
       "docs": "Emitted when the menu is about to be opened.",

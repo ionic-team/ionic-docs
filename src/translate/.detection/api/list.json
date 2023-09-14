@@ -1,5 +1,5 @@
 {
-  "filePath": "./src/components/list/list.tsx",
+  "filePath": "src/components/list/list.tsx",
   "encapsulation": "none",
   "tag": "ion-list",
   "docs": "",
@@ -14,6 +14,11 @@
     {
       "name": "inset",
       "type": "boolean",
+      "complexType": {
+        "original": "boolean",
+        "resolved": "boolean",
+        "references": {}
+      },
       "mutable": false,
       "attr": "inset",
       "reflectToAttr": false,
@@ -31,6 +36,11 @@
     {
       "name": "lines",
       "type": "\"full\" | \"inset\" | \"none\" | undefined",
+      "complexType": {
+        "original": "'full' | 'inset' | 'none'",
+        "resolved": "\"full\" | \"inset\" | \"none\" | undefined",
+        "references": {}
+      },
       "mutable": false,
       "attr": "lines",
       "reflectToAttr": false,
@@ -84,6 +94,17 @@
       "returns": {
         "type": "Promise<boolean>",
         "docs": ""
+      },
+      "complexType": {
+        "signature": "() => Promise<boolean>",
+        "parameters": [],
+        "references": {
+          "Promise": {
+            "location": "global",
+            "id": "global::Promise"
+          }
+        },
+        "return": "Promise<boolean>"
       },
       "signature": "closeSlidingItems() => Promise<boolean>",
       "parameters": [],

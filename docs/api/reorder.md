@@ -9,7 +9,7 @@ import CustomProps from '@ionic-internal/component-api/v7/reorder/custom-props.m
 import Slots from '@ionic-internal/component-api/v7/reorder/slots.md';
 
 <head>
-  <title>Reorder | ion-reorder: Drag and Drop Icon to Reorder Items</title>
+  <title>ion-reorder: Drag and Drop Icon to Reorder Items</title>
   <meta name="description" content="ion-reorderは、ion-reorder-groupの中のアイテムをドラッグ＆ドロップするために使用されるアンカーです。カスタム並び替えアイコンとアイテムの詳細については、こちらをご覧ください。" />
 </head>
 
@@ -18,23 +18,23 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 <EncapsulationPill type="shadow" />
 
 
-Reorder is a component that allows an item to be dragged to change its order within a group of items. It must be used within a [reorder group](./reorder-group) to provide a visual drag and drop interface.
+Reorderは、アイテムのグループ内での順序を変更するためにアイテムをドラッグできるようにするコンポーネントです。視覚的なドラッグ＆ドロップのインターフェイスを提供するために、[reorder group](./reorder-group)内で使用されなければなりません。
 
-The reorder is the anchor used to drag and drop the items. Once the reorder is complete, the `ionItemReorder` event will be dispatched from the reorder group and the `complete` method needs to be called.
+Reorderはアイテムをドラッグ＆ドロップするためのアンカーです。reorderが完了すると、reorder groupから `ionItemReorder` イベントがdispatchされ、`complete` メソッドを呼び出す必要があります。
 
 
 ## 基本的な使い方
 
-The most basic example of a reorder is slotting it inside of an item. By default, the reorder functionality is disabled for a reorder group. It can be enabled by setting the `disabled` property on the reorder group to `false`. The reorder icon can then be used to drag and drop the items and reorder them.
+Reorderの最も基本的な例は、アイテムの中にスロットを入れることです。デフォルトでは、reorder groupのreorder機能は無効になっています。reorder groupの `disabled` プロパティを `false` に設定することで有効にすることができます。Reorderアイコンを使ってアイテムをドラッグ＆ドロップし、並び替えることができます。
 
 import Basic from '@site/static/usage/v7/reorder/basic/index.md';
 
 <Basic />
 
 
-## Toggling Reorder
+## 並べ替えの切り替え
 
-In some cases, it may be desired to have the option to toggle the reorder functionality. This can be done by making the `disabled` property reactive, based on a function or variable.
+場合によっては、並べ替えの機能を切り替えるオプションが欲しいかもしれない。これは、関数や変数に基づいて `disabled` プロパティをリアクティブにすることで実現できます。
 
 import TogglingDisabled from '@site/static/usage/v7/reorder/toggling-disabled/index.md';
 
@@ -43,7 +43,7 @@ import TogglingDisabled from '@site/static/usage/v7/reorder/toggling-disabled/in
 
 ## Custom Reorder Icon
 
-The reorder component uses a reorder icon with three lines on iOS and two lines on Material Design. This can be customized by adding an [Icon](https://ionic.io/ionicons) component inside of the reorder with any of the available Ionicons.
+Reorderコンポーネントは、iOSでは3行、Material Designでは2行のReorderアイコンを使用しています。これは、利用可能なIoniconのいずれかを使って、Reorderの中に[Icon](https://ionic.io/ionicons)コンポーネントを追加することでカスタマイズできます。
 
 import CustomIcon from '@site/static/usage/v7/reorder/custom-icon/index.md';
 
@@ -52,27 +52,27 @@ import CustomIcon from '@site/static/usage/v7/reorder/custom-icon/index.md';
 
 ## Reorder Wrapper
 
-Reorder can also be used as a wrapper around an item, making the item itself the anchor. Click anywhere on an item below and drag it to reorder the list.
+並び替えは、項目を囲むラッパーとして使うこともできます。下の項目のどこかをクリックし、ドラッグすると、リストの順番を入れ替えることができます。
 
 import Wrapper from '@site/static/usage/v7/reorder/wrapper/index.md';
 
 <Wrapper />
 
 
-## Updating Data
+## データの更新
 
-When the `complete` method is called on the reorder group with no parameters, the DOM nodes will be reordered. If the items are rendered from an array of data that needs to be sorted, this can result in the data and DOM being out of sync. In order to sort the array upon completion of the reorder, the array should be passed as a parameter to the `complete` method. The `complete` method will sort the array and return it so it can be reassigned.
+パラメータを指定せずに reorder グループに対して `complete` メソッドを呼び出すと、DOM ノードが並べ替えられます。項目がソートが必要なデータの配列からレンダリングされた場合、データと DOM が同期しないことがあります。並べ替えの完了時に配列をソートするには、`complete` メソッドのパラメータとして配列を渡す必要があります。 `complete`メソッドは配列をソートして返し、再代入できるようにしてください。
 
-In some cases, it may be necessary for an app to reorder both the array and the DOM nodes on its own. If this is required, `false` should be passed as a parameter to the `complete` method. This will prevent Ionic from reordering any DOM nodes inside of the reorder group.
+場合によっては、アプリが独自に配列と DOM ノードの両方を並べ替える必要があるかもしれません。その場合は `complete` メソッドに `false` をパラメータとして渡す必要があります。これにより、Ionicはreorder group内のDOMノードの並び替えを行わないようになります。
 
 import UpdatingData from '@site/static/usage/v7/reorder/updating-data/index.md';
 
 <UpdatingData />
 
 
-## Usage with Virtual Scroll
+## 仮想スクロールでの使用
 
-Reorder requires a scroll container to work properly. When using a virtual scrolling solution, a custom scroll target needs to be provided. Scrolling on the content needs to be disabled and the `.ion-content-scroll-host` class needs to be added to the element responsible for scrolling.
+Reorderを正しく動作させるには、スクロールコンテナが必要です。仮想スクロールソリューションを使用する場合は、カスタムスクロールターゲットを指定する必要があります。コンテンツのスクロールを無効にし、スクロールを担当する要素に `.ion-content-scroll-host` クラスを追加する必要があります。
 
 import CustomScrollTarget from '@site/static/usage/v7/reorder/custom-scroll-target/index.md';
 

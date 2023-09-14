@@ -9,7 +9,7 @@ import CustomProps from '@ionic-internal/component-api/v7/label/custom-props.md'
 import Slots from '@ionic-internal/component-api/v7/label/slots.md';
 
 <head>
-  <title>Item Label Color and Properties for Applications | ion-label</title>
+  <title>ion-label: Item Label Color and Properties for Applications</title>
   <meta name="description" content="Labelは、他のIonicコンポーネントと組み合わせて使用できるラッパー要素です。ion-labelでアイテムラベルの色やその他のプロパティを簡単にデザインできます。" />
 </head>
 

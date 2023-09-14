@@ -1,5 +1,5 @@
 {
-  "filePath": "./src/components/datetime/datetime.tsx",
+  "filePath": "src/components/datetime/datetime.tsx",
   "encapsulation": "shadow",
   "tag": "ion-datetime",
   "docs": "",
@@ -46,6 +46,11 @@
     {
       "name": "cancelText",
       "type": "string",
+      "complexType": {
+        "original": "string",
+        "resolved": "string",
+        "references": {}
+      },
       "mutable": false,
       "attr": "cancel-text",
       "reflectToAttr": false,
@@ -63,6 +68,11 @@
     {
       "name": "clearText",
       "type": "string",
+      "complexType": {
+        "original": "string",
+        "resolved": "string",
+        "references": {}
+      },
       "mutable": false,
       "attr": "clear-text",
       "reflectToAttr": false,
@@ -80,6 +90,17 @@
     {
       "name": "color",
       "type": "\"danger\" | \"dark\" | \"light\" | \"medium\" | \"primary\" | \"secondary\" | \"success\" | \"tertiary\" | \"warning\" | string & Record<never, never> | undefined",
+      "complexType": {
+        "original": "Color",
+        "resolved": "\"danger\" | \"dark\" | \"light\" | \"medium\" | \"primary\" | \"secondary\" | \"success\" | \"tertiary\" | \"warning\" | string & Record<never, never> | undefined",
+        "references": {
+          "Color": {
+            "location": "import",
+            "path": "../../interface",
+            "id": "src/interface.d.ts::Color"
+          }
+        }
+      },
       "mutable": false,
       "attr": "color",
       "reflectToAttr": false,
@@ -136,6 +157,11 @@
     {
       "name": "dayValues",
       "type": "number | number[] | string | undefined",
+      "complexType": {
+        "original": "number[] | number | string",
+        "resolved": "number | number[] | string | undefined",
+        "references": {}
+      },
       "mutable": false,
       "attr": "day-values",
       "reflectToAttr": false,
@@ -161,6 +187,11 @@
     {
       "name": "disabled",
       "type": "boolean",
+      "complexType": {
+        "original": "boolean",
+        "resolved": "boolean",
+        "references": {}
+      },
       "mutable": false,
       "attr": "disabled",
       "reflectToAttr": false,
@@ -178,6 +209,11 @@
     {
       "name": "doneText",
       "type": "string",
+      "complexType": {
+        "original": "string",
+        "resolved": "string",
+        "references": {}
+      },
       "mutable": false,
       "attr": "done-text",
       "reflectToAttr": false,
@@ -195,6 +231,11 @@
     {
       "name": "firstDayOfWeek",
       "type": "number",
+      "complexType": {
+        "original": "number",
+        "resolved": "number",
+        "references": {}
+      },
       "mutable": false,
       "attr": "first-day-of-week",
       "reflectToAttr": false,
@@ -212,6 +253,22 @@
     {
       "name": "highlightedDates",
       "type": "((dateIsoString: string) => DatetimeHighlightStyle | undefined) | DatetimeHighlight[] | undefined",
+      "complexType": {
+        "original": "DatetimeHighlight[] | DatetimeHighlightCallback",
+        "resolved": "((dateIsoString: string) => DatetimeHighlightStyle | undefined) | DatetimeHighlight[] | undefined",
+        "references": {
+          "DatetimeHighlight": {
+            "location": "import",
+            "path": "./datetime-interface",
+            "id": "src/components/datetime/datetime-interface.ts::DatetimeHighlight"
+          },
+          "DatetimeHighlightCallback": {
+            "location": "import",
+            "path": "./datetime-interface",
+            "id": "src/components/datetime/datetime-interface.ts::DatetimeHighlightCallback"
+          }
+        }
+      },
       "mutable": false,
       "reflectToAttr": false,
       "docs": "Used to apply custom text and background colors to specific dates.\n\nCan be either an array of objects containing ISO strings and colors,\nor a callback that receives an ISO string and returns the colors.\n\nOnly applies to the `date`, `date-time`, and `time-date` presentations,\nwith `preferWheel=\"false\"`.",
@@ -236,6 +293,11 @@
     {
       "name": "hourCycle",
       "type": "\"h12\" | \"h23\" | undefined",
+      "complexType": {
+        "original": "'h23' | 'h12'",
+        "resolved": "\"h12\" | \"h23\" | undefined",
+        "references": {}
+      },
       "mutable": false,
       "attr": "hour-cycle",
       "reflectToAttr": false,
@@ -260,6 +322,11 @@
     {
       "name": "hourValues",
       "type": "number | number[] | string | undefined",
+      "complexType": {
+        "original": "number[] | number | string",
+        "resolved": "number | number[] | string | undefined",
+        "references": {}
+      },
       "mutable": false,
       "attr": "hour-values",
       "reflectToAttr": false,
@@ -285,6 +352,11 @@
     {
       "name": "isDateEnabled",
       "type": "((dateIsoString: string) => boolean) | undefined",
+      "complexType": {
+        "original": "(dateIsoString: string) => boolean",
+        "resolved": "((dateIsoString: string) => boolean) | undefined",
+        "references": {}
+      },
       "mutable": false,
       "reflectToAttr": false,
       "docs": "Returns if an individual date (calendar day) is enabled or disabled.\n\nIf `true`, the day will be enabled/interactive.\nIf `false`, the day will be disabled/non-interactive.\n\nThe function accepts an ISO 8601 date string of a given day.\nBy default, all days are enabled. Developers can use this function\nto write custom logic to disable certain days.\n\nThe function is called for each rendered calendar day, for the previous, current and next month.\nCustom implementations should be optimized for performance to avoid jank.",
@@ -303,6 +375,11 @@
     {
       "name": "locale",
       "type": "string",
+      "complexType": {
+        "original": "string",
+        "resolved": "string",
+        "references": {}
+      },
       "mutable": false,
       "attr": "locale",
       "reflectToAttr": false,
@@ -320,6 +397,11 @@
     {
       "name": "max",
       "type": "string | undefined",
+      "complexType": {
+        "original": "string",
+        "resolved": "string | undefined",
+        "references": {}
+      },
       "mutable": true,
       "attr": "max",
       "reflectToAttr": false,
@@ -339,6 +421,11 @@
     {
       "name": "min",
       "type": "string | undefined",
+      "complexType": {
+        "original": "string",
+        "resolved": "string | undefined",
+        "references": {}
+      },
       "mutable": true,
       "attr": "min",
       "reflectToAttr": false,
@@ -358,6 +445,11 @@
     {
       "name": "minuteValues",
       "type": "number | number[] | string | undefined",
+      "complexType": {
+        "original": "number[] | number | string",
+        "resolved": "number | number[] | string | undefined",
+        "references": {}
+      },
       "mutable": false,
       "attr": "minute-values",
       "reflectToAttr": false,
@@ -404,6 +496,11 @@
     {
       "name": "monthValues",
       "type": "number | number[] | string | undefined",
+      "complexType": {
+        "original": "number[] | number | string",
+        "resolved": "number | number[] | string | undefined",
+        "references": {}
+      },
       "mutable": false,
       "attr": "month-values",
       "reflectToAttr": false,
@@ -429,6 +526,11 @@
     {
       "name": "multiple",
       "type": "boolean",
+      "complexType": {
+        "original": "boolean",
+        "resolved": "boolean",
+        "references": {}
+      },
       "mutable": false,
       "attr": "multiple",
       "reflectToAttr": false,
@@ -446,6 +548,11 @@
     {
       "name": "name",
       "type": "string",
+      "complexType": {
+        "original": "string",
+        "resolved": "string",
+        "references": {}
+      },
       "mutable": false,
       "attr": "name",
       "reflectToAttr": false,
@@ -463,6 +570,11 @@
     {
       "name": "preferWheel",
       "type": "boolean",
+      "complexType": {
+        "original": "boolean",
+        "resolved": "boolean",
+        "references": {}
+      },
       "mutable": false,
       "attr": "prefer-wheel",
       "reflectToAttr": false,
@@ -480,6 +592,17 @@
     {
       "name": "presentation",
       "type": "\"date\" | \"date-time\" | \"month\" | \"month-year\" | \"time\" | \"time-date\" | \"year\"",
+      "complexType": {
+        "original": "DatetimePresentation",
+        "resolved": "\"date\" | \"date-time\" | \"month\" | \"month-year\" | \"time\" | \"time-date\" | \"year\"",
+        "references": {
+          "DatetimePresentation": {
+            "location": "import",
+            "path": "./datetime-interface",
+            "id": "src/components/datetime/datetime-interface.ts::DatetimePresentation"
+          }
+        }
+      },
       "mutable": false,
       "attr": "presentation",
       "reflectToAttr": false,
@@ -522,6 +645,11 @@
     {
       "name": "readonly",
       "type": "boolean",
+      "complexType": {
+        "original": "boolean",
+        "resolved": "boolean",
+        "references": {}
+      },
       "mutable": false,
       "attr": "readonly",
       "reflectToAttr": false,
@@ -539,6 +667,11 @@
     {
       "name": "showClearButton",
       "type": "boolean",
+      "complexType": {
+        "original": "boolean",
+        "resolved": "boolean",
+        "references": {}
+      },
       "mutable": false,
       "attr": "show-clear-button",
       "reflectToAttr": false,
@@ -556,6 +689,11 @@
     {
       "name": "showDefaultButtons",
       "type": "boolean",
+      "complexType": {
+        "original": "boolean",
+        "resolved": "boolean",
+        "references": {}
+      },
       "mutable": false,
       "attr": "show-default-buttons",
       "reflectToAttr": false,
@@ -573,6 +711,11 @@
     {
       "name": "showDefaultTimeLabel",
       "type": "boolean",
+      "complexType": {
+        "original": "boolean",
+        "resolved": "boolean",
+        "references": {}
+      },
       "mutable": false,
       "attr": "show-default-time-label",
       "reflectToAttr": false,
@@ -590,6 +733,11 @@
     {
       "name": "showDefaultTitle",
       "type": "boolean",
+      "complexType": {
+        "original": "boolean",
+        "resolved": "boolean",
+        "references": {}
+      },
       "mutable": false,
       "attr": "show-default-title",
       "reflectToAttr": false,
@@ -607,6 +755,11 @@
     {
       "name": "size",
       "type": "\"cover\" | \"fixed\"",
+      "complexType": {
+        "original": "'cover' | 'fixed'",
+        "resolved": "\"cover\" | \"fixed\"",
+        "references": {}
+      },
       "mutable": false,
       "attr": "size",
       "reflectToAttr": false,
@@ -629,6 +782,17 @@
     {
       "name": "titleSelectedDatesFormatter",
       "type": "((selectedDates: string[]) => string) | undefined",
+      "complexType": {
+        "original": "TitleSelectedDatesFormatter",
+        "resolved": "((selectedDates: string[]) => string) | undefined",
+        "references": {
+          "TitleSelectedDatesFormatter": {
+            "location": "import",
+            "path": "./datetime-interface",
+            "id": "src/components/datetime/datetime-interface.ts::TitleSelectedDatesFormatter"
+          }
+        }
+      },
       "mutable": false,
       "reflectToAttr": false,
       "docs": "A callback used to format the header text that shows how many\ndates are selected. Only used if there are 0 or more than 1\nselected (i.e. unused for exactly 1). By default, the header\ntext is set to \"numberOfDates days\".",
@@ -647,6 +811,11 @@
     {
       "name": "value",
       "type": "null | string | string[] | undefined",
+      "complexType": {
+        "original": "string | string[] | null",
+        "resolved": "null | string | string[] | undefined",
+        "references": {}
+      },
       "mutable": true,
       "attr": "value",
       "reflectToAttr": false,
@@ -672,6 +841,11 @@
     {
       "name": "yearValues",
       "type": "number | number[] | string | undefined",
+      "complexType": {
+        "original": "number[] | number | string",
+        "resolved": "number | number[] | string | undefined",
+        "references": {}
+      },
       "mutable": false,
       "attr": "year-values",
       "reflectToAttr": false,
@@ -702,6 +876,22 @@
         "type": "Promise<void>",
         "docs": ""
       },
+      "complexType": {
+        "signature": "(closeOverlay?: boolean) => Promise<void>",
+        "parameters": [
+          {
+            "tags": [],
+            "text": ""
+          }
+        ],
+        "references": {
+          "Promise": {
+            "location": "global",
+            "id": "global::Promise"
+          }
+        },
+        "return": "Promise<void>"
+      },
       "signature": "cancel(closeOverlay?: boolean) => Promise<void>",
       "parameters": [],
       "docs": "Emits the ionCancel event and\noptionally closes the popover\nor modal that the datetime was\npresented in.",
@@ -712,6 +902,22 @@
       "returns": {
         "type": "Promise<void>",
         "docs": ""
+      },
+      "complexType": {
+        "signature": "(closeOverlay?: boolean) => Promise<void>",
+        "parameters": [
+          {
+            "tags": [],
+            "text": ""
+          }
+        ],
+        "references": {
+          "Promise": {
+            "location": "global",
+            "id": "global::Promise"
+          }
+        },
+        "return": "Promise<void>"
       },
       "signature": "confirm(closeOverlay?: boolean) => Promise<void>",
       "parameters": [],
@@ -724,6 +930,22 @@
         "type": "Promise<void>",
         "docs": ""
       },
+      "complexType": {
+        "signature": "(startDate?: string) => Promise<void>",
+        "parameters": [
+          {
+            "tags": [],
+            "text": ""
+          }
+        ],
+        "references": {
+          "Promise": {
+            "location": "global",
+            "id": "global::Promise"
+          }
+        },
+        "return": "Promise<void>"
+      },
       "signature": "reset(startDate?: string) => Promise<void>",
       "parameters": [],
       "docs": "Resets the internal state of the datetime but does not update the value.\nPassing a valid ISO-8601 string will reset the state of the component to the provided date.\nIf no value is provided, the internal state will be reset to the clamped value of the min, max and today.",
@@ -735,6 +957,11 @@
       "event": "ionBlur",
       "detail": "void",
       "bubbles": true,
+      "complexType": {
+        "original": "void",
+        "resolved": "void",
+        "references": {}
+      },
       "cancelable": true,
       "composed": true,
       "docs": "Emitted when the datetime loses focus.",
@@ -744,6 +971,11 @@
       "event": "ionCancel",
       "detail": "void",
       "bubbles": true,
+      "complexType": {
+        "original": "void",
+        "resolved": "void",
+        "references": {}
+      },
       "cancelable": true,
       "composed": true,
       "docs": "Emitted when the datetime selection was cancelled.",
@@ -753,6 +985,17 @@
       "event": "ionChange",
       "detail": "DatetimeChangeEventDetail",
       "bubbles": true,
+      "complexType": {
+        "original": "DatetimeChangeEventDetail",
+        "resolved": "DatetimeChangeEventDetail",
+        "references": {
+          "DatetimeChangeEventDetail": {
+            "location": "import",
+            "path": "./datetime-interface",
+            "id": "src/components/datetime/datetime-interface.ts::DatetimeChangeEventDetail"
+          }
+        }
+      },
       "cancelable": true,
       "composed": true,
       "docs": "Emitted when the value (selected date) has changed.",
@@ -762,6 +1005,11 @@
       "event": "ionFocus",
       "detail": "void",
       "bubbles": true,
+      "complexType": {
+        "original": "void",
+        "resolved": "void",
+        "references": {}
+      },
       "cancelable": true,
       "composed": true,
       "docs": "Emitted when the datetime has focus.",

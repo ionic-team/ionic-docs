@@ -49,25 +49,25 @@ import MenuType from '@site/static/usage/v7/menu/type/index.md';
 
 ## Menu Sides
 
-Menus are displayed on the `"start"` side by default. In apps that use left-to-right direction, this is the left side, and in right-to-left apps, this will be the right side. Menus can also be set to display on the `"end"` side, which is the opposite of `"start"`.
+メニューはデフォルトでは`"start"`側に表示されます。左から右へ移動するアプリでは左側に、右から左へ移動するアプリでは右側に表示されます。メニューは`"start"`の反対側である`"end"`側に表示させることもできます。
 
-If menus on both sides are needed in an app, the menu can be opened by passing the `side` value to the `open` method on `MenuController`. If a side is not provided, the menu on the `"start"` side will be opened. See the [multiple menus](#multiple-menus) section below for an example using `MenuController`.
+アプリ内で両サイドのメニューが必要な場合、 `MenuController` の `open` メソッドに `side` の値を渡すことでメニューを開くことができます。sideが指定されない場合は、`"start"`側のメニューが開かれる。MenuController` を使用した例については、下記の [複数メニュー](#multiple-menus) セクションを参照ください。
 
 import Sides from '@site/static/usage/v7/menu/sides/index.md';
 
 <Sides />
 
 
-## Multiple Menus
+## 複数メニュー
 
-When multiple menus exist on the same side, we need to enable the menu that we want to open before it can be opened. This can be done by calling the `enable` method on the `MenuController`. We can then call `open` on a menu based on its `menuId` or `side`.
+同じサイドに複数のメニューが存在する場合、開きたいメニューを開く前にそのメニューを有効にする必要があります。これは `MenuController` の `enable` メソッドを呼び出すことで行うことができます。次に、メニューの `menuId` または `side` に基づいて `open` を呼び出すことができます。
 
 import Multiple from '@site/static/usage/v7/menu/multiple/index.md';
 
 <Multiple />
 
 
-## Theming
+## テーマ
 
 ### CSS Shadow Parts
 

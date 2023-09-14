@@ -1,5 +1,5 @@
 {
-  "filePath": "./src/components/row/row.tsx",
+  "filePath": "src/components/row/row.tsx",
   "encapsulation": "shadow",
   "tag": "ion-row",
   "docs": "",
