@@ -28,25 +28,25 @@ function Example() {
       <IonList>
         <IonItem>
           <IonAvatar aria-hidden="true" slot="start">
-            <img src="https://ionicframework.com/docs/img/demos/avatar.svg" />
+            <img alt="" src="https://ionicframework.com/docs/img/demos/avatar.svg" />
           </IonAvatar>
           <IonLabel>Huey</IonLabel>
         </IonItem>
         <IonItem>
           <IonAvatar aria-hidden="true" slot="start">
-            <img src="https://ionicframework.com/docs/img/demos/avatar.svg" />
+            <img alt="" src="https://ionicframework.com/docs/img/demos/avatar.svg" />
           </IonAvatar>
           <IonLabel>Dewey</IonLabel>
         </IonItem>
         <IonItem>
           <IonAvatar aria-hidden="true" slot="start">
-            <img src="https://ionicframework.com/docs/img/demos/avatar.svg" />
+            <img alt="" src="https://ionicframework.com/docs/img/demos/avatar.svg" />
           </IonAvatar>
           <IonLabel>Louie</IonLabel>
         </IonItem>
         <IonItem>
           <IonAvatar aria-hidden="true" slot="start">
-            <img src="https://ionicframework.com/docs/img/demos/avatar.svg" />
+            <img alt="" src="https://ionicframework.com/docs/img/demos/avatar.svg" />
           </IonAvatar>
           <IonLabel>Fooie</IonLabel>
         </IonItem>
