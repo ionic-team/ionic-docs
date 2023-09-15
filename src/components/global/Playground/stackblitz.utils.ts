@@ -68,7 +68,7 @@ const openHtmlEditor = async (code: string, options?: EditorOptions) => {
 
   const package_json = defaultFiles[3];
 
-  files[indexHtml] = files[indexHtml].replace(/{{ TEMPLATE }}/g, code).replace(
+  files[indexHtml] = defaultFiles[1].replace(/{{ TEMPLATE }}/g, code).replace(
     '</head>',
     `
   <script>

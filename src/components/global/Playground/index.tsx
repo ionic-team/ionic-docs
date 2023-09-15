@@ -372,6 +372,7 @@ export default function Playground({
       // using outerText will preserve line breaks for formatting in Stackblitz editor
       codeBlock = codeRef.current.querySelector('code').outerText;
     } else {
+      codeBlock = codeRef.current.querySelector('code').outerText;
       editorOptions.files = Object.keys(codeSnippets[usageTarget])
         .map((fileName) => ({
           [fileName]: hostRef.current!.querySelector<HTMLElement>(`#${getCodeSnippetId(usageTarget, fileName)} code`)
