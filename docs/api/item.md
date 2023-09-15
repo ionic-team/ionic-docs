@@ -110,7 +110,21 @@ import Actions from '@site/static/usage/v7/item/content-types/actions/index.md';
 
 Controls are form components such as checkboxes, inputs, radios, and more. Each item in a list should have at most two controls due to screen space constraints.
 
-Metadata such as helper text or character counts should not be used on form controls in list views. If such metadata is needed, the form control should be placed outside of a list. If a form control needs additional context, consider adding a [note](./note) at the bottom of the list.
+<BestPracticeFigure 
+  text={<>Metadata such as helper text or character counts should not be used on form controls in list views. If such metadata is needed, the form control should be placed outside of a list. Alternatively, the context can be placed in a <a href="useBaseUrl('api/note')">Note</a> at the bottom of the list.</>}
+  doText={<>Place metadata for inputs at the end of a list.</>}
+  dontText={<>Don't put metadata for inputs in the list as it can make the list hard to read.</>}
+  doImage={<img alt="There is one list of inputs. One of the inputs is a password input with text below the input that says 'Password must be at least 16 characters'. However, this text is placed directly above another input, so it's not immediately clear which input the text is associated with." src={useBaseUrl('img/item/controls-metadata-do.jpg')} />}
+  dontImage={<img alt="There are two lists of inputs. The first list contains a password input. Below that list contains text that says 'Password must be at least 16 characters'. The second list contains an email input. This second list is separated so the password length requirement text is clearly associated with the password input above." src={useBaseUrl('img/item/controls-metadata-dont.jpg')} />}
+/>
+
+<BestPracticeFigure 
+  text={<>Items should typically have no more than two controls. If you need more controls, consider adding the additional controls in a <a href="useBaseUrl('api/modal')">Modal</a> that is accessible from the item.</>}
+  doText={<>Move additional controls to a submenu accessible from the item.</>}
+  dontText={<>Don't use more than two controls within an item.</>}
+  doImage={<img alt="There is one list of inputs. One of the inputs is a password input with text below the input that says 'Password must be at least 16 characters'. However, this text is placed directly above another input, so it's not immediately clear which input the text is associated with." src={useBaseUrl('img/item/controls-count-do.jpg')} />}
+  dontImage={<img alt="There are two lists of inputs. The first list contains a password input. Below that list contains text that says 'Password must be at least 16 characters'. The second list contains an email input. This second list is separated so the password length requirement text is clearly associated with the password input above." src={useBaseUrl('img/item/controls-count-dont.jpg')} />}
+/>
 
 TODO Demo
 
