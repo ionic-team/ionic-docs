@@ -152,7 +152,7 @@ export class AppModule {}
 
 The Standalone option is newer than the Modules option, so developers may wish to switch during the development of their application. This guide details the steps needed to migrate.
 
-Note that migrating to Ionic standalone components must be done all at the same time and cannot be done gradually. The Modules and Standalone approaches use two different build systems of Ionic that cannot be used at the same time.
+Migrating to Ionic standalone components must be done all at the same time and cannot be done gradually. The Modules and Standalone approaches use two different build systems of Ionic that cannot be used at the same time.
 
 ### Using Ionic Standalone Components in Standalone-based Applications
 
