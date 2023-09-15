@@ -6,8 +6,10 @@ export default function BestPracticeFigure({
   text,
   doText,
   dontText,
+  cautionText,
   doImage,
-  dontImage
+  dontImage,
+  cautionImage
 }) {
   return (
     <div className="best-practice__container">
@@ -20,13 +22,20 @@ export default function BestPracticeFigure({
           </div>
           <p>{doText}</p>
         </div>
-        <div className="best-practice__dont">
+        { dontText && dontImage && <div className="best-practice__dont">
           <div className="best-practice__image-wrapper">
             {dontImage}
             <div className="best-practice__dont-text">Don't</div>
           </div>
           <p>{dontText}</p>
-        </div>
+        </div> }
+        { cautionText && cautionImage && <div className="best-practice__caution">
+          <div className="best-practice__image-wrapper">
+            {cautionImage}
+            <div className="best-practice__caution-text">Caution</div>
+          </div>
+          <p>{cautionText}</p>
+        </div> }
       </div>
     </div>
   )

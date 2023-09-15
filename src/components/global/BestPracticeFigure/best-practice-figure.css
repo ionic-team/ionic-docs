@@ -7,12 +7,14 @@
 }
 
 .best-practice__do,
-.best-practice__dont {
+.best-practice__dont,
+.best-practice__caution {
   flex-grow: 1;
 }
 
 .best-practice__do p,
-.best-practice__dont p {
+.best-practice__dont p,
+.best-practice__caution p {
   padding: 8px 16px;
 }
 
@@ -23,7 +25,8 @@
 }
 
 .best-practice__dont-text,
-.best-practice__do-text {
+.best-practice__do-text,
+.best-practice__caution-text {
   padding: 12px 16px;
 
   font-weight: 600;
@@ -37,6 +40,10 @@
   border: 1px solid var(--c-red-10);
 }
 
+.best-practice__caution .best-practice__image-wrapper {
+  border: 1px solid var(--c-yellow-10);
+}
+
 .best-practice__dont-text {
   color: var(--c-red-100);
   background: var(--c-red-10);
@@ -44,4 +51,9 @@
 .best-practice__do-text {
   color: var(--c-blue-100);
   background: var(--c-blue-10);
+}
+
+.best-practice__caution-text {
+  color: var(--c-yellow-100);
+  background: var(--c-yellow-10);
 }

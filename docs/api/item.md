@@ -62,9 +62,31 @@ import Text from '@site/static/usage/v7/item/content-types/text/index.md';
 
 ### Metadata
 
-Metadata provides additional context for a row. Metadata can include information such as counts, badges, and more. Try to limit the amount of metadata you include to only the most relevant information. Adding too much metadata to a single item can overwhelm or confuse the user.
+Metadata provides additional context for a row such as status text or counts. Components like [Badge](./badge) or [Note](./note) are great ways of showing metadata.
 
-TODO Demo 
+<BestPracticeFigure 
+  text={<>Limit the amount of metadata you include to only the most relevant information.</>}
+  doText={<>Add only the most important metadata</>}
+  dontText={<>Don't add too much metadata as it can overwhelm or confuse the user.</>}
+  doImage={<img alt="A list that contains several items, each representing a different to-do list. A count of how many tasks in each to-do list is placed at the end of each item." src={useBaseUrl('img/item/metadata-relevant-do.jpg')} />}
+  dontImage={<img alt="A list that contains several items, each representing a different to-do list. Two counts are placed at the end of each item: One count that states the total number of tasks, and another count that states the total number of tasks that are due today." src={useBaseUrl('img/item/metadata-relevant-dont.jpg')} />}
+/>
+
+<BestPracticeFigure 
+  text={<>Developers should also consider how important the metadata is. Drawing attention to the metadata may be helpful for the user or it may distract them from the more important information depending on the use case.</>}
+  doText={<>Prioritize the most important content.</>}
+  cautionText={<>Prioritized content may distract from other important content.</>}
+  doImage={<img alt="A list that contains several items, each representing a different to-do list. A count of how many tasks in each to-do list is placed at the end of each item." src={useBaseUrl('img/item/metadata-relevant-do.jpg')} />}
+  cautionImage={<img alt="A list that contains several items, each representing a different to-do list. A count of how many tasks in each to-do list is placed at the end of each item. However, the count is highlighted in blue which draws the user's attention away from the name of the to-do list." src={useBaseUrl('img/item/metadata-important-caution.jpg')} />}
+/>
+
+In the example below, we are creating two lists with different kinds of metadata. The first list uses [Note](./note) to show how many tasks are in each to-do list.
+
+The second list mimics the iOS Mail app to show an inbox. This list makes use of custom metadata including an "unread message" indicator in the "start" slot as well as a timestamp and custom detail icon in the "end" slot. The "unread message" indicator is highlighted in blue to draw your attention to the unread messages, while the timestamp is more subtle.
+
+import Metadata from '@site/static/usage/v7/item/content-types/metadata/index.md';
+
+<Metadata />
 
 ### Actions
 
