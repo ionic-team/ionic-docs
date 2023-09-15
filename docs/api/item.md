@@ -49,7 +49,7 @@ import SupportingVisuals from '@site/static/usage/v7/item/content-types/supporti
 The text content type includes form control labels or other visible text. This text serves to indicate the intent of the row. Try to keep the text short and to the point. This makes the item easy to read.
 
 <BestPracticeFigure 
-  text={<>If you find that you need more than a few sentences, consider moving the item to its own list and adding a <a href={useBaseUrl('api/note')}>note</a> at the bottom of the list.</>}
+  text={<>If you find that you need more than a few sentences, consider moving the item to its own list and adding a <a href={useBaseUrl('api/note')}>Note</a> at the bottom of the list.</>}
   doText={<>Move long text outside of the list</>}
   dontText={<>Don't try to fit long text in an item</>}
   doImage={<img alt="A list with an item that contains a checked checkbox indicating the user wants to receive emails. Text describing how often the user will receive emails as well as how to unsubscribe from emails is placed underneath the list." src={useBaseUrl('img/item/long-text-do.jpg')} />}
@@ -90,13 +90,21 @@ import Metadata from '@site/static/usage/v7/item/content-types/metadata/index.md
 
 ### Actions
 
-Actions are interactive elements that do something when you active them. An item can have primary and secondary actions displayed on a line. However, developers should ensure that each action's tap target is large enough to be usable.
+Actions are interactive elements that do something when you active them. An item can have multiple actions displayed on a line. However, developers should ensure that each action's tap target is large enough to be usable.
 
-Developers should be mindful when using actions and avoid creating [nested interactive](https://dequeuniversity.com/rules/axe/4.4/nested-interactive) which can break the user experience with screen readers. For example, developers should avoid adding a button inside the main content of `ion-item` if the `button` property is set to `true`.
+<BestPracticeFigure 
+  text={<>Developers should avoid creating <a href="https://dequeuniversity.com/rules/axe/4.4/nested-interactive">nested interactives</a> which can break the user experience with screen readers. For example, developers should avoid adding a button inside the main content of the Item if the <code>button</code> property is set to <code>true</code>. Additionally, developers should use the <a href={useBaseUrl('api/item-sliding')}>Item Sliding</a> component if they need to show more than two actions.</>}
+  doText={<>Avoid nested interactives and put multiple items in <a href={useBaseUrl('api/item-sliding')}>Item Sliding</a>.</>}
+  dontText={<>Don't put too many actions on a single row as that will overwhelm the user.</>}
+  doImage={<img alt="A list that contains several items, each representing a different to-do list. A count of how many tasks in each to-do list is placed at the end of each item." src={useBaseUrl('img/item/actions-do.jpg')} />}
+  dontImage={<img alt="A list that contains several items, each representing a different to-do list. A count of how many tasks in each to-do list is placed at the end of each item. However, the count is highlighted in blue which draws the user's attention away from the name of the to-do list." src={useBaseUrl('img/item/actions-dont.jpg')} />}
+/>
 
-If an item needs more than two actions, consider using the [item-sliding](./item-sliding) component with options.
+In the example below, we are creating a list of contacts. Each item is a stubbed button intended to bring you to the full contact page for that item. There are additional actions associated with each item that users can reveal by swiping on the item.
 
-TODO Demo
+import Actions from '@site/static/usage/v7/item/content-types/actions/index.md';
+
+<Actions />
 
 ### Controls
 
