@@ -32,7 +32,6 @@ ion-label strong {
 
   overflow: hidden;
 
-
   text-overflow: ellipsis;
 }
 

@@ -1,6 +1,17 @@
 ```tsx
 import React from 'react';
-import { IonContent, IonHeader, IonIcon, IonItem, IonLabel, IonList, IonNote, IonText, IonTitle, IonToolbar } from '@ionic/react';
+import {
+  IonContent,
+  IonHeader,
+  IonIcon,
+  IonItem,
+  IonLabel,
+  IonList,
+  IonNote,
+  IonText,
+  IonTitle,
+  IonToolbar,
+} from '@ionic/react';
 import { chevronForward, listCircle } from 'ionicons/icons';
 
 import './main.css';
@@ -33,10 +44,10 @@ function Example() {
           <IonItem button={true}>
             <IonIcon color="warning" slot="start" icon={listCircle} size="large"></IonIcon>
             <IonLabel>Reminders</IonLabel>
-           <IonNote slot="end">8</IonNote>
+            <IonNote slot="end">8</IonNote>
           </IonItem>
         </IonList>
-      
+
         <IonList inset={true}>
           <IonItem button={true} detail={false}>
             <div className="unread-indicator-wrapper" slot="start">
@@ -44,8 +55,11 @@ function Example() {
             </div>
             <IonLabel>
               <strong>Rick Astley</strong>
-              <IonText>Never Gonna Give You Up</IonText><br />
-              <IonNote className="IonText-wrap">Never gonna give you up Never gonna let you down Never gonna run...</IonNote>
+              <IonText>Never Gonna Give You Up</IonText>
+              <br />
+              <IonNote className="IonText-wrap">
+                Never gonna give you up Never gonna let you down Never gonna run...
+              </IonNote>
             </IonLabel>
             <div className="metadata-end-wrapper" slot="end">
               <IonNote>06:11</IonNote>
@@ -56,7 +70,8 @@ function Example() {
             <div className="unread-indicator-wrapper" slot="start"></div>
             <IonLabel>
               <strong>Ionitron</strong>
-              <IonText>I have become sentient</IonText><br />
+              <IonText>I have become sentient</IonText>
+              <br />
               <IonNote className="IonText-wrap">That is all.</IonNote>
             </IonLabel>
             <div className="metadata-end-wrapper" slot="end">
@@ -70,8 +85,11 @@ function Example() {
             </div>
             <IonLabel>
               <strong>Steam</strong>
-              <IonText>Game Store Sale</IonText><br />
-              <IonNote className="IonText-wrap">That game you added to your wish list 2 years ago is now on sale!</IonNote>
+              <IonText>Game Store Sale</IonText>
+              <br />
+              <IonNote className="IonText-wrap">
+                That game you added to your wish list 2 years ago is now on sale!
+              </IonNote>
             </IonLabel>
             <div className="metadata-end-wrapper" slot="end">
               <IonNote>Yesterday</IonNote>
@@ -82,7 +100,8 @@ function Example() {
             <div className="unread-indicator-wrapper" slot="start"></div>
             <IonLabel>
               <strong>Ionic</strong>
-              <IonText>Announcing Ionic 7.0</IonText><br />
+              <IonText>Announcing Ionic 7.0</IonText>
+              <br />
               <IonNote className="IonText-wrap">This version is one more than Ionic 6!</IonNote>
             </IonLabel>
             <div className="metadata-end-wrapper" slot="end">
@@ -97,4 +116,3 @@ function Example() {
 }
 export default Example;
 ```
-

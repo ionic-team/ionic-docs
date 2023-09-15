@@ -24,7 +24,7 @@
     <ion-item button="true">
       <ion-icon color="warning" slot="start" name="list-circle" size="large"></ion-icon>
       <ion-label>Reminders</ion-label>
-     <ion-note slot="end">8</ion-note>
+      <ion-note slot="end">8</ion-note>
     </ion-item>
   </ion-list>
 
@@ -117,7 +117,6 @@
     max-width: calc(100% - 60px);
 
     overflow: hidden;
-
 
     text-overflow: ellipsis;
   }

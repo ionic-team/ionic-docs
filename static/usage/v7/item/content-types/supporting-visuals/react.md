@@ -24,7 +24,7 @@ function Example() {
           <IonLabel>Cellular</IonLabel>
         </IonItem>
       </IonList>
-      
+
       <IonList>
         <IonItem>
           <IonAvatar aria-hidden="true" slot="start">
@@ -56,4 +56,3 @@ function Example() {
 }
 export default Example;
 ```
-

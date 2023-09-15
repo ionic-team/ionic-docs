@@ -18,7 +18,7 @@
       <ion-label>Cellular</ion-label>
     </ion-item>
   </ion-list>
-  
+
   <ion-list>
     <ion-item>
       <ion-avatar aria-hidden="true" slot="start">
@@ -61,8 +61,8 @@
       IonIcon,
     },
     setup() {
-      return { airplane, bluetooth, call, wifi }
-    }
+      return { airplane, bluetooth, call, wifi };
+    },
   });
 </script>
 ```

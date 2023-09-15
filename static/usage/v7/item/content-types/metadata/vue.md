@@ -25,10 +25,10 @@
       <ion-item :button="true">
         <ion-icon color="warning" slot="start" :icon="listCircle" size="large"></ion-icon>
         <ion-label>Reminders</ion-label>
-       <ion-note slot="end">8</ion-note>
+        <ion-note slot="end">8</ion-note>
       </ion-item>
     </ion-list>
-  
+
     <ion-list :inset="true">
       <ion-item :button="true" detail="false">
         <div class="unread-indicator-wrapper" slot="start">
@@ -87,7 +87,18 @@
 </template>
 
 <script lang="ts">
-  import { IonContent, IonHeader, IonIcon, IonItem, IonLabel, IonList, IonNote, IonText, IonTitle, IonToolbar } from '@ionic/vue';
+  import {
+    IonContent,
+    IonHeader,
+    IonIcon,
+    IonItem,
+    IonLabel,
+    IonList,
+    IonNote,
+    IonText,
+    IonTitle,
+    IonToolbar,
+  } from '@ionic/vue';
   import { defineComponent } from 'vue';
   import { chevronForward, listCircle } from 'ionicons/icons';
 
@@ -105,8 +116,8 @@
       IonToolbar,
     },
     setup() {
-      return { chevronForward, listCircle }
-    }
+      return { chevronForward, listCircle };
+    },
   });
 </script>
 
@@ -143,7 +154,6 @@
     max-width: calc(100% - 60px);
 
     overflow: hidden;
-
 
     text-overflow: ellipsis;
   }
