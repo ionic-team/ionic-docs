@@ -75,7 +75,7 @@ Metadata provides additional context for a row such as status text or counts. Co
 <BestPracticeFigure 
   text={<>Developers should also consider how important the metadata is. Drawing attention to the metadata may be helpful for the user or it may distract them from the more important information depending on the use case.</>}
   doText={<>Prioritize the most important content.</>}
-  cautionText={<>Prioritized content may distract from other important content.</>}
+  cautionText={<>Prioritized metadata may distract from other important content.</>}
   doImage={<img alt="A list that contains several items, each representing a different to-do list. A count of how many tasks in each to-do list is placed at the end of each item." src={useBaseUrl('img/item/metadata-relevant-do.jpg')} />}
   cautionImage={<img alt="A list that contains several items, each representing a different to-do list. A count of how many tasks in each to-do list is placed at the end of each item. However, the count is highlighted in blue which draws the user's attention away from the name of the to-do list." src={useBaseUrl('img/item/metadata-important-caution.jpg')} />}
 />
