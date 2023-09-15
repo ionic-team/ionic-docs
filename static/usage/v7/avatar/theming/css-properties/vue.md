@@ -5,13 +5,8 @@
   </ion-avatar>
 </template>
 
-<script lang="ts">
-  import { IonAvatar } from '@ionic/vue';
-  import { defineComponent } from 'vue';
-
-  export default defineComponent({
-    components: { IonAvatar },
-  });
+<script lang="ts" setup>
+import { IonAvatar } from '@ionic/vue';
 </script>
 
 <style scoped>
