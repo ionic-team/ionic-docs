@@ -14,15 +14,8 @@
   </ion-content>
 </template>
 
-<script lang="ts">
-  import { IonHeader, IonTitle, IonToolbar, IonContent, IonButtons, IonBackButton } from '@ionic/vue';
-  import { caretBack } from 'ionicons/icons';
-
-  export default {
-    components: { IonHeader, IonTitle, IonToolbar, IonContent, IonButtons, IonBackButton },
-    setup() {
-      return { caretBack };
-    },
-  };
+<script lang="ts" setup>
+import { IonHeader, IonTitle, IonToolbar, IonContent, IonButtons, IonBackButton } from '@ionic/vue';
+import { caretBack } from 'ionicons/icons';
 </script>
 ```
