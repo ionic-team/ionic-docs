@@ -188,8 +188,8 @@ bootstrapApplication(AppComponent, {
      * You do not need to set "mode: 'ios'" to
      * use Ionic standalone components.
      */
--   importProvidersFrom(IonicModule.forRoot({ mode: 'md' })),
-+   provideIonicAngular({ mode: 'md' }),
+-   importProvidersFrom(IonicModule.forRoot({ mode: 'ios' })),
++   provideIonicAngular({ mode: 'ios' }),
     provideRouter(routes),
   ],
 });
