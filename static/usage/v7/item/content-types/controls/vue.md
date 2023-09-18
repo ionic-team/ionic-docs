@@ -52,7 +52,7 @@
       IonItem,
       IonList,
       IonTitle,
-      IonToolbar
+      IonToolbar,
     },
   });
 </script>

@@ -26,7 +26,7 @@
           </ion-item-option>
         </ion-item-options>
       </ion-item-sliding>
-  
+
       <ion-item-sliding>
         <ion-item :button="true">
           <ion-avatar aria-hidden="true" slot="start">
@@ -46,7 +46,7 @@
           </ion-item-option>
         </ion-item-options>
       </ion-item-sliding>
-  
+
       <ion-item-sliding>
         <ion-item :button="true">
           <ion-avatar aria-hidden="true" slot="start">
@@ -66,7 +66,7 @@
           </ion-item-option>
         </ion-item-options>
       </ion-item-sliding>
-  
+
       <ion-item-sliding>
         <ion-item :button="true">
           <ion-avatar aria-hidden="true" slot="start">
@@ -86,7 +86,7 @@
           </ion-item-option>
         </ion-item-options>
       </ion-item-sliding>
-  
+
       <ion-item-sliding>
         <ion-item :button="true">
           <ion-avatar aria-hidden="true" slot="start">
@@ -106,7 +106,7 @@
           </ion-item-option>
         </ion-item-options>
       </ion-item-sliding>
-  
+
       <ion-item-sliding>
         <ion-item :button="true">
           <ion-avatar aria-hidden="true" slot="start">
@@ -126,7 +126,7 @@
           </ion-item-option>
         </ion-item-options>
       </ion-item-sliding>
-  
+
       <ion-item-sliding>
         <ion-item :button="true">
           <ion-avatar aria-hidden="true" slot="start">
@@ -184,8 +184,8 @@
       IonToolbar,
     },
     setup() {
-      return { pin, share, trash }
-    }
+      return { pin, share, trash };
+    },
   });
 </script>
 ```

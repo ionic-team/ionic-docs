@@ -45,7 +45,7 @@ function Example() {
               </IonItemOption>
             </IonItemOptions>
           </IonItemSliding>
-      
+
           <IonItemSliding>
             <IonItem button={true}>
               <IonAvatar aria-hidden="true" slot="start">
@@ -65,7 +65,7 @@ function Example() {
               </IonItemOption>
             </IonItemOptions>
           </IonItemSliding>
-      
+
           <IonItemSliding>
             <IonItem button={true}>
               <IonAvatar aria-hidden="true" slot="start">
@@ -85,7 +85,7 @@ function Example() {
               </IonItemOption>
             </IonItemOptions>
           </IonItemSliding>
-      
+
           <IonItemSliding>
             <IonItem button={true}>
               <IonAvatar aria-hidden="true" slot="start">
@@ -105,7 +105,7 @@ function Example() {
               </IonItemOption>
             </IonItemOptions>
           </IonItemSliding>
-      
+
           <IonItemSliding>
             <IonItem button={true}>
               <IonAvatar aria-hidden="true" slot="start">
@@ -125,7 +125,7 @@ function Example() {
               </IonItemOption>
             </IonItemOptions>
           </IonItemSliding>
-      
+
           <IonItemSliding>
             <IonItem button={true}>
               <IonAvatar aria-hidden="true" slot="start">
@@ -145,7 +145,7 @@ function Example() {
               </IonItemOption>
             </IonItemOptions>
           </IonItemSliding>
-      
+
           <IonItemSliding>
             <IonItem button={true}>
               <IonAvatar aria-hidden="true" slot="start">
@@ -172,4 +172,3 @@ function Example() {
 }
 export default Example;
 ```
-
