@@ -13,7 +13,6 @@ import {
   IonToolbar,
   IonTitle,
 } from '@ionic/react';
-import { chevronForward, listCircle } from 'ionicons/icons';
 
 import './main.css';
 
@@ -43,7 +42,7 @@ function Example() {
 
         <IonList inset={true}>
           <IonItem>
-            <IonTextarea label="Comments" label-placement="floating" rows="5"></IonTextarea>
+            <IonTextarea label="Comments" label-placement="floating" rows={5}></IonTextarea>
           </IonItem>
         </IonList>
 
@@ -51,6 +50,7 @@ function Example() {
           >Your comments will be kept anonymous and will only be used to improve the reliability of our products.</IonNote
         >
       </IonContent>
+    </>
   );
 }
 export default Example;
