@@ -87,9 +87,9 @@
 
 <style>
   /*
-      * Optional CSS
-      * -----------------------------------
-      */
+   * Optional CSS
+   * -----------------------------------
+   */
 
   /* This sets a different background and item background in light mode on ios */
   .ios body {
