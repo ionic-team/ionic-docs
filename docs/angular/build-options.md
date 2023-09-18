@@ -281,7 +281,7 @@ if (environment.production) {
 
 @NgModule({
   declarations: [AppComponent],
-- imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule],
+- imports: [BrowserModule, IonicModule.forRoot({ mode: 'ios' }), AppRoutingModule],
 + imports: [BrowserModule, AppRoutingModule],
   providers: [
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
