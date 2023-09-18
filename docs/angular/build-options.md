@@ -32,26 +32,6 @@ See the [Standalone Migration Guide](#migrating-from-modules-to-standalone) for 
 All Ionic imports should be imported from the `@ionic/angular/standalone` submodule. This includes imports such as components, directives, providers, and types. Importing from `@ionic/angular` may pull in lazy loaded Ionic code which can interfere with treeshaking.
 :::
 
-**Components**
-
-In the example below, we are importing `IonContent` and `IonButton` from `@ionic/angular/standalone` and passing them to `imports` for use in the component template. We would get a compiler error if these components were not imported and provided to the `imports` array.
-
-```typescript
-import { Component } from '@angular/core';
-import { IonButton, IonContent } from '@ionic/angular/standalone';
-
-@Component({
-  selector: 'app-home',
-  templateUrl: 'home.page.html',
-  styleUrls: ['home.page.scss'],
-  standalone: true,
-  imports: [IonButton, IonContent],
-})
-export class HomePage {
-  constructor() {}
-}
-```
-
 **Bootstrapping and Configuration**
 
 Ionic Angular needs to be configured when the Angular application calls `bootstrapApplication` using the `provideIonicAngular` function. Developers can pass any [IonicConfig](../developing/config#ionicconfig) values as an object in this function. Note that `provideIonicAngular` needs to be called even if no custom config is passed.
@@ -77,6 +57,26 @@ bootstrapApplication(AppComponent, {
     provideRouter(routes),
   ],
 });
+```
+
+**Components**
+
+In the example below, we are importing `IonContent` and `IonButton` from `@ionic/angular/standalone` and passing them to `imports` for use in the component template. We would get a compiler error if these components were not imported and provided to the `imports` array.
+
+```typescript
+import { Component } from '@angular/core';
+import { IonButton, IonContent } from '@ionic/angular/standalone';
+
+@Component({
+  selector: 'app-home',
+  templateUrl: 'home.page.html',
+  styleUrls: ['home.page.scss'],
+  standalone: true,
+  imports: [IonButton, IonContent],
+})
+export class HomePage {
+  constructor() {}
+}
 ```
 
 **Icons**
