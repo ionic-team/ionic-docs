@@ -24,11 +24,13 @@ Items are elements that can contain text, icons, avatars, images, inputs, and an
 
 ## Content Types
 
-Items in a list can support 5 different content types:
+While items in a list take many forms, they typically support 5 different content types. However, not all of these content types should be used together at the same time. The following guide shows the different content types as well as how to properly utilize them in an application.
 
 ### Supporting Visuals
 
-Supporting visuals are decorative icons or other adornments for an item. Common examples of supporting visuals are [Avatars](./avatar), [Icons](./icon), and [Thumbnails](./thumbnail). Since this content is not required to understand the intent of the row, it is typically hidden from screen readers using `aria-hidden="true"`.
+Supporting visuals are decorative icons or other adornments for an item. Common examples of supporting visuals are [Avatars](./avatar), [Icons](./icon), and [Thumbnails](./thumbnail). Since this content is not required to understand the intent of the item, it is typically hidden from screen readers using `aria-hidden="true"`.
+
+If a visual is required to interact with the item, such as an icon button, then the visual is an [action](#actions) not a supporting visual.
 
 <BestPracticeFigure 
   text={<>Supporting visuals should be rendered in a consistent manner. This makes the information in each item easier to parse.</>}
@@ -46,7 +48,7 @@ import SupportingVisuals from '@site/static/usage/v7/item/content-types/supporti
 
 ### Text
 
-The text content type includes form control labels or other visible text. This text serves to indicate the intent of the row. Try to keep the text short and to the point. This makes the item easy to read.
+The text content type includes form control labels or other visible text. This text serves to indicate the intent of the item. Try to keep the text short and to the point.
 
 <BestPracticeFigure 
   text={<>If you find that you need more than a few sentences, consider moving the item to its own list and adding a <a href={useBaseUrl('api/note')}>Note</a> at the bottom of the list.</>}
@@ -56,13 +58,19 @@ The text content type includes form control labels or other visible text. This t
   dontImage={<img alt="A list with an item that contains a checked checkbox indicating the user wants to receive emails. Text describing how often the user will receive emails as well as how to unsubscribe from emails is placed as a single paragraph inline with the checkbox, making the text hard to read and increasing the height of the item." src={useBaseUrl('img/item/long-text-dont.jpg')} />}
 />
 
+In the example below, we are creating a list with different types of text. The "First Name" and "Last Name" texts serve to indicate what to type into the text inputs.
+
+The "Enable Notifications" label on the toggle has additional text underneath it that notes users can disable notifications. Since this text is short, it is placed inside of the item.
+
+Below that list is another list containing a textarea with long text below the list. The textarea was placed in its own list to make it apparent that the long text is associated with the textarea and not any other fields.
+
 import Text from '@site/static/usage/v7/item/content-types/text/index.md';
 
 <Text />
 
 ### Metadata
 
-Metadata provides additional context for a row such as status text or counts. Components like [Badge](./badge) or [Note](./note) are great ways of showing metadata.
+Metadata provides additional context for an item such as status text or counts. Components like [Badge](./badge) or [Note](./note) are great ways of showing metadata.
 
 <BestPracticeFigure 
   text={<>Limit the amount of metadata you include to only the most relevant information.</>}
@@ -82,7 +90,7 @@ Metadata provides additional context for a row such as status text or counts. Co
 
 In the example below, we are creating two lists with different kinds of metadata. The first list uses [Note](./note) to show how many tasks are in each to-do list.
 
-The second list mimics the iOS Mail app to show an inbox. This list makes use of custom metadata including an "unread message" indicator in the "start" slot as well as a timestamp and custom detail icon in the "end" slot. The "unread message" indicator is highlighted in blue to draw your attention to the unread messages, while the timestamp is more subtle.
+The second list mimics the iOS Mail app to show an inbox. This list makes use of custom metadata including an "unread message" indicator in the "start" slot as well as a timestamp and custom detail icon in the "end" slot. The "unread message" indicator is highlighted in blue to draw the user's attention to the unread messages, while the timestamp is more subtle.
 
 import Metadata from '@site/static/usage/v7/item/content-types/metadata/index.md';
 
@@ -90,12 +98,12 @@ import Metadata from '@site/static/usage/v7/item/content-types/metadata/index.md
 
 ### Actions
 
-Actions are interactive elements that do something when you active them. An item can have multiple actions displayed on a line. However, developers should ensure that each action's tap target is large enough to be usable.
+Actions are interactive elements that do something when you activate them. An item can have multiple actions displayed on a line. However, developers should ensure that each action's tap target is large enough to be usable.
 
 <BestPracticeFigure 
   text={<>Developers should avoid creating <a href="https://dequeuniversity.com/rules/axe/4.4/nested-interactive">nested interactives</a> which can break the user experience with screen readers. For example, developers should avoid adding a button inside the main content of the Item if the <code>button</code> property is set to <code>true</code>. Additionally, developers should use the <a href={useBaseUrl('api/item-sliding')}>Item Sliding</a> component if they need to show more than two actions.</>}
   doText={<>Avoid nested interactives and put multiple items in <a href={useBaseUrl('api/item-sliding')}>Item Sliding</a>.</>}
-  dontText={<>Don't put too many actions on a single row as that will overwhelm the user.</>}
+  dontText={<>Don't put too many actions on a single item.</>}
   doImage={<img alt="A list that contains several items, each representing a different to-do list. A count of how many tasks in each to-do list is placed at the end of each item." src={useBaseUrl('img/item/actions-do.jpg')} />}
   dontImage={<img alt="A list that contains several items, each representing a different to-do list. A count of how many tasks in each to-do list is placed at the end of each item. However, the count is highlighted in blue which draws the user's attention away from the name of the to-do list." src={useBaseUrl('img/item/actions-dont.jpg')} />}
 />
