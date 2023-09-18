@@ -182,6 +182,12 @@ if (environment.production) {
 bootstrapApplication(AppComponent, {
   providers: [
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
+    /**
+     * The custom config serves as an example
+     * of how to pass a config to provideIonicAngular.
+     * You do not need to set "mode: 'ios'" to
+     * use Ionic standalone components.
+     */
 -   importProvidersFrom(IonicModule.forRoot({ mode: 'md' })),
 +   provideIonicAngular({ mode: 'md' }),
     provideRouter(routes),
@@ -279,6 +285,12 @@ if (environment.production) {
 + imports: [BrowserModule, AppRoutingModule],
   providers: [
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
+    /**
+     * The custom config serves as an example
+     * of how to pass a config to provideIonicAngular.
+     * You do not need to set "mode: 'ios'" to
+     * use Ionic standalone components.
+     */
 +   provideIonicAngular({ mode: 'ios' }),
   ],
   bootstrap: [AppComponent],
