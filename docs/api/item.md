@@ -22,6 +22,16 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 Items are elements that can contain text, icons, avatars, images, inputs, and any other native or custom elements. Items should only be used as rows in a [list](./list) with other items. Items can be swiped, deleted, reordered, edited, and more.
 
+
+## Basic Usage
+
+Items left align text and add an ellipsis when the text is wider than the item. We can modify this behavior using the CSS Utilities provided by Ionic Framework, such as using `.ion-text-wrap` in the below example. See the [CSS Utilities Documentation](/docs/layout/css-utilities) for more classes that can be added to an item to transform the text.
+
+import Basic from '@site/static/usage/v7/item/basic/index.md';
+
+<Basic />
+
+
 ## Content Types
 
 While items in a list take many forms, they typically support 5 different content types. However, not all of these content types should be used together at the same time. The following guide shows the different content types as well as how to properly utilize them in an application.
@@ -139,14 +149,6 @@ In the example below, we creating a list of to-do tasks. Each item has a checkbo
 import Controls from '@site/static/usage/v7/item/content-types/controls/index.md';
 
 <Controls />
-
-## Basic Usage
-
-Items left align text and add an ellipsis when the text is wider than the item. We can modify this behavior using the CSS Utilities provided by Ionic Framework, such as using `.ion-text-wrap` in the below example. See the [CSS Utilities Documentation](/docs/layout/css-utilities) for more classes that can be added to an item to transform the text.
-
-import Basic from '@site/static/usage/v7/item/basic/index.md';
-
-<Basic />
 
 
 ## Clickable Items
