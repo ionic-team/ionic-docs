@@ -154,7 +154,7 @@ The Standalone option is newer than the Modules option, so developers may wish t
 
 Migrating to Ionic standalone components must be done all at the same time and cannot be done gradually. The Modules and Standalone approaches use two different build systems of Ionic that cannot be used at the same time.
 
-### Using Ionic Standalone Components in Standalone-based Applications
+### Standalone-based Applications
 
 Follow these steps if your Angular application is already using the standalone architecture, and you want to use Ionic UI components as standalone components too.
 
@@ -254,7 +254,7 @@ export class TestComponent {
 - }
 ```
 
-### Using Ionic Standalone Components in NgModule-based Applications
+### NgModule-based Applications
 
 Follow these steps if your Angular application is still using the NgModule architecture, but you want to adopt Ionic UI components as standalone components now.
 
