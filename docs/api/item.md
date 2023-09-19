@@ -241,7 +241,7 @@ import InputHighlight from '@site/static/usage/v7/item/theming/input-highlight/i
 
 The following guidelines will help ensure your list items are easy to understand and use.
 
-1. Items should only be used inside of [lists](./list).
+1. Items should only be used inside of [Lists](./list).
 2. Items inside of a list should be presented in a consistent format. For example, if your items present decorative icons, the icons should be positioned in the same way between items.
 3. Items should never render [nested interactives](https://dequeuniversity.com/rules/axe/4.4/nested-interactive). Screen readers are unable to select the correct interactive element when nested interactives are used. For example, avoid placing a button inside of an `ion-item` that has `button="true"`.
 4. Use [content types](#content-types) correctly. The item component is designed to be a row in a [list](./list) and should not be used as a general purpose container.
