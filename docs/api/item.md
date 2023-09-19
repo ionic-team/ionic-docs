@@ -43,9 +43,9 @@ Supporting visuals are decorative icons or other adornments for an item. Common 
 If a visual is required to interact with the item, such as an icon button, then the visual is an [action](#actions) not a supporting visual.
 
 <BestPracticeFigure 
-  text={<>Supporting visuals should be rendered in a consistent manner. This makes the information in each item easier to parse.</>}
-  doText={<>Render visuals in consistent slots</>}
-  dontText={<>Don't render visuals in different slots</>}
+  text="Supporting visuals should be rendered in a consistent manner. This makes the information in each item easier to parse."
+  doText="Render visuals in consistent slots"
+  dontText="Don't render visuals in different slots"
   doImage={<img alt="A list with several items. Each item has an icon and visible text describing the item. The icon in each item is rendered at the start of the line." src={useBaseUrl('img/item/visuals-do.jpg')} />}
   dontImage={<img alt="A list with several items. Each item has an icon and visible text describing the item. Some icons are rendered at the start of the line, and some icons are rendered at the end of the line" src={useBaseUrl('img/item/visuals-dont.jpg')} />}
 />
@@ -62,8 +62,8 @@ The text content type includes form control labels or other visible text. This t
 
 <BestPracticeFigure 
   text={<>If you find that you need more than a few sentences, consider moving the item to its own list and adding a <a href={useBaseUrl('api/note')}>Note</a> at the bottom of the list.</>}
-  doText={<>Move long text outside of the list</>}
-  dontText={<>Don't try to fit long text in an item</>}
+  doText="Move long text outside of the list"
+  dontText="Don't try to fit long text in an item"
   doImage={<img alt="A list with an item that contains a checked checkbox indicating the user wants to receive emails. Text describing how often the user will receive emails as well as how to unsubscribe from emails is placed underneath the list." src={useBaseUrl('img/item/long-text-do.jpg')} />}
   dontImage={<img alt="A list with an item that contains a checked checkbox indicating the user wants to receive emails. Text describing how often the user will receive emails as well as how to unsubscribe from emails is placed as a single paragraph inline with the checkbox, making the text hard to read and increasing the height of the item." src={useBaseUrl('img/item/long-text-dont.jpg')} />}
 />
@@ -83,17 +83,17 @@ import Text from '@site/static/usage/v7/item/content-types/text/index.md';
 Metadata provides additional context for an item such as status text or counts. Components like [Badge](./badge) or [Note](./note) are great ways of showing metadata.
 
 <BestPracticeFigure 
-  text={<>Limit the amount of metadata you include to only the most relevant information.</>}
-  doText={<>Add only the most important metadata</>}
-  dontText={<>Don't add too much metadata as it can overwhelm or confuse the user.</>}
+  text="Limit the amount of metadata you include to only the most relevant information."
+  doText="Add only the most important metadata"
+  dontText="Don't add too much metadata as it can overwhelm or confuse the user."
   doImage={<img alt="A list that contains several items, each representing a different to-do list. A count of how many tasks in each to-do list is placed at the end of each item." src={useBaseUrl('img/item/metadata-relevant-do.jpg')} />}
   dontImage={<img alt="A list that contains several items, each representing a different to-do list. Two counts are placed at the end of each item: One count that states the total number of tasks, and another count that states the total number of tasks that are due today." src={useBaseUrl('img/item/metadata-relevant-dont.jpg')} />}
 />
 
 <BestPracticeFigure 
-  text={<>Developers should also consider how important the metadata is. Drawing attention to the metadata may be helpful for the user or it may distract them from the more important information depending on the use case.</>}
-  doText={<>Prioritize the most important content.</>}
-  cautionText={<>Prioritized metadata may distract from other important content.</>}
+  text="Developers should also consider how important the metadata is. Drawing attention to the metadata may be helpful for the user or it may distract them from the more important information depending on the use case."
+  doText="Prioritize the most important content."
+  cautionText="Prioritized metadata may distract from other important content."
   doImage={<img alt="A list that contains several items, each representing a different to-do list. A count of how many tasks in each to-do list is placed at the end of each item." src={useBaseUrl('img/item/metadata-relevant-do.jpg')} />}
   cautionImage={<img alt="A list that contains several items, each representing a different to-do list. A count of how many tasks in each to-do list is placed at the end of each item. However, the count is highlighted in blue which draws the user's attention away from the name of the to-do list." src={useBaseUrl('img/item/metadata-important-caution.jpg')} />}
 />
@@ -113,7 +113,7 @@ Actions are interactive elements that do something when you activate them. An it
 <BestPracticeFigure 
   text={<>Developers should avoid creating <a href="https://dequeuniversity.com/rules/axe/4.4/nested-interactive">nested interactives</a> which can break the user experience with screen readers. For example, developers should avoid adding a button inside the main content of the Item if the <code>button</code> property is set to <code>true</code>. Additionally, developers should use the <a href={useBaseUrl('api/item-sliding')}>Item Sliding</a> component if they need to show more than two actions.</>}
   doText={<>Avoid nested interactives and put multiple items in <a href={useBaseUrl('api/item-sliding')}>Item Sliding</a>.</>}
-  dontText={<>Don't put too many actions on a single item.</>}
+  dontText="Don't put too many actions on a single item."
   doImage={<img alt="A list that contains several items, each representing a different to-do list. A count of how many tasks in each to-do list is placed at the end of each item." src={useBaseUrl('img/item/actions-do.jpg')} />}
   dontImage={<img alt="A list that contains several items, each representing a different to-do list. A count of how many tasks in each to-do list is placed at the end of each item. However, the count is highlighted in blue which draws the user's attention away from the name of the to-do list." src={useBaseUrl('img/item/actions-dont.jpg')} />}
 />
@@ -130,16 +130,16 @@ Controls are form components such as checkboxes, inputs, radios, and more. Each 
 
 <BestPracticeFigure 
   text={<>Metadata such as helper text or character counts should not be used on form controls in list views. If such metadata is needed, the form control should be placed outside of a list. Alternatively, the context can be placed in a <a href="useBaseUrl('api/note')">Note</a> at the bottom of the list.</>}
-  doText={<>Place metadata for inputs at the end of a list.</>}
-  dontText={<>Don't put metadata for inputs in the list as it can make the list hard to read.</>}
+  doText="Place metadata for inputs at the end of a list."
+  dontText="Don't put metadata for inputs in the list as it can make the list hard to read."
   doImage={<img alt="There is one list of inputs. One of the inputs is a password input with text below the input that says 'Password must be at least 16 characters'. However, this text is placed directly above another input, so it's not immediately clear which input the text is associated with." src={useBaseUrl('img/item/controls-metadata-do.jpg')} />}
   dontImage={<img alt="There are two lists of inputs. The first list contains a password input. Below that list contains text that says 'Password must be at least 16 characters'. The second list contains an email input. This second list is separated so the password length requirement text is clearly associated with the password input above." src={useBaseUrl('img/item/controls-metadata-dont.jpg')} />}
 />
 
 <BestPracticeFigure 
   text={<>Items should typically have no more than two controls. If you need more controls, consider adding the additional controls in a <a href="useBaseUrl('api/modal')">Modal</a> that is accessible from the item.</>}
-  doText={<>Move additional controls to a submenu accessible from the item.</>}
-  dontText={<>Don't use more than two controls within an item.</>}
+  doText="Move additional controls to a submenu accessible from the item."
+  dontText="Don't use more than two controls within an item."
   doImage={<img alt="There is one list of inputs. One of the inputs is a password input with text below the input that says 'Password must be at least 16 characters'. However, this text is placed directly above another input, so it's not immediately clear which input the text is associated with." src={useBaseUrl('img/item/controls-count-do.jpg')} />}
   dontImage={<img alt="There are two lists of inputs. The first list contains a password input. Below that list contains text that says 'Password must be at least 16 characters'. The second list contains an email input. This second list is separated so the password length requirement text is clearly associated with the password input above." src={useBaseUrl('img/item/controls-count-dont.jpg')} />}
 />
