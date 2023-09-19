@@ -14,4 +14,5 @@ import angular from './angular.md';
     angular,
   }}
   src="usage/v7/item/content-types/supporting-visuals/demo.html"
+  size="250px"
 />
