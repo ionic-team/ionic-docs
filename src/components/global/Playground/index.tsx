@@ -366,13 +366,10 @@ export default function Playground({
       version,
     };
 
-    let codeBlock;
-    if (!hasUsageTargetOptions) {
-      // codeSnippets are React components, so we need to get their rendered text
-      // using outerText will preserve line breaks for formatting in Stackblitz editor
-      codeBlock = codeRef.current.querySelector('code').outerText;
-    } else {
-      codeBlock = codeRef.current.querySelector('code').outerText;
+    // using outerText will preserve line breaks for formatting in Stackblitz editor
+    let codeBlock = codeRef.current.querySelector('code').outerText;
+
+    if (hasUsageTargetOptions) {
       editorOptions.files = Object.keys(codeSnippets[usageTarget])
         .map((fileName) => ({
           [fileName]: hostRef.current!.querySelector<HTMLElement>(`#${getCodeSnippetId(usageTarget, fileName)} code`)
