@@ -72,7 +72,7 @@ In the example below, we are creating a list with different types of text. The "
 
 The "Enable Notifications" label on the toggle has additional text underneath it that notes users can disable notifications. Since this text is short, it is placed inside of the item.
 
-Below that list is another list containing a textarea with long text below the list. The textarea was placed in its own list to make it apparent that the long text is associated with the textarea and not any other fields.
+Below that list is another list containing a textarea with long text underneath. The textarea was placed in its own list to make it apparent that the long text is associated with the textarea and not any other fields.
 
 import Text from '@site/static/usage/v7/item/content-types/text/index.md';
 
