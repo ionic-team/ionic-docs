@@ -26,8 +26,8 @@
     </ion-item>
   </ion-list>
 
-  <ion-note class="ion-margin-horizontal"
-    >Your comments will be kept anonymous and will only be used to improve the reliability of our products.</ion-note
+  <ion-note class="ion-margin-horizontal">
+    Your comments will be kept anonymous and will only be used to improve the reliability of our products.</ion-note
   >
 </ion-content>
 
