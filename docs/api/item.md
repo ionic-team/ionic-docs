@@ -61,7 +61,7 @@ import SupportingVisuals from '@site/static/usage/v7/item/content-types/supporti
 The text content type includes form control labels or other visible text. This text serves to indicate the intent of the item. Try to keep the text short and to the point.
 
 <BestPracticeFigure 
-  text={<>If you find that you need more than a few sentences, consider moving the item to its own list and adding a <a href={useBaseUrl('api/note')}>Note</a> at the bottom of the list.</>}
+  text={<>If you find that you need more than a few sentences, consider moving the item to its own list and adding a <a href={useBaseUrl('api/note')}>Note</a> at the bottom of the list. Adding the item to its own list makes it clear which item the text is associated with.</>}
   doText="Move long text outside of the list"
   dontText="Don't try to fit long text in an item"
   doImage={<img alt="A list with an item that contains a checked checkbox indicating the user wants to receive emails. Text describing how often the user will receive emails as well as how to unsubscribe from emails is placed underneath the list." src={useBaseUrl('img/item/long-text-do.jpg')} />}
