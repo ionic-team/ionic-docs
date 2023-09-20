@@ -144,7 +144,7 @@ Controls are form components such as checkboxes, inputs, radios, and more. Each 
   dontImage={<img alt="There are two lists of inputs. The first list contains a password input. Below that list contains text that says 'Password must be at least 16 characters'. The second list contains an email input. This second list is separated so the password length requirement text is clearly associated with the password input above." src={useBaseUrl('img/item/controls-count-dont.jpg')} />}
 />
 
-In the example below, we creating a list of to-do tasks. Each item has a checkbox and an input. The checkbox lets the user mark a task as complete, and the input lets the user change the name of the reminder.
+In the example below, we are creating a list of to-do tasks. Each item has a checkbox and an input. The checkbox lets the user mark a task as complete, and the input lets the user change the name of the task.
 
 import Controls from '@site/static/usage/v7/item/content-types/controls/index.md';
 
