@@ -64,9 +64,9 @@
       <ion-label>
         <strong>Steam</strong>
         <ion-text>Game Store Sale</ion-text><br />
-        <ion-note color="medium" class="ion-text-wrap"
-          >That game you added to your wish list 2 years ago is now on sale!</ion-note
-        >
+        <ion-note color="medium" class="ion-text-wrap">
+          That game you added to your wish list 2 years ago is now on sale!
+        </ion-note>
       </ion-label>
       <div class="metadata-end-wrapper" slot="end">
         <ion-note color="medium">Yesterday</ion-note>
