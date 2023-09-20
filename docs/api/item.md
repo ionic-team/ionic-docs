@@ -34,7 +34,7 @@ import Basic from '@site/static/usage/v7/item/basic/index.md';
 
 ## Content Types
 
-While items in a list take many forms, they typically support 5 different content types. However, not all of these content types should be used together at the same time. The following guide shows the different content types as well as how to properly utilize them in an application.
+While items in a list take many forms, they typically support 5 different content types: supporting visuals, text, metadata, actions, and controls. However, not all of these content types should be used together at the same time. The following guide shows the different content types as well as how to properly utilize them in an application.
 
 ### Supporting Visuals
 
