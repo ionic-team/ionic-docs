@@ -44,8 +44,8 @@ If a visual is required to interact with the item, such as an icon button, then 
 
 <BestPracticeFigure 
   text="Supporting visuals should be rendered in a consistent manner. This makes the information in each item easier to parse."
-  doText="Render visuals in consistent slots"
-  dontText="Don't render visuals in different slots"
+  doText="Align visuals on the same side in a list"
+  dontText="Don't render visuals with different alignments in the same list"
   doImage={<img alt="A list with several items. Each item has an icon and visible text describing the item. The icon in each item is rendered at the start of the line." src={useBaseUrl('img/item/visuals-do.jpg')} />}
   dontImage={<img alt="A list with several items. Each item has an icon and visible text describing the item. Some icons are rendered at the start of the line, and some icons are rendered at the end of the line" src={useBaseUrl('img/item/visuals-dont.jpg')} />}
 />
