@@ -27,10 +27,10 @@ function Example() {
       <IonContent color="light">
         <IonList inset={true}>
           <IonItem>
-            <IonInput label="First Name" placeholder="Rick"></IonInput>
+            <IonInput label="First Name"></IonInput>
           </IonItem>
           <IonItem>
-            <IonInput label="Last Name" placeholder="Astley"></IonInput>
+            <IonInput label="Last Name"></IonInput>
           </IonItem>
           <IonItem>
             <IonToggle>

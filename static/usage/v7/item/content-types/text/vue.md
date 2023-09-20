@@ -8,10 +8,10 @@
   <ion-content color="light">
     <ion-list :inset="true">
       <ion-item>
-        <ion-input label="First Name" placeholder="Rick"></ion-input>
+        <ion-input label="First Name"></ion-input>
       </ion-item>
       <ion-item>
-        <ion-input label="Last Name" placeholder="Astley"></ion-input>
+        <ion-input label="Last Name"></ion-input>
       </ion-item>
       <ion-item>
         <ion-toggle>

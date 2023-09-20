@@ -68,7 +68,7 @@ The text content type includes form control labels or other visible text. This t
   dontImage={<img alt="A list with an item that contains a checked checkbox indicating the user wants to receive emails. Text describing how often the user will receive emails as well as how to unsubscribe from emails is placed as a single paragraph inline with the checkbox, making the text hard to read and increasing the height of the item." src={useBaseUrl('img/item/long-text-dont.jpg')} />}
 />
 
-In the example below, we are creating a list with different types of text. The "First Name" and "Last Name" texts serve to indicate what to type into the text inputs.
+In the example below, we are creating a list with different types of text. The "First Name" and "Last Name" labels serve to indicate what to type into the text inputs.
 
 The "Enable Notifications" label on the toggle has additional text underneath it that notes users can disable notifications. Since this text is short, it is placed inside of the item.
 
