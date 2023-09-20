@@ -110,10 +110,12 @@ import Metadata from '@site/static/usage/v7/item/content-types/metadata/index.md
 
 Actions are interactive elements that do something when you activate them. An item can have multiple actions displayed on a line. However, developers should ensure that each action's tap target is large enough to be usable.
 
+Developers should avoid creating <a href="https://dequeuniversity.com/rules/axe/4.4/nested-interactive">nested interactives</a> which can break the user experience with screen readers. For example, developers should avoid adding a button inside the main content of the Item if the `button` property is set to `true`.
+
 <BestPracticeFigure 
-  text={<>Developers should avoid creating <a href="https://dequeuniversity.com/rules/axe/4.4/nested-interactive">nested interactives</a> which can break the user experience with screen readers. For example, developers should avoid adding a button inside the main content of the Item if the <code>button</code> property is set to <code>true</code>. Additionally, developers should use the <a href={useBaseUrl('api/item-sliding')}>Item Sliding</a> component if they need to show more than two actions.</>}
+  text={<>Actions can be added by using the <a href={useBaseUrl('api/item-sliding')}>Item Sliding</a> component. Actions can also be placed directly inside of the Item without the use of Item Sliding, but this should be limited to no more than 2 actions.</>}
   doText={<>Use an <a href={useBaseUrl('api/item-sliding')}>Item Sliding</a> to reveal multiple actions by swiping on the Item.</>}
-  dontText="Don't put too many actions on a single item."
+  dontText="Don't put more than 2 actions within an Item."
   doImage={<img alt="A list that contains several items, each representing a contact. Each item has text that states the contact's name as well as several actions including pinning the contact, sharing the contact, and deleting the contact. These actions are revealed by swiping on the item." src={useBaseUrl('img/item/actions-do.jpg')} />}
   dontImage={<img alt="A list that contains several items, each representing a contact. Each item has text that states the contact's name as well as several actions including pinning the contact, sharing the contact, and deleting the contact. The actions are placed directly on the item. Since there are so many actions, some of the text is cut off." src={useBaseUrl('img/item/actions-dont.jpg')} />}
 />
