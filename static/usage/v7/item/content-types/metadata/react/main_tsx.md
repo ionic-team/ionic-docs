@@ -57,7 +57,7 @@ function Example() {
               <strong>Rick Astley</strong>
               <IonText>Never Gonna Give You Up</IonText>
               <br />
-              <IonNote className="IonText-wrap">
+              <IonNote color="medium" className="ion-text-wrap">
                 Never gonna give you up Never gonna let you down Never gonna run...
               </IonNote>
             </IonLabel>
@@ -72,7 +72,7 @@ function Example() {
               <strong>Ionitron</strong>
               <IonText>I have become sentient</IonText>
               <br />
-              <IonNote className="IonText-wrap">That is all.</IonNote>
+              <IonNote color="medium" className="ion-text-wrap">That is all.</IonNote>
             </IonLabel>
             <div className="metadata-end-wrapper" slot="end">
               <IonNote color="medium">03:44</IonNote>
@@ -87,7 +87,7 @@ function Example() {
               <strong>Steam</strong>
               <IonText>Game Store Sale</IonText>
               <br />
-              <IonNote className="IonText-wrap">
+              <IonNote color="medium" className="ion-text-wrap">
                 That game you added to your wish list 2 years ago is now on sale!
               </IonNote>
             </IonLabel>
@@ -102,7 +102,7 @@ function Example() {
               <strong>Ionic</strong>
               <IonText>Announcing Ionic 7.0</IonText>
               <br />
-              <IonNote className="IonText-wrap">This version is one more than Ionic 6!</IonNote>
+              <IonNote color="medium" className="ion-text-wrap">This version is one more than Ionic 6!</IonNote>
             </IonLabel>
             <div className="metadata-end-wrapper" slot="end">
               <IonNote color="medium">Yesterday</IonNote>
