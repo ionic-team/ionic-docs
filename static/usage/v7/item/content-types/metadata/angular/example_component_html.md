@@ -39,7 +39,7 @@
         <ion-note class="ion-text-wrap">Never gonna give you up Never gonna let you down Never gonna run...</ion-note>
       </ion-label>
       <div class="metadata-end-wrapper" slot="end">
-        <ion-note>06:11</ion-note>
+        <ion-note color="medium">06:11</ion-note>
         <ion-icon color="medium" name="chevron-forward"></ion-icon>
       </div>
     </ion-item>
@@ -51,7 +51,7 @@
         <ion-note class="ion-text-wrap">That is all.</ion-note>
       </ion-label>
       <div class="metadata-end-wrapper" slot="end">
-        <ion-note>03:44</ion-note>
+        <ion-note color="medium">03:44</ion-note>
         <ion-icon color="medium" name="chevron-forward"></ion-icon>
       </div>
     </ion-item>
@@ -65,7 +65,7 @@
         <ion-note class="ion-text-wrap">That game you added to your wish list 2 years ago is now on sale!</ion-note>
       </ion-label>
       <div class="metadata-end-wrapper" slot="end">
-        <ion-note>Yesterday</ion-note>
+        <ion-note color="medium">Yesterday</ion-note>
         <ion-icon color="medium" name="chevron-forward"></ion-icon>
       </div>
     </ion-item>
@@ -77,7 +77,7 @@
         <ion-note class="ion-text-wrap">This version is one more than Ionic 6!</ion-note>
       </ion-label>
       <div class="metadata-end-wrapper" slot="end">
-        <ion-note>Yesterday</ion-note>
+        <ion-note color="medium">Yesterday</ion-note>
         <ion-icon color="medium" name="chevron-forward"></ion-icon>
       </div>
     </ion-item>

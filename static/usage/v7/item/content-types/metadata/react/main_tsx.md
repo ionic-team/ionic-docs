@@ -62,7 +62,7 @@ function Example() {
               </IonNote>
             </IonLabel>
             <div className="metadata-end-wrapper" slot="end">
-              <IonNote>06:11</IonNote>
+              <IonNote color="medium">06:11</IonNote>
               <IonIcon color="medium" icon={chevronForward}></IonIcon>
             </div>
           </IonItem>
@@ -75,7 +75,7 @@ function Example() {
               <IonNote className="IonText-wrap">That is all.</IonNote>
             </IonLabel>
             <div className="metadata-end-wrapper" slot="end">
-              <IonNote>03:44</IonNote>
+              <IonNote color="medium">03:44</IonNote>
               <IonIcon color="medium" icon={chevronForward}></IonIcon>
             </div>
           </IonItem>
@@ -92,7 +92,7 @@ function Example() {
               </IonNote>
             </IonLabel>
             <div className="metadata-end-wrapper" slot="end">
-              <IonNote>Yesterday</IonNote>
+              <IonNote color="medium">Yesterday</IonNote>
               <IonIcon color="medium" icon={chevronForward}></IonIcon>
             </div>
           </IonItem>
@@ -105,7 +105,7 @@ function Example() {
               <IonNote className="IonText-wrap">This version is one more than Ionic 6!</IonNote>
             </IonLabel>
             <div className="metadata-end-wrapper" slot="end">
-              <IonNote>Yesterday</IonNote>
+              <IonNote color="medium">Yesterday</IonNote>
               <IonIcon color="medium" icon={chevronForward}></IonIcon>
             </div>
           </IonItem>
