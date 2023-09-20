@@ -28,8 +28,8 @@
     </ion-list>
 
     <ion-note color="medium" class="ion-margin-horizontal">
-      Your comments will be kept anonymous and will only be used to improve the reliability of our products.</ion-note
-    >
+      Your comments will be kept anonymous and will only be used to improve the reliability of our products.
+    </ion-note>
   </ion-content>
 </template>
 
