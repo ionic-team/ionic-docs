@@ -14,7 +14,7 @@
     </ion-item>
     <ion-item>
       <ion-toggle>
-        <ion-label>Allow Notifications?</ion-label>
+        <ion-label>Allow Notifications</ion-label>
         <ion-note>Unsubscribe at any time</ion-note>
       </ion-toggle>
     </ion-item>
