@@ -37,7 +37,9 @@
         <ion-label>
           <strong>Rick Astley</strong>
           <ion-text>Never Gonna Give You Up</ion-text><br />
-          <ion-note color="medium" class="ion-text-wrap">Never gonna give you up Never gonna let you down Never gonna run...</ion-note>
+          <ion-note color="medium" class="ion-text-wrap"
+            >Never gonna give you up Never gonna let you down Never gonna run...</ion-note
+          >
         </ion-label>
         <div class="metadata-end-wrapper" slot="end">
           <ion-note color="medium">06:11</ion-note>
@@ -63,7 +65,9 @@
         <ion-label>
           <strong>Steam</strong>
           <ion-text>Game Store Sale</ion-text><br />
-          <ion-note color="medium" class="ion-text-wrap">That game you added to your wish list 2 years ago is now on sale!</ion-note>
+          <ion-note color="medium" class="ion-text-wrap"
+            >That game you added to your wish list 2 years ago is now on sale!</ion-note
+          >
         </ion-label>
         <div class="metadata-end-wrapper" slot="end">
           <ion-note color="medium">Yesterday</ion-note>

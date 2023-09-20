@@ -72,7 +72,9 @@ function Example() {
               <strong>Ionitron</strong>
               <IonText>I have become sentient</IonText>
               <br />
-              <IonNote color="medium" className="ion-text-wrap">That is all.</IonNote>
+              <IonNote color="medium" className="ion-text-wrap">
+                That is all.
+              </IonNote>
             </IonLabel>
             <div className="metadata-end-wrapper" slot="end">
               <IonNote color="medium">03:44</IonNote>
@@ -102,7 +104,9 @@ function Example() {
               <strong>Ionic</strong>
               <IonText>Announcing Ionic 7.0</IonText>
               <br />
-              <IonNote color="medium" className="ion-text-wrap">This version is one more than Ionic 6!</IonNote>
+              <IonNote color="medium" className="ion-text-wrap">
+                This version is one more than Ionic 6!
+              </IonNote>
             </IonLabel>
             <div className="metadata-end-wrapper" slot="end">
               <IonNote color="medium">Yesterday</IonNote>
