@@ -35,7 +35,7 @@ function Example() {
           <IonItem>
             <IonToggle>
               <IonLabel>Allow Notifications</IonLabel>
-              <IonNote>Unsubscribe at any time</IonNote>
+              <IonNote color="medium">Unsubscribe at any time</IonNote>
             </IonToggle>
           </IonItem>
         </IonList>
@@ -46,7 +46,7 @@ function Example() {
           </IonItem>
         </IonList>
 
-        <IonNote class="ion-margin-horizontal">
+        <IonNote color="medium" class="ion-margin-horizontal">
           Your comments will be kept anonymous and will only be used to improve the reliability of our products.
         </IonNote>
       </IonContent>
