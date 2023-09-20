@@ -131,11 +131,19 @@ import Actions from '@site/static/usage/v7/item/content-types/actions/index.md';
 Controls are form components such as checkboxes, inputs, radios, and more. Each item in a list should have at most two controls due to screen space constraints.
 
 <BestPracticeFigure 
-  text={<>Metadata such as helper text or character counts should not be used on form controls in list views. If such metadata is needed, the form control should be placed outside of a list. Alternatively, the context can be placed in a <a href="useBaseUrl('api/note')">Note</a> at the bottom of the list.</>}
+  text={<>Metadata such as helper text or character counts should not be used on form controls in list views. If such metadata is needed, the form control should be placed outside of a list. <a href={useBaseUrl('api/input#filled-inputs')}>Filled Inputs</a> are a great way of visually defining the input container outside of a list.</>}
+  doText="Place inputs with metadata outside of the list."
+  dontText="Don't put metadata for inputs in the list."
+  doImage={<img alt="There is an email input and a password input. Both have helper text associated with them. Since both are placed outside of a list it is clear which input each helper text is associated with." src={useBaseUrl('img/item/controls-metadata-list-do.jpg')} />}
+  dontImage={<img alt="There is a list containing an email input and a password input. Both have helper texts associated with them. However, the divider between each item and between the helper text makes it hard to tell which input each helper text is associated with." src={useBaseUrl('img/item/controls-metadata-list-dont.jpg')} />}
+/>
+
+<BestPracticeFigure 
+  text={<>Alternatively, the metadata can be placed in a <a href={useBaseUrl('api/note')}>Note</a> at the bottom of the list.</>}
   doText="Place metadata for inputs at the end of a list."
-  dontText="Don't put metadata for inputs in the list as it can make the list hard to read."
-  doImage={<img alt="There is one list of inputs. One of the inputs is a password input with text below the input that says 'Password must be at least 16 characters'. However, this text is placed directly above another input, so it's not immediately clear which input the text is associated with." src={useBaseUrl('img/item/controls-metadata-do.jpg')} />}
-  dontImage={<img alt="There are two lists of inputs. The first list contains a password input. Below that list contains text that says 'Password must be at least 16 characters'. The second list contains an email input. This second list is separated so the password length requirement text is clearly associated with the password input above." src={useBaseUrl('img/item/controls-metadata-dont.jpg')} />}
+  dontText="Don't put metadata for inputs in the list."
+  doImage={<img alt="There are two lists of inputs. The first list contains a password input. Below that list contains text that says 'Password must be at least 16 characters'. The second list contains an email input. This second list is separated so the password length requirement text is clearly associated with the password input above." src={useBaseUrl('img/item/controls-metadata-do.jpg')} />}
+  dontImage={<img alt="There is one list of inputs. One of the inputs is a password input with text below the input that says 'Password must be at least 16 characters'. However, this text is placed directly above another input, so it's not immediately clear which input the text is associated with." src={useBaseUrl('img/item/controls-metadata-dont.jpg')} />}
 />
 
 <BestPracticeFigure 
