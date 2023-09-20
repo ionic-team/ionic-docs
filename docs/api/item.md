@@ -237,7 +237,7 @@ import InputHighlight from '@site/static/usage/v7/item/theming/input-highlight/i
 
 <InputHighlight />
 
-## Usage Guidelines
+## Guidelines
 
 The following guidelines will help ensure your list items are easy to understand and use.
 
