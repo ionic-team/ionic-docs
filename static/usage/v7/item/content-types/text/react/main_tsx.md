@@ -34,7 +34,7 @@ function Example() {
           </IonItem>
           <IonItem>
             <IonToggle>
-              <IonLabel>Enable Notifications?</IonLabel>
+              <IonLabel>Allow Notifications?</IonLabel>
               <IonNote>Unsubscribe at any time</IonNote>
             </IonToggle>
           </IonItem>

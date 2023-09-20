@@ -70,7 +70,7 @@ The text content type includes form control labels or other visible text. This t
 
 In the example below, we are creating a list with different types of text. The "First Name" and "Last Name" labels serve to indicate what to type into the text inputs.
 
-The "Enable Notifications" label on the toggle has additional text underneath it that notes users can disable notifications. Since this text is short, it is placed inside of the item.
+The "Allow Notifications" label on the toggle has additional text underneath it that notes users can disable notifications. Since this text is short, it is placed inside of the item.
 
 Below that list is another list containing a textarea with long text underneath. The textarea was placed in its own list to make it apparent that the long text is associated with the textarea and not any other fields.
 
