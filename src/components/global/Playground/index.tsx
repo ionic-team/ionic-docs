@@ -367,7 +367,7 @@ export default function Playground({
     };
 
     // using outerText will preserve line breaks for formatting in Stackblitz editor
-    let codeBlock = codeRef.current.querySelector('code').outerText;
+    const codeBlock = codeRef.current.querySelector('code').outerText;
 
     if (hasUsageTargetOptions) {
       editorOptions.files = Object.keys(codeSnippets[usageTarget])
