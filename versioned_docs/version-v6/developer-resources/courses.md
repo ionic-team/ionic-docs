@@ -3,6 +3,7 @@
 ### [Elite Ionic](https://www.joshmorony.com/elite/)
 
 <!-- cspell:disable-next-line -->
+
 by Josh Morony
 
 Elite Ionic is an online course for Ionic developers who want to move past the basics, and build complex, well tested, high performing, beautiful, and useable mobile applications. It is recommended that you already have a reasonably solid understanding of the basics of Ionic before starting this course.
@@ -10,6 +11,7 @@ Elite Ionic is an online course for Ionic developers who want to move past the b
 ### [Ionic Academy](https://ionicacademy.com/)
 
 <!-- cspell:disable-next-line -->
+
 by Simon Grimm
 
 Learn Ionic with step-by-step video courses & quick wins from one of the Ionic community leaders. Covers beginner, intermediate and advanced topics. Get access to a community of developers just like you.
@@ -17,6 +19,7 @@ Learn Ionic with step-by-step video courses & quick wins from one of the Ionic c
 ### [Ionic Framework: Tips, Tricks & Techniques](https://www.packtpub.com/mobile/ionic-framework-tips-tricks-and-techniques-video)
 
 <!-- cspell:disable-next-line -->
+
 by Charles Muzonzini
 
 In this course, you will master tips and best practices for Ionic 4 & Ionic 5 that you can immediately implement to build high quality apps. This course covers a wide variety of topics from increasing app performance, to building custom native plugins, to securing your apps. It's a practical, hands-on course that will take your app building skills to the next level.
@@ -24,6 +27,7 @@ In this course, you will master tips and best practices for Ionic 4 & Ionic 5 th
 ### [Building Desktop Apps with Ionic and Electron](https://pluralsight.pxf.io/VeMXO)
 
 <!-- cspell:disable-next-line -->
+
 by Michael Callaghan at Pluralsight
 
 Desktop development has historically required dramatically different skills than those required for web
@@ -38,6 +42,7 @@ Windows and macOS users.
 ### [Building Progressive Web Apps with Ionic](https://pluralsight.pxf.io/Ly2EY)
 
 <!-- cspell:disable-next-line -->
+
 by Michael Callaghan at Pluralsight
 
 Everything changed when Google created the concept of Progressive Web Applications or PWA. A PWA is a pure web
@@ -54,6 +59,7 @@ Progressive Web Application anywhere you desire.
 ### [Ionic CLI](https://pluralsight.pxf.io/ionic-cli)
 
 <!-- cspell:disable-next-line -->
+
 by Michael Callaghan at Pluralsight
 
 Since its inception, the Ionic Framework has included a rudimentary command line interface. Though only a few
@@ -67,29 +73,35 @@ the confidence to use the Ionic CLI as part of your everyday Ionic development.
 ### [Wordpress Rest API and Ionic 4 (Angular) App With Auth](https://www.udemy.com/course/wordpress-rest-api-and-ionic-3-crud/)
 
 <!-- cspell:disable-next-line -->
+
 by Baljeet Singh at Udemy
 
 ### [Building Mobile Apps with Ionic 2, Angular 2, and TypeScript](https://app.pluralsight.com/library/courses/ionic2-angular2-typescript-mobile-apps/table-of-contents)
 
 <!-- cspell:disable-next-line -->
+
 by Pluralsight
 
 ### [Introducing Ionic 2](http://shop.oreilly.com/product/0636920050353.do)
 
 <!-- cspell:disable-next-line -->
+
 by Mathieu Chauvinc
 
 ### [Ionic 2 Master Course](https://www.udemy.com/ionic-2-tutorial/)
 
 <!-- cspell:disable-next-line -->
+
 by Udemy
 
 ### [Introducing Ionic 2](https://www.udemy.com/introducing-ionic-2/)
 
 <!-- cspell:disable-next-line -->
+
 by Udemy
 
 ### [Ionic 2 Solutions](https://www.packtpub.com/web-development/ionic-2-solutions-video)
 
 <!-- cspell:disable-next-line -->
+
 by Hoc Phan
