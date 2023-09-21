@@ -31,8 +31,7 @@ Building Mobile Apps with Ionic & Angular is an all-in-one resource for learning
 // cspell:disable-next-line
 by Simon Reimler
 
-### [Ionic Framework
-By Example](https://www.packtpub.com/application-development/ionic-framework-example)
+### [Ionic Framework By Example](https://www.packtpub.com/application-development/ionic-framework-example)
 
 // cspell:disable-next-line
 by Sani Yusuf
