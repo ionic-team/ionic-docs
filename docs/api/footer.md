@@ -9,7 +9,7 @@ import CustomProps from '@ionic-internal/component-api/v7/footer/custom-props.md
 import Slots from '@ionic-internal/component-api/v7/footer/slots.md';
 
 <head>
-  <title>Page Footer | Ionic App Footer: Wrapper Root Page Component</title>
+  <title>ion-footer: Page Footer | Ionic App Footer Root Component</title>
   <meta name="description" content="footerはページの下部に配置されるルートコンポーネントのことです。Ionicのfooterはion-toolbarのラッパーとして、コンテンツ領域が正しいサイズであることを確認することができます。" />
 </head>
 

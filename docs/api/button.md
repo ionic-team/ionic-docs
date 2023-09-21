@@ -9,7 +9,7 @@ import CustomProps from '@ionic-internal/component-api/v7/button/custom-props.md
 import Slots from '@ionic-internal/component-api/v7/button/slots.md';
 
 <head>
-  <title>ion-button: Design and Style Buttons with Custom CSS Properties</title>
+  <title>ion-button: Style Buttons with Custom CSS Properties</title>
   <meta name="description" content="ion-button は、標準的なボタン機能が必要な場所で使用するためのクリック可能な要素を提供します。カスタム CSS プロパティを使用して、ボタン要素をデザインし、スタイルを設定します。" />
 </head>
 
@@ -77,6 +77,24 @@ import Colors from '@site/static/usage/v7/button/theming/colors/index.md';
 import CSSProps from '@site/static/usage/v7/button/theming/css-properties/index.md';
 
 <CSSProps />
+
+## アクセシビリティ
+
+ボタンはアクセスしやすいように作られていますが、その内容によっては調整が必要な場合があります。ボタンコンポーネントは、ネイティブの[button element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button)をレンダリングし、ネイティブのボタンが提供する機能を利用できるようにします。
+
+### Overflowing Text Content
+
+ボタンのテキスト・コンテンツがコンテナからはみ出す場合が多々あります。このような場合、すべてのテキストがまだ読めるように、ボタンの内側にテキストを折り返すことをお勧めします。ボタンコンポーネントは、テキストの余分な行を収容するために、その高さを自動的に調整します。
+
+テキストが長すぎて収まらない場合、ボタンテキストは自動的に次の行に折り返されません。テキストを折り返すには、`ion-text-wrap`クラスを追加して、`white-space`プロパティを`"normal"`に設定します。これは将来のメジャーリリースでデフォルトになる予定である。
+
+:::info
+max-width`スタイルは、デモのためだけに下のボタンに設定されています。テキストラッピングは動的なボタン幅で動作します。
+:::
+
+import TextWrapping from '@site/static/usage/v7/button/text-wrapping/index.md';
+
+<TextWrapping />
 
 ## プロパティ
 <Props />

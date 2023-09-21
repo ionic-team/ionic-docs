@@ -133,6 +133,16 @@ export default HomePage;
 クラスコンポーネントのように、ファンクションコンポーネントを `withIonLifeCycle` HOC でラップする必要はありません。
 :::
 
+Developers can also optionally pass reactive dependencies to each lifecycle hook. These are then passed to the underlying [React useEffect hook](https://react.dev/reference/react/useEffect#useeffect):
+
+```tsx
+const [data, setData] = useState('foo');
+
+useIonViewDidEnter(() => {
+  console.log('ionViewDidEnter event fired');
+}, [data]);
+```
+
 ## React ライフサイクルメソッド
 
 React のすべてのライフサイクルメソッド（ `componentDidMount` 、`componentWillUnmount` など）も使用できます。 ただし、Ionic React はページのライフタイムを管理するため、特定のイベントが期待どおりに発生しない場合があります。 たとえば、最初にページが表示されたときは `componentDidMount` が起動しますが、ページから移動した時に Ionic はページを DOM ツリーに保持しているため、その後の当該ページへのアクセスでは `componentDidMount` を再度呼び出さない場合があります。 このシナリオは、Ionic ライフサイクルメソッドが存在する主な理由であり、ネイティブフレームワークのイベントが発生しない場合にビューが開始および終了するときにロジックを呼び出す方法を提供します。

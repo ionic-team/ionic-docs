@@ -1,5 +1,5 @@
 {
-  "filePath": "./src/components/refresher-content/refresher-content.tsx",
+  "filePath": "src/components/refresher-content/refresher-content.tsx",
   "encapsulation": "none",
   "tag": "ion-refresher-content",
   "docs": "",
@@ -9,6 +9,17 @@
     {
       "name": "pullingIcon",
       "type": "null | string | undefined",
+      "complexType": {
+        "original": "SpinnerTypes | string | null",
+        "resolved": "null | string | undefined",
+        "references": {
+          "SpinnerTypes": {
+            "location": "import",
+            "path": "../spinner/spinner-configs",
+            "id": "src/components/spinner/spinner-configs.ts::SpinnerTypes"
+          }
+        }
+      },
       "mutable": true,
       "attr": "pulling-icon",
       "reflectToAttr": false,
@@ -31,6 +42,17 @@
     {
       "name": "pullingText",
       "type": "IonicSafeString | string | undefined",
+      "complexType": {
+        "original": "string | IonicSafeString",
+        "resolved": "IonicSafeString | string | undefined",
+        "references": {
+          "IonicSafeString": {
+            "location": "import",
+            "path": "../../utils/sanitization",
+            "id": "src/utils/sanitization/index.ts::IonicSafeString"
+          }
+        }
+      },
       "mutable": false,
       "attr": "pulling-text",
       "reflectToAttr": false,
@@ -53,6 +75,17 @@
     {
       "name": "refreshingSpinner",
       "type": "\"bubbles\" | \"circles\" | \"circular\" | \"crescent\" | \"dots\" | \"lines\" | \"lines-sharp\" | \"lines-sharp-small\" | \"lines-small\" | null | undefined",
+      "complexType": {
+        "original": "SpinnerTypes | null",
+        "resolved": "\"bubbles\" | \"circles\" | \"circular\" | \"crescent\" | \"dots\" | \"lines\" | \"lines-sharp\" | \"lines-sharp-small\" | \"lines-small\" | null | undefined",
+        "references": {
+          "SpinnerTypes": {
+            "location": "import",
+            "path": "../spinner/spinner-configs",
+            "id": "src/components/spinner/spinner-configs.ts::SpinnerTypes"
+          }
+        }
+      },
       "mutable": true,
       "attr": "refreshing-spinner",
       "reflectToAttr": false,
@@ -108,6 +141,17 @@
     {
       "name": "refreshingText",
       "type": "IonicSafeString | string | undefined",
+      "complexType": {
+        "original": "string | IonicSafeString",
+        "resolved": "IonicSafeString | string | undefined",
+        "references": {
+          "IonicSafeString": {
+            "location": "import",
+            "path": "../../utils/sanitization",
+            "id": "src/utils/sanitization/index.ts::IonicSafeString"
+          }
+        }
+      },
       "mutable": false,
       "attr": "refreshing-text",
       "reflectToAttr": false,

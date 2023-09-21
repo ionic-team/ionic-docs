@@ -9,37 +9,30 @@
   ></ion-alert>
 </template>
 
-<script lang="ts">
+<script lang="ts" setup>
   import { IonAlert, IonButton } from '@ionic/vue';
 
-  export default {
-    components: { IonAlert, IonButton },
-    setup() {
-      const alertButtons = ['OK'];
-      const alertInputs = [
-        {
-          placeholder: 'Name',
-        },
-        {
-          placeholder: 'Nickname (max 8 characters)',
-          attributes: {
-            maxlength: 8,
-          },
-        },
-        {
-          type: 'number',
-          placeholder: 'Age',
-          min: 1,
-          max: 100,
-        },
-        {
-          type: 'textarea',
-          placeholder: 'A little about yourself',
-        },
-      ];
-
-      return { alertButtons, alertInputs };
+  const alertButtons = ['OK'];
+  const alertInputs = [
+    {
+      placeholder: 'Name',
     },
-  };
+    {
+      placeholder: 'Nickname (max 8 characters)',
+      attributes: {
+        maxlength: 8,
+      },
+    },
+    {
+      type: 'number',
+      placeholder: 'Age',
+      min: 1,
+      max: 100,
+    },
+    {
+      type: 'textarea',
+      placeholder: 'A little about yourself',
+    },
+  ];
 </script>
 ```

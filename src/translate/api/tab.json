@@ -1,5 +1,5 @@
 {
-  "filePath": "./src/components/tab/tab.tsx",
+  "filePath": "src/components/tab/tab.tsx",
   "encapsulation": "shadow",
   "tag": "ion-tab",
   "docs": "",
@@ -9,6 +9,17 @@
     {
       "name": "component",
       "type": "Function | HTMLElement | null | string | undefined",
+      "complexType": {
+        "original": "ComponentRef",
+        "resolved": "Function | HTMLElement | null | string | undefined",
+        "references": {
+          "ComponentRef": {
+            "location": "import",
+            "path": "../../interface",
+            "id": "src/interface.d.ts::ComponentRef"
+          }
+        }
+      },
       "mutable": false,
       "attr": "component",
       "reflectToAttr": false,
@@ -37,6 +48,11 @@
     {
       "name": "tab",
       "type": "string",
+      "complexType": {
+        "original": "string",
+        "resolved": "string",
+        "references": {}
+      },
       "mutable": false,
       "attr": "tab",
       "reflectToAttr": false,
@@ -57,6 +73,17 @@
       "returns": {
         "type": "Promise<void>",
         "docs": ""
+      },
+      "complexType": {
+        "signature": "() => Promise<void>",
+        "parameters": [],
+        "references": {
+          "Promise": {
+            "location": "global",
+            "id": "global::Promise"
+          }
+        },
+        "return": "Promise<void>"
       },
       "signature": "setActive() => Promise<void>",
       "parameters": [],

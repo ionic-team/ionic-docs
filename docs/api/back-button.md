@@ -9,7 +9,7 @@ import CustomProps from '@ionic-internal/component-api/v7/back-button/custom-pro
 import Slots from '@ionic-internal/component-api/v7/back-button/slots.md';
 
 <head>
-  <title>Back Button | ion-back-button: Custom Menu Icon for Applications</title>
+  <title>ion-back-button: Custom Menu Back Button for Applications</title>
   <meta name="description" content="ion-back-buttonは、Android、iOS、およびProgressive Web Apps用のカスタムメニューアイコンです。Ionic Frameworkのコンポーネントを使用して、簡単にアプリケーションを構築できます。" />
 </head>
 

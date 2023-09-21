@@ -1,5 +1,5 @@
 {
-  "filePath": "./src/components/col/col.tsx",
+  "filePath": "src/components/col/col.tsx",
   "encapsulation": "shadow",
   "tag": "ion-col",
   "docs": "",
@@ -9,6 +9,11 @@
     {
       "name": "offset",
       "type": "string | undefined",
+      "complexType": {
+        "original": "string",
+        "resolved": "string | undefined",
+        "references": {}
+      },
       "mutable": false,
       "attr": "offset",
       "reflectToAttr": false,
@@ -28,6 +33,11 @@
     {
       "name": "offsetLg",
       "type": "string | undefined",
+      "complexType": {
+        "original": "string",
+        "resolved": "string | undefined",
+        "references": {}
+      },
       "mutable": false,
       "attr": "offset-lg",
       "reflectToAttr": false,
@@ -47,6 +57,11 @@
     {
       "name": "offsetMd",
       "type": "string | undefined",
+      "complexType": {
+        "original": "string",
+        "resolved": "string | undefined",
+        "references": {}
+      },
       "mutable": false,
       "attr": "offset-md",
       "reflectToAttr": false,
@@ -66,6 +81,11 @@
     {
       "name": "offsetSm",
       "type": "string | undefined",
+      "complexType": {
+        "original": "string",
+        "resolved": "string | undefined",
+        "references": {}
+      },
       "mutable": false,
       "attr": "offset-sm",
       "reflectToAttr": false,
@@ -85,6 +105,11 @@
     {
       "name": "offsetXl",
       "type": "string | undefined",
+      "complexType": {
+        "original": "string",
+        "resolved": "string | undefined",
+        "references": {}
+      },
       "mutable": false,
       "attr": "offset-xl",
       "reflectToAttr": false,
@@ -104,6 +129,11 @@
     {
       "name": "offsetXs",
       "type": "string | undefined",
+      "complexType": {
+        "original": "string",
+        "resolved": "string | undefined",
+        "references": {}
+      },
       "mutable": false,
       "attr": "offset-xs",
       "reflectToAttr": false,
@@ -123,6 +153,11 @@
     {
       "name": "pull",
       "type": "string | undefined",
+      "complexType": {
+        "original": "string",
+        "resolved": "string | undefined",
+        "references": {}
+      },
       "mutable": false,
       "attr": "pull",
       "reflectToAttr": false,
@@ -142,6 +177,11 @@
     {
       "name": "pullLg",
       "type": "string | undefined",
+      "complexType": {
+        "original": "string",
+        "resolved": "string | undefined",
+        "references": {}
+      },
       "mutable": false,
       "attr": "pull-lg",
       "reflectToAttr": false,
@@ -161,6 +201,11 @@
     {
       "name": "pullMd",
       "type": "string | undefined",
+      "complexType": {
+        "original": "string",
+        "resolved": "string | undefined",
+        "references": {}
+      },
       "mutable": false,
       "attr": "pull-md",
       "reflectToAttr": false,
@@ -180,6 +225,11 @@
     {
       "name": "pullSm",
       "type": "string | undefined",
+      "complexType": {
+        "original": "string",
+        "resolved": "string | undefined",
+        "references": {}
+      },
       "mutable": false,
       "attr": "pull-sm",
       "reflectToAttr": false,
@@ -199,6 +249,11 @@
     {
       "name": "pullXl",
       "type": "string | undefined",
+      "complexType": {
+        "original": "string",
+        "resolved": "string | undefined",
+        "references": {}
+      },
       "mutable": false,
       "attr": "pull-xl",
       "reflectToAttr": false,
@@ -218,6 +273,11 @@
     {
       "name": "pullXs",
       "type": "string | undefined",
+      "complexType": {
+        "original": "string",
+        "resolved": "string | undefined",
+        "references": {}
+      },
       "mutable": false,
       "attr": "pull-xs",
       "reflectToAttr": false,
@@ -237,6 +297,11 @@
     {
       "name": "push",
       "type": "string | undefined",
+      "complexType": {
+        "original": "string",
+        "resolved": "string | undefined",
+        "references": {}
+      },
       "mutable": false,
       "attr": "push",
       "reflectToAttr": false,
@@ -256,6 +321,11 @@
     {
       "name": "pushLg",
       "type": "string | undefined",
+      "complexType": {
+        "original": "string",
+        "resolved": "string | undefined",
+        "references": {}
+      },
       "mutable": false,
       "attr": "push-lg",
       "reflectToAttr": false,
@@ -275,6 +345,11 @@
     {
       "name": "pushMd",
       "type": "string | undefined",
+      "complexType": {
+        "original": "string",
+        "resolved": "string | undefined",
+        "references": {}
+      },
       "mutable": false,
       "attr": "push-md",
       "reflectToAttr": false,
@@ -294,6 +369,11 @@
     {
       "name": "pushSm",
       "type": "string | undefined",
+      "complexType": {
+        "original": "string",
+        "resolved": "string | undefined",
+        "references": {}
+      },
       "mutable": false,
       "attr": "push-sm",
       "reflectToAttr": false,
@@ -313,6 +393,11 @@
     {
       "name": "pushXl",
       "type": "string | undefined",
+      "complexType": {
+        "original": "string",
+        "resolved": "string | undefined",
+        "references": {}
+      },
       "mutable": false,
       "attr": "push-xl",
       "reflectToAttr": false,
@@ -332,6 +417,11 @@
     {
       "name": "pushXs",
       "type": "string | undefined",
+      "complexType": {
+        "original": "string",
+        "resolved": "string | undefined",
+        "references": {}
+      },
       "mutable": false,
       "attr": "push-xs",
       "reflectToAttr": false,
@@ -351,6 +441,11 @@
     {
       "name": "size",
       "type": "string | undefined",
+      "complexType": {
+        "original": "string",
+        "resolved": "string | undefined",
+        "references": {}
+      },
       "mutable": false,
       "attr": "size",
       "reflectToAttr": false,
@@ -370,6 +465,11 @@
     {
       "name": "sizeLg",
       "type": "string | undefined",
+      "complexType": {
+        "original": "string",
+        "resolved": "string | undefined",
+        "references": {}
+      },
       "mutable": false,
       "attr": "size-lg",
       "reflectToAttr": false,
@@ -389,6 +489,11 @@
     {
       "name": "sizeMd",
       "type": "string | undefined",
+      "complexType": {
+        "original": "string",
+        "resolved": "string | undefined",
+        "references": {}
+      },
       "mutable": false,
       "attr": "size-md",
       "reflectToAttr": false,
@@ -408,6 +513,11 @@
     {
       "name": "sizeSm",
       "type": "string | undefined",
+      "complexType": {
+        "original": "string",
+        "resolved": "string | undefined",
+        "references": {}
+      },
       "mutable": false,
       "attr": "size-sm",
       "reflectToAttr": false,
@@ -427,6 +537,11 @@
     {
       "name": "sizeXl",
       "type": "string | undefined",
+      "complexType": {
+        "original": "string",
+        "resolved": "string | undefined",
+        "references": {}
+      },
       "mutable": false,
       "attr": "size-xl",
       "reflectToAttr": false,
@@ -446,6 +561,11 @@
     {
       "name": "sizeXs",
       "type": "string | undefined",
+      "complexType": {
+        "original": "string",
+        "resolved": "string | undefined",
+        "references": {}
+      },
       "mutable": false,
       "attr": "size-xs",
       "reflectToAttr": false,

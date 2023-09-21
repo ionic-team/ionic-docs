@@ -12,7 +12,7 @@ import CustomProps from '@ionic-internal/component-api/v7/alert/custom-props.md'
 import Slots from '@ionic-internal/component-api/v7/alert/slots.md';
 
 <head>
-  <title>ion-alert: Ionic API Alert Buttons with Custom Message Prompts</title>
+  <title>ion-alert: Ionic Alert Buttons with Custom Message Prompts</title>
   <meta name="description" content="ion-alertダイアログは、Inputを使用して情報を提示または収集します。カスタムアラートボタンメッセージは、アプリのコンテンツの上に表示され、手動で解除する必要があります。" />
 </head>
 
@@ -111,25 +111,173 @@ IonicのAngularアプリを構築する場合、スタイルはグローバル�
 
 ## アクセシビリティ
 
-Ionicは、アラートの `role` を、Inputやボタンがある場合は [`alertdialog`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/alertdialog_role) に、何もない場合は [`alert`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/alert_role) のいずれかに自動的に設定します。
+### Screen Readers
 
-アラートに対して `header` プロパティが定義されている場合、`aria-labelledby` 属性は自動的にヘッダの ID に設定されます。 `header`が定義されていない場合は、`subHeader`要素がフォールバックとして使用されます。同様に、`aria-describedby`属性は、`message`要素のIDが定義されていれば自動的に設定されます。
+アラートは、スクリーンリーダーにとって[アクセシブル](../reference/glossary#a11y)であるために、ariaプロパティを設定しますが、これらのプロパティは、十分な説明がない場合、またはアラートがアプリでどのように使用されているかと一致しない場合は、オーバーライドすることができます。
+
+#### Role
+
+Ionicは自動的にアラートの`role`を、入力やボタンがある場合は[`alertdialog`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/alertdialog_role)に、何もない場合は[`alert`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/alert_role)に設定します。
+
+#### Alert の概要
+
+アラートに `header` プロパティが定義されている場合、`aria-labelledby` 属性は自動的にヘッダの ID に設定されます。 `header` が定義されていない場合、`subHeader` 要素がフォールバックとして使用されます。同様に、 `aria-describedby` 属性が定義されている場合は、自動的に `message` 要素の ID が設定されます。
 
 ARIAの仕様に合わせるために、アラートには `message` と `header` または `subHeader` を含めることを強くお勧めします。もし `header` や `subHeader` を含めない場合は、`htmlAttributes` プロパティを使用して、説明的な `aria-label` を指定することができます。
 
-すべてのARIA属性は、アラートの`htmlAttributes`プロパティにカスタム値を定義することにより、手動で上書きすることができます。
+<Tabs groupId="framework" defaultValue="angular" values={[{ value: 'angular', label: 'Angular' }, { value: 'javascript', label: 'Javascript' }, { value: 'react', label: 'React' }, { value: 'vue', label: 'Vue' }]}>
 
+<TabItem value="angular">
+
+```javascript
+const alert = await this.alertController.create({
+  message: 'This is an alert with custom aria attributes.',
+  htmlAttributes: {
+    'aria-label': 'alert dialog',
+  },
+});
+```
+
+</TabItem>
+
+<TabItem value="javascript">
+
+```javascript
+const alert = await this.alertController.create({
+  message: 'This is an alert with custom aria attributes.',
+  htmlAttributes: {
+    'aria-label': 'alert dialog',
+  },
+});
+```
+
+</TabItem>
+
+<TabItem value="react">
+
+```javascript
+useIonAlert({
+  message: 'This is an alert with custom aria attributes.',
+  htmlAttributes: {
+    'aria-label': 'alert dialog',
+  },
+});
+```
+
+</TabItem>
+
+<TabItem value="vue">
+
+```javascript
+const alert = await alertController.create({
+  message: 'This is an alert with custom aria attributes.',
+  htmlAttributes: {
+    'aria-label': 'alert dialog',
+  },
+});
+```
+
+</TabItem>
+
+</Tabs>
+
+
+すべてのARIA属性は、アラートの`htmlAttributes`プロパティにカスタム値を定義することで、手動で上書きすることができます。
+
+#### Alert Buttons の概要
+
+Buttons containing text will be read by a screen reader. If a description other than the existing text is desired, a label can be set on the button by passing `aria-label` to the `htmlAttributes` property on the button.
+
+<Tabs groupId="framework" defaultValue="angular" values={[{ value: 'angular', label: 'Angular' }, { value: 'javascript', label: 'Javascript' }, { value: 'react', label: 'React' }, { value: 'vue', label: 'Vue' }]}>
+
+<TabItem value="angular">
+
+```javascript
+const alert = await this.alertController.create({
+  header: 'Header',
+  buttons: [
+    {
+      text: 'Exit',
+      htmlAttributes: {
+        'aria-label': 'close',
+      },
+    },
+  ],
+});
+```
+
+</TabItem>
+
+<TabItem value="javascript">
+
+```javascript
+const alert = await this.alertController.create({
+  header: 'Header',
+  buttons: [
+    {
+      text: 'Exit',
+      htmlAttributes: {
+        'aria-label': 'close',
+      },
+    },
+  ],
+});
+```
+
+</TabItem>
+
+<TabItem value="react">
+
+```javascript
+useIonAlert({
+  header: 'Header',
+  buttons: [
+    {
+      text: 'Exit',
+      htmlAttributes: {
+        'aria-label': 'close',
+      },
+    },
+  ],
+});
+```
+
+</TabItem>
+
+<TabItem value="vue">
+
+```javascript
+const alert = await alertController.create({
+  header: 'Header',
+  buttons: [
+    {
+      text: 'Exit',
+      htmlAttributes: {
+        'aria-label': 'close',
+      },
+    },
+  ],
+});
+```
+
+</TabItem>
+
+</Tabs>
 
 ## Interfaces
 
 ### AlertButton
 
 ```typescript
+type AlertButtonOverlayHandler = boolean | void | { [key: string]: any };
+
 interface AlertButton {
   text: string;
   role?: 'cancel' | 'destructive' | string;
   cssClass?: string | string[];
-  handler?: (value: any) => boolean | void | {[key: string]: any};
+  id?: string;
+  htmlAttributes?: { [key: string]: any };
+  handler?: (value: any) => AlertButtonOverlayHandler | Promise<AlertButtonOverlayHandler>;
 }
 ```
 

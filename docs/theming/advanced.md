@@ -179,4 +179,30 @@ After running through the Sass compiler, the colors will have the following valu
 
 これは通常は問題にはなりませんが、アプリケーションに動的なテーマカラーの設定が必要な場合は問題になります。Ionic では、これが[各色にバリエーションがある](colors.md#layered-colors)理由であり、テーマ設定に[stepped colors](themes.md#stepped-colors)が必要な理由でもあります。
 
-これを可能にする[color modification proposals](https://github.com/w3c/csswg-drafts/issues/3187)を議論している草案と Issues はこちらからご覧いただけます。
+There are drafts and issues discussing [color modification proposals](https://github.com/w3c/csswg-drafts/issues/3187) that would make this possible.
+
+## Safe Area Padding
+
+The safe area of a display is the section that is not covered by the device's notch, status bar, or other elements that are part of the device's UI and not the app's. The dimensions of the safe area are different across devices and orientations (portrait or landscape).
+
+For example, below are screenshots of an iPhone 14 Pro Max. The red section is the safe area, and the white sections are places where the app's content would be covered up.
+
+| Portrait                                                                       | Landscape                                                                        |
+| ------------------------------------------------------------------------------ | -------------------------------------------------------------------------------- |
+| <img src={require('@site/static/img/theming/ios-portrait-top.png').default} /> | <img src={require('@site/static/img/theming/ios-landscape-left.png').default} /> |
+
+To accommodate this, Ionic automatically adds padding to certain components. For example, the first `ion-toolbar` component placed in an `ion-modal` will receive padding according to the top edge of the device's safe area. This avoids the device's notch covering up the header text.
+
+<img src={require('@site/static/img/theming/modal-header-padding.png').default} />
+
+This padding can be manually adjusted through CSS using the `--ion-safe-area-(dir)` variables described in [Application Variables](#application-variables). Values can be set for the whole application, or on a per component basis. For example:
+
+```css
+html {
+  --ion-safe-area-left: 25px;
+}
+
+ion-modal {
+  --ion-safe-area-top: 0;
+}
+```

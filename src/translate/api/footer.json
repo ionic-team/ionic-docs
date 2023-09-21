@@ -1,5 +1,5 @@
 {
-  "filePath": "./src/components/footer/footer.tsx",
+  "filePath": "src/components/footer/footer.tsx",
   "encapsulation": "none",
   "tag": "ion-footer",
   "docs": "",
@@ -14,6 +14,11 @@
     {
       "name": "collapse",
       "type": "\"fade\" | undefined",
+      "complexType": {
+        "original": "'fade'",
+        "resolved": "\"fade\" | undefined",
+        "references": {}
+      },
       "mutable": false,
       "attr": "collapse",
       "reflectToAttr": false,
@@ -55,6 +60,11 @@
     {
       "name": "translucent",
       "type": "boolean",
+      "complexType": {
+        "original": "boolean",
+        "resolved": "boolean",
+        "references": {}
+      },
       "mutable": false,
       "attr": "translucent",
       "reflectToAttr": false,

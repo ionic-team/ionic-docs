@@ -1,5 +1,5 @@
 {
-  "filePath": "./src/components/accordion/accordion.tsx",
+  "filePath": "src/components/accordion/accordion.tsx",
   "encapsulation": "shadow",
   "tag": "ion-accordion",
   "docs": "",
@@ -34,6 +34,11 @@
     {
       "name": "disabled",
       "type": "boolean",
+      "complexType": {
+        "original": "boolean",
+        "resolved": "boolean",
+        "references": {}
+      },
       "mutable": false,
       "attr": "disabled",
       "reflectToAttr": false,
@@ -72,6 +77,11 @@
     {
       "name": "readonly",
       "type": "boolean",
+      "complexType": {
+        "original": "boolean",
+        "resolved": "boolean",
+        "references": {}
+      },
       "mutable": false,
       "attr": "readonly",
       "reflectToAttr": false,
@@ -89,6 +99,11 @@
     {
       "name": "toggleIcon",
       "type": "string",
+      "complexType": {
+        "original": "string",
+        "resolved": "string",
+        "references": {}
+      },
       "mutable": false,
       "attr": "toggle-icon",
       "reflectToAttr": false,
@@ -106,6 +121,11 @@
     {
       "name": "toggleIconSlot",
       "type": "\"end\" | \"start\"",
+      "complexType": {
+        "original": "'start' | 'end'",
+        "resolved": "\"end\" | \"start\"",
+        "references": {}
+      },
       "mutable": false,
       "attr": "toggle-icon-slot",
       "reflectToAttr": false,
@@ -128,6 +148,11 @@
     {
       "name": "value",
       "type": "string",
+      "complexType": {
+        "original": "string",
+        "resolved": "string",
+        "references": {}
+      },
       "mutable": false,
       "attr": "value",
       "reflectToAttr": false,

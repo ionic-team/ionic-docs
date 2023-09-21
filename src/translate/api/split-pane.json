@@ -1,5 +1,5 @@
 {
-  "filePath": "./src/components/split-pane/split-pane.tsx",
+  "filePath": "src/components/split-pane/split-pane.tsx",
   "encapsulation": "shadow",
   "tag": "ion-split-pane",
   "docs": "",
@@ -9,6 +9,11 @@
     {
       "name": "contentId",
       "type": "string | undefined",
+      "complexType": {
+        "original": "string",
+        "resolved": "string | undefined",
+        "references": {}
+      },
       "mutable": false,
       "attr": "content-id",
       "reflectToAttr": true,
@@ -28,6 +33,11 @@
     {
       "name": "disabled",
       "type": "boolean",
+      "complexType": {
+        "original": "boolean",
+        "resolved": "boolean",
+        "references": {}
+      },
       "mutable": false,
       "attr": "disabled",
       "reflectToAttr": false,
@@ -45,6 +55,11 @@
     {
       "name": "when",
       "type": "boolean | string",
+      "complexType": {
+        "original": "string | boolean",
+        "resolved": "boolean | string",
+        "references": {}
+      },
       "mutable": false,
       "attr": "when",
       "reflectToAttr": false,
@@ -69,6 +84,11 @@
       "event": "ionSplitPaneVisible",
       "detail": "{ visible: boolean; }",
       "bubbles": true,
+      "complexType": {
+        "original": "{ visible: boolean }",
+        "resolved": "{ visible: boolean; }",
+        "references": {}
+      },
       "cancelable": true,
       "composed": true,
       "docs": "Expression to be called when the split-pane visibility has changed",

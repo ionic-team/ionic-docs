@@ -1,5 +1,5 @@
 {
-  "filePath": "./src/components/range/range.tsx",
+  "filePath": "src/components/range/range.tsx",
   "encapsulation": "shadow",
   "tag": "ion-range",
   "docs": "",
@@ -50,6 +50,11 @@
     {
       "name": "activeBarStart",
       "type": "number | undefined",
+      "complexType": {
+        "original": "number",
+        "resolved": "number | undefined",
+        "references": {}
+      },
       "mutable": true,
       "attr": "active-bar-start",
       "reflectToAttr": false,
@@ -69,6 +74,17 @@
     {
       "name": "color",
       "type": "\"danger\" | \"dark\" | \"light\" | \"medium\" | \"primary\" | \"secondary\" | \"success\" | \"tertiary\" | \"warning\" | string & Record<never, never> | undefined",
+      "complexType": {
+        "original": "Color",
+        "resolved": "\"danger\" | \"dark\" | \"light\" | \"medium\" | \"primary\" | \"secondary\" | \"success\" | \"tertiary\" | \"warning\" | string & Record<never, never> | undefined",
+        "references": {
+          "Color": {
+            "location": "import",
+            "path": "../../interface",
+            "id": "src/interface.d.ts::Color"
+          }
+        }
+      },
       "mutable": false,
       "attr": "color",
       "reflectToAttr": true,
@@ -124,6 +140,11 @@
     {
       "name": "debounce",
       "type": "number | undefined",
+      "complexType": {
+        "original": "number",
+        "resolved": "number | undefined",
+        "references": {}
+      },
       "mutable": false,
       "attr": "debounce",
       "reflectToAttr": false,
@@ -143,6 +164,11 @@
     {
       "name": "disabled",
       "type": "boolean",
+      "complexType": {
+        "original": "boolean",
+        "resolved": "boolean",
+        "references": {}
+      },
       "mutable": false,
       "attr": "disabled",
       "reflectToAttr": false,
@@ -160,6 +186,11 @@
     {
       "name": "dualKnobs",
       "type": "boolean",
+      "complexType": {
+        "original": "boolean",
+        "resolved": "boolean",
+        "references": {}
+      },
       "mutable": false,
       "attr": "dual-knobs",
       "reflectToAttr": false,
@@ -177,6 +208,11 @@
     {
       "name": "label",
       "type": "string | undefined",
+      "complexType": {
+        "original": "string",
+        "resolved": "string | undefined",
+        "references": {}
+      },
       "mutable": false,
       "attr": "label",
       "reflectToAttr": false,
@@ -196,6 +232,11 @@
     {
       "name": "labelPlacement",
       "type": "\"end\" | \"fixed\" | \"start\"",
+      "complexType": {
+        "original": "'start' | 'end' | 'fixed'",
+        "resolved": "\"end\" | \"fixed\" | \"start\"",
+        "references": {}
+      },
       "mutable": false,
       "attr": "label-placement",
       "reflectToAttr": false,
@@ -222,6 +263,11 @@
     {
       "name": "legacy",
       "type": "boolean | undefined",
+      "complexType": {
+        "original": "boolean",
+        "resolved": "boolean | undefined",
+        "references": {}
+      },
       "mutable": false,
       "attr": "legacy",
       "reflectToAttr": false,
@@ -241,6 +287,11 @@
     {
       "name": "max",
       "type": "number",
+      "complexType": {
+        "original": "number",
+        "resolved": "number",
+        "references": {}
+      },
       "mutable": false,
       "attr": "max",
       "reflectToAttr": false,
@@ -258,6 +309,11 @@
     {
       "name": "min",
       "type": "number",
+      "complexType": {
+        "original": "number",
+        "resolved": "number",
+        "references": {}
+      },
       "mutable": false,
       "attr": "min",
       "reflectToAttr": false,
@@ -296,6 +352,11 @@
     {
       "name": "name",
       "type": "string",
+      "complexType": {
+        "original": "string",
+        "resolved": "string",
+        "references": {}
+      },
       "mutable": false,
       "attr": "name",
       "reflectToAttr": false,
@@ -313,6 +374,11 @@
     {
       "name": "pin",
       "type": "boolean",
+      "complexType": {
+        "original": "boolean",
+        "resolved": "boolean",
+        "references": {}
+      },
       "mutable": false,
       "attr": "pin",
       "reflectToAttr": false,
@@ -330,6 +396,17 @@
     {
       "name": "pinFormatter",
       "type": "(value: number) => string | number",
+      "complexType": {
+        "original": "PinFormatter",
+        "resolved": "(value: number) => string | number",
+        "references": {
+          "PinFormatter": {
+            "location": "import",
+            "path": "./range-interface",
+            "id": "src/components/range/range-interface.ts::PinFormatter"
+          }
+        }
+      },
       "mutable": false,
       "reflectToAttr": false,
       "docs": "A callback used to format the pin text.\nBy default the pin text is set to `Math.round(value)`.",
@@ -349,6 +426,11 @@
     {
       "name": "snaps",
       "type": "boolean",
+      "complexType": {
+        "original": "boolean",
+        "resolved": "boolean",
+        "references": {}
+      },
       "mutable": false,
       "attr": "snaps",
       "reflectToAttr": false,
@@ -366,6 +448,11 @@
     {
       "name": "step",
       "type": "number",
+      "complexType": {
+        "original": "number",
+        "resolved": "number",
+        "references": {}
+      },
       "mutable": false,
       "attr": "step",
       "reflectToAttr": false,
@@ -383,6 +470,11 @@
     {
       "name": "ticks",
       "type": "boolean",
+      "complexType": {
+        "original": "boolean",
+        "resolved": "boolean",
+        "references": {}
+      },
       "mutable": false,
       "attr": "ticks",
       "reflectToAttr": false,
@@ -400,6 +492,17 @@
     {
       "name": "value",
       "type": "number | { lower: number; upper: number; }",
+      "complexType": {
+        "original": "RangeValue",
+        "resolved": "number | { lower: number; upper: number; }",
+        "references": {
+          "RangeValue": {
+            "location": "import",
+            "path": "./range-interface",
+            "id": "src/components/range/range-interface.ts::RangeValue"
+          }
+        }
+      },
       "mutable": true,
       "attr": "value",
       "reflectToAttr": false,
@@ -424,6 +527,11 @@
       "event": "ionBlur",
       "detail": "void",
       "bubbles": true,
+      "complexType": {
+        "original": "void",
+        "resolved": "void",
+        "references": {}
+      },
       "cancelable": true,
       "composed": true,
       "docs": "Emitted when the range loses focus.",
@@ -433,6 +541,17 @@
       "event": "ionChange",
       "detail": "RangeChangeEventDetail",
       "bubbles": true,
+      "complexType": {
+        "original": "RangeChangeEventDetail",
+        "resolved": "RangeChangeEventDetail",
+        "references": {
+          "RangeChangeEventDetail": {
+            "location": "import",
+            "path": "./range-interface",
+            "id": "src/components/range/range-interface.ts::RangeChangeEventDetail"
+          }
+        }
+      },
       "cancelable": true,
       "composed": true,
       "docs": "The `ionChange` event is fired for `<ion-range>` elements when the user\nmodifies the element's value:\n- When the user releases the knob after dragging;\n- When the user moves the knob with keyboard arrows\n\n`ionChange` is not fired when the value is changed programmatically.",
@@ -442,6 +561,11 @@
       "event": "ionFocus",
       "detail": "void",
       "bubbles": true,
+      "complexType": {
+        "original": "void",
+        "resolved": "void",
+        "references": {}
+      },
       "cancelable": true,
       "composed": true,
       "docs": "Emitted when the range has focus.",
@@ -451,6 +575,17 @@
       "event": "ionInput",
       "detail": "RangeChangeEventDetail",
       "bubbles": true,
+      "complexType": {
+        "original": "RangeChangeEventDetail",
+        "resolved": "RangeChangeEventDetail",
+        "references": {
+          "RangeChangeEventDetail": {
+            "location": "import",
+            "path": "./range-interface",
+            "id": "src/components/range/range-interface.ts::RangeChangeEventDetail"
+          }
+        }
+      },
       "cancelable": true,
       "composed": true,
       "docs": "The `ionInput` event is fired for `<ion-range>` elements when the value\nis modified. Unlike `ionChange`, `ionInput` is fired continuously\nwhile the user is dragging the knob.",
@@ -460,6 +595,17 @@
       "event": "ionKnobMoveEnd",
       "detail": "RangeKnobMoveEndEventDetail",
       "bubbles": true,
+      "complexType": {
+        "original": "RangeKnobMoveEndEventDetail",
+        "resolved": "RangeKnobMoveEndEventDetail",
+        "references": {
+          "RangeKnobMoveEndEventDetail": {
+            "location": "import",
+            "path": "./range-interface",
+            "id": "src/components/range/range-interface.ts::RangeKnobMoveEndEventDetail"
+          }
+        }
+      },
       "cancelable": true,
       "composed": true,
       "docs": "Emitted when the user finishes moving the range knob, whether through\nmouse drag, touch gesture, or keyboard interaction.",
@@ -469,6 +615,17 @@
       "event": "ionKnobMoveStart",
       "detail": "RangeKnobMoveStartEventDetail",
       "bubbles": true,
+      "complexType": {
+        "original": "RangeKnobMoveStartEventDetail",
+        "resolved": "RangeKnobMoveStartEventDetail",
+        "references": {
+          "RangeKnobMoveStartEventDetail": {
+            "location": "import",
+            "path": "./range-interface",
+            "id": "src/components/range/range-interface.ts::RangeKnobMoveStartEventDetail"
+          }
+        }
+      },
       "cancelable": true,
       "composed": true,
       "docs": "Emitted when the user starts moving the range knob, whether through\nmouse drag, touch gesture, or keyboard interaction.",

@@ -1,5 +1,5 @@
 {
-  "filePath": "./src/components/breadcrumbs/breadcrumbs.tsx",
+  "filePath": "src/components/breadcrumbs/breadcrumbs.tsx",
   "encapsulation": "shadow",
   "tag": "ion-breadcrumbs",
   "docs": "",
@@ -14,6 +14,17 @@
     {
       "name": "color",
       "type": "\"danger\" | \"dark\" | \"light\" | \"medium\" | \"primary\" | \"secondary\" | \"success\" | \"tertiary\" | \"warning\" | string & Record<never, never> | undefined",
+      "complexType": {
+        "original": "Color",
+        "resolved": "\"danger\" | \"dark\" | \"light\" | \"medium\" | \"primary\" | \"secondary\" | \"success\" | \"tertiary\" | \"warning\" | string & Record<never, never> | undefined",
+        "references": {
+          "Color": {
+            "location": "import",
+            "path": "../../interface",
+            "id": "src/interface.d.ts::Color"
+          }
+        }
+      },
       "mutable": false,
       "attr": "color",
       "reflectToAttr": true,
@@ -69,6 +80,11 @@
     {
       "name": "itemsAfterCollapse",
       "type": "number",
+      "complexType": {
+        "original": "number",
+        "resolved": "number",
+        "references": {}
+      },
       "mutable": false,
       "attr": "items-after-collapse",
       "reflectToAttr": false,
@@ -86,6 +102,11 @@
     {
       "name": "itemsBeforeCollapse",
       "type": "number",
+      "complexType": {
+        "original": "number",
+        "resolved": "number",
+        "references": {}
+      },
       "mutable": false,
       "attr": "items-before-collapse",
       "reflectToAttr": false,
@@ -103,6 +124,11 @@
     {
       "name": "maxItems",
       "type": "number | undefined",
+      "complexType": {
+        "original": "number",
+        "resolved": "number | undefined",
+        "references": {}
+      },
       "mutable": false,
       "attr": "max-items",
       "reflectToAttr": false,
@@ -147,6 +173,17 @@
       "event": "ionCollapsedClick",
       "detail": "BreadcrumbCollapsedClickEventDetail",
       "bubbles": true,
+      "complexType": {
+        "original": "BreadcrumbCollapsedClickEventDetail",
+        "resolved": "BreadcrumbCollapsedClickEventDetail",
+        "references": {
+          "BreadcrumbCollapsedClickEventDetail": {
+            "location": "import",
+            "path": "../breadcrumb/breadcrumb-interface",
+            "id": "src/components/breadcrumb/breadcrumb-interface.ts::BreadcrumbCollapsedClickEventDetail"
+          }
+        }
+      },
       "cancelable": true,
       "composed": true,
       "docs": "Emitted when the collapsed indicator is clicked on.",

@@ -1,5 +1,5 @@
 {
-  "filePath": "./src/components/searchbar/searchbar.tsx",
+  "filePath": "src/components/searchbar/searchbar.tsx",
   "encapsulation": "scoped",
   "tag": "ion-searchbar",
   "docs": "",
@@ -14,6 +14,11 @@
     {
       "name": "animated",
       "type": "boolean",
+      "complexType": {
+        "original": "boolean",
+        "resolved": "boolean",
+        "references": {}
+      },
       "mutable": false,
       "attr": "animated",
       "reflectToAttr": false,
@@ -31,6 +36,17 @@
     {
       "name": "autocomplete",
       "type": "\"name\" | \"email\" | \"tel\" | \"url\" | \"on\" | \"off\" | \"honorific-prefix\" | \"given-name\" | \"additional-name\" | \"family-name\" | \"honorific-suffix\" | \"nickname\" | \"username\" | \"new-password\" | \"current-password\" | \"one-time-code\" | \"organization-title\" | \"organization\" | \"street-address\" | \"address-line1\" | \"address-line2\" | \"address-line3\" | \"address-level4\" | \"address-level3\" | \"address-level2\" | \"address-level1\" | \"country\" | \"country-name\" | \"postal-code\" | \"cc-name\" | \"cc-given-name\" | \"cc-additional-name\" | \"cc-family-name\" | \"cc-number\" | \"cc-exp\" | \"cc-exp-month\" | \"cc-exp-year\" | \"cc-csc\" | \"cc-type\" | \"transaction-currency\" | \"transaction-amount\" | \"language\" | \"bday\" | \"bday-day\" | \"bday-month\" | \"bday-year\" | \"sex\" | \"tel-country-code\" | \"tel-national\" | \"tel-area-code\" | \"tel-local\" | \"tel-extension\" | \"impp\" | \"photo\"",
+      "complexType": {
+        "original": "AutocompleteTypes",
+        "resolved": "\"name\" | \"email\" | \"tel\" | \"url\" | \"on\" | \"off\" | \"honorific-prefix\" | \"given-name\" | \"additional-name\" | \"family-name\" | \"honorific-suffix\" | \"nickname\" | \"username\" | \"new-password\" | \"current-password\" | \"one-time-code\" | \"organization-title\" | \"organization\" | \"street-address\" | \"address-line1\" | \"address-line2\" | \"address-line3\" | \"address-level4\" | \"address-level3\" | \"address-level2\" | \"address-level1\" | \"country\" | \"country-name\" | \"postal-code\" | \"cc-name\" | \"cc-given-name\" | \"cc-additional-name\" | \"cc-family-name\" | \"cc-number\" | \"cc-exp\" | \"cc-exp-month\" | \"cc-exp-year\" | \"cc-csc\" | \"cc-type\" | \"transaction-currency\" | \"transaction-amount\" | \"language\" | \"bday\" | \"bday-day\" | \"bday-month\" | \"bday-year\" | \"sex\" | \"tel-country-code\" | \"tel-national\" | \"tel-area-code\" | \"tel-local\" | \"tel-extension\" | \"impp\" | \"photo\"",
+        "references": {
+          "AutocompleteTypes": {
+            "location": "import",
+            "path": "../../interface",
+            "id": "src/interface.d.ts::AutocompleteTypes"
+          }
+        }
+      },
       "mutable": false,
       "attr": "autocomplete",
       "reflectToAttr": false,
@@ -261,6 +277,11 @@
     {
       "name": "autocorrect",
       "type": "\"off\" | \"on\"",
+      "complexType": {
+        "original": "'on' | 'off'",
+        "resolved": "\"off\" | \"on\"",
+        "references": {}
+      },
       "mutable": false,
       "attr": "autocorrect",
       "reflectToAttr": false,
@@ -283,6 +304,11 @@
     {
       "name": "cancelButtonIcon",
       "type": "string",
+      "complexType": {
+        "original": "string",
+        "resolved": "string",
+        "references": {}
+      },
       "mutable": false,
       "attr": "cancel-button-icon",
       "reflectToAttr": false,
@@ -300,6 +326,11 @@
     {
       "name": "cancelButtonText",
       "type": "string",
+      "complexType": {
+        "original": "string",
+        "resolved": "string",
+        "references": {}
+      },
       "mutable": false,
       "attr": "cancel-button-text",
       "reflectToAttr": false,
@@ -317,6 +348,11 @@
     {
       "name": "clearIcon",
       "type": "string | undefined",
+      "complexType": {
+        "original": "string",
+        "resolved": "string | undefined",
+        "references": {}
+      },
       "mutable": false,
       "attr": "clear-icon",
       "reflectToAttr": false,
@@ -336,6 +372,17 @@
     {
       "name": "color",
       "type": "\"danger\" | \"dark\" | \"light\" | \"medium\" | \"primary\" | \"secondary\" | \"success\" | \"tertiary\" | \"warning\" | string & Record<never, never> | undefined",
+      "complexType": {
+        "original": "Color",
+        "resolved": "\"danger\" | \"dark\" | \"light\" | \"medium\" | \"primary\" | \"secondary\" | \"success\" | \"tertiary\" | \"warning\" | string & Record<never, never> | undefined",
+        "references": {
+          "Color": {
+            "location": "import",
+            "path": "../../interface",
+            "id": "src/interface.d.ts::Color"
+          }
+        }
+      },
       "mutable": false,
       "attr": "color",
       "reflectToAttr": true,
@@ -391,6 +438,11 @@
     {
       "name": "debounce",
       "type": "number | undefined",
+      "complexType": {
+        "original": "number",
+        "resolved": "number | undefined",
+        "references": {}
+      },
       "mutable": false,
       "attr": "debounce",
       "reflectToAttr": false,
@@ -410,6 +462,11 @@
     {
       "name": "disabled",
       "type": "boolean",
+      "complexType": {
+        "original": "boolean",
+        "resolved": "boolean",
+        "references": {}
+      },
       "mutable": false,
       "attr": "disabled",
       "reflectToAttr": false,
@@ -427,6 +484,11 @@
     {
       "name": "enterkeyhint",
       "type": "\"done\" | \"enter\" | \"go\" | \"next\" | \"previous\" | \"search\" | \"send\" | undefined",
+      "complexType": {
+        "original": "'enter' | 'done' | 'go' | 'next' | 'previous' | 'search' | 'send'",
+        "resolved": "\"done\" | \"enter\" | \"go\" | \"next\" | \"previous\" | \"search\" | \"send\" | undefined",
+        "references": {}
+      },
       "mutable": false,
       "attr": "enterkeyhint",
       "reflectToAttr": false,
@@ -471,6 +533,11 @@
     {
       "name": "inputmode",
       "type": "\"decimal\" | \"email\" | \"none\" | \"numeric\" | \"search\" | \"tel\" | \"text\" | \"url\" | undefined",
+      "complexType": {
+        "original": "'none' | 'text' | 'tel' | 'url' | 'email' | 'numeric' | 'decimal' | 'search'",
+        "resolved": "\"decimal\" | \"email\" | \"none\" | \"numeric\" | \"search\" | \"tel\" | \"text\" | \"url\" | undefined",
+        "references": {}
+      },
       "mutable": false,
       "attr": "inputmode",
       "reflectToAttr": false,
@@ -540,6 +607,11 @@
     {
       "name": "name",
       "type": "string",
+      "complexType": {
+        "original": "string",
+        "resolved": "string",
+        "references": {}
+      },
       "mutable": false,
       "attr": "name",
       "reflectToAttr": false,
@@ -557,6 +629,11 @@
     {
       "name": "placeholder",
       "type": "string",
+      "complexType": {
+        "original": "string",
+        "resolved": "string",
+        "references": {}
+      },
       "mutable": false,
       "attr": "placeholder",
       "reflectToAttr": false,
@@ -574,6 +651,11 @@
     {
       "name": "searchIcon",
       "type": "string | undefined",
+      "complexType": {
+        "original": "string",
+        "resolved": "string | undefined",
+        "references": {}
+      },
       "mutable": false,
       "attr": "search-icon",
       "reflectToAttr": false,
@@ -593,6 +675,11 @@
     {
       "name": "showCancelButton",
       "type": "\"always\" | \"focus\" | \"never\"",
+      "complexType": {
+        "original": "'never' | 'focus' | 'always'",
+        "resolved": "\"always\" | \"focus\" | \"never\"",
+        "references": {}
+      },
       "mutable": false,
       "attr": "show-cancel-button",
       "reflectToAttr": false,
@@ -619,6 +706,11 @@
     {
       "name": "showClearButton",
       "type": "\"always\" | \"focus\" | \"never\"",
+      "complexType": {
+        "original": "'never' | 'focus' | 'always'",
+        "resolved": "\"always\" | \"focus\" | \"never\"",
+        "references": {}
+      },
       "mutable": false,
       "attr": "show-clear-button",
       "reflectToAttr": false,
@@ -645,6 +737,11 @@
     {
       "name": "spellcheck",
       "type": "boolean",
+      "complexType": {
+        "original": "boolean",
+        "resolved": "boolean",
+        "references": {}
+      },
       "mutable": false,
       "attr": "spellcheck",
       "reflectToAttr": false,
@@ -662,6 +759,11 @@
     {
       "name": "type",
       "type": "\"email\" | \"number\" | \"password\" | \"search\" | \"tel\" | \"text\" | \"url\"",
+      "complexType": {
+        "original": "'text' | 'password' | 'email' | 'number' | 'search' | 'tel' | 'url'",
+        "resolved": "\"email\" | \"number\" | \"password\" | \"search\" | \"tel\" | \"text\" | \"url\"",
+        "references": {}
+      },
       "mutable": false,
       "attr": "type",
       "reflectToAttr": false,
@@ -704,6 +806,11 @@
     {
       "name": "value",
       "type": "null | string | undefined",
+      "complexType": {
+        "original": "string | null",
+        "resolved": "null | string | undefined",
+        "references": {}
+      },
       "mutable": true,
       "attr": "value",
       "reflectToAttr": false,
@@ -732,6 +839,21 @@
         "type": "Promise<HTMLInputElement>",
         "docs": ""
       },
+      "complexType": {
+        "signature": "() => Promise<HTMLInputElement>",
+        "parameters": [],
+        "references": {
+          "Promise": {
+            "location": "global",
+            "id": "global::Promise"
+          },
+          "HTMLInputElement": {
+            "location": "global",
+            "id": "global::HTMLInputElement"
+          }
+        },
+        "return": "Promise<HTMLInputElement>"
+      },
       "signature": "getInputElement() => Promise<HTMLInputElement>",
       "parameters": [],
       "docs": "Returns the native `<input>` element used under the hood.",
@@ -742,6 +864,17 @@
       "returns": {
         "type": "Promise<void>",
         "docs": ""
+      },
+      "complexType": {
+        "signature": "() => Promise<void>",
+        "parameters": [],
+        "references": {
+          "Promise": {
+            "location": "global",
+            "id": "global::Promise"
+          }
+        },
+        "return": "Promise<void>"
       },
       "signature": "setFocus() => Promise<void>",
       "parameters": [],
@@ -754,6 +887,11 @@
       "event": "ionBlur",
       "detail": "void",
       "bubbles": true,
+      "complexType": {
+        "original": "void",
+        "resolved": "void",
+        "references": {}
+      },
       "cancelable": true,
       "composed": true,
       "docs": "Emitted when the input loses focus.",
@@ -763,6 +901,11 @@
       "event": "ionCancel",
       "detail": "void",
       "bubbles": true,
+      "complexType": {
+        "original": "void",
+        "resolved": "void",
+        "references": {}
+      },
       "cancelable": true,
       "composed": true,
       "docs": "Emitted when the cancel button is clicked.",
@@ -772,6 +915,17 @@
       "event": "ionChange",
       "detail": "SearchbarChangeEventDetail",
       "bubbles": true,
+      "complexType": {
+        "original": "SearchbarChangeEventDetail",
+        "resolved": "SearchbarChangeEventDetail",
+        "references": {
+          "SearchbarChangeEventDetail": {
+            "location": "import",
+            "path": "./searchbar-interface",
+            "id": "src/components/searchbar/searchbar-interface.ts::SearchbarChangeEventDetail"
+          }
+        }
+      },
       "cancelable": true,
       "composed": true,
       "docs": "The `ionChange` event is fired for `<ion-searchbar>` elements when the user\nmodifies the element's value. Unlike the `ionInput` event, the `ionChange`\nevent is not necessarily fired for each alteration to an element's value.\n\nThe `ionChange` event is fired when the value has been committed\nby the user. This can happen when the element loses focus or\nwhen the \"Enter\" key is pressed. `ionChange` can also fire\nwhen clicking the clear or cancel buttons.",
@@ -781,6 +935,11 @@
       "event": "ionClear",
       "detail": "void",
       "bubbles": true,
+      "complexType": {
+        "original": "void",
+        "resolved": "void",
+        "references": {}
+      },
       "cancelable": true,
       "composed": true,
       "docs": "Emitted when the clear input button is clicked.",
@@ -790,6 +949,11 @@
       "event": "ionFocus",
       "detail": "void",
       "bubbles": true,
+      "complexType": {
+        "original": "void",
+        "resolved": "void",
+        "references": {}
+      },
       "cancelable": true,
       "composed": true,
       "docs": "Emitted when the input has focus.",
@@ -799,6 +963,17 @@
       "event": "ionInput",
       "detail": "SearchbarInputEventDetail",
       "bubbles": true,
+      "complexType": {
+        "original": "SearchbarInputEventDetail",
+        "resolved": "SearchbarInputEventDetail",
+        "references": {
+          "SearchbarInputEventDetail": {
+            "location": "import",
+            "path": "./searchbar-interface",
+            "id": "src/components/searchbar/searchbar-interface.ts::SearchbarInputEventDetail"
+          }
+        }
+      },
       "cancelable": true,
       "composed": true,
       "docs": "Emitted when the `value` of the `ion-searchbar` element has changed.",

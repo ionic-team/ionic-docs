@@ -1,5 +1,5 @@
 {
-  "filePath": "./src/components/app/app.tsx",
+  "filePath": "src/components/app/app.tsx",
   "encapsulation": "none",
   "tag": "ion-app",
   "docs": "",

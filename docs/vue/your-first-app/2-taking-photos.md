@@ -140,7 +140,7 @@ With the photo(s) stored into the main array we can now display the images on th
 <ion-content>
   <ion-grid>
     <ion-row>
-      <ion-col size="6" :key="photo" v-for="photo in photos">
+      <ion-col size="6" :key="photo.filepath" v-for="photo in photos">
         <ion-img :src="photo.webviewPath"></ion-img>
       </ion-col>
     </ion-row>

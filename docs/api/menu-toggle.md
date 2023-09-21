@@ -9,7 +9,7 @@ import CustomProps from '@ionic-internal/component-api/v7/menu-toggle/custom-pro
 import Slots from '@ionic-internal/component-api/v7/menu-toggle/slots.md';
 
 <head>
-  <title>ion-menu-toggle | MenuToggle Component to Open/Close Active Menus</title>
+  <title>ion-menu-toggle: MenuToggle Component to Open/Close Menus</title>
   <meta name="description" content="MenuToggleコンポーネントは、メニューの開閉を切り替えるために使用します。デフォルトでは、選択されたメニューがアクティブなときにのみ表示されます。使用方法についてもっと読む。" />
 </head>
 

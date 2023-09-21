@@ -1,5 +1,5 @@
 {
-  "filePath": "./src/components/picker/picker.tsx",
+  "filePath": "src/components/picker/picker.tsx",
   "encapsulation": "scoped",
   "tag": "ion-picker",
   "docs": "",
@@ -14,6 +14,11 @@
     {
       "name": "animated",
       "type": "boolean",
+      "complexType": {
+        "original": "boolean",
+        "resolved": "boolean",
+        "references": {}
+      },
       "mutable": false,
       "attr": "animated",
       "reflectToAttr": false,
@@ -31,6 +36,11 @@
     {
       "name": "backdropDismiss",
       "type": "boolean",
+      "complexType": {
+        "original": "boolean",
+        "resolved": "boolean",
+        "references": {}
+      },
       "mutable": false,
       "attr": "backdrop-dismiss",
       "reflectToAttr": false,
@@ -48,6 +58,17 @@
     {
       "name": "buttons",
       "type": "PickerButton[]",
+      "complexType": {
+        "original": "PickerButton[]",
+        "resolved": "PickerButton[]",
+        "references": {
+          "PickerButton": {
+            "location": "import",
+            "path": "./picker-interface",
+            "id": "src/components/picker/picker-interface.ts::PickerButton"
+          }
+        }
+      },
       "mutable": false,
       "reflectToAttr": false,
       "docs": "Array of buttons to be displayed at the top of the picker.",
@@ -64,6 +85,17 @@
     {
       "name": "columns",
       "type": "PickerColumn[]",
+      "complexType": {
+        "original": "PickerColumn[]",
+        "resolved": "PickerColumn[]",
+        "references": {
+          "PickerColumn": {
+            "location": "import",
+            "path": "./picker-interface",
+            "id": "src/components/picker/picker-interface.ts::PickerColumn"
+          }
+        }
+      },
       "mutable": false,
       "reflectToAttr": false,
       "docs": "Array of columns to be displayed in the picker.",
@@ -80,6 +112,11 @@
     {
       "name": "cssClass",
       "type": "string | string[] | undefined",
+      "complexType": {
+        "original": "string | string[]",
+        "resolved": "string | string[] | undefined",
+        "references": {}
+      },
       "mutable": false,
       "attr": "css-class",
       "reflectToAttr": false,
@@ -102,6 +139,11 @@
     {
       "name": "duration",
       "type": "number",
+      "complexType": {
+        "original": "number",
+        "resolved": "number",
+        "references": {}
+      },
       "mutable": false,
       "attr": "duration",
       "reflectToAttr": false,
@@ -119,6 +161,17 @@
     {
       "name": "enterAnimation",
       "type": "((baseEl: any, opts?: any) => Animation) | undefined",
+      "complexType": {
+        "original": "AnimationBuilder",
+        "resolved": "((baseEl: any, opts?: any) => Animation) | undefined",
+        "references": {
+          "AnimationBuilder": {
+            "location": "import",
+            "path": "../../interface",
+            "id": "src/interface.d.ts::AnimationBuilder"
+          }
+        }
+      },
       "mutable": false,
       "reflectToAttr": false,
       "docs": "Animation to use when the picker is presented.",
@@ -137,6 +190,11 @@
     {
       "name": "htmlAttributes",
       "type": "undefined | { [key: string]: any; }",
+      "complexType": {
+        "original": "{ [key: string]: any }",
+        "resolved": "undefined | { [key: string]: any; }",
+        "references": {}
+      },
       "mutable": false,
       "reflectToAttr": false,
       "docs": "Additional attributes to pass to the picker.",
@@ -155,6 +213,11 @@
     {
       "name": "isOpen",
       "type": "boolean",
+      "complexType": {
+        "original": "boolean",
+        "resolved": "boolean",
+        "references": {}
+      },
       "mutable": false,
       "attr": "is-open",
       "reflectToAttr": false,
@@ -172,6 +235,11 @@
     {
       "name": "keyboardClose",
       "type": "boolean",
+      "complexType": {
+        "original": "boolean",
+        "resolved": "boolean",
+        "references": {}
+      },
       "mutable": false,
       "attr": "keyboard-close",
       "reflectToAttr": false,
@@ -189,6 +257,17 @@
     {
       "name": "leaveAnimation",
       "type": "((baseEl: any, opts?: any) => Animation) | undefined",
+      "complexType": {
+        "original": "AnimationBuilder",
+        "resolved": "((baseEl: any, opts?: any) => Animation) | undefined",
+        "references": {
+          "AnimationBuilder": {
+            "location": "import",
+            "path": "../../interface",
+            "id": "src/interface.d.ts::AnimationBuilder"
+          }
+        }
+      },
       "mutable": false,
       "reflectToAttr": false,
       "docs": "Animation to use when the picker is dismissed.",
@@ -228,6 +307,11 @@
     {
       "name": "showBackdrop",
       "type": "boolean",
+      "complexType": {
+        "original": "boolean",
+        "resolved": "boolean",
+        "references": {}
+      },
       "mutable": false,
       "attr": "show-backdrop",
       "reflectToAttr": false,
@@ -245,6 +329,11 @@
     {
       "name": "trigger",
       "type": "string | undefined",
+      "complexType": {
+        "original": "string | undefined",
+        "resolved": "string | undefined",
+        "references": {}
+      },
       "mutable": false,
       "attr": "trigger",
       "reflectToAttr": false,
@@ -269,6 +358,36 @@
         "type": "Promise<boolean>",
         "docs": ""
       },
+      "complexType": {
+        "signature": "(data?: any, role?: string) => Promise<boolean>",
+        "parameters": [
+          {
+            "tags": [
+              {
+                "name": "param",
+                "text": "data Any data to emit in the dismiss events."
+              }
+            ],
+            "text": "Any data to emit in the dismiss events."
+          },
+          {
+            "tags": [
+              {
+                "name": "param",
+                "text": "role The role of the element that is dismissing the picker.\nThis can be useful in a button handler for determining which button was\nclicked to dismiss the picker.\nSome examples include: ``\"cancel\"`, `\"destructive\"`, \"selected\"`, and `\"backdrop\"`."
+              }
+            ],
+            "text": "The role of the element that is dismissing the picker.\nThis can be useful in a button handler for determining which button was\nclicked to dismiss the picker.\nSome examples include: ``\"cancel\"`, `\"destructive\"`, \"selected\"`, and `\"backdrop\"`."
+          }
+        ],
+        "references": {
+          "Promise": {
+            "location": "global",
+            "id": "global::Promise"
+          }
+        },
+        "return": "Promise<boolean>"
+      },
       "signature": "dismiss(data?: any, role?: string) => Promise<boolean>",
       "parameters": [],
       "docs": "Dismiss the picker overlay after it has been presented.",
@@ -289,6 +408,32 @@
         "type": "Promise<PickerColumn | undefined>",
         "docs": ""
       },
+      "complexType": {
+        "signature": "(name: string) => Promise<PickerColumn | undefined>",
+        "parameters": [
+          {
+            "tags": [
+              {
+                "name": "param",
+                "text": "name The name of the column."
+              }
+            ],
+            "text": "The name of the column."
+          }
+        ],
+        "references": {
+          "Promise": {
+            "location": "global",
+            "id": "global::Promise"
+          },
+          "PickerColumn": {
+            "location": "import",
+            "path": "./picker-interface",
+            "id": "src/components/picker/picker-interface.ts::PickerColumn"
+          }
+        },
+        "return": "Promise<PickerColumn | undefined>"
+      },
       "signature": "getColumn(name: string) => Promise<PickerColumn | undefined>",
       "parameters": [],
       "docs": "Get the column that matches the specified name.",
@@ -305,6 +450,26 @@
         "type": "Promise<OverlayEventDetail<T>>",
         "docs": ""
       },
+      "complexType": {
+        "signature": "<T = any>() => Promise<OverlayEventDetail<T>>",
+        "parameters": [],
+        "references": {
+          "Promise": {
+            "location": "global",
+            "id": "global::Promise"
+          },
+          "OverlayEventDetail": {
+            "location": "import",
+            "path": "../../utils/overlays-interface",
+            "id": "src/utils/overlays-interface.ts::OverlayEventDetail"
+          },
+          "T": {
+            "location": "global",
+            "id": "global::T"
+          }
+        },
+        "return": "Promise<OverlayEventDetail<T>>"
+      },
       "signature": "onDidDismiss<T = any>() => Promise<OverlayEventDetail<T>>",
       "parameters": [],
       "docs": "Returns a promise that resolves when the picker did dismiss.",
@@ -315,6 +480,26 @@
       "returns": {
         "type": "Promise<OverlayEventDetail<T>>",
         "docs": ""
+      },
+      "complexType": {
+        "signature": "<T = any>() => Promise<OverlayEventDetail<T>>",
+        "parameters": [],
+        "references": {
+          "Promise": {
+            "location": "global",
+            "id": "global::Promise"
+          },
+          "OverlayEventDetail": {
+            "location": "import",
+            "path": "../../utils/overlays-interface",
+            "id": "src/utils/overlays-interface.ts::OverlayEventDetail"
+          },
+          "T": {
+            "location": "global",
+            "id": "global::T"
+          }
+        },
+        "return": "Promise<OverlayEventDetail<T>>"
       },
       "signature": "onWillDismiss<T = any>() => Promise<OverlayEventDetail<T>>",
       "parameters": [],
@@ -327,6 +512,17 @@
         "type": "Promise<void>",
         "docs": ""
       },
+      "complexType": {
+        "signature": "() => Promise<void>",
+        "parameters": [],
+        "references": {
+          "Promise": {
+            "location": "global",
+            "id": "global::Promise"
+          }
+        },
+        "return": "Promise<void>"
+      },
       "signature": "present() => Promise<void>",
       "parameters": [],
       "docs": "Present the picker overlay after it has been created.",
@@ -338,6 +534,17 @@
       "event": "didDismiss",
       "detail": "OverlayEventDetail<any>",
       "bubbles": true,
+      "complexType": {
+        "original": "OverlayEventDetail",
+        "resolved": "OverlayEventDetail<any>",
+        "references": {
+          "OverlayEventDetail": {
+            "location": "import",
+            "path": "../../utils/overlays-interface",
+            "id": "src/utils/overlays-interface.ts::OverlayEventDetail"
+          }
+        }
+      },
       "cancelable": true,
       "composed": true,
       "docs": "Emitted after the picker has dismissed.\nShorthand for ionPickerDidDismiss.",
@@ -347,6 +554,11 @@
       "event": "didPresent",
       "detail": "void",
       "bubbles": true,
+      "complexType": {
+        "original": "void",
+        "resolved": "void",
+        "references": {}
+      },
       "cancelable": true,
       "composed": true,
       "docs": "Emitted after the picker has presented.\nShorthand for ionPickerWillDismiss.",
@@ -356,6 +568,17 @@
       "event": "ionPickerDidDismiss",
       "detail": "OverlayEventDetail<any>",
       "bubbles": true,
+      "complexType": {
+        "original": "OverlayEventDetail",
+        "resolved": "OverlayEventDetail<any>",
+        "references": {
+          "OverlayEventDetail": {
+            "location": "import",
+            "path": "../../utils/overlays-interface",
+            "id": "src/utils/overlays-interface.ts::OverlayEventDetail"
+          }
+        }
+      },
       "cancelable": true,
       "composed": true,
       "docs": "Emitted after the picker has dismissed.",
@@ -365,6 +588,11 @@
       "event": "ionPickerDidPresent",
       "detail": "void",
       "bubbles": true,
+      "complexType": {
+        "original": "void",
+        "resolved": "void",
+        "references": {}
+      },
       "cancelable": true,
       "composed": true,
       "docs": "Emitted after the picker has presented.",
@@ -374,6 +602,17 @@
       "event": "ionPickerWillDismiss",
       "detail": "OverlayEventDetail<any>",
       "bubbles": true,
+      "complexType": {
+        "original": "OverlayEventDetail",
+        "resolved": "OverlayEventDetail<any>",
+        "references": {
+          "OverlayEventDetail": {
+            "location": "import",
+            "path": "../../utils/overlays-interface",
+            "id": "src/utils/overlays-interface.ts::OverlayEventDetail"
+          }
+        }
+      },
       "cancelable": true,
       "composed": true,
       "docs": "Emitted before the picker has dismissed.",
@@ -383,6 +622,11 @@
       "event": "ionPickerWillPresent",
       "detail": "void",
       "bubbles": true,
+      "complexType": {
+        "original": "void",
+        "resolved": "void",
+        "references": {}
+      },
       "cancelable": true,
       "composed": true,
       "docs": "Emitted before the picker has presented.",
@@ -392,6 +636,17 @@
       "event": "willDismiss",
       "detail": "OverlayEventDetail<any>",
       "bubbles": true,
+      "complexType": {
+        "original": "OverlayEventDetail",
+        "resolved": "OverlayEventDetail<any>",
+        "references": {
+          "OverlayEventDetail": {
+            "location": "import",
+            "path": "../../utils/overlays-interface",
+            "id": "src/utils/overlays-interface.ts::OverlayEventDetail"
+          }
+        }
+      },
       "cancelable": true,
       "composed": true,
       "docs": "Emitted before the picker has dismissed.\nShorthand for ionPickerWillDismiss.",
@@ -401,6 +656,11 @@
       "event": "willPresent",
       "detail": "void",
       "bubbles": true,
+      "complexType": {
+        "original": "void",
+        "resolved": "void",
+        "references": {}
+      },
       "cancelable": true,
       "composed": true,
       "docs": "Emitted before the picker has presented.\nShorthand for ionPickerWillPresent.",

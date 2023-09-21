@@ -28,22 +28,12 @@
   </ion-content>
 </template>
 
-<script lang="ts">
+<script lang="ts" setup>
   import { IonButtons, IonButton, IonModal, IonHeader, IonToolbar, IonContent, IonTitle } from '@ionic/vue';
-  import { defineComponent, ref } from 'vue';
+  import { ref } from 'vue';
 
-  export default defineComponent({
-    components: { IonButtons, IonButton, IonModal, IonHeader, IonContent, IonToolbar, IonTitle },
-    data() {
-      return {
-        isOpen: false,
-      };
-    },
-    methods: {
-      setOpen(isOpen: boolean) {
-        this.isOpen = isOpen;
-      },
-    },
-  });
+  const isOpen = ref(false);
+
+  const setOpen = (open: boolean) => (isOpen.value = open);
 </script>
 ```

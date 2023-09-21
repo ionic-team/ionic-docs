@@ -3,8 +3,8 @@ import React, { useEffect, useMemo, useRef, useState } from 'react';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import './playground.css';
 import { EditorOptions, openAngularEditor, openHtmlEditor, openReactEditor, openVueEditor } from './stackblitz.utils';
-import { Mode, UsageTarget } from './playground.types';
 import { useColorMode } from '@docusaurus/theme-common';
+import { ConsoleItem, Mode, UsageTarget } from './playground.types';
 
 import Tippy from '@tippyjs/react';
 import 'tippy.js/dist/tippy.css';
@@ -109,6 +109,7 @@ interface UsageTargetOptions {
  * @param src The absolute path to the playground demo. For example: `/usage/button/basic/demo.html`
  * @param size The height of the playground. Supports `xsmall`, `small`, `medium`, `large`, 'xlarge' or any string value.
  * @param devicePreview `true` if the playground example should render in a device frame (iOS/MD).
+ * @param showConsole `true` if the playground should render a console UI that reflects console logs, warnings, and errors.
  */
 export default function Playground({
   code,
@@ -118,6 +119,7 @@ export default function Playground({
   size = 'small',
   mode,
   devicePreview,
+  showConsole,
   includeIonContent = true,
   version,
 }: {
@@ -133,6 +135,7 @@ export default function Playground({
   mode?: 'ios' | 'md';
   description?: string;
   devicePreview?: boolean;
+  showConsole?: boolean;
   includeIonContent: boolean;
   /**
    * The major version of Ionic to use in the generated Stackblitz examples.
@@ -159,6 +162,7 @@ export default function Playground({
   const codeRef = useRef(null);
   const frameiOS = useRef<HTMLIFrameElement | null>(null);
   const frameMD = useRef<HTMLIFrameElement | null>(null);
+  const consoleBodyRef = useRef<HTMLDivElement | null>(null);
 
   const defaultMode = typeof mode !== 'undefined' ? mode : Mode.iOS;
 
@@ -183,6 +187,15 @@ export default function Playground({
   const [renderIframes, setRenderIframes] = useState(false);
   const [iframesLoaded, setIframesLoaded] = useState(false);
   const [isDarkTheme, setIsDarkTheme] = useState(colorMode === 'dark');
+  const [mdConsoleItems, setMDConsoleItems] = useState<ConsoleItem[]>([]);
+  const [iosConsoleItems, setiOSConsoleItems] = useState<ConsoleItem[]>([]);
+
+  /**
+   * We don't actually care about the count, but this lets us
+   * re-trigger useEffect hooks when the demo is reset and the
+   * iframes are refreshed.
+   */
+  const [resetCount, setResetCount] = useState(0);
 
   /**
    * Rather than encode isDarkTheme into the frame source
@@ -264,6 +277,24 @@ export default function Playground({
   }, [renderIframes]);
 
   useEffect(() => {
+    if (showConsole) {
+      if (frameiOS.current) {
+        frameiOS.current.contentWindow.addEventListener('console', (ev: CustomEvent) => {
+          setiOSConsoleItems((oldConsoleItems) => [...oldConsoleItems, ev.detail]);
+          consoleBodyRef.current.scrollTo(0, consoleBodyRef.current.scrollHeight);
+        });
+      }
+
+      if (frameMD.current) {
+        frameMD.current.contentWindow.addEventListener('console', (ev: CustomEvent) => {
+          setMDConsoleItems((oldConsoleItems) => [...oldConsoleItems, ev.detail]);
+          consoleBodyRef.current.scrollTo(0, consoleBodyRef.current.scrollHeight);
+        });
+      }
+    }
+  }, [iframesLoaded, resetCount]); // including resetCount re-runs this when iframes are reloaded
+
+  useEffect(() => {
     /**
      * Using a dynamic import here to avoid SSR errors when trying to extend `HTMLElement`
      * to create the custom element.
@@ -316,13 +347,19 @@ export default function Playground({
   /**
    * Reloads the iOS and MD iframe sources back to their original state.
    */
-  function resetDemo() {
+  async function resetDemo() {
     if (frameiOS.current) {
       frameiOS.current.contentWindow.location.reload();
     }
     if (frameMD.current) {
       frameMD.current.contentWindow.location.reload();
     }
+
+    setiOSConsoleItems([]);
+    setMDConsoleItems([]);
+
+    await Promise.all([waitForNextFrameLoadEvent(frameiOS.current), waitForNextFrameLoadEvent(frameMD.current)]);
+    setResetCount((oldCount) => oldCount + 1);
   }
 
   function openEditor(event) {
@@ -449,11 +486,39 @@ export default function Playground({
     );
   }
 
+  function renderConsole() {
+    const consoleItems = ionicMode === Mode.iOS ? iosConsoleItems : mdConsoleItems;
+
+    return (
+      <div className="playground__console">
+        <div className="playground__console-header">
+          <code>Console</code>
+        </div>
+        <div className="playground__console-body" ref={consoleBodyRef}>
+          {consoleItems.length === 0 ? (
+            <div className="playground__console-item playground__console-item--placeholder">
+              <code>Console messages will appear here when logged from the example above.</code>
+            </div>
+          ) : (
+            consoleItems.map((consoleItem, i) => (
+              <div key={i} className={`playground__console-item playground__console-item--${consoleItem.type}`}>
+                {consoleItem.type !== 'log' && (
+                  <div className="playground__console-icon">{consoleItem.type === 'warning' ? '⚠' : '❌'}</div>
+                )}
+                <code>{consoleItem.message}</code>
+              </div>
+            ))
+          )}
+        </div>
+      </div>
+    );
+  }
+
   const sortedUsageTargets = useMemo(() => Object.keys(UsageTarget).sort(), []);
 
   return (
     <div className="playground" ref={hostRef}>
-      <div className="playground__container">
+      <div className={`playground__container ${showConsole ? 'playground__container--has-console' : ''}`}>
         <div className="playground__control-toolbar">
           <div className="playground__control-group">
             {sortedUsageTargets.map((lang) => {
@@ -638,6 +703,7 @@ export default function Playground({
             ]
           : []}
       </div>
+      {showConsole && renderConsole()}
       <div ref={codeRef} className="playground__code-block">
         {renderCodeSnippets()}
       </div>
@@ -661,6 +727,26 @@ const waitForFrame = (frame: HTMLIFrameElement) => {
       frame.contentWindow.addEventListener('demoReady', () => {
         resolve();
       });
+    }
+  });
+};
+
+/**
+ * Returns a promise that resolves on the *next* load event of the
+ * given iframe. We intentionally don't check if it's already loaded
+ * because this is used when the demo is reset and the iframe is
+ * refreshed, so we don't want to return too early and catch the
+ * pre-reset version of the window.
+ */
+const waitForNextFrameLoadEvent = (frame: HTMLIFrameElement) => {
+  return new Promise<void>((resolve) => {
+    const handleLoad = () => {
+      frame.removeEventListener('load', handleLoad);
+      resolve();
+    };
+
+    if (frame) {
+      frame.addEventListener('load', handleLoad);
     }
   });
 };

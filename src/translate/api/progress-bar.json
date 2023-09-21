@@ -1,5 +1,5 @@
 {
-  "filePath": "./src/components/progress-bar/progress-bar.tsx",
+  "filePath": "src/components/progress-bar/progress-bar.tsx",
   "encapsulation": "shadow",
   "tag": "ion-progress-bar",
   "docs": "",
@@ -26,6 +26,11 @@
     {
       "name": "buffer",
       "type": "number",
+      "complexType": {
+        "original": "number",
+        "resolved": "number",
+        "references": {}
+      },
       "mutable": false,
       "attr": "buffer",
       "reflectToAttr": false,
@@ -43,6 +48,17 @@
     {
       "name": "color",
       "type": "\"danger\" | \"dark\" | \"light\" | \"medium\" | \"primary\" | \"secondary\" | \"success\" | \"tertiary\" | \"warning\" | string & Record<never, never> | undefined",
+      "complexType": {
+        "original": "Color",
+        "resolved": "\"danger\" | \"dark\" | \"light\" | \"medium\" | \"primary\" | \"secondary\" | \"success\" | \"tertiary\" | \"warning\" | string & Record<never, never> | undefined",
+        "references": {
+          "Color": {
+            "location": "import",
+            "path": "../../interface",
+            "id": "src/interface.d.ts::Color"
+          }
+        }
+      },
       "mutable": false,
       "attr": "color",
       "reflectToAttr": true,
@@ -119,6 +135,11 @@
     {
       "name": "reversed",
       "type": "boolean",
+      "complexType": {
+        "original": "boolean",
+        "resolved": "boolean",
+        "references": {}
+      },
       "mutable": false,
       "attr": "reversed",
       "reflectToAttr": false,
@@ -136,6 +157,11 @@
     {
       "name": "type",
       "type": "\"determinate\" | \"indeterminate\"",
+      "complexType": {
+        "original": "'determinate' | 'indeterminate'",
+        "resolved": "\"determinate\" | \"indeterminate\"",
+        "references": {}
+      },
       "mutable": false,
       "attr": "type",
       "reflectToAttr": false,
@@ -158,6 +184,11 @@
     {
       "name": "value",
       "type": "number",
+      "complexType": {
+        "original": "number",
+        "resolved": "number",
+        "references": {}
+      },
       "mutable": false,
       "attr": "value",
       "reflectToAttr": false,

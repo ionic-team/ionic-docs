@@ -9,7 +9,7 @@ import CustomProps from '@ionic-internal/component-api/v7/menu-button/custom-pro
 import Slots from '@ionic-internal/component-api/v7/menu-button/slots.md';
 
 <head>
-  <title>Menu Button | ion-menu-button to Open an App Menu on A Page</title>
+  <title>ion-menu-button: Menu Button to Open an App Menu on a Page</title>
   <meta name="description" content="Menu Buttonは、アプリのページでメニューを開くためのアイコンと機能を自動的に作成するコンポーネントです。ion-menu-buttonの詳細については、こちらをご覧ください。" />
 </head>
 

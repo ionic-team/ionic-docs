@@ -9,7 +9,7 @@ import CustomProps from '@ionic-internal/component-api/v7/accordion/custom-props
 import Slots from '@ionic-internal/component-api/v7/accordion/slots.md';
 
 <head>
-  <title>Ion-Accordion Components: How to Build & Examples | Ionic</title>
+  <title>ion-accordion: Accordion Components: How to Build & Examples</title>
   <meta name="description" content="Ion-accordionコンポーネントは、コンテンツに折りたたみ可能なセクションを設け、縦方向のスペースを減らし、情報を整理することができます。組み立て方とサンプルをご覧ください。" />
 </head>
 
@@ -114,12 +114,12 @@ import ExpansionStyles from '@site/static/usage/v7/accordion/customization/expan
 
 アコーディオンの状態に応じてスタイルを設定することで、展開の動作をカスタマイズすることができます。 `ion-accordion` には4つのステートクラスが適用されています。これらのクラスを使ってスタイリングすることで、高度な状態遷移を作成することができます。
 
-| Class Name | Description |
-| ---------- | ----------- |
-| `.accordion-expanding` | Applied when the accordion is actively expanding |
-| `.accordion-expanded` | Applied when the accordion is fully expanded |
-| `.accordion-collapsing` | Applied when the accordion is actively collapsing |
-| `.accordion-collapsed` | Applied when the accordion is fully collapsed |
+| Class Name | Description                       |
+| ---------- |-----------------------------------|
+| `.accordion-expanding` | アコーディオンがアクティブに展開しているときに適用されます。    |
+| `.accordion-expanded` | アコーディオンが完全に展開されたときに適用されます。        |
+| `.accordion-collapsing` | アコーディオンがアクティブに折りたたまれているときに適用されます。 |
+| `.accordion-collapsed` | アコーディオンが完全に折りたたまれているときに適用されます。    |
 
 アコーディオンの特定の部分をターゲットにする必要がある場合、要素を直接ターゲットにすることをお勧めします。例えば、アコーディオンが展開されたときに `header` slot の ion-item をカスタマイズしたい場合、以下のセレクタを使用することができます。
 

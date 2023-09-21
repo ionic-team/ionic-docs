@@ -30,7 +30,7 @@
   </ion-content>
 </template>
 
-<script lang="ts">
+<script lang="ts" setup>
   import {
     IonButtons,
     IonButton,
@@ -44,40 +44,24 @@
     IonLabel,
   } from '@ionic/vue';
   import { OverlayEventDetail } from '@ionic/core/components';
-  import { defineComponent, ref } from 'vue';
+  import { ref } from 'vue';
 
-  export default defineComponent({
-    components: {
-      IonButtons,
-      IonButton,
-      IonModal,
-      IonHeader,
-      IonContent,
-      IonToolbar,
-      IonTitle,
-      IonItem,
-      IonInput,
-      IonLabel,
-    },
-    data() {
-      return {
-        message: 'This modal example uses triggers to automatically open a modal when the button is clicked.',
-      };
-    },
-    methods: {
-      cancel() {
-        this.$refs.modal.$el.dismiss(null, 'cancel');
-      },
-      confirm() {
-        const name = this.$refs.input.$el.value;
-        this.$refs.modal.$el.dismiss(name, 'confirm');
-      },
-      onWillDismiss(ev: CustomEvent<OverlayEventDetail>) {
-        if (ev.detail.role === 'confirm') {
-          this.message = `Hello, ${ev.detail.data}!`;
-        }
-      },
-    },
-  });
+  const message = ref('This modal example uses triggers to automatically open a modal when the button is clicked.');
+
+  const modal = ref();
+  const input = ref();
+
+  const cancel = () => modal.value.$el.dismiss(null, 'cancel');
+
+  const confirm = () => {
+    const name = input.value.$el.value;
+    modal.value.$el.dismiss(name, 'confirm');
+  };
+
+  const onWillDismiss = (ev: CustomEvent<OverlayEventDetail>) => {
+    if (ev.detail.role === 'confirm') {
+      message.value = `Hello, ${ev.detail.data}!`;
+    }
+  };
 </script>
 ```

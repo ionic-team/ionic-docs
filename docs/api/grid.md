@@ -9,7 +9,7 @@ import CustomProps from '@ionic-internal/component-api/v7/grid/custom-props.md';
 import Slots from '@ionic-internal/component-api/v7/grid/slots.md';
 
 <head>
-  <title>Ion-Grid: Display Grids to Build Mobile-First Custom App Layout</title>
+  <title>ion-grid: Display Grids for Mobile-First Custom App Layout</title>
   <meta name="description" content="Ion-Gridは、12カラムのレイアウトと画面サイズに応じて異なるブレークポイントを持つカスタムアプリケーションの表示レイアウトを構築するためのモバイルファーストのフレックスボックスシステムです。" />
 </head>
 

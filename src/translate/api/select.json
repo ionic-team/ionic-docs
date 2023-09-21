@@ -1,5 +1,5 @@
 {
-  "filePath": "./src/components/select/select.tsx",
+  "filePath": "src/components/select/select.tsx",
   "encapsulation": "shadow",
   "tag": "ion-select",
   "docs": "",
@@ -38,6 +38,11 @@
     {
       "name": "cancelText",
       "type": "string",
+      "complexType": {
+        "original": "string",
+        "resolved": "string",
+        "references": {}
+      },
       "mutable": false,
       "attr": "cancel-text",
       "reflectToAttr": false,
@@ -55,6 +60,17 @@
     {
       "name": "color",
       "type": "\"danger\" | \"dark\" | \"light\" | \"medium\" | \"primary\" | \"secondary\" | \"success\" | \"tertiary\" | \"warning\" | string & Record<never, never> | undefined",
+      "complexType": {
+        "original": "Color",
+        "resolved": "\"danger\" | \"dark\" | \"light\" | \"medium\" | \"primary\" | \"secondary\" | \"success\" | \"tertiary\" | \"warning\" | string & Record<never, never> | undefined",
+        "references": {
+          "Color": {
+            "location": "import",
+            "path": "../../interface",
+            "id": "src/interface.d.ts::Color"
+          }
+        }
+      },
       "mutable": false,
       "attr": "color",
       "reflectToAttr": true,
@@ -110,6 +126,17 @@
     {
       "name": "compareWith",
       "type": "((currentValue: any, compareValue: any) => boolean) | null | string | undefined",
+      "complexType": {
+        "original": "string | SelectCompareFn | null",
+        "resolved": "((currentValue: any, compareValue: any) => boolean) | null | string | undefined",
+        "references": {
+          "SelectCompareFn": {
+            "location": "import",
+            "path": "./select-interface",
+            "id": "src/components/select/select-interface.ts::SelectCompareFn"
+          }
+        }
+      },
       "mutable": false,
       "attr": "compare-with",
       "reflectToAttr": false,
@@ -135,6 +162,11 @@
     {
       "name": "disabled",
       "type": "boolean",
+      "complexType": {
+        "original": "boolean",
+        "resolved": "boolean",
+        "references": {}
+      },
       "mutable": false,
       "attr": "disabled",
       "reflectToAttr": false,
@@ -152,6 +184,11 @@
     {
       "name": "expandedIcon",
       "type": "string | undefined",
+      "complexType": {
+        "original": "string",
+        "resolved": "string | undefined",
+        "references": {}
+      },
       "mutable": false,
       "attr": "expanded-icon",
       "reflectToAttr": false,
@@ -171,6 +208,11 @@
     {
       "name": "fill",
       "type": "\"outline\" | \"solid\" | undefined",
+      "complexType": {
+        "original": "'outline' | 'solid'",
+        "resolved": "\"outline\" | \"solid\" | undefined",
+        "references": {}
+      },
       "mutable": false,
       "attr": "fill",
       "reflectToAttr": false,
@@ -195,6 +237,17 @@
     {
       "name": "interface",
       "type": "\"action-sheet\" | \"alert\" | \"popover\"",
+      "complexType": {
+        "original": "SelectInterface",
+        "resolved": "\"action-sheet\" | \"alert\" | \"popover\"",
+        "references": {
+          "SelectInterface": {
+            "location": "import",
+            "path": "./select-interface",
+            "id": "src/components/select/select-interface.ts::SelectInterface"
+          }
+        }
+      },
       "mutable": false,
       "attr": "interface",
       "reflectToAttr": false,
@@ -221,6 +274,11 @@
     {
       "name": "interfaceOptions",
       "type": "any",
+      "complexType": {
+        "original": "any",
+        "resolved": "any",
+        "references": {}
+      },
       "mutable": false,
       "attr": "interface-options",
       "reflectToAttr": false,
@@ -238,6 +296,11 @@
     {
       "name": "justify",
       "type": "\"end\" | \"space-between\" | \"start\"",
+      "complexType": {
+        "original": "'start' | 'end' | 'space-between'",
+        "resolved": "\"end\" | \"space-between\" | \"start\"",
+        "references": {}
+      },
       "mutable": false,
       "attr": "justify",
       "reflectToAttr": false,
@@ -264,6 +327,11 @@
     {
       "name": "label",
       "type": "string | undefined",
+      "complexType": {
+        "original": "string",
+        "resolved": "string | undefined",
+        "references": {}
+      },
       "mutable": false,
       "attr": "label",
       "reflectToAttr": false,
@@ -283,6 +351,11 @@
     {
       "name": "labelPlacement",
       "type": "\"end\" | \"fixed\" | \"floating\" | \"stacked\" | \"start\" | undefined",
+      "complexType": {
+        "original": "'start' | 'end' | 'floating' | 'stacked' | 'fixed'",
+        "resolved": "\"end\" | \"fixed\" | \"floating\" | \"stacked\" | \"start\" | undefined",
+        "references": {}
+      },
       "mutable": false,
       "attr": "label-placement",
       "reflectToAttr": false,
@@ -320,6 +393,11 @@
     {
       "name": "legacy",
       "type": "boolean | undefined",
+      "complexType": {
+        "original": "boolean",
+        "resolved": "boolean | undefined",
+        "references": {}
+      },
       "mutable": false,
       "attr": "legacy",
       "reflectToAttr": false,
@@ -360,6 +438,11 @@
     {
       "name": "multiple",
       "type": "boolean",
+      "complexType": {
+        "original": "boolean",
+        "resolved": "boolean",
+        "references": {}
+      },
       "mutable": false,
       "attr": "multiple",
       "reflectToAttr": false,
@@ -377,6 +460,11 @@
     {
       "name": "name",
       "type": "string",
+      "complexType": {
+        "original": "string",
+        "resolved": "string",
+        "references": {}
+      },
       "mutable": false,
       "attr": "name",
       "reflectToAttr": false,
@@ -394,6 +482,11 @@
     {
       "name": "okText",
       "type": "string",
+      "complexType": {
+        "original": "string",
+        "resolved": "string",
+        "references": {}
+      },
       "mutable": false,
       "attr": "ok-text",
       "reflectToAttr": false,
@@ -411,6 +504,11 @@
     {
       "name": "placeholder",
       "type": "string | undefined",
+      "complexType": {
+        "original": "string",
+        "resolved": "string | undefined",
+        "references": {}
+      },
       "mutable": false,
       "attr": "placeholder",
       "reflectToAttr": false,
@@ -430,6 +528,11 @@
     {
       "name": "selectedText",
       "type": "null | string | undefined",
+      "complexType": {
+        "original": "string | null",
+        "resolved": "null | string | undefined",
+        "references": {}
+      },
       "mutable": false,
       "attr": "selected-text",
       "reflectToAttr": false,
@@ -452,6 +555,11 @@
     {
       "name": "shape",
       "type": "\"round\" | undefined",
+      "complexType": {
+        "original": "'round'",
+        "resolved": "\"round\" | undefined",
+        "references": {}
+      },
       "mutable": false,
       "attr": "shape",
       "reflectToAttr": false,
@@ -472,6 +580,11 @@
     {
       "name": "toggleIcon",
       "type": "string | undefined",
+      "complexType": {
+        "original": "string",
+        "resolved": "string | undefined",
+        "references": {}
+      },
       "mutable": false,
       "attr": "toggle-icon",
       "reflectToAttr": false,
@@ -491,6 +604,11 @@
     {
       "name": "value",
       "type": "any",
+      "complexType": {
+        "original": "any | null",
+        "resolved": "any",
+        "references": {}
+      },
       "mutable": true,
       "attr": "value",
       "reflectToAttr": false,
@@ -512,6 +630,35 @@
         "type": "Promise<any>",
         "docs": ""
       },
+      "complexType": {
+        "signature": "(event?: UIEvent) => Promise<any>",
+        "parameters": [
+          {
+            "tags": [
+              {
+                "name": "param",
+                "text": "event The user interface event that called the open."
+              }
+            ],
+            "text": "The user interface event that called the open."
+          }
+        ],
+        "references": {
+          "Promise": {
+            "location": "global",
+            "id": "global::Promise"
+          },
+          "UIEvent": {
+            "location": "global",
+            "id": "global::UIEvent"
+          },
+          "HTMLElement": {
+            "location": "global",
+            "id": "global::HTMLElement"
+          }
+        },
+        "return": "Promise<any>"
+      },
       "signature": "open(event?: UIEvent) => Promise<any>",
       "parameters": [],
       "docs": "Open the select overlay. The overlay is either an alert, action sheet, or popover,\ndepending on the `interface` property on the `ion-select`.",
@@ -528,6 +675,11 @@
       "event": "ionBlur",
       "detail": "void",
       "bubbles": true,
+      "complexType": {
+        "original": "void",
+        "resolved": "void",
+        "references": {}
+      },
       "cancelable": true,
       "composed": true,
       "docs": "Emitted when the select loses focus.",
@@ -537,6 +689,11 @@
       "event": "ionCancel",
       "detail": "void",
       "bubbles": true,
+      "complexType": {
+        "original": "void",
+        "resolved": "void",
+        "references": {}
+      },
       "cancelable": true,
       "composed": true,
       "docs": "Emitted when the selection is cancelled.",
@@ -546,6 +703,17 @@
       "event": "ionChange",
       "detail": "SelectChangeEventDetail<any>",
       "bubbles": true,
+      "complexType": {
+        "original": "SelectChangeEventDetail",
+        "resolved": "SelectChangeEventDetail<any>",
+        "references": {
+          "SelectChangeEventDetail": {
+            "location": "import",
+            "path": "./select-interface",
+            "id": "src/components/select/select-interface.ts::SelectChangeEventDetail"
+          }
+        }
+      },
       "cancelable": true,
       "composed": true,
       "docs": "Emitted when the value has changed.",
@@ -555,6 +723,11 @@
       "event": "ionDismiss",
       "detail": "void",
       "bubbles": true,
+      "complexType": {
+        "original": "void",
+        "resolved": "void",
+        "references": {}
+      },
       "cancelable": true,
       "composed": true,
       "docs": "Emitted when the overlay is dismissed.",
@@ -564,6 +737,11 @@
       "event": "ionFocus",
       "detail": "void",
       "bubbles": true,
+      "complexType": {
+        "original": "void",
+        "resolved": "void",
+        "references": {}
+      },
       "cancelable": true,
       "composed": true,
       "docs": "Emitted when the select has focus.",
@@ -695,11 +873,11 @@
     "ion-select-popover": [
       "ion-item",
       "ion-checkbox",
-      "ion-label",
       "ion-radio-group",
       "ion-radio",
       "ion-list",
-      "ion-list-header"
+      "ion-list-header",
+      "ion-label"
     ],
     "ion-item": [
       "ion-icon",

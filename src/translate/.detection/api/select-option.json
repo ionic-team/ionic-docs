@@ -1,5 +1,5 @@
 {
-  "filePath": "./src/components/select-option/select-option.tsx",
+  "filePath": "src/components/select-option/select-option.tsx",
   "encapsulation": "shadow",
   "tag": "ion-select-option",
   "docs": "",
@@ -9,6 +9,11 @@
     {
       "name": "disabled",
       "type": "boolean",
+      "complexType": {
+        "original": "boolean",
+        "resolved": "boolean",
+        "references": {}
+      },
       "mutable": false,
       "attr": "disabled",
       "reflectToAttr": false,
@@ -26,6 +31,11 @@
     {
       "name": "value",
       "type": "any",
+      "complexType": {
+        "original": "any | null",
+        "resolved": "any",
+        "references": {}
+      },
       "mutable": false,
       "attr": "value",
       "reflectToAttr": false,

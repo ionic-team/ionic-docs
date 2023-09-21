@@ -1,5 +1,5 @@
 {
-  "filePath": "./src/components/item-options/item-options.tsx",
+  "filePath": "src/components/item-options/item-options.tsx",
   "encapsulation": "none",
   "tag": "ion-item-options",
   "docs": "",
@@ -9,6 +9,17 @@
     {
       "name": "side",
       "type": "\"end\" | \"start\"",
+      "complexType": {
+        "original": "Side",
+        "resolved": "\"end\" | \"start\"",
+        "references": {
+          "Side": {
+            "location": "import",
+            "path": "../menu/menu-interface",
+            "id": "src/components/menu/menu-interface.ts::Side"
+          }
+        }
+      },
       "mutable": false,
       "attr": "side",
       "reflectToAttr": false,
@@ -35,6 +46,11 @@
       "event": "ionSwipe",
       "detail": "any",
       "bubbles": true,
+      "complexType": {
+        "original": "any",
+        "resolved": "any",
+        "references": {}
+      },
       "cancelable": true,
       "composed": true,
       "docs": "Emitted when the item has been fully swiped.",

@@ -1,5 +1,5 @@
 {
-  "filePath": "./src/components/spinner/spinner.tsx",
+  "filePath": "src/components/spinner/spinner.tsx",
   "encapsulation": "shadow",
   "tag": "ion-spinner",
   "docs": "",
@@ -9,6 +9,17 @@
     {
       "name": "color",
       "type": "\"danger\" | \"dark\" | \"light\" | \"medium\" | \"primary\" | \"secondary\" | \"success\" | \"tertiary\" | \"warning\" | string & Record<never, never> | undefined",
+      "complexType": {
+        "original": "Color",
+        "resolved": "\"danger\" | \"dark\" | \"light\" | \"medium\" | \"primary\" | \"secondary\" | \"success\" | \"tertiary\" | \"warning\" | string & Record<never, never> | undefined",
+        "references": {
+          "Color": {
+            "location": "import",
+            "path": "../../interface",
+            "id": "src/interface.d.ts::Color"
+          }
+        }
+      },
       "mutable": false,
       "attr": "color",
       "reflectToAttr": true,
@@ -64,6 +75,11 @@
     {
       "name": "duration",
       "type": "number | undefined",
+      "complexType": {
+        "original": "number",
+        "resolved": "number | undefined",
+        "references": {}
+      },
       "mutable": false,
       "attr": "duration",
       "reflectToAttr": false,
@@ -83,6 +99,17 @@
     {
       "name": "name",
       "type": "\"bubbles\" | \"circles\" | \"circular\" | \"crescent\" | \"dots\" | \"lines\" | \"lines-sharp\" | \"lines-sharp-small\" | \"lines-small\" | undefined",
+      "complexType": {
+        "original": "SpinnerTypes",
+        "resolved": "\"bubbles\" | \"circles\" | \"circular\" | \"crescent\" | \"dots\" | \"lines\" | \"lines-sharp\" | \"lines-sharp-small\" | \"lines-small\" | undefined",
+        "references": {
+          "SpinnerTypes": {
+            "location": "import",
+            "path": "./spinner-configs",
+            "id": "src/components/spinner/spinner-configs.ts::SpinnerTypes"
+          }
+        }
+      },
       "mutable": false,
       "attr": "name",
       "reflectToAttr": false,
@@ -135,6 +162,11 @@
     {
       "name": "paused",
       "type": "boolean",
+      "complexType": {
+        "original": "boolean",
+        "resolved": "boolean",
+        "references": {}
+      },
       "mutable": false,
       "attr": "paused",
       "reflectToAttr": false,

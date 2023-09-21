@@ -1,5 +1,5 @@
 {
-  "filePath": "./src/components/item-sliding/item-sliding.tsx",
+  "filePath": "src/components/item-sliding/item-sliding.tsx",
   "encapsulation": "none",
   "tag": "ion-item-sliding",
   "docs": "",
@@ -9,6 +9,11 @@
     {
       "name": "disabled",
       "type": "boolean",
+      "complexType": {
+        "original": "boolean",
+        "resolved": "boolean",
+        "references": {}
+      },
       "mutable": false,
       "attr": "disabled",
       "reflectToAttr": false,
@@ -31,6 +36,17 @@
         "type": "Promise<void>",
         "docs": ""
       },
+      "complexType": {
+        "signature": "() => Promise<void>",
+        "parameters": [],
+        "references": {
+          "Promise": {
+            "location": "global",
+            "id": "global::Promise"
+          }
+        },
+        "return": "Promise<void>"
+      },
       "signature": "close() => Promise<void>",
       "parameters": [],
       "docs": "Close the sliding item. Items can also be closed from the [List](./list).",
@@ -41,6 +57,17 @@
       "returns": {
         "type": "Promise<boolean>",
         "docs": ""
+      },
+      "complexType": {
+        "signature": "() => Promise<boolean>",
+        "parameters": [],
+        "references": {
+          "Promise": {
+            "location": "global",
+            "id": "global::Promise"
+          }
+        },
+        "return": "Promise<boolean>"
       },
       "signature": "closeOpened() => Promise<boolean>",
       "parameters": [],
@@ -53,6 +80,17 @@
         "type": "Promise<number>",
         "docs": ""
       },
+      "complexType": {
+        "signature": "() => Promise<number>",
+        "parameters": [],
+        "references": {
+          "Promise": {
+            "location": "global",
+            "id": "global::Promise"
+          }
+        },
+        "return": "Promise<number>"
+      },
       "signature": "getOpenAmount() => Promise<number>",
       "parameters": [],
       "docs": "Get the amount the item is open in pixels.",
@@ -64,6 +102,17 @@
         "type": "Promise<number>",
         "docs": ""
       },
+      "complexType": {
+        "signature": "() => Promise<number>",
+        "parameters": [],
+        "references": {
+          "Promise": {
+            "location": "global",
+            "id": "global::Promise"
+          }
+        },
+        "return": "Promise<number>"
+      },
       "signature": "getSlidingRatio() => Promise<number>",
       "parameters": [],
       "docs": "Get the ratio of the open amount of the item compared to the width of the options.\nIf the number returned is positive, then the options on the right side are open.\nIf the number returned is negative, then the options on the left side are open.\nIf the absolute value of the number is greater than 1, the item is open more than\nthe width of the options.",
@@ -74,6 +123,32 @@
       "returns": {
         "type": "Promise<void>",
         "docs": ""
+      },
+      "complexType": {
+        "signature": "(side: Side | undefined) => Promise<void>",
+        "parameters": [
+          {
+            "tags": [
+              {
+                "name": "param",
+                "text": "side The side of the options to open. If a side is not provided, it will open the first set of options it finds within the item."
+              }
+            ],
+            "text": "The side of the options to open. If a side is not provided, it will open the first set of options it finds within the item."
+          }
+        ],
+        "references": {
+          "Promise": {
+            "location": "global",
+            "id": "global::Promise"
+          },
+          "Side": {
+            "location": "import",
+            "path": "../menu/menu-interface",
+            "id": "src/components/menu/menu-interface.ts::Side"
+          }
+        },
+        "return": "Promise<void>"
       },
       "signature": "open(side: Side | undefined) => Promise<void>",
       "parameters": [],
@@ -91,6 +166,11 @@
       "event": "ionDrag",
       "detail": "any",
       "bubbles": true,
+      "complexType": {
+        "original": "any",
+        "resolved": "any",
+        "references": {}
+      },
       "cancelable": true,
       "composed": true,
       "docs": "Emitted when the sliding position changes.",

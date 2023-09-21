@@ -10,17 +10,17 @@ import CustomProps from '@ionic-internal/component-api/v7/route-redirect/custom-
 import Slots from '@ionic-internal/component-api/v7/route-redirect/slots.md';
 
 <head>
-  <title>ion-route-redirect Plugin: Redirect 'from' a URL 'to' Another URL</title>
+  <title>ion-route-redirect: Redirect 'from' a URL 'to' Another URL</title>
   <meta name="description" content="ion-route-redirectは、ion-routerの直接の子として使用され、URLから他のURLへのリダイレクトを行います。ルートリダイレクトプラグインについては、こちらをご覧ください。" />
 </head>
 
 import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 
-A route redirect can only be used with an `ion-router` as a direct child of it.
+ルートリダイレクトは `ion-router` を直接の子としてのみ使うことができます。
 
 :::note
- Note: このコンポーネントは、バニラおよびステンシルJavaScriptプロジェクトでのみ使用してください。Angularプロジェクトでは、[`ion-router-outlet`](router-outlet.md) と Angularルータを使用してください。
+ Note: このコンポーネントは、vanilla と Stencil での JavaScriptプロジェクトでのみ使用してください。Angularプロジェクトでは、[`ion-router-outlet`](router-outlet.md) と Angularルータを使用してください。
 :::
 
 

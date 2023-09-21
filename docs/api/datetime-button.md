@@ -9,7 +9,7 @@ import CustomProps from '@ionic-internal/component-api/v7/datetime-button/custom
 import Slots from '@ionic-internal/component-api/v7/datetime-button/slots.md';
 
 <head>
-  <title>ion-datetime-button: Ionic API Input for interacting with Datetime picker</title>
+  <title>ion-datetime-button: Ionic Input for Datetime Picker</title>
   <meta name="description" content="Datetime button links with a datetime instance to easily a datetime in a popover, modal, and more." />
 </head>
 
@@ -59,13 +59,13 @@ TODO
 ## イベント
 <Events />
 
-## Methods
+## メソッド
 <Methods />
 
 ## CSS Shadow Parts
 <Parts />
 
-## CSS Custom Properties
+## CSS カスタムプロパティ
 <CustomProps />
 
 ## Slots

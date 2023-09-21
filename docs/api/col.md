@@ -9,7 +9,7 @@ import CustomProps from '@ionic-internal/component-api/v7/col/custom-props.md';
 import Slots from '@ionic-internal/component-api/v7/col/slots.md';
 
 <head>
-  <title>ion-col: Column Component Padding, Size and Other Properties</title>
+  <title>ion-col: Column Component Padding and Other Properties</title>
   <meta name="description" content="ion-colは、rowの内側に入るカラムコンポーネントです。グリッド内のコンテンツは、カラムの中に入ります。列のパディング、サイズ、その他のプロパティについては、こちらをご覧ください。" />
 </head>
 
