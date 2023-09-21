@@ -115,7 +115,7 @@ this.musicControls.create({
   // cover can be a local path (use fullpath 'file:///storage/emulated/...', or only 'my_image.jpg' if my_image.jpg is in the www folder of your app)
   //           or a remote url ('http://...', 'https://...', 'ftp://...')
   isPlaying   : true,                         // optional, default : true
-  dismissible : true,                         // optional, default : false
+  dismissable : true,                         // optional, default : false
 
   // hide previous/next/close buttons:
   hasPrev   : false,      // show previous button, optional, default: true
