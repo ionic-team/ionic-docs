@@ -32,12 +32,6 @@ import Item from '@site/static/usage/v7/label/item/index.md';
 
 <Item />
 
-## Input Labels
-
-import Input from '@site/static/usage/v7/label/input/index.md';
-
-<Input />
-
 ## Theming
 
 ### Colors
