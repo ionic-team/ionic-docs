@@ -56,8 +56,9 @@ function useDocDemo() {
     demoSourceUrl,
   };
 }
+// CUSTOM CODE END
 
-export default function DocItemLayout({children}: Props): JSX.Element {
+export default function DocItemLayout({children, ...props}: Props): JSX.Element {
   const docTOC = useDocTOC();
   // CUSTOM CODE
   const {demoUrl, demoSourceUrl} = useDocDemo();

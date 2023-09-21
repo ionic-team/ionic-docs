@@ -15,15 +15,17 @@ import EditThisPage from '@theme-original/EditThisPage';
 import { useLocation } from '@docusaurus/router';
 import { usePluginData } from '@docusaurus/useGlobalData';
 import { PrismicRichText } from '@prismicio/react';
+import { useDoc } from '@docusaurus/theme-common/internal';
 
 interface TOCProps extends Props {
   editUrl: string;
 }
 
-export default function TOCWrapper({ className, editUrl, ...props }: TOCProps): JSX.Element {
+export default function TOCWrapper(props: TOCProps): JSX.Element {
   const { prismicAds } = usePluginData('ionic-docs-ads') as any;
   const [activeAd, setActiveAd] = useState<typeof prismicAds.data>();
   const location = useLocation();
+  const { metadata } = useDoc();
 
   const isEmpty = props.toc.length <= 0;
 
@@ -37,7 +39,7 @@ export default function TOCWrapper({ className, editUrl, ...props }: TOCProps): 
     <div className="toc-wrapper">
       <h2>Contents</h2>
       <TOC {...props} />
-      <EditThisPage editUrl={editUrl} />
+      <EditThisPage editUrl={metadata.editUrl} />
       {activeAd && (
         <div className="internal-ad">
           <a
