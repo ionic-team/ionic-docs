@@ -10,5 +10,12 @@
   "ignoreRegExpList": [
     "/(```+)[\\s\\S]+?\\1/g",
     "/`[a-zA-Z-_]+`/g"
+  ],
+  "ignorePaths": [
+    "docs/cli",
+    "docs/native",
+    "versioned_docs/**/api",
+    "versioned_docs/**/cli",
+    "versioned_docs/**/native",
   ]
 }

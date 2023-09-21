@@ -16,6 +16,7 @@ textareas
 Codepen
 Genymotion
 Firestore
+Hygen
 Logcat
 Maskito
 Pluralsight
@@ -26,14 +27,15 @@ Wistia
 
 browserslistrc
 jsdelivr
+ngsw
 xcodeproj
 xcworkspace
 
 CMDOPTS
 DDTHH
-ngsw
 
 authed
+autocrlf
 autogrow
 automations
 autoplay
@@ -48,6 +50,8 @@ geolocation
 isopen
 jank
 janky
+jarsigner
+keytool
 lifecycles
 localstorage
 preconfigured
@@ -59,9 +63,10 @@ rgba
 runtimes
 scroller
 searchbars
-swipeable
 subcomponent
 subcomponents
+swipeable
+tada
 templating
 transpiling
 treeshaking
@@ -69,9 +74,11 @@ triaging
 typeahead
 unminified
 unsanitized
-webviews
 viewports
-
+webviews
+xlarge
+xsmall
+zipalign
 appstore
 playstore
 mobileweb

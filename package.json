@@ -19,7 +19,7 @@
     "prettier": "prettier \"./**/*.{html,ts,tsx,js,jsx,md}\"",
     "start": "docusaurus start",
     "swizzle": "docusaurus swizzle --danger",
-    "spellcheck": "cspell --no-progress \"docs/**/*.md\""
+    "spellcheck": "cspell --no-progress \"**/*.md\""
   },
   "browserslist": {
     "production": [
