@@ -22,8 +22,7 @@
       </ion-header>
       <ion-content class="ion-padding">
         <ion-item>
-          <ion-label position="stacked">Enter your name</ion-label>
-          <ion-input type="text" placeholder="Your name" [(ngModel)]="name"></ion-input>
+          <ion-input label="Enter your name" labelPlacement="stacked" type="text" placeholder="Your name" [(ngModel)]="name"></ion-input>
         </ion-item>
       </ion-content>
     </ng-template>

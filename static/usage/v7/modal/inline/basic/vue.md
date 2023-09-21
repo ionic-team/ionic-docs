@@ -22,8 +22,7 @@
       </ion-header>
       <ion-content class="ion-padding">
         <ion-item>
-          <ion-label position="stacked">Enter your name</ion-label>
-          <ion-input ref="input" type="text" placeholder="Your name"></ion-input>
+          <ion-input label="Enter your name" label-placement="stacked" ref="input" type="text" placeholder="Your name"></ion-input>
         </ion-item>
       </ion-content>
     </ion-modal>
@@ -41,7 +40,6 @@
     IonTitle,
     IonItem,
     IonInput,
-    IonLabel,
   } from '@ionic/vue';
   import { OverlayEventDetail } from '@ionic/core/components';
   import { ref } from 'vue';

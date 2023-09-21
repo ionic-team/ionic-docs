@@ -10,7 +10,6 @@ import {
   IonTitle,
   IonPage,
   IonItem,
-  IonLabel,
   IonInput,
 } from '@ionic/react';
 import { OverlayEventDetail } from '@ionic/core/components';
@@ -61,8 +60,7 @@ function Example() {
           </IonHeader>
           <IonContent className="ion-padding">
             <IonItem>
-              <IonLabel position="stacked">Enter your name</IonLabel>
-              <IonInput ref={input} type="text" placeholder="Your name" />
+              <IonInput label="Enter your name" labelPlacement="stacked" ref={input} type="text" placeholder="Your name" />
             </IonItem>
           </IonContent>
         </IonModal>
