@@ -1,6 +1,9 @@
 /**
  * Original source:
  * @link https://github.com/facebook/docusaurus/blob/main/packages/docusaurus-theme-classic/src/theme/DocItem/Layout/index.tsx
+ * 
+ * Reason for overriding:
+ * - Add a phone demo to the right of the page, e.g. /docs
  */
 
 import React from 'react';
@@ -53,8 +56,9 @@ function useDocDemo() {
     demoSourceUrl,
   };
 }
+// CUSTOM CODE END
 
-export default function DocItemLayout({children}: Props): JSX.Element {
+export default function DocItemLayout({children, ...props}: Props): JSX.Element {
   const docTOC = useDocTOC();
   // CUSTOM CODE
   const {demoUrl, demoSourceUrl} = useDocDemo();
@@ -72,20 +76,16 @@ export default function DocItemLayout({children}: Props): JSX.Element {
           </article>
           <DocItemPaginator />
         </div>
-        {/* ------- CUSTOM CODE -------- */}
-        <div className="spacer"></div>
-        
-        {demoUrl && (
-          <div
-            className={clsx(
-              'doc-demo-wrapper'
-            )}
-          >
+      </div>
+      {/* ------- CUSTOM CODE -------- */}
+      {demoUrl && (
+        <div className='col col--4'>
+          <div className='doc-demo-wrapper'>
             <DocDemo url={demoUrl} source={demoSourceUrl} />
           </div>
-        )}
-        {/* ------- CUSTOM CODE END -------- */}
-      </div>
+        </div>
+      )}
+      {/* ------- CUSTOM CODE END -------- */}
       {docTOC.desktop && <div className="col col--3">{docTOC.desktop}</div>}
     </div>
   );

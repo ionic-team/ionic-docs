@@ -229,7 +229,7 @@ module.exports = {
         {
           type: 'html',
           position: 'right',
-          value: '<div class="separator" />',
+          value: '<div class="separator" aria-hidden></div>',
         },
         {
           type: 'localeDropdown',
@@ -259,17 +259,17 @@ module.exports = {
           target: '_blank',
         },
         {
-          href: 'https://github.com/ionic-team/ionic-framework',
-          position: 'right',
-          className: 'icon-link icon-link-mask icon-link-github',
-          'aria-label': 'GitHub repository',
-          target: '_blank',
-        },
-        {
           href: 'https://ionic.link/discord',
           position: 'right',
           className: 'icon-link icon-link-mask icon-link-discord',
           'aria-label': 'Discord',
+          target: '_blank',
+        },
+        {
+          href: 'https://github.com/ionic-team/ionic-framework',
+          position: 'right',
+          className: 'icon-link icon-link-mask icon-link-github',
+          'aria-label': 'GitHub repository',
           target: '_blank',
         },
       ],

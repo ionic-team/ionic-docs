@@ -1,35 +1,31 @@
 /**
- * Original source:
- * @link https://github.com/facebook/docusaurus/blob/main/packages/docusaurus-theme-classic/src/theme/TOC/index.tsx
+ * This file wraps the original TOC so we don't need to modify the original code.
+ *
+ * Reasons for modifying:
+ * - Add header to the top of the TOC.
+ * - Add a `Edit this page` link to the bottom of the TOC.
+ * - Add a random internal ad to the bottom of the TOC.
  */
 
-import React, { useEffect, useState } from 'react';
-import clsx from 'clsx';
-import TOCItems from '@theme/TOCItems';
+import React, { useState, useEffect } from 'react';
+import TOC from '@theme-original/TOC';
 import type { Props } from '@theme/TOC';
-import styles from '@docusaurus/theme-classic/src/theme/TOC/styles.module.css';
 
-// CUSTOM CODE
 import EditThisPage from '@theme-original/EditThisPage';
 import { useLocation } from '@docusaurus/router';
 import { usePluginData } from '@docusaurus/useGlobalData';
 import { PrismicRichText } from '@prismicio/react';
+import { useDoc } from '@docusaurus/theme-common/internal';
 
 interface TOCProps extends Props {
   editUrl: string;
 }
-// CUSTOM CODE END
 
-// Using a custom className
-// This prevents TOCInline/TOCCollapsible getting highlighted by mistake
-const LINK_CLASS_NAME = 'table-of-contents__link toc-highlight';
-const LINK_ACTIVE_CLASS_NAME = 'table-of-contents__link--active';
-
-export default function TOC({ className, editUrl, ...props }: TOCProps): JSX.Element {
-  // CUSTOM CODE
+export default function TOCWrapper(props: TOCProps): JSX.Element {
   const { prismicAds } = usePluginData('ionic-docs-ads') as any;
   const [activeAd, setActiveAd] = useState<typeof prismicAds.data>();
   const location = useLocation();
+  const { metadata } = useDoc();
 
   const isEmpty = props.toc.length <= 0;
 
@@ -38,17 +34,12 @@ export default function TOC({ className, editUrl, ...props }: TOCProps): JSX.Ele
   }, [location]);
 
   if (isEmpty) return null;
-  // CUSTOM CODE END
 
   return (
-    // CUSTOM CODE - toc wrapper
     <div className="toc-wrapper">
       <h2>Contents</h2>
-      <div className={clsx(styles.tableOfContents, 'thin-scrollbar', className)}>
-        <TOCItems {...props} linkClassName={LINK_CLASS_NAME} linkActiveClassName={LINK_ACTIVE_CLASS_NAME} />
-      </div>
-      {/* CUSTOM CODE  */}
-      <EditThisPage editUrl={editUrl} />
+      <TOC {...props} />
+      <EditThisPage editUrl={metadata.editUrl} />
       {activeAd && (
         <div className="internal-ad">
           <a
@@ -72,7 +63,6 @@ export default function TOC({ className, editUrl, ...props }: TOCProps): JSX.Ele
           </a>
         </div>
       )}
-      {/* CUSTOM CODE END */}
     </div>
   );
 }

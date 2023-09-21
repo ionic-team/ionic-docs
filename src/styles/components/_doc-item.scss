@@ -38,7 +38,7 @@
       }
     }
 
-    .end {
+    .col--3 {
       @media (max-width: 996px) {
         display: none;
       }
@@ -64,7 +64,7 @@
     }
   }
 
-  [class*='docItemCol_'] {
+  [class^='docItemCol_'] {
     margin-inline-start: auto;
     margin-inline-end: auto;
   }
