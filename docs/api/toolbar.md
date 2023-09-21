@@ -9,7 +9,7 @@ import CustomProps from '@ionic-internal/component-api/v7/toolbar/custom-props.m
 import Slots from '@ionic-internal/component-api/v7/toolbar/slots.md';
 
 <head>
-  <title>Toolbar | Customize App Menu Toolbar Buttons and Icons</title>
+  <title>ion-toolbar: Customize App Menu Toolbar Buttons and Icons</title>
   <meta name="description" content="Ion-toolbar component lets you customize toolbar buttons on your app menu. Add fixed toolbars above or below content or use full screen to scroll with content." />
 </head>
 

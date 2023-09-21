@@ -4,6 +4,7 @@
 </template>
 
 <script lang="ts">
+  import { markRaw } from 'vue';
   import { IonNav } from '@ionic/vue';
   import PageOne from './PageOne.vue';
 
@@ -11,7 +12,7 @@
     components: { IonNav },
     data() {
       return {
-        component: PageOne,
+        component: markRaw(PageOne),
       };
     },
   };

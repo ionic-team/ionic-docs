@@ -26,6 +26,14 @@ function Example() {
           Fixed Width Label
         </IonRadio>
       </IonRadioGroup>
+
+      <br />
+
+      <IonRadioGroup value="stacked">
+        <IonRadio value="stacked" labelPlacement="stacked">
+          Stacked Label
+        </IonRadio>
+      </IonRadioGroup>
     </>
   );
 }

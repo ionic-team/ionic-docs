@@ -9,7 +9,7 @@ import CustomProps from '@ionic-internal/component-api/v7/input/custom-props.md'
 import Slots from '@ionic-internal/component-api/v7/input/slots.md';
 
 <head>
-  <title>ion-input: Custom Input Value Type Styling and CSS Properties</title>
+  <title>ion-input: Custom Input With Styling and CSS Properties</title>
   <meta name="description" content="ion-input is a wrapper to the HTML input element, with custom value type styling and functionality. It works on desktops and integrates with mobile keyboards." />
 </head>
 
@@ -104,9 +104,17 @@ import HelperError from '@site/static/usage/v7/input/helper-error/index.md';
 
 The input counter is text that displays under an input to notify the user of how many characters have been entered out of the total that the input will accept. When adding counter, the default behavior is to format the value that gets displayed as `inputLength` / `maxLength`. This behavior can be customized by passing in a formatter function to the `counterFormatter` property.
 
+The `counter` and `counterFormatter` properties on `ion-item` were [deprecated in Ionic 7](/docs/api/input#using-the-modern-syntax) and should be used directly on `ion-input` instead.
+
 import Counter from '@site/static/usage/v7/input/counter/index.md';
 
 <Counter />
+
+Inputs with a counter add a border between the input and the counter, therefore they should not be placed inside of an `ion-item` which adds an additional border under the item. The `ion-padding-start` class can be added to align the counter inputs with inputs inside of items.
+
+import CounterAlignment from '@site/static/usage/v7/input/counter-alignment/index.md';
+
+<CounterAlignment />
 
 ## Filtering User Input
 
@@ -120,7 +128,7 @@ import FilteringData from '@site/static/usage/v7/input/filtering/index.md';
 
 ## Input Masking
 
-Input masks are expressions that constrain input to support valid input values. Ionic recommends using [Maskito](https://tinkoff.github.io/maskito/getting-started/what-is-maskito) for input masking. Maskito is a lightweight, dependency-free library for masking input fields. It supports a wide range of masks, including phone numbers, credit cards, dates, and more.
+Input masks are expressions that constrain input to support valid input values. Ionic recommends using [Maskito](https://maskito.dev) for input masking. Maskito is a lightweight, dependency-free library for masking input fields. It supports a wide range of masks, including phone numbers, credit cards, dates, and more.
 
 To get started with Maskito, install the library:
 
@@ -134,7 +142,7 @@ import Masking from '@site/static/usage/v7/input/mask/index.md';
 
 :::note
 
-Please submit bug reports with Maskito to the [Maskito Github repository](https://github.com/Tinkoff/maskito/issues). For technical support, please use the [Ionic Forum](https://forum.ionicframework.com/) or [Ionic Discord](http://chat.ionicframework.com/).
+Please submit bug reports with Maskito to the [Maskito Github repository](https://github.com/taiga-family/maskito/issues). For technical support, please use the [Ionic Forum](https://forum.ionicframework.com/) or [Ionic Discord](http://chat.ionicframework.com/).
 
 :::
 

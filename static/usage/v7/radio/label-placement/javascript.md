@@ -14,4 +14,10 @@
 <ion-radio-group value="fixed">
   <ion-radio value="fixed" label-placement="fixed">Fixed Width Label</ion-radio>
 </ion-radio-group>
+
+<br />
+
+<ion-radio-group value="stacked">
+  <ion-radio value="stacked" label-placement="stacked">Stacked Label</ion-radio>
+</ion-radio-group>
 ```

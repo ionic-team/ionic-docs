@@ -9,7 +9,7 @@ import CustomProps from '@ionic-internal/component-api/v7/button/custom-props.md
 import Slots from '@ionic-internal/component-api/v7/button/slots.md';
 
 <head>
-  <title>ion-button: Design and Style Buttons with Custom CSS Properties</title>
+  <title>ion-button: Style Buttons with Custom CSS Properties</title>
   <meta name="description" content="ion-button provides a clickable element for use anywhere needing standard button functionality. Design and style button elements with custom CSS properties." />
 </head>
 

@@ -38,6 +38,12 @@ $ ionic serve
 
 With `ionic serve` running, continue developing your app. As you save changes, the app reloads with those changes applied.
 
+:::note
+
+If the external link isn't listed on the terminal, then run `ionic serve --external` to generate it.
+
+:::
+
 When implementing native functionality, use [Platform Detection](../core-concepts/cross-platform.md).
 When you're ready to test on a real device, see here for [iOS](ios.md) and [Android](android.md).
 

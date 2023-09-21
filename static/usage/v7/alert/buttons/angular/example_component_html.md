@@ -6,6 +6,4 @@
   [buttons]="alertButtons"
   (didDismiss)="setResult($event)"
 ></ion-alert>
-<p>{{ handlerMessage }}</p>
-<p>{{ roleMessage }}</p>
 ```

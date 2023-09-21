@@ -1,6 +1,9 @@
 ---
 title: "ion-action-sheet"
 ---
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 import Props from '@ionic-internal/component-api/v7/action-sheet/props.md';
 import Events from '@ionic-internal/component-api/v7/action-sheet/events.md';
 import Methods from '@ionic-internal/component-api/v7/action-sheet/methods.md';
@@ -9,7 +12,7 @@ import CustomProps from '@ionic-internal/component-api/v7/action-sheet/custom-pr
 import Slots from '@ionic-internal/component-api/v7/action-sheet/slots.md';
 
 <head>
-  <title>ion-action-sheet | Action Sheet Dialog for iOS and Android Apps</title>
+  <title>ion-action-sheet: Action Sheet Dialog for iOS and Android</title>
   <meta name="description" content="Action Sheets are dialogs that display a set of options above app content and must be manually dismissed. Read to learn about use on iOS and Android devices." />
 </head>
 
@@ -94,9 +97,149 @@ import CssCustomProperties from '@site/static/usage/v7/action-sheet/theming/css-
 
 ## Accessibility
 
+### Screen Readers
+
+Action Sheets set aria properties in order to be [accessible](../reference/glossary#a11y) to screen readers, but these properties can be overridden if they aren't descriptive enough or don't align with how the action sheet is being used in an app.
+
+#### Role
+
 Action Sheets are given a `role` of [`dialog`](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/dialog_role). In order to align with the ARIA spec, either the `aria-label` or `aria-labelledby` attribute must be set.
 
+#### Action Sheet Description
+
 It is strongly recommended that every Action Sheet have the `header` property defined, as Ionic will automatically set `aria-labelledby` to point to the header element. However, if you choose not to include a `header`, an alternative is to use the `htmlAttributes` property to provide a descriptive `aria-label` or set a custom `aria-labelledby` value.
+
+<Tabs groupId="framework" defaultValue="angular" values={[{ value: 'angular', label: 'Angular' }, { value: 'javascript', label: 'Javascript' }, { value: 'react', label: 'React' }, { value: 'vue', label: 'Vue' }]}>
+
+<TabItem value="angular">
+
+```javascript
+const actionSheet = await this.actionSheetController.create({
+  htmlAttributes: {
+    'aria-label': 'action sheet dialog',
+  },
+});
+```
+
+</TabItem>
+
+<TabItem value="javascript">
+
+```javascript
+const actionSheet = await this.actionSheetController.create({
+  htmlAttributes: {
+    'aria-label': 'action sheet dialog',
+  },
+});
+```
+
+</TabItem>
+
+<TabItem value="react">
+
+```javascript
+useIonActionSheet({
+  htmlAttributes: {
+    'aria-label': 'action sheet dialog',
+  },
+});
+```
+
+</TabItem>
+
+<TabItem value="vue">
+
+```javascript
+const actionSheet = await actionSheetController.create({
+  htmlAttributes: {
+    'aria-label': 'action sheet dialog',
+  },
+});
+```
+
+</TabItem>
+
+</Tabs>
+
+#### Action Sheet Buttons Description
+
+Buttons containing text will be read by a screen reader. If a button contains only an icon, or a description other than the existing text is desired, a label should be assigned to the button by passing `aria-label` to the `htmlAttributes` property on the button.
+
+<Tabs groupId="framework" defaultValue="angular" values={[{ value: 'angular', label: 'Angular' }, { value: 'javascript', label: 'Javascript' }, { value: 'react', label: 'React' }, { value: 'vue', label: 'Vue' }]}>
+
+<TabItem value="angular">
+
+```javascript
+const actionSheet = await this.actionSheetController.create({
+  header: 'Header',
+  buttons: [
+    {
+      icon: 'close',
+      htmlAttributes: {
+        'aria-label': 'close',
+      },
+    },
+  ],
+});
+```
+
+</TabItem>
+
+<TabItem value="javascript">
+
+```javascript
+const actionSheet = await this.actionSheetController.create({
+  header: 'Header',
+  buttons: [
+    {
+      icon: 'close',
+      htmlAttributes: {
+        'aria-label': 'close',
+      },
+    },
+  ],
+});
+```
+
+</TabItem>
+
+<TabItem value="react">
+
+```javascript
+useIonActionSheet({
+  header: 'Header',
+  buttons: [
+    {
+      icon: 'close',
+      htmlAttributes: {
+        'aria-label': 'close',
+      },
+    },
+  ],
+});
+```
+
+</TabItem>
+
+<TabItem value="vue">
+
+```javascript
+const actionSheet = await actionSheetController.create({
+  header: 'Header',
+  buttons: [
+    {
+      icon: 'close',
+      htmlAttributes: {
+        'aria-label': 'close',
+      },
+    },
+  ],
+});
+```
+
+</TabItem>
+
+</Tabs>
 
 ## Interfaces
 
@@ -108,6 +251,8 @@ interface ActionSheetButton<T = any> {
   role?: 'cancel' | 'destructive' | 'selected' | string;
   icon?: string;
   cssClass?: string | string[];
+  id?: string;
+  htmlAttributes?: { [key: string]: any };
   handler?: () => boolean | void | Promise<boolean | void>;
   data?: T;
 }

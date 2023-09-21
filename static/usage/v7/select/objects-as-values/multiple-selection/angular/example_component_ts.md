@@ -6,8 +6,6 @@ import { Component } from '@angular/core';
   templateUrl: 'example.component.html',
 })
 export class ExampleComponent {
-  currentFood = undefined;
-
   foods = [
     {
       id: 1,
@@ -39,7 +37,7 @@ export class ExampleComponent {
   }
 
   handleChange(ev) {
-    this.currentFood = ev.target.value;
+    console.log('Current value:', JSON.stringify(ev.target.value));
   }
 }
 ```

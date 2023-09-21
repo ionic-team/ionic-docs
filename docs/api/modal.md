@@ -87,6 +87,18 @@ import CanDismissPreventSwipeToCloseExample from '@site/static/usage/v7/modal/ca
 
 <CanDismissPreventSwipeToCloseExample />
 
+### Modifying dismiss behavior in child components
+
+In certain scenarios, developers may need to customize the behavior of the `canDismiss` callback based on the state of a presented modal. This customization can be particularly useful, for instance, when developers want to prevent the modal from being dismissed if a form within it is invalid.
+
+To achieve this customization, child components can employ various techniques such as function callbacks, event emission, or other reactivity mechanisms to communicate with the parent component and update the conditions governing the `canDismiss` callback.
+
+Here's a simplified example illustrating how a child component can interact with a parent component to modify the `canDismiss` callback:
+
+import CanDismissChildStateExample from '@site/static/usage/v7/modal/can-dismiss/child-state/index.md';
+
+<CanDismissChildStateExample />
+
 ## Types of modals
  
 ### Card Modal

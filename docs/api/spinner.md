@@ -9,7 +9,7 @@ import CustomProps from '@ionic-internal/component-api/v7/spinner/custom-props.m
 import Slots from '@ionic-internal/component-api/v7/spinner/slots.md';
 
 <head>
-  <title>ion-spinner | Animated Spinner Icon Components and Properties</title>
+  <title>ion-spinner: Animated Spinner Icon Components and Properties</title>
   <meta name="description" content="The ion-spinner component provides a variety of animated SVG spinners. These icons indicate that the app is loading or performing another process to wait on." />
 </head>
 

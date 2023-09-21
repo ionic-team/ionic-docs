@@ -1,6 +1,6 @@
 ```tsx
-import React, { useState } from 'react';
-import { IonItem, IonList, IonLabel, IonSelect, IonSelectOption } from '@ionic/react';
+import React from 'react';
+import { IonItem, IonList, IonSelect, IonSelectOption } from '@ionic/react';
 
 interface Food {
   id: number;
@@ -39,8 +39,6 @@ const compareWith = (o1: Food, o2: Food) => {
 };
 
 function Example() {
-  const [currentFood, setCurrentFood] = useState('');
-
   return (
     <IonList>
       <IonItem>
@@ -48,7 +46,7 @@ function Example() {
           aria-label="Food"
           placeholder="Select food"
           compareWith={compareWith}
-          onIonChange={(ev) => setCurrentFood(JSON.stringify(ev.detail.value))}
+          onIonChange={(ev) => console.log('Current value:', JSON.stringify(ev.detail.value))}
           multiple={true}
         >
           {foods.map((food) => (
@@ -57,9 +55,6 @@ function Example() {
             </IonSelectOption>
           ))}
         </IonSelect>
-      </IonItem>
-      <IonItem lines="none">
-        <IonLabel>Current value: {currentFood}</IonLabel>
       </IonItem>
     </IonList>
   );

@@ -6,28 +6,25 @@ import { Component } from '@angular/core';
   templateUrl: 'example.component.html',
 })
 export class ExampleComponent {
-  handlerMessage = '';
-  roleMessage = '';
-
   public alertButtons = [
     {
       text: 'Cancel',
       role: 'cancel',
       handler: () => {
-        this.handlerMessage = 'Alert canceled';
+        console.log('Alert canceled');
       },
     },
     {
       text: 'OK',
       role: 'confirm',
       handler: () => {
-        this.handlerMessage = 'Alert confirmed';
+        console.log('Alert confirmed');
       },
     },
   ];
 
   setResult(ev) {
-    this.roleMessage = `Dismissed with role: ${ev.detail.role}`;
+    console.log(`Dismissed with role: ${ev.detail.role}`);
   }
 }
 ```

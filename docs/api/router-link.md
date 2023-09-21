@@ -10,7 +10,7 @@ import CustomProps from '@ionic-internal/component-api/v7/router-link/custom-pro
 import Slots from '@ionic-internal/component-api/v7/router-link/slots.md';
 
 <head>
-  <title>Router Link | Navigating The ion-router-link Component</title>
+  <title>ion-router-link: Navigate To a Specified Link</title>
   <meta name="description" content="Use the ion-router-link component to navigate to a specified link. The router link can accept an href for location and a direction for the transition animation." />
 </head>
 

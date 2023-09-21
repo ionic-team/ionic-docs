@@ -7,7 +7,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./example.component.css'],
 })
 export class ExampleComponent {
-  result: string;
   public actionSheetButtons = [
     {
       text: 'Delete',
@@ -33,8 +32,8 @@ export class ExampleComponent {
 
   constructor() {}
 
-  setResult(ev) {
-    this.result = JSON.stringify(ev.detail, null, 2);
+  logResult(ev) {
+    console.log(JSON.stringify(ev.detail, null, 2));
   }
 }
 ```

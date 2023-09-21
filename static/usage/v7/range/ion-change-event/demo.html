@@ -22,17 +22,15 @@
         <div class="container">
           <div class="demo">
             <ion-range aria-label="Range with ionChange"></ion-range>
-            <ion-label>ionChange emitted value: <span id="lastValue"></span></ion-label>
           </div>
         </div>
       </ion-content>
     </ion-app>
     <script>
       const range = document.querySelector('ion-range');
-      const lastValue = document.querySelector('#lastValue');
 
       range.addEventListener('ionChange', ({ detail }) => {
-        lastValue.innerHTML = detail.value;
+        console.log('ionChange emitted value:', detail.value);
       });
     </script>
   </body>

@@ -10,7 +10,7 @@ import CustomProps from '@ionic-internal/component-api/v7/split-pane/custom-prop
 import Slots from '@ionic-internal/component-api/v7/split-pane/slots.md';
 
 <head>
-  <title>ion-split-pane: Split Plane View for Menus and Multi-View Layouts</title>
+  <title>ion-split-pane: Split Plane for Menus and Multi-View Layouts</title>
   <meta name="description" content="ion-split-pane is useful when creating multi-view app layouts. It allows UI elements, like menus, to be displayed as the viewport width increases." />
 </head>
 

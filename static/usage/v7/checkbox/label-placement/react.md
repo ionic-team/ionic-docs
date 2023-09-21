@@ -14,6 +14,10 @@ function Example() {
       <br />
 
       <IonCheckbox labelPlacement="fixed">Fixed Width Label</IonCheckbox>
+
+      <br />
+
+      <IonCheckbox labelPlacement="stacked">Stacked Label</IonCheckbox>
     </>
   );
 }

@@ -6,9 +6,7 @@
     header="Example header"
     subHeader="Example subheader"
     [buttons]="actionSheetButtons"
-    (didDismiss)="setResult($event)"
+    (didDismiss)="logResult($event)"
   ></ion-action-sheet>
-
-  <code *ngIf="result">{{ result }}</code>
 </div>
 ```

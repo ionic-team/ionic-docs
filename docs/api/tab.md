@@ -10,7 +10,7 @@ import CustomProps from '@ionic-internal/component-api/v7/tab/custom-props.md';
 import Slots from '@ionic-internal/component-api/v7/tab/slots.md';
 
 <head>
-  <title>ion-tab - Ionic Framework Application Component</title>
+  <title>ion-tab: Ionic Framework Application Component</title>
   <meta name="description" content="ion-tab is a child component of tabs. Each ion-tab can contain a top level navigation stack for an application or a single view. Read to learn more." />
 </head>
 

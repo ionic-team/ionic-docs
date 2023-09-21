@@ -1,24 +1,14 @@
 ```tsx
-import React, { useState } from 'react';
-import { IonLabel, IonRange } from '@ionic/react';
-import { RangeValue } from '@ionic/core';
+import React from 'react';
+import { IonRange } from '@ionic/react';
+
 function Example() {
-  const [moveStartValue, setMoveStartValue] = useState<RangeValue>();
-  const [moveEndValue, setMoveEndValue] = useState<RangeValue>();
   return (
-    <>
-      <IonRange
-        aria-label="Range with knob events"
-        onIonKnobMoveStart={({ detail }) => setMoveStartValue(detail.value)}
-        onIonKnobMoveEnd={({ detail }) => setMoveEndValue(detail.value)}
-      ></IonRange>
-      <div>
-        <IonLabel>ionKnobMoveStart: {moveStartValue as number}</IonLabel>
-      </div>
-      <div>
-        <IonLabel>ionKnobMoveEnd: {moveEndValue as number}</IonLabel>
-      </div>
-    </>
+    <IonRange
+      aria-label="Range with knob events"
+      onIonKnobMoveStart={({ detail }) => console.log('ionKnobMoveStart:', detail.value)}
+      onIonKnobMoveEnd={({ detail }) => console.log('ionKnobMoveEnd:', detail.value)}
+    ></IonRange>
   );
 }
 export default Example;

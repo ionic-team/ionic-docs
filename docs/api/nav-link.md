@@ -9,7 +9,7 @@ import CustomProps from '@ionic-internal/component-api/v7/nav-link/custom-props.
 import Slots from '@ionic-internal/component-api/v7/nav-link/slots.md';
 
 <head>
-  <title>ion-nav-link: The Element for Navigation to a Specified Component</title>
+  <title>ion-nav-link: Navigation Links to a Specified Component</title>
   <meta name="description" content="Navigation links navigate to specified components. It is the element form of calling the push(), pop(), and setRoot() methods. Read for more on ion-nav-link." />
 </head>
 
