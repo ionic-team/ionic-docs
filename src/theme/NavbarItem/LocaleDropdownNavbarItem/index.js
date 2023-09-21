@@ -58,8 +58,8 @@ export default function LocaleDropdownNavbarItem({ mobile, dropdownItemsBefore, 
       mobile={mobile}
       label={
         <>
-          <IconLanguage className={styles.iconLanguage} />
-          {/* CUSTOM CODE - added span */}
+          <IconLanguage />
+          {/* CUSTOM CODE - added span in order to hide the text */}
           <span className={styles.localeVisuallyHidden}>{dropdownLabel}</span>
         </>
       }
