@@ -17,7 +17,7 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="scoped" />
 
-Label is a wrapper element that can be used in combination with `ion-item`, `ion-input`, `ion-toggle`, and more. The position of the label inside of an item can be inline, fixed, stacked, or floating.
+Label is a textual element used primarily to give added context to [Item](./item.md) components. The position of the label inside of an item can be inline, fixed, stacked, or floating.
 
 
 ## Basic Usage
