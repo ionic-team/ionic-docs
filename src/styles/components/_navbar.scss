@@ -194,10 +194,28 @@ html[data-theme='dark'] {
               }
             }
           }
+
+          //theme toggle
+          &:nth-last-of-type(1) {
+            order: 4;
+          }
+        }
+
+        //twitter icon
+        .icon-link-twitter {
+          order: 5;
+        }
+
+        //discord icon
+        .icon-link-discord {
+          order: 6;
+        }
+
+        //github icon
+        .icon-link-github {
+          order: 7;
         }
       }
-
-      
     }
 
     &__item {

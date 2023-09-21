@@ -230,7 +230,7 @@ module.exports = {
         {
           type: 'html',
           position: 'right',
-          value: '<div class="separator" />',
+          value: '<div class="separator" aria-hidden></div>',
         },
         {
           type: 'localeDropdown',
