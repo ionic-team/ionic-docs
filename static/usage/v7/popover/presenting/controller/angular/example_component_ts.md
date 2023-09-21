@@ -10,8 +10,6 @@ import { PopoverComponent } from './popover.component';
   templateUrl: 'example.component.html',
 })
 export class ExampleComponent {
-  roleMsg = '';
-
   constructor(public popoverController: PopoverController) {}
 
   async presentPopover(e: Event) {
@@ -23,7 +21,7 @@ export class ExampleComponent {
     await popover.present();
 
     const { role } = await popover.onDidDismiss();
-    this.roleMsg = `Popover dismissed with role: ${role}`;
+    console.log(`Popover dismissed with role: ${role}`);
   }
 }
 ```

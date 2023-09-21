@@ -9,7 +9,7 @@ import CustomProps from '@ionic-internal/component-api/v7/radio-group/custom-pro
 import Slots from '@ionic-internal/component-api/v7/radio-group/slots.md';
 
 <head>
-  <title>ion-radio-group | Radio Button Group Usage for Ionic Apps</title>
+  <title>ion-radio-group: Radio Button Group Usage for Ionic Apps</title>
   <meta name="description" content="A radio group is a group of radio buttons. Radio groups allow a user to select at most one radio button from a set. Learn more about ion-radio-group usage." />
 </head>
 

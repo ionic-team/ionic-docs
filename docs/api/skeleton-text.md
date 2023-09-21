@@ -9,7 +9,7 @@ import CustomProps from '@ionic-internal/component-api/v7/skeleton-text/custom-p
 import Slots from '@ionic-internal/component-api/v7/skeleton-text/slots.md';
 
 <head>
-  <title>Skeleton Text | Skeleton Loading Placeholder & Framework for Text</title>
+  <title>ion-skeleton-text: Skeleton Loading Placeholder for Text</title>
   <meta name="description" content="ion-skeleton-text is a component for rendering placeholder content. The element will render a gray block at the specified width as a loading text framework." />
 </head>
 

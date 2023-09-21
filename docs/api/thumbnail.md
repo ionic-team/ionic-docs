@@ -10,7 +10,7 @@ import CustomProps from '@ionic-internal/component-api/v7/thumbnail/custom-props
 import Slots from '@ionic-internal/component-api/v7/thumbnail/slots.md';
 
 <head>
-  <title>ion-thumbnail | Thumbnail App Component to Wrap Images or Icons</title>
+  <title>ion-thumbnail: Thumbnail App Component for Images or Icons</title>
   <meta name="description" content="What is a thumbnail image? Thumbnail app components wrap an image or icon and can be used to display a layout of images or for previews of full-size images." />
 </head>
 

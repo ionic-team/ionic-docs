@@ -6,14 +6,16 @@ import { Component } from '@angular/core';
   templateUrl: 'example.component.html',
 })
 export class ExampleComponent {
-  logs: string[] = [];
-
-  pushLog(msg) {
-    this.logs.unshift(msg);
+  handleChange(e) {
+    console.log('ionChange fired with value: ' + e.detail.value);
   }
 
-  handleChange(e) {
-    this.pushLog('ionChange fired with value: ' + e.detail.value);
+  handleCancel() {
+    console.log('ionCancel fired');
+  }
+
+  handleDismiss() {
+    console.log('ionDismiss fired');
   }
 }
 ```

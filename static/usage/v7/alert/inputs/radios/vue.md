@@ -9,33 +9,26 @@
   ></ion-alert>
 </template>
 
-<script lang="ts">
+<script lang="ts" setup>
   import { IonAlert, IonButton } from '@ionic/vue';
 
-  export default {
-    components: { IonAlert, IonButton },
-    setup() {
-      const alertButtons = ['OK'];
-      const alertInputs = [
-        {
-          label: 'Red',
-          type: 'radio',
-          value: 'red',
-        },
-        {
-          label: 'Blue',
-          type: 'radio',
-          value: 'blue',
-        },
-        {
-          label: 'Green',
-          type: 'radio',
-          value: 'green',
-        },
-      ];
-
-      return { alertButtons, alertInputs };
+  const alertButtons = ['OK'];
+  const alertInputs = [
+    {
+      label: 'Red',
+      type: 'radio',
+      value: 'red',
     },
-  };
+    {
+      label: 'Blue',
+      type: 'radio',
+      value: 'blue',
+    },
+    {
+      label: 'Green',
+      type: 'radio',
+      value: 'green',
+    },
+  ];
 </script>
 ```

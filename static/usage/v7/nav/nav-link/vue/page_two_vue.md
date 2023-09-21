@@ -17,6 +17,7 @@
 </template>
 
 <script lang="ts">
+  import { markRaw } from 'vue';
   import {
     IonHeader,
     IonTitle,
@@ -42,7 +43,7 @@
     },
     data() {
       return {
-        component: PageThree,
+        component: markRaw(PageThree),
       };
     },
   };

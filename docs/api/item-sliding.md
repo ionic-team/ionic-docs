@@ -9,7 +9,7 @@ import CustomProps from '@ionic-internal/component-api/v7/item-sliding/custom-pr
 import Slots from '@ionic-internal/component-api/v7/item-sliding/slots.md';
 
 <head>
-  <title>Slide Buttons | Slide Right to Left with ion-item-sliding</title>
+  <title>ion-item-sliding: Slide Buttons | Slide Right to Left</title>
   <meta name="description" content="ion-item-sliding component contains items that are dragged to reveal buttons. Options are revealed when the sliding item is swiped from left to right." />
 </head>
 

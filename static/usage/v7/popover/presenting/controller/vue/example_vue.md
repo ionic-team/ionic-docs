@@ -1,7 +1,6 @@
 ```html
 <template>
   <ion-button @click="openPopover">Click Me</ion-button>
-  <p>{{ roleMsg }}</p>
 </template>
 
 <script lang="ts">
@@ -10,11 +9,6 @@
 
   export default {
     components: { IonButton },
-    data() {
-      return {
-        roleMsg: '',
-      };
-    },
     methods: {
       async openPopover(ev: Event) {
         const popover = await popoverController.create({
@@ -24,7 +18,7 @@
         await popover.present();
 
         const { role } = await popover.onDidDismiss();
-        this.roleMsg = `Popover dismissed with role: ${role}`;
+        console.log(`Popover dismissed with role: ${role}`);
       },
     },
   };

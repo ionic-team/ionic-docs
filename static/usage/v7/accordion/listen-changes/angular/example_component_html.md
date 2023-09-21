@@ -19,6 +19,4 @@
     <div class="ion-padding" slot="content">Third Content</div>
   </ion-accordion>
 </ion-accordion-group>
-
-<p #listenerOut></p>
 ```

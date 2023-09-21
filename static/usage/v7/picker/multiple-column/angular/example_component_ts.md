@@ -68,7 +68,7 @@ export class ExampleComponent {
     {
       text: 'Confirm',
       handler: (value) => {
-        window.alert(`You selected a ${value.crust.text} pizza with ${value.meat.text} and ${value.veggies.text}`);
+        console.log(`You selected a ${value.crust.text} pizza with ${value.meat.text} and ${value.veggies.text}`);
       },
     },
   ];

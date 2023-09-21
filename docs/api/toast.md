@@ -12,7 +12,7 @@ import CustomProps from '@ionic-internal/component-api/v7/toast/custom-props.md'
 import Slots from '@ionic-internal/component-api/v7/toast/slots.md';
 
 <head>
-  <title>ion-toast Component: A Dismissible App Notification Alert</title>
+  <title>ion-toast: A Dismissible App Notification Alert Component</title>
   <meta name="description" content="ion-toast component is an app notification displaying system messages or feedback. Toast alerts appear above content and are dismissed to resume interaction." />
 </head>
 
@@ -86,6 +86,112 @@ import ThemingPlayground from '@site/static/usage/v7/toast/theming/index.md';
 
 <ThemingPlayground />
 
+## Accessibility
+
+### Focus Management
+
+Toasts are intended to be subtle notifications and are not intended to interrupt the user. User interaction should not be required to dismiss the toast. As a result, focus is not automatically moved to a toast when one is presented.
+
+### Screen Readers
+
+Toasts set aria properties in order to be [accessible](../reference/glossary#a11y) to screen readers, but these properties can be overridden if they aren't descriptive enough or don't align with how the toast is being used in an app.
+
+#### Role
+
+`ion-toast` has `role="status"` and `aria-live="polite"` set on the inner `.toast-content` element. This causes screen readers to only announce the toast message and header. Buttons and icons will not be announced when the toast is presented.
+
+`aria-live` causes screen readers to announce the content of the toast when it is updated. However, since the attribute is set to `'polite'`, screen readers should not interrupt the current task.
+
+Since toasts are intended to be subtle notification, `aria-live` should never be set to `"assertive"`. If developers need to interrupt the user with an important message, we recommend using an [alert](./alert).
+
+#### Toast Buttons Description
+
+Buttons containing text will be read by a screen reader when they are interacted with. If a button contains only an icon, or a description other than the existing text is desired, a label should be assigned to the button by passing `aria-label` to the `htmlAttributes` property on the button.
+
+<Tabs groupId="framework" defaultValue="angular" values={[{ value: 'angular', label: 'Angular' }, { value: 'javascript', label: 'Javascript' }, { value: 'react', label: 'React' }, { value: 'vue', label: 'Vue' }]}>
+
+<TabItem value="angular">
+
+```javascript
+const toast = await this.toastController.create({
+  header: 'Header',
+  buttons: [
+    {
+      icon: 'close',
+      htmlAttributes: {
+        'aria-label': 'close',
+      },
+    },
+  ],
+});
+```
+
+</TabItem>
+
+<TabItem value="javascript">
+
+```javascript
+const toast = await this.toastController.create({
+  header: 'Header',
+  buttons: [
+    {
+      icon: 'close',
+      htmlAttributes: {
+        'aria-label': 'close',
+      },
+    },
+  ],
+});
+```
+
+</TabItem>
+
+<TabItem value="react">
+
+```javascript
+useIonToast({
+  header: 'Header',
+  buttons: [
+    {
+      icon: 'close',
+      htmlAttributes: {
+        'aria-label': 'close',
+      },
+    },
+  ],
+});
+```
+
+</TabItem>
+
+<TabItem value="vue">
+
+```javascript
+const toast = await toastController.create({
+  header: 'Header',
+  buttons: [
+    {
+      icon: 'close',
+      htmlAttributes: {
+        'aria-label': 'close',
+      },
+    },
+  ],
+});
+```
+
+</TabItem>
+
+</Tabs>
+
+### Tips
+
+While this is not a complete list, here are some guidelines to follow when using toasts.
+
+* Do not require user interaction to dismiss toasts. For example, having a "Dismiss" button in the toast is fine, but the toast should also automatically dismiss on its own after a timeout period. If you need user interaction for a notification, consider using an [alert](./alert) instead.
+
+* For toasts with long messages, consider adjusting the `duration` property to allow users enough time to read the content of the toast.
+
 ## Interfaces
 
 ### ToastButton
@@ -97,6 +203,7 @@ interface ToastButton {
   side?: 'start' | 'end';
   role?: 'cancel' | string;
   cssClass?: string | string[];
+  htmlAttributes?: { [key: string]: any };
   handler?: () => boolean | void | Promise<boolean | void>;
 }
 ```
@@ -125,28 +232,6 @@ interface ToastOptions {
   leaveAnimation?: AnimationBuilder;
 }
 ```
-
-## Accessibility
-
-### Focus Management
-
-Toasts are intended to be subtle notifications and are not intended to interrupt the user. User interaction should not be required to dismiss the toast. As a result, focus is not automatically moved to a toast when one is presented.
-
-### Screen Readers
-
-`ion-toast` has `role="status"` and `aria-live="polite"` set on the inner `.toast-content` element. This causes screen readers to only announce the toast message and header. Buttons and icons will not be announced.
-
-`aria-live` causes screen readers to announce the content of the toast when it is updated. However, since the attribute is set to `'polite'`, screen readers should not interrupt the current task.
-
-Since toasts are intended to be subtle notification, `aria-live` should never be set to `"assertive"`. If developers need to interrupt the user with an important message, we recommend using an [alert](./alert).
-
-### Tips
-
-While this is not a complete list, here are some guidelines to follow when using toasts.
-
-* Do not require user interaction to dismiss toasts. For example, having a "Dismiss" button in the toast is fine, but the toast should also automatically dismiss on its own after a timeout period. If you need user interaction for a notification, consider using an [alert](./alert) instead.
-
-* For toasts with long messages, consider adjusting the `duration` property to allow users enough time to read the content of the toast.
 
 ## Properties
 <Props />

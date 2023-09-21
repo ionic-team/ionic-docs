@@ -9,7 +9,7 @@ import CustomProps from '@ionic-internal/component-api/v7/radio/custom-props.md'
 import Slots from '@ionic-internal/component-api/v7/radio/slots.md';
 
 <head>
-  <title>ion-radio Component: Radio Property for iOS and Android</title>
+  <title>ion-radio: Radio Component for iOS and Android</title>
   <meta name="description" content="Radio components should be used inside of ion-radio-groups on iOS and Android devices. Read to learn more about radio property usage and installation." />
 </head>
 
@@ -30,20 +30,31 @@ import Basic from '@site/static/usage/v7/radio/basic/index.md';
 
 ## Label Placement
 
-Developers can use the `labelPlacement` property to control how the label is placed relative to the control.
+Developers can use the `labelPlacement` property to control how the label is placed relative to the control.  This property mirrors the flexbox `flex-direction` property.
 
 import LabelPlacement from '@site/static/usage/v7/radio/label-placement/index.md';
 
 <LabelPlacement />
 
+## Alignment
+
+Developers can use the `alignment` property to control how the label and control are aligned on the cross axis. This property mirrors the flexbox `align-items` property.
+
+:::note
+Stacked radios can be aligned using the `alignment` property. This can be useful when the label and control need to be centered horizontally.
+:::
+
+import Alignment from '@site/static/usage/v7/radio/alignment/index.md';
+
+<Alignment />
+
 ## Justification
 
-Developers can use the `justify` property to control how the label and control are packed on a line.
+Developers can use the `justify` property to control how the label and control are packed on a line. This property mirrors the flexbox `justify-content` property.
 
 import Justify from '@site/static/usage/v7/radio/justify/index.md';
 
 <Justify />
-
 
 :::note
 `ion-item` is only used in the demos to emphasize how `justify` works. It is not needed in order for `justify` to function correctly.
