@@ -87,7 +87,7 @@ We use Crowdin for our translation service. You can participate in the translati
 
 _Please submit translation issues to the Crowdin page and not the Ionic Docs GitHub repo._
 
-// cspell:disable-next-line
+<!-- cspell:disable-next-line -->
 The Japanese translation of the docs were built by an independent team, lead by [rdlabo](https://github.com/rdlabo) and can be found and contributed to on the [ionic-jp group's `ionic-docs` project page](https://github.com/ionic-jp/ionic-docs).
 
 ## Reporting Issues

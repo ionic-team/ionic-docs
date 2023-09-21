@@ -92,13 +92,13 @@ title: Glossary
   </p>
 </section>
 
+<!-- cspell:disable -->
+
 <section id="cli">
   <a href="#cli">
     <h3>CLI</h3>
   </a>
   <p>
-    // cspell:disable-next-line
-
     A CLI, or <strong>C</strong>ommand-<strong>L</strong>ine <strong>I</strong>nterface, is
     a text-based interface for interacting with a program. The common command-line app for a Mac user is the Terminal
     app, and Windows users often use Command Prompt. The Ionic community often uses this term to refer to{' '}
@@ -108,9 +108,10 @@ title: Glossary
       Ionic commercial services
     </a>
     .
-
   </p>
 </section>
+
+<!-- cspell:enable -->
 
 <section id="commonjs">
   <a href="#commonjs">
