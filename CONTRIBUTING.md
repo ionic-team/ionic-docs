@@ -87,6 +87,7 @@ We use Crowdin for our translation service. You can participate in the translati
 
 _Please submit translation issues to the Crowdin page and not the Ionic Docs GitHub repo._
 
+// cspell:disable-next-line
 The Japanese translation of the docs were built by an independent team, lead by [rdlabo](https://github.com/rdlabo) and can be found and contributed to on the [ionic-jp group's `ionic-docs` project page](https://github.com/ionic-jp/ionic-docs).
 
 ## Reporting Issues
@@ -109,20 +110,6 @@ If the issue you're reporting is a bug, please be sure it is an issue with the I
 When submitting pull requests, please keep the scope of your change contained to a single feature or bug. When in doubt, err on the side of smaller pull requests. If your pull request is a new feature, we would recommend opening an issue first to come to an agreement about the feature before putting in significant time.
 
 ---
-
-<!-- ## Project Management
-
-Internally, the Ionic documentation team uses a [project board](https://github.com/ionic-team/ionic-docs/projects/3) to plan work on the docs. The lanes on the board are:
-
-- **Backlog** :file_cabinet: - Issues we plan to address, generally sorted by urgency
-- **On Deck** :baseball: - Issues to be addressed during the current sprint, pulled from backlog during sprint planning
-- **In Progress** :hammer: - Assigned issues that are currently being addressed
-- **Needs Review** :mag: - Pull requests and issues that have a pending review
-- **Done** :tada: - Issues that have been resolved
-
-If you're looking for issues to help out with, we'd recommend either asking about an issue in the backlog or checking for issues labeled [`help-wanted`](https://github.com/ionic-team/ionic-docs/labels/help%20wanted).
-
---- -->
 
 ## Deploying
 
