@@ -60,7 +60,13 @@ function Example() {
           </IonHeader>
           <IonContent className="ion-padding">
             <IonItem>
-              <IonInput label="Enter your name" labelPlacement="stacked" ref={input} type="text" placeholder="Your name" />
+              <IonInput
+                label="Enter your name"
+                labelPlacement="stacked"
+                ref={input}
+                type="text"
+                placeholder="Your name"
+              />
             </IonItem>
           </IonContent>
         </IonModal>
