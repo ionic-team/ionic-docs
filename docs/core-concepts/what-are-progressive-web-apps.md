@@ -48,6 +48,7 @@ To be considered a Progressive Web App, your app must be:
 - Linkable - Easily share via URL and not require complex installation.
 
 // cspell:disable
+
 <em>
   <a href="https://addyosmani.com/blog/getting-started-with-progressive-web-apps/" target="_blank">
     Addy Osmani: Progressive web apps
