@@ -1,6 +1,9 @@
 /**
  * Original source:
  * @link https://github.com/facebook/docusaurus/blob/main/packages/docusaurus-theme-classic/src/theme/DocItem/Layout/index.tsx
+ * 
+ * Reason for overriding:
+ * - Add a phone demo to the right of the page, e.g. /docs
  */
 
 import React from 'react';
@@ -73,7 +76,7 @@ export default function DocItemLayout({children}: Props): JSX.Element {
           <DocItemPaginator />
         </div>
         {/* ------- CUSTOM CODE -------- */}
-        <div className="spacer"></div>
+        <div className="spacer" aria-hidden></div>
         
         {demoUrl && (
           <div

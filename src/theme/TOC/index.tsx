@@ -1,6 +1,10 @@
 /**
  * Original source:
  * @link https://github.com/facebook/docusaurus/blob/main/packages/docusaurus-theme-classic/src/theme/TOC/index.tsx
+ *
+ * Reasons for overriding:
+ * - Add a `Edit this page` link to the bottom of the TOC.
+ * - Add a random internal ad to the bottom of the TOC.
  */
 
 import React, { useEffect, useState } from 'react';

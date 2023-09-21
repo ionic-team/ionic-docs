@@ -1,3 +1,10 @@
+/**
+ * This file wraps the original MDXComponents so we don't need to modify the original code.
+ *
+ * Reason for modifying:
+ * - Add a custom table component
+ */
+
 import MDXComponentsOriginal from '@theme-original/MDXComponents';
 // CUSTOM CODE
 import MDXTable from './Table';

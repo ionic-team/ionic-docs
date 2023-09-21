@@ -1,6 +1,9 @@
 /**
  * Original source:
  * @link https://github.com/facebook/docusaurus/blob/main/packages/docusaurus-theme-classic/src/theme/Icon/Language/index.tsx
+ *
+ * Reason for overriding:
+ * - Changed the language icon in the navbar to use the Ionicons language icon. This provides a bolded version of the language icon.
  */
 
 import React from 'react';

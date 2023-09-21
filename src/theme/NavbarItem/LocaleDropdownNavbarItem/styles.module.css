@@ -1,9 +1,3 @@
-.iconLanguage {
-  vertical-align: text-bottom;
-	/* CUSTOM CODE: Hide the language icon in favor of a bolder icon */
-	display: none;
-}
-
 .localeVisuallyHidden {
   position: absolute;
 	position: absolute !important;

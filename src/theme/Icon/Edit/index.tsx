@@ -1,6 +1,9 @@
 /**
  * Original source:
  * @link https://github.com/facebook/docusaurus/blob/main/packages/docusaurus-theme-classic/src/theme/Icon/Edit/index.tsx
+ *
+ * Reason for overriding:
+ * - Changed the icon to be the GitHub icon since the icon is used on the `Edit this page` link, which links to the GitHub repo.
  */
 
 import React from 'react';

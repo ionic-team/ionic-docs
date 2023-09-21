@@ -1,6 +1,9 @@
 /**
  * Original source:
  * @link https://github.com/facebook/docusaurus/blob/main/packages/docusaurus-theme-classic/src/theme/DocRoot/Layout/index.tsx
+ * 
+ * Reason for overriding:
+ * - Moved the navbar to the top of the page. Originally, the navbar would be placed along the top of the entire site, but we want it to be placed along the top of the docs page only.
  */
 
 import React, {useState} from 'react';
