@@ -53,12 +53,6 @@ test('button presents a modal when clicked', async () => {
 
 This example shows how to test a modal that is presented using the `useIonModal` hook. The modal is presented when the user clicks a button.
 
-:::warning
-
-You must mock `requestAnimationFrame` as described in the [setup section](./setup.md#mock-requestanimationframe).
-
-:::
-
 ### Example component
 
 ```tsx title="src/Example.tsx"
@@ -101,7 +95,7 @@ import { fireEvent, render, screen, waitFor } from '@testing-library/react';
 
 import Example from './Example';
 
-test('should present ModalContent when button is clicked', () => {
+test('should present ModalContent when button is clicked', async () => {
   render(
     <IonApp>
       <Example />
@@ -112,7 +106,7 @@ test('should present ModalContent when button is clicked', () => {
   // Wait for the modal to be presented
   await waitFor(() => {
     // Assert that the modal is present
-    expect(screen.getByText('Modal content')).toBeInTheDocument();
+    expect(screen.getByText('Modal Content')).toBeInTheDocument();
   });
 });
 ```
