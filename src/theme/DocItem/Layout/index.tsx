@@ -75,20 +75,16 @@ export default function DocItemLayout({children}: Props): JSX.Element {
           </article>
           <DocItemPaginator />
         </div>
-        {/* ------- CUSTOM CODE -------- */}
-        <div className="spacer" aria-hidden></div>
-        
-        {demoUrl && (
-          <div
-            className={clsx(
-              'doc-demo-wrapper'
-            )}
-          >
+      </div>
+      {/* ------- CUSTOM CODE -------- */}
+      {demoUrl && (
+        <div className='col col--4'>
+          <div className='doc-demo-wrapper'>
             <DocDemo url={demoUrl} source={demoSourceUrl} />
           </div>
-        )}
-        {/* ------- CUSTOM CODE END -------- */}
-      </div>
+        </div>
+      )}
+      {/* ------- CUSTOM CODE END -------- */}
       {docTOC.desktop && <div className="col col--3">{docTOC.desktop}</div>}
     </div>
   );
