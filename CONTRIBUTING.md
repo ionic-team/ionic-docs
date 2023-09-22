@@ -4,6 +4,9 @@ Thanks for your interest in contributing to Ionic's documentation! :tada: Check 
 
 - [Contributing Guide](#contributing-guide)
   - [Development Workflow](#development-workflow)
+    - [Previewing Changes](#previewing-changes)
+    - [Linting Documentation](#linting-documentation)
+    - [Spell Check](#spell-check)
   - [Using VS Code on Windows](#using-vs-code-on-windows)
   - [Project Structure](#project-structure)
     - [Directories](#directories)
@@ -12,13 +15,14 @@ Thanks for your interest in contributing to Ionic's documentation! :tada: Check 
   - [Translation](#translation)
   - [Reporting Issues](#reporting-issues)
   - [Pull Request Guidelines](#pull-request-guidelines)
-  <!-- - [Project Management](#project-management) -->
   - [Deploying](#deploying)
   - [License](#license)
 
 ---
 
 ## Development Workflow
+
+### Previewing Changes
 
 In order to run the documentation locally, install the dependencies and run the development server:
 
@@ -27,7 +31,59 @@ $ npm install --legacy-peer-deps
 $ npm start
 ```
 
-> **Note**: certain versions of npm (5-8) and Node.js (10-16) are required to run certain scripts.
+> [!NOTE] certain versions of npm (5-8) and Node.js (10-16) are required to run certain scripts.
+
+### Linting Documentation
+
+This repository uses [Prettier](https://prettier.io/), an opinionated code formatter, in order to keep consistent formatting throughout the documentation. Run the following command to automatically fix all formatting, and then push any changes:
+
+```
+npm run lint
+```
+
+### Spell Check
+
+This repository uses [cspell](https://cspell.org/), a spell checker for code, to automatically flag any spelling errors. Run the following command to see any spelling errors:
+
+```
+npm run spellcheck
+```
+
+> [!NOTE]
+> Any spelling errors will need to be fixed manually. There are various ways to ignore words or sections that were flagged erroneously. These are listed below.
+
+#### Ignoring words
+
+**To ignore:**
+
+- A **specific word**, add it to the following file: `cspell-wordlist.txt`
+  - For example, `Ionicons` is flagged as an unknown word. Since this is the name of our software, it has been added to this file to be ignored.
+- A **directory** or anything matching a **regular expression**, update the following file: `cspell.json`
+  - For example, we don't want to flag anything inside of code ticks (<code>`</code>) or code blocks (<code>```</code>), so there are regular expressions added to ignore anything inside of these.
+- An **entire line**, add the following comment above it:
+  ```markdown
+  <!-- cspell:disable-next-line -->
+  ```
+- **Multiple lines**, add comments above and below the lines to be ignored:
+  ```markdown
+  <!-- cspell:disable -->
+
+  <p>Everything inside of these comments will be ignored by the spell checkr. Proofread your own words carefully.</p>
+
+  <!-- cspell:enable -->
+  ```
+
+> [!IMPORTANT]
+> You need to have line breaks between the `cspell` comments and any HTML elements,
+> otherwise the build will error with `Module build failed`.
+
+#### Tips
+
+Before adding a word or section to be ignored, see if there is a way to make it pass the spell check. Technical terms that are part of an API may need to be wrapped in code formatting. For example, the word `keydown` is flagged as an unknown word by the spell checker, but this is a [Web API event](https://developer.mozilla.org/en-US/docs/Web/API/Element/keydown_event). We can wrap any mentions of `keydown` in two backticks (<code>\`keydown\`</code>) in order to avoid it being flagged by the spell checker.
+
+Comments disabling the next line or entire sections of documentation are useful for making the spell checker ignore people's names.
+
+In general, we should try to avoid ignoring words unless they are technical terms that are used throughout the documentation and wouldn't necessarily make sense formatted as code.
 
 ---
 
