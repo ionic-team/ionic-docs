@@ -47,7 +47,7 @@ If a visual is required to interact with the item, such as an icon button, then 
   doText="Align visuals on the same side in a list"
   doNotText="Don't render visuals with different alignments in the same list"
   doImage={<img alt="A list with several items. Each item has an icon and visible text describing the item. The icon in each item is rendered at the start of the line." src={useBaseUrl('img/item/visuals-do.jpg')} />}
-  doNotImage={<img alt="A list with several items. Each item has an icon and visible text describing the item. Some icons are rendered at the start of the line, and some icons are rendered at the end of the line" src={useBaseUrl('img/item/visuals-dont.jpg')} />}
+  doNotImage={<img alt="A list with several items. Each item has an icon and visible text describing the item. Some icons are rendered at the start of the line, and some icons are rendered at the end of the line" src={useBaseUrl('img/item/visuals-do-not.jpg')} />}
 />
 
 In the example below, we are creating two lists with supporting visuals. The first list uses icons, and the second list uses avatars. The visuals are decorative, so they all have `aria-hidden="true"`. Additionally, they are presented consistently in the `start` slot.
@@ -65,7 +65,7 @@ The text content type includes form control labels or other visible text. This t
   doText="Move long text outside of the list"
   doNotText="Don't try to fit long text in an item"
   doImage={<img alt="A list with an item that contains a checked checkbox indicating the user wants to receive emails. Text describing how often the user will receive emails as well as how to unsubscribe from emails is placed underneath the list." src={useBaseUrl('img/item/long-text-do.jpg')} />}
-  doNotImage={<img alt="A list with an item that contains a checked checkbox indicating the user wants to receive emails. Text describing how often the user will receive emails as well as how to unsubscribe from emails is placed as a single paragraph inline with the checkbox, making the text hard to read and increasing the height of the item." src={useBaseUrl('img/item/long-text-dont.jpg')} />}
+  doNotImage={<img alt="A list with an item that contains a checked checkbox indicating the user wants to receive emails. Text describing how often the user will receive emails as well as how to unsubscribe from emails is placed as a single paragraph inline with the checkbox, making the text hard to read and increasing the height of the item." src={useBaseUrl('img/item/long-text-do-not.jpg')} />}
 />
 
 In the example below, we are creating a list with different types of text. The "First Name" and "Last Name" labels serve to indicate what to type into the text inputs.
@@ -87,7 +87,7 @@ Metadata provides additional context for an item such as status text or counts. 
   doText="Add only the most important metadata"
   doNotText="Don't add too much metadata as it can overwhelm or confuse the user."
   doImage={<img alt="A list that contains several items, each representing a different to-do list. A count of how many tasks in each to-do list is placed at the end of each item." src={useBaseUrl('img/item/metadata-relevant-do.jpg')} />}
-  doNotImage={<img alt="A list that contains several items, each representing a different to-do list. Two counts are placed at the end of each item: One count that states the total number of tasks, and another count that states the total number of tasks that are due today." src={useBaseUrl('img/item/metadata-relevant-dont.jpg')} />}
+  doNotImage={<img alt="A list that contains several items, each representing a different to-do list. Two counts are placed at the end of each item: One count that states the total number of tasks, and another count that states the total number of tasks that are due today." src={useBaseUrl('img/item/metadata-relevant-do-not.jpg')} />}
 />
 
 <BestPracticeFigure 
@@ -117,7 +117,7 @@ Developers should avoid creating <a href="https://dequeuniversity.com/rules/axe/
   doText={<>Use an <a href={useBaseUrl('api/item-sliding')}>Item Sliding</a> to reveal multiple actions by swiping on the Item.</>}
   doNotText="Don't put more than 2 actions within an Item."
   doImage={<img alt="A list that contains several items, each representing a contact. Each item has text that states the contact's name as well as several actions including pinning the contact, sharing the contact, and deleting the contact. These actions are revealed by swiping on the item." src={useBaseUrl('img/item/actions-do.jpg')} />}
-  doNotImage={<img alt="A list that contains several items, each representing a contact. Each item has text that states the contact's name as well as several actions including pinning the contact, sharing the contact, and deleting the contact. The actions are placed directly on the item. Since there are so many actions, some of the text is cut off." src={useBaseUrl('img/item/actions-dont.jpg')} />}
+  doNotImage={<img alt="A list that contains several items, each representing a contact. Each item has text that states the contact's name as well as several actions including pinning the contact, sharing the contact, and deleting the contact. The actions are placed directly on the item. Since there are so many actions, some of the text is cut off." src={useBaseUrl('img/item/actions-do-not.jpg')} />}
 />
 
 In the example below, we are creating a list of contacts. Each item is a stubbed button intended to bring you to the full contact page for that item. There are additional actions associated with each item that users can reveal by swiping on the item.
@@ -135,7 +135,7 @@ Controls are form components such as checkboxes, inputs, radios, and more. Each 
   doText="Place inputs with metadata outside of the list."
   doNotText="Don't put metadata for inputs in the list."
   doImage={<img alt="There is an email input and a password input. Both have helper text associated with them. Since both are placed outside of a list it is clear which input each helper text is associated with." src={useBaseUrl('img/item/controls-metadata-list-do.jpg')} />}
-  doNotImage={<img alt="There is a list containing an email input and a password input. Both have helper texts associated with them. However, the divider between each item and between the helper text makes it hard to tell which input each helper text is associated with." src={useBaseUrl('img/item/controls-metadata-list-dont.jpg')} />}
+  doNotImage={<img alt="There is a list containing an email input and a password input. Both have helper texts associated with them. However, the divider between each item and between the helper text makes it hard to tell which input each helper text is associated with." src={useBaseUrl('img/item/controls-metadata-list-do-not.jpg')} />}
 />
 
 <BestPracticeFigure 
@@ -143,7 +143,7 @@ Controls are form components such as checkboxes, inputs, radios, and more. Each 
   doText="Place metadata for inputs at the end of a list."
   doNotText="Don't put metadata for inputs in the list."
   doImage={<img alt="There are two lists of inputs. The first list contains a password input. Below that list contains text that says 'Password must be at least 16 characters'. The second list contains an email input. This second list is separated so the password length requirement text is clearly associated with the password input above." src={useBaseUrl('img/item/controls-metadata-do.jpg')} />}
-  doNotImage={<img alt="There is one list of inputs. One of the inputs is a password input with text below the input that says 'Password must be at least 16 characters'. However, this text is placed directly above another input, so it's not immediately clear which input the text is associated with." src={useBaseUrl('img/item/controls-metadata-dont.jpg')} />}
+  doNotImage={<img alt="There is one list of inputs. One of the inputs is a password input with text below the input that says 'Password must be at least 16 characters'. However, this text is placed directly above another input, so it's not immediately clear which input the text is associated with." src={useBaseUrl('img/item/controls-metadata-do-not.jpg')} />}
 />
 
 <BestPracticeFigure 
@@ -151,7 +151,7 @@ Controls are form components such as checkboxes, inputs, radios, and more. Each 
   doText="Move additional controls to a submenu accessible from the item."
   doNotText="Don't use more than two controls within an item."
   doImage={<img alt="There is one list of inputs. One of the inputs is a password input with text below the input that says 'Password must be at least 16 characters'. However, this text is placed directly above another input, so it's not immediately clear which input the text is associated with." src={useBaseUrl('img/item/controls-count-do.jpg')} />}
-  doNotImage={<img alt="There are two lists of inputs. The first list contains a password input. Below that list contains text that says 'Password must be at least 16 characters'. The second list contains an email input. This second list is separated so the password length requirement text is clearly associated with the password input above." src={useBaseUrl('img/item/controls-count-dont.jpg')} />}
+  doNotImage={<img alt="There are two lists of inputs. The first list contains a password input. Below that list contains text that says 'Password must be at least 16 characters'. The second list contains an email input. This second list is separated so the password length requirement text is clearly associated with the password input above." src={useBaseUrl('img/item/controls-count-do-not.jpg')} />}
 />
 
 In the example below, we are creating a list of to-do tasks. Each item has a checkbox and an input. The checkbox lets the user mark a task as complete, and the input lets the user change the name of the task.
