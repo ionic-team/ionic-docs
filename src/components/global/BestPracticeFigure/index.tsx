@@ -10,9 +10,9 @@ import './best-practice-figure.css';
  <BestPracticeFigure
    text="..."
    doText="..."
-   dontText="..."
+   doNotText="..."
    doImage={<img alt="..." src={useBaseUrl(...)} />}
-   dontImage={<img alt="..." src={useBaseUrl(...)} />}
+   doNotImage={<img alt="..." src={useBaseUrl(...)} />}
  />
 
  All images must have alt text for screen readers.
@@ -39,14 +39,14 @@ import './best-practice-figure.css';
 
   @prop text - Text that describes the figure as a whole
   @prop doText - Text that describes a best practice
-  @prop dontText - Text that describes an anti-pattern
+  @prop doNotText - Text that describes an anti-pattern
   @prop cautionText - Text that describes something that could be an anti-pattern based on use case
   @prop doImage - Image associated with doText
-  @prop dontImage - Image associated with dontText
+  @prop doNotImage - Image associated with doNotText
   @prop cautionImage - Image associated with cautionText
  */
 
-export default function BestPracticeFigure({ text, doText, dontText, cautionText, doImage, dontImage, cautionImage }) {
+export default function BestPracticeFigure({ text, doText, doNotText, cautionText, doImage, doNotImage, cautionImage }) {
   return (
     <div className="best-practice__container">
       <p>{text}</p>
@@ -58,12 +58,12 @@ export default function BestPracticeFigure({ text, doText, dontText, cautionText
             <p>{doText}</p>
           </figcaption>
         </figure>
-        {dontText && dontImage && (
+        {doNotText && doNotImage && (
           <figure className="best-practice__dont">
-            <div className="best-practice__image-wrapper">{dontImage}</div>
+            <div className="best-practice__image-wrapper">{doNotImage}</div>
             <figcaption>
               <div className="best-practice__dont-text">Don't</div>
-              <p>{dontText}</p>
+              <p>{doNotText}</p>
             </figcaption>
           </figure>
         )}
