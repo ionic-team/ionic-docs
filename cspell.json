@@ -9,8 +9,8 @@
   ],
   "ignoreRegExpList": [
     "/(```+)[\\s\\S]+?\\1/g", // Ignore all words inside of code blocks
-    "/`[a-zA-Z-_.@:\/]+`/g", // Ignore all words inside of code ticks, including file names
-    "/:[a-zA-Z0-9-_\\+]+:/g" // Ignore all emojis e.g. :tada:
+    "`([^`]*)`", // Ignore everything inside of code ticks
+    "/:[a-zA-Z0-9-_\\+]+:/g" // Ignore all markdown emojis e.g. :tada:
   ],
   "ignorePaths": [
     "docs/cli",

@@ -27,7 +27,6 @@ textareas
 
 appstore
 authed
-autocrlf
 autogrow
 automations
 autoplay
@@ -44,6 +43,7 @@ jank
 janky
 jarsigner
 jsdelivr
+keyframes
 keytool
 lifecycles
 localstorage
@@ -72,31 +72,9 @@ webapps
 webviews
 xlarge
 xsmall
-zipalign
 
 allowtransparency
 mozallowfullscreen
 msallowfullscreen
 oallowfullscreen
 webkitallowfullscreen
-
-doubletap
-keydown
-keyframes
-keypress
-keyup
-reachbeginning
-reachend
-slidechangetransitionend
-slidechangetransitionstart
-slidenexttransitionend
-slidenexttransitionstart
-slideprevtransitionend
-slideprevtransitionstart
-slidermove
-touchend
-touchstart
-transitionend
-transitionstart
-
-rgba
