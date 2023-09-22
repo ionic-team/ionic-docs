@@ -159,7 +159,8 @@ If the issue you're reporting is a bug, please be sure it is an issue with the I
 - OS and browser versions
 - If possible, a demo repo or CodePen/CodeSandbox
 
-> **Note**: Some [reference content](#reference-content) is pulled from other Ionic repos. In that case, please submit your issue on the docs repo with a link to the repo where the content lives.
+> [!NOTE]
+> Some [reference content](#reference-content) is pulled from other Ionic repos. In that case, please submit your issue on the docs repo with a link to the repo where the content lives.
 
 ---
 
