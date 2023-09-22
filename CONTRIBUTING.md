@@ -31,7 +31,8 @@ $ npm install --legacy-peer-deps
 $ npm start
 ```
 
-> [!NOTE] certain versions of npm (5-8) and Node.js (10-16) are required to run certain scripts.
+> [!NOTE]
+> Certain versions of npm (5-8) and Node.js (10-16) are required to run certain scripts.
 
 ### Linting Documentation
 
