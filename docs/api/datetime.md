@@ -62,7 +62,7 @@ parse various datetime strings differently, especially per locale.
 Fortunately, Ionic Framework's datetime input has been designed so developers can avoid
 the common pitfalls, allowing developers to easily manipulate datetime values and give the user a simple datetime picker for a great user experience.
 
-### ISO 8601 Datetime Format: YYYY-MM-DDTHH:mmZ
+### ISO 8601 Datetime Format: `YYYY-MM-DDTHH:mmZ`
 
 Ionic Framework uses the [ISO 8601 datetime format](https://www.w3.org/TR/NOTE-datetime)
 for its value. The value is simply a string, rather than using JavaScript's
@@ -71,15 +71,15 @@ and parse within JSON objects and databases.
 
 Below are some examples of ISO 8601 formats that can be used with `ion-datetime`:
 
-| Description          | Format                 | Datetime Value Example        |
-| -------------------- | ---------------------- | ----------------------------  |
-| Year                 | YYYY                   | 1994                          |
-| Year and Month       | YYYY-MM                | 1994-12                       |
-| Complete Date        | YYYY-MM-DD             | 1994-12-15                    |
-| Date and Time        | YYYY-MM-DDTHH:mm       | 1994-12-15T13:47              |
-| UTC Timezone         | YYYY-MM-DDTHH:mm:ssZ   | 1994-12-15T13:47:20Z          |
-| Timezone Offset      | YYYY-MM-DDTHH:mm:ssTZD | 1994-12-15T13:47:20+05:00     |
-| Hour and Minute      | HH:mm                  | 13:47                         |
+| Description          | Format                   | Datetime Value Example          |
+| -------------------- | ------------------------ | ------------------------------  |
+| Year                 | `YYYY`                   | `1994`                          |
+| Year and Month       | `YYYY-MM`                | `1994-12`                       |
+| Complete Date        | `YYYY-MM-DD`             | `1994-12-15`                    |
+| Date and Time        | `YYYY-MM-DDTHH:mm`       | `1994-12-15T13:47`              |
+| UTC Timezone         | `YYYY-MM-DDTHH:mm:ssZ`   | `1994-12-15T13:47:20Z`          |
+| Timezone Offset      | `YYYY-MM-DDTHH:mm:ssTZD` | `1994-12-15T13:47:20+05:00`     |
+| Hour and Minute      | `HH:mm`                  | `13:47`                         |
 
 Note that the year is always four-digits, milliseconds (if it's added) is always
 three-digits, and all others are always two-digits. So the number representing

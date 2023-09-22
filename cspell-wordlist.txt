@@ -100,5 +100,4 @@ touchstart
 transitionend
 transitionstart
 
-DDTHH
 rgba
