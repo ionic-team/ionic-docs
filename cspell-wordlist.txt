@@ -1,6 +1,17 @@
 Appflow
+Codepen
+Firestore
+Genymotion
+Hygen
 Ionicon
 Ionicons
+Logcat
+Maskito
+Pluralsight
+Swiper
+Udemy
+Vetur
+Wistia
 
 actionsheet
 fabs
@@ -13,18 +24,6 @@ searchbars
 sidemenu
 textarea
 textareas
-
-Codepen
-Firestore
-Genymotion
-Hygen
-Logcat
-Maskito
-Pluralsight
-Swiper
-Udemy
-Vetur
-Wistia
 
 appstore
 authed
