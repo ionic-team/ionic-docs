@@ -85,6 +85,8 @@ Material Design offers filled styles for an input. The `fill` property on the in
 
 Since the `fill` styles visually defines the input container, inputs that use `fill` should not be used in `ion-item`.
 
+Filled inputs can be used on iOS by setting Input's `mode` to `md`.
+
 import Fill from '@site/static/usage/v7/input/fill/index.md';
 
 <Fill />
