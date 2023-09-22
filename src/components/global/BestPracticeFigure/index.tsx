@@ -46,7 +46,15 @@ import './best-practice-figure.css';
   @prop cautionImage - Image associated with cautionText
  */
 
-export default function BestPracticeFigure({ text, doText, doNotText, cautionText, doImage, doNotImage, cautionImage }) {
+export default function BestPracticeFigure({
+  text,
+  doText,
+  doNotText,
+  cautionText,
+  doImage,
+  doNotImage,
+  cautionImage,
+}) {
   return (
     <div className="best-practice__container">
       <p>{text}</p>
