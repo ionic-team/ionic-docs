@@ -25,9 +25,9 @@ jobs:
       run: npm ci --legacy-peer-deps
     - name: Lint
       run: npm run lint
-    - name: Spellcheck
+    - name: Spell Check
       run: npm run spellcheck
-    # Lint and spellcheck changes should be pushed
+    # Lint and spell check changes should be pushed
     # to the branch before the branch is merge eligible.
     - name: Check Diff
       run: git diff --exit-code
