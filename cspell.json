@@ -18,5 +18,10 @@
     "versioned_docs/**/api",
     "versioned_docs/**/cli",
     "versioned_docs/**/native"
+  ],
+  // List of words to be always considered incorrect
+  // This is useful for offensive words and common spelling errors.
+  "flagWords": [
+    "hte" // "hte" should be "the"
   ]
 }
