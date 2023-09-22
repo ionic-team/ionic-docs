@@ -47,6 +47,7 @@ flexbox
 frontmatter
 fullscreen
 geolocation
+interactives
 isopen
 jank
 janky
