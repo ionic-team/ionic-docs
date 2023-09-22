@@ -46,8 +46,6 @@ import javascript from './javascript.md';
 />;
 ```
 
-<!-- cspell:disable-next-line -->
-
 The file location is respective to the StackBlitz demo project. If you are unsure of the exact path, refer to the `stackblitz.utils.ts` method for each respective target. The path specified in `sdk.openProject` will coincide with the value used in the `files` configuration.
 
 ## Creating a New Playground

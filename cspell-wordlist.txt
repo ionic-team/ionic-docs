@@ -9,13 +9,14 @@ datetimes
 datetimepicker
 infinitescroll
 searchbar
+searchbars
 sidemenu
 textarea
 textareas
 
 Codepen
-Genymotion
 Firestore
+Genymotion
 Hygen
 Logcat
 Maskito
@@ -25,15 +26,7 @@ Udemy
 Vetur
 Wistia
 
-browserslistrc
-jsdelivr
-ngsw
-xcodeproj
-xcworkspace
-
-CMDOPTS
-DDTHH
-
+appstore
 authed
 autocrlf
 autogrow
@@ -41,7 +34,6 @@ automations
 autoplay
 comparewith
 composables
-devkit
 engageable
 flexbox
 frontmatter
@@ -52,22 +44,23 @@ isopen
 jank
 janky
 jarsigner
+jsdelivr
 keytool
 lifecycles
 localstorage
+mobileweb
+phablet
+playstore
 preconfigured
 preflighted
 proxying
 quickstart
 retargeted
-rgba
 runtimes
 scroller
-searchbars
 subcomponent
 subcomponents
 swipeable
-tada
 templating
 transpiling
 treeshaking
@@ -76,15 +69,11 @@ typeahead
 unminified
 unsanitized
 viewports
+webapps
 webviews
 xlarge
 xsmall
 zipalign
-appstore
-playstore
-mobileweb
-phablet
-webapps
 
 allowtransparency
 mozallowfullscreen
@@ -110,3 +99,6 @@ touchend
 touchstart
 transitionend
 transitionstart
+
+DDTHH
+rgba

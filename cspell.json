@@ -8,14 +8,15 @@
     }
   ],
   "ignoreRegExpList": [
-    "/(```+)[\\s\\S]+?\\1/g",
-    "/`[a-zA-Z-_]+`/g"
+    "/(```+)[\\s\\S]+?\\1/g", // Ignore all words inside of code blocks
+    "/`[a-zA-Z-_.@\/]+`/g", // Ignore all words inside of code ticks, including file names
+    "/:[a-zA-Z0-9-_\\+]+:/g" // Ignore all emojis e.g. :tada:
   ],
   "ignorePaths": [
     "docs/cli",
     "docs/native",
     "versioned_docs/**/api",
     "versioned_docs/**/cli",
-    "versioned_docs/**/native",
+    "versioned_docs/**/native"
   ]
 }
