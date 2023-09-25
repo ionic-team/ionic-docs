@@ -140,7 +140,6 @@ import { AppRoutingModule } from './app-routing.module';
   bootstrap: [AppComponent],
 })
 export class AppModule {}
-
 ```
 
 **Components**
@@ -155,12 +154,8 @@ import { HomePage } from './home.page';
 import { HomePageRoutingModule } from './home-routing.module';
 
 @NgModule({
-  imports: [
-    IonButton,
-    IonContent,
-    HomePageRoutingModule
-  ],
-  declarations: [HomePage]
+  imports: [IonButton, IonContent, HomePageRoutingModule],
+  declarations: [HomePage],
 })
 export class HomePageModule {}
 ```
