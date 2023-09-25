@@ -8,9 +8,9 @@
     }
   ],
   "ignoreRegExpList": [
-    "/(```+)[\\s\\S]+?\\1/g", // Ignore all words inside of code blocks
-    "`([^`]*)`", // Ignore everything inside of code ticks
-    "/:[a-zA-Z0-9-_\\+]+:/g" // Ignore all markdown emojis e.g. :tada:
+    "/(```+)[\\s\\S]+?\\1/g",
+    "`([^`]*)`",
+    "/:[a-zA-Z0-9-_\\+]+:/g"
   ],
   "ignorePaths": [
     "docs/cli",
@@ -19,9 +19,7 @@
     "versioned_docs/**/cli",
     "versioned_docs/**/native"
   ],
-  // List of words to be always considered incorrect
-  // This is useful for offensive words and common spelling errors.
   "flagWords": [
-    "hte" // "hte" should be "the"
+    "hte"
   ]
 }
