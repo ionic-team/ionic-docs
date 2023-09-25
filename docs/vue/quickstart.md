@@ -652,7 +652,7 @@ For more information, see the <a href="https://v3.vuejs.org/guide/component-regi
 
 ### Prefetching Application JavaScript
 
-By default, the Vue CLI will automatically generate prefetch hints for the JavaScript in your application. Prefetching utiltizes the browser idle time to download documents that the user might visit in the near future. When the user visits a page that requires the prefetched document, it can be served quickly from the browser's cache.
+By default, the Vue CLI will automatically generate prefetch hints for the JavaScript in your application. Prefetching utilizes the browser idle time to download documents that the user might visit in the near future. When the user visits a page that requires the prefetched document, it can be served quickly from the browser's cache.
 
 Prefetching consumes bandwidth, so if you have a large app, you may want to disable it. You can do this by modifying or creating your `vue.config.js` file:
 

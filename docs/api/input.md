@@ -30,7 +30,7 @@ import Basic from '@site/static/usage/v7/input/basic/index.md';
 
 ## Types
 
-The input component is meant for text type inputs only, such as `"text"`, `"password"`, `"email"`, `"number"`, `"search"`, `"tel"`, and `"url"`. It supports all standard text input events including keyup, keydown, keypress, and more. The default `type` is `"text"`.
+The input component is meant for text type inputs only, such as `"text"`, `"password"`, `"email"`, `"number"`, `"search"`, `"tel"`, and `"url"`. It supports all standard text input events including `keyup`, `keydown`, `keypress`, and more. The default `type` is `"text"`.
 
 import Types from '@site/static/usage/v7/input/types/index.md';
 
@@ -120,7 +120,7 @@ import CounterAlignment from '@site/static/usage/v7/input/counter-alignment/inde
 
 ## Filtering User Input
 
-Developers can use the `ionInput` event to update the input value in response to user input such as a keypress. This is useful for filtering out invalid or unwanted characters.
+Developers can use the `ionInput` event to update the input value in response to user input such as a `keypress`. This is useful for filtering out invalid or unwanted characters.
 
 When storing the value in a state variable, we recommend updating both the state variable and the `ion-input` component value. This ensures that the state variable and the `ion-input` component value remain in sync.
 

@@ -1,17 +1,17 @@
 import sdk from '@stackblitz/sdk';
 
-// The default title to use for Stackblitz examples (when not overwritten)
+// The default title to use for StackBlitz examples (when not overwritten)
 const DEFAULT_EDITOR_TITLE = 'Ionic Docs Example';
-// The default description to use for Stackblitz examples (when not overwritten)
+// The default description to use for StackBlitz examples (when not overwritten)
 const DEFAULT_EDITOR_DESCRIPTION = '';
 
 export interface EditorOptions {
   /**
-   * The title of the Stackblitz example.
+   * The title of the StackBlitz example.
    */
   title?: string;
   /**
-   * The description of the Stackblitz example.
+   * The description of the StackBlitz example.
    */
   description?: string;
 
@@ -20,7 +20,7 @@ export interface EditorOptions {
   };
 
   /**
-   * List of dependencies to add to the Stackblitz example.
+   * List of dependencies to add to the StackBlitz example.
    * The key is the name of the dependency and the value is the version.
    */
   dependencies?: {
@@ -29,12 +29,12 @@ export interface EditorOptions {
 
   /**
    * `true` if `ion-app` and `ion-content` should automatically be injected into the
-   * Stackblitz example.
+   * StackBlitz example.
    */
   includeIonContent: boolean;
 
   /**
-   * The mode of the Stackblitz example.
+   * The mode of the StackBlitz example.
    */
   mode?: string;
 
@@ -272,7 +272,7 @@ const openVueEditor = async (code: string, options?: EditorOptions) => {
   );
 
   /**
-   * We have to use Stackblitz web containers here (node template), due
+   * We have to use StackBlitz web containers here (node template), due
    * to multiple issues with Vite, Vue/Vue Router and Vue 3's script setup.
    *
    * https://github.com/stackblitz/core/issues/1308
