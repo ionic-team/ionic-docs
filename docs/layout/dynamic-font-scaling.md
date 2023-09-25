@@ -61,7 +61,7 @@ We recommend using the default fonts in Ionic as they are designed to look good 
 ```css
 html {
   --ion-dynamic-font: var(--ion-default-dynamic-font);
-  --ion-font-family: 'Comic Sans';
+  --ion-font-family: 'Comic Sans MS';
 }
 ```
 
