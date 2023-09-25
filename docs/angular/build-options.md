@@ -32,6 +32,10 @@ See the [Standalone Migration Guide](#migrating-from-modules-to-standalone) for 
 All Ionic imports should be imported from the `@ionic/angular/standalone` submodule. This includes imports such as components, directives, providers, and types. Importing from `@ionic/angular` may pull in lazy loaded Ionic code which can interfere with treeshaking.
 :::
 
+:::info
+This section assumes your application has already been converted to use Angular's standalone architecture. For information on migrating, see [Angular's migration guide](https://angular.io/guide/standalone-migration).
+:::
+
 **Bootstrapping and Configuration**
 
 Ionic Angular needs to be configured when the Angular application calls `bootstrapApplication` using the `provideIonicAngular` function. Developers can pass any [IonicConfig](../developing/config#ionicconfig) values as an object in this function. Note that `provideIonicAngular` needs to be called even if no custom config is passed.
@@ -153,6 +157,10 @@ export class AppModule {}
 The Standalone option is newer than the Modules option, so developers may wish to switch during the development of their application. This guide details the steps needed to migrate.
 
 Migrating to Ionic standalone components must be done all at the same time and cannot be done gradually. The Modules and Standalone approaches use two different build systems of Ionic that cannot be used at the same time.
+
+:::info
+Migrating your Angular application to use the standalone architecture is optional when using Ionic's standalone components, but the two processes are separate. For information on migrating your application as a whole, see [Angular's migration guide](https://angular.io/guide/standalone-migration).
+:::
 
 ### Standalone-based Applications
 
