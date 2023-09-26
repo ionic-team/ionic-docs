@@ -2,6 +2,9 @@
 title: Migrating from ion-slides to Swiper.js
 ---
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 <head>
   <title>Set Up Swiper.js for Angular Slides [Example] | Ionic</title>
   <meta
@@ -137,7 +140,17 @@ With `ion-slides`, Ionic automatically customized dozens of Swiper properties. T
 
 It is recommended to review the [properties](https://github.com/ionic-team/ionic-framework/blob/main/core/src/components/slides/IonicSlides.ts) set by `IonicSlides` and determine which ones you would like to customize.
 
-We can install the `IonicSlides` module by importing it from `@ionic/angular` and passing it to the `modules` property of `swiper-container` as an array:
+We can install the `IonicSlides` module by importing and passing it to the `modules` property of `swiper-container` as an array:
+
+<Tabs
+  groupId="framework"
+  defaultValue="angular"
+  values={[
+    { value: 'angular', label: 'Angular' },
+    { value: 'angular-standalone', label: 'Angular (Standalone)' },
+  ]}
+>
+<TabItem value="angular">
 
 ```typescript
 // home.page.ts
@@ -151,6 +164,25 @@ export class HomePage {
   swiperModules = [IonicSlides];
 }
 ```
+
+</TabItem>
+<TabItem value="angular-standalone">
+
+```typescript
+// home.page.ts
+
+import { IonicSlides } from '@ionic/angular/standalone';
+
+@Component({
+  ...
+})
+export class HomePage {
+  swiperModules = [IonicSlides];
+}
+```
+
+</TabItem>
+</Tabs>
 
 ```html
 <!-- home.page.html -->

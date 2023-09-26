@@ -6,6 +6,7 @@ import TabItem from '@theme/TabItem';
   defaultValue="angular"
   values={[
     { value: 'angular', label: 'Angular' },
+    { value: 'angular-standalone', label: 'Angular (Standalone)' },
     { value: 'react', label: 'React' },
     { value: 'vue', label: 'Vue' },
   ]}
@@ -33,6 +34,32 @@ const getConfig = () => {
   ],
   ...
 });
+```
+
+</TabItem>
+<TabItem value="angular-standalone">
+
+```ts title="main.ts"
+import { isPlatform, provideIonicAngular } from '@ionic/angular/standalone';
+
+const getConfig = () => {
+  if (isPlatform('hybrid')) {
+    return {
+      tabButtonLayout: 'label-hide'
+    }
+  }
+
+  return {
+    tabButtonLayout: 'icon-top'
+  };
+}
+
+bootstrapApplication(AppComponent, {
+  providers: [
+    ...,
+    provideIonicAngular(getConfig())
+  ]
+})
 ```
 
 </TabItem>
