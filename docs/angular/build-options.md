@@ -26,7 +26,7 @@ See the [Standalone Migration Guide](#migrating-from-modules-to-standalone) for 
 
 1. Ionic components need to be imported into every Angular component they are used in which can be time consuming to set up.
 
-### Usage
+### Usage with Standalone-based Applications
 
 :::caution
 All Ionic imports should be imported from the `@ionic/angular/standalone` submodule. This includes imports such as components, directives, providers, and types. Importing from `@ionic/angular` may pull in lazy loaded Ionic code which can interfere with treeshaking.
@@ -99,6 +99,84 @@ import { logoIonic } from 'ionicons/icons';
   styleUrls: ['home.page.scss'],
   standalone: true,
   imports: [IonIcon],
+})
+export class HomePage {
+  constructor() {
+    /**
+     * On Ionicons 7.2+ this icon
+     * gets mapped to a "logo-ionic" key.
+     * Alternatively, developers can do:
+     * addIcons({ 'logo-ionic': logoIonic });
+     */
+    addIcons({ logoIonic });
+  }
+}
+```
+
+### Usage with NgModule-based Applications
+
+:::caution
+All Ionic imports should be imported from the `@ionic/angular/standalone` submodule. This includes imports such as components, directives, providers, and types. Importing from `@ionic/angular` may pull in lazy loaded Ionic code which can interfere with treeshaking.
+:::
+
+**Bootstrapping and Configuration**
+
+Ionic Angular needs to be configured in the `providers` array of `app.module.ts` using the `provideIonicAngular` function. Developers can pass any [IonicConfig](../developing/config#ionicconfig) values as an object in this function. Note that `provideIonicAngular` needs to be called even if no custom config is passed.
+
+```typescript
+import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { RouteReuseStrategy } from '@angular/router';
+
+import { IonicRouteStrategy, provideIonicAngular } from '@ionic/angular/standalone';
+
+import { AppComponent } from './app.component';
+import { AppRoutingModule } from './app-routing.module';
+
+@NgModule({
+  declarations: [AppComponent],
+  imports: [BrowserModule, AppRoutingModule],
+  providers: [provideIonicAngular(), { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
+  bootstrap: [AppComponent],
+})
+export class AppModule {}
+```
+
+**Components**
+
+In the example below, we are importing `IonContent` and `IonButton` from `@ionic/angular/standalone` and passing them to `imports` array in the Angular component's NgModule for use in the component template. We would get a compiler error if these components were not imported and provided to the `imports` array.
+
+```typescript
+import { NgModule } from '@angular/core';
+import { IonButton, IonContent } from '@ionic/angular/standalone';
+import { HomePage } from './home.page';
+
+import { HomePageRoutingModule } from './home-routing.module';
+
+@NgModule({
+  imports: [IonButton, IonContent, HomePageRoutingModule],
+  declarations: [HomePage],
+})
+export class HomePageModule {}
+```
+
+**Icons**
+
+The icon SVG data needs to be defined in the Angular component so it can be loaded correctly. Developers can use the `addIcons` function from `ionicons` to map the SVG data to a string name. Developers can then reference the icon by its string name using the `name` property on `IonIcon`. The `IonIcon` component should be added in `app.module.ts` just like the other Ionic components.
+
+We recommend calling `addIcons` in the Angular component `constructor` so the data is only added if the Angular component is being used.
+
+For developers using Ionicons 7.2 or newer, passing only the SVG data will cause the string name to be automatically generated.
+
+```typescript
+import { Component } from '@angular/core';
+import { addIcons } from 'ionicons';
+import { logoIonic } from 'ionicons/icons';
+
+@Component({
+  selector: 'app-home',
+  templateUrl: 'home.page.html',
+  styleUrls: ['home.page.scss'],
 })
 export class HomePage {
   constructor() {
