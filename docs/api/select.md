@@ -66,9 +66,25 @@ import SingleSelectionExample from '@site/static/usage/v7/select/basic/single-se
 
 <SingleSelectionExample />
 
+## Multiple Selection
+
+By adding the `multiple` attribute to select, users are able to select multiple options. When multiple options can be selected, the alert or popover overlay presents users with a checkbox styled list of options. The select component's value receives an array of all of the selected option values.
+
+Note: the `action-sheet` interface will not work with multiple selection.
+
+import MultipleSelectionExample from '@site/static/usage/v7/select/basic/multiple-selection/index.md';
+
+<MultipleSelectionExample />
+
 ## Interfaces
 
 By default, select uses [ion-alert](alert.md) to open up the overlay of options in an alert. The interface can be changed to use [ion-action-sheet](action-sheet.md) or [ion-popover](popover.md) by passing `action-sheet` or `popover`, respectively, to the `interface` property. Read on to the other sections for the limitations of the different interfaces.
+
+### Alert
+
+import AlertExample from '@site/static/usage/v7/select/basic/single-selection/index.md';
+
+<AlertExample />
 
 ### Action Sheet
 
@@ -81,16 +97,6 @@ import ActionSheetExample from '@site/static/usage/v7/select/interfaces/action-s
 import PopoverExample from '@site/static/usage/v7/select/interfaces/popover/index.md';
 
 <PopoverExample />
-
-## Multiple Selection
-
-By adding the `multiple` attribute to select, users are able to select multiple options. When multiple options can be selected, the alert or popover overlay presents users with a checkbox styled list of options. The select component's value receives an array of all of the selected option values.
-
-Note: the `action-sheet` interface will not work with multiple selection.
-
-import MultipleSelectionExample from '@site/static/usage/v7/select/basic/multiple-selection/index.md';
-
-<MultipleSelectionExample />
 
 ## Responding to Interaction
 
