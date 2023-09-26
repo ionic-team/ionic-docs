@@ -62,6 +62,8 @@ import NoVisibleLabel from '@site/static/usage/v7/select/no-visible-label/index.
 
 By default, the select allows the user to select only one option. The alert interface presents users with a radio button styled list of options. The select component's value receives the value of the selected option's value.
 
+Keyboard interactions for single selection are described in the [Keyboard Interactions](#single-selection-1) section below.
+
 import SingleSelectionExample from '@site/static/usage/v7/select/basic/single-selection/index.md';
 
 <SingleSelectionExample />
@@ -71,6 +73,8 @@ import SingleSelectionExample from '@site/static/usage/v7/select/basic/single-se
 By adding the `multiple` attribute to select, users are able to select multiple options. When multiple options can be selected, the alert or popover overlay presents users with a checkbox styled list of options. The select component's value receives an array of all of the selected option values.
 
 Note: the `action-sheet` interface will not work with multiple selection.
+
+Keyboard interactions for multiple selection are described in the [Keyboard Interactions](#multiple-selection-1) section below.
 
 import MultipleSelectionExample from '@site/static/usage/v7/select/basic/multiple-selection/index.md';
 
@@ -82,8 +86,6 @@ By default, select uses [ion-alert](alert.md) to open up the overlay of options 
 
 ### Alert
 
-Keyboard interactions for the `alert` interface are described in the [Keyboard Interactions](#interface-alert) section below.
-
 import AlertExample from '@site/static/usage/v7/select/basic/single-selection/index.md';
 
 <AlertExample />
@@ -91,15 +93,11 @@ import AlertExample from '@site/static/usage/v7/select/basic/single-selection/in
 
 ### Action Sheet
 
-Keyboard interactions for the `action-sheet` interface are described in the [Keyboard Interactions](#interface-action-sheet) section below.
-
 import ActionSheetExample from '@site/static/usage/v7/select/interfaces/action-sheet/index.md';
 
 <ActionSheetExample />
 
 ### Popover
-
-Keyboard interactions for the `popover` interface are described in the [Keyboard Interactions](#interface-popover) section below.
 
 import PopoverExample from '@site/static/usage/v7/select/interfaces/popover/index.md';
 
@@ -268,58 +266,51 @@ Ionic uses heuristics to detect if an app is using the modern select syntax. In 
 
 ### Keyboard Interactions
 
-Ionic's keyboard interactions follow the implementation patterns of the web `<select>` instead of the native iOS select for a consistent experience across all platforms. The following sections describe the keyboard interactions for the different interfaces.
+Ionic's keyboard interactions follow the implementation patterns of the web `<select>` instead of the native iOS select for a consistent experience across all platforms.
 
-These keyboard interactions apply to the `ion-select` when the following conditions are met:
+These keyboard interactions apply to all `ion-select` when the following conditions are met:
 - The select is closed.
 - The select is focused.
 - The select is not disabled.
 
 |Key|Description|
 |----|----|
-|<kbd>Space</kbd>|Opens the overlay and focuses on the first selected option. If there is no selected option, then it focuses on the first option.|
 |<kbd>Enter</kbd>|Opens the overlay and focuses on the first selected option. If there is no selected option, then it focuses on the first option.|
+|<kbd>Space</kbd>|Opens the overlay and focuses on the first selected option. If there is no selected option, then it focuses on the first option.|
 
-#### Interface: Alert
 
-These keyboard interactions apply to the `ion-alert` dialog when the overlay is presented and focused.
+#### Single Selection
+
+Single selection keyboard interaction follows the [ARIA implementation patterns of a radio](https://www.w3.org/WAI/ARIA/apg/patterns/radio/).
+
+
+These keyboard interactions apply to `ion-action-sheet`, `ion-alert`, and `ion-popover` dialogs when the overlay is presented and focused.
 
 |Key|Description|
 |----|----|
-|<kbd>Space</kbd>|[**Single selection**](#single-selection): If the currently focused option is not selected, then it will become selected. <br /> <br /> [**Multiple selection**](#multiple-selection): Selects or deselects the currently focused option. This does not deselect the other selected options. |
-|<kbd>ArrowUp</kbd>|[**Single selection**](#single-selection): Focuses and selects the previous option in the list. If there is no previous option, selection will cycle to the last option.|
-|<kbd>ArrowLeft</kbd>|[**Single selection**](#single-selection): Focuses and selects the previous option in the list. If there is no previous option, selection will cycle to the last option.|
-|<kbd>ArrowDown</kbd>|[**Single selection**](#single-selection): Focuses and selects the next option in the list. If there is no next option, selection will cycle to the first option.|
-|<kbd>ArrowRight</kbd>|[**Single selection**](#single-selection): Focuses and selects the next option in the list. If there is no next option, selection will cycle to the first option.|
-|<kbd>Tab</kbd>|[**Single selection**](#single-selection): Moves focus to the next focusable element (cancel button, ok button, or either the selection or the first option) on the overlay. If the next focusable element is an option, then it will focus on the selected option, otherwise it will focus the first option.<br /><br />[**Multiple selection**](#multiple-selection): Move focus to the next focusable element (cancel button, ok button, or any of the options) on the overlay. If the next focusable element is the options list, then it should iterate through each option.|
-|<kbd>Enter</kbd>|[**Single selection**](#single-selection): With the ok button focused or an option selected, will save the user's selection, dismiss the overlay and move focus back to the select.<br /><br/>[**Multiple selection**](#multiple-selection): With the ok button focused, will save the user's selection, dismiss the overlay and move focus back to the select.|
-|<kbd>Escape</kbd>|Closes the overlay without changing the submitted option(s). Moves the focus back to the select.|
-
-#### Interface: Action Sheet
-
-These keyboard interactions apply to the [`ion-action-sheet` dialog](#action-sheet) when the overlay is presented and focused.
-
-|Key|Description|
-|---|----|
-|<kbd>Escape</kbd>|Closes the overlay without changing the submitted option. Moves the focus back to the select.|
-|<kbd>Tab</kbd>|Moves focus to the next focusable element (cancel button or options) on the overlay. If the next focusable element is the options list, then it should iterate through each option.|
-|<kbd>Enter</kbd>|Submits the currently selected option, closes the overlay, and moves focus back to the select.|
-|<kbd>Space</kbd>|Submits the currently focused option, closes the overlay, and moves focus back to the select.|
-
-#### Interface: Popover
-
-These keyboard interactions apply to the [`ion-popover` dialog](#popover) when the overlay is presented and focused.
-
-|Key|Description|
-|---|----|
-|<kbd>Escape</kbd>|Closes the overlay without changing the selected option.|
-|<kbd>ArrowUp</kbd>|Focuses and selects the previous option in the list. If there is no previous option, selection will cycle to the last option.|
-|<kbd>ArrowLeft</kbd>|Focuses and selects the previous option in the list. If there is no previous option, selection will cycle to the last option.|
 |<kbd>ArrowDown</kbd>|Focuses and selects the next option in the list. If there is no next option, selection will cycle to the first option.|
+|<kbd>ArrowLeft</kbd>|Focuses and selects the previous option in the list. If there is no previous option, selection will cycle to the last option.|
 |<kbd>ArrowRight</kbd>|Focuses and selects the next option in the list. If there is no next option, selection will cycle to the first option.|
-|<kbd>Space</kbd>|[**Single selection**](#single-selection): Submits the currently selected option and closes the overlay.<br /><br/>[**Multiple selection**](#multiple-selection): Selects or deselects the currently focused option. This does not deselect the other selected options. The selected option is automatically submitted.|
-|<kbd>Tab</kbd>|[**Single selection**](#single-selection): Focuses on the select and keeps the overlay open. It does not tab through the options.<br /><br />[**Multiple selection**](#multiple-selection): Moves focus to the next focusable element (the options or the select). The order will be option and then select. If the next focusable element is the options list, then it should iterate through each option.|
+|<kbd>ArrowUp</kbd>|Focuses and selects the previous option in the list. If there is no previous option, selection will cycle to the last option.|
+|<kbd>Enter</kbd>|With the ok button focused or an option selected, will save the user's selection, dismiss the overlay and move focus back to the select.|
+|<kbd>Escape</kbd>|Closes the overlay without changing the submitted option. Moves the focus back to the select.|
+|<kbd>Space</kbd>|If the focused radio button is not checked, unchecks the currently checked radio button and checks the focused radio button. Otherwise, does nothing.|
+|<kbd>Tab</kbd>|Moves focus to the next focusable element (cancel button, ok button, or either the selection or the first option) on the overlay. If the next focusable element is an option, then it will focus on the selected option, otherwise it will focus the first option.|
 
+
+
+#### Multiple Selection
+
+Multiple selection keyboard interaction follows the [ARIA implementation patterns of a checkbox](https://www.w3.org/WAI/ARIA/apg/patterns/checkbox/).
+
+These keyboard interactions apply to `ion-alert` and `ion-popover` dialogs when the overlay is presented and multiple selection is enabled.
+
+|Key|Description|
+|----|----|
+|<kbd>Enter</kbd>|With the ok button focused, will save the user's selection, dismiss the overlay and move focus back to the select.|
+|<kbd>Escape</kbd>|Closes the overlay without changing the submitted option(s). Moves the focus back to the select.|
+|<kbd>Space</kbd>|Selects or deselects the currently focused option. This does not deselect the other selected options.|
+|<kbd>Tab</kbd>|Move focus to the next focusable element (cancel button, ok button, or any of the options) on the overlay. If the next focusable element is the options list, then it should iterate through each option.|
 
 ## Properties
 <Props />
