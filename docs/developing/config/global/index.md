@@ -7,6 +7,7 @@ import TabItem from '@theme/TabItem';
   values={[
     { value: 'javascript', label: 'JavaScript' },
     { value: 'angular', label: 'Angular' },
+    { value: 'angular-standalone', label: 'Angular (Standalone)' },
     { value: 'react', label: 'React' },
     { value: 'vue', label: 'Vue' },
   ]}
@@ -37,6 +38,23 @@ import { IonicModule } from '@ionic/angular';
     })
   ],
   ...
+})
+```
+
+</TabItem>
+<TabItem value="angular-standalone">
+
+```ts title="main.ts"
+import { provideIonicAngular } from '@ionic/angular/standalone';
+
+bootstrapApplication(AppComponent, {
+  providers: [
+    ...,
+    provideIonicAngular({
+      rippleEffect: false,
+      mode: 'md'
+    })
+  ]
 })
 ```
 

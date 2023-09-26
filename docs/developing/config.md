@@ -2,6 +2,9 @@
 title: Config
 ---
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 Ionic Config provides a way to change the properties of components globally across an app. It can set the app mode, tab button layout, animations, and more.
 
 ## Global Config
@@ -61,6 +64,16 @@ Ionic Angular provides a `Config` provider for accessing the Ionic Config.
 
 #### Examples
 
+<Tabs
+  groupId="framework"
+  defaultValue="angular"
+  values={[
+    { value: 'angular', label: 'Angular' },
+    { value: 'angular-standalone', label: 'Angular (Standalone)' },
+  ]}
+>
+<TabItem value="angular">
+
 ```ts
 import { Config } from '@ionic/angular';
 
@@ -72,6 +85,23 @@ class AppComponent {
 }
 ```
 
+</TabItem>
+<TabItem value="angular-standalone">
+
+```ts
+import { Config } from '@ionic/angular/standalone';
+
+@Component(...)
+class AppComponent {
+  constructor(config: Config) {
+    const mode = config.get('mode');
+  }
+}
+```
+
+</TabItem>
+</Tabs>
+
 ### getBoolean
 
 |                 |                                                                                      |
@@ -80,6 +110,16 @@ class AppComponent {
 | **Signature**   | `getBoolean(key: string, fallback?: boolean) => boolean`                             |
 
 #### Examples
+
+<Tabs
+  groupId="framework"
+  defaultValue="angular"
+  values={[
+    { value: 'angular', label: 'Angular' },
+    { value: 'angular-standalone', label: 'Angular (Standalone)' },
+  ]}
+>
+<TabItem value="angular">
 
 ```ts
 import { Config } from '@ionic/angular';
@@ -91,6 +131,23 @@ class AppComponent {
   }
 }
 ```
+
+</TabItem>
+<TabItem value="angular-standalone">
+
+```ts
+import { Config } from '@ionic/angular/standalone';
+
+@Component(...)
+class AppComponent {
+  constructor(config: Config) {
+    const swipeBackEnabled = config.getBoolean('swipeBackEnabled');
+  }
+}
+```
+
+</TabItem>
+</Tabs>
 
 ### getNumber
 
