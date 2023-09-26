@@ -19,7 +19,7 @@ See the [Standalone Migration Guide](#migrating-from-modules-to-standalone) for 
 **Benefits**
 
 1. Enables treeshaking so the final build output only includes the code necessary to run your app which reduces overall build size.
-2. Avoids the use of `NgModule`s to streamline the development experience and make your code easier to understand.
+2. Avoids the use of NgModules to streamline the development experience and make your code easier to understand.
 3. Allows developers to also use newer Angular features such as [ESBuild](https://angular.io/guide/esbuild).
 
 **Drawbacks**
