@@ -72,7 +72,11 @@ import SingleSelectionExample from '@site/static/usage/v7/select/basic/single-se
 
 By adding the `multiple` attribute to select, users are able to select multiple options. When multiple options can be selected, the alert or popover overlay presents users with a checkbox styled list of options. The select component's value receives an array of all of the selected option values.
 
-Note: the `action-sheet` interface will not work with multiple selection.
+:::note
+
+The `action-sheet` interface is not supported with multiple selection.
+
+:::
 
 Keyboard interactions for multiple selection are described in the [Keyboard Interactions](#multiple-selection-1) section below.
 
@@ -268,7 +272,7 @@ Ionic uses heuristics to detect if an app is using the modern select syntax. In 
 
 Ionic's keyboard interactions follow the implementation patterns of the web `<select>` instead of the native iOS select for a consistent experience across all platforms.
 
-These keyboard interactions apply to all `ion-select` when the following conditions are met:
+These keyboard interactions apply to all `ion-select` elements when the following conditions are met:
 - The select is closed.
 - The select is focused.
 - The select is not disabled.
@@ -284,7 +288,7 @@ These keyboard interactions apply to all `ion-select` when the following conditi
 Single selection keyboard interaction follows the [ARIA implementation patterns of a radio](https://www.w3.org/WAI/ARIA/apg/patterns/radio/).
 
 
-These keyboard interactions apply to `ion-action-sheet`, `ion-alert`, and `ion-popover` dialogs when the overlay is presented and focused.
+These keyboard interactions apply to `ion-action-sheet`, `ion-alert`, and `ion-popover` elements when the overlay is presented and focused.
 
 |Key|Description|
 |----|----|
@@ -292,10 +296,10 @@ These keyboard interactions apply to `ion-action-sheet`, `ion-alert`, and `ion-p
 |<kbd>ArrowLeft</kbd>|Focuses and selects the previous option in the list. If there is no previous option, selection will cycle to the last option.|
 |<kbd>ArrowRight</kbd>|Focuses and selects the next option in the list. If there is no next option, selection will cycle to the first option.|
 |<kbd>ArrowUp</kbd>|Focuses and selects the previous option in the list. If there is no previous option, selection will cycle to the last option.|
-|<kbd>Enter</kbd>|With the ok button focused or an option selected, will save the user's selection, dismiss the overlay and move focus back to the select.|
-|<kbd>Escape</kbd>|Closes the overlay without changing the submitted option. Moves the focus back to the select.|
+|<kbd>Enter</kbd>|When the 'OK' button is focused or an option is selected, it will save the user's selection, dismiss the overlay and return focus to the `ion-select` element.|
+|<kbd>Escape</kbd>|Closes the overlay without changing the submitted option. Returns the focus back to the `ion-select` element.|
 |<kbd>Space</kbd>|If the focused radio button is not checked, unchecks the currently checked radio button and checks the focused radio button. Otherwise, does nothing.|
-|<kbd>Tab</kbd>|Moves focus to the next focusable element (cancel button, ok button, or either the selection or the first option) on the overlay. If the next focusable element is an option, then it will focus on the selected option, otherwise it will focus the first option.|
+|<kbd>Tab</kbd>|Moves focus to the next focusable element (cancel button, 'OK' button, or either the selection or the first option) on the overlay. If the next focusable element is an option, then it will focus on the selected option, otherwise it will focus the first option.|
 
 
 
@@ -303,14 +307,14 @@ These keyboard interactions apply to `ion-action-sheet`, `ion-alert`, and `ion-p
 
 Multiple selection keyboard interaction follows the [ARIA implementation patterns of a checkbox](https://www.w3.org/WAI/ARIA/apg/patterns/checkbox/).
 
-These keyboard interactions apply to `ion-alert` and `ion-popover` dialogs when the overlay is presented and multiple selection is enabled.
+These keyboard interactions apply to `ion-alert` and `ion-popover` elements when the overlay is presented and multiple selection is enabled.
 
 |Key|Description|
 |----|----|
-|<kbd>Enter</kbd>|With the ok button focused, will save the user's selection, dismiss the overlay and move focus back to the select.|
-|<kbd>Escape</kbd>|Closes the overlay without changing the submitted option(s). Moves the focus back to the select.|
+|<kbd>Enter</kbd>|When the 'OK' button is focused, it will save the user's selection, dismiss the overlay, and return focus to the `ion-select` element.|
+|<kbd>Escape</kbd>|Closes the overlay without changing the submitted option(s). Returns the focus back to the `ion-select` element.|
 |<kbd>Space</kbd>|Selects or deselects the currently focused option. This does not deselect the other selected options.|
-|<kbd>Tab</kbd>|Move focus to the next focusable element (cancel button, ok button, or any of the options) on the overlay. If the next focusable element is the options list, then it should iterate through each option.|
+|<kbd>Tab</kbd>|Move focus to the next focusable element (cancel button, 'OK' button, or any of the options) on the overlay. If the next focusable element is the options list, then it should iterate through each option.|
 
 ## Properties
 <Props />
