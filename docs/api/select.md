@@ -296,7 +296,7 @@ These keyboard interactions apply to `ion-action-sheet`, `ion-alert`, and `ion-p
 |<kbd>ArrowLeft</kbd>|Focuses and selects the previous option in the list. If there is no previous option, selection will cycle to the last option.|
 |<kbd>ArrowRight</kbd>|Focuses and selects the next option in the list. If there is no next option, selection will cycle to the first option.|
 |<kbd>ArrowUp</kbd>|Focuses and selects the previous option in the list. If there is no previous option, selection will cycle to the last option.|
-|<kbd>Enter</kbd>|When the 'OK' button is focused or an option is selected, it will save the user's selection, dismiss the overlay and return focus to the `ion-select` element.|
+|<kbd>Enter</kbd>|If an option is focused, it will select the option. Overlays **without** an 'OK' button will commit the value immediately, dismiss the overlay and return focus to the `ion-select` element.<br /><br/>If the 'OK' button is focused, it will save the user's selection, dismiss the overlay and return focus to the `ion-select` element.|
 |<kbd>Escape</kbd>|Closes the overlay without changing the submitted option. Returns the focus back to the `ion-select` element.|
 |<kbd>Space</kbd>|If the focused radio button is not checked, unchecks the currently checked radio button and checks the focused radio button. Otherwise, does nothing. If the overlay does not have an 'OK' button, the value will be committed immediately and the overlay will dismiss.|
 |<kbd>Tab</kbd>|Moves focus to the next focusable element (cancel button, 'OK' button, or either the selection or the first option) on the overlay. If the next focusable element is an option, then it will focus on the selected option, otherwise it will focus the first option.|
