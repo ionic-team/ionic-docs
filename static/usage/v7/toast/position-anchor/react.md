@@ -29,7 +29,7 @@ function Example() {
         duration={2000}
       ></IonToast>
     </IonContent>
-        
+
     <IonFooter id="footer">
       <IonToolbar>
         <IonTitle>Footer</IonTitle>
@@ -39,4 +39,3 @@ function Example() {
 }
 export default Example;
 ```
-

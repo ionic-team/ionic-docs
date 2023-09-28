@@ -25,7 +25,7 @@
       :duration="2000"
     ></ion-toast>
   </ion-content>
-      
+
   <ion-footer id="footer">
     <ion-toolbar>
       <ion-title>Footer</ion-title>
@@ -39,7 +39,13 @@
 
   export default defineComponent({
     components: {
-      IonButton, IonContent, IonFooter, IonHeader, IonTitle, IonToast, IonToolbar,
+      IonButton,
+      IonContent,
+      IonFooter,
+      IonHeader,
+      IonTitle,
+      IonToast,
+      IonToolbar,
     },
   });
 </script>

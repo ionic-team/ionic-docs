@@ -24,7 +24,7 @@
     duration="2000"
   ></ion-toast>
 </ion-content>
-      
+
 <ion-footer id="footer">
   <ion-toolbar>
     <ion-title>Footer</ion-title>
