@@ -429,7 +429,7 @@ import { Component } from '@angular/core';
 })
 export class TestComponent {
   constructor() {
-    addIcons({ alarm, logoIonic });
++   addIcons({ alarm, logoIonic });
   }
 }
 ```
