@@ -38,12 +38,6 @@
       }
     }
 
-    .col--3 {
-      @media (max-width: 996px) {
-        display: none;
-      }
-    }
-
     > .container {
       > .row {
         > .col {
@@ -51,6 +45,20 @@
           justify-content: center;
 
           min-width: 0;
+
+          // Docs Demo
+          &.col--4 {
+            @media (max-width: 1364px) {
+              display: none;
+            }
+          }
+
+          // Table of contents
+          &.col--3 {
+            @media (max-width: 996px) {
+              display: none;
+            }
+          }
         }
       }
     }
