@@ -22,6 +22,8 @@ jobs:
       with:
         node-version: ${{ matrix.node_version }}
         cache: 'npm'
+    - name: Install Dependencies
+      run: npm ci --legacy-peer-deps
     - name: Cache Prettier
       uses: actions/cache@v3
       env:
@@ -34,8 +36,6 @@ jobs:
           ${{ runner.os }}-prettier-${{ env.cache-name }}-
           ${{ runner.os }}-prettier-
           ${{ runner.os }}-
-    - name: Install Dependencies
-      run: npm ci --legacy-peer-deps
     - name: Lint
       run: npm run lint
     - name: Spell Check
