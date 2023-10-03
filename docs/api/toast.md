@@ -64,7 +64,7 @@ import ButtonsPlayground from '@site/static/usage/v7/toast/buttons/index.md';
 
 Toasts can be positioned at the top, bottom or middle of the viewport. The position can be passed upon creation. The possible values are `top`, `bottom` and `middle`. If the position is not specified, the toast will be displayed at the bottom of the viewport.
 
-### Handling Navigation Elements
+### Relative Positioning
 
 If a toast is presented alongside navigation elements such as a header, footer, or [FAB](./fab.md), the toast may overlap these elements by default. This can be fixed using the `positionAnchor` property, which takes either an element reference or an ID. The toast will be positioned relative to the chosen element, appearing below it when using `position="top"` or above it when using `position="bottom"`. When using `position="middle"`, the `positionAnchor` property is ignored.
 
