@@ -270,7 +270,7 @@ Ionic uses heuristics to detect if an app is using the modern select syntax. In 
 
 ### Keyboard Interactions
 
-Ionic's keyboard interactions follow the implementation patterns of the web `<select>` instead of the native iOS select for a consistent experience across all platforms.
+Ionic's keyboard interactions follow the implementation patterns of the web instead of the native iOS select for a consistent experience across all platforms.
 
 These keyboard interactions apply to all `ion-select` elements when the following conditions are met:
 - The select is closed.
