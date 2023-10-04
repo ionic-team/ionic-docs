@@ -18,7 +18,7 @@
     "versioned_docs/**/api",
     "versioned_docs/**/cli",
     "versioned_docs/**/native",
-    "static/code/stackblitz/**/node_modules/**"
+    "node_modules"
   ],
   "flagWords": [
     "hte"
