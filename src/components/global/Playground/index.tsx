@@ -15,41 +15,46 @@ import { IconHtml, IconTs, IconVue, IconDefault, IconCss, IconDots } from './ico
 
 import { useScrollPositionBlocker } from '@docusaurus/theme-common';
 
-const ControlButton = forwardRef(({
-  isSelected,
-  handleClick,
-  title,
-  label,
-  disabled,
-}: {
-  isSelected: boolean;
-  handleClick: () => void;
-  title: string;
-  label: string;
-  disabled?: boolean;
-}, ref: RefObject<HTMLButtonElement>) => {
-  const controlButton = (
-    <button
-      title={disabled ? undefined : title}
-      disabled={disabled}
-      className={`playground__control-button ${isSelected ? 'playground__control-button--selected' : ''}`}
-      onClick={handleClick}
-      data-text={label}
-      ref={ref}
-    >
-      {label}
-    </button>
-  );
-  if (disabled) {
-    return (
-      <Tippy theme="playground" arrow={false} placement="bottom" content={`Unavailable for ${label}`}>
-        {/* Tippy requires a wrapper element for disabled elements: https://atomiks.github.io/tippyjs/v5/creating-tooltips/#disabled-elements */}
-        <div>{controlButton}</div>
-      </Tippy>
+const ControlButton = forwardRef(
+  (
+    {
+      isSelected,
+      handleClick,
+      title,
+      label,
+      disabled,
+    }: {
+      isSelected: boolean;
+      handleClick: () => void;
+      title: string;
+      label: string;
+      disabled?: boolean;
+    },
+    ref: RefObject<HTMLButtonElement>
+  ) => {
+    const controlButton = (
+      <button
+        title={disabled ? undefined : title}
+        disabled={disabled}
+        className={`playground__control-button ${isSelected ? 'playground__control-button--selected' : ''}`}
+        onClick={handleClick}
+        data-text={label}
+        ref={ref}
+      >
+        {label}
+      </button>
     );
+    if (disabled) {
+      return (
+        <Tippy theme="playground" arrow={false} placement="bottom" content={`Unavailable for ${label}`}>
+          {/* Tippy requires a wrapper element for disabled elements: https://atomiks.github.io/tippyjs/v5/creating-tooltips/#disabled-elements */}
+          <div>{controlButton}</div>
+        </Tippy>
+      );
+    }
+    return controlButton;
   }
-  return controlButton;
-});
+);
 
 const CodeBlockButton = ({ language, usageTarget, setAndSaveUsageTarget, disabled }) => {
   const buttonRef = useRef<HTMLButtonElement>(null);
@@ -239,9 +244,11 @@ export default function Playground({
   const setAndSaveMode = (mode: Mode) => {
     localStorage.setItem(MODE_STORAGE_KEY, mode);
     setIonicMode(mode);
-    window.dispatchEvent(new CustomEvent(MODE_UPDATED_EVENT, {
-      detail: mode
-    }));
+    window.dispatchEvent(
+      new CustomEvent(MODE_UPDATED_EVENT, {
+        detail: mode,
+      })
+    );
   };
 
   const setAndSaveUsageTarget = (target: UsageTarget, tab: HTMLElement) => {
@@ -252,15 +259,17 @@ export default function Playground({
      * This prevents the scroll position from jumping around if
      * there is a playground above this one with code that changes
      * in length between frameworks.
-     * 
+     *
      * Note that we don't need this when changing the mode because
      * the two mode iframes are always the same height.
      */
     blockElementScrollPositionUntilNextRender(tab);
 
-    window.dispatchEvent(new CustomEvent(USAGE_TARGET_UPDATED_EVENT, {
-      detail: target
-    }));
+    window.dispatchEvent(
+      new CustomEvent(USAGE_TARGET_UPDATED_EVENT, {
+        detail: target,
+      })
+    );
   };
 
   /**
