@@ -387,6 +387,26 @@ export class TestComponent {
 - }
 ```
 
+9. If you are using `routerLink`, `routerDirection`, or `routerAction` be sure to import the `IonRouterLink` directive for Ionic components or `IonRouterLinkWithHref` directive for `<a>` elements.
+
+```diff title="test.component.ts"
+import { Component } from '@angular/core';
+- import { IonButton } from '@ionic/angular/standalone';
++ import { IonButton, IonRouterLink } from '@ionic/angular/standalone';
+
+@Component({
+  selector: 'app-root',
+  templateUrl: 'app.component.html',
+  styleUrls: ['app.component.scss'],
+  standalone: true,
+  imports: [
+    IonButton,
++   IonRouterLink
+  ],
+})
+export class TestComponent {}
+```
+
 ### NgModule-based Applications
 
 Follow these steps if your Angular application is still using the NgModule architecture, but you want to adopt Ionic UI components as standalone components now.
@@ -512,3 +532,21 @@ export class TestComponentModule {}
 -   "output": "./svg"
 - }
 ```
+
+9. If you are using `routerLink`, `routerDirection`, or `routerAction` be sure to import the `IonRouterLink` directive for Ionic components or `IonRouterLinkWithHref` directive for `<a>` elements.
+
+```diff title="test.module.ts"
+import { NgModule } from '@angular/core';
+import { TestComponent } from './test.component';
+- import { IonButton } from '@ionic/angular/standalone';
++ import { IonButton, IonRouterLink } from '@ionic/angular/standalone';
+
+@NgModule({
+  imports: [
+    IonButton,
++   IonRouterLink,
+  ],
+  declarations: [TestComponent]
+})
+```
+
