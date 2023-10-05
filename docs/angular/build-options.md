@@ -130,7 +130,7 @@ import { IonButton, IonRouterLink } from '@ionic/angular/standalone';
   imports: [
     IonButton,
     RouterLink, // required to get base routerLink behavior for @angular/router
-    IonRouterLink // use IonRouterLinkWithHref if you are using an <a> element instead
+    IonRouterLink, // use IonRouterLinkWithHref if you are using an <a> element instead
   ],
 })
 export class HomePage {}
@@ -232,10 +232,10 @@ import { HomePageRoutingModule } from './home-routing.module';
 
 @NgModule({
   imports: [
-    IonButton, 
+    IonButton,
     RouterLink, // required to get base routerLink behavior for @angular/router
     IonRouterLink, // use IonRouterLinkWithHref if you are using an <a> element instead
-    HomePageRoutingModule
+    HomePageRoutingModule,
   ],
   declarations: [HomePage],
 })
@@ -549,4 +549,3 @@ import { TestComponent } from './test.component';
   declarations: [TestComponent]
 })
 ```
-
