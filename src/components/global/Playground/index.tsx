@@ -244,6 +244,11 @@ export default function Playground({
   const setAndSaveMode = (mode: Mode) => {
     localStorage.setItem(MODE_STORAGE_KEY, mode);
     setIonicMode(mode);
+
+    /**
+     * Tell other playgrounds on the page that the mode has
+     * updated, so they can sync up.
+     */
     window.dispatchEvent(
       new CustomEvent(MODE_UPDATED_EVENT, {
         detail: mode,
@@ -265,6 +270,10 @@ export default function Playground({
      */
     blockElementScrollPositionUntilNextRender(tab);
 
+    /**
+     * Tell other playgrounds on the page that the framework
+     * has updated, so they can sync up.
+     */
     window.dispatchEvent(
       new CustomEvent(USAGE_TARGET_UPDATED_EVENT, {
         detail: target,
@@ -400,6 +409,10 @@ export default function Playground({
     io.observe(hostRef.current!);
   });
 
+  /**
+   * Listen for any playground on the page to have its mode or framework
+   * updated so this playground can switch to the same setting.
+   */
   useEffect(() => {
     window.addEventListener(MODE_UPDATED_EVENT, (e: CustomEvent) => {
       const mode = e.detail;
