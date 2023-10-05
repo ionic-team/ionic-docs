@@ -187,7 +187,7 @@ export default function Playground({
      * Otherwise, if there is a saved mode from previously clicking
      * the mode button, use that.
      */
-    const storedMode = localStorage.getItem(MODE_STORAGE_KEY);
+    const storedMode = window !== undefined ? localStorage.getItem(MODE_STORAGE_KEY) : null;
     if (storedMode) return storedMode;
 
     /**
@@ -201,7 +201,7 @@ export default function Playground({
      * If there is a saved target from previously clicking the
      * framework buttons, and there is code for it, use that.
      */
-    const storedTarget = localStorage.getItem(USAGE_TARGET_STORAGE_KEY);
+    const storedTarget = window !== undefined ? localStorage.getItem(USAGE_TARGET_STORAGE_KEY) : null;
     if (storedTarget && code[storedTarget] !== undefined) {
       return storedTarget;
     }
@@ -242,43 +242,49 @@ export default function Playground({
   const [resetCount, setResetCount] = useState(0);
 
   const setAndSaveMode = (mode: Mode) => {
-    localStorage.setItem(MODE_STORAGE_KEY, mode);
     setIonicMode(mode);
 
-    /**
-     * Tell other playgrounds on the page that the mode has
-     * updated, so they can sync up.
-     */
-    window.dispatchEvent(
-      new CustomEvent(MODE_UPDATED_EVENT, {
-        detail: mode,
-      })
-    );
+    if (window !== undefined) {
+      localStorage.setItem(MODE_STORAGE_KEY, mode);
+
+      /**
+       * Tell other playgrounds on the page that the mode has
+       * updated, so they can sync up.
+       */
+      window.dispatchEvent(
+        new CustomEvent(MODE_UPDATED_EVENT, {
+          detail: mode,
+        })
+      );
+    }
   };
 
   const setAndSaveUsageTarget = (target: UsageTarget, tab: HTMLElement) => {
-    localStorage.setItem(USAGE_TARGET_STORAGE_KEY, target);
     setUsageTarget(target);
 
-    /**
-     * This prevents the scroll position from jumping around if
-     * there is a playground above this one with code that changes
-     * in length between frameworks.
-     *
-     * Note that we don't need this when changing the mode because
-     * the two mode iframes are always the same height.
-     */
-    blockElementScrollPositionUntilNextRender(tab);
+    if (window !== undefined) {
+      localStorage.setItem(USAGE_TARGET_STORAGE_KEY, target);
 
-    /**
-     * Tell other playgrounds on the page that the framework
-     * has updated, so they can sync up.
-     */
-    window.dispatchEvent(
-      new CustomEvent(USAGE_TARGET_UPDATED_EVENT, {
-        detail: target,
-      })
-    );
+      /**
+       * This prevents the scroll position from jumping around if
+       * there is a playground above this one with code that changes
+       * in length between frameworks.
+       *
+       * Note that we don't need this when changing the mode because
+       * the two mode iframes are always the same height.
+       */
+      blockElementScrollPositionUntilNextRender(tab);
+
+      /**
+       * Tell other playgrounds on the page that the framework
+       * has updated, so they can sync up.
+       */
+      window.dispatchEvent(
+        new CustomEvent(USAGE_TARGET_UPDATED_EVENT, {
+          detail: target,
+        })
+      );
+    }
   };
 
   /**
