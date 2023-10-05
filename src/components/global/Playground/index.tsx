@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useRef, useState } from 'react';
+import React, { RefObject, forwardRef, useEffect, useMemo, useRef, useState } from 'react';
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import './playground.css';
@@ -13,7 +13,9 @@ import TabItem from '@theme/TabItem';
 
 import { IconHtml, IconTs, IconVue, IconDefault, IconCss, IconDots } from './icons';
 
-const ControlButton = ({
+import { useScrollPositionBlocker } from '@docusaurus/theme-common';
+
+const ControlButton = forwardRef(({
   isSelected,
   handleClick,
   title,
@@ -25,7 +27,7 @@ const ControlButton = ({
   title: string;
   label: string;
   disabled?: boolean;
-}) => {
+}, ref: RefObject<HTMLButtonElement>) => {
   const controlButton = (
     <button
       title={disabled ? undefined : title}
@@ -33,6 +35,7 @@ const ControlButton = ({
       className={`playground__control-button ${isSelected ? 'playground__control-button--selected' : ''}`}
       onClick={handleClick}
       data-text={label}
+      ref={ref}
     >
       {label}
     </button>
@@ -46,19 +49,22 @@ const ControlButton = ({
     );
   }
   return controlButton;
-};
+});
 
 const CodeBlockButton = ({ language, usageTarget, setAndSaveUsageTarget, disabled }) => {
+  const buttonRef = useRef<HTMLButtonElement>(null);
   const langValue = UsageTarget[language];
+
   return (
     <ControlButton
       isSelected={usageTarget === langValue}
       handleClick={() => {
-        setAndSaveUsageTarget(langValue);
+        setAndSaveUsageTarget(langValue, buttonRef.current);
       }}
       title={`Show ${language} code`}
       label={language}
       disabled={disabled}
+      ref={buttonRef}
     />
   );
 };
@@ -164,6 +170,8 @@ export default function Playground({
   const frameMD = useRef<HTMLIFrameElement | null>(null);
   const consoleBodyRef = useRef<HTMLDivElement | null>(null);
 
+  const { blockElementScrollPositionUntilNextRender } = useScrollPositionBlocker();
+
   const getDefaultMode = () => {
     /**
      * If a custom mode was specified, use that.
@@ -231,11 +239,28 @@ export default function Playground({
   const setAndSaveMode = (mode: Mode) => {
     localStorage.setItem(MODE_STORAGE_KEY, mode);
     setIonicMode(mode);
+    window.dispatchEvent(new CustomEvent(MODE_UPDATED_EVENT, {
+      detail: mode
+    }));
   };
 
-  const setAndSaveUsageTarget = (target: UsageTarget) => {
+  const setAndSaveUsageTarget = (target: UsageTarget, tab: HTMLElement) => {
     localStorage.setItem(USAGE_TARGET_STORAGE_KEY, target);
     setUsageTarget(target);
+
+    /**
+     * This prevents the scroll position from jumping around if
+     * there is a playground above this one with code that changes
+     * in length between frameworks.
+     * 
+     * Note that we don't need this when changing the mode because
+     * the two mode iframes are always the same height.
+     */
+    blockElementScrollPositionUntilNextRender(tab);
+
+    window.dispatchEvent(new CustomEvent(USAGE_TARGET_UPDATED_EVENT, {
+      detail: target
+    }));
   };
 
   /**
@@ -365,6 +390,22 @@ export default function Playground({
 
     io.observe(hostRef.current!);
   });
+
+  useEffect(() => {
+    window.addEventListener(MODE_UPDATED_EVENT, (e: CustomEvent) => {
+      const mode = e.detail;
+      if (Object.values(Mode).includes(mode)) {
+        setIonicMode(mode); // don't use setAndSave to avoid infinite loop
+      }
+    });
+
+    window.addEventListener(USAGE_TARGET_UPDATED_EVENT, (e: CustomEvent) => {
+      const usageTarget = e.detail;
+      if (Object.values(UsageTarget).includes(usageTarget)) {
+        setUsageTarget(usageTarget); // don't use setAndSave to avoid infinite loop
+      }
+    });
+  }, []);
 
   const isIOS = ionicMode === Mode.iOS;
   const isMD = ionicMode === Mode.MD;
@@ -795,3 +836,5 @@ const isFrameReady = (frame: HTMLIFrameElement) => {
 
 const USAGE_TARGET_STORAGE_KEY = 'playground_usage_target';
 const MODE_STORAGE_KEY = 'playground_mode';
+const USAGE_TARGET_UPDATED_EVENT = 'playground-usage-target-updated';
+const MODE_UPDATED_EVENT = 'playground-event-updated';
