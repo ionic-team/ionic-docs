@@ -48,13 +48,13 @@ const ControlButton = ({
   return controlButton;
 };
 
-const CodeBlockButton = ({ language, usageTarget, setUsageTarget, disabled }) => {
+const CodeBlockButton = ({ language, usageTarget, setAndSaveUsageTarget, disabled }) => {
   const langValue = UsageTarget[language];
   return (
     <ControlButton
       isSelected={usageTarget === langValue}
       handleClick={() => {
-        setUsageTarget(langValue);
+        setAndSaveUsageTarget(langValue);
       }}
       title={`Show ${language} code`}
       label={language}
@@ -164,15 +164,47 @@ export default function Playground({
   const frameMD = useRef<HTMLIFrameElement | null>(null);
   const consoleBodyRef = useRef<HTMLDivElement | null>(null);
 
-  const defaultMode = typeof mode !== 'undefined' ? mode : Mode.iOS;
+  const getDefaultMode = () => {
+    /**
+     * If a custom mode was specified, use that.
+     */
+    if (mode) return mode;
+
+    /**
+     * Otherwise, if there is a saved mode from previously clicking
+     * the mode button, use that.
+     */
+    const storedMode = localStorage.getItem(MODE_STORAGE_KEY);
+    if (storedMode) return storedMode;
+
+    /**
+     * Default to iOS mode as a fallback.
+     */
+    return Mode.iOS;
+  };
 
   const getDefaultUsageTarget = () => {
-    // If defined, Angular target should be the default
+    /**
+     * If there is a saved target from previously clicking the
+     * framework buttons, and there is code for it, use that.
+     */
+    const storedTarget = localStorage.getItem(USAGE_TARGET_STORAGE_KEY);
+    if (storedTarget && code[storedTarget] !== undefined) {
+      return storedTarget;
+    }
+
+    /**
+     * If there is no saved target, and Angular code is available,
+     * default to that.
+     */
     if (code[UsageTarget.Angular] !== undefined) {
       return UsageTarget.Angular;
     }
 
-    // Otherwise, default to the first target passed.
+    /**
+     * If there is no Angular code available, fall back to the
+     * first available framework.
+     */
     return Object.keys(code)[0];
   };
 
@@ -182,7 +214,7 @@ export default function Playground({
    */
   const frameSize = FRAME_SIZES[size] || size;
   const [usageTarget, setUsageTarget] = useState(getDefaultUsageTarget());
-  const [ionicMode, setIonicMode] = useState(defaultMode);
+  const [ionicMode, setIonicMode] = useState(getDefaultMode());
   const [codeSnippets, setCodeSnippets] = useState({});
   const [renderIframes, setRenderIframes] = useState(false);
   const [iframesLoaded, setIframesLoaded] = useState(false);
@@ -195,6 +227,16 @@ export default function Playground({
    * iframes are refreshed.
    */
   const [resetCount, setResetCount] = useState(0);
+
+  const setAndSaveMode = (mode: Mode) => {
+    localStorage.setItem(MODE_STORAGE_KEY, mode);
+    setIonicMode(mode);
+  };
+
+  const setAndSaveUsageTarget = (target: UsageTarget) => {
+    localStorage.setItem(USAGE_TARGET_STORAGE_KEY, target);
+    setUsageTarget(target);
+  };
 
   /**
    * Rather than encode isDarkTheme into the frame source
@@ -526,7 +568,7 @@ export default function Playground({
                   key={`code-block-${lang}`}
                   language={lang}
                   usageTarget={usageTarget}
-                  setUsageTarget={setUsageTarget}
+                  setAndSaveUsageTarget={setAndSaveUsageTarget}
                   disabled={!hasCode}
                 />
               );
@@ -536,14 +578,14 @@ export default function Playground({
             <ControlButton
               disabled={mode && mode === 'md'}
               isSelected={isIOS}
-              handleClick={() => setIonicMode(Mode.iOS)}
+              handleClick={() => setAndSaveMode(Mode.iOS)}
               title="iOS mode"
               label="iOS"
             />
             <ControlButton
               disabled={mode && mode === 'ios'}
               isSelected={isMD}
-              handleClick={() => setIonicMode(Mode.MD)}
+              handleClick={() => setAndSaveMode(Mode.MD)}
               title="MD mode"
               label="MD"
             />
@@ -750,3 +792,6 @@ const isFrameReady = (frame: HTMLIFrameElement) => {
   }
   return (frame.contentWindow as any).demoReady === true;
 };
+
+const USAGE_TARGET_STORAGE_KEY = 'playground_usage_target';
+const MODE_STORAGE_KEY = 'playground_mode';
