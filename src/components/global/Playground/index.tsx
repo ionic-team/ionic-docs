@@ -195,8 +195,10 @@ export default function Playground({
      * Otherwise, if there is a saved mode from previously clicking
      * the mode button, use that.
      */
-    const storedMode = localStorage.getItem(MODE_STORAGE_KEY);
-    if (storedMode) return storedMode;
+    if (isBrowser) {
+      const storedMode = localStorage.getItem(MODE_STORAGE_KEY);
+      if (storedMode) return storedMode;
+    }
 
     /**
      * Default to iOS mode as a fallback.
@@ -209,9 +211,11 @@ export default function Playground({
      * If there is a saved target from previously clicking the
      * framework buttons, and there is code for it, use that.
      */
-    const storedTarget = localStorage.getItem(USAGE_TARGET_STORAGE_KEY);
-    if (storedTarget && code[storedTarget] !== undefined) {
-      return storedTarget;
+    if (isBrowser) {
+      const storedTarget = localStorage.getItem(USAGE_TARGET_STORAGE_KEY);
+      if (storedTarget && code[storedTarget] !== undefined) {
+        return storedTarget;
+      }
     }
 
     /**
