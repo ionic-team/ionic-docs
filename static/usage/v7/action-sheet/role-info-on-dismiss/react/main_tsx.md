@@ -1,12 +1,14 @@
 ```tsx
-import React, { useState } from 'react';
+import React from 'react';
 import { IonActionSheet, IonButton } from '@ionic/react';
 import type { OverlayEventDetail } from '@ionic/core';
 
 import './main.css';
 
 function Example() {
-  const [result, setResult] = useState<OverlayEventDetail>();
+  const logResult = (result: OverlayEventDetail) => {
+    console.log(JSON.stringify(result, null, 2));
+  };
 
   return (
     <div className="container">
@@ -37,10 +39,8 @@ function Example() {
             },
           },
         ]}
-        onDidDismiss={({ detail }) => setResult(detail)}
+        onDidDismiss={({ detail }) => logResult(detail)}
       ></IonActionSheet>
-
-      {result && <code>{JSON.stringify(result, null, 2)}</code>}
     </div>
   );
 }

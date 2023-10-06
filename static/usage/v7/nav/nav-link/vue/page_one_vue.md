@@ -14,6 +14,7 @@
 </template>
 
 <script lang="ts">
+  import { markRaw } from 'vue';
   import { IonHeader, IonTitle, IonToolbar, IonContent, IonNavLink, IonButton } from '@ionic/vue';
   import PageTwo from './PageTwo.vue';
 
@@ -21,7 +22,7 @@
     components: { IonHeader, IonTitle, IonToolbar, IonContent, IonNavLink, IonButton },
     data() {
       return {
-        component: PageTwo,
+        component: markRaw(PageTwo),
       };
     },
   };

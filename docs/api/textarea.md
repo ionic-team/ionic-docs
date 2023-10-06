@@ -69,6 +69,8 @@ Material Designでは、テキストエリアの塗りつぶしスタイルが�
 
 `fill` スタイルはテキストエリアのコンテナを視覚的に定義するため、`fill` を使用するテキストエリアは `ion-item` で使用すべきではありません。
 
+Filled textareas can be used on iOS by setting Textarea's `mode` to `md`.
+
 import Fill from '@site/static/usage/v7/textarea/fill/index.md';
 
 <Fill />

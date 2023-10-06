@@ -93,6 +93,8 @@ title: 用語集
   </p>
 </section>
 
+<!-- cspell:disable -->
+
 <section id="cli">
   <a href="#cli">
     <h3>CLI</h3>
@@ -110,6 +112,8 @@ title: 用語集
     へのアクセス など、様々なことに使われています 。
   </p>
 </section>
+
+<!-- cspell:enable -->
 
 <section id="commonjs">
   <a href="#commonjs">

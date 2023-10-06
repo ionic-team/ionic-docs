@@ -89,6 +89,18 @@ import CanDismissPreventSwipeToCloseExample from '@site/static/usage/v7/modal/ca
 
 <CanDismissPreventSwipeToCloseExample />
 
+### 子コンポーネントでのdismiss動作の変更
+
+あるシナリオでは、開発者は提示されたモーダルの状態に基づいて `canDismiss` コールバックの動作をカスタマイズする必要があるかもしれません。このカスタマイズは、たとえば、モーダル内のフォームが無効な場合にモーダルが却下されないようにしたい場合に特に便利です。
+
+このカスタマイズを実現するために、子コンポーネントは、親コンポーネントと通信して `canDismiss` コールバックを管理する条件を更新するために、関数コールバック、イベントエミッション、その他のリアクティビティメカニズムなどのさまざまなテクニックを使用できます。
+
+以下は、子コンポーネントが親コンポーネントとどのように通信して `canDismiss` コールバックを変更できるかを示す簡単な例です：
+
+import CanDismissChildStateExample from '@site/static/usage/v7/modal/can-dismiss/child-state/index.md';
+
+<CanDismissChildStateExample />
+
 ## モーダルの種類
  
 ### Card Modal

@@ -66,9 +66,25 @@ import SingleSelectionExample from '@site/static/usage/v7/select/basic/single-se
 
 <SingleSelectionExample />
 
+## 複数選択
+
+select に `multiple` 属性を追加することで、ユーザーは複数のオプションを選択することができます。複数のオプションが選択可能な場合、アラートやポップオーバーはチェックボックス形式のオプションリストをユーザに提示します。select コンポーネントの値は、選択されたすべてのオプション値の配列を受け取ります。
+
+注意: `action-sheet` インターフェースは複数選択では動作しません。
+
+import MultipleSelectionExample from '@site/static/usage/v7/select/basic/multiple-selection/index.md';
+
+<MultipleSelectionExample />
+
 ## インターフェイス
 
 デフォルトでは、select は [ion-alert](alert.md) を使ってAlertのオプションのオーバーレイを開きます。インターフェイスを変更して、[ion-action-sheet](action-sheet.md) または [ion-popover](popover.md) を使用するには、 `action-sheet` または `popover` を `interface` プロパティに渡します。各インタフェースの制限については、他のセクションを参照してください。
+
+### Alert
+
+import AlertExample from '@site/static/usage/v7/select/basic/single-selection/index.md';
+
+<AlertExample />
 
 ### Action Sheet
 
@@ -82,17 +98,7 @@ import PopoverExample from '@site/static/usage/v7/select/interfaces/popover/inde
 
 <PopoverExample />
 
-## 複数の選択
-
-Select に `multiple` 属性を追加することで、ユーザは複数のオプションを選択することができます。複数のオプションが選択可能な場合、アラートまたはポップオーバーオーバーレイは、チェックボックススタイルのオプションリストをユーザに提示します。Select コンポーネントの値は、選択されたすべてのオプション値の配列を受け取ります。
-
-注意: `action-sheet` インターフェースは複数選択では動作しません。
-
-import MultipleSelectionExample from '@site/static/usage/v7/select/basic/multiple-selection/index.md';
-
-<MultipleSelectionExample />
-
-## インタラクションへの応答
+## インタラクションの処理
 
 Select とユーザのインタラクションを処理する主な方法は、 `ionChange` イベント、 `ionDismiss` イベント、 `ionCancel` イベントです。これらのイベントやselectが発生するその他のイベントの詳細については、[Events](#events)を参照してください。
 

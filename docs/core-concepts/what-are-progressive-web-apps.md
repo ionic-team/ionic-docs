@@ -47,11 +47,15 @@ Progressive Web App と見なされるには、アプリが以下の要件を満
 
 - リンク可能 - 複雑なインストールを必要とせず、URL で簡単に共有できます。
 
+<!-- cspell:disable -->
+
 <em>
   <a href="https://addyosmani.com/blog/getting-started-with-progressive-web-apps/" target="_blank">
     Addy Osmani: Progressive web apps
   </a>
 </em>
+
+<!-- cspell:enable -->
 
 たくさんありますが、Ionic アプリの場合はいくつかのポイントに集約されます。
 

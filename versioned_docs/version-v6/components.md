@@ -143,7 +143,7 @@ Ionic apps are made of high-level building blocks called Components, which allow
 </DocsCard>
 
 <DocsCard header="Toast" href="api/toast" icon="/icons/component-toast-icon.png">
-  <p>Toast is used to show a notification over the top of an app's content. It can be temporary or dismissable.</p>
+  <p>Toast is used to show a notification over the top of an app's content. It can be temporary or dismissible.</p>
 </DocsCard>
 
 <DocsCard header="Toggle" href="api/toggle" icon="/icons/component-toggle-icon.png">

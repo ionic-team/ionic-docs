@@ -285,7 +285,7 @@ When an `@ionic/angular` application is generated, a default end-to-end test app
 
 - `protractor.conf.js` - the Protractor configuration file
 - `tsconfig.e2e.json` - specific TypeScript configuration for the testing application
-- `src/app.po.ts` - a page object containing methods that navigate the application, query elements in the DOM, and maninpulate elements on the page
+- `src/app.po.ts` - a page object containing methods that navigate the application, query elements in the DOM, and manipulate elements on the page
 - `src/app.e2e-spec.ts` - a testing script
 
 #### Page Objects

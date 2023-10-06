@@ -22,4 +22,5 @@ import angular_example_component_ts from './angular/example_component_ts.md';
     },
   }}
   src="usage/v7/select/objects-as-values/using-comparewith/demo.html"
+  showConsole={true}
 />

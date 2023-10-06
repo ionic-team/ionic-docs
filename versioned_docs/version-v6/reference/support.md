@@ -20,14 +20,14 @@ Given the reality of time and resource constraints as well as the desire to keep
 
 The current status of each Ionic Framework version is:
 
-| Version |     Status     |   Released   | Maintenance Ends | Ext. Support Ends |
-| :-----: | :------------: | :----------: | :--------------: | :---------------: |
-|   V6    |   **Active**   | Dec 8, 2021  |       TBD        |        TBD        |
-|   V5    | End of Support | Feb 11, 2020 |   June 8, 2022   |    Dec 8, 2022    |
-|   V4    | End of Support | Jan 23, 2019 |   Aug 11, 2020   |   Sept 30, 2022   |
-|   V3    | End of Support | Apr 5, 2017  |   Oct 30, 2019   |   Aug 11, 2020    |
-|   V2    | End of Support | Jan 25, 2017 |   Apr 5, 2017    |    Apr 5, 2017    |
-|   V1    | End of Support | May 12, 2015 |   Jan 25, 2017   |   Jan 25, 2017    |
+| Version |      Status      |   Released   | Maintenance Ends | Ext. Support Ends |
+| :-----: | :--------------: | :----------: | :--------------: | :---------------: |
+|   V6    | Extended Support | Dec 8, 2021  |   Sep 29, 2023   |   Mar 29, 2024    |
+|   V5    |  End of Support  | Feb 11, 2020 |   June 8, 2022   |    Dec 8, 2022    |
+|   V4    |  End of Support  | Jan 23, 2019 |   Aug 11, 2020   |   Sept 30, 2022   |
+|   V3    |  End of Support  | Apr 5, 2017  |   Oct 30, 2019   |   Aug 11, 2020    |
+|   V2    |  End of Support  | Jan 25, 2017 |   Apr 5, 2017    |    Apr 5, 2017    |
+|   V1    |  End of Support  | May 12, 2015 |   Jan 25, 2017   |   Jan 25, 2017    |
 
 - **Maintenance**: Only critical bug and security fixes. No major feature improvements.
 - **Extended Support**: For teams and organizations that require additional long term support, Ionic has extended support options available. To learn more, see our [Enterprise offerings](https://ionicframework.com/enterprise).

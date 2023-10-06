@@ -1,6 +1,6 @@
-# Stackblitz
+# StackBlitz
 
-This directory contains the source files for generating the individual framework targets for a playground examples. The contents of the files will be loaded and injected into the Stackblitz example that is opened from the Playground.
+This directory contains the source files for generating the individual framework targets for a playground examples. The contents of the files will be loaded and injected into the StackBlitz example that is opened from the Playground.
 
 ## Angular
 

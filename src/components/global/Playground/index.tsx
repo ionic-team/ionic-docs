@@ -68,11 +68,11 @@ type MdxContent = () => {};
 /**
  * The advanced configuration of options when creating a
  * playground example with multiple files for a single usage target
- * or if needing to modify the generated Stackblitz example code.
+ * or if needing to modify the generated StackBlitz example code.
  */
 interface UsageTargetOptions {
   /**
-   * The list of the file names to use in the Stackblitz example
+   * The list of the file names to use in the StackBlitz example
    * and their associated MDX content.
    *
    * ```ts
@@ -86,7 +86,7 @@ interface UsageTargetOptions {
     [key: string]: MdxContent;
   };
   /**
-   * The list of dependencies to use in the Stackblitz example.
+   * The list of dependencies to use in the StackBlitz example.
    * The key is the package name and the value is the version.
    * The version must be a valid semver range.
    *
@@ -104,8 +104,8 @@ interface UsageTargetOptions {
 
 /**
  * @param code The code snippets for each supported framework target.
- * @param title Optional title of the generated playground example. Specify to customize the Stackblitz title.
- * @param description Optional description of the generated playground example. Specify to customize the Stackblitz description.
+ * @param title Optional title of the generated playground example. Specify to customize the StackBlitz title.
+ * @param description Optional description of the generated playground example. Specify to customize the StackBlitz description.
  * @param src The absolute path to the playground demo. For example: `/usage/button/basic/demo.html`
  * @param size The height of the playground. Supports `xsmall`, `small`, `medium`, `large`, 'xlarge' or any string value.
  * @param devicePreview `true` if the playground example should render in a device frame (iOS/MD).
@@ -138,8 +138,8 @@ export default function Playground({
   showConsole?: boolean;
   includeIonContent: boolean;
   /**
-   * The major version of Ionic to use in the generated Stackblitz examples.
-   * This will also load assets for Stackblitz from the specified version directory.
+   * The major version of Ionic to use in the generated StackBlitz examples.
+   * This will also load assets for StackBlitz from the specified version directory.
    */
   version: number;
 }) {
@@ -366,12 +366,10 @@ export default function Playground({
       version,
     };
 
-    let codeBlock;
-    if (!hasUsageTargetOptions) {
-      // codeSnippets are React components, so we need to get their rendered text
-      // using outerText will preserve line breaks for formatting in Stackblitz editor
-      codeBlock = codeRef.current.querySelector('code').outerText;
-    } else {
+    // using outerText will preserve line breaks for formatting in StackBlitz editor
+    const codeBlock = codeRef.current.querySelector('code').outerText;
+
+    if (hasUsageTargetOptions) {
       editorOptions.files = Object.keys(codeSnippets[usageTarget])
         .map((fileName) => ({
           [fileName]: hostRef.current!.querySelector<HTMLElement>(`#${getCodeSnippetId(usageTarget, fileName)} code`)

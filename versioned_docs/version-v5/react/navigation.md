@@ -281,4 +281,8 @@ For more info on routing in React using React Router, check out their docs at [h
 
 ## From the Community
 
+<!-- cspell:disable -->
+
 [Ionic 4 and React: Navigation](https://alligator.io/ionic/ionic-4-react-navigation) - Paul Halliday
+
+<!-- cspell:enable -->
