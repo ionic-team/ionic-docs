@@ -432,7 +432,7 @@ export default function Playground({
    * causing isBrowser to be set to false even if running the app
    * in a browser (vs. SSR). isBrowser is then updated on the next
    * render cycle.
-   * 
+   *
    * This useEffect contains code that can only run in the browser,
    * and also needs to run on that first go-around. Note that
    * isBrowser will never be set from true back to false, so the
