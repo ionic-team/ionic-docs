@@ -1,3 +1,4 @@
+
 Use this plugin to create shortcuts in Android. Use this plugin to handle Intents on your application.
 For more information on Android App Shortcuts: https://developer.android.com/guide/topics/ui/shortcuts.html
 For more information on Android Intents: https://developer.android.com/guide/components/intents-filters.html

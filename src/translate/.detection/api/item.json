@@ -294,7 +294,13 @@
       "attr": "fill",
       "reflectToAttr": false,
       "docs": "The fill for the item. If `\"solid\"` the item will have a background. If\n`\"outline\"` the item will be transparent with a border. Only available in `md` mode.",
-      "docsTags": [],
+      "docsTags": [
+        {
+          "name": "deprecated",
+          "text": "Use the `fill` property on `ion-input` or `ion-textarea` instead."
+        }
+      ],
+      "deprecation": "Use the `fill` property on `ion-input` or `ion-textarea` instead.",
       "values": [
         {
           "value": "outline",
