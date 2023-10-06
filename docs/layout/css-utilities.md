@@ -12,7 +12,7 @@ inlineHtmlPreviews: true
   />
 </head>
 
-Ionic Framewor は、テキストの順番を入れ替えたり、要素の配置や padding や margin を修正する一連のユーティリティ属性を提供します。これは要素で使うことができます。
+Ionic Framework は、テキストの順番を入れ替えたり、要素の配置や padding や margin を修正する一連のユーティリティ属性を提供します。これは要素で使うことができます。
 
 :::note
 使用可能な Ionic Framework スターターを使用してアプリケーションを起動していない場合、これらのスタイルを機能させるには、 [グローバルスタイルシートのオプションセクション](global-stylesheets.md#optional) にリストされているスタイルシートを含める必要があります。
