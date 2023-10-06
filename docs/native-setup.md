@@ -75,7 +75,7 @@ import { Camera, CameraResultType } from '@capacitor/camera';
 
 @Component({...})
 export class CameraComponent{
-  public imageSrc = '';
+  public imageSrc: string | undefined = '';
 
   async takePicture() {
     const image = await Camera.getPhoto({
