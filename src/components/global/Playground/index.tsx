@@ -14,6 +14,7 @@ import TabItem from '@theme/TabItem';
 import { IconHtml, IconTs, IconVue, IconDefault, IconCss, IconDots } from './icons';
 
 import { useScrollPositionBlocker } from '@docusaurus/theme-common';
+import useIsBrowser from '@docusaurus/useIsBrowser';
 
 const ControlButton = forwardRef(
   (
@@ -169,6 +170,13 @@ export default function Playground({
 
   const { isDarkTheme } = useThemeContext();
 
+  /**
+   * When deploying, Docusaurus builds the app in an SSR environment.
+   * We need to check whether we're in a browser so we know if we can
+   * use the window or localStorage objects.
+   */
+  const isBrowser = useIsBrowser();
+
   const hostRef = useRef<HTMLDivElement | null>(null);
   const codeRef = useRef(null);
   const frameiOS = useRef<HTMLIFrameElement | null>(null);
@@ -242,43 +250,49 @@ export default function Playground({
   const [resetCount, setResetCount] = useState(0);
 
   const setAndSaveMode = (mode: Mode) => {
-    localStorage.setItem(MODE_STORAGE_KEY, mode);
     setIonicMode(mode);
 
-    /**
-     * Tell other playgrounds on the page that the mode has
-     * updated, so they can sync up.
-     */
-    window.dispatchEvent(
-      new CustomEvent(MODE_UPDATED_EVENT, {
-        detail: mode,
-      })
-    );
+    if (isBrowser) {
+      localStorage.setItem(MODE_STORAGE_KEY, mode);
+
+      /**
+       * Tell other playgrounds on the page that the mode has
+       * updated, so they can sync up.
+       */
+      window.dispatchEvent(
+        new CustomEvent(MODE_UPDATED_EVENT, {
+          detail: mode,
+        })
+      );
+    }
   };
 
   const setAndSaveUsageTarget = (target: UsageTarget, tab: HTMLElement) => {
-    localStorage.setItem(USAGE_TARGET_STORAGE_KEY, target);
     setUsageTarget(target);
 
-    /**
-     * This prevents the scroll position from jumping around if
-     * there is a playground above this one with code that changes
-     * in length between frameworks.
-     *
-     * Note that we don't need this when changing the mode because
-     * the two mode iframes are always the same height.
-     */
-    blockElementScrollPositionUntilNextRender(tab);
+    if (isBrowser) {
+      localStorage.setItem(USAGE_TARGET_STORAGE_KEY, target);
 
-    /**
-     * Tell other playgrounds on the page that the framework
-     * has updated, so they can sync up.
-     */
-    window.dispatchEvent(
-      new CustomEvent(USAGE_TARGET_UPDATED_EVENT, {
-        detail: target,
-      })
-    );
+      /**
+       * This prevents the scroll position from jumping around if
+       * there is a playground above this one with code that changes
+       * in length between frameworks.
+       *
+       * Note that we don't need this when changing the mode because
+       * the two mode iframes are always the same height.
+       */
+      blockElementScrollPositionUntilNextRender(tab);
+
+      /**
+       * Tell other playgrounds on the page that the framework
+       * has updated, so they can sync up.
+       */
+      window.dispatchEvent(
+        new CustomEvent(USAGE_TARGET_UPDATED_EVENT, {
+          detail: target,
+        })
+      );
+    }
   };
 
   /**
@@ -410,24 +424,45 @@ export default function Playground({
   });
 
   /**
-   * Listen for any playground on the page to have its mode or framework
-   * updated so this playground can switch to the same setting.
+   * Sometimes, the app isn't fully hydrated on the first render,
+   * causing isBrowser to be set to false even if running the app
+   * in a browser (vs. SSR). isBrowser is then updated on the next
+   * render cycle.
+   * 
+   * This useEffect contains code that can only run in the browser,
+   * and also needs to run on that first go-around. Note that
+   * isBrowser will never be set from true back to false, so the
+   * code within the if(isBrowser) check will only run once.
    */
   useEffect(() => {
-    window.addEventListener(MODE_UPDATED_EVENT, (e: CustomEvent) => {
-      const mode = e.detail;
-      if (Object.values(Mode).includes(mode)) {
-        setIonicMode(mode); // don't use setAndSave to avoid infinite loop
-      }
-    });
+    if (isBrowser) {
+      /**
+       * Load the stored mode and/or usage target, if present
+       * from previously being toggled.
+       */
+      const storedMode = localStorage.getItem(MODE_STORAGE_KEY);
+      if (storedMode) setIonicMode(storedMode);
+      const storedUsageTarget = localStorage.getItem(USAGE_TARGET_STORAGE_KEY);
+      if (storedUsageTarget) setUsageTarget(storedUsageTarget);
 
-    window.addEventListener(USAGE_TARGET_UPDATED_EVENT, (e: CustomEvent) => {
-      const usageTarget = e.detail;
-      if (Object.values(UsageTarget).includes(usageTarget)) {
-        setUsageTarget(usageTarget); // don't use setAndSave to avoid infinite loop
-      }
-    });
-  }, []);
+      /**
+       * Listen for any playground on the page to have its mode or framework
+       * updated so this playground can switch to the same setting.
+       */
+      window.addEventListener(MODE_UPDATED_EVENT, (e: CustomEvent) => {
+        const mode = e.detail;
+        if (Object.values(Mode).includes(mode)) {
+          setIonicMode(mode); // don't use setAndSave to avoid infinite loop
+        }
+      });
+      window.addEventListener(USAGE_TARGET_UPDATED_EVENT, (e: CustomEvent) => {
+        const usageTarget = e.detail;
+        if (Object.values(UsageTarget).includes(usageTarget)) {
+          setUsageTarget(usageTarget); // don't use setAndSave to avoid infinite loop
+        }
+      });
+    }
+  }, [isBrowser]);
 
   const isIOS = ionicMode === Mode.iOS;
   const isMD = ionicMode === Mode.MD;
