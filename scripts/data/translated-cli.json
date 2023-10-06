@@ -11,7 +11,7 @@
         "ionic"
       ],
       "summary": "Build web assets and prepare your app for any platform targets",
-      "description": "`ionic build` will perform an Ionic build, which compiles web assets and prepares them for deployment.\n\n`ionic build` uses the Angular CLI. Use `ng build --help` to list all Angular CLI options for building your app. See the `ng build` [docs](https://angular.io/cli/build) for explanations. Options not listed below are considered advanced and can be passed to the `ng` CLI using the `--` separator after the Ionic CLI arguments. See the examples.\n",
+      "description": "`ionic build` will perform an Ionic build, which compiles web assets and prepares them for deployment.\n\n`ionic build` uses the Angular CLI. Use `ng build --help` to list all Angular CLI options for building your app. See the `ng build` [docs](https://angular.io/cli/build) for explanations. Options not listed below are considered advanced and can be passed to the `ng` CLI using the `--` separator after the Ionic CLI arguments. See the examples.",
       "footnotes": [],
       "groups": [],
       "exampleCommands": [
@@ -108,7 +108,7 @@
         "capacitor"
       ],
       "summary": "Add a native platform to your Ionic project",
-      "description": "`ionic capacitor add` will do the following:\n\n- Install the Capacitor platform package\n- Copy the native platform template into your project\n",
+      "description": "`ionic capacitor add` will do the following:\n- Install the Capacitor platform package\n- Copy the native platform template into your project",
       "footnotes": [],
       "groups": [],
       "exampleCommands": [],
@@ -130,7 +130,7 @@
         "capacitor"
       ],
       "summary": "Build an Ionic project for a given platform",
-      "description": "`ionic capacitor build` will do the following:\n\n- Perform `ionic build`\n- Copy web assets into the specified native platform\n- Open the IDE for your native project (Xcode for iOS, Android Studio for Android)\n\nOnce the web assets and configuration are copied into your native project, you can build your app using the native IDE. Unfortunately, programmatically building the native project is not yet supported.\n\nTo configure your native project, see the common configuration [docs](https://capacitorjs.com/docs/basics/configuring-your-app) as well as low-level configuration for [iOS](https://capacitorjs.com/docs/ios/configuration) and [Android](https://capacitorjs.com/docs/android/configuration).\n",
+      "description": "`ionic capacitor build` will do the following:\n- Perform `ionic build`\n- Copy web assets into the specified native platform\n- Open the IDE for your native project (Xcode for iOS, Android Studio for Android)\n\nOnce the web assets and configuration are copied into your native project, you can build your app using the native IDE. Unfortunately, programmatically building the native project is not yet supported.\n\nTo configure your native project, see the common configuration [docs](https://capacitorjs.com/docs/basics/configuring-your-app) as well as low-level configuration for [iOS](https://capacitorjs.com/docs/ios/configuration) and [Android](https://capacitorjs.com/docs/android/configuration).",
       "footnotes": [],
       "groups": [
         "beta"
@@ -233,7 +233,7 @@
         "capacitor"
       ],
       "summary": "Copy web assets to native platforms",
-      "description": "`ionic capacitor copy` will do the following:\n\n- Perform an Ionic build, which compiles web assets\n- Copy web assets to Capacitor native platform(s)\n",
+      "description": "`ionic capacitor copy` will do the following:\n- Perform an Ionic build, which compiles web assets\n- Copy web assets to Capacitor native platform(s)",
       "footnotes": [],
       "groups": [],
       "exampleCommands": [],
@@ -319,7 +319,7 @@
         "capacitor"
       ],
       "summary": "Open the IDE for a given native platform project",
-      "description": "`ionic capacitor open` will do the following:\n\n- Open the IDE for your native project (Xcode for iOS, Android Studio for Android)\n",
+      "description": "`ionic capacitor open` will do the following:\n- Open the IDE for your native project (Xcode for iOS, Android Studio for Android)",
       "footnotes": [],
       "groups": [],
       "exampleCommands": [],
@@ -341,7 +341,7 @@
         "capacitor"
       ],
       "summary": "Run an Ionic project on a connected device",
-      "description": "`ionic capacitor run` will do the following:\n\n- Perform `ionic build` (or run the dev server from `ionic serve` with the `--livereload` option)\n- Run `capacitor run` (or open IDE for your native project with the `--open` option)\n\nWhen using `--livereload` with hardware devices, remember that livereload needs an active connection between device and computer. In some scenarios, you may need to host the dev server on an external address using the `--external` option. See these [docs](https://ionicframework.com/docs/cli/livereload) for more information.\n\nIf you have multiple devices and emulators, you can target a specific one by ID with the `--target` option. You can list targets with `--list`.\n\nFor Android and iOS, you can setup Remote Debugging on your device with browser development tools using these [docs](https://ionicframework.com/docs/developer-resources/developer-tips).\n",
+      "description": "`ionic capacitor run` will do the following:\n- Perform `ionic build` (or run the dev server from `ionic serve` with the `--livereload` option)\n- Run `capacitor run` (or open IDE for your native project with the `--open` option)\n\nWhen using `--livereload` with hardware devices, remember that livereload needs an active connection between device and computer. In some scenarios, you may need to host the dev server on an external address using the `--external` option. See these [docs](https://ionicframework.com/docs/cli/livereload) for more information.\n\nIf you have multiple devices and emulators, you can target a specific one by ID with the `--target` option. You can list targets with `--list`.\n\nFor Android and iOS, you can setup Remote Debugging on your device with browser development tools using these [docs](https://ionicframework.com/docs/developer-resources/developer-tips).",
       "footnotes": [],
       "groups": [],
       "exampleCommands": [
@@ -541,7 +541,7 @@
         "capacitor"
       ],
       "summary": "Sync (copy + update) an Ionic project",
-      "description": "`ionic capacitor sync` will do the following:\n\n- Perform an Ionic build, which compiles web assets\n- Copy web assets to Capacitor native platform(s)\n- Update Capacitor native platform(s) and dependencies\n- Install any discovered Capacitor or Cordova plugins\n",
+      "description": "`ionic capacitor sync` will do the following:\n- Perform an Ionic build, which compiles web assets\n- Copy web assets to Capacitor native platform(s)\n- Update Capacitor native platform(s) and dependencies\n- Install any discovered Capacitor or Cordova plugins",
       "footnotes": [],
       "groups": [],
       "exampleCommands": [],
@@ -627,7 +627,7 @@
         "capacitor"
       ],
       "summary": "Update Capacitor native platforms, install Capacitor/Cordova plugins",
-      "description": "`ionic capacitor update` will do the following:\n\n- Update Capacitor native platform(s) and dependencies\n- Install any discovered Capacitor or Cordova plugins\n",
+      "description": "`ionic capacitor update` will do the following:\n- Update Capacitor native platform(s) and dependencies\n- Install any discovered Capacitor or Cordova plugins",
       "footnotes": [],
       "groups": [],
       "exampleCommands": [],
@@ -648,7 +648,7 @@
         "ionic"
       ],
       "summary": "Enables tab-completion for Ionic CLI commands.",
-      "description": "This command is experimental and only works for Z shell (zsh) and non-Windows platforms.\n\nTo enable completions for the Ionic CLI, you can add the completion code that this command prints to your **~/.zshrc** (or any other file loaded with your shell). See the examples.\n",
+      "description": "This command is experimental and only works for Z shell (zsh) and non-Windows platforms.\n\nTo enable completions for the Ionic CLI, you can add the completion code that this command prints to your **~/.zshrc** (or any other file loaded with your shell). See the examples.",
       "footnotes": [],
       "groups": [
         "experimental"
@@ -669,7 +669,7 @@
         "config"
       ],
       "summary": "Print config values",
-      "description": "This command reads and prints configuration values from the project's **./ionic.config.json** file. It can also operate on the global CLI configuration (**~/.ionic/config.json**) using the `--global` option.\n\nFor nested properties, separate nest levels with dots. For example, the property name `integrations.cordova` will look in the **integrations** object for the **cordova** property.\n\nWithout a `property` argument, this command prints out the entire config.\n\nFor multi-app projects, this command is scoped to the current project by default. To operate at the root of the project configuration file instead, use the `--root` option.\n\nIf you are using this command programmatically, you can use the `--json` option.\n\nThis command will sanitize config output for known sensitive fields (disabled when using `--json`).\n",
+      "description": "This command reads and prints configuration values from the project's **./ionic.config.json** file. It can also operate on the global CLI configuration (**~/.ionic/config.json**) using the `--global` option.\n\nFor nested properties, separate nest levels with dots. For example, the property name `integrations.cordova` will look in the **integrations** object for the **cordova** property.\n\nWithout a `property` argument, this command prints out the entire config.\n\nFor multi-app projects, this command is scoped to the current project by default. To operate at the root of the project configuration file instead, use the `--root` option.\n\nIf you are using this command programmatically, you can use the `--json` option.\n\nThis command will sanitize config output for known sensitive fields (disabled when using `--json`).",
       "footnotes": [],
       "groups": [],
       "exampleCommands": [
@@ -733,7 +733,7 @@
         "config"
       ],
       "summary": "Set config values",
-      "description": "This command writes configuration values to the project's **./ionic.config.json** file. It can also operate on the global CLI configuration (**~/.ionic/config.json**) using the `--global` option.\n\nFor nested properties, separate nest levels with dots. For example, the property name `integrations.cordova` will look in the **integrations** object for the **cordova** property.\n\nFor multi-app projects, this command is scoped to the current project by default. To operate at the root of the project configuration file instead, use the `--root` option.\n\nThis command will attempt to coerce `value` into a suitable JSON type. If it is JSON-parsable, such as `123`, `true`, `[]`, etc., then it takes the parsed result. Otherwise, the value is interpreted as a string. For stricter input, use `--json`, which will error with non-JSON values.\n\nBy default, if `property` exists and is an object or an array, the value is not overwritten. To disable this check and always overwrite the property, use `--force`.\n",
+      "description": "This command writes configuration values to the project's **./ionic.config.json** file. It can also operate on the global CLI configuration (**~/.ionic/config.json**) using the `--global` option.\n\nFor nested properties, separate nest levels with dots. For example, the property name `integrations.cordova` will look in the **integrations** object for the **cordova** property.\n\nFor multi-app projects, this command is scoped to the current project by default. To operate at the root of the project configuration file instead, use the `--root` option.\n\nThis command will attempt to coerce `value` into a suitable JSON type. If it is JSON-parsable, such as `123`, `true`, `[]`, etc., then it takes the parsed result. Otherwise, the value is interpreted as a string. For stricter input, use `--json`, which will error with non-JSON values.\n\nBy default, if `property` exists and is an object or an array, the value is not overwritten. To disable this check and always overwrite the property, use `--force`.",
       "footnotes": [],
       "groups": [],
       "exampleCommands": [
@@ -813,7 +813,7 @@
         "config"
       ],
       "summary": "Delete config values",
-      "description": "This command deletes configuration values from the project's **./ionic.config.json** file. It can also operate on the global CLI configuration (**~/.ionic/config.json**) using the `--global` option.\n\nFor nested properties, separate nest levels with dots. For example, the property name `integrations.cordova` will look in the **integrations** object for the **cordova** property.\n\nFor multi-app projects, this command is scoped to the current project by default. To operate at the root of the project configuration file instead, use the `--root` option.\n",
+      "description": "This command deletes configuration values from the project's **./ionic.config.json** file. It can also operate on the global CLI configuration (**~/.ionic/config.json**) using the `--global` option.\n\nFor nested properties, separate nest levels with dots. For example, the property name `integrations.cordova` will look in the **integrations** object for the **cordova** property.\n\nFor multi-app projects, this command is scoped to the current project by default. To operate at the root of the project configuration file instead, use the `--root` option.",
       "footnotes": [],
       "groups": [],
       "exampleCommands": [
@@ -868,7 +868,7 @@
         "cordova"
       ],
       "summary": "Use Cordova to build for Android and iOS platform targets",
-      "description": "Like running `cordova build` directly, `ionic cordova build` also builds web assets from `ionic build` and provides friendly checks for Android and iOS platforms.\n\nTo pass additional options to the Cordova CLI, use the `--` separator after the Ionic CLI arguments.\n\nThe Cordova CLI requires a separator for platform-specific arguments for Android [builds](https://cordova.apache.org/docs/en/latest/guide/platforms/android/index.html#using-flags), so an additional separator is required for the Ionic CLI, but it is not required for iOS [builds](https://cordova.apache.org/docs/en/latest/guide/platforms/ios/index.html#using-flags). See the example commands for usage with separators. To avoid using flags, consider using `--buildConfig` with a **build.json** file.\n",
+      "description": "Like running `cordova build` directly, `ionic cordova build` also builds web assets from `ionic build` and provides friendly checks for Android and iOS platforms.\n\nTo pass additional options to the Cordova CLI, use the `--` separator after the Ionic CLI arguments.\n\nThe Cordova CLI requires a separator for platform-specific arguments for Android [builds](https://cordova.apache.org/docs/en/latest/guide/platforms/android/index.html#using-flags), so an additional separator is required for the Ionic CLI, but it is not required for iOS [builds](https://cordova.apache.org/docs/en/latest/guide/platforms/ios/index.html#using-flags). See the example commands for usage with separators. To avoid using flags, consider using `--buildConfig` with a **build.json** file.",
       "footnotes": [],
       "groups": [],
       "exampleCommands": [
@@ -1023,7 +1023,7 @@
         "cordova"
       ],
       "summary": "Compile native platform code",
-      "description": "Like running `cordova compile` directly, but provides friendly checks.\n",
+      "description": "Like running `cordova compile` directly, but provides friendly checks.",
       "footnotes": [],
       "groups": [],
       "exampleCommands": [
@@ -1118,7 +1118,7 @@
         "cordova"
       ],
       "summary": "Emulate an Ionic project on a simulator/emulator",
-      "description": "Build your app and deploy it to devices and emulators using this command. Optionally specify the `--livereload` option to use the dev server from `ionic serve` for livereload functionality.\n\nThis command will first use `ionic build` to build web assets (or `ionic serve` with the `--livereload` option). Then, `cordova build` is used to compile and prepare your app. Finally, the `native-run` [utility](https://github.com/ionic-team/native-run) is used to run your app on a device. To use Cordova for this process instead, use the `--no-native-run` option.\n\nIf you have multiple devices and emulators, you can target a specific one with the `--target` option. You can list targets with `--list`.\n\nFor Android and iOS, you can setup Remote Debugging on your device with browser development tools using these [docs](https://ionicframework.com/docs/developer-resources/developer-tips).\n\nWhen using `--livereload` with hardware devices, remember that livereload needs an active connection between device and computer. In some scenarios, you may need to host the dev server on an external address using the `--external` option. See these [docs](https://ionicframework.com/docs/cli/livereload) for more information.\n\nJust like with `ionic cordova build`, you can pass additional options to the Cordova CLI using the `--` separator. To pass additional options to the dev server, consider using `ionic serve` separately and using the `--livereload-url` option.\n",
+      "description": "Build your app and deploy it to devices and emulators using this command. Optionally specify the `--livereload` option to use the dev server from `ionic serve` for livereload functionality.\n\nThis command will first use `ionic build` to build web assets (or `ionic serve` with the `--livereload` option). Then, `cordova build` is used to compile and prepare your app. Finally, the `native-run` [utility](https://github.com/ionic-team/native-run) is used to run your app on a device. To use Cordova for this process instead, use the `--no-native-run` option.\n\nIf you have multiple devices and emulators, you can target a specific one with the `--target` option. You can list targets with `--list`.\n\nFor Android and iOS, you can setup Remote Debugging on your device with browser development tools using these [docs](https://ionicframework.com/docs/developer-resources/developer-tips).\n\nWhen using `--livereload` with hardware devices, remember that livereload needs an active connection between device and computer. In some scenarios, you may need to host the dev server on an external address using the `--external` option. See these [docs](https://ionicframework.com/docs/cli/livereload) for more information.\n\nJust like with `ionic cordova build`, you can pass additional options to the Cordova CLI using the `--` separator. To pass additional options to the dev server, consider using `ionic serve` separately and using the `--livereload-url` option.",
       "footnotes": [],
       "groups": [],
       "exampleCommands": [
@@ -1454,7 +1454,7 @@
         "cordova"
       ],
       "summary": "Manage Cordova platform targets",
-      "description": "Like running `cordova platform` directly, but adds default Ionic icons and splash screen resources (during `add`) and provides friendly checks.\n",
+      "description": "Like running `cordova platform` directly, but adds default Ionic icons and splash screen resources (during `add`) and provides friendly checks.",
       "footnotes": [],
       "groups": [],
       "exampleCommands": [
@@ -1500,7 +1500,7 @@
         "cordova"
       ],
       "summary": "Manage Cordova plugins",
-      "description": "Like running `cordova plugin` directly, but provides friendly checks.\n",
+      "description": "Like running `cordova plugin` directly, but provides friendly checks.",
       "footnotes": [],
       "groups": [],
       "exampleCommands": [
@@ -1562,7 +1562,7 @@
         "cordova"
       ],
       "summary": "Copies assets to Cordova platforms, preparing them for native builds",
-      "description": "`ionic cordova prepare` will do the following:\n\n- Perform an Ionic build, which compiles web assets to **www/**.\n- Copy the **www/** directory into your Cordova platforms.\n- Transform **config.xml** into platform-specific manifest files.\n- Copy icons and splash screens from **resources/** to into your Cordova platforms.\n- Copy plugin files into specified platforms.\n\nYou may wish to use `ionic cordova prepare` if you run your project with Android Studio or Xcode.\n",
+      "description": "`ionic cordova prepare` will do the following:\n\n- Perform an Ionic build, which compiles web assets to **www/**.\n- Copy the **www/** directory into your Cordova platforms.\n- Transform **config.xml** into platform-specific manifest files.\n- Copy icons and splash screens from **resources/** to into your Cordova platforms.\n- Copy plugin files into specified platforms.\n\nYou may wish to use `ionic cordova prepare` if you run your project with Android Studio or Xcode.",
       "footnotes": [],
       "groups": [],
       "exampleCommands": [
@@ -1652,7 +1652,7 @@
         "cordova"
       ],
       "summary": "Checks and print out all the requirements for platforms",
-      "description": "Like running `cordova requirements` directly, but provides friendly checks.\n",
+      "description": "Like running `cordova requirements` directly, but provides friendly checks.",
       "footnotes": [],
       "groups": [],
       "exampleCommands": [],
@@ -1674,7 +1674,7 @@
         "cordova"
       ],
       "summary": "Automatically create icon and splash screen resources",
-      "description": "Generate perfectly sized icons and splash screens from PNG source images for your Cordova platforms with this command.\n\nThe source image for icons should ideally be at least **1024×1024px** and located at **resources/icon.png**. The source image for splash screens should ideally be at least **2732×2732px** and located at **resources/splash.png**. If you used `ionic start`, there should already be default Ionic resources in the **resources/** directory, which you can overwrite.\n\nYou can also generate platform-specific icons and splash screens by placing them in the respective **resources/&lt;platform&gt;/** directory. For example, to generate an icon for Android, place your image at **resources/android/icon.png**.\n\nFor best results, the splash screen's artwork should roughly fit within a square (**1200×1200px**) at the center of the image. You can use **[https://code.ionicframework.com/resources/splash.psd](https://code.ionicframework.com/resources/splash.psd)** as a template for your splash screen.\n\n`ionic cordova resources` will automatically update your **config.xml** to reflect the changes in the generated images, which Cordova then configures.\n\nThis command uses the `cordova-res` [utility](https://github.com/ionic-team/cordova-res) to generate resources locally.\n\nCordova reference documentation:\n\n- Icons: **[https://cordova.apache.org/docs/en/latest/config_ref/images.html](https://cordova.apache.org/docs/en/latest/config_ref/images.html)**\n- Splash Screens: **[https://cordova.apache.org/docs/en/latest/reference/cordova-plugin-splashscreen/](https://cordova.apache.org/docs/en/latest/reference/cordova-plugin-splashscreen/)**\n",
+      "description": "Generate perfectly sized icons and splash screens from PNG source images for your Cordova platforms with this command.\n\nThe source image for icons should ideally be at least **1024×1024px** and located at **resources/icon.png**. The source image for splash screens should ideally be at least **2732×2732px** and located at **resources/splash.png**. If you used `ionic start`, there should already be default Ionic resources in the **resources/** directory, which you can overwrite.\n\nYou can also generate platform-specific icons and splash screens by placing them in the respective **resources/&lt;platform&gt;/** directory. For example, to generate an icon for Android, place your image at **resources/android/icon.png**.\n\nFor best results, the splash screen's artwork should roughly fit within a square (**1200×1200px**) at the center of the image. You can use **[https://code.ionicframework.com/resources/splash.psd](https://code.ionicframework.com/resources/splash.psd)** as a template for your splash screen.\n\n`ionic cordova resources` will automatically update your **config.xml** to reflect the changes in the generated images, which Cordova then configures.\n\nThis command uses the `cordova-res` [utility](https://github.com/ionic-team/cordova-res) to generate resources locally.\n\nCordova reference documentation:\n- Icons: **[https://cordova.apache.org/docs/en/latest/config_ref/images.html](https://cordova.apache.org/docs/en/latest/config_ref/images.html)**\n- Splash Screens: **[https://cordova.apache.org/docs/en/latest/reference/cordova-plugin-splashscreen/](https://cordova.apache.org/docs/en/latest/reference/cordova-plugin-splashscreen/)**",
       "footnotes": [],
       "groups": [],
       "exampleCommands": [
@@ -1727,7 +1727,7 @@
         "cordova"
       ],
       "summary": "Run an Ionic project on a connected device",
-      "description": "Build your app and deploy it to devices and emulators using this command. Optionally specify the `--livereload` option to use the dev server from `ionic serve` for livereload functionality.\n\nThis command will first use `ionic build` to build web assets (or `ionic serve` with the `--livereload` option). Then, `cordova build` is used to compile and prepare your app. Finally, the `native-run` [utility](https://github.com/ionic-team/native-run) is used to run your app on a device. To use Cordova for this process instead, use the `--no-native-run` option.\n\nIf you have multiple devices and emulators, you can target a specific one with the `--target` option. You can list targets with `--list`.\n\nFor Android and iOS, you can setup Remote Debugging on your device with browser development tools using these [docs](https://ionicframework.com/docs/developer-resources/developer-tips).\n\nWhen using `--livereload` with hardware devices, remember that livereload needs an active connection between device and computer. In some scenarios, you may need to host the dev server on an external address using the `--external` option. See these [docs](https://ionicframework.com/docs/cli/livereload) for more information.\n\nJust like with `ionic cordova build`, you can pass additional options to the Cordova CLI using the `--` separator. To pass additional options to the dev server, consider using `ionic serve` separately and using the `--livereload-url` option.\n",
+      "description": "Build your app and deploy it to devices and emulators using this command. Optionally specify the `--livereload` option to use the dev server from `ionic serve` for livereload functionality.\n\nThis command will first use `ionic build` to build web assets (or `ionic serve` with the `--livereload` option). Then, `cordova build` is used to compile and prepare your app. Finally, the `native-run` [utility](https://github.com/ionic-team/native-run) is used to run your app on a device. To use Cordova for this process instead, use the `--no-native-run` option.\n\nIf you have multiple devices and emulators, you can target a specific one with the `--target` option. You can list targets with `--list`.\n\nFor Android and iOS, you can setup Remote Debugging on your device with browser development tools using these [docs](https://ionicframework.com/docs/developer-resources/developer-tips).\n\nWhen using `--livereload` with hardware devices, remember that livereload needs an active connection between device and computer. In some scenarios, you may need to host the dev server on an external address using the `--external` option. See these [docs](https://ionicframework.com/docs/cli/livereload) for more information.\n\nJust like with `ionic cordova build`, you can pass additional options to the Cordova CLI using the `--` separator. To pass additional options to the dev server, consider using `ionic serve` separately and using the `--livereload-url` option.",
       "footnotes": [],
       "groups": [],
       "exampleCommands": [
@@ -2464,7 +2464,7 @@
         "ionic"
       ],
       "summary": "Create Pages, Components, & Angular Features",
-      "description": "Automatically create framework features with Ionic Generate. This command uses the Angular CLI to generate features such as `pages`, `components`, `directives`, `services`, and more.\n\n- For a full list of available types, use `npx ng g --help`\n- For a list of options for a types, use `npx ng g <type> --help`\n\nYou can specify a path to nest your feature within any number of subdirectories. For example, specify a name of `\"pages/New Page\"` to generate page files at **src/app/pages/new-page/**.\n\nTo test a generator before file modifications are made, use the `--dry-run` option.\n",
+      "description": "Automatically create framework features with Ionic Generate. This command uses the Angular CLI to generate features such as `pages`, `components`, `directives`, `services`, and more.\n\n - For a full list of available types, use `npx ng g --help`\n - For a list of options for a types, use `npx ng g <type> --help`\n\nYou can specify a path to nest your feature within any number of subdirectories. For example, specify a name of `\"pages/New Page\"` to generate page files at **src/app/pages/new-page/**.\n\nTo test a generator before file modifications are made, use the `--dry-run` option.",
       "footnotes": [],
       "groups": [],
       "exampleCommands": [
@@ -2501,7 +2501,7 @@
         "git"
       ],
       "summary": "Adds/updates the Appflow git remote to your local Ionic app",
-      "description": "This command is used by `ionic link` when Appflow is used as the git host.\n\n`ionic git remote` will check the local repository for whether or not the git remote is properly set up. This command operates on the **ionic** remote. For advanced configuration, see **Settings** => **Git** in the app settings of the [Dashboard](https://dashboard.ionicframework.com).\n",
+      "description": "This command is used by `ionic link` when Appflow is used as the git host.\n\n`ionic git remote` will check the local repository for whether or not the git remote is properly set up. This command operates on the **ionic** remote. For advanced configuration, see **Settings** => **Git** in the app settings of the [Dashboard](https://dashboard.ionicframework.com).",
       "footnotes": [],
       "groups": [
         "paid"
@@ -2518,7 +2518,7 @@
         "ionic"
       ],
       "summary": "Print project, system, and environment information",
-      "description": "This command is an easy way to share information about your setup. If applicable, be sure to run `ionic info` within your project directory to display even more information.\n",
+      "description": "This command is an easy way to share information about your setup. If applicable, be sure to run `ionic info` within your project directory to display even more information.",
       "footnotes": [],
       "groups": [],
       "exampleCommands": [],
@@ -2544,7 +2544,7 @@
         "ionic"
       ],
       "summary": "Initialize existing projects with Ionic",
-      "description": "This command will initialize an Ionic app within the current directory. Usually, this means an `ionic.config.json` file is created. If used within a multi-app project, the app is initialized in the root `ionic.config.json`.\n\n`ionic init` will prompt for a project name and then proceed to determine the type of your project. You can specify the `name` argument and `--type` option to provide these values via command-line.\n\nIf the `--multi-app` flag is specified, this command will initialize your project as a multi-app project, allowing for apps within monorepos and unconventional repository structures. See the multi-app [docs](https://ionicframework.com/docs/cli/configuration#multi-app-projects) for details. Once a multi-app project is initialized, you can run `ionic init` again within apps in your project to initialize them.\n",
+      "description": "This command will initialize an Ionic app within the current directory. Usually, this means an `ionic.config.json` file is created. If used within a multi-app project, the app is initialized in the root `ionic.config.json`.\n\n`ionic init` will prompt for a project name and then proceed to determine the type of your project. You can specify the `name` argument and `--type` option to provide these values via command-line.\n\nIf the `--multi-app` flag is specified, this command will initialize your project as a multi-app project, allowing for apps within monorepos and unconventional repository structures. See the multi-app [docs](https://ionicframework.com/docs/cli/configuration#multi-app-projects) for details. Once a multi-app project is initialized, you can run `ionic init` again within apps in your project to initialize them.",
       "footnotes": [],
       "groups": [
         "beta"
@@ -2632,7 +2632,7 @@
         "integrations"
       ],
       "summary": "Disable an integration",
-      "description": "Integrations, such as Cordova, can be disabled with this command.\n",
+      "description": "Integrations, such as Cordova, can be disabled with this command.",
       "footnotes": [],
       "groups": [],
       "exampleCommands": [],
@@ -2660,7 +2660,7 @@
         "integrations"
       ],
       "summary": "Add & enable integrations to your app",
-      "description": "Integrations, such as Cordova, can be enabled with this command. If the integration has never been added to the project, `ionic integrations enable` will download and add the integration.\n\nIntegrations can be re-added with the `--add` option.\n",
+      "description": "Integrations, such as Cordova, can be enabled with this command. If the integration has never been added to the project, `ionic integrations enable` will download and add the integration.\n\nIntegrations can be re-added with the `--add` option.",
       "footnotes": [],
       "groups": [],
       "exampleCommands": [],
@@ -2716,7 +2716,7 @@
         "integrations"
       ],
       "summary": "List available and active integrations in your app",
-      "description": "This command will print the status of integrations in Ionic projects. Integrations can be **enabled** (added and enabled), **disabled** (added but disabled), and **not added** (never added to the project).\n\n- To enable or add integrations, see `ionic integrations enable --help`\n- To disable integrations, see `ionic integrations disable --help`\n",
+      "description": "This command will print the status of integrations in Ionic projects. Integrations can be **enabled** (added and enabled), **disabled** (added but disabled), and **not added** (never added to the project).\n\n- To enable or add integrations, see `ionic integrations enable --help`\n- To disable integrations, see `ionic integrations disable --help`",
       "footnotes": [],
       "groups": [],
       "exampleCommands": [],
@@ -2733,7 +2733,7 @@
         "ionic"
       ],
       "summary": "Connect local apps to Ionic",
-      "description": "Link apps on Appflow to local Ionic projects with this command.\n\nIf the `id` argument is excluded, this command will prompt you to select an app from Appflow.\n\nAppflow uses a git-based workflow to manage app updates. During the linking process, select **GitHub** (recommended) or **Appflow** as a git host. See our [documentation](https://ionicframework.com/docs/appflow/basics/git) for more information.\n\nUltimately, this command sets the **id** property in **./ionic.config.json**, which marks this app as linked.\n\nIf you are having issues linking, please get in touch with our [Support](https://ion.link/support-request).\n",
+      "description": "Link apps on Appflow to local Ionic projects with this command.\n\nIf the `id` argument is excluded, this command will prompt you to select an app from Appflow.\n\nAppflow uses a git-based workflow to manage app updates. During the linking process, select **GitHub** (recommended) or **Appflow** as a git host. See our [documentation](https://ionicframework.com/docs/appflow/basics/git) for more information.\n\nUltimately, this command sets the **id** property in **./ionic.config.json**, which marks this app as linked.\n\nIf you are having issues linking, please get in touch with our [Support](https://ion.link/support-request).",
       "footnotes": [],
       "groups": [
         "paid"
@@ -2760,7 +2760,7 @@
         "live-update"
       ],
       "summary": "Adds Appflow Live Update plugin to the project",
-      "description": "This command adds the Appflow Live Update plugin (`cordova-plugin-ionic`) for both Capacitor and Cordova projects.\n\nFor Capacitor projects it runs all the steps necessary to install the plugin, sync with the native projects and add the configuration to the proper iOS and Android configuration files.\n\nFor Cordova projects it just takes care of running the proper Cordova CLI command with the submitted parameters.\n",
+      "description": "This command adds the Appflow Live Update plugin (`cordova-plugin-ionic`) for both Capacitor and Cordova projects.\n\nFor Capacitor projects it runs all the steps necessary to install the plugin, sync with the native projects and add the configuration to the proper iOS and Android configuration files.\n\nFor Cordova projects it just takes care of running the proper Cordova CLI command with the submitted parameters.",
       "footnotes": [],
       "groups": [
         "paid"
@@ -2840,7 +2840,7 @@
         "live-update"
       ],
       "summary": "Overrides Appflow Live Update configuration",
-      "description": "This command overrides configuration for the Appflow Live Update plugin (`cordova-plugin-ionic`) in Capacitor projects.\n\nFor Capacitor projects, if the plugin is already installed, it overrides the configuration variables in the native projects.\n\nFor Cordova projects this is not implemented because it is better to reinstall the plugin with the different parameters and let Cordova deal with the changes.\n",
+      "description": "This command overrides configuration for the Appflow Live Update plugin (`cordova-plugin-ionic`) in Capacitor projects.\n\nFor Capacitor projects, if the plugin is already installed, it overrides the configuration variables in the native projects.\n\nFor Cordova projects this is not implemented because it is better to reinstall the plugin with the different parameters and let Cordova deal with the changes.",
       "footnotes": [],
       "groups": [
         "paid"
@@ -2943,7 +2943,7 @@
         "ionic"
       ],
       "summary": "Log in to Ionic",
-      "description": "Authenticate with Ionic and retrieve a user token, which is stored in the CLI config. Running `ionic login` will open a browser where you can submit your credentials.\n\nIf the `IONIC_TOKEN` environment variable is set, the CLI will automatically authenticate you. Use the Dashboard to generate a Personal Access Token.\n\nIf you need to create an Ionic account, use `ionic signup` or the Ionic [Website](https://ionicframework.com/signup).\n\nIf you are having issues logging in, please get in touch with our [Support](https://ion.link/support-request).\n",
+      "description": "Authenticate with Ionic and retrieve a user token, which is stored in the CLI config. Running `ionic login` will open a browser where you can submit your credentials.\n\nIf the `IONIC_TOKEN` environment variable is set, the CLI will automatically authenticate you. Use the Dashboard to generate a Personal Access Token.\n\nIf you need to create an Ionic account, use `ionic signup` or the Ionic [Website](https://ionicframework.com/signup).\n\nIf you are having issues logging in, please get in touch with our [Support](https://ion.link/support-request).",
       "footnotes": [],
       "groups": [],
       "exampleCommands": [
@@ -2971,7 +2971,7 @@
         "ionic"
       ],
       "summary": "Log out of Ionic",
-      "description": "Remove the Ionic user token from the CLI config.\n\nLog in again with `ionic login`.\n\nIf you need to create an Ionic account, use `ionic signup`.\n",
+      "description": "Remove the Ionic user token from the CLI config.\n\nLog in again with `ionic login`.\n\nIf you need to create an Ionic account, use `ionic signup`.",
       "footnotes": [],
       "groups": [],
       "exampleCommands": [],
@@ -3206,7 +3206,7 @@
         "ionic"
       ],
       "summary": "Remove and recreate dependencies and generated files",
-      "description": "This command may be useful when obscure errors or issues are encountered. It removes and recreates dependencies of your project.\n\nFor Cordova apps, it removes and recreates the generated native project and the native dependencies of your project.\n",
+      "description": "This command may be useful when obscure errors or issues are encountered. It removes and recreates dependencies of your project.\n\nFor Cordova apps, it removes and recreates the generated native project and the native dependencies of your project.",
       "footnotes": [],
       "groups": [],
       "exampleCommands": [],
@@ -3232,7 +3232,7 @@
         "ionic"
       ],
       "summary": "Start a local dev server for app dev/testing",
-      "description": "Easily spin up a development server which launches in your browser. It watches for changes in your source files and automatically reloads with the updated build.\n\nBy default, `ionic serve` boots up a development server on `localhost`. To serve to your LAN, specify the `--external` option, which will use all network interfaces and print the external address(es) on which your app is being served.\n\n`ionic serve` uses the Angular CLI. Use `ng serve --help` to list all Angular CLI options for serving your app. See the `ng serve` [docs](https://angular.io/cli/serve) for explanations. Options not listed below are considered advanced and can be passed to the Angular CLI using the `--` separator after the Ionic CLI arguments. See the examples.\n\nThe dev server can use HTTPS via the `--ssl` option **(experimental)**. There are several known issues with HTTPS. See issue [#3305](https://github.com/ionic-team/ionic-cli/issues/3305).\n",
+      "description": "Easily spin up a development server which launches in your browser. It watches for changes in your source files and automatically reloads with the updated build.\n\nBy default, `ionic serve` boots up a development server on `localhost`. To serve to your LAN, specify the `--external` option, which will use all network interfaces and print the external address(es) on which your app is being served.\n\n`ionic serve` uses the Angular CLI. Use `ng serve --help` to list all Angular CLI options for serving your app. See the `ng serve` [docs](https://angular.io/cli/serve) for explanations. Options not listed below are considered advanced and can be passed to the Angular CLI using the `--` separator after the Ionic CLI arguments. See the examples.\n\nThe dev server can use HTTPS via the `--ssl` option **(experimental)**. There are several known issues with HTTPS. See issue [#3305](https://github.com/ionic-team/ionic-cli/issues/3305).",
       "footnotes": [],
       "groups": [],
       "exampleCommands": [
@@ -3433,7 +3433,7 @@
         "ionic"
       ],
       "summary": "Create an Ionic account",
-      "description": "If you are having issues signing up, please get in touch with our [Support](https://ion.link/support-request).\n",
+      "description": "If you are having issues signing up, please get in touch with our [Support](https://ion.link/support-request).",
       "footnotes": [],
       "groups": [],
       "exampleCommands": [],
@@ -3605,7 +3605,7 @@
         "ssh"
       ],
       "summary": "Setup your Ionic SSH keys automatically",
-      "description": "This command offers a setup wizard for Ionic SSH keys using a series of prompts. For more control, see the commands available for managing SSH keys with the `ionic ssh --help` command. For an entirely manual approach, see **Personal Settings** => **SSH Keys** in the [Dashboard](https://dashboard.ionicframework.com/settings/ssh-keys).\n\nIf you are having issues setting up SSH keys, please get in touch with our [Support](https://ion.link/support-request).\n",
+      "description": "This command offers a setup wizard for Ionic SSH keys using a series of prompts. For more control, see the commands available for managing SSH keys with the `ionic ssh --help` command. For an entirely manual approach, see **Personal Settings** => **SSH Keys** in the [Dashboard](https://dashboard.ionicframework.com/settings/ssh-keys).\n\nIf you are having issues setting up SSH keys, please get in touch with our [Support](https://ion.link/support-request).",
       "footnotes": [],
       "groups": [],
       "exampleCommands": [],
@@ -3621,7 +3621,7 @@
         "ssh"
       ],
       "summary": "Set your active Ionic SSH key",
-      "description": "This command modifies the SSH configuration file (**~/.ssh/config**) to set an active private key for the **git.ionicjs.com** host. Read more about SSH configuration by running the `man ssh_config` command or by visiting online man [pages](https://linux.die.net/man/5/ssh_config).\n\nBefore making changes, `ionic ssh use` will print a diff and ask for permission to write the file.\n",
+      "description": "This command modifies the SSH configuration file (**~/.ssh/config**) to set an active private key for the **git.ionicjs.com** host. Read more about SSH configuration by running the `man ssh_config` command or by visiting online man [pages](https://linux.die.net/man/5/ssh_config).\n\nBefore making changes, `ionic ssh use` will print a diff and ask for permission to write the file.",
       "footnotes": [],
       "groups": [],
       "exampleCommands": [],
@@ -3643,7 +3643,7 @@
         "ssl"
       ],
       "summary": "Generates an SSL key & certificate",
-      "description": "Uses OpenSSL to create a self-signed certificate for **localhost** (by default).\n\nAfter the certificate is generated, you will still need to add it to your system or browser as a trusted certificate.\n\nThe default directory for `--key-path` and `--cert-path` is `.ionic/ssl/`.\n",
+      "description": "Uses OpenSSL to create a self-signed certificate for **localhost** (by default).\n\nAfter the certificate is generated, you will still need to add it to your system or browser as a trusted certificate.\n\nThe default directory for `--key-path` and `--cert-path` is `.ionic/ssl/`.",
       "footnotes": [],
       "groups": [
         "experimental"
@@ -3765,7 +3765,7 @@
         "ionic"
       ],
       "summary": "Create a new project",
-      "description": "This command creates a working Ionic app. It installs dependencies for you and sets up your project.\n\nRunning `ionic start` without any arguments will prompt you for information about your new project.\n\nThe first argument is your app's `name`. Don't worry--you can always change this later. The `--project-id` is generated from `name` unless explicitly specified.\n\nThe second argument is the `template` from which to generate your app. You can list all templates with the `--list` option. You can also specify a git repository URL for `template`, in which case the existing project will be cloned.\n\nUse the `--type` option to start projects using older versions of Ionic. For example, you can start an Ionic 3 project with `--type=ionic-angular`. Use `--list` to see all project types and templates.\n",
+      "description": "This command creates a working Ionic app. It installs dependencies for you and sets up your project.\n\nRunning `ionic start` without any arguments will prompt you for information about your new project.\n\nThe first argument is your app's `name`. Don't worry--you can always change this later. The `--project-id` is generated from `name` unless explicitly specified.\n\nThe second argument is the `template` from which to generate your app. You can list all templates with the `--list` option. You can also specify a git repository URL for `template`, in which case the existing project will be cloned.\n\nUse the `--type` option to start projects using older versions of Ionic. For example, you can start an Ionic 3 project with `--type=ionic-angular`. Use `--list` to see all project types and templates.",
       "footnotes": [],
       "groups": [],
       "exampleCommands": [

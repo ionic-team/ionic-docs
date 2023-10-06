@@ -4956,6 +4956,33 @@
       "usage": {},
       "props": [
         {
+          "name": "alignment",
+          "type": "\"center\" | \"start\"",
+          "complexType": {
+            "original": "'start' | 'center'",
+            "resolved": "\"center\" | \"start\"",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "alignment",
+          "reflectToAttr": false,
+          "docs": "How to control the alignment of the checkbox and label on the cross axis.\n`\"start\"`: The label and control will appear on the left of the cross axis in LTR, and on the right side in RTL.\n`\"center\"`: The label and control will appear at the center of the cross axis in both LTR and RTL.",
+          "docsTags": [],
+          "default": "'center'",
+          "values": [
+            {
+              "value": "center",
+              "type": "string"
+            },
+            {
+              "value": "start",
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
           "name": "checked",
           "type": "boolean",
           "complexType": {
@@ -5120,16 +5147,16 @@
         },
         {
           "name": "labelPlacement",
-          "type": "\"end\" | \"fixed\" | \"start\"",
+          "type": "\"end\" | \"fixed\" | \"stacked\" | \"start\"",
           "complexType": {
-            "original": "'start' | 'end' | 'fixed'",
-            "resolved": "\"end\" | \"fixed\" | \"start\"",
+            "original": "'start' | 'end' | 'fixed' | 'stacked'",
+            "resolved": "\"end\" | \"fixed\" | \"stacked\" | \"start\"",
             "references": {}
           },
           "mutable": false,
           "attr": "label-placement",
           "reflectToAttr": false,
-          "docs": "チェックボックスに対して相対的にラベルを配置する場所。`\"start\"`：ラベルはLTRではチェックボックスの左側に、RTLでは右側に表示されます。`\"end\"`：ラベルはLTRではチェックボックスの右側に、RTLでは左側に表示されます。`\"fixed\"`：ラベルの幅が固定される以外は、`\"start\"`と同じ動作になります。長いテキストは省略記号(\"...\")で切り捨てられます。",
+          "docs": "Where to place the label relative to the checkbox.\n`\"start\"`: The label will appear to the left of the checkbox in LTR and to the right in RTL.\n`\"end\"`: The label will appear to the right of the checkbox in LTR and to the left in RTL.\n`\"fixed\"`: The label has the same behavior as `\"start\"` except it also has a fixed width. Long text will be truncated with ellipses (\"...\").\n`\"stacked\"`: The label will appear above the checkbox regardless of the direction. The alignment of the label can be controlled with the `alignment` property.",
           "docsTags": [],
           "default": "'start'",
           "values": [
@@ -5139,6 +5166,10 @@
             },
             {
               "value": "fixed",
+              "type": "string"
+            },
+            {
+              "value": "stacked",
               "type": "string"
             },
             {
@@ -6994,6 +7025,22 @@
         {
           "name": "part",
           "text": "month-year-button - The button that opens the month/year picker when\nusing a grid style layout."
+        },
+        {
+          "name": "part",
+          "text": "calendar-day - The individual buttons that display a day inside of the datetime\ncalendar."
+        },
+        {
+          "name": "part",
+          "text": "calendar-day active - The currently selected calendar day."
+        },
+        {
+          "name": "part",
+          "text": "calendar-day today - The calendar day that contains the current day."
+        },
+        {
+          "name": "part",
+          "text": "calendar-day disabled - The calendar day that is disabled."
         }
       ],
       "usage": {},
@@ -7804,7 +7851,7 @@
           "mutable": false,
           "attr": "year-values",
           "reflectToAttr": false,
-          "docs": "Values used to create the list of selectable years. By default\nthe year values range between the `min` and `max` datetime inputs. However, to\ncontrol exactly which years to display, the `yearValues` input can take a number, an array\nof numbers, or string of comma separated numbers. For example, to show upcoming and\nrecent leap years, then this input's value would be `yearValues=\"2008,2012,2016,2020,2024\"`.",
+          "docs": "選択可能な年のリストを作成するために使用する値。デフォルトでは、年の値は日付の `min` と `max` の間に設定される。しかし、表示する年を正確に制御するために、 `yearValues` 入力には数値、数値の配列、カンマで区切られた数値の文字列を指定することができます。例えば、うるう年と最近のうるう年を表示する場合、この入力の値は `yearValues=\"2008,2012,2016,2020,2024\"` となります。",
           "docsTags": [],
           "values": [
             {
@@ -7991,12 +8038,12 @@
         {
           "name": "--wheel-fade-background-rgb",
           "annotation": "prop",
-          "docs": "The color of the gradient covering non-selected items when using a wheel style layout, or in the month/year picker for grid style layouts. Must be in RGB format, e.g. `255, 255, 255`."
+          "docs": "ホイールスタイルレイアウトの場合は非選択項目を覆うグラデーションの色、グリッドスタイルレイアウトの場合は月/年ピッカーの色。255,255,255`のようなRGBフォーマットでなければなりません。"
         },
         {
           "name": "--wheel-highlight-background",
           "annotation": "prop",
-          "docs": "The background of the highlight under the selected item when using a wheel style layout, or in the month/year picker for grid style layouts."
+          "docs": "ホイールスタイルレイアウトの場合は選択された項目の下、グリッドスタイルレイアウトの場合は月/年ピッカーのハイライトの背景。"
         }
       ],
       "slots": [
@@ -8015,24 +8062,40 @@
       ],
       "parts": [
         {
+          "name": "calendar-day",
+          "docs": "The individual buttons that display a day inside of the datetime\ncalendar."
+        },
+        {
+          "name": "calendar-day active",
+          "docs": "The currently selected calendar day."
+        },
+        {
+          "name": "calendar-day disabled",
+          "docs": "The calendar day that is disabled."
+        },
+        {
+          "name": "calendar-day today",
+          "docs": "The calendar day that contains the current day."
+        },
+        {
           "name": "month-year-button",
-          "docs": "The button that opens the month/year picker when\nusing a grid style layout."
+          "docs": "グリッドスタイルレイアウト使用時に月/年ピッカーを開くボタン。"
         },
         {
           "name": "time-button",
-          "docs": "The button that opens the time picker when using a grid style\nlayout with `presentation=\"date-time\"` or `\"time-date\"`."
+          "docs": "presentation=\"date-time\"`または`\"time-date\"`のグリッドスタイルレイアウトを使用しているときに、時間ピッカーを開くボタン。"
         },
         {
           "name": "time-button active",
-          "docs": "The time picker button when the picker is open."
+          "docs": "ピッカーが開いているときのタイムピッカーボタン。"
         },
         {
           "name": "wheel-item",
-          "docs": "The individual items when using a wheel style layout, or in the\nmonth/year picker when using a grid style layout."
+          "docs": "ホイールスタイルレイアウトを使用している場合は個々の項目、グリッドスタイルレイアウトを使用している場合は月/年のピッカーに表示されます。"
         },
         {
           "name": "wheel-item active",
-          "docs": "The currently selected wheel-item."
+          "docs": "現在選択されているホイール項目。"
         }
       ],
       "dependents": [],
@@ -10320,7 +10383,7 @@
           "mutable": false,
           "attr": "label",
           "reflectToAttr": false,
-          "docs": "The visible label associated with the input.\n\nUse this if you need to render a plaintext label.\n\nThe `label` property will take priority over the `label` slot if both are used.",
+          "docs": "入力に関連付けられた可視ラベル。  プレーンテキストのラベルをレンダリングする必要がある場合に使用する。  両方が使用されている場合、`label` プロパティが `label` スロットよりも優先される。",
           "docsTags": [],
           "values": [
             {
@@ -10903,7 +10966,7 @@
           },
           "signature": "setFocus() => Promise<void>",
           "parameters": [],
-          "docs": "Sets focus on the native `input` in `ion-input`. Use this method instead of the global\n`input.focus()`.\n\nDevelopers who wish to focus an input when a page enters\nshould call `setFocus()` in the `ionViewDidEnter()` lifecycle method.\n\nDevelopers who wish to focus an input when an overlay is presented\nshould call `setFocus` after `didPresent` has resolved.",
+          "docs": "ion-input` のネイティブ `input` にフォーカスを設定する。グローバルな `input.focus()` の代わりにこのメソッドを使用する。  ページ入力時に入力にフォーカスを当てたい場合は、 `ionViewDidEnter()` ライフサイクルメソッド内で `setFocus()` を呼び出す必要がある。  オーバーレイが表示されたときに入力にフォーカスを当てたい開発者は、 `didPresent` が解決した後に `setFocus` を呼び出してください。",
           "docsTags": []
         }
       ],
@@ -10944,7 +11007,7 @@
           },
           "cancelable": true,
           "composed": true,
-          "docs": "The `ionChange` event is fired when the user modifies the input's value.\nUnlike the `ionInput` event, the `ionChange` event is only fired when changes\nare committed, not as the user types.\n\nDepending on the way the users interacts with the element, the `ionChange`\nevent fires at a different moment:\n- When the user commits the change explicitly (e.g. by selecting a date\nfrom a date picker for `<ion-input type=\"date\">`, pressing the \"Enter\" key, etc.).\n- When the element loses focus after its value has changed: for elements\nwhere the user's interaction is typing.",
+          "docs": "ionChange` イベントは、ユーザが入力値を変更したときに発生する。ionInput` イベントとは異なり、`ionChange` イベントは変更がコミットされたときにのみ発生する。  ユーザが明示的に変更をコミットしたとき (例えば、`<ion-input type=\"date\">` の日付ピッカーから日付を選択したり、\"Enter\" キーを押したりしたときなど)。- 値が変更された後、要素がフォーカスを失ったとき: ユーザーのインタラクションがタイピングである要素の場合。",
           "docsTags": []
         },
         {
@@ -10983,7 +11046,7 @@
           },
           "cancelable": true,
           "composed": true,
-          "docs": "The `ionInput` event is fired each time the user modifies the input's value.\nUnlike the `ionChange` event, the `ionInput` event is fired for each alteration\nto the input's value. This typically happens for each keystroke as the user types.\n\nFor elements that accept text input (`type=text`, `type=tel`, etc.), the interface\nis [`InputEvent`](https://developer.mozilla.org/en-US/docs/Web/API/InputEvent); for others,\nthe interface is [`Event`](https://developer.mozilla.org/en-US/docs/Web/API/Event). If\nthe input is cleared on edit, the type is `null`.",
+          "docs": "ionInput` イベントは、ユーザが入力値を変更するたびに発生する。ionChange` イベントとは異なり、 `ionInput` イベントは入力値が変更されるたびに発生する。これは通常、ユーザが入力を行うたびに発生します。  テキスト入力を受け付ける要素(`type=text`, `type=tel`など)の場合、インターフェイスは[`InputEvent`](https://developer.mozilla.org/en-US/docs/Web/API/InputEvent)となります。その他の要素の場合、インターフェイスは[`Event`](https://developer.mozilla.org/en-US/docs/Web/API/Event)となります。編集時に入力がクリアされる場合、型は `null` となる。",
           "docsTags": []
         }
       ],
@@ -11002,7 +11065,7 @@
         {
           "name": "--border-radius",
           "annotation": "prop",
-          "docs": "Radius of the input. A large radius may display unevenly when using fill=\"outline\"; if needed, use shape=\"round\" instead or increase --padding-start."
+          "docs": "入力の半径。fill=\"outline \"を使う場合、半径が大きいと表示が不 均一になることがある。"
         },
         {
           "name": "--border-style",
@@ -11078,7 +11141,7 @@
       "slots": [
         {
           "name": "label",
-          "docs": "The label text to associate with the input. Use the `labelPlacement` property to control where the label is placed relative to the input. Use this if you need to render a label with custom HTML. (EXPERIMENTAL)"
+          "docs": "入力に関連付けるラベルテキスト。labelPlacement`プロパティを使用すると、入力に対してラベルを配置する位置を制御することができる。ラベルをカスタム HTML でレンダリングする必要がある場合に使用します。(EXPERIMENTAL)"
         }
       ],
       "parts": [],
@@ -12226,7 +12289,13 @@
           "attr": "fill",
           "reflectToAttr": false,
           "docs": "アイテムの塗りつぶし。もし `\"solid\"` ならば、アイテムは背景を持つようになります。もし `\"outline\"` ならば、アイテムはボーダー付きの透明なものになります。md`モードでのみ使用可能です。",
-          "docsTags": [],
+          "docsTags": [
+            {
+              "name": "deprecated",
+              "text": "Use the `fill` property on `ion-input` or `ion-textarea` instead."
+            }
+          ],
+          "deprecation": "Use the `fill` property on `ion-input` or `ion-textarea` instead.",
           "values": [
             {
               "value": "outline",
@@ -12605,22 +12674,22 @@
         {
           "name": "--highlight-color-focused",
           "annotation": "prop",
-          "docs": "The color of the highlight on the item when focused. Only applies to inputs and textareas using the legacy form syntax. DEPRECATED: Highlights can be styled on `ion-input` or `ion-textarea` when using the modern form syntax."
+          "docs": "フォーカスされたときのアイテムのハイライトの色。レガシーなフォーム構文を使用している input と textareas にのみ適用されます。廃止予定：モダンなフォーム構文を使用している場合、ハイライトは `ion-input` または `ion-textarea` にスタイル設定することができる。"
         },
         {
           "name": "--highlight-color-invalid",
           "annotation": "prop",
-          "docs": "The color of the highlight on the item when invalid. Only applies to inputs and textareas using the legacy form syntax. DEPRECATED: Highlights can be styled on `ion-input` or `ion-textarea` when using the modern form syntax."
+          "docs": "無効な場合の項目のハイライトの色。レガシーなフォーム構文を使用している input と textareas にのみ適用されます。廃止予定：モダンなフォーム構文を使用している場合、ハイライトは `ion-input` または `ion-textarea` にスタイル設定することができる。"
         },
         {
           "name": "--highlight-color-valid",
           "annotation": "prop",
-          "docs": "The color of the highlight on the item when valid. Only applies to inputs and textareas using the legacy form syntax. DEPRECATED: Highlights can be styled on `ion-input` or `ion-textarea` when using the modern form syntax."
+          "docs": "有効な場合の項目のハイライトの色。レガシーなフォーム構文を使用している input と textareas にのみ適用されます。廃止予定：モダンなフォーム構文を使用している場合、ハイライトは `ion-input` または `ion-textarea` でスタイリングできる。"
         },
         {
           "name": "--highlight-height",
           "annotation": "prop",
-          "docs": "The height of the highlight on the item. Only applies to inputs and textareas using the legacy form syntax. DEPRECATED: Highlights can be styled on `ion-input` or `ion-textarea` when using the modern form syntax."
+          "docs": "アイテムのハイライトの高さ。レガシーなフォーム構文を使用している input と textareas にのみ適用されます。廃止予定：モダンなフォーム構文を使用している場合、ハイライトは `ion-input` または `ion-textarea` にスタイル設定することができる。"
         },
         {
           "name": "--inner-border-width",
@@ -18467,7 +18536,7 @@
           "mutable": false,
           "attr": "size",
           "reflectToAttr": false,
-          "docs": "Describes how to calculate the popover width.\nIf `\"cover\"`, the popover width will match the width of the trigger.\nIf `\"auto\"`, the popover width will be set to a static default value.",
+          "docs": "ポップオーバーの幅を計算する方法を記述します。もし `\"cover\"` なら、ポップオーバーの幅はトリガーの幅に合わせます。auto\"` の場合、ポップオーバーの幅は静的なデフォルト値に設定されます。",
           "docsTags": [],
           "default": "'auto'",
           "values": [
@@ -19369,6 +19438,33 @@
       "usage": {},
       "props": [
         {
+          "name": "alignment",
+          "type": "\"center\" | \"start\"",
+          "complexType": {
+            "original": "'start' | 'center'",
+            "resolved": "\"center\" | \"start\"",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "alignment",
+          "reflectToAttr": false,
+          "docs": "How to control the alignment of the radio and label on the cross axis.\n`\"start\"`: The label and control will appear on the left of the cross axis in LTR, and on the right side in RTL.\n`\"center\"`: The label and control will appear at the center of the cross axis in both LTR and RTL.",
+          "docsTags": [],
+          "default": "'center'",
+          "values": [
+            {
+              "value": "center",
+              "type": "string"
+            },
+            {
+              "value": "start",
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
+        {
           "name": "color",
           "type": "\"danger\" | \"dark\" | \"light\" | \"medium\" | \"primary\" | \"secondary\" | \"success\" | \"tertiary\" | \"warning\" | string & Record<never, never> | undefined",
           "complexType": {
@@ -19489,16 +19585,16 @@
         },
         {
           "name": "labelPlacement",
-          "type": "\"end\" | \"fixed\" | \"start\"",
+          "type": "\"end\" | \"fixed\" | \"stacked\" | \"start\"",
           "complexType": {
-            "original": "'start' | 'end' | 'fixed'",
-            "resolved": "\"end\" | \"fixed\" | \"start\"",
+            "original": "'start' | 'end' | 'fixed' | 'stacked'",
+            "resolved": "\"end\" | \"fixed\" | \"stacked\" | \"start\"",
             "references": {}
           },
           "mutable": false,
           "attr": "label-placement",
           "reflectToAttr": false,
-          "docs": "ラジオから相対的にラベルを配置する場所。`\"start\"`：ラベルはLTRではラジオの左側に、RTLでは右側に表示されます。`\"end\"`：ラベルはLTRではラジオの右、RTLでは左に表示されます。`\"fixed\"`：ラベルの幅が固定される以外は、`\"start\"`と同じ動作になります。長いテキストは省略記号(\"...\")で切り捨てられます。",
+          "docs": "Where to place the label relative to the radio.\n`\"start\"`: The label will appear to the left of the radio in LTR and to the right in RTL.\n`\"end\"`: The label will appear to the right of the radio in LTR and to the left in RTL.\n`\"fixed\"`: The label has the same behavior as `\"start\"` except it also has a fixed width. Long text will be truncated with ellipses (\"...\").\n`\"stacked\"`: The label will appear above the radio regardless of the direction. The alignment of the label can be controlled with the `alignment` property.",
           "docsTags": [],
           "default": "'start'",
           "values": [
@@ -19508,6 +19604,10 @@
             },
             {
               "value": "fixed",
+              "type": "string"
+            },
+            {
+              "value": "stacked",
               "type": "string"
             },
             {
@@ -19905,7 +20005,7 @@
           "mutable": false,
           "attr": "label",
           "reflectToAttr": false,
-          "docs": "The text to display as the control's label. Use this over the `label` slot if\nyou only need plain text. The `label` property will take priority over the\n`label` slot if both are used.",
+          "docs": "コントロールのラベルとして表示するテキスト。プレーンテキストのみが必要な場合は `label` スロットよりもこちらを使用する。両方を使用する場合は、`label` プロパティが `label` スロットよりも優先される。",
           "docsTags": [],
           "values": [
             {
@@ -19920,16 +20020,16 @@
         },
         {
           "name": "labelPlacement",
-          "type": "\"end\" | \"fixed\" | \"start\"",
+          "type": "\"end\" | \"fixed\" | \"stacked\" | \"start\"",
           "complexType": {
-            "original": "'start' | 'end' | 'fixed'",
-            "resolved": "\"end\" | \"fixed\" | \"start\"",
+            "original": "'start' | 'end' | 'fixed' | 'stacked'",
+            "resolved": "\"end\" | \"fixed\" | \"stacked\" | \"start\"",
             "references": {}
           },
           "mutable": false,
           "attr": "label-placement",
           "reflectToAttr": false,
-          "docs": "範囲に対してラベルを配置する場所。`\"start\"`：ラベルはLTRでは範囲の左側に、RTLでは右側に表示されます。`\"end\"`：ラベルはLTRでは範囲の右側、RTLでは左側に表示されます。`\"fixed\"`：ラベルの幅が固定される以外は、`\"start\"`と同じ動作をします。長いテキストは省略記号(\"...\")で切り捨てられます。",
+          "docs": "Where to place the label relative to the range.\n`\"start\"`: The label will appear to the left of the range in LTR and to the right in RTL.\n`\"end\"`: The label will appear to the right of the range in LTR and to the left in RTL.\n`\"fixed\"`: The label has the same behavior as `\"start\"` except it also has a fixed width. Long text will be truncated with ellipses (\"...\").\n`\"stacked\"`: The label will appear above the range regardless of the direction.",
           "docsTags": [],
           "default": "'start'",
           "values": [
@@ -19939,6 +20039,10 @@
             },
             {
               "value": "fixed",
+              "type": "string"
+            },
+            {
+              "value": "stacked",
               "type": "string"
             },
             {
@@ -21658,7 +21762,7 @@
       "dependencyGraph": {}
     },
     {
-      "filePath": "src/components/router-outlet/route-outlet.tsx",
+      "filePath": "src/components/router-outlet/router-outlet.tsx",
       "encapsulation": "shadow",
       "tag": "ion-router-outlet",
       "docs": "",
@@ -21722,7 +21826,12 @@
           "complexType": {
             "original": "\"ios\" | \"md\"",
             "resolved": "\"ios\" | \"md\"",
-            "references": {}
+            "references": {
+              "Mode": {
+                "location": "global",
+                "id": "global::Mode"
+              }
+            }
           },
           "mutable": true,
           "attr": "mode",
@@ -22593,7 +22702,7 @@
           "mutable": false,
           "attr": "name",
           "reflectToAttr": false,
-          "docs": "If used in a form, set the name of the control, which is submitted with the form data.",
+          "docs": "フォームで使用する場合は、フォーム・データと一緒に送信されるコントロールの名前を設定します。",
           "docsTags": [],
           "default": "this.inputId",
           "values": [
@@ -22856,7 +22965,7 @@
           },
           "signature": "setFocus() => Promise<void>",
           "parameters": [],
-          "docs": "Sets focus on the native `input` in `ion-searchbar`. Use this method instead of the global\n`input.focus()`.\n\nDevelopers who wish to focus an input when a page enters\nshould call `setFocus()` in the `ionViewDidEnter()` lifecycle method.\n\nDevelopers who wish to focus an input when an overlay is presented\nshould call `setFocus` after `didPresent` has resolved.",
+          "docs": "ion-searchbar` のネイティブ `input` にフォーカスを設定する。グローバルな `input.focus()` の代わりにこのメソッドを使用する。  ページ入力時に入力にフォーカスを当てたい開発者は、 `ionViewDidEnter()` ライフサイクルメソッド内で `setFocus()` を呼び出す必要がある。  オーバーレイが表示されたときに入力にフォーカスを当てたい開発者は、 `didPresent` が解決した後に `setFocus` を呼び出してください。",
           "docsTags": []
         }
       ],
@@ -23902,7 +24011,7 @@
           "mutable": false,
           "attr": "expanded-icon",
           "reflectToAttr": false,
-          "docs": "The toggle icon to show when the select is open. If defined, the icon\nrotation behavior in `md` mode will be disabled. If undefined, `toggleIcon`\nwill be used for when the select is both open and closed.",
+          "docs": "セレクトが開いているときに表示するトグルアイコン。定義されている場合、`md`モードでのアイコン回転の動作は無効になる。未定義の場合、セレクトが開いているときも閉じているときも `toggleIcon` が使用される。",
           "docsTags": [],
           "values": [
             {
@@ -24045,7 +24154,7 @@
           "mutable": false,
           "attr": "label",
           "reflectToAttr": false,
-          "docs": "The visible label associated with the select.\n\nUse this if you need to render a plaintext label.\n\nThe `label` property will take priority over the `label` slot if both are used.",
+          "docs": "セレクトに関連付けられた可視ラベル。  プレーンテキストのラベルをレンダリングする必要がある場合に使用する。  label`プロパティは `label` スロットよりも優先される。",
           "docsTags": [],
           "values": [
             {
@@ -24298,7 +24407,7 @@
           "mutable": false,
           "attr": "toggle-icon",
           "reflectToAttr": false,
-          "docs": "The toggle icon to use. Defaults to `chevronExpand` for `ios` mode,\nor `caretDownSharp` for `md` mode.",
+          "docs": "使用するトグルアイコン。デフォルトは `ios` モードの場合は `chevronExpand` で、`md` モードの場合は `caretDownSharp` である。",
           "docsTags": [],
           "values": [
             {
@@ -24468,37 +24577,37 @@
         {
           "name": "--border-color",
           "annotation": "prop",
-          "docs": "Color of the select border"
+          "docs": "セレクトボーダーの色"
         },
         {
           "name": "--border-radius",
           "annotation": "prop",
-          "docs": "Radius of the select border. A large radius may display unevenly when using fill=\"outline\"; if needed, use shape=\"round\" instead or increase --padding-start."
+          "docs": "選択枠の半径。fill=\"outline \"を使う場合、半径が大きいと表示が不 均一になることがあります。"
         },
         {
           "name": "--border-style",
           "annotation": "prop",
-          "docs": "Style of the select border"
+          "docs": "セレクトボーダーのスタイル"
         },
         {
           "name": "--border-width",
           "annotation": "prop",
-          "docs": "Width of the select border"
+          "docs": "セレクトボーダーの幅"
         },
         {
           "name": "--highlight-color-focused",
           "annotation": "prop",
-          "docs": "The color of the highlight on the select when focused"
+          "docs": "フォーカス時のセレクトのハイライトの色"
         },
         {
           "name": "--highlight-color-invalid",
           "annotation": "prop",
-          "docs": "The color of the highlight on the select when invalid"
+          "docs": "無効時のセレクトのハイライトの色"
         },
         {
           "name": "--highlight-color-valid",
           "annotation": "prop",
-          "docs": "The color of the highlight on the select when valid"
+          "docs": "有効時のセレクトのハイライトの色"
         },
         {
           "name": "--padding-bottom",
@@ -24539,13 +24648,13 @@
       "slots": [
         {
           "name": "label",
-          "docs": "The label text to associate with the select. Use the `labelPlacement` property to control where the label is placed relative to the select. Use this if you need to render a label with custom HTML."
+          "docs": "セレクトに関連付けるラベルテキスト。labelPlacement`プロパティを使用して、selectに対するラベルの位置を制御します。ラベルをカスタムHTMLでレンダリングする必要がある場合に使用します。"
         }
       ],
       "parts": [
         {
           "name": "container",
-          "docs": "The container for the selected text or placeholder."
+          "docs": "選択テキストまたはプレースホルダーのコンテナ。"
         },
         {
           "name": "icon",
@@ -24553,7 +24662,7 @@
         },
         {
           "name": "label",
-          "docs": "The label text describing the select."
+          "docs": "セレクトを表すラベルテキスト。"
         },
         {
           "name": "placeholder",
@@ -26177,7 +26286,7 @@
           },
           "signature": "getSelected() => Promise<string | undefined>",
           "parameters": [],
-          "docs": "Get the currently selected tab. This method is only available for vanilla JavaScript projects. The Angular, React, and Vue implementations of tabs are coupled to each framework's router.",
+          "docs": "現在選択されているタブを取得します。このメソッドは、バニラJavaScriptプロジェクトでのみ使用できます。Angular、React、Vueのタブの実装は、各フレームワークのルーターと結合しています。",
           "docsTags": []
         },
         {
@@ -26213,7 +26322,7 @@
           },
           "signature": "getTab(tab: string | HTMLIonTabElement) => Promise<HTMLIonTabElement | undefined>",
           "parameters": [],
-          "docs": "Get a specific tab by the value of its `tab` property or an element reference. This method is only available for vanilla JavaScript projects. The Angular, React, and Vue implementations of tabs are coupled to each framework's router.",
+          "docs": "特定のタブを `tab` プロパティの値または要素参照で取得する。このメソッドは vanilla JavaScript プロジェクトでのみ利用可能です。Angular、React、Vue のタブの実装は、それぞれのフレームワークのルータと結合しています。",
           "docsTags": [
             {
               "name": "param",
@@ -26254,7 +26363,7 @@
           },
           "signature": "select(tab: string | HTMLIonTabElement) => Promise<boolean>",
           "parameters": [],
-          "docs": "Select a tab by the value of its `tab` property or an element reference. This method is only available for vanilla JavaScript projects. The Angular, React, and Vue implementations of tabs are coupled to each framework's router.",
+          "docs": "タブを `tab` プロパティの値または要素参照で選択する。このメソッドはバニラJavaScriptプロジェクトでのみ利用可能です。Angular、React、Vue のタブの実装は、それぞれのフレームワークのルータと結合しています。",
           "docsTags": [
             {
               "name": "param",
@@ -26606,7 +26715,7 @@
           },
           "mutable": false,
           "attr": "cols",
-          "reflectToAttr": false,
+          "reflectToAttr": true,
           "docs": "テキストコントロールの可視幅を、平均文字幅で指定します。指定する場合は、正の整数である必要があります。",
           "docsTags": [],
           "values": [
@@ -26901,7 +27010,7 @@
           "mutable": false,
           "attr": "label",
           "reflectToAttr": false,
-          "docs": "The visible label associated with the textarea.\n\nUse this if you need to render a plaintext label.\n\nThe `label` property will take priority over the `label` slot if both are used.",
+          "docs": "textareaに関連付けられた可視ラベル。  プレーンテキストのラベルをレンダリングする必要がある場合に使用する。  両方が使用されている場合、`label` プロパティが `label` スロットよりも優先される。",
           "docsTags": [],
           "values": [
             {
@@ -27356,7 +27465,7 @@
           },
           "cancelable": true,
           "composed": true,
-          "docs": "The `ionChange` event is fired when the user modifies the textarea's value.\nUnlike the `ionInput` event, the `ionChange` event is fired when\nthe element loses focus after its value has been modified.",
+          "docs": "onChange` イベントは、ユーザが textarea の値を変更したときに発生する。ionInput` イベントとは異なり、`ionChange` イベントは値が変更された後に要素のフォーカスが外れたときに発生する。",
           "docsTags": []
         },
         {
@@ -27395,7 +27504,7 @@
           },
           "cancelable": true,
           "composed": true,
-          "docs": "The `ionInput` event is fired each time the user modifies the textarea's value.\nUnlike the `ionChange` event, the `ionInput` event is fired for each alteration\nto the textarea's value. This typically happens for each keystroke as the user types.\n\nWhen `clearOnEdit` is enabled, the `ionInput` event will be fired when\nthe user clears the textarea by performing a keydown event.",
+          "docs": "ionInput` イベントは、ユーザが textarea の値を変更するたびに発生する。ionChange` イベントとは異なり、 `ionInput` イベントは textarea の値が変更されるたびに発生する。これは通常、ユーザがキーを入力するたびに発生する。  clearOnEdit` が有効な場合、ユーザが textarea をクリアするためにキーダウンを行うと、 `ionInput` イベントが発生する。",
           "docsTags": []
         }
       ],
@@ -27490,7 +27599,7 @@
       "slots": [
         {
           "name": "label",
-          "docs": "The label text to associate with the textarea. Use the `labelPlacement` property to control where the label is placed relative to the textarea. Use this if you need to render a label with custom HTML. (EXPERIMENTAL)"
+          "docs": "テキストエリアに関連付けるラベルテキスト。labelPlacement`プロパティを使用して、textareaに対するラベルの位置を制御する。ラベルをカスタム HTML でレンダリングする必要がある場合に使用します。(実験的)"
         }
       ],
       "parts": [],
@@ -28575,7 +28684,7 @@
         },
         {
           "name": "button cancel",
-          "docs": "Any button element with role \"cancel\" that is displayed inside of the toast."
+          "docs": "トーストの内側に表示される、\"cancel \"というロールを持つボタン要素。"
         },
         {
           "name": "container",
@@ -28631,6 +28740,33 @@
       ],
       "usage": {},
       "props": [
+        {
+          "name": "alignment",
+          "type": "\"center\" | \"start\"",
+          "complexType": {
+            "original": "'start' | 'center'",
+            "resolved": "\"center\" | \"start\"",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "alignment",
+          "reflectToAttr": false,
+          "docs": "How to control the alignment of the toggle and label on the cross axis.\n``\"start\"`: The label and control will appear on the left of the cross axis in LTR, and on the right side in RTL.\n`\"center\"`: The label and control will appear at the center of the cross axis in both LTR and RTL.",
+          "docsTags": [],
+          "default": "'center'",
+          "values": [
+            {
+              "value": "center",
+              "type": "string"
+            },
+            {
+              "value": "start",
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false
+        },
         {
           "name": "checked",
           "type": "boolean",
@@ -28799,16 +28935,16 @@
         },
         {
           "name": "labelPlacement",
-          "type": "\"end\" | \"fixed\" | \"start\"",
+          "type": "\"end\" | \"fixed\" | \"stacked\" | \"start\"",
           "complexType": {
-            "original": "'start' | 'end' | 'fixed'",
-            "resolved": "\"end\" | \"fixed\" | \"start\"",
+            "original": "'start' | 'end' | 'fixed' | 'stacked'",
+            "resolved": "\"end\" | \"fixed\" | \"stacked\" | \"start\"",
             "references": {}
           },
           "mutable": false,
           "attr": "label-placement",
           "reflectToAttr": false,
-          "docs": "Inputに対してラベルを配置する場所。\"start\"`とする：ラベルはLTRではトグルの左側に、RTLでは右側に表示されます。`\"end\"`：ラベルはLTRではトグルの右側に、RTLでは左側に表示されます。`\"fixed\"`：ラベルの幅が固定される以外は、`\"start\"`と同じ動作になります。長いテキストは省略記号(\"...\")で切り捨てられます。",
+          "docs": "Where to place the label relative to the input.\n`\"start\"`: The label will appear to the left of the toggle in LTR and to the right in RTL.\n`\"end\"`: The label will appear to the right of the toggle in LTR and to the left in RTL.\n`\"fixed\"`: The label has the same behavior as `\"start\"` except it also has a fixed width. Long text will be truncated with ellipses (\"...\").\n`\"stacked\"`: The label will appear above the toggle regardless of the direction. The alignment of the label can be controlled with the `alignment` property.",
           "docsTags": [],
           "default": "'start'",
           "values": [
@@ -28818,6 +28954,10 @@
             },
             {
               "value": "fixed",
+              "type": "string"
+            },
+            {
+              "value": "stacked",
               "type": "string"
             },
             {
