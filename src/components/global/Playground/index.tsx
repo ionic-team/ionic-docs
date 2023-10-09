@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useRef, useState } from 'react';
+import React, { RefObject, forwardRef, useEffect, useMemo, useRef, useState } from 'react';
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import './playground.css';
@@ -13,52 +13,64 @@ import TabItem from '@theme/TabItem';
 
 import { IconHtml, IconTs, IconVue, IconDefault, IconCss, IconDots } from './icons';
 
-const ControlButton = ({
-  isSelected,
-  handleClick,
-  title,
-  label,
-  disabled,
-}: {
-  isSelected: boolean;
-  handleClick: () => void;
-  title: string;
-  label: string;
-  disabled?: boolean;
-}) => {
-  const controlButton = (
-    <button
-      title={disabled ? undefined : title}
-      disabled={disabled}
-      className={`playground__control-button ${isSelected ? 'playground__control-button--selected' : ''}`}
-      onClick={handleClick}
-      data-text={label}
-    >
-      {label}
-    </button>
-  );
-  if (disabled) {
-    return (
-      <Tippy theme="playground" arrow={false} placement="bottom" content={`Unavailable for ${label}`}>
-        {/* Tippy requires a wrapper element for disabled elements: https://atomiks.github.io/tippyjs/v5/creating-tooltips/#disabled-elements */}
-        <div>{controlButton}</div>
-      </Tippy>
-    );
-  }
-  return controlButton;
-};
+import { useScrollPositionBlocker } from '@docusaurus/theme-common';
+import useIsBrowser from '@docusaurus/useIsBrowser';
 
-const CodeBlockButton = ({ language, usageTarget, setUsageTarget, disabled }) => {
+const ControlButton = forwardRef(
+  (
+    {
+      isSelected,
+      handleClick,
+      title,
+      label,
+      disabled,
+    }: {
+      isSelected: boolean;
+      handleClick: () => void;
+      title: string;
+      label: string;
+      disabled?: boolean;
+    },
+    ref: RefObject<HTMLButtonElement>
+  ) => {
+    const controlButton = (
+      <button
+        title={disabled ? undefined : title}
+        disabled={disabled}
+        className={`playground__control-button ${isSelected ? 'playground__control-button--selected' : ''}`}
+        onClick={handleClick}
+        data-text={label}
+        ref={ref}
+      >
+        {label}
+      </button>
+    );
+    if (disabled) {
+      return (
+        <Tippy theme="playground" arrow={false} placement="bottom" content={`Unavailable for ${label}`}>
+          {/* Tippy requires a wrapper element for disabled elements: https://atomiks.github.io/tippyjs/v5/creating-tooltips/#disabled-elements */}
+          <div>{controlButton}</div>
+        </Tippy>
+      );
+    }
+    return controlButton;
+  }
+);
+
+const CodeBlockButton = ({ language, usageTarget, setAndSaveUsageTarget, disabled }) => {
+  const buttonRef = useRef<HTMLButtonElement>(null);
   const langValue = UsageTarget[language];
+
   return (
     <ControlButton
       isSelected={usageTarget === langValue}
       handleClick={() => {
-        setUsageTarget(langValue);
+        setAndSaveUsageTarget(langValue, buttonRef.current);
       }}
       title={`Show ${language} code`}
       label={language}
       disabled={disabled}
+      ref={buttonRef}
     />
   );
 };
@@ -158,21 +170,66 @@ export default function Playground({
 
   const { isDarkTheme } = useThemeContext();
 
+  /**
+   * When deploying, Docusaurus builds the app in an SSR environment.
+   * We need to check whether we're in a browser so we know if we can
+   * use the window or localStorage objects.
+   */
+  const isBrowser = useIsBrowser();
+
   const hostRef = useRef<HTMLDivElement | null>(null);
   const codeRef = useRef(null);
   const frameiOS = useRef<HTMLIFrameElement | null>(null);
   const frameMD = useRef<HTMLIFrameElement | null>(null);
   const consoleBodyRef = useRef<HTMLDivElement | null>(null);
 
-  const defaultMode = typeof mode !== 'undefined' ? mode : Mode.iOS;
+  const { blockElementScrollPositionUntilNextRender } = useScrollPositionBlocker();
+
+  const getDefaultMode = () => {
+    /**
+     * If a custom mode was specified, use that.
+     */
+    if (mode) return mode;
+
+    /**
+     * Otherwise, if there is a saved mode from previously clicking
+     * the mode button, use that.
+     */
+    if (isBrowser) {
+      const storedMode = localStorage.getItem(MODE_STORAGE_KEY);
+      if (storedMode) return storedMode;
+    }
+
+    /**
+     * Default to iOS mode as a fallback.
+     */
+    return Mode.iOS;
+  };
 
   const getDefaultUsageTarget = () => {
-    // If defined, Angular target should be the default
+    /**
+     * If there is a saved target from previously clicking the
+     * framework buttons, and there is code for it, use that.
+     */
+    if (isBrowser) {
+      const storedTarget = localStorage.getItem(USAGE_TARGET_STORAGE_KEY);
+      if (storedTarget && code[storedTarget] !== undefined) {
+        return storedTarget;
+      }
+    }
+
+    /**
+     * If there is no saved target, and Angular code is available,
+     * default to that.
+     */
     if (code[UsageTarget.Angular] !== undefined) {
       return UsageTarget.Angular;
     }
 
-    // Otherwise, default to the first target passed.
+    /**
+     * If there is no Angular code available, fall back to the
+     * first available framework.
+     */
     return Object.keys(code)[0];
   };
 
@@ -182,7 +239,7 @@ export default function Playground({
    */
   const frameSize = FRAME_SIZES[size] || size;
   const [usageTarget, setUsageTarget] = useState(getDefaultUsageTarget());
-  const [ionicMode, setIonicMode] = useState(defaultMode);
+  const [ionicMode, setIonicMode] = useState(getDefaultMode());
   const [codeSnippets, setCodeSnippets] = useState({});
   const [renderIframes, setRenderIframes] = useState(false);
   const [iframesLoaded, setIframesLoaded] = useState(false);
@@ -195,6 +252,52 @@ export default function Playground({
    * iframes are refreshed.
    */
   const [resetCount, setResetCount] = useState(0);
+
+  const setAndSaveMode = (mode: Mode) => {
+    setIonicMode(mode);
+
+    if (isBrowser) {
+      localStorage.setItem(MODE_STORAGE_KEY, mode);
+
+      /**
+       * Tell other playgrounds on the page that the mode has
+       * updated, so they can sync up.
+       */
+      window.dispatchEvent(
+        new CustomEvent(MODE_UPDATED_EVENT, {
+          detail: mode,
+        })
+      );
+    }
+  };
+
+  const setAndSaveUsageTarget = (target: UsageTarget, tab: HTMLElement) => {
+    setUsageTarget(target);
+
+    if (isBrowser) {
+      localStorage.setItem(USAGE_TARGET_STORAGE_KEY, target);
+
+      /**
+       * This prevents the scroll position from jumping around if
+       * there is a playground above this one with code that changes
+       * in length between frameworks.
+       *
+       * Note that we don't need this when changing the mode because
+       * the two mode iframes are always the same height.
+       */
+      blockElementScrollPositionUntilNextRender(tab);
+
+      /**
+       * Tell other playgrounds on the page that the framework
+       * has updated, so they can sync up.
+       */
+      window.dispatchEvent(
+        new CustomEvent(USAGE_TARGET_UPDATED_EVENT, {
+          detail: target,
+        })
+      );
+    }
+  };
 
   /**
    * Rather than encode isDarkTheme into the frame source
@@ -323,6 +426,47 @@ export default function Playground({
 
     io.observe(hostRef.current!);
   });
+
+  /**
+   * Sometimes, the app isn't fully hydrated on the first render,
+   * causing isBrowser to be set to false even if running the app
+   * in a browser (vs. SSR). isBrowser is then updated on the next
+   * render cycle.
+   *
+   * This useEffect contains code that can only run in the browser,
+   * and also needs to run on that first go-around. Note that
+   * isBrowser will never be set from true back to false, so the
+   * code within the if(isBrowser) check will only run once.
+   */
+  useEffect(() => {
+    if (isBrowser) {
+      /**
+       * Load the stored mode and/or usage target, if present
+       * from previously being toggled.
+       */
+      const storedMode = localStorage.getItem(MODE_STORAGE_KEY);
+      if (storedMode) setIonicMode(storedMode);
+      const storedUsageTarget = localStorage.getItem(USAGE_TARGET_STORAGE_KEY);
+      if (storedUsageTarget) setUsageTarget(storedUsageTarget);
+
+      /**
+       * Listen for any playground on the page to have its mode or framework
+       * updated so this playground can switch to the same setting.
+       */
+      window.addEventListener(MODE_UPDATED_EVENT, (e: CustomEvent) => {
+        const mode = e.detail;
+        if (Object.values(Mode).includes(mode)) {
+          setIonicMode(mode); // don't use setAndSave to avoid infinite loop
+        }
+      });
+      window.addEventListener(USAGE_TARGET_UPDATED_EVENT, (e: CustomEvent) => {
+        const usageTarget = e.detail;
+        if (Object.values(UsageTarget).includes(usageTarget)) {
+          setUsageTarget(usageTarget); // don't use setAndSave to avoid infinite loop
+        }
+      });
+    }
+  }, [isBrowser]);
 
   const isIOS = ionicMode === Mode.iOS;
   const isMD = ionicMode === Mode.MD;
@@ -526,7 +670,7 @@ export default function Playground({
                   key={`code-block-${lang}`}
                   language={lang}
                   usageTarget={usageTarget}
-                  setUsageTarget={setUsageTarget}
+                  setAndSaveUsageTarget={setAndSaveUsageTarget}
                   disabled={!hasCode}
                 />
               );
@@ -536,14 +680,14 @@ export default function Playground({
             <ControlButton
               disabled={mode && mode === 'md'}
               isSelected={isIOS}
-              handleClick={() => setIonicMode(Mode.iOS)}
+              handleClick={() => setAndSaveMode(Mode.iOS)}
               title="iOS mode"
               label="iOS"
             />
             <ControlButton
               disabled={mode && mode === 'ios'}
               isSelected={isMD}
-              handleClick={() => setIonicMode(Mode.MD)}
+              handleClick={() => setAndSaveMode(Mode.MD)}
               title="MD mode"
               label="MD"
             />
@@ -750,3 +894,8 @@ const isFrameReady = (frame: HTMLIFrameElement) => {
   }
   return (frame.contentWindow as any).demoReady === true;
 };
+
+const USAGE_TARGET_STORAGE_KEY = 'playground_usage_target';
+const MODE_STORAGE_KEY = 'playground_mode';
+const USAGE_TARGET_UPDATED_EVENT = 'playground-usage-target-updated';
+const MODE_UPDATED_EVENT = 'playground-event-updated';
