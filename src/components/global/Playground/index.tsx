@@ -253,6 +253,12 @@ export default function Playground({
    */
   const [resetCount, setResetCount] = useState(0);
 
+  /**
+   * Keeps track of whether any amount of this playground is
+   * currently on the screen.
+   */
+  const [isInView, setIsInView] = useState(false);
+
   const setAndSaveMode = (mode: Mode) => {
     setIonicMode(mode);
 
@@ -261,7 +267,7 @@ export default function Playground({
 
       /**
        * Tell other playgrounds on the page that the mode has
-       * updated, so they can sync up.
+       * updated, so they can sync up if they're in view.
        */
       window.dispatchEvent(
         new CustomEvent(MODE_UPDATED_EVENT, {
@@ -289,7 +295,7 @@ export default function Playground({
 
       /**
        * Tell other playgrounds on the page that the framework
-       * has updated, so they can sync up.
+       * has updated, so they can sync up if they're in view.
        */
       window.dispatchEvent(
         new CustomEvent(USAGE_TARGET_UPDATED_EVENT, {
@@ -401,25 +407,40 @@ export default function Playground({
   });
 
   /**
-   * By default, we do not render the iframe content
-   * as it could cause delays on page load. Instead
-   * we wait for even 1 pixel of the playground to
-   * scroll into view (intersect with the viewport)
-   * before loading the iframes.
+   * By default, we do not render the iframe content as it could
+   * cause delays on page load. We also do not immediately switch
+   * the framework/mode when it gets changed through another
+   * playground on the page, as switching them for every playground
+   * at once can cause memory-related crashes on some devices.
+   *
+   * Instead, we wait for even 1 pixel of the playground to scroll
+   * into view (intersect with the viewport) before loading the
+   * iframes or auto-switching the framework/mode.
    */
   useEffect(() => {
     const io = new IntersectionObserver(
       (entries: IntersectionObserverEntry[]) => {
         const ev = entries[0];
-        if (!ev.isIntersecting || renderIframes) return;
-
-        setRenderIframes(true);
+        setIsInView(ev.isIntersecting);
+        if (!ev.isIntersecting) return;
 
         /**
-         * Once the playground is loaded, it is never "unloaded"
-         * so we can safely disconnect the observer.
+         * Load the stored mode and/or usage target, if present
+         * from previously being toggled.
          */
-        io.disconnect();
+        if (isBrowser) {
+          const storedMode = localStorage.getItem(MODE_STORAGE_KEY);
+          if (storedMode) setIonicMode(storedMode);
+          const storedUsageTarget = localStorage.getItem(USAGE_TARGET_STORAGE_KEY);
+          if (storedUsageTarget) setUsageTarget(storedUsageTarget);
+        }
+
+        /**
+         * If the iframes weren't already loaded, load them now.
+         */
+        if (!renderIframes) {
+          setRenderIframes(true);
+        }
       },
       { threshold: 0 }
     );
@@ -427,46 +448,51 @@ export default function Playground({
     io.observe(hostRef.current!);
   });
 
+  const handleModeUpdated = (e: CustomEvent) => {
+    const mode = e.detail;
+    if (Object.values(Mode).includes(mode)) {
+      setIonicMode(mode); // don't use setAndSave to avoid infinite loop
+    }
+  };
+
+  const handleUsageTargetUpdated = (e: CustomEvent) => {
+    const usageTarget = e.detail;
+    if (Object.values(UsageTarget).includes(usageTarget)) {
+      setUsageTarget(usageTarget); // don't use setAndSave to avoid infinite loop
+    }
+  };
+
   /**
+   * When this playground is in view, listen for any other playgrounds
+   * on the page to switch their framework or mode, so this one can
+   * sync up to the same setting. This is needed because if the
+   * playground is already in view, the IntersectionObserver doesn't
+   * fire until the playground is scrolled off and back on the screen.
+   *
    * Sometimes, the app isn't fully hydrated on the first render,
    * causing isBrowser to be set to false even if running the app
    * in a browser (vs. SSR). isBrowser is then updated on the next
-   * render cycle.
+   * render cycle. This means we need to re-run this hook when
+   * isBrowser changes to handle playgrounds that were in view
+   * from the start of the page load.
    *
-   * This useEffect contains code that can only run in the browser,
-   * and also needs to run on that first go-around. Note that
-   * isBrowser will never be set from true back to false, so the
-   * code within the if(isBrowser) check will only run once.
+   * We also re-run when isInView changes because otherwise, a stale
+   * state value would be captured. Since we need to listen for these
+   * events only when the playground is in view, we check the state
+   * before adding the listeners at all, rather than within the
+   * callbacks.
    */
   useEffect(() => {
-    if (isBrowser) {
-      /**
-       * Load the stored mode and/or usage target, if present
-       * from previously being toggled.
-       */
-      const storedMode = localStorage.getItem(MODE_STORAGE_KEY);
-      if (storedMode) setIonicMode(storedMode);
-      const storedUsageTarget = localStorage.getItem(USAGE_TARGET_STORAGE_KEY);
-      if (storedUsageTarget) setUsageTarget(storedUsageTarget);
-
-      /**
-       * Listen for any playground on the page to have its mode or framework
-       * updated so this playground can switch to the same setting.
-       */
-      window.addEventListener(MODE_UPDATED_EVENT, (e: CustomEvent) => {
-        const mode = e.detail;
-        if (Object.values(Mode).includes(mode)) {
-          setIonicMode(mode); // don't use setAndSave to avoid infinite loop
-        }
-      });
-      window.addEventListener(USAGE_TARGET_UPDATED_EVENT, (e: CustomEvent) => {
-        const usageTarget = e.detail;
-        if (Object.values(UsageTarget).includes(usageTarget)) {
-          setUsageTarget(usageTarget); // don't use setAndSave to avoid infinite loop
-        }
-      });
+    if (isBrowser && isInView) {
+      window.addEventListener(MODE_UPDATED_EVENT, handleModeUpdated);
+      window.addEventListener(USAGE_TARGET_UPDATED_EVENT, handleUsageTargetUpdated);
     }
-  }, [isBrowser]);
+
+    return () => {
+      window.removeEventListener(MODE_UPDATED_EVENT, handleModeUpdated);
+      window.removeEventListener(USAGE_TARGET_UPDATED_EVENT, handleUsageTargetUpdated);
+    };
+  }, [isBrowser, isInView]);
 
   const isIOS = ionicMode === Mode.iOS;
   const isMD = ionicMode === Mode.MD;
