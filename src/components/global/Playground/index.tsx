@@ -837,5 +837,3 @@ const isFrameReady = (frame: HTMLIFrameElement) => {
 
 const USAGE_TARGET_STORAGE_KEY = 'playground_usage_target';
 const MODE_STORAGE_KEY = 'playground_mode';
-// const USAGE_TARGET_UPDATED_EVENT = 'playground-usage-target-updated';
-// const MODE_UPDATED_EVENT = 'playground-event-updated';
