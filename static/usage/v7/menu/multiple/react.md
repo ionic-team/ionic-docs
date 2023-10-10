@@ -5,19 +5,31 @@ import { menuController } from '@ionic/core/components';
 
 function Example() {
   async function openFirstMenu() {
-    // Open the menu by menu-id
+    /**
+     * Open the menu by menu-id
+     * We refer to the menu using an ID
+     * because multiple "start" menus exist.
+     */
     await menuController.enable(true, 'first-menu');
     await menuController.open('first-menu');
   }
 
   async function openSecondMenu() {
-    // Open the menu by menu-id
+    /**
+     * Open the menu by menu-id
+     * We refer to the menu using an ID
+     * because multiple "start" menus exist.
+     */
     await menuController.enable(true, 'second-menu');
     await menuController.open('second-menu');
   }
 
   async function openEndMenu() {
-    // Open the menu by side
+    /**
+     * Open the menu by side
+     * We can refer to the menu by side
+     * here because only one "end" menu exists
+     */
     await menuController.open('end');
   }
 
