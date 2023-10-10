@@ -468,14 +468,14 @@ export default function Playground({
    * sync up to the same setting. This is needed because if the
    * playground is already in view, the IntersectionObserver doesn't
    * fire until the playground is scrolled off and back on the screen.
-   * 
+   *
    * Sometimes, the app isn't fully hydrated on the first render,
    * causing isBrowser to be set to false even if running the app
    * in a browser (vs. SSR). isBrowser is then updated on the next
    * render cycle. This means we need to re-run this hook when
    * isBrowser changes to handle playgrounds that were in view
    * from the start of the page load.
-   * 
+   *
    * We also re-run when isInView changes because the event callbacks
    * would otherwise capture a stale state value. Since we need to
    * listen for these events only when the playground is in view,
@@ -491,7 +491,7 @@ export default function Playground({
     return () => {
       window.removeEventListener(MODE_UPDATED_EVENT, handleModeUpdated);
       window.removeEventListener(USAGE_TARGET_UPDATED_EVENT, handleUsageTargetUpdated);
-    }
+    };
   }, [isBrowser, isInView]);
 
   const isIOS = ionicMode === Mode.iOS;
