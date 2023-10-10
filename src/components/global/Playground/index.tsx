@@ -13,6 +13,7 @@ import TabItem from '@theme/TabItem';
 
 import { IconHtml, IconTs, IconVue, IconDefault, IconCss, IconDots } from './icons';
 
+import { useScrollPositionBlocker } from '@docusaurus/theme-common';
 import useIsBrowser from '@docusaurus/useIsBrowser';
 
 const ControlButton = forwardRef(
@@ -182,6 +183,8 @@ export default function Playground({
   const frameMD = useRef<HTMLIFrameElement | null>(null);
   const consoleBodyRef = useRef<HTMLDivElement | null>(null);
 
+  const { blockElementScrollPositionUntilNextRender } = useScrollPositionBlocker();
+
   const getDefaultMode = () => {
     /**
      * If a custom mode was specified, use that.
@@ -250,11 +253,27 @@ export default function Playground({
    */
   const [resetCount, setResetCount] = useState(0);
 
+  /**
+   * Keeps track of whether any amount of this playground is
+   * currently on the screen.
+   */
+  const [isInView, setIsInView] = useState(false);
+
   const setAndSaveMode = (mode: Mode) => {
     setIonicMode(mode);
 
     if (isBrowser) {
       localStorage.setItem(MODE_STORAGE_KEY, mode);
+
+      /**
+       * Tell other playgrounds on the page that the mode has
+       * updated, so they can sync up if they're in view.
+       */
+      window.dispatchEvent(
+        new CustomEvent(MODE_UPDATED_EVENT, {
+          detail: mode,
+        })
+      );
     }
   };
 
@@ -263,6 +282,26 @@ export default function Playground({
 
     if (isBrowser) {
       localStorage.setItem(USAGE_TARGET_STORAGE_KEY, target);
+
+      /**
+       * This prevents the scroll position from jumping around if
+       * there is a playground above this one with code that changes
+       * in length between frameworks.
+       *
+       * Note that we don't need this when changing the mode because
+       * the two mode iframes are always the same height.
+       */
+      blockElementScrollPositionUntilNextRender(tab);
+
+      /**
+       * Tell other playgrounds on the page that the framework
+       * has updated, so they can sync up if they're in view.
+       */
+      window.dispatchEvent(
+        new CustomEvent(USAGE_TARGET_UPDATED_EVENT, {
+          detail: target,
+        })
+      );
     }
   };
 
@@ -382,6 +421,7 @@ export default function Playground({
     const io = new IntersectionObserver(
       (entries: IntersectionObserverEntry[]) => {
         const ev = entries[0];
+        setIsInView(ev.isIntersecting);
         if (!ev.isIntersecting) return;
 
         /**
@@ -407,6 +447,52 @@ export default function Playground({
 
     io.observe(hostRef.current!);
   });
+
+  const handleModeUpdated = (e: CustomEvent) => {
+    const mode = e.detail;
+    if (Object.values(Mode).includes(mode)) {
+      setIonicMode(mode); // don't use setAndSave to avoid infinite loop
+    }
+  };
+
+  const handleUsageTargetUpdated = (e: CustomEvent) => {
+    const usageTarget = e.detail;
+    if (Object.values(UsageTarget).includes(usageTarget)) {
+      setUsageTarget(usageTarget); // don't use setAndSave to avoid infinite loop
+    }
+  };
+
+  /**
+   * When this playground is in view, listen for any other playgrounds
+   * on the page to switch their framework or mode, so this one can
+   * sync up to the same setting. This is needed because if the
+   * playground is already in view, the IntersectionObserver doesn't
+   * fire until the playground is scrolled off and back on the screen.
+   * 
+   * Sometimes, the app isn't fully hydrated on the first render,
+   * causing isBrowser to be set to false even if running the app
+   * in a browser (vs. SSR). isBrowser is then updated on the next
+   * render cycle. This means we need to re-run this hook when
+   * isBrowser changes to handle playgrounds that were in view
+   * from the start of the page load.
+   * 
+   * We also re-run when isInView changes because the event callbacks
+   * would otherwise capture a stale state value. Since we need to
+   * listen for these events only when the playground is in view,
+   * we check the state before adding the listeners at all, rather
+   * than within the callbacks.
+   */
+  useEffect(() => {
+    if (isBrowser && isInView) {
+      window.addEventListener(MODE_UPDATED_EVENT, handleModeUpdated);
+      window.addEventListener(USAGE_TARGET_UPDATED_EVENT, handleUsageTargetUpdated);
+    }
+
+    return () => {
+      window.removeEventListener(MODE_UPDATED_EVENT, handleModeUpdated);
+      window.removeEventListener(USAGE_TARGET_UPDATED_EVENT, handleUsageTargetUpdated);
+    }
+  }, [isBrowser, isInView]);
 
   const isIOS = ionicMode === Mode.iOS;
   const isMD = ionicMode === Mode.MD;
@@ -837,3 +923,5 @@ const isFrameReady = (frame: HTMLIFrameElement) => {
 
 const USAGE_TARGET_STORAGE_KEY = 'playground_usage_target';
 const MODE_STORAGE_KEY = 'playground_mode';
+const USAGE_TARGET_UPDATED_EVENT = 'playground-usage-target-updated';
+const MODE_UPDATED_EVENT = 'playground-event-updated';
