@@ -373,7 +373,7 @@ export default function Playground({
    * the framework/mode when it gets changed through another
    * playground on the page, as switching them for every playground
    * at once can cause memory-related crashes on some devices.
-   * 
+   *
    * Instead, we wait for even 1 pixel of the playground to scroll
    * into view (intersect with the viewport) before loading the
    * iframes or auto-switching the framework/mode.
