@@ -476,11 +476,11 @@ export default function Playground({
    * isBrowser changes to handle playgrounds that were in view
    * from the start of the page load.
    *
-   * We also re-run when isInView changes because the event callbacks
-   * would otherwise capture a stale state value. Since we need to
-   * listen for these events only when the playground is in view,
-   * we check the state before adding the listeners at all, rather
-   * than within the callbacks.
+   * We also re-run when isInView changes because otherwise, a stale
+   * state value would be captured. Since we need to listen for these
+   * events only when the playground is in view, we check the state
+   * before adding the listeners at all, rather than within the
+   * callbacks.
    */
   useEffect(() => {
     if (isBrowser && isInView) {
