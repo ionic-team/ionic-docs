@@ -30,6 +30,7 @@ authed
 autogrow
 automations
 autoplay
+Callout
 comparewith
 composables
 engageable

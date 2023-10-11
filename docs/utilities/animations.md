@@ -32,6 +32,7 @@ Ionic Animations, on the other hand, uses the [Web Animations API](https://devel
     { value: 'javascript', label: 'JavaScript' },
     { value: 'typescript', label: 'TypeScript' },
     { value: 'angular', label: 'Angular' },
+    { value: 'angular-standalone', label: 'Angular (Standalone)' },
     { value: 'react', label: 'React' },
     { value: 'vue', label: 'Vue' },
   ]
@@ -76,6 +77,25 @@ Developers using Angular should install the latest version of `@ionic/angular`. 
 ```tsx
 
 import { Animation, AnimationController } from '@ionic/angular';
+
+...
+
+constructor(private animationCtrl: AnimationController) {
+  const animation: Animation = this.animationCtrl.create()
+    .addElement(myElementRef)
+    .duration(1000)
+    .fromTo('opacity', '1', '0.5');
+}
+
+```
+</TabItem>
+<TabItem value="angular-standalone">
+
+Developers using Angular should install the latest version of `@ionic/angular`. Animations can be created via the `AnimationController` dependency injection.
+
+```tsx
+
+import { Animation, AnimationController } from '@ionic/angular/standalone';
 
 ...
 

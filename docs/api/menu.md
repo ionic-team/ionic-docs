@@ -60,7 +60,7 @@ import Sides from '@site/static/usage/v7/menu/sides/index.md';
 
 ## Multiple Menus
 
-When multiple menus exist on the same side, we need to enable the menu that we want to open before it can be opened. This can be done by calling the `enable` method on the `MenuController`. We can then call `open` on a menu based on its `menuId` or `side`.
+When multiple menus exist on the same side, we need refer to them by ID instead of side. Otherwise, the wrong menu may be activated.
 
 import Multiple from '@site/static/usage/v7/menu/multiple/index.md';
 
