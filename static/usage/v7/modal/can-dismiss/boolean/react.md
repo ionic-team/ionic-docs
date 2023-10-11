@@ -10,7 +10,6 @@ import {
   IonTitle,
   IonPage,
   IonItem,
-  IonLabel,
   IonCheckbox,
 } from '@ionic/react';
 
@@ -59,9 +58,7 @@ function Example() {
                   setCanDismiss(ev.detail.checked);
                 }}
               >
-                <IonLabel className="ion-text-wrap" {...{ for: 'terms' }}>
-                  Do you accept the terms and conditions?
-                </IonLabel>
+                <div className="ion-text-wrap">Do you accept the terms and conditions?</div>
               </IonCheckbox>
             </IonItem>
           </IonContent>

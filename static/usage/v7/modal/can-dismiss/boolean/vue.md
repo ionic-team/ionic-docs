@@ -22,7 +22,7 @@
           <p class="ion-padding-horizontal">You must accept the terms and conditions to close this modal.</p>
           <ion-item>
             <ion-checkbox id="terms" @ionChange="onTermsChanged" :checked="canDismiss">
-              <ion-label class="ion-text-wrap" for="terms">Do you accept the terms and conditions?</ion-label>
+              <div class="ion-text-wrap">Do you accept the terms and conditions?</div>
             </ion-checkbox>
           </ion-item>
         </ion-content>
@@ -43,7 +43,6 @@
     IonTitle,
     IonItem,
     IonCheckbox,
-    IonLabel,
     IonPage,
   } from '@ionic/vue';
   import { defineComponent } from 'vue';
@@ -59,7 +58,6 @@
       IonTitle,
       IonItem,
       IonCheckbox,
-      IonLabel,
       IonPage,
     },
     data() {
