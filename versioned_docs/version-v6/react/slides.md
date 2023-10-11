@@ -389,24 +389,24 @@ const MyComponent: React.FC = () => {
 
 Below is a full list of event name changes when going from `IonSlides` to Swiper React:
 
-| IonSlides Event           | Swiper Event                 |
-| ------------------------- | ---------------------------- |
-| onIonSlideWillChange      | onSlideChangeTransitionStart |
-| onIonSlideDidChange       | onSlideChangeTransitionEnd   |
-| onIonSlideDoubleTap       | onDoubleTap                  |
-| onIonSlideDrag            | onSliderMove                 |
-| onIonSlideNextStart       | onSlideNextTransitionStart   |
-| onIonSlideNextEnd         | onSlideNextTransitionEnd     |
-| onIonSlidePrevStart       | onSlidePrevTransitionStart   |
-| onIonSlidePrevEnd         | onSlidePrevTransitionEnd     |
-| onIonSlideReachStart      | onReachBeginning             |
-| onIonSlideReachEnd        | onReachEnd                   |
-| onIonSlideTap             | onTap                        |
-| onIonSlideTouchStart      | onTouchStart                 |
-| onIonSlideTouchEnd        | onTouchEnd                   |
-| onIonSlideTransitionStart | onTransitionStart            |
-| onIonSlideTransitionEnd   | onTransitionEnd              |
-| onIonSlidesDidLoad        | onInit                       |
+| IonSlides Event             | Swiper Event                   |
+| --------------------------- | ------------------------------ |
+| `onIonSlideWillChange`      | `onSlideChangeTransitionStart` |
+| `onIonSlideDidChange`       | `onSlideChangeTransitionEnd`   |
+| `onIonSlideDoubleTap`       | `onDoubleTap`                  |
+| `onIonSlideDrag`            | `onSliderMove`                 |
+| `onIonSlideNextStart`       | `onSlideNextTransitionStart`   |
+| `onIonSlideNextEnd`         | `onSlideNextTransitionEnd`     |
+| `onIonSlidePrevStart`       | `onSlidePrevTransitionStart`   |
+| `onIonSlidePrevEnd`         | `onSlidePrevTransitionEnd`     |
+| `onIonSlideReachStart`      | `onReachBeginning`             |
+| `onIonSlideReachEnd`        | `onReachEnd`                   |
+| `onIonSlideTap`             | `onTap`                        |
+| `onIonSlideTouchStart`      | `onTouchStart`                 |
+| `onIonSlideTouchEnd`        | `onTouchEnd`                   |
+| `onIonSlideTransitionStart` | `onTransitionStart`            |
+| `onIonSlideTransitionEnd`   | `onTransitionEnd`              |
+| `onIonSlidesDidLoad`        | `onInit`                       |
 
 :::note
 All events available in Swiper can be found at <a href="https://swiperjs.com/swiper-api#events" target="_blank" rel="noopener noreferrer">https://swiperjs.com/swiper-api#events</a>.
@@ -441,19 +441,19 @@ From here, if you wanted to access a property on the Swiper instance you would a
 
 Below is a full list of method changes when going from `IonSlides` to Swiper React:
 
-| IonSlides Method   | Notes                                                                                |
-| ------------------ | ------------------------------------------------------------------------------------ |
-| getActiveIndex()   | Use the `activeIndex` property instead.                                              |
-| getPreviousIndex() | Use the `previousIndex` property instead.                                            |
-| getSwiper()        | Get a reference to the Swiper instance using `onSwiper`. See example above.          |
-| isBeginning()      | Use the `isBeginning` property instead.                                              |
-| isEnd()            | Use the `isEnd` property instead.                                                    |
-| length()           | Use the `slides` property instead. (i.e swiperRef.slides.length)                     |
-| lockSwipeToNext()  | Use the `allowSlidesNext` property instead.                                          |
-| lockSwipeToPrev()  | Use the `allowSlidePrev` property instead.                                           |
-| lockSwipes()       | Use the `allowSlideNext`, `allowSlidePrev`, and `allowTouchMove` properties instead. |
-| startAutoplay()    | Use the `autoplay` property instead.                                                 |
-| stopAutoplay()     | Use the `autoplay` property instead.                                                 |
+| IonSlides Method     | Notes                                                                                |
+| -------------------- | ------------------------------------------------------------------------------------ |
+| `getActiveIndex()`   | Use the `activeIndex` property instead.                                              |
+| `getPreviousIndex()` | Use the `previousIndex` property instead.                                            |
+| `getSwiper()`        | Get a reference to the Swiper instance using `onSwiper`. See example above.          |
+| `isBeginning()`      | Use the `isBeginning` property instead.                                              |
+| `isEnd()`            | Use the `isEnd` property instead.                                                    |
+| `length()`           | Use the `slides` property instead. (i.e swiperRef.slides.length)                     |
+| `lockSwipeToNext()`  | Use the `allowSlidesNext` property instead.                                          |
+| `lockSwipeToPrev()`  | Use the `allowSlidePrev` property instead.                                           |
+| `lockSwipes()`       | Use the `allowSlideNext`, `allowSlidePrev`, and `allowTouchMove` properties instead. |
+| `startAutoplay()`    | Use the `autoplay` property instead.                                                 |
+| `stopAutoplay()`     | Use the `autoplay` property instead.                                                 |
 
 ## Effects
 

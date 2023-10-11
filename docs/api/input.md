@@ -30,7 +30,7 @@ import Basic from '@site/static/usage/v7/input/basic/index.md';
 
 ## Types
 
-The input component is meant for text type inputs only, such as `"text"`, `"password"`, `"email"`, `"number"`, `"search"`, `"tel"`, and `"url"`. It supports all standard text input events including keyup, keydown, keypress, and more. The default `type` is `"text"`.
+The input component is meant for text type inputs only, such as `"text"`, `"password"`, `"email"`, `"number"`, `"search"`, `"tel"`, and `"url"`. It supports all standard text input events including `keyup`, `keydown`, `keypress`, and more. The default `type` is `"text"`.
 
 import Types from '@site/static/usage/v7/input/types/index.md';
 
@@ -85,6 +85,8 @@ Material Design offers filled styles for an input. The `fill` property on the in
 
 Since the `fill` styles visually defines the input container, inputs that use `fill` should not be used in `ion-item`.
 
+Filled inputs can be used on iOS by setting Input's `mode` to `md`.
+
 import Fill from '@site/static/usage/v7/input/fill/index.md';
 
 <Fill />
@@ -118,7 +120,7 @@ import CounterAlignment from '@site/static/usage/v7/input/counter-alignment/inde
 
 ## Filtering User Input
 
-Developers can use the `ionInput` event to update the input value in response to user input such as a keypress. This is useful for filtering out invalid or unwanted characters.
+Developers can use the `ionInput` event to update the input value in response to user input such as a `keypress`. This is useful for filtering out invalid or unwanted characters.
 
 When storing the value in a state variable, we recommend updating both the state variable and the `ion-input` component value. This ensures that the state variable and the `ion-input` component value remain in sync.
 
