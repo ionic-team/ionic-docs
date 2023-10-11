@@ -15,7 +15,6 @@ export class ExampleComponent {
      * We refer to the menu using an ID
      * because multiple "start" menus exist.
      */
-    this.menuCtrl.enable(true, 'first-menu');
     this.menuCtrl.open('first-menu');
   }
 
@@ -25,7 +24,6 @@ export class ExampleComponent {
      * We refer to the menu using an ID
      * because multiple "start" menus exist.
      */
-    this.menuCtrl.enable(true, 'second-menu');
     this.menuCtrl.open('second-menu');
   }
 

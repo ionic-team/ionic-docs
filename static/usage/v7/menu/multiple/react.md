@@ -10,7 +10,6 @@ function Example() {
      * We refer to the menu using an ID
      * because multiple "start" menus exist.
      */
-    await menuController.enable(true, 'first-menu');
     await menuController.open('first-menu');
   }
 
@@ -20,7 +19,6 @@ function Example() {
      * We refer to the menu using an ID
      * because multiple "start" menus exist.
      */
-    await menuController.enable(true, 'second-menu');
     await menuController.open('second-menu');
   }
 
