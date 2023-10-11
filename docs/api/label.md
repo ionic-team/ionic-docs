@@ -17,10 +17,9 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="scoped" />
 
-Label is an element used primarily to give added context to [Item](./item.md) components. The position of the label inside of an item can be inline, fixed, stacked, or floating.
+Label is an element used primarily to add text content to [Item](./item.md) components. Label can also be used inside of form control components such as [Input](./input.md) or [Radio](./radio.md) when specifying the visible label, but it is not required.
 
-Note that form control components such as [Input](./input.md) or [Radio](./radio.md) have their own labels, so they typically should not be used with `ion-label`. 
-
+The position of the label inside of an item can be inline, fixed, stacked, or floating.
 
 ## Basic Usage
 
