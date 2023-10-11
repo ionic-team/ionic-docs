@@ -36,7 +36,7 @@ All Ionic imports should be imported from the `@ionic/angular/standalone` submod
 
 Ionic Angular needs to be configured when the Angular application calls `bootstrapApplication` using the `provideIonicAngular` function. Developers can pass any [IonicConfig](../developing/config#ionicconfig) values as an object in this function. Note that `provideIonicAngular` needs to be called even if no custom config is passed.
 
-```typescript
+```typescript title="main.ts"
 import { enableProdMode, importProvidersFrom } from '@angular/core';
 import { bootstrapApplication } from '@angular/platform-browser';
 import { RouteReuseStrategy, provideRouter } from '@angular/router';
@@ -63,7 +63,7 @@ bootstrapApplication(AppComponent, {
 
 In the example below, we are importing `IonContent` and `IonButton` from `@ionic/angular/standalone` and passing them to `imports` for use in the component template. We would get a compiler error if these components were not imported and provided to the `imports` array.
 
-```typescript
+```typescript title="home.page.ts"
 import { Component } from '@angular/core';
 import { IonButton, IonContent } from '@ionic/angular/standalone';
 
@@ -87,7 +87,7 @@ We recommend calling `addIcons` in the Angular component `constructor` so the da
 
 For developers using Ionicons 7.2 or newer, passing only the SVG data will cause the string name to be automatically generated.
 
-```typescript
+```typescript title="home.page.ts"
 import { Component } from '@angular/core';
 import { IonIcon } from '@ionic/angular/standalone';
 import { addIcons } from 'ionicons';
@@ -113,6 +113,33 @@ export class HomePage {
 }
 ```
 
+**Routing**
+
+Developers who wish to use `routerLink`, `routerAction`, or `routerDirection` on Ionic components should import the `IonRouterLink` directive. Developers who wish to use these routing features on anchor (`<a>`) elements should import `IonRouterLinkWithHref` instead.
+
+```typescript title="home.page.ts"
+import { Component } from '@angular/core';
+import { RouterLink } from '@angular/router';
+import { IonButton, IonRouterLink } from '@ionic/angular/standalone';
+
+@Component({
+  selector: 'app-home',
+  templateUrl: 'home.page.html',
+  styleUrls: ['home.page.scss'],
+  standalone: true,
+  imports: [
+    IonButton,
+    RouterLink, // required to get base routerLink behavior for @angular/router
+    IonRouterLink, // use IonRouterLinkWithHref if you are using an <a> element instead
+  ],
+})
+export class HomePage {}
+```
+
+```html title="home.page.html"
+<ion-button routerLink="/foo" routerDirection="root">Go to Foo Page</ion-button>
+```
+
 ### Usage with NgModule-based Applications
 
 :::caution
@@ -123,7 +150,7 @@ All Ionic imports should be imported from the `@ionic/angular/standalone` submod
 
 Ionic Angular needs to be configured in the `providers` array of `app.module.ts` using the `provideIonicAngular` function. Developers can pass any [IonicConfig](../developing/config#ionicconfig) values as an object in this function. Note that `provideIonicAngular` needs to be called even if no custom config is passed.
 
-```typescript
+```typescript title="app.module.ts"
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouteReuseStrategy } from '@angular/router';
@@ -146,7 +173,7 @@ export class AppModule {}
 
 In the example below, we are importing `IonContent` and `IonButton` from `@ionic/angular/standalone` and passing them to `imports` array in the Angular component's NgModule for use in the component template. We would get a compiler error if these components were not imported and provided to the `imports` array.
 
-```typescript
+```typescript title="home.module.ts"
 import { NgModule } from '@angular/core';
 import { IonButton, IonContent } from '@ionic/angular/standalone';
 import { HomePage } from './home.page';
@@ -168,7 +195,7 @@ We recommend calling `addIcons` in the Angular component `constructor` so the da
 
 For developers using Ionicons 7.2 or newer, passing only the SVG data will cause the string name to be automatically generated.
 
-```typescript
+```typescript title="home.page.ts"
 import { Component } from '@angular/core';
 import { addIcons } from 'ionicons';
 import { logoIonic } from 'ionicons/icons';
@@ -189,6 +216,34 @@ export class HomePage {
     addIcons({ logoIonic });
   }
 }
+```
+
+**Routing**
+
+Developers who wish to use `routerLink`, `routerAction`, or `routerDirection` on Ionic components should import the `IonRouterLink` directive. Developers who wish to use these routing features on anchor (`<a>`) elements should import `IonRouterLinkWithHref` instead.
+
+```typescript title="home.module.ts"
+import { NgModule } from '@angular/core';
+import { RouterLink } from '@angular/router';
+import { IonButton, IonRouterLink } from '@ionic/angular/standalone';
+import { HomePage } from './home.page';
+
+import { HomePageRoutingModule } from './home-routing.module';
+
+@NgModule({
+  imports: [
+    IonButton,
+    RouterLink, // required to get base routerLink behavior for @angular/router
+    IonRouterLink, // use IonRouterLinkWithHref if you are using an <a> element instead
+    HomePageRoutingModule,
+  ],
+  declarations: [HomePage],
+})
+export class HomePageModule {}
+```
+
+```html title="home.page.html"
+<ion-button routerLink="/foo" routerDirection="root">Go to Foo Page</ion-button>
 ```
 
 ## Modules
@@ -332,6 +387,26 @@ export class TestComponent {
 - }
 ```
 
+9. If you are using `routerLink`, `routerDirection`, or `routerAction` be sure to import the `IonRouterLink` directive for Ionic components or `IonRouterLinkWithHref` directive for `<a>` elements.
+
+```diff title="test.component.ts"
+import { Component } from '@angular/core';
+- import { IonButton } from '@ionic/angular/standalone';
++ import { IonButton, IonRouterLink } from '@ionic/angular/standalone';
+
+@Component({
+  selector: 'app-root',
+  templateUrl: 'app.component.html',
+  styleUrls: ['app.component.scss'],
+  standalone: true,
+  imports: [
+    IonButton,
++   IonRouterLink
+  ],
+})
+export class TestComponent {}
+```
+
 ### NgModule-based Applications
 
 Follow these steps if your Angular application is still using the NgModule architecture, but you want to adopt Ionic UI components as standalone components now.
@@ -456,4 +531,21 @@ export class TestComponentModule {}
 -   "input": "node_modules/ionicons/dist/ionicons/svg",
 -   "output": "./svg"
 - }
+```
+
+9. If you are using `routerLink`, `routerDirection`, or `routerAction` be sure to import the `IonRouterLink` directive for Ionic components or `IonRouterLinkWithHref` directive for `<a>` elements.
+
+```diff title="test.module.ts"
+import { NgModule } from '@angular/core';
+import { TestComponent } from './test.component';
+- import { IonButton } from '@ionic/angular/standalone';
++ import { IonButton, IonRouterLink } from '@ionic/angular/standalone';
+
+@NgModule({
+  imports: [
+    IonButton,
++   IonRouterLink,
+  ],
+  declarations: [TestComponent]
+})
 ```
