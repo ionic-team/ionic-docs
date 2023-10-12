@@ -236,17 +236,6 @@ import CSSProps from '@site/static/usage/v7/item/theming/css-properties/index.md
 
 <CSSProps />
 
-
-### Input Highlight
-
-Items containing an input will highlight the bottom border of the input with a different color when focused, valid, or invalid. By default, `md` items have a highlight with a height set to `2px` and `ios` has no highlight (technically the height is set to `0`). The height can be changed using the `--highlight-height` CSS property. To turn off the highlight, set this variable to `0`.
-
-The highlight color changes based on the item state, but all of the states use Ionic colors by default. When focused, the input highlight will use the `primary` color. If the input is valid it will use the `success` color, and invalid inputs will use the `danger` color. This can be customized using the provided CSS properties.
-
-import InputHighlight from '@site/static/usage/v7/item/theming/input-highlight/index.md';
-
-<InputHighlight />
-
 ## Guidelines
 
 The following guidelines will help ensure your list items are easy to understand and use.

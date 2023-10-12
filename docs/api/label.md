@@ -17,8 +17,9 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="scoped" />
 
-Label is a wrapper element that can be used in combination with `ion-item`, `ion-input`, `ion-toggle`, and more. The position of the label inside of an item can be inline, fixed, stacked, or floating.
+Label is an element used primarily to add text content to [Item](./item.md) components. Label can also be used inside of form control components such as [Input](./input.md) or [Radio](./radio.md) when specifying the visible label, but it is not required.
 
+The position of the label inside of an item can be inline, fixed, stacked, or floating.
 
 ## Basic Usage
 
@@ -31,12 +32,6 @@ import Basic from '@site/static/usage/v7/label/basic/index.md';
 import Item from '@site/static/usage/v7/label/item/index.md';
 
 <Item />
-
-## Input Labels
-
-import Input from '@site/static/usage/v7/label/input/index.md';
-
-<Input />
 
 ## Theming
 
