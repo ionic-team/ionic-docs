@@ -110,6 +110,7 @@ html[data-theme='dark'] {
         }
       }
       &-collapsible {
+        // This allows the item to be clickable across the entire width of the sidebar.
         display: block;
       }
     }
@@ -158,8 +159,6 @@ html[data-theme='dark'] {
     align-items: center;
     flex-direction: row-reverse;
     justify-content: flex-end;
-
-    flex: initial;
   
     &::after {
       background: var(--ifm-menu-link-sublist-icon) center / var(--dropdown-icon-width) var(--dropdown-icon-height);
