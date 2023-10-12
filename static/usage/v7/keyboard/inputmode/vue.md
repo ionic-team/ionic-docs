@@ -25,7 +25,9 @@
 
   export default defineComponent({
     components: {
-      IonList, IonItem, IonInput,
+      IonList,
+      IonItem,
+      IonInput,
     },
   });
 </script>
