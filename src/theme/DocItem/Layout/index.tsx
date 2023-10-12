@@ -28,17 +28,22 @@ import DocDemo from '@components/global/DocDemo';
  * Decide if the toc should be rendered, on mobile or desktop viewports
  */
 function useDocTOC() {
-  const {frontMatter, toc, demoUrl} = useDoc();
+  const {frontMatter, toc} = useDoc();
   const windowSize = useWindowSize();
+
   const hidden = frontMatter.hide_table_of_contents;
   // CUSTOM CODE
+  const demoUrl = frontMatter.demoUrl;
   const canRender = !hidden && toc.length > 0 && !demoUrl;
   // CUSTOM CODE END
+
   const mobile = canRender ? <DocItemTOCMobile /> : undefined;
+
   const desktop =
     canRender && (windowSize === 'desktop' || windowSize === 'ssr') ? (
       <DocItemTOCDesktop />
     ) : undefined;
+
   return {
     hidden,
     mobile,
@@ -78,6 +83,7 @@ export default function DocItemLayout({children, ...props}: Props): JSX.Element 
         </div>
       </div>
       {/* ------- CUSTOM CODE -------- */}
+      {/* Ideally this would only render if there is a demoUrl and the it's a mobile device. However,the `windowSize` does not provide a tablet so we have to hide it through CSS. */}
       {demoUrl && (
         <div className='col col--4'>
           <div className='doc-demo-wrapper'>
