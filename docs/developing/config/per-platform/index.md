@@ -6,6 +6,7 @@ import TabItem from '@theme/TabItem';
   defaultValue="angular"
   values={[
     { value: 'angular', label: 'Angular' },
+    { value: 'angular-standalone', label: 'Angular (Standalone)' },
     { value: 'react', label: 'React' },
     { value: 'vue', label: 'Vue' },
   ]}
@@ -29,6 +30,28 @@ import { isPlatform, IonicModule } from '@ionic/angular';
     })
   ],
   ...
+})
+```
+
+</TabItem>
+<TabItem value="angular-standalone">
+
+:::note
+Since the config is set at runtime, you will not have access to the Platform Dependency Injection. Instead, you can use the underlying functions that the provider uses directly.
+
+See the [Angular Platform Documentation](../angular/platform) for the types of platforms you can detect.
+:::
+
+```ts title="main.ts"
+import { isPlatform, provideIonicAngular } from '@ionic/angular/standalone';
+
+bootstrapApplication(AppComponent, {
+  providers: [
+    ...,
+    provideIonicAngular({
+      animated: !isPlatform('mobileweb')
+    })
+  ]
 })
 ```
 

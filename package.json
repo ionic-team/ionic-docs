@@ -21,7 +21,8 @@
     "prestart": "npm run generate-markdown",
     "prettier": "prettier \"./**/*.{html,ts,tsx,js,jsx,md}\"",
     "start": "docusaurus start",
-    "swizzle": "docusaurus swizzle"
+    "swizzle": "docusaurus swizzle",
+    "spellcheck": "cspell --no-progress \"**/*.md\""
   },
   "browserslist": {
     "production": [
@@ -66,6 +67,7 @@
     "@ionic/prettier-config": "^3.0.0",
     "@tsconfig/docusaurus": "^1.0.4",
     "@types/react": "^17.0.37",
+    "cspell": "^6.31.3",
     "html-loader": "^3.1.0",
     "hygen": "^6.2.11",
     "prettier": "^2.8.8",

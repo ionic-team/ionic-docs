@@ -507,6 +507,8 @@ const parent = createAnimation()
 
 This example shows 3 child animations controlled by a single parent animation. Animations `squareA` and `squareB` inherit the parent animation's duration of 2000ms, but animation `squareC` has a duration of 5000ms since it was explicitly set.
 
+<!-- cspell:disable-next-line -->
+
 <Codepen user="ionic" slug="oNvdogM" height="460" />
 
 ## Before and After Hooks
@@ -623,6 +625,8 @@ createAnimation()
 In this example, an inline opacity of 0.2 is set on the `.square` element prior to the animation starting. Once the animation finishes, the background color of the element is set to `rgba(0, 255, 0, 0.5)`, and the inline opacity is cleared.
 
 See [Methods](#methods) for a complete list of hooks.
+
+<!-- cspell:disable-next-line -->
 
 <Codepen user="ionic" slug="BaBxmwo" />
 
@@ -1489,6 +1493,8 @@ export default defineComponent({
 </TabItem>
 </Tabs>
 ````
+
+<!-- cspell:disable-next-line -->
 
 <Codepen user="ionic" slug="ExapZBZ" />
 

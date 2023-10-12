@@ -2,6 +2,9 @@
 title: Migrating from ion-slides to Swiper.js
 ---
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 <head>
   <title>Set Up Swiper.js for Angular Slides [Example] | Ionic</title>
   <meta
@@ -137,7 +140,17 @@ With `ion-slides`, Ionic automatically customized dozens of Swiper properties. T
 
 It is recommended to review the [properties](https://github.com/ionic-team/ionic-framework/blob/main/core/src/components/slides/IonicSlides.ts) set by `IonicSlides` and determine which ones you would like to customize.
 
-We can install the `IonicSlides` module by importing it from `@ionic/angular` and passing it to the `modules` property of `swiper-container` as an array:
+We can install the `IonicSlides` module by importing and passing it to the `modules` property of `swiper-container` as an array:
+
+<Tabs
+  groupId="framework"
+  defaultValue="angular"
+  values={[
+    { value: 'angular', label: 'Angular' },
+    { value: 'angular-standalone', label: 'Angular (Standalone)' },
+  ]}
+>
+<TabItem value="angular">
 
 ```typescript
 // home.page.ts
@@ -151,6 +164,25 @@ export class HomePage {
   swiperModules = [IonicSlides];
 }
 ```
+
+</TabItem>
+<TabItem value="angular-standalone">
+
+```typescript
+// home.page.ts
+
+import { IonicSlides } from '@ionic/angular/standalone';
+
+@Component({
+  ...
+})
+export class HomePage {
+  swiperModules = [IonicSlides];
+}
+```
+
+</TabItem>
+</Tabs>
 
 ```html
 <!-- home.page.html -->
@@ -224,24 +256,24 @@ To migrate, we would change the name of the event to `slidechange`:
 
 Below is a full list of event name changes when going from `ion-slides` to Swiper Angular:
 
-| ion-slides Event        | Swiper Event               |
-| ----------------------- | -------------------------- |
-| ionSlideWillChange      | slidechangetransitionstart |
-| ionSlideDidChange       | slidechangetransitionend   |
-| ionSlideDoubleTap       | doubletap                  |
-| ionSlideDrag            | slidermove                 |
-| ionSlideNextStart       | slidenexttransitionstart   |
-| ionSlideNextEnd         | slidenexttransitionend     |
-| ionSlidePrevStart       | slideprevtransitionstart   |
-| ionSlidePrevEnd         | slideprevtransitionend     |
-| ionSlideReachStart      | reachbeginning             |
-| ionSlideReachEnd        | reachend                   |
-| ionSlideTap             | tap                        |
-| ionSlideTouchStart      | touchstart                 |
-| ionSlideTouchEnd        | touchend                   |
-| ionSlideTransitionStart | transitionstart            |
-| ionSlideTransitionEnd   | transitionend              |
-| ionSlidesDidLoad        | init                       |
+| ion-slides Event          | Swiper Event                 |
+| ------------------------- | ---------------------------- |
+| `ionSlideWillChange`      | `slidechangetransitionstart` |
+| `ionSlideDidChange`       | `slidechangetransitionend`   |
+| `ionSlideDoubleTap`       | `doubletap`                  |
+| `ionSlideDrag`            | `slidermove`                 |
+| `ionSlideNextStart`       | `slidenexttransitionstart`   |
+| `ionSlideNextEnd`         | `slidenexttransitionend`     |
+| `ionSlidePrevStart`       | `slideprevtransitionstart`   |
+| `ionSlidePrevEnd`         | `slideprevtransitionend`     |
+| `ionSlideReachStart`      | `reachbeginning`             |
+| `ionSlideReachEnd`        | `reachend`                   |
+| `ionSlideTap`             | `tap`                        |
+| `ionSlideTouchStart`      | `touchstart`                 |
+| `ionSlideTouchEnd`        | `touchend`                   |
+| `ionSlideTransitionStart` | `transitionstart`            |
+| `ionSlideTransitionEnd`   | `transitionend`              |
+| `ionSlidesDidLoad`        | `init`                       |
 
 :::note
 All events available in Swiper Element can be found at <a href="https://swiperjs.com/swiper-api#events" target="_blank" rel="noopener noreferrer">https://swiperjs.com/swiper-api#events</a>.
@@ -281,19 +313,19 @@ export class SlidesExample {
 
 Below is a full list of method changes when going from `ion-slides` to Swiper Element:
 
-| ion-slides Method  | Notes                                                                                |
-| ------------------ | ------------------------------------------------------------------------------------ |
-| getActiveIndex()   | Use the `activeIndex` property instead.                                              |
-| getPreviousIndex() | Use the `previousIndex` property instead.                                            |
-| getSwiper()        | Get a reference to the Swiper instance using the `swiper` prop. See example above.   |
-| isBeginning()      | Use the `isBeginning` property instead.                                              |
-| isEnd()            | Use the `isEnd` property instead.                                                    |
-| length()           | Use the `slides` property instead. (i.e swiper.slides.length)                        |
-| lockSwipeToNext()  | Use the `allowSlidesNext` property instead.                                          |
-| lockSwipeToPrev()  | Use the `allowSlidePrev` property instead.                                           |
-| lockSwipes()       | Use the `allowSlideNext`, `allowSlidePrev`, and `allowTouchMove` properties instead. |
-| startAutoplay()    | Use the `autoplay` property instead.                                                 |
-| stopAutoplay()     | Use the `autoplay` property instead.                                                 |
+| ion-slides Method    | Notes                                                                                |
+| -------------------- | ------------------------------------------------------------------------------------ |
+| `getActiveIndex()`   | Use the `activeIndex` property instead.                                              |
+| `getPreviousIndex()` | Use the `previousIndex` property instead.                                            |
+| `getSwiper()`        | Get a reference to the Swiper instance using the `swiper` prop. See example above.   |
+| `isBeginning()`      | Use the `isBeginning` property instead.                                              |
+| `isEnd()`            | Use the `isEnd` property instead.                                                    |
+| `length()`           | Use the `slides` property instead. (i.e swiper.slides.length)                        |
+| `lockSwipeToNext()`  | Use the `allowSlidesNext` property instead.                                          |
+| `lockSwipeToPrev()`  | Use the `allowSlidePrev` property instead.                                           |
+| `lockSwipes()`       | Use the `allowSlideNext`, `allowSlidePrev`, and `allowTouchMove` properties instead. |
+| `startAutoplay()`    | Use the `autoplay` property instead.                                                 |
+| `stopAutoplay()`     | Use the `autoplay` property instead.                                                 |
 
 :::note
 All methods and properties available on the Swiper instance can be found at <a href="https://swiperjs.com/swiper-api#methods-and-properties" target="_blank" rel="noopener noreferrer">https://swiperjs.com/swiper-api#methods-and-properties</a>.

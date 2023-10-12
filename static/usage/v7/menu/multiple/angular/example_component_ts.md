@@ -10,19 +10,29 @@ export class ExampleComponent {
   constructor(private menuCtrl: MenuController) {}
 
   openFirstMenu() {
-    // Open the menu by menu-id
-    this.menuCtrl.enable(true, 'first-menu');
+    /**
+     * Open the menu by menu-id
+     * We refer to the menu using an ID
+     * because multiple "start" menus exist.
+     */
     this.menuCtrl.open('first-menu');
   }
 
   openSecondMenu() {
-    // Open the menu by menu-id
-    this.menuCtrl.enable(true, 'second-menu');
+    /**
+     * Open the menu by menu-id
+     * We refer to the menu using an ID
+     * because multiple "start" menus exist.
+     */
     this.menuCtrl.open('second-menu');
   }
 
   openEndMenu() {
-    // Open the menu by side
+    /**
+     * Open the menu by side
+     * We can refer to the menu by side
+     * here because only one "end" menu exists
+     */
     this.menuCtrl.open('end');
   }
 }

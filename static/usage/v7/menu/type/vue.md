@@ -23,22 +23,19 @@
       <h2>Select an overlay type:</h2>
       <ion-radio-group value="overlay" v-model="menuType">
         <ion-item>
-          <ion-label>
+          <ion-radio value="overlay">
             <code>overlay</code>
-          </ion-label>
-          <ion-radio value="overlay"></ion-radio>
+          </ion-radio>
         </ion-item>
         <ion-item>
-          <ion-label>
+          <ion-radio value="reveal">
             <code>reveal</code>
-          </ion-label>
-          <ion-radio value="reveal"></ion-radio>
+          </ion-radio>
         </ion-item>
         <ion-item>
-          <ion-label>
+          <ion-radio value="push">
             <code>push</code>
-          </ion-label>
-          <ion-radio value="push"></ion-radio>
+          </ion-radio>
         </ion-item>
       </ion-radio-group>
       <br />
@@ -55,7 +52,6 @@
     IonContent,
     IonHeader,
     IonItem,
-    IonLabel,
     IonMenu,
     IonMenuToggle,
     IonPage,
@@ -72,7 +68,6 @@
       IonContent,
       IonHeader,
       IonItem,
-      IonLabel,
       IonMenu,
       IonMenuToggle,
       IonPage,

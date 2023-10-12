@@ -8,7 +8,6 @@ import {
   IonContent,
   IonItem,
   IonCheckbox,
-  IonLabel,
   IonButton,
 } from '@ionic/react';
 
@@ -24,8 +23,7 @@ function Example() {
         </IonHeader>
         <IonContent className="ion-padding">
           <IonItem>
-            <IonCheckbox slot="start"></IonCheckbox>
-            <IonLabel>Checkbox</IonLabel>
+            <IonCheckbox>Checkbox</IonCheckbox>
           </IonItem>
           <IonButton expand="block">Button</IonButton>
         </IonContent>

@@ -15,3 +15,6 @@
 /docs/api/ @mapsandapps
 /src/ @mapsandapps
 /static/usage/ @mapsandapps
+
+/static/code/stackblitz/**/*/package.json @ionic-team/framework
+/static/code/stackblitz/**/*/package-lock.json @ionic-team/framework
