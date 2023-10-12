@@ -490,6 +490,33 @@ if (environment.production) {
 export class AppModule {}
 ```
 
+For example, all modules that are using Ionic components need to have the Ionic components imported in their component module.
+
+```diff title="home.module.ts"
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+import { HomePage } from './home.page';
+
+import { HomePageRoutingModule } from './home-routing.module';
+
++ import { IonContent, IonHeader, IonTitle, IonToolbar } from '@ionic/angular/standalone';
+
+@NgModule({
+  imports: [
+    CommonModule,
+    FormsModule,
+    HomePageRoutingModule,
++    IonContent,
++    IonHeader,
++    IonTitle,
++    IonToolbar
+  ],
+  declarations: [HomePage]
+})
+export class HomePageModule {}
+```
+
 7. If you are using Ionicons, define the icon SVG data used in each Angular component using `addIcons`. This allows you to continue referencing icons by string name in your component template. Note that you will need to do this for any additional icons added. The `IonIcon` component should still be provided in the NgModule.
 
 ```diff title="test.component.ts"
