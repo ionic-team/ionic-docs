@@ -643,11 +643,7 @@ const MyComponent: React.FC = () => {
 
 ## More Information
 
-<<<<<<< HEAD
 React Router を使用した React でのルーティングの詳細については、次の [https://reacttraining.com/react-router/web](https://reacttraining.com/react-router/web) でドキュメントをご覧ください。
-=======
-For more info on routing in React using the React Router implementation that Ionic uses under the hood, check out their docs at [https://v5.reactrouter.com/web](https://v5.reactrouter.com/web).
->>>>>>> d3f43b0ac48cea51f94bbc4d2b475b9cecccf35f
 
 ## From the Community
 

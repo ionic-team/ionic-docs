@@ -34,11 +34,7 @@ Ionic Framework アプリでは、以下の CSS ファイルをインクルー�
 
 #### typography.css
 
-<<<<<<< HEAD
-typography はドキュメント全体の font-family を変更し、見出し要素のフォントスタイルを変更する。また、いくつかのネイティブのテキスト要素に位置決めスタイルを適用します。
-=======
-Typography changes the font-family of the entire document and modifies the font styles for heading elements. It also applies positioning styles to some native text elements. This file is necessary for [Dynamic Font Scaling](./dynamic-font-scaling) to work.
->>>>>>> 9b2db92b5bf69b3139eedf66fa44d06af800dbae
+typography はドキュメント全体の font-family を変更し、見出し要素のフォントスタイルを変更する。また、いくつかのネイティブのテキスト要素に位置決めスタイルを適用します。これを動作させるためには、 [Dynamic Font Scaling](./dynamic-font-scaling) のファイルが必要です。
 
 #### normalize.css
 
