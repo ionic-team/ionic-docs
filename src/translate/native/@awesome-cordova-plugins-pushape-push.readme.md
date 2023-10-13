@@ -1,4 +1,3 @@
-
 Register and receive push notifications.
 This plugin extends functionalities of Push native plugin in order to use it with Pushape service.
 
