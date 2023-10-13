@@ -64,6 +64,14 @@ import ButtonsPlayground from '@site/static/usage/v7/toast/buttons/index.md';
 
 トーストは、ビューポートの上部、下部、中部に配置することができます。位置は作成時に渡すことができます。指定できる値は `top`, `bottom`, `middle` です。位置が指定されない場合、トーストはビューポートの一番下に表示されます。
 
+### 相対的な位置
+
+トーストがヘッダー、フッター、[FAB](./fab.md)のようなナビゲーション要素と一緒に表示される場合、デフォルトではトーストはこれらの要素と重なるかもしれません。これは `positionAnchor` プロパティを使って修正することができます。`position="top"`を使用するとトーストは選択した要素に対して相対的な位置になり、`position="bottom"`を使用するとその下に、`position="bottom"`を使用するとその上に表示されます。`position="middle"`を使用する場合、`positionAnchor`プロパティは無視されます。
+
+import PositionAnchor from '@site/static/usage/v7/toast/position-anchor/index.md';
+
+<PositionAnchor />
+
 ## レイアウト
 
 トースト内のボタンコンテナは、`layout`プロパティを使用して、メッセージと同じ行に表示するか、別々の行に積み重ねて表示することができます。スタックレイアウトは、長いテキスト値を持つボタンで使用する必要があります。さらに、スタックトーストレイアウトのボタンは `side` の値として `start` または `end` のどちらかを使用できますが、両方を使用することはできません。

@@ -51,19 +51,29 @@
     components: { IonButton, IonContent, IonHeader, IonMenu, IonPage, IonTitle, IonToolbar, menuController },
     setup() {
       const openFirstMenu = async () => {
-        // Open the menu by menu-id
-        await menuController.enable(true, 'first-menu');
+        /**
+         * Open the menu by menu-id
+         * We refer to the menu using an ID
+         * because multiple "start" menus exist.
+         */
         await menuController.open('first-menu');
       };
 
       const openSecondMenu = async () => {
-        // Open the menu by menu-id
-        await menuController.enable(true, 'second-menu');
+        /**
+         * Open the menu by menu-id
+         * We refer to the menu using an ID
+         * because multiple "start" menus exist.
+         */
         await menuController.open('second-menu');
       };
 
       const openEndMenu = async () => {
-        // Open the menu by side
+        /**
+         * Open the menu by side
+         * We can refer to the menu by side
+         * here because only one "end" menu exists
+         */
         await menuController.open('end');
       };
 

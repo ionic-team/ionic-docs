@@ -17,7 +17,8 @@
     "docs/native",
     "versioned_docs/**/api",
     "versioned_docs/**/cli",
-    "versioned_docs/**/native"
+    "versioned_docs/**/native",
+    "node_modules"
   ],
   "flagWords": [
     "hte"

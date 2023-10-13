@@ -60,7 +60,7 @@ import Sides from '@site/static/usage/v7/menu/sides/index.md';
 
 ## 複数メニュー
 
-同じサイドに複数のメニューが存在する場合、開きたいメニューを開く前にそのメニューを有効にする必要があります。これは `MenuController` の `enable` メソッドを呼び出すことで行うことができます。次に、メニューの `menuId` または `side` に基づいて `open` を呼び出すことができます。
+同じサイドに複数のメニューが存在する場合、サイドではなくIDで参照する必要があります。そうしないと、間違ったメニューがアクティブになる可能性がある。
 
 import Multiple from '@site/static/usage/v7/menu/multiple/index.md';
 

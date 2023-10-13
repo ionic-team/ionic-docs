@@ -236,25 +236,14 @@ import CSSProps from '@site/static/usage/v7/item/theming/css-properties/index.md
 
 <CSSProps />
 
+## ガイドライン
 
-### Inputハイライト
+以下のガイドラインは、リスト項目を理解しやすく、使いやすくするのに役立ちます。
 
-input を含むアイテムは、フォーカスされたとき、有効なとき、無効なときに、Inputの下のボーダーを異なる色でハイライトします。デフォルトでは、`md`アイテムは高さが `2px` に設定されたハイライトを持ち、`ios`はハイライトを持ちません（技術的に高さは `0` に設定されています）。高さは `--highlight-height` CSS プロパティを使って変更することができます。ハイライトをオフにするには、この変数を `0` に設定します。
-
-ハイライトの色はアイテムの状態に応じて変化しますが、デフォルトではすべての状態でIonicカラーが使用されます。フォーカスされている場合、Inputのハイライトは `primary` カラーを使用します。Inputが有効な場合は `success` カラーが使用され、無効なInputは `danger` カラーが使用されます。これは提供されているCSSプロパティを使ってカスタマイズすることができます。
-
-import InputHighlight from '@site/static/usage/v7/item/theming/input-highlight/index.md';
-
-<InputHighlight />
-
-## Guidelines
-
-The following guidelines will help ensure your list items are easy to understand and use.
-
-1. Items should only be used inside of [Lists](./list).
-2. Items inside of a list should be presented in a consistent format. For example, if your items present decorative icons, the icons should be positioned in the same way between items.
-3. Items should never render [nested interactives](https://dequeuniversity.com/rules/axe/4.4/nested-interactive). Screen readers are unable to select the correct interactive element when nested interactives are used. For example, avoid placing a button inside of an `ion-item` that has `button="true"`.
-4. Use [content types](#content-types) correctly. The Item component is designed to be a row in a [List](./list) and should not be used as a general purpose container.
+1. アイテムは [Lists](./list) の中だけで使用してください。
+2. リスト内のアイテムは、一貫したフォーマットで表示されるべきです。例えば、アイテムに装飾的なアイコンを表示する場合、アイコンはアイテム間で同じように配置されるべきです。
+3. アイテムは決して[入れ子になったインタラクティヴ](https://dequeuniversity.com/rules/axe/4.4/nested-interactive)をレンダリングすべきではありません。入れ子になったインタラクティブ要素が使用されている場合、スクリーンリーダーは正しいインタラクティブ要素を選択することができません。例えば、`button="true"`を持つ`ion-item`の中にボタンを置くことは避けてください。
+4. コンテントタイプ](#content-types)を正しく使用してください。Itemコンポーネントは、[List](./list)内の行として設計されており、汎用コンテナとして使用すべきではありません。
 
 ## プロパティ
 <Props />

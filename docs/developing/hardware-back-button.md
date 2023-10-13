@@ -50,6 +50,7 @@ When running in a Capacitor or Cordova application, Ionic Framework will emit an
   values={[
     { value: 'javascript', label: 'JavaScript' },
     { value: 'angular', label: 'Angular' },
+    { value: 'angular-standalone', label: 'Angular (Standalone)' },
     { value: 'react', label: 'React' },
     { value: 'vue', label: 'Vue' },
   ]
@@ -69,6 +70,21 @@ document.addEventListener('ionBackButton', (ev) => {
 
 ```tsx
 import { Platform } from '@ionic/angular';
+
+...
+
+constructor(private platform: Platform) {
+  this.platform.backButton.subscribeWithPriority(10, () => {
+    console.log('Handler was called!');
+  });
+}
+
+```
+</TabItem>
+<TabItem value="angular-standalone">
+
+```tsx
+import { Platform } from '@ionic/angular/standalone';
 
 ...
 
@@ -124,6 +140,7 @@ export default {
   values={[
     { value: 'javascript', label: 'JavaScript' },
     { value: 'angular', label: 'Angular' },
+    { value: 'angular-standalone', label: 'Angular (Standalone)' },
     { value: 'react', label: 'React' },
     { value: 'vue', label: 'Vue' },
   ]
@@ -149,6 +166,27 @@ document.addEventListener('ionBackButton', (ev) => {
 
 ```tsx
 import { Platform } from '@ionic/angular';
+
+...
+
+constructor(private platform: Platform) {
+  this.platform.backButton.subscribeWithPriority(5, () => {
+    console.log('Another handler was called!');
+  });
+
+  this.platform.backButton.subscribeWithPriority(10, (processNextHandler) => {
+    console.log('Handler was called!');
+
+    processNextHandler();
+  });
+}
+
+```
+</TabItem>
+<TabItem value="angular-standalone">
+
+```tsx
+import { Platform } from '@ionic/angular/standalone';
 
 ...
 
@@ -244,6 +282,7 @@ document.addEventListener('ionBackButton', (ev) => {
   values={[
     { value: 'javascript', label: 'JavaScript' },
     { value: 'angular', label: 'Angular' },
+    { value: 'angular-standalone', label: 'Angular (Standalone)' },
     { value: 'react', label: 'React' },
     { value: 'vue', label: 'Vue' },
   ]
@@ -272,6 +311,28 @@ document.addEventListener('ionBackButton', (ev: BackButtonEvent) => {
 ```tsx
 import { Optional } from '@angular/core';
 import { IonRouterOutlet, Platform } from '@ionic/angular';
+import { App } from '@capacitor/app';
+
+...
+
+constructor(
+  private platform: Platform,
+  @Optional() private routerOutlet?: IonRouterOutlet
+) {
+  this.platform.backButton.subscribeWithPriority(-1, () => {
+    if (!this.routerOutlet.canGoBack()) {
+      App.exitApp();
+    }
+  });
+}
+
+```
+</TabItem>
+<TabItem value="angular-standalone">
+
+```tsx
+import { Optional } from '@angular/core';
+import { IonRouterOutlet, Platform } from '@ionic/angular/standalone';
 import { App } from '@capacitor/app';
 
 ...

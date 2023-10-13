@@ -10,7 +10,6 @@ import {
   IonTitle,
   IonPage,
   IonItem,
-  IonLabel,
   IonCheckbox,
 } from '@ionic/react';
 
@@ -52,16 +51,15 @@ function Example() {
           <IonContent>
             <p className="ion-padding-horizontal">You must accept the terms and conditions to close this modal.</p>
             <IonItem>
-              <IonLabel className="ion-text-wrap" {...{ for: 'terms' }}>
-                Do you accept the terms and conditions?
-              </IonLabel>
               <IonCheckbox
                 id="terms"
                 checked={canDismiss}
                 onIonChange={(ev) => {
                   setCanDismiss(ev.detail.checked);
                 }}
-              ></IonCheckbox>
+              >
+                <div className="ion-text-wrap">Do you accept the terms and conditions?</div>
+              </IonCheckbox>
             </IonItem>
           </IonContent>
         </IonModal>

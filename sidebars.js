@@ -41,6 +41,7 @@ module.exports = {
         },
         'layout/global-stylesheets',
         'layout/css-utilities',
+        'layout/dynamic-font-scaling',
       ],
     },
     {
@@ -65,6 +66,7 @@ module.exports = {
       collapsed: false,
       items: [
         'angular/overview',
+        'angular/build-options',
         {
           type: 'category',
           label: 'Build Your First App',
