@@ -308,11 +308,17 @@
     },
     {
       "name": "hourCycle",
-      "type": "\"h12\" | \"h23\" | undefined",
+      "type": "\"h11\" | \"h12\" | \"h23\" | \"h24\" | undefined",
       "complexType": {
-        "original": "'h23' | 'h12'",
-        "resolved": "\"h12\" | \"h23\" | undefined",
-        "references": {}
+        "original": "DatetimeHourCycle",
+        "resolved": "\"h11\" | \"h12\" | \"h23\" | \"h24\" | undefined",
+        "references": {
+          "DatetimeHourCycle": {
+            "location": "import",
+            "path": "./datetime-interface",
+            "id": "src/components/datetime/datetime-interface.ts::DatetimeHourCycle"
+          }
+        }
       },
       "mutable": false,
       "attr": "hour-cycle",
@@ -321,11 +327,19 @@
       "docsTags": [],
       "values": [
         {
+          "value": "h11",
+          "type": "string"
+        },
+        {
           "value": "h12",
           "type": "string"
         },
         {
           "value": "h23",
+          "type": "string"
+        },
+        {
+          "value": "h24",
           "type": "string"
         },
         {

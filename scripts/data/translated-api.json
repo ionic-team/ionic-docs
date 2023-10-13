@@ -4966,7 +4966,7 @@
           "mutable": false,
           "attr": "alignment",
           "reflectToAttr": false,
-          "docs": "How to control the alignment of the checkbox and label on the cross axis.\n`\"start\"`: The label and control will appear on the left of the cross axis in LTR, and on the right side in RTL.\n`\"center\"`: The label and control will appear at the center of the cross axis in both LTR and RTL.",
+          "docs": "横軸上のチェックボックスとラベルの配置を制御する方法。start\"`：ラベルとコントロールはLTRでは横軸の左側に、RTLでは右側に表示されます。center\"`：ラベルとコントロールはLTRでもRTLでも十字軸の中央に表示されます。",
           "docsTags": [],
           "default": "'center'",
           "values": [
@@ -5156,7 +5156,7 @@
           "mutable": false,
           "attr": "label-placement",
           "reflectToAttr": false,
-          "docs": "Where to place the label relative to the checkbox.\n`\"start\"`: The label will appear to the left of the checkbox in LTR and to the right in RTL.\n`\"end\"`: The label will appear to the right of the checkbox in LTR and to the left in RTL.\n`\"fixed\"`: The label has the same behavior as `\"start\"` except it also has a fixed width. Long text will be truncated with ellipses (\"...\").\n`\"stacked\"`: The label will appear above the checkbox regardless of the direction. The alignment of the label can be controlled with the `alignment` property.",
+          "docs": "チェックボックスに対するラベルの位置。start\"`：ラベルはLTRではチェックボックスの左に、RTLでは右に表示されます。end\"`：ラベルはLTRではチェックボックスの右、RTLでは左に表示されます。fixed\"`：ラベルの幅が固定される以外は `\"start\"` と同じ動作をします。長いテキストは省略記号(\"...\")で切り捨てられます。積み重ね\"`：ラベルは向きに関係なくチェックボックスの上に表示されます。ラベルの整列は `alignment` プロパティで制御できます。",
           "docsTags": [],
           "default": "'start'",
           "values": [
@@ -6711,12 +6711,6 @@
       ],
       "listeners": [
         {
-          "event": "appload",
-          "target": "window",
-          "capture": false,
-          "passive": false
-        },
-        {
           "event": "resize",
           "target": "window",
           "capture": false,
@@ -7294,11 +7288,17 @@
         },
         {
           "name": "hourCycle",
-          "type": "\"h12\" | \"h23\" | undefined",
+          "type": "\"h11\" | \"h12\" | \"h23\" | \"h24\" | undefined",
           "complexType": {
-            "original": "'h23' | 'h12'",
-            "resolved": "\"h12\" | \"h23\" | undefined",
-            "references": {}
+            "original": "DatetimeHourCycle",
+            "resolved": "\"h11\" | \"h12\" | \"h23\" | \"h24\" | undefined",
+            "references": {
+              "DatetimeHourCycle": {
+                "location": "import",
+                "path": "./datetime-interface",
+                "id": "src/components/datetime/datetime-interface.ts::DatetimeHourCycle"
+              }
+            }
           },
           "mutable": false,
           "attr": "hour-cycle",
@@ -7307,11 +7307,19 @@
           "docsTags": [],
           "values": [
             {
+              "value": "h11",
+              "type": "string"
+            },
+            {
               "value": "h12",
               "type": "string"
             },
             {
               "value": "h23",
+              "type": "string"
+            },
+            {
+              "value": "h24",
               "type": "string"
             },
             {
@@ -8063,19 +8071,19 @@
       "parts": [
         {
           "name": "calendar-day",
-          "docs": "The individual buttons that display a day inside of the datetime\ncalendar."
+          "docs": "日付カレンダーの中に日を表示する個々のボタン。"
         },
         {
           "name": "calendar-day active",
-          "docs": "The currently selected calendar day."
+          "docs": "現在選択されている暦日。"
         },
         {
           "name": "calendar-day disabled",
-          "docs": "The calendar day that is disabled."
+          "docs": "無効になる暦日。"
         },
         {
           "name": "calendar-day today",
-          "docs": "The calendar day that contains the current day."
+          "docs": "現在の日を含む暦日。"
         },
         {
           "name": "month-year-button",
@@ -19448,7 +19456,7 @@
           "mutable": false,
           "attr": "alignment",
           "reflectToAttr": false,
-          "docs": "How to control the alignment of the radio and label on the cross axis.\n`\"start\"`: The label and control will appear on the left of the cross axis in LTR, and on the right side in RTL.\n`\"center\"`: The label and control will appear at the center of the cross axis in both LTR and RTL.",
+          "docs": "ラジオとラベルの十字軸上の配置を制御する方法。start\"`：ラベルとコントロールはLTRでは横軸の左側に、RTLでは右側に表示されます。center\"`：ラベルとコントロールはLTRでもRTLでも十字軸の中央に表示されます。",
           "docsTags": [],
           "default": "'center'",
           "values": [
@@ -19594,7 +19602,7 @@
           "mutable": false,
           "attr": "label-placement",
           "reflectToAttr": false,
-          "docs": "Where to place the label relative to the radio.\n`\"start\"`: The label will appear to the left of the radio in LTR and to the right in RTL.\n`\"end\"`: The label will appear to the right of the radio in LTR and to the left in RTL.\n`\"fixed\"`: The label has the same behavior as `\"start\"` except it also has a fixed width. Long text will be truncated with ellipses (\"...\").\n`\"stacked\"`: The label will appear above the radio regardless of the direction. The alignment of the label can be controlled with the `alignment` property.",
+          "docs": "ラジオに対してラベルを配置する位置。start\"`：ラベルはLTRではラジオの左に、RTLでは右に表示されます。end\"`：ラベルはLTRではラジオの右、RTLでは左に表示される。fixed\"`：ラベルの幅が固定される以外は `\"start\"` と同じ動作をします。長いテキストは省略記号(\"...\")で切り捨てられます。stacked\"`：ラベルは向きに関係なくラジオの上に表示されます。ラベルの整列は `alignment` プロパティで制御できます。",
           "docsTags": [],
           "default": "'start'",
           "values": [
@@ -20029,7 +20037,7 @@
           "mutable": false,
           "attr": "label-placement",
           "reflectToAttr": false,
-          "docs": "Where to place the label relative to the range.\n`\"start\"`: The label will appear to the left of the range in LTR and to the right in RTL.\n`\"end\"`: The label will appear to the right of the range in LTR and to the left in RTL.\n`\"fixed\"`: The label has the same behavior as `\"start\"` except it also has a fixed width. Long text will be truncated with ellipses (\"...\").\n`\"stacked\"`: The label will appear above the range regardless of the direction.",
+          "docs": "範囲に対するラベルの位置。start\"`：ラベルはLTRでは範囲の左側、RTLでは右側に表示される。end\"`：ラベルはLTRでは範囲の右側、RTLでは左側に表示される。fixed\"`：ラベルの幅が固定される以外は `\"start\"` と同じ動作をします。長いテキストは省略記号(\"...\")で切り捨てられます。積み上げ\"`：ラベルは方向に関係なく範囲の上に表示されます。",
           "docsTags": [],
           "default": "'start'",
           "values": [
@@ -28239,7 +28247,7 @@
           "mutable": false,
           "attr": "position",
           "reflectToAttr": false,
-          "docs": "画面上のトーストの位置です。",
+          "docs": "The starting position of the toast on the screen. Can be tweaked further\nusing the `positionAnchor` property.",
           "docsTags": [],
           "default": "'bottom'",
           "values": [
@@ -28257,6 +28265,38 @@
             }
           ],
           "optional": false,
+          "required": false
+        },
+        {
+          "name": "positionAnchor",
+          "type": "HTMLElement | string | undefined",
+          "complexType": {
+            "original": "HTMLElement | string",
+            "resolved": "HTMLElement | string | undefined",
+            "references": {
+              "HTMLElement": {
+                "location": "global",
+                "id": "global::HTMLElement"
+              }
+            }
+          },
+          "mutable": false,
+          "attr": "position-anchor",
+          "reflectToAttr": false,
+          "docs": "The element to anchor the toast's position to. Can be set as a direct reference\nor the ID of the element. With `position=\"bottom\"`, the toast will sit above the\nchosen element. With `position=\"top\"`, the toast will sit below the chosen element.\nWith `position=\"middle\"`, the value of `positionAnchor` is ignored.",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "HTMLElement"
+            },
+            {
+              "type": "string"
+            },
+            {
+              "type": "undefined"
+            }
+          ],
+          "optional": true,
           "required": false
         },
         {
@@ -28341,8 +28381,9 @@
                 "id": "global::Promise"
               },
               "ToastDismissOptions": {
-                "location": "global",
-                "id": "global::ToastDismissOptions"
+                "location": "import",
+                "path": "./toast-interface",
+                "id": "src/components/toast/toast-interface.ts::ToastDismissOptions"
               }
             },
             "return": "Promise<boolean>"
@@ -28438,8 +28479,9 @@
                 "id": "global::Promise"
               },
               "ToastPresentOptions": {
-                "location": "global",
-                "id": "global::ToastPresentOptions"
+                "location": "import",
+                "path": "./toast-interface",
+                "id": "src/components/toast/toast-interface.ts::ToastPresentOptions"
               }
             },
             "return": "Promise<void>"
@@ -28751,7 +28793,7 @@
           "mutable": false,
           "attr": "alignment",
           "reflectToAttr": false,
-          "docs": "How to control the alignment of the toggle and label on the cross axis.\n``\"start\"`: The label and control will appear on the left of the cross axis in LTR, and on the right side in RTL.\n`\"center\"`: The label and control will appear at the center of the cross axis in both LTR and RTL.",
+          "docs": "十字軸上のトグルとラベルの配置を制御する方法。start\"`：ラベルとコントロールはLTRでは十字軸の左側に、RTLでは右側に表示されます。center\"`：ラベルとコントロールはLTRでもRTLでも十字軸の中央に表示されます。",
           "docsTags": [],
           "default": "'center'",
           "values": [
@@ -28944,7 +28986,7 @@
           "mutable": false,
           "attr": "label-placement",
           "reflectToAttr": false,
-          "docs": "Where to place the label relative to the input.\n`\"start\"`: The label will appear to the left of the toggle in LTR and to the right in RTL.\n`\"end\"`: The label will appear to the right of the toggle in LTR and to the left in RTL.\n`\"fixed\"`: The label has the same behavior as `\"start\"` except it also has a fixed width. Long text will be truncated with ellipses (\"...\").\n`\"stacked\"`: The label will appear above the toggle regardless of the direction. The alignment of the label can be controlled with the `alignment` property.",
+          "docs": "入力に対するラベルの位置。start\"`：ラベルはLTRではトグルの左に、RTLでは右に表示されます。end\"`：ラベルはLTRではトグルの右、RTLでは左に表示されます。fixed\"`：ラベルの幅が固定される以外は `\"start\"` と同じ動作をします。長いテキストは省略記号(\"...\")で切り捨てられます。stacked\"`：ラベルは向きに関係なくトグルの上に表示されます。ラベルの整列は `alignment` プロパティで制御できます。",
           "docsTags": [],
           "default": "'start'",
           "values": [
