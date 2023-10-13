@@ -18,7 +18,8 @@
     "versioned_docs/**/api",
     "versioned_docs/**/cli",
     "versioned_docs/**/native",
-    "node_modules"
+    "node_modules",
+    "src/translate"
   ],
   "flagWords": [
     "hte"

@@ -4,7 +4,7 @@
 
 WEB サイトがつくれれば、モバイルアプリをつくることができる時代がやってきました。本書では、HTML でモバイルアプリをつくるフレームワーク「Ionic」の紹介と、チュートリアルで作り方を解説しています。
 
-by [rdlabo](https://twitter.com/rdlabo)
+by [`rdlabo`](https://twitter.com/rdlabo)
 
 ### [Learn Ionic 4 From Scratch](https://leanpub.com/learnionic4fromscratch)
 
