@@ -1,9 +1,9 @@
 ```html
 <style>
-ion-backdrop {
-  background: #000;
-  opacity: 0.3;
-}
+  ion-backdrop {
+    background: #000;
+    opacity: 0.3;
+  }
 </style>
 
 <template>
