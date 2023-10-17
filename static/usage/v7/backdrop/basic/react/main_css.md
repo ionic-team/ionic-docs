@@ -1,6 +1,6 @@
 ```css
 ion-backdrop {
-  background: #000;
+  background: var(--ion-color-dark);
   opacity: 0.3;
 }
 ```
