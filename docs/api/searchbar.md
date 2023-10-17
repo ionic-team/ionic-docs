@@ -94,7 +94,7 @@ import CSSProps from '@site/static/usage/v7/searchbar/theming/css-properties/ind
 
 ### Android
 
-デフォルトでは、Inputをタップするとキーボードが表示され、サブミットボタンに虫眼鏡のアイコンが表示されます。オプションで `inputmode` プロパティを `"search"` に設定すると、アイコンが虫眼鏡からarriage returnに変更されます。
+デフォルトでは、Inputをタップするとキーボードが表示され、サブミットボタンに虫眼鏡のアイコンが表示されます。オプションで `inputmode` プロパティを `"search"` に設定すると、アイコンが虫眼鏡からcarriage returnに変更されます。
 
 ### iOS
 

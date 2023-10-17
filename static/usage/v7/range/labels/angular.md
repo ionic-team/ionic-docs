@@ -8,4 +8,8 @@
 <br />
 
 <ion-range labelPlacement="fixed" label="Fixed Width Label"></ion-range>
+
+<br />
+
+<ion-range labelPlacement="stacked" label="Stacked Label"></ion-range>
 ```

@@ -14,6 +14,7 @@ function Example() {
       <IonToggle labelPlacement="fixed">Fixed Width Label</IonToggle>
       <br />
       <br />
+      <IonToggle labelPlacement="stacked">Stacked Label</IonToggle>
     </>
   );
 }

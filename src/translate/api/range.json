@@ -231,16 +231,16 @@
     },
     {
       "name": "labelPlacement",
-      "type": "\"end\" | \"fixed\" | \"start\"",
+      "type": "\"end\" | \"fixed\" | \"stacked\" | \"start\"",
       "complexType": {
-        "original": "'start' | 'end' | 'fixed'",
-        "resolved": "\"end\" | \"fixed\" | \"start\"",
+        "original": "'start' | 'end' | 'fixed' | 'stacked'",
+        "resolved": "\"end\" | \"fixed\" | \"stacked\" | \"start\"",
         "references": {}
       },
       "mutable": false,
       "attr": "label-placement",
       "reflectToAttr": false,
-      "docs": "Where to place the label relative to the range.\n`\"start\"`: The label will appear to the left of the range in LTR and to the right in RTL.\n`\"end\"`: The label will appear to the right of the range in LTR and to the left in RTL.\n`\"fixed\"`: The label has the same behavior as `\"start\"` except it also has a fixed width. Long text will be truncated with ellipses (\"...\").",
+      "docs": "Where to place the label relative to the range.\n`\"start\"`: The label will appear to the left of the range in LTR and to the right in RTL.\n`\"end\"`: The label will appear to the right of the range in LTR and to the left in RTL.\n`\"fixed\"`: The label has the same behavior as `\"start\"` except it also has a fixed width. Long text will be truncated with ellipses (\"...\").\n`\"stacked\"`: The label will appear above the range regardless of the direction.",
       "docsTags": [],
       "default": "'start'",
       "values": [
@@ -250,6 +250,10 @@
         },
         {
           "value": "fixed",
+          "type": "string"
+        },
+        {
+          "value": "stacked",
           "type": "string"
         },
         {

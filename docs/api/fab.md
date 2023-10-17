@@ -41,6 +41,32 @@ import Positioning from '@site/static/usage/v7/fab/positioning/index.md';
 
 <Positioning />
 
+### セーフエリア
+
+`ion-header`コンポーネントや`ion-footer`コンポーネントがない場合、fabはデバイスのノッチやステータスバー、その他のデバイスUIで覆われている可能性があります。このような場合、上下の [safe area](/docs/theming/advanced#safe-area-padding) は考慮されません。これは [`--ion-safe-area-(dir)`変数](/docs/theming/advanced#application-variables) を使って調整することができます。
+
+`vertical`を`"top"`に設定したfabを `ion-header` なしで使用する場合は、上マージンを設定する必要があります：
+
+```css
+ion-fab {
+  margin-top: var(--ion-safe-area-top, 0)；
+}
+```
+
+また、`ion-footer`なしで`vertical`を`"bottom"`に設定したfabを使用する場合は、下マージンを設定する必要があります：
+
+```css
+ion-fab {
+  margin-bottom: var(--ion-safe-area-bottom, 0)；
+}
+```
+
+`ion-header` (`vertical` が `"top"` に設定されたファブの場合) または `ion-footer` (`vertical` が `"bottom"` に設定されたファブの場合) がある場合、ファブはヘッダまたはフッタからの相対位置に配置されるため、CSS の調整は必要ありません。
+
+import SafeArea from '@site/static/usage/v7/fab/safe-area/index.md';
+
+<SafeArea />
+
 ## ボタンサイズ
 
 メインファブボタンの `size` プロパティを `"small"` に設定すると、ミニサイズで描画されます。なお、このプロパティは内側のファブボタンで使用した場合は効果がありません。
@@ -68,7 +94,6 @@ import CSSCustomProperties from '@site/static/usage/v7/fab/theming/css-custom-pr
 import CSSShadowParts from '@site/static/usage/v7/fab/theming/css-shadow-parts/index.md';
 
 <CSSShadowParts />
- 
 
 ## アクセシビリティ
 

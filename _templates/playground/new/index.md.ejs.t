@@ -1,6 +1,5 @@
 ---
-arbitrary: <% nameWithoutIon = name.replace('ion-', '') %>
-to: "<%= `static/usage/v${version}/${nameWithoutIon}/${path}/index.md` %>"
+to: "<%= `static/usage/v${version}/${name}/${path}/index.md` %>"
 ---
 import Playground from '@site/src/components/global/Playground';
 
@@ -56,5 +55,5 @@ import angular_example_component_css from './angular/example_component_css.md';
     angular,
 <% } -%>
   }}
-  src="usage/v<%= version %>/<%= nameWithoutIon %>/<%= path %>/demo.html"
+  src="usage/v<%= version %>/<%= name %>/<%= path %>/demo.html"
 />

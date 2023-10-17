@@ -68,6 +68,8 @@
   </p>
 </section>
 
+<!-- cspell:disable -->
+
 <section id="cli">
   <a href="#cli">
     <h3>CLI</h3>
@@ -84,6 +86,8 @@
     .
   </p>
 </section>
+
+<!-- cspell:enable -->
 
 <section id="commonjs">
   <a href="#commonjs">

@@ -5,7 +5,6 @@ import {
   IonContent,
   IonHeader,
   IonItem,
-  IonLabel,
   IonMenu,
   IonMenuToggle,
   IonPage,
@@ -48,22 +47,19 @@ function Example() {
             }}
           >
             <IonItem>
-              <IonLabel>
+              <IonRadio value="overlay">
                 <code>overlay</code>
-              </IonLabel>
-              <IonRadio value="overlay"></IonRadio>
+              </IonRadio>
             </IonItem>
             <IonItem>
-              <IonLabel>
+              <IonRadio value="reveal">
                 <code>reveal</code>
-              </IonLabel>
-              <IonRadio value="reveal"></IonRadio>
+              </IonRadio>
             </IonItem>
             <IonItem>
-              <IonLabel>
+              <IonRadio value="push">
                 <code>push</code>
-              </IonLabel>
-              <IonRadio value="push"></IonRadio>
+              </IonRadio>
             </IonItem>
           </IonRadioGroup> <br />
           <IonMenuToggle>

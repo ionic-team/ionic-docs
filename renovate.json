@@ -3,17 +3,30 @@
   "extends": ["config:base"],
   "packageRules": [
     {
-      "matchPackagePatterns": ["^@ionic/"],
-      "groupName": "ionic"
+      "matchPackagePatterns": ["@ionic/"],
+      "groupName": "ionic",
+      "schedule": ["every weekday before 11am"]
     },
     {
-      "matchPackagePatterns": ["^@angular/"],
-      "groupName": "angular"
+      "matchPackagePatterns": ["@angular/"],
+      "groupName": "angular",
+      "schedule": ["on the first day of the month"]
     },
     {
-      "matchPackagePatterns": ["^@ionic/"],
+      "matchPackagePatterns": ["react-router", "react-router-dom"],
+      "groupName": "react-router",
+      "allowedVersions": "^5.0.0"
+    },
+    {
+      "matchPackagePatterns": ["@ionic/"],
       "allowedVersions": "^6.0.0",
-      "matchFileNames": ["static/code/stackblitz/v6/**/package.json"]
+      "groupName": "ionic",
+      "matchFileNames": [
+        "static/code/stackblitz/v6/angular/package.json",
+        "static/code/stackblitz/v6/html/package.json",
+        "static/code/stackblitz/v6/react/package.json",
+        "static/code/stackblitz/v6/vue/package.json"
+      ]
     }
   ],
   "dependencyDashboard": true,
@@ -21,5 +34,14 @@
   "rebaseWhen": "never",
   "schedule": ["every weekday before 11am"],
   "semanticCommits": "enabled",
-  "includePaths": ["static/code/stackblitz"]
+  "includePaths": [
+    "static/code/stackblitz/v6/angular/package.json",
+    "static/code/stackblitz/v6/html/package.json",
+    "static/code/stackblitz/v6/react/package.json",
+    "static/code/stackblitz/v6/vue/package.json",
+    "static/code/stackblitz/v7/angular/package.json",
+    "static/code/stackblitz/v7/html/package.json",
+    "static/code/stackblitz/v7/react/package.json",
+    "static/code/stackblitz/v7/vue/package.json"
+  ]
 }

@@ -29,15 +29,27 @@ import Basic from '@site/static/usage/v7/checkbox/basic/index.md';
 
 ## Label Placement
 
-開発者は `labelPlacement` プロパティを使用して、ラベルがどのように配置されるかを制御することができます。
+開発者は `labelPlacement` プロパティを使用して、ラベルをコントロールに対してどのように配置するかを制御できます。このプロパティはフレックスボックスの `flex-direction` プロパティを反映しています。
 
 import LabelPlacement from '@site/static/usage/v7/checkbox/label-placement/index.md';
 
 <LabelPlacement />
 
+## Alignment
+
+Developers can use the `alignment` property to control how the label and control are aligned on the cross axis. This property mirrors the flexbox `align-items` property.
+
+:::note
+Stacked checkboxes can be aligned using the `alignment` property. This can be useful when the label and control need to be centered horizontally.
+:::
+
+import Alignment from '@site/static/usage/v7/checkbox/alignment/index.md';
+
+<Alignment />
+
 ## Justification
 
-開発者は `justify` プロパティを使用して、ラベルとコントロールの行の詰め方を制御することができます。
+開発者は `justify` プロパティを使用して、ラベルとコントロールの行の詰め方を制御することができます。このプロパティはフレックスボックスの `justify-content` プロパティを反映しています。
 
 import Justify from '@site/static/usage/v7/checkbox/justify/index.md';
 

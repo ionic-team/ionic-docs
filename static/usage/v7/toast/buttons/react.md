@@ -1,11 +1,8 @@
 ```tsx
-import React, { useState } from 'react';
+import React from 'react';
 import { IonButton, IonToast } from '@ionic/react';
 
 function Example() {
-  const [handlerMessage, setHandlerMessage] = useState('');
-  const [roleMessage, setRoleMessage] = useState('');
-
   return (
     <>
       <IonButton id="open-toast">Open Toast</IonButton>
@@ -18,21 +15,19 @@ function Example() {
             text: 'More Info',
             role: 'info',
             handler: () => {
-              setHandlerMessage('More Info clicked');
+              console.log('More Info clicked');
             },
           },
           {
             text: 'Dismiss',
             role: 'cancel',
             handler: () => {
-              setHandlerMessage('Dismiss clicked');
+              console.log('Dismiss clicked');
             },
           },
         ]}
-        onDidDismiss={(e: CustomEvent) => setRoleMessage(`Dismissed with role: ${e.detail.role}`)}
+        onDidDismiss={(e: CustomEvent) => console.log(`Dismissed with role: ${e.detail.role}`)}
       ></IonToast>
-      <p>{handlerMessage}</p>
-      <p>{roleMessage}</p>
     </>
   );
 }

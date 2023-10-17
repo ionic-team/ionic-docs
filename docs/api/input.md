@@ -30,7 +30,7 @@ import Basic from '@site/static/usage/v7/input/basic/index.md';
 
 ## Types
 
-input コンポーネントは、`"text"`, `"password"`, `"email"`, `"number"`, `"search"`, `"tel"`, `"url"` などのテキストタイプの入力のみを対象としています。また、keyup、keydown、keypressなどの標準的なテキスト入力イベントをすべてサポートしています。デフォルトの `type` は `"text"` です。
+input コンポーネントは、`"text"`, `"password"`, `"email"`, `"number"`, `"search"`, `"tel"`, `"url"` などのテキストタイプの入力のみを対象としています。また、`keyup`、`keydown`、`keypress`などの標準的なテキスト入力イベントをすべてサポートしています。デフォルトの `type` は `"text"` です。
 
 import Types from '@site/static/usage/v7/input/types/index.md';
 
@@ -85,6 +85,8 @@ Material Design では、Inputに塗りつぶしのスタイルが用意され�
 
 `fill` スタイルはInputコンテナを視覚的に定義するため、`fill` を使用するInputは `ion-item` で使用すべきではありません。
 
+Filled inputs can be used on iOS by setting Input's `mode` to `md`.
+
 import Fill from '@site/static/usage/v7/input/fill/index.md';
 
 <Fill />
@@ -104,9 +106,17 @@ import HelperError from '@site/static/usage/v7/input/helper-error/index.md';
 
 Input Counterは、Inputの下に表示されるテキストで、入力可能な文字数のうち、何文字が入力されたかをユーザーに通知するものです。カウンターを追加する場合、デフォルトの動作は、表示される値を `inputLength` / `maxLength` としてフォーマットすることです。この動作は、`counterFormatter`プロパティにフォーマッタ関数を渡すことでカスタマイズすることができます。
 
+The `counter` and `counterFormatter` properties on `ion-item` were [deprecated in Ionic 7](/docs/api/input#using-the-modern-syntax) and should be used directly on `ion-input` instead.
+
 import Counter from '@site/static/usage/v7/input/counter/index.md';
 
 <Counter />
+
+Inputs with a counter add a border between the input and the counter, therefore they should not be placed inside of an `ion-item` which adds an additional border under the item. The `ion-padding-start` class can be added to align the counter inputs with inputs inside of items.
+
+import CounterAlignment from '@site/static/usage/v7/input/counter-alignment/index.md';
+
+<CounterAlignment />
 
 ## Filtering User Input
 

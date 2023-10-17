@@ -1,0 +1,70 @@
+.best-practice__do_dont {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 12px;
+}
+
+/* Collapse to 1 column per row on smaller viewports */
+@media (max-width: 996px) {
+  .best-practice__do_dont {
+    grid-template-columns: 1fr;
+  }
+}
+
+.best-practice__container figcaption {
+  text-align: start;
+}
+
+.best-practice__do p,
+.best-practice__dont p,
+.best-practice__caution p {
+  padding: 8px 16px;
+}
+
+.best-practice__image-wrapper {
+  border-radius: 8px 8px 0px 0px;
+
+  overflow: hidden;
+}
+
+.best-practice__dont-text,
+.best-practice__do-text,
+.best-practice__caution-text {
+  padding: 12px 16px;
+
+  font-weight: 600;
+
+  border-radius: 0px 0px 8px 8px;
+}
+
+.best-practice__do .best-practice__image-wrapper {
+  border: 1px solid var(--c-blue-10);
+}
+
+.best-practice__dont .best-practice__image-wrapper {
+  border: 1px solid var(--c-red-10);
+}
+
+.best-practice__caution .best-practice__image-wrapper {
+  border: 1px solid var(--c-yellow-10);
+}
+
+.best-practice__dont-text {
+  color: var(--c-red-100);
+  background: var(--c-red-10);
+}
+.best-practice__do-text {
+  color: var(--c-blue-100);
+  background: var(--c-blue-10);
+}
+
+.best-practice__caution-text {
+  /* --c-yellow-100 does not have enough contrast
+   * placed on top of --c-yellow-10, so we manually
+   * choose a darker text color here.
+   */
+  color: #7e5e17;
+  background: var(--c-yellow-10);
+}

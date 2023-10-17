@@ -29,6 +29,7 @@ Building complex gestures can be time consuming. Other libraries that provide cu
   values={[
     { value: 'javascript', label: 'JavaScript' },
     { value: 'angular', label: 'Angular' },
+    { value: 'angular-standalone', label: 'Angular (Standalone)' },
     { value: 'react', label: 'React' },
     { value: 'vue', label: 'Vue' },
   ]
@@ -77,6 +78,30 @@ or they can wrap their callbacks in an `NgZone.run()` call.
 
 ```tsx
 import { Gesture, GestureController } from '@ionic/angular';
+
+...
+
+constructor(private gestureCtrl: GestureController) {
+  const gesture: Gesture = this.gestureCtrl.create({
+    el: this.element.nativeElement,
+    threshold: 15,
+    gestureName: 'my-gesture',
+    onMove: ev => this.onMoveHandler(ev)
+  }, true);
+  // The `true` above ensures that callbacks run inside NgZone.
+}
+
+```
+</TabItem>
+<TabItem value="angular-standalone">
+
+Developers using Angular should install the latest version of `@ionic/angular`. Animations can be created via the `AnimationController` dependency injection.
+
+By default, gesture callbacks do not run inside of NgZone. Developers can either set the `runInsideAngularZone` parameter to `true` when creating a gesture,
+or they can wrap their callbacks in an `NgZone.run()` call.
+
+```tsx
+import { Gesture, GestureController } from '@ionic/angular/standalone';
 
 ...
 

@@ -1,1 +1,0 @@
-No CSS custom properties available for this component.

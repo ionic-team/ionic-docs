@@ -43,7 +43,7 @@ $ keytool -genkey -v -keystore my-release-key.keystore -alias alias_name -keyalg
 $ jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore my-release-key.keystore HelloWorld-release-unsigned.apk alias_name
 ```
 
-最後に、APK を最適化するために、zipalign ツールを実行する必要があります。
+最後に、APK を最適化するために、`zipalign` ツールを実行する必要があります。
 `zipalign` ツールは `/path/to/Android/sdk/build-tools/VERSION/zipalign` にあります。
 例えば、Android Studio がインストールされている macOS では、`zipalign`は `~/Library/Android/sdk/build-tools/VERSION/zipalign` の中に入っています。
 
