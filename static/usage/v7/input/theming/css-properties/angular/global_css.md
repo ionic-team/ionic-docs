@@ -1,6 +1,6 @@
 ```css
 /**
- * Since we are styling elements inside of ion-textarea
+ * Since we are styling elements inside of ion-input
  * we need to move this CSS to a global stylesheet. Otherwise,
  * Angular components with encapsulation enabled will add
  * scoped style attributes to these selectors.
