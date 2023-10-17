@@ -21,8 +21,10 @@
     --padding-top: 10px;
   }
 
-  ion-input.custom .helper-text,
-  ion-input.custom .counter {
+  ion-input.custom.ios .input-bottom .helper-text,
+  ion-input.custom.ios .input-bottom .counter,
+  ion-input.custom.md .input-bottom .helper-text,
+  ion-input.custom.md .input-bottom .counter  {
     color: var(--ion-color-step-700, #373737);
   }
 </style>
