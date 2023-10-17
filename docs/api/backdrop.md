@@ -16,7 +16,7 @@ Backdrops are full screen components that overlay other components. They are use
 
 ## Basic Usage
 
-The backdrop is transparent by default. The backdrop will prevent clicking or tapping on the content behind it.
+The backdrop will prevent clicking or tapping on the content behind it. The backdrop is transparent by default, so the below demo includes CSS to make it visible.
 
 import Basic from '@site/static/usage/v7/backdrop/basic/index.md';
 
