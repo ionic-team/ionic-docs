@@ -18,8 +18,10 @@
     --placeholder-opacity: 0.8;
   }
 
-  ion-textarea.custom .helper-text,
-  ion-textarea.custom .counter {
+  ion-textarea.custom.ios .textarea-bottom .helper-text,
+  ion-textarea.custom.ios .textarea-bottom .counter,
+  ion-textarea.custom.md .textarea-bottom .helper-text,
+  ion-textarea.custom.md .textarea-bottom .counter {
     color: #373737;
   }
 </style>
