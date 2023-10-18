@@ -58,6 +58,7 @@ Remember, with the `--external` option, others on your Wi-Fi network will be abl
 - With Cordova, use the `--device`, `--emulator`, and `--target` options to narrow down target devices. Use the `--list` option to list all targets. See usage in the [command docs](commands/cordova-run.md).
 - You can separate the dev server process and the deploy process by using `ionic serve` and the `--livereload-url` option of `ionic cordova run` or `ionic capacitor run`.
 - For Android, it is possible to configure [adb](https://developer.android.com/studio/command-line/adb) to always forward ports while the adb server is running (see `adb reverse`). With port forwarding set up, an external address would no longer be required. You can also setup the adb bridge over TCP such that subsequent deploys no longer need a USB cable.
+- If you are using a development container, you may see that live reload does not work. To fix it, set `projects.app.architect.serve.configurations.development.poll` to `1` in `angular.json`.
 
 ### Using SSL
 
