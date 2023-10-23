@@ -6,7 +6,7 @@ description: Learn how to set up unit tests for an Ionic React application.
 
 # Unit Testing Setup
 
-Ionic requires a few additional steps to set up unit tests.
+Ionic requires a few additional steps to set up unit tests. If you are using an Ionic starter project, these steps have already been completed for you.
 
 ### Install React Testing Library
 
