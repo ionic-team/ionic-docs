@@ -192,7 +192,7 @@ this.wifiWizard2.connect(ssid, bindAll, password, algorithm, isHiddenSSID);
 
 - `CONNECT_FAILED_TIMEOUT` unable to verify connection, timed out after 60 seconds
 - `INVALID_NETWORK_ID_TO_CONNECT` Unable to connect based on generated wifi config
-- `INTERPUT_EXCEPT_WHILE_CONNECTING` Interupt exception while waiting for connection
+- `INTERPUT_EXCEPT_WHILE_CONNECTING` Interrupt exception while waiting for connection
 
 ## Disconnect vs Disable
 
@@ -461,9 +461,9 @@ this.wifiWizard2.disable(ssid);
 this.wifiWizard2.requestPermission();
 ```
 
-- Request `ACCESS_FINE_LOCATION` permssion
+- Request `ACCESS_FINE_LOCATION` permission
 - This Android permission is required to run `scan`, `startStart` and `getScanResults`
-- You can request permission by running this function manually, or WifiWizard2 will automagically request permission when one of the functions above is called
+- You can request permission by running this function manually, or WifiWizard2 will automatically request permission when one of the functions above is called
 
 **Thrown Errors**
 

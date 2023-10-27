@@ -14,7 +14,7 @@ By default, Playground examples will render in an empty container and fill the a
 
 ## Multiple File Examples
 
-Playground supports single file and multi-file examples to show the required code to create a sample. To include multiple file examples for a single framework target, use the `files` option to specify the file location (in the Stackblitz generated project) and the file contents.
+Playground supports single file and multi-file examples to show the required code to create a sample. To include multiple file examples for a single framework target, use the `files` option to specify the file location (in the StackBlitz generated project) and the file contents.
 
 You can mix multi-file and single file examples together in a single example:
 
@@ -46,7 +46,7 @@ import javascript from './javascript.md';
 />;
 ```
 
-The file location is respective to the Stackblitz demo project. If you are unsure of the exact path, refer to the `stackblitz.utils.ts` method for each respective target. The path specified in `sdk.openProject` will coincide with the value used in the `files` configuration.
+The file location is respective to the StackBlitz demo project. If you are unsure of the exact path, refer to the `stackblitz.utils.ts` method for each respective target. The path specified in `sdk.openProject` will coincide with the value used in the `files` configuration.
 
 ## Creating a New Playground
 
@@ -54,7 +54,7 @@ You can [generate a new playground](../../../../_templates/README.md#new-playgro
 
 ## Ejecting from IonApp/IonContent Boilerplate
 
-By default, Playground examples will automatically include the following template wrapper for each component example when opened in Stackblitz.
+By default, Playground examples will automatically include the following template wrapper for each component example when opened in StackBlitz.
 
 ```html
 <ion-app>

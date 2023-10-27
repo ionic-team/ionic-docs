@@ -7,10 +7,6 @@
     height: 100%;
     flex-direction: column;
   }
-
-  code {
-    white-space: pre-wrap;
-  }
 </style>
 
 <div class="container">
@@ -20,13 +16,10 @@
     header="Example header"
     sub-header="Example subheader"
   ></ion-action-sheet>
-
-  <code id="action"></code>
 </div>
 
 <script>
   var actionSheet = document.querySelector('ion-action-sheet');
-  var action = document.getElementById('action');
 
   actionSheet.buttons = [
     {
@@ -52,7 +45,7 @@
   ];
 
   actionSheet.addEventListener('ionActionSheetDidDismiss', (ev) => {
-    action.innerText = JSON.stringify(ev.detail, null, 2);
+    console.log(JSON.stringify(ev.detail, null, 2));
   });
 </script>
 ```

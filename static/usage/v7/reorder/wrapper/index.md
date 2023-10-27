@@ -22,4 +22,5 @@ import angular_example_component_html from './angular/example_component_html.md'
   }}
   src="usage/v7/reorder/wrapper/demo.html"
   size="300px"
+  showConsole={true}
 />

@@ -19,7 +19,6 @@
 <script lang="ts">
   import { IonInput, IonItem, IonLabel } from '@ionic/vue';
   import { defineComponent } from 'vue';
-
   export default defineComponent({
     components: { IonInput, IonItem, IonLabel },
   });

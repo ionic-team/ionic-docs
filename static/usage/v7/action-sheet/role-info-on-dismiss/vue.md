@@ -7,10 +7,6 @@
     height: 100%;
     flex-direction: column;
   }
-
-  code {
-    white-space: pre-wrap;
-  }
 </style>
 
 <template>
@@ -21,21 +17,17 @@
       header="Example header"
       sub-header="Example subheader"
       :buttons="actionSheetButtons"
-      @didDismiss="setResult($event)"
+      @didDismiss="logResult($event)"
     ></ion-action-sheet>
-
-    <code>{{ result }}</code>
   </div>
 </template>
 
 <script lang="ts">
-  import { ref } from 'vue';
   import { IonActionSheet, IonButton } from '@ionic/vue';
 
   export default {
     components: { IonActionSheet, IonButton },
     setup() {
-      const result = ref('');
       const actionSheetButtons = [
         {
           text: 'Delete',
@@ -59,14 +51,13 @@
         },
       ];
 
-      const setResult = (ev: CustomEvent) => {
-        result.value = JSON.stringify(ev.detail, null, 2);
+      const logResult = (ev: CustomEvent) => {
+        console.log(JSON.stringify(ev.detail, null, 2));
       };
 
       return {
-        result,
         actionSheetButtons,
-        setResult,
+        logResult,
       };
     },
   };

@@ -39,6 +39,22 @@
     {
       "name": "part",
       "text": "month-year-button - The button that opens the month/year picker when\nusing a grid style layout."
+    },
+    {
+      "name": "part",
+      "text": "calendar-day - The individual buttons that display a day inside of the datetime\ncalendar."
+    },
+    {
+      "name": "part",
+      "text": "calendar-day active - The currently selected calendar day."
+    },
+    {
+      "name": "part",
+      "text": "calendar-day today - The calendar day that contains the current day."
+    },
+    {
+      "name": "part",
+      "text": "calendar-day disabled - The calendar day that is disabled."
     }
   ],
   "usage": {},
@@ -292,11 +308,17 @@
     },
     {
       "name": "hourCycle",
-      "type": "\"h12\" | \"h23\" | undefined",
+      "type": "\"h11\" | \"h12\" | \"h23\" | \"h24\" | undefined",
       "complexType": {
-        "original": "'h23' | 'h12'",
-        "resolved": "\"h12\" | \"h23\" | undefined",
-        "references": {}
+        "original": "DatetimeHourCycle",
+        "resolved": "\"h11\" | \"h12\" | \"h23\" | \"h24\" | undefined",
+        "references": {
+          "DatetimeHourCycle": {
+            "location": "import",
+            "path": "./datetime-interface",
+            "id": "src/components/datetime/datetime-interface.ts::DatetimeHourCycle"
+          }
+        }
       },
       "mutable": false,
       "attr": "hour-cycle",
@@ -305,11 +327,19 @@
       "docsTags": [],
       "values": [
         {
+          "value": "h11",
+          "type": "string"
+        },
+        {
           "value": "h12",
           "type": "string"
         },
         {
           "value": "h23",
+          "type": "string"
+        },
+        {
+          "value": "h24",
           "type": "string"
         },
         {
@@ -1059,6 +1089,22 @@
     }
   ],
   "parts": [
+    {
+      "name": "calendar-day",
+      "docs": "The individual buttons that display a day inside of the datetime\ncalendar."
+    },
+    {
+      "name": "calendar-day active",
+      "docs": "The currently selected calendar day."
+    },
+    {
+      "name": "calendar-day disabled",
+      "docs": "The calendar day that is disabled."
+    },
+    {
+      "name": "calendar-day today",
+      "docs": "The calendar day that contains the current day."
+    },
     {
       "name": "month-year-button",
       "docs": "The button that opens the month/year picker when\nusing a grid style layout."

@@ -21,22 +21,6 @@ function Example() {
         <IonInput label="Floating Input" label-placement="floating" placeholder="Enter text"></IonInput>
       </IonItem>
 
-      <IonItem fill="outline">
-        <IonInput
-          label="Floating Input: Outline (MD only)"
-          label-placement="floating"
-          placeholder="Enter text"
-        ></IonInput>
-      </IonItem>
-
-      <IonItem fill="solid">
-        <IonInput
-          label="Floating Input: Solid (MD only)"
-          label-placement="floating"
-          placeholder="Enter text"
-        ></IonInput>
-      </IonItem>
-
       <IonItem>
         <IonSelect label="Select" placeholder="Make a Selection">
           <IonSelectOption value="">No Game Console</IonSelectOption>

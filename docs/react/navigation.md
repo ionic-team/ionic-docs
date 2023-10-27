@@ -15,7 +15,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 このガイドでは、Ionic と React で構築されたアプリでのルーティングの仕組みについて説明します。
 
-`IonReactRouter` は一般的な [React Router](https://github.com/ReactTraining/react-router) ライブラリを内部で使用しています。Ionic と React Router を使うことで、ページ遷移がリッチなマルチページアプリをつくることができます。
+`IonReactRouter` は一般的な [React Router](https://github.com/remix-run/react-router) ライブラリを内部で使用しています。Ionic と React Router を使うことで、ページ遷移がリッチなマルチページアプリをつくることができます。
 
 React Router を使用したルーティングについて知っていることはすべて、Ionic React で利用することができます。Ionic React アプリの基本と、ルーティングがどのように機能するかを見てみましょう。
 
@@ -56,7 +56,7 @@ const App: React.FC = () => (
 
 ## IonReactRouter
 
-`IonReactRouter` コンポーネントは、React Router の従来の [`BrowserRouter`](https://reacttraining.com/react-router/web/api/BrowserRouter) コンポーネントをラップし、アプリケーションをルーティング用にセットアップします。したがって、 `BrowserRouter` の代わりに `IonReactRouter` を使用します。任意の prop を `IonReactRouter` に渡すことができ、それらはベースとなる `BrowserRouter` に渡されます。
+`IonReactRouter` コンポーネントは、React Router の従来の [`BrowserRouter`](https://v5.reactrouter.com/web/api/BrowserRouter) コンポーネントをラップし、アプリケーションをルーティング用にセットアップします。したがって、 `BrowserRouter` の代わりに `IonReactRouter` を使用します。任意の prop を `IonReactRouter` に渡すことができ、それらはベースとなる `BrowserRouter` に渡されます。
 
 ## ルーターのネスト
 
@@ -79,7 +79,7 @@ const DashboardPage: React.FC = () => {
 
 ここでは、アプリの DashboardPage から更にコンポーネントが定義された 2 つのルートがあります。path にはルートの全体を定義する必要があり、その URL からこのページに到達した場合でも、 "/dashboard" を省略できないことに注意してください。 React Router は絶対パスを必要とし、相対パスはサポートされていません。
 
-ただし、 [`match`](https://reacttraining.com/react-router/web/api/match) オブジェクトの `url` プロパティを使用して、コンポーネントをレンダリングするために match した URL を提供できます。これは、ネストされたルートを操作するときに役立ちます。
+ただし、 [`match`](https://v5.reactrouter.com/web/api/match) オブジェクトの `url` プロパティを使用して、コンポーネントをレンダリングするために match した URL を提供できます。これは、ネストされたルートを操作するときに役立ちます。
 
 ```tsx
 const DashboardPage: React.FC<RouteComponentProps> = ({ match }) => {
@@ -199,7 +199,7 @@ Other components that have the `routerLink` prop are `IonButton`, `IonCard`, `Io
 
 Each of these components also have a `routerDirection` prop to explicitly set the type of page transition to use ("back", "forward", or "none").
 
-Outside of these components that have the `routerLink` prop, you can also use React Routers [`Link`](https://reacttraining.com/react-router/web/api/Link) component to navigate between views:
+Outside of these components that have the `routerLink` prop, you can also use React Routers [`Link`](https://v5.reactrouter.com/web/api/Link) component to navigate between views:
 
 ```html
 <Link to="/dashboard/users/1">User 1</Link>
@@ -207,7 +207,7 @@ Outside of these components that have the `routerLink` prop, you can also use Re
 
 ルーティングは可能な限り、上記の方法のいずれかを使用することをお勧めします。 これらのアプローチの利点は、両方ともアンカー（ `<a>` ）タグをレンダリングすることです。これはアプリ全体のアクセシビリティに適しています。
 
-ナビゲーションのためのプログラムオプションとして、React Router がルート経由でレンダリングするコンポーネントに提供する [`history`](https://reacttraining.com/react-router/web/api/history) prop を使用することもできます。
+ナビゲーションのためのプログラムオプションとして、React Router がルート経由でレンダリングするコンポーネントに提供する [`history`](https://v5.reactrouter.com/web/api/history) prop を使用することもできます。
 
 ```tsx
 <IonButton
@@ -262,7 +262,7 @@ const UserDetailPage: React.FC<UserDetailPageProps> = ({ match }) => {
 };
 ```
 
-[`match`](https://reacttraining.com/react-router/web/api/match) prop には、URL パラメーターなど、一致したルートに関する情報が含まれます。 ここで `id` パラメータを取得し、画面に表示します。
+[`match`](https://v5.reactrouter.com/web/api/match) prop には、URL パラメーターなど、一致したルートに関する情報が含まれます。 ここで `id` パラメータを取得し、画面に表示します。
 
 > Note: TypeScript インターフェイスを使用して props オブジェクトを厳密に入力する方法に注意してください。 このインターフェースにより、コンポーネント内部でタイプセーフティとコード補完が可能になります。
 
@@ -588,7 +588,7 @@ Tab ビューで作業する場合、Ionic React には、どのビューがど�
 
 ### useIonRouter
 
-The `useIonRouter` hook can be used for more direct control over routing in Ionic React. It allows you to pass additional metadata to Ionic, such as a custom animaton, before calling React router.
+The `useIonRouter` hook can be used for more direct control over routing in Ionic React. It allows you to pass additional metadata to Ionic, such as a custom animation, before calling React Router.
 
 The `useIonRouter` hook returns a `UseIonRouterResult` which has several convenience methods for routing:
 
@@ -647,4 +647,8 @@ React Router を使用した React でのルーティングの詳細について
 
 ## From the Community
 
+<!-- cspell:disable -->
+
 [Ionic 4 and React: Navigation](https://alligator.io/ionic/ionic-4-react-navigation) - Paul Halliday
+
+<!-- cspell:enable -->

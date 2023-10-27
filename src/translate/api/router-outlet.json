@@ -1,5 +1,5 @@
 {
-  "filePath": "src/components/router-outlet/route-outlet.tsx",
+  "filePath": "src/components/router-outlet/router-outlet.tsx",
   "encapsulation": "shadow",
   "tag": "ion-router-outlet",
   "docs": "",
@@ -63,7 +63,12 @@
       "complexType": {
         "original": "\"ios\" | \"md\"",
         "resolved": "\"ios\" | \"md\"",
-        "references": {}
+        "references": {
+          "Mode": {
+            "location": "global",
+            "id": "global::Mode"
+          }
+        }
       },
       "mutable": true,
       "attr": "mode",

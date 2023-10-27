@@ -39,4 +39,8 @@ Ionic4 以降では、アプリケーション構築とルーティングのた�
   <p>Learn about using Ionic lifecycle events in class components and with hooks</p>
 </DocsCard>
 
+<DocsCard header="Build Options" href="build-options" icon="/icons/logo-angular-icon.png">
+  <p>Learn about using Modules or Standalone Components in Ionic.</p>
+</DocsCard>
+
 </DocsCards>

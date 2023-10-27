@@ -481,7 +481,7 @@
       "mutable": false,
       "attr": "position",
       "reflectToAttr": false,
-      "docs": "The position of the toast on the screen.",
+      "docs": "The starting position of the toast on the screen. Can be tweaked further\nusing the `positionAnchor` property.",
       "docsTags": [],
       "default": "'bottom'",
       "values": [
@@ -499,6 +499,38 @@
         }
       ],
       "optional": false,
+      "required": false
+    },
+    {
+      "name": "positionAnchor",
+      "type": "HTMLElement | string | undefined",
+      "complexType": {
+        "original": "HTMLElement | string",
+        "resolved": "HTMLElement | string | undefined",
+        "references": {
+          "HTMLElement": {
+            "location": "global",
+            "id": "global::HTMLElement"
+          }
+        }
+      },
+      "mutable": false,
+      "attr": "position-anchor",
+      "reflectToAttr": false,
+      "docs": "The element to anchor the toast's position to. Can be set as a direct reference\nor the ID of the element. With `position=\"bottom\"`, the toast will sit above the\nchosen element. With `position=\"top\"`, the toast will sit below the chosen element.\nWith `position=\"middle\"`, the value of `positionAnchor` is ignored.",
+      "docsTags": [],
+      "values": [
+        {
+          "type": "HTMLElement"
+        },
+        {
+          "type": "string"
+        },
+        {
+          "type": "undefined"
+        }
+      ],
+      "optional": true,
       "required": false
     },
     {
@@ -583,8 +615,9 @@
             "id": "global::Promise"
           },
           "ToastDismissOptions": {
-            "location": "global",
-            "id": "global::ToastDismissOptions"
+            "location": "import",
+            "path": "./toast-interface",
+            "id": "src/components/toast/toast-interface.ts::ToastDismissOptions"
           }
         },
         "return": "Promise<boolean>"
@@ -680,8 +713,9 @@
             "id": "global::Promise"
           },
           "ToastPresentOptions": {
-            "location": "global",
-            "id": "global::ToastPresentOptions"
+            "location": "import",
+            "path": "./toast-interface",
+            "id": "src/components/toast/toast-interface.ts::ToastPresentOptions"
           }
         },
         "return": "Promise<void>"

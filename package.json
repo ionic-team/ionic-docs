@@ -26,7 +26,8 @@
     "translate": "ts-node -P scripts/build-translate/tsconfig.json scripts/build-translate apply",
     "translate:create": "ts-node -P scripts/build-translate/tsconfig.json scripts/build-translate create && ts-node -P scripts/build-translate/tsconfig.json scripts/build-translate diff",
     "netlify-redirect": "cp redirects build/_redirects",
-    "build-site": "git clone https://github.com/ionic-jp/community-site.git site && cd site && npm install && npm run build.ci && cd .. && mv site/www/* www/ && rm -rf site"
+    "build-site": "git clone https://github.com/ionic-jp/community-site.git site && cd site && npm install && npm run build.ci && cd .. && mv site/www/* www/ && rm -rf site",
+    "spellcheck": "cspell --no-progress \"**/*.md\""
   },
   "browserslist": {
     "production": [
@@ -72,6 +73,7 @@
     "@tsconfig/docusaurus": "^1.0.4",
     "@types/react": "^17.0.37",
     "deepl": "^1.0.13",
+    "cspell": "^6.31.3",
     "html-loader": "^3.1.0",
     "hygen": "^6.2.11",
     "prettier": "^2.8.8",

@@ -6,27 +6,23 @@
         aria-label="Food"
         placeholder="Select food"
         :compareWith="compareWith"
-        @ionChange="currentFood = JSON.stringify($event.detail.value)"
+        @ionChange="handleChange($event)"
         :multiple="true"
       >
         <ion-select-option v-for="food in foods" :value="food">{{ food.name }}</ion-select-option>
       </ion-select>
     </ion-item>
-    <ion-item lines="none">
-      <ion-label>Current value: {{ currentFood }}</ion-label>
-    </ion-item>
   </ion-list>
 </template>
 
 <script>
-  import { IonItem, IonList, IonLabel, IonSelect, IonSelectOption } from '@ionic/vue';
+  import { IonItem, IonList, IonSelect, IonSelectOption } from '@ionic/vue';
   import { defineComponent } from 'vue';
 
   export default defineComponent({
-    components: { IonItem, IonList, IonLabel, IonSelect, IonSelectOption },
+    components: { IonItem, IonList, IonSelect, IonSelectOption },
     data() {
       return {
-        currentFood: '',
         foods: [
           {
             id: 1,
@@ -57,6 +53,9 @@
         }
 
         return o1.id === o2.id;
+      },
+      handleChange(ev) {
+        console.log('Current value:', JSON.stringify(ev.detail.value));
       },
     },
   });

@@ -8,11 +8,11 @@ on: [pull_request]
 
 jobs:
   test:
-    name: Test on node ${{ matrix.node_version }} and ${{ matrix.os }}
+    name: Test on ${{ matrix.os }}
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        node_version: [16]
+        node_version: [19]
         os: [windows-latest, macOS-latest]
 
     steps:
@@ -25,9 +25,10 @@ jobs:
       run: npm ci --legacy-peer-deps
     - name: Lint
       run: npm run lint
-    # Lint changes should be pushed
-    # to the branch before the branch
-    # is merge eligible.
+    - name: Spell Check
+      run: npm run spellcheck
+    # Lint and spell check changes should be pushed
+    # to the branch before the branch is merge eligible.
     - name: Check Diff
       run: git diff --exit-code
       shell: bash

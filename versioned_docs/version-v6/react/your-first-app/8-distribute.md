@@ -18,7 +18,7 @@ For more on connecting your code repository to Appflow, checkout the [Connect yo
 
 The Appflow SDK (also known as Ionic Deploy plugin) will allow you to take advantage of arguably two of the best Appflow features: deploying live updates to your app and bypassing the app stores. Ionic Appflow's Live Update feature is shipped with Appflow SDK and features the capabilities of detecting and syncing the updates for your app that you have pushed to your identified channels within the dashboard.
 
-To get the Appflow SDK plugin added to your project, you can follow the install instructions within the Appflow Dashboard by clicking on "Install Instructions" inside of the `Deploy > Destinations` section. Alternatively, you can install the plugin manually by excuting the following command in your app's root directory:
+To get the Appflow SDK plugin added to your project, you can follow the install instructions within the Appflow Dashboard by clicking on "Install Instructions" inside of the `Deploy > Destinations` section. Alternatively, you can install the plugin manually by executing the following command in your app's root directory:
 
 ```shell
 ionic deploy add  \
@@ -43,7 +43,7 @@ After the push is made, you will then see your commit under the `Commits` tab of
 
 ## Deploy a Live Update
 
-With the Appflow SDK installed and your commit pushed up to the Dashboard, you are ready to deploy a live update to a device. The Live Update feature uses the installed Appflow SDK with your native application to listen to a particular Deploy Channel Destination. When a live update is assigned to a Channel Distination, that update will be deployed to user devices running binaries that are configured to listen to that specific Channel Destination.
+With the Appflow SDK installed and your commit pushed up to the Dashboard, you are ready to deploy a live update to a device. The Live Update feature uses the installed Appflow SDK with your native application to listen to a particular Deploy Channel Destination. When a live update is assigned to a Channel Destination, that update will be deployed to user devices running binaries that are configured to listen to that specific Channel Destination.
 
 To get the live update deployed, a Web build will need to be created. This can be done through the `Start build` icon from the `Commits` tab or by clicking the `New build` button in the top right corner of the `Build > Builds` tab. After selecting the correct commit to deploy, select the `Web` target platform and the `Latest` build stack. Depending on your Appflow plan, you will then be able to include custom environments, if any are configured. Finally, you can enable `Live Update` and pick the Channel to automatically assign the build to once it successfully completes.
 
@@ -75,7 +75,7 @@ For more information, visit the [Create an Automation](https://ionic.io/docs/app
 
 ## Create an Environment
 
-[Package builds](https://ionic.io/docs/appflow/package/builds) and [Deploy builds](https://ionic.io/docs/appflow/deploy/builds) can be futher customized via [Environments](https://ionic.io/docs/appflow/automation/environments). This powerful feature allows you to create different configurations based on the environment variables passed in at build time. When combined with the [Automation](https://ionic.io/docs/appflow/automation/intro) feature, development teams can easily configure development, staging, and production build configurations, allowing them to embrace DevOps best practices and ship better quality updates faster than ever.
+[Package builds](https://ionic.io/docs/appflow/package/builds) and [Deploy builds](https://ionic.io/docs/appflow/deploy/builds) can be further customized via [Environments](https://ionic.io/docs/appflow/automation/environments). This powerful feature allows you to create different configurations based on the environment variables passed in at build time. When combined with the [Automation](https://ionic.io/docs/appflow/automation/intro) feature, development teams can easily configure development, staging, and production build configurations, allowing them to embrace DevOps best practices and ship better quality updates faster than ever.
 
 Creating an Environment is available for those on our [Basic plans](https://ionic.io/pricing) and above. More information on this can be found in the [Create an Environment](https://ionic.io/docs/appflow/quickstart/environment) section within the Appflow docs.
 

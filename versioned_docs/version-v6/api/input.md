@@ -31,7 +31,7 @@ import Basic from '@site/static/usage/v6/input/basic/index.md';
 
 ## Types
 
-The input component is meant for text type inputs only, such as `"text"`, `"password"`, `"email"`, `"number"`, `"search"`, `"tel"`, and `"url"`. It supports all standard text input events including keyup, keydown, keypress, and more. The default `type` is `"text"`.
+The input component is meant for text type inputs only, such as `"text"`, `"password"`, `"email"`, `"number"`, `"search"`, `"tel"`, and `"url"`. It supports all standard text input events including `keyup`, `keydown`, `keypress`, and more. The default `type` is `"text"`.
 
 import Types from '@site/static/usage/v6/input/types/index.md';
 

@@ -17,8 +17,9 @@ import EncapsulationPill from '@components/page/api/EncapsulationPill';
 
 <EncapsulationPill type="scoped" />
 
-Labelは `ion-item`、`ion-input`、`ion-toggle` 等と共に使用できるラッパー(wrapper)要素です。item内のlabelの位置はinline、fixed、stacked、またはfloatingにすることができます。
+Labelは、主に[Item](./item.md)コンポーネントにテキストコンテンツを追加するために使用される要素です。Labelは、[Input](./input.md)や[Radio](./radio.md)のようなフォーム制御コンポーネントの内部で、可視ラベルを指定する場合にも使用できますが、必須ではありません。
 
+The position of the label inside of an item can be inline, fixed, stacked, or floating.
 
 ## 基本的な使い方
 
@@ -32,13 +33,7 @@ import Item from '@site/static/usage/v7/label/item/index.md';
 
 <Item />
 
-## Input Labels
-
-import Input from '@site/static/usage/v7/label/input/index.md';
-
-<Input />
-
-## テーマ
+## Theming
 
 ### Colors
 

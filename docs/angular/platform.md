@@ -2,6 +2,9 @@
 title: Platform
 ---
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 <head>
   <title>Platform | Ionic Platform to Customize Apps to Fit Any Device</title>
   <meta
@@ -14,6 +17,16 @@ title: Platform
 
 ## Usage
 
+<Tabs
+  groupId="framework"
+  defaultValue="angular"
+  values={[
+    { value: 'angular', label: 'Angular' },
+    { value: 'angular-standalone', label: 'Angular (Standalone)' },
+  ]}
+>
+<TabItem value="angular">
+
 ```tsx
 import { Platform } from '@ionic/angular';
 
@@ -24,6 +37,23 @@ export class MyPage {
   }
 }
 ```
+
+</TabItem>
+<TabItem value="angular-standalone">
+
+```tsx
+import { Platform } from '@ionic/angular/standalone';
+
+@Component({...})
+export class MyPage {
+  constructor(public platform: Platform) {
+
+  }
+}
+```
+
+</TabItem>
+</Tabs>
 
 ## Methods
 
