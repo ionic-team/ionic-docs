@@ -1,3 +1,4 @@
+
 The OneSignal plugin is an client implementation for using the [OneSignal](https://onesignal.com/) Service.
 OneSignal is a simple implementation for delivering push notifications.
 
@@ -5,13 +6,11 @@ Please view the official [OneSignal Ionic SDK Installation](https://documentatio
 for more information.
 
 #### Icons
-
 If you want to use generated icons with command `ionic cordova resources`:
 
 1. Add a file to your `hooks` directory called `copy_android_notification_icons.js`
 
 2. Configure the hook in your config.xml
-
 ```
     <platform name="android">
         <hook type="after_prepare" src="hooks/copy_android_notification_icons.js" />
@@ -66,4 +65,5 @@ module.exports = function(context) {
 ```
 
 3. From the root of your project make the file executable:
-   `$ chmod +x hooks/copy_android_notification_icons.js`
+`$ chmod +x hooks/copy_android_notification_icons.js`
+
