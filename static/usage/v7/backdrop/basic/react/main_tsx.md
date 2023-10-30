@@ -11,6 +11,8 @@ import {
   IonButton,
 } from '@ionic/react';
 
+import './main.css';
+
 function Example() {
   return (
     <>

@@ -1,13 +1,10 @@
 ```css
-ion-textarea.custom {
-  --background: #373737;
-  --color: #fff;
-  --padding-end: 10px;
-  --padding-start: 10px;
-  --placeholder-color: #ddd;
-  --placeholder-opacity: 0.8;
-}
-
+/**
+ * Since we are styling elements inside of ion-textarea
+ * we need to move this CSS to a global stylesheet. Otherwise,
+ * Angular components with encapsulation enabled will add
+ * scoped style attributes to these selectors.
+ */
 ion-textarea.custom.ios .textarea-bottom .helper-text,
 ion-textarea.custom.ios .textarea-bottom .counter,
 ion-textarea.custom.md .textarea-bottom .helper-text,
