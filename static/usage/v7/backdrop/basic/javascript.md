@@ -1,4 +1,11 @@
 ```html
+<style>
+  ion-backdrop {
+    background: var(--ion-color-dark);
+    opacity: 0.3;
+  }
+</style>
+
 <ion-backdrop visible="true"></ion-backdrop>
 <div class="ion-page">
   <ion-header>

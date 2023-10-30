@@ -13,7 +13,7 @@
   import { defineComponent } from 'vue';
 
   export default defineComponent({
-    components: { IonFab, IonFabButton, IonFabList, IonIcon },
+    components: { IonFab, IonFabButton, IonIcon },
     setup() {
       return { add };
     },
