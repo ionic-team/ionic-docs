@@ -13,3 +13,4 @@ static/code/stackblitz
 .github
 build
 node_modules
+src/translate
