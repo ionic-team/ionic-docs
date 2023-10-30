@@ -2,7 +2,6 @@
 title: Keyboard
 ---
 
-import Codepen from '@components/global/Codepen';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
@@ -29,77 +28,9 @@ import TabItem from '@theme/TabItem';
 
 ### Usage
 
-````mdx-code-block
-<Tabs
-  defaultValue="javascript"
-  groupId="framework"
-  values={[
-    { value: 'javascript', label: 'JavaScript' },
-    { value: 'angular', label: 'Angular' },
-    { value: 'react', label: 'React' },
-    { value: 'vue', label: 'Vue' },
-  ]
-}>
-<TabItem value="javascript">
+import Inputmode from '@site/static/usage/v7/keyboard/inputmode/index.md';
 
-```html
-<ion-item>
-  <ion-label>Username or Email</ion-label>
-  <ion-input inputmode="email"></ion-input>
-</ion-item>
-
-<ion-item>
-  <ion-label>Enter a number</ion-label>
-  <ion-textarea inputmode="numeric"></ion-textarea>
-</ion-item>
-```
-</TabItem>
-<TabItem value="angular">
-
-```html
-<ion-item>
-  <ion-label>Username or Email</ion-label>
-  <ion-input inputmode="email"></ion-input>
-</ion-item>
-
-<ion-item>
-  <ion-label>Enter a number</ion-label>
-  <ion-textarea inputmode="numeric"></ion-textarea>
-</ion-item>
-```
-</TabItem>
-<TabItem value="react">
-
-```html
-<IonItem>
-  <IonLabel>Username or Email</IonLabel>
-  <IonInput inputmode="email"></IonInput>
-</IonItem>
-
-<IonItem>
-  <IonLabel>Enter a number</IonLabel>
-  <IonTextarea inputmode="numeric"></IonTextarea>
-</IonItem>
-```
-</TabItem>
-<TabItem value="vue">
-
-```html
-<ion-item>
-  <ion-label>Username or Email</ion-label>
-  <ion-input inputmode="email"></ion-input>
-</ion-item>
-
-<ion-item>
-  <ion-label>Enter a number</ion-label>
-  <ion-textarea inputmode="numeric"></ion-textarea>
-</ion-item>
-```
-</TabItem>
-</Tabs>
-````
-
-<Codepen user="ionic" slug="abvJVVv" height="400" />
+<Inputmode />
 
 :::note
 `inputmode` 属性は Chrome 66+ と iOS Safari 12.2+のデバイスでサポートされています: https://caniuse.com/#search=inputmode
@@ -115,57 +46,9 @@ import TabItem from '@theme/TabItem';
 
 ### Usage
 
-````mdx-code-block
-<Tabs
-  groupId="framework"
-  defaultValue="javascript"
-  values={[
-    { value: 'javascript', label: 'JavaScript' },
-    { value: 'angular', label: 'Angular' },
-    { value: 'react', label: 'React' },
-    { value: 'vue', label: 'Vue' },
-  ]
-}>
-<TabItem value="javascript">
+import Enterkeyhint from '@site/static/usage/v7/keyboard/enterkeyhint/index.md';
 
-```html
-<ion-item>
-  <ion-label>Enter search query</ion-label>
-  <ion-input enterkeyhint="search" type="search"></ion-input>
-</ion-item>
-```
-</TabItem>
-<TabItem value="angular">
-
-```html
-<ion-item>
-  <ion-label>Enter search query</ion-label>
-  <ion-input enterkeyhint="search" type="search"></ion-input>
-</ion-item>
-```
-</TabItem>
-<TabItem value="react">
-
-```html
-<IonItem>
-  <IonLabel>Enter search query</IonLabel>
-  <IonInput enterkeyhint="search" type="search"></IonInput>
-</IonItem>
-```
-</TabItem>
-<TabItem value="vue">
-
-```html
-<ion-item>
-  <ion-label>Enter search query</ion-label>
-  <ion-input enterkeyhint="search" type="search"></ion-input>
-</ion-item>
-```
-</TabItem>
-</Tabs>
-````
-
-<Codepen user="ionic" slug="GRpWyRB" height="350" />
+<Enterkeyhint />
 
 :::note
 `enterkeyhint` 属性は Chrome 77+ and iOS Safari 13.4+ のデバイスでサポートされています

@@ -122,7 +122,23 @@ module.exports = {
         'react/pwa',
         'react/overlays',
         'react/storage',
-        'react/testing',
+        {
+          type: 'category',
+          label: 'Testing',
+          items: [
+            'react/testing/introduction',
+            {
+              type: 'category',
+              label: 'Unit Testing',
+              collapsed: false,
+              items: [
+                'react/testing/unit-testing/setup',
+                'react/testing/unit-testing/examples',
+                'react/testing/unit-testing/best-practices',
+              ],
+            },
+          ],
+        },
         'react/performance',
       ],
     },
