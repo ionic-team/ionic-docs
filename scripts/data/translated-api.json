@@ -28247,7 +28247,7 @@
           "mutable": false,
           "attr": "position",
           "reflectToAttr": false,
-          "docs": "The starting position of the toast on the screen. Can be tweaked further\nusing the `positionAnchor` property.",
+          "docs": "画面上のトーストの開始位置。`positionAnchor` プロパティを使ってさらに微調整できます。",
           "docsTags": [],
           "default": "'bottom'",
           "values": [
@@ -28283,7 +28283,7 @@
           "mutable": false,
           "attr": "position-anchor",
           "reflectToAttr": false,
-          "docs": "The element to anchor the toast's position to. Can be set as a direct reference\nor the ID of the element. With `position=\"bottom\"`, the toast will sit above the\nchosen element. With `position=\"top\"`, the toast will sit below the chosen element.\nWith `position=\"middle\"`, the value of `positionAnchor` is ignored.",
+          "docs": "トーストの位置を固定する要素。直接参照するか、要素のIDを指定します。 `position=\"bottom\"` の場合、トーストは選択した要素の上に表示されます。 `position=\"top\"` の場合、トーストは選択した要素の下に位置します。 `position=\"middle\"` の場合、`positionAnchor`の値は無視されます。",
           "docsTags": [],
           "values": [
             {
