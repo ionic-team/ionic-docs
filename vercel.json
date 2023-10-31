@@ -1,6 +1,6 @@
 {
   "redirects": [
-    { "source": "/", "destination": "/docs/" },
+    { "source": "/", "destination": "/docs" },
     {
       "source": "/docs/angular/your-first-app/2-taking-photos",
       "destination": "/docs/angular/your-first-app/taking-photos"
@@ -67,7 +67,7 @@
     { "source": "/docs/react/testing", "destination": "/docs/react/testing/introduction" }
   ],
   "rewrites": [
-    { "source": "/docs/", "destination": "/" },
+    { "source": "/docs", "destination": "/" },
     { "source": "/docs/:match*", "destination": "/:match*" }
   ]
 }
