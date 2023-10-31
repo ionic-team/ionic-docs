@@ -40,7 +40,7 @@ html[data-theme='dark'] {
   --admonition-link-danger-c: var(--c-red-90);
 }
 
-.admonition {
+.theme-admonition {
   position: relative;
   border: none;
 
@@ -48,15 +48,18 @@ html[data-theme='dark'] {
   --ifm-alert-padding-horizontal: 2rem;
   --ifm-alert-padding-vertical: 1.5rem;
 
-  .admonition-heading h5 {
-    text-transform: unset;
+  [class^='admonitionHeading_'] {
+    text-transform: capitalize;
 
-    &:first-letter {
-      text-transform: uppercase;
+    font-size: 1rem;
+    line-height: 1.6;
+
+    [class^='admonitionIcon_'] {
+      display: none;
     }
   }
 
-  .admonition-content {
+  [class^='admonitionContent_'] {
     p {
       a {
         color: var(--admonition-link-c);
@@ -67,15 +70,6 @@ html[data-theme='dark'] {
         background: var(--admonition-code-c-bg);
       }
     }
-  }
-
-  &-icon {
-    display: none;
-  }
-
-  &-heading {
-    font-size: 1rem;
-    line-height: 1.6;
   }
 
   &::before {
