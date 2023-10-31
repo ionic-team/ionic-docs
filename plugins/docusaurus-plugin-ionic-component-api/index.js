@@ -4,10 +4,9 @@ module.exports = function (context, options) {
   return {
     name: 'docusaurus-plugin-ionic-component-api',
     async loadContent() {
+      const classicPreset = context.siteConfig.presets.find((preset) => preset[0] === '@docusaurus/preset-classic');
       // Finds the plugin options for @docusaurus/plugin-content-docs
-      const docsPluginOptions = context.siteConfig.plugins.find(
-        (plugin) => Array.isArray(plugin) && plugin[0] === '@docusaurus/plugin-content-docs'
-      )[1];
+      const docsPluginOptions = classicPreset[1].docs;
 
       const data = [];
       const currentVersion = docsPluginOptions.versions.current;

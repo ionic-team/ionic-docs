@@ -3,10 +3,10 @@ import React from 'react';
 
 import styles from './index.module.scss';
 
-import useThemeContext from '@theme/hooks/useThemeContext';
+import { useColorMode } from '@docusaurus/theme-common';
 
 export default function InputWrapper({ ...props }) {
-  const { isDarkTheme } = useThemeContext();
+  const { colorMode } = useColorMode();
 
   return (
     <div
@@ -15,7 +15,7 @@ export default function InputWrapper({ ...props }) {
         props.className,
         'input-wrapper',
         styles.inputWrapper,
-        styles[`inputWrapper${isDarkTheme ? 'Dark' : 'Light'}`]
+        styles[`inputWrapper${colorMode === 'dark' ? 'Dark' : 'Light'}`]
       )}
     />
   );

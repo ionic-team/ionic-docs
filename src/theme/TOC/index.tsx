@@ -1,16 +1,33 @@
+/**
+ * This file wraps the original TOC so we don't need to modify the original code.
+ *
+ * Reasons for modifying:
+ * - Add header to the top of the TOC.
+ * - Add a `Edit this page` link to the bottom of the TOC.
+ * - Add a random internal ad to the bottom of the TOC.
+ */
+
+import React, { useState, useEffect } from 'react';
+import TOC from '@theme-original/TOC';
+import type { Props } from '@theme/TOC';
+
+import EditThisPage from '@theme-original/EditThisPage';
 import { useLocation } from '@docusaurus/router';
 import { usePluginData } from '@docusaurus/useGlobalData';
-import OriginalTOC from '@theme-original/TOC';
-import EditThisPage from '@theme/EditThisPage';
-import React, { useEffect, useState } from 'react';
 import { PrismicRichText } from '@prismicio/react';
+import { useDoc } from '@docusaurus/theme-common/internal';
 
-export default function TOC({ toc, editUrl, ...props }) {
-  const { prismicAds } = usePluginData('ionic-docs-ads');
+interface TOCProps extends Props {
+  editUrl: string;
+}
+
+export default function TOCWrapper(props: TOCProps): JSX.Element {
+  const { prismicAds } = usePluginData('ionic-docs-ads') as any;
   const [activeAd, setActiveAd] = useState<typeof prismicAds.data>();
   const location = useLocation();
+  const { metadata } = useDoc();
 
-  const isEmpty = toc.length <= 0;
+  const isEmpty = props.toc.length <= 0;
 
   useEffect(() => {
     setActiveAd(prismicAds[Math.floor(Math.random() * prismicAds.length)].data);
@@ -21,9 +38,8 @@ export default function TOC({ toc, editUrl, ...props }) {
   return (
     <div className="toc-wrapper">
       <h2>Contents</h2>
-      <OriginalTOC toc={toc} {...props} />
-      <EditThisPage editUrl={editUrl} />
-
+      <TOC {...props} />
+      <EditThisPage editUrl={metadata.editUrl} />
       {activeAd && (
         <div className="internal-ad">
           <a
