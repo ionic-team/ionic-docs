@@ -11,8 +11,7 @@ module.exports = {
   tagline:
     'Ionic is the app platform for web developers. Build amazing mobile, web, and desktop apps all with one shared code base and open web standards',
   url: 'https://ionicframework.com',
-  baseUrl: `${BASE_URL}`,
-  // trailingSlash: true,
+  baseUrl: `${BASE_URL}/`,
   i18n: {
     defaultLocale: 'en',
     locales: ['en', 'ja'],
