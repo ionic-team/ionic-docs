@@ -9,12 +9,13 @@
 
 import React from 'react';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
-import { useAlternatePageUtils } from '@docusaurus/theme-common/internal';
+import { useAlternatePageUtils } from '../../../utils/useAlternatePageUtils';
 import { translate } from '@docusaurus/Translate';
 import { useLocation } from '@docusaurus/router';
 import DropdownNavbarItem from '@theme/NavbarItem/DropdownNavbarItem';
 import IconLanguage from '@theme/Icon/Language';
 import styles from './styles.module.css';
+
 export default function LocaleDropdownNavbarItem({ mobile, dropdownItemsBefore, dropdownItemsAfter, ...props }) {
   const {
     i18n: { currentLocale, locales, localeConfigs },
