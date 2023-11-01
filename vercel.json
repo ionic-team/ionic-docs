@@ -64,13 +64,13 @@
       "destination": "/docs/vue/your-first-app/deploying-mobile"
     },
     { "source": "/docs/vue/your-first-app/7-live-reload", "destination": "/docs/vue/your-first-app/live-reload" },
-    { "source": "/docs/react/testing", "destination": "/docs/react/testing/introduction" },
-    { "source": "/docs//docs", "destination": "/docs" },
-    { "source": "/docs/ja//docs", "destination": "/docs/ja" },
-    { "source": "/docs/ja//docs/ja", "destination": "/docs/ja" }
+    { "source": "/docs/react/testing", "destination": "/docs/react/testing/introduction" }
   ],
   "rewrites": [
     { "source": "/docs", "destination": "/" },
-    { "source": "/docs/:match*", "destination": "/:match*" }
+    { "source": "/docs/:match*", "destination": "/:match*" },
+    { "source": "/docs/docs", "destination": "/docs" },
+    { "source": "/docs/ja/docs", "destination": "/docs/ja" },
+    { "source": "/docs/ja/docs/ja", "destination": "/docs/ja" }
   ]
 }
