@@ -113,7 +113,7 @@ export class HomePage {
 }
 ```
 
-Icons can also be registered in entry points such as `app.component.ts` to avoid the need to call `addIcons` multiple times. Developers should be aware that the initial application chunk may increase because the registered icons will need to be loaded at application start.
+Icons can also be registered in entry points such as `app.component.ts` to avoid the need to call `addIcons` multiple times. Developers should be aware that the initial application chunk may increase because the registered icons will need to be loaded at application start. However, if your application uses a small number of icons the impact of this may be minimal.
 
 ```typescript title="app.component.ts"
 import { Component } from '@angular/core';
@@ -253,7 +253,7 @@ export class HomePage {
 }
 ```
 
-Icons can also be registered in entry points such as `app.component.ts` to avoid the need to call `addIcons` multiple times. Developers should be aware that the initial application chunk may increase because the registered icons will need to be loaded at application start.
+Icons can also be registered in entry points such as `app.component.ts` to avoid the need to call `addIcons` multiple times. Developers should be aware that the initial application chunk may increase because the registered icons will need to be loaded at application start. However, if your application uses a small number of icons the impact of this may be minimal.
 
 ```typescript title="app.component.ts"
 import { Component } from '@angular/core';
