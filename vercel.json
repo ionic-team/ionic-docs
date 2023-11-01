@@ -65,9 +65,9 @@
     },
     { "source": "/docs/vue/your-first-app/7-live-reload", "destination": "/docs/vue/your-first-app/live-reload" },
     { "source": "/docs/react/testing", "destination": "/docs/react/testing/introduction" },
-    { "source": "/docs/docs", "destination": "/docs" },
-    { "source": "/docs/ja/docs", "destination": "/docs/ja" },
-    { "source": "/docs/ja/docs/ja", "destination": "/docs/ja" }
+    { "source": "/docs//docs", "destination": "/docs" },
+    { "source": "/docs/ja//docs", "destination": "/docs/ja" },
+    { "source": "/docs/ja//docs/ja", "destination": "/docs/ja" }
   ],
   "rewrites": [
     { "source": "/docs", "destination": "/" },
