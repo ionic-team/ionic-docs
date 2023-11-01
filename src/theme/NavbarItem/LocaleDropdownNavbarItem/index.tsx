@@ -28,6 +28,7 @@ export default function LocaleDropdownNavbarItem({ mobile, dropdownItemsBefore, 
     })}`;
     // preserve ?search#hash suffix on locale switches
     const to = `${baseTo}${search}${hash}`;
+    console.log('to', to);
     return {
       label: localeConfigs[locale].label,
       lang: localeConfigs[locale].htmlLang,
