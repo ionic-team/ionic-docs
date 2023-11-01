@@ -283,9 +283,17 @@ export class AppModule {}
 
 ## Migrating from Modules to Standalone
 
+:::tip
+Try our automated utility for migrating to standalone!
+
+See https://github.com/ionic-team/ionic-angular-standalone-codemods for instructions on how to get started. All issues related to the migration utility should be filed on the linked repo.
+:::
+
 The Standalone option is newer than the Modules option, so developers may wish to switch during the development of their application. This guide details the steps needed to migrate.
 
 Migrating to Ionic standalone components must be done all at the same time and cannot be done gradually. The Modules and Standalone approaches use two different build systems of Ionic that cannot be used at the same time.
+
+Developers are encouraged to try the [automated migration utility](https://github.com/ionic-team/ionic-angular-standalone-codemods), though they can also follow the steps below if they would like to manually migrate their applications.
 
 ### Standalone-based Applications
 
