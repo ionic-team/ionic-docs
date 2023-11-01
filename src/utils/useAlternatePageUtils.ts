@@ -47,36 +47,44 @@ export function useAlternatePageUtils(): {
   // See https://github.com/facebook/docusaurus/issues/9170
   const { pathname } = useLocation();
 
-  // const canonicalPathname = applyTrailingSlash(pathname, {
-  //   trailingSlash,
-  //   baseUrl,
-  // });
+  console.log('useAlternatePageUtils', {
+    baseUrl,
+    url,
+    trailingSlash,
+    defaultLocale,
+    currentLocale,
+    pathname,
+  });
 
-  const baseUrlUnlocalized =
-    currentLocale === defaultLocale
-      ? baseUrl
-      : baseUrl.replace(`/${currentLocale}/`, '/');
+  const canonicalPathname = applyTrailingSlash(pathname, {
+    trailingSlash,
+    baseUrl,
+  });
 
-  const pathnameSuffix = pathname.replace(baseUrl, '');
+  console.log('canonicalPathname', canonicalPathname);
+
+  const baseUrlUnlocalized = currentLocale === defaultLocale ? baseUrl : baseUrl.replace(`/${currentLocale}/`, '/');
+
+  console.log('baseUrlUnlocalized', baseUrlUnlocalized);
+
+  const pathnameSuffix = canonicalPathname.replace(baseUrl, '');
+
+  console.log('pathnameSuffix', pathnameSuffix);
 
   function getLocalizedBaseUrl(locale: string) {
-    return locale === defaultLocale
-      ? `${baseUrlUnlocalized}`
-      : `${baseUrlUnlocalized}${locale}/`;
+    return locale === defaultLocale ? `${baseUrlUnlocalized}` : `${baseUrlUnlocalized}${locale}/`;
   }
 
   // TODO support correct alternate url when localized site is deployed on
   // another domain
-  function createUrl({
-    locale,
-    fullyQualified,
-  }: {
-    locale: string;
-    fullyQualified: boolean;
-  }) {
-    return `${fullyQualified ? url : ''}${getLocalizedBaseUrl(
-      locale,
-    )}${pathnameSuffix}`;
+  function createUrl({ locale, fullyQualified }: { locale: string; fullyQualified: boolean }) {
+    console.log('here...', {
+      fullyQualified,
+      url,
+      localizedBaseUrl: getLocalizedBaseUrl(locale),
+      pathnameSuffix,
+    });
+    return `${fullyQualified ? url : ''}${getLocalizedBaseUrl(locale)}${pathnameSuffix}`;
   }
 
   return { createUrl };
