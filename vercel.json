@@ -69,8 +69,8 @@
   "rewrites": [
     { "source": "/docs", "destination": "/" },
     { "source": "/docs/:match*", "destination": "/:match*" },
-    { "source": "/docs/docs", "destination": "/docs" },
-    { "source": "/docs/ja/docs", "destination": "/docs/ja" },
-    { "source": "/docs/ja/docs/ja", "destination": "/docs/ja" }
+    { "source": "/docs//docs", "destination": "/docs" },
+    { "source": "/docs/ja//docs", "destination": "/docs/ja" },
+    { "source": "/docs/ja//docs/ja", "destination": "/docs/ja" }
   ]
 }
