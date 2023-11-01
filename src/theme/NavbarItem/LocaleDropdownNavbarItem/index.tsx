@@ -37,7 +37,6 @@ export default function LocaleDropdownNavbarItem({
       locale,
       fullyQualified: false,
     })}`;
-    console.log('baseTo', baseTo);
     // preserve ?search#hash suffix on locale switches
     const to = `${baseTo}${search}${hash}${queryString}`;
     console.log('to', to);
