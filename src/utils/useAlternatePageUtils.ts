@@ -53,8 +53,9 @@ export function useAlternatePageUtils(): {
     trailingSlash,
     defaultLocale,
     currentLocale,
-    pathname,
+    pathname
   });
+
 
   const canonicalPathname = applyTrailingSlash(pathname, {
     trailingSlash,
@@ -63,28 +64,41 @@ export function useAlternatePageUtils(): {
 
   console.log('canonicalPathname', canonicalPathname);
 
-  const baseUrlUnlocalized = currentLocale === defaultLocale ? baseUrl : baseUrl.replace(`/${currentLocale}/`, '/');
+  const baseUrlUnlocalized =
+    currentLocale === defaultLocale
+      ? baseUrl
+      : baseUrl.replace(`/${currentLocale}/`, '/');
 
   console.log('baseUrlUnlocalized', baseUrlUnlocalized);
 
-  const pathnameSuffix = canonicalPathname.replace(baseUrl, '');
+  const pathnameSuffix = pathname.replace(baseUrl, '');
 
   console.log('pathnameSuffix', pathnameSuffix);
 
   function getLocalizedBaseUrl(locale: string) {
-    return locale === defaultLocale ? `${baseUrlUnlocalized}` : `${baseUrlUnlocalized}${locale}/`;
+    return locale === defaultLocale
+      ? `${baseUrlUnlocalized}`
+      : `${baseUrlUnlocalized}${locale}/`;
   }
 
   // TODO support correct alternate url when localized site is deployed on
   // another domain
-  function createUrl({ locale, fullyQualified }: { locale: string; fullyQualified: boolean }) {
+  function createUrl({
+    locale,
+    fullyQualified,
+  }: {
+    locale: string;
+    fullyQualified: boolean;
+  }) {
     console.log('here...', {
       fullyQualified,
       url,
       localizedBaseUrl: getLocalizedBaseUrl(locale),
-      pathnameSuffix,
-    });
-    return `${fullyQualified ? url : ''}${getLocalizedBaseUrl(locale)}${pathnameSuffix}`;
+      pathnameSuffix
+    })
+    return `${fullyQualified ? url : ''}${getLocalizedBaseUrl(
+      locale,
+    )}${pathnameSuffix}`;
   }
 
   return { createUrl };
