@@ -67,6 +67,12 @@ export function useAlternatePageUtils(): {
 
   console.log('baseUrlUnlocalized', baseUrlUnlocalized);
 
+  console.log('check why pathname.replace is not working', {
+    pathname,
+    baseUrl,
+    result: pathname.replace(baseUrl, ''),
+  });
+
   const pathnameSuffix = pathname.replace(baseUrl, '');
 
   console.log('pathnameSuffix', pathnameSuffix);
