@@ -233,7 +233,7 @@ For more information on the variables that are being changed, including other va
     --ion-color-step-900: #e6e6e6;
     --ion-color-step-950: #f2f2f2;
 
-    --ion-item-background: #000000;
+    --ion-item-background: #1c1c1d;
 
     --ion-card-background: #1c1c1d;
   }
