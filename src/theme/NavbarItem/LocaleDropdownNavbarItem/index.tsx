@@ -50,7 +50,7 @@ export default function LocaleDropdownNavbarItem({
       fullyQualified: true,
     });
     console.log('alternatePageUtilsUrl', alternatePageUtilsUrl);
-    const cleanAlternatePageUtilsUrl = alternatePageUtilsUrl.replace(/\/\/.*/, '');
+    const cleanAlternatePageUtilsUrl = alternatePageUtilsUrl.replace(/\/\/docs.*/, '');
     console.log('cleanAlternatePageUtilsUrl', cleanAlternatePageUtilsUrl);
     const baseTo = `pathname://${cleanAlternatePageUtilsUrl}`;
     console.log('baseTo', baseTo);
