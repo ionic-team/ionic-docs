@@ -37,8 +37,23 @@ export default function LocaleDropdownNavbarItem({
       locale,
       fullyQualified: false,
     })}`;
+
+    // CUSTOM CODE
+    /**
+     * If the site URL does not contain a trailing slash, then it will
+     * generate the wrong locale URLs. For example, if the site URL is
+     * https://example.com/docs, then the locale URLs will be generated as
+     * - EN: https://example.com/docs//docs
+     * - JP: https://example.com/docs/jp//docs
+     * The incorrect URLs will cause a 404 error.
+     *
+     * The following code removes the extra slashes and the extra baseUrl (`/docs`).
+     */
+    const cleanBaseTo = baseTo.replace(/\/\/.*/, '');
+    // CUSTOM CODE - end
+
     // preserve ?search#hash suffix on locale switches
-    const to = `${baseTo}${search}${hash}${queryString}`;
+    const to = `${cleanBaseTo}${search}${hash}${queryString}`;
     return {
       label: localeConfigs[locale]!.label,
       lang: localeConfigs[locale]!.htmlLang,
