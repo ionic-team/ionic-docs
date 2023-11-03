@@ -40,7 +40,7 @@ export default function LocaleDropdownNavbarItem({
      * For example, if the site URL is https://example.com/docs,
      * then the locale URLs will be generated as
      * - EN: https://example.com/docs//docs
-     * - JP: https://example.com/docs/jp//docs
+     * - JP: https://example.com/docs/ja//docs
      * The incorrect URLs will cause a 404 error.
      *
      * The following removes the extra slashes and the extra baseUrl (`/docs`).
@@ -49,8 +49,11 @@ export default function LocaleDropdownNavbarItem({
       locale,
       fullyQualified: true,
     });
+    console.log('alternatePageUtilsUrl', alternatePageUtilsUrl);
     const cleanAlternatePageUtilsUrl = alternatePageUtilsUrl.replace(/\/\/.*/, '');
+    console.log('cleanAlternatePageUtilsUrl', cleanAlternatePageUtilsUrl);
     const baseTo = `pathname://${cleanAlternatePageUtilsUrl}`;
+    console.log('baseTo', baseTo);
     // CUSTOM CODE - end
 
     // preserve ?search#hash suffix on locale switches
