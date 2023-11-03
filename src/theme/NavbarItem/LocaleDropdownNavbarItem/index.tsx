@@ -43,22 +43,19 @@ export default function LocaleDropdownNavbarItem({
      * - JP: https://example.com/docs/ja//docs
      * The incorrect URLs will cause a 404 error.
      *
-     * The following removes the extra slashes and the extra baseUrl (`/docs`).
+     * The following removes anything after
+     * the extra slashes and baseUrl: `//docs`.
      */
     const alternatePageUtilsUrl = alternatePageUtils.createUrl({
       locale,
       fullyQualified: true,
     });
-    console.log('alternatePageUtilsUrl', alternatePageUtilsUrl);
     const cleanAlternatePageUtilsUrl = alternatePageUtilsUrl.replace(/\/\/docs.*/, '');
-    console.log('cleanAlternatePageUtilsUrl', cleanAlternatePageUtilsUrl);
     const baseTo = `pathname://${cleanAlternatePageUtilsUrl}`;
-    console.log('baseTo', baseTo);
     // CUSTOM CODE - end
 
     // preserve ?search#hash suffix on locale switches
     const to = `${baseTo}${search}${hash}${queryString}`;
-    console.log('to', to);
     return {
       label: localeConfigs[locale]!.label,
       lang: localeConfigs[locale]!.htmlLang,
