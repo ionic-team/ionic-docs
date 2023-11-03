@@ -67,10 +67,6 @@
     { "source": "/docs/react/testing", "destination": "/docs/react/testing/introduction" }
   ],
   "rewrites": [
-    { "source": "/docs", "destination": "/" },
-    { "source": "/docs/:match*", "destination": "/:match*" },
-    { "source": "/docs//docs", "destination": "/docs" },
-    { "source": "/docs/ja//docs", "destination": "/docs/ja" },
-    { "source": "/docs/ja//docs/ja", "destination": "/docs/ja" }
+    { "source": "/docs", "destination": "/" }
   ]
 }
