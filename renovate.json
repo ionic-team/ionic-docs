@@ -27,6 +27,12 @@
         "static/code/stackblitz/v6/react/package.json",
         "static/code/stackblitz/v6/vue/package.json"
       ]
+    },
+    {
+      "ignoreDeps": ["typescript"],
+      "matchFileNames": [
+        "static/code/stackblitz/v6/react/package.json"
+      ]
     }
   ],
   "dependencyDashboard": true,
