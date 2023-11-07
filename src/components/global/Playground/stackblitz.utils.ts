@@ -195,7 +195,6 @@ const openReactEditor = async (code: string, options?: EditorOptions) => {
     };
   }
 
-  console.log('hello', defaultFiles);
   const appTsx = 'src/App.tsx';
   const files = {
     '.eslintrc.js': defaultFiles[9],
