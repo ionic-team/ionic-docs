@@ -9,10 +9,10 @@ function Example() {
     <IonButton
       onClick={() =>
         presentAlert({
-          header: 'Alert',
-          subHeader: 'Important message',
-          message: 'This is an alert!',
-          buttons: ['OK'],
+          header: 'A Short Title Is Best',
+          subHeader: 'A Sub Header Is Optional',
+          message: 'A message should be a short, complete sentence.',
+          buttons: ['Action'],
         })
       }
     >

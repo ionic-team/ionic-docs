@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
 })
 export class ExampleComponent {
   isAlertOpen = false;
-  public alertButtons = ['OK'];
+  alertButtons = ['Action'];
 
   setOpen(isOpen: boolean) {
     this.isAlertOpen = isOpen;

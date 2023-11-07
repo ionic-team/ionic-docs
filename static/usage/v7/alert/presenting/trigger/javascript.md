@@ -2,13 +2,13 @@
 <ion-button id="present-alert">Click Me</ion-button>
 <ion-alert
   trigger="present-alert"
-  header="Alert"
-  sub-header="Important message"
-  message="This is an alert!"
+  header="A Short Title Is Best"
+  sub-header="A Sub Header Is Optional"
+  message="A message should be a short, complete sentence."
 ></ion-alert>
 
 <script>
   const alert = document.querySelector('ion-alert');
-  alert.buttons = ['OK'];
+  alert.buttons = ['Action'];
 </script>
 ```

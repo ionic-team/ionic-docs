@@ -4,10 +4,10 @@
 <script>
   async function presentAlert() {
     const alert = document.createElement('ion-alert');
-    alert.header = 'Alert';
-    alert.subHeader = 'Important message';
-    alert.message = 'This is an alert!';
-    alert.buttons = ['OK'];
+    alert.header = 'A Short Title Is Best';
+    alert.subHeader = 'A Sub Header Is Optional';
+    alert.message = 'A message should be a short, complete sentence.';
+    alert.buttons = ['Action'];
 
     document.body.appendChild(alert);
     await alert.present();

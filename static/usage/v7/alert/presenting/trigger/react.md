@@ -8,10 +8,10 @@ function Example() {
       <IonButton id="present-alert">Click Me</IonButton>
       <IonAlert
         trigger="present-alert"
-        header="Alert"
-        subHeader="Important message"
-        message="This is an alert!"
-        buttons={['OK']}
+        header="A Short Title Is Best"
+        sub-header="A Sub Header Is Optional"
+        message="A message should be a short, complete sentence."
+        buttons={['Action']}
       ></IonAlert>
     </>
   );
