@@ -181,7 +181,7 @@ const openReactEditor = async (code: string, options?: EditorOptions) => {
       'react/index.html',
       'react/vite.config.js',
       'react/browserslistrc',
-      'react/eslintrc.js'
+      'react/eslintrc.js',
     ],
     options.version
   );
@@ -195,7 +195,7 @@ const openReactEditor = async (code: string, options?: EditorOptions) => {
     };
   }
 
-console.log('hello',defaultFiles)
+  console.log('hello', defaultFiles);
   const appTsx = 'src/App.tsx';
   const files = {
     '.eslintrc.js': defaultFiles[9],
