@@ -179,6 +179,9 @@ const openReactEditor = async (code: string, options?: EditorOptions) => {
       'react/package.json',
       'react/package-lock.json',
       'react/index.html',
+      'react/vite.config.js',
+      'react/browserslistrc',
+      'react/eslintrc.js'
     ],
     options.version
   );
@@ -192,9 +195,13 @@ const openReactEditor = async (code: string, options?: EditorOptions) => {
     };
   }
 
+console.log('hello',defaultFiles)
   const appTsx = 'src/App.tsx';
   const files = {
-    'public/index.html': defaultFiles[6],
+    '.eslintrc.js': defaultFiles[9],
+    '.browserslistrc': defaultFiles[8],
+    'vite.config.js': defaultFiles[7],
+    'index.html': defaultFiles[6],
     'src/index.tsx': defaultFiles[0],
     [appTsx]: defaultFiles[1],
     'src/main.tsx': code,
